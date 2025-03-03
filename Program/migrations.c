@@ -1,15 +1,59 @@
 // mitrokosta переработка контроля версий
 
+#define COMMON_MIGRATION_FOLDER "migrations"
+#define MOD_MIGRATION_FOLDER "mod_migrations"
+#define MOD_INITS_FOLDER "mod_inits"
+
 extern void ApplyMigration(ref migrationState); // функция которую нужно переопределить в файле конкретной миграции
 
 void ApplyMigrations() {
+	ApplyMigrationsForFolder(COMMON_MIGRATION_FOLDER, "");
+	ApplyModMigrations();
+}
+
+void ApplyModMigrations() {
+	trace("Applying mod migrations...");
+	
+	string searchPath = "Program\"+MOD_MIGRATION_FOLDER;
+	object fileFinder;
+	fileFinder.dir = searchPath;
+	fileFinder.mask = "*";
+	fileFinder.onlydirs = "1";
+	fileFinder.onlyfiles = "0";
+	CreateEntity(&fileFinder, "FINDFILESINTODIRECTORY");
+	DeleteClass(&fileFinder);
+	
+	aref fileList;
+	makearef(fileList, fileFinder.filelist);
+	int filesNum = GetAttributesNum(fileList);
+	trace("Applying mod migrations... found:"+filesNum);
+	object mods;
+	
+	for (int i = 0; i < filesNum; i++) {
+		aref file = GetAttributeN(fileList, i);
+		string fileName = GetAttributeValue(file);
+		trace("Scanning mod migrations: "+fileName);
+		string initPath = MOD_INITS_FOLDER+"\\"+fileName+".c";
+		if (!LoadSegment(initPath)) {
+			trace("Error! Can't load migration file " + initPath);
+			continue;
+		}
+		ApplyMigrationsForFolder(MOD_MIGRATION_FOLDER, fileName);
+	}
+}
+
+void ApplyMigrationsForFolder(string migrationDir, string modName) {
 	trace("Applying migrations...");
 	// построение списка миграций
 	int migrationsNum = 0;
 	string migrationsList[2];
 	
     object fileFinder;
-	fileFinder.dir = "Program\migrations";
+	if (modName != "")
+	{
+		migrationDir = migrationDir + "\" + modName;
+	}
+	fileFinder.dir = "Program\\"+migrationDir;
 	fileFinder.mask = "????_*.c";
 	CreateEntity(&fileFinder, "FINDFILESINTODIRECTORY");
 	DeleteClass(&fileFinder);
@@ -22,7 +66,6 @@ void ApplyMigrations() {
 		SetArraySize(&migrationsList, filesNum);
 	}
 	
-	string migrationDir = "migrations";
 	for (int i = 0; i < filesNum; i++) {
 		aref file = GetAttributeN(fileList, i);
 		string fileName = GetAttributeValue(file);
@@ -55,6 +98,10 @@ void ApplyMigrations() {
 		
 		// миграция уже применена
 		string migrationId = "id" + (i + 1);
+		if (modName != "") 
+		{
+			migrationId = "id_" + modName + (i + 1);
+		}
 		if (CheckAttribute(migrations, migrationId) && migrations.(migrationId) == migrationName) {
 			trace("Migration " + migrationName + " already applied");
 			continue;
@@ -78,11 +125,18 @@ void ApplyMigrations() {
 }
 
 // действуем в предположении того, что все имеющиеся миграции есть в инитах, как и должно быть по-хорошему
+
 void InitMigrations() {
+	InitMigrationsForFolder(COMMON_MIGRATION_FOLDER);
+	// Моды - всегда в миграциях, моды не меняют иниты
+	ApplyModMigrations();
+}
+
+void InitMigrationsForFolder(string migrationDir) {
 	trace("Initializing migrations...");
 	
 	object fileFinder;
-	fileFinder.dir = "Program\migrations";
+	fileFinder.dir = "Program\\"+migrationDir;
 	fileFinder.mask = "????_*.c";
 	CreateEntity(&fileFinder, "FINDFILESINTODIRECTORY");
 	DeleteClass(&fileFinder);

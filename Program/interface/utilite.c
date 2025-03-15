@@ -536,7 +536,7 @@ void FillShipList(string strAccess, ref chref)
 	int n;
 	string sShip;
 
-	for(n= 0; n< SHIP_TYPES_QUANTITY; n++)
+	for(n= 0; n< GetArraySize(&ShipsTypes); n++)
 	{
 		if(CheckAttribute(ShipsTypes[n], "name"))
 		sShip = ShipsTypes[n].name;

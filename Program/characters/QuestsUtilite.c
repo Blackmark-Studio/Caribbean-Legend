@@ -5078,39 +5078,44 @@ void SelectLevelWarShipParameter()//Jason автолевеллинг на вое
 	if(sti(pchar.rank) >= 14 && sti(pchar.rank) < 19) iShipRank = 2;
 	if(sti(pchar.rank) >= 7 && sti(pchar.rank) < 14) iShipRank = 1;	
 	if(sti(pchar.rank) < 7) iShipRank = 0;
+	
+	int iClassFlag = FLAG_SHIP_CLASS_5;
 	switch (iShipRank)
 	{
 		case 0:  
-			iGlobalTemp = SHIP_CAREERLUGGER + rand(makeint(SHIP_SLOOP - SHIP_CAREERLUGGER));     					
+			iClassFlag = FLAG_SHIP_CLASS_5;					
 			iTotalTemp = CANNON_TYPE_CANNON_LBS6;
 			sTotalTemp = "blade_12";
 		break; 	
 		case 1:  
-			iGlobalTemp = SHIP_BRIGANTINE + rand(makeint(SHIP_SCHOONER_W - SHIP_BRIGANTINE));					
+			iClassFlag = FLAG_SHIP_CLASS_4;				
 			iTotalTemp = CANNON_TYPE_CANNON_LBS12;
 			sTotalTemp = "blade_14";
 		break; 		
 		case 2:  
-			iGlobalTemp = SHIP_GALEON_L + rand(makeint(SHIP_POLACRE - SHIP_GALEON_L));			
+			iClassFlag = FLAG_SHIP_CLASS_3;	
 			iTotalTemp = CANNON_TYPE_CANNON_LBS16;
 			sTotalTemp = "blade_13";
 		break; 
 		case 3: 
-			iGlobalTemp = SHIP_GALEON_L + rand(makeint(SHIP_POLACRE - SHIP_GALEON_L));			
+			iClassFlag = FLAG_SHIP_CLASS_3;		
 			iTotalTemp = CANNON_TYPE_CULVERINE_LBS18;
 			sTotalTemp = "blade_13";
 		break; 
 		case 4: 
-			iGlobalTemp = SHIP_GALEON_H + rand(makeint(SHIP_FRIGATE_H - SHIP_GALEON_H));         			
+			iClassFlag = FLAG_SHIP_CLASS_2;     			
 			iTotalTemp = CANNON_TYPE_CANNON_LBS24;
 			sTotalTemp = "blade_15";
 		break; 
 		case 5: 
-			iGlobalTemp = SHIP_GALEON_H + rand(makeint(SHIP_LINESHIP - SHIP_GALEON_H));  						
+			iClassFlag = FLAG_SHIP_CLASS_2;					
 			iTotalTemp = CANNON_TYPE_CANNON_LBS32;
 			sTotalTemp = "blade_19";
 		break;  				
 	}
+	
+	
+	iGlobalTemp = GetRandomShipType(iClassFlag, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
 }
 
 void SelectLevelTradeShipParameter()//Jason автолевеллинг на торговые корабли противника

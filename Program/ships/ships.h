@@ -1,3 +1,5 @@
+#include "ships/ships_generator.c"
+
 #define SAILS_COLOR_QUANTITY				9
 #define SHIP_TYPES_QUANTITY					53
 #define SHIP_TYPES_QUANTITY_WITH_FORT		54	// must be (SHIP_TYPES_QUANTITY + 1) 

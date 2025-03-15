@@ -2720,27 +2720,33 @@ void SelectFindship_ShipType()
 	if (sti(pchar.rank) > 7 && sti(pchar.rank) <= 10) iRank = 4;
 	if (sti(pchar.rank) > 10 && sti(pchar.rank) <= 18) iRank = 5;
 	
+	int iClassFlag = FLAG_SHIP_CLASS_5;
+	int iTypesFlag = FLAG_SHIP_TYPE_MERCHANT;
 	switch (iRank)
 	{
 		case 0:  
-			pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_SCHOONER + rand(makeint(SHIP_BARQUE - SHIP_SCHOONER));
+			iClassFlag = FLAG_SHIP_CLASS_5;
 		break; 		
 		case 1:  
-			pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_BARKENTINE + rand(makeint(SHIP_SHNYAVA- SHIP_BARKENTINE));
+			iClassFlag = FLAG_SHIP_CLASS_4;
 		break;
 		case 2:  
-			pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_FLEUT + rand(makeint(SHIP_CARAVEL - SHIP_FLEUT));
+			iClassFlag = FLAG_SHIP_CLASS_4;
 		break;
-		case 3:  
-			pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_PINNACE + rand(makeint(SHIP_CARACCA - SHIP_PINNACE));	
+		case 3: 
+			iClassFlag = FLAG_SHIP_CLASS_3;
 		break;
 		case 4:  
-			pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_SCHOONER_W + rand(makeint(SHIP_POLACRE - SHIP_SCHOONER_W));
+			iClassFlag = FLAG_SHIP_CLASS_3;
+			iTypesFlag = or(FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_TYPE_WAR);
 		break;
-		case 5:  
-			pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_NAVIO + rand(makeint(SHIP_FRIGATE_H - SHIP_NAVIO));
+		case 5: 
+			iClassFlag = FLAG_SHIP_CLASS_2;
+			iTypesFlag = or(FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_TYPE_WAR);
 		break;
 	}
+	
+	pchar.GenQuest.Findship.Shipyarder.ShipType = GetRandomShipType(iClassFlag, iTypesFlag, FLAG_SHIP_NATION_ANY);
 }
 
 // проверка количества материалов для корабельного тюнинга

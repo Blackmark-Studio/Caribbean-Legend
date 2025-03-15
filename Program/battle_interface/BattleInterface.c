@@ -1798,7 +1798,7 @@ void SetShipPictureDataByShipTypeName(string sType)
 
 void SetShipPictureDataByShipType(int st)
 {
-	if(st>=0 && st<SHIP_TYPES_QUANTITY)
+	if(st>=0 && st<GetArraySize(&ShipsTypes))
 	{
 		SetShipPictureDataByShipTypeName( ShipsTypes[st].name );
 	}

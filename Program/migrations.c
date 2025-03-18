@@ -33,7 +33,7 @@ void ApplyModMigrations() {
 		aref file = GetAttributeN(fileList, i);
 		string fileName = GetAttributeValue(file);
 		trace("Scanning mod migrations: "+fileName);
-		string initPath = MOD_INITS_FOLDER+"\\"+fileName+".c";
+		string initPath = MOD_INITS_FOLDER+"\"+fileName+".c";
 		if (!LoadSegment(initPath)) {
 			trace("Error! Can't load migration file " + initPath);
 			continue;

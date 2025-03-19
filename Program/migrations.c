@@ -8,7 +8,47 @@ extern void ApplyMigration(ref migrationState); // функция которую
 
 void ApplyMigrations() {
 	ApplyMigrationsForFolder(COMMON_MIGRATION_FOLDER, "");
+	CheckForUninstalledMods();
 	ApplyModMigrations();
+}
+
+// проверяем, что не удалены моды, миграции из которых есть в сейве
+void CheckForUninstalledMods() {
+  trace("Checking for uninstalled mods...");
+
+  aref migrations;
+  makearef(migrations, pchar.migrations);
+  int migrationsLength = GetAttributesNum(migrations);
+  object ObsoleteState; //сюда сохраним все ненайденные моды
+  ref ObsoleteMods;
+  makeref(ObsoleteMods, ObsoleteState);
+
+  // идём по всем миграциям в сейве
+  for (int i = 0; i < migrationsLength; i++) {
+    string migName = GetAttributeName(GetAttributeN(migrations, i));
+    if (strcut(migName, 2, 2) != "_")) continue; // это миграция не из мода
+
+    migName = strcut(migName, 3, strlen(migName) - 2);        // режем "_id"
+    string modName = getModeNameByMigName(migName, 0);        // получаем название мода
+    if (!isModInstalled(modName)) ObsoleteMods.(modName) = 1; // записываем название
+  }
+
+
+  int modsNumber = GetAttributesNum(ObsoleteMods);
+  trace("can't found mods number:" + modsNumber);
+
+  string modsList;
+  for (int j = 0; j < modsNumber; j++)
+  {
+    modName = GetAttributeName(GetAttributeN(ObsoleteMods, j));
+    trace("can't found mod: " + modName);
+    modsList = modsList + modName + " ";
+  }
+
+  // выводим предупреждение
+  string messageText = GetConvertStr("Uninstalled_Mods_Founded", "migrations.txt") + "~" + modsList;
+  // messageText = StringFromKey("Uninstalled_Mods_Founded", "migrations.txt", "TEST");
+  if(modsNumber > 0) LaunchMessage(messageText);
 }
 
 void ApplyModMigrations() {
@@ -200,4 +240,42 @@ void Migration_UnloadSegments(ref migrationState) {
 		UnloadSegment(fileName);
 		trace("Unloaded segment " + fileName);
 	}
+}
+
+// получаем название мода из миграции
+string getModeNameByMigName(string currentMigName, int iteration){
+  // если на конце уже не цифра, значит это и есть папка мода
+  string lastChar = strcut(currentMigName, strlen(currentMigName) - 1, strlen(currentMigName) - 1);
+  if (sti(lastChar) == 0) return currentMigName;
+  
+  // режем последний символ
+  string tempName1 = strcut(currentMigName, 0, strlen(currentMigName) - 2);
+
+  // ррррекурррррсивное прогррррамиррррование
+  return getModeNameByMigName(tempName1, iteration + 1) // следующая итерация
+}
+
+// есть ли папка с модом?
+bool isModInstalled(string folderName)
+{
+	string searchPath = "Program\"+MOD_MIGRATION_FOLDER;
+	object fileFinder;
+	fileFinder.dir = searchPath;
+	fileFinder.mask = "*";
+	fileFinder.onlydirs = "1";
+	fileFinder.onlyfiles = "0";
+	CreateEntity(&fileFinder, "FINDFILESINTODIRECTORY");
+	DeleteClass(&fileFinder);
+	
+	aref fileList;
+	makearef(fileList, fileFinder.filelist);
+	int filesNum = GetAttributesNum(fileList);
+	
+  bool foundedMod = false;
+	for (int i = 0; i < filesNum; i++) {
+		aref file = GetAttributeN(fileList, i);
+		string fileName = GetAttributeValue(file);
+		if (fileName == folderName) foundedMod = true;
+	}
+  return foundedMod;
 }

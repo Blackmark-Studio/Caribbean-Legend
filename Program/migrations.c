@@ -47,7 +47,6 @@ void CheckForUninstalledMods() {
 
   // выводим предупреждение
   string messageText = GetConvertStr("Uninstalled_Mods_Founded", "migrations.txt") + "~" + modsList;
-  // messageText = StringFromKey("Uninstalled_Mods_Founded", "migrations.txt", "TEST");
   if(modsNumber > 0) LaunchMessage(messageText);
 }
 
@@ -246,7 +245,7 @@ void Migration_UnloadSegments(ref migrationState) {
 string getModeNameByMigName(string currentMigName, int iteration){
   // если на конце уже не цифра, значит это и есть папка мода
   string lastChar = strcut(currentMigName, strlen(currentMigName) - 1, strlen(currentMigName) - 1);
-  if (sti(lastChar) == 0) return currentMigName;
+  if (lastChar != "0" && sti(lastChar) == 0) return currentMigName;
   
   // режем последний символ
   string tempName1 = strcut(currentMigName, 0, strlen(currentMigName) - 2);

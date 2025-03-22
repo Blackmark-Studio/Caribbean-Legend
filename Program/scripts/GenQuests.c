@@ -7437,39 +7437,45 @@ void FrahtHunterOnSea()//охотники в акватории порта пр�
 		if(makeint(pchar.rank) >= 8 && makeint(pchar.rank) < 12) { iShipRank = 2; }	
 		if(makeint(pchar.rank) >= 5 && makeint(pchar.rank) < 8) { iShipRank = 1; }	
 		if(makeint(pchar.rank) < 5) { iShipRank = 0; }
+		
+		
+		int iClassFlag = FLAG_SHIP_CLASS_5;
 		switch (iShipRank)
 		{
 			case 0:  
-				iShipType = SHIP_LUGGER + rand(makeint(SHIP_SLOOP - SHIP_LUGGER));     					
-				iCannonType = CANNON_TYPE_CANNON_LBS6;
-				sBlade = "blade_03";
+				iClassFlag = FLAG_SHIP_CLASS_5;					
+				iTotalTemp = CANNON_TYPE_CANNON_LBS6;
+				sTotalTemp = "blade_03";
 			break; 	
 			case 1:  
-				iShipType = SHIP_SLOOP + rand(makeint(SHIP_BRIG - SHIP_SLOOP));					
-				iCannonType = CANNON_TYPE_CANNON_LBS12;
-				sBlade = "blade_05";
+				iClassFlag = FLAG_SHIP_CLASS_4;				
+				iTotalTemp = CANNON_TYPE_CANNON_LBS12;
+				sTotalTemp = "blade_05";
 			break; 		
 			case 2:  
-				iShipType = SHIP_BRIG + rand(makeint(SHIP_GALEON_L - SHIP_BRIG));			
-				iCannonType = CANNON_TYPE_CANNON_LBS16;
-				sBlade = "blade_06";
-			break; 		
+				iClassFlag = FLAG_SHIP_CLASS_3;	
+				iTotalTemp = CANNON_TYPE_CANNON_LBS16;
+				sTotalTemp = "blade_06";
+			break; 
 			case 3: 
-				iShipType = SHIP_GALEON_L + rand(makeint(SHIP_XebekVML - SHIP_GALEON_L));				
-				iCannonType = CANNON_TYPE_CULVERINE_LBS18;
-				sBlade = "blade_10";
+				iClassFlag = FLAG_SHIP_CLASS_3;		
+				iTotalTemp = CANNON_TYPE_CULVERINE_LBS18;
+				sTotalTemp = "blade_10";
 			break; 
 			case 4: 
-				iShipType = SHIP_CORVETTE + rand(makeint(SHIP_POLACRE - SHIP_CORVETTE));         			
-				iCannonType = CANNON_TYPE_CANNON_LBS20;
-				sBlade = "blade_13";
+				iClassFlag = FLAG_SHIP_CLASS_2;     			
+				iTotalTemp = CANNON_TYPE_CANNON_LBS20;
+				sTotalTemp = "blade_13";
 			break; 
 			case 5: 
-				iShipType = SHIP_GALEON_H + rand(makeint(SHIP_FRIGATE_H - SHIP_GALEON_H));  						
-				iCannonType = CANNON_TYPE_CANNON_LBS24;
-				sBlade = "blade_19";
+				iClassFlag = FLAG_SHIP_CLASS_2;					
+				iTotalTemp = CANNON_TYPE_CANNON_LBS24;
+				sTotalTemp = "blade_19";
 			break;  				
 		}
+		
+		
+		iShipType = GetRandomShipType(iClassFlag, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
 		sld = GetCharacter(NPC_GenerateCharacter("FrahtAttack_"+i, "citiz_"+(rand(9)+41), "man", "man", iRank, iNation, 30, true, "quest"));//создание кэпа
 		FantomMakeSmallSailor(sld, iShipType, "", iCannonType, 30+rand(15), 20+rand(10), 20+rand(15), 20+rand(15), 20+rand(15));
 		FantomMakeCoolFighter(sld, iRank, 30, 30, sBlade, "pistol1", "bullet", 30);

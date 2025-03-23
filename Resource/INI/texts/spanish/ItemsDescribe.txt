@@ -1308,7 +1308,7 @@ itmdescr_indian_5
 {
 Una cabeza secada de manera especial. 
 ~
-Reduce el riesgo de abordaje en un 10%.
+Antes de la descarga de mosquetes, incapacita al 10% de la tripulación enemiga, lo que facilita el abordaje. Requiere la Disparo de mosquetes.
 Penalización: Aumenta el tiempo de reparación del barco en un 10%.
 Usado por: Protagonista, Escoltas, Contramaestre.
 Desaparece en 70 días o al desequipar.

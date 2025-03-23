@@ -1307,7 +1307,7 @@ Disappears after 70 days of usage or by removal.
 itmname_indian_5 {Amulet 'Tsantsa'}
 itmdescr_indian_5
 {
-Reduces the risk to get boarded by 10%.
+Before the musket salvo, it incapacitates 10% of the enemy crew, making boarding easier. Requires the musket salvo.
 Increases the repair time by 10%.
 Can be activated only once.
 Works for a captain, a companion, and a boatswain.

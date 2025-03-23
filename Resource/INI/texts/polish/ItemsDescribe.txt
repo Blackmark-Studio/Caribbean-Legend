@@ -1261,7 +1261,7 @@ Efekt znika po 70 dniach użytkowania lub wcześniej w momencie zdjęcia.
 itmname_indian_5 {Amulet 'Tsantsa'}
 itmdescr_indian_5
 {
-Zmniejsza ryzyko wrogiego abordażu o 10%.
+Przed salwą muszkietową obezwładnia 10% załogi wroga, ułatwiając wejście na pokład. Wymaga Salwa z Muszkietów.
 Zwiększa czas naprawy o 10%.
 Można nosić tylko jeden, efekty nie duplikują się.
 Może być używany przez kapitana, jego towarzysza czy też bosmana.

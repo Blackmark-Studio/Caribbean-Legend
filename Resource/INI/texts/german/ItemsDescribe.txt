@@ -1313,7 +1313,7 @@ Hält nach Anwendung 70 Tage, kann auch vorher entfernt werden.
 itmname_indian_5 {Amulett "Schrumpfkopf"}
 itmdescr_indian_5
 {
-Verringert das Risiko, geentert zu werden, um 10 %.
+Vor der Musketen-Salve werden 10% der feindlichen Besatzung außer Gefecht gesetzt, was das Einsteigen erleichtert. Benötigt die Gewehrsalve.
 Erhöht die Reparaturzeit um 10%.
 Kann nur einmal aktiviert werden.
 Funktioniert für Kapitän, Begleiter und Bootsmann.

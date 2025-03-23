@@ -1306,7 +1306,7 @@ Disparaît après 70 jours d'utilisation ou par retrait.
 itmname_indian_5 {Amulette "Tête réduite"}
 itmdescr_indian_5
 {
-Réduit de 10 % le risque d'être abordé.
+Avant la salve de mousquets, il neutralise 10% de l'équipage ennemi, ce qui facilite l'embarquement. Nécessite la Salve de Mousquet.
 Augmente le temps de réparation de 10%.
 Ne peut être activé qu'une seule fois.
 Fonctionne pour un capitaine et un bosco.

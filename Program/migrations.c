@@ -16,7 +16,7 @@ void ApplyMigrations() {
 void CheckForUninstalledMods() {
   trace("Checking for uninstalled mods...");
 
-  aref migrations;
+  aref migrations, migration;
   makearef(migrations, pchar.migrations);
   int migrationsLength = GetAttributesNum(migrations);
   object ObsoleteState; //сюда сохраним все ненайденные моды
@@ -25,12 +25,15 @@ void CheckForUninstalledMods() {
 
   // идём по всем миграциям в сейве
   for (int i = 0; i < migrationsLength; i++) {
-    string migName = GetAttributeName(GetAttributeN(migrations, i));
-    if (strcut(migName, 2, 2) != "_")) continue; // это миграция не из мода
+		migration = GetAttributeN(migrations, i)
+    string migName = GetAttributeName(migration);
+    string exactMigName = GetAttributeValue(migration);
+    if (!IsMigrationFromMod(migName)) continue;               // это миграция не из мода, пропускаем
+    if (IsReversableMigration(exactMigName)) continue;        // миграция обратима, пропускаем
 
     migName = strcut(migName, 3, strlen(migName) - 2);        // режем "_id"
-    string modName = getModeNameByMigName(migName, 0);        // получаем название мода
-    if (!isModInstalled(modName)) ObsoleteMods.(modName) = 1; // записываем название
+    string modName = GetModeNameByMigName(migName, 0);        // получаем название мода
+    if (!IsModInstalled(modName)) ObsoleteMods.(modName) = 1; // записываем название
   }
 
 
@@ -242,7 +245,7 @@ void Migration_UnloadSegments(ref migrationState) {
 }
 
 // получаем название мода из миграции
-string getModeNameByMigName(string currentMigName, int iteration){
+string GetModeNameByMigName(string currentMigName, int iteration){
   // если на конце уже не цифра, значит это и есть папка мода
   string lastChar = strcut(currentMigName, strlen(currentMigName) - 1, strlen(currentMigName) - 1);
   if (lastChar != "0" && sti(lastChar) == 0) return currentMigName;
@@ -251,11 +254,11 @@ string getModeNameByMigName(string currentMigName, int iteration){
   string tempName1 = strcut(currentMigName, 0, strlen(currentMigName) - 2);
 
   // ррррекурррррсивное прогррррамиррррование
-  return getModeNameByMigName(tempName1, iteration + 1) // следующая итерация
+  return GetModeNameByMigName(tempName1, iteration + 1) // следующая итерация
 }
 
 // есть ли папка с модом?
-bool isModInstalled(string folderName)
+bool IsModInstalled(string folderName)
 {
 	string searchPath = "Program\"+MOD_MIGRATION_FOLDER;
 	object fileFinder;
@@ -277,4 +280,20 @@ bool isModInstalled(string folderName)
 		if (fileName == folderName) foundedMod = true;
 	}
   return foundedMod;
+}
+
+// Миграция добавлена модом
+bool IsMigrationFromMod(string migrationName)
+{
+  return strcut(migrationName, 2, 2) == "_";
+}
+
+// В названии миграции есть ключевое слово revers, она не должна добавлять новые предметы, корабли и проч.
+// Например, она выдаёт кому-то уже существующий в оригинальной игре предмет или меняет характеристики персонажей.
+// Таким образом удаление мода с этой миграцией ничего не ломает.
+bool IsReversableMigration(string exactMigName)
+{
+  if (strlen(exactMigName) < 7) return false;
+
+  return strcut(exactMigName, 0, 6) == "revers_";
 }

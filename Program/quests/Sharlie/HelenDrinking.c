@@ -2245,6 +2245,7 @@ void Helen_GiveSexDrink() {
 void Helen_GiveSexGoToRoom(string qName) {
 	sld = CharacterFromID("Helena");
 	ChangeCharacterAddressGroup(sld, loadedLocation.fastreload + "_tavern_upstairs", "quest", "quest3");
+	pchar.quest.sex_partner = "Helena";
 	DoFunctionReloadToLocation(loadedLocation.fastreload + "_tavern_upstairs", "quest", "quest4", "GiveKissInRoom");
 }
 
@@ -2258,14 +2259,8 @@ void GiveKissInRoom()
 	LAi_SetActorType(pchar);
 	LAi_ActorAnimation(pchar, "kiss", "1", 7.5);
 	
-	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-	{
-		sld = characterFromId("Mary"); // Мэри
-	}
-	if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-	{
-		sld = characterFromId("Helena"); // Элен
-	}
+	ref sld = characterFromId(pchar.quest.sex_partner);
+
 	TeleportCharacterToPosAy(sld, 0.10, 0.00, -2.10, 0.00);
 	LAi_SetActorType(sld);
 	LAi_ActorAnimation(sld, "kiss", "1", 7.5);
@@ -2286,36 +2281,27 @@ void GiveSexInRoom()
 	locCameraFollow();
 	LAi_SetPlayerType(pchar);
 	ChangeCharacterAddressGroup(pchar, PChar.location, "quest", "quest4");
-	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+	
+	
+	ref sld = characterFromId(pchar.quest.sex_partner);
+	
+	int addHealthQuantity = 6;
+	float addMaxHealthQuantity = 1;
+	
+	if (pchar.quest.sex_partner == "Mary")
 	{
-		sld = characterFromId("Mary"); // Мэри
-			
-		if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
-		{
-			AddCharacterHealth(pchar, 24);
-			AddCharacterMaxHealth(pchar, 2.0);
-		}
-		else 
-		{
-			AddCharacterHealth(pchar, 12);
-			AddCharacterMaxHealth(pchar, 1.0);
-		}
+		addHealthQuantity *= 2;
 	}
-	if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+	
+	if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
 	{
-		sld = characterFromId("Helena"); // Элен
-		
-		if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
-		{
-			AddCharacterHealth(pchar, 12);
-			AddCharacterMaxHealth(pchar, 2.0);
-		}
-		else 
-		{
-			AddCharacterHealth(pchar, 6);
-			AddCharacterMaxHealth(pchar, 1.0);
-		}
+		addHealthQuantity *= 2;
+		addMaxHealthQuantity *= 2;
 	}
+	
+	AddCharacterHealth(pchar, addHealthQuantity);
+	AddCharacterMaxHealth(pchar, addMaxHealthQuantity);
+
 	ChangeCharacterAddressGroup(sld, PChar.location, "quest", "quest3");
 	sld.dialog.currentnode = "sex_after";
 	LAi_SetOfficerType(sld);
@@ -2380,14 +2366,13 @@ void GiveSexInRoom()
 		break;
 	}
 	
-	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+	
+	if (pchar.quest.sex_partner == "Mary")
 	{
 		pchar.quest.Mary_giveme_sex.over = "yes"; //снять прерывание
-		pchar.quest.Mary_giveme_sex1.over = "yes"; //снять прерывание лесник. 	
-			
-		sld = characterFromId("Mary"); // Мэри
+		pchar.quest.Mary_giveme_sex1.over = "yes"; //снять прерывание лесник. 
 	}
-	if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+	if (pchar.quest.sex_partner == "Helena")
 	{
 		pchar.quest.Helen_GiveSex.win_condition.l1 = "Timer";
 		pchar.quest.Helen_GiveSex.win_condition.l1.date.day = GetAddingDataDay(0, 2, 0);
@@ -2396,8 +2381,6 @@ void GiveSexInRoom()
 		pchar.quest.Helen_GiveSex.win_condition.l2 = "Location_Type";
 		pchar.quest.Helen_GiveSex.win_condition.l2.location_type = "town";
 		pchar.quest.Helen_GiveSex.function = "Helen_GiveSex";
-		
-		sld = characterFromId("Helena"); // Элен
 	}
 	AddCharacterSkill(sld, skill, 1);
 	Log_Info(""+sld.name + StringFromKey("HelenDrinking_23") + XI_ConvertString(skill));

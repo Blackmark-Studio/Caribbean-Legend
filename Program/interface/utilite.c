@@ -569,7 +569,7 @@ void FillUpgradesList(string strAccess, string smode, int iCannonMaterial)  // t
 	int iMax;
 	if(smode == "cannons")
 	{
-		iMax = CANNON_TYPES_QUANTITY + 1;
+		iMax = GetArraySize(&Cannon) + 1;
 	}
 	else
 	{

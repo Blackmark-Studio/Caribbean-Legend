@@ -258,7 +258,7 @@ void DoTakeAbordageGoods(ref rOneChr, ref rSecChr)
 		maxPrice = 0;
 		iGood = -1;
 		//ищем самый дорогой товар на борту
-		for (i=0; i < GOODS_QUANTITY; i++)
+		for (i=0; i < GetArraySize(&Goods); i++)
 		{
 			itmp = GetCargoGoods(rSecChr, i);
 			if (itmp > 0 && sti(Goods[i].Cost) > maxPrice)

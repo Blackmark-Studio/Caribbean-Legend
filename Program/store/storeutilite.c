@@ -377,7 +377,7 @@ void UpdateStore(ref pStore)
 	aref gref, curref, arTypes;
 	makearef(gref, pStore.Goods);
 	
-	for(int i=0; i<GOODS_QUANTITY; i++)
+	for(int i=0; i<GetArraySize(&Goods); i++)
 	{
 		tmpstr = Goods[i].name;
 		if (!CheckAttribute(gref,tmpstr) ) continue;		
@@ -519,7 +519,7 @@ void FillShipStore( ref chr)
 	int iQuantity = 0;
 	string goodName;
 	
-	for(int i = 0; i<GOODS_QUANTITY; i++)
+	for(int i = 0; i<GetArraySize(&Goods); i++)
 	{
 		iQuantity = GetCargoGoods(chr, i); 
 		SetStoreGoods(pref, i, iQuantity);
@@ -544,7 +544,7 @@ int FindStore(string sColony)
 void CheckForGoodsSpoil(aref chr)
 {
 	int iGoodsQ = 0;
-	for(int i = 0; i < GOODS_QUANTITY; i++)
+	for(int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		iGoodsQ = GetCargoGoods(chr, i);
 		if(iGoodsQ > 0)
@@ -569,7 +569,7 @@ int GetStoreFreeSpace(object refStore)
 {
 	int iGoodsQ = 0;
 	int iWeight = 0;
-	for(int i = 0; i < GOODS_QUANTITY; i++)
+	for(int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		iGoodsQ = GetStoreGoodsQuantity(refStore, i);
 		iWeight = iWeight + iGoodsQ * stf(Goods[i].weight);
@@ -603,7 +603,7 @@ void SetPriceListByStoreMan(ref rchar)   //rchar - это колония
     {
         refStore = &stores[sti(rchar.StoreNum)];
         attr1 = rchar.id; // ветка, где храним цены
-        for (i = 0; i < GOODS_QUANTITY; i++)
+        for (i = 0; i < GetArraySize(&Goods); i++)
         {
             sGoods = "Gidx" + i;
         	tmpstr = Goods[i].name;
@@ -645,7 +645,7 @@ void SetNull2StoreMan(ref rchar)
     {
         refStore = &stores[sti(rchar.StoreNum)];
 
-        for (i = 0; i < GOODS_QUANTITY; i++)
+        for (i = 0; i < GetArraySize(&Goods); i++)
         {
             tmpstr = Goods[i].name;
         	if( CheckAttribute(refStore,"Goods."+tmpstr) )
@@ -684,7 +684,7 @@ void SetNull2StoreManPart(ref rchar, float part)
     {
         refStore = &stores[sti(rchar.StoreNum)];
 
-        for (i = 0; i < GOODS_QUANTITY; i++)
+        for (i = 0; i < GetArraySize(&Goods); i++)
         {
             tmpstr = Goods[i].name;
         	if (CheckAttribute(refStore,"Goods."+tmpstr) )
@@ -773,7 +773,7 @@ int GetStorageUsedWeight(object refStore)
 {
 	int iGoodsQ = 0;
 	int iWeight = 0;
-	for(int i = 0; i < GOODS_QUANTITY; i++)
+	for(int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		iGoodsQ = GetStorageGoodsQuantity(refStore, i);
 		iWeight = iWeight + GetGoodWeightByType(i, iGoodsQ)

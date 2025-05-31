@@ -1953,7 +1953,7 @@ int TransferGoods_CalculateWeight(ref _character)
 	String goodName;
 	String characterId = _character.Id;
 	
-	for(int i = 0; i < GOODS_QUANTITY; i++)
+	for(int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		goodName = Goods[i].Name;
 		
@@ -1981,7 +1981,7 @@ int TransferGoods_StartTransfer(ref rChar, string sColony) // rChar - кому �
 	
 	rTreasurer = GetPCharTreasurerRef(); // Казначей. Ему даем экспу
 	
-	for(i = 0; i < GOODS_QUANTITY; i++)
+	for(i = 0; i < GetArraySize(&Goods); i++)
 	{
 		rGood = &Goods[i];
 		sGood = rGood.name;

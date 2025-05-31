@@ -5056,6 +5056,7 @@ void ProcessDialogEvent()
 			dialog.text = "На самом деле, выяснить истину очень легко, хи-хи. Если ты ни с кем не был, то должен быть сейчас полон сил. Вот сейчас мы это и проверим, да!";
 			link.l1 = "Мэри...";
 			link.l1.go = "exit";
+			pchar.quest.sex_partner = Npchar.id;
 			AddDialogExitQuest("cabin_sex_go");
 			pchar.questTemp.PZ_MaryRazgovorOBordeli = true;
 		break;
@@ -8501,6 +8502,7 @@ void ProcessDialogEvent()
 				dialog.text = "Всё хорошо, Шарль, правда. Я просто стараюсь об этом не вспоминать, вот и всё. К тому же от самого страшного ты меня спас. А теперь давай не будем трепаться почём зря и просто наверстаем упущенное.";
 				link.l1 = "Чертовски правильная мысль, Элен.";
 				link.l1.go = "exit";
+				pchar.quest.sex_partner = Npchar.id;
 				AddDialogExitQuest("cabin_sex_go");
 			}
 		break;
@@ -8509,6 +8511,7 @@ void ProcessDialogEvent()
 				dialog.text = "Шарль, я не хочу - я требую, да!";
 				link.l1 = "Не рискну тебе отказать...";
 				link.l1.go = "exit";
+				pchar.quest.sex_partner = Npchar.id;
 				AddDialogExitQuest("cabin_sex_go");
 		break;
 		

@@ -7385,16 +7385,8 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		TeleportCharacterToPosAy(pchar, -0.40, 10.00, 4.60, -1.50);
 		LAi_SetActorType(pchar);
 		LAi_ActorAnimation(pchar, "kiss", "1", 16.5);
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-		{
-			sld = characterFromId("Mary");
-			DoQuestCheckDelay("Mary_LoveSex_New", 15.0);
-		}
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-		{
-			sld = characterFromId("Helena");
-			DoQuestCheckDelay("Helena_LoveSex_New", 15.0);
-		}
+		sld = characterFromId(pchar.quest.sex_partner);
+		DoQuestCheckDelay("MaryHelena_LoveSex_New", 15.0);
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
 		TeleportCharacterToPosAy(sld, -1.00, 10.00, 4.60, 1.50);
 		LAi_SetActorType(sld);
@@ -7417,16 +7409,8 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		TeleportCharacterToPosAy(pchar, -1.30, 20.00, -1.10, 3.00);
 		LAi_SetActorType(pchar);
 		LAi_ActorAnimation(pchar, "kiss", "1", 9.5);
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-		{
-			sld = characterFromId("Mary");
-			DoQuestCheckDelay("Mary_LoveSex_New", 9.5);
-		}
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-		{
-			sld = characterFromId("Helena");
-			DoQuestCheckDelay("Helena_LoveSex_New", 9.5);
-		}
+		sld = characterFromId(pchar.quest.sex_partner);
+		DoQuestCheckDelay("MaryHelena_LoveSex_New", 9.5);
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
 		TeleportCharacterToPosAy(sld, -1.30, 20.00, -1.70, 0.00);
 		LAi_SetActorType(sld);
@@ -7444,16 +7428,8 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		TeleportCharacterToPosAy(pchar, 1.50, 2.14, -3.80, -1.50);
 		LAi_SetActorType(pchar);
 		LAi_ActorAnimation(pchar, "kiss", "1", 8.5);
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-		{
-			sld = characterFromId("Mary");
-			DoQuestCheckDelay("Mary_LoveSex_New", 8.5);
-		}
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-		{
-			sld = characterFromId("Helena");
-			DoQuestCheckDelay("Helena_LoveSex_New", 8.5);
-		}
+		sld = characterFromId(pchar.quest.sex_partner);
+		DoQuestCheckDelay("MaryHelena_LoveSex_New", 8.5);
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
 		TeleportCharacterToPosAy(sld, 0.90, 2.14, -3.80, 1.50);
 		LAi_SetActorType(sld);
@@ -7471,16 +7447,10 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		TeleportCharacterToPosAy(pchar, -0.55, 6.06, 1.65, -1.50);
 		LAi_SetActorType(pchar);
 		LAi_ActorAnimation(pchar, "kiss", "1", 8.5);
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-		{
-			sld = characterFromId("Mary");
-			DoQuestCheckDelay("Mary_LoveSex_New", 8.5);
-		}
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-		{
-			sld = characterFromId("Helena");
-			DoQuestCheckDelay("Helena_LoveSex_New", 8.5);
-		}
+
+		sld = characterFromId(pchar.quest.sex_partner);
+		DoQuestCheckDelay("MaryHelena_LoveSex_New", 8.5);
+
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
 		TeleportCharacterToPosAy(sld, -1.15, 6.06, 1.65, 1.50);
 		LAi_SetActorType(sld);
@@ -7498,30 +7468,22 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		TeleportCharacterToPosAy(pchar, 1.20, 3.00, -1.40, 3.00);
 		LAi_SetActorType(pchar);
 		LAi_ActorAnimation(pchar, "kiss", "1", 7.5);
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-		{
-			sld = characterFromId("Mary");
-			DoQuestCheckDelay("Mary_LoveSex_New", 7.5);
-		}
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-		{
-			sld = characterFromId("Helena");
-			DoQuestCheckDelay("Helena_LoveSex_New", 7.5);
-		}
+		sld = characterFromId(pchar.quest.sex_partner);
+		DoQuestCheckDelay("MaryHelena_LoveSex_New", 7.5);
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
 		TeleportCharacterToPosAy(sld, 1.20, 3.00, -2.00, 0.00);
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "kiss", "1", 7.5);
 		locCameraFromToPos(-0.55, 4.42, -2.84, true, 2.06, 2.82, -2.00);
 	}
-	else if (sQuestName == "Helena_LoveSex_New") // секс с Элен
+	else if (sQuestName == "MaryHelena_LoveSex_New") // секс с Элен
 	{
 		EndQuestMovie();
 		bDisableCharacterMenu = false;
 		LAi_SetPlayerType(pchar);
 		locCameraTarget(PChar);
 		locCameraFollow();
-		sld = CharacterFromID("Helena");
+		sld = CharacterFromID(pchar.quest.sex_partner);
 		ChangeCharacterAddressGroup(pchar, PChar.location, "reload", "reload1");
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
 		if (Get_My_Cabin() == "My_Cabin_Huge")
@@ -7554,6 +7516,12 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		LAi_ActorFollow(sld, pchar, "", -1);
 		LAi_SetOfficerType(sld);
 		sld.Dialog.CurrentNode = "sex_after";
+
+		if (pchar.quest.sex_partner == "Mary")
+		{
+			if (CheckAttribute(pchar, "questTemp.PZ_MaryRazgovorOBordeli")) sld.Dialog.CurrentNode = "PZ_MaryRazgovorOBordeli_Bad_17";
+		}
+		
 		if (CheckAttribute(pchar, "questTemp.PZ_DevushkaSnovaOfficer")) sld.Dialog.CurrentNode = "PZ_DevushkaSnovaOfficer_Dialog1";
 		SetLaunchFrameFormParam("", "", 0, 15);
 		SetLaunchFrameFormPic("loading\inside\censored1.tga");
@@ -7561,17 +7529,31 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		LaunchFrameForm();
 		WaitDate("", 0, 0, 0, 3, 10);
 		RecalculateJumpTable();
-		if (IsEquipCharacterByArtefact(pchar, "totem_03"))     
+		
+		int addHealthQuantity = 6;
+		float addMaxHealthQuantity = 1;
+		
+		if (pchar.quest.sex_partner == "Mary")
 		{
-			AddCharacterHealth(pchar, 12);
-			AddCharacterMaxHealth(pchar, 2.0);
+			addHealthQuantity *= 2;
 		}
-		else 
+		
+		if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
 		{
-			AddCharacterHealth(pchar, 6);
-			AddCharacterMaxHealth(pchar, 1.0);
-		} 
+			addHealthQuantity *= 2;
+			addMaxHealthQuantity *= 2;
+		}
+		
+		AddCharacterHealth(pchar, addHealthQuantity);
+		AddCharacterMaxHealth(pchar, addMaxHealthQuantity);
+		
 		LAi_SetCurHPMax(pchar);
+		
+		if (pchar.quest.sex_partner == "Mary")
+		{
+			pchar.quest.Mary_giveme_sex.over = "yes"; // снять прерывание
+			pchar.quest.Mary_giveme_sex1.over = "yes"; // снять прерывание лесник.
+		}
 	}
 	else if (sQuestName == "Helena_LoveSex") // Классический вариант
 	{
@@ -7592,68 +7574,6 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 			AddCharacterMaxHealth(pchar, 1.0);
 		} 
 		LAi_SetCurHPMax(pchar);
-	}
-	else if (sQuestName == "Mary_LoveSex_New") // секс с Мэри
-	{
-		EndQuestMovie();
-		bDisableCharacterMenu = false;
-		LAi_SetPlayerType(pchar);
-		locCameraTarget(PChar);
-		locCameraFollow();
-		sld = CharacterFromID("Mary");
-		ChangeCharacterAddressGroup(pchar, PChar.location, "reload", "reload1");
-		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-		if (Get_My_Cabin() == "My_Cabin_Huge")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc1");
-			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc2");
-		}
-		if (Get_My_Cabin() == "My_Cabin")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc2");
-			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc5");
-		}
-		if (Get_My_Cabin() == "My_Cabin_Medium2")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "loc0");
-			ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto3");
-		}
-		if (Get_My_Cabin() == "My_Cabin_Medium")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc0");
-			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc2");
-		}
-		if (Get_My_Cabin() == "My_Cabin_Small")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "loc1");
-			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc0");
-		}
-		LAi_SetActorType(sld);
-		LAi_ActorTurnToCharacter(sld, pchar);
-		LAi_ActorFollow(sld, pchar, "", -1);
-		LAi_SetOfficerType(sld);
-		sld.Dialog.CurrentNode = "sex_after";
-		if (CheckAttribute(pchar, "questTemp.PZ_MaryRazgovorOBordeli")) sld.Dialog.CurrentNode = "PZ_MaryRazgovorOBordeli_Bad_17";
-		if (CheckAttribute(pchar, "questTemp.PZ_DevushkaSnovaOfficer")) sld.Dialog.CurrentNode = "PZ_DevushkaSnovaOfficer_Dialog1";
-		SetLaunchFrameFormParam("", "", 0,  15);
-		SetLaunchFrameFormPic("loading\inside\censored1.tga");
-		PlayStereoSound("sex\sex" + (rand(9) + 1) + ".wav");
-		LaunchFrameForm();
-		WaitDate("", 0, 0, 0, 3, 10);
-		RecalculateJumpTable();
-		if (IsEquipCharacterByArtefact(pchar, "totem_03"))     
-		{
-			AddCharacterHealth(pchar, 24);
-			AddCharacterMaxHealth(pchar, 2.0);
-		}
-		else 
-		{
-			AddCharacterHealth(pchar, 12);
-			AddCharacterMaxHealth(pchar, 1.0);
-		}
-		LAi_SetCurHPMax(pchar);
-		pchar.quest.Mary_giveme_sex.over = "yes"; // снять прерывание
-		pchar.quest.Mary_giveme_sex1.over = "yes"; // снять прерывание лесник.
 	}
 	else if (sQuestName == "Mary_LoveSex") // Классический вариант
 	{

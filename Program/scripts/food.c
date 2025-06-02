@@ -71,6 +71,11 @@ int CalculateShipFood(ref _chr)
 		foodNeeded = 1.0;
 	}
 
+	if (CheckAttribute(pchar, "questTemp.VPVL_Food")) // andre39966, для квеста "В плену великого улова"
+    {
+		foodNeeded *= 0.85; // Уменьшаем на 15%
+    }
+	
 	iFoodQuantity = makeint(iFoodQuantity/foodNeeded + 0.2);
 
 	return iFoodQuantity;
@@ -143,10 +148,10 @@ void DailyRatsEatGoodsUpdate(ref chref)
 		if (CheckAttribute(chref, "quest.givemecat")) iQuantity = iQuantity * 0.75 + 1; // Митрокоста + Лесник - кошка на крбале ГГ снижение на 25%																			 
         RemoveCharacterGoodsSelf(chref, iGoods, iQuantity);
         //PlaySound("interface\notebook.wav");
-        if(LanguageGetLanguage() == "russian") Log_SetStringToLog(RandSwear());
-        Log_info(StringFromKey("food_1") +
-                           chref.Ship.Name + LinkRandPhrase(StringFromKey("food_2"), StringFromKey("food_3"), StringFromKey("food_4")) +
-                           iQuantity + StringFromKey("food_5") + LanguageConvertString(iSeaGoods, "seg_" + Goods[iGoods].Name));
+        //if(LanguageGetLanguage() == "russian") Log_SetStringToLog(RandSwear());
+        notification(StringFromKey("food_1") +
+                           LinkRandPhrase(StringFromKey("food_2"), StringFromKey("food_3"), StringFromKey("food_4")) +
+                           iQuantity + StringFromKey("food_5") + LanguageConvertString(iSeaGoods, "seg_" + Goods[iGoods].Name), "Rats");
 
         Statistic_AddValue(pchar, "RatsEatGoods", iQuantity);
                 
@@ -312,7 +317,11 @@ void DailyEatCrewUpdateForShip(ref rChar, bool IsCompanionTraveler) // IsCompani
 			}
 		}
 		// повторный контроль
-		if(iCrewQty < 1 && GetCargoGoods(rChar, GOOD_SLAVES) < 1) return;
+		if(iCrewQty < 1 && GetCargoGoods(rChar, GOOD_SLAVES) < 1)
+        {
+            UpdatePlayerSquadronPower();
+            return;
+        }
 	}
 	// расчёт медицины <--
 
@@ -488,6 +497,8 @@ void DailyEatCrewUpdateForShip(ref rChar, bool IsCompanionTraveler) // IsCompani
 			}
 		}
 	}
+    // Механика мощи
+    UpdatePlayerSquadronPower();
 }
 
 void DailyTradersMoneyUpdate()

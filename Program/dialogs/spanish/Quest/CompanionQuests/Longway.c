@@ -89,7 +89,7 @@ void ProcessDialogEvent()
 				npchar.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
 				npchar.Dialog.CurrentNode = "Tichingitu_officer";
 			}
-			if (npchar.id == "FMQT_mercen" || npchar.id == "Folke")
+			if (npchar.id == "Duran" || npchar.id == "Folke")
 			{
 				LAi_SetOfficerType(npchar);
 				npchar.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -160,7 +160,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_2":
-			dialog.text = "Longway cree que sabe quién envió a estos hombres tras de ti, Mi Señor Capitán.";
+			dialog.text = "Longway cree que sabe quién envió a estos hombres tras de ti, mi señor capitán.";
 			link.l1 = "¿Algo de lo que deba estar al tanto?";
 			link.l1.go = "PZ_Longway_3";
 		break;
@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_4":
-			dialog.text = "Es prudente estar preparado para cualquier cosa, Mi Señor Capitán.";
+			dialog.text = "Es prudente estar preparado para cualquier cosa, mi señor capitán.";
 			link.l1 = "Palabras sabias. Así lo haremos. Pero, ¿qué buscaba Lucas? ¿Qué pensaba que tenía yo? ¿Alguna idea, Longway?";
 			link.l1.go = "PZ_Longway_5";
 		break;
@@ -195,7 +195,7 @@ void ProcessDialogEvent()
 		
 		// Этап 1, ВЕРНЫЙ КЛЯТВЕ
 		case "PZ_Longway_11":
-			dialog.text = "Mi Señor Capitán, Longway desea hablar con usted. Es de gran importancia.";
+			dialog.text = "Mi señor capitán, Longway desea hablar con usted. Es de gran importancia.";
 			if (CheckAttribute(pchar, "questTemp.PZ_PodozrenieLucas"))
 			{
 				link.l1 = "¿Qué ocurre, Longway? ¿Te preocupa la forma en que Lucas se despidió, o has descubierto algo nuevo?";
@@ -222,7 +222,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_14":
-			dialog.text = "Eso es cierto, Mi Señor Capitán. Pero Longway no es ni un trabajador ni un sirviente. Vino a ayudar por su propia voluntad, y puede irse de la misma manera. No será para siempre - hay un asunto importante que atender. Longway espera regresar una vez que esté resuelto.";
+			dialog.text = "Eso es cierto, mi señor capitán. Pero Longway no es ni un trabajador ni un sirviente. Vino a ayudar por su propia voluntad, y puede irse de la misma manera. No será para siempre - hay un asunto importante que atender. Longway espera regresar una vez que esté resuelto.";
 			link.l1 = "¿Qué asunto es este? Dime, si no como tu capitán, al menos como alguien que ha pasado por mucho contigo.";
 			link.l1.go = "PZ_Longway_15";
 		break;
@@ -238,7 +238,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_NeOtpuskaem_1":
-			dialog.text = "No intentes jugar con mi compasión o sentido del deber. Lo entiendo perfectamente. ¿Has hecho alguna vez un juramento, Mi Señor Capitán?";
+			dialog.text = "No intentes jugar con mi compasión o sentido del deber. Lo entiendo perfectamente. ¿Has hecho alguna vez un juramento, mi señor capitán?";
 			link.l1 = "Por supuesto que sí. Así que cuéntame todo tal como es, y mis hombres y yo sin duda te ayudaremos.";
 			link.l1.go = "PZ_Longway_NeOtpuskaem_2";
 		break;
@@ -274,7 +274,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_Otpustit_1":
-			dialog.text = "No pensé que me dejarías ir tan fácilmente. Gracias, Mi Señor Capitán.";
+			dialog.text = "No pensé que me dejarías ir tan fácilmente. Gracias, mi señor capitán.";
 			link.l1 = "Ah, no es nada. Pero dime, ¿dónde puedo encontrarte una vez que termines tus asuntos?";
 			link.l1.go = "PZ_Longway_GdeIskat_1";
 		break;
@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 			bDisableFastReload = false;
 			chrDisableReloadToLocation = false;
 			
-			SetTimerCondition("PZ_IshemLongway", 0, 0, 30, false);	// ВЕРНУТЬ 30 дней
+			SetTimerCondition("PZ_IshemLongway", 0, 0, 30, false);
 		break;
 		
 		case "PZ_SharliePlennik_BadFinal_1":
@@ -348,7 +348,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_BasTerStop":
 			dialog.text = "Ven con nosotros, el Comandante desea hablar contigo.";
-			link.l1 = "Supongo que esto tiene que ver con mi búsqueda del chino?";
+			link.l1 = "Supongo que esto tiene que ver con mi búsqueda del chino...";
 			link.l1.go = "PZ_BasTerStop_2";
 		break;
 		
@@ -473,7 +473,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_BasTer_SOtryadom_DialogLongway_3":
-			dialog.text = "Aye. Longway confía en usted, Mi Señor Capitán.";
+			dialog.text = "Aye. Longway confía en usted, mi señor capitán.";
 			link.l1 = "Ahí, eso es mejor. Ahora, dime...";
 			link.l1.go = "PZ_BasTer_SOtryadom_DialogLongway_4";
 		break;
@@ -486,7 +486,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.PZ_OhotnikOtryad"))
 			{
 				dialog.text = "Monsieur, ¿qué está pasando? ¿Qué es esta... conmovedora reunión? Se suponía que debías ayudarnos a eliminar a ese salvaje chino, ¿no es así?";
-				link.l1 = "Lo soy. Me lo llevo conmigo, y toda esta matanza se detendrá. Dirás al comandante que lo matamos juntos. ¿Trato?";
+				link.l1 = "Así es. Me lo llevaré conmigo y toda esta matanza se detendrá. Y tu le dirás al comandante que lo matamos juntos. ¿Trato?";
 				link.l1.go = "PZ_BasTer_SOtryadomOhotnik_1";
 			}
 			if (CheckAttribute(pchar, "questTemp.PZ_DrugOtryad"))
@@ -514,7 +514,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_BasTer_SOtryadomDrug_4":
-			dialog.text = "Así es, Mi Señor Capitán. Longway vio a esa banda. Se escondieron más adentro de la cueva para que no lo notaran. Y Longway escuchó sonidos de conversación, maldiciones y peleas entre los bandidos y los soldados.";
+			dialog.text = "Así es, mi señor capitán. Longway vio a esa banda. Se escondieron más adentro de la cueva para que no lo notaran. Y Longway escuchó sonidos de conversación, maldiciones y peleas entre los bandidos y los soldados.";
 			link.l1 = "";
 			link.l1.go = "PZ_BasTer_SOtryadomDrug_5";
 		break;
@@ -571,7 +571,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_BasTer_SOtryadomOhotnik_1":
 			dialog.text = "¡De ninguna manera, monsieur! Mató a un montón de nuestros hombres, ¿y ahora dices que se saldrá con la suya? ¡O nos ayudas a matar al bastardo, o al menos mantente malditamente fuera de nuestro camino!";
-			link.l1 = "Tengo miedo de que tenga que intervenir. Lo siento, de verdad.";
+			link.l1 = "Me temo que debo intervenir. Lo siento, de verdad.";
 			link.l1.go = "PZ_BasTer_SOtryadomOhotnik_2";
 		break;
 		
@@ -791,7 +791,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_IshemLongway_Zastupaemsya_2":
-			dialog.text = "¿Los absuelves, Mi Señor Capitán?";
+			dialog.text = "¿Los absuelves, mi señor capitán?";
 			link.l1 = "Te absuelvo, Longway. Y te insto a no juzgar a las personas por el color de su piel. Tú, más que nadie, deberías entender eso. Nos interrumpieron, ¿dónde estábamos...?";
 			link.l1.go = "PZ_IshemLongway_Zastupaemsya_3";
 		break;
@@ -829,7 +829,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_IshemLongway_Zastupaemsya_6":
-			dialog.text = "Claro, Mi Señor Capitán.";
+			dialog.text = "Claro, mi señor capitán.";
 			link.l1 = "Eso está bien, pero no nos demoremos aquí. Tú y yo tenemos mucho de qué hablar. Sígueme - vamos de vuelta al barco.";
 			link.l1.go = "PZ_IshemLongway_Zastupaemsya_7";
 		break;
@@ -863,7 +863,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_IshemLongway_SrazuNashli_1":
-			dialog.text = "¿Mi Señor Capitán, realmente eres tú...?";
+			dialog.text = "¿Mi señor capitán, realmente eres tú...?";
 			link.l1 = "Sí, Longway. ¿Estás bien?";
 			link.l1.go = "PZ_IshemLongway_SrazuNashli_2";
 		break;
@@ -890,12 +890,12 @@ void ProcessDialogEvent()
 		
 		case "PZ_IshemLongway_SrazuNashli_4":
 			dialog.text = "Longway comprobará si los soldados todavía vienen.";
-			link.l1 = "Iremos juntos - no podemos mantener nuestra defensa contra toda la guarnición.";
+			link.l1 = "Iremos juntos, no podemos mantener nuestra defensa contra toda la guarnición.";
 			link.l1.go = "PZ_IshemLongway_SrazuNashli_5";
 		break;
 		
 		case "PZ_IshemLongway_SrazuNashli_5":
-			dialog.text = "Sí, Mi Señor Capitán?";
+			dialog.text = "Sí, mi señor capitán.";
 			link.l1 = "Tenemos mucho de qué hablar. Ahora sígueme, necesitamos levar anclas de inmediato.";
 			link.l1.go = "PZ_IshemLongway_SrazuNashli_6";
 		break;
@@ -906,7 +906,7 @@ void ProcessDialogEvent()
 		
 		// Этап 2, СТРАНИЦЫ ИСТОРИИ
 		case "PZ_LongwayRazgovorOProshlom":
-			dialog.text = "Gracias de nuevo por echarme una mano, Mi Señor Capitán. Estoy seguro de que tienes muchas preguntas.";
+			dialog.text = "Gracias de nuevo por echarme una mano, mi señor capitán. Estoy seguro de que tienes muchas preguntas.";
 			link.l1 = "Eso es decir poco. ¿Por qué mataste a esos soldados? No matas por placer, lo sé.";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_2";
 			DelLandQuestMark(npchar);
@@ -925,20 +925,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_4":
-			dialog.text = "Por favor, Mi Señor Capitán, comprenda a Longway. Él hizo un juramento de hacer esto solo. No lo presione. Le debe eso a Longway.";
+			dialog.text = "Por favor, mi señor capitán, comprenda a Longway. Él hizo un juramento de hacer esto solo. No lo presione. Le debe eso a Longway.";
 			link.l1 = "Estoy verdaderamente agradecida, pero podría haberme encargado de van Merden yo misma en ese momento. Sin embargo, estábamos a mano desde el principio: dijiste que salvé tu reputación, y tú salvaste mi vida. Ahora te he salvado de nuevo.";
 			if (CheckAttribute(pchar, "questTemp.PZ_NashliArhiv")) link.l1.go = "PZ_LongwayRazgovorOProshlom_5";
 			else link.l1.go = "PZ_LongwayRazgovorOProshlom_Grubim_1";
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_5":
-			dialog.text = "Hmm... tienes razón, Mi Señor Capitán. Longway cree que eres su verdadero amigo entre los hombres blancos. Una vez, pensó así antes, pero estaba amargamente equivocado. ¿Recuerdas a John Murdock? ¿Johan van Merden?";
+			dialog.text = "Hmm... tienes razón, mi señor capitán. Longway cree que eres su verdadero amigo entre los hombres blancos. Una vez, pensó así antes, pero estaba amargamente equivocado. ¿Recuerdas a John Murdock? ¿Johan van Merden?";
 			link.l1 = "Qué extraño que menciones a van Merden. Recientemente, alguien arrancó unas páginas de su archivo justo bajo mis narices. ¿Estaba relacionado con tu caso? ¿Encontraste al ladrón?";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_6";
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_6":
-			dialog.text = "Lo hice. El ladrón era... Longway. Él lo siente mucho, Mi Señor Capitán. En ese entonces, no sabía si podía confiar completamente en usted.";
+			dialog.text = "Lo hice. El ladrón era... Longway. Él lo siente mucho, mi señor capitán. En ese entonces, no sabía si podía confiar completamente en usted.";
 			if (sti(pchar.reputation.nobility) <= 60)
 			{
 				link.l1 = "¿Hablas de amistad, pero me robas a mis espaldas? Esta es la primera y última vez, Longway. ¿Entiendes?";
@@ -962,7 +962,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_Grubim_2":
-			dialog.text = "Sí, Mi Señor Capitán\nLongway busca a la persona viva más importante que le queda: Chang Xing.";
+			dialog.text = "Sí, mi señor capitán.\nLongway busca a la persona viva más importante que le queda: Chang Xing.";
 			link.l1 = "Chang Xing, ¿es tu mejor amigo?";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_7";
 		break;
@@ -983,7 +983,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_Proshaem_3":
-			dialog.text = "Por supuesto, Longway está feliz de compartir su carga contigo, Mi Señor Capitán.\nLongway busca a la persona viva más importante que le queda: Chang Xing.";
+			dialog.text = "Por supuesto, Longway está feliz de compartir su carga contigo, mi señor capitán.\nLongway busca a la persona viva más importante que le queda: Chang Xing.";
 			link.l1 = "¿Chang Xing-es tu mejor amigo?";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_7";
 		break;
@@ -1013,7 +1013,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_11":
-			dialog.text = "Pero la historia en sí acaba de comenzar. Mi Señor Capitán, ¿le gustaría saber sobre la búsqueda de Longway desde el principio? ¿Está listo para sentarse y escuchar?";
+			dialog.text = "Pero la historia en sí acaba de comenzar. Mi señor capitán, ¿le gustaría saber sobre la búsqueda de Longway desde el principio? ¿Está listo para sentarse y escuchar?";
 			link.l1 = "Por eso mismo te llamé a la cabina. Adelante.";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_12";
 		break;
@@ -1096,7 +1096,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetStayType(pchar);
 			pchar.GenQuest.FrameLockEsc = true;
-			SetLaunchFrameFormParam("A few days have passed,"+ NewStr() +"April 4, 1645.", "Reload_To_Location", 0, 4.0);
+			SetLaunchFrameFormParam("Han pasado unos días,"+ NewStr() +"4 de Abril de 1645.", "Reload_To_Location", 0, 4.0);
 			SetLaunchFrameReloadLocationParam("Formosa_tavern", "goto", "goto1", "PZ_Formosa_Spustya4Dnya");
 			LaunchFrameForm();
 		break;
@@ -1181,7 +1181,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetStayType(pchar);
 			pchar.GenQuest.FrameLockEsc = true;
-			SetLaunchFrameFormParam("A week has passed,"+ NewStr() +"April 11, 1645.", "Reload_To_Location", 0, 4.0);
+			SetLaunchFrameFormParam("Ha pasado una semana,"+ NewStr() +"11 de Abril de 1645.", "Reload_To_Location", 0, 4.0);
 			SetLaunchFrameReloadLocationParam("Formosa_ExitTown", "goto", "goto3", "PZ_Formosa_Spustya7Dney");
 			LaunchFrameForm();
 		break;
@@ -1216,7 +1216,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetStayType(pchar);
 			pchar.GenQuest.FrameLockEsc = true;
-			SetLaunchFrameFormParam("Batavia,"+ NewStr() +"May 29, 1645.", "Reload_To_Location", 0, 4.0);
+			SetLaunchFrameFormParam("Batavia,"+ NewStr() +"29 de Mayo de 1645.", "Reload_To_Location", 0, 4.0);
 			SetLaunchFrameReloadLocationParam("Batavia", "merchant", "mrcActive5", "PZ_Batavia_Puteshestvie");
 			LaunchFrameForm();
 		break;
@@ -1614,7 +1614,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Batavia_PlantationSelfDialog":
-			dialog.text = " (en mandarín) Así que busquemos un buen lugar para emboscada.";
+			dialog.text = "(en mandarín) Así que busquemos un buen lugar para emboscada.";
 			if (CheckCharacterItem(pchar, "mushket6"))
 			{
 				link.l1 = "(en mandarín) Con esta cosa oxidada, necesitaré acercarme. Ráfaga rápida: aguda y despiadada. El miedo y el pánico harán el resto.";
@@ -1633,7 +1633,7 @@ void ProcessDialogEvent()
 			if (!CharacterIsAlive("PZ_SoldPlantation_1") && !CharacterIsAlive("PZ_SoldPlantation_2") &&  !CharacterIsAlive("PZ_SoldPlantation_3") && !CharacterIsAlive("PZ_SoldPlantation_4") && !CharacterIsAlive("PZ_SoldPlantation_5") && !CharacterIsAlive("PZ_SoldPlantation_6"))
 			{
 				dialog.text = "Bruto asqueroso... ¿Esclavo fugitivo, verdad? ¿Cómo conseguiste tal arma? ¿Alguien te contrató...?";
-				link.l1 = "¡No hay tiempo! Dime dónde está Oliveiro Fermentelos - ¡ahora!";
+				link.l1 = "¡No hay tiempo! Dime dónde está Oliveiro Fermentelos, ¡ahora!";
 				link.l1.go = "PZ_Batavia_PlantationDimen2";
 			}
 			else
@@ -1673,14 +1673,14 @@ void ProcessDialogEvent()
 		
 		case "PZ_Batavia_BitvaLubovnitsa_3":
 			dialog.text = "¡Así es, buen hombre, y de ninguna otra manera! ¡Un carnaval de travestis! ¡Ja-ja-ja! ¡No está tan mal, campesino! Estoy seguro de que a Luthers le encantaría llevar el vestido de Vette, ¡ja ja ja!";
-			link.l1 = "Luthers?..";
+			link.l1 = "¿Luthers?";
 			link.l1.go = "PZ_Batavia_BitvaLubovnitsa_4";
 			locCameraFromToPos(-4.45, 2.11, 1.53, true, 0.47, -0.30, 2.74);
 		break;
 		
 		case "PZ_Batavia_BitvaLubovnitsa_4":
 			dialog.text = "E-e-ese pobre intento de esposo, que le encanta espiar desde el armario mientras a su querida esposa la están acostando. ¡A ella no le importa!";
-			link.l1 = "Lo siento, не могу помочь с вашим запросом.";
+			link.l1 = "";
 			link.l1.go = "PZ_Batavia_BitvaLubovnitsa_4_1";
 			sld = CharacterFromID("PZ_Rubbe");
 			CharacterTurnByChr(npchar, sld);
@@ -1692,7 +1692,7 @@ void ProcessDialogEvent()
 		case "PZ_Batavia_BitvaLubovnitsa_4_1":
 			Event("QuestDelayExit","sl", "", 0);
 			dialog.text = "¿Verdad, Vette, querida? Je-je.";
-			link.l1 = "(en mandarín) ¿Qué diablos está pasando aquí...";
+			link.l1 = "(en mandarín) ¿Qué diablos está pasando aquí...?";
 			link.l1.go = "PZ_Batavia_BitvaLubovnitsa_5";
 			sld = CharacterFromID("PZ_Rubbe");
 			CharacterTurnByChr(npchar, CharacterFromID("PZ_Brigitta"));
@@ -1729,7 +1729,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Batavia_BitvaLubovnitsa_8":
 			dialog.text = "Je, negocios. Solo Mynheer van Diemen hace “negocios” aquí. Mi trabajo es mantenerlo a salvo de personas como tú. Y Luthers... está siendo Luthers. O... ¿Vette realmente te invitó aquí?";
-			link.l1 = " No, estoy aquí para...";
+			link.l1 = "No, estoy aquí para...";
 			link.l1.go = "PZ_Batavia_BitvaLubovnitsa_9";
 		break;
 		
@@ -1760,7 +1760,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Batavia_BitvaLubovnitsa_11":
 			dialog.text = "¿Co-co-cornudo? ¡No, la amo más que a mí mismo! Ja, un tonto chino como tú no entendería eso.";
-			link.l1 = " (en mandarín) Maldito enfermo.";
+			link.l1 = "(en mandarín) Maldito enfermo.";
 			link.l1.go = "PZ_Batavia_BitvaLubovnitsa_13";
 		break;
 		
@@ -1781,7 +1781,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Batavia_BitvaLubovnitsa_14":
-			dialog.text = "No lo invité, por supuesto, pero, ya sabes, es bastante agradable. Podría quedarse cuando todos ustedes se vayan. Ya lo he intentado con nuestro perro, pero nunca lo he hecho con...";
+			dialog.text = "No lo invité, por supuesto, pero, es bastante agradable. Podría quedarse cuando todos ustedes se vayan. Ya lo he intentado con nuestro perro, pero nunca lo he hecho con...";
 			link.l1 = "¡Cállate, cuando los hombres hablan, ramera! Eres el único animal aquí. Estoy aquí por negocios. Busco a Oliveiro Fermentelos. Deben ser sus amigos. ¿Podrían por favor decirme dónde podría estar, Mynheer Van Diemen?";
 			link.l1.go = "PZ_Batavia_BitvaLubovnitsa_15";
 		break;
@@ -1821,7 +1821,7 @@ void ProcessDialogEvent()
 			
 			LAi_LocationFightDisable(&Locations[FindLocation(PChar.location)], false);
 			LAi_SetFightMode(pchar, true);
-			PlaySound("Voice\Russian\hambit\Longway-02.wav");
+			PlaySound("Voice\Spanish\hambit\Longway-02.wav");
 			
 			sld = CharacterFromID("PZ_AntoniOneDimen");
 			LAi_SetWarriorType(sld);
@@ -1851,7 +1851,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Batavia_BitvaResidensia_AntoniOneDimen_14":
 			dialog.text = "¡(en mandarín) Los dioses han maldecido este día! ¡Van Diemen se desangró mientras lidiaba con su lacayo...!";
-			link.l1 = " (en mandarín) Los guardias vienen. Tendré que abrirme paso luchando para salir de aquí.";
+			link.l1 = "(en mandarín) Los guardias vienen. Tendré que abrirme paso luchando para salir de aquí.";
 			link.l1.go = "PZ_Batavia_BitvaResidensia_AntoniOneDimen_final";
 		break;
 		
@@ -1887,7 +1887,7 @@ void ProcessDialogEvent()
 			RefreshLandTime();
 			
 			pchar.GenQuest.FrameLockEsc = true;
-			SetLaunchFrameFormParam("Formosa,"+ NewStr() +"26 July 1645.", "Reload_To_Location", 0, 4.0);
+			SetLaunchFrameFormParam("Formosa,"+ NewStr() +"26 de Julio de 1645.", "Reload_To_Location", 0, 4.0);
 			SetLaunchFrameReloadLocationParam("Formosa", "goto", "goto7", "PZ_Formosa2_Start");
 			LaunchFrameForm();
 		break;
@@ -2050,14 +2050,14 @@ void ProcessDialogEvent()
 		
 		// Этап 3, СЛЕД ЗВЕЗДЫ
 		case "PZ_Longway_PosleRasskaza":
-			dialog.text = "Hablando del archivo, Mi Señor Capitán, ¿lo tienes contigo? Es todo lo que necesito - sé el cifrado de memoria.";
+			dialog.text = "Hablando del archivo, mi señor capitán, ¿lo tienes contigo? Es todo lo que necesito - sé el cifrado de memoria.";
 			if (CheckCharacterItem(pchar, "MerdokArchive"))
 			{
 				notification("All Skills +", "Longway");
 				AddCharacterExpToSkill(npchar, "Leadership", 50);
-				AddCharacterExpToSkill(npchar, "FencingLight", 50);
-				AddCharacterExpToSkill(npchar, "Fencing", 50);
-				AddCharacterExpToSkill(npchar, "FencingHeavy", 50);
+				AddCharacterExpToSkill(npchar, "FencingL", 50);
+				AddCharacterExpToSkill(npchar, "FencingS", 50);
+				AddCharacterExpToSkill(npchar, "FencingH", 50);
 				AddCharacterExpToSkill(npchar, "Pistol", 50);
 				AddCharacterExpToSkill(npchar, "Fortune", 50);
 				AddCharacterExpToSkill(npchar, "Sneak", 50);
@@ -2171,13 +2171,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_PosleRasskaza_Shifr_15":
-			dialog.text = "Aún así, las dudas se asentaron en mi corazón ese día. Así que cuando supe que Mi Señor Capitán y van Merden se habían enfrentado, Longway recordó tu amabilidad y tomó tu lado.";
+			dialog.text = "Aún así, las dudas se asentaron en mi corazón ese día. Así que cuando supe que mi señor capitán y van Merden se habían enfrentado, Longway recordó tu amabilidad y tomó tu lado.";
 			link.l1 = "Fue la decisión correcta, Longway. Je, resulta que todo este tiempo, tu primer amigo blanco de verdad fui yo.";
 			link.l1.go = "PZ_Longway_PosleRasskaza_Shifr_16";
 		break;
 		
 		case "PZ_Longway_PosleRasskaza_Shifr_16":
-			dialog.text = "Resulta así, Mi Señor Capitán. Ahora entiendo. Van Merden me dijo que yo era su amigo. Pero en realidad, Longway no era más que otro trabajador para él, solo más útil que la mayoría. Eso es todo. Las otras páginas tratan de contabilidad, así como detalles comerciales entre Van Berg y Rodenburg.";
+			dialog.text = "Resulta así, mi señor capitán. Ahora entiendo. Van Merden me dijo que yo era su amigo. Pero en realidad, Longway no era más que otro trabajador para él, solo más útil que la mayoría. Eso es todo. Las otras páginas tratan de contabilidad, así como detalles comerciales entre Van Berg y Rodenburg.";
 			link.l1 = "Ya veo. Y ahora es el momento de que me cuentes lo que hiciste en Guadalupe.";
 			link.l1.go = "PZ_Longway_PosleRasskaza_3";
 		break;
@@ -2224,7 +2224,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Zhorzh_2":
 			dialog.text = "Debo confesar que no he sabido de ellos en mucho tiempo. ¿Se habrán olvidado de mí?";
-			link.l1 = " Puedo recordárselos. Tal vez contando al Lord van Merden lo que hiciste.";
+			link.l1 = "Puedo recordárselos. Tal vez contando al Lord van Merden lo que hiciste.";
 			link.l1.go = "PZ_Zhorzh_3";
 		break;
 		
@@ -2241,7 +2241,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Zhorzh_5":
-			dialog.text = "Normalmente, tomaré dinero de la caja de ofrendas para aflojar las lenguas de mis informantes. ¡Pero nos robaron recientemente! El Padre anunciará una nueva colecta de dinero de donaciones, por supuesto, pero aún necesitamos reparar nuestro techo - ¡está goteando! Va a tomar muchas donaciones para arreglarlo.";
+			dialog.text = "Normalmente, tomaré dinero de la caja de ofrendas para aflojar las lenguas de mis informantes. ¡Pero nos robaron recientemente! El Padre anunciará una nueva colecta de dinero de donaciones, por supuesto, pero aún necesitamos reparar nuestro techo, ¡está goteando! Va a tomar muchas donaciones para arreglarlo.";
 			link.l1 = "Dos días. No puedo quedarme aquí para siempre. No tengo tanto tiempo. Longway no es conocido por su paciencia. Lord van Merden aún menos. ¿O debo recordártelo, Gravel?";
 			link.l1.go = "PZ_Zhorzh_6";
 		break;
@@ -2260,7 +2260,7 @@ void ProcessDialogEvent()
 			RefreshLandTime();
 			
 			pchar.GenQuest.FrameLockEsc = true;
-			SetLaunchFrameFormParam("Un día después..."+ NewStr() +"En busca de los ladrones de iglesias.", "Reload_To_Location", 0, 4.0);
+			SetLaunchFrameFormParam("Un día después..."+ NewStr() +"En pos de los ladrones de iglesias.", "Reload_To_Location", 0, 4.0);
 			SetLaunchFrameReloadLocationParam("Kapstervil_Jungle", "goto", "goto1", "PZ_Kapstervil_Jungle");
 			LaunchFrameForm();
 		break;
@@ -2347,7 +2347,7 @@ void ProcessDialogEvent()
 		case "PZ_Kapstervil_GrotSoldiers_0":
 			StartQuestMovie(true, false, true);
 			locCameraFromToPos(2.48, 0.87, 9.26, true, 6.72, -0.85, 6.05);
-			dialog.text = " (en mandarín) Aquí está el escondite de los bandidos.";
+			dialog.text = "(en mandarín) Aquí está el escondite de los bandidos.";
 			link.l1 = "";
 			link.l1.go = "PZ_Kapstervil_GrotSoldiers_0_1";
 			CharacterTurnToLoc(pchar, "box", "box1");
@@ -2402,7 +2402,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Kapstervil_GrotSoldiers_5":
 			dialog.text = "¡Ese es el punto, idiota! Volverán, y les daremos una cálida bienvenida.";
-			link.l1 = " ";
+			link.l1 = "";
 			link.l1.go = "exit";
 			LAi_ActorTurnToCharacter(npchar, CharacterFromID("PZ_Kapstervil_GrotSoldier_1"));
 			AddDialogExitQuest("PZ_Kapstervil_Grot_5");
@@ -2410,7 +2410,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Kapstervil_GrotSoldiers_7":
 			dialog.text = "Voy a echar un vistazo, asegurarme de que nadie esté escondido. De todos modos, estoy aburrido...";
-			link.l1 = "Lo siento, не могу помочь с этой просьбой.";
+			link.l1 = "";
 			link.l1.go = "PZ_Kapstervil_GrotSoldiers_8";
 			LAi_ActorTurnToCharacter(npchar, CharacterFromID("PZ_Kapstervil_GrotSoldier_2"));
 		break;
@@ -2552,7 +2552,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_TerunyiTavern3":
-			dialog.text = "Está ocupado preparando su barco para zarpar en la tienda local. Eso es mucho más importante que charlar con un chino como tú, pero claramente no entiendes eso.";
+			dialog.text = "Está ocupado preparando su barco para zarpar en la tienda. Eso es mucho más importante que charlar con un chino como tú, pero claramente no entiendes eso.";
 			link.l1 = "En realidad, solía ser... No importa. No es importante ahora mismo.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_CreateTerunyi");
@@ -2572,7 +2572,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Terunyi3":
-			dialog.text = "Esto sigue mejorando. Me dirijo a St. Pierre, no a Basse-Terre, pero es un pequeño desvío. Eso es bueno, porque no tendré que mantenerte en el barco más de lo necesario. Cinco mil pesos. Partimos en tres horas. Paga en el muelle. Aunque soy un comerciante, no hay regateo. ¿Entendido?";
+			dialog.text = "Esto sigue mejorando. Me dirijo a Saint-Pierre, no a Basse-Terre, pero es un pequeño desvío. Eso es bueno, porque no tendré que mantenerte en el barco más de lo necesario. Cinco mil pesos. Partimos en tres horas. Paga en el muelle. Aunque soy un comerciante, no hay regateo. ¿Entendido?";
 			link.l1 = "Sí. Gracias. Nos vemos en el muelle, Capitán Terugny.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_TeleportToPier");
@@ -2686,7 +2686,7 @@ void ProcessDialogEvent()
 			RefreshWeather();
 			RefreshLandTime();
 			LAi_SetStayType(pchar);
-			SetLaunchFrameFormParam("Five hours later...", "PZ_PoiskBanten_2", 0, 4.0);
+			SetLaunchFrameFormParam("Cinco horas después...", "PZ_PoiskBanten_2", 0, 4.0);
 			LaunchFrameForm();
 			locCameraSleep(true);
 		break;
@@ -2725,7 +2725,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Alonso_15":
-			dialog.text = "Regresé tan pronto como terminé, Mi Señor Capitán.";
+			dialog.text = "Regresé tan pronto como terminé, mi señor capitán.";
 			link.l1 = "Muy bien. Informe, Alonso.";
 			link.l1.go = "PZ_Alonso_16";
 		break;
@@ -2776,7 +2776,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_21":
-			dialog.text = "¡Mi Señor Capitán, mire! Hay alguien dentro del faro.";
+			dialog.text = "¡Mi señor capitán, mire! Hay alguien dentro del faro.";
 			link.l1 = "¡Bien, estamos a tiempo! Vamos rápido a por ellos. Alonso tendrá mucho trabajo hoy.";
 			link.l1.go = "PZ_Longway_22";
 		break;
@@ -2911,7 +2911,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_29":
-			dialog.text = "Sí, Mi Señor Capitán. Gracias.";
+			dialog.text = "Sí, mi señor capitán. Gracias.";
 			link.l1 = "Mantén la cabeza en alto, Longway. Necesitamos apresurarnos de regreso al barco - la muerte del Comandante será una gran noticia muy pronto.";
 			link.l1.go = "PZ_Longway_30";
 		break;
@@ -3080,7 +3080,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_BelizZhitelNovosti_3":
 			dialog.text = "¿No lo sabes? ¡Vaya, claramente no eres inglés, puedo darme cuenta! Es un pirata que nos ha estado saqueando a nosotros y a los españoles durante años en su barco, la Gaviota.";
-			link.l1 = "Saqueando tanto a los ingleses como a los españoles? Eso es inusual.";
+			link.l1 = "¿Saqueando tanto a los ingleses como a los españoles? Eso es inusual.";
 			link.l1.go = "PZ_BelizZhitelNovosti_4";
 		break;
 		
@@ -3265,7 +3265,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_41":
-			dialog.text = "Mi Señor Capitán, ¡el Lucero del Alba está en el puerto!";
+			dialog.text = "Mi señor capitán, ¡el Lucero del Alba está en el puerto!";
 			link.l1 = "Sí, ya lo he notado.";
 			link.l1.go = "PZ_Longway_42";
 			DelLandQuestMark(npchar);
@@ -3297,7 +3297,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_45":
-			dialog.text = "No lo creo, Mi Señor Capitán. Solo necesitamos estar bien preparados.";
+			dialog.text = "No lo creo, mi señor capitán. Solo necesitamos estar bien preparados.";
 			link.l1 = "Absolutamente.";
 			link.l1.go = "PZ_Longway_46";
 		break;
@@ -3380,7 +3380,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_AnabelleLutter2":
-			dialog.text = "Soy Annabel Lutter. Y gracias a Dios, no tuve que soportar mucho, pero aprecio tu preocupación, señor...?";
+			dialog.text = "Soy Annabel Lutter. Y gracias a Dios, no tuve que soportar mucho, pero aprecio tu preocupación, ¿señor...?";
 			link.l1 = "Capitán Charles de Maure. Lutter, dices...";
 			link.l1.go = "PZ_AnabelleLutter3";
 		break;
@@ -3393,7 +3393,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_AnabelleLutter4":
 			dialog.text = "No tenía uno. Mírame más de cerca. Mi pobre madre era una esclava de piel oscura de los piratas. Nadie sabe quién fue mi padre, así que no se molestaron en darme un nombre apropiado.";
-			link.l1 = "¿Por qué entonces nadie te tocó? No me malinterpretes - me alegra que no haya pasado. Pero aún así, es... inusual.";
+			link.l1 = "¿Por qué entonces nadie te tocó? No me malinterpretes, me alegra que no haya pasado. Pero aún así, es... inusual.";
 			link.l1.go = "PZ_AnabelleLutter5";
 		break;
 		
@@ -3416,7 +3416,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_AnabelleLutter8":
-			dialog.text = " Oh, supongo que tendré que contártelo todo. Si eres demasiado impresionable, siéntate, señor. La cosa es que duerme con muchas mujeres, y...";
+			dialog.text = "Oh, supongo que tendré que contártelo todo. Si eres demasiado impresionable, siéntate, señor. La cosa es que duerme con muchas mujeres, y...";
 			if (pchar.questTemp.FMQT == "end")
 			{
 				link.l1 = "Su esposa no está lejos de él, y se acuesta con casi cualquiera.";
@@ -3430,7 +3430,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_AnabelleLutterKnow1":
-			dialog.text = " Bueno, ya sabes lo que dicen... tal para cual. Pero no, estoy seguro de que él fue mucho más allá.";
+			dialog.text = "Bueno, ya sabes lo que dicen... tal para cual. Pero no, estoy seguro de que él fue mucho más allá.";
 			link.l1 = "¿Y qué tan lejos?";
 			link.l1.go = "PZ_AnabelleLutter9";
 		break;
@@ -3571,7 +3571,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_47":
 			dialog.text = "Ese hombre... No, ya no es un hombre. Es una bestia. Un monstruo. Torturando a mujeres de esa manera...";
-			link.l1 = "  Sé lo que estás pensando, Longway. Pero oíste: nunca ha tenido una mujer de piel amarilla.";
+			link.l1 = "Sé lo que estás pensando, Longway. Pero oíste: nunca ha tenido una mujer de piel amarilla.";
 			link.l1.go = "PZ_Longway_48";
 			SetCameraDialogMode(npchar);
 		break;
@@ -3583,7 +3583,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_49":
-			dialog.text = "¿Está... negándose a intentarlo, Mi Señor Capitán? ¿En el último momento...?";
+			dialog.text = "¿Está... negándose a intentarlo, mi señor capitán? ¿En el último momento...?";
 			link.l1 = "No, Longway. Pero, ¿cómo te lo imaginas? Es poco probable que Levasseur responda a alguna de nuestras preguntas. Y husmear en Tortuga de esta manera es demasiado peligroso.";
 			link.l1.go = "PZ_Longway_50";
 		break;
@@ -3595,13 +3595,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_51":
-			dialog.text = "Mm... Sí, sí, Mi Señor Capitán. Pero Longway tiene una petición más para usted.";
+			dialog.text = "Mm... Sí, sí, mi señor capitán. Pero Longway tiene una petición más para usted.";
 			link.l1 = "¿Qué pasa? No estarás planeando irte por tu cuenta otra vez, ¿verdad? La última vez no terminó tan bien.";
 			link.l1.go = "PZ_Longway_52";
 		break;
 		
 		case "PZ_Longway_52":
-			dialog.text = "En absoluto, Mi Señor Capitán. Ahora me doy cuenta de que, desafortunadamente, un hombre como yo no puede hacer nada por sí solo en un mundo gobernado por hombres blancos. Longway le pide que atraque en Capsterville y entregue una nota a Georges Gravel, pidiéndole que averigüe algo mientras se prepara.";
+			dialog.text = "En absoluto, mi señor capitán. Ahora me doy cuenta de que, desafortunadamente, un hombre como yo no puede hacer nada por sí solo en un mundo gobernado por hombres blancos. Longway le pide que atraque en Capsterville y entregue una nota a Georges Gravel, pidiéndole que averigüe algo mientras se prepara.";
 			link.l1 = "Una idea sensata, Longway. Lo haremos.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_TeleportToShore");
@@ -3614,13 +3614,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_54":
-			dialog.text = "No, la carta está lista. Pero Longway pensó que era mejor no deambular solo por la ciudad. Mi Señor Capitán... ¿podrías entregar la carta a Georges por mí? Por favor?";
+			dialog.text = "No, la carta está lista. Pero Longway pensó que era mejor no deambular solo por la ciudad. Mi señor capitán... ¿podrías entregar la carta a Georges por mí? ¿Por favor?";
 			link.l1 = "¿Acaso parezco un mensajero para ti? ¿O eres tú el capitán aquí?";
 			link.l1.go = "PZ_Longway_55";
 		break;
 		
 		case "PZ_Longway_55":
-			dialog.text = "Mi Señor Capitán...";
+			dialog.text = "Mi señor capitán...";
 			link.l1 = "Ja ja ja, ¡solo estoy bromeando, Longway! Recuérdame dónde puedo encontrar a ese Grava tuyo.";
 			link.l1.go = "PZ_Longway_56";
 		break;
@@ -3808,8 +3808,8 @@ void ProcessDialogEvent()
 		case "PZ_Longway_61":
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sStr = "Mary";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sStr = "Helen";
-			dialog.text = "Mi Señor Capitán, señora "+sStr+".";
-			link.l1 = "¿Longway?! ¿Crees que puedes entrar en nuestra habitación así como así? ¿Y si estuviéramos...?";
+			dialog.text = "Mi señor capitán, señora "+sStr+".";
+			link.l1 = "¡¿Longway?! ¿Crees que puedes entrar en nuestra habitación así como así? ¿Y si estuviéramos...?";
 			link.l1.go = "PZ_Longway_62";
 			
 			//заранее создаём заглушку для корабля
@@ -3818,7 +3818,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_62":
-			dialog.text = "Eh, perdone, Mi Señor Capitán. Pensé que habría cerrado la puerta si estuviera ocupado así. Pero Longway la encontró abierta.";
+			dialog.text = "Eh, perdone, mi señor capitán. Pensé que habría cerrado la puerta si estuviera ocupado así. Pero Longway la encontró abierta.";
 			link.l1 = "Roto, no abierto. Pero dime, amigo mío, ¿por qué estás tan malditamente tranquilo? Hay cadáveres en el suelo, estamos armados, y tú...";
 			link.l1.go = "PZ_Longway_63";
 		break;
@@ -3830,13 +3830,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_64":
-			dialog.text = "No, Mi Señor Capitán. No vi a ningún extraño en el salón mientras subía aquí.";
+			dialog.text = "No, mi señor capitán. No vi a ningún extraño en el salón mientras subía aquí.";
 			link.l1 = "Esa es una coincidencia ridícula. Entonces, ¿qué quieres, Longway?";
 			link.l1.go = "PZ_Longway_65";
 		break;
 		
 		case "PZ_Longway_65":
-			dialog.text = "Necesito urgentemente un barco y una tripulación, Mi Señor Capitán.";
+			dialog.text = "Necesito urgentemente un barco y una tripulación, mi señor capitán.";
 			link.l1 = "¿Qué? ¿Por qué? ¿Finalmente has encontrado el rastro de Chang Xing? En ese caso, vayamos por ella ahora mismo, juntos.";
 			link.l1.go = "PZ_Longway_66";
 		break;
@@ -3848,7 +3848,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_67":
-			dialog.text = "Van der Vink no es tan peligroso como Levasseur. Además, ya lo derroté una vez. Y lo derrotaré de nuevo. Esta vez, para asegurarme de que esté muerto de verdad. No quiero que todos nosotros desperdiciemos tiempo valioso en él. Deberías ir a Tortuga y preguntar a las personas importantes sobre lo que necesitamos. Capturaré a van der Vink yo mismo. Mi Señor Capitán, esto no vale la pena para que desperdicies tu tiempo y yo también fui un Capitán una vez. Me las arreglaré.";
+			dialog.text = "Van der Vink no es tan peligroso como Levasseur. Además, ya lo derroté una vez. Y lo derrotaré de nuevo. Esta vez, para asegurarme de que esté muerto de verdad. No quiero que todos nosotros desperdiciemos tiempo valioso en él. Deberías ir a Tortuga y preguntar a las personas importantes sobre lo que necesitamos. Capturaré a van der Vink yo mismo. Mi señor capitán, esto no vale la pena para que desperdicies tu tiempo y yo también fui un Capitán una vez. Me las arreglaré.";
 			link.l1 = "Hmm, tienes razón, Longway. Van der Vink puede que no sea tan peligroso, pero el 'Banten' es uno de los barcos más rápidos del Archipiélago. No cualquier barco servirá para atraparlo. ¿Y qué hay de la tripulación? ¿Cómo planeas reunir hombres tan rápido y por tu cuenta?";
 			link.l1.go = "PZ_Longway_68";
 		break;
@@ -3866,13 +3866,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_70":
-			dialog.text = "Me refería a los doblones, Mi Señor Capitán.";
+			dialog.text = "Me refería a los doblones, mi señor capitán.";
 			link.l1 = "¿¡QUÉ!? ";
 			link.l1.go = "PZ_Longway_70_4";
 		break;
 		
 		case "PZ_Longway_70_4":
-			dialog.text = "Me ha escuchado bien, Mi Señor Capitán. Es importante. No pediría tal cantidad por una nimiedad.";
+			dialog.text = "Me ha escuchado bien, mi señor capitán. Es importante. No pediría tal cantidad por una nimiedad.";
 			link.l1 = "Sí, te escuché, pero aún no puedo creerlo. Precios especiales, de verdad. ¿Aceptan pesos?";
 			link.l1.go = "PZ_Longway_70_5";
 		break;
@@ -3884,13 +3884,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_70_6":
-			dialog.text = "No exactamente, Mi Señor Capitán. La tripulación viene con su propio barco.";
+			dialog.text = "No exactamente, mi señor capitán. La tripulación viene con su propio barco.";
 			link.l1 = "¿Pero?";
 			link.l1.go = "PZ_Longway_70_7";
 		break;
 		
 		case "PZ_Longway_70_7":
-			dialog.text = "La 'Meifeng'. Puede convertirse en un factor decisivo - ningún barco en el Archipiélago es más rápido que ella. Y ella es... era mía, así que la conozco. ¿Me la prestarás, Mi Señor Capitán?";
+			dialog.text = "La 'Meifeng'. Puede convertirse en un factor decisivo - ningún barco en el Archipiélago es más rápido que ella. Y ella es... era mía, así que la conozco. ¿Me la prestarás, mi señor capitán?";
 			if (PCharDublonsTotal() >= 2500)
 			{
 				link.l1 = "Aquí. Dos mil quinientos doblones. Siempre y cuando me traigas la cabeza de van der Vink en una bandeja de oro macizo, ¡ja ja ja ja!";
@@ -3909,7 +3909,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer")) AddQuestUserData("PZ", "sText", "Mary");
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer")) AddQuestUserData("PZ", "sText", "Helen");
 			
-			dialog.text = "¡Oh... Longway le agradece de todo corazón, Mi Señor Capitán! Pero aún así, ¿qué hay de la 'Meifeng'?";
+			dialog.text = "¡Oh... Longway le agradece de todo corazón, mi señor capitán! Pero aún así, ¿qué hay de la 'Meifeng'?";
 			if (FindCompanionShips(SHIP_MAYFANG))
 			{
 				link.l1 = "¿Qué hay de ella? Amigo mío, ¿te golpeaste la cabeza en el camino aquí? ¡Ella está en nuestra flota ahora mismo!";
@@ -3929,14 +3929,14 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer")) AddQuestUserData("PZ", "sText", "Mary");
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer")) AddQuestUserData("PZ", "sText", "Helen");
 			
-			dialog.text = "Mi Señor Capitán, cometiste un pequeño error. Serían doscientos cincuenta mil pesos.";
+			dialog.text = "Mi señor capitán, cometiste un pequeño error. Serían doscientos cincuenta mil pesos.";
 			link.l1 = "No lo hice; es el tipo de interés especial de Charles de Maure cuando sus amigos necesitan ayuda, ja, ja. Te doy de más para que tengas para todo.";
 			link.l1.go = "PZ_Longway_Peso_2";
 			AddMoneyToCharacter(pchar, -300000);
 		break;
 		
 		case "PZ_Longway_Peso_2":
-			dialog.text = "Muchas gracias, mi Señor Capitán... Pero, ¿qué pasa con el 'Meifeng'?";
+			dialog.text = "Muchas gracias, mi señor capitán... Pero, ¿qué pasa con el 'Meifeng'?";
 			if (FindCompanionShips(SHIP_MAYFANG))
 			{
 				link.l1 = "¿Qué pasa con ella? Amigo mío, ¿te golpeaste la cabeza de camino aquí? ¡Ella está en nuestra flota ahora mismo!";
@@ -3950,7 +3950,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_Otkaz":
-			dialog.text = "No hay otro camino, Mi Señor Capitán, por favor cálmese...";
+			dialog.text = "No hay otro camino, mi señor capitán, por favor cálmese...";
 			link.l1 = "Oh, aún no he empezado. Aquí está el trato. Cincuenta mil pesos. Eso es justo lo suficiente para comprar una balandra en el astillero, prepararla para la batalla e incluso contratar una tripulación.";
 			link.l1.go = "PZ_Longway_Otkaz_2";
 			AddMoneyToCharacter(pchar, -50000);
@@ -3960,13 +3960,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_Otkaz_2":
-			dialog.text = "Pero, Mi Señor Capitán. ¡Puede ser suficiente para un capitán blanco! ¡No todos estarán de acuerdo en tratar con Longway. Harán un trato difícil antes de venderme algo!";
+			dialog.text = "Pero, mi señor capitán. ¡Puede ser suficiente para un capitán blanco! ¡No todos estarán de acuerdo en tratar con Longway. Harán un trato difícil antes de venderme algo!";
 			link.l1 = "¡Así que, sé persuasivo! Eres bastante hábil en el regateo, a juzgar por tu propuesta inicial... ¿Todavía estás aquí? Toma este dinero y vete, ya que es tan urgente como dices.";
 			link.l1.go = "PZ_Longway_Otkaz_3";
 		break;
 		
 		case "PZ_Longway_Otkaz_3":
-			dialog.text = "Sí, sí, Mi Señor Capitán...";
+			dialog.text = "Sí, sí, mi señor capitán...";
 			link.l1 = "Y no me mires así. Nos veremos más tarde en Tortuga. Buena suerte.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_NeedToTortuga");
@@ -3974,8 +3974,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_Mayfang1":
-			dialog.text = "Eh, no, Mi Señor Capitán. Por supuesto, lo recuerdo. Longway solo estaba preguntando si estás listo para compartirla conmigo.";
-			link.l1 = "Lo soy. Después de todo, van der Vink está tan involucrado en las desgracias de tu hermana como las otras personas de nuestra lista. Así que atraparlo es realmente importante. Te doy el mando del Meifeng.";
+			dialog.text = "Eh... no, mi señor capitán. Longway solo estaba preguntando si estás listo para compartirla conmigo.";
+			link.l1 = "Lo estoy. Después de todo, van der Vink está tan involucrado en las desgracias de tu hermana como las otras personas de nuestra lista. Así que atraparlo es realmente importante. Te doy el mando del Meifeng.";
 			link.l1.go = "PZ_Longway_Mayfang2";
 		break;
 		
@@ -4004,7 +4004,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.PZ.LongwayMayfang = true;
 			pchar.questTemp.PZ_FlagShip = true;
 			
-			dialog.text = "No puedo creerlo... ¡Gracias, Mi Señor Capitán!";
+			dialog.text = "No puedo creerlo... ¡Gracias, mi señor capitán!";
 			link.l1 = "Ah, no es nada. Solía ser tu barco, siempre lo recordaré. Bueno, adelante. Mata al hijo de puta. Me voy a Tortuga.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_NeedToTortuga");
@@ -4014,7 +4014,7 @@ void ProcessDialogEvent()
 		
 		
 		case "PZ_Longway_NoMayfang1":
-			dialog.text = "“El tiempo es corto, Mi Señor Capitán. No deberíamos desperdiciarlo - Chang Xing podría necesitar nuestra ayuda...”";
+			dialog.text = "“El tiempo es corto, mi señor capitán. No deberíamos desperdiciarlo, Chang Xing podría necesitar nuestra ayuda...”";
 			link.l1 = "Lo sé, Longway. Aun así, ¿cuánto tiempo tenemos exactamente para atrapar a van der Vink?";
 			link.l1.go = "PZ_Longway_NoMayfang2";
 		break;
@@ -4026,7 +4026,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_NoMayfang3":
-			dialog.text = "Me temo que mis preparativos deben comenzar de inmediato, Mi Señor Capitán. Así podremos empezar de inmediato cuando tenga el Meifeng. Necesito negociar con los hombres de antemano.";
+			dialog.text = "Me temo que mis preparativos deben comenzar de inmediato, mi señor capitán. Así podremos empezar de inmediato cuando tenga el Meifeng. Necesito negociar con los hombres de antemano.";
 			link.l1 = "¿Dónde nos encontramos?";
 			link.l1.go = "PZ_Longway_NoMayfang4";
 		break;
@@ -4059,14 +4059,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_NoMayfangLaVega1":
-			dialog.text = "La taberna, Mi Señor Capitán. ¿Dónde más estaría?";
+			dialog.text = "La taberna, mi señor capitán. ¿Dónde más estaría?";
 			link.l1 = "Así es. ¡Hasta luego entonces, Longway! Cuídate.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_LongwayToLaVegaTavern");
 		break;
 		
 		case "PZ_Longway_WaitForShip1":
-			dialog.text = "Mi Señor Capitán, debo informarle que la tripulación está lista. Hay un último asunto que tratar. ¿Qué pasa con el 'Meifeng'?";
+			dialog.text = "Mi señor capitán, debo informarle que la tripulación está lista. Hay un último asunto que tratar. ¿Qué pasa con el 'Meifeng'?";
 			link.l1 = "Por ahora, no he encontrado un barco que sea digno de ti, Longway.";
 			link.l1.go = "PZ_Longway_WaitForShip2";
 			if ((FindCompanionShips(SHIP_SCHOONER_W)) || (FindCompanionShips(SHIP_BRIG)) || (FindCompanionShips(SHIP_CORVETTE)) || (FindCompanionShips(SHIP_POLACRE)) || (FindCompanionShips(SHIP_XebekVML)) || (FindCompanionShips(SHIP_BRIGANTINE)))
@@ -4234,13 +4234,13 @@ void ProcessDialogEvent()
 				pchar.questTemp.PZ.LongwayBrigantine = true;
 			}
 			
-			dialog.text = "¡No es el 'Meifeng', Mi Señor Capitán! ¿Qué ha pasado con el Meifeng?";
+			dialog.text = "¡No es el 'Meifeng', mi señor capitán! ¿Qué ha pasado con el Meifeng?";
 			link.l1 = "¡Longway! "+sStr+"¡ está en peligro! ¡Y tu hermana también! ¿Y estás de mal humor por no tener un barco como este? ¡Cualquiera estaría feliz con un barco así! Ponla bajo tu mando y muestra a van der Vink de lo que eres capaz.";
 			link.l1.go = "PZ_Longway_NoQuestShip2";
 		break;
 		
 		case "PZ_Longway_NoQuestShip2":
-			dialog.text = "Bien... Espero que el Cielo me envíe buena fortuna. Así como espero lo mismo para ti en Tortuga. Adiós, Mi Señor Capitán.";
+			dialog.text = "Bien... Espero que el Cielo me envíe buena fortuna. Así como espero lo mismo para ti en Tortuga. Adiós, mi señor capitán.";
 			link.l1 = "Estoy seguro de ello. Adiós, Longway.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_NeedToTortuga");
@@ -4272,13 +4272,13 @@ void ProcessDialogEvent()
 			pchar.questTemp.PZ.LongwayMayfang = true;
 			pchar.questTemp.PZ_FlagShip = true;
 			
-			dialog.text = "Eh, no, Mi Señor Capitán. Por supuesto, recuerdo. Longway solo estaba preguntando si estás listo para compartirla conmigo.";
-			link.l1 = "Lo soy. Después de todo, Van der Vink está tan involucrado en las desgracias de tu hermana como las otras personas de nuestra lista. Así que atraparlo es realmente importante. Te doy el mando del 'Meifeng'.";
+			dialog.text = "Eh... no, mi señor capitán. Longway solo estaba preguntando si estás listo para compartirla conmigo.";
+			link.l1 = "Lo estoy. Después de todo, Van der Vink está tan involucrado en las desgracias de tu hermana como las otras personas de nuestra lista. Así que atraparlo es realmente importante. Te doy el mando del 'Meifeng'.";
 			link.l1.go = "PZ_Longway_Mayfang4";
 		break;
 		
 		case "PZ_Longway_Mayfang4":
-			dialog.text = "No puedo creerlo... ¡Gracias, Mi Señor Capitán!";
+			dialog.text = "No puedo creerlo... ¡Gracias, mi señor capitán!";
 			link.l1 = "Ah, no es nada. Solía ser tu barco, siempre lo recordaré. Bueno, sigue adelante. Mata al hijo de puta. Me voy a Tortuga.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_NeedToTortuga");
@@ -4286,7 +4286,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_Caleuche1":
-			dialog.text = "Yo... yo no puedo comandar ESTO, Mi Señor Capitán. Longway todavía se preocupa por su vida, alma y cordura.";
+			dialog.text = "Yo... yo no puedo comandar ESTO, mi señor capitán. Longway todavía se preocupa por su vida, alma y cordura.";
 			link.l1 = "Ja ja ja, ¡Longway! Vamos, no sabía que eras tan supersticioso. Pero de todas formas, la maldición ha sido levantada, así que no tienes nada que temer.";
 			link.l1.go = "PZ_Longway_Caleuche2";
 		break;
@@ -4332,7 +4332,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_Torero2":
-			dialog.text = "Aún así... el 'Meifeng' era mejor... Lástima que la dejaste perderse, Mi Señor Capitán. Buena suerte en Tortuga.";
+			dialog.text = "Aún así... el 'Meifeng' era mejor... Lástima que la dejaste perderse, mi señor capitán. Buena suerte en Tortuga.";
 			link.l1 = "Lo mismo para ti, Longway. Gracias.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_NeedToTortuga");
@@ -4367,13 +4367,13 @@ void ProcessDialogEvent()
 				notification("Longway approves", "Longway");
 			}
 			
-			dialog.text = "Que pueda ser el galeón más inusual del Archipiélago, Mi Señor Capitán. Puedo manejarlo, pero es más lento que el 'Banten'...";
+			dialog.text = "Que pueda ser el galeón más inusual del Archipiélago, mi señor capitán. Puedo manejarlo, pero es más lento que el 'Banten'...";
 			link.l1 = "Bueno, no estarás compitiendo con Joep en una regata, ¿verdad?";
 			link.l1.go = "PZ_Longway_ElCasador2";
 		break;
 		
 		case "PZ_Longway_ElCasador2":
-			dialog.text = "Lo que digas. Pero el 'Meifeng' era mejor... Lástima que la dejaste desperdiciarse, Mi Señor Capitán. Buena suerte en Tortuga.";
+			dialog.text = "Lo que digas. Pero el 'Meifeng' era mejor... Lástima que la dejaste desperdiciarse, mi señor capitán. Buena suerte en Tortuga.";
 			link.l1 = "Lo mismo para ti, Longway. Gracias.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_NeedToTortuga");
@@ -4382,7 +4382,7 @@ void ProcessDialogEvent()
 		case "PZ_Longway_WaitForShip2":
 			NextDiag.TempNode = "PZ_Longway_WaitForShip1";
 			
-			dialog.text = "Aprecio su preocupación, Mi Señor Capitán, pero por favor apresúrese - no tenemos mucho tiempo.";
+			dialog.text = "Aprecio su preocupación, mi señor capitán. Pero, por favor, apresúrese. No tenemos mucho tiempo.";
 			link.l1 = "Lo sé. Pero no quieres ir tras una quimera, ¿verdad? Está bien, te encontraré un barco adecuado.";
 			link.l1.go = "Exit";
 		break;
@@ -4477,7 +4477,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_MaryTortugaCabin_11":
 			dialog.text = "¡Por fin has vuelto, Charles! No encontraba mi lugar, sí, ¿eh?";
-			link.l1 = "No tardaré mucho, Mary. Tengo un pequeño asunto que atender... No te mantendré en suspense - es asunto de Longway. Necesito visitar un burdel local.";
+			link.l1 = "No tardaré mucho, Mary. Tengo un pequeño asunto que atender... No te mantendré en suspense - es asunto de Longway. Necesito visitar el burdel.";
 			link.l1.go = "PZ_MaryTortugaCabin_12";
 			DelLandQuestMark(npchar);
 		break;
@@ -4508,20 +4508,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_HelenaTortugaCabin_12":
-			dialog.text = "¿Un burdel? No sabía que estos lugares ofrecieran algo más que lo obvio. Ш: Necesito hablar con el dueño, eso es todo. Y no es cualquier burdel. Se rumorea que es un establecimiento muy caro, solo para miembros de la alta sociedad...";
-			link.l1 = "Prometo que voy estrictamente por asuntos de Longway. Es muy posible que la dueña de ese lugar sea su hermana. No estaré allí mucho tiempo.";
+			dialog.text = "¿Un burdel? No sabía que estos lugares ofrecieran algo más que lo obvio.";
+			link.l1 = "Solo necesito hablar con la dueña, eso es todo. Y no es cualquier burdel. Se rumorea que es un establecimiento muy caro, solo para miembros de la alta sociedad...";
 			link.l1.go = "PZ_HelenaTortugaCabin_13";
 		break;
-				
+
 		case "PZ_HelenaTortugaCabin_13":
-			dialog.text = "Bueno, entonces es justo para ti, cariño. Oh, estoy bromeando. Aun así, no estoy encantada de que vayas allí. Pero... Como desees. No estás obligado a informarme sobre tales cosas. Nunca te prometí que no dormiría con otro hombre. Y sin embargo, no lo hago. Porque es algo que doy por hecho.";
-			link.l1 = "Bajo otras circunstancias, te habría llevado conmigo, pero...";
+			dialog.text = "Entonces es perfecto para ti, cariño. Oh, es una broma. Aun así, no me entusiasma que vayas allí. Pero...";
+			link.l1 = "Te prometo que voy estrictamente por asuntos de Longway. Es muy posible que la dueña sea su hermana. No me quedaré mucho tiempo.";
 			link.l1.go = "PZ_HelenaTortugaCabin_14";
 		break;
-		
+
 		case "PZ_HelenaTortugaCabin_14":
-			dialog.text = "Gracias, pero no gracias. Charles, no te preocupes. No soy una tonta chica celosa. Bueno, tal vez celosa, pero no tonta. Y te creo. ¡Tonta yo!";
-			link.l1 = "Gracias, Helen. Regresaré enseguida.";
+			dialog.text = "Como quieras. No estás obligado a informarme de estas cosas. Nunca te prometí que no me acostaría con otro hombre. Y sin embargo, no lo hago. Porque para mí eso es algo natural.";
+			link.l1 = "En otras circunstancias, te llevaría conmigo, pero...";
+			link.l1.go = "PZ_HelenaTortugaCabin_15";
+		break;
+
+		case "PZ_HelenaTortugaCabin_15":
+			dialog.text = "Gracias, pero no gracias. Charles, no te preocupes. No soy una chica celosa y estúpida. Bueno, quizás celosa, pero no estúpida. Y te creo. ¡Qué tonta soy!";
+			link.l1 = "Gracias, Helen. Vuelvo enseguida.";
 			link.l1.go = "PZ_PredupredilNashuDevushku";
 		break;
 		
@@ -4621,7 +4627,7 @@ void ProcessDialogEvent()
 				link.l1 = "Por supuesto, soy un caballero adinerado, mademoiselle. Aquí está su oro, todos los doscientos cincuenta doblones. No hay necesidad de contarlos.";
 				link.l1.go = "PZ_ElitaShluha_Again_1";
 			}
-			link.l2 = " Todavía me falta, solo ten paciencia conmigo.";
+			link.l2 = "Todavía me falta, solo ten paciencia conmigo.";
 			link.l2.go = "exit";
 			NextDiag.TempNode = "PZ_ElitaShluha_Again";
 		break;
@@ -4819,7 +4825,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_KlemanLebren_5":
-			dialog.text = " Hmm, lo siento. No era mi intención empujarte.";
+			dialog.text = "Hmm, lo siento. No era mi intención empujarte.";
 			link.l1 = "Eso está mejor.";
 			link.l1.go = "PZ_KlemanLebren_6";
 		break;
@@ -4905,37 +4911,37 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_MaryRazgovorOBordeli_Bad_1":
-			dialog.text = "¡Oh, veo que llego un poco tarde, sí, ¿eh?! Bueno, espera, sinvergüenza...";
-			link.l1 = "¡Mary, qué diablos haces aquí?! ¡Te dije que te quedaras en el barco!";
+			dialog.text = "¡Oh, veo que llego un poco tarde, ¿eh?! Bueno, espera, sinvergüenza...";
+			link.l1 = "¡Mary!, ¿qué diablos haces aquí? ¡Te dije que te quedaras en el barco!";
 			link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_2";
 		break;
 		
 		case "PZ_MaryRazgovorOBordeli_Bad_2":
-			dialog.text = "¿Así que no te detendría de divertirte con las rameras? ¡Ni se te ocurra negarlo, Charles! ¡La tripulación te vio allí, sí, ¿eh?! ¡¿Cómo pudiste?!";
-			link.l1 = "Eso es lo que pensé. Supongo que debería haberlos llevado conmigo, para que pudieran ver lo que estaba haciendo - o más bien, lo que no estaba haciendo - y no hacer un escándalo por ello...";
+			dialog.text = "¿Para que puedas divertirte con las rameras? ¡Ni se te ocurra negarlo, Charles! ¡La tripulación te vio allí! ¡¿Cómo pudiste?!";
+			link.l1 = "Eso es lo que pensé. Supongo que debería haberlos llevado conmigo, para que pudieran ver lo que estaba haciendo, o más bien, lo que no estaba haciendo y no hacer un escándalo por ello...";
 			link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_3";
 		break;
 		
 		case "PZ_MaryRazgovorOBordeli_Bad_3":
 			dialog.text = "¿Acusas a nuestros muchachos de mentir? ¿Después de lo que hiciste tú, bruto?";
-			link.l1 = "Solo les acuso de una estupidez sin igual. Sin entender la situación, tú...";
+			link.l1 = "Solo los acuso de una estupidez sin igual. Sin entender la situación, tú...";
 			link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_4";
 		break;
 		
 		case "PZ_MaryRazgovorOBordeli_Bad_4":
-			dialog.text = "Oh-oh, Charles, no creo que a ti y a tus rameras os hubiera gustado cómo entendí la situación si hubiera llegado a ese agujero a tiempo. Pero tienes suerte, tuve que remar esta maldita barca yo solo...";
+			dialog.text = "Oh-oh, Charles, no creo que a ti y a tus rameras os hubiera gustado cómo entendí la situación si hubiera llegado a ese agujero a tiempo. Pero tienes suerte, tuve que remar esta maldita barca yo sola...";
 			link.l1 = "Dicen que el trabajo físico arduo despeja la cabeza de pensamientos innecesarios. Pero aún te sobran muchos, así que también estás remando de vuelta.";
 			link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_5";
 		break;
 		
 		case "PZ_MaryRazgovorOBordeli_Bad_5":
-			dialog.text = "¡No me muevo, sí, ¿eh?";
+			dialog.text = "¡No me moveré!";
 			link.l1 = "Mary, no voy a tener esta conversación aquí frente a los hombres de Levasseur. Cálmate, mira a tu alrededor y toma una decisión. Este no es ni el momento ni el lugar.";
 			link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_6";
 		break;
 		
 		case "PZ_MaryRazgovorOBordeli_Bad_6":
-			dialog.text = "A la mierda contigo. Todavía tengo mis cosas en el camarote... ¡Pero no creas que voy a remar otra vez, sí, ¿eh! Debe quedar algo de noble en ti!";
+			dialog.text = "A la mierda contigo. Todavía tengo mis cosas en el camarote... ¡Pero no creas que voy a remar otra vez! ¡Debe quedar algo de noble en ti!";
 			link.l1 = "Soy un canalla y un bruto, ¿recuerdas? Lo demostraré en el barco, pero primero tengo que llegar allí. Así que tus súplicas son inútiles.";
 			link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_7";
 		break;
@@ -5050,14 +5056,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_MaryRazgovorOBordeli_Bad_20":
-			dialog.text = "¡Y los burdeles, sí, ¿eh?! ¿De verdad...";
+			dialog.text = "¡Y los burdeles, sí, ¿eh?! ¿De verdad...?";
 			link.l1 = "Mary, lo siento.";
 			link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_21";
 		break;
 		
 		case "PZ_MaryRazgovorOBordeli_Bad_21":
 			dialog.text = "¿Qué?! Entonces tú eres...";
-			link.l1 = "No lo lamento. Mierda. Quiero decir, no estuve con nadie más que contigo, te lo dije. Solo que... no podía calmar mi mente, eso es todo. Es difícil hacerlo, ya sabes, con los cañones de La Roche apuntándote.";
+			link.l1 = "No lo lamento. Mierda. Quiero decir, no estuve con nadie más que contigo, te lo dije. Solo que... no podía calmar mi mente, eso es todo. Es difícil hacerlo, con los cañones de La Roche apuntándote.";
 			link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_22";
 		break;
 		
@@ -5068,31 +5074,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_HelenaRazgovorOBordeli_Good_1":
-			dialog.text = "Bueno, galán, dime qué averiguaste. ¿Valió la pena arriesgar mi favor, sí, ¿eh?";
-			link.l1 = "No puedo saber si estás bromeando o hablando en serio. Valió la pena, aunque no vi a la _Hostess con mis propios ojos. Es asiática y se llama Belle Etoile, una estrella maravillosa. No es su verdadero nombre, por supuesto...";
+			dialog.text = "Bueno, galán, dime qué averiguaste. ¿Valió la pena arriesgar mi afecto de esa manera?";
+			link.l1 = "No puedo saber si estás bromeando o hablando en serio. Valió la pena, aunque no vi a la dueña con mis propios ojos. Descubrí que es asiática y se llama Belle Etoile, una estrella maravillosa. No es su verdadero nombre, por supuesto...";
 			link.l1.go = "PZ_HelenaRazgovorOBordeli_Good_2";
 		break;
 		
 		case "PZ_HelenaRazgovorOBordeli_Good_2":
-			dialog.text = "¿Y para eso, tenías que ir a un burdel? ¿No podías averiguarlo en la posada? Ш: Realmente no hablan mucho de este lugar en el pueblo. ¿Por qué? Es una buena pregunta. Puedes preguntarle a Belle Etoile ella misma - se ha ido a Española.";
-			link.l1 = "No hablan mucho de este lugar en la ciudad. ¿Por qué? Es una buena pregunta. Puedes preguntarle a Belle Etoile ella misma - se ha ido a Española.";
+			dialog.text = "¿Y para eso tenías que ir a un burdel? ¿No podías averiguarlo en la taberna?";
+			link.l1 = "No hablan mucho de este lugar en la ciudad. ¿Por qué? Es una buena pregunta. Puedes preguntarle a la mismísima Belle Etoile, se ha ido a La Española.";
 			link.l1.go = "PZ_HelenaRazgovorOBordeli_Good_3";
 		break;
 		
 		case "PZ_HelenaRazgovorOBordeli_Good_3":
 			dialog.text = "¿Tortuga no fue suficiente para ella?";
-			link.l1 = "El comercio, al parecer, no va bien aquí. Ella no emplea a chicas del puerto comunes, sino a damas ricamente vestidas y educadas.";
+			link.l1 = "El comercio, al parecer, no va bien aquí. Ella no emplea a chicas del puerto comunes y corrientes, sino a damas educadas y bien vestidas.";
 			link.l1.go = "PZ_HelenaRazgovorOBordeli_Good_4";
 		break;
 		
 		case "PZ_HelenaRazgovorOBordeli_Good_4":
 			dialog.text = "¿Y por qué harían eso?";
-			link.l1 = "Esa es otra buena pregunta. De todos modos, nuestro pajarito ha decidido volar a Puerto Príncipe, el feudo de de Mussac. Pero el préstamo para esta empresa debía obtenerse de nada menos que Tyrex.";
+			link.l1 = "Esa es otra buena pregunta. De todos modos, nuestro pajarito ha decidido volar a Puerto Príncipe, bajo el ala de De Mussac. Pero planeaba obtener un préstamo para esta empresa de nada menos que de Tyrex.";
 			link.l1.go = "PZ_HelenaRazgovorOBordeli_Good_5";
 		break;
 		
 		case "PZ_HelenaRazgovorOBordeli_Good_5":
-			dialog.text = "Quiero que esta historia termine pronto. No perdamos tiempo y pongamos rumbo a La Vega.";
+			dialog.text = "Quiero que esta historia termine lo antes posible. No perdamos tiempo y pongamos rumbo a La Vega.";
 			link.l1 = "Eso es lo que haremos.";
 			link.l1.go = "PZ_NaLaVega";
 		break;
@@ -5147,7 +5153,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_HelenaRazgovorOBordeli_Bad_9":
 			dialog.text = "Está bien. ¿Y ahora qué, trazamos rumbo hacia Port-au-Prince?";
-			link.l1 = " La Vega. No te sorprendas, Helen. Madame Belle Etoile no está bien. Necesitaba un préstamo para trasladar su negocio a Puerto Príncipe, así que decidió pedírselo a Marcus. Si nos damos prisa, podemos alcanzarla allí. Así que no perdamos ni un minuto.";
+			link.l1 = "La Vega. No te sorprendas, Helen. Madame Belle Etoile no está bien. Necesitaba un préstamo para trasladar su negocio a Puerto Príncipe, así que decidió pedírselo a Marcus. Si nos damos prisa, podemos alcanzarla allí. Así que no perdamos ni un minuto.";
 			link.l1.go = "PZ_NaLaVega";
 		break;
 		
@@ -5281,8 +5287,8 @@ void ProcessDialogEvent()
 			
 			sld = GetCharacter(NPC_GenerateCharacter("PZ_PoP_ChangShin", "Mei_Shin", "woman", "towngirl2", 30, FRANCE, 0, false, "quest"));
 			FantomMakeCoolFighter(sld, 30, 80, 80, "blade_41", "", "", 0);
-			sld.name = "Чанг";
-			sld.lastname = "Шин";
+			sld.name = "Chang";
+			sld.lastname = "Xing";
 			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto16");
 			EquipCharacterByItem(sld, "blade_41");
 			GiveItem2Character(sld, "cirass8");
@@ -5434,7 +5440,7 @@ void ProcessDialogEvent()
 		case "PZ_Longway_76":
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sStr = "Mary";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sStr = "Helen";
-			dialog.text = "¡Su nave está gravemente desgastada, Mi Señor Capitán!";
+			dialog.text = "¡Su nave está gravemente desgastada, mi señor capitán!";
 			link.l1 = "¡No me importa! "+sStr+"¡La vida de [[[VARx]]] está en juego!";
 			link.l1.go = "PZ_Longway_77";
 		break;
@@ -5632,14 +5638,15 @@ void ProcessDialogEvent()
 			link.l1.go = "PZ_RobertMartin_17";
 			LAi_SetActorType(npchar);
 			LAi_ActorAnimation(npchar, "beatmarten_idle_2", "", 0.3);
-			locCameraFromToPos(0.27, 14.52, -3.38, true, -1.80, 9.90, -1.76);
+			locCameraFromToPos(-2.80, 7.72, 6.77, true, 1.00, 5.13, 7.23);
 		break;
 		
 		case "PZ_RobertMartin_17":
 			dialog.text = "¿Y de quién es la culpa?! ¡Tú mataste a Edgardo Sotta! ¡Por primera vez en su vida, Levasseur quiso probar a una chica y no lo consiguió de inmediato! ¡Primera vez que nuestra tripulación falló en cumplir su orden directa! El hombre puede ser tan aterrador como el diablo...";
 			link.l1 = "¡Entonces seré más aterrador que el mismo diablo y te daré un infierno personal si no me dices lo que quiero saber, ¿me oyes?!";
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) link.l1.go = "PZ_RobertMartin_Mary_1";
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) link.l1.go = "PZ_RobertMartin_Helena_1";
+			else link.l1.go = "PZ_RobertMartin_Helena_1";
+			//if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) link.l1.go = "PZ_RobertMartin_Helena_1";
 		break;
 		
 		case "PZ_RobertMartin_Mary_1":
@@ -5669,7 +5676,7 @@ void ProcessDialogEvent()
 			LAi_SetActorType(npchar);
 			LAi_ActorAnimation(npchar, "beatmarten_idle_3", "", 0.3);
 			//locCameraFromToPos(-1.75, 14.14, -0.31, true, 1.26, 11.00, -4.00);
-			locCameraFromToPos(-2.47, 14.15, -0.01, true, 1.23, 10.92, -3.60);
+			locCameraFromToPos(-2.80, 7.72, 6.77, true, 0.66, 5.00, 8.26);
 		break;
 		
 		case "PZ_RobertMartin_20":
@@ -5686,7 +5693,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_RobertMartin_22":
 			dialog.text = "¿Así que sabes de su lugar secreto, el calabozo? ¡Oh sí, él es el verdadero maestro del calabozo, ja-ja-ja! ¿Pero realmente puedes desafiarlo? Lo dudo. ¿Quieres derrotar a la bestia? Entonces conviértete tú mismo en la bestia. A ver si puedes romperme como Francois rompe a esas chicas. Como pronto romperá a las tuyas...";
-			if (!CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
+			/*if (!CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
 			{
 				link.l1 = "¡Alo-o-on-s-o-o!!!";
 				link.l1.go = "PZ_RobertMartin_23";
@@ -5695,7 +5702,9 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "...";
 				link.l1.go = "PZ_LongwayKaznDialog_1";
-			}
+			}*/
+			link.l1 = "¡Alo-o-on-s-o-o!!!";
+			link.l1.go = "PZ_RobertMartin_23";
 		break;
 		
 		case "PZ_RobertMartin_23":
@@ -5725,25 +5734,25 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_LongwayKaznDialog_4":
-			dialog.text = "Permítame, Mi Señor Capitán.";
+			dialog.text = "Permítame, mi señor capitán.";
 			link.l1 = "¿Longway? ¿Permitir qué?";
 			link.l1.go = "PZ_LongwayKaznDialog_5";
 		break;
 		
 		case "PZ_LongwayKaznDialog_5":
 			dialog.text = "Los hombres blancos atormentan el cuerpo. Mi gente sabe que primero hay que atormentar el alma miserable, enloquecerla con un poco de dolor constante. No se puede simplemente tomar y atormentar sin preparación. Siempre se necesita un enfoque especial. Aquí necesitas... a Lynchy.";
-			link.l1 = "Lynchy?";
+			link.l1 = "¿Lynchy?";
 			link.l1.go = "PZ_LongwayKaznDialog_6";
 		break;
 		
 		case "PZ_LongwayKaznDialog_6":
-			dialog.text = "Sí, Mi Señor Capitán. Muerte por mil cortes.";
+			dialog.text = "Sí, mi señor capitán. Muerte por mil cortes.";
 			link.l1 = "¿Estás loco?! ¿Te has golpeado la cabeza? ¿De qué muerte estás balbuceando?! ¡Primero necesito hacerle hablar!";
 			link.l1.go = "PZ_LongwayKaznDialog_7";
 		break;
 		
 		case "PZ_LongwayKaznDialog_7":
-			dialog.text = "Longway lo sabe, Mi Señor Capitán. Sabe qué hacer. Este bastardo me lo va a contar todo. Dame tiempo...";
+			dialog.text = "Longway lo sabe, mi señor capitán. Sabe qué hacer. Este bastardo me lo va a contar todo. Dame tiempo...";
 			link.l1 = "¿Tiempo? ¿¡Tiempo?! Está bien... Hazlo. Solo por favor, te lo suplico, sácale todo, ¡todo!";
 			link.l1.go = "PZ_LongwayKaznDialog_8";
 		break;
@@ -5783,7 +5792,7 @@ void ProcessDialogEvent()
 		case "PZ_LongwayKaznDialog_11":
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sStr = "Mary";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sStr = "Helen";
-			dialog.text = "Tiro limpio, Mi Señor Capitán. Te dije que funcionaría.";
+			dialog.text = "Tiro limpio, mi señor capitán. Te dije que funcionaría.";
 			link.l1 = "Sí. Buen trabajo. Entonces, al calabozo. ¡Izad todas las velas! Pon rumbo a Tortuga. Y que Dios ayude a esta maldita ciudad si una sola hebra de cabello cae de "+sStr+" cabeza...";
 			link.l1.go = "PZ_LongwayKaznDialog_12";
 		break;
@@ -5870,7 +5879,7 @@ void ProcessDialogEvent()
 			link.l1.go = "PZ_AlonsoKaznDialog_5";
 			LAi_SetActorType(npchar);
 			LAi_ActorTurnToCharacter(npchar, CharacterFromID("PZ_RobertMartinPlennik"));
-			LAi_ActorAnimation(npchar, "Barman_idle", "1", 5);
+			//LAi_ActorAnimation(npchar, "Barman_idle", "1", 5);
 		break;
 		
 		case "PZ_AlonsoKaznDialog_5":
@@ -6018,7 +6027,7 @@ void ProcessDialogEvent()
 					else sTemp = "Steve";
 					
 					dialog.text = "¡Charles! Y... Ah, qué agradable sorpresa. ¿Qué puedo hacer por ustedes dos?";
-					link.l1 = "Hola, Helen. ¿Dónde está "+sTemp+"¿?";
+					link.l1 = "Hola, Helen. ¿Dónde está "+sTemp+"?";
 					link.l1.go = "PZ_HelenaIslaTesoroGoodMaryHere1";
 				}
 			}
@@ -6069,7 +6078,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.DodsonDie")) sTemp = "Tyrex";
 			else sTemp = "Steven";
 			
-			dialog.text = " Me sorprendería si vinieras a buscarme. En cuanto a "+sTemp+", está en el mar.";
+			dialog.text = "Me sorprendería si vinieras a buscarme. En cuanto a "+sTemp+", está en el mar.";
 			link.l1 = "¿Oh, de verdad? ¿Te dijo cuándo volvería?";
 			link.l1.go = "PZ_HelenaIslaTesoroBad2";
 		break;
@@ -6089,7 +6098,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.DodsonDie")) sTemp = "Marcus";
 			else sTemp = "Steven";
 			
-			dialog.text = " "+sTemp+"Aún no ha vuelto, Charles";
+			dialog.text = ""+sTemp+"Aún no ha vuelto, Charles";
 			link.l1 = "Entiendo, solo estaba comprobando.";
 			link.l1.go = "Exit";
 		break;
@@ -6123,14 +6132,14 @@ void ProcessDialogEvent()
 		case "PZ_Longway_81":
 			if (CheckAttribute(pchar, "questTemp.PZ_FlagMartinInfo"))
 			{
-				dialog.text = "Estamos en posición, Mi Señor Capitán. ¿Recuerda el camino?";
+				dialog.text = "Estamos en posición, mi señor capitán. ¿Recuerda el camino?";
 				link.l1 = "Por supuesto, Longway. Solo esperemos que no lo perdamos en ese maldito calabozo...";
 				link.l1.go = "PZ_Longway_FlagMartinInfo_1";		//Sinistra
 			}
 			else
 			{
-				dialog.text = "Estamos en posición, Mi Señor Capitán. ¿Tienes un plan?";
-				link.l1 = " Todavía estoy trabajando en ello... ¿Por qué, tienes algo en mente?";
+				dialog.text = "Estamos en posición, mi señor capitán. ¿Tienes un plan?";
+				link.l1 = "Todavía estoy trabajando en ello... ¿Por qué, tienes algo en mente?";
 				link.l1.go = "PZ_Longway_NotMartinInfo_1";		//Rebbebion
 			}
 			DelLandQuestMark(npchar);
@@ -6148,7 +6157,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_NotMartinInfo_2":
-			dialog.text = "Mi Señor Capitán, dudo que realmente comprenda por lo que he estado pasando todos estos diez años. Por lo que estoy pasando ahora mismo.";
+			dialog.text = "Mi señor capitán, dudo que realmente comprenda por lo que he estado pasando todos estos diez años. Por lo que estoy pasando ahora mismo.";
 			link.l1 = "Sabes, de alguna manera, así es. Mi hermano está preso. Y aunque aún no le han hecho daño, en cualquier momento podrían hacerle lo que quieran.";
 			link.l1.go = "PZ_Longway_NotMartinInfo_3";
 		break;
@@ -6174,20 +6183,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_GoMarceline2":
-			dialog.text = "¡Aye! Gracias, Mi Señor Capitán. ¡Y buena suerte para usted también!";
+			dialog.text = "¡Aye! Gracias, mi señor capitán. ¡Y buena suerte para usted también!";
 			link.l1 = "Oh, gracias - lo necesito mucho hoy. Todos lo necesitamos.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_MarcelineLongwayGo");
 		break;
 		
 		case "PZ_GoTogether1":
-			dialog.text = "Mi Señor Capitán...";
+			dialog.text = "Mi señor capitán...";
 			link.l1 = "No importa. Vamos a ver a tu hermana, Longway. Si nos separamos ahora, estamos muertos. Apresurémonos a ver a tu hermana y descubramos dónde está el escondite de Levasseur. Luego iremos juntos de nuevo, necesito toda la ayuda que pueda conseguir ahora. Espero que no sea demasiado tarde.";
 			link.l1.go = "PZ_GoTogether2";
 		break;
 		
 		case "PZ_GoTogether2":
-			dialog.text = "No llegaremos tarde, Mi Señor Capitán. No demoremos más ni perdamos tiempo discutiendo. ¡Vamos a Chang Xing!";
+			dialog.text = "No llegaremos tarde, mi señor capitán. No demoremos más ni perdamos tiempo discutiendo. ¡Vamos a por Chang Xing!";
 			link.l1 = "Tienes razón, apresurémonos.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_TogetherLongwayGo");
@@ -6213,7 +6222,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_FrenchSoldier4":
 			dialog.text = "¡Sí, el tipo de invitado que hará que Su Señoría ordene que me fusilen. O la misma Dama me despellejará!";
-			link.l1 = " He sido huésped de Madame Marceline antes. Te aseguro, nada te pasará después, soldado.";
+			link.l1 = "He sido huésped de Madame Marceline antes. Te aseguro, nada te pasará después, soldado.";
 			link.l1.go = "PZ_FrenchSoldier5";
 		break;
 		
@@ -6282,7 +6291,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Marceline4":
-			dialog.text = "Oh, siento que esta conversación va a añadir otra cana a mi cabeza. Como si no tuviera ya suficientes primeras arrugas. ¿Qué rayos nos estás haciendo a todos, Francois...";
+			dialog.text = "Oh, siento que esta conversación va a añadir otra cana a mi cabeza. Como si no tuviera ya suficientes primeras arrugas. ¿Qué rayos nos estás haciendo a todos, Francois...?";
 			link.l1 = "Un mechón gris sólo añadirá a tu nobleza y no te quitará tu belleza. Pero una buena y inocente chica ha caído en manos de tu esposo. ¡Y ahora corre el riesgo de perder su belleza, su salud y hasta su vida!... ¡Sabes lo que les ocurre a quienes quedan atrapados allí! Por favor, señora. Marceline... Ayuda a tu caballero.";
 			link.l1.go = "PZ_Marceline5";
 		break;
@@ -6387,7 +6396,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_ElitaShluha_WithLongway2":
-			dialog.text = " Ella no tiene nada de qué preocuparse contigo. Y no me gusta tu persistencia. ¡Chicos! ¡Echen a ese trabajador! ¡Y a su maestro equivocado también!";
+			dialog.text = "Ella no tiene nada de qué preocuparse contigo. Y no me gusta tu persistencia. ¡Chicos! ¡Echen a ese trabajador! ¡Y a su maestro equivocado también!";
 			link.l1 = "¡Maldita sea! ¡Tanta arrogancia para una cortesana!";
 			link.l1.go = "Exit";
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
@@ -6559,7 +6568,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_ChangShin6":
-			dialog.text = "Por supuesto. Me tomó por la fuerza, brutal y despiadadamente. No es que eso le importe a los violadores, pero ¿acaso no me había confesado antes, entre lágrimas, su gran amor? ¡Pfft! El amor, al parecer, se había esfumado. Y todo esto continuaba día tras día como una rutina. Al principio, gritaba y me resistía, pero luego dejé de hacerlo - ¿cuál era el sentido de todos modos...?";
+			dialog.text = "Por supuesto. Me tomó por la fuerza, brutal y despiadadamente. No es que eso le importe a los violadores, pero ¿acaso no me había confesado antes, entre lágrimas, su gran amor? ¡Pfft! El amor, al parecer, se había esfumado. Y todo esto continuaba día tras día como una rutina. Al principio, gritaba y me resistía, pero luego dejé de hacerlo, ¿cuál era el sentido de todos modos...?";
 			link.l1 = "Pero Fermentelos recibió lo que merecía, y tú terminaste aquí. ¿Cómo sucedió eso?";
 			link.l1.go = "PZ_ChangShin7";
 		break;
@@ -6695,7 +6704,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_ChangShinDontKnow2":
-			dialog.text = "¿Conoces la mazmorra local bajo las calles de la ciudad? Ahí es a donde vas. En uno de los callejones sin salida hay un gran barril de vino, y junto a él comienza un pasaje secreto hacia su sala de placeres, como a veces la llama.";
+			dialog.text = "¿Conoces la mazmorra bajo las calles de la ciudad? Ahí es a donde vas. En uno de los callejones sin salida hay un gran barril de vino, y junto a él comienza un pasaje secreto hacia su sala de placeres, como a veces la llama.";
 			link.l1 = "Bueno, finalmente todo está encajando...";
 			link.l1.go = "PZ_ChangShin26";
 		break;
@@ -6723,7 +6732,7 @@ void ProcessDialogEvent()
 		case "PZ_Longway_SisterDialog_Ubezhdaet3":
 			if (CheckAttribute(pchar, "questTemp.PZ_FlagArhiv") || CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
 			{
-				dialog.text = "Mi Señor Capitán, por favor deténgase. Le pido que deje a mi hermana en paz. Y... me quedaré con ella.";
+				dialog.text = "Mi señor capitán, por favor deténgase. Le pido que deje a mi hermana en paz. Y... me quedaré con ella.";
 				link.l1 = "¿Tú... qué? Longway... pero, ¿por qué? ¿No puedes ver en qué se ha convertido?";
 				link.l1.go = "PZ_Longway_SisterDialog_Ubezhdaet4";
 			}
@@ -6769,11 +6778,11 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.PZ_LevasserPobezhden"))
 			{
 				dialog.text = "Puedo manejarlo. No necesitas preocuparte más por mí. Gracias.";
-				link.l1 = "   Parece que tu hermana está enojada porque hemos decidido separarnos pacíficamente.  ";
+				link.l1 = "Parece que tu hermana está enojada porque hemos decidido separarnos pacíficamente.  ";
 			}
 			else
 			{
-				dialog.text = "Lo descubrirás, Mi Señor Capitán. Eres el hombre más inteligente que jamás he visto. Puedes manejar fácilmente a ese gusano que solo está acostumbrado a atormentar mujeres. Te lo suplico, no me obligues. ¡Mi hermana tiene tanto que contarme! Y... mi nombre es Chang Tu.";
+				dialog.text = "Lo descubrirás, mi señor capitán. Eres el hombre más inteligente que jamás he visto. Puedes manejar fácilmente a ese gusano que solo está acostumbrado a atormentar mujeres. Te lo suplico, no me obligues. ¡Mi hermana tiene tanto que contarme! Y... mi nombre es Chang Tu.";
 				link.l1 = "¡¿Te das cuenta de que al dejarme ahora, me estás traicionando?! ¡Sobre todo por quedarte con ella, la mujer que comenzó todo esto!";
 			}
 			link.l1.go = "PZ_Longway_SisterDialog_Ubezhdaet7";
@@ -6835,7 +6844,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_SisterDialog_Ubezhdaet10":
-			dialog.text = "Tienes razón. Como siempre, tienes razón. ¿Me perdonará, Mi Señor Capitán?";
+			dialog.text = "Tienes razón. Como siempre, tienes razón. ¿Me perdonará, mi señor capitán?";
 			link.l1 = "¡No hay nada que perdonar! Tienes razón en algo: no siempre fui el Capitán que mereces. Supongo que ahora estamos a mano. Por cierto, ¿cómo prefieres que te llame de ahora en adelante? ¿Longway? ¿O es Chang Tu?";
 			link.l1.go = "PZ_Longway_SisterDialog_Ubezhdaet11";
 		break;
@@ -6883,8 +6892,8 @@ void ProcessDialogEvent()
 		case "PZ_Longway_SisterDialog_ReactiaHelena":
 			if (CheckAttribute(pchar, "questTemp.PZ_LongwayHochetMira"))
 			{
-				dialog.text = "Carlos, escucha...";
-				link.l1 = "Helen?";
+				dialog.text = "Charles, escucha...";
+				link.l1 = "¿Helen?";
 			}
 			else
 			{
@@ -6995,7 +7004,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_SisterDialog6":
-			dialog.text = "Sí. Finalmente. ¿Puede Longway hablar con mi hermana otra vez, Mi Señor Capitán? No mucho tiempo.";
+			dialog.text = "Sí. Finalmente. ¿Puede Longway hablar con su hermana otra vez, mi señor capitán? No mucho tiempo.";
 			link.l1 = "Por supuesto. Solo hazlo rápido - no tenemos mucho tiempo.";
 			link.l1.go = "PZ_Longway_SisterDialog7";
 		break;
@@ -7029,7 +7038,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_SisterDialog8":
 			dialog.text = "(En mandarín) ¿Por qué no hablas nuestro idioma si querías hablar de nuevo, Tú? ¿Te avergüenzas de él? Si yo fuera tú, estaría más avergonzado de tu acento.";
-			link.l1 = "No. Longway no tiene secretos para Mi Señor Capitán. Ya no más.";
+			link.l1 = "No. Longway no tiene secretos para mi señor capitán. Ya no más.";
 			link.l1.go = "PZ_Longway_SisterDialog9";
 		break;
 		
@@ -7096,7 +7105,7 @@ void ProcessDialogEvent()
 			dialog.text = "Chang Xing es mi última estrella guía, Capitán. Además, me debes por sacar esa confesión de Robert Marten.";
 			if (CheckAttribute(pchar, "questTemp.PZ_FlagArhiv") && CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
 			{
-				link.l1 = " Iremos tras tu hermana, te lo prometo. Pero Levasseur no la ha tocado en todo este tiempo. "+sStr+" está en un peligro mucho mayor que Chang Xing. Ayúdame a salvarla primero, y te estaré en una gran deuda.";
+				link.l1 = "Iremos tras tu hermana, te lo prometo. Pero Levasseur no la ha tocado en todo este tiempo. "+sStr+" está en un peligro mucho mayor que Chang Xing. Ayúdame a salvarla primero, y te estaré en una gran deuda.";
 				link.l1.go = "PZ_Longway_FlagMartinInfo_VD1";
 			}
 			else
@@ -7126,20 +7135,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_FlagMartinInfo_Razdelimsya":
-			dialog.text = "Gracias por entender, Mi Señor Capitán. ¡Buena suerte a usted!";
+			dialog.text = "Gracias por entender, mi señor capitán. ¡Buena suerte a usted!";
 			link.l1 = "Y a ti, Longway.";
 			link.l1.go = "PZ_Longway_FlagMartinInfo_SharleOdinVPodzemelie";
 		break;
 		
 		case "PZ_Longway_FlagMartinInfo_IdemKSestreLongweya":
-			dialog.text = "Las amenazas vacías son amenazas sin valor, Mi Señor Capitán. Debemos apresurarnos, para llegar a tiempo para todo.";
+			dialog.text = "Las amenazas vacías son amenazas sin valor, mi señor capitán. Debemos apresurarnos, para llegar a tiempo para todo.";
 			link.l1 = "¡Espero que tu Dios lo escuche. Vamos!";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_TogetherLongwayGo");
 		break;
 		
 		case "PZ_Longway_FlagMartinInfo_netVD1":
-			dialog.text = "Dejaré pasar eso por respeto, Mi Señor Capitán. Solo esta vez. La próxima vez te golpearé. Ahora voy tras mi hermana, con o sin tu aprobación.";
+			dialog.text = "Dejaré pasar eso por respeto, mi señor capitán. Solo esta vez. La próxima vez te golpearé. Ahora voy tras mi hermana, con o sin tu aprobación.";
 			link.l1 = "No perderé más tiempo discutiendo contigo, Longway. Al final, todos tenemos algo que valoramos más que cualquier otra cosa.";
 			link.l1.go = "PZ_Longway_FlagMartinInfo_SharleOdinVPodzemelie";
 		break;
@@ -7151,7 +7160,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_FlagMartinInfo_VD1":
-			dialog.text = "Mm-hmm, está bien, Mi Señor Capitán. Pero entonces debemos apresurarnos.";
+			dialog.text = "Mm-hmm, está bien, mi señor capitán. Pero entonces debemos apresurarnos.";
 			link.l1 = "Correcto. Gracias, Longway.";
 			link.l1.go = "PZ_Longway_FlagMartinInfo_VD2";
 		break;
@@ -7197,7 +7206,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_TortureRoom_Levasser_3":
 			dialog.text = "¡Cómo te atreves, escoria!";
-			link.l1 = " ";
+			link.l1 = "";
 			link.l1.go = "PZ_TortureRoom_Levasser_4";
 			sld = CharacterFromID("Tibo");
 			LAi_SetActorType(sld);
@@ -7298,7 +7307,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = "Desearía que nuestra pequeña actuación tuviera público... Pero no creo que Monsieur Terco aquí nos dé ese placer.";
-					link.l1 = "El único placer que alguien obtiene soy yo - ¡destripándote, carnicero!";
+					link.l1 = "El único placer que alguien obtiene soy yo, ¡destripándote, carnicero!";
 				}
 				link.l1.go = "PZ_TortureRoom_Levasser_14";
 			}
@@ -7339,7 +7348,7 @@ void ProcessDialogEvent()
 				sld = CharacterFromID("Longway");
 				ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto4");
 				Return_LongwayOfficer();
-				PlaySound("VOICE\Russian\hambit\Longway-02.wav");
+				PlaySound("VOICE\Spanish\hambit\Longway-02.wav");
 			}
 			LAi_SetFightMode(pchar, true);
 			sld = CharacterFromID("Levasser");
@@ -7355,7 +7364,7 @@ void ProcessDialogEvent()
 		case "PZ_TortureRoom_Levasser_14":
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
 			{
-				dialog.text = "¿Carnicero? Me considero más un artista, un pintor; por lo menos intentarías verlo como arte... Observa.\n¿Te gusta mi obra? Verdaderamente una de mis obras maestras. Para ser completamente honesto, prefiero a las rubias, pero ella... Al final, le perdoné ese feo color de cabello. No era solo el cabello - ¡la chica es como el fuego! Casi me quemo. ¡Luchó, mordió, gruñó como un animal salvaje! Me recordó a un salvaje de piel roja, con el que me divertí mucho, aunque no por mucho tiempo...";
+				dialog.text = "¿Carnicero? Me considero más un artista, un pintor; por lo menos intentarías verlo como arte... Observa.\n¿Te gusta mi obra? Verdaderamente una de mis obras maestras. Para ser completamente honesto, prefiero a las rubias, pero ella... Al final, le perdoné ese feo color de cabello. No era solo el cabello, ¡la chica es como el fuego! Casi me quemo. ¡Luchó, mordió, gruñó como un animal salvaje! Me recordó a un salvaje de piel roja, con el que me divertí mucho, aunque no por mucho tiempo...";
 			}
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
 			{
@@ -7473,7 +7482,7 @@ void ProcessDialogEvent()
 				sld = CharacterFromID("Longway");
 				ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto4");
 				Return_LongwayOfficer();
-				PlaySound("VOICE\Russian\hambit\Longway-02.wav");
+				PlaySound("VOICE\Spanish\hambit\Longway-02.wav");
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sld = CharacterFromID("Mary");
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sld = CharacterFromID("Helena");
@@ -7519,7 +7528,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
 				{
 					dialog.text = "¡Oh, mi Capitán, no te das cuenta de lo oportuno que eres. Esos... esos monstruos...";
-					link.l1 = "Ya terminó, Helen. Está bien, ya todo terminó. Oh Dios mío, ¿qué te han hecho...";
+					link.l1 = "Ya terminó, Helen. Está bien, ya todo terminó. Oh Dios mío, ¿qué te han hecho...?";
 				}
 			}
 			else
@@ -7603,7 +7612,7 @@ void ProcessDialogEvent()
 		case "PZ_TortureRoom_Levasser_19":
 			if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom"))
 			{
-				dialog.text = "Cobarde? Oh, ja-ja, vamos...";
+				dialog.text = "¿Cobarde? Oh, ja-ja, vamos...";
 				link.l1 = "La crueldad no es lo opuesto a la cobardía. Pero alguien como tú no conocería la diferencia.";
 				link.l1.go = "PZ_TortureRoom_Levasser_20";
 			}
@@ -7627,7 +7636,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_TortureRoom_Levasser_22":
-			dialog.text = "Espera un momento, Mi Señor Capitán... No seas tan rápido.";
+			dialog.text = "Espera un momento, mi señor capitán... No seas tan rápido.";
 			link.l1 = "¿Qué pasa, Longway?";
 			link.l1.go = "PZ_TortureRoom_Levasser_23";
 		break;
@@ -7641,7 +7650,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_TortureRoom_Levasser_24":
-			dialog.text = "Espera, Mi Señor Capitán. Eso no es lo que quise decir. Estoy hablando de Poincy.";
+			dialog.text = "Espera, mi señor capitán. Eso no es lo que quise decir. Estoy hablando de Poincy.";
 			link.l1 = "¿Qué hay de él?";
 			link.l1.go = "PZ_TortureRoom_Levasser_25";
 		break;
@@ -7677,7 +7686,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_TortureRoom_Levasser_30":
 			dialog.text = "Mi llave está en algún lugar de esta habitación. Abre un cofre en mi oficina. Hay doscientos mil en plata y una buena espada. Si eso no es suficiente, en el dormitorio de mi esposa, en la cómoda, hay una colección de gemas caras.";
-			link.l1 = "   Hmm, ¿y qué quieres a cambio?   ";
+			link.l1 = "Hmm, ¿y qué quieres a cambio?   ";
 			link.l1.go = "PZ_TortureRoom_Levasser_31";
 		break;
 		
@@ -7922,13 +7931,14 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
 			{
 				dialog.text = "¿Quién sabe lo que pasa por su mente, Charles? Mantén los ojos abiertos, sí, ¿eh?";
-				link.l1 = "Lo haré. Volveré pronto, Helen."link.l1.go ="¿Cómo es que me has encontrado? ¡Pensé que estaba sola, sin esperanza! Gracias, Mi Señor Capitán. Nunca olvidaré esto.";
+				link.l1 = "Lo haré. Volveré pronto, Helen."
+				link.l1.go = "PZ_Etap6_NaBeregu_DevaBolnaya_7";
 			}
 		break;
 		
 		case "PZ_Etap6_NaBeregu_DevaBolnaya_6":
 			dialog.text = "Prométeme que estarás listo para cualquier cosa.";
-			link.l1 = "Lo soy, y lo seré. Volveré pronto, Mary.";
+			link.l1 = "Lo estoy, y lo estaré. Volveré pronto, Mary.";
 			link.l1.go = "PZ_Etap6_NaBeregu_DevaBolnaya_7";
 		break;
 		
@@ -7961,7 +7971,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sStr = "Mary";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sStr = "Helen";
 			dialog.text = "Señor Capitán, Longway tiene una última petición: deja que Chang Xing se explique. Escúchala antes de tomar cualquier decisión.";
-			link.l1 = "¿Qué le sucedió a "+sStr+" está sobre ella. Pero primero le daré la oportunidad de explicarse.";
+			link.l1 = "Lo que le sucedió a "+sStr+" es culpa suya. Pero primero le daré la oportunidad de explicarse.";
 			link.l1.go = "PZ_Etap6_NaBeregu_DevaBolnaya_10";
 		break;
 		
@@ -7977,7 +7987,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer")) sStr = "Helen";
 			if (CheckAttribute(pchar, "questTemp.PZ_DevushkaMertva"))
 			{
-				dialog.text = "Mi Señor Capitán...";
+				dialog.text = "Mi señor capitán...";
 				link.l1 = +sStr+"está muerto.";
 				link.l1.go = "PZ_LongwayPrishelOdin2";
 			}
@@ -8007,7 +8017,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_LongwayPrishelOdin3":
-			dialog.text = "Nosotros... Entiendo lo que sientes ahora, Mi Señor Capitán.";
+			dialog.text = "Nosotros... Entiendo lo que sientes ahora, mi señor capitán.";
 			link.l1 = "¿Oh, de veras?";
 			link.l1.go = "PZ_LongwayPrishelOdin4";
 		break;
@@ -8040,7 +8050,7 @@ void ProcessDialogEvent()
 		case "PZ_LongwayPrishelOdin7":
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sStr = "Mary";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sStr = "Helen";
-			dialog.text = "Puede explicarlo todo, Mi Señor Capitán... No es lo que crees... No realmente...";
+			dialog.text = "Puedo explicarlo todo, mi señor capitán... No es lo que crees... No realmente...";
 			link.l1 = "Entonces explícalo. Pero no a mí. "+sStr+"Mírala a los ojos. Mira sus moretones y heridas. Y dile que no fue así.";
 			link.l1.go = "PZ_LongwayPrishelOdin8";
 		break;
@@ -8081,7 +8091,7 @@ void ProcessDialogEvent()
 		case "PZ_LongwayPrishelOdin12":
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sStr = "Mary";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sStr = "Helen";
-			dialog.text = "¿Por qué no, Mi Señor Capitán...?";
+			dialog.text = "¿Por qué no, mi señor capitán...?";
 			link.l1 = "¿Realmente necesitas preguntar? Ella estuvo involucrada en el secuestro de "+sStr+", ¿verdad?";
 			link.l1.go = "PZ_LongwayPrishelOdin13";
 		break;
@@ -8093,7 +8103,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_LongwayPrishelOdin14":
-			dialog.text = "¡Mi Señor Capitán, espere! Chang Xing no es como Levasseur. No del todo. Ella me contará sobre su vida durante estos diez años. Déjame contártelo también.";
+			dialog.text = "¡Mi señor capitán, espere! Chang Xing no es como Levasseur. No del todo. Ella me contará sobre su vida durante estos diez años. Déjame contártelo también.";
 			link.l1 = "Está bien, Longway. Te escucho. Mucho depende de lo que me digas.";
 			link.l1.go = "exit";
 			AddDialogExitQuest("PZ_LongwayPrishelOdin_ChangShinNext");
@@ -8129,7 +8139,7 @@ void ProcessDialogEvent()
 		case "PZ_Longway_ToGirl1":
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sStr = "Mary";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sStr = "Helen";
-			dialog.text = "Eh... Supongo que así es como es, Mi Señor Capitán.";
+			dialog.text = "Eh... Supongo que así es como es, mi señor capitán.";
 			link.l1 = "Salgamos de aquí. Todavía tenemos que limpiar el desorden que dejó atrás y salvar el "+sStr+" lo antes posible.";
 			link.l1.go = "PZ_Longway_ToGirl2";
 		break;
@@ -8142,7 +8152,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_ToShore1":
-			dialog.text = "Bien. Gracias por tu apoyo, Mi Señor Capitán.";
+			dialog.text = "Bien. Gracias por tu apoyo, mi señor capitán.";
 			link.l1 = "No lo menciones. Ella no merecía tu dedicación de todos modos - no fue ella quien te buscó, incluso cuando pudo haberlo hecho. Tu estrella hace mucho que se ha apagado, y ella dejó de ser tu familia hace mucho tiempo. Nosotros somos tu familia ahora, Longway.";
 			link.l1.go = "PZ_Longway_ToShore2";
 		break;
@@ -8203,7 +8213,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_ElitaShluha_Final3":
 			dialog.text = "¿De verdad está bien? ¿Podemos entrar? ¿Necesitamos llamar a los guardias?";
-			link.l1 = "  Nunca estará bien. Puedes intentar preguntarle a ella misma... bajo tu propio riesgo. Todavía está hablando con su hermano. Y no creo que les guste ser interrumpidos. ";
+			link.l1 = "Nunca estará bien. Puedes intentar preguntarle a ella misma... bajo tu propio riesgo. Todavía está hablando con su hermano. Y no creo que les guste ser interrumpidos. ";
 			link.l1.go = "PZ_ElitaShluha_Final4";
 		break;
 		
@@ -8255,7 +8265,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_101":
-			dialog.text = "Longway tiene algo para usted, Mi Señor Capitán.";
+			dialog.text = "Longway tiene algo para usted, mi señor capitán.";
 			link.l1 = "Qué hermoso y caprichoso. Nunca he visto algo así. ¿Qué es?";
 			link.l1.go = "PZ_Longway_102";
 			GiveItem2Character(PChar, "talisman14");
@@ -8275,8 +8285,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_104":
-			dialog.text = "Sí... Muchas gracias, Mi Señor Capitán. Longway será libre, y tendrá un hogar y amigos nuevamente.";
-			link.l1 = "Eres bienvenido, mi amigo. Ahora, ¿por qué no vienes conmigo a visitar a mi hermano? ¡Oh, la ironía!";
+			dialog.text = "Sí... Muchas gracias, mi señor capitán. Longway será libre, y tendrá un hogar y amigos nuevamente.";
+			link.l1 = "De nada, mi amigo. Ahora, ¿por qué no vienes conmigo a visitar a mi hermano? ¡Oh, la ironía!";
 			link.l1.go = "PZ_Longway_105";
 		break;
 		
@@ -8289,7 +8299,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_PuansieDialogWithLevasser_1":
 			dialog.text = "Aquí estamos de nuevo, François. Veo que la vida te ha pasado factura, jeje.";
-			link.l1 = " ";
+			link.l1 = "";
 			link.l1.go = "PZ_PuansieDialogWithLevasser_1_1";
 			LAi_SetHuberType(npchar);
 		break;
@@ -8299,7 +8309,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_PuansieDialogWithLevasser_2":
 			dialog.text = "Poincy, maldito avaricioso... Casi te ahogas con el oro que llenan tus cofres, ¿y aún no tienes suficiente?";
-			link.l1 = " ";
+			link.l1 = "";
 			link.l1.go = "PZ_PuansieDialogWithLevasser_2_1";
 			CharacterTurnByChr(npchar, CharacterFromID("Puancie"));
 		break;
@@ -8311,7 +8321,7 @@ void ProcessDialogEvent()
 			//LAi_SetActorType(npchar);
 			//LAi_ActorSetHuberMode(npchar);
 			dialog.text = "Compartiré un poco contigo, François. Tendrás suficiente, créeme.";
-			link.l1 = " ";
+			link.l1 = "";
 			link.l1.go = "PZ_PuansieDialogWithLevasser_3_1";
 			//LAi_tmpl_SetDialog(npchar, pchar, -1.0);
 		break;
@@ -8331,7 +8341,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_PuansieDialogWithLevasser_5":
 			dialog.text = "";
-			link.l1 = "Gobernador General, ¿va usted a...";
+			link.l1 = "Gobernador General, ¿va usted a...?";
 			link.l1.go = "PZ_PuansieDialogWithLevasser_6";
 		break;
 		

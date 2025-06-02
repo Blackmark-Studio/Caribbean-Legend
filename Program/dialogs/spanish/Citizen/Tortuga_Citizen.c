@@ -42,7 +42,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "PZ2":
-		dialog.text = "De nuevo, no nos conocemos personalmente, así que no sé casi nada. Pero tiene un amigo cercano en la ciudad, y a menudo se les ve juntos. Ve con él - él decidirá si contarte más o no. Su compañero se llama Rober Martene.";
+		dialog.text = "De nuevo, no nos conocemos personalmente, así que no sé casi nada. Pero tiene un amigo cercano en la ciudad, y a menudo se les ve juntos. Ve con él... él decidirá si contarte más o no. Su compañero se llama Rober Martene.";
 		link.l1 = "Rober Martene, dices... ¿Y quién es él? ¿Dónde puedo encontrarlo?";
 		link.l1.go = "PZ3";
 		break;

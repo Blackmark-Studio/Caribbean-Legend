@@ -1197,11 +1197,6 @@ void ProcessDialogEvent()
 			LAi_ActorGoToLocation(npchar, "reload", "reload4_back", "none", "", "", "", 10.0);
 			npchar.lifeday = 0;
 			DeleteAttribute(pchar, "questTemp.Sharlie.RescueDaughter");
-			if(CheckAttribute(pchar, "questTemp.Tutorial_Dubloons"))
-			{
-				DeleteAttribute(pchar, "questTemp.Tutorial_Dubloons");
-				Tutorial_Dubloons("");
-			}
 			
 			//Подбегает дворянин с квестом "девочка по вызову"
 			sld = GetCharacter(NPC_GenerateCharacter("GigoloMan", "Guide_2", "man", "man", 25, FRANCE, 5, true, "soldier"));

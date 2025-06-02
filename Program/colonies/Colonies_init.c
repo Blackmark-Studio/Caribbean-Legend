@@ -613,20 +613,20 @@ void InitColonies()
 		colonies[n].HasNoFort = true;
 
 	/////////////////////////////////////////////////////////////////////
-	/// Minentown (Mein)
+	/// LosTeques (Mein)
 	/////////////////////////////////////////////////////////////////////
 		n = n + 1;
-		Colonies[n].id = "Minentown";
+		Colonies[n].id = "LosTeques";
 		Colonies[n].visible = false;
 		Colonies[n].smuggling_nation = "none";
 		Colonies[n].nation = SPAIN;
-		Colonies[n].island = "Minentown";
+		Colonies[n].island = "LosTeques";
 		Colonies[n].islandLable = "Mein";
 		colonies[n].num = 1;
 		colonies[n].map.x = 1370;
 		colonies[n].map.y = 505;
 		colonies[n].StoreNum   = Pirates_STORE; // заглушка
-		colonies[n].from_sea   = "";
+		colonies[n].from_sea   = "Shore20";
 		colonies[n].HasNoFort = true;
 
 //========================= необитайки ==================================

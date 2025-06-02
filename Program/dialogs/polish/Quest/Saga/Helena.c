@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 		
 		case "After_boarding_2":
 			dialog.text = "Pani Gladys!? Jak się ma?";
-			link.l1 = "Umierałem z niepokoju o ciebie. Ale wkrótce ją zobaczysz, płyniemy do Blueweld. Możesz mi opowiedzieć o wszystkim, co ci się przydarzyło w drodze.";
+			link.l1 = "Umierała z niepokoju o ciebie. Ale wkrótce ją zobaczysz, płyniemy do Blueweld. Możesz mi opowiedzieć o wszystkim, co ci się przydarzyło w drodze.";
 			link.l1.go = "After_boarding_3";
 		break;
 		
@@ -603,7 +603,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			SaveCurrentNpcQuestDateParam(npchar, "sex_date");
-			if (drand(4) == 0)// вероятность отказа 20%
+			if (hrand(4) == 0)// вероятность отказа 20%
 			{
 				dialog.text = RandPhraseSimple(""+pchar.name+", nie czuję się dzisiaj dobrze. Nie martw się, proszę, to nie twoja wina. Nie róbmy tego dzisiaj..."," "+pchar.name+"  Drogi, byłam bardzo zmęczona przez ostatnie dni. Szczerze mówiąc, jedyne czego pragnę, to sen. Wybacz mi. Zróbmy to innym razem.");
 				link.l1 = RandPhraseSimple("Dobrze...","To w porządku. Jak sobie życzysz...");
@@ -641,7 +641,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			SaveCurrentNpcQuestDateParam(npchar, "sex_date");
-			if (drand(4) == 0) // вероятность отказа 20%
+			if (hrand(4) == 0) // вероятность отказа 20%
 			{
 				dialog.text = RandPhraseSimple(""+pchar.name+", dzisiaj nie czuję się dobrze. Nie czuj się urażony, proszę. Nie róbmy tego dzisiaj...",""+pchar.name+", drogi, byłam tak zmęczona przez ostatnie kilka dni. Szczerze mówiąc, chcę tylko spać. Wybacz mi. Zróbmy to innym razem.");
 				link.l1 = RandPhraseSimple("Dobrze...","W porządku. Jak sobie życzysz...");
@@ -1975,7 +1975,7 @@ void ProcessDialogEvent()
 		
 		case "drinking_in_tavern_1_4":
 			dialog.text = "(śmiech) Ha! Powinieneś był zobaczyć swoją minę! Przestraszony? Wznieśmy kolejny toast! Za Paryż!";
-			link.l1 = "Do Paryża!";
+			link.l1 = "Za Paryż!";
 			link.l1.go = "drinking_in_tavern_3";
 		break;
 		
@@ -2042,7 +2042,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drinking_my_background_2":
-			dialog.text = "Because my crew is dead, and a different one won't ever accept me. Eh! Fine, my captain, you've told me a lot about your life; now it's my turn! The truth is not at the bottom of this mug, so let's dispense with the mystery.";
+			dialog.text = "Ponieważ moja załoga nie żyje, a inna nigdy mnie nie zaakceptuje. Eh! Dobrze, kapitanie, opowiedziałeś mi wiele o swoim życiu; teraz moja kolej! Prawda nie jest na dnie tego kubka, więc pozbądźmy się tajemnicy.";
 			link.l1 = "";
 			link.l1.go = "drinking_my_background_3";
 		break;
@@ -2060,7 +2060,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drinking_my_background_5":
-			dialog.text = "Well, perhaps I'm exaggerating a bit for the sake of a good story? My father's crew accepted me; he gathered fine people. But since then, I've been afraid... of holds and any small dark spaces in general. Ha! Svensson almost killed my father when he found out!";
+			dialog.text = "Cóż, może trochę przesadzam dla dobra dobrej historii? Załoga mojego ojca mnie przyjęła; zebrał dobrych ludzi. Ale od tamtej pory boję się... ładowni i małych ciemnych przestrzeni w ogóle. Ha! Svensson prawie zabił mojego ojca, kiedy się o tym dowiedział!";
 			link.l1 = "Jest dla ciebie ważny. Wyraźnie odegrał rolę w twoim losie, nie mniejszą niż Sean.";
 			link.l1.go = "drinking_my_background_6";
 		break;
@@ -2070,11 +2070,11 @@ void ProcessDialogEvent()
 			link.l1 = "Mój triumf zakończył się tym, że spadłem z takielunku w pierwszy dzień podróży do Gwadelupy.";
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.TakeFolke")) {
 				link.l1 = link.l1+" Mój sternik, Deluc, miał również bardzo wymowny wyraz twarzy."}
-			link.l1.go ="picie_moje_tło_7";
+			link.l1.go ="drinking_my_background_7";
 		break;
 		
 		case "drinking_my_background_7":
-			dialog.text = "Ah-ha-ha! I can imagine! Don't worry, that was a long time ago; now you're a real sea wolf!";
+			dialog.text = "Aha-ha-ha! Mogę sobie wyobrazić! Nie martw się, to było dawno temu; teraz jesteś prawdziwym wilkiem morskim!";
 			link.l1 = "";
 			link.l1.go = "drinking_my_background_8";
 		break;
@@ -2086,7 +2086,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drinking_my_background_12":
-			dialog.text = "... And then I gradually rose through the ranks, served at the captain's table in councils with my father and officers. Learned a lot. From the age of fifteen, they started taking me on military campaigns, and I killed a man in my very first battle. It was a disgusting campaign; we shouldn't have set sail on a Monday... Really shouldn't have!";
+			dialog.text = "... A potem stopniowo awansowałam, służyłam przy stole kapitana w radach z moim ojcem i oficerami. Nauczyłam się wiele. Od piętnastego roku życia zaczęto zabierać mnie na kampanie wojskowe i zabiłam człowieka w mojej pierwszej bitwie. To była obrzydliwa kampania; nie powinniśmy byli wypływać w poniedziałek... Naprawdę nie powinniśmy!";
 			link.l1 = "W wieku piętnastu lat? Przerażasz mnie, Helen.";
 			link.l1.go = "drinking_my_background_13";
 		break;

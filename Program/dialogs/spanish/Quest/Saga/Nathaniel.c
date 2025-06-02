@@ -20,8 +20,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "diffindoor":
-		PlaySound("Voice\Spanish\saga\Nataniel Hawk-02.wav");
-		dialog.text = "Ah... ¿quién eres tú, maldita sea?.. Khe... (tos severa con ronquera) Esa maldita estatua me succionó toda la vida...";
+		PlaySound("Voice\Spanish\saga\Nataniel Hawk-05.wav");
+		dialog.text = "Ah... ¿quién eres tú, maldita sea?.. Khe... (tos severa con ronquera) Esa maldita estatua vieja me succionó toda la vida...";
 		link.l1 = "Saludos, Nathaniel. Tú eres Nathaniel Hawk, ¿no es así?";
 		link.l1.go = "diffindoor_1";
 		break;
@@ -51,7 +51,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "diffindoor_5":
-		PlaySound("Voice\Spanish\saga\Nataniel Hawk-01.wav");
+		PlaySound("Voice\Spanish\saga\Nataniel Hawk-06.wav");
 		dialog.text = "¿Escapar? Oh... ¿No ves mi condición actual? Intenté salvarme, pero lo único que encontré fue esta isla de ovejas podridas. Gracias a Dios, todavía hay buenas personas en este mundo. Ole, Dios lo bendiga... ¿Conoces a Ole?";
 		link.l1 = "Sí. En realidad, fue él quien me habló de ti, me contó cómo te alimentaba con ratas y cómo sigues bebiendo, botella tras botella...";
 		link.l1.go = "diffindoor_6";
@@ -304,7 +304,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			link.l1 = "Bueno, ya sabes, esto suena como una fábula. Reparar un barco partido y hundido...";
+			link.l1 = "Bueno, esto suena como una fábula. Reparar un barco partido y hundido...";
 			link.l1.go = "story_19";
 		}
 		break;
@@ -410,7 +410,7 @@ void ProcessDialogEvent()
 
 	case "danny_2":
 		dialog.text = "Gracias, mi amigo. Gracias por todo y especialmente por mi Dannie...";
-		link.l1 = "Eres bienvenido, Nathan.";
+		link.l1 = "De nada, Nathan.";
 		link.l1.go = "exit";
 		NextDiag.TempNode = "danny_2";
 		break;
@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "caleuche_7":
-		dialog.text = "Buena suerte, " + pchar.name + "¡";
+		dialog.text = "Buena suerte, " + pchar.name + ".";
 		link.l1 = "¡Gracias!";
 		link.l1.go = "caleuche_8";
 		break;

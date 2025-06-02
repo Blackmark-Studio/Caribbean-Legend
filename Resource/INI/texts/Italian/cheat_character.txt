@@ -1,0 +1,69 @@
+
+new_string
+{
+
+}
+
+Cheat_success {Fatto!}
+
+Cheat_on {Cheat abilitato}
+
+Cheat_off {Cheat disabile}
+
+Cheat_Comming_soon {Prossimamente!}
+
+f1 {Aggiungi 35 punti abilità}
+
+f2 {Aggiungi un punto di abilità navale}
+
+f3 {Aggiungi un punto di abilità personale}
+
+f4 {+ 10 Max HP }
+
+f5 {+10 Max Energia}
+
+f6 {Aumento dell'onore}
+
+f7 {Diminuire l'onore}
+
+f8 {Aumenta la fama}
+
+f9 {Diminuire la fama}
+
+f10 {Modalità Dio ON/OFF}
+
+f11 {Increase Authority}
+
+f12 {Migliorare la vitalità}
+
+f13 {+1000 Max Capacità di inventario}
+
+f14 {х10 danni da arma bianca}
+
+f15 {х10 Danno da arma da fuoco}
+
+f16 {х10 Tempo di ricarica dell’arma da fuoco}
+
+f17 {Impostare il 100% di possibilità di sblocco}
+
+f18 {x10 Rigenerazione energia}
+
+f19 {x10 HP Rigenerazione}
+
+f20 {Impostare il 100% di possibilità di blocco}
+
+f21 {Veleno Taino on/off}
+
+f22 {Sblocca i vantaggi del Duellante}
+
+f23 {Sblocca i vantaggi del contabile}
+
+f24 {Sblocca i vantaggi dell'atleta}
+
+f25 {Sblocca i vantaggi del Tiratore scelto}
+
+f26 {Disabilita i requisiti di navigazione}
+
+f27 {Sobrio se sei ubriaco}
+
+

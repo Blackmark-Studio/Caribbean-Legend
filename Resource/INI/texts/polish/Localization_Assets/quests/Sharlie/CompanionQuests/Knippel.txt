@@ -1,6 +1,6 @@
 Knippel_1
 {
-You used the key
+Użyto klucza
 }
 
 Knippel_2
@@ -23,7 +23,7 @@ Adams
 
 Knippel_6
 {
-Charlie came to the rescue!
+Charlie przybył z pomocą!
 }
 
 Knippel_7
@@ -46,7 +46,7 @@ Faggle
 
 Knippel_11
 {
-July 21st, 1654@<NewStr()>St. John's, Antigua
+21 lipca, 1654@<NewStr()>St. John's, Antigua
 }
 
 Knippel_12
@@ -60,7 +60,7 @@ Lynch
 
 Knippel_14
 {
-The Sussex is on the horizon!
+Sussex jest na horyzoncie!
 }
 
 Knippel_15
@@ -88,5 +88,21 @@ Bombardier Unlocked
 
 Knippel_20
 {
-Some time later...@<NewStr()>At Fleetwood House
+Jakiś czas później...@<NewStr()>W domu Fleetwooda
+}
+Knippel_21
+{
+Frederick
+}
+Knippel_22
+{
+Stokes
+}
+Knippel_23
+{
+Ralph
+}
+Knippel_24
+{
+Faggle
 }

@@ -179,7 +179,7 @@ void ProcessDialogEvent()
 			DelMapQuestMarkCity("Bridgetown");
 			DelMapQuestMarkCity("Villemstad");
 			DelMapQuestMarkCity("SentJons");
-			dialog.text = "Ar har! Widzę, że twój drąg jest gotowy, kapitanie! Wkrótce poleci iskra! Teraz słuchaj uważnie. Srebrna flota Holenderskiej Kompanii Zachodnioindyjskiej opuściła Willemstad na Curacao dzień lub dwa temu. Płynie do Philipsburg. Tym razem w flocie jest tylko kilka statków. Jeden East Indiaman z srebrem w ładowni oraz dwa eskortowce. Przechwyć srebrną flotę, zdobądź East Indiaman z ładunkiem srebra i doprowadź go do Antigui. Możesz jednak zatopić eskorty, są jednorazowe. Traf ich w wątroby, yar!";
+			dialog.text = "Ar har! Widzę, że twój drąg jest gotowy, kapitanie! Wkrótce poleci iskra! Teraz słuchaj uważnie. Srebrna flota Holenderskiej Kompanii Zachodnioindyjskiej opuściła Willemstad na Curacao dzień lub dwa temu. Płynie do Philipsburg. Tym razem w flocie jest tylko kilka statków. Jeden Galeon z srebrem w ładowni oraz dwa eskortowce. Przechwyć srebrną flotę, zdobądź Galeon z ładunkiem srebra i doprowadź go do Antigui. Możesz jednak zatopić eskorty, są jednorazowe. Traf ich w wątroby, yar!";
 			link.l1 = "Ich dni są policzone.";
 			link.l1.go = "Knippel_task_1";
 			DelLandQuestMark(npchar);
@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 				{
 					sld = GetCharacter(iTemp);
 					pchar.questTemp.HWIC.Eng.CompanionIndex = sld.Index;
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN) iHal++;
+					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_GALEON_L) iHal++;
 				}
 			}//признак наличия ТГ в компаньонах
 			if (iHal > 0)

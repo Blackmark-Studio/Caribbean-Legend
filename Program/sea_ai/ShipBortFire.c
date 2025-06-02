@@ -58,9 +58,38 @@ void Ship_BortFire()
         }
     }
     // boal <--
+	
+	//belamour расчет бонуса от противооткатной системы 
+	if(sti(rCharacter.index) == GetMainCharacterIndex())
+	{
+		if(HasShipTrait(rCharacter, "trait12"))
+		{
+			if(CheckAttribute(rCharacter,"Tmp.LastBortFire") && rCharacter.Tmp.LastBortFire == bortName)
+			{
+				if(!CheckAttribute(rCharacter,"Tmp.LastBortFire.Bonus"))
+				{
+					rCharacter.Tmp.LastBortFire.Bonus = 6;
+				}
+				else
+				{
+					rCharacter.Tmp.LastBortFire.Bonus = sti(rCharacter.Tmp.LastBortFire.Bonus) + 6;
+					if(sti(rCharacter.Tmp.LastBortFire.Bonus) > 35)
+						rCharacter.Tmp.LastBortFire.Bonus = 35;
+				}
+				//Log_testinfo("Выстрел с борта: " + bortName + " повысил бонус до: " + stf(rCharacter.Tmp.LastBortFire.Bonus));
+			}
+			else
+			{
+				DeleteAttribute(rCharacter,"Tmp.LastBortFire.Bonus");
+			}
+			
+			rCharacter.Tmp.LastBortFire = bortName;
+		}
+		else
+		{
+			DeleteAttribute(rCharacter,"Tmp.LastBortFire");
+		}
+	}
 
 	SendMessage(&SeaOperator, "lisffffff", MSG_SEA_OPERATOR_FIRE, firedShip, bortName, dx, dy, dz, d2x, d2y, d2z);
-
 }
-
-

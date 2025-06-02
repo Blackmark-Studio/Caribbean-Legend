@@ -66,8 +66,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "natan":
-		dialog.text = "Nathaniel Hawk? No, no conozco a este hombre. No está ni en los barcos de los Rivados, ni en el territorio neutral. No puedo decir lo mismo sobre la banda de los Narvales, no los visitamos.";
-		link.l1 = "Veo...";
+		dialog.text = "¿Nathaniel Hawk? No, no conozco a este hombre. No está ni en los barcos de los Rivados, ni en el territorio neutral. No puedo decir lo mismo sobre la banda de los Narvales, no los visitamos.";
+		link.l1 = "Ya veo...";
 		link.l1.go = "exit";
 		npchar.quest.natan = "true";
 		NextDiag.TempNode = "Total_info";
@@ -107,7 +107,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "capper_4":
-		dialog.text = " Tus palabras suenan un poco extrañas, pero continúa. ¿Está Chimiset en problemas?";
+		dialog.text = "Tus palabras suenan un poco extrañas, pero continúa. ¿Está Chimiset en problemas?";
 		link.l1 = "Sí. Chad planea matarlo. Kapper va a usar a los Narvales para apoderarse de la Ciudad. Tenemos que actuar rápidamente si queremos salvar a Chimiset, ya que Chad no sospecha nada por ahora. El Almirante ha retirado a todos los guardias del 'Tártaro', el paso está libre. Aquí está la llave que abre la puerta dentro de la prisión. Tómala.";
 		link.l1.go = "capper_5";
 		break;

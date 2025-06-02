@@ -358,7 +358,7 @@ void ProcessDialogEvent()
 			dialog.Text = "Äußerst vorzüglich, ich werde alles regeln. Sie werden mit Ihnen zusammenarbeiten.";
 			Link.l99 = "Danke.";
 			Link.l99.go = "exit";
-			ChangeContrabandRelation(pchar, 25);
+			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
 			AddMoneyToCharacter(pchar, -sti(Pchar.questTemp.Relations.sum));
 		break;
         // boal <--

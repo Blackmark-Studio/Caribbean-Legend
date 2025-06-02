@@ -104,7 +104,7 @@ Umiejętność posługiwania się ciężkimi broniami, takimi jak miecze dwuręc
 Pistol
 {
 Umiejętność posługiwania się wszystkimi rodzajami broni palnej.
-(R*0.5+S*0.5)
+(R*0.4+S*0.6)
 }
 
 Fortune
@@ -116,7 +116,7 @@ Based on(S).
 Leadership
 {
 Wplywa na wyniki niektórych wydarzeń i dialogów. Jest również główną umiejętnością przy rekrutacji nowych członków załogi.
-(A*0.9+T*0.1)
+(A*0.8+T*0.2)
 }
 
 Commerce
@@ -140,7 +140,7 @@ Załaduj szybko działa, obróć je, a podczas gdy echo salwy wciąż dudni mię
 Sailing
 {
 Umiejętność bezpiecznego doprowadzenia statku do portu przez burzę i mgłę; zdolność posługiwania się sprzętem nawigacyjnym i kontrolowania floty. Największy i najgroźniejszy statek popłynie niczym ptak, słuchając pewnej ręki doświadczonego Nawigatora.
-(I0.2+T0.8)
+(I*0.2+T*0.8)
 ~
 Brak nawigacji nałoży kary na każdą umiejętność i statystykę.
 Statki 1. klasa wymagana 95
@@ -148,7 +148,8 @@ Statki 2. klasa wymagana 80
 Statki 3. klasa wymagana 65
 Statki 4. klasa wymagana 45
 Statki 5. klasa wymagana 25
-Statki 6. klasa wymagana 1
+Statki 6. klasa wymagana 05
+Brak Nawigacji prowadzi do kar we wszystkich umiejętnościach i cechach bohatera. Im większa różnica między aktualną a wymaganą wartością Nawigacji, tym większe kary.
 }
 
 Repair
@@ -246,7 +247,7 @@ Energia to kluczowy parametr określający wytrzymałość bohatera podczas walk
 
 Money
 {
-Pieniądze rządzą światem. Piastry, talary, gwinee… Jaka to różnica, jeśli wszystko to płynna gotówka!
+Pieniądze rządzą światem. Piastry, talary, gwinee... Jaka to różnica, jeśli wszystko to płynna gotówka!
 }
 
 Honor

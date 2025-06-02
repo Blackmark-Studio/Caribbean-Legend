@@ -39,8 +39,7 @@ Funkcja „Płyń do” pozwala na szybką podróż do przyjaznego statku lub pu
 ~
 Użyj menu akcji, aby natychmiast dotrzeć do 'Ghost', a następnie wysłać szalupę.
 }
-
-SeaFastTravel_controlsimg1 {BICommandsActivate}
+SeaFastTravel_controlsimg1{BICommandsActivate}							
 
 LandTimeScaleDown {Kontrola czasu w walce}
 LandTimeScaleDown_descr
@@ -153,6 +152,9 @@ Salary_descr
 Miesięczne wypłaty dla oficerów i załogi mogą znacząco skomplikować życie kapitana. Całkowita suma zależy od twoich umiejętności Handlu i Dowodzenia, wielkości statku oraz poziomu trudności gry.
 ~
 Nawet na małych statkach warto mieć kwatermistrza, a duży okręt wojenny może doprowadzić nawet do bankructwa państwa. Jeśli opcja podziału łupów jest aktywna, koszty utrzymania mogą być jeszcze wyższe.
+~
+Jeśli masz włączoną opcję podziału łupów, suma wypłat może być jeszcze większa.
+
 }
 
 Salary_controlsimg1 {ShipState}
@@ -164,6 +166,8 @@ Złote dublony są prawdziwą miarą twojego bogactwa i zdolności do rozwiązyw
 ~
 Dobre źródła dublonów to poszukiwanie skarbów, lokaty bankowe, handel towarami strategicznymi i wymiana waluty u lichwiarzy. Nie musisz nosić złota przy sobie – możesz je przechowywać w jednej ze skrzyń w swojej kajucie.
 }
+
+Dubloons_controlsimg1 {LICommandsActivate}
 
 Box {Przechowywanie przedmiotów}
 Box_descr
@@ -261,9 +265,9 @@ Złota zasada: w bitwie – tryb Żagli Bitewnych, poza bitwą – tryb Pełnych
 }
 
 Navigation_controlsimg1 {Ship_SailUp}
-Navigation_controlsimg2 {Ship_SailDown}
-Navigation_controlsimg3 {MiniMapZoomIn}
-Navigation_controlsimg4 {MiniMapZoomOut}
+Navigation_controlsimg2 {Ship_TurnLeft}
+Navigation_controlsimg3 {Ship_SailDown}
+Navigation_controlsimg4 {Ship_TurnRight}
 
 Stealth {Skradanie się}
 Stealth_descr
@@ -376,5 +380,48 @@ Dziękujemy za grę, i do zobaczenia na morzu!
 
 MarksmanMode_controlsimg1 {ChrAiming}
 
+Overload {Przeciążenie}
 
+Overload_descr
+{
+Po raz pierwszy napotkałeś ograniczenia wagi do przenoszenia. 
+Każda postać w grze ma ograniczoną maksymalną wagę, a jej limit zależy od siły, umiejętności i amuletów.
+Każdy przedmiot ma też swoją wagę, a nawet najlżejsze z nich w dużych ilościach mogą prowadzić do przeciążenia, co z kolei skutkuje karami do cech i umiejętności.
+Spróbuj znaleźć coś, co zwiększy maksymalny udźwig Twojej postaci – na przykład u handlarza. 
+}
 
+Logbook {Dziennik pokładowy i dokumenty}
+
+Logbook_descr
+{
+Każde zadanie, które przyjmujesz, jest zapisywane w Dzienniku. Bardzo ważne jest, aby uważnie czytać dialogi i wpisy w Dzienniku – często zawierają one ważne wskazówki i instrukcje dotyczące dalszych działań.
+Oprócz zadań Dziennik zawiera inne ważne informacje: w sekcji Dokumenty możesz przeczytać wszystkie znalezione notatki, a sekcje takie jak Handel i Księga kasowa przydadzą Ci się później.
+Zapoznaj się z wpisami w Dzienniku, naciskając F3.
+~
+I pamiętaj – Caribbean Legend to wymagająca gra, a głębia niektórych zadań może nie być oczywista. Nie wahaj się pytać o rady na Discordzie – na pewno Ci pomogą. 
+}
+
+DeadSearch {Przeszukiwanie ciał}
+
+DeadSearch_descr
+{
+Po każdej walce, jak w każdej dobrej grze RPG, nadchodzi czas na zbieranie trofeów.
+Każdego pokonanego przeciwnika można przeszukać, naciskając 1 obok jego ciała, ale nie wszyscy będą mieli coś wartościowego w kieszeniach.
+~
+Jeśli ciała leżą zbyt blisko siebie i przeszkadzają sobie nawzajem, możesz nacisnąć przycisk "Nie przeszukuj" w menu przeszukiwania – to na stałe zabroni przeszukiwania tego ciała.
+~
+Ci goście na pewno mają w kieszeniach przynajmniej jeden eliksir leczniczy, którego Alonso bardzo potrzebuje.
+}
+
+Trading {Handel i ceny}
+
+Trading_descr
+{
+Handel to głęboki i złożony system, w którym na cenę zakupu i sprzedaży wpływa wiele czynników.
+~
+W handlu lądowym oceniana jest przede wszystkim umiejętność Handlu gracza i jego historia.
+~
+W handlu morskim czynników jest więcej – oprócz wymienionych, cena zależy od rodzaju towaru, jego pochodzenia, wielkości kolonii, tras eksportu i importu oraz umiejętności i talentów skarbnika.
+~
+Prędzej czy później wszystko zrozumiesz, ale na razie warto kupić jakiś przydatny amulet do Handlu.
+}

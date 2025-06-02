@@ -48,21 +48,21 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Tak, mamy surowe rozkazy tutaj, i jeden może łatwo stracić swoją głowę za wszelkie występki. Ja w to nie wchodzę, ale mogę ci doradzić, abyś porozmawiał z miejscowymi Indianami na ten temat. Oni mają gdzie uciec, jeśli coś pójdzie nie tak, więc powinni być odważniejsi niż my...";
+				dialog.text = "Tak, mamy tu surowe rozkazy, i jeden może łatwo stracić swoją głowę za wszelkie występki. Ja w to nie wchodzę, ale mogę ci doradzić, abyś porozmawiał z miejscowymi Indianami na ten temat. Oni mają gdzie uciec, jeśli coś pójdzie nie tak, więc powinni być odważniejsi niż my...";
 				link.l1 = "Rozumiem... Dobrze, dzięki.";
 				link.l1.go = "exit";
 			}
 		break;
 		case "PearlMan_Sharp_1":
-			dialog.text = LinkRandPhrase("Czy jesteś całkowicie  "+GetSexPhrase("szalony? Spadaj, idioto","szalony? Spadaj, głupi dureń")+"!",""+GetSexPhrase("Co?! Czy ty oszalałeś, idioto","Co?! Czy ty jesteś poza swoim umysłem głupia dziewczyno")+"?! Zgub się ze wszystkimi swoimi pytaniami...",""+GetSexPhrase("Czy straciłeś rozum, drogi? Jakie piraci? Tutaj?! Po prostu znikaj, palancie","Czy straciłaś rozum, kochanie? Jakie piraci? Tutaj?! Po prostu znikaj, głupia dziewczyno")+"...");
-			link.l1 = RandPhraseSimple("Nie ma potrzeby być niegrzecznym...","Uważaj na swoje słowa!");
+			dialog.text = LinkRandPhrase("Czy ty "+GetSexPhrase("zwariowałeś? Spadaj, idioto","zwariowałaś? Spadaj, latawico")+"!",""+GetSexPhrase("Co?! Czy ty oszalałeś, idioto","Co?! Postradałaś zmysły, głupia dziewczyno")+"?! Zabieraj się ze wszystkimi swoimi pytaniami...",""+GetSexPhrase("Straciłeś rozum, drogi? Jacy piraci? Tutaj?! Spływaj stąd, palancie","Czy straciłaś rozum, kochanie? Jacy piraci? Tutaj?! Spływaj stąd, głupia dziewczyno")+"...");
+			link.l1 = RandPhraseSimple("Nie ma potrzeby być niegrzecznym...","Zważaj na swe słowa!");
 			link.l1.go = "exit";
 		break;
 
 		// ==> индейцы в поселении
 		case "IndPearlMan":
 			NextDiag.TempNode = "IndPearlMan";
-			dialog.text = NPCStringReactionRepeat(""+GetSexPhrase("Białotwarz","Biała squaw")+" chce rozmawiać?","Ty znowu, "+GetSexPhrase("bladatwarz","biała squaw")+".",""+GetSexPhrase("Biały lubi rozmawiać. Wygląda jak kobieta.","Biała squaw lubi rozmawiać.")+"","Duchy przyprowadziły mi bladą twarz "+GetSexPhrase("brat","siostra")+" do mnie.","block",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(""+GetSexPhrase("Bladatwarz","Bladatwarz")+" chce rozmawiać?","Ty znowu, "+GetSexPhrase("bladatwarz","bladatwarz")+".",""+GetSexPhrase("Blady lubi rozmawiać. Wygląda jak kobieta.","Blada lubi rozmawiać.")+"","Duchy przyprowadziły mi "+GetSexPhrase("bladego brata"," bladą siostre")+" do mnie.","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Tak.","Tak, to znowu ja.","Bardzo poetycko.","Cieszę się również, że cię widzę",npchar,Dialog.CurrentNode);
 			link.l1.go = "IndPearlMan_1";
 		break;

@@ -24,7 +24,7 @@ string DLG_TEXT[229] = {
     "Dame tu bebida",
     "No creo en curas milagrosas",
     "Hola. Estoy en un apuro, ¿puedes ayudarme?",
-    "Hmm, ¿por qué estoy...",
+    "Hmm, ¿por qué estoy...?",
     "Estos son tus problemas, resuélvelos tú mismo",
     "¿No ayudarás al pobre que sufre, no aliviarás su suerte con un par de monedas?",
     "Por supuesto, la iglesia nos enseña a escuchar, y ayudar a los demás",

@@ -56,7 +56,7 @@ void ProcessDialogEvent()
 		case 1: // энкаунтер на глобалке, установка параметров
 			pchar.GenQuest.MarchCap.Startcity = SelectAnyColony(pchar.GenQuest.MarchCap.basecity);
 			pchar.GenQuest.MarchCap.Finishcity = SelectAnyColony2(pchar.GenQuest.MarchCap.basecity, pchar.GenQuest.MarchCap.Startcity);
-			pchar.GenQuest.MarchCap.DaysQty = 5 + drand(5);
+			pchar.GenQuest.MarchCap.DaysQty = 5 + hrand(5);
 			dialog.text = "Logré averiguar que en " + FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty)) + " un pequeño convoy mercante bajo la bandera de " + NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation)) + ", dos barcos mercantes y un barco de escolta, zarparán desde " + XI_ConvertString("Colony" + pchar.GenQuest.MarchCap.Startcity + "Gen") + " a " + XI_ConvertString("Colony" + pchar.GenQuest.MarchCap.Finishcity + "Acc") + ". Los comerciantes tienen mucho de " + GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)) + " en sus bodegas. Sería tonto no usar esta información, capitán.\nTú y yo podemos ocuparnos fácilmente de los guardias y tomar la carga para nosotros. La parte más difícil es encontrarlos en el mar abierto entre estas dos colonias. Entonces, ¿estás dentro?";
 			link.l1 = "Suena tentador. ¡Diría que sí!";
 			link.l1.go = "MarchCap_2_1";
@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 			break;
 
 		case 2: // одиночный пиратский кулсейлор у бухты, установка параметров
-			pchar.GenQuest.MarchCap.Goods = GOOD_GOLD + drand(makeint(GOOD_SILVER - GOOD_GOLD));
+			pchar.GenQuest.MarchCap.Goods = GOOD_GOLD + hrand(makeint(GOOD_SILVER - GOOD_GOLD));
 			pchar.GenQuest.MarchCap.GoodsQty = sti(pchar.rank) * 50 + 170 + rand(30);
 			if (sti(pchar.GenQuest.MarchCap.GoodsQty) > 1600)
 				pchar.GenQuest.MarchCap.GoodsQty = 1500 + rand(100);
@@ -197,7 +197,7 @@ void ProcessDialogEvent()
 		if (iTemp > 50 && iTemp < 500)
 		{
 			dialog.text = "Bueno, esta incursión no fue tan exitosa como esperaba, nuestro botín es realmente modesto... Como sea, capitán, compartamos estos restos y despidámonos.";
-			link.l1 = "Si hubieras estado ayudándome en vez de contar pájaros en el cielo, la incursión habría tenido éxito... Toma tu parte - " + FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart)) + " ¡y piérdete!";
+			link.l1 = "Si hubieras estado ayudándome en vez de contar pájaros en el cielo, la incursión habría tenido éxito... Toma tu parte, " + FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart)) + " ¡y piérdete!";
 			link.l1.go = "MarchCap_Talk_exit";
 			pchar.GenQuest.MarchCap = "poor";
 			break;
@@ -298,7 +298,7 @@ void ProcessDialogEvent()
 
 	case "MarchCap_DieHard_1":
 		dialog.text = "¿Y por qué me he involucrado contigo, capitán? ¡Debería haber encontrado a un hombre que no temiera a los sables de abordaje!";
-		link.l1 = " Ahora, te pido que abandones mi barco - necesito repararlo.";
+		link.l1 = "Ahora, te pido que abandones mi barco, necesito repararlo.";
 		link.l1.go = "MarchCap_Talk_exit";
 		break;
 
@@ -317,7 +317,7 @@ void ProcessDialogEvent()
 		if (iTemp > 10 && iTemp < 100)
 		{
 			dialog.text = "Bueno, esta incursión no fue tan exitosa como esperaba, nuestro botín es realmente modesto... Como sea, capitán, repartamos estos restos y despidámonos.";
-			link.l1 = "Si me estuvieras ayudando en lugar de contar pájaros en el cielo, la incursión habría sido exitosa... Toma tu parte - " + FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart)) + "¡y piérdete!";
+			link.l1 = "Si me estuvieras ayudando en lugar de contar pájaros en el cielo, la incursión habría sido exitosa... Toma tu parte, " + FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart)) + "¡y piérdete!";
 			link.l1.go = "MarchCap_Talk_exit";
 			pchar.GenQuest.MarchCap = "poor";
 			break;
@@ -374,7 +374,7 @@ void ProcessDialogEvent()
 int SelectMarchCapGoods1()
 {
 	int iGoods;
-	switch (drand(5))
+	switch (hrand(5))
 	{
 	case 0:
 		iGoods = GOOD_EBONY;
@@ -400,18 +400,14 @@ int SelectMarchCapGoods1()
 
 int SelectPirateShipType()
 {
-	int iShip;
-
-	if (sti(pchar.rank) >= 19)
-		iShip = SHIP_LINESHIP;
-	if (sti(pchar.rank) >= 13 && sti(pchar.rank) < 18)
-		iShip = SHIP_GALEON_H;
-	if (sti(pchar.rank) >= 8 && sti(pchar.rank) < 12)
-		iShip = SHIP_CORVETTE;
-	if (sti(pchar.rank) >= 5 && sti(pchar.rank) < 8)
-		iShip = SHIP_SCHOONER_W;
-	if (sti(pchar.rank) < 5)
-		iShip = SHIP_LUGGER + drand(makeint(SHIP_BRIG - SHIP_LUGGER));
-
-	return iShip;
+	int iClass = 6;
+	int iRank = sti(pchar.rank);
+	
+	if(iRank < 6) iClass = 6;
+	if(iRank >= 6 && iRank < 12) iClass = 5;
+	if(iRank >= 12 && iRank < 21) iClass = 4;
+	if(iRank >= 21 && iRank < 30) iClass = 4 - rand(1);
+	if(iRank >= 30) iClass = 2;
+	
+	return GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 }

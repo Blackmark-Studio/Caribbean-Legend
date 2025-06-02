@@ -14,9 +14,9 @@ void InitCannons()
 	rCannon.picture = "cannons5";
 	rCannon.Sound = "cannon_fire_cannon_3";
 	rCannon.caliber = 3;
-	rCannon.ReloadTime = 10;
+	rCannon.ReloadTime = 12;
 	rCannon.Cost = 105;
-	rCannon.Weight = 3;
+	rCannon.Weight = 4;
 	rCannon.FireAngMax = 0.60;
 	rCannon.FireAngMin = -0.35;
 	rCannon.TimeSpeedMultiply = 1.0;
@@ -33,9 +33,9 @@ void InitCannons()
 	rCannon.picture = "cannons5";
 	rCannon.Sound = "cannon_fire_cannon_6";
 	rCannon.caliber = 6;
-	rCannon.ReloadTime = 19;
+	rCannon.ReloadTime = 17;
 	rCannon.Cost = 215;
-	rCannon.Weight = 6;
+	rCannon.Weight = 7;
 	rCannon.FireAngMax = 0.60;
 	rCannon.FireAngMin = -0.35;
 	rCannon.TimeSpeedMultiply = 1.0;
@@ -45,16 +45,16 @@ void InitCannons()
 	rCannon.DamageMultiply = 1.5;
 	rCannon.hp = 45.0;
 	InitBaseCannons_CalcSpeedV0(&rCannon,450.0);
-	
-	makeref(rCannon,Cannon[CANNON_TYPE_CANNON_LBS12]);
+	//8-фунтовая пушка новая спелая садовая
+	makeref(rCannon,Cannon[CANNON_TYPE_CANNON_LBS8]);
 	rCannon.type = CANNON_NAME_CANNON;
-	rCannon.name = "caliber12";
+	rCannon.name = "caliber8";
 	rCannon.picture = "cannons5";
-	rCannon.Sound = "cannon_fire_cannon_12";
-	rCannon.caliber = 12;
-	rCannon.ReloadTime = 31;
-	rCannon.Cost = 425;
-	rCannon.Weight = 11;
+	rCannon.Sound = "cannon_fire_culverine_8";
+	rCannon.caliber = 8;
+	rCannon.ReloadTime = 22;
+	rCannon.Cost = 320;
+	rCannon.Weight = 9;
 	rCannon.FireAngMax = 0.60;
 	rCannon.FireAngMin = -0.35;
 	rCannon.TimeSpeedMultiply = 1.0;
@@ -62,7 +62,26 @@ void InitCannons()
 	rCannon.SizeMultiply = 1.0;
 	rCannon.HeightMultiply = 1.0;
 	rCannon.DamageMultiply = 2.0;
-	rCannon.hp = 79.0;
+	rCannon.hp = 53.0;
+	InitBaseCannons_CalcSpeedV0(&rCannon,500.0);
+
+	makeref(rCannon,Cannon[CANNON_TYPE_CANNON_LBS12]);
+	rCannon.type = CANNON_NAME_CANNON;
+	rCannon.name = "caliber12";
+	rCannon.picture = "cannons5";
+	rCannon.Sound = "cannon_fire_cannon_12";
+	rCannon.caliber = 12;
+	rCannon.ReloadTime = 27;
+	rCannon.Cost = 425;
+	rCannon.Weight = 13;
+	rCannon.FireAngMax = 0.60;
+	rCannon.FireAngMin = -0.35;
+	rCannon.TimeSpeedMultiply = 1.0;
+	rCannon.BigBall = 0;
+	rCannon.SizeMultiply = 1.0;
+	rCannon.HeightMultiply = 1.0;
+	rCannon.DamageMultiply = 2.5;
+	rCannon.hp = 66.0;
 	InitBaseCannons_CalcSpeedV0(&rCannon,550.0);
 
 	makeref(rCannon,Cannon[CANNON_TYPE_CANNON_LBS16]);
@@ -71,28 +90,9 @@ void InitCannons()
 	rCannon.picture = "cannons6";
 	rCannon.Sound = "cannon_fire_cannon_16";
 	rCannon.caliber = 16;
-	rCannon.ReloadTime = 40;
+	rCannon.ReloadTime = 32;
 	rCannon.Cost = 600;
-	rCannon.Weight = 16;
-	rCannon.FireAngMax = 0.60;
-	rCannon.FireAngMin = -0.35;
-	rCannon.TimeSpeedMultiply = 1.0;
-	rCannon.BigBall = 0;
-	rCannon.SizeMultiply = 1.0;
-	rCannon.HeightMultiply = 1.0;
-	rCannon.DamageMultiply = 2.5;
-	rCannon.hp = 76.0;
-	InitBaseCannons_CalcSpeedV0(&rCannon,600.0);
-		
-	makeref(rCannon,Cannon[CANNON_TYPE_CANNON_LBS20]);
-	rCannon.type = CANNON_NAME_CANNON;
-	rCannon.name = "caliber20";
-	rCannon.picture = "cannons7";
-	rCannon.Sound = "cannon_fire_cannon_20";
-	rCannon.caliber = 20;
-	rCannon.ReloadTime = 48;
-	rCannon.Weight = 20;
-	rCannon.Cost = 815;
+	rCannon.Weight = 17;
 	rCannon.FireAngMax = 0.60;
 	rCannon.FireAngMin = -0.35;
 	rCannon.TimeSpeedMultiply = 1.0;
@@ -100,6 +100,44 @@ void InitCannons()
 	rCannon.SizeMultiply = 1.0;
 	rCannon.HeightMultiply = 1.0;
 	rCannon.DamageMultiply = 3.0;
+	rCannon.hp = 79.0;
+	InitBaseCannons_CalcSpeedV0(&rCannon,600.0);
+	
+	makeref(rCannon,Cannon[CANNON_TYPE_CANNON_LBS18]);
+	rCannon.type = CANNON_NAME_CANNON;
+	rCannon.name = "caliber18";
+	rCannon.picture = "cannons6";
+	rCannon.Sound = "cannon_fire_culverine_18";
+	rCannon.caliber = 18;
+	rCannon.ReloadTime = 42;
+	rCannon.Cost = 725;
+	rCannon.Weight = 20;
+	rCannon.FireAngMax = 0.60;
+	rCannon.FireAngMin = -0.35;
+	rCannon.TimeSpeedMultiply = 1.0;
+	rCannon.BigBall = 0;
+	rCannon.SizeMultiply = 1.0;
+	rCannon.HeightMultiply = 1.0;
+	rCannon.DamageMultiply = 4.0;
+	rCannon.hp = 78.0;
+	InitBaseCannons_CalcSpeedV0(&rCannon,625.0);
+	
+	makeref(rCannon,Cannon[CANNON_TYPE_CANNON_LBS20]);
+	rCannon.type = CANNON_NAME_CANNON;
+	rCannon.name = "caliber20";
+	rCannon.picture = "cannons7";
+	rCannon.Sound = "cannon_fire_cannon_20";
+	rCannon.caliber = 20;
+	rCannon.ReloadTime = 46;
+	rCannon.Weight = 22;
+	rCannon.Cost = 815;
+	rCannon.FireAngMax = 0.60;
+	rCannon.FireAngMin = -0.35;
+	rCannon.TimeSpeedMultiply = 1.0;
+	rCannon.BigBall = 0;
+	rCannon.SizeMultiply = 1.0;
+	rCannon.HeightMultiply = 1.0;
+	rCannon.DamageMultiply = 4.5;
 	rCannon.hp = 73.0;
 	InitBaseCannons_CalcSpeedV0(&rCannon,650.0);
 	
@@ -109,7 +147,7 @@ void InitCannons()
 	rCannon.picture = "cannons7";
 	rCannon.Sound = "cannon_fire_cannon_24";
 	rCannon.caliber = 24;
-	rCannon.ReloadTime = 56;
+	rCannon.ReloadTime = 50;
 	rCannon.Weight = 29;
 	rCannon.Cost = 1200;
 	rCannon.FireAngMax = 0.60;
@@ -118,7 +156,7 @@ void InitCannons()
 	rCannon.BigBall = 0;
 	rCannon.SizeMultiply = 1.0;
 	rCannon.HeightMultiply = 1.0;
-	rCannon.DamageMultiply = 4.0;
+	rCannon.DamageMultiply = 5.0;
 	rCannon.hp = 70.0;
 	InitBaseCannons_CalcSpeedV0(&rCannon,700.0);
 	
@@ -128,7 +166,7 @@ void InitCannons()
 	rCannon.name = "caliber32";
 	rCannon.picture = "cannons8";
 	rCannon.Sound = "cannon_fire_cannon_32";
-	rCannon.ReloadTime = 61;
+	rCannon.ReloadTime = 54;
 	rCannon.Cost = 1705;
 	rCannon.Weight = 40;
 	rCannon.FireAngMax = 0.60;
@@ -137,7 +175,7 @@ void InitCannons()
 	rCannon.BigBall = 0;
 	rCannon.SizeMultiply = 1.0;
 	rCannon.HeightMultiply = 1.0;
-	rCannon.DamageMultiply = 5.0;
+	rCannon.DamageMultiply = 5.5;
 	rCannon.hp = 65.0;
 	InitBaseCannons_CalcSpeedV0(&rCannon,650.0);
 	
@@ -147,7 +185,7 @@ void InitCannons()
 	rCannon.name = "caliber36";
 	rCannon.picture = "cannons8";
 	rCannon.Sound = "cannon_fire_cannon_36";
-	rCannon.ReloadTime = 63;
+	rCannon.ReloadTime = 62;
 	rCannon.Cost = 2055;
 	rCannon.Weight = 46;
 	rCannon.FireAngMax = 0.60;
@@ -156,7 +194,7 @@ void InitCannons()
 	rCannon.BigBall = 0;
 	rCannon.SizeMultiply = 1.0;
 	rCannon.HeightMultiply = 1.0;
-	rCannon.DamageMultiply = 6.0;
+	rCannon.DamageMultiply = 6.5;
 	rCannon.TradeOff = true;
 	rCannon.hp = 60.0;
 	InitBaseCannons_CalcSpeedV0(&rCannon,600.0); 
@@ -179,7 +217,7 @@ void InitCannons()
 	rCannon.DamageMultiply = 7.0;
 	rCannon.TradeOff = true;
 	rCannon.hp = 55.0;
-	InitBaseCannons_CalcSpeedV0(&rCannon,550.0);
+	InitBaseCannons_CalcSpeedV0(&rCannon,575.0);
 	
 	makeref(rCannon,Cannon[CANNON_TYPE_CANNON_LBS48]);
 	rCannon.type = CANNON_NAME_CANNON;
@@ -208,7 +246,7 @@ void InitCannons()
 	rCannon.picture = "cannons1";
 	rCannon.Sound = "cannon_fire_culverine_8";
 	rCannon.caliber = 8;
-	rCannon.ReloadTime = 35;
+	rCannon.ReloadTime = 30;
 	rCannon.Cost = 345;
 	rCannon.Weight = 16;
 	rCannon.FireAngMax = 0.60;
@@ -217,7 +255,7 @@ void InitCannons()
 	rCannon.BigBall = 0;
 	rCannon.SizeMultiply = 1.0;
 	rCannon.HeightMultiply = 1.0;
-	rCannon.DamageMultiply = 2.0;
+	rCannon.DamageMultiply = 1.75;
 	rCannon.hp = 60.0;
 	InitBaseCannons_CalcSpeedV0(&rCannon,700.0);
 	
@@ -236,7 +274,7 @@ void InitCannons()
 	rCannon.BigBall = 0;
 	rCannon.SizeMultiply = 1.0;
 	rCannon.HeightMultiply = 1.0;
-	rCannon.DamageMultiply = 3.0;
+	rCannon.DamageMultiply = 3.25;
 	rCannon.hp = 75.0;
 	InitBaseCannons_CalcSpeedV0(&rCannon,850.0);
 

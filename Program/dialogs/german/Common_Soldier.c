@@ -547,7 +547,7 @@ void ProcessDialogEvent()
 				TakeNationLicence(HOLLAND);
 				break;
 			}
-			if (pchar.location != "Minentown_town" && findsubstr(pchar.location.from_sea, "_town" , 0) == -1) //если причалил не в городе 300912
+			if (pchar.location != "LosTeques_town" && findsubstr(pchar.location.from_sea, "_town" , 0) == -1) //если причалил не в городе 300912
 			{
 				dialog.text = "Sie sind gekommen, um hier zu handeln? Darf ich fragen, wie? Wo ist Ihr Schiff? Sie wissen, es sieht alles sehr verdächtig aus und ich bin gezwungen, Sie festzuhalten, bis wir alles herausgefunden haben. Übergeben Sie Ihre Waffe und folgen Sie mir!";
 				link.l1 = RandPhraseSimple("Fick dich!","Wenn zwei Sonntage in einer Woche kommen...");

@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 				pchar.GenQuest.MarchCap.name = npchar.name;
 				pchar.GenQuest.MarchCap.lastname = npchar.lastname;
 				pchar.GenQuest.MarchCap.BaseNation = npchar.nation;
-				pchar.GenQuest.MarchCap.Nation = drand(HOLLAND);
+				pchar.GenQuest.MarchCap.Nation = hrand(NON_PIRATES);
 				pchar.GenQuest.MarchCap.basecity = npchar.city;
 				dialog.text = "Mon navire est "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.MarchCap.shiptype),"Nom")))+" ' "+pchar.GenQuest.MarchCap.shipname+"Elle est au port en ce moment. Ne soyez pas en retard capitaine, je partirai dans six heures !";
 				link.l1 = "Je vois, j'essaierai d'être à l'heure. À bientôt !";
@@ -131,12 +131,12 @@ void ProcessDialogEvent()
 
 int SelectCaptainShipType()
 {
-	int iType;
-	if (sti(pchar.rank) >= 19) iType = SHIP_FRIGATE_H;	
-	if (sti(pchar.rank) >= 13 && sti(pchar.rank) < 19) iType = SHIP_GALEON_H + drand(makeint(SHIP_FRIGATE_H - SHIP_GALEON_H));	
-	if (sti(pchar.rank) >= 8 && sti(pchar.rank) < 12) iType =  SHIP_CORVETTE + drand(makeint(SHIP_POLACRE -  SHIP_CORVETTE));
-	if (sti(pchar.rank) >= 5 && sti(pchar.rank) < 8) iType = SHIP_BRIGANTINE + drand(makeint(SHIP_GALEON_L - SHIP_BRIGANTINE));
-	if (sti(pchar.rank) < 5) iType = SHIP_CAREERLUGGER + drand(makeint(SHIP_SLOOP - SHIP_CAREERLUGGER));
+	int iClassFlag = FLAG_SHIP_CLASS_6;
+	if (sti(pchar.rank) >= 19) iClassFlag = FLAG_SHIP_CLASS_2;	
+	if (sti(pchar.rank) >= 13 && sti(pchar.rank) < 19) iClassFlag = FLAG_SHIP_CLASS_3;	
+	if (sti(pchar.rank) >= 8 && sti(pchar.rank) < 12) iClassFlag = FLAG_SHIP_CLASS_4;
+	if (sti(pchar.rank) >= 5 && sti(pchar.rank) < 8) iClassFlag = FLAG_SHIP_CLASS_5;
+	if (sti(pchar.rank) < 5) iClassFlag = FLAG_SHIP_CLASS_6;
 	
-	return iType;
+	return GetRandomShipType(iClassFlag, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
 }

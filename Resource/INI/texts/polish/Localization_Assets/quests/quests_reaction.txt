@@ -1,41 +1,41 @@
 quests_reaction_1
 {
-Officer @<GetFullName(npchar)> is onboard.
+Oficer @<GetFullName(npchar)> jest już na pokładzie.
 }
 
 quests_reaction_2
 {
-@<GetFullName(npchar)> surrendered.
+@<GetFullName(npchar)> dostał się na twój pokład, a następnie się poddał.
 }
 
 quests_reaction_3
 {
-Corpses of the rebels were thrown overboard to their last voyage
+Ciała rebeliantów wyrzucono za burtę w ich ostatnią podróż
 }
 
 quests_reaction_4
 {
-The mutiny was put to an end
+Bunt został stłumiony
 }
 
 quests_reaction_5
 {
-@<GetCityName(sld.City)> is ours!
+@<GetCityName(sld.City)> jest nasze!
 }
 
 quests_reaction_6
 {
-Someone had poked around in your pockets.
+Ktoś grzebał w twoich kieszeniach.
 }
 
 quests_reaction_7
 {
-There was a fight near the lighthouse not long ago. Some captain had tried to smuggle some goods, but our patrol party caught him in the act. ~
+Niedawno doszło do bójki w pobliżu latarni morskiej. Jakiś kapitan próbował przemycić jakieś towary, ale nasz patrol złapał go na gorącym uczynku. ~
 }
 
 quests_reaction_8
 {
-Hell of a gunfight, the store's roof got bashed by a random cannon ball! But it was all for nothing. Local smugglers hid in the jungles and the captain has sailed away. Fooled our soldiers easily, I'll tell ya! Hell of a pilot too, escaped the bay like a king!
+Piekielna strzelanina, dach sklepu został rozwalony przez przypadkową kulę armatnią! Ale to wszystko na nic. Lokalni przemytnicy ukryli się w dżungli, a kapitan odpłynął. Łatwo oszukał naszych żołnierzy, mówię wam! Niezły nawigator, uciekł z zatoki jak król!
 }
 
 quests_reaction_9
@@ -49,30 +49,30 @@ quests_reaction_10
 
 quests_reaction_11
 {
-, which on ~
+, na którym ~
 }
 
 quests_reaction_12
 {
-Terms of delivery are expired.
+Termin dostawy wygasł.
 }
 
 quests_reaction_13
 {
-Some hours passed...
+Mineło pare godzin...
 }
 
 quests_reaction_14
 {
-An hour passed...
+Mineła godzina...
 }
 
 quests_reaction_15
 {
-One day passed...
+Minął jeden dzień...
 }
 
 quests_reaction_16
 {
-Some days passed...
+Mineło kilka dni...
 }

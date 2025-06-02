@@ -89,7 +89,7 @@ void ProcessDialogEvent()
 				npchar.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
 				npchar.Dialog.CurrentNode = "Tichingitu_officer";
 			}
-			if (npchar.id == "FMQT_mercen" || npchar.id == "Folke")
+			if (npchar.id == "Duran" || npchar.id == "Folke")
 			{
 				LAi_SetOfficerType(npchar);
 				npchar.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 			bDisableFastReload = false;
 			chrDisableReloadToLocation = false;
 			
-			SetTimerCondition("PZ_IshemLongway", 0, 0, 30, false);	// ВЕРНУТЬ 30 дней
+			SetTimerCondition("PZ_IshemLongway", 0, 0, 30, false);
 		break;
 		
 		case "PZ_SharliePlennik_BadFinal_1":
@@ -2055,9 +2055,9 @@ void ProcessDialogEvent()
 			{
 				notification("All Skills +", "Longway");
 				AddCharacterExpToSkill(npchar, "Leadership", 50);
-				AddCharacterExpToSkill(npchar, "FencingLight", 50);
-				AddCharacterExpToSkill(npchar, "Fencing", 50);
-				AddCharacterExpToSkill(npchar, "FencingHeavy", 50);
+				AddCharacterExpToSkill(npchar, "FencingL", 50);
+				AddCharacterExpToSkill(npchar, "FencingS", 50);
+				AddCharacterExpToSkill(npchar, "FencingH", 50);
 				AddCharacterExpToSkill(npchar, "Pistol", 50);
 				AddCharacterExpToSkill(npchar, "Fortune", 50);
 				AddCharacterExpToSkill(npchar, "Sneak", 50);
@@ -4508,18 +4508,24 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_HelenaTortugaCabin_12":
-			dialog.text = "A brothel? I didn't know these places offered anything other than the obvious. Ш: I need to chat with the owner, that's all. And it's not just any brothel. Rumor is - it's a very expensive establishment, for members of high society only...";
-			link.l1 = "I promise I'm going strictly on Longway's business. It's quite possible the owner of that place is his sister. I won't be there long.";
+			dialog.text = "A brothel? I didn't know these places offered anything other than the obvious.";
+			link.l1 = "I need to chat with the owner, that's all. And it's not just any brothel. Rumor is - it's a very expensive establishment, for members of high society only...";
 			link.l1.go = "PZ_HelenaTortugaCabin_13";
 		break;
 				
 		case "PZ_HelenaTortugaCabin_13":
-			dialog.text = "Well, then it is just right for you, darling. Oh, I'm kidding. Still, I'm not thrilled you're going there. But... As you wish. You are not obliged to inform me about such things. I never promised you I wouldn't sleep with another man. And yet, I don't. Because it's something I take for granted.";
-			link.l1 = "Under other circumstances, I would have taken you with me, but...";
+			dialog.text = "Well, then it is just right for you, darling. Oh, I'm kidding. Still, I'm not thrilled you're going there. But...";
+			link.l1 = "I promise I'm going strictly on Longway's business. It's quite possible the owner of that place is his sister. I won't be there long.";
 			link.l1.go = "PZ_HelenaTortugaCabin_14";
 		break;
 		
 		case "PZ_HelenaTortugaCabin_14":
+			dialog.text = "As you wish. You are not obliged to inform me about such things. I never promised you I wouldn't sleep with another man. And yet, I don't. Because it's something I take for granted.";
+			link.l1 = "Under other circumstances, I would have taken you with me, but...";
+			link.l1.go = "PZ_HelenaTortugaCabin_15";
+		break;
+		
+		case "PZ_HelenaTortugaCabin_15":
 			dialog.text = "Thanks, but no thanks. Charles, don't worry. I'm not some stupid jealous girl. Well, maybe jealous, but not stupid. And I believe you. Stupid me!";
 			link.l1 = "Thanks, Helen. I'll be right back.";
 			link.l1.go = "PZ_PredupredilNashuDevushku";
@@ -5074,7 +5080,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_HelenaRazgovorOBordeli_Good_2":
-			dialog.text = "And for that, you had to go to a brothel? You couldn't find that out at the inn? Ш: They don't really talk about this place in town. Why? It's a good question. You can ask Belle Etoile herself - she's gone to Espanola.";
+			dialog.text = "And for that, you had to go to a brothel? You couldn't find that out at the inn?";
 			link.l1 = "They don't really talk about this place in town. Why? It's a good question. You can ask Belle Etoile herself - she's gone to Espanola.";
 			link.l1.go = "PZ_HelenaRazgovorOBordeli_Good_3";
 		break;
@@ -5574,14 +5580,15 @@ void ProcessDialogEvent()
 			link.l1.go = "PZ_RobertMartin_17";
 			LAi_SetActorType(npchar);
 			LAi_ActorAnimation(npchar, "beatmarten_idle_2", "", 0.3);
-			locCameraFromToPos(0.27, 14.52, -3.38, true, -1.80, 9.90, -1.76);
+			locCameraFromToPos(-2.80, 7.72, 6.77, true, 1.00, 5.13, 7.23);
 		break;
 		
 		case "PZ_RobertMartin_17":
 			dialog.text = "And whose fault is that?! You killed Edgardo Sotta! For the first time in his life, Levasseur wanted a taste of a girl and he didn't get it right away! First time our crew failed his direct order! The man can be as scary as the devil...";
 			link.l1 = "Then I'll be scarier than the devil himself and give you a little personal hell if you don't tell me what I want to know, do you hear me?!";
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) link.l1.go = "PZ_RobertMartin_Mary_1";
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) link.l1.go = "PZ_RobertMartin_Helena_1";
+			else link.l1.go = "PZ_RobertMartin_Helena_1";
+			//if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) link.l1.go = "PZ_RobertMartin_Helena_1";
 		break;
 		
 		case "PZ_RobertMartin_Mary_1":
@@ -5611,7 +5618,7 @@ void ProcessDialogEvent()
 			LAi_SetActorType(npchar);
 			LAi_ActorAnimation(npchar, "beatmarten_idle_3", "", 0.3);
 			//locCameraFromToPos(-1.75, 14.14, -0.31, true, 1.26, 11.00, -4.00);
-			locCameraFromToPos(-2.47, 14.15, -0.01, true, 1.23, 10.92, -3.60);
+			locCameraFromToPos(-2.80, 7.72, 6.77, true, 0.66, 5.00, 8.26);
 		break;
 		
 		case "PZ_RobertMartin_20":
@@ -5628,7 +5635,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_RobertMartin_22":
 			dialog.text = "So you know about his secret place, the dungeon? Oh yes, he is the real dungeon master, ha-ha-ha! But can you really challenge him? I doubt it. You want to defeat the beast? Then become the beast yourself. See if you can break me like Francois breaks those girls. Like he'll soon break yours...";
-			if (!CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
+			/*if (!CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
 			{
 				link.l1 = "Alo-o-on-s-o-o!!!";
 				link.l1.go = "PZ_RobertMartin_23";
@@ -5637,7 +5644,9 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "...";
 				link.l1.go = "PZ_LongwayKaznDialog_1";
-			}
+			}*/
+			link.l1 = "Alo-o-on-s-o-o!!!";
+			link.l1.go = "PZ_RobertMartin_23";
 		break;
 		
 		case "PZ_RobertMartin_23":
@@ -5812,7 +5821,7 @@ void ProcessDialogEvent()
 			link.l1.go = "PZ_AlonsoKaznDialog_5";
 			LAi_SetActorType(npchar);
 			LAi_ActorTurnToCharacter(npchar, CharacterFromID("PZ_RobertMartinPlennik"));
-			LAi_ActorAnimation(npchar, "Barman_idle", "1", 5);
+			//LAi_ActorAnimation(npchar, "Barman_idle", "1", 5);
 		break;
 		
 		case "PZ_AlonsoKaznDialog_5":

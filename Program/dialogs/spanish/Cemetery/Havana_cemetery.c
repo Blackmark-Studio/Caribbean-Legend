@@ -17,43 +17,43 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		// калеуче
 		case "caleuche":
-			dialog.text = "N-no, marinero, c-ciertamente no. Rara vez recibo visitantes aquí abajo, ya ves, eh... y yo... yo no h-he visto a nadie como el hombre que describiste, así que...";
+			dialog.text = "N-no, marinero, c-ciertamente no. Rara vez recibo visitantes por aquí, ya ves, eh... y yo... yo no h-he visto a nadie como el hombre que describes, así que...";
 			link.l1 = "¿De verdad? Entonces, ¿por qué tartamudeas y escondes los ojos? No me mientas ahora, tú conoces la verdad. Será mejor que lo pienses de nuevo: ¿has visto a ese hombre?";
 			link.l1.go = "caleuche_1";
 		break;
 		
 		case "caleuche_1":
-			dialog.text = "¡L-le digo, Señor, que n-no he visto a nadie! H-he estado t-tartamudeando d-desde que era un niño...";
+			dialog.text = "¡L-le digo, señor, que n-no he visto a nadie! H-he estado t-tartamudeando d-desde que era un niño...";
 			link.l1 = "Mentiras, todas mentiras. Puedo verlo en tus ojos. ¿Dónde está, dónde está Merriman? ¡Dímelo, AHORA!";
 			link.l1.go = "caleuche_2";
 		break;
 		
 		case "caleuche_2":
 			dialog.text = "¡No conozco a ningún Merriman! ¡Nunca he oído ese nombre antes tampoco! ¡Y no intentes hacerme daño o el Comandante te colgará en el fuerte! Así que camina con cuidado, muchacho.";
-			link.l1 = "¿Oh, eso crees? Está bien. Ahora, escúchame con mucha atención: Joachim Merriman es un brujo. La Santa Inquisición lo está buscando. Hace muchos años en Europa, fue condenado a la hoguera por profanar tumbas, mancillar a los muertos y brujería. Y sé con certeza que ahora se esconde en algún lugar, aquí, en las afueras de La Habana...";
+			link.l1 = "¿Oh, eso crees? Está bien. Ahora, escúchame con mucha atención: Joachim Merriman es un brujo. La Santa Inquisición lo está buscando. Hace muchos años en Europa, fue condenado a la hoguera por profanar tumbas, mancillar a los muertos y brujería. Y sé con certeza que ahora se esconde en algún lugar por aquí, en las afueras de La Habana...";
 			link.l1.go = "caleuche_3";
 		break;
 		
 		case "caleuche_3":
 			dialog.text = "...";
-			link.l1 = "... recientemente he limpiado la cueva cercana de zombis y sé quién es el responsable. Claro, ¿a dónde más iría Merriman, si no al cementerio? Tú sabes dónde está. Pero hazlo a tu manera... no te pondré un dedo encima, pero haré una visita a los Inquisidores en Santiago. Al Padre Vincento le resultará muy intrigante que Joachim Merriman se esté escondiendo en el cementerio de La Habana con su cómplice, el vigilante local...";
+			link.l1 = "... recientemente he limpiado la cueva cercana de no-muertos, y sé quién es el responsable. Claro, ¿a dónde más iría Merriman, si no al cementerio? Tú sabes dónde está. Pero hazlo a tu manera... no te pondré un dedo encima, pero haré una visita a los Inquisidores en Santiago. Al Padre Vincento le resultará muy intrigante que Joachim Merriman se esté escondiendo en el cementerio de La Habana con su cómplice, el vigilante...";
 			link.l1.go = "caleuche_4";
 		break;
 		
 		case "caleuche_4":
 			dialog.text = "...";
-			link.l1 = "... ¿Ya te has puesto pálido? Te doy mi palabra de noble: Un día después de que reporte mis hallazgos, toda la isla estará llena de soldados españoles. Y serás estirado en un potro, estarás suplicando y llorando hasta que reveles dónde se esconde ese hechicero. No mucho después serás quemado en la hoguera como su cómplice mientras yo veo el 'auto de fe'. ¿Cómo suena eso?";
+			link.l1 = "... ¿Ya te has puesto pálido? Te doy mi palabra de noble: Un día después de que reporte mis hallazgos, toda la isla estará llena de soldados españoles. Y serás estirado en un potro, estarás suplicando y llorando hasta que reveles dónde se esconde ese hechicero. No mucho después serás quemado en la hoguera como su cómplice mientras yo veo el 'acto de fe'. ¿Cómo suena eso?";
 			link.l1.go = "caleuche_5";
 		break;
 		
 		case "caleuche_5":
 			dialog.text = "¡P-por favor, señor! ¡No estoy participando en nada de eso, lo juro! Yo... Yo simplemente no pude hacer nada... ¿Cómo podría enfrentarme a él? ¡Es un hombre terrible, él puede... no tienes idea de lo que puede hacer! ¡Misericordia, te lo suplico!";
-			link.l1 = "Confía en mí, sé de lo que es capaz. Lo he visto con mis propios ojos. ¿Entonces? ¿Dónde está? Dímelo y te prometo que no te involucraré en este asunto.";
+			link.l1 = "Confía en mí, sé de lo que es capaz. Lo he visto con mis propios ojos. ¿Y bien? ¿Dónde está? Dímelo, y te prometo que no te involucraré en este asunto.";
 			link.l1.go = "caleuche_6";
 		break;
 		
 		case "caleuche_6":
-			dialog.text = "Él... Él se esconde en una cueva debajo del cementerio. Solo se puede llegar allí a través de la puerta de la capilla. Cuando sale, me escondo en mi casa y me quedo allí. ¡No tienes idea de cuánto me gustaría deshacerme de ese horror!\nPero no me atrevería ni siquiera a acercarme. Yo... Yo lo he visto cavar una tumba reciente, y luego... ¡luego el muerto se levantó y caminó por el cementerio a la luz de la luna! ¡Casi perdí la cordura! Pero Merriman me prohibió irme. Me amenazó con que si salía de mi casa sin su permiso, aunque fuera por medio día, me encontraría y me convertiría en esa abominación... ¡un esqueleto andante!";
+			dialog.text = "Él... Él se esconde en una mazmorra, debajo del cementerio. Solo se puede llegar allí a través de la puerta de la capilla. Cuando sale, me escondo en mi casa y me quedo allí. ¡No tienes idea de cuánto me gustaría deshacerme de ese horror!\nPero no me atrevería ni siquiera a acercarme. Yo... Yo lo he visto cavar una tumba reciente, y luego... ¡luego el muerto se levantó y caminó por el cementerio a la luz de la luna! ¡Casi perdí la cordura! Pero Merriman me prohibió irme. Me amenazó con que si salía de mi casa sin su permiso, aunque fuera por medio día, me encontraría y me convertiría en esa abominación... ¡un esqueleto andante!";
 			link.l1 = "¿Con qué frecuencia sale de su cueva?";
 			link.l1.go = "caleuche_7";
 		break;
@@ -86,12 +86,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			GiveItem2Character(pchar, "kaleuche_key");
 			ChangeItemDescribe("kaleuche_key", "itmdescr_kaleuche_key_crypt");
 			dialog.text = "Aquí tienes, señor. ¿En serio vas a entrar en su guarida?";
-			link.l1 = "Así es. Enciérrate en tu casa y espera allí cuando entre. Si no regreso, deja todo y corre lo más rápido que puedas.";
+			link.l1 = "Así es. Enciérrate en tu casa y espera cuando entre. Si no regreso, deja todo y corre lo más rápido que puedas.";
 			link.l1.go = "caleuche_12";
 		break;
 		
 		case "caleuche_12":
-			dialog.text = "Pero tenga cuidado, señor. Se han escuchado sonidos aterradores desde su cueva y temo incluso al pensar quién podría habitarla. Pero Merriman no está solo, de eso estoy seguro.";
+			dialog.text = "Pero tenga cuidado, señor. Se han escuchado sonidos aterradores desde su cueva, y temo incluso al pensar quién podría habitarla. Pero Merriman no está solo, de eso estoy seguro.";
 			link.l1 = "Tomaré todas las medidas que pueda. Adiós.";
 			link.l1.go = "caleuche_13";
 		break;

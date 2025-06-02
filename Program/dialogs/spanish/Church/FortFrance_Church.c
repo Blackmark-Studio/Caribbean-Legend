@@ -23,7 +23,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "LH_church_1":
-		dialog.text = "Me temo que no puedo, hijo mío. Hasta donde sé, el abad Benoit fue a negociar con el obispo de Nueva España y el prelado de la Inquisición, el padre Vincento Palotti, pero no especificó dónde se llevará a cabo la reunión.";
+		dialog.text = "Me temo que no puedo, hijo mío. Hasta donde sé, el abad Benoit fue a negociar con el obispo de Nueva España, y el prelado de la Inquisición, el padre Vincento Palotti, pero no especificó dónde se llevará a cabo la reunión.";
 		link.l1 = "Eso debería ser suficiente, Santo Padre, gracias. Conozco al padre Palotti de alguna manera... Buscaré en Santiago.";
 		link.l1.go = "LH_church_2";
 		break;

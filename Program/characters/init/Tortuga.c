@@ -36,7 +36,7 @@ int CreateTortugaCharacters(int n)
 	TakeNItems(ch, "potion2", 3+MOD_SKILL_ENEMY_RATE);
 	TakeNItems(ch, "potion3", 5);
 	GiveItem2Character(ch, "key_levasser"); 
-	SelAllPerksToChar(ch, false);
+	SetAllPerksToChar(ch, false);
 	ch.SaveItemsForDead = true;
 	ch.DontClearDead = true;
 	LAi_SetHuberType(ch);

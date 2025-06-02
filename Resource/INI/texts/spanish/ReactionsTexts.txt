@@ -13,7 +13,7 @@ NoLootCorpse11 {Sus bolsillos son un vacío abismal.}
 NoLootCorpse12 {Nada aquí. ¿Quizás bolsillos secretos?}
 NoLootCorpse13 {Ni dinero, ni llaves, ni testamento.}
 NoLootCorpse14 {Partió al más allá sin un solo objeto de valor.}
-NoLootCorpse15 {Claramente no era rico - bolsillos vacíos.}
+NoLootCorpse15 {Claramente no era rico, bolsillos vacíos.}
 NoLootCorpse16 {El pobre diablo fue a la batalla con lo puesto.}
 NoLootCorpse17 {Se armó con sus últimas monedas.}
 NoLootCorpse18 {Un cadáver es un cadáver. No hay nada.}

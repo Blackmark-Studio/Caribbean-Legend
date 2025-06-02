@@ -42,7 +42,7 @@ void GoldFleet()
     int nfreg 	= (3+rand(1));
     int ngal 	= (4+rand(1));
     GoldCapNum 	= nfreg + ngal;
-	int capHasGold = drand(GoldCapNum - 1) + 1;
+	int capHasGold = hrand(GoldCapNum - 1) + 1;
 	int iSpace;
 
     for(int k = 1; k <= GoldCapNum ; k++)
@@ -93,7 +93,8 @@ void GoldFleet()
 	    sld.dialog.currentnode = "GoldSquadron";
 	    sld.DeckDialogNode = "GoldSquadron";
 		Group_AddCharacter(sGroup, sld.id);
-	}	
+	}
+
     chref.AlwaysEnemy = true;
     chref.DontRansackCaptain = true; //квестовые не сдаются
 	chref.mapEnc.type = "trade";
@@ -242,7 +243,7 @@ void EndOfGoldFleet(string temp)
 void StartGoldFleet(string temp);
 {
     if (Colonies[FindColony("Havana")].nation == SPAIN && Colonies[FindColony("PortoBello")].nation == SPAIN
-    && !CheckAttribute(Colonies[FindColony("Havana")], "Siege") && !CheckAttribute(Colonies[FindColony("PortoBello")], "Siege"))
+    && !CheckAttribute(&Colonies[FindColony("Havana")], "Siege") && !CheckAttribute(&Colonies[FindColony("PortoBello")], "Siege"))
     {
             Log_TestInfo("start GoldFleet");
             AddTemplRumour("Start_GoldFleet", id_counter+1);

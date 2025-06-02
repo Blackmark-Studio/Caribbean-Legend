@@ -272,7 +272,7 @@ void ProcessDialogEvent()
 		// в тюрьме при старте игры
 		case "Puancie_Jail":
 			dialog.text = "Dzień dobry, Charles. Pozwól, że się przedstawię: jestem Philippe de Poincy i ja...";
-			link.l1 = "Po jaką cholerę wsadziłeś mnie do więzienia? To nieodpowiednie! Jestem francuskim szlachcicem i...";
+			link.l1 = "Po jaką cholerę zostałem wsadzony do więzienia? To jakiś skandal! Jestem francuskim szlachcicem i...";
 			link.l1.go = "Puancie_Jail_1";			
 			// belamour legendary edition -->
 			link.l2 = "Dobre... popołudnie? Dobry żart, Panie. Skąd wiesz, kim jestem?";
@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Puancie_Jail_2":
-			dialog.text = "Lepiej. Teraz, odnośnie twojego poprzedniego pytania - zostałeś uznany - przez pomyłkę - za hiszpańskiego szpiega i aresztowany, dopóki nie wyjaśni się twój status. Przeklęci Kastylijczycy stali się ostatnio bardziej aktywni, dlatego nakazałem zatrzymywać wszystkich podejrzanych.\nAle teraz wiemy, kim jesteś - naprawdę jesteś Charles de Maure, bratem Michelle de Monper, i osobiście przyszedłem tutaj, aby cię uwolnić. A ty krzyczysz na mnie jak mały chłopiec!";
+			dialog.text = "Od razu lepiej. A teraz, odnośnie twojego poprzedniego pytania - zostałeś uznany - przez pomyłkę - za hiszpańskiego szpiega i aresztowany, dopóki nie wyjaśni się twój status. Przeklęci Kastylijczycy stali się ostatnio bardziej aktywni, dlatego nakazałem zatrzymywać wszystkich podejrzanych.\nAle teraz wiemy, kim jesteś - naprawdę jesteś Charles de Maure, bratem Michelle de Monper, i osobiście przyszedłem tutaj, aby cię uwolnić. A ty krzyczysz na mnie jak mały chłopiec!";
 			link.l1 = "Przepraszam ponownie, Wasza Ekscelencjo. Czy teraz jestem wolny?";
 			link.l1.go = "Puancie_Jail_3";			
 		break;
@@ -324,13 +324,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Puancie_Jail_6":
-			dialog.text = "Powiedziałem, że jest uwięziony, młodzieńcze? Czy w ogóle mnie słuchasz?! Powiedziałem, że jest aresztowany! To nie to samo. Michel de Monper jest trzymany w areszcie w podziemnej bazie Saint Pierre, która jest własnością Zakonu Maltańskiego.\nPozwalam ci odwiedzać bazę bez żadnych ograniczeń i rozmawiać z bratem tak często, jak uznasz za stosowne. Oficerowie i żołnierze Zakonu są świadomi moich instrukcji i nie będą cię zatrzymywać.";
+			dialog.text = "Powiedziałem, że jest uwięziony, młodzieńcze? Czy ty mnie w ogóle słuchasz?! Powiedziałem, że jest aresztowany! To nie to samo. Michel de Monper jest trzymany w areszcie w podziemnej bazie Saint Pierre, która jest własnością Zakonu Maltańskiego.\nPozwalam ci odwiedzać bazę bez żadnych ograniczeń i rozmawiać z bratem tak często, jak uznasz za stosowne. Oficerowie i żołnierze Zakonu są świadomi moich instrukcji i nie będą cię zatrzymywać.";
 			link.l1 = "Gdzie jest ta podziemna baza?";
 			link.l1.go = "Puancie_Jail_7";			
 		break;
 		
 		case "Puancie_Jail_7":
-			dialog.text = "To tutaj, w Saint Pierre oczywiście. Znajdź lokalne więzienie i wejdź przez drzwi z symbolami Zakonu. Zejdź na dół do kazamaty na drugim poziomie piwnicy. Monsieur Monper tam będzie. Ale nie martw się: przy wyjściu z więzienia zostaniesz spotkany i eskortowany do swego brata - wszystko załatwiłem... To wszystko. Mam nadzieję, że spotkamy się ponownie, Charles. Sierżancie!";
+			dialog.text = "Tutaj, w Saint Pierre oczywiście. Znajdź lokalne więzienie i wejdź przez drzwi z symbolami Zakonu. Zejdź na dół do kazamaty na drugim poziomie piwnicy. Monsieur Monper tam będzie. Ale nie martw się: przy wyjściu z więzienia zostaniesz spotkany i eskortowany do swego brata - wszystko załatwiłem... To wszystko. Mam nadzieję, że spotkamy się ponownie, Charles. Sierżancie!";
 			link.l1 = "Proszę poczekać, Wasza Ekscelencjo! A co z moim... dobytkiem? Moim mieczem i resztą?";
 			link.l1.go = "Puancie_Jail_8";			
 		break;
@@ -361,7 +361,7 @@ void ProcessDialogEvent()
 		
 		case "saga_exit":
 			dialog.text = "Hm.. Ale gdzie są pieniądze? Masz dziwne poczucie humoru, młody człowieku, i tego nie rozumiem.";
-			link.l1 = "Wybacz mi, Chevalierze. Zapomniałem pieniędzy w mojej szafce na statku. Wkrótce wrócę.";
+			link.l1 = "Wybacz mi, Chevalierze. Zapomniałem zabrać pieniądze z mojego kufra na statku. Wkrótce wrócę.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "saga_repeat";	
 		break;
@@ -404,7 +404,7 @@ void ProcessDialogEvent()
 		
 		case "saga_4":
 			dialog.text = "Zaczynam cię naprawdę lubić, Charles. Być może pewnego dnia zostaniemy przyjaciółmi. W każdym razie, to mój ostatni warunek uwolnienia twojego brata. Daję ci słowo, że reputacja twojej rodziny nie ucierpi, jeśli zrobisz to, czego twój brat nie zrobił. A w przyszłości będziesz mógł liczyć na moją przyjaźń.";
-			link.l1 = "Zrozumiałem cię w pełni. Żegnaj!";
+			link.l1 = "Zrozumiałem w pełni. Żegnaj!";
 			link.l1.go = "saga_5";			
 		break;
 		
@@ -427,13 +427,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "serve_1":
-			dialog.text = "Poczekaj chwilę, mój przyjacielu. Mam nadzieję, że mogę cię nazywać przyjacielem, prawda? Chciałbym osobiście wyrazić swoją wdzięczność. Obserwuję twoje postępy odkąd tu dotarłeś i wiem o większości twoich uczynków. Zdobyłeś sobie wielkie imię na Karaibach i, bez wątpienia, jesteś również dobrze znany i szanowany w pewnych kręgach społeczeństwa. Francja potrzebuje ludzi takich jak ty\nKapitanie "+GetFullName(pchar)+"! Na mocy władzy, danej mi przez Jego Królewską Mość, Króla Francji, mam zaszczyt zaoferować ci patent kapitana Królewskiej Marynarki i powierzyć pod twoje dowództwo okręt francuskiej floty, lekki fregat 'Gryffondor'!\nJego były kapitan, de Fontenot, dzięki tobie zostanie gubernatorem Tortugi, a najlepszy lekki fregat na Karaibach potrzebuje kapitana. Czy przyjmujesz tę ofertę?";
+			dialog.text = "Poczekaj chwilę, mój przyjacielu. Mam nadzieję, że mogę cię nazywać przyjacielem, prawda? Chciałbym osobiście wyrazić swoją wdzięczność. Obserwuję twoje postępy odkąd tu dotarłeś i wiem o większości twoich uczynków. Zdobyłeś sobie wielkie imię na Karaibach i, bez wątpienia, jesteś również dobrze znany i szanowany w pewnych kręgach społeczeństwa. Francja potrzebuje ludzi takich jak ty\nKapitanie "+GetFullName(pchar)+"! Na mocy władzy, danej mi przez Jego Królewską Mość, Króla Francji, mam zaszczyt zaoferować ci patent kapitana Królewskiej Marynarki i powierzyć pod twoje dowództwo okręt francuskiej floty, lekką fregate 'Gryffondor'!\nJej były kapitan, de Fontenot, dzięki tobie zostanie gubernatorem Tortugi, a najlepsza lekka fregata na Karaibach potrzebuje kapitana. Czy przyjmujesz tę ofertę?";
 			link.l1 = "Interesujące. A co w zamian?";
 			link.l1.go = "serve_2";		
 		break;
 		
 		case "serve_2":
-			dialog.text = "Odrobinkę. Dziesięcinę z twojego połowu i czasami wykonanie delikatnych misji. Czekam na twoją decyzję.";
+			dialog.text = "Niewiele. Dziesięcinę z twojego połowu i okazjonalne wykonywanie delikatnych misji. Czekam na twoją decyzję.";
 			link.l1 = "Żaden człowiek nie odrzuciłby takiej propozycji, Wasza Ekscelencjo! To zaszczyt służyć mojemu narodowi!";
 			link.l1.go = "serve_3";
 			link.l2 = "Proszę wybaczyć mi brak skromności, lecz muszę odrzucić Pańską ofertę na razie. Sprawy rodzinne mogą wymagać natychmiastowego powrotu do ojczyzny.";
@@ -443,7 +443,7 @@ void ProcessDialogEvent()
 		
 		case "serve_no":
 			ChangeCharacterComplexReputation(pchar, "fame", 7);
-			dialog.text = "Szkoda. Miałem nadzieję, że się zgodzisz... Ale, mimo wszystko, jestem zmuszony prosić cię o jeszcze jedną przysługę, właściwie to leży to również w twoim interesie. Martynika jest pod atakiem. W porcie i w samym mieście toczą się ciężkie walki.\nNiestety, nie mam nikogo, kogo mógłbym tam wysłać, aby pomóc garnizonowi, tylko ciebie. Proszę cię jako patrioty ojczyzny, byś odeprzeć atak wszelkimi niezbędnymi środkami. Mam nadzieję, że masz wystarczające zasoby, by to zrobić.\nPoza tym, twój brat wciąż tam jest, możesz uratować jego życie.";
+			dialog.text = "Szkoda. Miałem nadzieję, że się zgodzisz... Ale, mimo wszystko, jestem zmuszony prosić cię o jeszcze jedną przysługę, właściwie to leży to również w twoim interesie. Martynika jest pod atakiem. W porcie i w samym mieście toczą się ciężkie walki.\nNiestety, nie mam nikogo, kogo mógłbym tam wysłać, aby pomóc garnizonowi, tylko ciebie. Proszę cię jako patriote ojczyzny, byś odparł atak wszelkimi niezbędnymi środkami. Mam nadzieję, że masz wystarczające zasoby, by to zrobić.\nPoza tym, twój brat wciąż tam jest, możesz uratować jego życie.";
 			link.l1 = "Mój brat jest w niebezpieczeństwie? Już ruszam!";
 			link.l1.go = "serve_exit";			
 		break;
@@ -457,7 +457,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "serve_4":
-			dialog.text = "Fregata lekka 'Gryffondor' jest teraz pod twoim dowództwem. Od tej chwili ten doskonały okręt jest twój. Wykorzystaj jego wysokie walory dla chwały Jego Królewskiej Mości i wzmocnienia francuskiego wpływu na archipelagu Karaibskim!";
+			dialog.text = "Lekka fregata 'Gryffondor' jest teraz pod twoim dowództwem. Od tej chwili ten doskonały okręt jest twój. Wykorzystaj jego wysokie walory dla chwały Jego Królewskiej Mości i wzmocnienia francuskiego wpływu na archipelagu Karaibskim!";
 			link.l1 = "Natychmiast!";
 			link.l1.go = "serve_5";
 			LAi_Fade("SharlePutsSuit", "");
@@ -479,7 +479,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "serve_6":
-			dialog.text = "Lecz mam dla ciebie złe wieści, kapitanie. Właśnie poinformowano mnie, że Martynika jest atakowana. Toczą się ciężkie walki w porcie i w samym mieście.\nNiestety, nie mam nikogo, kogo mógłbym tam wysłać, by pomóc garnizonowi, prócz ciebie. Oto twoja pierwsza misja:\n Chroń Saint Pierre! Poza tym, twój brat wciąż tam jest, możesz uratować mu życie.";
+			dialog.text = "Lecz mam dla ciebie złe wieści, kapitanie. Właśnie poinformowano mnie, że Martynika jest atakowana. Toczą się ciężkie walki w porcie i w samym mieście.\nNiestety, nie mam nikogo, kogo mógłbym tam wysłać, by pomóc garnizonowi, prócz ciebie. Oto twoja pierwsza misja:\n Odzyskaj, a następnie utrzymaj Saint Pierre! Poza tym, twój brat wciąż tam jest, możesz uratować mu życie.";
 			link.l1 = "Mój brat jest w niebezpieczeństwie? Już ruszam!";
 			link.l1.go = "serve_7";
 		break;
@@ -527,7 +527,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "serve_5a":
-			dialog.text = "Znakomicie! Wraz ze statkiem otrzymasz jego obecnego kapitana i załogę. Jeśli chcesz, możesz go zostawić pod swoim dowództwem lub wyznaczyć mu inne stanowisko, a my znajdziemy mu inną pozycję.";
+			dialog.text = "Znakomicie! Wraz ze statkiem otrzymasz jego obecnego kapitana i załogę. Jeśli chcesz, możesz go zostawić pod swoim dowództwem lub mu podziękować, a my znajdziemy dla niego inną pozycję.";
 			link.l1 = "Zrozumiano!";
 			link.l1.go = "serve_6";
 		break;
@@ -574,8 +574,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_4":
-			dialog.text = "Jestem tego pewien - po tym, jak 'Eclatant' i twoja eskadra zdmuchnęli Fort San Jose w kawałki. Lądowanie wojsk i zajmowanie miasta, tracenie żołnierzy, myślę, że nie będzie potrzebne. Atakuj bez ostrzeżenia, zniszcz fort, a potem daj sygnał komendantowi, że chcesz ustalić warunki. W tej sytuacji Hiszpanie nie będą mieli dokąd się udać i woleliby zapłacić. Co byś zrobił, gdybyś działał na miejscu gubernatora miasta, które zostało bez ochrony?";
-			link.l1 = "Hmm, wydaje się rozsądne, Chevalier.";
+			dialog.text = "Jestem tego pewien - po tym, jak 'Eclatant' i twoja eskadra zdmuchnie Fort w San Jose z powierzchni ziemi. Lądowanie wojsk i zajmowanie miasta, tracenie żołnierzy, myślę, że nie będzie potrzebne. Atakuj bez ostrzeżenia, zniszcz fort, a potem daj sygnał komendantowi, że chcesz ustalić warunki. W tej sytuacji Hiszpanie nie będą mieli dokąd się udać i woleliby zapłacić. Co byś zrobił, gdybyś działał na miejscu gubernatora miasta, które zostało bez ochrony?";
+			link.l1 = "Hmm, to wydaje się rozsądne, Chevalier.";
 			link.l1.go = "patria_5";
 		break;
 		
@@ -668,7 +668,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Zaraz to przyniosę!";
+				link.l1 = "Zaraz go przyniosę!";
 				link.l1.go = "patria_8_3";
 			}
 		break;

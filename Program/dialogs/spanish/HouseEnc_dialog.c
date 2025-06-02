@@ -86,8 +86,8 @@ void ProcessDialogEvent()
 		NextDiag.TempNode = "HouseMan";
 		if (LAi_grp_playeralarm > 0)
 		{
-			dialog.text = PCharRepPhrase(LinkRandPhrase("Se ha dado la alarma en el pueblo. Aparentemente, es hora de que yo también tome las armas...", "¿No estarán los guardias de la ciudad corriendo tras de ti, por casualidad?", "¡No encontrarás refugio aquí, pero bien podrías encontrar varias pulgadas de acero frío entre tus costillas!"), LinkRandPhrase("¿Qué necesitas," + GetSexPhrase("granuja", "granuja") + "¿¡? ¡Los guardias de la ciudad ya han encontrado tu rastro, no llegarás lejos, " + GetSexPhrase("pirata asqueroso", "bruja pirata") + "¡", "¡Sucio asesino! ¡Guardias!!!", "No te temo, " + GetSexPhrase("alimaña", "zorra") + "¡Pronto serás colgado en nuestro fuerte, no llegarás lejos..."));
-			link.l1 = PCharRepPhrase(RandPhraseSimple("Veo que estás cansado de vivir...", "Así parece, no hay vida pacífica para los ciudadanos de " + XI_ConvertString("Colony" + npchar.city + "Gen") + "¡"), RandPhraseSimple("¡Vete al infierno!", "Je, esos serán los últimos segundos de tu vida..."));
+			dialog.text = PCharRepPhrase(LinkRandPhrase("Se ha dado la alarma en el pueblo. Aparentemente, es hora de que yo también tome las armas...", "¿No estarán los guardias de la ciudad corriendo tras de ti, por casualidad?", "¡No encontrarás refugio aquí, pero bien podrías encontrar varias pulgadas de acero frío entre tus costillas!"), LinkRandPhrase("¿Qué necesitas, " + GetSexPhrase("granuja", "granuja") + "? ¡Los guardias de la ciudad ya han encontrado tu rastro, no llegarás lejos, " + GetSexPhrase("pirata asqueroso", "sucia pirata") + "!", "¡Sucio asesino! ¡Guardias!", "No te temo, " + GetSexPhrase("alimaña", "zorra") + ". ¡Pronto serás colgado en nuestro fuerte, no llegarás lejos!"));
+			link.l1 = PCharRepPhrase(RandPhraseSimple("Veo que estás cansado de vivir...", "Así parece, ¡no hay vida pacífica para los ciudadanos de " + XI_ConvertString("Colony" + npchar.city + "Gen") + "!"), RandPhraseSimple("¡Vete al infierno!", "Je, esos serán los últimos segundos de tu vida..."));
 			link.l1.go = PCharRepPhrase("exit_setOwner", "fight");
 			break;
 		}
@@ -116,7 +116,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = NPCStringReactionRepeat("Lo siento, pero la noche no es el mejor momento para las visitas, y por lo tanto te pediría que abandonaras mi casa de inmediato!", "Ya te lo he dicho, es tarde. Por favor, vete.", "No quiero parecer grosero, ¡pero insisto en que abandones mi casa de inmediato!", "¡Maldita sea, qué está pasando?! ¡Guardias! ¡Ladrones!", "block", 1, npchar, Dialog.CurrentNode);
+				dialog.text = NPCStringReactionRepeat("Lo siento, pero la noche no es el mejor momento para las visitas, y por lo tanto te pediré que abandones mi casa de inmediato.", "Ya te lo he dicho, es tarde. Por favor, vete.", "No quiero parecer grosero, ¡pero insisto en que abandones mi casa de inmediato!", "¡Maldita sea!, ¿qué está pasando aquí? ¡Guardias! ¡Ladrones!", "block", 1, npchar, Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Está bien, veo ...", "Sí, solo un momento...", "Está bien, solo no te emociones tanto.", "¿Qué ladrones?! ¡Cállate!", npchar, Dialog.CurrentNode);
 				link.l1.go = DialogGoNodeRepeat("exit_close", "exit_setOwner", "exit_setOwner", "fight", npchar, Dialog.CurrentNode);
 			}
@@ -124,12 +124,12 @@ void ProcessDialogEvent()
 		break;
 
 	case "HouseMan_1":
-		dialog.text = "Oh, permíteme presentarme - " + GetFullName(npchar) + ". Estamos muy contentos de tenerle como nuestro huésped. En esta ciudad, se honran las leyes de la hospitalidad.";
+		dialog.text = "Oh, permíteme presentarme, " + GetFullName(npchar) + ". Estamos muy contentos de tenerle como nuestro huésped. En esta ciudad, se honran las leyes de la hospitalidad.";
 		link.l1 = GetFullName(pchar) + ", si le place...";
 		link.l1.go = "exit_setOwner";
 		break;
 	case "Man_FackYou":
-		dialog.text = LinkRandPhrase("Tú eres " + GetSexPhrase("¡un ladrón, veo! Guardias, atrapadlo", "¡un ladrón, veo! Guardias, atrapadla") + "¡¡¡", "¡No puedo creerlo! Me volteé por un segundo - ¡y estás hurgando en mis pertenencias! ¡Detén a un ladrón!!!", "¡Guardias! ¡Robo! ¡Detened a ese ladrón!!!");
+		dialog.text = LinkRandPhrase("Tú eres " + GetSexPhrase("¡un ladrón, veo! Guardias, atrapadlo", "¡un ladrón, veo! Guardias, atrapadla") + "¡¡¡", "¡No puedo creerlo! Me volteé por un segundo, ¡y estás hurgando en mis pertenencias! ¡Detén a un ladrón!!!", "¡Guardias! ¡Robo! ¡Detened a ese ladrón!!!");
 		link.l1 = "¡Aaaah, diablo!";
 		link.l1.go = "fight";
 		break;
@@ -153,7 +153,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "¿Qué estás haciendo en mi casa, " + GetSexPhrase("granuja", "granuja") + "¿¡Si no te has ido en diez segundos, llamaré a los guardias!";
+				dialog.text = "¿Qué estás haciendo en mi casa, " + GetSexPhrase("granuja", "granuja") + "? ¡Si no te vas en diez segundos, llamaré a los guardias!";
 				link.l1 = "Qué estúpida moza...";
 				link.l1.go = "exit_GoOut";
 			}
@@ -201,12 +201,12 @@ void ProcessDialogEvent()
 		NextDiag.TempNode = "SkladMan1";
 		if (LAi_grp_playeralarm > 0)
 		{
-			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("Se ha dado la alarma en la ciudad. Aparentemente, es hora de que yo también tome las armas...", "¿No estarán los guardias de la ciudad corriendo tras de ti, por casualidad?", "No encontrarás refugio aquí, ¡pero bien podrías encontrar varias pulgadas de acero frío entre tus costillas!"), LinkRandPhrase("¿Qué necesitas," + GetSexPhrase("granuja", "granuja") + "¿¡? ¡Los guardias de la ciudad ya han encontrado tu rastro, no llegarás lejos, " + GetSexPhrase("pirata asqueroso", "zorra") + "¡", "¡Asesino sucio! ¡Guardias!!!", "No te temo, " + GetSexPhrase("reptil", "mesalina") + "¡Pronto serás colgado en nuestro fuerte, no llegarás lejos..."));
+			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("Se ha dado la alarma en la ciudad. Aparentemente, es hora de que yo también tome las armas...", "¿No estarán los guardias de la ciudad corriendo tras de ti, por casualidad?", "No encontrarás refugio aquí, ¡pero bien podrías encontrar varias pulgadas de acero frío entre tus costillas!"), LinkRandPhrase("¿Qué necesitas, " + GetSexPhrase("granuja", "granuja") + "? ¡Los guardias de la ciudad ya han encontrado tu rastro, no llegarás lejos, " + GetSexPhrase("pirata asqueroso", "zorra") + "!", "¡Sucio asesino! ¡Guardias!", "No te temo, " + GetSexPhrase("reptil", "zorra") + ". ¡Pronto serás colgado en nuestro fuerte, no llegarás lejos!"));
 			link.l1 = NPCharRepPhrase(pchar, RandPhraseSimple("Veo que estás cansado de vivir...", "Así parece, no hay vida pacífica para los ciudadanos de " + XI_ConvertString("Colony" + npchar.city + "Gen") + "¡!"), RandPhraseSimple("¡Vete al infierno!", "Je, esos serán los últimos segundos de tu vida..."));
 			link.l1.go = NPCharRepPhrase("exit_setOwner", "fight");
 			break;
 		}
-		dialog.text = NPCStringReactionRepeat("¡Bienvenido! Mi nombre es " + GetFullName(npchar) + ". Aquí, yo mando, así que ni siquiera pienses en llevarte algo contigo...", "Compórtate decentemente y ten en cuenta que te tengo bajo mi observación.", "Mientras no mires dentro de los cofres, puedes quedarte aquí. De todos modos, estoy aburrido solo...", RandPhraseSimple("¡Ay caramba, estoy tan aburrido!", "¡Maldita sea, qué hacer? ¡Estar aquí es tan aburrido!"), "block", 3, npchar, Dialog.CurrentNode);
+		dialog.text = NPCStringReactionRepeat("¡Bienvenido! Mi nombre es " + GetFullName(npchar) + ". Aquí mando yo, así que ni siquiera pienses en llevarte algo...", "Compórtate decentemente y ten en cuenta que te tengo bajo mi observación.", "Mientras no mires dentro de los cofres, puedes quedarte aquí. De todos modos, me aburro estando solo...", RandPhraseSimple("¡Ay caramba, estoy tan aburrido!", "¡Maldita sea!, ¿qué puedo hacer? ¡Estar aquí es tan aburrido!"), "block", 3, npchar, Dialog.CurrentNode);
 		link.l1 = HeroStringReactionRepeat("Está bien, no te preocupes.", "¡Claro!", "Ya veo...", "Sí, eso suena como un problema.", npchar, Dialog.CurrentNode);
 		link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);
 		break;
@@ -215,12 +215,12 @@ void ProcessDialogEvent()
 		NextDiag.TempNode = "SkladMan1";
 		if (LAi_grp_playeralarm > 0)
 		{
-			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("Se ha dado la alarma en la ciudad. Aparentemente, es hora de que yo también tome las armas...", "¿No estarán por casualidad los guardias de la ciudad persiguiéndote?", "No encontrarás refugio aquí, ¡pero bien podrías encontrar varias pulgadas de acero frío entre tus costillas!"), LinkRandPhrase("¿Qué necesitas," + GetSexPhrase("granuja", "granuja") + "¿¡Los guardias de la ciudad ya han encontrado tu rastro, no irás lejos, " + GetSexPhrase("pirata asqueroso", "ramera") + "¡", "" + GetSexPhrase("Asqueroso", "Asqueroso") + "¡Asesino! ¡Guardias!!!", "No te temo, " + GetSexPhrase("reptil", "zorra") + "¡Pronto serás colgado en nuestro fuerte, no llegarás muy lejos..."));
+			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("Se ha dado la alarma en la ciudad. Aparentemente, es hora de que yo también tome las armas...", "¿No estarán por casualidad los guardias de la ciudad persiguiéndote?", "No encontrarás refugio aquí, ¡pero bien podrías encontrar varias pulgadas de acero frío entre tus costillas!"), LinkRandPhrase("¿Qué necesitas," + GetSexPhrase("granuja", "granuja") + "? ¡Los guardias de la ciudad ya han encontrado tu rastro, no llegarás lejos, " + GetSexPhrase("sucio pirata", "ramera") + "!", "" + GetSexPhrase("¡Asqueroso asesino!", "¡Asquerosa asesina!") + " ¡Guardias!", "No te temo, " + GetSexPhrase("reptil", "zorra") + ". ¡Pronto serás colgado en nuestro fuerte, no llegarás muy lejos!"));
 			link.l1 = NPCharRepPhrase(pchar, RandPhraseSimple("Veo que estás cansado de vivir...", "Así parece, no hay vida pacífica para los ciudadanos de " + XI_ConvertString("Colony" + npchar.city + "Gen") + "¡!"), RandPhraseSimple("¡Vete al infierno!", "Je, esos serán los últimos segundos de tu vida..."));
 			link.l1.go = NPCharRepPhrase("exit_setOwner", "fight");
 			break;
 		}
-		dialog.text = NPCStringReactionRepeat("Aquí, yo estoy al mando, así que ni siquiera pienses en llevarte algo...", "Compórtate decentemente y ten en cuenta que te tengo bajo mi mirada.", "Mientras no mires en los cofres, puedes quedarte aquí. De todos modos, estoy aburrido solo...", RandPhraseSimple("¡Ay de mí, estoy tan aburrido!", "¡Maldita sea, qué hacer? ¡Estar aquí es tan aburrido!"), "block", 3, npchar, Dialog.CurrentNode);
+		dialog.text = NPCStringReactionRepeat("Aquí yo estoy al mando, así que ni siquiera pienses en llevarte algo...", "Compórtate decentemente y ten en cuenta que te tengo bajo mi mirada.", "Mientras no mires en los cofres, puedes quedarte aquí. De todos modos, me aburro estando solo...", RandPhraseSimple("¡Ay de mí, estoy tan aburrido!", "¡Maldita sea!, ¿qué puedo hacer? ¡Estar aquí es tan aburrido!"), "block", 3, npchar, Dialog.CurrentNode);
 		link.l1 = HeroStringReactionRepeat("Está bien, no te preocupes.", "¡Claro!", "Ya veo...", "Sí, eso suena como un problema.", npchar, Dialog.CurrentNode);
 		link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "exit", npchar, Dialog.CurrentNode);
 		// открывание двери верфи по квесту промышленного шпионажа
@@ -279,7 +279,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "storage_rent2":
-		dialog.text = "Claro, claro. Pero... necesitaré un mes de pago por adelantado. ";
+		dialog.text = "Claro, claro. Pero... necesitaré un mes de pago por adelantado.";
 		if (sti(pchar.money) >= sti(NPChar.MoneyForStorage))
 		{
 			link.l1 = "Eres... bastante mercantil, debo decir. Aquí está tu dinero ... Alquilaré este cobertizo.";

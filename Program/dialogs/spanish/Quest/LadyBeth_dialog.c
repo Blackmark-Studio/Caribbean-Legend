@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 				link.l1 = "Informe, Alonso.";
 				link.l1.go = "AlonsoNaPalube_2";
 			}
-			locCameraFromToPos(0.71, 11.25, -21.73, true, 4.29, 9.18, -21.40);
+			locCameraFromToPos(-10.33, 9.69, -22.16, true, -5.22, 7.19, -21.06);
 		break;
 		
 		case "AlonsoNaPalube_2":
@@ -108,8 +108,8 @@ void ProcessDialogEvent()
 				link.l1 = "¿Y la nave de Blackwood? ¿No causará problemas?";
 				link.l1.go = "AlonsoNaPalube_Vpered";
 				pchar.questTemp.LadyBeth_StrongGroup = true;
-				if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50) notification("Comprobación superada", SKILL_Leadership);
-				if (sti(pchar.rank) >= 17) notification("Chequeo de nivel superado", "None");
+				if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50) notification("¡Comprobación superada!", SKILL_Leadership);
+				if (sti(pchar.rank) >= 17) notification("¡Chequeo de nivel superado!", "None");
 			}
 			else
 			{
@@ -125,8 +125,8 @@ void ProcessDialogEvent()
 				link.l1.go = "AlonsoNaPalube_LiteGroup";
 				link.l2 = "Hmm... Bueno, necesito pensarlo bien. Quizá retomemos esta cuestión más adelante.";
 				link.l2.go = "AlonsoNaPalube_Exit";
-				if (GetSummonSkillFromName(pchar, SKILL_Leadership) < 50) notification("Habilidad insuficientemente desarrollada (50)", SKILL_Leadership);
-				if (sti(pchar.rank) < 17) notification("Se requiere nivel 17", "None");
+				if (GetSummonSkillFromName(pchar, SKILL_Leadership) < 50) notification("¡Habilidad insuficientemente desarrollada! (50)", SKILL_Leadership);
+				if (sti(pchar.rank) < 17) notification("¡Se requiere nivel 17!", "None");
 			}
 		break;
 		
@@ -704,7 +704,7 @@ case "LadyBeth_Knippel_1": // Книппель
 		break;
 
 		case "LadyBeth_Alonso_3":
-			dialog.text = "Algún día le contaré esa historia, capitán - si sobrevivimos, claro.";
+			dialog.text = "Algún día le contaré esa historia, capitán. Si sobrevivimos, claro.";
 			link.l1 = "¿Tienes más consejos para mí?";
 			link.l1.go = "LadyBeth_Alonso_4";
 		break;

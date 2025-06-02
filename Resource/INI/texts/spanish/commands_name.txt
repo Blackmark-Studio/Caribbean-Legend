@@ -21,7 +21,7 @@ sea_InstantBoarding {Abordaje inmediato}
 sea_Speak {Hablar}
 sea_Sneak {Colarse en la ciudad}
 sea_Repair {Reparar}
-sea_SailDir {Navegar hacia ...}
+sea_SailDir {Navegar hacia...}
 sea_SailNW {Noroeste}
 sea_SailN {Norte}
 sea_SailNE {Noreste}

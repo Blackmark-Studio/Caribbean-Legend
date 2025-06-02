@@ -1,0 +1,51 @@
+﻿Regatta_1
+{
+Henry
+}
+Regatta_2
+{
+Stivenson
+}
+
+Regatta_3
+{
+Sei arrivato troppo tardi per la regata.
+}
+
+Regatta_4
+{
+Saint Catherine
+}
+
+Regatta_5
+{
+lieutenant
+}
+Regatta_6
+{
+Mahoiny
+}
+
+Regatta_7
+{
+Vudro
+}
+Regatta_8
+{
+Doggerty
+}
+
+Regatta_9
+{
+Il navigatore ha abbandonato la nave!
+}
+
+Regatta_10
+{
+I passeggeri sono a bordo.
+}
+
+Regatta_11
+{
+La vostra nave è sovraccarica. La sua velocità e manovrabilità sono compromesse.
+}

@@ -1,6 +1,6 @@
 Roger_1
 {
-You gave away the Spanish flag
+Oddałeś hiszpańską flagę
 }
 
 Roger_2
@@ -14,7 +14,7 @@ Chapada
 
 Roger_4
 {
-Exploration mode: timer extended. Complete the quest!
+Tryb eksploracji: wydłużony czas. Ukończ zadanie!
 }
 
 Roger_5
@@ -51,12 +51,12 @@ Cabanas
 
 Roger_12
 {
-Approach barges closely and take their loot. Be careful not to crush them with your ship's hull.
+Podpłyń blisko do barek i zgarnij ich łupy. Uważaj, żeby nie zmiażdżyć ich kadłubem swojego statku.
 }
 
 Roger_13
 {
-Amber acquired @<sti(pchar.questTemp.Mtraxx_SobralVsyo)> / 5
+Zdobyto bursztyn @<sti(pchar.questTemp.Mtraxx_SobralVsyo)> / 5
 }
 
 Roger_14
@@ -103,17 +103,17 @@ Gusen
 
 Roger_23
 {
-brigantine 'Utrecht'
+brygandyna 'Utrecht'
 }
 
 Roger_24
 {
-Exploration mode: timer is not disabled. Meet the deadline!
+Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!
 }
 
 Roger_25
 {
-One hour later...@<NewStr()>The silk was unloaded to the buyer
+Godzinę później...@<NewStr()>Jedwab został rozładowany u kupującego
 }
 
 Roger_26
@@ -141,84 +141,84 @@ Picard
 
 Roger_31
 {
-30 pieces of cold arms has been taken from the ship's arsenal
+Z arsenału statku zabrano 30 sztuk broni białej
 }
 
 Roger_32
 {
-Gathered cold arms - 30 pieces
+Zebrana broń biała - 30 sztuk
 }
 
 Roger_33
 {
-No cold arms
+Brak broni białej
 }
 
 Roger_34
 {
-Gathered pistols - @<FindRussianQtyString(iGun)>
+Zebrane pistolety - @<FindRussianQtyString(iGun)>
 }
 
 Roger_35
 {
-Gathered muskets - @<FindRussianQtyString(iMushket)>
+Zebrane muszkiety - @<FindRussianQtyString(iMushket)>
 }
 
 Roger_36
 {
-Gathered healing potions - @<FindRussianQtyString(iPotion)>
+Zebrane misktury lecznicze - @<FindRussianQtyString(iPotion)>
 }
 
 Roger_37
 {
-Gathered supplies for @<iShot> shots
+Zebrano materiały na @<iShot> strzałów
 }
 
 Roger_38
 {
-Gathered cold arms - 30 pieces
+Zebrana broń biała - 30 sztuk
 }
 Roger_39
 {
-Gathered pistols - 50 pieces
+Zebrane pistolety - 50 sztuk
 }
 Roger_40
 {
-Gathered healing potions - 90 pieces
+Zebrane misktury lecznicze - 90 sztuk
 }
 Roger_41
 {
-Gathered supplies for 70 shots
+Zebrano materiały na 70 strzałów
 }
 
 Roger_42
 {
-Later, next evening...
+Później, tego samego wieczora...
 }
 
 Roger_43
 {
-Some time later...
+Jakiś czas później...
 }
 
 Roger_44
 {
-Plantation is alarmed!
+Plantacja została zaalarmowana!
 }
 
 Roger_45
 {
-You have 300 seconds before the Spanish will get reinforces from the fort
+Masz 300 sekund, zanim Hiszpanie otrzymają posiłki z fortu
 }
 
 Roger_46
 {
-The Spanish has lost their flagship! We can try to flee!
+Hiszpanie stracili swój okręt flagowy! Możemy spróbować uciec!
 }
 
 Roger_47
 {
-Dutch convoy is on the horizon!
+Holenderski konwój na horyzoncie!
 }
 
 Roger_48
@@ -233,7 +233,7 @@ Gryphon
 
 Roger_50
 {
-Night has come...
+Nadeszła noc...
 }
 
 Roger_51
@@ -247,7 +247,7 @@ Roger_52
 
 Roger_53
 {
-Mirabelle died of fever!
+Mirabelle zmarła na gorączke tropikalną!
 }
 
 Roger_54
@@ -288,7 +288,7 @@ Roger_61
 
 Roger_62
 {
-Two days later...@<NewStr()>Six longboats has been built...
+Po dwóch dniach...@<NewStr()>Zbudowano łącznie sześć szalup...
 }
 
 Roger_63
@@ -321,7 +321,7 @@ Marco
 
 Roger_69
 {
-Exploration mode: timer is disabled.
+Tryb eksploracji: licznik czasu jest wyłączony.
 }
 
 Roger_70
@@ -340,7 +340,7 @@ El Casador
 
 Roger_73
 {
-Go to your cabin in order to study the ship log
+Udaj się do swojej kajuty, aby przestudiować dziennik pokładowy
 }
 
 Roger_74
@@ -354,7 +354,7 @@ Goldenteeth
 
 Roger_76
 {
-Boarding party is ready!
+Grupa abordażowa jest gotowa!
 }
 
 Roger_77
@@ -387,12 +387,12 @@ Roger_82
 
 Roger_83
 {
-The Torero is on a raid of Le Francois!
+Torero atakuje Le Francois!
 }
 
 Roger_84
 {
-You are waiting stealthily from your hiding place...
+Czekasz skryty w swojej kryjówce...
 }
 
 Roger_85
@@ -402,7 +402,7 @@ Roger_85
 
 Roger_86
 {
-Exploration mode: quest duration doubled
+Tryb eksploracji: podwojono czas trwania zadania
 }
 
 Roger_87
@@ -421,17 +421,17 @@ Jim
 
 Roger_90
 {
-Exploration mode: Corrida - the coordinates are correct
+Tryb eksploracji: Corrida - współrzędne są poprawne
 }
 
 Roger_91
 {
-Exploration mode: Corrida - the coordinates are not correct
+Tryb eksploracji: Corrida – współrzędne są nieprawidłowe
 }
 
 Roger_92
 {
-Spanish convoy on the horizon!
+Hiszpański konwój na horyzoncie!
 }
 
 Roger_93
@@ -446,39 +446,39 @@ Red Dragon
 
 Roger_95
 {
-A huge explosion on @<pchar.ship.name>!
+Doszło do potężnej eksplozji na @<pchar.ship.name>!
 }
 
 Roger_96
 {
-We've arrived to Cartagena! Tyrex orders to sail to Covenas Bay
+Dotarliśmy do Kartageny! Tyrex rozkazuje popłynąć do zatoki Covenas
 }
 
 Roger_97
 {
-Landing parties are ready to storm Cartagena!
+Oddziały desantowe są gotowe do szturmu na Kartagenę!
 }
 
 Roger_98
 {
-Landing party of '@<pchar.ship.name>' has @<iCrew1> men
+Statek '@<pchar.ship.name>' wysadził na brzeg @<iCrew1> ludzi
 }
 Roger_99
 {
-Landing party of Red Dragon has @<iCrew2> men
+Statek 'Red Dragon' wysadził na brzeg @<iCrew2> ludzi
 }
 Roger_100
 {
-Landing party of Snake has @<iCrew3> men
+Statek 'Snake' wysadził na brzeg @<iCrew3> ludzi
 }
 Roger_101
 {
-Landing party of Moray has @<iCrew4> men
+Statek 'Moray' wysadził na brzeg @<iCrew4> ludzi
 }
 
 Roger_102
 {
-One day later...@<NewStr()>Barrels with gunpowder have been delivered to the logjam.
+Następnego dnia...@<NewStr()>Beczki z prochem strzelniczym dostarczono do zatoru.
 }
 
 Roger_103
@@ -512,7 +512,7 @@ Roger_108
 
 Roger_109
 {
-Three hours later...
+Trzy godziny później...
 }
 
 Roger_110
@@ -526,22 +526,22 @@ Janssen
 
 Roger_112
 {
-Ignacio Marco landed on the pier!
+Ignacio Marco wylądował na molo!
 }
 
 Roger_113
 {
-2 hours passed...@<NewStr()>
+Mineły dwie godziny...@<NewStr()>
 }
 
 Roger_114
 {
-Ignacio Marco left the residence
+Ignacio Marco opuścił rezydencję
 }
 
 Roger_115
 {
-together with two captains
+wraz z dwoma kapitanami
 }
 
 Roger_116
@@ -569,12 +569,12 @@ Peres
 
 Roger_121
 {
-One day later...@<NewStr()>The ransom for Cartagena was collected
+Następnego dnia...@<NewStr()>Okup za Kartagenę został zebrany
 }
 
 Roger_122
 {
-Two days have passed swiftly @<NewStr()> in partying and amorous pleasures...
+Dwa dni minęły szybko@<NewStr()>na imprezowaniu i miłosnych przyjemnościach...
 }
 
 Roger_123
@@ -615,65 +615,65 @@ Tyrex
 
 Roger_131
 {
-I, Charles de Maure, a French nobleman and a captain, swear:
+Ja, Charles de Maure, francuski szlachcic i kapitan, przysięgam:
 }
 
 Roger_132
 {
-... I am done with my pirate past for good ...
+... raz na zawsze zrywam ze swoją piracką przeszłością ...
 }
 
 Roger_133
 {
-... No more innocent civilians will die from my hand ...
+... żaden niewinny cywil nie zginie już z mojej ręki ...
 }
 
 Roger_134
 {
-... I swear to protect women despite  their status and nationality ...
+... przysięgam chronić kobiety bez względu na ich status i narodowość ...
 }
 
 Roger_135
 {
-... I swear that gold will no longer make me blind ...
+... przysięgam, że złoto nie uczyni mnie już ślepym ...
 }
 
 Roger_136
 {
-... I swear to oppose any villain I will meet on my path ...
+... przysięgam przeciwstawić się każdemu złoczyńcy, jakiego spotkam na swojej drodze ...
 }
 
 Roger_137
 {
-... I swear to always choose honor between it and riches ...
+... przysięgam, że zawsze będę wybierał honor od bogactwa ...
 }
 
 Roger_138
 {
-... I swear to stay an worthy and noble man in any situation and with any people ...
+... przysięgam, że w każdej sytuacji i wobec każdych ludzi pozostanę godnym i szlachetnym człowiekiem ...
 }
 
 Roger_139
 {
-I keep thinking of Mirabelle for some reason. How is she there? Is she missing me? It must had been cruel of me to leave a young girl alone. I will fix this! I should see her soon.
+Ciągle myślę o Mirabelle z jakiegoś powodu. Jak ona tam jest? Czy ona za mną tęskni? To z mojej strony musiało być niezwykle okrutne, zostawiając młodą dziewczynę samą. Naprawię to! Powinienem ją wkrótce zobaczyć.
 }
 
 Roger_140
 {
-Книппель
+Knippel
 }
 
 Roger_141
 {
-Лонгвэй
+Longway
 }
 
 Roger_142
 {
-Тичингиту
+Tichingitu
 }
 
 Roger_143
 {
-Томми
+Tommy
 }

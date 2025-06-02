@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 		}
 		sTemp = GetFullName(&characters[GetCharacterIndex(pchar.GenQuest.DestroyGang.MayorId)]);
 		dialog.text = LinkRandPhrase("Dinero en el barril " + GetSexPhrase("camarada", "chica") + "¡Mi nombre es " + GetFullName(npchar) + ", y no estoy acostumbrado a objeciones...", "Ahora muéstrame tu bolsa, " + GetSexPhrase("compañero", "muchacha") + ", ¡y date prisa! Mi nombre es  " + GetFullName(npchar) + ", y espero que hayas oído hablar de mí...", "Entrégame todo lo valioso que tengas, también requiso el contenido de tu bolsa. Y apúrate, la paciencia no es mi fuerte. ¡No puedo decir lo mismo de mi sed de sangre!");
-		Link.l1 = LinkRandPhrase("Je, entonces tú eres ese famoso bandido " + GetFullName(npchar) + ", sobre quien el gobernador local " + sTemp + "¿nunca deja de hablar?", "Oh, ¿entonces eres ese bandido perseguido por el gobernador local " + sTemp + "?", "Contento" + GetSexPhrase("", "") + " verte, " + GetFullName(npchar) + ". El gobernador local, " + sTemp + " solo habla de ti.");
+		Link.l1 = LinkRandPhrase("Je, entonces tú eres ese famoso bandido " + GetFullName(npchar) + ", sobre quien el gobernador " + sTemp + "¿nunca deja de hablar?", "Oh, ¿entonces eres ese bandido perseguido por el gobernador " + sTemp + "?", "Contento" + GetSexPhrase("", "") + " verte, " + GetFullName(npchar) + ". El gobernador, " + sTemp + " solo habla de ti.");
 		Link.l1.go = "DestroyGang_1";
 		break;
 	case "DestroyGang_1":
@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 		Link.l2.go = "DestroyGang_2";
 		break;
 	case "DestroyGang_2":
-		dialog.text = LinkRandPhrase("Eso es mejor, " + GetSexPhrase("compañero", "chica") + "...¡Y ahora piérdete!", "Y esa es una decisión acertada. Ojalá supieras cuántos héroes he enviado al otro mundo... Bueno, menos palabras. Piérdete, " + GetSexPhrase("pedazo de mierda", "perra") + "¡", "Bueno " + GetSexPhrase("chico", "chica") + "¡Una decisión muy sabia - no interferir en los asuntos de los demás... Bueno, ya lárgate, " + GetSexPhrase("compañero", "chica") + ".");
+		dialog.text = LinkRandPhrase("Eso es mejor, " + GetSexPhrase("compañero", "chica") + "... ¡Y ahora piérdete!", "Y esa es una decisión acertada. Ojalá supieras cuántos héroes he enviado al otro mundo... Bueno, menos palabras. ¡Piérdete, " + GetSexPhrase("pedazo de mierda", "perra") + "!", "Buen" + GetSexPhrase(" chico", "a chica") + ". Una decisión muy sabia, no interferir en los asuntos de los demás... Bueno, ya lárgate, " + GetSexPhrase("compañero", "chica") + ".");
 		Link.l1 = "Adiós y buena suerte para ti...";
 		Link.l1.go = "DestroyGang_ExitAfraid";
 		break;
@@ -146,7 +146,7 @@ void ProcessDialogEvent()
 
 	case "Fugitive_city_1":
 		dialog.text = "Bueno, ese soy yo, en efecto, aunque ¿por qué te alegra verme? Me parece extraño, ya que nunca te he visto antes... ¿Te importaría explicarte?";
-		link.l1 = "Pero por supuesto. Yo vengo de " + XI_ConvertString("Colony" + pchar.GenQuest.FindFugitive.Startcity + "Gen") + ", por órdenes del gobernador local. Estás arrestado y debo entregarte a la misma ciudad... Oh, ¡y mantén las manos alejadas de tu sable! No intentes nada estúpido buen hombre, ¡o te irá mal!";
+		link.l1 = "Pero por supuesto. Yo vengo de " + XI_ConvertString("Colony" + pchar.GenQuest.FindFugitive.Startcity + "Gen") + ", por órdenes del gobernador. Estás arrestado y debo entregarte a la misma ciudad... Oh, ¡y mantén las manos alejadas de tu sable! No intentes nada estúpido buen hombre, ¡o te irá mal!";
 		link.l1.go = "Fugitive_city_2";
 		break;
 
@@ -165,8 +165,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "Fugitive_city_gift":
-		TakeNItems(pchar, "jewelry8", 50 + drand(25));
-		TakeNItems(pchar, "jewelry7", 2 + drand(5));
+		TakeNItems(pchar, "jewelry8", 50 + hrand(25));
+		TakeNItems(pchar, "jewelry7", 2 + hrand(5));
 		PlaySound("interface\important_item.wav");
 		Log_Info("Has recibido ámbar");
 		dialog.text = "Aquí... Y espero que nunca vuelva a ver ni a ti ni a otros 'envíados'.";
@@ -229,7 +229,7 @@ void ProcessDialogEvent()
 
 	case "Fugitive_shore_1":
 		dialog.text = "Y no voy a negarlo, ese soy yo. ¿Pero qué quieres?";
-		link.l1 = "Necesito llevarte a " + XI_ConvertString("Colony" + pchar.GenQuest.FindFugitive.Startcity) + ", el gobernador local está muriendo por verte. ¡No hagas tonterías, por favor! Ríndete tu arma y sígueme!";
+		link.l1 = "Necesito llevarte a " + XI_ConvertString("Colony" + pchar.GenQuest.FindFugitive.Startcity) + ", el gobernador se muere por verte. ¡No hagas tonterías, por favor! Ríndete tu arma y sígueme!";
 		link.l1.go = "Fugitive_shore_2";
 		break;
 
@@ -242,8 +242,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "Fugitive_shore_gift":
-		TakeNItems(pchar, "jewelry52", 100 + drand(40));
-		TakeNItems(pchar, "jewelry53", 400 + drand(100));
+		TakeNItems(pchar, "jewelry52", 100 + hrand(40));
+		TakeNItems(pchar, "jewelry53", 400 + hrand(100));
 		PlaySound("interface\important_item.wav");
 		Log_Info("Has recibido perlas");
 		dialog.text = "Aquí... Y espero que nunca vuelva a ver ni a ti ni a otros 'envíos' nunca más.";
@@ -259,7 +259,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Fugitive_tavern_1":
-		dialog.text = "¡H-Hip!" + RandSwear() + "¡Así que finalmente me ha perseguido! Escucha, compadre, no sabes lo que pasó, ¡no estabas allí! No podía quedarme en el servicio, ¡simplemente no podía! Todavía me emborracho todas las noches para olvidar eso\nMira, hagamos un trato. Dile que has fallado en encontrarme o que he escapado con piratas al mar abierto. A cambio te daré todas las pepitas que encontré en la cueva local. Eso es todo lo que tengo, ves, te lo doy todo, solo para nunca ver" + XI_ConvertString("Colony" + pchar.GenQuest.FindFugitive.Startcity) + "...";
+		dialog.text = "¡H-Hip!" + RandSwear() + "¡Así que finalmente me ha perseguido! Escucha, compadre, no sabes lo que pasó, ¡no estabas allí! No podía quedarme en el servicio, ¡simplemente no podía! Todavía me emborracho todas las noches para olvidar eso\nMira, hagamos un trato. Dile que has fallado en encontrarme o que he escapado con piratas al mar abierto. A cambio te daré todas las pepitas que encontré en la cueva. Eso es todo lo que tengo, ves, te lo doy todo, solo para nunca ver" + XI_ConvertString("Colony" + pchar.GenQuest.FindFugitive.Startcity) + "...";
 		link.l1 = "¡Ni siquiera pienses en sobornarme, señor! ¡Entrega tu arma y sígueme!";
 		link.l1.go = "Fugitive_tavern_fight";
 		link.l2 = "¿Hmm... Una historia desagradable? ¿Estás atormentado por pesadillas o remordimientos de conciencia? Bueno, supongo que puedo dejarte con esto por tu cuenta. ¿Dónde están tus pepitas?";
@@ -267,8 +267,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "Fugitive_tavern_gift":
-		TakeNItems(pchar, "jewelry5", 50 + drand(30));
-		TakeNItems(pchar, "jewelry6", 100 + drand(50));
+		TakeNItems(pchar, "jewelry5", 50 + hrand(30));
+		TakeNItems(pchar, "jewelry6", 100 + hrand(50));
 		PlaySound("interface\important_item.wav");
 		Log_Info("Has recibido pepitas");
 		dialog.text = "Aquí... Y espero que nunca vuelva a ver ni a ti ni a otros 'envíos' nunca más.";

@@ -4,7 +4,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie pytania, "+GetSexPhrase("mój synu","moja córka")+"?","Pytaj śmiało, słucham..."),"Słucham, mów teraz, "+GetSexPhrase("mój synu","moja córka")+"... ","Po raz trzeci, "+GetSexPhrase("mój synu","moja córka")+", zapytaj o to, czego potrzebujesz.","Duchowny ma wiele pracy, a ty mnie rozpraszasz, "+GetSexPhrase("mój synu","moja córka")+"...","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie pytania, "+GetSexPhrase("mój synu","moja córko")+"?","Pytaj śmiało, słucham..."),"Słucham, mów teraz, "+GetSexPhrase("mój synu","moja córko")+"... ","Po raz trzeci, "+GetSexPhrase("mój synu","moja córko")+", zapytaj o to, czego potrzebujesz.","Duchowny ma od groma pracy, "+GetSexPhrase("mój synu","moja córko")+" a ty mnie ewidentnie rozpraszasz...","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniam zdanie...","Nie w tej chwili, ojcze..."),"Nie mam nic do powiedzenia, przepraszam.","Zapytam, ale później. Wybacz mi, ojcze.","Przepraszam, święty ojcze...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			// калеуче
@@ -18,7 +18,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// калеуче
 		case "caleuche":
 			dialog.text = "Więc? Czy byłeś tam, mój synu?";
-			link.l1 = "Rzeczywiście, byłem. Ale szczerze mówiąc, lepiej by było, gdybym tam nie zaglądał. Zostałem zaatakowany przez szkielet z ogromną siekierą w górnym pokoju. Udało mi się wyjść z tego zwycięsko, chociaż z pewnością nie było to łatwe.";
+			link.l1 = "Rzeczywiście, byłem. Ale szczerze mówiąc, lepiej by było, gdybym tam nie zaglądał. Zostałem zaatakowany przez szkieleta z ogromną siekierą w górnym pokoju. Udało mi się wyjść z tego zwycięsko, chociaż z pewnością nie było to łatwe.";
 			link.l1.go = "caleuche_1";
 		break;
 		
@@ -29,7 +29,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "caleuche_2":
-			dialog.text = "(przeżegnał się)... Biedny sługa Boży, niech Pan spocznie jej duszę...";
+			dialog.text = "(przeżegnał się)... Biedna, niech Pan spocznie jej duszę...";
 			link.l1 = "Wygląda na to, że Merriman jest rzeczywiście czarnoksiężnikiem. Nie mam pojęcia, jak można zmienić żywego człowieka w takie plugastwo.";
 			link.l1.go = "caleuche_3";
 		break;

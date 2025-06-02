@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 			// --> калеуче
-			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && drand(1) == 0 && sti(Pchar.money) >= 2000) 
+			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(1) == 0 && sti(Pchar.money) >= 2000) 
 			{
 				dialog.text = "Sehen Sie, Herr, möchten Sie nicht eine amüsante Kleinigkeit kaufen? Es ist günstig, nur ein paar tausend Pesos...";
 				link.l1 = "Hmm. Wahrscheinlich hast du dieses 'kleine Ding' gestohlen, und jetzt versuchst du, es loszuwerden?";
@@ -35,6 +35,13 @@ void ProcessDialogEvent()
 					link.l2 = "He, hör zu, möchtest du ein paar tausend Pesos verdienen statt dieser erbärmlichen Almosen?";
 					link.l2.go = "trial";
 				}
+				// --> Тайна Бетси Прайс
+				if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon3") && pchar.location == "Villemstad_town")
+				{
+					link.l2 = "Dieser Anhänger mit der Kamee... Wo hast du ihn gefunden?";
+					link.l2.go = "TBP_Kulon_1";
+				}
+				// <-- Тайна Бетси Прайс
 				npchar.quest.meeting = "1";
 			}			
 			else
@@ -52,6 +59,13 @@ void ProcessDialogEvent()
 					link.l2 = "He, hör mal, möchtest du lieber ein paar tausend Pesos verdienen anstatt dieser erbärmlichen Almosen?";
 					link.l2.go = "trial";
 				}
+				// --> Тайна Бетси Прайс
+				if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon3") && pchar.location == "Villemstad_town")
+				{
+					link.l2 = "Dieser Anhänger mit der Kamee... Wo hast du ihn gefunden?";
+					link.l2.go = "TBP_Kulon_1";
+				}
+				// <-- Тайна Бетси Прайс
 				link.l3 = LinkRandPhrase("Können Sie mir etwas Interessantes erzählen?","Was gibt's Neues in der Stadt?","Oh, ich würde gerne die neuesten Klatsch und Tratsch hören...");
 				link.l3.go = "rumours_poor";
 			}
@@ -340,5 +354,35 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "kaleuche_amulet1"); 
 		break;
 		// <-- калеуче
+		
+		/// --> Тайна Бетси Прайс
+		case "TBP_Kulon_1":
+			dialog.text = "Ach, "+GetAddress_Form(NPChar)+", was geht Euch ein altes Schmuckstück an?";
+			link.l1 = "Wenn ich dir gleich mit meinem Stiefel eine verpasse, wirst du sofort verstehen, warum mich das interessiert.";
+			link.l1.go = "TBP_Kulon_TO";
+			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon2"))
+			{
+				link.l2 = "Dieser Anhänger gehörte Betsy Price. Also, wo hast du ihn gefunden?";
+				link.l2.go = "TBP_Kulon_leadership";
+			}
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon3");
+		break;
+
+		case "TBP_Kulon_TO":
+			dialog.text = "Er lag im Blumenbeet beim Haus mit der Laterne, "+GetAddress_Form(NPChar)+". In den Schlamm getreten von einem groben Männerstiefel. Aber in diesem Haus wohnt schon lange niemand mehr, also dachte ich, er sei herrenlos...";
+			link.l1 = "Hm...";
+			link.l1.go = "exit";
+			AddCharacterExpToSkill(pchar, "FencingH", 100);
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon2");
+		break;
+
+		case "TBP_Kulon_leadership":
+			dialog.text = "Er lag im Blumenbeet beim Haus mit der Laterne, "+GetAddress_Form(NPChar)+". In den Schlamm getreten von einem groben Männerstiefel. Aber in diesem Haus wohnt schon lange niemand mehr, also dachte ich, er sei herrenlos...";
+			link.l1 = "Hm...";
+			link.l1.go = "exit";
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon2");
+		break;
+		// <-- Тайна Бетси Прайс
 	}
 }

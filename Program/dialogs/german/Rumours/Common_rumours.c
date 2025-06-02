@@ -6,12 +6,135 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 {
     string strum;
     string srum;
+	bool bOk1, bOk2;
 	switch(Dialog.CurrentNode)
 	{
 /////////////////////////////////////////////////---слухи мещанок---////////////////////////////////////////////
 		case "rumours_towngirl":	
 		NextDiag.CurrentNode = "rumours";
 
+		//--> Тёмные воды исцеления
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Habt ihr es gehört? Man sagt, Thomas Morrisons Tochter liegt nun schon seit einem halben Jahr im Bett. Die Ärzte sind völlig machtlos gegenüber ihrer Krankheit. Die Einzige, die ihr helfen könnte, ist eine Zigeunerin, die für ihre Tränke bekannt ist, die selbst schwer Erkrankte wieder auf die Beine bringen. Doch sie hat sich strikt geweigert, etwas für das arme Mädchen zu tun.";
+			link.l1 = "Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("DWH");
+			AddQuestRecord("DWH", "1");
+			pchar.questTemp.DWH_Start = true;
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Тёмные воды исцеления
+		//--> Грани справедливости
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Vorgestern gab es einen dreisten Mordversuch auf den Hafenmeister! Der Attentäter wartete am Ausgang des Büros auf ihn, aber er schaffte es, um Hilfe zu rufen. Ein Musketier kam rechtzeitig und verwundete den Angreifer, aber dem Verbrecher gelang die Flucht aus der Stadt\nMan sagt, der Hafenmeister bietet eine großzügige Belohnung für seinen Kopf! Bisher haben sich keine mutigen Seelen gemeldet.";
+			link.l1 = "Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("GS");
+			AddQuestRecord("GS", "1");
+			pchar.questTemp.GS_Start = true;
+			pchar.questTemp.GS_Portman = true;
+			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Грани справедливости
+		//--> Торговля по закону
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Vorgestern gab es einen dreisten Mordversuch auf den Hafenmeister! Der Attentäter wartete am Ausgang des Büros auf ihn, aber er schaffte es, um Hilfe zu rufen. Ein Musketier kam rechtzeitig und verwundete den Angreifer, aber dem Verbrecher gelang die Flucht aus der Stadt\nMan sagt, der Hafenmeister bietet eine großzügige Belohnung für seinen Kopf! Bisher haben sich keine mutigen Seelen gemeldet. Wissen Sie, selbst wenn er tausend Dublonen anbieten würde - ich würde nicht zustimmen...";
+			link.l1 = "Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("TPZ");
+			AddQuestRecord("TPZ", "1");
+			pchar.questTemp.TPZ_Start = true;
+			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Торговля по закону
+		//--> Украденное воспоминание
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Am Hafen munkelt man, dass Julie d'Armagnac, die Nichte des Gouverneurs, nur noch ein Schatten ihrer selbst ist. Einst strahlend und voller Leben, treibt sie nun mit unverkennbarer Trauer im Gesicht durch die Straßen. Die Stadtbewohner tuscheln und rätseln, was ihr widerfahren sein könnte, doch niemand kennt die Wahrheit. Vielleicht hat irgendein Schurke ihr das Herz gebrochen?"+GetSexPhrase(" Vielleicht waren Sie es, Hauptmann?","")+"";
+			link.l1 = ""+GetSexPhrase("Ich bezweifle das. ","")+"Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("UV");
+			AddQuestRecord("UV", "1");
+			pchar.questTemp.UV_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
+			sld.name = StringFromKey("Neutral_6");
+			sld.lastname = StringFromKey("Neutral_7");
+			sld.City = "PortPax";
+			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
+			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
+			sld.dialog.currentnode = "Juli";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			LAi_SetImmortal(sld, true);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Украденное воспоминание
+		
+		//--> В плену великого улова andre39966
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Man munkelt, dass der Fischer Pierre Carno spurlos verschwunden ist. Vor zwei Morgenröten segelte er aufs Meer hinaus und seither kein Zeichen von ihm. Seine Frau Lea ist außer sich vor Kummer. Bei Tageslicht und Laternenschein hält sie am Pier Wache, den Blick auf das endlose Wasser gerichtet, betend um einen flüchtigen Blick auf das Segel ihres Geliebten.";
+			link.l1 = "Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("VPVL");
+			AddQuestRecord("VPVL", "1");
+			pchar.questTemp.VPVL_Start = true;
+			AddDialogExitQuest("VPVL_Gegerate_Lea");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- В плену великого улова 
+		//--> Тайна Бетси Прайс
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Kapitän, habt Ihr gehört? In unserem Wirtshaus arbeitet eine neue Kellnerin. Man sagt, sie sei eine wahre Schönheit. Männer von überall her eilten herbei, nur um einen Blick auf sie zu erhaschen. Aber vor drei Tagen erschien sie nicht zur Arbeit, was den Wirt sehr verärgerte, der seit ihrer Ankunft enorme Gewinne erzielte. Man sagt, er sei sogar bereit, demjenigen zu bezahlen, der das Mädchen finden kann.​";
+			link.l1 = "Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("TBP");
+			AddQuestRecord("TBP", "1");
+			pchar.questTemp.TBP_Start = true;
+			pchar.questTemp.TBP_Tavern = true;
+			AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Тайна Бетси Прайс
+		
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2 )
         srum = SelectRumourEx("towngirl", NPChar);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // fix
@@ -46,6 +169,132 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 	case "rumours_townman":	
 		NextDiag.CurrentNode = "rumours";
 
+		//--> Тёмные воды исцеления
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Habt ihr es gehört? Man sagt, Thomas Morrisons Tochter liegt nun schon seit einem halben Jahr im Bett. Die Ärzte sind völlig machtlos gegenüber ihrer Krankheit. Die Einzige, die ihr helfen könnte, ist eine Zigeunerin, die für ihre Tränke bekannt ist, die selbst schwer Erkrankte wieder auf die Beine bringen. Doch sie hat sich strikt geweigert, etwas für das arme Mädchen zu tun.";
+			link.l1 = "Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("DWH");
+			AddQuestRecord("DWH", "1");
+			pchar.questTemp.DWH_Start = true;
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Тёмные воды исцеления
+		
+		//--> Грани справедливости
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Vorgestern gab es einen dreisten Mordversuch auf den Hafenmeister! Der Attentäter wartete am Ausgang des Büros auf ihn, aber er schaffte es, um Hilfe zu rufen. Ein Musketier kam rechtzeitig und verwundete den Angreifer, aber dem Verbrecher gelang die Flucht aus der Stadt\nMan sagt, der Hafenmeister bietet eine großzügige Belohnung für seinen Kopf! Bisher haben sich keine mutigen Seelen gemeldet. Wissen Sie, selbst wenn er tausend Dublonen anbieten würde - ich würde nicht zustimmen...";
+			link.l1 = "Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("GS");
+			AddQuestRecord("GS", "1");
+			pchar.questTemp.GS_Start = true;
+			pchar.questTemp.GS_Portman = true;
+			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Грани справедливости
+		
+		//--> Торговля по закону
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Vorgestern gab es einen dreisten Mordversuch auf den Hafenmeister! Der Attentäter wartete am Ausgang des Büros auf ihn, aber er schaffte es, um Hilfe zu rufen. Ein Musketier kam rechtzeitig und verwundete den Angreifer, aber dem Verbrecher gelang die Flucht aus der Stadt\nMan sagt, der Hafenmeister bietet eine großzügige Belohnung für seinen Kopf! Bisher haben sich keine mutigen Seelen gemeldet. Wissen Sie, selbst wenn er tausend Dublonen anbieten würde - ich würde nicht zustimmen...";
+			link.l1 = "Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("TPZ");
+			AddQuestRecord("TPZ", "1");
+			pchar.questTemp.TPZ_Start = true;
+			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Торговля по закону
+		
+		//--> Украденное воспоминание
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Am Hafen munkelt man, dass Julie d'Armagnac, die Nichte des Gouverneurs, nur noch ein Schatten ihrer selbst ist. Einst strahlend und voller Leben, treibt sie nun mit unverkennbarer Trauer im Gesicht durch die Straßen. Die Stadtbewohner tuscheln und rätseln, was ihr widerfahren sein könnte, doch niemand kennt die Wahrheit. Vielleicht hat irgendein Schurke ihr das Herz gebrochen?"+GetSexPhrase(" Vielleicht waren Sie es, Hauptmann?","")+"";
+			link.l1 = ""+GetSexPhrase("Ich bezweifle das. ","")+"Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("UV");
+			AddQuestRecord("UV", "1");
+			pchar.questTemp.UV_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
+			sld.name = StringFromKey("Neutral_6");
+			sld.lastname = StringFromKey("Neutral_7");
+			sld.City = "PortPax";
+			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
+			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
+			sld.dialog.currentnode = "Juli";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			LAi_SetImmortal(sld, true);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Украденное воспоминание
+		
+		//--> В плену великого улова andre39966
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Man munkelt, dass der Fischer Pierre Carno spurlos verschwunden ist. Vor zwei Morgenröten segelte er aufs Meer hinaus und seither kein Zeichen von ihm. Seine Frau Lea ist außer sich vor Kummer. Bei Tageslicht und Laternenschein hält sie am Pier Wache, den Blick auf das endlose Wasser gerichtet, betend um einen flüchtigen Blick auf das Segel ihres Geliebten.";
+			link.l1 = "Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("VPVL");
+			AddQuestRecord("VPVL", "1");
+			pchar.questTemp.VPVL_Start = true;
+			AddDialogExitQuest("VPVL_Gegerate_Lea");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- В плену великого улова 
+		
+		//--> Тайна Бетси Прайс
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Kapitän, habt Ihr gehört? In unserem Wirtshaus arbeitet eine neue Kellnerin. Man sagt, sie sei eine wahre Schönheit. Männer von überall her eilten herbei, nur um einen Blick auf sie zu erhaschen. Aber vor drei Tagen erschien sie nicht zur Arbeit, was den Wirt sehr verärgerte, der seit ihrer Ankunft enorme Gewinne erzielte. Man sagt, er sei sogar bereit, demjenigen zu bezahlen, der das Mädchen finden kann.​";
+			link.l1 = "Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("TBP");
+			AddQuestRecord("TBP", "1");
+			pchar.questTemp.TBP_Start = true;
+			pchar.questTemp.TBP_Tavern = true;
+			AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Тайна Бетси Прайс
+		
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2 )
         srum = SelectRumourEx("townman", NPChar);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // fix
@@ -111,6 +360,39 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 /////////////////////////////////////////////////---слухи дворян---////////////////////////////////////////////
 	case "rumours_nobleman":	
         srum = SelectRumourEx("nobleman", NPChar);
+		//--> Украденное воспоминание
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		if (bOk1 || bOk2)
+        {
+			if (pchar.sex == "man")
+			{
+				dialog.text = "Am Hafen munkelt man, dass Julie d'Armagnac, die Nichte des Gouverneurs, nur noch ein Schatten ihrer selbst ist. Einst strahlend und voller Leben, treibt sie nun mit unverkennbarer Trauer im Gesicht durch die Straßen. Die Stadtbewohner tuscheln und rätseln, was ihr widerfahren sein könnte, doch niemand kennt die Wahrheit. Vielleicht hat irgendein Schurke ihr das Herz gebrochen? Vielleicht waren Sie es, Hauptmann?";
+			}
+			dialog.text = "Am Hafen munkelt man, dass Julie d'Armagnac, die Nichte des Gouverneurs, nur noch ein Schatten ihrer selbst ist. Einst strahlend und voller Leben, treibt sie nun mit unverkennbarer Trauer im Gesicht durch die Straßen. Die Stadtbewohner tuscheln und rätseln, was ihr widerfahren sein könnte, doch niemand kennt die Wahrheit. Vielleicht hat irgendein Schurke ihr das Herz gebrochen?"+GetSexPhrase(" Vielleicht waren Sie es, Hauptmann?","")+"";
+			link.l1 = ""+GetSexPhrase("Ich bezweifle das. ","")+"Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("UV");
+			AddQuestRecord("UV", "1");
+			pchar.questTemp.UV_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
+			sld.name = StringFromKey("Neutral_6");
+			sld.lastname = StringFromKey("Neutral_7");
+			sld.City = "PortPax";
+			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
+			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
+			sld.dialog.currentnode = "Juli";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			LAi_SetImmortal(sld, true);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Украденное воспоминание
         if (RumourHasInformation(srum))
         {
             posrep1 = RandPhraseSimple(" That's it...", " You might find it interesting.");
@@ -140,6 +422,35 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 /////////////////////////////////////////////////---слухи дворянок---////////////////////////////////////////////
 	case "rumours_noblegirl":	
         srum = SelectRumourEx("noblegirl", NPChar);
+		//--> Украденное воспоминание
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Am Hafen munkelt man, dass Julie d'Armagnac, die Nichte des Gouverneurs, nur noch ein Schatten ihrer selbst ist. Einst strahlend und voller Leben, treibt sie nun mit unverkennbarer Trauer im Gesicht durch die Straßen. Die Stadtbewohner tuscheln und rätseln, was ihr widerfahren sein könnte, doch niemand kennt die Wahrheit. Vielleicht hat irgendein Schurke ihr das Herz gebrochen?"+GetSexPhrase(" Vielleicht waren Sie es, Hauptmann?","")+"";
+			link.l1 = ""+GetSexPhrase("Ich bezweifle das. ","")+"Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("UV");
+			AddQuestRecord("UV", "1");
+			pchar.questTemp.UV_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
+			sld.name = StringFromKey("Neutral_6");
+			sld.lastname = StringFromKey("Neutral_7");
+			sld.City = "PortPax";
+			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
+			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
+			sld.dialog.currentnode = "Juli";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			LAi_SetImmortal(sld, true);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Украденное воспоминание
         if (RumourHasInformation(srum))
         {
             posrep1 = RandPhraseSimple(" That's it...", " You might find it interesting.");
@@ -170,6 +481,25 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 	case "rumours_sailor":	
 		NextDiag.CurrentNode = "rumours";
 
+		//--> Грани справедливости
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Vorgestern gab es einen dreisten Mordversuch auf den Hafenmeister! Der Attentäter wartete am Ausgang des Büros auf ihn, aber er schaffte es, um Hilfe zu rufen. Ein Musketier kam rechtzeitig und verwundete den Angreifer, aber dem Verbrecher gelang die Flucht aus der Stadt\nMan sagt, der Hafenmeister bietet eine großzügige Belohnung für seinen Kopf! Bisher haben sich keine mutigen Seelen gemeldet. Wissen Sie, selbst wenn er tausend Dublonen anbieten würde - ich würde nicht zustimmen...";
+			link.l1 = "Danke, ich sollte gehen.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("GS");
+			AddQuestRecord("GS", "1");
+			pchar.questTemp.GS_Start = true;
+			pchar.questTemp.GS_Portman = true;
+			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Грани справедливости
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2) srum = SelectRumourEx("sailor", NPChar);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // fix
         if (RumourHasInformation(srum))
@@ -280,6 +610,160 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			break;
 		}
 		//<-- квест "Путеводная звезда"
+		
+		//--> Тёмные воды исцеления
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Habt ihr es gehört? Man sagt, Thomas Morrisons Tochter liegt nun schon seit einem halben Jahr im Bett. Die Ärzte sind völlig machtlos gegenüber ihrer Krankheit. Die Einzige, die ihr helfen könnte, ist eine Zigeunerin, die für ihre Tränke bekannt ist, die selbst schwer Erkrankte wieder auf die Beine bringen. Doch sie hat sich strikt geweigert, etwas für das arme Mädchen zu tun.";
+			link.l1 = RandPhraseSimple(RandSwear()+"Das ist einen weiteren Becher wert...","Gut, trinken wir noch einmal.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Danke, ich sollte gehen.","Eh, verdammt guter Rum. Gut, ich sollte gehen, hab hier Spaß.");
+			link.l2.go = "exit_sit";
+			
+			SetQuestHeader("DWH");
+			AddQuestRecord("DWH", "1");
+			pchar.questTemp.DWH_Start = true;
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Тёмные воды исцеления
+		//--> Грани справедливости
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Vorgestern gab es einen dreisten Mordversuch auf den Hafenmeister! Der Attentäter wartete am Ausgang des Büros auf ihn, aber er schaffte es, um Hilfe zu rufen. Ein Musketier kam rechtzeitig und verwundete den Angreifer, aber dem Verbrecher gelang die Flucht aus der Stadt\nMan sagt, der Hafenmeister bietet eine großzügige Belohnung für seinen Kopf! Bisher haben sich keine mutigen Seelen gemeldet. Wissen Sie, selbst wenn er tausend Dublonen anbieten würde - ich würde nicht zustimmen...";
+			link.l1 = RandPhraseSimple(RandSwear()+"Das ist einen weiteren Becher wert...","Gut, trinken wir noch einmal.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Danke, ich sollte gehen.","Eh, verdammt guter Rum. Gut, ich sollte gehen, hab hier Spaß.");
+			link.l2.go = "exit_sit";
+			
+			SetQuestHeader("GS");
+			AddQuestRecord("GS", "1");
+			pchar.questTemp.GS_Start = true;
+			pchar.questTemp.GS_Portman = true;
+			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Грани справедливости
+		//--> Торговля по закону
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Habt Ihr die Neuigkeiten gehört?! Eine himmelschreiende Schande ist das! Kein Tropfen Rum oder Wein mehr in der Taverne - wie soll man bei dieser verdammten Hitze Erleichterung finden? Der Wirt füttert uns seit einer Woche mit leeren Versprechungen, dass der Trank bald wieder fließen wird, aber nichts ist geschehen! Sollen wir etwa unsere Kehlen bis zum Jüngsten Gericht austrocknen lassen?";
+			link.l1 = RandPhraseSimple(RandSwear()+"Das ist einen weiteren Becher wert...","Gut, trinken wir noch einmal.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Danke, ich sollte gehen.","Eh, verdammt guter Rum. Gut, ich sollte gehen, hab hier Spaß.");
+			link.l2.go = "exit_sit";
+			
+			SetQuestHeader("TPZ");
+			AddQuestRecord("TPZ", "1");
+			pchar.questTemp.TPZ_Start = true;
+			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Торговля по закону
+		//--> Старые счёты
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Das Gerücht an den Docks besagt, dass unser Schankwirt in Schwierigkeiten steckt! Jemand hat seinen Gin gestohlen! Nicht nur eine Flasche, wohlgemerkt, sondern ein ganzes Fass davon - von der Sorte, die man sonst nirgendwo auf diesen Inseln findet! Direkt aus Europa gebracht, so sagt man. Der alte Fuchs will nicht verraten, für wen er es aufbewahrte, aber eines ist sicher: Wenn dieses Fass nicht bald auftaucht, wird der arme Kerl die Hölle bezahlen müssen!";
+			link.l1 = RandPhraseSimple(RandSwear()+"Das ist einen weiteren Becher wert...","Gut, trinken wir noch einmal.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Danke, ich sollte gehen.","Eh, verdammt guter Rum. Gut, ich sollte gehen, hab hier Spaß.");
+			link.l2.go = "exit_sit";
+			
+			SetQuestHeader("OS");
+			AddQuestRecord("OS", "1");
+			pchar.questTemp.OS_Start = true;
+			pchar.questTemp.OS_Tavern_1 = true;
+			AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Старые счёты
+		//--> Украденное воспоминание
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Am Hafen munkelt man, dass Julie d'Armagnac, die Nichte des Gouverneurs, nur noch ein Schatten ihrer selbst ist. Einst strahlend und voller Leben, treibt sie nun mit unverkennbarer Trauer im Gesicht durch die Straßen. Die Stadtbewohner tuscheln und rätseln, was ihr widerfahren sein könnte, doch niemand kennt die Wahrheit. Vielleicht hat irgendein Schurke ihr das Herz gebrochen?"+GetSexPhrase(" Vielleicht waren Sie es, Hauptmann?","")+"";
+			link.l1 = RandPhraseSimple(RandSwear()+"Das ist einen weiteren Becher wert...","Gut, trinken wir noch einmal.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Danke, ich sollte gehen.","Eh, verdammt guter Rum. Gut, ich sollte gehen, hab hier Spaß.");
+			link.l2.go = "exit_sit";
+			
+			SetQuestHeader("UV");
+			AddQuestRecord("UV", "1");
+			pchar.questTemp.UV_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
+			sld.name = StringFromKey("Neutral_6");
+			sld.lastname = StringFromKey("Neutral_7");
+			sld.City = "PortPax";
+			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
+			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
+			sld.dialog.currentnode = "Juli";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			LAi_SetImmortal(sld, true);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Украденное воспоминание
+		//--> В плену великого улова andre39966
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Man munkelt, dass der Fischer Pierre Carno spurlos verschwunden ist. Vor zwei Morgenröten segelte er aufs Meer hinaus und seither kein Zeichen von ihm. Seine Frau Lea ist außer sich vor Kummer. Bei Tageslicht und Laternenschein hält sie am Pier Wache, den Blick auf das endlose Wasser gerichtet, betend um einen flüchtigen Blick auf das Segel ihres Geliebten.";
+			link.l1 = RandPhraseSimple(RandSwear()+"Das ist einen weiteren Becher wert...","Gut, trinken wir noch einmal.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Danke, ich sollte gehen.","Eh, verdammt guter Rum. Gut, ich sollte gehen, hab hier Spaß.");
+			link.l2.go = "exit_sit";
+			
+			SetQuestHeader("VPVL");
+			AddQuestRecord("VPVL", "1");
+			pchar.questTemp.VPVL_Start = true;
+			AddDialogExitQuest("VPVL_Gegerate_Lea");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- В плену великого улова
+		//--> Тайна Бетси Прайс
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Kapitän, habt Ihr gehört? In unserem Wirtshaus arbeitet eine neue Kellnerin. Man sagt, sie sei eine wahre Schönheit. Männer von überall her eilten herbei, nur um einen Blick auf sie zu erhaschen. Aber vor drei Tagen erschien sie nicht zur Arbeit, was den Wirt sehr verärgerte, der seit ihrer Ankunft enorme Gewinne erzielte. Man sagt, er sei sogar bereit, demjenigen zu bezahlen, der das Mädchen finden kann.​";
+			link.l1 = RandPhraseSimple(RandSwear()+"Das ist einen weiteren Becher wert...","Gut, trinken wir noch einmal.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Danke, ich sollte gehen.","Eh, verdammt guter Rum. Gut, ich sollte gehen, hab hier Spaß.");
+			link.l2.go = "exit_sit";
+			
+			SetQuestHeader("TBP");
+			AddQuestRecord("TBP", "1");
+			pchar.questTemp.TBP_Start = true;
+			pchar.questTemp.TBP_Tavern = true;
+			AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Тайна Бетси Прайс
 		
 		Dialog.Text = LinkRandPhrase("Nun... hic! ","Ach, guter Rum! ","Nun... ")+SelectRumourEx("Stammgast",NPChar);
 		link.l1 = RandPhraseSimple(RandSwear()+"Das ist einen weiteren Becher wert...","Gut, trinken wir noch einmal.");
@@ -1038,7 +1522,7 @@ string GetDeviceLocation(ref npchar)
 		}
 	}
 	if (howStore == 0) return "none";
-	LocId = storeArray[dRand(howStore-1)];
+	LocId = storeArray[hrand(howStore-1)];
 	SetOpenDoorCommonLoc(npchar.city, LocId); //открываем дверь
 	for(n=0; n<MAX_CHARACTERS; n++)
 	{

@@ -50,6 +50,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "There was unfortunate, Monsieur";
                 link.l1.go = "goldengirl_10";
 			}
+			// andre39966 ===> В плену великого улова.
+			if (CheckAttribute(pchar, "questTemp.VPVL_Magor_Dialogue"))
+			{
+				link.l1 = "Your Excellency, I've come into possession of intelligence regarding illicit commerce soon to transpire upon these shores. I venture to say this matter may prove worthy of your attention.";
+				link.l1.go = "VPVL_Magor_1";
+				break;
+			}
+			if (CheckAttribute(pchar, "questTemp.VPVL_GovernorDialogueAvailable"))
+			{
+				link.l1 = "Your Excellency, I come seeking tidings of that smuggling vessel we discussed.";
+				link.l1.go = "VPVL_Magor_4";
+			}
+			//  <=== В плену великого улова.  
 		break;
 		
 		case "Sharlie_junglejew":
@@ -290,6 +303,51 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
 			pchar.questTemp.GoldenGirl = "find_girl";
 		break;
+		
+		// В плену великого улова, andre39966
+		case "VPVL_Magor_1":
+			dialog.text = "Smuggled goods, you say? Hmm... most intriguing. Pray, enlighten me with the particulars of your discovery.";
+			link.l1 = "Three days past, a vessel laden with contraband was to drop anchor in Le Marin Bay. The ship failed to make its rendezvous, but I have sound reason to believe she'll yout make port ere long. Perhaps your men might arrange a proper greeting for these brigands when they arrive, Your Excellency.";
+			link.l1.go = "VPVL_Magor_2";
+			pchar.questTemp.VPVL_DontSpawnSmugglersShip = true; 
+			DelLandQuestMark(npchar);
+		break;
+
+		case "VPVL_Magor_2":
+			dialog.text = "A nameless vessel carrying unnamed cargo... And you presume I should dispatch His Majesty's forces on such nebulous intelligence?";
+			link.l1 = "Your Excellency, I grant the particulars are scarce. But pray allow me to recount how this intelligence came into my possession. (Cutscene)";
+			link.l1.go = "VPVL_Magor_3";
+		break;
+
+		case "VPVL_Magor_3":
+			dialog.text = "Very well, we shall put your intelligence to the test. Should a vessel bearing contraband indeed weigh anchor off Le Marin's shores, you shall be handsomely rewarded for your service to the Crown. Return to me in three days' time. By then, the fog of uncertainty shall have lifted.";
+			link.l1 = "Excellent. Then I'll see you in three days.";
+			link.l1.go = "VPVL_Delete_Spawn_Ship";
+			AddDialogExitQuest("VPVL_SetGovernorDialogueFlag");
+			AddQuestRecord("VPVL", "6");
+		break;
+
+		case "VPVL_Magor_4":
+			dialog.text = "Ah, Captain! A pleasure to receive you once more. Your intelligence proved most valuable indeed. My men intercepted the vessel precisely where you indicated. Here—one hundred and fifty Spanish doubloons, freshly struck and heavy in the purse. Take them with my gratitude.";
+			link.l1 = "My humble thanks, Your Excellency. 'Tis good fortune that my morsel of intelligence served the Crown's interests. Should opportunity arise again, know that my sword arm and discerning eyou remain at your disposal.";
+			link.l1.go = "VPVL_Delete_Flag";
+			AddItems(PChar, "gold_dublon", 150);
+			ChangeCharacterNationReputation(pchar, FRANCE, 5);
+			DelLandQuestMark(npchar);
+		break;
+
+		case "VPVL_Delete_Flag":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.VPVL_GovernorDialogueAvailable");
+			DeleteAttribute(pchar, "questTemp.VPVL_DontSpawnSmugglersShip");
+		break;
+
+		case "VPVL_Delete_Spawn_Ship":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.VPVL_Magor_Dialogue");
+			AddDialogExitQuest("VPVL_KillCapitanOfSmuggler");
+		break;
+		// <=== В плену великого улова
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

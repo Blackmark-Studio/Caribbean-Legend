@@ -24,10 +24,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	// Jason --> Португалец
 	case "Portugal_cloves":
-		dialog.text = "¿Ropa noble? Claro, tengo un conjunto por aquí: pantalones, un jubón, una camisa de seda y botas. Cuesta 20,000 pesos. La ropa es de muy alta calidad, es cómoda y tiene un aspecto notable, así que no aceptaré menos por ella.";
+		dialog.text = "¿Ropa noble? Claro, tengo un conjunto por aquí: pantalones, un jubón, una camisa de seda y botas. Cuesta 20 000 pesos. La ropa es de muy alta calidad, es cómoda y tiene un aspecto notable, así que no aceptaré menos por ella.";
 		if (sti(pchar.money) >= 20000)
 		{
-			link.l1 = "¡Estupendo! Dámelo aquí.";
+			link.l1 = "¡Estupendo! Me la llevo.";
 			link.l1.go = "Portugal_cloves_1";
 		}
 		link.l2 = "Mm... No tengo tanto dinero en este momento.";
@@ -43,7 +43,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	case "Portugal_cloves_1":
 		AddMoneyToCharacter(pchar, -20000);
 		GiveItem2Character(pchar, "suit_1");
-		Log_Info("Has recibido ropa cara");
+		Log_Info("¡Has recibido ropa cara!");
 		PlaySound("interface\important_item.wav");
 		dialog.text = "Aquí tienes.";
 		link.l1 = "¡Gracias!";
@@ -64,7 +64,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "guardoftruth_1":
-		dialog.text = "Nada de eso. No le ofrecí ningún flete; ni siquiera me lo pidió. No compartió conmigo sus planes de futuro. Ni siquiera recuerdo todos los detalles, ¿sabes cuánta gente ha entrado y salido de aquí desde entonces? Descargó y zarpó y eso es todo lo que puedo decir de él.";
+		dialog.text = "Nada de eso. No le ofrecí ningún flete; ni siquiera me lo pidió. No compartió conmigo sus planes de futuro. Ni siquiera recuerdo todos los detalles, ¿sabes cuánta gente ha entrado y salido de aquí desde entonces? Descargó y zarpó, y eso es todo lo que puedo decir de él.";
 		link.l1 = "Está bien. Bueno, gracias de todas formas. ¡Todo lo mejor!";
 		link.l1.go = "guardoftruth_2";
 		break;

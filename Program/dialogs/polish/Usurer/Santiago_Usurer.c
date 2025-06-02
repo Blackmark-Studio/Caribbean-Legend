@@ -4,13 +4,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś już zadać mi to pytanie niedawno...","Tak, pozwól zgadnąć... Znowu kręcisz się w kółko?","Słuchaj, ja tu zajmuję się finansami, nie odpowiadam na pytania...","blokada",1,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniałem zdanie...","Nie mam teraz nic do powiedzenia."),"Umph, gdzież to podziała się moja pamięć...","Zgadłeś, przepraszam...","Rozumiem...",npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś już zadać mi to pytanie niedawno...","Tak, pozwól zgadnąć... Znowu kręcisz się w kółko?","Słuchaj, ja tu zajmuję się finansami, nie odpowiadam na pytania...","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniłem zdanie...","Nie mam teraz nic do powiedzenia."),"Umph, gdzież to podziała się moja pamięć...","Zgadłeś, przepraszam...","Rozumiem...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			//Голландский гамбит, Голландия
 			if (CheckAttribute(pchar, "questTemp.HWIC.Holl") && pchar.questTemp.HWIC.Holl == "SantiagoTripBegin")
 			{
-				link.l1 = "Senior, jestem kapitanem "+GetFullName(pchar)+", a ja jestem tutaj z polecenia Lucasa Rodenburga. Mam dla ciebie paczkę od niego.";
+				link.l1 = "Senior, jestem kapitanem "+GetFullName(pchar)+", i jestem tutaj z polecenia Lucasa Rodenburga. Mam dla ciebie paczkę od niego.";
 				link.l1.go = "SantiagoTripBank";	
 			}
 			if (CheckAttribute(pchar, "questTemp.HWIC.Holl") && pchar.questTemp.HWIC.Holl == "SantiagoTripReturn")

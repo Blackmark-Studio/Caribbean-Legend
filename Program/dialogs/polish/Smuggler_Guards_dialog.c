@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			// Captain Beltrop, 14.02.2021 - правка проверки репутации и навыков владения оружием
 			bool FencingSkills = (GetCharacterSkillToOld(Pchar, "FencingL") >= 8) || (GetCharacterSkillToOld(Pchar, "FencingS") >= 8) || (GetCharacterSkillToOld(Pchar, "FencingH") >= 8);
 			dialog.text = RandPhraseSimple("Wygląda na to, że robisz tu coś nielegalnego.","W imię "+NationKingsName(npchar)+", Nakazuję Ci przerwać te bezprawne czyny!");
-			Link.l1 = "Nie, nie, oficerze. Ja i moi kumple tutaj tylko opalamy się.";
+			Link.l1 = "Nie, nie, oficerze. Ja i moi koledzy tylko zażywamy kąpieli słonecznej.";
 			// belamour legendary edition включим обаяние ГГ, если оно есть
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 				Link.l1.go = "IDontBelieveYou";
 				}
 			}
-			Link.l2 = "Robię dobroczynność. Czy to naprawdę jest nielegalne?";
+			Link.l2 = "Praktykuję dobroczynność. Czy to naprawdę jest nielegalne?";
 			// belamour legendary edition включим обаяние ГГ, если оно есть
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
@@ -64,7 +64,7 @@ void ProcessDialogEvent()
 				Link.l2.go = "TryingToGiveBribe";
 				}
 			}
-			Link.l3 = "Zejdź stąd, żołnierzu. To nie twoja sprawa!";
+			Link.l3 = "Zjeżdżaj stąd, żołnierzu. To nie twoja sprawa!";
 			if(makeint(pchar.reputation.nobility) <= 25 && FencingSkills)
 			{
 				Link.l3.go = "GettingLostFromHere";
@@ -77,16 +77,16 @@ void ProcessDialogEvent()
 
 		case "ThisTimeFree":
 			dialog.snd = "Voice\COGU\COGU002";		
-			dialog.text = "Nie rób z nas głupców, kapitanie "+Pchar.name+"! Nikt by nigdy nie oczekiwał, że taki pozytywny i szanowany człowiek jak ty będzie przemycał.";
+			dialog.text = "Nie rób z nas głupców, kapitanie "+Pchar.name+"! Nikt by nigdy nie przypuszczał, że taki pozytywny i szanowany człowiek jak ty będzie powiązany z przemytem.";
 			Link.l1 = "Nikt nie jest doskonały. Ale już żałuję!";
 			Link.l1.go = "ThisTimeFree_1";
-			Link.l2 = "Zaraz odetnę ci głowę.";
+			Link.l2 = "Taki już jest świat, oficerze. A teraz wybacz, ale nie moge ci pozwolić stąd odejść.";
 			Link.l2.go = "ThisTimeFree_fight";				
 		break;
 
 		case "ThisTimeFree_1":	
 			dialog.snd = "Voice\COGU\COGU003";	
-			dialog.text = "Słyszałem o tobie, tylko pozytywne rzeczy, więc tym razem cię puszcze, ale nie rób tego ponownie. Nie mogę powiedzieć tego samego o tych kolesiach!";
+			dialog.text = "Słyszałem o tobie, tylko pozytywne rzeczy, więc tym razem cię puszcze, ale nie rób tego ponownie. Nie mogę powiedzieć tego samego o tych gościach!";
 			Link.l1 = "Dziękuję, oficerze. Miłego dnia!";
 			Link.l1.go = "ThisTimeFree_exit";
 		break;
@@ -136,8 +136,8 @@ void ProcessDialogEvent()
 
 		case "IDontBelieveYou":
 			dialog.snd = "Voice\COGU\COGU004";
-			dialog.text = "Przestań kłamać!!! Nie jestem ślepy! Idź za nami, jesteś aresztowany, a twoje towary są skonfiskowane.";
-			Link.l1 = "Lepiej wypruję ci flaki!";
+			dialog.text = "Przestań kłamać!!! Nie jestem ślepy! Idziesz z nami, jesteś aresztowany, a twoje towary zostaną skonfiskowane.";
+			Link.l1 = "Nie po to zabezpieczałem ten ładunek przez tyle czasu, żeby go teraz stracić! Wole wypruć wam wszystkim flaki!";
 			Link.l1.go = "ThisTimeFree_fight";
 		break;
 
@@ -177,15 +177,15 @@ void ProcessDialogEvent()
 
 		case "TryingToGiveBribe":
 			dialog.snd = "Voice\COGU\COGU006";
-			dialog.text = "Łapówka? Nie, dbam o mój honor! Więc, czy byłbyś tak uprzejmy iść z nami!";
-			Link.l1 = "Cholera! Przykro mi cię rozczarować, ale nie idę nigdzie!";
+			dialog.text = "Łapówka? Nie, ja dbam o mój honor! Więc, czy byłbyś tak uprzejmy iść z nami!";
+			Link.l1 = "Cholera! Przykro mi cię rozczarować, ale nigdzie nie ide!";
 			Link.l1.go = "ThisTimeFree_fight";
 		break;
 
 		case "MoneyAccepted10":
 			dialog.snd = "Voice\COGU\COGU007";
 			dialog.text = "Moja wdzięczność za twoją hojność.";
-			Link.l1 = "Zawsze do twojej usługi.";
+			Link.l1 = "Do usług.";
 			Link.l1.go = "GettingLostFromHere_exit";
 			AddMoneyToCharacter(pchar, -makeint(sti(Pchar.money)/10));
 		break;
@@ -193,7 +193,7 @@ void ProcessDialogEvent()
 		case "MoneyAccepted5":
 			dialog.snd = "Voice\COGU\COGU007";
 			dialog.text = "Moja wdzięczność za twoją hojność.";
-			Link.l1 = "Zawsze do twojej usługi.";
+			Link.l1 = "Do usług.";
 			Link.l1.go = "GettingLostFromHere_exit";
 			AddMoneyToCharacter(pchar, -makeint(sti(Pchar.money)/5));
 		break;
@@ -201,7 +201,7 @@ void ProcessDialogEvent()
 		case "MoneyAccepted2":
 			dialog.snd = "Voice\COGU\COGU007";
 			dialog.text = "Moja wdzięczność za twoją hojność.";
-			Link.l1 = "Zawsze do twojej usługi.";
+			Link.l1 = "Do usług.";
 			Link.l1.go = "GettingLostFromHere_exit";
 			AddMoneyToCharacter(pchar, -makeint(sti(Pchar.money)/2));
 		break;
@@ -240,8 +240,8 @@ void ProcessDialogEvent()
 
 		case "howDareYou":
 			dialog.snd = "Voice\COGU\COGU010";
-			dialog.text = "Synu...! Cholerny pies! Ta zatoka stanie się twoim grobem!";
-			Link.l1 = "Chodź tu i spróbuj to udowodnić!";
+			dialog.text = "Ty su...! Cholerny psie! Ta zatoka stanie się twoim grobem!";
+			Link.l1 = "W takim razie chodź i udowodnij mi to!";
 			Link.l1.go = "ThisTimeFree_fight";
 		break;
 	}

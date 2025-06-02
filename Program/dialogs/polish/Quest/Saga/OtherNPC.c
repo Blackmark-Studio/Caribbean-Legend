@@ -939,7 +939,7 @@ void ProcessDialogEvent()
 		case "molligan_7":
 			DialogExit();
 			// ставим проверку скрытности
-			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > (10+drand(50)))
+			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > (10+hrand(50)))
 			{
 				pchar.questTemp.Saga.Molligan.friend = "true"; // будет шанс критического залпа картечью
 				sTemp = "The scoundrel is still not suspecting a thing. I should get closer and shoot at him with grapeshot. A sudden strike will always win in any battle. ";

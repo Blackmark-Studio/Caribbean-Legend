@@ -60,7 +60,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		string sTemp = "barquentine";
 		if (MOD_SKILL_ENEMY_RATE < 7)
 			sTemp = "barque"; // Addon 2016-1 Jason пиратскаЯ линейка
-		dialog.text = "Entonces escucha: el convoy consta de tres barcos, la resina estará entre otras mercancías en un " + sTemp + " llamado 'Bensecho'. Este es tu objetivo principal. Como he dicho antes, los españoles navegan desde San José - Trinidad, hasta San Juan - Puerto Rico. Zarparán mañana, así que eres libre de elegir dónde atacarlos.";
+		dialog.text = "Entonces escucha: el convoy consta de tres barcos, la resina estará entre otras mercancías en un " + sTemp + " llamado 'Bensecho'. Este es tu objetivo principal. Como he dicho antes, los españoles navegan desde San José, Trinidad, hasta San Juan, Puerto Rico. Zarparán mañana, así que eres libre de elegir dónde atacarlos.";
 		link.l1 = "Entendido. ¿Qué hay de la recompensa?";
 		link.l1.go = "FMQM_4";
 		break;

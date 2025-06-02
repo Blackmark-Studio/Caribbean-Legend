@@ -2,11 +2,11 @@
 // здесь и далее ник boal - это разработческий ник ALexusB
 
 #define VERSION_NUMBER1       "Caribbean Legend "
-#define VERSION_NUMBER2       "ver. 1.4.0 (13.04.25)"
+#define VERSION_NUMBER2       "ver. 1.5.0 BETA (31.05.25)"
 #define VERSION_NUMBER3       "BlackMark.bz"
 
-#define VERSION_NUM      99940  // текущий номер
-#define VERSION_NUM_PRE  99940  // последний совместмый
+#define VERSION_NUM      150  // текущий номер
+#define VERSION_NUM_PRE  150  // последний совместмый
 
 //Сайт: http://seadogs.4fans.org
 #define VERSION_WWW     "http://www.blackmark.bz"
@@ -74,6 +74,10 @@ bool bImCasual = false;
 bool bCannonsRangeShow = true;
 // Режим фриплея
 bool SandBoxMode = false;
+// Пролог обучение
+bool bGlobalTutor = false;
+//belamour не обновлять интерфейсы
+bool DontRefreshBLI = false;
 // belamour переспектива наземной камеры
 //int iLocCamPersp = 1;
 // belamour переспектива морской камеры
@@ -82,7 +86,8 @@ bool SandBoxMode = false;
 // ugeen 13.09.2020 HUD, belamour немного большие значки поменял на 1080 
 #define BI_COMPARE_HEIGHT 1080
 int iHudScale = BI_COMPARE_HEIGHT;   
-// --> резервные глобальные переменные на всякий случай
+
+// --> Резервные глобальные переменные на всякий случай
 bool bGlobalVar1 = false; 
 bool bGlobalVar2 = false;
 bool bGlobalVar3 = false;
@@ -92,10 +97,11 @@ bool bGlobalVar5 = false;
 int iGlobalVar1 = 0;
 int iGlobalVar2 = 0;
 
-// belamour переменные с точкой тоже могут пригодиться
 float fGlobalVar1 = 0.0;
 float fGlobalVar2 = 10.0;
-// <-- резервные глобальные переменные на всякий случай
+
+object FreeObj[5];
+// <-- Резервные глобальные переменные на всякий случай
 
 //int iScriptVersion = 15650;
 //int iScriptVersion = 57853; 

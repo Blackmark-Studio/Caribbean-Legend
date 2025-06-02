@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 		break;
 		case "_2":
 			dialog.text = "";
-			link.l1 = " ";
+			link.l1 = "";
 			link.l1.go = "_3";
 		break;
 		case "_4":

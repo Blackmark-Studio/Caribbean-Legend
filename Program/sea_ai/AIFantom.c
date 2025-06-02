@@ -17,26 +17,61 @@ void ClearSeaFantoms() {
 		InitCharacter(GetCharacter(index), index);
 		FreeCharacter(index);
 	}
-	
+
 	seaFantomsNum = 0;
 }
 
-// -> ugeen 26.01.09
-int Fantom_GenerateEncounterExt(string sGroupName, object oResult, int iEType, int iNumWarShips, int iNumMerchantShips, int iNation) 
+int Fantom_SetEncounterShips(ref rEnc, string sGroupName)
 {
-	aref	aWar, aMerchant;
-	ref		rEnc;
-	int		i;
-	int		iWarClassMax, iWarClassMin, iMerchantClassMax, iMerchantClassMin;
+	int iShipSum = 0;
+
+	aref arShipTypes, arShipModes;
+	makearef(arShipTypes, rEnc.ShipTypes);
+	makearef(arShipModes, rEnc.ShipModes);
+
+	int iShipType, i, q = GetAttributesNum(arShipTypes);
+	string sFantomType;
+
+	for (i = 0; i < q; i++)
+	{
+		ref rFantom = CreateSeaFantom();
+
+		DeleteAttribute(rFantom, "relation");
+		DeleteAttribute(rFantom, "abordage_twice");
+		DeleteAttribute(rFantom, "QuestDate");
+		DeleteAttribute(rFantom, "ransom");
+
+		iShipType   = GetAttributeValue(GetAttributeN(arShipTypes, i));
+		sFantomType = GetAttributeValue(GetAttributeN(arShipModes, i));
+
+		rFantom.Ship.Type = GenerateShipExt(iShipType, 0, rFantom);
+		rFantom.Ship.Mode = sFantomType;
+		rFantom.SeaAI.Group.Name = sGroupName;
+		rFantom.Charge.Type = GOOD_BALLS;
+
+		iShipSum++;
+	}
+
+    DeleteAttribute(rEnc, "FixedTypes");
+	return iShipSum;
+}
+
+// ~!~ TO_DO: DEL
+int Fantom_GenerateEncounterExt(string sGroupName, int iEType, int iNumWarShips, int iNumMerchantShips, int iNation) 
+{
+	aref aWar, aMerchant;
+	ref  rEnc;
+	int  i;
+	int  iWarClassMax, iWarClassMin, iMerchantClassMax, iMerchantClassMin;
 
 	makeref(rEnc, EncountersTypes[iEType]);
 	makearef(aWar, rEnc.War);
 	makearef(aMerchant, rEnc.Merchant);
-	
+
 	if(iEType == ENCOUNTER_TYPE_BARREL || iEType == ENCOUNTER_TYPE_BOAT)
 	{
 		ref rFantom = CreateSeaFantom();
-		
+
 		DeleteAttribute(rFantom, "relation");
 		DeleteAttribute(rFantom, "abordage_twice");
 		DeleteAttribute(rFantom, "QuestDate");
@@ -45,17 +80,17 @@ int Fantom_GenerateEncounterExt(string sGroupName, object oResult, int iEType, i
 		rFantom.SeaAI.Group.Name = sGroupName;
 		return 0;
 	}
-	
-	int iRank = sti(pchar.Rank);
-	trace("iRank = " + iRank + " iEtype " + iEType);
+
+    // Далее не используется
+	int iRank = sti(PChar.Rank);
 	Encounter_GetClassesFromRank(iEType, iRank, &iMerchantClassMin, &iMerchantClassMax, &iWarClassMin, &iWarClassMax);
-	
-	int iFantomIndex, iShipType;
+
+	int iShipType;
 
 	for (i=0; i<iNumMerchantShips; i++)
 	{
 		if(iNumShips + i >= MAX_SHIPS_ON_SEA) return i;
-		iShipType = Fantom_GetShipTypeExt(iMerchantClassMin, iMerchantClassMax, "Merchant", sGroupName, "Trade", iEType, iNation );
+		iShipType = Fantom_GetShipTypeExt(iMerchantClassMin, iMerchantClassMax, "Merchant", sGroupName, "Trade", iEType, iNation);
 		if (iShipType == INVALID_SHIP_TYPE) continue;
 	}
 
@@ -71,7 +106,7 @@ int Fantom_GenerateEncounterExt(string sGroupName, object oResult, int iEType, i
 
 int Fantom_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string sGroupName, string sFantomType, int iEncounterType, int iNation)
 {
-	int iShips[50];
+	int iShips[60];
 	int i, iShipsNum;
 	iShipsNum = 0;
 	aref aNation;
@@ -87,10 +122,10 @@ int Fantom_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string
 		}
 		int iClass = MakeInt(rShip.Class);
 		
-		if (iClass > iClassMin) { continue; }
-		if (iClass < iClassMax) { continue; }
-		if (sti(rShip.CanEncounter) != true) { continue; }
-		if (sti(rShip.Type.(sShipType)) != true) { continue; }
+		if (iClass > iClassMin) continue;
+		if (iClass < iClassMax) continue;
+		if (sti(rShip.CanEncounter) != true) continue;
+		if (sti(rShip.Type.(sShipType)) != true) continue;
 
 		bOk = false;
 		if(CheckAttribute(rShip, "nation"))
@@ -100,10 +135,13 @@ int Fantom_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string
 			for(int j = 0; j < q; j++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(aNation, j)); 
-				if(GetNationTypeByName(sAttr) == iNation && rShip.nation.(sAttr) == true ) bOk = true;
+				if(GetNationTypeByName(sAttr) == iNation && rShip.nation.(sAttr) == true ) {
+                    bOk = true;
+                    break;
+                }
 			}
 		}	
-		if(!bOk) { continue; }
+		if(!bOk) continue;
 		iShips[iShipsNum] = i;
 		iShipsNum++;
 	}
@@ -125,17 +163,16 @@ int Fantom_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string
 	rFantom.SeaAI.Group.Name = sGroupName;
 	rFantom.Ship.Mode = sFantomType;
 	rFantom.Charge.Type = GOOD_BALLS;
-	
+
 	int iRealShipType = GenerateShipExt( iBaseShipType, 0, rFantom );
-	
+
 	rFantom.Ship.Type = iRealShipType;
-			
+
 	return iRealShipType;
 	
 }
-// -> ugeen 26.01.09
 
-// на деле этот метод бесполезен, тк золото в сундуке генерится в др месте, а то что, в к3 тут были распределения опыта и команды вообще позорище.
+// на деле этот метод бесполезен, тк золото в сундуке генерится в др месте, а в к3 тут были распределения опыта и команды вообще - позорище
 void Fantom_SetRandomMoney(ref rFantom, string sFantomType)
 {
 	// clear money from character
@@ -355,7 +392,7 @@ void Fantom_SetSails(ref rFantom, string sFantomType)
 
 void Fantom_SetBalls(ref rFantom, string sFantomType)
 {
-	float fKBalls = 6 - GetCharacterShipClass(rFantom);
+	float fKBalls = 7 - GetCharacterShipClass(rFantom);
 
 	if (fKBalls <= 0) fKBalls = 0.7; // баркас
 	switch (sFantomType)
@@ -391,38 +428,30 @@ void Fantom_SetBalls(ref rFantom, string sFantomType)
 
 void Fantom_SetGoods(ref rFantom, string sFantomType)
 {
-	int 	iShipClass = 6 - GetCharacterShipClass(rFantom);  // для баркаса = 0
+	int 	iShipClass = 7 - GetCharacterShipClass(rFantom);  // для баркаса = 0
 	int 	i, iGoods, iRandGoods, iGoodName, iGoodQuantity;
-	
+
 	int 	iMultiply 		= 10;
 	int 	iRandMultiply 	= 1;
-	
+
 	int 	iStart 	= GOOD_BALLS;
 	int 	iFinish = GOOD_POWDER - iStart - 1;
-	
+
 	bool 	isLock; 
 	bool 	bOk = false;
-	
+
 	float 	fModifikator = 0.0;
-	
+
 	int 	Nation = sti(rFantom.nation);
-	
+
 	if(CheckAttribute(rFantom, "situation")) bOk = true;
-	
+
 	switch (sFantomType)
 	{
 		case "war":
 			iStart 	= GOOD_BALLS;
-			if( CheckAttribute(rFantom, "RealEncounterType") && sti(rFantom.RealEncounterType) == ENCOUNTER_TYPE_WAR_PRIVATEER )
-			{
-				iFinish = GOOD_GOLD - iStart - 1;			
-				iMultiply = (rand(3)+2) * (rand(iShipClass) + 1);	
-			}
-			else
-			{
-				iFinish = GOOD_BRICK - iStart - 1;
-				iMultiply = (rand(5)+5) * (rand(iShipClass) + 1);		
-			}
+            iFinish = GOOD_BRICK - iStart - 1;
+            iMultiply = (rand(5)+5) * (rand(iShipClass) + 1);
 			iRandMultiply = 1 + rand(iShipClass);		
 			iRandGoods = rand(5)+3; 
 			for (i = 0; i < iRandGoods; i++)
@@ -443,121 +472,67 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 				}
 			}			
 		break;
-		
+
 		case "trade":
 			iRandMultiply = 2 + rand(iShipClass);
+
 			if (CheckAttribute(rFantom, "RealEncounterType"))
 			{
 				switch (sti(rFantom.RealEncounterType))
 				{
-					//  товары повседневного спроса
-					case ENCOUNTER_TYPE_MERCHANT_SMALL 			:
+					case ENCOUNTER_TYPE_MERCHANT_SMALL:
 						iGoods = rand(2) + 4; 
 						fModifikator = 0.2 + 8.0/iGoods;
 						iStart 	= GOOD_FOOD;
-						iFinish = GOOD_POWDER - iStart - 1;						
+						iFinish = GOOD_LEATHER - iStart - 1;						
 					break;
-					
-					case ENCOUNTER_TYPE_MERCHANT_GUARD_SMALL 	:
-						iGoods = rand(2) + 4; 
-						fModifikator = 0.2 + 8.0/iGoods;
-						iStart 	= GOOD_FOOD;
-						iFinish = GOOD_POWDER - iStart - 1;						
-					break;
-					
-					case ENCOUNTER_TYPE_ESCORT_SMALL 			:
-						iGoods = rand(2) + 4; 
-						fModifikator = 0.2 + 8.0/iGoods;
-						iStart 	= GOOD_FOOD;
-						iFinish = GOOD_POWDER - iStart - 1;	
-					break;
-					
-					//  товары повседневного спроса + боеприпасы + колониальные товары
-					case ENCOUNTER_TYPE_MERCHANT_MEDIUM 		:
+
+					case ENCOUNTER_TYPE_MERCHANT_MEDIUM:
 						iGoods = rand(4) + 4; 
 						fModifikator = 0.2 + 8.0/iGoods;
-						iStart 	= GOOD_BALLS;
-						iFinish = GOOD_POWDER - iStart - 1;					
-					break;
-					
-					case ENCOUNTER_TYPE_MERCHANT_GUARD_MEDIUM 	:
-						iGoods = rand(4) + 4; 
-						fModifikator = 0.2 + 8.0/iGoods;
-						iStart 	= GOOD_BALLS;
+						iStart 	= GOOD_FOOD;
 						iFinish = GOOD_POWDER - iStart - 1;					
 					break;
 
-					case ENCOUNTER_TYPE_ESCORT_MEDIUM 			:
-						iGoods = rand(4) + 4; 
-						fModifikator = 0.2 + 8.0/iGoods;
-						iStart 	= GOOD_BALLS;
-						iFinish = GOOD_POWDER - iStart - 1;
-					break;
-					
-					// колониальные товары
-					case ENCOUNTER_TYPE_MERCHANT_LARGE			:
+					case ENCOUNTER_TYPE_MERCHANT_LARGE:
 						iGoods = rand(6) + 4; 
 						fModifikator = 0.4 + 12.0/iGoods;
 						iStart = GOOD_COFFEE;
-						iFinish = GOOD_POWDER - iStart - 1;					
+						iFinish = GOOD_SHIPSILK - iStart - 1;					
 					break;
-					
-					case ENCOUNTER_TYPE_MERCHANT_GUARD_LARGE 	:
-						iGoods = rand(6) + 4; 
-						fModifikator = 0.4 + 12.0/iGoods;
-						iStart = GOOD_COFFEE;
-						iFinish = GOOD_POWDER - iStart - 1;					
-					break;
-					
-					case ENCOUNTER_TYPE_ESCORT_LARGE 			:
-						iGoods = rand(6) + 4; 
-						fModifikator = 0.4 + 12.0/iGoods;
-						iStart = GOOD_COFFEE;
-						iFinish = GOOD_POWDER - iStart - 1;
-					break;
-					
-					// привозные товары из Европы + колониальные товары
-					case ENCOUNTER_TYPE_MERCHANT_CROWN 			:
+
+					case ENCOUNTER_TYPE_MERCHANT_CROWN:
 						iGoods = rand(3) + 3; 
 						fModifikator = 0.4 + 12.0/iGoods;
-						iStart = GOOD_COFFEE;
-						iFinish = GOOD_SHIPSILK - iStart - 1;
+						iStart = GOOD_POWDER;
+						iFinish = GOOD_SLAVES - iStart - 1;
 					break;
-					
-					//  уникальные товары + коронные товары
-					case ENCOUNTER_TYPE_MERCHANT_EXPEDITION 	:
+
+					case ENCOUNTER_TYPE_MERCHANT_EXPEDITION:
 						iGoods = rand(2) + 2; 
 						fModifikator = 0.4 + 12.0/iGoods;
 						iStart = GOOD_SHIPSILK;
-						if(Nation == SPAIN) iFinish = GOOD_CANNON_3 - iStart - 1; // золото и серебро только у испанцев !!!!
-						else 				iFinish = GOOD_GOLD - iStart - 1;
+						iFinish = GOOD_CANNON_3 - iStart - 1;
 					break;
+
+                    case ENCOUNTER_TYPE_MERCHANT_SLAVES:
+                        // TO_DO
+                    break;
 				}
-				
+
 				for (i = 0; i < iGoods; i++)
 				{
 					iGoodName = iStart + rand(iFinish);
 					iGoodQuantity = makeint(20 + fModifikator * iMultiply * (2 + rand(iRandMultiply * 3)));
-					
+
 					// уникальные и коронные товары
 					if(iGoodName >= GOOD_SHIPSILK && iGoodName <= GOOD_SILVER)
 					{
-						iGoodQuantity = makeint(rand(25) + rand(15) +  1.5 * (10 - MOD_SKILL_ENEMY_RATE) + 15 * (7 - iShipClass) );
+						iGoodQuantity = makeint(rand(25) + rand(15) +  1.5 * (10 - MOD_SKILL_ENEMY_RATE) + 15 * (8 - iShipClass) );
 						if(iGoodQuantity < 1) iGoodQuantity = 1;
 						isLock = 1; 
 						Fantom_SetCharacterGoods(rFantom, iGoodName, iGoodQuantity, isLock);			
 					}
-/*					
-					if(iGoodName == GOOD_GOLD || iGoodName == GOOD_SILVER)
-					{
-						iRandMultiply = 2 + rand(iShipClass); // max 8
-						iMultiply = (rand(10)+ 10) * (rand(iShipClass) + 2); 	// max 20 * 8 = 160
-						iGoodQuantity = makeint((fModifikator * 50 + iMultiply * (1 + rand(iRandMultiply * 3)))/(1.2 * MOD_SKILL_ENEMY_RATE));
-						if(iGoodQuantity < 1) iGoodQuantity = 1;
-						isLock = 1; 
-						Fantom_SetCharacterGoods(rFantom, iGoodName, iGoodQuantity, isLock);			
-					}
-*/					
 					else
 					{
 						if(rand(4) == 1) isLock = 1; 
@@ -568,47 +543,29 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 				}
 			}
 		break;
-		
+
 		case "pirate": 
 			fModifikator = 1.2;
 			iMultiply = (rand(10)+3) * (rand(iShipClass) + 1);
 			iRandMultiply = 2 + rand(iShipClass);
 			iRandGoods = rand(3) + 1;
-			
-			iStart 	= GOOD_BALLS;
-			iFinish = GOOD_POWDER - iStart - 1;
-			
+
 			if (CheckAttribute(rFantom, "RealEncounterType"))
 			{
 				switch (sti(rFantom.RealEncounterType))
 				{
-					case ENCOUNTER_TYPE_PIRATE_SMALL 	: // контрабандисты
+					case ENCOUNTER_TYPE_PIRATE:
 						iRandGoods = rand(3) + 1;
 						iStart 	= GOOD_BALLS;
 						iFinish = GOOD_COFFEE - iStart - 1;
 					break;
 					
-					case ENCOUNTER_TYPE_PIRATE_MEDIUM 	: // "прибрежные крысы"
-						iRandGoods = rand(4) + 1;
-						iStart 	= GOOD_BALLS;
-						iFinish = GOOD_BRICK  - iStart - 1;
-					break;
-					
-					case ENCOUNTER_TYPE_PIRATE_LARGE 	: // рейдер
-						iRandGoods = rand(5) + 1;
-						iStart 	= GOOD_BALLS;
-						iFinish = GOOD_BRICK  - iStart - 1;
-					break;
-					
-					case ENCOUNTER_TYPE_PIRATE_SCOUNDREL : // "отморозок"
-						iRandGoods = rand(6) + 1;
-						iStart = GOOD_FOOD;
-						// belamour legendary edition страт. товары перекочевали в штурм колоний с моря
-						iFinish = GOOD_SHIPSILK - iStart - 1;
+					case ENCOUNTER_TYPE_SMUGGLERS:
+						// TO_DO
 					break;
 				}
 			}
-			
+
 			for (i = 0; i < iRandGoods; i++)
 			{
 				iGoodName = iStart + rand(iFinish);
@@ -619,7 +576,7 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 				isLock = isLock || bOk; 
 				Fantom_SetCharacterGoods(rFantom, iGoodName, iGoodQuantity, isLock);
 			}			
-			
+
 			iMultiply = GetCannonGoodsIdxByType(sti(rFantom.Ship.Cannons.Type));
 			if (iMultiply != -1)
 			{
@@ -630,25 +587,26 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 				}
 			}			
 		break;
-		
-	}	
+	}
+
 	RecalculateCargoLoad(rFantom);
 }
 
 // доработал метод, теперь возвращает сколько взял
 int Fantom_SetCharacterGoods(ref rFantom, int iGoods, int iQuantity, bool isLock)
 {
-	if (iQuantity == 0) { return 0; }
-
+	if(iQuantity == 0) return 0;
 	if(iGoods > GOODS_QUANTITY - 1 || iGoods < 0) //fix
 	{ 
-		trace("rChar " + rFantom.id +"     goods :" + iGoods + " out of order" ); return 0; 
+		trace("rChar " + rFantom.id +"     goods :" + iGoods + " out of order" );
+        return 0; 
 	}
-	string sGood = Goods[iGoods].name;
-	int iFreeQuantity = GetGoodQuantityByWeight( iGoods, GetCargoFreeSpace(rFantom) );
-	if (iFreeQuantity < 0) { iFreeQuantity = 0; }
 
-	if (iQuantity > iFreeQuantity) { iQuantity = iFreeQuantity; }
+	string sGood = Goods[iGoods].name;
+	int iFreeQuantity = GetGoodQuantityByWeight(iGoods, GetCargoFreeSpace(rFantom));
+	if (iFreeQuantity < 0) iFreeQuantity = 0;
+
+	if (iQuantity > iFreeQuantity) iQuantity = iFreeQuantity;
 	
 	if (CheckAttribute(rFantom,"Ship.Cargo.Goods." + sGood))
 	{
@@ -659,7 +617,7 @@ int Fantom_SetCharacterGoods(ref rFantom, int iGoods, int iQuantity, bool isLock
 		rFantom.Ship.Cargo.Goods.(sGood) = iQuantity;
 	}
 	
-	if(isLock) {rFantom.Ship.Cargo.Goods.(sGood).Lock = true;}
+	if(isLock) rFantom.Ship.Cargo.Goods.(sGood).Lock = true;
 	RecalculateCargoLoad(rFantom);
 	return iQuantity;
 }
@@ -959,7 +917,7 @@ void GenerateShipUpgradeParameters(ref rFantom)
 	
 	switch (iNation)
 	{
-		case ENGLAND  		: // SW: SpeedRate&fWindAgainstSpeed
+		case ENGLAND: // SW: SpeedRate&fWindAgainstSpeed
 			if(rand(1) == 0) 
 			{
 				UpgradeShipParameter(rFantom, "SpeedRate");
@@ -970,7 +928,7 @@ void GenerateShipUpgradeParameters(ref rFantom)
 			}
 		break;
 		
-		case FRANCE	  		: // TM: TurnRate&MinCrew
+		case FRANCE: // TM: TurnRate&MinCrew
 			if(rand(1) == 0) 
 			{
 				UpgradeShipParameter(rFantom, "TurnRate");
@@ -981,7 +939,7 @@ void GenerateShipUpgradeParameters(ref rFantom)
 			}
 		break;
 		
-		case SPAIN	  		: // CC: Cannons&Capacity
+		case SPAIN: // CC: Cannons&Capacity
 			if(rand(1) == 0) 
 			{
 				if(GetPossibilityCannonsUpgrade(rFantom, true) > 0)
@@ -998,7 +956,7 @@ void GenerateShipUpgradeParameters(ref rFantom)
 			}
 		break;
 		
-		case HOLLAND  		: // HP&MMaxCrew
+		case HOLLAND: // HP&MMaxCrew
 			if(rand(1) == 0) 
 			{
 				UpgradeShipParameter(rFantom, "HP");
@@ -1009,7 +967,7 @@ void GenerateShipUpgradeParameters(ref rFantom)
 			}
 		break;
 		
-		case PIRATE			:
+		case PIRATE:
 			switch(rand(3))
 			{
 				case 0: 
@@ -1070,32 +1028,32 @@ void DegradeShipParameter(ref _chr, string _param)
 	int		iCannonDiff;
 	int		i;
 	string  attr; 
-	
+
 	shTo = &RealShips[sti(_chr.Ship.Type)];
 	makearef(refShip, _chr.Ship);
-	
+
 	switch(_param)
 	{
 		case "SpeedRate":
 			shTo.SpeedRate = (stf(shTo.SpeedRate) - stf(shTo.SpeedRate)* 0.15);
 			shTo.DontTuning.SpeedRate = true;		
 		break;
-		
+
 		case "TurnRate":
 			shTo.TurnRate = (stf(shTo.TurnRate) - stf(shTo.TurnRate) * 0.15);
 			shTo.DontTuning.TurnRate = true;
 		break;
-		
+
 		case "HP":
 			shTo.HP = sti(shTo.HP) - makeint(sti(shTo.HP) * 0.15);
 			shTo.DontTuning.HP = true;
 		break;
-		
+
 		case "WindAgainstSpeed":
 			shTo.WindAgainstSpeed   = FloatToString(stf(shTo.WindAgainstSpeed) - 0.15 * stf(shTo.WindAgainstSpeed), 2);
 			shTo.DontTuning.WindAgainst = true;
 		break;
-		
+
 		case "Capacity":
 			shTo.Capacity = sti(shTo.Capacity) - makeint(sti(shTo.Capacity) * 0.15);
 			shTo.DontTuning.Capacity = true;
@@ -1105,13 +1063,13 @@ void DegradeShipParameter(ref _chr, string _param)
 			shTo.MaxCrew = sti(shTo.MaxCrew) - makeint(sti(shTo.MaxCrew) * 0.15);
 			shTo.DontTuning.MaxCrew = true;	
 		break;
-		
+
 		case "MinCrew":
 			shTo.MinCrew = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew) * 0.15);
 			if(sti(shTo.MinCrew) < 1) shTo.MinCrew = 1;
 			shTo.DontTuning.MinCrew = true;	
 		break;
-		
+
 		case "Cannons":		
 			if(GetPossibilityCannonsUpgrade(_chr, false) > 0 && CheckAttribute(refShip,"CannonDiff"))
 			{
@@ -1136,7 +1094,7 @@ void DegradeShipParameter(ref _chr, string _param)
 				}	
 				shTo.Cannons = sti(shTo.CannonsQuantityMax) - iCannonDiff * 2;
 				shTo.CannonsQuantity = sti(shTo.Cannons);
-		
+
 				refShip.Cannons = sti(shTo.Cannons);
 				refShip.CannonDiff = iCannonDiff;
 
@@ -1315,76 +1273,85 @@ void SetShipToFantom(ref _chr, string _type, bool _setgoods)
 	int ShipType;
 	int Nation = sti(_chr.nation);
 	int Rank = sti(pchar.rank);
+	int iClassFlag = FLAG_SHIP_CLASS_6;
+	int iTypesFlag = FLAG_SHIP_TYPE_MERCHANT;
+	int iNationsFlag = GetNationFlag(Nation);
 	switch (_type)
 	{
-		case "trade":		
-			if (Rank < 11)
+		case "trade":	
+			iTypesFlag = FLAG_SHIP_TYPE_MERCHANT;
+			if (Rank < 6)
 			{
-				ShipType = RandFromFiveDight(SHIP_BARQUE, SHIP_SCHOONER, SHIP_BARKENTINE, SHIP_SHNYAVA, SHIP_FLEUT);
-			}
-			if (Rank >= 11 && Rank <= 20)
+				iClassFlag = FLAG_SHIP_CLASS_6;
+			}			
+			if (Rank >= 6 && Rank < 12)
 			{
-				ShipType = RandFromThreeDight(SHIP_CARAVEL, SHIP_PINNACE, SHIP_CARACCA);
+				iClassFlag = FLAG_SHIP_CLASS_5;
 			}
-            if (Rank > 20 && Rank <= 30)
+			if (Rank >= 12 && Rank <= 20)
+			{
+				iClassFlag = FLAG_SHIP_CLASS_4;
+			}
+            if (Rank > 21 && Rank <= 29)
             {
-                ShipType = RandFromFiveDight(SHIP_CARACCA, SHIP_PINNACE, SHIP_FLEUT);
+                iClassFlag = FLAG_SHIP_CLASS_3 + FLAG_SHIP_CLASS_4;
             }
 			if (Rank > 30)
 			{
-				ShipType = RandFromThreeDight(SHIP_CARACCA, SHIP_NAVIO, SHIP_EASTINDIAMAN);
+				iClassFlag = FLAG_SHIP_CLASS_2 + FLAG_SHIP_CLASS_3;
 			}
 		break;
 		case "pirate":
-			if (Rank < 4)
+			iTypesFlag = FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT;
+			if (Rank < 6)
 			{
-				ShipType = SHIP_LUGGER;
+				iClassFlag = FLAG_SHIP_CLASS_6;
 			}			
-			if (Rank >= 4 && Rank < 11)
+			if (Rank >= 6 && Rank < 12)
 			{
-				ShipType = RandFromThreeDight(SHIP_SLOOP, SHIP_BRIGANTINE, SHIP_BRIG);
+				iClassFlag = FLAG_SHIP_CLASS_5;
 			}
-			if (Rank >= 11 && Rank <= 20)
+			if (Rank >= 12 && Rank <= 20)
 			{
-				ShipType = RandFromThreeDight(SHIP_SCHOONER_W, SHIP_GALEON_L, SHIP_CORVETTE);
+				iClassFlag = FLAG_SHIP_CLASS_4;
 			}
-            if (Rank > 20 && Rank <= 30)
+            if (Rank > 21 && Rank <= 29)
             {
-                ShipType = RandFromFiveDight(SHIP_SCHOONER_W, SHIP_CORVETTE, SHIP_POLACRE);
+                iClassFlag = FLAG_SHIP_CLASS_3 + FLAG_SHIP_CLASS_4;
             }
 			if (Rank > 30)
 			{
-				ShipType = RandFromThreeDight(SHIP_CORVETTE, SHIP_GALEON_H, SHIP_LINESHIP);
+				iClassFlag = FLAG_SHIP_CLASS_2 + FLAG_SHIP_CLASS_3;
 			}
 		break;
 
 		case "war":
-			if (Rank < 11)
+			iTypesFlag = FLAG_SHIP_TYPE_WAR;
+			if (Rank < 6)
 			{
-				ShipType = RandFromThreeDight(SHIP_CAREERLUGGER, SHIP_LUGGER, SHIP_SLOOP);
-			}
-			if (Rank >= 11 && Rank <= 30)
+				iClassFlag = FLAG_SHIP_CLASS_6;
+			}			
+			if (Rank >= 6 && Rank < 12)
 			{
-				switch (Nation)
-				{
-					case ENGLAND  : ShipType = RandFromThreeDight(SHIP_BRIG, SHIP_GALEON_L, SHIP_CORVETTE); break; 
-					case FRANCE	  : ShipType = RandFromThreeDight(SHIP_SCHOONER_W, SHIP_GALEON_L, SHIP_CORVETTE); break; 					
-					case SPAIN	  : ShipType = RandFromThreeDight(SHIP_BRIGANTINE, SHIP_GALEON_L, SHIP_XebekVML); break; 					
-					case HOLLAND  : ShipType = RandFromFiveDight(SHIP_SCHOONER_W, SHIP_GALEON_L, SHIP_CORVETTE, SHIP_POLACRE, SHIP_SCHOONER_W); break; 
-				}						
+				iClassFlag = FLAG_SHIP_CLASS_5;
 			}
+			if (Rank >= 12 && Rank <= 20)
+			{
+				iClassFlag = FLAG_SHIP_CLASS_4;
+			}
+            if (Rank > 21 && Rank <= 29)
+            {
+                iClassFlag = FLAG_SHIP_CLASS_3 + FLAG_SHIP_CLASS_4;
+            }
 			if (Rank > 30)
 			{
-				switch (Nation)
-				{
-					case ENGLAND  : ShipType = RandFromThreeDight(SHIP_FRIGATE, SHIP_FRIGATE_H, SHIP_LINESHIP); break; 
-					case FRANCE	  : ShipType = RandFromThreeDight(SHIP_FRIGATE, SHIP_FRIGATE_H, SHIP_LINESHIP); break; 					
-					case SPAIN	  : ShipType = RandFromFiveDight(SHIP_POLACRE, SHIP_GALEON_H, SHIP_FRIGATE_H, SHIP_GALEON_H, SHIP_LINESHIP); break; 					
-					case HOLLAND  : ShipType = RandFromThreeDight(SHIP_FRIGATE, SHIP_FRIGATE_H, SHIP_LINESHIP); break; 
-				}						
+				iClassFlag = FLAG_SHIP_CLASS_2 + FLAG_SHIP_CLASS_3;
 			}
 		break;
 	}
+	
+	ShipType = GetRandomShipType(iClassFlag, iTypesFlag, iNationsFlag);
+	
 	_chr.Ship.Type = GenerateShipExt(ShipType, true, _chr);
 	SetRandomNameToShip(_chr);
     SetBaseShipData(_chr);

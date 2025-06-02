@@ -276,7 +276,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_5":
-			dialog.text = "Caramba! Moje najgorsze podejrzenia się potwierdziły! Ten Rzeźnik i jego 'Neptun' trzymali cały archipelag w strachu. Wtedy nie było żadnych Braci, każdy był zdany na siebie. Ten człowiek zrobił wiele złych rzeczy, osoba droga mi zginęła z jego powodu.\nNigdy nie miałem okazji go spotkać. 'Neptun' został zatopiony przez angielski fregat, a Rzeźnik został stracony w St. John's. Dobrej podróży! Chociaż było wielu ludzi, którzy podziwiali jego szczęście i bezmyślną odwagę.\nSam Jackman był jego prawą ręką i pierwszym oficerem na 'Neptunie'. Zaskoczony? Byli przestępcy stali się bohaterami Narodu, wszystko dzięki Cromwellowi! Gdzie podziała się dobra stara Anglia?\nMusimy znaleźć Henryka Wisielca, zanim zrobią to ludzie Jackmana. Może on trzyma klucz do tej zagadki, jeśli jeszcze żyje.";
+			dialog.text = "Caramba! Moje najgorsze podejrzenia się potwierdziły! Ten Rzeźnik i jego 'Neptune' trzymali cały archipelag w strachu. Wtedy nie było żadnych Braci, każdy był zdany na siebie. Ten człowiek zrobił wiele złych rzeczy, osoba droga mi zginęła z jego powodu.\nNigdy nie miałem okazji go spotkać. 'Neptune' został zatopiony przez angielski fregat, a Rzeźnik został stracony w St. John's. Dobrej podróży! Chociaż było wielu ludzi, którzy podziwiali jego szczęście i bezmyślną odwagę.\nSam Jackman był jego prawą ręką i pierwszym oficerem na 'Neptunie'. Zaskoczony? Byli przestępcy stali się bohaterami Narodu, wszystko dzięki Cromwellowi! Gdzie podziała się dobra stara Anglia?\nMusimy znaleźć Henryka Wisielca, zanim zrobią to ludzie Jackmana. Może on trzyma klucz do tej zagadki, jeśli jeszcze żyje.";
 			link.l1 = "Założę się, że łatwiej byłoby znaleźć igłę w stogu siana. Masz chociaż jakieś tropy?";
 			link.l1.go = "saga_6";
 		break;
@@ -1279,7 +1279,7 @@ void ProcessDialogEvent()
 			link.l1.go = "saga_oust";
 			DeleteAttribute(npchar, "quest.bakaut_sum");
 			npchar.quest.trade_bakaut = "true"; // генератор купли-продажи бакаута
-			AddQuestRecord("Unique_Goods", "1");
+			AddQuestRecordInfo("Unique_Goods", "1");
 		break;
 		
 		case "saga_59_1": // укрысил у Яна - нет генератора на бакаут, потерял больше
@@ -1725,7 +1725,7 @@ void ProcessDialogEvent()
 			link.l1 = "Mam nadzieję, Jan, mam nadzieję.";
 			link.l1.go = "UpgradeBakaut_Agreed_1";
 			RemoveDublonsFromPCharTotal(3000);
-			AddQuestRecord("Unique_Goods", "1_1");
+			AddQuestRecordInfo("Unique_Goods", "1_1");
 			pchar.questTemp.UpgradeBakaut = true;
 			pchar.questTemp.SvensonBakautBlock = true;
 			DeleteAttribute(pchar, "questTemp.SvensonBakautPotom");

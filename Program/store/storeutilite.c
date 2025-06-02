@@ -200,6 +200,7 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 				if(CheckOfficersPerk(chref,"AdvancedCommerce"))	{ skillModify += 0.10; }
 			}		
 		}
+		skillModify += GetShipTraitTransaction(chref, _refStore);
 						
 		if(CheckAttribute(mc,"Goods." + (tmpstr) + ".costCoeff"))
 		{
@@ -325,6 +326,7 @@ float GetStoreGoodsRndPriceModify(ref _refStore, int _Goods, int _PriceType, ref
 				if(CheckOfficersPerk(chref,"AdvancedCommerce"))	{ skillModify += 0.10; }
 			}		
 		}
+		skillModify += GetShipTraitTransaction(chref, _refStore);
 		if(skillModify > 0.99) skillModify = 0.99;
 	}
 	
@@ -793,3 +795,20 @@ int GetStorage(string sColony)
 	return -1;
 }
 // <-- ugeen
+
+// belamour размер скидки/надбавки для корабля со Знаком качества
+float GetShipTraitTransaction(ref chr, ref rStore)
+{
+	if(!HasShipTrait(chr, "trait03")) return 0.0;
+	if(rStore.Colony == "none") return 0.0;
+	int iColony = FindColony(rStore.Colony);
+	ref rColony = GetColonyByIndex(iColony);
+	int nation = sti(rColony.nation);
+	
+	if(nation == PIRATE) return 0.0;
+	
+	int rep = ChangeCharacterNationReputation(chr, nation, 0);
+	if(rep < 20) return 0.0;
+	
+	return Bring2Range(0.0, 0.15, 20.0, 100.0, makefloat(rep));
+}

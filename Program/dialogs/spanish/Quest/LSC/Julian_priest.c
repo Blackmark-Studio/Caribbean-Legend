@@ -41,7 +41,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Ah, " + GetFullName(pchar) + "¡ " + TimeGreeting() + "¡Quieres algo?";
+			dialog.text = "¡Ah, " + GetFullName(pchar) + "! " + TimeGreeting() + ". ¿Quieres algo?";
 			link.l1 = "Quiero hacerte algunas preguntas sobre la isla.";
 			link.l1.go = "int_quests"; // информационный блок
 			link.l2 = "¿Puedo comprar algunas pociones de ti?";
@@ -136,7 +136,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			link.l1 = " No tengo suficientes monedas ahora... Volveré más tarde.";
+			link.l1 = "No tengo suficientes monedas ahora... Volveré más tarde.";
 			link.l1.go = "exit";
 		}
 		break;
@@ -169,7 +169,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "amulet":
-		bool bOK = (!CheckAttribute(npchar, "amulet_date")) || (GetNpcQuestPastDayParam(npchar, "amulet_date") >= 3) if (bOk && GetSummonSkillFromName(pchar, SKILL_FORTUNE) > (10 + drand(110)))
+		bool bOK = (!CheckAttribute(npchar, "amulet_date")) || (GetNpcQuestPastDayParam(npchar, "amulet_date") >= 3) if (bOk && GetSummonSkillFromName(pchar, SKILL_FORTUNE) > (10 + hrand(110)))
 		{
 			npchar.quest.amulet = SelectLSCChurchAmulet();
 			dialog.text = "Sí, puedo darte algunos amuletos sagrados que protegen a la gente de heridas y enfermedades. El precio es el mismo para cualquier amuleto: diez doblones de oro. Puedo ofrecerte " + XI_ConvertString(npchar.quest.amulet) + " hoy.";
@@ -324,7 +324,7 @@ void ProcessDialogEvent()
 string SelectLSCChurchAmulet();
 {
 	string sAmulet;
-	switch (drand(3))
+	switch (hrand(3))
 	{
 	case 0:
 		sAmulet = "amulet_2";

@@ -3,6 +3,7 @@ native string LanguageGetLanguage();
 native int LanguageOpenFile(string sFileName);
 native void LanguageCloseFile(int idLngFile);
 native string LanguageConvertString(int userLngFileID, string inStr);
+native int LanguageGetFileStringsQuantity(int userLngFileID);
 native void LanguageSetLanguage(string sLanguageName);
 native string XI_ConvertString(string inStr);
 native int GlobalLngFileID();
@@ -290,6 +291,8 @@ string FloatToString(float fl,int nDigAfterPoint)
 }
 int GetStringWidth(string str, string fontID, float fScale)
 {
+	if(!IsEntity(&GameInterface))
+		CreateEntity(&GameInterface,"xinterface");
 	return SendMessage(&GameInterface, "lssf", MSG_INTERFACE_GET_STRWIDTH, str, fontID, fScale);
 }
 
@@ -486,7 +489,7 @@ void FillFaceList(string strAccess, ref chref, int fillCode)
 			{
 				if (!CheckAttribute(&characters[cn], "prisoned") || sti(characters[cn].prisoned) != true)
 				{
-					if(!CheckAttribute(&characters[cn], "isfree"))
+					if(!CheckAttribute(&characters[cn], "isbusy"))
 					{
 						if(!CheckAttribute(&characters[cn], "isquest")) // to_do
 						{
@@ -536,7 +539,7 @@ void FillShipList(string strAccess, ref chref)
 	int n;
 	string sShip;
 
-	for(n= 0; n< SHIP_TYPES_QUANTITY; n++)
+	for(n = 0; n < GetArraySize(&ShipsTypes) - 1; n++)
 	{
 		if(CheckAttribute(ShipsTypes[n], "name"))
 		sShip = ShipsTypes[n].name;
@@ -1016,4 +1019,102 @@ string GetItemName(string sItemID)
 #event_handler("Tips_GetTipsDirectory","Tips_GetTipsDirectory");
 string Tips_GetTipsDirectory() {
   return "interfaces\tips\" + LanguageGetLanguage();
+}
+
+#event_handler("Tips_GetText", "Tips_GetText");
+aref Tips_GetText()
+{
+	DeleteAttribute(&InterfaceStates, "Tip");
+	aref arTip;
+	makearef(arTip, InterfaceStates.Tip);
+	arTip.font = "interface_normal";
+	arTip.color = argb(255, 255, 255, 255);
+	arTip.scale = 3.0;
+	arTip.pos_x = sti(showWindow.right) / 2;
+	arTip.pos_y = sti(showWindow.bottom) / 5 * 4;
+	arTip.linespace = 50;
+	
+	string sTipsFile = "GameTips.txt";
+	int nTips = GetFileStringsQuantity(sTipsFile);
+	int iRandomTip = rand(nTips-1) + 1;
+	string sText = GetConvertStr("Tip" + iRandomTip, sTipsFile);
+	FillStringsAttr(arTip, "text", "strings", sText, "interface_normal", 3.0, 1000);
+	return arTip;
+}
+
+void FillStringsAttr(aref arMain, string textAttr, string nAttr, string sText, string sFont, float fScale, int maxWidth)
+{
+	int fullWidth;
+	string sLeft, sRight;
+	fullWidth = GetStringWidth(sText, sFont, fScale);
+	int iSpace;
+	string sAttr;
+	int iString;
+	iString = 1;
+	sLeft = sText;
+	sRight = "";
+	while(fullWidth > maxWidth)
+	{
+		iSpace = GetLastSeparatorPos(sLeft, " ", sFont, fScale, maxWidth);
+		if(iSpace != -1)	// искомый пробел существует
+		{
+			sAttr = textAttr + iString;
+			sRight = strright(sLeft, strlen(sLeft) - iSpace - 1);	// правая часть
+			sLeft = strleft(sLeft, iSpace);	// левая часть
+			arMain.(sAttr) = sLeft;	// записываем текст в очередной атрибут
+			sLeft = sRight;
+			iString++;
+		}
+		else	// искомого пробела не существует
+			break;
+		fullWidth = GetStringWidth(sLeft, sFont, fScale);
+	}
+	arMain.(nAttr) = iString;
+	if(iString > 1)
+	{
+		sAttr = textAttr + iString;
+		arMain.(sAttr) = sRight;
+	}
+}
+
+int GetLastSeparatorPos(string sText, string sSepar, string sFont, float fScale, int maxWidth)
+{
+	string sTemp;
+	int iSpace, iPrevSpace, curWidth;
+	iPrevSpace = -1;
+	while(true)
+	{
+		iSpace = findSubStr(sText, sSepar, iPrevSpace + 1);
+		if(iSpace != -1)	// если есть пробел
+		{
+			sTemp = strcut(sText, 0, iSpace);
+			curWidth = GetStringWidth(sTemp, sFont, fScale);
+			if(curWidth > maxWidth)	// если текущий пробел слишком далеко
+			{
+				if(iPrevSpace > 0)	// если есть предыдущий пробел
+				{
+					iSpace = iPrevSpace;	// предыдущий пробел и есть искомый
+					break;
+				}
+			}
+		}
+		else	// если пробела нет
+		{
+			if(iPrevSpace != -1)
+				iSpace = iPrevSpace;
+			break;
+		}
+		iPrevSpace = iSpace;
+	}
+	return iSpace;
+}
+
+void GetNodePosition(string sNode, ref x1, ref y1, ref x2, ref y2)
+{
+	SendMessage(&GameInterface, "lslleeee", MSG_INTERFACE_MSG_TO_NODE, sNode, -1, 5, &x1, &y1, &x2, &y2);
+}
+
+void SetNodePosition(string sNode, int x1, int y1, int x2, int y2)
+{
+	SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, sNode, -1, 4, x1, y1, x2, y2);
 }

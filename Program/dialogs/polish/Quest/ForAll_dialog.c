@@ -28,8 +28,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = NPCharSexPhrase(NPChar,"Uważaj, "+GetSexPhrase("kamrat","dziewczyna")+", biegając z bronią. Mogę się zdenerwować...","Nie lubię, gdy jest "+GetSexPhrase("mężczyźni","ludzie")+" idąc przede mną z gotową bronią. To mnie przeraża...");
-				link.l1 = RandPhraseSimple("Rozumiem.","Mam to.");
+				dialog.text = NPCharSexPhrase(NPChar,"Uważaj, "+GetSexPhrase("kamracie","dziewczyno")+", biegając z bronią. Mogę się zdenerwować...","Nie lubię, gdy "+GetSexPhrase("facet","kobieta")+" idzie przede mną z gotową bronią. To mnie przeraża...");
+				link.l1 = RandPhraseSimple("Rozumiem.","Łapie.");
 			}
 			
 			link.l1.go = "exit";
@@ -49,12 +49,12 @@ void ProcessDialogEvent()
 		break;
 		case "WaitressBerglar_1":
 			dialog.text = "Słyszałeś mnie. Szybko, mniej gadania. Nie lubię rozmawiać...";
-			link.l1 = "Do diabła! A czy "+pchar.questTemp.different.FackWaitress.Name+" pracować z tobą?";
+			link.l1 = "Do diabła! A czy "+pchar.questTemp.different.FackWaitress.Name+" pracuje z tobą?";
 			link.l1.go = "WaitressBerglar_2";
 		break;
 		case "WaitressBerglar_2":
-			dialog.text = "Ona to robi, ona to robi... Daj mi swoje pieniądze, albo cię wypatroszę!";
-			link.l1 = "Nie! Wypatroszę cię!";
+			dialog.text = "Jasne, że pracuje... a teraz daj mi swoje pieniądze, albo cię wypatroszę!";
+			link.l1 = "Nie! To ja ciebie wypatrosze!";
 			link.l1.go = "WaitressBerglar_fight";
 			link.l2 = "Bierz moje monety, łajdaku! Ale nie uciekniesz od tego...";
 			link.l2.go = "WaitressBerglar_take";
@@ -66,8 +66,8 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("WaitressFack_outRoom");
 		break;
 		case "WaitressBerglar_fight":
-			dialog.text = "Jak mówisz...";
-			link.l1 = "Tak właśnie robię...";
+			dialog.text = "Zła decyzja.";
+			link.l1 = "Dla ciebie jak najbardziej.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WaitressFack_fight");
 		break;
@@ -97,7 +97,7 @@ void ProcessDialogEvent()
 			link.l1.go = "PortmansCap_2";
 		break;
 		case "PortmansCap_2":
-			dialog.text = "Do diabła! Teraz widzę, gdzie to zgubiłem. Ta strata prawie sprowokowała bunt na moim statku...";
+			dialog.text = "Do diabła! Teraz rozumiem, gdzie to zgubiłem. Ta strata prawie sprowokowała bunt na moim statku...";
 			link.l1 = "Wszystko dobre, co się dobrze kończy. Weź swój dziennik pokładowy i porozmawiajmy o moich pieniądzach.";
 			link.l1.go = "PortmansCap_3";
 		break;
@@ -120,13 +120,13 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = "Już zacząłem nowy dziennik pokładowy. I przeniosłem wszystkie notatki ze starego. Nie potrzebuję go już, więc nie ma dla ciebie pieniędzy.";
-					link.l1 = "Wspaniale. Więc całe to pościg było na nic.";
+					link.l1 = "Wspaniale. Więc cały ten pościg był na nic.";
 					link.l1.go = "PortmansCap_5";
 				}
 			}
 		break;
 		case "PortmansCap_4":
-			dialog.text = "Dziękuję. Żegnaj, "+GetSexPhrase("kumplu","dziewczyna")+".";
+			dialog.text = "Dziękuję. Żegnaj, "+GetSexPhrase("kumplu","dziewczyno")+".";
 			link.l1 = " Nawzajem...";
 			link.l1.go = "exit";
 			sTemp = "Timer_" + npchar.id;
@@ -141,7 +141,7 @@ void ProcessDialogEvent()
 			AddQuestUserData(sTitle, "sCity2", XI_ConvertString("Colony" + sld.city + "Gen"));
 			CloseQuestHeader(sTitle);
 			sGem = pchar.questTemp.PortmansJornal.gem;
-			TakeNItems(pchar, sGem, 12+drand(10));
+			TakeNItems(pchar, sGem, 12+hrand(10));
 			DeleteAttribute(pchar, "questTemp.PortmansJornal.gem");
 			DeleteAttribute(sld, "quest.PortmansJornal");
 			sld.quest = ""; //освобождаем личный флаг квеста для портмана
@@ -188,7 +188,7 @@ void ProcessDialogEvent()
 		break;
 		case "PortmansCap_inDeck_1":
 			dialog.text = "Dlaczego?";
-			link.l1 = "Zapomniałeś swojego dziennika w domu kapitana portu w "+XI_ConvertString("Colony"+npchar.quest.firstCity+"Gen")+".";
+			link.l1 = "Zapomniałeś swojego dziennika w portowej administracji "+XI_ConvertString("Colony"+npchar.quest.firstCity+"Gen")+".";
 			link.l1.go = "PortmansCap_inDeck_2";
 		break;
 		case "PortmansCap_inDeck_2":
@@ -221,8 +221,8 @@ void ProcessDialogEvent()
 			link.l1.go = "PortmansCap_inDeck_4";
 		break;
 		case "PortmansCap_inDeck_4":
-			dialog.text = "Dzięki jeszcze raz. Żegnaj, kumpel.";
-			link.l1 = "Tak trzymaj.";
+			dialog.text = "Dzięki jeszcze raz. Żegnaj, kolego.";
+			link.l1 = "Trzymaj się.";
 			link.l1.go = "exit";
 			npchar.LifeDay = 30; // через десять дней снимаем кэпа
 			SaveCurrentNpcQuestDateParam(npchar, "LifeTimeCreate");	
@@ -234,7 +234,7 @@ void ProcessDialogEvent()
 			AddQuestUserData(sTitle, "sCity", XI_ConvertString("Colony" + sld.city + "Gen"));
 			CloseQuestHeader(sTitle);
 			sGem = pchar.questTemp.PortmansJornal.gem;
-			TakeNItems(pchar, sGem, 12+drand(10));
+			TakeNItems(pchar, sGem, 12+hrand(10));
 			DeleteAttribute(pchar, "questTemp.PortmansJornal.gem");
 			DeleteAttribute(sld, "quest.PortmansJornal");
 			sld.quest = ""; //освобождаем личный флаг квеста для портмана
@@ -279,7 +279,7 @@ void ProcessDialogEvent()
 		break;
 		case "SeekCap_inDeck_1":
 			dialog.text = "Nie mam nic do sprzedania ani żadnych nowin. A tak przy okazji, twoja obecność tutaj jest niepożądana. Czy jestem jasny?";
-			link.l1 = "Jesteś... Zatem żegnaj, druha.";
+			link.l1 = "Jesteś... a z resztą... żegnaj.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "SeekCap_inDeck_over";
 			sld = characterFromId(npchar.quest.cribCity + "_PortMan");
@@ -296,13 +296,13 @@ void ProcessDialogEvent()
 		break;
 		//абордаж
 		case "SeekCap":
-			dialog.text = " Dlaczego mnie zaatakowałeś?!";
-			link.l1 = "Muszę zwrócić statek jego właścicielowi..";
+			dialog.text = " Dlaczego mnie zaatakowałeś, ty korsarzu?!";
+			link.l1 = "Muszę zwrócić statek jego właścicielowi.";
 			link.l1.go = "SeekCap_1";
 		break;
 		case "SeekCap_1":
-			dialog.text = "Do jakiego właściciela? Ja jestem właścicielem!";
-			link.l1 = "Nie, nie jesteś. Nie wiem, kto jest właścicielem tego statku. Ale został skradziony i muszę go zwrócić.";
+			dialog.text = "Jakiemu właścicielowi? Ja jestem właścicielem!";
+			link.l1 = "Nie, nie jesteś. Nie wiem, kto jest prawdziwym właścicielem tego statku. Ale został skradziony i muszę go zwrócić.";
 			link.l1.go = "SeekCap_2";
 		break;
 		case "SeekCap_2":
@@ -345,7 +345,7 @@ void ProcessDialogEvent()
 //--------------------------------------------поисковые квесты дворян---------------------------------------------
 		
 		case "SCQ_Nobleman":
-			dialog.text = "Pozdrowienia, "+GetAddress_Form(NPChar)+"Widzę, że jesteś kapitanem własnego statku? Nazywam się "+GetFullName(npchar)+" i chcę ci zaproponować interes.";
+			dialog.text = "Pozdrawiam cie, "+GetAddress_Form(NPChar)+"Widzę, że jesteś kapitanem własnego statku? Nazywam się "+GetFullName(npchar)+" i chcę ci zaproponować interes.";
 			link.l1 = RandPhraseSimple("Przepraszam bardzo, ale muszę iść.","Tak mi przykro, ale nie mam czasu, by z tobą rozmawiać.");
 			link.l1.go = "SCQ_exit";
 			link.l2 = "Zamieniam się w słuch.";
@@ -388,7 +388,7 @@ void ProcessDialogEvent()
 		
 		case "SCQ_NM_battle_1":
 			npchar.quest.SeekCap = "NM_battle"; //личный флаг на квест
-			SetSeekCapCitizenParam(npchar, rand(HOLLAND)); //любая нация кроме пиратов
+			SetSeekCapCitizenParam(npchar, rand(NON_PIRATES)); //любая нация кроме пиратов
 			dialog.text = ""+npchar.quest.SeekCap.capName+" z "+GetStrSmallRegister(XI_ConvertString(npchar.quest.SeekCap.shipTapeName+"Voc"))+" nazwany "+npchar.quest.SeekCap.shipName+"  Jest częstym gościem w porcie  "+XI_ConvertString("Colony"+npchar.quest.Qcity)+"Zapłacę ci "+FindRussianMoneyString(sti(npchar.quest.money))+" w złotych dublonach.";
 			link.l1 = "To wszystko, co muszę wiedzieć. Będę czujny na morzu. A gdy znajdę twojego przyjaciela, sprawię, że będzie... 'zniżając głos' ...nie całkiem żywy.";
 			link.l1.go = "SCQ_NM_battle_2";
@@ -438,7 +438,7 @@ void ProcessDialogEvent()
 		
 		case "SCQ_NM_prisoner_1":
 			npchar.quest.SeekCap = "NM_prisoner"; //личный флаг на квест
-			SetSeekCapCitizenParam(npchar, rand(HOLLAND)); //любая нация кроме пиратов
+			SetSeekCapCitizenParam(npchar, rand(NON_PIRATES)); //любая нация кроме пиратов
 			makearef(forName, npchar.quest.SeekCap);
 			forName.nation = sti(npchar.nation);
 			forName.sex = "man";
@@ -1155,7 +1155,7 @@ void ProcessDialogEvent()
 			sTemp = "SCQ_" + npchar.index;
 			pchar.quest.(sTemp).over = "yes"; //снимаем прерывание смерть горожанина-квестодателя
 			AddMoneyToCharacter(pchar, sti(npchar.quest.money));
-			TakeNItems(pchar, npchar.quest.gem, 10+drand(8));
+			TakeNItems(pchar, npchar.quest.gem, 10+hrand(8));
 			sTitle = npchar.city + "SCQ_manSlave";
 			CloseQuestHeader(sTitle);
 		break;
@@ -1169,7 +1169,7 @@ void ProcessDialogEvent()
 			sTemp = "SCQ_" + npchar.index;
 			pchar.quest.(sTemp).over = "yes"; //снимаем прерывание смерть горожанина-квестодателя
 			AddMoneyToCharacter(pchar, sti(npchar.quest.money));
-			TakeNItems(pchar, npchar.quest.gem, 12+drand(8));
+			TakeNItems(pchar, npchar.quest.gem, 12+hrand(8));
 			sTitle = npchar.city + "SCQ_manRapeWife";
 			CloseQuestHeader(sTitle);
 		break;
@@ -1180,7 +1180,7 @@ void ProcessDialogEvent()
 			sTemp = "SCQ_" + npchar.index;
 			pchar.quest.(sTemp).over = "yes"; //снимаем прерывание смерть горожанина-квестодателя
 			AddMoneyToCharacter(pchar, sti(npchar.quest.money));
-			TakeNItems(pchar, npchar.quest.gem, 8+drand(8));
+			TakeNItems(pchar, npchar.quest.gem, 8+hrand(8));
 			sTitle = npchar.city + "SCQ_manFriend";
 			CloseQuestHeader(sTitle);
 		break;
@@ -1446,7 +1446,7 @@ void ProcessDialogEvent()
 			sTemp = "SCQ_" + npchar.index;
 			pchar.quest.(sTemp).over = "yes"; //снимаем прерывание смерть горожанина-квестодателя
 			AddMoneyToCharacter(pchar, sti(npchar.quest.money));
-			TakeNItems(pchar, npchar.quest.gem, 8+drand(8));
+			TakeNItems(pchar, npchar.quest.gem, 8+hrand(8));
 			sTitle = npchar.city + "SCQ_womanHasband";
 			CloseQuestHeader(sTitle);
 		break;
@@ -1457,7 +1457,7 @@ void ProcessDialogEvent()
 			sTemp = "SCQ_" + npchar.index;
 			pchar.quest.(sTemp).over = "yes"; //снимаем прерывание смерть горожанина-квестодателя
 			AddMoneyToCharacter(pchar, sti(npchar.quest.money));
-			TakeNItems(pchar, npchar.quest.gem, 10+drand(8));
+			TakeNItems(pchar, npchar.quest.gem, 10+hrand(8));
 			TakeNItems(pchar, "jewelry47", rand(3));
 			TakeNItems(pchar, "jewelry43", rand(3));
 			TakeNItems(pchar, "jewelry41", rand(3));
@@ -1479,7 +1479,7 @@ void ProcessDialogEvent()
 			sTemp = "SCQ_" + npchar.index;
 			pchar.quest.(sTemp).over = "yes"; //снимаем прерывание смерть горожанина-квестодателя
 			AddMoneyToCharacter(pchar, sti(npchar.quest.money));
-			TakeNItems(pchar, npchar.quest.gem, 12+drand(8));
+			TakeNItems(pchar, npchar.quest.gem, 12+hrand(8));
 			sTitle = npchar.city + "SCQ_womanPirates";
 			CloseQuestHeader(sTitle);
 		break;
@@ -1636,7 +1636,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.CitizSeekCap.nation = npchar.nation;	//нацию для нпс
 			pchar.GenQuest.CitizSeekCap.sex = "woman";
 			pchar.GenQuest.CitizSeekCap.ani = "towngirl";
-			pchar.GenQuest.CitizSeekCap.model = "women_"+(drand(3)+7); //модель для нпс
+			pchar.GenQuest.CitizSeekCap.model = "women_"+(hrand(3)+7); //модель для нпс
 			pchar.GenQuest.CitizSeekCap.WifeCity = npchar.quest.cribCity; //исходный город для нпс
 			sld = &characters[GetCharacterIndex("QuestCitiz_"+npchar.quest.cribCity)];
 			pchar.GenQuest.CitizSeekCap.WifeName = sld.quest.SeekCap.name; //имя и фамилию для нпс
@@ -2319,7 +2319,7 @@ void ProcessDialogEvent()
 			dialog.text = "Taki piękny dzień! Powinienem pójść i powiedzieć mojej żonie dobre wieści!\nKapitanie, los sam zesłał cię, byś mi pomógł. Oto monety, przyjmij wdzięczność naszej rodziny!";
 			link.l1 = "Dziękuję!";
 			link.l1.go = "exit";
-			iTemp = 50+drand(5)*10;
+			iTemp = 50+hrand(5)*10;
 			TakeNItems(pchar, "gold_dublon", iTemp);
 			Log_Info("You have received "+FindRussianDublonString(iTemp)+"");
 			PlaySound("interface\important_item.wav");
@@ -2427,7 +2427,7 @@ void ProcessDialogEvent()
 			dialog.text = "Oddałeś wielką przysługę obywatelom tej kolonii! Oto, weź tę nagrodę za swoją pomoc! Jest dość skromna, ale zyskasz szacunek od wszystkich moich przyjaciół, a uwierz mi, mam ich wielu!";
 			link.l1 = "Moje podziękowania! Powodzenia tobie i twojej siostrze. Życzę jej, by wyszła za mąż za honorowego mężczyznę. Żegnaj!";
 			link.l1.go = "exit";
-			iTemp = 50+drand(5)*10;
+			iTemp = 50+hrand(5)*10;
 			AddMoneyToCharacter(pchar, iTemp*100);
 			ChangeCharacterComplexReputation(pchar, "authority", 1);
 			ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 2);
@@ -2593,7 +2593,7 @@ void ProcessDialogEvent()
 			dialog.text = "Widzisz teraz? Wiedziałem to! Wielkie dzięki ode mnie i moich przyjaciół! Oto twoja nagroda, kapitanie.";
 			link.l1 = "Dziękuję.";
 			link.l1.go = "exit";
-			iTemp = 50+drand(5)*10;
+			iTemp = 50+hrand(5)*10;
 			AddMoneyToCharacter(pchar, iTemp*100);
 			ChangeCharacterComplexReputation(pchar, "authority", 1);
 			ChangeCharacterComplexReputation(PChar, "nobility", 2);
@@ -2888,7 +2888,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			npchar.lifeday = 0;
 			TakeNItems(pchar, "purse3", 1); 
-			TakeNItems(pchar, "purse"+(drand(2)+1), 1); 
+			TakeNItems(pchar, "purse"+(hrand(2)+1), 1); 
 			Log_Info("You have received purses of doubloons");
 			PlaySound("interface\important_item.wav");
 			ChangeCharacterComplexReputation(pchar, "authority", 1);
@@ -2970,7 +2970,7 @@ void ProcessDialogEvent()
 			PChar.Quest.AffairOfHonor_KillChar.win_condition.l1 = "NPC_Death";
 			PChar.Quest.AffairOfHonor_KillChar.win_condition.l1.character = "AffairOfHonor_" + AffairOfHonor_GetCurQuest() + "_Man";
 			PChar.Quest.AffairOfHonor_KillChar.function = "AffairOfHonor_KillChar";
-			if(dRand(1) == 0 && AffairOfHonor_GetCurQuest() != "CowardFencer" && AffairOfHonor_GetCurQuest() != "CoatHonor")
+			if(hrand(1) == 0 && AffairOfHonor_GetCurQuest() != "CowardFencer" && AffairOfHonor_GetCurQuest() != "CoatHonor")
 			{
 				PChar.QuestTemp.AffairOfHonor.FightWithHelpers = true;
 				Log_TestInfo("Seconds will fight");
@@ -2985,7 +2985,7 @@ void ProcessDialogEvent()
 				sld = CharacterFromID("AffairOfHonor_Helper_2");
 				LAi_Group_MoveCharacter(sld, "AffairOfHonor_Enemies");
 				LAi_SetImmortal(sld, false);
-				iTemp = dRand(3);
+				iTemp = hrand(3);
 				if(AffairOfHonor_GetCurQuest() == "GodJudgement")
 				{
 					for(i = 0; i < iTemp; i++)
@@ -3045,7 +3045,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AffairOfHonor_AfterFight_FightWithHelpers":
-			iTemp = dRand(3);
+			iTemp = hrand(3);
 			AddDialogExitQuest("MainHeroFightModeOn");
 			sld = CharacterFromID("AffairOfHonor_Helper_1");
 			LAi_Group_MoveCharacter(sld, "AffairOfHonor_Enemies");
@@ -3089,7 +3089,7 @@ void SetSeekCapCitizenParam(ref npchar, int iNation)
 			SetCaptanModelByEncType(sld, "trade");
 			sld.dialog.currentnode = "NM_battleCap";
 			sld.DeckDialogNode = "NM_battleDeck";
-			npchar.quest.money = (6-sti(RealShips[sti(sld.Ship.Type)].Class))*8000+sti(pchar.rank)*500;
+			npchar.quest.money = (10-sti(RealShips[sti(sld.Ship.Type)].Class))*8000+sti(pchar.rank)*500;
 			npchar.quest.dublon = makeint(sti(npchar.quest.money)/100);
 		break;
 		
@@ -3099,7 +3099,7 @@ void SetSeekCapCitizenParam(ref npchar, int iNation)
 			SetCaptanModelByEncType(sld, "trade");
 			sld.dialog.currentnode = "NM_prisonerCap";
 			sld.DeckDialogNode = "NM_prisonerCap";
-			npchar.quest.money = (6-sti(RealShips[sti(sld.Ship.Type)].Class))*10000+sti(pchar.rank)*600;
+			npchar.quest.money = (10-sti(RealShips[sti(sld.Ship.Type)].Class))*10000+sti(pchar.rank)*600;
 			npchar.quest.dublon = makeint(sti(npchar.quest.money)/100);
 		break;
 		
@@ -3109,7 +3109,7 @@ void SetSeekCapCitizenParam(ref npchar, int iNation)
 			SetCaptanModelByEncType(sld, "war");
 			sld.dialog.currentnode = "NM_peaceCap";
 			sld.DeckDialogNode = "NM_peaceCap";
-			npchar.quest.money = (6-sti(RealShips[sti(sld.Ship.Type)].Class))*6000+sti(pchar.rank)*400;
+			npchar.quest.money = (10-sti(RealShips[sti(sld.Ship.Type)].Class))*6000+sti(pchar.rank)*400;
 			npchar.quest.dublon = makeint(sti(npchar.quest.money)/100);
 		break;
 	
@@ -3119,7 +3119,7 @@ void SetSeekCapCitizenParam(ref npchar, int iNation)
 			SetCaptanModelByEncType(sld, "pirate");
 			sld.dialog.currentnode = "CitizCap";
 			sld.DeckDialogNode = "CitizCap_inDeck";
-			npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1)*1000)+(sti(pchar.rank)*500);
+			npchar.quest.money = (10-sti(RealShips[sti(sld.Ship.Type)].Class))*10000+(sti(pchar.rank)*500);
 		break;
 		
 		case "manRapeWife": 
@@ -3128,7 +3128,7 @@ void SetSeekCapCitizenParam(ref npchar, int iNation)
 			SetCaptanModelByEncType(sld, "pirate");
 			sld.dialog.currentnode = "RapeWifeCap";
 			sld.DeckDialogNode = "RapeWifeCap_inDeck";
-			npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1)*1000)+(sti(pchar.rank)*500);
+			npchar.quest.money = (10-sti(RealShips[sti(sld.Ship.Type)].Class))*10000+(sti(pchar.rank)*500);
 		break;
 		
 		case "manFriend": 
@@ -3137,7 +3137,7 @@ void SetSeekCapCitizenParam(ref npchar, int iNation)
 			SetCaptanModelByEncType(sld, "trade");
 			sld.dialog.currentnode = "FriendCap";
 			sld.DeckDialogNode = "FriendCap_inDeck";
-			npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1)*1000)+(sti(pchar.rank)*500);
+			npchar.quest.money = (10-sti(RealShips[sti(sld.Ship.Type)].Class))*10000+(sti(pchar.rank)*500);
 		break;
 		
 		case "womanHasband": 
@@ -3146,7 +3146,7 @@ void SetSeekCapCitizenParam(ref npchar, int iNation)
 			SetCaptanModelByEncType(sld, "trade");
 			sld.dialog.currentnode = "HasbandCap";
 			sld.DeckDialogNode = "HasbandCap_inDeck";
-			npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1)*1000)+(sti(pchar.rank)*500);
+			npchar.quest.money = (10-sti(RealShips[sti(sld.Ship.Type)].Class))*10000+(sti(pchar.rank)*500);
 		break;
 		
 		case "womanRevenge": 
@@ -3155,7 +3155,7 @@ void SetSeekCapCitizenParam(ref npchar, int iNation)
 			SetCaptanModelByEncType(sld, "pirate");
 			sld.dialog.currentnode = "RevengeCap";
 			sld.DeckDialogNode = "RevengeCap_inDeck";
-			npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1)*1000)+(sti(pchar.rank)*500);
+			npchar.quest.money = (10-sti(RealShips[sti(sld.Ship.Type)].Class))*10000+(sti(pchar.rank)*500);
 		break;
 		
 		case "womanPirates": 
@@ -3164,7 +3164,7 @@ void SetSeekCapCitizenParam(ref npchar, int iNation)
 			SetCaptanModelByEncType(sld, "pirate");
 			sld.dialog.currentnode = "PiratesCap";
 			sld.DeckDialogNode = "PiratesCap_inDeck";
-			npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1)*1000)+(sti(pchar.rank)*500);
+			npchar.quest.money = (10-sti(RealShips[sti(sld.Ship.Type)].Class))*10000+(sti(pchar.rank)*500);
 		break;
 	}
 	sld.dialog.filename = "Quest\ForAll_dialog.c";
@@ -3263,7 +3263,7 @@ void SetSeekCapCitizenParam(ref npchar, int iNation)
 string SelectNB_battleText()
 {
 	string sText;
-	switch (drand(5))
+	switch (hrand(5))
 	{
 		case 0: sText = "One bastard has seduced my sister because of her naivety and then left her once he had his way with her. I couldn't let him get away unpunished and so I challenged him. He got frightened and run away on his ship" break;
 		case 1: sText = "One dishonourable bastard has lost a huge sum to me in gambling and has run away on his ship" break;
@@ -3277,7 +3277,7 @@ string SelectNB_battleText()
 
 void SelectNB_prisonerText(ref npchar)
 {
-	switch (drand(5))
+	switch (hrand(5))
 	{
 		case 0:
 			npchar.quest.text = "One bastard has seduced my sister because of her naivety and then left her once he had his way with her. I couldn't let him get away unpunished and so I challenged him. But he got hired as a ship master and sailed away";
@@ -3308,7 +3308,7 @@ void SelectNB_prisonerText(ref npchar)
 
 void SelectNB_peaceText(ref npchar)
 {
-	switch (drand(5))
+	switch (hrand(5))
 	{
 		case 0: 
 			npchar.quest.text = "my old pal, who was my close friend in the Old World";

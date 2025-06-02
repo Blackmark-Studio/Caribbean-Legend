@@ -377,10 +377,10 @@ void Tonzag_GetOut() {
 	} else {
 		if (class == 3) {
 			shipType = SHIP_CORVETTE;
-			cannon = CANNON_TYPE_CANNON_LBS32;
+			cannon = CANNON_TYPE_CANNON_LBS24;
 		} else {
 			shipType = SHIP_BRIG;
-			cannon = CANNON_TYPE_CANNON_LBS24;
+			cannon = CANNON_TYPE_CANNON_LBS20;
 		}
 	}
 	
@@ -1003,23 +1003,23 @@ void Tonzag_ExitToSea() {
 	LAi_SetPlayerType(pchar);
 	chrDisableReloadToLocation = false;
 	
-	locations[FindLocation("Minentown_town")].QuestCapture = true;
-	locations[FindLocation("Minentown_town")].locators_radius.quest.detector1 = 6.0;
-	locations[FindLocation("Minentown_town")].locators_radius.reload = 0.0;
-	locations[FindLocation("Minentown_town")].locators_radius.reload.reload1_back = 1.0;
-	Locations[FindLocation("Minentown_town")].locators_radius.goto.goto8 = 15.0;
-	Locations[FindLocation("Minentown_town")].locators_radius.goto.goto35 = 15.0;
-	SetFunctionLocationCondition("Tonzag_SetMine", "Minentown_town", false);
-	SetFunctionLocatorCondition("Tonzag_LookAtDead", "Minentown_town", "quest", "detector1", false);
+	locations[FindLocation("LosTeques_town")].QuestCapture = true;
+	locations[FindLocation("LosTeques_town")].locators_radius.quest.detector1 = 6.0;
+	locations[FindLocation("LosTeques_town")].locators_radius.reload = 0.0;
+	locations[FindLocation("LosTeques_town")].locators_radius.reload.reload1_back = 1.0;
+	Locations[FindLocation("LosTeques_town")].locators_radius.goto.goto8 = 15.0;
+	Locations[FindLocation("LosTeques_town")].locators_radius.goto.goto35 = 15.0;
+	SetFunctionLocationCondition("Tonzag_SetMine", "LosTeques_town", false);
+	SetFunctionLocatorCondition("Tonzag_LookAtDead", "LosTeques_town", "quest", "detector1", false);
 	
 	PChar.quest.Tonzag_Rolik1.win_condition.l1 = "locator";
-	PChar.quest.Tonzag_Rolik1.win_condition.l1.location = "Minentown_town";
+	PChar.quest.Tonzag_Rolik1.win_condition.l1.location = "LosTeques_town";
 	PChar.quest.Tonzag_Rolik1.win_condition.l1.locator_group = "goto";
 	PChar.quest.Tonzag_Rolik1.win_condition.l1.locator = "goto8";
 	PChar.quest.Tonzag_Rolik1.function = "Tonzag_Rolik";
 	
 	PChar.quest.Tonzag_Rolik2.win_condition.l1 = "locator";
-	PChar.quest.Tonzag_Rolik2.win_condition.l1.location = "Minentown_town";
+	PChar.quest.Tonzag_Rolik2.win_condition.l1.location = "LosTeques_town";
 	PChar.quest.Tonzag_Rolik2.win_condition.l1.locator_group = "goto";
 	PChar.quest.Tonzag_Rolik2.win_condition.l1.locator = "goto35";
 	PChar.quest.Tonzag_Rolik2.function = "Tonzag_Rolik";
@@ -1032,8 +1032,8 @@ void Tonzag_Rolik(string qName)
 	StartQuestMovie(true, false, true);
 	PChar.quest.Tonzag_Rolik1.over = "yes";
 	PChar.quest.Tonzag_Rolik2.over = "yes";
-	Locations[FindLocation("Minentown_town")].locators_radius.goto.goto8 = 0.5;
-	Locations[FindLocation("Minentown_town")].locators_radius.goto.goto35 = 0.5;
+	Locations[FindLocation("LosTeques_town")].locators_radius.goto.goto8 = 0.5;
+	Locations[FindLocation("LosTeques_town")].locators_radius.goto.goto35 = 0.5;
 	TeleportCharacterToPos(pchar, 27.57, 19.46, -28.39);
 	LAi_SetActorType(pchar);
 	LAi_ActorGoToLocator(pchar, "quest", "quest1", "", -1);
@@ -1069,7 +1069,7 @@ void Tonzag_SetMine(string qName) {
 	PlaceCharacter(sld, "goto", "random_must_be_near");
 	LAi_SetActorTypeNoGroup(sld);
 	LAi_ActorFollow(sld, pchar, "", -1);
-	//LocatorReloadEnterDisable("Minentown_town", "gate_back", true);
+	//LocatorReloadEnterDisable("LosTeques_town", "gate_back", true);
 	
 	float centerX = -1.8;
 	float centerY = -2.15;
@@ -1125,11 +1125,11 @@ void Tonzag_SetMine(string qName) {
 	
 	ChangeItemName("MerdokArchive", "itmname_MineArchive");
 	ChangeItemDescribe("MerdokArchive", "itmdescr_MineArchive");
-	pchar.GenQuestBox.Minentown_mine = true;
-	pchar.GenQuestBox.Minentown_mine.box1.items.MerdokArchive = 1;
-	pchar.GenQuestBox.Minentown_mine.box1.items.chest = 1;
+	pchar.GenQuestBox.LosTeques_mine = true;
+	pchar.GenQuestBox.LosTeques_mine.box1.items.MerdokArchive = 1;
+	pchar.GenQuestBox.LosTeques_mine.box1.items.chest = 1;
 	if (!CheckCharacterItem(pchar, "map_full")) {
-		pchar.GenQuestBox.Minentown_mine.box1.items.map_full = 1;
+		pchar.GenQuestBox.LosTeques_mine.box1.items.map_full = 1;
 	}
 }
 
@@ -1145,8 +1145,8 @@ void Tonzag_CreateLoot() {
 void Tonzag_LookAtDead(string qName) {
 	PChar.quest.Tonzag_Rolik1.over = "yes";
 	PChar.quest.Tonzag_Rolik2.over = "yes";
-	Locations[FindLocation("Minentown_town")].locators_radius.goto.goto8 = 0.5;
-	Locations[FindLocation("Minentown_town")].locators_radius.goto.goto35 = 0.5;
+	Locations[FindLocation("LosTeques_town")].locators_radius.goto.goto8 = 0.5;
+	Locations[FindLocation("LosTeques_town")].locators_radius.goto.goto35 = 0.5;
 	LAi_SetActorType(pchar);
 	LAi_ActorTurnToLocator(pchar, "goto", "goto31");
 	
@@ -1184,18 +1184,18 @@ void Tonzag_AfterDead() {
 	LAi_ActorFollow(sld, pchar, "", -1);
 	
 	chrDisableReloadToLocation = false;
-	locations[FindLocation("Minentown_mine")].QuestCapture = true;
-	//locations[FindLocation("Minentown_townhall")].QuestCapture = true;
-	//locations[FindLocation("Minentown_tavern")].QuestCapture = true;
-	//locations[FindLocation("Minentown_church")].QuestCapture = true;
-	//locations[FindLocation("Minentown_store")].QuestCapture = true;
-	SetFunctionLocationCondition("Tonzag_InMine", "Minentown_mine", false);
+	locations[FindLocation("LosTeques_mine")].QuestCapture = true;
+	//locations[FindLocation("LosTeques_townhall")].QuestCapture = true;
+	//locations[FindLocation("LosTeques_tavern")].QuestCapture = true;
+	//locations[FindLocation("LosTeques_church")].QuestCapture = true;
+	//locations[FindLocation("LosTeques_store")].QuestCapture = true;
+	SetFunctionLocationCondition("Tonzag_InMine", "LosTeques_mine", false);
 }
 
 void Tonzag_InMine(string qName) {
 	InterfaceStates.Buttons.Save.enable = true;
 	chrDisableReloadToLocation = true;
-	LAi_LocationFightDisable(&locations[FindLocation("Minentown_mine")], true);
+	LAi_LocationFightDisable(&locations[FindLocation("LosTeques_mine")], true);
 	
 	sld = CharacterFromID("Tonzag");
 	PlaceCharacter(sld, "goto", "random_must_be_near");
@@ -1256,7 +1256,7 @@ void Tonzag_InMine(string qName) {
 }
 
 void Tonzag_FightInMine() {
-	LAi_LocationFightDisable(&locations[FindLocation("Minentown_mine")], false);
+	LAi_LocationFightDisable(&locations[FindLocation("LosTeques_mine")], false);
 	sld = CharacterFromID("Tonzag");
 	LAi_SetOfficerType(sld);
 	LAi_SetCheckMinHP(sld, 1, true, "");
@@ -1287,20 +1287,20 @@ void Tonzag_FightInMine() {
 	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
 	LAi_group_SetCheckFunction("EnemyFight", "Tonzag_AfterMineFight");
 	
-	SetFunctionLocationCondition("Tonzag_ExitMine", "Minentown_town", false);
+	SetFunctionLocationCondition("Tonzag_ExitMine", "LosTeques_town", false);
 }
 
 void Tonzag_ExitMine(string qName) {
 	sld = CharacterFromID("Tonzag");
 	LAi_SetOfficerType(sld);
-	LAi_LocationFightDisable(&locations[FindLocation("Minentown_town")], true);
-	DeleteAttribute(pchar, "GenQuestBox.Minentown_mine");
-	DeleteAttribute(&locations[FindLocation("Minentown_town")], "box1");
+	LAi_LocationFightDisable(&locations[FindLocation("LosTeques_town")], true);
+	DeleteAttribute(pchar, "GenQuestBox.LosTeques_mine");
+	DeleteAttribute(&locations[FindLocation("LosTeques_town")], "box1");
 	
 	OfficersFollow();
 	LAi_group_Delete("EnemyFight");
-	LocatorReloadEnterDisable("Minentown_town", "reload1_back", true);
-	LocatorReloadEnterDisable("Minentown_ExitTown", "reload4", true);
+	LocatorReloadEnterDisable("LosTeques_town", "reload1_back", true);
+	LocatorReloadEnterDisable("LosTeques_ExitTown", "reload4", true);
 	
 	for (int i = 0; i < 42; i++) {
 		if (GetCharacterIndex("Tonzag_DeadMan_" + i) < 0) {
@@ -1334,8 +1334,8 @@ void Tonzag_ExitMine(string qName) {
 	LAi_group_MoveCharacter(sld, "EnemyFight");
 	CharacterTurnToLoc(sld, "goto", "goto32");
 	
-	SetFunctionLocationCondition("Tonzag_AssignHuntersTimer", "Minentown_ExitTown", false);
-	SetFunctionLocationCondition("Tonzag_CleanupMine", "Minentown_ExitTown", false);
+	SetFunctionLocationCondition("Tonzag_AssignHuntersTimer", "LosTeques_ExitTown", false);
+	SetFunctionLocationCondition("Tonzag_CleanupMine", "LosTeques_ExitTown", false);
 	SetFunctionLocationCondition("Tonzag_SeaAfterMine", "Cumana", false);
 }
 
@@ -1368,7 +1368,7 @@ void Tonzag_LetMineHeadGo() {
 }
 
 void Tonzag_FightMineHead() {
-	LAi_LocationFightDisable(&locations[FindLocation("Minentown_town")], false);
+	LAi_LocationFightDisable(&locations[FindLocation("LosTeques_town")], false);
 	
 	chrDisableReloadToLocation = true;
 	LAi_SetFightMode(pchar, true);
@@ -1382,7 +1382,7 @@ void Tonzag_AssignHunters(string qName) {
 }
 
 void Tonzag_AssignHuntersTimer(string qName) {
-	LAi_LocationFightDisable(&locations[FindLocation("Minentown_town")], false);
+	LAi_LocationFightDisable(&locations[FindLocation("LosTeques_town")], false);
 	
 	if (GetCharacterIndex("MineHead") >= 0) {
 		sld = CharacterFromID("MineHead");
@@ -1407,11 +1407,11 @@ void Tonzag_CleanupMine(string qName) {
 	LAi_SetImmortal(sld, false);
 	LAi_RemoveCheckMinHP(sld);
 	
-	LAi_LocationFightDisable(&locations[FindLocation("Minentown_town")], false);
+	LAi_LocationFightDisable(&locations[FindLocation("LosTeques_town")], false);
 	
 	AddQuestRecord("Tonzag", "7");
 	
-	//DeleteAttribute(&locations[FindLocation("Minentown_mine")], "box1");
+	//DeleteAttribute(&locations[FindLocation("LosTeques_mine")], "box1");
 }
 
 void Tonzag_ResetMineGuy(string id) {
@@ -1421,20 +1421,20 @@ void Tonzag_ResetMineGuy(string id) {
 }
 
 void Tonzag_ResetMine(string qName) {
-	LocatorReloadEnterDisable("Minentown_town", "reload1_back", false);
-	LocatorReloadEnterDisable("Minentown_ExitTown", "reload4", false);
+	LocatorReloadEnterDisable("LosTeques_town", "reload1_back", false);
+	LocatorReloadEnterDisable("LosTeques_ExitTown", "reload4", false);
 	
-	DeleteAttribute(&locations[FindLocation("Minentown_town")], "QuestCapture");
-	DeleteAttribute(&locations[FindLocation("Minentown_mine")], "QuestCapture");
-	locations[FindLocation("Minentown_town")].locators_radius.reload = 1.0;
-	//DeleteAttribute(&locations[FindLocation("Minentown_townhall")], "QuestCapture");
-	//DeleteAttribute(&locations[FindLocation("Minentown_tavern")], "QuestCapture");
-	//DeleteAttribute(&locations[FindLocation("Minentown_church")], "QuestCapture");
-	//DeleteAttribute(&locations[FindLocation("Minentown_store")], "QuestCapture");
-	Tonzag_ResetMineGuy("Minentown_Mayor");
-	Tonzag_ResetMineGuy("Minentown_trader");
-	Tonzag_ResetMineGuy("Minentown_tavernkeeper");
-	Tonzag_ResetMineGuy("Minentown_Priest");
+	DeleteAttribute(&locations[FindLocation("LosTeques_town")], "QuestCapture");
+	DeleteAttribute(&locations[FindLocation("LosTeques_mine")], "QuestCapture");
+	locations[FindLocation("LosTeques_town")].locators_radius.reload = 1.0;
+	//DeleteAttribute(&locations[FindLocation("LosTeques_townhall")], "QuestCapture");
+	//DeleteAttribute(&locations[FindLocation("LosTeques_tavern")], "QuestCapture");
+	//DeleteAttribute(&locations[FindLocation("LosTeques_church")], "QuestCapture");
+	//DeleteAttribute(&locations[FindLocation("LosTeques_store")], "QuestCapture");
+	Tonzag_ResetMineGuy("LosTeques_Mayor");
+	Tonzag_ResetMineGuy("LosTeques_trader");
+	Tonzag_ResetMineGuy("LosTeques_tavernkeeper");
+	Tonzag_ResetMineGuy("LosTeques_Priest");
 }
 
 void Tonzag_PrepareJournal() {
@@ -1442,9 +1442,9 @@ void Tonzag_PrepareJournal() {
 	LAi_SetCitizenTypeNoGroup(sld);
 	LAi_CharacterDisableDialog(sld);
 	if (RemoveOfficersIndex(pchar, sti(sld.index))) {
-		sld.isfree = sti(sld.isfree) - 1;
-		if (sti(sld.isfree) <= 0) {
-			DeleteAttribute(sld, "isfree");
+		sld.isbusy = sti(sld.isbusy) - 1;
+		if (sti(sld.isbusy) <= 0) {
+			DeleteAttribute(sld, "isbusy");
 		}
 		DeleteAttribute(sld, "fighter");
 	}

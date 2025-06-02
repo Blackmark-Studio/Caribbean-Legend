@@ -4,12 +4,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Czego chcesz?","Czego chciałbyś się dowiedzieć?"),"Czego potrzebujesz, "+GetAddress_Form(NPChar)+"?","To już trzeci raz, gdy próbujesz mnie zapytać...","Mam cię dość, znikaj!","blokada",1,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Przepraszam, zmieniłem zdanie.","To nic, przepraszam."),"Zapomniałem, przepraszam...","Do trzech razy sztuka, co? Przepraszam...","Przepraszam, przepraszam! W takim razie sam się wyniosę...",npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Czego chcesz?","Czego chciałbyś się dowiedzieć?"),"Czego potrzebujesz, "+GetAddress_Form(NPChar)+"?","To już trzeci raz, gdy próbujesz mnie zapytać...","Mam cię dość, znikaj!","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Przepraszam, zmieniłem zdanie.","Nic takiego, przepraszam."),"Zapomniałem, przepraszam...","Do trzech razy sztuka, co? Przepraszam...","Przepraszam, przepraszam! Już się wynosze...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "mayak")
 			{
-				link.l1 = "Pozdrowienia. Inkwizytor z Santiago, Dadre Vincento, wspomniał o tobie w swoim liście. Powiedział, że możesz mi pomóc.";
+				link.l1 = "Witam. Inkwizytor z Santiago, Dadre Vincento, wspomniał o tobie w swoim liście. Powiedział, że możesz mi pomóc.";
                 link.l1.go = "guardoftruth";
 			}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "mayak_next")
@@ -42,7 +42,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth_2":
-			Log_Info("You part with the letter");
+			Log_Info("Oddałeś list.");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Zrozumiano, Senor. Zrobię, co w mojej mocy. To nie pierwszy raz, kiedy pomagam świętemu ojcu.";
 			link.l1 = "To nie wszystko. Kapitan karaki, San Gregorio, Carlos Guevarra musiał tu być. Przywiózł mi wanilię. Czy przekazał ci mój list?";

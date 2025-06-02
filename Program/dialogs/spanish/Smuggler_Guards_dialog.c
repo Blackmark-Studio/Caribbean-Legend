@@ -177,7 +177,7 @@ void ProcessDialogEvent()
 
 		case "TryingToGiveBribe":
 			dialog.snd = "Voice\COGU\COGU006";
-			dialog.text = "¿Un soborno? ¡No, me importa mi honor! Entonces, ¿nos seguirías amablemente!";
+			dialog.text = "¿Un soborno? ¡No, me importa mi honor! Entonces, ¿nos seguirías amablemente?";
 			Link.l1 = "¡Maldita sea! Lo siento por decepcionarte, ¡pero no voy a ir a ninguna parte!";
 			Link.l1.go = "ThisTimeFree_fight";
 		break;

@@ -68,7 +68,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "PZ_Beliz_Komendant_5":
 		dialog.text = "¡Ja! No, disparó una andanada de metralla a quemarropa cuando Lutter se acercó, ¡y luego abordó al pirata él mismo! Cuando descubrió quién era Lutter, nos lo entregó. ¡Un verdadero héroe, un hombre de honor!";
-		link.l1 = "No fue solo el honor lo que lo impulsó - debió haber habido una recompensa por atrapar al Charlatán.";
+		link.l1 = "No fue solo el honor lo que lo impulsó, debió haber habido una recompensa por atrapar al Charlatán.";
 		link.l1.go = "PZ_Beliz_Komendant_6";
 		break;
 
@@ -131,7 +131,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		DialogExit();
 		AddQuestRecord("Caleuche", "15");
 		pchar.questTemp.Caleuche.Bandos = "comendant";
-		pchar.questTemp.Caleuche.BelizChance = drand(3);
+		pchar.questTemp.Caleuche.BelizChance = hrand(3);
 		SetFunctionTimerCondition("Caleuche_BelizRegard", 0, 0, 3, false); // таймер
 		break;
 

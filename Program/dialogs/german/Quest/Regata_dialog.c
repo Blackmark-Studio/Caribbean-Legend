@@ -672,7 +672,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_Spyglass_2":
-			if(drand(11) > 10)//отличная труба
+			if(hrand(11) > 10)//отличная труба
 			{
 				pchar.questTemp.Regata.Spy = "spyglass4";
 				sTemp = "an excellent spyglass";
@@ -681,7 +681,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if(drand(11) < 6)//обычная труба
+				if(hrand(11) < 6)//обычная труба
 				{
 					pchar.questTemp.Regata.Spy = "spyglass2";
 					sTemp = "an ordinary spyglass";
@@ -988,7 +988,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_SiegeSkiper_3"://а тут - как уж свезет
-			if(drand(2) != 2)
+			if(hrand(2) != 2)
 			{
 				dialog.text = "Von "+pchar.questTemp.Regata.Name+"? Ich verstehe jetzt, sicher. Also gut, Kapitän, ich werde Ihnen helfen, den kürzesten Weg nach Port Royal zu segeln. Wollen Sie jetzt in See stechen?";
 				link.l1 = "Ja.";

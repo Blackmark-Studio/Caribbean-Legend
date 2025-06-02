@@ -189,6 +189,15 @@ void ProcessDialogEvent()
 				Link.l8.go = "Shadowtrader_smugglers";
 			}
 			// <-- мини-квест Бесчестный конкурент
+			
+			//--> Торговля по закону
+			if(CheckAttribute(PChar, "questTemp.TPZ_ContraInfo") && NPChar.location == "BasTer_tavern")
+			{
+				Link.l8 = "Escucha, amigo, necesito un cargamento de vino y ron. Grande y rápido.";
+				Link.l8.go = "TPZ_smugglers_1";
+			}
+			// <-- Торговля по закону
+
 			// Jason --> генератор сбыта бакаута
 			if (NPChar.location == "Marigo_tavern" && CheckAttribute(PChar, "GenQuest.Bakaut") && !CheckAttribute(PChar, "GenQuest.Bakaut.Info"))
 			{
@@ -232,8 +241,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "CapComission_2":
-		dialog.text = "Habíamos estado observando la pelea desde la roca. En un catalejo vimos el barco bajo el Jolly Roger. Luego, como cinco horas después, vimos un destello en la oscuridad, parecía un golpe desde la sala de pólvora. Tiempo suficiente para mover la carga a la orilla.";
-		link.l1 = "¿No sabes dónde está el capitán?" + pchar.GenQuest.CaptainComission.Name + "¿El escondite de 's? Sabes cada pedazo de esta isla.";
+		dialog.text = "Habíamos estado observando la pelea desde el acantilado. Con el catalejo vimos que el barco tenía la Jolly Roger. Luego, como cinco horas después, vimos un destello en la oscuridad, como si el polvorín hubiera explotado. Eso es tiempo suficiente para mover la carga a la orilla.";
+		link.l1 = "¿No sabes dónde está el escondite del capitán " + pchar.GenQuest.CaptainComission.Name + "? Conoces cada piedra de esta isla.";
 		link.l1.go = "CapComission_3";
 		break;
 
@@ -397,6 +406,15 @@ void ProcessDialogEvent()
 			Link.l8.go = "Shadowtrader_smugglers";
 		}
 		// <-- мини-квест Бесчестный конкурент
+		
+		//--> Торговля по закону
+		if(CheckAttribute(PChar, "questTemp.TPZ_ContraInfo") && NPChar.location == "BasTer_tavern")
+		{
+			Link.l8 = "Escucha, amigo, necesito un cargamento de vino y ron. Grande y rápido.";
+			Link.l8.go = "TPZ_smugglers_1";
+		}
+		// <-- Торговля по закону
+
 		// Jason --> генератор сбыта бакаута
 		if (NPChar.location == "Marigo_tavern" && CheckAttribute(PChar, "GenQuest.Bakaut") && !CheckAttribute(PChar, "GenQuest.Bakaut.Info"))
 		{
@@ -480,7 +498,7 @@ void ProcessDialogEvent()
 		string sGenLocation = IslandGetLocationFromType(locations[FindLocation(PChar.GenQuest.ChurchQuest_2.Contra_Colony + "_Town")].IslandID, "Shore");
 		PChar.GenQuest.ChurchQuest_2.QuestGangShore = sGenLocation;
 		PChar.GenQuest.ChurchQuest_2.BanditsInShore = true;
-		dialog.text = "Mm, los dejamos en tierra en " + XI_ConvertString(sGenLocation + "Gen") + "... Ya sabes, sería mejor que fueran tus amigos, de lo contrario no te aconsejo que los molestes en otro caso.";
+		dialog.text = "Mm, los dejamos en tierra en " + XI_ConvertString(sGenLocation + "Gen") + "... Como puedes imaginar, sería mejor que fueran tus amigos, de lo contrario no te aconsejo que los molestes en otro caso.";
 		link.l1 = "Gracias por tu preocupación, pero estoy bien armado y soy muy encantador.";
 		link.l1.go = "exit";
 		SetFunctionLocationCondition("Church_GenQuest2_GenerateBandits", sGenLocation, false);
@@ -795,7 +813,7 @@ void ProcessDialogEvent()
 		dialog.text = "Muy interesante. Muestra lo que tienes.";
 		link.l1 = "He oído que hay una tienda subterránea donde puedes comerciar con mercancías muy 'especiales' a un precio tentador y tú has ayudado a iniciar esta tienda. Me gustaría hablar con su dueño.";
 		link.l1.go = "Shadowtrader_fail";
-		link.l2 = "He oído que hay una tienda clandestina donde puedes comerciar mercancías muy 'especiales' a un precio tentador. Tengo que zarpar en unos días y no tengo suficiente dinero para comprar todo lo que necesito en la tienda local, así que necesito y quiero ahorrar algo de monedas... algunas personas me dijeron que tú puedes ayudarme con eso.";
+		link.l2 = "He oído que hay una tienda clandestina donde puedes comerciar mercancías muy 'especiales' a un precio tentador. Tengo que zarpar en unos días y no tengo suficiente dinero para comprar todo lo que necesito en la tienda, así que necesito y quiero ahorrar algo de monedas... algunas personas me dijeron que tú puedes ayudarme con eso.";
 		link.l2.go = "Shadowtrader_smugglers_1";
 		DeleteAttribute(pchar, "questTemp.Shadowtrader.seeksmugglers");
 		DelLandQuestMark(npchar);
@@ -803,7 +821,7 @@ void ProcessDialogEvent()
 
 	case "Shadowtrader_fail":
 		dialog.text = "¿De qué estás hablando? No te entiendo. No empezamos una tienda aquí, esto es una tontería, ¡ja-ja! Si quieres comerciar, tráenos bienes y hablaremos a nuestra manera habitual... Una tienda, ¡ja!";
-		link.l1 = "¿Mm...";
+		link.l1 = "Mmm...";
 		link.l1.go = "exit";
 		pchar.questTemp.Shadowtrader = "true";
 		AddQuestRecord("Shadowtrader", "3");
@@ -845,6 +863,44 @@ void ProcessDialogEvent()
 		DialogExit();
 		break;
 	// <-- Бесчестный конкурент
+	//--> Торговля по закону
+	case "TPZ_smugglers_1":
+		dialog.text = "Ja, ¿te ha enviado ese bribón detrás de la barra, verdad?";
+		link.l1 = "¿Y eso importa? ¿Puedes conseguirlo o debo buscar a otra persona?";
+		link.l1.go = "TPZ_smugglers_2";
+		DelLandQuestMark(npchar);
+	break;
+		
+	case "TPZ_smugglers_2":
+		dialog.text = "Puedo conseguir lo que sea, ¿entiendes? Siempre que paguen bien. Pero ese maldito gobernador nos tiene totalmente acorralados. Ya no tratamos con alcohol — las botellas hacen ruido, se oyen a kilómetros, las ganancias son miserables y el riesgo de acabar en la horca es enorme. Así que discúlpame.";
+		link.l1 = "Vaya... Y aún así dices que puedes conseguirlo todo.";
+		link.l1.go = "TPZ_smugglers_3";		
+	break;
+		
+	case "TPZ_smugglers_3":
+		dialog.text = "¡Puedo! Simplemente no quiero. Hay un tipo por aquí, vive justo al lado de la residencia, ¿lo puedes creer? Ja-ja. Qué idiota... ¿En qué estaba? Ah, sí. Él trafica discretamente con algo de licor bajo cuerda. Justo bajo la peluca del gobernador, ja-ja. Pregúntale, tal vez te diga algo. Sus cantidades son pequeñas, claro, pero es mejor que nada.";
+		link.l1 = "No es que hayas ayudado mucho, pero gracias de todos modos.";
+		link.l1.go = "TPZ_smugglers_4";		
+	break;
+	
+	case "TPZ_smugglers_4":
+			DialogExit();
+			AddQuestRecord("TPZ", "3");
+			DeleteAttribute(pchar, "questTemp.TPZ_ContraInfo");
+			
+			// проведаем дом Кристиана
+			sld = GetCharacter(NPC_GenerateCharacter("TPZ_Kristian", "citiz_17", "man", "man", 1, FRANCE, -1, false, "quest"));
+			sld.name = "Christian";
+			sld.lastname = "Deluce";
+			LAi_SetOwnerType(sld);
+			sld.dialog.filename = "Quest\MiniEvents\TradingByLaw_dialog.c";
+			sld.dialog.currentnode = "Kristian";
+			ChangeCharacterAddressGroup(sld, "BasTer_houseF3", "barmen", "stay");
+			sld.City = "BasTer";
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			AddLandQuestMark(sld, "questmarkmain");
+	break;
+	//<-- Торговля по закону
 
 	//--> Цена чахотки
 	case "Consumption":
@@ -857,7 +913,7 @@ void ProcessDialogEvent()
 		if (sti(pchar.money) >= 3002)
 		{
 			dialog.text = "¡Pagará, ja! Mi tiempo no es barato, señor, cuesta 3000 pesos más esta bebida asquerosa que llaman ron por error.";
-			link.l1 = "¡Trato hecho! Ahora cuéntame sobre uno de los tuyos que pasó medio año en la prisión local y luego murió. ¿Qué ocurrió con él?";
+			link.l1 = "¡Trato hecho! Ahora cuéntame sobre uno de los tuyos que pasó medio año en la prisión y luego murió. ¿Qué ocurrió con él?";
 			link.l1.go = "Consumption_2";
 		}
 		else
@@ -888,7 +944,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Consumption_5":
-		dialog.text = "Oh no va a terminar bien, señor, confía en mí... (bajando la voz) Dijo - Juan...";
+		dialog.text = "Oh no va a terminar bien, señor, confía en mí... (bajando la voz) Dijo, Juan...";
 		link.l1 = "¡Maldito seas! ¿Juan? Es solo un nombre común y es bastante popular aquí. ¿Por qué es tan especial?";
 		link.l1.go = "Consumption_6";
 		break;
@@ -910,7 +966,7 @@ void ProcessDialogEvent()
 
 	// Jason --> генератор сбыта бакаута
 	case "bakaut":
-		dialog.text = "¿Es así? Bien. Mynheer Rosenkraft necesita un lote de madera de hierro, pero no menos que " + FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)) + "¿Tienes suficiente carga?";
+		dialog.text = "¿Es así? Bien. Mynheer Rosenkraft necesita un lote de sándalo, pero no menos que " + FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)) + ". ¿Tienes suficiente carga?";
 		if (GetSquadronGoods(pchar, GOOD_SANDAL) >= sti(pchar.GenQuest.Bakaut.Value))
 		{
 			link.l1 = "Lo hago. ¿Dónde puedo encontrar al señor Rosenkraft?";

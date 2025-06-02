@@ -28,8 +28,8 @@ void ProcessDialogEvent()
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
-       			dialog.text = PCharRepPhrase(LinkRandPhrase("Miasto jest na alarmie. Wygląda na to, że nadszedł czas, abym też wziął do ręki broń...","Czy nie jesteś ścigany przez całą straż miejską?. Do mnie, żołnierze!!!","Nie znajdziesz tu schronienia. Ale znajdziesz kilka cali zimnej stali pod żebrem!"),LinkRandPhrase("Czego chcesz, łotrzyku?! Miejska straż już cię śledzi, nie uciekniesz zbyt daleko, "+GetSexPhrase("brudny piracie!","łotr")+"!","Stop! "+GetSexPhrase("Brudny morderca! Straż!!!","Nie boję się ciebie! Wkrótce zostaniesz powieszony w naszym forcie, nie ma gdzie się ukryć...")));
-				link.l1 = PCharRepPhrase(RandPhraseSimple("Wygląda na to, że jesteś zmęczony życiem...","A dlaczego nie chcecie żyć spokojnie, obywatele..."+XI_ConvertString("Kolonia"+npchar.city+"Gen")+"!"),RandPhraseSimple("Idź do diabła!","Zostało ci kilka sekund w tym świecie..."));
+       			dialog.text = PCharRepPhrase(LinkRandPhrase("Miasto jest zaalarmowane. Wygląda na to, że nadszedł czas, abym też wziął do ręki broń...","Czy nie jesteś ścigany przez całą straż miejską?. Do mnie, żołnierze!!!","Nie znajdziesz tu schronienia. Ale znajdziesz kilka cali zimnej stali pod żebrem!"),LinkRandPhrase("Czego chcesz, łotrzyku?! Miejska straż już cię śledzi, nie uciekniesz zbyt daleko, "+GetSexPhrase("brudny piracie!","cwaniaro")+"!","Stop! "+GetSexPhrase("Brudny morderca! Straż!!!","Nie boję się ciebie! Wkrótce zostaniesz powieszony w naszym forcie, nie ma gdzie się ukryć...")));
+				link.l1 = PCharRepPhrase(RandPhraseSimple("Wygląda na to, że jesteś zmęczony życiem...","A dlaczego nie chcecie żyć spokojnie, obywatele..."+XI_ConvertString("Colony"+npchar.city+"Gen")+"!"),RandPhraseSimple("Idź do diabła!","Zostało ci kilka sekund w tym świecie..."));
 				link.l1.go = PCharRepPhrase("exit_setOwner", "fight");
 				break;
 			}

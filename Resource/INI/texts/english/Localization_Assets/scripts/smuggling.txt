@@ -1,0 +1,8 @@
+smuggling_1
+{
+Smugglers approve (
+}
+smuggling_2
+{
+Smugglers disapprove (
+}

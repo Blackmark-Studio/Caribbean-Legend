@@ -28,7 +28,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Ah, tú otra vez, querido " + pchar.name + "¡Qué te trae a mi humilde casa?";
+			dialog.text = "Ah, tú otra vez, querido " + pchar.name + ". ¿Qué te trae a mi humilde casa?";
 			if (CheckAttribute(pchar, "GenQuest.NarvalConflict") || CheckAttribute(pchar, "GenQuest.RivadosConflict") || CheckAttribute(pchar, "GenQuest.SharkConflict"))
 			{
 				link.l10 = "Fazio, tengo un grave conflicto con un clan. Necesito resolver este problema.";
@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 		if (!CheckAttribute(npchar, "quest.parolrules"))
 		{
 			dialog.text = "¡Claro! Pero déjame darte algunos detalles primero. Las contraseñas contienen solo una palabra y cambian cada semana. Cada séptimo, decimocuarto, vigésimo primero y vigésimo octavo día del mes.\nAsí que vigila la fecha actual para evitar errores. Finalmente, como debes entender, esto no es una obra de caridad. Cincuenta doblones por una contraseña. Recuerda, solo doblones.";
-			link.l1 = "Cincuenta doblones? ¡Es una suma enorme!";
+			link.l1 = "¿Cincuenta doblones? ¡Es una suma enorme!";
 			link.l1.go = "parol_1";
 		}
 		else
@@ -151,8 +151,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "adolf_1":
-		dialog.text = "Siempre es un placer, querido. Pero no busques a Adolfo en su camarote hasta que caiga la noche, está muy ocupado, corriendo de aquí туда con algunos asuntos... Sí, y visítame más a menudo, ¡charlemos!";
-		link.l1 = " Te invitaré cuando tenga mi propia cabina... ¡Adiós y buena suerte!";
+		dialog.text = "Siempre es un placer, querido. Pero no busques a Adolfo en su camarote hasta que caiga la noche, está muy ocupado, corriendo de aquí para allá con algunos asuntos... Sí, ¡y visítame más a menudo para charlar!";
+		link.l1 = "Te invitaré cuando tenga mi propia cabina... ¡Adiós y buena suerte!";
 		link.l1.go = "adolf_2";
 		break;
 
@@ -309,7 +309,7 @@ void ProcessDialogEvent()
 			if (sti(pchar.GenQuest.NarvalConflict) >= 3 && sti(pchar.GenQuest.NarvalConflict) < 10)
 				dialog.text = "Claro, he oído sobre eso. Hiciste un gran alboroto, mi querido. Pero hay una salida. " + sti(npchar.quest.price) + " doblones y tu problema se resolverá en un día.";
 			else
-				dialog.text = "   Toda la Isla  está al tanto de la matanza que hiciste. No será fácil ayudarte, pero hay una posibilidad. " + sti(npchar.quest.price) + " doblones y trataré de resolver tu problema.";
+				dialog.text = "Toda la Isla está al tanto de la matanza que hiciste. No será fácil ayudarte, pero hay una posibilidad. " + sti(npchar.quest.price) + " doblones y trataré de resolver tu problema.";
 		}
 		if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.price))
 		{
@@ -329,7 +329,7 @@ void ProcessDialogEvent()
 			if (sti(pchar.GenQuest.RivadosConflict) >= 3 && sti(pchar.GenQuest.RivadosConflict) < 10)
 				dialog.text = "Claro, he oído sobre eso. Has hecho un gran lío, mi querido. Pero hay una salida. " + sti(npchar.quest.price) + "  doblones y tu problema se resolverá en un día.";
 			else
-				dialog.text = "   Toda la Isla es consciente de la masacre que hiciste. No será fácil ayudarte, pero hay una posibilidad.  " + sti(npchar.quest.price) + " doblones y trataré de resolver tu problema.";
+				dialog.text = "Toda la Isla es consciente de la masacre que hiciste. No será fácil ayudarte, pero hay una posibilidad.  " + sti(npchar.quest.price) + " doblones y trataré de resolver tu problema.";
 		}
 		if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.price))
 		{
@@ -349,7 +349,7 @@ void ProcessDialogEvent()
 			if (sti(pchar.GenQuest.SharkConflict) >= 3 && sti(pchar.GenQuest.SharkConflict) < 10)
 				dialog.text = "Claro, he oído sobre eso. Has hecho un gran lío, mi querido. Pero hay una salida. " + sti(npchar.quest.price) + "doblones y tu problema se resolverá en un día.";
 			else
-				dialog.text = " Toda la Isla está al tanto de la masacre que cometiste. No será fácil ayudarte, pero hay una posibilidad. " + sti(npchar.quest.price) + "  doblones y trataré de resolver tu problema.";
+				dialog.text = "Toda la Isla está al tanto de la masacre que cometiste. No será fácil ayudarte, pero hay una posibilidad. " + sti(npchar.quest.price) + "  doblones y trataré de resolver tu problema.";
 		}
 		if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.price))
 		{
@@ -375,7 +375,7 @@ void ProcessDialogEvent()
 		pchar.locx = locx;
 		pchar.locy = locy;
 		pchar.locz = locz;
-		SetLaunchFrameFormParam("Un día después..." + NewStr() + "Fazio ha abordado el conflicto", "Reload_To_Location", 0.1, 5.0);
+		SetLaunchFrameFormParam("Un día después..." + NewStr() + "Fazio ha solucionado el conflicto", "Reload_To_Location", 0.1, 5.0);
 		SetLaunchFrameReloadLocationParam(pchar.location, "goto", LAi_FindNearestFreeLocator2Pchar("goto"), "LocTeleport");
 		WaitDate("", 0, 0, 1, 3, 10); // крутим время
 		LaunchFrameForm();

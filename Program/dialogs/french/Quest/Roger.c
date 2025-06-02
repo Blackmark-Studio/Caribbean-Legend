@@ -1432,6 +1432,7 @@ void ProcessDialogEvent()
 		
 		case "Pelly_61":
             DialogExit();
+			DeleteAttribute(pchar,"questTemp.Mtraxx.MagicBox");
 			chrDisableReloadToLocation = true;
 			LocatorReloadEnterDisable("shore37", "boat", false);
 			bQuestDisableMapEnter = false;

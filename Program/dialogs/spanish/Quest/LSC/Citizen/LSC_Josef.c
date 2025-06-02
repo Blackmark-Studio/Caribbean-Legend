@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 		case "First time":
 			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
 			{
-				dialog.text = " No quiero hablar contigo. Atacas a civiles pacíficos sin razón y los provocas a pelear. ¡Lárgate! ";
+				dialog.text = "No quiero hablar contigo. Atacas a civiles pacíficos sin razón y los provocas a pelear. ¡Lárgate! ";
 				link.l1 = "Mm...";
 				link.l1.go = "exit";
 				break;
@@ -95,7 +95,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_2":
-			dialog.text = "Si necesitas descansar, visita la taberna de Sancho. Siempre te proporcionará comida, bebidas y una cama. En caso de que quieras conseguir pólvora, municiones, armas y otras cosas, ve a Axel Yost, él es el dueño de la tienda local. Medicinas pueden comprarse al hermano Julián, él también vende objetos sagrados en su iglesia\nLos Narvales tienen un herrero muy talentoso, llamado Schmidt. Dicen que fabrica excelentes espadas. También hay otro artesano talentoso entre los Narvales, pero no logré saber más sobre él\n Y si tienes problemas con piratas o clanes, entonces consulta a Giuseppe Fazio, él es el especialista adecuado para ese tipo de asuntos.";
+			dialog.text = "Si necesitas descansar, visita la taberna de Sancho. Siempre te proporcionará comida, bebidas y una cama. En caso de que quieras conseguir pólvora, municiones, armas y otras cosas, ve a Axel Yost, él es el dueño de la tienda. Medicinas pueden comprarse al hermano Julián, él también vende objetos sagrados en su iglesia\nLos Narvales tienen un herrero muy talentoso, llamado Schmidt. Dicen que fabrica excelentes espadas. También hay otro artesano talentoso entre los Narvales, pero no logré saber más sobre él\n Y si tienes problemas con piratas o clanes, entonces consulta a Giuseppe Fazio, él es el especialista adecuado para ese tipo de asuntos.";
 			link.l1 = "¡Gracias por la información!";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_2 = "true";

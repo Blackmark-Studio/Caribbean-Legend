@@ -4,7 +4,7 @@
 #define ShipSituation_1				1	// "Взрыв на корабле" или "Эпидемия" - любое использовование интерфейса "грабежа" --> перегрузка отдельных товаров или нажатие кнопки "Взять все" - после этого корабль взрывается или его сами топим
 #define ShipSituation_2				2	// "Эпидемия" - сажаем компаньона с командой на инфицированный корабль
 #define ShipSituation_3				3	// "Эпидемия" - ГГ пересаживается на инфицированный корабль
-#define ShipSituation_4				4	// ничего не обшаривали
+#define ShipSituation_4				4	// Ничего не обшаривали
 
 int iGenRank;
 string sGenLocation, sGenlocator, sGenBlade, sGenGun, sQuestTitle;
@@ -647,24 +647,16 @@ void ReasonToFast_MeetPatrolShore(string qName) // генерация патру
 			chr = &characters[iPatrolOfficer];
 			SetFantomParamFromRank(chr, iRank + 2, true);
 			chr.greeting = "soldier_arest";
-			chr.dialog.filename = "Enc_Patrol.c";				
-			if(GetOfficersQuantity(pchar) > 0) 
+			chr.dialog.filename = "Enc_Patrol.c";
+			if(sti(pchar.questTemp.ReasonToFast.p1) < GetCharacterSPECIAL(pchar, "LUCK") * 10)	
 			{
 				chr.dialog.currentnode = "First Time";
 				pchar.questTemp.ReasonToFast = "MeetPatrolFail";
-			}	
-			else 
+			}
+			else
 			{
-				if(sti(pchar.questTemp.ReasonToFast.p1) < GetCharacterSPECIAL(pchar, "LUCK") * 10)	
-				{
-					chr.dialog.currentnode = "First Time";
-					pchar.questTemp.ReasonToFast = "MeetPatrolFail";
-				}
-				else
-				{
-					chr.dialog.currentnode = "Reason_To_Fast_1";
-					bOk = true;
-				}	
+				chr.dialog.currentnode = "Reason_To_Fast_1";
+				bOk = true;
 			}
 		}
 		else
@@ -760,32 +752,17 @@ void ReasonToFast_GenerateHunter() // генерация ОЗГ
 
 int ReasonToFast_GetVictimShipType()
 {
-	string sTemp;	
-	int iShipType = rand(4);
-	switch (iShipType)
-	{	
-	    case 0: 		 
-			iShipType = SHIP_BARQUE;     	
-			sTemp = StringFromKey("GenQuests_5");
-		break; 
-	    case 1:  
-			iShipType = SHIP_FLEUT;
-			sTemp = StringFromKey("GenQuests_6");
-		break; 
-	    case 2: 
-			iShipType = SHIP_GALEON_L;         
-			sTemp = StringFromKey("GenQuests_7");
-		break; 
-	    case 3: 
-			iShipType = SHIP_PINNACE; 			
-			sTemp = StringFromKey("GenQuests_8");
-		break;  	
-		case 4: 
-			iShipType = SHIP_CARACCA; 			
-			sTemp = StringFromKey("GenQuests_9");
-		break;  	
-	}
-	pchar.questTemp.ReasonToFast.ShipTypeName = sTemp;
+	int iClass = 6;
+	int iRank = sti(pchar.rank);
+	int iShipType = SHIP_BARKENTINE;
+	
+	if(iRank < 6) iClass = 6;
+	if(iRank >= 6 && iRank < 12) iClass = 5;
+	if(iRank >= 12 && iRank < 21) iClass = 5 - rand(1);
+	if(iRank >= 21) iClass = 3 - rand(1);
+	
+	iShipType = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+	pchar.questTemp.ReasonToFast.ShipTypeName = XI_ConvertString(GetBaseShipParamFromType(iShipType, "Name"));
 	
 	return iShipType;
 }
@@ -912,49 +889,28 @@ void ReasonToFast_RemoveVictim()
 void ReasonToFast_PreparePirateShip(string qName) // генерация пиратского корабля
 {
 	ref sld;
-	int iRank = sti(pchar.rank) + 5 + rand(MOD_SKILL_ENEMY_RATE);
+	int iRankPir = sti(pchar.rank) + 5 + rand(MOD_SKILL_ENEMY_RATE);
 	int iShipRank, iShipType;
 	string sTemp, sTemp1;
-
-    if(makeint(pchar.rank) > 13) { iShipRank = rand(2) + 3; }
-    if(makeint(pchar.rank) > 6 && makeint(pchar.rank) < 13) { iShipRank = rand(2); }	
-	if(makeint(pchar.rank) < 7) { iShipRank = rand(1); }
 	
-	switch (iShipRank)
-	{	
-	    case 0: 		 
-			iShipType = SHIP_SCHOONER_W;     	
-			sTemp1 = StringFromKey("GenQuests_10");
-		break; 		
-	    case 1:  
-			iShipType = SHIP_BRIG;     		
-			sTemp1 = StringFromKey("GenQuests_11");
-		break; 		
-	    case 2:  
-			iShipType = SHIP_BRIGANTINE;
-			sTemp1 = StringFromKey("GenQuests_12");
-		break; 
-	    case 3: 
-			iShipType = SHIP_CORVETTE; 	
-			sTemp1 = StringFromKey("GenQuests_13");
-		break; 
-	    case 4: 
-			iShipType = SHIP_FRIGATE;         
-			sTemp1 = StringFromKey("GenQuests_14");
-		break; 
-	    case 5: 
-			iShipType = SHIP_LINESHIP; 			
-			sTemp1 = StringFromKey("GenQuests_15");
-		break;  	
-	}
+	int iClass = 6;
+	int iRank = sti(pchar.rank);
+	
+	if(iRank < 6) iClass = 6;
+	if(iRank >= 6 && iRank < 12) iClass = 5;
+	if(iRank >= 12 && iRank < 21) iClass = 5 - rand(1);
+	if(iRank >= 21) iClass = 3 - rand(1);
+	
+	iShipType = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY);
+	sTemp1 = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(iShipType, "Name")));
 		
 	Log_QuestInfo("Генерим пиратский корабль на глобалке.");
 	
-	sld = GetCharacter(NPC_GenerateCharacter("PirateCapt", "mercen_"+(rand(14)+14), "man", "man", iRank, PIRATE, 30, true, "quest"));	
+	sld = GetCharacter(NPC_GenerateCharacter("PirateCapt", "mercen_"+(rand(14)+14), "man", "man", iRankPir, PIRATE, 30, true, "quest"));	
 	sld.dialog.filename      = "GenQuests_Dialog.c";
 	sld.dialog.currentnode   = "ReasonToFast_FightCap";
 	sTemp = GenerateRandomNameToShip(PIRATE);
-	FantomMakeCoolSailor(sld, iShipType, sTemp, CANNON_TYPE_CULVERINE_LBS18, 50+rand(40), 50+rand(40), 50 + rand(40));
+	FantomMakeCoolSailor(sld, iShipType, sTemp, "", 50+rand(40), 50+rand(40), 50 + rand(40));
 	sld.cirassId = Items_FindItemIdx("cirass1");  // предмета нет, но влияение есть
     FantomMakeCoolFighter(sld, makeint(pchar.rank) + rand(10) + 5, 60 + rand(30), 50, "blade_06", "pistol3","grapeshot", 80);
 		
@@ -1538,7 +1494,7 @@ void PiratesOnUninhabited_InTreasureLoc(String _quest)
 	
 	if(!CheckAttribute(PChar, "GenQuest.PiratesOnUninhabited.TreasureLose"))
 	{
-		count = 2 + makeint(MOD_SKILL_ENEMY_RATE / 3) + dRand(1);
+		count = 2 + makeint(MOD_SKILL_ENEMY_RATE / 3) + hRand(1, location.id);
 		
 		PChar.GenQuest.PiratesOnUninhabited.ShorePiratesQty = count;
 		
@@ -1623,7 +1579,7 @@ void PiratesOnUninhabited_InTreasureLoc(String _quest)
 		{
 			boxItems.cirass3 = 1;
 		}
-		if (drand(7) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
+		if (hrand(7, location.id) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
 		{
 			string amap = SelectAdmiralMaps();
 			if (amap != "") boxItems.(amap)	= 1;
@@ -2482,7 +2438,7 @@ void EncGirl_RapersChest(string qName)
 	{ 
 		boxItems.jewelry47 = 22 + rand(12);	
 	}
-	if (drand(6) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
+	if (hrand(6, location.id) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
 	{
 		string amap = SelectAdmiralMaps();
 		if (amap != "") boxItems.(amap)	= 1;
@@ -2736,13 +2692,13 @@ void EncGirl_ToLoverParents()
 
 void EncGirl_ToLoverParentsExit()
 {
+    ref sld = CharacterFromID("CangGirl");
 	pchar.quest.EncGirl_DeathSimple.over = "yes";
 	ChangeCharacterComplexReputation(pchar,"nobility", -3);
-	AddMoneyToCharacter(pchar, 500 * (sti(pchar.rank) + 10) + drand(5000));
+	AddMoneyToCharacter(pchar, 500 * (sti(pchar.rank) + 10) + hrand(5000, sld.name));
 	AddQuestRecord("JungleGirl", "13");
-	AddQuestUserData("JungleGirl", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
+	AddQuestUserData("JungleGirl", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"), StringFromKey("GenQuests_67")));
 	CloseQuestHeader("JungleGirl");
-	ref sld = CharacterFromID("CangGirl");
 	string sTemp = LAi_FindNearestFreeLocator2Pchar("reload");
 	LAi_SetActorType(sld);
 	LAi_ActorGoToLocation(sld, "reload", sTemp, "none", "", "","", -1.0);
@@ -2794,78 +2750,63 @@ void Set_TreasureBarrel()
 	makearef(trBarrel, nulChr.GenQuest.Barrel);
 	int irand;
 
-	if(GetSummonSkillFromName(pchar, "Fortune") > drand(200))
-	{
-        // О, ГОСПОДИ... to_do: hrand всё исправит
-		irand = drand(20);
-		if(irand == 1) trBarrel.items.jewelry1 = rand(18) + 27;
-		irand = drand(20);
-		if(irand == 2) trBarrel.items.jewelry2 = rand(22) + 22;
-		irand = drand(20);
-		if(irand == 3) trBarrel.items.jewelry3 = rand(15) + 32;
-		irand = drand(20);
-		if(irand == 4) trBarrel.items.jewelry4 = rand(22) + 15;
-		irand = drand(20);
-		if(irand == 5) trBarrel.items.jewelry5 = rand(19) + 22;
-		irand = drand(20);
-		if(irand == 6) trBarrel.items.jewelry6 = rand(22) + 16;
-		irand = drand(20);
-		if(irand == 7) trBarrel.items.jewelry7 = rand(17) + 32;
-		irand = drand(20);
-		if(irand == 8) trBarrel.items.jewelry40 = rand(5) + 18;		
-		irand = drand(20);
-		if(irand == 9) trBarrel.items.jewelry41 = rand(8) + 12;				
-		irand = drand(20);
-		if(irand == 10) trBarrel.items.jewelry42 = rand(35) + 12;
-		irand = drand(20);
-		if(irand == 11) trBarrel.items.jewelry43 = rand(13) + 27;
-		irand = drand(20);
-		if(irand == 12) trBarrel.items.jewelry44 = rand(16) + 18);
-		irand = drand(20);
-		if(irand == 13) trBarrel.items.jewelry45 = rand(30) + 15);
-		irand = drand(20);
-		if(irand == 14) trBarrel.items.jewelry46 = rand(30) + 15);
-		irand = drand(20);
-		if(irand == 15) trBarrel.items.jewelry47 = rand(35) + 14);
-		irand = drand(20);
-		if(irand == 16) trBarrel.items.jewelry48 = rand(24) + 18);
-		irand = drand(20);
-		if(irand == 17) trBarrel.items.jewelry49 = rand(17) + 13);		
-		irand = drand(24);
-		if(irand == 18) trBarrel.items.jewelry50 = rand(15) + 22);		
-		irand = drand(24);
-		if(irand == 19) trBarrel.items.jewelry51 = rand(35) + 42);		
-		irand = drand(24);
-		if(irand == 22) trBarrel.items.jewelry52 = rand(41) + 12);		
-		irand = drand(24);
-		if(irand == 23) trBarrel.items.jewelry53 = rand(66) + 70);		
-		irand = drand(20);						
-		if(irand == 18) trBarrel.items.chest = rand(2) + 1;		
-		irand = drand(20); // 250912
-				
-		irand = drand(25);
-		if(irand == 3) trBarrel.items.amulet_5 = 1;		
-		irand = drand(25);
-		if(irand == 6) trBarrel.items.amulet_10 = 1;
-		irand = drand(25);
-		if(irand == 9) trBarrel.items.amulet_11 = 1;		
-		irand = drand(25);
-		if(irand == 15) 	trBarrel.items.indian_8 = 1;				
-		irand = drand(25);
-		if(irand == 18) 	trBarrel.items.indian_5 = 1;		
-		irand = drand(25);		
-		if(irand == 21) trBarrel.items.icollection = 1; // 250912
-		if(irand == 2)  trBarrel.items.hat3 = 1;
+    // На if'ах оставил старую логику. TO_DO: Переверить, не руша баланс, так как предполагалось рандомить везде.
+    // За счёт "&" для каждой конкретной бочки в конкретный день используется одна и та же дробь
+    string tag2 = TEV.Last_Treasure_Barrel_ID;
+    string tag  = "&" + tag2;
 
-		irand = drand(25);
-		if(irand == 24)
+	if(GetSummonSkillFromName(pchar, "Fortune") > hrand(200, tag2))
+	{
+        switch(hrand(20, tag))
+        {
+            case 1:  trBarrel.items.jewelry1  = rand(18) + 27; break;
+            case 2:  trBarrel.items.jewelry2  = rand(22) + 22; break;
+            case 3:  trBarrel.items.jewelry3  = rand(15) + 32; break;
+            case 4:  trBarrel.items.jewelry4  = rand(22) + 15; break;
+            case 5:  trBarrel.items.jewelry5  = rand(19) + 22; break;
+            case 6:  trBarrel.items.jewelry6  = rand(22) + 16; break;
+            case 7:  trBarrel.items.jewelry7  = rand(17) + 32; break;
+            case 8:  trBarrel.items.jewelry40 = rand(5)  + 18; break;
+            case 9:  trBarrel.items.jewelry41 = rand(8)  + 12; break;
+            case 10: trBarrel.items.jewelry42 = rand(35) + 12; break;
+            case 11: trBarrel.items.jewelry43 = rand(13) + 27; break;
+            case 12: trBarrel.items.jewelry44 = rand(16) + 18; break;
+            case 13: trBarrel.items.jewelry45 = rand(30) + 15; break;
+            case 14: trBarrel.items.jewelry46 = rand(30) + 15; break;
+            case 15: trBarrel.items.jewelry47 = rand(35) + 14; break;
+            case 16: trBarrel.items.jewelry48 = rand(24) + 18; break;
+            case 17: trBarrel.items.jewelry49 = rand(17) + 13; break;
+            case 18: trBarrel.items.chest     = rand(2)  + 1;  break;
+        }
+
+        switch(hrand(24, tag))
+        {
+            case 18: trBarrel.items.jewelry50 = rand(15) + 22; break;
+            case 19: trBarrel.items.jewelry51 = rand(35) + 42; break;
+            case 22: trBarrel.items.jewelry52 = rand(41) + 12; break;
+            case 23: trBarrel.items.jewelry53 = rand(66) + 70; break;
+        }
+
+        switch(hrand(25, tag))
+        {
+            case 2:  trBarrel.items.hat3      = 1; break;
+            case 3:  trBarrel.items.amulet_5  = 1; break;
+            case 6:  trBarrel.items.amulet_10 = 1; break;
+            case 9:  trBarrel.items.amulet_11 = 1; break;
+            case 15: trBarrel.items.indian_8  = 1; break;
+            case 18: trBarrel.items.indian_5  = 1; break;
+            case 21: trBarrel.items.icollection = 1; break;
+        }
+
+		if(hrand(25, tag) == 24)
 		{
 			if (GetCharacterItem(pchar, "map_part1") == 0)
                 trBarrel.items.map_part1 = 1;
 			else if (GetCharacterItem(pchar, "map_full") == 0 && GetCharacterItem(pchar, "map_part2") == 0)
                 trBarrel.items.map_part2 = 1;		
 		}
-		if (drand(30) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
+
+		if (hrand(30, tag) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
 		{
 			string amap = SelectAdmiralMaps();
 			if (amap != "") trBarrel.items.(amap) = 1;
@@ -2873,17 +2814,18 @@ void Set_TreasureBarrel()
 	}
 	else
 	{
-		if(rand(1) == 0) trBarrel.items.mineral2 = rand(7) + 7;
+		if(rand(1) == 0) trBarrel.items.mineral2 = rand(7)  + 7;
 		if(rand(1) == 0) trBarrel.items.mineral3 = rand(15) + 5;
 		if(rand(1) == 0) trBarrel.items.mineral4 = rand(10) + 2;
-		if(rand(1) == 0) trBarrel.items.mineral5 = rand(8) + 4;
+		if(rand(1) == 0) trBarrel.items.mineral5 = rand(8)  + 4;
 		if(rand(1) == 0) trBarrel.items.mineral6 = rand(14) + 7;
 		if(rand(1) == 0) trBarrel.items.mineral7 = rand(12) + 8;
 		if(rand(1) == 0) trBarrel.items.mineral8 = rand(12) + 6;
-		if(rand(1) == 0) trBarrel.items.mineral9 = rand(8) + 2;
-		if(rand(1) == 0) trBarrel.items.mineral10 = rand(16) + 6;
+		if(rand(1) == 0) trBarrel.items.mineral9 = rand(8)  + 2;
+		if(rand(1) == 0) trBarrel.items.mineral10 = rand(16)+ 6;
 	}	
-	trBarrel.items.gold = drand(5000) + 5000;	
+	trBarrel.items.gold = hrand(5000, tag2) + 5000;
+    DeleteAttribute(&TEV, "Last_Treasure_Barrel_ID");
 	LaunchItemsBarrel(&trBarrel);
 }
 //=====================================================================================================================================
@@ -3007,7 +2949,7 @@ void CaptainComission_GetPirateIsland()
 
 void CaptainComission_GetFamilyType()
 {
-	pchar.GenQuest.CaptainComission.FamilyType = drand(4) + 1;
+	pchar.GenQuest.CaptainComission.FamilyType = hrand(4) + 1; // hrand auto tagged
 }
 
 void CaptainComission_30DaysIsLeft(string qName) // прошло 30 дней после разговора в таверне
@@ -3111,7 +3053,7 @@ void CaptainComission_GenerateManager()
     LAi_SetCitizenType(sld);
 	LAi_SetImmortal(sld, true);
 
-	ChangeCharacterAddressGroup(sld, "Plantation_Sp1", "goto", "goto1");
+	ChangeCharacterAddressGroup(sld, "Bridgetown_Plantation_Sp1", "goto", "goto1");
 	
 	LAi_LocationDisableOfficersGen("BridgeTown_Plantation", true);
 	
@@ -3398,7 +3340,7 @@ void CaptainComission_DeliveSlave(string qName)
 void GetSlaveSpeciality()
 {
 	string Speciality;
-	int Spec = drand(2);
+	int Spec = hrand(2); // hrand auto tagged
 	switch (Spec)
     {
         case 0 :
@@ -4879,7 +4821,7 @@ void Convict_LocExit(string qName)
 
 void Convict_GetMineType()
 {
-	pchar.GenQuest.Convict.MineType = drand(2) + 1;
+	pchar.GenQuest.Convict.MineType = hrand(2) + 1; // hrand auto tagged
 }
 
 void Convict_MeetInShore(string qName)
@@ -5170,7 +5112,7 @@ void ShipWreck_SetCapToMap()
 	character.AnalizeShips = true;  //анализировать вражеские корабли при выборе таска
 	character.DontRansackCaptain = true; //не сдаваться
 	
-	SelAllPerksToChar(character, false);
+	SetAllPerksToChar(character, false);
 	
 	Group_FindOrCreateGroup(group);
 	Group_SetTaskAttackInMap(group, PLAYER_GROUP);
@@ -5191,7 +5133,7 @@ void ShipWreck_SetCapToMap()
 	Map_CreateTrader(character.fromShore, character.toShore, "ShipWreck_BadPirate", GetMaxDaysFromIsland2Island(GetArealByCityName(character.toCity), GetArealByCityName(character.fromCity)) + 15);
 	
 	temp = GetCharacterFreeSpace(character, GOOD_SLAVES); // Сколько влезет рабов
-	AddCharacterGoodsSimple(character, GOOD_SLAVES, makeint(temp / 2 + dRand(temp / 2)) - 1);
+	AddCharacterGoodsSimple(character, GOOD_SLAVES, makeint(temp / 2 + hRand(temp / 2)) - 1); // hrand auto tagged
 	
 	pchar.quest.ShipWreck_ShipSink.win_condition.l1 = "Character_sink";
 	pchar.quest.ShipWreck_ShipSink.win_condition.l1.character = "ShipWreck_BadPirate";
@@ -5446,7 +5388,7 @@ void Hold_GenQuest_Init(ref chref)
 {
 	ref rColony;
 	string sColony;
-	
+
 	if(!CheckAttribute(chref,"EncType")) chref.EncType = "trade";
 	
 	switch(chref.EncType)
@@ -5462,6 +5404,8 @@ void Hold_GenQuest_Init(ref chref)
 		break;
 	}
 
+    TEV.TempTag = chref.id + chref.name; // Проверяется в GetQuestNationsCity
+
 	switch(sti(chref.Hold_GenQuest.variant))	
 	{
 		case 0: // "наводка"
@@ -5469,7 +5413,7 @@ void Hold_GenQuest_Init(ref chref)
 			chref.Hold_GenQuest.Nation = FindEnemyNation2NationWithoutPirates(GetBaseHeroNation()); 
 			if(sti(chref.Hold_GenQuest.Nation) < 0) 
 			{
-				chref.Hold_GenQuest.Nation = rand(3);
+				chref.Hold_GenQuest.Nation = rand(NON_PIRATES);
 			}	
 			chref.Hold_GenQuest.Name = GenerateRandomName_Generator(sti(chref.Hold_GenQuest.Nation), "man");
 			
@@ -5489,14 +5433,14 @@ void Hold_GenQuest_Init(ref chref)
 		break;
 
 		case 1: // "подельник"
-			chref.Hold_GenQuest.Nation = rand(3);
+			chref.Hold_GenQuest.Nation = rand(NON_PIRATES);
 			chref.Hold_GenQuest.City = GetQuestNationsCity(sti(chref.Hold_GenQuest.Nation));
 			chref.Hold_GenQuest.Name = GenerateRandomName_Generator(sti(chref.Hold_GenQuest.Nation), "man");
 			chref.Hold_GenQuest.PirateName = "l" + rand(GetNamesCount(NAMETYPE_VIP) - 1);
 		break;
 		
 		case 2: // "выкуп"			
-			chref.Hold_GenQuest.City = GetQuestNationsCity(rand(3));							
+			chref.Hold_GenQuest.City = GetQuestNationsCity(rand(NON_PIRATES));							
 			rColony = GetColonyByIndex(FindColony(chref.Hold_GenQuest.City));
 			chref.Hold_GenQuest.Nation = sti(rColony.nation);
 			chref.Hold_GenQuest.Name = GenerateRandomName_Generator(sti(chref.Hold_GenQuest.Nation), "man");
@@ -5607,7 +5551,7 @@ void Hold_GenQuest_SetMerchant(string qName)
     {
         iChar = NPC_GenerateCharacter("Hold_QuestMerchantGuard_"+i, "off_spa_2", "man", "man", 5, sti(pchar.GenQuest.Hold_GenQuest.Nation), 3, true, "hunter"));
         makeref(sld, Characters[iChar]);
-        SetShipHunter(sld);
+        SetGuardsShips(sld, sti(RealShips[sti(chref.ship.type)].Class));
         SetFantomParamHunter(sld); //крутые парни
         SetCaptanModelByEncType(sld, "war");
         sld.Ship.Mode = "war";
@@ -6737,42 +6681,37 @@ void Deliver_CreateTraderShips(string qName)//создание торговых 
 	Group_SetType("Trade_Attack", "trade");//тип группы
 	for (i=1; i<=2; i++)
 	{
-		if(makeint(pchar.rank) >= 20) { iShipRank = 3; }
-		if(makeint(pchar.rank) >= 15 && makeint(pchar.rank) < 20) { iShipRank = rand(1)+2; }	
-		if(makeint(pchar.rank) >= 10 && makeint(pchar.rank) < 15) { iShipRank = rand(1)+1; }	
-		if(makeint(pchar.rank) >= 5 && makeint(pchar.rank) < 10) { iShipRank = rand(1); }	
+		if(makeint(pchar.rank) >= 21) { iShipRank = 3; }
+		if(makeint(pchar.rank) >= 12 && makeint(pchar.rank) < 21) { iShipRank = 2; }	
+		if(makeint(pchar.rank) >= 6 && makeint(pchar.rank) < 12) { iShipRank = 1; }	
 		if(makeint(pchar.rank) < 5) { iShipRank = 0; }
 		switch (iShipRank)
 		{
 			case 0:  
-				ShipType = SHIP_BARQUE;     					
+				ShipType = GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 				Rank = 12 + rand(5);
-				iCannonType = CANNON_TYPE_CANNON_LBS6;
 			break; 		
 			case 1:  
-				ShipType = SHIP_FLEUT;			
+				ShipType = GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 				Rank = 18 + rand(5);
-				iCannonType = CANNON_TYPE_CANNON_LBS12;
 			break; 
 			case 2: 
-				ShipType = SHIP_PINNACE; 				
+				ShipType = GetRandomShipType(FLAG_SHIP_CLASS_4 + FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 				Rank = 25 + rand(5);
-				iCannonType = CANNON_TYPE_CANNON_LBS16;
 			break; 
 			case 3: 
-				ShipType = SHIP_EASTINDIAMAN;         			
+				ShipType = GetRandomShipType(FLAG_SHIP_CLASS_2 + FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 				Rank = 30 + rand(5);
-				iCannonType = CANNON_TYPE_CANNON_LBS24;
 			break; 			
 		}
 		sld = GetCharacter(NPC_GenerateCharacter("CaptainAttack_"+i, "trader_"+(rand(15)+1), "man", "man", Rank, sNation, 3, true, "hunter"));//создание кэпа
 		if (i == 1)
 		{
-			FantomMakeCoolSailor(sld, ShipType, sTemp1, iCannonType, 48, 35, 35);//создание кораблей
+			FantomMakeCoolSailor(sld, ShipType, sTemp1, -1, 48, 35, 35);//создание кораблей
 		}
 		if (i == 2)
 		{
-			FantomMakeCoolSailor(sld, ShipType, sTemp2, iCannonType, 44, 30, 30);//создание кораблей
+			FantomMakeCoolSailor(sld, ShipType, sTemp2, -1, 44, 30, 30);//создание кораблей
 		}
 		sld.Ship.Mode = "trade";
 		iGoods = sti(pchar.questTemp.jailCanMove.Deliver.Goods);
@@ -6849,39 +6788,35 @@ void Deliver_CreateCureerShips(string qName)//создание курьерск�
     Island_SetReloadEnableGlobal(pchar.questTemp.jailCanMove.Deliver.Island, false);
     Group_FindOrCreateGroup("Cureer_Attack");
 	Group_SetType("Cureer_Attack", "war");
-		if(makeint(pchar.rank) >= 24) { iShipRank = 3; }
-		if(makeint(pchar.rank) >= 14 && makeint(pchar.rank) < 24) { iShipRank = 2; }	
-		if(makeint(pchar.rank) >= 6 && makeint(pchar.rank) < 14) { iShipRank = 1; }	
+		if(makeint(pchar.rank) >= 21) { iShipRank = 3; }
+		if(makeint(pchar.rank) >= 12 && makeint(pchar.rank) < 21) { iShipRank = 2; }	
+		if(makeint(pchar.rank) >= 6 && makeint(pchar.rank) < 12) { iShipRank = 1; }	
 		if(makeint(pchar.rank) < 6) { iShipRank = 0; }
 		switch (iShipRank)
 		{
 			case 0:  
-				ShipType = SHIP_CAREERLUGGER;     					
+				ShipType = GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY);
 				Rank = 12 + rand(5);
                 Blade = "blade_08";
-				iCannonType = CANNON_TYPE_CANNON_LBS6;
 			break; 		
 			case 1:  
-				ShipType = SHIP_BRIGANTINE;			
+				ShipType = GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY);
 				Rank = 17 + rand(5);
                 Blade = "blade_09";
-				iCannonType = CANNON_TYPE_CANNON_LBS16;
 			break; 
 			case 2: 
-				ShipType = SHIP_POLACRE; 				
+				ShipType = GetRandomShipType(FLAG_SHIP_CLASS_4 + FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY);
 				Rank = 22 + rand(5);
                 Blade = "blade_10";
-				iCannonType = CANNON_TYPE_CANNON_LBS20;
 			break; 
 			case 3: 
-				ShipType = SHIP_FRIGATE;         			
+				ShipType = GetRandomShipType(FLAG_SHIP_CLASS_3 + FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY);
 				Rank = 30 + rand(5);
                 Blade = "blade_13";
-				iCannonType = CANNON_TYPE_CANNON_LBS24;
 			break; 			
 		}
 	sld = GetCharacter(NPC_GenerateCharacter("CureerAttack", "off_" + NationShortName(iNation) + "_" + (rand(1) + 1), "man", "man", Rank, sNation, 3, true, "quest"));
-	FantomMakeCoolSailor(sld, ShipType, sTemp, iCannonType, 75, 50, 50);
+	FantomMakeCoolSailor(sld, ShipType, sTemp, -1, 75, 50, 50);
 	FantomMakeCoolFighter(sld, Rank, 40, 40, Blade, "pistol3", "grapeshot", 40);
 	Group_AddCharacter("Cureer_Attack", "CureerAttack");
 		DeleteAttribute(sld, "SaveItemsForDead");
@@ -7431,45 +7366,57 @@ void FrahtHunterOnSea()//охотники в акватории порта пр�
 	for (i=1; i<=2; i++)
 	{
 		iRank = sti(pchar.rank) + rand(5);
-		if(makeint(pchar.rank) >= 25) { iShipRank = 5; }
+		if(makeint(pchar.rank) >= 30) { iShipRank = 6; }
+		if(makeint(pchar.rank) >= 25 && makeint(pchar.rank) < 30) { iShipRank = 5; }
 		if(makeint(pchar.rank) >= 19 && makeint(pchar.rank) < 25) { iShipRank = 4; }	
 		if(makeint(pchar.rank) >= 13 && makeint(pchar.rank) < 18) { iShipRank = 3; }	
 		if(makeint(pchar.rank) >= 8 && makeint(pchar.rank) < 12) { iShipRank = 2; }	
 		if(makeint(pchar.rank) >= 5 && makeint(pchar.rank) < 8) { iShipRank = 1; }	
 		if(makeint(pchar.rank) < 5) { iShipRank = 0; }
+		
+		
+		int iClassFlag = FLAG_SHIP_CLASS_5;
 		switch (iShipRank)
 		{
 			case 0:  
-				iShipType = SHIP_LUGGER + rand(makeint(SHIP_SLOOP - SHIP_LUGGER));     					
-				iCannonType = CANNON_TYPE_CANNON_LBS6;
-				sBlade = "blade_03";
-			break; 	
+				iClassFlag = FLAG_SHIP_CLASS_6;					
+				iTotalTemp = CANNON_TYPE_CANNON_LBS6;
+				sTotalTemp = "blade_03";
+			break;
 			case 1:  
-				iShipType = SHIP_SLOOP + rand(makeint(SHIP_BRIG - SHIP_SLOOP));					
-				iCannonType = CANNON_TYPE_CANNON_LBS12;
-				sBlade = "blade_05";
-			break; 		
+				iClassFlag = FLAG_SHIP_CLASS_5;					
+				iTotalTemp = CANNON_TYPE_CANNON_LBS6;
+				sTotalTemp = "blade_03";
+			break; 	
 			case 2:  
-				iShipType = SHIP_BRIG + rand(makeint(SHIP_GALEON_L - SHIP_BRIG));			
-				iCannonType = CANNON_TYPE_CANNON_LBS16;
-				sBlade = "blade_06";
+				iClassFlag = FLAG_SHIP_CLASS_4;				
+				iTotalTemp = CANNON_TYPE_CANNON_LBS12;
+				sTotalTemp = "blade_05";
 			break; 		
-			case 3: 
-				iShipType = SHIP_GALEON_L + rand(makeint(SHIP_XebekVML - SHIP_GALEON_L));				
-				iCannonType = CANNON_TYPE_CULVERINE_LBS18;
-				sBlade = "blade_10";
+			case 3:  
+				iClassFlag = FLAG_SHIP_CLASS_3;	
+				iTotalTemp = CANNON_TYPE_CANNON_LBS16;
+				sTotalTemp = "blade_06";
 			break; 
 			case 4: 
-				iShipType = SHIP_CORVETTE + rand(makeint(SHIP_POLACRE - SHIP_CORVETTE));         			
-				iCannonType = CANNON_TYPE_CANNON_LBS20;
-				sBlade = "blade_13";
+				iClassFlag = FLAG_SHIP_CLASS_3;		
+				iTotalTemp = CANNON_TYPE_CULVERINE_LBS18;
+				sTotalTemp = "blade_10";
 			break; 
 			case 5: 
-				iShipType = SHIP_GALEON_H + rand(makeint(SHIP_FRIGATE_H - SHIP_GALEON_H));  						
-				iCannonType = CANNON_TYPE_CANNON_LBS24;
-				sBlade = "blade_19";
+				iClassFlag = FLAG_SHIP_CLASS_2;     			
+				iTotalTemp = CANNON_TYPE_CANNON_LBS20;
+				sTotalTemp = "blade_13";
+			break; 
+			case 6: 
+				iClassFlag = FLAG_SHIP_CLASS_2;					
+				iTotalTemp = CANNON_TYPE_CANNON_LBS24;
+				sTotalTemp = "blade_19";
 			break;  				
 		}
+		
+		
+		iShipType = GetRandomShipType(iClassFlag, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
 		sld = GetCharacter(NPC_GenerateCharacter("FrahtAttack_"+i, "citiz_"+(rand(9)+41), "man", "man", iRank, iNation, 30, true, "quest"));//создание кэпа
 		FantomMakeSmallSailor(sld, iShipType, "", iCannonType, 30+rand(15), 20+rand(10), 20+rand(15), 20+rand(15), 20+rand(15));
 		FantomMakeCoolFighter(sld, iRank, 30, 30, sBlade, "pistol1", "bullet", 30);
@@ -7510,7 +7457,7 @@ void EnemyNationHunterOnMap(bool _fast)//охотники вражеской н�
         sld.DontRansackCaptain = true;
         sld.mapEnc.type = "war";
         sld.mapEnc.Name = StringFromKey("GenQuests_89");
-		sld.hunter = ""+iNation+"";
+		sld.hunter = iNation;
         Group_AddCharacter(sGroup, sCapId + i);
     }
     Group_SetGroupCommander(sGroup, sCapId+ "1");
@@ -8031,15 +7978,15 @@ void CreateDisasterShip_VSPirate(string qName)//создаем потерявш�
         switch (i)
         {
 			case 1:
-				iShipType = SHIP_BRIG+rand(1);
+				iShipType = SHIP_BRIG;
 				iTemp = CANNON_TYPE_CANNON_LBS16;
             break;
             case 2:
-				iShipType = SHIP_BRIGANTINE+rand(1);
-				iTemp = CANNON_TYPE_CANNON_LBS16;
+				iShipType = SHIP_BRIGANTINE;
+				iTemp = CANNON_TYPE_CANNON_LBS12;
             break;
             case 3:
-				iShipType = SHIP_SLOOP+rand(1);
+				iShipType = SHIP_SLOOP;
 				iTemp = CANNON_TYPE_CANNON_LBS12;
             break;
 		}
@@ -8268,11 +8215,11 @@ void CreateCaravanNearIsland(string qName)//защита торговцев от
 				iTemp = CANNON_TYPE_CANNON_LBS16;
             break;
             case 2:
-				iShipType = SHIP_FLEUT + drand(2);
+				iShipType = SHIP_FLEUT + hrand(2);
 				iTemp = CANNON_TYPE_CANNON_LBS12;
             break;
             case 3:
-				iShipType = SHIP_SCHOONER + drand(3);
+				iShipType = SHIP_SCHOONER + hrand(3);
 				iTemp = CANNON_TYPE_CULVERINE_LBS8;
             break;
 		}
@@ -8297,19 +8244,19 @@ void CreateCaravanNearIsland(string qName)//защита торговцев от
         switch (i)
         {
 			case 1:
-				iShipType = SHIP_CORVETTE + drand(1);
+				iShipType = SHIP_CORVETTE + hrand(1);
 				iTemp = CANNON_TYPE_CULVERINE_LBS18;
             break;
 			case 2:
-				iShipType = SHIP_BRIG + crand(1);
+				iShipType = SHIP_BRIG + hrand(1);
 				iTemp = CANNON_TYPE_CANNON_LBS16;
             break;
             case 3:
-				iShipType = SHIP_BRIGANTINE + drand(1);
+				iShipType = SHIP_BRIGANTINE + hrand(1);
 				iTemp = CANNON_TYPE_CANNON_LBS16;
             break;
             case 4:
-				iShipType = SHIP_SLOOP + crand(1);
+				iShipType = SHIP_SLOOP + hrand(1);
 				iTemp = CANNON_TYPE_CULVERINE_LBS8;
             break;
 		}

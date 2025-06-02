@@ -48,7 +48,7 @@ int GenerateShip(int iBaseType, bool isLock)
 	{
 	    int iCaliber = sti(rRealShip.MaxCaliber);
 		//string sCannonType = GetCannonType(rRealShip.Cannon);
-	    if (sti(rRealShip.Class) != 6)
+	    if (sti(rRealShip.Class) != 7)
 	    {  // чтоб не было баркаса с 16ф				
 		    switch(iCaliber)
 		    {
@@ -181,14 +181,14 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 	aref 	refShip;
 	float	Кdckyrd = 1.0;
 	bool	isShipyard = false; 
-	
+
 	int iShip = CreateBaseShip(iBaseType);
 
 	if (iShip == -1)
 	{
 		return SHIP_NOTUSED;
 	}
-	
+
 	ref rRealShip = GetRealShip(iShip);
 	ref rBaseShip = GetShipByType(sti(rRealShip.BaseType));
 	// boal 26/05/06 изменим
@@ -221,22 +221,22 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 	if (!CheckAttribute(rRealShip, "isFort"))
 	{
 		int iCaliber = sti(rRealShip.MaxCaliber);
-		if (sti(rRealShip.Class) != 6 && !CheckAttribute(rRealShip, "QuestShip"))
+		if (sti(rRealShip.Class) != 7 && !CheckAttribute(rRealShip, "QuestShip"))
 		{  // чтоб не было баркаса с 16ф
 			switch(iCaliber)
 			{
 				case 3:
                     iCaliber = 0;
-				break;				
+				break;
 				case 6:
                     iCaliber = 1;
-				break;				
+				break;
 				case 8:
 					iCaliber = 2;
-				break;				
+				break;
 				case 12:
 					iCaliber = 3;
-				break;				
+				break;
 				case 16:
 					iCaliber = 4;
 				break;
@@ -245,7 +245,7 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 				break;
 				case 20:
 					iCaliber = 6;
-				break;				
+				break;
 				case 24:
 					iCaliber = 7;
 				break;
@@ -257,7 +257,7 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 				break;
 				case 42:
 					iCaliber = 10;
-				break;			
+				break;
 			}
 			//iCaliber = iCaliber + rand(2) - 1;
 			iCaliber = iCaliber-rand(1); //Jason: согласно новой системе орудий калибр должен быть постоянен, но пока поставим рандом на единицу меньше, а больше - нельзя по определению, на рез. тестов решим, фиксировать или рандомить
@@ -309,99 +309,11 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 			rRealShip.MaxCaliber = iCaliber;
 		}
 
-		int   iCannonDiff 		= 0;
-		int   iDiffClass  		= 5 - makeint(sti(rRealShip.Class)/2);
-						
-		switch(rRealShip.BaseName)
-		{
-			case "Barque":
-				iCannonDiff = rand(1);  //  14,12   (0,2,6,6) (0,2,5,5)
-			break;		
-			case "Schooner":
-				iCannonDiff = rand(1);  // 12, 10     (5-ый класс)
-			break;
-			case "Barkentine":
-				iCannonDiff = rand(1);  // 14, 12   (4-ый класс)
-			break;
-		    case "Shnyava":
-				iCannonDiff = rand(1);  
-			break;
-			case "Fleut":
-				iCannonDiff = rand(1);  // 18, 16    (4-ый класс)
-			break;
-			case "Caravel":
-				iCannonDiff = rand(1);  // 20, 18, (3-ый класс)
-			break;
-			case "Pinnace":
-				iCannonDiff = rand(1);  // 18, 16   (3-ий класс)
-			break;
-			case "Caracca":
-				iCannonDiff = rand(1);  // 18, 16   (3-ий класс)
-			break;		
-			case "LuggerQuest": 
-				iCannonDiff = rand(1);  // 12, 10      (6-ой класс)
-			break;
-			case "Lugger": 
-				iCannonDiff = rand(1);  // 12, 10      (6-ой класс)
-			break;			
-			case "Sloop": 
-				iCannonDiff = rand(1);  // 14, 12      (6-ой класс)
-			break;			
-			case "Brigantine":
-				iCannonDiff = rand(1);  // 14, 12	   (4-ый класс)
-			break;			
-			case "Brig":
-				iCannonDiff = rand(1);  // 16, 14    (4-ый класс)
-			break;
-			case "Schooner_W":
-				iCannonDiff = rand(1);  // 20, 18, 16     (5-ый класс)
-			break;			
-			case "Galeon_l":
-				iCannonDiff = rand(1);  // 20, 18    (4-ый класс)
-			break;			
-			case "Corvette":
-				iCannonDiff = rand(1);  // 20, 18
-			break;
-			case "XebekVML":
-				iCannonDiff = rand(1);  // 32, 30, 28     (3-ий класс)
-			break;
-			case "Polacre":
-				iCannonDiff = rand(2);  // 22, 20, 18     (3-ий класс)
-			break;
-			case "Navio":
-				iCannonDiff = rand(2);  // 36, 34, 32    (3-ий класс)
-			break;
-			case "EastIndiaMan":
-				iCannonDiff = rand(2);  // 36, 34, 32    (3-ий класс)
-			break;
-			case "Galeon_h":
-				iCannonDiff = rand(4);  // 54, 52, 50, 48, 46    (3-ий класс)
-			break;
-			case "Frigate":
-				iCannonDiff = rand(3);  // 46, 44, 42, 40    (2-ой класс)
-			break;
-			case "Frigate_h":
-				iCannonDiff = rand(3);  // 46, 44, 42, 40    (2-ой класс)
-			break;
-			case "Lineship":
-				iCannonDiff = rand(4);  // 56, 54, 52, 50, 48    (2-ой класс)
-			break;			
-			case "Warship":
-				iCannonDiff = rand(4);  // 66, 64, 62, 60, 58   (1-ый класс)
-			break;			
-			case "Battleship":
-				iCannonDiff = rand(5);  // 80, 78, 76, 74, 72, 70   (1-ый класс)
-			break;
-			case "Manowar":
-				iCannonDiff = rand(5);  // 102, 100, 98, 96, 94, 92  (1-ый класс)
-			break;
-			case "Manowar_e":
-				iCannonDiff = rand(5);  // 102, 100, 98, 96, 94, 92  (1-ый класс)
-			break;
-		}
+		int   iCannonDiff 		= rand(sti(sti(rRealShip.rcannon) * 10 / 100 + 1));
+		int   iDiffClass  		= 6 - makeint(sti(rRealShip.Class)/2);
 		
 		if(CheckAttribute(rRealShip, "QuestShip") || isShipyard) iCannonDiff = 0;
-				
+
 		// ---> собственно сам рэндом стволов
 		makearef(refShip, chr.Ship);
 		ResetShipCannonsDamages(chr);
@@ -469,14 +381,14 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 		rRealShip.MinCrew         = makeint(sti(rRealShip.MinCrew) + Кdckyrd * (rand(makeint(sti(rRealShip.MinCrew)/3)) - makeint(sti(rRealShip.MinCrew)/6)));
 		rRealShip.Weight		  = sti(rRealShip.Weight) + makeint(Кdckyrd * (rand(sti(rRealShip.Weight)/20) - rand(sti(rRealShip.Weight)/20)));
 	}	
-	
+
 	// to_do del -->
 	rRealShip.BoardingCrew    = 0;
 	rRealShip.GunnerCrew      = 0;
 	rRealShip.CannonerCrew    = 0;
 	rRealShip.SailorCrew      = sti(rRealShip.OptCrew);
 	// to_do del <--
-	
+
 	if(sti(rRealShip.CannonsQuantityMin) > 0) // баркасы не учитываем
 	{
 		if(sti(rRealShip.CannonsQuantityMax) == sti(rRealShip.CannonsQuantity)) // это в основном квестовые корабли, но мало ли .....
@@ -486,7 +398,7 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 			rRealShip.Tuning.Cannon   = true;			
 		}
 	}
-		
+
 	if(!CheckAttribute(rRealShip, "QuestShip"))
 	{
 		rRealShip.Capacity  = sti(rRealShip.Capacity) + sti(rRealShip.Bonus_Capacity);
@@ -494,9 +406,9 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 		rRealShip.SpeedRate = stf(rRealShip.SpeedRate) + stf(rRealShip.Bonus_SpeedRate);
 		rRealShip.TurnRate  = stf(rRealShip.TurnRate) + stf(rRealShip.Bonus_TurnRate);
 	}	
-	
+
 	rRealShip.BaseHP		= sti(rRealShip.HP); // неизменяемая база
-    
+
 	int 	iDiffWeight		= sti(rRealShip.Weight) 	- sti(rBaseShip.Weight);
 	int 	iDiffCapacity	= sti(rRealShip.Capacity) 	- sti(rBaseShip.Capacity);
 	int 	iDiffMaxCrew	= sti(rRealShip.MaxCrew) 	- sti(rBaseShip.MaxCrew);
@@ -514,6 +426,43 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 	return iShip;
 }
 // -> ugeen
+
+// belamour установить максимальные характеристики кораблю
+void SetMaxShipStats(ref chr)
+{
+	int iShipType = GetCharacterShipType(chr);
+	if(iShipType == SHIP_NOTUSED) return false;
+	
+	ref rRealShip = GetRealShip(iShipType);
+	ref rBaseShip = GetShipByType(sti(rRealShip.BaseType));
+	if(CheckAttribute(rRealShip, "QuestShip")) return false;
+	
+	int iCannonDiff = sti(sti(rBaseShip.rcannon) * 10 / 100 + 1);
+	int iClass = sti(rRealShip.Class);
+	int iDiffClass  = 6 - makeint(iClass/2);
+	
+	if (iClass > 6) iCannonDiff = 0;
+	
+	rRealShip.Bonus_Capacity 	= makeint((sti(rBaseShip.Capacity)*iCannonDiff)/(15 * iDiffClass));
+	rRealShip.Bonus_HP 			= makeint((sti(rBaseShip.HP)*iCannonDiff)/(15 * iDiffClass));  
+	rRealShip.Bonus_SpeedRate   = (stf(rBaseShip.SpeedRate)*iCannonDiff)/(15 * iDiffClass);
+	rRealShip.Bonus_TurnRate    = (stf(rBaseShip.TurnRate)*iCannonDiff)/(15 * iDiffClass);
+	
+	rRealShip.SpeedRate	   		= stf(rBaseShip.SpeedRate) + (stf(rBaseShip.SpeedRate) / 10.0);
+	rRealShip.TurnRate         	= stf(rBaseShip.TurnRate) + (stf(rBaseShip.TurnRate) / 10.0);
+	rRealShip.HP               	= sti(rBaseShip.HP) + makeint(sti(rBaseShip.HP)/10);
+	rRealShip.Capacity        	= sti(rBaseShip.Capacity) + makeint(sti(rBaseShip.Capacity)/8);
+	rRealShip.OptCrew         	= sti(rBaseShip.OptCrew) + makeint(sti(rBaseShip.OptCrew)/6);
+	rRealShip.MaxCrew         	= makeint(sti(rBaseShip.OptCrew) * 1.25 + 0.5);  // 25% перегруза
+	rRealShip.MinCrew         	= sti(rBaseShip.MinCrew) + makeint(sti(rBaseShip.MinCrew)/6);
+	
+	rRealShip.Capacity  = sti(rRealShip.Capacity) + sti(rRealShip.Bonus_Capacity);
+	rRealShip.HP        = sti(rRealShip.HP) + sti(rRealShip.Bonus_HP);
+	rRealShip.SpeedRate = stf(rRealShip.SpeedRate) + stf(rRealShip.Bonus_SpeedRate);
+	rRealShip.TurnRate  = stf(rRealShip.TurnRate) + stf(rRealShip.Bonus_TurnRate);
+	
+	rRealShip.BaseHP		= sti(rRealShip.HP); // неизменяемая база
+}
 
 //Jason, генерация корабля с заданными статами; кроме числа орудий - всегда макс.
 int GenerateShipHand(ref chr, int iType, int cc, int cp, int cr, int hp, int pr, float sr, float tr, float aw)
@@ -601,6 +550,17 @@ int CreateBaseShip(int iBaseType)
 	if (iArcadeSails == 0) // момент инерции ниже для тактики
 	{
 	    rRealShip.InertiaAccelerationY = stf(rRealShip.InertiaAccelerationY) / 2.0;
+	}
+	
+	SetShipTraits(rRealShip);
+	
+	// belamour пропишем сразу поворотные лафеты
+	if(CheckAttribute(rRealShip, "Traits") && rRealShip.Traits == "trait11")
+	{
+		rRealShip.Cannons.Borts.cannonl.FireZone = stf(rRealShip.Cannons.Borts.cannonl.FireZone) + Degree2Radian(7.0);
+		rRealShip.Cannons.Borts.cannonr.FireZone = stf(rRealShip.Cannons.Borts.cannonr.FireZone) + Degree2Radian(7.0);
+		rRealShip.Cannons.Borts.cannonf.FireZone = stf(rRealShip.Cannons.Borts.cannonf.FireZone) + Degree2Radian(7.0);
+		rRealShip.Cannons.Borts.cannonb.FireZone = stf(rRealShip.Cannons.Borts.cannonb.FireZone) + Degree2Radian(7.0);
 	}
     
 	return iShip;
@@ -803,7 +763,7 @@ float FindShipSpeed(aref refCharacter)
 	float fTRFromShipState = fSpeedFromHp * fTRFromSailDamage;
 	
 	float	fLoad = Clampf(stf(refCharacter.Ship.Cargo.Load) / stf(rShip.Capacity));
-	float	fTRFromWeight = Clampf(1.03 - stf(rShip.SpeedDependWeight) * fLoad);
+	float	fTRFromWeight = Clampf(1.03 - stf(rShip.SpeedDependWeight) * fLoad * GetFloatByCondition(HasShipTrait(refCharacter, "trait02"), 1.0, 0.85));
 	float   fTRFromSkill = SpeedBySkill(refCharacter);
 	// от команды
 	float fCrewMax = stf(rShip.MaxCrew);
@@ -816,6 +776,45 @@ float FindShipSpeed(aref refCharacter)
 	float  fTRFromPeople;
 	fTRFromPeople = 0.85 + ((GetCrewExp(refCharacter, "Sailors") * fCrewCur) / (fCrewOpt * GetCrewExpRate())) * 0.15;
 	if (fTRFromPeople > 1) fTRFromPeople = 1;
+	
+	if(HasShipTrait(refCharacter, "trait04"))
+	{
+		if(GetHullPercent(refCharacter) < 40 || CheckAttribute(refCharacter, "Tmp.trait04.timer"))
+		{
+			fMaxSpeedZ *= 1.2;
+			refCharacter.Tmp.trait04 = true;
+		}
+		else
+		{
+			if(CheckAttribute(refCharacter, "Tmp.trait04") && !CheckAttribute(refCharacter, "Tmp.trait04.timer"))
+			{
+				refCharacter.Tmp.trait04.timer = true;
+				DoQuestFunctionDelay("ReactivateTrait04", 20.0);
+			}
+		}
+	}
+	
+	if(HasShipTrait(refCharacter, "trait21"))
+	{
+		float rb, lb, fb, bb;
+		if(CheckAttribute(refCharacter, "Ship.Cannons.borts.cannonr.ChargeRatio"))
+			rb = stf(refCharacter.Ship.Cannons.borts.cannonr.ChargeRatio);
+		if(CheckAttribute(refCharacter, "Ship.Cannons.borts.cannonl.ChargeRatio"))
+			lb = stf(refCharacter.Ship.Cannons.borts.cannonl.ChargeRatio);
+		if(CheckAttribute(refCharacter, "Ship.Cannons.borts.cannonf.ChargeRatio"))
+			fb = stf(refCharacter.Ship.Cannons.borts.cannonf.ChargeRatio);
+		if(CheckAttribute(refCharacter, "Ship.Cannons.borts.cannonb.ChargeRatio"))
+			bb = stf(refCharacter.Ship.Cannons.borts.cannonb.ChargeRatio);
+		
+		int rcc = 0;
+		
+		if (rb > 0.0 && rb < 1.0) rcc++;
+		if (lb > 0.0 && lb < 1.0) rcc++;
+		if (fb > 0.0 && fb < 1.0) rcc++;
+		if (bb > 0.0 && bb < 1.0) rcc++;
+		
+		fMaxSpeedZ *= 1.0 + 0.05 * makefloat(rcc);
+	}
 	 
 	fMaxSpeedZ = fMaxSpeedZ * fTRFromWeight * fTRFromSkill * fTRFromShipState * fTRFromPeople;
 
@@ -992,174 +991,76 @@ void SetShipyardStore(ref NPChar)
     
     if (bBettaTestMode)
     {
-        for (i = 1; i <= SHIP_TYPES_QUANTITY; i++)
+        for (i = 1; i < GetArraySize(&ShipsTypes); i++)
         {
+			ref refShip;
+			makeref(refShip,ShipsTypes[i]);
+			if (!CheckAttribute(refShip, "Class"))
+			{
+				continue;
+			}
             attrName = "ship" + i;
 			FillShipParamShipyard(NPChar, GenerateStoreShipExt(i-1, NPChar), attrName);
         }        
         return;
     }
+	int iNationFlag = GetNationFlag(sti(NPChar.nation));
 	
-    if(sti(NPChar.nation) == ENGLAND || sti(NPChar.nation) == FRANCE || sti(NPChar.nation) == SPAIN || sti(NPChar.nation) == HOLLAND)
+	FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_TARTANE, NPChar), "ship1");
+	
+	
+	iTest_ship = rand(2);
+	if (iTest_ship != 0) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_7+FLAG_SHIP_CLASS_6+FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship2");
+	iTest_ship = rand(2);
+	if (iTest_ship != 0) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship3");
+	iTest_ship = rand(3);
+	if (iTest_ship != 0) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_MERCHANT, iNationFlag), NPChar), "ship4");
+	iTest_ship = rand(1);
+	if (iTest_ship != 0) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship5");
+	
+	if (sti(PChar.rank) > 3)
 	{
-		FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_TARTANE, NPChar), "ship1");
-		
-		iTest_ship = rand(2);
-		if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_WAR_TARTANE, NPChar), "ship2");
-		if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_LUGGER, NPChar), "ship2");
-		
-		iTest_ship = rand(2);
-		if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_LUGGER, NPChar), "ship3");
-		if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SLOOP, NPChar), "ship3");
-		
-		iTest_ship = rand(3);
-		if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SLOOP, NPChar), "ship4");
-		if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_LUGGER, NPChar), "ship4");
-		if (iTest_ship == 3) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_CAREERLUGGER, NPChar), "ship4");
-		
-		if (sti(PChar.rank) > 1)
-		{
-			iTest_ship = rand(4);
-			if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SCHOONER, NPChar), "ship5");
-			if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BARQUE, NPChar), "ship5");
-	
-			iTest_ship = rand(4);
-			if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SCHOONER, NPChar), "ship6");
-			if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BARQUE, NPChar), "ship6");
-		}
-		
-		if (sti(PChar.rank) > 3)
-		{
-			iTest_ship = rand(6);
-			if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_CARAVEL, NPChar), "ship8");
-			if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SHNYAVA, NPChar), "ship8");
-	
-			iTest_ship = rand(6);
-			if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_FLEUT, NPChar), "ship9");
-			if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_CARAVEL, NPChar), "ship9");
-	
-			iTest_ship = rand(6);
-			if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_FLEUT, NPChar), "ship10");
-			if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_CARAVEL, NPChar), "ship10");
-			if (iTest_ship == 3) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BARKENTINE, NPChar), "ship10");		
-			if (iTest_ship == 4) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SHNYAVA, NPChar), "ship10");		
-		}
-		
-		if (sti(PChar.rank) > 5)
-		{
-			iTest_ship = rand(8);
-			if (iTest_ship == 1 && sti(NPChar.nation) == ENGLAND) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BRIG, NPChar), "ship11");
-			if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_FLEUT, NPChar), "ship11");
-			if (iTest_ship == 3) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BARKENTINE, NPChar), "ship11");
-			if (iTest_ship == 4 && sti(NPChar.nation) == FRANCE) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SCHOONER_W, NPChar), "ship11");
-			if (iTest_ship == 5 && sti(NPChar.nation) == HOLLAND) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SCHOONER_W, NPChar), "ship11");
-	
-			iTest_ship = rand(8);
-			if (iTest_ship == 1 && sti(NPChar.nation) == ENGLAND) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BRIG, NPChar), "ship12");
-			if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_GALEON_L, NPChar), "ship12");
-			if (iTest_ship == 3 && sti(NPChar.nation) == SPAIN) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BRIGANTINE, NPChar), "ship12");
-			if (iTest_ship == 4 && sti(NPChar.nation) == FRANCE) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SCHOONER_W, NPChar), "ship12");
-			if (iTest_ship == 5 && sti(NPChar.nation) == HOLLAND) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SCHOONER_W, NPChar), "ship12");
-	
-			iTest_ship = rand(8);
-			if (iTest_ship == 1 && sti(NPChar.nation) == ENGLAND) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BRIG, NPChar), "ship13");
-			if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_GALEON_L, NPChar), "ship13");
-			if (iTest_ship == 3 && sti(NPChar.nation) == SPAIN) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BRIGANTINE, NPChar), "ship13");
-			if (iTest_ship == 4 && sti(NPChar.nation) == FRANCE) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SCHOONER_W, NPChar), "ship13");
-			if (iTest_ship == 5 && sti(NPChar.nation) == HOLLAND) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SCHOONER_W, NPChar), "ship13");
-		}
-		
-		if (sti(PChar.rank) > 8)
-		{
-			iTest_ship = rand(30);
-			if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_GALEON_L, NPChar), "ship14");
-			if (iTest_ship == 2 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_CORVETTE, NPChar), "ship14");
-			if (iTest_ship == 3 && sti(NPChar.nation) == FRANCE) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_CORVETTE, NPChar), "ship14");
-			if (iTest_ship == 4) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_CARACCA, NPChar), "ship14");
-			
-			if (iTest_ship == 5 && sti(NPChar.nation) == SPAIN) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_XebekVML, NPChar), "ship14");
-			if (iTest_ship == 6 && sti(NPChar.nation) == HOLLAND) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_XebekVML, NPChar), "ship14");
-			
-			if (iTest_ship == 7 && sti(NPChar.nation) == SPAIN) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_POLACRE, NPChar), "ship14");
-			if (iTest_ship == 6 && sti(NPChar.nation) == FRANCE) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_POLACRE, NPChar), "ship14");
-	
-			iTest_ship = rand(40);
-			if (iTest_ship == 1 && sti(NPChar.nation) == SPAIN) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_GALEON_H, NPChar), "ship15");
-			if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_PINNACE, NPChar), "ship15");
-			if (iTest_ship == 3 && sti(NPChar.nation) == ENGLAND) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_CORVETTE, NPChar), "ship15");
-			if (iTest_ship == 4 && sti(NPChar.nation) == FRANCE) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_CORVETTE, NPChar), "ship15");
-			
-			if (iTest_ship == 5 && sti(NPChar.nation) == SPAIN) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_XebekVML, NPChar), "ship15");
-			if (iTest_ship == 6 && sti(NPChar.nation) == HOLLAND) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_XebekVML, NPChar), "ship15");
-			
-			if (iTest_ship == 7 && sti(NPChar.nation) == SPAIN) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_POLACRE, NPChar), "ship15");
-			if (iTest_ship == 6 && sti(NPChar.nation) == FRANCE) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_POLACRE, NPChar), "ship15");
-		}
-		if (sti(PChar.rank) > 12)
-		{	
-			iTest_ship = rand(30);
-			if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_PINNACE, NPChar), "ship16");
-			if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_NAVIO, NPChar), "ship16");
-			if (iTest_ship == 3) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_EASTINDIAMAN, NPChar), "ship16");
-			if (iTest_ship == 4 && sti(NPChar.nation) == SPAIN) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_GALEON_H, NPChar), "ship16");
-			if (iTest_ship == 5 && sti(NPChar.nation) == ENGLAND) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_FRIGATE, NPChar), "ship16");
-			if (iTest_ship == 6 && sti(NPChar.nation) == FRANCE) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_FRIGATE, NPChar), "ship16");
-			if (iTest_ship == 7 && sti(NPChar.nation) == FRANCE) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_CORVETTE, NPChar), "ship16");
-			if (iTest_ship == 8) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_FRIGATE_H, NPChar), "ship16");
-		}  
+		iTest_ship = rand(4);
+		if (iTest_ship <= 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_MERCHANT, iNationFlag), NPChar), "ship6");
+		iTest_ship = rand(4);
+		if (iTest_ship <= 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship7");
 	}
-	else
+	
+	if (sti(PChar.rank) > 7)
 	{
-		iTest_ship = rand(2);
-		if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_WAR_TARTANE, NPChar), "ship2");
-		if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_LUGGER, NPChar), "ship2");
-		
-		iTest_ship = rand(2);
-		if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_LUGGER, NPChar), "ship3");
-		if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SLOOP, NPChar), "ship3");
-		
-		iTest_ship = rand(3);
-		if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SLOOP, NPChar), "ship4");
-		if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_LUGGER, NPChar), "ship4");
-		
-		if (sti(PChar.rank) > 5)
-		{
-			iTest_ship = rand(8);
-			if (iTest_ship == 1 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BRIG, NPChar), "ship11");
-			if (iTest_ship == 2 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SCHOONER_W, NPChar), "ship11");
+		iTest_ship = rand(6);
+		if (iTest_ship <= 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship8");
+		iTest_ship = rand(6);
+		if (iTest_ship <= 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship9");
+		iTest_ship = rand(6);
+		if (iTest_ship <= 3) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_MERCHANT, iNationFlag), NPChar), "ship10");
+	}
 	
-			iTest_ship = rand(8);
-			if (iTest_ship == 1 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BRIG, NPChar), "ship12");
-			if (iTest_ship == 2 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_GALEON_L, NPChar), "ship12");
-			if (iTest_ship == 3 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BRIGANTINE, NPChar), "ship12");
-			if (iTest_ship == 4 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SCHOONER_W, NPChar), "ship12");
+	if (sti(PChar.rank) > 9)
+	{
+		iTest_ship = rand(8);
+		if (iTest_ship <= 4) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship11");
+		iTest_ship = rand(6);
+		if (iTest_ship <= 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship12");
+		iTest_ship = rand(6);
+		if (iTest_ship <= 3) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_MERCHANT, iNationFlag), NPChar), "ship13");
+	}
 	
-			iTest_ship = rand(8);
-			if (iTest_ship == 1 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BRIG, NPChar), "ship13");
-			if (iTest_ship == 2 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_GALEON_L, NPChar), "ship13");
-			if (iTest_ship == 3 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_BRIGANTINE, NPChar), "ship13");
-			if (iTest_ship == 4 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_SCHOONER_W, NPChar), "ship13");
-		}
-		
-		if (sti(PChar.rank) > 8)
-		{
-			iTest_ship = rand(30);
-			if (iTest_ship == 1 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_GALEON_L, NPChar), "ship14");
-			if (iTest_ship == 2 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_CORVETTE, NPChar), "ship14");
-			
-			iTest_ship = rand(40);
-			if (iTest_ship == 1 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_GALEON_H, NPChar), "ship15");			
-			if (iTest_ship == 2 ) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_CORVETTE, NPChar), "ship15");
-		}
-		if (sti(PChar.rank) > 12)
-		{	
-			iTest_ship = rand(30);
-			if (iTest_ship == 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_NAVIO, NPChar), "ship16");
-			if (iTest_ship == 2) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_EASTINDIAMAN, NPChar), "ship16");
-			if (iTest_ship == 3) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_GALEON_H, NPChar), "ship16");
-			if (iTest_ship == 4) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_FRIGATE, NPChar), "ship16");
-			if (iTest_ship == 5) FillShipParamShipyard(NPChar, GenerateStoreShipExt(SHIP_FRIGATE_H, NPChar), "ship16");		
-		}    
+	if (sti(PChar.rank) > 11)
+	{
+		iTest_ship = rand(30);
+		if (iTest_ship <= 5) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship14");
+		iTest_ship = rand(40);
+		if (iTest_ship <= 6) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship15");
+		iTest_ship = rand(30);
+		if (iTest_ship <= 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship16");
+	}
+	
+	if (sti(PChar.rank) > 16)
+	{
+		iTest_ship = rand(30);
+		if (iTest_ship <= 7) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship17");
+
 	}
 }
 
@@ -1326,7 +1227,7 @@ int GetShipBuyPrice(int iType, ref _shipyard)
 		if(CheckOfficersPerk(pchar,"BasicCommerce"))	{ nCommerce += 2; }
 	}
 	ref shref = GetRealShip(iType);	
-    return makeint(GetShipPriceByType(iType, _shipyard) + GetShipPriceByType(iType, _shipyard)/(nCommerce*10)) * (7 - sti(shref.Class));
+    return makeint(GetShipPriceByType(iType, _shipyard) + GetShipPriceByType(iType, _shipyard)/(nCommerce*10)) * (8 - sti(shref.Class));
     // boal 22.01.2004 <--
 }
 
@@ -1564,3 +1465,112 @@ float CalculateSpeedDebuff_SP(float sailsIntegrity)
 	
     return 1.0;
 }
+
+// belamour выбираем трейт для корабля
+void SetShipTraits(ref rRealShip)
+{
+	int spec = sti(rRealShip.Spec);
+	
+	if(spec == SHIP_SPEC_UNIVERSAL) return;
+	if(CheckAttribute(rRealShip, "QuestSP")) return;
+	
+	int traitesQty = 3; // - 1 для рандома
+	if(spec == SHIP_SPEC_MERCHANT) traitesQty = 4;
+	
+	rRealShip.Traits = "trait" + spec + (rand(traitesQty) + 1);
+}
+
+string GetShipSpecDesc(ref chr)
+{
+	int nShipType = GetCharacterShipType(chr);
+	if(nShipType == SHIP_NOTUSED) return "";
+	
+	return "special" + sti(RealShips[nShipType].Spec);
+}
+
+string GetShipTraitDesc(ref chr)
+{
+	int nShipType = GetCharacterShipType(chr);
+	if(nShipType == SHIP_NOTUSED) return "";
+	if(CheckAttribute(&RealShips[nShipType], "QuestSP"))
+	{
+		if(GetShipTypeName(chr) == "Galeon_sm")  return "sp1"; 
+		if(GetShipTypeName(chr)  == "LadyBeth")  return "sp2"; 
+	}
+	if(!CheckAttribute(&RealShips[nShipType],"Traits")) return "";
+	
+	return RealShips[nShipType].Traits;
+}
+
+bool HasShipTrait(ref chr, string trait)
+{
+	if(sti(chr.index) != GetMainCharacterIndex()) return false;
+	
+	int nShipType = GetCharacterShipType(chr);
+	if(nShipType == SHIP_NOTUSED) return false;
+	if(!CheckAttribute(&RealShips[nShipType],"Traits")) return false;
+	
+	return RealShips[nShipType].Traits == trait;
+}
+
+void ReactivateTrait04(string quest)
+{
+	DeleteAttribute(pchar, "Tmp.trait04");
+}
+
+// --> Механика мощи
+float GetBaseShipPower(int iBaseType)
+{
+    ref rBaseShip = &ShipsTypes[iBaseType];
+    if(CheckAttribute(rBaseShip, "Power"))
+        return stf(rBaseShip.Power); // Однажды вычислили, больше не надо
+
+	int iClass = sti(rBaseShip.Class);
+	int iSpec  = sti(rBaseShip.Spec);
+	float fSpec;
+	switch(iSpec)
+	{
+		case SHIP_SPEC_MERCHANT:	fSpec = 0.75;	break;
+		case SHIP_SPEC_UNIVERSAL:	fSpec = 1.1;	break;
+		case SHIP_SPEC_RAIDER:		fSpec = 1.3;	break;
+		case SHIP_SPEC_WAR:			fSpec = 1.5;	break;
+	}
+	float fPower = 20.0 * (7.0 - iClass) * 1.6 * fSpec;
+    rBaseShip.Power = fPower;
+    return fPower;
+}
+
+float GetRealShipPower(ref rChar)
+{
+    ref   rShip  = GetRealShip(sti(rChar.Ship.Type));
+    float fPower = GetBaseShipPower(sti(rShip.BaseType));
+    float kCrew  = MakeFloat(GetCrewQuantity(rChar)) / stf(rShip.MaxCrew); // ~!~ OptCrew
+    if (kCrew > 1.0) kCrew = 1.0;
+    float kHull  = stf(rChar.ship.HP) / stf(rShip.HP);
+    float kSails = stf(rChar.ship.SP) / stf(rShip.SP);
+    fPower *= pow(kCrew, 2.25)*0.5 + pow(kSails, 2.25)*0.3 + pow(kHull, 2.25)*0.2;
+    return fPower;
+}
+
+void UpdatePlayerSquadronPower() // Кэш
+{
+    ref rChar;
+    int i, idx, iShipType;
+    float fPower = 0.0;
+	for(i = 0; i < COMPANION_MAX; i++)
+	{
+		idx = GetCompanionIndex(PChar, i);
+		if(idx != -1)
+		{
+			rChar = GetCharacter(idx);
+			iShipType = sti(rChar.ship.type);
+			if(iShipType == SHIP_NOTUSED) continue;
+            fPower += GetRealShipPower(rChar);
+		}
+	}
+    PChar.Squadron.RawPower = fPower;
+    if(CheckCharacterPerk(PChar, "SeaDogProfessional")) fPower *= 1.3;
+    if(IsEquipCharacterByArtefact(PChar, "talisman15")) fPower *= 1.15;
+    PChar.Squadron.ModPower = fPower;
+}
+// <-- Механика мощи

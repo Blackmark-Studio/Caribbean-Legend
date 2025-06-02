@@ -726,7 +726,7 @@ void ProcessDialogEvent()
 string SelectJacobCity()
 {
 	string sTemp;
-	switch (drand(4))
+	switch (hrand(4))
 	{
 		case 0: sTemp = "Cumana" break;
 		case 1: sTemp = "Caracas" break;

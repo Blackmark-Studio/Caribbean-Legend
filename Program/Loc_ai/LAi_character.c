@@ -394,7 +394,7 @@ void LAi_KillImmortalCharacter(ref chr)
 //Убит ли персонаж
 bool LAi_IsDead(aref chr)
 {
-	if (chr.id == "0") return true; // boal если фантома нет, то НПС умер
+	if(chr.id == "0") return true; // boal если фантома нет, то НПС умер
 	if(CheckAttribute(chr, "chr_ai.hp") == false) return true;
 	if(stf(chr.chr_ai.hp) < 1.0) return true;
 	return false;
@@ -1002,54 +1002,6 @@ void LAi_BladeSetDamageMax(aref chr, float max)
 	chr.chr_ai.dmgbldmax = max;
 }
 
-//Установить минимальный и максимальный урон от удара мушкетом (приклад или штык)
-void LAi_MushketSetDamageMaxMin(aref chr, ref rItm, string attackType)
-{
-	float min = 0.0;
-	float max = 0.0;
-	
-	switch(attackType)
-	{
-		case "fast": 
-			min = rItm.DmgMin_butt;
-			max = rItm.DmgMax_butt;
-			chr.chr_ai.MushketFencingType = rItm.sAttack_butt;
-		break;
-		
-		case "force": 
-			min = rItm.DmgMin_bayonet;
-			max = rItm.DmgMax_bayonet;			
-			chr.chr_ai.MushketFencingType = rItm.sAttack_bayonet;
-		break;
-		
-		case "round": 
-			min = rItm.DmgMin_butt;
-			max = rItm.DmgMax_butt;
-			chr.chr_ai.MushketFencingType = rItm.sAttack_butt;
-		break;
-		
-		case "break": 
-			min = rItm.DmgMin_butt;
-			max = rItm.DmgMax_butt;
-			chr.chr_ai.MushketFencingType = rItm.sAttack_butt;
-		break;
-		
-		case "feintc":  
-			min = rItm.DmgMin_butt;
-			max = rItm.DmgMax_butt;
-			chr.chr_ai.MushketFencingType = rItm.sAttack_butt;
-		break;
-		
-		case "feint": 
-			min = rItm.DmgMin_butt;
-			max = rItm.DmgMax_butt;
-			chr.chr_ai.MushketFencingType = rItm.sAttack_butt;
-		break;
-	}
-	chr.chr_ai.dmgbldmin = min;
-	chr.chr_ai.dmgbldmax = max;
-}
-
 //Установить вероятность пробивки
 void LAi_BladeSetPiercing(aref chr, float piercing)
 {
@@ -1095,30 +1047,30 @@ string LAi_GetMushketFencingType(aref chr)
     return SKILL_FENCING;
 }
 
-void LAi_BladeEnergyType(aref chr, float fEnergyType)
+void LAi_SetBladeEnergyType(aref chr, float fEnergyType)
 {
-	chr.chr_ai.EnergyType = fEnergyType;
+	chr.chr_ai.BladeEnergyType = fEnergyType;
 }
 
 float LAi_GetBladeEnergyType(aref chr)
 {
-    if (CheckAttribute(chr, "chr_ai.EnergyType"))
+    if (CheckAttribute(chr, "chr_ai.BladeEnergyType"))
 	{
-        return stf(chr.chr_ai.EnergyType);
+        return stf(chr.chr_ai.BladeEnergyType);
     }
     return 1.0;
 }
 
-void LAi_MushketEnergyType(aref chr, float fEnergyType)
+void LAi_SetMushketEnergyType(aref chr, float fEnergyType)
 {
-	chr.chr_ai.EnergyType = fEnergyType;
+	chr.chr_ai.MushketEnergyType = fEnergyType;
 }
 
 float LAi_GetMushketEnergyType(aref chr)
 {
-    if (CheckAttribute(chr, "chr_ai.EnergyType"))
+    if (CheckAttribute(chr, "chr_ai.MushketEnergyType"))
 	{
-        return stf(chr.chr_ai.EnergyType);
+        return stf(chr.chr_ai.MushketEnergyType);
     }
     return 1.0;
 }

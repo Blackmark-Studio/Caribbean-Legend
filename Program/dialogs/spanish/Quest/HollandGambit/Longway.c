@@ -42,14 +42,14 @@ void ProcessDialogEvent()
 
 		//-----------------------------------------------за Голландию-----------------------------------------------
 	case "Longway_neutral":
-		dialog.text = "Longway está seguro de que trabajaremos bien juntos, chuanzhang. Jacob van Berg actualmente en " + XI_ConvertString("Colony" + pchar.questTemp.HWIC.Holl.JacobCity + "Gen") + ". He concertado una reunión con él en la taberna local. Estará allí.";
+		dialog.text = "Longway está seguro de que trabajaremos bien juntos, chuanzhang. Jacob van Berg actualmente en " + XI_ConvertString("Colony" + pchar.questTemp.HWIC.Holl.JacobCity + "Gen") + ". He concertado una reunión con él en la taberna. Estará allí.";
 		link.l1 = "¡Zarpemos!";
 		link.l1.go = "Longway_JacobGo";
 		pchar.questTemp.HWIC.Holl.LongwayNeutral = "true"; // признак враждебности китайца
 		break;
 
 	case "Longway_enemy":
-		dialog.text = "Orden del señor Rodenburg para Longway... Jacob van Berg actualmente en " + XI_ConvertString("Colony" + pchar.questTemp.HWIC.Holl.JacobCity + "Gen") + ". He concertado una reunión con él en la taberna local. Estará allí.";
+		dialog.text = "Orden del señor Rodenburg para Longway... Jacob van Berg actualmente en " + XI_ConvertString("Colony" + pchar.questTemp.HWIC.Holl.JacobCity + "Gen") + ". He concertado una reunión con él en la taberna. Estará allí.";
 		link.l1 = "¡Zarpemos!";
 		link.l1.go = "Longway_JacobGo";
 		pchar.questTemp.HWIC.Holl.LongwayEnemy = "true"; // признак враждебности китайца
@@ -57,7 +57,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Longway_friend":
-		dialog.text = "Longway hará todo lo que pueda, chuanzhang. Y Jacob van Berg actualmente en " + XI_ConvertString("Colony" + pchar.questTemp.HWIC.Holl.JacobCity + "Dat") + ". He arreglado una reunión con él en la taberna local. Estará allí.";
+		dialog.text = "Longway hará todo lo que pueda, chuanzhang. Y Jacob van Berg actualmente en " + XI_ConvertString("Colony" + pchar.questTemp.HWIC.Holl.JacobCity + "Dat") + ". He arreglado una reunión con él en la taberna. Estará allí.";
 		link.l1 = "¡Zarpemos!";
 		link.l1.go = "Longway_JacobGo";
 		pchar.questTemp.HWIC.Holl.LongwayFriend = "true"; // признак враждебности китайца
@@ -237,7 +237,7 @@ void ProcessDialogEvent()
 
 	case "Longway_prisoner_2":
 		dialog.text = "";
-		link.l1 = " Sé que entiendes inglés, holandés y francés. También eres buen oyente. Ahora es el momento de empezar a hablar. Eventualmente me dirás todo lo que sabes. Sé que ustedes, los chinos, están orgullosos de su arte de la tortura, pero nosotros, hombres de Occidente, hemos hecho nuestros propios avances en esa antigua ciencia. Alonso aquí es un maestro en soltar lenguas. Fue inquisidor para la Santa Inquisición en Santiago antes de que lo contratara en mi barco. Conoce todo tipo de trucos que aprendió de los santos padres que perfeccionaron el arte de hacer confesar a la gente... ¡ni siquiera tienes que ser protestante!";
+		link.l1 = "Sé que entiendes inglés, holandés y francés. También eres buen oyente. Ahora es el momento de empezar a hablar. Eventualmente me dirás todo lo que sabes. Sé que ustedes, los chinos, están orgullosos de su arte de la tortura, pero nosotros, hombres de Occidente, hemos hecho nuestros propios avances en esa antigua ciencia. Alonso aquí es un maestro en soltar lenguas. Fue inquisidor para la Santa Inquisición en Santiago antes de que lo contratara en mi barco. Conoce todo tipo de trucos que aprendió de los santos padres que perfeccionaron el arte de hacer confesar a la gente... ¡ni siquiera tienes que ser protestante!";
 		link.l1.go = "Longway_prisoner_3";
 		break;
 
@@ -628,7 +628,7 @@ void ProcessDialogEvent()
 		Dialog.Text = "Al comienzo de la pelea usarás:";
 		Link.l1 = "Hoja";
 		Link.l1.go = "BladePriorityMode";
-		Link.l2 = " Mosquete";
+		Link.l2 = "Mosquete";
 		Link.l2.go = "MusketPriorityMode";
 		break;
 
@@ -728,7 +728,7 @@ void ProcessDialogEvent()
 string SelectJacobCity()
 {
 	string sTemp;
-	switch (drand(4))
+	switch (hrand(4))
 	{
 	case 0:
 		sTemp = "Cumana" break;

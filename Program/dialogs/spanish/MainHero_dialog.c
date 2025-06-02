@@ -61,6 +61,20 @@ void ProcessDialogEvent()
 		Dialog.Text = "Si estás leyendo esta línea, es un error en el código";
 		Link.l1 = "Salir";
 		Link.l1.go = "exit";
+		//--> Вступительный туториал на палубе корабля за Шарля
+		if (CheckAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1"))
+		{
+			dialog.text = "¡Emocionante, maldita sea! ¡Una verdadera batalla naval!\nLástima, claro, que no pueda ver la lucha real desde aquí abajo... Bueno, no importa. Creo que ya he aprendido lo suficiente sobre navegación para imaginar vívidamente cómo se desarrollan los acontecimientos\nCinco barcos piratas, me atrevería a decir... uno grande, un par de medianos y algunos más pequeños. Perfecto para nuestro pinaza. ¡Será un relato espléndido — Lulu estará encantada!";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1");
+			pchar.wind.speed = 18.0;
+			fWeatherSpeed = stf(18.0);
+			//AddDialogExitQuestFunction("SharlieTutorial_StartShip");
+			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_3");
+		}
+		//<-- Вступительный туториал на палубе корабля за Шарля
+
 		//--> Голландский гамбит
 		if (CheckAttribute(pchar, "questTemp.HWIC_FindIsland"))
 		{
@@ -183,7 +197,7 @@ void ProcessDialogEvent()
 		}
 		if (CheckAttribute(pchar, "questTemp.Ksochitam_Dolly") && pchar.questTemp.Ksochitam_Dolly == "half_dominica")
 		{
-			dialog.text = "¡Finalmente! He localizado el lugar, indicado por la 'manifestación': es un ídolo indio. Cuando estoy cerca, la 'Flecha del Camino' deja de oscilar y apunta en una dirección. Bueno, parece lógico - magia india y un ídolo indio. Ahora debería marcar la ubicación indicada por la 'Flecha del Camino' en el mapa, y luego iré a Main.";
+			dialog.text = "¡Finalmente! He localizado el lugar indicado por la 'manifestación': es un ídolo indio. Cuando estoy cerca, la 'Flecha del Camino' deja de oscilar y apunta en una dirección. Bueno, parece lógico, magia india y un ídolo indio. Ahora debería marcar la ubicación indicada por la 'Flecha del Camino' en el mapa, y luego iré a Tierra Firme.";
 			link.l1 = "";
 			link.l1.go = "exit";
 			AddDialogExitQuest("Ksochitam_FindSecondWay");
@@ -224,8 +238,8 @@ void ProcessDialogEvent()
 		// фэйловый финал 040912
 		if (CheckAttribute(pchar, "questTemp.Europe"))
 		{
-			PlaySound("Voice\Spanish\military02.wav");
-			dialog.text = "¿Has escuchado al coronel? ¡Los rebeldes se esconden allí! Busca en todo, pon la casa patas arriba y apodérate de todos los que encuentres allí! ¡Ponte a ello!";
+			PlaySound("Voice\Spanish\YouFace_3.wav");
+			dialog.text = "¿Has escuchado al coronel? ¡Los rebeldes se esconden allí! Hay que buscar en todos los rincones. Pon la casa patas arriba de ser necesario, y retiene a todos los que encuentres allí! ¡Vamos! ¡Manos a la obra!";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuest("Europe_SharlieFinal_2");
@@ -241,7 +255,7 @@ void ProcessDialogEvent()
 		// Addon-2016 Jason, французские миниквесты (ФМК) Сент-Кристофер
 		if (CheckAttribute(pchar, "questTemp.FMQN.Choose") && pchar.location == "shore40")
 		{
-			dialog.text = "Mmm. Esta historia no parece correcta. Creo que esa balandra de St. Jones nunca debió existir. El teniente me está arrastrando a su operación militar. ¿Por qué necesitaría eso? No estoy en guerra con los holandeses... ¿Qué debería hacer? ¿Debería irme y dejar que los británicos se diviertan por su cuenta? ¿O debería quedarme?";
+			dialog.text = "Mmm. Esta historia no parece correcta. Creo que esa balandra de St. John's nunca debió existir. El teniente me está arrastrando a su operación militar. ¿Por qué necesitaría eso? No estoy en guerra con los holandeses... ¿Qué debería hacer? ¿Debería irme y dejar que los británicos se diviertan por su cuenta? ¿O debería quedarme?";
 			link.l1 = "Vete.";
 			link.l1.go = "FMQN_1";
 			link.l2 = "Quédate.";
@@ -281,7 +295,7 @@ void ProcessDialogEvent()
 		}
 		if (CheckAttribute(pchar, "questTemp.Mtraxx.Retribution.Bead") && pchar.location == "Judgement_church")
 		{
-			dialog.text = "Esto es todo... Fin de la línea\n Parece que don Enrico estaba en serio: no hay salida de estas mazmorras. Tuve un momento de esperanza cuando encontré una segunda puerta a nivel del agua pero ahora... He perdido la cuenta del tiempo - ¿cuánto tiempo llevo merodeando estos oscuros túneles? ¿Medio día, todo el día? Este lugar es tan silencioso y aterrador como un ataúd\nAquí había una iglesia una vez, justo aquí. Qué lugar tan perfecto para decir mis oraciones. He pecado mucho, demasiado... Rezaré y dormiré aquí, mis heridas y mi agotamiento me están matando. Si tengo suerte nunca me levantaré...";
+			dialog.text = "Esto es todo... Fin de la línea\n Parece que don Enrico estaba en serio: no hay salida de estas mazmorras. Tuve un momento de esperanza cuando encontré una segunda puerta a nivel del agua pero ahora... He perdido la cuenta del tiempo, ¿cuánto tiempo llevo merodeando estos oscuros túneles? ¿Medio día, todo el día? Este lugar es tan silencioso y aterrador como un ataúd\nAquí había una iglesia una vez, justo aquí. Qué lugar tan perfecto para decir mis oraciones. He pecado mucho, demasiado... Rezaré y dormiré aquí, mis heridas y mi agotamiento me están matando. Si tengo suerte nunca me levantaré...";
 			link.l1 = "";
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.Mtraxx.Retribution.Bead");
@@ -316,7 +330,7 @@ void ProcessDialogEvent()
 
 			if (CheckAttribute(pchar, "questTemp.TonzagQuest.JailDialog.Mary"))
 			{
-				link.l2 = "¡María, por qué pareces tan feliz?!";
+				link.l2 = "¡María!, ¿por qué pareces tan feliz?";
 				link.l2.go = "tonzag_jail_mary";
 			}
 
@@ -351,7 +365,7 @@ void ProcessDialogEvent()
 		if (CheckAttribute(pchar, "questTemp.HelenDrinking.RefusedGame"))
 		{
 			dialog.text = "¡Vaya una noche! ¿Por qué la escuché? Mi hermano tenía razón: las chicas de aquí son completamente diferentes. ¿Quizás le añaden algo al ron?";
-			link.l1 = "¡Hora de dormir, y luego - a Cartagena!";
+			link.l1 = "¡Hora de dormir, y luego a Cartagena!";
 			link.l1.go = "exit";
 
 			DeleteAttribute(pchar, "questTemp.HelenDrinking.RefusedGame");
@@ -770,7 +784,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (pchar.location == "Minentown_ExitTown")
+					if (pchar.location == "LosTeques_ExitTown")
 					{
 						Dialog.Text = "No tiene sentido atacar esta mina sin primero recabar información sobre el oro y la plata que se extrae allí. De lo contrario, estaré enviando a mis hombres a morir en vano.";
 						Link.l1 = "...";
@@ -944,7 +958,7 @@ void ProcessDialogEvent()
 			{
 				sAttr = "l" + i;
 				rShip = GetRealShip(sti(chr.Ship.Type));
-				link.(sAttr) = GetFullName(chr) + " - " + xiStr(rShip.BaseName) + " '" + chr.Ship.Name + "'.";
+				link.(sAttr) = GetFullName(chr) + ", " + xiStr(rShip.BaseName) + " '" + chr.Ship.Name + "'.";
 				link.(sAttr).go = "CabinCompanionTalk_" + i;
 			}
 		}
@@ -1060,8 +1074,8 @@ void ProcessDialogEvent()
 	// суп из черепахи
 	case "terrapin":
 		PlaySound("Interface\Door_Kick.wav");
-		PlaySound("Voice\Spanish\EvilPirates02.wav");
-		dialog.text = "¡Caramba! Así que esa es la ayuda retrasada para Levasseur... De ninguna manera puedo salir por la puerta... Está bien, seguiré los pasos de Thibaut - ¡por la ventana! Después de todo, este bribón logró escaparse de alguna manera.";
+		PlaySound("Voice\Spanish\YouFace_2.wav");
+		dialog.text = "¡Caramba! Así que esa es la ayuda retrasada para Levasseur... De ninguna manera puedo salir por la puerta... Está bien, seguiré los pasos de Thibaut, ¡por la ventana! Después de todo, este bribón logró escaparse de alguna manera.";
 		link.l1 = "";
 		link.l1.go = "exit";
 		AddDialogExitQuest("Terrapin_GoWindow");
@@ -1069,8 +1083,8 @@ void ProcessDialogEvent()
 
 	// защита Сен-Пьера
 	case "SP_defend":
-		PlaySound("Voice\Spanish\military02.wav");
-		dialog.text = "Entonces, nuestra misión es repeler un ataque de los malditos españoles y salvar a Saint Pierre. El fuerte ha sido capturado, y se está librando una batalla en las calles. Hay una poderosa escuadra en la bahía de Saint Pierre y tienen un buque de línea como buque insignia. Atacarlo ahora es inútil, el fuerte y la ciudad están bajo control enemigo, por lo que no nos dejarán desembarcar en el puerto\nPor lo tanto, he decidido avanzar a través de la jungla y golpearlos por detrás a través de las puertas de la ciudad. Una vez que el fuerte y la ciudad sean liberados de los españoles, nos ocuparemos de la escuadra. Se volverá mucho más vulnerable sin el apoyo de fuego del fuerte\nEsto no será fácil, por lo que he dado órdenes de pagar cien mil pesos extra para distribuir entre la tripulación además del salario normal. ¡Vamos!";
+		PlaySound("Voice\Spanish\YouFace_4.wav");
+		dialog.text = "Entonces, nuestra misión es repeler el ataque de los malditos españoles, y salvar a Saint-Pierre. El fuerte ha sido capturado, y se está librando una batalla en las calles. Hay una poderosa escuadra en la bahía de Saint-Pierre y tienen un buque de línea como nave insignia. Atacarlo ahora es inútil. El fuerte y la ciudad están bajo control enemigo, por lo que no nos dejarán desembarcar en el puerto.\nPor lo tanto, he decidido avanzar a través de la jungla y golpearlos por detrás a través de las puertas de la ciudad. Una vez que el fuerte y la ciudad sean liberados de los españoles, nos ocuparemos de la escuadra. Se volverá mucho más vulnerable sin el apoyo de fuego del fuerte\nEsto no será fácil, por lo que he dado órdenes de pagar cien mil pesos extra para distribuir entre la tripulación además del salario normal. ¡Vamos!";
 		link.l1 = "";
 		link.l1.go = "exit";
 		AddDialogExitQuest("DefendSP_GoJungle");
@@ -1080,7 +1094,7 @@ void ProcessDialogEvent()
 	case "final_1":												   // Jason НСО
 		if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) // генерал-губернатор никуда не уедет
 		{
-			dialog.text = "¡Espera, adónde voy? ¡No puedo dejar el cargo de Gobernador General sin permiso de París! De lo contrario, sin duda alguna seré arrestado por el abandono no autorizado de las colonias confiadas cuando regrese a Francia. París, te echaré de menos ...";
+			dialog.text = "¡Espera!, ¿adónde voy? ¡No puedo dejar el cargo de Gobernador General sin permiso de París! De lo contrario, sin duda alguna seré arrestado cuando regrese a Francia por el abandono no autorizado de las colonias que me confiaron. París, te echaré de menos ...";
 			link.l1 = "";
 			link.l1.go = "exit";
 			EndQuestMovie();
@@ -1254,7 +1268,7 @@ void ProcessDialogEvent()
 		dialog.text = "Yo y " + sTemp + " hemos estado juntos durante mucho tiempo, y nuestros lazos son más fuertes que cualquier voto de iglesia, pero quiero que ambos recordemos este momento. Por lo tanto, necesito decidir dónde voy a proponerle matrimonio a ella:";
 		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer"))
 		{
-			link.l1 = "La Isla Tessoro - esta isla significa mucho en nuestra historia. Supongo que no hay mejor lugar - la bahía de Sabu Matila es encantadora al atardecer!";
+			link.l1 = "La Isla Tesoro, esta isla significa mucho en nuestra historia. Supongo que no hay mejor lugar, la bahía de Sabu Matila es encantadora al atardecer!";
 			link.l1.go = "LH_marry_1_1";
 		}
 		link.l2 = "¡Tortuga, un símbolo de la libertad de nuestro tiempo, y la vista desde el faro al estrecho de Tortu merece la brocha de cualquier pintor!";
@@ -1275,7 +1289,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("Mary");
 		sTemp = sld.name;
 		AddQuestUserData("LongHappy", "sName", sTemp);
-		dialog.text = "Pero no podemos hacer esto sin la solemnidad de la iglesia - todo debería ser según todos los cánones para que mi padre se viera obligado a aceptar mi elección. Entonces, necesitaré un sacerdote, y no veo a nadie digno de esta posición además del Abad Benoit. Es un viejo amigo de mi padre y con él comenzaron mis aventuras en el Nuevo Mundo. Creo que aceptará hacerme el honor.";
+		dialog.text = "Pero no podemos hacer esto sin la solemnidad de la iglesia, todo debería ser según todos los cánones para que mi padre se viera obligado a aceptar mi elección. Entonces, necesitaré un sacerdote, y no veo a nadie digno de esta posición además del Abad Benoit. Es un viejo amigo de mi padre y con él comenzaron mis aventuras en el Nuevo Mundo. Creo que aceptará hacerme el honor.";
 		link.l1 = "";
 		link.l1.go = "LH_marry_2";
 		break;
@@ -1289,7 +1303,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("Mary");
 		sTemp = sld.name;
 		AddQuestUserData("LongHappy", "sName", sTemp);
-		dialog.text = "Pero no podemos hacer esto sin la solemnidad de la iglesia - todo debería ser de acuerdo con todos los cánones para que mi padre se viera obligado a aceptar mi elección. Entonces, necesitaré un sacerdote, y no veo a nadie digno de este puesto además del Abad Benoit. Es un viejo amigo de mi padre y con él comenzaron mis aventuras en el Nuevo Mundo. Creo que accederá a hacerme el honor.";
+		dialog.text = "Pero no podemos hacer esto sin la solemnidad de la iglesia, todo debería ser de acuerdo con todos los cánones para que mi padre se viera obligado a aceptar mi elección. Entonces, necesitaré un sacerdote, y no veo a nadie digno de este puesto además del Abad Benoit. Es un viejo amigo de mi padre y con él comenzaron mis aventuras en el Nuevo Mundo. Creo que accederá a hacerme el honor.";
 		link.l1 = "";
 		link.l1.go = "LH_marry_2";
 		break;
@@ -1303,7 +1317,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("Mary");
 		sTemp = sld.name;
 		AddQuestUserData("LongHappy", "sName", sTemp);
-		dialog.text = "Pero no podemos hacer esto sin la solemnidad de la iglesia - todo debería estar de acuerdo con todos los cánones para que mi padre se vea obligado a aceptar mi elección. Entonces, necesitaré un sacerdote, y no veo a nadie digno de este puesto además del Abad Benoit. Él es un viejo amigo de mi padre y con él comenzaron mis aventuras en el Nuevo Mundo. Creo que él aceptará hacerme el honor.";
+		dialog.text = "Pero no podemos hacer esto sin la solemnidad de la iglesia, todo debería estar de acuerdo con todos los cánones para que mi padre se vea obligado a aceptar mi elección. Entonces, necesitaré un sacerdote, y no veo a nadie digno de este puesto además del Abad Benoit. Él es un viejo amigo de mi padre y con él comenzaron mis aventuras en el Nuevo Mundo. Creo que él aceptará hacerme el honor.";
 		link.l1 = "";
 		link.l1.go = "LH_marry_2";
 		break;

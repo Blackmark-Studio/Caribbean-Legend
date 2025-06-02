@@ -240,13 +240,6 @@ void WM_InitializeCommands()
 {
 	int idLngFile = LanguageOpenFile("commands_name.txt");
 
-	BattleInterface.Commands.Cancel.enable				= false;
-	BattleInterface.Commands.Cancel.picNum				= 1;
-	BattleInterface.Commands.Cancel.selPicNum			= 0;
-	BattleInterface.Commands.Cancel.texNum				= 0;
-	BattleInterface.Commands.Cancel.event				= "Cancel";
-	BattleInterface.Commands.Cancel.note				= LanguageConvertString(idLngFile, "sea_Cancel");
-
 	BattleInterface.Commands.EnterToSea.enable			= false;
  	BattleInterface.Commands.EnterToSea.picNum			= 1;
 	BattleInterface.Commands.EnterToSea.selPicNum		= 9;
@@ -288,6 +281,13 @@ void WM_InitializeCommands()
 	BattleInterface.Commands.EnterToEnemy.texNum		= 1;
 	BattleInterface.Commands.EnterToEnemy.event			= "EnterToEnemy";
 	BattleInterface.Commands.EnterToEnemy.note			= LanguageConvertString(idLngFile, "worldmap_toenemy");
+
+	BattleInterface.Commands.Cancel.enable				= false;
+	BattleInterface.Commands.Cancel.picNum				= 1;
+	BattleInterface.Commands.Cancel.selPicNum			= 0;
+	BattleInterface.Commands.Cancel.texNum				= 0;
+	BattleInterface.Commands.Cancel.event				= "Cancel";
+	BattleInterface.Commands.Cancel.note				= LanguageConvertString(idLngFile, "sea_Cancel");
 
 	LanguageCloseFile(idLngFile);
 

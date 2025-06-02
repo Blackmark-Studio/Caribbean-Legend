@@ -821,7 +821,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			npchar.dialog.currentnode = "Himenes_72";
 			DeleteAttribute(pchar, "questTemp.IslaMona.Plantation.Slave");
-			AddQuestRecord("Unique_Goods", "5");
+			AddQuestRecordInfo("Unique_Goods", "5");
 			IslaMona_RemoveSlave();
 		break;
 		

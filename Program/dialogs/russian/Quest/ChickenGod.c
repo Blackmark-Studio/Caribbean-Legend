@@ -889,7 +889,7 @@ void ProcessDialogEvent()
 		case "joruba_p4_other":
 			dialog.text = "Да будет так. Назови имя?";
 			
-			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "FMQT_mercen");
+			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Duran");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Baker");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Folke");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Avendel");
@@ -901,14 +901,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_p4_off":
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
 			{
 				dialog.text = "Клод Дюран не офицер, а безжалостный наёмник, так что выбери другую жертву.";
 				link.l1 = "";
 				link.l1.go = "exit";
 				break;
 			}
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
 			{
 				Achievment_Set("ach_CL_116");
 			}
@@ -1097,7 +1097,7 @@ void ProcessDialogEvent()
 		case "joruba_o6_blood":
 			dialog.text = "Назови имя?";
 			
-			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "FMQT_mercen");
+			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Duran");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Baker");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Folke");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Avendel");
@@ -1129,14 +1129,14 @@ void ProcessDialogEvent()
 				AddDialogExitQuestFunction("ChickenGod_KickedFromTemple");
 				break;
 			}
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
 			{
 				dialog.text = "Клод Дюран не офицер, а безжалостный наёмник, так что выбери другую жертву.";
 				link.l1 = "";
 				link.l1.go = "exit";
 				break;
 			}
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
 			{
 				Achievment_Set("ach_CL_116");
 			}
@@ -1438,7 +1438,7 @@ bool ChickenGod_TalkedToAmelia() {
 bool ChickenGod_HaveOfficers() {
 	object fakelink;
 	
-	ChickenGod_AddOfficerLink(&fakelink, "", "FMQT_mercen");
+	ChickenGod_AddOfficerLink(&fakelink, "", "Duran");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Baker");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Folke");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Avendel");

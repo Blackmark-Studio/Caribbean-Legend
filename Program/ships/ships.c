@@ -91,8 +91,8 @@ string GetShipLocationID(ref chref)
 	// решаем, что за палуба
 	bool bBig1 = (ShipsTypes[iShipType].DeckType == "Big");
 	bool bBig2 = (RealShips[sti(pchar.ship.type)].DeckType == "Big");
-	bool bMed1 = (ShipsTypes[iShipType].DeckType == "Medium");
-	bool bMed2 = (RealShips[sti(pchar.ship.type)].DeckType == "Medium");
+	bool bMed1 = HasSubStr(ShipsTypes[iShipType].DeckType, "Medium");
+	bool bMed2 = HasSubStr(RealShips[sti(pchar.ship.type)].DeckType, "Medium");
 	if (bBig1)
 	{
 	    if (bMed2 || bBig2) return "BOARDING_BIG_DECK";
@@ -115,6 +115,7 @@ string GetShipLocationID(ref chref)
 	}
 	return RealShips[st].AbordageLocation;*/
 }
+
 // boal
 string GetShipCabinID(ref chref)
 {

@@ -125,16 +125,16 @@ void ShowRain(int bShow)
 	SendMessage(&Rain,"ll",1,bShow);
 }
 
-string Whr_SetStormSkyData( float curTime, ref _fog, ref _sAmbient )
+string Whr_SetStormSkyData(float curTime, ref _fog, ref _sAmbient)
 {
 	string 	skyDir = "";
 	int		iDay, iMorning, iEvening, iNight, iTwilight;
 
 	// для штормов
-	iDay 		= drand(2);
-	iMorning 	= drand(2);
-	iEvening 	= drand(2);
-	iTwilight 	= drand(2);
+	iDay 		= hrand(2);
+	iMorning 	= hrand(2);
+	iEvening 	= hrand(2);
+	iTwilight 	= hrand(2);
 	iNight 		= 0;
 	
 	if(curTime >= 23.00 && curTime < 23.99) // night
@@ -376,9 +376,9 @@ void Whr_RainFogGenerator()
 		case 12: chance = 15; 	break; // сухой сезон
 	}	
 	
-	if(WEATHER_DEBUG || drand(100) < chance)
+	if(WEATHER_DEBUG || hrand(100) < chance)
 	{
-		if(drand(100) < 30)
+		if(hrand(100) < 30)
 		{			
 			WeatherParams.Rain.StartTime = 2 + rand(13) + rand(59)/60.0; 	// время старта с минутами
 			WeatherParams.Rain.Duration  = 180 + rand(360); 				// затяжной дождь
@@ -403,7 +403,7 @@ void Whr_RainFogGenerator()
 		Log_TestInfo("Дождь начнется в " + WeatherParams.Rain.time + " Выбран дождь : " + (sti(WeatherParams.Rain.Type) + 1));
 		Log_TestInfo("Продолжительность дождя: " + WeatherParams.Rain.Duration + " мин.");
 		
-		if(WEATHER_DEBUG || drand(100) < 40)    WeatherParams.Rain.IsLightingActive = true;		// гроза будет или нет
+		if(WEATHER_DEBUG || hrand(100) < 40)    WeatherParams.Rain.IsLightingActive = true;		// гроза будет или нет
 		else				                    WeatherParams.Rain.IsLightingActive = false;
 	}
 	else
@@ -412,8 +412,8 @@ void Whr_RainFogGenerator()
 	}		
 	
 	// туманы по утрам в локациях, простой рэндом
-	// ~!~ TODO добавить зависимость от типа скайбокса и дождей в этот день
-	if(WEATHER_DEBUG || drand(100) < 101) // 10% вероятность
+	// ~!~ TO_DO добавить зависимость от типа скайбокса и дождей в этот день
+	if(WEATHER_DEBUG || hrand(100) < 101) // 10% вероятность (TO_DO: WTF)
 	{
 		WeatherParams.Fog 			= true;
 		WeatherParams.Fog.ThisDay 	= true;

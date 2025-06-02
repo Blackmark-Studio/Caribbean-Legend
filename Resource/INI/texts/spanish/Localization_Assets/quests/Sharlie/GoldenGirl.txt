@@ -1,16 +1,16 @@
 GoldenGirl_1
 {
-¿Has oído hablar de esa costosa cortesana de las Colonias del Norte que ahora dirige la Casa del Placer en St. Pierre? Dicen que organiza fiestas privadas de vez en cuando, y solo lo más alto de la sociedad tiene acceso. El mejor vino, mujeres deslumbrantes y apuestas sin límite, todo lo que un verdadero noble aprecia. Conseguir una invitación vale su peso en oro.
+¿Has oído hablar de esa costosa cortesana de las Colonias del Norte que ahora dirige la Casa del Placer en Saint-Pierre? Dicen que organiza fiestas privadas de vez en cuando, y solo lo más alto de la sociedad tiene acceso. El mejor vino, mujeres deslumbrantes y apuestas sin límite, todo lo que un verdadero noble aprecia. Conseguir una invitación vale su peso en oro.
 }
 
 GoldenGirl_2
 {
-Dicen que la propia marquesa Botot es ahora huésped de St. Pierre. La mujer más cara de la Nueva Francia. A veces organiza fiestas solo para la crème de la crème. Un verdadero nido de los vicios más refinados. Se rumorea que un banquero llegó a perder hasta su propio banco en una apuesta allí, imagínate eso. Pero, sin invitación, ni siquiera el más rico es bienvenido.
+Dicen que la propia marquesa Botot es ahora huésped de Saint-Pierre. La mujer más cara de la Nueva Francia. A veces organiza fiestas solo para la crème de la crème. Un verdadero nido de los vicios más refinados. Se rumorea que un banquero llegó a perder hasta su propio banco en una apuesta allí, imagínate eso. Pero, sin invitación, ni siquiera el más rico es bienvenido.
 }
 
 GoldenGirl_3
 {
-El burdel de St. Pierre ahora está bajo el mando de una cortesana de élite. El lugar en sí no ha cambiado mucho, pero las fiestas privadas que organiza… la gente cuenta historias. Dicen que es como en el buen viejo París: el mejor vino, las mejores mujeres y la mejor compañía. Y los invitados más peculiares, como almirantes españoles y barones piratas. ¡Increíble, eh?
+El burdel de Saint-Pierre ahora está bajo el mando de una cortesana de élite. El lugar en sí no ha cambiado mucho, pero las fiestas privadas que organiza... la gente cuenta historias. Dicen que es como en el buen viejo París: el mejor vino, las mejores mujeres y la mejor compañía. Y los invitados más peculiares, como almirantes españoles y barones piratas. ¿Increíble, eh?
 }
 
 GoldenGirl_4
@@ -75,7 +75,7 @@ Dicen que la señora Botot desapareció y dejó su lujosa casa a su administrado
 
 GoldenGirl_17
 {
-Next morning...
+La mañana siguiente...
 }
 
 GoldenGirl_18

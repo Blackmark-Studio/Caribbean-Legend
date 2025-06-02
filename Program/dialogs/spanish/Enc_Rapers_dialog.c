@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = RandPhraseSimple("Oye, " + GetSexPhrase("extraño", "señorita") + ", ¿por qué buscas problemas? Esta chica es una 'conocida', individual, en nuestro asentamiento. Ya le hemos pagado, pero te vio y decidió huir con nuestro dinero.", "Oye, " + GetSexPhrase("compañero", "muchacha") + ", sigue tu propio camino y no te metas en nuestros asuntos. Ganamos a esta chica en un juego de dados, pero fue un poco rápida para huir, la hemos estado persiguiendo durante una hora.");
-				link.l1 = "¡No me importa - no te permitiré hacerle daño!";
+				link.l1 = "¡No me importa, no te permitiré hacerle daño!";
 				link.l1.go = "Node_3";
 				link.l2 = RandPhraseSimple("¡Ah, ya veo! ¡Y casi le creí a la muy fulana...!", "Ah, bueno, eso es otra cosa entonces. Bueno, diviértanse chicos!");
 				link.l2.go = "Exit_NoFight";
@@ -136,13 +136,13 @@ void ProcessDialogEvent()
 
 	case "Node_3":
 		pchar.GenQuest.EncGirl.price = 1100 * (rand(4) + 5) + 200 * sti(pchar.rank);
-		dialog.text = "Deberías saber que ella nos costó bastante! Y si eres tan noble, puedes tomarla por " + sti(pchar.GenQuest.EncGirl.price) + " pesos." + GetSexPhrase("Te lo pasarás bien con ella, je-je...", "") + "";
+		dialog.text = "¡Deberías saber que ella nos costó bastante! Y si eres tan noble, puedes tomarla por " + sti(pchar.GenQuest.EncGirl.price) + " pesos." + GetSexPhrase("Te lo pasarás bien con ella, je-je...", "") + "";
 		if (sti(pchar.money) >= sti(pchar.GenQuest.EncGirl.price))
 		{
 			link.l1 = RandPhraseSimple("Aquí está tu dinero. Me la llevo conmigo.", "Deja de rechinar los dientes. Me llevo a la chica conmigo. Aquí está tu dinero.");
 			link.l1.go = "Node_4";
 		}
-		link.l2 = LinkRandPhrase("¿Así que, lo que quieres es dinero? ¿Qué tal acero frío?", "¿Se supone que eso es gracioso, mira a la chica, tonto! ¡Está asustada!", "¿A quién intentas engañar, degenerado!");
+		link.l2 = LinkRandPhrase("¿Así que lo que quieres es dinero? ¿Qué tal acero frío?", "¿Se supone que eso es gracioso?, ¡mira a la chica, tonto! ¡Está asustada!", "¿A quién intentas engañar, degenerado?");
 		link.l2.go = "Node_Fight";
 		break;
 
@@ -189,9 +189,9 @@ void ProcessDialogEvent()
 	case "Node_7":
 		sGlobalTemp = "Saved_CangGirl";
 		if (pchar.GenQuest.EncGirl.city == "Panama")
-			i = drand(2);
+			i = hrand(2);
 		else
-			i = drand(3);
+			i = hrand(3);
 		switch (i)
 		{
 		case 0:
@@ -250,7 +250,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Node_9":
-		if (drand(1) == 0)
+		if (hrand(1) == 0)
 		{
 			pchar.GenQuest.EncGirl.PirateName1 = "l" + rand(GetNamesCount(NAMETYPE_NICK) - 1);
 			pchar.GenQuest.EncGirl.PirateIdx = NAMETYPE_NICK;
@@ -261,7 +261,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.EncGirl.PirateIdx = NAMETYPE_VIP;
 		}
 		pchar.GenQuest.EncGirl.PirateName2 = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
-		switch (drand(4))
+		switch (hrand(4))
 		{
 		case 0:
 			sTemp = "una pierna";
@@ -364,7 +364,7 @@ void ProcessDialogEvent()
 
 	case "OnceAgain":
 		Diag.TempNode = "OnceAgain";
-		dialog.text = "Entonces, ¿te gustaría unirte o qué? " + GetSexPhrase("Pierde vista, no hay suficiente para todos nosotros", "Pírate mientras puedas, una moza es suficiente para nosotros") + "¡";
+		dialog.text = "¿Qué?, ¿te gustaría unirte? " + GetSexPhrase("¡Piérdete, no hay suficiente para todos nosotros", "¡Fuera de aquí, una moza es suficiente para nosotros") + "!";
 		Link.l1 = "Bueno, entonces no te molestaré.";
 		Link.l1.go = "Exit_NoFight";
 		Link.l2 = "¡No permitiré que ocurra ninguna violencia!";

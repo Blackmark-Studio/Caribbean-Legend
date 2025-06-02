@@ -162,8 +162,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Fugitive_city_gift":
-			TakeNItems(pchar, "jewelry8", 50+drand(25));
-			TakeNItems(pchar, "jewelry7", 2+drand(5));
+			TakeNItems(pchar, "jewelry8", 50+hrand(25));
+			TakeNItems(pchar, "jewelry7", 2+hrand(5));
 			PlaySound("interface\important_item.wav");
 			Log_Info("You have received amber");
 			dialog.text = "Tutaj... I mam nadzieję, że nigdy więcej nie zobaczę ani ciebie, ani innych 'wysłanników'.";
@@ -239,8 +239,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Fugitive_shore_gift":
-			TakeNItems(pchar, "jewelry52", 100+drand(40));
-			TakeNItems(pchar, "jewelry53", 400+drand(100));
+			TakeNItems(pchar, "jewelry52", 100+hrand(40));
+			TakeNItems(pchar, "jewelry53", 400+hrand(100));
 			PlaySound("interface\important_item.wav");
 			Log_Info("You have received pearls");
 			dialog.text = "Tutaj... I mam nadzieję, że nigdy więcej nie zobaczę ani ciebie, ani innych 'posłańców'.";
@@ -264,8 +264,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Fugitive_tavern_gift":
-			TakeNItems(pchar, "jewelry5", 50+drand(30));
-			TakeNItems(pchar, "jewelry6", 100+drand(50));
+			TakeNItems(pchar, "jewelry5", 50+hrand(30));
+			TakeNItems(pchar, "jewelry6", 100+hrand(50));
 			PlaySound("interface\important_item.wav");
 			Log_Info("You have received nuggets");
 			dialog.text = "Tutaj... I mam nadzieję, że nigdy więcej nie zobaczę ani ciebie, ani innych 'posłańców'.";

@@ -19,6 +19,23 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "Ich habe gehört, dass dieser verfluchte Schurke Bart der Portugiese endlich Gerechtigkeit getroffen hat! Ist er im Gefängnis? Wann wird seine Hinrichtung sein, weißt du das? Ich möchte zuschauen, ich habe eine Rechnung mit diesem Abschaum zu begleichen...";
                 link.l1.go = "Portugal";
             }
+			//--> Тайна Бетси Прайс
+			if (CheckAttribute(pchar, "questTemp.TBP_Tavern"))
+			{
+				link.l1 = "Sag mal, "+npchar.name+", ich habe gehört"+GetSexPhrase("","e")+", du hattest kürzlich eine neue hübsche Kellnerin... und sie ist schon verschwunden?";
+				link.l1.go = "TBP_Tavern_1";
+			}
+			if (CheckAttribute(pchar, "questTemp.TBP_Tavern2"))
+			{
+				link.l1 = "Sag mal, "+npchar.name+", hast du am Abend von Betsys Verschwinden jemanden Verdächtiges in ihrer Nähe gesehen? Vielleicht hat sie mit jemandem gesprochen?";
+				link.l1.go = "TBP_Tavern2_11";
+			}
+			if (CheckAttribute(pchar, "questTemp.TBP_Tavern3"))
+			{
+				link.l1 = "Na, "+npchar.name+", gute Neuigkeiten – deine wertvolle Kellnerin ist am Leben und wohlauf. Du solltest deinen Rumvorrat wieder auffüllen, die Leute werden bald zurückkehren.";
+				link.l1.go = "TBP_Tavern3_21";
+			}
+			//<-- Тайна Бетси Прайс
  		break;
 
 		//работорговец
@@ -89,6 +106,96 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.questTemp.Portugal = "PortugalInPrison";
 			AddQuestRecord("Portugal", "32");
 		break;
+		
+		//--> Тайна Бетси Прайс
+		case "TBP_Tavern_1":
+			dialog.text = "Oh, wenn Ihr sie nur gesehen hättet, Kapitän! Betsy... solche Anmut, solch ein Lächeln! Männer kamen in Scharen hierher, nur um sie anzusehen. Und wie viel Silber sie in meinem Wirtshaus ließen... Aber vor drei Tagen erschien sie nicht zur Arbeit. Natürlich schickte ich Leute zu ihrem Haus, aber sie war nicht da. Das Haus war in Unordnung, ihre persönlichen Sachen waren verschwunden\nIch weiß nicht mehr, was ich denken soll. Die Wachen haben es wie üblich einfach abgetan. Sie sagen, sie hätten Wichtigeres zu tun, als nach vermissten Mädchen zu suchen, dass sie wahrscheinlich ausgelassen feiert und bald zurückkehren wird. Kapitän, vielleicht könntet Ihr sie finden? Wenn Ihr sie hierher bringt, zahle ich Euch hundert Dublonen. Ich kann sie einfach nicht verlieren, versteht Ihr? Sie ist ein wahrer Schatz! Ich muss sie zurückbekommen, koste es, was es wolle!";
+			link.l1 = "Mal sehen, was sich tun lässt. Hat sie sich vor dem Verschwinden merkwürdig verhalten oder schlechte Nachrichten erhalten?";
+			link.l1.go = "TBP_Tavern_2";
+			link.l2 = "Eine verschwundene Kellnerin suchen? Ich habe Wichtigeres zu tun. Kümmere dich selbst darum.";
+			link.l2.go = "TBP_Tavern_End";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "TBP_Tavern_End":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.TBP_Tavern");
+			CloseQuestHeader("TBP");
+		break;
+
+		case "TBP_Tavern_2":
+			dialog.text = "Am Tag ihres Verschwindens wirkte sie zufrieden, sogar glücklich! Kein Zeichen von Unruhe, kein Wort darüber, dass sie verschwinden wollte. Sie ging einfach – und war weg!";
+			link.l1 = "Interessant... Wo kann ich ihr Haus finden?";
+			link.l1.go = "TBP_Tavern_3";
+		break;
+
+		case "TBP_Tavern_3":
+			dialog.text = "Sie lebte weiter die Straße hinauf, in einer Hütte direkt hinter dem Haus gegenüber der Villa mit dem blauen Balkon. Es ist nicht weit von hier.";
+			link.l1 = "Ich werde keine Zeit verlieren. Wenn ich etwas herausfinde, sage ich dir Bescheid.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("TBP_Poorman");
+		break;
+
+		case "TBP_Tavern2_11":
+			dialog.text = "Verdächtig? Um sie herum schwirrten Horden von Verehrern, jeder auf seine Weise verdächtig! Eine wahre Kokette, sie wusste, wie man Aufmerksamkeit erregt.";
+			link.l1 = "Das habe ich schon bemerkt"+GetSexPhrase("","e")+". Hat sich jemand besonders hervorgetan?";
+			link.l1.go = "TBP_Tavern2_12";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "TBP_Tavern2_12":
+			dialog.text = "Hmm... Ja, da war einer. An dem Abend schenkte er ihr ein Kamee-Amulett. Er saß hier, ließ sie keinen Moment aus den Augen und schlich den ganzen Abend um sie herum.";
+			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon"))
+			{
+				link.l1 = "Ist das zufällig dieses Amulett? (Zeige das Kamee, das vom Bettler gekauft wurde)";
+				link.l1.go = "TBP_Tavern2_13";
+			}
+			else
+			{
+				link.l1 = "Ein Kamee-Amulett, sagst du...";
+				link.l1.go = "exit";
+				AddDialogExitQuestFunction("TBP_SearchHouseWithFonar");
+			}
+		break;
+
+		case "TBP_Tavern2_13":
+			dialog.text = "Das ist es! Ganz sicher! Kapitän, habt Ihr schon etwas herausgefunden?";
+			link.l1 = "Die Details später, "+npchar.name+", jetzt dürfen wir keine Zeit verlieren.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("TBP_SearchHouseWithFonar");
+			RemoveItems(pchar, "jewelry24", 1); 
+			notification("Übergeben: Kamee-Anhänger", "None");
+		break;
+
+		case "TBP_Tavern3_21":
+			dialog.text = "Das ist großartig, Kapitän! Ich hatte schon gedacht, ich würde sie nie wiedersehen. Was ist also passiert? Wollte sie wirklich einfach abhauen?";
+			link.l1 = "Sagen wir, sie musste sich mit einigen Problemen aus der Vergangenheit auseinandersetzen. Aber es sieht so aus, als sei das nun überstanden, und sie kann bald zur Arbeit zurückkehren.";
+			link.l1.go = "TBP_Tavern3_22_leadership";
+			link.l2 = "Sagen wir, sie brauchte eine kleine Pause von deinem langweiligen Gesicht. Haha! Nimm’s nicht übel, ich scherze nur. Jede Dame braucht ihre kleinen Geheimnisse...";
+			link.l2.go = "TBP_Tavern3_22_fortune";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "TBP_Tavern3_22_leadership":
+			dialog.text = "Nun, die Hauptsache ist, dass sie zur Arbeit zurückkehren wird. Ihr habt Eure Belohnung verdient, Kapitän. Hier, nehmt – hundert Dublonen, wie vereinbart. Und außerdem, nehmt diese Karte. Einer der Besucher hat sie hier gelassen und ist nie zurückgekehrt. Allen Anzeichen nach führt sie zu einem Schatz.";
+			link.l1 = "Nun, das werde ich überprüfen. Danke.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("TBP_BetsiBackToWork");
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			AddItems(pchar, "gold_dublon", 100);
+			GiveItem2Character(PChar, "map_full");
+		break;
+		
+		case "TBP_Tavern3_22_fortune":
+			dialog.text = "Nun, die Hauptsache ist, dass sie zur Arbeit zurückkehren wird. Ihr habt Eure Belohnung verdient, Kapitän. Hier, nehmt – hundert Dublonen, wie vereinbart. Und außerdem, nehmt diese Karte. Einer der Besucher hat sie hier gelassen und ist nie zurückgekehrt. Allen Anzeichen nach führt sie zu einem Schatz.";
+			link.l1 = "Nun, das werde ich überprüfen. Danke.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("TBP_BetsiBackToWork");
+			AddCharacterExpToSkill(pchar, "Fortune", 100);
+			AddItems(pchar, "gold_dublon", 100);
+			GiveItem2Character(PChar, "map_full");
+		break;
+		//<-- Тайна Бетси Прайс
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

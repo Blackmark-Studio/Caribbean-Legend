@@ -10,7 +10,7 @@ Ridderbok
 
 HollandGambit_3
 {
-Exploration mode: timer extended. Complete the quest!
+Tryb eksploracji: wydłużony czas. Ukończ zadanie!
 }
 
 HollandGambit_4
@@ -29,17 +29,17 @@ Mirage
 
 HollandGambit_7
 {
-Exploration mode: quest duration doubled
+Tryb eksploracji: podwojono czas trwania zadania
 }
 
 HollandGambit_8
 {
-Valkyrie
+Walkiria
 }
 
 HollandGambit_9
 {
-Valkyrie is on the horizon!
+Walkiria jest na horyzoncie!
 }
 
 HollandGambit_10
@@ -58,7 +58,7 @@ Meifeng
 
 HollandGambit_13
 {
-Here is the grotto. I should look for Solomon's stash here.
+Jest i grota. Powinienem poszukać tu skrytki Salomona.
 }
 
 HollandGambit_14
@@ -72,7 +72,7 @@ Fletcher
 
 HollandGambit_16
 {
-silver convoy
+konwój ze srebrem
 }
 
 HollandGambit_17
@@ -114,27 +114,27 @@ HollandGambit_24
 
 HollandGambit_25
 {
-Abigail died of calenture!
+Abigail zmarła na gorączke tropikalną!
 }
 
 HollandGambit_26
 {
-Charlie Knippel died of wounds!
+Charlie Knippel skonał z powodu odniesionych ran!
 }
 
 HollandGambit_27
 {
-Longway died of calenture!
+Longway zmarł na gorączke tropikalną!
 }
 
 HollandGambit_28
 {
-Longway died of wounds!
+Longway skonał z powodu odniesionych ran!
 }
 
 HollandGambit_29
 {
-An hour passed...
+Mineła godzina...
 }
 
 HollandGambit_30
@@ -148,7 +148,7 @@ Harrison
 
 HollandGambit_32
 {
-brigantine 'Hoop'
+brygandyna 'Hoop'
 }
 
 HollandGambit_33
@@ -195,12 +195,12 @@ Keller
 
 HollandGambit_42
 {
-You have fainted of wounds...
+Zemdlałeś z powodu ran...
 }
 
 HollandGambit_43
 {
-You didn't return money to Abigail thus making her a beggar
+Nie oddałeś pieniędzy Abigail, przez co stała się żebraczką
 }
 
 HollandGambit_44

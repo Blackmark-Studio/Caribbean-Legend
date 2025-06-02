@@ -26,7 +26,7 @@ void ProcessDialogEvent()
 		
 		//вестовой
 		case "Regata_Cureer":
-			dialog.text = "Buen día. ¿Eres capitán "+GetFullName(pchar)+"¿?";
+			dialog.text = "Buen día. ¿Eres el capitán "+GetFullName(pchar)+"?";
 			link.l1 = "Sí, soy yo. ¿Y cuál es el trato?";
 			link.l1.go = "Regata_Cureer_1";
 		break;
@@ -186,7 +186,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_Head_5":
-			dialog.text = "Ahora hablemos de la regata en sí. Escucha con atención. También te proporcionaré un documento con las reglas.\nLa regata comienza y termina en Port Royal. Hay cinco puntos que tendrás que alcanzar\nEl primero es de Port Royal a Belice, en Main Occidental\nEl segundo es de Belice a Puerto Príncipe, en La Española\nEl tercero es de Puerto Príncipe a St. John's, en Antigua\nEl cuarto es de St. John's a Bridgetown, en Barbados\nY el último es de Bridgetown a Port Royal\n¿Está claro?";
+			dialog.text = "Ahora hablemos de la regata en sí. Escucha con atención. También te proporcionaré un documento con las reglas.\nLa regata comienza y termina en Port Royal. Hay cinco puntos que tendrás que alcanzar.\nEl primero es de Port Royal a Belice, en Tierra Firme occidental.\nEl segundo es de Belice a Puerto Príncipe, en La Española.\nEl tercero es de Puerto Príncipe a St. John's, en Antigua.\nEl cuarto es de St. John's a Bridgetown, en Barbados.\nY el último es de Bridgetown a Port Royal.\n¿Está claro?";
 			link.l1 = "Cristalino claro, señor.";
 			link.l1.go = "Regata_Head_6";
 		break;
@@ -500,11 +500,11 @@ void ProcessDialogEvent()
 			if (sti(pchar.questTemp.Regata.Index != 1))
 			{
 				sTemp = pchar.questTemp.Regata.ContraIndex;
-				dialog.text = "Somos conscientes de que hay un participante más delante de ti - "+pchar.questTemp.Regata.AdversaryName.(sTemp)+" del "+pchar.questTemp.Regata.AdversaryShipName.(sTemp)+". Él dejó el puerto no hace mucho y pronto estará navegando por el cabo de Gonaives.";
+				dialog.text = "Somos conscientes de que hay un participante más delante de ti, "+pchar.questTemp.Regata.AdversaryName.(sTemp)+" del "+pchar.questTemp.Regata.AdversaryShipName.(sTemp)+". Él dejó el puerto no hace mucho y pronto estará navegando por el cabo de Gonaives.";
 			}
 			else
 			{
-				dialog.text = "Somos conscientes de que hay un participante más justo detrás de ti - "+pchar.questTemp.Regata.AdversaryName.b+" de la "+pchar.questTemp.Regata.AdversaryShipName.b+"Él estará aquí en unas pocas horas.";
+				dialog.text = "Somos conscientes de que hay un participante más justo detrás de ti, "+pchar.questTemp.Regata.AdversaryName.b+" de la "+pchar.questTemp.Regata.AdversaryShipName.b+"Él estará aquí en unas pocas horas.";
 			}
 			link.l1 = "Mm... estás muy bien informado.";
 			link.l1.go = "Regata_Contra_3";
@@ -531,7 +531,7 @@ void ProcessDialogEvent()
 		case "Regata_Contra_4":
 			if (sti(pchar.questTemp.Regata.Index != 1)) iTemp = 50000;
 			else iTemp = 30000;
-			dialog.text = " No mucho. Solo "+iTemp+" pesos. Y uno de tus competidores perderá casi dos días debido a... un accidente, ¡ja-ja!";
+			dialog.text = "No mucho. Solo "+iTemp+" pesos. Y uno de tus competidores perderá casi dos días debido a... un accidente, ¡ja-ja!";
 			if (makeint(Pchar.money) >= iTemp)
 			{
 				link.l1 = "¡Je! ¡Hablas con sensatez, amigo mío! Yo estoy pagando. Pero, ¿qué garantías tengo de que harás tu trabajo? ¿Y que no dispararás a mi barco cuando pase el cabo?";
@@ -610,7 +610,7 @@ void ProcessDialogEvent()
 			if (iTemp > 0 && iTemp <= 1000)//ничего не скажет
 			{
 				dialog.text = "Nuestra parroquia y yo te agradecemos por este modesto regalo.";
-				link.l1 = "Eres bienvenido, santo padre.";
+				link.l1 = "De nada, santo padre.";
 				link.l1.go = "Padre_exit";
 				AddMoneyToCharacter(pchar, -iTemp);
 				AddQuestRecord("Regata", "35");
@@ -672,7 +672,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_Spyglass_2":
-			if(drand(11) > 10)//отличная труба
+			if(hrand(11) > 10)//отличная труба
 			{
 				pchar.questTemp.Regata.Spy = "spyglass4";
 				sTemp = "an excellent spyglass";
@@ -681,7 +681,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if(drand(11) < 6)//обычная труба
+				if(hrand(11) < 6)//обычная труба
 				{
 					pchar.questTemp.Regata.Spy = "spyglass2";
 					sTemp = "an ordinary spyglass";
@@ -699,10 +699,10 @@ void ProcessDialogEvent()
 			dialog.text = "Aquí, echa un vistazo. Lo he heredado de mi padre. Él también era un marinero como tú, y tenía un montón de cachivaches de navegación. No lo necesito, pero seguramente lo encontrarás útil. Solo pido "+FindRussianMoneyString(sti(pchar.questTemp.Regata.SpyPrice))+" por ello.";
 			if (sti(pchar.money) >= sti(pchar.questTemp.Regata.SpyPrice))
 			{
-				link.l1 = "Vaya, vaya..."+sTemp+"¡Interesante! Digo, te lo compraré. Por tus bonitos ojos. Entonces, quieres "+FindRussianMoneyString(sti(pchar.questTemp.Regata.SpyPrice))+" por ello? Por favor, toma tu dinero.";
+				link.l1 = "Vaya, vaya... "+sTemp+" ¡Interesante! Digo, te lo compraré. Por tus bonitos ojos. Entonces, ¿quieres "+FindRussianMoneyString(sti(pchar.questTemp.Regata.SpyPrice))+" por ello? Por favor, toma tu dinero.";
 				link.l1.go = "Regata_Spyglass_3";
 			}
-			link.l2 = "Mm..."+sTemp+"¿ No, muchacha, lo siento, pero no lo necesito. Ya tengo mi propio catalejo muy bonito. Así que... ¡ay!";
+			link.l2 = "Mm... ¿"+sTemp+"? No, muchacha, lo siento, pero no lo necesito. Ya tengo un catalejo muy bonito. Así que... ¡ay!";
 			link.l2.go = "Regata_Spyglass_exit";
 		break;
 		
@@ -927,7 +927,7 @@ void ProcessDialogEvent()
 		
 		case "Regata_skiper":
 			pchar.questTemp.Regata.Name = GetFullName(npchar);
-			dialog.text = "¿Te diriges a Port Royal? La ruta más corta pasa por Curazao. Regresa a Bridgetown. Busca a un hombre llamado Woodrow Dougherty, es un viejo marinero y un navegante experimentado. Conoce perfectamente la zona entre Barbados y Jamaica, sería de gran ayuda para ti.\nEsto te ahorrará mucho tiempo crítico que tanto necesitas para ganar. Encuentra al hombre en la iglesia local y dile que "+GetFullName(npchar)+" - te ha enviado, no te rechazará. Llévalo a Port Royal, de todos modos iba a zarpar allí.";
+			dialog.text = "¿Te diriges a Port Royal? La ruta más corta pasa por Curazao. Regresa a Bridgetown. Busca a un hombre llamado Woodrow Dougherty, es un viejo marinero y un navegante experimentado. Conoce perfectamente la zona entre Barbados y Jamaica, sería de gran ayuda para ti.\nEsto te ahorrará mucho tiempo crítico que tanto necesitas para ganar. Encuentra al hombre en la iglesia y dile que "+GetFullName(npchar)+" te ha enviado, no te rechazará. Llévalo a Port Royal, de todos modos iba a zarpar allí.";
 			link.l1 = "¡Muy bien! Un buen navegante me será útil. Adiós.";
 			link.l1.go = "Regata_skiper_1";
 		break;
@@ -977,26 +977,26 @@ void ProcessDialogEvent()
 		
 		case "Regata_SiegeSkiper_1":
 			dialog.text = "Eres  correcto. ¿Cómo puedo ser de servicio?";
-			link.l1 = "  Sé que eres un navegante experimentado y conoces bien las aguas entre Barbados y Curazao. También sé que quieres llegar a Port Royal. Soy participante de la regata y hay una última parada: Port Royal. Quiero pedirte que te unas a mi tripulación como navegante para este último viaje.  ";
+			link.l1 = "Sé que eres un navegante experimentado y conoces bien las aguas entre Barbados y Curazao. También sé que quieres llegar a Port Royal. Soy participante de la regata y hay una última parada: Port Royal. Quiero pedirte que te unas a mi tripulación como navegante para este último viaje.  ";
 			link.l1.go = "Regata_SiegeSkiper_2";
 		break;
 		
 		case "Regata_SiegeSkiper_2":
 			dialog.text = "Interesante... ¿Y por qué piensas que me uniré a tu tripulación?";
-			link.l1 = "Bueno, porque oí hablar de ti por "+pchar.questTemp.Regata.Name+" con todas las garantías de que no dirás que no. Y por mi ayuda a Bridgetown en este momento crítico...";
+			link.l1 = "Bueno, porque oí hablar de ti por "+pchar.questTemp.Regata.Name+" con todas las garantías de que no te negarás. Y por mi ayuda a Bridgetown en este momento crítico...";
 			link.l1.go = "Regata_SiegeSkiper_3";
 		break;
 		
 		case "Regata_SiegeSkiper_3"://а тут - как уж свезет
-			if(drand(2) != 2)
+			if(hrand(2) != 2)
 			{
-				dialog.text = "De "+pchar.questTemp.Regata.Name+"¿Ya veo, claro. Está bien, capitán, le ayudaré a navegar por el camino más corto a Port Royal. ¿Piensa zarpar ahora?";
+				dialog.text = "¿De "+pchar.questTemp.Regata.Name+"? Ya veo, claro. Está bien, capitán, le ayudaré a navegar por el camino más corto a Port Royal. ¿Piensa zarpar ahora?";
 				link.l1 = "Sí.";
 				link.l1.go = "Regata_SiegeSkiper_4";
 			}
 			else
 			{
-				dialog.text = ""+pchar.questTemp.Regata.Name+"¿Entiendo. Pero, capitán, no puedo dejar mi ciudad en un momento tan peligroso. Debes entenderme como un soldado que nos brindó una ayuda desinteresada\nNo quiero que la gente murmure a mis espaldas que el viejo Woodrow huyó ante la batalla final contra los españoles. Me quedaré. No guardes rencor, capitán.";
+				dialog.text = "¿"+pchar.questTemp.Regata.Name+"? Entiendo. Pero, capitán, no puedo dejar mi ciudad en un momento tan peligroso. Debes entenderme como un soldado que nos brindó una ayuda desinteresada\nNo quiero que la gente murmure a mis espaldas que el viejo Woodrow huyó ante la batalla final contra los españoles. Me quedaré. No guardes rencor, capitán.";
 				link.l1 = "¿Y esta es tu última palabra? Pero he ayudado a tu colonia...";
 				link.l1.go = "Regata_SiegeSkiper_6";
 			}
@@ -1102,7 +1102,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-          				dialog.text = "Capitán, estás en "+n+"lugar. Felicitaciones por el exitoso resultado, has demostrado un tiempo digno - "+sti(pchar.questTemp.Regata.FifthTransitionTime)+" horas. ¡Felicidades a pesar de tu pérdida!";
+          				dialog.text = "Capitán, estás en "+n+"lugar. Felicitaciones por el exitoso resultado, has demostrado un tiempo digno, "+sti(pchar.questTemp.Regata.FifthTransitionTime)+" horas. ¡Felicidades a pesar de tu pérdida!";
 						link.l1 = "Está bien, señor. Me alegra haber mostrado un buen resultado en esta dura competencia.";
 						link.l1.go = "Other_result";
 						if (n==2) AddQuestRecord("Regata", "40");
@@ -1124,7 +1124,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Señor, déjeme preguntarle algo - ¿dónde está su barco? No lo veo...";
+			dialog.text = "Señor, déjeme preguntarle algo, ¿dónde está su barco? No lo veo...";
 			link.l1 = "Lo siento, señor. La llevaré al puerto inmediatamente.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Regata_Finish";
@@ -1232,7 +1232,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						dialog.text = " No estés triste, capitán. No es fácil ganar la regata, ¡incluso participar en ella es un privilegio!";
+						dialog.text = "No estés triste, capitán. No es fácil ganar la regata, ¡incluso participar en ella es un privilegio!";
 						link.l1 = "No te preocupes por mí. Estoy satisfecho con mi resultado.";
 						link.l1.go = "exit";
 					}
@@ -1266,7 +1266,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						dialog.text = " No esté triste, capitán. No es fácil ganar la regata, ¡incluso participar en ella es un privilegio!";
+						dialog.text = "No esté triste, capitán. No es fácil ganar la regata, ¡incluso participar en ella es un privilegio!";
 						link.l1 = "No te preocupes por mí. Estoy satisfecho con mi resultado.";
 						link.l1.go = "exit";
 					}
@@ -1300,7 +1300,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						dialog.text = " No estés triste, capitán. No es fácil ganar en la regata, ¡incluso participar en ella es un privilegio!";
+						dialog.text = "No estés triste, capitán. No es fácil ganar en la regata, ¡incluso participar en ella es un privilegio!";
 						link.l1 = "No te preocupes por mí. Estoy satisfecho con mi resultado.";
 						link.l1.go = "exit";
 					}

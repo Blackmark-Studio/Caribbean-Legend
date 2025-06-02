@@ -180,11 +180,11 @@ Armas blancas reunidas: 30 pieces
 }
 Roger_39
 {
-Pistolas reunidas - 50 piezas
+Pistolas reunidas: 50 piezas
 }
 Roger_40
 {
-Pociones curativas reunidas - 90 piezas
+Pociones curativas reunidas: 90 piezas
 }
 Roger_41
 {
@@ -422,12 +422,12 @@ Jim
 
 Roger_90
 {
-Modo de exploración: Corrida - las coordenadas son correctas
+Modo de exploración: Corrida: las coordenadas son correctas
 }
 
 Roger_91
 {
-Modo de exploración: Corrida - las coordenadas no son correctas
+Modo de exploración: Corrida: las coordenadas no son correctas
 }
 
 Roger_92

@@ -47,8 +47,10 @@ seg_Medicament 		{Medizin}
 
 seg_Cannon_3		{3p. Falkonen}
 seg_Cannon_6		{6-Pfünder}
+seg_Cannon_8		{8-Pfünder}
 seg_Cannon_12		{12-Pfünder}
 seg_Cannon_16		{16-Pfünder}
+seg_Cannon_18		{18-Pfünder}
 seg_Cannon_20		{20-Pfünder}
 seg_Cannon_24		{24-Pfünder}
 seg_Cannon_32		{32-Pfünder}

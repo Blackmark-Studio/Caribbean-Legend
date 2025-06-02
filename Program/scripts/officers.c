@@ -152,7 +152,7 @@ void OfficersReactionResult()
 		if (iPassenger != -1)
 		{
 			sld = GetCharacter(iPassenger);
-			//if(sld.id != "FMQT_mercen") return;
+			//if(sld.id != "Duran") return;
 			if (CheckAttribute(sld, "loyality") && !CheckAttribute(sld,"prisoned") && GetRemovable(sld) && !CheckAttribute(sld, "OfficerWantToGo.DontGo"))
 			{
 				if (sti(sld.loyality) < 1)
@@ -164,7 +164,7 @@ void OfficersReactionResult()
 				      	if (sld.sex != "woman")
 						{
 					    	sld.greeting = "Gr_Officer_Fired";
-							if(sld.id == "FMQT_mercen") sld.greeting = "Duran_officer";
+							if(sld.id == "Duran") sld.greeting = "Duran_officer";
 					    }
 						if(!CheckCharacterPerk(pchar, "IronWill")) DeleteAttribute(sld, "quest.officertype");
 	
@@ -199,7 +199,7 @@ void OfficersReactionResult()
 						{
 							sld.dialog.currentnode = "WantToGo";
 		                    sld.greeting           = "Gr_Officer_Salary";
-							if(sld.id == "FMQT_mercen") sld.greeting = "Duran_officer";
+							if(sld.id == "Duran") sld.greeting = "Duran_officer";
 							LAi_SetActorType(sld);
 							LAi_ActorDialog(sld, pchar, "OpenTheDoors", 2.0, 0);
 							//SetActorDialogAny2Pchar(sld.id, "pchar_back_to_player", 0.0, 0.0);
@@ -217,40 +217,46 @@ void OfficersReactionResult()
 
 bool isOfficerInShip(ref _chr, bool _withBoard)
 {
-	if(sti(pchar.Fellows.Passengers.navigator) == sti(_chr.index))
+    int idx = sti(_chr.index);
+
+	if(sti(pchar.Fellows.Passengers.navigator) == idx)
 	{
   		return true;
 	}
 
-	if(sti(pchar.Fellows.Passengers.boatswain) == sti(_chr.index))
+	if(sti(pchar.Fellows.Passengers.boatswain) == idx)
 	{
 		return true;
 	}
 
-	if(sti(pchar.Fellows.Passengers.cannoner) == sti(_chr.index))
+	if(sti(pchar.Fellows.Passengers.cannoner) == idx)
 	{
   		return true;
 	}
 
-	if(sti(pchar.Fellows.Passengers.doctor) == sti(_chr.index))
+	if(sti(pchar.Fellows.Passengers.doctor) == idx)
 	{
   		return true;
 	}
 
-	if(sti(pchar.Fellows.Passengers.carpenter) == sti(_chr.index))
+	if(sti(pchar.Fellows.Passengers.carpenter) == idx)
 	{
   		return true;
 	}
-    if(sti(pchar.Fellows.Passengers.treasurer) == sti(_chr.index))
+
+    if(sti(pchar.Fellows.Passengers.treasurer) == idx)
 	{
   		return true;
 	}
+
 	if(_withBoard && IsOfficer(_chr))
 	{
 		return true;
 	}
+
 	return false;
 }
+
 // метод увольняет офицера - название левое, наследие к3
 void CheckForReleaseOfficer(int iCharIndex)
 {
@@ -296,7 +302,7 @@ void CheckForReleaseOfficer(int iCharIndex)
 		RemoveOfficersIndex(pchar, iCharIndex);
 		DeleteAttribute(&characters[iCharIndex], "fighter"); // совместитель дожности
 	//}
-	DeleteAttribute(&characters[iCharIndex], "isfree"); // для формы ф2, название странное - обратный смысл, если есть, то занят
+	DeleteAttribute(&characters[iCharIndex], "isbusy");
 }
 
 bool CheckForAllOfficers() // ugeen 2016 -  возвращает true при наличии всех офицеров в команде ГГ
@@ -528,7 +534,7 @@ void LandEnc_OfficerFired()
 	if (sld.sex != "woman")
 	{
     	sld.greeting = "Gr_Officer_Fired";
-		if(sld.id == "FMQT_mercen") sld.greeting = "Duran_officer";
+		if(sld.id == "Duran") sld.greeting = "Duran_officer";
     }
     sld.LifeDay = 0; // стереть при выходе
     DeleteAttribute(sld, "Payment"); // признак офицера для +1 предметов  

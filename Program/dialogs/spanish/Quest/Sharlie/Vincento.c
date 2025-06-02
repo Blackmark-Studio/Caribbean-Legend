@@ -38,7 +38,8 @@ void ProcessDialogEvent()
 		if (CheckAttribute(pchar, "questTemp.Guardoftruth.Archy") && pchar.questTemp.Guardoftruth.Archy == "begin")
 		{
 			dialog.text = "Pax vobiscum, hijo mío... ¿Qué puedo hacer por ti?";
-			link.l1 = TimeGreeting() + ", Su Excelencia. ¿Tiene alguna noticia sobre nuestro arreglo?" link.l1.go = "guardadordelaverdad_17";
+			link.l1 = TimeGreeting() + ", Su Excelencia. ¿Tiene alguna noticia sobre nuestro arreglo?" 
+			link.l1.go = "guardoftruth_17";
 			break;
 		}
 		dialog.text = "¿Hay algo que desees, hijo mío?";
@@ -91,7 +92,7 @@ void ProcessDialogEvent()
 
 	case "utensil_6":
 		if (CheckAttribute(pchar, "questTemp.Dolly"))
-			sTemp = "Kukulcan?! Sancta Maria, Mater Dei, ora pro nobis! Kukulcan again, that old serpent...";
+			sTemp = "¿Kukulcan? Sancta Maria, Mater Dei, ora pro nobis! Kukulcan de nuevo, esa vieja serpiente...";
 		else
 			sTemp = "Hm...";
 		dialog.text = "Precisamente. Ese aventurero enviado por el diablo encontró Tayasal junto con los tesoros de los antiguos mayas. Sin embargo, la alegría del Don Mendosa fue efímera. Todos esos tesoros desaparecieron junto con Dichoso en su ruta de regreso a España. Es probable que, junto con todos los lingotes de oro y ornamentos, Miguel se llevara consigo una fuente ancestral de maldad, la máscara aterradora de un antiguo dios demonio maya llamado Kukulcán.";
@@ -112,7 +113,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "utensil_9":
-		dialog.text = "Entiendo, " + pchar.name + ". Ahora, ¿no has notado cosas extrañas sucediendo en todo el Caribe tan pronto como llegaste aquí desde Europa? ¿No te parece extraño que la brujería, la magia negra y otros rituales tengan mucha más fuerza aquí que en casa? Amuletos paganos encantados por chamanes indios poseen un poder real que cualquier hombre puede experimentar solo con sostenerlos.\nIncluso nuestros alquimistas cristianos - ¡que Dios les haga ver el error de sus caminos! - han dominado el arte de fabricar objetos encantados. No se dan cuenta de que están sirviendo al mismo Diablo al hacerlo. ¿No sientes la presencia antinatural de algo infernal acechando justo fuera de tu visión periférica?";
+		dialog.text = "Entiendo, " + pchar.name + ". Ahora, ¿no has notado cosas extrañas sucediendo en todo el Caribe tan pronto como llegaste aquí desde Europa? ¿No te parece extraño que la brujería, la magia negra y otros rituales tengan mucha más fuerza aquí que en casa? Amuletos paganos encantados por chamanes indios poseen un poder real que cualquier hombre puede experimentar solo con sostenerlos.\nIncluso nuestros alquimistas cristianos, ¡que Dios les haga ver el error de sus caminos!, han dominado el arte de fabricar objetos encantados. No se dan cuenta de que están sirviendo al mismo Diablo al hacerlo. ¿No sientes la presencia antinatural de algo infernal acechando justo fuera de tu visión periférica?";
 		link.l1 = "Tienes razón, Padre. Al principio me sorprendió, pero ahora supongo que ya me he acostumbrado... ¡Es el Nuevo Mundo después de todo!";
 		link.l1.go = "utensil_10";
 		break;
@@ -143,7 +144,7 @@ void ProcessDialogEvent()
 
 	case "utensil_14":
 		dialog.text = "No. Tengo pruebas de que estos tesoros todavía están aquí en el Caribe. No necesitas conocer mis fuentes aún, debes confiar en mí. Además, creo que Dichoso le estaba mintiendo al barón.\nSu historia sobre las ruinas de Tayasal no coincide con lo que mi indio Itza me contó bajo interrogatorio. Sin mencionar que el hecho de que Dichoso fuera el único sobreviviente de la emboscada Mosquito fue un poco demasiado conveniente.";
-		link.l1 = "Supongo que Don Mendosa también lo cree, ya que asaltó Saint-Pierre tratando de encontrar a Dichoso?";
+		link.l1 = "Supongo que Don Mendosa también lo cree, ya que asaltó Saint-Pierre tratando de encontrar a Dichoso.";
 		link.l1.go = "utensil_15";
 		break;
 
@@ -392,7 +393,7 @@ void ProcessDialogEvent()
 
 	case "tieyasal_4":
 		dialog.text = "¿Y afirmarías que todo esto ha sucedido por accidente? ¿Por coincidencia? 'El corazón del hombre traza su rumbo, pero el Señor dirige sus pasos.' ¡Hijo mío, el Todopoderoso te ha guiado por este camino! ¡Ha fortalecido tu mano en la batalla, dirigido tus pies por el camino correcto y te ha protegido en tiempos de peligro! '¡He aquí, la espada del Señor desciende para juicio sobre Edom, sobre el pueblo que he destinado a la destrucción!'";
-		link.l1 = " Ejem... Padre, pero la misión básicamente ya se ha cumplido. Tengo la máscara. ¿No significa eso que la concha poseída de Kukulcán no puede entrar en nuestra historia y cambiarla...?";
+		link.l1 = "Ejem... Padre, pero la misión básicamente ya se ha cumplido. Tengo la máscara. ¿No significa eso que la concha poseída de Kukulcán no puede entrar en nuestra historia y cambiarla...?";
 		link.l1.go = "tieyasal_5";
 		break;
 
@@ -421,7 +422,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "tieyasal_9":
-		dialog.text = "La última compañía de soldados que tuve estaba bajo el mando de Alonso de Maldonado. Ay, no tengo la oportunidad de reunir otra tropa de soldados españoles. He gastado todo mi prestigio con la guarnición local. Tendrás que hacerlo con la ayuda de tus propios hombres, hijo mío. Pero te daré la ayuda que pueda con cualquier otra cosa.";
+		dialog.text = "La última compañía de soldados que tuve estaba bajo el mando de Alonso de Maldonado. Ay, no tengo la oportunidad de reunir otra tropa de soldados españoles. He gastado todo mi prestigio con la guarnición. Tendrás que hacerlo con la ayuda de tus propios hombres, hijo mío. Pero te daré la ayuda que pueda con cualquier otra cosa.";
 		link.l1 = "¿Qué tipo de ayuda?";
 		link.l1.go = "tieyasal_10";
 		break;

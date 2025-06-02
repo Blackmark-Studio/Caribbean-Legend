@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 			// --> калеуче
-			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && drand(1) == 0 && sti(Pchar.money) >= 2000) 
+			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(1) == 0 && sti(Pchar.money) >= 2000) 
 			{
 				dialog.text = "Look, sir, don't you want to buy one amusing little thing? It's inexpensive, just some few thousand pesos...";
 				link.l1 = "Hmm. Probably stole this 'little thing', and now you're trying to shake off it?";
@@ -37,6 +37,13 @@ void ProcessDialogEvent()
 					link.l2 = "Hey, listen, would you like to earn a couple thousand pesos instead of these pathetic alms?";
 					link.l2.go = "trial";
 				}
+				// --> Тайна Бетси Прайс
+				if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon3") && pchar.location == "Villemstad_town")
+				{
+					link.l2 = "That pendant with a cameo... Where did you find it?";
+					link.l2.go = "TBP_Kulon_1";
+				}
+				// <-- Тайна Бетси Прайс
 				npchar.quest.meeting = "1";
 			}			
 			else
@@ -60,6 +67,13 @@ void ProcessDialogEvent()
 					link.l2 = "Hey, listen, would you like to earn a couple thousand pesos instead of these pathetic alms?";
 					link.l2.go = "trial";
 				}
+				// --> Тайна Бетси Прайс
+				if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon3") && pchar.location == "Villemstad_town")
+				{
+					link.l2 = "That pendant with gems... Where did you find it?";
+					link.l2.go = "TBP_Kulon_1";
+				}
+				// <-- Тайна Бетси Прайс
 				link.l3 = LinkRandPhrase("Can you tell me anything interesting?", 
 					"What's new in the town?", "Oh, I'd like to hear the latest gossips...");
 				link.l3.go = "rumours_poor";
@@ -351,5 +365,35 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "kaleuche_amulet1"); 
 		break;
 		// <-- калеуче
+		
+		// --> Тайна Бетси Прайс
+		case "TBP_Kulon_1":
+			dialog.text = "Eh, "+GetAddress_Form(NPChar)+", what do you care about an old trinket?";
+			link.l1 = "When I kick your stupid head with my boot, you'll immediately understand why I care.";
+			link.l1.go = "TBP_Kulon_TO";
+			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon2"))
+			{
+				link.l2 = "This pendant belonged to Betsy Price. So where did you find it?";
+				link.l2.go = "TBP_Kulon_leadership";
+			}
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon3");
+		break;
+
+		case "TBP_Kulon_TO":
+			dialog.text = "It was lying near the house with the lantern, "+GetAddress_Form(NPChar)+". Trampled into the mud by a rough man's boot. But no one has lived in that house for a long time, so I decided it was ownerless...";
+			link.l1 = "Hmm...";
+			link.l1.go = "exit";
+			AddCharacterExpToSkill(pchar, "FencingH", 100);
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon2");
+		break;
+
+		case "TBP_Kulon_leadership":
+			dialog.text = "It was lying near the house with the lantern, "+GetAddress_Form(NPChar)+". Trampled into the mud by a rough man's boot. But no one has lived in that house for a long time, so I decided it was ownerless...";
+			link.l1 = "Hmm...";
+			link.l1.go = "exit";
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon2");
+		break;
+		// <-- Тайна Бетси Прайс
 	}
 }

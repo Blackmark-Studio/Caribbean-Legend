@@ -47,6 +47,7 @@ void FillScrollImageWithCompanionShips(string sNodeName, int iNotUsed)
 						attributeName = "pic" + (iListSize+1);
 
 						GameInterface.(sNodeName).(attributeName).companionIndex = cn;
+						GameInterface.(sNodeName).(attributeName).str1 = "#"+" "+ShipsTypes[iShipType].Class;
 						GameInterface.(sNodeName).(attributeName).img1 = "ship";
 						GameInterface.(sNodeName).(attributeName).tex1 = FindFaceGroupNum(sNodeName + ".ImagesGroup","SHIPS_"+shipName+"_"+realShip.ship.upgrades.hull);
 
@@ -125,7 +126,7 @@ void FillScrollImageWithFaces(string sNodeName, int iNotUsed, bool bCompanions, 
 			PsgAttrName = "id"+(i+1);
 			cn = sti(pRef.(PsgAttrName));
 
-			if(cn!=-1 && !CheckAttribute(&characters[cn], "isfree"))
+			if(cn!=-1 && !CheckAttribute(&characters[cn], "isbusy"))
 			{
 				GameInterface.(sNodeName).(attributeName).character = cn;
 				GameInterface.(sNodeName).(attributeName).img1 = GetFacePicName(GetCharacter(cn));
@@ -202,6 +203,7 @@ void EndAboveForm(bool _pauseTime)
 
 void ChangeShowIntarface()
 {
+	if(DontRefreshBLI) return;
 	if (bSeaActive && !bAbordageStarted)
     {
         if (!IsEntity(&BattleInterface))
@@ -499,7 +501,7 @@ void SetCrewExpTable(ref _chr, string _tabName, string _bar1, string _bar2, stri
     	// GameInterface.(_tabName).(row).td1.icon.offset = "0, 2";
 		GameInterface.(_tabName).(row).td2.align = "left";
 		// GameInterface.(_tabName).(row).td2.scale = 0.8;
-		GameInterface.(_tabName).(row).td2.textoffset = "20,0";
+		GameInterface.(_tabName).(row).td2.textoffset = "10,0";
 		GameInterface.(_tabName).(row).td3.align = "right";
 		// GameInterface.(_tabName).(row).td3.scale = 0.8;
 	}
@@ -783,6 +785,33 @@ void SetFoodShipInfo(ref chr, string _textName)
 	}
 }
 
+void SetFoodShipInfoShort(ref chr, string _textName)
+{
+	int iColor, iFood;
+	string sText;
+	
+	SetFormatedText(_textName, "");
+	if (sti(chr.ship.type) != SHIP_NOTUSED)
+	{
+		iFood = CalculateShipFood(chr);
+		sText = FindRussianDaysString(iFood);
+		SetFormatedText(_textName, sText);
+		if(iFood >= 5)
+		{
+			iColor = argb(255,255,255,192);
+		}
+		if(iFood > 10)
+		{
+			iColor = argb(255,192,255,192);
+		}
+		if(iFood < 5)
+		{
+			iColor = argb(255,255,192,192);
+		}
+		SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE, _textName, 8,-1,iColor);	
+	}
+}
+
 // Warship 11.07.09 Вывести в текстовое поле инфу о количестве дней, на сколько хватит рому на судне
 void SetRumShipInfo(ref _character, String _node)
 {
@@ -796,6 +825,38 @@ void SetRumShipInfo(ref _character, String _node)
 		text = XI_ConvertString("RumShipInfo");
 		rum = CalculateShipRum(_character);
 		text = text + FindRussianDaysString(rum);
+		SetFormatedText(_node, text);
+		
+		if(rum < 3)
+		{
+			color = argb(255, 255, 192, 192);
+		}
+		
+		if(rum >= 3)
+		{
+			color = argb(255, 255, 255, 192);
+		}
+		
+		if(rum >= 10)
+		{
+			color = argb(255, 192, 255, 192);
+		}
+		
+		SendMessage(&GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, _node, 8, -1, color);	
+	}
+}
+
+void SetRumShipInfoShort(ref _character, String _node)
+{
+	int color, rum;
+	String text;
+	
+	SetFormatedText(_node, "");
+	
+	if(sti(_character.ship.type) != SHIP_NOTUSED)
+	{
+		rum = CalculateShipRum(_character);
+		text = FindRussianDaysString(rum);
 		SetFormatedText(_node, text);
 		
 		if(rum < 3)
@@ -858,7 +919,7 @@ void SetAlertMarks(ref chr)
 	{
 		if (sti(chr.perks.FreePoints_self) > 0 || sti(chr.perks.FreePoints_ship) > 0) 
 		{
-			if(!bPerksMaxSelf(chr) || !bPerksMaxShip(chr)) SetNodeUsing("A_ABILITIES",true);
+			if(!HaveAllPerks(chr, "any")) SetNodeUsing("A_ABILITIES",true);
 		}
 	}
 	if(CheckQuestInfo() || CheckNewDocs()) SetNodeUsing("A_QUESTBOOK",true);

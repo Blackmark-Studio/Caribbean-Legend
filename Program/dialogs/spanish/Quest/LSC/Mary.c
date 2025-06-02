@@ -108,8 +108,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "Town_7":
-		PlaySound("Voice\Spanish\LSC\Mary Casper-04.wav");
-		dialog.text = "¿Qué dijiste?… ¡Maldita sea, no eres un ladrón cualquiera! ¡Él trabaja para el almirante! ¡Derríbenlo, muchachos!";
+		PlaySound("Voice\Spanish\LSC\Mary Casper-09.wav");
+		dialog.text = "¿Qué dijiste?... ¡Maldita sea, no eres un ladrón cualquiera! ¡Él trabaja para el almirante! ¡Derríbenlo, muchachos!";
 		link.l1 = "...";
 		link.l1.go = "Cabin_fight";
 		break;
@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 
 	case "mary_1":
 		dialog.text = "Ja-ja, eres todo un caballero, ¿verdad?: haciendo cumplidos con un sable aún en la mano. Gracias por tu ayuda. ¡Me has salvado la vida, sí, ¿eh?! Preséntate, caballero, que nunca te había visto antes. ¿Eres nuevo aquí?";
-		link.l1 = "Mi nombre es " + GetFullName(pchar) + ", pero las bellas damas pueden llamarme " + pchar.name + ". . ¿Soy nueva aquí? Hm... Lo soy.";
+		link.l1 = "Mi nombre es " + GetFullName(pchar) + ", pero las bellas damas pueden llamarme " + pchar.name + ". ¿Que si soy nuevo aquí? Hm... Lo soy.";
 		link.l1.go = "mary_2";
 		break;
 
@@ -189,7 +189,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "mary_4":
-		dialog.text = "Ya veo. Esta puerta sin cerrar casi me mata. Jurgen mismo forjó las cerraduras para mí, no puedes abrirlas sin la llave correcta y forzarlas no servirá. Además, no me quedaré quieta mientras alguien intenta entrar - ¡cuatro cañones de mi pistola dejarán cuatro agujeros en una puerta o en un cuerpo, ja-ja!\nPero el maldito Chad no me deja en paz. Ya ha enviado matones para 'persuadirme' de tomar su lado, definitivamente va en serio. Si no fuera por ti, habría dicho que sí. Tendré que quedarme aquí bajo asedio, sí, ¿eh?" + pchar.name + ", ¡sí, ¿eh?! Gracias a Dios que lo predije, tengo suficientes provisiones y Jurgen es mi vecino, no me peleé con él.";
+		dialog.text = "Ya veo. Esta puerta sin cerrar casi me mata. Jurgen mismo forjó las cerraduras para mí, no puedes abrirlas sin la llave correcta y forzarlas no servirá. Además, no me quedaré quieta mientras alguien intenta entrar, ¡cuatro cañones de mi pistola dejarán cuatro agujeros en una puerta o en un cuerpo, ja-ja!\nPero el maldito Chad no me deja en paz. Ya ha enviado matones para 'persuadirme' de tomar su lado, definitivamente va en serio. Si no fuera por ti, habría dicho que sí. Tendré que quedarme aquí bajo asedio, sí, ¿eh?" + pchar.name + ", ¡sí, ¿eh?! Gracias a Dios que lo predije, tengo suficientes provisiones y Jurgen es mi vecino, no me peleé con él.";
 		link.l1 = "Mary, ¿por qué no me cuentas más sobre tus problemas? Veo que necesitas mi ayuda, pero no entendí nada de lo que salió de tus labios.";
 		link.l1.go = "mary_5";
 		break;
@@ -213,14 +213,14 @@ void ProcessDialogEvent()
 		break;
 
 	case "mary_8":
-		dialog.text = "¡Él es peor que un canalla! Es que… me faltan las palabras para describir a ese monstruo. Me fui esa vez, lo encontré a la mañana siguiente y le dije todo lo que pensaba de él. Sí, ¿eh? Le dije que no tendría nada que ver con su complot contra el almirante.";
+		dialog.text = "¡Él es peor que un canalla! Es que... me faltan las palabras para describir a ese monstruo. Me fui esa vez, lo encontré a la mañana siguiente y le dije todo lo que pensaba de él. Sí, ¿eh? Le dije que no tendría nada que ver con su complot contra el almirante.";
 		link.l1 = "Y no le gustó, obviamente... Eso fue hecho con ira, Mary. Deberías ser más cautelosa.";
 		link.l1.go = "mary_9";
 		break;
 
 	case "mary_9":
 		dialog.text = "No puedo, no pude mantener la boca cerrada. ¡El bastardo mató a Alan e intentó usarme para lograr sus sucios objetivos! ¡Escoria! Sí, claro, se enfadó y prometió que me arrepentiría de eso. ¡Le dije que le cortaría las pelotas y se las daría de comer a los cangrejos! \nAmenazó con enviar a sus compinches Narval detrás de mí si no cambiaba de opinión. Me reí, no pensé que un Narval se atrevería a levantarme la mano.";
-		link.l1 = "   Parece que te has equivocado.   ";
+		link.l1 = "Parece que te has equivocado.";
 		link.l1.go = "mary_10";
 		break;
 
@@ -387,12 +387,12 @@ void ProcessDialogEvent()
 
 	case "letters_2":
 		dialog.text = "¿De verdad lo crees? Chad no es de los que dejan pasar las cosas tan fácilmente. Ah, estoy demasiado cansada para seguir teniendo miedo...";
-		link.l1 = "Hum. No pensé que eres el tipo de dama que se asusta fácilmente.";
+		link.l1 = "Hum. No pensé que fueras el tipo de dama que se asusta fácilmente.";
 		link.l1.go = "letters_3";
 		break;
 
 	case "letters_3":
-		dialog.text = "¡Ja! ¿Acaso no lo soy? No tengo miedo de luchar cara a cara, pero ¿sentarme en mi trasero esperando a ser asesinada? Eso sí que me da mucho miedo, sí, ¿eh?" + pchar.name + ", ¡sí, ¿eh!?...";
+		dialog.text = "¡Ja! ¿Acaso no lo soy? No tengo miedo de luchar cara a cara, pero ¿sentarme en mi trasero esperando a ser asesinada? Eso sí que me da mucho miedo, sí, ¿eh?" + pchar.name + ", sí, ¿eh?...";
 		link.l1 = "Confía en mí, Mary: Kapper tiene las manos llenas con el almirante en este momento... Necesito tu consejo.";
 		link.l1.go = "letters_4";
 		break;
@@ -455,13 +455,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "happy":
-		dialog.text = "" + pchar.name + "¡¿Cómo llegó aquí?! ¿Vino a...";
-		link.l1 = "Sí, ¿eh?, para matarte, Mary. Vino aquí a través del camarote de Jurgen y usó una cuerda para bajar aquí.";
+		dialog.text = "" + pchar.name + "¡¿Cómo llegó aquí?! ¿Vino a...?";
+		link.l1 = "Sí, para matarte, Mary. Vino aquí a través del camarote de Jurgen y usó una cuerda para bajar aquí.";
 		link.l1.go = "happy_1";
 		break;
 
 	case "happy_1":
-		dialog.text = "¡Ah! ¡Soy tan tonta por haber olvidado ese camino! Chad le enseñó, estoy segura, sí, ¿eh?";
+		dialog.text = "¡Ah! ¡Soy tan tonta por haber olvidado ese camino! Chad se lo enseñó, estoy segura, sí.";
 		link.l1 = "Lo más probable. Apenas lo logré. Él venía tras de ti.";
 		link.l1.go = "happy_2";
 		break;
@@ -473,7 +473,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "happy_3":
-		dialog.text = "Me has salvado de nuevo, guapo. Siempre llegas en el momento perfecto, sí, ¿eh? ¿Cómo lo haces?";
+		dialog.text = "Me has salvado de nuevo, guapo. Siempre llegas en el momento perfecto, sí. ¿Cómo lo haces?";
 		link.l1 = "Bueno, no lo sé. Uno de mis muchos talentos. Tu asedio ha terminado: Chad Kapper está muerto y también todos sus amigos. Cíclope fue el último de su podrida tripulación, sí, ¿eh?";
 		link.l1.go = "happy_4";
 		break;
@@ -541,7 +541,7 @@ void ProcessDialogEvent()
 	case "happy_13":
 		DialogExit();
 		LSC_MaryLoveWaitTime();
-		SetLaunchFrameFormParam("Next morning...", "", 0, 4);
+		SetLaunchFrameFormParam("A la mañana siguiente...", "", 0, 4);
 		LaunchFrameForm();
 		DoQuestCheckDelay("LSC_MaryRomantic_5", 4.0);
 		break;
@@ -983,7 +983,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "narval_wait":
-		dialog.text = "Vamos, " + pchar.name + "¡";
+		dialog.text = "¡Vamos, " + pchar.name + "!";
 		link.l1 = "Seguro...";
 		link.l1.go = "exit";
 		NextDiag.TempNode = "narval_wait";
@@ -1171,7 +1171,7 @@ void ProcessDialogEvent()
 		}
 		else
 			sTemp = "He estado entrenando duro con estoques y los domino a la perfección.";
-		dialog.text = "(llorando) Oficial... Entonces yo también quiero ser tu oficial, ¡sí, ¿eh?! ¡Puedo luchar, lo sabes!" + sTemp + " ¡Y disparo bien! Puede que no tenga habilidades navales, pero aprendo rápido, tengo talento, sí, ¿eh?";
+		dialog.text = "(llora) Oficial... Entonces yo también quiero ser tu oficial, ¡sí, ¿eh?! ¡Puedo luchar, lo sabes!" + sTemp + " ¡Y disparo bien! Puede que no tenga habilidades navales, pero aprendo rápido, tengo talento, sí, ¿eh?";
 		// проход первый - ГГ либо соглашается, либо нет, отказ ведет к полному разрыву
 		link.l1 = "(de acuerdo) Mary... Quería ofrecerte el puesto yo mismo. ¡No hay mejor, más hábil y fogosa doncella que tú! ¡Te quiero a mi lado!";
 		link.l1.go = "adversary_hire";
@@ -1181,7 +1181,7 @@ void ProcessDialogEvent()
 
 	// отказ
 	case "adversary_fail":
-		dialog.text = "¿No puedes? ¿Así que esa rubia zorra puede ser oficial y yo no? Me estás mintiendo, sí, ¿eh?" + pchar.name + ", ¡simplemente no quieres estar conmigo! (llorando) ¿Es esa chica mejor que yo, sí, ¿eh?";
+		dialog.text = "¿No puedes? ¿Así que esa rubia zorra puede ser oficial y yo no? Me estás mintiendo, sí, ¿eh?" + pchar.name + ", ¡simplemente no quieres estar conmigo! (llora) ¿Es esa chica mejor que yo, sí, ¿eh?";
 		link.l1 = "¡Mary, no entiendes!";
 		link.l1.go = "adversary_fail_1";
 		break;
@@ -1193,7 +1193,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "adversary_fail_2":
-		dialog.text = "Se acabó... (llorando) ¡Vete! ¡Vete con tu ramera! Y yo me quedaré aquí... ¡No me voy a ninguna parte! ¡Dame mi llave!";
+		dialog.text = "Se acabó... (llora) ¡Vete! ¡Vete con tu ramera! Y yo me quedaré aquí... ¡No me voy a ninguna parte! ¡Dame mi llave!";
 		link.l1 = "Pero Mary...";
 		link.l1.go = "adversary_fail_3";
 		break;
@@ -1378,8 +1378,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "sea_bomb_3":
-		dialog.text = "Arriesguémonos, " + pchar.name + "?";
-		link.l1 = "Está bien. ¡Sigamos con esto! ¡Muchachos! ¡Tomen tres barriles de pólvora! ¡Vamos a largarnos de aquí al diablo! Me encanta tu imaginación, " + npchar.name + "... Nunca se me habría ocurrido esta idea a mí misma.";
+		dialog.text = "Arriesguémonos, " + pchar.name + ".";
+		link.l1 = "Está bien. ¡Sigamos con esto! ¡Muchachos! ¡Tomen tres barriles de pólvora! ¡Vamos a largarnos de aquí al diablo! Me encanta tu imaginación, " + npchar.name + "... Nunca se me habría ocurrido esta idea.";
 		link.l1.go = "sea_bomb_4";
 		break;
 
@@ -1648,13 +1648,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "brothel_1":
-		dialog.text = "Entonces, ¿por qué has estado visitando a esas fulanas, esas zorras de burdel? ¡Sé que lo hiciste, no me mientas! No te gusta algo de mí cuando hacemos el amor, ¿sí, eh? (llorando) Dime...";
+		dialog.text = "Entonces, ¿por qué has estado visitando a esas fulanas, esas zorras de burdel? ¡Sé que lo hiciste, no me mientas! No te gusta algo de mí cuando hacemos el amor, ¿sí, eh? (llora) Dime...";
 		link.l1 = "Mary, Mary... cálmate, por favor, mi niña. Sí, he estado en el burdel unas cuantas veces, pero solo por asuntos de negocios. ¡No estaba buscando divertirme!";
 		link.l1.go = "brothel_2";
 		break;
 
 	case "brothel_2":
-		dialog.text = "¿Y qué clase de 'asuntos de negocios' te habían traído arriba al cuarto del placer? (sollozando) Estás mintiendo, " + pchar.name + "¡";
+		dialog.text = "¿Y qué clase de 'asuntos de negocios' te habían traído arriba al cuarto del placer? (sollozando) ¡Estás mintiendo, " + pchar.name + "!";
 		link.l1 = "Mary, querida, deja eso ya... Realmente tuve algunos asuntos de negocios con la dueña del burdel. Y he subido unas cuantas veces. La última vez por un asunto personal del gobernador - me pidió que encontrara su anillo de bodas. ¿Cómo podría negarme a Su Excelencia?";
 		link.l1.go = "brothel_3";
 		break;
@@ -1667,7 +1667,7 @@ void ProcessDialogEvent()
 
 	case "brothel_4":
 		dialog.text = "";
-		link.l1 = "La tercera vez estaba ayudando al comandante local: tuve que preguntar a las prostitutas sobre un oficial de la guarnición. Ese oficial era sospechoso de espionaje y de tener conexiones con piratas. Finalmente, lo atrapamos y recibí una buena recompensa...";
+		link.l1 = "La tercera vez estaba ayudando al comandante: tuve que preguntar a las prostitutas sobre un oficial de la guarnición. Ese oficial era sospechoso de espionaje y de tener conexiones con piratas. Finalmente, lo atrapamos y recibí una buena recompensa...";
 		link.l1.go = "brothel_5";
 		break;
 
@@ -1700,7 +1700,7 @@ void ProcessDialogEvent()
 
 	// на Тайясаль
 	case "tieyasal":
-		dialog.text = "" + pchar.name + "¿qué pregunta tan extraña? Te amo. Me salvaste. Soy tu talismán pelirrojo - ¿realmente crees que te dejaré ir allí solo? ¡Ni lo pienses, sí, ¿eh?! ¡Estoy contigo! ¿Cuándo partimos?";
+		dialog.text = "" + pchar.name + "¿qué pregunta tan extraña? Te amo. Me salvaste. Soy tu talismán pelirrojo, ¿realmente crees que te dejaré ir allí solo? ¡Ni lo pienses, sí, ¿eh?! ¡Estoy contigo! ¿Cuándo partimos?";
 		link.l1 = "Tienes razón, querida, fue una pregunta extraña... Te lo contaré más tarde cuando nos vayamos. Primero necesitamos prepararnos.";
 		link.l1.go = "tieyasal_1";
 		break;
@@ -1729,8 +1729,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "GoldenGirl_1":
-		dialog.text = "¿De verdad?! ¿Una cortesana? ¿Lo dices como si no fuera gran cosa, eh? ¿Solo divirtiéndote un poco con Su Excelencia? Charles, ¿estás fu...";
-		link.l1 = "¡María, cálmate, por favor! No es que vaya allí para… ¡no es un burdel! Bueno, es un burdel, pero maldita sea si no soy un noble y un hombre de palabra. ¿De verdad no confías en mí? El gobernador solo me pidió un pequeño favor y debo complacerlo, eso es todo.";
+		dialog.text = "¿De verdad? ¿Una cortesana? ¿Lo dices como si no fuera gran cosa, eh? ¿Solo divirtiéndote un poco con Su Excelencia? Charles, ¿estás demen...?";
+		link.l1 = "¡Mary, cálmate, por favor! No es que vaya allí para... ¡no es un burdel! Bueno, es un burdel, pero maldita sea si no soy un noble y un hombre de palabra. ¿De verdad no confías en mí? El gobernador solo me pidió un pequeño favor y debo complacerlo, eso es todo.";
 		link.l1.go = "GoldenGirl_2";
 		break;
 
@@ -1804,8 +1804,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "GoldenGirl_15":
-		dialog.text = "¿Mientras yo estaré sentado en mi trasero en la bañera que acabas de ganar? ¿Te has vuelto loco, Charles?";
-		link.l1 = "Tengo miedo de que tenga que ser así. El gobernador me proporcionó un par de oficiales nobles para que sean mis segundos y así evitar cualquier confusión después. No puedo llevarte a ti ni a ninguno de los muchachos conmigo por el bien de la integridad oficial del duelo. Esto es demasiado serio, lo siento.";
+		dialog.text = "¿Y mientras yo estaré sentada en mi trasero en la bañera que acabas de ganar? ¿Te has vuelto loco, Charles?";
+		link.l1 = "Me temo que debe ser así. El gobernador me proporcionó un par de oficiales nobles para que sean mis segundos y así evitar cualquier confusión después. No puedo llevarte a ti ni a ninguno de los muchachos conmigo por el bien de la integridad oficial del duelo. Esto es demasiado serio, lo siento.";
 		link.l1.go = "GoldenGirl_16";
 		break;
 
@@ -1878,7 +1878,7 @@ void ProcessDialogEvent()
 
 	case "GoldenGirl_28":
 		DialogExit();
-		SetLaunchFrameFormParam("Some time has passed...", "", 0.1, 3.0);
+		SetLaunchFrameFormParam("Ha pasado algún tiempo...", "", 0.1, 3.0);
 		LaunchFrameForm();
 		WaitDate("", 0, 0, 0, 1, 0);
 		npchar.dialog.currentnode = "GoldenGirl_28_1";
@@ -1953,7 +1953,7 @@ void ProcessDialogEvent()
 
 	case "GoldenGirl_36":
 		DialogExit();
-		SetLaunchFrameFormParam("Some time has passed...", "", 0.1, 3.0);
+		SetLaunchFrameFormParam("Ha pasado algún tiempo...", "", 0.1, 3.0);
 		LaunchFrameForm();
 		WaitDate("", 0, 0, 0, 1, 0);
 		npchar.dialog.currentnode = "GoldenGirl_36_1";
@@ -1996,7 +1996,7 @@ void ProcessDialogEvent()
 	// Jason Долго и счастливо
 	case "LongHappy":
 		RemoveItems(pchar, "potionwine", 2);
-		dialog.text = "La playa, tú, yo, y buen vino - ¡Charles, eso es tan romántico! Deberíamos hacer esto más a menudo, sí, ¿eh?";
+		dialog.text = "La playa, tú, yo, y buen vino, ¡Charles, eso es tan romántico! Deberíamos hacer esto más a menudo, sí, ¿eh?";
 		link.l1 = "Me alegra que te guste. Creo que a partir de ahora haremos más tiempo el uno para el otro para ocasiones como esta.";
 		link.l1.go = "LongHappy_1";
 		break;
@@ -2038,7 +2038,7 @@ void ProcessDialogEvent()
 
 	case "LongHappy_5":
 		dialog.text = "Bebo por ti, mi capitán y futuro esposo, sí, ¿eh? ¡Eres lo mejor que me ha pasado nunca!";
-		link.l1 = "Pero esto es solo el comienzo - ¡por nosotros! Y por nuestro futuro juntos! ¡Hay tanto por delante de nosotros!";
+		link.l1 = "Pero esto es solo el comienzo, ¡por nosotros! Y por nuestro futuro juntos! ¡Hay tanto por delante de nosotros!";
 		link.l1.go = "LongHappy_6";
 		break;
 
@@ -2058,7 +2058,7 @@ void ProcessDialogEvent()
 	case "LongHappy_8":
 		if (LongHappy_CheckSaga())
 		{
-			dialog.text = "Sabes, la mayoría de aquellos que pueden alegrarse sinceramente por nuestra felicidad ni siquiera podrán entrar en esta ciudad, y mucho menos en la iglesia, sí, ¿eh? Por lo tanto, casémonos aquí con todas las personas importantes, como se espera, y luego navegaremos a Isla Tessoro y lo celebraremos adecuadamente con verdaderos amigos. ¿Qué te parece, sí, ¿eh?";
+			dialog.text = "Sabes, la mayoría de aquellos que pueden alegrarse sinceramente por nuestra felicidad ni siquiera podrán entrar en esta ciudad, y mucho menos en la iglesia, sí, ¿eh? Por lo tanto, casémonos aquí con todas las personas importantes, como se espera, y luego navegaremos a Isla Tesoro y lo celebraremos adecuadamente con verdaderos amigos. ¿Qué te parece, sí, ¿eh?";
 			link.l1 = "¡Gran opción! Entonces, hagámoslo. Hablaré con el Abad Benoit, pero necesitamos enviar invitaciones y más...";
 			link.l1.go = "LongHappy_9";
 		}
@@ -2127,7 +2127,7 @@ void ProcessDialogEvent()
 
 	case "LongHappy_11":
 		pchar.questTemp.LongHappy.BigMarry = "true";
-		dialog.text = "¡Genial, reuniremos a todos, sí, ¿eh?! Pero tendremos que visitar Sharptown y preparar todo - ¡necesitaremos un galeón lleno de licor! Creo que cien barriles de ron y cincuenta barriles de vino serán suficientes. Pero, por si acaso, añadiré quinientos mil pesos. Si la celebración termina rápido, ¿qué clase de celebración es esa, verdad?";
+		dialog.text = "¡Genial, reuniremos a todos, sí, ¿eh?! Pero tendremos que visitar Sharptown y preparar todo, ¡necesitaremos un galeón lleno de licor! Creo que cien barriles de ron y cincuenta barriles de vino serán suficientes. Pero, por si acaso, añadiré quinientos mil pesos. Si la celebración termina rápido, ¿qué clase de celebración es esa, verdad?";
 		link.l1 = "Sí, ¿eh? Nuestros amigos no deben morir de sed - conseguiré todo, ¡no te preocupes! Ahora, voy a pasar por el abad y luego iré a Sharptown.";
 		link.l1.go = "LongHappy_12";
 		break;
@@ -2143,14 +2143,14 @@ void ProcessDialogEvent()
 		break;
 
 	case "LongHappy_13":
-		dialog.text = "Todo está listo, Charles, ¿verdad? Me encargaré de que descarguen la bebida, iré a la taberna local, me reuniré con el barón y entregaré las invitaciones. Espera aquí, sí, ¿eh?";
+		dialog.text = "Todo está listo, Charles, ¿verdad? Me encargaré de que descarguen la bebida, iré a la taberna, me reuniré con el barón y entregaré las invitaciones. Espera aquí, sí, ¿eh?";
 		link.l1 = "¡Tú estás al timón, querido! Entonces, me dedicaré a holgazanear por algún lado. Realmente no pensé que preparar expediciones a la selva de Tierra Firme sería más fácil que una boda, sí, ¿eh?";
 		link.l1.go = "LongHappy_14";
 		break;
 
 	case "LongHappy_14":
 		DialogExit();
-		SetLaunchFrameFormParam("Several hours have passed...", "", 0.1, 3.0);
+		SetLaunchFrameFormParam("Han pasado varias horas...", "", 0.1, 3.0);
 		LaunchFrameForm();
 		WaitDate("", 0, 0, 0, 4, 0);
 		LongHappy_IslaTesoroRemoveGoods();
@@ -2160,7 +2160,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "LongHappy_15":
-		dialog.text = "Ya terminamos aquí, Charles, ¡sí, ¿eh?! Arreglé todo, créeme, ¡será maravilloso! Una cosa es embarazosa: la taberna local se quemó durante alguna fiesta hace una semana. Pero casi está reconstruida, más grande y mejor que la antigua, ¡sí, ¿eh?! Deberíamos poder caber todos.";
+		dialog.text = "Ya terminamos aquí, Charles, ¡sí, ¿eh?! Arreglé todo, créeme, ¡será maravilloso! Una cosa es embarazosa: la taberna se quemó durante alguna fiesta hace una semana. Pero casi está reconstruida, más grande y mejor que la antigua, ¡sí, ¿eh?! Deberíamos poder caber todos.";
 		link.l1 = "¡Espero que no quememos este! ¡Realmente me gustaba el 'Viejo Pájaro Carpintero'! De todos modos, aún tenemos mucho por hacer. Es hora de zarpar. Y sí, Mary, eres la mejor, lo sabes, ¿verdad?";
 		link.l1.go = "LongHappy_16";
 		break;
@@ -2447,7 +2447,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "LongHappy_50":
-		dialog.text = " Apenas te mantienes en pie, sí, ¿eh? Vamos, Dannie nos encontró una casa aquí en las afueras, no quiero volver al barco ahora. Nos sentaremos y beberemos por nuestros amigos caídos. Todo esto es demasiado para una cabeza sobria, sí, ¿eh?";
+		dialog.text = "Apenas te mantienes en pie, sí, ¿eh? Vamos, Dannie nos encontró una casa aquí en las afueras, no quiero volver al barco ahora. Nos sentaremos y beberemos por nuestros amigos caídos. Todo esto es demasiado para una cabeza sobria, sí, ¿eh?";
 		link.l1 = "Sí, Mary, vámonos.";
 		link.l1.go = "LongHappy_51";
 		break;
@@ -2502,7 +2502,7 @@ void ProcessDialogEvent()
 
 	case "LongHappy_57":
 		dialog.text = "No me malinterpretes, mi esposo, en la iglesia todo fue simplemente lujoso, pero aquí la atmósfera es claramente más acogedora, sí, ¿eh? Bueno, eso es todo, Charles, ahora que todos los problemas han quedado atrás, podemos relajarnos.";
-		link.l1 = "Bueno, no es exactamente 'todo', mi esposa - ¡nuestra vida continúa juntos! En general, se puede decir que apenas ha comenzado hoy. Así que, vamos, tomemos una copa con nuestros muchachos, y luego - bueno, ya recuerdas: la cabina, el vino, y nosotros...";
+		link.l1 = "Bueno, no es exactamente 'todo', mi esposa, ¡nuestra vida continúa juntos! En general, se puede decir que apenas ha comenzado hoy. Así que, vamos, tomemos una copa con nuestros muchachos, y luego - bueno, ya recuerdas: la cabina, el vino, y nosotros...";
 		link.l1.go = "LongHappy_58";
 		break;
 
@@ -2621,7 +2621,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "tonzag_jailed_1":
-		dialog.text = "… Lástima que no esté sola. En silencio, en la oscuridad y en soledad, sí, ¿eh? Eso sería perfecto.";
+		dialog.text = "... Lástima que no esté sola. En silencio, en la oscuridad y en soledad, sí, ¿eh? Eso sería perfecto.";
 		link.l1 = "Mantén el ritmo, Mary Casper.";
 		link.l1.go = "exit";
 		break;
@@ -2633,7 +2633,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "tonzag_aftershot":
-		dialog.text = "¡Canalla enmascarado! ¡Ay! Ayúdame, querido - ¡necesitamos romper las barras!";
+		dialog.text = "¡Canalla enmascarado! ¡Ay! Ayúdame, querido, ¡necesitamos romper las barras!";
 		link.l1 = "¡Silencio! ¡Estoy tratando de averiguar qué hacer!";
 		link.l1.go = "exit";
 
@@ -2705,7 +2705,7 @@ void ProcessDialogEvent()
 		// если шлялся по борделям - устроит небольшой скандал
 		if (sti(pchar.GenQuest.BrothelCount) >= 3 && LAi_grp_playeralarm == 0)
 		{
-			dialog.Text = "" + pchar.name + "¡Necesito hablar contigo, sí, ¿eh! En serio!";
+			dialog.Text = "" + pchar.name + "¡Necesito hablar contigo, sí! ¡En serio!";
 			Link.l1 = "¿Qué sucedió, Mary? ¿Hay un problema?";
 			Link.l1.go = "brothel";
 			break;

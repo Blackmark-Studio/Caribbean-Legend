@@ -4,66 +4,66 @@ new_string
 
 }
 
-Cheat_success {Done!}
+Cheat_success {C'est fait !}
 
-Cheat_on {Cheat Enabled}
+Cheat_on {Triche activée}
 
-Cheat_off {Cheat Disabled}
+Cheat_off {Triche désactivée}
 
-Cheat_Comming_soon {Coming soon!}
+Cheat_Comming_soon {Bientôt disponible !}
 
-f1 {Add 35 skill points}
+f1 {Ajouter 35 points de compétence}
 
-f2 {Add one Naval Perk point}
+f2 {Ajouter un point d'avantage naval}
 
-f3 {Add one Personal Perk point}
+f3 {Ajouter un point d'avantage personnel}
 
-f4 {+ 10 Max HP }
+f4 {+ 10 PV maximum}
 
-f5 {+10 Max Energy}
+f5 {+10 Énergie maximale}
 
-f6 {Inrease Honour}
+f6 {Augmenter l'Honneur}
 
-f7 {Decrease Honour}
+f7 {Diminuer l'Honneur}
 
-f8 {Increase Fame}
+f8 {Augmenter la notoriété}
 
-f9 {Decrease Fame}
+f9 {Diminuer la notoriété}
 
-f10 {God Mode on/off}
+f10 {Invincibilité activée/désactivée}
 
-f11 {Increase Authority}
+f11 {Augmenter l'Autorité}
 
-f12 {Improve Vitality}
+f12 {Améliorer la vitalité}
 
-f13 {+1000 Max Inventory Capacity}
+f13 {+1000 Capacité d'inventaire maximale}
 
-f14 {х10 equipped cold arm's damage}
+f14 {х10 dégâts de l'arme blanche équipée}
 
-f15 {х10 equipped fire arm's damage}
+f15 {х10 dégâts de l'arme à feu équipée}
 
-f16 {х10 equipped fire arm's reload time}
+f16 {х10 temps de recharge de l'arme à feu équipée}
 
-f17 {Set 100% blocking break chance }
+f17 {Mettre à 100% les chances de briser le blocage}
 
-f18 {x10 Eneregy Regen}
+f18 {x10 Régénération de l'énergie}
 
-f19 {x10 HP Regen}
+f19 {x10 Régénération des PV}
 
-f20 {Set 100% blocking chance}
+f20 {Mettre à 100 % de chances de blocage}
 
-f21 {Taino Poison on/off}
+f21 {Poison Taino activé/désactivé}
 
-f22 {Unlock Duelist background perks}
+f22 {Débloquer les avantages du profil de Duelliste}
 
-f23 {Unlock Accountant background perks}
+f23 {Débloquer les avantages du profil de Comptable}
 
-f24 {Unlock Athlete background perks}
+f24 {Débloquer les avantages du profil d'Athlète}
 
-f25 {Unlock Sharpshooter background perks}
+f25 {Débloquer les avantages du profil de Tireur d'Élite}
 
-f26 {Disable Navigation requirements}
+f26 {Désactiver les exigences de Navigation}
 
-f27 {Sober the hero up if drunk}
+f27 {Dégriser le héros s'il est ivre}
 
 

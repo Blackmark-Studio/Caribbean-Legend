@@ -321,7 +321,11 @@ void LAi_ActorStay(aref chr)
 //Указать актёру идти в заданный локатор
 void LAi_ActorGoToLocator(aref chr, string group, string locator, string quest, float timeout)
 {
-	if(LAi_type_actor_Error(chr, true)) return;
+	if(LAi_type_actor_Error(chr, true))
+    {
+        DeleteAttribute(chr, "ToPointForced");
+        return;
+	}
 	chr.chr_ai.type.state = "goto";
 	chr.chr_ai.type.quest = quest;
 	LAi_tmpl_goto_InitTemplate(chr);
@@ -329,15 +333,31 @@ void LAi_ActorGoToLocator(aref chr, string group, string locator, string quest, 
 	chr.chr_ai.type.lock = "1";
 }
 
+void LAi_ActorGoToLocatorNoCheck(aref chr, string group, string locator, string quest, float timeout)
+{
+    chr.ToPointForced = "";
+	LAi_ActorGoToLocator(chr, group, locator, quest, timeout);
+}
+
 //Указать актёру бежать в заданный локатор
 void LAi_ActorRunToLocator(aref chr, string group, string locator, string quest, float timeout)
 {
-	if(LAi_type_actor_Error(chr, true)) return;
-	chr.chr_ai.type.state = "runto";
+	if(LAi_type_actor_Error(chr, true))
+    {
+        DeleteAttribute(chr, "ToPointForced");
+        return;
+	}
+    chr.chr_ai.type.state = "runto";
 	chr.chr_ai.type.quest = quest;
 	LAi_tmpl_runto_InitTemplate(chr);
 	LAi_tmpl_runto_SetLocator(chr, group, locator, timeout);
 	chr.chr_ai.type.lock = "1";
+}
+
+void LAi_ActorRunToLocatorNoCheck(aref chr, string group, string locator, string quest, float timeout)
+{
+    chr.ToPointForced = "";
+	LAi_ActorRunToLocator(chr, group, locator, quest, timeout);
 }
 
 //Указать актёру идти в заданную локацию
@@ -552,7 +572,9 @@ void LAi_ActorSetLayMode(aref chr)
 	if(LAi_type_actor_Error(chr, false)) return;
 	chr.chr_ai.type.mode = "lay";
 	BeginChangeCharacterActions(chr);
-	chr.actions.idle.i1 = "Lay_1";
+	chr.actions.idle.i1    = "Lay_1";
+    chr.actions.HitNoFight = "Lay_2";
+    chr.actions.dead.d1    = "Lay_1";
 	EndChangeCharacterActions(chr);
 }
 
@@ -599,4 +621,3 @@ void LAi_type_actor_CheckStartDialog(aref chr)
 		LAi_tmpl_SetDialog(chr, &Characters[idx], stf(chr.chr_ai.type.dlgtime));
 	}
 }
-

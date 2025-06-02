@@ -70,7 +70,7 @@ void ProcessDialogEvent()
 						// заглушка на пирата
 						if (sti(pchar.nation) == PIRATE)
 						{
-    						dialog.text = RandPhraseSimple("¿Pirata en el fuerte?! ¡Captúrelo"+GetSexPhrase("él","ella")+"¡","¡Ese es un pirata, olfateando algo en nuestro fuerte! ¡A la cárcel!!!");
+    						dialog.text = RandPhraseSimple("¿Un pirata en el fuerte? ¡Captúren"+GetSexPhrase("lo","la")+"!","¡Ese es un pirata, olfateando algo en nuestro fuerte! ¡A la cárcel!");
 							link.l1 = RandPhraseSimple("Sí, soy un pirata, ¿y qué?","Heh, atrápame si puedes...");
 							link.l1.go = "fight"; 
 							break;
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 								break;
 
 								case 1:
-									dialog.text = "¡Capitán, qué hemos hecho para merecer esto?! ¡No somos ratas de tierra, verdad?";
+									dialog.text = "¡Capitán!, ¿qué hemos hecho para merecer esto? ¡No somos ratas de tierra! ¿Verdad?";
 									link.l1 = "¡Silencio, marinero! Tu puesto es muy importante y honorífico, así que deja de quejarte.";
 									link.l1.go = "exit";
 								break;
@@ -325,7 +325,7 @@ void ProcessDialogEvent()
 
 						case 3:
 							dialog.text = "Un tiempo tan justo, y estoy obligado a quedarme aquí. En el pueblo, al menos hay chicas, ¿y qué tenemos aquí? Solo ratas alrededor.";
-							link.l1 = ""+GetSexPhrase("Simpatizo, pero no hay nada que pueda hacer para ayudar - después de todo, es tu deber.","¡Eh! ¿Qué pasa conmigo? ¿Acaso no soy una chica?")+"";
+							link.l1 = ""+GetSexPhrase("Simpatizo, pero no hay nada que pueda hacer para ayudar, después de todo, es tu deber.","¡Eh! ¿Qué pasa conmigo? ¿Acaso no soy una chica?")+"";
 							link.l1.go = "exit";
 						break;
 
@@ -336,7 +336,7 @@ void ProcessDialogEvent()
 						break;
 
 						case 5: ////////////////////////////////////////////
-							dialog.text = "Probablemente piensas que los días de trabajo en la guarnición son un paseo? ¡Absolutamente no! Es un trabajo duro e importante. Recuerdo una vez... ";
+							dialog.text = "Probablemente piensas que los días de trabajo en la guarnición son un paseo, ¿no? ¡Absolutamente no! Es un trabajo duro e importante. Recuerdo una vez... ";
 							link.l1 = "Me contarás esa historia en otro momento. Ahora tengo un poco de prisa.";
 							link.l1.go = "exit";
 						break;
@@ -367,7 +367,7 @@ void ProcessDialogEvent()
 
 						case 10:
 							dialog.text = "Este maldito calor... Con gusto daría la mitad de mi vida para volver a Europa.";
-							link.l1 = "Sí, puedo ver que tu salud no está apta para el clima local.";
+							link.l1 = "Sí, puedo ver que tu salud no es apta para este clima.";
 							link.l1.go = "exit";
 						break;
 					}
@@ -380,7 +380,7 @@ void ProcessDialogEvent()
 		
 		//Jason --> мини-квест Дефицитный товар
 		case "Wine_soldier":
-			dialog.text = "Verás, quiero mucho un vino... Pero no la bazofia local hecha de frutas podridas, que se vende por dos pesos el barril - quiero una botella de verdadero vino europeo. Puedes conseguirlo en el pueblo de los comerciantes. Es bastante caro, pero pagaré en su totalidad e incluso añadiré trescientos pesos encima. Entonces, ¿me traerás algo?";
+			dialog.text = "Verás, quiero mucho un vino... Pero no la bazofia local hecha de frutas podridas, que se vende por dos pesos el barril, quiero una botella de verdadero vino europeo. Puedes conseguirlo en el pueblo de los comerciantes. Es bastante caro, pero pagaré en su totalidad e incluso añadiré trescientos pesos encima. Entonces, ¿me traerás algo?";
 			link.l1 = "¿Y por qué no puedes conseguirlo tú mismo? No tendrás que pagar de más, solo espera hasta que te liberen de tu puesto y ve a por ello. ¿Cuál es el truco?";
 			link.l1.go = "Wine_soldier_1";
 		break;

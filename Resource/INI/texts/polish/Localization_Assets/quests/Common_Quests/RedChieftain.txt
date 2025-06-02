@@ -1,6 +1,6 @@
 RedChieftain_1
 {
-chieftain
+Wódz
 }
 RedChieftain_2
 {
@@ -9,23 +9,23 @@ Kanauri
 
 RedChieftain_3
 {
-indians
+tubylcy
 }
 RedChieftain_4
 {
-of Caiman tribe
+z plemienia Kajmanów
 }
 
 RedChieftain_5
 {
-The chieftain has left your vessel!
+Wódz opuścił twój statek!
 }
 
 RedChieftain_6
 {
-indian
+Tubylec
 }
 RedChieftain_7
 {
-of Caiman tribe
+z plemienia Kajmanów
 }

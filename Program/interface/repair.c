@@ -549,7 +549,7 @@ void ClickRepairArror(string _type, int add, ref chr, bool isVisible)
 	    }
 		cur_pAvail 			   -= GetHullRepairMathQty(chr, rHull - j);		
 		chr.repair.hull 		= rHull;
-		chr.repair.time_hull 	= rHull * (8-GetCharacterShipClass(chr));
+		chr.repair.time_hull 	= rHull * (9-GetCharacterShipClass(chr));
 	}
 	
 	if (_type == "sail")
@@ -578,7 +578,7 @@ void ClickRepairArror(string _type, int add, ref chr, bool isVisible)
 	    }
 		cur_sAvail 			   -= GetSailRepairMathQty(chr, rSail - j);		
 		chr.repair.sail 		= rSail;
-		chr.repair.time_sail 	= rSail * (8-GetCharacterShipClass(chr));
+		chr.repair.time_sail 	= rSail * (9-GetCharacterShipClass(chr));
 	}
 	
 	if (_type == "mast")
@@ -602,7 +602,7 @@ void ClickRepairArror(string _type, int add, ref chr, bool isVisible)
 				if (rMast < 0)  rMast = 0;
 			}
 			chr.repair.mast 		= rMast;
-			chr.repair.time_mast 	= rMast * (11-GetCharacterShipClass(chr));
+			chr.repair.time_mast 	= rMast * (12-GetCharacterShipClass(chr));
 			cur_pAvail -= GetMastRepairMathQtyPPP(chr, rMast - j);		
 			cur_sAvail -= GetMastRepairMathQtySPP(chr, rMast - j, 100 - sti(chr.repair.sailmax));	
 		}
@@ -636,22 +636,22 @@ void RepairOk()
 		
 			if (rHull > 0)
 			{
-				chr.repair.time_hull = rHull * (8-GetCharacterShipClass(chr));
-				AddCharacterExpToSkill(chr, "Repair", (rHull * (7-GetCharacterShipClass(chr)) / 2.5));
+				chr.repair.time_hull = rHull * (9-GetCharacterShipClass(chr));
+				AddCharacterExpToSkill(chr, "Repair", (rHull * (8-GetCharacterShipClass(chr)) / 2.5));
 				ret = ProcessHullRepair(chr, stf(rHull));
 			}
 		
 			if (rSail > 0)
 			{
-				chr.repair.time_sail = rSail * (8-GetCharacterShipClass(chr));
-				AddCharacterExpToSkill(chr, "Repair", (rSail * (7-GetCharacterShipClass(chr)) / 3.5));
+				chr.repair.time_sail = rSail * (10-GetCharacterShipClass(chr));
+				AddCharacterExpToSkill(chr, "Repair", (rSail * (8-GetCharacterShipClass(chr)) / 3.5));
 				ret = ProcessSailRepair(chr, stf(rSail));		
 			}
 		
 			if (rMast > 0)
 			{
 				chr.repair.time_mast = rMast * (11-GetCharacterShipClass(xi_refCharacter));
-				AddCharacterExpToSkill(chr, "Repair", (3 * rMast * (7-GetCharacterShipClass(chr)) / 3.5));
+				AddCharacterExpToSkill(chr, "Repair", (3 * rMast * (8-GetCharacterShipClass(chr)) / 3.5));
 				DeleteAttribute(chr, "ship.masts");
 			}
 			

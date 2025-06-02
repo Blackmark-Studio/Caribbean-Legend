@@ -21,6 +21,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Your Lordship, you wanted to see me?";
 				link.l1.go = "PZ1";
 			}
+			// Украденное воспоминание
+			if (CheckAttribute(pchar, "questTemp.UV_DialogMayor"))
+			{
+				link.l1 = "Excellency, I come bearing information of a most sensitive nature that requires your attention.";
+				link.l1.go = "UV_1";
+			}
 		break;
 
 		case "Cupture_after":
@@ -100,6 +106,45 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			SetMusic("music_teleport");
 			pchar.questTemp.lockedMusic = true;
 		break;
+		
+		//--> Украденное воспоминание
+		case "UV_1":
+			dialog.text = "A sensitive matter, you say? You have piqued my interest, Captain. Please, continue—you have my full attention.";
+			link.l1 = "The matter concerns your niece, Julie. She enlisted my services to recover a necklace that had been stolen from her possession.";
+			link.l1.go = "UV_2";
+			ChangeCharacterComplexReputation(pchar, "nobility", -5);
+			DelLandQuestMark(npchar);
+		break;
+
+		case "UV_2":
+			dialog.text = "A necklace? Curious. I have no recollection of such an item among her possessions.";
+			link.l1 = "Allow me to present the facts in sequence, Governor. I have successfully recovered the necklace in question. My investigation revealed that the thief was your niece's lady's maid, Giselle. From my observations of the merchant who purchased the stolen item, I strongly suspect this is neither her first nor her last such transgression.";
+			link.l1.go = "UV_3";
+		break;
+
+		case "UV_3":
+			dialog.text = "Most illuminating. Pray continue with your account.";
+			link.l1 = "What caught my attention, Excellency, was that Julie chose not to seek your assistance in this matter. The necklace, it seems, was a gift from an individual with whom you have expressly forbidden her to associate. Believing that your restrictions arise from the wisest and most protective intentions, I felt obligated to bring this matter to your attention and return the necklace directly to you.";
+			link.l1.go = "UV_4";
+			TakeItemFromCharacter(pchar, "SM_necklace_Julie");
+		break;
+
+		case "UV_4":
+			dialog.text = "Your judgment proves sound"+GetSexPhrase(", Captain","")+". I commend your discretion in bringing this directly to me rather than indulging my niece's youthful indiscretions.";
+			link.l1 = "I act only with her welfare in mind, Governor. I have no doubt your guidance springs from the same wellspring of concern and wisdom.";
+			link.l1.go = "UV_5";
+		break;
+
+		case "UV_5":
+			dialog.text = "Indeed, Captain. As her uncle and guardian, her well-being is my paramount concern. Please accept these one hundred and fifty doubloons as a token of my appreciation for your discretion. I also present you with this navigational compass—may it guide you safely through your journeys across treacherous waters.";
+			link.l1 = "I am honored by your generosity, Excellency, though such reward was unnecessary. Regrettably, I must now bid you farewell—the tide waits for no sailor, and my vessel requires my attention.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("UV_End");
+			AddItems(pchar, "gold_dublon", 150);
+			GiveItem2Character(PChar, "compass1");
+			ChangeCharacterNationReputation(pchar, FRANCE, 5);
+		break;
+		//<-- Украденное воспоминание
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

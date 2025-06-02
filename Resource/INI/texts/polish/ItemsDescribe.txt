@@ -42,15 +42,18 @@ health value{PŻ}
 weapon blade parameters{Atak: #f.1Attack# Wyważenie: #f.1Balance#}
 weapon blade type {Typ: #sFencingTypeName#}
 weapon gun parameters{Obrażenia: #ddmg_min#-#ddmg_max#}
-weapon gun parameters equipped{Obrażenia: #ddmg_min#-#ddmg_max#, czas przeł.: #dchargespeed# sec.}
+weapon gun parameters equipped{Obrażenia: #ddmg_min#-#ddmg_max#, Czas przeł.: #dchargespeed# sec.}
 mushket parameters{Obrażenia: #ddmg_min#-#ddmg_max#}
-mushket parameters equipped{Obrażenia: #ddmgmin#-#ddmgmax#, czas przeł.: #dchargespeed# sec.}
+mushket parameters equipped{Obrażenia: #ddmgmin#-#ddmgmax#, Czas przeł.: #dchargespeed# sec.}
+weapon grape parameters{Obrażenia: #dbasedmg#x#dshards#, Rozproszenie: #sarea#}
+weapon grape parameters equipped{Obrażenia: #dbasedmg#x#dshards#, Rozproszenie: #sarea#, Czas przeł: #dchargespeed# sec.}
 
 youve_got {Znaleziono - }
 used_item {Wykorzystano - }
 
 youve_gotNotif {Nowy Przedmiot: }
 used_itemNotif {Stracono Przedmiot: }
+flower_find {Szczęśliwe znalezisko!}
 
 
 ;====================================================================================================================================
@@ -632,20 +635,20 @@ itmdescr_m8_barrel
 Kolba i lufa ze zdemontowanego karabinu czterostrzałowego.
 }
 
-itmname_mushket9 {Stara arkebuz}
+itmname_mushket9 {Stary arkebuz}
 itmdescr_mushket9
 {
-Starożytna, ale niezawodna arkebuz. Jeśli wierzyć opowieściom, sam Kortez używał jej do zasypywania dżungli kartaczami, wzbudzając przerażenie wśród tubylców.
+Starożytny, lecz niezawodny na owe czasy arkebuz. Jeśli wierzyć opowieściom, sam Kortez używał jej do zasypywania dżungli kartaczami, wzbudzając przerażenie wśród tubylców.
 }
 
 UpgradeStageInfo_mushket9_1 
 {
-Obecnie wygląda dość marnie, ale odpowiednia pielęgnacja i dobre narzędzia mogą ją całkowicie odmienić.
+Obecnie broń wygląda dość marnie, jednak przy odpowiedniej pielęgnacji i dobrych narzędzi, mogą go całkowicie odmienić.
 }
 
 UpgradeStageInfo_mushket9_2 
 {
-Po wymianie kolby i dokładnym czyszczeniu przestała wyglądać jak zardzewiały kawałek żelaza. Teraz z taką bronią na plecach można bez wstydu przejść się po ulicy.
+Po wymianie kolby i dokładnym wyczyszczeniu, broń ta przestała wyglądać jak zardzewiały kawałek żelaza. Teraz, mając ową broń na plecach można bez wstydu przejść się po ulicy.
 }
 
 UpgradeStageInfo_mushket9_3 
@@ -655,25 +658,25 @@ Z wymienionym zamkiem zaczęła przypominać nowoczesną broń. Metal, nasmarowa
 
 UpgradeStageInfo_mushket9_4 
 {
-W twoich rękach ta broń osiągnęła swój szczyt - po prostu nie ma już możliwości jej dalszego rozwoju. Ostatni szlif - rozszerzona lufa - uprościł i przyspieszył ładowanie, wielokrotnie zwiększając efektywność. Możesz być z siebie dumny.
+W twoich rękach broń ta osiągnęła swój szczyt - po prostu nie ma już możliwości jej dalszego rozwoju. Ostatni szlif i rozszerzona lufa - uprościł i przyspieszył ładowanie, wielokrotnie zwiększając efektywność. Możesz być z siebie jak najbardziej dumny.
 }
 
 itmname_FirearmStockPart_1 {Kolba i stempel}
 itmdescr_FirearmStockPart_1
 {
-Pięknie rzeźbiona kolba do staromodnych strzelb i szczotka-stempel do czyszczenia lufy. Były owinięte w płótno i starannie ułożone w rogu z dala od pozostałej zawartości skarbu, jakby zostały tam położone znacznie później.
+Pięknie rzeźbiona kolba do staromodnych strzelb i szczotka-stempel do czyszczenia lufy. Były owinięte w płótno i starannie ułożone w rogu z dala od pozostałej zawartości skarbu, zupełnie jakby zostały tam położone znacznie później.
 }
 
 itmname_FirearmStockPart_2 {Zamek i olej kostny}
 itmdescr_FirearmStockPart_2
 {
-Nowoczesny zamek sprężynowy, szmaty i fiolka oleju kostnego do konserwacji broni, podejrzanie pasujące do arkebuz znalezionej u Blackwooda. Podobnie jak poprzednie, leżały w skarbie oddzielnie od pozostałych cennych przedmiotów.
+Nowoczesny zamek sprężynowy, szmaty i fiolka oleju kostnego do konserwacji broni, podejrzanie pasujące do arkebuzu znalezionego wcześniej u Blackwooda. Podobnie jak poprzednie części, również i te leżały w skarbie, oddzielone od pozostałych cennych przedmiotów.
 }
 
 itmname_FirearmStockPart_3 {Lufa i prochownica}
 itmdescr_FirearmStockPart_3
 {
-Ten zestaw przedmiotów znacznie przyspieszy ładowanie każdej broni długolufowej, ale z jakiegoś powodu czujesz, że najlepiej używać ich razem z tą konkretną arkebuzą. Były zapakowane w małą papierową paczuszkę, najwyraźniej w celu ochrony przed wilgocią, w przeciwieństwie do wszystkich innych przedmiotów w skarbie.
+Ten zestaw przedmiotów znacznie przyspieszy ładowanie każdej broni długolufowej, ale z jakiegoś powodu czujesz, że najlepiej jest używać ich razem z tym konkretnym arkebuzem. Były zapakowane w małą papierową paczuszkę, najwyraźniej w celu ochrony przed wilgocią, w przeciwieństwie do wszystkich innych przedmiotów w skarbie.
 }
 
 itmname_grape_mushket {Moździerz}
@@ -702,7 +705,7 @@ itmdescr_nocirass
 Nosząc zbroję przez długi czas, można się zmęczyć. Odciąż się, wyprostuj nogi i wypij filiżankę gorącej kawy z cynamonem lub czegoś mocniejszego.
 }
 
-itmname_cirass1 {Kirys Okopowy}
+itmname_cirass1 {Kirys okopowy}
 itmdescr_cirass1
 {
 Pancerz piechoty używany podczas oblężeń twierdz. Zapewnia doskonałą ochronę przed stalą i ołowiem, ale ogranicza mobilność, czyniąc użytkownika niezdarnym w walce wręcz.
@@ -712,7 +715,7 @@ Wszystkie nadchodzące obrażenia zostają zredukowane o 30%.
 (-2 do Reagowania, -1 do Wytrzymałości, -5 do Skradania się)
 }
 
-itmname_cirass2 {Kirys Kawaleryjski}
+itmname_cirass2 {Kirys kawaleryjski}
 itmdescr_cirass2
 {
 Ciężka zbroja, ulubiona przez Konnych Gwardzistów. Zapewnia znaczną ochronę, ale poświęca szybkość i zwinność.
@@ -722,7 +725,7 @@ Wszystkie nadchodzące obrażenia zostają zredukowane o 25%.
 (-1 do Reagowania, -1 do Wytrzymałości, -5 do Skradania się)
 }
 
-itmname_cirass3 {Kirys Paradny}
+itmname_cirass3 {Kirys paradny}
 itmdescr_cirass3
 {
 Lekko zdobiony kirys wykonany z wysokiej jakości stali. Pozwala na szeroki ruch, ale zapewnia jedynie ochronę przed zużytymi kulami i prowokacyjnymi ciosami.
@@ -732,7 +735,7 @@ Wszystkie nadchodzące obrażenia zostają zredukowane o 20%.
 (-15 do Skradania się, +15 do Dowodzenia)
 }
 
-itmname_cirass4 {Kirys Mediolański}
+itmname_cirass4 {Kirys mediolański}
 itmdescr_cirass4
 {
 Rzadki egzemplarz doskonałej jakości zbroi, pieczołowicie wykonany przez włoskich płatnerzy – prawdziwe dzieło sztuki. Niesamowicie lekki, zapewnia doskonałą ochronę przed kulami i ostrzami.
@@ -742,7 +745,7 @@ Wszystkie nadchodzące obrażenia zostają zredukowane o 30%.
 (-1 do Wytrzymałości, -20 do Skradania się, +10 do Dowodzenia)
 }
 
-itmname_cirass5 {Skórzany Pas}
+itmname_cirass5 {Skórzany pas}
 itmdescr_cirass5
 {
 Gruby skórzany pas przeznaczony do ochrony ważnych narządów. Chociaż zapewnia słabą ochronę przed kulami i ostrzami, jest lepszy niż nic.
@@ -750,7 +753,7 @@ Gruby skórzany pas przeznaczony do ochrony ważnych narządów. Chociaż zapewn
 Obrażenia od broni białej zredukowane o 5%.
 }
 
-itmname_cirass6 {Skórzana Kurtka}
+itmname_cirass6 {Skórzana kurtka}
 itmdescr_cirass6
 {
 Skórzana kurtka zawodowego pojedynkowicza, przeznaczona do noszenia pod ubraniem. Zapewnia pewną ochronę przed ranami ciętymi i przypadkowym postrzałem.
@@ -772,7 +775,7 @@ Obrażenia od broni dystansowej mniejsze o 10%.
 (-1 do Intuicji, -10 do Dowodzenia)
 }
 
-itmname_cirass8 {Pancerz Oportunisty}
+itmname_cirass8 {Pancerz oportunisty}
 itmdescr_cirass8
 {
 Wyjątkowa zbroja wykonana ze skóry i metalu, zapewniająca pełną ochronę tułowia, łącznie z bokami i górą. Jej metalowe elementy są owinięte tkaniną, dzięki czemu doskonale nadaje się do przeprowadzania ukrytych operacji.
@@ -782,7 +785,7 @@ Wszystkie nadchodzące obrażenia zostają zredukowane o 20%.
 (+15 do Skradania się, -15 do Dowodzenia)
 }
 
-itmname_cirass9 {Wzmocniona Brygandyna}
+itmname_cirass9 {Wzmocniona brygandyna}
 itmdescr_cirass9
 {
 Pancerz zawodowego najemnika i najlepszy wybór pojedynkowicza. Wyjątkowo dobrze wykonana i dopasowana, pozwalając na nieograniczony ruch i odważną szermierkę.
@@ -793,7 +796,7 @@ Zapobiega ogłuszeniu podczas walki.
 (+5 do Wszystkich Broni, +5% szans na trafienie krytyczne)
 }
 
-itmname_cirass10 {Wojskowy Napierśnik}
+itmname_cirass10 {Wojskowy napierśnik}
 itmdescr_cirass10
 {
 Poobijany i niekompletny zestaw wyposażenia angielskiej kawalerii parlamentarnej. Zapewnia minimalną ochronę, ale liczne kieszenie i ładownice znacznie ułatwiają strzelanie i przeładowywanie.
@@ -804,7 +807,56 @@ Broń palna nie wybucha w ręce. O 15% szybsze przeładowywanie. 5% szans na str
 (-1 do Reagowania)
 }
 
-itmname_underwater {Strój do Nurkowania}
+itmname_suit1 {Francuski mundur}
+itmdescr_suit1
+{
+Mundur oficerski Francuskiej Królewskiej Marynarki Wojennej. Ładne kolorki.
+~
+Obrażenia od broni białej zredukowane o 10%.
+30% szansy na uniknięcie trafienia krytycznego.
+(-25 do Skradania się, +25 do Dowodzenia)
+}
+
+itmname_suit2 {Angielski mundur}
+itmdescr_suit2
+{
+Mundur oficerski Czarnej Straży - elitarnego pułku szkockich górali służących Koronie Angielskiej.
+(-1 do Reagowania, -15 do Skradania się, +15 do Dowodzenia)
+}
+
+itmname_suit3 {Hiszpański mundur}
+itmdescr_suit3
+{
+Mundur oficerski Guardia Real, osobistego pułku króla Hiszpanii.
+~
+Obrażenia od broni białej zredukowane o 10%.
+30% szansy na uniknięcie trafienia krytycznego.
+(-1 do Reagowania, -15 do Skradania się, +15 do Dowodzenia)
+}
+
+itmname_suit4 {Ubranie najemnika Ligi}
+itmdescr_suit4
+{
+Garnitur należał do jednego z zawodowych najemników Ligi. Wkładki płytowe chronią przed strzałami, cięciami i pchnięciami. Maska ​​pomaga zachować status incognito, lecz również zawęża pole widzenia.
+~
+Obrażenia od broni białej zredukowane o 15%.
+Obrażenia od broni dystansowej mniejsze o 10%.
+50% szansy na uniknięcie trafienia krytycznego.
+(-1 do Intuicji, +1 do Reagowania, +30 do Skradania się, -25 do Dowodzenia)
+}
+
+itmname_suit5 {Mundur admirała}
+itmdescr_suit5
+{
+Mundur wysokich rangą oficerów francuskiej marynarki wojennej – prawdziwe arcydzieło.
+~
+Obrażenia od broni białej zredukowane o 10%.
+30% szansy na uniknięcie trafienia krytycznego.
+Sława pozostaje na poziomie „Legendarnym”, pozwala zatrudnić więcej członków załogi i korzystać z darmowych burdeli w koloniach francuskich.
+(+2 do Autorytetu, -50 do Skradania się, +40 do Dowodzenia, +5 do Nawigacji)
+}
+
+itmname_underwater {Strój do nurkowania}
 itmdescr_underwater
 {
 Wyjątkowy kombinezon do nurkowania, wykonany przez Henricka Vedeckera. Zapewnia najwyższą możliwą ochronę przed atakami. Oferuje jednak znacznie większą mobilność pod wodą niż na powierzchni.
@@ -827,9 +879,9 @@ Mała latarnia jest niezastąpionym towarzyszem w ciemności. Przymocuj ją do p
 itmname_hat1 {Kapelusz kondotiera}
 itmdescr_hat1
 {
-Będąc ulubionym nakryciem głowy pojedynkowiczów i szermierzy, ten kapelusz motywuje do ciągłego doskonalenia umiejętności posługiwania się białą bronią, aby wyglądać odpowiednio.
+Będąc ulubionym nakryciem głowy pojedynkowiczów i szermierzy, kapelusz ten motywuje do ciągłego doskonalenia umiejętności posługiwania się bronią białą, aby wyglądać odpowiednio.
 ~
-Zwiększa szybkość zdobywania doświadczenia w walce bronią lekką, średnią i ciężką o 10%.
+Zwiększa szybkość zdobywania doświadczenia w walce bronią lekką, wyważoną i ciężką o 10%.
 }
 
 itmname_hat2 {Kapelusz kawalera}
@@ -848,7 +900,7 @@ Dość zwyczajny trójgraniasty kapelusz, szeroko rozpowszechniony wśród maryn
 Zwiększa szybkość zdobywania doświadczenia w Nawigacji, Celności i Naprawach o 10%.
 }
 
-itmname_hat4 {Trójróg oficera marynarki}
+itmname_hat4 {Trikorn oficera marynarki}
 itmdescr_hat4
 {
 Trójgraniasty kapelusz, popularny wśród oficerów okrętowych. Widząc taki, zwykli marynarze zaczynają wyjątkowo szybko wypełniać swoje obowiązki. Czy z szacunku, czy ze strachu przed karą - to pytanie retoryczne.
@@ -876,15 +928,15 @@ Raz na trzy dni automatycznie dokonujesz niewielkiej transakcji handlowej po prz
 itmname_hat7 {Szczęśliwy kapelusz}
 itmdescr_hat7
 {
-Mówi się, że ten śmiały kapelusz przynosi szczęście. Zniszczony i nadgryziony przez czas, mimo to wygląda szlachetnie. Jeśli taki ci się dostał - możesz być pewien, że w najtrudniejszym momencie zdołasz przemknąć obok strażnika, wyciągnąć właściwą kartę z talii i znaleźć na dnie kieszeni zagubioną kulę.
+Mówi się, iż wspomniany kapelusz przynosi szczęście. Zniszczony i nadgryziony przez czas, mimo to wygląda szlachetnie. Jeśli taki ci się dostał - możesz być pewien, że w najtrudniejszym momencie zdołasz przemknąć obok strażnika, wyciągnąć właściwą kartę z talii i znaleźć na dnie kieszeni zagubioną kulę.
 ~
 Z 10% szansą nie zużywasz amunicji przy strzale, wykopujesz cenniejszy skarb i unikasz kłopotów z wrogimi strażnikami.
 }
 
-itmname_hat8 {Trójróg Charlie Prince’a}
+itmname_hat8 {Kapelusz Charliego Prince’a}
 itmdescr_hat8
 {
-Ten kapelusz przeraża kupców, zwłaszcza hiszpańskich, bardziej niż Wesoły Roger. Sława, która otacza jego nosiciela, sprawiłaby, że nawet najtwardszy wilk morski zbladłby i zadrżał. Niech będzie przeklęty dzień, w którym Charlie Prince przyszedł na ten boży świat.
+Ten kapelusz przeraża kupców, zwłaszcza hiszpańskich, bardziej niż Wesoły Roger. Sława, która otacza jego nosiciela, sprawiłaby, że nawet najtwardszy wilk morski zbladłby i zadrżał. Niech będzie przeklęty dzień, w którym Charlie Prince przyszedł na ten Boski świat.
 ~
 Rum i wino przywracają o 50% więcej zdrowia. Stan upojenia jest bardziej korzystny.
 }
@@ -901,8 +953,8 @@ Pozwala zobaczyć typ, nazwę, prędkość oraz liczbę armat na statku. Bonus +
 itmname_spyglass2 {Zwykła luneta}
 itmdescr_spyglass2
 {
-Patrzenie przez tę starą lunetę przypomina próbę zajrzenia przez brudne okna podrzędnej speluny. Żaden szanujący się kapitan nie dałby się przyłapać z takim gratem.
-Pozwala zobaczyć typ, nazwę, prędkość oraz liczbę armat na statku. Bonus +500 jardów do dystansu w szybkiej podróży.
+Najbardziej podstawowa luneta, jakiej można się spodziewać od wyrozumiałego kapitana. Soczewki są dość czyste, przez co można o wiele skuteczniej wypatrywać wrogich jednostek.
+Pozwala zobaczyć typ, nazwę, prędkość, liczbę armat oraz stan uszkodzenia żagli. Bonus +500 jardów do dystansu w szybkiej podróży.
 }
 
 itmname_spyglass3 {Dobra luneta}
@@ -958,7 +1010,8 @@ Chronometr okrętowy. To urządzenie służy do określania długości geografic
 itmname_clock2 {Działający chronometr}
 itmdescr_clock2
 {
-Chronometr okrętowy wskazujący dokładny czas wyspy Forro. Pozwala określić długość geograficzną statku w okresie 30 dni przy minimalnym błędzie.
+Chronometr okrętowy z wyspy Forro, skalibrowany na czas. Pozwala przez 30 dni z minimalnym błędem określać długość geograficzną statku.
+Zwiększa tempo rozwoju umiejętności Nawigacja, gdy jest wyposażony.
 }
 
 itmname_sextant1 {Sekstant}
@@ -970,13 +1023,16 @@ Unikalne urządzenie służące do ustalania współrzędnych geograficznych. Pi
 itmname_sextant2 {Działający sekstant}
 itmdescr_sextant2
 {
-Unikalne urządzenie do ustalania współrzędnych geograficznych. Teraz, gdy masz chronometr Alexusa, może on w każdej chwili określić szerokość i długość geograficzną.
+Unikalne urządzenie do określania współrzędnych geograficznych. Teraz, gdy posiadasz chronograf z przyszłości, może on stale określać szerokość i długość geograficzną.
+Dzięki wysokiej precyzji można uzyskać 5% wzrost prędkości statku.
+Zwiększa tempo rozwoju umiejętności Nawigacja, gdy jest wyposażony.
 }
 
 itmname_bussol {Busola}
 itmdescr_bussol
 {
-Urządzenie okrętowe, które łączy w sobie astrolabium i kompas. Oprócz innych rzeczy pozwala określić szerokość geograficzną.
+Przyrząd okrętowy łączący astrolabium i kompas. Umożliwia m.in. stałe określanie szerokości geograficznej.
+Zwiększa tempo rozwoju umiejętności Nawigacja, gdy jest wyposażony.
 }
 
 itmname_clock3 {Chronometr Alexusa}
@@ -1133,10 +1189,10 @@ Aby odkryć potencjał tego amuletu, trzeba przejść ścieżką sprawiedliwego.
 talisman17_quests {Zadania kościelne: #dQBonus# / 5}
 talisman17_questsNoBonus {Zadania kościelne: 0 / 5}
 
-itmname_talisman18	{Amulet 'Statut Blackwooda'}
+itmname_talisman18	{Artefakt 'Statut Blackwooda'}
 itmdescr_talisman18
 {
-Osobisty statut Alberta Blackwooda. Opisuje szczegółowo działanie Lady Bet, rozstawienie strzelców i taktykę Morskich Lisów. Osobny dział poświęcony jest poszukiwaniu skarbów i nagradzaniu celnych strzelców zdobytymi bogactwami. 
+Osobisty statut Alberta Blackwooda. Opisuje szczegółowo działanie 'Panienki Beth', rozstawienie strzelców i taktykę Morskich Lisów. Osobny dział poświęcony jest poszukiwaniu skarbów i nagradzaniu celnych strzelców zdobytymi bogactwami. 
 Każdy znaleziony skarb wzmacnia moc ognia muszkietowego załogi o 1% i zwiększa obrażenia zadawane przez strzelby o 2%.
 ~
 Żadnych kar ani limitów czasowych podczas noszenia.
@@ -1300,21 +1356,21 @@ Efekt znika po 70 dniach użytkowania lub wcześniej w momencie zdjęcia.
 itmname_indian_3 {Amulet 'Nóż ceremonialny'}
 itmdescr_indian_3
 {
-Zwiększa szansę na zadanie ciosu krytycznego o 15%.
-Ciężkie ataki wroga zadają o 10% więcej obrażeń.
-Można nosić tylko jeden, efekty nie duplikują się.
-Każdy może go używać.
-Efekt znika po 70 dniach użytkowania lub wcześniej w momencie zdjęcia.
+Obsydianowy nóż ofiarny zwiększa o 10% szansę na cios krytyczny bronią białą.
+~
+Obrażenia od silnych ataków wroga wzrosną o 10%.
+Aktywuje się raz, przez dowolną postać.
+Znika po 70 dniach lub po usunięciu.
 }
 
 itmname_indian_4 {Amulet 'Główia'}
 itmdescr_indian_4
 {
-Ciężkie ataki zadają o 25% większe obrażenia.
-Szansa na otrzymanie ciosu krytycznego jest większa o 10%.
-Można nosić tylko jeden, efekty nie duplikują się.
-Każdy może go używać.
-Efekt znika po 70 dniach użytkowania lub wcześniej w momencie zdjęcia.
+Wisiorek pokryty runami zwiększa siłę ataków przebijających o 25%.
+~
+Przeciwnicy zadają o 25% więcej obrażeń ciosami krytycznymi.
+Aktywuje się raz, przez dowolną postać.
+Znika po 70 dniach lub po usunięciu.
 }
 
 itmname_indian_5 {Amulet 'Tsantsa'}
@@ -1410,11 +1466,10 @@ Efekt znika po 70 dniach użytkowania lub wcześniej w momencie zdjęcia.
 itmname_amulet_3 {Amulet 'Krucyfiks'}
 itmdescr_amulet_3
 {
-Szansa na otrzymanie ciosu krytycznego jest mniejsza o 10%.
-Twoje ciężkie ataki zadają 10% mniej obrażeń.
-Można nosić tylko jeden, efekty nie duplikują się.
-Każdy może go używać.
-Efekt znika po 70 dniach użytkowania lub wcześniej w momencie zdjęcia.
+Poświęcony katolicki krzyżyk zmniejsza o 15% obrażenia krytyczne zadawane przez wrogów.
+Siła silnego ataku postaci zmniejsza się o 10%.
+Aktywuje się raz, przez dowolną postać.
+Znika po 70 dniach lub po usunięciu.
 }
 
 itmname_amulet_4 {Amulet 'El trozo'}
@@ -2169,10 +2224,10 @@ itmdescr_map_martiniqua
 Doskonale opisana mapa wyspy Martynika.
 }
 
-itmname_map_trinidad {Mapa Trynidadu i Tobago}
+itmname_map_trinidad {Mapa Trynidadu}
 itmdescr_map_trinidad
 {
-Mapa bliźniaczych wysp Trynidadu i Tobago.
+Mapa bliźniaczych wysp Trynidadu.
 }
 
 itmname_map_nevis {Mapa Św. Krzysztofa}
@@ -2339,19 +2394,19 @@ itmdescr_A_map_martiniqua
 Niezwykle dokładna mapa przedstawiająca okolice Martyniki. Na odwrocie widnieje sygnatura imienia i nazwiska kartografa – Jose Dios'a.
 }
 
-itmname_A_map_trinidad {Doskonała mapa Trynidadu i Tobago}
+itmname_A_map_trinidad {Doskonała mapa Trynidadu}
 itmdescr_A_map_trinidad
 {
-Niezwykle dokładna mapa przedstawiająca okolice Trynidadu i Tobago. Na odwrocie widnieje sygnatura imienia i nazwiska kartografa – Jose Dios'a.
+Niezwykle dokładna mapa przedstawiająca okolice Trynidadu. Na odwrocie widnieje sygnatura imienia i nazwiska kartografa – Jose Dios'a.
 }
 
-itmname_A_map_nevis {Doskonała mapa Św. Krzysztofa}
+itmname_A_map_nevis {Doskonała mapa Wyspy Św. Krzysztofa}
 itmdescr_A_map_nevis
 {
 Niezwykle dokładna mapa przedstawiająca okolice Wyspy Św. Krzysztofa. Na odwrocie widnieje sygnatura imienia i nazwiska kartografa – Jose Dios'a.
 }
 
-itmname_A_map_sm {Doskonała mapa Św. Marcina}
+itmname_A_map_sm {Doskonała mapa Wyspy Św. Marcina}
 itmdescr_A_map_sm
 {
 Niezwykle dokładna mapa przedstawiająca okolice Wyspy Św. Marcina. Na odwrocie widnieje sygnatura imienia i nazwiska kartografa – Jose Dios'a.
@@ -2431,13 +2486,13 @@ itmname_RingCapBook {Dziennik pokładowy 'Santa Lucia'}
 itmdescr_RingCapBook
 {
 Dziennik pokładowy Pinasy 'Santa Lucia'.
-Warto przeczytać – wpisy trwają aż do samej śmierci statku.
+Warto przeczytać – wpisy trwają aż do samej śmierci załogi statku.
 }
 
 itmname_leather_bag {Walizeczka}
 itmdescr_leather_bag
 {
-Walizeczka dziewczyny, która uciekła z domu publicznego. Zawiera trochę pieniędzy, dokumenty, porządną sukienkę i kilka innych osobistych rzeczy. Dość żałośnie walizeczka jest cięższa od jej zawartości.
+Walizeczka dziewczyny, która uciekła z domu publicznego. Zawiera trochę pieniędzy, dokumenty, porządną sukienkę i kilka innych osobistych rzeczy. Walizeczka dość żałośnie jest cięższa od jej zawartości.
 }
 
 ; ========================================================================================================================== ПИСЬМА
@@ -2456,12 +2511,12 @@ List jest zapieczętowany. Aby poznać jego treść, należy go przeczytać, ale
 
 itmdescr_letter_1_Fadey
 {
-Prośba Fadeya z Muskowii o ułaskawienie indiańskiego przestępcy Tichingitu.
+Prośba Fadeya Moskala o ułaskawienie indiańskiego przestępcy Tichingitu.
 }
 
 itmdescr_letter_SharkGoldFleet_1
 {
-Zapieczętowana korespondencja od szefa Portu Caracas. Należy dostarczyć osobiście do szefa Portu Porto Bello.
+Zapieczętowana korespondencja od nadzorcy portu w Karakas. Należy dostarczyć osobiście do nadzorcy portu w Portobelo.
 }
 
 itmname_letter_2 {Zapieczętowany list}
@@ -2472,7 +2527,7 @@ List jest zapieczętowany. Aby poznać jego treść, należy go przeczytać, ale
 
 itmdescr_letter_SharkGoldFleet_2
 {
-Zapieczętowana odpowiedź - potwierdzenie od szefa Portu Porto Bello. Należy dostarczyć osobiście do szefa Portu Caracas.
+Zapieczętowana odpowiedź - potwierdzenie od nadzorcy portu w Portobelo. Należy dostarczyć osobiście do nadzorcy portu w Karakas.
 }
 
 itmdescr_letter_2_PortmanLevelUp1
@@ -2493,7 +2548,7 @@ Dokumentacja biznesowa, zawierająca informacje o bieżących kursach walut i ak
 itmname_letter_open {Otwarty list}
 itmdescr_letter_open
 {
-List wygląda na już otwarty i przeczytany. Miejmy nadzieję, że adresat tego nie zauważy.
+List wygląda na otwarty i już dawno przeczytany. Miejmy nadzieję, że adresat tego nie zauważy.
 }
 
 itmdescr_letter_open_usurer
@@ -2520,10 +2575,10 @@ Plony zostały w większości zebrane – to druga część naszej umowy. Trzeci
 J.
 }
 
-itmname_letter_church {Zapieczętowana missywa}
+itmname_letter_church {Zapieczętowana korespondencja}
 itmdescr_letter_church
 {
-Depesza kościelna. Ta powinna zostać dostarczona do adresata jak najszybciej.
+Depesza kościelna. Powinna zostać dostarczona do adresata jak najszybciej.
 }
 
 itmname_prayer_book {Książki modlitewne}
@@ -2547,7 +2602,7 @@ Zapieczętowany list od Jana Svensona dla Steve'a Dodsona-Sharka.
 itmname_letter_chad {Otwarty list}
 itmdescr_letter_chad
 {
-Znaleźliśmy niezawodnego strzelca. Teraz czekamy na gwintowaną lufę, którą obiecałeś, i na pozwolenie na eliminację celu.
+'Znaleźliśmy niezawodnego strzelca. Teraz czekamy na gwintowaną lufę, którą obiecałeś, i na pozwolenie na eliminację celu.'
 }
 
 itmdescr_letter_adolf
@@ -2558,35 +2613,35 @@ M.'
 
 itmdescr_letter_adolf_1
 {
-'Marchello, uzgodniliśmy sumę dwa razy wyższą niż ta, którą mi podałeś. Karabin jest wart znacznie więcej, a ty o tym wiesz. Jeśli nie zapłacisz mi reszty, admirał natychmiast dowie się o twoich powiązaniach z Kapperem na "Ewie".
+'Marchello, uzgodniliśmy sumę dwa razy wyższą niż ta, którą mi podałeś. Karabin jest wart znacznie więcej, a ty o tym wiesz. Jeśli nie zapłacisz mi reszty, admirał natychmiast dowie się o twoich powiązaniach z Kaperem na "Eva".
 Adolf.'
 }
 
 itmdescr_letter_aeva
 {
-Nie ma lepszego miejsca niż "Eva". Ostatnio Cecille ciągle kręci się z tym drugim staruszkiem, Orelie, albo w tawernie, więc ładownia jest pusta. A na wypadek, gdyby ktoś nagle się pojawił, nie zaszkodzi trochę się napić, prawda?
+Nie ma lepszego miejsca niż "Eva". Ostatnio Cecille ciągle kręci się z tym drugim staruszkiem, Orelie, albo w karczmie, więc ładownia jest pusta. A na wypadek, gdyby ktoś nagle się pojawił, nie zaszkodzi trochę się napić, prawda?
 Marcello.
 }
 
 itmdescr_letter_valet
 {
-Zabawny list skierowany do Davida Fackmana, znanego jako 'Knave'.
+Zabawny list skierowany do Davida Fackmana, znanego jako 'Kanalia'.
 }
 
 itmname_letter_chad_1 {Otwarty list}
 itmdescr_letter_chad_1
 {
-List od Chad Kappera skierowany do Mary Casper.
+List od Chad'a Kapera skierowany do Mary Casper.
 }
 
 itmdescr_letter_facio
 {
-List wyjaśniający Giuseppe Fazio.
+List z wyjaśnieniami od Giuseppe Fazio.
 }
 
 itmdescr_letter_axel
 {
-Chad, sprawdziłem mój zapas, jak prosiłeś. Znalazłem tylko jedną beczkę irlandzkiej whiskey. To stary malt zwany 'Bushmills'. Jeśli cena 100 dukatów ci odpowiada, przyjdź i odbierz ją.
+Chad, sprawdziłem mój zapas, jak prosiłeś. Znalazłem tylko jedną beczkę irlandzkiej whiskey. To stary malt zwany 'Bushmills'. Jeśli cena 100 dublonów ci odpowiada, przyjdź i odbierz ją.
 Axel.
 }
 
@@ -2599,7 +2654,7 @@ Jackman.
 itmname_letter_parol {Notatka}
 itmdescr_letter_parol
 {
-Informujemy, że właściciel zmienił hasło do wejścia do kopalni. Nowe hasło to 'Neptun'.
+Informujemy, że właściciel zmienił hasło do wejścia do kopalni. Nowe hasło to 'Neptune'.
 }
 
 itmdescr_letter_ouster
@@ -2616,7 +2671,7 @@ Nieukończony list od Ugo do Dona Domingo Albalate.
 itmname_letter_mine {Dokumenty dla kopalni}
 itmdescr_letter_mine
 {
-Dokumenty stwierdzające, że pewien pan "Sir Lawrence Beltrop" z Port Royal oficjalnie jest właścicielem opuszczonej kopalni.
+Dokumenty stwierdzające, że pewien osobnik "Sir Lawrence Beltrop" z Port Royal oficjalnie jest właścicielem opuszczonej kopalni.
 }
 
 itmname_letter_jess {Podarta strona}
@@ -2634,7 +2689,7 @@ List od Beatrice Sharp do jej brata Blaze'a.
 itmname_letter_baker {Pisane zeznanie}
 itmdescr_letter_baker
 {
-Udokumentowane zeznanie Raymonda Bakera, byłego katem z St. Jones.
+Udokumentowane zeznanie Raymonda Bakera, byłego kata z St. Johns.
 }
 
 itmdescr_letter_pinett
@@ -3588,6 +3643,12 @@ itmdescr_cask_whisky
 Drewniana skrzynka zawierająca kilka butelek wyśmienitej irlandzkiej whiskey 'Bushmills', destylowanej w Dublinie.
 }
 
+itmname_cask_gin	{Beczka ginu}
+itmdescr_cask_gin
+{
+Beczka wykwintnego europejskiego ginu. Na Karaibach taki trunek dostępny jest tylko dla nielicznych.
+}
+
 itmname_buben	{Tamburyn szamański}
 itmdescr_buben
 {
@@ -3597,13 +3658,13 @@ Indyjski tamburyn używany przez ich szamanów do kontaktu z duchami. Tak przyna
 itmname_smoking_tube	{Fajka}
 itmdescr_smoking_tube
 {
-Wytworna fajka do palenia rdzennych mieszkańców Ameryki Północnej. Jak to się tu znalazło?
+Wytworna fajka do palenia od rdzennych mieszkańców Ameryki Północnej. Jak to się tu znalazło?
 }
 
 itmname_chemistry	{Podręcznik chemii Lavoisiera}
 itmdescr_chemistry
 {
-Wydrukowana książka zatytułowana 'Traite Elementaire de Chimie', zawierająca notatki i definicje nieczytelne dla laików. Książka została napisana przez 'Monsieur Lavoisier', a strona tytułowa głosi 'Wydrukowane w Paryżu, 1789 AD'. To musiała być pomyłka drukarska.
+Wydrukowana książka zatytułowana 'Traite Elementaire de Chimie', zawierająca notatki i definicje nieczytelne dla laików. Książka została napisana przez 'Monsieur Lavoisier', a strona tytułowa głosi 'Wydrukowane w Paryżu, 1789 AD'. Być może drukarz się pomylił. . .
 }
 
 itmname_shark_teeth	{Ząb rekina}
@@ -3794,6 +3855,30 @@ itmdescr_PR_Letter
 Notatka napisana na starej, zużytej kartce. Jej treść najwyraźniej nie jest przeznaczona dla ciekawskich oczu.
 }
 
+itmname_quest_potion	{Wywar z ziół}
+itmdescr_quest_potion
+{
+Prawdziwe właściwości tego wywaru znane są tylko dłoni, która go przygotowała.
+}
+
+itmname_GS_letters	{Notatki przekazane przez najemnika}
+itmdescr_GS_letters
+{
+Wskazówki napisane ręką szefa zarządu portu. Zawierają informacje o trasach i godzinach wypłynięcia jego klientów, z których każdy został zaatakowany przez piratów.
+}
+
+itmname_SM_necklace_Julie	{Naszyjnik Julii d’Armagnac}
+itmdescr_SM_necklace_Julie
+{
+Klejnot bliski sercu Julii. Elegancki i wyrafinowany, jakby sam przechowywał jej wspomnienia. Jeśli są rzeczy zdolne strzec tajemnic, ten naszyjnik z pewnością do nich należy.
+}
+
+itmname_TBP_letter	{Otwarty list}
+itmdescr_TBP_letter
+{
+"Myślałaś, że możesz mnie szantażować i ujść bezkarnie? Myliłaś się. Wkrótce pożałujesz swojej zuchwałości. Twoja śmierć będzie długa i bolesna, i nikt cię nie uratuje.​"
+}
+
 ;====================================== предметы для DLC ===============================
 
 itmname_kaleuche_amulet1 {Dziwny amulet}
@@ -3920,7 +4005,29 @@ itmdescr_LadyBeth_Map
 Droga do najcenniejszego skarbu największego poszukiwacza skarbów.
 }
 
+itmname_BoxOfBalls	{Skrzynia z kulami}
+itmdescr_BoxOfBalls
+{
+W tej skrzyni znajdziesz tylko słomę i osiem kul armatnich.
+}
 
+itmname_Tutorial_key	{Klucz}
+itmdescr_Tutorial_key
+{
+Żelazny klucz.
+}
+
+itmname_Tutorial_journal	{Dziennik kapitana. Tom IV.}
+itmdescr_Tutorial_journal
+{
+Czwarty tom dziennika kapitana „Ulysse”. Dopiero co rozpoczęty, więc wpisów jest jeszcze niewiele.
+}
+
+itmname_Suspicious_Potion	{Podejrzana mikstura}
+itmdescr_Suspicious_Potion
+{
+Lepiej, żeby zadziałała.
+}
 
 ;====================================== предметы для пиратской линейки ===============================
 

@@ -126,3 +126,8 @@ Siege_26
 {
 Поговаривают, что @<NationNamePeople(sti(aData.nation))> напали на нашу колонию @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. Защитники колонии храбро сражаются с врагом, но провизии и медикаментов у них осталось меньше чем на @<sDays>.
 }
+
+Siege_27
+{
+~ осадила ~
+}

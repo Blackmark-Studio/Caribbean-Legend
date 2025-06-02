@@ -8,7 +8,7 @@ string PGG_Stories[MAX_PGG_STORIES] = {
 	"... ¡Demonios, solo yo sé la ubicación y el último hombre en pie los matará a todos!..\n",
 	"... Y Maynard dijo: 'No espero misericordia, así que no deberías'...\n",
 	"... Él era ese borracho que propuso organizar ese infierno tan especial, solo para ver quién de nosotros aguantaría más tiempo...\n",
-	"... Divertida historia de mi viejo amigo de Portobelo...\n",
+	"... Divertida historia de mi viejo amigo de Portobello...\n",
 	"... No, caballero, esas son unas anécdotas de mierda. Tengo algunas buenas historias para tus oídos...\n",
 	"... No puedo decir mucho sobre el Holandés Errante, nunca lo he visto. Una vez abordé un extraño bergantín que estaba vacío, sin una sola alma a bordo. ¡Adivina qué! ¡Había 1.700 barriles de buen vino en su bodega! ¡Eso es lo que yo llamo suerte!\n",
 	"... Tiendo a creer que toda esa basura del 'Holandés Errante' es falsa...\n",
@@ -323,7 +323,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			Dialog.Text = RandPhraseSimple("Creo que ya tienes suficientes compañeros.", "Ya tienes suficientes barcos - ¿por qué necesitarías más?");
+			Dialog.Text = RandPhraseSimple("Creo que ya tienes suficientes compañeros.", "Ya tienes suficientes barcos, ¿por qué necesitarías más?");
 			link.l1 = "Sí... Quizás, tienes razón.";
 			link.l1.go = "exit";
 		}
@@ -416,7 +416,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			break;
 		}
-		Dialog.Text = RandPhraseSimple("¿Qué negocio?.. ¡Hic! ¿No puedes ver? - yo y los colegas estamos pasando un buen rato!.. ¡Hic...", "Ehh... ¡No hay negocio hoy!");
+		Dialog.Text = RandPhraseSimple("¿Qué negocio?.. ¡Hic! No ves yo mismo y mis colegas estamos pasando un buen rato!.. ¡Hic...", "Ehh... ¡No hay negocio hoy!");
 		link.l1 = "Ya veo...";
 		link.l1.go = "exit";
 		if (!PGG_IsQuestAvaible())
@@ -488,14 +488,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "Quest_1_Work":
-		iRnd = rand(3);
 		PChar.GenQuest.PGG_Quest.Template = rand(1);
 		if (CheckAttribute(NPChar, "PGGAi.ActiveQuest.QstNumber.Template"))
 		{
 			PChar.GenQuest.PGG_Quest.Template = NPChar.PGGAi.ActiveQuest.QstNumber.Template;
 		}
 		PChar.GenQuest.PGG_Quest.Parts = GetCompanionQuantity(PChar) + 1;
-		PChar.GenQuest.PGG_Quest.Nation = iRnd;
+		PChar.GenQuest.PGG_Quest.Nation = rand(NON_PIRATES);
 		PChar.GenQuest.PGG_Quest.Island = GetRandomIslandId();
 		while (PChar.GenQuest.PGG_Quest.Island == Islands[GetCharacterCurrentIsland(pchar)].id)
 		{
@@ -530,7 +529,7 @@ void ProcessDialogEvent()
 		else
 		{
 			PChar.GenQuest.PGG_Quest.Nation = FindEnemyNation2NationWithoutPirates(sti(PChar.Nation));
-			Dialog.Text = "Pssst... No deberíamos discutir negocios en la taberna - demasiados oídos equivocados. Te estoy esperando en mi barco '" + NPChar.Ship.Name + ". Hablaremos allí.";
+			Dialog.Text = "Pssst... No deberíamos discutir negocios en la taberna, demasiados oídos equivocados. Te estoy esperando en mi barco '" + NPChar.Ship.Name + ". Hablaremos allí.";
 			link.l1 = "No tengo tiempo y no me gusta visitar.";
 		}
 		link.l1.go = "Quest_1_Work_1";
@@ -620,7 +619,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			Dialog.Text = "Ahora estoy seguro de que no hay oídos equivocados alrededor - ¡vamos, escúpelo!";
+			Dialog.Text = "Ahora estoy seguro de que no hay oídos equivocados alrededor, ¡vamos, escúpelo!";
 			link.l1 = "Entonces mi oferta es adquirir algunas cosas sin dueño.";
 		}
 		link.l1.go = "Quest_1_Ship_1";
@@ -908,7 +907,7 @@ void ProcessDialogEvent()
 		{
 			PChar.GenQuest.PGG_Quest.FailedPaySum = sti(PChar.GenQuest.PGG_Quest.Days) * 10000;
 			//			Dialog.Text = "Oh, ¿por qué diablos me he metido contigo? Lo has arruinado todo. Así que, ahora debes pagarme una multa de "+FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum))+".";
-			Dialog.Text = PCharRepPhrase(RandPhraseSimple("Sediento de sangre " + GetSexPhrase("granuja", "porquería") + "¡Todo se fue directo al demonio del mar!" + FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum)) + " pesos en el acto, ¡y sal de mi vista!", "¿Te has imaginado a ti mismo como el almirante Nelson? ¿Hundiste todo el botín, " + GetSexPhrase("idiota", "mujer tonta") + "¡Dame ahora!" + FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum)) + " pesos y ¡pírate!"), RandPhraseSimple("¿Has decidido hacer la guerra aquí! Eso es completamente inaceptable! Pero, supongo, podemos olvidarlo, si nos pagas " + FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum)) + " pesos.", "¡Tus métodos son completamente inaceptables! ¡Has arruinado todo el asunto! Páganos inmediatamente nuestra parte en la cantidad de " + FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum)) + " pesos e ir donde quieras!"));
+			Dialog.Text = PCharRepPhrase(RandPhraseSimple("" + GetSexPhrase("Sanguinario bastardo", "Sanguinaria idiota") + ". ¡Todo se fue directo al fondo del mar, diablos!" + FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum)) + " pesos en el acto, ¡y sal de mi vista!", "¿Te has imaginado a ti mismo como el almirante Nelson? ¡Hundiste todo el botín, " + GetSexPhrase("idiota", "mujer idiota") + "! ¡Dame " + FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum)) + " pesos ahora y lárgate!"), RandPhraseSimple("¡Decidiste iniciar una guerra aquí! ¡Esto no sirvió para nada! Pero supongo que podemos olvidarlo si nos pagas " + FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum)) + " pesos.", "¡Tus métodos son completamente inaceptables! ¡Has arruinado todo el asunto! Páganos inmediatamente nuestra parte, " + FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum)) + " pesos, y lárgate."));
 			link.l1 = PCharRepPhrase(RandPhraseSimple("Si no fuera por mí, ya estarías alimentando a los cangrejos, ¡avaricioso bastardo!", "¡Oh sí, debería haber dejado que su buque insignia te abordara, entonces no estarías envenenando el aire ahora, balanceándote en el patio!"), RandPhraseSimple("¡Tus exigencias están fuera de lugar, y tus insinuaciones son insultantes!", "¡No hemos acordado la pena, así que no te voy a pagar nada!"));
 			link.l1.go = "Quest_1_NotPay";
 			if (sti(pchar.money) >= sti(PChar.GenQuest.PGG_Quest.FailedPaySum))
@@ -935,7 +934,7 @@ void ProcessDialogEvent()
 			PChar.GenQuest.PGG_Quest.Goods.Part = MakeInt(sti(PChar.GenQuest.PGG_Quest.Goods.Taken) / i);
 			if (CheckAttribute(NPChar, "PGGAi.ActiveQuest"))
 			{
-				Dialog.Text = Dialog.Text + PCharRepPhrase(" Mi parte es ", " La parte de mi barco - ");
+				Dialog.Text = Dialog.Text + PCharRepPhrase(" Mi parte es ", " La parte de mi barco, ");
 			}
 			else
 			{

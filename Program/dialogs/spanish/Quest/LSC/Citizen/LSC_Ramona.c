@@ -51,7 +51,7 @@ void ProcessDialogEvent()
 
 	case "meeting_1":
 		dialog.text = "¿Estás realmente complacido o solo estás siendo cortés, " + GetFullName(pchar) + "¿Dime, eres realmente un capitán o estabas bromeando?";
-		link.l1 = "¡Oh, tantas preguntas a la vez! ¿Puedo responderlas en orden? Primero, estoy realmente complacido, no conozco chicas bonitas todos los días, segundo, soy un capitán, es cierto. Pero mi barco está cerca de las costas del Main Occidental ahora...";
+		link.l1 = "¡Oh, tantas preguntas a la vez! ¿Puedo responderlas en orden? Primero, estoy realmente complacido, no conozco chicas bonitas todos los días, segundo, soy un capitán, es cierto. Pero mi barco está cerca de las costas de Tierra Firme occidental ahora...";
 		link.l1.go = "meeting_2";
 		break;
 
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "meeting_6":
-		dialog.text = " Parece que eres uno de los tipos realmente serios, " + pchar.name + " . Bien, tengo que irme. ¡Nos vemos! Tengo la sensación de que podríamos ser amigos... unos amigos muy cercanos.";
+		dialog.text = "Parece que eres uno de los tipos realmente serios, " + pchar.name + " . Bien, tengo que irme. ¡Nos vemos! Tengo la sensación de que podríamos ser amigos... unos amigos muy cercanos.";
 		link.l1 = "¿Por qué no? ¡Buena suerte!";
 		link.l1.go = "exit";
 		NextDiag.TempNode = "First time";
@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ansewer_3":
-		dialog.text = "Vivo de alguna manera. No hay otra opción. Mis amigos son principalmente hombres porque dos de nuestras bellezas casaderas - Gillian y Tanneke no me gustan por mi carácter y me enferma su decencia de fachada. Natalie era una buena chica hasta que empezó a pasar mucho tiempo con esos retrasados, la estupidez es contagiosa.";
+		dialog.text = "Vivo de alguna manera. No hay otra opción. Mis amigos son principalmente hombres porque dos de nuestras bellezas casaderas, Gillian y Tanneke no me gustan por mi carácter y me enferma su decencia de fachada. Natalie era una buena chica hasta que empezó a pasar mucho tiempo con esos retrasados, la estupidez es contagiosa.";
 		link.l1 = "Veo...";
 		link.l1.go = "int_quests";
 		npchar.quest.answer_3 = "true";

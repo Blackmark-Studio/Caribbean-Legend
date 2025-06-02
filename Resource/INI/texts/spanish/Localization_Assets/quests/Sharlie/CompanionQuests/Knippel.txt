@@ -90,3 +90,19 @@ Knippel_20
 {
 Algún tiempo después...@<NewStr()>En la Casa de Fleetwood
 }
+Knippel_21
+{
+Frederick
+}
+Knippel_22
+{
+Stokes
+}
+Knippel_23
+{
+Ralph
+}
+Knippel_24
+{
+Faggle
+}

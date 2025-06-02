@@ -1,0 +1,18 @@
+﻿Delete profile confirm{Sei sicuro di voler eliminare questo profilo e tutti i suoi salvataggi?}
+Delete savefile confirm{Sei sicuro di voler eliminare questo salvataggio?}
+Overwrite savefile confirm{Sei sicuro di voler sovrascrivere questo salvataggio?}
+
+Low storage and unable save create{Spazio libero insufficiente per salvare il gioco.}
+Load game confirm{Sei sicuro di voler caricare questo salvataggio?}
+Unable to Load save game{Impossibile caricare questo salvataggio.}
+
+Salary info
+{Il tuo equipaggio richiede la paga mensile.
+Vuoi pagare?}
+Officer info {I tuoi ufficiali richiedono il loro salario mensile:}
+All info {Importo netto: }
+
+New game confirm{Sei sicuro di voler iniziare una nuova partita?}
+
+Insert Disk Ok {Inserisci il disco 1 "Pirates Of The Caribbean"}
+save game limit {Hai superato il limite di partite salvate.Elimina i salvataggi più vecchi.}

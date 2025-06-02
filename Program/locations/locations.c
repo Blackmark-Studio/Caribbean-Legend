@@ -320,6 +320,7 @@ void InitAddLoc(int index)
 	loc.locators_radius.characters = 0.5;
 	loc.locators_radius.goto = 0.5;		
 	loc.locators_radius.sit = 0.5;		
+	loc.locators_radius.lay = 0.5;		
 	loc.locators_radius.item = 0.5;		
 	loc.locators_radius.officers = 0.5;
 	loc.locators_radius.merchant = 1.0;
@@ -343,8 +344,10 @@ void InitAddLoc(int index)
 	loc.locators_radius.redteleport = 0.2;
 	loc.locators_radius.greenteleport = 0.2;
 	loc.locators_radius.magsteleport = 0.2;
+	loc.locators_radius.effect = 0.3;
 	loc.locators_radius.EncDetector = 8.0;
 	loc.locators_radius.teleport = 1.0;
+	loc.locators_radius.event = 1.0;
 	loc.locators_radius.quest = 1.0;
 	if (MOD_BETTATESTMODE == "On")
 	{// чтоб было видно в отладке Boal 18.08.06

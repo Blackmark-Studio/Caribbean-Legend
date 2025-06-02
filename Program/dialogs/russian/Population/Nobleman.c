@@ -81,7 +81,7 @@ void ProcessDialogEvent()
 					DeleteAttribute(npchar, "talker"); //снимаем говорилку
 					break;
 				} 
-				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)//дворянин-пассажир
+				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && or(IsUniversalShipType(pchar), IsMerchantShipType(pchar)))//дворянин-пассажир
 				{
 					dialog.text = "Приветствую, "+GetAddress_Form(NPChar)+". Вижу, вы капитан солидного корабля. У меня будет к вам просьба, или предложение - как вам угодно...";
 					link.l1 = "Слушаю вас, "+GetAddress_FormToNPC(NPChar)+". О чём пойдёт речь?";
@@ -108,7 +108,7 @@ void ProcessDialogEvent()
 					npchar.quest.meeting = "1";
 					break;
 				}
-				if (CheckAttribute(npchar, "quest.slaves") && !CheckAttribute(Colonies[FindColony(npchar.city)], "questslaves"))//привезти рабов
+				if (CheckAttribute(npchar, "quest.slaves") && !CheckAttribute(&Colonies[FindColony(npchar.city)], "questslaves"))//привезти рабов
 				{
 					dialog.text = "Приветствую, капитан! Рад вас видеть, потому что вы выглядите человеком, который в состоянии помочь мне в одном вопросе.";
 					link.l1 = "Очень интересно. И в чём же будет заключаться моя помощь, "+GetAddress_FormToNPC(NPChar)+"?";
@@ -124,7 +124,7 @@ void ProcessDialogEvent()
 				npchar.quest.meeting = "1";
 				
 				//==> прибыла инспекция на Святом Милосердии
-				if (pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
+				if (CheckAttribute(pchar, "questTemp.SantaMisericordia.ColonyZapret") && pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
 				{
 					dialog.Text = LinkRandPhrase(LinkRandPhrase("Весь город на ушах - прибыл дон Фернандо де Аламида, королевский ревизор. Знаете, я тут многое повидал, но такого... Людей меняет не горе, а то, как они с ним справляются. Говорят, после гибели отца он стал другим человеком. Теперь во всём Архипелаге не сыскать более неподкупного и... безжалостного служаки.", "Вы только гляньте на 'Святое Милосердие'! Говорят, сам король приказал построить его по особым чертежам. И заметьте - ни единой царапины. Словно сама Дева Мария хранит его. Хотя слухи слышал такие... может, и не Дева вовсе.", "Знаете, сколько раз пытались убить дона Фернандо? Двенадцать атак в открытом море - и это только за последний год! Ну, с таким верным и обученным экипажем, да ещё и под защитой Господа - переживёт и тринадцатую!"), LinkRandPhrase("Слышали? Дон Фернандо де Аламида прибыл в наш город, и, говорят, сейчас где-то на улицах. Увидеть бы его своими глазами...", "Сложный человек этот дон Фернандо. Одни говорят - спаситель, чистит Отечество от скверны. Другие шепчутся - мол, после смерти отца что-то надломилось в нём и скоро наплачемся. А я скажу так: бойтесь не его. Бойтесь тех, кто его таким сделал.", "Такой видный мужчина, этот дон Фернандо! Но знаете что странно? Он словно и не замечает никого. Всё служба да служба. Я слышал, была одна девушка... но после встречи с каким-то священником он полностью отверг мирские радости. Словно дал обет."), RandPhraseSimple(RandPhraseSimple("Чёртов ревизор! Пока он здесь - город словно мёртвый. Ни торговли, ни веселья. Даже дышать, кажется, нужно тише. А знаете, что самое жуткое? В каждом порту одно и то же. Как по писаному. Ну не мог Его Королевское Величество специально придумать эту пытку для всех нас!", "Дон Фернандо опять посетил приют. Щедро жертвует, молится часами. Такого достойного человека нужно ставить в пример этим проклятым казнокрадам!"), RandPhraseSimple("Ха! 'Святой' Фернандо опять закрыл все бордели. Ну, ничего, скоро он отчалит и сразу откроют обратно.", "Рези... ревизор приплыл, вот что! Дон Фернандо де Альмейда, или, как его, Аламида! Такой важный, что сам губернатор перед ним на цыпочках ходит. Говорят, он в глаза смотрит и сразу видит все грехи. Жуть!")));
 					link.l1 = "...";
@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 				}
 				//<== прибыла инспекция на Святом Милосердии
 				//==> Леди Бет в порту города
-				if (pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
+				if (CheckAttribute(pchar, "questTemp.LadyBeth.CaptainInColony") && pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
 				{
 					dialog.Text = findLedyBethRumour(npchar);
 					link.l1 = "...";
@@ -166,7 +166,7 @@ void ProcessDialogEvent()
 
 //--------------------------------------------дворянин-пассажир---------------------------------------------------
 		case "passenger":
-			if (drand(19) > 9) SetPassengerParameter("Noblepassenger", false);
+			if (hrand(19) > 9) SetPassengerParameter("Noblepassenger", false);
 			else SetPassengerParameter("Noblepassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Noblepassenger.Enemycity"))
 			{
@@ -287,7 +287,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_1":
-			iTemp = drand(4)+1;
+			iTemp = hrand(4)+1;
 			pchar.GenQuest.Nobledonation.Money = iTemp*1000+rand(iTemp)*150;
 			dialog.text = "Сумма небольшая, всего "+FindRussianMoneyString(sti(pchar.GenQuest.Nobledonation.Money))+". Ну как, поможете?";
 			if (sti(pchar.money) >= sti(pchar.GenQuest.Nobledonation.Money))
@@ -359,10 +359,10 @@ void ProcessDialogEvent()
 			pchar.GenQuest.Noblelombard.Name = GetFullName(npchar);
 			pchar.GenQuest.Noblelombard.id = npchar.id;
 			pchar.GenQuest.Noblelombard.City = npchar.city;
-			pchar.GenQuest.Noblelombard.Money = 20000+drand(60)*500;
+			pchar.GenQuest.Noblelombard.Money = 20000+hrand(60)*500;
 			pchar.GenQuest.Noblelombard.Percent = makeint(sti(pchar.GenQuest.Noblelombard.Money)*0.3);
 			pchar.GenQuest.Noblelombard.Summ = sti(pchar.GenQuest.Noblelombard.Money)+sti(pchar.GenQuest.Noblelombard.Percent);
-			pchar.GenQuest.Noblelombard.Chance = drand(9);
+			pchar.GenQuest.Noblelombard.Chance = hrand(9);
 			chrDisableReloadToLocation = true;//закрыть локацию
 			LAi_SetActorType(npchar);
 			LAi_RemoveLoginTime(npchar);
@@ -447,8 +447,8 @@ void ProcessDialogEvent()
 
 //------------------------------------------привезти рабов под заказ--------------------------------------------
 		case "slaves":
-			npchar.quest.slaves.price = 3+drand(1);//цена на рабов в дублонах
-			npchar.quest.slaves.qty = 50+drand(5)*10;//количество
+			npchar.quest.slaves.price = 3+hrand(1);//цена на рабов в дублонах
+			npchar.quest.slaves.qty = 50+hrand(5)*10;//количество
 			npchar.quest.slaves.money = sti(npchar.quest.slaves.qty)*sti(npchar.quest.slaves.price);
 			dialog.text = "Мне для работы на "+LinkRandPhrase("моей фактории","моём руднике","моей плантации")+" постоянно требуются рабы. В данный момент эта потребность составляет "+sti(npchar.quest.slaves.qty)+" человек. Я хочу заказать у вас эту партию рабов. Плачу я щедро, золотом, по "+sti(npchar.quest.slaves.price)+" дублона за голову\nОсобой спешки нет, так что в сроках я вас сильно не ограничиваю. Ну, конечно, если вы не растянете это больше, чем на полгода. Ну как, по рукам?";
 			link.l1 = "По рукам! Дело хлопотное, но оно того стоит.";
@@ -592,7 +592,7 @@ void ProcessDialogEvent()
 string DonationText()
 {
 	string sText;
-	switch (drand(5))
+	switch (hrand(5))
 	{
 		case 0: sText = "Я вчера проигрался в карты, и на покрытие долга не хватает сущей безделицы. Не сможете меня выручить?" break;
 		case 1: sText = "Я вчера здорово повеселился с одной... девкой, а теперь она меня пытается шантажировать. Мне нужно заплатить ей, ну а потом я уже с ней разберусь... Не могли бы вы мне помочь небольшой суммой?" break;
@@ -606,7 +606,7 @@ string DonationText()
 
 void LombardText()
 {
-	switch (drand(5))
+	switch (hrand(5))
 	{
 		case 0:
 			pchar.GenQuest.Noblelombard.Item = "алмазные подвески моей матери работы мадридского ювелира";

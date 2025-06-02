@@ -33,7 +33,7 @@ int GetCannonByTypeAndCaliber(string sCannonType, int iCaliber)
 					return CANNON_TYPE_CANNON_LBS6;
 				break;
 				case 8:
-					return CANNON_TYPE_CANNON_LBS6; 
+					return CANNON_TYPE_CANNON_LBS8; 
                 break;				
 				case 12:
 					return CANNON_TYPE_CANNON_LBS12;
@@ -42,7 +42,7 @@ int GetCannonByTypeAndCaliber(string sCannonType, int iCaliber)
 					return CANNON_TYPE_CANNON_LBS16;
 				break;
 				case 18:
-					return CANNON_TYPE_CANNON_LBS16;
+					return CANNON_TYPE_CANNON_LBS18;
 				break;
 				case 20:
 					return CANNON_TYPE_CANNON_LBS20;

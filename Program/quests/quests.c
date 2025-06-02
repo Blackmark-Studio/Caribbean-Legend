@@ -1,12 +1,5 @@
 
-#include "quests\quests_abordage.c"
-#include "quests\quests_check.c"
-#include "quests\quests_movie.c"
-#include "quests\characters_task.c"
-#include "quests\quests_scenes.c"
-#include "quests\tutorial.c"
-#include "quests\quests_reaction.c"
-#include "quests\reaction_functions.c"
+#include "quests\quests.h"
 
 #event_handler("LocationWaitNihgtEnd","WaitDatePostEventControl");
 #event_handler("evntQuestCameraRestore","QuestCameraRestore");
@@ -1188,10 +1181,18 @@ void DoReloadFromDeckToLocation(string idLocation, string idGroup, string idLoca
 void DeleteQuestCheck(string sQuestName)
 {
 	if(sQuestName=="") return;
-	if( CheckAttribute(pchar,"quest."+sQuestName+".win_condition") )	
+	if(CheckAttribute(pchar,"quest."+sQuestName+".win_condition"))	
 	{
 		pchar.quest.(sQuestName).over = "yes";
 	}
+}
+
+// belamour существует ли прерывание
+bool CheckQuestCondition(string sQuestName)
+{
+	if(sQuestName == "") return false;
+	
+	return CheckAttribute(pchar,"quest."+sQuestName+".win_condition") && !CheckAttribute(pchar,"quest."+sQuestName+".over");
 }
 
 // Получить полное имя персонажа
@@ -1455,11 +1456,17 @@ void QuestToSeaLogin_Add(string groupName)
 // запустить квестовую выгрузку в море
 void QuestToSeaLogin_Launch()
 {
+	string loadScr = "loading\sea_0" + rand(2) + ".tga";
+	if(CheckAttribute(pchar, "systeminfo.LockFader"))
+	{
+		loadScr = pchar.systeminfo.LockFader;
+		DeleteAttribute(pchar, "systeminfo.LockFader");
+	}
 	SetEventHandler("FaderEvent_EndFade", "QuestToSeaLoginFade", 0);
 	object fader;
 	CreateEntity(&fader, "fader");
 	SendMessage(&fader, "ls", FADER_PICTURE0, "loading\ImgBack.tga");
-	SendMessage(&fader, "ls",FADER_PICTURE,"loading\sea_0" + rand(2) + ".tga");
+	SendMessage(&fader, "ls",FADER_PICTURE, loadScr);
 	SendMessage(&fader, "lfl", FADER_OUT, 1.0, true);
 	int idxLoadLoc = FindLoadedLocation();
 	if( idxLoadLoc!=-1 )
@@ -2534,4 +2541,97 @@ bool CheckNewDocs()
 		if(CheckAttribute(pchar, "QuestInfo." + attributeName + ".InfoType") && CheckAttribute(pchar,"QuestInfo."+attributeName+ ".color")) return true;
 	}
 	return false;
+}
+
+// belamour работа с локаторами группы event
+void CheckEvent_OnEnterLocator(ref loc, string locator)
+{
+	string _event = FindEventInLocator(loc, locator);
+	if(_event == "") return;
+	
+	if(CheckAttribute(loc, "locatorEvent." + _event + ".location"))
+	{
+		if(loc.locatorEvent.(_event).location == loc.id && loc.locatorEvent.(_event).locator == locator)
+		{
+			Log_SetActiveAction("PlayEvent");
+			pchar.EventLocator = locator;
+		}
+	}
+}
+
+void SetLocatorEvent(string locID, string locator, string _event)
+{
+	ref loc;
+	int index = FindLocation(locID);
+	
+	if(index < 0) return;
+	
+	makeref(loc, locations[index]);
+	
+	loc.locatorEvent.(_event).location = locID;
+	loc.locatorEvent.(_event).locator = locator;
+	loc.locatorEvent.(_event).eventName = _event;
+	
+	QuestPointerToLoc(locID, "event", locator);
+}
+
+void DelLocatorEvent(string locID, string locator)
+{
+	ref loc;
+	int index = FindLocation(locID);
+	
+	if(index < 0) return;
+	
+	makeref(loc, locations[index]);
+	
+	string _event = FindEventInLocator(loc, locator);
+	if(_event == "") return;
+	
+	QuestPointerDelLoc(locID, "event", locator);
+	DeleteAttribute(loc, "locatorEvent." + _event);
+}
+
+void PlayLocatorEvent()
+{
+	ref loc;
+	int index = FindLoadedLocation();
+	string locator = pchar.EventLocator;
+	
+	if(index < 0) return;
+	
+	makeref(loc, locations[index]);
+	
+	string _event = FindEventInLocator(loc, locator);
+	if(_event == "") return;
+	
+	if(!CheckAttribute(loc, "locatorEvent." + _event)) return;
+	Log_SetActiveAction("Nothing");
+	BLI_RefreshCommandMenu();
+	QuestPointerDelLoc(loc.id, "event", locator);
+	
+	string sFunction = loc.locatorEvent.(_event).eventName;
+	DeleteAttribute(loc, "locatorEvent." + _event);
+	DeleteAttribute(pchar, "EventLocator");
+	call sFunction();
+}
+
+string FindEventInLocator(ref loc, string locator)
+{
+	if(CheckAttribute(loc, "locatorEvent"))
+	{
+		aref arQsts, arAttrQ;
+		string _event;
+		
+		makearef(arQsts, loc.locatorEvent);
+		int	qq = GetAttributesNum(arQsts);
+		for(int i = 0; i < qq; i++)
+		{
+			arAttrQ = GetAttributeN(arQsts, i);
+			_event = GetAttributeName(arAttrQ);
+			if(loc.locatorEvent.(_event).locator == locator)
+				return _event;
+		}
+	}
+	
+	return "";
 }

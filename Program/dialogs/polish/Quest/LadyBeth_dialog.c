@@ -20,7 +20,7 @@ void ProcessDialogEvent()
 		
 		case "First time":
 			dialog.text = "Czego panu potrzeba?";
-			link.l1 = "Nic.";
+			link.l1 = "Niczego.";
 			link.l1.go = "exit";
 		break;
 		
@@ -47,11 +47,11 @@ void ProcessDialogEvent()
 				link.l1 = "Mów, Alonso.";
 				link.l1.go = "AlonsoNaPalube_2";
 			}
-			locCameraFromToPos(0.71, 11.25, -21.73, true, 4.29, 9.18, -21.40);
+			locCameraFromToPos(-10.33, 9.69, -22.16, true, -5.22, 7.19, -21.06);
 		break;
 		
 		case "AlonsoNaPalube_2":
-			dialog.text = "Załoga chce wiedzieć, jakie macie plany wobec Kajmanów. Ludzie się niepokoją.";
+			dialog.text = "Załoga chce wiedzieć, jakie macie plany wobec Kajmanu. Ludzie się niepokoją.";
 			link.l1 = "Jeszcze nie zdecydował"+GetSexPhrase("em","am")+". A dlaczego ludzie się niepokoją, Alonso?";
 			link.l1.go = "AlonsoNaPalube_3";
 		break;
@@ -63,18 +63,18 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AlonsoNaPalube_4":
-			dialog.text = "Że Blackwood to już nie ten sam człowiek, co dawniej. Że jest opętany poszukiwaniem jakiegoś skarbu konkwistadorów. Że gotów jest poświęcić wszystko i wszystkich, by go zdobyć. Wiemy, jak bardzo lubicie wplątywać się w piękne historie, schodzić samemu na ląd i wpadać w pułapki... Ale z tej nie wyjdziecie.";
+			dialog.text = "Że Blackwood to już nie ten sam człowiek, co dawniej. Że jest opętany poszukiwaniem jakiegoś skarbu konkwistadorów. Że gotów jest poświęcić wszystko i wszystkich, by go zdobyć. Kapitanie, dobrze wiemy, jak bardzo lubisz wplątywać się w te piękne historie, schodzić samemu na ląd i wpadać w pułapki... Ale z tej nie wyjdziesz.";
 			link.l1 = "Dziękuję za meldunek i ostrzeżenie. Jeśli mimo to zdecyduję się na desant, wezmę ze sobą awangardę i oddział naszych najlepszych ludzi.";
 			link.l1.go = "AlonsoNaPalube_5";
 		break;
 		
 		case "AlonsoNaPalube_5":
-			dialog.text = "Z tym mogą być trudności, kapitanie. Abordaż to jedno, ale na lądzie pchać się pod kule piechoty morskiej i szable wszelkiego motłochu, którego, jak mówią, Blackwood zaciągnął z każdego kąta Małych Antyli - to już zupełnie co innego. No i o Kajmanie krążą niedobre wieści... Nie, wielu ochotników pan do tego nie znajdzie.";
-			link.l1 = "Trzeba będzie poradzić sobie z tymi, których mamy. Twoja obecność jest konieczna, Alonso.";
+			dialog.text = "Z tym mogą być trudności, kapitanie. Abordaż to jedno, ale na lądzie pchać się pod kule piechoty morskiej i szable wszelkiego motłochu, którego, jak mówią, Blackwood zaciągnął z każdego kąta Małych Antyli - to już zupełnie co innego. No i o Kajmanie krążą mrożące krew w żyłach plotki... Niewielu ochotników zgłosi się na taką wyprawe.";
+			link.l1 = "Trzeba będzie poradzić sobie z tymi, których mamy. Twoja obecność jest wymagana, Alonso.";
 			link.l1.go = "AlonsoNaPalube_LiteGroup";
-			link.l2 = "Moim zdaniem już udowodniłem"+GetSexPhrase("em","am")+" wszystko, co było do udowodnienia. Wszyscy dobrzy wojownicy i strzelcy idą ze mną. To rozkaz.";
+			link.l2 = "Moim zdaniem już udowodnił"+GetSexPhrase("em","am")+" wam wszystko, co było do udowodnienia. Wszyscy dobrzy wojownicy i strzelcy idą ze mną. To rozkaz.";
 			link.l2.go = "AlonsoNaPalube_StrongGroup";
-			link.l3 = "Hm... Muszę to przemyśleć. Być może wrócimy do tego pytania później.";
+			link.l3 = "Hm... Muszę to przemyśleć. Być może wrócimy do tej rozmowy później.";
 			link.l3.go = "AlonsoNaPalube_Exit";
 		break;
 
@@ -95,7 +95,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AlonsoNaPalube_LiteGroup":
-			dialog.text = "Będzie zrobione, kapitanie.";
+			dialog.text = "Wedle rozkazu, kapitanie.";
 			link.l1 = "A co z okrętem Blackwooda? Nie sprawi nam kłopotów?";
 			link.l1.go = "AlonsoNaPalube_Vpered";
 			pchar.questTemp.LadyBeth_LiteGroup = true;
@@ -104,7 +104,7 @@ void ProcessDialogEvent()
 		case "AlonsoNaPalube_StrongGroup":
 			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50 || sti(pchar.rank) >= 17)
 			{
-				dialog.text = "Będzie zrobione, kapitanie.";
+				dialog.text = "Tak jest, kapitanie!";
 				link.l1 = "A co z okrętem Blackwooda? Nie sprawi nam kłopotów?";
 				link.l1.go = "AlonsoNaPalube_Vpered";
 				pchar.questTemp.LadyBeth_StrongGroup = true;
@@ -121,7 +121,7 @@ void ProcessDialogEvent()
 				{
 					dialog.text = "Nie ma Pan nic do udowodnienia - ani mnie, ani swoim oficerom. Pójdziemy tam, dokąd Pan rozkaże, ale zwykły marynarz myśli inaczej. Obawiam się, że mogą pojawić się problemy, kapitanie.";
 				}
-				link.l1 = "Trzeba będzie poradzić sobie z tymi, których mamy. Twoja obecność jest konieczna, Alonso.";
+				link.l1 = "Trzeba będzie poradzić sobie z tymi, których mamy. Twoja obecność jest wymagana, Alonso.";
 				link.l1.go = "AlonsoNaPalube_LiteGroup";
 				link.l2 = "Hm... Muszę to przemyśleć. Być może wrócimy do tego pytania później.";
 				link.l2.go = "AlonsoNaPalube_Exit";
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AlonsoNaPalube_Vpered":
-			dialog.text = "Szniawa. Mówią, że to prawdziwa piękność z groźnym temperamentem. Nie martwiłbym się o nią. Cała załoga zapewne haruje jak przeklęta na lądzie, podczas gdy statek jest bezpiecznie ukryty w załamaniach linii brzegowej. Gdy, i jeśli, wygramy, będziemy mogli ją wziąć jako trofeum.";
+			dialog.text = "Wątpliwa sprawa. Mówią, że ten Snow to prawdziwa piękność z groźnym temperamentem. Nie martwiłbym się o nią. Cała załoga zapewne haruje jak przeklęta na lądzie, podczas gdy statek jest bezpiecznie ukryty w załamaniach linii brzegowej. Gdy, i jeśli, wygramy, będziemy mogli ją wziąć jako trofeum.";
 			link.l1 = "Zbierz ludzi. Dziś jest dobry dzień - fortuna będzie po naszej stronie.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_AlonsoNaPalube_Vpered");
@@ -142,7 +142,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.LadyBeth_DialogInCity_Fourth"))
 			{
 				dialog.text = "Miło pana widzieć, kapitanie. Wydaje mi się, że już wszystko omówiliśmy.";
-				link.l1 = "Rzeczywiście. Żegnaj.";
+				link.l1 = "Rzeczywiście. Do widzenia.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "LadyBeth_DialogInCity_again";
 				break;
@@ -150,27 +150,27 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.LadyBeth_DialogInCity_Third"))
 			{
 				dialog.text = "...";
-				link.l1 = ""+TimeGreeting()+", Albert.";
+				link.l1 = ""+TimeGreeting()+", Albercie.";
 				link.l1.go = "LadyBeth_DialogInCity_Third_2";
 				break;
 			}
 			if (CheckAttribute(pchar, "questTemp.LadyBeth_DialogInCity_Second"))
 			{
 				dialog.text = "...";
-				link.l1 = ""+TimeGreeting()+", kapitan Blackwood.";
+				link.l1 = ""+TimeGreeting()+", kapitanie Blackwoodzie.";
 				link.l1.go = "LadyBeth_DialogInCity_Second_1";
 				break;
 			}
 			if (startHeroType == 4)
 			{
 				dialog.text = "...";
-				link.l1 = "Dzień dobry. Czy pan jest kapitanem Blackwoodem?";
+				link.l1 = "Dzień dobry. Czy Pan jest kapitanem Blackwoodem?";
 				link.l1.go = "LadyBeth_DialogInCity_First_Helena_1";
 			}
 			else
 			{
 				dialog.text = "...";
-				link.l1 = ""+TimeGreeting()+". Czy pan jest kapitanem Albertem Blackwoodem?";
+				link.l1 = ""+TimeGreeting()+". Czy Pan jest kapitanem Albertem Blackwoodem?";
 				link.l1.go = "LadyBeth_DialogInCity_First_1";
 			}
 		break;
@@ -195,25 +195,25 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_DialogInCity_First_3":
-			dialog.text = "Słyszał pan coś o skarbach tam?";
+			dialog.text = "Słyszał pan coś o znajdujących się tam skarbach?";
 			link.l1 = "Nie, nic konkretnego.";
 			link.l1.go = "LadyBeth_DialogInCity_First_4";
 		break;
 		
 		case "LadyBeth_DialogInCity_First_4":
-			dialog.text = "Ślady Hiszpanów? Stara broń? Monety z czasów konkwistadorów?";
+			dialog.text = "Śladach Hiszpanów? Starej broń? Monet z czasów konkwistadorów?";
 			link.l1 = "Niczego takiego nie znalazłem.";
 			link.l1.go = "LadyBeth_DialogInCity_First_5";
 		break;
 		
 		case "LadyBeth_DialogInCity_First_5":
-			dialog.text = "Lokalne legendy? Opowieści o Cortesie? Coś o grobach?";
+			dialog.text = "Lokalnych legend? Opowieści o Cortesie? Coś o grobach?";
 			link.l1 = "Przepraszam, kapitanie, ale nie posiadam takich informacji. A to wszystko zaczyna przypominać przesłuchanie.";
 			link.l1.go = "LadyBeth_DialogInCity_First_6";
 		break;
 		
 		case "LadyBeth_DialogInCity_First_6":
-			dialog.text = "Proszę wybaczyć... Złe przyzwyczajenie byłego oficera. Po prostu... to dla mnie niezwykle ważne.";
+			dialog.text = "Proszę wybaczyć... Zboczenie zawodowe byłego oficera. Po prostu... to dla mnie niezwykle ważne.";
 			link.l1 = "Dlaczego tak bardzo interesuje pana właśnie Kajman?";
 			link.l1.go = "LadyBeth_DialogInCity_First_7";
 		break;
@@ -240,13 +240,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_DialogInCity_First_Helena_1": // первый диалог с Элен
-			dialog.text = "We własnej osobie. A pani... Kapitan Helen MacArthur? Protegowana Jana Swensona, prawda? Słyszałem o pani.";
-			link.l1 = "Jest pan dobrze poinformowany, kapitanie Blackwood. Ale nie dziwi mnie, że angielski oficer mnie zna.";
+			dialog.text = "We własnej osobie. A pani to... Kapitan Helen McArthur? Protegowana Jana Swensona, prawda? Słyszałem o pani.";
+			link.l1 = "Jest pan dobrze poinformowany, kapitanie Blackwood. Nie jestem jednak zdziwiona tym faktem, gdyż każdy angielski oficer zna mnie dość dobrze";
 			link.l1.go = "LadyBeth_DialogInCity_First_Helena_2";
 		break;
 		
 		case "LadyBeth_DialogInCity_First_Helena_2":
-			dialog.text = "Były oficer. I wszyscy czerwoni mundurowi znają pani... unikalne przywileje od Korony. Jak mówią, pieniądze nie śmierdzą. A historia o tym, jak pani ojciec, Sean MacArthur, zabierał panią na morze od dzieciństwa i uczynił kapitanem, stała się legendą we flocie.";
+			dialog.text = "Były oficer. I wszyscy czerwoni mundurowi znają pani... unikalne przywileje od Korony. Jak to się mówi, pieniądze nie śmierdzą. A historia o tym, jak pani ojciec, Sean McArthur, zabierał panią na morze od dzieciństwa i uczynił kapitanem, stała się legendą we flocie.";
 			link.l1 = "I jakie to uczucie spotkać tę legendę?";
 			link.l1.go = "LadyBeth_DialogInCity_First_Helena_3";
 		break;
@@ -258,7 +258,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_DialogInCity_First_Helena_4":
-			dialog.text = "Dokładnie! Na morzu, jak i w życiu, nie liczą się tytuły, lecz rezultaty. Miło mi panią poznać, kapitanie MacArthur. Mam nadzieję, że jeszcze się spotkamy. Może wpadnie pani na kieliszek wina, gdy wrócę z wyprawy?";
+			dialog.text = "Dokładnie! Na morzu, jak i w życiu, nie liczą się tytuły, lecz rezultaty. Miło mi panią poznać, kapitanie McArthur. Mam nadzieję, że jeszcze się spotkamy. Może wpadnie pani na kieliszek wina, gdy wrócę z wyprawy?";
 			link.l1 = "Może. Powodzenia w poszukiwaniach, kapitanie.";
 			link.l1.go = "LadyBeth_DialogInCity_First_Helena_5_harizma";
 			link.l2 = "Nie interesuje mnie to. Ale powodzenia w poszukiwaniach, kapitanie.";

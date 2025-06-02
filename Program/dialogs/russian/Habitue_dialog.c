@@ -98,7 +98,7 @@ void ProcessDialogEvent()
             ok = CheckFreeSitFront(npchar);
             
             dialog.text = "Не загораживай мне свет, мух в кружке не видно!";
-            link.l1 = "Уже отош"+ GetSexPhrase("ел","ла") +"...";
+            link.l1 = "Уже отош"+ GetSexPhrase("ёл","ла") +"...";
 		    link.l1.go = "exit";
 		    if (!chrDisableReloadToLocation)
 		    {

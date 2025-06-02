@@ -28,8 +28,8 @@ void ProcessDialogEvent()
 	case "First time":
 		if (LAi_grp_playeralarm > 0)
 		{
-			dialog.text = PCharRepPhrase(LinkRandPhrase("La ciudad está en alerta. Parece que es hora de que yo también tome las armas...", "¿No estás siendo perseguido por toda la guardia del pueblo?. ¡A mí, soldados!!!", "No encontrarás refugio aquí. ¡Pero encontrarás unas cuantas pulgadas de acero frío debajo de una costilla!"), LinkRandPhrase("¿Qué quieres, malandrín?! Un guardia municipal ya ha tomado tu rastro, no escaparás muy lejos, " + GetSexPhrase("¡pirata sucio!", "granuja") + "¡", "¡Alto! " + GetSexPhrase("¡Asesino sucio! ¡Guardia!!!", "¡No tengo miedo de ti! Pronto estarás colgado en nuestro fuerte, no hay lugar donde esconderte...")));
-			link.l1 = PCharRepPhrase(RandPhraseSimple("Parece que estás cansado de vivir...", "¿Y por qué no queréis vivir tranquilamente, ciudadanos..." + XI_ConvertString("Colony" + npchar.city + "Gen") + "¡"), RandPhraseSimple("¡Vete al infierno!", "Te quedan unos pocos segundos en este mundo..."));
+			dialog.text = PCharRepPhrase(LinkRandPhrase("La ciudad está en alerta. Parece que es hora de que yo también tome las armas...", "¿No estás siendo perseguido por toda la guardia del pueblo?. ¡A mí, soldados!", "No encontrarás refugio aquí. ¡Pero encontrarás unas cuantas pulgadas de acero frío debajo de una costilla!"), LinkRandPhrase("¿Qué quieres, malandrín? Un guardia municipal ya ha tomado tu rastro, no escaparás muy lejos, " + GetSexPhrase("¡sucio pirata", "¡granuja") + "!", "¡Alto! " + GetSexPhrase("¡Asesino sucio! ¡Guardia!", "¡No tengo miedo de ti! Pronto estarás colgado en nuestro fuerte, no hay lugar donde esconderte...")));
+			link.l1 = PCharRepPhrase(RandPhraseSimple("Parece que estás cansado de vivir...", "¿Y por qué no queréis vivir tranquilamente, ciudadanos..." + XI_ConvertString("Colony" + npchar.city + "Gen") + "?"), RandPhraseSimple("¡Vete al infierno!", "Te quedan unos pocos segundos en este mundo..."));
 			link.l1.go = PCharRepPhrase("exit_setOwner", "fight");
 			break;
 		}
@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 		}
 		if (npchar.quest.meeting == "0")
 		{
-			dialog.text = RandPhraseSimple("Hola, marinero! Mi nombre es " + GetFullName(npchar) + ", y soy la única alma viviente aquí. En realidad, todos vamos a morir, ja-ja-ja! ¿Por qué has venido?", "¡Hola! No he visto a un hombre vivo durante mucho tiempo... Permíteme presentarme - " + GetFullName(npchar) + ", y este cementerio es mi último refugio. Aparentemente, seré enterrado aquí. ¿Cómo puedo ayudarte?");
+			dialog.text = RandPhraseSimple("Hola, marinero! Mi nombre es " + GetFullName(npchar) + ", y soy la única alma viviente aquí. En realidad, todos vamos a morir, ja-ja-ja! ¿Por qué has venido?", "¡Hola! No he visto a un hombre vivo durante mucho tiempo... Permíteme presentarme, " + GetFullName(npchar) + ", y este cementerio es mi último refugio. Aparentemente, seré enterrado aquí. ¿Cómo puedo ayudarte?");
 			link.l1 = "Hola, " + npchar.name + "¡ Mi nombre es " + GetFullName(pchar) + ", y soy un capitán. Caminé a través de la selva y llegué aquí. Pensé que echaría un vistazo dentro de esta cómoda casa, para ver quién no tiene miedo de vivir aquí...";
 			link.l1.go = "meeting";
 			npchar.quest.meeting = "1";
@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "trade_info":
-		dialog.text = "Tengo mucho tiempo libre, por eso me gusta caminar por la selva para recolectar plantas útiles y piedras elegantes. Luego los vendo en el pueblo. No cuestan mucho, pero - es mejor que nada. Y consigo una variedad de cosas de mis amigos...";
+		dialog.text = "Tengo mucho tiempo libre, por eso me gusta caminar por la selva para recolectar plantas útiles y piedras elegantes. Luego los vendo en el pueblo. No cuestan mucho, pero es mejor que nada. Y consigo una variedad de cosas de mis amigos...";
 		link.l1 = "¿Amigos? ¿Quieres decir, revendes lo que otros te traen?";
 		link.l1.go = "trade_info_1";
 		break;
@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 
 	case "Lantern_10":
 		dialog.text = "¿Verdad? ¿Qué había allí? ¡Dime!";
-		link.l1 = "¡Había el espíritu inquieto de una mujer! Afortunadamente, tuve al sacerdote local para bendecir mi espada para castigar a los malvados, así que todo salió bien. Ese espíritu no te molestará más.";
+		link.l1 = "¡Había el espíritu inquieto de una mujer! Afortunadamente, tuve al sacerdote para bendecir mi espada para castigar a los malvados, así que todo salió bien. Ese espíritu no te molestará más.";
 		link.l1.go = "Lantern_11";
 		break;
 
@@ -255,7 +255,7 @@ void ProcessDialogEvent()
 
 	case "Lantern_15":
 		dialog.text = "¿Solo?.. ¡Por qué esos jóvenes! ¡Que solo intenten venir aquí de nuevo! ¡Los ahuyentaré a ambos con un látigo o los encerraré en la cripta para que se queden allí!!!";
-		link.l1 = "No volverán aquí nunca más. Les dije que sus pequeñas escapadas realmente asustaron a la guardia local. Pretenden hacer eso. Y por cierto, la cerradura de la puerta está rota de todos modos.";
+		link.l1 = "No volverán aquí nunca más. Les dije que sus pequeñas escapadas realmente asustaron a la guardia. Pretenden hacer eso. Y por cierto, la cerradura de la puerta está rota de todos modos.";
 		link.l1.go = "Lantern_16";
 		break;
 

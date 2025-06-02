@@ -29,7 +29,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Consumption_2":
-			dialog.text = "Demasiado serio. Ni siquiera tenemos un médico aquí, él también murió de esa maldita tisis. Ahora solo un médico de la guarnición local examina a los prisioneros una vez a la semana. Pero ¿a quién le importan estos vagabundos y criminales?\nLa mayoría de la gente piensa que se merecen totalmente ese destino y es difícil discutir sobre esto.";
+			dialog.text = "Demasiado serio. Ni siquiera tenemos un médico aquí, él también murió de esa maldita tisis. Ahora solo un médico de la guarnición examina a los prisioneros una vez a la semana. Pero ¿a quién le importan estos vagabundos y criminales?\nLa mayoría de la gente piensa que se merecen totalmente ese destino y es difícil discutir sobre esto.";
 			link.l1 = "Mis conocimientos de medicina son modestos, pero por lo que sé, la tisis es peligrosa y mortal, pero no mata a las personas en pocos días como aquí. ¿No deberían las víctimas sufrir durante meses o incluso años?";
 			link.l1.go = "Consumption_3";
 		break;

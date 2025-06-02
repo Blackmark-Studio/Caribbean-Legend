@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 				link.l1 = "Report, Alonso.";
 				link.l1.go = "AlonsoNaPalube_2";
 			}
-			locCameraFromToPos(0.71, 11.25, -21.73, true, 4.29, 9.18, -21.40);
+			locCameraFromToPos(-10.33, 9.69, -22.16, true, -5.22, 7.19, -21.06);
 		break;
 		
 		case "AlonsoNaPalube_2":

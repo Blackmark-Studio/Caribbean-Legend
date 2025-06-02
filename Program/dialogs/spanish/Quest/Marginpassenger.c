@@ -44,7 +44,7 @@ void ProcessDialogEvent()
 		else
 		{
 			dialog.text = "Será mejor que abandone mi barco, señor, mientras todavía se lo permito. No trate de asustarme. Y no se atreva a atacar mi nave, de lo contrario será repelido de inmediato. ¡Salga, mientras todavía estoy de buen humor!";
-			link.l1 = "He te advertido. Estoy en camino. Nos vemos pronto, " + GetAddress_FormToNPC(NPChar) + "¡";
+			link.l1 = "Te he advertido. Estoy en camino. Nos vemos pronto, " + GetAddress_FormToNPC(NPChar) + ".";
 			link.l1.go = "MarginCap_4";
 		}
 		break;
@@ -193,14 +193,14 @@ void ProcessDialogEvent()
 		int iSum = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon) * 5 * stf(pchar.GenQuest.Marginpassenger.Chance));
 		if (iTemp <= 0)
 		{
-			dialog.text = " Muy gracioso. Está bien,   finjamos que tu broma fue divertida. ¡Adiós!";
+			dialog.text = "Muy gracioso. Está bien, finjamos que tu broma fue divertida. ¡Adiós!";
 			link.l1 = "Mm...";
 			link.l1.go = "MarginNeed_exit";
 			break;
 		}
 		if (iTemp > 0 && iTemp <= iSum)
 		{
-			if (drand(2) > 1) // Addon-2016 Jason уменьшаем раздачу дублонов
+			if (hrand(2) > 1) // Addon-2016 Jason уменьшаем раздачу дублонов
 			{
 				dialog.text = "Está bien, estoy de acuerdo. Poseo la suma requerida. ¿Dónde está " + pchar.GenQuest.Marginpassenger.q1Name + "?";
 				link.l1 = "Debe estar en el muelle ya. Así que puedes ir a buscar al pasajero.";

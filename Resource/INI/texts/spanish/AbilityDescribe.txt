@@ -91,7 +91,7 @@ El personaje puede disparar un mosquete a través de los aliados sin golpearlos.
 IronWill	{Voluntad de hierro}
 perkIronWill
 {
-Permite al personaje sobrevivir a una herida mortal una vez cada tres minutos e intimidar a los oficiales con baja lealtad para evitar que te abandonen.
+Permite al personaje sobrevivir a una herida mortal una vez cada tres minutos.
 ~
 Disminuye la probabilidad de que se produzca un motín por hambre y falta de pago.
 ~
@@ -142,6 +142,11 @@ El oficial puede ocupar dos puestos a la vez.
 Habilidad disponible solo para los oficiales
 }
 
+perkByWorkerShort
+{
+El oficial puede ocupar dos puestos a la vez
+}
+
 ByWorker2	{Mañoso}
 perkByWorker2
 {
@@ -152,6 +157,11 @@ El oficial puede ocupar tres puestos a la vez.
 ~
 ~
 Habilidad disponible solo para los oficiales
+}
+
+perkByWorker2Short
+{
+El oficial puede ocupar tres puestos a la vez
 }
 
 Trustworthy	{Cara de bueno}
@@ -171,15 +181,15 @@ Habilidad disponible solo para el jugador.
 ShipEscape	{Huida en salvavidas}
 perkShipEscape
 {
-Si el casco de tu barco tiene menos de 15% de integridad, puedes huir en bote a otro barco de la escuadra. 
-Cuando la integridad del casco sea menor al 15%, durante el combate, podrás acceder a la transferencia de mercancías en el menú de "Barcos" con otro barco de tu escuadra.
+Si el barco se está hundiendo, puedes huir en bote a otro barco de la escuadra. 
+Durante el combate, si la integridad del casco es menor al 15%, podrás acceder a la transferencia de mercancías en el menú de "Barcos" con otro barco de tu escuadra.
 Si un escolta tiene esta habilidad y su barco se hunde o es usado como "Brulote", regresará al barco del héroe en un bote salvavidas.
 }
 
 Alchemy	{Alquimia}
 perkAlchemy
 {
-Esta habilidad permite crear nuevos objetos usando instrumentos y componentes, a través de transformaciones químicas o mecánicas.
+Permite crear objetos sin utilizar herramientas ni kits especiales, como el cofre del alquimista.
 ~
 ~
 ~
@@ -376,6 +386,7 @@ Troopers	{Tácticas de asedio}
 perkTroopers
 {
 Antes de invadir un fuerte, agrupa a las tropas de los barcos de tu escuadra para que ataquen juntas.
+Reduce la cantidad de tripulación necesaria para asaltar un asentamiento desde tierra.
 }
 
 BasicCommerce	{Comercio básico}
@@ -406,7 +417,7 @@ InstantRepair	{Reparación rápida}
 perkInstantRepair
 {
 Repara el barco rápidamente, incluso en batalla, utilizando Tablones para el casco y Lona para las velas, no sirve para reparar los mástiles caídos o restablecer la tripulación. 
-Dependiendo del nivel de 'Reparación', los amuletos y los talismanes equipados, podrás alcanzar hasta un 25% de ahorro de recursos y un 80% de reparación de la integridad del barco. 
+Podrás alcanzar hasta un 80% de reparación de la integridad del barco. 
 Solo se puede usar una vez cada 90 segundos.
 }
 
@@ -463,9 +474,7 @@ No pierdes energía cuando te hieren.
 10% de probabilidad de infligir un golpe crítico.
 30% de daño extra a la 'Estocada'.
 ~
-10% de probabilidad de golpe crítico.
 ~
-A successful Fast Attack gets a 30% damage bonus.
 ~
 Habilidad disponible para el jugador con el arquetipo
 'Duelista'
@@ -520,7 +529,7 @@ perkDragoon
 {
 La protección de las armaduras pesadas y corazas aumenta un 15%.
 ~
-Las cuchilladas y los ataques pesados con éxito obtienen una bonificación de daño del 15% y el 30%, respectivamente.
+Los ataques de corte y los ataques pesados exitosos obtienen una bonificación de daño del 15% y el 30%, respectivamente.
 ~
 ~
 Habilidad disponible para el jugador con el arquetipo

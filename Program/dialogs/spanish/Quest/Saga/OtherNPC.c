@@ -185,7 +185,7 @@ void ProcessDialogEvent()
 
 	case "GonsalesA_1_2":
 		dialog.text = "¡Ayuda! ¡Piratas! ¡Asesinato!";
-		link.l1 = "¡Cállate, idiota! Media ciudad vendrá aquí por tus gritos. ¡Ah, eso es lo que quieres?!";
+		link.l1 = "¡Cállate, idiota! Media ciudad vendrá aquí por tus gritos. ¡Ah!, ¿eso es lo que quieres?";
 		link.l1.go = "GonsalesA_1_fight";
 		break;
 
@@ -279,7 +279,7 @@ void ProcessDialogEvent()
 
 	// фальшивый Гонсалес №2, улицы
 	case "GonsalesB":
-		PlaySound("Voice\Spanish\citizen\Pirati v Gorode-10.wav");
+		PlaySound("Voice\Spanish\citizen\Pirati v Gorode-19.wav");
 		dialog.text = "Veo que te gusta mi alfanje. Puedo vendértelo si quieres. No pediré mucho, me muero por beber un poco de ron y mis bolsillos están vacíos.";
 		link.l1 = "¿Y para qué diablos lo necesitaría? Forest Devil me ha pedido que te dé sus mejores saludos.";
 		link.l1.go = "GonsalesB_1_1";
@@ -488,7 +488,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Ortega_3":
-		dialog.text = "Tuve que entregar oro a una viuda como pago por mantener a salvo a la hija de Butcher. ¿Por qué me miras así? Sí, ella nació poco antes de que el 'Neptuno' se hundiera. No podía regresar por ella a tiempo, así que me envió a cuidar al bebé y a su cuidadora.";
+		dialog.text = "Tuve que entregar oro a una viuda como pago por mantener a salvo a la hija de Butcher. ¿Por qué me miras así? Sí, ella nació poco antes de que el 'Neptune' se hundiera. No podía regresar por ella a tiempo, así que me envió a cuidar al bebé y a su cuidadora.";
 		link.l1 = "¿Era Gladys Chandler el nombre de la cuidadora?";
 		link.l1.go = "Ortega_4";
 		break;
@@ -945,7 +945,7 @@ void ProcessDialogEvent()
 	case "molligan_7":
 		DialogExit();
 		// ставим проверку скрытности
-		if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > (10 + drand(50)))
+		if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > (10 + hrand(50)))
 		{
 			pchar.questTemp.Saga.Molligan.friend = "true"; // будет шанс критического залпа картечью
 			sTemp = "El canalla sigue sin sospechar nada. Debería acercarme y dispararle con metralla. Un golpe repentino siempre ganará cualquier batalla. ";
@@ -1306,7 +1306,7 @@ void ProcessDialogEvent()
 		
 		case "gunner_2":
 			PlaySound("interface\abordage_wining.wav");
-			PlaySound("Types\Spanish\warrior03.wav");
+			PlaySound("Types\Spanish\warrior07.wav");
 			dialog.text = "¡Ja! ¡Mira, comandante! ¡Hay humo! ¡Maldita sea, debemos haber dado en el granero de algún bandido! ¡Hurra-ah!";
 			link.l1 = "Sí, veo el humo... Una victoria épica ya, sin duda. Recarguen el cañón y apúntenlo al camino, parece que nuestros invitados están llegando. ¡Los saludaremos apropiadamente!";
 			link.l1.go = "gunner_2_1";
@@ -1330,7 +1330,7 @@ void ProcessDialogEvent()
 		
 		case "gunner_3":
 			PlaySound("interface\abordage_wining.wav");
-			PlaySound("Types\Spanish\warrior04.wav");
+			PlaySound("Types\Spanish\warrior07.wav");
 			PlaySound("Voice\Spanish\Evilpirates05.wav");
 			dialog.text = "¡Ja-ja, eso debe doler!";
 			link.l1 = "¡No te relajes todavía! ¡Carga el cañón! No creo que hayan tenido suficiente. ¡Vienen más!";
@@ -1354,10 +1354,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gunner_5":
-			PlaySound("Types\Spanish\warrior04.wav");
+			PlaySound("Types\Spanish\warrior08.wav");
 			PlaySound("Voice\Spanish\Evilpirates06.wav");
 			dialog.text = "¡Ja-ja-ja, esos bastardos nos han dado la espalda! ¡Carne de perro! ¡La metralla los está destrozando a esta distancia! ¡Parece que no tienen el valor para atacarnos de nuevo!";
-			link.l1 = "Ahora es nuestro turno. Randolph, te quedarás aquí cerca del cañón. Dispara al camino un par de veces y luego apunta al humo - ¡quema su guarida! Solo no nos dispares a nosotros.";
+			link.l1 = "Ahora es nuestro turno. Randolph, te quedarás aquí cerca del cañón. Dispara al camino un par de veces y luego apunta al humo, ¡quema su guarida! Solo no nos dispares a nosotros.";
 			link.l1.go = "gunner_5_1";
 		break;
 		
@@ -1567,7 +1567,7 @@ void ProcessDialogEvent()
 		// хронометр Алекса
 		case "Alexs_bandos":
 			dialog.text = "¡Oye! ¿Qué haces aquí?";
-			link.l1 = "Me gustaría preguntarte lo mismo - ¿qué hacen tú y tus compinches aquí, en mi mazmorra?";
+			link.l1 = "Me gustaría preguntarte lo mismo, ¿qué hacen tú y tus compinches aquí, en mi mazmorra?";
 			link.l1.go = "Alexs_bandos_1";
 		break;
 		
@@ -1617,7 +1617,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "helendrinking_gypsy_1":
-			dialog.text = " Oh, estás equivocado, guapo. A esta chica le gustas, y ese sentimiento es mutuo, puedo verlo.";
+			dialog.text = "Oh, estás equivocado, guapo. A esta chica le gustas, y ese sentimiento es mutuo, puedo verlo.";
 			link.l1 = "No es la mejor recomendación... Está bien, ¿qué es lo que quieres? ¿Una limosna?";
 			link.l1.go = "helendrinking_gypsy_2";
 		break;
@@ -1891,7 +1891,7 @@ void ProcessDialogEvent()
 		
 		case "islatesoro_pirate2_2":
 			dialog.text = "";
-			link.l1 = "   Parece que no habrá una resolución pacífica aquí.";
+			link.l1 = "Parece que no habrá una resolución pacífica aquí.";
 			link.l1.go = "islatesoro_pirate_a";
 			if (!CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedB")) {
 			link.l2 = "¿Qué dijiste? ¿Suerte? Escuché un rumor de que él y Vuazie conspiraron para darte consejos dudosos. Eso explica tu racha de mala suerte en el mar.";

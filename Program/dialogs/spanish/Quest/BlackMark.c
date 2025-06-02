@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_5":
 			dialog.text = "Eso significa exactamente lo que significa. Perdí la memoria, me dieron una buena paliza en la batalla. Sabes, a veces lo pierdes todo. Sin embargo, tengo suerte. Solo olvidé mi nombre. Afortunadamente para mí, tengo este colgante alrededor del cuello que dice 'Thomas'. Pero prefiero Tommy. Y Irons. Luché en los Ironsides para Cromwell, recuerda eso. Pero 'Ironsides' es demasiado voluminoso. Irons es mucho mejor.";
-			link.l1 = "Veo qué te pasa, Tommy. Entonces, dime - ¿qué fue? ¿Apuntabas a alguien en particular? ¿Diste en el blanco? ¿O solo disparabas por diversión? No me sorprendería.";
+			link.l1 = "Veo qué te pasa, Tommy. Entonces, dime, ¿qué fue? ¿Apuntabas a alguien en particular? ¿Diste en el blanco? ¿O solo disparabas por diversión? No me sorprendería.";
 			link.l1.go = "BM_Irons_6";
 		break;
 		
@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_7":
-			dialog.text = "¡Ja! No lo creerías - no. La moza lo confesó después. Conciencia culpable, o tal vez no lo disfrutó tanto como yo, jeje. ¿Quién sabe qué ocurre en las cabezas de las mujeres? A mí realmente no me importa, ¡ja-ja-ja!";
+			dialog.text = "¡Ja! No lo creerías, no. La moza lo confesó después. Conciencia culpable, o tal vez no lo disfrutó tanto como yo, jeje. ¿Quién sabe qué ocurre en las cabezas de las mujeres? A mí realmente no me importa, ¡ja-ja-ja!";
 			link.l1 = ""+GetSexPhrase(" Hmm, es una rara. ","Hombres... Un minuto están tratando de averiguar qué hay en nuestras cabezas, al siguiente dicen que no les importa. Pero tienes razón en una cosa: lo que hizo fue extraño. Debería haberlo dejado atrás y olvidarlo como una pesadilla. Eso es exactamente lo que yo haría si llegara a eso.")+"";
 			link.l1.go = "BM_Irons_8";
 		break;
@@ -267,19 +267,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_13":
-			dialog.text = "¿Lo dudas? Luchar por el pueblo - ¿qué no hay de heroico en eso? ¡Espero que algún día mariquitas como tú sepan lo que es la verdadera libertad!";
+			dialog.text = "¿Lo dudas? Luchar por el pueblo, ¿qué no hay de heroico en eso? ¡Espero que algún día mariquitas como tú sepan lo que es la verdadera libertad!";
 			link.l1 = "Aunque la libertad es algo bueno, de alguna manera lo hiciste sonar como una amenaza. Está bien, Tommy, sigue.";
 			link.l1.go = "BM_Irons_14";
 		break;
 		
 		case "BM_Irons_14":
-			dialog.text = "Ay. Recibí mi renuncia después de que la Revolución fue ganada, y luego me di cuenta de que no podía hacer nada más que disparar y golpear a la gente en la cara. Y no puedes reincorporarte al ejército - se reirían de ti, especialmente después de que luché tanto por mi renuncia. Je, me parece que incluso si realmente hubiera perdido un brazo o una pierna, las ratas de escritorio todavía habrían pensado que los estaba escondiendo en algún lugar para cosérmelos de nuevo más tarde una vez que obtuviera mis papeles de salida, ¡ja-ja-ja!";
+			dialog.text = "Ay. Recibí mi renuncia después de que ganáramos la Revolución, y luego me di cuenta de que no podía hacer nada más que disparar y golpear a la gente en la cara. Y no puedes reincorporarte al ejército, se reirían de ti, especialmente después de haber luchado tanto por mi renuncia. Je, me parece que incluso si hubiera perdido un brazo o una pierna, las ratas de escritorio habrían pensado que los estaba escondiendo en algún lugar para cosérmelos de nuevo más tarde una vez que obtuviera mis papeles de salida, ¡ja-ja-ja!";
 			link.l1 = "Eso es gracioso. Pero aún no me has dicho cómo terminaste aquí.";
 			link.l1.go = "BM_Irons_15";
 		break;
 		
 		case "BM_Irons_15":
-			dialog.text = "  Oh, eres tan aburrido. ¿No te enseñaron paciencia, "+GetSexPhrase("mozalbete","mi chica")+"¿No tenía nada que hacer en casa más que disparar a patos y ciervos, así que fui al Nuevo Mundo. Navegué con piratas por un tiempo para divertirme, y cuando me cansé de la anarquía, me convertí en mercenario.";
+			dialog.text = "Oh, eres tan aburrido. ¿No te enseñaron paciencia, "+GetSexPhrase("mozo","chica")+"? No tenía nada que hacer en casa más que disparar a patos y ciervos, así que fui al Nuevo Mundo. Navegué con piratas por un tiempo para divertirme, y cuando me cansé de la anarquía, me convertí en mercenario.";
 			link.l1 = "No es una historia muy original.";
 			link.l1.go = "BM_Irons_16";
 		break;
@@ -303,8 +303,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_19":
-			dialog.text = "... ¿crees que tienes agallas? Je, ni siquiera voy a discutir contigo - ¿viste cómo disparé a ese cornudo desde el faro? ¡De un solo tiro! Tampoco hay regateos, si es eso lo que piensas. Tienes que demostrar que puedes permitirte un profesional como yo.";
-			if (PCharDublonsTotal() >= 500)
+			dialog.text = "... ¿crees que tienes agallas? Je, ni siquiera voy a discutir contigo, ¿viste cómo disparé a ese cornudo desde el faro? ¡De un solo tiro! Tampoco hay regateos, si es eso lo que piensas. Tienes que demostrar que puedes permitirte un profesional como yo.";
+			if (PCharDublonsTotal() >= 250)
 			{
 				link.l1 = "¡Sí, puedo! Quinientas piezas de oro. Aquí tienes.";
 				link.l1.go = "BM_Irons_Hire1";
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_Hire1":
-			RemoveDublonsFromPCharTotal(500);
+			RemoveDublonsFromPCharTotal(250);
 			
 			dialog.text = "¡No eres tan malo como pensaba! Pero será mejor que te asegures de que no me aburra. Sería un desperdicio de mi talento, ¿no crees? Tommy y "+pchar.name+"¡Sacudamos el Caribe!";
 			link.l1 = "Aprende a respetar la cadena de mando, Tommy. Y en segundo lugar, soy el capitán para ti. ¿Entiendes?";
@@ -421,7 +421,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_HireInCave1":
-			RemoveDublonsFromPCharTotal(500);
+			RemoveDublonsFromPCharTotal(250);
 			pchar.quest.BM_IronsTimeOver.over = "yes";
 			pchar.questTemp.BM_hireInGrot = true;
 			
@@ -446,7 +446,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave3":
 			dialog.text = "¿Trajiste el oro?";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
 				link.l1 = "Aquí está tu oro.";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -498,7 +498,7 @@ void ProcessDialogEvent()
 				link.l1 = "Sí, tengo una ronda. Aquí tienes. Solo no me hagas una broma estúpida con esa bala. ¿Entiendes, Tommy?";
 				link.l1.go = "BM_IronsFirstJungle_7";
 			}
-			link.l2 = "No en este momento, no. No es como si llevara un solo cartucho en mi bolsillo, preguntándome qué pasaría si Tommy lo pidiera...?";
+			link.l2 = "No en este momento, no. No es como si llevara un solo cartucho en mi bolsillo, preguntándome qué pasaría si Tommy pidiera uno...";
 			link.l2.go = "BM_IronsFirstJungle_4";
 		break;
 		
@@ -615,7 +615,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_4":
-			dialog.text = "Eres tan listo - ¿por qué no has logrado nada de interés aquí hasta ahora? Te diré por qué. Porque no piensas a futuro, y nunca estás preparado para nada. No sabes lo que estás haciendo, aburrido. No reconoceré a una persona así como mi comandante, así que adiós.";
+			dialog.text = "Eres tan listo, ¿por qué no has logrado nada de interés aquí hasta ahora? Te diré por qué. Porque no piensas a futuro, y nunca estás preparado para nada. No sabes lo que estás haciendo, aburrido. No reconoceré a una persona así como mi comandante, así que adiós.";
 			link.l1 = "¡Y tú no usas la cabeza para nada! ¡Buen viaje, maldito bufón!";
 			link.l1.go = "BM_IronsJungleUhodit";
 		break;
@@ -629,7 +629,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsThirdJungle_6":
 			dialog.text = "Solo te estaba gastando una broma, viendo si volvías a ser tu gruñón de siempre. Jeje. Pero gracias por el cartucho.";
-			link.l1 = " Tus   chistes son extraños, Tommy.";
+			link.l1 = "Tus chistes son extraños, Tommy.";
 			link.l1.go = "BM_IronsThirdJungle_7";
 		break;
 		
@@ -652,7 +652,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_10":
-			dialog.text = "Bueno, no me interrumpas, como sueles hacer. Había dos bastardos en la compañía conmigo - Francis Reasley y Gabriel Callow. ¡Ratas de verdad! ¡Incluso peores que esos ratas de escritorio que no querían darme mi renuncia, la cual, ya sabes, no fue fácil de conseguir!";
+			dialog.text = "Bueno, no me interrumpas, como sueles hacer. Había dos bastardos en la compañía conmigo - Francis Reasley y Gabriel Callow. ¡Ratas de verdad! ¡Incluso peores que esos ratas de escritorio que no querían darme mi renuncia, la cual, no fue fácil de conseguir!";
 			link.l1 = "¿Y qué hicieron? Especialmente el segundo, Callow. ¿También te acostaste con su esposa? ¿Y él también envió soldados tras de ti?";
 			link.l1.go = "BM_IronsThirdJungle_11";
 		break;
@@ -706,7 +706,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_19":
-			dialog.text = "Eh, no siempre fue uno de ellos. Siempre fue algo, ya sabes, turbio. Y cuando intentó tenderle una trampa a alguien, lo echaron en desgracia. Intentó navegar en un comerciante, pero el trabajo honesto no era lo suyo. Terminó estableciéndose aquí.";
+			dialog.text = "Eh, no siempre fue uno de ellos. Siempre fue algo, turbio. Y cuando intentó tenderle una trampa a alguien, lo echaron en desgracia. Intentó navegar en un comerciante, pero el trabajo honesto no era lo suyo. Terminó estableciéndose aquí.";
 			link.l1 = "Aún no lo llamaría un oficial prominente.";
 			link.l1.go = "BM_IronsThirdJungle_20";
 		break;
@@ -869,7 +869,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Pyanitsa_2":
 			dialog.text = "¡Entonces ve directamente a Gabe, te digo! No hay un capitán más honesto o valiente en la ciudad que Gabe. Incluso el Coronel Doyley lo tiene en alta estima. Navega en un barco que una vez perteneció al mismísimo Nicolas Sharp, ¿puedes creerlo?";
-			link.l1 = " No estoy lo suficientemente borracho como para creer eso todavía, camarada.";
+			link.l1 = "No estoy lo suficientemente borracho como para creer eso todavía, camarada.";
 			link.l1.go = "BM_Pyanitsa_3";
 		break;
 		
@@ -900,7 +900,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Pyanitsa_7":
-			dialog.text = "Trad... Trad-trad-tradición, ¡ay! Nic mismo nunca la renombró después de huir de una plantación española en Cuba. Nunca quiso olvidar la experiencia - ¡y tampoco los españoles! Déjame decirte, aquella batalla cerca de la costa de Tendales...";
+			dialog.text = "Trad... Trad-trad-tradición, ¡ay! Nic mismo nunca la renombró después de huir de una plantación española en Cuba. Nunca quiso olvidar la experiencia, ¡y tampoco los españoles! Déjame decirte, aquella batalla cerca de la costa de Tendales...";
 			if (startHeroType == 4)
 			{
 				link.l1 = "Tendales, ¿verdad? Huh, la última vez que escuché ese nombre fue cuando era niño. No pensé que aún hubiera alguien que conociera y recordara estas ahora abandonadas rocas.";
@@ -975,7 +975,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Callow2":
-			dialog.text = "De hecho. ¿Y tú quién eres? No, al diablo contigo, sin embargo. ¿Quién es ese...";
+			dialog.text = "De hecho. ¿Y tú quién eres? No, al diablo contigo, sin embargo. ¿Quién es ese...?";
 			link.l1 = "";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("BM_CabinDialog");
@@ -1011,7 +1011,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsClone5":
 			dialog.text = "Nadie te habría escuchado de todos modos. Siempre has sido un... maltrecho, Thomas.";
-			link.l1 = "Ah,   así que no estás escondiendo lo que hiciste ese día. Tengo algo para ti, Gabe. Una marca negra. Pero ¿de qué sirve dártela ahora que el barco ha sido confiscado y estamos a punto de destriparte, je je je je je je...";
+			link.l1 = "Ah, así que no estás escondiendo lo que hiciste ese día. Tengo algo para ti, Gabe. Una marca negra. Pero ¿de qué sirve dártela ahora que el barco ha sido confiscado y estamos a punto de destriparte?, je je je je je je...";
 			link.l1.go = "BM_IronsClone6"; // здесь переход на кейс с боёвкой
 		break;
 		
@@ -1210,7 +1210,7 @@ void ProcessDialogEvent()
 		
 		case "BM_GabeHouseGood4":
 			dialog.text = "¿Te dijo eso? No es de extrañar: siempre supo cómo encontrar al hombre adecuado para contar sus historias. Thomas tenía una lengua de plata. No lo conoces a él ni la verdadera historia, ni en lo que te estás metiendo. Puedo contártelo, ya que no voy a dormir de todos modos.";
-			link.l1 = " Nunca es mala idea escuchar. Continúa, Capitán Callow.";
+			link.l1 = "Nunca es mala idea escuchar. Continúa, Capitán Callow.";
 			link.l1.go = "BM_GabeHouseGood5";
 		break;
 		
@@ -1241,7 +1241,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_GabeHouseGood_Tommi2":
-			dialog.text = "Es una decisión difícil. Pero no intentaré hacerte cambiar de opinión. Bueno, adiós, "+GetSexPhrase("señor","señorita")+" - Todavía tengo que prepararme para encontrarme con Tom.";
+			dialog.text = "Es una decisión difícil. Pero no intentaré hacerte cambiar de opinión. Bueno, adiós "+GetSexPhrase("señor","señorita")+". Todavía tengo que prepararme para encontrarme con Tom.";
 			link.l1 = "Adiós, Capitán Callow.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("BM_GoToJamaicaJungle_TommiPlan");
@@ -1314,7 +1314,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_GabeHouseNeutral4":
-			dialog.text = "¿Convencido? ¿Gabe? ¡Digo! ¿Una mancha negra? ¿Entonces eres un pirata? Espera un minuto... seda negra... ¿podría ser esto... Oh, ya veo. Thomas, maldito bastardo, todavía enojado conmigo y Frank por denunciarte, ja ja ja ja!";
+			dialog.text = "¿Convencido? ¿Gabe? ¡Digo! ¿Una mancha negra? ¿Entonces eres un pirata? Espera un minuto... seda negra... ¿podría ser esto...? Oh, ya veo. Thomas, maldito bastardo, todavía enojado conmigo y Frank por denunciarte, ja ja ja ja!";
 			link.l1 = "¡Por todos los diablos! Tom es un oficial en mi barco y merece respeto. Es uno de los mejores tiradores del Archipiélago.";
 			link.l1.go = "BM_GabeHouseNeutral5";
 		break;
@@ -1336,7 +1336,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.BM_GabePlan"))
 			{
 				dialog.text = "¿Por qué estás tan nervioso? ¿Estás asustado, o qué?";
-				link.l1 = "  Cualquiera se pondría nervioso al ver a un hombre con un mosquete corriendo hacia ellos - no te reconocí al principio. ¿Qué haces aquí, Tommy? ";
+				link.l1 = "Cualquiera se pondría nervioso al ver a un hombre con un mosquete corriendo hacia ellos - no te reconocí al principio. ¿Qué haces aquí, Tommy? ";
 				link.l1.go = "BM_IronsJamaicaJungle_GabePlan_2";
 			}
 			else
@@ -1423,7 +1423,7 @@ void ProcessDialogEvent()
 		
 		case "BM_GabePlan_TommiMertv_Mir":
 			dialog.text = "Y eso es encomiable, "+GetSexPhrase("joven","jovencita")+" Sin embargo, aún queda una cosa más por hacer para completar este buen día.";
-			link.l1 = " Hmm,  ¿y qué es eso?  Tom ya está derrotado, después de todo.";
+			link.l1 = "Hmm, ¿y qué es eso? Tom ya está derrotado, después de todo.";
 			link.l1.go = "BM_GabePlan_TommiMertv_Mir2";
 		break;
 		
@@ -1530,7 +1530,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_GabePlan_TommiMertv_Platok2":
-			dialog.text = "Bueno, ninguno de nosotros es pirata, ¿verdad, "+pchar.name+"¿ Que sea un recordatorio. Cuídate, el Archipiélago necesita hombres como tú. "+GetSexPhrase("Tal vez sugeriría unirse a la Armada y escribir una recomendación para el Coronel Doyley...","")+"";
+			dialog.text = "Bueno, ninguno de nosotros es pirata, ¿verdad, "+pchar.name+"? Que sea un recordatorio. Cuídate, el Archipiélago necesita hombres como tú. "+GetSexPhrase("Tal vez sugeriría unirse a la Armada y escribir una recomendación para el Coronel Doyley...","")+"";
 			link.l1 = "Lamento no poder aceptar tu oferta, Capitán.";
 			if (startHeroType == 3)
 			{
@@ -1566,7 +1566,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_GabePlan_TommiMertv_Konflict3":
-			dialog.text = "¿Cómo te atreves a acusarme de cobardía, joven "+GetSexPhrase("hombre","señorita")+"¡Pregúntale a cualquiera, y te contará en detalle las hazañas que he hecho por esta ciudad.";
+			dialog.text = "¿Cómo te atreves a acusarme de cobardía, joven"+GetSexPhrase("cito","cita")+"? ¡Pregúntale a cualquiera, y te contará en detalle las hazañas que he hecho por esta ciudad!";
 			link.l1 = "Aún no he terminado. Empiezo a preguntarme si estas ‘hazañas' fueron hechas por tus propias manos. Querías que Tom y yo nos matáramos entre nosotros para que pudieras llevarte toda la gloria. Ya lo has hecho antes, ¿no es así?";
 			link.l1.go = "BM_GabePlan_TommiMertv_Konflict4";
 		break;
@@ -1628,7 +1628,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_GabePlan_GazgovorTommiAndGabe_9":
-			dialog.text = " Un lugar en tu tripulación, en tu barco sería un comienzo, ¡si tan solo estuvieras dispuesto a defender a tus hombres! Pero eso ya no importa. ¡Malditos sean, todos ustedes! Te sacaré las tripas cobardes, maldito ratón. Y tú, Gabe, intentaré llevarte conmigo...";
+			dialog.text = "Un lugar en tu tripulación, en tu barco sería un comienzo, ¡si tan solo estuvieras dispuesto a defender a tus hombres! Pero eso ya no importa. ¡Malditos sean, todos ustedes! Te sacaré las tripas cobardes, maldito ratón. Y tú, Gabe, intentaré llevarte conmigo...";
 			link.l1 = "¡Espera, Tommy, no!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("BM_GabePlan_GazgovorTommiAndGabe_Fight");
@@ -1641,7 +1641,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_GabePlan_GabeWin_2":
-			dialog.text = "¿Algo te preocupa, "+GetSexPhrase("Sr.","señorita")+" "+pchar.lastname+"¿?";
+			dialog.text = "¿Algo te preocupa, "+GetSexPhrase("señor","señorita")+" "+pchar.lastname+"?";
 			link.l1 = "Tom... él no solo estaba enfadado porque yo estuviera de tu lado. Había verdadera desesperación e incomprensión en su voz, como si...";
 			link.l1.go = "BM_GabePlan_GabeWin_3";
 		break;
@@ -1731,14 +1731,14 @@ void ProcessDialogEvent()
 		
 		//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Irons_officer":
-			dialog.text = "¡Aaaaye-aye, Capitán?";
+			dialog.text = "¡Aaaaye-aye!, ¿Capitán?";
 			if (startHeroType == 4 && CheckAttribute(pchar, "questTemp.BlackMarkQuestCompleted"))
 			{
 				dialog.text = "Entonces, Rumba, ¿sobre los huesos de quién bailaremos esta noche?";
 			}
 			if (startHeroType == 4 && !CheckAttribute(pchar, "questTemp.BlackMarkQuestCompleted"))
 			{
-				dialog.text = "Sí, Ellie?";
+				dialog.text = "¿Sí, Ellie?";
 			}
 			if (pchar.sex == "man" && pchar.rank >= 15)
 			{
@@ -1746,7 +1746,7 @@ void ProcessDialogEvent()
 			}
 			if (pchar.sex == "man" && pchar.rank >= 25)
 			{
-				dialog.text = ""+pchar.name+"¿?";
+				dialog.text = "¿"+pchar.name+"?";
 			}
 			//////
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal") && !CheckAttribute(pchar, "questTemp.BM_TommiTieyasalOtkaz"))
@@ -2031,7 +2031,7 @@ void ProcessDialogEvent()
             Link.l1 = ""+GetSexPhrase("¡Oye, ten cuidado! Encontraremos una solución si llega a eso.","Bueno, no vas a quedarte mirando, ¿verdad? Si crees que tu capitán es tan maravilloso como dices, harás algo al respecto.")+"";
 			if (pchar.sex == "man" && pchar.rank >= 15)
 			{
-				dialog.text = "Incluso para golpear la cabeza? Está bien, está bien, no me mires así, lo entiendo.";
+				dialog.text = "¿Incluso para golpear la cabeza? Está bien, está bien, no me mires así, lo entiendo.";
 				Link.l1 = "Eso espero.";
 			}
 			if (pchar.sex == "man" && pchar.rank >= 25)
@@ -2119,7 +2119,7 @@ void ProcessDialogEvent()
 				link.l1 = "Ah. Entonces mantente a veinte yardas de distancia.";
 				if (pchar.sex == "man" && pchar.rank >= 15)
 				{
-					dialog.text = "  Sé que te gustaría eso, a todos los muchachos les gustaría eso, pero como aquella vez, en el faro, ya no funcionará más. Necesitaré un buen punto, y que nadie me alcance, de lo contrario mis nervios se quebrarán.";
+					dialog.text = "Sé que te gustaría eso, a todos los muchachos les gustaría eso, pero como aquella vez, en el faro, ya no funcionará más. Necesitaré un buen punto, y que nadie me alcance, de lo contrario mis nervios se quebrarán.";
 					Link.l1 = "Hm-m, está bien.";
 				}
 				if (pchar.sex == "man" && pchar.rank >= 25)

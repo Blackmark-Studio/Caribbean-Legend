@@ -179,7 +179,7 @@ void Mtraxx_JewelryGulf(string qName) // Кабаньяс в заливе
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 	if (iRank > 50) iRank = 50;
 	sld = GetCharacter(NPC_GenerateCharacter("Cabanos", "off_spa_2", "man", "man", iRank, SPAIN, -1, true, "quest"));
-	FantomMakeCoolSailor(sld, SHIP_SCHOONER_W, StringFromKey("Roger_9"), CANNON_TYPE_CULVERINE_LBS18, 50, 50, 50);
+	FantomMakeCoolSailor(sld, SHIP_SCHOONER_W, StringFromKey("Roger_9"), CANNON_TYPE_CULVERINE_LBS8, 50, 50, 50);
 	FantomMakeCoolFighter(sld, iRank, 50, 50, "blade_15", "pistol5", "bullet", 150); // патч 17/1
 	sld.name = StringFromKey("Roger_10");
 	sld.lastname = StringFromKey("Roger_11");
@@ -491,7 +491,7 @@ void Mtraxx_SilkCreateSmuggler(string qName) // Утрехт отправляе�
 	if (iRank > 45) iRank = 45;
 	Group_FindOrCreateGroup("Mtr_Utreht");
 	sld = GetCharacter(NPC_GenerateCharacter("Cap_Utreht", "mercen_19", "man", "man", iRank, ENGLAND, -1, true, "quest"));
-	FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, StringFromKey("Roger_20"), CANNON_TYPE_CULVERINE_LBS18, 50, 50, 50);
+	FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, StringFromKey("Roger_20"), CANNON_TYPE_CULVERINE_LBS8, 50, 50, 50);
 	FantomMakeCoolFighter(sld, iRank, 50, 50, "blade_13", "pistol5", "bullet", 100);
 	sld.name = StringFromKey("Roger_21");
 	sld.lastname = StringFromKey("Roger_22");
@@ -812,7 +812,7 @@ void Mtraxx_PlantCreatePelly(string qName) // ставим Пелли
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+10;
 	if (iRank > 50) iRank = 50;
 	sld = GetCharacter(NPC_GenerateCharacter("Pelly_sea", "Tesak", "man", "man", iRank, ENGLAND, -1, true, "quest"));
-	FantomMakeCoolSailor(sld, SHIP_BARKENTINE, StringFromKey("Roger_26"), CANNON_TYPE_CANNON_LBS16, 65, 65, 65);
+	FantomMakeCoolSailor(sld, SHIP_BARKENTINE, StringFromKey("Roger_26"), CANNON_TYPE_CANNON_LBS12, 65, 65, 65);
 	FantomMakeCoolFighter(sld, iRank, 65, 65, "blade_06", "pistol3", "grapeshot", 200);
 	sld.name = StringFromKey("Roger_27");
 	sld.lastname = StringFromKey("Roger_28");
@@ -1844,47 +1844,47 @@ void Mtraxx_PlantSeaBattle(string qName) // бой с испанской эск�
 	switch (Type)
 	{
 		case 1:
-			Ship1 = SHIP_SCHOONER_W;
+			Ship1 = SHIP_SLOOP;
+			Ship2 = SHIP_LUGGER;
+			Ship3 = SHIP_CAREERLUGGER;
+			Cannon1 = CANNON_TYPE_CANNON_LBS6;
+			Cannon2 = CANNON_TYPE_CULVERINE_LBS8;
+		break;
+		
+		case 2:
+			Ship1 = SHIP_SHNYAVA;
 			Ship2 = SHIP_SLOOP;
 			Ship3 = SHIP_CAREERLUGGER;
 			Cannon1 = CANNON_TYPE_CANNON_LBS16;
 			Cannon2 = CANNON_TYPE_CULVERINE_LBS8;
 		break;
 		
-		case 2:
-			Ship1 = SHIP_GALEON_L;
-			Ship2 = SHIP_SCHOONER_W;
-			Ship3 = SHIP_SLOOP;
-			Cannon1 = CANNON_TYPE_CANNON_LBS16;
-			Cannon2 = CANNON_TYPE_CULVERINE_LBS8;
-		break;
-		
 		case 3:
-			Ship1 = SHIP_CORVETTE;
-			Ship2 = SHIP_GALEON_L;
+			Ship1 = SHIP_CARAVEL;
+			Ship2 = SHIP_BARKENTINE;
 			Ship3 = SHIP_SCHOONER_W;
 			Cannon1 = CANNON_TYPE_CULVERINE_LBS18;
-			Cannon2 = CANNON_TYPE_CANNON_LBS16;
+			Cannon2 = CANNON_TYPE_CANNON_LBS8;
 		break;
 		
 		case 4:
-			Ship1 = SHIP_BRIGANTINE;
-			Ship2 = SHIP_SCHOONER_W;
-			Ship3 = SHIP_BARKENTINE;
+			Ship1 = SHIP_CORVETTE;
+			Ship2 = SHIP_BRIG;
+			Ship3 = SHIP_SHNYAVA;
 			Cannon1 = CANNON_TYPE_CULVERINE_LBS18;
 			Cannon2 = CANNON_TYPE_CANNON_LBS16;
 		break;
 		
 		case 5:
-			Ship1 = SHIP_NAVIO;
-			Ship2 = SHIP_XebekVML;
-			Ship3 = SHIP_BRIG;
-			Cannon1 = CANNON_TYPE_CANNON_LBS24;
+			Ship1 = SHIP_CORVETTE;
+			Ship2 = SHIP_POLACRE;
+			Ship3 = SHIP_CARAVEL;
+			Cannon1 = CANNON_TYPE_CANNON_LBS20;
 			Cannon2 = CANNON_TYPE_CULVERINE_LBS18;
 		break;
 		
 		case 6:
-			Ship1 = SHIP_GALEON_H;
+			Ship1 = SHIP_GALEON_L;
 			Ship2 = SHIP_CORVETTE;
 			Ship3 = SHIP_XebekVML;
 			Cannon1 = CANNON_TYPE_CANNON_LBS24;
@@ -1999,7 +1999,7 @@ void Mtraxx_PlantFithTaskTimer(string qName) // таймер на опоздан
 	{
 		if(CheckAttribute(pchar,"quest.Mtraxx_PlantFithTaskTimer.over"))
 			DeleteAttribute(pchar,"quest.Mtraxx_PlantFithTaskTimer.over");
-		NewGameTip("Режим исследования: таймер продлён. Выполните квест!");
+		NewGameTip(StringFromKey("Roger_4"));
 		SetFunctionTimerCondition("Mtraxx_PlantFithTaskTimer", 0, 0, 35, false);
 		return;
 	}
@@ -2024,17 +2024,14 @@ void Mtraxx_PasqualeBegin() // установка параметров
 	pchar.questTemp.Mtraxx.Crdn.minW1 = 0; // нижний предел интервала долготы
 	pchar.questTemp.Mtraxx.Crdn.minW2 = 60; // верхний предел интервала долготы
 	// тип целевого корабля тоже определим здесь
-	// belamour legendary edition поблажка для судов малого класса -->
 	int iClass = sti(RealShips[sti(pchar.ship.type)].Class);
-	pchar.questTemp.Mtraxx.Crdn.Ship = SHIP_NAVIO;
-	if (MOD_SKILL_ENEMY_RATE < 6) pchar.questTemp.Mtraxx.Crdn.Ship = SHIP_PINNACE;
-	if (MOD_SKILL_ENEMY_RATE > 8) 
-	{
-		if(iClass > 3 && GetCompanionQuantity(pchar) < 2) pchar.questTemp.Mtraxx.Crdn.Ship = SHIP_NAVIO;
-		else pchar.questTemp.Mtraxx.Crdn.Ship = SHIP_EASTINDIAMAN;
-	}
-	if(MOD_SKILL_ENEMY_RATE < 9 && MOD_SKILL_ENEMY_RATE > 5 && iClass > 3 && GetCompanionQuantity(pchar) < 2) pchar.questTemp.Mtraxx.Crdn.Ship = SHIP_PINNACE;
-	// <-- legendary edition
+	pchar.questTemp.Mtraxx.Crdn.Ship = SHIP_PINNACE;
+	
+	if (MOD_SKILL_ENEMY_RATE > 8) iClass -= 1;
+	if(iClass < 3) iClass = 3;
+	if(iClass > 6) iClass = 6;
+	
+	pchar.questTemp.Mtraxx.Crdn.Ship = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 }
 
 void Mtraxx_PasqualeLate(string qName) // опоздали к Паскалю
@@ -2113,71 +2110,20 @@ void Mtraxx_PasqualeCreateConvoy(string qName) // создаем конвой
 	Group_FindOrCreateGroup("Mtr_PasqSeaGroup");
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	int iScl = 20 + 2*sti(pchar.rank);
-	int Type, iShip, Ship1, Ship2, Ship3, iCannon, Cannon1, Cannon2, iSpace;
-	int iClass = sti(RealShips[sti(pchar.ship.type)].Class);
-	Type = 2; // 3-4
-	if (MOD_SKILL_ENEMY_RATE < 6) Type = 1; // 2-4
-	if (MOD_SKILL_ENEMY_RATE > 8) 
-	{
-		// belamour legendary edition поблажка, если пришли одни и на маленьком корабле
-		Type = 3; 
-		if(iClass > 3 && GetCompanionQuantity(pchar) < 2) Type = 2;
-	}
-	if(MOD_SKILL_ENEMY_RATE < 9 && MOD_SKILL_ENEMY_RATE > 5 && iClass > 3 && GetCompanionQuantity(pchar) < 2) Type = 1;
-	switch (Type)
-	{
-		case 1:
-			Ship1 = SHIP_SCHOONER_W;
-			Ship3 = SHIP_FLEUT;
-			if (MOD_SKILL_ENEMY_RATE < 4)
-			{
-				Cannon1 = CANNON_TYPE_CANNON_LBS16;
-				Cannon2 = CANNON_TYPE_CANNON_LBS12;
-			}
-			else
-			{
-				Cannon1 = CANNON_TYPE_CANNON_LBS20;
-				Cannon2 = CANNON_TYPE_CANNON_LBS16;
-			}
-		break;
-		
-		case 2:
-			Ship1 = SHIP_CORVETTE;
-			Ship3 = SHIP_FLEUT;
-			Cannon1 = CANNON_TYPE_CULVERINE_LBS18;
-			Cannon2 = CANNON_TYPE_CANNON_LBS16;
-		break;
-		
-		case 3:
-			Ship1 = SHIP_NAVIO;
-			Ship3 = SHIP_CORVETTE;
-			Cannon1 = CANNON_TYPE_CANNON_LBS24;
-			Cannon2 = CANNON_TYPE_CULVERINE_LBS18;
-		break;
-	}
-	Ship2 = sti(pchar.questTemp.Mtraxx.Crdn.Ship);
+	int iShip[4], iSpace;
+	int iClass = sti(RealShips[sti(pchar.ship.type)].Class) + 1;
+	
+	if (MOD_SKILL_ENEMY_RATE > 8) iClass -= 1;
+	if(iClass < 3) iClass = 3;
+	if(iClass > 6) iClass = 6;
+	
+	iShip[1] = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
+	iShip[2] = sti(pchar.questTemp.Mtraxx.Crdn.Ship);
+	iShip[3] = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 	for (int i=1; i<=3; i++)
 	{
-		switch (i)
-		{
-			case 1:
-				iShip = Ship1;
-				iCannon = Cannon1;
-			break;
-			
-			case 2:
-				iShip = Ship2;
-				iCannon = Cannon2;
-				if (Type == 2 && MOD_SKILL_ENEMY_RATE > 6) iCannon = Cannon1;
-			break;
-			
-			case 3:
-				iShip = Ship3;
-				iCannon = Cannon2;
-			break;
-		}
 		sld = GetCharacter(NPC_GenerateCharacter("Mtr_PasqCap_"+i, "off_hol_"+i, "man", "man", iRank, HOLLAND, -1, true, "quest"));
-		FantomMakeCoolSailor(sld, iShip, "", iCannon, iScl, iScl, iScl);
+		FantomMakeCoolSailor(sld, iShip[i], "", -1, iScl, iScl, iScl);
 		FantomMakeCoolFighter(sld, iRank, iScl, iScl, LinkRandPhrase("blade_15","blade_16","topor_04"), "pistol1", "bullet", iScl*3);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
@@ -2412,7 +2358,7 @@ void Mtraxx_PasqualeNightMarch() // параметры локаций для п�
 	pchar.GenQuest.CannotWait = true;
 	for (int i=0; i<MAX_LOCATIONS; i++)
 	{				
-		if (CheckAttribute(locations[i], "islandId") && locations[i].islandId == "Hispaniola")
+		if (CheckAttribute(&locations[i], "islandId") && locations[i].islandId == "Hispaniola")
 		{
 			LAi_LocationDisableOfficersGen(locations[i].id, true);
 		}
@@ -2423,7 +2369,7 @@ void Mtraxx_PasqualeNightClear() // чистка запретов
 {
 	for (int i=0; i<MAX_LOCATIONS; i++)
 	{				
-		if (CheckAttribute(locations[i], "islandId") && locations[i].islandId == "Hispaniola")
+		if (CheckAttribute(&locations[i], "islandId") && locations[i].islandId == "Hispaniola")
 		{
 			LAi_LocationDisableOfficersGen(locations[i].id, false);
 		}
@@ -3909,7 +3855,7 @@ void Mtraxx_IgnasioCreateMarko() // ставим Игнасио Марко
 {
 	float locx, locy, locz;
 	sld = GetCharacter(NPC_GenerateCharacter("Ignasio", "Marco", "man", "man", 30, ENGLAND, -1, false, "soldier"));
-	FantomMakeCoolSailor(sld, SHIP_POLACRE_QUEST, StringFromKey("Roger_66"), CANNON_TYPE_CANNON_LBS24, 60, 60, 60);
+	FantomMakeCoolSailor(sld, SHIP_POLACRE_QUEST, StringFromKey("Roger_66"), CANNON_TYPE_CANNON_LBS20, 60, 60, 60);
 	FantomMakeCoolFighter(sld, 30, 80, 80, "blade_10", "pistol6", "bullet", 150);
 	sld.Dialog.Filename = "Quest\Roger.c";
 	sld.dialog.currentnode = "ignasio";
@@ -4036,42 +3982,24 @@ void Mtraxx_IgnasioCreateCaravane(string qName) // ставим голландц
 	Group_FindOrCreateGroup("Mtr_IgnasioSeaGroup");
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 	int iScl = 30 + 3*sti(pchar.rank);
-	int Type, iShip, iCannon, iSpace, iCrew, hcrew;
+	int Type, iShip[5], iSpace, iCrew, hcrew;
 	int n = 3;
-	if (MOD_SKILL_ENEMY_RATE > 6) 
-	{
-		n = 4;
-		// belamour legendary edition 
-		if(sti(RealShips[sti(pchar.ship.type)].Class) > 3) n = 3;
-	}
+	int iClass = sti(RealShips[sti(pchar.ship.type)].Class) + 1;
+	
+	if (MOD_SKILL_ENEMY_RATE > 8) iClass -= 1;
+	if(iClass < 3) iClass = 3;
+	if(iClass > 5) iClass = 5;
+	
+	iShip[1] = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+	iShip[2] = GetRandomShipType(GetClassFlag(iClass + 1), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+	iShip[3] = GetRandomShipType(GetClassFlag(iClass + 1), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+	iShip[4] = GetRandomShipType(GetClassFlag(iClass + 1), FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
+	
+	if (MOD_SKILL_ENEMY_RATE > 6) n = 4;
 	for (int i=1; i<=n; i++)
 	{
-		switch (i)
-		{
-			case 1:
-				iShip = SHIP_NAVIO;
-				iCannon = CANNON_TYPE_CANNON_LBS24;
-				if (MOD_SKILL_ENEMY_RATE < 6) iCannon = CANNON_TYPE_CANNON_LBS20;
-			break;
-			
-			case 2:
-				iShip = SHIP_PINNACE;
-				iCannon = CANNON_TYPE_CULVERINE_LBS18;
-				if (MOD_SKILL_ENEMY_RATE < 6) iCannon = CANNON_TYPE_CANNON_LBS20;
-			break;
-			
-			case 3:
-				iShip = SHIP_FLEUT;
-				iCannon = CANNON_TYPE_CANNON_LBS16;
-			break;
-			
-			case 4:
-				iShip = SHIP_XebekVML;
-				iCannon = CANNON_TYPE_CULVERINE_LBS18;
-			break;
-		}
 		sld = GetCharacter(NPC_GenerateCharacter("Mtr_IgnasioSeaCap_"+i, "off_hol_"+(5-i), "man", "man", iRank, HOLLAND, -1, true, "quest"));
-		FantomMakeCoolSailor(sld, iShip, "", iCannon, iScl+(25-i*5), iScl+(25-i*5), iScl+(25-i*5));
+		FantomMakeCoolSailor(sld, iShip[i], "", -1, iScl+(25-i*5), iScl+(25-i*5), iScl+(25-i*5));
 		FantomMakeCoolFighter(sld, iRank, iScl+(25-i*5), iScl+(25-i*5), LinkRandPhrase("blade_15","blade_16","topor_04"), "pistol1", "bullet", iScl*2);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
@@ -4237,7 +4165,17 @@ void Mtraxx_IgnasioPrepareSpanish(string qName) // ставим убегающе
 
 void Mtraxx_IgnasioCreateSpanish(string qName) // 
 {
-	int iShip, iCannon, iRank, iScl;
+	int iShip[4], iRank, iScl;
+	
+	int iClass = sti(RealShips[sti(pchar.ship.type)].Class) + 1;
+	
+	if (MOD_SKILL_ENEMY_RATE > 8) iClass -= 1;
+	if(iClass < 3) iClass = 3;
+	if(iClass > 5) iClass = 5;
+	
+	iShip[1] = SHIP_GALEON_L;
+	iShip[2] = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
+	iShip[3] = GetRandomShipType(GetClassFlag(iClass + 1), FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
 	Group_FindOrCreateGroup("LosadaSeaGroup");
 	for (int i=1; i<=3; i++)
 	{
@@ -4246,28 +4184,20 @@ void Mtraxx_IgnasioCreateSpanish(string qName) //
 			case 1:
 				iRank = 45;
 				iScl = 100;
-				iShip = SHIP_ELCASADOR;
-				iCannon = CANNON_TYPE_CANNON_LBS24;
-				// belamour legendary edition пушки поменьше и разрешить абордаж
-				if(MOD_SKILL_ENEMY_RATE < 9) iCannon = CANNON_TYPE_CULVERINE_LBS18;
 			break;
 			
 			case 2:
 				iRank = 25;
 				iScl = 50;
-				iShip = SHIP_BRIGANTINE;
-				iCannon = CANNON_TYPE_CULVERINE_LBS18;
 			break;
 			
 			case 3:
 				iRank = 25;
 				iScl = 50;
-				iShip = SHIP_XebekVML;
-				iCannon = CANNON_TYPE_CULVERINE_LBS18;
 			break;
 		}
 		sld = GetCharacter(NPC_GenerateCharacter("Losada_Seacap_"+i, "off_spa_"+(7-i), "man", "man", iRank, SPAIN, -1, true, "quest"));
-		FantomMakeCoolSailor(sld, iShip, "", iCannon, iScl, iScl, iScl);
+		FantomMakeCoolSailor(sld, iShip[i], "", -1, iScl, iScl, iScl);
 		FantomMakeCoolFighter(sld, iRank, iScl, iScl, LinkRandPhrase("blade_18","blade_19","blade_20"), "pistol5", "bullet", 250);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
@@ -4305,7 +4235,7 @@ void Mtraxx_IgnasioCreateSpanish(string qName) //
 			//SetCrewQuantityOverMax(sld, 1.2*hcrew);
 			sld.name = StringFromKey("Roger_70");
 			sld.lastname = StringFromKey("Roger_71");
-			sld.ship.name = StringFromKey("Roger_72");
+			//sld.ship.name = StringFromKey("Roger_72");
 			NullCharacterGoods(sld);
 			UpgradeShipParameter(sld, "SpeedRate");
 			UpgradeShipParameter(sld, "HP");
@@ -4455,6 +4385,7 @@ void Mtraxx_WolfreekReadLogbook() // чтение судового журнал�
 				sld.Balance = 2.0;
 				sld.Weight = 3.5;
 				sld.Attack = 88.0;
+				sld.WeightAttack = stf(sld.Attack) * (0.25 + 0.2 * stf(sld.Weight));
 			}
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Ignasio.Journal"))
 			{
@@ -5510,31 +5441,31 @@ void Mtraxx_CorridaCreateHispanios(string qName) // ставим конвой и
 	switch (MOD_SKILL_ENEMY_RATE)
 	{
 		case 2:
-			Ship1 = SHIP_GALEON_L;
-			Ship3 = SHIP_CARACCA;
-			Cannon1 = CANNON_TYPE_CANNON_LBS20;
-			Cannon2 = CANNON_TYPE_CANNON_LBS16;
+			Ship1 = SHIP_SHNYAVA;
+			Ship3 = SHIP_FLEUT;
+			Cannon1 = CANNON_TYPE_CANNON_LBS16;
+			Cannon2 = CANNON_TYPE_CANNON_LBS8;
 		break;
 		
 		case 4:
-			Ship1 = SHIP_XebekVML;
-			Ship3 = SHIP_GALEON_L;
-			Cannon1 = CANNON_TYPE_CULVERINE_LBS18;
-			Cannon2 = CANNON_TYPE_CANNON_LBS20;
+			Ship1 = SHIP_FLEUT;
+			Ship3 = SHIP_BRIGANTINE;
+			Cannon1 = CANNON_TYPE_CULVERINE_LBS8;
+			Cannon2 = CANNON_TYPE_CANNON_LBS12;
 		break;
 		
 		case 6:
-			Ship1 = SHIP_NAVIO;
-			Ship3 = SHIP_XebekVML;
+			Ship1 = SHIP_GALEON_L;
+			Ship3 = SHIP_CORVETTE;
 			Cannon1 = CANNON_TYPE_CANNON_LBS24;
 			Cannon2 = CANNON_TYPE_CULVERINE_LBS18;
 		break;
 		
 		case 8:
-			Ship1 = SHIP_GALEON_H;
+			Ship1 = SHIP_EASTINDIAMAN;
 			Ship3 = SHIP_NAVIO;
-			Cannon1 = CANNON_TYPE_CANNON_LBS32;
-			Cannon2 = CANNON_TYPE_CANNON_LBS24;
+			Cannon1 = CANNON_TYPE_CANNON_LBS24;
+			Cannon2 = CANNON_TYPE_CANNON_LBS20;
 		break;
 		
 		case 10:
@@ -5555,7 +5486,7 @@ void Mtraxx_CorridaCreateHispanios(string qName) // ставим конвой и
 			
 			case 2:
 				iShip = SHIP_GALEON_H;
-				iCannon = CANNON_TYPE_CANNON_LBS24;
+				iCannon = CANNON_TYPE_CANNON_LBS36;
 				if (MOD_SKILL_ENEMY_RATE < 4) iCannon = CANNON_TYPE_CULVERINE_LBS18;
 			break;
 			
@@ -5832,7 +5763,7 @@ void Mtraxx_CartahenaTavernPrepare(string qName) // готовим таверн�
 	{
 		if(CheckAttribute(pchar,"quest.Mtraxx_CartahenaLate.over"))
 			DeleteAttribute(pchar,"quest.Mtraxx_CartahenaLate.over");
-		NewGameTip("Режим исследования: таймер продлён. Выполните квест!");
+		NewGameTip(StringFromKey("Roger_4"));
 		SetFunctionTimerCondition("Mtraxx_CartahenaLate", 0, 0, 30, false);
 		return;
 	}
@@ -5931,43 +5862,43 @@ void Mtraxx_CartahenaArrive(string qName) // прибыли в акватори�
 	switch (MOD_SKILL_ENEMY_RATE)
 	{
 		case 2:
-			Ship1 = SHIP_BRIG;
-			Ship2 = SHIP_SCHOONER_W;
-			Ship3 = SHIP_SLOOP;
-			Cannon1 = CANNON_TYPE_CANNON_LBS16;
-			Cannon2 = CANNON_TYPE_CULVERINE_LBS8;
+			Ship1 = SHIP_SLOOP;
+			Ship2 = SHIP_LUGGER;
+			Ship3 = SHIP_WAR_TARTANE;
+			Cannon1 = CANNON_TYPE_CANNON_LBS6;
+			Cannon2 = CANNON_TYPE_CANNON_LBS3;
 		break;
 		
 		case 4:
-			Ship1 = SHIP_GALEON_L;
-			Ship2 = SHIP_BRIGANTINE;
+			Ship1 = SHIP_SLOOP;
+			Ship2 = SHIP_SLOOP;
 			Ship3 = SHIP_SCHOONER_W;
-			Cannon1 = CANNON_TYPE_CULVERINE_LBS18;
-			Cannon2 = CANNON_TYPE_CANNON_LBS16;
+			Cannon1 = CANNON_TYPE_CANNON_LBS12;
+			Cannon2 = CANNON_TYPE_CANNON_LBS12;
 		break;
 		
 		case 6:
-			Ship1 = SHIP_POLACRE;
-			Ship2 = SHIP_GALEON_L;
+			Ship1 = SHIP_BRIG;
+			Ship2 = SHIP_XebekVML;
 			Ship3 = SHIP_BRIGANTINE;
-			Cannon1 = CANNON_TYPE_CULVERINE_LBS18;
-			Cannon2 = CANNON_TYPE_CANNON_LBS16;
+			Cannon1 = CANNON_TYPE_CANNON_LBS16;
+			Cannon2 = CANNON_TYPE_CANNON_LBS12;
 		break;
 		
 		case 8:
 			Ship1 = SHIP_POLACRE;
 			Ship2 = SHIP_XebekVML;
 			Ship3 = SHIP_GALEON_L;
-			Cannon1 = CANNON_TYPE_CULVERINE_LBS18;
-			Cannon2 = CANNON_TYPE_CANNON_LBS20;
+			Cannon1 = CANNON_TYPE_CANNON_LBS16;
+			Cannon2 = CANNON_TYPE_CANNON_LBS24;
 		break;
 		
 		case 10:
 			Ship1 = SHIP_NAVIO;
 			Ship2 = SHIP_POLACRE;
-			Ship3 = SHIP_XebekVML;
-			Cannon1 = CANNON_TYPE_CANNON_LBS24;
-			Cannon2 = CANNON_TYPE_CULVERINE_LBS18;
+			Ship3 = SHIP_EASTINDIAMAN;
+			Cannon1 = CANNON_TYPE_CULVERINE_LBS18;
+			Cannon2 = CANNON_TYPE_CANNON_LBS24;
 		break;
 	}
 	for (int i=1; i<=3; i++)
@@ -7327,7 +7258,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 {
 
 	ref sld, chr;
-	int iTemp, i, n, idx, ShipType, iRank, Rank, iScl, iAddTime, iTime; 
+	int iTemp, i, n, idx, ShipType, iRank, Rank, iScl, iAddTime, iTime, iClass; 
 	string  Model, Blade, sTemp, attrName;
 	
 	
@@ -7513,34 +7444,39 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	{
 		Group_FindOrCreateGroup("Mtraxx_PlantCaravanGuadeloupe");
 		Group_SetType("Mtraxx_PlantCaravanGuadeloupe", "trade");
-
+		
+		iClass = sti(RealShips[sti(pchar.ship.type)].Class);
+	
+		if(iClass < 3) iClass = 3;
+		if(iClass > 5) iClass = 5;
+		
 		for (i=1; i<=4; i++)
 		{
 			switch (i)
 			{
 				case 1:
-					ShipType = SHIP_FRIGATE;
+					ShipType = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
 					attrName = StringFromKey("Roger_103");
 					Model = "citiz_21";
 					Rank = 20;
 					Blade = "blade_10";
 				break;
 				case 2:
-					ShipType = SHIP_NAVIO;
+					ShipType = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 					attrName = StringFromKey("Roger_104");
 					Model = "trader_2";
 					Rank = 15;
 					Blade = "blade_05";
 				break;
 				case 3:
-					ShipType = SHIP_PINNACE;
+					ShipType = GetRandomShipType(GetClassFlag(iClass + 1), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 					attrName = StringFromKey("Roger_105");
 					Model = "citiz_25";
 					Rank = 15;
 					Blade = "blade_05";
 				break;
 				case 4:
-					ShipType = SHIP_EASTINDIAMAN;
+					ShipType = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 					attrName = StringFromKey("Roger_106");
 					Model = "trader_6";
 					Rank = 15;
@@ -8313,7 +8249,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		pchar.DisableChangeFlagMode = true;
 		// установим клон Бернара Венсана
 		sld = GetCharacter(NPC_GenerateCharacter("Mtr_Vensan", "Vensan", "man", "man", 20, PIRATE, -1, true, "quest"));
-		FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, StringFromKey("Roger_116"), CANNON_TYPE_CANNON_LBS16, 50, 50, 50);
+		FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, StringFromKey("Roger_116"), CANNON_TYPE_CANNON_LBS12, 50, 50, 50);
 		FantomMakeCoolFighter(sld, 20, 50, 50, "blade_16", "pistol5", "bullet", 100);
 		sld.name = StringFromKey("Roger_117");
 		sld.lastname = StringFromKey("Roger_118");
@@ -8491,7 +8427,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		SetCharacterGoods(sld, GOOD_RUM, 100);
 		SetCharacterGoods(sld, GOOD_PLANKS, 50);
 		SetCharacterGoods(sld, GOOD_SAILCLOTH, 20);
-		RealShips[sti(sld.Ship.Type)].SpeedRate = 15.2;
+		RealShips[sti(sld.Ship.Type)].SpeedRate = 17.2;
 		SetRandGeraldSail(sld, PIRATE);
 		hcrew = GetMaxCrewQuantity(sld);
 		SetCrewQuantity(sld, hcrew);
@@ -9103,15 +9039,15 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		LAi_group_SetCheck("EnemyFight", "Mtraxx_CartahenaTownBattleEnd");
 		LAi_SetFightMode(pchar, true);
 		// огонь и дым
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseF1", 3, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseF1", 3, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseF1", 0, 0, 0, "fortfire");
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseS4", 3, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseS4", 3, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseS4", 0, 0, 0, "fortfire");
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseH2", 3, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseH2", 3, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseH2", 0, 0, 0, "fortfire");
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseS3", 3, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseS3", 3, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseS3", 0, 0, 0, "fortfire");
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseH1", 3, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseH1", 3, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseH1", 0, 0, 0, "fortfire");
 	}
 	else if (sQuestName == "Mtraxx_CartahenaTownBattleEnd") // закончили бой в городе
@@ -9200,18 +9136,18 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		for (i = 4; i <= 10; i++)
 		{
 			if (i == 9) continue;
-			CreateLocationParticles("Bomb_Smoke", "reload", "reload" + i + "_back", 0, 0, 0, "torch_deck");
+			CreateLocationParticles("large_smoke", "reload", "reload" + i + "_back", 0, 0, 0, "torch_deck");
 			CreateLocationParticles("shipfire", "reload", "reload" + i + "_back", 0, 0, 0, "fortfire");
 		}
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseF1", 0, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseF1", 0, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseF1", 0, 0, 0, "fortfire");
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseS4", 0, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseS4", 0, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseS4", 0, 0, 0, "fortfire");
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseH2", 0, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseH2", 0, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseH2", 0, 0, 0, "fortfire");
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseS3", 0, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseS3", 0, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseS3", 0, 0, 0, "fortfire");
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseH1", 0, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseH1", 0, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseH1", 0, 0, 0, "fortfire");
 		for (i = 1; i <= 19; i++) // жертвы нападения
 		{
@@ -9279,18 +9215,18 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		for (i = 4; i <= 10; i++)
 		{
 			if (i == 9) continue;
-			CreateLocationParticles("Bomb_Smoke", "reload", "reload" + i + "_back", 3, 0, 0, "torch_deck");
+			CreateLocationParticles("large_smoke", "reload", "reload" + i + "_back", 3, 0, 0, "torch_deck");
 			CreateLocationParticles("shipfire", "reload", "reload" + i + "_back", 0, 0, 0, "fortfire");
 		}
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseF1", 3, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseF1", 3, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseF1", 0, 0, 0, "fortfire");
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseS4", 3, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseS4", 3, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseS4", 0, 0, 0, "fortfire");
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseH2", 3, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseH2", 3, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseH2", 0, 0, 0, "fortfire");
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseS3", 3, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseS3", 3, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseS3", 0, 0, 0, "fortfire");
-		CreateLocationParticles("Bomb_Smoke", "reload", "houseH1", 3, 0, 0, "torch_deck");
+		CreateLocationParticles("large_smoke", "reload", "houseH1", 3, 0, 0, "torch_deck");
 		CreateLocationParticles("shipfire", "reload", "houseH1", 0, 0, 0, "fortfire");
 		pchar.quest.mtraxx_cartahena_complete.win_condition.l1 = "location";
 		pchar.quest.mtraxx_cartahena_complete.win_condition.l1.location = "Cartahena";

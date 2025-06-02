@@ -28,12 +28,11 @@ object g_oSaveContainer;
 int g_nConfirmMode;
 string g_sConfirmReturnWindow;
 bool isMainMenuChecker = false;
-
+bool bBadSave = false;
 
 void InitInterface_BB(string iniName, bool isSave, bool isMainMenu)
 {
-	StartAboveForm(true);
-	SetTimeScale(0.1);
+	StartAboveForm(!isMainMenu);
 
 	if( CheckAttribute(&PlayerProfile,"name") ) {
 		PlayerProfile.old_name = PlayerProfile.name;
@@ -54,12 +53,6 @@ void InitInterface_BB(string iniName, bool isSave, bool isMainMenu)
 		SetSelectable("BTN_PROFILE",false);
 		SendMessage( &GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"BTN_SAVELOAD", 0, "Save" );
 	}
-
-	// by default first save is selected
-	SendMessage( &GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, "SAVEIMG1", 5, true );
-	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 3, 1, argb(255,255,255,255) );
-	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 3, 2, argb(255,255,255,255) );
-	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 3, 3, argb(255,255,255,255) );
 
 	FillProfileList();
 	FindScrshotClass();
@@ -84,20 +77,12 @@ void InitInterface_BB(string iniName, bool isSave, bool isMainMenu)
 	if(isSave == false && isMainMenu == true)
 	{
 		BLI_DisableShow();
-		SetTimeScale(1.0);
 		SetCurrentProfile(GetLastProfileFromCurrentProfile());
-		// if(sti(PlayerProfile.profilesQuantity) > 1)
-		// {
-			// ProcChooseProfileFromList();
-			// SetCurrentProfile(GetLastProfileFromOptions());
-		// } else {
-			// SetCurrentProfile(GetCurrentProfile());
-		// }
 	} 
 	else
 	{
 		SetCurrentProfile(GetCurrentProfile());
-	}	
+	}
 }
 
 // сбрасываем на Tab селектор на 0 
@@ -145,13 +130,7 @@ void SetCurrentProfile( string sProfileName )
 		setInitSelection( 0 );
 	}
 	SetClickable("SAVESCROLL",g_nSaveQuantity>MAX_SAVE_SLOTS);
-	// show profile name/data
 	SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVEINFO", 1, 1, "#"+XI_ConvertString("ProfileName")+": " + currentProfile );
-	SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVEINFO", 1, 2, "#"+XI_ConvertString("Difficulty")+": " + "" );
-	SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVEINFO", 1, 3, "#"+XI_ConvertString("Rank")+": " + "" );
-	SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVEINFO", 1, 4, "#"+XI_ConvertString("Money")+": " +"" );
-	SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVEINFO", 1, 5, "#"+XI_ConvertString("Play Time")+": " + "" );
-	GetLastProfileFromCurrentProfile()
 	// read option from profile
 	// LoadGameOptions();
 }
@@ -169,13 +148,22 @@ void setInitSelection(int _sel)
         nLine = makeint( makefloat(nLineQ) * (makefloat(_sel / SLOTS_IN_ROW) / makefloat(nLineQ) ));
 
     int imgIdx = _sel + 1;
-    if(nLine > nLinesPer) {
+    if(nLine > nLinesPer)
+    {
+        if((g_nSaveQuantity % SLOTS_IN_ROW) == 0)
+        {
+            // TO_DO: В AboveForm без TimeScale в этом случае не грузятся вверхние сейвы
+            nLine--;
+        }
         FillSaveList(nLine * SLOTS_IN_ROW);
         imgIdx = (_sel + 1) % SLOTS_IN_ROW;
         nTimeout = 350;
     }
-    if(imgIdx != 1)
-        SetSelecting(0,false);
+
+    // by default first save is selected
+    if(!CheckAttribute(&g_oSaveList[0],"loaded") || g_oSaveList[0].loaded == "0") procLoadOneSaveInfo();
+    if(!bThisSave && GetSelectable("SAVEIMG1")) SetSelecting(0, true);
+
     string sName = "SAVEIMG" + imgIdx;
     PostEvent("eventSaveClick", nTimeout, "ls", 0, sName);
 }
@@ -223,7 +211,7 @@ void ProcessCancelExit()
 
 void IDoExit(int exitCode)
 {
-	EndAboveForm(true);
+	EndAboveForm(!isMainMenuChecker);
 	DeleteAttribute(&PlayerProfile,"old_name");
 	GameInterface.SavePath = "SAVE";
 	LanguageCloseFile(g_nLablesFileID);
@@ -522,17 +510,49 @@ void procSelecterMove()
 void SetSelecting(int nSlot,bool bSelect)
 {
 	string sNodeName;
-	int nColor;
+	int nColor, nColor2, nColor3, nColorbad;
 	sNodeName = "SAVEIMG"+(nSlot+1);
-	if( bSelect ) {
+	bBadSave = false;
+
+	if( bSelect )
+    {
 		nColor = argb(255,255,255,255);
-	} else {
+		nColor2 = argb(255,255,255,255);
+		nColor3 = argb(255,255,255,148);
+		nColorbad = argb(0,128,128,128);
+		if (!CheckAttribute(&g_oSaveList[nSlot], "SaveVer") || sti(g_oSaveList[nSlot].SaveVer) != VERSION_NUM_PRE) 
+        {
+            if(g_oSaveList[nSlot].saveidx != "-1")
+            {
+                nColor2 = argb(255,255,148,148);
+                nColorbad = argb(255,128,128,128);
+                bBadSave = true;
+            }
+        }
+	}
+    else
+    {
 		nColor = argb(255,148,148,148);
+		nColor2 = argb(255,148,148,148);
+		nColor3 = argb(255,255,148,148);
+		nColorbad = argb(0,128,128,128);
+		if (!CheckAttribute(&g_oSaveList[nSlot], "SaveVer") || sti(g_oSaveList[nSlot].SaveVer) != VERSION_NUM_PRE)
+        {
+            if(g_oSaveList[nSlot].saveidx != "-1")
+            {
+                nColor2 = argb(255,148,148,148);
+                nColorbad = argb(255,128,128,128);
+                bBadSave = true;
+            }
+		}
 	}
 	SendMessage( &GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, sNodeName, 5, bSelect );
-	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 3, nSlot*3+1, nColor );
-	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 3, nSlot*3+2, nColor );
-	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 3, nSlot*3+3, nColor );
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 3, nSlot*4+1, nColor );
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 3, nSlot*4+2, nColor2 );
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 3, nSlot*4+3, nColor2 );
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 3, nSlot*4+4, nColor3 );
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "BADSAVEIMG", 3, nSlot, nColorbad);
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "BADSAVEIMGA", 3, nSlot, nColorbad);
 }
 
 void ProcScrollChange()
@@ -614,7 +634,6 @@ bool GetMoveToOtherSave( int nNewSaveIndex, ref rLeft, ref rTop, ref rRight, ref
 	int nRight = 0;
 	int nBottom = 0;
 
-
 	rLeft = nLeft;
 	rTop = nTop;
 	rRight = nRight;
@@ -667,78 +686,13 @@ void FillSaveList(int nFirstSaveIndex)
 	if( nFirstSaveIndex<0 ) nFirstSaveIndex = 0;
 	nFirstSaveIndex = nFirstSaveIndex / SLOTS_IN_ROW;
 	nFirstSaveIndex = nFirstSaveIndex * SLOTS_IN_ROW;
-
-	bool bNoRebuildSaveList = (g_nFirstSaveIndex>=0);
-	int nDelta = nFirstSaveIndex - g_nFirstSaveIndex;
 	g_nFirstSaveIndex = nFirstSaveIndex;
 
-	if( bNoRebuildSaveList && (nDelta==SLOTS_IN_ROW) )
-	{
-		// перенос нижней линии записей вверх
-		MoveSaveLine(1,0);
-		// установка нижней линии в ожидание
-		FillSaveLine(1,nFirstSaveIndex+SLOTS_IN_ROW); // 2 
-		FillSaveLine(2,nFirstSaveIndex+SLOTS_IN_ROW+SLOTS_IN_ROW);// 3
-		FillSaveLine(3,nFirstSaveIndex+SLOTS_IN_ROW+SLOTS_IN_ROW+SLOTS_IN_ROW);// 4
-		ReloadSaveInfo();
-		return;
-	}
-	if( bNoRebuildSaveList && (nDelta==-SLOTS_IN_ROW))
-	{
-		// перенос верхней линии записей вниз
-		MoveSaveLine(0,1);
-		// установка верхней линии в ожидание
-		FillSaveLine(0,nFirstSaveIndex);
-		FillSaveLine(2,nFirstSaveIndex+SLOTS_IN_ROW+SLOTS_IN_ROW);
-		FillSaveLine(3,nFirstSaveIndex+SLOTS_IN_ROW+SLOTS_IN_ROW+SLOTS_IN_ROW);
-		ReloadSaveInfo();
-		return;
-	}
-
-		//	перенос в третью строку
-	if( bNoRebuildSaveList && (nDelta==-SLOTS_IN_ROW-SLOTS_IN_ROW) )
-	{
-		// перенос верхней линии записей вниз
-		MoveSaveLine(1,2);
-		// установка верхней линии в ожидание
-		FillSaveLine(0,nFirstSaveIndex);
-		FillSaveLine(1,nFirstSaveIndex+SLOTS_IN_ROW);
-		FillSaveLine(2,nFirstSaveIndex+SLOTS_IN_ROW+SLOTS_IN_ROW);
-		FillSaveLine(3,nFirstSaveIndex+SLOTS_IN_ROW+SLOTS_IN_ROW+SLOTS_IN_ROW);
-		ReloadSaveInfo();
-		return;
-	}
-
-	if( bNoRebuildSaveList && (nDelta==-SLOTS_IN_ROW-SLOTS_IN_ROW-SLOTS_IN_ROW) )
-	{
-		// перенос верхней линии записей вниз
-		MoveSaveLine(2,3);
-		// установка верхней линии в ожидание
-		FillSaveLine(0,nFirstSaveIndex);
-		FillSaveLine(1,nFirstSaveIndex+SLOTS_IN_ROW);
-		FillSaveLine(2,nFirstSaveIndex+SLOTS_IN_ROW+SLOTS_IN_ROW);
-		FillSaveLine(3,nFirstSaveIndex+SLOTS_IN_ROW+SLOTS_IN_ROW+SLOTS_IN_ROW);
-		ReloadSaveInfo();
-		return;
-	}
-
-	if( bNoRebuildSaveList && (nDelta==-SLOTS_IN_ROW-SLOTS_IN_ROW-SLOTS_IN_ROW-SLOTS_IN_ROW) )
-	{
-		// перенос верхней линии записей вниз
-		MoveSaveLine(3,0);
-		// установка верхней линии в ожидание
-		FillSaveLine(0,nFirstSaveIndex);
-		FillSaveLine(1,nFirstSaveIndex+SLOTS_IN_ROW);
-		FillSaveLine(2,nFirstSaveIndex+SLOTS_IN_ROW+SLOTS_IN_ROW);
-		FillSaveLine(3,nFirstSaveIndex+SLOTS_IN_ROW+SLOTS_IN_ROW+SLOTS_IN_ROW);
-		ReloadSaveInfo();
-		return;
-	}
-	// установка всех линий в ожидание
+	// Обновление линий
 	FillSaveLine(0,nFirstSaveIndex);
-	FillSaveLine(1,nFirstSaveIndex+SLOTS_IN_ROW); // 2
-	FillSaveLine(2,nFirstSaveIndex+SLOTS_IN_ROW+SLOTS_IN_ROW);// 3
-	FillSaveLine(3,nFirstSaveIndex+SLOTS_IN_ROW+SLOTS_IN_ROW+SLOTS_IN_ROW);// 4
+	FillSaveLine(1,nFirstSaveIndex + SLOTS_IN_ROW);   // 2
+	FillSaveLine(2,nFirstSaveIndex + SLOTS_IN_ROW*2); // 3
+	FillSaveLine(3,nFirstSaveIndex + SLOTS_IN_ROW*3); // 4
 	ReloadSaveInfo();
 }
 
@@ -765,7 +719,9 @@ void FillEmptySaveSlot(int nSlot)
 	ClearSaveInfoByIndex( nSlot );
 	g_oSaveList[nSlot].saveidx = -1;
 	g_oSaveList[nSlot].savefile = "";
+	// g_oSaveList[nSlot].SaveVer = VERSION_NUM;
 	g_oSaveList[nSlot].loaded = 1;
+	
 	if(bThisSave) 
 	{
 		ShowDataForSave(nSlot,"save",0,"");
@@ -777,6 +733,10 @@ void FillEmptySaveSlot(int nSlot)
 void ShowDataForSave(int nSlot, string picname, int picpointer, string strdata)
 {
 	string nodname = "SAVEIMG" + (nSlot+1);
+	int nColor = argb(255,148,148,148);
+	int nColor2 = argb(255,255,100,100);
+	int nColorbad = argb(0,128,128,128);
+	
 	bool bClickable = bThisSave;
 	if( picname!="" ) {
 		if( picname == "empty" ) {
@@ -803,23 +763,50 @@ void ShowDataForSave(int nSlot, string picname, int picpointer, string strdata)
 	string fileSystemTime = "";
 	string fileSystemDate = "";
 	string sSystemTimeString = XI_ConvertString("No Time");
+
 	if (CheckAttribute(&g_oSaveList[nSlot], "savefile") && g_oSaveList[nSlot].savefile != "" ) //fix boal
 	{
 		SendMessage(&GameInterface,"lsee",MSG_INTERFACE_GETTIME, "SAVE\"+currentProfile+"\"+g_oSaveList[nSlot].savefile, &fileSystemTime, &fileSystemDate);
 		sSystemTimeString = GetSystemTimeString( fileSystemTime, fileSystemDate );
 	}
-	SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 1, nSlot*3+3, "#"+sSystemTimeString );
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 3, nSlot*4+3, nColor );
+	SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 1, nSlot*4+3, "#"+sSystemTimeString );
 
 	ref saveInfo = &g_oSaveList[nSlot];
 	object saveAttributes = DeserializeAttributes(strdata);
+    // if(CheckAttribute(saveInfo, "SaveVer") && !CheckAttribute(&saveAttributes, "SaveVer") && picname != "empty")
+    // {
+        // TO_DO: Это костыль, а по-нормальному надо это всё с 0 писать
+        // DeleteAttribute(saveInfo, "SaveVer");
+    // }
 	CopyAttributesSafe(saveInfo, &saveAttributes);
 	string locname = "Unknown";
-	if (CheckAttribute(saveInfo, "locname")) locname = "#" + saveInfo.locname;
+	string sBadSave = 0;
+	if (CheckAttribute(saveInfo, "locname")) 
+	{
+		locname = "#" + saveInfo.locname;
+		if (!CheckAttribute(saveInfo, "SaveVer") || sti(saveInfo.SaveVer) != VERSION_NUM_PRE)
+		{
+			sSystemTimeString = XI_ConvertString("OnlyForVersion") + "1.4";
+			SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 1, nSlot*4+3, "#"+sSystemTimeString );
+			sBadSave = "#" + XI_ConvertString("BadSave");
+			nColorbad = argb(255,128,128,128);
+		}
+	}
 	string timeStr = "No Time";
-	if (CheckAttribute(saveInfo, "timeStr")) timeStr = "#" + saveInfo.timeStr;
-	SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 1, nSlot*3+1, locName );
-	SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 1, nSlot*3+2, timeStr );
 
+	if (CheckAttribute(saveInfo, "timeStr")) 
+	{
+		timeStr = "#" + saveInfo.timeStr;
+		SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 3, nSlot*4+2, nColor );
+		if(!CheckAttribute(saveInfo, "SaveVer") || sti(saveInfo.SaveVer) != VERSION_NUM_PRE) timeStr = "#" + XI_ConvertString("AttentionSave");
+	}
+
+	SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 1, nSlot*4+1, locName );
+	SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 1, nSlot*4+2, timeStr );
+	SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 1, nSlot*4+4, sBadSave);
+	SendMessage( &GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE, "BADSAVEIMG", 3, nSlot, nColorbad);
+	SendMessage( &GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE, "BADSAVEIMGA", 3, nSlot, nColorbad);
 	if( (g_nCurrentSaveIndex-g_nFirstSaveIndex) == nSlot ) {
 		ReloadSaveInfo();
 	}
@@ -873,15 +860,26 @@ void MoveSaveInfo(int nSrc, int nDst)
 	CopyAttributes( &g_oSaveList[nDst], &g_oSaveList[nSrc] );
 	DeleteAttribute( &g_oSaveList[nSrc], "" );
 	g_oSaveList[nSrc].saveidx = -1;
+	int nColorbad = argb(0,128,128,128);
 
 	// copy info from src control to dst control
 	string sDstImgNod = "SAVEIMG"+(nDst+1);
 	string sSrcImgNod = "SAVEIMG"+(nSrc+1);
 	SetSelectable( sDstImgNod, GetSelectable(sSrcImgNod) );
 	SendMessage( &GameInterface, "lsls", MSG_INTERFACE_MSG_TO_NODE, sDstImgNod, 8, sSrcImgNod );
-	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 2, nDst*3+1, nSrc*3+1 );
-	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 2, nDst*3+2, nSrc*3+2 );
-	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 2, nDst*3+3, nSrc*3+3 );
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 2, nDst*4+1, nSrc*4+1 );
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 2, nDst*4+2, nSrc*4+2 );
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 2, nDst*4+3, nSrc*4+3 );
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "SAVENOTES", 2, nDst*4+4, nSrc*4+4 );
+	if (!CheckAttribute(&g_oSaveList[nDst], "SaveVer") || sti(g_oSaveList[nDst].SaveVer) != VERSION_NUM_PRE)
+    {
+        if(g_oSaveList[nDst].saveidx != "-1")
+        {
+            nColorbad = argb(255,128,128,128);
+        }
+    }
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "BADSAVEIMG", 3, nDst, nColorbad);
+	SendMessage( &GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "BADSAVEIMGA", 3, nDst, nColorbad);
 	// set src control to empty
 	ShowDataForSave( nSrc, "empty", 0, "" );
 }
@@ -920,8 +918,8 @@ void procLoadOneSaveInfo()
 				if( bYesScrShoter ) {
 					SendMessage( scrshot, "ls", MSG_SCRSHOT_RELEASE, g_oSaveList[i].savefile );
 				}
-				// только один сейф файл за раз
-				break;
+				// только один сейф файл за раз (плохо в AboveForm)
+				// break;
 			}
 		}
 	}
@@ -1151,6 +1149,14 @@ string GetCurSaveName()
 	return "";
 }
 
+bool CheckSaveValidity()
+{
+	if(g_nCurrentSaveIndex<0 || g_nCurrentSaveIndex>=g_nSaveQuantity) return false;
+	if(CheckAttribute(&g_oSaveList[g_nCurrentSaveIndex], "SaveVer") && sti(g_oSaveList[g_nCurrentSaveIndex].SaveVer) == VERSION_NUM_PRE) return true;
+	
+	return false;
+}
+
 void DoConfirm( int nConfirmMode )
 {
 	g_sConfirmReturnWindow = "MAIN_WINDOW";
@@ -1161,7 +1167,7 @@ void DoConfirm( int nConfirmMode )
 	// enable confirm window
 	XI_WindowDisable( "CONFIRM_WINDOW", false );
 	XI_WindowShow( "CONFIRM_WINDOW", true );
-	SetCurrentNode( "CONFIRM_YES" );
+	bool bOK = false;
 
 	g_nConfirmMode = nConfirmMode;
 	switch( nConfirmMode )
@@ -1176,8 +1182,25 @@ void DoConfirm( int nConfirmMode )
 		SetFormatedText( "CONFIRM_TEXT", LanguageConvertString(g_nInterfaceFileID,"Overwrite savefile confirm") );
 		break;
 	case CONFIRMMODE_LOAD_GAME:
-		SetFormatedText( "CONFIRM_TEXT", LanguageConvertString(g_nInterfaceFileID,"Load game confirm") );
+		// if (CheckSaveValidity()) {
+		if (bBadSave) {
+			SetFormatedText( "CONFIRM_TEXT", XI_ConvertString("BadSaveInfo"));
+			bOK = true;
+		} else {
+			SetFormatedText( "CONFIRM_TEXT", LanguageConvertString(g_nInterfaceFileID,"Load game confirm") );
+		}
 		break;
+	}
+	if(bOk) {
+		SetNodeUsing("CONFIRM_YES", false);
+		SetNodeUsing("CONFIRM_YES1", true);
+		SetNodeUsing("CONFIRM_NO", false);
+		SetCurrentNode("CONFIRM_YES1");
+	} else {
+		SetNodeUsing("CONFIRM_YES", true);
+		SetNodeUsing("CONFIRM_YES1", false);
+		SetNodeUsing("CONFIRM_NO", true);
+		SetCurrentNode("CONFIRM_YES");
 	}
 	SendMessage( &GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "CONFIRM_TEXT", 5 ); // центрируем по вертикали
 }
@@ -1226,7 +1249,8 @@ void UndoConfirm(bool bPositiveChoose)
 		else {SetCurrentNode("SAVE_SELECTER");}
 	break;
 	case CONFIRMMODE_SAVE_OVERWRITE: SetCurrentNode("BTN_SAVELOAD"); break;
-	case CONFIRMMODE_LOAD_GAME: SetCurrentNode("BTN_SAVELOAD"); break;
+	// case CONFIRMMODE_LOAD_GAME: SetCurrentNode("BTN_SAVELOAD"); break;
+	case CONFIRMMODE_LOAD_GAME: SetCurrentNode("SAVE_SELECTER"); break;
 	}
 }
 
@@ -1294,6 +1318,7 @@ void ReloadSaveInfo()
 		{
 			money = "#" + XI_ConvertString("Money") + ": " + FindRussianMoneyString(sti(saveInfo.money));
 		}
+        SetSelecting(nSlot, true);
 	}
 
 	ShowFaceInfo( info );
@@ -1309,6 +1334,9 @@ void ReloadSaveInfo()
 		SetSelectable( "BTN_SAVELOAD", true );
 		SetSelectable( "BTN_DELETE", true );
 	}
+	SetNodeUsing("BADSAVEIMG", true);
+	SetNodeUsing("BADSAVEIMGA", true);
+	SetNodeUsing("SAVENOTES", true);
 }
 
 void ScrollPosChange()
@@ -1329,6 +1357,9 @@ void ScrollPosChange()
 		SelectSaveImage(g_nFirstSaveIndex);
 		//trace("ScrollPosChange " + fPos + " nLineQ " + nLineQ + " nLine " + nLine);
 		// SendMessage(&GameInterface,"lsf",MSG_INTERFACE_SET_SCROLLER,"SAVESCROLL",fPos);
+		SetNodeUsing("BADSAVEIMG", false);
+		SetNodeUsing("BADSAVEIMGA", false);
+		SetNodeUsing("SAVENOTES", false);
 	}
 }
 

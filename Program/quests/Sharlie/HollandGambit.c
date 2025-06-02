@@ -25,7 +25,7 @@ void Create_Baltazar()//создание торговца
 	ReOpenQuestHeader("Holl_Gambit"); // лесник чтобы вышел из архива																					  
 	SetFunctionTimerCondition("Create_BaltazarOver", 0, 0, 2, false); //таймер
 	sld = GetCharacter(NPC_GenerateCharacter("Baltazar", "trader_2", "man", "man", 5, HOLLAND, -1, true, "quest"));
-	FantomMakeSmallSailor(sld, SHIP_FLEUT, "", CANNON_TYPE_CANNON_LBS12, 10+rand(5), 10+rand(5), 10+rand(5), 10+rand(5), 15+rand(5));
+	FantomMakeSmallSailor(sld, SHIP_FLEUT, "", CANNON_TYPE_CANNON_LBS8, 10+rand(5), 10+rand(5), 10+rand(5), 10+rand(5), 15+rand(5));
     SetFantomParamFromRank(sld, 5, true); 
 	sld.name = StringFromKey("HollandGambit_1");
 	sld.lastname = StringFromKey("HollandGambit_2");
@@ -358,7 +358,7 @@ void Create_Mirage(string qName)//создаем 'Мираж'
 	Group_FindOrCreateGroup("Mirage");
 	Group_SetType("Mirage", "pirate");
 	sld = GetCharacter(NPC_GenerateCharacter("MirageCap", "mercen_"+(rand(10)+1), "man", "man", iRank, PIRATE, -1, false, "quest"));
-	FantomMakeSmallSailor(sld, SHIP_MIRAGE, StringFromKey("HollandGambit_6"), CANNON_TYPE_CANNON_LBS20, 40+rand(10), 30+rand(20), 30+rand(20), 30+rand(15), 25+rand(25));
+	FantomMakeSmallSailor(sld, SHIP_MIRAGE, StringFromKey("HollandGambit_6"), CANNON_TYPE_CANNON_LBS18, 40+rand(10), 30+rand(20), 30+rand(20), 30+rand(15), 25+rand(25));
 	// belamour для легких уровней команду в опт -->
 	if(MOD_SKILL_ENEMY_RATE < 7) SetCrewQuantity(sld,GetOptCrewQuantity(sld));
 	// <-- legendary edition
@@ -576,8 +576,8 @@ void CreateFleetwoodOnMap(string qName)//подгружаем в море энк
 	Group_FindOrCreateGroup("Fleetwood_Attack");
 	sld = characterFromId("Fleetwood");
 	// belamour для легких уровней Флитвуд хуже стреляет -->
-	if(MOD_SKILL_ENEMY_RATE < 7) FantomMakeSmallSailor(sld, SHIP_VALCIRIA, StringFromKey("HollandGambit_8"), CANNON_TYPE_CANNON_LBS20, 40+rand(10), 35+rand(20), 35+rand(20), 20+rand(14), 25+rand(20));
-	else FantomMakeSmallSailor(sld, SHIP_VALCIRIA, StringFromKey("HollandGambit_8"), CANNON_TYPE_CANNON_LBS20, 40+rand(10), 35+rand(20), 35+rand(20), 30+rand(15), 35+rand(25));
+	if(MOD_SKILL_ENEMY_RATE < 7) FantomMakeSmallSailor(sld, SHIP_VALCIRIA, StringFromKey("HollandGambit_8"), CANNON_TYPE_CANNON_LBS16, 40+rand(10), 35+rand(20), 35+rand(20), 20+rand(14), 25+rand(20));
+	else FantomMakeSmallSailor(sld, SHIP_VALCIRIA, StringFromKey("HollandGambit_8"), CANNON_TYPE_CANNON_LBS16, 40+rand(10), 35+rand(20), 35+rand(20), 30+rand(15), 35+rand(25));
 	// <-- legendary edition
 	FantomMakeCoolFighter(sld, iRank, 30, 30, "blade_14", "pistol3", "grapeshot", 50);
 	GiveItem2Character(sld, "FleetwoodJournal");
@@ -649,7 +649,7 @@ void CreateEmptyMeifeng(string qName)//Мейфенг без китайца в �
 	sld = GetCharacter(NPC_GenerateCharacter("MeifengCap", "off_hol_2", "man", "man", 40, HOLLAND, -1, true, "quest"));
 	sld.name = StringFromKey("HollandGambit_10");
 	sld.lastname = StringFromKey("HollandGambit_11");
-	FantomMakeSmallSailor(sld, SHIP_MAYFANG, StringFromKey("HollandGambit_12"), CANNON_TYPE_CANNON_LBS20, 90+rand(10), 80+rand(20), 80+rand(20), 80+rand(15), 75+rand(25));
+	FantomMakeSmallSailor(sld, SHIP_MAYFANG, StringFromKey("HollandGambit_12"), CANNON_TYPE_CANNON_LBS16, 90+rand(10), 80+rand(20), 80+rand(20), 80+rand(15), 75+rand(25));
 	SetFantomParamFromRank(sld, 40, true); 
 	Character_SetAbordageEnable(sld, false);//нельзя абордировать
 	sld.AnalizeShips = true;
@@ -1066,7 +1066,7 @@ void HWICSilverConvoyInWorld()//создаем серебряный конвой
 		switch (i)
 		{
 			case 1: iTemp = SHIP_LUGGER; break;
-			case 2: iTemp = SHIP_EASTINDIAMAN; break;
+			case 2: iTemp = SHIP_GALEON_L; break;
 			case 3: iTemp = SHIP_SLOOP; break;
 		}
 		sld.Ship.Type = GenerateShipExt(iTemp, 1, sld);
@@ -1147,7 +1147,7 @@ void HollConvoy_Remove()//удаляем товар и корабль
 {
 	RemoveCharacterGoods(pchar, GOOD_SILVER, sti(pchar.questTemp.HWIC.Eng.SlvQty));
 	//удаляем ост-индца
-	if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_EASTINDIAMAN)
+	if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_GALEON_L)
 	{
 		pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
 		pchar.Ship.name = StringFromKey("HollandGambit_17");
@@ -1162,7 +1162,7 @@ void HollConvoy_Remove()//удаляем товар и корабль
 			if(iTemp > 0)
 			{
 				ref chr = GetCharacter(iTemp);
-				if(sti(RealShips[sti(chr.ship.type)].basetype) == SHIP_EASTINDIAMAN)
+				if(sti(RealShips[sti(chr.ship.type)].basetype) == SHIP_GALEON_L)
 				{
 					pchar.questTemp.HWIC.Eng.CompanionIndex = chr.Index;
 					sld = GetCharacter(sti(pchar.questTemp.HWIC.Eng.CompanionIndex));
@@ -1205,7 +1205,7 @@ void GetValckiriaToCharacter(ref rChar)//сажаем на Валькирию
 	rChar.Ship.Type = GenerateShipExt(SHIP_VALCIRIA, true, rChar);
 	rChar.Ship.name = StringFromKey("HollandGambit_8");
 	SetBaseShipData(rChar);
-	rChar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS20;
+	rChar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS16;
 	SetCrewQuantityFull(rChar);
 	AddCrewMorale(rChar, 100);
 	ChangeCrewExp(rChar, "Sailors", 100);
@@ -1276,7 +1276,7 @@ void CreateVanBergInWorld()//запускаем Ван Берга на карт�
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
 	sld = characterFromId("JacobBerg");
-	FantomMakeCoolSailor(sld, SHIP_MIRAGE,  StringFromKey("HollandGambit_6"), CANNON_TYPE_CANNON_LBS20, 60, 60, 60);
+	FantomMakeCoolSailor(sld, SHIP_MIRAGE,  StringFromKey("HollandGambit_6"), CANNON_TYPE_CANNON_LBS18, 60, 60, 60);
 	// belamour для легких уровней команду в опт -->
 	if(MOD_SKILL_ENEMY_RATE < 7) SetCrewQuantity(sld,GetOptCrewQuantity(sld));
 	// <-- legendary edition
@@ -1512,12 +1512,12 @@ void KnippelOnCuracao(string qName)//Книппель на Кюрасао
 void CreateHollandShorePatrol(string qName)//патруль, драться необязательно
 {
 	Group_FindOrCreateGroup("HollPatrol_Attack");
-	if (Whr_IsDay()) iTemp = SHIP_CORVETTE + rand(makeint(SHIP_POLACRE - SHIP_CORVETTE)); 
-	else iTemp = SHIP_BRIG + rand(makeint(SHIP_GALEON_L - SHIP_BRIG)); 
+	if (Whr_IsDay()) iTemp = GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
+	else iTemp = GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
     for (int i = 1; i <= 3; i++)
     {
         sld = GetCharacter(NPC_GenerateCharacter("PatrolCap_"+i, "off_hol_"+(rand(5)+1), "man", "man", 20, HOLLAND, 3, true, "hunter"));
-		FantomMakeSmallSailor(sld, iTemp, "", CANNON_TYPE_CANNON_LBS20, 40+rand(10), 40+rand(15), 40+rand(15), 50+rand(15), 45+rand(15));
+		FantomMakeSmallSailor(sld, iTemp, "", CANNON_TYPE_CANNON_LBS16, 40+rand(10), 40+rand(15), 40+rand(15), 50+rand(15), 45+rand(15));
 		FantomMakeCoolFighter(sld, 20, 50, 50, "blade_10", "pistol1", "bullet", 70);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
@@ -1594,7 +1594,7 @@ void CreateLucasOnMeifeng(string qName)//создадим Лукаса на Ме
 	bQuestDisableMapEnter = true; // patch-4
 	Group_FindOrCreateGroup("Lucas_Attack");
 	sld = characterFromId("Lucas");
-	FantomMakeSmallSailor(sld, SHIP_MAYFANG, StringFromKey("HollandGambit_12"), CANNON_TYPE_CANNON_LBS20, 100, 70, 70, 90, 70);
+	FantomMakeSmallSailor(sld, SHIP_MAYFANG, StringFromKey("HollandGambit_12"), CANNON_TYPE_CANNON_LBS16, 100, 70, 70, 90, 70);
 	FantomMakeCoolFighter(sld, 25, 70, 70, "blade_30", "pistol5", "bullet", 100); // приз - офицерский катлас
     sld.AlwaysEnemy = true;
     sld.DontRansackCaptain = true;
@@ -1642,7 +1642,7 @@ void Lucas_Attack_Win(string qName)//победа
 	
 	for(int n=0; n<MAX_COLONIES; n++)
 	{
-		if (colonies[n].nation == SPAIN && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].nation != "none")
+		if (colonies[n].nation == SPAIN && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none")
 		{
 			sAttr = colonies[n].id+"_town";
 			if(CheckAttribute(&worldMap,"labels."+sAttr+".icon1"))
@@ -1690,7 +1690,7 @@ void DelMapTonzagAllQM() // удалить остатки квестмаркер
 	
 	for(int n=0; n<MAX_COLONIES; n++)
 	{
-		if (colonies[n].nation == SPAIN && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].nation != "none")
+		if (colonies[n].nation == SPAIN && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none")
 		{
 			sAttr = colonies[n].id+"_town";
 			mQuest = "TQM"+sAttr;
@@ -1747,13 +1747,13 @@ void CreateFernandoOnSea(string qName)//испанец на море
 	if(MOD_SKILL_ENEMY_RATE > 8)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("HWICFernando", "Rodriges", "man", "man", 20, SPAIN, -1, false, "quest"));
-		FantomMakeSmallSailor(sld, SHIP_BRIGANTINE, "", CANNON_TYPE_CANNON_LBS16, 45, 40, 40, 50, 50);
+		FantomMakeSmallSailor(sld, SHIP_BRIGANTINE, "", CANNON_TYPE_CANNON_LBS12, 45, 40, 40, 50, 50);
 		FantomMakeCoolFighter(sld, 20, 50, 50, "blade_09", "pistol1", "bullet", 150);
 	}
 	else
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("HWICFernando", "Rodriges", "man", "man", 17, SPAIN, -1, false, "quest"));
-		FantomMakeSmallSailor(sld, SHIP_BRIGANTINE, "", CANNON_TYPE_CANNON_LBS16, 38, 34, 34, 43, 43);
+		FantomMakeSmallSailor(sld, SHIP_BRIGANTINE, "", CANNON_TYPE_CANNON_LBS12, 38, 34, 34, 43, 43);
 		FantomMakeCoolFighter(sld, 17, 43, 43, "blade_09", "pistol1", "bullet", 130);
 		SetCrewQuantity(sld,GetOptCrewQuantity(sld));
 	}
@@ -2055,7 +2055,7 @@ void CreateKnippelShip(string qName)//создаем бригантину Чар
 	Group_SetType("Knippel_Attack", "war");
 	sld = characterFromId("Knippel");
 	sld.nation = HOLLAND;
-	FantomMakeSmallSailor(sld, SHIP_BRIGANTINE, StringFromKey("HollandGambit_20"), CANNON_TYPE_CULVERINE_LBS18, 45, 90, 85, 30, 80);
+	FantomMakeSmallSailor(sld, SHIP_BRIGANTINE, StringFromKey("HollandGambit_20"), CANNON_TYPE_CULVERINE_LBS8, 45, 90, 85, 30, 80);
 	// belamour для легких уровней половина команды -->
 	if(MOD_SKILL_ENEMY_RATE < 7) SetCrewQuantity(sld, sti(GetMaxCrewQuantity(sld))/2);
 	// <-- legendary edition		 
@@ -2406,7 +2406,7 @@ void CreateValkiriaBrig(string qName)//создаем Валькирию без 
 	Group_FindOrCreateGroup("Val_Attack");
 	Group_SetType("Val_Attack", "war");
 	sld = GetCharacter(NPC_GenerateCharacter("ValCap", "off_eng_4", "man", "man", 25, ENGLAND, -1, true, "quest"));
-	FantomMakeSmallSailor(sld, SHIP_VALCIRIA, StringFromKey("HollandGambit_8"), CANNON_TYPE_CANNON_LBS20, 50, 60, 60, 60, 60);
+	FantomMakeSmallSailor(sld, SHIP_VALCIRIA, StringFromKey("HollandGambit_8"), CANNON_TYPE_CANNON_LBS16, 50, 60, 60, 60, 60);
 	sld.DontRansackCaptain = true; 
 	sld.AnalizeShips = true;
 	sld.Alwaysenemy = true;
@@ -2466,7 +2466,7 @@ void CreateHWICCureerOnMap(string qName)//энкаунтер курьера на
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
 	sld = GetCharacter(NPC_GenerateCharacter("CureerCap", "citiz_41", "man", "man", 20, HOLLAND, 15, true, "quest"));
-	FantomMakeSmallSailor(sld, SHIP_BRIGANTINE, StringFromKey("HollandGambit_33"), CANNON_TYPE_CANNON_LBS16, 50, 45, 45, 50, 60);
+	FantomMakeSmallSailor(sld, SHIP_BRIGANTINE, StringFromKey("HollandGambit_33"), CANNON_TYPE_CANNON_LBS12, 50, 45, 45, 50, 60);
 	// belamour для легких уровней команду в опт -->
 	if(MOD_SKILL_ENEMY_RATE < 7) SetCrewQuantity(sld,GetOptCrewQuantity(sld));
 	// <-- legendary edition			 
@@ -2539,7 +2539,7 @@ void CuracaoExploring(string qName)//на Кюрасао
 	Group_FindOrCreateGroup("Meifeng_Empty");
 	Group_SetType("Meifeng_Empty", "pirate");//тип группы
 	sld = characterFromId("Longway");
-	FantomMakeSmallSailor(sld, SHIP_MAYFANG, StringFromKey("HollandGambit_12"), CANNON_TYPE_CANNON_LBS20, 50, 65, 65, 50, 90);
+	FantomMakeSmallSailor(sld, SHIP_MAYFANG, StringFromKey("HollandGambit_12"), CANNON_TYPE_CANNON_LBS16, 50, 65, 65, 50, 90);
 	Character_SetAbordageEnable(sld, false);//нельзя абордировать
 	sld.AnalizeShips = true;
 	SetCharacterPerk(sld, "MusketsShoot");
@@ -2975,7 +2975,7 @@ void CreateTradeFleut(string qName)//флейт Тоффа Келлера
 	Group_FindOrCreateGroup("Keller_Fleut");
 	Group_SetType("Keller_Fleut", "trade");//тип группы
 	sld = GetCharacter(NPC_GenerateCharacter("Keller", "trader_2", "man", "man", 20, HOLLAND, 5, false, "quest"));
-	FantomMakeSmallSailor(sld, SHIP_FLEUT, StringFromKey("HollandGambit_39"), CANNON_TYPE_CANNON_LBS12, 50, 40, 40, 60, 60);
+	FantomMakeSmallSailor(sld, SHIP_FLEUT, StringFromKey("HollandGambit_39"), CANNON_TYPE_CANNON_LBS8, 50, 40, 40, 60, 60);
 	FantomMakeCoolFighter(sld, 20, 30, 30, "blade_08", "pistol3", "grapeshot", 50);
 	sld.name = StringFromKey("HollandGambit_40");
 	sld.lastname = StringFromKey("HollandGambit_41");
@@ -3064,7 +3064,7 @@ void CreateVanbergInSea(string qName)//Якоб ван Берг у остров�
 	Group_FindOrCreateGroup("Mirage");
 	Group_SetType("Mirage", "pirate");//тип группы
 	sld = characterFromId("JacobBerg");
-	FantomMakeCoolSailor(sld, SHIP_MIRAGE, StringFromKey("HollandGambit_6"), CANNON_TYPE_CANNON_LBS20, 70, 70, 70);
+	FantomMakeCoolSailor(sld, SHIP_MIRAGE, StringFromKey("HollandGambit_6"), CANNON_TYPE_CANNON_LBS18, 70, 70, 70);
 	// belamour для легких уровней команду в опт -->
 	if(MOD_SKILL_ENEMY_RATE < 7) SetCrewQuantity(sld,GetOptCrewQuantity(sld));
 	// <-- legendary edition			 

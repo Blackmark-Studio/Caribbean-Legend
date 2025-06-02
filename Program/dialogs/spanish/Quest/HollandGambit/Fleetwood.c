@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					dialog.text = "Entonces, estás aquí de nuevo. Toma el mando del 'Valkyrie' - mi tripulación está advertida sobre los detalles - y navega hacia Bridgetown. Visita a cada persona de interés en la ciudad y difunde los chismes de los que hablamos. Luego prepárate para el ataque del bastardo. No cambies la nave y no formes una escuadra, de lo contrario sospechará una trampa y no se presentará\nDebes abordar su barco y llevarlo a St. John's. Es imperativo que localices el cuaderno de bitácora del pirata, ya que es la única evidencia que tendremos jamás de la implicación de Lucas Rodenburg. Estoy seguro de que te encargarás de esto. Buena suerte, capitán.";
+					dialog.text = "Entonces, estás aquí de nuevo. Toma el mando del 'Valkyrie' - mi tripulación está advertida sobre los detalles y navega hacia Bridgetown. Visita a cada persona de interés en la ciudad y difunde los chismes de los que hablamos. Luego prepárate para el ataque del bastardo. No cambies la nave y no formes una escuadra, de lo contrario sospechará una trampa y no se presentará\nDebes abordar su barco y llevarlo a St. John's. Es imperativo que localices el cuaderno de bitácora del pirata, ya que es la única evidencia que tendremos jamás de la implicación de Lucas Rodenburg. Estoy seguro de que te encargarás de esto. Buena suerte, capitán.";
 					link.l1 = "¡Gratitud! Haré el trabajo según nuestro plan.";
 					link.l1.go = "First_Task_3";
 					DelLandQuestMark(npchar);
@@ -126,8 +126,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "Fleetwood_abordage":
-		PlaySound("Voice\Spanish\hambit\Richard Flitwood-03.wav");
-		dialog.text = "¡Maldito pirata! Has ganado la pelea de abordaje, pero de todos modos cumpliré con mi deber. He arreglado para encender el cuarto de pólvora y mi navío pronto explotará junto con tu 'Barco Fantasma'. No hundirás ni un solo barco inglés más. ¡Moriré con honor!";
+		PlaySound("Voice\Spanish\hambit\Richard Flitwood-04.wav");
+		dialog.text = "¡Maldito pirata! Has ganado la pelea de abordaje, pero de todos modos cumpliré con mi deber. He preparado todo para encender la bodega de pólvora, y mi navío pronto explotará junto con tu 'Barco Fantasma'. No hundirás ni un solo barco inglés más. ¡Moriré con honor!";
 		link.l1 = "Lamento decepcionarte, pero estás equivocado, Fleetwood. No hay piratas en mi barco, ya me he encargado de ellos antes. Te necesitaba y este barco sirvió como una buena trampa. \n¡Basta de palabras amables, todavía tengo que matarte y escapar de tu bañera en llamas!";
 		link.l1.go = "Fleetwood_abordage_1";
 		break;
@@ -149,13 +149,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "First_Task_1":
-		dialog.text = "Un pirata ha estado cometiendo actos de violencia en todo el archipiélago, haciéndose pasar por el 'Holandés Errante', un barco fantasma legendario. Pretende ser el 'Holandés Errante', un barco fantasma legendario. Estoy seguro de que es un holandés, pero no puede volar. Tiendo a creer que es un mercenario de Lucas Rodenburg, vice-director de la Compañía Neerlandesa de las Indias Occidentales.\nRodenburg ha declarado una guerra comercial en las sombras contra Inglaterra - este 'barco fantasma' solo ataca embarcaciones comerciales bajo la bandera inglesa. Es vital para la compañía debilitar nuestra influencia en esta área sin librar una guerra real.\nHe estado cazando este barco fantasma por un tiempo, pero su capitán es un marinero muy experimentado y su barco es rápido y escurridizo.\nDado que es imposible atrapar al chacal en una pelea abierta, debemos actuar con astucia y el reciente intento de asesinato contra mí nos hará un gran favor. ¿Qué piensas al respecto, capitán? ¿Estás asustado?";
+		dialog.text = "Un pirata ha estado cometiendo actos de violencia en todo el archipiélago, haciéndose pasar por el 'Holandés Errante', un barco fantasma legendario. Pretende ser el 'Holandés Errante', un barco fantasma legendario. Estoy seguro de que es un holandés, pero no puede volar. Tiendo a creer que es un mercenario de Lucas Rodenburg, vicedirector de la Compañía Holandesa de las Indias Occidentales.\nRodenburg ha declarado una guerra comercial en las sombras contra Inglaterra - este 'barco fantasma' solo ataca embarcaciones comerciales bajo la bandera inglesa. Es vital para la compañía debilitar nuestra influencia en esta área sin librar una guerra real.\nHe estado cazando este barco fantasma por un tiempo, pero su capitán es un marinero muy experimentado y su barco es rápido y escurridizo.\nDado que es imposible atrapar al chacal en una pelea abierta, debemos actuar con astucia y el reciente intento de asesinato contra mí nos hará un gran favor. ¿Qué piensas al respecto, capitán? ¿Estás asustado?";
 		link.l1 = "Ni lo sueñes. Me complacería ayudarte a rastrear y hundir a ese bastardo. Ibas a pedírmelo, ¿verdad?";
 		link.l1.go = "First_Task_2";
 		break;
 
 	case "First_Task_2":
-		dialog.text = "Tienes razón. Ahora, discutamos los detalles. Mis hombres esparcirán el rumor de que estoy casi muerto y que vendí mi barco, el 'Valkyrie', a ti. Luego, continuaremos con nuestro pequeño engaño. Fingirás ser un comerciante que compró el bergantín de mí y se deshizo de la mayoría de los cañones. \nPor lo tanto, tu tarea es navegar hacia Barbados y decirle a todos allí que tus bodegas están llenas de carga valiosa y tus bolsillos llenos de monedas. Déjales saber que pronto zarparás. Interpreta el papel de un comerciante avaricioso, simple pero rico. \nNuestro maldito holandés obtiene su información sobre el barco mercante por Bridgetown. No se sabe exactamente quién le suministra la información. Todos están bajo sospecha, desde un comerciante local hasta un gobernador, aunque esta última posibilidad es bastante aterradora. \nToma el mando de mi 'Valkyrie' y su tripulación. Pero primero, debes dejar todos tus barcos aquí, ya he hablado con el maestro del puerto local, costará 10 000 pesos al mes por tu buque insignia. \nUna vez hecho esto, regresa a mí y haré los arreglos. Ah, capitán, no olvides tomar tu parte por capturar la caravana de plata y diez mil para el maestro del puerto, el dinero está en la cómoda.";
+		dialog.text = "Tienes razón. Ahora, discutamos los detalles. Mis hombres esparcirán el rumor de que estoy casi muerto y que vendí mi barco, el 'Valkyrie', a ti. Luego, continuaremos con nuestro pequeño engaño. Fingirás ser un comerciante que compró el bergantín de mí y se deshizo de la mayoría de los cañones. \nPor lo tanto, tu tarea es navegar hacia Barbados y decirle a todos allí que tus bodegas están llenas de carga valiosa y tus bolsillos llenos de monedas. Déjales saber que pronto zarparás. Interpreta el papel de un comerciante avaricioso, simple pero rico. \nNuestro maldito holandés obtiene su información sobre el barco mercante por Bridgetown. No se sabe exactamente quién le suministra la información. Todos están bajo sospecha, desde el comerciante hasta elun gobernador, aunque esta última posibilidad es bastante aterradora. \nToma el mando de mi 'Valkyrie' y su tripulación. Pero primero, debes dejar todos tus barcos aquí, ya he hablado con el maestro del puerto, costará 10 000 pesos al mes por tu buque insignia. \nUna vez hecho esto, regresa a mí y haré los arreglos. Ah, capitán, no olvides tomar tu parte por capturar la caravana de plata y diez mil para el maestro del puerto, el dinero está en la cómoda.";
 		link.l1 = "Lo entiendo, señor Fleetwood. Voy a ver al maestro del puerto.";
 		link.l1.go = "exit";
 		pchar.questTemp.HWIC.Eng = "GotoPortoffice";
@@ -285,9 +285,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "Abigile_5":
-		PlaySound("Voice\Spanish\hambit\Richard Flitwood-02.wav");
+		PlaySound("Voice\Spanish\hambit\Richard Flitwood-05.wav");
 		dialog.text = "¡Excelente! Me alegra que pueda contar contigo, " + pchar.name + "  Tu trabajo será bien remunerado, no te preocupes por eso.";
-		link.l1 = " No te haré esperar demasiado. ¡Nos vemos pronto, Richard!";
+		link.l1 = "No te haré esperar demasiado. ¡Nos vemos pronto, Richard!";
 		link.l1.go = "Abigile_6";
 		break;
 

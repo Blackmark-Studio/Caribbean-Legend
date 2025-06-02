@@ -1055,7 +1055,7 @@ Ils essaient de m'arrêter. J'ai d'abord pensé à des ennemis de l'Empire. Mais
 Le Seigneur m'envoie des signes. Chaque port, chaque ville réclame la purification. J'y vois plus clair maintenant. Il ne suffit pas de collecter les impôts et d'attraper les contrebandiers. Il faut quelque chose de plus. Le feu sacré doit brûler la saleté. Pour l'instant, j'essaie d'agir dans le respect de la loi, mais je sens que ce n'est pas suffisant. "Devenir l'épée punitive du Seigneur." Il semble que cette heure soit proche.
 ******
 Parfois, des doutes me tourmentent. Dans ces moments-là, je relis SES lettres. Je me souviens de nos conversations. Oui, j'étais faible. Mais maintenant, je vois clairement mon chemin. L'archipel est plongé dans le péché. Chaque ville, chaque port doit être purifié. Et si le sang doit être versé pour cela, qu'il en soit ainsi. Après tout, nos péchés n'ont-ils pas été effacés par le sang du Christ ?
-Lorsque j'aurai achevé ma grande œuvre, ces eaux seront purifiées. Mais pour l'instant... pour l'instant, je me prépare. Rassembler les forces. Attendre le signe. Je saurai quand le moment sera venu d'agir. Et alors, personne ne pourra m'arrêter.
+Lorsque j'aurai achevé ma grande oeuvre, ces eaux seront purifiées. Mais pour l'instant... pour l'instant, je me prépare. Rassembler les forces. Attendre le signe. Je saurai quand le moment sera venu d'agir. Et alors, personne ne pourra m'arrêter.
 
 #QUEST LegendaryShips
 Information sur des navires légendaires
@@ -1069,199 +1069,210 @@ Santa Misericordia dispose d'un équipage expérimenté et loyal, personnellemen
 #TEXT	2
 "Lady Beth"
 ***********************
-'Lady Beth' est une vraie beauté. Un chef-d'oeuvre du génie naval britannique, sous le commandement d'Albert Blackwood, ancien officier de la Royal Navy. Peu de gens réussissent une telle désertion avec autant d'éclat ! Il a quitté le service, ruiné une brillante carrière et volé un navire de guerre - tout ça pour chasser des trésors !
-Et il a eu raison. Il en a déjà trouvé assez pour acheter la moitié de la Barbade, mais cela ne lui suffit jamais. Si vous le croisez en mer - n'essayez même pas de l'intercepter. Son navire est excellent, et le capitaine est expérimenté et prudent. Dernièrement, Blackwood fréquente souvent les Caïmans - il y creuse jour et nuit, épuisant ses hommes jusqu'à la mort
-Si vous décidez d'enquêter - prenez au moins 60 hommes et de bonnes armes à feu... Cela pourrait ne pas suffire.J'espère que vous savez tirer, car une compagnie d'anciens marines du colonel Fox a déserté avec lui. Des professionnels, bien supérieurs aux simples bandits. Et ne l'attaquez jamais dans les ports français - il y a des protections et des mécènes qui partagent ses découvertes.
+Lady Beth est une véritable beauté. Un miracle du génie maritime anglais, commandé par Albert Blackwood, ancien officier de la Royal Navy. En effet, il n'est pas donné à tout le monde de déserter de façon aussi spectaculaire ! Il a quitté le service, tué une brillante carrière et volé un navire de guerre - tout cela pour la chasse au trésor !
+Et ce n'est pas en vain. Il a déjà trouvé de quoi acheter la moitié de la Barbade, mais il en veut encore. Si vous le rencontrez en mer, n'essayez même pas de l'intercepter. Le navire est trop bon, et le capitaine est expérimenté et prudent. Dernièrement, Blackwood a fréquenté les Caïmans, creusant jour et nuit, faisant travailler les gens jusqu'à ce que mort s'ensuive. Si vous décidez d'aller voir, prenez pas moins de soixante hommes et de bonnes armes à feu... En fait, même cela pourrait ne pas suffire.
+J'espère que vous savez tirer, car une compagnie d'anciens fantassins de marine du colonel Fox a déserté avec lui. Des professionnels, rien à voir avec de vulgaires égorgeurs. Et ne l'attaquez jamais dans les ports français - il y bénéficie d'une protection et de mécènes qui reçoivent une partie de ses gains.
 
 #QUEST StoriesTreasures
-Histoires de trésors
+Histoires de trésor
 #TEXT	1
 ************************************************************
-Ce trésor m’appartient, à moi, le futur capitaine de la barquentine San Sebastián ! Si c’est moi qui lis ceci, n’oublie pas : Miguel te doit de l’argent et ne te l’a probablement toujours pas remboursé.
-Si c’est toi qui lis ces lignes, j’espère que tu ne fais pas partie de mon équipage. Mais si c’est le cas, sache que je soupçonnais depuis longtemps que tu étais un rat.
+Cette cache m'appartient, à moi, le futur capitaine du barquentin San Sebastián ! Si c'est moi qui lis ceci, n'oublie pas : Miguel te doit de l'argent, et il n'a probablement pas encore payé.
+Si c'est toi qui lis ces lignes, j'espère que tu ne fais pas partie de mon équipage. Mais si c'est le cas, sache ceci : J'ai longtemps soupçonné que tu étais un rat.
 #TEXT	2
 ************************************************************
-J’apprécie de plus en plus de travailler pour Tyrex. C’est déjà ma troisième cachette. Pour ne pas oublier où se trouvent les précédentes : l’une est là où j’ai commencé ma carrière de pirate, et l’autre là où j’ai abattu ce maudit gros lard.
+J'aime de plus en plus travailler pour Tyrex. C'est déjà ma troisième cache.
+Je n'oublie donc pas où se trouvent les précédentes : l'une est l'endroit où j'ai commencé ma carrière de pirate, et l'autre est l'endroit où j'ai abattu ce satané gros chat.
 #TEXT	3
 ************************************************************
-Si tu as trouvé cette cache, sache que je ne l’ai pas cachée aux pirates ni aux collecteurs d’impôts, mais à ma propre épouse.
-Il y a trois ans, elle m’a interdit d’aller à la taverne. Il y a deux ans, elle a fait un scandale quand j’ai acheté une nouvelle dague. Et il y a un an, elle m’a cassé deux dents.
-Mais jamais elle n’atteindra mon trésor ici ! Elle est persuadée que j’ai tout perdu au jeu. Bois un coup à ma santé pendant que je continue de convaincre ma tigresse que je n’ai jamais possédé cet argent.
+Si vous avez trouvé cette cache, sachez que je ne l'ai pas cachée à des pirates ou à des collecteurs d'impôts. Je l'ai cachée à ma propre femme.
+Il y a trois ans, elle m'a interdit d'aller à la taverne. Il y a deux ans, elle a déclenché une énorme dispute lorsque j'ai acheté un nouveau poignard. Et il y a un an, elle m'a cassé deux dents.
+Mais elle n'atteindra jamais mon trésor ici ! Elle croit que j'ai tout perdu dans une partie de cartes.
+Prenez un verre pour moi pendant que je suis occupé à convaincre ma mégère que je n'ai jamais eu cet argent.
 #TEXT	4
 ************************************************************
-Martin, si tu lis ceci, cela signifie que tu as trouvé ce que j’ai laissé pour toi. Ainsi, rien n’a été vain. Quatorze tableaux en six mois, et ce crapaud boursouflé en veut toujours plus ! Je n’ai plus besoin ni d’or ni de bijoux, ni de ses invitations pompeuses à la résidence.
-Mais avant de disparaître, je lui ai laissé un cadeau d’adieu : son propre portrait, sans flatterie ni flagornerie. Que tous le voient tel qu’il est réellement.
+Martin, si tu lis ceci, c'est que tu as trouvé ce que j'ai laissé pour toi. Ce n'était donc pas en vain. Quatorze tableaux en six mois, et ce crapaud bouffi en veut encore ! Je n'ai plus besoin d'or ni de bijoux, ni de ses invitations pompeuses à la résidence.
+Mais avant de disparaître, je lui ai laissé un cadeau d'adieu : son propre portrait - pas de flatterie, pas de lèche-bottes. Que tout le monde le voie tel qu'il est.
 #TEXT	5
 ************************************************************
-Si tu lis ceci, cela veut dire que le contenu du coffre t’appartient.
-Cette rencontre fatidique avec la pirate aux cheveux clairs a tout bouleversé. Je ne sais pas comment je vais poursuivre ma route, mais cet or m’a coûté trop cher. J’ai causé trop de souffrances pour l’obtenir, alors qu’avant je ne voyais pas les choses ainsi. 
-Maintenant, je comprends ce dont j’ai vraiment besoin. Prends-le si tu veux, mais laisse-moi te prévenir : les dés sont jetés.
+Si vous lisez ceci, cela signifie que le contenu du coffre vous appartient.
+Cette rencontre fatidique avec le pirate aux cheveux clairs a tout changé. Je ne sais pas comment je vais continuer, mais cet or m'a coûté trop cher. J'ai causé trop de souffrance pour l'obtenir, même si je n'avais jamais pensé en ces termes auparavant.
+Maintenant, je comprends ce dont j'ai vraiment besoin.
+Prenez-le si vous voulez, mais laissez-moi vous avertir : le sort en est jeté.
 #TEXT	6
 ************************************************************
 Septembre 1648.
-Le capitaine dit que demain notre escadre va prendre le fort d’assaut. On dit que les murs sont solides, les canons redoutables et que les soldats ne sont pas du genre à se rendre sans combattre. Si j’arrive à revenir vivant, je jure de donner la moitié de ce butin à l’Église.
+Le capitaine dit que demain notre flotte va prendre le fort d'assaut. On dit que les murs sont solides, les canons redoutables et que les soldats ne sont pas du genre à se rendre sans combattre.
+Si je reviens vivant, je jure de donner la moitié de ce butin à l'église.
 #TEXT	7
 ************************************************************
-Je n’aurais jamais cru pouvoir ressentir une telle peur. J’ai survécu à une tempête maudite, à la trahison, à une reine, à un roi et même à la maudite flotte britannique. Il ne reste qu’un dernier boulot et mes genoux tremblent comme si c’était la première fois. Je n’ai jamais fait de promesses à personne, mais le papier supporte tout. Moi, Sammy, capitaine du Striker, je jure solennellement : quand je reviendrai chercher mon or, je quitterai cet archipel misérable pour de bon.
+Je n'aurais jamais cru pouvoir ressentir une telle peur. J'ai réussi à survivre à une tempête maudite, à une trahison, à une reine, à un roi et même à la maudite flotte britannique. Il me reste une dernière mission, et mes genoux tremblent comme si c'était la première fois.
+Je n'ai jamais fait de promesses à personne, mais le papier peut tout supporter. Moi, Sammy, capitaine du Striker, je le jure solennellement : quand je reviendrai ici chercher mon or, je quitterai définitivement ce misérable archipel.
 #TEXT	8
 ************************************************************
-Si j’avais vendu tout ça à notre ami de Tortuga, j’aurais organisé une fête dont on aurait parlé même dans les ports espagnols. Mais non, c’est pour toi, Charlie, pour ta vieillesse, de la part de ton toi plus jeune et plus fou. 
-Ne va pas tout dilapider en rhum et en filles de port, tu entends, ivrogne ? Je te connais : dès que tu auras quelques doublons en main, tu te précipiteras vers l’alcool bon marché et dans les bras d’une quelconque catin. J’espère que tu vivras assez longtemps pour décider de renoncer à cette maudite piraterie.
+Si j'avais vendu tout cela à notre ami de Tortuga, j'aurais organisé un festin dont on parlerait même dans les ports espagnols. Mais non, c'est pour toi, Charlie, pour tes vieux jours, de la part de ton jeune moi, plus sauvage.
+Ne t'avise pas de tout gaspiller en rhum et en filles de port, tu entends, espèce d'ivrogne ? Je te connais : une fois que tu auras mis la main sur quelques doublons, tu plongeras directement dans l'alcool bon marché et l'étreinte d'une femme.
+J'espère que tu vivras assez longtemps pour décider d'arrêter cette maudite piraterie.
 #TEXT	9
 ************************************************************
-James, j’espère que tu es arrivé le premier à cette cache. À l’intérieur se trouve ce que j’ai réussi à chiper dans la cabine de ce marchand hollandais avant que le reste de la racaille n’arrive. Donne-en la moitié à Isabel, comme nous en étions convenus. Le reste, tu peux le dépenser pour toi.
+James, j'espère que tu as trouvé cette cache en premier. C'est ce que j'ai réussi à voler dans la cabine de ce marchand hollandais avant que le reste de la populace n'arrive. Donne la moitié à Isabel, comme convenu. Le reste, tu peux le dépenser pour toi.
 #TEXT	10
 ************************************************************
-Nous étions cinq, il n’en reste plus que deux. Nous seuls connaissons cet endroit.
-Celui qui n’a pas pris ce trésor doit se souvenir que cet or n’est pas fait pour festoyer et s’amuser, mais pour se venger. Toute la famille Treviño doit payer pour ce qu’elle nous a fait. C’est eux ou nous. Il n’y a pas d’autre option.
+Nous étions cinq, il n'en reste plus que deux. Nous sommes les seuls à connaître cet endroit.
+Que celui qui n'a pas pris cette cache se souvienne : cet or n'est pas fait pour la fête et les réjouissances. C'est pour se venger. Toute la famille Treviño doit répondre de ce qu'elle nous a fait.
+C'est eux ou nous. Il n'y a pas d'autre solution.
 #TEXT	11
 ************************************************************
-Enterrer de l’or dans le sol n’est pas le meilleur moyen de protéger sa fortune. Mais je ne peux pas m’en empêcher, ça me plaît. Le cacher pour que personne ne le trouve, c’est ça la vraie montée d’adrénaline.
-Si tu lis cette note, c’est que j’ai perdu. À toi de jouer.
+Enfouir de l'or dans le sol n'est pas la meilleure façon de protéger son patrimoine. Mais c'est plus fort que moi, j'aime ça. Le cacher pour que personne ne le trouve, c'est ça le vrai plaisir.
+Si vous lisez cette note, c'est que j'ai perdu. Maintenant, c'est à votre tour.
 #TEXT	12
 ************************************************************
-Peu importe à quel point j’essaie, à combien de portes je frappe, ou comment je supplie, tout est vain. Le gouverneur refuse d’écouter. Il dit qu’il n’y a pas d’argent pour une expédition. Il peut me céder deux soldats, mais uniquement si je prends tous les frais à ma charge. Mais je ne reculerai pas ! Je sais que l’émeraude légendaire, l’Esprit du Corsaire, est cachée quelque part dans la jungle de cette île. Elle existe, et le monde en a besoin. Je la trouverai, quoi qu’il m’en coûte. Ce trésor est mon premier investissement pour la future expédition.
+J'ai beau essayer, frapper à toutes les portes, plaider, rien n'y fait. Le gouverneur refuse d'écouter. Il dit qu'il n'y a pas d'argent pour une expédition. Il peut envoyer deux soldats, mais seulement si je couvre tous les frais moi-même. Mais je ne reculerai pas ! Je sais que l'émeraude légendaire, l'Esprit du Corsaire, est cachée quelque part dans la jungle de cette île. Elle existe et le monde en a besoin. Je la trouverai, quoi qu'il en coûte. Ce trésor est mon premier investissement dans cette future expédition.
 #TEXT	13
 ************************************************************
-L’Inquisition me surveille de plus en plus étroitement.
-Rester sur cet archipel devient trop dangereux. Mon amour, si tu dois prendre ce trésor et t’en aller seule, n’hésite pas une seconde. Je t’aime et je veux que tu sois en sécurité. Ne t’inquiète pas pour moi : je terminerai ce que j’ai entrepris et je reviendrai dans tes bras.
+L'Inquisition me surveille de plus en plus étroitement. Rester sur cet archipel devient trop dangereux.
+Ma chère, si tu dois prendre cette réserve et partir seule, n'hésite pas une seconde.
+Je t'aime et je veux que tu sois en sécurité. Ne t'inquiète pas pour moi, je finirai ce que j'ai entrepris et je reviendrai dans tes bras.
 #TEXT	14
 ************************************************************
-Être contrebandier est le meilleur métier du monde ! Je suis depuis peu aux Caraïbes et je nage déjà dans l’or. Et aucun gouverneur ne peut me dicter ma conduite !
-Mais on n’a jamais trop d’or. Je ne m’arrêterai pas avant d’être plus riche que le roi lui-même ! Là, elle comprendra ce qu’elle a perdu. Ce soldat avait raison : quelqu’un qui s’y connaît ici peut s’enrichir en quelques mois.
+Être contrebandier, c'est le meilleur métier du monde ! Je suis dans les Caraïbes depuis peu et je nage déjà dans l'or. Et aucun gouverneur ne peut me dire ce que je dois faire !
+Mais il n'y a pas trop d'or. Je ne m'arrêterai pas avant d'être plus riche que le roi lui-même !
+Alors elle se rendra compte de ce qu'elle a perdu. Ce soldat avait raison : quelqu'un qui a des connaissances ici peut devenir riche en quelques mois.
 #TEXT	15
 ************************************************************
-Remy, mon amour, mon père a découvert notre secret ! Je ne l’avais jamais vu aussi en colère. Il m’a même frappée et enfermée dans ma chambre.
-
-Mon chéri, j’ai peur pour toi ! Il a ordonné à mes frères de te trouver et de te tuer. Mais j’ai réussi à m’échapper un instant et j’ai laissé tous mes bijoux dans notre cachette. S’il te plaît, vends-les : j’espère que ça suffira pour que nous fuyions cette île maudite. Peu importe où, du moment que je sois avec toi pour le reste de mes jours. Ne t’en fais pas pour moi. J’ai un flacon de poison et si quelque chose t’arrive, je le boirai sans hésiter. Si nous ne pouvons pas être ensemble dans ce monde, peut-être que Dieu aura pitié de nous et nous réunira au Ciel. 
-
-À jamais tienne, Juanita.
+Rémy, mon amour, Père a découvert notre existence ! Je ne l'ai jamais vu aussi furieux. Il m'a même frappé et m'a enfermé dans ma chambre.
+Mon chéri, j'ai peur pour toi ! Il a ordonné à mes frères de te retrouver et de te tuer. Mais j'ai réussi à m'éclipser un peu et j'ai laissé tous mes bijoux dans notre cachette. Vends-les, s'il te plaît, afin qu'ils nous permettent de fuir cette île maudite. L'endroit importe peu, tant que je peux être avec toi jusqu'à la fin de mes jours.
+Ne t'inquiète pas pour moi. J'ai une fiole de poison, et s'il t'arrive quelque chose, je la prendrai sans hésiter. Si nous ne pouvons pas être ensemble dans ce monde, peut-être que Dieu aura pitié de nous et nous réunira au Paradis.
+À toi pour toujours,
+Juanita.
 #TEXT	16
 ************************************************************
-On dit que la pauvreté élève l’âme, mais seulement dans les livres. En réalité, un vrai citoyen digne de respect est un citoyen riche. Tous les autres ne sont que ses serviteurs.
-
-Encore quelques trouvailles chanceuses et j’entrerai dans leur cercle. Bientôt, j’aurai ma propre plantation, des domestiques, des réceptions fastueuses et l’attention du gouverneur. Fini la cabine étroite et moisie d’un navire marchand. Je ne dois pas oublier de m’acheter une belle rapière de gentilhomme, le symbole de mon nouveau statut.
+On dit que la pauvreté ennoblit, mais seulement dans les livres. En réalité, un véritable citoyen digne de respect est un riche. Tous les autres ne sont que ses serviteurs.
+Encore quelques trouvailles chanceuses, et je rejoindrai leur cercle. Bientôt, j'aurai ma propre plantation, mes serviteurs, des réceptions somptueuses et l'attention du gouverneur. Finie la cabine exiguë et moisie d'un navire marchand.
+Je ne dois pas oublier d'acheter une belle rapière de noble, symbole de mon nouveau statut.
 #TEXT	17
 ************************************************************
-Si je déduis la part de Gaston pour son renseignement, la solde de l’équipage et le pot-de-vin pour ce gros bonnet graisseux de la capitale, il reste encore une somme conséquente. Je ne sais pas où il trouve ses informations, mais avec encore une ou deux opérations aussi lucratives, je pourrai rembourser mes dettes. J’espère seulement que la Compagnie ne mettra pas la main sur moi avant que je ne reparte en Europe. Je dois me montrer prudent.
+Si je déduis la part de Gaston pour le tuyau, le salaire de l'équipage et le pot-de-vin pour ce gros bonnet de la capitale, il reste une somme impressionnante. Je ne sais pas d'où il tient ses informations, mais encore quelques raids rentables comme celui-ci, et je pourrai régler mes dettes. J'espère seulement que la Compagnie ne me mettra pas le grappin dessus avant mon retour en Europe. Je dois être prudent.
 #TEXT	18
 ************************************************************
-Henry, nous avons récupéré un peu plus de trésors. Tu sais quoi en faire. 
-
-Ne mets pas tout dans une seule banque. Si l’ennemi débarque en ville, nous perdrons tout notre argent et je suis trop vieux pour aborder encore une fois un bateau le couteau entre les dents. Occupe-toi de tout toi-même : après ce qui s’est passé à Bluevelde, Anderson n’est plus le même. Il risque fort de tout faire capoter et de dépenser tous nos gains dans sa vendetta insensée. Je lui ai dit cent fois qu’on ne peut pas revenir en arrière, mais il refuse de m’écouter. Je n’ai pas confiance en lui.
+Henry, nous avons trouvé un peu plus de butin. Tu sais quoi en faire.
+Mais ne mets pas tout dans une seule banque. Si l'ennemi se montre en ville, notre argent est perdu, et je suis trop vieux pour aborder un navire avec un couteau entre les dents.
+Occupe-toi de cela toi-même - après ce qui s'est passé à Bluevelde, Anderson n'a plus été lui-même. Il y a de fortes chances qu'il craque et qu'il engloutisse tous nos revenus dans sa vendetta inutile. Je lui ai dit cent fois qu'on ne peut pas changer ce qui est fait, mais il refuse d'écouter.
+Je n'ai pas confiance en lui.
 #TEXT	19
 ************************************************************
-13 Avril.
-Reçu une commande bizarre d'un Portugais aujourd'hui. Les Portugais aux Caraïbes sont aussi rares que les dents d'une poule, et celui-ci m'a demandé un tas de babioles indigènes. La récompense offerte est bonne, alors je prends le travail.
-2 Mai.
-Remis le premier lot d'amulettes. Paiement reçu comme promis. Cette affaire semble être très lucrative, alors je continue.
-28 Mai.
-Seconde livraison complétée, paiement intégral. Je n'ai aucune idée des véritables origines de Merriman, mais ses poches sont bien garnies et ses ambitions encore plus grandes. Nous devons nous rencontrer dans 2 mois à un endroit caché - le cimetière de La Havane, rien que ça. Ça paraît sinistre, mais c'est toujours mieux que de poursuivre les débiteurs à travers les fourrés de la jungle. Tous les gains futurs de cette entreprise seront cachés ici même.
+13 avril.
+J'ai reçu aujourd'hui une commande étrange d'un Portugais. Les Portugais des Caraïbes sont aussi rares que des dents de poule, et celui-ci m'a demandé un tas de babioles indigènes. La somme proposée est bonne, j'accepte donc le travail.
+2 mai.
+Remise du premier lot d'amulettes. Paiement reçu comme promis. Cette entreprise semble être assez lucrative, je vais donc continuer à la mener à bien.
+28 mai.
+Deuxième livraison terminée, paiement intégral. Je n'ai aucune idée des véritables origines de Merriman, mais ses poches sont profondes et ses ambitions encore plus grandes. Nous devons nous rencontrer dans deux mois dans un endroit caché - le cimetière de La Havane, entre autres. Cela semble sinistre, mais c'est mieux que de poursuivre des débiteurs dans les fourrés de la jungle. Tous les revenus futurs de cette entreprise seront cachés ici.
 #TEXT	20
 ************************************************************
-Ed, j'ai frappé l'or avec celle-ci ! Ce que tu vois dans cette cache n'est même pas un tiers de mon butin d'un seul voyage. Je partage cette carte au trésor avec toi et nous sommes quittes.
-Écoute attentivement - au nord du Continent Espagnol, coincé entre Cuba et la Floride, il y a une colonie incroyable construite sur les ossements d'innombrables naufrages. D'étranges navires, certains assez anciens pour avoir transporté nos grands-pères. Chacun d'eux s'est échoué et s'est fusionné comme le cauchemar d'un charpentier fou. Et Ed, des gens y VIVENT, de véritables âmes qui respirent ! L'endroit regorge d'objets de valeur, et ils les échangent simplement contre de la nourriture. Vérifie auprès des contrebandiers de La Havane si tu ne me crois pas.
-J'ai déjà fait fortune grâce à ça. Dépêche-toi avant que quelqu'un d'autre ne le flaire.
+Ed, de l'or en barre avec celle-ci ! Ce que tu vois dans cette cache n'est même pas un tiers de mon butin d'un seul voyage. En partageant cette carte au trésor avec toi, nous sommes plus forts.
+Écoute attentivement : au nord du Continent Espagnol, coincé entre Cuba et la Floride, se trouve une incroyable colonie bâtie sur les épaves d'innombrables naufrages. Des navires étranges, dont certains sont assez anciens pour avoir transporté nos grands-pères. Tous se sont échoués et se sont soudés comme dans le cauchemar d'un charpentier fou. Et Ed, des gens y vivent, de vraies âmes ! L'endroit regorge d'objets de valeur, qu'ils échangent simplement contre de la nourriture. Vérifie auprès des contrebandiers de La Havane si tu doutes de moi.
+J'ai déjà fait fortune avec ça. Dépêche-toi avant que quelqu'un d'autre ne s'en aperçoive.
 #TEXT	21
 ************************************************************
 Journal de bord du brick "Rapid".
-19 Juin.
-Raid dans les eaux de Trinidad, croisé un convoi marchand espagnol sous légère escorte. Résolu sans effusion de sang, butin modeste acquis.
-24 Juin.
-Patrouillé sur la route commerciale Willemstad-Blueveld. Eaux vides à l'exception d'un navire particulier battant pavillon inconnu repéré à l'horizon.
-18 Juillet.
-Chasse près des eaux de Willemstad, tombé sur une patrouille hollandaise. Pendant notre fuite, rencontré à nouveau ce même navire mystérieux. Nous pensions être pris entre le marteau et l'enclume, mais curieusement, les Hollandais semblaient le craindre autant que nous. Nous avons filé dans la confusion.
-3 Août.
-Je commence à soupçonner que ce navire fantôme mouille quelque part près de Curaçao. Repéré à nouveau, réussi une reconnaissance plus proche cette fois. Le Second insiste sur des marques portugaises, mais je reste sceptique - les Portugais n'ont rien à faire dans ces eaux. J'ai ordonné des balayages côtiers du Continent.
-12 Septembre.
-Un schéma émerge. Ce navire apparaît environ deux fois par an, hante le triangle entre Trinidad, Curaçao et le Continent pendant plusieurs mois, puis disparaît comme la brume matinale.
-8 Octobre.
-Plus aucune trace du vaisseau fantôme. Semble avoir abandonné complètement les eaux des Caraïbes. L'équipage est las de cette chasse infructueuse, nous avons donc modifié notre cap vers le nord, vers les Petites Antilles. Peut-être y trouverons-nous des proies plus dignes avec des bourses plus lourdes.
+19 juin.
+Raid dans les eaux de la Trinité, rencontre d'un convoi marchand espagnol sous escorte légère. Résolu sans effusion de sang, modeste butin acquis.
+24 juin. 
+Patrouille sur la route commerciale Willemstad-Blueweld. Eaux vides à l'exception d'un navire particulier aux couleurs inconnues repéré à l'horizon.
+18 juillet.
+En chassant près des eaux de Willemstad, nous sommes tombés sur une patrouille hollandaise. Au cours de notre fuite, nous rencontrons à nouveau ce même navire mystérieux. Nous pensions être coincés entre le marteau et l'enclume, mais curieusement, les Hollandais semblaient le craindre autant que nous. Nous nous sommes enfuis dans la confusion.
+3 août.
+Nous commençons à soupçonner que ce navire fantôme se trouve quelque part près de Curaçao. Nous l'avons repéré à nouveau et avons réussi à le voir de plus près cette fois-ci. Le Second insiste sur les marques portugaises, mais je reste sceptique - les Portugais n'ont rien à faire dans ces eaux. J'ai ordonné des ratissages côtiers du Continent.
+12 septembre.
+Un schéma se dessine. Ce navire apparaît environ deux fois par an, hante le triangle entre la Trinité, Curaçao et le Continent pendant plusieurs mois, puis disparaît comme une brume matinale.
+8 octobre.
+Le navire fantôme n'est plus en vue. Il semble avoir complètement abandonné les eaux des Caraïbes. L'équipage s'est lassé de cette chasse infructueuse et nous avons donc changé de cap vers le nord et les Petites Antilles. Nous y trouverons peut-être des proies plus dignes et des bourses plus lourdes.
 #TEXT	22
 ************************************************************
 Roger, lis attentivement et suis ces instructions à la lettre.
-Un fou de chasseur de trésors britannique rôde dans les Caraïbes. Si tu repères des habits rouges avec des pelles, cours comme si le diable lui-même était à tes trousses - ils ne font pas de quartier aux rivaux. Vide toutes nos caches, rassemble tout ce qui a de la valeur, puis file à Antigua où notre homme attend - j'ai pris les dispositions. Nous perdrons un peu d'or au lavage, mais le reste en sortira propre comme un sou neuf. Reste dans les territoires britanniques - ce personnage de Blackwood n'osera pas y montrer son visage. Tu pourras opérer sans regarder par-dessus ton épaule. Aucune idée de la rancune qu'ils ont contre lui, mais son navire n'accoste que dans les ports français.
+Un chasseur de trésors britannique fou fouille les Caraïbes. Si tu aperçois des tuniques rouges munies de pelles, cours comme si le diable était à tes trousses - ils n'ont aucune pitié pour les rivaux. Vide toutes nos réserves, rassemble tout ce qui a de la valeur, puis dirige-toi vers Antigua où notre homme t'attend - j'ai pris les dispositions qui s'imposent. Nous perdrons un peu d'or dans le blanchiment, mais le reste en ressortira tout à fait propre. Reste dans les territoires britanniques - ce Blackwood n'osera pas s'y montrer. Tu peux opérer sans avoir à regarder par-dessus ton épaule. Je ne sais pas ce qu'ils lui reprochent, mais son navire n'accoste que dans les ports français.
 #TEXT	23
 ************************************************************
-Jan, si tu lis ceci, sache que ma vengeance reste inassouvie, même ici aux Caraïbes. Notre proie n'est pas ici. Le souvenir de l'épée de mon père s'estompe dans mon esprit, et le visage de notre ennemi s'efface dans l'ombre.
-Nous avons traversé beaucoup d'épreuves ensemble, vieil ami, pourtant ma rage reste indomptée. Si j'avais prévu les conséquences, j'aurais cherché la paix avec plus de vigueur. Peut-être que moins d'âmes auraient franchi le seuil final. Dis à Teresa que je l'aime toujours et que j'ai tenu mes vœux, bien que je ne survivrai jamais au voyage de retour. Ce coffre contient tout ce que j'ai gagné par le sang et l'acier, bien que le goût du confort oisif se soit depuis longtemps transformé en cendres. Peut-être peux-tu encore le savourer.
-I.
+Hans, si tu lis ceci, sache que ma vengeance reste inachevée, même ici dans les Caraïbes. Notre proie n'est pas là. Le souvenir de l'épée de mon père s'estompe dans mon esprit, et le visage de notre ennemi s'efface dans l'ombre.
+Nous avons traversé bien des épreuves ensemble, mon vieil ami, mais ma rage reste indomptée. Si j'avais prévu les conséquences, j'aurais cherché la paix avec plus de vigueur. Peut-être que moins d'âmes auraient franchi le seuil final. Dis à Teresa que je l'aime toujours et que j'ai tenu mes promesses, même si je ne survivrai jamais au voyage de retour. Ce coffre contient tout ce que j'ai gagné par le sang et l'acier, même si le goût du confort inutile s'est depuis longtemps transformé en cendres. Peut-être pourras-tu encore le savourer.
+H.
 #TEXT	24
 ************************************************************
-René, les Caraïbes deviennent chaque jour plus perfides. Bientôt notre espèce ne trouvera plus de havre ici. Toi et moi avons été parmi les premiers à entendre parler du nouvel escadron de Cromwell, mené par leur joyau - le Victory. Ils visent à dompter ces îles sauvages et à remettre les Hollandais à leur place, mais mon instinct me dit que cela finira mal pour tous les concernés.
-Il y a plus - les Français ne seront pas en reste face à leurs voisins de la Manche. Un vrai monstre est sorti des chantiers navals de Brest, baptisé du nom d'un de leurs rois. Je ne peux pas garantir tout ce que j'ai entendu, mais on parle d'une forteresse flottante comme on n'en a jamais vu, et elle navigue bientôt vers ces eaux.
-Il est temps de jeter nos cartes, je pense. Ta part de notre dernière entreprise se trouve dans ce coffre. Je me dirige vers mon pays natal, et te suggère fortement de faire de même.
+René, les Caraïbes deviennent de plus en plus dangereuses. Bientôt, notre genre ne trouvera plus de port ici. Toi et moi avons été parmi les premiers à entendre parler de la nouvelle escadre de Cromwell, dirigée par le joyau de la couronne, le Victory. Leur objectif est de dompter ces îles sauvages et de remettre les Hollandais à leur place, mais mon instinct me dit que cela se terminera mal pour toutes les personnes impliquées.
+Mais ce n'est pas tout : les Français ne seront pas en reste face à leurs voisins de la Manche. Un véritable monstre est sorti des chantiers navals de Brest, baptisé du nom d'un de leurs rois. Je ne peux pas certifier tout ce que j'ai entendu, mais on parle d'une forteresse flottante comme on n'en a jamais vu auparavant, et elle navigue bientôt dans ces eaux.
+Il est temps d'abattre nos cartes, je pense. Ta part de notre dernière aventure se trouve dans ce coffre. Je vais rentrer chez moi, et je te conseille vivement d'en faire autant.
 Martin.
 #TEXT	25
 ************************************************************
-Reid, j'ai déterré toute l'histoire sur ce personnage d'Alonso. Ce bâtard au sang-froid a servi sous le Capitaine Vane à bord du "Xenon" et avant cela a passé des années comme bourreau professionnel. Cela explique ses compétences mortelles et ce regard glaçant qui fige ta moelle. Le bruit courait qu'il avait raccroché son coutelas pour de bon, mais on l'a aperçu occasionnellement dans les ports des Caraïbes, suivant un jeune capitaine impétueux. Reste vigilant et surveille tes arrières.
+Reid, j'ai trouvé toute l'histoire de ce personnage d'Alonso. Ce bâtard au sang froid a servi sous les ordres du capitaine Vane à bord du "Xenon" et a auparavant passé des années en tant que bourreau professionnel. C'est ce qui explique ses compétences meurtrières et son regard glacial qui vous fige jusqu'à la moelle des os. On dit qu'il a raccroché son coutelas pour de bon, mais on l'aperçoit parfois dans les ports des Caraïbes, à la suite d'un jeune capitaine en goguette. Reste vigilant et surveille tes arrières.
 #TEXT	26
 ************************************************************
-Lucas, Artois et Mode, ce coffre contient votre avance pour la dernière commission de M. Rodenburg. Un nouveau joueur de la vieille Europe a échoué sur nos rivages, répondant au nom de Gascon. Malgré son arrivée récente, il a déjà soulevé une belle tempête et piétiné les intérêts de plusieurs messieurs influents.
-Vos ordres sont de recueillir chaque bribe d'information à son sujet et de faire un rapport mensuel, à tour de rôle. Même point de rencontre qu'avant.
-Ci-joint trois copies détaillant son apparence et le nom de son navire. On le repère le plus souvent autour des Petites Antilles.
+Lucas, Artois et Mode, ce coffre contient votre avance pour la dernière commission de M. Rodenburg. Un nouveau joueur de la vieille Europe s'est échoué sur nos côtes, sous le nom de Gascon. Bien que fraîchement débarqué, il a déjà déclenché une véritable tempête et piétiné les intérêts de plusieurs messieurs influents.
+Vous avez pour mission de recueillir toutes les informations à son sujet et de faire un rapport mensuel, à tour de rôle. Même point de rencontre que précédemment.
+Vous trouverez ci-joint trois copies détaillant son apparence et le nom de son navire. On l'aperçoit le plus souvent aux alentours des Petites Antilles.
 #TEXT	27
 ************************************************************
-Karl, c'est de la pure folie. Mon raid sur la résidence de Muscovite à Basse-Terre a été contrecarré deux fois maintenant, et les deux fois parce qu'un ivrogne a décidé de tenter sa chance au pire moment possible. Mais ce dernier fiasco défie l'entendement - pendant la mise en place de l'embuscade, un indigène maladroit a fait irruption dans la maison. J'ai à peine réussi à sauver ma peau, l'imbécile a fait un tel vacarme que les gardes ont envahi les lieux presque instantanément. Ces problèmes sont maintenant les tiens à résoudre. Ton avance et la compensation pour le travail raté sont dans le coffre.
+Karl, c'est de la pure folie. Cela fait deux fois que mon raid sur la résidence de Basse-Terre du Moscovite est contrecarré, et les deux fois parce qu'un ivrogne a décidé de tenter sa chance au plus mauvais moment. Mais ce dernier fiasco défie l'entendement : alors que je préparais l'embuscade, un indigène maladroit a fait irruption dans la maison. J'en ai réchappé de justesse, l'imbécile ayant fait un tel vacarme que les gardes ont envahi les lieux presque instantanément. Ces problèmes, c'est à toi de les résoudre maintenant. L'avance et le dédommagement pour le travail raté sont dans le coffre.
 #TEXT	28
 ************************************************************
-Cher journal, j'ai fait un pas de plus vers le véritable pouvoir. Dix mille ! Dix mille doublons exigés par quelque divinité oubliée de la jungle. Pour quelqu'un qui se nomme "Immortel", il est remarquablement pingre - après d'innombrables siècles, on pourrait penser qu'il aurait dépassé le besoin de monnaie mortelle.
-Néanmoins, notre marché tient - dix mille pièces, et le destin du monde devient mon jouet ! Un prix dérisoire, vraiment.
-La seule contrariété est de rassembler ces doublons auprès des changeurs locaux, faisant sans cesse la navette entre ma cache et la ville.
+Cher journal, j'ai fait un pas de plus vers le vrai pouvoir. Dix mille ! Dix mille doublons exigés par une divinité oubliée de la jungle. Pour quelqu'un qui se dit "Immortel", il est remarquablement pingre - après d'innombrables siècles, on pourrait penser qu'il a dépassé le besoin de monnaie mortelle.
+Pourtant, notre marché tient toujours : dix mille pièces, et le destin du monde devient mon jouet ! C'est un prix dérisoire, vraiment.
+La seule contrariété est de récupérer ces doublons auprès des prêteurs locaux, en faisant sans cesse la navette entre ma cachette et la ville.
 #TEXT	29
 ************************************************************
-Vittorio, je viens de terminer le contrat le plus étrange de ma vie. À Panama, j'ai rencontré un indigène particulier vêtu de beaux habits européens qui m'a payé une poignée de doublons purs pour jouer le rôle de son page personnel. Il m'a fait réciter de la poésie, verser du vin et m'adresser à lui comme à un aristocrate continental. Il bavardait sans cesse de temples perdus et de dieux hérétiques, bien qu'il semblât assez inoffensif par ailleurs.
-Le paiement couvre mes dettes avec suffisamment pour louer un passage vers La Havane, comme nous l'avions prévu.
+Vittorio, je viens de conclure le contrat le plus étrange de ma vie. À Panama, j'ai rencontré un autochtone singulier, vêtu d'une tenue européenne, qui m'a payé une poignée de doublons pour que je lui serve de page personnel. Il m'a fait réciter des poèmes, verser du vin et m'adresser à lui comme à un aristocrate continental. Il bavardait sans cesse sur les temples perdus et les dieux hérétiques, même s'il semblait assez inoffensif par ailleurs.
+Le paiement couvre mes dettes et il me reste assez d'argent pour payer un voyage vers La Havane, comme nous l'avions prévu.
 #TEXT	30
 ************************************************************
-À celui qui trouve ceci - remets à Marcus et ne lis pas plus loin. Si Marcus ne te dit rien - remets ça en place et va te faire foutre.
-Marcus, Gaston joue un dangereux mascarade. C'est un tueur à gages avec des affaires louches à Bridgetown. Lors du dernier raid, Jimmy et moi avons accidentellement croisé son chemin - maintenant Jimmy nourrit les requins. Ta part est ici avec un petit extra. Je me dirige vers le territoire espagnol où son emprise ne peut me suivre.
+À quiconque trouvera ceci - livrez-le à Marcus et ne lisez pas plus loin. Si Marcus ne vous dit rien, reposez ça et allez vous faire foutre.
+Marcus, Gaston joue une dangereuse mascarade. C'est un tueur à gages avec des affaires louches à Bridgetown. Lors du dernier raid, Jimmy et moi avons accidentellement croisé son chemin - maintenant Jimmy nourrit les requins. Votre part est ici avec un petit extra. Je me dirige vers le territoire espagnol où il ne peut pas suivre.
 #TEXT	31
 ************************************************************
-M. Lynch, j'ai découvert ce que vous cherchiez. Votre personne d'intérêt réside à Antigua et, avec son bras droit, est coupable de haute trahison envers notre patrie. L'assaut perfide contre la frégate de Sa Majesté "Sussex" était leur œuvre, et non celle des Hollandais comme rapporté. Je transmettrai toutes les preuves à notre contact mutuel dès que le reste de mon paiement arrivera.
+M. Lynch, j'ai découvert ce que vous cherchiez. La personne qui vous intéresse réside à Antigua et, avec son bras droit, est coupable de crimes graves contre notre patrie. L'assaut perfide contre la frégate de Sa Majesté "Sussex" est de leur fait, et non de celui des Hollandais comme on l'a dit. Je transmettrai toutes les preuves à notre contact mutuel dès que j'aurai reçu le reste de mon paiement.
 #TEXT	32
 ************************************************************
-Anna, ta persévérance a porté ses fruits - cet alchimiste fugitif, Gino, se cache bien quelque part dans ces îles. Sa piste se refroidit dans les Petites Antilles, mais je suis plus proche que jamais. Cette maladie me ronge chaque jour davantage, mais il détient le remède, et je ne reculerai devant rien jusqu'à ce que je le trouve.
-Accepte je te prie le contenu de ce coffre comme marque de gratitude et offrande personnelle. Je sais que le sort de Becky attise toujours ta colère, mais accorde-moi au moins la chance de faire amende honorable.
+Anna, ta persévérance a payé - cet alchimiste fugitif, Gino, se cache bel et bien quelque part dans ces îles. Sa piste se perd dans les Petites Antilles, mais je suis plus proche que jamais. Cette maladie me ronge un peu plus chaque jour, mais c'est lui qui détient le remède, et je ne reculerai devant rien jusqu'à ce que je le trouve.
+Accepte le contenu de ce coffre en guise de gratitude et de cadeau personnel. Je sais que le sort de Becky attise encore ta colère, mais accorde-moi au moins la chance de me racheter.
 Jack.
-
 #QUEST PortRoyal_town_Letter
 Les Secrets de Port Royal
 
 #TEXT 1
 ************************************************************
-Ma chère, si tu lis ceci, cela signifie que je ne suis plus là. La maladie a fait son œuvre, et maintenant je ne suis plus qu'un souvenir du passé. Cela ne changera probablement rien dans ta vie. Tu continueras ton chemin, comme toujours : facilement, avec assurance, sans regarder en arrière. Mais avant que tu ne retournes à ta goélette et ne disparaisses à nouveau au-delà de l'horizon, j'aimerais que tu exauces ma requête. Je n'avais personne à qui léguer tout ce que je possédais, alors cela reviendra à celle qui a conquis mon cœur au premier regard, au premier mot, au premier sourire. Je te demande de parcourir les lieux où nos chemins se sont croisés autrefois. Souviens-toi des moments qui, sans aucun doute, signifiaient plus pour moi que pour toi. Et à la fin de ce parcours, tu recevras tout ce que j'ai pu acquérir ces dernières années. Je veux que tu ressentes une dernière fois toute la force de mes sentiments avant de m'oublier à jamais.
-P.S. Une bougie indiquera le chemin vers le désiré. Même si elle n'est pas allumée.
+Ma chère, si tu lis ceci, c'est que je ne suis plus là. La maladie a fait des ravages et je ne suis plus qu'un souvenir du passé. 
+Il est peu probable que cela change quoi que ce soit à ta vie. Tu continueras ton chemin, comme toujours : avec aisance, avec confiance, sans regarder en arrière. 
+Mais avant de retourner à ta goélette et de disparaître à nouveau au-delà de l'horizon, j'aimerais que tu accomplisses ma demande. 
+Je n'avais personne à qui laisser tout ce que je possédais, alors ce sera à celle qui a conquis mon coeur au premier regard, au premier mot, au premier sourire. Je te demande de parcourir les lieux où nos chemins se sont croisés. De te remémorer les moments qui ont sans doute plus compté pour moi que pour toi. Et à la fin de ce voyage, tu recevras tout ce que j'ai réussi à acquérir au cours de ces dernières années. Je veux que tu ressentes une dernière fois toute la force de mes sentiments avant de m'oublier à jamais.
+P.S. Une bougie montre le chemin vers le désiré. Même si elle n'est pas allumée.
 
 #TEXT 2
 ************************************************************
-Te souviens-tu de cette soirée où la pluie battait les rues et où tu riais, la tête renversée, laissant les gouttes caresser ton visage ? Je t’ai dit qu’un jour je saurais conquérir ton cœur, mais tu as seulement esquissé un sourire en coin.
-Puis, notre conversation a été interrompue par deux marins d’un navire corsaire, et j’ai dû les remettre à leur place. Je me souviendrai toujours de la façon dont tu m’as regardé ce soir-là.
-Retourne à cet endroit, souviens-toi de cet instant. Remémore-toi tout ce qui s’est passé cette nuit-là.
-P.S. Le vin, comme les hommes, sait garder des secrets.
+Te souviens-tu de ce soir où il pleuvait des cordes dans les rues et où tu riais en penchant la tête en arrière et en laissant les gouttes de pluie effleurer ton visage ? Je t'ai dit qu'un jour je gagnerais ton coeur, mais tu n'as répondu que par un sourire en coin.
+Puis notre conversation a été interrompue par deux marins d'un navire corsaire, et j'ai dû les remettre à leur place. Je me souviendrai toujours de la façon dont tu m'as regardé ce soir-là.
+Retourne à cet endroit, rappelle-toi ce moment. Souviens-toi de tout ce qui s'est passé ce soir-là.
+P.S. Le vin, comme les gens, peut garder des secrets.
 
 #TEXT 3
 ************************************************************
-Tu as toujours été d’une honnêteté brutale, peut-être même trop. Ta franchise m’a blessé plus d’une fois, mais même les plus belles roses doivent avoir des épines, n’est-ce pas ?
-La prochaine note repose dans un endroit spécial – celui où nous avions convenu de nous retrouver, mais le lendemain, tu n’es jamais venue. Tu es repartie en mer, me laissant seul avec mes nouveaux vers et la déclaration que j’avais préparée.
-Plus tard, tu m’as expliqué que tu avais dû lever l’ancre en urgence à cause d’une superstition de marin de plus, que je n’ai jamais réussi à comprendre.
-P.S. Le meilleur endroit pour une cachette est là où il y a toujours du bruit et du monde, où personne ne soupçonnerait qu’un secret puisse être dissimulé tout près.
+Tu as toujours été brutalement honnête, peut-être même trop. Ta franchise m'a blessé plus d'une fois, mais même les plus belles roses ont des épines, n'est-ce pas ?
+La note suivante se trouve dans un endroit spécial - l'endroit où nous avions convenu de nous rencontrer, mais le lendemain, tu n'es jamais venu. Tu as pris le large, me laissant seul avec mes nouveaux versets et la confession que j'avais préparée.
+Plus tard, tu m'as expliqué que tu avais dû lever l'ancre précipitamment à cause d'une autre superstition de marin, que je n'ai jamais réussi à comprendre.
+P.S. Le meilleur endroit pour une cachette est celui où il y a toujours du bruit et de la foule, où personne ne pense jamais que quelque chose d'inconnu pourrait être caché à proximité.
 
 #TEXT 4
 ************************************************************
-Tu riais toujours quand je disais que je deviendrais gouverneur de Cuba pour toi. Il y avait une part de vérité dans ces mots – j’étais prêt à tout pour toi. Mais l’amour ne supporte pas la contrainte, et peu importe combien j’ai essayé, combien j’ai couru vers toi, la distance entre nous est restée inchangée. Maintenant, cela n’a plus d’importance. Maintenant, tout cela appartient au passé.
-Tu es à un pas de récupérer ce que je t’ai laissé. Chaque note contient un indice. Assemble-les, et tu sauras où chercher.
-Pour y parvenir, tu auras besoin d’une clé. Je l’ai laissée à l’endroit où nous avons un jour regardé le soleil se coucher, parlant de tout et de rien, sous le grondement des meules et les grincements d’un vieux moulin.
-C’était une précaution nécessaire pour que personne d’autre que toi ne puisse atteindre cet endroit. Tu as toujours été intelligente et ingénieuse – peut-être même trop.
-P.S. Là où les vagues parlent à la rive, tu trouveras une porte derrière laquelle se cache le secret qui protège mon cadeau.
-
+Tu as toujours ri quand j'ai dit que je deviendrais gouverneur de Cuba pour toi. Il y avait du vrai dans ces mots - j'étais prêt à faire n'importe quoi pour toi. Mais l'amour ne tolère pas la contrainte, et j'ai eu beau essayer, j'ai eu beau courir vers toi, la distance qui nous séparait est restée inchangée. Maintenant, cela n'a plus d'importance. Maintenant, tout cela n'est que du passé.
+Tu n'es plus qu'à un pas de réclamer ce que j'ai laissé pour toi. Chaque note contient un indice. Assemble-les et tu sauras où chercher.
+Pour réussir, tu auras besoin d'une clé. Je l'ai laissée à l'endroit où nous avons regardé le coucher du soleil, en parlant de tout et de rien, au milieu du bourdonnement des meules et du grincement d'un vieux moulin à vent.
+C'était une précaution nécessaire pour que personne d'autre que toi ne puisse accéder à cet endroit. Tu as toujours été intelligente et pleine de ressources - peut-être même trop.
+P.S. Là où les vagues parlent au rivage, tu trouveras une porte derrière laquelle se trouve le secret qui protège mon cadeau.
 
 #TEXT 5
 ************************************************************
-Te voilà enfin.
-Je ne sais pas pourquoi tu as choisi de suivre ce chemin. Peut-être juste pour t’amuser. Peut-être par pitié. Mais j’aimerais croire que j’ai compté pour toi un peu plus que tes autres admirateurs.
-L’Arc-en-ciel t’emportait au-delà de l’horizon, et j’ai regardé ses voiles se fondre dans la lumière dorée du crépuscule, n’espérant qu’une seule chose – te revoir un jour.
-Avec un amour dont tu n’as jamais eu besoin, tien jusqu’à mon dernier souffle,
+Alors, te voilà.
+Je ne sais pas pourquoi tu as choisi de suivre cette voie. Peut-être juste pour le plaisir. Peut-être par pitié. Mais je veux croire que je représentais au moins un peu plus pour toi que tes autres admirateurs.
+L'Arc-en-ciel t'a emporté au-delà de l'horizon, et j'ai regardé les voiles s'effacer dans la lumière dorée du soir, n'espérant qu'une chose : te revoir.
+Avec un amour dont tu n'as jamais eu besoin, le tien jusqu'à mon dernier souffle,
 Francis.
 
 #QUEST Villemstad_town_Letter
@@ -1269,64 +1280,124 @@ Les Secrets de Willemstad
 
 #TEXT 1
 ************************************************************
-Tu as réussi à trouver ce message, ce qui signifie que Monsieur Attano t’a bien formé. Mais tout le monde n’est pas capable de devenir l’un des nôtres. Tu dois prouver que tu possèdes toutes les compétences nécessaires pour mener à bien même les missions les plus difficiles.Nous t’observons de près. Dès que tu auras accompli cette tâche, nous en laisserons une nouvelle pour toi. Si tu parviens à relever toutes les épreuves, tu deviendras l’un des nôtres.La prochaine mission consiste à trouver l’endroit idéal pour surveiller le bureau de la Compagnie néerlandaise des Indes occidentales. Seul un esprit affûté et un regard perçant peuvent choisir le bon point d’observation. Sois attentif aux rues, écoute le brouhaha de la ville et utilise l’ombre pour rester inaperçu.
-Souviens-toi : la garde est toujours sur le qui-vive. Ils remarqueront immédiatement quelqu’un qui reste planté là à fixer l’entrée. Tu dois avoir l’air d’une personne occupée par ses propres affaires, même futiles.
-P.S. Le chemin vers ce qui est caché n’est pas toujours évident. Seul celui qui comprend qu’une bougie éteinte peut révéler un secret pourra aller jusqu’au bout.
+Vous avez réussi à trouver ce message, ce qui signifie que M. Attano vous a bien enseigné. Mais tout le monde n'est pas capable de devenir l'un des nôtres. Vous devez prouver que vous avez toutes les compétences nécessaires pour mener à bien les missions les plus difficiles.
+Nous vous surveillons de près. Dès que vous aurez terminé cette tâche, nous vous en confierons une autre. Si vous réussissez chaque épreuve, vous deviendrez l'un des nôtres.
+
+La prochaine tâche consiste à trouver le meilleur endroit pour observer le bureau de la Compagnie néerlandaise des Indes occidentales. Seuls un esprit vif et des yeux aiguisés peuvent choisir le bon point de vue. Observez les rues, prêtez attention au bourdonnement de la ville et profitez des ombres pour passer inaperçu.
+
+N'oubliez pas que les gardes sont toujours sur le qui-vive. Ils remarqueront immédiatement toute personne qui reste là à fixer l'entrée. Vous devez avoir l'air d'une personne occupée à ses propres affaires, même si elles sont oisives.
+
+P.S. Le chemin vers ce qui est caché n'est pas toujours évident. Seule une personne qui comprend que même une bougie éteinte peut révéler un secret peut aller jusqu'au bout.
+ 
 
 #TEXT 2
 ************************************************************
-Tu continues ton chemin, prouvant que tu as non seulement de l'intellect mais aussi de la ruse. Cependant, quiconque agit seul est voué à l'échec. Il est temps de trouver un endroit où tu pourras rencontrer ton contact.  
-Cela doit être un lieu qui ne soulève pas de questions mais qui permet de converser sans oreilles indiscrètes. Tu dois le choisir avec beaucoup de soin, afin que personne ne puisse se cacher à proximité et écouter. Dans ces affaires, il est plus important de repérer le espion qui rôde en premier que de se perdre soi-même.  
-Et n'oublie pas : le bruit extérieur, que ce soient les cris des mouettes, le bruit des vagues s'écrasant sur le quai ou le cliquetis de la chaîne de l'ancre, aidera à masquer tes paroles des curieux.  
-P.S. Une lanterne peut révéler même le cachette la plus fiable. Mais dans une autre situation, elle montrera le chemin vers la bonne porte.
+Vous continuez votre route, prouvant que vous avez non seulement de l'intelligence mais aussi de l'astuce. Cependant, quiconque agit seul est voué à l'échec. Il est temps de trouver un endroit où vous pourrez rencontrer votre contact.  
+Il doit s'agir d'un endroit qui ne soulève aucune question, mais qui permet une conversation à l'abri des oreilles indiscrètes. Vous devez le choisir avec soin, afin que personne ne puisse se cacher à proximité et vous écouter. En la matière, il est plus important de repérer d'abord l'espion qui se cache que de se perdre soi-même.  
+
+Et rappelez-vous : les bruits extérieurs - qu'il s'agisse du cri des mouettes, du bruit des vagues qui s'écrasent sur la jetée ou du cliquetis d'une chaîne d'ancre - vous aideront à masquer vos paroles aux oreilles curieuses.  
+
+P.S. Une lanterne peut révéler même la cachette la plus fiable. Mais dans une autre situation, elle vous indiquera la bonne porte.
 
 #TEXT 3
 ************************************************************
-Tu lis ce message, tu as donc accompli la tâche précédente. Un bon observateur sait non seulement surveiller, mais aussi trouver des endroits où cacher ses outils pour les récupérer rapidement en cas de besoin.
-À présent, tu dois trouver un lieu désert et sûr – là où tu pourras installer une cachette. Choisis un recoin discret qui ne suscite ni attention ni curiosité chez les passants.
-N’oublie pas : les gardes repèrent ceux qui errent à la recherche de quelque chose. Avance d’un pas assuré, comme si tu savais exactement où tu allais. Que les habitants te prennent pour un simple marin venu régler ses affaires.
-P.S. Une maison en brique est un symbole de solidité et de fiabilité. Elle peut protéger aussi bien les trésors que les secrets des visiteurs indésirables.
+Si vous lisez ce message, c'est que vous avez accompli la tâche précédente. Un bon observateur sait non seulement observer, mais aussi trouver des endroits où cacher ses outils pour y accéder rapidement en cas de besoin.
+Vous devez maintenant trouver un endroit désert et sûr, où vous pourrez installer une cache. Choisissez un coin caché qui n'attire pas l'attention ou la curiosité des passants.
+
+N'oubliez pas : les gardes remarquent ceux qui se promènent en cherchant. Avancez avec assurance, comme si vous saviez où vous allez. Laissez les habitants penser que vous n'êtes qu'un marin parmi d'autres, venu pour affaires.
+
+P.S. Une maison en briques symbolise la solidité et la fiabilité. Elle peut protéger les trésors et les secrets des visiteurs indésirables.
 
 #TEXT 4
 ************************************************************
-Tu as déjà beaucoup appris, mais la règle principale est d'avoir toujours un plan de secours. Tout le monde qui veut réussir dans notre métier doit avoir un refuge secret fiable. Une maison où l'on peut se cacher, attendre ou attendre de nouveaux ordres.  
-Ta prochaine étape est de trouver cet endroit. Il est caché des yeux curieux, mais les ruelles autour sont assez animées et bruyantes pour masquer tes mouvements, surtout le soir, lorsque la taverne est pleine de gens et qu'il est difficile de s'engager dans la ruelle sans tomber sur une bagarre.  
-Les citadins ivres et les menuisiers fatigués te regarderont en rentrant chez eux, ne suspectant rien, car sa véritable nature sera connue seulement de toi. Tu ne pourras y accéder qu'avec l'anneau - un symbole de ta loyauté envers l'Ordre. Il servira aussi de clé. Cherche l'anneau en face de la résidence, dans un endroit isolé.  
-N'oublie pas : ton refuge doit contenir tout le nécessaire : argent, provisions, médicaments. Et surtout - il doit rester un secret connu uniquement de toi.  
-P.S. En regardant la maison de trois étages, la plupart voient seulement ce qui dépasse du sol. Mais le plus secret est généralement caché en dessous.  
-P.P.S. Si tu es vraiment digne de faire partie de notre fraternité, tu pourras voir des connexions où d'autres ne voient que des absurdités.
+Vous avez déjà beaucoup appris, mais la règle principale est de toujours avoir un plan de secours. Tous ceux qui veulent réussir dans notre métier doivent avoir une planque secrète fiable. Une maison où l'on peut se réfugier, patienter ou attendre de nouveaux ordres.  
+La prochaine étape consiste à trouver cet endroit. Il est caché des regards indiscrets, mais les ruelles qui l'entourent sont suffisamment animées et bruyantes pour masquer vos mouvements, surtout le soir, lorsque la taverne est pleine de monde et qu'il est difficile de faire un pas dans la ruelle sans être confronté à une bagarre.  
+Les citadins ivres et les charpentiers fatigués vous jetteront un coup d'oeil en rentrant chez eux, sans rien soupçonner, car sa nature secrète n'est connue que de vous. Vous ne pourrez l'atteindre qu'avec l'anneau, symbole de votre loyauté envers l'Ordre. Il vous servira également de clé. Cherchez l'anneau en face de la résidence, dans un endroit isolé.  
+Rappelez-vous : votre cachette doit contenir tout ce dont vous avez besoin : argent, provisions, médicaments. Et surtout, elle doit rester un secret connu de vous seul.
+  
+P.S. En regardant la maison à trois étages, la plupart des gens ne voient que ce qui s'élève au-dessus du sol. Mais le plus secret est généralement caché en dessous.
+  
+P.P.S. Si vous méritez vraiment de faire partie de notre fraternité, vous serez capable de voir des liens là où d'autres ne voient que des inepties.
 
 #TEXT 5
 ************************************************************
-Tu as réussi les épreuves que seuls quelques élus peuvent surmonter. Tu as prouvé que tu sais observer, te dissimuler, tenir des conversations secrètes et prévoir chacun de tes pas. À présent, tu es des nôtres. Le contenu de ce coffre est ta réserve personnelle pour les jours difficiles, et cette pièce est ta cachette sûre. Souviens-toi de cet instant. Dès aujourd’hui, tu n’es plus un simple habitant anonyme – tu fais partie de la fraternité.
+Vous avez passé les épreuves que seuls quelques élus peuvent surmonter. Vous avez prouvé que vous saviez observer, vous cacher, tenir des conversations secrètes et planifier chacun de vos pas. Maintenant, vous êtes l'un des nôtres. Le contenu de ce coffre est votre réserve personnelle pour les jours de pluie, et cette pièce est votre cachette sécurisée. Souvenez-vous de ce moment. À partir de ce jour, vous n'êtes plus un visage parmi d'autres, vous faites partie de la confrérie.
 
 #QUEST LadyBeth_Book
 Journal de Blackwood
-
 #TEXT 1
 ***************
-Un officier exemplaire, Blackwood. Un tel ordre en tout - de la documentation aux formations de combat. Vous irez loin", a dit le gouverneur, me félicitant pour l'opération réussie contre les contrebandiers. Elizabeth était à la réception - j'ai vu l'admiration dans ses yeux. Tout semble se mettre en place exactement comme je l'avais rêvé en gravissant l'échelle navale.
+Un officier exemplaire, Blackwood. Un tel ordre dans tout - de la documentation aux formations de combat. Vous irez loin, a déclaré le gouverneur en me félicitant pour le succès de l'opération contre les contrebandiers. Elizabeth était à la réception et j'ai lu de l'admiration dans ses yeux. Tout semble se mettre en place exactement comme je l'avais rêvé en gravissant les échelons de la marine.
 ***************
-Réveillé encore du même cauchemar. Les quais sales de Bristol, mon père perpétuellement ivre, un estomac vide... Il semblait que le brevet d'officier et un service impeccable auraient dû effacer tout cela. Mais non. Dès que j'ai entendu le refus du vieux planteur - et voilà que tout revient. "Vous comprenez, Lieutenant... Les moyens..." Comme si j'étais à nouveau ce garçon affamé des quais.
+Je me suis réveillé avec le même cauchemar. Les docks sales de Bristol, mon père perpétuellement ivre, un estomac vide... Il semblait qu'une nomination d'officier et un service impeccable auraient dû effacer tout cela. Mais non. Dès que j'ai entendu le refus du vieux planteur - et le voici à nouveau. "Vous comprenez, Lieutenant... Les moyens..." Comme si j'étais à nouveau ce garçon affamé des docks.
 ***************
-La décision est prise. "Beth" est un beau navire, et l'équipage m'est fidèle. Étrange - ils sont prêts à quitter le service, sachant que je vais chercher des trésors. "Vous ne nous avez jamais déçus, monsieur", a dit Harris. Et je ne les décevrai pas.
+La décision a été prise. Le "Beth" est un beau navire, et l'équipage m'est fidèle. C'est étrange - ils sont prêts à abandonner leur service, sachant que je vais partir à la recherche de trésors. "Vous ne nous avez jamais laissé tomber, monsieur", a dit Harris. Et je ne les laisserai pas tomber.
 ***************
-Succès ! Pas seulement de la chance, mais une confirmation de la méthode. Cartes, calculs, interrogation des locaux - tout fonctionne comme une horloge. L'équipage est de bonne humeur, bien que je voie que certains ne sont pas habitués à une telle minutie dans l'organisation des recherches. Je commence à comprendre - ce n'est pas suffisant.
+Un succès ! Pas seulement de la chance, mais la confirmation de la méthode. Cartes, calculs, questions aux habitants, tout fonctionne comme sur des roulettes. L'équipage est de bonne humeur, même si je vois que certains ne sont pas habitués à une telle rigueur dans l'organisation des recherches. Je commence à comprendre : ce n'est pas suffisant.
 ***************
-Deuxième année sur le "Beth". Assez d'or pour acheter un titre. Les marins se sont achetés des pourpoints à la mode, régalent tout le monde dans les tavernes, se vantent avec des bibelots coûteux. Je suis heureux pour eux - qui mieux que moi sait ce que c'est que de travailler pour des misérables sous.
-Quant à moi... je vois toujours ces rêves. Elizabeth écrit qu'elle attend. Et son père m'appelle toujours "ce marin". J'ai besoin de quelque chose de plus. Quelque chose de réel. Pour me distraire, j'ai même écrit un petit règlement sur la chasse aux trésors et l'ai envoyé à la Barbade. Que dire - les militaires adorent rédiger des règlements. Et je suis heureux de le faire.
+Deuxième année sur le "Beth". Assez d'or pour acheter un titre. Les marins se sont achetés des pourpoints à la mode, ils invitent tout le monde dans les tavernes et se vantent d'avoir des bibelots coûteux. Je suis heureux pour eux - qui sauraient mieux que moi ce que c'est que de travailler pour de misérables sous.
+Quant à moi... Je vois toujours ces rêves. Elizabeth m'écrit qu'elle attend. Et son père m'appelle toujours "ce marin". J'ai besoin de quelque chose de plus. Quelque chose de réel. Pour me distraire, j'ai même rédigé une petite charte sur la chasse au trésor et je l'ai envoyée à la Barbade. Que dire de plus ? Les militaires adorent rédiger des règlements. Et je suis heureux de le faire.
 ***************
-Aujourd'hui tout a changé. I. semble lire dans mes pensées. "Vous cherchez au mauvais endroit, Capitaine. Ces trouvailles pitoyables ne sont que des miettes et un gaspillage de vos talents. Les vrais trésors n'enrichissent pas seulement - ils permettent de changer le destin." Je pensais être sur la bonne voie. Comme je me trompais.
+Aujourd'hui, tout a changé. I. semble lire dans mes pensées. "Vous cherchez au mauvais endroit, capitaine. Ces pitoyables trouvailles ne sont que des miettes et un gaspillage de vos talents. Les vrais trésors ne font pas qu'enrichir, ils permettent de changer le destin." Je pensais être sur la bonne voie. Comme je me trompais.
 ***************
-L'arquebuse offerte ne laisse aucun doute ! Les trésors de Cortès existent et sont enterrés quelque part aux Caïmans ! Je ne me reposerai pas tant que je n'aurai pas fouillé chaque parcelle de terre là-bas ! Le lieutenant Harris dit que je deviens différent. I. dit que je suis sur la bonne voie.
+L'arquebuse douée ne laisse planer aucun doute ! Les trésors de Cortez existent et sont enterrés quelque part sur les Caïmans ! Je ne me reposerai pas tant que je n'aurai pas déterré chaque parcelle de terre là-bas ! Le lieutenant Harris dit que je deviens différent. I. dit que je suis sur la bonne voie.
 ***************
-J'ai fouillé toute l'île. J'ai trouvé beaucoup d'objets de valeur, mais pas ce que je cherche. C'est dommage ce qui est arrivé avec Harris et les autres, mais je ne peux pas me permettre la discorde dans l'équipage après tout ce que j'ai fait pour eux. Une scrupulosité excessive est bonne dans la marine, mais ici j'ai besoin de gens prêts à se salir les mains. Je vais devoir engager des Français pour l'équipage, ce qui est personnellement assez humiliant pour moi. Cependant, quelques hommes dignes peuvent être trouvés parmi cette racaille du port. Je dois changer mon approche.
+J'ai creusé toute l'île. J'ai trouvé beaucoup d'objets de valeur, mais pas ce que je cherchais. C'est dommage ce qui est arrivé à Harris et aux autres, mais je ne peux pas me permettre de semer la discorde au sein de l'équipage après tout ce que j'ai fait pour eux. L'excès de scrupules, c'est bien dans la marine, mais ici, j'ai besoin de gens qui sont prêts à se salir les mains. Je vais devoir engager des Français dans l'équipage, ce qui est personnellement assez humiliant pour moi. Cependant, il est possible de trouver quelques hommes de valeur parmi cette populace du port. Je dois changer mon approche.
 ***************
-J'étudie les routes commerciales. Chaque navire est une source d'information... et de main-d'œuvre gratuite. Leurs capitaines savent quelque chose sur les trésors de Cortès, et les équipages sont habitués au travail et à une faible rémunération. Il est temps d'agir plus décisivement. Je jure par toutes les tempêtes, je trouverai cet or maudit !
+Étudier les routes commerciales. Chaque navire est une source d'information... et de main-oeuvre gratuite. Leurs capitaines connaissent les trésors de Cortez, et les équipages sont habitués à travailler et à être mal payés. Il est temps d'agir plus fermement. Je jure par toutes les tempêtes que je trouverai cet or maudit !
 ***************
-Aujourd'hui, j'ai surpris des marins en train de parler dans la taverne. "Blackwood est maintenant plus riche que n'importe quel planteur", disaient-ils. Mais je sais - tout cela n'est que clinquant. Le vrai trésor attend aux Caïmans. Et je le trouverai. Même si je dois y envoyer mille hommes avec des pelles et enchaînés.
+Aujourd'hui, j'ai entendu des marins discuter à la taverne. "Blackwood est maintenant plus riche que n'importe quel planteur", disaient-ils. Mais je sais que ce n'est que du vent. Le vrai trésor attend sur les Caïmans. Et je le trouverai. Même si je dois y envoyer un millier d'hommes enchaînés et armés de pelles.
 ***************
-Cette expédition sera probablement ma dernière. Désormais, je travaillerai selon le nouveau règlement - plus de recrutement et de perte de temps dans les tavernes. Cette île deviendra ma forteresse, et l'espace autour - ma base d'approvisionnement. Drôle - autrefois j'étais fier de comment je m'étais élevé du bas de la société. Maintenant je sais - il faut tomber encore plus bas pour s'élever vraiment haut.
-Attends-moi seulement.
+Cette expédition sera probablement ma dernière. Désormais, je travaillerai selon la nouvelle charte - plus de recrutement et de perte de temps dans les tavernes. Cette île deviendra ma forteresse, et l'espace qui l'entoure, mon terrain de jeu. C'est drôle, autrefois j'étais fier de mon ascension depuis le bas de l'échelle sociale. Maintenant, je sais qu'il faut tomber encore plus bas pour s'élever vraiment haut.
+Attends-moi.
 
+#QUEST SharlieTutorial_Journal
+Journal du capitaine 'Ulysse'
+#TEXT 1
+19 septembre 1654  
+Nous sommes entrés dans les eaux du Mare Caribaeum comme prévu. Le vent est favorable, aucun incident à signaler.
 
+20 septembre 1654  
+Rencontre inattendue en mer avec un collègue castillan : j’ai observé la caravelle 'La Pícara' faisant route vers San José via la Dominique. Tu t’es bien éloigné, Lorenzo.
+
+21 septembre 1654  
+Le vent reste favorable. Le marin Paul Lourie s’est disputé avec ses camarades, alors Alonso l’affecte désormais aux tâches les plus pénibles. Il faudra que je tire cela au clair.
+
+22 septembre 1654  
+Le lougre courrier 'Augustin', immatriculé au port de Capsterville, a effectué une inspection douanière de notre navire. Nos autorités coloniales se méfient tellement les unes des autres que le gouverneur général n’hésite pas à intercepter et fouiller les navires marchands importants avant même leur arrivée au port.  
+Après avoir consulté la liste des passagers, le lieutenant de "l’Augustin" m’a ordonné de rester à la dérive en attendant d’autres instructions. Étant donné que nous n’avons qu’un seul passager, il n’est pas difficile de deviner qui est à l’origine de ces ennuis.  
+Heureusement, ils ne nous ont pas ordonné de les suivre à Capsterville, mais cette histoire va me coûter cher.  
+Il est temps d’avoir une petite discussion avec ce dandy et de le secouer un peu.
+
+#QUEST SharlieTutorial_ListOfSailors
+Note du trésorier
+#TEXT 1
+À payer :  
+Matelot en chef Alonso Pimentel : 50 doublons  
+Matelot Henri Chaussone : 35 doublons  
+Matelot Paul Lourie : 25 doublons (cet idiot a failli tout faire capoter !)  
+À percevoir :  
+Du matelot Germain Chat : 7 pesos pour le papier abîmé par le chat de Chantal  
+Du capitaine Devegni : 2000 pesos pour les instruments médicaux  
+Du passager Charles de Maure : 30 pesos pour un tonneau d’eau douce gâtée et 200 pesos pour un câble de guindeau endommagé
+
+#TEXT 2
+À payer :  
+Matelot en chef Alonso Pimentel : 50 doublons  
+Matelot Henri Chaussone : 35 doublons  
+Matelot Paul Lourie : 25 doublons (cet idiot a failli tout faire capoter !)  
+À percevoir :  
+Du matelot Germain Chat : 7 pesos pour le papier abîmé par le chat de Chantal  
+Du capitaine Devegni : 2000 pesos pour les instruments médicaux  
+Du passager Charles de Maure : 30 pesos pour un tonneau d’eau douce gâtée
+
+#QUEST GS_Letters
+Lettres dévoilant le vrai visage d’un fonctionnaire du Belize
+#TEXT 1
+***************
+Flûte "Bat". Départ le 14. Route commerciale Belize-Port Royal. Sécurité minimale. Transportent du sucre. Mes vingt pour cent seront transmis aux contacts.
+***************
+Pinasse "Wavebreaker". Départ le 26. Route commerciale Belize-Capsterville. Ébène. Ils sont partis avec de la poudre humide. N'oubliez pas ma part.
+***************
+Galion "Silver Wind". Départ le 18. Route commerciale Belize-Blueveld. Esclaves ! Gros butin, ne tardez pas avec l'envoi de ma part. Il n'y aura pas d'escorte.
+***************

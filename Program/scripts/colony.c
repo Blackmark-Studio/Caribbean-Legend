@@ -929,33 +929,40 @@ void TWN_ExitForPay() // мэр даёт откуп - табличка приб�
 	chrDisableReloadToLocation = false;
 	ClearIslandShips(sld.City); // убрать корабли в порту, сбегли
 	int nBooty;
+	float fPart = GetFloatByCondition(HasShipTrait(pchar, "trait14"), 1.0, 1.35);
 	if (CheckAttribute(Pchar, "HalfOfPaymentByCity"))
 	{
-        nBooty = 700;
+        nBooty = makeint(700 * fPart);
 		DeleteAttribute(Pchar, "HalfOfPaymentByCity");
-		SetNull2StoreManPart(rColony, 6.0);
+		SetNull2StoreManPart(rColony, 6.0 / fPart);
 	}
 	else
 	{
-        nBooty = 2000;
-		SetNull2StoreManPart(rColony, 3.0);
+        nBooty = makeint(2000 * fPart);
+		SetNull2StoreManPart(rColony, 3.0 / fPart);
 		// belamour legendary edition дополнительные награды за взятие форта -->
 		if(CheckAttribute(pchar,"colonyprise.good"))
 		{
 			int fpb;
-			if(CheckAttribute(rColony, "FortValue")) fpb = drand(sti(rColony.FortValue)*10);
+			if(CheckAttribute(rColony, "FortValue")) fpb = hrand(sti(rColony.FortValue)*10, Builder.id);
+			fpb = makeint(fpb * fPart);
 			SetStoreGoods(&stores[GetStorage(sld.city)],makeint(pchar.colonyprise.good),750 + fpb);
 			pchar.colonyprise.good = 28+rand(6);
 		}
-		
 		// орудия крупных калибров
-		for(int can = GOOD_CANNON_36; can <= GOOD_CULVERINE_36; can++)
+		if(CheckAttribute(rColony, "FortValue"))
 		{
-			if(can == GOOD_CULVERINE_8 || can == GOOD_CULVERINE_18) continue;
-			SetStoreGoods(&stores[GetStorage(sld.city)], can, sti(rColony.FortValue)/2);
+			int canQty = sti(rColony.FortValue);
+			canQty = makeint(fpb * fPart);
+			for(int can = GOOD_CANNON_36; can <= GOOD_CULVERINE_36; can++)
+			{
+				if(can == GOOD_CULVERINE_8 || can == GOOD_CULVERINE_18) continue;
+				
+				SetStoreGoods(&stores[GetStorage(sld.city)], can, makeint(canQty * fPart / 2));
+			}
 		}
 		// личные призы от губернатора за сложный форт
-		if(CheckAttribute(pchar,"colonyprise.item") && CheckAttribute(rColony, "FortValue") && sti(rColony.FortValue) > 69)
+		if(CheckAttribute(pchar,"colonyprise.item") && CheckAttribute(rColony, "FortValue") && sti(rColony.FortValue) > GetIntByCondition(HasShipTrait(pchar, "trait14"), 69, 49))
 		{
 			switch(makeint(pchar.colonyprise.item))
 			{
@@ -983,15 +990,15 @@ void TWN_ExitForPay() // мэр даёт откуп - табличка приб�
 					if(sti(pchar.rank) > 29)
 					{
 						// талисман 5 пропущен в инитах
-						if(sti(1+drand(7)) == 5)
+						if(sti(1+hrand(7, "&TaPrize" + Builder.id)) == 5)
 						{
 							GiveItem2Character(pchar, "Talisman8");
 							log_info(StringFromKey("colony_6")+GetConvertStr("itmname_Talisman8", "ItemsDescribe.txt"));
 						}
 						else
 						{
-							GiveItem2Character(pchar, "Talisman"+sti(1+drand(7)));
-							log_info(StringFromKey("colony_6")+GetConvertStr("itmname_Talisman"+sti(1+drand(7)), "ItemsDescribe.txt"));
+							GiveItem2Character(pchar, "Talisman"+sti(1+hrand(7, "&TaPrize" + Builder.id)));
+							log_info(StringFromKey("colony_6")+GetConvertStr("itmname_Talisman"+sti(1+hrand(7, "&TaPrize" + Builder.id)), "ItemsDescribe.txt"));
 						}
 					}
 					else
@@ -1001,7 +1008,7 @@ void TWN_ExitForPay() // мэр даёт откуп - табличка приб�
 					}
 				break;
 				case 3:
-					switch(drand(7))
+					switch(hrand(7, Builder.id))
 					{
 						case 0:
 							GiveItem2Character(pchar, GetGeneratedItem("topor_04"));
@@ -1031,7 +1038,6 @@ void TWN_ExitForPay() // мэр даёт откуп - табличка приб�
 							GiveItem2Character(pchar, "hat4");
 							log_info(StringFromKey("colony_7")+GetConvertStr("itmname_hat4", "ItemsDescribe.txt"));
 						break;
-						
 						case 7:
 							GiveItem2Character(pchar, "hat6");
 							log_info(StringFromKey("colony_7")+GetConvertStr("itmname_hat6", "ItemsDescribe.txt"));
@@ -1169,7 +1175,7 @@ void SetCaptureTownByNation(string sColony, int iNation)
     	//  СЖ -->
     	sGroup =  GetNationNameByType(iNation);
 		ReOpenQuestHeader("Gen_CityCapture");
-        AddQuestRecord("Gen_CityCapture", "t4");
+        AddQuestRecordInfo("Gen_CityCapture", "t4");
 		AddQuestUserData("Gen_CityCapture", "sCity", XI_ConvertString("colony" + Colonies[iColony].id));
 		AddQuestUserData("Gen_CityCapture", "sNation", XI_ConvertString(sGroup + "Gen"));
 		//  СЖ <--
@@ -1244,7 +1250,7 @@ void SetTownMayor(ref Ch, int natGover)
 {
     string rmodel;
 
-	//if (natGover == PIRATE || Ch.id == "Minentown_Mayor")
+	//if (natGover == PIRATE || Ch.id == "LosTeques_Mayor")
 	//{
 	    // Когда берут пираты - а это только мятеж, мэра менять не нужно
         rmodel = Ch.model;//Jason: пауза мира будет вечной, губеров убивать не планируется
@@ -1567,7 +1573,7 @@ void TWN_Siege_Any(string city)
 		//  СЖ -->
 		sTemp =  GetNationNameByType(sti(sld.Default.nation));
 		ReOpenQuestHeader("Gen_CityCapture");
-	    AddQuestRecord("Gen_CityCapture", "t5");
+	    AddQuestRecordInfo("Gen_CityCapture", "t5");
 		AddQuestUserData("Gen_CityCapture", "sCity", GetCityName(city));
 		AddQuestUserData("Gen_CityCapture", "sNation", XI_ConvertString(sTemp + "Gen"));
 		AddQuestUserData("Gen_CityCapture", "sDay", FindRussianDaysString(iDay));
@@ -1669,13 +1675,13 @@ void TWN_End_Siege_Any(string city)
 	if (isCityHasFort(city)) // фортовой город
     {
     	// нулим капитанов - сами померли
-        AddQuestRecord("Gen_CityCapture", "t6");
+        AddQuestRecordInfo("Gen_CityCapture", "t6");
         makeref(rColony, Colonies[FindColony(city)]);
         DeleteAttribute(rColony, "DontSetShipInPort"); //возвращаем жизнь
 	}
 	else
 	{
-    	AddQuestRecord("Gen_CityCapture", "t6_1");
+    	AddQuestRecordInfo("Gen_CityCapture", "t6_1");
     }
 	AddQuestUserData("Gen_CityCapture", "sCity", GetCityName(city));
 	AddQuestUserData("Gen_CityCapture", "sNation", XI_ConvertString(sTemp + "Gen"));
@@ -1712,7 +1718,7 @@ void TWN_SiegeLand_Any(string city)
 	//  СЖ -->
 	sTemp =  GetNationNameByType(sti(sld.Default.nation));
 	ReOpenQuestHeader("Gen_CityCapture");
-    AddQuestRecord("Gen_CityCapture", "t5_1");
+    AddQuestRecordInfo("Gen_CityCapture", "t5_1");
 	AddQuestUserData("Gen_CityCapture", "sCity", GetCityName(city));
 	AddQuestUserData("Gen_CityCapture", "sNation", XI_ConvertString(sTemp + "Gen"));
 	AddQuestUserData("Gen_CityCapture", "sDay", FindRussianDaysString(i));
@@ -1822,7 +1828,7 @@ void TWN_RealeseForMoney(string city, bool _agent)
 		//  СЖ -->
 		sTemp =  GetNationNameByType(sti(sld.Default.nation));
 		ReOpenQuestHeader("Gen_CityCapture");
-	    AddQuestRecord("Gen_CityCapture", "t7");
+	    AddQuestRecordInfo("Gen_CityCapture", "t7");
 		AddQuestUserData("Gen_CityCapture", "sSex", GetSexPhrase("","а"));
 		AddQuestUserData("Gen_CityCapture", "sCity", GetCityName(city));
 		AddQuestUserData("Gen_CityCapture", "sNation", XI_ConvertString(sTemp + "Gen"));

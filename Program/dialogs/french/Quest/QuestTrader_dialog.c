@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 		bool ok = CheckFreeSitFront(npchar);
-			if(drand(11) > 8 && ok && !CheckAttribute(pchar, "GenQuest.Racing.Go") && !CheckAttribute(npchar, "quest.race") && sti(Pchar.Ship.Type) != SHIP_NOTUSED && 6-sti(RealShips[sti(pchar.ship.type)].Class) > 0)//гонки на гидропланах
+			if(hrand(11) > 8 && ok && !CheckAttribute(pchar, "GenQuest.Racing.Go") && !CheckAttribute(npchar, "quest.race") && sti(Pchar.Ship.Type) != SHIP_NOTUSED && 7-sti(RealShips[sti(pchar.ship.type)].Class) > 0)//гонки на гидропланах
 			{
 				dialog.text = TimeGreeting()+", "+GetAddress_Form(NPChar)+"! Mon nom est "+GetFullName(NPChar)+", je suis capitaine. Je vois que vous êtes capitaine aussi. Voudriez-vous vous joindre à moi et prendre un verre ensemble ? C'est moi qui régale.";
 				link.l1 = "Pourquoi pas ? Cela ne me dérangerait pas de boire quelques verres en bonne compagnie.";
@@ -28,7 +28,7 @@ void ProcessDialogEvent()
 			else
 			{
 			//конвой торгового судна
-				if(!CheckAttribute(pchar, "GenQuest.Escort.Trader") && !CheckAttribute(npchar, "quest.race") && sti(Pchar.Ship.Type) != SHIP_NOTUSED && !CheckAttribute(npchar, "repeat_work") && 6-sti(RealShips[sti(pchar.ship.type)].Class) > 0 && GetCompanionQuantity(pchar) < 3)
+				if(!CheckAttribute(pchar, "GenQuest.Escort.Trader") && !CheckAttribute(npchar, "quest.race") && sti(Pchar.Ship.Type) != SHIP_NOTUSED && !CheckAttribute(npchar, "repeat_work") && 7-sti(RealShips[sti(pchar.ship.type)].Class) > 0 && GetCompanionQuantity(pchar) < 3)
 				{
 					dialog.text = TimeGreeting()+", "+GetAddress_Form(NPChar)+"! Je suis "+GetFullName(NPChar)+", un marchand. Je suppose que vous êtes capitaine. Que diriez-vous de gagner quelques milliers de pesos ?";
 					link.l1 = "Je suis toujours avide de gagner quelques pièces. De quel genre de travail s'agit-il ?";
@@ -60,14 +60,14 @@ void ProcessDialogEvent()
 		
 		case "Escort_choice"://первые развилки - выбираем между городом, бухтой и необитайкой
 			pchar.GenQuest.Escort.Trader.StartCity = GetCurrentTown();//стартовый город
-			pchar.GenQuest.Escort.Trader.ShipType = TraderShipType();//тип корабля торговца
+			pchar.GenQuest.Escort.Trader.ShipType = TraderShipType(&iTemp);//тип корабля торговца
 			pchar.GenQuest.Escort.Trader.Nation = npchar.nation;//нация торговца
-			switch (drand(2))
+			switch (hrand(2))
 			{
 				case 0://город дружественный
 					pchar.GenQuest.Escort.Trader.City = FindFriendCityToMC(false);//целевой город
 					pchar.GenQuest.Escort.Trader.DaysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.Escort.Trader.StartCity), GetArealByCityName(pchar.GenQuest.Escort.Trader.City))+5;//дни
-					pchar.GenQuest.Escort.Trader.Money = makeint(sti(pchar.GenQuest.Escort.Trader.DaysQty)*400*ShipFactorMC()+sti(pchar.GenQuest.Escort.Trader.ShipType)*700);//оплата от расстояния и классов кораблей ГГ и неписи
+					pchar.GenQuest.Escort.Trader.Money =  makeint(sti(pchar.GenQuest.Escort.Trader.DaysQty) * 400 * ShipFactorMC() + iTemp * 700);//оплата от расстояния и классов кораблей ГГ и неписи
 					pchar.GenQuest.Escort.Trader.Type1 = "true";//тип задания
 					pchar.GenQuest.Escort.Trader.Chance = rand(1);
 					pchar.GenQuest.Escort.Trader.Add = "to "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+"";
@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 						GetEscortTraderShore();
 					} // patch-6
 					pchar.GenQuest.Escort.Trader.DaysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.Escort.Trader.StartCity), pchar.GenQuest.Escort.Trader.Island)+5;//дни
-					pchar.GenQuest.Escort.Trader.Money = makeint(sti(pchar.GenQuest.Escort.Trader.DaysQty)*400*ShipFactorMC()+sti(pchar.GenQuest.Escort.Trader.ShipType)*700);//оплата
+					pchar.GenQuest.Escort.Trader.Money =   makeint(sti(pchar.GenQuest.Escort.Trader.DaysQty) * 400 * ShipFactorMC() + iTemp * 700);//оплата
 					pchar.GenQuest.Escort.Trader.Type2 = "true";//тип задания
 					pchar.GenQuest.Escort.Trader.Chance = rand(2);
 					pchar.GenQuest.Escort.Trader.Add = "to "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+", not far from "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+"";
@@ -168,7 +168,7 @@ void ProcessDialogEvent()
 				if (sti(pchar.GenQuest.Escort.Trader.Chance) == 0) TraderHunterOnMap();
 				if (sti(pchar.GenQuest.Escort.Trader.Chance) == 1) 
 				{
-					if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) <= sti(pchar.GenQuest.Escort.Trader.ShipType) && sti(RealShips[sti(pchar.Ship.Type)].BaseType) != SHIP_GALEON_H && GetCompanionQuantity(pchar) < 3)//меряемся кораблями
+					if(sti(RealShips[sti(pchar.Ship.Type)].Class) >= sti(RealShips[sti(pchar.GenQuest.Escort.Trader.ShipType)].Class) && sti(RealShips[sti(pchar.Ship.Type)].BaseType) != SHIP_GALEON_H && GetCompanionQuantity(pchar) < 3)//меряемся кораблями
 					{//нападет сам
 						pchar.quest.EscortTrader_Attack.win_condition.l1 = "location";
 						pchar.quest.EscortTrader_Attack.win_condition.l1.location = pchar.GenQuest.Escort.Trader.Island;
@@ -387,7 +387,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Racing_rate5"://50 000
-			if (drand(9) > 6)
+			if (hrand(9, "&RacRa") > 6)
 			{
 			dialog.text = "Très bien. J'accepte. Vos pièces s'il vous plaît. Voici mon pari.";
 			link.l1 = "Attends, que je prenne ma bourse...";
@@ -405,7 +405,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Racing_rate4"://40 000
-			if (drand(9) > 4)
+			if (hrand(9, "&RacRa") > 4)
 			{
 			dialog.text = "D'accord. J'accepte. Vos pieces s'il vous plait. Voici mon pari.";
 			link.l1 = " Laisse-moi juste prendre ma bourse...";
@@ -423,7 +423,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Racing_rate3"://30 000
-			if (drand(9) > 2)
+			if (hrand(9, "&RacRa") > 2)
 			{
 			dialog.text = "D'accord. J'accepte. Vos pièces s'il vous plaît. Voici mon pari.";
 			link.l1 = " Laisse-moi juste prendre ma bourse...";
@@ -441,7 +441,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Racing_rate2"://20 000
-			if (drand(9) > 0)
+			if (hrand(9, "&RacRa") > 0)
 			{
 			dialog.text = "D'accord. Je suis d'accord. Vos pieces, s'il vous plait. Voici mon pari.";
 			link.l1 = " Laisse-moi juste prendre ma bourse...";
@@ -635,30 +635,131 @@ void ProcessDialogEvent()
 float ShipFactorMC()//коэффициент от класса корабля ГГ
 {
 	float f;
-	int iInvert = 6-sti(RealShips[sti(pchar.Ship.Type)].Class);
-	switch (iInvert)
+	switch (sti(RealShips[sti(pchar.Ship.Type)].Class))
 	{
-		case 0: f = 0.5 break;
 		case 1: f = 1.0 break;
 		case 2: f = 1.2 break;
 		case 3: f = 1.5 break;
 		case 4: f = 2.2 break;
 		case 5: f = 3.0 break;
 		case 6: f = 4.5 break;
+		case 7: f = 5.5 break;
 	}
 	return f;
 }
 
-int TraderShipType()//корабль торговца
+int TraderShipType(ref iShipCoef)//корабль торговца
 {
-	int iShipType;
 	int iRank = sti(pchar.rank);
-	if (iRank < 5) iShipType = SHIP_BARQUE + rand(makeint(SHIP_SCHOONER - SHIP_BARQUE)); 
-	if (iRank >= 5 && iRank < 11) iShipType = SHIP_BARKENTINE + rand(makeint(SHIP_FLEUT - SHIP_BARKENTINE));
-	if (iRank >= 11 && iRank < 18) iShipType = SHIP_FLEUT + rand(makeint(SHIP_CARAVEL - SHIP_FLEUT));
-	if (iRank >= 18 && iRank < 25) iShipType = SHIP_CARAVEL + rand(makeint(SHIP_CARACCA - SHIP_CARAVEL)); 
-	if (iRank >= 25) iShipType = SHIP_CARAVEL + rand(makeint(SHIP_NAVIO - SHIP_CARAVEL)); 
-	return iShipType;
+	int iShip;
+	
+	if(iRank < 5)
+	{
+		switch (rand(2))
+		{
+			case 0:
+				iShip = SHIP_BARKENTINE;
+				iShipCoef = 2;
+			break;
+			case 1:
+				iShip = SHIP_LUGGER;
+				iShipCoef = 3;
+			break;
+			case 2:
+				iShip = SHIP_BARQUE;
+				iShipCoef = 4;
+			break;
+		}
+	}
+	if(iRank >= 5 && iRank < 11)
+	{
+		switch (rand(2))
+		{
+			case 0:
+				iShip = SHIP_BARKENTINE;
+				iShipCoef = 2;
+			break;
+			case 1:
+				iShip = SHIP_BARQUE;
+				iShipCoef = 4;
+			break;
+			case 2:
+				iShip = SHIP_SCHOONER;
+				iShipCoef = 5;
+			break;
+		}
+	}
+	if(iRank >= 11 && iRank < 18)
+	{
+		switch (rand(3))
+		{
+			case 0:
+				iShip = SHIP_SCHOONER;
+				iShipCoef = 5;
+			break;
+			case 1:
+				iShip = SHIP_FLEUT;
+				iShipCoef = 6;
+			break;
+			case 2:
+				iShip = SHIP_CARAVEL;
+				iShipCoef = 7;
+			break;
+			case 3:
+				iShip = SHIP_BRIGANTINE;
+				iShipCoef = 8;
+			break;
+		}
+	}
+	if(iRank >= 18 && iRank < 25)
+	{
+		switch (rand(4))
+		{
+			case 0:
+				iShip = SHIP_CARAVEL;
+				iShipCoef = 7;
+			break;
+			case 1:
+				iShip = SHIP_BRIGANTINE;
+				iShipCoef = 8;
+			break;
+			case 2:
+				iShip = SHIP_PINNACE;
+				iShipCoef = 9;
+			break;
+			case 3:
+				iShip = SHIP_GALEON_L;
+				iShipCoef = 10;
+			break;
+			case 4:
+				iShip = SHIP_EASTINDIAMAN;
+				iShipCoef = 11;
+			break;
+		}
+	}
+	if(iRank > 25)
+	{
+		switch (rand(3))
+		{
+			case 0:
+				iShip = SHIP_PINNACE;
+				iShipCoef = 9;
+			break;
+			case 1:
+				iShip = SHIP_GALEON_L;
+				iShipCoef = 10;
+			break;
+			case 2:
+				iShip = SHIP_EASTINDIAMAN;
+				iShipCoef = 11;
+			break;
+			case 3:
+				iShip = SHIP_NAVIO;
+				iShipCoef = 12;
+			break;
+		}
+	}
+	return iShip;
 }
 
 void GetEnemyTraderGoods()//выберем товар

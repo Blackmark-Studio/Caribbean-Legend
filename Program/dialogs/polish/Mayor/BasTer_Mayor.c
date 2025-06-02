@@ -4,7 +4,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Czego chcesz? Pytaj śmiało.","Słucham cię, jakie masz pytanie?"),"To już drugi raz, gdy próbujesz zapytać...","To już trzeci raz, kiedy próbujesz znowu zapytać...","Kiedy to się skończy?! Jestem zajętym człowiekiem, pracującym nad sprawami kolonii, a ty wciąż próbujesz o coś pytać!","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Czego chcesz? Pytaj śmiało.","Słucham cię, jakie masz pytanie?"),"To już drugi raz, gdy próbujesz zapytać...","To już trzeci raz, kiedy próbujesz znowu zapytać...","Kiedy to się skończy?! Jestem zajętym człowiekiem, pracującym nad sprawami kolonii, a ty wciąż próbujesz o coś pytać!","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniam zdanie...","Nie teraz. Złe miejsce i czas."),"Prawda... Ale później, nie teraz...","Zapytam... Ale trochę później...","Przykro mi, "+GetAddress_FormToNPC(NPChar)+"...",npchar,Dialog.CurrentNode);			  
 			link.l1.go = "exit";
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth.Baster_church") && !CheckAttribute(npchar, "quest.utensil"))
@@ -29,6 +29,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Mam tu spotkanie z jedną osobą...";
                 link.l1.go = "baster_goldengirl";
 			}
+			//--> Торговля по закону
+			if (CheckAttribute(pchar, "questTemp.TPZ_guber_1"))
+			{
+				link.l1 = "Monsieur, planuję rozpocząć działalność handlową w tym mieście. W szczególności interesuje mnie stały handel alkoholem na dużą skalę.";
+				link.l1.go = "TPZ_guber_1";
+			}
+			//<-- Торговля по закону
+
 		break;
 		//************************** Квестовые штрумы ************************
 		case "Cupture_after":
@@ -126,6 +134,46 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.questTemp.GoldenGirl = "baster1";
 			DoQuestReloadToLocation("CommonResidence_3", "reload", "reload1", "GoldenGirl_AngerranInResidence");
 		break;
+		
+		//--> Торговля по закону
+		case "TPZ_guber_1":
+			dialog.text = "Kapitanie, dobrze, że zwróciłeś się do mnie. Robimy wszystko, co w naszej mocy, aby zwalczać nielegalny handel na wyspie, i szczerze cieszę się, gdy uczciwi kapitanowie przychodzą do mnie, aby wszystko zorganizować zgodnie z prawem.";
+			link.l1 = "Więc jakie są warunki i kroki niezbędne do rozpoczęcia handlu?";
+			link.l1.go = "TPZ_guber_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "TPZ_guber_2":
+			dialog.text = "To proste. Aby handlować alkoholem, musisz płacić podatek do skarbca w wysokości stu dublonów miesięcznie, a także prowadzić dokumentację i regularnie składać raporty ze swojej działalności. Gdy tylko wpłacisz pieniądze do skarbca, możesz śmiało rozpocząć handel.";
+			link.l1 = "Świetnie. Warunki są całkowicie akceptowalne. W moim imieniu sprawy będzie prowadził miejscowy mieszkaniec - Christian Delouche. Mam nadzieję, że nie będzie z tym problemu?";
+			link.l1.go = "TPZ_guber_3";
+		break;
+
+		case "TPZ_guber_3":
+			dialog.text = "Jak sobie życzysz, kapitanie. Jednak pamiętaj: cała odpowiedzialność za twojego protegowanego spoczywa na tobie, i w przypadku jego wykroczeń podzielisz jego los.";
+			link.l1 = "Oczywiście. Dziękuję za wyjaśnienia, panie gubernatorze. Wszystko przygotujemy, a Christian zapłaci podatek.";
+			link.l1.go = "TPZ_guber_4";
+		break;
+
+		case "TPZ_guber_4":
+			dialog.text = "Doskonale. Cieszę się, widząc tak sumienne podejście. Powodzenia w twoim przedsięwzięciu.";
+			link.l1 = "Dziękuję. Jestem pewien, że nasza współpraca przyniesie korzyści miastu. Do widzenia.";
+			link.l1.go = "TPZ_guber_5";
+		break;
+
+		case "TPZ_guber_5":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.TPZ_guber_1");
+			AddQuestRecord("TPZ", "11");
+			
+			sld = CharacterFromID("TPZ_Kristian");
+			sld.dialog.filename = "Quest\MiniEvents\TradingByLaw_dialog.c";
+			sld.dialog.currentnode = "Kristian_21";
+			ChangeCharacterAddressGroup(sld, "BasTer_houseF3", "barmen", "stay");
+			LAi_SetStayType(sld);
+			AddLandQuestMark(sld, "questmarkmain");
+		break;
+		//<-- Торговля по закону
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

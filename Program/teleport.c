@@ -42,7 +42,7 @@ void DoTeleportChoose()
 		}
 		break;
 	case 1:
-		if(CheckAttribute(objTeleport,"data."+attrName))
+		if(CheckAttribute(&objTeleport,"data."+attrName))
 		{
 			tel_location_id = objTeleport.data.(attrName);
 		}
@@ -86,7 +86,7 @@ void DoTeleportChoose()
 		SetTeleportData(3);
 		break;
 	case 3:
-		if(CheckAttribute(objTeleport,"data."+attrName))
+		if(CheckAttribute(&objTeleport,"data."+attrName))
 		{
 			locatorName = objTeleport.data.(attrName);
 		}

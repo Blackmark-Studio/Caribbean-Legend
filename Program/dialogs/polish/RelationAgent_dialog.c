@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 
 			if (ChangeCharacterNationReputation(pchar, HOLLAND, 0) < 0)
 			{
-				link.l4 = "Chcę się pogodzić z Holandią.";
+				link.l4 = "Chcę się pojednać z Holandią.";
 				link.l4.go = "RelationTo_3";
 			}
 			if (ChangeContrabandRelation(pchar, 0) <= 5)
@@ -358,7 +358,7 @@ void ProcessDialogEvent()
 			dialog.Text = "Znakomicie, załatwię wszystko. Będą z tobą współpracować.";
 			Link.l99 = "Dzięki.";
 			Link.l99.go = "exit";
-			ChangeContrabandRelation(pchar, 25);
+			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
 			AddMoneyToCharacter(pchar, -sti(Pchar.questTemp.Relations.sum));
 		break;
         // boal <--

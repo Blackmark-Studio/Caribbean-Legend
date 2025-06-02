@@ -1,0 +1,246 @@
+info
+{
+    Генератор кладов
+    Script creato da ALexusB 05.11.04
+}
+type_full_1
+{
+Questa è #sMapIslName#. La posizione del tesoro nascosto è mostrata qui: #sMaplocName#. Un famoso pirata ha nascosto lì il suo tesoro.
+A giudicare dalle macchie marroni di sangue, la mappa è autentica: questo indica anche che ha cambiato proprietario abbastanza spesso.
+}
+type_full_1_isl {isola}
+type_full_1_mein {terraferma}
+
+type_full_2
+{
+Sulla mappa di #sMapIslName#. I tesori si trovano in #sMaplocName#. Ma solo controllandolo puoi vedere se è ancora lì.
+La mappa è piuttosto antica e non ci sono dubbi sulla sua autenticità.
+}
+type_full_2_isl {isola}
+type_full_2_mein {terraferma}
+
+type_full_3
+{
+Questa mappa è 'giovane': la carta non è ancora ingiallita. Se la leggenda è corretta, il tesoro è nascosto lì a #sMaplocName# su #sMapIslName#. È davvero lì? Vale la pena controllare!
+}
+type_full_3_isl {isola}
+type_full_3_mein {terraferma}
+
+type_full_4
+{
+The map depicts #sMapIslName#. The place where the treasures are stored is #sMaplocName#. The author's lack of skill has been compensated by effort - whimsical animals, as if drawn by a child's hand, adorn the margins.
+}
+type_full_4_isl {island}
+type_full_4_mein {mainland}
+
+type_full_5
+{
+The map accurately reflects the outlines of #sMapIslName#. The location of the treasure is #sMaplocName#. It won't be hard to find it, as the author has left fairly precise directions. 
+}
+
+type_full_5_isl {island}
+type_full_5_mein {mainland}
+
+
+type_full_6
+{
+This map is drawn on high-quality lined paper. The outline of #sMapIslName# is easily recognizable. According to the note on the back, the treasure's location is #sMaplocName#.
+}
+type_full_6_isl {island}
+type_full_6_mein {mainland}
+
+type_full_7
+{
+This is #sMapIslName#. The map indicates the location of the hidden treasure — it's #sMaplocName#. A notorious pirate hid his treasure there.  
+The authenticity of the map is suggested by the brown stains of blood, which also indicate that this piece of paper has changed hands multiple times.
+}
+type_full_7_isl {island}
+type_full_7_mein {mainland}
+
+type_full_8
+{
+This map has clearly seen many hands — the paper is burned in several places, and the outline of #sMapIslName# is crossed with signs of multiple folds. The treasure's location is #sMaplocName#. Apparently, something truly valuable lies there.
+}
+type_full_8_isl {islands}
+type_full_8_mein {mainland}
+
+type_full_9
+{
+#sMapIslName#, quite accurately depicted on this map, is surrounded by scrollwork and drawings of sea monsters. Whoever the author of the map was, he clearly knew his craft, hiding something very valuable in the treasure. All that’s left is to reach the location — #sMaplocName#.
+}
+type_full_9_isl {island}
+type_full_9_mein {mainland}
+
+type_full_10
+{
+The halves of this map do not fit together, although the handwriting, ink color, and condition of the paper clearly indicate the same author. The outlines of #sMapIslName# are blurred and stained with ink, and the treasure, it seems, is located #sMaplocName#.
+}
+type_full_10_isl {island}
+type_full_10_mein {mainland}
+
+type_full_11
+{
+This map has been carefully divided diagonally, making it impossible to discern #sMapIslName# with only one half. The notes are written in neat handwriting, making it easy to understand where the treasure lies — at #sMaplocName#. Judging by the condition of the paper, the treasures have been there for many decades.
+}
+type_full_11_isl {island}
+type_full_11_mein {mainland}
+
+type_full_12
+{
+This map, made from two pieces, looks incredibly ancient. The outlines of #sMapIslName# are outdated by several decades. The descriptions and clues are written in an old-fashioned language and are rich in Latin. It’s difficult to gauge the extent of the treasures stored #sMaplocName#.
+}
+type_full_12_isl {islands}
+type_full_12_mein {mainland}
+
+
+
+type_quest_0
+{
+Questa è #sMapIslName#. La posizione del tesoro nascosto è mostrata qui: #sMaplocName#. #sMapOwner# ha nascosto lì il suo tesoro.
+A giudicare dalle macchie marroni di sangue, la mappa è autentica: questo indica anche che ha cambiato proprietario abbastanza spesso.
+}
+type_quest_0_isl {isola}
+type_quest_0_mein {terraferma}
+
+type_part
+{
+Questa è una delle parti della mappa che, apparentemente, conduce al tesoro. Non ci sono abbastanza informazioni e non è possibile capirne la posizione. L'unica speranza è trovare l'altro pezzo per completare la mappa e svelare il mistero.
+}
+
+type_fake
+{
+Questa mappa indica la posizione del tesoro. Ovviamente potete controllare se c'è o meno, ma di sicuro è solo un falso.
+Dovresti buttare questo pezzo di carta..
+}
+
+Antigua_Grot 			{nella grotta a destra della baia di Falmouth}
+Antigua_Grot_box1 		{una cassa sopra una grande pietra}
+
+SentJons_TownCave 		{nella prigione di St. Jones}
+SentJons_TownCave_box1 	{sotto le assi in un vicolo cieco}
+SentJons_TownCave_box2 	{in un vicolo cieco della miniera}
+SentJons_TownCave_box3 	{in corrispondenza del blocco}
+
+Barbados_Cave			{in una grotta non lontano da Bridgetown}		
+Barbados_Cave_box1		{sotto le assi in un vicolo cieco}
+
+Beliz_Cave 				{in una grotta a destra dell'uscita dal Belize}
+Beliz_Cave_box1			{una cassa vicino al ponte di pietra}
+Beliz_Cave_box2			{una cassa su una grande pietra}
+Beliz_Cave_box3			{una cassa vicino alla corda che pende dal soffitto}
+
+Beliz_Cave_2 			{in una grotta di fronte all'uscita dal Belize}		
+Beliz_Cave_2_box1		{sotto le assi in un vicolo cieco}
+
+Bermudes_Dungeon 		{in una prigione sotto il cantiere navale di Sharptown}	
+Bermudes_Dungeon_box1	{una cassa dietro una porta chiusa}
+Bermudes_Dungeon_box2	{una cassa dietro una porta aperta}
+Bermudes_Dungeon_box3	{una cassapanca in un vicolo cieco}
+Bermudes_Dungeon_box4	{una cassa dietro le botti}
+
+Caracas_Grot 			{in una grotta a destra dell'uscita da Caracas}	
+Caracas_Grot_box1		{una cassa sopra una grande pietra}
+
+Cartahena_Cave			{in una grotta di fronte all'uscita da Cartagena}	
+Cartahena_Cave_box1		{una cassa sotto la torcia}
+Cartahena_Cave_box2		{una cassapanca in un vicolo cieco}
+Cartahena_Cave_box3		{una cassa vicino alla torcia}
+
+Caiman_Grot				{in una grotta a destra della costa deserta}
+Caiman_Grot_box1		{una cassa sopra una grande pietra}
+
+Charles_Grot			{in una grotta a destra della Half Moon Bay}	
+Charles_Grot_box1		{una cassa sulla riva}
+
+Cuba_Grot				{in una grotta a destra di Capo Camaguey}
+Cuba_Grot_box1			{una cassa sulla riva}
+
+Cumana_Cave				{in una grotta a destra della Cala Carupano}
+Cumana_Cave_box1		{una cassa vicino al ponte di pietra}
+Cumana_Cave_box2		{una cassa su una grande pietra}
+Cumana_Cave_box3		{una cassa vicino alla corda che pende dal soffitto}
+
+Curacao_Cave			{in una grotta a destra della Laguna Blanca}	
+Curacao_Cave_box1		{una cassa sotto la torcia}
+Curacao_Cave_box2		{una cassapanca in un vicolo cieco}
+Curacao_Cave_box3		{una cassa vicino alla torcia}
+
+Dominica_Grot			{in una grotta a sinistra di Scott's Head Bay}	
+Dominica_Grot_box1		{una cassa sulla riva}
+
+Guadeloupe_Cave			{in una grotta a sinistra del faro di Guadalupa}
+Guadeloupe_Cave_box1	{una cassa in una nicchia dietro la torcia}
+Guadeloupe_Cave_box2	{una cassa in una nicchia dietro il pilastro}
+Guadeloupe_Cave_box3	{una cassa dietro le pietre vicino al muro}
+
+Hispaniola_Cave			{in una grotta non lontano dalla città di Port-au-Prince}		
+Hispaniola_Cave_box1	{una cassa vicino al ponte di pietra}
+Hispaniola_Cave_box2	{una cassa su una grande pietra}
+Hispaniola_Cave_box3	{una cassa vicino alla corda che pende dal soffitto}
+
+Jamaica_Grot			{in una grotta a destra del faro di Port-Royal}
+Jamaica_Grot_box1		{una cassa sopra una grande pietra}
+
+Maracaibo_Cave			{in una grotta di fronte all'uscita da Maracaibo}
+Maracaibo_Cave_box1		{una cassa sotto la torcia}
+Maracaibo_Cave_box2		{una cassapanca in un vicolo cieco}
+Maracaibo_Cave_box3		{una cassa vicino alla torcia}
+
+Marigo_Cave				{in una grotta di fronte all'uscita da Philipsburg}
+Marigo_Cave_box1		{una cassa sotto la torcia}
+Marigo_Cave_box2		{una cassapanca in un vicolo cieco}
+Marigo_Cave_box3		{una cassa vicino alla torcia}
+
+Panama_Cave				{in una grotta a sinistra dell'uscita da Portobello}
+Panama_Cave_box1		{sotto le assi in un vicolo cieco}
+
+Pearl_Grot				{in una grotta vicino alla costa occidentale tra Belize e Blueweld}	
+Pearl_Grot_box1			{una cassa sopra una grande pietra}
+
+PortoBello_Cave			{in una grotta a destra di Mosquitos Bay}		
+PortoBello_Cave_box1	{sotto le assi in un vicolo cieco}
+
+SanJuan_Cave			{in una grotta non lontano da San Juan}		
+SanJuan_Cave_box1		{una cassa vicino al ponte di pietra}
+SanJuan_Cave_box2		{una cassa su una grande pietra}
+SanJuan_Cave_box3		{una cassa vicino alla corda che pende dal soffitto}
+
+SantaCatalina_Cave		{in una grotta a destra di Capo Perlas}
+SantaCatalina_Cave_box1	{una cassa sotto la torcia}
+SantaCatalina_Cave_box2	{una cassapanca in un vicolo cieco}
+SantaCatalina_Cave_box3	{una cassa vicino alla torcia}
+
+SantaCatalina_Grot		{in una grotta a destra della Baia di San Juan del Norte}
+SantaCatalina_Grot_box1	{una cassa sulla riva}
+
+SantaCatalina_PearlCave	{in una grotta a sinistra della Baia di San Juan del Norte}
+SantaCatalina_PearlCave_box1	{una cassa vicino al ponte di pietra}
+SantaCatalina_PearlCave_box2	{una cassa su una grande pietra}
+SantaCatalina_PearlCave_box3	{una cassa vicino alla corda che pende dal soffitto}
+
+Tenotchitlan_Cave		{in una grotta a nord del tempio azteco}
+Tenotchitlan_Cave_box1	{una cassa vicino al ponte di pietra}
+Tenotchitlan_Cave_box2	{una cassa su una grande pietra}
+Tenotchitlan_Cave_box3	{una cassa vicino alla corda che pende dal soffitto}
+
+Terks_Grot				{in una grotta a destra della Baia Settentrionale}
+Terks_Grot_box1			{una cassa sopra una grande pietra}
+
+Tortuga_Grot			{in una grotta di fronte a Fisheye Beach}
+Tortuga_Grot_box1		{una cassa sulla riva}
+
+Tortuga_Cave			{in una prigione di Tortuga}
+Tortuga_Cave_box1		{una cassa dietro una porta chiusa}
+
+Trinidad_Grot			{in una grotta di fronte al faro di Trinidad e Tobago}
+Trinidad_Grot_box1		{una cassa sulla riva}
+
+Martinique_Grot 		{in una grotta non lontano dalla spiaggia di Lamentin}
+Martinique_Grot_box1 	{una cassa sulla riva}
+
+FortFrance_Dungeon		{in una prigione di San Pierre}
+FortFrance_Dungeon_box1	{una cassapanca sospesa/in alto}
+FortFrance_Dungeon_box2	{una cassa dietro una porta aperta sul palco superiore}
+FortFrance_Dungeon_box3	{una cassapanca non lontano dall'ascensore}
+FortFrance_Dungeon_box4	{una cassa dietro una porta aperta sul palco inferiore}
+FortFrance_Dungeon_box5	{sotto casse di legno}

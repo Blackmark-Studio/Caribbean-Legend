@@ -28,7 +28,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	// город майя
 	case "tieyasal":
-		dialog.text = "Sí, lo tengo. Compró suministros para su barco aquí. Por cierto, ha sido muy recientemente. Literalmente se perdieron el uno al otro por unos días. Por cierto, podría todavía estar en este asentamiento. No espío para la gente, ya sabes. Pregunta un poco más y quién sabe, tal vez encuentres a tu don.";
+		dialog.text = "Sí, así es. Compró suministros para su barco aquí. Por cierto, ha sido muy recientemente. Literalmente se perdieron el uno al otro por unos días. Por cierto, podría todavía estar en este asentamiento. No espío para la gente, ya sabes. Pregunta un poco más y quién sabe, tal vez encuentres a tu don.";
 		link.l1 = "Está bien. ¡Gracias por la información!";
 		link.l1.go = "tieyasal_1";
 		break;
@@ -48,7 +48,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "mtraxx_1":
 		string sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")));
-		dialog.text = "En este momento un " + sTemp + ", el navío holandés llamado 'Rosbohom', está llegando a nuestras aguas junto con un barco de escolta. Está cargado de ébano y navega desde Willemstad para encontrarse con otro barco de escolta y asegurar un viaje seguro a Europa. No sé qué ruta toma, si a través de Sint Maarten o a través de Espanyol, pero sé las coordenadas de su punto de encuentro.\nTu misión es encontrar a los holandeses allí, abordar al comerciante y traerme su cargamento. Pagaré tan pronto como se entregue el cargamento.";
+		dialog.text = "En este momento un " + sTemp + ", el navío holandés llamado 'Rosbohom', está llegando a nuestras aguas junto con un barco de escolta. Está cargado de ébano y navega desde Willemstad para encontrarse con otro barco de escolta y asegurar un viaje seguro a Europa. No sé qué ruta toma, si a través de Saint-Martin o a través de aguas españolas, pero sé las coordenadas de su punto de encuentro.\nTu misión es encontrar a los holandeses allí, abordar al comerciante y traerme su cargamento. Pagaré tan pronto como se entregue el cargamento.";
 		link.l1 = "Entendido. ¿Hora y lugar?";
 		link.l1.go = "mtraxx_2";
 		break;
@@ -101,11 +101,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		if (iTotalTemp < sti(pchar.questTemp.Mtraxx.Crdn.Ebony) - 20)
 		{
 			dialog.text = "El Rosbohom tenía al menos " + FindRussianQtyString(sti(pchar.questTemp.Mtraxx.Crdn.Ebony)) + " de ébano. ¿Por qué me trajiste menos?";
-			link.l1 = "Bueno... ya sabes, tuve que deshacerme de una parte durante la pelea. Además de las ratas, malditas sean...";
+			link.l1 = "Bueno... tuve que deshacerme de una parte durante la pelea. Además de las ratas, malditas sean...";
 			link.l1.go = "mtraxx_7";
 			break;
 		}
-		dialog.text = "Muy bien. ¿Cuánto tienes? " + FindRussianQtyString(iTotalTemp) + "¿Espléndido! Te pagaré 150 pesos por una pieza.";
+		dialog.text = "Muy bien. ¿Cuánto tienes? ¿" + FindRussianQtyString(iTotalTemp) + "? ¡Espléndido! Te pagaré 150 pesos por cada pieza.";
 		link.l1 = "¿150 piezas de a ocho? Supongo que ese ébano cuesta mucho más.";
 		link.l1.go = "mtraxx_10";
 		break;
@@ -129,7 +129,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		AddMoneyToCharacter(pchar, iTotalTemp * 100);
 		RemoveCharacterGoods(pchar, GOOD_EBONY, iTotalTemp);
 		dialog.text = "El robo es tu oficio, capitán, yo soy un simple comerciante. Toma tu dinero y no sigamos discutiendo, ya has hecho una buena suma vendiendo parte de mi carga en otro lugar.";
-		link.l1 = "¡Que te jodan entonces!";
+		link.l1 = "¡Que te parte un rayo, entonces!";
 		link.l1.go = "mtraxx_9";
 		break;
 
@@ -142,7 +142,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "mtraxx_10":
-		dialog.text = "Y tienes razón, capitán, pero primero, intenta vender bienes robados y veré cuánto te pagarán otros mercaderes por ellos. El precio que te ofrezco es muy alto. Segundo, fue mi pista, nunca encontrarías esa caravana por tu cuenta, además había otros objetos de valor y bienes en ella y no los estoy reclamando. Tercero, te daré los mejores créditos a los ojos de Marcus Tyrex y esto cuesta mucho, créeme. Y finalmente, cuarto, un pobre comerciante debe ganarse la vida de alguna manera.";
+		dialog.text = "Y tienes razón, capitán, pero primero, intenta vender bienes robados y veré cuánto te pagarán otros mercaderes por ellos. El precio que te ofrezco es muy alto. Segundo, fue mi pista, nunca encontrarías esa caravana por tu cuenta. Además había otros objetos de valor y bienes en ella y no los estoy reclamando. Tercero, te daré los mejores créditos a los ojos de Marcus Tyrex y esto cuesta mucho, créeme. Y finalmente, cuarto, un pobre comerciante debe ganarse la vida de alguna manera.";
 		link.l1 = "¡Vaya! Debo retirarme ante tales argumentos " + npchar.name + ". Vamos a contar.";
 		link.l1.go = "mtraxx_11";
 		break;

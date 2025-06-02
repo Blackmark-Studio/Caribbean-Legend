@@ -48,6 +48,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Il y avait un malheureux, Monsieur";
                 link.l1.go = "goldengirl_10";
 			}
+			// andre39966 ===> В плену великого улова.
+			if (CheckAttribute(pchar, "questTemp.VPVL_Magor_Dialogue"))
+			{
+				link.l1 = "Excellence, je suis entré(e) en possession de renseignements concernant un commerce illicite qui doit bientôt se dérouler sur ces rivages. J'ose dire que cette affaire pourrait se révéler digne de votre attention.";
+				link.l1.go = "VPVL_Magor_1";
+				break;
+			}
+			if (CheckAttribute(pchar, "questTemp.VPVL_GovernorDialogueAvailable"))
+			{
+				link.l1 = "Excellence, je viens quérir des nouvelles de ce navire de contrebande dont nous avons discuté.";
+				link.l1.go = "VPVL_Magor_4";
+			}
+			//  <=== В плену великого улова.   
 		break;
 		
 		case "Sharlie_junglejew":
@@ -288,6 +301,51 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
 			pchar.questTemp.GoldenGirl = "find_girl";
 		break;
+		
+		// В плену великого улова, andre39966
+		case "VPVL_Magor_1":
+			dialog.text = "Des marchandises de contrebande, dites-vous ? Hmm... fort intrigant. Je vous prie de m'éclairer sur les détails de votre découverte.";
+			link.l1 = "Il y a trois jours, un navire chargé de contrebande devait jeter l'ancre dans la Baie de Le Marin. Le vaisseau a manqué son rendez-vous, mais j'ai de bonnes raisons de croire qu'il accostera bientôt. Peut-être que vos hommes pourraient organiser un accueil approprié pour ces brigands lorsqu'ils arriveront, Excellence.";
+			link.l1.go = "VPVL_Magor_2";
+			pchar.questTemp.VPVL_DontSpawnSmugglersShip = true; 
+			DelLandQuestMark(npchar);
+		break;
+
+		case "VPVL_Magor_2":
+			dialog.text = "Un navire sans nom transportant une cargaison non identifiée... Et vous présumez que je devrais déployour les forces de Sa Majesté sur la base de renseignements aussi nébuleux ?";
+			link.l1 = "Excellence, j'admets que les détails sont rares. Mais je vous prie de me permettre de raconter comment ces renseignements sont entrés en ma possession. (raconte)";
+			link.l1.go = "VPVL_Magor_3";
+		break;
+
+		case "VPVL_Magor_3":
+			dialog.text = "Très bien, nous mettrons vos renseignements à l'épreuve. Si un navire transportant de la contrebande jette effectivement l'ancre au large des côtes de Le Marin, vous, Capitaine, serez généreusement récompensé(e) pour votre service à la Couronne. Revenez me voir dans trois jours. D'ici là, le brouillard de l'incertitude se sera levé.";
+			link.l1 = "Parfait. Je reviendrai donc dans trois jours.";
+			link.l1.go = "VPVL_Delete_Spawn_Ship";
+			AddDialogExitQuest("VPVL_SetGovernorDialogueFlag");
+			AddQuestRecord("VPVL", "6");
+		break;
+
+		case "VPVL_Magor_4":
+			dialog.text = "Ah, Capitaine ! C'est un plaisir de vous recevoir à nouveau. Vos renseignements se sont avérés des plus précieux. Mes hommes ont intercepté le navire exactement là où vous l'aviez indiqué. Voici—cent cinquante doublons espagnols, fraîchement frappés et lourds dans la bourse. Prenez-les avec ma gratitude.";
+			link.l1 = "Mes humbles remerciements, Excellence. C'est une bonne fortune que ma parcelle de renseignements ait servi les intérêts de la Couronne. Si l'occasion se présente à nouveau, sachez que mon bras armé et mon œil discernant restent à votre disposition.";
+			link.l1.go = "VPVL_Delete_Flag";
+			AddItems(PChar, "gold_dublon", 150);
+			ChangeCharacterNationReputation(pchar, FRANCE, 5);
+			DelLandQuestMark(npchar);
+		break;
+
+		case "VPVL_Delete_Flag":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.VPVL_GovernorDialogueAvailable");
+			DeleteAttribute(pchar, "questTemp.VPVL_DontSpawnSmugglersShip");
+		break;
+
+		case "VPVL_Delete_Spawn_Ship":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.VPVL_Magor_Dialogue");
+			AddDialogExitQuest("VPVL_KillCapitanOfSmuggler");
+		break;
+		// <=== В плену великого улова
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

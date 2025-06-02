@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 			link.l1.go = "SKD_DomAnri_6_1";
 		break;
 		case "SKD_DomAnri_6_1":
-			StartInstantDialog("FMQT_mercen", "SKD_DomAnri_7", "Quest\CompanionQuests\Duran.c");
+			StartInstantDialog("Duran", "SKD_DomAnri_7", "Quest\CompanionQuests\Duran.c");
 		break;
 		
 		case "SKD_DomAnri_7":
@@ -116,7 +116,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			EndQuestMovie();
 			
-			sld = CharacterFromID("FMQT_mercen");
+			sld = CharacterFromID("Duran");
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			
@@ -200,7 +200,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			
 			LocatorReloadEnterDisable("PortRoyal_houseSp1", "reload2", true);
-			sld = CharacterFromID("FMQT_mercen");
+			sld = CharacterFromID("Duran");
 			LAi_SetActorType(sld);
 			LAi_ActorGoToLocation(sld, "reload", "reload2", "none", "", "", "", -1);
 			chrDisableReloadToLocation = false;
@@ -241,7 +241,7 @@ void ProcessDialogEvent()
 			CloseQuestHeader("TheFormerKnight");
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
 			
-			sld = CharacterFromID("FMQT_mercen");	//Клод Дюран становится постоянным офицером
+			sld = CharacterFromID("Duran");	//Клод Дюран становится постоянным офицером
 			sld.OfficerWantToGo.DontGo = true;
 			sld.loyality = MAX_LOYALITY;
 			LAi_SetOfficerType(sld);
@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 			
-			sld = CharacterFromID("FMQT_mercen");	//Клод Дюран становится постоянным офицером
+			sld = CharacterFromID("Duran");	//Клод Дюран становится постоянным офицером
 			sld.OfficerWantToGo.DontGo = true;
 			sld.loyality = MAX_LOYALITY;
 			LAi_SetOfficerType(sld);

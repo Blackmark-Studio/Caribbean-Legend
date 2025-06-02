@@ -22,7 +22,7 @@ void ProcessDialogEvent()
 
 	case "ShadowGuarder":
 		dialog.text = "¿Qué necesitas?";
-		link.l1 = "¿Eres tú " + pchar.questTemp.Shadowtrader.Guardername + "? El mercader local me envia y espera impacientemente tu presencia en este mismo momento.";
+		link.l1 = "¿Eres tú " + pchar.questTemp.Shadowtrader.Guardername + "? El mercader me envia y espera impacientemente tu presencia en este mismo momento.";
 		link.l1.go = "ShadowGuarder_1";
 		DelLandQuestMark(npchar);
 		break;

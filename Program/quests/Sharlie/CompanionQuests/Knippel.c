@@ -1,3 +1,93 @@
+void DTSG_Knippel_36()
+{
+	bDisableFastReload = false;
+	chrDisableReloadToLocation = false;
+	QuestCloseSeaExit()
+	
+	LocatorReloadEnterDisable("PortPax_town", "houseS2", false);
+	
+	sld = CharacterFromID("DTSG_PiterAdams");
+	ChangeCharacterAddressGroup(sld, "none", "", "");
+	
+	sld = GetCharacter(NPC_GenerateCharacter("DTSG_FrederikStouks", "mercen_26", "man", "man", 30, ENGLAND, -1, false, "quest"));
+	sld.name = StringFromKey("Knippel_21");
+	sld.lastname = StringFromKey("Knippel_22");
+	GiveItem2Character(sld, "blade_13");
+	EquipCharacterByItem(sld, "blade_13");
+	GiveItem2Character(sld, "pistol5");
+	EquipCharacterByItem(sld, "pistol5");
+	GiveItem2Character(sld, "cirass1");
+	EquipCharacterByItem(sld, "cirass1");
+	AddItems(sld, "purse2", 1);
+	sld.SaveItemsForDead = true;
+	sld.DontClearDead = true;
+	ChangeCharacterAddressGroup(sld, "PortPax_houseS2", "goto", "goto7");
+	LAi_SetActorType(sld);
+	SetSelfSkill(sld, 80, 80, 80, 80, 80);
+	LAi_SetHP(sld, 225+MOD_SKILL_ENEMY_RATE*10, 200+MOD_SKILL_ENEMY_RATE*10);
+	
+	sld = GetCharacter(NPC_GenerateCharacter("DTSG_RalfFaggl", "mush_ctz_12", "man", "mushketer", 30, ENGLAND, -1, false, "quest"));
+	sld.name = StringFromKey("Knippel_23");
+	sld.lastname = StringFromKey("Knippel_24");
+	SetCharacterPerk(sld, "Gunman");
+	SetCharacterPerk(sld, "GunProfessional");
+	GiveItem2Character(sld, "mushket2");
+	EquipCharacterbyItem(sld, "mushket2");
+	AddItems(sld, "purse2", 1);
+	sld.SaveItemsForDead = true;
+	sld.DontClearDead = true;
+	//sld.MushketType = "mushket2";
+	//sld.MushketBulletType = "cartridge";
+	LAi_SetStayType(sld);
+	ChangeCharacterAddressGroup(sld, "PortPax_houseS2", "goto", "goto1");
+	sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
+	sld.dialog.currentnode = "DTSG_RalfFaggl";
+	SetSelfSkill(sld, 80, 80, 80, 80, 80);
+	LAi_SetHP(sld, 250+MOD_SKILL_ENEMY_RATE*10, 200+MOD_SKILL_ENEMY_RATE*10);
+	
+	PChar.quest.DTSG_Sosedi.win_condition.l1 = "location";
+	PChar.quest.DTSG_Sosedi.win_condition.l1.location = "PortPax_houseS2";
+	PChar.quest.DTSG_Sosedi.win_condition = "DTSG_Sosedi";
+	
+	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1 = "Timer";
+	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.hour = sti(GetTime() + 2);
+	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.day = GetAddingDataDay(0, 0, 0);
+	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
+	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.year = GetAddingDataYear(0, 0, 0);
+	PChar.quest.DTSG_PoP_DuelTime.win_condition = "DTSG_PoP_DuelTime";
+	
+	PChar.quest.DTSG_PoP_Duel.win_condition.l1 = "location";
+	PChar.quest.DTSG_PoP_Duel.win_condition.l1.location = "PortPax_ExitTown";
+	PChar.quest.DTSG_PoP_Duel.win_condition = "DTSG_PoP_Duel";
+	LAi_LocationDisableOfficersGen("PortPax_ExitTown", true);
+	pchar.questTemp.DTSG_ZovemMatrosov = true;
+	AddQuestRecord("DTSG", "4");
+}
+
+void DTSG_Knippel_64()
+{
+	Return_KnippelOfficer();
+	bDisableFastReload = false;
+	chrDisableReloadToLocation = false;
+	
+	ChangeItemName("letter_1", "itmname_specialletter");
+	ChangeItemDescribe("letter_1", "itmdescr_DTSG_letter2");
+	
+	LocatorReloadEnterDisable("PortPax_town", "houseF1", false);
+	
+	pchar.GenQuestBox.PortPax_houseF1.box1.items.gold = 8000;
+	pchar.GenQuestBox.PortPax_houseF1.box1.items.chest = 1;
+	pchar.GenQuestBox.PortPax_houseF1.box1.items.jewelry2 = 10;
+	pchar.GenQuestBox.PortPax_houseF1.box1.items.jewelry3 = 5;
+	pchar.GenQuestBox.PortPax_houseF1.box1.items.jewelry4 = 5;
+	pchar.GenQuestBox.PortPax_houseF1.box1.items.jewelry8 = 1;
+	pchar.GenQuestBox.PortPax_houseF1.box1.items.letter_1 = 1;
+	
+	PChar.quest.DTSG_Duel_SundukPismo.win_condition.l1 = "item";
+	PChar.quest.DTSG_Duel_SundukPismo.win_condition.l1.item = "letter_1";
+	PChar.quest.DTSG_Duel_SundukPismo.win_condition = "DTSG_Duel_SundukPismo";
+}
+
 //=================================================================
 //======================кейсы из quests_reaction===================
 //=================================================================
@@ -261,28 +351,26 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		sld = GetCharacter(NPC_GenerateCharacter("DTSG_JeinAdams", "girl_9", "woman", "woman", sti(pchar.rank), ENGLAND, 0, false, "quest"));
 		sld.name = StringFromKey("Knippel_4");
 		sld.lastname = StringFromKey("Knippel_5");
-		ChangeCharacterAddressGroup(sld, "Location_reserve_06", "barmen", "bar1");
+		ChangeCharacterAddressGroup(sld, "PortPax_houseF1", "barmen", "bar1");
 		sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
 		sld.dialog.currentnode = "DTSG_JeinAdams_1";
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", 0, 0);
 		
 		sld = CharacterFromID("DTSG_PiterAdams");
-		ChangeCharacterAddressGroup(sld, "Location_reserve_06", "goto", "goto1");
+		ChangeCharacterAddressGroup(sld, "PortPax_houseF1", "goto", "goto1");
 		LAi_SetActorType(sld);
 		
 		if (GetCharacterIndex("Knippel") != -1)
 		{
 			sld = CharacterFromID("Knippel");
-			ChangeCharacterAddressGroup(sld, "Location_reserve_06", "goto", "goto2");
+			ChangeCharacterAddressGroup(sld, "PortPax_houseF1", "goto", "goto2");
 			LAi_SetActorType(sld);
 			sld.location = "None";
 		}
 	}
 	
 	else if (sQuestName == "DTSG_PiterAdams_IsDoma") {
-		DoQuestReloadToLocation("Location_reserve_06", "reload", "reload1", "DTSG_PiterAdams_VDom_2");
-		
 		if (GetCharacterIndex("Knippel") != -1)
 		{
 			sld = CharacterFromID("Knippel");
@@ -311,7 +399,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		if (GetCharacterIndex("Knippel") != -1)
 		{
 			sld = CharacterFromID("Knippel");
-			ChangeCharacterAddressGroup(sld, "Location_reserve_06", "reload", "reload1");
+			ChangeCharacterAddressGroup(sld, "PortPax_houseS2", "reload", "reload1");
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			Log_info(StringFromKey("Knippel_6"));
@@ -334,7 +422,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		if (GetCharacterIndex("Knippel") != -1)
 		{
 			sld = CharacterFromID("Knippel");
-			ChangeCharacterAddressGroup(sld, "Location_reserve_06", "reload", "reload1");
+			ChangeCharacterAddressGroup(sld, "PortPax_houseS2", "reload", "reload1");
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			Log_info(StringFromKey("Knippel_6"));
@@ -353,7 +441,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		sld = CharacterFromID("DTSG_PiterAdams");
 		sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
 		sld.dialog.currentnode = "DTSG_PiterAdams_11";
-		ChangeCharacterAddressGroup(sld, "Location_reserve_06", "reload", "reload1");
+		ChangeCharacterAddressGroup(sld, "PortPax_houseS2", "reload", "reload1");
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", 0, 0);
 	}
@@ -366,7 +454,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		sld = CharacterFromID("DTSG_PiterAdams");
 		sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
 		sld.dialog.currentnode = "DTSG_PiterAdams_11";
-		ChangeCharacterAddressGroup(sld, "Location_reserve_06", "reload", "reload1");
+		ChangeCharacterAddressGroup(sld, "PortPax_houseS2", "reload", "reload1");
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", 0, 0);
 		
@@ -397,59 +485,17 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "DTSG_PoP_ProverimSunduk") {
-		n = Findlocation("PortPax_town");
-		locations[n].reload.l31.name = "houseF1";
-		locations[n].reload.l31.go = "Location_reserve_06";
-		locations[n].reload.l31.emerge = "reload1";
-		locations[n].reload.l31.autoreload = "0";
-		locations[n].reload.l31.label = "Room";
 		LocatorReloadEnterDisable("PortPax_town", "houseF1", false);
 		
-		locations[n].reload.l32.name = "houseS2";
-		locations[n].reload.l32.go = "CommonPirateHouse";
-		locations[n].reload.l32.emerge = "reload1";
-		locations[n].reload.l32.autoreload = "0";
-		locations[n].reload.l32.label = "House";
-		//
-		n = Findlocation("Location_reserve_06");
-		DeleteAttribute(&locations[n], "models");
-		DeleteAttribute(&locations[n], "environment");
-		locations[n].filespath.models = "locations\inside\mediumhouse09";
-		locations[n].models.always.house = "mediumhouse09";
-		locations[n].models.always.house.level = 65538;
-		locations[n].models.day.locators = "mediumhouse09_locators";
-		locations[n].models.night.locators = "mediumhouse09_Nlocators";
-
-		Locations[n].models.always.mediumhouse09windows = "mediumhouse09_windows";
-		Locations[n].models.always.mediumhouse09windows.tech = "LocationWindows";
-		locations[n].models.always.mediumhouse09windows.level = 65539;
-
-		locations[n].models.always.back = "..\inside_back3";
-		locations[n].models.always.back.level = 65529;
-		//Day
-		Locations[n].models.day.mediumhouse09rand = "mediumhouse09_rand";
-		locations[n].models.day.charactersPatch = "mediumhouse09_patch";
-		//Night
-		locations[n].models.night.charactersPatch = "mediumhouse09_patch";
-		//Environment
-		locations[n].environment.weather = "true";
-		locations[n].environment.sea = "false";
-		//Reload map
-		locations[n].reload.l1.name = "reload1";
-		locations[n].reload.l1.go = "PortPax_town";
-		locations[n].reload.l1.emerge = "houseF1";
-		locations[n].reload.l1.autoreload = "0";
-		locations[n].reload.l1.label = "Street";
-		
-		pchar.GenQuestBox.Location_reserve_06.box1.items.gold = 8000;
-		pchar.GenQuestBox.Location_reserve_06.box1.items.chest = 1;
-		pchar.GenQuestBox.Location_reserve_06.box1.items.jewelry2 = 10;
-		pchar.GenQuestBox.Location_reserve_06.box1.items.jewelry3 = 5;
-		pchar.GenQuestBox.Location_reserve_06.box1.items.jewelry4 = 5;
-		pchar.GenQuestBox.Location_reserve_06.box1.items.jewelry8 = 1;
+		pchar.GenQuestBox.PortPax_houseF1.box1.items.gold = 8000;
+		pchar.GenQuestBox.PortPax_houseF1.box1.items.chest = 1;
+		pchar.GenQuestBox.PortPax_houseF1.box1.items.jewelry2 = 10;
+		pchar.GenQuestBox.PortPax_houseF1.box1.items.jewelry3 = 5;
+		pchar.GenQuestBox.PortPax_houseF1.box1.items.jewelry4 = 5;
+		pchar.GenQuestBox.PortPax_houseF1.box1.items.jewelry8 = 1;
 		
 		PChar.quest.DTSG_PoP_ProverimSunduk_2.win_condition.l1 = "locator";
-		PChar.quest.DTSG_PoP_ProverimSunduk_2.win_condition.l1.location = "Location_reserve_06";
+		PChar.quest.DTSG_PoP_ProverimSunduk_2.win_condition.l1.location = "PortPax_houseF1";
 		PChar.quest.DTSG_PoP_ProverimSunduk_2.win_condition.l1.locator_group = "box";
 		PChar.quest.DTSG_PoP_ProverimSunduk_2.win_condition.l1.locator = "box1";
 		PChar.quest.DTSG_PoP_ProverimSunduk_2.win_condition = "DTSG_PoP_ProverimSunduk_2";
@@ -950,8 +996,9 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "DTSG_ProshloeDominika_2") {
 		StartQuestMovie(true, false, true);
 		LAi_SetActorType(pchar);
-		TeleportCharacterToPosAy(pchar, 4.21, 5.84, 15.93, 1.50);
-		locCameraToPos(9.44, 6.89, 14.17, true);
+		TeleportCharacterToPosAy(pchar, -5.91, 4.56, 6.02, 1.50);
+		locCameraToPos(-0.99, 6.15, 7.09, true);
+		locCameraFromToPos(-0.99, 6.15, 7.09, true, -8.37, 4.16, 5.90);
 		
 		for (i=1; i<=4; i++)
 		{
@@ -972,48 +1019,28 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "DTSG_ProshloeDominika_3") {
-		Log_info(StringFromKey("Knippel_14"));
+		//Log_info(StringFromKey("Knippel_14"));
 		PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy1.wav");
 		
-		DoQuestCheckDelay("DTSG_ProshloeDominika_4", 2.0);
+		DoQuestCheckDelay("DTSG_ProshloeDominika_4", 2.5);
 	}
 	
 	else if (sQuestName == "DTSG_ProshloeDominika_4") {
-		locCameraFromToPos(-2.09, 6.39, 12.21, true, 4.62, 3.70, 12.01);
-		sld = CharacterFromID("Fleetwood");
-		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-		TeleportCharacterToPos(sld, 2.80, 4.0, 4.87);
+		LAi_FadeLong("DTSG_ProshloeDominika_5", "");
 		
-		LAi_SetActorType(pchar);
-		LAi_ActorGoToLocator(pchar, "goto", "goto2", "DTSG_ProshloeDominika_5", -1);
-		DoQuestCheckDelay("DTSG_ProshloeDominika_6", 3.5);
-		
-		sld = CharacterFromID("Knippel")
-		i = LAi_FindNearestVisCharacter(sld, 20);
-
-		if(i != -1)
-		{
-			characterRef = &Characters[i];
-
-			if(!LAi_IsImmortal(characterRef))
-			{
-				LAi_SetActorType(characterRef);
-				LAi_ActorGoToLocator(characterRef, "goto", "goto1", "", -1);
-			}
-		}
 	}
 	
 	else if (sQuestName == "DTSG_ProshloeDominika_5") {
+		locCameraFromToPos(-6.02, 9.83, -20.76, true, -12.06, 7.21, -21.45);
 		LAi_SetPlayerType(pchar);
+		TeleportCharacterToPosAy(pchar, -7.83, 7.95, -21.59, -1.50);
 		sld = CharacterFromID("Fleetwood");
-		LAi_SetActorType(sld);
-		LAi_ActorDialog(sld, pchar, "", 0, 0);
 		sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
 		sld.dialog.currentnode = "DTSG_Fleetwood_10";
-	}
-	
-	else if (sQuestName == "DTSG_ProshloeDominika_6") {
-		locCameraFromToPos(1.82, 5.24, 7.80, true, 4.45, 3.80, 2.85);
+		ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto1");
+		TeleportCharacterToPosAy(sld, -9.81, 7.84, -20.79, 1.50);
+		LAi_SetActorType(sld);
+		LAi_ActorDialog(sld, pchar, "", 0, 0);
 	}
 	
 	else if (sQuestName == "DTSG_ProshloeDominika_12") {
@@ -1185,6 +1212,16 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		PChar.quest.DTSG_MicleUinti_Ubit.win_condition.l1 = "NPC_Death";
 		PChar.quest.DTSG_MicleUinti_Ubit.win_condition.l1.character = "DTSG_MicleUinti";
 		PChar.quest.DTSG_MicleUinti_Ubit.win_condition = "DTSG_ProshloeDominika_15";
+		
+		DoQuestCheckDelay("DTSG_ProshloeDominika_14_0", 7.0);
+	}
+	
+	else if (sQuestName == "DTSG_ProshloeDominika_14_0") {
+		if (CharacterIsAlive("DTSG_MicleUinti"))
+		{
+			sld = CharacterFromID("DTSG_MicleUinti");
+			LAi_KillCharacter(sld);
+		}
 	}
 	
 	else if (sQuestName == "DTSG_ProshloeDominika_14_1") {

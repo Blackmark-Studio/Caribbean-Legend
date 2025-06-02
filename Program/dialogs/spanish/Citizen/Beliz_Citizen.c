@@ -19,7 +19,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			else
 			{
-				link.l1 = "   Dime, ¿has visto al héroe del día, el Capitán Edgardo Sotta? Me lo perdí, lamentablemente. ¿Cómo es él? ¡No puedo creer que un comerciante atrapó al infame Matt el Bocazas!";
+				link.l1 = "Dime, ¿has visto al héroe del día, el Capitán Edgardo Sotta? Me lo perdí, lamentablemente. ¿Cómo es él? ¡No puedo creer que un comerciante atrapó al infame Matt el Bocazas!";
 				link.l1.go = "Sotta1_1";
 				link.l2 = "Veo que toda la ciudad está celebrando la captura de Lutter, incluso aquellos que nunca van al mar." link.l2.go = "Lutter1_1";
 			}
@@ -30,7 +30,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	case "info":
 		// заменить на описание неких НПС, по квестам
 		dialog.text = "¿Crees que trabajo para el servicio secreto de " + NationNameGenitive(sti(NPChar.nation)) + "?";
-		link.l1 = "Bueno... no. Entonces adiós.";
+		link.l1 = "Bueno... no. Entonces, adiós.";
 		link.l1.go = "exit";
 		link.l2 = "¿Alguna otra pregunta, entonces?";
 		link.l2.go = "new question";
@@ -49,7 +49,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	// Квест "Путеводная звезда" ==>
 	case "Sotta1":
 		dialog.text = "No llegué a hablar con él, pero vi su barco, un galeón pesado. Es peligroso navegar solo en estas aguas, pero Sotta lo hace sin escolta.";
-		link.l1 = "Probablemente persiguiendo cada moneda de oro y recortando gastos donde pueda. Bueno, no te retendré. Buen día.";
+		link.l1 = "Probablemente persiguiendo cada moneda de oro y recortando gastos donde pueda. Bueno, no te retendré más. Buen día.";
 		link.l1.go = "Exit";
 
 		npchar.questTemp.Sotta = true;
@@ -58,7 +58,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Sotta1_1":
-		dialog.text = "¡Ay, es difícil de creer! Pero no confíes en todo lo que oyes, señor. Lo he visto, tan claro como te veo ahora. Es bueno que atrapó a Lutter, pero ¿por qué todo este teatro de mercader? Se comporta como un soldado. Siempre puedo decirlo: un pariente mío sirvió durante años.";
+		dialog.text = "¡Ay, es difícil de creer! Pero no confíes en todo lo que oyes, señor. Lo he visto, tan claro como te veo ahora. Es bueno que Lutter haya sido atrapado, pero ¿por qué todo este teatro de mercader? Se comporta como un soldado. Siempre puedo decirlo: un pariente mío sirvió durante años.";
 		link.l1 = "Interesante. Bueno, todos tienen sus secretos. Será mejor que me vaya. Gracias por la información.";
 		link.l1.go = "Exit";
 
@@ -68,7 +68,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Lutter1":
-		dialog.text = "Ya he visto al hombre. Es difícil creer que este sea el mismo pirata que aterrorizó a nuestros comerciantes durante años. ¿Cómo consiguió llegar a estar al mando? Vi a los soldados escoltándolo - gritando, llorando, riendo. Un loco.";
+		dialog.text = "Ya he visto al hombre. Es difícil creer que este sea el mismo pirata que aterrorizó a nuestros comerciantes durante años. ¿Cómo consiguió llegar a estar al mando? Vi a los soldados escoltándolo... gritando, llorando, riendo. Un loco.";
 		link.l1 = "Quizás la derrota y la realidad de su muerte inminente fueron demasiado para él. Pero no importa. ¡Adiós!";
 		link.l1.go = "Exit";
 
@@ -78,7 +78,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Lutter1_1":
-		dialog.text = "Sí, y yo también estoy celebrando - un buen número de mis compatriotas murieron a manos suyas. Los desafortunados perdieron a un padre, un hermano, un hijo - ya te haces la idea. ¡Esa barbarie duró demasiado! Matt debe haber sido uno de los piratas más afortunados de los últimos años, si me preguntas.";
+		dialog.text = "Sí, y yo también estoy celebrando, un buen número de mis compatriotas murieron a manos suyas. Los desafortunados perdieron a un padre, un hermano, un hijo... ya te haces la idea. ¡Esa barbarie duró demasiado! Matt debe haber sido uno de los piratas más afortunados de los últimos años, si me preguntas.";
 		link.l1 = "La suerte siempre se acaba tarde o temprano. Nos vemos.";
 		link.l1.go = "Exit";
 

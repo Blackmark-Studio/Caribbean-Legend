@@ -223,7 +223,7 @@ void wdmInitWorldMap()
 	worldMap.labels.Trinidad.locator = "Trinidad";
 	worldMap.labels.Trinidad.text = CheckingTranslate(idLngFile,"Trinidad");
 	
-	/*worldMap.labels.Tobago.type = "Island";
+	worldMap.labels.Tobago.type = "Island";
 	worldMap.labels.Tobago.id = "Tobago";
 	worldMap.labels.Tobago.locator = "Tobago";
 	worldMap.labels.Tobago.text = CheckingTranslate(idLngFile,"Tobago");
@@ -231,7 +231,7 @@ void wdmInitWorldMap()
 	worldMap.labels.MarieGalante.type = "Island";
 	worldMap.labels.MarieGalante.id = "MarieGalante";
 	worldMap.labels.MarieGalante.locator = "MarieGalante";
-	worldMap.labels.MarieGalante.text = CheckingTranslate(idLngFile,"MarieGalante");*/
+	worldMap.labels.MarieGalante.text = CheckingTranslate(idLngFile,"MarieGalante");
 	
 	worldMap.labels.Tenotchitlan.type = "Island";
 	worldMap.labels.Tenotchitlan.id = "Tenotchitlan";
@@ -449,6 +449,12 @@ void wdmInitWorldMap()
 	worldMap.labels.Tortuga_town.locator = "Tortuga_town";
 	worldMap.labels.Tortuga_town.text = CheckingTranslate(idLngFile,"Tortuga_town");
 	worldMap.labels.Tortuga_town.icon = FRANCE;
+	
+	worldMap.labels.FortOrange_town.type = "Town";
+	worldMap.labels.FortOrange_town.id = "FortOrange_town";
+	worldMap.labels.FortOrange_town.locator = "FortOrange_town";
+	worldMap.labels.FortOrange_town.text = CheckingTranslate(idLngFile,"FortOrange_town");
+	worldMap.labels.FortOrange_town.icon = PIRATE;
 	
 	worldMap.labels.Tenotchitlan_town.type = "Town";
 	worldMap.labels.Tenotchitlan_town.id = "Tenotchitlan_town";

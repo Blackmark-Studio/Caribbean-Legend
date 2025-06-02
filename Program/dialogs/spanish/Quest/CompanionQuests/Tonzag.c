@@ -115,7 +115,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "killer":
-		dialog.text = "¡Y ahí está el hombre mismo! ¿Viste la sangrienta masacre afuera? ¡Es todo obra tuya, traidor! Pero responderás por todo: por Porto Bello, por Gruoh, ¡y por esta mina!";
+		dialog.text = "¡Y ahí está el hombre mismo! ¿Viste la sangrienta masacre afuera? ¡Es todo obra tuya, traidor! Pero responderás por todo: por Portobello, por Gruoh, ¡y por esta mina!";
 		link.l1 = "Espera, ¿qué se supone que...?";
 		link.l1.go = "exit";
 
@@ -136,7 +136,7 @@ void ProcessDialogEvent()
 
 	case "mine_head_2":
 		dialog.text = "Yo soy " + GetFullName(npchar) + ", ingeniero jefe de la mina real de Los Teques. Acabo de regresar de una misión que duró meses y... ¡qué veo! ¡Lo que ha sucedido aquí es un crimen contra Dios y la humanidad, así que le pido que entregue sus armas de inmediato! ¡Las autoridades de Caracas investigarán esta villanía!";
-		link.l1 = " No puedo cumplir, señor, ¡y juro que no tuve nada que ver con esta masacre! Pero si insistes, tu propio cuerpo se sumará a la pila.";
+		link.l1 = "No puedo cumplir, señor, ¡y juro que no tuve nada que ver con esta masacre! Pero si insistes, tu propio cuerpo se sumará a la pila.";
 		link.l1.go = "mine_head_3";
 		break;
 
@@ -144,7 +144,7 @@ void ProcessDialogEvent()
 		dialog.text = "No temo a la muerte, pero siempre sé cuándo retirarme. ¡Vete, pero recuerda, reportaré lo que sucedió aquí, y no omitiré ni un solo detalle!";
 		link.l1 = "No puedo aceptar eso, señor. Lamento que haya llegado a esto. ¡A la batalla!";
 		link.l1.go = "mine_head_fight";
-		link.l2 = "  Parece que buscas la muerte, señor. Pero hoy, nadie más morirá. Nos vamos, y espero que este detalle también figure en tu informe. ";
+		link.l2 = "Parece que buscas la muerte, señor. Pero hoy, nadie más morirá. Nos vamos, y espero que este detalle también figure en tu informe. ";
 		link.l2.go = "mine_head_peace";
 		break;
 
@@ -217,13 +217,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "captive_5":
-		dialog.text = "Hubo un asunto en Porto Bello... Fue grande. Verás, tu amigo no solo se fue, no solo rompió el contrato, no solo mató al grupo que vino a terminar su trabajo. Provocó una verdadera masacre en las calles, complicando significativamente nuestra relación con los castellanos. Rara vez una incursión pirata siembra tanto terror como el que experimentaron los buenos católicos ese día. Maldita sea, incluso podría haberme impresionado si alguien más lo hubiera hecho.";
+		dialog.text = "Hubo un asunto en Portobello... Fue grande. Verás, tu amigo no solo se fue, no solo rompió el contrato, no solo mató al grupo que vino a terminar su trabajo. Provocó una verdadera masacre en las calles, complicando significativamente nuestra relación con los castellanos. Rara vez una incursión pirata siembra tanto terror como el que experimentaron los buenos católicos ese día. Maldita sea, incluso podría haberme impresionado si alguien más lo hubiera hecho.";
 		link.l1 = "¿Otra masacre? Qué interesante. Sigue adelante.";
 		link.l1.go = "captive_6";
 		break;
 
 	case "captive_6":
-		dialog.text = "El entonces Vice-Director de la Compañía, Rodenburg, intervino. De alguna manera logró silenciar todo el asunto, pero no antes de que perdiéramos a muchos de nuestros mejores hombres en las operaciones punitivas españolas. Sin embargo, después de que pasó algún tiempo, estábamos nuevamente haciendo negocios con ellos... ¡Ah! Pero no olvidamos nada, y tan pronto como surgió la oportunidad, intentamos vengarnos. El instigador de todo, Tonzag, tenía que ser eliminado.";
+		dialog.text = "El entonces vicedirector de la Compañía, Rodenburg, intervino. De alguna manera logró silenciar todo el asunto, pero no antes de que perdiéramos a muchos de nuestros mejores hombres en las operaciones punitivas españolas. Sin embargo, después de que pasó algún tiempo, estábamos nuevamente haciendo negocios con ellos... ¡Ah! Pero no olvidamos nada, y tan pronto como surgió la oportunidad, intentamos vengarnos. El instigador de todo, Tonzag, tenía que ser eliminado.";
 		link.l1 = "No tuviste éxito en eso. ¿Qué hay de la mina?";
 		link.l1.go = "captive_7";
 		break;
@@ -280,7 +280,7 @@ void ProcessDialogEvent()
 
 	case "ostin":
 		StartQuestMovie(true, false, true);
-			PlaySound("VOICE\" + LanguageGetLanguage() + "\OliverTrast02.wav");
+			PlaySound("VOICE\" + LanguageGetLanguage() + "\hambit\Ercule Tongzag-10.wav");
 			dialog.text = "Charles de Maure. Hércules. No saldrás de aquí con vida.";
 			link.l1 = "Siempre es una buena manera de empezar una conversación. ¿Realmente necesitas todo esto?";
 			link.l1.go = "ostin_1";
@@ -293,7 +293,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ostin_2":
-			dialog.text = "No, no puedo dejarte ir. Con tu amigo, por otro lado, es mucho más sencillo - a mis muchachos no les hace falta, pero todavía hay algunos de sus viejos camaradas de la Liga que no están del todo convencidos de la eficacia de mis métodos... Demasiado acostumbrados a trabajar limpio, por los limpios doblones, de la limpia Compañía. Pero sé justo lo que cambiará sus mentes - ¡la cabeza de un pecador audaz en una bandeja, ja-ja!";
+			dialog.text = "No, no puedo dejarte ir. Con tu amigo, por otro lado, es mucho más sencillo - a mis muchachos no les hace falta, pero todavía hay algunos de sus viejos camaradas de la Liga que no están del todo convencidos de la eficacia de mis métodos... Demasiado acostumbrados a trabajar limpio, por los limpios doblones, de la limpia Compañía. Pero sé justo lo que cambiará sus mentes, ¡la cabeza de un pecador audaz en una bandeja, ja-ja!";
 			link.l1 = "Has elegido el lugar equivocado para eso, lunático. ¿Realmente vas a comenzar una batalla en una iglesia?";
 			link.l1.go = "ostin_3";
 		break;

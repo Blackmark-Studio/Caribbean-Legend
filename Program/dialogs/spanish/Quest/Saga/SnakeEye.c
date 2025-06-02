@@ -196,7 +196,7 @@ void ProcessDialogEvent()
 	// пришёл из LSC
 	case "LSC_hello":
 		dialog.text = "Me alegra verte, mi amigo. ¿Cómo regresaste del cementerio de barcos?";
-		link.l1 = "He encontrado la estatua de Kukulcán allí, tal como me dijiste. Chico Blanco me ha ayudado - Ole Christiansen. La estatua estaba hundida en el mar, pero pude alcanzarla. Me teletransportó a un pueblo indígena en Dominica.";
+		link.l1 = "He encontrado la estatua de Kukulcán allí, tal como me dijiste. Chico Blanco me ha ayudado, Ole Christiansen. La estatua estaba hundida en el mar, pero pude alcanzarla. Me teletransportó a un pueblo indígena en Dominica.";
 		link.l1.go = "LSC_hello_1";
 		npchar.quest.LSC_hello = "true";
 		break;
@@ -420,7 +420,7 @@ void ProcessDialogEvent()
 
 	case "calendar_9":
 		RemoveItems(pchar, "skinmap", 1);
-		dialog.text = " (mirando) ¿Este signo redondo, sí? ¿Y qué significa?";
+		dialog.text = "(mirando) ¿Este signo redondo, sí? ¿Y qué significa?";
 		link.l1 = "No sé, chamán. Sé que solo una de las tres estatuas de Kukulcán tiene esta marca. Y que la estatua con la marca es la tuya. Concluyo que tu estatua es especial. ¿Tienes alguna idea?";
 		link.l1.go = "calendar_10";
 		break;
@@ -476,8 +476,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "calendar_17":
-		dialog.text = "Estoy seguro de eso. Le pregunté a Miskito sobre este ídolo. Un guerrero dijo que hace mucho tiempo se veían algunas cosas bonitas pintadas en la estatua. Muy similares a las piedras. Me dijo que eran unas piedras rojas muy bonitas. Un hombre blanco del pueblo blanco las compró.";
-		link.l1 = "Hum. Por lo que entiendo, parece que un rayo golpeó este 'algo' redondo, lo rompió en pedazos y luego esos pedazos fueron vendidos a algún tipo blanco?";
+		dialog.text = "Estoy seguro de eso. Le pregunté a Miskito sobre este ídolo. Un guerrero dijo que hace mucho tiempo se veían algunas cosas bonitas pintadas en la estatua. Muy similares a las piedras. Me dijo que eran unas piedras rojas muy bonitas. Un hombre blanco del pueblo las compró.";
+		link.l1 = "Hum. Por lo que entiendo, parece que un rayo golpeó este 'algo' redondo, lo rompió en pedazos y luego esos pedazos fueron vendidos a algún tipo blanco.";
 		link.l1.go = "calendar_18";
 		break;
 
@@ -570,7 +570,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "calendar_32":
-		dialog.text = "Di 'Gracias'. Los dioses te guían en tu camino, aunque no lo veas. Los blancos dicen - destino. Kukulcán te llamó, los dioses te guían. Ahora ve. Haz tu trabajo y deja que los buenos espíritus te guíen.";
+		dialog.text = "Di 'Gracias'. Los dioses te guían en tu camino, aunque no lo veas. Los blancos dicen, destino. Kukulcán te llamó, los dioses te guían. Ahora ve. Haz tu trabajo y deja que los buenos espíritus te guíen.";
 		link.l1 = "¡Gracias, Ojo de Serpiente! Nunca te olvidaré.";
 		link.l1.go = "calendar_33";
 		break;
@@ -585,7 +585,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "calendar_34":
-		dialog.text = " Hermano no es solo una palabra para los indios de la tribu Comanche. Cuando regreses de la ciudad de Kukulcán, visita nuestro pueblo. Cocinaremos mucho, mucho saraiaka. Estaré encantado de verte.";
+		dialog.text = "Hermano no es solo una palabra para los indios de la tribu Comanche. Cuando regreses de la ciudad de Kukulcán, visita nuestro pueblo. Cocinaremos mucho, mucho saraiaka. Estaré encantado de verte.";
 		link.l1 = "¡Claro, hermano piel roja! ¡Sin duda te visitaré!";
 		link.l1.go = "calendar_35";
 		break;

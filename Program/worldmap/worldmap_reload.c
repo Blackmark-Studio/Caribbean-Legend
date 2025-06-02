@@ -274,7 +274,7 @@ bool WdmAddEncountersData()
 			}
 			if(CheckAttribute(encDataForSlot,"Task.Target") && encDataForSlot.Task.Target == PLAYER_GROUP)
 			{
-				if(CheckAttribute(pchar, "worldmap.FollowCounter")) DeleteAttribute(pchar, "worldmap.FollowCounter");
+				DeleteAttribute(pchar, "worldmap.FollowCounter");
 				log_testinfo("worldmap преследователь Task Target "+encDataForSlot.Task.Target+" удалён");
 			}
 		}

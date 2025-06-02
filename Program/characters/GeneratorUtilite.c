@@ -1,12 +1,8 @@
 // BOAL методы для генератора НПС
 
-// здесь можно объявить глобальные переменные
-
 int m_rank_bonus, e_rank_bonus;
 
-
-
-// генерим НПС приблизительного ранга
+// Генерим НПС приблизительного ранга
 void SetFantomParamFromRank(ref NPchar, int  rank, bool setEquip)
 {
     SetRandSPECIAL(Npchar);
@@ -276,7 +272,7 @@ void Fantom_SetRandomSkills(ref rFantom, string sFantomType)
 
 	if(sFantomType == "special")	
 	{
-		iSClass = 2 + rand(4);
+		iSClass = 2 + rand(5);
 	}
 	else
 	{
@@ -594,116 +590,4 @@ void SetAntiCheat()
 float GetCRCCheatSum(ref _PChar)
 {
 	return makefloat(GetSPECIALSum(_PChar) + GetSkillSum(_PChar) + sti(_PChar.Ship.Type) + stf(_PChar.Health.HP) + sti(_PChar.rank) + sti(_PChar.Money) + stf(_PChar.chr_ai.hp));
-}
-
-////////////////////////////////////////
-//   SEA
-////////////////////////////////////////
-float Sea_TurnRateMagicNumber();
-{
-    return 244.444; //162.962; //244.444; *2/3
-}
-
-//#define WIND_NORMAL_POWER		18.0 // делитель для силы ветра на циферблате - влияет на мах скорость
-/*
-float Sea_ApplyMaxSpeedZ(aref arCharShip, float fWindDotShip) //float fTRFromSailDamage,
-// arCharShip - корабль на НПС,  fTRFromSailDamage - паруса 0..1, fWindDotShip - направление ветра -1..1
-{
-    ref		rShip = GetRealShip(sti(arCharShip.Type)); // база
-    float   fMaxSpeedZ;
-    float   fWindAgainstSpeed;
-    //fMaxSpeedZ = (0.16 + fTRFromSailDamage / 1.2) * stf(arCharShip.MaxSpeedZ);
-    fMaxSpeedZ = stf(arCharShip.MaxSpeedZ);
-    fWindAgainstSpeed = stf(rShip.WindAgainstSpeed) * isEquippedArtefactUse(arCharShip, "obereg_11", 1.0, 1.1);// / 1.7; // мин fWindAgainstSpeed = 0.8 - мах 10.5
-	if (fWindDotShip >= -0.1)
-    { //по ветру
-        fMaxSpeedZ = fMaxSpeedZ * (0.81 + fWindDotShip / (1.9 + pow(fWindAgainstSpeed, 0.33)));
-    }
-    else
-    { //против ветра
-        fMaxSpeedZ = fMaxSpeedZ * (0.75 - fWindDotShip/3.2 - pow(abs(fWindDotShip), fWindAgainstSpeed)); // тут есть влияние кода в ЕХЕ
-    }
-
-    return fMaxSpeedZ;
-}
-*/
-float Sea_ApplyMaxSpeedZ(aref arCharShip, float fWindDotShip, ref rCharacter) //float fTRFromSailDamage,
-{
-	ref		rShip = GetRealShip(sti(arCharShip.Type)); // база
-    float   fMaxSpeedZ = 0.0;
-    float   fWindAgainstSpeed;
-    float   BtWindR;
-    float   fkoeff;
-	
-	if (CheckAttribute(rCharacter, "FixedShipSpeed")) {
-		return stf(rCharacter.FixedShipSpeed);
-	}
-	
-	fMaxSpeedZ 			= stf(arCharShip.MaxSpeedZ);	
-	fWindAgainstSpeed   = FindShipWindAgainstSpeed(rCharacter);
-	arCharShip.WindAgainstSpeed = Radian2Degree(acos(1.0 - fWindAgainstSpeed));     // 41.4 - 126.8 градусов без амулета
-
-     // LDH 16Jan17 - new sailing model for fore and aft rigged ships
-     // LDH 18Feb17 - added mod toggle
-	//if (ENHANCED_SAILING_MODE && stf(rShip.WindAgainstSpeed) >= 1.0)   // fore and aft rigged ships with mod enabled
-	// belamour legendary edition продвинутое плавание в тактическом режиме 
-	if(!iArcadeSails && stf(rShip.WindAgainstSpeed) >= 1.0)
-	{
-		// convert radians to actual speed (radians * 6.5), these are estimates
-		fWindAgainstSpeed *= 6.5;
-		if (fWindDotShip > 0.0)  // with the wind
-        {
-            fMaxSpeedZ = fMaxSpeedZ * (1.0 - fWindDotShip / (0.5 + pow(fWindAgainstSpeed, 0.25)));
-        }
-        else                     // against the wind
-        {
-			fMaxSpeedZ = fMaxSpeedZ * (1.0 + AgainstWindFactor(rCharacter) * (fWindDotShip/3.2 - pow(abs(fWindDotShip), fWindAgainstSpeed)));
-            if (fMaxSpeedZ < 0.0) fMaxSpeedZ = 0.0;
-        }
-	}
-    else   // default sailing model for square rigged ships or if enhanced sailing mod not used
-	{		
-		BtWindR = 1.0 -  stf(fWindAgainstSpeed);
-		// Jason: добавляю в формулу поправочный коэффициент. Без этого коэффициента корабли с косыми парусами превращаются в калек - никогда не достигают своей макс скорости согласно ТТХ даже на оптимальном курсе. Против ветра их скорость возрастает прямо пропорционально бейдевинду, в противном случае нахуя бейд вообще нужен вместе с повышалкой, если он только вредит в итоге. Таким образом при движении против ветра имеем следующее: чем выше бейд корабля - тем выше его скорость на тупых углах и тем более тупой угол можно взять до критического падения скорости.
-		fkoeff = stf(fWindAgainstSpeed); // собственно бейдевинд + повышалка
-		if (stf(fkoeff) < 1) fkoeff = 1; // движение прямых парусов против ветра оставляем без изменений
-
-		if(fWindDotShip < BtWindR) // по ветру
-		{
-			fMaxSpeedZ = fMaxSpeedZ * (1.0 + 0.974 * (fWindDotShip - BtWindR) / (1.0 + BtWindR));
-		}
-		else // против ветра
-		{
-			fMaxSpeedZ = fkoeff*fMaxSpeedZ * (1.0  - (fWindDotShip - BtWindR)/ 2.0);
-		}	
-    }
-	return fMaxSpeedZ;
-}
-
-// LDH 17Feb17 - for fore and aft rigged ships, sail faster between beam and best course arrow
-// only used when sailing against the wind
-float AgainstWindFactor(ref rCharacter)
-{
-	float Wind = Radian2Degree(NormalizeAngle(stf(Weather.Wind.Angle)));
-	float Ship = Radian2Degree(NormalizeAngle(stf(rCharacter.ship.Ang.y)));
-
-	float Diff = abs(Ship - Wind);		// difference between your heading and the direction the wind is blowing
-	if (Diff > 180.0) Diff = abs(Diff - 360.0);
-
-	float BestCourse = FindShipWindAgainstSpeed(rCharacter);	// best course angle, includes Pilgrim's amulet
-	BestCourse = Radian2Degree(acos(1.0 - BestCourse));
-
-	float Factor = 1.0;						// Normal calculation for sailing closer to the wind than your best course arrows
-	if (Diff < BestCourse) Factor = 0.5;	// Ship sails faster between wind on the beam and best course arrows
-
-	return Factor;
-}
-
-// LDH 25Feb17
-float NormalizeAngle(float Angle)
-{
-	while (Angle >= PIm2) Angle -= PIm2;
-	while (Angle < 0.0)   Angle += PIm2;
-
-	return Angle;
 }

@@ -15,18 +15,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "¿Cuál es el propósito de vuestra visita a Tortuga, Capitán?";
 			link.l1 = "¡Te lo ruego! ¡Ayuda a mi camarada, y responderé a todas tus preguntas!";
 			link.l1.go = "tonzag_bail_a";
-			link.l2 = "¿Eres una persona tan importante, y viniste aquí sin ningún guardia, justo después de que toda la prisión escuchara un disparo?!";
+			link.l2 = "¡¿Eres una persona tan importante, y viniste aquí sin ningún guardia, justo después de que toda la prisión escuchara un disparo?!";
 			link.l2.go = "tonzag_bail_b";
 		break;
 		
 		case "tonzag_bail_a":
-			dialog.text = " Mientras demoras tu respuesta, él se está desangrando. Repito la pregunta.";
+			dialog.text = "Mientras demoras tu respuesta, él se está desangrando. Repito la pregunta.";
 			link.l1 = "";
 			link.l1.go = "tonzag_bail_1";
 		break;
 		
 		case "tonzag_bail_b":
-			dialog.text = " Sé   bastante   sobre   lo   que   pasó.   Repito   la   pregunta.";
+			dialog.text = "Sé   bastante   sobre   lo   que   pasó.   Repito   la   pregunta.";
 			link.l1 = "";
 			link.l1.go = "tonzag_bail_1";
 		break;
@@ -133,7 +133,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "tonzag_bail_truth_b_1":
 			dialog.text = "Vete, Charles. Y llévate a esta escoria contigo. Tu elección de compañeros... es decepcionante.";
-			link.l1 = "Al menos dime dónde encontrar a tu... benefactor?";
+			link.l1 = "Al menos dime dónde encontrar a tu... benefactor.";
 			link.l1.go = "tonzag_bail_truth_b_2";
 		break;
 		
@@ -158,7 +158,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "tonzag_bail_lies_a":
 			pchar.questTemp.TonzagQuest.Bail = 500;
-			dialog.text = "Por favor, deposita quinientos doblones en el fondo de pensiones de la guarnición de Tortuga con el prestamista local.";
+			dialog.text = "Por favor, deposita quinientos doblones en el fondo de pensiones de la guarnición de Tortuga con el prestamista.";
 			if (CheckAttribute(pchar, "questTemp.FMQT") && pchar.questTemp.FMQT == "end") {
 				pchar.questTemp.TonzagQuest.Bail = 600;
 				dialog.text = dialog.text+" Y agreguemos otros cien doblones por los viejos problemas que causaste al involucrarte con una dama de alto rango en esta isla.";

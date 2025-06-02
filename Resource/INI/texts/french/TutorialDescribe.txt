@@ -2,14 +2,14 @@
 
 }
 
-Key Layout {Раскладка}
+Key Layout {Disposition des touches}
 Key Layout_descr
 {
-Альтернативная раскладка содержит ряд изменений в управлении, добавляет новые команды и открывает новые возможности:
+La disposition alternative comprend une série de modifications des commandes, ajoute de nouvelles actions et ouvre de nouvelles possibilités :
 ~
-- изменены команды быстрых действий и обыск трупов
-- изменено использование усиляющих зелий
-- вкладки меню персонажа доступны на отдельные клавиши
+- les commandes d'action rapide et le pillage des cadavres ont été modifiés
+- l'utilisation des potions de renforcement a été modifiée
+- les onglets du menu du personnage sont disponibles sur des touches séparées
 }
 
 OptKurs {Angle au vent}
@@ -37,8 +37,7 @@ Le menu d'action permet d'accéder à de nombreuses fonctions utiles à terre co
 ~
 La fonction "Naviguer vers" vous permet de voyager rapidement et instantanément à proximité d'un navire ami ou d'un point géographique. La distance de voyage rapide peut être augmentée en utilisant des longues-vues plus rares et plus chères.
 ~
-Utilisez le menu d'action pour atteindre instantanément le "Ghost" et lui envoyer une chaloupe.
-}
+Utilisez le menu d'actions pour atteindre instantanément le 'Fantôme' et lui envoyer une chaloupe.
 
 SeaFastTravel_controlsimg1 {BICommandsActivate}
 
@@ -82,10 +81,10 @@ Vous pouvez presque toujours trouver un endroit où vous pouvez forcer l'ennemi 
 Collision {Changement de position}
 Collision_descr
 {
-Parfois, pendant un combat, il est nécessaire de changer de position en perçant la ligne de l'ennemi ou en contournant les alliés.
+Parfois, au cours d'une bataille, il est nécessaire de changer de position en perçant la ligne ennemie ou en manoeuvrant autour des alliés.
 ~
-Votre héros poussera automatiquement les alliés, et pour percer la formation de l'ennemi, vous devez utiliser le sprint ou des esquives.
-Dans le combat, le sprint consomme de l'énergie, donc utilisez-le judicieusement.
+Votre héros repousse automatiquement ses alliés, et pour percer la formation ennemie, vous devez utiliser le sprint ou l'esquive.
+Au combat, les sprints consomment de l'énergie, il faut donc les utiliser à bon escient.
 }
 Collision_controlsimg1 {ChrFightMode}
 
@@ -165,7 +164,9 @@ La chasse au trésor, les dépôts bancaires, le commerce de biens stratégiques
 
 }
 
-Box {Stockage des objets}
+Dubloons_controlsimg1 {LICommandsActivate}
+
+Box {Stockage d'objets}
 Box_descr
 {
 Les coffres de votre cabine peuvent contenir un nombre illimité d'objets personnels. En plus de l'équipement obligatoire dans vos emplacements de tenue, il est judicieux de ne transporter que des potions, des amulettes et des munitions.
@@ -262,14 +263,14 @@ Le mode Voiles de bataille limite la vitesse mais améliore les virages, la pré
 ~
 Le mode Voiles enroulées ralentit progressivement le navire jusqu'à son arrêt complet. Très utile pour aborder ou récupérer des objets de valeur en mer.
 ~
-La règle d'or : au combat, le mode " Voiles de bataille " est préférable ; en dehors du combat, le mode " Pleines voiles ".
+La règle d'or : au combat, le mode ' Voiles de bataille ' est préférable ; en dehors du combat, le mode " Pleines voiles ".
 
 }
 
 Navigation_controlsimg1 {Ship_SailUp}
-Navigation_controlsimg2 {Ship_SailDown}
-Navigation_controlsimg3 {MiniMapZoomIn}
-Navigation_controlsimg4 {MiniMapZoomOut}
+Navigation_controlsimg2 {Ship_TurnLeft}
+Navigation_controlsimg3 {Ship_SailDown}
+Navigation_controlsimg4 {Ship_TurnRight}
 
 Stealth{Furtivité}
 Stealth_descr
@@ -327,7 +328,7 @@ Contrairement aux armes de mêlée, les armes à feu offrent une plus grande fle
 
 Mushket_controlsimg1 {Inventory}
 
-CameraControl{Ahoy!}
+CameraControl{Ohé !}
 CameraControl_descr
 {
 Bienvenue dans le Mode Histoire.  
@@ -348,19 +349,22 @@ CameraControl_controlsimg4 {ChrStrafeRight}
 CameraControl_controlsimg5 {ShipCamera_Turn_H}
 CameraControl_controlsimg6 {LICommandsActivate}
 
-CameraControlFP{Ahoy!}
+CameraControlFP{Ohé !}
 CameraControlFP_descr
 {
 Bienvenue dans le Nouveau Monde !
-~  
-Ces eaux sont impitoyables - et la fortune favorise rarement les téméraires. Commence petit : voyage entre colonies amies, fais des courses, livre des biens et des passagers, et participe au commerce local.
-~  
-Des doublons en or te permettront d'acheter des cartes vers des trésors enfouis. Des pesos en argent garderont ton navire à flot et te permettront d'engager des officiers - et sans eux, même un marchand solitaire peut être ta fin.
-~  
-Déplace-toi avec tes touches, regarde autour de toi avec ta souris. Tu peux marcher, courir ou sprinter quand nécessaire. Le menu d'action sera également utile - surtout pour les voyages rapides et d'autres caractéristiques avancées.
-~  
-Ta légende commence ici.  
-À bientôt en mer.
+~
+Ces eaux sont impitoyables, et la chance sourit rarement aux imprudents. Commencez modestement : voyagez entre des colonies amies, accomplissez des courses, livrez des marchandises et des passagers, faites au commerce local.
+~
+Les doublons d'or vous permettront d'acheter des cartes menant à des trésors enfouis. Les pesos d'argent maintiendront votre navire à flot et vous permettront d'embaucher des officiers. Et sans eux, même un marchand isolé peut avoir raison de vous.
+~
+Déplacez-vous avec vos touches, regardez autour de vous avec votre souris. Vous pouvez marcher, courir ou sprinter si nécessaire. Le menu d'action s'avérera également utile, notamment pour les déplacements rapides et d'autres fonctions avancées.
+~
+Votre légende commence ici.
+Rendez-vous en mer.
+
+~
+Merci de jouer et à bientôt en mer !
 }
 
 CameraControlFP_controlsimg1 {ChrForward}
@@ -370,16 +374,60 @@ CameraControlFP_controlsimg4 {ChrStrafeRight}
 CameraControlFP_controlsimg5 {ShipCamera_Turn_H}
 CameraControlFP_controlsimg6 {LICommandsActivate}
 
-MarksmanMode{Visée}
+MarksmanMode{Viser}
 MarksmanMode_descr
 {
-Vous pouvez viser avec n'importe quelle arme à feu pour tirer plus précisément. Maintenez le bouton de visée enfoncé pour entrer en mode tireur d'élite. Relâchez le bouton pour sortir sans tirer.  
+Vous pouvez viser avec n'importe quelle arme à feu pour tirer avec plus de précision. Maintenez le bouton de visée enfoncé pour passer en mode tireur d'élite. Relâchez le bouton pour quitter le mode sans tirer.   
 ~  
-Tirer depuis le mode tireur d'élite est plus précis et mortel, mais le compromis est une visibilité et une vitesse de déplacement réduites.  
+Le tir en mode tireur d'élite est plus précis et plus meurtrier, mais la contrepartie est une visibilité et une vitesse de mouvement réduites.  
 ~  
-Plus vous visez longtemps, plus votre tir infligera de dégâts. Un tir à la tête infligera encore plus de dégâts. Si vous subissez des dommages, votre visée sera réinitialisée et votre personnage vacillera.
+Plus vous visez longtemps, plus votre tir infligera de dégâts. Un tir à la tête inflige des dégâts encore plus importants. Si vous subissez des dégâts, votre visée sera réinitialisée et votre personnage chancellera.  
 }
 
 MarksmanMode_controlsimg1 {ChrAiming}
 
+Overload {Surcharge}
 
+Overload_descr
+{
+Vous avez rencontré pour la première fois les limites de poids transportable. 
+Chaque personnage du jeu a un poids maximum limité, et sa limite dépend de la force, des compétences et des amulettes.
+Chaque objet a également son propre poids, et même les plus légers peuvent entraîner une surcharge en grande quantité, ce qui entraîne à son tour des pénalités sur les caractéristiques et les compétences.
+Essayez de trouver quelque chose qui augmente le poids maximum transportable de votre personnage – par exemple chez un marchand. 
+}
+
+Logbook {Journal de bord et documents}
+
+Logbook_descr
+{
+Chaque quête que vous acceptez est enregistrée dans le Journal. Il est très important de lire attentivement les dialogues et les entrées du Journal – ils contiennent souvent des précisions et des instructions importantes pour les actions suivantes.
+En plus des quêtes, le Journal contient d'autres informations importantes : dans la section Documents, vous pouvez lire toutes les notes trouvées, et des sections comme Commerce et Livre de caisse vous seront utiles plus tard.
+Familiarisez-vous avec les entrées du Journal en appuyant sur F3.
+~
+Et rappelez-vous – Caribbean Legend est un jeu exigeant, et la profondeur de certaines quêtes peut ne pas être évidente. N'hésitez pas à demander des conseils sur Discord – on vous aidera sûrement. 
+}
+
+DeadSearch {Pillage de cadavres}
+
+DeadSearch_descr
+{
+Après chaque combat, comme dans tout bon jeu de rôle, il est temps de ramasser des trophées.
+Vous pouvez piller n'importe quel ennemi tombé en appuyant sur 1 près de son corps, mais tous n'auront pas quelque chose de précieux dans leurs poches.
+~
+Si les corps sont trop proches et se gênent mutuellement, vous pouvez appuyer sur le bouton "Ne pas piller" dans le menu de pillage – cela interdira définitivement de piller ce corps.
+~
+Ces types ont sûrement au moins un élixir de soin dans leurs poches, dont Alonso a tant besoin.
+}
+
+Trading {Commerce et prix}
+
+Trading_descr
+{
+Le commerce est un système profond et complexe où de nombreux facteurs influencent le prix d'achat et de vente.
+~
+Dans le commerce terrestre, la compétence Commerce du joueur et son histoire sont principalement évaluées.
+~
+Dans le commerce maritime, il y a plus de facteurs – en plus de ceux mentionnés, le prix dépend du type de bien, de son origine, de la taille de la colonie, des routes d'exportation et d'importation, ainsi que des compétences et talents du trésorier.
+~
+Tôt ou tard, vous comprendrez tout, mais pour l'instant, il vaut la peine d'acheter un amulette utile pour le Commerce.
+}

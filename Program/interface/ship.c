@@ -33,7 +33,9 @@ void InitInterface_R(string iniName, ref _chr) // _chr нужно для чит�
 	FillShipsScroll();
 	
 	SendMessage(&GameInterface,"ls",MSG_INTERFACE_INIT,iniName);
-
+	CreateString(true,"ShipName","",FONT_NORMAL,COLOR_MONEY, 435,355,SCRIPT_ALIGN_CENTER,1.6);
+	CreateString(true,"ShipBaseName","",FONT_NORMAL,COLOR_NORMAL, 435,485,SCRIPT_ALIGN_CENTER,1.6);
+	
 	SetEventHandler("InterfaceBreak","ProcessExitCancel",0);
 	SetEventHandler("exitCancel","ProcessExitCancel",0);
 	SetEventHandler("FlagsPress","FlagsProcess",0);
@@ -119,7 +121,8 @@ void ProcessExitCancel()
 
 void IDoExit(int exitCode)
 {
-	
+	UpdatePlayerSquadronPower(); // Обновим, если что-то менялось
+
 	DelEventHandler("InterfaceBreak","ProcessExitCancel");
 	DelEventHandler("exitCancel","ProcessExitCancel");
 	DelEventHandler("FlagsPress","FlagsProcess");
@@ -424,8 +427,7 @@ void FillShipsScroll()
 				shipName = ShipsTypes[iShipType].Name;
 
 				GameInterface.SHIPS_SCROLL.(attributeName).character = cn;
-				GameInterface.SHIPS_SCROLL.(attributeName).str1 = "#"+XI_ConvertString("ShipClass") +" "+ShipsTypes[iShipType].Class;
-				GameInterface.SHIPS_SCROLL.(attributeName).str2 = shipName;
+				GameInterface.SHIPS_SCROLL.(attributeName).str1 = "#"+" "+ShipsTypes[iShipType].Class;
 				GameInterface.SHIPS_SCROLL.(attributeName).img1 = "ship";
 				GameInterface.SHIPS_SCROLL.(attributeName).tex1 = FindFaceGroupNum("SHIPS_SCROLL.ImagesGroup","SHIPS_"+shipName+"_"+realShip.ship.upgrades.hull);
 				m++;
@@ -435,7 +437,6 @@ void FillShipsScroll()
 				attributeName = "pic" + (m+1);
 				GameInterface.SHIPS_SCROLL.(attributeName).character = cn;
 				GameInterface.SHIPS_SCROLL.(attributeName).str1 = "#";
-				GameInterface.SHIPS_SCROLL.(attributeName).str2 = "NoneBoat";
 				GameInterface.SHIPS_SCROLL.(attributeName).img1 = "Not Used";
 				GameInterface.SHIPS_SCROLL.(attributeName).tex1 = "BLANK_SHIP";
 				m++;
@@ -446,6 +447,7 @@ void FillShipsScroll()
 	GameInterface.SHIPS_SCROLL.ListSize = m;
 	GameInterface.SHIPS_SCROLL.NotUsed = 5 - m + 1;
 }
+
 
 void ProcessFrame()
 {
@@ -470,7 +472,7 @@ void ProcessFrame()
 
 				xi_refCharacter = characterFromID(sChrId);
 				shipIndex= nCurScrollNum+ 1;
-				if (shipIndex< 0)  
+				if (shipIndex< 0)
 				{
 					shipIndex= 0;
 				}
@@ -495,6 +497,7 @@ void ProcessFrame()
 		}
 	}
 }
+
 void OnShipScrollChange()
 {
 	// доп инфа в шапку --->
@@ -535,7 +538,10 @@ void OnShipScrollChange()
 	SetNodeUsing("FLAG_BTN", false);
 	SetNodeUsing("LEFTCHANGE_NATION", false);
 	SetNodeUsing("RIGHTCHANGE_NATION", false);
-	
+	SetNodeUsing("SUPPLY",false);
+	SetNodeUsing("SUPPLY2",false);
+	SetNodeUsing("SUPPLYGOLD",false);
+		
 	if (iShip != SHIP_NOTUSED)
 	{
 		// оптимизация скилов -->
@@ -552,6 +558,8 @@ void OnShipScrollChange()
 		ref refBaseShip = GetRealShip(iShip);
 		string sShip = refBaseShip.BaseName + refBaseShip.ship.upgrades.hull;
 		SetNewPicture("SHIP_BIG_PICTURE", "interfaces\le\ships\" + sShip + ".tga");
+		GameInterface.strings.shipbasename = XI_ConvertString(refBaseShip.BaseName);
+		GameInterface.strings.shipname = xi_refCharacter.ship.name;
 
 		GameInterface.edit_box.str = xi_refCharacter.ship.name;	
 		SetFormatedText("SHIP_RANK", refBaseShip.Class);
@@ -564,7 +572,6 @@ void OnShipScrollChange()
 		// в эскадре
 		if (GetCompanionQuantity(pchar) > 1) // больше 1 ГГ
 		{
-			sText = XI_ConvertString("FoodSquadronInfo");
 			iFood = CalculateFood();
 			sText = sText + FindRussianDaysString(iFood);
 			SetFormatedText("FOOD", sText);
@@ -581,17 +588,16 @@ void OnShipScrollChange()
 				iColor = argb(255,255,192,192);
 			}
 			SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"FOOD", 8,-1,iColor);
+			SetNodeUsing("SUPPLY2",true);
 		}
 		// еда -->
 		// на одном корабле
-		SetFoodShipInfo(xi_refCharacter, "FOOD_SHIP");
-		SetRumShipInfo(xi_refCharacter,"RUM_SHIP");
+		SetFoodShipInfoShort(xi_refCharacter, "FOOD_SHIP");
+		SetRumShipInfoShort(xi_refCharacter,"RUM_SHIP");
+		SetNodeUsing("SUPPLY",true);
 		// еда <--
-		if (GetRemovable(xi_refCharacter)) // считаем только своих, а то всяких сопровождаемых кормить!!!
-		{
-		    // для каждого корабля учитываем класс и считаем отдельно
-		    SetFormatedText("MONEY_SHIP", XI_ConvertString("ShipUpkeep") + NewStr() + FindRussianMoneyString(GetSalaryForShip(xi_refCharacter)));
-		}
+		SetFormatedText("MONEY_SHIP", FindRussianMoneyString(GetSalaryForShip(xi_refCharacter)) + " " + XI_ConvertString("per month"));
+		SetNodeUsing("SUPPLYGOLD",true);
 		SetFormatedText("CREW_QTY", ""+GetCrewQuantity(xi_refCharacter));
 		if (GetCrewQuantity(xi_refCharacter) > GetOptCrewQuantity(xi_refCharacter) || GetCrewQuantity(xi_refCharacter) < GetMinCrewQuantity(xi_refCharacter))
 		{
@@ -638,6 +644,7 @@ void OnShipScrollChange()
 		SetNodeUsing("BAR_Soldiers", false);
 		SetNodeUsing("BAR_CrewMoral", false);
 	}
+	SetShipPerks();
 	Table_UpdateWindow("TABLE_LIST");
 	Table_UpdateWindow("TABLE_OTHER");
 	Table_UpdateWindow("TABLE_CREW");
@@ -673,6 +680,8 @@ void ShowInfoWindow()
 	string sCurrentNode = GetCurrentNode();
 	string sHeader, sText1, sText2, sText3, sPicture;
 	string sGroup, sGroupPicture;
+	int picW = 180;
+	int picH = 180;
 	int iItem;
 
 	sPicture = "-1";
@@ -699,6 +708,24 @@ void ShowInfoWindow()
 				sText1  = GetConvertStr("NoneBoat", "ShipsDescribe.txt");
 			}
 		break; 
+		
+		case "SHIP_PERK1":
+			string sPerkName1 = GetShipSpecDesc(xi_refCharacter);
+			sGroup = "PERKS_SHIPS";
+			sGroupPicture = sPerkName1;
+			sHeader = GetConvertStr(sPerkName1, "ShipsPerksDescribe.txt");
+			sText1 = GetConvertStr(sPerkName1 + "_desc", "ShipsPerksDescribe.txt");
+			sText3 = GetConvertStr(sPerkName1 + "_desc2", "ShipsPerksDescribe.txt");
+		break;
+
+		case "SHIP_PERK2":
+			string sPerkName2 = GetShipTraitDesc(xi_refCharacter);
+			sGroup = "PERKS_SHIPS";
+			sGroupPicture = sPerkName2;
+			sHeader = GetConvertStr(sPerkName2, "ShipsPerksDescribe.txt");
+			sText1 = GetConvertStr(sPerkName2 + "_desc", "ShipsPerksDescribe.txt");
+			sText3 = GetConvertStr(sPerkName2 + "_desc2", "ShipsPerksDescribe.txt");
+		break;
 
 		case "FLAGPIC":
 			sHeader = XI_ConvertString("Nation");
@@ -803,10 +830,26 @@ void ShowInfoWindow()
 			sText1 = GetRPGText("Rank");
 		break;
 		//<--- sith
+		case "FOOD_SHIP":
+			sHeader = XI_Convertstring("FoodShipInfoShort");
+			sText1 = GetConvertStr("Food_descr", "GoodsDescribe.txt");
+		break;
+		case "RUM_SHIP":
+			sHeader = XI_Convertstring("RumShipInfoShort");
+			sText1 = GetConvertStr("Rum_descr", "GoodsDescribe.txt");
+		break;
+		case "MONEY_SHIP":
+			sHeader = XI_Convertstring("CostPerMonth");
+			sText1 = GetRPGText("Partition_hint");
+		break;
+		case "FOOD":
+			sHeader = XI_Convertstring("FoodSquadronInfoShort");
+			sText1 = GetConvertStr("Food_descr", "GoodsDescribe.txt");
+		break;
 	}
 	if (bShowHint)
 	{
-		CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 128, 128);
+		CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, picW, picH);
 	}
 }
 
@@ -1621,6 +1664,7 @@ void DoPartitionPay()
 	pchar.paymentdate = GetDateString() + " " + GetTimeString();
 	AddMoneyToCharacter(Pchar, - (sum + sum_gow));
 	Statistic_AddValue(pchar, "PartitionPay", sum + sum_gow);
+	if(sum >= 3000) AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, makefloat(sum) / 3000.0);
 	OnShipScrollChange();
 	ExitPartitionWindow();
 }
@@ -1838,7 +1882,7 @@ void FlagsProcess()
 	{
     	case ENGLAND:	EnglandProcess();	break;
     	case FRANCE:	FranceProcess();	break;
-    	case SPAIN:		SpainProcess();	break;
+    	case SPAIN:		SpainProcess();		break;
     	case PIRATE:	PirateProcess();	break;
     	case HOLLAND:	HollandProcess();	break;
 	}
@@ -1931,4 +1975,23 @@ void HollandProcess()
 
     DoQuestCheckDelay("PostVideo_Start", 0.2);
 	ProcessExitCancel();
+}
+
+void SetShipPerks()
+{
+	string pictureGroup = "PERKS_SHIPS";
+	string perkName1, perkName2;
+	SetNodeUsing("SHIP_PERK1",false);
+	SetNodeUsing("SHIP_PERK2",false);
+
+	int iShip = sti(xi_refCharacter.ship.type);
+	if(iShip != SHIP_NOTUSED) 
+	{
+		perkName1 = GetShipSpecDesc(xi_refCharacter);
+		perkName2 = GetShipTraitDesc(xi_refCharacter);
+		SetNewGroupPicture("SHIP_PERK1", pictureGroup, perkName1);
+		SetNewGroupPicture("SHIP_PERK2", pictureGroup, perkName2);
+		if(perkName1 != "") SetNodeUsing("SHIP_PERK1",true);
+		if(perkName2 != "") SetNodeUsing("SHIP_PERK2",true);
+	}
 }

@@ -25,6 +25,8 @@ int		Ships[MAX_SHIPS_ON_SEA];
 
 #define SHIP_DETONATE_SMALL		"ShipDetonateSmall"
 
+#define TURN_RATE_MAGIC_NUMBER  244.444
+
 #event_handler("Ship_StartLoad", "Ship_StartLoad");
 #event_handler("Ship_EndLoad", "Ship_EndLoad");
 
@@ -91,12 +93,13 @@ void DeleteShipEnvironment()
 	DelEventHandler("eSwitchPerks", "Ship_UpdatePerks");
 	DelEventHandler("TornadoDamage", "Ship_TornadoDamage");
 	DelEventHandler(SHIP_GET_RUNAWAY_POINT, "Ship_GetRunAwayPoint");
+    DelEventHandler("event_WindChange", "Ship_WindAnalyse");
 	DelEventHandler("frame", "Ship_VicSoundTime");
 	DelEventHandler("Ship_SailsMoveSound", "Ship_SailsMoveSound");
 	DelEventHandler("Ship_BortReloadEvent", "Ship_BortReloadEvent");
+	DelEventHandler("event_sail_dot", "Ship_SailDot");
 	DelEventHandler(SHIP_SET_BLOT, "Ship_SetBlot");
 	DelEventHandler(SHIP_FAKE_FIRE, "Ship_EventFakeFire");
-
 
 	for (int i=0; i<iNumShips; i++) 
 	{ 
@@ -106,7 +109,7 @@ void DeleteShipEnvironment()
 		// delete sounds from ship
 		if (CheckAttribute(&Characters[Ships[i]], "Ship.Sounds.WaterID")) 	ReleaseSound(sti(Characters[Ships[i]].Ship.Sounds.WaterID));
 		if (CheckAttribute(&Characters[Ships[i]], "Ship.Sounds.SailsID"))   ReleaseSound(sti(Characters[Ships[i]].Ship.Sounds.SailsID));
-		if (CheckAttribute(&Characters[Ships[i]], "Ship.Sounds.TurnID"))   ReleaseSound(sti(Characters[Ships[i]].Ship.Sounds.TurnID));
+		if (CheckAttribute(&Characters[Ships[i]], "Ship.Sounds.TurnID"))    ReleaseSound(sti(Characters[Ships[i]].Ship.Sounds.TurnID));
 	}
 
 	// scan characters for delete snd id's
@@ -199,6 +202,7 @@ void CreateShipEnvironment()
 	SetEventHandler(SHIP_CREATELOADSHIP, "Ship_LoadShip", 0);
 	SetEventHandler(SHIP_LOAD_SHIPACTIVATEFIREPLACE, "Ship_LoadShipActivateFirePlace", 0);
 	SetEventHandler(SHIP_GET_RUNAWAY_POINT, "Ship_GetRunAwayPoint", 0);
+    SetEventHandler("event_WindChange", "Ship_WindAnalyse", 0);
 	SetEventHandler("TornadoDamage", "Ship_TornadoDamage", 0);
 
 	SetEventHandler(SHIP_BRANDER_DETONATE, "Ship_BranderDetonate", 0);
@@ -208,6 +212,7 @@ void CreateShipEnvironment()
 	SetEventHandler("frame", "Ship_VicSoundTime", 0);
 	SetEventHandler("Ship_SailsMoveSound", "Ship_SailsMoveSound", 0);
 	SetEventHandler("Ship_BortReloadEvent", "Ship_BortReloadEvent", 0);
+	SetEventHandler("event_sail_dot", "Ship_SailDot", 0);
 	SetEventHandler(SHIP_SET_BLOT, "Ship_SetBlot", 0);
 	SetEventHandler(SHIP_FAKE_FIRE, "Ship_EventFakeFire", 0);
 }	
@@ -260,6 +265,8 @@ string Ship_GetGroupID(ref rCharacter)
 // boal 030804 -->
 void Ship_NationAgressivePatent(ref rCharacter)
 {
+	int HunterScore;
+	
 	// патент отнимаем всегда, когда палим по другу патента
     ref rMainCharacter = GetMainCharacter();
 
@@ -268,7 +275,8 @@ void Ship_NationAgressivePatent(ref rCharacter)
         if (sti(rCharacter.nation) != PIRATE && GetNationRelation(sti(Items[sti(rMainCharacter.EquipedPatentId)].Nation), sti(rCharacter.nation)) != RELATION_ENEMY)
         {
         	TakeItemFromCharacter(rMainCharacter, "patent_" + NationShortName(sti(Items[sti(rMainCharacter.EquipedPatentId)].Nation)));
-        	ChangeCharacterHunterScore(rMainCharacter, NationShortName(sti(Items[sti(rMainCharacter.EquipedPatentId)].Nation)) + "hunter", 40);
+			HunterScore = GetIntByCondition(HasShipTrait(rMainCharacter, "trait23"), 40, 20);
+        	ChangeCharacterHunterScore(rMainCharacter, NationShortName(sti(Items[sti(rMainCharacter.EquipedPatentId)].Nation)) + "hunter", HunterScore);
         	Items[sti(rMainCharacter.EquipedPatentId)].TitulCur = 1; // текущ звание сбросим
         	Items[sti(rMainCharacter.EquipedPatentId)].TitulCurNext = 0; // счетчик звание сбросим
         	RemoveCharacterEquip(rMainCharacter, "patent");// Удаляем патент из экипировки
@@ -281,12 +289,14 @@ void Ship_NationAgressivePatent(ref rCharacter)
     	{
     		if (GetNationRelation(GetBaseHeroNation(), sti(rCharacter.nation)) != RELATION_ENEMY)
     		{
+				HunterScore = GetIntByCondition(HasShipTrait(rMainCharacter, "trait23"), 1 + rand(2), 1);
 				rCharacter.CheckNationBounty = true;
-				ChangeCharacterHunterScore(rMainCharacter, NationShortName(sti(rCharacter.nation)) + "hunter", 1 + rand(2));
+				ChangeCharacterHunterScore(rMainCharacter, NationShortName(sti(rCharacter.nation)) + "hunter", HunterScore);
 			}
     	}
     }
 }
+
 void Ship_NationAgressive(ref rMainGroupCharacter, ref rCharacter)// ком группы и в кого попали
 {    // используется на суше при атаке города
     ref rMainCharacter = GetMainCharacter();
@@ -325,7 +335,7 @@ void Ship_NationAgressive(ref rMainGroupCharacter, ref rCharacter)// ком гр
 	    // boal 04.04.04 -->
 	    if (sti(rMainGroupCharacter.nation) != PIRATE)
 	    {
-	    	ChangeCharacterHunterScore(rMainCharacter, NationShortName(sti(rMainGroupCharacter.nation)) + "hunter", 5);
+	    	ChangeCharacterHunterScore(rMainCharacter, NationShortName(sti(rMainGroupCharacter.nation)) + "hunter", GetIntByCondition(HasShipTrait(rMainCharacter, "trait23"), 5, 3));
 	    }
     }
     // boal 04.04.04 <--
@@ -636,7 +646,7 @@ void Ship_SetTaskRunaway(int iTaskPriority, int iCharacterIndex, int iFromIndex)
 	ref rCharacter = GetCharacter(iCharacterIndex);
 	Log_TestInfo("runaway " + rCharacter.id);
 	rCharacter.SeaAI.Task = AITASK_RUNAWAY;
-	rCharacter.SeaAI.Task.Target = iFromIndex;	
+	rCharacter.SeaAI.Task.Target = iFromIndex;
 	SendMessage(&AISea, "llla", AI_MESSAGE_SHIP_SET_TASK, AITASK_RUNAWAY, iTaskPriority, &Characters[iCharacterIndex]);	
 	Ship_SetSailState(iCharacterIndex, 1);
 }
@@ -785,7 +795,7 @@ void Ship_Add2Sea(int iCharacterIndex, bool bFromCoast, string sFantomType, bool
 		if (MOD_BETTATESTMODE == "On") Log_Info("Ship_Add2Sea ERROR : SHIP " + iShipType + ", have no name!   NPCid = "+ rCharacter.id);
 		return;
 	}
-	if (iRealShip >= SHIP_TYPES_QUANTITY)
+	if (iRealShip >= GetArraySize(&ShipsTypes) - 1)
 	{
 		Trace("Character.id = " + rCharacter.id + ", have invalid ship type = " + iShipType + ", and try load to sea");
 		return;
@@ -812,7 +822,8 @@ void Ship_Add2Sea(int iCharacterIndex, bool bFromCoast, string sFantomType, bool
     DeleteAttribute(rCharacter, "CheckFlagYet"); // флаг распознования врага
     DeleteAttribute(rCharacter, "CheckNationBounty"); // Проверка НЗГ за нацию друга базе
     DeleteAttribute(rCharacter, "ShipCannonChargeType"); // флаг офов, чем пулять постоянно, ставится игроком командами, до след приказа Атака или конца снарядов
-    
+    DeleteAttribute(rCharacter, "SeaAI.RunAwayPnt");
+
 	if (CheckAttribute(rCharacter, "DontCheckFlag"))
 	{
 	    rCharacter.CheckFlagYet = true;
@@ -873,6 +884,7 @@ void Ship_Add2Sea(int iCharacterIndex, bool bFromCoast, string sFantomType, bool
 	rCharacter.Ship.Stopped = false;
 	rCharacter.Ship.POS.Mode = SHIP_SAIL;
 	rCharacter.Ship.SeaAI.Init.AbordageDistance = 30.0;
+
 	// boal -->
 	ref	rCannon = GetCannonByType(sti(rCharacter.Ship.Cannons.Type));
 	float range = 550;
@@ -893,7 +905,7 @@ void Ship_Add2Sea(int iCharacterIndex, bool bFromCoast, string sFantomType, bool
 
 	// create ship
 	Event("eSwitchPerks", "l", iCharacterIndex);											// Perks
-	//Event(SHIP_UPDATE_PARAMETERS, "lf", iCharacterIndex, stf(rCharacter.Ship.Speed.z));		// Parameters
+	//Event(SHIP_UPDATE_PARAMETERS, "lf", iCharacterIndex, stf(rCharacter.Ship.Speed.z));   // Parameters
 	
 	//ugeen --> жесть !! у энкаунтеров не снят атрибут Ship.Sink <-- 3 часа трахался из-за этой ошибки :(  <-- из-за неё некорректно работал мод флагов
 	if(CheckAttribute(rCharacter,"Ship.Sink")) {trace("ShipSink rCharacter.id = " + rCharacter.id); DeleteAttribute(rCharacter,"Ship.Sink");}
@@ -901,7 +913,7 @@ void Ship_Add2Sea(int iCharacterIndex, bool bFromCoast, string sFantomType, bool
 	CreateEntity(&Characters[iCharacterIndex], "Ship");
 	
     Event(SHIP_UPDATE_PARAMETERS, "lf", iCharacterIndex, stf(rCharacter.Ship.Speed.z));		// Parameters      после создания корабля
-    		
+
 	aref arChar, arShip;
 	makearef(arChar, characters[iCharacterIndex]);
 	makearef(arShip, RealShips[iShipType]);
@@ -1481,7 +1493,7 @@ void Ship_CheckSituation()
 	        if (iNewBallType < 0 || iShipCannonsNum < (sti(rShip.CannonsQuantity) / 10))
 			{
 				// maybe we can abordage???
-				Ship_SetTaskRunaway(SECONDARY_TASK,sti(rCharacter.index), sti(rCharacter.SeaAI.Task.Target));
+				Ship_SetTaskRunaway(SECONDARY_TASK, sti(rCharacter.index), sti(rCharacter.SeaAI.Task.Target));
 				return;
 			}
 		}
@@ -1997,7 +2009,7 @@ void Ship_CheckFlagEnemy(ref rCharacter)
 
 	if (sti(rCharacter.nation) == PIRATE) return;
     iCompan = GetCompanionQuantity(mChar);
-    iClass  = 6;
+    iClass  = 7;
 	// поиск мин.  те старшего класса
 	for (i=0; i<COMPANION_MAX; i++)
 	{
@@ -2030,7 +2042,7 @@ void Ship_CheckFlagEnemy(ref rCharacter)
 		fSneak  = stf(mChar.TmpSkill.Sneak); // 0.01..1.0
 		int rep = sti(abs(REPUTATION_NEUTRAL - sti(mChar.reputation.nobility)) * 0.75);
 		if(CheckCharacterPerk(mChar, "HT2")) fPerkInfl = 2.0;
-		if ((rand(100) + rand(20) + rand(rep)) > (fPerkInfl*fSneak * 10 * iClass * (6-iCompan) * isEquippedArtefactUse(mChar, "indian_11", 1.0, 1.15)))
+		if ((rand(100) + rand(20) + rand(rep)) > (fPerkInfl*fSneak * 12 * (iClass + iClass/4) * (6-iCompan) * isEquippedArtefactUse(mChar, "indian_11", 1.0, 1.15)) * GetFloatByCondition(HasShipTrait(mChar, "trait05"), 1.0, 1.15))
 		{
 			/*mChar.nation = iNationToChange;  // to_do ролик флага сделать
 			Ship_FlagRefresh(PChar); //флаг на лету
@@ -2284,7 +2296,7 @@ void Ship_SailDamage()
 		case GOOD_KNIPPELS:	sSound = "knippel2sail";	break;
 		case GOOD_BOMBS:	sSound = "ball2sail"; 		break;
 	}
-
+	//log_testinfo("From bort " + AIBalls.FromBort);
 	Play3DSound(sSound, x, y, z);
 	if (rand(100) < 15) { Play3DSound("fly_ball_misc", x, y, z); }
 	
@@ -2298,7 +2310,16 @@ void Ship_SailDamage()
             Ship_NationAgressive(rOurCharacter, rOurCharacter);
             DoQuestCheckDelay("NationUpdate", 0.7);
         }	
-    }	
+    }
+	if(HasShipTrait(rBallCharacter, "trait24") && rand(2) == 1)
+	{
+		if(AIBalls.FromBort == "cannonb" || AIBalls.FromBort == "cannonf") // с порно, тк это не ядра, того кто стрелял, а скорее ядра ГГ
+		{
+			int iRandStartTime = rand(1000);
+			float fTotalDotTime = 15.0;
+			PostEvent("event_sail_dot", iRandStartTime, "llf", iCharacterIndex, iBallCharacterIndex, fTotalDotTime);
+		}
+	}
 }
 
 void Ship_Ship2IslandCollision()
@@ -2439,7 +2460,8 @@ void Ship_ApplyCrewHitpoints(ref rOurCharacter, float fCrewHP)
 
 void Ship_ApplyHullHitpoints(ref rOurCharacter, float fHP, int iKillStatus, int iKillerCharacterIndex)
 {
-   	if (LAi_IsImmortal(rOurCharacter)) { return; }
+	bool bHullTututorial = bGlobalTutor && GetHullPercent(rOurCharacter) > 20;
+   	if (LAi_IsImmortal(rOurCharacter) && !bHullTututorial) { return; }
 
 	float fCurHP;
 	float fMinus 	= 0.0;
@@ -2457,6 +2479,10 @@ void Ship_ApplyHullHitpoints(ref rOurCharacter, float fHP, int iKillStatus, int 
 		
 		if(IsCharacterEquippedArtefact(&Characters[iKillerCharacterIndex], "indian_8")) fPlus += 0.05; // belamour произведение даёт 0 без перков
 		if (IsMainCharacter(&Characters[iKillerCharacterIndex]) && CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.p3.Completed")) fPlus += 0.1;
+		if(CheckAttribute(&Characters[iKillerCharacterIndex],"Tmp.LastBortFire.Bonus"))
+		{
+			fPlus += stf(Characters[iKillerCharacterIndex].Tmp.LastBortFire.Bonus) / 100.0;
+		}
 	}
 
 	if (sti(rOurCharacter.TmpPerks.BasicBattleState))			fMinus = 0.15;
@@ -2589,6 +2615,12 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
 					Achievment_SetStat(2, 1);
 					Achievment_Set("ach_01");
 	                // boal statistic info 17.12.2003 <--
+					if(HasShipTrait(rKillerCharacter, "trait22"))
+					{
+						float fTraitRepair = (stf(rKillerBaseShip.Class) / stf(rBaseShip.Class)) * ((100.0 - GetHullPercent(rKillerCharacter)) / 5.0);
+						ProcessHullRepair(rKillerCharacter, fTraitRepair);
+						ProcessSailRepair(rKillerCharacter, 12.0);
+					}
 			    break;
 		    }
 			if (iKillStatus != KILL_BY_SELF)
@@ -2600,7 +2632,7 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
 		    	Statistic_AddValue(rKillerCharacter, NationShortName(sti(rDead.nation))+"_KillShip", 1);
 		    	if (rand(8) < 3 && sti(rDead.nation) != PIRATE)  // 30% повышаем награду
 		    	{
-					ChangeCharacterHunterScore(rKillerCharacter, NationShortName(sti(rDead.nation)) + "hunter", 1+rand(1));
+					ChangeCharacterHunterScore(rKillerCharacter, NationShortName(sti(rDead.nation)) + "hunter", GetIntByCondition(HasShipTrait(rKillerCharacter, "trait23"), 1 + rand(1), 1));
 				}
 			}
         }
@@ -3022,10 +3054,23 @@ void Ship_HullHitEvent()
 	}
 	Ship_ApplyCrewHitpoints(rOurCharacter, fCrewDamage);
 
+	if(HasShipTrait(rBallCharacter, "trait24") && !bInflame)
+	{
+		if(AIBalls.FromBort == "cannonb" || AIBalls.FromBort == "cannonf") // с порно, тк это не ядра, того кто стрелял, а скорее ядра ГГ
+		{
+			if(rand(2) == 1) bInflame = true;
+		}
+	}
+
 	if (bInflame == true && fFirePlaceDistance < 4.0 && iFirePlaceIndex >= 0)
 	{
 		int iRandStartTime = rand(1000);
-		float fTotalFireTime = Ship_GetTotalFireTime(rOurCharacter); 
+		float fTotalFireTime = Ship_GetTotalFireTime(rOurCharacter);
+		if(HasShipTrait(rBallCharacter, "trait24"))
+		{
+			fTotalFireTime = 15.0;
+			rBallCharacter.AIShipFireDamage = fHP * 2.0 / 15.0;
+		}
 
 		PostEvent(SHIP_ACTIVATE_FIRE_PLACE, iRandStartTime, "ialsfl", rShipObject, rOurCharacter, iFirePlaceIndex, "ship_onfire", fTotalFireTime, iBallCharacterIndex);
 		PostEvent(SHIP_FIRE_DAMAGE, iRandStartTime, "lllf", iOurCharacterIndex, iBallCharacterIndex, iFirePlaceIndex, fTotalFireTime);
@@ -3125,25 +3170,75 @@ void Ship_FireDamage()
 	float fTotalFireTime = GetEventData();
 
 	ref rOurCharacter = GetCharacter(iOurCharacterIndex);
-	//ref rBallCharacter = GetCharacter(iBallCharacterIndex);
+	ref rBallCharacter = GetCharacter(iBallCharacterIndex);
 	
 	int iSClass = GetCharacterShipClass(rOurCharacter);
 
-	float fHP = (8 - iSClass) * (0.5 + frnd() * 0.5);
+	float fHP = (9 - iSClass) * (0.5 + frnd() * 0.5);
 
 	int iTime = 1000 + rand(500);
 
 	// if abordage or interface launched
 	if (!bAbordageStarted && !sti(InterfaceStates.Launched)) 
 	{ 
-		Ship_ApplyHullHitpoints(rOurCharacter, fHP, KILL_BY_BALL, iBallCharacterIndex); 
-
-		fTotalFireTime = fTotalFireTime - MakeFloat(iTime) / 250.0;
+		if(HasShipTrait(rBallCharacter, "trait24"))
+		{
+			if(CheckAttribute(rBallCharacter, "AIShipFireDamage"))
+				fHP = stf(rBallCharacter.AIShipFireDamage);
+			Ship_ApplyHullHitpoints(rOurCharacter, fHP, KILL_BY_BALL, iBallCharacterIndex); 
+			fTotalFireTime = fTotalFireTime - 1.0;
+			iTime = 1000;
+			//Log_testinfo("trait24 : урон по корпусу " + rand(10));
+		}
+		else
+		{
+			Ship_ApplyHullHitpoints(rOurCharacter, fHP, KILL_BY_BALL, iBallCharacterIndex); 
+			fTotalFireTime = fTotalFireTime - MakeFloat(iTime) / 250.0;
+		}
 	}
 
 	if (fTotalFireTime > 0.0)
 	{
 		PostEvent(SHIP_FIRE_DAMAGE, iTime, "lllf", iOurCharacterIndex, iBallCharacterIndex, iFirePlaceIndex, fTotalFireTime);
+	}
+    else
+	{
+		DeleteAttribute(rBallCharacter, "AIShipFireDamage");
+	}
+}
+
+void Ship_SailDot()
+{
+	int iOurCharacterIndex = GetEventData();
+	int iBallCharacterIndex = GetEventData();
+	float fTotalSailDotTime = GetEventData();
+
+	ref rOurCharacter = GetCharacter(iOurCharacterIndex);
+	ref rBallCharacter = GetCharacter(iBallCharacterIndex);
+	
+	int iSClass = GetCharacterShipClass(rOurCharacter);
+
+	float fSP = 0.0;
+
+	int iTime = 1000;
+
+	// if abordage or interface launched
+	if (!bAbordageStarted && !sti(InterfaceStates.Launched)) 
+	{ 
+		if(HasShipTrait(rBallCharacter, "trait24"))
+		{
+			int iBallType = sti(rBallCharacter.Ship.Cannons.Charge.Type);
+			fSP = GetRigDamage(iBallCharacterIndex, iBallType, rOurCharacter);
+			
+			MakeSailDmg(iOurCharacterIndex, fSP * 2.0 / 15.0); 
+			fTotalSailDotTime = fTotalSailDotTime - 1.0;
+			//Log_testinfo("trait24 : урон по парусам" + rand(10));
+		}
+	}
+
+	if (fTotalSailDotTime > 0.0)
+	{
+		PostEvent("event_sail_dot", iTime, "llf", iOurCharacterIndex, iBallCharacterIndex, fTotalSailDotTime);
 	}
 }
 
@@ -3900,8 +3995,8 @@ void Ship_UpdateParameters()
 	Cannon_RecalculateParameters(sti(rCharacter.index));
 
 	// some of ship parameters
-	aref	arCharShip; makearef(arCharShip, rCharacter.Ship);
-	ref		rShip = GetRealShip(sti(arCharShip.Type));
+	aref arCharShip; makearef(arCharShip, rCharacter.Ship);
+	ref  rShip = GetRealShip(sti(arCharShip.Type));
 
     float fShipSpeed, fShipTurnRate;
 	
@@ -3925,6 +4020,27 @@ void Ship_UpdateParameters()
 		if (iArcadeSails == 1) arCharShip.ArcadeSpeed = 5.0*2.5;
 		else arCharShip.ArcadeSpeed = 5.0;
 	}*/
+
+    // TUTOR-ВСТАВКА
+    if(TW_IsActive() && objTask.sea == "1_Turn") // && IsMainCharacter(rCharacter) 
+    {
+        if(!CheckAttribute(&TEV, "Tutor.BackAY"))
+        {
+            TEV.Tutor.BackAY = arCharShip.Ang.y;
+        }
+        else
+        {
+            fShipSpeed = abs(stf(TEV.Tutor.BackAY) - stf(arCharShip.Ang.y));
+            if(TW_IncreasePercents("sea", "turn_text", fShipSpeed))
+            {
+                objTask.sea = "";
+                DeleteAttribute(&TEV, "Tutor.BackAY");
+                DoQuestFunctionDelay("TW_InitSea_2_TimeScale", 2.5);
+            }
+            else TEV.Tutor.BackAY = arCharShip.Ang.y;
+        }
+    }
+
 	// boal кэш оптимизация -->
 	if (!CheckAttribute(rCharacter, "Tmp.SpeedRecall") || sti(rCharacter.Tmp.SpeedRecall) <= 0)
 	{
@@ -3963,7 +4079,7 @@ void Ship_UpdateParameters()
 		arCharShip.MaxSpeedZ = FindShipSpeed(rCharacter) * fWindPower;
 	}
 	
-	float fMaxSpeedY = stf(rShip.TurnRate) / Sea_TurnRateMagicNumber(); //boal
+	float fMaxSpeedY = stf(rShip.TurnRate) / TURN_RATE_MAGIC_NUMBER; //boal
 
 	float fTRFromSailState = 1.0;
 	switch (MakeInt(fSailState * 2.0))
@@ -4119,7 +4235,7 @@ void Ship_UpdateParameters()
 		}
 
 		// experience
-		float fExp = (1.0 - fWindAttack) * fDamageHP / (8 - GetCharacterShipClass(rCharacter)); // fDamageHP - это процент корпуса, для мановара слишком жирно
+		float fExp = (1.0 - fWindAttack) * fDamageHP / (9 - GetCharacterShipClass(rCharacter)); // fDamageHP - это процент корпуса, для мановара слишком жирно
 		fExp = fExp / 10;
   		if (!bDead)
         {
@@ -4445,6 +4561,7 @@ void Ship_UpdateTmpSkills(ref rCharacter)
         {
             if (SeaCameras.Camera == "SeaDeckCamera")
         	{
+                // TO_DO DEL
         		aTmpSkill.Accuracy = Clampf(stf(aTmpSkill.Accuracy) + 0.15); // было 0.4
         	}
         	//rCharacter.SystemInfo.GlobalMinEnemyDistance = stf(rCharacter.SystemInfo.LastMainMinEnemyDistance); // fix выхода на карту
@@ -4472,6 +4589,7 @@ void Ship_UpdateTmpSkills(ref rCharacter)
             rCharacter.TmpSkill.Accuracy  = MakeFloat(GetSummonSkillFromName(rCharacter, SKILL_ACCURACY)) / SKILL_MAX;
             if (SeaCameras.Camera == "SeaDeckCamera")
             {
+                // TO_DO DEL
                 rCharacter.TmpSkill.Accuracy = Clampf(stf(rCharacter.TmpSkill.Accuracy) + 0.15);
             }
     	}
@@ -4722,20 +4840,35 @@ void DropGoodsToSea()
 	}
 }
 
-int Ship_GetRunAwayPoint()
+float Ship_GetRunAwayPoint()
 {
 	aref arChar = GetEventData();
-	float fX = GetEventData();
-	float fZ = GetEventData();
+    if(!CheckAttribute(arChar, "SeaAI.RunAwayPnt"))
+        Ship_SetRunAwayPoint(arChar);
+    return stf(arChar.SeaAI.RunAwayPnt);
+}
 
-	float fRadius = 10000.0;
-	float fWindAngle = Whr_GetWindAngle();
+void Ship_SetRunAwayPoint(aref arChar)
+{
+    float fWindAngle = Whr_GetWindAngle();
+	float fShipAy = stf(arChar.Ship.Ang.y); 
+	float fCourse = acos(1.0 - FindShipWindAgainstSpeed(arChar));
+    float fCourse1 = fWindAngle - fCourse;
+    float fCourse2 = fWindAngle + fCourse;
+    if(cos(fShipAy - fCourse1) > cos(fShipAy - fCourse2))
+         arChar.SeaAI.RunAwayPnt = fCourse1;
+    else arChar.SeaAI.RunAwayPnt = fCourse2;
+}
 
-	arChar.SeaAI.WindAngle = fWindAngle;
-	arChar.SeaAI.RunAwayPnt.x = stf(arChar.Ship.Pos.x) + fRadius * sin(fWindAngle);
-	arChar.SeaAI.RunAwayPnt.z = stf(arChar.Ship.Pos.z) + fRadius * cos(fWindAngle);
-
-	return 0;
+void Ship_WindAnalyse()
+{
+    int iCharIdx;
+    for(int i = 0; i < iNumShips; i++)
+    {
+        iCharIdx = Ships[i];
+        if (iCharIdx < 0 || iCharIdx >= TOTAL_CHARACTERS) continue;
+        DeleteAttribute(GetCharacter(iCharIdx), "SeaAI.RunAwayPnt");
+    }
 }
 
 // boal -->
@@ -4783,7 +4916,7 @@ void EmptyFantom_DropGoodsToSea(ref rChar, int iFantomType)
 	int iQty;
 	if(iFantomType == ENCOUNTER_TYPE_BARREL)
 	{	
-		int irand = drand(100);
+		int irand = hrand(100, rChar.location);
 		if(irand > 92) // делаем бум
 		{
 			AISeaGoods_AddGood_Special(rChar, "powder1", "barrel_treasure", 1500.0, 1); // нарвались на беспризорную мину
@@ -4806,7 +4939,8 @@ void EmptyFantom_DropGoodsToSea(ref rChar, int iFantomType)
 						AISeaGoods_AddGood_Special(rChar, sGood, sModel, fTime * 60.0, iQty);
 					}	
 				}
-			}		
+			}
+            TEV.Last_Treasure_Barrel_ID = rChar.id + rChar.name + rChar.location; // Rosarak: Запоминаем инфу о текущей бочке
 			AISeaGoods_AddGood_Special(rChar, "barrel_treasure", "barrel_treasure", 1500.0, 1);			
 		}	
 	}
@@ -4847,6 +4981,7 @@ void Ship_SetGhostShip(ref rCharacter, string sTech)
 
 //	Ship_SetRiggingAlpha(rCharacter,128);
 }
+
 /*
 void Ship_SetRiggingAlpha(ref rCharacter, int alpha)
 {
@@ -4871,4 +5006,98 @@ void Ship_SetRiggingAlpha(ref rCharacter, int alpha)
 		LayerAddObject(sCurrentSeaRealize, arSail, 100001);
 	}
 }
+
+
+//#define WIND_NORMAL_POWER		18.0 // делитель для силы ветра на циферблате - влияет на мах скорость
+
+float Sea_ApplyMaxSpeedZ(aref arCharShip, float fWindDotShip) //float fTRFromSailDamage,
+// arCharShip - корабль на НПС,  fTRFromSailDamage - паруса 0..1, fWindDotShip - направление ветра -1..1
+{
+    ref		rShip = GetRealShip(sti(arCharShip.Type)); // база
+    float   fMaxSpeedZ;
+    float   fWindAgainstSpeed;
+    //fMaxSpeedZ = (0.16 + fTRFromSailDamage / 1.2) * stf(arCharShip.MaxSpeedZ);
+    fMaxSpeedZ = stf(arCharShip.MaxSpeedZ);
+    fWindAgainstSpeed = stf(rShip.WindAgainstSpeed) * isEquippedArtefactUse(arCharShip, "obereg_11", 1.0, 1.1);// / 1.7; // мин fWindAgainstSpeed = 0.8 - мах 10.5
+	if (fWindDotShip >= -0.1)
+    { //по ветру
+        fMaxSpeedZ = fMaxSpeedZ * (0.81 + fWindDotShip / (1.9 + pow(fWindAgainstSpeed, 0.33)));
+    }
+    else
+    { //против ветра
+        fMaxSpeedZ = fMaxSpeedZ * (0.75 - fWindDotShip/3.2 - pow(abs(fWindDotShip), fWindAgainstSpeed)); // тут есть влияние кода в ЕХЕ
+    }
+
+    return fMaxSpeedZ;
+}
 */
+
+float Sea_ApplyMaxSpeedZ(aref arCharShip, float fWindDotShip, ref rCharacter) //float fTRFromSailDamage,
+{
+	ref		rShip = GetRealShip(sti(arCharShip.Type)); // база
+    float   fMaxSpeedZ = 0.0;
+    float   fWindAgainstSpeed;
+    float   BtWindR;
+    float   fkoeff;
+
+	if (CheckAttribute(rCharacter, "FixedShipSpeed")) {
+		return stf(rCharacter.FixedShipSpeed);
+	}
+	
+	fMaxSpeedZ = stf(arCharShip.MaxSpeedZ);	
+	fWindAgainstSpeed = FindShipWindAgainstSpeed(rCharacter);
+	arCharShip.WindAgainstSpeed = Radian2Degree(acos(1.0 - fWindAgainstSpeed)); // В движок для GetWindAgainst()
+
+    // LDH 16Jan17 - new sailing model for fore and aft rigged ships
+    // LDH 18Feb17 - added mod toggle
+	// if (ENHANCED_SAILING_MODE && stf(rShip.WindAgainstSpeed) >= 1.0)   // fore and aft rigged ships with mod enabled
+	// belamour legendary edition продвинутое плавание в тактическом режиме 
+	if(!iArcadeSails && stf(rShip.WindAgainstSpeed) >= 1.0)
+	{
+		// convert radians to actual speed (radians * 6.5), these are estimates
+		fWindAgainstSpeed *= 6.5;
+		if (fWindDotShip > 0.0)  // with the wind
+        {
+            fMaxSpeedZ = fMaxSpeedZ * (1.0 - fWindDotShip / (0.5 + pow(fWindAgainstSpeed, 0.25)));
+        }
+        else                     // against the wind
+        {
+			fMaxSpeedZ = fMaxSpeedZ * (1.0 + AgainstWindFactor(rCharacter, stf(arCharShip.WindAgainstSpeed)) * (fWindDotShip/3.2 - pow(abs(fWindDotShip), fWindAgainstSpeed)));
+            if (fMaxSpeedZ < 0.0) fMaxSpeedZ = 0.0;
+        }
+	}
+    else   // default sailing model for square rigged ships or if enhanced sailing mod not used
+	{		
+		BtWindR = 1.0 - stf(fWindAgainstSpeed);
+		// Jason: добавляю в формулу поправочный коэффициент. Без этого коэффициента корабли с косыми парусами превращаются в калек - никогда не достигают своей макс скорости согласно ТТХ даже на оптимальном курсе. Против ветра их скорость возрастает прямо пропорционально бейдевинду, в противном случае нахуя бейд вообще нужен вместе с повышалкой, если он только вредит в итоге. Таким образом при движении против ветра имеем следующее: чем выше бейд корабля - тем выше его скорость на тупых углах и тем более тупой угол можно взять до критического падения скорости.
+		fkoeff = stf(fWindAgainstSpeed); // собственно бейдевинд + повышалка
+		if (stf(fkoeff) < 1) fkoeff = 1; // движение прямых парусов против ветра оставляем без изменений
+
+		if(fWindDotShip < BtWindR) // по ветру
+		{
+			fMaxSpeedZ = fMaxSpeedZ * (1.0 + 0.974 * (fWindDotShip - BtWindR) / (1.0 + BtWindR));
+		}
+		else // против ветра
+		{
+			fMaxSpeedZ = fkoeff * fMaxSpeedZ * (1.0  - (fWindDotShip - BtWindR)/ 2.0);
+		}	
+    }
+	return fMaxSpeedZ;
+}
+
+// LDH 17Feb17 - for fore and aft rigged ships, sail faster between beam and best course arrow
+// only used when sailing against the wind
+// to_do: переписать
+float AgainstWindFactor(ref rCharacter, float BestCourse)
+{
+	float Wind = Radian2Degree(NormalizeAngle(stf(Weather.Wind.Angle)));
+	float Ship = Radian2Degree(NormalizeAngle(stf(rCharacter.ship.Ang.y)));
+
+	float Diff = abs(Ship - Wind);		// difference between your heading and the direction the wind is blowing
+	if (Diff > 180.0) Diff = abs(Diff - 360.0);
+
+	float Factor = 1.0;						// Normal calculation for sailing closer to the wind than your best course arrows
+	if (Diff < BestCourse) Factor = 0.5;	// Ship sails faster between wind on the beam and best course arrows
+
+	return Factor;
+}

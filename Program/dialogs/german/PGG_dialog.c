@@ -486,14 +486,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "Quest_1_Work":
-		iRnd = rand(3);
 		PChar.GenQuest.PGG_Quest.Template = rand(1);
 		if (CheckAttribute(NPChar, "PGGAi.ActiveQuest.QstNumber.Template"))
 		{
 			PChar.GenQuest.PGG_Quest.Template = NPChar.PGGAi.ActiveQuest.QstNumber.Template;
 		}
 		PChar.GenQuest.PGG_Quest.Parts = GetCompanionQuantity(PChar)+1;
-		PChar.GenQuest.PGG_Quest.Nation = iRnd;
+		PChar.GenQuest.PGG_Quest.Nation = rand(NON_PIRATES);
 		PChar.GenQuest.PGG_Quest.Island = GetRandIslandId();
 		while(PChar.GenQuest.PGG_Quest.Island == Islands[GetCharacterCurrentIsland(pchar)].id)
 		{

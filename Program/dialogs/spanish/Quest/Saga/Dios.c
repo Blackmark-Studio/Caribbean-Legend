@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 		dialog.text = "¿Deseas algo?";
 		if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt") && pchar.questTemp.Saga.SharkHunt == "dios")
 		{
-			link.l3 = TimeGreeting() + "¡Dime, eres José Dios, el cartógrafo?";
+			link.l3 = TimeGreeting() + "Dime, ¿eres José Dios, el cartógrafo?";
 			link.l3.go = "island";
 		}
 		link.l1 = "No, nada.";
@@ -241,7 +241,7 @@ void ProcessDialogEvent()
 
 	case "amapcopy_04":
 		dialog.text = "Muy bien, estoy de acuerdo en hacerte una copia de este atlas. Pero hay un pequeño problema. Cuando robaron mi preciado atlas, los ladrones también se llevaron todas mis herramientas - quizás para asegurarse de que nunca pudiera hacer más mapas o tal vez para empeñarlas con mis competidores. Y si he de hacer más mapas de tal calidad, no puedo usar equipo de papelería ordinario.\nIntenté comprar suministros de escritura en el mercado, pero no tuve suerte - no hay nada a la venta. Si puedes conseguirme los suministros necesarios, haré copias de estos mapas para ti.";
-		link.l1 = " No hay problema, te traeré materiales de escritura de calidad. ¿Y qué tal el pago?";
+		link.l1 = "No hay problema, te traeré materiales de escritura de calidad. ¿Y qué tal el pago?";
 		link.l1.go = "amapcopy_05";
 		break;
 
@@ -285,8 +285,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "amapcopy_waitchest":
-		dialog.text = "Saludos, señor " + pchar.lastname + "¡Trajiste lo que te pedí?";
-		link.l1 = "  Todavía no, señor Dios. ¡Pero definitivamente traeré todo!";
+		dialog.text = "Saludos, señor " + pchar.lastname + ". ¿Trajiste lo que te pedí?";
+		link.l1 = "Todavía no, señor Dios. ¡Pero definitivamente traeré todo!";
 		link.l1.go = "amapcopy_exit";
 		if (GetCharacterItem(pchar, "chest") >= 3 && GetCharacterItem(pchar, "mineral21") > 0)
 		{
@@ -331,21 +331,21 @@ void ProcessDialogEvent()
 		break;
 
 	case "best_map":
-		dialog.text = " Mientras dibujaba estos mapas para ti, se me ocurrió que, aunque son buenos para un explorador, no proporcionan todo lo que necesita un capitán de mar. Mira por ti mismo: todas las bahías, cabos y lagunas están representadas con gran precisión, pero no puedes usarlos para trazar un rumbo entre las islas.";
+		dialog.text = "Mientras dibujaba estos mapas para ti, se me ocurrió que, aunque son buenos para un explorador, no proporcionan todo lo que necesita un capitán de mar. Mira por ti mismo: todas las bahías, cabos y lagunas están representadas con gran precisión, pero no puedes usarlos para trazar un rumbo entre las islas.";
 		link.l1 = "Es cierto, no puedes determinar el rumbo por ellos. Pero de ninguna manera me atrevo a quejarme, ¡señor Dios! Has hecho los mapas para mí tal como acordamos, nada menos.";
 		link.l1.go = "best_map_01";
 		break;
 
 	case "best_map_01":
-		dialog.text = "¡Pero también puedo hacerte un mapa del archipiélago! Y no del tipo que puedes comprar a la Compañía Neerlandesa de las Indias Occidentales, sino un mapa único y excelente.";
+		dialog.text = "¡Pero también puedo hacerte un mapa del archipiélago! Y no del tipo que puedes comprar a la Compañía Holandesa de las Indias Occidentales, sino un mapa único y excelente.";
 		link.l1 = "¡Gracias, señor Dios, pero no necesito tal mapa. Aun así, muchas gracias por la oferta!";
 		link.l1.go = "best_map_02";
-		link.l2 = "¿Estás bromeando?! ¡Señor Dios, cómo podría negarme? Solo dime qué necesitas - ¡no escatimaré en dinero ni en herramientas!";
+		link.l2 = "¿Estás bromeando?! ¡Señor Dios, cómo podría negarme? Solo dime qué necesitas, ¡no escatimaré en dinero ni en herramientas!";
 		link.l2.go = "best_map_04";
 		break;
 
 	case "best_map_02":
-		dialog.text = "Bueno, tenía que ofrecerlo. En cualquier caso, fue un placer hacer negocios con usted, señor " + pchar.lastname + "¡";
+		dialog.text = "Bueno, tenía que ofrecerlo. En cualquier caso, fue un placer hacer negocios con usted, señor " + pchar.lastname + ".";
 		link.l1 = "¡Igualmente! ¡Buena suerte para ti!";
 		link.l1.go = "best_map_03";
 		break;
@@ -481,7 +481,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "LSC_4":
-		dialog.text = "¡Increíble! ¡Me has contado información muy valiosa, capitán! ¡Los descendientes del almirante de Betancourt están viviendo en la Isla! Ahora sabemos qué sucedió con su escuadrón. Y hay un lugar menos en blanco en el mapa del archipiélago caribeño ahora... Muchas gracias por tu historia, " + pchar.name + "¡";
+		dialog.text = "¡Increíble! ¡Me has contado información muy valiosa, capitán! ¡Los descendientes del almirante de Betancourt están viviendo en la Isla! Ahora sabemos qué sucedió con su escuadrón. Y hay un lugar menos en blanco en el mapa del archipiélago caribeño ahora... Muchas gracias por tu historia, " + pchar.name + ".";
 		link.l1 = "¿Ves ahora por qué te he pedido que seas muy cuidadoso al relatar mi información?";
 		link.l1.go = "LSC_5";
 		break;
@@ -514,7 +514,7 @@ void ProcessDialogEvent()
 		Log_Info("Has recibido las coordenadas de navegación");
 		PlaySound("interface\important_item.wav");
 		dialog.text = "Absolutamente. Es tu derecho, aunque es una pena... De todos modos, ¡gracias por tu historia! Has hecho un gran servicio para geógrafos, cartógrafos y otros curiosos.";
-		link.l1 = "Eres bienvenido, Señor. Bueno, ahora debo irme. Adiós.";
+		link.l1 = "De nada, señor. Bueno, ahora debo irme. Adiós.";
 		link.l1.go = "LSC_8";
 		break;
 
@@ -585,7 +585,7 @@ void ProcessDialogEvent()
 
 	//--> блок реагирования на попытку залезть в сундук
 	case "Man_FackYou":
-		dialog.text = LinkRandPhrase("Estás " + GetSexPhrase("¡un ladrón, veo! Guardias, apresadlo", "¡Un ladrón, veo! Guardias, captúrenla") + "¡¡¡", "¡No me lo puedo creer! Me di la vuelta un segundo - ¡y ya estás hurgando en mis pertenencias! ¡Detengan al ladrón!!!", "¡Guardias! ¡Robo! ¡Detened al ladrón!!!");
+		dialog.text = LinkRandPhrase("Estás " + GetSexPhrase("¡un ladrón, veo! Guardias, apresadlo", "¡Un ladrón, veo! Guardias, captúrenla") + "¡¡¡", "¡No me lo puedo creer! Me di la vuelta un segundo, ¡y ya estás hurgando en mis pertenencias! ¡Detengan al ladrón!!!", "¡Guardias! ¡Robo! ¡Detened al ladrón!!!");
 		link.l1 = "¡Aaaah, diablo!!!";
 		link.l1.go = "fight";
 		break;

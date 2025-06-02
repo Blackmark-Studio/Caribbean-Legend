@@ -10,7 +10,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			//Цена чахотки
 			if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption.AskJuan"))
 			{
-				link.l1 = " Dime, ¿el nombre Juan significa algo para ti?";
+				link.l1 = "Dime, ¿el nombre Juan significa algo para ti?";
 				link.l1.go = "Consumption";
 			}
 		break;

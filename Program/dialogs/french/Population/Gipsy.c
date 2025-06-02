@@ -57,6 +57,13 @@ void ProcessDialogEvent()
 				link.l3.go = "quests";//(перессылка в файл города)
 				npchar.quest.meeting = "1";
 			}
+			// --> Тёмные воды исцеления
+			if (CheckAttribute(pchar, "questTemp.DWH_Start") && !CheckAttribute(pchar, "questTemp.DWH_gipsy") && npchar.city == "SentJons")
+			{
+				link.l6 = "Écoute, sourcils noirs, j'ai entendu dire que tu guéris les gens, même des maladies graves, est-ce vrai ?";
+				link.l6.go = "dwh_gypsy_1";
+			}
+			// <-- Тёмные воды исцеления
 			if (!CheckAttribute(npchar, "quest.poison_price") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && rand(2) == 0)
 			{
 				link.l4 = "Hé, yeux noirs, as-tu des poisons pour les rats ? Ils sont un sacré fléau sur mon navire.";
@@ -110,7 +117,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ah, merci, mon beau jeune faucon ! Maintenant écoute :"+sTemp+"Bonjour, monami.";
 				link.l1 = LinkRandPhrase("Hé ! C'est très intéressant. Je vais y réfléchir...","Vraiment ? J'y réfléchirai...","Oh, vraiment ? Es-tu sérieux ? Eh bien, je m'en souviendrai...","Hé, je me sens déjà mieux !");
 				link.l1.go = "exit";
-				if (drand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
+				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 30+rand(10));//скрытность
 			}
 			else
@@ -130,7 +137,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				AddCharacterHealth(pchar, 1);
 				AddCharacterExpToSkill(pchar, "Leadership", 20);
-				if (drand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 50+rand(20));//везение
+				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 50+rand(20));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 50+rand(20));//скрытность
 			}
 			else
@@ -171,8 +178,8 @@ void ProcessDialogEvent()
 
 // --> продажа мышьяка
 		case "get_poison_1" :
-			npchar.quest.poison_price = (drand(3) + 1) * 10;
-			if(drand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
+			npchar.quest.poison_price = (hrand(3) + 1) * 10;
+			if(hrand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
 			{				
 				dialog.text = LinkRandPhrase("Oh, je ne suis pas sûr, beau gosse! Il y avait un type il n'y a pas longtemps qui demandait de l'aide pour tuer des rats, et puis quelqu'un a empoisonné les soldats dans le fort. Ça a chauffé pour mes gens sur l'île pendant que les gardes nous interrogeaient pendant deux semaines jusqu'à ce qu'ils trouvent le meurtrier. C'était un espion ennemi.","Et comment puis-je être sûr de vos intentions ? Peut-être voulez-vous seulement empoisonner un noble que vous êtes trop lâche pour affronter dans un duel honorable ??","On m'a dit que quelqu'un avait empoisonné un commerçant dans la taverne et avait volé toutes ses affaires. L'homme a souffert pendant longtemps avant de rendre l'âme. De l'écume sortait de sa bouche et il est devenu violet comme une aubergine... Es-tu responsable de cela, mon amour ?");
 				link.l1 = "Vous, les gitanes, aimez certainement partager vos opinions ! Ne t'inquiète pas ma fille, je ne vais pas empoisonner les gens. C'est une manière féminine de tuer, pas mon style. Pour les hommes, j'ai mon épée, mais je ne peux pas gérer ces maudits rats.";
@@ -231,7 +238,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_2":
 			// тут работает харизма
-			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+drand(25)+drand(30))
+			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
 			{
 				dialog.text = "Hm... Je suppose que ce n'est pas trop grave si je vous en parle un peu. Vous ne pourrez rien faire avec cette plante sans compétences particulières.";
 				link.l1 = "Je vous écoute.";
@@ -348,6 +355,67 @@ void ProcessDialogEvent()
 			ChangeCharacterAddressGroup(sld, "Amelia_house", "barmen", "stay");
 		break;
 		
+		// --> Тёмные воды исцеления
+		case "dwh_gypsy_1":
+			dialog.text = "Vérité, "+GetSexPhrase("mon chéri","belle")+". Pour chaque mal, j'ai ma méthode. J'ai remis sur pied des paysans, des riches et des marchands. Même le gouverneur lui-même a eu recours à mes potions quand personne d'autre ne pouvait l'aider. Les maladies n'ont que faire de l'or, mais mes potions, elles, les terrassent.";
+			link.l1 = "Alors pourquoi refuses-tu de soigner une fillette gravement malade, la fille de Thomas Morrison ?";
+			link.l1.go = "dwh_gypsy_2";
+			pchar.questTemp.DWH_gipsy = true;
+		break;
+
+		case "dwh_gypsy_2":
+			dialog.text = "Qui t’a raconté pareille histoire, "+GetSexPhrase("Fauconnet","Petite colombe")+" ? Je n'étais pas contre aider, mais c'est son père qui m'a chassée de la maison. Nous étions convenus que je m'occuperais du traitement, puis tout à coup, il a changé d'avis et m'a mise à la porte comme une ennemie.";
+			link.l1 = "Vraiment ? Il aurait condamné sa propre fille à souffrir ?";
+			link.l1.go = "dwh_gypsy_2_1";
+		break;
+
+		case "dwh_gypsy_2_1":
+			dialog.text = "Non, c'est un père attentionné, je n'arrive pas à comprendre pourquoi il aurait agi ainsi.";
+			link.l1 = "As-tu essayé de lui reparler ?";
+			link.l1.go = "dwh_gypsy_3";
+		break;
+
+		case "dwh_gypsy_3":
+			dialog.text = "Il ne me laisse même pas approcher de sa maison. Écoute, "+GetSexPhrase("mon chéri","belle")+", puisque tu n'es pas indifférent au sort d'une pauvre fille, peut-être pourrais-tu essayer de découvrir ce qui se passe ? Parle avec Thomas, aide-moi à sauver cette enfant de la souffrance.";
+			link.l1 = "Bien sûr, je vais t'aider. Où puis-je trouver Thomas ?";
+			link.l1.go = "dwh_gypsy_4";
+			link.l2 = "Non, ma belle. Quelle que soit la raison, je suis sûr que son père a de bonnes raisons de refuser ton aide. Je ne veux pas m'en mêler. C'est sa décision, après tout, c'est sa fille.";
+			link.l2.go = "dwh_gypsy_otkaz";
+		break;
+
+		case "dwh_gypsy_otkaz":
+			DialogExit();
+			CloseQuestHeader("DWH");
+		break;
+
+		case "dwh_gypsy_4":
+			dialog.text = "Leur maison est près du mur, dans la partie nord de la ville, à côté d’un manoir luxueux avec des colonnes. Vas-y, "+GetSexPhrase("Fauconnet","Petite colombe")+", parle-lui et reviens vers moi.";
+			link.l1 = "Je reviens vite.";
+			link.l1.go = "dwh_gypsy_5";
+		break;
+
+		case "dwh_gypsy_5":
+			DialogExit();
+			
+			AddQuestRecord("DWH", "2");
+			
+			sld = GetCharacter(CreateCharacterClone(npchar, -1));
+			sld.id = "DWH_gypsy";
+			npchar.lifeday = 0;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("DWH_Tomas", "citiz_13", "man", "man", 1, ENGLAND, -1, false, "quest"));
+			sld.name = "Thomas";
+			sld.lastname = "Morrison";
+			LAi_SetStayType(sld);
+			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+			sld.dialog.currentnode = "Tomas";
+			ChangeCharacterAddressGroup(sld, "SentJons_houseS3", "goto", "goto1");
+			sld.City = "SentJons";
+			LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
+			AddLandQuestMark(sld, "questmarkmain");
+		break;
+		// <-- Тёмные воды исцеления
+		
 		//замечание по обнажённому оружию от персонажей типа citizen
 		case "CitizenNotBlade":
 			dialog.text = NPCharSexPhrase(NPChar,"Ecoute-moi, vaillant faucon, je suis peut-être un gitan, mais même nous dénonçons la violence ouverte. S'il te plaît, remets ton épée au fourreau.","Ecoute-moi, vaillant faucon, en tant que citoyen de cette ville, je te demande de rengainer ton épée.");
@@ -366,7 +434,7 @@ void ProcessDialogEvent()
 string GuessText()
 {
 	string sText;
-	switch (drand(19))
+	switch (hrand(19))
 	{
 		case 0: sText = "you will have luck, brave young falcon, tomorrow you'll be lucky with cards!" break;
 		case 1: sText = "the fortune will be kind with you in your mercantile business, captain!" break;

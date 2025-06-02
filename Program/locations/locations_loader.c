@@ -38,44 +38,21 @@ int FindLocation(string id)
 
 void SetCamShuttle(ref loc) // boal вынес в метод
 {
-	if(CheckAttribute(&InterfaceStates, "CAMERASWING") && sti(InterfaceStates.CAMERASWING) == 0)
+	if(CheckAttribute(pchar, "GenQuest.CamShuttle"))
 	{
-		SendMessage(&LocCamera, "lffffff", -1, 0.5, 1.0, 1.0, 1.0, 0.00, 0.0);
-		return;
-	}
-	if(CheckAttribute(loc, "camshuttle") == true)
-	{
-		if (CheckAttribute(pchar, "SystemInfo.ScaleSeaHeight"))
-		{
-			float sp = 0.95 - pow(0.91, stf(pchar.SystemInfo.ScaleSeaHeight));
-			Log_TestInfo("Волна = "+pchar.SystemInfo.ScaleSeaHeight + "  качка = " + sp);
-			//скорость, время, мин, макс, скорость наклона, макс наклон
-			SendMessage(&LocCamera, "lffffff", -1, 0.5, -1.0, 1.0, 1.0, (0.07 * sp), (0.045 + sp/15.0)); // зависимость от волнения 14.09.06
-		}
-		else
-		{
-			//скорость, время, мин, макс, скорость наклона, макс наклон
-			SendMessage(&LocCamera, "lffffff", -1, 0.5, -1.0, 1.0, 1.0, 0.05, 0.1);
-		}
+		float fshut = stf(Pchar.GenQuest.CamShuttle)/10;
+		float ftmp = 0.1;
+		if (fshut > 0.4) fshut = 0.4;
+		if (fshut < 0.2) ftmp = 0.05;
+		Log_TestInfo("Как штормит сегодня, однако... нажрался, скотина!");
+		Log_TestInfo(""+fshut+"");
+		SendMessage(&LocCamera, "lffffff", -1, 0.5, -1.0, 1.0, 1.0, ftmp, fshut);
 	}
 	else
 	{
-		if (CheckAttribute(pchar, "GenQuest.CamShuttle"))
-		{
-			float fshut = stf(Pchar.GenQuest.CamShuttle)/10;
-			float ftmp = 0.1;
-			if (fshut > 0.4) fshut = 0.4;
-			if (fshut < 0.2) ftmp = 0.05;
-			Log_TestInfo("Как штормит сегодня, однако... нажрался, скотина!");
-			Log_TestInfo(""+fshut+"");
-			SendMessage(&LocCamera, "lffffff", -1, 0.5, -1.0, 1.0, 1.0, ftmp, fshut);
-		}
-		else
-		{
-			//скорость, время, мин, макс, скорость наклона, макс наклон
-			SendMessage(&LocCamera, "lffffff", -1, 0.5, 1.0, 1.0, 1.0, 0.00, 0.0);
-			//SendMessage(&LocCamera, "lffffff", -1, 0.0, 0, 0.0, 0.0, 0.00, 0.0);
-		}
+		//скорость, время, мин, макс, скорость наклона, макс наклон
+		SendMessage(&LocCamera, "lffffff", -1, 0.5, 1.0, 1.0, 1.0, 0.00, 0.0);
+		//SendMessage(&LocCamera, "lffffff", -1, 0.0, 0, 0.0, 0.0, 0.00, 0.0);
 	}
 }
 
@@ -170,6 +147,13 @@ bool LoadLocation(ref loc)
 		{
 			isNoBoarding = false;
 			isFort = true;
+		}
+		if (loc.id == "Quest_Cabin_Medium" || loc.id == "Quest_Deck_Medium" || loc.id == "Quest_Campus" || loc.id == "Quest_Deck")
+		{
+			//Sea
+			if(loc.environment.sea == "true") CreateSea(EXECUTE,REALIZE);
+			//Weather
+			if(loc.environment.weather == "true") CreateWeather(EXECUTE,REALIZE);
 		}
 	}
 	if(isNoBoarding)
@@ -547,6 +531,7 @@ bool LoadLocation(ref loc)
 	AddCharacterLocatorGroup(mainCharacter, "randitem");
 	AddCharacterLocatorGroup(mainCharacter, "box");
 	AddCharacterLocatorGroup(mainCharacter, "teleport");
+	AddCharacterLocatorGroup(mainCharacter, "event");
 
 	ReloadProgressUpdate();
 	
@@ -894,7 +879,7 @@ bool LoadLocation(ref loc)
 	{	
 		CreateLocationParticles("shadowstar", "camera", "dolly", 1.15, 0, 0, "");
 	}
-	if (loc.id == "Treasure_Alcove") // калеуче
+	if (loc.id == "KhaelRoa_Treasure_Alcove") // калеуче
 	{	
 		CreateLocationParticles("signstar", "teleport", "teleport6", 0.3, 0, 0, "");
 		CreateLocationParticles("signstar", "teleport", "teleport6", 0.6, 0, 0, "");
@@ -933,7 +918,38 @@ bool LoadLocation(ref loc)
 			DoQuestFunctionDelay(sTemp, 1.5);
 		}
 	}
-
+	// belamour CLE опыт за исследования
+	string TownId = loc.id;
+	if(CheckAttribute(loc, "type") && loc.type == "town" && CheckAttribute(worldMap, "labels."+(TownId)+".type"))
+	{
+		if(!CheckAttribute(pchar, "questTemp.TownVisit."+TownId)) 
+		{
+			notification(StringFromKey("locations_loader_1") + XI_ConvertString("Colony"+ loc.townsack + "Gen") + "!", "Discovery");
+			pchar.questTemp.TownVisit.(TownId) = true;
+			pchar.questTemp.TownVisit.counter = sti(pchar.questTemp.TownVisit.counter) + 1;
+			AddCharacterExpToSkill(pchar, "Sailing", 15.0);
+		}
+		if(sti(pchar.questTemp.TownVisit.counter) == 28)
+		{
+			notification(StringFromKey("locations_loader_2"), "none");
+			AddCharacterExpToSkill(pchar, "Sailing", 200.0);
+		}
+	}
+	if (TownId == "KhaelRoa_port" ||
+		TownId == "Shore65" || 
+		TownId == "LostShipsCity_town" || 
+		TownId == "IslaMona_town" ||
+		TownId == "Shore74" ||
+		TownId == "IslaDeCoche_Grot")
+	{
+		if(!CheckAttribute(pchar, "questTemp.MysteriousPlaceVisit."+TownId)) 
+		{
+			notification(StringFromKey("locations_loader_3"), "none");
+			pchar.questTemp.MysteriousPlaceVisit.(TownId) = true;
+			AddCharacterExpToSkill(pchar, "Sailing", 25.0);
+		}
+	}
+	
 	return 1;
 }
 
@@ -949,7 +965,8 @@ void LocationSetLights(ref loc)
 
 	if(Whr_IsLight() == 0)
 	{
-		lightPath = "models.day.lights";
+		if(CheckAttribute(loc, "fonarlights") == true) lightPath = "models.night.lights"; // включаем фонари всегда в нужных локах
+		else lightPath = "models.day.lights";
 	}else{
 		lightPath = "models.night.lights";
 	}
@@ -982,6 +999,7 @@ void LocationSetLights(ref loc)
 					SendMessage(loc, "lsfff", MSG_LOCATION_ADD_LIGHT, lightName, litX, litY, litZ);
 					if(lightName == "lamp")
 					{
+						if(!CheckAttribute(loc, "fonarlights") == true)
 						SendMessage(loc, "lsfff", MSG_LOCATION_EX_MSG, "AddFlys", litX, litY, litZ);
 					}
 				}
@@ -1146,8 +1164,18 @@ bool LocCheckDLight(ref loc)
 			checkDLight = false;
 			// для внутрянок корабля сначала надо АОшки запечь
 			// if(loc.id == "My_Campus" || loc.id == "My_Deck" || loc.id == "My_Deck_Medium" || loc.id == "Deck_Near_Ship") checkDLight = true;
-			if(loc.id == "Deck_Near_Ship") checkDLight = true; // пока только на выслать шлюпку
-		}	
+			if(loc.id == "Ship_deck_Medium_trade" 
+				|| loc.id == "Ship_deck_Medium_war"
+				|| loc.id == "Ship_deck_Low"
+				|| loc.id == "Deck_Near_Ship"
+				|| loc.id == "Deck_Near_Ship_Medium_trade"
+				|| loc.id == "Deck_Near_Ship_Medium_war"
+				|| loc.id == "Deck_Near_Ship_Memento"
+				|| loc.id == "Ship_deck_Memento"
+				|| loc.id == "Quest_Ship_deck_Medium_trade"
+				|| loc.id == "Deck_Near_Ship")
+			checkDLight = true;
+		}
 	}
 	if (CheckAttribute(loc, "id")) // фильтр отдельных локаций
 	{
@@ -1168,12 +1196,14 @@ bool LocCheckDLight(ref loc)
 			|| loc.id == "Boarding_Cargohold"
 			|| loc.id == "Boarding_Campus"
 			|| loc.id == "Boarding_GunDeck"
-			|| loc.id == "IslaMona_Basement")
+			|| loc.id == "IslaMona_Basement"
+			|| loc.id == "Quest_Deck_Medium" // тутор гандек
+			|| loc.id == "Quest_Campus" // тутор кк
+			|| loc.id == "Quest_Deck") // тутор трюм
 		{
 			checkDLight = false;
 		}
 	}
-
 	return checkDLight;
 }
 
@@ -1202,7 +1232,6 @@ bool LocLoadModel(aref loc, string sat, string addition)
 	if(CheckAttribute(loc, attr)) tech = loc.(attr);
 	if(tech == "LocationModelBlend" && dynamicLightsOn) tech = "LocationModelBlendLighting";
 	dLight = LocCheckDLight(loc);
-			
 	//Trace("Load model: " + loc.(sat) + " lights :" + dynamicLightsOn + " tech :" + tech + " dLight :" + dLight);
 	
 	int bOk;
@@ -1440,8 +1469,8 @@ void LocLoadShips(ref Location)
 		{			
 			if(Location.type == "town" || Location.type == "port") // фильтр городов
 			{
-				if (iShipClass > 5) bSmallShip = 1;
-				if (iShipClass > 3 && iShipClass < 6  && sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_FLEUT)
+				if (iShipClass > 6) bSmallShip = 1;
+				if (iShipClass > 3 && iShipClass < 7  && sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_FLEUT)
 				{
 					if (CheckAttribute(Location, "locators.reload.boat2")) bSmallShip = 1; // проверка наличия локатора для корабля побольше
 					else bSmallShip = 0;
@@ -1516,7 +1545,7 @@ void LocLoadShips(ref Location)
 			makearef(locator,Location.locators.reload.boat);
 			if (bSmallShip == 1)
 			{		
-				if (iShipClass > 5)
+				if (iShipClass > 6)
 				{
 					makearef(locator,Location.locators.reload.boat);
 					rCharacter = GetCharacter(iShips[0]);
@@ -1705,6 +1734,7 @@ void ShowAllLocators()
     VisibleLocatorsGroup("reload", 1.0, 15.0, 255, 0, 255, 0);
     VisibleLocatorsGroup("goto", 1.0, 15.0, 255, 255, 0, 0);
     VisibleLocatorsGroup("sit", 1.0, 15.0, 255, 255, 0, 0);
+	VisibleLocatorsGroup("lay", 1.0, 15.0, 255, 255, 0, 0);
     VisibleLocatorsGroup("item", 1.0, 15.0, 255, 255, 0, 255);
     VisibleLocatorsGroup("randitem", 1.0, 15.0, 255, 255, 0, 255);
     VisibleLocatorsGroup("characters", 1.0, 15.0, 155, 255, 0, 0);
@@ -1716,10 +1746,12 @@ void ShowAllLocators()
     VisibleLocatorsGroup("waitress", 1.0, 15.0, 255, 255, 0, 0);
     VisibleLocatorsGroup("barmen", 1.0, 15.0, 255, 255, 0, 0);
     VisibleLocatorsGroup("teleport", 1.0, 15.0, 255, 255, 0, 0);
+	VisibleLocatorsGroup("event", 1.0, 15.0, 155, 155, 50, 155);
     VisibleLocatorsGroup("magsteleport", 1.0, 15.0, 255, 255, 0, 0);
     VisibleLocatorsGroup("greenteleport", 1.0, 15.0, 255, 255, 0, 0);
     VisibleLocatorsGroup("redteleport", 1.0, 15.0, 255, 255, 0, 0);
     VisibleLocatorsGroup("blueteleport", 1.0, 15.0, 255, 255, 0, 0);
+	VisibleLocatorsGroup("effect", 1.0, 15.0, 155, 0, 200, 155);
     VisibleLocatorsGroup("monsters", 1.0, 15.0, 255, 255, 200, 0);
     VisibleLocatorsGroup("Smugglers", 1.0, 15.0, 255, 255, 0, 0);
     VisibleLocatorsGroup("camera", 1.0, 15.0, 155, 0, 255, 255);
@@ -1737,6 +1769,7 @@ void HideAllLocators()
     HideLocatorsGroup("goto");
     
     HideLocatorsGroup("sit");
+	HideLocatorsGroup("lay");
     HideLocatorsGroup("item");
     HideLocatorsGroup("randitem");
     HideLocatorsGroup("characters");
@@ -1748,10 +1781,12 @@ void HideAllLocators()
     HideLocatorsGroup("waitress");
     HideLocatorsGroup("barmen");
     HideLocatorsGroup("teleport");
+	HideLocatorsGroup("event");
     HideLocatorsGroup("magsteleport");
     HideLocatorsGroup("greenteleport");
     HideLocatorsGroup("redteleport");
     HideLocatorsGroup("blueteleport");
+	HideLocatorsGroup("effect");
     HideLocatorsGroup("monsters");
     HideLocatorsGroup("Smugglers");
     HideLocatorsGroup("camera");

@@ -57,7 +57,7 @@ void ProcessDialogEvent()
 			if(startHeroType == 4 && NPChar.location == "SantaCatalina_prison" && !CheckAttribute(pchar, "questTemp.HelenSCprison"))
 			{
 				dialog.text = "Panna MacArthur? Zdziwiony cię widzieć. Nie aresztowaliśmy nikogo z twojej załogi ani kapitana Swensona, o ile mi wiadomo.";
-				link.l1 = "Jestem tutaj, panie. Czy to nie jest dozwolone? Nie rozmawiałem z więźniami za twoimi plecami.";
+				link.l1 = "Jestem tutaj, panie. Czy to nie jest dozwolone? Nie rozmawiałam z więźniami za twoimi plecami.";
 				link.l1.go = "Helen_meeting";
 				pchar.questTemp.HelenSCprison = true;
 				break;
@@ -583,7 +583,7 @@ void ProcessDialogEvent()
 		break;
 		
         case "ForGoodMove_1":
-			pchar.questTemp.jailCanMove.money = 20+drand(3)*10;
+			pchar.questTemp.jailCanMove.money = 20+hrand(3)*10;
 			if (sti(colonies[FindColony(npchar.city)].jail))
 			{
 				dialog.text = "Cóż, nie widzę powodu, aby odmówić. "+FindRussianDublonString(sti(pchar.questTemp.jailCanMove.money))+" - aż do momentu, kiedy opuścisz więzienie, możesz swobodnie chodzić po korytarzach i nawet rozmawiać z więźniami.";
@@ -687,7 +687,7 @@ void ProcessDialogEvent()
 		break;
 		
         case "KnowAboutPrisoner_free":
-			pchar.questTemp.jailCanMove.ownerPrison.money = 50+drand(10)*10;
+			pchar.questTemp.jailCanMove.ownerPrison.money = 50+hrand(10)*10;
 			dialog.text = "Dobrze, mamy umowę. "+FindRussianDublonString(sti(pchar.questTemp.jailCanMove.ownerPrison.money))+" na miejscu, i możesz go od razu zabrać.";
 			if (PCharDublonsTotal() >= sti(pchar.questTemp.jailCanMove.ownerPrison.money))
 			{
@@ -1084,7 +1084,7 @@ void ProcessDialogEvent()
                     else
                     {
                         dialog.text = "Cholera... Jak to możliwe? To nie może być prawda!";
-                        link.l1 = "Co u ciebie, kumple? Gdzie jest skarb? Nie mów mi, że go nie ma!";
+                        link.l1 = "Co u ciebie, kumplu? Gdzie jest skarb? Nie mów mi, że go nie ma!";
                         link.l1.go = "Node_4";
                     }
 				break;
@@ -1097,8 +1097,8 @@ void ProcessDialogEvent()
 			link.l1.go = "PrisonerInPlace_3";
 			Log_Info("You have received your share of the treasure");
 			PlaySound("interface\important_item.wav");
-			TakeNItems(pchar, "icollection", 1+drand(1));
-			TakeNItems(pchar, "chest", 4+drand(4));
+			TakeNItems(pchar, "icollection", 1+hrand(1));
+			TakeNItems(pchar, "chest", 4+hrand(4));
 			TakeNItems(pchar, "jewelry1", 70+rand(15));
 			TakeNItems(pchar, "jewelry2", 50+rand(15));
 			TakeNItems(pchar, "jewelry3", 60+rand(15));
@@ -1115,7 +1115,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "Node_2":
-			dialog.text = "Kapitanie, jest tam także ten indyjski przedmiot wśród innych rzeczy. Możesz go mieć dodatkowo do swojego udziału.";
+			dialog.text = "Kapitanie, jest tam także ten indiański przedmiot wśród innych rzeczy. Możesz go mieć dodatkowo do swojego udziału.";
 			link.l1 = "Cóż, przynajmniej coś wartościowego za twoje uwolnienie! Daj mi to.";
 			link.l1.go = "PrisonerInPlace_3";
 			Log_Info("You have received your share of the treasure");
@@ -1319,7 +1319,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_5_WithoutMoney":
-			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > dRand(100) || sti(PChar.money) < 5000)
+			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > hrand(100) || sti(PChar.money) < 5000)
 			{
 				dialog.text = "W porządku, "+GetAddress_Form(NPChar)+", weź tego łajdaka i odejdź, zanim zmienię zdanie.";
 				link.l1 = "Cudownie jest widzieć triumf sprawiedliwości, nie sądzisz?";

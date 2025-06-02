@@ -189,6 +189,15 @@ void ProcessDialogEvent()
 					Link.l8.go = "Shadowtrader_smugglers";
 				}
 				// <-- мини-квест Бесчестный конкурент
+				
+				//--> Торговля по закону
+				if(CheckAttribute(PChar, "questTemp.TPZ_ContraInfo") && NPChar.location == "BasTer_tavern")
+				{
+					Link.l8 = "Écoute, mon ami, j’ai besoin d’un lot de vin et de rhum. Du gros, et vite.";
+					Link.l8.go = "TPZ_smugglers_1";
+				}
+				// <-- Торговля по закону
+
 				//Jason --> генератор сбыта бакаута
 				if(NPChar.location == "Marigo_tavern" && CheckAttribute(PChar, "GenQuest.Bakaut") && !CheckAttribute(PChar, "GenQuest.Bakaut.Info"))
 				{
@@ -397,6 +406,15 @@ void ProcessDialogEvent()
 				Link.l8.go = "Shadowtrader_smugglers";
 			}
 			// <-- мини-квест Бесчестный конкурент
+			
+			//--> Торговля по закону
+				if(CheckAttribute(PChar, "questTemp.TPZ_ContraInfo") && NPChar.location == "BasTer_tavern")
+				{
+					Link.l8 = "Écoute, mon ami, j’ai besoin d’un lot de vin et de rhum. Du gros, et vite.";
+					Link.l8.go = "TPZ_smugglers_1";
+				}
+			
+			// <-- Торговля по закону
 			//Jason --> генератор сбыта бакаута
 			if(NPChar.location == "Marigo_tavern" && CheckAttribute(PChar, "GenQuest.Bakaut") && !CheckAttribute(PChar, "GenQuest.Bakaut.Info"))
 			{
@@ -843,7 +861,44 @@ void ProcessDialogEvent()
 			DialogExit();
 		break;
 		// <-- Бесчестный конкурент
+		//--> Торговля по закону
+		case "TPZ_smugglers_1":
+			dialog.text = "Ha, c’est ce filou derrière le comptoir qui t’envoie, hein?";
+			link.l1 = "Et alors? Est-ce que c’est important? Tu peux fournir ou je dois chercher quelqu’un d’autre?";
+			link.l1.go = "TPZ_smugglers_2";
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "TPZ_smugglers_2":
+			dialog.text = "Je peux tout trouver, tu vois? Suffit de payer correctement. Mais ce foutu gouverneur nous met la pression. Plus question de toucher à l’alcool – ça fait du bruit, on l’entend à un kilomètre, les marges sont minables, et le risque de finir pendu est immense. Alors désolé.";
+			link.l1 = "Hmm... Et tu dis que tu peux tout trouver.";
+			link.l1.go = "TPZ_smugglers_3";		
+		break;
+		
+		case "TPZ_smugglers_3":
+			dialog.text = "Je peux! Mais je ne veux pas. Y a un gars, juste à côté de la résidence du gouverneur, tu te rends compte? Ha-ha. Quel idiot... Qu’est-ce que je disais? Ah oui. Il vend un peu d’alcool discrètement. Juste sous la perruque du gouverneur, ha-ha. Va lui parler, peut-être qu’il pourra t’aider. Il bosse en petite quantité, mais c’est déjà ça.";
+			link.l1 = "Pas vraiment utile, mais merci quand même.";
+			link.l1.go = "TPZ_smugglers_4";		
+		break;
+		
+		case "TPZ_smugglers_4":
+			DialogExit();
+			AddQuestRecord("TPZ", "3");
+			DeleteAttribute(pchar, "questTemp.TPZ_ContraInfo");
 			
+			// проведаем дом Кристиана
+			sld = GetCharacter(NPC_GenerateCharacter("TPZ_Kristian", "citiz_17", "man", "man", 1, FRANCE, -1, false, "quest"));
+			sld.name = "Christian";
+			sld.lastname = "Deluce";
+			LAi_SetOwnerType(sld);
+			sld.dialog.filename = "Quest\MiniEvents\TradingByLaw_dialog.c";
+			sld.dialog.currentnode = "Kristian";
+			ChangeCharacterAddressGroup(sld, "BasTer_houseF3", "barmen", "stay");
+			sld.City = "BasTer";
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			AddLandQuestMark(sld, "questmarkmain");
+		break;
+		//<-- Торговля по закону
 		//--> Цена чахотки
 		case "Consumption":
 			dialog.text = "Il y a beaucoup de fêtards ici et si vous n'avez pas d'affaires, monsieur, buvez ou parlez avec eux. Cet endroit est animé.";

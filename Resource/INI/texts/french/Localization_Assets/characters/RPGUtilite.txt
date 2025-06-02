@@ -64,40 +64,50 @@ National Rep Decreased!
 
 RPGUtilite_14
 {
-Bounty ~
+Haine
 }
 
 RPGUtilite_15
 {
-Hostile
+Hostilité
 }
 
 RPGUtilite_16
 {
-Neutral
+Antipathie
 }
 
 RPGUtilite_17
 {
-Good
+Irritation
 }
 
 RPGUtilite_18
 {
-Exellent
+Neutre
 }
 
 RPGUtilite_19
 {
-Admiration
+Sympathie
 }
 
 RPGUtilite_20
 {
-Rainbow
+Amical
 }
 
 RPGUtilite_21
+{
+Admiration
+}
+
+RPGUtilite_22
+{
+Rainbow
+}
+
+RPGUtilite_23
 {
 Quicksilver
 }

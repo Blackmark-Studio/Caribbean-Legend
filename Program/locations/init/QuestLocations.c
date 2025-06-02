@@ -144,7 +144,7 @@ int LocationInitQuestLocations(int n)
 	Locations[n].type = "deck";
 	// нельзя, иначе нет моря Locations[n].boarding = "true";
 	Locations[n].lockCamAngle = 0.4;
-	Locations[n].camshuttle = 1;
+	//Locations[n].camshuttle = 1;
 	//Models
 	//Always
 	Locations[n].filespath.models = "locations\decks\deckMedium";
@@ -174,7 +174,7 @@ int LocationInitQuestLocations(int n)
 	Locations[n].type = "residence";
 	Locations[n].boarding = "true";
 	Locations[n].lockCamAngle = 0.4;
-	Locations[n].camshuttle = 1;
+	//Locations[n].camshuttle = 1;
 	//Models
 	//Always
 	Locations[n].filespath.models = "locations\decks\deckMedium";
@@ -205,7 +205,7 @@ int LocationInitQuestLocations(int n)
 	Locations[n].type = "residence";
 	//Locations[n].boarding = "true";
 	Locations[n].lockCamAngle = 0.4;
-	Locations[n].camshuttle = 1;
+	//Locations[n].camshuttle = 1;
 	//Models
 	//Always
 	Locations[n].filespath.models = "locations\decks\deck01";
@@ -1332,6 +1332,338 @@ int LocationInitQuestLocations(int n)
 	locations[n].reload.l1.autoreload = "1";
 	locations[n].reload.l1.label = "Cave entrance";
 	locations[n].locators_radius.reload.reload1_back = 2;*/
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Квестовая верхняя палуба Пинаса
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	Locations[n].id = "Quest_Ship_deck_Medium_trade";
+	Locations[n].image = "loading\Quarter_" + rand(1) + ".tga";
+	locations[n].id.label = "Boarding deck";
+	//Sound
+	Locations[n].type = "residence";
+	// нельзя, иначе нет моря Locations[n].boarding = "true";
+	//Models	
+	Locations[n].filespath.models = "locations\decks\outside_deck_3_tutorial"; // пинас_туториал
+	//Always
+	Locations[n].models.always.main = "outside_deck_3_tutorial";
+	Locations[n].models.always.parts = "outside_deck_3_tutorial_parts";
+	Locations[n].models.always.ropes = "outside_deck_3_tutorial_ropes";
+	Locations[n].models.always.locators = "outside_deck_3_tutorial_locators";
+	Locations[n].models.always.windows = "outside_deck_3_tutorial_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.watermask = "outside_deck_3_tutorial_watermask";
+	Locations[n].models.always.watermask.tech = "WaterMask";
+	Locations[n].models.always.watermask.level = 65500;
+	//Day
+	locations[n].models.day.charactersPatch = "outside_deck_3_tutorial_patch";
+	Locations[n].models.day.deckMediumFonarsDay = "outside_deck_3_tutorial_fd";  
+	Locations[n].models.day.jumpPatch = "outside_deck_3_tutorial_jump";
+	//Night
+	locations[n].models.night.charactersPatch = "outside_deck_3_tutorial_patch";
+	Locations[n].models.night.deckMediumFonarsNight = "outside_deck_3_tutorial_fn";  
+	Locations[n].models.night.jumpPatch = "outside_deck_3_tutorial_jump";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "true";
+
+	locations[n].box1 = Items_MakeTime(0, 0, 1, 2003);
+	locations[n].box2 = Items_MakeTime(0, 0, 1, 2003);
+    locations[n].box3 = Items_MakeTime(0, 0, 1, 2003);
+    locations[n].box4 = Items_MakeTime(0, 0, 1, 2003);
+	locations[n].locators_radius.reload.reload_cabin = 0.75;
+	locations[n].locators_radius.reload.reload_camp1 = 0.75;
+	locations[n].locators_radius.reload.reload_arsenal = 0.75;
+	locations[n].locators_radius.reload.reload_kitchen = 0.75;
+	locations[n].locators_radius.reload.reload_gundeck = 0.75;
+	locations[n].locators_radius.box.private1 = 0.6;
+	locations[n].locators_radius.box.private2 = 0.6;
+	locations[n].locators_radius.box.private3 = 0.6;
+	locations[n].locators_radius.item.item1 = 1.0;
+	
+	locations[n].reload.l1.name = "reload_cabin";
+	locations[n].reload.l1.go = "Quest_Cabin_Medium";
+	locations[n].reload.l1.emerge = "reload1";
+	locations[n].reload.l1.label = "cabine";
+	locations[n].reload.l1.disable = true;
+	
+	locations[n].reload.l2.name = "reload_camp1";
+	locations[n].reload.l2.go = "Quest_Campus";
+	locations[n].reload.l2.emerge = "reload_deck1";
+	locations[n].reload.l2.label = "My_Campus";
+	locations[n].reload.l2.disable = false;
+	
+	locations[n].reload.l3.name = "reload_arsenal";
+	locations[n].reload.l3.go = "Quest_Deck_Medium";
+	locations[n].reload.l3.emerge = "reload_deck";
+	locations[n].reload.l3.label = "My_Deck_Medium";
+	locations[n].reload.l3.disable = false;
+	
+	locations[n].reload.l4.name = "reload_kitchen";
+	locations[n].reload.l4.go = "Quest_Deck_Medium";
+	locations[n].reload.l4.emerge = "reload_deck";
+	locations[n].reload.l4.label = "My_Deck_Medium";
+	locations[n].reload.l4.disable = false;
+	
+	
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Квестовая каюта в начале игры
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	Locations[n].id = "Quest_Cabin_Medium";
+	Locations[n].id.label = "cabine";
+	Locations[n].filespath.models = "locations\decks\capmd";
+    Locations[n].image = "loading\Capdeck_" + rand(4) + ".tga";
+	//Sound
+	Locations[n].type = "residence";
+	//Models
+	//Always
+	Locations[n].models.always.l1 = "capmd";
+	locations[n].models.always.l1.level = 65538;
+
+	Locations[n].models.always.window = "capmd_w";
+	Locations[n].models.always.window.tech = "LocationWindows";
+	locations[n].models.always.window.level = 65539;
+
+	//Day
+	Locations[n].models.day.l2 = "capmd_md"; //пушки по бортам, карты на столе
+    Locations[n].models.day.l2.level = 65538;
+    Locations[n].models.day.locators = "capmd_quest_locators"; //протагонист в центре каюты, клевреты стоят вокруг, ближе к стенам
+    Locations[n].models.day.charactersPatch = "capmd_pmd"; //дерево + ковёр - стул
+    Locations[n].models.day.fonar = "capmd_fd";
+
+	//Night
+	Locations[n].models.night.l3 = "capmd_mn"; //пушки по бортам, новые портреты
+    Locations[n].models.night.l3.level = 65538;
+    Locations[n].models.night.locators = "capmd_quest_locators"; //протагонист так же в центре каюты, клевреты располагаются вокруг
+    Locations[n].models.night.charactersPatch = "capmd_pmn"; //дерево + ковёр
+    Locations[n].models.night.fonar = "capmd_fn";
+
+	//Environment
+	Locations[n].environment.sea = "true";
+	Locations[n].environment.weather = "true";
+
+	locations[n].box1 = Items_MakeTime(0, 1, 1, 2013); //капитанский рундук, у левого борта
+    locations[n].box2 = Items_MakeTime(0, 1, 1, 2013); //сундук у правого борта
+    locations[n].box3 = Items_MakeTime(0, 1, 1, 2013); //шкатулка с принадлежностями, на столе, ночью слева, днём справа
+    locations[n].box4 = Items_MakeTime(0, 1, 1, 2013); //шкап
+
+    Locations[n].locators_radius.randitem.randitem1 = 1;
+    Locations[n].locators_radius.randitem.randitem2 = 1;
+
+    Locations[n].locators_radius.rld.loc0 = 0.5;
+    Locations[n].locators_radius.rld.loc1 = 0.5;
+    Locations[n].locators_radius.rld.loc2 = 0.5;
+    Locations[n].locators_radius.rld.aloc0 = 0.5;
+    Locations[n].locators_radius.rld.aloc1 = 0.5;
+    Locations[n].locators_radius.rld.aloc2 = 0.5;
+	Locations[n].locators_radius.item.item1 = 1.0;
+	Locations[n].locators_radius.item.item2 = 1.0;
+
+    LAi_LocationFightDisable(&Locations[n], true);
+
+    Locations[n].reload.l1.name = "reload1";
+	Locations[n].reload.l1.go = "Quest_Ship_deck_Medium_trade";
+	Locations[n].reload.l1.emerge = "reload_cabin";
+	Locations[n].reload.l1.label = "Boarding deck";
+
+	Locations[n].items.randitem2 = "";
+	Locations[n].items.randitem1 = "";
+
+	Locations[n].boarding = "true";
+	//Locations[n].camshuttle = 1;
+	locations[n].environment.weather.rain = false;
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Квестовая нижняя палуба в начале игры
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	Locations[n].id = "Quest_Deck_Medium";
+	Locations[n].id.label = "My_Deck_Medium";
+	//Info
+	Locations[n].filespath.models = "locations\decks\deck2"; //7
+	Locations[n].image = "loading\Gundeck_" + rand(2) + ".tga";
+	//Sound
+	Locations[n].type = "residence";
+
+	//Models
+	Locations[n].filespath.models = "locations\decks\inside_gundeck_3";
+	//Always
+	Locations[n].models.always.main = "inside_gundeck_3";
+	Locations[n].models.always.parts = "inside_gundeck_3_parts";
+	Locations[n].models.always.outside = "inside_gundeck_3_outside";
+	Locations[n].models.always.locators = "inside_gundeck_3_locators_tutorial";
+	Locations[n].models.always.camcollider = "inside_gundeck_3_camcollider";
+	Locations[n].models.always.rays = "inside_gundeck_3_rays"; // лучи
+	Locations[n].models.always.rays.uvslide.v0 = 0.08;
+	Locations[n].models.always.rays.uvslide.v1 = 0.0;
+	Locations[n].models.always.rays.tech = "LocationWaterFall";
+	Locations[n].models.always.rays.level = 99950;
+	//Day
+	Locations[n].models.day.charactersPatch = "inside_gundeck_3_patch";
+	Locations[n].models.day.fonar = "inside_gundeck_3_fn"; // тоже ночные
+	//Night
+	Locations[n].models.night.charactersPatch = "inside_gundeck_3_patch";
+	Locations[n].models.night.fonar = "inside_gundeck_3_fn";
+	//Environment
+	Locations[n].environment.weather = "true";
+	Locations[n].environment.sea = "true";
+
+	Locations[n].boarding = "true";
+
+    locations[n].box1 = Items_MakeTime(0, 1, 1, 2003);
+	locations[n].box2 = Items_MakeTime(0, 1, 1, 2003);
+    locations[n].box3 = Items_MakeTime(0, 1, 1, 2003);
+    locations[n].box4 = Items_MakeTime(0, 1, 1, 2003);
+	
+	Locations[n].locators_radius.item.item1 = 1.1;
+	Locations[n].locators_radius.item.item2 = 1.0;
+
+    LAi_LocationFightDisable(&Locations[n], true);
+	
+	Locations[n].reload.l1.name = "reload_deck";
+	Locations[n].reload.l1.go = "Quest_Ship_deck_Medium_trade";
+	Locations[n].reload.l1.emerge = "reload_kitchen";
+	Locations[n].reload.l1.autoreload = "0";
+	Locations[n].reload.l1.label = "Boarding deck";
+	
+	Locations[n].reload.l2.name = "reload_camp";
+	Locations[n].reload.l2.go = "Quest_Campus";
+	Locations[n].reload.l2.emerge = "reload_gundeck";
+	Locations[n].reload.l2.autoreload = "0";
+	Locations[n].reload.l2.label = "My_Campus";
+
+	Locations[n].reload.l3.name = "reload_hold1";
+	Locations[n].reload.l3.go = "Quest_Deck";
+	Locations[n].reload.l3.emerge = "reload_gundeck1";
+	Locations[n].reload.l3.autoreload = "0";
+	Locations[n].reload.l3.label = "My_Deck.";
+	
+	//Locations[n].camshuttle = 1;
+	locations[n].environment.weather.rain = false;
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Квестовая кают-компания в начале игры
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	Locations[n].id = "Quest_Campus";
+	Locations[n].id.label = "My_Campus";
+    Locations[n].image = "loading\Capdeck_" + rand(4) + ".tga";
+	//Sound
+	Locations[n].type = "residence";
+	//Models
+	Locations[n].filespath.models = "locations\decks\inside_campdeck_3";
+	//Always
+	Locations[n].models.always.main = "inside_campdeck_3";
+	Locations[n].models.always.parts = "inside_campdeck_3_parts";
+	Locations[n].models.always.outside = "inside_campdeck_3_outside";
+	Locations[n].models.always.locators = "inside_campdeck_3_locators_tutorial";
+	Locations[n].models.always.sleeper = "inside_campdeck_3_sleeper";
+	Locations[n].models.always.camcollider = "inside_campdeck_3_camcollider";
+	Locations[n].models.always.rays = "inside_campdeck_3_rays"; // лучи
+	Locations[n].models.always.rays.uvslide.v0 = 0.08;
+	Locations[n].models.always.rays.uvslide.v1 = 0.0;
+	Locations[n].models.always.rays.tech = "LocationWaterFall";
+	Locations[n].models.always.rays.level = 99950;
+	//Day
+	Locations[n].models.day.charactersPatch = "inside_campdeck_3_patch";
+	Locations[n].models.day.fonar = "inside_campdeck_3_fn"; // ночные
+	//Night
+	Locations[n].models.night.charactersPatch = "inside_campdeck_3_patch";
+	Locations[n].models.night.fonar = "inside_campdeck_3_fn";
+
+	//Environment
+	Locations[n].environment.sea = "true";
+	Locations[n].environment.weather = "true";
+
+	locations[n].box1 = Items_MakeTime(0, 1, 1, 2013);
+
+    Locations[n].locators_radius.rld.loc0 = 0.5;
+    Locations[n].locators_radius.rld.loc1 = 0.5;
+    Locations[n].locators_radius.rld.loc2 = 0.5;
+    Locations[n].locators_radius.rld.loc3 = 0.5;
+    Locations[n].locators_radius.rld.aloc0 = 0.5;
+    Locations[n].locators_radius.rld.aloc1 = 0.5;
+    Locations[n].locators_radius.rld.aloc2 = 0.5;
+    Locations[n].locators_radius.rld.aloc3 = 0.5;
+
+    LAi_LocationFightDisable(&Locations[n], true);
+
+	Locations[n].reload.l1.name = "reload_deck1";
+	Locations[n].reload.l1.go = "Quest_Ship_deck_Medium_trade";
+	Locations[n].reload.l1.emerge = "reload_camp1";
+	Locations[n].reload.l1.label = "Boarding deck";
+	
+	Locations[n].reload.l2.name = "reload_gundeck";
+	Locations[n].reload.l2.go = "Quest_Deck_Medium";
+	Locations[n].reload.l2.emerge = "reload_camp";
+	Locations[n].reload.l2.label = "Cabin.";
+
+	Locations[n].items.randitem2 = "";
+	Locations[n].items.randitem1 = "";
+
+	Locations[n].boarding = "true";
+	//Locations[n].camshuttle = 1;
+	locations[n].environment.weather.rain = false;
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Квестовый трюм в начале игры
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	Locations[n].id = "Quest_Deck";
+	Locations[n].id.label = "My_Deck";
+	//Info
+	Locations[n].filespath.models = "locations\decks\hold";
+	Locations[n].image = "loading\Hold_" + rand(1) + ".tga";
+	//Sound
+	Locations[n].type = "residence";
+	
+	//Models
+	Locations[n].filespath.models = "locations\decks\inside_hold_3";
+	//Always
+	Locations[n].models.always.main = "inside_hold_3";
+	Locations[n].models.always.parts = "inside_hold_3_parts";
+	Locations[n].models.always.outside = "inside_hold_3_outside";
+	Locations[n].models.always.locators = "inside_hold_3_locators_tutorial";
+	Locations[n].models.always.camcollider = "inside_hold_3_camcollider";
+	Locations[n].models.always.rays = "inside_hold_3_rays"; // лучи
+	Locations[n].models.always.rays.uvslide.v0 = 0.08;
+	Locations[n].models.always.rays.uvslide.v1 = 0.0;
+	Locations[n].models.always.rays.tech = "LocationWaterFall";
+	Locations[n].models.always.rays.level = 99950;
+	//Day
+	Locations[n].models.day.charactersPatch = "inside_hold_3_patch";
+	Locations[n].models.day.fonar = "inside_hold_3_fn"; // тоже ночные
+	Locations[n].fonarlights = true; // фонари всегда горят
+	//Night
+	Locations[n].models.night.charactersPatch = "inside_hold_3_patch";
+	Locations[n].models.night.fonar = "inside_hold_3_fn";
+	
+	//Environment
+	Locations[n].environment.weather = "true";
+	Locations[n].environment.sea = "false";
+
+	locations[n].box1 = Items_MakeTime(0, 1, 1, 2003);
+	locations[n].box2 = Items_MakeTime(0, 1, 1, 2003);
+    locations[n].box3 = Items_MakeTime(0, 1, 1, 2003);
+    locations[n].box4 = Items_MakeTime(0, 1, 1, 2003);
+	
+	Locations[n].locators_radius.item.item1 = 1.0;
+	Locations[n].locators_radius.item.item2 = 1.0;
+
+    LAi_LocationFightDisable(&Locations[n], true);
+
+    Locations[n].reload.l1.name = "reload_gundeck1";
+	Locations[n].reload.l1.go = "Quest_Deck_Medium";
+	Locations[n].reload.l1.emerge = "reload_hold1";
+	Locations[n].reload.l1.autoreload = "0";
+	Locations[n].reload.l1.label = "Cabin.";
+
+	Locations[n].boarding = "true";
+	//Locations[n].camshuttle = 1;
+	locations[n].environment.weather.rain = false;
+
 	n = n + 1;
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

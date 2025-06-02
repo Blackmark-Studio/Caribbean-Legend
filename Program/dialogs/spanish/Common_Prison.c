@@ -104,7 +104,7 @@ void ProcessDialogEvent()
 				dialog.text = "Su Excelencia, Gobernador General! ¿Tiene alguna orden?";
 			}
 			// <-- legendary edition
-			link.l1 = "Oh, nada especial, ya sabes, solo estaba dando una vuelta por la ciudad, así que llegué aquí de casualidad.";
+			link.l1 = "Oh, nada especial, solo estaba dando una vuelta por la ciudad, así que llegué aquí de casualidad.";
 			link.l1.go = "exit";
 			link.l2 = "Quería hablar sobre algunos negocios.";
 			if (CheckCharacterItem(pchar, "CaptainBook") && !CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakFort"))
@@ -152,7 +152,7 @@ void ProcessDialogEvent()
 					}
 					if(pchar.GenQuest.CaptainComission == "MayorTalkGood")
 					{
-						link.l6 = "Yo "+GetFullName(pchar)+", actuando en nombre y por orden del gobernador "+XI_ConvertString("Colonia"+pchar.GenQuest.CaptainComission.City+"Gen")+"necesito hablar con el antiguo capitán "+pchar.GenQuest.CaptainComission.Name+".";
+						link.l6 = "Yo "+GetFullName(pchar)+", actuando en nombre y por orden del gobernador "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City+"Gen")+"necesito hablar con el antiguo capitán "+pchar.GenQuest.CaptainComission.Name+".";
 						link.l6.go = "CapComission_PrisonGood1";
 					}
 				}	
@@ -178,7 +178,7 @@ void ProcessDialogEvent()
 			// Warship, 16.05.11. Генер "Justice for sale".
 			if(CheckAttribute(PChar, "GenQuest.JusticeOnSale.PrisonWait") && CheckAttribute(PChar, "GenQuest.JusticeOnSale.CityId") && NPChar.location == PChar.GenQuest.JusticeOnSale.CityId + "_prison")
 			{
-				link.l13 = "Quiero hablar contigo sobre un hombre en particular - "+PChar.GenQuest.JusticeOnSale.SmugglerName+". Él es tu prisionero, si no me equivoco.";
+				link.l13 = "Quiero hablar contigo sobre un hombre en particular, "+PChar.GenQuest.JusticeOnSale.SmugglerName+". Él es tu prisionero, si no me equivoco.";
 				link.l13.go = "JusticeOnSale_1";
 			}
 			
@@ -206,14 +206,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marginpassenger_1":
-			dialog.text = "Mmm... Eso es muy intrigante - ¡por favor, continúa!";
+			dialog.text = "Mmm... Eso es muy intrigante, ¡por favor, continúa!";
 			link.l1 = "Él conocía el nombre del barco, en el cual "+pchar.GenQuest.Marginpassenger.q1Name+" planeaba zarpar. Es "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType),"Name")))+" llamado '"+pchar.GenQuest.Marginpassenger.ShipName+"'. Además, me dijo la hora en que ese barco debía zarpar.";
 			link.l1.go = "Marginpassenger_2";
 		break;
 	
 		case "Marginpassenger_2":
 			dialog.text = "¿Y él sugirió que capturaras al pasajero y luego exigieras un rescate por él?";
-			link.l1 = "Exactamente. Para cobrar el rescate, iría a "+XI_ConvertString("Colonia"+pchar.GenQuest.Marginpassenger.Targetcity)+", a cierta persona con el nombre de "+pchar.GenQuest.Marginpassenger.q2Name+". Le pagué por esta información, pero, por supuesto, no iba a secuestrar a esa persona.";
+			link.l1 = "Exactamente. Para cobrar el rescate, iría a "+XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Targetcity)+", a cierta persona con el nombre de "+pchar.GenQuest.Marginpassenger.q2Name+". Le pagué por esta información, pero, por supuesto, no iba a secuestrar a esa persona.";
 			link.l1.go = "Marginpassenger_3";
 		break;
 		
@@ -224,7 +224,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marginpassenger_4":
-			dialog.text = "Tenías toda la razón cuando viniste a mí, "+GetAddress_Form(NPChar)+"¡Este granuja, "+pchar.GenQuest.Marginpassenger.Name+", ha estado bajo nuestro seguimiento durante mucho tiempo. Investigaré, y si se confirma todo lo que dijiste, encerraremos a este canalla detrás de las rejas por medio año. ¡Eso le enseñará a no tramar esas clases de planes contra ciudadanos respetables!\nBueno, por tu honestidad y disposición para servir a una buena causa, ciertamente informaré sobre tu acción a nuestro gobernador, lo cual, por supuesto, afectará su actitud hacia ti... ya sabes, de una manera positiva. ¡Gracias por tu ayuda, capitán!";
+			dialog.text = "Tenías toda la razón cuando viniste a mí, "+GetAddress_Form(NPChar)+"¡Este granuja, "+pchar.GenQuest.Marginpassenger.Name+", ha estado bajo nuestro seguimiento durante mucho tiempo. Investigaré, y si se confirma todo lo que dijiste, encerraremos a este canalla detrás de las rejas por medio año. ¡Eso le enseñará a no tramar esas clases de planes contra ciudadanos respetables!\nBueno, por tu honestidad y disposición para servir a una buena causa, ciertamente informaré sobre tu acción a nuestro gobernador, lo cual, por supuesto, afectará su actitud hacia ti... de una manera positiva. ¡Gracias por tu ayuda, capitán!";
 			link.l1 = "Hmm... De nada, fue un placer ayudar. ¡Adiós!";
 			link.l1.go = "Marginpassenger_5";
 		break;
@@ -441,7 +441,7 @@ void ProcessDialogEvent()
 		
 		case "CapComission_PrisonFree2":
 			dialog.text = "Pero podría asignarle escolta a él.";
-			link.l1 = "No hay necesidad de - Tengo suficientes guardias. Además, no querría que se hiciera pública la ubicación del escondite.";
+			link.l1 = "No hay necesidad de... Tengo suficientes guardias. Además, no querría que se hiciera pública la ubicación del escondite.";
 			link.l1.go = "CapComission_PrisonFree3";
 		break;
 		
@@ -473,7 +473,7 @@ void ProcessDialogEvent()
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					dialog.text = "Sí, es el dueño local. Quizás, un premio de "+sti(pchar.questTemp.different.GiveShipLetters.price2)+" pesos servirán como una recompensa adecuada por tu vigilancia, capitán.";
+					dialog.text = "Sí, es el dueño. Quizás, un premio de "+sti(pchar.questTemp.different.GiveShipLetters.price2)+" pesos servirán como una recompensa adecuada por tu vigilancia, capitán.";
 					link.l1 = "Quizás no.";
 					link.l1.go = "F_ShipLetters_3";	
 					link.l2 = "Una oferta generosa. ¡Los documentos son tuyos, entonces!";
@@ -552,7 +552,7 @@ void ProcessDialogEvent()
 			// генерал-губернатор
 			if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE)
 			{
-				dialog.text = "¡Por supuesto, puedes ver todo - ¡Aquí tengo un orden completo!";
+				dialog.text = "¡Por supuesto, puedes ver todo! ¡Aquí tengo el orden completo!";
 				link.l1 = "Bueno, vamos a comprobarlo, teniente.";
 				link.l1.go = "exit";
 				pchar.questTemp.jailCanMove = true;
@@ -577,16 +577,16 @@ void ProcessDialogEvent()
 				break;
 			}
 			// <-- legendary edition
-			dialog.text = NPCStringReactionRepeat("¿Pero por qué lo necesitas? Créeme, no hay nada que valga ningún interés, excepto para los ladrones y bandidos.","Ya habíamos discutido ese deseo tuyo.","¿Otra vez? ¡Ya habíamos hablado de eso dos veces!","¿Hmm, otra vez...","block",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("¿Pero por qué lo necesitas? Créeme, no hay nada que valga ningún interés, excepto para los ladrones y bandidos.","Ya habíamos discutido ese deseo tuyo.","¿Otra vez? ¡Ya habíamos hablado de eso dos veces!","¿Hmm, otra vez...?","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Sin embargo, me gustaría unirme a tu recorrido por las casamatas. ¡Estoy muy interesado!","Sí, exactamente. Pero quería hablar de ello.","Bueno, quizás la tercera vez...","Espero que tus prisioneros no me abandonen.",npchar,Dialog.CurrentNode);
 			link.l1.go = "ForGoodMove_1";
 		break;
 		
         case "ForGoodMove_1":
-			pchar.questTemp.jailCanMove.money = 20+drand(3)*10;
+			pchar.questTemp.jailCanMove.money = 20+hrand(3)*10;
 			if (sti(colonies[FindColony(npchar.city)].jail))
 			{
-				dialog.text = "Bueno, no veo ninguna razón para negarme. "+FindRussianDublonString(sti(pchar.questTemp.jailCanMove.money))+" - y hasta que salgas de la prisión, puedes caminar libremente por los corredores e incluso conversar con los reclusos.";
+				dialog.text = "Bueno, no veo ninguna razón para negarme. "+FindRussianDublonString(sti(pchar.questTemp.jailCanMove.money))+" y hasta que salgas de la prisión, puedes caminar libremente por los corredores e incluso conversar con los reclusos.";
 				if (PCharDublonsTotal() >= sti(sti(pchar.questTemp.jailCanMove.money)))
 				{
 					link.l1 = "Estoy de acuerdo, ¡aquí están tus monedas!";
@@ -670,12 +670,12 @@ void ProcessDialogEvent()
 		
         case "KnowAboutPrisoner_4":
 			dialog.text = "Realmente no lo sé. Ha robado solo una cosa insignificante. No puedo liberarlo, pero dejarlo pudriéndose en la cárcel ciertamente no está bien.";
-			link.l1 = "Bueno, entonces entrégamelo, teniente. Yo pagaré su fianza - una cantidad razonable, por supuesto.";
+			link.l1 = "Bueno, entonces entrégamelo, teniente. Yo pagaré su fianza, una cantidad razonable, por supuesto.";
 			link.l1.go = "KnowAboutPrisoner_free";
 		break;
 		
         case "KnowAboutPrisoner_5":
-			dialog.text = "Liberando? Eso parece probable. En mi opinión, no tiene sentido detener a ese pequeño ladrón aquí.";
+			dialog.text = "¿Liberarlo? Eso parece posible. En mi opinión, no tiene sentido detener a ese pequeño ladrón aquí.";
 			link.l1 = "Bueno, entonces entrégamelo, teniente. Pagaré su fianza, una cantidad razonable, por supuesto.";
 			link.l1.go = "KnowAboutPrisoner_free";
 		break;
@@ -687,7 +687,7 @@ void ProcessDialogEvent()
 		break;
 		
         case "KnowAboutPrisoner_free":
-			pchar.questTemp.jailCanMove.ownerPrison.money = 50+drand(10)*10;
+			pchar.questTemp.jailCanMove.ownerPrison.money = 50+hrand(10)*10;
 			dialog.text = "Está bien, tenemos un trato. "+FindRussianDublonString(sti(pchar.questTemp.jailCanMove.ownerPrison.money))+" al contado, y puedes llevártelo ahora mismo.";
 			if (PCharDublonsTotal() >= sti(pchar.questTemp.jailCanMove.ownerPrison.money))
 			{
@@ -853,7 +853,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Prisoner_4";
 		break;
         case "Prisoner_4":
-            dialog.text = "¡Juro que estoy diciendo la verdad! En cuanto al escondite - hay un tesoro y dinero...";
+            dialog.text = "¡Juro que estoy diciendo la verdad! En cuanto al escondite, hay un tesoro y dinero...";
 			link.l1 = "No, compañero. No voy a arriesgar mi pellejo por un alijo cuestionable. Lo siento...";
 			link.l1.go = "Prisoner_5";
 			if (GetNationRelation2MainCharacter(sti(npchar.nation)) != RELATION_ENEMY)
@@ -1024,7 +1024,7 @@ void ProcessDialogEvent()
             dialog.text = "¡Pero fui calumniado! ¡Oh diablo! ¿Y qué haré ahora? ¡Voy a pudrirme aquí vivo!";
 			link.l1 = "Lo siento, compañero, pero no hay nada que pueda hacer por ti.";
 			link.l1.go = "ToPrisonHead_notFree_2";
-			link.l2 = "Solo queda una oportunidad - liberarte con fuerza. Voy a romper tu cerradura ahora para sacarte, y vamos a abrirnos paso. ¿Estás listo?";
+			link.l2 = "Solo queda una oportunidad, liberarte con fuerza. Voy a romper tu cerradura ahora para sacarte, y vamos a abrirnos paso. ¿Estás listo?";
 			link.l2.go = "Prisoner_agree_1";
 			pchar.quest.GivePrisonFree_Over.over = "yes";
 		break;
@@ -1070,7 +1070,7 @@ void ProcessDialogEvent()
 				break;
 				case 3:
 					dialog.text = "Capitán, lo siento, pero... No hay tesoro.";
-					link.l1 = "¿¡Qué?! ¡Me has engañado, canalla! Te llevé hasta esa isla - ¿y para qué? ¡No te saldrás con la tuya!";
+					link.l1 = "¿¡Qué?! ¡Me has engañado, canalla! Te llevé hasta esa isla, ¿y para qué? ¡No te saldrás con la tuya!";
 					link.l1.go = "Node_3";
 				break;
 				case 4:
@@ -1097,8 +1097,8 @@ void ProcessDialogEvent()
 			link.l1.go = "PrisonerInPlace_3";
 			Log_Info("Has recibido tu parte del tesoro");
 			PlaySound("interface\important_item.wav");
-			TakeNItems(pchar, "icollection", 1+drand(1));
-			TakeNItems(pchar, "chest", 4+drand(4));
+			TakeNItems(pchar, "icollection", 1+hrand(1));
+			TakeNItems(pchar, "chest", 4+hrand(4));
 			TakeNItems(pchar, "jewelry1", 70+rand(15));
 			TakeNItems(pchar, "jewelry2", 50+rand(15));
 			TakeNItems(pchar, "jewelry3", 60+rand(15));
@@ -1171,7 +1171,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "PrisonerInPlace_1":
-			dialog.text = "Muy sencillo, "+GetSexPhrase("compañero","muchacha")+". Todo en la vida sucede.\nBueno, estás aquí - si quieres: quédate, busca más. Bueno, ¡tengo que irme!\n¡Adiós, "+GetSexPhrase("mi amigo","chica")+", gracias por salvar mi vida. ¡Siempre te recordaré!";
+			dialog.text = "Muy sencillo, "+GetSexPhrase("compañero","muchacha")+". Todo en la vida sucede.\nBueno, ya que estás aquí quédate y busca más. Bueno, ¡tengo que irme!\n¡Adiós, "+GetSexPhrase("mi amigo","chica")+", gracias por salvar mi vida. ¡Siempre te recordaré!";
 			link.l1 = "¡Bribón! ¿Crees que te dejaré salir impune de esto?! ¡Eh! ¡Espera, cobarde!";
 			link.l1.go = "PrisonerInPlace_2";
 			AddQuestRecord("GivePrisonFree", "4");
@@ -1241,7 +1241,7 @@ void ProcessDialogEvent()
 		break;
         case "Deliver_agree":
 			dialog.text = "Bien. Ahora escúchame con atención. Dos camaradas están esperando mi mensaje en una casa, para que no sean aprehendidos durante una redada. Pero no tengo ni idea de qué casa es exactamente. Tendrás que buscar.";
-			link.l1 = "¿Qué quieres decir con - buscar?";
+			link.l1 = "¿Qué quieres decir con, buscar?";
 			link.l1.go = "Deliver_4";
 		break;
         case "Deliver_4":
@@ -1260,7 +1260,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Aquí. Gracias, "+GetSexPhrase("compañero","chica")+"¡";
+				dialog.text = "Aquí. Gracias, "+GetSexPhrase("compañero","chica")+".";
 				link.l1 = "Para nada.";
 				link.l1.go = "NoMoreTalkExit";
 				GiveItem2Character(Pchar, "Malyava");
@@ -1284,7 +1284,7 @@ void ProcessDialogEvent()
 		
 		// Warship, 16.05.11. Генер "Justice for sale".
 		case "JusticeOnSale_1":
-			dialog.text = "Sí, fue arrestado bajo el cargo de contrabando. Pero, ¿por qué te importa ese pájaro de la horca, "+GetAddress_Form(NPChar)+"¿?";
+			dialog.text = "Sí, fue arrestado bajo el cargo de contrabando. Pero, ¿por qué te importa ese pájaro de la horca, "+GetAddress_Form(NPChar)+"?";
 			link.l1 = "Su pandilla está planeando organizar su fuga y continuar con sus sucios actos.";
 			link.l1.go = "JusticeOnSale_2";
 			link.l2 = "He oído que él no era culpable.";
@@ -1319,7 +1319,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_5_WithoutMoney":
-			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > dRand(100) || sti(PChar.money) < 5000)
+			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > hrand(100) || sti(PChar.money) < 5000)
 			{
 				dialog.text = "Está bien, "+GetAddress_Form(NPChar)+", toma a ese granuja y vete, antes de que cambie de parecer.";
 				link.l1 = "Es genial ver el triunfo de la justicia, ¿no crees?";
@@ -1328,7 +1328,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "No, "+GetAddress_Form(NPChar)+", eso no servirá.";
-				link.l1 = "Entonces, quizás, estos 5000 pesos pueden ser el argumento más convincente?";
+				link.l1 = "Entonces, quizás estos 5000 pesos puedan ser un argumento más convincente.";
 				link.l1.go = "JusticeOnSale_5";
 			}
 		break;
@@ -1481,7 +1481,7 @@ void ProcessDialogEvent()
 		// <-- Путеводная звезда
 		case "Helen_meeting":
 			dialog.text = "¡Por supuesto que no! Por favor, entra. Siempre eres bienvenido en nuestras mazmorras. Eh, lo digo en buen sentido, por supuesto. Entonces, ¿qué necesitas aquí?";
-			link.l1 = "Oh, nada especial, ya sabes, solo paseando por la ciudad, así que llegué aquí de casualidad.";
+			link.l1 = "Oh, nada especial, solo paseando por la ciudad, así que llegué aquí de casualidad.";
 			link.l1.go = "exit";
 			link.l2 = "Quería hablar de algunos negocios.";
 			link.l2.go = "quests";

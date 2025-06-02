@@ -1,0 +1,109 @@
+colony_1
+{
+A causa della mancanza di medicinali per le ferite,  @<iTemp> marinai sono morti
+}
+
+colony_2
+{
+Sulla nave  @<Pchar.Ship.Name>  ci sono poche forniture mediche rimaste
+}
+
+colony_3
+{
+Prepara per la battaglia nella città
+}
+
+colony_4
+{
+ERRORE: Non è stato impostato il percorso della città durante la cattura!!!
+}
+
+colony_5
+{
+Le forze nemiche sono soppresse! Il sentiero è libero.
+}
+
+colony_6
+{
+Hai ricevuto ~
+}
+
+colony_7
+{
+Hai ricevuto ~
+}
+
+colony_8
+{
+Hai ricevuto - Ascia
+}
+
+colony_9
+{
+Hai ricevuto - Piuma saxon
+}
+
+colony_10
+{
+Hai ricevuto - Madonna
+}
+
+colony_11
+{
+Chevalier Philippe
+}
+
+colony_12
+{
+de Poincy
+}
+
+colony_13
+{
+lord Thomas
+}
+
+colony_14
+{
+Vindzor
+}
+
+colony_15
+{
+don Juan
+}
+
+colony_16
+{
+de Cordova
+}
+
+colony_17
+{
+colonnello
+}
+
+colony_18
+{
+Jonathan Fox
+}
+
+colony_19
+{
+La nostra città @<GetCityName(city)> è sotto assedio!
+}
+
+colony_20
+{
+Siege is down!
+}
+
+colony_21
+{
+La nostra città @<GetCityName(city)> è sotto assedio!
+}
+
+colony_22
+{
+La nostra città @<GetCityName(city)> è stata catturata!
+}

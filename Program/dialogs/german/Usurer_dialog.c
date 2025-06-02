@@ -864,7 +864,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "small":
-			Pchar.Quest.Loans.(NPC_Area).Sum = 500*makeint(Pchar.rank);
+			Pchar.Quest.Loans.(NPC_Area).Sum = 500*makeint(Pchar.rank)+125*GetSummonSkillFromName(pchar,SKILL_COMMERCE);
 			Dialog.snd = "voice\USDI\USDI017";
 			dialog.text = "Ausgezeichnet! Es ist immer viel einfacher, mit kleinen Summen umzugehen - weniger Risiko für beide Seiten. Ich kann Ihnen anbieten "+FindRussianMoneyString(sti(Pchar.Quest.loans.(NPC_Area).sum))+"..., Freund.";
 			Link.l1 = "Abgemacht. Was ist mit deinem Interesse?";
@@ -877,7 +877,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Medium":
-			Pchar.Quest.Loans.(NPC_Area).Sum = 1500*makeint(Pchar.rank);
+			Pchar.Quest.Loans.(NPC_Area).Sum = 1500*makeint(Pchar.rank)+325*GetSummonSkillFromName(pchar,SKILL_COMMERCE);
 			Dialog.snd = "voice\USDI\USDI018";
 			dialog.text = "Kein Problem. Ich hoffe, dass "+FindRussianMoneyString(sti(Pchar.Quest.Loans.(NPC_Area).sum))+" wird Ihnen helfen, Ihre Probleme zu lösen. Das ist eine ziemlich beträchtliche Summe.";
 			Link.l1 = "Abgemacht. Was ist mit Ihrem Interesse?";
@@ -890,7 +890,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Large":
-			Pchar.Quest.Loans.(NPC_Area).Sum = 4000*makeint(Pchar.rank);
+			Pchar.Quest.Loans.(NPC_Area).Sum = 4000*makeint(Pchar.rank)+600*GetSummonSkillFromName(pchar,SKILL_COMMERCE);
 			Dialog.snd = "voice\USDI\USDI019";
 			dialog.text = "Nun... es ist riskant. Gut, ich bin bereit, für dich einen Kredit aufzunehmen für "+FindRussianMoneyString(sti(Pchar.Quest.Loans.(NPC_Area).sum))+". Ich hoffe, Sie verstehen, Kapitän, das ist eine wirklich erhebliche Summe. Ich bitte Sie, das ernst zu nehmen.";
 			Link.l1 = "Abgemacht. Was ist mit deinem Interesse?";
@@ -2716,136 +2716,7 @@ void ProcessDialogEvent()
 	}	
 }
 
-int findCitizenMan(ref NPChar, bool bCity)
-{
-    ref ch;
-	int n, nation;
-    int storeArray[2];
-	SetArraySize(&storeArray, MAX_COLONIES);
-    int howStore = 0;
-
-	if (bCity && sti(Pchar.Ship.Type) == SHIP_NOTUSED)
-	{
-		ch = GetCharacter(NPC_GenerateCharacter("LoanFindingMan", "citiz_"+(rand(9)+11), "man", "man", 10, sti(npchar.nation), -1, false, "citizen"));
-		ch.dialog.filename = "Common_citizen.c";
-		ch.city = npchar.city;
-		ch.RebirthPhantom = true; 
-		LAi_NoRebirthDisable(ch);
-		LAi_SetCitizenType(ch);
-		LAi_group_MoveCharacter(ch, GetNationNameByType(sti(npchar.nation)) + "_citizens");
-		PlaceCharacter(ch, "goto", npchar.city + "_town");
-	}
-	else
-	{		
-		for(n=0; n<MAX_COLONIES; n++)
-		{			
-			nation = GetNationRelation(sti(npchar.nation), sti(colonies[n].nation));	
-			if (nation != RELATION_ENEMY && colonies[n].nation != "none")
-			{           
-				storeArray[howStore] = n;
-				howStore++;
-			}
-		}
-		if (howStore == 0) return -1; 
-		nation = storeArray[cRand(howStore-1)];
-		ch = GetCharacter(NPC_GenerateCharacter("LoanFindingMan", "citiz_"+(rand(9)+11), "man", "man", 10, sti(colonies[nation].nation), -1, false, "citizen"));
-		ch.dialog.filename = "Common_citizen.c";
-		ch.city = colonies[nation].id;
-		ch.RebirthPhantom = true; 
-		LAi_NoRebirthDisable(ch);
-		LAi_SetCitizenType(ch);
-		LAi_group_MoveCharacter(ch, GetNationNameByType(sti(colonies[nation].nation)) + "_citizens");
-		PlaceCharacter(ch, "goto", colonies[nation].id + "_town");
-	}
-	return sti(ch.index);
-}
-
-int findChestMan(ref NPChar)
-{
-    ref ch;
-	int n;
-    int storeArray[2];
-	SetArraySize(&storeArray, MAX_CHARACTERS); // mitrokosta character refactor							
-    int howStore = 0;
-	string sTemp, sCity;
-
-	for(n=2; n<MAX_CHARACTERS; n++)
-	{
-		makeref(ch,Characters[n]);
-		sTemp = ch.id;
-		if (CheckAttribute(ch, "City") && ch.id != "Jackman") sCity = ch.City;
-		else continue;
-		sTemp = strcut(sTemp, strlen(sCity)+1, strlen(sTemp)-1);
-		// магазины
-		if (sTemp == "trader")
-		{
-            if (NPChar.city == ch.city) continue;
-            if (ch.location == "none") continue;
-            storeArray[howStore] = n;
-            howStore++;
-		}
-        // мэры
-		if (sTemp == "Mayor")
-		{
-            if (NPChar.city == ch.city) continue;
-            if (sti(ch.nation) == PIRATE) continue; // пираты не имеют реплик
-            if (ch.location == "none") continue;
-			if (ch.location != ch.Default) continue; //захвачанных мэров не надо
-            storeArray[howStore] = n;
-            howStore++;
-		}
-        // верфисты
-		if (sTemp == "shipyarder")
-		{
-            if (NPChar.city == ch.city) continue;
-            if (ch.location == "none") continue;
-            storeArray[howStore] = n;
-            howStore++;
-		}
-		// тавернщики
-		if (sTemp == "tavernkeeper")
-		{
-            if (NPChar.city == ch.city) continue;
-            if (ch.location == "none") continue;
-            storeArray[howStore] = n;
-            howStore++;
-		}
-	    // церковники
-		if (sTemp == "Priest")
-		{
-            if (NPChar.city == ch.city) continue;
-            if (ch.location == "none") continue;
-            storeArray[howStore] = n;
-            howStore++;
-		}		
-		// ростовщики
-		if (sTemp == "usurer")
-		{
-            if (NPChar.city == ch.city) continue;
-            if (ch.location == "none") continue;
-            storeArray[howStore] = n;
-            howStore++;
-		}
-		// начальники портов
-		if (sTemp == "PortMan")
-		{
-            if (NPChar.city == ch.city) continue;
-            if (ch.location == "none") continue;
-            storeArray[howStore] = n;
-            howStore++;
-		}
-    }
-    if (howStore == 0)
-    {
-        return -1;
-    }
-    else
-    {
-        return storeArray[cRand(howStore-1)];
-    }
-}
-
-// ugeen -> проверка, можем ли мы использовать дублоны в качестве вклада
+// ugeen проверка, можем ли мы использовать дублоны в качестве вклада
 bool CheckUseDublons(ref NPChar)
 {
 	int iTest 	= FindColony(NPChar.City); // город банка
@@ -2868,7 +2739,7 @@ void SlavetraderGalleonInWorld()
 	string sName;
 	sName = pchar.questTemp.Slavetrader.ShipName;
 	sld = GetCharacter(NPC_GenerateCharacter("GaleonCap", "", "man", "man", 45, SPAIN, 20, true, "quest"));
-	FantomMakeCoolSailor(sld, SHIP_LINESHIP, sName, CANNON_TYPE_CANNON_LBS36, 100, 100, 100);
+	FantomMakeCoolSailor(sld, SHIP_LINESHIP, sName, CANNON_TYPE_CANNON_LBS42, 100, 100, 100);
 	FantomMakeCoolFighter(sld, 45, 100, 100, "blade_21", "pistol5", "bullet", 100);
 	sld.Ship.Mode = "war";	
 	SetCaptanModelByEncType(sld, "war");
@@ -2918,4 +2789,4 @@ void SlavetraderGalleonInWorld()
 	sld.mapEnc.Name = "Galleon '" + sName + " '";
 	int daysQty = 20; //дней доехать даем с запасом
 	Map_CreateTrader(sld.cityShore, sld.quest.targetShore, sld.id, daysQty);//вот он, сам запуск энкаунтера
-}		
+}

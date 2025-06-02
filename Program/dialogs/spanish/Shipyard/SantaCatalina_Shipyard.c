@@ -10,7 +10,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "helendrinking_buy_rainbow":
-		dialog.text = " ... una elección digna, señor. Entonces, ¿tenemos un trato?";
+		dialog.text = "... una elección digna, señor. Entonces, ¿tenemos un trato?";
 		link.l1 = "¡S-sí! ¡Salud! Envuélvelo y envíalo al muelle. Y hazlo rápido, una dama me espera en la calle.";
 		link.l1.go = "helendrinking_buy_rainbow_1";
 		locCameraFromToPos(0.36, 1.86, 1.15, true, 2.06, -0.20, -4.38);

@@ -2,6 +2,7 @@
 
 #define		MAX_FORTS						16
 #define		MIN_CANNON_DAMAGE_DISTANCE		20.0
+#define		FORT_CANNON_MAXHP				1500
 
 object		AIFort;
 object		Forts[MAX_FORTS];
@@ -15,6 +16,7 @@ void DeleteFortEnvironment()
 	DelEventHandler(FORT_CANNON_DAMAGE, "Fort_CannonDamage");
 	DelEventHandler(FORT_CREATE, "Fort_CreateEvent");
 	DelEventHandler(FORT_LOADDMGCANNON, "Fort_LoadDamagedCannon");
+	DelEventHandler("Fort_Damage", "Fort_Damage");
 	// fix
 	if (isEntity(&AIFort)) { DeleteClass(&AIFort); }
 	for (int i=0; i<iNumForts; i++)
@@ -33,6 +35,7 @@ void CreateFortEnvironment()
 	SetEventHandler(FORT_CANNON_DAMAGE, "Fort_CannonDamage", 0);
 	SetEventHandler(FORT_CREATE, "Fort_CreateEvent", 0);
 	SetEventHandler(FORT_LOADDMGCANNON, "Fort_LoadDamagedCannon", 0);
+	SetEventHandler("Fort_Damage", "Fort_Damage", 0);
 }
 
 int Fort_FindCharacter(string sLocationID, string sLocationGroup, string sLocationLocator)
@@ -271,7 +274,8 @@ void Fort_CreateEvent()
 
 	rCharacter.Fort.Cannons.Quantity = iCannonsNum;
 
-	rCharacter.Ship.HP = iCannonsNum * 100;
+	// фортовое хп
+	rCharacter.Ship.HP = iCannonsNum * FORT_CANNON_MAXHP;
 	rCharacter.Fort.HP = rCharacter.Ship.HP;
 }
 
@@ -281,6 +285,46 @@ int Fort_GetCannonsQuantity(ref rFortCharacter)
 	int iMaxCannonsQuantity = sti(rFortCharacter.Fort.Cannons.Quantity);
 	int ResultCannons = sti(iMaxCannonsQuantity) - (iNumDamagedCannonsQuantity);
 	return ResultCannons;
+}
+
+// evganat - попадание по форту (включая попадание по орудиям) - возвращаем количество выбитых пушек
+int Fort_Damage()
+{
+	float x, y, z;
+	ref rBallCharacter, rFortCharacter;
+	int iBallCharacterIndex = GetEventData();
+	int iFortCharacterIndex = GetEventData();
+	rBallCharacter = GetCharacter(iBallCharacterIndex);
+	rFortCharacter = GetCharacter(iFortCharacterIndex);
+	x = GetEventData();
+	y = GetEventData();
+	z = GetEventData();
+	
+	ref rCannon = GetCannonByType(sti(rBallCharacter.Ship.Cannons.Type));
+	float fCannonDamageMultiply = stf(rCannon.DamageMultiply);
+	
+	ref rBall = GetGoodByType(sti(AIBalls.CurrentBallType));
+	
+	float fHullDamage = stf(rBall.DamageHull) * fCannonDamageMultiply;
+
+	float hp = stf(rFortCharacter.Ship.HP);	
+	int iCannonsMinus = 0;
+	float cannonRemainHp = hp % FORT_CANNON_MAXHP;
+	if(fHullDamage > cannonRemainHp)
+	{
+		iCannonsMinus = 1;
+		iCannonsMinus += (fHullDamage - cannonRemainHp) / FORT_CANNON_MAXHP;
+	}
+	hp -= fHullDamage;
+	
+	// несгораемый остаток
+	if(hp <= 1000.0)
+		hp = 1000.0;
+	
+	rFortCharacter.Ship.HP = hp;
+	Log_TestInfo("У форта осталось " + hp + " HP");
+	
+	return iCannonsMinus;
 }
 
 float Fort_CannonDamage()
@@ -328,7 +372,9 @@ float Fort_CannonDamage()
 	float fHullDamage = stf(rBall.DamageHull) * fCannonDamageMultiply * 0.4;
 	float fCrewDamage = stf(rBall.DamageCrew) * fCannonDamageMultiply * 0.6;
 
-	rFortCharacter.Ship.HP = (1.0 - MakeFloat(iNumDamagedCannons) / MakeFloat(iNumAllCannons)) * stf(rFortCharacter.Fort.HP);
+	// evganat - закомментил
+//	rFortCharacter.Ship.HP = (1.0 - MakeFloat(iNumDamagedCannons) / MakeFloat(iNumAllCannons)) * stf(rFortCharacter.Fort.HP);
+
 	//rFortCharacter.Ship.Crew.Quantity = stf(rFortCharacter.Ship.Crew.Quantity) - fCrewDamage;
 	//if (sti(rFortCharacter.Ship.Crew.Quantity) < 10) rFortCharacter.Ship.Crew.Quantity = 10;
 	Ship_ApplyCrewHitpoints(rFortCharacter, fCrewDamage);
@@ -445,6 +491,7 @@ float Fort_CannonDamage()
 	// Jason: Тортугу взять сложнее
 	float fkoeff = 1.05+0.19*(10-MOD_SKILL_ENEMY_RATE)+0.1;
 	if (rFortCharacter.id == "Tortuga Fort Commander") fkoeff = 1.15-MOD_SKILL_ENEMY_RATE/100;
+	fkoeff *= GetFloatByCondition(HasShipTrait(pchar, "trait13"), 1.0, 1.15);
 	if (iNumDamagedCannons >= makeint(iNumAllCannons / fkoeff)) // усложним с 2 до 1.5
 	{
 		Fort_SetAbordageMode(rBallCharacter, rFortCharacter);

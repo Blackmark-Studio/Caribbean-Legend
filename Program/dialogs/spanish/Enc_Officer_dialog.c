@@ -90,9 +90,9 @@ void ProcessDialogEvent()
 				Link.l66 = ""+npchar.name+", voy a una antigua ciudad india de Tayasal. Será un viaje peligroso e inusual, a través de un ídolo de teleportación. ¿Te unirás a mí?";
 				if(npchar.id == "Folke")
 				{
-					Link.l66 = ""+npchar.name+", tengo una petición seria para ti - un verdadero negocio, suicida pero malditamente rentable. Necesito un hombre leal en una misión a una antigua ciudad india. ¿Estás conmigo?";
+					Link.l66 = ""+npchar.name+", tengo una petición seria para ti. Es sobre un verdadero negocio, suicida pero malditamente rentable. Necesito un hombre leal en una misión a una antigua ciudad india. ¿Estás conmigo?";
 				}
-				if(npchar.id == "FMQT_mercen")
+				if(npchar.id == "Duran")
 				{
 					Link.l66 = "Claude, una vez te quejaste de que los mercenarios están mal pagados.";
 				}
@@ -159,18 +159,18 @@ void ProcessDialogEvent()
 			if(npchar.id == "Folke")
 			{
 				dialog.text = "¡Maldita sea, Cap! Pensé que te desharías de mí a la primera oportunidad que tuvieras, pero siempre me sorprendes. Por supuesto que estoy contigo, y gracias por darle a este idiota la verdadera vida de un lobo de mar!";
-				Link.l1 = "Bien hecho, "+npchar.name+"¡";
+				Link.l1 = "¡Bien hecho, "+npchar.name+"!";
 				Link.l1.go = "folke_tieyasal";
 				break;
 			}
-			if(npchar.id == "FMQT_mercen")
+			if(npchar.id == "Duran")
 			{
 				dialog.text = "¿Eh? ¿Realmente dije eso?";
 				Link.l1 = "Lo hiciste. Te escuché atentamente entonces, y estoy listo para corregir la injusticia.";
 				Link.l1.go = "Duran_tieyasal";
 				break;
 			}
-			dialog.text = LinkRandPhrase("Lo siento, capi, pero eso no es lo que firmé. No pienses que soy un cobarde, pero no estoy dispuesto a ir y enfrentar una muerte segura. No estoy tan cansado de vivir, al menos no todavía. Puedes despedirme si quieres.","Capitán, ruego su perdón, pero - no. Mares, abordajes, ciudades enemigas - eso está perfectamente bien, pero no quiero meterme con esa brujería india. Si estás molesto con mi respuesta, puedes cancelar nuestro contrato.","Deseas lo imposible, capitán, y te das cuenta de ello. Nadie volverá con vida, incluyéndote a ti, así que pasaré. Si consideras mi negativa una violación de los términos del contrato, puedes cancelarlo.");
+			dialog.text = LinkRandPhrase("Lo siento, capi, pero eso no es lo que firmé. No pienses que soy un cobarde, pero no estoy dispuesto a ir y enfrentar una muerte segura. No estoy tan cansado de vivir, al menos no todavía. Puedes despedirme si quieres.","Capitán, ruego que me perdone. Mares, abordajes, ciudades enemigas, todo eso está perfectamente bien, pero no quiero meterme con esa brujería india. Si estás molesto con mi respuesta, puedes cancelar nuestro contrato.","Deseas lo imposible, capitán, y te das cuenta de ello. Nadie volverá con vida, incluyéndote a ti, así que pasaré. Si consideras mi negativa una violación de los términos del contrato, puedes cancelarlo.");
 			link.l1 = LinkRandPhrase("No te culpo, oficial. Lo entiendo perfectamente.","Una lástima, pero puedo entenderte. Por eso te lo conté de antemano.","Contaba contigo... Pero puedo entender tu posición, oficial.");
 			link.l1.go = "tieyasal_1";
 		break;
@@ -284,14 +284,14 @@ void ProcessDialogEvent()
 		
 		// boal 29.05.04 офицер хочет свалить -->
         case "WantToGo":
-			if (npchar.id == "FMQT_mercen" && !CheckAttribute(pchar, "questTemp.SKD_SobytieKlodDuran"))
+			if (npchar.id == "Duran" && !CheckAttribute(pchar, "questTemp.SKD_SobytieKlodDuran"))
 			{
 				SetTimerCondition("SKD_DuranTavern", 0, 0, 30, false);
 				pchar.questTemp.SKD_SobytieKlodDuran = true;
 			}
 			chrDisableReloadToLocation = false;
 			Diag.TempNode = "Hired";
-			dialog.text = LinkRandPhrase(LinkRandPhrase("Capitán, sabes, yo... Bueno, te pediría que me liberes. Es hora de que me establezca, me case y tenga algunos hijos. Todavía no tengo hogar propio, cuando me haga viejo no habrá nadie para traerme un vaso de agua.","Capitán, por favor, déjame renunciar. Durante todos estos años he estado deambulando por todo el mundo, y aún no he visto realmente nada. Solo quiero vivir una nueva vida, echar el ancla y ver el mundo desde una perspectiva diferente.","Capitán, el servicio naval es seguramente una cosa fina, hay buen beneficio y aventura, pero ha llegado el momento para mí de pensar en mí mismo. Ya sabes, echar un ancla en un puerto tranquilo, comprar una casa, tener hijos. Por favor, déjame ir."),LinkRandPhrase("Capitán, sabes, realmente lo siento, pero estoy harto de todos esos deberes, vigilias y disciplina. Sabes, solo quiero vivir una vida libre al menos por un tiempo, pero entiendo que no estarás esperándome, así que... ¿Podrías darme de baja?","Capitán, sabes... Hay un pequeño barco que puedo permitirme, así que... Creo que probablemente sea el momento de iniciar mi propio negocio. Por favor, ¿podrías dejarme ir?","Capitán, acaban de ofrecerme un puesto en el puerto. La verdad, hace tiempo que deseo echar el ancla y establecerme en una vida matrimonial. Por favor, permíteme ir. Realmente no puedo perder una oportunidad así."),LinkRandPhrase("Capitán, estoy realmente enfermo de mar. Los doctores siguen diciéndome que es idiosincrasia. Por favor, por el amor de Dios, déjame ir, o simplemente saltaré por la borda en algún momento.","Capitán, creo que es hora de que me asiente y encuentre un lugar más tranquilo. Sabes, tengo miedo. Miedo a las balas perdidas, miedo a morir durante un abordaje. Rezo al Señor para que me mantenga vivo, y cuando cierro los ojos, veo todas las almas inocentes que he matado. Me están rogando que los perdone... Por favor, muestra algo de compasión, y déjame ir.","Capitán, mis viejas heridas me duelen, y la reciente contusión se recuerda a sí misma cada día. Pronto me despedirás, ¿y quién me contratará después de eso? Por favor, déjame ir, me curaré y encontraré un lugar más tranquilo."));
+			dialog.text = LinkRandPhrase(LinkRandPhrase("Capitán, sabes, yo... Bueno, te pediría que me liberes. Es hora de que me establezca, me case y tenga algunos hijos. Todavía no tengo hogar propio, cuando me haga viejo no habrá nadie para traerme un vaso de agua.","Capitán, por favor, déjame renunciar. Durante todos estos años he estado deambulando por todo el mundo, y aún no he visto realmente nada. Solo quiero vivir una nueva vida, echar el ancla y ver el mundo desde una perspectiva diferente.","Capitán, el servicio naval es seguramente una cosa fina, hay buen beneficio y aventura, pero ha llegado el momento para mí de pensar en mí mismo. Como puedes imaginar, echar un ancla en un puerto tranquilo, comprar una casa, tener hijos. Por favor, déjame ir."),LinkRandPhrase("Capitán, sabes, realmente lo siento, pero estoy harto de todos esos deberes, vigilias y disciplina. Sabes, solo quiero vivir una vida libre al menos por un tiempo, pero entiendo que no estarás esperándome, así que... ¿Podrías darme de baja?","Capitán, sabes... Hay un pequeño barco que puedo permitirme, así que... Creo que probablemente sea el momento de iniciar mi propio negocio. Por favor, ¿podrías dejarme ir?","Capitán, acaban de ofrecerme un puesto en el puerto. La verdad, hace tiempo que deseo echar el ancla y establecerme en una vida matrimonial. Por favor, permíteme ir. Realmente no puedo perder una oportunidad así."),LinkRandPhrase("Capitán, estoy realmente enfermo de mar. Los doctores siguen diciéndome que es idiosincrasia. Por favor, por el amor de Dios, déjame ir, o simplemente saltaré por la borda en algún momento.","Capitán, creo que es hora de que me asiente y encuentre un lugar más tranquilo. Sabes, tengo miedo. Miedo a las balas perdidas, miedo a morir durante un abordaje. Rezo al Señor para que me mantenga vivo, y cuando cierro los ojos, veo todas las almas inocentes que he matado. Me están rogando que los perdone... Por favor, muestra algo de compasión, y déjame ir.","Capitán, mis viejas heridas me duelen, y la reciente contusión se recuerda a sí misma cada día. Pronto me despedirás, ¿y quién me contratará después de eso? Por favor, déjame ir, me curaré y encontraré un lugar más tranquilo."));
 			Link.l1 = RandPhraseSimple(LinkRandPhrase("Todos se van eventualmente. Bien, eres libre de irte.","Puedo entender tu razonamiento. Tarde o temprano todas las cosas llegan a su fin. Bueno, vete entonces... y no guardes rencor si alguna vez te ofendí.","¿Esto otra vez? Has elegido deliberadamente el momento más inoportuno posible para dejarme, ¿verdad? Lo que sea. Adiós."),LinkRandPhrase("Difícil de creer en lo que me estás contando... Bueno, empaca tus cosas y vete.","¿Tú? No lo esperaba... Después de todo este tiempo luchando espalda con espalda... Bueno, no te detendré. Vaya con Dios.","Suena serio. Bueno, te deseo suerte, debes saber que te echaré de menos."));				
 			Link.l1.go = "WantToGo_free";
 			if (sti(Pchar.money) >= sti(NPChar.rank)*250)
@@ -344,7 +344,7 @@ void ProcessDialogEvent()
 	case "WantToGo_Stay_ForMoney":
 		Diag.TempNode = "Hired";
 		NPChar.greeting = "Gr_Officer";
-		if(NPChar.id == "FMQT_mercen") NPChar.greeting = "Duran_officer";
+		if(NPChar.id == "Duran") NPChar.greeting = "Duran_officer";
 		ChangeCharacterComplexReputation(pchar,"authority", 0.2);
 		AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*500)));
 		Npchar.loyality = makeint(Npchar.loyality) + 1;    
@@ -384,7 +384,7 @@ void ProcessDialogEvent()
 		
 	// пассажир возмущен игроком и сваливает -->
 	case "WantToRemove":
-		if (npchar.id == "FMQT_mercen" && !CheckAttribute(pchar, "questTemp.SKD_SobytieKlodDuran"))
+		if (npchar.id == "Duran" && !CheckAttribute(pchar, "questTemp.SKD_SobytieKlodDuran"))
 		{
 			SetTimerCondition("SKD_DuranTavern", 0, 0, 30, false);
 			pchar.questTemp.SKD_SobytieKlodDuran = true;
@@ -481,7 +481,7 @@ void ProcessDialogEvent()
 			// belamour legendary edition в ближайшее время не подойдет от страха
 			/* if(CheckCharacterPerk(pchar, "IronWill"))
 			{
-				Npchar.loyality = makeint(Npchar.loyality) + 3 + drand(sti(GetSummonSkillFromNameToOld(pchar,SKILL_FORTUNE)+GetSummonSkillFromNameToOld(pchar,SKILL_LEADERSHIP)));
+				Npchar.loyality = makeint(Npchar.loyality) + 3 + hrand(sti(GetSummonSkillFromNameToOld(pchar,SKILL_FORTUNE)+GetSummonSkillFromNameToOld(pchar,SKILL_LEADERSHIP)));
 				log_info(GetFullName(Npchar)+" increased his loyalty");
 				log_testinfo("Loyalty has become: " + Npchar.loyality + " of " + MAX_LOYALITY);
 			}
@@ -837,7 +837,7 @@ void ProcessDialogEvent()
 			Link.l2.go = "Exit_Fire_1";
 			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
 			{
-				Link.l3 = "No te enfades. He preparado para ti una indemnización por despido - "+sti(NPChar.rank)*500+" pesos. Espero que esto elimine todas las preguntas.";
+				Link.l3 = "No te enfades. He preparado para ti una indemnización por despido, "+sti(NPChar.rank)*500+" pesos. Espero que esto elimine todas las preguntas.";
 				Link.l3.go = "Get_out_А1_ForMoney";
 			}
 		break;
@@ -934,7 +934,7 @@ void ProcessDialogEvent()
 			ChangeOfficersLoyality("good_all", 1);
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
-			dialog.text = "¡Gracias, capitán! Una generosidad realmente inesperada... Ya sabes, todavía tengo algunas de tus cosas, ¿quizás te gustaría recuperarlas?";
+			dialog.text = "¡Gracias, capitán! Una generosidad realmente inesperada... Como puedes imaginar, todavía tengo algunas de tus cosas, ¿quizás te gustaría recuperarlas?";
 			Link.l1 = "Quizás... Encontrar una buena espada no es tan fácil estos días...";
 			Link.l1.go = "Get_out_А2_chang";
 			Link.l2 = "Oh, no te preocupes. Guárdalos como recuerdo de tu servicio.";
@@ -970,7 +970,7 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit_bad";
 			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
 			{
-				Link.l2 = "Oh, no te preocupes por eso. Aquí - "+sti(NPChar.rank)*500+" pesos. Eso compensará tu tiempo en mi barco.";
+				Link.l2 = "Oh, no te preocupes por eso. Aquí, "+sti(NPChar.rank)*500+" pesos. Eso compensará tu tiempo en mi barco.";
 				Link.l2.go = "Get_out_А3_ForMoney";
 				Link.l3 = "Te daré el dinero. Aún así, te equipaste bien gracias a mí, y supongo que es apropiado devolverme las cosas.";
 				Link.l3.go = "Return_items_A3";
@@ -1003,7 +1003,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Get_out_A4":
-			dialog.text = RandPhraseSimple(LinkRandPhrase("¡Esa es mi suerte! ¡Puse mi corazón y alma en el servicio solo para ser expulsado sin siquiera un beneficio de servicio!","¡Qué desgracia?! Me contratan y luego me echan casi de inmediato. No tengo ni idea de a qué santo prenderle una vela estos días...","¡Rayos! Despedido por tercera vez este año, todos los lunes. Tal vez, no debería presentarme ante el capitán cuando tengo resaca."),LinkRandPhrase("Bueno, como desees. Ruega para que nunca nos encontremos de nuevo.","Como desees. Ten en cuenta, sin embargo, que nunca encontrarás un oficial mejor.","Está bien, capitán, como usted diga. Pero Dios sabe que había estado haciendo bien mi trabajo..."));
+			dialog.text = RandPhraseSimple(LinkRandPhrase("¡Esa es mi suerte! ¡Puse mi corazón y alma en el servicio solo para ser expulsado sin siquiera un beneficio de servicio!","¡Qué desgracia! Me contratan y luego me echan casi de inmediato. No tengo ni idea de a qué santo prenderle una vela estos días...","¡Rayos! Despedido por tercera vez este año, todos los lunes. Tal vez, no debería presentarme ante el capitán cuando tengo resaca."),LinkRandPhrase("Bueno, como desees. Ruega para que nunca nos encontremos de nuevo.","Como desees. Ten en cuenta, sin embargo, que nunca encontrarás un oficial mejor.","Está bien, capitán, como usted diga. Pero Dios sabe que había estado haciendo bien mi trabajo..."));
 			Link.l1 = "Espera. Ahora no es el mejor momento para tu jubilación. Pero todas las reclamaciones se mantienen.";
 			Link.l1.go = "exit_good";
 			Link.l2 = RandPhraseSimple("Lárgate ahora. Y agradece a Dios que hoy estoy de buen humor.","Pierde el tiempo ahora. Eres tan buen oficial como la mierda es buena para hacer balas.");
@@ -1030,21 +1030,21 @@ void ProcessDialogEvent()
 		case "Return_items_A4":
 			if (makeint(Pchar.Rank) > makeint(NPchar.Rank))
 			{
-				dialog.text = LinkRandPhrase("¡Y ahora te llevas mi equipo! ¡Oh, por Dios, al diablo con todo! Me iré a pescar, lo juro...","Veo que has decidido dejarme totalmente limpio. Oh, bueno. Ahora solo hay un camino para mí, al atrio...","¡Oh, muchas gracias! Ahora has decidido robarme. ¡Oh, qué destino tan cruel... Tómalo entonces, ¡tómalo! ¿Qué puedo hacer de todos modos...");
+				dialog.text = LinkRandPhrase("¡Y ahora te llevas mi equipo! ¡Oh, por Dios, al diablo con todo! Me iré a pescar, lo juro...","Veo que has decidido dejarme totalmente limpio. Oh, bueno. Ahora solo hay un camino para mí, al atrio...","¡Oh, muchas gracias! Ahora has decidido robarme. ¡Oh, qué destino tan cruel...! Tómalo entonces, ¡tómalo! ¿Qué puedo hacer de todos modos...?");
 				Link.l1 = "Pierde el tiempo ahora. Eres tan buen oficial como la mierda es buena para hacer balas.";
 				Link.l1.go = "Get_out_А4_chang_1";
 			}
 			else	
 			{
-				dialog.text = RandPhraseSimple("Como desees, capitán, pero primero por favor sé tan amable de entregarme "+sti(NPChar.rank)*1000+" pesos. Que esto sea una compensación del daño moral.","Está bien. Pero aún quiero recibir "+sti(NPChar.rank)*1000+" pesos como compensación por mi duro y fiel servicio.");
+				dialog.text = RandPhraseSimple("Como desees, capitán, pero primero sé tan amable de entregarme "+sti(NPChar.rank)*1000+" pesos, por favor. Que esto sea una compensación del daño moral.","Está bien. Pero aún quiero recibir "+sti(NPChar.rank)*1000+" pesos como compensación por mi duro y fiel servicio.");
 				if (sti(Pchar.money) >= sti(NPChar.rank)*1000)
 				{
 					Link.l1 = "¡Qué villano! Bueno, aquí está tu dinero.";
 					Link.l1.go = "Get_out_А4_chang";
 				}
-				Link.l2 = "¿¡No estás loco?! ¿Te atreves a pedir tanto dinero por lo que te di yo mismo!";
+				Link.l2 = "¡¿Estás loco?! ¿Te atreves a pedir tanto dinero después de todo lo que te di?";
 				Link.l2.go = "Get_out_A4_strife";
-				Link.l3 = "¡Ah-ha! ¡Estaba bromeando! ¿Cómo puedo echar a un viejo amigo, como una gorra llena de agujeros!";
+				Link.l3 = "¡Ah-ha! ¡Estaba bromeando! No podría echar a un viejo amigo como si de una gorra llena de agujeros se tratara.";
 				Link.l3.go = "exit_bad1";
 			}
 		break;
@@ -1330,7 +1330,7 @@ void ProcessDialogEvent()
             LAi_LoginInCaptureTown(NPChar, true);
 			//  СЖ -->
 			ReOpenQuestHeader("Gen_CityCapture");
-            AddQuestRecord("Gen_CityCapture", "t3_1");
+            AddQuestRecordInfo("Gen_CityCapture", "t3_1");
 			AddQuestUserData("Gen_CityCapture", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("Gen_CityCapture", "sCity", XI_ConvertString("colony" + sld.id));
 			AddQuestUserData("Gen_CityCapture", "sName", GetFullName(NPChar));
@@ -1400,7 +1400,7 @@ void ProcessDialogEvent()
             DeleteAttribute(sld, "OfficerIdx");
             //  СЖ -->
 			ReOpenQuestHeader("Gen_CityCapture");
-            AddQuestRecord("Gen_CityCapture", "t3_2");
+            AddQuestRecordInfo("Gen_CityCapture", "t3_2");
 			AddQuestUserData("Gen_CityCapture", "sCity", XI_ConvertString("colony" + sld.id));
 			AddQuestUserData("Gen_CityCapture", "sName", GetFullName(NPChar));
 			//  СЖ <--
@@ -1517,7 +1517,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CompanionTravel_PrepareStart":
-			dialog.Text = "Ya veo. Hasta "+XI_ConvertString("Colonia"+characters[sti(NPChar.realcompanionidx)].CompanionTravel.ToColonyID+"Gen")+" ir "+sti(characters[sti(NPChar.realcompanionidx)].CompanionTravel.Days)+" días, ¿qué hago al llegar?";
+			dialog.Text = "Ya veo. Hasta "+XI_ConvertString("Colony"+characters[sti(NPChar.realcompanionidx)].CompanionTravel.ToColonyID+"Gen")+" ir "+sti(characters[sti(NPChar.realcompanionidx)].CompanionTravel.Days)+" días, ¿qué hago al llegar?";
 				Link.l1 = "Atraca en el puerto de la colonia durante un mes.";
 				Link.l1.go = "CompanionTravel_PrepareStart_2";
 				Link.l2 = "Sabes, he cruzado mi mente. Quédate conmigo...";
@@ -1539,7 +1539,7 @@ void ProcessDialogEvent()
 			
 		case "CompanionTravel_LastNode":
 			Dialog.text = RandPhraseSimple("Hoy, zarparé de nuevo...",
-			"No olvides nuestra reunión en "+XI_ConvertString("Colonia"+characters[sti(NPChar.realcompanionidx)].CompanionTravel.ToColonyID+"Dat")+".");
+			"No olvides nuestra reunión en "+XI_ConvertString("Colony"+characters[sti(NPChar.realcompanionidx)].CompanionTravel.ToColonyID+"Dat")+".");
 				link.l2 = "...";
 				link.l2.go = "Exit";
 				Diag.TempNode = "CompanionTravel_LastNode";

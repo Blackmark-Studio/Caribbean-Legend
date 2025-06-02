@@ -68,20 +68,20 @@ van der Vink
 
 Longway_16
 {
-Ветте
+Vette
 }
 Longway_17
 {
-ван Хаан
+Van Haan
 }
 
 Longway_18
 {
-Люйтерс
+Luthers
 }
 Longway_19
 {
-ван Хаан
+Van Haan
 }
 
 Longway_20
@@ -109,11 +109,11 @@ La reunión se establece detrás@<NewStr()>de las puertas de la ciudad.
 
 Longway_25
 {
-Гуго
+Hugo
 }
 Longway_26
 {
-Марсо
+Marceau
 }
 
 Longway_27

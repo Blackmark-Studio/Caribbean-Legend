@@ -603,7 +603,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			SaveCurrentNpcQuestDateParam(npchar, "sex_date");
-			if (drand(4) == 0)// вероятность отказа 20%
+			if (hrand(4) == 0)// вероятность отказа 20%
 			{
 				dialog.text = RandPhraseSimple(" "+pchar.name+", je ne me sens pas bien aujourd'hui. Ne te sens pas coupable, s'il te plaît, ce n'est pas ta faute. Ne le faisons pas aujourd'hui...",""+pchar.name+", cher, je suis tellement fatiguée ces derniers jours. Pour être honnête, je veux seulement dormir. Pardonne-moi. Faisons cela une autre fois.");
 				link.l1 = RandPhraseSimple("D'accord...","C'est d'accord. Comme tu veux...");
@@ -641,7 +641,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			SaveCurrentNpcQuestDateParam(npchar, "sex_date");
-			if (drand(4) == 0) // вероятность отказа 20%
+			if (hrand(4) == 0) // вероятность отказа 20%
 			{
 				dialog.text = RandPhraseSimple(""+pchar.name+", je ne me sens pas bien aujourd'hui. Ne te vexe pas, s'il te plaît. Ne le faisons pas aujourd'hui..."," "+pchar.name+", cher, j'ai été si fatiguée ces derniers jours. Pour être honnête, je veux seulement dormir. Pardonne-moi. Faisons cela une autre fois.");
 				link.l1 = RandPhraseSimple("D'accord...","C'est d'accord. Comme tu veux...");

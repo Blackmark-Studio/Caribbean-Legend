@@ -544,7 +544,7 @@ void CreateTraderShipAndAdd(ref sld)//создаем корабль сопров
 	DeleteAttribute(sld, "DontClearDead");
 	SetCharacterGoods(sld, GOOD_FOOD, 300+rand(100));
 	SetCharacterGoods(sld, GOOD_MEDICAMENT, 60+rand(30));
-	iGoods = GOOD_COFFEE + drand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
+	iGoods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE)); // тэг из диалога
 	iSpace = GetCharacterFreeSpace(sld, iGoods);
 	iSpace = makeint(iSpace/2 + rand(iSpace/2));
 	SetCharacterGoods(sld, iGoods, iSpace);
@@ -1711,7 +1711,7 @@ void MarchCap3_CreatePirate(string qName)//пират с золотишком
 	sld.lastname = "";
 	DeleteAttribute(sld, "SaveItemsForDead");
 	DeleteAttribute(sld, "DontClearDead");
-	switch (drand(5))
+	switch (hrand(5))
 	{
 		case 0: UpgradeShipParameter(sld, "TurnRate"); break;
 		case 1: UpgradeShipParameter(sld, "Capacity"); break;
@@ -1841,7 +1841,7 @@ void TakeArsenalship_CreateShip(string qName)
 	sld.AlwaysEnemy = true;
 	sld.Ship.Mode = "war";
 	if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
-	int iGoods = GOOD_BALLS + drand(makeint(GOOD_BOMBS - GOOD_BALLS));
+	int iGoods = GOOD_BALLS + hrand(makeint(GOOD_BOMBS - GOOD_BALLS));
 	int iSpace = GetCharacterFreeSpace(sld, iGoods);
 	iSpace = makeint(iSpace/4);
 	AddCharacterGoods(sld, iGoods, iSpace);
@@ -1917,7 +1917,7 @@ void TakePirateship_CreateShip(string qName)
 	sld.AlwaysEnemy = true;
 	sld.Ship.Mode = "pirate";
 	SetCharacterPerk(sld, "MusketsShoot");
-	int iGoods = GOOD_CHOCOLATE + drand(makeint(GOOD_COTTON - GOOD_CHOCOLATE));
+	int iGoods = GOOD_CHOCOLATE + hrand(makeint(GOOD_COTTON - GOOD_CHOCOLATE));
 	int iSpace = GetCharacterFreeSpace(sld, iGoods);
 	iSpace = makeint(iSpace/2);
 	AddCharacterGoods(sld, iGoods, iSpace);
@@ -1982,7 +1982,7 @@ void TakePassenger_CreateShip(string qName)
 	sld.AlwaysEnemy = true;
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
-	int iGoods = GOOD_COFFEE + drand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
+	int iGoods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
 	int iSpace = GetCharacterFreeSpace(sld, iGoods);
 	iSpace = makeint(iSpace/4);
 	AddCharacterGoods(sld, iGoods, iSpace);
@@ -2046,7 +2046,7 @@ void CustomPatrol_CreateShip(string qName)
 	sld.Ship.Mode = "pirate";
 	sld.WatchFort = true;
 	sld.Coastal_Captain = true;
-	if (drand(1) == 0) AddCharacterGoods(sld, GOOD_SLAVES, 250+(drand(100)));
+	if (hrand(1) == 0) AddCharacterGoods(sld, GOOD_SLAVES, 250+(hrand(100, "1")));
 	Group_AddCharacter("ContraCureer", "ContraCureerCap");
 	sld = GetCharacter(NPC_GenerateCharacter("ContraContraCap", "citiz_"+(rand(9)+41), "man", "man", iRank, iNation, iDay, true, "quest"));//конрик-приемщик
 	FantomMakeSmallSailor(sld, iShipType, "", iCannon, iScl, iScl, iScl, iScl, iScl);
@@ -2056,7 +2056,7 @@ void CustomPatrol_CreateShip(string qName)
 	sld.Ship.Mode = "pirate";
 	sld.WatchFort = true;
 	sld.Coastal_Captain = true;
-	if (drand(1) == 1) AddCharacterGoods(sld, GOOD_SLAVES, 250+(drand(100)));
+	if (hrand(1) == 1) AddCharacterGoods(sld, GOOD_SLAVES, 250+(hrand(100, "1")));
 	Group_AddCharacter("ContraCureer", "ContraContraCap");
 	Group_SetGroupCommander("ContraCureer", "ContraCureerCap");
 	Group_SetAddress("ContraCureer", pchar.GenQuest.CustomPatrol.Island, "Quest_Ships", "Quest_Ship_"+lcr);

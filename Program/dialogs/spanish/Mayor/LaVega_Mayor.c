@@ -122,20 +122,20 @@ void ProcessDialogEvent()
 		break;
 
 	case "PZ3":
-		dialog.text = "¿Negocios?! Bueno, escúpelo entonces, ¿has pensado en algo? ¿Tienes una buena pista? Estoy a punto de vaciar la bodega local por puro aburrimiento y todos estos malditos cálculos.";
+		dialog.text = "¿Negocios?! Bueno, escúpelo entonces, ¿has pensado en algo? ¿Tienes una buena pista? Estoy a punto de vaciar la bodega por puro aburrimiento y todos estos malditos cálculos.";
 		link.l1 = "Bueno, es más que tengo una pregunta para usted, nada más.";
 		link.l1.go = "PZ4";
 		break;
 
 	case "PZ4":
 		dialog.text = "¡Maldita sea! Pero bueno, te escucho, Charles.";
-		link.l1 = "¿Ha venido a verte una mujer? ¿O tal vez la has visto en La Vega? Se hace llamar Belle Étoile, aunque ese es solo un alias, así que podría haberse presentado con otro nombre. Lo importante es que ella... tiene la piel amarilla. Pero no es una esclava ni una trabajadora - es una mujer adinerada.";
+		link.l1 = "¿Ha venido a verte una mujer? ¿O tal vez la has visto en La Vega? Se hace llamar Belle Étoile, aunque ese es solo un alias, así que podría haberse presentado con otro nombre. Lo importante es que ella... tiene la piel amarilla. Pero no es una esclava ni una trabajadora, es una mujer adinerada.";
 		link.l1.go = "PZ5";
 		break;
 
 	case "PZ5":
 		dialog.text = "¿Piel amarilla, pero rico? ¡Nunca hemos tenido a alguien así aquí, jamás! Parece que sigues llevando esa vida interesante tuya, ¡de Maure! Casi te envidio.";
-		link.l1 = "¿Es eso así... Bueno, gracias por tu tiempo, Vensan. No te distraeré más de tu contabilidad, je-je.";
+		link.l1 = "¿Es eso así...? Bueno, gracias por tu tiempo, Vensan. No te distraeré más de tu contabilidad, je-je.";
 		link.l1.go = "Exit";
 
 		AddQuestRecord("PZ", "40");

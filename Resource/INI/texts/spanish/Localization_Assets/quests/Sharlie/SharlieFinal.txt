@@ -245,7 +245,7 @@ SharlieFinal_54
 
 SharlieFinal_55
 {
-Enemigos en emboscada - @<n>
+Enemigos en emboscada: @<n>
 }
 
 SharlieFinal_56

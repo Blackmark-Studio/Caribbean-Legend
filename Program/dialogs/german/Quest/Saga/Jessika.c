@@ -17,7 +17,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 			dialog.text = "Willst du etwas?";
-			link.l1 = "Nein, es ist nichts.";
+			link.l1 = "Nein, nichts.";
 			link.l1.go = "exit";			
 			NextDiag.TempNode = "First time";
 		break;
@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 		
 		case "stage_1":
 			PlaySound("Voice\English\saga\Jessica Rose-07.wav");
-			dialog.text = "Ha! Du kannst mir nicht wehtun!\n Die Luft, das Wasser, die Erde, das Feuer - ich befehle euch, mir zu helfen!\n Lasst die Toten auferstehen, lasst das Feuer brennen, lasst das Wasser die Brücke bewachen und lasst den Wind euch auf seine Flügel nehmen und auf den Boden werfen!\nViel Spaß!!!";
+			dialog.text = "Ha! Du kannst mir nichts anhaben!\n Die Luft, das Wasser, die Erde, das Feuer - ich befehle euch, mir zu helfen!\n Lasst die Toten auferstehen, lasst das Feuer brennen, lasst das Wasser die Brücke bewachen und lasst den Wind euch auf seine Flügel nehmen und auf den Boden werfen!\nGenieß es!!!";
 			link.l1 = "...";
 			link.l1.go = "stage_1_exit";
 		break;
@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 		
 		case "stage_2":
 			PlaySound("Voice\English\saga\Jessica Rose-08.wav");
-			dialog.text = "Ha! Du kannst mir nicht wehtun!\nLass mehr Tote aufstehen und angreifen, lass das Feuer den Stein verbrennen, lass den Wind dich aufnehmen und hinunterwerfen und lass die Erde deine Stärken aufnehmen!\nViel Spaß!!!";
+			dialog.text = "Ha! Du kannst mir nichts anhaben!\nLass mehr Tote aufstehen und angreifen, lass das Feuer den Stein verbrennen, lass den Wind dich aufnehmen und hinunterwerfen und lass die Erde deine Stärken absorbieren!\nViel Vergnügen!!!";
 			link.l1 = "...";
 			link.l1.go = "stage_2_exit";
 		break;
@@ -153,7 +153,7 @@ void ProcessDialogEvent()
 		
 		case "exit_talk_2":
 			dialog.text = "Sie werden mich nicht sehen. Aber du wirst es tun. Du musst bereits verstanden haben, dass ich über Kräfte verfüge, die den Lebenden nicht zur Verfügung stehen. Aber ich kann dein Schiff nicht ohne deine Erlaubnis betreten. Bring mich zu ihm.\nIch werde nicht lange bei dir bleiben. Und ich werde deinen Leuten keinen Schaden zufügen. Lande mich um Mitternacht in der Portland Bucht auf Jamaika, die folgende Nacht treffen wir uns wieder und du wirst erhalten, was du hier finden wolltest.";
-			link.l1 = "Wie wissen Sie, warum ich hier bin?";
+			link.l1 = "Wie weißt du, warum ich hier bin?";
 			link.l1.go = "exit_talk_3";
 		break;
 		
@@ -171,8 +171,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "exit_talk_5":
-			dialog.text = "Es ist nicht so einfach... Wenn wir uns nach mir in der Portland Bucht treffen... werde ich Ihnen sagen, wie Sie sich selbst heilen können.";
-			link.l1 = "Nach dir was?.. Was meinst du?";
+			dialog.text = "Es ist nicht so einfach... Wenn wir uns in der Portland Bucht treffen nachdem ich... werde ich Ihnen sagen, wie Sie sich selbst heilen können.";
+			link.l1 = "Nachdem du was?.. Was meinst du?";
 			link.l1.go = "exit_talk_6";
 		break;
 		
@@ -184,7 +184,7 @@ void ProcessDialogEvent()
 		
 		case "exit_talk_7":
 			dialog.text = "Fast. Ich werde dich nicht heilen, aber ich werde dir sagen, wie du es tun kannst. Du wirst es selbst machen müssen.";
-			link.l1 = "Gut. Abgemacht. Ich erlaube Ihnen, mein Schiff zu betreten.";
+			link.l1 = "Gut. Abgemacht. Ich erlaube dir, mein Schiff zu betreten.";
 			link.l1.go = "exit";
 			AddDialogExitQuest("Video_Reef2");
 			NextDiag.TempNode = "exit_talk_8";
@@ -194,7 +194,7 @@ void ProcessDialogEvent()
 			PlaySound("Ambient\Teno_inside\teleporter.wav");
 			ChangeCharacterAddressGroup(npchar, "none", "", "");
 			dialog.text = "";
-			link.l1 = "He! Wo bist du? Einfach verschwunden...";
+			link.l1 = "Hey! Wo bist du? Einfach verschwunden...";
 			link.l1.go = "exit_talk_9";
 		break;
 		
@@ -337,13 +337,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "soul_4":
-			dialog.text = "Du bist... Mach dir keine Sorgen. Bald wirst du aufwachen. Ich wollte nur Auf Wiedersehen sagen.";
+			dialog.text = "Du bist es... Mach dir keine Sorgen. Bald wirst du aufwachen. Ich wollte nur Auf Wiedersehen sagen.";
 			link.l1 = "Du bist so... wunderschön!";
 			link.l1.go = "soul_5";
 		break;
 		
 		case "soul_5":
-			dialog.text = "Gefälltst du mir? Ja, es gab eine Zeit, als die besten Freier aus den Kleinen Antillen um mich warben und jeder dritte Pirat von Isla Tesoro bereit war, für mich zu duellieren.";
+			dialog.text = "Gefalle ich dir? Ja, es gab eine Zeit, als die besten Freier aus den Kleinen Antillen um mich warben und jeder dritte Pirat von Isla Tesoro bereit war, für mich zu duellieren.";
 			link.l1 = "Aber du hast immer nur einen gebraucht... Eh, Ingwer-Talisman! Sag mir nur, warum ist es so weit gekommen?";
 			link.l1.go = "soul_6";
 		break;
@@ -358,14 +358,14 @@ void ProcessDialogEvent()
 		case "soul_7":
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
 			{ // Мэри-офицер
-				dialog.text = "Nicht... Du hast immer noch dein Ingwer-Talisman...";
-				link.l1 = "Was, bitte?";
+				dialog.text = "Nicht... Du hast immer noch deinen Ingwer-Talisman...";
+				link.l1 = "Mein was?";
 				link.l1.go = "mary_1";
 				break;
 			}
 			if (!CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CheckAttribute(pchar, "questTemp.LSC.marywait"))
 			{ // Мэри осталась на острове
-				dialog.text = "Lass... Du hast immer noch deinen Ingwer-Talisman...";
+				dialog.text = "Nicht... Du hast immer noch deinen Ingwer-Talisman...";
 				link.l1 = "Mein was?";
 				link.l1.go = "mary_3";
 				break;
@@ -395,7 +395,7 @@ void ProcessDialogEvent()
 		
 		case "mary_4":
 			dialog.text = "Es gibt eine Tochter zwischen euch beiden. Die Tochter der Frau, die einst zwischen mir und Lawrence stand. Das Schicksal eures Talismans liegt in euren Händen. Sie können nicht zusammen existieren, genauso wie ich und Beatrice es nicht konnten.";
-			link.l1 = "Wie wissen Sie das?";
+			link.l1 = "Wie weißt du das?";
 			link.l1.go = "mary_5";
 		break;
 		
@@ -407,7 +407,7 @@ void ProcessDialogEvent()
 		
 		case "soul_8":
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_friend")) sTemp = "";
-			else sTemp = "And about the daughter of Beatrice, know that your noble actions on her behalf will be left unvalued. Soon you will see that for yourself. Be careful with her. Well...\n";
+			else sTemp = "Und was die Tochter von Beatrice angeht, so solltest du wissen, dass deine edlen Taten für sie nicht gewürdigt werden. Bald wirst du das selbst sehen. Sei vorsichtig mit ihr. Nun...\n";
 			dialog.text = ""+sTemp+"Ich muss gehen. Es ist Zeit, Auf Wiedersehen zu sagen... Dieses Mal wirklich. Vergiss Jessica nicht und versuche manchmal, ihr Grab zu besuchen... Nur du weißt, wo es ist.";
 			link.l1 = "Sicher, Jess. Ich werde es besuchen und für dich beten.";
 			link.l1.go = "soul_9";

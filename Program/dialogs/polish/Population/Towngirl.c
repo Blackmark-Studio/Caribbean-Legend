@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 				Link.l1.go = "Meeting";
 				
 				//==> прибыла инспекция на Святом Милосердии
-				if (pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
+				if (CheckAttribute(pchar, "questTemp.SantaMisericordia.ColonyZapret") && pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
 				{
 					dialog.Text = LinkRandPhrase(LinkRandPhrase("Całe miasto jest na krawędzi - don Fernando de Alamida, królewski inspektor, przybył. Wiesz, widziałem tu wiele, ale to... To nie żałoba zmienia ludzi, ale jak sobie z nią radzą. Mówią, że stał się innym człowiekiem po śmierci ojca. Teraz nie znajdziesz bardziej nieprzekupnego i... bezlitosnego sługi Korony w całym Archipelagu.","Spójrz tylko na 'Świętą Miłosierdzie'! Mówią, że sam król kazał ją zbudować według specjalnych projektów. I zauważ - ani jednego zadrapania. Jakby sama Maryja Dziewica ją chroniła. Choć słyszałem plotki... może to wcale nie Dziewica.","Wiesz, ile razy próbowali zabić don Fernando? Dwanaście ataków na otwartych wodach - i to tylko w zeszłym roku! Cóż, z tak lojalną i wyszkoloną załogą, i pod ochroną Pana - przetrwa też trzynasty!"),LinkRandPhrase("Słyszałeś? Don Fernando de Alamida przybył do naszego miasta, a mówią, że jest teraz gdzieś na ulicach. Chciałbym go zobaczyć na własne oczy...","Skomplikowany człowiek, ten don Fernando. Niektórzy mówią, że to zbawca, oczyszczający Ojczyznę z plugastwa. Inni szepczą, że coś w nim pękło po śmierci ojca i wkrótce wszyscy będziemy płakać. Ale powiem ci jedno: nie lękaj się jego. Bój się tych, którzy go takim uczynili.","Jaki przystojny mężczyzna, ten don Fernando! Ale wiesz, co jest dziwne? Jakby nikogo nie zauważał. Cały w obowiązkach i służbie. Słyszałam, że była jakaś dziewczyna... ale po spotkaniu z jakimś księdzem całkowicie odrzucił ziemskie przyjemności. Jakby złożył śluby."),RandPhraseSimple(RandPhraseSimple("Przeklęty inspektor! Jak on tu jest - miasto jak martwe. Ani handlu, ani zabawy. Nawet oddychać, zdaje się, trzeba ciszej. A wiesz, co jest najstraszniejsze? Tak samo jest w każdym porcie. Jak w zegarku. Jego Królewska Mość nie mógłby celowo wymyślić tej tortury dla nas wszystkich!","Don Fernando odwiedził znowu sierociniec. Hojnie daruje, modli się godzinami. Taki godny człowiek powinien być przykładem dla tych przeklętych defraudantów!"),RandPhraseSimple("Ha! 'Święty' Fernando znowu zamknął wszystkie burdele. No cóż, nie martw się, wkrótce odpłynie, a one się na nowo otworzą.","Ins... inspektor przyjechał, oto co! Don Fernando de Almeyda, czy jak mu tam, Alamida! Tak ważny, że sam gubernator się przed nim płaszczy. Mówią, że spojrzy ci w oczy i od razu zobaczy wszystkie twoje grzechy. Przerażające!")));
 					link.l1 = "...";
@@ -104,7 +104,7 @@ void ProcessDialogEvent()
 				}
 				//<== прибыла инспекция на Святом Милосердии
 				//==> Леди Бет в порту города
-				if (pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
+				if (CheckAttribute(pchar, "questTemp.LadyBeth.CaptainInColony") && pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
 				{
 					dialog.Text = findLedyBethRumour(npchar);
 					link.l1 = "...";

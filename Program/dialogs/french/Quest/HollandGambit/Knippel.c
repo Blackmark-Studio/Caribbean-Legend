@@ -179,7 +179,7 @@ void ProcessDialogEvent()
 			DelMapQuestMarkCity("Bridgetown");
 			DelMapQuestMarkCity("Villemstad");
 			DelMapQuestMarkCity("SentJons");
-			dialog.text = "Ar har ! Je vois que ton coq est dressé, cap'taine ! Bientôt le feu jaillira ! Maintenant, écoute attentivement. La flotte d'argent de la Compagnie néerlandaise des Indes occidentales a quitté Willemstad à Curaçao il y a un ou deux jours. Elle se dirige vers Philipsburg. Cette fois-ci, il n'y a que quelques navires dans la flotte. Un seul Indiaman de l'Est avec l'argent dans sa cale, accompagné de deux escortes. Intercepte la flotte d'argent, capture l'Indiaman de l'Est avec la cargaison d'argent et amène-le à Antigua. Tu peux couler les escortes, elles sont sacrifiables. Vise leurs tripes avec des boulets ramés, yar !";
+			dialog.text = "Ar har ! Je vois que ton coq est dressé, cap'taine ! Bientôt le feu jaillira ! Maintenant, écoute attentivement. La flotte d'argent de la Compagnie néerlandaise des Indes occidentales a quitté Willemstad à Curaçao il y a un ou deux jours. Elle se dirige vers Philipsburg. Cette fois-ci, il n'y a que quelques navires dans la flotte. Un seul Galion avec l'argent dans sa cale, accompagné de deux escortes. Intercepte la flotte d'argent, capture l'Galion avec la cargaison d'argent et amène-le à Antigua. Tu peux couler les escortes, elles sont sacrifiables. Vise leurs tripes avec des boulets ramés, yar !";
 			link.l1 = "Leurs jours sont comptés.";
 			link.l1.go = "Knippel_task_1";
 			DelLandQuestMark(npchar);
@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 				{
 					sld = GetCharacter(iTemp);
 					pchar.questTemp.HWIC.Eng.CompanionIndex = sld.Index;
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN) iHal++;
+					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_GALEON_L) iHal++;
 				}
 			}//признак наличия ТГ в компаньонах
 			if (iHal > 0)

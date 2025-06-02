@@ -290,85 +290,101 @@ Having medicines onboard helps to save the injured, reduce boarding casualties, 
 Cannon_3 {Falconets}
 Cannon_3_descr
 {
-Deck cannons equipped with a ring mount. They have a high mobility but suffer from reduced firing distance and damage due to the small caliber.
-Often they are equipped with an interchangeable breech, which lets them reload even faster.
-Firing distance - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+Deck guns equipped with a turret. They have the greatest mobility and, due to their small size, the least power and range.
+They are often equipped with a replaceable breech, allowing for quick reloading.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
 }
 
-Cannon_6 {Light demi-cannons}
+Cannon_6 {6-pound Demi-cannons}
 Cannon_6_descr
 {
-Small cannons quite popular on courier and trade vessels due to their low weight and simplicity of maintenance.
-Firing distance - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+Small guns, very popular on courier and merchant ships due to their light weight, low cost, and durability. Easy to maintain and do not require an experienced crew.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
 }
 
-Cannon_12 {Demi-cannons}
+Cannon_8 {8-pound Demi-cannons}
+Cannon_8_descr
+{
+One of the most popular calibers on small ships, found on both merchant and patrol vessels. Valued for their excellent combination of size, weight, and firepower.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+}
+
+Cannon_12 {12-pound Demi-cannons}
 Cannon_12_descr
 {
-Standard, highly reliable cannons of most military flotillas, capable of firing at high angles of elevation, which increases effective combat distance significantly.
-Firing distance - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+A common caliber among small warships. For their size and weight, they have impressive firepower, but require full gun crews, increasing the number of crew members on the ship.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
 }
 
-Cannon_16 {Naval demi-cannons}
+Cannon_16 {16-pound Demi-cannons}
 Cannon_16_descr
 {
-Modern French cannons. Thanks to advanced construction and the new system developed by Monsieur de Valliere, these cannons have greater firing range and deal more damage compared to ordinary demi-cannons. However, they take longer to load, are slightly less reliable, and heavier.
-Firing distance - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+Modern French-type guns. Thanks to their advanced design, they have excellent range, reliability, and firepower. A very common caliber among patrol and reconnaissance ships.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
 }
 
-Cannon_20 {Small cannons}
+Cannon_18 {18-pound Demi-cannons}
+Cannon_18_descr
+{
+Powerful universal guns that were often installed on warships in the past. Quite common in the archipelago and valued for their simplicity and reliability, although their outdated design somewhat limits their range.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+}
+
+Cannon_20 {20-pound Cannons}
 Cannon_20_descr
 {
-Cannons of the largest caliber to fire file-hard cannonballs, which allow to increase the damage dealt to the enemy. Still, the longer barrel causes a significant increase in their weight.
-Firing distance - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+Long-barreled artillery guns used on cruisers and auxiliary ships in military convoys. Require coordinated work of the gun crew for effective fire.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
 }
 
-Cannon_24 {Ship cannons}
+Cannon_24 {24-pound Cannons}
 Cannon_24_descr
 {
-The most balanced cannons, considering their main technical characteristics. They are very popular on military and expedition vessels for good reason.
-Firing distance - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+The main caliber on warships, the pinnacle of naval artillery evolution. They have a perfect balance of range and firepower, and their successful design allows them to withstand long sea battles without critical damage.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
 }
 
-Cannon_32 {Battery cannons}
+Cannon_32 {32-pound Cannons}
 Cannon_32_descr
 {
-Heavy cannons of large caliber, capable of bombarding defensive structures. Deals great damage to the hull.
-Firing distance - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+Large-caliber heavy guns that deal massive damage and are suitable for bombarding forts. Due to the limits of material strength, a reduced powder charge is used, which limits the range.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
 }
 
-Cannon_36 {Coastal cannons}
+Cannon_36 {36-pound Cannons}
 Cannon_36_descr
 {
-Long-barreled cannons are rare guests on the gundeck. But despite their long reloading time, they deal great damage and have quite a long firing range.
-Firing distance - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+Long-barreled cannons, rare guests on the gundeck. Their slow reload and limited range are compensated by the devastating damage dealt by their slow-flying heavy cannonballs. Require large gun crews.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
 }
 
-Cannon_42 {Siege cannons}
+Cannon_42 {42-pound Bombards}
 Cannon_42_descr
 {
-An almost obsolete, yet still powerful cannon, very suitable for using on ships of the line.
-Firing distance - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+Formidable guns, the peak of naval firepower. Used exclusively on ships of the line, in forts, and in major European battles. Require a huge and well-trained crew for operation.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
 }
 
-Culverine_8 {Demi-couleuvrines}
+Culverine_8 {Demi-culverins}
 Culverine_8_descr
 {
-Long-barreled 8-pounder cannon on a fixed mount. Has increased firing range. Is typically used for barrage fire.
-Firing distance - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+Long-barreled 8-pound guns on a special carriage with a powerful mount and solid wooden wheels.
+They have increased firing range. Commonly used for barrage fire.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
 }
 
-Culverine_18 {Couleuvrines}
+Culverine_18 {Culverins}
 Culverine_18_descr
 {
-This 18-pound medium cannon with a long firing range is 12 feet long. Despite astounding firing range, it is very slow and has a very long reloading time.
-Firing distance - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+Medium 18-pound guns with increased range, suitable for use on relatively small ships.
+Despite their impressive firing distance, they are extremely heavy and take a long time to load.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
 }
 
-Culverine_36 {Full couleuvrines}
+Culverine_36 {Full Culverins}
 Culverine_36_descr
 {
-A 36-pound fort cannon intended for breaching fire. Can also be used in the ship's batteries as well and deal significant damage to the enemy, provided that the cannoneer is experienced, agile, and accurate.
-These cannons require ports capable of accommodating 42-pounder guns due to their longer barrels.
-Firing distance - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
-} 
+Fortress 36-pound guns designed for breaching fire: the winner is the one who shoots first!
+Due to their great length, they can only be installed in ports designed for 42-pound cannons.
+Range - #dFireRange#, damage - x#f.1DamageMultiply#, reload - #dReloadTime# sec.
+}

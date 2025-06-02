@@ -27,7 +27,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "DTSG_AntiguaZalog_3":
 			dialog.text = "Correcto. No es de conocimiento común. Desafortunadamente, ni siquiera para usted. Es un secreto de estado, señor.";
-			link.l1 = "Entonces, supongo que la fianza no es una opción?"; 
+			link.l1 = "Entonces, supongo que la fianza no es una opción."; 
 			link.l1.go = "DTSG_AntiguaZalog_4";
 		break;
 		

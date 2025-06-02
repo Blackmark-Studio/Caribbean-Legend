@@ -297,16 +297,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_18":
-			dialog.text = "Five hundred doubloons upfront! To make sure I know you're serious and not just a flop. And a monthly fee after that. I think we can make a deal.";
+			dialog.text = "Two hundred and fifty doubloons upfront! To make sure I know you're serious and not just a flop. And a monthly fee after that. I think we can make a deal.";
 			link.l1 = "And you don't...";
 			link.l1.go = "BM_Irons_19";
 		break;
 		
 		case "BM_Irons_19":
 			dialog.text = "... think you've got the nerve? Heh, I won't even argue with you - did you see how I shot that cuckold from the lighthouse? First shot! No bargaining either, if that's what you're thinking. You need to show you can afford a professional like me.";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
-				link.l1 = "Yes, I can! Five hundred gold pieces. Here you go.";
+				link.l1 = "Yes, I can! Two hundred and fifty gold pieces. Here you go.";
 				link.l1.go = "BM_Irons_Hire1";
 			}
 			link.l2 = "You got lucky with that shot. And now you're trying to pad your value with bragging. I can do without a professional like you. It's too much honor and too much money.";
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_Hire1":
-			RemoveDublonsFromPCharTotal(500);
+			RemoveDublonsFromPCharTotal(250);
 			
 			dialog.text = "You're not as bad as I thought! But you better make sure I don't get bored. It'd be a waste of my talent, wouldn't it? Tommy and " + pchar.name + "! Let's shake up the Caribbean!";
 			link.l1 = "Learn to respect the chain of command, Tommy. And secondly, I'm captain to you. Understand?";
@@ -411,7 +411,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave2":
 			dialog.text = "You obviously haven't hidden in pits during the rainy season in Ireland, " + GetSexPhrase("youngster","my girl") + "! But going with you is better than hiding here. Now, about that gold...";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
 				link.l1 = "Here's your gold.";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -421,7 +421,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_HireInCave1":
-			RemoveDublonsFromPCharTotal(500);
+			RemoveDublonsFromPCharTotal(250);
 			pchar.quest.BM_IronsTimeOver.over = "yes";
 			pchar.questTemp.BM_hireInGrot = true;
 			
@@ -446,7 +446,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave3":
 			dialog.text = "Did you bring the gold?";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
 				link.l1 = "Here's your gold.";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -800,8 +800,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_Sea3":
-			dialog.text = "Yes, that could work! But again, nothing bigger than a barque! Gabe isn't just a coward - he's never been greedy enough to let that outweigh his caution.";
-			link.l1 = "Let's hope it works, Tommy. So, a fifth-rate barque flying Spanish or Dutch colors. Get ready to meet your old war mate!";
+			dialog.text = "Yes, that could work! But again, nothing bigger than a barque or barquentine! Gabe isn't just a coward - he's never been greedy enough to let that outweigh his caution.";
+			link.l1 = "Let's hope it works, Tommy. So, a fifth-rate barque or barquentine flying Spanish or Dutch colors. Get ready to meet your old war mate!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("BM_SeaVariant");
 		break;

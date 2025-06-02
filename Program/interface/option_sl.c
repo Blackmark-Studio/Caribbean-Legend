@@ -32,6 +32,7 @@ void PrepareDefaultOption(ref optref)
 	optref.arcademode.bArcadeSailTo = true;
 	*/
 	optref.alwaysrun = true;
+	optref.AdvancedChange = false;
 	optref.video.grassquality = 0;
 	optref.seadetails = 1.0;
 	optref.ifonttype = 0;
@@ -209,12 +210,6 @@ void GetRealOptions(ref optref)
 	} else {
 		optref.cameramode.CREWONDECKMode = true;
 	}
-	
-	if( CheckAttribute(&InterfaceStates,"CAMERASWING") ) {
-		optref.cameramode.CAMERASWINGMode = sti(InterfaceStates.CAMERASWING);
-	} else {
-		optref.cameramode.CAMERASWINGMode = false;
-	}
 
 	if( CheckAttribute(&InterfaceStates,"ENHANCEDSAILING") ) {
 		optref.cameramode.ENHANCEDSAILINGMode = sti(InterfaceStates.ENHANCEDSAILING);
@@ -285,6 +280,12 @@ void GetRealOptions(ref optref)
 		optref.alwaysrun = InterfaceStates.alwaysrun;
 	} else {
 		optref.alwaysrun = false;
+	}
+	// advancedchange
+	if( CheckAttribute(&InterfaceStates,"AdvancedChange") ) {
+		optref.AdvancedChange = InterfaceStates.AdvancedChange;
+	} else {
+		optref.AdvancedChange = false;
 	}
 	// belamour перспектива морской камеры
 	if(CheckAttribute(&InterfaceStates, "SEACAMPERSP")) optref.SEACAMPERSP = InterfaceStates.SEACAMPERSP;
@@ -387,12 +388,6 @@ void SetCurentOptions(ref optref)
 		InterfaceStates.CREWONDECK = optref.cameramode.CREWONDECKMode;
 	} else {
 		InterfaceStates.CREWONDECK = true; // заполнить чекбокс
-	}
-	
-	if( CheckAttribute(optref,"cameramode.CAMERASWINGMode") ) {
-		InterfaceStates.CAMERASWING = optref.cameramode.CAMERASWINGMode;
-	} else {
-		InterfaceStates.CAMERASWING = false;
 	}
 	
 	if( CheckAttribute(optref,"cameramode.ENHANCEDSAILINGMode") ) {
@@ -529,6 +524,12 @@ void SetCurentOptions(ref optref)
 		InterfaceStates.alwaysrun = optref.alwaysrun;
 	} else {
 		InterfaceStates.alwaysrun = false;
+	}
+	// advancedchange
+	if( CheckAttribute(&optref,"AdvancedChange") ) {
+		InterfaceStates.AdvancedChange = optref.AdvancedChange;
+	} else {
+		InterfaceStates.AdvancedChange = false;
 	}
 
 	ControlsMakeInvert();

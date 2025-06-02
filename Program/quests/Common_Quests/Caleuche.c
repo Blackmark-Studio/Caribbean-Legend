@@ -82,7 +82,7 @@ void Caleuche_CreateShamane()// создаем Туттуатхапака - ша
 	LAi_SetImmortal(sld, true);
 	AddLandQuestMark(sld, "questmarkmain");
 	AddMapQuestMarkIsland("Dominica", false);
-	ChangeCharacterAddressGroup(sld, "IndianlTown_shack2", "quest", "quest1");
+	ChangeCharacterAddressGroup(sld, "Dominica_shack2", "quest", "quest1");
 }
 
 void Caleuche_PrepareGhostship(string qName) // готовим первую атаку Калеуче
@@ -976,13 +976,13 @@ void Caleuche_KhaelRoaArrive(string qName) // прибыли на Хаэль Р�
 	string sTemp;
 	// сюда ставим все изменения в локациях храма, лабиринтов и алькова - без НИ
 	// джунгли вход в храм
-	n = Findlocation("Temple_h");
+	n = Findlocation("KhaelRoa_Temple_h");
 	locations[n].type = "questisland";
 	locations[n].DisableEncounters = true;
 	locations[n].islandId = "KhaelRoa";
 	SetItemInLocation("cannabis7", locations[n].id, "qflower1");
 	// лабиринт-1
-	n = Findlocation("Labirint_1");
+	n = Findlocation("KhaelRoa_Labirint_1");
 	locations[n].type = "teno_inside";
 	Locations[n].environment.weather = "true";
 	Locations[n].environment.sea = "false";
@@ -990,12 +990,12 @@ void Caleuche_KhaelRoaArrive(string qName) // прибыли на Хаэль Р�
 	locations[n].environment.weather.rain = false;
 	locations[n].islandId = "KhaelRoa";
 	Locations[n].reload.l1.name = "reload27";
-	Locations[n].reload.l1.go = "Temple_h";
+	Locations[n].reload.l1.go = "KhaelRoa_Temple_h";
 	Locations[n].reload.l1.emerge = "reload2";
 	Locations[n].reload.l1.autoreload = "1";
 	locations[n].DisableOfficers = "1";
 	// лабиринт-2
-	n = Findlocation("Labirint_2");
+	n = Findlocation("KhaelRoa_Labirint_2");
 	locations[n].type = "teno_inside";
 	Locations[n].environment.weather = "true";
 	Locations[n].environment.sea = "false";
@@ -1004,7 +1004,7 @@ void Caleuche_KhaelRoaArrive(string qName) // прибыли на Хаэль Р�
 	locations[n].islandId = "KhaelRoa";
 	locations[n].DisableOfficers = "1";
 	// лабиринт-3
-	n = Findlocation("Labirint_3");
+	n = Findlocation("KhaelRoa_Labirint_3");
 	locations[n].type = "teno_inside";
 	Locations[n].environment.weather = "true";
 	Locations[n].environment.sea = "false";
@@ -1018,7 +1018,7 @@ void Caleuche_KhaelRoaArrive(string qName) // прибыли на Хаэль Р�
 	locations[n].models.always.door.locator.name = "door1";
 	locations[n].DisableOfficers = "1";
 	// альков
-	n = Findlocation("treasure_alcove");
+	n = Findlocation("KhaelRoa_Treasure_Alcove");
 	locations[n].type = "Alcove";
 	Locations[n].environment.weather = "true";
 	Locations[n].environment.sea = "false";
@@ -1030,23 +1030,23 @@ void Caleuche_KhaelRoaArrive(string qName) // прибыли на Хаэль Р�
 	locations[n].DisableOfficers = "1";
 	// прерывание
 	pchar.quest.Caleuche_alcove.win_condition.l1 = "locator";
-	pchar.quest.Caleuche_alcove.win_condition.l1.location = "treasure_alcove";
+	pchar.quest.Caleuche_alcove.win_condition.l1.location = "KhaelRoa_Treasure_Alcove";
 	pchar.quest.Caleuche_alcove.win_condition.l1.locator_group = "teleport";
 	pchar.quest.Caleuche_alcove.win_condition.l1.locator = "teleport6";
 	pchar.quest.Caleuche_alcove.function = "Caleuche_InAlcoveTop";
 	// подсказки
 	pchar.quest.Caleuche_support1.win_condition.l1 = "locator";
-	pchar.quest.Caleuche_support1.win_condition.l1.location = "treasure_alcove";
+	pchar.quest.Caleuche_support1.win_condition.l1.location = "KhaelRoa_Treasure_Alcove";
 	pchar.quest.Caleuche_support1.win_condition.l1.locator_group = "teleport";
 	pchar.quest.Caleuche_support1.win_condition.l1.locator = "teleport0";
 	pchar.quest.Caleuche_support1.function = "Caleuche_TeleportSupport";
 	pchar.quest.Caleuche_support2.win_condition.l1 = "locator";
-	pchar.quest.Caleuche_support2.win_condition.l1.location = "treasure_alcove";
+	pchar.quest.Caleuche_support2.win_condition.l1.location = "KhaelRoa_Treasure_Alcove";
 	pchar.quest.Caleuche_support2.win_condition.l1.locator_group = "teleport";
 	pchar.quest.Caleuche_support2.win_condition.l1.locator = "teleport1";
 	pchar.quest.Caleuche_support2.function = "Caleuche_TeleportSupport";
 	pchar.quest.Caleuche_support3.win_condition.l1 = "locator";
-	pchar.quest.Caleuche_support3.win_condition.l1.location = "Labirint_3";
+	pchar.quest.Caleuche_support3.win_condition.l1.location = "KhaelRoa_Labirint_3";
 	pchar.quest.Caleuche_support3.win_condition.l1.locator_group = "quest";
 	pchar.quest.Caleuche_support3.win_condition.l1.locator = "detector";
 	pchar.quest.Caleuche_support3.function = "Caleuche_TileSupport";
@@ -1353,12 +1353,12 @@ void Caleuche_LeverAttack(string qName) // ставим чавинави при 
 		LAi_SetActorType(sld);
 		if (sti(pchar.questTemp.Caleuche.LeverType) == 0) 
 		{
-			ChangeCharacterAddressGroup(sld, "labirint_3", "goto", "monster1"+i);
+			ChangeCharacterAddressGroup(sld, "KhaelRoa_Labirint_3", "goto", "monster1"+i);
 			CreateLocationParticles("fire_incas_Simple", "goto", "monster1"+i, 0.5, 0, 0, "");
 		}
 		else 
 		{
-			ChangeCharacterAddressGroup(sld, "labirint_3", "goto", "monster2"+i);
+			ChangeCharacterAddressGroup(sld, "KhaelRoa_Labirint_3", "goto", "monster2"+i);
 			CreateLocationParticles("fire_incas_Simple", "goto", "monster2"+i, 0.5, 0, 0, "");
 		}
 	}
@@ -1398,15 +1398,15 @@ void Caleuche_TeleportStart() // телепортация по алькову
 	switch (sGlobalTemp)
 	{
 		case "teleport0": 
-			ChangeCharacterAddressGroup(pchar, "Treasure_Alcove", "quest", "teleport");
+			ChangeCharacterAddressGroup(pchar, "KhaelRoa_Treasure_Alcove", "quest", "teleport");
 			Caleuche_TeleportTrap();
 		break;
-		case "teleport1": ChangeCharacterAddressGroup(pchar, "Treasure_Alcove", "teleport", "teleport2"); break;
-		case "teleport2": ChangeCharacterAddressGroup(pchar, "Treasure_Alcove", "teleport", "teleport1"); break;
-		case "teleport3": ChangeCharacterAddressGroup(pchar, "Treasure_Alcove", "teleport", "teleport4"); break;
-		case "teleport4": ChangeCharacterAddressGroup(pchar, "Treasure_Alcove", "teleport", "teleport3"); break;
-		case "teleport5": ChangeCharacterAddressGroup(pchar, "Treasure_Alcove", "teleport", "teleport6"); break;
-		case "teleport6": ChangeCharacterAddressGroup(pchar, "Treasure_Alcove", "teleport", "teleport5"); break;
+		case "teleport1": ChangeCharacterAddressGroup(pchar, "KhaelRoa_Treasure_Alcove", "teleport", "teleport2"); break;
+		case "teleport2": ChangeCharacterAddressGroup(pchar, "KhaelRoa_Treasure_Alcove", "teleport", "teleport1"); break;
+		case "teleport3": ChangeCharacterAddressGroup(pchar, "KhaelRoa_Treasure_Alcove", "teleport", "teleport4"); break;
+		case "teleport4": ChangeCharacterAddressGroup(pchar, "KhaelRoa_Treasure_Alcove", "teleport", "teleport3"); break;
+		case "teleport5": ChangeCharacterAddressGroup(pchar, "KhaelRoa_Treasure_Alcove", "teleport", "teleport6"); break;
+		case "teleport6": ChangeCharacterAddressGroup(pchar, "KhaelRoa_Treasure_Alcove", "teleport", "teleport5"); break;
 	}
 }
 
@@ -1425,8 +1425,8 @@ void Caleuche_TeleportTrap() // телепорт-ловушка
 		sld.LSC_clan = true;
 		sld.KhaelRoaMonster = true;
 		sld.MultiFighter = 1.0+MOD_SKILL_ENEMY_RATE/20; // мультифайтер
-		if (i < 4) ChangeCharacterAddressGroup(sld, "Treasure_Alcove", "quest", "quest1");
-		else ChangeCharacterAddressGroup(sld, "Treasure_Alcove", "quest", "quest2");
+		if (i < 4) ChangeCharacterAddressGroup(sld, "KhaelRoa_Treasure_Alcove", "quest", "quest1");
+		else ChangeCharacterAddressGroup(sld, "KhaelRoa_Treasure_Alcove", "quest", "quest2");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
 	}
@@ -1456,7 +1456,7 @@ void Caleuche_InAlcoveTop(string qName) // в святилище
 	sld.KhaelRoaMonster = true;
 	sld.monster = true; // признак нежити
 	sld.MultiFighter = 1.0+MOD_SKILL_ENEMY_RATE/10; // мультифайтер
-	ChangeCharacterAddressGroup(sld, "Treasure_Alcove", "goto", "monster1");
+	ChangeCharacterAddressGroup(sld, "KhaelRoa_Treasure_Alcove", "goto", "monster1");
 	TakeNItems(sld, "potion2", MOD_SKILL_ENEMY_RATE/2+1);
 	LAi_SetActorType(sld);
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
@@ -1473,7 +1473,7 @@ void Caleuche_InAlcoveTop(string qName) // в святилище
 			sld.monster = true; // признак нежити
 			sld.MultiFighter = 1.0+MOD_SKILL_ENEMY_RATE/20; // мультифайтер
 			TakeNItems(sld, "potion2", MOD_SKILL_ENEMY_RATE/2);
-			ChangeCharacterAddressGroup(sld, "Treasure_Alcove", "goto", "monster"+i);
+			ChangeCharacterAddressGroup(sld, "KhaelRoa_Treasure_Alcove", "goto", "monster"+i);
 			LAi_SetActorType(sld);
 		}
 	}
@@ -1488,7 +1488,7 @@ void Caleuche_InAlcoveTop(string qName) // в святилище
 			LAi_SetHP(sld, iHpt-400, iHpt-400);
 			sld.monster = true; // признак нежити
 			TakeNItems(sld, "potion2", 2);
-			ChangeCharacterAddressGroup(sld, "Treasure_Alcove", "goto", "monster"+i);
+			ChangeCharacterAddressGroup(sld, "KhaelRoa_Treasure_Alcove", "goto", "monster"+i);
 			LAi_SetActorType(sld);
 		}
 	}
@@ -1505,7 +1505,7 @@ void Caleuche_InAlcoveTop(string qName) // в святилище
 			sld.monster = true; // признак нежити
 			sld.MultiFighter = 1.0+MOD_SKILL_ENEMY_RATE/20; // мультифайтер
 			TakeNItems(sld, "potion2", MOD_SKILL_ENEMY_RATE/2);
-			ChangeCharacterAddressGroup(sld, "Treasure_Alcove", "goto", "monster"+i);
+			ChangeCharacterAddressGroup(sld, "KhaelRoa_Treasure_Alcove", "goto", "monster"+i);
 			LAi_SetActorType(sld);
 		}
 	}
@@ -1520,7 +1520,7 @@ void Caleuche_PutSkull() // положили череп
 		DeleteAttribute(pchar, "questTemp.Caleuche.QuestionFail");
 		AddQuestRecord("Caleuche", "37");
 	}
-	int n = Findlocation("treasure_alcove");
+	int n = Findlocation("KhaelRoa_Treasure_Alcove");
 	locations[n].type = "Alcove_1";
 	Locations[n].models.always.totem.rotate.x = 0.0;
 	Locations[n].models.always.totem.rotate.y = 0.5;
@@ -1560,7 +1560,7 @@ void Caleuche_FinalBattle(string qName) // последний бой калеу�
 	DoQuestFunctionDelay("Caleuche_CreateGhostshipKhalRoa", 30.0);
 	LAi_group_SetRelation(LAI_GROUP_MONSTERS, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 	DeleteAttribute(pchar, "questTemp.Caleuche.Friend");
-	LAi_LocationFightDisable(&Locations[FindLocation("treasure_alcove")], false);
+	LAi_LocationFightDisable(&Locations[FindLocation("KhaelRoa_Treasure_Alcove")], false);
 }
 
 void Caleuche_CreateGhostshipKhalRoa(string qName)//подгружаем в море Калеуче
@@ -1629,7 +1629,7 @@ void Caleuche_KhaelRoaAfterBattle(string qName) // победили калеуч
 	Group_DeleteGroup("Caleuche_Attack");
 	bQuestDisableMapEnter = false;//открыть карту
 	Island_SetReloadEnableGlobal("KhaelRoa", true);
-	LocatorReloadEnterDisable("Temple_h", "reload2", true); // в храм больше не пускаем
+	LocatorReloadEnterDisable("KhaelRoa_Temple_h", "reload2", true); // в храм больше не пускаем
 	if (CheckCharacterItem(pchar, "kaleuche_amulet1"))
 	{
 		AddQuestRecord("Caleuche", "39");
@@ -2179,13 +2179,13 @@ bool Caleuche_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Caleuche_LabirintReload") // перегрузка локации
 	{
-		n = Findlocation("Labirint_3");
+		n = Findlocation("KhaelRoa_Labirint_3");
 		DeleteAttribute(&locations[n], "models.always.door");
 		Locations[n].reload.l28.name = "reload30_back";
-		Locations[n].reload.l28.go = "Treasure_Alcove";
+		Locations[n].reload.l28.go = "KhaelRoa_Treasure_Alcove";
 		Locations[n].reload.l28.emerge = "Reload1";
 		Locations[n].reload.l28.autoreload = "1";
-		DoQuestReloadToLocation("Labirint_3", "item", "step5", "");
+		DoQuestReloadToLocation("KhaelRoa_Labirint_3", "item", "step5", "");
 		iGlobalTemp = 0;
 	}
 	else if (sQuestName == "Caleuche_LeverFightOver") // прибили чавинави у рычагов
@@ -2208,7 +2208,7 @@ bool Caleuche_QuestComplete(string sQuestName, string qname)
 		LAi_group_Delete("EnemyFight");
 		sld = ItemsFromID("SkullAztec");
 		sld.shown = "0";
-		sld.useLocation = "treasure_alcove";
+		sld.useLocation = "KhaelRoa_Treasure_Alcove";
 		sld.useLocator = "button01";
 	}
 	else if (sQuestName == "Caleuche_RotatePause") // крутим камеру

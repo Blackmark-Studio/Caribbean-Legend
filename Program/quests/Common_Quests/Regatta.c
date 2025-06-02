@@ -304,7 +304,7 @@ void RegataAttack_Lugger(string qName)//засада из 2 люггеров
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
 		UpgradeShipParameter(sld, "SpeedRate");
-		if (drand(3) == i) UpgradeShipParameter(sld, "WindAgainstSpeed");
+		if (hrand(3) == i) UpgradeShipParameter(sld, "WindAgainstSpeed");
 		Character_SetAbordageEnable(sld, false); //нельзя абордировать
 		Group_AddCharacter("Lugger_Attack", "Lugger_CapAttack_"+i);
 		sld.AlwaysEnemy = true;
@@ -331,7 +331,7 @@ void RegataAttack_Corvette(string qName)//засада - корвет
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
 		UpgradeShipParameter(sld, "SpeedRate");
-		if (drand(3) == 0) UpgradeShipParameter(sld, "Capacity");
+		if (hrand(3) == 0) UpgradeShipParameter(sld, "Capacity");
 		Character_SetAbordageEnable(sld, false); //нельзя абордировать
 		Group_AddCharacter("Corvette_Attack", "Corvette_CapAttack_1");
 		sld.AlwaysEnemy = true;
@@ -352,12 +352,12 @@ void RegataAttack_Brigantine(string qName)//засада - бригантина
 	int iScl = 10*sti(pchar.rank);
 	int iNation = sti(pchar.questTemp.Regata.AttackNation);
 		sld = GetCharacter(NPC_GenerateCharacter("Brigantine_CapAttack_1", "mercen_"+(rand(27)+1), "man", "man", iRank, iNation, 5, true, "quest"));
-		FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, "", CANNON_TYPE_CANNON_LBS16, 100, iScl, iScl);
+		FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, "", CANNON_TYPE_CANNON_LBS12, 100, iScl, iScl);
 		FantomMakeCoolFighter(sld, iRank, 50, 50, "blade_10", "pistol1", "bullet", 100);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
 		UpgradeShipParameter(sld, "SpeedRate");
-		if (drand(1) == 0) UpgradeShipParameter(sld, "Capacity");
+		if (hrand(1) == 0) UpgradeShipParameter(sld, "Capacity");
 		else UpgradeShipParameter(sld, "WindAgainstSpeed");
 		Character_SetAbordageEnable(sld, false); //нельзя абордировать
 		sld.AlwaysEnemy = true;

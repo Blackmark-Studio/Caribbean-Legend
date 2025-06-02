@@ -33,8 +33,8 @@ void ProcessDialogEvent()
 				sld = CharacterFromID("GangMan_" + i);
 				LAi_type_actor_Reset(sld);
 			}
-			dialog.text = RandPhraseSimple(""+GetSexPhrase("Kapitan","Dama")+"! Proszę, bądź litościwy! Chroń mnie, błagam Cię!","Pomoc! "+GetSexPhrase("Obcy","Młoda dama")+", ratuj mnie, błagam Cię!");
-			link.l1 = LinkRandPhrase("Co się stało?","Co u ciebie słychać?",RandPhraseSimple("W czym problem?","Co się dzieje?"));
+			dialog.text = RandPhraseSimple(""+GetSexPhrase("Kapitanie","Damo")+"! Proszę, litości! Uratuj mnie, błagam Cię!","Pomocy! "+GetSexPhrase("Nieznajomy","Młoda damo")+", ratuj mnie, błagam Cię!");
+			link.l1 = LinkRandPhrase("Co się stało?","O co chodzi?",RandPhraseSimple("W czym problem?","Co się dzieje?"));
 			link.l1.go = "Begin_11";
 		break;
 
@@ -46,8 +46,8 @@ void ProcessDialogEvent()
 				sld = CharacterFromID("GangMan_" + i);
 				LAi_type_actor_Reset(sld);
 			}
-			dialog.text = RandPhraseSimple(""+GetSexPhrase("Kapitanie! Kapitanie","Dziewczyno! Dziewczyno")+", proszę poczekać!","Poczekaj, "+GetSexPhrase("Kapitan","młoda dama")+"! Proszę.");
-			link.l1 = LinkRandPhrase("Co się stało?","Co u ciebie słychać?",RandPhraseSimple("W czym problem?","Co się dzieje?"));
+			dialog.text = RandPhraseSimple(""+GetSexPhrase("Kapitanie! Kapitanie","Dziewczyno! Dziewczyno")+", zaczekaj!","Poczekaj, "+GetSexPhrase("Kapitanie","młoda damo")+"! Proszę.");
+			link.l1 = LinkRandPhrase("Co się stało?","O co chodzi?",RandPhraseSimple("W czym problem?","Co się dzieje?"));
 			link.l1.go = "Begin_21";
 		break;
 
@@ -59,26 +59,26 @@ void ProcessDialogEvent()
 				sld = CharacterFromID("GangMan_" + i);
 				LAi_type_actor_Reset(sld);
 			}
-			dialog.text = "Oh, m"+GetSexPhrase("siostra","iss")+"! Proszę, pomóż biednej dziewczynie, błagam Cię! Ci ludzie chcą mi zrobić coś strasznego!";
-			link.l1 = LinkRandPhrase("Co się stało?","Co u ciebie słychać?",RandPhraseSimple("W czym problem?","Co się dzieje?"));
+			dialog.text = "Oh, p"+GetSexPhrase("anie","anienko")+"! Proszę, pomóż biednej dziewczynie, błagam Cię! Ci ludzie chcą mi zrobić coś strasznego!";
+			link.l1 = LinkRandPhrase("Co się stało?","O co chodzi?",RandPhraseSimple("W czym problem?","Co się dzieje?"));
 			link.l1.go = "Begin_31";
 		break;
 		
 		case "Begin_11":
-			dialog.text = RandPhraseSimple("Te łotrzy zamierzają mnie zgwałcić! Dla wszystkiego, co dobre, nie pozwól im na to!","Na miłość boską, ochron mnie przed tymi potworami! Zamierzają mnie zhańbić!");
-			link.l1 = "Przestań panikować"+GetSexPhrase(", piękno","")+". Co się tu stało?";
+			dialog.text = RandPhraseSimple("Te łotry zamierzają mnie zgwałcić! Dla wszystkiego, co dobre, nie pozwól im na to!","Na miłość boską, ochroń mnie przed tymi potworami! Zamierzają mnie zhańbić!");
+			link.l1 = "Przestań panikować"+GetSexPhrase(", moja piękna","")+". Pozwól mi z nimi pomówić.";
 			link.l1.go = "exit_1";
 		break;
 
 		case "Begin_21":
-			dialog.text = RandPhraseSimple("Gwałciciele mnie gonią!"+GetSexPhrase("Czy stanąłbyś w obronie honoru damy?","")+"","Kapitanie, "+GetSexPhrase("bądź mężczyzną","ty też jesteś kobietą")+" czy nie uratowałbyś dziewczyny od hańby!");
-			link.l1 = "Przestań panikować"+GetSexPhrase(", piękność","")+". Co się tu stało?";
+			dialog.text = RandPhraseSimple("Gwałciciele mnie gonią!"+GetSexPhrase("Czy stanąłbyś w obronie honoru damy?","")+"","Kapitanie, "+GetSexPhrase("bądź mężczyzną","ty też jesteś kobietą")+" i uratuj dziewczyne od hańby!");
+			link.l1 = "Przestań panikować"+GetSexPhrase(", moja piękna","")+". Pozwól mi z nimi pomówić";
 			link.l1.go = "exit_1";
 		break;
 		
 		case "Begin_31":
 			dialog.text = "Oni mnie ścigają! Bandyci! Powiedz im, żeby mnie zostawili w spokoju!";
-			link.l1 = "Przestań panikować"+GetSexPhrase(", piękność","")+". Co się tu stało?";
+			link.l1 = "Przestań panikować"+GetSexPhrase(", moja piękna","")+". Ja już sobie z nimi pomówię";
 			link.l1.go = "exit_1";
 		break;
 		
@@ -90,14 +90,14 @@ void ProcessDialogEvent()
 				sld = CharacterFromID("GangMan_" + i);
 				LAi_type_actor_Reset(sld);
 			}
-			dialog.text = LinkRandPhrase("Pomoc! Pomoc! Oni mnie gonią! Ratuj mnie!","Aaah! Pomocy, "+GetSexPhrase("obcy","młoda dama")+"! Uratuj mnie od tych łajdaków!","Okaz mi litość i ochron mnie przed tymi łotrzykami! Proszę!");
-			Link.l1 = LinkRandPhrase("Co się dzieje?","Co u ciebie słychać?","Co się stało?");
+			dialog.text = LinkRandPhrase("Pomocy! Pomocy! Oni mnie gonią! Ratuj mnie!","Aaah! Pomocy, "+GetSexPhrase("nieznajomy","młoda damo")+"! Uratuj mnie od tych łajdaków!","Okaz mi litość i ocal mnie przed tymi łotrzykami! Proszę!");
+			Link.l1 = LinkRandPhrase("Co się dzieje?","O co tu chodzi?","Co się stało?");
 			Link.l1.go = "Node_2";			
 		break;        
 
 		case "Node_2":
-			dialog.text = LinkRandPhrase("Oni... oni zamierzają mnie zgwałcić! Za wszystko, co dobre, nie pozwól im! Proszę!","Te bestie... planują coś strasznego... Chron mnie przed nimi, proszę!","W imię naszego Pana, ratuj mnie od tych pożądliwych bestii! Chcą mnie zhańbić!");
-			Link.l1 = "Rozgryźmy to wszystko, więc.";
+			dialog.text = LinkRandPhrase("Oni... oni zamierzają mnie zgwałcić! Za wszystko, co dobre, nie pozwól im! Proszę!","Te bestie... planują coś strasznego... Ocal mnie przed nimi, proszę!","W imię naszego Pana, ratuj mnie od tych pożądliwych bestii! Chcą mnie zhańbić!");
+			Link.l1 = "Dobra, przejdź do boku. Ja sobie z nimi odpowiednio porozmawiam.";
 			Link.l1.go = "exit_1";			
 		break;
 
@@ -106,14 +106,14 @@ void ProcessDialogEvent()
 			{
 				if(rand(1) == 0)
 				{
-					dialog.text = RandPhraseSimple("Dziękuję, "+GetSexPhrase("Kapitan","młoda dama")+". Byłem tak przerażony!","Dziękuję ci za uratowanie mnie! Jestem ci tak wdzięczny!");
-					link.l1 = "W porządku, "+GetSexPhrase("piękno","drogi")+", uspokój się, to wszystko jest już w przeszłości.";
+					dialog.text = RandPhraseSimple("Dziękuję, "+GetSexPhrase("Kapitanie","młoda damo")+". Byłem tak przerażona!","Dziękuję ci za uratowanie mnie! Jestem ci taka wdzięczna!");
+					link.l1 = "Już w porządku, "+GetSexPhrase("skarbie","moja droga")+", uspokój się, to wszystko jest już w przeszłości.";
 					link.l1.go = "Node_11";
 				}
 				else
 				{
 					dialog.text = "Oh, dziękuję Ci, "+GetSexPhrase("szlachetny człowieku! Jestes prawdziwym dżentelmenem!","pani! Uratowałaś mnie!")+"";
-					link.l1 = "Nie mogłem zrobić inaczej.";
+					link.l1 = "Innego wyjścia nie było.";
 					link.l1.go = "Node_12";
 				}
 			}
@@ -121,21 +121,21 @@ void ProcessDialogEvent()
 			{
 				if(rand(1) == 0)
 				{
-					dialog.text = "Oh, dziękuję, "+GetSexPhrase("szlachetny człowieku! Jesteś prawdziwym dżentelmenem!","obcy! Uratowałeś mnie!")+"";
-					link.l1 = "Nie mogłem postąpić inaczej.";
+					dialog.text = "Oh, dziękuję, "+GetSexPhrase("szlachetny człowieku! Jesteś prawdziwym dżentelmenem!","pani! Uratowałaś mnie!")+"";
+					link.l1 = "Innego wyjścia nie było.";
 					link.l1.go = "Node_12";	
 				}
 				else
 				{
-					dialog.text = "Co ty zrobiłeś? Dlaczego ich zabiłeś?! Teraz będą mnie szukać! Mój Boże, co zrobiłem, żeby na to zasłużyć!";
-					link.l1 = "To jest wdzięczność!";
+					dialog.text = "Co ty... ty...? Oni nie żyją?! Teraz będą mnie szukać! Mój Boże, co ja takiego zrobiłam, żeby na to zasłużyć!";
+					link.l1 = "To się nazywa wdzięczność!";
 					link.l1.go = "Node_22";
 				}
 			}
 			if(pchar.GenQuest.EncGirl == "Begin_33")
 			{
-				dialog.text = "Co ty zrobiłeś, "+GetSexPhrase("kapitan","młoda dama")+"?! Dlaczego ich zabiłeś? Właściwie zostali wysłani przez mojego ojca... O mój Boże, teraz na pewno mnie zabije...";
-				link.l1 = "To są wiadomości! I co myślałeś, krzycząc, że byłeś ścigany przez bandytów?!";
+				dialog.text = "Nie moge uwierzyć, "+GetSexPhrase("kapitanie","młoda damo")+"?! Wszyscy nie żyją? Właściwie to zostali wysłani przez mojego ojca... O mój Boże, teraz na pewno mnie zabije...";
+				link.l1 = "Rychło w czas! I co to sobie myślałaś, krzycząc, że byłaś ścigana przez bandytów?!";
 				link.l1.go = "Node_31";
 			}
 		break;
@@ -144,7 +144,7 @@ void ProcessDialogEvent()
 			Diag.TempNode = "Node_1Next";
 			addMoneyToCharacter(pchar, makeint((sti(pchar.rank))*25 + frand(2)*500));
 			dialog.text = "Mam trochę pieniędzy, proszę, przyjmij je jako wyraz mojej wdzięczności. Teraz powiem wszystkim, "+GetSexPhrase("jakim jesteś dobrym i szlachetnym człowiekiem","jaką dobrą i szlachetną kobietą jesteś")+".";
-			link.l1 = "Na pewno tak zrobisz. Dzięki... Teraz po prostu wróć do domu.";
+			link.l1 = "Tak zrób. Dzięki... a teraz prosze wróć do domu.";
 			link.l1.go = "exit";
 			pchar.GenQuest.EncGirl = "close";
 			sGlobalTemp = "Saved_CangGirl";
@@ -152,32 +152,32 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_12":
-			dialog.text = "Wciąż nie mogę się pozbierać. Czy mógłbyś przynieść "+GetSexPhrase("pani","ja")+" do osady "+XI_ConvertString("Kolonia"+pchar.GenQuest.EncGirl.city)+"? Wiesz, teraz gwałciciele wydają mi się być za każdym krzakiem.";
-			link.l1 = RandPhraseSimple("Nie martw się tak bardzo, naprawdę... No dobrze, ruszajmy.","Jesteś taki tchórzliwy, prawda? Dobrze, zabiorę cię tam.");
+			dialog.text = "Wciąż nie mogę się pozbierać. Czy "+GetSexPhrase("mógłbyś","mogłabyś")+" zabrać mnie do osady "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+"? Wiesz, teraz gwałciciele wydają mi się być za każdym krzakiem.";
+			link.l1 = RandPhraseSimple("Nie zamartwiaj się, naprawdę... No dobrze, ruszajmy.","Co za tchórz z ciebie. Dobrze, zabiorę cię tam.");
 			link.l1.go = "Node_121Next";
-			link.l2 = "Przykro mi, kochanie, ale po prostu nie mam czasu, jestem zbyt zajęty.";
+			link.l2 = "Przykro mi, kochanie, ale po prostu nie mam czasu.";
 			link.l2.go = "Node_3End";
 		break;
 						
 		case "Node_22":
-			dialog.text = "Miałem nadzieję, że tylko ich przestraszysz! Teraz musisz zabrać mnie do tawerny w osadzie "+XI_ConvertString("Kolonia"+pchar.GenQuest.EncGirl.city)+", nie mam nikogo innego, tylko ty, kogo mogę prosić o pomoc.";
+			dialog.text = "Miałem nadzieję, że tylko ich przestraszysz! Teraz musisz zabrać mnie do karczmy w osadzie "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+", nie mam nikogo innego, tylko ty, kogo mogę prosić o pomoc.";
 			link.l1 = "O, cholera! W porządku, idziemy. Tylko nie zostawaj w tyle.";
 			link.l1.go = "Node_122Next";
-			link.l2 = "Nie, to wszystko, "+GetSexPhrase("piękno","drogi")+"! Miałem dość niespodzianek na dzisiaj. Szukaj kogoś innego, kto ci pomoże.";
+			link.l2 = "Nie, to wszystko, "+GetSexPhrase("skarbię","moja droga")+"! Miałem dość niespodzianek na dzisiaj. Szukaj kogoś innego, kto ci pomoże.";
 			link.l2.go = "Node_3End";
 		break;
 		
 		case "Node_31":
-			dialog.text = "I co ja miałam robić?! Mój ojciec chce, żebym wyszła za mąż za syna lichwiarza, tego mazgaja... tylko dlatego, że jego tatusiek ma w swoich skrzyniach gówno pieniędzy! Ale ja kocham innego mężczyznę! Zabierz mnie do niego, proszę...";
+			dialog.text = "I co ja miałam robić?! Mój ojciec chce, żebym wyszła za mąż za syna lichwiarza, tego mazgaja... tylko dlatego, że jego tatusiek ma w swoich skrzyniach od cholery pieniędzy! Ale ja kocham innego mężczyznę! Zabierz mnie do niego, proszę...";
 			link.l1 = "Jakim jesteś ciężarem! No dobrze, chodźmy. Nie mogę cię tu zostawić, prawda?.. Jakie jest imię twojego wybrańca, gdzie mam cię zabrać?";
 			link.l1.go = "Node_32";
-			link.l2 = "Nie, to wszystko, "+GetSexPhrase("piękno","drogi")+"! Mam dość niespodzianek na dzisiaj. Szukaj kogoś innego, kto ci pomoże.";
+			link.l2 = "Nie ma opcji, "+GetSexPhrase("skarbie","moja droga")+"! Mam dość niespodzianek na dzisiaj. Poszukaj kogoś innego, kto ci pomoże.";
 			link.l2.go = "Node_3End";
 		break;
 		
 		case "Node_32":
 			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(sti(npchar.nation), "man"); 
-			dialog.text = "Jego imię to "+pchar.GenQuest.EncGirl.sLoverId+", on jest nowicjuszem. Teraz przebywa w osadzie "+XI_ConvertString("Kolonia"+pchar.GenQuest.EncGirl.city)+", próbowałem tam znaleźć pracę, ale to są ciężkie czasy. Wszyscy mówią o kryzysie... I tak czy inaczej, nie ma dla mnie powrotu do domu.";
+			dialog.text = "Jego imię to "+pchar.GenQuest.EncGirl.sLoverId+", jest nowicjuszem. Teraz przebywa w osadzie "+XI_ConvertString("Kolonia"+pchar.GenQuest.EncGirl.city)+", próbowałem tam znaleźć pracę, ale to są ciężkie czasy. Wszyscy mówią o kryzysie... I tak czy inaczej, nie ma dla mnie powrotu do domu.";
 			link.l1 = "Kryzys? Ha... Dla prawdziwego pirata kryzys to, gdy na horyzoncie jest karawana handlowa, ale nie ma wiatru do napełnienia żagli...";
 			link.l1.go = "Node_12Next";
 		break;
@@ -484,12 +484,12 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			Log_Info("You have received your share of the treasure");
 			PlaySound("interface\important_item.wav");
-			TakeNItems(pchar, "icollection", 1+drand(1));
-			TakeNItems(pchar, "chest", 2+drand(6));
-			TakeNItems(pchar, "jewelry1", 30+drand(15));
-			TakeNItems(pchar, "jewelry2", 30+drand(15));
-			TakeNItems(pchar, "jewelry3", 30+drand(15));
-			TakeNItems(pchar, "jewelry4", 30+drand(15));
+			TakeNItems(pchar, "icollection", 1+hrand(1));
+			TakeNItems(pchar, "chest", 2+hrand(6));
+			TakeNItems(pchar, "jewelry1", 30+hrand(15));
+			TakeNItems(pchar, "jewelry2", 30+hrand(15));
+			TakeNItems(pchar, "jewelry3", 30+hrand(15));
+			TakeNItems(pchar, "jewelry4", 30+hrand(15));
 			TakeNItems(pchar, "jewelry5", 30+rand(10));
 			TakeNItems(pchar, "jewelry6", 10+rand(10));
 			TakeNItems(pchar, "jewelry42", 20+rand(10));
@@ -630,7 +630,7 @@ void ProcessDialogEvent()
 		
 		case "Node_134_End":
 			GiveItem2Character(pchar, pchar.GenQuest.EncGirl.item); 
-			TakeNItems(pchar, "jewelry1", 15+drand(8));
+			TakeNItems(pchar, "jewelry1", 15+hrand(8));
 			AddQuestRecord("JungleGirl", "2");
 			AddQuestUserData("JungleGirl", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("JungleGirl", "sName", pchar.GenQuest.EncGirl.name); 
@@ -1303,7 +1303,7 @@ void ProcessDialogEvent()
 			}
 			else 
 			{
-				if(drand(1) == 0)
+				if(hrand(1) == 0)
 				{
 					dialog.text = "Powiedzę wszystkim, że mnie uratowałeś! Niech każdy to wie, "+GetSexPhrase("jakim odważnym i mężnym mężczyzną jesteś","jaką odważną i dzielną damą jesteś")+"!";
 					Link.l1 = "Dziękuję. A teraz powinieneś wrócić do domu.";

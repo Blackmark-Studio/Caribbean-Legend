@@ -1,0 +1,44 @@
+﻿sea_minimap
+{
+  Minimappa di navigazione.
+
+}
+ship_commands
+{
+  Comandi per controllare la tua nave e le navi dei tuoi compagni.
+
+}
+fast_commands
+{
+  Comando corrente in accesso rapido.
+
+}
+sea_aim
+{
+  La vista dei cannoni della nave.
+
+}
+alarm_indicator
+{
+  Indicatore di allarme.
+
+}
+land_commands
+{
+  Comandi di azione a terra.
+
+}
+WorldMap_Date_Clock
+{
+  Indicatore di data e ora sulla mappa.
+
+}
+WorldMap_Compas
+{
+  Bussola sulla mappa.
+
+}
+Dialog_window
+{
+  Finestra di dialogo.
+}

@@ -10,6 +10,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                       "No dear...", "No, what questions?...", npchar, Dialog.CurrentNode);
 			link.l1.go = "exit";
 		break;
+		//--> Тайна Бетси Прайс
+		case "TBP_BetsiPriceSex1":
+			DoFunctionReloadToLocation("Villemstad_tavern_upstairs", "quest", "quest4", "TBP_Betsi_sex_2");
+		break;
+		//<-- Тайна Бетси Прайс
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

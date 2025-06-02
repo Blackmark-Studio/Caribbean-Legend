@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "noble_1":
-		dialog.text = "¡Tan español como el mismo Rey Felipe, ja! También me gustaría señalar que mis papeles están en buen orden. ¡Soy noble de España, no un pirata sucio!";
+		dialog.text = "¡Tan español como el mismo Rey Felipe, ja! También me gustaría señalar que mis papeles están en buen orden. ¡Soy noble de España, no un sucio pirata!";
 		link.l1 = "¡Don Domingo, nuestras más sinceras disculpas por este desafortunado incidente! Por favor, acompáñenos para algunas preguntas y una botella de vino en la guarnición. Nos encargaremos de todo. En cuanto a usted...";
 		link.l1.go = "noble_2";
 		break;
@@ -120,7 +120,7 @@ void ProcessDialogEvent()
 
 	case "noble_6":
 		dialog.text = "¿Ugo?! ¡Oh, no, fuiste engañado, capitán!";
-		link.l1 = "Lo entiendo, parece que me pasa mucho. Tres canallas irrumpieron en tu casa, asesinaron a tu leal hombre Ugo - encontré su cadáver arriba - y luego prepararon una emboscada para ti. Mi llegada no estaba en sus planes. No sobrevivieron a nuestro encuentro.";
+		link.l1 = "Lo entiendo, parece que me pasa mucho. Tres canallas irrumpieron en tu casa, asesinaron a tu leal hombre Ugo - encontré su cadáver arriba y luego prepararon una emboscada para ti. Mi llegada no estaba en sus planes. No sobrevivieron a nuestro encuentro.";
 		link.l1.go = "noble_7";
 		break;
 
@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "noble_10":
-		dialog.text = "¡Sí, tienes razón, Carlos! ¡Te lo contaré todo! ¡Ya me has salvado dos veces y parece que eres el único hombre en quien puedo confiar ahora mismo! Pero salgamos de este lugar horrible, me da náuseas. Debo notificar al alcalde sobre este lío, ellos se encargarán del pobre Ugo. ¿Qué te parece si tomamos un poco de vino en la taberna local para calmar los nervios?";
+		dialog.text = "¡Sí, tienes razón, Carlos! ¡Te lo contaré todo! ¡Ya me has salvado dos veces y parece que eres el único hombre en quien puedo confiar ahora mismo! Pero salgamos de este lugar horrible, me da náuseas. Debo notificar al alcalde sobre este lío, ellos se encargarán del pobre Ugo. ¿Qué te parece si tomamos un poco de vino en la taberna para calmar los nervios?";
 		link.l1 = "¡Tus nervios ciertamente lo necesitan más que los míos, guía el camino, señor!";
 		link.l1.go = "noble_11";
 		break;
@@ -158,8 +158,8 @@ void ProcessDialogEvent()
 
 	case "noble_12":
 		LAi_SetSitType(pchar);
-		dialog.text = "Entonces, mi amigo, permíteme contarte una... versión abreviada de la historia de mi familia. Mi madre, Doña Isabella Ortiz, se casó con mi padre, el Marqués Ricardo Albalate, y tomó su apellido según la costumbre. Su hermano, Luis Ortiz, era comandante de la guarnición en las colonias, pero después del matrimonio de mi madre, mi padre lo nombró administrador de una plantación de azúcar no lejos de Portobelo\nEra una plantación enorme y rica, muy rentable en verdad. Tras la trágica muerte de mis padres en el mar hace unos años, yo, como su único hijo, heredé todo, incluida la plantación. Mi tío ha mantenido su posición y yo estaba bastante contento con la renta que me pagaba. Siempre era puntual con sus pagos.";
-		link.l1 = "Entonces, ¿crees que tu tío...";
+		dialog.text = "Entonces, mi amigo, permíteme contarte una... versión abreviada de la historia de mi familia. Mi madre, Doña Isabella Ortiz, se casó con mi padre, el Marqués Ricardo Albalate, y tomó su apellido según la costumbre. Su hermano, Luis Ortiz, era comandante de la guarnición en las colonias, pero después del matrimonio de mi madre, mi padre lo nombró administrador de una plantación de azúcar no lejos de Portobello.\nEra una plantación enorme y rica, muy rentable en verdad. Tras la trágica muerte de mis padres en el mar hace unos años, yo, como su único hijo, heredé todo, incluida la plantación. Mi tío ha mantenido su posición y yo estaba bastante contento con la renta que me pagaba. Siempre era puntual con sus pagos.";
+		link.l1 = "Entonces, ¿crees que tu tío...?";
 		link.l1.go = "noble_13";
 		break;
 
@@ -200,13 +200,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "noble_19":
-		dialog.text = "Mi amigo Carlos, ¿puedo pedirte ayuda? Con Ugo muerto, no tengo a nadie de доверять. ¡Ya me has salvado dos veces! ¡Dos veces! Te debo mucho, estoy en deuda contigo para siempre y aun así me atrevo a pedirte otro favor. ¡Juro por la Madre Bendita, que lo haré valer la pena!";
+		dialog.text = "Mi amigo Carlos, ¿puedo pedirte ayuda? Con Ugo muerto, no tengo a nadie de confianza a mi lado. ¡Ya me has salvado dos veces! ¡Dos veces! Te debo mucho, estoy en deuda contigo para siempre y aun así me atrevo a pedirte otro favor. ¡Juro por la Madre Bendita, que haré que valga la pena!";
 		link.l1 = "Muy bien, eres un buen hombre para ser español. ¿Qué puedo hacer por ti, Domingo?";
 		link.l1.go = "noble_20";
 		break;
 
 	case "noble_20":
-		dialog.text = "¡Vamos a mi plantación en Portabello! Sé que mi tío está en Cartagena en este momento. Ugo mencionó algunos papeles, ¡así que revisemos los libros y documentos de Don Luis Ortiz! Podríamos encontrar algo que nos ayude a sacar su vil conspiración a la luz. Está bastante lejos de Portobelo, pero te pagaré en su totalidad por el viaje.";
+		dialog.text = "¡Vamos a mi plantación en Portabello! Sé que mi tío está en Cartagena en este momento. Ugo mencionó algunos papeles, ¡así que revisemos los libros y documentos de Don Luis Ortiz! Podríamos encontrar algo que nos ayude a sacar su vil conspiración a la luz. Está bastante lejos de Portobello, pero te pagaré en su totalidad por el viaje.";
 		link.l1 = "Sería absurdo rechazarle en este punto, Don Domingo. Estoy demasiado involucrado para echarme atrás ahora.";
 		link.l1.go = "noble_21";
 		break;
@@ -290,7 +290,7 @@ void ProcessDialogEvent()
 
 	case "noble_31":
 		dialog.text = "¡Me importa un comino si está de acuerdo o no! ¡Soy el marqués Domingo Ortiz Albalate y Luis Ortiz no es más que un arrendatario, y un antiguo arrendatario en eso! Y él...";
-		link.l1 = "Tranquilízate, señor. Eres un rostro desconocido aquí y yo soy un francés navegando bajo licencia holandesa con un... pasado turbio con las patrullas antipiratería españolas. En cuanto a tu tío, prácticamente posee esta ciudad. Piensa en los guardias y el gobernador local. ¿Crees que elegirán tu lado?";
+		link.l1 = "Tranquilízate, señor. Eres un rostro desconocido aquí y yo soy un francés navegando bajo licencia holandesa con un... pasado turbio con las patrullas antipiratería españolas. En cuanto a tu tío, prácticamente posee esta ciudad. Piensa en los guardias y el gobernador. ¿Crees que elegirán tu lado?";
 		link.l1.go = "noble_32";
 		break;
 
@@ -433,7 +433,7 @@ void ProcessDialogEvent()
 	case "uncle":
 		PlaySound("Voice\Spanish\OliverTrast02.wav");
 		dialog.text = "Parece que llegué a tiempo. Mi despreocupado sobrino y su ángel guardián, el capitán " + GetFullName(pchar) + ". No te sorprendas tanto, francés, sé quién eres.";
-		link.l1 = "Luis Ortiz?";
+		link.l1 = "¿Luis Ortiz?";
 		link.l1.go = "uncle_1";
 		break;
 
@@ -515,7 +515,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ugo_3":
-		dialog.text = "¡Madre de Dios! ¡Qué historias tan espantosas cuentas aquí! Debo ver al comandante inmediatamente - ¡para advertirle sobre los peligros que enfrenta Don Domingo ahora mismo! ¡Señor, debe irse y yo debo apresurarme!";
+		dialog.text = "¡Madre de Dios! ¡Qué historias tan espantosas cuentas aquí! Debo ver al comandante inmediatamente, ¡para advertirle sobre los peligros que enfrenta Don Domingo ahora mismo! ¡Señor, debe irse y yo debo apresurarme!";
 		link.l1 = "Tómalo con calma, Ugo. Tu joven amo está a salvo. Mencionó que sus documentos están en orden, se suponía que ya debían liberarlo, por eso estoy aquí. Creo que deberíamos verlo pronto.";
 		link.l1.go = "ugo_4";
 		break;
@@ -524,7 +524,7 @@ void ProcessDialogEvent()
 		dialog.text = "¡Oh! ¿Cómo pudiste? Mi joven amo, ese chico ingenuo, ¿y en manos de esos franceses comedores de ranas?! ¿Sin mencionar a los ladrones que amenazan su vida? No, debo ver al comandante. ¡Señor, por favor, vaya!";
 		link.l1 = "Está bien, está bien, no seas tan insistente. Me voy.";
 		link.l1.go = "ugo_exit";
-		link.l2 = "Señor, ¿por qué tan nervioso? Ya le dije que no hay peligro para su amo. Déjeme quedarme aquí y esperar la llegada del Señor Domingo, estoy muy cansado de mi largo viaje y agradecería su hospitalidad. Me gustaría un poco de agua fresca y un baño caliente para enjuagar la brisa salada de mi garganta. Luego puede ir al cuartel local y hacer lo que quiera.";
+		link.l2 = "Señor, ¿por qué tan nervioso? Ya le dije que no hay peligro para su amo. Déjeme quedarme aquí y esperar la llegada del Señor Domingo, estoy muy cansado de mi largo viaje y agradecería su hospitalidad. Me gustaría un poco de agua fresca y un baño caliente para enjuagar la brisa salada de mi garganta. Luego puede ir al cuartel y hacer lo que quiera.";
 		link.l2.go = "ugo_5";
 		break;
 

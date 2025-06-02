@@ -1,16 +1,16 @@
 GoldenGirl_1
 {
-Did you hear about that pricey courtesan from the North Colonies who is now running the house of joy in St. Pierre? They say she throws private parties from time to time - only the best of high society is allowed to attend. Best wine, gorgeous women and unlimited gambling, everything a true noble values. Getting an invitation there is worth a killing.
+Czy słyszałeś o tej kurtyzanie z Kolonii Północnych, która teraz prowadzi dom publiczny w St. Pierre? Mówią, że od czasu do czasu organizuje prywatne przyjęcia – mogą w nich uczestniczyć tylko najlepsi przedstawiciele wyższych sfer. Najlepsze wino, piękne kobiety i nieograniczony hazard, wszystko to prawdziwie szlachetne wartości. Warto jest zabić za takie zaproszenie.
 }
 
 GoldenGirl_2
 {
-The say Marquise Botot herself is now a guest of St. Pierre. The most of expensive woman of New France. Sometime she throws parties for creme de la creme only. The true nest for the most gracious vices. They say one banker gambled away his very own bank there, imagine that. Alas, without an invitation even the richest are unwelcome.
+Mówią, że sama Marquise Botot jest teraz gościem w St. Pierre. Najdroższa w utrzymaniu kobieta Nowej Francji. Czasami wydaje przyjęcia tylko dla śmietanki towarzyskiej. Mówią, że pewien bankier przegrał tam swój własny bank, wyobraź to sobie. Niestety, bez zaproszenia nawet najbogatsi są niemile widziani.
 }
 
 GoldenGirl_3
 {
-St. Pierre's brothel is now being run by an elite courtesan. The place itself didn't change much, but the private parties she throws there... Folk tell stories. That it is like in good old Paris - best wine, best wenches, best company. And most peculiar guests - like Spanish admirals and pirate barons! Unbelievable, aye?
+Zamtuz w St. Pierre jest teraz prowadzony przez elitarną kurtyzanę. Samo miejsce niewiele się zmieniło, ale prywatne przyjęcia, które tam urządza... Ludzie opowiadają historie. Że jest tam jak w starym dobrym Paryżu - najlepsze wino, najlepsze dziewki, najlepsze towarzystwo. I najbardziej osobliwi goście - jak hiszpańscy admirałowie i piraccy baronowie! Niewiarygodne, co?
 }
 
 GoldenGirl_4
@@ -60,7 +60,7 @@ Vasces
 
 GoldenGirl_14
 {
-Exploration mode: timer is not disabled. Meet the deadline!
+Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!
 }
 
 GoldenGirl_15
@@ -70,15 +70,15 @@ Nayade
 
 GoldenGirl_16
 {
-They say madam Botot disappeared and left her luxury house to her trusted manager. Imagine all the sorrow fallen upon noble youngsters!
+Mówią, że pani Botot zniknęła i zostawiła swój luksusowy dom zaufanemu menadżerowi. Wyobraź sobie, ile smutku spadło na szlachetnych młodzieńców!
 }
 
 GoldenGirl_17
 {
-Next morning...
+Następnego ranka...
 }
 
 GoldenGirl_18
 {
-A few days have passed....@<NewStr()>You and baronet Courtney arrived to Guadeloupe
+Minęło kilka dni....@<NewStr()>Ty i baronet Courtney przybyliście na Gwadelupę
 }

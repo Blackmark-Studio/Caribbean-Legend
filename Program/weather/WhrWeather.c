@@ -90,7 +90,7 @@ void SetDayCycle(string sType)
 }
 
 void GenerateSkyCurrentDay()
-{		
+{
 	int		iYear, iMonth, iDay, dDay;
 	float   fTime;
 	bool 	isGenerated = false, 
@@ -99,7 +99,7 @@ void GenerateSkyCurrentDay()
 	float	dTime = 0.0;
 	
 	//~!~ TODO добавить зависимость от сезона дождей	
-	if(CheckAttribute(&WeatherParams,"weather_sky") && !bMainMenu) 	// есть погода текущего дня и не главное меню
+	if(CheckAttribute(&WeatherParams,"weather_sky.year") && !bMainMenu) // есть погода текущего дня и не главное меню
 	{
 		iYear 	= sti(WeatherParams.weather_sky.year);
 		iMonth 	= sti(WeatherParams.weather_sky.month);
@@ -146,8 +146,8 @@ void GenerateSkyCurrentDay()
 			case 2: WeatherParams.weather_sky = 3; 	break;	// серьёзная облачность				
 		}	
 		isGenerated = true;
-	}	
-	
+	}
+
 	if(isGenerated && !bMainMenu)
 	{
 		// запоминаем время генерации
@@ -433,7 +433,7 @@ void Whr_ChangeDayNight()
 			{
 		        iCharIdx = Ships[j];
                 if (iCharIdx < 0 || iCharIdx >= TOTAL_CHARACTERS) continue;
-                rChar = GetCharacter(Ships[j]);
+                rChar = GetCharacter(iCharIdx);
 				Ship_SetLightsAndFlares(rChar);	
 				SendMessage(rChar, "ll", MSG_SHIP_LIGHTSRESET,sti(Sea.Lights));
 			}			
@@ -798,7 +798,9 @@ void Whr_WindChange()
 	if(sti(InterfaceStates.DIRECTSAIL) != 0 && bSeaActive && !bAbordageStarted)  // belamour по чекбоксу
 	{	
 		CheckIslandChange();
-	}	
+	}
+
+    Event("event_WindChange");
 }
 
 bool Whr_isRainEnable()
@@ -1468,7 +1470,7 @@ void CreateWeatherEnvironment()
 	Whr_ModifySeaFog( fWeatherSpeed );
 	Whr_DebugLog(" GetTime() : " + GetTime());
     SetCameraForWeather();
-	if (!bQuestlockWeather) Event("WeatherTimeUpdate", "f",GetTime());
+	if (!bQuestlockWeather) Event("WeatherTimeUpdate", "f", GetTime());
 }
 
 void Whr_LoadNextWeather(int nPlus)
@@ -1596,7 +1598,15 @@ bool Whr_CheckNewBoardingDeck()
 				|| loc.id == "boarding_4_war"
 				|| loc.id == "boarding_4_trade"
 				|| loc.id == "boarding_5_war"
-				|| loc.id == "boarding_5_trade")
+				|| loc.id == "boarding_5_trade"
+				|| loc.id == "Ship_deck_Medium_trade"
+				|| loc.id == "Ship_deck_Medium_war"
+				|| loc.id == "Ship_deck_Low"
+				|| loc.id == "Deck_Near_Ship"
+				|| loc.id == "Deck_Near_Ship_Medium_war"
+				|| loc.id == "Deck_Near_Ship_Memento"
+				|| loc.id == "Ship_deck_Memento"
+				|| loc.id == "Quest_Ship_deck_Medium_trade")
 			{
 				return true;
 			}

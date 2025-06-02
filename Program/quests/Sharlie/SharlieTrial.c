@@ -314,16 +314,24 @@ void Rum_FindLugger(string qName)//вышли в море - ставим люг�
 	pchar.quest.Sharlie_rum2.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 	pchar.quest.Sharlie_rum2.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
 	pchar.quest.Sharlie_rum2.function = "Rum_FindLuggerOver";
-	DoQuestFunctionDelay("Rum_NewGameTip0", 2.0);
+	DoQuestFunctionDelay("Rum_NewGameTip1", 2.0);
 	pchar.questTemp.Sharlie.Rum.Tip0 = true;
 	pchar.questTemp.Sharlie.Rum.Tip1 = true;
 	QuestPointerDelLoc("fortfrance_town", "reload", "reload1_back");
 }
 
-void Rum_NewGameTip0(string qName) 
+void Rum_NewGameTip0(string qName) // Обучение уехало в новый туториал 
 {
 	LaunchTutorial("Navigation", 1);
-	if(!SandBoxMode) DoQuestFunctionDelay("Rum_NewGameTip1", 15.0);
+    if(bGlobalTutor) DoQuestFunctionDelay("SharlieTutorial_ActivateButtonInTheSea_1", 15.0);
+    /*if(bGlobalTutor)
+    {
+        DontRefreshBLI = false;
+        DeleteAttribute(pchar, "systeminfo.BLIoff");
+        TW_InitSea_1_Turn();
+        TW_Open("sea");
+	}*/
+	//if(!SandBoxMode) DoQuestFunctionDelay("Rum_NewGameTip1", 15.0);
 }
 
 void Rum_NewGameTip1(string qName) {
@@ -731,12 +739,6 @@ void Junglejew_KillVictim_5(string qName)
 	locCameraToPos(47.45, 2.40, -33.20, true);
 	locCameraTarget(PChar);
 	locCameraFollow();
-	DoQuestFunctionDelay("Junglejew_KillVictim_6", 6.2);
-}
-
-void Junglejew_KillVictim_6(string qName)
-{
-	NewGameTip(StringFromKey("SharlieTrial_16"));
 }
 
 void Junglejew_Findjew(string qName)//нашли драгоценность
@@ -1240,15 +1242,20 @@ void Tichingitu_AddQuestMark_Delay(string qName)
 	AddLandQuestMark(characterFromId("BasterJailOff"), "questmarkmain");
 }
 
-void Sharlie_GambitStage(string qName)//переход на голландский гамбит
+void Sharlie_GambitStage_level_9(string qName)//переход на голландский гамбит
 {
 	pchar.questTemp.Sharlie = "gambitstage";
 	sld = characterFromId("Mishelle");
 	sld.dialog.currentnode = "First time";
 	sld.greeting = "mishelle_2";
-	// Rebbebion, марки на Мишеля и Сен-Пьер
+	AddQuestRecord("Sharlie", "20_1");
+}
+
+void Sharlie_GambitStage_level_12(string qName)
+{
 	AddLandQuestMark(sld, "questmarkmain");
-	AddMapQuestMarkCity("FortFrance", true);
+	AddMapQuestMarkCity("FortFrance", false);
+	AddQuestRecord("Sharlie", "20_2");
 }
 
 void Persian_FindSkimitar(string qName)// скимитар 021012
@@ -1653,6 +1660,7 @@ void Sharlie_TrialOver(string qName)// пропустил сроки
 	DelMapQuestMarkCity("BasTer");
 	
 	pchar.questTemp.Trial.late = true;
+	pchar.questTemp.TrialEnd = true;
 }
 
 void Trial_StartLine(string qName)// начало линейки
@@ -1680,6 +1688,7 @@ void Trial_LineOver(string qName)// пропустил сроки
 	AddQuestRecord("Trial", "2");
 	CloseQuestHeader("Trial");
 	DeleteAttribute(pchar, "questTemp.Trial");
+	pchar.questTemp.TrialEnd = true;
 }
 
 void Trial_LecruaHide(string qName)// 
@@ -1695,10 +1704,11 @@ void Trial_FrahtFail(string qName)// провалил 1 задание
 	AddQuestRecord("Trial", "5");
 	CloseQuestHeader("Trial");
 	DeleteAttribute(pchar, "questTemp.Trial");
+	pchar.questTemp.TrialEnd = true;
 	PChar.quest.VsD_DiegoNachalo.over = "yes";
 	ChangeCharacterNationReputation(pchar, FRANCE, -12);
 	DelMapQuestMarkCity("PortPax");
-	if(CheckAttribute(pchar,"worldmapencountersoff")) DeleteAttribute(pchar,"worldmapencountersoff");
+	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_CreateFlorianFrigate(string qName)// ставим фрегат Флориана Шоке
@@ -1747,6 +1757,7 @@ void Trial_CannonFail(string qName)// провалил 2 задание
 	AddQuestRecord("Trial", "8");
 	CloseQuestHeader("Trial");
 	DeleteAttribute(pchar, "questTemp.Trial");
+	pchar.questTemp.TrialEnd = true;
 	ChangeCharacterNationReputation(pchar, FRANCE, -15);
 	//DelMapQuestMarkCity("PortoBello");
 	DelMapQuestMarkShore("shore47");
@@ -1757,7 +1768,7 @@ void Trial_CannonFail(string qName)// провалил 2 задание
 		DelLandQuestMark(sld);
 		DelMapQuestMarkCity("PortRoyal");
 	}
-	if(CheckAttribute(pchar,"worldmapencountersoff")) DeleteAttribute(pchar,"worldmapencountersoff");
+	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_FlorianAfterBattle(string qName)// напал на Флориана Шоке
@@ -1768,6 +1779,7 @@ void Trial_FlorianAfterBattle(string qName)// напал на Флориана �
 	AddQuestRecord("Trial", "9");
 	CloseQuestHeader("Trial");
 	DeleteAttribute(pchar, "questTemp.Trial");
+	pchar.questTemp.TrialEnd = true;
 	ChangeCharacterNationReputation(pchar, FRANCE, -60);
 	DelMapQuestMarkShore("shore47");
 	sld = CharacterFromID("PortRoyal_shipyarder");
@@ -1777,7 +1789,7 @@ void Trial_FlorianAfterBattle(string qName)// напал на Флориана �
 		DelLandQuestMark(sld);
 		DelMapQuestMarkCity("PortRoyal");
 	}
-	if(CheckAttribute(pchar,"worldmapencountersoff")) DeleteAttribute(pchar,"worldmapencountersoff");
+	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_TakeCannons()// выгрузка
@@ -1876,6 +1888,7 @@ void Trial_SpyTimeOver(string qName) //время на шпионаж вышло
 	AddQuestRecord("Trial", "18");
 	CloseQuestHeader("Trial");
 	DeleteAttribute(pchar, "questTemp.Trial");
+	pchar.questTemp.TrialEnd = true;
 	pchar.quest.Trial_CreatHabitue.over = "yes";
 	if(CheckAttribute(pchar,"questTemp.trialHabitueId"))
 	{
@@ -1886,7 +1899,7 @@ void Trial_SpyTimeOver(string qName) //время на шпионаж вышло
 			DeleteAttribute(pchar,"questTemp.trialHabitueId");
 		}
 	}
-	if(CheckAttribute(pchar,"worldmapencountersoff")) DeleteAttribute(pchar,"worldmapencountersoff");
+	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_TavernEnterSoldiers() //неверный путь в таверне
@@ -1951,7 +1964,7 @@ void Trial_CreatePueblaBarqueInWorld()//запускаем барк 'Пуэбл�
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
 	sld = GetCharacter(NPC_GenerateCharacter(sCapId, "off_spa_"+(rand(1)+1), "man", "man", iRank, SPAIN, 3, true, "soldier"));
-	FantomMakeSmallSailor(sld, SHIP_BARQUE, StringFromKey("SharlieTrial_39"), CANNON_TYPE_CANNON_LBS6, iScl+10, iScl, iScl, iScl, iScl);
+	FantomMakeSmallSailor(sld, SHIP_BARKENTINE, StringFromKey("SharlieTrial_39"), CANNON_TYPE_CANNON_LBS3, iScl+10, iScl, iScl, iScl, iScl);
 	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_14", "pistol1", "bullet", iScl*2);
 	SetCharacterPerk(sld, "HullDamageUp");
 	SetCharacterPerk(sld, "SailsDamageUp");
@@ -1960,7 +1973,8 @@ void Trial_CreatePueblaBarqueInWorld()//запускаем барк 'Пуэбл�
 	SetCharacterPerk(sld, "AdvancedBattleState");
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	AddCharacterGoods(sld, GOOD_POWDER, 2000); // patch-6
+	UpgradeShipParameter(sld, "Capacity");
+	AddCharacterGoods(sld,GOOD_POWDER, GetCharacterFreeSpace(sld, GOOD_POWDER));
 	sld.AlwaysEnemy = true;
 	sld.DontRansackCaptain = true;
 	sld.Ship.Mode = "war";
@@ -2006,7 +2020,7 @@ void Trial_Pueblabarque_AfterBattle(string qName)// уничтожили
 	AddComplexSeaExpToScill(50, 50, 50, 50, 50, 50, 0);
 	ChangeCharacterNationReputation(pchar, SPAIN, -3);
 	ChangeCharacterComplexReputation(pchar, "fame", 1);
-	if(CheckAttribute(pchar,"worldmapencountersoff")) DeleteAttribute(pchar,"worldmapencountersoff");
+	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_Pueblabarque_Check(string qName)// истекло время энкаунтера или уничтожен
@@ -2030,7 +2044,8 @@ void Trial_Pueblabarque_Result(string qName) // результаты
 		AddQuestRecord("Trial", "20");
 		CloseQuestHeader("Trial");
 		DeleteAttribute(pchar, "questTemp.Trial");
-		if(CheckAttribute(pchar,"worldmapencountersoff")) DeleteAttribute(pchar,"worldmapencountersoff");
+		pchar.questTemp.TrialEnd = true;
+		DeleteAttribute(pchar,"worldmapencountersoff");
 	}
 } // <-- 170712
 
@@ -2051,9 +2066,11 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	
 	if (sQuestName == "Sharlie_Start")
 	{
+			SetCurrentTime(11, 30);
+			CreateWeatherEnvironment();
 			CreateSea(EXECUTE, REALIZE);
 			CreateWeather(EXECUTE,REALIZE);
-			LoadMainCharacterInFirstLocationGroup("My_Campus", "rld", "loc2");
+			//LoadMainCharacterInFirstLocationGroup("My_Campus", "rld", "loc2");
 			sld = GetCharacter(NPC_GenerateCharacter("Sh_startsailor", "citiz_39", "man", "man", 10, FRANCE, 0, false, "quest"));
 			FantomMakeCoolFighter(sld, 10, 10, 10, "blade_10", "pistol1", "bullet", 10);
 			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
@@ -2069,6 +2086,9 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Sharlie_onLand")//старт линейки
 	{
+			SetMusic("classic_fra_music_day");
+			LAi_SetPlayerType(pchar);
+			TeleportCharacterToPos(pchar, 0.81, 0.60, 78.65);
 			LocatorReloadEnterDisable("Fortfrance_town", "reload5_back", true);//закроем верфь
 			LocatorReloadEnterDisable("Fortfrance_town", "basement1", true);//закроем подземелье
 			LocatorReloadEnterDisable("Fortfrance_town", "reloadPr1", true);//закроем базу
@@ -2119,7 +2139,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			i = FindColony("Tortuga");
 			colonies[i].DontSetShipInPort = true;//не ставить в порту корабли
 			pchar.GenQuest.MapClosedNoBattle = true;
-			pchar.questTemp.TimeLock = true; // cle
+			//pchar.questTemp.TimeLock = true; // cle
 			AddLandQuestMark(characterFromId("FortFrance_shipyarder"), "questmarkmain");
 			AddLandQuestMark(characterFromId("FortFrance_Mayor"), "questmarkmain");
 			//DoQuestCheckDelay("NgtF3", 3.0);
@@ -2136,16 +2156,15 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			LAi_SetLoginTime(sld, 6.0, 21.99);
 			AddLandQuestMark(sld, "questmarkmain");
 			SetFunctionTimerCondition("Tutorial_Salary", 0, 0, 28, true);
-			pchar.questTemp.Tutorial_Dubloons = true;
 			pchar.systeminfo.tutorial.health = true;
-			pchar.systeminfo.tutorial.amulet = true;
 			pchar.systeminfo.tutorial.Perk = true;
 			pchar.systeminfo.tutorial.BoardingTactics = true;
-			pchar.quest.Tutorial_Mushket.win_condition.l1 = "mushket";
+			pchar.quest.Tutorial_Mushket.win_condition.l1 = "ItemGroup";
+			pchar.quest.Tutorial_Mushket.win_condition.l1.group = MUSKET_ITEM_TYPE;
 			pchar.quest.Tutorial_Mushket.function = "Tutorial_Mushket";
-			DoQuestFunctionDelay("Tutorial_CameraControl", 1.0);
+			//DoQuestFunctionDelay("Tutorial_CameraControl", 1.0);
 			//SetFunctionTimerCondition("TorrentEddy", 8, 0, 0, false);
-			// запретить боёвку в локациях
+			// остальное
 			LAi_LocationFightDisable(&Locations[FindLocation("FortFrance_town")], true);
 			LAi_LocationFightDisable(&Locations[FindLocation("FortFrance_townhall")], true);
 			LAi_LocationFightDisable(&Locations[FindLocation("FortFrance_prison")], true);
@@ -2180,7 +2199,11 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			if(CheckAttribute(pchar, "questTemp.Sharlie.Citcount"))
 				DeleteAttribute(pchar, "questTemp.Sharlie.Citcount");
 			SetFunctionExitFromLocationCondition("Sharlie_MaltieAfterJail", pchar.location, false);
-			if (CheckAttribute(pchar, "Sharlie.KnifeMonpe")) GiveItem2Character(PChar, "knife_03");
+			if (CheckAttribute(pchar, "Sharlie.KnifeMonpe")) 
+			{
+				GiveItem2Character(PChar, "knife_03");
+				EquipCharacterbyItem(PChar, "knife_03");
+			}
 			sld = characterFromId("FortFrance_Mayor");
 			LAi_CharacterEnableDialog(sld);
 			QuestPointerDelLoc("FortFrance_town", "reload", "reload3_back");
@@ -2246,7 +2269,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Guide_tavern")
 	{
 			sld = characterFromId("Guide");
-			sld.dialog.currentnode = "guide_4";
+			sld.dialog.currentnode = "guide_tavern";
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_SetStayType(pchar);
@@ -2255,7 +2278,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Guide_store")
 	{
 			sld = characterFromId("Guide");
-			sld.dialog.currentnode = "guide_6";
+			sld.dialog.currentnode = "guide_tavern";
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_SetStayType(pchar);
@@ -2264,7 +2287,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Guide_prison")
 	{
 			sld = characterFromId("Guide");
-			sld.dialog.currentnode = "guide_8";
+			sld.dialog.currentnode = "guide_prison";
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_SetStayType(pchar);
@@ -2273,7 +2296,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Guide_market")
 	{
 			sld = characterFromId("Guide");
-			sld.dialog.currentnode = "guide_10";
+			sld.dialog.currentnode = "guide_market";
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_SetStayType(pchar);
@@ -2282,7 +2305,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Guide_townhall")
 	{
 			sld = characterFromId("Guide");
-			sld.dialog.currentnode = "guide_12";
+			sld.dialog.currentnode = "guide_townhall";
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_SetPlayerType(pchar);
@@ -2291,7 +2314,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Guide_bank")
 	{
 			sld = characterFromId("Guide");
-			sld.dialog.currentnode = "guide_18";
+			sld.dialog.currentnode = "guide_bank";
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_SetStayType(pchar);
@@ -2300,7 +2323,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Guide_brothel")
 	{
 			sld = characterFromId("Guide");
-			sld.dialog.currentnode = "guide_20";
+			sld.dialog.currentnode = "guide_brothel";
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_SetStayType(pchar);
@@ -2318,7 +2341,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Guide_shipyard")
 	{
 			sld = characterFromId("Guide");
-			sld.dialog.currentnode = "guide_27";
+			sld.dialog.currentnode = "guide_shipyard";
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_SetStayType(pchar);
@@ -2327,7 +2350,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Guide_port")
 	{
 			sld = characterFromId("Guide");
-			sld.dialog.currentnode = "guide_29";
+			sld.dialog.currentnode = "guide_port";
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_SetStayType(pchar);
@@ -2336,7 +2359,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Guide_portoffice")
 	{
 			sld = characterFromId("Guide");
-			sld.dialog.currentnode = "guide_40";
+			sld.dialog.currentnode = "guide_portoffice";
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_SetStayType(pchar);
@@ -2345,7 +2368,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Guide_gate")
 	{
 			sld = characterFromId("Guide");
-			sld.dialog.currentnode = "guide_44";
+			sld.dialog.currentnode = "guide_gate";
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_SetStayType(pchar);
@@ -2683,6 +2706,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			bDisableFastReload = true;
 			chrDisableReloadToLocation = true;
 			PChar.quest.ZsI_Timer.over = "yes";
+			pchar.questTemp.CameraDialogMode = true;
 	}
 	else if (sQuestName == "ZsI_Patrul_2")
 	{

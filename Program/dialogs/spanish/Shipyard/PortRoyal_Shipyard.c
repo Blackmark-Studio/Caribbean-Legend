@@ -44,7 +44,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "mtraxx_2":
 		dialog.text = "Adquiero toda la tela de vela de seda directamente de mis clientes, o compro cantidades limitadas con un permiso especial del gobernador. Si no tienes más preguntas, por favor, déjame volver a mi trabajo.";
-		link.l1 = "  Hmm... Muy bien. Que tengas un buen día, maestro. ";
+		link.l1 = "Hmm... Muy bien. Que tengas un buen día, maestro. ";
 		link.l1.go = "mtraxx_3";
 		break;
 
@@ -56,7 +56,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "helen_upgradeship":
 		dialog.text = "¡Oh, lo sé! Qué suerte tiene, Capitán. ¿Se trata de una revisión completa de la nave? Nos encargaremos de todo; ¡nuestro astillero está a la altura de los de Plymouth!";
-		link.l1 = "Supongo que este no será un servicio gratuito?";
+		link.l1 = "Supongo que este no será un servicio gratuito...";
 		link.l1.go = "helen_upgradeship_1";
 		break;
 
@@ -67,7 +67,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "helen_upgradeship_2":
-		dialog.text = "Depende del tamaño de tu buque insignia, Capitán. Un barco de primera clase te costará cinco mil doblones, y uno de quinta clase - solo mil.";
+		dialog.text = "Depende del tamaño de tu buque insignia, Capitán. Un barco de primera clase te costará cinco mil doblones, y uno de quinta clase, solo mil.";
 		link.l1 = "Está bien, vendré a ti una vez que tome una decisión.";
 		link.l1.go = "exit";
 

@@ -72,7 +72,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Chimiset_8":
-		dialog.text = " Mi paciencia se está agotando. ¡Dirígete a la bodega de carga y haz lo que se te dice!";
+		dialog.text = "Mi paciencia se está agotando. ¡Dirígete a la bodega de carga y haz lo que se te dice!";
 		link.l1 = "Está bien, está bien, relájate. Me voy...";
 		link.l1.go = "exit";
 		NextDiag.TempNode = "Chimiset_9";

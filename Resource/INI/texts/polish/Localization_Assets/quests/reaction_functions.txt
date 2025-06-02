@@ -1,21 +1,21 @@
 reaction_functions_1
 {
-Mangarosa potion overdose!
+Przedobrzyłeś miksture mangarosy!
 }
 
 reaction_functions_2
 {
-You got poisoned
+Zostałeś otruty
 }
 
 reaction_functions_3
 {
-Special Mangarosa Potion Used!
+Użyto specjalnej mikstury mangarosy!
 }
 
 reaction_functions_4
 {
-The effect of the mangarosa potion has ended
+Efekt działania eliksiru mangarosy dobiegł końca
 }
 
 reaction_functions_5

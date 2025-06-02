@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 		UnloadSegment(NPChar.FileDialog2);
 	}
 	// вызов диалога по городам <--
-	crewWhoreCost = 50 + 7 * MOD_SKILL_ENEMY_RATE - drand(40);
+	crewWhoreCost = 50 + 7 * MOD_SKILL_ENEMY_RATE - hrand(40);
 	charWhoreCost = 2460 + sti(pchar.rank) * 40;
 
 	switch (Dialog.CurrentNode)
@@ -146,7 +146,7 @@ void ProcessDialogEvent()
 
 		if (npchar.quest.meeting == "0")
 		{
-			dialog.text = RandPhraseSimple(TimeGreeting() + ". Bienvenido a mi casa de amor. Mi nombre es " + npchar.name + ", y soy el propietario. " + GetSexPhrase("¿Qué puedo hacer por ti, " + GetAddress_Form(NPChar) + "?", "Sinceramente, estoy un poco sorprendido de verte aquí, " + GetAddress_Form(NPChar) + ", pero te aseguro que prestamos servicios no solo para hombres.") + "", TimeGreeting() + ". Te doy la bienvenida, " + GetSexPhrase("desconocido", "señorita") + ", a mi humilde establecimiento. Permíteme presentarme, yo soy " + NPChar.Name + " - titular de este asilo para hombres hambrientos de un toque femenino. " + GetSexPhrase("¿Qué puedo hacer por ti?", "Aunque también tenemos una cosa o dos para las damas...") + "");
+			dialog.text = RandPhraseSimple(TimeGreeting() + ". Bienvenido a mi casa de amor. Mi nombre es " + npchar.name + ", y soy el propietario. " + GetSexPhrase("¿Qué puedo hacer por ti, " + GetAddress_Form(NPChar) + "?", "Sinceramente, estoy un poco sorprendido de verte aquí, " + GetAddress_Form(NPChar) + ", pero te aseguro que prestamos servicios no solo para hombres.") + "", TimeGreeting() + ". Te doy la bienvenida, " + GetSexPhrase("desconocido", "señorita") + ", a mi humilde establecimiento. Permíteme presentarme, soy " + NPChar.Name + ", titular de este asilo para hombres hambrientos de un toque femenino. " + GetSexPhrase("¿Qué puedo hacer por ti?", "Aunque también tenemos una cosa o dos para las damas...") + "");
 			npchar.quest.meeting = "1";
 		}
 		else
@@ -246,10 +246,10 @@ void ProcessDialogEvent()
 		{
 			if (CheckNPCQuestDate(npchar, "quest.date"))
 			{
-				dialog.text = "" + GetSexPhrase("Siempre estamos felices de atender a un cliente. Ahora dime, guapo - ¿ya has elegido a alguien o no te importa mucho?", "Bueno, mis chicas ciertamente pueden... ayudarte. ¿Ya has escogido a alguien o no te importa mucho?") + "";
+				dialog.text = "" + GetSexPhrase("Siempre estamos felices de atender a un cliente. Ahora dime, guapo, ¿ya has elegido a alguien o no te importa mucho?", "Bueno, mis chicas ciertamente pueden... ayudarte. ¿Ya has escogido a alguien o no te importa mucho?") + "";
 				Link.l1 = "" + GetSexPhrase("Je, solo necesito una puta y la necesito ahora mismo. No me importa cuál, todas tus chicas me parecen buenas...", "Cualquiera estará bien si conoce sus deberes, por supuesto...") + "";
 				Link.l1.go = "Hostess_NotChoice";
-				Link.l2 = "Sí, hay uno, " + GetSexPhrase("¿quién despertó mi interés...", "sería la más agradable...") + "";
+				Link.l2 = "Sí, hay una " + GetSexPhrase("que despertó mi interés...", ", sería la más agradable...") + "";
 				Link.l2.go = "Hostess_Choice";
 			}
 			else
@@ -281,8 +281,8 @@ void ProcessDialogEvent()
 			// belamour legendary edition Орден Святого Людовика -->
 			if (IsEquipTalisman9() && npchar.nation == FRANCE)
 			{
-				dialog.text = "" + GetSexPhrase("¡Bueno, semental, es excelente!", "Los tengo a todos hábiles, puedes estar seguro.") + "Puedo ofrecer a una hermosa chica llamada " + GetFullName(sld) + ", ella está libre ahora.\n¡Oh, qué es esto que escondes tan modestamente allí?! ¿Es esta la máxima condecoración en Francia? Se rumorea que los portadores de esta insignia son legendarios no solo en el campo de batalla... Bueno, sabes a lo que me refiero, mi filibustero... Además, cualquiera consideraría un honor tocar tu 'Orden', así que hoy descansas a cuenta de mi institución. No se aceptan rechazos, guapo.";
-				Link.l1 = "¡Por supuesto que estoy de acuerdo, qué preguntas puede haber?!";
+				dialog.text = "" + GetSexPhrase("¡Bueno, semental, es excelente!", "Los tengo a todos hábiles, puedes estar segura.") + " Puedo ofrecer a una hermosa chica llamada " + GetFullName(sld) + ", ella está libre ahora.\n¡Oh!, ¿qué es esto que escondes tan modestamente allí? ¿Es esta la máxima condecoración en Francia? Se rumorea que los portadores de esta insignia son legendarios no solo en el campo de batalla... Bueno, sabes a lo que me refiero, mi filibustero... Además, cualquiera consideraría un honor tocar tu 'Orden', así que hoy descansas a cuenta de mi institución. No se aceptan rechazos, guapo.";
+				Link.l1 = "¡Por supuesto que estoy de acuerdo!, ¿qué duda puede haber?";
 				Link.l1.go = "Hostess_NotChoice_agree";
 				npchar.quest.choiceIdx = sld.index;
 				break;
@@ -293,7 +293,7 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit";
 			if (sti(pchar.money) >= (sti(sld.quest.price) + charWhoreCost))
 			{
-				Link.l2 = "¡Por supuesto, ¿cómo podría negarme?!";
+				Link.l2 = "¡Por supuesto!, ¿cómo podría negarme?";
 				Link.l2.go = "Hostess_NotChoice_agree";
 				npchar.quest.choiceIdx = sld.index;
 			}
@@ -309,7 +309,7 @@ void ProcessDialogEvent()
 		sld = &characters[sti(npchar.quest.choiceIdx)];
 		if (sti(pchar.money) >= (sti(sld.quest.price) + charWhoreCost))
 		{
-			dialog.text = "Bien, " + GetSexPhrase("guapo", "hermoso") + ". " + sld.name + " te estará esperando en una habitación privada en el segundo piso.";
+			dialog.text = "Bien, " + GetSexPhrase("guapo", "hermosa") + ". " + sld.name + " te estará esperando en una habitación privada en el segundo piso.";
 			Link.l1 = "" + GetSexPhrase("Bien, entonces voy", "Bien, entonces voy") + "...";
 			Link.l1.go = "exit";
 			// belamour legendary edition деньги только без ордена или адмиральского мундира
@@ -515,7 +515,7 @@ void ProcessDialogEvent()
 		{
 			sld = CharacterFromID(pchar.RomNaTroih_Shluha);
 			dialog.text = "" + sld.name + "¡Mi héroe, veo que no has desperdiciado tu tiempo abajo!";
-			link.l1 = "Espero que me perdonéis esta debilidad, mi reina?";
+			link.l1 = "Espero que me perdonéis esta debilidad, mi reina.";
 			link.l1.go = "RomNaTroih_2";
 		}
 		AddDialogExitQuestFunction("SexWithHostess_fack");
@@ -534,7 +534,7 @@ void ProcessDialogEvent()
 	case "Horse_talk":
 		if (LAi_grp_playeralarm > 0)
 		{
-			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("¡Será mejor que abandones el establecimiento!", "¡Todos los guardias en la ciudad te están buscando! Será mejor que te vayas...", "¡Has hecho un desastre y ahora apareces aquí?! No, no esta vez..."), LinkRandPhrase("¡Pierde el rastro!", "¡Sucio asesino, lárgate de aquí! ¡Guardias!", "No tengo miedo de ti," + GetSexPhrase("granuja", "rata") + "¡Pronto serás colgado en nuestro fuerte, no llegarás lejos..."));
+			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("¡Será mejor que abandones el establecimiento!", "¡Todos los guardias en la ciudad te están buscando! Será mejor que te vayas...", "¡¿Has hecho un desastre y ahora apareces aquí?! No, no esta vez..."), LinkRandPhrase("¡Pierde el rastro!", "¡Sucio asesino, lárgate de aquí! ¡Guardias!", "No tengo miedo de ti," + GetSexPhrase("granuja", "rata") + "¡Pronto serás colgado en nuestro fuerte, no llegarás lejos..."));
 			link.l1 = NPCharRepPhrase(pchar, RandPhraseSimple("Je, una alarma nunca es un problema para mí...", "Jamás me atraparán."), RandPhraseSimple("Je, qué estúpida moza eres...", "Cierra la boca, puta, o la cerraré con algo más..."));
 			link.l1.go = "exit";
 			break;
@@ -850,6 +850,7 @@ void ProcessDialogEvent()
 		if (TargetLocation != "")
 		{
 			Locations[FindLocation(TargetLocation)].DisableEncounters = true;
+			LAi_LocationDisableOfficersGen(TargetLocation, true);
 			pchar.quest.ReasonToFast_MeetPatrol.win_condition.l1 = "location";
 			pchar.quest.ReasonToFast_MeetPatrol.win_condition.l1.location = TargetLocation;
 			pchar.quest.ReasonToFast_MeetPatrol.function = "ReasonToFast_MeetPatrolShore";
@@ -1112,7 +1113,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Portugal_4":
-		dialog.text = "¡Oh, Capitán, no entiendes! Él era uno de... bueno, ya sabes, se les llama cazadores de recompensas - mercenarios, persiguen a piratas y ladrones y los eliminan. Pero, no era el más afortunado, por decir lo menos.\nNo hace mucho, finalmente despilfarró y perdió a su tripulación y barco, desde entonces ha estado flotando en el fondo de su jarra, día tras día. Yo, por viejos recuerdos, le permito venir aquí a veces. Él está tan... tan lamentable ahora. Era el hombre más guapo de nuestro pueblo en la costa de La Mancha, y míralo ahora.\nSé que él te prometió algo, ¡y pagaste de tu bolsillo! Te devolveré este dinero, solo no le hagas nada malo, te lo suplico, capitán!";
+		dialog.text = "¡Oh, Capitán, no lo entiendes! Él era uno de... bueno, se les llama cazadores de recompensas, mercenarios, persiguen a piratas y ladrones y los eliminan. Pero, no era el más afortunado, por decir lo menos.\nNo hace mucho, finalmente despilfarró y perdió a su tripulación y barco, desde entonces ha estado flotando en el fondo de su jarra, día tras día. Yo, por viejos recuerdos, le permito venir aquí a veces. Él está tan... tan lamentable ahora. Era el hombre más guapo de nuestro pueblo en la costa de La Mancha, y míralo ahora.\nSé que él te prometió algo, ¡y pagaste de tu bolsillo! Te devolveré este dinero, solo no le hagas nada malo, te lo suplico, capitán!";
 		link.l1 = "Bien, está bien, señora, lo entiendo. Mantén el dinero, es tuyo. En cuanto a tu amigo, prometo que no le haré daño. Y ahora permíteme retirarme, tengo algunos asuntos que atender. Además, me alegró poder ayudar a una dama tan hermosa.";
 		link.l1.go = "Portugal_5";
 		break;
@@ -1146,7 +1147,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "mtraxx_3":
-		dialog.text = "Bueno entonces. Hace una semana, un barco militar llegó a Santo Domingo. Estaba dañado, ya sea por una tormenta o una pelea, por lo que las reparaciones comenzaron de inmediato, y la tripulación se trasladó al fuerte. Su capitán, sin embargo, pasó todo su tiempo libre aquí. Durante dos días seguidos estuvo bebiendo y relajándose acompañado de una de nuestras chicas. Fue ella quien recibió la piedra preciosa, y no solo una. No paraba de presumir de ello - Lolita nos permite quedarnos con los regalos de los clientes\nLa tonta niña ni siquiera sabía el verdadero valor del regalo, mientras que yo lo evalué de inmediato. Cuando me contó cómo el capitán borracho se jactó de una montaña llena de ámbares, envié rápidamente una carta a Tyrex...";
+		dialog.text = "Bueno entonces. Hace una semana, un barco militar llegó a Santo Domingo. Estaba dañado, ya sea por una tormenta o una pelea, por lo que las reparaciones comenzaron de inmediato, y la tripulación se trasladó al fuerte. Su capitán, sin embargo, pasó todo su tiempo libre aquí. Durante dos días seguidos estuvo bebiendo y relajándose acompañado de una de nuestras chicas. Fue ella quien recibió la piedra preciosa, y no solo una. No paraba de presumir de ello, Lolita nos permite quedarnos con los regalos de los clientes\nLa tonta niña ni siquiera sabía el verdadero valor del regalo, mientras que yo lo evalué de inmediato. Cuando me contó cómo el capitán borracho se jactó de una montaña llena de ámbares, envié rápidamente una carta a Tyrex...";
 		link.l1 = "";
 		link.l1.go = "mtraxx_4";
 		break;

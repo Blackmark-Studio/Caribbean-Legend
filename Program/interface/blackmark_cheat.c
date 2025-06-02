@@ -843,7 +843,7 @@ void CalculateInfoDataF21()
 string descF22 = "Освятить корабль";
 void CalculateInfoDataF22()
 {
-    if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && !CheckAttribute(pchar, "GenQuest.Shipshine") && 6-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+    if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
 	{
 		totalInfo = descF22;
 		Pchar.GenQuest.Shipshine = true;

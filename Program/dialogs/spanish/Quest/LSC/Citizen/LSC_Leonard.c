@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "facio_3":
-		dialog.text = "Estoy llegando al punto, simplemente no lo ves todavía. Bien. Seré específico. Hay un bastardo gordo y feo en la Isla - Giuseppe Fazio. Una rara escoria. Despelleja vivos a los Narvales, Rivados y a los lugareños. Lo he estado vigilando por un tiempo y finalmente tengo algo.  \nHay dos cofres en su cabaña en Carolina: el primero contiene papeles, el segundo contiene oro y plata. Ambos están cerrados con diferentes llaves. El gordo siempre lleva las llaves consigo.";
+		dialog.text = "Estoy llegando al punto, simplemente no lo ves todavía. Bien. Seré específico. Hay un bastardo gordo y feo en la Isla, Giuseppe Fazio. Una rara escoria. Despelleja vivos a los Narvales, Rivados y a los lugareños. Lo he estado vigilando por un tiempo y finalmente tengo algo.  \nHay dos cofres en su cabaña en Carolina: el primero contiene papeles, el segundo contiene oro y plata. Ambos están cerrados con diferentes llaves. El gordo siempre lleva las llaves consigo.";
 		link.l1 = "Bueno, ¿parece que vas a robar a Fazio? No participaré en eso. Y será mejor que te alegres de que no se lo cuente a nadie. Si quieres revisar el cofre del gordo, deberías encontrar otro compañero.";
 		link.l1.go = "facio_exit";
 		link.l2 = "¡Ja! ¡Interesante! Continúa...";
@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		NextDiag.CurrentNode = "facio_wait";
 		pchar.questTemp.LSC.Drink = "begin";
-		pchar.questTemp.LSC.Drink.Chance = drand(100); // итог бухалова
+		pchar.questTemp.LSC.Drink.Chance = hrand(100); // итог бухалова
 		if (CheckAttribute(pchar, "questTemp.CanDrink"))
 			pchar.questTemp.LSC.Drink.Chance = sti(pchar.questTemp.LSC.Drink.Chance) + 50;
 		SetFunctionTimerCondition("LSC_DrinkOver", 0, 0, 3, false); // 3 дня
@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			link.l1 = " He tomado del cofre " + sPeso + " y " + sDubl + "";
+			link.l1 = "He tomado del cofre " + sPeso + " y " + sDubl + ".";
 			link.l1.go = "grabbing_1";
 		}
 		break;
@@ -340,7 +340,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ansewer_3":
-		dialog.text = "¿Qué puedo decir, hip... sobre ellos? Buena gente para hablar y beber. Giuseppe Fazio es un hombre tan importante, un pez gordo local, sus cofres están llenos de oro... y sin embargo, respeta al viejo Leo, le compra bebidas en la taberna. Aunque, a veces también pide algo a cambio, pero es nada, ¡hip!\n¡Eh, no sabes cuántos doblones tiene Fazio, ja-ja-ja! Suficiente para pasar el resto de tu vida en la mejor casa de todo el Caribe sin trabajar y bebiendo el mejor ron del mundo. Pero él se queda aquí, en la Isla. Parece que aún no hay suficiente dinero para él...";
+		dialog.text = "¿Qué puedo decir, hip... sobre ellos? Buena gente para hablar y beber. Giuseppe Fazio es un hombre tan importante, un pez gordo, sus cofres están llenos de oro... y sin embargo, respeta al viejo Leo, le compra bebidas en la taberna. Aunque, a veces también pide algo a cambio, pero es nada, ¡hip!\n¡Eh, no sabes cuántos doblones tiene Fazio, ja-ja-ja! Suficiente para pasar el resto de tu vida en la mejor casa de todo el Caribe sin trabajar y bebiendo el mejor ron del mundo. Pero él se queda aquí, en la Isla. Parece que aún no hay suficiente dinero para él...";
 		link.l1 = "Entendido...";
 		link.l1.go = "int_quests";
 		npchar.quest.answer_3 = "true";

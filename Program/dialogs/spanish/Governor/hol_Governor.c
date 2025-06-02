@@ -11,7 +11,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		if (CheckAttribute(pchar, "questTemp.Portugal.Villemstad") && pchar.location == "villemstad_townhall")
 		{
 			dialog.text = RandPhraseSimple("¿Qué tipo de preguntas?", "¿Qué te gustaría?");
-			link.l1 = "Yo sé que la Compañía Holandesa de las Indias Occidentales ha asignado un buen precio por la cabeza del famoso pirata - Bartolomeo el Portugués. Pude capturarlo. Actualmente está en la bodega de mi barco y estoy listo para entregarlo a las autoridades.";
+			link.l1 = "Yo sé que la Compañía Holandesa de las Indias Occidentales ha asignado un buen precio por la cabeza del famoso pirata Bartolomeo el Portugués. Pude capturarlo. Actualmente está en la bodega de mi barco, y estoy listo para entregarlo a las autoridades.";
 			link.l1.go = "Portugal";
 			break;
 		}
@@ -23,8 +23,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	case "work_1": // работа на благо короны - линейка нации
 		if (CheckAttribute(npchar, "notQuestLine"))
 		{
-			dialog.text = "Lamentablemente no puedo considerarte para un trabajo. No eres alguien con кем quiero trabajar en este momento. Adiós.";
-			link.l1 = " No puedes estar hablando en serio... pero muy bien.";
+			dialog.text = "Lamentablemente, no puedo considerarte para un trabajo. No eres alguien con quien quisiera trabajar en este momento. Adiós.";
+			link.l1 = "No puedes estar hablando en serio... Pero en fin, como quiera.";
 			link.l1.go = "exit";
 			break;
 		}
@@ -45,13 +45,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "Portugal_2":
 		dialog.text = "No te preocupes por tu recompensa, capitán. La obtendrás. Hemos asignado un precio por la cabeza de Bartolomeo el Portugués: mil quinientos doblones. ¡Teniente! ¡Traiga al capitán su recompensa!";
-		link.l1 = "Mm... Parece que Hugo me ha mentido sobre dos mil doblones... Está bien entonces.";
+		link.l1 = "Mm... Parece que Hugo me ha mentido sobre dos mil doblones... Está bien, entonces.";
 		link.l1.go = "Portugal_3";
 		break;
 
 	case "Portugal_3":
 		TakeNItems(pchar, "gold_dublon", 1500);
-		Log_Info("Has recibido 1500 doblones");
+		Log_Info("¡Has recibido 1.500 doblones!");
 		PlaySound("interface\important_item.wav");
 		dialog.text = "Y ahora, capitán, ¿sería tan amable de transferir al portugués a la Compañía? No podemos esperar para tener una charla con él.";
 		link.l1 = "Claro, señor, envíe la barca a mi barco.";

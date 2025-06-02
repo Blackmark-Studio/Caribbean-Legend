@@ -393,6 +393,9 @@
 // Camera on ship
 //============================================================================================
 #define MSG_DECK_CAMERA_SET_VIEWPOINT 41800 //"fff"        point.x, point.y, point.z
+#define MSG_SHIP_CAMERA_GET_AY 41900		// "e"
+#define MSG_SHIP_CAMERA_SET_AY 41901		// "f"
+#define MSG_DECK_CAMERA_GET_AY 41910		// "e"
 //============================================================================================
 
 #endif

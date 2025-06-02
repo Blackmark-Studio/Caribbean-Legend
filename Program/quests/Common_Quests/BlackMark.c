@@ -530,48 +530,57 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "BM_SeaCheckBarque") {
 		if (!GetDLCenabled(DLC_APPID_3)) return;
-		if (BlackMark_CheckBarque())
+		if (GetCompanionQuantity(pchar) < 2)
 		{
-			if (pchar.nation == SPAIN || pchar.nation == HOLLAND)
+			if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_BARQUE || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_BARKENTINE)
 			{
-				Log_TestInfo("Проверка пройдена!");
-				bQuestDisableMapEnter = true; //закрываем карту
-				Island_SetReloadEnableGlobal("Jamaica", false);
-				sld = GetCharacter(NPC_GenerateCharacter("BM_GabeCallow", "off_eng_1", "man", "man", 10, ENGLAND, -1, false, "quest"));
-				sld.name = StringFromKey("BlackMark_11");
-				sld.lastname = StringFromKey("BlackMark_12");
-				FantomMakeCoolSailor(sld, SHIP_PINK, StringFromKey("BlackMark_13"), CANNON_TYPE_CANNON_LBS6, 50, 50, 50);
-				FantomMakeCoolFighter(sld, 50, 50, 50, "blade_14", "pistol14", "cartridge", 50);
-				GiveItem2Character(sld, "indian_2");
-				sld.DontRansackCaptain = true;
-				sld.AnalizeShips = true;
-				sld.DontClearDead = true;
-				sld.Ship.Mode = "war";
-				sld.AlwaysEnemy = true;
-				sld.Coastal_Captain = true;
-				sld.SaveItemsForDead = true;
-				AddItems(sld, "indian_2", 2);
-				EquipCharacterByItem(sld, "indian_2");
-				AddItems(sld, "purse2", 2);
-				AddItems(sld, "bullet", 20);
-				AddItems(sld, "GunPowder", 20);
-				
-				Group_FindOrCreateGroup("GabeCallowGroup");
-				Group_AddCharacter("GabeCallowGroup", "BM_GabeCallow");
-				Group_SetType("GabeCallowGroup", "war");
-				Group_SetGroupCommander("GabeCallowGroup", "BM_GabeCallow");
-				Group_SetAddress("GabeCallowGroup", "Jamaica", "", "");
-				Group_SetPursuitGroup("GabeCallowGroup", PLAYER_GROUP);
-				Group_SetTaskAttack("GabeCallowGroup", PLAYER_GROUP);
-				Group_LockTask("GabeCallowGroup");
-				
-				PChar.quest.BM_PinkZahvatil.win_condition.l1 = "Character_Capture";
-				PChar.quest.BM_PinkZahvatil.win_condition.l1.character = "BM_GabeCallow";
-				PChar.quest.BM_PinkZahvatil.win_condition = "BM_PinkZahvatil";
-				
-				PChar.quest.BM_PinkPotopil.win_condition.l1 = "Character_sink";
-				PChar.quest.BM_PinkPotopil.win_condition.l1.character = "BM_GabeCallow";
-				PChar.quest.BM_PinkPotopil.win_condition = "BM_PinkPotopil";
+				if (pchar.nation == SPAIN || pchar.nation == HOLLAND)
+				{
+					Log_TestInfo("Проверка пройдена!");
+					bQuestDisableMapEnter = true; //закрываем карту
+					Island_SetReloadEnableGlobal("Jamaica", false);
+					sld = GetCharacter(NPC_GenerateCharacter("BM_GabeCallow", "off_eng_1", "man", "man", 10, ENGLAND, -1, false, "quest"));
+					sld.name = StringFromKey("BlackMark_11");
+					sld.lastname = StringFromKey("BlackMark_12");
+					FantomMakeCoolSailor(sld, SHIP_PINK, StringFromKey("BlackMark_13"), CANNON_TYPE_CANNON_LBS6, 50, 50, 50);
+					FantomMakeCoolFighter(sld, 50, 50, 50, "blade_14", "pistol14", "cartridge", 50);
+					GiveItem2Character(sld, "indian_2");
+					sld.DontRansackCaptain = true;
+					sld.AnalizeShips = true;
+					sld.DontClearDead = true;
+					sld.Ship.Mode = "war";
+					sld.AlwaysEnemy = true;
+					sld.Coastal_Captain = true;
+					sld.SaveItemsForDead = true;
+					AddItems(sld, "indian_2", 2);
+					EquipCharacterByItem(sld, "indian_2");
+					AddItems(sld, "purse2", 2);
+					AddItems(sld, "bullet", 20);
+					AddItems(sld, "GunPowder", 20);
+					
+					Group_FindOrCreateGroup("GabeCallowGroup");
+					Group_AddCharacter("GabeCallowGroup", "BM_GabeCallow");
+					Group_SetType("GabeCallowGroup", "war");
+					Group_SetGroupCommander("GabeCallowGroup", "BM_GabeCallow");
+					Group_SetAddress("GabeCallowGroup", "Jamaica", "", "");
+					Group_SetPursuitGroup("GabeCallowGroup", PLAYER_GROUP);
+					Group_SetTaskAttack("GabeCallowGroup", PLAYER_GROUP);
+					Group_LockTask("GabeCallowGroup");
+					
+					PChar.quest.BM_PinkZahvatil.win_condition.l1 = "Character_Capture";
+					PChar.quest.BM_PinkZahvatil.win_condition.l1.character = "BM_GabeCallow";
+					PChar.quest.BM_PinkZahvatil.win_condition = "BM_PinkZahvatil";
+					
+					PChar.quest.BM_PinkPotopil.win_condition.l1 = "Character_sink";
+					PChar.quest.BM_PinkPotopil.win_condition.l1.character = "BM_GabeCallow";
+					PChar.quest.BM_PinkPotopil.win_condition = "BM_PinkPotopil";
+				}
+				else
+				{
+					Log_TestInfo("Проверка НЕ пройдена!");
+					pchar.quest.BM_RepeatBarqueCheck.win_condition.l1 = "MapEnter";
+					pchar.quest.BM_RepeatBarqueCheck.win_condition = "BM_RepeatBarqueCheck";
+				}
 			}
 			else
 			{
@@ -629,6 +638,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "BM_CabinDialog4") {
 		DoQuestCheckDelay("hide_weapon", 1.2);
 		sld = CharacterFromID("IronsClone");
+		sld.MusketerDistance = 5;
 		sld.dialog.filename = "Quest\BlackMark.c";
 		sld.dialog.currentnode = "BM_IronsClone8";
 		LAi_SetActorType(sld);

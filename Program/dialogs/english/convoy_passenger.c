@@ -196,7 +196,7 @@ void ProcessDialogEvent()
         	LAi_ActorRunToLocation(NPChar, "reload", "reload1", "none", "", "", "", 5.0);
         	ChangeCharacterComplexReputation(pchar,"nobility", -5);
             OfficersReaction("bad");
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(NPChar.nation)) + "hunter", 10+rand(10));// награда            
+			ChangeCharacterHunterScore(pchar, NationShortName(sti(NPChar.nation)) + "hunter", GetIntByCondition(HasShipTrait(pchar, "trait23"), 10 + rand(10), 5 + rand(5)));// награда
 			DeleteAttribute(pchar, "GenQuest.ConvoyPassenger." + npchar.id); //извлекаем из структуры недовольных
 			sTemp = npchar.id + "_complited";
             pchar.quest.(sTemp).over = "yes";
@@ -248,7 +248,7 @@ void GenerateConvoyPassengerQuest(ref npchar)
 
 void LookShipPassenger()
 {
-	switch(makeint(6-sti(RealShips[sti(Pchar.Ship.Type)].Class)))
+	switch(makeint(7-sti(RealShips[sti(Pchar.Ship.Type)].Class)))
 	{
 		case 0:
 			pchar.GenQuest.GetPassenger.Shipmod = 0.8;
@@ -266,6 +266,9 @@ void LookShipPassenger()
 			pchar.GenQuest.GetPassenger.Shipmod = 2.2;
 		break;
 		case 5:
+			pchar.GenQuest.GetPassenger.Shipmod = 3;
+		break;
+		case 6:
 			pchar.GenQuest.GetPassenger.Shipmod = 3;
 		break;
 	}

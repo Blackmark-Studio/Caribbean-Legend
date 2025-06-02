@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Ah, "+GetFullName(pchar)+"¡ "+TimeGreeting()+"¡Quieres algo?";
+				dialog.text = "¡Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+". ¿Quieres algo?";
 				link.l1 = LinkRandPhrase("¿Tienes algo interesante que decir?","¿Ha sucedido algo nuevo en la isla?","¿Me contarás los últimos chismes?");
 				link.l1.go = "rumours_LSC";
 				link.l2 = "Quiero hacerte algunas preguntas sobre la isla.";
@@ -117,7 +117,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_4":
-			dialog.text = " La parte donde nos venden nuestra propia comida es un poco molesta, pero no hacen daño a los ciudadanos. En realidad, al contrario, pusieron a los clanes en orden y previenen cualquier violencia\nHubo un ciudadano que estaba causando problemas y blandía su sable. Incluso hirió a otros dos locales. Los piratas lo llevaron al Tártaro por unas semanas. Ahora el hombre está tranquilo y pacífico. No lo vemos a menudo, el anillo exterior es su nuevo hogar...";
+			dialog.text = "La parte donde nos venden nuestra propia comida es un poco molesta, pero no hacen daño a los ciudadanos. En realidad, al contrario, pusieron a los clanes en orden y previenen cualquier violencia\nHubo un ciudadano que estaba causando problemas y blandía su sable. Incluso hirió a otros dos locales. Los piratas lo llevaron al Tártaro por unas semanas. Ahora el hombre está tranquilo y pacífico. No lo vemos a menudo, el anillo exterior es su nuevo hogar...";
 			link.l1 = "Veo...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";

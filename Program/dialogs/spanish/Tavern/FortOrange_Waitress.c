@@ -36,34 +36,34 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
 		
 		case "Jamaica_ratW_2":
-            dialog.text = "Tee hee... Eres su compañero de barco, y no sabes a dónde ha partido. ¡Eso es gracioso!";
-            link.l1 = " No es nada gracioso, mujer. Habíamos acordado encontrarnos en Jamaica y luego nos esperaba un viaje conjunto... si entiendes lo que quiero decir. No podré hacerlo solo y él se ha marchado a sabe Dios dónde.";
+            dialog.text = "Tee-hee... Eres su compañero de barco, y no sabes a dónde ha partido. ¡Eso es gracioso!";
+            link.l1 = "No es nada gracioso, mujer. Habíamos acordado encontrarnos en Jamaica y luego nos esperaba un viaje conjunto... si entiendes lo que quiero decir. No podré hacerlo solo y él se ha marchado a sabe Dios dónde.";
             link.l1.go = "Jamaica_ratW_3";
         break;
 		
 		case "Jamaica_ratW_3":
-            dialog.text = "Ya veo. Bueno, si un viaje tan lucrativo está a la vista para ti, considerando que tú y Francois sois amigos... Te diré a dónde se ha dirigido, pero a cambio de una pequeña recompensa.";
+            dialog.text = "Ya veo. Bueno, si un viaje tan lucrativo está a la vista para ti, considerando que tú y Francois son amigos... Te diré a dónde se ha dirigido, pero a cambio de una pequeña recompensa.";
             link.l1 = "Sí, conozco el asunto. ¿Cuánto quieres?";
             link.l1.go = "Jamaica_ratW_4";
         break;
 		
 		case "Jamaica_ratW_4":
             dialog.text = "¡Oh, qué venal! No necesito dinero. No, quiero algo especial. Francois prometió darme un hermoso collar con gemas. Ya me he jactado de él con mis amigos y él se ha marchado... Tráeme el colgante y te diré a dónde se ha ido, ¡je-je!";
-            link.l1 = "¡Zorra descarada! ¡Vosotras, holandesas, sois tan codiciosas como se puede ser! Muy bien, tendrás tu collar.";
+            link.l1 = "¡Zorra descarada! ¡Las mujeres holandesas, son tan codiciosas como se puede ser! Muy bien, tendrás tu collar.";
             link.l1.go = "exit";
 			AddQuestRecord("Slavetrader", "21_5");
 			pchar.questTemp.Slavetrader = "FindRatJamaica_WP";
         break;
 		
 		case "Jamaica_ratW_5":
-            dialog.text = "¡Ah, es hermoso! ¡Ahora mis amigos podrán ponerse verdes de envidia!";
+            dialog.text = "¡Ah, es hermoso! ¡Ahora mis amigas podrán ponerse verdes de envidia!";
             link.l1 = "Envíales mis condolencias. Ahora empieza a hablar. ¿Adónde se ha marchado François?";
             link.l1.go = "Jamaica_ratW_6";
 			RemoveItems(PChar, "jewelry43", 1);
         break;
 		
 		case "Jamaica_ratW_6":
-            dialog.text = "Sí, por supuesto, señor. François ha zarpado hacia Cuba, a La Habana.";
+            dialog.text = "Sí, por supuesto, mynheer. François ha zarpado hacia Cuba, a La Habana.";
             link.l1 = "Gracias por el caro consejo, moza. Eso es todo lo que quería.";
             link.l1.go = "exit";
 			AddQuestRecord("Slavetrader", "21_6");

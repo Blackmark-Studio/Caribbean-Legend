@@ -1,0 +1,198 @@
+newline  {
+
+}
+
+headers { 17 }
+
+header_1_text {  }
+header_1_color { yellow }
+header_1_lines { 0 }
+header_1_skip { 9 }
+
+======================================
+
+header_2_text { Project Manager }
+header_2_lines { 1 }
+header_2_line_1 { Mikhail Kovalenko }
+header_3_text { Game Design }
+header_3_lines { 3 }
+header_3_line_1 { Timofey (Tymofei) Sklyarov }
+header_3_line_2 { Denis (Jason) Zabavsky }
+header_3_line_3 { Ivan (Joruba) Pomytkin }
+header_4_text { 3D Modeling }
+header_4_lines { 5 }
+header_4_line_1 { Timofey (Tymofei) Sklyarov }
+header_4_line_2 { Alexander Turaev }
+header_4_line_3 { Alexander (roderik) Frolov }
+header_4_line_4 { Michael (d'Artagnan) Melnik }
+header_4_line_5 { Sergei (wulfrein) Fedosov }
+header_5_text { Art and Graphics }
+header_5_lines { 9 }
+header_5_line_1 { Oleg (Metazot) Zotov }
+header_5_line_2 { Timofey (Tymofei) Sklyarov }
+header_5_line_3 { Alexander Turaev }
+header_5_line_4 { Alexander (roderik) Frolov }
+header_5_line_5 { Alexander (os_) Olkhovnikov }
+header_5_line_6 { Sergei Karpenko }
+header_5_line_7 { Michael (d'Artagnan) Melnik }
+header_5_line_8 { Sergei (wulfrein) Fedosov }
+header_5_line_9 { Konstantin Vasiliev }
+header_6_text { UX/UI Design and Programming }
+header_6_lines { 3 }
+header_6_line_1 { Sergei Karpenko }
+header_6_line_2 { Konstantin (mitrokosta) Mitrofanov }
+header_6_line_3 { Alexander (BelAmour) Mironov }
+header_7_text { Programmers }
+header_7_lines { 7 }
+header_7_line_1 { Eugene (ugeen) Pliskovsky }
+header_7_line_2 { Denis (Jason) Zabavsky }
+header_7_line_3 { Anton (Warship) Kovalenko }
+header_7_line_4 { Alexander (BelAmour) Mironov }
+header_7_line_5 { Konstantin (mitrokosta) Mitrofanov }
+header_7_line_6 { Sergei Karpenko }
+header_7_line_7 { Nikita (nik) Krapivin }
+header_8_text { Script Writing }
+header_8_lines { 3 }
+header_8_line_1 { Oleg (Metazot) Zotov }
+header_8_line_2 { Denis (Jason) Zabavsky }
+header_8_line_3 { Ivan (Joruba) Pomytkin }
+header_9_text { Directing and Quests }
+header_9_lines { 2 }
+header_9_line_1 { Denis (Jason) Zabavsky }
+header_9_line_2 { Ivan (Joruba) Pomytkin }
+header_10_text { Dialogues }
+header_10_lines { 3 }
+header_10_line_1 { Denis (Jason) Zabavsky }
+header_10_line_2 { Oleg (Metazot) Zotov }
+header_10_line_3 { Ivan (Joruba) Pomytkin }
+header_11_text { Composer }
+header_11_lines { 1 }
+header_11_line_1 { Alexander Drozdov }
+header_12_text { Voice Director }
+header_12_lines { 1 }
+header_12_line_1 { Alexey (Vinnie) Nikiforov }
+header_13_text { Sound Engineer }
+header_13_lines { 1 }
+header_13_line_1 { Alexander Krasavtsev "In-Line studio" }
+header_14_text { Actors }
+header_14_lines { 7 }
+header_14_line_1 { Igor Kornilov }
+header_14_line_2 { Alexander Terekhov }
+header_14_line_3 { Olesya Aseeva }
+header_14_line_4 { Viktor Solodkov }
+header_14_line_5 { Valentin Samokhin }
+header_14_line_6 { Alexander Novikov }
+header_14_line_7 { Alexey (Vinnie) Nikiforov }
+header_15_text { Artist }
+header_15_lines { 1 }
+header_15_line_1 { Alexander (lyah) Lyakhov }
+header_16_text { Video Production }
+header_16_lines { 2 }
+header_16_line_1 { Tesa Krovicene }
+header_16_line_2 { Michael (d'Artagnan) Melnik }
+header_17_text { Thanks To }
+header_17_lines { 103 }
+header_17_line_1 { Alexander (Reefership) Mosiazh }
+header_17_line_2 { Andrew (Hawcker) Amarfiy }
+header_17_line_3 { Odnoglaziy }
+header_17_line_4 { Elena (makarena) Makarova }
+header_17_line_5 { Valery (Valera) Moshatin }
+header_17_line_6 { Dmitry (dim10) Trubetskoy }
+header_17_line_7 { Shota (Van der Decken) Gubelidze }
+header_17_line_8 { Igor (delfin_) Cherney }
+header_17_line_9 { Maxim (Shomaan) Shimansky }
+header_17_line_10 { Matvey (Mett) Topchilko }
+header_17_line_11 { Alexey (q4a) Komarov }
+header_17_line_12 { Sergei (Serginio) Kaptsan }
+header_17_line_13 { Vitaly (Almeida) Nechkhaev }
+header_17_line_14 { Alexander (Lexanni) Volchkov }
+header_17_line_15 { Alexander (Shurik) Specht }
+header_17_line_16 { Alexander (Captain Flint) Kozhushko }
+header_17_line_17 { Dmitry (Jafar) Strelyaev }
+header_17_line_18 { Yuri (Ursus) Rogach }
+header_17_line_19 { Alexey (AlexusB) Bobrovnikov }
+header_17_line_20 { Alexey (Soni) Ryabov }
+header_17_line_21 { Montbrain }
+header_17_line_22 { pirat1 }
+header_17_line_23 { Zagolsky }
+header_17_line_24 { Ivan (kb31) Kondakov  }
+header_17_line_25 { Artem Kononenko }
+header_17_line_26 { Sam Hambrouck  }
+header_17_line_27 { Ivan Yakymchak  }
+header_17_line_28 { Andrea Mangione  }
+header_17_line_29 { Konstantin Oblaukhov  }
+header_17_line_30 { Artem Vorotnikov  }
+header_17_line_31 { Vadim Grudev  }
+header_17_line_32 { Andrei Shtabel  }
+header_17_line_33 { Szymon J.  }
+header_17_line_34 { Anthony Lapenok  }
+header_17_line_35 { Stanislav Zhukov  }
+header_17_line_36 { Asapin  }
+header_17_line_37 { Eugene Shalygin  }
+header_17_line_38 { kk-se  }
+header_17_line_39 { Egor Olefirenko  }
+header_17_line_40 { TotalCaesar659  }
+header_17_line_41 { CaptainBeltrop  }
+header_17_line_42 { Nikolai Prigodich }
+header_17_line_43 { wildam }
+header_17_line_44 { EvgAnat }
+header_17_line_45 { Nikk }
+header_17_line_46 { Johnny88 }
+header_17_line_47 { Xenon }
+header_17_line_48 { Pavel Lovtsov }
+header_17_line_49 { Alexey Utkin }
+header_17_line_50 { Sergey Arifulin }
+header_17_line_51 { Georgy Neprienko }
+header_17_line_52 { Alexander Kuznetsov }
+header_17_line_53 { Vladislav Masenko }
+header_17_line_54 { Roman Kovalev }
+header_17_line_55 { Artyom Tolstobrov }
+header_17_line_56 { Maxim Khokhrin }
+header_17_line_57 { Sardion Mlkhoev }
+header_17_line_58 { Timur Buachidze }
+header_17_line_59 { Sergey Popov }
+header_17_line_60 { Alexey Konovalov }
+header_17_line_61 { Maxim Vandyshev }
+header_17_line_62 { Dmitry Miropolsky }
+header_17_line_63 { Sergey Poryvkin }
+header_17_line_64 { Dmitry Lapin }
+header_17_line_65 { Fyodor Goncharov }
+header_17_line_66 { Mikhail Eremeyev }
+header_17_line_67 { Vyacheslav Nikitin }
+header_17_line_68 { Anton Panteleev }
+header_17_line_69 { Alexander Zalivako }
+header_17_line_70 { Herman Gorshkov }
+header_17_line_71 { Jason Rhodes }
+header_17_line_72 { Eric Smith }
+header_17_line_73 { Vladislav Golts }
+header_17_line_74 { Damien Pittet }
+header_17_line_75 { Maik Pfarrherr }
+header_17_line_76 { Alessio Casarin }
+header_17_line_77 { Kyle J. S. }
+header_17_line_78 { Alexander Merkushin }
+header_17_line_79 { Sam Muench }
+header_17_line_80 { Michael Perkins }
+header_17_line_81 { Bud Buddy }
+header_17_line_82 { Lartan }
+header_17_line_83 { Xenon Casper }
+header_17_line_84 { Anastasia Averina }
+header_17_line_85 { Artyom Wenzell }
+header_17_line_86 { Alessio Casarin }
+header_17_line_87 { Sam Muench }
+header_17_line_88 { Franciszek Jureczka }
+header_17_line_89 { William Nelson }
+header_17_line_90 { Dmytro Kekukh }
+header_17_line_91 { Maris Jurgenbergs }
+header_17_line_92 { Daniel Helmenstein }
+header_17_line_93 { Sami Vahtera }
+header_17_line_94 { Vova Bezruchuk }
+header_17_line_95 { Jakub R. K. Szczygiel }
+header_17_line_96 { Sergiy Bezruchuk }
+header_17_line_97 { Peter Mitchell }
+header_17_line_98 { Bartlomiej Borkowski }
+header_17_line_99 { Igor Juhas }
+header_17_line_100 { Mark Brooks }
+header_17_line_101 { Jonas Kaufmann }
+header_17_line_102 { ScreamPassion }
+header_17_line_103 { Dmitry Kidun }
+header_17_line_104 { Denis (John Prelone) Khudyakov }

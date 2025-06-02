@@ -1,6 +1,7 @@
 #include "storm-engine\battle_interface\msg_control.h"
 #include "storm-engine\sea_ai\script_defines.h"
 #include "battle_interface\landinterface.c"
+#include "battle_interface\TaskWindow\TaskWindow.c"
 #include "battle_interface\ispyglass.c"
 #include "battle_interface\reload_tables.c"
 #include "battle_interface\utils.c"
@@ -96,7 +97,7 @@ void InitBattleInterface()
 	BattleInterface.freeDistance = MIN_ENEMY_DISTANCE_TO_DISABLE_MAP_ENTER;
 
 	SetParameterData();
-		
+
 	BattleInterface.blindSpeed = 0.003;
 	BattleInterface.MaxWind = 30.0;
 	BattleInterface.MaxShipSpeed = 20.0;
@@ -153,6 +154,12 @@ void InitBattleInterface()
 	Log_SetActiveAction("Nothing");
 	ResetTimeScale(); // boal
 	bEnableSailToNotif = !bSailToEnable();
+	
+	if(CheckAttribute(pchar, "systeminfo.BLIoff"))
+	{
+		ChangeShowIntarface();
+		DeleteAttribute(pchar, "systeminfo.BLIoff");
+	}
 }
 
 ref BI_GetFortRelation()
@@ -289,6 +296,16 @@ void BI_Frame()
 		Log_SetActiveAction("Reload");
 		return;
 	}
+	if(bGlobalTutor)
+	{
+		if(CheckAttribute(pchar, "TutorialToDeck_1") ||
+		   CheckAttribute(pchar, "TutorialToDeck_2") ||
+		   CheckAttribute(pchar, "TutorialToPort"))
+	   {
+		Log_SetActiveAction("Deck");
+		return;
+	   }
+	}
 	if(bCanEnterToLand)
 	{
 		Log_SetActiveAction("Moor");
@@ -325,6 +342,7 @@ void StartBattleInterface()
 	LayerAddObject(SEA_EXECUTE,&objShipPointer,222222);
 	LayerAddObject(SEA_REALIZE,&objShipPointer,-1);
 	CannonsRangeRefresh();
+    TW_Init();
 }
 
 void RefreshBattleInterface()
@@ -401,6 +419,7 @@ void DeleteBattleInterface()
 	DelEventHandler("DoSailHole","ProcessSailDamage");
 	DelEventHandler("evntBISelectShip","procBISelectShip");
 
+    TW_Close();
 	// был сброс времени, выше поднял
 
 	//DeleteClass(&BattleInterface);
@@ -452,7 +471,7 @@ ref BI_CommandEndChecking()
 		}
   		else
   		{
-			if(iIsland > 0 && CheckAttribute(Islands[iIsland],"EffectRadius"))
+			if(iIsland > 0 && CheckAttribute(&Islands[iIsland],"EffectRadius"))
 			{
 				BattleInterface.Commands.SailTo.EffectRadius = sti(Islands[iIsland].EffectRadius); 
 			}
@@ -1389,19 +1408,63 @@ ref GetCurrentCharge()
 	} 
 
 	float fState = Ship_GetSailState(pchar);
-	if( fState < 0.33 ) {
+	if(fState < 0.33)
+    {
 		if(iCompassPos) BI_intNRetValue[4] = 9;
 		else BI_intNRetValue[4] = 93;
-	} else {
-		if( fState < 0.66 ) {
+	}
+    else
+    {
+		if(fState < 0.66)
+        {
 			if(iCompassPos) BI_intNRetValue[4] = 8;
 			else BI_intNRetValue[4] = 94;
-		} else {
+		}
+        else
+        {
 			if(iCompassPos) BI_intNRetValue[4] = 7;
 			else BI_intNRetValue[4] = 95;
 		}
 	}
-	
+
+    // TUTOR-ВСТАВКА
+    if(TW_IsActive())
+    {
+        if(objTask.sea == "3_Sails" || objTask.sea == "4_Sails")
+        {
+            if(or(objTask.sea == "3_Sails" && fState > 0.33 && fState < 0.66, objTask.sea == "4_Sails" && fState < 0.33))
+            {
+                if(!CheckAttribute(&TEV, "Tutor.SailStateTimer"))
+                {
+                    TEV.Tutor.SailStateTimer = GetDeltaTime() * 0.001;
+                }
+                else
+                {
+                    TEV.Tutor.SailStateTimer = stf(TEV.Tutor.SailStateTimer) + GetDeltaTime() * 0.001;
+                    if(stf(TEV.Tutor.SailStateTimer) >= 9.0)
+                    {
+                        if(objTask.sea == "3_Sails")
+                        {
+                            objTask.sea = "4_Sails";
+                            TW_ColorWeak(TW_GetTextARef("Battle_Sails"));
+                            TW_AddBottomText("Lower_Sails", StringFromKey("Tutorial_10"), "Default", TW_DEF_INTERVAL);
+                            TW_RecalculateLayout();
+                        }
+                        else
+                        {
+                            objTask.sea = "";
+                            TW_ColorWeak(TW_GetTextARef("Lower_Sails"));
+                            PostEvent("TW_Release", 3000);
+                            DoQuestFunctionDelay("SharlieTutorial_ActivateButtonInTheSea_1", 4.0);
+                        }
+                        DeleteAttribute(&TEV, "Tutor.SailStateTimer");
+                    }
+                }
+            }
+            else DeleteAttribute(&TEV, "Tutor.SailStateTimer");
+        }
+    }
+
 	if(iCompassPos) BI_intNRetValue[5] = 60;
 	else BI_intNRetValue[5] = 92;
 	BI_intNRetValue[6] = 108;
@@ -1804,7 +1867,7 @@ void SetShipPictureDataByShipTypeName(string sType)
 
 void SetShipPictureDataByShipType(int st)
 {
-	if(st>=0 && st<SHIP_TYPES_QUANTITY)
+	if(st>=0 && st<GetArraySize(&ShipsTypes)-1)
 	{
 		SetShipPictureDataByShipTypeName( ShipsTypes[st].name );
 	}
@@ -2355,7 +2418,7 @@ void SetParameterData()
 		BattleInterface.textinfo.(sAttrDes).font = "interface_normal";
 		BattleInterface.textinfo.(sAttrDes).scale = 1.3 * fHtRatio;
 		BattleInterface.textinfo.(sAttrDes).color = argb(255,255,255,255);
-		BattleInterface.textinfo.(sAttrDes).pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(95 * fHtRatio));
+		BattleInterface.textinfo.(sAttrDes).pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(105 * fHtRatio));
 		BattleInterface.textinfo.(sAttrDes).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(doff * fHtRatio));
 		BattleInterface.textinfo.(sAttrDes).align = "left";
 		BattleInterface.textinfo.(sAttrDes).text = "";
@@ -3318,6 +3381,7 @@ ref ProcessRandomSailDmg()
 	return &BI_g_fRetVal;
 }
 
+// ~!~
 void GetSailStatus(int chrIdx)
 {	
 	object objSail;
@@ -3327,7 +3391,7 @@ void GetSailStatus(int chrIdx)
 	}
 	if(chrIdx < 0) return;
 	ref chref = GetCharacter(chrIdx);
-	if(CheckAttribute(chref,"ship.sailstatus")) DeleteAttribute(chref,"ship.sailstatus"));
+	DeleteAttribute(chref,"ship.sailstatus"));
 	SendMessage(&objSail,"lsl", MSG_SAIL_SCRIPT_PROCESSING,"GetSailStatus", chrIdx);
 }	
 
@@ -3887,12 +3951,66 @@ void ControlsDesc()
 		sAttr = "Con"+numLine;
 		sAttrDes = "Con"+numLine+"desc";
 		
+        // TUTOR-ВСТАВКА
+		if(TW_IsActive())
+		{
+			if(objTask.sea == "1_Turn")
+			{
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_TurnRight");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_TurnRight","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+				numLine --;
+				
+				sAttr = "Con"+numLine;
+				sAttrDes = "Con"+numLine+"desc";
+				sAttrB = "Con"+numLine+"Back";
+				
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_TurnLeft");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_TurnLeft","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+			}
+			else if(objTask.sea == "2_TimeScale" || objTask.sea == "3_TimeScale")
+			{
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScale");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScale","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+			}
+			else if(objTask.sea == "4_TimeScale")
+			{
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScaleFasterBA");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScaleFasterBA","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+			}
+			else if(objTask.sea == "5_TimeScale")
+			{
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScaleSlowerBA");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScaleSlowerBA","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+				numLine --;
+				
+				sAttr = "Con"+numLine;
+				sAttrDes = "Con"+numLine+"desc";
+				sAttrB = "Con"+numLine+"Back";
+				
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScale");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScale","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+			}
+			else if(objTask.sea == "3_Sails" || objTask.sea == "4_Sails")
+			{
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_SailDown");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_SailDown","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+			}
+			return;
+		}
+		
 		if(CheckAttribute(pchar,"Ship.POS.Mode") && pchar.Ship.POS.Mode != SHIP_WAR)
 		{
 			if(iControlsMode == 1)
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("BI_MapEnter");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("BI_MapEnter","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("BI_MapEnter","ControlsNames.txt");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -3902,7 +4020,7 @@ void ControlsDesc()
 			}
 
 			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("BICommandsActivate");
-			BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("BICommandsActivate","ControlsNames.txt");
+			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("BICommandsActivate","ControlsNames.txt");
 			BattleInterface.textinfo.(sAttrB).text = "1" ;
 			numLine --;
 			
@@ -3913,7 +4031,7 @@ void ControlsDesc()
 			if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE )
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_Cabin");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("hk_Cabin","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("hk_Cabin","ControlsNames.txt");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 			
@@ -3921,16 +4039,25 @@ void ControlsDesc()
 				sAttrDes = "Con"+numLine+"desc";
 				sAttrB = "Con"+numLine+"Back";
 			}
+
+			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FireCamera_Set");
+			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("FireCamera_Set","ControlsNames.txt");
+			BattleInterface.textinfo.(sAttrB).text = "1" ;
+			numLine --;
 			
-			if(GetCharacterEquipByGroup(pchar,SPYGLASS_ITEM_TYPE)!="" && SeaCameras.Camera=="SeaDeckCamera") 
+			sAttr = "Con"+numLine;
+			sAttrDes = "Con"+numLine+"desc";
+			sAttrB = "Con"+numLine+"Back";
+
+			if(GetCharacterEquipByGroup(pchar,SPYGLASS_ITEM_TYPE)!="" && or(SeaCameras.Camera == "SeaDeckCamera", SeaCameras.Camera == "SeaFireCamera"))
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TelescopeMode");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("TelescopeMode","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TelescopeMode","ControlsNames.txt");
 			}
 			else
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("ShipCamera_Forward");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("ChrCamCameraRadius","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ChrCamCameraRadius","ControlsNames.txt");
 			}
 			BattleInterface.textinfo.(sAttrB).text = "1" ;
 			numLine --;
@@ -3940,7 +4067,7 @@ void ControlsDesc()
 			sAttrB = "Con"+numLine+"Back";
 			
 			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_SailDown");
-			BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("Ship_SailDown","ControlsNames.txt");
+			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_SailDown","ControlsNames.txt");
 			BattleInterface.textinfo.(sAttrB).text = "1" ;
 			numLine --;
 			
@@ -3949,7 +4076,7 @@ void ControlsDesc()
 			sAttrB = "Con"+numLine+"Back";
 			
 			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_SailUp");
-			BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("Ship_SailUp","ControlsNames.txt");
+			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_SailUp","ControlsNames.txt");
 			BattleInterface.textinfo.(sAttrB).text = "1" ;
 		}
 		else
@@ -3957,7 +4084,7 @@ void ControlsDesc()
 			if(XI_IsKeyPressed("shift") && sti(GetCompanionQuantity(pchar) > 1))
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_ProtFlagship");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_7short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_7short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -3966,7 +4093,7 @@ void ControlsDesc()
 				sAttrB = "Con"+numLine+"Back";
 				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LowerSails");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_6short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_6short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -3975,7 +4102,7 @@ void ControlsDesc()
 				sAttrB = "Con"+numLine+"Back";
 				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_SailAway");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_5short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_5short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -3984,7 +4111,7 @@ void ControlsDesc()
 				sAttrB = "Con"+numLine+"Back";
 				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LoadBombs");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_4short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_4short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -3993,7 +4120,7 @@ void ControlsDesc()
 				sAttrB = "Con"+numLine+"Back";
 				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LoadChain");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_3short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_3short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -4002,7 +4129,7 @@ void ControlsDesc()
 				sAttrB = "Con"+numLine+"Back";
 				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LoadGrapes");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_2short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_2short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -4011,7 +4138,7 @@ void ControlsDesc()
 				sAttrB = "Con"+numLine+"Back";
 				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LoadBalls");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_1short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_1short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 			}
 			else
@@ -4019,7 +4146,7 @@ void ControlsDesc()
 				if(sti(GetCompanionQuantity(pchar) > 1))
 				{
 					BattleInterface.textinfo.(sAttr).text = objControlsState.key_codes.VK_SHIFT.img;
-					BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("FLT_Commands");"ControlsNames.txt");
+					BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("FLT_Commands");
 					BattleInterface.textinfo.(sAttrB).text = "1" ;
 
 					numLine --;
@@ -4033,7 +4160,7 @@ void ControlsDesc()
 				{
 					BattleInterface.textinfo.(sAttrB).text = "1" ;
 					BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_Turn180");
-					BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("Turn180", "AbilityDescribe.txt");
+					BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Turn180", "AbilityDescribe.txt");
 					
 					if(!CheckOfficersPerk(pchar, "Turn180") && GetOfficersPerkUsing(pchar,"Turn180"))
 					{
@@ -4044,7 +4171,7 @@ void ControlsDesc()
 					{
 						if(AbilityTimeDuration("active", "Turn180") > 0)
 						{
-							BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("Turn180", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "Turn180");
+							BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Turn180", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "Turn180");
 							BattleInterface.textinfo.(sAttr).color = colorused;
 							BattleInterface.textinfo.(sAttrDes).color = colorused;
 							
@@ -4053,7 +4180,7 @@ void ControlsDesc()
 						{
 							if(AbilityTimeDuration("delay", "Turn180") > 0)
 							{
-								BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("Turn180", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "Turn180");
+								BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Turn180", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "Turn180");
 								BattleInterface.textinfo.(sAttr).color = colorcd; 
 								BattleInterface.textinfo.(sAttrDes).color = colorcd;
 								
@@ -4072,7 +4199,7 @@ void ControlsDesc()
 				{
 					BattleInterface.textinfo.(sAttrB).text = "1" ;
 					BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_InstantRepair");
-					BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("InstantRepair", "AbilityDescribe.txt");
+					BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("InstantRepair", "AbilityDescribe.txt");
 					BattleInterface.textinfo.(sAttr).color = colorempty;
 					BattleInterface.textinfo.(sAttrDes).color = colorempty;
 					
@@ -4085,7 +4212,7 @@ void ControlsDesc()
 					{
 						if(AbilityTimeDuration("active", "InstantRepair") > 0)
 						{
-							BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("InstantRepair", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "InstantRepair");
+							BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("InstantRepair", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "InstantRepair");
 							BattleInterface.textinfo.(sAttr).color = colorused; 
 							BattleInterface.textinfo.(sAttrDes).color = colorused;
 							
@@ -4094,7 +4221,7 @@ void ControlsDesc()
 						{
 							if(AbilityTimeDuration("delay", "InstantRepair") > 0)
 							{
-								BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("InstantRepair", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "InstantRepair");
+								BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("InstantRepair", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "InstantRepair");
 								BattleInterface.textinfo.(sAttr).color = colorcd; 
 								BattleInterface.textinfo.(sAttrDes).color = colorcd;
 								
@@ -4113,7 +4240,7 @@ void ControlsDesc()
 				{
 					BattleInterface.textinfo.(sAttrB).text = "1" ;
 					BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_ImmediateReload");
-					BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("ImmediateReload", "AbilityDescribe.txt");
+					BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ImmediateReload", "AbilityDescribe.txt");
 					
 					if(!CheckOfficersPerk(pchar, "ImmediateReload") && GetOfficersPerkUsing(pchar,"ImmediateReload"))
 					{
@@ -4124,7 +4251,7 @@ void ControlsDesc()
 					{
 						if(AbilityTimeDuration("active", "ImmediateReload") > 0)
 						{
-							BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("ImmediateReload", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "ImmediateReload");
+							BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ImmediateReload", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "ImmediateReload");
 							BattleInterface.textinfo.(sAttr).color = colorused; 
 							BattleInterface.textinfo.(sAttrDes).color = colorused;
 							
@@ -4133,7 +4260,7 @@ void ControlsDesc()
 						{
 							if(AbilityTimeDuration("delay", "ImmediateReload") > 0)
 							{
-								BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("ImmediateReload", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "ImmediateReload");
+								BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ImmediateReload", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "ImmediateReload");
 								BattleInterface.textinfo.(sAttr).color = colorcd; 
 								BattleInterface.textinfo.(sAttrDes).color = colorcd;
 								
@@ -4148,21 +4275,8 @@ void ControlsDesc()
 					
 				}
 				
-				if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE )
-				{
-					BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_Cabin");
-					BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("hk_Cabin","ControlsNames.txt");
-					BattleInterface.textinfo.(sAttrB).text = "1" ;
-					
-					numLine --;
-					
-					sAttr = "Con"+numLine;
-					sAttrDes = "Con"+numLine+"desc";
-					sAttrB = "Con"+numLine+"Back";
-				}
-				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("CannonsRange");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("CannonsRange","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("CannonsRange","ControlsNames.txt");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				
 				numLine --;
@@ -4170,9 +4284,18 @@ void ControlsDesc()
 				sAttr = "Con"+numLine;
 				sAttrDes = "Con"+numLine+"desc";
 				sAttrB = "Con"+numLine+"Back";
+
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FireCamera_Set");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("FireCamera_Set","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+				numLine --;
 				
+				sAttr = "Con"+numLine;
+				sAttrDes = "Con"+numLine+"desc";
+				sAttrB = "Con"+numLine+"Back";
+
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_Fire");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("Ship_Fire","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_Fire","ControlsNames.txt");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 			}
 		}
@@ -4206,7 +4329,9 @@ bool bSailToEnable()
 	float x = stf(pchar.Ship.Pos.x);
 	float z = stf(pchar.Ship.Pos.z);
 	
-	if(iIsland > 0 && !sti(Islands[iIsland].reload_enable))
+	if(iIsland < 0) return false;
+	
+	if(!sti(Islands[iIsland].reload_enable))
 	{
 		return false;
 	}
@@ -4216,7 +4341,7 @@ bool bSailToEnable()
 	}
 	else
 	{
-		if(iIsland > 0 && CheckAttribute(Islands[iIsland],"EffectRadius"))
+		if(CheckAttribute(&Islands[iIsland],"EffectRadius"))
 		{
 			EffectRadius = sti(Islands[iIsland].EffectRadius); 
 		}

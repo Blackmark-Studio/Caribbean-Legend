@@ -73,15 +73,14 @@ void zpq_seaBattle(string qName)
 void UpgradeShipZPQ(ref chr)
 {
 	sld = chr;
-	RealShips[sti(sld.Ship.Type)].MaxCaliber = 12;
+	RealShips[sti(sld.Ship.Type)].MaxCaliber = 8;
 	//RealShips[sti(sld.Ship.Type)].CannonsQuantity = 10;
-	RealShips[sti(sld.Ship.Type)].MinCrew = 7;
-	RealShips[sti(sld.Ship.Type)].OptCrew = 35;
-	RealShips[sti(sld.Ship.Type)].MaxCrew = 44;
-	RealShips[sti(sld.Ship.Type)].SpeedRate = 18.13;
-	RealShips[sti(sld.Ship.Type)].TurnRate = 73.67;
-	RealShips[sti(sld.Ship.Type)].Capacity = 636;
-	RealShips[sti(sld.Ship.Type)].HP = 850;
+	RealShips[sti(sld.Ship.Type)].MinCrew = 9;
+	RealShips[sti(sld.Ship.Type)].OptCrew = 40;
+	RealShips[sti(sld.Ship.Type)].MaxCrew = 50;
+	RealShips[sti(sld.Ship.Type)].SpeedRate = 13.50;
+	RealShips[sti(sld.Ship.Type)].TurnRate = 70.70;
+	RealShips[sti(sld.Ship.Type)].HP = 750;
 	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
 	UpgradeShipParameter(sld, "SpeedRate");
 	UpgradeShipParameter(sld, "TurnRate");
@@ -90,6 +89,8 @@ void UpgradeShipZPQ(ref chr)
 	{
 		DeleteAttribute(&RealShips[sti(sld.Ship.Type)],"Tuning.Capacity");
 	}
+	RealShips[sti(sld.Ship.Type)].Capacity = 950;
+	RealShips[sti(sld.Ship.Type)].BaseHP = RealShips[sti(sld.Ship.Type)].HP;
 	UpgradeShipParameter(sld, "Capacity");
 	UpgradeShipParameter(sld, "HP");
 	UpgradeShipParameter(sld, "MaxCrew");

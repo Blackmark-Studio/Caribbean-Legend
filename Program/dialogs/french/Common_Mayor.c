@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 			else
 			{
                	//ОСАДЫ homo
-				if (CheckAttribute(Colonies[FindColony(npchar.City)],"Siege"))
+				if (CheckAttribute(&Colonies[FindColony(npchar.City)],"Siege"))
                 {
 
                     makearef(aData, NullCharacter.Siege);
@@ -876,7 +876,7 @@ void ProcessDialogEvent()
 
 		case "node_1":
             //ОСАДЫ homo
-			if (CheckAttribute(Colonies[FindColony(npchar.City)],"Siege"))
+			if (CheckAttribute(&Colonies[FindColony(npchar.City)],"Siege"))
             {
 
                 makearef(aData, NullCharacter.Siege);
@@ -1020,7 +1020,7 @@ void ProcessDialogEvent()
 		
 		case "Helen_node_1":
             //ОСАДЫ homo
-			if (CheckAttribute(Colonies[FindColony(npchar.City)],"Siege"))
+			if (CheckAttribute(&Colonies[FindColony(npchar.City)],"Siege"))
             {
 
                 makearef(aData, NullCharacter.Siege);
@@ -1783,15 +1783,15 @@ void ProcessDialogEvent()
 					sTemp = GetSpyColony(npchar);
 					// не даём задание пробраться во вражеский город, если у нации ГГ нет врагов
 					if (sTemp == "none")
-						i = 1 + dRand(6);
+						i = 1 + hrand(6);
 					else
-						i = dRand(7);
+						i = hrand(7);
 					switch (i)
 					{
 						//========== пробраться во вражеский город ============//Jason: оставляем, как годный
 						case 0:
-							pchar.GenQuest.Intelligence.Terms = dRand(10) + (42 - MOD_SKILL_ENEMY_RATE); //сроки выполнения задания
-							pchar.GenQuest.Intelligence.Money = ((dRand(4) + 6) * 2000) + (sti(pchar.rank) * 1000 + 10000); //вознаграждение
+							pchar.GenQuest.Intelligence.Terms = hrand(10) + (42 - MOD_SKILL_ENEMY_RATE); //сроки выполнения задания
+							pchar.GenQuest.Intelligence.Money = ((hrand(4) + 6) * 2000) + (sti(pchar.rank) * 1000 + 10000); //вознаграждение
 							pchar.GenQuest.Intelligence.City = sTemp; //враждебная колония
                             sTemp = ", which is on " + XI_ConvertString(colonies[FindColony(pchar.GenQuest.Intelligence.City)].islandLable+"Dat");                         
 							dialog.text = "J'ai une mission pour vous, qui comporte des risques sérieux. J'ai besoin que vous vous infiltriez dans "+XI_ConvertString("Colony"+pchar.GenQuest.Intelligence.City+"Acc")+sTemp+", rencontre une certaine personne là-bas, puis remets-moi ce qu'il te donnerait.";
@@ -1800,8 +1800,8 @@ void ProcessDialogEvent()
 						break;
 						//========== квест уничтожения банды ============ //Jason: оставляем, как классику
 						case 1:
-							pchar.GenQuest.DestroyGang.Terms = dRand(2) + 2; //сроки выполнения задания
-							pchar.GenQuest.DestroyGang.Money = ((dRand(6)+4)*500)+(sti(pchar.rank)*300+2000); //вознаграждение
+							pchar.GenQuest.DestroyGang.Terms = hrand(2) + 2; //сроки выполнения задания
+							pchar.GenQuest.DestroyGang.Money = ((hrand(6)+4)*500)+(sti(pchar.rank)*300+2000); //вознаграждение
 							makearef(arName, pchar.GenQuest.DestroyGang);
 							arName.nation = PIRATE;
 							arName.sex = "man";
@@ -1891,6 +1891,7 @@ void ProcessDialogEvent()
             attrLoc =  "So, this is captain " + GetFullName(offref) + ", " + NationNameMan(sti(offref.nation))+ ".";
             // цена зависит от губернатора
             qty = makeint(sti(offref.rank)*(800 + GetCharacterSPECIALSimple(NPChar, SPECIAL_L)*100) + GetCharacterSkillToOld(offref, "Leadership")*500 + GetCharacterSkillToOld(pchar, "commerce")*500);
+			if(HasShipTrait(pchar, "trait14")) qty = makeint(qty * 1.35);
             if (sti(offref.nation) == sti(NPChar.nation))
             {
                 attrLoc = attrLoc + " I am ready to pay the ransom for my compatriot in the amount of  " + FindRussianMoneyString(qty) + ".";
@@ -2063,7 +2064,7 @@ void ProcessDialogEvent()
             Log_Info("All ships have been repaired.");
             //  СЖ -->
 			ReOpenQuestHeader("Gen_CityCapture");
-	        AddQuestRecord("Gen_CityCapture", "t3");
+	        AddQuestRecordInfo("Gen_CityCapture", "t3");
 			AddQuestUserData("Gen_CityCapture", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("Gen_CityCapture", "sCity", XI_ConvertString("colony" + NPChar.City));
 			//  СЖ <--
@@ -2111,7 +2112,7 @@ void ProcessDialogEvent()
             Statistic_AddValue(Pchar, NationShortName(sti(NPChar.nation)) + "_GrabbingTown", 1);
             //  СЖ -->
 			ReOpenQuestHeader("Gen_CityCapture");
-	        AddQuestRecord("Gen_CityCapture", "t2");
+	        AddQuestRecordInfo("Gen_CityCapture", "t2");
 			AddQuestUserData("Gen_CityCapture", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("Gen_CityCapture", "sCity", XI_ConvertString("colony" + NPChar.City));
 			//  СЖ <--
@@ -2143,7 +2144,7 @@ void ProcessDialogEvent()
             //  СЖ -->
 	    	sTemp =  GetNationNameByType(sti(PChar.nation));
 			ReOpenQuestHeader("Gen_CityCapture");
-	        AddQuestRecord("Gen_CityCapture", "t1");
+	        AddQuestRecordInfo("Gen_CityCapture", "t1");
 			AddQuestUserData("Gen_CityCapture", "sCity", XI_ConvertString("colony" + NPChar.City));
 			AddQuestUserData("Gen_CityCapture", "sNation", XI_ConvertString(sTemp + "Gen"));
 			//  СЖ <--
@@ -2174,7 +2175,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "arestFree_2":
-            if (GetCharacterSkillToOld(PChar, SKILL_FORTUNE) >= drand(7) && iTotalTemp < 21)
+            if (GetCharacterSkillToOld(PChar, SKILL_FORTUNE) >= hrand(7) && iTotalTemp < 21)
             {
     			dialog.text = "Je suppose que nous pourrions régler notre incident de cette manière. Vous n'avez pas encore poussé la situation à un point irréparable.";
     		    link.l1 = "Excellent. Je suis très content. S'il vous plaît, acceptez mon don.";
@@ -2282,7 +2283,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakePostcureer.ShipType = SelectCureerShipType();
 			pchar.GenQuest.TakePostcureer.ShipName = GenerateRandomNameToShip(sti(pchar.GenQuest.TakePostcureer.Nation));
 			pchar.GenQuest.TakePostcureer.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakePostcureer.ShipType));
-			pchar.GenQuest.TakePostcureer.Money = ((dRand(5)+drand(6)+4)*2000)+(sti(pchar.rank)*500);
+			pchar.GenQuest.TakePostcureer.Money = ((hrand(5)+hrand(6)+4)*2000)+(sti(pchar.rank)*500);
 			dialog.text = "Bien sûr. Vous devrez localiser un navire courrier de "+NationNameGenitive(sti(pchar.GenQuest.TakePostcureer.Nation))+" du nom de '"+pchar.GenQuest.TakePostcureer.ShipName+", aborde-le et apporte-moi les papiers, que tu devrais pouvoir trouver dans la cabine du capitaine. Ce navire passera près de "+XI_ConvertString("Colony"+pchar.GenQuest.TakePostcureer.City+"Gen")+" approximativement dans "+FindRussianDaysString(pchar.GenQuest.TakePostcureer.Terms)+".";
 			link.l1 = "Très bien, j'accepte cette mission. Et quels types de documents dois-je chercher ?";
 		    link.l1.go = "TakePostcureer_agree";
@@ -2347,12 +2348,12 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakeArsenalship.Island = GetArealByCityName(pchar.GenQuest.TakeArsenalship.City);
 			pchar.GenQuest.TakeArsenalship.Terms = GetMaxDaysFromIsland2Island(Islands[GetCharacterCurrentIsland(PChar)].id, pchar.GenQuest.TakeArsenalship.Island)+5;
 			pchar.GenQuest.TakeArsenalship.LoginDay = sti(pchar.GenQuest.TakeArsenalship.Terms)-1;
-			pchar.GenQuest.TakeArsenalship.ShipType = SelectArsenalShipType();
-			pchar.GenQuest.TakeArsenalship.ShipTypeA = SelectCureerShipType();
+			pchar.GenQuest.TakeArsenalship.ShipType = SelectArsenalShipType(FLAG_SHIP_TYPE_RAIDER);
+			pchar.GenQuest.TakeArsenalship.ShipTypeA = SelectArsenalShipType(FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_UNIVERSAL);
 			pchar.GenQuest.TakeArsenalship.ShipName = GenerateRandomNameToShip(sti(pchar.GenQuest.TakeArsenalship.Nation));
 			pchar.GenQuest.TakeArsenalship.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakeArsenalship.ShipType));
 			pchar.GenQuest.TakeArsenalship.CannonA = SelectLevelCannonParameter(sti(pchar.GenQuest.TakeArsenalship.ShipTypeA)); // Addon 2016-1 Jason пиратская линейка
-			pchar.GenQuest.TakeArsenalship.Money = ((dRand(5)+drand(6)+4)*1800)+(sti(pchar.rank)*500);
+			pchar.GenQuest.TakeArsenalship.Money = ((hrand(5)+hrand(6)+4)*1800)+(sti(pchar.rank)*500);
 			dialog.text = "Bien sûr. Vous devrez localiser un transport militaire de "+NationNameGenitive(sti(pchar.GenQuest.TakeArsenalship.Nation))+", with gunpowder and ammunition on board; the name of the vessel is '"+pchar.GenQuest.TakeArsenalship.ShipName+"', find and destroy it. We'll weaken our enemy by doing that\nThe transport will sail with an escort to the colony "+XI_ConvertString("Colony"+pchar.GenQuest.TakeArsenalship.City)+", and will be approximately in "+FindRussianDaysString(pchar.GenQuest.TakeArsenalship.Terms)+", so you should hurry.";
 			link.l1 = "D'accord, j'accepte. Dois-je couler le navire arsenal ou devrais-je tenter de le capturer ?";
 		    link.l1.go = "TakeArsenalship_agree";
@@ -2395,11 +2396,11 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakePirateship.City = FindQuestCity(npchar, "all", -1, true, true); // belamour legendary edition 
 			pchar.GenQuest.TakePirateship.Island = GetArealByCityName(pchar.GenQuest.TakePirateship.City);
 			pchar.GenQuest.TakePirateship.Terms = GetMaxDaysFromIsland2Island(Islands[GetCharacterCurrentIsland(PChar)].id, pchar.GenQuest.TakePirateship.Island)+5;
-			pchar.GenQuest.TakePirateship.ShipType = SelectCureerShipType();
+			pchar.GenQuest.TakePirateship.ShipType = SelectPirateShipType();
 			pchar.GenQuest.TakePirateship.ShipName = GenerateRandomNameToShip(PIRATE);
 			pchar.GenQuest.TakePirateship.Name = GenerateRandomName(PIRATE, "man");
 			pchar.GenQuest.TakePirateship.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakePirateship.ShipType));
-			pchar.GenQuest.TakePirateship.Money = ((dRand(5)+drand(6)+4)*2400)+(sti(pchar.rank)*500);
+			pchar.GenQuest.TakePirateship.Money = ((hrand(5)+hrand(6)+4)*2400)+(sti(pchar.rank)*500);
 			dialog.text = "Bien sûr. Je suis vraiment furieux des agissements d'un capitaine pirate, dont le nom est "+pchar.GenQuest.TakePirateship.Name+". Ce gredin a pris l'habitude de piller nos marchands, ce qui nuit énormément au commerce entre les colonies. C'est maintenant le moment idéal pour se débarrasser de ce bâtard, car je viens juste de découvrir où il se cache en ce moment. Es-tu prêt à envoyer ce fils de pute sur le Siège du Jugement de Dieu ?";
 			link.l1 = "Je serais honoré ! Où puis-je trouver ce pirate ?";
 		    link.l1.go = "TakePirateship_agree";
@@ -2462,7 +2463,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakePassenger.ShipName = GenerateRandomNameToShip(sti(pchar.GenQuest.TakePassenger.Nation));
 			pchar.GenQuest.TakePassenger.Name = GenerateRandomName(sti(pchar.GenQuest.TakePassenger.Nation), "man");
 			pchar.GenQuest.TakePassenger.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakePassenger.ShipType));
-			pchar.GenQuest.TakePassenger.Money = ((dRand(5)+drand(6)+4)*2200)+(sti(pchar.rank)*500);
+			pchar.GenQuest.TakePassenger.Money = ((hrand(5)+hrand(6)+4)*2200)+(sti(pchar.rank)*500);
 			string sText = SelectPassText();
 			dialog.text = "Bien sûr. Je parle d'un gredin du nom de "+pchar.GenQuest.TakePassenger.Name+". "+sText+" Je le cherchais depuis pas mal de temps, et maintenant j'ai enfin obtenu des informations fiables sur l'endroit où il se trouve. J'ai besoin que tu m'amènes cet homme, coûte que coûte vivant. Je veux le pendre en public sur la place de notre ville. Es-tu prêt à entreprendre cette mission ?";
 			link.l1 = "Je suis prêt, "+GetAddress_FormToNPC(NPChar)+"Où puis-je trouver ce vaurien ?";
@@ -2502,10 +2503,10 @@ void ProcessDialogEvent()
 			pchar.GenQuest.CustomPatrol.Island = Islands[GetCharacterCurrentIsland(PChar)].id;
 			pchar.GenQuest.CustomPatrol.LoginDay = rand(4)+1;
 			pchar.GenQuest.CustomPatrol.Loginlocator = rand(3)+4;
-			pchar.GenQuest.CustomPatrol.ShipType = SelectCureerShipType();
-			pchar.GenQuest.CustomPatrol.ShipTypeA = SelectCureerShipType();
+			pchar.GenQuest.CustomPatrol.ShipType = SelectCustomPatrolShipType(FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_UNIVERSAL);
+			pchar.GenQuest.CustomPatrol.ShipTypeA = SelectCustomPatrolShipType(FLAG_SHIP_TYPE_RAIDER);
 			pchar.GenQuest.CustomPatrol.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.CustomPatrol.ShipType));
-			pchar.GenQuest.CustomPatrol.Money = ((dRand(5)+drand(6)+4)*1400)+(sti(pchar.rank)*300);
+			pchar.GenQuest.CustomPatrol.Money = ((hrand(5)+hrand(6)+4)*1400)+(sti(pchar.rank)*300);
 			dialog.text = "J'ai des informations fiables qu'un certain capitaine a arrangé une transaction avec des contrebandiers concernant la vente de quelques esclaves. Comme vous devez le savoir, de telles transactions par des particuliers dans nos colonies sont caractérisées comme des marchandises de contrebande\nLe problème est que je ne connais ni l'heure exacte, ni la date, ni l'endroit où les contrebandiers se rencontreront. On sait seulement qu'une transaction criminelle sera réalisée dans les cinq prochains jours sur notre île. Pour aggraver les choses, tous mes navires de patrouille sont soit en réparation, soit impliqués dans d'autres tâches et ne peuvent pas trouver ces vauriens\nJe vous suggère de vous occuper de cette tâche - traquez les contrebandiers et traitez-les avec les méthodes les plus radicales, faites-en un exemple. Êtes-vous prêt à accomplir cette mission ?";
 			link.l1 = "Je suis prêt, "+GetAddress_FormToNPC(NPChar)+"Dis-moi, as-tu des informations supplémentaires ? Comme le nom du capitaine, le nom ou le type de son navire ?";
 		    link.l1.go = "CustomPatrol_agree";
@@ -2545,7 +2546,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.FindFugitive.City = SelectFugitiveCity();
 			pchar.GenQuest.FindFugitive.Chance = rand(2);
 			pchar.GenQuest.FindFugitive.Name = GenerateRandomName(sti(npchar.Nation), "man");
-			pchar.GenQuest.FindFugitive.Money = ((dRand(5)+drand(6)+4)*2600)+(sti(pchar.rank)*600);
+			pchar.GenQuest.FindFugitive.Money = ((hrand(5)+hrand(6)+4)*2600)+(sti(pchar.rank)*600);
 			sText = SelectFugitiveText();
 			log_testinfo(pchar.GenQuest.FindFugitive.City);
 			log_testinfo(FindRussianDaysString(sti(pchar.GenQuest.FindFugitive.Chance)));
@@ -2781,6 +2782,10 @@ void ProcessDialogEvent()
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "amulet_7");
 			TakeNItems(pchar, "blade_08", 1);
+			if(GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "")
+			{
+				EquipCharacterbyItem(pchar, "blade_08");
+			}
 			TakeNItems(pchar, "pistol1", 1);
 			TakeNItems(pchar, "cirass5", 1);
 			pchar.quest.Sharlie_PardonOver.over = "yes";
@@ -2803,6 +2808,10 @@ void ProcessDialogEvent()
 			Log_Info("You'have received equipment");
 			PlaySound("interface\important_item.wav");
 			TakeNItems(pchar, "blade_08", 1);
+			if(GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "")
+			{
+				EquipCharacterbyItem(pchar, "blade_08");
+			}
 			TakeNItems(pchar, "pistol1", 1);
 			TakeNItems(pchar, "cirass5", 1);
 			pchar.quest.Sharlie_PardonOver.over = "yes";
@@ -2999,7 +3008,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("JusticeOnSale", "5");
 			CloseQuestHeader("JusticeOnSale");
 			
-			AddMoneyToCharacter(PChar, 1000 + sti(PChar.rank) * 30 * dRand(10));
+			AddMoneyToCharacter(PChar, 1000 + sti(PChar.rank) * 30 * hrand(10));
 			
 			DeleteAttribute(PChar, "GenQuest.JusticeOnSale");
 			
@@ -3074,7 +3083,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_8":
-			AddMoneyToCharacter(PChar, sti(PChar.rank) * 300 + dRand(1000));
+			AddMoneyToCharacter(PChar, sti(PChar.rank) * 300 + hrand(1000));
 			DeleteAttribute(PChar, "GenQuest.JusticeOnSale");
 			DialogExit();
 		break;
@@ -3195,7 +3204,7 @@ string GetGangLocation(ref npchar)
 		}
 	}
 	if (howStore == 0) return "none";
-	n = storeArray[dRand(howStore-1)];
+	n = storeArray[hrand(howStore-1)];
 	return locations[n].id;
 }
 
@@ -3265,7 +3274,7 @@ string GetSpyLocation(ref npchar)
 		}
 	}
 	if (howStore == 0) return "none";
-	LocId = storeArray[dRand(howStore-1)];
+	LocId = storeArray[hrand(howStore-1)];
 	SetOpenDoorCommonLoc(npchar.city, LocId); //открываем дверь
 	for(n=0; n<MAX_CHARACTERS; n++)
 	{
@@ -3287,7 +3296,7 @@ string GetSpyColony(ref NPChar)
 	for(int n=0; n<MAX_COLONIES; n++)
 	{
 		// Rebbebion, чуть изменил функцию, чтобы условно испанцы не просили пробраться к испанцам, французы к французам и т.д
-		if (colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetRelation2BaseNation(sti(colonies[n].nation)) == RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].id != npchar.City && colonies[n].nation != npchar.nation)
+		if (colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetRelation2BaseNation(sti(colonies[n].nation)) == RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != npchar.City && colonies[n].nation != npchar.nation)
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -3299,52 +3308,67 @@ string GetSpyColony(ref NPChar)
 
 int SelectCureerShipType()
 {
-	int iShipType;
-	if(sti(pchar.rank) >= 14)
-	{
-		iShipType = SHIP_CORVETTE + rand(makeint(SHIP_POLACRE - SHIP_CORVETTE));
-	}
-	if(sti(pchar.rank) >= 6 && sti(pchar.rank) < 14)
-	{
-		iShipType = SHIP_BRIGANTINE + rand(makeint(SHIP_SCHOONER_W - SHIP_BRIGANTINE));
-	}
-	if(sti(pchar.rank) < 6)
-	{
-		iShipType = SHIP_CAREERLUGGER + rand(makeint(SHIP_SLOOP - SHIP_CAREERLUGGER));
-	}
-	return iShipType;
+	int iClass = 6;
+	int iRank = sti(pchar.rank);
+	
+	if(iRank < 6) iClass = 6;
+	if(iRank >= 6 && iRank < 12) iClass = 6 - rand(1);
+	if(iRank >= 12 && iRank < 21) iClass = 5 - rand(1);
+	if(iRank >= 21) iClass = 4 - rand(1);
+	
+	return GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_RAIDER + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY);
 }
 
-int SelectArsenalShipType()
+int SelectPirateShipType()
 {
-	int iShipType;
-	if(sti(pchar.rank) >= 18)
+	int iClass = 6;
+	int iRank = sti(pchar.rank);
+	
+	if(iRank < 6) iClass = 6;
+	if(iRank >= 6 && iRank < 12) iClass = 5;
+	if(iRank >= 12 && iRank < 21) iClass = 4;
+	if(iRank >= 21 && iRank < 30) iClass = 4 - rand(1);
+	if(iRank >= 30) iClass = 2;
+	
+	return GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_RAIDER + FLAG_SHIP_TYPE_UNIVERSAL + FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
+}
+
+int SelectCustomPatrolShipType(int iFlagType)
+{
+	if(CheckAttribute(pchar, "questTemp.StatusCity"))
 	{
-		iShipType = SHIP_GALEON_H;
+		return SHIP_CAREERLUGGER;
 	}
-	if(sti(pchar.rank) >= 14 && sti(pchar.rank) < 18)
-	{
-		iShipType = SHIP_GALEON_L;
-	}
-	if(sti(pchar.rank) >= 8 && sti(pchar.rank) < 14)
-	{
-		iShipType = SHIP_CARAVEL + rand(makeint(SHIP_CARACCA - SHIP_CARAVEL));
-	}
-	if(sti(pchar.rank) >= 4 && sti(pchar.rank) < 8)
-	{
-		iShipType = SHIP_SCHOONER + rand(makeint(SHIP_FLEUT - SHIP_SCHOONER));
-	}
-	if(sti(pchar.rank) < 4)
-	{
-		iShipType = SHIP_BARQUE;
-	}
-	return iShipType;
+	
+	int iClass = 6;
+	int iRank = sti(pchar.rank);
+	
+	if(iRank < 6) iClass = 6;
+	if(iRank >= 6 && iRank < 12) iClass = 6 - rand(1);
+	if(iRank >= 12 && iRank < 21) iClass = 5 - rand(1);
+	if(iRank >= 21) iClass = 4 - rand(1);
+	
+	return GetRandomShipType(GetClassFlag(iClass), iFlagType, FLAG_SHIP_NATION_ANY);
+}
+
+int SelectArsenalShipType(int iFlagType)
+{
+	int iClass = 6;
+	int iRank = sti(pchar.rank);
+	
+	if(iRank < 6) iClass = 6;
+	if(iRank >= 6 && iRank < 12) iClass = 6 - rand(1);
+	if(iRank >= 12 && iRank < 21) iClass = 5 - rand(1);
+	if(iRank >= 21 && iRank < 30) iClass = 4 - rand(1);
+	if(iRank >= 30) iClass = 2;
+	
+	return GetRandomShipType(GetClassFlag(iClass), iFlagType, FLAG_SHIP_NATION_ANY);
 }
 
 string SelectPassText()
 {
 	string sText;
-	switch (drand(5))
+	switch (hrand(5))
 	{
 		case 0: sText = "That Judas, using his position, sold an important state secret to an enemy power."; break;
 		case 1: sText = "That foul scoundrel killed his relative, a well-known and noble man, in order to inherit his fortune."; break;
@@ -3372,7 +3396,7 @@ string SelectFugitiveCity()
 string SelectFugitiveText()
 {
 	string sText;
-	switch (drand(5))
+	switch (hrand(5))
 	{
 		case 0: sText = "one of the junior officers in our garrison has deserted and left the colony on board of a merchant ship."; break;
 		case 1: sText = "one of our officers deserted right on duty and escaped on board of a smuggler ship."; break;

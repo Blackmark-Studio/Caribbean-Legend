@@ -1,0 +1,74 @@
+﻿Portugal_1
+{
+Bartolomeo
+}
+Portugal_2
+{
+Portuguese
+}
+
+Portugal_3
+{
+Piter
+}
+Portugal_4
+{
+van Stahl
+}
+
+Portugal_5
+{
+Leo
+}
+Portugal_6
+{
+Cord
+}
+
+Portugal_7
+{
+Due giorni dopo@<NewStr()>la nave nemica non è stata avvistata
+}
+
+Portugal_8
+{
+Frants
+}
+Portugal_9
+{
+Garke
+}
+
+Portugal_10
+{
+Albatross
+}
+
+Portugal_11
+{
+Bart il portoghese ha lasciato la vostra nave!
+}
+
+Portugal_12
+{
+Ernando
+}
+Portugal_13
+{
+Vaskez
+}
+
+Portugal_14
+{
+Un'ora è passata...@<NewStr()>Il portoghese è stato portato in casa
+}
+
+Portugal_15
+{
+Due ore sono passate...
+}
+
+Portugal_16
+{
+Avete scoperto i tesori di Bart il portoghese!
+}

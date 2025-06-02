@@ -8,7 +8,6 @@
 #define WDM_ETYPE_WARRING	2
 #define WDM_ETYPE_SPECIAL	3
 
-
 object worldMap;
 
 //=========================================================================================
@@ -303,23 +302,23 @@ bool wdmCreateFollowShipByIndex(float kSpeed, int index, ref encID, int timeOutI
 	//Нация энкоунтера
 	string nationShipName = wdmEncounterModelName(index);
 	//проверим нацию
-	ref n = GetMapEncounterRef(index);
+	ref rEnc = GetMapEncounterRef(index);
 	int iNation = PIRATE;
-	if(CheckAttribute(n, "nation"))
+	if(CheckAttribute(rEnc, "nation"))
 	{
-		iNation = sti(n.Nation);
+		iNation = sti(rEnc.Nation);
 	}
 	//Создадим ссылку на атрибуты
 	ref mapEncSlotRef = GetMapEncounterRef(index);
 	//Время жизни в секундах
-	float daysPerSec = 24.0/stf(worldMap.date.hourPerSec); // Boal супер бага была - делили на 24. Математику в школе прогуливали?
+	float daysPerSec = 24.0/stf(worldMap.date.hourPerSec);
 	float timeOutInSec = daysPerSec*timeOutInDays;
 	//Создаём реального энкоунтера
 	bool res = false;
-	bool klas = (IsCharacterPerkOn(pchar,"SeaDogProfessional")) && (GetCharacterShipClass(pchar) < 5);
-	if (klas || (GetNationRelation2MainCharacter(iNation) != RELATION_ENEMY))
+	bool PowerCheck = (iNation == PIRATE) && wdmCompareEncPower(iNation); // Механика мощи
+	if (PowerCheck || (GetNationRelation2MainCharacter(iNation) != RELATION_ENEMY))
 	{
-		res = SendMessage(&worldMap, "lsssff", MSG_WORLDMAP_CREATEENC_MER, nationShipName, "", "", kSpeed, timeOutInSec); // boal new
+		res = SendMessage(&worldMap, "lsssff", MSG_WORLDMAP_CREATEENC_MER, nationShipName, "", "", kSpeed, timeOutInSec);
 	}
 	else
 	{   // boal - код этот полный абзац, я Вам, господа акеловцы, аплодирую - метод Следовать даёт убегание - и так весь код. плакаль
@@ -338,11 +337,11 @@ bool wdmCreateRealFollowShipByIndex(float kSpeed, int index, ref encID, int time
 	//Нация энкоунтера
 	string nationShipName = wdmEncounterModelName(index);
 	//проверим нацию
-	ref n = GetMapEncounterRef(index);
+	ref rEnc = GetMapEncounterRef(index);
 	int iNation = PIRATE;
-	if(CheckAttribute(n, "nation"))
+	if(CheckAttribute(rEnc, "nation"))
 	{
-		iNation = sti(n.Nation);
+		iNation = sti(rEnc.Nation);
 	}
 	//Создадим ссылку на атрибуты
 	ref mapEncSlotRef = GetMapEncounterRef(index);
@@ -435,10 +434,10 @@ void wdmCreateStorm()
 //Получить модельку кораблика по индексу нации
 string wdmEncounterModelName(int encIndex)
 {
-	ref n = GetMapEncounterRef(encIndex);
-	if(CheckAttribute(n, "worldMapShip") != 0)
+	ref rEnc = GetMapEncounterRef(encIndex);
+	if(CheckAttribute(rEnc, "worldMapShip") != 0)
 	{
-		return n.worldMapShip;
+		return rEnc.worldMapShip;
 	}
 	return "ship";
 }
@@ -614,8 +613,7 @@ void  wdmUpdateAllEncounterLivetime()
 }
 
 // найти сущ случайку для НПС
-
-aref  wdmFindOrCreateQuestEncounter(string _chrId)
+aref wdmFindOrCreateQuestEncounter(string _chrId)
 {
     aref encs;
     string sdel,aname;
@@ -641,7 +639,7 @@ aref  wdmFindOrCreateQuestEncounter(string _chrId)
 	            }
 	            else
 	            {
-	            	 enc.livetime = 0;
+	            	enc.livetime = 0;
 	            }
 	        }
         }
@@ -672,4 +670,116 @@ aref  wdmFindOrCreateQuestEncounter(string _chrId)
 void wdmShowInterface(bool showUI)
 {
 	SendMessage(&worldMap, "ll", MSG_WORLDMAP_WIND_UI_SET_SHOW, showUI);
+}
+
+// Механика мощи
+bool wdmCompareEncPower(int iNation) //(ref rEnc)
+{
+    /*
+    if(!CheckAttribute(rEnc, "Power")) return false;
+    float encPow = stf(rEnc.Power);
+    float pchPow = stf(PChar.Squadron.ModPower);
+    return (pchPow > encPow);
+    */
+
+    return (stf(PChar.Squadron.ModPower) > wdmGetPowerThreshold(iNation));
+    
+}
+
+string GetBattleDifficulty(ref rEnc)
+{
+    float encPow = 0.0;
+    float pchPow = stf(PChar.Squadron.RawPower);
+    if(CheckAttribute(rEnc, "CharacterID"))
+    {
+        string sTemp;
+        ref chr = CharacterFromID(rEnc.CharacterID);
+        if(CheckAttribute(chr, "SeaAI.Group.Name"))
+            sTemp = chr.SeaAI.Group.Name;
+        else 
+            return XI_ConvertString("Unknown dif");
+
+        // ВАЖНО: МЫ НИГДЕ НЕ НАЗНАЧАЕМ КОМПАНЬОНОВ СЕЙЧАС
+        // ДЛЯ NPC ТОЛЬКО ГРУППЫ
+
+        int	iGroupIndex = Group_FindGroup(sTemp);
+        if (iGroupIndex < 0)
+        {
+            Log_TestInfo("НЕТ ГРУППЫ В GetBattleDifficulty");
+            trace("НЕТ ГРУППЫ В GetBattleDifficulty");
+            return XI_ConvertString("Unknown dif");
+        }
+
+        ref rGroup = Group_GetGroupByIndex(iGroupIndex);
+        if (!CheckAttribute(rGroup, "Quest")) return XI_ConvertString("Unknown dif");
+
+        aref aCompanions, aCharInfo;
+        makearef(aCompanions, rGroup.Quest);
+        int qty = GetAttributesNum(aCompanions);
+
+        ref rChar, rShip;
+        int iShipType, idx;
+        for(int i = 0; i < qty; i++)
+        {
+            aCharInfo = GetAttributeN(aCompanions, i);
+            idx = sti(aCharInfo.index);
+            if(idx == -1) continue;
+            rChar = GetCharacter(idx);
+    		if(!CheckAttribute(rChar, "index") || rChar.index == "none" || LAi_IsDead(rChar)) continue;
+            iShipType = sti(rChar.Ship.Type);
+            if(iShipType == SHIP_NOTUSED) continue;
+            rShip = GetRealShip(iShipType);
+            encPow += GetRealShipPower(rChar);
+        }
+    }
+    else
+    {
+        if(!CheckAttribute(rEnc, "Power")) return XI_ConvertString("Unknown dif"); // TO_DO: DEL
+        encPow = stf(rEnc.Power);
+    }
+    if(pchPow == 0.0)
+    {
+        if(encPow == 0.0) return XI_ConvertString("Medium dif");
+        return XI_ConvertString("Fatal dif");
+    }
+
+    float fRatio = (encPow * 0.9) / pchPow;
+
+    if(fRatio >= 1.7)  return XI_ConvertString("Fatal dif");    // +70% и выше
+    if(fRatio > 1.35)  return XI_ConvertString("High dif");     // +36% до +69%
+    if(fRatio >= 0.65) return XI_ConvertString("Medium dif");   // -35% до +35%
+    if(fRatio >= 0.31) return XI_ConvertString("Low dif");      // -69% до -36%
+    return XI_ConvertString("Elementary dif");                  // -70% и ниже
+}
+
+int wdmGetNationThreat(int iNation)
+{
+	if(iNation == PIRATE)
+	{
+		int iRank = sti(pchar.rank);
+		if(iRank <= 8)       return 1;
+		else if(iRank <= 16) return 2;
+		else if(iRank <= 25) return 3;
+		else if(iRank <= 30) return 4;
+		else                 return 5;
+	}
+
+	int iRel = ChangeCharacterNationReputation(PChar, iNation, 0);
+	if (iRel > -10)     return 0;
+	else if(iRel > -15) return 1;
+	else if(iRel > -20) return 2;
+	else if(iRel > -30) return 3;
+	else if(iRel > -50) return 4;
+	else                return 5;
+}
+
+int wdmGetPowerThreshold(int iNation)
+{
+    int iThreat = wdmGetNationThreat(iNation);
+    if(iThreat == 0) return -1;
+    if(iThreat == 1) return 200;
+    if(iThreat == 2) return 325;
+    if(iThreat == 3) return 475;
+    if(iThreat == 4) return 675;
+    if(iThreat == 5) return 925;
 }

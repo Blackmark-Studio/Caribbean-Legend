@@ -87,7 +87,7 @@ void ProcessCancelExit()
 
 void IDoExit(int exitCode)
 {
-	if(GetSummonSkillFromName(GetMainCharacter(), "Sneak") < Rand(120) && !CheckAttribute(pchar, "questTemp.BlockContrabandPatrol"))
+	if(GetSummonSkillFromName(GetMainCharacter(), "Sneak") * GetFloatByCondition(HasShipTrait(pchar, "trait05"), 1.0, 1.5) < Rand(120) && !CheckAttribute(pchar, "questTemp.BlockContrabandPatrol"))
 	{
 		DoQuestCheckDelay("Rand_ContrabandInterruption", 0.1);
 		for (int i=1; i<=3; i++)

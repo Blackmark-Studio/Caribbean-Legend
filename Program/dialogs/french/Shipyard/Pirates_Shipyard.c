@@ -101,7 +101,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "shipyard_dlg":			
-			if((shipBaseHP - shipCurHP > 0) && (shipClass < 6))
+			if((shipBaseHP - shipCurHP > 0) && (shipClass < 7))
 			{
 				dialog.Text = "Je peux vous proposer une réparation capitale de la charpente de votre coque. Les gens ici ne savent pas construire de bons navires, ils tombent tous en morceaux après un seul tir...";						
 				Link.l1 = "Super ! J'ai justement un navire qui a besoin de réparations. Peut-être pourriez-vous jeter un œil à ce que vous pouvez faire ?";
@@ -148,7 +148,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "ship_repair_again":
-			if((shipBaseHP - shipCurHP > 0) && (shipClass < 6))
+			if((shipBaseHP - shipCurHP > 0) && (shipClass < 7))
 			{
 				dialog.Text = RandPhraseSimple("Ah... vous encore. Vous voulez réparer votre bateau à nouveau ?",RandPhraseSimple("Salutations, à un capitaine célèbre. Quoi, avez-vous besoin d'une autre réparation capitale ?","Bon sang... Pas une minute de paix et de tranquillité. Vous ne laissez pas un vieil homme se concentrer... Encore une réparation ?"));
 				Link.l1 = "Oui. Bien sûr. Allons-nous examiner ce que nous pouvons faire ?";
@@ -1316,10 +1316,10 @@ int GetMaterialQtyRepair( ref _chr, int MaterialNum )
 		HPPrice = HPPrice * 2;
 	}					
 	
-	int     Matherial1 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (6 - shipClass) / 2) + rand(modifier);
-	int     Matherial2 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (6 - shipClass) / 2) + rand(modifier);
-	int     Matherial3 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (6 - shipClass) / 2) + rand(modifier);
-	int     Matherial4 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (6 - shipClass) / 2) + rand(modifier);
+	int     Matherial1 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
+	int     Matherial2 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
+	int     Matherial3 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
+	int     Matherial4 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
 		
 	if(MaterialNum == 0) return HPPrice;	
 	if(MaterialNum == 1) return Matherial1;

@@ -127,7 +127,7 @@ void FillSkyDir(aref aSky)
 			{
 				if(sti(Weathers[i].Storm))
 				{
-					sDir = Whr_SetStormSkyData( Weathers[i].Hour.Min, &fog, &sunAmb );
+					sDir = Whr_SetStormSkyData(stf(Weathers[i].Hour.Min), &fog, &sunAmb);
 					Weathers[i].Fog.Color 				= fog;
 					Weathers[i].Sun.Ambient 			= sunAmb;
 				}

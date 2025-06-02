@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 			// --> калеуче
-			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && drand(1) == 0 && sti(Pchar.money) >= 2000) 
+			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(1) == 0 && sti(Pchar.money) >= 2000) 
 			{
 				dialog.text = "Spójrz, panie, może chciałbyś kupić jedną zabawną rzecz? To niedrogo, tylko kilka tysięcy peso...";
 				link.l1 = "Hmm. Pewnie ukradłeś to 'małe coś', a teraz próbujesz się tego pozbyć?";
@@ -35,6 +35,13 @@ void ProcessDialogEvent()
 					link.l2 = "Hej, słuchaj, chciałbyś zarobić parę tysięcy pesos zamiast tych żałosnych jałmużen?";
 					link.l2.go = "trial";
 				}
+				// --> Тайна Бетси Прайс
+				if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon3") && pchar.location == "Villemstad_town")
+				{
+					link.l2 = "Ten wisiorek z kameą... Gdzie go znalazłeś?";
+					link.l2.go = "TBP_Kulon_1";
+				}
+				// <-- Тайна Бетси Прайс
 				npchar.quest.meeting = "1";
 			}			
 			else
@@ -52,6 +59,13 @@ void ProcessDialogEvent()
 					link.l2 = "Hej, posłuchaj, czy chciałbyś zarobić kilka tysięcy peso zamiast tych żałosnych jałmużn?";
 					link.l2.go = "trial";
 				}
+				// --> Тайна Бетси Прайс
+				if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon3") && pchar.location == "Villemstad_town")
+				{
+					link.l2 = "Ten wisiorek z kameą... Gdzie go znalazłeś?";
+					link.l2.go = "TBP_Kulon_1";
+				}
+				// <-- Тайна Бетси Прайс
 				link.l3 = LinkRandPhrase("Czy możesz mi coś ciekawego opowiedzieć?","Co nowego w mieście?","Och, chciałbym usłyszeć najnowsze plotki...");
 				link.l3.go = "rumours_poor";
 			}
@@ -340,5 +354,35 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "kaleuche_amulet1"); 
 		break;
 		// <-- калеуче
+		
+		// --> Тайна Бетси Прайс
+		case "TBP_Kulon_1":
+			dialog.text = "Ech, "+GetAddress_Form(NPChar)+", co pan"+GetSexPhrase("u","i")+" do starej błyskotki?";
+			link.l1 = "Jak przyłożę teraz butem w twoją głupią głowę, od razu zrozumiesz, jaki mam w tym interes.";
+			link.l1.go = "TBP_Kulon_TO";
+			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon2"))
+			{
+				link.l2 = "Ten wisiorek należał do Betsy Price. Więc gdzie go znalazłeś?";
+				link.l2.go = "TBP_Kulon_leadership";
+			}
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon3");
+		break;
+		
+		case "TBP_Kulon_TO":
+			dialog.text = "Leżał przy klombie obok domu z latarnią, "+GetAddress_Form(NPChar)+". Wdeptany w błoto przez gruby męski but. Ale w tym domu już od dawna nikt nie mieszka, więc uznałem, że nie ma właściciela...";
+			link.l1 = "Hmm...";
+			link.l1.go = "exit";
+			AddCharacterExpToSkill(pchar, "FencingH", 100);
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon2");
+		break;
+		
+		case "TBP_Kulon_leadership":
+			dialog.text = "Leżał przy klombie obok domu z latarnią, "+GetAddress_Form(NPChar)+". Wdeptany w błoto przez gruby męski but. Ale w tym domu już od dawna nikt nie mieszka, więc uznałem, że nie ma właściciela...";
+			link.l1 = "Hmm...";
+			link.l1.go = "exit";
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon2");
+		break;
+		// <-- Тайна Бетси Прайс
 	}
 }

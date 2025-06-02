@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 				{
 					Link.l66 = ""+npchar.name+", I have a serious request for you - a real deal, suicidal but damn profitable. I need a loyal man on a quest to an ancient Indian city. You with me?";
 				}
-				if(npchar.id == "FMQT_mercen")
+				if(npchar.id == "Duran")
 				{
 					Link.l66 = "Claude, you once complained that mercenaries are underpaid.";
 				}
@@ -163,7 +163,7 @@ void ProcessDialogEvent()
 				Link.l1.go = "folke_tieyasal";
 				break;
 			}
-			if(npchar.id == "FMQT_mercen")
+			if(npchar.id == "Duran")
 			{
 				dialog.text = "Huh? Did I really say that?";
 				Link.l1 = "You did. I listened to you carefully then, and I'm ready to correct the injustice.";
@@ -284,7 +284,7 @@ void ProcessDialogEvent()
 		
 		// boal 29.05.04 офицер хочет свалить -->
         case "WantToGo":
-			if (npchar.id == "FMQT_mercen" && !CheckAttribute(pchar, "questTemp.SKD_SobytieKlodDuran"))
+			if (npchar.id == "Duran" && !CheckAttribute(pchar, "questTemp.SKD_SobytieKlodDuran"))
 			{
 				SetTimerCondition("SKD_DuranTavern", 0, 0, 30, false);
 				pchar.questTemp.SKD_SobytieKlodDuran = true;
@@ -346,7 +346,7 @@ void ProcessDialogEvent()
 	case "WantToGo_Stay_ForMoney":
 		Diag.TempNode = "Hired";
 		NPChar.greeting = "Gr_Officer";
-		if(NPChar.id == "FMQT_mercen") NPChar.greeting = "Duran_officer";
+		if(NPChar.id == "Duran") NPChar.greeting = "Duran_officer";
 		ChangeCharacterComplexReputation(pchar,"authority", 0.2);
 		AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*500)));
 		Npchar.loyality = makeint(Npchar.loyality) + 1;    
@@ -386,7 +386,7 @@ void ProcessDialogEvent()
 		
 	// пассажир возмущен игроком и сваливает -->
 	case "WantToRemove":
-		if (npchar.id == "FMQT_mercen" && !CheckAttribute(pchar, "questTemp.SKD_SobytieKlodDuran"))
+		if (npchar.id == "Duran" && !CheckAttribute(pchar, "questTemp.SKD_SobytieKlodDuran"))
 		{
 			SetTimerCondition("SKD_DuranTavern", 0, 0, 30, false);
 			pchar.questTemp.SKD_SobytieKlodDuran = true;
@@ -483,7 +483,7 @@ void ProcessDialogEvent()
 			// belamour legendary edition в ближайшее время не подойдет от страха
 			/* if(CheckCharacterPerk(pchar, "IronWill"))
 			{
-				Npchar.loyality = makeint(Npchar.loyality) + 3 + drand(sti(GetSummonSkillFromNameToOld(pchar,SKILL_FORTUNE)+GetSummonSkillFromNameToOld(pchar,SKILL_LEADERSHIP)));
+				Npchar.loyality = makeint(Npchar.loyality) + 3 + hrand(sti(GetSummonSkillFromNameToOld(pchar,SKILL_FORTUNE)+GetSummonSkillFromNameToOld(pchar,SKILL_LEADERSHIP)));
 				log_info(GetFullName(Npchar)+" increased his loyalty");
 				log_testinfo("Loyalty has become: " + Npchar.loyality + " of " + MAX_LOYALITY);
 			}
@@ -1335,7 +1335,7 @@ void ProcessDialogEvent()
             LAi_LoginInCaptureTown(NPChar, true);
 			//  СЖ -->
 			ReOpenQuestHeader("Gen_CityCapture");
-            AddQuestRecord("Gen_CityCapture", "t3_1");
+            AddQuestRecordInfo("Gen_CityCapture", "t3_1");
 			AddQuestUserData("Gen_CityCapture", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("Gen_CityCapture", "sCity", XI_ConvertString("colony" + sld.id));
 			AddQuestUserData("Gen_CityCapture", "sName", GetFullName(NPChar));
@@ -1405,7 +1405,7 @@ void ProcessDialogEvent()
             DeleteAttribute(sld, "OfficerIdx");
             //  СЖ -->
 			ReOpenQuestHeader("Gen_CityCapture");
-            AddQuestRecord("Gen_CityCapture", "t3_2");
+            AddQuestRecordInfo("Gen_CityCapture", "t3_2");
 			AddQuestUserData("Gen_CityCapture", "sCity", XI_ConvertString("colony" + sld.id));
 			AddQuestUserData("Gen_CityCapture", "sName", GetFullName(NPChar));
 			//  СЖ <--

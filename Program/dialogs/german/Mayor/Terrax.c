@@ -439,7 +439,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shadows_4":
-			dialog.text = "Ich weiß, dass du deine Zeit nie verschwendest. Hör zu dann. Joshua Leadbeater war der englische Marinekapitän und das legendäre 'Neptun' stand unter seinem Befehl...";
+			dialog.text = "Ich weiß, dass du deine Zeit nie verschwendest. Hör zu dann. Joshua Leadbeater war der englische Marinekapitän und das legendäre 'Neptune' stand unter seinem Befehl...";
 			link.l1 = "...";
 			link.l1.go = "shadows_5";
 		break;
@@ -460,13 +460,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shadows_7":
-			dialog.text = "Sicher! Sie begleitete den Metzger auf all seinen Reisen, bis er sie für Beatrice verließ. Jess konnte ihm das nicht verzeihen. Die Leute nannten sie das Talisman des Metzgers, weil er immer Glück hatte, solange sie bei ihm war.\nGlaube es oder nicht, aber sobald er sie auf Barbados loswurde, lief sein Geschäft schlecht, die Beute wurde arm und die 'Neptun' war oft zu Gast in der Werft von Isla Tesoro. Aber das kann dadurch erklärt werden, dass der Metzger die meiste Zeit mit Beatrice in der Kabine verbrachte anstatt auf dem Achterdeck.\nBeatrice war nicht wie Jessica, sie war nicht süchtig nach Abenteuern und Krieg, obwohl Nicholas ihr das Fechten und Segeln beibrachte. Ja, sie liebte Seeromane, aber sie hatte nicht genug Härte in sich. Der 'Neptun' des Metzgers war nicht der richtige Ort für sie. Am Ende hat es sie getötet.";
+			dialog.text = "Sicher! Sie begleitete den Metzger auf all seinen Reisen, bis er sie für Beatrice verließ. Jess konnte ihm das nicht verzeihen. Die Leute nannten sie das Talisman des Metzgers, weil er immer Glück hatte, solange sie bei ihm war.\nGlaube es oder nicht, aber sobald er sie auf Barbados loswurde, lief sein Geschäft schlecht, die Beute wurde arm und die 'Neptune' war oft zu Gast in der Werft von Isla Tesoro. Aber das kann dadurch erklärt werden, dass der Metzger die meiste Zeit mit Beatrice in der Kabine verbrachte anstatt auf dem Achterdeck.\nBeatrice war nicht wie Jessica, sie war nicht süchtig nach Abenteuern und Krieg, obwohl Nicholas ihr das Fechten und Segeln beibrachte. Ja, sie liebte Seeromane, aber sie hatte nicht genug Härte in sich. Der 'Neptune' des Metzgers war nicht der richtige Ort für sie. Am Ende hat es sie getötet.";
 			link.l1 = "Und was ist mit Jessica?";
 			link.l1.go = "shadows_8";
 		break;
 		
 		case "shadows_8":
-			dialog.text = "Oh, sie war schon etwas Besonderes... Jeder Seemann der 'Neptun' gehorchte ihren Befehlen und nicht nur, weil sie die Freundin des Kapitäns war. Jess war eine Meisterin im Fechten und Segeln, die Mühen des Schlachters waren nicht umsonst. Sie war hart und rücksichtslos, und sie war so schön.\nViele Männer wollten das Bett mit ihr teilen, aber sie wollte nur den Schlachter, sie zu belästigen war wirklich riskant, viele spürten die Folgen buchstäblich auf ihrer eigenen Haut, und für die Hartnäckigsten wurden ihre Fechtstunden die letzten in ihrem Leben.\nJess besaß ein ganz besonderes Schwert, das einzige seiner Art in der Karibik, ich habe keine Ahnung, wo sie es herhatte. Flammenklingenschwert. Die Klinge konnte nicht mit der Hand ergriffen werden und schon die kleinste Berührung hinterließ eine schreckliche Wunde.\nJess war keine Abenteurerin von Geburt an, sondern von Berufung. Übrigens, wenn du mehr über sie erfahren willst, kannst du mit einem Bekannten von dir sprechen. Er kann dir viel mehr über sie erzählen, als ich es kann.";
+			dialog.text = "Oh, sie war schon etwas Besonderes... Jeder Seemann der 'Neptune' gehorchte ihren Befehlen und nicht nur, weil sie die Freundin des Kapitäns war. Jess war eine Meisterin im Fechten und Segeln, die Mühen des Schlachters waren nicht umsonst. Sie war hart und rücksichtslos, und sie war so schön.\nViele Männer wollten das Bett mit ihr teilen, aber sie wollte nur den Schlachter, sie zu belästigen war wirklich riskant, viele spürten die Folgen buchstäblich auf ihrer eigenen Haut, und für die Hartnäckigsten wurden ihre Fechtstunden die letzten in ihrem Leben.\nJess besaß ein ganz besonderes Schwert, das einzige seiner Art in der Karibik, ich habe keine Ahnung, wo sie es herhatte. Flammenklingenschwert. Die Klinge konnte nicht mit der Hand ergriffen werden und schon die kleinste Berührung hinterließ eine schreckliche Wunde.\nJess war keine Abenteurerin von Geburt an, sondern von Berufung. Übrigens, wenn du mehr über sie erfahren willst, kannst du mit einem Bekannten von dir sprechen. Er kann dir viel mehr über sie erzählen, als ich es kann.";
 			link.l1 = "Wirklich? Und wer ist dieser Mann?";
 			link.l1.go = "shadows_9";
 		break;

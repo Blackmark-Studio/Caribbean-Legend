@@ -180,7 +180,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = "Fui informado de tu llegada, kapitein. Veo que el Mirage está atracado de manera segura. Esto es bueno.";
-					link.l1 = "Todo fue según sus instrucciones, mynheer. Me ordenó matar a Fleetwood y está muerto. Me ordenó traer el Mirage de vuelta al puerto local y aquí está.";
+					link.l1 = "Todo fue según sus instrucciones, mynheer. Me ordenó matar a Fleetwood y está muerto. Me ordenó traer el Mirage de vuelta al puerto y aquí está.";
 					link.l1.go = "Fleetwood_complete";
 					DelLandQuestMark(npchar);
 				}
@@ -269,7 +269,7 @@ void ProcessDialogEvent()
 
 	case "Holl_start_1":
 		pchar.questTemp.HWIC.Holl.PirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
-		dialog.text = "Muy bien, veremos de qué estás hecho. Bien, Kapetein como te llames, ¿conoces a Balthazar Ridderbrock? ¿No? Qué afortunado. Idiotas tan codiciosos, gruñones y de mal genio como él son una rara visión.\nPero parece que tales cualidades sobresalientes no fueron suficientes para el hombre, así que fue lo suficientemente inteligente como para ofender a un filibustero llamado " + GetName(NAMETYPE_ORIG, pchar.questTemp.HWIC.Holl.PirateName, NAME_NOM) + " en la taberna local y llamó a la guardia en el mismo momento en que la parte ofendida tocó una espada...";
+		dialog.text = "Muy bien, veremos de qué estás hecho. Bien, Kapetein como te llames, ¿conoces a Balthazar Ridderbrock? ¿No? Qué afortunado. Idiotas tan codiciosos, gruñones y de mal genio como él son una rara visión.\nPero parece que tales cualidades sobresalientes no fueron suficientes para el hombre, así que fue lo suficientemente inteligente como para ofender a un filibustero llamado " + GetName(NAMETYPE_ORIG, pchar.questTemp.HWIC.Holl.PirateName, NAME_NOM) + " en la taberna y llamó a la guardia en el mismo momento en que la parte ofendida tocó una espada...";
 		link.l1 = "...¿y colgaron al pirata con la primera cuerda libre?";
 		link.l1.go = "Holl_start_2";
 		break;
@@ -338,7 +338,7 @@ void ProcessDialogEvent()
 		if (pchar.BaseNation == ENGLAND || pchar.BaseNation == FRANCE)
 			GiveNationLicence(HOLLAND, 20);
 		dialog.text = "Digamos que tengo mis sospechas. No te preocupes, si lo haces tan rápido como la última vez, entonces tendrás la oportunidad de convertirte en un agente valioso para los asuntos delicados de la Compañía.";
-		link.l1 = "¿Todo lo que tengo que hacer - это entregar este carta y dinero al banquero en Santiago en quince días? No parece demasiado difícil a primera vista.";
+		link.l1 = "¿Todo lo que tengo que hacer es entregar este carta y dinero al banquero en Santiago en quince días? No parece demasiado difícil a primera vista.";
 		link.l1.go = "SantiagoTrip_5";
 		break;
 
@@ -450,7 +450,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "JacobBerg_5":
-		dialog.text = "Todos los detalles le serán proporcionados por mi agente. Su nombre es Longway, un chino. Le estoy proporcionando mi barco personal, el xebec 'Meifeng' para esta misión. Longway es su kapitein, pero tomará órdenes de usted.\nVaya a la oficina del puerto local y amarre todos sus barcos allí. Regrese a mí una vez que esté hecho.";
+		dialog.text = "Todos los detalles le serán proporcionados por mi agente. Su nombre es Longway, un chino. Le estoy proporcionando mi barco personal, el xebec 'Meifeng' para esta misión. Longway es su kapitein, pero tomará órdenes de usted.\nVaya a la oficina del puerto y amarre todos sus barcos allí. Regrese a mí una vez que esté hecho.";
 		link.l1 = "Está bien, visitaré al maestro de puerto. No te haré esperar demasiado.";
 		link.l1.go = "exit";
 		pchar.questTemp.HWIC.Holl = "JacobTakeShip";
@@ -636,7 +636,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Fleetwood_fail":
-		dialog.text = " No eres solo un payaso cualquiera, eres todo el circo. Estábamos tan cerca del acto final y lo echaste a perder... Te pagaré 30,000 pesos por la eliminación de Fleetwood. No tengo más misiones para ti y nuestro acuerdo ha terminado. Lárgate.";
+		dialog.text = "No eres solo un payaso cualquiera, eres todo el circo. Estábamos tan cerca del acto final y lo echaste a perder... Te pagaré 30,000 pesos por la eliminación de Fleetwood. No tengo más misiones para ti y nuestro acuerdo ha terminado. Lárgate.";
 		link.l1 = "Como desees.";
 		link.l1.go = "Fleetwood_fail_1";
 		break;
@@ -777,7 +777,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Abby_7":
-		dialog.text = "  Navega hacia el mar abierto y regresa a mí en diez días. Haz algo productivo. Busca la Manga Rosa, fabrica algunos materiales, o algo así.";
+		dialog.text = "Navega hacia el mar abierto y regresa a mí en diez días. Haz algo productivo. Busca la Manga Rosa, fabrica algunos materiales, o algo así.";
 		link.l1 = "Lo que usted diga, Mynheer Rodenburg.";
 		link.l1.go = "exit";
 		AddMoneyToCharacter(pchar, 200000);
@@ -898,7 +898,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Merdok_book_5":
-		dialog.text = " No es necesario, señor. La mayoría de lo importante está aquí de todos modos, y sin las páginas faltantes, el resto no supone una amenaza para mí.";
+		dialog.text = "No es necesario, señor. La mayoría de lo importante está aquí de todos modos, y sin las páginas faltantes, el resto no supone una amenaza para mí.";
 		link.l1 = "";
 		link.l1.go = "Merdok_book_6";
 		break;

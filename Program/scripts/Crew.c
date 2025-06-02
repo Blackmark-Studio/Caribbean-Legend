@@ -110,7 +110,7 @@ int GetSalaryForShip(ref chref)
 	float nCommerce   = GetSummonSkillFromNameToOld(mchref,SKILL_COMMERCE);
 
 	float shClass = GetCharacterShipClass(chref);
-	if (shClass   < 1) shClass   = 6;
+	if (shClass   < 1) shClass   = 7;
 	if (!GetRemovable(chref) && sti(chref.index) != GetMainCharacterIndex()) return 0; // считаем только своих, а то вских сопровождаемых кормить!!!
 		
 	// экипаж
@@ -181,12 +181,25 @@ int GetSalaryForShip(ref chref)
 
 int AddCrewMorale(ref chr, int add)
 {
+	string nameBefore, nameAfter;
+	int moraleBefore;
+	
     int morale = MORALE_NORMAL;
 	if (CheckAttribute(chr, "Ship.Crew.Morale")) morale = sti(chr.Ship.Crew.Morale);
+	nameBefore = GetExpName(morale);
+	moraleBefore = morale;
     morale += add;
 	if(morale < MORALE_MIN)	morale = MORALE_MIN;
 	if(morale > MORALE_MAX)	morale = MORALE_MAX;
+	nameAfter = GetExpName(morale);
 	chr.Ship.Crew.Morale = morale;
+	if(chr.id == pchar.id)
+	{
+		if(nameBefore != nameAfter && moraleBefore < morale)
+		{
+			AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 6.0);
+		}
+	}
 	
 	return morale;
 }
@@ -286,12 +299,18 @@ void UpdateCrewInColonies()
 				if (nNeedCrew < 1) nNeedCrew = 1+rand(20);
 		    }
 */
-			nNeedCrew = makeint(abs(REPUTATION_NEUTRAL - sti(pchar.reputation.nobility))/MOD_SKILL_ENEMY_RATE + sti(pchar.rank)/MOD_SKILL_ENEMY_RATE + rand(sti(pchar.rank)/2) + drand(20 + MOD_SKILL_ENEMY_RATE));
+			float fKrank = 1.0 + (2.5 - 1.0) * (pow(stf(pchar.rank), 0.25) - 1.0) / (pow(40.0, 0.25) - 1.0);
+			float fKrelation = GetNationRelationCoef(ChangeCharacterNationReputation(pchar, sti(rTown.nation), 0));
+			float fKcharisma = 1.0 + (2.5 - 1.0) * (pow(stf(GetSummonSkillFromNameSimple(pchar, SKILL_LEADERSHIP)), 1.35) - 1.0) / (pow(100.0, 1.35) - 1.0);
+			float fKrep = GetReputationCoef(abs(COMPLEX_REPUTATION_NEUTRAL - sti(pchar.reputation.nobility)));
+			
+			nNeedCrew = makeint(fKrank * fKrelation * fKcharisma * fKrep * (hrand(70, rTown.id) + 65) / 100 * 12);
+			
 			// belamour legendary edition: вызывающий доверие повышает количество матросов
 			if(CheckCharacterPerk(pchar, "Trustworthy")) nNeedCrew *= 1.1;
 			if(CheckAttribute(pchar, "questTemp.CharleePrince") && sti(rTown.nation) == PIRATE) nNeedCrew *= 1.5; // belamour legendary edition
-			if(MOD_SKILL_ENEMY_RATE == 2) nNeedCrew *= 3;
-			if(MOD_SKILL_ENEMY_RATE == 4) nNeedCrew *= 2;
+			/* if(MOD_SKILL_ENEMY_RATE == 2) nNeedCrew *= 3;
+			if(MOD_SKILL_ENEMY_RATE == 4) nNeedCrew *= 2; */
 			
 		
 			if (nPastQ > nNeedCrew)
@@ -303,9 +322,9 @@ void UpdateCrewInColonies()
 				nPastM = MORALE_NORMAL/5 + rand(makeint(MORALE_NORMAL*1.5));
 			}
 			rTown.Ship.crew.quantity = nNeedCrew;
-			if (CheckAttribute(pchar, "GenQuest.Shipshine")) rTown.Ship.crew.quantity = sti(rTown.Ship.crew.quantity)*2;//Jason
+			if (CheckAttribute(pchar, "GenQuest.Shipshine")) rTown.Ship.crew.quantity = sti(rTown.Ship.crew.quantity) * 25 / 100;//Jason
 			rTown.Ship.crew.morale   = nPastM;
-						
+			trace("Число рекрутов в колонии " + rTown.id + ": " + nNeedCrew);
 			// пороги опыта от нации
 			switch (sti(rTown.nation))
 			{
@@ -358,6 +377,22 @@ int GetCrewPriceForTavern(string sColony)
 	if (nCrewCost < 10) nCrewCost = 10; // не ниже!
 	if(rTown.id == "IslaMona") return 0; 
 	return nCrewCost;
+}
+
+float GetNationRelationCoef(int rel)
+{
+	if (rel < 0 )    return 0.85;
+    if (rel <= 20 )  return 1.0;
+    if (rel <= 50 )  return 1.2;
+    if (rel <= 80 )  return 1.5;
+    if (rel <= 100 ) return 1.85;
+	
+	return 0.85;
+}
+
+float GetReputationCoef(int rep)
+{
+	return Bring2Range(1.0, 1.35, 0.0, 50.0, makefloat(rep));
 }
 
 int GetMaxCrewAble()
@@ -440,7 +475,7 @@ void Partition_SetValue(string state) // state = "before" || "after" - для с
 				ret = ret + Partition_GetCargoValue(chref); // деньги на кармане и корабль
 				HowComp += 1; // ГГ тут же
 				HowCrew += GetCrewQuantity(chref);
-				part += Part_CompanionShipPerClass * (6 - GetCharacterShipClass(chref));
+				part += Part_CompanionShipPerClass * (7 - GetCharacterShipClass(chref));
 			}
 		}
 	}

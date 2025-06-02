@@ -102,7 +102,8 @@ void ProcessDialogEvent()
 				NPChar.quest.meeting = "1";
 				// проверка наличия корабля в порту
 				bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Townpassenger") && 6-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)//горожанин-пассажир
+				if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && or(IsWarShipType(pchar), IsRaiderShipType(pchar))) ok = false;
+				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Townpassenger") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)//горожанин-пассажир
 				{
 					dialog.text = "Guten Tag, "+GetAddress_Form(NPChar)+". Ich sehe, dass du Kapitän deines eigenen Schiffes bist. Ich möchte dich um einen Gefallen bitten...";
 					link.l1 = "Ich höre zu, "+GetAddress_FormToNPC(NPChar)+". Was willst du?";
@@ -121,7 +122,7 @@ void ProcessDialogEvent()
 				Link.l1.go = "Meeting";
 				
 				//==> прибыла инспекция на Святом Милосердии
-				if (pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
+				if (CheckAttribute(pchar, "questTemp.SantaMisericordia.ColonyZapret") && pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
 				{
 					dialog.Text = LinkRandPhrase(LinkRandPhrase("Die ganze Stadt ist in Aufruhr - Don Fernando de Alamida, der königliche Inspektor, ist angekommen. Sie wissen, ich habe hier viel gesehen, aber das... Es ist nicht der Kummer, der die Menschen verändert, sondern wie sie damit umgehen. Sie sagen, er wurde ein anderer Mann nach dem Tod seines Vaters. Jetzt finden Sie keinen unbestechlicheren und... gnadenloseren Diener der Krone im gesamten Archipel.","Schau dir nur die 'Heilige Barmherzigkeit' an! Sie sagen, der König selbst habe sie nach speziellen Plänen bauen lassen. Und bemerke - nicht ein einziger Kratzer. Als ob die Jungfrau Maria selbst sie schützt. Obwohl ich Gerüchte gehört habe... vielleicht ist es überhaupt nicht die Jungfrau.","Wissen Sie, wie oft sie versucht haben, Don Fernando zu töten? Zwölf Angriffe auf offener See - und das allein im letzten Jahr! Nun, mit einer so treuen und ausgebildeten Crew und unter dem Schutz des Herrn - er wird auch den dreizehnten überleben!"),LinkRandPhrase("Haben Sie gehört? Don Fernando de Alamida ist in unserer Stadt angekommen, und sie sagen, er sei gerade irgendwo auf den Straßen. Würde ihn gerne mit meinen eigenen Augen sehen...","Ein komplizierter Mann, dieser Don Fernando. Manche sagen, er sei ein Retter, der das Mutterland von Dreck säubert. Andere flüstern, dass etwas in ihm zerbrochen ist nach dem Tod seines Vaters und wir alle bald weinen werden. Aber ich sage dir dies: Fürchte ihn nicht. Fürchte diejenigen, die ihn zu dem gemacht haben, was er ist.","Was für ein hübscher Mann, dieser Don Fernando! Aber wissen Sie, was seltsam ist? Es ist, als würde er niemanden bemerken. Alles Pflicht und Dienst. Ich habe gehört, es gab ein Mädchen... aber nach einem Treffen mit einem Priester hat er weltliche Freuden völlig abgelehnt. Als ob er ein Gelübde abgelegt hätte."),RandPhraseSimple(RandPhraseSimple("Verdammter Inspektor! Solange er hier ist, ist die Stadt wie tot. Kein Handel, kein Spaß. Selbst das Atmen, so scheint es, muss leiser sein. Und wissen Sie, was am erschreckendsten ist? Es ist in jedem Hafen dasselbe. Wie ein Uhrwerk. Seine Königliche Majestät könnte diese Folter für uns alle nicht absichtlich erfunden haben!","Don Fernando hat das Waisenhaus wieder besucht. Spendet großzügig, betet stundenlang. So ein würdiger Mann sollte den verfluchten Unterschlagern als Beispiel dienen!"),RandPhraseSimple("Ha! 'Heiliger' Fernando hat wieder alle Bordelle geschlossen. Macht nichts, er wird bald absegeln und sie werden wieder öffnen.","Der Inspektor... Inspektor ist angekommen, das ist es! Don Fernando de Almeyda oder wie heißt er, Alamida! So wichtig, dass der Gouverneur selbst um ihn herumschleicht. Man sagt, er schaut dir in die Augen und sieht sofort all deine Sünden. Furchteinflößend!")));
 					link.l1 = "...";
@@ -129,7 +130,7 @@ void ProcessDialogEvent()
 				}
 				//<== прибыла инспекция на Святом Милосердии
 				//==> Леди Бет в порту города
-				if (pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
+				if (CheckAttribute(pchar, "questTemp.LadyBeth.CaptainInColony") && pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
 				{
 					dialog.Text = findLedyBethRumour(npchar);
 					link.l1 = "...";
@@ -342,7 +343,7 @@ void ProcessDialogEvent()
 		
 		//-------------------------------горожанин-пассажир----------------------------------------------
 		case "passenger":
-			if (crand(19) > 9) SetPassengerParameter("Townpassenger", false);
+			if (hrand(19) > 9) SetPassengerParameter("Townpassenger", false);
 			else SetPassengerParameter("Townpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Townpassenger.Enemycity"))
 			{

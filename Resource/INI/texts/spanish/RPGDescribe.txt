@@ -46,7 +46,7 @@ Intellect
 Una persona talentosa necesita menos tiempo para recargar los cañones y no tendrá ningún problema para contratar más hombres a un menor precio. Podrás usar las herramientas de navegación de forma más sencilla.
 ~
 Las destrezas "Comercio", "Cañones" y "Navegación" requieren de esta característica. 
-Lo más importante es que determina la rapidez con la que ganas "Rango" y desbloqueas puntos de "Ventajas".
+Lo más importante es que determina la rapidez con la que ganas "Rango" y desbloqueas puntos de "habilidad".
 }
 
 Endurance
@@ -70,10 +70,10 @@ Crit
 Probabilidad básica de infligir un golpe/disparo crítico al enemigo.
 ~
 Los indicadores están influidos por:
-Suerte, destrezas personales y equipo - golpe crítico
-Suerte, Intuición y arma de fuego especial - disparo crítico
+Suerte, destrezas personales y equipo: golpe crítico
+Suerte e Intuición: disparo crítico (solo para armas raras y de alta calidad)
 ~
-No se ajustan a la destreza y equipamiento del enemigo.
+Las habilidades y el equipamiento del enemigo pueden reducir significativamente este parámetro.
 }
 
 CharDefence
@@ -106,7 +106,7 @@ Depende de: "Poder" y "Aguante". (P*0,9+E*0,1)
 Pistol
 {
 Destreza en el uso de todo tipo de armas de fuego manuales. 
-Depende de: "Reacción" y "Suerte" (R*0,5+S*0,5)
+Depende de: 'Reacción' y 'Suerte' (R*0,5+S*0,6)
 }
 
 Fortune
@@ -151,7 +151,7 @@ Controlar un barco superior a tu destreza en navegación conlleva penalizaciones
  La clase 3 necesita 65 puntos
  La clase 4 necesita 45 puntos
  La clase 5 necesita 25 puntos
- La clase 6 necesita 1 punto
+ La clase 6 necesita 05 punto
 Penalización: La diferencia entre el nivel de navegación actual y el necesario para controlar el barco se restará de todas las "destrezas" del capitán. Además, la diferencia en la clase del barco se restará de las "características" del jugador.
 }
 
@@ -466,10 +466,10 @@ Reparto del botín: Se dividen los objetos de valor y se distribuyen las gananci
 Todas las naves y mercancías capturadas son susceptibles de ser divididas. De acuerdo con el código de la "Cofradía de los Hermanos de la Costa", la parte de cualquier marino u oficial fallecido, se destina a sus familiares y amigos.
 ~
 El reparto del botín entre los miembros de la tripulación será como sigue:
-- Marineros - 1 parte
-- Oficiales - 10 partes
-- Escoltas - 30 partes
-- Capitanes - 200-650 partes
+- Marineros: 1 parte
+- Oficiales: 10 partes
+- Escoltas: 30 partes
+- Capitanes: 200-650 partes
 Además, el capitán como dueño de los barcos de su escuadra, recibe 20-120 partes por barco, dependiendo de la clase. Y también carga con los gastos relacionados con el mantenimiento y las posibles pérdidas.
 Si el capitán tiene una patente, el 10% de todo el botín se le pagará al tesoro de la nación.
 ~

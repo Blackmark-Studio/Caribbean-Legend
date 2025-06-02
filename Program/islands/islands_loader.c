@@ -533,9 +533,3 @@ void checkWMEnctr(float RTplayerShipX, float RTplayerShipZ, int scale, ref bStor
 
     return;
 }
-
-
-
-
-
-

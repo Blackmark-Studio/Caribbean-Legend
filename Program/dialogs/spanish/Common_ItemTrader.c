@@ -98,11 +98,29 @@ void ProcessDialogEvent()
 			link.l4.go = "Consumption";
 		}
 		// <-- Цена чахотки
+		
+		//--> Украденное воспоминание
+			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+			{
+				link.l4 = "Dime, ¿no tendrás algo verdaderamente valioso? Nada de baratijas, sino algo realmente refinado – como unos pendientes bonitos o un colgante elegante. Necesito un regalo para una dama de noble cuna.";
+				link.l4.go = "UV_Lavochniki_1";
+			}
+            if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_2") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+            {
+				link.l4 = "¿No tendrás algo realmente valioso? Busco una joya digna incluso de la aristócrata más exigente – algo raro, elegante, no para plebeyos. Tal vez un colgante refinado o una pulsera exquisita.";
+				link.l4.go = "UV_Lavochniki_2";
+			}
+			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_3") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+            {
+				link.l4 = "Dime, ¿sabes algo de joyas? Necesito algo especial como regalo para una dama noble. Te aviso de inmediato – no me interesan baratijas. Quiero algo refinado: un broche ricamente decorado o un anillo lujoso.";
+				link.l4.go = "UV_Lavochniki_3";
+			}
+			//<-- Украденное воспоминание
 
 		// Jason --> генератор Неудачливый вор
 		if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_town" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
 		{
-			link.l5 = "Escucha, estás lidiando con todo tipo de mercancías... Ayer o hoy - ¿alguien te ofreció venderte  " + pchar.GenQuest.Device.Shipyarder.Type + "?";
+			link.l5 = "Escucha, estás lidiando con todo tipo de mercancías... Ayer o hoy, ¿alguien te ofreció venderte  " + pchar.GenQuest.Device.Shipyarder.Type + "?";
 			link.l5.go = "Device_ItemTrader";
 		}
 		//<-- генератор Неудачливый вор
@@ -157,7 +175,7 @@ void ProcessDialogEvent()
 		dialog.text = "No, no lo es. Lo consigo aquí. Pero no te diré quién es mi proveedor así como así. Pero por mil pesos... quizás, lo haría...";
 		if (makeint(Pchar.money) >= 1000)
 		{
-			link.l1 = "Bien. Aquí tienes tu mil - y ahora dime, ¿quién es tu proveedor?";
+			link.l1 = "Bien. Aquí tienes tu mil y ahora dime, ¿quién es tu proveedor?";
 			link.l1.go = "Wine_Bottles_2";
 		}
 		link.l2 = "¡Ahora vosotros, mercachifles, os habéis vuelto demasiado descarados! ¿No sería demasiado bueno para vosotros? Me las arreglaré bien sin vuestro proveedor, gracias.";
@@ -175,7 +193,7 @@ void ProcessDialogEvent()
 		sld = characterFromId(pchar.questTemp.Wine.TraderID);
 		pchar.questTemp.Wine.Name = GetFullName(sld);
 		pchar.questTemp.Wine.ItemTraderID = npchar.id;
-		dialog.text = "El nombre de mi proveedor de vino es " + pchar.questTemp.Wine.Name + ", él es el dueño de la tienda local.";
+		dialog.text = "El nombre de mi proveedor de vino es " + pchar.questTemp.Wine.Name + ", él es el dueño de la tienda.";
 		link.l1 = "¡Entendido! ¡Gracias!";
 		link.l1.go = "exit";
 		// pchar.questTemp.Wine.Trader = "true";
@@ -193,7 +211,7 @@ void ProcessDialogEvent()
 		AddLandQuestMark(sld, "questmarkmain");
 		pchar.questTemp.Wine.Name = GetFullName(sld);
 		pchar.questTemp.Wine.ItemTraderID = npchar.id;
-		dialog.text = "El nombre de mi proveedor de vino es " + pchar.questTemp.Wine.Name + ", él es dueño de la tienda local.";
+		dialog.text = "El nombre de mi proveedor de vino es " + pchar.questTemp.Wine.Name + ", él es dueño de la tienda.";
 		link.l1 = "¡Entendido! ¡Gracias!";
 		link.l1.go = "exit";
 		pchar.questTemp.Wine.Trader = "true";
@@ -263,7 +281,7 @@ void ProcessDialogEvent()
 
 	case "Wine_Bottles_3":
 		AddMoneyToCharacter(pchar, -2000);
-		dialog.text = "¡Eres un pájaro raro, capitán! Claro, entiendo que tu contramaestre se encarga de todas las finanzas, pero también deberías usar tu propia cabeza a veces. Tendrás la oportunidad de comprar un lote decente de vinos al por mayor sin mi margen de precio y obtener un beneficio considerable. Así que no nos impidamos el uno al otro hacer monedas, porque ahora pareces tú el avaro.\nCorrecto...(escribiendo) Aquí, toma esta carta - " + pchar.questTemp.Wine.Name + "  te venderá el vino sin hacer preguntas.";
+		dialog.text = "¡Eres un pájaro raro, capitán! Claro, entiendo que tu contramaestre se encarga de todas las finanzas, pero también deberías usar tu propia cabeza a veces. Tendrás la oportunidad de comprar un lote decente de vinos al por mayor sin mi margen de precio y obtener un beneficio considerable. Así que no nos impidamos el uno al otro hacer monedas, porque ahora pareces tú el avaro.\nCorrecto...(escribiendo) Aquí, toma esta carta, " + pchar.questTemp.Wine.Name + "  te venderá el vino sin hacer preguntas.";
 		link.l1 = "Espero que sí... Si algo sale mal de nuevo, volveré. ¡Hasta luego!";
 		link.l1.go = "Wine_Bottles_4";
 		break;
@@ -289,7 +307,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Wine_Repeat1_fail":
-		dialog.text = "¡Oh, así que has venido aquí para amenazarme y ser grosero? ¡Entonces llamaré a los guardias! ¡Eh, guardias! ¡Aquí mismo!";
+		dialog.text = "¡Oh!, ¿así que has venido aquí para ser grosero y amenazarme? ¡Llamaré a los guardias! ¡Eh, guardias! ¡Aquí mismo!";
 		link.l1 = "¡Oh, cállate! Ganaste, ¡me voy! Maldito seas " + NPCharSexPhrase(npchar, "", "") + ", ¡cormorán, que te arruines!";
 		link.l1.go = "exit";
 		AddQuestRecord("Wine", "7");
@@ -344,7 +362,7 @@ void ProcessDialogEvent()
 		link.l1 = "Adiós, Señor.";
 		link.l1.go = "ZsI_PokupaemPistolety_3";
 		AddMoneyToCharacter(pchar, -3000);
-		Log_info("Has adquirido las pistolas necesarias para Cocoa Leaf");
+		Log_info("¡Has adquirido las pistolas necesarias para Cocoa Leaf!");
 		PlaySound("Interface\important_item.wav");
 		break;
 
@@ -378,7 +396,7 @@ void ProcessDialogEvent()
 			}
 			link.l2 = "¿Tres mil? ¡Eso es robo! Adiós, Monsieur!";
 			link.l2.go = "ZsI_NetDeneg";
-			// Log_info("Tu habilidad de comercio no es suficiente");
+			// Log_info("¡Tu habilidad de comercio no es suficiente!");
 			AddCharacterExpToSkill(pchar, "Commerce", -30);
 		}
 		break;
@@ -388,7 +406,7 @@ void ProcessDialogEvent()
 		link.l1 = "Adiós, señor.";
 		link.l1.go = "ZsI_PokupaemPistolety_3";
 		AddMoneyToCharacter(pchar, -2300);
-		Log_info("Has adquirido las pistolas necesarias para Cocoa Leaf");
+		Log_info("¡Has adquirido las pistolas necesarias para Cocoa Leaf!");
 		PlaySound("Interface\important_item.wav");
 		break;
 	// <-- мини-квест "Знакомство с индейцами"
@@ -428,7 +446,7 @@ void ProcessDialogEvent()
 	// Мангароса
 	case "mangarosa":
 		// тут работает везение
-		if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10 + drand(30) + drand(40))
+		if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10 + hrand(30) + hrand(40, "1"))
 		{
 			dialog.text = "Muéstramelo... Sí, esa es una planta interesante. Y una muy, muy rara. Se llama Manga Rosa. No sé para qué se utiliza, pero había un hecho interesante relacionado con ella...";
 			link.l1 = "¿Qué quieres decir?";
@@ -461,6 +479,40 @@ void ProcessDialogEvent()
 		pchar.questTemp.Mangarosa = "gipsy";
 		AddQuestRecord("Mangarosa", "2");
 		break;
+		
+		//--> Украденное воспоминание
+		case "UV_Lavochniki_1":
+    		dialog.text = "Lo siento, "+GetAddress_Form(NPChar)+", pero hace mucho que no tengo nada de verdadero valor. La demanda de ese tipo de artículos es baja, ¿sabe? La gente común solo puede permitirse baratijas baratas, y la nobleza rara vez viene aquí a comprar.";
+    		link.l1 = "Está bien...";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki");
+			pchar.questTemp.UV_Lavochniki_2 = true;
+			npchar.quest.UV_Vopros;
+ 		break;
+		
+		case "UV_Lavochniki_2":
+    		dialog.text = "Lo lamento, capitán, pero ya no comercia con ese tipo de mercancía. Los clientes ricos rara vez me visitan, y los plebeyos compran solo lo más barato.";
+    		link.l1 = "Entiendo...";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_2");
+			pchar.questTemp.UV_Lavochniki_3 = true;
+			npchar.quest.UV_Vopros;
+ 		break;
+		
+		case "UV_Lavochniki_3":
+    		dialog.text = "Capitán, me temo que ha llegado un poco tarde... Hace apenas un par de horas vendí un espléndido collar a un capitán adinerado. A veces tengo piezas que pueden conquistar el corazón de cualquier dama, incluso la más testaruda\nVuelva mañana, quizás Giselle... es decir... mis proveedores... puedan encontrarle una joya que cautive el corazón de cualquier mujer para siempre.";
+    		link.l1 = "No tengo tiempo. Necesito esa joya ahora mismo. Dime, ¿cómo se llamaba el capitán al que vendiste el collar?";
+    		link.l1.go = "UV_Lavochniki_3_1";
+ 		break;
+		
+		case "UV_Lavochniki_3_1":
+    		dialog.text = "Tristan Renier, capitán de la 'Golden Seagull'. Su barco sigue anclado en el puerto. Aunque, para ser sincero, dudo que quiera desprenderse del collar. Si se niega, vuelva mañana. Le juro, capitán, que no se arrepentirá.";
+    		link.l1 = "...";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_3");
+			AddDialogExitQuestFunction("UV_GoldSeagull");
+ 		break;
+		//<-- Украденное воспоминание
 
 		// ======================== блок нод angry ===============>>>>>>>>>>>>>>>
 

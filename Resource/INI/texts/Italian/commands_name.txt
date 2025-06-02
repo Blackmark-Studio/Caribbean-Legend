@@ -1,0 +1,95 @@
+
+sea_Cancel {Annulla}
+sea_Moor {Attracco}
+sea_Cabin {Cabina}
+sea_SailTo {Naviga verso}
+sea_Board {Asse}
+sea_LandTroops {Truppe di terra}
+sea_Map {Carta}
+sea_Attack {attacco}
+sea_Abordage {Arrembaggio}
+sea_Defend {Difendere}
+sea_SailAway {Salpa}
+sea_HeaveToDrift {Ammainiamo le vele}
+sea_Reload {Commercio}
+sea_Charge {Ricarica}
+sea_Speed {Vele}
+sea_CCommand {Ordini}
+sea_Ability {Capacità}
+sea_ImmediateDeath {Distrutto!}
+sea_InstantBoarding {Imbarco istantaneo}
+sea_Speak {Parla}
+sea_Sneak {Intrufolati nella città}
+sea_Repair {Ripara}
+sea_SailDir {Naviga verso..}
+sea_SailNW {Nord Ovest}
+sea_SailN {Nord}
+sea_SailNE {Nord-est}
+sea_SailE {Est}
+sea_SailSE {Sud-est}
+sea_SailS {Sud}
+sea_SailSW {Sud-ovest}
+sea_SailW {ovest}
+sea_Boat {Invia barca}
+sea_Bomb {Lancia}
+
+sea_Brander {Bruciatore}
+sea_ImmediateReload {Ricaricamento}
+sea_LightRepair {Riparazione urgente}
+sea_InstantRepair {Riparazione di combattimento}
+sea_SandbankManeuver {Manovra in acque poco profonde}
+sea_Turn180 {Girati}
+
+land_TalkSelf {Pensare ad alta voce}
+land_ItemsDead {Bottino}
+land_FastReload {Vai a}
+land_ItemsUse {Usa}
+land_DialogStart {Dialogo}
+land_ItemsChange {Scambio}
+land_TakeItem {Prendi}
+land_PlaceItem {Posa}
+land_OutDoor {Apri}
+land_UseBox {Apri}
+land_ActivateRush {Usa la tintura di Ometochtli}
+land_ActivateCabine {Cabina del Capitano}
+land_DeActivateCabine {Terra}
+land_Look {Guarda}
+land_Exit {Mare}
+land_SelfRepair {Riparazione}
+land_Alchemy {Creazione}
+land_MapAtlas {Mappe}
+land_Rest {Riposo}
+
+go_store {Negozio}
+go_shipyard {Cantiere navale}
+go_tavern {Taverna}
+go_residence {Residenza}
+go_port {Porto}
+go_loanshark {Banchiere}
+go_church {Chiesa}
+go_prison {Prigione}
+go_brothel {Bordello}
+go_usurer {usuraio}
+go_portman {Capitano del porto}
+go_duel {Duello}
+go_exittown {Porta della città}
+
+go_Caroline {Fregata 'Carolina'}
+go_CeresSmithy_Mary {Mary Casper}
+go_CeresSmithy_Jurgen {Jurgen Schmidt}
+go_EsmeraldaStoreBig {Galeone 'Esmeralda'}
+go_EsmeraldaStoreBig_Donald {Donald Greenspen}
+go_FenixPlatform {molo 'Fenix'}
+go_FleuronTavern {Caravella 'Fleron'}
+go_GloriaChurch {Galeone 'Gloria'}
+go_ProtectorFisher {Eduard Black}
+go_SanAugustineResidence {Steven Dodson}
+go_SanGabrielMechanic {Henrick Vedecker}
+go_TartarusPrison {Corazzata 'Tartarus'}
+
+worldmap_toisland {Al mare}
+worldmap_tosea {Al mare}
+worldmap_toship {attacco}
+worldmap_tostorm {Tempesta}
+worldmap_toattack {Unisciti alla battaglia}
+worldmap_toenemy {Combatti}

@@ -444,6 +444,11 @@ void SetSchemeForLocation (ref loc)
 				//SetMusicAlarm("music_spokplavanie");
 			break;
 			
+			case "quest_deck": // квестовая палуба
+				SetSoundScheme("residence");
+				SetMusic("music_Quest_Deck");
+			break;
+			
 			case "boarding_cabine":
 				SetSoundScheme("cabine");
 				SetMusic("music_abordage");
@@ -601,9 +606,9 @@ void SetStaticSounds (ref loc)
 			if(CheckAttribute(loc, "QuestCapture")) continue;
 			if(Whr_IsNight()) continue;
 			// колокола в день святой воды
-			if(drand(15) == 0) locatorType = "amulet_7";
+			if(hrand(15, loc.id) == 0) locatorType = "amulet_7";
 			// колокола во время службы
-			if(locatorType  != "amulet_7" && drand(6) != 3) continue;
+			if(locatorType  != "amulet_7" && hrand(6, loc.id) != 3) continue;
 		}
 		if(locatorType == "tavern" || locatorType == "brothel")
 		{

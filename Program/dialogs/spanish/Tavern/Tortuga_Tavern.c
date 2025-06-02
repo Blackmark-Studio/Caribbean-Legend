@@ -25,7 +25,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "tortuga")
 			{
-				link.l1 = "Dime, ¿un galeón llamado 'Santa Margarita' ha parado en tu colonia últimamente? ¿Quizás como un premio corsario?";
+				link.l1 = "Dime, ¿un barco llamado 'Santa Margarita' ha parado en tu colonia últimamente? ¿Quizás como un premio corsario?";
                 link.l1.go = "guardoftruth";
 			}
 			// Addon 2016-1 Jason Пиратская линейка
@@ -37,7 +37,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			// Rebbebion, "Путеводная звезда"
 			if (CheckAttribute(pchar, "questTemp.PZ.TortugaCitizensAsk") && !CheckAttribute(npchar, "quest.PZ.Ask.Block"))
 			{
-				link.l1 = "¿Puedes ayudarme un poco, camarada? Estoy buscando a un hombre llamado Joep van der Vink. ¿Lo conoces?";
+				link.l1 = "¿Puedes ayudarme un poco, camarada? Estoy buscando a un hombre llamado Joep Van Der Vink. ¿Lo conoces?";
 				link.l1.go = "PZ1";
 			}
         break;
@@ -49,13 +49,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
 		
 		case "Tortuga_ratT_2":
-			dialog.text = "No tengo la menor idea, camarada. Y ningún corbeta con ese nombre ha atracado en nuestro puerto, de eso estoy seguro.";
-			link.l1 = "Está bien entonces, ¿has visto a algún forastero últimamente en el pueblo?";
+			dialog.text = "No tengo la menor idea, camarada. Y ningún barco con ese nombre ha atracado en nuestro puerto, de eso estoy seguro.";
+			link.l1 = "Está bien, ¿has visto a algún forastero últimamente en el pueblo?";
 			link.l1.go = "Tortuga_ratT_3";
         break;
 		
 		case "Tortuga_ratT_3":
-			dialog.text = "¡Buena pregunta! Esto es una ciudad portuaria, no una aldea. Los forasteros pasan por aquí todos los días. Aunque he oído sobre cinco tipos extraños, siempre se mantienen juntos y tienen sus espadas listas. \nLa patrulla incluso preguntó por ellos sin resultado. Pero estoy seguro de que no llegaron aquí en una corbeta, no se ha visto ninguna nave así por aquí, ¿entiendes?";
+			dialog.text = "¡Buena pregunta! Esto es una ciudad portuaria, no una aldea. Los forasteros pasan por aquí todos los días. Aunque he oído sobre cinco tipos extraños, siempre se mantienen juntos y tienen sus espadas listas.\nLa patrulla incluso preguntó por ellos sin resultado. Pero estoy seguro de que no llegaron aquí en ningún barco como el que mencionas, no se ha visto ninguna nave así por aquí, ¿entiendes?";
 			link.l1 = "Mm... Está bien, ya veo. Gracias, "+npchar.name+".";
 			link.l1.go = "exit";
 			AddQuestRecord("Slavetrader", "21_8");
@@ -87,7 +87,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "terrapin_3":
 			if (stf(environment.time) < 20.0 && stf(environment.time) > 8.0)
 			{
-				dialog.text = "No. Él dijo que no volvería hasta las ocho de la tarde hoy. Puedes intentar buscarlo en su mansión, pero no creo que lo encuentres allí. Lo vi navegando en un lugre de patrulla en el mar.";
+				dialog.text = "No. Él dijo que no volvería hasta las ocho de la tarde de hoy. Puedes intentar buscarlo en su mansión, pero no creo que lo encuentres allí. Lo vi navegando en un lugre de patrulla.";
 				link.l1 = "¡Gracias! Pasaré a verlo más tarde.";
 				link.l1.go = "terrapin_4";
 			}
@@ -129,19 +129,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth":
-			dialog.text = "No tengo ni idea del nombre del barco, ¿fue 'Santa Margarita' o 'Puta Castellana' pero trajeron aquí un galeón español capturado. ¡Capturado por un balandro, nada menos! ¡Eso sí que es auténtica jodida navegación! Gaius Marchais, su capitán, ha estado alardeando durante dos días en una taberna - su primer viaje y tal premio!\nSí, una hazaña muy heroica, abordar un galeón lleno de ratas de iglesia sin soldados para protegerlos. Parece que esos malditos papistas olvidaron lo que dicen sobre aquellos que se ayudan a sí mismos...";
+			dialog.text = "No tengo ni idea del nombre del barco, era 'Santa Margarita' o 'Cortesana Castellana'... Pero trajeron aquí un galeón español capturado. ¡Capturado por un balandro, nada menos! ¡Eso sí que es auténtica jodida navegación! Gaius Marchais, su capitán, ha estado alardeando durante dos días en la taberna, ¡su primer viaje y tal premio!\nSí, una hazaña muy heroica, abordar un galeón lleno de ratas de iglesia sin soldados para protegerlos. Parece que esos malditos papistas olvidaron lo que dicen sobre aquellos que se ayudan a sí mismos...";
 			link.l1 = "Sí, Dios ayuda a quien se ayuda a sí mismo, eso es un dicho hugonote seguro. ¿Cómo puedo echar un vistazo a ese capitán afortunado? ¿Está aquí, en Tortuga?";
 			link.l1.go = "guardoftruth_1";
 		break;
 		
 		case "guardoftruth_1":
-			dialog.text = "Ah, ¿quién diablos lo sabe? No lo he visto en mi taberna desde hace mucho tiempo. Tan pronto como se puso sobrio, compró un barco nuevo y reluciente con el dinero del premio y corría por su cubierta como un loco. No tengo idea de dónde está Marchais ahora. Tal vez esté en Tortuga o tal vez en el mar.";
+			dialog.text = "Ah, ¿quién diablos lo sabe? No lo he visto en mi taberna desde hace mucho tiempo. Tan pronto como se puso sobrio, compró un barco nuevo y reluciente con el dinero del premio y corría por su cubierta como un loco. No tengo idea de dónde está Marchais ahora. Tal vez esté en Tortuga, o tal vez en el mar.";
 			link.l1 = "Está bien. ¡Gracias por la historia, camarada!";
 			link.l1.go = "guardoftruth_2";			
 		break;
 		
 		case "guardoftruth_2":
-			dialog.text = "En cualquier momento, Monsieur. Siempre estoy feliz de ayudar a nuestro querido Capitán "+pchar.name+", ¡salvador de St. Pierre! ¡Pasa más tarde!";
+			dialog.text = "En cualquier momento, monsieur. Siempre estoy feliz de ayudar a nuestro querido Capitán "+pchar.name+", ¡salvador de Saint-Pierre! ¡Pasa más tarde!";
 			link.l1 = "...";
 			link.l1.go = "exit";	
 			AddQuestRecord("Guardoftruth", "8");
@@ -157,7 +157,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ1":
-			dialog.text = "  Nunca he oído hablar de él.  ";
+			dialog.text = "Nunca he oído hablar de él.  ";
 			link.l1 = "Tal vez use otro nombre. ¿Quizás lo hayas oído como el capitán del bergantín 'Banten'?";
 			link.l1.go = "PZ2";
 		break;

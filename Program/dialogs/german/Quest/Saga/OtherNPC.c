@@ -73,14 +73,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jimmy_5":
-			dialog.text = "Das ist er, ganz sicher! Er sucht nach einem gewissen Henry, dem Henker und einem zwanzigjährigen Mädchen mit blonden Haaren und blauen Augen. Eine gewisse Gladys Chandler aus Belize muss ihre Pflegerin sein.";
+			dialog.text = "Das ist er, ganz sicher! Er sucht nach einem gewissen Henry Hangman, und einem zwanzigjährigen Mädchen mit blonden Haaren und blauen Augen. Eine gewisse Gladys Chandler aus Belize muss ihre Pflegerin sein.";
 			link.l1 = "Warte! Gladys hat einen anderen Nachnamen. Und sie ist ihre Mutter!";
 			link.l1.go = "Jimmy_6";
 		break;
 		
 		case "Jimmy_6":
 			dialog.text = "Jackman ist gerissen! Du kannst ihn nicht unvorbereitet erwischen! Ich habe Rumba eine Weile umworben und herausgefunden, dass Gladys vor genau zwanzig Jahren Sean McArthur geheiratet hat. Und davor lebte sie in Belize. Ihr erster Ehemann hieß Pete Chandler.\nDer arme Pete wurde in einem betrunkenen Streit getötet. Man sagt, dass McArthur selbst verantwortlich war, da er damals Gefühle für die mollige Gladys hatte. Sie wurde eine Witwe mit einem Baby in den Händen. Das Kind überlebte seinen Vater nicht lange und starb bald darauf an einem Fieber.\nUnd nur ein paar Monate nachdem Gladys und Sean mit einem Mädchen in Blueweld auftauchten, das angeblich McArthurs Tochter ist. Wie konnte Gladys so schnell ein weiteres Baby zur Welt bringen? Verstehst du?";
-			link.l1 = "Haben Sie sonst noch jemandem davon erzählt?";
+			link.l1 = "Hast du sonst noch jemandem davon erzählt?";
 			link.l1.go = "Jimmy_7";
 		break;
 		
@@ -113,7 +113,7 @@ void ProcessDialogEvent()
 		case "Donovan_abordage":
 			PlaySound("Voice\English\saga\Artur Donovan.wav");
 			dialog.text = "Argh, du Ungeheuer!";
-			link.l1 = "Redest du mit dir selbst, Herr?! Wo ist Rumba?";
+			link.l1 = "Redest du mit dir selbst, Mister?! Wo ist Rumba?";
 			link.l1.go = "Donovan_abordage_1";
 		break;
 		
@@ -171,14 +171,14 @@ void ProcessDialogEvent()
 		//фальшивый Гонсалес №1, дом
 		case "GonsalesA":
 			dialog.text = "Brauchst du etwas?";
-			link.l1 = "Hallo, Henker! Kapitän Metzger lässt grüßen.";
+			link.l1 = "Hallo, Hangman! Kapitän Butcher lässt grüßen.";
 			link.l1.go = "GonsalesA_1_1";
 			link.l2 = "Mein Name ist Charles de Maure. Ich suche Enrique, den Sohn der Senora Gonzales im Auftrag ihres alten Freundes. Ich denke, dass du er bist...";
 			link.l2.go = "GonsalesA_2_1";
 		break;
 		
 		case "GonsalesA_1_1":
-			dialog.text = "Was zur Hölle! Ich kenne keinen Schlachter!";
+			dialog.text = "Was zur Hölle! Ich kenne keinen Butcher!";
 			link.l1 = "Komm schon, Henry. Sag mir, warum Jackmans Piraten dich suchen und ich werde dir nicht wehtun.";
 			link.l1.go = "GonsalesA_1_2";
 		break;
@@ -200,7 +200,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GonsalesA_2_1":
-			dialog.text = "Hm... Herr, Sie müssen sich irren. Ich bin in einer fremden Familie aufgewachsen, ich erinnere mich nicht an meine leibliche Mutter. Ich habe den Nachnamen meines Pflegevaters angenommen. Ich kenne den Namen meiner Mutter nicht, aber ich bezweifle, dass er Gonzales war. Sie können sich über mich erkundigen und jeder alte Bewohner wird meine Worte bestätigen. Mein Stiefvater war ein berühmter Mann, er hatte keine eigenen Kinder, also habe ich dieses Haus geerbt und...";
+			dialog.text = "Hm... Mister, Sie müssen sich irren. Ich bin in einer fremden Familie aufgewachsen, ich erinnere mich nicht an meine leibliche Mutter. Ich habe den Nachnamen meines Pflegevaters angenommen. Ich kenne den Namen meiner Mutter nicht, aber ich bezweifle, dass er Gonzales war. Sie können sich über mich erkundigen und jeder alte Bewohner wird meine Worte bestätigen. Mein Stiefvater war ein berühmter Mann, er hatte keine eigenen Kinder, also habe ich dieses Haus geerbt und...";
 			link.l1 = "Es tut mir leid. Es scheint, dass ich mich geirrt habe. Lebewohl.";
 			if(CheckAttribute(pchar,"questTemp.Mtraxx.Cartahena.Gold")) link.l1.go = "GonsalesA_3_1";
 			else link.l1.go = "GonsalesA_2_2";
@@ -279,7 +279,7 @@ void ProcessDialogEvent()
 		case "GonsalesB":
 			PlaySound("Voice\English\citizen\Pirati v Gorode-08.wav");
 			dialog.text = "Ich sehe, dass dir mein Entermesser gefällt. Ich kann es dir verkaufen, wenn du willst. Ich werde nicht viel verlangen, ich sterbe vor Verlangen nach etwas Rum und meine Taschen sind leer.";
-			link.l1 = "Und warum zum Teufel sollte ich es brauchen? Der Waldteufel hat mich gebeten, dir seine besten Grüße zu übermitteln.";
+			link.l1 = "Und warum zum Teufel sollte ich es brauchen? Der Forest Devil hat mich gebeten, dir seine besten Grüße zu übermitteln.";
 			link.l1.go = "GonsalesB_1_1";
 			if (sti(pchar.money) >= 1000)
 			{
@@ -295,7 +295,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GonsalesB_1_2":
-			dialog.text = "Fick dich und deinen Svenson, schick ihn zum Teufel. Zum Waldteufel oder zum Seeteufel, das ist mir scheißegal. Wenn du nicht bereit bist, einem kranken Mann zu helfen, indem du seinen Säbel kaufst, dann stecke ich ihn dir kostenlos direkt in den Arsch.";
+			dialog.text = "Fick dich und deinen Svenson, schick ihn zum Teufel. Zum Forest Devil oder zum Seeteufel, das ist mir scheißegal. Wenn du nicht bereit bist, einem kranken Mann zu helfen, indem du seinen Säbel kaufst, dann stecke ich ihn dir kostenlos direkt in den Arsch.";
 			link.l1 = "Wirklich? Lass sehen, wie du das machen wirst, du Arschgesicht!";
 			link.l1.go = "GonsalesB_1_fight";
 		break;
@@ -467,42 +467,42 @@ void ProcessDialogEvent()
 		//настоящий Гонсалес - Ортега, маяк
 		case "Ortega":
 			dialog.text = "Ich erwarte keine Gäste, weder heute noch an einem anderen Tag. Was wollen Sie?";
-			link.l1 = "Hallo, Henker. Der Waldteufel hat mich geschickt. Es ist gut, dass ich dich gefunden habe, bevor Jackmans Burschen es taten. Seine Männer suchen dich überall in der Karibik. Zum Glück für dich, Henry, weiß nur Svenson, wo du geboren wurdest. Er hat mich gebeten, dich zu warnen.";
+			link.l1 = "Hallo, Hangman. Der Forest Devil hat mich geschickt. Es ist gut, dass ich dich gefunden habe, bevor Jackmans Burschen es taten. Seine Männer suchen dich überall in der Karibik. Zum Glück für dich, Henry, weiß nur Svenson, wo du geboren wurdest. Er hat mich gebeten, dich zu warnen.";
 			link.l1.go = "Ortega_1";
 		break;
 		
 		case "Ortega_1":
 			dialog.text = "Ich sehe jetzt... Also, es scheint, dass Svenson noch lebt und seinen alten Freund nicht vergessen hat. Viel Blut ist geflossen, seit ich ihn zum ersten Mal als einen Neuling an Bord einer beschädigten Brigantine sah... Das Leben ist zu schnell vergangen und mir bleibt nicht viel Zeit\nIch wollte auf dieser Ödnis eines natürlichen Todes sterben, fernab der Menschheit und nahe am Meer. Aber wenn Jackman zurück in der Karibik ist, wird er mich nicht in Ruhe lassen. Es war nicht meine Schuld, aber ich schulde seinem Meister. Wie auch immer, wer wird mir jetzt glauben.\nIch fürchte nicht den Tod, sondern den Schmerz. Und Jackman weiß viel über Schmerz. Der Gedanke daran allein lässt mein Herz stehen und alles wird dunkel.";
-			link.l1 = "Schlachter wurde vor zwanzig Jahren gehängt, also musst du niemandem Schulden zurückzahlen. Du kannst mir deine Schulden geben, wenn du vor Jackman Angst hast. Ich denke, du wirst ihm sowieso begegnen.";
+			link.l1 = "Bucther wurde vor zwanzig Jahren gehängt, also musst du niemandem Schulden zurückzahlen. Du kannst mir deine Schulden geben, wenn du vor Jackman Angst hast. Ich denke, du wirst ihm sowieso begegnen.";
 			link.l1.go = "Ortega_2";
 		break;
 		
 		case "Ortega_2":
-			dialog.text = "Es ist nicht einfach, Leute wie den Metzger aufzuhängen. Der ehemalige Henker von St. John könnte dir viele interessante Geschichten über die Toten erzählen, die aus der Hölle zurückgekehrt sind. Und Jakob wurde gut von seinem Kapitän unterrichtet, also bin ich mir nicht sicher, wen ich am meisten fürchte.";
+			dialog.text = "Es ist nicht einfach, Leute wie den Butcher aufzuhängen. Der ehemalige Henker von St. John könnte dir viele interessante Geschichten über die Toten erzählen, die aus der Hölle zurückgekehrt sind. Und Jakob wurde gut von seinem Kapitän unterrichtet, also bin ich mir nicht sicher, wen ich am meisten fürchte.";
 			link.l1 = "Warum braucht Jackman dich?";
 			link.l1.go = "Ortega_3";
 		break;
 		
 		case "Ortega_3":
-			dialog.text = "Ich musste Gold an eine Witwe liefern als Bezahlung dafür, dass sie die Tochter des Metzgers sicher hielt. Warum schaust du mich so an? Ja, sie wurde nicht lange vor dem Untergang der 'Neptune' geboren. Er konnte nicht rechtzeitig für sie zurück sein, also schickte er mich, um mich um das Baby und ihre Pflegerin zu kümmern.";
-			link.l1 = "War Gladys Chandler der Name des Hausmeisters?";
+			dialog.text = "Ich musste Gold an eine Witwe liefern als Bezahlung dafür, dass sie die Tochter von Butcher sicher hielt. Warum schaust du mich so an? Ja, sie wurde nicht lange vor dem Untergang der 'Neptune' geboren. Er konnte nicht rechtzeitig für sie zurück sein, also schickte er mich, um mich um das Baby und ihre Pflegerin zu kümmern.";
+			link.l1 = "War Gladys Chandler der Name der Betreuerin?";
 			link.l1.go = "Ortega_4";
 		break;
 		
 		case "Ortega_4":
-			dialog.text = "Spiel nicht den Idioten. Wenn Jackman mich sucht, dann braucht er die Tochter des Metzgers. Du musst schon wissen, dass er nach einer Frau aus Belize namens Gladys und ihrem Pflegekind sucht. Sei ehrlich zu mir und ich könnte dir vielleicht vertrauen.";
-			link.l1 = "Was sollten Sie Gladys sagen?";
+			dialog.text = "Spiel nicht den Idioten. Wenn Jackman mich sucht, dann braucht er die Tochter von Butcher. Du musst schon wissen, dass er nach einer Frau aus Belize namens Gladys und ihrem Pflegekind sucht. Sei ehrlich zu mir und ich könnte dir vielleicht vertrauen.";
+			link.l1 = "Was solltest du Gladys sagen?";
 			link.l1.go = "Ortega_5";
 		break;
 		
 		case "Ortega_5":
-			dialog.text = "Nichts. Ich sollte ihr den Ring des Metzgers zeigen, so würde sie wissen, dass ich ein Kurier war, der vom Kapitän geschickt wurde. Ich musste ihr auch eine Truhe voller Dublonen für die Bedürfnisse des Babys geben. Ich musste einen Bastard töten, um den Ring wegzunehmen. Dadurch musste ich meinen Aufenthalt auf Antigua um einen weiteren Monat verlängern.\nUnd als ich endlich Belize erreicht hatte, war Gladys bereits verschwunden und die Stadt wurde von den Spaniern verbrannt und geplündert. Sie schaffte es, ihr Haus zu verkaufen und mit ihrem neuen Freund und Baby Helen wegzulaufen. Ich hoffe, dass sie sich um sie gekümmert hat und das Mädchen nicht an die Zigeuner oder in das Bordell verkauft hat.";
-			link.l1 = "Der Name der Tochter des Metzgers war Helen, richtig?";
+			dialog.text = "Nichts. Ich sollte ihr den Ring von Butcher zeigen, so würde sie wissen, dass ich ein Kurier war, der vom Kapitän geschickt wurde. Ich musste ihr auch eine Truhe voller Dublonen für die Bedürfnisse des Babys geben. Ich musste einen Bastard töten, um den Ring wegzunehmen. Dadurch musste ich meinen Aufenthalt auf Antigua um einen weiteren Monat verlängern.\nUnd als ich endlich Belize erreicht hatte, war Gladys bereits verschwunden und die Stadt wurde von den Spaniern verbrannt und geplündert. Sie schaffte es, ihr Haus zu verkaufen und mit ihrem neuen Freund und Baby Helen wegzulaufen. Ich hoffe, dass sie sich um sie gekümmert hat und das Mädchen nicht an die Zigeuner oder in das Bordell verkauft hat.";
+			link.l1 = "Der Name der Tochter von Butcher war Helen, richtig?";
 			link.l1.go = "Ortega_6";
 		break;
 		
 		case "Ortega_6":
-			dialog.text = "Genau. Zu Ehren der Mutter des Metzgers. Wenn du keine Angst vor den Lebenden Toten und Piraten hast, die dich mit toten Augen ansehen, dann kann ich dir den Ring und Gold geben. Ich habe es nie angefasst. Ich bin vor Hunger gestorben, aber ich habe es nicht berührt. Tu damit, was du willst. Und im Gegenzug bitte ich dich...";
+			dialog.text = "Genau. Zu Ehren der Mutter von Butcher. Wenn du keine Angst vor den Lebenden Toten und Piraten hast, die dich mit toten Augen ansehen, dann kann ich dir den Ring und Gold geben. Ich habe es nie angefasst. Ich bin vor Hunger gestorben, aber ich habe es nicht berührt. Tu damit, was du willst. Und im Gegenzug bitte ich dich...";
 			link.l1 = "Was passiert, Henry?!";
 			link.l1.go = "Ortega_7";
 		break;
@@ -541,7 +541,7 @@ void ProcessDialogEvent()
 		//бандиты в поисках Гонсалеса, маяк
 		case "saga_trap":
 			dialog.text = "A-ah, da ist unser neugieriger Freund! Hast du endlich Gonzales gefunden? Gut gemacht, du hast uns zu ihm gebracht... wir brauchen dich nicht mehr. Jungs, tötet diesen Narren!";
-			link.l1 = "Zeit zu sterben, Krabben-Innereien!";
+			link.l1 = "Zeit zu sterben, Krabben-Futter!";
 			link.l1.go = "saga_trap_1";
 		break;
 		
@@ -750,7 +750,7 @@ void ProcessDialogEvent()
 		
 		case "valet_2":
 			dialog.text = "Sie werden bezahlt, um Ihre Arbeit zu tun und nicht um Fragen zu stellen. Sie haben allerdings recht. Ich muss Sie warnen, dass Tyrex Sie nicht gehen lässt, bis er sicher ist, dass Sie die Wahrheit sagen. Aber sobald er alles herausfindet, wird er Sie gut bezahlen. Wenn er dazu in der Lage sein wird...";
-			link.l1 = "Sie ziehen mir die Wolle über die Augen, Herr... Warum wollen Sie seinen Dank nicht selbst entgegennehmen?";
+			link.l1 = "Sie ziehen mir die Wolle über die Augen, Mister... Warum wollen Sie seinen Dank nicht selbst entgegennehmen?";
 			link.l1.go = "valet_3";
 		break;
 		
@@ -789,7 +789,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Wer bist du, verdammt? Wie bist du hierher gekommen? Geh jetzt, mein Schiff ist vermint und die Bastarde am Ufer können es mit einem Schuss in die Luft jagen.";
-				link.l1 = "Machen Sie sich keine Sorgen, Herr. Der Hinterhalt am Ufer wurde beseitigt. Ihr Schiff ist jetzt sicher, solange Sie natürlich nicht vorhaben, an Deck eine Pfeife anzuzünden. Wie ist Ihr Name?";
+				link.l1 = "Machen Sie sich keine Sorgen, Mister. Der Hinterhalt am Ufer wurde beseitigt. Ihr Schiff ist jetzt sicher, solange Sie natürlich nicht vorhaben, an Deck eine Pfeife anzuzünden. Wie ist Ihr Name?";
 				link.l1.go = "vensan_1";
 			}
 		break;
@@ -802,8 +802,8 @@ void ProcessDialogEvent()
 		
 		case "vensan_2":
 			LAi_SetStayType(npchar);
-			dialog.text = "Oh... meine Dankbarkeit. Wie kann ich dir danken?";
-			link.l1 = "Es ist noch nicht vorbei, Herr. Ist noch jemand von Ihrer Crew am Leben?";
+			dialog.text = "Oh... Danke sehr. Wie kann ich dir danken?";
+			link.l1 = "Es ist noch nicht vorbei, Mister. Ist noch jemand von Ihrer Crew am Leben?";
 			link.l1.go = "vensan_3";
 		break;
 		
@@ -889,7 +889,7 @@ void ProcessDialogEvent()
  //--------------------------------------НПС по Завещанию Шарпа--------------------------------------------------
 		// Устрица, Поль Моллиган
 		case "molligan":
-			dialog.text = "Was wollen Sie auf meinem Schiff, Herr?";
+			dialog.text = "Was wollen Sie auf meinem Schiff, Mister?";
 			link.l1 = "Guten Tag, Paul. Ihr Name ist Paul Molligan, nicht wahr?";
 			link.l1.go = "molligan_0";
 		break;
@@ -939,10 +939,10 @@ void ProcessDialogEvent()
 		case "molligan_7":
 			DialogExit();
 			// ставим проверку скрытности
-			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > (10+drand(50)))
+			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > (10+hrand(50)))
 			{
 				pchar.questTemp.Saga.Molligan.friend = "true"; // будет шанс критического залпа картечью
-				sTemp = "The scoundrel is still not suspecting a thing. I should get closer and shoot at him with grapeshot. A sudden strike will always win in any battle. ";
+				sTemp = "Der Schurke schöpft immer noch keinen Verdacht. Ich sollte näher herankommen und mit Kartätschenkugel auf ihn schießen. Ein plötzlicher Schlag wird immer in einem Kampf gewinnen. ";
 				log_Testinfo("Friends");
 				AddCharacterExpToSkill(pchar, "Fortune", 200);//везение
 				AddCharacterExpToSkill(pchar, "Sneak", 300);//скрытность
@@ -982,7 +982,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "benson_2":
-			dialog.text = "Ich bin ein Neuling und kenne hier nicht viele Leute. Deswegen habe ich diesen gutmütigen dicken Mann als Chirurg eingestellt, ohne von seiner Vergangenheit zu wissen. Piraten haben uns verfolgt, seit wir Barbados verlassen haben. Warum sollten sie meine Eierschale brauchen?\nWir haben es gerade noch geschafft zu entkommen, dank eines starken Sturms. Hatten einen Schluck auf so einen Anlass. Und der dicke Narr dachte sich nichts Besseres aus, als allen zu erzählen, dass die Piraten wahrscheinlich ihn verfolgten, weil er der ehemalige Henker ist und Dinge weiß, die er nicht wissen sollte.\nNatürlich wurden meine Leute richtig wütend. Wie bitte?! Ein Henker an Bord, der als Chirurg dient! Und niemand wollte sich auch mit den Piraten anlegen... Also musste ich die arme Seele an Land setzen. Es ist alles seine Schuld, er musste einfach seinen Mund aufmachen. Aber ich fühle mich schlecht für den Tölpel, er war ein ausgezeichneter Arzt. Es dauerte nur eine Minute, um meinen Kater zu heilen.";
+			dialog.text = "Ich bin ein Neuling und kenne hier nicht viele Leute. Deswegen habe ich diesen gutmütigen dicken Mann als Chirurg eingestellt, ohne von seiner Vergangenheit zu wissen. Piraten haben uns verfolgt, seit wir Barbados verlassen haben. Warum sollten sie meine Eierschale brauchen?\nWir haben es gerade noch geschafft zu entkommen, dank eines starken Sturms. Hatten einen Schluck auf so einen Anlass. Und der dicke Narr dachte sich nichts Besseres aus, als allen zu erzählen, dass die Piraten wahrscheinlich ihn verfolgten, weil er der ehemalige Henker ist und Dinge weiß, die er nicht wissen sollte.\nNatürlich wurden meine Leute richtig wütend. Wie bitte?! Ein Henker an Bord, der als Chirurg dient! Und niemand wollte sich auch mit den Piraten anlegen... Also musste ich die arme Seele aus dem Schiff jagen. Es ist alles seine Schuld, er musste einfach seinen Mund aufmachen. Aber ich fühle mich schlecht für den Tölpel, er war ein ausgezeichneter Arzt. Es dauerte nur eine Minute, um meinen Kater zu heilen.";
 			link.l1 = "Verdammt! Der Name deines Arztes war Raymond Baker, nicht wahr?";
 			link.l1.go = "benson_3";
 		break;
@@ -994,7 +994,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "benson_4":
-			dialog.text = "Breitengrad 15 Grad 28' Nord, Längengrad 63 Grad 28' West. Beeil dich, Herr! Er muss noch am Leben sein und du wirst die Schuld von mir nehmen, wenn du ihn rettest!";
+			dialog.text = "Breitengrad 15 Grad 28' Nord, Längengrad 63 Grad 28' West. Beeil dich, Mister! Er muss noch am Leben sein und du wirst die Schuld von mir nehmen, wenn du ihn rettest!";
 			link.l1 = "Ich lichte bereits meine Anker!";
 			link.l1.go = "benson_5";
 		break;
@@ -1051,7 +1051,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mine_bandit_1":
-			dialog.text = "Weil die Mine hinter mir Privatbesitz ist und ich hier bin, um jeden Fremden wie dich am Durchkommen zu hindern. Du solltest besser umkehren und diesen Ort verlassen, Fremder. Unsere Kanonen sind mit Traubenschrot geladen, nur noch ein Schritt und du wirst zu einer nassen Pfütze.";
+			dialog.text = "Weil die Mine hinter mir Privatbesitz ist und ich hier bin, um jeden Fremden wie dich am Durchkommen zu hindern. Du solltest besser umkehren und diesen Ort verlassen, Fremder. Unsere Kanonen sind mit Kartätschenkugel geladen, nur noch ein Schritt und du wirst zu einer nassen Pfütze.";
 			link.l1 = "Heh, ich sehe. Eure Mine hat eine ernsthafte Wache. Gut, ich gehe.";
 			link.l1.go = "mine_bandit_exit";
 			link.l2 = "Du, Schuft! Nun, wir werden sehen, wer zur Pfütze wird!";
@@ -1350,7 +1350,7 @@ void ProcessDialogEvent()
 		case "gunner_5":
 			PlaySound("types\warrior04.wav");
 			PlaySound("Voice\English\evilpirates06.wav");
-			dialog.text = "Ha-ha-ha, die Bastarde haben uns den Rücken gezeigt! Hundsfleisch! Traubenschuss zerschmettert sie auf solche Entfernung! Es scheint, sie haben nicht genug Mut, uns erneut anzugreifen!";
+			dialog.text = "Ha-ha-ha, die Bastarde haben uns den Rücken gezeigt! Hundsfleisch! Kartätschenkugel zerschmettert sie auf solche Entfernung! Es scheint, sie haben nicht genug Mut, uns erneut anzugreifen!";
 			link.l1 = "Nun ist es an uns. Randolph, du bleibst hier in der Nähe der Kanone. Schieß ein paar Mal auf den Pfad und dann ziele auf den Rauch - brenne ihr Versteck nieder! Schieß uns nur nicht.";
 			link.l1.go = "gunner_5_1";
 		break;
@@ -1419,7 +1419,7 @@ void ProcessDialogEvent()
 		case "js_girl":
 			if (LAi_grp_playeralarm > 0)
 			{
-				dialog.text = "Sie sollten diesen Ort besser verlassen, Herr. Wir decken keine Verbrecher und wir brauchen keine Konflikte mit den Autoritäten der Kolonie.";
+				dialog.text = "Sie sollten diesen Ort besser verlassen, Mister. Wir decken keine Verbrecher und wir brauchen keine Konflikte mit den Autoritäten der Kolonie.";
 				link.l1 = "Gut, ich gehe jetzt...";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "js_girl";
@@ -1437,7 +1437,7 @@ void ProcessDialogEvent()
 					NPChar.quest.meeting = "1";
 					break;
 				}
-				dialog.text = TimeGreeting()+", Herr. Möchten Sie Jan sehen?";
+				dialog.text = TimeGreeting()+", Mister. Möchten Sie Jan sehen?";
 				link.l1 = "Guten Tag. Es war schön, Sie kennenzulernen, Fräulein?..";
 				link.l1.go = "js_girl_1";
 			}
@@ -1454,7 +1454,7 @@ void ProcessDialogEvent()
 				}
 				if (CheckAttribute(pchar, "questTemp.HelenDrinking.Dialogs.Joan")) {
 					dialog.text = "Grr!";
-					link.l1 = "Und Ihnen auch gute Gesundheit, Frau Svensson.";
+					link.l1 = "Und Ihnen auch gute Gesundheit, Miss Svensson.";
 					link.l1.go = "exit";
 					break;
 				}
@@ -1462,19 +1462,19 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "blueveld")
 				{
 					dialog.text = TimeGreeting()+", Kapitän "+GetFullName(pchar)+". Wenn Sie wegen Jan hier sind, muss ich Sie enttäuschen - er ist nicht hier. Er führt gerade einige wichtige Geschäfte durch.";
-					link.l1 = "Verdammt! Und ich brauche ihn! Sagen Sie mir, Frau Svenson, hat er Ihnen gesagt, wann er zurück sein wird?";
+					link.l1 = "Verdammt! Und ich brauche ihn! Sagen Sie mir, Miss Svenson, hat er Ihnen gesagt, wann er zurück sein wird?";
 					link.l1.go = "js_girl_3";
 					break;
 				}
 				dialog.text = "A-ah, du schon wieder, Kapitän "+GetFullName(pchar)+"... geh weiter, Jan ist wie gewohnt oben.";
-				link.l1 = "Danke, Frau Svenson...";
+				link.l1 = "Danke, Miss Svenson...";
 				link.l1.go = "exit";
 			}
 			NextDiag.TempNode = "js_girl";
 		break;
 		
 		case "js_girl_1":
-			dialog.text = "Frau, Frau Johanna Svenson.";
+			dialog.text = "Miss, Miss Johanna Svenson.";
 			link.l1 = "Kapitän "+GetFullName(pchar)+".";
 			link.l1.go = "js_girl_2";
 		break;
@@ -1483,12 +1483,12 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "blueveld")
 			{
 				dialog.text = "Kapitän? Nun, ich freue mich, Sie in meinem Haus willkommen zu heißen. Aber wenn Sie wegen Jan hier sind, muss ich Sie enttäuschen - er ist nicht hier. Er ist unterwegs, um wichtige Geschäfte zu erledigen.";
-				link.l1 = "Verdammt! Und ich brauche ihn! Sagen Sie mir, Frau Svenson, hat er Ihnen gesagt, wann er zurückkommt?";
+				link.l1 = "Verdammt! Und ich brauche ihn! Sagen Sie mir, Miss Svenson, hat er Ihnen gesagt, wann er zurückkommt?";
 				link.l1.go = "js_girl_3";
 				break;
 			}
 			dialog.text = "Kapitän? Nun, ich freue mich, Sie in meinem Haus willkommen zu heißen. Mein Mann ist im zweiten Stock in seinem Büro. Geh nach oben.";
-			link.l1 = "Ich habe es verstanden, Frau Svenson...";
+			link.l1 = "Ich habe es verstanden, Miss Svenson...";
 			link.l1.go = "exit";
 			NPChar.quest.meeting = "1";
 			NextDiag.TempNode = "js_girl";
@@ -1501,7 +1501,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "js_girl_4":
-			dialog.text = "Ich werde es dir sagen. Die liebliche Helen, auch bekannt als Rumba, Tochter seines verstorbenen Freundes Sean McArthur, ist verschwunden. Jan behandelt die junge Teufelin als wäre sie seine eigene Tochter. Sie erinnert ihn an seine alte Liebe, die denselben rücksichtslosen Charakter hatte. Das ist zumindest der Grund für die Anziehung, denke ich.\nWie auch immer, das Mädchen verschwand vor einer Woche zusammen mit ihrer Schoner 'Regenbogen' und seiner gesamten Besatzung. Sean McArthur lehrte sie Seemannschaft und der 'Regenbogen' wurde ihr durch sein Testament übergeben. Und jetzt spielt sie Kapitänin...";
+			dialog.text = "Ich werde es Ihnen sagen. Die liebliche Helen, auch bekannt als Rumba, Tochter seines verstorbenen Freundes Sean McArthur, ist verschwunden. Jan behandelt die junge Teufelin als wäre sie seine eigene Tochter. Sie erinnert ihn an seine alte Liebe, die denselben rücksichtslosen Charakter hatte. Das ist zumindest der Grund für die Anziehung, denke ich.\nWie auch immer, das Mädchen verschwand vor einer Woche zusammen mit ihrer Schoner 'Regenbogen' und seiner gesamten Besatzung. Sean McArthur lehrte sie Seemannschaft und der 'Regenbogen' wurde ihr durch sein Testament übergeben. Und jetzt spielt sie Kapitänin...";
 			link.l1 = "Was könnte ihr passiert sein?";
 			link.l1.go = "js_girl_5";
 		break;
@@ -1539,7 +1539,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "js_helen_ft":
-			dialog.text = "You're always in heat, I'd say. You should go to church; I've barely ever seen you there.";
+			dialog.text = "Du bist immer brünstig, Ich würde sagen. Du solltest in die Kirche gehen, ich habe dich kaum je dort gesehen.";
 			link.l1 = "Mein Gewissen ist rein - ich habe nichts um Vergebung zu bitten. Noch immer bitter, dass er geholfen hat, mein Schiff zu versorgen, anstatt ein weiteres Kleid für dich, Joanna, zu kaufen?";
 			link.l1.go = "js_helen_ft_1";
 		break;
@@ -1666,7 +1666,7 @@ void ProcessDialogEvent()
 		
 		case "helendrinking_joan":
 			dialog.text = "Ach! Verschwinde hier, du Schuft! Wie oft habe ich dir gesagt, dass du nicht in mein Haus klettern sollst! Und wer ist das?";
-			link.l1 = "Frau, wir kennen uns bereits.";
+			link.l1 = "Miss, wir kennen uns bereits.";
 			link.l1.go = "helendrinking_joan_1";
 		break;
 		
@@ -1679,7 +1679,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "helendrinking_joan_2":
-			dialog.text = "Wha-a-a-at?! How dare you, wretch?! You're not going anywhere; my husband will be here any moment now and he'll teach you how to talk to the elders!";
+			dialog.text = "Was?! Wie kannst du es wagen, Schuft?! Du gehst nirgendwo hin; mein Mann wird jeden Moment hier sein und dir beibringen, wie man mit den Ältesten spricht!";
 			link.l1 = "";
 			link.l1.go = "exit";
 			
@@ -1687,7 +1687,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "helendrinking_fort_officer":
-			dialog.text = "Was passiert hier? Fräulein MacArthur! Ich hatte großen Respekt vor Ihrem Vater, und Herr Svensson ist unser Freund... Aber erinnern Sie sich nicht, wie es das letzte Mal geendet hat?\nEs ist enttäuschend, Offizierswort, enttäuschend! Sie hätten uns einladen können!";
+			dialog.text = "Was passiert hier? Fräulein MacArthur! Ich hatte großen Respekt vor Ihrem Vater, und Mister Svensson ist unser Freund... Aber erinnern Sie sich nicht, wie es das letzte Mal geendet hat?\nEs ist enttäuschend, Offizierswort, enttäuschend! Sie hätten uns einladen können!";
 			link.l1 = "";
 			link.l1.go = "exit";
 			
@@ -1695,7 +1695,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "helendrinking_fort_officer_1":
-			dialog.text = "Vielen Dank für Ihre Gastfreundschaft, Frau MacArthur. Lassen Sie mich sagen, dass wir alle sehr froh sind, Sie zurück zu sehen. Was passiert ist, bleibt ein großes Rätsel, aber es ist nicht überraschend, dass das Dorf davon weiß. Dennoch kann ich Ihnen versprechen, dass niemand klatschen wird. Ich entschuldige mich aufrichtig für das jüngste Verhalten eines unserer Kapitäne. Und ich möchte Ihnen speziell, Herr de Maure, danken.";
+			dialog.text = "Vielen Dank für Ihre Gastfreundschaft, Miss MacArthur. Lassen Sie mich sagen, dass wir alle sehr froh sind, Sie zurück zu sehen. Was passiert ist, bleibt ein großes Rätsel, aber es ist nicht überraschend, dass das Dorf davon weiß. Dennoch kann ich Ihnen versprechen, dass niemand klatschen wird. Ich entschuldige mich aufrichtig für das jüngste Verhalten eines unserer Kapitäne. Und ich möchte Ihnen speziell, Mister de Maure, danken.";
 			link.l1 = "";
 			link.l1.go = "exit";
 			
@@ -1703,7 +1703,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "helendrinking_fort_officer_2":
-			dialog.text = "Alles wird gut, Fräulein. Herr de Maure, ich werde ehrlich sein - trotz Donovans Verhalten wie ein wahrer Schurke und Bandit, wird die Flotte ihn niemals offen verurteilen. Wahrscheinlicher ist, dass sie ihn sogar verteidigen werden. Ihre kleine Expedition hat es in die Berichte geschafft und die Beziehungen zwischen unseren Ländern erheblich kompliziert. Trotzdem, in Anbetracht des Einflusses von Herrn Svensson und der bemerkenswerten Zugeständnisse, die Ihnen von Capsterville gemacht wurden, haben Sie nichts zu befürchten.";
+			dialog.text = "Alles wird gut, Fräulein. Mister de Maure, ich werde ehrlich sein - trotz Donovans Verhalten wie ein wahrer Schurke und Bandit, wird die Flotte ihn niemals offen verurteilen. Wahrscheinlicher ist, dass sie ihn sogar verteidigen werden. Ihre kleine Expedition hat es in die Berichte geschafft und die Beziehungen zwischen unseren Ländern erheblich kompliziert. Trotzdem, in Anbetracht des Einflusses von Mister Svensson und der bemerkenswerten Zugeständnisse, die Ihnen von Capsterville gemacht wurden, haben Sie nichts zu befürchten.";
 			link.l1 = "Das ist prächtig. Ich sage, wir trinken darauf!";
 			link.l1.go = "exit";
 			
@@ -1722,7 +1722,7 @@ void ProcessDialogEvent()
 				link.l1 = "Guter Herr! Nun, da ich Ihnen mein Wort gegeben habe, kann es nicht helfen. Geh, übernimm das Kommando.";
 				link.l1.go = "helendrinking_poorman_bought";
 			} else {
-				link.l1 = "Ich habe keine Arbeit für Sie, Herr.";
+				link.l1 = "Ich habe keine Arbeit für Sie, Mister.";
 				link.l1.go = "helendrinking_poorman_notbought";
 			}
 		break;
@@ -1746,9 +1746,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "helensleep_amelia_mary":
-			dialog.text = "Im Namen des Vaters und des Sohnes und des Heiligen Geistes... komm rein, mein Sohn.";
+			dialog.text = "In nomine Patris et Filii et Spiritus Sancti... komm rein, mein Sohn.";
 			if (HelenSleep_TalkedToAmelia()) {
-				link.l1 = "Hallo, Mutter Amelia. Wirst du auch mit mir schreien?";
+				link.l1 = "Hallo, Mutter Amelia. Wirst du mich auch anschreien?";
 				link.l1.go = "helensleep_amelia_mary_know";
 			} else {
 				link.l1 = "Verschwinde! Was für ein Albtraum ist das? Was passiert? Träume ich?";
@@ -1758,7 +1758,7 @@ void ProcessDialogEvent()
 		
 		case "helensleep_amelia_mary_know":
 			dialog.text = "Nein, mein kleiner Falke. Und vergib Jan - der arme Mann hat sich aufgeregt. Aber ja, ich möchte dich tadeln. Warum bist du zur Kirche gekommen? Um deine Sünden zu bereuen? Oder war es die Rothaarige, die du gesucht hast?";
-			link.l1 = "Ich kenne mich selbst nicht...";
+			link.l1 = "Das weiß ich selber nicht...";
 			link.l1.go = "helensleep_amelia";
 			link.l2 = "Hast du sie auch gesehen? Sie hat mein Auge gefangen.";
 			link.l2.go = "helensleep_amelia";
@@ -1766,7 +1766,7 @@ void ProcessDialogEvent()
 		
 		case "helensleep_amelia_mary_notknow":
 			dialog.text = "Verschwinde. Wir hätten uns schon längst treffen sollen, aber du zögerst alles hinaus. Warum bist du zur Kirche gekommen? Um dich für deine Sünden zu bereuen? Oder warst du hinter der Rothaarigen her?";
-			link.l1 = "Ich kenne mich selbst nicht...";
+			link.l1 = "Das weiß ich selber nicht...";
 			link.l1.go = "helensleep_amelia";
 			link.l2 = "Hast du sie auch gesehen? Sie hat mein Auge gefangen.";
 			link.l2.go = "helensleep_amelia";
@@ -1775,7 +1775,7 @@ void ProcessDialogEvent()
 		case "helensleep_amelia_helen":
 			dialog.text = "Guten Morgen, mein Falke. Der Empfang hat noch nicht begonnen, bitte warte in der Reihe.";
 			if (HelenSleep_TalkedToAmelia()) {
-				link.l1 = "Hallo, Eure Exzellenz. Werden Sie auch mit mir schreien?";
+				link.l1 = "Hallo, Eure Exzellenz. Werden Sie mich auch anschreien?";
 				link.l1.go = "helensleep_amelia_helen_know";
 			} else {
 				link.l1 = "Verschwinde! Was für ein Albtraum ist das? Was passiert hier? Träume ich?";
@@ -1784,7 +1784,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "helensleep_amelia_helen_know":
-			dialog.text = "No, my falcon. And forgive Jan, the poor man got worked up. No need to scold you; you did everything right - didn't go after the red-haired one to the church. Good boy!";
+			dialog.text = "Nein, mein Falke. Und verzeih Jan, der arme Mann hat sich aufgeregt. Du brauchst nicht zu schimpfen, du hast alles richtig gemacht - du bist der Rothaarigen nicht bis zur Kirche gefolgt. Braver Junge!";
 			link.l1 = "Es ist nett, gelobt zu werden. Besonders wenn klar ist, wofür.";
 			link.l1.go = "helensleep_amelia";
 			link.l2 = "Hast du sie auch gesehen? Sie hat mein Auge gefangen.";
@@ -1807,7 +1807,7 @@ void ProcessDialogEvent()
 		
 		case "helensleep_amelia_1":
 			dialog.text = "Natürlich, wähle selbst, aber der Blonde ist besser. Wir haben es so entschieden.";
-			link.l1 = "Wer sind wir?";
+			link.l1 = "Wer ist 'wir'?";
 			link.l1.go = "helensleep_amelia_2";
 		break;
 		
@@ -1828,7 +1828,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "helendrinking_notifier":
-			dialog.text = "Herr, Herr Svensson hat darum gebeten, dass Sie ihm ein wenig Ihrer Zeit schenken.";
+			dialog.text = "Monsieur, Mister Svensson hat darum gebeten, dass Sie ihm ein wenig Ihrer Zeit schenken.";
 			link.l1 = "Verdammt, das verheißt nichts Gutes. Ich werde es versuchen, aber ich mache keine Versprechungen.";
 			link.l1.go = "exit";
 			
@@ -1858,7 +1858,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "islatesoro_pirate1_3":
-			dialog.text = "You're the rat here! We had just torn a big fat Spaniard apart; we can sit on our asses for a year!";
+			dialog.text = "Du bist hier die Ratte! Wir haben gerade einen dicken, fetten Spanier in Stücke gerissen; wir können ein Jahr lang auf unseren Ärschen sitzen!";
 			link.l1 = "";
 			link.l1.go = "exit";
 			
@@ -1951,7 +1951,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "francois_1":
-			dialog.text = "Colonel Francois de Tavanne. You may consider this a direct challenge, monsieur; the gauntlet for the duel has been laid. I don't even wish to dirty my hands with you, but I swear, my blade will taste your blood!";
+			dialog.text = "Colonel Francois de Tavanne. Betrachten Sie dies als eine direkte Herausforderung, Monsieur; der Fehdehandschuh für das Duell ist gelegt. Ich möchte mir nicht einmal die Hände mit Euch schmutzig machen, aber ich schwöre, meine Klinge wird Euer Blut kosten!";
 			link.l1 = "Ein Duell? In diesem Fall müssen Sie sich viel mehr anstrengen, Oberst. Im Moment könnten Sie nur für einen Banditen gehalten werden, und in diesen Teilen ist das Gespräch mit ihrer Art kurz! Erklären Sie sich!";
 			link.l1.go = "francois_2";
 		break;
@@ -1971,7 +1971,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "francois_4":
-			dialog.text = "Ist das nicht genug? Ich habe nachgefragt - an meiner Stelle könnten jetzt ein Dutzend noble Ehemänner sein, mein Herr. Aber wenn Sie die Details wollen, dann gestehe ich zu meiner Schande, dass eine Ihrer Leidenschaften Lulu de Tavann war, die schönste und ehrlichste der Frauen!";
+			dialog.text = "Ist das nicht genug? Ich habe nachgefragt - an meiner Stelle könnten jetzt ein Dutzend noble Ehemänner sein, Mister. Aber wenn Sie die Details wollen, dann gestehe ich zu meiner Schande, dass eine Ihrer Leidenschaften Lulu de Tavann war, die schönste und ehrlichste der Frauen!";
 			link.l1 = "Lulu, sagst du... Und wie geht es ihr?";
 			link.l1.go = "francois_5";
 		break;
@@ -1985,7 +1985,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "francois_6":
-			dialog.text = "Schweigen Sie, Herr! Nehmen Sie die Herausforderung an oder verlieren Sie jegliche Reste von Ehre, die Sie noch haben könnten!";
+			dialog.text = "Schweigen Sie, Mister! Nehmen Sie die Herausforderung an oder verlieren Sie jegliche Reste von Ehre, die Sie noch haben könnten!";
 			if (pchar.HeroParam.HeroType == "HeroType_1") {
 				link.l1 = "Ein Duell ist ein Duell. Ich werde nicht lügen, ich genieße diese. Kapitän, übermitteln Sie dem Oberst, dass es an der Zeit ist, einen passenden Sarg zu bestellen.";
 			} else {
@@ -2068,7 +2068,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "alonso_1":
-			dialog.text = "It won't look good if our captain backs down from a public challenge. Just give that nobleman a good whack; we know you're great with a sword!";
+			dialog.text = "Es würde nicht gut aussehen, wenn unser Kapitän vor einer öffentlichen Herausforderung zurückschreckt. Verpass dem Adligen einen ordentlichen Hieb; wir wissen, dass du gut mit dem Schwert umgehen kannst!";
 			link.l1 = "";
 			link.l1.go = "exit";
 			

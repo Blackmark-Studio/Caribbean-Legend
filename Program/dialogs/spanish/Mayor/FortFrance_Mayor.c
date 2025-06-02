@@ -48,7 +48,20 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "Fue desafortunado, Monsieur";
 			link.l1.go = "goldengirl_10";
 		}
-		break;
+		// andre39966 ===> В плену великого улова.
+		if (CheckAttribute(pchar, "questTemp.VPVL_Magor_Dialogue"))
+		{
+			link.l1 = "Excelencia, he llegado a poseer información sobre comercio ilícito que pronto tendrá lugar en estas costas. Me aventuro a decir que este asunto podría resultar digno de su atención.";
+			link.l1.go = "VPVL_Magor_1";
+			break;
+		}
+		if (CheckAttribute(pchar, "questTemp.VPVL_GovernorDialogueAvailable"))
+		{
+			link.l1 = "Excelencia, vengo en busca de noticias sobre aquel navío contrabandista del que hablamos.";
+			link.l1.go = "VPVL_Magor_4";
+		}
+		//  <=== В плену великого улова.  
+	break;
 
 	case "Sharlie_junglejew":
 		dialog.text = "Vamos a ver qué tienes... ¡Increíble! ¡Es simplemente increíble, Charles! Estos son los pendientes de mi esposa. Se los regalé antes de dejar Europa y venir a las colonias. Desaparecieron hace unos meses en circunstancias misteriosas. ¡Sabía que fueron robados!\nCharles, me alegra mucho que vinieras directamente a mí y no vendieras algo que estimo tanto a los comerciantes. Te recompensaré por tu favor. Según escuché, ¿piensas comprar un barco? Ya que decidiste participar en la navegación, sin duda necesitarás un mapa de nuestro archipiélago. Aquí, tómalo. ¡Estoy seguro de que te será útil!";
@@ -68,12 +81,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		{
 			DelLandQuestMark(npchar);
 		}
-		break;
+	break;
 
 	//--> Sinistra, Травля крысы
 	case "TK_Potopil":
 		dialog.text = "Eso es desafortunado, Charles, pero debemos conformarnos con la situación actual. Aquí está tu recompensa: cinco mil pesos, después de impuestos.";
-		link.l1 = "Me complace servir a St. Pierre y a usted personalmente. Aunque la batalla fue difícil, encontré cierto disfrute en ella.";
+		link.l1 = "Me complace servir a Saint-Pierre y a usted personalmente. Aunque la batalla fue difícil, encontré cierto disfrute en ella.";
 		link.l1.go = "TK_Potopil_3";
 		link.l2 = "Fue una batalla desafiante, su Excelencia. Mi barco sufrió daños significativos. ¿Sería posible compensarme por mis pérdidas?";
 		link.l2.go = "TK_Potopil_4";
@@ -105,7 +118,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "TK_Plen":
 		dialog.text = "¡Excelente, Charles! Te complacerá saber que tu éxito ayudará a tus amigos malteses en una operación delicada... Aquí tienes tu recompensa: ocho mil pesos, después de impuestos.";
-		link.l1 = "Me complace servir a St. Pierre, a la Orden, y a usted personalmente. Aunque la pelea fue desafiante, encontré cierta satisfacción en ella.";
+		link.l1 = "Me complace servir a Saint-Pierre, a la Orden, y a usted personalmente. Aunque la pelea fue desafiante, encontré cierta satisfacción en ella.";
 		link.l1.go = "TK_Plen_3";
 		link.l2 = "Fue una dura batalla, su Excelencia. Mi barco sufrió daños considerables. ¿Podría solicitar compensación por mis pérdidas?";
 		link.l2.go = "TK_Plen_4";
@@ -204,7 +217,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "goldengirl_5":
-		dialog.text = "¡Porque estás en la lista, por qué más?! Mira, me siento culpable por la Marquesa y prometí presentarte a ella en una de sus fiestas mañana. Juliana no hace esto a menudo, así que por favor sé lo suficientemente amable para unirte a nosotros. No habrá peleas, disparos ni persecuciones esta vez, lo prometo. Todo será cortés y digno: vino, mujeres hermosas, cartas y otros placeres nobles.";
+		dialog.text = "¡Porque estás en la lista!, ¿por qué más? Mira, me siento culpable por la Marquesa y prometí presentarte a ella en una de sus fiestas mañana. Juliana no hace esto a menudo, así que por favor sé lo suficientemente amable para unirte a nosotros. No habrá peleas, disparos ni persecuciones esta vez, lo prometo. Todo será cortés y digno: vino, mujeres hermosas, cartas y otros placeres nobles.";
 		link.l1 = "Cartas y prostitutas. Ha pasado un tiempo desde entonces, en otra vida. Sin embargo, todavía no te sigo. ¿Por qué yo?";
 		link.l1.go = "goldengirl_6";
 		break;
@@ -217,7 +230,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "goldengirl_7":
 		dialog.text = "La marquesa Botot está bajo la protección del conde Henry de Levi-Vantadur, quien, por la gracia de Su Majestad, es el jefe de los estados de Nueva Francia en América del Norte. Créeme, Charles, nadie aquí quiere cruzarse con él.";
-		link.l1 = "Casi me tenías aquí - pensé que esto era solo sobre lujuria y amor. Ahora veo que se trataba de política todo el tiempo. Trivial, pero esperado. Muy bien, te ayudaré. Será dulce volver a los días de mi juventud solo por una noche.";
+		link.l1 = "Casi me tenías, pensé que esto era solo sobre lujuria y amor. Ahora veo que se trataba de política todo el tiempo. Trivial, pero esperado. Muy bien, te ayudaré. Será dulce volver a los días de mi juventud solo por una noche.";
 		link.l1.go = "goldengirl_8";
 		break;
 
@@ -262,8 +275,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "goldengirl_12":
-		dialog.text = "Creo que sé de quién hablas - recuerdo haberte visto con alguna... chica, vestida como un hombre y armada hasta los dientes como un pirata. ¡Charles, no seas idiota! Tuviste suerte, evitaste grandes problemas y ¿qué, estás tratando de meterte en ellos de nuevo? Déjalo ir. ¡De Chievous está huyendo - gracias a Dios! Y respecto a tu 'novia en armas' - toma el consejo de tu amigo - ve a ver a Julianna y olvídate de todo esto.";
-		link.l1 = "Fuera de discusión, su Excelencia. Algunas cosas están simplemente más allá de su comprensión, ¿de acuerdo? Ahora dígame todo lo que sabe sobre el bastardo. ¿A dónde podría ir desde Saint Pierre? Y no intente disuadirme de nuevo: ¡me he jodido con la Compañía Holandesa, jodido con los barones piratas, con los gobernadores generales, incluso con la Santa Inquisición! No soy un hombre fácil de asustar. ¡La recuperaré cueste lo que cueste!";
+		dialog.text = "Creo que sé de quién hablas, recuerdo haberte visto con alguna... chica, vestida como un hombre y armada hasta los dientes como un pirata. ¡Charles, no seas idiota! Tuviste suerte, evitaste grandes problemas y ¿qué, estás tratando de meterte en ellos de nuevo? Déjalo ir. ¡De Chievous está huyendo, gracias a Dios! Y respecto a tu 'novia en armas', toma el consejo de tu amigo, ve a ver a Julianna y olvídate de todo esto.";
+		link.l1 = "Fuera de discusión, su Excelencia. Algunas cosas están simplemente más allá de su comprensión, ¿de acuerdo? Ahora dígame todo lo que sabe sobre el bastardo. ¿A dónde podría ir desde Saint-Pierre? Y no intente disuadirme de nuevo: ¡me he jodido con la Compañía Holandesa, jodido con los barones piratas, con los gobernadores generales, incluso con la Santa Inquisición! No soy un hombre fácil de asustar. ¡La recuperaré cueste lo que cueste!";
 		link.l1.go = "goldengirl_13";
 		break;
 
@@ -288,7 +301,52 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		LAi_SetOwnerType(sld);
 		LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
 		pchar.questTemp.GoldenGirl = "find_girl";
-		break;
+	break;
+		
+	// В плену великого улова, andre39966
+	case "VPVL_Magor_1":
+		dialog.text = "¿Contrabando, dice? Hmm... muy intrigante. Le ruego, ilumíneme con los detalles de su descubrimiento.";
+		link.l1 = "Hace tres días, una embarcación cargada de contrabando debía echar el ancla en la Bahía de Le Marin. El barco no llegó a su cita, pero tengo buenas razones para creer que aún arribará a puerto dentro de poco. Quizás vuestros hombres podrían preparar un recibimiento adecuado para estos bandidos cuando lleguen, Excelencia.";
+		link.l1.go = "VPVL_Magor_2";
+		pchar.questTemp.VPVL_DontSpawnSmugglersShip = true; 
+		DelLandQuestMark(npchar);
+	break;
+		
+	case "VPVL_Magor_2":
+		dialog.text = "¿Un navío sin nombre transportando carga sin especificar... Y presume que debo enviar las fuerzas de Su Majestad basándome en información tan nebulosa?";
+		link.l1 = "Excelencia, reconozco que los detalles son escasos. Pero le ruego me permita relatar cómo esta información llegó a mi poder. (cuenta)";
+		link.l1.go = "VPVL_Magor_3";
+	break;
+		
+	case "VPVL_Magor_3":
+		dialog.text = "Muy bien, pondremos a prueba su información. Si efectivamente un navío con contrabando echa el ancla frente a las costas de Le Marin, usted, Capitán, será generosamente recompensado por su servicio a la Corona. Vuelva a verme dentro de tres días. Para entonces, la niebla de la incertidumbre se habrá disipado.";
+		link.l1 = "Perfecto. Entonces nos veremos dentro de tres días.";
+		link.l1.go = "VPVL_Delete_Spawn_Ship";
+		AddDialogExitQuest("VPVL_SetGovernorDialogueFlag");
+		AddQuestRecord("VPVL", "6");
+	break;
+		
+	case "VPVL_Magor_4":
+		dialog.text = "¡Ah, Capitán! Un placer recibirle una vez más. Su información resultó, en efecto, muy valiosa. Mis hombres interceptaron la embarcación exactamente donde usted indicó. Aquí tiene—ciento cincuenta doblones españoles, recién acuñados y de gran peso en la bolsa. Acéptelos con mi gratitud.";
+		link.l1 = "Estoy muy agradecid"+GetSexPhrase("o","a")+" por su consideración, Excelencia. Me alegra que mi fragmento de información haya servido a los intereses de la Corona. Si surge nuevamente la oportunidad, sepa que mi brazo armado y mi ojo perspicaz quedan a su disposición.";
+		link.l1.go = "VPVL_Delete_Flag";
+		AddItems(PChar, "gold_dublon", 150);
+		ChangeCharacterNationReputation(pchar, FRANCE, 5);
+		DelLandQuestMark(npchar);
+	break;
+		
+	case "VPVL_Delete_Flag":
+		DialogExit();
+		DeleteAttribute(pchar, "questTemp.VPVL_GovernorDialogueAvailable");
+		DeleteAttribute(pchar, "questTemp.VPVL_DontSpawnSmugglersShip");
+	break;
+		
+	case "VPVL_Delete_Spawn_Ship":
+		DialogExit();
+		DeleteAttribute(pchar, "questTemp.VPVL_Magor_Dialogue");
+		AddDialogExitQuest("VPVL_KillCapitanOfSmuggler");
+	break;
+	// <=== В плену великого улова
 	}
 	UnloadSegment(NPChar.FileDialog2); // если где-то выход внутри switch  по return не забыть сделать анлод
 }

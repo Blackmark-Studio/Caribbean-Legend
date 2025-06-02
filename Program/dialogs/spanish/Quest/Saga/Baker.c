@@ -143,7 +143,7 @@ void ProcessDialogEvent()
 			Link.l12.go = "QMASTER_2";
 		}
 
-		link.l2 = " No es nada. ¡Retírate!";
+		link.l2 = "No es nada. ¡Retírate!";
 		link.l2.go = "exit";
 		NextDiag.TempNode = "Baker_officer";
 		break;
@@ -156,7 +156,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "QMASTER_2":
-		dialog.text = "Capitán, para ser completamente honesto, nunca adquirí mucha experiencia con el comercio. Nunca regateé, nunca seguí etiquetas de precios. Además... Preferiría seguir quedándome en el barco, si no le importa. Algunos de esos mercaderes podrían reconocerme y antes de que te des cuenta - hombres enmascarados llegan en breve.";
+		dialog.text = "Capitán, para ser completamente honesto, nunca adquirí mucha experiencia con el comercio. Nunca regateé, nunca seguí etiquetas de precios. Además... Preferiría seguir quedándome en el barco, si no le importa. Algunos de esos mercaderes podrían reconocerme y antes de que te des cuenta los hombres enmascarados llegarían en breve.";
 		link.l1 = "Entonces, seguirás viviendo con miedo a tu pasado... Bien, exhala, lo haré yo mismo.";
 		Link.l1.go = "exit";
 		break;

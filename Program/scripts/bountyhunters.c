@@ -1,29 +1,71 @@
 // BOAL 27/06/06 переделка под нужны ВМЛ, все стерли и написали заново.
 void SeaHunterCheck()
 {
-	int    j, i;
-	string typeHunter, sGroup, sCapId;
+	int    i, j, iTemp;
+	string sGroup, sCapId;
 	ref    sld;
-	
-	SetTimerCondition("SeaHunterCheck", 0, 0, 6+rand(20), true);
-	if (CheckAttribute(pchar, "GenQuest.SeaHunter2Pause")) return; // Captain Beltrop, 12.09.21, морские ОЗГи
-    for (j=0; j< MAX_NATIONS; j++)
+
+	SetTimerCondition("SeaHunterCheck", 0, 0, 6 + rand(20), true);
+	if (CheckAttribute(PChar, "GenQuest.SeaHunter2Pause")) return; // Captain Beltrop, 12.09.21, морские ОЗГи
+    UpdatePlayerSquadronPower();
+
+    for (j = 0; j < MAX_NATIONS; j++)
     {
         if (j == PIRATE) continue;
         // открыть, если не нужны мирные охотники if(NationsRelations2MainCharacter[j] != RELATION_ENEMY) continue;
 
-        typeHunter = NationShortName(j);
-
-        if (ChangeCharacterNationReputation(pchar, j, 0) <= -10)// Минус это НЗГ
+        iTemp = wdmGetNationThreat(j);
+        if (iTemp != 0)
         {
-            sCapId = typeHunter + "Hunter0";
+            string sMapShip = Nations[j].worldMapShip + "_";
+            int iShips[4];
+            iShips[0] = 0;
+            iShips[1] = 0;
+            iShips[2] = 0;
+            iShips[3] = 0;
+
+            if(iTemp == 1) {
+                sMapShip += "sloop";
+                iShips[0] = 5;
+                iShips[1] = 5;
+            }
+            else if(iTemp == 2) {
+                sMapShip += "sloop";
+                iShips[0] = 4;
+                iShips[1] = 4;
+            }
+            else if(iTemp == 3) {
+                sMapShip += "bark";
+                iShips[0] = 3 + rand(1);
+                iShips[1] = 3 + rand(1);
+                iShips[2] = 3 + rand(1);
+            }
+            else if(iTemp == 4) {
+                sMapShip += "bark";
+                iShips[0] = 2 + rand(1);
+                iShips[1] = 2 + rand(1);
+                iShips[2] = 2 + rand(1);
+            }
+            else {
+                sMapShip += "frigate";
+                iShips[0] = 2 + rand(1);
+                iShips[1] = 2 + rand(1);
+                iShips[2] = 2 + rand(1);
+                iShips[3] = 2 + rand(1);
+            }
+
+            sCapId = NationShortName(j) + "Hunter0";
             sGroup = "Sea_" + sCapId + "1";
-            
 			Group_DeleteGroup(sGroup);
 			Group_FindOrCreateGroup(sGroup);
-            for (i = 1; i <= 7; i++)
+
+            for (i = 1; i <= 4; i++)
             {
+                if(iShips[i-1] == 0) continue;
                 sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", 5, j, 20, true, "hunter"));
+                if(i == 1 || i == 3) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
+                else sld.GenShip.Spec = SHIP_SPEC_WAR;
+                sld.GenShip.Class = iShips[i-1];
                 SetShipHunter(sld);
                 sld.WatchFort = true; //видеть форты
                 SetFantomParamHunter(sld); //крутые парни
@@ -32,51 +74,54 @@ void SeaHunterCheck()
                 sld.DontRansackCaptain = true;
                 sld.mapEnc.type = "war";
                 sld.mapEnc.Name = XI_ConvertString("BountyHunters");
+                sld.mapEnc.worldMapShip = sMapShip;
 				sld.hunter = "hunter";
-				//sld.mapEnc.worldMapShip = "Manowar_gold";
                 Group_AddCharacter(sGroup, sCapId + i);
-                
                 if (i == 1 || GetCharacterShipClass(sld) == 1) SetRandGeraldSail(sld, sti(sld.Nation));
-                
-                if (abs(ChangeCharacterNationReputation(pchar, j, 0)) < (i * 15)) break; // добавим капитана только когда положенно
             }
 
             Group_SetGroupCommander(sGroup, sCapId+ "1");
-            Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
-            Group_LockTask(sGroup);
-            Map_CreateWarrior("", sCapId + "1", 8);
+
+            // Механика мощи
+            if(wdmCompareEncPower(j))
+            {
+                Map_CreateTrader("", "", sCapId + "1", 8);
+            }
+            else 
+            {
+                Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
+                Group_LockTask(sGroup);
+                Map_CreateWarrior("", sCapId + "1", 8);
+            }
         }
     }
 }
 
 void SetShipHunter(ref Hunter)
 {
-    int ShipsHunter, hcrew;
+    int ShipsHunter, hcrew, iTemp;
 
-	if(makeint(pchar.rank) >= 20)
-	{
-		ShipsHunter = SHIP_GALEON_H + rand(2));
-	}
-	
-    if(makeint(pchar.rank) >= 12 && makeint(pchar.rank) < 20)
+    if(!CheckAttribute(Hunter, "GenShip"))
     {
-        ShipsHunter = SHIP_GALEON_L + rand(3));
+        ReGen:
+        iTemp = sti(PChar.rank);
+        if (iTemp >= 20)                    ShipsHunter = SHIP_GALEON_H     + rand(2);
+        else if (iTemp >= 12 && iTemp < 20) ShipsHunter = SHIP_GALEON_L     + rand(3);
+        else if (iTemp >= 8  && iTemp < 12) ShipsHunter = SHIP_BRIGANTINE   + rand(2);
+        else if (iTemp >= 5  && iTemp < 8)  ShipsHunter = SHIP_SCHOONER_W;
+        else                                ShipsHunter = SHIP_CAREERLUGGER + rand(2);
+    }
+    else
+    {
+        iTemp = sti(Hunter.GenShip.Class);
+        ShipsHunter = WME_GetShipTypeExt(iTemp, iTemp, "War", Hunter.GenShip.Spec, -1);
+        if(ShipsHunter == INVALID_SHIP_TYPE)
+        {
+            Log_TestInfo("WARNING! CANT FIND SHIP IN WME_GetShipTypeExt!");
+            goto ReGen;
+        }
     }
 
-    if(makeint(pchar.rank) >= 8 && makeint(pchar.rank) < 12)
-    {
-        ShipsHunter = SHIP_BRIGANTINE + rand(2);
-    }
-
-	if(makeint(pchar.rank) >= 5 && makeint(pchar.rank) < 8) // Addon-2016 Jason
-    {
-        ShipsHunter = SHIP_SCHOONER_W;
-    }
-
-    if(makeint(pchar.rank) < 5)
-    {
-        ShipsHunter = SHIP_CAREERLUGGER + rand(2);
-    }
     SetRandomNameToCharacter(Hunter);
     SetRandomNameToShip(Hunter);
     Hunter.Ship.Type = GenerateShipExt(ShipsHunter, 1, Hunter);
@@ -103,6 +148,7 @@ void SetShipHunter(ref Hunter)
 		Fantom_SetUpgrade(Hunter, "war");
     }
 }
+
 // ОЗГИ на суше (порт и бухта)
 void LandHunterReactionResult(ref loc)  // отработает после входа в локацию, но после квест_реакшна на вход
 {

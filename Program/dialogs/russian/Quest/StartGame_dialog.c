@@ -97,8 +97,8 @@ void ProcessDialogEvent()
 			DoReloadCharacterToLocation(Pchar.HeroParam.Location, Pchar.HeroParam.Group, Pchar.HeroParam.Locator);
 			SetFunctionTimerCondition("SanBoxStatusCityRemove", 0, 0, 30, false);
 			bGameMenuStart = false;
-			AddQuestRecordInfo("Guide_AtSea", "1");
-			AddQuestRecordInfo("Guide_OnLand", "1");
+			//AddQuestRecordInfo("Guide_AtSea", "1");
+			//AddQuestRecordInfo("Guide_OnLand", "1");
 			DoQuestFunctionDelay("Tutorial_CameraControlFP", 2.5);
 			//DoQuestFunctionDelay("Tutorial_Rest", 2.5);
 		break;
@@ -161,7 +161,7 @@ void ProcessDialogEvent()
 				link.l1 = "Хм... а раньше на кого был"+ GetSexPhrase("","а") +" похож"+ GetSexPhrase("","а") +"?";
 				link.l1.go = "Node_1";
 			}
-			locCameraFromToPos(-3.15, 2.80, 3.81, true, -2.05, 0.70, 1.69);
+			locCameraFromToPos(-2.04, 4.95, 13.26, true, -0.82, 2.52, 7.87);
 		break;
 		
 		case "LadyBeth_Test_Start_1":
@@ -332,7 +332,7 @@ void ProcessDialogEvent()
 			sld.Health.maxHP    = 60.0;
 			SetCharacterPerk(sld, "ShipEscape");
 			// Дюран
-			sld = GetCharacter(NPC_GenerateCharacter("FMQT_mercen", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Duran", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
 			sld.name = StringFromKey("FMQ_49");
 			sld.lastname = StringFromKey("FMQ_50");
 			sld.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -546,7 +546,7 @@ void ProcessDialogEvent()
 			sld.Health.maxHP    = 60.0;
 			SetCharacterPerk(sld, "ShipEscape");
 			// Дюран
-			sld = GetCharacter(NPC_GenerateCharacter("FMQT_mercen", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Duran", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
 			sld.name = StringFromKey("FMQ_49");
 			sld.lastname = StringFromKey("FMQ_50");
 			sld.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -760,7 +760,7 @@ void ProcessDialogEvent()
 			sld.Health.maxHP    = 60.0;
 			SetCharacterPerk(sld, "ShipEscape");
 			// Дюран
-			sld = GetCharacter(NPC_GenerateCharacter("FMQT_mercen", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Duran", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
 			sld.name = StringFromKey("FMQ_49");
 			sld.lastname = StringFromKey("FMQ_50");
 			sld.Dialog.Filename = "Enc_Officer_dialog.c";

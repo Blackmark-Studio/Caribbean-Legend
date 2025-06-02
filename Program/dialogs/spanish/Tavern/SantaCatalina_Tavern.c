@@ -6,7 +6,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	case "quests":
 		if (startHeroType == 4)
 		{
-			dialog.text = NPCStringReactionRepeat("Por supuesto, Helen. ¿Qué sucede?", "Ah, ¿finalmente recordaste lo que querías?", "¿Estás seguro de que estás bien? Comienzas a preocuparme. ¿Quizás deberías ver a un médico? ", "Está bien, Helen. Descansa un poco, respira aire fresco - en resumen, tómate un respiro. Luego regresa. ¿Mhm?", "block", 1, npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Por supuesto, Helen. ¿Qué sucede?", "Ah, ¿finalmente recordaste lo que querías?", "¿Estás seguro de que estás bien? Comienzas a preocuparme. ¿Quizás deberías ver a un médico? ", "Está bien, Helen. Descansa un poco, respira aire fresco, en resumen, tómate un respiro. Luego regresa. ¿Mhm?", "block", 1, npchar, Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("No, nada en realidad.", "No, no, siento molestarte.", "Probablemente tienes razón...", "Sí, probablemente tengas razón. Eso es lo mejor que se puede hacer.", npchar, Dialog.CurrentNode);
 			link.l1.go = "exit";
 		}
@@ -25,26 +25,26 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// Страж Истины
 		if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "merdok" && !CheckAttribute(npchar, "quest.jino"))
 		{
-			link.l1 = "Escucha, ¿ha llegado aquí a este pueblo un alquimista, un médico? Es italiano, tiene unos treinta años, se llama Gino Gvineili. ¿Has oído algo sobre eso?";
+			link.l1 = "Escucha, ¿ha llegado aquí a este pueblo un alquimista, o un médico? Es italiano, tiene unos treinta años, se llama Gino Gvineili. ¿Has oído algo sobre eso?";
 			link.l1.go = "guardoftruth";
 		}
 		break;
 
 	case "Svenson":
-		dialog.text = "Es la primera vez que conozco a un hombre que no sabe quién es Forest Devil. Ese apodo se lo dieron los españoles y ofrecieron una bolsa llena de oro por la cabeza de ese corsario de la Isla de Providencia hace quince años atrás. ¡Sí, los años pasan volando... La gente ya ha empezado a olvidarse de nuestro Jan. Tal vez realmente sea hora de que descanse.";
+		dialog.text = "Es la primera vez que conozco a un hombre que no sabe quién es Forest Devil. Ese apodo se lo dieron los españoles y ofrecieron una bolsa llena de oro por la cabeza de ese corsario de la Isla de Providencia hace quince años atrás. ¡Sí, los años pasan volando! La gente ya ha empezado a olvidarse de nuestro Jan. Tal vez realmente sea hora de que descanse.";
 		link.l1 = "He llegado aquí recientemente y no sé mucho...";
 		link.l1.go = "Svenson_1";
 		break;
 
 	case "Svenson_1":
-		dialog.text = " Si estás interesado en el pasado, puedo venderte un libro de historia. Muchos darían una fortuna por él, pero yo...";
+		dialog.text = "Si estás interesado en el pasado, puedo venderte un libro de historia. Muchos darían una fortuna por él, pero yo...";
 		link.l2 = "¡No me des rodeos! Te hice una pregunta. Repito. ¿Dónde vive Jan Svenson? Tengo una conversación seria para él.";
 		link.l2.go = "Svenson_2";
 		break;
 
 	case "Svenson_2":
 		dialog.text = "Vive en una mansión frente a la residencia de nuestro alcalde, junto a la fuente. Pero en este momento está pasando por tiempos difíciles y no recomendaría molestarlo a menos que sea de suma importancia.";
-		link.l1 = "¿Por qué es eso?";
+		link.l1 = "¿Y a qué se debe?";
 		link.l1.go = "Svenson_3";
 		break;
 
@@ -55,7 +55,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Svenson_4":
-		dialog.text = "Quién sabe... Una semana no es tanto tiempo, pero la viuda de MacArthur está segura de que algo malo le pasó a su hija y logró convencer a Svenson de ello. Él llamó a sus hombres y comenzó a buscarla él mismo sin resultado alguno. 'Arcoíris' y su tripulación simplemente desaparecieron\nPuedo decirte dónde encontrar a Gladys por mil piezas de a ocho.";
+		dialog.text = "Quién sabe... Una semana no es tanto tiempo, pero la viuda de MacArthur está segura de que algo malo le pasó a su hija y logró convencer a Svenson de ello. Él llamó a sus hombres y comenzó a buscarla él mismo sin resultado alguno. 'Arcoíris' y su tripulación simplemente desaparecieron.\nPuedo decirte dónde encontrar a Gladys por mil piezas de a ocho.";
 		if (sti(pchar.money) >= 1000)
 		{
 			link.l1 = "Tu conocimiento es bastante costoso, pero has despertado mi interés. Aquí tienes tu dinero. ¿Dónde la encuentro?";

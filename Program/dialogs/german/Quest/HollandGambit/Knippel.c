@@ -179,7 +179,7 @@ void ProcessDialogEvent()
 			DelMapQuestMarkCity("Bridgetown");
 			DelMapQuestMarkCity("Villemstad");
 			DelMapQuestMarkCity("SentJons");
-			dialog.text = "Ar har! Ich sehe, dein Hahn steht, Kapitän! Bald wird Feuer flackern! Nun hör genau zu. Die Silberflotte der Niederländischen Westindischen Kompanie hat Willemstad auf Curaçao vor ein oder zwei Tagen verlassen. Sie segelt nach Philipsburg. Dieses Mal sind nur wenige Schiffe in der Flotte. Ein einzelnes Ostindienschiff mit dem Silber im Frachtraum und zwei Eskorten. Fang die Silberflotte ab, erobere das Ostindienschiff mit der Silberladung und bringe sie nach Antigua. Die Eskorten kannst du jedoch versenken, sie sind entbehrlich. Schieß ihnen die Lebern mit Kettenkugeln durch, yar!";
+			dialog.text = "Ar har! Ich sehe, dein Hahn steht, Kapitän! Bald wird Feuer flackern! Nun hör genau zu. Die Silberflotte der Niederländischen Westindischen Kompanie hat Willemstad auf Curaçao vor ein oder zwei Tagen verlassen. Sie segelt nach Philipsburg. Dieses Mal sind nur wenige Schiffe in der Flotte. Ein einzelnes Galeone mit dem Silber im Frachtraum und zwei Eskorten. Fang die Silberflotte ab, erobere das Galeone mit der Silberladung und bringe sie nach Antigua. Die Eskorten kannst du jedoch versenken, sie sind entbehrlich. Schieß ihnen die Lebern mit Kettenkugeln durch, yar!";
 			link.l1 = "Ihre Tage sind gezählt.";
 			link.l1.go = "Knippel_task_1";
 			DelLandQuestMark(npchar);
@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 				{
 					sld = GetCharacter(iTemp);
 					pchar.questTemp.HWIC.Eng.CompanionIndex = sld.Index;
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN) iHal++;
+					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_GALEON_L) iHal++;
 				}
 			}//признак наличия ТГ в компаньонах
 			if (iHal > 0)

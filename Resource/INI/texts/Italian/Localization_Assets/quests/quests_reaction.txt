@@ -1,0 +1,78 @@
+﻿quests_reaction_1
+{
+Uffiaciale @<GetFullName(npchar)> è a bordo.
+}
+
+quests_reaction_2
+{
+@<GetFullName(npchar)> si arrende.
+}
+
+quests_reaction_3
+{
+I cadaveri dei ribelli furono gettati in mare per il loro ultimo viaggio
+}
+
+quests_reaction_4
+{
+L'ammutinamento si è concluso
+}
+
+quests_reaction_5
+{
+@<GetCityName(sld.City)> è nostra!
+}
+
+quests_reaction_6
+{
+Qualcuno ha frugato nelle tue tasche.
+}
+
+quests_reaction_7
+{
+C'era una lotta vicino al faro non molto tempo fa. Un capitano aveva cercato di contrabbandare delle merci, ma la nostra pattuglia l'ha beccato sul fatto. ~
+}
+
+quests_reaction_8
+{
+Uno scontro a fuoco infernale, con il tetto del negozio sfondato da una palla di cannone vagante! Ma è stato tutto inutile. I contrabbandieri locali si sono nascosti nella giungla e il capitano è salpato. Ha ingannato facilmente i nostri soldati, non c'è che dire! E' stato anche un ottimo pilota, è fuggito dalla baia come un re!
+}
+
+quests_reaction_9
+{
+
+}
+quests_reaction_10
+{
+
+}
+
+quests_reaction_11
+{
+, che ~
+}
+
+quests_reaction_12
+{
+Termini di consegna sono scaduti.
+}
+
+quests_reaction_13
+{
+Alcune ore sono passate...
+}
+
+quests_reaction_14
+{
+Un'ora passata...
+}
+
+quests_reaction_15
+{
+Un giorno passato...
+}
+
+quests_reaction_16
+{
+Alcuni giorni sono passati...
+}

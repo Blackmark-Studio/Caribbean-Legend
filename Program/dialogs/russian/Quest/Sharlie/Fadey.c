@@ -391,11 +391,6 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("SetTichingituJail");
 			SetFunctionTimerCondition("FreeTichingituOver", 0, 0, 10, false);
 			pchar.questTemp.Sharlie = "takeknife";
-			if(CheckAttribute(pchar, "questTemp.Tutorial_Dubloons"))
-			{
-				DeleteAttribute(pchar, "questTemp.Tutorial_Dubloons");
-				Tutorial_Dubloons("");
-			}
 		break;
 		
 		case "Tichingitu":
@@ -1013,7 +1008,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "persian_5":
-			AddQuestRecord("Unique_Goods", "2");
+			AddQuestRecordInfo("Unique_Goods", "2");
 			dialog.text = "Именно так. Захаживайте за покупкой. Но погодите, погодите, мил человек! Окромя этого клинка, коий вы с истинным великодушием вернули мне, было ещё два. Очень прошу, будьте так любезны: коли отыщете их где - сразу привозите, я сполна рассчитаюсь.";
 			link.l1 = "Обязательно, Фадей. Если попадутся - обязательно привезу.";
 			link.l1.go = "exit";
@@ -1308,7 +1303,7 @@ void ProcessDialogEvent()
 			dialog.Text = "Хорошо, я всё улажу, можете не переживать более. Они будут иметь с вами дела.";
 			Link.l1 = "Спасибо!";
 			Link.l1.go = "exit";
-			ChangeContrabandRelation(pchar, 25);
+			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
 			RemoveDublonsFromPCharTotal(700); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
 		break;
@@ -1356,7 +1351,7 @@ void ProcessDialogEvent()
 			link.l1 = "Безупречно, Фадей! С вами удивительно легко вести дела. Уверен"+GetSexPhrase("","а")+", нас ждёт удача. До скорой встречи!";
 			link.l1.go = "exit";
 			RemoveDublonsFromPCharTotal(3000);
-			AddQuestRecord("Unique_Goods", "2_1");
+			AddQuestRecordInfo("Unique_Goods", "2_1");
 			pchar.questTemp.UpgradeRopes = true;
 			pchar.questTemp.FadeyRopesBlock = true;
 			DeleteAttribute(pchar, "questTemp.FadeyRopesPotom");

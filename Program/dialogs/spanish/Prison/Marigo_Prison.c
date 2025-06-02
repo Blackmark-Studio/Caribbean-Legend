@@ -43,7 +43,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "¡Ja, ja! Tienes sentido del humor, señor... Bueno, dos mil pesos y puedes seguir adelante.";
 			if(sti(Pchar.money) >= 2000)
 			{
-				link.l1 = "¡Tómalo, oficial. Gracias!";
+				link.l1 = "Tómalo, oficial. ¡Gracias!";
 				link.l1.go = "BarbTemptation_2";
 			}
 			link.l2 = "Hm... Sabes, he cambiado de opinión. Mejor gastaré mi dinero en la taberna.";
@@ -52,7 +52,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "BarbTemptation_2":
 			AddMoneyToCharacter(pchar, -2000);
-			dialog.text = "Eres bienvenido... ¡Sigue adelante!";
+			dialog.text = "De nada... ¡Sigue adelante!";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			pchar.questTemp.jailCanMove = true;

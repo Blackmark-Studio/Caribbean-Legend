@@ -4,8 +4,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś zadać mi to pytanie niedawno...","Tak, pozwól, że zgadnę... Znowu krążysz w kółko?","Słuchaj, ja tu zajmuję się finansami, nie odpowiadam na pytania...","blokada",1,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniałem zdanie...","Nie mam teraz nic do powiedzenia."),"Umph, gdzież moja pamięć się podziała...","Zgadłeś, przykro mi...","Rozumiem...",npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś zadać mi to pytanie niedawno...","Tak, pozwól, że zgadnę... Znowu krążysz w kółko?","Słuchaj, ja tu zajmuję się finansami, nie odpowiadam na pytania...","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniłem zdanie...","Nie mam teraz nic do powiedzenia."),"Umph, gdzież moja pamięć się podziała...","Zgadłeś, przykro mi...","Rozumiem...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			// Addon-2016 Jason ФМК-Гваделупа
 			if (CheckAttribute(pchar, "questTemp.FMQG") && pchar.questTemp.FMQG == "continue")
@@ -38,7 +38,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// Addon-2016 Jason ФМК-Гваделупа
 		case "FMQG":
 			dialog.text = "A-ah, kapitanie "+GetFullName(pchar)+"! Tak się cieszę, że cię widzę! Czekałem na ciebie dość długo... Dobrze. Mam pytanie do ciebie. Jakiś czas temu człowiek o imieniu Bertrand Pinette podszedł do ciebie w porcie, aby dostać się na pokład twojego statku. Bogato wyglądający jegomość w luksusowej peruce. Czy coś ci to mówi?";
-			link.l1 = "Tak, rzeczywiście. Naprawdę podszedł do mnie z tym właśnie zamiarem.";
+			link.l1 = "Tak, rzeczywiście. Podszedł do mnie z tym właśnie zamiarem.";
 			link.l1.go = "FMQG_1";
 		break;
 		

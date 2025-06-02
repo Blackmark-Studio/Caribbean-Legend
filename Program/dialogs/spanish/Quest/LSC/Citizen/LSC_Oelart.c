@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Ah, "+GetFullName(pchar)+"¡ "+TimeGreeting()+"¡Quieres algo?";
+				dialog.text = "¡Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+". ¿Quieres algo?";
 				link.l1 = LinkRandPhrase("¿Tienes algo interesante que decir?","¿Ha pasado algo nuevo en la isla?","¿Me contarás los últimos chismes?");
 				link.l1.go = "rumours_LSC";
 				link.l2 = "Quiero hacerte unas preguntas sobre la isla.";
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_1":
-			dialog.text = "  Bastante banal. Luchamos contra una goleta inglesa y casi ganamos la batalla. Huyeron, así que los perseguimos. Pasó un día, estábamos cerca de atraparlos, pero dispararon contra nuestro palo mayor y, por supuesto, lograron escapar\nEn cuanto a nosotros, casi nos hundimos por un fuerte vendaval, luego fuimos arrastrados por una corriente y al final nuestro barco fue lanzado a un arrecife cerca del anillo exterior. Solo muy pocos lograron sobrevivir...";
+			dialog.text = "Bastante banal. Luchamos contra una goleta inglesa y casi ganamos la batalla. Huyeron, así que los perseguimos. Pasó un día, estábamos cerca de atraparlos, pero dispararon contra nuestro palo mayor y, por supuesto, lograron escapar\nEn cuanto a nosotros, casi nos hundimos por un fuerte vendaval, luego fuimos arrastrados por una corriente y al final nuestro barco fue lanzado a un arrecife cerca del anillo exterior. Solo muy pocos lograron sobrevivir...";
 			link.l1 = "Veo...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_1 = "true";

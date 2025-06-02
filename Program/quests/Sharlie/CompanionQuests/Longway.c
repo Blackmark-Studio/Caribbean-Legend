@@ -72,9 +72,9 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			LAi_ActorDialog(sld, pchar, "", 0, 0);
 			return true;
 		}
-		if (GetCharacterIndex("FMQT_mercen") != -1 && CheckPassengerInCharacter(pchar, "FMQT_mercen"))
+		if (GetCharacterIndex("Duran") != -1 && CheckPassengerInCharacter(pchar, "Duran"))
 		{
-			sld = characterFromId("FMQT_mercen");
+			sld = characterFromId("Duran");
 			ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
 			sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 			sld.dialog.currentnode = "PZ_Duran_1";
@@ -3479,7 +3479,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		
 		CloneLocation("My_deck", "Clone_location");
 		DeleteAttribute(&locations[FindLocation("Clone_location")], "boarding");
-		DoQuestReloadToLocation("Clone_location", "reload", "reload1", "PZ_DoprosRobertMartin_Trum");
+		DoQuestReloadToLocation("Clone_location", "reload", "reload_gundeck1", "PZ_DoprosRobertMartin_Trum");
 	}
 	
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum") {
@@ -3488,7 +3488,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld.lastname = StringFromKey("Longway_52");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_RobertMartin_12";
-		ChangeCharacterAddressGroup(sld, "Clone_location", "goto","goto8");
+		ChangeCharacterAddressGroup(sld, "Clone_location", "goto","goto5");
 		LAi_SetStayType(sld);
 		sld.CantLoot = true;	
 		LAi_SetPlayerType(pchar);
@@ -3499,15 +3499,15 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		DoQuestCheckDelay("PZ_DoprosRobertMartin_Trum_2", 1.0);
 		StartQuestMovie(true, false, true);
 		//locCameraFromToPos(3.29, 14.23, -3.63, false, 0.58, 11.00, -8.04);
-		locCameraFromToPos(-3.68, 13.22, 9.75, false, -0.80, 11.17, 2.11);
+		locCameraFromToPos(-0.65, 7.06, -9.15, false, -0.81, 5.47, -4.05);
 		pchar.GenQuest.BlockDialogCamera = true;
-		SetMusic("");
 	}
 	
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum_2") {
 		LAi_SetActorType(pchar);
-		LAi_ActorGoToLocator(pchar, "rld", "aloc2", "", -1);
+		LAi_ActorGoToLocator(pchar, "goto", "goto6", "", -1);
 		DoQuestCheckDelay("PZ_DoprosRobertMartin_Trum_3", 4.0);
+		SetMusic("");
 	}
 	
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum_3") {
@@ -3515,20 +3515,21 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum_4") {
-		ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc3");
+		ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "loc0");
+		TeleportCharacterToPosAy(pchar, 0.50, 5.60, 8.75, 3.00);
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
-		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc2");
+		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc0");
 		LAi_SetActorType(sld);
 		LAi_SetActorType(pchar);
 		LAi_ActorTurnToCharacter(sld, pchar);
 		LAi_ActorTurnToCharacter(pchar, sld);
 		//locCameraFromToPos(-3.66, 14.03, -1.28, true, 1.91, 10.82, -4.36);
-		locCameraFromToPos(-3.98, 14.15, -2.92, true, 1.82, 10.73, -3.53);
+		locCameraFromToPos(-2.80, 7.72, 6.77, true, 0.66, 5.00, 8.26);
 		DoQuestCheckDelay("PZ_DoprosRobertMartin_Trum_5", 1.0);
 	}
 	
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum_5") {
-		TeleportCharacterToPosAy(pchar, 0.50, 12.00, -3.80, -0.60);
+		TeleportCharacterToPosAy(pchar, 0.50, 5.60, 8.75, 3.00);
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "beatmarten_1", "1", 3.8);
@@ -3565,7 +3566,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum_6_2") {
 		//TeleportCharacterToPosAy(pchar, -0.55, 12.00, -1.30, -2.20);
-		locCameraFromToPos(-0.35, 15.08, -3.94, true, -1.33, 9.90, -0.33);
+		locCameraFromToPos(-2.80, 7.72, 6.77, true, 0.66, 5.00, 8.26);
 		LAi_SetStayType(pchar);
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
@@ -3580,19 +3581,19 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum_7_1") {
 		//TeleportCharacterToPosAy(pchar, -0.55, 12.00, -1.30, -2.20);
-		TeleportCharacterToPosAy(pchar, -0.55, 12.00, -1.46, -2.20);
+		TeleportCharacterToPosAy(pchar, 0.35, 5.60, 6.30, 1.40);
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "beatmarten_3", "1", 17.8);
 		LAi_SetActorType(pchar);
 		LAi_ActorAnimation(pchar, "beatmarten_3", "1", 17.8);
-		locCameraFromToPos(-0.35, 15.08, -3.94, true, -1.33, 9.90, -0.33);
+		locCameraFromToPos(-0.06, 7.96, 7.60, true, 1.12, 4.74, 5.73);
 		DoQuestCheckDelay("PZ_DoprosRobertMartin_Trum_8", 5.5);
 		DoQuestCheckDelay("PZ_DoprosRobertMartin_Trum_9", 8.5);
 	}
 	
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum_8") {
-		locCameraFromToPos(-2.77, 14.26, -5.13, false, 0.30, 10.72, -0.22);
+		locCameraFromToPos(1.94, 7.44, 9.79, true, 0.75, 4.87, 6.00);
 	}
 	
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum_9") {
@@ -3602,27 +3603,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "PZ_DoprosRobertMartin_1") {
 		LAi_SetStayType(pchar);
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
-		TeleportCharacterToPosAy(sld, -0.33, 12.00, -2.69, 0.00);
-		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
-		sld.dialog.currentnode = "PZ_RobertMartin_19";
-		LAi_SetActorType(sld);
-		//LAi_ActorSetGroundSitMode(sld);
-		LAi_ActorDialog(sld, pchar, "", 0, 0)
-	}
-	
-	else if (sQuestName == "PZ_DoprosRobertMartin_2") {
-		LAi_SetStayType(pchar);
-		sld = CharacterFromID("PZ_RobertMartinPlennik");
-		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
-		sld.dialog.currentnode = "PZ_RobertMartin_16";
-		LAi_SetActorType(sld);
-		//LAi_ActorSetGroundSitMode(sld);
-		LAi_ActorDialog(sld, pchar, "", 0, 0)
-	}
-	
-	else if (sQuestName == "PZ_DoprosRobertMartin_3") {
-		LAi_SetStayType(pchar);
-		sld = CharacterFromID("PZ_RobertMartinPlennik");
+		TeleportCharacterToPosAy(pchar, 0.50, 5.60, 8.75, 3.00);
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_RobertMartin_19";
 		LAi_SetActorType(sld);
@@ -3636,8 +3617,8 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld.lastname = StringFromKey("Longway_2");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_AlonsoKaznDialog_1";
-		ChangeCharacterAddressGroup(sld, pchar.location, "rld", "loc2");
-		TeleportCharacterToPosAy(sld, 1.26, 12.00, -2.10, -1.10);
+		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto4");
+		//TeleportCharacterToPosAy(sld, 1.26, 5.63, -2.10, -1.10);
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", 0, 0);
 	}
@@ -3709,7 +3690,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld = CharacterFromID("Longway");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_LongwayKaznDialog_4";
-		ChangeCharacterAddressGroup(sld, pchar.location, "rld", "loc2");
+		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto4");
 		TeleportCharacterToPosAy(sld, 1.26, 12.00, -2.10, -1.10);
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", 0, 0);
@@ -3727,7 +3708,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_LongwayKazn_6") {
 		sld = CharacterFromID("Longway");
-		ChangeCharacterAddressGroup(sld, pchar.location, "rld", "loc3");
+		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto4");
 		CharacterTurnByChr(sld, pchar);
 		
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
@@ -3780,7 +3761,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_LongwayKazn_15") {
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
-		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc3");
+		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto4");
 		sld.lifeday = 0;
 		sld.location = "None";
 		LAi_SetActorType(sld);
@@ -4432,7 +4413,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LAi_ActorTurnToLocator(sld, "goto", "goto4");
 		if (CheckAttribute(pchar, "questTemp.PZ_DevushkaRanena_Tyazhelo")) LAi_ActorTurnToLocator(sld, "torture", "torture_3");
 		
-		sld = CharacterFromID("Tibo");	//ВЕРНУТЬ
+		sld = CharacterFromID("Tibo");
 		ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto4");
 		LAi_SetActorType(sld);
 		LAi_ActorTurnToLocator(sld, "goto", "goto6");

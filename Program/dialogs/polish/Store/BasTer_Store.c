@@ -22,14 +22,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				if(CheckAttribute(pchar, "questTemp.Shadowtrader.Trouble") && NPChar.location == pchar.questTemp.Shadowtrader.City + "_store")
 				{
 					dialog.text = "Więc? Czy przekazałeś mój list?";
-					link.l1 = "Posiadam. Komendant odpowiedział ustnie, że dowody w Twoim liście są niewystarczające, aby straż miejska podjęła jakiekolwiek działania."; 
+					link.l1 = "Przekazałem. Komendant odpowiedział ustnie, że dowody w Twoim liście są niewystarczające, aby straż miejska podjęła jakiekolwiek działania."; 
 					link.l1.go = "Shadowtrader_trouble";
 					pchar.quest.ShadowtraderTimeFort_Over.over = "yes";
 					break;
 				}
 				if(CheckAttribute(pchar, "questTemp.Shadowtrader.End.Fort") && NPChar.location == pchar.questTemp.Shadowtrader.City + "_store" && CheckAttribute(pchar, "questTemp.Shadowtrader.EndFort"))
 				{
-					dialog.text = "Słyszałem już wieści - dziś w nocy strażnicy odkryli nielegalny posterunek przemytników i aresztowali ich wszystkich. Był pod dowództwem jednego rzadkiego łajdaka, ale już wszystko w porządku, przez jakiś czas nie będzie mógł nikomu szkodzić\nKomendant opowiedział mi o twojej roli w tym wszystkim, masz moje podziękowanie! Dotrzymałeś słowa! Proszę, weź pieniądze - 15 000 pesos. Uratowałeś mnie. Nic teraz nie zagraża mojemu interesowi!";
+					dialog.text = "Słyszałem już wieści - dziś w nocy strażnicy odkryli nielegalny posterunek przemytników i aresztowali ich wszystkich. Był pod dowództwem jednego łajdaka, ale już wszystko w porządku, przez jakiś czas nie będzie mógł nikomu szkodzić\nKomendant opowiedział mi o twojej roli w tym wszystkim, masz moje podziękowanie! Dotrzymałeś słowa! Proszę, weź pieniądze - 15 000 pesos. Uratowałeś mnie. Nic teraz nie zagraża mojemu interesowi!";
 					link.l1 = "Nie ma za co. To było łatwe."; 
 					link.l1.go = "Shadowtrader_complete";
 					break;
@@ -37,7 +37,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				if(CheckAttribute(pchar, "questTemp.Shadowtrader.End.Escape") && NPChar.location == pchar.questTemp.Shadowtrader.City + "_store")
 				{
 					dialog.text = "Jakieś dobre wieści, "+pchar.name+"?";
-					link.l1 = "Odnajduję twego rywala. Nie będzie ci już solą w oku - udało mi się go przekonać... by opuścił tę wyspę. Jego 'sklep' znajdował się w domu niedaleko bram miasta. To twoja decyzja, co zrobić z porzuconym ładunkiem. Możesz go oddać władzom lub spróbować zabrać go dla siebie."; 
+					link.l1 = "Odnalazłemę twego rywala. Nie będzie ci już solą w oku - udało mi się go przekonać... by opuścił tę wyspę. Jego 'sklep' znajdował się w domu niedaleko bram miasta. To twoja decyzja, co zrobić z porzuconym ładunkiem. Możesz go oddać władzom lub spróbować zabrać go dla siebie."; 
 					link.l1.go = "Shadowtrader_Escape_complete";
 					break;
 				}
@@ -105,7 +105,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Shadowtrader_fort_1":
-			dialog.text = "Oto ona. Proszę przekaż mu to dzisiaj i dostarcz mi jego odpowiedź.";
+			dialog.text = "Oto i on. Proszę przekaż mu to dzisiaj i dostarcz mi jego odpowiedź.";
 			link.l1 = "Nie martw się, zrobię to.";
 			link.l1.go = "exit";
 			GiveItem2Character(pchar, "letter_1");

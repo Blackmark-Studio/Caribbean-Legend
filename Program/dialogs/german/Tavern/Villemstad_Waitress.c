@@ -8,6 +8,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Ich habe meine Meinung geändert","Ich habe im Moment nichts zu besprechen."),"Nein, nein schöne...","Kein Liebling...","Nein, welche Fragen?...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 		break;
+		
+		//--> Тайна Бетси Прайс
+		case "TBP_BetsiPriceSex1":
+			DoFunctionReloadToLocation("Villemstad_tavern_upstairs", "quest", "quest4", "TBP_Betsi_sex_2");
+		break;
+		//<-- Тайна Бетси Прайс
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

@@ -585,7 +585,7 @@ void ProcessDialogEvent()
 		break;
 		
         case "ForGoodMove_1":
-			pchar.questTemp.jailCanMove.money = 20+drand(3)*10;
+			pchar.questTemp.jailCanMove.money = 20+hrand(3)*10;
 			if (sti(colonies[FindColony(npchar.city)].jail))
 			{
 				dialog.text = "Well, I see no reason to refuse. " + FindRussianDublonString(sti(pchar.questTemp.jailCanMove.money)) + " - and until you leave the prison, you can freely walk along the corridors and even converse with the inmates.";
@@ -689,7 +689,7 @@ void ProcessDialogEvent()
 		break;
 		
         case "KnowAboutPrisoner_free":
-			pchar.questTemp.jailCanMove.ownerPrison.money = 50+drand(10)*10;
+			pchar.questTemp.jailCanMove.ownerPrison.money = 50+hrand(10)*10;
 			dialog.text = "Alright, we have a deal. " + FindRussianDublonString(sti(pchar.questTemp.jailCanMove.ownerPrison.money)) + " on the nail, and you can take him away right now.";
 			if (PCharDublonsTotal() >= sti(pchar.questTemp.jailCanMove.ownerPrison.money))
 			{
@@ -1099,8 +1099,8 @@ void ProcessDialogEvent()
 			link.l1.go = "PrisonerInPlace_3";
 			Log_Info("You have received your share of the treasure");
 			PlaySound("interface\important_item.wav");
-			TakeNItems(pchar, "icollection", 1+drand(1));
-			TakeNItems(pchar, "chest", 4+drand(4));
+			TakeNItems(pchar, "icollection", 1+hrand(1));
+			TakeNItems(pchar, "chest", 4+hrand(4));
 			TakeNItems(pchar, "jewelry1", 70+rand(15));
 			TakeNItems(pchar, "jewelry2", 50+rand(15));
 			TakeNItems(pchar, "jewelry3", 60+rand(15));
@@ -1321,7 +1321,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_5_WithoutMoney":
-			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > dRand(100) || sti(PChar.money) < 5000)
+			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > hrand(100) || sti(PChar.money) < 5000)
 			{
 				dialog.text = "Alright, " + GetAddress_Form(NPChar) + ", take that rascal and leave, before I change my mind.";
 				link.l1 = "It's great to see the triumph of justice, don't you think?";

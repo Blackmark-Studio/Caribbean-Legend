@@ -173,7 +173,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Contraoffer_patrol_1":
-			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > drand(120))
+			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > hrand(120))
 			{
 				dialog.text = "Вы были не в курсе? Хм... похоже, вы не лжёте. Но тем не менее, это так, и своими действиями вы нарушили закон. Я не буду арестовывать вас, но оштрафовать всё-таки придётся. Ну, а что делать с грузом - это будем решать со вторым участником сделки.";
 				link.l1 = "И каков размер штрафа?";
@@ -191,7 +191,7 @@ void ProcessDialogEvent()
 		
 		case "Contraoffer_patrol_pay1":
 			iCGood = sti(pchar.GenQuest.Contraoffer.Trader.Goods);
-			if (GetSummonSkillFromName(pchar, SKILL_FORTUNE) > drand(120))
+			if (GetSummonSkillFromName(pchar, SKILL_FORTUNE) > hrand(120))
 			{
 				dialog.text = "Вот как... Ну что же, давайте посмотрим на ваши монеты... Тут прозвучала сумма в " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ)) + ". Поскольку у нас теперь не двухсторонний, а трёхсторонний договор, то я бы хотел увидеть " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.PatrolSumm)) + ". Это с вас. Столько же и от второго участника сделки.";
 				link.l1 = "Конечно, офицер. Вот мои блестящие монеты... А " + GetGoodsNameAlt(iCGood)+ " тут нет, хе-хе, я же говорил.";
@@ -330,7 +330,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_poorman_1_1":
-			pchar.GenQuest.Device.Shipyarder.Poorsumm = 1000+drand(1000);
+			pchar.GenQuest.Device.Shipyarder.Poorsumm = 1000+hrand(1000);
 			dialog.text = "Послушайте, вы случайно не об этом инструменте речь ведёте? Если об этом, то это моя вещь, и я её не крал! И отдавать вам её просто так вот не намерен! Если хотите её получить - заплатите мне " + FindRussianMoneyString(sti(pchar.GenQuest.Device.Shipyarder.Poorsumm)) + ".";
 			if (sti(pchar.money) >= sti(pchar.GenQuest.Device.Shipyarder.Poorsumm))
 			{
@@ -646,7 +646,7 @@ void ProcessDialogEvent()
 		case "PostAgent_inTavern_5":
 			NextDiag.currentnode = "PostAgent_inTavern_6";
 			RemoveItems(PChar, pchar.questTemp.WPU.Current.Item, 1);
-			pchar.questTemp.WPU.Postcureer.AgentChance = drand(4);//шанс, что раскроют обман - 20%
+			pchar.questTemp.WPU.Postcureer.AgentChance = hrand(4);//шанс, что раскроют обман - 20%
 			DialogExit();
 			AddDialogExitQuest("PostAgent_inTavern_Room_end");
 		break;

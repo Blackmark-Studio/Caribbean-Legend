@@ -143,7 +143,7 @@ bool LAi_CharacterLogin(aref chr, string locID)
 			{
 				if(sti(chr.location.norebirth) != 0) return false;
 			}
-			//Надо возраждать персонажа
+			//Надо возрождать персонажа
 			chr.chr_ai.hp = hpmax;
 			hp = hpmax;
 			if (!CheckAttribute(chr, "location.rebirthOldName"))
@@ -238,7 +238,7 @@ void LAi_CharacterPostLogin(ref location)
 		CreateTraders(location);
 		CreateHabitues(location);
 		CreateIncquisitio(location);
-		CreateMinentownMine(location); // Jason: шахта Минентауна
+		CreateLosTequesMine(location); // Jason: шахта Минентауна
 		CreateMaltains(location); // Jason: база мальтийцев
 		CreateHWICOffice(location); // Jason: офис ГВИК
 		CreateLSCGuardClan(location); // Jason: клановая охрана в LSC
@@ -352,4 +352,5 @@ void LAi_PostLoginInit(aref chr)
 		func = "LAi_type_" + func + "_Init";
 		call func(&chr);
 	}
+	ResetCritChanceBonus(chr);
 }

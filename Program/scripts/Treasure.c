@@ -1,6 +1,5 @@
 
-// TO_DO: В следующем патче убираем Render и используем нормальные объекты
-// object TreasureTiers[15]
+object TreasureTiers[16]; // Пуллы (тиры); 0-ой это SingleTreasures + QuestSlot + Флаги проверок
 
 extern void InitTreasureTiers();
 extern void InitTreasureTiers_Additions(bool SandBoxMode);
@@ -128,8 +127,6 @@ void FillMapForTreasure(ref item)
 
 int GetTresuareTier(int iTier)
 {
-    ref LTR = &Render;
-
     aref Lottery;
     makearef(Lottery, LTR.TresuareMap);
     DeleteAttribute(Lottery, "");
@@ -155,23 +152,21 @@ int GetTresuareTier(int iTier)
 // Выбрать вещь и выбросить её из пулла
 string GetRandEnabledItem(aref aTier, string sType)
 {
-    ref TEV = &Render;
-
-    string sItem, sTemp;
+    string sItem;
     aref aType, aItem;
     makearef(aType, aTier.(sType));
     int i, num = GetAttributesNum(aType);
-    DeleteAttribute(&TEV, "RandItem"); //типа динамический массив
+    DeleteAttribute(&LTR, "RandItem"); //типа динамический массив
     for(i = 0; i < num; i++)
     {
         aItem = GetAttributeN(aType, i);
         if(GetAttributeValue(aItem) == "On")
         {
-            sTemp = i; //Safe moment
-            TEV.RandItem.(sTemp) = GetAttributeName(aItem);
+            sItem = i; //Safe moment
+            LTR.RandItem.(sItem) = GetAttributeName(aItem);
         }
     }
-    makearef(aItem, TEV.RandItem);
+    makearef(aItem, LTR.RandItem);
     int numItems = GetAttributesNum(aItem);
 
     // Ни одной вещи не нашлось, нужен ресет пулла
@@ -182,39 +177,38 @@ string GetRandEnabledItem(aref aTier, string sType)
             sItem = GetAttributeName(GetAttributeN(aType, i));
             for(int j = 1; j <= 15; j++)
             {
-                sTemp = "T" + j;
-                if(CheckAttribute(&Render, sTemp + "." + sType + "." + sItem))
-                    Render.(sTemp).(sType).(sItem) = "On";
+                if(CheckAttribute(&TreasureTiers[j], sType + "." + sItem))
+                    TreasureTiers[j].(sType).(sItem) = "On";
             }
         }
         // Ещё раз рандомим
         return GetRandEnabledItem(aTier, sType);
     }
 
-    // Рандомим и выкидываем из пулла
+    // Рандомим и отключаем в тирах
     sItem = GetAttributeValue(GetAttributeN(aItem, rand(numItems-1)));
-    if(!CheckAttribute(&Render, "SingleTreasure." + sItem))
+    if(!CheckAttribute(&TreasureTiers[0], sItem))
     {
         for(i = 1; i <= 15; i++)
         {
-            sTemp = "T" + i;
-            if(CheckAttribute(&Render, sTemp + "." + sType + "." + sItem))
-                Render.(sTemp).(sType).(sItem) = "Off";
+            if(CheckAttribute(&TreasureTiers[i], sType + "." + sItem))
+                TreasureTiers[i].(sType).(sItem) = "Off";
         }
     }
-    // Уникальные предметы, которые нужно генерировать
-    if(sType == "Equip")
+    else
     {
-        CheckTreasureDeletion(sItem, "Equip");
-        if(IsGenerableItem(sItem))
-            sItem = GetGeneratedItem(sItem);
+        for(i = 1; i <= 15; i++)
+        {
+            DeleteAttribute(&TreasureTiers[i], sType + "." + sItem);
+        }
+        DeleteAttribute(&TreasureTiers[0], sItem);
     }
+
     return sItem;
 }
 
 void FillBoxForTreasure(ref item)
 {
-    string sTemp;
     int iTier = 0;
     aref aTier;
 
@@ -230,9 +224,7 @@ void FillBoxForTreasure(ref item)
     iTier = GetTresuareTier(iTier + 1); // Среди соседей взять рандомом по весу
     item.TreasureTier = iTier;          // Сохраним для ачивки и опыта
     SetMapDescribe(item, iTier);
-
-    sTemp = "T" + iTier;
-    makearef(aTier, Render.(sTemp));
+    makearef(aTier, TreasureTiers[iTier]);
 
     // Заполняем
     int iBonus = 0;
@@ -247,6 +239,7 @@ void FillBoxForTreasure(ref item)
 void FillBoxForEquip(ref item, aref aTier, int iBonus, bool bOtherSlots)
 {
     string itmName = GetRandEnabledItem(aTier, "Equip");
+    if(IsGenerableItem(itmName)) itmName = GetGeneratedItem(itmName);
     item.BoxTreasure.(itmName) = 1; // Весь эквип выдаётся штучно
     if(bOtherSlots)
     {
@@ -271,7 +264,6 @@ void FillBoxForJewelry(ref item, aref aTier, int iBonus, bool bOtherSlots)
     {
         string itmName = GetRandEnabledItem(aTier, "Jewelry");
         item.BoxTreasure.(itmName) = sti(aTier.Jewelry.(itmName).min) + rand(sti(aTier.Jewelry.(itmName).dif));
-        CheckTreasureDeletion(itmName, "Jewelry");
     }
 }
 
@@ -293,7 +285,7 @@ void FillBoxForSpecial(ref item, aref aTier, int iBonus, bool bOtherSlots)
                 itmName = SelectAdmiralMaps();
                 if(itmName != "")
                 {
-                    Render.map_a.(itmName) = ""; // Чтобы не генерило одинаковые адмиралки в клад
+                    TreasureTiers[0].map_a.(itmName) = ""; // Чтобы не генерило одинаковые адмиралки в клад
                     item.BoxTreasure.(itmName) = 1;
                 }
                 else
@@ -313,12 +305,11 @@ void FillBoxForSpecial(ref item, aref aTier, int iBonus, bool bOtherSlots)
                     item.BoxTreasure.(itmName) = 1;
             }
         }
-        DeleteAttribute(&Render, "map_a");
+        DeleteAttribute(&TreasureTiers[0], "map_a");
     }
     else
     {
         item.BoxTreasure.(itmName) = sti(aTier.Special.(itmName).min) + rand(sti(aTier.Special.(itmName).dif));
-        CheckTreasureDeletion(itmName, "Special");
     }
 
     if(bOtherSlots)
@@ -352,14 +343,14 @@ void FillBoxForNotes(ref item)
 }
 
 // Вся логика выдачи у каждого квеста своя, это не общий пулл
-// В нужном квесте в нужный момент пишется Render.QuestSlot.(QuestName) = sFuncName
+// В нужном квесте в нужный момент пишется TreasureTiers[0].QuestSlot.attrName = sFuncName
 // Эта функция должна быть в скриптах квеста с параметрами int iTier, int iBonus, ref item
-// Не забыть по надобности (например, сразу же в той же функции или по завершению квеста) удалить QuestSlot.(QuestName) атрибут
+// Не забыть по надобности (например, сразу же в той же функции или по завершению квеста) удалить QuestSlot.attrName атрибут
 void FillBoxForQuest(ref item, int iTier, int iBonus)
 {
     string func, itmName;
     aref aQuests;
-    makearef(aQuests, Render.QuestSlot);
+    makearef(aQuests, TreasureTiers[0].QuestSlot);
     int qty, num = GetAttributesNum(aQuests);
     // Обязательно идём сверху вниз! Если в каком-то вызове удалится один из атрибутов, то верхние перенумеруются
     for(int i = num - 1; i >= 0; i--)
@@ -644,7 +635,6 @@ string SelectUsualMaps(ref item, ref qMiss) // Выбор обычной неп�
 
 void SetMapDescribe(ref item, int iTier)
 {
-    ref TEV = &Render;
     iTier = 1 + ((iTier - 1) / 5); // 1 [1;5], 2 [6;10], 3 [11;15]
 
     // Описания для составных
@@ -656,7 +646,7 @@ void SetMapDescribe(ref item, int iTier)
     // Описания по тирам (shuffle bag)
     aref aDesc;
     string sTemp = "T" + iTier;
-    makearef(aDesc, TEV.TresuareMapDescribe.(sTemp));
+    makearef(aDesc, LTR.TresuareMapDescribe.(sTemp));
     if(GetAttributesNum(aDesc) == 0) // reload
     {
         aDesc.v1 = 1;
@@ -666,20 +656,6 @@ void SetMapDescribe(ref item, int iTier)
     sTemp = GetRandomAttrName(aDesc);
     item.MapTypeIdx = (iTier - 1) * 3 + sti(aDesc.(sTemp)); // 123, 456, 789
     DeleteAttribute(aDesc, sTemp);
-}
-
-void CheckTreasureDeletion(string sItem, string sType)
-{
-    if(CheckAttribute(&Render, "SingleTreasure." + sItem))
-    {
-        string sTemp;
-        for(int i = 1; i <= 15; i++)
-        {
-            sTemp = "T" + i;
-            DeleteAttribute(&Render, sTemp + "." + sType + "." + sItem);
-        }
-        DeleteAttribute(&Render, "SingleTreasure." + sItem);
-    }
 }
 
 // Открыли записку из клада
@@ -776,7 +752,7 @@ void Treasure_SetOfficerWarrior(string qName)
     int iNation = PIRATE;
 	string sTemp = GetCityNameByIsland(Pchar.curIslandId);
     if(sTemp != "none")   iNation = sti(colonies[FindColony(sTemp)].nation);
-	if(iNation == PIRATE) iNation = drand(3);
+	if(iNation == PIRATE) iNation = hrand(NON_PIRATES, Pchar.curIslandId);
 
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	chrDisableReloadToLocation = true;//закрыть локацию

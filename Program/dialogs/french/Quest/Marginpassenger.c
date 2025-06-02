@@ -200,7 +200,7 @@ void ProcessDialogEvent()
 		}
 		if (iTemp > 0 && iTemp <= iSum)
 		{
-			if (drand(2) > 1) // Addon-2016 Jason уменьшаем раздачу дублонов
+			if (hrand(2) > 1) // Addon-2016 Jason уменьшаем раздачу дублонов
 			{
 				dialog.text = "Bien, je suis d'accord. Je possede la somme requise. Où est "+pchar.GenQuest.Marginpassenger.q1Name+"?";
 				link.l1 = "Il doit être sur le quai maintenant. Donc tu peux aller chercher le passager.";

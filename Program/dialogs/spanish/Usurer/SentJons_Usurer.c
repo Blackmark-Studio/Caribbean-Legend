@@ -5,7 +5,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	{
 	case "quests":
 		dialog.text = NPCStringReactionRepeat(RandPhraseSimple("¿Qué preguntas tienes?", "¿Cómo puedo ayudarle?"), "Intentaste hacerme esa pregunta no hace mucho...", "Sí, déjame adivinar... ¿Otra vez dando vueltas en círculos?", "Escucha, yo manejo las finanzas aquí, no respondo preguntas...", "block", 1, npchar, Dialog.CurrentNode);
-		link.l1 = HeroStringReactionRepeat(RandPhraseSimple("He cambiado de opinión...", "No tengo nada de qué hablar en este momento."), "Umph, ¿dónde se ha ido mi memoria...", "Lo has adivinado, lo siento...", "Entiendo...", npchar, Dialog.CurrentNode);
+		link.l1 = HeroStringReactionRepeat(RandPhraseSimple("He cambiado de opinión...", "No tengo nada de qué hablar en este momento."), "Umph, ¿dónde se ha ido mi memoria...?", "Lo has adivinado, lo siento...", "Entiendo...", npchar, Dialog.CurrentNode);
 		link.l1.go = "exit";
 		// --> Sinistra Длинные тени старых грехов
 		if (CheckAttribute(pchar, "questTemp.DTSG_KnippelDolg"))
@@ -22,18 +22,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		dialog.text = "¿Cuál?";
 		if (sti(pchar.reputation.nobility) > 50)
 		{
-			link.l1 = "(Honor) Es cierto Charlie Knippel.";
+			link.l1 = "(Honor) Pues, Charlie Knippel.";
 			link.l1.go = "DTSG_KnippelDolg_VD_2";
 		}
 		else
 		{
-			link.l2 = "(Honor) Tienes el descaro de hablarme con tanta calma. Enviaste cazadores de recompensas tras mi hombre.";
+			link.l2 = "(Honor) Tienes el descaro de hablarme con tanta calma. Enviaste cazarrecompensas tras mi hombre.";
 			link.l2.go = "DTSG_KnippelDolg_2";
 		}
 		break;
 
 	case "DTSG_KnippelDolg_VD_2":
-		dialog.text = "¿Charlie? Pero ya no es mi deudor. Su deuda fue saldada hace mucho tiempo, señor.";
+		dialog.text = "¿Charlie? Pero ya no es mi deudor. Su deuda fue saldada hace mucho tiempo, sir.";
 		link.l1 = "¿De veras? ¿Por quién, si no es un secreto?";
 		link.l1.go = "DTSG_KnippelDolg_VD_3";
 		break;
@@ -51,13 +51,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "DTSG_KnippelDolg_VD_5":
-		dialog.text = "¿Charlie arrestado? Me sorprendes, señor, no sabía nada al respecto. Ni sobre sus... enemigos. Un buen hombre temeroso de Dios como él...";
+		dialog.text = "¿Charlie arrestado? Me sorprendes, sir, no sabía nada al respecto. Ni sobre sus... enemigos. Un buen hombre temeroso de Dios como él...";
 		link.l1 = "No se puede discutir con eso. Bueno, gracias de todos modos. Espero que el comandante acepte la fianza de mi parte.";
 		link.l1.go = "DTSG_KnippelDolg_VD_6";
 		break;
 
 	case "DTSG_KnippelDolg_VD_6":
-		dialog.text = "No dude en acercarse a mí de nuevo si necesita fondos para asegurar la fianza - le ofreceré buenas condiciones.";
+		dialog.text = "No dude en acercarse a mí de nuevo si necesita fondos para asegurar la fianza, le ofreceré buenas condiciones.";
 		link.l1 = "Ja-ja, ¿hablas en serio? Un prestamista siempre será un prestamista. Puedo permitirme la fianza yo mismo. Adiós.";
 		link.l1.go = "DTSG_KnippelDolg_VD_7";
 		break;

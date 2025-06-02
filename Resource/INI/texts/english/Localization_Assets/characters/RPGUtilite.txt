@@ -29,7 +29,7 @@ good
 
 RPGUtilite_7
 {
-exellent
+excellent
 }
 
 RPGUtilite_8
@@ -64,40 +64,50 @@ National Rep Decreased!
 
 RPGUtilite_14
 {
-Bounty ~
+Hatred
 }
 
 RPGUtilite_15
 {
-Hostile
+Hostility
 }
 
 RPGUtilite_16
 {
-Neutral
+Dislike
 }
 
 RPGUtilite_17
 {
-Good
+Irritation
 }
 
 RPGUtilite_18
 {
-Exellent
+Neutrality
 }
 
 RPGUtilite_19
 {
-Admiration
+Sympathy
 }
 
 RPGUtilite_20
 {
-Rainbow
+Friendliness
 }
 
 RPGUtilite_21
+{
+Admiration
+}
+
+RPGUtilite_22
+{
+Rainbow
+}
+
+RPGUtilite_23
 {
 Quicksilver
 }

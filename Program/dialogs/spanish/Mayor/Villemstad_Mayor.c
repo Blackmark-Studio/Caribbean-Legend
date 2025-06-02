@@ -10,7 +10,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// Португалец
 		if (CheckAttribute(pchar, "questTemp.Portugal.Villemstad"))
 		{
-			link.l1 = "Yo sé que la Compañía Neerlandesa de las Indias Occidentales ha asignado un precio por la cabeza de un cierto pirata - Bartolomeo el Portugués. Pude capturarlo. Actualmente está en mi bodega de carga y estoy listo para entregarlo a las autoridades.";
+			link.l1 = "Yo sé que la Compañía Holandesa de las Indias Occidentales ha asignado un precio por la cabeza de un cierto pirata, Bartolomeo el Portugués. Pude capturarlo. Actualmente está en mi bodega de carga y estoy listo para entregarlo a las autoridades.";
 			link.l1.go = "Portugeze";
 		}
 		break;
@@ -25,7 +25,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	// Португалец
 	case "Portugeze":
 		dialog.text = "¿Bart el Portugués?! ¿Lo tienes, vivo?!";
-		link.l1 = "  Sé que no te sirve de nada muerto. Está vivo y, ¡malditos sean los dioses!, tuve que contenerme para mantenerlo así.";
+		link.l1 = "Sé que no te sirve de nada muerto. Está vivo y, ¡malditos sean los dioses!, tuve que contenerme para mantenerlo así.";
 		link.l1.go = "Portugeze_1";
 		break;
 

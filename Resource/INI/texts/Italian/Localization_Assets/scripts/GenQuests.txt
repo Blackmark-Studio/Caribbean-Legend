@@ -1,0 +1,530 @@
+﻿GenQuests_1
+{
+Contrabbandiere
+}
+
+GenQuests_2
+{
+Ufficiale
+}
+
+GenQuests_3
+{
+Soldato
+}
+
+GenQuests_4
+{
+Così ho trovato l'anello di nozze per la ragazza a @<sCity>.. Devo portarla li.
+}
+
+GenQuests_16
+{
+I tesori sono nelle vicinanze!
+}
+
+GenQuests_17
+{
+È ora di cercare la nave
+}
+
+GenQuests_18
+{
+È scaduto il tempo per cercare la nave, il capitano è sbarcato
+}
+
+GenQuests_19
+{
+Il capitano è andato a terra
+}
+
+GenQuests_20
+{
+Capitano! Abbiamo un'epidemia!
+}
+
+GenQuests_21
+{
+A bordo della nave @<chref.Ship.Name> @<crew> la gente è già morta
+}
+
+GenQuests_22
+{
+esploso
+}
+
+GenQuests_23
+{
+esploso
+}
+
+GenQuests_24
+{
+~ aggancia la camera.
+}
+
+GenQuests_25
+{
+Ship empty
+}
+
+GenQuests_26
+{
+Hai sentito che l'amante ha cacciato una cameriera di nome @<pchar.GenQuest.EncGirl.name> solo perché non è riuscita a raccogliere le sue perle sparpagliate nella giungla? La gente ha completamente perso la vergogna!.. e non ha mai avuto coscienza.
+}
+
+GenQuests_27
+{
+Hai sentito che una puttana ha cercato di salire sulla nave senza documenti? E' stata catturata e riportata al bordello. Dicono che deve al proprietario una bella somma.
+}
+
+GenQuests_28
+{
+Avete sentito? Una prostituta senza documenti è stata catturata nel nostro porto. Dicono che sia scappata da un bordello dopo aver ripulito le casse del proprietario. Questa portatrice di infezioni e furti avrebbe dovuto essere chiusa da tempo. Dopo tutto, i nostri figli vedono tutto questo, cosa possono imparare?
+}
+
+GenQuests_29
+{
+George
+}
+
+GenQuests_30
+{
+Bush
+}
+
+GenQuests_31
+{
+Rabak
+}
+
+GenQuests_32
+{
+Maboa
+}
+
+GenQuests_33
+{
+Abraham
+}
+
+GenQuests_34
+{
+Lincoln
+}
+
+GenQuests_35
+{
+nella costruzione navale
+}
+
+GenQuests_36
+{
+in artillery
+}
+
+GenQuests_37
+{
+in navigazione
+}
+
+GenQuests_38
+{
+Capitano, come va il viaggio su una nave pirata? E' normale? Ti sei offeso? Ha ha ha!
+}
+
+GenQuests_39
+{
+Oh-oh-oh, capitano, ho sentito che ti sei divertito molto di recente... Tu, amico mio, ora sei un poveraccio! Ha-ha-ha!!
+}
+
+GenQuests_40
+{
+Puoi ormeggiare nella baia.
+}
+
+GenQuests_41
+{
+Hai sentito, @<GetAddress_Form(pchar)>, che il capitano di pattuglia @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. è stato recentemente arrestato. Si è scoperto che lavorava in nero come contrabbandiere. Pensa un po', cosa ha portato il governatore attuale alla colonia! Coloro che dovrebbero catturare i pirati ci stanno derubando... Si dice che tra una settimana sarà giustiziato. Gli sta bene.
+}
+
+GenQuests_42
+{
+Si dice che il capitano della pattuglia @<sShipType> @<pchar.GenQuest.CaptainComission.Name>  si è rivelato essere l'organizzatore di una banda di contrabbandieri. È stato catturato e presto sarà impiccato. Sembra @<GetAddress_Form(pchar)>, Il nostro governatore ha preso sul serio il comando nella colonia.
+}
+
+GenQuests_43
+{
+Riesci a immaginarlo? Il comandante del forte ha scoperto un'organizzazione segreta di contrabbandieri, che era riuscita a reclutare anche ufficiali navali nelle sue file. Uno di loro, il cui nome è <pchar.GenQuest.CaptainComission.Name>, è già stato catturato e sarà presto impiccato. Oh, @<GetAddress_Form(pchar)>, Ho sempre detto che il nostro governatore prima o poi ripristinerà l'ordine nell'insediamento.
+}
+
+GenQuests_44
+{
+Sai già che il capitano della pattuglia @<sShipType> @<pchar.GenQuest.CaptainComission.Name> è stato arrestato? Le autorità hanno appreso che nascondeva una grossa partita di merci, che confiscava alle navi di passaggio in quelle acque. Sembra che non verrà impiccato. Ma, vi dirò, era uno dei migliori della squadra di pattugliamento. Chi avrebbe pensato...
+}
+
+GenQuests_45
+{
+Dannazione! Il prigioniero è scappato!
+}
+
+GenQuests_46
+{
+Hai sentito, @<GetAddress_Form(pchar)>, che un capitano di pattuglia è stato recentemente impiccato @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. Dicono che ha derubato un commerciante. Dopotutto, come succede, non puoi fidarti di nessuno... E tutta la squadra con lui è stata giustiziata insieme. Significa collusione...
+}
+
+GenQuests_47
+{
+Lo sai già, @<GetAddress_Form(pchar)>, che l'ex capitano di pattuglia @<sShipType> @<pchar.GenQuest.CaptainComission.Name> è stato giustiziato? Pettegolezzi dicono che ha affondato una nave importante, e ha nascosto la merce. E nessuno della squadra ha ammesso dov'era il nascondiglio. Così tutti sono stati impiccati...
+}
+
+GenQuests_48
+{
+Riesci a immaginare, @<GetAddress_Form(pchar)>? Uno dei capitani dello squadrone di pattuglia era impegnato nella rapina in mare. Quindi è stato recentemente giustiziato insieme a tutta la sua banda. Dicono che hanno rapinato e affondato navi mercantili.
+}
+
+GenQuests_49
+{
+Hanno recentemente giustiziato un ex capitano di nome @<pchar.GenQuest.CaptainComission.Name> insieme alla squadra della sua pattuglia @<sShipType>.. Si dice che nascondessero una grossa partita di merci confiscate alle navi che passavano in quelle acque. Ma questo era uno dei migliori equipaggi di pattuglia. Penso che, @<GetAddress_Form(pchar)>, che erano stati deliberatamente calunniati. Dopotutto, le merci non sono mai state trovate..
+}
+
+GenQuests_50
+{
+Tutte le merci sono caricate nella stiva
+}
+
+GenQuests_51
+{
+i tre
+}
+GenQuests_52
+{
+i quattro
+}
+GenQuests_53
+{
+i cinque
+}
+GenQuests_54
+{
+i sei
+}
+GenQuests_55
+{
+i sette
+}
+GenQuests_56
+{
+gli otto
+}
+GenQuests_57
+{
+i nove
+}
+GenQuests_58
+{
+i dieci
+}
+
+GenQuests_59
+{
+I naufraghi sono stati trasportati all'insediamento
+}
+
+GenQuests_60
+{
+Il contrabbandiere aveva paura di andare all'armeria del forte e fuggire
+}
+
+GenQuests_61
+{
+Sei arrivato alla grotta corretta
+}
+
+GenQuests_62
+{
+
+}
+GenQuests_63
+{
+
+}
+
+GenQuests_64
+{
+
+}
+
+GenQuests_65
+{
+
+}
+
+GenQuests_66
+{
+
+}
+GenQuests_67
+{
+
+}
+
+GenQuests_68
+{
+non gentiluomo
+}
+
+GenQuests_69
+{
+non vedendo
+}
+
+GenQuests_70
+{
+
+}
+GenQuests_71
+{
+
+}
+
+GenQuests_72
+{
+parola di un gentiluomo
+}
+GenQuests_73
+{
+'per mantenere la parola'
+}
+
+GenQuests_74
+{
+e con esso
+}
+GenQuests_75
+{
+e con esso
+}
+
+GenQuests_76
+{
+
+}
+GenQuests_77
+{
+
+}
+
+GenQuests_78
+{
+Capitano @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', il cui nome è @<GetFullName(sld)>, andò di nuovo per mare. Secondo le voci, si è trasferito a @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
+}
+
+GenQuests_79
+{
+Conosci il capitano @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Allora, è andato a @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
+}
+
+GenQuests_80
+{
+Se hai bisogno di capitano @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', poi devi andare a @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> là.
+}
+
+GenQuests_81
+{
+Capitano @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', il cui nome è @<GetFullName(sld)>, andò di nuovo per mare. Secondo voci, si è trasferito a @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
+}
+
+GenQuests_82
+{
+Conosci il capitano @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Allora, è andato a @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
+}
+
+GenQuests_83
+{
+Se hai bisogno di un capitano @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', poi devi andare @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> ci siamo andati.
+}
+
+GenQuests_84
+{
+Capitano @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', il cui nome è @<GetFullName(sld)>, andò di nuovo per mare. Secondo le voci, si è trasferito a @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
+}
+
+GenQuests_85
+{
+Conosci il capitano @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Allora, è andato a @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
+}
+
+GenQuests_86
+{
+Se hai bisogno di capitano @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', poi devi andare @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> là.
+}
+
+GenQuests_87
+{
+Ufficiale @<GetFullName(sld)> è scappato con la @<sld.ship.name>
+}
+
+GenQuests_88
+{
+Ufficiale @<GetFullName(sld)> è scappato con la @<pchar.ship.name>
+}
+
+GenQuests_89
+{
+intercettatori
+}
+
+GenQuests_90
+{
+Cinque giorni sono passati...
+}
+
+GenQuests_91
+{
+55 persone si sono unite al vostro equipaggio
+}
+
+GenQuests_92
+{
+
+}
+GenQuests_93
+{
+
+}
+
+GenQuests_94
+{
+Senti, il capitano @<GetFullName(pchar)> aveva lottato con un bandito chiamato @<pchar.GenQuest.(Gun).name>. Hanno cercato di derubarlo, ma non era disposto a pagare. Uomo coraggioso, questo capitano, ha appena ucciso quella feccia.
+}
+
+GenQuests_95
+{
+C'era una lotta nella giungla non molto tempo fa - banditi attaccarono il capitano @<GetFullName(pchar)>, volevano prendere l'oro dell'uomo... A-ha, tu hai liberato @<pchar.GenQuest.(Gun).name>! Io dico ben fatto...
+}
+
+GenQuests_96
+{
+Hai sentito come la banda locale @<pchar.GenQuest.(Gun).name> ha cercato di derubare il capitano di nome @<GetFullName(pchar)>? Si rifiutò di pagare e li massacrò tutti.
+}
+
+GenQuests_97
+{
+Hai saputo di un omicidio @<pchar.GenQuest.EncGirl.name>? Povera ragazza, è stata uccisa nella giungla di recente. Dovrebbero trovare l'assassino e impiccarlo!
+}
+
+GenQuests_98
+{
+Sai, capitano @<GetFullName(pchar)>, qualcuno ha ucciso una povera ragazza @<pchar.GenQuest.EncGirl.name>? Peccato, era davvero una brava ragazza...
+}
+
+GenQuests_99
+{
+Si chiamava @<pchar.GenQuest.EncGirl.name>, e lei è morta nella giungla. Non c'è niente di sorprendente, ve lo dico, non è sicuro là fuori...
+}
+
+GenQuests_100
+{
+Hai sentito che un capitano ha salvato una ragazza di nome @<pchar.GenQuest.EncGirl.name> Dai banditi, l'ha tirata letteralmente fuori dalle loro grinfie! Che persona meravigliosa e un vero uomo!
+}
+
+GenQuests_101
+{
+Sai, capitano @<GetFullName(pchar)> ha salvato una ragazza di nome @<pchar.GenQuest.EncGirl.name> dagli stupratori nella giungla... Ah, quindi sei tu !! Ti ammiro...
+}
+
+GenQuests_102
+{
+Una ragazza di nome @<pchar.GenQuest.EncGirl.name> Grande fortunata - Di recente, i banditi nella giungla l'hanno attaccata, hanno provato a violentarla. Ma non ne è avvenuto nulla, hehe, e lei deve ringraziare il capitano @<GetMainCharacterNameGen()>!
+}
+
+GenQuests_103
+{
+Beh, capitano @<GetFullName(pchar)>, nessuno potrebbe mai pensare che lasceresti una donna indifesa nelle mani dei banditi per essere il loro gioco. Povera @<pchar.GenQuest.EncGirl.name>, se solo avessi parole...
+}
+
+GenQuests_104
+{
+Sa, capitano, lei è un vero bastardo. Come si può abbandonare una ragazza indifesa nella giungla? Ha idea di cosa le hanno fatto? Povera @<pchar.GenQuest.EncGirl.name>, nessuno la sposerà mai...
+}
+
+GenQuests_105
+{
+Hai saputo di un omicidio @<pchar.GenQuest.EncGirlF.name>? Povera ragazza, è stata uccisa nella giungla di recente. Dovrebbero trovare l'assassino e impiccarlo!
+}
+
+GenQuests_106
+{
+Sai, capitano @<GetFullName(pchar)>, qualcuno ha ucciso una povera ragazza @<pchar.GenQuest.EncGirlF.name>? Peccato, era davvero una brava ragazza...
+}
+
+GenQuests_107
+{
+Si chiamava @<pchar.GenQuest.EncGirlF.name>, e morì nella giungla. Non c'è niente di sorprendente, ve lo dico, non è sicuro là fuori...
+}
+
+GenQuests_108
+{
+Recentemente avevano trovato morto il nostro ufficiale e tutta la sua unità. Chi potrebbe averli uccisi? E perchè?
+}
+
+GenQuests_109
+{
+Il nostro comandante invia regolarmente pattuglie nelle giungle, ma non ho idea di cosa stia per fare adesso. I soldati sono stati trovati morti lì non molto tempo fa...
+}
+
+GenQuests_110
+{
+Dannazione, qualcuno aveva massacrato un'intera unità dei nostri soldati fuori città...
+}
+
+GenQuests_111
+{
+Dicono che il capitano @<GetFullName(pchar)> è stato visto correre contro i soldati di @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> nella giungla e li ha eliminati tutti. Ha, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> sono combattenti senza valore...
+}
+
+GenQuests_112
+{
+Devo aver sentito che un capitano @<GetMainCharacterNameGen()> è stato ispezionato fuori dalla città da una pattuglia...
+}
+
+GenQuests_113
+{
+Per quanto ne so, siete stati ispezionati dalla nostra pattuglia fuori città. Non so quanto sia stata efficace...
+}
+
+GenQuests_114
+{
+Il nostro comandante farà pattugliare la giungla. Dovete già saperlo, siete stati ispezionati non molto tempo fa......
+}
+
+GenQuests_115
+{
+Sai, il governatore @<sTemp> Ha istruito un certo capitano @<GetMainCharacterNameDat()> che distrusse un famoso bandito di nome @<GetFullName(arAll)>. E sembra che il capitano abbia completato il compito del governatore...
+}
+
+GenQuests_116
+{
+Alcuni coraggiosi capitano si sono offerti volontari per trovare e distruggere un bandito locale di nome @<GetFullName(arAll)>. E sembra che lo abbia fatto!
+}
+
+GenQuests_117
+{
+Finalmente il nostro governatore si sta occupando della giungla... ha messo il Capitano @<GetMainCharacterNameDat()> per rintracciare e uccidere il bandito più famoso della giungla. E si sa, questo bandito, @<GetFullName(arAll)> - è morto!
+}
+
+GenQuests_118
+{
+mappa
+}
+
+GenQuests_119
+{
+tesoro
+}
+
+GenQuests_120
+{
+monete
+}

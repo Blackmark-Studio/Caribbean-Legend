@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	{
 	case "First time":
 		// --> калеуче
-		if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && drand(1) == 0 && sti(Pchar.money) >= 2000)
+		if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(1) == 0 && sti(Pchar.money) >= 2000)
 		{
 			dialog.text = "Mire, señor, ¿no quiere comprar una pequeña cosa divertida? Es barato, solo unos pocos miles de pesos...";
 			link.l1 = "¿Hmm. Probablemente robaste esta 'pequeña cosa', y ahora estás tratando de deshacerte de ella?";
@@ -35,13 +35,20 @@ void ProcessDialogEvent()
 				link.l2 = "Oye, escucha, ¿te gustaría ganar un par de miles de pesos en lugar de estas patéticas limosnas?";
 				link.l2.go = "trial";
 			}
+			// --> Тайна Бетси Прайс
+				if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon3") && pchar.location == "Villemstad_town")
+				{
+					link.l2 = "Ese colgante con camafeo... ¿Dónde lo encontraste?";
+					link.l2.go = "TBP_Kulon_1";
+				}
+			// <-- Тайна Бетси Прайс
 			npchar.quest.meeting = "1";
 		}
 		else
 		{
 			dialog.text = NPCStringReactionRepeat("Mira cuán bajo he caído...", "Vivir de limosnas no es fácil...", "¡Daría todo para salir de esta pobreza!", "¿Tú otra vez?..", "block", 1, npchar, Dialog.CurrentNode);
 
-			link.l1 = HeroStringReactionRepeat("Ya veo. Bueno, no es gran cosa.", "Por supuesto. Bueno, ya sabes, el hombre más grande de la historia fue el más pobre.", "Entonces deberías empezar a hacer algo, no estar sentado aquí todo el día.", "Ah-ha. ¿Ya te molesto?", npchar, Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("Ya veo. Bueno, no es gran cosa.", "Por supuesto. Bueno, el hombre más grande de la historia fue el más pobre.", "Entonces deberías empezar a hacer algo, no estar sentado aquí todo el día.", "Ah-ha. ¿Ya te molesto?", npchar, Dialog.CurrentNode);
 			link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "pester", npchar, Dialog.CurrentNode);
 			link.l2 = RandPhraseSimple("¿Qué necesitas?", "¿Qué quieres?");
 			link.l2.go = "Whants";
@@ -52,6 +59,13 @@ void ProcessDialogEvent()
 				link.l2 = "Oye, escucha, ¿te gustaría ganar un par de miles de pesos en lugar de estas patéticas limosnas?";
 				link.l2.go = "trial";
 			}
+			// --> Тайна Бетси Прайс
+				if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon3") && pchar.location == "Villemstad_town")
+				{
+					link.l2 = "Ese colgante con camafeo... ¿Dónde lo encontraste?";
+					link.l2.go = "TBP_Kulon_1";
+				}
+			// <-- Тайна Бетси Прайс
 			link.l3 = LinkRandPhrase("¿Puedes contarme algo interesante?", "¿Qué hay de nuevo en el pueblo?", "Oh, me gustaría escuchar los últimos chismes...");
 			link.l3.go = "rumours_poor";
 		}
@@ -104,7 +118,7 @@ void ProcessDialogEvent()
 		if (iTemp > 0 && iTemp <= 100)
 		{
 			dialog.text = "Gracias por " + FindRussianMoneyString(iTemp) + ", " + GetAddress_Form(NPChar) + ". Ahora puedo comprar pan con ese dinero...";
-			link.l1 = "Aquí, vagabundo - ve a fortalecerte un poco.";
+			link.l1 = "Aquí, vagabundo, ve a fortalecerte un poco.";
 			link.l1.go = "exit";
 			pchar.money = sti(pchar.money) - iTemp;
 			Achievment_SetStat(41, 1);
@@ -175,7 +189,7 @@ void ProcessDialogEvent()
 
 	case "trial_1":
 		dialog.text = "";
-		link.l1 = "Su Gracia ya escuchó las excusas del maestro carpintero de ribera, pero no está seguro de que estuviera diciendo la verdad. Necesitamos averiguar quién está saboteando el trabajo y por qué. Ve a los muelles, echa un vistazo y pregunta a los trabajadores, ¿por qué diablos 'Alacantara' aún no está listo para zarpar...";
+		link.l1 = "Su Gracia ya escuchó las excusas del maestro carpintero de ribera, pero no está seguro de que estuviera diciendo la verdad. Necesitamos averiguar quién está saboteando el trabajo y por qué. Ve a los muelles, echa un vistazo y pregunta a los trabajadores, ¿por qué diablos 'Alacantara' aún no está listo para zarpar?";
 		link.l1.go = "trial_2";
 		break;
 
@@ -265,7 +279,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "trial_9":
-		dialog.text = "Uno de los marineros del 'Alacantara' - Felipe Dabinho... Pero eso en realidad no es ningún secreto, y Su Gracia el gobernador mismo lo había ordenado...";
+		dialog.text = "Uno de los marineros del 'Alacantara', Felipe Dabinho... Pero eso en realidad no es ningún secreto, y Su Gracia el gobernador mismo lo había ordenado...";
 		link.l1 = "Ya veo. Eso es lo que esperaba. Espías franceses están en la ciudad, ¡pero estos idiotas están parloteando como chismosas, es increíble! Cualquier recién llegado puede averiguar lo que quiera sobre los planes de Su Gracia. ¡Oh, ese Felipe Dabinho está en serios problemas ahora! ¡Y el contramaestre del 'Alacantara' también! ¡Es su culpa que su tripulación no sepa nada sobre disciplina!";
 		link.l1.go = "trial_10";
 		QuestPointerToLoc("PortoBello_Town", "reload", "gate_back");
@@ -276,7 +290,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "trial_10":
-		dialog.text = "¡Oh... Entonces, lo sabías desde el principio? Pero por qué... ¡No es mi culpa! ¡Me dijiste que hiciera eso!";
+		dialog.text = "¡Oh!... Entonces, ¿lo sabías desde el principio? Pero por qué... ¡No es mi culpa! ¡Me dijiste que hiciera eso!";
 		link.l1 = "No fue tu culpa, no deberías preocuparte por ello, nadie te va a castigar. Ahora sabemos que la tripulación del 'Alacantara' puede soltar cualquier información a un enemigo, incluso lo que se supone que debe mantenerse en secreto. Está bien, puedes irte ahora. Gracias por tu ayuda. Ve a gastar tu dinero.";
 		link.l1.go = "trial_11";
 		// belamour legendary edition -->
@@ -315,7 +329,7 @@ void ProcessDialogEvent()
 
 	// --> калеуче
 	case "Caleuche":
-		dialog.text = "Perdóneme, buen señor... Lo gané en un juego de dados contra un desconocido, pensé que era un amuleto curativo encantado, pero me equivoqué... No cura enfermedades, y los comerciantes del mercado no están interesados en él. Y aquí estás tú - un marinero, capitán, un hombre letrado. Míralo, y puede que lo encuentres útil.\nPara ti, este par de miles es una pequeña suma, pero para mí es un pedazo de pan y un sorbo de ron durante un mes. Mira, señor...";
+		dialog.text = "Perdóneme, buen señor... Lo gané en un juego de dados contra un desconocido, pensé que era un amuleto curativo encantado, pero me equivoqué... No cura enfermedades, y los comerciantes del mercado no están interesados en él. Y aquí estás tú, un marinero, capitán, un hombre letrado. Míralo, y puede que lo encuentres útil.\nPara ti, este par de miles es una pequeña suma, pero para mí es un pedazo de pan y un sorbo de ron durante un mes. Mira, señor...";
 		link.l1 = "Bien, muestra...";
 		link.l1.go = "Caleuche_1";
 		break;
@@ -340,5 +354,35 @@ void ProcessDialogEvent()
 		GiveItem2Character(pchar, "kaleuche_amulet1");
 		break;
 		// <-- калеуче
+		
+		// --> Тайна Бетси Прайс
+		case "TBP_Kulon_1":
+			dialog.text = "Eh, "+GetAddress_Form(NPChar)+", ¿qué le importa a usted una vieja baratija?";
+			link.l1 = "Si ahora mismo te doy una patada en tu estúpida cabeza, entenderás por qué me importa.";
+			link.l1.go = "TBP_Kulon_TO";
+			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon2"))
+			{
+				link.l2 = "Ese colgante pertenecía a Betsy Price. ¿Dónde lo encontraste?";
+				link.l2.go = "TBP_Kulon_leadership";
+			}
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon3");
+		break;
+
+		case "TBP_Kulon_TO":
+			dialog.text = "Estaba en un macizo de flores junto a la casa con el farol, "+GetAddress_Form(NPChar)+". Aplastado en el barro por una bota masculina. Pero nadie vive en esa casa desde hace tiempo, así que supuse que no tenía dueño...";
+			link.l1 = "Hmm...";
+			link.l1.go = "exit";
+			AddCharacterExpToSkill(pchar, "FencingH", 100);
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon2");
+		break;
+
+		case "TBP_Kulon_leadership":
+			dialog.text = "Estaba en un macizo de flores junto a la casa con el farol, "+GetAddress_Form(NPChar)+". Aplastado en el barro por una bota masculina. Pero nadie vive en esa casa desde hace tiempo, así que supuse que no tenía dueño...";
+			link.l1 = "Hmm...";
+			link.l1.go = "exit";
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon2");
+		break;
+		// <-- Тайна Бетси Прайс
 	}
 }

@@ -678,6 +678,7 @@ string descF11 = "Увеличить уровень +5";
 void CalculateInfoDataF11()
 {
 	pchar.rank = sti(pchar.rank) + 5;
+    Event("PlayerLevelUp", "l", sti(pchar.rank));
 	
 	totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
 	
@@ -986,7 +987,7 @@ void CalculateInfoDataF18()
 string descF19 = "Добавить офицера: Дюрана";
 void CalculateInfoDataF19()
 {
-	sld = GetCharacter(NPC_GenerateCharacter("FMQT_mercen", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Duran", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
 	sld.name = StringFromKey("FMQ_49");
 	sld.lastname = StringFromKey("FMQ_50");
 	sld.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -1330,6 +1331,7 @@ void CalculateInfoDataF31()
     SetRandSelfSkill(mc, 100, 100);
     SetRandShipSkill(mc, 100, 100);
     mc.rank = 20;
+    Event("PlayerLevelUp", "l", sti(mc.rank));
     LAi_SetHP(mc, 250.0, 250.0);
 
     mc.Ship.Type = GenerateShipExt(SHIP_FRIGATE, true, mc);
@@ -1388,7 +1390,7 @@ void CalculateInfoDataF31()
 	
     //LAi_SetCharacterUseBullet(mc, "cartridge");
 
-    SelAllPerksToChar(mc, false);
+    SetAllPerksToChar(mc, false);
 	AddCharacterGoodsSimple(pchar, GOOD_FOOD, 3000);
 	AddCharacterGoodsSimple(pchar, GOOD_RUM, 300);
 	//SetHalfPerksToChar(mc, false);
@@ -1411,6 +1413,7 @@ void CalculateInfoDataF32()
     SetRandSelfSkill(mc, 60, 85);
     SetRandShipSkill(mc, 60, 85);
     mc.rank = 22;
+    Event("PlayerLevelUp", "l", sti(mc.rank));
     LAi_SetHP(mc, 250.0, 250.0);
 
     // mc.Ship.Type = GenerateShipExt(SHIP_CORVETTE_QUEST, true, mc);
@@ -1520,7 +1523,7 @@ void CalculateInfoDataF32()
     //LAi_SetCharacterUseBullet(mc, "cartridge");
 
         SetHalfPerksToChar(mc, false);
-    // SelAllPerksToChar(mc, false);
+    // SetAllPerksToChar(mc, false);
 
     ref realShip;
     int shipType = sti(mc.Ship.Type);
@@ -1553,6 +1556,7 @@ void CalculateInfoDataF33()
     /*SetRandSelfSkill(mc, 50, 85);
     SetRandShipSkill(mc, 50, 85);
     mc.rank = 15;
+    Event("PlayerLevelUp", "l", sti(mc.rank));
     LAi_SetHP(mc, 250.0, 250.0);
     mc.Ship.Type = GenerateShipExt(SHIP_CORVETTE, true, mc);    
     SetBaseShipData(mc);
@@ -1601,7 +1605,7 @@ void CalculateInfoDataF33()
     AddItems(mc, "grapeshot", 20);
     LAi_SetCharacterUseBullet(mc, "cartridge");
     
-    SelAllPerksToChar(mc, false);*/
+    SetAllPerksToChar(mc, false);*/
     SetCharacterGoods(mc, GOOD_SHIPSILK, 1000);
     SetCharacterGoods(mc, GOOD_ROPES, 1000);
     SetCharacterGoods(mc, GOOD_SANDAL, 1000);

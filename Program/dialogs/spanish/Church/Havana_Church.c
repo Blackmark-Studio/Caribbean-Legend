@@ -11,7 +11,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "havana")
 		{
 			ref sld = characterFromId("Villemstad_Priest");
-			link.l1 = "Saludos, padre. Padre superior " + sld.name + " de la iglesia de Willemstad me envió. Le hablaste de avistamientos extraños en una cueva en Cuba.";
+			link.l1 = "Saludos, padre. El padre superior " + sld.name + " de la iglesia de Willemstad me envió. Le hablaste de avistamientos extraños en una cueva en Cuba.";
 			link.l1.go = "caleuche";
 		}
 		if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "havana1")
@@ -23,19 +23,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "caleuche":
 		dialog.text = "¡Gracias a Dios que prestó atención a esto! Una vez que los rumores sobre los muertos vivientes llegaron a mis oídos, inmediatamente notifiqué a Su Reverencia el Padre Vincento, el inquisidor de Santiago. Prometió investigar, pero hasta ahora no se ha tomado ninguna acción. Me temo que Su Reverencia tiene asuntos más importantes que atender...";
-		link.l1 = "Lo investigaré yo mismo. Además, todos estos chismes no son más que los desvaríos de cazadores borrachos, por lo tanto, la Inquisición no los ha tomado en serio. Me adentraré en la jungla para presenciarlo con mis propios ojos.";
+		link.l1 = "Investigaré por mi cuenta. Además, todos estos chismes no son más que los desvaríos de cazadores borrachos, por lo tanto, la Inquisición no los ha tomado en serio. Me adentraré en la jungla para presenciarlo con mis propios ojos.";
 		link.l1.go = "caleuche_1";
 		break;
 
 	case "caleuche_1":
-		dialog.text = "Te aseguro, hijo mío, que es crucial. Al hombre que me habló de los muertos vivientes, le confiaría mi vida.";
-		link.l1 = "Muy bien entonces, me prepararé para la batalla. Si las criaturas impías realmente se han arraigado en la caverna, las purgaré de este mundo.";
+		dialog.text = "Te aseguro, hijo mío, que es crucial. Al hombre que me habló de los no-muertos, le confiaría mi vida.";
+		link.l1 = "Muy bien, me prepararé para la batalla. Si las criaturas impías realmente se han arraigado en la caverna, las purgaré de este mundo.";
 		link.l1.go = "caleuche_2";
 		break;
 
 	case "caleuche_2":
-		dialog.text = "¡Ve con la bendición del Señor, hijo mío! Aquí, toma este amuleto santificado. Te ayudará en tu misión. ¡Ve ahora, destruye las crías del mal!";
-		link.l1 = "Hasta entonces, Padre " + npchar.name + "Una vez que termine, regresaré a ti de inmediato.";
+		dialog.text = "¡Ve con la bendición del Señor, hijo mío! Aquí, toma este amuleto santificado. Te ayudará en tu misión. ¡Ahora ve! ¡Destruye las criaturas del mal!";
+		link.l1 = "Hasta entonces, Padre " + npchar.name + ". Una vez que termine, regresaré a ti de inmediato.";
 		link.l1.go = "caleuche_3";
 		break;
 
@@ -43,7 +43,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		DialogExit();
 		AddQuestRecord("Caleuche", "27");
 		pchar.questTemp.Caleuche = "cave";
-		Log_Info("Has recibido un amuleto de la iglesia");
+		Log_Info("¡Has recibido un amuleto de la iglesia!");
 		PlaySound("interface\important_item.wav");
 		GiveItem2Character(pchar, "amulet_7");
 		if (GetCharacterIndex("cavehunter") != -1)
@@ -62,7 +62,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "caleuche_4":
 		dialog.text = "¿Qué has visto, hijo mío? ¿Eran infundados nuestros temores?";
-		link.l1 = "Me temo que no, Padre " + npchar.name + "  La cueva estaba infestada de muertos vivientes, pero con la ayuda de Dios salí victorioso. Ya no molestarán a nadie más.";
+		link.l1 = "Me temo que no, Padre " + npchar.name + ". La cueva estaba infestada de muertos vivientes, pero con la ayuda de Dios salí victorioso. Ya no molestarán a nadie más.";
 		link.l1.go = "caleuche_5";
 		break;
 
@@ -73,13 +73,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "caleuche_6":
-		Log_Info("Has recibido varios amuletos de la iglesia");
+		Log_Info("¡Has recibido varios amuletos de la iglesia!");
 		PlaySound("interface\important_item.wav");
 		GiveItem2Character(pchar, "amulet_3");
 		GiveItem2Character(pchar, "amulet_9");
 		GiveItem2Character(pchar, "obereg_7");
 		GiveItem2Character(pchar, "obereg_11");
-		dialog.text = "Además, me aseguraré de que tanto la plebe como los nobles conozcan tu heroica hazaña y rezaré incansablemente por ti día y noche.";
+		dialog.text = "Además, me aseguraré de que tanto la plebe como los nobles conozcan tu heroica hazaña, y rezaré incansablemente por ti día y noche.";
 		link.l1 = "Gracias, Padre. También tengo una pregunta más que hacer.";
 		link.l1.go = "caleuche_7";
 		break;
@@ -93,7 +93,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	case "caleuche_8":
 		sld = characterFromId("Villemstad_Priest");
 		dialog.text = "Ni el nombre ni la descripción me suenan, lo siento. ¿Quién es este hombre?";
-		link.l1 = "Merriman es un brujo. La Inquisición lo ha estado cazando durante mucho tiempo. Padre " + sld.name + " y sospecho que la aparición de los muertos vivientes en Cuba es obra suya. No hace mucho él vivía en Willemstad, luego desapareció repentinamente. Poco después, la mujer que lo alojaba se convirtió en un esqueleto andante.";
+		link.l1 = "Merriman es un brujo. La Inquisición lo ha estado cazando durante mucho tiempo. Padre " + sld.name + ", sospecho que la aparición de los muertos vivientes en Cuba es obra suya. No hace mucho, él vivía en Willemstad, luego desapareció repentinamente. Poco después, la mujer que lo alojaba se convirtió en un esqueleto andante.";
 		link.l1.go = "caleuche_9";
 		break;
 
@@ -111,7 +111,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "caleuche_11":
 		dialog.text = "¡Que el Todopoderoso tenga misericordia de nosotros! ¡Búscalo, hijo mío! ¡Te permito tomar cualquier medida contra él en el nombre de nuestra Santa Iglesia! Enviaré inmediatamente un mensajero a Santiago con un informe para el Padre Vincento.";
-		link.l1 = " Haz eso. Adiós, Padre " + npchar.name + ".";
+		link.l1 = "Haz eso. Adiós, padre " + npchar.name + ".";
 		link.l1.go = "caleuche_12";
 		break;
 

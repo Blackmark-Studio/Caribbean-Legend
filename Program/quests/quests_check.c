@@ -360,7 +360,7 @@ bool ProcessCondition(aref condition, int n)
 			return false;
 		break;
 		
-		case "Mushket":
+		case "ItemGroup": // belamour прерывание на группу предмета
 			aref arItems;
 			makearef(arItems, refCharacter.items);
 			int iItemsNum = GetAttributesNum(arItems);
@@ -369,8 +369,7 @@ bool ProcessCondition(aref condition, int n)
 				string sItem = GetAttributeName(GetAttributeN(arItems, i));
 				ref rItem = ItemsFromID(sItem);
 				if(!CheckAttribute(rItem, "groupID")) continue;
-				if(rItem.groupID == MUSKET_ITEM_TYPE) return true;
-				//if(HasSubStr(rItem.id, "mushket")) return true;
+				if(rItem.groupID == condition.group) return true;
 			}
 			return false;
 		break;
@@ -397,12 +396,11 @@ void QuestsCheck()
 	int  n,m;
 	string sQuestName;
 	bool bQuestCompleted;
-	
-	
+
 	makearef(quests,pchar.quest);
-		
+
 	nQuestsNum = GetAttributesNum(quests);
-	
+
 //	trace("nQuestsNum : " + nQuestsNum);
 	for(n = 0; n < nQuestsNum; n++)
 	{

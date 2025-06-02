@@ -1127,6 +1127,24 @@ void initFastReloadTable()
 	/* curTable.l5.pic = 38;
 	curTable.l5.tex = 0;
 	curTable.l5.location = "EsmeraldaStoreBig"; */
+	
+	makearef(curTable,objFastReloadTable.table.LosTeques);
+	// store
+	curTable.l1.pic = FRP_STORE;
+	curTable.l1.tex = FRT_STORE;
+	curTable.l1.location = "LosTeques_store";
+	// tavern
+	curTable.l2.pic = FRP_TAVERN;
+	curTable.l2.tex = FRT_TAVERN;
+	curTable.l2.location = "LosTeques_tavern";
+	// residence
+	curTable.l3.pic = FRP_RESIDENCE;
+	curTable.l3.tex = FRT_RESIDENCE;
+	curTable.l3.location = "LosTeques_townhall";
+	// church
+	curTable.l4.pic = FRP_CHURCH;
+	curTable.l4.tex = FRT_CHURCH;
+	curTable.l4.location = "LosTeques_church";
 }
 
 void InitTownTable()

@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 		if (npchar.quest.meeting == "0")
 		{
 			dialog.text = "¿Qué necesitas?";
-			link.l1 = "Nothing.";
+			link.l1 = "Nada.";
 			link.l1.go = "exit";
 			npchar.quest.meeting = "1";
 		}

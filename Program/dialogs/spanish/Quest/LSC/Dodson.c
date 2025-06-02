@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 		if (CheckAttribute(pchar, "questTemp.Patria.DodsonAgain"))
 		{
 			dialog.text = "¡Me alegra verte, amigo! ¿En qué puedo ayudarte? ";
-			link.l1 = " Me alegra verte también. ¡Quería agradecerte por el espectáculo perfectamente llevado a cabo!";
+			link.l1 = "Me alegra verte también. ¡Quería agradecerte por el espectáculo perfectamente llevado a cabo!";
 			link.l1.go = "patria_29";
 			break;
 		}
@@ -168,8 +168,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "Chad_die_10":
-		dialog.text = "¿Qué es todo este disparate? ¿Qué portal? Y aún no has respondido - ¿dónde está tu barco?";
-		link.l1 = "No hay barco. Entiendo, Steve, que es difícil de creer, pero realmente llegué aquí a través del ídolo indio desde el Continente... no me mires así - ¡no estoy loco! Yo mismo no entiendo cómo es posible, ¡pero lo es!";
+		dialog.text = "¿Qué es todo este disparate? ¿Qué portal? Y aún no has respondido, ¿dónde está tu barco?";
+		link.l1 = "No hay barco. Entiendo, Steve, que es difícil de creer, pero realmente llegué aquí a través del ídolo indio desde el Continente... no me mires así, ¡no estoy loco! Yo mismo no entiendo cómo es posible, ¡pero lo es!";
 		link.l1.go = "Chad_die_11";
 		break;
 
@@ -350,7 +350,7 @@ void ProcessDialogEvent()
 		RemoveItems(pchar, "letter_chad", 1);
 		RemoveItems(pchar, "letter_chad_1", 1);
 		dialog.text = "¿Pobre Mary? ¿Sientes lástima por esa ramera?";
-		link.l1 = "Realmente lo soy. Verás, Chad la engañó y la usó. Ella no pudo resistir sus sentimientos y su temperamento impulsivo... y ahí es donde la llevó.";
+		link.l1 = "En verdad sí. Verás, Chad la engañó y la usó. Ella no pudo resistir sus sentimientos y su temperamento impulsivo... y ahí es donde la llevó.";
 		link.l1.go = "Mary_Die_10";
 		break;
 
@@ -574,7 +574,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "caroline_2":
-		dialog.text = "¿Y dónde está ese maldito gordo? ¿A dónde se fue? Somos sus invitados y no nos está dando la bienvenida. ¿Lo ves, " + pchar.name + "¿Quizás deberíamos revisar sus cofres, podría estar dentro de ellos...";
+		dialog.text = "¿Y dónde está ese maldito gordo? ¿A dónde se fue? Somos sus invitados y no nos está dando la bienvenida. ¿Lo ves, " + pchar.name + "? Quizás deberíamos revisar sus cofres, podría estar dentro de ellos...";
 		link.l1 = "No podrá abrir ningún cofre en el mundo de todos modos. ¡Silencio! ¡Steven! Hay ruido afuera...";
 		link.l1.go = "caroline_3";
 		break;
@@ -616,7 +616,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "caroline_7":
-		dialog.text = " Tiene sentido. ¡Pues ahora pagarán por todo! Dejaré de venderles suministros y provisiones - que se mueran de hambre. Mis hombres pueden soportar cualquier asedio, en caso de que los Narvales intenten asaltar el San Agustín, los dispararemos como perros\nVan a lamentar haber actuado contra mí de manera tan vil. ¡Clavaré el gordo trasero de Fazio a la pared detrás de mi silla!";
+		dialog.text = "Tiene sentido. ¡Pues ahora pagarán por todo! Dejaré de venderles suministros y provisiones... que se mueran de hambre. Mis hombres pueden soportar cualquier asedio, en caso de que los Narvales intenten asaltar el San Agustín, los dispararemos como perros.\nVan a lamentar haber actuado contra mí de manera tan vil. ¡Clavaré el gordo trasero de Fazio a la pared detrás de mi silla!";
 		link.l1 = "Espera, Steve. Parece que no está tan claro. Dame un día y trataré de investigar este lío. Estoy seguro de que Chad es el único responsable. Mató a Milrow, difundió el rumor de que fuiste tú, usó a la novia de Alan...";
 		link.l1.go = "caroline_8";
 		break;
@@ -641,14 +641,14 @@ void ProcessDialogEvent()
 		break;
 
 	case "narval":
-		dialog.text = "Bueno, " + pchar.name + ",  ¿supongo que tu investigación fue fructífera?";
+		dialog.text = "Bueno, " + pchar.name + ", ¿supongo que tu investigación fue fructífera?";
 		link.l1 = "Puedes decirlo así. Los Narvales no están involucrados en el atentado contra tu vida. Excepto Mary y esos tipos que nos encontraron en el 'Carolina'. Creo que ella los instigó a atacarnos. Fazio se vio obligado a enviarte la invitación. He encontrado la carta en su camarote que explica mucho. Léela.";
 		link.l1.go = "narval_1";
 		break;
 
 	case "narval_1":
 		RemoveItems(pchar, "letter_chad_1", 1);
-		dialog.text = "(leyendo)... Hum. Eso parece del tipo de Fazio. Claro, ¿qué podría hacer contra Chad... estaba salvando su pellejo gordo. Parece que todo fue por culpa de mi contramaestre...";
+		dialog.text = "(leyendo)... Hum. Parece de Fazio. Claro, ¿qué podría hacer contra Chad...? Estaba salvando su pellejo gordo. Parece que todo fue por culpa de mi contramaestre...";
 		link.l1 = "Ahora lo ves por ti mismo. Los motivos son claros, y sabemos por qué Chad mató a Chimiset y Alan. Kapper quería convertirse en el almirante de la isla. He visitado al jefe de los Narvales, Donald Greenspen. Juró que ni él ni ninguno de sus hombres estaban conspirando contra ti.";
 		link.l1.go = "narval_2";
 		break;
@@ -708,7 +708,7 @@ void ProcessDialogEvent()
 
 	case "mary_3":
 		dialog.text = "Bueno, dime, entonces...";
-		link.l1 = "Después de encontrarme en la bodega inundada, salí por el agujero y nadé entre los naufragios para encontrar un lugar seguro. Finalmente, subí a la vieja flauta y entré en el barco. Había una pelea entre una chica con chaqueta roja y dos tipos grandes...";
+		link.l1 = "Después de encontrarme en la bodega inundada, salí por el agujero y nadé entre los naufragios para encontrar un lugar seguro. Finalmente, subí al viejo filibote y entré en el barco. Había una pelea entre una chica con chaqueta roja y dos tipos grandes...";
 		if (pchar.questTemp.LSC.Mary == "alive")
 			link.l1.go = "mary_4"; // Мэри жива
 		else
@@ -747,7 +747,7 @@ void ProcessDialogEvent()
 
 	case "mary_9":
 		RemoveItems(pchar, "letter_chad_1", 1);
-		dialog.text = "  Hm.  Sí, estos son los escritos de Chad. Estoy muy familiarizado con su escritura campesina (leyendo) ¡Argh! ¡Increíble! ¡Bastardo! ¡Traidor! Bueno, ¡voy a colgarlo de sus propias tripas! ¡Layton! ¡Reúne a cinco hombres!  Pensándolo bien, Layton, espera, ¡despedido! \nLo haremos de manera inteligente. He estado planeando mejorar nuestras relaciones con los Rivados, esta es una oportunidad. Su hechicero Chimiset está siendo retenido en el Tártaro. Una prisión. Vamos a dejar que los Rivados liberen a su hombre ellos mismos y en el acto, matarán al traidor. \n¡Layton! Ve al Tártaro y ¡toma a todos nuestros guardias de su cubierta superior! " + pchar.name + ", también participarás en esto y estoy a punto de asignarte un papel muy importante. Encuentra al líder de los Rivados, Eddie el Negro, y negocia con él...";
+		dialog.text = "Hm. Sí, estos son los escritos de Chad. Estoy muy familiarizado con su escritura campesina (leyendo) ¡Argh! ¡Increíble! ¡Bastardo! ¡Traidor! Bueno, ¡voy a colgarlo de sus propias tripas! ¡Layton! ¡Reúne a cinco hombres! Pensándolo bien, Layton, espera, ¡despedido!\nLo haremos de manera inteligente. He estado planeando mejorar nuestras relaciones con los Rivados, esta es una oportunidad. Su hechicero Chimiset está siendo retenido en el Tártaro. Una prisión. Vamos a dejar que los Rivados liberen a su hombre ellos mismos y en el acto, matarán al traidor. \n¡Layton! Ve al Tártaro y ¡toma a todos nuestros guardias de su cubierta superior! " + pchar.name + ", también participarás en esto y estoy a punto de asignarte un papel muy importante. Encuentra al líder de los Rivados, Eddie el Negro, y negocia con él...";
 		link.l1 = "¿Yo? Hm. ¡Pero no conozco a nadie aquí!";
 		link.l1.go = "mary_10";
 		break;
@@ -1017,7 +1017,7 @@ void ProcessDialogEvent()
 
 	case "poison_5":
 		dialog.text = "Sí. Realmente debí haber prestado atención a su rostro pálido y manos temblorosas...";
-		link.l1 = "  Parece que se vio obligado a hacerlo. Está bien, voy a visitar a ese cerdo gordo y obtener la información de él. Estoy seguro de que sabe lo que necesito. ¡Que te mejores! ";
+		link.l1 = "Parece que se vio obligado a hacerlo. Está bien, voy a visitar a ese cerdo gordo y obtener la información de él. Estoy seguro de que sabe lo que necesito. ¡Que te mejores! ";
 		link.l1.go = "poison_6";
 		break;
 
@@ -1044,7 +1044,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "clear":
-		dialog.text = "¿Qué dices, " + pchar.name + "¿ Ya sé que has tratado con Kapper en 'Eva'. ¡Y ni siquiera limpiaste allí, ja-ja! Para ser honesto, ¡me admira! Matar a Chad y a sus hombres, ¡eso sí que es algo! Sí, Jan tenía razón al alabarte.";
+		dialog.text = "¿Qué dices, " + pchar.name + "? Ya sé que has tratado con Kapper en 'Eva'. ¡Y ni siquiera limpiaste allí, ja-ja! Para ser honesto, ¡me admira! Matar a Chad y a sus hombres, ¡eso sí que es algo! Sí, Jan tenía razón al alabarte.";
 		link.l1 = "No solo he tratado con Kapper, sino que también he prevenido un intento contra tu vida. Iban a envenenarte, Steven, pero he detenido a esos bastardos.";
 		link.l1.go = "clear_1";
 		break;
@@ -1134,14 +1134,14 @@ void ProcessDialogEvent()
 		break;
 
 	case "whyskey_final_3":
-		dialog.text = "Una idea sabia. Obligados a retirarse al San Gabriel, los Narvales, quizás, no se rendirán ante nuestras tropas demasiado pronto - pero morirán rápidamente sin suministros de provisiones o se verán obligados a lanzar un ataque desesperado. ¿Qué dices, " + pchar.name + "?";
-		link.l1 = "¿Qué digo yo... Digo que declarar una guerra contra los Narvales es un paso políticamente incorrecto.";
+		dialog.text = "Una idea sabia. Obligados a retirarse al San Gabriel, los Narvales quizás no se rendirán ante nuestras tropas demasiado pronto, pero morirán rápidamente sin suministros de provisiones o se verán obligados a lanzar un ataque desesperado. ¿Qué dices, " + pchar.name + "?";
+		link.l1 = "¿Qué pienso yo? Digo que declarar una guerra contra los Narvales es un paso políticamente incorrecto.";
 		link.l1.go = "whyskey_final_4";
 		break;
 
 	case "whyskey_final_4":
 		dialog.text = "¿Y dices eso después de haber matado a todos los hombres de Chad? ¡No olvides que todos ellos eran Narvales!";
-		link.l1 = " No todos ellos. Uno de los primeros de esos bastardos, Marcello Cyclops, no era un Narval. En realidad, era leal a los Rivados y, tal vez, planeaba unirse a ellos. Al fin y al cabo, es un mulato. Creo que los Narvales no son responsables del intento contra tu vida - solo unos pocos bastardos, que fueron reclutados por Kapper.";
+		link.l1 = "No todos ellos. Uno de los primeros de esos bastardos, Marcello Cyclops, no era un Narval. En realidad, era leal a los Rivados y, tal vez, planeaba unirse a ellos. Al fin y al cabo, es un mulato. Creo que los Narvales no son responsables del intento contra tu vida - solo unos pocos bastardos, que fueron reclutados por Kapper.";
 		link.l1.go = "whyskey_final_5";
 		break;
 
@@ -1171,7 +1171,7 @@ void ProcessDialogEvent()
 
 	case "whyskey_final_9":
 		dialog.text = "Hum. Tus palabras suenan sabias, pero aún no me has convencido.";
-		link.l1 = "También necesito salir de la Isla de alguna manera, así que tengo que llegar a la estatua de Kukulcán en el fondo del mar. Los Rivados no pueden ayudarme - ¿quizás los Narvales sí? Luchar contra ellos tampoco me ayudará.";
+		link.l1 = "También necesito salir de la Isla de alguna manera, así que tengo que llegar a la estatua de Kukulcán en el fondo del mar. Los Rivados no pueden ayudarme, ¿quizás los Narvales sí? Luchar contra ellos tampoco me ayudará.";
 		link.l1.go = "whyskey_final_10";
 		break;
 
@@ -1382,7 +1382,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Whiteboy":
-		dialog.text = "¿Chico blanco? Hm... No, no he oído hablar de él antes. Pero eso no significa que no esté aquí. No tengo que conocer a toda la escoria local, ¿estás de acuerdo?";
+		dialog.text = "¿Chico blanco? Hm... No, no he oído hablar de él antes. Pero eso no significa que no esté aquí. No tengo que conocer a toda la escoria, ¿estás de acuerdo?";
 		link.l1 = "Yo sí. Bien, le preguntaré a alguien más.";
 		link.l1.go = "exit";
 		npchar.quest.whiteboy = "true";
@@ -1390,7 +1390,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ships":
-		dialog.text = "   La Isla está dividida por Narvales, Rivados y mis hombres. También hay un área neutral. Yo controlo San Agustín y Tártaro\nRivados tienen Protector que es su residencia, Fury - cuarteles, Velasco - almacén. Se prohíbe el paso a extraños, debes decir una contraseña especial para poder llegar allí\nNarvales tienen muchos barcos en su posesión. Esmeralda es una residencia de su líder y una tienda. Así llamado 'Centro de ciencias San Gabriel' y una plataforma Fénix. Por último, pero no menos importante, Ceres Herrería - su taller. Cada barco excepto Esmeralda es un área restringida, debes decir una contraseña antes de que te dejen entrar\nEl resto de los barcos se consideran neutrales, los ciudadanos locales viven dentro de ellos. La taberna de Sancho está ubicada en la carabela Fleron y el hermano Julián es el jefe de la iglesia local en el galeón Gloria.";
+		dialog.text = "La Isla está dividida por Narvales, Rivados y mis hombres. También hay un área neutral. Yo controlo San Agustín y Tártaro\nRivados tienen Protector que es su residencia, Fury - cuarteles, Velasco - almacén. Se prohíbe el paso a extraños, debes decir una contraseña especial para poder llegar allí\nNarvales tienen muchos barcos en su posesión. Esmeralda es una residencia de su líder y una tienda. Así llamado 'Centro de ciencias San Gabriel' y una plataforma Fénix. Por último, pero no menos importante, Ceres Herrería - su taller. Cada barco excepto Esmeralda es un área restringida, debes decir una contraseña antes de que te dejen entrar\nEl resto de los barcos se consideran neutrales, los ciudadanos locales viven dentro de ellos. La taberna de Sancho está ubicada en la carabela Fleron y el hermano Julián es el jefe de la iglesia en el galeón Gloria.";
 		link.l1 = "¡Gracias por la información!";
 		link.l1.go = "exit";
 		npchar.quest.ships = "true";
@@ -1469,7 +1469,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "return_5":
-		dialog.text = "  Aquí estamos, amigo. Bueno, iré a ver a Svenson. También deberías verle y discutir nuestros planes futuros. ¡Ja, ja! Nos esperan días calurosos, ¿eh?";
+		dialog.text = "Aquí estamos, amigo. Bueno, iré a ver a Svenson. También deberías verle y discutir nuestros planes futuros. ¡Ja, ja! Nos esperan días calurosos, ¿eh?";
 		link.l1 = "Sin duda. ¡Nos vemos, Steven!";
 		link.l1.go = "return_6";
 		break;
@@ -1520,7 +1520,7 @@ void ProcessDialogEvent()
 
 	case "shadows_5":
 		DialogExit();
-		SetLaunchFrameFormParam("One hour later...", "Saga_FinalLedbitterStory", 0, 4);
+		SetLaunchFrameFormParam("Una hora más tarde...", "Saga_FinalLedbitterStory", 0, 4);
 		LaunchFrameForm();
 		WaitDate("", 0, 0, 0, 1, 10); // крутим время
 		RecalculateJumpTable();
@@ -1534,19 +1534,19 @@ void ProcessDialogEvent()
 		break;
 
 	case "shadows_7":
-		dialog.text = "¡Seguro! Ella acompañóa Butcher en todos sus viajes hasta que él la dejó por Beatrice. Jess no pudo perdonarlo por eso. La llamaban el talismán de Butcher, porque siempre tenía suerte mientras ella estaba con él. \nCréelo o no, pero tan pronto como se deshizo de ella en Barbados, su negocio fue mal, el botín se volvió pobre y el 'Neptuno' se convirtió en un huésped frecuente en el astillero de Isla Tesoro. Aunque se puede explicar por el hecho de que Butcher había estado pasando la mayor parte de su tiempo con Beatrice en la cabina en lugar de en la toldilla. \nBeatrice no era como Jessica, no era adicta a las aventuras y la guerra, aunque Nicolas le enseñó esgrima y navegación. Sí, le gustaba el romance del mar, pero no tenía suficiente dureza de carácter. El 'Neptuno' de Butcher no era el lugar adecuado para ella. Al final, ella la mató.";
+		dialog.text = "¡Seguro! Ella acompañóa Butcher en todos sus viajes hasta que él la dejó por Beatrice. Jess no pudo perdonarlo por eso. La llamaban el talismán de Butcher, porque siempre tenía suerte mientras ella estaba con él. \nCréelo o no, pero tan pronto como se deshizo de ella en Barbados, su negocio fue mal, el botín se volvió pobre y el 'Neptune' se convirtió en un huésped frecuente en el astillero de Isla Tesoro. Aunque se puede explicar por el hecho de que Butcher había estado pasando la mayor parte de su tiempo con Beatrice en la cabina en lugar de en la toldilla. \nBeatrice no era como Jessica, no era adicta a las aventuras y la guerra, aunque Nicolas le enseñó esgrima y navegación. Sí, le gustaba el romance del mar, pero no tenía suficiente dureza de carácter. El 'Neptune' de Butcher no era el lugar adecuado para ella. Al final, ella la mató.";
 		link.l1 = "¿Y qué hay de Jessica?";
 		link.l1.go = "shadows_8";
 		break;
 
 	case "shadows_8":
-		dialog.text = " Oh, ella era algo. Cada marinero del 'Neptuno' obedecía sus órdenes y no solo porque era la novia del capitán. Jess había dominado la esgrima y la navegación, los esfuerzos de Butcher no fueron en vano. Era dura e imprudente, y también tenía un buen aspecto\nMuchos hombres querían acostarse con ella, pero solo queríaa Butcher, molestarla era realmente arriesgado: muchos probaron los resultados en sus propias espaldas literalmente, y para los más persistentes sus lecciones de esgrima resultaron ser las últimas de sus vidas\nJess poseía una espada muy especial, la única de su tipo en el Caribe, no tengo ni idea de dónde la consiguió. Espada de hoja llameante. Nadie puede agarrar su hoja y hasta el más leve toque deja una herida terrible\nJess era aventurera no de nacimiento, sino por vocación. Por cierto, si necesitas saber más sobre ella, puedes hablar con un conocido tuyo. Él puede contarte mucho más de lo que yo puedo.";
+		dialog.text = "Oh, ella era algo. Cada marinero del 'Neptune' obedecía sus órdenes y no solo porque era la novia del capitán. Jess había dominado la esgrima y la navegación, los esfuerzos de Butcher no fueron en vano. Era dura e imprudente, y también tenía un buen aspecto\nMuchos hombres querían acostarse con ella, pero solo queríaa Butcher, molestarla era realmente arriesgado: muchos probaron los resultados en sus propias espaldas literalmente, y para los más persistentes sus lecciones de esgrima resultaron ser las últimas de sus vidas\nJess poseía una espada muy especial, la única de su tipo en el Caribe, no tengo ni idea de dónde la consiguió. Espada de hoja llameante. Nadie puede agarrar su hoja y hasta el más leve toque deja una herida terrible\nJess era aventurera no de nacimiento, sino por vocación. Por cierto, si necesitas saber más sobre ella, puedes hablar con un conocido tuyo. Él puede contarte mucho más de lo que yo puedo.";
 		link.l1 = "¿De veras? ¿Y quién es ese hombre?";
 		link.l1.go = "shadows_9";
 		break;
 
 	case "shadows_9":
-		dialog.text = "Jan Svenson. Forest Devil nunca lo admitirá, pero tenía planes para Jessica. Fue la época en que ya se había apoderado del Main Occidental y su fama era algo envidiable, así que la tigresa era tan buena como él\nDespués de que Butcher se deshiciera de Jess, Jan comenzó a visitar Barbados sospechosamente a menudo, sacudiendo la guarnición inglesa. Como sabes, Jessica era hija de un plantador de Bridgetown\nEn fin, sus planes eran bien conocidos en círculos privados, pero nadie se atrevía a hablar de ello, Jan puede estar sentado en sus laureles en Blueweld hoy en día, pero en aquel entonces cualquier palabra equivocada en su dirección podía resultar mal\nAl final, no funcionó para ellos. Jess no pudo vivir con la forma en que Butcher la trató y se vengó un año después con la ayuda de la Máscara. Esta venganza terminó terriblemente para todos: para Butcher, para Beatrice, para la Máscara y para ella misma. Todos murieron.";
+		dialog.text = "Jan Svenson. Forest Devil nunca lo admitirá, pero tenía planes para Jessica. Fue la época en que ya se había apoderado de Tierra Firme occidental y su fama era algo envidiable, así que la tigresa era tan buena como él\nDespués de que Butcher se deshiciera de Jess, Jan comenzó a visitar Barbados sospechosamente a menudo, sacudiendo la guarnición inglesa. Como sabes, Jessica era hija de un plantador de Bridgetown\nEn fin, sus planes eran bien conocidos en círculos privados, pero nadie se atrevía a hablar de ello, Jan puede estar sentado en sus laureles en Blueweld hoy en día, pero en aquel entonces cualquier palabra equivocada en su dirección podía resultar mal\nAl final, no funcionó para ellos. Jess no pudo vivir con la forma en que Butcher la trató y se vengó un año después con la ayuda de la Máscara. Esta venganza terminó terriblemente para todos: para Butcher, para Beatrice, para la Máscara y para ella misma. Todos murieron.";
 		link.l1 = "No todos ellos. El Butcher sigue vivo.";
 		link.l1.go = "shadows_10";
 		break;
@@ -1865,7 +1865,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "guardoftruth_10":
-		dialog.text = "Buena suerte, " + pchar.name + "¡";
+		dialog.text = "Buena suerte, " + pchar.name + ".";
 		link.l1 = "... ";
 		link.l1.go = "guardoftruth_11";
 		break;
@@ -2353,7 +2353,7 @@ void ProcessDialogEvent()
 
 	case "SharkGoldFleet_05":
 		dialog.text = "¡Exactamente! Pero ahora no puedo decidir entre estos tres nombres. Así que vamos, ayuda. Como desees.";
-		link.l1 = " Sugiero llamarlo 'Fantasma'. ¡Entonces todos los mercaderes izarán la bandera blanca tan pronto como te vean en el horizonte!";
+		link.l1 = "Sugiero llamarlo 'Fantasma'. ¡Entonces todos los mercaderes izarán la bandera blanca tan pronto como te vean en el horizonte!";
 		link.l1.go = "SharkGoldFleet_05f";
 		link.l2 = "Me gusta el nombre 'Shark'. ¡Todos deben saber que el barco no es de un recién llegado, sino del mismo jefe de la Hermandad de la Costa!";
 		link.l2.go = "SharkGoldFleet_05a";
@@ -2364,7 +2364,7 @@ void ProcessDialogEvent()
 	case "SharkGoldFleet_05f":
 		pchar.questTemp.SharkGoldFleet.KGBB = "Phantom";
 		dialog.text = "¡Mira, incluso los militares empezarán a hacer lo mismo, ja! Entonces, está decidido. Sostén la jarra, amigo. Brindemos por mi nuevo barco. ¡Por 'Fantasma!'";
-		link.l1 = " ¡Por 'Fantasma!'";
+		link.l1 = "¡Por 'Fantasma!'";
 		link.l1.go = "SharkGoldFleet_06";
 		break;
 
@@ -2438,13 +2438,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "SharkGoldFleet_12":
-		dialog.text = "Exactamente. Mira, como probablemente sabes, la 'Flota de Oro' se reúne en Porto Bello y de ahí va a La Habana. Después de La Habana, ya es inútil interceptarla: va a través del Atlántico a España con tal escolta que solo un completo cretino se atrevería a acercarse. En el momento de la transición de Porto Bello a La Habana, la situación no es mucho mejor. Por supuesto, puedes intentarlo, pero para ello necesitas reunir una escuadra capaz de romper fuertes como nueces. Pero en Porto Bello, los barcos convergen de todo Maine, y allí ya no están particularmente protegidos.";
-		link.l1 = "Solo ahora el tiempo de la transición y los nombres de tales barcos están estrictamente clasificados. No vamos a quedarnos en Porto Bello durante medio año e interceptar todos los barcos españoles que van al puerto.";
+		dialog.text = "Exactamente. Mira, como probablemente sabes, la 'Flota de Oro' se reúne en Portobello y de ahí va a La Habana. Después de La Habana, ya es inútil interceptarla: va a través del Atlántico a España con tal escolta que solo un completo cretino se atrevería a acercarse. En el momento de la transición de Portobello a La Habana, la situación no es mucho mejor. Por supuesto, puedes intentarlo, pero para ello necesitas reunir una escuadra capaz de romper fuertes como nueces. Pero en Portobello, los barcos convergen de toda Tierra Firme, y allí ya no están particularmente protegidos.";
+		link.l1 = "Solo ahora el tiempo de la transición y los nombres de tales barcos están estrictamente clasificados. No vamos a quedarnos en Portobello durante medio año e interceptar todos los barcos españoles que van al puerto.";
 		link.l1.go = "SharkGoldFleet_13";
 		break;
 
 	case "SharkGoldFleet_13":
-		dialog.text = "Por supuesto que no lo haremos. Desde Cartagena, por ejemplo, los barcos van solos, y, como bien has señalado, sólo Dios sabe qué tipo de barcos son y cuándo irán. Pero desde Caracas, junto a la cual hay una mina española, y que se encuentra bastante lejos de Porto Bello, los barcos no están completamente solos.";
+		dialog.text = "Por supuesto que no lo haremos. Desde Cartagena, por ejemplo, los barcos van solos, y, como bien has señalado, sólo Dios sabe qué tipo de barcos son y cuándo irán. Pero desde Caracas, junto a la cual hay una mina española, y que se encuentra bastante lejos de Portobello, los barcos no están completamente solos.";
 		link.l1 = "¿Cómo es que no está completamente solo?";
 		link.l1.go = "SharkGoldFleet_14";
 		break;
@@ -2456,7 +2456,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "SharkGoldFleet_15":
-		dialog.text = "Correcto. Antes de que el barco principal zarpe, un barco mensajero va de Caracas a Porto Bello, informando el lugar y la fecha de la reunión, así como el nombre del barco español. Luego regresa y lleva la confirmación de que el barco será recibido en el momento y lugar correctos. Solo después de eso, nuestro objetivo contigo se avanza desde Caracas.";
+		dialog.text = "Correcto. Antes de que el barco principal zarpe, un barco mensajero va de Caracas a Portobello, informando el lugar y la fecha de la reunión, así como el nombre del barco español. Luego regresa y lleva la confirmación de que el barco será recibido en el momento y lugar correctos. Solo después de eso, nuestro objetivo contigo se avanza desde Caracas.";
 		link.l1 = "Pero si interceptamos al mensajero, entonces el barco en Caracas no recibirá confirmación y no saldrá del puerto. ¿Tienes alguna idea sobre esto? Además, ¿cómo vamos a atrapar al propio mensajero? Tampoco sabemos cuándo se irá.";
 		link.l1.go = "SharkGoldFleet_16";
 		break;
@@ -2468,19 +2468,19 @@ void ProcessDialogEvent()
 		break;
 
 	case "SharkGoldFleet_17":
-		dialog.text = "¡Exactamente! Y tuvimos suerte: logré averiguar de una fuente confiable que en Caracas ahora están buscando un mensajero así para enviarlo con una carta en las próximas tres semanas. ¡Y tú justo tienes un barco poderoso y rápido, y además construido por los españoles! Obtén una licencia de GVIK, para mayor verosimilitud, por seis meses de una vez, compra suficientes mercancías en Caracas para una reventa lucrativa en Porto Bello, y luego acércate al jefe local de la autoridad portuaria y pregunta si necesitas llevar algo por el camino. \nSi la Autoridad Portuaria pregunta, preséntate como español. Y sí, no pienses ni por un momento en llevarte un escuadrón contigo. No necesitamos llamar demasiado la atención, de lo contrario, toda la empresa podría venirse abajo.";
+		dialog.text = "¡Exactamente! Y tuvimos suerte: logré averiguar de una fuente confiable que en Caracas ahora están buscando un mensajero así para enviarlo con una carta en las próximas tres semanas. ¡Y tú justo tienes un barco poderoso y rápido, y además construido por los españoles! Obtén una licencia de GVIK, para mayor verosimilitud, por seis meses de una vez, compra suficientes mercancías en Caracas para una reventa lucrativa en Portobello, y luego acércate al jefe de la autoridad portuaria y pregunta si necesitas llevar algo por el camino. \nSi la Autoridad Portuaria pregunta, preséntate como español. Y sí, no pienses ni por un momento en llevarte un escuadrón contigo. No necesitamos llamar demasiado la atención, de lo contrario, toda la empresa podría venirse abajo.";
 		link.l1 = "¿Y con los documentos que me darán, averiguaré la fecha y el lugar de la reunión del barco y el convoy?";
 		link.l1.go = "SharkGoldFleet_18";
 		break;
 
 	case "SharkGoldFleet_18":
-		dialog.text = "No tan simple. Te digo: los documentos están sellados. Y no puedes abrirlos tú mismo. Los abrirán en la autoridad portuaria de Porto Bello, y luego escribirán una respuesta y, si eres tan amable de decir que vuelves a Caracas, te pedirán que lo lleves allí. La respuesta, por supuesto, también estará sellada.";
+		dialog.text = "No tan simple. Te digo: los documentos están sellados. Y no puedes abrirlos tú mismo. Los abrirán en la autoridad portuaria de Portobello, y luego escribirán una respuesta y, si eres tan amable de decir que vuelves a Caracas, te pedirán que lo lleves allí. La respuesta, por supuesto, también estará sellada.";
 		link.l1 = "¿Y cómo puedo averiguar entonces el lugar y la fecha de la reunión?";
 		link.l1.go = "SharkGoldFleet_19";
 		break;
 
 	case "SharkGoldFleet_19":
-		dialog.text = "Tendrás que ser astuto y de alguna manera espiarlo... Por ejemplo, en el momento en que se abran los documentos en Porto Bello y escriban la respuesta. O simplemente róbalos cuando te den una confirmación, que necesitarás llevar a Caracas. Pero esta no es una buena opción: después de esto, todo puede salir mal.";
+		dialog.text = "Tendrás que ser astuto y de alguna manera espiarlo... Por ejemplo, en el momento en que se abran los documentos en Portobello y escriban la respuesta. O simplemente róbalos cuando te den una confirmación, que necesitarás llevar a Caracas. Pero esta no es una buena opción: después de esto, todo puede salir mal.";
 		link.l1 = "Es difícil, por supuesto... Pero creo que puedo manejarlo.";
 		link.l1.go = "SharkGoldFleet_20";
 		break;
@@ -2549,12 +2549,12 @@ void ProcessDialogEvent()
 		dialog.text = "No, ahora tienes 'Fortuna', ¡jaja! Bueno, cuéntame cómo te fue.";
 		if (pchar.questTemp.SharkGoldFleet == "LightVarToShark")
 		{
-			link.l1 = "Todo salió a la perfección: logré hacerme pasar por un comerciante honesto y confiable. Llevé los documentos a Porto Bello, donde logré distraer al jefe local de la autoridad portuaria durante cinco minutos y reescribí para mí la fecha y las coordenadas de la reunión de los barcos con el cargamento y el escuadrón militar.";
+			link.l1 = "Todo salió a la perfección: logré hacerme pasar por un comerciante honesto y confiable. Llevé los documentos a Portobello, donde logré distraer al jefe de la autoridad portuaria durante cinco minutos y reescribí para mí la fecha y las coordenadas de la reunión de los barcos con el cargamento y el escuadrón militar.";
 			link.l1.go = "SharkGoldFleet_27";
 		}
 		else
 		{
-			link.l1 = "Hubo algunas complicaciones menores. La carta fue enviada a Porto Bello por mensajero. La intercepté, la entregué al destinatario e incluso recibí una respuesta, pero el jefe de la autoridad portuaria adivinó que yo no era la persona que debía traer los documentos. Tuve que salir de allí a la fuerza. Pero averigüé la fecha y las coordenadas de la reunión del barco con la carga y el escuadrón militar, y entregué la respuesta a Caracas, ¡así que la producción nos está esperando!";
+			link.l1 = "Hubo algunas complicaciones menores. La carta fue enviada a Portobello por mensajero. La intercepté, la entregué al destinatario e incluso recibí una respuesta, pero el jefe de la autoridad portuaria adivinó que yo no era la persona que debía traer los documentos. Tuve que salir de allí a la fuerza. Pero averigüé la fecha y las coordenadas de la reunión del barco con la carga y el escuadrón militar, y entregué la respuesta a Caracas, ¡así que la producción nos está esperando!";
 			link.l1.go = "SharkGoldFleet_30";
 		}
 		break;
@@ -2596,7 +2596,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "SharkGoldFleet_31":
-		dialog.text = "Y tú reflexionas. En Porto Bello saben que el barco con el cargamento definitivamente saldrá de Caracas, porque llevaste la carta de respuesta allí. Pero como te has delatado, harán todo lo posible para impedir que intercepemos este barco. Creo que la escuadra llegará allí antes. Eso es lo que yo haría. Así que, prepárate para una dura pelea. Retirarse tarde.";
+		dialog.text = "Y tú reflexionas. En Portobello saben que el barco con el cargamento definitivamente saldrá de Caracas, porque llevaste la carta de respuesta allí. Pero como te has delatado, harán todo lo posible para impedir que intercepemos este barco. Creo que la escuadra llegará allí antes. Eso es lo que yo haría. Así que, prepárate para una dura pelea. Retirarse tarde.";
 		link.l1 = "No te preocupes. Tú y yo somos dos lobos de mar, ¡no pasamos por esto!";
 		link.l1.go = "SharkGoldFleet_32";
 		break;
@@ -2632,7 +2632,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "¡Maldita sea! Era una idea tan buena... Y como resultado, los gastos de esta campaña son más que las ganancias. ¡Charles, te di el mando y lograste perderlo todo!";
-				link.l1 = " No digas nada... Yo mismo estoy malditamente enfadado. ¡Cuánta presa se nos ha escapado de las manos!..";
+				link.l1 = "No digas nada... Yo mismo estoy malditamente enfadado. ¡Cuánta presa se nos ha escapado de las manos!..";
 				link.l1.go = "SharkGoldFleet_37";
 			}
 		}

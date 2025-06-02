@@ -42,8 +42,8 @@ void ProcessDialogEvent()
 		break;
 		
  		case "Node_3":
-			dialog.text = "Jesteś w błędzie. Twój interes z tamtym bankierem został ujawniony. Wkrótce, gubernator-general dowie się o twoim małym interesie i nie uciekniesz od szubienicy. Ale zrobię ci przysługę, zabijając cię tutaj i teraz!";
-			link.l1 = "Spróbuj, psie gubernatora!";
+			dialog.text = "Jesteś w błędzie. Twój interes z tamtym bankierem został ujawniony. Wkrótce, gubernator-generalny dowie się o twoim małym interesie i nie uciekniesz od szubienicy. Ale zrobię ci przysługę, zabijając cię tutaj i teraz!";
+			link.l1 = "Spróbuj tylko, psie gubernatora!";
 			link.l1.go = "Node_4";
 		break;
 		
@@ -92,8 +92,8 @@ void ProcessDialogEvent()
 		break;
 			
 		case "Node_rat_1":
-			dialog.text = "Nie, on nie jest! Wynoś się!";
-			link.l1 = "Wygląda na to, że kłamiesz. Przeprowadzę przeszukanie domu i zobaczę...";
+			dialog.text = "Nie, nie ma go tu! Wynoś się!";
+			link.l1 = "Wygląda na to, że kłamiesz. Przeszukam dom i sam zobaczę...";
 			link.l1.go = "Node_rat_2";
 		break;
 		
@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Contraoffer_patrol_1":
-			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > drand(120))
+			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > hrand(120))
 			{
 				dialog.text = "Nie wiedziałeś, co? Hmm... wygląda na to, że nie kłamiesz. Ale mimo to naruszyłeś prawo. Nie aresztuję cię, ale muszę nałożyć na ciebie grzywnę. A jeśli chodzi o ładunek... porozmawiamy o nim z drugim uczestnikiem umowy.";
 				link.l1 = "Ile wynosi ta kara?";
@@ -190,7 +190,7 @@ void ProcessDialogEvent()
 		
 		case "Contraoffer_patrol_pay1":
 			iCGood = sti(pchar.GenQuest.Contraoffer.Trader.Goods);
-			if (GetSummonSkillFromName(pchar, SKILL_FORTUNE) > drand(120))
+			if (GetSummonSkillFromName(pchar, SKILL_FORTUNE) > hrand(120))
 			{
 				dialog.text = "Teraz mówisz do rzeczy... Zobaczmy twoje monety... Wierzę, że usłyszałem dość konkretną liczbę - "+FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ))+". Ponieważ mamy teraz trzech uczestników, chciałbym dostać "+FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.PatrolSumm))+". To od ciebie i to samo od twojego przyjaciela.";
 				link.l1 = "Oczywiście, oficerze. Oto moje błyszczące monety, czy raczej, przepraszam, wasze błyszczące monety - właśnie przez przypadek upuściliście je na plaży... I nie ma żadnego "+GetGoodsNameAlt(iCGood)+" tutaj, ha-ha, jak ci mówiłem.";
@@ -329,7 +329,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_poorman_1_1":
-			pchar.GenQuest.Device.Shipyarder.Poorsumm = 1000+drand(1000);
+			pchar.GenQuest.Device.Shipyarder.Poorsumm = 1000+hrand(1000);
 			dialog.text = "Słuchaj, czy mówisz o tym instrumencie? Należy do mnie i nie ukradłem go! I nie zamierzam oddawać go za darmo. Jeśli chcesz go zdobyć, zapłać mi "+FindRussianMoneyString(sti(pchar.GenQuest.Device.Shipyarder.Poorsumm))+".";
 			if (sti(pchar.money) >= sti(pchar.GenQuest.Device.Shipyarder.Poorsumm))
 			{
@@ -645,7 +645,7 @@ void ProcessDialogEvent()
 		case "PostAgent_inTavern_5":
 			NextDiag.currentnode = "PostAgent_inTavern_6";
 			RemoveItems(PChar, pchar.questTemp.WPU.Current.Item, 1);
-			pchar.questTemp.WPU.Postcureer.AgentChance = drand(4);//шанс, что раскроют обман - 20%
+			pchar.questTemp.WPU.Postcureer.AgentChance = hrand(4);//шанс, что раскроют обман - 20%
 			DialogExit();
 			AddDialogExitQuest("PostAgent_inTavern_Room_end");
 		break;

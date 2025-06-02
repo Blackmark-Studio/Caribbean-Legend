@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 		
 		case "meeting": // первая встреча
 			dialog.text = "¿Has sido capitán?";
-			link.l1 = "¿Por qué he estado? Sigo siendo un capitán... ¡a-ah, lo entiendo! Crees que mi barco se ha hundido o ha sido destruido por los arrecifes. No. Ella está cerca de las costas del Main Occidental. Y he llegado a este lugar en una barca, aunque terminó mal, la barca tuvo un agujero en el casco y se hundió.";
+			link.l1 = "¿Por qué he estado? Sigo siendo un capitán... ¡a-ah, lo entiendo! Crees que mi barco se ha hundido o ha sido destruido por los arrecifes. No. Ella está cerca de las costas de Tierra Firme occidental. Y he llegado a este lugar en una barca, aunque terminó mal, la barca tuvo un agujero en el casco y se hundió.";
 			link.l1.go = "meeting_1";
 		break;
 		
@@ -75,7 +75,7 @@ void ProcessDialogEvent()
 		
 		case "meeting_5":
 			dialog.text = "Ahora veo. Eres igual que Adolf Barbier, leíste demasiado sobre el capitán Alvarado y decidiste buscar el oro del almirante de Betancourt. Ay, capitán, si un bribón tan astuto como Barbier no pudo encontrarlo, dudo que tú lo logres tampoco\nY realmente pienso que no hay oro del almirante, Antonio debe haberlo inventado solo para mostrarnos qué tan importante era su abuelo... Bueno, entonces te quedarás con nosotros. Llegar aquí fue fácil, pero irse debe ser imposible. Quiero decir, irse de aquí entero.";
-			link.l1 = " No es nada. Creo que podré encargarme de eso, no me refiero al oro de Betancourt que has mencionado - es la primera vez que oigo hablar de ello, me refiero a dejar la Isla. Vivo. Fue un placer hablar contigo, Tanneke. ¡Hasta luego!";
+			link.l1 = "No es nada. Creo que podré encargarme de eso, no me refiero al oro de Betancourt que has mencionado, es la primera vez que oigo hablar de ello, me refiero a dejar la Isla. Vivo. Fue un placer hablar contigo, Tanneke. ¡Hasta luego!";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 		break;

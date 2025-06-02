@@ -2,14 +2,14 @@
 
 }
 
-Key Layout {Раскладка}
+Key Layout {Distribución de teclas}
 Key Layout_descr
 {
-Альтернативная раскладка содержит ряд изменений в управлении, добавляет новые команды и открывает новые возможности:
+La distribución alternativa incluye una serie de cambios en los controles, añade nuevos comandos y abre nuevas posibilidades:
 ~
-- изменены команды быстрых действий и обыск трупов
-- изменено использование усиляющих зелий
-- вкладки меню персонажа доступны на отдельные клавиши
+- se han cambiado los comandos de acción rápida y el saqueo de cadáveres
+- se ha cambiado el uso de pociones potenciadoras
+- las pestañas del menú de personaje están disponibles en teclas separadas
 }
 
 OptKurs {Rumbo óptimo}
@@ -55,7 +55,7 @@ GuideFight_descr
 {
 Te llevará tiempo dominar el combate terrestre del juego. Si tienes activadas las pistas de control, verás las teclas de acceso rápido en la esquina inferior derecha de la pantalla.
 ~
-Intenta dominar primero la combinación 'Parar - Golpear'. Si logras parar el ataque de tu oponente, quedará aturdido y perderá energía, lo que te dará la oportunidad de atacar con seguridad.
+Intenta dominar primero la combinación 'Parar: Golpear'. Si logras parar el ataque de tu oponente, quedará aturdido y perderá energía, lo que te dará la oportunidad de atacar con seguridad.
 ~
 Utiliza distintos tipos de ataque para saber cuál inflige más daño. Cada arma del juego tiene su tipo de ataque preferido. Experimenta.
 
@@ -169,7 +169,9 @@ Las buenas fuentes de doblones incluyen la caza de tesoros, los depósitos banca
 
 }
 
-Box {Almacenamiento de artículos}
+Dubloons_controlsimg1 {LICommandsActivate}
+
+Box {Almacenamiento de objetos}
 Box_descr
 {
 Los cofres de tu camarote pueden almacenar un número ilimitado de objetos personales. Además del equipo obligatorio en tus ranuras de equipo, es aconsejable que sólo lleves contigo pociones, amuletos y munición.
@@ -271,9 +273,9 @@ La regla de oro: en batalla, es preferible el modo Velas de batalla; fuera de el
 }
 
 Navigation_controlsimg1 {Ship_SailUp}
-Navigation_controlsimg2 {Ship_SailDown}
-Navigation_controlsimg3 {MiniMapZoomIn}
-Navigation_controlsimg4 {MiniMapZoomOut}
+Navigation_controlsimg2 {Ship_TurnLeft}
+Navigation_controlsimg3 {Ship_SailDown}
+Navigation_controlsimg4 {Ship_TurnRight}
 
 Stealth{Sigilo}
 Stealth_descr
@@ -337,11 +339,11 @@ CameraControl{¡Ahoy!}
 CameraControl_descr
 {
 Bienvenido al Modo Historia.  
-Antes de enfrentarte al mar abierto, debes sobrevivir en la tierra. El Nuevo Mundo no tolera a los tontos - y no ofrece segundas oportunidades.
+Antes de enfrentarte al mar abierto, debes sobrevivir en la tierra. El Nuevo Mundo no tolera a los tontos y no ofrece segundas oportunidades.
 ~  
-Para ayudarte a encontrar tu equilibrio en alta mar, hemos preparado una aventura tutorial en la isla de Martinica. Allí, dominarás las habilidades que todo capitán debe conocer - y ganarás tu primer mando.
+Para ayudarte a encontrar tu equilibrio en alta mar, hemos preparado una aventura tutorial en la isla de Martinica. Allí, dominarás las habilidades que todo capitán debe conocer y ganarás tu primer mando.
 ~  
-Muévete con tus teclas, mira a tu alrededor con el ratón. Puedes caminar, correr o hacer sprint cuando sea necesario. El menú de acción también será útil con frecuencia - especialmente para el viaje rápido, que se desbloquea después del tutorial.
+Muévete con tus teclas, mira a tu alrededor con el ratón. Puedes caminar, correr o hacer sprint cuando sea necesario. El menú de acción también será útil con frecuencia: especialmente para el viaje rápido, que se desbloquea después del tutorial.
 ~  
 Tu leyenda comienza aquí.  
 ¡Nos vemos en el mar!
@@ -359,11 +361,11 @@ CameraControlFP_descr
 {
 ¡Bienvenido al Nuevo Mundo!
 ~  
-Estas aguas son implacables - y la fortuna rara vez favorece a los imprudentes. Comienza con calma: viaja entre colonias amigas, corre en recados, entrega bienes y pasajeros, participa en el comercio local.
+Estas aguas son implacables y la fortuna rara vez favorece a los imprudentes. Comienza con calma: viaja entre colonias amigas, corre en recados, entrega bienes y pasajeros, participa en el comercio.
 ~  
-Los doblones de oro te comprarán mapas de tesoros enterrados. Los pesos de plata mantendrán tu barco a flote y te permitirán contratar oficiales - y sin ellos, incluso un comerciante solitario puede ser tu perdición.
+Los doblones de oro te comprarán mapas de tesoros enterrados. Los pesos de plata mantendrán tu barco a flote y te permitirán contratar oficiales y sin ellos, incluso un comerciante solitario puede ser tu perdición.
 ~  
-Muévete con tus teclas, mira a tu alrededor con el ratón. Puedes caminar, correr o hacer sprint cuando sea necesario. El menú de acción también será útil - especialmente para el viaje rápido y otras características avanzadas.
+Muévete con tus teclas, mira a tu alrededor con el ratón. Puedes caminar, correr o hacer sprint cuando sea necesario. El menú de acción también será útil: especialmente para el viaje rápido y otras características avanzadas.
 ~  
 Tu leyenda comienza aquí.  
 ¡Nos vemos en el mar!
@@ -388,5 +390,48 @@ Cuanto más tiempo apuntas, más daño causará tu disparo. Un disparo a la cabe
 
 MarksmanMode_controlsimg1 {ChrAiming}
 
+Overload {Sobrecarga}
 
+Overload_descr
+{
+Te has encontrado por primera vez con los límites de peso transportable. 
+Cada personaje en el juego tiene un peso máximo limitado, y su límite depende de la fuerza, las habilidades y los amuletos.
+Cada objeto también tiene su propio peso, y hasta los más ligeros pueden causar sobrecarga en grandes cantidades, lo que a su vez conlleva penalizaciones a las características y habilidades.
+Intenta encontrar algo que aumente el peso máximo transportable de tu personaje, por ejemplo, en un comerciante. 
+}
 
+Logbook {Diario de a bordo y documentos}
+
+Logbook_descr
+{
+Cada misión que aceptas se registra en el Diario. Es muy importante leer atentamente los diálogos y las entradas del Diario: a menudo contienen aclaraciones e instrucciones importantes para las siguientes acciones.
+Además de las misiones, el Diario contiene otra información importante: en la sección Documentos puedes leer todas las notas encontradas, y secciones como Comercio y Libro de caja te serán útiles más adelante.
+Familiarízate con las entradas del Diario pulsando F3.
+~
+Y recuerda: Caribbean Legend es un juego desafiante, y la profundidad de algunas misiones puede no ser obvia. No dudes en pedir consejos en Discord: seguro que te ayudarán. 
+}
+
+DeadSearch {Saqueo de cadáveres}
+
+DeadSearch_descr
+{
+Después de cualquier combate, como en cualquier buen juego de rol, es hora de recoger trofeos.
+Puedes saquear a cualquier enemigo caído pulsando 1 cerca de su cuerpo, pero no todos tendrán algo valioso en los bolsillos.
+~
+Si los cuerpos están demasiado juntos y se estorban entre sí, puedes pulsar el botón "No saquear" en el menú de saqueo: esto prohibirá saquear ese cuerpo para siempre.
+~
+Estos tipos seguramente tienen al menos un elixir curativo en los bolsillos, que Alonso necesita urgentemente.
+}
+
+Trading {Comercio y precios}
+
+Trading_descr
+{
+El comercio es un sistema profundo y complejo donde muchos factores afectan el precio de compra y venta.
+~
+En el comercio terrestre se evalúa principalmente la habilidad de Comercio del jugador y su historia.
+~
+En el comercio marítimo hay más factores: además de los mencionados, el precio depende del tipo de bien, su origen, el tamaño de la colonia, las rutas de exportación e importación, así como de las habilidades y talentos del tesorero.
+~
+Tarde o temprano lo entenderás todo, pero por ahora conviene comprar algún amuleto útil para el Comercio.
+}

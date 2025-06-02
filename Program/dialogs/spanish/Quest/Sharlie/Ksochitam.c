@@ -22,14 +22,14 @@ void ProcessDialogEvent()
 
 	// капитан-нежить Санта-Квитерии
 	case "SQC_skeletcap":
-		PlaySound("Types\Spanish\skel.wav");
+		PlaySound("Types\Spanish\skel-02.wav");
 		dialog.text = "Tú... aún tendrás... que morir. Él vendrá... y te matará... como nos ha matado a todos nosotros... como ha matado a todos aquí...";
 		link.l1 = "¿Qué? ¿Quién eres tú? ¿De quién estás hablando?";
 		link.l1.go = "SQC_skeletcap_1";
 		break;
 
 	case "SQC_skeletcap_1":
-		PlaySound("Types\Spanish\skel.wav");
+		PlaySound("Types\Spanish\skel-02.wav");
 		dialog.text = "Es enorme... es invulnerable... mata... te matará. Debo matarte... si te mato, no te convertirás en uno de nosotros... no entiendes... morirás por su espada... te convertirás en lo que somos... como todos en la Santa Quiteria...";
 		link.l1 = "¡De ninguna manera!";
 		link.l1.go = "SQC_skeletcap_2";
@@ -57,7 +57,7 @@ void ProcessDialogEvent()
 	// Страж маски Кукулькана
 	case "guardmask":
 		PlaySound("Voice\Spanish\sharlie\Hranitel Maski Kukulkana.wav");
-		dialog.text = "¡Te he estado esperando por tanto tiempo!..";
+		dialog.text = "¡He estado esperando por ti, desde hace mucho tiempo!";
 		link.l1 = "¡Erm!.. ¡Impresionante!... ¡Es todo un esqueleto!";
 		link.l1.go = "guardmask_1";
 		break;
@@ -139,7 +139,7 @@ void ProcessDialogEvent()
 	case "guardmask_11":
 		RemoveItems(pchar, "knife_01", 1);
 		PlaySound("interface\important_item.wav");
-		Log_Info("Has entregado la Garra del Jefe");
+		Log_Info("¡Has entregado la Garra del Jefe!");
 		RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE);
 		dialog.text = "¡Oh, cuánto tiempo he esperado este momento! Ahora, por fin puedo irme... Pero como regalo de despedida, me gustaría transmitirte una partícula de mi poder. Este será el último presente que Alberto Casco dará jamás.";
 		link.l1 = "...";
@@ -177,7 +177,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "guardmask_17":
-		dialog.text = "El pueblo Itza posee gran fuerza e ingenio. Odian a los blancos sin importar su nacionalidad y destruirán a cualquier extranjero que invada su territorio. Los simples guerreros Itza no se involucrarán en ningún tipo de comunicación, pero Kanek o su hijo Urakan, si ven la máscara... podrían hacerlo. Si logras llegar a Tayasal con vida, lo verás por ti mismo. Pero, ¿serás capaz de salir de allí...";
+		dialog.text = "El pueblo Itza posee gran fuerza e ingenio. Odian a los blancos sin importar su nacionalidad y destruirán a cualquier extranjero que invada su territorio. Los simples guerreros Itza no se involucrarán en ningún tipo de comunicación, pero Kanek o su hijo Urakan, si ven la máscara... podrían hacerlo. Si logras llegar a Tayasal con vida, lo verás por ti mismo. Pero, ¿serás capaz de salir de allí...?";
 		link.l1 = "¿Ofrece Kanek a todos los blancos que llegan a Tayasal como sacrificio?";
 		link.l1.go = "guardmask_18";
 		break;

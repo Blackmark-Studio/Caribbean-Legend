@@ -74,7 +74,7 @@ FortOrange_town	{Maroon Town}
 Providence_town	{San Andrés}
 Estate          {Domaine d'Oglethorpe, Angleterre}
 DesMoines 		{Des Moines}
-Minentown_town 	{Mine de Los Teques}
+LosTeques_town 	{Mine de Los Teques}
 ExitMine 		{Passage vers la mine}
 Factoria 		{Manufacture}						   
 
@@ -316,8 +316,8 @@ SanAndres Port	{Port de San Andrés}
 IslaMona {Isla Mona}
 IslaMona Town {Isla Mona}
 
-Minentown		{Mine de Los Teques}
-Minentown Town	{Mine de Los Teques}
+LosTeques		{Mine de Los Teques}
+LosTeques Town	{Mine de Los Teques}
 
 Duel Field		{Terrain de duel}
 Boarding deck	{Pont d'embarquement} 
@@ -374,7 +374,8 @@ UnderWater		{Sous l'eau}
 Grotto			{Grotte}
 Dunes house		{Maison de la dune}
 Torture room	{Salle de torture}
-Wine Cellar 	{Cave à Vin}
+Wine Cellar 	{Cave à vin}
+
 cabine			{Cabine}
 My_Campus		{Quartier des officiers}
 My_Deck_Medium	{Pont-batterie}
@@ -437,3 +438,5 @@ River {Rive de la rivière}
 Jungle Fort {Fort de la jungle}
 Basement {Baraquement}
 Ruins {Ruines}
+
+Ulysse {Aboard the Ulysse}

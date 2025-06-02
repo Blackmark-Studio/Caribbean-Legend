@@ -20,7 +20,7 @@ void ProcessDialogEvent()
 		
 		case "First time":
 			dialog.text = "Czego ci potrzeba?";
-			link.l1 = "Nic.";
+			link.l1 = "Mi? Niczego.";
 			link.l1.go = "exit";
 		break;
 		
@@ -34,15 +34,15 @@ void ProcessDialogEvent()
 		
 		case "Alamida_church":
 			dialog.text = "...i Ducha Świętego. Amen.";
-			link.l1 = "Rzadko widuję wojskowych w kościołach.";
+			link.l1 = "Czy ja dobrze widzę? Wojskowy w kościele? Myślałem, że wojsko ma kapelanów, którzy zapewniają żołnierzom dostęp do wiary.";
 			link.l1.go = "Alamida_church_2";
 		break;
 		
 		case "Alamida_church_2":
-			dialog.text = "Wielu wierzy, że wiara i miecz są niezgodne. Ale czyż chirurg nie tnie, aby leczyć? Czyż ojciec nie karze, aby chronić?";
+			dialog.text = "Czy to kapelan, czy to kościół - żadna w tym różnica. Co do mojej profesji... Wiele osób uważa, że wiara i miecz są niezgodne. Ale czyż chirurg nie tnie, aby leczyć? Czyż ojciec nie karze, aby chronić?";
 			link.l1 = "Brzmi jak usprawiedliwienie.";
 			link.l1.go = "Alamida_church_3";
-			link.l2 = "Jest w tym mądrość. Czasem okrucieństwo jest konieczne.";
+			link.l2 = "Jest w tym coś mądrego. Okrucieństwo jest czasem konieczne.";
 			link.l2.go = "Alamida_church_4";
 		break;
 		
@@ -53,7 +53,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Alamida_church_4":
-			dialog.text = "Tak... tak! Dokładnie to powiedział ten, który prowadził mnie tą ścieżką. 'Miłosierdzie bez siły jest bezużyteczne, jak miecz bez ręki.'";
+			dialog.text = "Tak... tak! Dokładnie tak powiedział ten, który prowadził mnie tą ścieżką. 'Miłosierdzie bez siły jest bezużyteczne, jak miecz bez ręki.'";
 			link.l1 = "Zostawię cię z twoimi modlitwami.";
 			link.l1.go = "Alamida_church_5";
 		break;
@@ -66,7 +66,7 @@ void ProcessDialogEvent()
 		
 		case "Alamida_guber":
 			dialog.text = "Siedem procent niedoboru. Ostatnim razem było pięć. Rosną jak chwasty w opuszczonym ogrodzie...";
-			link.l1 = "Czy w mieście jest nowy gubernator?";
+			link.l1 = "Przepraszam, w mieście jest nowy gubernator?";
 			link.l1.go = "Alamida_guber_2";
 		break;
 		
@@ -91,7 +91,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Alamida_guber_5":
-			dialog.text = "Hm. Wiesz, kiedyś myślałem tak samo. Ale więzienie to zbyt proste. Potrzeba czegoś więcej... Oczyszczenia.";
+			dialog.text = "Hm. Wiesz, kiedyś myślałem tak samo. Ale więzienie jest zbyt proste. Potrzeba czegoś więcej... Oczyszczenia.";
 			link.l1 = "Nie będę cię dłużej odciągać od pracy.";
 			link.l1.go = "Alamida_guber_6";
 		break;
@@ -129,8 +129,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Alamida_city_5":
-			dialog.text = "Dobrze? Tak, może. O ile to jest słuszne.";
-			link.l1 = "Nigdy się nie poddawaj.";
+			dialog.text = "Dobrego? Być może.";
+			link.l1 = "...";
 			link.l1.go = "Alamida_exit";
 		break;
 		
@@ -150,7 +150,7 @@ void ProcessDialogEvent()
 		
 		case "Alamida_repeat":
 			dialog.text = "Coś jeszcze, Kapitanie?";
-			link.l1 = "Nie, don Fernando, tylko się witam, nic więcej.";
+			link.l1 = "Nie nie, don Fernando, chciałem się tylko przywitać, nic więcej.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Alamida_repeat";
 		break;
@@ -158,27 +158,27 @@ void ProcessDialogEvent()
 		case "Alamida_abordage":
 			if (startHeroType == 4)
 			{
-				dialog.text = "Panienka z mieczem? Cóż, nigdy bym nie pomyślał, że dożyję takiego widoku. A kimże ty jesteś, señorita, by ośmielić się atakować 'Świętą Miłosierdzie'?";
-				link.l1 = "Kapitan Helen McArthur. A to zaskoczenie na twej twarzy jest mi dobrze znane.";
+				dialog.text = "Panienka z mieczem? Cóż, nigdy bym nie pomyślał, że przyjdzie mi dożyć takiego widoku. A kimże ty jesteś, señorita, by ośmielić się atakować 'Święte Miłosierdzie'?";
+				link.l1 = "Kapitan Hellen McArthur. A to zaskoczenie na twej twarzy jest mi dobrze znane.";
 				link.l1.go = "Alamida_HelenaCaptain";
 			}
 			else
 			{
-				dialog.text = "Jak śmiesz?! Atakować 'Świętą Miłosierdzie'?! Statek, który niesie wolę króla i... Cóż. Skoro już tu jesteś, powiedz mi - dlaczego? Dlaczego wybrałeś to szaleństwo?";
+				dialog.text = "Ahh! Ty diable! Jak śmiesz?! Atakować 'Święte Miłosierdzie'?! Statek, który wypełnia wolę króla i... Cóż. Skoro już tu jesteś, powiedz mi - dlaczego? Dlaczego zdecydowałeś się na to szaleństwo?";
 				link.l1 = "Jestem piratem. A twój galeon z pewnością pełen jest skarbów.";
 				link.l1.go = "Alamida_abordage_Gold";
 				link.l2 = "Jaki piękny statek... Muszę go zdobyć.";
 				link.l2.go = "Alamida_abordage_Ship";
 				link.l3 = "Jestem wrogiem twojego kraju, don Fernando.";
 				link.l3.go = "Alamida_abordage_Hater";
-				link.l4 = "Po prostu dlatego. Czemu nie?";
+				link.l4 = "Tak po prostu. Czemu nie?";
 				link.l4.go = "Alamida_abordage_Prikol";
 			}
 		break;
 		
 		case "Alamida_HelenaCaptain":
-			dialog.text = "Jakże przypominasz Dziewicę Maryję, opiekunkę naszego statku... Tak samo piękna. Ale Ona chroni sprawiedliwych, podczas gdy ty...";
-			link.l1 = "Przyszedłem po twój statek. A komplementy tu nie pomogą, don Fernando.";
+			dialog.text = "Jakże mi przypominasz Dziewicę Maryję, opiekunkę naszego statku... Tak samo piękna. Ale Ona chroni sprawiedliwych, podczas gdy ty...";
+			link.l1 = "Przyszłam po twój statek. A komplementy tu nie pomogą, don Fernando.";
 			link.l1.go = "Alamida_HelenaCaptain_2";
 		break;
 		
@@ -195,14 +195,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Alamida_abordage_Gold_2":
-			dialog.text = "Każda moneta w ładowni to zapłata grzeszników za oczyszczenie. Chcesz ją? To podziel ich los.";
+			dialog.text = "Każda moneta w ładowni to zapłata grzeszników za oczyszczenie. Chcesz je? To podziel ich los.";
 			link.l1 = "...";
 			link.l1.go = "Alamida_abordage_SecondRound";
 		break;
 		
 		case "Alamida_abordage_Ship":
-			dialog.text = "Wielu pragnęło 'Świętej Łaski'. Jej piękno było zgubą niejednego kapitana.";
-			link.l1 = "W takim razie będę pierwszym, który to zdobędzie.";
+			dialog.text = "Wielu już pragnęło 'Świętego Miłosierdzia'. Jej piękno było zgubą niejednego kapitana.";
+			link.l1 = "W takim razie będę pierwszym, który ją zdobędzie.";
 			link.l1.go = "Alamida_abordage_Ship_2";
 		break;
 		
@@ -213,25 +213,25 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Alamida_abordage_Hater":
-			dialog.text = "Więc to tyle. Kolejny zazdrośnik o wielkość Imperium.";
+			dialog.text = "A więc to tak... Kolejny zazdrośnik o wielkość Imperium.";
 			link.l1 = "Jakie wielkości? Twoje sztywne sposoby powstrzymują ten świat.";
 			link.l1.go = "Alamida_abordage_Hater_2";
 		break;
 		
 		case "Alamida_abordage_Hater_2":
-			dialog.text = "Nie okłamuj się. Strach przed Hiszpanią czyni cię bardziej uczciwym. Bliższym twojej prawdziwej naturze. Sam teraz zobaczysz.";
+			dialog.text = "Nie okłamuj się. Strach przed Hiszpanią czyni cię bardziej szczerym. Bliższym twej prawdziwej naturze. Sam zobaczysz.";
 			link.l1 = "...";
 			link.l1.go = "Alamida_abordage_SecondRound";
 		break;
 		
 		case "Alamida_abordage_Prikol":
-			dialog.text = "Wariat. A może zostałeś wysłany do mnie jako próba?";
-			link.l1 = "Nie wszystko potrzebuje powodu, señor.";
+			dialog.text = "Wariat. Prawdziwy wariat. A może zostałeś tu przysłany na próbe?";
+			link.l1 = "Nie zawsze potrzebny jest powód do podjęcia decyzji, señor. Nigdy nie słyszałeś o czymś takim jak spontaniczność?";
 			link.l1.go = "Alamida_abordage_Prikol_2";
 		break;
 		
 		case "Alamida_abordage_Prikol_2":
-			dialog.text = "Powiedział, że ludzie tacy jak ty są najbardziej niebezpieczni. Ale to tylko wzmocni moją rękę w bitwie.";
+			dialog.text = "Spontaniczność? A więc jesteś jednym z nich... On powiedział, że ludzie tacy jak ty są najbardziej niebezpieczni. Ale to tylko wzmocni moją rękę w bitwie.";
 			link.l1 = "...";
 			link.l1.go = "Alamida_abordage_SecondRound";
 		break;
@@ -254,7 +254,7 @@ void ProcessDialogEvent()
 		case "Alamida_abordage_TrirdRound":
 			if (startHeroType == 4)
 			{
-				dialog.text = "Taka siła ducha... Taka wola...";
+				dialog.text = "Cóż za siła ducha... Ta niezachwiana wola...";
 				link.l1 = "Zaskoczony?";
 			}
 			else
@@ -268,13 +268,13 @@ void ProcessDialogEvent()
 		case "Alamida_abordage_TrirdRound_2":
 			if (startHeroType == 4)
 			{
-				dialog.text = "Byłem ostrzeżony... o takim wyzwaniu. O pięknie, które mogłoby zachwiać wiarą wojownika.";
+				dialog.text = "Ostrzegano mnie... przed takim wyzwaniem. O pięknie, które mogłoby zachwiać wiarą wojownika.";
 				link.l1 = "Czy zawsze tak bardzo komplikujesz proste rzeczy, don Fernando?";
 			}
 			else
 			{
-				dialog.text = "Pan daje siłę tym, którzy służą słusznej sprawie. Choć... czasami nie jestem już pewien, czemu służę.";
-				link.l1 = "Miewasz wątpliwości?";
+				dialog.text = "Pan daje siłę tym, którzy służą słusznej sprawie. Choć... czasami nie mam już pewności, komu służę.";
+				link.l1 = "Zaczynasz wątpić w słuszność swej sprawy?";
 			}
 			link.l1.go = "Alamida_abordage_TrirdRound_3";
 		break;
@@ -282,13 +282,13 @@ void ProcessDialogEvent()
 		case "Alamida_abordage_TrirdRound_3":
 			if (startHeroType == 4)
 			{
-				dialog.text = "Proste? Nie... To musi mieć głębsze znaczenie. To jest próba. Nie mogę się mylić.";
+				dialog.text = "Wątpić? Nie... Słuszność?... To musi mieć głębsze znaczenie. To jest próba. Nie mogę się mylić.";
 			}
 			else
 			{
-				dialog.text = "Nie. Nauczył mnie nie wątpić. Nigdy.";
+				dialog.text = "Nie. Nigdy! To On mnie Nauczył, żeby nie zwątpić nawet na chwile! Nigdy nie zwątpie!";
 			}
-			link.l1 = "...";
+			link.l1 = "Widze, że twa szlachetność już dawno zaślepiła twoje racjonalne myślenie. Z moją pomocą otworzysz swe oczy, zobaczysz!";
 			link.l1.go = "Alamida_abordage_TrirdRound_4";
 		break;
 		
@@ -312,21 +312,21 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Alamida_abordage_Molitva":
-			dialog.text = "Zaczekaj... Zaczekaj. Wygrałeś. Jestem ranny, wykrwawiam się. Pozwól mi się pomodlić przed śmiercią.";
-			link.l1 = "Bardzo dobrze.";
+			dialog.text = "AHH!! Czekaj... Czekaj! Wygrałeś! Ał!... Jestem ranny, wykrwawiam się... Pozwól mi się pomodlić przed śmiercią, prosze...";
+			link.l1 = "Niech będzie.";
 			link.l1.go = "Alamida_abordage_Molitva_2";
 		break;
 		
 		case "Alamida_abordage_Molitva_2":
 			if (startHeroType == 4)
 			{
-				dialog.text = "Lord... wybacz mi moje grzechy i daj mi siłę w tej godzinie próby. Pobłogosław dusze moich poległych towarzyszy. Wierni żeglarze, zginęli wierząc, że niesieją sprawiedliwość\nOjciec, starałem się żyć według Twoich nauk, walczyć z niesprawiedliwością. Ale Twój syn splamił honor rodziny Alamida. Wybacz mi\nOjczyzno... przysięgałem Ci służyć wiernie i prawdziwie. Ale mój zapał, mój gniew... stałem się tym, z czym chciałem walczyć\nDiego... Może kłamał? Przez cały ten czas... Biada mi, jeśli tak\nI pobłogosław tę kobietę, Panie. Może w Twej ostatecznej łasce posłałeś mi ją... abym mógł zobaczyć, jak daleko zbłądziłem. Amen.";
+				dialog.text = "Panie... wybacz mi moje grzechy i daj mi siłę w tej godzinie próby. Pobłogosław dusze moich poległych towarzyszy. Wierni żeglarze, zginęli wierząc, że nieśli sprawiedliwość\nOjcze, starałem się żyć według Twoich nauk, walczyć z niesprawiedliwością. Lecz Twój własny syn splamił honor rodziny de Alamida. Wybacz mi\nOjczyzno... przysięgałem Ci służyć wiernie i prawdziwie. Ale mój zapał, mój gniew... stałem się tym, z czym chciałem walczyć\nDiego... Może kłamał? Przez cały ten czas... Biada mi, jeśli tak było\nI pobłogosław tę kobietę, Panie. Może w Twej ostatecznej łasce posłałeś mi ją... abym mógł zobaczyć, jak daleko zbłądziłem. Amen.";
 			}
 			else
 			{
-				dialog.text = "Boże... wybacz mi moje grzechy i daj mi siłę w tej godzinie próby. Pobłogosław dusze moich poległych towarzyszy. Wierni żeglarze, zginęli wierząc, że nieśli sprawiedliwość\nOjcze, starałem się żyć według Twoich nauk, walczyć z niesprawiedliwością. Ale Twój syn splamił honor rodziny Alamida. Wybacz mi\nOjczyzno... przysięgałem służyć Ci wiernie i prawdziwie. Ale mój zapał, mój gniew... Stałem się tym, z czym chciałem walczyć\nDiego... Może kłamał? Przez cały ten czas... Biada mi, jeśli tak\nŚwięta Maryjo Dziewico, módl się za nami do Boga i udziel nam swego miłosierdzia. Amen.";
+				dialog.text = "Panie... wybacz mi moje grzechy i daj mi siłę w tej godzinie próby. Pobłogosław dusze moich poległych towarzyszy. Wierni żeglarze, zginęli wierząc, że nieśli sprawiedliwość\nOjcze, starałem się żyć według Twoich nauk, walczyć z niesprawiedliwością. Lecz Twój własny syn splamił honor rodziny de Alamida. Wybacz mi\nOjczyzno... przysięgałem Ci służyć wiernie i prawdziwie. Ale mój zapał, mój gniew... stałem się tym, z czym chciałem walczyć\nDiego... Może kłamał? Przez cały ten czas... Biada mi, jeśli tak było\nŚwięta Maryjo Dziewico, módl się za nami grzesznymi i udziel nam swego miłosierdzia. Amen.";
 			}
-			link.l1 = "Nie rozpoznaję cię, don Fernando. Wydajesz się teraz inną osobą. A o kim mówiłeś?";
+			link.l1 = "Nie rozpoznaję cię, don Fernando. Wydajesz się teraz inną osobą. A o kim ty wogóle mówiłeś? H-Hej! Nie odpływaj!!";
 			link.l1.go = "Alamida_abordage_Molitva_3";
 			LAi_SetActorType(npchar);
 			LAi_ActorAnimation(npchar, "Church_Stay_1", "", 5.0);
@@ -351,58 +351,58 @@ void ProcessDialogEvent()
 		
 		//Элен
 		case "Alamida_Helena":
-			dialog.text = "Mój kapitanie, gratulacje! Co za zażarta bitwa. Ten kapitan był zdolny, o tak zdolny. Ale ty... ty okazałeś się jeszcze lepszy. Jakże jestem z ciebie dumny...";
-			link.l1 = "Dziękuję, moja miłości. Czy jesteś ranny?";
+			dialog.text = "Mój kapitanie, gratulacje! Co za zażarta bitwa. Ten kapitan był zdolny, wręcz niezwykle zdolny. Ale ty... ty okazałeś się jeszcze lepszy. Jakże jestem z ciebie dumna...";
+			link.l1 = "Dziękuję, kochanie. Jesteś ranna?";
 			link.l1.go = "Alamida_Helena_2";
 		break;
 		
 		case "Alamida_Helena_2":
-			dialog.text = "Nie, nie. Chociaż myślałem, że byliśmy na krawędzi kilka razy - zarówno przed abordażem, jak i w trakcie. A ty, wszystko w porządku?";
+			dialog.text = "Nie, nie. Chociaż myślałam, że byliśmy na krawędzi z kilka razy - zarówno przed abordażem, jak i w trakcie. A ty, wszystko z tobą w porządku?";
 			link.l1 = "U mnie dobrze, jeszcze raz dziękuję. Idź odpocznij w kajucie, wkrótce do ciebie dołączę.";
 			link.l1.go = "Alamida_BitvaEnd";
 		break;
 		
 		//Мэри
 		case "Alamida_Mary":
-			dialog.text = "Charles, wszystko w porządku? Przyszedłem, jak tylko mogłem, dobrze.";
-			link.l1 = "U mnie w porządku, dziękuję, kochana. Choć to była niezła przeprawa.";
+			dialog.text = "Charles, wszystko w porządku? Przyszłam, jak tylko mogłam...";
+			link.l1 = "U mnie wszystko w porządku, dziękuję, kochana. Choć nie ukrywam, że to była niezła przeprawa.";
 			link.l1.go = "Alamida_Mary_2";
 		break;
 		
 		case "Alamida_Mary_2":
-			dialog.text = "Cieszę się! Ale... Słuchaj, Charles? Dlaczego zaatakowaliśmy tych ludzi? Pan nam tego nie wybaczy, nie. Ten statek... jak wielka świątynia. Kiedy go zobaczyłem, moje serce zadrżało, tak samo jak wtedy, gdy po raz pierwszy zobaczyłem prawdziwy kościół, nie tylko w książkach. A teraz krwawi!";
-			link.l1 = "Maryjo... Wiesz, pozory mogą mylić. A za maską pobożności kryli się ci, którzy brali pieniądze od prostych wiernych - tak jak ty. Rozumiesz?";
+			dialog.text = "Cieszę się! Ale... Słuchaj, Charles? Dlaczego zaatakowaliśmy tych ludzi? Pan nam tego nie wybaczy, oj nie. Ten statek... jest jak wielka świątynia. Kiedy go zobaczyłam, moje serce zadrżało, tak samo jak wtedy, gdy po raz pierwszy zobaczyłam prawdziwy kościół, nie tylko w książkach. A teraz ta świątynia krwawi!";
+			link.l1 = "Mary... Wiesz, pozory mogą mylić. A za tą maską pobożności kryli się ci, którzy brali pieniądze od prostych wiernych - takich jak ty. Rozumiesz?";
 			link.l1.go = "Alamida_Mary_3";
 		break;
 		
 		case "Alamida_Mary_3":
-			dialog.text = "Ja... ja ci wierzę, Charles. Dobrze. Tylko... przekażmy przynajmniej część złota, które tu znaleźliśmy, tym, którzy naprawdę go potrzebują? Uspokoiłoby to moje serce.";
+			dialog.text = "Ja... wierzę ci, Charles. Dobrze. Tylko... przekażmy przynajmniej część złota, które tu znaleźliśmy, tym, którzy naprawdę go potrzebują? Uspokoiłoby to moje serce.";
 			link.l1 = "Zrobimy to, Mary. Obiecuję. Teraz zbierz myśli i spróbuj się uspokoić. To już koniec.";
 			link.l1.go = "Alamida_BitvaEnd";
 		break;
 		
 		//Томми
 		case "Alamida_Tommi":
-			dialog.text = "Ha, cóż, gratulacje z okazji zwycięstwa, kapitanie! To jest to, co nazywam interesem! Taki łup na tej galeonie!..";
+			dialog.text = "Ha! Gratulacje z okazji zwycięstwa, Kapitanie! Ha! Takie interesy to ja rozumiem! Jakie oni mieli łupy na tym galeonie!..";
 			link.l1 = "Twój uśmiech jest dziś jeszcze szerszy niż zwykle, Tommy.";
 			link.l1.go = "Alamida_Tommi_2";
 		break;
 		
 		case "Alamida_Tommi_2":
-			dialog.text = "Założę się! Takie łupy. I co za walka. Przypomniała mi Rewolucję. A także... heh.";
+			dialog.text = "A żebyś wiedział! Takie łupy. I co za walka. Aż mi się czasy Rewolucji przypomniały. A także... heh.";
 			link.l1 = "Co się stało, Tommy? No dalej, mów głośniej.";
 			link.l1.go = "Alamida_Tommi_3";
 		break;
 		
 		case "Alamida_Tommi_3":
-			dialog.text = "Jak oni udekorowali cały statek jak pływającą katedrę. I zebrali tyle złota zewsząd. Prawdziwi papistowscy świętoszkowie! Hańba i śmieszność.";
+			dialog.text = "To, jak udekorowali cały ten statek... Przypomina on bardziej pływającą katedrę. I zebrali tyle złota zewsząd. Prawdziwi papiescy świętoszkowie! Hańba i śmiech na sali heheh...";
 			link.l1 = "To jest statek skarbowy, Tommy. Nie statek kościelny.";
 			link.l1.go = "Alamida_Tommi_4";
 		break;
 		
 		case "Alamida_Tommi_4":
-			dialog.text = "Niewiele różnicy w naszym przypadku. Tak czy inaczej, cieszyłem się, że mogłem dać tym donsom i papistom porządną nauczkę! Nie znoszę żadnego z nich. Naprawdę cieszyłem się z tego dnia, ha-ha-ha!";
-			link.l1 = "Ty się nigdy nie zmieniasz! Dobrze, wolne. Wszystko tutaj jest pod kontrolą.";
+			dialog.text = "Niewielka różnica w naszym przypadku. Tak czy inaczej, ciesze się, że mogłem dać tym donom i papistom porządną nauczkę! Nie znoszę żadnego z nich. Naprawdę cieszyłem się z tego dnia, ha-ha-ha!";
+			link.l1 = "Ty się nigdy nie zmienisz! Dobrze, spocznij Irons. Wszystko tutaj jest pod kontrolą.";
 			link.l1.go = "Alamida_BitvaEnd";
 		break;
 		
@@ -410,23 +410,23 @@ void ProcessDialogEvent()
 		case "Alamida_Tichingitu":
 			if (startHeroType == 1)
 			{
-				dialog.text = "Kapitanie Charles, wygrywamy zwycięstwo. To była trudna walka. Nawet Tichingitu miał ciężko, a ja jestem jednym z najlepszych wojowników w wiosce.";
-				link.l1 = "Racja, przyjacielu. Byli to godni przeciwnicy, bez wątpienia.";
+				dialog.text = "Kapitan Charles, my wygraliśmy. To była trudna walka. Nawet Tichingitu miał ciężko, a ja jeden z najlepszych wojowników w wiosce.";
+				link.l1 = "Racja, przyjacielu. To byli godni przeciwnicy, bez wątpienia.";
 			}
 			if (startHeroType == 2)
 			{
 				dialog.text = "Señor de Montoya, statek jest nasz.";
-				link.l1 = "Bardzo dobrze, Tichingitu. Ja też właśnie skończyłem tutaj.";
+				link.l1 = "Bardzo dobrze, Tichingitu. Ja też tu właśnie skończyłem.";
 			}
 			if (startHeroType == 3)
 			{
-				dialog.text = "Kapitanie Paterson, ostatni opór na statku zdławiony.";
-				link.l1 = "Spóźniłeś się, Tich! Następnym razem lepiej trzymaj się mnie. Nie żebym nie mógł sobie poradzić sam, wiesz...";
+				dialog.text = "Kapitan Paterson, ostatni opór na statku zdławiony.";
+				link.l1 = "Spóźniłeś się, Tich! Następnym razem lepiej trzymaj się blisko mnie. Nie żebym nie mógł sobie bez ciebie poradzić, wiesz...";
 			}
 			if (startHeroType == 4)
 			{
-				dialog.text = "Kapitanie McArthur, wszystko w porządku?";
-				link.l1 = "Tak, Tichingitu, mam się dobrze, dziękuję za troskę. I przestań wątpić w swojego kapitana - poradziłem sobie doskonale sam.";
+				dialog.text = "Pani Kapitan McArthur, wszystko w porządku?";
+				link.l1 = "Tak, Tichingitu, mam się dobrze, dziękuję za troskę. I przestań wątpić w swojego kapitana - poradziłam sobie doskonale sama.";
 			}
 			link.l1.go = "Alamida_Tichingitu_2";
 		break;
@@ -434,22 +434,22 @@ void ProcessDialogEvent()
 		case "Alamida_Tichingitu_2":
 			if (startHeroType == 1)
 			{
-				dialog.text = "Duchy mówią mi to podczas walki. I pytają, czemu ich zabiłem. Teraz ja pytam ciebie o to samo. Tichingitu widzi w ich oczach, że nie są złoczyńcami. Jeszcze nie.";
-				link.l1 = "Ach, cóż mogę ci powiedzieć? Nie mam odpowiedzi, Tichingitu.";
+				dialog.text = "Duchy mówią mi to podczas walki. I pytają, czemu ich zabiłem. Teraz ja pytam ciebie. Tichingitu widzi w ich oczach, że oni nie złoczyńcy. Jeszcze nie.";
+				link.l1 = "Ach, cóż mogę ci powiedzieć? Tak to już bywa w naszym 'zawodzie', Tichingitu.";
 			}
 			if (startHeroType == 2)
 			{
-				dialog.text = "Chcę zadać ci pytanie, kapitanie de Montoya.";
+				dialog.text = "Chcę zadać pytanie, kapitanie de Montoya.";
 				link.l1 = "Słucham.";
 			}
 			if (startHeroType == 3)
 			{
-				dialog.text = "Tichingitu chce zadać ci pytanie, Kapitanie Williamie, jeśli pozwolisz.";
+				dialog.text = "Tichingitu chce zadać pytanie, Kapitan William, jeśli pozwolisz.";
 				link.l1 = "Przyznano.";
 			}
 			if (startHeroType == 4)
 			{
-				dialog.text = "Nie wątpię, martwię się o ciebie, kapitanie.";
+				dialog.text = "Nie wątpię, Tichingitu martwi się o ciebie, Pani Kapitan.";
 				link.l1 = "Dobrze, dobrze. Widzę w twoich oczach, że chcesz mnie o coś jeszcze zapytać.";
 			}
 			link.l1.go = "Alamida_Tichingitu_3";
@@ -458,26 +458,26 @@ void ProcessDialogEvent()
 		case "Alamida_Tichingitu_3":
 			if (startHeroType == 1)
 			{
-				dialog.text = "Hmm, jak mówisz, kapitanie. Kończymy tutaj?";
-				link.l1 = "Tak. Rozejrzę się jeszcze trochę, a potem dołączę do innych.";
+				dialog.text = "Hmm, rozumiem, kapitan. Kończymy tutaj?";
+				link.l1 = "Tak. Rozejrzę się jeszcze trochę, a potem dołączę do pozostałych.";
 				link.l1.go = "Alamida_BitvaEnd";
 			}
 			if (startHeroType == 2)
 			{
-				dialog.text = "Ci ludzie, oni nie są z tego samego plemienia co ty? Oni nie są Hiszpanami? Dlaczego zdecydowałeś się zaatakować?";
-				link.l1 = "To prawda. Ale czy plemiona indiańskie nie walczą ze sobą nawzajem? Albo czy nie ma kłótni i waśni w obrębie jednego plemienia?";
+				dialog.text = "Ci ludzie nie z tego samego plemienia co ty? Oni nie byli Hiszpanami? Dlaczego zdecydowałeś się zaatakować własne plemie?";
+				link.l1 = "Byli Hiszpanami, i co z tego? Myślałeś, że zamierzam z nimi po prostu pogadać? Ale czy plemiona indiańskie nie walczą ze sobą nawzajem? Albo czy nie ma kłótni i waśni w obrębie jednego plemienia?";
 				link.l1.go = "Alamida_Tichingitu_4";
 			}
 			if (startHeroType == 3)
 			{
-				dialog.text = "Ten statek wygląda jak kościół. Nienawidzisz kościoła i białego boga?";
-				link.l1 = "Skądże znowu. Ale to tylko dekoracja, rozumiesz? To jest statek skarbowy. Choć i tak byś nie zrozumiał - słyszałem, że twoi ludzie nawet nie wiedzą, co to są podatki. Szczęściarze.";
+				dialog.text = "Statek wygląda jak kościół. Nienawidzisz kościoła i białego Boga?";
+				link.l1 = "Skądże znowu. To tylko dekoracja, rozumiesz? To jest statek skarbowy. Choć i tak byś nie zrozumiał - słyszałem, że twoi ludzie nawet nie wiedzą, co to są podatki. Pfft. Szczęściarze.";
 				link.l1.go = "Alamida_Tichingitu_4";
 			}
 			if (startHeroType == 4)
 			{
-				dialog.text = "Tak. Bądź szczery. Kapitanie MacArthur, dlaczego atakujemy ten pływający kościół?";
-				link.l1 = "Pływający kościół, ha-ha-ha! Nie, nie. To jest statek skarbniczy. Hmm, widzę, że nie do końca rozumiesz. Cóż, przewozili złoto. Mogę sobie wyobrazić, jak dumny będzie Jan, kiedy powiem mu, że pokonałem Fernando de Alamida!";
+				dialog.text = "Tak. Tylko szczerze. Pani Kapitan MacArthur, dlaczego atakujemy ten pływający kościół?";
+				link.l1 = "Pływający kościół, ha-ha-ha! Nie, nie. To jest statek skarbniczy. Hmm, widzę, że nie do końca rozumiesz. Cóż, przewozili złoto. Mogę sobie wyobrazić, jak dumny będzie Jan, kiedy powiem mu, że pokonałam Fernando de Alamide!";
 				link.l1.go = "Alamida_Tichingitu_4";
 			}
 		break;
@@ -485,7 +485,7 @@ void ProcessDialogEvent()
 		case "Alamida_Tichingitu_4":
 			if (startHeroType == 2)
 			{
-				dialog.text = "Hmm, masz rację, kapitanie. Ale z Indianami to się zdarza rzadziej niż z białym człowiekiem.";
+				dialog.text = "Hmm, masz rację, Kapitan. Ale z Indianami zdarza się rzadziej niż z białym człowiekiem.";
 				link.l1 = "Być może. Cóż, ten człowiek mi... przeszkadzał.";
 				link.l1.go = "Alamida_Tichingitu_5";
 			}
@@ -497,40 +497,32 @@ void ProcessDialogEvent()
 			}
 			if (startHeroType == 4)
 			{
-				dialog.text = "Tichingitu również jest z ciebie dumny, kapitanie. I gratuluje zwycięstwa w tej ciężkiej walce.";
+				dialog.text = "Tichingitu również jest dumny, Pani Kapitan. I gratuluje zwycięstwa w tej ciężkiej walce.";
 				link.l1 = "Dziękuję. Teraz podzielmy łupy.";
 				link.l1.go = "Alamida_BitvaEnd";
 			}
 		break;
 		
 		case "Alamida_Tichingitu_5":
-			dialog.text = "Mieszasz się, Señor de Montoya?";
-			link.l1 = "Dokładnie. Ten Archipelag jest zbyt mały dla nas obu. A ja jestem tu znacznie bardziej przydatny naszemu państwu. Pamiętaj o Liściu Kokosowym - wyrządził więcej szkody niż pożytku swoim braciom. Tutaj jest tak samo.";
+			dialog.text = "Zwalczasz swoich, Señor de Montoya?";
+			link.l1 = "Dokładnie. Ten Archipelag jest zbyt mały dla nas obu. A ja jestem tu znacznie bardziej przydatny naszemu państwu. Pamiętaj o Liściu Kakaowca - wyrządził swoim braciom więcej szkód niż pożytku. Tutaj jest tak samo.";
 			link.l1.go = "Alamida_Tichingitu_6";
 		break;
 		
 		case "Alamida_Tichingitu_6":
-			dialog.text = "Teraz rozumiem. Tichingitu może iść, kapitanie?";
+			dialog.text = "Teraz rozumiem. Tichingitu może iść, Kapitan?";
 			link.l1 = "Tak, idź. Wkrótce do was dołączę.";
 			link.l1.go = "Alamida_BitvaEnd";
 		break;
 		
 		case "Alamida_monah":
-			dialog.text = "Ciekawe... Co sprowadza dziecko Boże do tego miejsca... odpoczynku?";
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 1)
-			{
-				link.l1 = "Ja...";
-				link.l1.go = "Alamida_monah_2";
-			}
-			else
-			{
-				link.l1 = "Ja... Chwileczkę! Już się spotkaliśmy!";
-				link.l1.go = "Alamida_monah_Second_2";
-			}
+			dialog.text = "Ciekawe... Co sprowadza dziecko Boże do miejsca... wiecznego odpoczynku?";
+			link.l1 = "Ja...";
+			link.l1.go = "Alamida_monah_2";
 		break;
 		
 		case "Alamida_monah_2":
-			dialog.text = "Czy wiesz, co jest szczególnego w tym grobowcu? Spoczywają tu dwie dusze, związane... więzami krwi. Ojciec i syn de Alamida. Jeden padł w ręce grzeszników, drugi... Hmm, znalazł swoją drogę do Pana.";
+			dialog.text = "Czy wiesz, co jest szczególnego w tym grobowcu? Spoczywają tu dwie dusze, związane... więzami krwi. Ojciec i syn de Alamida. Jeden padł z rąk grzeszników, drugi... Hmm, znalazł swoją drogę do Pana.";
 			link.l1 = "Dziennik don Fernanda doprowadził mnie tutaj.";
 			link.l1.go = "Alamida_monah_3";
 			link.l2 = "Po prostu szukam czegoś cennego w tej krypcie.";
@@ -539,7 +531,7 @@ void ProcessDialogEvent()
 		
 		case "Alamida_monah_3":
 			dialog.text = "Ah... Dziennik. Niezwykła rzecz - słowo pisane. To jak... ścieżka w ciemności. Prowadzi tam, gdzie... czeka objawienie. Naszą parafię często odwiedzał don Fernando. Zwłaszcza w ostatnim roku.";
-			link.l1 = "Służysz w lokalnej parafii? Znałeś don Fernando?";
+			link.l1 = "Służysz w lokalnej parafii? Znałeś don Fernanda, ojcze?";
 			link.l1.go = "Alamida_monah_4";
 			ChangeCharacterComplexReputation(pchar, "nobility", 2);
 		break;
@@ -552,12 +544,12 @@ void ProcessDialogEvent()
 		
 		case "Alamida_monah_5":
 			dialog.text = "Ja... obserwowałem jego ścieżkę. A tę książkę, którą zabrałeś. Wiesz, co czyni ją wyjątkową?";
-			link.l1 = "Wygląda na stare.";
+			link.l1 = "Wygląda na starą.";
 			link.l1.go = "Alamida_monah_5_1";
 		break;
 		
 		case "Alamida_monah_5_1":
-			dialog.text = "Stara? O nie. To... oświecona. Biblia don de Alamida Seniora. Każde słowo w niej - niczym latarnia w ciemności. Weź ją. Pomóż swym braciom w Chrystusie, a wtedy, być może... poprowadzi cię do czegoś... większego.";
+			dialog.text = "Starą? Ja bym określił tą księge jako... oświeconą. Biblia don de Alamida Seniora. Każde słowo w niej zapisane, jest niczym latarnia w ciemności. Weź ją. Pomóż swym braciom w Chrystusie, a wtedy, być może... poprowadzi cię do czegoś... większego.";
 			link.l1 = "...";
 			link.l1.go = "Alamida_monah_9";
 		break;
@@ -592,14 +584,12 @@ void ProcessDialogEvent()
 		
 		case "Alamida_monah_10":
 			dialog.text = "Czy wiesz, co jest najbardziej niezwykłego w losie don Fernanda?";
-			link.l1 = "Co to jest?";
+			link.l1 = "Co niby?";
 			link.l1.go = "Alamida_monah_11";
 		break;
 		
 		case "Alamida_monah_11":
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 1) sStr = "pierwszy";
- 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 2)	sStr = "drugi";
-			dialog.text = "Że był zaledwie... " + sStr + ".";
+			dialog.text = "Że był zaledwie... pierwszym.";
 			link.l1 = "...";
 			link.l1.go = "Alamida_monah_12";
 		break;
@@ -613,54 +603,6 @@ void ProcessDialogEvent()
 			sld.lifeday = 0;
 			LAi_CharacterDisableDialog(sld);
 			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-		break;
-		
-		case "Alamida_monah_Second_2":
-			dialog.text = "Wie pan, co czyni ten grobowiec wyjątkowym? Spoczywają tu dwie dusze, związane... krwią. Ojciec i syn de Alameda. Jeden zginął z rąk grzeszników, drugi... hm, odnalazł drogę do Boga.";
-			link.l1 = "Służy pan w lokalnej parafii? Znał pan don Fernanda?";
-			link.l1.go = "Alamida_monah_Second_3";
-		break;
-		
-		case "Alamida_monah_Second_3":
-			dialog.text = "Obserwowałem jego drogę. A ta księga, którą pan zabrał... Wie pan, co w niej szczególnego?";
-			link.l1 = "Wygląda na starą.";
-			link.l1.go = "Alamida_monah_Second_4";
-		break;
-		
-		case "Alamida_monah_Second_4":
-			dialog.text = "Ma bogatą historię i byłoby mądrze z pana strony, gdyby poświęcił pan nieco sił służbie Braciom w Chrystusie, nosząc ją przy sercu. Ale to nie to jest najciekawsze.";
-			link.l1 = "Ostatnim razem mówił pan zagadkami. Teraz też będzie pan tak mówić?";
-			link.l1.go = "Alamida_monah_Second_5";
-		break;
-		
-		case "Alamida_monah_Second_5":
-			dialog.text = "\nPrawdziwa zagadka stoi teraz przede mną. Zebrał pan wiele ciekawych... relikwii. Biblia. Statut. Lubi pan zbierać takie rzeczy? Jest pan kolekcjonerem?";
-			link.l1 = "Skąd pan wie o statucie?";
-			link.l1.go = "Alamida_monah_Second_6";
-		break;
-		
-		case "Alamida_monah_Second_6":
-			dialog.text = "Łowca trofeów?";
-			link.l1 = "Powtarzam pytanie: skąd pan wie o statucie?";
-			link.l1.go = "Alamida_monah_Second_7";
-		break;
-		
-		case "Alamida_monah_Second_7":
-			dialog.text = "Miłośnik mocnych wrażeń?";
-			link.l1 = "...";
-			link.l1.go = "Alamida_monah_Second_8";
-		break;
-		
-		case "Alamida_monah_Second_8":
-			dialog.text = "\nAch tak. Oczywiście. Naturalnie. Cóż, kapitanie – nie będę pana dłużej zatrzymywał.";
-			link.l1 = "Chwileczkę, ojcze. Nadal nie odpowiedział pan na moje pytanie.";
-			link.l1.go = "Alamida_monah_Second_9";
-		break;
-		
-		case "Alamida_monah_Second_9":
-			dialog.text = "Och, kapitanie. Nie mogę. Czasem odpowiedzi ranią bardziej niż niewiedza. Idźcie w pokoju. I dbajcie o swoją kolekcję... trofeów. Mogą się przydać w podróży, która was czeka.";
-			link.l1 = "...";
-			link.l1.go = "Alamida_monah_9";
 		break;
 		
 		//замечение по обнажённому оружию

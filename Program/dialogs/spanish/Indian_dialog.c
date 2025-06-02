@@ -152,8 +152,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "cumvana_no":
-			dialog.text = "Eso es muy bueno para ti, hijo del mar, no conocer el camino allí. Conduce a través de un bosque, tierra de la valiente tribu de Capong. Verdaderos jaguares, son, ¡oh-ey! Yo nunca voy a ese lugar español. Mi gente - gente pacífica, no vamos a la tierra de Capong. Kumwana no puede darte un consejo. Camino demasiado peligroso.";
-			link.l1 = "Pero los españoles encontraron un camino allí! Y no le tengo miedo a esos Capongs...";
+			dialog.text = "Eso es muy bueno para ti, hijo del mar, no conocer el camino allí. Conduce a través de un bosque, tierra de la valiente tribu de Capong. Verdaderos jaguares, son, ¡oh-ey! Yo nunca voy a ese lugar español. Mi gente, gente pacífica, no vamos a la tierra de Capong. Kumwana no puede darte un consejo. Camino demasiado peligroso.";
+			link.l1 = "¡Pero los españoles encontraron un camino allí! Y no le tengo miedo a esos Capongs...";
 			link.l1.go = "cumvana_no_1";
 		break;
 		
@@ -289,8 +289,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "cumvana_4":
-			dialog.text = "¡Oh-ey! Camino peligroso, peligroso. El camino allí lleva a través de un bosque, tierra de la tribu sin miedo de Capong. Verdaderos jaguares, son, ¡oh-ey! Yo nunca voy a ese lugar español. Mi gente - gente pacífica, no vamos a la tierra de Capong.";
-			link.l1 = "Realmente tengo que llegar a Mérida. Kumwana, pregunta a tus hombres por favor, quizás, alguien aceptará unirse a mi unidad? Mis guerreros son experimentados, bien armados y no temen nada, ni siquiera al Diablo. Protegeremos al guía y lo recompensaremos generosamente cuando todo termine.";
+			dialog.text = "¡Oh-ey! Camino peligroso, peligroso. El camino allí lleva a través de un bosque, tierra de la tribu sin miedo de Capong. Verdaderos jaguares, son, ¡oh-ey! Yo nunca voy a ese lugar español. Mi gente, gente pacífica, no vamos a la tierra de Capong.";
+			link.l1 = "Realmente tengo que llegar a Mérida. Kumwana, pregunta a tus hombres por favor... ¿Quizás alguien acepte unirse a mi unidad? Mis guerreros son experimentados, bien armados y no temen nada, ni siquiera al Diablo. Protegeremos al guía y lo recompensaremos generosamente cuando todo termine.";
 			link.l1.go = "cumvana_5";
 		break;
 		
@@ -319,14 +319,14 @@ void ProcessDialogEvent()
 			link.l1.go = "cumvana_7x";
 			if(CheckAttribute(pchar,"questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "merida_hayamee")
 			{
-				link.l2 = " Escucha, Kumwana. Mi gente y yo realmente necesitamos cruzar el río y llegar a ese maldito pueblito. Permíteme explicarte cuán crucial es esto para nosotros.";
+				link.l2 = "Escucha, Kumwana. Mi gente y yo realmente necesitamos cruzar el río y llegar a ese maldito pueblito. Permíteme explicarte cuán crucial es esto para nosotros.";
 				link.l2.go = "cumvana_hard";
 			}
 		break;
 		
 		case "cumvana_hard":
 			dialog.text = "Mis cazadores ya te han informado de que...";
-			link.l1 = "No hay necesidad de repetirte dos veces, Kumwana. Pero mira afuera - y no sobreestimes tus capacidades. Mis valientes hombres que vinieron aquí por las piedras españolas están dispersos en tu aldea. Y su paciencia se está agotando. Y lo que sucederá cuando finalmente se agote, es mejor que no lo sepas - créeme.";
+			link.l1 = "No hay necesidad de repetirte dos veces, Kumwana. Pero mira afuera y no sobreestimes tus capacidades. Mis valientes hombres que vinieron aquí por las piedras españolas están dispersos en tu aldea. Y su paciencia se está agotando. Y lo que sucederá cuando finalmente se agote, es mejor que no lo sepas, créeme.";
 			link.l1.go = "cumvana_medium_1";
 			link.l2 = "Cierra la boca y escucha, mono de piel roja. Mi gente puede ser mucho más terrible que estos malditos Kapongs. No te dejes engañar por el hecho de que somos tan amables ahora. Te doy una elección simple: o encuentras un guía en veinticuatro horas, o ataremos a todos ustedes y los enviaremos a través de la selva delante de nuestro escuadrón. Si nos llevas en la dirección equivocada, perecerás en los pantanos o irás atado a luchar contra los Kapongs. ¿Entendido?";
 			link.l2.go = "cumvana_hard_1";
@@ -342,8 +342,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "cumvana_good_2":
-			dialog.text = "El jefe no fuerza al indio. El jefe gobierna y quiere paz para su gente. Los indios saben, el Kapong verá que los Lokono traigan a los caras pálidas. Sus cabezas serán capturadas por Kanaima. Vienen a vengarse de los Lokono. Kapong - para matar. Captura a los Lokono, haz esclavos.";
-			link.l1 = "¿Y quién capturó vuestras cabezas? ¿Qué espíritu o demonio hace a los indios tan cobardes y miserables? Bueno, tal vez realmente tendré que abandonar la campaña contra Merida. Pero recuerda algo, jefe. Siempre que me preguntan qué sé sobre los Lokono, invariablemente responderé - que son una tribu de cobardes sin valor. Liderados por un gobernante tan cobarde y corto de vista como ellos, cuyo rostro está distorsionado por una mueca de horror al mero recuerdo de los Kapongs. No ganarás gloria entre los indios, ni respeto entre nosotros, los caras pálidas.";
+			dialog.text = "El jefe no fuerza al indio. El jefe gobierna y quiere paz para su gente. Los indios saben, el Kapong verá que los Lokono traigan a los caras pálidas. Sus cabezas serán capturadas por Kanaima. Vienen a vengarse de los Lokono. Kapong para matar. Captura a los Lokono, haz esclavos.";
+			link.l1 = "¿Y quién capturó vuestras cabezas? ¿Qué espíritu o demonio hace a los indios tan cobardes y miserables? Bueno, tal vez realmente tendré que abandonar la campaña contra Merida. Pero recuerda algo, jefe. Siempre que me preguntan qué sé sobre los Lokono, invariablemente responderé que son una tribu de cobardes sin valor. Liderados por un gobernante tan cobarde y corto de vista como ellos, cuyo rostro está distorsionado por una mueca de horror al mero recuerdo de los Kapongs. No ganarás gloria entre los indios, ni respeto entre nosotros, los caras pálidas.";
 			link.l1.go = "cumvana_good_3";
 		break;
 		
@@ -632,7 +632,7 @@ link.l1.go = "hayamee_1_1";
 		case "hayamee_15":
 			pchar.quest.Mtraxx_MeridaHayameeLate.over = "yes";
 			Mtraxx_MeridaRemoveGifts();
-			dialog.text = ""+npchar.name+" está feliz, hijo del mar. Ahora llamo a marido. Él va contigo. Pero recuerda lo que prometiste a "+npchar.name+"¡";
+			dialog.text = ""+npchar.name+" está feliz, hijo del mar. Ahora llamo a marido. Él va contigo. ¡Pero recuerda lo que prometiste a "+npchar.name+"!";
 			link.l1 = "Sí-sí, recuerdo todo. Lo mantendré a salvo, no te preocupes.";
 			link.l1.go = "hayamee_16";
 		break;

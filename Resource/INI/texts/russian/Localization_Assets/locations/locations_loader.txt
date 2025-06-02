@@ -1,0 +1,12 @@
+locations_loader_1
+{
+Первое посещение ~
+}
+locations_loader_2
+{
+Все колонии посещены!
+}
+locations_loader_3
+{
+Посещено таинственное место!
+}

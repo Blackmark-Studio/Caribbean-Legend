@@ -69,17 +69,7 @@ void ProcessDialogEvent()
 				DeleteAttribute(npchar, "talker"); // снимаем говорилку
 				break;
 			}
-			if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && 4 - sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0) // дворянин-пассажир
-			{
-				dialog.text = "Saludos, " + GetAddress_Form(NPChar) + ". Veo que eres capitán de un sólido barco. Quiero pedirte que hagas algo. Puedes aceptarlo o dejarlo.";
-				link.l1 = "Estoy escuchando, " + GetAddress_FormToNPC(NPChar) + "¿Qué quieres decir?";
-				link.l1.go = "passenger";
-				link.l2 = "Perdóneme, " + GetAddress_FormToNPC(NPChar) + ", pero tengo prisa.";
-				link.l2.go = "exit";
-				npchar.quest.meeting = "1";
-				DeleteAttribute(npchar, "talker"); // снимаем говорилку
-				break;
-			}
+			if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && or(IsUniversalShipType(pchar), IsMerchantShipType(pchar)))//дворянин-пассажир
 			if (CheckAttribute(npchar, "quest.donation")) // клянчит деньги
 			{
 				dialog.text = "¡Ahá, es bueno ver a un caballero en nuestra pequeña ciudad! Estoy seguro de que vienes directo de Europa. Escucha, quiero pedirte que me ayudes, de caballero a caballero. Espero que me entiendas correctamente.";
@@ -96,10 +86,10 @@ void ProcessDialogEvent()
 				npchar.quest.meeting = "1";
 				break;
 			}
-			if (CheckAttribute(npchar, "quest.slaves") && !CheckAttribute(Colonies[FindColony(npchar.city)], "questslaves")) // привезти рабов
+			if (CheckAttribute(npchar, "quest.slaves") && !CheckAttribute(&Colonies[FindColony(npchar.city)], "questslaves")) // привезти рабов
 			{
 				dialog.text = "¡Buen día, capitán! Me alegra verte porque pareces un hombre capaz de resolver problemas.";
-				link.l1 = "Depende del problema. Me especializo en resolverlos con violencia, es eso lo que estás buscando, " + GetAddress_FormToNPC(NPChar) + "?";
+				link.l1 = "Depende del problema. Me especializo en resolverlos con violencia. ¿Es eso lo que estás buscando, " + GetAddress_FormToNPC(NPChar) + "?";
 				link.l1.go = "slaves";
 				npchar.quest.meeting = "1";
 				break;
@@ -112,7 +102,7 @@ void ProcessDialogEvent()
 			npchar.quest.meeting = "1";
 
 			//==> прибыла инспекция на Святом Милосердии
-			if (pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
+			if (CheckAttribute(pchar, "questTemp.SantaMisericordia.ColonyZapret") && pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
 			{
 				dialog.Text = LinkRandPhrase(LinkRandPhrase("Toda la ciudad está en vilo... don Fernando de Alamida, el inspector real, ha llegado. Sabes, he visto mucho aquí, pero esto... No es el dolor lo que cambia a las personas, sino cómo lo manejan. Dicen que se convirtió en un hombre diferente después de la muerte de su padre. Ahora no encontrarás un servidor más incorruptible y... despiadado de la Corona en todo el Archipiélago.", "¡Solo mira el 'Santa Misericordia'! Dicen que el mismo rey ordenó construirlo según diseños especiales. Y fíjate, ni un solo rasguño. Como si la misma Virgen María lo protegiera. Aunque he oído rumores... tal vez no sea la Virgen en absoluto.", "¿Sabes cuántas veces han intentado matar a don Fernando? ¡Doce ataques en aguas abiertas, y eso solo en el último año! Bueno, con una tripulación tan leal y entrenada, y bajo la protección del Señor, ¡sobrevivirá al decimotercer ataque también!"), LinkRandPhrase("¿Has oído? Don Fernando de Alamida ha llegado a nuestra ciudad, y dicen que ahora mismo está por las calles. Me encantaría verlo con mis propios ojos...", "Un hombre complicado, este don Fernando. Algunos dicen que es un salvador, limpiando la Madre Patria de la escoria. Otros murmuran que algo se rompió en él después de la muerte de su padre y pronto todos estaremos llorando. Pero te diré esto: no le temas a él. Teme a aquellos que lo hicieron lo que es.", "¡Qué hombre tan apuesto, este don Fernando! ¿Pero sabes qué es extraño? Es como si no notara a nadie. Todo deber y servicio. Oí que había una chica... pero después de reunirse con algún sacerdote, rechazó por completo los placeres mundanos. Como si hubiera hecho un voto."), RandPhraseSimple(RandPhraseSimple("¡Maldito inspector! Mientras él esté aquí, la ciudad parece muerta. No hay comercio, no hay diversión. Incluso respirar, parece, debe ser más silencioso. ¿Y sabes qué es lo más aterrador? Es lo mismo en cada puerto. Como un reloj. ¡Su Majestad Real no podría haber inventado deliberadamente esta tortura para todos nosotros!", "Don Fernando visitó el orfanato de nuevo. Dona generosamente, reza durante horas. ¡Un hombre tan digno debería ser un ejemplo para esos malditos malversadores!"), RandPhraseSimple("¡Ja! El 'santo' Fernando cerró todos los burdeles otra vez. Bueno, no importa, pronto zarpará y los volverán a abrir.", "¡El insp... inspector ha llegado, eso es! ¡Don Fernando de Almeyda, o como se llame, Alamida! Tan importante que el mismo gobernador anda de puntillas a su alrededor. Dicen que te mira a los ojos y ve todos tus pecados de inmediato. ¡Aterrador!")));
 				link.l1 = "...";
@@ -121,7 +111,7 @@ void ProcessDialogEvent()
 			}
 			//<== прибыла инспекция на Святом Милосердии
 			//==> Леди Бет в порту города
-				if (pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
+				if (CheckAttribute(pchar, "questTemp.LadyBeth.CaptainInColony") && pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
 				{
 					dialog.Text = findLedyBethRumour(npchar);
 					link.l1 = "...";
@@ -148,7 +138,7 @@ void ProcessDialogEvent()
 
 		//--------------------------------------------дворянин-пассажир---------------------------------------------------
 	case "passenger":
-		if (drand(19) > 9)
+		if (hrand(19) > 9)
 			SetPassengerParameter("Noblepassenger", false);
 		else
 			SetPassengerParameter("Noblepassenger", true);
@@ -158,7 +148,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Hola, " + GetSexPhrase("señor", "señora") + "¡Necesito llegar a " + XI_ConvertString("Colony" + pchar.GenQuest.Noblepassenger.City + "Acc") + "¡Eso está en " + XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City) + "Voc") + ", por cierto. Sí, sí, lo sé - esos bastardos están esperando a que aparezcamos allí. ¡Pero tengo una reunión muy urgente e importante allí! No soy una persona tacaña - aunque no me gusta pagar, siempre pago. Deja todo lo que estés haciendo, y tan pronto como lleguemos, te daré " + FindRussianDublonString(sti(pchar.GenQuest.Noblepassenger.Money)) + ".";
+			dialog.text = "Hola, " + GetSexPhrase("señor", "señora") + "¡Necesito llegar a " + XI_ConvertString("Colony" + pchar.GenQuest.Noblepassenger.City + "Acc") + "¡Eso está en " + XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City) + "Voc") + ", por cierto. Sí, sí, sé que esos bastardos están esperando a que aparezcamos allí. ¡Pero tengo una reunión muy urgente e importante allí! No soy una persona tacaña, aunque no me gusta pagar, siempre pago. Deja todo lo que estés haciendo, y tan pronto como lleguemos, te daré " + FindRussianDublonString(sti(pchar.GenQuest.Noblepassenger.Money)) + ".";
 		}
 		link.l1 = "Hum. Me dirijo a ese rumbo también, así que estoy listo para llevarte a bordo bajo estos términos.";
 		link.l1.go = "passenger_1";
@@ -274,15 +264,15 @@ void ProcessDialogEvent()
 		break;
 
 	case "donation_1":
-		iTemp = drand(4) + 1;
+		iTemp = hrand(4) + 1;
 		pchar.GenQuest.Nobledonation.Money = iTemp * 1000 + rand(iTemp) * 150;
-		dialog.text = " La suma es bastante pequeña, es " + FindRussianMoneyString(sti(pchar.GenQuest.Nobledonation.Money)) + "¿Entonces qué, puedes ayudarme?";
+		dialog.text = "La suma es bastante pequeña, es " + FindRussianMoneyString(sti(pchar.GenQuest.Nobledonation.Money)) + "¿Entonces qué, puedes ayudarme?";
 		if (sti(pchar.money) >= sti(pchar.GenQuest.Nobledonation.Money))
 		{
 			link.l1 = "Sí, claro. Tómalo.";
 			link.l1.go = "donation_2";
 		}
-		link.l2 = "Estaría encantado de ayudar, pero mis bolsillos también están vacíos - ni un solo peso de sobra.";
+		link.l2 = "Estaría encantado de ayudar, pero mis bolsillos también están vacíos, ni un solo peso de sobra.";
 		link.l2.go = "donation_exit";
 		break;
 
@@ -345,10 +335,10 @@ void ProcessDialogEvent()
 		pchar.GenQuest.Noblelombard = "true" pchar.GenQuest.Noblelombard.Name = GetFullName(npchar);
 		pchar.GenQuest.Noblelombard.id = npchar.id;
 		pchar.GenQuest.Noblelombard.City = npchar.city;
-		pchar.GenQuest.Noblelombard.Money = 20000 + drand(60) * 500;
+		pchar.GenQuest.Noblelombard.Money = 20000 + hrand(60) * 500;
 		pchar.GenQuest.Noblelombard.Percent = makeint(sti(pchar.GenQuest.Noblelombard.Money) * 0.3);
 		pchar.GenQuest.Noblelombard.Summ = sti(pchar.GenQuest.Noblelombard.Money) + sti(pchar.GenQuest.Noblelombard.Percent);
-		pchar.GenQuest.Noblelombard.Chance = drand(9);
+		pchar.GenQuest.Noblelombard.Chance = hrand(9);
 		chrDisableReloadToLocation = true; // закрыть локацию
 		LAi_SetActorType(npchar);
 		LAi_RemoveLoginTime(npchar);
@@ -394,7 +384,7 @@ void ProcessDialogEvent()
 	case "lombard_fail":
 		pchar.quest.Noblelombard_Over.over = "yes"; // снять таймер
 		dialog.text = "Meh, " + GetAddress_Form(NPChar) + "... Ahora también eres testigo de la insaciable codicia de estos malditos usureros sedientos de sangre. ¡Por Dios, señor, avergüenzan a los judíos! Recuerda eso cuando intentes pedirles dinero prestado, como lo hice yo. Gracias por intentarlo al menos...";
-		link.l1 = "   Nunca me gustaron. Bueno, ¿a quién le gustan los usureros? Lo siento, " + GetAddress_FormToNPC(NPChar) + " Adiós.";
+		link.l1 = "Nunca me gustaron. Bueno, ¿a quién le gustan los usureros? Lo siento, " + GetAddress_FormToNPC(NPChar) + " Adiós.";
 		link.l1.go = "lombard_fail_1";
 		break;
 
@@ -436,8 +426,8 @@ void ProcessDialogEvent()
 
 		//------------------------------------------привезти рабов под заказ--------------------------------------------
 	case "slaves":
-		npchar.quest.slaves.price = 3 + drand(1);	  // цена на рабов в дублонах
-		npchar.quest.slaves.qty = 50 + drand(5) * 10; // количество
+		npchar.quest.slaves.price = 3 + hrand(1);	  // цена на рабов в дублонах
+		npchar.quest.slaves.qty = 50 + hrand(5) * 10; // количество
 		npchar.quest.slaves.money = sti(npchar.quest.slaves.qty) * sti(npchar.quest.slaves.price);
 		dialog.text = "Soy dueño de una " + LinkRandPhrase("fábrica", "factoría", "plantación") + " y siempre tengo necesidad de esclavos frescos porque el clima los afecta seriamente. Ahora mismo necesito " + sti(npchar.quest.slaves.qty) + " almas. Estoy dispuesto a encargarte un lote y te pagaré " + sti(npchar.quest.slaves.price) + " doblones por cabeza.\nNo hay prisa, no te meteré prisa si obtienes lo que necesito. Bueno, dentro de lo razonable, no lo prolongues más de medio año. ¿Entonces, qué me dices? ¿Hay trato?";
 		link.l1 = "¡Trato hecho! La esclavitud es un negocio sucio, pero vale la pena el riesgo.";
@@ -581,7 +571,7 @@ void ProcessDialogEvent()
 string DonationText()
 {
 	string sText;
-	switch (drand(5))
+	switch (hrand(5))
 	{
 	case 0:
 		sText = "Ayer perdí todo mi dinero en el juego y no tengo suma suficiente para saldar la deuda. ¿Puedes ayudarme?" break;
@@ -601,7 +591,7 @@ string DonationText()
 
 void LombardText()
 {
-	switch (drand(5))
+	switch (hrand(5))
 	{
 	case 0:
 		pchar.GenQuest.Noblelombard.Item = "el colgante de diamantes de mi madre hecho por un joyero de Madrid";

@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 		chrDisableReloadToLocation = true;
 		if (CheckAttribute(pchar, "questTemp.HWIC.CanTake") && !CheckAttribute(pchar, "questTemp.HWIC.CanTake.Holl") && !CheckAttribute(pchar, "questTemp.HWIC.Eng") && !CheckAttribute(pchar, "questTemp.HWIC.Self"))
 		{
-			dialog.text = "Bienvenido a la Compañía Neerlandesa de las Indias Occidentales. Habla rápido, el tiempo es dinero.";
+			dialog.text = "Bienvenido a la Compañía Holandesa de las Indias Occidentales. Habla rápido, el tiempo es dinero.";
 			link.l1 = "Estoy aquí por asuntos de comercio. Licencias, instrumentos de navegación y demás...";
 			link.l1.go = "HWIC_officer_3";
 			link.l2 = "Quiero ofrecer mis servicios a la Compañía. A cambio de oro, por supuesto. ¿Estáis contratando?";
@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 		}
 		if (CheckAttribute(pchar, "questTemp.HWIC.Eng"))
 		{
-			dialog.text = "Bienvenido a la Compañía Neerlandesa de las Indias Occidentales. Habla rápido, el tiempo es dinero.";
+			dialog.text = "Bienvenido a la Compañía Holandesa de las Indias Occidentales. Habla rápido, el tiempo es dinero.";
 			link.l1 = "Lamento, parece que me equivoqué. Me marcho.";
 			link.l1.go = "HWIC_officer_exit";
 			link.l2 = "Estoy aquí por asuntos de comercio. Licencias, instrumentos de navegación y así sucesivamente...";
@@ -146,7 +146,7 @@ void ProcessDialogEvent()
 		dialog.text = "¿Desea algo, señor?";
 		if (!CheckCharacterItem(pchar, "HolTradeLicence"))
 		{
-			link.l1 = "Quiero comprar una licencia de comercio de la Compañía Neerlandesa de las Indias Occidentales.";
+			link.l1 = "Quiero comprar una licencia de comercio de la Compañía Holandesa de las Indias Occidentales.";
 			link.l1.go = "licence";
 		}
 		if (!CheckAttribute(npchar, "quest.trade"))
@@ -232,10 +232,10 @@ void ProcessDialogEvent()
 			link.l1.go = "licence_r";
 			break;
 		}
-		dialog.text = "Para " + FindRussianDaysString(sti(fQty)) + "¿Muy bien. Te costará " + FindRussianDublonString(sti(npchar.quest.lcc_summ)) + "¿Son aceptables esos términos?";
+		dialog.text = "¿Para " + FindRussianDaysString(sti(fQty)) + " días? Muy bien. Te costará " + FindRussianDublonString(sti(npchar.quest.lcc_summ)) + "¿Son aceptables esos términos?";
 		if (PCharDublonsTotal() >= sti(npchar.quest.lcc_summ))
 		{
-			link.l1 = "Sí, lo soy.";
+			link.l1 = "Sí, lo son.";
 			link.l1.go = "licence_2";
 		}
 		link.l2 = "Desafortunadamente, no tengo tanto dinero conmigo ahora. Volveré por la licencia más tarde.";
@@ -375,13 +375,13 @@ void ProcessDialogEvent()
 		{
 			if (!CheckAttribute(npchar, "quest.silk_info") && sti(pchar.reputation.nobility) > 60)
 			{
-				dialog.text = "Ajá, Kapitein " + GetFullName(pchar) + "¡Es bueno que hayas venido aquí. Tengo una propuesta de negocio para ti.";
+				dialog.text = "Ajá, Kapitein " + GetFullName(pchar) + " ¡Es bueno que hayas venido aquí! Tengo una propuesta de negocio para ti.";
 				link.l1 = "¡Interesante! Le escucho, mynheer.";
 				link.l1.go = "silk_info";
 				break;
 			}
 		}
-		dialog.text = "Buen día, Kapitein " + GetFullName(pchar) + "¡Cómo puedo servirte?";
+		dialog.text = "Buen día, Kapitein " + GetFullName(pchar) + ". ¿Cómo puedo servirle?";
 		if (CheckAttribute(pchar, "questTemp.HWIC.Detector") && (pchar.questTemp.HWIC.Detector == "holl_win"))
 		{
 			if (CheckAttribute(npchar, "quest.silk")) // торговля шелком
@@ -417,7 +417,7 @@ void ProcessDialogEvent()
 		NextDiag.TempNode = "HWIC_Boss";
 		npchar.quest.silk_info = "true";
 		npchar.quest.silk = "true";
-		AddQuestRecord("Unique_Goods", "3");
+		AddQuestRecordInfo("Unique_Goods", "3");
 		break;
 
 	// торговля шелком

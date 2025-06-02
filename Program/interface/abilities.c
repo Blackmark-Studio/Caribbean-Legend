@@ -4,6 +4,8 @@
 int nCurScrollOfficerNum;
 string selectedPerk;
 int currentInfoMode = 0;
+int currentScrollTab = 1;
+bool bShowTabOfficers = true;
 
 void InitInterface(string iniName)
 {
@@ -11,7 +13,12 @@ void InitInterface(string iniName)
 	InterfaceStack.SelectMenu_node = "LaunchAbilities"; // запоминаем, что звать по Ф2
 	GameInterface.title = "titleCharacter";
 	
-	FillCharactersScroll();
+	if (CheckAttribute(&InterfaceStates, "nCurScrollTab") && sti(InterfaceStates.nCurScrollTab) == 2)
+	{
+		bShowTabOfficers = false;
+		currentScrollTab = 2;
+	}
+	FillCharactersScrollEx(bShowTabOfficers);
 	FillPassengerScroll();
 	if (CheckAttribute(&InterfaceStates, "CurCharacter")) 
 	{
@@ -35,6 +42,7 @@ void InitInterface(string iniName)
 	SetEventHandler("AcceptRemoveOfficer","AcceptRemoveOfficer",0);
 	SetEventHandler("ExitPerkMenu","ExitPerkMenu",0);
 	SetEventHandler("AcceptPerk","AcceptPerk",0);
+	SetEventHandler("eScrollTabControlPress","procScrollTabChange",0);
     XI_RegistryExitKey("IExit_F2");
 	
     SetVariable();
@@ -45,6 +53,9 @@ void InitInterface(string iniName)
 		SetNodeUsing("PERK_InstantRepair",false);
 		SetNodeUsing("CONNECTIONS2",false);
 	}
+	if (CheckAttribute(&InterfaceStates, "nCurScrollTab") && CheckAttribute(&InterfaceStates, "CurCharacter")) 
+		SetControlsScrollTabMode(currentScrollTab);
+	else SetControlsScrollTabMode(1);
     HideSkillChanger();
 	CreatePerksPictures();
 	SetAlertMarks(xi_refCharacter);
@@ -83,11 +94,13 @@ void ProcessExitCancel()
 
 void IDoExit(int exitCode)
 {
+	int i, iOfficer;
+	
 	if(!GetAchievement("ach_CL_132"))
 	{
-		int iOfficer = -1;
+		iOfficer = -1;
 		int totalMush = 0;
-		for(int i = 1; i < 4; i++)
+		for(i = 1; i < 4; i++)
 		{		
 			iOfficer = GetOfficersIndex(pchar, i); 
 			if(iOfficer != -1)
@@ -96,6 +109,17 @@ void IDoExit(int exitCode)
 			}
 		}
 		if(totalMush > 2) Achievment_Set("ach_CL_132");
+	}
+	if(bGlobalTutor)
+	{
+		for(i = 1; i < 4; i++)
+		{		
+			iOfficer = GetOfficersIndex(pchar, i); 
+			if(iOfficer != -1)
+			{
+				DoQuestFunctionDelay("SharlieTutorial_AlonsoHired", 1.0);
+			}
+		}
 	}
 	DelEventHandler("InterfaceBreak","ProcessExitCancel");
 	DelEventHandler("exitCancel","ProcessExitCancel");
@@ -111,6 +135,7 @@ void IDoExit(int exitCode)
 	DelEventHandler("AcceptRemoveOfficer","AcceptRemoveOfficer");
 	DelEventHandler("ExitPerkMenu","ExitPerkMenu");
 	DelEventHandler("AcceptPerk","AcceptPerk");
+	DelEventHandler("eScrollTabControlPress","procScrollTabChange");
 	
 	interfaceResultCommand = exitCode;
 	if( CheckAttribute(&InterfaceStates,"ReloadMenuExit"))
@@ -121,6 +146,7 @@ void IDoExit(int exitCode)
 	else
 	{
 		DeleteAttribute(&InterfaceStates, "CurCharacter");
+		DeleteAttribute(&InterfaceStates, "nCurScrollTab");
 		EndCancelInterface(true);
 	}
 }
@@ -318,6 +344,8 @@ void ShowInfoWindow()
 	string sHeader, sText1, sText2, sText3, sPicture;
 	string sGroup, sGroupPicture;
 	int iItem;
+	int	picW = 128;
+	int	picH = 128;
 
 	sPicture = "-1";
 	string sAttributeName;
@@ -325,112 +353,148 @@ void ShowInfoWindow()
 	switch (sCurrentNode)
 	{
 		case "CHARACTERS_SCROLL":
+			picW = 256;
+			picH = 256;
 			nChooseNum = SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"CHARACTERS_SCROLL", 2 );
 			string attributeName = "pic" + (nChooseNum+1);
 			int iCharacter = sti(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
             sHeader = XI_ConvertString("passengership");
-			switch(nChooseNum)
+			sText1 = "";
+			sText2 = "";
+
+			if(currentScrollTab == 1)
 			{
-				case 0:
-					sHeader = GetCharacterFullName(pchar.id);
+				switch(nChooseNum)
+				{
+					case 0:
+						sHeader = GetCharacterFullName(pchar.id);
+						sText1 = "";
+						sText2 = XI_ConvertString("It's you");
+						sText3 = "";
+					break;
+
+					case 1:
+						sHeader = XI_ConvertString("navigator");
+						sText1 = XI_ConvertString("Navigator_Descr");
+						sText2 = XI_ConvertString("Navigator_Up");
+					break;
+
+					case 2:
+						sHeader = XI_ConvertString("boatswain");
+						sText1 = XI_ConvertString("Boatswain_Descr");
+						sText2 = XI_ConvertString("Boatswain_Up");
+					break;
+
+					case 3:
+						sHeader = XI_ConvertString("cannoner");
+						sText1 = XI_ConvertString("Cannoner_Descr");
+						sText2 = XI_ConvertString("Cannoner_Up");
+					break;
+
+					case 4:
+						sHeader = XI_ConvertString("doctor");
+						sText1 = XI_ConvertString("Doctor_Descr");
+						sText2 = XI_ConvertString("Doctor_Up");
+					break;
+
+					case 5:
+						sHeader = XI_ConvertString("treasurer");
+						sText1 = XI_ConvertString("Treasurer_Descr");
+						sText2 = XI_ConvertString("Treasurer_Up");
+					break;
+
+					case 6:
+						sHeader = XI_ConvertString("carpenter");
+						sText1 = XI_ConvertString("Carpenter_Descr");
+						sText2 = XI_ConvertString("Carpenter_Up");
+					break;
+
+					case 7:
+						sHeader = XI_ConvertString("fighter");
+						sText1 = XI_ConvertString("Officer_Descr");
+						sText2 = XI_ConvertString("Officer_Up");
+					break;
+
+					case 8:
+						sHeader = XI_ConvertString("fighter");
+						sText1 = XI_ConvertString("Officer_Descr");
+						sText2 = XI_ConvertString("Officer_Up");
+					break;
+
+					case 9:
+						sHeader = XI_ConvertString("fighter");
+						sText1 = XI_ConvertString("Officer_Descr");
+						sText2 = XI_ConvertString("Officer_Up");
+					break;
+				}
+
+				if(iCharacter != 0)
+				{
+					ref rchr = &Characters[iCharacter];
+					iItem = GetMoneyForOfficerFull(rchr);
+					if (iItem > 0)
+					{
+						sText2 = XI_ConvertString("HirePrice") + " " + FindRussianMoneyString(iItem) + " " + XI_ConvertString("per month");
+					}
+					if(FindFellowtravellers(pchar,rchr) != FELLOWTRAVEL_COMPANION)
+					{
+						sText3 = XI_ConvertString("AddRemoveOfficerScroll");
+					}
+					else
+					{
+						if(CheckAttribute(rchr, "quest.convoyquest.money"))
+						{
+							sText3 = "";//SelectEscortQuestInfo(rchr);
+						}
+						sText1 = GetCharacterFullName(Characters[iCharacter].id);
+						sHeader = XI_ConvertString("companionship");
+					}
+					sPicture = "interfaces\le\portraits\512\face_" + rchr.FaceId + ".tga"
+					if(CheckCharacterPerk(xi_refCharacter, "ByWorker")) 
+					{
+						if(CheckCharacterPerk(xi_refCharacter, "ByWorker2")) sText2 = sText2 + NewStr() + GetConvertStr("perkByWorker2Short", "AbilityDescribe.txt"));
+						else sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt"));
+					}
+				}
+			}
+			else
+			{
+				if(nChooseNum == 0)
+				{
+					sHeader = XI_ConvertString("captain");
 					sText1 = "";
 					sText2 = XI_ConvertString("It's you");
-				break;
-
-				case 1:
-					sHeader = XI_ConvertString("navigator");
-					sText1 = XI_ConvertString("Navigator_Descr");
-					sText2 = XI_ConvertString("Navigator_Up");
-				break;
-
-				case 2:
-					sHeader = XI_ConvertString("boatswain");
-					sText1 = XI_ConvertString("Boatswain_Descr");
-					sText2 = XI_ConvertString("Boatswain_Up");
-				break;
-
-				case 3:
-					sHeader = XI_ConvertString("cannoner");
-					sText1 = XI_ConvertString("Cannoner_Descr");
-					sText2 = XI_ConvertString("Cannoner_Up");
-				break;
-
-				case 4:
-					sHeader = XI_ConvertString("doctor");
-					sText1 = XI_ConvertString("Doctor_Descr");
-					sText2 = XI_ConvertString("Doctor_Up");
-				break;
-
-				case 5:
-					sHeader = XI_ConvertString("treasurer");
-					sText1 = XI_ConvertString("Treasurer_Descr");
-					sText2 = XI_ConvertString("Treasurer_Up");
-				break;
-
-				case 6:
-					sHeader = XI_ConvertString("carpenter");
-					sText1 = XI_ConvertString("Carpenter_Descr");
-					sText2 = XI_ConvertString("Carpenter_Up");
-				break;
-
-				case 7:
-					sHeader = XI_ConvertString("fighter");
-					sText1 = XI_ConvertString("Officer_Descr");
-					sText2 = XI_ConvertString("Officer_Up");
-				break;
-
-				case 8:
-					sHeader = XI_ConvertString("fighter");
-					sText1 = XI_ConvertString("Officer_Descr");
-					sText2 = XI_ConvertString("Officer_Up");
-				break;
-
-				case 9:
-					sHeader = XI_ConvertString("fighter");
-					sText1 = XI_ConvertString("Officer_Descr");
-					sText2 = XI_ConvertString("Officer_Up");
-				break;
-			}
-			if(iCharacter != 0)
-			{
-				ref rchr = &Characters[iCharacter];
-				iItem = GetMoneyForOfficerFull(rchr);
-				if (iItem > 0)
-				{
-				    sText2 = XI_ConvertString("HirePrice") + " " + FindRussianMoneyString(iItem) + " " + XI_ConvertString("per month");
+					sText3 = "";
 				}
-				if(FindFellowtravellers(pchar,rchr) != FELLOWTRAVEL_COMPANION)
+				if(iCharacter != 0)
 				{
-					sText1 = GetCharacterFullName(Characters[iCharacter].id);
-
-					if (CheckAttribute(&Characters[iCharacter], "prisoned") && Characters[iCharacter].prisoned == true)
+					ref rchar = &Characters[iCharacter];
+					if(FindFellowtravellers(pchar,rchar) != FELLOWTRAVEL_COMPANION)
 					{
-                        sHeader = GetRPGText("Prisoner");
-						sText2 = GetRPGText("Prisoner_desc");
+						sText1 = GetCharacterFullName(Characters[iCharacter].id);
+						if (CheckAttribute(&Characters[iCharacter], "prisoned") && Characters[iCharacter].prisoned == true)
+						{
+							sHeader = GetRPGText("Prisoner");
+							sText2 = GetRPGText("Prisoner_desc");
+						}
+					}
+					sPicture = "interfaces\le\portraits\512\face_" + rchar.FaceId + ".tga"
+					if(CheckCharacterPerk(rchar, "ByWorker")) 
+					{
+						if(CheckCharacterPerk(rchar, "ByWorker2")) sText2 = sText2 + NewStr() + GetConvertStr("perkByWorker2Short", "AbilityDescribe.txt"));
+						else sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt"));
 					}
 				}
-				else
-				{
-					if(CheckAttribute(rchr, "quest.convoyquest.money"))
-					{
-						sText3 = "";//SelectEscortQuestInfo(rchr);
-					}
-					sText1 = GetCharacterFullName(Characters[iCharacter].id);
-					sHeader = XI_ConvertString("companionship");
-				}
-				sPicture = "interfaces\le\portraits\128\face_" + rchr.FaceId + ".tga"
+				else return;
 			}
-
-
 			if(sPicture == "-1")
 			{
-				sPicture = "interfaces\le\portraits\128\" + sHeader + ".tga";
+				sPicture = "interfaces\le\portraits\512\" + sHeader + ".tga";
 			}
-            sText3 = XI_ConvertString("AddRemoveOfficerScroll");
-            if (bBettaTestMode)
-            {
-                sText3 += "   " +  Characters[iCharacter].id;
-            }
+			if (bBettaTestMode)
+			{
+				if(iCharacter != 0) sText3 += "   " +  Characters[iCharacter].id;
+			}
 		break;
 		
 		case "TABLE_SPECIAL":
@@ -489,7 +553,7 @@ void ShowInfoWindow()
 		break;
 		//<--- sith
 	}
-	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 128, 128);
+	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, picW, picH);
 	HidePerkSelect();
 }
 
@@ -509,17 +573,19 @@ void FillSkillTables()
     DelBakSkillAttr(xi_refCharacter);
     ClearCharacterExpRate(xi_refCharacter);
     RefreshCharacterSkillExpRate(xi_refCharacter);
-    
     SetEnergyToCharacter(xi_refCharacter);
     // boal оптимизация скилов <--
-    
+
+    // Оптимизон для проверок пенальти в десятках вызовов ниже и внутри функций
+    xi_refCharacter.TempSailing = GetCharacterSkillSimple(xi_refCharacter, SKILL_SAILING);
+
     if (!CheckAttribute(xi_refCharacter,"perks.FreePoints_self") )
 		xi_refCharacter.perks.FreePoints_self = 0;
     if (!CheckAttribute(xi_refCharacter,"perks.FreePoints_ship") )
 		xi_refCharacter.perks.FreePoints_ship = 0;
-	if(bPerksMaxSelf(xi_refCharacter)) SetFormatedText("PERSONAL_AVAILABLE", XI_ConvertString("Personal abilities"));
+	if(HaveAllPerks(xi_refCharacter, "self")) SetFormatedText("PERSONAL_AVAILABLE", XI_ConvertString("Personal abilities"));
 	else SetFormatedText("PERSONAL_AVAILABLE", XI_ConvertString("Personal abilities") + "  -  " +xi_refCharacter.perks.FreePoints_self);
-    if(bPerksMaxShip(xi_refCharacter)) SetFormatedText("SHIP_AVAILABLE", XI_ConvertString("Ship abilities"));
+    if(HaveAllPerks(xi_refCharacter, "ship")) SetFormatedText("SHIP_AVAILABLE", XI_ConvertString("Ship abilities"));
 	else SetFormatedText("SHIP_AVAILABLE", XI_ConvertString("Ship abilities") + "  -  " + xi_refCharacter.perks.FreePoints_ship);
 	
 	GameInterface.TABLE_SPECIAL.select = 0;
@@ -682,10 +748,13 @@ void FillSkillTables()
 		}
 	}
 
-	// прорисовка
+	// Прорисовка
 	Table_UpdateWindow("TABLE_SPECIAL");
     Table_UpdateWindow("TABLE_SKILL_1");
     Table_UpdateWindow("TABLE_SKILL_2");
+
+    // Убираем бэкап
+    DeleteAttribute(xi_refCharacter, "TempSailing");
 }
 
 void CS_TableSelectChange()
@@ -848,7 +917,7 @@ void FillPassengerScroll()
                 {
                     howWork = 3;
                 }
-                ok = !CheckAttribute(&characters[_curCharIdx], "isfree") || sti(characters[_curCharIdx].isfree) < howWork;
+                ok = !CheckAttribute(&characters[_curCharIdx], "isbusy") || sti(characters[_curCharIdx].isbusy) < howWork;
                 PsgAttrName = GetOfficerTypeByNum(nCurScrollNum);
 				// совместители должностей <--
 				if (ok && !CheckAttribute(&characters[_curCharIdx], PsgAttrName))
@@ -876,6 +945,9 @@ void ExitOfficerMenu()
 void OfficerChange()
 {
 	string attributeName = "pic" + (nCurScrollNum+1);
+	
+	if(bGlobalTutor && nCurScrollNum < 7) return;
+	
 	if(GameInterface.CHARACTERS_SCROLL.(attributeName).character != "0")
 	{
 		int iCharacter = sti(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
@@ -920,13 +992,13 @@ void AcceptAddOfficer()
     {
 		int iChar = sti(GameInterface.PASSENGERSLIST.(attributeName2).character);
 
-		if (!CheckAttribute(&characters[iChar], "isfree"))
+		if (!CheckAttribute(&characters[iChar], "isbusy"))
 		{
-			characters[iChar].isfree = 1;
+			characters[iChar].isbusy = 1;
 		}
 		else
 		{
-		    characters[iChar].isfree = sti(characters[iChar].isfree) + 1; // совместители
+		    characters[iChar].isbusy = sti(characters[iChar].isbusy) + 1; // совместители
 		}
 		bOk = (Characters[iChar].location != pchar.location);  // ниже локация перебивается на ГГ
 		switch (nCurScrollNum)
@@ -989,7 +1061,7 @@ void AcceptAddOfficer()
 			}
 	    	LAi_tmpl_SetFollow(&Characters[iChar], GetMainCharacter(), -1.0);
     	}
-		FillCharactersScroll();
+		FillCharactersScrollEx(true);
 		GameInterface.CHARACTERS_SCROLL.current = iCurrentNode;
 		
 		rChar = &characters[iChar];
@@ -1017,10 +1089,10 @@ void AcceptRemoveOfficer()
 
 	int iChar = sti(GameInterface.CHARACTERS_SCROLL.(attributeName2).character);
 
-    characters[iChar].isfree = sti(characters[iChar].isfree) - 1; // совместители
-	if (sti(characters[iChar].isfree) <= 0)
+    characters[iChar].isbusy = sti(characters[iChar].isbusy) - 1; // совместители
+	if (sti(characters[iChar].isbusy) <= 0)
 	{
-		DeleteAttribute(&characters[iChar], "isfree");
+		DeleteAttribute(&characters[iChar], "isbusy");
 	}
 
 	switch (nCurScrollNum)
@@ -1064,7 +1136,7 @@ void AcceptRemoveOfficer()
     attributeName2 = GetOfficerTypeByNum(nCurScrollNum);
     DeleteAttribute(&characters[iChar], attributeName2); // совместитель дожности
     
-	FillCharactersScroll();
+	FillCharactersScrollEx(true);
 	GameInterface.CHARACTERS_SCROLL.current = iCurrentNode;
 	ExitRemoveOfficerMenu();
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"CHARACTERS_SCROLL",-1);
@@ -1310,6 +1382,13 @@ void ChoosePerk(string perkName)
 	    showCondition = false;
 	}
 	// проверка на необходимы перки <--
+
+    // проверка ранга
+    if (CheckAttribute(&ChrPerksList, "list." + perkName + ".rank") && sti(xi_refCharacter.rank) < sti(ChrPerksList.list.(perkName).rank))
+	{
+        ok = false;
+    }
+
 	XI_WindowShow("PERKWINDOW", true);
 	XI_WindowDisable("PERKWINDOW", false);
 
@@ -1322,7 +1401,8 @@ void ChoosePerk(string perkName)
   	    SetNewGroupPicture("PERKPICTURE", "PERKS_ENABLE", perkName);
 		if (ChrPerksList.list.(perkName).BaseType == "self"){
 			SetNewGroupPicture("PERKPICTURE_BASE", "PERKS_ENABLE", "base_self");
-		} else {
+		}
+        else {
 			SetNewGroupPicture("PERKPICTURE_BASE", "PERKS_ENABLE", "base_ship");
 		}
 	}
@@ -1369,7 +1449,7 @@ void AcceptPerk()
     SetFormatedText("SHIP_AVAILABLE", XI_ConvertString("Ship abilities") + "  -  " + xi_refCharacter.perks.FreePoints_ship);
     RefreshPerksPictures();
 	RefreshPerksNames();
-	FillCharactersScroll();
+	FillCharactersScrollEx(true);
 	FillPassengerScroll();
 	GameInterface.CHARACTERS_SCROLL.current = iCurrentNode;
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"CHARACTERS_SCROLL",-1);
@@ -1476,4 +1556,83 @@ void SetAllPerksSelectable(bool selectable) {
         SetSelectable(nodeName, selectable);
         SetSelectable(bnodeName, selectable);
     }
+}
+
+void procScrollTabChange()
+{
+	int iComIndex = GetEventData();
+	string sNodName = GetEventData();
+	if(sNodName == "TABBTN_SCROLL_1")
+	{
+		SetControlsScrollTabMode(1);
+		return;
+	}
+	if(sNodName == "TABBTN_SCROLL_2")
+	{
+		if(GetFreePassengersQuantity(pchar) == 0) return;
+		SetControlsScrollTabMode(2);
+		return;
+	}
+}
+
+void SetControlsScrollTabMode(int nMode)
+{
+	int nColor1 = argb(255,196,196,196);
+	int nColor2 = nColor1;
+	if(GetFreePassengersQuantity(pchar) == 0) nColor2 = argb(255,128,128,128);
+
+	string sPic1 = "TabDeSelected";
+	string sPic2 = sPic1;
+
+	string sPic3 = sPic1;
+	string sPic4 = sPic1;
+
+	switch (nMode)
+	{
+		case 1:
+			sPic1 = "TabSelected";
+			sPic3 = "TabSelectedMark";
+			nColor1 = argb(255,255,255,255);
+		break;
+		case 2:
+			sPic2 = "TabSelected";
+			sPic4 = "TabSelectedMark";
+			nColor2 = argb(255,255,255,255);
+		break;
+	}
+    
+	SetNewGroupPicture("TABBTN_SCROLL_1", "TABS", sPic1);
+	SetNewGroupPicture("TABBTN_SCROLL_2", "TABS", sPic2);
+	SetNewGroupPicture("TABBTN_SCROLL_1_MARK", "TABS", sPic3);
+	SetNewGroupPicture("TABBTN_SCROLL_2_MARK", "TABS", sPic4);
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_SCROLL_1", 8,0,nColor1);
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_SCROLL_2", 8,0,nColor2);
+
+	FillScrollControlsList(nMode);
+}
+
+void FillScrollControlsList(int nMode)
+{
+	switch (nMode)
+	{
+	    case 1: 
+			FillCharactersScrollEx(true);
+			currentScrollTab = 1;
+		break;  // офицеры
+	    case 2: 
+			FillCharactersScrollEx(false); 
+			currentScrollTab = 2;
+		break;  // пассажиры
+	}
+	if (CheckAttribute(&InterfaceStates, "CurCharacter")) 
+	{
+		GameInterface.CHARACTERS_SCROLL.current = InterfaceStates.CurCharacter;
+		SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"CHARACTERS_SCROLL",-1);
+		DeleteAttribute(&InterfaceStates, "CurCharacter");
+	}
+	else
+	{
+		GameInterface.CHARACTERS_SCROLL.current = 0;
+		SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"CHARACTERS_SCROLL",-1);
+	}
 }

@@ -1280,7 +1280,7 @@ void ProcessDialogEvent()
 			link.l1.go = "saga_oust";
 			DeleteAttribute(npchar, "quest.bakaut_sum");
 			npchar.quest.trade_bakaut = "true"; // генератор купли-продажи бакаута
-			AddQuestRecord("Unique_Goods", "1");
+			AddQuestRecordInfo("Unique_Goods", "1");
 		break;
 		
 		case "saga_59_1": // укрысил у Яна - нет генератора на бакаут, потерял больше
@@ -1726,7 +1726,7 @@ void ProcessDialogEvent()
 			link.l1 = "I hope so, Jan, I hope so.";
 			link.l1.go = "UpgradeBakaut_Agreed_1";
 			RemoveDublonsFromPCharTotal(3000);
-			AddQuestRecord("Unique_Goods", "1_1");
+			AddQuestRecordInfo("Unique_Goods", "1_1");
 			pchar.questTemp.UpgradeBakaut = true;
 			pchar.questTemp.SvensonBakautBlock = true;
 			DeleteAttribute(pchar, "questTemp.SvensonBakautPotom");

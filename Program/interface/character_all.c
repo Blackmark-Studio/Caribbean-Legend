@@ -1053,7 +1053,7 @@ void FillPassengerScroll()
                 {
                     howWork = 3;
                 }
-                ok = !CheckAttribute(&characters[_curCharIdx], "isfree") || sti(characters[_curCharIdx].isfree) < howWork;
+                ok = !CheckAttribute(&characters[_curCharIdx], "isbusy") || sti(characters[_curCharIdx].isbusy) < howWork;
                 PsgAttrName = GetOfficerTypeByNum(nCurScrollNum);
 				// совместители должностей <--
 				if (ok && !CheckAttribute(&characters[_curCharIdx], PsgAttrName))
@@ -1125,13 +1125,13 @@ void AcceptAddOfficer()
     {
 		int iChar = sti(GameInterface.PASSENGERSLIST.(attributeName2).character);
 
-		if (!CheckAttribute(&characters[iChar], "isfree"))
+		if (!CheckAttribute(&characters[iChar], "isbusy"))
 		{
-			characters[iChar].isfree = 1;
+			characters[iChar].isbusy = 1;
 		}
 		else
 		{
-		    characters[iChar].isfree = sti(characters[iChar].isfree) + 1; // совместители
+		    characters[iChar].isbusy = sti(characters[iChar].isbusy) + 1; // совместители
 		}
 		bOk = (Characters[iChar].location != pchar.location);  // ниже локация перебивается на ГГ
 		switch (nCurScrollNum)
@@ -1222,10 +1222,10 @@ void AcceptRemoveOfficer()
 
 	int iChar = sti(GameInterface.CHARACTERS_SCROLL.(attributeName2).character);
 
-    characters[iChar].isfree = sti(characters[iChar].isfree) - 1; // совместители
-	if (sti(characters[iChar].isfree) <= 0)
+    characters[iChar].isbusy = sti(characters[iChar].isbusy) - 1; // совместители
+	if (sti(characters[iChar].isbusy) <= 0)
 	{
-		DeleteAttribute(&characters[iChar], "isfree");
+		DeleteAttribute(&characters[iChar], "isbusy");
 	}
 
 	switch (nCurScrollNum)
@@ -1494,6 +1494,13 @@ void ChoosePerk()
 	    showCondition = false;
 	}
 	// проверка на необходимы перки <--
+
+    // проверка ранга
+    if (CheckAttribute(&ChrPerksList, "list." + perkName + ".rank") && sti(xi_refCharacter.rank) < sti(ChrPerksList.list.(perkName).rank))
+	{
+        ok = false;
+    }
+
 	XI_WindowShow("PERK_WINDOW", true);
 	XI_WindowDisable("PERK_WINDOW", false);
 	XI_WindowDisable("MAIN_WINDOW", true);

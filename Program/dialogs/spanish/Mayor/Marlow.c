@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "shark_1":
-		dialog.text = "Hace unos meses, Steven vino a mí y me ofreció un trato muy extraño: dejó su fragata 'Fortuna' en prenda por un mes a cambio de un bergantín completamente cargado de provisiones. Luego, o me devuelve el bergantín y el dinero por las provisiones o me quedo con su fragata. Pasó un mes - ni rastro de Shark, ni de mi bergantín, ni del dinero.\nAdemás, escuché rumores de que Blaze fue asesinado y Shark era el sospechoso. ¿Qué podría pensar? ¡Correcto! Pensé que Steven había escapado de lo peor. Vendí su fragata a un inglés llamado William Patterson, él estaba muy complacido y pagó una gran pila de doblones por el barco.\nPor lo tanto, he compensado completamente mis gastos y no guardo rencor contra él. No me importa la muerte de Sharp, tengo mis propios problemas de los que preocuparme.";
+		dialog.text = "Hace unos meses, Steven vino a mí y me ofreció un trato muy extraño: dejó su fragata 'Fortuna' en prenda por un mes a cambio de un bergantín completamente cargado de provisiones. Luego, o me devuelve el bergantín y el dinero por las provisiones o me quedo con su fragata. Pasó un mes, ni rastro de Shark, ni de mi bergantín, ni del dinero.\nAdemás, escuché rumores de que Blaze fue asesinado y Shark era el sospechoso. ¿Qué podría pensar? ¡Correcto! Pensé que Steven había escapado de lo peor. Vendí su fragata a un inglés llamado William Patterson, él estaba muy complacido y pagó una gran pila de doblones por el barco.\nPor lo tanto, he compensado completamente mis gastos y no guardo rencor contra él. No me importa la muerte de Sharp, tengo mis propios problemas de los que preocuparme.";
 		link.l1 = "¿No crees que si quisiera escapar, no necesitaría tu bergantín? Tenía su propio barco, cien veces mejor que cualquier bergantín. Parece que Shark tenía un plan, pero algo salió mal y no regresó a tiempo.";
 		link.l1.go = "shark_2";
 		break;
@@ -538,7 +538,7 @@ void ProcessDialogEvent()
 	case "Marginpassenger_offer":
 		pchar.GenQuest.Marginpassenger.Goods = GOOD_EBONY + rand(makeint(GOOD_MAHOGANY - GOOD_EBONY));
 		pchar.GenQuest.Marginpassenger.GoodsQty = 200 + rand(10) * 10;
-		switch (drand(1))
+		switch (hrand(1))
 		{
 		case 0: // бухта на южном мейне
 			SelectSouthshore();
@@ -694,7 +694,7 @@ void SelectSouthshore()
 
 void SelectSouthcity()
 {
-	switch (drand(2))
+	switch (hrand(2))
 	{
 	case 0:
 		pchar.GenQuest.Marginpassenger.Southcity = "Maracaibo";

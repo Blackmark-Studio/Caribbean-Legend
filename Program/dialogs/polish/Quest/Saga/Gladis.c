@@ -192,7 +192,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Gladis_history_3":
-			dialog.text = "Znam jej ojca, był piratem zwanym 'Rzeźnik' na fregacie 'Neptun'. Widziałem go tylko dwa razy. A jej matka była piękną młodą kobietą, rude włosy, ubrana w męskie ubrania. To wszystko, co mogę ci o niej powiedzieć, poza tym, że była złą matką.\nNigdy nie zostawiłbym takiego dziecka w rękach obcych. Oboje zginęli tragicznie. A obiecany kurier pojawił się dwadzieścia lat później i okazało się, że to ty. Czy Rzeźnik cię wysłał? Czy on żyje?";
+			dialog.text = "Znam jej ojca, był piratem zwanym 'Rzeźnik' na fregacie 'Neptune'. Widziałem go tylko dwa razy. A jej matka była piękną młodą kobietą, rude włosy, ubrana w męskie ubrania. To wszystko, co mogę ci o niej powiedzieć, poza tym, że była złą matką.\nNigdy nie zostawiłbym takiego dziecka w rękach obcych. Oboje zginęli tragicznie. A obiecany kurier pojawił się dwadzieścia lat później i okazało się, że to ty. Czy Rzeźnik cię wysłał? Czy on żyje?";
 			link.l1 = "Spokojnie, panno Gladys! Nie ma powodów, by podejrzewać, że Rzeźnik ożył, choć jesteś drugą osobą, która to zasugerowała. Niedawno spotkałem człowieka, który miał ci pokazać ten pierścień...";
 			link.l1.go = "Gladis_history_4";
 		break;

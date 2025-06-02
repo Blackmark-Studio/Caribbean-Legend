@@ -1,0 +1,679 @@
+﻿Roger_1
+{
+Hai dato via la bandiera spagnola
+}
+
+Roger_2
+{
+Gabriela
+}
+Roger_3
+{
+Chapada
+}
+
+Roger_4
+{
+Modalità di esplorazione: timer esteso. Completa la missione!
+}
+
+Roger_5
+{
+Lope
+}
+Roger_6
+{
+Montoro
+}
+
+Roger_7
+{
+Rosario
+}
+Roger_8
+{
+Gusman
+}
+
+Roger_9
+{
+Cantavro
+}
+
+Roger_10
+{
+Esberdo
+}
+Roger_11
+{
+Cabanas
+}
+
+Roger_12
+{
+Avvicinatevi alle chiatte e prendete il loro bottino. Fate attenzione a non schiacciarle con lo scafo della vostra nave.
+}
+
+Roger_13
+{
+Amber acquisita @<sti(pchar.questTemp.Mtraxx_SobralVsyo)> / 5
+}
+
+Roger_14
+{
+Snake
+}
+
+Roger_15
+{
+Geffrey
+}
+Roger_16
+{
+Brooke
+}
+
+Roger_17
+{
+Fly Fish
+}
+
+Roger_18
+{
+Billy
+}
+Roger_19
+{
+Pert
+}
+
+Roger_20
+{
+Utrecht
+}
+
+Roger_21
+{
+Joachim
+}
+Roger_22
+{
+Gusen
+}
+
+Roger_23
+{
+brigantino 'Utrecht'
+}
+
+Roger_24
+{
+Modalità di esplorazione: il timer non è disattivato. Soddisfare il termine!
+}
+
+Roger_25
+{
+Un'ora dopo...@<NewStr()>La seta è stata scaricata all'acquirente
+}
+
+Roger_26
+{
+Moray
+}
+
+Roger_27
+{
+Paul
+}
+Roger_28
+{
+Chant
+}
+
+Roger_29
+{
+Jean
+}
+Roger_30
+{
+Picard
+}
+
+Roger_31
+{
+Sono state prelevate 30 armi da taglio dall'arsenale della nave
+}
+
+Roger_32
+{
+Armi da taglio raccolte - 30 pezzi
+}
+
+Roger_33
+{
+Niente armi da taglio
+}
+
+Roger_34
+{
+Pistole raccolte - @<FindRussianQtyString(iGun)>
+}
+
+Roger_35
+{
+Moschetti raccolti - @<FindRussianQtyString(iMushket)>
+}
+
+Roger_36
+{
+Pozioni curative raccolte - @<FindRussianQtyString(iPotion)>
+}
+
+Roger_37
+{
+Forniture raccolte per @<iShot> shots
+}
+
+Roger_38
+{
+Armi da taglio raccolte - 30 pieces
+}
+Roger_39
+{
+Pistole raccolte - 50 pieces
+}
+Roger_40
+{
+Pozioni curative raccolte - 90 pieces
+}
+Roger_41
+{
+Rifornimenti raccolti per 70 colpi
+}
+
+Roger_42
+{
+Più tardi, la sera successiva...
+}
+
+Roger_43
+{
+Qualche tempo dopo...
+}
+
+Roger_44
+{
+La piantagione è allarmata!
+}
+
+Roger_45
+{
+Avete 300 secondi prima che lo spagnolo otterrà rinforzi dal forte
+}
+
+Roger_46
+{
+Gli spagnoli hanno perso la loro ammiraglia! Possiamo provare a fuggire!
+}
+
+Roger_47
+{
+Il convoglio olandese è all'orizzonte!
+}
+
+Roger_48
+{
+Rosbohom
+}
+
+Roger_49
+{
+Gryphon
+}
+
+Roger_50
+{
+La notte è arrivata...
+}
+
+Roger_51
+{
+Mirabelle
+}
+Roger_52
+{
+
+}
+
+Roger_53
+{
+Mirabelle è morta di febbre!
+}
+
+Roger_54
+{
+Luka
+}
+Roger_55
+{
+Bayard
+}
+
+Roger_56
+{
+Kumwana
+}
+Roger_57
+{
+
+}
+
+Roger_58
+{
+Hayami
+}
+Roger_59
+{
+
+}
+
+Roger_60
+{
+Tagofa
+}
+Roger_61
+{
+
+}
+
+Roger_62
+{
+Due giorni dopo...@<NewStr()>Sei barche lunghe sono state costruite...
+}
+
+Roger_63
+{
+Demetrio
+}
+Roger_64
+{
+Rojas
+}
+
+Roger_65
+{
+Kitty
+}
+
+Roger_66
+{
+Torero
+}
+
+Roger_67
+{
+Ignacio
+}
+Roger_68
+{
+Marco
+}
+
+Roger_69
+{
+Modalità di esplorazione: il timer è disabilitato.
+}
+
+Roger_70
+{
+Eduardo
+}
+Roger_71
+{
+de Losada
+}
+
+Roger_72
+{
+El Casador
+}
+
+Roger_73
+{
+Vai alla tua cabina per studiare il registro delle navi
+}
+
+Roger_74
+{
+Gaspard
+}
+Roger_75
+{
+Goldenteeth
+}
+
+Roger_76
+{
+La festa di imbarco è pronta!
+}
+
+Roger_77
+{
+Cuttlefish
+}
+
+Roger_78
+{
+Vagrant
+}
+Roger_79
+{
+
+}
+
+Roger_80
+{
+Merciless
+}
+
+Roger_81
+{
+Vampire
+}
+Roger_82
+{
+
+}
+
+Roger_83
+{
+Il Torero sta effettuando un'incursione a Le Francois!
+}
+
+Roger_84
+{
+Stai aspettando furtivamente nel tuo nascondiglio...
+}
+
+Roger_85
+{
+'Torero'
+}
+
+Roger_86
+{
+Modalità di esplorazione: durata della missione raddoppiata
+}
+
+Roger_87
+{
+Eagle-Owl
+}
+
+Roger_88
+{
+Joker
+}
+Roger_89
+{
+Jim
+}
+
+Roger_90
+{
+Modalità di esplorazione: Corrida - le coordinate sono corrette
+}
+
+Roger_91
+{
+Modalità di esplorazione: Corrida - le coordinate non sono corrette
+}
+
+Roger_92
+{
+Convoglio spagnolo all'orizzonte!
+}
+
+Roger_93
+{
+Toro de Oro
+}
+
+Roger_94
+{
+Red Dragon
+}
+
+Roger_95
+{
+Un'enorme esplosione sulla @<pchar.ship.name>!
+}
+
+Roger_96
+{
+Siamo arrivati a Cartagena! Tyrex ordina di navigare verso Baia di Covenas
+}
+
+Roger_97
+{
+Le squadre d'assalto sono pronte per attaccare Cartagena!
+}
+
+Roger_98
+{
+Le squadre d'assalto della '@<pchar.ship.name>' ha @<iCrew1> uomini
+}
+Roger_99
+{
+Le squadre d'assalto della Red Dragon hanno @<iCrew2> uomini
+}
+Roger_100
+{
+Le squadre d'assalto della Snake hanno @<iCrew3> uomini
+}
+Roger_101
+{
+Le squadre d'assalto della Moray hanno @<iCrew4> uomini
+}
+
+Roger_102
+{
+Un giorno dopo...@<NewStr()>I barili di polvere da sparo sono stati consegnati alla chiusa.
+}
+
+Roger_103
+{
+Tonneur
+}
+
+Roger_104
+{
+Libre
+}
+
+Roger_105
+{
+Myutin
+}
+
+Roger_106
+{
+Inconnu
+}
+
+Roger_107
+{
+Alonso
+}
+Roger_108
+{
+
+}
+
+Roger_109
+{
+Tre ore dopo...
+}
+
+Roger_110
+{
+Rodgar
+}
+Roger_111
+{
+Janssen
+}
+
+Roger_112
+{
+Ignacio Marco è sceso sul molo!
+}
+
+Roger_113
+{
+2 ore passate...@<NewStr()>
+}
+
+Roger_114
+{
+Ignacio Marco ha lasciato la residenza
+}
+
+Roger_115
+{
+insieme a due capitani
+}
+
+Roger_116
+{
+Separator
+}
+
+Roger_117
+{
+Bernar
+}
+Roger_118
+{
+Vensan
+}
+
+Roger_119
+{
+Dionisio
+}
+Roger_120
+{
+Peres
+}
+
+Roger_121
+{
+Un giorno dopo...@<NewStr()>Il riscatto per Cartagena è stato raccolto
+}
+
+Roger_122
+{
+Due giorni sono passati rapidamente @<NewStr()> nelle feste e piaceri amorosi...
+}
+
+Roger_123
+{
+Camilla
+}
+Roger_124
+{
+
+}
+
+Roger_125
+{
+don Enrico
+}
+Roger_126
+{
+
+}
+
+Roger_127
+{
+Michel
+}
+Roger_128
+{
+de Monper
+}
+
+Roger_129
+{
+Marcus
+}
+Roger_130
+{
+Tyrex
+}
+
+Roger_131
+{
+Io, Charles de Maure, nobile francese e capitano, giuro:
+}
+
+Roger_132
+{
+... Ho finito con il mio passato pirata per sempre ...
+}
+
+Roger_133
+{
+... Niente più civili innocenti moriranno per mia mano ...
+}
+
+Roger_134
+{
+... Giuro di proteggere le donne nonostante il loro status e nazionalità ...
+}
+
+Roger_135
+{
+... Giuro che l'oro non mi renderà più cieco ...
+}
+
+Roger_136
+{
+... Giuro di oppormi a qualsiasi cattivo che incontrerò sul mio cammino ...
+}
+
+Roger_137
+{
+... Giuro di sempre scegliere l'onore piuttosto che le ricchezze ...
+}
+
+Roger_138
+{
+... Giuro di rimanere un uomo degno e nobile in qualsiasi situazione e con qualsiasi gente ...
+}
+
+Roger_139
+{
+Continuo a pensare a Mirabelle per qualche ragione. Come sta? È scomparsa? Dev'essere stato crudele lasciare una ragazza sola. Me ne occupo io! Dovrei vederla presto.
+}
+
+Roger_140
+{
+Knippel
+}
+
+Roger_141
+{
+Longwei
+}
+
+Roger_142
+{
+Ticinitit
+}
+
+Roger_143
+{
+Tommy
+}

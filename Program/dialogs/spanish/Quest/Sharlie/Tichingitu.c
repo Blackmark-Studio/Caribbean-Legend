@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_2":
 			dialog.text = "Tichingitu viene a la ciudad de los rostros pálidos a través de muchos, muchos caminos, a través de grandes aguas, desde grandes bosques y pantanos. Tichingitu está cansado y quiere comer. Tichingitu muere de hambre. Nadie quiere ayudar a Tichingitu. Ellos gritan, 'Vete, perro de piel roja'. El dueño de la taberna expulsa al indio como a un perro sarnoso. Tichingitu quiere comer.";
-			link.l1 = "¡Maldita sea, pero por qué viniste a este asentamiento desde... tu bosque?";
+			link.l1 = "¡Maldita sea!, ¿pero por qué viniste a este asentamiento desde... tu bosque?";
 			link.l1.go = "Tichingitu_3";
 		break;
 		
@@ -78,7 +78,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_wait":
 			dialog.text = "Tichingitu espera. Indio no teme a la muerte. Chamán maldice a Tichingitu, Tichingitu debe morir.";
-			link.l1 = " No todo está perdido todavía. Intentaré ayudar...";
+			link.l1 = "No todo está perdido todavía. Intentaré ayudar...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Tichingitu_wait";
 		break;
@@ -210,7 +210,7 @@ void ProcessDialogEvent()
 		
 	//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Tichingitu_officer":
-			dialog.text = " Tichingitu te escucha, Capitán "+pchar.name+"¡";
+			dialog.text = "Tichingitu te escucha, Capitán "+pchar.name+".";
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
 				Link.l4 = "Tichingitu, estoy a punto de partir hacia un antiguo pueblo indígena llamado Tayasal. No te mentiré, es un viaje extremadamente peligroso y muy inusual: a través de un ídolo de teletransportación. Tú... ¿Me acompañarás?";

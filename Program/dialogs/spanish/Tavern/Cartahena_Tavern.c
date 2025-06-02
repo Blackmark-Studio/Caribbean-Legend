@@ -22,7 +22,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "saga_1":
 			dialog.text = "Bueno, no lo sé con certeza, pero parece tener al menos cincuenta años. Ha estado viviendo en esa casa por bastante tiempo. Le gusta contar todo tipo de cuentos fantásticos sobre piratas que probablemente encontró solo en sus sueños.";
-			link.l1 = "Parece que él es el hombre que necesito. Gracias, "+npchar.name+"¡Has sido de gran ayuda!";
+			link.l1 = "Parece que él es el hombre que necesito. Gracias, "+npchar.name+". Has sido de gran ayuda.";
 			link.l1.go = "saga_2";
 		break;
 		

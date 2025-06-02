@@ -138,7 +138,8 @@ void CreateFalseTraceGaleonOnMap(string qName)//энкаунтер галеон�
 	Group_FindOrCreateGroup(sGroup);
 	// Captain Beltrop, 14.02.2021, правка нации капитана галеона - несовпадение атрибутов
 	sld = GetCharacter(NPC_GenerateCharacter("FalseTraceCap", "q_eng_Cap_1", "man", "man", iRank, sti(pchar.questTemp.FalseTrace.Mation), sti(pchar.questTemp.FalseTrace.DayQty), true, "quest"));
-	FantomMakeSmallSailor(sld, SHIP_GALEON_L, pchar.questTemp.FalseTrace.ShipName, CANNON_TYPE_CANNON_LBS16, 70, iScl, iScl, iScl, iScl);
+	FantomMakeSmallSailor(sld, SHIP_FLEUT, pchar.questTemp.FalseTrace.ShipName, CANNON_TYPE_CANNON_LBS8, 70, iScl, iScl, iScl, iScl);
+	UpgradeShipParameter(sld, "Capacity");
 	SetCaptanModelByEncType(sld, "war");
 	SetRandomNameToCharacter(sld);
 	LAi_SetHP(sld, 50+MOD_SKILL_ENEMY_RATE*30, 50+MOD_SKILL_ENEMY_RATE*30);
@@ -550,8 +551,8 @@ void CreateFalseTraceGoldShipOnMap(string qName)//создаем корабль 
 		SetCharacterGoods(sld, GOOD_POWDER, 2500);
 		if (i == 1)
 		{
-			SetCharacterGoods(sld, GOOD_GOLD, 800);//положить в трюм золото
-			SetCharacterGoods(sld, drand(3)+28, 200+drand(100));//положить в трюм апгрейд-товар
+			SetCharacterGoods(sld, GOOD_GOLD, 800); //положить в трюм золото
+			SetCharacterGoods(sld, hrand(3, "1")+28, 200+hrand(100, "2")); //положить в трюм апгрейд-товар
 		}
 		sld.mapEnc.type = "war";
 		sld.mapEnc.worldMapShip = "quest_ship";
@@ -703,8 +704,7 @@ void FalseTrace_BanditsShip(string qName)//бандитский корабль
 	Group_FindOrCreateGroup("Band_brig");
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	int iScl = 10 + 2*sti(pchar.rank);
-	if (sti(pchar.rank < 15)) iTemp = SHIP_BRIG;
-	else iTemp = SHIP_CORVETTE;
+	iTemp = SHIP_CARAVEL;
 	sld = GetCharacter(NPC_GenerateCharacter("BandCap", "mercen_2", "man", "man", iRank, FRANCE, 0, true, "quest"));
 	FantomMakeSmallSailor(sld,iTemp, "", CANNON_TYPE_CANNON_LBS16, 70, iScl, iScl, iScl, iScl);
 	FantomMakeCoolFighter(sld, iRank, 40, 40, "blade_04", "pistol1", "bullet", 100);

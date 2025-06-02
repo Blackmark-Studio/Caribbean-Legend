@@ -52,5 +52,5 @@ de Alba
 
 IslaMona_12
 {
-Судя по звукам, ловушка удалась! Пора в посёлок!
+D’après les sons, le piège a marché ! Il est temps de retourner au village !
 }

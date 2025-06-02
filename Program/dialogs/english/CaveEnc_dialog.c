@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaveBanditosSit":
-			if (drand(2) == 1) 
+			if (hrand(2) == 1) 
 			{
 				dialog.text = NPCStringReactionRepeat("Whoa-ho, look who's here! Well, today is your lucky day, mate. We're good guys, see, cooking some food and stuff... I am not inviting you to our dinner, but you should get lost while you still can.", "Get lost now and don't bother us. Come back tomorrow - and don't forget to bring your purse with you, ha-ha-ha!", "Don't make me mad, sailor! Do you still remember where the entrance to the cave is? You should go there now, very, very quick...", "Well, now you've crossed the line, mate! Guess I'll have to tear myself away from my affairs and deal with you, asshole!", "block", 1, npchar, Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("So very kind of you, mate...", "I see you're quite a joker...", "Alright, keep frying your flat cakes, then...", "Now we're talking, ha-ha!", npchar, Dialog.CurrentNode); 
@@ -52,7 +52,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaveCaribSit":
-			if (drand(2) == 2) 
+			if (hrand(2) == 2) 
 			{
 				dialog.text = NPCStringReactionRepeat("Paleface go away. He be happy that "+npchar.name+"  kind. Gods take pity on you today.", "Get out from my cave, before me and my brothers not angry!", "Get out, paleface dog!", "Your luck and life is over, white dog!", "block", 1, npchar, Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Well, thank you, mate, very kind of you...", "This cave is not yours, and I go where I want.", "Take it down a notch, swamp spawn.", "Now I'm gonna stuff these words back into your throat, animal...", npchar, Dialog.CurrentNode); 

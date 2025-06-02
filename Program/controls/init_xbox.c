@@ -91,7 +91,7 @@ void ExternControlsInit(bool bFirst)
 	CI_CreateAndSetControls( "PrimaryLand", "ChrRun", CI_GetKeyCode("LEFT_STICK_Y"), USE_AXIS_AS_BUTTON, false );
 	MapControlToGroup("ChrRun","FightModeControls");
 	MapControlToGroup("ChrRun","BattleInterfaceControls");
-	SetControlTreshold(sti(objControlsState.map.controls.ChrRun),12.0);
+	SetControlTreshold(sti(objControlsState.map.controls.ChrRun), 12.0); //TO_DO: В движке пусто на эту тему
 
 
 // Ship ========================================================================

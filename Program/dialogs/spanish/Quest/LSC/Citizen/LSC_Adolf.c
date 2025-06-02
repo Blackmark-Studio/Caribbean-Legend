@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Ah, " + GetFullName(pchar) + "¡ " + TimeGreeting() + "¡Quieres algo?";
+			dialog.text = "¡Ah, " + GetFullName(pchar) + "! " + TimeGreeting() + ". ¿Quieres algo?";
 			link.l1 = LinkRandPhrase("¿Tienes algo interesante que decir?", "¿Ha ocurrido algo nuevo en la isla?", "¿Me contarás los últimos chismes?");
 			link.l1.go = "rumours_LSC";
 			link.l2 = "Quiero hacerte unas preguntas sobre la isla.";
@@ -139,14 +139,14 @@ void ProcessDialogEvent()
 		break;
 
 	case "ansewer_1":
-		dialog.text = "Encontré un manuscrito de un marinero - Alvarado, era español. Describió la Isla con muchos detalles. Mencionó algunos barcos interesantes - San Agustín, San Gerónimo y Tártaro. Todos ellos formaban parte del escuadrón de Betancourt, desaparecido hace más de cincuenta años.\nHice una investigación sobre esa expedición. Resulta que había un cuarto barco llamado Santa Ana que transportaba el tesoro del escuadrón - ¡una pila de doblones! Además, los barcos tenían mineral de oro en sus bodegas. Decidí encontrar la Isla.\nHice un trato con un capitán que conocía y zarpamos en su goleta. Está claro cómo terminó la historia, supongo. Encontramos la Isla, los barcos de Betancourt, incluso a su descendencia - vive aquí, se llama Antonio de Betancourt. Pero no logré dejar este lugar.\nLa goleta fue destrozada por los arrecifes, mi compañero murió y yo, junto con otros sobrevivientes, logramos llegar aquí. La peor parte es que no encontré lo que buscaba - ni el tesoro de Santa Ana, ni el mineral de oro.";
+		dialog.text = "Encontré un manuscrito de un marinero - Alvarado, era español. Describió la Isla con muchos detalles. Mencionó algunos barcos interesantes - San Agustín, San Gerónimo y Tártaro. Todos ellos formaban parte del escuadrón de Betancourt, desaparecido hace más de cincuenta años.\nHice una investigación sobre esa expedición. Resulta que había un cuarto barco llamado Santa Ana que transportaba el tesoro del escuadrón, ¡una pila de doblones! Además, los barcos tenían mineral de oro en sus bodegas. Decidí encontrar la Isla.\nHice un trato con un capitán que conocía y zarpamos en su goleta. Está claro cómo terminó la historia, supongo. Encontramos la Isla, los barcos de Betancourt, incluso a su descendencia - vive aquí, se llama Antonio de Betancourt. Pero no logré dejar este lugar.\nLa goleta fue destrozada por los arrecifes, mi compañero murió y yo, junto con otros sobrevivientes, logramos llegar aquí. La peor parte es que no encontré lo que buscaba - ni el tesoro de Santa Ana, ni el mineral de oro.";
 		link.l1 = "También he leído las notas de Alvarado. Historia intrigante.";
 		link.l1.go = "int_quests";
 		npchar.quest.answer_1 = "true";
 		break;
 
 	case "ansewer_2":
-		dialog.text = "Los Rivados son condenados paganos escoria. Son descendientes de esclavos negros, traídos aquí por de Betancourt desde África. Aunque han aprendido a usar espadas y mosquetes de los blancos, siguen siendo salvajes\nLos Narvales son buena gente, inteligentes y decentes luchadores. Entre ellos hay artesanos destacados. Conozco a muchos de ellos. Quizás algún día me una a su clan\nLos piratas son un dolor en el trasero, maldición para ellos. No los llamamos, pero han llegado, capturaron nuestros suministros y se atrevieron a vendernos nuestra propia comida. ¡Bastardos, verdad? Qué pena que no podamos echarlos y tengamos que convivir con su presencia.";
+		dialog.text = "Los Rivados son condenados paganos escoria. Son descendientes de esclavos negros, traídos aquí por de Betancourt desde África. Aunque han aprendido a usar espadas y mosquetes de los blancos, siguen siendo salvajes\nLos Narvales son buena gente, inteligentes y decentes luchadores. Entre ellos hay artesanos destacados. Conozco a muchos de ellos. Quizás algún día me una a su clan\nLos piratas son un dolor en el trasero, maldición para ellos. No los llamamos, pero han llegado, capturaron nuestros suministros y se atrevieron a vendernos nuestra propia comida. ¡Bastardos!, ¿verdad? Qué pena que no podamos echarlos y tengamos que convivir con su presencia.";
 		link.l1 = "Interesante...";
 		link.l1.go = "int_quests";
 		npchar.quest.answer_2 = "true";

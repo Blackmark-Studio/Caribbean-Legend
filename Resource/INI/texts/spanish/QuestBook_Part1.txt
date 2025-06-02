@@ -76,7 +76,7 @@ Pagué a Salomón, tomé a Abigail y ahora estoy fuera del juego. Ahora que est�
 Ahora estás solo contra Rodenburg y sus mercenarios. Espero que te mantengas vivo. Mi leal Charlie ha rechazado volver a Inglaterra y, por lo visto, desaprobó mis acciones por primera vez. Yo mismo no estoy particularmente contento con lo que hice. Charlie te dará el oro, espero que eso suavice tu decepción hacia mí.
 Contrata a Charlie como artillero, no te arrepentirás. Te servirá fielmente, como lo hizo conmigo, hasta que arruines tu honor como yo lo hice por amor.
 ¡Te deseo suerte y victoria!
-PD: El curandero que me trató dijo que los no muertos pueden proteger tesoros si se recita algún conjuro local sobre ellos y se coloca parte de un cadáver fresco en el cofre. Esa es la razón por la cual te encontraste la cabeza de Gastón dentro del cofre en la isla.
+PD: El curandero que me trató dijo que los no muertos pueden proteger tesoros si se recita algún conjuro sobre ellos y se coloca parte de un cadáver fresco en el cofre. Esa es la razón por la cual te encontraste la cabeza de Gastón dentro del cofre en la isla.
 Ese monstruo que te encontraste se llama Chavinavi. Según las creencias locales, son los subordinados del dios de la muerte Yum Kimil. Quien lo haya convocado es un chamán muy poderoso. Esa es otra de las razones por las que me apuro en llevar lejos a Abi. Por primera vez en mi vida, he sentido miedo. Pero no por mí. Ahora tengo a alguien por quien temer. Abigail está esperando un hijo mío.
 
 #QUEST	LetterToMerdok
@@ -90,7 +90,7 @@ Recuerda, Van Merden, te estoy esperando, pero mi paciencia tiene límites. Y cu
 Tu viejo amigo y comandante, Lucas.
 
 #QUEST	LSC_Alvorado
-Crónicas del Caribe - Un lugar maldito
+Crónicas del Caribe, Un lugar maldito
 #TEXT	1
 Notas de viaje de Ignacio Alvarado, capitán del galeón 'Santiago'.
 20/06/1620
@@ -116,9 +116,9 @@ Uno de los jóvenes locales, un verdadero católico oriundo de Dublín llamado S
 ¡Lo conseguimos! Pero otra vez estamos a merced de la naturaleza. Una fuerte tormenta nos empuja lejos de Cuba hacia el mar abierto. El casco del 'Santiago' finalmente ha comenzado a filtrar y, si en los próximos días no logramos encontrar una bahía salvadora, nuestro destino será desafortunado. El pánico ha estallado en el barco, y solo nuestro pequeño irlandés mantiene la calma. En verdad, le espera un gran futuro si el destino se apiada de nosotros...
 
 #QUEST	Legend_CapBucher
-Crónicas del Caribe - La leyenda del capitán Butcher
+Crónicas del Caribe, La leyenda del capitán Butcher
 #TEXT	1
-No se sabe de dónde vino ese cruel e intrépido pirata. Algunos lo consideraban un demonio del infierno, otros admiraban su valentía y fortuna, que le permitían escapar de cualquier persecución en su fragata 'Neptuno'. El nombre del capitán Butcher era conocido en todas las tabernas del Archipiélago. Se contaban leyendas sobre sus victorias y los tesoros que había capturado. En batalla, Butcher no perdonaba a nadie, ni a sus hombres ni a sus enemigos. Pero su tripulación estaba siempre al completo, los nuevos asesinos eran siempre bienvenidos. Parecía que solo el capitán estaba protegido de alguna manera, junto con el contramaestre Jacob Jackman, el contramaestre Henry Viselneck, quien había servido bajo la bandera de Thomas Belthrop, y la hermosa pelirroja llamada Jessica, que acompañaba al capitán Butcher en todos sus saqueos. Decían que era la hija de Oliver Rose, un ricachón con una plantación en Barbados.
+No se sabe de dónde vino ese cruel e intrépido pirata. Algunos lo consideraban un demonio del infierno, otros admiraban su valentía y fortuna, que le permitían escapar de cualquier persecución en su fragata 'Neptune'. El nombre del capitán Butcher era conocido en todas las tabernas del Archipiélago. Se contaban leyendas sobre sus victorias y los tesoros que había capturado. En batalla, Butcher no perdonaba a nadie, ni a sus hombres ni a sus enemigos. Pero su tripulación estaba siempre al completo, los nuevos asesinos eran siempre bienvenidos. Parecía que solo el capitán estaba protegido de alguna manera, junto con el contramaestre Jacob Jackman, el contramaestre Henry Viselneck, quien había servido bajo la bandera de Thomas Belthrop, y la hermosa pelirroja llamada Jessica, que acompañaba al capitán Butcher en todos sus saqueos. Decían que era la hija de Oliver Rose, un ricachón con una plantación en Barbados.
 Esa fiera pelirroja era una especie de talismán para Butcher. Pero un día, el capitán se enamoró de la hija del famoso Nicholas Sharp, ya fallecido en ese momento.
 Y Butcher quiso deshacerse de su compañera, no se sabe si recibió una gran recompensa por ella o simplemente la dejo ir... Pero desde entonces, nadie ha visto a la pelirroja Jessica en su fragata.
 Todos los piratas de Isla del Tesoro estaban enamorados de Beatrice Sharp, todos la admiraban y estaban dispuestos a dar su vida por ella. Tenía una gran variedad de pretendientes y su hermano Blaze pudo elegir a cualquiera. ¿Qué le pasó a Butcher? Nadie lo sabe, pero algo pasó entre ellos. Así que Butcher decidió secuestrar a Beatrice bajo las narices de su hermanito. ¿Qué otra opción le quedaba? Es cierto que también se rumorea que nadie secuestró a Beatrice, sino que ella misma huyó con Butcher, enamorada hasta las trancas del apuesto capitán. Bueno, cada uno es libre de creer lo que quiera.
@@ -130,17 +130,17 @@ Butcher fue ejecutado en el fuerte de St. John’s según el veredicto del tribu
 La Máscara no vivió mucho más, lo encontraron muerto al día siguiente. Le cortaron la garganta con un diente de tiburón. Nunca encontraron al asesino. Aunque muchos creen que lo hizo Shark Dodson. Dicen que él también se había enamorado de la hermana de su amigo. Así que tenía motivos para vengarse. Y siempre llevaba un diente de tiburón colgado del cuello. Pero él no dirá nada sobre ese incidente. Ya lo han comprobado. Y fue hace mucho tiempo...
 
 #QUEST	Mask
-Crónicas del Caribe - El hombre enmascarado
+Crónicas del Caribe, El hombre enmascarado
 #TEXT	1
-... el 17 de junio 1634 la fragata 'Neptuno' de Su Majestad Carlos II zarpó de Glasgow rumbo a Bridgetown.
-Además de pasajeros, correo, armas y municiones para la guarnición de la isla, el capitán del 'Neptuno', Joshua Ledbitter, debía transportar prisioneros para las plantaciones de Barbados.
+... el 17 de junio 1634 la fragata 'Neptune' de Su Majestad Carlos II zarpó de Glasgow rumbo a Bridgetown.
+Además de pasajeros, correo, armas y municiones para la guarnición de la isla, el capitán del 'Neptune', Joshua Ledbitter, debía transportar prisioneros para las plantaciones de Barbados.
 La fragata no estaba equipada para transportar esclavos, y los desafortunados prisioneros, encadenados entre sí, languidecían en la mal ventilada y estrecha bodega.
 La necesidad de utilizar un poderoso barco de guerra para escoltar a los prisioneros se debía a la importancia de los criminales condenados a largas penas de trabajos forzados. Todos ellos estaban de alguna manera implicados en la preparación de un levantamiento para derrocar al poder real. Entre ellos se destacaba un joven caballero llamado Lawrence, con una figura atlética y una mirada audaz, cuya finca fue saqueada y subastada por orden real. Su padre, en el lejano pasado, había sido corsario de la isla de Providence y luego un importante terrateniente y miembro del parlamento británico, pero no pudo resistir las adversidades que se abatieron sobre la familia y falleció prematuramente. Estas circunstancias influyeron en gran medida en las opiniones políticas de Lawrence, que se unió a los conspiradores, entre los que no faltaban damas y caballeros de título.
 El papel de carcelero pesaba sobre el capitán Ledbitter, pero la presencia a bordo de la joven pasajera Jessica Rose alegraba la monótona travesía. La hija del conocido plantador de Barbados había cautivado por completo al severo capitán. Aunque este era el primer viaje de Ledbitter a las Indias Occidentales, los tres meses de travesía por el Atlántico pasaron inadvertidos para él.
 Al acercarse a las Antillas, la fragata fue atacada por unos piratas que lograron acercarse lo suficiente para abordarla gracias a la niebla. Una andanada de los cañones hizo grandes agujeros en el barco de los piratas, pero no fue suficiente. Los piratas estaban cerca de la victoria, pero las órdenes de Ledbitter y el entrenamiento de los marineros los detuvieron. Todo podría haber terminado bastante bien para Ledbitter si no fuera por los prisioneros que se liberaron en cubierta, liderados por Lawrence. Su intervención determinó el resultado de la batalla. Con un disparo de metralla, Lawrence hirió gravemente la cara del capitán. Los testigos presenciales estaban seguros de que Ledbitter había sido asesinado. El pánico se apoderó del barco y media hora después todo había terminado.
 Al repartir el botín, surgió una disputa entre el líder pirata y Lawrence por Jessica. El pirata, que tenía cuentas pendientes con la familia Rose, planeaba entregarla para el entretenimiento de la tripulación, pero Lawrence insistía en pedir un rescate por ella. La disputa terminó con un breve duelo. Con el primer golpe, Lawrence, que había sido entrenado por los mejores espadachines de Londres, mató a su oponente, cortando su pecho con la espada.
 La tripulación pirata se reunió y eligieron por unanimidad a Lawrence como su nuevo capitán. Se decidió abandonar el barco que se hundía y los cadáveres y los marineros medio muertos de la fragata fueron arrojados por la borda. Entre ellos se encontraba el ahora ex capitán de la fragata capturada. A pesar de las graves heridas y de la sangre que le inundaba los ojos, Ledbitter, aferrándose a un fragmento de barco, alcanzó a ver la popa de su barco alejándose y a Jessica, acurrucada junto a Lawrence, a quien en más de una ocasión había imaginado como su prometida.
-Por la astucia de Jacob Jackman, el nuevo contramaestre del 'Neptuno', el capitán obtuvo el apodo de Butcher por la fría crueldad demostrada en la batalla. Muy pronto este nombre resonaría desde Cuba hasta Barbados.
+Por la astucia de Jacob Jackman, el nuevo contramaestre del 'Neptune', el capitán obtuvo el apodo de Butcher por la fría crueldad demostrada en la batalla. Muy pronto este nombre resonaría desde Cuba hasta Barbados.
 Ledbitter, salvado por el destino, sobrevivió y fue encontrado inconsciente. Su herida desfiguró su rostro y desde entonces solo podía aparecer en público con una máscara facial y una peluca. Para Joshua, encontrar y castigar al responsable de sus desgracias se convirtió en el único propósito de su vida...
 
 #QUEST	RegataLetter
@@ -259,7 +259,7 @@ Vendí mi alma por un susurro letal.
 Sobre ruinas de venganza, brasas encendidas,
 Mi espada hallará su corazón mortal.
 **********
-... Veo los mástiles del 'Neptuno'. Sufrió daños, pero esta vez eso me beneficia. Pronto veré a esa pequeña zorra que me lo quitó todo.
+... Veo los mástiles del 'Neptune'. Sufrió daños, pero esta vez eso me beneficia. Pronto veré a esa pequeña zorra que me lo quitó todo.
 **********
 ... ¡Estoy tranquila! ¡Estoy absolutamente tranquila! ¡Mi venganza se cumplirá!
 
@@ -315,7 +315,7 @@ Arturo, prepárate adecuadamente para el encuentro, Charles es un hombre peligro
 Miguel Dichoso.
 
 #QUEST	ArchyBook
-Diario de Archibald Colhaun - Extractos seleccionados
+Diario de Archibald Colhaun, Extractos seleccionados
 #TEXT	1
 ... al comprender que permanecer en el barco equivalía a la muerte, me lancé a través del portalón directamente al mar y confié mi destino a las olas y al Altísimo. Solo llevaba conmigo un barril de agua y algunas pertenencias personales, incluida una brújula obtenida de un indio. Quizás este artefacto pueda protegerme de alguna manera y ayudarme a alcanzar tierra firme...
 ... estaba endiabladamente feliz cuando divisé en la distancia una franja de tierra. Sin embargo, mi alegría fue prematura: este pedazo de tierra resultó ser completamente inhóspito y desconocido para los cartógrafos: nunca había oído hablar de una isla en este lugar del Caribe. La brújula mágica me engañó una vez más...
@@ -565,11 +565,11 @@ Requiere la habilidad 'Alquimia'.
 #TEXT mangarosapower
 Poción de Golpe de Marea
 ***********************
-Una poción única hecha con la extraña planta Mangarosa, según la receta de Amelia, aumenta la potencia, resistencia y la destreza en batalla. El efecto dura 2 días.
+Una poción única hecha con la extraña planta Manga Rosa, según la receta de Amelia, aumenta la potencia, resistencia y la destreza en batalla. El efecto dura 2 días.
 
-Agregue unas pocas hojas de Mangarosa, ipecacuanha y raíz de jengibre en un frasco de cobre. Añada una pinta de ron y déjelo reposar durante unas horas. Luego agregue tres perlas pequeñas, un ámbar y calentar a fuego lento. Después enfríe el líquido, cuélelo y selle la botella.
+Agregue unas pocas hojas de Manga Rosa, ipecacuanha y raíz de jengibre en un frasco de cobre. Añada una pinta de ron y déjelo reposar durante unas horas. Luego agregue tres perlas pequeñas, un ámbar y calentar a fuego lento. Después enfríe el líquido, cuélelo y selle la botella.
 
-Componentes: Mangarosa, ipecacuanha, raíz de jengibre, botella de ron, perla pequeña, ámbar, vial.
+Componentes: Manga Rosa, ipecacuanha, raíz de jengibre, botella de ron, perla pequeña, ámbar, vial.
 Instrumentos: Cofre de alquimista, lámpara de mesilla, jarra de cobre.
 
 Requiere la habilidad 'Alquimia'.
@@ -577,11 +577,11 @@ Requiere la habilidad 'Alquimia'.
 #TEXT mangarosafast
 Poción de Squall
 ****************
-Una poción única hecha de la rara planta Mangarosa, según la receta de Amelia, aumenta la reacción, agudiza los sentidos y la destreza en batalla. El efecto dura 2 días.
+Una poción única hecha de la rara planta Manga Rosa, según la receta de Amelia, aumenta la reacción, agudiza los sentidos y la destreza en batalla. El efecto dura 2 días.
 
-Añadir algunas hojas de Mangarosa, Verbena y guaraná en una jarra de plata. Añadir un poco de vino, dos perlas grandes y un ámbar. Dejar reposar un par de horas, colar el líquido y sellar la botella.
+Añadir algunas hojas de Manga Rosa, verbena y guaraná en una jarra de plata. Añadir un poco de vino, dos perlas grandes y un ámbar. Dejar reposar un par de horas, colar el líquido y sellar la botella.
 
-Componentes: Mangarosa, verbena, guaraná, excelente vino, perla grande, ámbar, vial.
+Componentes: Manga Rosa, verbena, guaraná, excelente vino, perla grande, ámbar, vial.
 Instrumentos: Cofre de alquimista, cuchara de plata, recipiente de plata, mortero y maja.
 
 Requiere la habilidad 'Alquimia'.
@@ -589,11 +589,11 @@ Requiere la habilidad 'Alquimia'.
 #TEXT mangarosatotal
 Poción de Abrazo del Mar
 ************************
-Una poción única hecha con la rara planta Mangarosa, según la receta de Amelia, incrementa la potencia, resistencia, reacción, agudeza de los sentidos, el liderazgo, diplomacia, la suerte y la destreza en combate. El efecto dura 2 días.
+Una poción única hecha con la rara planta Manga Rosa, según la receta de Amelia, incrementa la potencia, resistencia, reacción, agudeza de los sentidos, el liderazgo, diplomacia, la suerte y la destreza en combate. El efecto dura 2 días.
 
-Añadir un poco del follaje de la Mangarosa a la taza. Añadir una poción curativa, dos perlas grandes, tres perlas pequeñas, una pieza de ámbar azul y calentar a fuego lento. Después enfriamos el líquido, lo colamos en una botella limpia y la sellamos.
+Añadir un poco del follaje de la Manga Rosa a la taza. Añadir una poción curativa, dos perlas grandes, tres perlas pequeñas, una pieza de ámbar azul y calentar a fuego lento. Después enfriamos el líquido, lo colamos en una botella limpia y la sellamos.
 
-Componentes: Mangarosa, elixir, ámbar azul, perla pequeña, perla grande, vial.
+Componentes: Manga Rosa, elixir, ámbar azul, perla pequeña, perla grande, vial.
 Instrumentos: Lámpara de mesilla, cofre de alquimista, mortero y maja, taza vieja, cuchara de madera.
 
 Requiere la habilidad 'Alquimia'.
@@ -803,76 +803,76 @@ Requiere la habilidad 'Alquimia'.
 #QUEST	Rome
 Expresiones del Latín
 #TEXT	1
-Ab ovo usque ad mala - Desde el principio hasta el final
-Alea jacta est - La suerte está echada
-Alter ego - El otro yo
-Amat victoria curam - La victoria favorece a los que se preparan
-Ars longa, vita brevis - El arte es duradero, la vida breve
-Audaces fortuna juvat - La fortuna favorece a los audaces
-Aurea mediocritas - Mediocridad de oro
-Aut vincere, aut mori - Vencer o morir
-Aut Caesar, aut nihil - Todo para el Cesar o nada
-Carpe diem - Aprovecha el día
-Casus belli - Causa de guerra
-Circulus vitiosus - Círculo vicioso
-Cogito, ergo sum - Pienso, luego existo
-Cognosce te ipsum - Conócete a ti mismo
-Conditio sine qua non - Condición sin la cual no
-Consumor aliis inserviendo - El servicio de los demás me consume
-Contra spem - Contra toda esperanza
-Conditio sine quanon - Condición esencial
-Debes, ergo potes - Debes, luego puedes
-De gustibus non est disputandum - No hay disputas en cuanto a gustos
-De lingua slulla incommoda multa - Las palabras estúpidas causan grandes problemas
-De mortuis aut bene nihil - De los muertos no digas nada a menos que sea bueno
-Dulce et decorum est pro patria mori - Es dulce y honorable morir por la patria
-Dum spiro, spero - Respiro luego espero
-Duo lepores insequens, neutrum cepit - Si persigues dos conejos, ninguno atraparas
-Dura lex, sed lex - La ley es dura, pero es la ley
-Epistula non erubescit - Una carta no se ruboriza
-Errare humanum est - Errar es de humanos
-Est modus in rebus - El exceso en todo es un defecto
-Ex ungue leonem - Según como sea la garra así será el león
-Fama clamosa - Grande rumores
-Fac simile - Reproducción de un original
-Ferro ignique - A fuego y espada
-Festina lente - Sin prisa y sin pausa
-Finis coronat opus - El fin corona la obra
-Gloria victoribus - La gloria es de los ganadores
-Gutta cavat lapidem - La gota agujerea la piedra no por la fuerza, sino por la constancia
-Hic et nunc - Aquí y ahora
-Homo homini lupus est - El hombre es el lobo del hombre
-Нomо ornat locum, nоn locus hominem - El hombre adorna el lugar, no el lugar al hombre
-Labor omnia vincit - El trabajo todo lo puede
-Littera scripta manet - Lo escrito permanecerá
-Mala herba cito crescit - La mala hierba crece rápido
-Memento mori - Recuerda que has de morir
-Nec sutor ultra crepidam - Zapatero a tus zapatos
-Ne varietur - Para que nada varíe
-Nil desperandum - Nada debe ser desesperado
-Non progredi est regredi - No avanzar es retroceder
-Nulla muere sine linea - Qué no pase un día sin leer o escribir una línea
-Omne minium nocet - Todo exceso es peligroso
-Omnia mea mecum porto - Todo lo mío lo llevo conmigo
-Opera et studio - Trabaja y estudia
-Per aspera ad astra - A las estrellas por el camino difícil
-Per fas et nefas - Por una cosa o por otra
-Pirgitta - mater vitiorum - La pereza es la madre del vicio
-Quilibet fortunae suae faber - Cada hombre es el arquitecto de su propia fortuna
-Qui quaret - reperit - Quien busca, encuentra												   
-Quod licet Jovi, non licet bovi - Lo que se le permite a Júpiter no se le permite al buey
-Radices litterarum amarae sunt, fructus dulces - Las raíces de la ciencia son amargas, los frutos dulces
-Repetitio est mater studiorum - Repetir es la madre del estudio
-Res ipsa loquitur - La cosa habla por sí sola
-Sapienti sat - Para el sabio, la palabra es suficiente
-Scientia potentia est - El conocimiento es poder
-Sine ira et studio - Sin enojo ni pasión
+Ab ovo usque ad mala, Desde el principio hasta el final
+Alea jacta est, La suerte está echada
+Alter ego, El otro yo
+Amat victoria curam, La victoria favorece a los que se preparan
+Ars longa, vita brevis, El arte es duradero, la vida breve
+Audaces fortuna juvat, La fortuna favorece a los audaces
+Aurea mediocritas, Mediocridad de oro
+Aut vincere, aut mori, Vencer o morir
+Aut Caesar, aut nihil, Todo para el Cesar o nada
+Carpe diem, Aprovecha el día
+Casus belli, Causa de guerra
+Circulus vitiosus, Círculo vicioso
+Cogito, ergo sum, Pienso, luego existo
+Cognosce te ipsum, Conócete a ti mismo
+Conditio sine qua non, Condición sin la cual no
+Consumor aliis inserviendo, El servicio de los demás me consume
+Contra spem, Contra toda esperanza
+Conditio sine quanon, Condición esencial
+Debes, ergo potes, Debes, luego puedes
+De gustibus non est disputandum, No hay disputas en cuanto a gustos
+De lingua slulla incommoda multa, Las palabras estúpidas causan grandes problemas
+De mortuis aut bene nihil, De los muertos no digas nada a menos que sea bueno
+Dulce et decorum est pro patria mori, Es dulce y honorable morir por la patria
+Dum spiro, spero, Respiro luego espero
+Duo lepores insequens, neutrum cepit, Si persigues dos conejos, ninguno atraparas
+Dura lex, sed lex, La ley es dura, pero es la ley
+Epistula non erubescit, Una carta no se ruboriza
+Errare humanum est, Errar es de humanos
+Est modus in rebus, El exceso en todo es un defecto
+Ex ungue leonem, Según como sea la garra así será el león
+Fama clamosa, Grande rumores
+Fac simile, Reproducción de un original
+Ferro ignique, A fuego y espada
+Festina lente, Sin prisa y sin pausa
+Finis coronat opus, El fin corona la obra
+Gloria victoribus, La gloria es de los ganadores
+Gutta cavat lapidem, La gota agujerea la piedra no por la fuerza, sino por la constancia
+Hic et nunc, Aquí y ahora
+Homo homini lupus est, El hombre es el lobo del hombre
+Нomо ornat locum, nоn locus hominem, El hombre adorna el lugar, no el lugar al hombre
+Labor omnia vincit, El trabajo todo lo puede
+Littera scripta manet, Lo escrito permanecerá
+Mala herba cito crescit, La mala hierba crece rápido
+Memento mori, Recuerda que has de morir
+Nec sutor ultra crepidam, Zapatero a tus zapatos
+Ne varietur, Para que nada varíe
+Nil desperandum, Nada debe ser desesperado
+Non progredi est regredi, No avanzar es retroceder
+Nulla muere sine linea, Qué no pase un día sin leer o escribir una línea
+Omne minium nocet, Todo exceso es peligroso
+Omnia mea mecum porto, Todo lo mío lo llevo conmigo
+Opera et studio, Trabaja y estudia
+Per aspera ad astra, A las estrellas por el camino difícil
+Per fas et nefas, Por una cosa o por otra
+Pirgitta, mater vitiorum, La pereza es la madre del vicio
+Quilibet fortunae suae faber, Cada hombre es el arquitecto de su propia fortuna
+Qui quaret, reperit, Quien busca, encuentra												   
+Quod licet Jovi, non licet bovi, Lo que se le permite a Júpiter no se le permite al buey
+Radices litterarum amarae sunt, fructus dulces, Las raíces de la ciencia son amargas, los frutos dulces
+Repetitio est mater studiorum, Repetir es la madre del estudio
+Res ipsa loquitur, La cosa habla por sí sola
+Sapienti sat, Para el sabio, la palabra es suficiente
+Scientia potentia est, El conocimiento es poder
+Sine ira et studio, Sin enojo ni pasión
 Si vis pacem para bellum. Si quieres la paz, prepárate para la guerra
 Sol lucet omnibus. El sol brilla para todos
 Suum cuique. A cada uno lo suyo
 Tempora mutantur. Los tiempos cambian
 Tertium non datur. Queda excluido un tercero
-Ultima ratio - El último argumento
+Ultima ratio, El último argumento
 Una hirundo non facit ver. Una golondrina no hace a la primavera
 Usus est optimus magister. La experiencia es el mejor maestro
 Ut salutas, ita salutaberis. Como saludas, serás saludado.
@@ -935,7 +935,7 @@ Fragmentos del diario de Ignacio Marco
 #TEXT	1
 ... Joker y yo acordamos las indicaciones... Debería izar la bandera española si la escuadra pasa entre Puerto Rico y Santo Domingo. La bandera pirata si pasa entre la Isla del Tesoro y las Islas Turcas. La bandera francesa si está entre Tortuga y las Islas Turcas.
 ********************************************************************************
-... los españoles han cambiado el itinerario, su punto de salida del Caribe será entre la Isla del Tesoro y las Islas Turcas. Incluso pude calcular las coordenadas del cuadrante por donde estarán el día @<sDay> de @<sMonth> de @<sYear>: entre los 23 grados 0 minutos - 23 grados 30 minutos Norte y 64 grados 25 minutos - 64 grados 55 minutos Oeste. Debería considerar la forma de avisar a Joker para facilitar la cacería.
+... los españoles han cambiado el itinerario, su punto de salida del Caribe será entre la Isla del Tesoro y las Islas Turcas. Incluso pude calcular las coordenadas del cuadrante por donde estarán el día @<sDay> de @<sMonth> de @<sYear>: entre los 23 grados 0 minutos, 23 grados 30 minutos Norte y 64 grados 25 minutos, 64 grados 55 minutos Oeste. Debería considerar la forma de avisar a Joker para facilitar la cacería.
 
 #QUEST	GG_Letter_1
 Una carta de Angerran de Chievous
@@ -1132,7 +1132,7 @@ Buena suerte, capitán y recuerda: Siempre estarás solo cuando mueres en tierra
 Carta de despedida de Longway
 #TEXT	1
 Lord Capitán,
-Es más fácil expresar duras verdades en papel que cara a cara - especialmente cuando no dejaste ir a Longway cuando más lo necesitaba en su vida. Y ni siquiera para sí mismo, sino para alguien muy importante para él.
+Es más fácil expresar duras verdades en papel que cara a cara, especialmente cuando no dejaste ir a Longway cuando más lo necesitaba en su vida. Y ni siquiera para sí mismo, sino para alguien muy importante para él.
 Aun así, Longway te agradece algo poco frecuente en un hombre blanco: el verdadero respeto. Su respeto me hizo desafiar las órdenes y enfrentarme a los que se suponía que eran mis salvadores. Personas que una vez consideré amigos, pero que, para mi pesar, nunca lo fueron.
 Ahora Longway debe irse. Una vez que haya cumplido con su deber, te encontrará y regresará. Y entonces se disculpará. De hecho, se disculpa ahora por los inconvenientes que causa su partida.
 Hace mucho tiempo, hice una promesa y un voto, a mí mismo y a alguien muy importante. Más importante que cualquier otro deber o promesa. Más importante que cualquier otra persona, incluso que usted, Lord Capitán.
@@ -1141,7 +1141,7 @@ Hasta que nos volvamos a ver,
 Longway
 
 #QUEST PZ_ArchiveOneMerden
-Archivo Van Merden - Resumen
+Archivo Van Merden, Resumen
 #TEXT	1
 Hacia 1637, Antoon van Diemen, Gobernador General de las Indias Orientales Holandesas, descubrió un nuevo y siniestro nicho en el comercio de vidas humanas. El secuestro de las muchachas asiáticas más atractivas de las islas y, ocasionalmente, de China continental. Estas operaciones no eran secuestros masivos frecuentes, sino incursiones raras y encubiertas, ya que cualquier publicidad habría supuesto un desastre. Van Diemen no temía la ira de sus compatriotas; los beneficios de este vil comercio eran inmensos, con mujeres hermosas y exóticas enviadas al Viejo Mundo para ser vendidas al mejor postor, nobles y ricos mercaderes por igual. Pero la verdadera amenaza procedía de los señores chinos, quienes, si descubrían la verdad, probablemente buscarían una venganza sangrienta con el apoyo de otros poderosos aliados.
 Para llevar a cabo esta operación, van Diemen necesitaba cómplices de confianza. Reclutó a su círculo íntimo: hombres que se habían reunido en la región. Entre ellos se encontraban su amigo íntimo y mano derecha, Joep van der Vink; Oliveiro Fermentelos, un desertor portugués que se pasó al bando holandés; y Johan van Merden, otra pieza clave en la trama.
@@ -1160,15 +1160,15 @@ Crónicas de la locura: Parte 1
 ******
 Padre, cómo te echo de menos. Tus sabios consejos, tu voz tranquila. Cada vez que estoy en La Habana, te visito. Allí, en tu tumba, a kilómetros de la ciudad, puedo sentarme durante horas, pensando en mi próximo paso. Descansa en paz, padre. Tu sacrificio no será en vano: limpiaré estas aguas de todas las ratas criminales que se esconden en los oscuros rincones del Archipiélago. Especialmente de los responsables de tu muerte.
 ******
-¡Oh, qué ciego estaba! Pensaba que todo el mal provenía de pilluelos y contrabandistas. No... Como dicen, un pez se pudre por la cabeza. El Rey mismo, Dios lo bendiga, ve esto - por eso me envió con poderes especiales. Pero cuanto más navego, más entiendo - la infección se ha extendido demasiado profundo. Nuestros gobernantes, esta gente 'noble', no son mejores que los intrigantes de la corte de Madrid. No todos, por supuesto. Usted, padre, era diferente. Pero los otros... Sobornos, intrigas, nepotismo - todos han florecido como flores venenosas. Como si la enfermedad de la corte se hubiera extendido a través del océano a nuestras colonias. Ya no estoy seguro de que las medidas ordinarias sean suficientes.
+¡Oh, qué ciego estaba! Pensaba que todo el mal provenía de pilluelos y contrabandistas. No... Como dicen, un pez se pudre por la cabeza. El Rey mismo, Dios lo bendiga, ve esto, por eso me envió con poderes especiales. Pero cuanto más navego, más entiendo, la infección se ha extendido demasiado profundo. Nuestros gobernantes, esta gente 'noble', no son mejores que los intrigantes de la corte de Madrid. No todos, por supuesto. Usted, padre, era diferente. Pero los otros... Sobornos, intrigas, nepotismo, todos han florecido como flores venenosas. Como si la enfermedad de la corte se hubiera extendido a través del océano a nuestras colonias. Ya no estoy seguro de que las medidas ordinarias sean suficientes.
 ******
 Hoy he tenido una larga conversación con el Iluminador. Un hombre extraordinario, como si viera a través de mí. Todo lo que me preocupaba, todo en lo que tenía miedo de pensar, lo ha expresado con palabras. Dijo que a veces el Señor exige a sus guerreros una acción decisiva. Que la misericordia sin fuerza es un sonido vacío. Que la verdadera fe se conoce en la lucha. Después de hablar con él, muchas cosas me quedaron claras.
 ******
-Están tratando de detenerme. Al principio pensé - enemigos del Imperio. ¡Pero no, nuestra propia gente! Mercenarios enmascarados, asesinos de casas respetables. Uno de los capturados confesó - fue enviado por un gobernador a quien recientemente reprendí. ¿Es así? Ahora lo sé, fui demasiado blando. Es hora de actuar de manera diferente. 'A veces hay que cortar un miembro enfermo para salvar el cuerpo'.
+Están tratando de detenerme. Al principio pensé, enemigos del Imperio. ¡Pero no, nuestra propia gente! Mercenarios enmascarados, asesinos de casas respetables. Uno de los capturados confesó, fue enviado por un gobernador a quien recientemente reprendí. ¿Es así? Ahora lo sé, fui demasiado blando. Es hora de actuar de manera diferente. 'A veces hay que cortar un miembro enfermo para salvar el cuerpo'.
 ******
 El Señor me envía señales. Cada puerto, cada ciudad clama por purificación. Ahora lo veo más claro. No basta con recaudar impuestos y atrapar contrabandistas. Se necesita algo más. El fuego sagrado debe quemar la inmundicia. Por ahora, intento actuar dentro de la ley, pero siento... que no es suficiente. 'Convertirme en la espada castigadora del Señor'. Parece que esa hora está cerca.
 ******
-A veces las dudas me atormentan. En esos momentos, releo SUS cartas. Recuerdo nuestras conversaciones. Sí, yo era débil. Pero ahora veo mi camino con claridad. El Archipiélago está sumido en el pecado. Cada ciudad, cada puerto debe ser purificado. Y si la sangre debe ser derramada para esto - que así sea. Después de todo, ¿no fueron nuestros pecados lavados por la sangre de Cristo?
+A veces las dudas me atormentan. En esos momentos, releo SUS cartas. Recuerdo nuestras conversaciones. Sí, yo era débil. Pero ahora veo mi camino con claridad. El Archipiélago está sumido en el pecado. Cada ciudad, cada puerto debe ser purificado. Y si la sangre debe ser derramada para esto, que así sea. Después de todo, ¿no fueron nuestros pecados lavados por la sangre de Cristo?
 Cuando complete mi gran trabajo, estas aguas serán purificadas. Pero por ahora... por ahora me prepararé. Reunir fuerzas. Esperar la señal. Sabré cuando llegue el momento de actuar. Y entonces nadie podrá detenerme.
 
 #QUEST LegendaryShips
@@ -1186,7 +1186,7 @@ La Santa Misericordia cuenta con una tripulación experimentada y leal, seleccio
 El 'Lady Beth' es una auténtica belleza. Una maravilla del genio naval británico, al mando está Albert Blackwood, un exoficial de la Royal Navy. ¡No todos logran desertar de una forma tan espectacular! Abandonó el servicio, arruinó su brillante carrera y robó un buque de guerra, todo por la caza de tesoros.
 Y no fue en vano. Ya ha encontrado tanto que podría comprar la mitad de Barbados, pero nunca tiene suficiente. Si te lo encuentras en el mar, ni se te ocurra intentar interceptarlo. Su barco es demasiado bueno, y el capitán es experimentado y cauteloso. Últimamente, Blackwood visita con frecuencia las Islas Caimán, donde excava día y noche, llevando a sus hombres al límite.
 Si decides ir a investigar, lleva al menos 60 hombres y buenas armas de fuego... Aunque quizás ni eso baste. Espero que sepas disparar, porque con él desertó una compañía entera de exmarines del coronel Fox. Profesionales, muy por encima de los matones comunes.
-Y nunca lo ataques en puertos franceses - tiene protección y mecenas que comparten sus hallazgos.
+Y nunca lo ataques en puertos franceses, tiene protección y mecenas que comparten sus hallazgos.
 
 #QUEST StoriesTreasures
 Cuentos de tesoros
@@ -1285,11 +1285,11 @@ Recibí un encargo extraño de un portugués hoy. Los portugueses en el Caribe s
 2 de Mayo.
 Entregué el primer lote de amuletos. Pago recibido según lo prometido. Este negocio parece ser bastante lucrativo, así que seguiré con ello.
 28 de Mayo.
-Segunda entrega completada, pago completo. No tengo ni idea de los verdaderos orígenes de Merriman, pero sus bolsillos son profundos y sus ambiciones aún más. Quedamos en encontrarnos en 2 meses en un lugar oculto - nada menos que el cementerio de La Habana. Suena siniestro, pero es mejor que perseguir deudores por la espesura de la selva. Todas las ganancias futuras de esta empresa serán escondidas justo aquí.
+Segunda entrega completada, pago completo. No tengo ni idea de los verdaderos orígenes de Merriman, pero sus bolsillos son profundos y sus ambiciones aún más. Quedamos en encontrarnos en 2 meses en un lugar oculto, nada menos que el cementerio de La Habana. Suena siniestro, pero es mejor que perseguir deudores por la espesura de la selva. Todas las ganancias futuras de esta empresa serán escondidas justo aquí.
 #TEXT	20
 ************************************************************
 Ed, ¡he dado con oro en esta! Lo que ves en este escondite ni siquiera es un tercio de mi botín de un solo viaje. Compartir este mapa del tesoro contigo nos deja en paz.
-Escucha con atención - al norte del Continente Español, encajado entre Cuba y Florida, hay un asentamiento increíble construido sobre los restos de innumerables naufragios. Barcos extraños, algunos tan antiguos que podrían haber transportado a nuestros abuelos. Todos ellos encallaron y se fusionaron como la pesadilla de un carpintero loco. Y Ed, ¡allí VIVE gente, almas que respiran de verdad! El lugar rebosa de objetos de valor, y los intercambian simplemente por comida. Pregunta a los contrabandistas en La Habana si no me crees.
+Escucha con atención, al norte del Continente Español, encajado entre Cuba y Florida, hay un asentamiento increíble construido sobre los restos de innumerables naufragios. Barcos extraños, algunos tan antiguos que podrían haber transportado a nuestros abuelos. Todos ellos encallaron y se fusionaron como la pesadilla de un carpintero loco. Y Ed, ¡allí VIVE gente, almas que respiran de verdad! El lugar rebosa de objetos de valor, y los intercambian simplemente por comida. Pregunta a los contrabandistas en La Habana si no me crees.
 Ya he hecho fortuna con esto. Date prisa antes de que alguien más lo huela.
 #TEXT	21
 ************************************************************
@@ -1301,7 +1301,7 @@ Patrullamos la ruta comercial Willemstad-Blueveld. Aguas vacías excepto por un 
 18 de Julio.
 Cazando cerca de las aguas de Willemstad, tropezamos con una patrulla holandesa. Durante nuestra huida, encontramos de nuevo ese mismo barco misterioso. Pensamos que estábamos atrapados entre la espada y la pared, pero curiosamente, los holandeses parecían temerlo tanto como nosotros. Nos escabullimos en la confusión.
 3 de Agosto.
-Empiezo a sospechar que este barco fantasma fondea en algún lugar cerca de Curazao. Avistado de nuevo, esta vez logré un reconocimiento más cercano. El primer oficial insiste en marcas portuguesas, pero sigo escéptico - los portugueses no tienen nada que hacer en estas aguas. He ordenado rastreos costeros del Continente.
+Empiezo a sospechar que este barco fantasma fondea en algún lugar cerca de Curazao. Avistado de nuevo, esta vez logré un reconocimiento más cercano. El primer oficial insiste en marcas portuguesas, pero sigo escéptico, los portugueses no tienen nada que hacer en estas aguas. He ordenado rastreos costeros del Continente.
 12 de Septiembre.
 Empieza a emerger un patrón. Este navío aparece aproximadamente dos veces al año, frecuenta el triángulo entre Trinidad, Curazao y el Continente durante varios meses, luego desaparece como la niebla matutina.
 8 de Octubre.
@@ -1309,16 +1309,16 @@ El barco fantasma ya no está a la vista. Parece haber abandonado completamente 
 #TEXT	22
 ************************************************************
 Roger, lee con atención y sigue estas instrucciones al pie de la letra.
-Un loco cazatesoros británico ha estado husmeando por el Caribe. Si ves casacas rojas con palas, corre como si el mismo diablo te pisara los talones - no muestran piedad a los rivales. Vacía todos nuestros escondites, reúne todo lo de valor, y luego dirígete a Antigua donde nuestro hombre espera - ya he hecho los arreglos. Perderemos algo de oro en el lavado, pero el resto saldrá limpio como un silbido. Mantente en territorios británicos - ese tal Blackwood no se atreverá a mostrar su cara allí. Puedes operar sin mirar por encima del hombro. No tengo idea de qué rencor le guardan, pero su navío solo atraca en puertos franceses.
+Un loco cazatesoros británico ha estado husmeando por el Caribe. Si ves casacas rojas con palas, corre como si el mismo diablo te pisara los talones, no muestran piedad a los rivales. Vacía todos nuestros escondites, reúne todo lo de valor, y luego dirígete a Antigua donde nuestro hombre espera, ya he hecho los arreglos. Perderemos algo de oro en el lavado, pero el resto saldrá limpio como un silbido. Mantente en territorios británicos, ese tal Blackwood no se atreverá a mostrar su cara allí. Puedes operar sin mirar por encima del hombro. No tengo idea de qué rencor le guardan, pero su navío solo atraca en puertos franceses.
 #TEXT	23
 ************************************************************
-Jan, si estás leyendo esto, entonces has de saber - mi venganza sigue sin cumplirse, incluso aquí en el Caribe. Nuestra presa no está aquí. El recuerdo de la espada de mi padre se desvanece en mi mente, y el rostro de nuestro enemigo se difumina en la sombra.
+Hans, si estás leyendo esto, entonces has de saber, mi venganza sigue sin cumplirse, incluso aquí en el Caribe. Nuestra presa no está aquí. El recuerdo de la espada de mi padre se desvanece en mi mente, y el rostro de nuestro enemigo se difumina en la sombra.
 Hemos pasado por mucho juntos, viejo amigo, pero mi ira sigue indómita. Si hubiera previsto las consecuencias, habría buscado la paz con mayor vigor. Quizás menos almas habrían cruzado el umbral final. Dile a Teresa que aún la amo y he mantenido mis votos, aunque nunca sobreviviré al viaje de regreso. Este cofre contiene todo lo que he ganado a través de sangre y acero, aunque el sabor del confort ocioso hace tiempo que se convirtió en cenizas. Quizás tú puedas saborearlo aún.
-I.
+H.
 #TEXT	24
 ************************************************************
-René, el Caribe se vuelve más traicionero cada día. Pronto nuestra clase no encontrará puerto aquí. Tú y yo fuimos de los primeros en oír sobre el nuevo escuadrón de Cromwell, liderado por su joya de la corona - el Victory. Pretenden domar estas islas salvajes y poner a los holandeses en su sitio, pero mi instinto me dice que esto acabará mal para todos los involucrados.
-Hay más - los franceses no se quedarán atrás de sus vecinos del Canal. Un verdadero monstruo ha salido de los astilleros de Brest, bautizado con el nombre de uno de sus reyes. No puedo garantizar todo lo que he oído, pero hablan de una fortaleza flotante como nunca antes se ha visto, y navega hacia estas aguas pronto.
+René, el Caribe se vuelve más traicionero cada día. Pronto nuestra clase no encontrará puerto aquí. Tú y yo fuimos de los primeros en oír sobre el nuevo escuadrón de Cromwell, liderado por su joya de la corona, el Victory. Pretenden domar estas islas salvajes y poner a los holandeses en su sitio, pero mi instinto me dice que esto acabará mal para todos los involucrados.
+Hay más, los franceses no se quedarán atrás de sus vecinos del Canal. Un verdadero monstruo ha salido de los astilleros de Brest, bautizado con el nombre de uno de sus reyes. No puedo garantizar todo lo que he oído, pero hablan de una fortaleza flotante como nunca antes se ha visto, y navega hacia estas aguas pronto.
 Es hora de tirar nuestras cartas, me parece. Tu parte de nuestra última empresa yace dentro de este cofre. Me dirijo a mis costas natales, y te sugiero encarecidamente que hagas lo mismo.
 Martin.
 #TEXT	25
@@ -1331,11 +1331,11 @@ Vuestras órdenes son recopilar cada fragmento de información sobre él e infor
 Adjunto tres copias detallando su apariencia y el nombre de su navío. Se le avista con mayor frecuencia alrededor de las Antillas Menores.
 #TEXT	27
 ************************************************************
-Karl, esto es pura locura. Mi asalto a la residencia de Muscovite en Basse-Terre ha sido frustrado dos veces ya, y ambas porque algún borracho decidió probar suerte en el peor momento posible. Pero este último fiasco desafía toda creencia - mientras preparaba la emboscada, un nativo torpe irrumpió en la casa. Apenas logré salvar mi pellejo, el patán armó tal escándalo que los guardias inundaron el lugar casi al instante. Estos problemas son tuyos para resolver ahora. Tu pago adelantado y compensación por el trabajo chapuceado están en el cofre.
+Karl, esto es pura locura. Mi asalto a la residencia de Muscovite en Basse-Terre ha sido frustrado dos veces ya, y ambas porque algún borracho decidió probar suerte en el peor momento posible. Pero este último fiasco desafía toda creencia, mientras preparaba la emboscada, un nativo torpe irrumpió en la casa. Apenas logré salvar mi pellejo, el patán armó tal escándalo que los guardias inundaron el lugar casi al instante. Estos problemas son tuyos para resolver ahora. Tu pago adelantado y compensación por el trabajo chapuceado están en el cofre.
 #TEXT	28
 ************************************************************
-Querido diario, he dado otro paso hacia el verdadero poder. ¡Diez mil! Diez mil doblones exigidos por alguna deidad olvidada de la selva. Para alguien que se autodenomina "Inmortal", es notablemente tacaño - después de incontables siglos, uno pensaría que habría superado la necesidad de moneda mortal.
-Sin embargo, nuestro trato se mantiene - diez mil monedas, ¡y el destino del mundo se convierte en mi juguete! Un precio verdaderamente trivial.
+Querido diario, he dado otro paso hacia el verdadero poder. ¡Diez mil! Diez mil doblones exigidos por alguna deidad olvidada de la selva. Para alguien que se autodenomina "Inmortal", es notablemente tacaño, después de incontables siglos, uno pensaría que habría superado la necesidad de moneda mortal.
+Sin embargo, nuestro trato se mantiene, diez mil monedas, ¡y el destino del mundo se convierte en mi juguete! Un precio verdaderamente trivial.
 La única molestia es reunir estos doblones de los cambistas locales, viajando eternamente entre mi escondite y la ciudad.
 #TEXT	29
 ************************************************************
@@ -1343,14 +1343,14 @@ Vittorio, acabo de completar el contrato más extraño de mi vida. En Panamá, m
 El pago cubre mis deudas con suficiente para contratar pasaje a La Habana, tal como planeamos.
 #TEXT	30
 ************************************************************
-A quien encuentre esto - entrégalo a Marcus y no sigas leyendo. Si Marcus no significa nada para ti - devuelve esto y vete a la mierda.
-Marcus, Gaston está jugando a una mascarada peligrosa. Es un asesino a sueldo con negocios turbios en Bridgetown. En el último asalto, Jimmy y yo nos cruzamos accidentalmente en su camino - ahora Jimmy alimenta a los tiburones. Tu parte está aquí con un pequeño extra. Me dirijo a territorio español donde su alcance no puede seguirme.
+A quien encuentre esto, entrégalo a Marcus y no sigas leyendo. Si Marcus no significa nada para ti, devuelve esto y vete a la mierda.
+Marcus, Gaston está jugando a una mascarada peligrosa. Es un asesino a sueldo con negocios turbios en Bridgetown. En el último asalto, Jimmy y yo nos cruzamos accidentalmente en su camino, ahora Jimmy alimenta a los tiburones. Tu parte está aquí con un pequeño extra. Me dirijo a territorio español donde su alcance no puede seguirme.
 #TEXT	31
 ************************************************************
 Sr. Lynch, he descubierto lo que buscaba. Su persona de interés reside en Antigua y, junto con su mano derecha, es culpable de alta traición contra nuestra patria. El pérfido asalto a la fragata de Su Majestad "Sussex" fue obra suya, no de los holandeses como se informó. Enviaré todas las pruebas a nuestro contacto mutuo una vez que llegue el resto de mi pago.
 #TEXT	32
 ************************************************************
-Anna, tu persistencia ha dado frutos - ese alquimista fugitivo, Gino, efectivamente se esconde en algún lugar de estas islas. Su rastro se enfría en las Antillas Menores, pero estoy más cerca que nunca. Esta enfermedad me carcome más profundamente cada día, pero él tiene la cura, y no me detendré ante nada hasta encontrarlo.
+Anna, tu persistencia ha dado frutos, ese alquimista fugitivo, Gino, efectivamente se esconde en algún lugar de estas islas. Su rastro se enfría en las Antillas Menores, pero estoy más cerca que nunca. Esta enfermedad me carcome más profundamente cada día, pero él tiene la cura, y no me detendré ante nada hasta encontrarlo.
 Por favor, acepta el contenido de este cofre tanto como gratitud como ofrenda personal. Sé que el destino de Becky aún enciende tu ira, pero concédeme al menos la oportunidad de enmendarme.
 Jack.
 #QUEST PortRoyal_town_Letter
@@ -1442,14 +1442,14 @@ Un oficial ejemplar, Blackwood. Tal orden en todo - desde la documentación hast
 ***************
 Desperté de la misma pesadilla otra vez. Los sucios muelles de Bristol, mi padre perpetuamente borracho, un estómago vacío... Parecía que una comisión de oficial y un servicio impecable deberían haber borrado todo esto. Pero no. Tan pronto como escuché el rechazo del viejo hacendado - y aquí está de nuevo. "Usted comprende, Teniente... Los medios..." Como si volviera a ser ese niño hambriento de los muelles.
 ***************
-La decisión está tomada. "Beth" es un barco hermoso, y la tripulación me es leal. Extraño - están dispuestos a dejar el servicio, sabiendo que voy a buscar tesoros. "Nunca nos ha decepcionado, señor", dijo Harris. Y no los decepcionaré.
+La decisión está tomada. "Beth" es un barco hermoso, y la tripulación me es leal. Extraño, están dispuestos a dejar el servicio, sabiendo que voy a buscar tesoros. "Nunca nos ha decepcionado, señor", dijo Harris. Y no los decepcionaré.
 ***************
-¡Éxito! No solo suerte, sino confirmación del método. Mapas, cálculos, interrogatorio a los lugareños - todo funciona como un reloj. La tripulación está de buen ánimo, aunque veo que algunos no están acostumbrados a tal minuciosidad en la organización de las búsquedas. Estoy empezando a entender - esto no es suficiente.
+¡Éxito! No solo suerte, sino confirmación del método. Mapas, cálculos, interrogatorio a los lugareños, todo funciona como un reloj. La tripulación está de buen ánimo, aunque veo que algunos no están acostumbrados a tal minuciosidad en la organización de las búsquedas. Estoy empezando a entender, esto no es suficiente.
 ***************
-Segundo año en el "Beth". Oro suficiente para comprar un título. Los marineros se han comprado jubones de moda, invitan a todos en las tabernas, presumen de costosos adornos. Me alegro por ellos - ¿quién mejor que yo para saber lo que es trabajar por miserables centavos?
-En cuanto a mí... todavía veo estos sueños. Elizabeth escribe que está esperando. Y su padre todavía me llama "ese marinero". Necesito algo más. Algo real. Para distraerme, incluso escribí un pequeño estatuto sobre la búsqueda de tesoros y lo envié a Barbados. Qué se puede decir - a los militares les encanta escribir reglamentos. Y me alegra hacerlo.
+Segundo año en el "Beth". Oro suficiente para comprar un título. Los marineros se han comprado jubones de moda, invitan a todos en las tabernas, presumen de costosos adornos. Me alegro por ellos, ¿quién mejor que yo para saber lo que es trabajar por miserables centavos?
+En cuanto a mí... todavía veo estos sueños. Elizabeth escribe que está esperando. Y su padre todavía me llama "ese marinero". Necesito algo más. Algo real. Para distraerme, incluso escribí un pequeño estatuto sobre la búsqueda de tesoros y lo envié a Barbados. Qué se puede decir, a los militares les encanta escribir reglamentos. Y me alegra hacerlo.
 ***************
-Hoy todo cambió. I. parece leer mis pensamientos. "Está buscando en el lugar equivocado, Capitán. Estos hallazgos lamentables son apenas migajas y un desperdicio de su talento. Los verdaderos tesoros no solo enriquecen - permiten cambiar el destino". Pensé que estaba en el camino correcto. Qué equivocado estaba.
+Hoy todo cambió. I. parece leer mis pensamientos. "Está buscando en el lugar equivocado, Capitán. Estos hallazgos lamentables son apenas migajas y un desperdicio de su talento. Los verdaderos tesoros no solo enriquecen, permiten cambiar el destino". Pensé que estaba en el camino correcto. Qué equivocado estaba.
 ***************
 ¡El arcabuz regalado no deja lugar a dudas! ¡Los tesoros de Cortés existen y están enterrados en algún lugar de las Caimán! ¡No descansaré hasta haber excavado cada pedazo de tierra allí! El teniente Harris dice que me estoy volviendo diferente. I. dice que estoy en el camino correcto.
 ***************
@@ -1457,9 +1457,61 @@ Excavé toda la isla. Encontré muchos objetos de valor, pero no lo que busco. E
 ***************
 Estudiando rutas comerciales. Cada barco es una fuente de información... y mano de obra gratuita. Sus capitanes saben algo sobre los tesoros de Cortés, y las tripulaciones están acostumbradas al trabajo y la baja paga. Es hora de actuar con más decisión. ¡Juro por todas las tormentas que encontraré este maldito oro!
 ***************
-Hoy escuché a escondidas a marineros hablando en la taberna. "Blackwood es ahora más rico que cualquier hacendado", dijeron. Pero yo sé - todo es solo oropel. El verdadero tesoro espera en las Caimán. Y lo encontraré. Incluso si tengo que enviar a mil hombres con palas y encadenados allí.
+Hoy escuché a escondidas a marineros hablando en la taberna. "Blackwood es ahora más rico que cualquier hacendado", dijeron. Pero yo sé, todo es solo oropel. El verdadero tesoro espera en las Caimán. Y lo encontraré. Incluso si tengo que enviar a mil hombres con palas y encadenados allí.
 ***************
-Esta expedición probablemente será mi última. De ahora en adelante, trabajaré según el nuevo estatuto - no más reclutamiento ni pérdida de tiempo en tabernas. Esta isla se convertirá en mi fortaleza, y el espacio a su alrededor - en mi terreno de alimentación. Gracioso - una vez estuve orgulloso de cómo me levanté desde lo más bajo de la sociedad. Ahora lo sé - hay que caer aún más bajo para elevarse verdaderamente alto.
+Esta expedición probablemente será mi última. De ahora en adelante, trabajaré según el nuevo estatuto, no más reclutamiento ni pérdida de tiempo en tabernas. Esta isla se convertirá en mi fortaleza, y el espacio a su alrededor, en mi terreno de alimentación. Gracioso, una vez estuve orgulloso de cómo me levanté desde lo más bajo de la sociedad. Ahora lo sé, hay que caer aún más bajo para elevarse verdaderamente alto.
 Solo espérame.
 
+#QUEST SharlieTutorial_Journal
+Diario del capitán del "Ulysse"
+#TEXT 1
+19 de septiembre de 1654  
+Entramos en las aguas del Mare Caribaeum según lo previsto. El viento es favorable, sin incidentes.  
 
+20 de septiembre de 1654  
+Un encuentro inesperado en el mar con un colega castellano: observé la carabela "Traviesa", rumbo a San José pasando por Dominica. Te has aventurado lejos, Lorenzo.  
+
+21 de septiembre de 1654  
+El viento sigue siendo favorable. El marinero Paul Lurye logró tener un altercado con sus compañeros, así que Alonso lo pone ahora en los trabajos más duros. Tendré que acordarme de aclarar esta situación.  
+
+22 de septiembre de 1654  
+El lugre de mensajería "Augustin", registrado en el puerto de Capsterville, realizó una inspección aduanera del barco. Nuestras autoridades coloniales desconfían tanto entre sí que el gobernador general no duda en interceptar e inspeccionar barcos comerciales importantes antes de que lleguen a sus destinos.  
+
+Al revisar la lista de pasajeros, el teniente del "Augustin" me ordenó quedarme a la deriva y esperar más instrucciones. Dado que sólo tenemos un pasajero — no es difícil adivinar quién causó estos problemas para mí.  
+Menos mal que no ordenaron seguirlos hasta Capsterville, pero perderé bastante dinero por esta tontería.  
+Debería hablar con ese mocoso y sacudirlo bien.
+
+#QUEST SharlieTutorial_ListOfSailors
+Nota del tesorero
+#TEXT 1
+Pagar a:  
+Al marinero principal Alonso Pimentel: 50 doblones  
+Al marinero Henri Chauchon: 35 doblones  
+Al marinero Paul Lurye: 25 doblones (¡maldito idiota, casi arruina todo el asunto!)
+
+Cobrar de:  
+Del marinero Germain Chat: 7 pesos por el papel arruinado por el gato Chantal  
+Del capitán Deveigne: 2000 pesos por instrumentos médicos  
+Del pasajero Charles de Maure: 30 pesos por el barril de agua potable arruinado y 200 pesos por el cabo del cabrestante dañado
+
+#TEXT 2
+Pagar a:  
+Al marinero principal Alonso Pimentel: 50 doblones  
+Al marinero Henri Chauchon: 35 doblones  
+Al marinero Paul Lurye: 25 doblones (¡maldito idiota, casi arruina todo el asunto!)
+
+Cobrar de:  
+Del marinero Germain Chat: 7 pesos por el papel arruinado por el gato Chantal  
+Del capitán Deveigne: 2000 pesos por instrumentos médicos  
+Del pasajero Charles de Maure: 30 pesos por el barril de agua potable arruinado
+
+#QUEST GS_Letters
+Notas que revelan el verdadero rostro de un funcionario de Belice
+#TEXT 1
+***************
+Flauta "Bat". Salida el día 14. Ruta comercial Belice-Port Royal. Seguridad mínima. Transportan azúcar. Mi veinte por ciento se entregará a los contactos.
+***************
+Pinaza "Wavebreaker". Salida el día 26. Ruta comercial Belice-Capsterville. Ébano. Partieron con pólvora húmeda. No olviden mi parte.
+***************
+Galeón "Silver Wind". Salida el día 18. Ruta comercial Belice-Blueveld. ¡Esclavos! Gran botín, no se demoren con el envío de mi parte. No habrá escolta.
+***************

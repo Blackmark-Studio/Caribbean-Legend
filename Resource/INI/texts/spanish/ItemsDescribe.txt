@@ -39,16 +39,22 @@ new_string	{
 
 Potion parameters{Efecto}
 health value{PV}
-weapon blade parameters{Daño: #f.1Attack# Balance: #f.1Balance#}
+weapon blade parameters{Daño: #f.1WeightAttack# Balance: #f.1Balance#}
 weapon blade type {Tipo: #sFencingTypeName#}
 weapon gun parameters{Daño: #ddmg_min# - #ddmg_max#}
 weapon gun parameters equipped{Daño: #ddmg_min# - #ddmg_max#    Tiempo de recarga #dchargespeed# seg.    Precisión #daccuracy#%}
 mushket parameters{Daño: #ddmg_min# - #ddmg_max#}
 mushket parameters equipped{Daño: #ddmgmin# - #ddmgmax#    Tiempo de recarga #dchargespeed# seg.    Precisión #daccuracy#%}
+weapon grape parameters{Daño: #dbasedmg#x#dshards#, Propagación: #sarea#}
+weapon grape parameters equipped{Daño: #dbasedmg#x#dshards#    Propagación: #sarea#    Tiempo de recarga #dchargespeed# seg.}
 
 youve_got {Has encontrado: }
 used_item {Has usado: }
-used_itemNotif {Has perdido un: }
+
+youve_gotNotif {Has encontrado: }
+used_itemNotif {Has usado: }
+
+flower_find {¡Hallazgo afortunado!}
 
 
 ;====================================================================================================================================
@@ -655,7 +661,7 @@ Con la llave reemplazada, ha comenzado a parecerse a un arma moderna. El metal, 
 
 UpgradeStageInfo_mushket9_4 
 {
-En tus manos, esta arma ha alcanzado su cúspide - simplemente no hay forma de desarrollarla más. El toque final - un cañón ampliado - ha simplificado y acelerado la carga, aumentando enormemente la eficiencia. Puedes estar orgulloso de ti mismo.
+En tus manos, esta arma ha alcanzado su cúspide, simplemente no hay forma de desarrollarla más. El toque final, un cañón ampliado, ha simplificado y acelerado la carga, aumentando enormemente la eficiencia. Puedes estar orgulloso de ti mismo.
 }
 
 itmname_FirearmStockPart_1 {Culata y baqueta}
@@ -1000,7 +1006,8 @@ Este instrumento se utiliza para determinar la longitud, pero requiere que se fi
 itmname_clock2 {Cronómetro de trabajo}
 itmdescr_clock2
 {
-Este cronómetro de barco fija la hora exacta en la cubierta de mando. Permite determinar la longitud del buque durante un período de 30 días con un error mínimo.
+Un cronómetro de barco calibrado por tiempo de la isla Forro. Permite determinar la longitud geográfica del barco con un error mínimo durante 30 días.
+Aumenta el crecimiento de la habilidad de Navegación cuando está equipado.
 }
 
 itmname_sextant1 {Sextante}
@@ -1012,14 +1019,16 @@ Es un dispositivo único que sirve para determinar las coordenadas geográficas.
 itmname_sextant2 {Sextante de trabajo}
 itmdescr_sextant2
 {
-Es un dispositivo único que sirve para determinar las coordenadas geográficas. Ahora que has obtenido un cronómetro del futuro, puedes determinar la latitud y la longitud en todo momento.
-Gracias a su alta precisión, se puede lograr un aumento del 5% en la velocidad del barco.
+Un dispositivo único para determinar coordenadas geográficas. Ahora que posees un cronógrafo del futuro, puede determinar la latitud y longitud constantemente.
+Gracias a su alta precisión, puedes lograr un aumento del 5% en la velocidad del barco.
+Aumenta el crecimiento de la habilidad de Navegación cuando está equipado.
 }
 
 itmname_bussol {Brújula náutica}
 itmdescr_bussol
 {
-Es un instrumento de navegación que combina un astrolabio y un compás para barco. Además de otras cosas, te permite determinar la latitud en todo momento.
+Un instrumento de barco que combina un astrolabio y una brújula. Permite, entre otras cosas, determinar constantemente la latitud geográfica.
+Aumenta el crecimiento de la habilidad de Navegación cuando está equipado.
 }
 
 itmname_clock3 {Cronómetro de Alexus}
@@ -1148,12 +1157,12 @@ Puede ser utilizado por el navegante.
 Sin penalizaciones, sin límites de activación.
 }
 
-itmname_talisman15	{Ward 'Black Spot'}
+itmname_talisman15	{Talismán 'Marca Negra'}
 itmdescr_talisman15
 {
-El 'Black Spot' duplica misteriosamente cualquier cambio de honor. Está hecho con el pañuelo de los Ironsides, la caballería de Cromwell.
+El portador de la Marca Negra está inmediatamente rodeado de supersticiones, leyendas y rumores, lo que aumenta el Poder de la Flota en un 15%. Hecho del pañuelo de los Ironsides, la caballería de Cromwell.
 ~
-Sin penalizaciones, sin límites de activación.
+No tiene penalizaciones, puede activarse varias veces.
 }
 
 itmname_talisman16	{Ward 'Cuchillo ritual de oro'}
@@ -1343,23 +1352,21 @@ Desaparece en 70 días o al desequipar.
 itmname_indian_3 {Amuleto 'Cuchillo ritual'}
 itmdescr_indian_3
 {
-Un cuchillo de obsidiana para sacrificios. 
+Un cuchillo de obsidiana para sacrificios añade un 10% a la probabilidad de golpe crítico con armas cuerpo a cuerpo.
 ~
-Aumenta un 15% la probabilidad de golpe crítico.
-Penalización: El daño de los 'Ataques pesados' enemigos aumenta un 10%.
-Usado por: Todos.
-Desaparece en 70 días o al desequipar.
+El daño de los ataques fuertes enemigos aumentará en un 10%.
+Se activa una vez, por cualquier personaje.
+Desaparece después de 70 días o al ser eliminado.
 }
 
 itmname_indian_4 {Amuleto 'Cabeza de Hacha'}
 itmdescr_indian_4
 {
-Un colgante cubierto de runas. 
+Un colgante cubierto de runas aumenta el poder de los ataques perforantes en un 25%.
 ~
-Aumenta un 25% el daño de los 'Ataques pesados'.
-Penalización: La probabilidad de golpe crítico del enemigo aumenta en un 10%.
-Usado por: Todos.
-Desaparece en 70 días o al desequipar.
+Los oponentes infligen un 25% más de daño con golpes críticos.
+Se activa una vez, por cualquier personaje.
+Desaparece después de 70 días o al ser eliminado.
 }
 
 itmname_indian_5 {Amuleto 'Tsantsa'}
@@ -1458,12 +1465,10 @@ Desaparece en 70 días o al desequipar.
 itmname_amulet_3 {Amuleto 'Crucifijo'}
 itmdescr_amulet_3
 {
-Una cruz católica bendecida.
-~
-Reduce en un 15% la probabilidad de recibir un golpe crítico.
-Penalización: El daño de los 'Ataques pesados' disminuye un 10%.
-Usado por: Todos.
-Desaparece en 70 días o al desequipar.
+Una cruz católica consagrada reduce el daño crítico infligido por los enemigos en un 15%.
+El poder del ataque fuerte del personaje se reduce en un 10%.
+Se activa una vez, por cualquier personaje.
+Desaparece después de 70 días o al ser eliminado.
 }
 
 itmname_amulet_4 {Amuleto 'El trozo'}
@@ -1575,7 +1580,7 @@ Desaparece en 45 días o al desequipar.
 itmname_obereg_3 {Amuleto 'Mono'}
 itmdescr_obereg_3
 {
-Según la creencia local, esta vasija de alabastro aumenta un 15% la capacidad de carga.
+Según la creencia, esta vasija de alabastro aumenta un 15% la capacidad de carga.
 Usado por: Todos.
 Desaparece en 45 días o al desequipar.
 }
@@ -2219,7 +2224,7 @@ itmdescr_map_martiniqua
 Con este mapa no te perderás.
 }
 
-itmname_map_trinidad	{Mapa de Trinidad y Tobago}
+itmname_map_trinidad	{Mapa de Trinidad}
 itmdescr_map_trinidad
 {
 Con este mapa no te perderás.
@@ -2389,7 +2394,7 @@ itmdescr_A_map_martiniqua
 Un mapa extremadamente preciso de la isla de Martinica. En el reverso, se puede ver el nombre del cartógrafo: José Dios.
 }
 
-itmname_A_map_trinidad	{Excelente mapa de Trinidad y Tobago}
+itmname_A_map_trinidad	{Excelente mapa de Trinidad}
 itmdescr_A_map_trinidad
 {
 Un mapa extremadamente preciso de la isla de Martinica. En el reverso, se puede ver el nombre del cartógrafo: José Dios.
@@ -2642,7 +2647,7 @@ Jackman
 itmname_letter_parol	{Nota}
 itmdescr_letter_parol
 {
-Tenga en cuenta que el propietario cambió la contraseña para llegar a la mina. La nueva es 'Neptuno'.
+Tenga en cuenta que el propietario cambió la contraseña para llegar a la mina. La nueva es 'Neptune'.
 }
 itmdescr_letter_ouster
 {
@@ -2950,21 +2955,21 @@ Es perjudicial para la salud. Tiempo de recarga: 1 minuto.
 itmname_mangarosapower	{Poción de Golpe de Marea}
 itmdescr_mangarosapower
 {
-Una poción de Mangarosa preparada según la receta de Amelie. 
+Una poción de Manga Rosa preparada según la receta de Amelie. 
 Aumenta temporalmente el poder y el aguante, así como la destreza con las armas medias y pesadas.
 }
 
 itmname_mangarosafast	{Poción de Squall}
 itmdescr_mangarosafast
 {
-Una poción de Mangarosa preparada según la receta de Amelie. 
+Una poción de Manga Rosa preparada según la receta de Amelie. 
 Aumenta temporalmente la reacción y la intuición, así como la destreza con armas ligeras y de fuego.
 }
 
 itmname_mangarosatotal	{Poción de Abrazo del Mar}
 itmdescr_mangarosatotal
 {
-Una poción de Mangarosa preparada de acuerdo a la receta de Amelie. 
+Una poción de Manga Rosa preparada de acuerdo a la receta de Amelie. 
 Aumenta temporalmente el poder, aguante, reacción, intuición, autoridad y suerte, así como la destreza con todas las armas blancas y de fuego.
 }
 
@@ -3004,7 +3009,7 @@ itmdescr_cannabis6
 Utilizado en pociones.
 }
 
-itmname_cannabis7	{Mangarosa}
+itmname_cannabis7	{Manga Rosa}
 itmdescr_cannabis7
 {
 Contiene unas pequeñas flores en las hojas, que son muy valoradas por los nativos.
@@ -3198,7 +3203,7 @@ Látigo de cuero para infligir castigos. También se puede utilizar para expulsa
 itmname_Mineral14	{Ala de murciélago}
 itmdescr_Mineral14
 {
-Ala seca del murciélago sanguíneo local, (Desmodus rotundus). Los brujos las usan en sus ritos.
+Ala seca del murciélago sanguíneo, (Desmodus rotundus). Los brujos las usan en sus ritos.
 (-10 Fortuna)
 }
 
@@ -3583,7 +3588,7 @@ Estas llaves abren todas las puertas de la casa de John Murdock.
 itmname_MaltieBase_keys	{Llaves a las mazmorras}
 itmdescr_MaltieBase_keys
 {
-Estas llaves abren las celdas de la base subterránea de los Caballeros Malteses en St. Pierre.
+Estas llaves abren las celdas de la base subterránea de los Caballeros Malteses en Saint-Pierre.
 }
 
 itmname_Finger	{Dedo cortado}
@@ -3631,6 +3636,13 @@ itmdescr_cask_whisky
 {
 Un ataúd de madera que contiene el whisky añejo 'Bushmills'.
 }
+
+itmname_cask_gin	{Barril de ginebra}
+itmdescr_cask_gin
+{
+Un barril de exquisita ginebra europea. Aquí, en el Caribe, tal bebida está reservada para unos pocos privilegiados.
+}
+
 
 itmname_buben	{Pandereta del Chamán}
 itmdescr_buben
@@ -3838,6 +3850,30 @@ itmdescr_PR_Letter
 Una nota escrita en papel viejo y gastado. Su contenido claramente no está destinado a ojos ajenos.
 }
 
+itmname_quest_potion	{Decocción de hierbas}
+itmdescr_quest_potion
+{
+Las verdaderas propiedades de esta decocción sólo son conocidas por la mano que la preparó.}
+}
+
+itmname_GS_letters	{Notas entregadas por el mercenario}
+itmdescr_GS_letters
+{
+Pistas escritas de puño y letra del jefe de la autoridad portuaria. Contienen información sobre las rutas y las horas de salida al mar de sus clientes, cada uno de los cuales fue atacado por piratas.
+}
+
+itmname_SM_necklace_Julie	{El collar de Julie d’Armagnac}
+itmdescr_SM_necklace_Julie
+{
+Una joya cercana al corazón de Julie. Elegante y refinada, parece guardar sus recuerdos por sí misma. Si existen cosas capaces de guardar secretos, este collar sin duda está entre ellas.
+}
+
+itmname_TBP_letter	{Carta abierta}
+itmdescr_TBP_letter
+{
+"¿Pensaste que podrías chantajearme y salir impune? Te equivocaste. Muy pronto te arrepentirás de tu audacia. Tu muerte será larga y dolorosa, y nadie te salvará.​"
+}
+
 ;====================================== предметы для DLC ===============================
 
 itmname_kaleuche_amulet1 {Extraño amuleto}
@@ -3849,7 +3885,7 @@ Un original amuleto indio hecho en un río pedregoso y preciosamente pintado.
 itmname_kaleuche_amulet1_potion	{Poción de Tuttuathapak}
 itmdescr_kaleuche_amulet1_potion
 {
-Una poción elaborada con Mangarosa por Tuttuathapak, chamán del Caribe. Proporciona un aumento permanente de la Reacción y mejora la destreza con Armas ligeras.
+Una poción elaborada con Manga Rosa por Tuttuathapak, chamán del Caribe. Proporciona un aumento permanente de la Reacción y mejora la destreza con Armas ligeras.
 }
 
 itmname_kaleuche_amulet2 {Amuleto indio}
@@ -3865,7 +3901,7 @@ Amuleto encantado por Tuttuathapak, chamán del Caribe. Permite que los entes de
 itmname_kaleuche_amulet2_potion	{Poción de Tuttuathapak}
 itmdescr_kaleuche_amulet2_potion
 {
-Una poción elaborada con Mangarosa por Tuttuathapak, chamán del Caribe. Da un aumento permanente del Aguante y mejora la destreza con Armas medias.
+Una poción elaborada con Manga Rosa por Tuttuathapak, chamán del Caribe. Da un aumento permanente del Aguante y mejora la destreza con Armas medias.
 }
 
 itmname_kaleuche_amulet3 {Amuleto indio}
@@ -3881,23 +3917,23 @@ Amuleto encantado por Tuttuathapak, chamán del Caribe. Permite que los entes de
 itmname_kaleuche_amulet3_potion	{Poción de Tuttuathapak}
 itmdescr_kaleuche_amulet31_potion
 {
-Una poción elaborada con Mangarosa por Tuttuathapak, chamán del Caribe. Otorga un aumento permanente del Poder y mejora la destreza con Armas pesadas.
+Una poción elaborada con Manga Rosa por Tuttuathapak, chamán del Caribe. Otorga un aumento permanente del Poder y mejora la destreza con Armas pesadas.
 }
 itmdescr_kaleuche_amulet32_potion
 {
-Una poción elaborada con Mangarosa por Tuttuathapak, chamán del Caribe. Da un aumento permanente de la Intuición y mejora la destreza con Armas de fuego.
+Una poción elaborada con Manga Rosa por Tuttuathapak, chamán del Caribe. Da un aumento permanente de la Intuición y mejora la destreza con Armas de fuego.
 }
 itmdescr_kaleuche_amulet33_potion
 {
-Una poción elaborada con Mangarosa por Tuttuathapak, chamán del Caribe. Da un aumento permanente del Talento y mejora la destreza Sigilo.
+Una poción elaborada con Manga Rosa por Tuttuathapak, chamán del Caribe. Da un aumento permanente del Talento y mejora la destreza Sigilo.
 }
 itmdescr_kaleuche_amulet34_potion
 {
-Una poción elaborada con Mangarosa por Tuttuathapak, chamán del Caribe. Da un aumento permanente de la Autoridad y mejora el Liderazgo.
+Una poción elaborada con Manga Rosa por Tuttuathapak, chamán del Caribe. Da un aumento permanente de la Autoridad y mejora el Liderazgo.
 }
 itmdescr_kaleuche_amulet35_potion
 {
-Una poción elaborada con Mangarosa por Tuttuathapak, chamán del Caribe. Da un aumento permanente de la Suerte y mejora la Fortuna.
+Una poción elaborada con Manga Rosa por Tuttuathapak, chamán del Caribe. Da un aumento permanente de la Suerte y mejora la Fortuna.
 }
 
 itmname_kaleuche_letter	{Nota enrollada}
@@ -3963,7 +3999,29 @@ itmdescr_LadyBeth_Map
 El camino hacia el tesoro más preciado del mayor buscador de tesoros.
 }
 
+itmname_BoxOfBalls	{Caja con balas de cañón}
+itmdescr_BoxOfBalls
+{
+En esta caja sólo hay paja y ocho balas de cañón.
+}
 
+itmname_Tutorial_key	{Llave}
+itmdescr_Tutorial_key
+{
+Llave de hierro.
+}
+
+itmname_Tutorial_journal	{Diario del capitán. Tomo IV.}
+itmdescr_Tutorial_journal
+{
+Cuarto tomo del diario del capitán Ulises. Apenas está comenzado, así que no hay muchas anotaciones.
+}
+
+itmname_Suspicious_Potion	{Poción sospechosa}
+itmdescr_Suspicious_Potion
+{
+Más vale que funcione.
+}
 
 ;====================================== предметы для пиратской линейки ===============================
 

@@ -66,8 +66,10 @@ void SetSpyGlassData()
 	
 	ref chref = GetCharacter(chrIdx);
 
-	if( Items_FindItem( GetCharacterEquipByGroup(pchar,SPYGLASS_ITEM_TYPE), &arScopeItm)<0 )
-		{	makearef(arScopeItm,tmpobj);	}
+	if(Items_FindItem( GetCharacterEquipByGroup(pchar,SPYGLASS_ITEM_TYPE), &arScopeItm) < 0)
+    {
+        makearef(arScopeItm,tmpobj);
+    }
 
 	if(!CheckAttribute(arScopeItm, "scope.show.nation") || sti(arScopeItm.scope.show.nation)!= 0)
 	{

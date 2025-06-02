@@ -22,7 +22,7 @@ Juan
 }
 Consumption_6
 {
-Consumption
+Gruźlica
 }
 
 Consumption_7
@@ -36,10 +36,10 @@ Consumption_8
 
 Consumption_9
 {
-The ship is going to blow up in a minutes. You should leave at once!
+Statek za kilka chwil eksploduje! Uciekaj stamtąd natychmiast!
 }
 
 Consumption_10
 {
-The ship is going to blow up in a minutes. You should leave at once!
+Statek za kilka chwil eksploduje! Uciekaj stamtąd natychmiast!
 }

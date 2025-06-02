@@ -39,7 +39,7 @@ new_string	{
 
 Potion parameters{Menge}
 health value{HP}
-weapon blade parameters{Angriff: #f.1Attack# Balance: #f.1Balance#}
+weapon blade parameters{Angriff: #f.1WeightAttack# Balance: #f.1Balance#}
 weapon blade type {Typ: #sFencingTypeName#}
 weapon gun parameters{Schaden: #ddmg_min#-#ddmg_max#}
 weapon gun parameters equipped{Schaden: #ddmg_min#-#ddmg_max#, Nachladezeit: #dchargespeed# sek., Genauigkeit: #daccuracy#%}
@@ -52,6 +52,7 @@ youve_got {Gegenstand gefunden - }
 used_item {Gegenstand beutzt - }
 youve_gotNotif {New Item: }
 used_itemNotif {Item Lost: }
+flower_find {"Удачная находка!"}
 
 
 ;====================================================================================================================================
@@ -997,10 +998,11 @@ itmdescr_clock1
 Ein Schiffschronometer. Dieses Gerät wird zur Bestimmung des Längengrads verwendet, muss aber regelmäßig mit einem Stundenglas auf eine genaue Zeit geeicht werden. Diese exakte Zeitmessung wird später als Greenwich Mean Time (GMT) bekannt werden.
 }
 
-itmname_clock2 {Funktionierendes Chronometer}
+itmname_clock2 {Funktionierender Chronometer}
 itmdescr_clock2
 {
-Ein Schiffschronometer, das auf die genaue Zeit der Insel Forro eingestellt ist. Es ermöglicht die Bestimmung des Längengrades des Schiffes über einen Zeitraum von 30 Tagen mit minimalem Fehler.
+Ein nach Zeit geeichter Schiffs-Chronometer von der Insel Forro. Ermöglicht es, 30 Tage lang die geografische Länge des Schiffs mit minimalem Fehler zu bestimmen.
+Erhöht das Wachstum der Navigationsfähigkeit, wenn ausgerüstet.
 }
 
 itmname_sextant1 {Sextant}
@@ -1012,13 +1014,16 @@ Ein einzigartiges Gerät zur Bestimmung geografischer Koordinaten. Der ursprüng
 itmname_sextant2 {Funktionierender Sextant}
 itmdescr_sextant2
 {
-Ein einzigartiges Gerät zur Bestimmung geografischer Koordinaten. Mit dem Chronometer von Alexus können Sie jetzt jederzeit den Breiten- und Längengrad bestimmen.
+Ein einzigartiges Gerät zur Bestimmung von Geokoordinaten. Jetzt, da Sie einen Chronographen aus der Zukunft besitzen, kann er ständig Breite und Länge bestimmen.
+Dank der hohen Genauigkeit kann eine Geschwindigkeitssteigerung des Schiffs um 5% erreicht werden.
+Erhöht das Wachstum der Navigationsfähigkeit, wenn ausgerüstet.
 }
 
-itmname_bussol {Bussole}
+itmname_bussol {Bussol}
 itmdescr_bussol
 {
-Ein Schiffsgerät, das ein Astrolabium und einen Schiffskompass kombiniert. Es ermöglicht unter anderem die Bestimmung des Breitengrades.
+Ein Schiffsgerät, das Astrolabium und Kompass kombiniert. Es ermöglicht unter anderem die ständige Bestimmung der geografischen Breite.
+Erhöht das Wachstum der Navigationsfähigkeit, wenn ausgerüstet.
 }
 
 itmname_clock3 {Alexus' Chronometer}
@@ -1153,13 +1158,12 @@ Kann unbegrenzt benutzt werden.
 Kann von einem Navigator verwendet werden.
 }
 
-itmname_talisman15	{'Schwarzer Fleck'}
+itmname_talisman15	{Talisman 'Schwarzes Mal'}
 itmdescr_talisman15
 {
-Der schwarze Fleck verdoppelt auf geheimnisvolle Weise jede Veränderung der Ehre. Es ist aus dem Halstuch der  Eisernen Reiter, Cromwells Kavallerie, gefertigt.
+Der Träger des Schwarzen Mals ist sofort von Aberglauben, Legenden und Gerüchten umgeben, was die Flottenstärke um 15% erhöht. Gefertigt aus dem Halstuch der Ironsides, Cromwells Kavallerie.
 ~
-Besitzt keine Nachteile.
-Kann unbegrenzt benutzt werden.
+Hat keine Nachteile, kann mehrfach aktiviert werden.
 }
 
 itmname_talisman16	{'Goldenes Ritualmesser'}
@@ -1346,24 +1350,24 @@ Funktioniert für jeden Charakter.
 Hält nach Anwendung 70 Tage, kann auch vorher entfernt werden.
 }
 
-itmname_indian_3 {Amulett "Ritualmesser"}
+itmname_indian_3 {Amulett 'Ritualmesser'}
 itmdescr_indian_3
 {
-Erhöht die Chance, einen kritischen Treffer zu erzielen, um 15%.
-Feindliche schwere Angriffe verursachen 10% mehr Schaden.
-Kann nur einmal aktiviert werden.
-Funktioniert für jeden Charakter.
-Hält nach Anwendung 70 Tage, kann auch vorher entfernt werden.
+Ein Obsidian-Opfermesser erhöht die Chance auf einen kritischen Treffer mit Nahkampfwaffen um 10%.
+~
+Der Schaden durch feindliche schwere Angriffe erhöht sich um 10%.
+Wird einmalig von jedem Charakter aktiviert.
+Verschwindet nach 70 Tagen oder beim Entfernen.
 }
 
-itmname_indian_4 {Amulett 'Mordaxt'}
+itmname_indian_4 {Amulett 'Axt'}
 itmdescr_indian_4
 {
-25% Schadenserhöhung für schwere Angriffe.
-Die Chance des Gegners, den Träger kritisch zu treffen, erhöht sich um 10%.
-Kann nur einmal aktiviert werden.
-Funktioniert für jeden Charakter.
-Hält nach Anwendung 70 Tage, kann auch vorher entfernt werden.
+Ein mit Runen verzierter Anhänger erhöht die Durchschlagskraft um 25%.
+~
+Gegner verursachen 25% mehr Schaden mit kritischen Treffern.
+Wird einmalig von jedem Charakter aktiviert.
+Verschwindet nach 70 Tagen oder beim Entfernen.
 }
 
 itmname_indian_5 {Amulett "Schrumpfkopf"}
@@ -1459,11 +1463,10 @@ Hält nach Anwendung 70 Tage, kann auch vorher entfernt werden.
 itmname_amulet_3 {Amulett "Kruzifix"}
 itmdescr_amulet_3
 {
-Senkt die Chance, einen kritischen Treffer zu erhalten, um 10%.
-Deine schweren Angriffe verursachen 10% weniger Schaden.
-Kann nur einmal aktiviert werden. 
-Funktioniert für jeden Charakter.
-Hält nach Anwendung 70 Tage, kann auch vorher entfernt werden.
+Ein geweihter katholischer Kreuzanhänger verringert den von Feinden verursachten kritischen Schaden um 15%.
+Die Stärke des schweren Angriffs des Charakters wird um 10% reduziert.
+Wird einmalig von jedem Charakter aktiviert.
+Verschwindet nach 70 Tagen oder beim Entfernen.
 }
 
 itmname_amulet_4 {Amulett "El trozo"}
@@ -2216,10 +2219,10 @@ itmdescr_map_martiniqua
 Eine ausgezeichnete Karte der Insel Martinique.
 }
 
-itmname_map_trinidad	{Karte von Trinidad und Tobago}
+itmname_map_trinidad	{Karte von Trinidad}
 itmdescr_map_trinidad
 {
-Eine Karte der Zwillingsinseln von Trinidad und Tobago.
+Eine Karte der Zwillingsinseln von Trinidad.
 }
 
 itmname_map_nevis	{Karte von St. Christopher}
@@ -2386,10 +2389,10 @@ itmdescr_A_map_martiniqua
 Eine äußerst präzise Karte der Insel Martinique. Auf der Rückseite steht der Name des Kartographen - Jose Dios.
 }
 
-itmname_A_map_trinidad	{Hervorragende Karte von Trinidad und Tobago}
+itmname_A_map_trinidad	{Hervorragende Karte von Trinidad}
 itmdescr_A_map_trinidad
 {
-Eine äußerst präzise Karte der Inseln von Trinidad und Tobago. Auf der Rückseite steht der Name des Kartographen - Jose Dios.
+Eine äußerst präzise Karte der Inseln von Trinidad. Auf der Rückseite steht der Name des Kartographen - Jose Dios.
 }
 
 itmname_A_map_nevis	{Hervorragende Karte von St. Christopher}
@@ -2639,7 +2642,7 @@ Jackman.
 itmname_letter_parol	{Notiz}
 itmdescr_letter_parol
 {
-Bitte beachten Sie, dass der Eigentümer das Passwort für den Zugang zur Mine geändert hat. Das neue Passwort lautet "Neptun".
+Bitte beachten Sie, dass der Eigentümer das Passwort für den Zugang zur Mine geändert hat. Das neue Passwort lautet "Neptune".
 }
 itmdescr_letter_ouster
 {
@@ -3624,6 +3627,12 @@ itmdescr_cask_whisky
 Eine Holzschatulle mit mehreren Flaschen edlen irischen Whiskeys "Bushmills", der in Dublin Town destilliert wurde.
 }
 
+itmname_cask_gin	{Fass Gin}
+itmdescr_cask_gin
+{
+Ein Fass edlen europäischen Gins. Hier in der Karibik ist ein solches Getränk nur wenigen Auserwählten vorbehalten.
+}
+
 itmname_buben	{Tamburin eines Schamanen}
 itmdescr_buben
 {
@@ -3830,6 +3839,30 @@ itmdescr_PR_Letter
 Eine Notiz, geschrieben auf altem, abgenutztem Papier. Ihr Inhalt ist offensichtlich nicht für fremde Augen bestimmt.
 }
 
+itmname_quest_potion	{Kräuterabkochung}
+itmdescr_quest_potion
+{
+Die wahren Eigenschaften dieses Suds sind nur der Hand bekannt, die ihn zubereitet hat.
+}
+
+itmname_GS_letters	{Notizen, übergeben vom Söldner}
+itmdescr_GS_letters
+{
+Hinweise, geschrieben von der Hand des Hafenleiters. Sie enthalten Informationen über die Routen und Abfahrtszeiten seiner Kunden, von denen jeder von Piraten angegriffen wurde.
+}
+
+itmname_SM_necklace_Julie	{Die Halskette von Julie d’Armagnac}
+itmdescr_SM_necklace_Julie
+{
+Ein Juwel, das Julies Herz nahesteht. Elegant und fein, scheint es ihre Erinnerungen selbst zu bewahren. Wenn es Dinge gibt, die Geheimnisse bewahren können – dann gehört diese Halskette zweifellos dazu.
+}
+
+itmname_TBP_letter	{Geöffneter Brief}
+itmdescr_TBP_letter
+{
+"Du dachtest, du könntest mich erpressen und ungestraft davonkommen? Du hast dich geirrt. Schon bald wirst du deine Dreistigkeit bereuen. Dein Tod wird lang und schmerzhaft sein, und niemand wird dich retten.​"
+}
+
 ;====================================== предметы для DLC ===============================
 
 itmname_kaleuche_amulet1 {Seltsames Amulett}
@@ -3956,7 +3989,29 @@ itmdescr_LadyBeth_Map
 Der Weg zum wertvollsten Schatz des größten Schatzsuchers.
 }
 
+itmname_BoxOfBalls	{Kanonenkugel-Kiste}
+itmdescr_BoxOfBalls
+{
+ In dieser Kiste gibt es nur Stroh und acht Kanonenkugeln.
+}
 
+itmname_Tutorial_key	{Schlüssel}
+itmdescr_Tutorial_key
+{
+Ein eiserner Schlüssel.
+}
+
+itmname_Tutorial_journal	{Kapitänslogbuch. Band IV.}
+itmdescr_Tutorial_journal
+{
+Der vierte Band von Kapitän Ulysses’ Logbuch. Gerade erst begonnen, daher noch kaum Einträge.
+}
+
+itmname_Suspicious_Potion	{Verdächtiger Trank}
+itmdescr_Suspicious_Potion
+{
+Hoffentlich wirkt er.
+}
 
 ;====================================== предметы для пиратской линейки ===============================
 

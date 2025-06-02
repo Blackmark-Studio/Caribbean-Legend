@@ -57,6 +57,13 @@ void ProcessDialogEvent()
 				link.l3.go = "quests";//(перессылка в файл города)
 				npchar.quest.meeting = "1";
 			}
+			// --> Тёмные воды исцеления
+			if (CheckAttribute(pchar, "questTemp.DWH_Start") && !CheckAttribute(pchar, "questTemp.DWH_gipsy") && npchar.city == "SentJons")
+			{
+				link.l6 = "Послушай, чернобровая, говорят, ты исцеляешь людей - даже от тяжких болезней. Это правда?";
+				link.l6.go = "dwh_gypsy_1";
+			}
+			// <-- Тёмные воды исцеления
 			if (!CheckAttribute(npchar, "quest.poison_price") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && rand(2) == 0)
 			{
 				link.l4 = "А что, чернобровая, не найдётся ли у тебя отравы какой для крыс? Совсем от них житья не стало!";
@@ -110,7 +117,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ай, спасибо, "+GetSexPhrase("соколик","голубушка")+"! Теперь слушай: "+sTemp+"";
 				link.l1 = LinkRandPhrase("Хех! Это очень занятно! Учту...","Вот как? Приму к сведению...","Да ну? Ты серьёзно? Ну что же, запомню...");
 				link.l1.go = "exit";
-				if (drand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
+				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 30+rand(10));//скрытность
 			}
 			else
@@ -130,7 +137,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				AddCharacterHealth(pchar, 1);
 				AddCharacterExpToSkill(pchar, "Leadership", 20);
-				if (drand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 50+rand(20));//везение
+				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 50+rand(20));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 50+rand(20));//скрытность
 			}
 			else
@@ -171,8 +178,8 @@ void ProcessDialogEvent()
 
 // --> продажа мышьяка
 		case "get_poison_1" :
-			npchar.quest.poison_price = (drand(3) + 1) * 10;
-			if(drand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
+			npchar.quest.poison_price = (hrand(3) + 1) * 10;
+			if(hrand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
 			{				
 				dialog.text = LinkRandPhrase("Ой не знаю, красав"+GetSexPhrase("ец","ица")+"! Давеча один вот тоже просил крыс примучить, а потом кто-то солдат в форте потравил. Нас две недели на допрос таскали. Чуть из города не погнали, пока не нашли того душегуба. Лазутчиком вражеским оказался.",
 				                             "А откуда мне знать, кого ты травить собрал"+GetSexPhrase("ся","ась")+"? Может знатного соперника, с которым боишься на клинках сойтись в честном поединке? ",
@@ -233,7 +240,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_2":
 			// тут работает харизма
-			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+drand(25)+drand(30))
+			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
 			{
 				dialog.text = "Хм... Ну, пожалуй, никакого страху не будет, если я тебе расскажу немного о ней. Всё равно без специальных знаний у тебя ничего путного не выйдет.";
 				link.l1 = "Я в"+GetSexPhrase("есь","ся")+" внимание!";
@@ -350,6 +357,67 @@ void ProcessDialogEvent()
 			ChangeCharacterAddressGroup(sld, "Amelia_house", "barmen", "stay");
 		break;
 		
+		// --> Тёмные воды исцеления
+		case "dwh_gypsy_1":
+			dialog.text = "Правда, "+GetSexPhrase("милок","красавица")+". Ко всякой хвори у меня свой подход. И простолюдинов, и богатеев, и купцов на ноги ставила. Да что там - сам губернатор к моим зельям прибегал, когда никто другой помочь не мог. Болезни, они золота не стращаются, а вот зелий моих - не выдерживают.";
+			link.l1 = "Тогда почему ты отказываешься лечить тяжело больную девочку - дочку Томаса Моррисона?";
+			link.l1.go = "dwh_gypsy_2";
+			pchar.questTemp.DWH_gipsy = true;
+		break;
+		
+		case "dwh_gypsy_2":
+			dialog.text = "Кто ж тебе такую небылицу наплёл, "+GetSexPhrase("соколик","голубушка")+"? Помочь-то я не против, только вот отец её сам из дома меня прогнал. Мы уж договорились, что я возьмусь за лечение, а он вдруг как переменился. Выставил меня за порог - будто врага лютого.";
+			link.l1 = "Вот как? Значит, он собственноручно обрёк свою дочь на мучения?";
+			link.l1.go = "dwh_gypsy_2_1";
+		break;
+		
+		case "dwh_gypsy_2_1":
+			dialog.text = "Что ты, он заботливый отец - сложно представить, почему он мог так поступить.";
+			link.l1 = "Ты пыталась снова с ним поговорить?";
+			link.l1.go = "dwh_gypsy_3";
+		break;
+		
+		case "dwh_gypsy_3":
+			dialog.text = "Да он меня и близко к дому не подпускает. Слушай, "+GetSexPhrase("милок","красавица")+", раз уж тебе не безразлична судьба бедной девчушки, может, попробуешь узнать, в чём дело? Поговори с Томасом - помоги мне спасти дитё от страданий.";
+			link.l1 = "Разумеется, я помогу. Где мне найти Томаса?";
+			link.l1.go = "dwh_gypsy_4";
+			link.l2 = "Нет, чернобровая. Как бы там ни было, я думаю, что у её отца есть веские причины отвергать твою помощь. Я не стану в это ввязываться. Пускай он сам решает - это ведь его дочь.";
+			link.l2.go = "dwh_gypsy_otkaz";
+		break;
+		
+		case "dwh_gypsy_otkaz":
+			DialogExit();
+			CloseQuestHeader("DWH");
+		break;
+		
+		case "dwh_gypsy_4":
+			dialog.text = "Их дом находится у стены, в северной части города, рядом с роскошным особняком с колоннами. Ступай, "+GetSexPhrase("соколик","голубушка")+", поговори с ним и возвращайся ко мне.";
+			link.l1 = "Скоро вернусь.";
+			link.l1.go = "dwh_gypsy_5";
+		break;
+		
+		case "dwh_gypsy_5":
+			DialogExit();
+			
+			AddQuestRecord("DWH", "2");
+			
+			sld = GetCharacter(CreateCharacterClone(npchar, -1));
+			sld.id = "DWH_gypsy";
+			npchar.lifeday = 0;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("DWH_Tomas", "citiz_13", "man", "man", 1, ENGLAND, -1, false, "quest"));
+			sld.name = "Томас";
+			sld.lastname = "Моррисон";
+			LAi_SetStayType(sld);
+			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+			sld.dialog.currentnode = "Tomas";
+			ChangeCharacterAddressGroup(sld, "SentJons_houseS3", "goto", "goto1");
+			sld.City = "SentJons";
+			LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
+			AddLandQuestMark(sld, "questmarkmain");
+		break;
+		// <-- Тёмные воды исцеления
+		
 		//замечание по обнажённому оружию от персонажей типа citizen
 		case "CitizenNotBlade":
 			dialog.text = NPCharSexPhrase(NPChar, "Послушайте, я, как гражданин этого города, прошу вас не ходить у нас с обнажённым клинком.", "Знаете, я, как гражданка этого города, прошу вас не ходить у нас с обнажённым клинком.");
@@ -368,7 +436,7 @@ void ProcessDialogEvent()
 string GuessText()
 {
 	string sText;
-	switch (drand(19))
+	switch (hrand(19))
 	{
 		case 0: sText = "повезёт тебе, "+GetSexPhrase("соколик","голубушка")+", завтра непременно в карты повезёт!" break;
 		case 1: sText = "в загаданном деле тебя ожидает удача, капитан!" break;

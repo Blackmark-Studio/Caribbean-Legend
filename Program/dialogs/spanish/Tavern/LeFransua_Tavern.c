@@ -10,7 +10,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// Jason, Бремя гасконца
 		if (CheckAttribute(PChar, "questTemp.Sharlie.Storehelper") && pchar.questTemp.Sharlie.Storehelper == "hire" && !CheckAttribute(npchar, "quest.storehelper"))
 		{
-			link.l1 = "Escucha, " + npchar.name + ", he venido a ti por un asunto inusual. Necesito encontrar a un hombre que desee una vida tranquila y pacífica en la bahía como asistente de comerciante en una tienda de Saint-Pierre. El salario es bueno y tendrá un techo sobre su cabeza asegurado. ¿Podrías sugerirme a quién podría acudir?";
+			link.l1 = "Escucha, " + npchar.name + ", he venido a ti por un asunto inusual. Necesito encontrar a un hombre que desee una vida tranquila y pacífica en la bahía como asistente de comerciante, en una tienda de Saint-Pierre. El salario es bueno y tendrá un techo sobre su cabeza asegurado. ¿Podrías sugerirme a quién podría acudir?";
 			link.l1.go = "storehelper";
 		}
 		if (CheckAttribute(PChar, "questTemp.Sharlie") && pchar.questTemp.Sharlie == "seabattle" && !CheckAttribute(npchar, "quest.seabattle") && pchar.location.from_sea == "LeFransua_town")
@@ -22,7 +22,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// Jason, Португалец
 		if (CheckAttribute(PChar, "questTemp.Portugal") && pchar.questTemp.Portugal == "PortugalLeFransua" && !CheckAttribute(npchar, "quest.portugal") && Pchar.location.from_sea == "LeFransua_town")
 		{
-			link.l1 = "Sabes, " + npchar.name + ", estoy buscando a un amigo mío. Se suponía que llegaría aquí y se sentía mal. Tal vez sus amigos lo ayudaron...";
+			link.l1 = "Sabes, " + npchar.name + ", estoy buscando a un amigo mío. Se suponía que llegaría aquí, y se sentía mal. Tal vez sus amigos lo ayudaron...";
 			link.l1.go = "Portugal";
 		}
 		// Португалец
@@ -56,7 +56,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "storehelper_3":
 		DialogExit();
-		SetLaunchFrameFormParam("One hour passed...", "", 0, 5);
+		SetLaunchFrameFormParam("Una hora más tarde...", "", 0, 5);
 		LaunchFrameForm();
 		WaitDate("", 0, 0, 0, 1, 0); // крутим время
 		RecalculateJumpTable();
@@ -64,7 +64,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "storehelper_exit":
-		dialog.text = "Lo siento que tú tampoco tengas ese tipo de dinero. Pero tú mismo sabes, asuntos como esos no se resuelven solo con un 'gracias'. Así que...";
+		dialog.text = "Siento que tú tampoco tengas ese tipo de dinero. Pero tú mismo sabes, asuntos como esos no se resuelven solo con un 'gracias'. Así que...";
 		link.l1 = "Entiendo. Pero realmente no tengo el dinero. Está bien, adiós...";
 		link.l1.go = "exit";
 		// pchar.quest.storehelper.over = "yes";
@@ -88,7 +88,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "seabattle_2":
-		dialog.text = "¡Je! Bueno, esto es o un error o una broma de mal gusto o...";
+		dialog.text = "¡Je! Bueno, esto es o un error, o una broma de mal gusto o...";
 		link.l1 = "¿O qué?";
 		link.l1.go = "seabattle_3";
 		break;
@@ -109,7 +109,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		pchar.quest.NewGameTip4.win_condition.l1 = "location";
 		pchar.quest.NewGameTip4.win_condition.l1.location = "LeFransua_town";
 		pchar.quest.NewGameTip4.function = "ShowNewGameTip";
-		pchar.quest.NewGameTip4.text = "¡Llega tu primera batalla naval! ¡Salva tu partida!";
+		pchar.quest.NewGameTip4.text = "¡Llega tu primera batalla naval! ¡Guarda tu partida!";
 		break;
 
 	case "Portugal":

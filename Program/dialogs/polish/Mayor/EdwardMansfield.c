@@ -55,7 +55,7 @@ void ProcessDialogEvent()
             }
             else
             {
-				dialog.text = NPCStringReactionRepeat("Masz mi coś do powiedzenia? Nie? Więc "+GetSexPhrase("zmykaj stąd!","Proszę cię, byś mi nie przeszkadzał.")+" ","Myślę, że wyraziłem się jasno...","Chociaż wyraziłem się jasno, wciąż mnie irytujesz!","Cóż, jesteś niezmiernie "+GetSexPhrase("zbyt niegrzeczne, mon cheri","taka nieuprzejmość, dziewczyno","taka niegrzeczność, dziewczyno")+"...","powtórz",30,npchar,Dialog.CurrentNode);
+				dialog.text = NPCStringReactionRepeat("Masz mi coś do powiedzenia? Nie? Więc "+GetSexPhrase("zmykaj stąd!","Proszę cię, byś mi nie przeszkadzał.")+" ","Myślę, że wyraziłem się jasno...","Chociaż wyraziłem się jasno, wciąż mnie irytujesz!","Cóż, jesteś niezmiernie "+GetSexPhrase("zbyt niegrzeczne, mon cheri","taka nieuprzejmość, dziewczyno","taka niegrzeczność, dziewczyno")+"...","repeat",30,npchar,Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Odchodzę.","Tak, "+npchar.name+"Widzę to.","Przepraszam, "+npchar.name+"...","Ała...",npchar,Dialog.CurrentNode);
 				link.l1.go = "exit";
 			}

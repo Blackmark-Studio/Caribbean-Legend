@@ -1,24 +1,24 @@
 
 
-Start_GoldFleet_t0 {Se rumorea que la 'Flota del Tesoro Español' con el cargamento anual de oro y plata acaba de salir de Portobelo en ruta hacia La Habana.}
-Start_GoldFleet_t1 {Hace poco, la 'Flota del Tesoro Español' con su valioso cargamento de oro y plata de los Mayas y Aztecas ha salido de Portobelo. El convoy se dirige a La Habana, desde donde partirá hacia España.}
-Start_GoldFleet_t2 {Se rumorea que la 'Flota del Tesoro Español', con su cargamento de oro y plata, se dirige de Portobelo a La Habana. Por si acaso, la flotilla va protegida por varias fragatas y unos cuantos buques de guerra.}
+Start_GoldFleet_t0 {Se rumorea que la 'Flota del Tesoro Español' con el cargamento anual de oro y plata acaba de salir de Portobello en ruta hacia La Habana.}
+Start_GoldFleet_t1 {Hace poco, la 'Flota del Tesoro Español' con su valioso cargamento de oro y plata de los Mayas y Aztecas ha salido de Portobello. El convoy se dirige a La Habana, desde donde partirá hacia España.}
+Start_GoldFleet_t2 {Se rumorea que la 'Flota del Tesoro Español', con su cargamento de oro y plata, se dirige de Portobello a La Habana. Por si acaso, la flotilla va protegida por varias fragatas y unos cuantos buques de guerra.}
 
 End_GoldFleet_t0 {Dicen que la 'Flota del Tesoro Español' ha llegado sana y salva a Cuba. Seguro que se llevarán todo ese oro y plata a España bien escoltados.}
 End_GoldFleet_t1 {Todos los barcos de la 'Flota del Tesoro Español' han llegado a La Habana sin problema. Pronto se llevarán todos los tesoros de los Mayas e Incas a Europa.}
 End_GoldFleet_t2 {La flota de la 'Flota del Tesoro Español' ha llegado a La Habana. Todo el cargamento de oro y plata está sano y salvo. Pronto se lo llevarán a España.}
 
-Defeat_GoldFleet_t0 {Se rumorea que la 'Flota del Tesoro Español' que iba de Portobelo a La Habana, aún no ha llegado a su destino. No sé por qué... ¿Piratas? ¿El tiempo?}
-Defeat_GoldFleet_t1 {La 'Flota del Tesoro Español', que salió de Portobelo con un cargamento de oro y plata, ha desaparecido sin dejar rastro. ¡Nadie sabe qué ha pasado, pero te apuesto un doblón a que han sido los piratas!}
-Defeat_GoldFleet_t2 {La 'Flota del Tesoro Español', que llevaba una cantidad inimaginable de tesoros de Portobelo, aún no ha llegado a La Habana, aunque ya ha pasado bastante tiempo. Quién sabe, hay muchas tormentas en esta época del año.}
+Defeat_GoldFleet_t0 {Se rumorea que la 'Flota del Tesoro Español' que iba de Portobello a La Habana, aún no ha llegado a su destino. No sé por qué... ¿Piratas? ¿El tiempo?}
+Defeat_GoldFleet_t1 {La 'Flota del Tesoro Español', que salió de Portobello con un cargamento de oro y plata, ha desaparecido sin dejar rastro. ¡Nadie sabe qué ha pasado, pero te apuesto un doblón a que han sido los piratas!}
+Defeat_GoldFleet_t2 {La 'Flota del Tesoro Español', que llevaba una cantidad inimaginable de tesoros de Portobello, aún no ha llegado a La Habana, aunque ya ha pasado bastante tiempo. Quién sabe, hay muchas tormentas en esta época del año.}
 
-Attak_GoldFleet_t0 {Dicen que se han atrevido a atacar a la 'Flota del Tesoro Español', que llevaba oro, plata y otros tesoros del Nuevo Mundo de Portobelo a La Habana. Por ello, la flota ha perdido varios barcos.}
-Attak_GoldFleet_t1 {¡Los mares ya no son tan seguros! ¡Los piratas han atacado a la 'Flota del Tesoro Español' que iba de Portobelo a La Habana! O quizás hayan sido los corsarios ingleses, no lo sé. ¡Menudo descaro! ¡Me gustaría ver a esos sinvergüenzas en la horca!}
-Attak_GoldFleet_t2 {¡La cosa cada día se pone peor! ¡Han atacado a la 'Flota del Tesoro Español’, que llevaba oro, plata y otros tesoros del Nuevo Mundo de Portobelo a La Habana! ¡Es el fin del mundo! ¡Madre de Dios!}
+Attak_GoldFleet_t0 {Dicen que se han atrevido a atacar a la 'Flota del Tesoro Español', que llevaba oro, plata y otros tesoros del Nuevo Mundo de Portobello a La Habana. Por ello, la flota ha perdido varios barcos.}
+Attak_GoldFleet_t1 {¡Los mares ya no son tan seguros! ¡Los piratas han atacado a la 'Flota del Tesoro Español' que iba de Portobello a La Habana! O quizás hayan sido los corsarios ingleses, no lo sé. ¡Menudo descaro! ¡Me gustaría ver a esos sinvergüenzas en la horca!}
+Attak_GoldFleet_t2 {¡La cosa cada día se pone peor! ¡Han atacado a la 'Flota del Tesoro Español’, que llevaba oro, plata y otros tesoros del Nuevo Mundo de Portobello a La Habana! ¡Es el fin del mundo! ¡Madre de Dios!}
 
-Init_GoldFleet_t0 {Se rumorea que están preparando la 'Flota del Tesoro Español' en Portobelo. La fecha exacta de salida es un secreto, pero dicen que el convoy se marchará a Cuba a principios de #sgold_month#.}
-Init_GoldFleet_t1 {Se rumorea que en Portobelo están cargando los barcos de la 'Flota del Tesoro Español' con oro y plata. Desde ahí, el convoy se marchará a Cuba a principios de #sgold_month#.}
-Init_GoldFleet_t2 {Está previsto que la 'Flota del Tesoro Español' marche de Portobelo a Cuba a principios de #sgold_month#. Para entonces, habrán llenado sus bodegas de oro y plata.}
+Init_GoldFleet_t0 {Se rumorea que están preparando la 'Flota del Tesoro Español' en Portobello. La fecha exacta de salida es un secreto, pero dicen que el convoy se marchará a Cuba a principios de #sgold_month#.}
+Init_GoldFleet_t1 {Se rumorea que en Portobello están cargando los barcos de la 'Flota del Tesoro Español' con oro y plata. Desde ahí, el convoy se marchará a Cuba a principios de #sgold_month#.}
+Init_GoldFleet_t2 {Está previsto que la 'Flota del Tesoro Español' marche de Portobello a Cuba a principios de #sgold_month#. Para entonces, habrán llenado sus bodegas de oro y plata.}
 
 
 MerchantOnMapTo_t0 {Se rumorea que un barco cargado con #sQuestGoodsIdx# se dirige hacia aquí, desde #ssColony#. Se llama '#sShipName#' y lleva la bandera de #snation#.}

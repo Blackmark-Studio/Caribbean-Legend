@@ -874,3 +874,23 @@ FreeCam
 {
 Free Camera
 }
+
+TimeScale
+{
+Time speed up/slow down
+}
+
+TimeScaleFasterBA
+{
+Time speed up
+}
+
+TimeScaleSlowerBA
+{
+Time slow down
+}
+
+FireCamera_Set
+{
+Aiming view
+}

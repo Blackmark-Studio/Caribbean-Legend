@@ -220,18 +220,20 @@ void CreateCitizens(aref loc)
 				chr.talker = rand(6);
 				pchar.GenQuest.NightAdventureId = chr.id; 
 				pchar.GenQuest.NightAdventure_money = 3000+(rand(200)*10);
-				
-				
+
 				// варианты квеста
-				if(drand(7) == 0) pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorTavern"; // до таверны
-				if(drand(7) == 1) pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShuler0"; // нет шулера
-				if(drand(7) == 2) pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShulerGiveMoney"; // отдал деньги с миром
-				if(drand(7) == 3) pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShulerGiveOk"; // честный
-				if(drand(7) == 4) pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShulerFight"; // драка
-				if(drand(7) == 5) pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorBoat"; // до пирса
-				if(drand(7) == 6) pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShip"; // захочет наняться в команду
-				if(drand(7) == 7) pchar.GenQuest.NightAdventureVar = "NightAdventure_Bull"; // пьяные наезды
-				
+                switch (hrand(7, loc.id + chr.name))
+                {
+                    case 0: pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorTavern";          break; // до таверны
+                    case 1: pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShuler0";         break; // нет шулера
+                    case 2: pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShulerGiveMoney"; break; // отдал деньги с миром
+                    case 3: pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShulerGiveOk";    break; // честный
+                    case 4: pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShulerFight";     break; // драка
+                    case 5: pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorBoat";            break; // до пирса
+                    case 6: pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShip";            break; // захочет наняться в команду
+                    case 7: pchar.GenQuest.NightAdventureVar = "NightAdventure_Bull";                  break; // пьяные наезды
+				}
+
 				log_testinfo("Вариант: "+pchar.GenQuest.NightAdventureVar);
 			break;
 			
@@ -258,20 +260,22 @@ void CreateCitizens(aref loc)
 				chr.talker = rand(6);
 				pchar.GenQuest.NightAdventureId = chr.id; 
 				pchar.GenQuest.NightAdventure_money = 3000+(rand(200)*10);
-				
+
 				// варианты квеста
-				if(drand(8) == 0) pchar.GenQuest.NightAdventureVar = "NightAdventure_CitizenHomie"; // выручить приятеля
-				if(drand(8) == 5) pchar.GenQuest.NightAdventureVar = "NightAdventure_CitizenHomieSolderNM"; // выручить приятеля солдат не возьмет денег
-				if(drand(8) == 6) pchar.GenQuest.NightAdventureVar = "NightAdventure_CitizenHomieSolderGM"; // выручить приятеля солдат возьмет деньги
-				if(drand(8) == 7) pchar.GenQuest.NightAdventureVar = "NightAdventure_CitizenHomieOfficer"; // выручить приятеля офицер возьмет деньги
-				if(drand(8) == 1) pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShuler0"; // нет шулера
-				if(drand(8) == 2) pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShulerGiveMoney"; // отдал деньги с миром
-				if(drand(8) == 3) pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShulerGiveOk"; // честный
-				if(drand(8) == 4) pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShulerFight"; // драка
-				if(drand(8) == 8) pchar.GenQuest.NightAdventureVar = "NightAdventure_Bull"; // пьяные наезды
-			
+                switch (hrand(8, loc.id + chr.name))
+                {
+                    case 0: pchar.GenQuest.NightAdventureVar = "NightAdventure_CitizenHomie";          break; // выручить приятеля
+                    case 1: pchar.GenQuest.NightAdventureVar = "NightAdventure_CitizenHomieSolderNM";  break; // выручить приятеля солдат не возьмет денег
+                    case 2: pchar.GenQuest.NightAdventureVar = "NightAdventure_CitizenHomieSolderGM";  break; // выручить приятеля солдат возьмет деньги
+                    case 3: pchar.GenQuest.NightAdventureVar = "NightAdventure_CitizenHomieOfficer";   break; // выручить приятеля офицер возьмет деньги
+                    case 4: pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShuler0";         break; // нет шулера
+                    case 5: pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShulerGiveMoney"; break; // отдал деньги с миром
+                    case 6: pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShulerGiveOk";    break; // честный
+                    case 7: pchar.GenQuest.NightAdventureVar = "NightAdventure_SailorShulerFight";     break; // драка
+                    case 8: pchar.GenQuest.NightAdventureVar = "NightAdventure_Bull";                  break; // пьяные наезды
+                }
+
 				log_testinfo("Вариант: "+pchar.GenQuest.NightAdventureVar);
-			
 			break;
 			
 			case 2: //контрабандист
@@ -296,13 +300,16 @@ void CreateCitizens(aref loc)
 				chr.greeting = "habitue";
 				chr.talker = rand(6);
 				pchar.GenQuest.NightAdventureId = chr.id; 
-				
+
 				// варианты квеста
-				if(drand(2) == 0) pchar.GenQuest.NightAdventureVar = "NightAdventure_Bull"; // наезды
-				if(drand(2) == 1) pchar.GenQuest.NightAdventureVar = "NightAdventure_PiratePeace"; // мирный исход
-				if(drand(2) == 2) pchar.GenQuest.NightAdventureVar = "NightAdventure_PirateBad"; // плохой исход
+                switch (hrand(2, loc.id + chr.name))
+                {
+                    case 0: pchar.GenQuest.NightAdventureVar = "NightAdventure_Bull";        break; // наезды
+                    case 1: pchar.GenQuest.NightAdventureVar = "NightAdventure_PiratePeace"; break; // мирный исход
+                    case 2: pchar.GenQuest.NightAdventureVar = "NightAdventure_PirateBad";   break; // плохой исход
+                }
+
 				log_testinfo("Вариант: "+pchar.GenQuest.NightAdventureVar);
-			
 			break;
 			
 			case 3: // Дворянин
@@ -331,15 +338,20 @@ void CreateCitizens(aref loc)
 				if(NABrothel != -1)
 				{
 					// варианты квеста
-					if(drand(2) == 0) pchar.GenQuest.NightAdventureVar = "NightAdventure_NobleGame"; // в карты
-					if(drand(2) == 1) pchar.GenQuest.NightAdventureVar = "NightAdventure_NobleGameDuel"; // в карты с дуэлью
-					if(drand(2) == 2) pchar.GenQuest.NightAdventureVar = "NightAdventure_NobleWhore"; // жрица
+                    switch (hrand(2, loc.id + chr.name))
+                    {
+                        case 0: pchar.GenQuest.NightAdventureVar = "NightAdventure_NobleGame";     break; // в карты
+                        case 1: pchar.GenQuest.NightAdventureVar = "NightAdventure_NobleGameDuel"; break; // в карты с дуэлью
+                        case 2: pchar.GenQuest.NightAdventureVar = "NightAdventure_NobleWhore";    break; // жрица
+                    }
 				}
 				else
 				{
 					log_testinfo("Бордель не найден");
-					if(drand(1) == 0) pchar.GenQuest.NightAdventureVar = "NightAdventure_NobleGame"; // в карты
-					if(drand(1) == 1) pchar.GenQuest.NightAdventureVar = "NightAdventure_NobleGameDuel"; // в карты с дуэлью
+                    if(hrand(1,  loc.id + chr.name) == 0)
+                        pchar.GenQuest.NightAdventureVar = "NightAdventure_NobleGame";     // в карты
+					else
+                        pchar.GenQuest.NightAdventureVar = "NightAdventure_NobleGameDuel"; // в карты с дуэлью
 				}					
 				log_testinfo("Вариант: "+pchar.GenQuest.NightAdventureVar);
 			
@@ -372,7 +384,7 @@ void CreateCitizens(aref loc)
 		iIndianQty = 0;
 		iConvQty = 0;
 	}
-	if (loc.id == "Minentown_town")
+	if (loc.id == "LosTeques_town")
 	{
 		iIndianQty = rand(2)+10;
 		iContraQty = rand(2)+4;
@@ -451,12 +463,12 @@ void CreateCitizens(aref loc)
 				GiveItem2Character(chr, RandPhraseSimple("blade_04","blade_06"));
 				EquipCharacterbyItem(chr, RandPhraseSimple("blade_04","blade_06"));
 				
-				if(CheckAttribute(pchar, "questTemp.StatusCity") && chr.City == pchar.questTemp.StatusCity && !CheckAttribute(pchar, "GenQuest.Marginpassenger") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && chr.City != "Minentown" && chr.City != "Panama")
+				if(CheckAttribute(pchar, "questTemp.StatusCity") && chr.City == pchar.questTemp.StatusCity && !CheckAttribute(pchar, "GenQuest.Marginpassenger") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && chr.City != "LosTeques" && chr.City != "Panama")
 				{
 					chr.quest.passenger = "true";
 					chr.talker = rand(3);
 				}
-				if (rand(7) < 2 && !CheckAttribute(pchar, "GenQuest.Marginpassenger") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && chr.City != "Minentown" && chr.City != "Panama") //захват пассажира
+				if (rand(7) < 2 && !CheckAttribute(pchar, "GenQuest.Marginpassenger") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && chr.City != "LosTeques" && chr.City != "Panama") //захват пассажира
 				{
 					chr.quest.passenger = "true";
 					chr.talker = rand(3);
@@ -543,7 +555,7 @@ void CreateCitizens(aref loc)
 				}
 				// Warship, 25.05.11. "Дело чести" -->
 				// belamour legendary edition встречается значительно чаще
-				bool bAh = (drand(4) == 4) && (!CheckAttribute(pchar, "questTemp.Sharlie.Lock")) && (!CheckAttribute(pchar, "GenQuest.Escort.Trader"))
+				bool bAh = (hrand(4, loc.id) == 4) && (!CheckAttribute(pchar, "questTemp.Sharlie.Lock")) && (!CheckAttribute(pchar, "GenQuest.Escort.Trader"))
 				if(bAh || bBettaTestMode)
 				{
 					if(generateAffairOfHonor)
@@ -563,8 +575,8 @@ void CreateCitizens(aref loc)
 									int Scl = 30+2*sti(pchar.rank);
 									chr.id = "AffairOfHonor_QuestMan";
 									chr.rank = Rank;
-				if(chr.sex == "man")
-				{
+                                    if(chr.sex == "man")
+                                    {
 										FantomMakeCoolFighter(chr, Rank, Scl, Scl, RandPhraseSimple("blade_08","blade_09"), RandPhraseSimple("pistol1","pistol5"), "bullet", Scl*3);
 										float Mft = MOD_SKILL_ENEMY_RATE/20;
 										chr.MultiFighter = 1.0+Mft; // мультифайтер
@@ -715,7 +727,7 @@ void CreateCitizens(aref loc)
 					chr.talker = rand(3);
 				}
 					// Captain Beltrop, 04.05.21, правка выхода за границы массива при отсутствии корабля
-				if (rand(4) == 4 && !CheckAttribute(pchar, "questTemp.ShipCapellan") && pchar.ship.type != SHIP_NOTUSED && 5-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0) //корабельный капеллан
+				if (rand(4) == 4 && !CheckAttribute(pchar, "questTemp.ShipCapellan") && pchar.ship.type != SHIP_NOTUSED && 6-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0) //корабельный капеллан
 				{
 					chr.quest.capellan = "true";
 					chr.talker = 9;
@@ -1524,7 +1536,7 @@ void CreateHabitues(aref loc)
 			slai_group = GetNationNameByType(iNation)  + "_citizens";
 
             arrayNPCModelHow = 0;
-			if (pchar.location == "Minentown_tavern")
+			if (pchar.location == "LosTeques_tavern")
 			{
 				for (i=1; i <=rand(2)+1; i++)
 				{
@@ -1733,7 +1745,7 @@ void CreateHabitues(aref loc)
 					
 					// Warship, 30.05.11. "Дело чести" -->
 					// belamour legendary edition встречается значительно чаще
-					bool bAh = (drand(4) == 4) && (!CheckAttribute(pchar, "questTemp.Sharlie.Lock")) && (!CheckAttribute(pchar, "GenQuest.Escort.Trader"))
+					bool bAh = (hrand(4, loc.id) == 4) && (!CheckAttribute(pchar, "questTemp.Sharlie.Lock")) && (!CheckAttribute(pchar, "GenQuest.Escort.Trader"))
 					if(bAh || bBettaTestMode)
 					{
 						if(generateAffairOfHonor && IsDay())
@@ -3046,9 +3058,9 @@ void CreateIndianVillage(aref loc) // Jason: деревня карибов
 	}
 }
 
-void CreateMinentownMine(aref loc) // Jason: шахта на руднике
+void CreateLosTequesMine(aref loc) // Jason: шахта на руднике
 {
-	if (loc.id == "Minentown_mine")
+	if (loc.id == "LosTeques_mine")
 	{
 		if (CheckAttribute(loc, "QuestCapture")) {
 			return;
@@ -3068,7 +3080,7 @@ void CreateMinentownMine(aref loc) // Jason: шахта на руднике
 				chr.greeting = "convict";
 				GiveItem2Character(chr, RandPhraseSimple("slave_01","topor_05"));
 				EquipCharacterbyItem(chr, RandPhraseSimple("slave_01","topor_05"));
-				chr.city = "Minentown"; 
+				chr.city = "LosTeques"; 
 				ChangeCharacterAddressGroup(chr, loc.id, "monsters", "convict"+i);
 				LAi_SetStayType(chr);
 				LAi_group_MoveCharacter(chr, "SPAIN_CITIZENS");
@@ -3081,7 +3093,7 @@ void CreateMinentownMine(aref loc) // Jason: шахта на руднике
 				chr.greeting = "soldier";
 				LAi_CharacterReincarnation(chr, true, true);
 				LAi_SetReincarnationRankStep(chr, MOD_SKILL_ENEMY_RATE+2); 
-				chr.city = "Minentown";
+				chr.city = "LosTeques";
 				chr.CityType = "soldier";
 				PlaceCharacter(chr, "goto", "random");
 				LAi_SetPatrolType(chr);
@@ -3095,7 +3107,7 @@ void CreateMinentownMine(aref loc) // Jason: шахта на руднике
 				chr.greeting = "protector";
 				LAi_CharacterReincarnation(chr, true, true);
 				LAi_SetReincarnationRankStep(chr, MOD_SKILL_ENEMY_RATE+2); 
-				chr.city = "Minentown";
+				chr.city = "LosTeques";
 				ChangeCharacterAddressGroup(chr, loc.id, "soldiers", "soldier"+i);
 				LAi_SetGuardianType(chr);
 				LAi_group_MoveCharacter(chr, "SPAIN_CITIZENS");
@@ -3105,7 +3117,7 @@ void CreateMinentownMine(aref loc) // Jason: шахта на руднике
 		FantomMakeCoolFighter(chr, 35, 100, 100, "blade_17", "pistol4", "bullet", 250);
 		chr.dialog.Filename = "MineHead_dialog.c";
 		chr.greeting = "patrol";
-		chr.city = "Minentown";
+		chr.city = "LosTeques";
 		ChangeCharacterAddressGroup(chr, loc.id, "quest", "quest1");
 		LAi_SetGuardianType(chr);
 		LAi_group_MoveCharacter(chr, "SPAIN_CITIZENS");

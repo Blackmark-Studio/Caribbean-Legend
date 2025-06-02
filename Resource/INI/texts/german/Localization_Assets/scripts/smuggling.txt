@@ -1,0 +1,8 @@
+smuggling_1
+{
+Die Schmuggler billigen (
+}
+smuggling_2
+{
+Die Schmuggler missbilligen (
+}

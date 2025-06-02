@@ -71,8 +71,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Startsailor_2a":
-			dialog.text = "Bueno, entonces, creo que todos estaremos encantados наконец-то попрощаться с вами, monsieur. La barca está esperando. No saltes de alegría. Y no olvides tus pertenencias - el barco sigue avanzando, y también podrías olvidarlas si no lo haces.";
-			link.l1 = "Como si los dejara para tu placer. Pesos, espada - parece que no me han robado.";
+			dialog.text = "Bueno, entonces, creo que todos estaremos encantados de verlo partir, monsieur. La barca está esperando. No saltes de alegría. Y no olvides tus pertenencias, el barco sigue avanzando, y también podrías olvidarlas si no lo haces.";
+			link.l1 = "Como si los dejara para tu placer. Pesos, espada, parece que no me han robado.";
 			link.l1.go = "Startsailor_3a";			
 		break;
 		
@@ -83,7 +83,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Startsailor_4a":
-			dialog.text = "Eso es el rumor. Agradece que me tomé la molestia de compartirlo y mostrar preocupación por tu estancia aquí. De lo contrario, esa delicada rosa gascona tuya podría marchitarse bajo nuestro ardiente sol. Tonterías o no, mantén tus sentidos alerta - tenemos suficientes problemas sin los fanáticos. Bandidos en los callejones y la jungla, piratas en el mar, y caníbales de piel roja...";
+			dialog.text = "Eso es el rumor. Agradece que me tomé la molestia de compartirlo y mostrar preocupación por tu estancia aquí. De lo contrario, esa delicada rosa gascona tuya podría marchitarse bajo nuestro ardiente sol. Tonterías o no, mantén tus sentidos alerta, tenemos suficientes problemas sin los fanáticos. Bandidos en los callejones y la jungla, piratas en el mar, y caníbales de piel roja...";
 			link.l1 = "¡Ahora, ahora! Me las arreglaré. Puede que esté un poco caluroso para mí ahora, pero estoy curtido por el sol en casa, a diferencia de, digamos, esos normandos. Y si algo se puede resolver con una espada, puedes contar conmigo. ¡Pero los mosquitos, ahora eso es puro tormento! Bueno, todas mis cosas están contabilizadas. ¿Dices que el barco está listo?";
 			link.l1.go = "Startsailor_5a";			
 		break;
@@ -96,11 +96,7 @@ void ProcessDialogEvent()
 		
 		case "Startsailor_6":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			i = FindLocation("Fortfrance_town");
-			setCharacterShipLocation(pchar, GetCityFrom_Sea(locations[i].fastreload));
-		    setWDMPointXZ(GetCityFrom_Sea(locations[i].fastreload));
-			DoQuestReloadToLocation("Fortfrance_town", "reload", "reload1", "Sharlie_onLand");
+			AddDialogExitQuestFunction("SharlieTutorial_StartGameInMartinique");
 		break;
 		// <-- матрос на корабле, прибытие в Сен-Пьер
 		
@@ -287,34 +283,36 @@ void ProcessDialogEvent()
 		// --> найм матросов
 		case "Sharlie_sailor":
 			DelLandQuestMark(npchar);
-			dialog.text = "Buena salud y que Dios le acompañe, Monsieur. ¿Necesita algo?";
-			link.l1 = "Sí. Tengo un barco pero no tengo tripulación. El tabernero me aconsejó hablar contigo sobre esto. Tú y tus muchachos supuestamente han sido despedidos de su último barco y necesitan un empleo remunerado...";
+			dialog.text = "¡Y luego se asomó por la borda y echó tanto que hasta el Caribe se puso verde! ¡Ja, ja, ja!";
+			link.l1 = "¿Alonso?";
 			link.l1.go = "Sharlie_sailor_1";
 		break;
 		
 		case "Sharlie_sailor_1":
-			dialog.text = "Oui, eso es correcto. ¿Quieres contratarme a mí y a mis compañeros? ¿Qué tipo de barco tienes?";
-			link.l1 = "Un barco común, "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype),"Name")))+".  ¿Por qué te importa siquiera?";
+			dialog.text = "¡Oh! Charles, justo estaba contando a los muchachos nuestras aventuras.";
+			link.l1 = "Ya me di cuenta. Escucha, Alonso. Me he... convertido en capitán.";
 			link.l1.go = "Sharlie_sailor_2";
 		break;
 		
 		case "Sharlie_sailor_2":
-			dialog.text = "Bueno, Monsieur, ningún marinero decente quiere servir apretujado en un tartán o en una lancha, pero "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype),"Name")))+" estará bien. Debo advertirte, capitán, puedes contratarnos solo a todos nosotros a la vez. Verás, somos un equipo y venimos como un paquete.";
-			link.l1 = "¿Cuántos hombres tienes?";
+			dialog.text = "¿Ya? ¡Pensé que le tomaría al menos un mes, ja, ja!";
+			link.l1 = "¡Hablo en serio!";
 			link.l1.go = "Sharlie_sailor_3";
 		break;
 		
 		case "Sharlie_sailor_3":
-			dialog.text = "Cuarenta. Somos marineros experimentados, ni un novato entre nosotros, y también conocemos el olor de la pólvora. Podemos manejar las velas, el aparejo, desplegar los cañones, y luchar de cerca con sable y hacha si es necesario.";
-			link.l1 = "Todos parecen calificados. ¿Cuánto?";
+			dialog.text = "Si solo fuera por mí, me uniría de inmediato. Pero tengo a cuarenta hombres de la Ulysse conmigo. Han confiado en mí su futuro; debo estar seguro de que no les fallará\n"+
+			"¿Qué tipo de barco tiene?";
+			link.l1 = "Un barco como cualquier otro, "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name")))+". ¿Es tan importante?";
 			link.l1.go = "Sharlie_sailor_4";
 		break;
 		
 		case "Sharlie_sailor_4":
-			dialog.text = "Un adelanto inicial de 120 pesos cada uno y luego el salario estándar. No pediremos mucho, solo lo suficiente para el grog. No te preocupes por eso, capitán.";
+			dialog.text = "Ya sabe, después de la Ulysse preferimos no servir en una simple barca o tartana. Ya hemos visto su barco y a los muchachos les gusta\n"+
+			"Ahora, el dinero. Pedimos 4.800 pesos por adelantado. Después, como siempre, a partes. No pedimos nada excesivo, se lo aseguro. ¿Puede con ello?";
 			if (sti(Pchar.money) >= 4800)
 			{
-				link.l1 = "Aquí está tu dinero.";
+				link.l1 = "¡Trato hecho! Aquí tiene su dinero.";
 				link.l1.go = "Sharlie_sailor_5";
 			}
 			link.l2 = "Lamentablemente, no tengo tanto dinero conmigo en este momento.";
@@ -332,8 +330,8 @@ void ProcessDialogEvent()
 			else
 			{
 				AddMoneyToCharacter(pchar, -4800);
-				dialog.text = "Así me gusta, capitán. Reuniré a los muchachos y nos dirigiremos a su barco de inmediato.";
-				link.l1 = "Excelente. Prepara el barco para zarpar.";
+				dialog.text = "¡Vaya! ¡Felicidades... capitán! Reúno a los muchachos y vamos a su barco.";
+				link.l1 = "Encantado de continuar nuestra aventura, Alonso. ¡Prepara el barco para zarpar!";
 				link.l1.go = "Sharlie_sailor_6";
 			}
 		break;
@@ -435,7 +433,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_3":
-			dialog.text = "Un poco de todo, capitán. Solía servir a bordo de un corsario para la Compañía Neerlandesa de las Indias Occidentales. Allí aprendí a manejar los cañones, así que puedo servir como artillero si me necesita. El comercio y el abordaje son mis puntos más débiles.";
+			dialog.text = "Un poco de todo, capitán. Solía servir a bordo de un corsario para la Compañía Holandesa de las Indias Occidentales. Allí aprendí a manejar los cañones, así que puedo servir como artillero si me necesita. El comercio y el abordaje son mis puntos más débiles.";
 			link.l1 = "Gracias por compartir, ahora sígueme al barco. Quiero que observes a la tripulación con tu ojo experimentado mientras preparan todo para la partida. Luego, quiero dirigirme a Guadalupe lo antes posible.";
 			link.l1.go = "Folke_4";
 		break;
@@ -493,9 +491,14 @@ void ProcessDialogEvent()
 		case "Folke_8":
 			if (bOk)
 			{
-				dialog.text = "Bueno, definitivamente has abastecido suficiente munición, capitán. Mucha pólvora y balas para nuestras necesidades. Solo no te olvides de reabastecer cuando sea necesario.";
+				dialog.text = "Bueno, tenemos suficiente pólvora y munición, capitán. Por ahora basta; solo recuerde reponer a tiempo.";
 				link.l1 = "Bueno, eso ni se discute. ¿Algún otro comentario?";
 				link.l1.go = "Folke_10";
+				if (CheckCharacterItem(PChar, "BoxOfBalls"))
+				{
+					link.l2 = "¡Ah! Gracias por recordármelo. ¡Tengo una caja entera de balas conmigo!";
+					link.l2.go = "Folke_8_1";
+				}
 			}
 			else
 			{
@@ -503,6 +506,26 @@ void ProcessDialogEvent()
 				link.l1 = "Una inversión digna. Me voy al mercader.";
 				link.l1.go = "Folke_9";
 			}
+		break;
+		
+		case "Folke_8_1":
+			dialog.text = "...¿Y desde cuándo la lleva encima?";
+			link.l1 = "Casi dos semanas.";
+			link.l1.go = "Folke_8_2";
+			TakeItemFromCharacter(pchar, "BoxOfBalls");
+			//AddCharacterGoodsSimple(sld, GOOD_BALLS, 10);
+		break;
+		
+		case "Folke_8_2":
+			dialog.text = "¡Pero por qué, capitán!";
+			link.l1 = "Me gusta coleccionar cachivaches. Nunca se sabe qué puede ser útil.";
+			link.l1.go = "Folke_8_3";
+		break;
+		
+		case "Folke_8_3":
+			dialog.text = "Bueno, mala suerte. Estas balas no caben en nuestros cañones de juguete. Nunca vi balas tan grandes. Una de esas hundiría a la Adeline.";
+			link.l1 = "...";
+			link.l1.go = "Folke_10";
 		break;
 		
 		case "Folke_9":
@@ -531,8 +554,8 @@ void ProcessDialogEvent()
 		case "Folke_10":
 			if (bOk)
 			{
-				dialog.text = "Bien hecho, has comprado suficientes armas para tu tripulación. Si no tenemos suficientes armas, perderemos a muchos más hombres durante las acciones de abordaje. Que Dios nos proteja de eso. No olvides revisar frecuentemente la cantidad en la bodega de carga.\nEs prudente mantener algunas armas más de las que necesitaremos. A esos malditos ratones les gusta roer los mangos y culatas de madera.";
-				link.l1 = "Entendido. Veo que aún hay algo que deseas agregar?";
+				dialog.text = "Bien hecho, has comprado suficientes armas para tu tripulación. Si no tenemos suficientes armas, perderemos a muchos más hombres durante las acciones de abordaje. Que Dios nos proteja de eso. No olvides revisar frecuentemente la cantidad en la bodega de carga.\nEs prudente mantener algunas armas de más. A esos malditos ratones les gusta roer los mangos y culatas de madera.";
+				link.l1 = "Entendido. ¿Hay algo que desees agregar?";
 				link.l1.go = "Folke_11";
 			}
 			else
@@ -575,7 +598,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Sí. Comida y ron. Es desastroso si no tienes suficiente comida a bordo. Siempre ten más víveres de los que crees necesitarás. Nunca sabes cuánto durará un viaje - una calma chicha o un fuerte vendaval pueden arruinar cualquier plan. Los hombres se amotinarán o morirán de hambre cuando se acaben las provisiones.\nEl suministro de ron no es tan crítico, pero recomiendo encarecidamente siempre tener algo a bordo, no hay mejor cura para todos los males que un buen trago de ron fresco después de tu turno. Los marineros aman y respetan a los capitanes que les dan su ración diaria de ron.\nAsí que ve y compra los suministros que necesitamos - al menos cien cajas de comida y diez barriles de ron. Nunca querrás oír a tus hombres preguntar: '¿Por qué se acabó el ron?'";
+				dialog.text = "Sí. Comida y ron. Es desastroso si no tienes suficiente comida a bordo. Siempre ten más víveres de los que crees necesitarás. Nunca sabes cuánto durará un viaje, una calma chicha o un fuerte vendaval pueden arruinar cualquier plan. Los hombres se amotinarán o morirán de hambre cuando se acaben las provisiones.\nEl suministro de ron no es tan crítico, pero recomiendo encarecidamente siempre tener algo a bordo, no hay mejor cura para todos los males que un buen trago de ron fresco después de tu turno. Los marineros aman y respetan a los capitanes que les dan su ración diaria de ron.\nAsí que ve y compra los suministros que necesitamos, al menos cien cajas de comida y diez barriles de ron. Nunca querrás oír a tus hombres preguntar: '¿Por qué se acabó el ron?'";
 				link.l1 = "Supongo que tienes razón. Iré a visitar nuevamente al mercader.";
 				link.l1.go = "Folke_11_1";
 			}
@@ -674,26 +697,26 @@ void ProcessDialogEvent()
 
 	// --> пират-обманщик
 		case "Seabattle_pirate":
-			dialog.text = "Mis disculpas. "+GetFullName(pchar)+"¿?";
+			dialog.text = "Mis disculpas. ¿"+GetFullName(pchar)+"?";
 			link.l1 = "Correcto. ¿A qué debo esta ocasión, señor?";
 			link.l1.go = "Seabattle_pirate_1";
 		break;
 		
 		case "Seabattle_pirate_1":
-			dialog.text = "Permíteme presentarme - "+GetFullName(npchar)+"He sido enviado aquí por César Craig. Debes conocerlo. Es el dueño de la taberna en Le Francois. Hasta donde él sabe, estás a punto de partir a Guadalupe. Le gustaría ofrecerte algo de dinero fácil.";
+			dialog.text = "Permíteme presentarme, "+GetFullName(npchar)+"He sido enviado aquí por César Craig. Debes conocerlo. Es el dueño de la taberna en Le Francois. Hasta donde él sabe, estás a punto de partir a Guadalupe. Le gustaría ofrecerte algo de dinero fácil.";
 			link.l1 = "Mm... ¡Interesante! ¿Y cómo es que César Craig se ha informado tan bien?";
 			link.l1.go = "Seabattle_pirate_2";
 		break;
 		
 		case "Seabattle_pirate_2":
-			dialog.text = "Es simple, capitán. Tu barco es el único en St. Pierre en este momento, cualquiera con dos oídos y un ojo sabe todo sobre quién eres y adónde vas. Aquí en las colonias, los rumores vuelan más rápido que las gaviotas. Entonces, ¿estás interesado en escuchar nuestra oferta?";
+			dialog.text = "Es simple, capitán. Tu barco es el único en Saint-Pierre en este momento, cualquiera con dos oídos y un ojo sabe todo sobre quién eres y adónde vas. Aquí en las colonias, los rumores vuelan más rápido que las gaviotas. Entonces, ¿estás interesado en escuchar nuestra oferta?";
 			link.l1 = "Claro. Nunca me opongo a ganar algo de dinero.";
 			link.l1.go = "Seabattle_pirate_3";
 		break;
 		
 		case "Seabattle_pirate_3":
 			dialog.text = "¡Ahora estamos hablando, camarada! Veo que tienes un fino olfato para los negocios. Aquí está el trato. César necesita urgentemente un lote de vino entregado a Guadalupe. Doscientos barriles, la bodega de tu barco puede llevar eso fácilmente. El pago es de diez mil pesos por un trabajo sencillo: César tiene prisa, y tu barco es el único en el puerto ahora mismo. Debes admitir, propuestas tan lucrativas son raras.";
-			link.l1 = "¡Maldita sea, diez mil pesos? Bueno, ¡tenemos un trato!";
+			link.l1 = "¡Maldita sea!, ¿diez mil pesos? Bueno, ¡tenemos un trato!";
 			link.l1.go = "Seabattle_pirate_4";
 		break;
 		
@@ -730,7 +753,7 @@ void ProcessDialogEvent()
 
 	// командир абордажной роты по защите Сен-Пьера
 		case "rosetti":
-			PlaySound("Voice\English\EvilPirates01.wav");
+			PlaySound("Voice\Spanish\EvilPirates01.wav");
 			dialog.text = "¡Capitán, el grupo de abordaje está formado y listo! ¡Esperamos tus órdenes!";
 			link.l1 = "";
 			link.l1.go = "rosetti_1";
@@ -802,7 +825,7 @@ void ProcessDialogEvent()
 	// страж истины
 		case "spanish":
 			dialog.text = "¿Entiendes que no estoy autorizado para divulgar tal información?";
-			link.l1 = "¿Entiendes que es solo gracias a mi oportuna intervención que St. Pierre no fue arrasada por los españoles? ¡Mi hermano ha desaparecido, abandonando la Orden! Debe haberlo hecho por una razón. ¡Yo, como representante de Sir Philippe de Poincy, estoy autorizado para investigar!";
+			link.l1 = "¿Entiendes que es solo gracias a mi oportuna intervención que Saint-Pierre no fue arrasada por los españoles? ¡Mi hermano ha desaparecido, abandonando la Orden! Debe haberlo hecho por una razón. ¡Yo, como representante de Sir Philippe de Poincy, estoy autorizado para investigar!";
 			link.l1.go = "spanish_1";
 		break;
 		
@@ -832,18 +855,18 @@ void ProcessDialogEvent()
 		
 		case "spanish_5":
 			dialog.text = "Sin duda alguna. Este reciente fracaso de Michel de Monper fue también su primer fracaso, por lo que nos sorprendió la reacción del Chevalier. No hace mucho, el 'Gryffindor' capturó un galeón español de tesoro cargado de plata gracias a la cuidadosa planificación de Michel. Eso por sí solo debería haber compensado docenas de fracasos en el futuro. Y sin embargo, tu hermano fue arrestado.";
-			link.l1 = "Ya veo. ¿Tienes alguna idea de por qué Michel huyó de St. Pierre?";
+			link.l1 = "Ya veo. ¿Tienes alguna idea de por qué Michel huyó de Saint-Pierre?";
 			link.l1.go = "spanish_6";
 		break;
 		
 		case "spanish_6":
 			dialog.text = "Sospecho que un conflicto interpersonal entre Michel y de Poincy fue la razón por la que fue arrestado. Obviamente, tu hermano teme que el Caballero continúe persiguiéndolo incluso después de su liberación, así que tomó medidas de precaución. ¿Y sabes qué, Monsieur de Maure? ¡Nadie aquí lo culpa por su decisión!\nEl hombre había estado trabajando valientemente por el bien de la Orden y, sin embargo, lo arrojaron a una celda fétida por su primer fracaso, ¡mientras estaba gravemente herido! ¡Un fracaso que ni siquiera fue tan grave, nadie murió y ningún barco se hundió!\nPor cierto, esta conversación es estrictamente confidencial y no repetiré lo que acabo de decir ni siquiera bajo juramento, ¿estamos claros en eso, Monsieur de Maure?";
-			link.l1 = "Sí, señor. Ya he olvidado que tuvimos esta conversación. Dígame, ¿podría ser que el ataque español a St. Pierre fue provocado por el asalto de la Orden a los barcos españoles? ¿Quizás ese mismo galeón español con plata que mencionaste? Los castellanos fueron extremadamente celosos al buscar su base...";
+			link.l1 = "Sí, señor. Ya he olvidado que tuvimos esta conversación. Dígame, ¿podría ser que el ataque español a Saint-Pierre fue provocado por el asalto de la Orden a los barcos españoles? ¿Quizás ese mismo galeón español con plata que mencionaste? Los castellanos fueron extremadamente celosos al buscar su base...";
 			link.l1.go = "spanish_7";
 		break;
 		
 		case "spanish_7":
-			dialog.text = "Dudo de ello. Muy pocas personas saben sobre la presencia de la Orden en el Caribe y todas nuestras incursiones contra los españoles fueron cuidadosamente planeadas. Pregunta al oficial español que tomamos prisionero, está enfriando su ardiente temperamento castellano en nuestras mazmorras ahora mismo. Ya lo hemos interrogado. El ataque a St. Pierre fue un asalto ordinario, organizado por un gran barón español llamado Ramón de Mendoza y Riba con el propósito de su propio beneficio y para intimidar a las colonias francesas. También quería ganarse el favor del Escorial.";
+			dialog.text = "Dudo de ello. Muy pocas personas saben sobre la presencia de la Orden en el Caribe y todas nuestras incursiones contra los españoles fueron cuidadosamente planeadas. Pregunta al oficial español que tomamos prisionero, está enfriando su ardiente temperamento castellano en nuestras mazmorras ahora mismo. Ya lo hemos interrogado. El ataque a Saint-Pierre fue un asalto ordinario, organizado por un gran barón español llamado Ramón de Mendoza y Riba con el propósito de su propio beneficio y para intimidar a las colonias francesas. También quería ganarse el favor del Escorial.";
 			link.l1 = "Hablaré con este español. ¿Dónde puedo encontrarlo?";
 			link.l1.go = "spanish_8";
 		break;
@@ -865,8 +888,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spanish_10":
-			dialog.text = "¡Vaya, esto sí que es algo! ¿Entiendes que no puedo liberar a ese prisionero, verdad? ¡Ese villano ayudó a liderar el ataque a St. Pierre!";
-			link.l1 = "Oficial, este es un testigo importante. El ataque a St. Pierre no fue una simple incursión en busca de botín. Don Ramón Mendosa estaba buscando algo más. Necesitamos obtener un motivo definitivo. ¿Entonces me liberará a este español o tendré que exigir permiso de de Poincy?";
+			dialog.text = "¡Vaya, esto sí que es algo! ¿Entiendes que no puedo liberar a ese prisionero, verdad? ¡Ese villano ayudó a liderar el ataque a Saint-Pierre!";
+			link.l1 = "Oficial, este es un testigo importante. El ataque a Saint-Pierre no fue una simple incursión en busca de botín. Don Ramón Mendosa estaba buscando algo más. Necesitamos obtener un motivo definitivo. ¿Entonces me liberará a este español o tendré que exigir permiso de de Poincy?";
 			link.l1.go = "spanish_11";
 		break;
 		
@@ -884,7 +907,7 @@ void ProcessDialogEvent()
 		
 		case "spanish_13":
 			dialog.text = "No. Nunca lo he oído antes. ¿Por qué preguntas?";
-			link.l1 = "¿Estás seguro? Entonces, ¿no has conocido a nadie con ese nombre, ni aquí en tu acantonamiento, ni en el palacio del gobernador, ni en ningún lugar de St. Pierre?";
+			link.l1 = "¿Estás seguro? Entonces, ¿no has conocido a nadie con ese nombre, ni aquí en tu acantonamiento, ni en el palacio del gobernador, ni en ningún lugar de Saint-Pierre?";
 			link.l1.go = "spanish_14";
 		break;
 		
@@ -912,7 +935,7 @@ void ProcessDialogEvent()
 		
 	// монах-посланник от Винсенто
 		case "monk_vinsento":
-			dialog.text = TimeGreeting()+"¡Eres capitán "+GetFullName(pchar)+"?";
+			dialog.text = TimeGreeting()+". ¿Eres el capitán "+GetFullName(pchar)+"?";
 			link.l1 = "Sí, soy yo. ¿Qué puedo hacer por usted?";
 			link.l1.go = "monk_vinsento_1";
 		break;
@@ -1098,7 +1121,7 @@ void ProcessDialogEvent()
 		
 	// посланец Дичозо
 		case "Dichoso_agent":
-			dialog.text = "Capitán "+GetFullName(pchar)+"¿?";
+			dialog.text = "¿Capitán "+GetFullName(pchar)+"?";
 			link.l1 = "Sí, soy yo. ¿Qué quieres?";
 			link.l1.go = "Dichoso_agent_1";
 		break;
@@ -1258,7 +1281,7 @@ void ProcessDialogEvent()
 		break;
 
 case "Europe":
-			PlaySound("Voice\English\military01.wav");
+			PlaySound("Voice\Spanish\military01.wav");
 			dialog.text = "¡Capitán Hobart! Según la información de nuestro espía, los rebeldes se esconden en esta hacienda. Hay cinco dragones a su disposición. ¡Registre el edificio y capture a cualquiera que esté adentro! No trate a esta escoria con guantes de seda. ¡Está actuando en nombre del Rey!";
 			link.l1 = "¡Sí, señor!";
 			link.l1.go = "Europe_1";
@@ -1369,7 +1392,7 @@ case "Europe":
 			link.l1.go = "ZsI_ListKakao_Soglasen_5";
 			if (sti(pchar.items.pistol1) >= 2 && sti(pchar.items.GunPowder) >= 20 && sti(pchar.items.bullet) >= 20)
 			{
-				link.l2 = " He tomado mi decisión, Hoja de Cacao. Resulta que ya tengo lo que necesitas. Aquí tienes.";
+				link.l2 = "He tomado mi decisión, Hoja de Cacao. Resulta que ya tengo lo que necesitas. Aquí tienes.";
 				link.l2.go = "ZsI_ListKakao_Soglasen_2";
 			}
 			link.l3 = "He tomado mi decisión, Hoja de Cacao. No quiero atraer problemas innecesarios. No obtendrás armas de fuego de mí. Sigue tu camino.";
@@ -1471,6 +1494,7 @@ case "Europe":
 			link.l1.go = "ZsI_officer_2";
 			sld = CharacterFromID("ListKakao");
 			LAi_CharacterEnableDialog(sld);
+			EndBattleLandInterface();
 		break;
 		
 		case "ZsI_officer_2":
@@ -1516,17 +1540,18 @@ case "Europe":
 		break;
 		
 		case "ZsI_officer_8":
-			dialog.text = "¿Cuál es su interés en los indios, Monsieur? Aunque... bueno, sí, acaba de llegar de Europa\n¿Cómo está París? ¿Todavía aplastan ratas de ciudad, o ya las han invitado a la comunión? Verá, nosotros tenemos nativos en lugar de ratas. Hacen negocios con bucaneros, atacan a los leñadores, se comen a la gente, maldita sea\nHace tres días, algún individuo brillante ya les había vendido un mosquete a estos. ¿Y adivine qué? Esos bastardos mataron a todos los soldados de la patrulla, liderada, por cierto, por mi amigo y camarada. Encontramos al traidor-colonista y lo colgamos para que se secara al sol, para dar un ejemplo. ¡Dar armas de fuego a los indios! ¡Eso es traición! ¡Traición contra Francia! Hemos estado rastreando a ese mono de color por un tiempo ya que se ha convertido en una cara familiar en varios eventos\nBueno, ahora encontrará su fin rápido y merecido. Puede seguir adelante, Capitán. No se involucre en asuntos que no le conciernen. No es parte de esta guerra... Aún no... ¿O sí lo es?!";
+			dialog.text = "¿Cuál es su interés en los indios, Monsieur? Aunque... bueno, sí, acaba de llegar de Europa.\n¿Cómo está París? ¿Todavía aplastan ratas de ciudad, o ya las han invitado a la comunión? Verá, nosotros tenemos nativos en lugar de ratas. Hacen negocios con bucaneros, atacan a los leñadores, se comen a la gente, maldita sea.\nHace tres días, algún individuo brillante ya les había vendido un mosquete a estos. ¿Y adivine qué? Esos bastardos mataron a todos los soldados de la patrulla, liderada, por cierto, por mi amigo y camarada. Encontramos al traidor de la colonia y lo colgamos para que se secara al sol, para dar un ejemplo. ¡Dar armas de fuego a los indios! ¡Eso es traición! ¡Traición contra Francia! Hemos estado rastreando a ese mono de color por un tiempo ya que se ha convertido en una cara familiar en varios eventos.\nBueno, ahora encontrará su fin rápido y merecido. Puede seguir adelante, Capitán. No se involucre en asuntos que no le conciernen. No es parte de esta guerra... Aún... ¿O sí lo es?";
 			if (IsCharacterPerkOn(Pchar, "Trustworthy"))
 			{
 				notification("Trustworthy", "Trustworthy");
-				link.l1 = " (De confianza) Verá, oficial... Soy el Capitán Charles de Maure, un invitado de Fadey Muscovita. Tenemos cierto interés en este indio... así que no interfiramos en los deberes del otro. ¿De acuerdo, Teniente?";
+				link.l1 = "(De confianza) Verá, oficial... Soy el Capitán Charles de Maure, un invitado de Fadey Muscovita. Tenemos cierto interés en este indio... así que no interfiramos en los deberes del otro. ¿De acuerdo, Teniente?";
 				link.l1.go = "ZsI_officer_Mir";
 			}
 			link.l2 = "Actitudes hacia los recién llegados, actitudes hacia los nativos... Colonos, nativos... No entiendo mucho de todo esto aún, pero en este momento, teniente, la comparación no te favorece... ¡A la batalla!";
 			link.l2.go = "ZsI_officer_Draka";
-			link.l3 = "Tienes razón, teniente, no lo soy. Adiós.";
+			link.l3 = "Tiene razón, teniente, no lo soy. Adiós.";
 			link.l3.go = "ZsI_officerKIll";
+			StartBattleLandInterface();
 		break;
 		
 		case "ZsI_officer_Mir":
@@ -1538,6 +1563,7 @@ case "Europe":
 		case "ZsI_officer_Mir_2":
 			DialogExit();
 			
+			DeleteAttribute(pchar, "questTemp.CameraDialogMode");
 			sld = CharacterFromID("ZsI_Patrul_off");
 			LAi_SetActorType(sld);
 			sld.lifeday = 0;
@@ -1612,6 +1638,7 @@ case "Europe":
 		case "ZsI_officer_Draka":
 			DialogExit();
 			
+			DeleteAttribute(pchar, "questTemp.CameraDialogMode");
 			LAi_LocationFightDisable(&Locations[FindLocation("BasTer_ExitTown")], false);
 			LAi_SetFightMode(pchar, true);
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
@@ -1646,7 +1673,7 @@ case "Europe":
 		
 		case "ZsI_Final_2":
 			dialog.text = "Ahora habrá un asalto. Los soldados matan a todos. Dos patrullas no perdonar. Hoja de Cacao huir. Y tú, Hijo del Mar... ¿por qué? Hoja de Cacao morir de todos modos. Los espíritus lo quieren así.";
-			link.l1 = " Oh... ¿Nuestro trato sigue en pie?";
+			link.l1 = "Oh... ¿Nuestro trato sigue en pie?";
 			link.l1.go = "ZsI_Final_3";
 		break;
 		
@@ -1682,6 +1709,7 @@ case "Europe":
 		case "ZsI_officerKIll":
 			DialogExit();
 			
+			DeleteAttribute(pchar, "questTemp.CameraDialogMode");
 			sld = CharacterFromID("ZsI_Patrul_off");
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, CharacterFromID("ListKakao"));
@@ -1701,8 +1729,8 @@ case "Europe":
 		break;
 		
 		case "MOT_Barbie_2":
-			dialog.text = "¡Siempre es un placer conocer a un colega, especialmente a uno con quien comparto nombre! Tengo una propuesta para usted, Capitán. Verá, necesito una escolta a St. Pierre, y...";
-			link.l1 = "¡Conozco St. Pierre! ¡Pero eso es solo un viaje de dos días! Y debo confesar que todavía soy bastante inexperto para el papel de escolta. Solo asumí el mando de este barco hace una semana.";
+			dialog.text = "¡Siempre es un placer conocer a un colega, especialmente a uno con quien comparto nombre! Tengo una propuesta para usted, Capitán. Verá, necesito una escolta a Saint-Pierre, y...";
+			link.l1 = "¡Conozco Saint-Pierre! ¡Pero eso es solo un viaje de dos días! Y debo confesar que todavía soy bastante inexperto para el papel de escolta. Solo asumí el mando de este barco hace una semana.";
 			link.l1.go = "MOT_Barbie_3";
 		break;
 		
@@ -1719,14 +1747,14 @@ case "Europe":
 		break;
 		
 		case "MOT_Barbie_5":
-			dialog.text = "No es un favor, Capitán, ¡sino una empresa mutuamente beneficiosa! Le pagaré cuarenta piezas de oro por escoltarme a St. Pierre a tiempo.";
+			dialog.text = "No es un favor, Capitán, ¡sino una empresa mutuamente beneficiosa! Le pagaré cuarenta piezas de oro por escoltarme a Saint-Pierre a tiempo.";
 			if (IsCharacterPerkOn(Pchar, "Trustworthy"))
 			{
 				notification("Trustworthy", "Trustworthy");
-				link.l1 = " (Digno de confianza) Ya que me dirijo en la dirección opuesta, Monsieur, necesitaré el pago por adelantado.";
+				link.l1 = "(Digno de confianza) Ya que me dirijo en la dirección opuesta, Monsieur, necesitaré el pago por adelantado.";
 				link.l1.go = "MOT_Barbie_Torg";
 			}
-			link.l2 = "No es una mala propuesta - me dirijo en esa dirección de todos modos. ¡Trato hecho!";
+			link.l2 = "No es una mala propuesta, me dirijo en esa dirección de todos modos. ¡Trato hecho!";
 			link.l2.go = "MOT_Barbie_Soglasen";
 			link.l3 = "¿Carga valiosa, dices? Lamentablemente, Monsieur, ya he tenido suficientes aventuras por el momento.";
 			link.l3.go = "MOT_Barbie_Otkaz";
@@ -1773,7 +1801,7 @@ case "Europe":
 			SetQuestHeader("MoneyOnTrees");
 			AddQuestRecord("MoneyOnTrees", "1");
 			
-			FantomMakeCoolSailor(npchar, SHIP_BARQUE, "Charles", CANNON_TYPE_CANNON_LBS6, 40, 33, 20);
+			FantomMakeCoolSailor(npchar, SHIP_BARKENTINE, "Charles", CANNON_TYPE_CANNON_LBS3, 40, 33, 20);
 			npchar.Ship.Mode = "trade";
 			SetCharacterRemovable(npchar, false);
 			SetCompanionIndex(pchar, -1, sti(npchar.index));
@@ -1805,7 +1833,7 @@ case "Europe":
 			}
 			else
 			{	
-				dialog.text = "Gracias por tu escolta ejemplar, Capitán. Me complace que no hayamos encontrado incidentes. Aquí está tu pago - cuarenta doblones en su totalidad.";
+				dialog.text = "Gracias por tu escolta ejemplar, Capitán. Me complace que no hayamos encontrado incidentes. Aquí está tu pago, cuarenta doblones en su totalidad.";
 				link.l1 = "Un placer hacer negocios con usted, Monsieur. Ahora, si me disculpa, tengo mucho que atender.";
 				AddItems(pchar, "gold_dublon", 40);
 				Log_info("Has recibido 40 doblones");
@@ -1829,7 +1857,7 @@ case "Europe":
 		break;
 		
 		case "MOT_Barbie_104":
-			dialog.text = "Logré adquirir un lote de cuerdas a buen precio en Guadalupe de... ya sabes. Tenía la intención de venderlas rápidamente en St. Pierre y usar las ganancias para comprar café para revender en Willemstad. Parecía un plan sensato.";
+			dialog.text = "Logré adquirir un lote de cuerdas a buen precio en Guadalupe de... ya sabes. Tenía la intención de venderlas rápidamente en Saint-Pierre y usar las ganancias para comprar café para revender en Willemstad. Parecía un plan sensato.";
 			link.l1 = "No pongo en duda su integridad, Monsieur, pero todo esto suena bastante dudoso. Habla de su cargamento como si fuera oro. Mientras tanto, mi barco está cargado con estas cuerdas y son baratas como la tierra.";
 			link.l1.go = "MOT_Barbie_106";
 		break;
@@ -1945,14 +1973,8 @@ case "Europe":
 		//Миниквест "Делюк"
 		//Матрос Алонсо
 		case "Del_Alonso":
-			dialog.text = "Capitán, tenemos un problema.";
-			link.l1 = "¿Disculpe? ¿Quién es usted exactamente?";
-			link.l1.go = "Del_Alonso_1";
-		break;
-		
-		case "Del_Alonso_1":
-			dialog.text = "Soy el marinero Alonso, Capitán. Soy parte de tu tripulación. No te preocupes demasiado, debe ser difícil recordar casi cuarenta caras nuevas a bordo en solo unos pocos días.";
-			link.l1 = "Informe, Marinero Alonso. ¿Cuál es el problema?";
+			dialog.text = "Problemas, capitán.";
+			link.l1 = "¿Y bien?";
 			link.l1.go = "Del_Alonso_2";
 		break;
 		
@@ -1987,13 +2009,13 @@ case "Europe":
 		break;
 		
 		case "Del_Alonso_7":
-			dialog.text = "Has aprendido rápido, Capitán. La tripulación lo ve como un oficial decente que nos trata con respeto, pero no vale la pena el problema. Hace solo unos días, toda la tripulación de un gran navío mercante fue despedida. ¿Quizás valga la pena visitar la taberna? Eso es lo que sugiere la tripulación.";
-			link.l1 = "Gracias por el consejo, Alonso. Ahora te recordaré. Regresa al barco y lidera la vigía mientras yo manejo la situación.";
+			dialog.text = "Aprende rápido, capitán. La tripulación dice que, aunque es buen oficial y nos trata bien, no vale la pena. Un gran mercante acaba de despedir a sus oficiales; tal vez busque en la taberna. Seguro que allí encuentra a quien necesita. Y olvídese de Deluc; eso opinan los hombres.";
+			link.l1 = "Gracias por el consejo, Alonso. Sabía que podía contar contigo. Vuelve al barco y haz guardia mientras resuelvo esto.";
 			link.l1.go = "Del_Alonso_8";
 		break;
 		
 		case "Del_Alonso_8":
-			dialog.text = "Sí, sí.";
+			dialog.text = "¡A la orden!";
 			link.l1 = "...";
 			link.l1.go = "Del_Alonso_9";
 		break;
@@ -2047,8 +2069,8 @@ case "Europe":
 		break;
 		
 		case "Del_Folke_2":
-			dialog.text = "Me avergüenza admitirlo, Capitán, pero he estado pidiendo prestado a varios prestamistas mucho antes de unirme a su tripulación. Mi plan era mantenerme bajo perfil y trabajar en su barco hasta ganar lo suficiente para saldar todas mis deudas. Pero cometí el error de dejar el barco aquí para involucrarme con cierta mujer aquí en St. Pierre, y los soldados me apresaron justo debajo de ella. No contraje nuevas deudas en Martinica, ya que usted pagó la última, ¡lo juro!";
-			link.l1 = "¡Eres un imbécil, Deluc, y me has convertido en el hazmerreír de St. Pierre!";
+			dialog.text = "Me avergüenza admitirlo, Capitán, pero he estado pidiendo prestado a varios prestamistas mucho antes de unirme a su tripulación. Mi plan era mantenerme bajo perfil y trabajar en su barco hasta ganar lo suficiente para saldar todas mis deudas. Pero cometí el error de dejar el barco aquí para involucrarme con cierta mujer aquí en Saint-Pierre, y los soldados me apresaron justo debajo de ella. No contraje nuevas deudas en Martinica, ya que usted pagó la última, ¡lo juro!";
+			link.l1 = "¡Eres un imbécil, Deluc, y me has convertido en el hazmerreír de Saint-Pierre!";
 			link.l1.go = "Del_Folke_3a";
 			link.l2 = "Impresionante, Folke. Gracias por la anécdota.";
 			link.l2.go = "Del_Folke_3b";
@@ -2286,7 +2308,7 @@ case "Europe":
 		//Капитан корабля Хейтер
 		case "TK_Kapitan":
 			dialog.text = "¡Está bien, está bien! Me rindo, ¡maldita sea!";
-			link.l1 = "Ahora eres mi prisionero, pero pronto te encontrarás en St. Pierre frente a la horca.";
+			link.l1 = "Ahora eres mi prisionero, pero pronto te encontrarás en Saint-Pierre frente a la horca.";
 			link.l1.go = "TK_Kapitan_1";
 			PChar.quest.TK_Potopil.over = "yes";
 		break;
@@ -2299,7 +2321,7 @@ case "Europe":
 		
 		case "TK_Kapitan_2":
 			dialog.text = "¡Qué imbécil! ¡Debe haberse enterado de mis planes y decidió joderme abiertamente justo frente a su guarida para dar un ejemplo a otras tripulaciones!";
-			link.l1 = "Un insulto más a su Excelencia, y vuestro viaje a St. Pierre será rápido e inolvidable.";
+			link.l1 = "Un insulto más a su Excelencia, y vuestro viaje a Saint-Pierre será rápido e inolvidable.";
 			link.l1.go = "TK_Kapitan_3";
 		break;
 		
@@ -2341,7 +2363,7 @@ case "Europe":
 			dialog.text = "Depende de ti, compañero. Si quieres ser un hombre de fortuna o un capitán sin un céntimo pero con principios. Si quieres dinero de verdad y libertad, tendrás que meterte un poco en todo. Aprovecha cualquier oportunidad.";
 			link.l1 = "Tienes ciertamente una forma especial de hablar...";
 			link.l1.go = "TK_Kapitan_8";
-			link.l2 = "Ejém... Supongo que te llevaré a St. Pierre. Parece ser lo correcto.";
+			link.l2 = "Ejém... Supongo que te llevaré a Saint-Pierre. Parece ser lo correcto.";
 			link.l2.go = "TK_Kapitan_7_1";
 		break;
 		
@@ -2458,7 +2480,7 @@ case "Europe":
 		break;
 		
 		case "VsD_GiumDyubua_2":
-			dialog.text = " Apenas pude seguirte. Ha habido... un pequeño contratiempo, capitán. ¡Qué desastre!";
+			dialog.text = "Apenas pude seguirte. Ha habido... un pequeño contratiempo, capitán. ¡Qué desastre!";
 			link.l1 = "Toma un respiro y cálmate, por favor.";
 			link.l1.go = "VsD_GiumDyubua_3";
 		break;
@@ -2470,7 +2492,7 @@ case "Europe":
 		break;
 		
 		case "VsD_GiumDyubua_4":
-			dialog.text = "¡Excelente! El Comando quiere apoyar la operación en Porto Bello de cualquier manera posible, así que han ordenado que se entreguen doscientas medidas adicionales de pólvora al Belicoso. Puede que no parezca mucho, pero unas cuantas salvas extra podrían cambiar el curso de la batalla.";
+			dialog.text = "¡Excelente! El Comando quiere apoyar la operación en Portobello de cualquier manera posible, así que han ordenado que se entreguen doscientas medidas adicionales de pólvora al Belicoso. Puede que no parezca mucho, pero unas cuantas salvas extra podrían cambiar el curso de la batalla.";
 			link.l1 = "Muy bien, teniente. Estoy listo para hacer mi parte. Carga la pólvora, no me molesta en absoluto.";
 			link.l1.go = "VsD_GiumDyubua_5";
 		break;
@@ -2490,13 +2512,13 @@ case "Europe":
 		break;
 		
 		case "VsD_FolkeAlonso_2":
-			dialog.text = "¡No lo sé, capitán! Solo me estaba despidiendo de una mujer local que conocí recientemente... ¡Oh mierda! ¡Eugenie!";
+			dialog.text = "¡No lo sé, capitán! Solo me estaba despidiendo de una mujer que conocí recientemente... ¡Oh mierda! ¡Eugenie!";
 			link.l1 = "Está muerta, "+npchar.name+". Lo siento, pero necesitamos concentrarnos y ver si alguno de nuestros tripulantes está herido.";
 			link.l1.go = "VsD_FolkeAlonso_3";
 		break;
 		
 		case "VsD_FolkeAlonso_3":
-			dialog.text = " Apenas nos conocíamos... ¡Aaah! ¡Maldita sea! Informando, Capitán: la mayoría de la tripulación estaba en tierra cuando ocurrió la explosión - afortunadamente. Los muchachos estaban aprovechando un permiso en tierra antes de nuestro próximo gran viaje. Pero la guardia del barco... Temo que no hay sobrevivientes. ¡Solo mira alrededor! ¡Los escombros hirieron o mataron a personas incluso aquí, en este muelle! Es un milagro que los dos estemos ilesos.";
+			dialog.text = "Apenas nos conocíamos... ¡Aaah! ¡Maldita sea! Informando, Capitán: la mayoría de la tripulación estaba en tierra cuando ocurrió la explosión, afortunadamente. Los muchachos estaban aprovechando un permiso en tierra antes de nuestro próximo gran viaje. Pero la guardia del barco... Temo que no hay sobrevivientes. ¡Solo mira alrededor! ¡Los escombros hirieron o mataron a personas incluso aquí, en este muelle! Es un milagro que los dos estemos ilesos.";
 			link.l1 = "¿Qué pasa con el barco? ¿Está bien?!";
 			link.l1.go = "VsD_FolkeAlonso_4";
 		break;
@@ -2562,7 +2584,7 @@ case "Europe":
 		
 		case "VsD_Komendant_5":
 			dialog.text = "No hay tiempo para eso, Capitán. Zarpe inmediatamente y complete la misión. Las apuestas son demasiado altas para retrasarse.";
-			link.l1 = "¿No podemos tener al menos un día, por el amor de Dios? ¡El astillero local podría hacer las reparaciones necesarias! ¿Y qué hay de mi tripulación?! ¡Seguramente hay bajas!";
+			link.l1 = "¿No podemos tener al menos un día, por el amor de Dios? ¡El astillero podría hacer las reparaciones necesarias! ¿Y qué hay de mi tripulación?! ¡Seguramente hay bajas!";
 			link.l1.go = "VsD_Komendant_6";
 			sld = CharacterFromID("Tichingitu");
 			if (sld.location == pchar.location && !LAi_IsDead(sld))
@@ -2606,7 +2628,7 @@ case "Europe":
 		break;
 		
 		case "VsD_Komendant_8":
-			dialog.text = "Tu tripulación puede realizar reparaciones de emergencia en el mar con las tablas, un material de reparación principal. Y Jamaica está bastante cerca de una de las rutas que puedes tomar hacia Porto Bello. Si no pierdes tiempo, puedes terminar las reparaciones y reclutar una tripulación completa allí.";
+			dialog.text = "Tu tripulación puede realizar reparaciones de emergencia en el mar con las tablas, un material de reparación principal. Y Jamaica está bastante cerca de una de las rutas que puedes tomar hacia Portobello. Si no pierdes tiempo, puedes terminar las reparaciones y reclutar una tripulación completa allí.";
 			link.l1 = "Muy bien, entonces. Zarparé de inmediato, Coronel.";
 			link.l1.go = "VsD_Komendant_9";
 			

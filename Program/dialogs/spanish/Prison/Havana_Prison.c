@@ -37,7 +37,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Mtraxx_2":
             dialog.text = "Mm...";
-			link.l1 = "Oficial, tal vez podría... 'agradecerle' por permitirme visitarlo?";
+			link.l1 = "Oficial, tal vez podría... 'agradecerle' por permitirme visitarlo.";
 			link.l1.go = "Mtraxx_3";
 		break;
 		

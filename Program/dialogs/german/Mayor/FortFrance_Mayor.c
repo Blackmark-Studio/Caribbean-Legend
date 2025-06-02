@@ -48,6 +48,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Es war bedauernswert, Monsieur";
                 link.l1.go = "goldengirl_10";
 			}
+			// andre39966 ===> В плену великого улова.
+			if (CheckAttribute(pchar, "questTemp.VPVL_Magor_Dialogue"))
+			{
+				link.l1 = "Exzellenz, ich bin in den Besitz von Informationen über unerlaubten Handel gelangt, der bald an diesen Ufern stattfinden wird. Ich wage zu behaupten, dass diese Angelegenheit Ihrer Aufmerksamkeit würdig sein könnte.";
+				link.l1.go = "VPVL_Magor_1";
+				break;
+			}
+			if (CheckAttribute(pchar, "questTemp.VPVL_GovernorDialogueAvailable"))
+			{
+				link.l1 = "Exzellenz, ich komme, um Neuigkeiten über jenes Schmugglerschiff zu erfahren, über das wir gesprochen haben.";
+				link.l1.go = "VPVL_Magor_4";
+			}
+			//  <=== В плену великого улова.  
 		break;
 		
 		case "Sharlie_junglejew":
@@ -288,6 +301,51 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
 			pchar.questTemp.GoldenGirl = "find_girl";
 		break;
+		
+		// В плену великого улова, andre39966
+		case "VPVL_Magor_1":
+			dialog.text = "Schmuggelware, sagen Sie? Hmm... höchst faszinierend. Bitte, erleuchten Sie mich mit den Einzelheiten Ihrer Entdeckung.";
+			link.l1 = "Vor drei Tagen sollte ein mit Schmuggelware beladenes Schiff in der Le-Marin-Bucht vor Anker gehen. Das Schiff hat sein Rendezvous versäumt, aber ich habe triftige Gründe zu glauben, dass es bald noch in den Hafen einlaufen wird. Vielleicht könnten Ihre Männer diesen Briganten bei ihrer Ankunft einen gebührenden Empfang bereiten, Exzellenz.";
+			link.l1.go = "VPVL_Magor_2";
+			pchar.questTemp.VPVL_DontSpawnSmugglersShip = true; 
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "VPVL_Magor_2":
+			dialog.text = "Ein namenloses Schiff mit unbenannter Ladung... Und Sie vermuten, dass ich die Streitkräfte Seiner Majestät aufgrund solch nebulöser Informationen entsenden sollte?";
+			link.l1 = "Exzellenz, ich gestehe, dass die Einzelheiten spärlich sind. Aber ich bitte Sie, mir zu erlauben, zu erzählen, wie diese Informationen in meinen Besitz gelangten. (erzählt)";
+			link.l1.go = "VPVL_Magor_3";
+		break;
+		
+		case "VPVL_Magor_3":
+			dialog.text = "Nun gut, wir werden Ihre Informationen auf die Probe stellen. Sollte tatsächlich ein Schiff mit Schmuggelware vor den Küsten von Le Marin ankern, werden Sie, Kapitän, für Ihren Dienst an der Krone großzügig belohnt. Kommen Sie in drei Tagen wieder zu mir. Bis dahin wird sich der Nebel der Ungewissheit gelichtet haben.";
+			link.l1 = "Ausgezeichnet. Dann sehen wir uns in drei Tagen wieder.";
+			link.l1.go = "VPVL_Delete_Spawn_Ship";
+			AddDialogExitQuest("VPVL_SetGovernorDialogueFlag");
+			AddQuestRecord("VPVL", "6");
+		break;
+		
+		case "VPVL_Magor_4":
+			dialog.text = "Ah, Kapitän! Es ist mir eine Freude, Sie wieder zu empfangen. Ihre Informationen haben sich als äußerst wertvoll erwiesen. Meine Männer haben das Schiff genau dort abgefangen, wo Sie es angegeben haben. Hier—einhundertfünfzig spanische Dublonen, frisch geprägt und schwer im Beutel. Nehmen Sie sie mit meinem Dank entgegen.";
+			link.l1 = "Ich bin Ihnen für Ihre Erwägung sehr dankbar, Exzellenz. Es ist ein Glück, dass mein Bröckchen an Informationen den Interessen der Krone gedient hat. Sollte sich die Gelegenheit erneut bieten, so wisset, dass mein Schwertarm und mein scharfes Auge zu Eurer Verfügung stehen.";
+			link.l1.go = "VPVL_Delete_Flag";
+			AddItems(PChar, "gold_dublon", 150);
+			ChangeCharacterNationReputation(pchar, FRANCE, 5);
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "VPVL_Delete_Flag":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.VPVL_GovernorDialogueAvailable");
+			DeleteAttribute(pchar, "questTemp.VPVL_DontSpawnSmugglersShip");
+		break;
+		
+		case "VPVL_Delete_Spawn_Ship":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.VPVL_Magor_Dialogue");
+			AddDialogExitQuest("VPVL_KillCapitanOfSmuggler");
+		break;
+		// <=== В плену великого улова
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

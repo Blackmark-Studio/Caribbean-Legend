@@ -48,7 +48,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 			{
 				Dialog.Text = "Ya hemos llegado a un acuerdo.";
 			}
-			link.l1 = RandSwear() + "Oh, ¿cómo podría olvidar...";
+			link.l1 = RandSwear() + "Oh, ¿cómo podría olvidar...?";
 			link.l1.go = "exit";
 			break
 		}
@@ -184,7 +184,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 		link.l2.go = "change_mind";
 		if (rand(100) < 20)
 		{
-			Dialog.Text = RandPhraseSimple("Oye, escucha, he estado pensando en ello y ahora veo que estaba equivocado. Mis disculpas.", "¡Maldita sea! ¡Es todo ese maldito ron!!! Mis disculpas, " + GetSexPhrase("hermano", "hermana") + "¡");
+			Dialog.Text = RandPhraseSimple("Oye, escucha, he estado pensando en ello y ahora veo que estaba equivocado. Mis disculpas.", "¡Maldita sea! ¡Es todo ese maldito ron! Mis disculpas, " + GetSexPhrase("hermano", "hermana") + ".");
 			link.l1 = NPCharRepPhrase(pchar, RandPhraseSimple("¡No, solo tu sangre puede darme satisfacción ahora!", "¡Desenfunda el acero y deja de ser una niña llorona!"), RandPhraseSimple("¡No! ¡Exijo satisfacción!", "¡Eres una deshonra para tu familia! ¡Desenvaina tu espada!"));
 			link.l1.go = "fight_right_now";
 			link.l2 = NPCharRepPhrase(pchar, RandPhraseSimple("De acuerdo, lo admito. Nos hemos exaltado un poco.", "¡Quién lleva la cuenta entre amigos!"), RandPhraseSimple("Probablemente tengas razón. No deberíamos derramar sangre por cosas tan insignificantes.", "¡Mi generosidad no conoce límites! ¡Estás perdonado!"));

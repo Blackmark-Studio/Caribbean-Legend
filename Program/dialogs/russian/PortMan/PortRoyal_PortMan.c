@@ -19,7 +19,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Jamaica_ratPP_1":
-			dialog.text = NPCStringReactionRepeat("Нет. Франсуа Гонтьер не отмечался, и корвет '" + pchar.questTemp.Slavetrader.ShipName + "' в порт Порт-Ройаля не заходил.", "Вы уже "+ GetSexPhrase("спрашивали","спрашивали") +" об этом, я вам ответил.", "Я же говорю тебе, вы уже "+ GetSexPhrase("спрашивали","спрашивали") +" об этом Гонтьере.", "Я прошу вас не мешать мне работать!", "block", 0, npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Нет. Франсуа Гонтьер не отмечался, и корвет '" + pchar.questTemp.Slavetrader.ShipName + "' в порт Порт-Ройяла не заходил.", "Вы уже "+ GetSexPhrase("спрашивали","спрашивали") +" об этом, я вам ответил.", "Я же говорю тебе, вы уже "+ GetSexPhrase("спрашивали","спрашивали") +" об этом Гонтьере.", "Я прошу вас не мешать мне работать!", "block", 0, npchar, Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Ясно. Будем искать дальше...", "Хм, ну да...", "Да, точно, "+ GetSexPhrase("спрашивал","спрашивала") +"...", "Извините, " + npchar.name + "...", npchar, Dialog.CurrentNode);
 		break;
 	}

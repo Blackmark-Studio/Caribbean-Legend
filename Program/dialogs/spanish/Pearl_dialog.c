@@ -28,15 +28,15 @@ void ProcessDialogEvent()
 	// ==> пиплы в поселении
 	case "PearlMan":
 		NextDiag.TempNode = "PearlMan";
-		dialog.text = NPCStringReactionRepeat("¡Hola! Mi nombre es  " + GetFullName(npchar) + ". ¿Qué puedo hacer por ti?", "¡Hola una vez más!", "Los visitantes son muy raros en este fin del mundo...", "¡Es un placer hablar con una cara nueva! Ya estoy enfermo de todas esas viejas trompas...", "block", 1, npchar, Dialog.CurrentNode);
+		dialog.text = NPCStringReactionRepeat("¡Hola! Mi nombre es " + GetFullName(npchar) + ". ¿Qué puedo hacer por ti?", "¡Hola una vez más!", "Los visitantes son muy raros en este fin del mundo...", "¡Es un placer hablar con una cara nueva! Ya estoy enfermo de todas esas viejas trompas...", "block", 1, npchar, Dialog.CurrentNode);
 		link.l1 = HeroStringReactionRepeat("Oh, nada...", "Yo también...", "Ya veo...", "Je...", npchar, Dialog.CurrentNode);
 		link.l1.go = "PearlMan_1";
 		break;
 	case "PearlMan_1":
-		dialog.text = "Estamos recolectando perlas aquí, sirviendo  " + NationNameGenitive(sti(npchar.nation)) + ", ya sabes...";
+		dialog.text = "Estamos recolectando perlas aquí, sirviendo a " + NationNameGenitive(sti(npchar.nation)) + ", ya sabes...";
 		link.l1 = "Sí, lo sé...";
 		link.l1.go = "exit";
-		link.l2 = "Oye, escucha, ¿es posible comprar varios de estos pequeños adornos directamente del 'productor', qué dirías?";
+		link.l2 = "Oye, escucha, ¿es posible comprar varios de estos pequeños adornos directamente del 'productor'? ¿Qué dirías?";
 		link.l2.go = "PearlMan_2";
 		break;
 	case "PearlMan_2":
@@ -54,7 +54,7 @@ void ProcessDialogEvent()
 		}
 		break;
 	case "PearlMan_Sharp_1":
-		dialog.text = LinkRandPhrase("¿Estás totalmente  " + GetSexPhrase("¿loco? Lárgate, idiota", "¿loco? Lárgate, estúpido necio") + "¡", "" + GetSexPhrase("¿¡Qué?! ¿Estás fuera de tu mente, idiota?", "¿¡Qué?! ¿Estás fuera de tu mente, estúpida chica?") + "¿¡? ¡Pierde el rumbo con todas tus preguntas...", "" + GetSexPhrase("¿Has perdido la cabeza, querido? ¿Qué piratas? ¿Aquí?! Simplemente lárgate, idiota", "¿Has perdido la cabeza, querida? ¿Qué piratas? ¿¡Aquí?! Simplemente lárgate, estúpida muchacha") + "...");
+		dialog.text = LinkRandPhrase("¿Estás totalmente " + GetSexPhrase("loco? ¡Lárgate, idiota", "loca? ¡Lárgate, estúpida necia") + "!", "" + GetSexPhrase("¿¡Qué?! ¿Estás loco, idiota?", "¿¡Qué?! ¿Estás loca, idiota?") + " ¡Piérdete!", "" + GetSexPhrase("¿Has perdido la cabeza, querido? ¿Qué piratas? ¿Aquí? Simplemente lárgate, idiota", "¿Has perdido la cabeza, querida? ¿Qué piratas? ¿Aquí? Simplemente lárgate, idiota") + "...");
 		link.l1 = RandPhraseSimple("No hay necesidad de ser grosero...", "¡Guarda tu lengua!");
 		link.l1.go = "exit";
 		break;
@@ -62,8 +62,8 @@ void ProcessDialogEvent()
 	// ==> индейцы в поселении
 	case "IndPearlMan":
 		NextDiag.TempNode = "IndPearlMan";
-		dialog.text = NPCStringReactionRepeat("" + GetSexPhrase("Cara pálida", "Mujer blanca") + "¿quiere hablar?", "Tú de nuevo, " + GetSexPhrase("cara pálida", "blanca squaw") + ".", "" + GetSexPhrase("Cara pálida le gusta hablar. Parece una squaw.", "La squaw blanca disfruta hablando.") + "", "Los espíritus trajeron a mi cara pálida " + GetSexPhrase("hermano", "hermana") + " a mí.", "block", 1, npchar, Dialog.CurrentNode);
-		link.l1 = HeroStringReactionRepeat("Sí.", "Sí, yo de nuevo.", "Muy poético.", "Estoy contento de verte también", npchar, Dialog.CurrentNode);
+		dialog.text = NPCStringReactionRepeat("" + GetSexPhrase("Cara pálida", "Mujer blanca") + ", ¿quiere hablar?", "Tú de nuevo, " + GetSexPhrase("cara pálida", "blanca squaw") + ".", "" + GetSexPhrase("Cara pálida le gusta hablar. Parece una squaw.", "La squaw blanca disfruta hablando.") + "", "Los espíritus trajeron a cara pálida " + GetSexPhrase("hermano", "hermana") + " a mí.", "block", 1, npchar, Dialog.CurrentNode);
+		link.l1 = HeroStringReactionRepeat("Sí.", "Sí, yo de nuevo.", "Muy poético.", "Estoy contento de verte también.", npchar, Dialog.CurrentNode);
 		link.l1.go = "IndPearlMan_1";
 		break;
 	case "IndPearlMan_1":
@@ -73,8 +73,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "CitizenNotBlade":
-		dialog.text = "¡Capitán, qué estás haciendo? ¡Guarda tu arma, antes de que causes muchos problemas!";
-		link.l1 = LinkRandPhrase("Bien.", "Bien.", "No te preocupes, ya lo estoy guardando...");
+		dialog.text = "Capitán, ¿qué estás haciendo? ¡Guarda tu arma, antes de que causes muchos problemas!";
+		link.l1 = LinkRandPhrase("Bien.", "Bien.", "No te preocupes, ya la estoy guardando...");
 		link.l1.go = "exit";
 		break;
 	}

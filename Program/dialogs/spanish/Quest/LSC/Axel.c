@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 			if (pchar.questTemp.LSC == "return" && !CheckAttribute(npchar, "quest.return_isl"))
 			{
 				dialog.text = "¿Mira eso...?"+GetFullName(pchar)+"¡¿Has regresado del más allá?! ¿Cómo es posible?";
-				link.l1 = "La gente no vuelve del más allá, Axel. Es simple - ¡no he estado muerto, ja-ja!";
+				link.l1 = "La gente no vuelve del más allá, Axel. Es simple, ¡no he estado muerto, ja-ja!";
 				link.l1.go = "exit";
 				npchar.quest.return_isl = "true";
 				break;
@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 				}
 				if (CheckAttribute(npchar, "quest.ole_pearl"))
 				{
-					link.l5 = "Escucha, Axel, debiste haber oído mi conversación con ese idiota local. ¿Qué abalorio pidió? No lo entiendo.";
+					link.l5 = "Escucha, Axel, debiste haber oído mi conversación con ese idiota. ¿Qué abalorio pidió? No lo entiendo.";
 					link.l5.go = "ole_pearl";
 				}
 				link.l1 = "Sí. ¡Hagamos un trueque, Axel!";

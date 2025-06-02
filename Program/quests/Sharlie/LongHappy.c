@@ -484,7 +484,7 @@ void LongHappy_IslaTesoroSetShips(string qName)
 	pchar.GenQuest.MapClosedNoBattle = true;
 	// корвет Свенсона
 	sld = GetCharacter(NPC_GenerateCharacter("LH_Svenson_sea", "Svenson", "man", "man", 45, PIRATE, -1, true, "quest"));
-	FantomMakeCoolSailor(sld, SHIP_CORVETTE, StringFromKey("LongHappy_10"), CANNON_TYPE_CANNON_LBS24, 110, 110, 110);
+	FantomMakeCoolSailor(sld, SHIP_CORVETTE, StringFromKey("LongHappy_10"), CANNON_TYPE_CANNON_LBS20, 110, 110, 110);
 	FantomMakeCoolFighter(sld, 45, 100, 100, "blade_21", "pistol5", "bullet", 400);
 	sld.name = StringFromKey("LongHappy_11");
 	sld.lastname = StringFromKey("LongHappy_12");
@@ -1658,10 +1658,10 @@ void LongHappy_SetLefransuaBoss(string qName) //
 	LAi_SetImmortal(sld, true);
 }
 
-void LongHappy_GiveBaronPart() // 
+void LongHappy_GiveBaronPart()
 {
 	int iMoney;
-	iMoney = drand(50000)+50000;
+	iMoney = hrand(50000) + 50000;
 	pchar.questTemp.LongHappy.BaronMoney = sti(pchar.questTemp.LongHappy.BaronMoney)+iMoney;
 }
 
@@ -2071,7 +2071,7 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 			if (GetCharacterIndex("Helena") != -1)
 			{
 				sld = characterFromId("Helena");
-				ChangeCharacterAddressGroup(sld, "Minentown_tavern", "waitress", "stay1"); // fix 01-04-20
+				ChangeCharacterAddressGroup(sld, "LosTeques_tavern", "waitress", "stay1"); // fix 01-04-20
 			}
 		}
 		pchar.questTemp.LongHappy.Count = 0;

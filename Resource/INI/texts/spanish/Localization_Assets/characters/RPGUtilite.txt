@@ -64,40 +64,50 @@ RPGUtilite_13
 
 RPGUtilite_14
 {
-Recompensa ~
+Odio
 }
 
 RPGUtilite_15
 {
-Hostil
+Hostilidad
 }
 
 RPGUtilite_16
 {
-Neutral
+Antipatía
 }
 
 RPGUtilite_17
 {
-Buena
+Irritación
 }
 
 RPGUtilite_18
 {
-Excelente
+Neutral
 }
 
 RPGUtilite_19
 {
-Admiración
+Simpatía
 }
 
 RPGUtilite_20
 {
-Rainbow
+Amistoso
 }
 
 RPGUtilite_21
+{
+Admiración
+}
+
+RPGUtilite_22
+{
+Rainbow
+}
+
+RPGUtilite_23
 {
 Quicksilver
 }

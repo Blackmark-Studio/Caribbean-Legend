@@ -188,7 +188,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "adolf_5":
-		dialog.text = "Eres bienvenido, amigo, ven a verme de nuevo, y tomaremos algo de cerveza juntos...";
+		dialog.text = "De nada, amigo, ven a verme de nuevo, y tomaremos algo de cerveza juntos...";
 		link.l1 = "¡Por supuesto!";
 		link.l1.go = "adolf_6";
 		break;
@@ -201,8 +201,8 @@ void ProcessDialogEvent()
 
 	// виски для Акулы
 	case "whiskey":
-		dialog.text = "Kapper? No. No ha visitado la taberna recientemente. Marcello Cyclops compró un frasco de arsénico hace apenas quince minutos; él también está atormentado por las ratas. Lo entiendo perfectamente... Malditas ratas.";
-		link.l1 = "¿Marcello Ciclope?!";
+		dialog.text = "¿Kapper? No. No ha visitado la taberna recientemente. Marcello Cyclops compró un frasco de arsénico hace apenas quince minutos; él también está atormentado por las ratas. Lo entiendo perfectamente... Malditas ratas.";
+		link.l1 = "¿Marcello Cyclops?";
 		link.l1.go = "whiskey_1";
 		break;
 
@@ -304,7 +304,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "crab_trade_1":
-		dialog.text = "Trato hecho. Aquí, toma tus doblones - " + FindRussianQtyString(iTotalTemp * 5) + " Gracias, amigo, si consigues más, tráemelos.";
+		dialog.text = "Trato hecho. Aquí, toma tus doblones, " + FindRussianQtyString(iTotalTemp * 5) + " Gracias, amigo, si consigues más, tráemelos.";
 		link.l1 = "Claro, amigo.";
 		link.l1.go = "crab_trade_2";
 		break;
@@ -421,7 +421,7 @@ void ProcessDialogEvent()
 		break;
 	case "rat_3":
 		dialog.text = "¡Hecho! Me alegra que hayas aceptado, camarada. ¡Gracias por no olvidar mi problema! Toma la coraza, y que te sirva bien en la batalla.";
-		link.l1 = "Aquí, toma también tu talismán - ¡parece que se avecinan días oscuros para las ratas en tu taberna!";
+		link.l1 = "Aquí, toma también tu talismán, ¡parece que se avecinan días oscuros para las ratas en tu taberna!";
 		link.l1.go = "rat_4";
 		break;
 
@@ -444,7 +444,7 @@ void ProcessDialogEvent()
 		Log_Info("Has entregado " + FindRussianDublonString(GetCharacterItem(pchar, "gold_dublon")) + "");
 		RemoveItems(pchar, "gold_dublon", GetCharacterItem(pchar, "gold_dublon"));
 		PlaySound("interface\important_item.wav");
-		dialog.text = " Todavía me asombras " + FindRussianDublonString(sti(npchar.quest.ratmoney)) + ", " + pchar.name + ".";
+		dialog.text = "Todavía faltan " + FindRussianDublonString(sti(npchar.quest.ratmoney)) + ", " + pchar.name + ".";
 		link.l1 = "¡No me lo recuerdes!";
 		link.l1.go = "exit";
 		break;
@@ -517,7 +517,7 @@ void ProcessDialogEvent()
 		if (CheckAttribute(pchar, "questTemp.Rum") && sti(pchar.questTemp.Rum) > 4)
 		{
 			dialog.text = "" + pchar.name + ", creo que deberías parar. Dios no quiera que te metas en problemas o caigas por la borda para convertirte en comida de cangrejos... No es buena idea beber demasiado por aquí, mucha gente ha muerto por eso.";
-			link.l1 = "Hum... Supongo que tienes razón, Sancho - ya he tenido suficiente. ¡Gracias por tu preocupación!";
+			link.l1 = "Hum... Supongo que tienes razón, Sancho... ya he tenido suficiente. ¡Gracias por tu preocupación!";
 			link.l1.go = "exit";
 		}
 		else
@@ -608,7 +608,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Puedes descansar arriba hasta la tarde. Pero no te dejaré pasar la noche aquí - Mary me matará por eso. Lo siento...";
+				dialog.text = "Puedes descansar arriba hasta la tarde. Pero no te dejaré pasar la noche aquí, Mary me matará por eso. Lo siento...";
 				link.l1 = "Está bien. Me quedaré aquí hasta la noche...";
 				link.l1.go = "hall_night_wait";
 				link.l2 = "Está bien... Me las arreglaré sin dormir.";

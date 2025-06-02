@@ -402,7 +402,7 @@ void ProcessDialogEvent()
 		pchar.quest.Oil_fail.win_condition.l1 = "NPC_Death";
 		pchar.quest.Oil_fail.win_condition.l1.character = "Sergio";
 		pchar.quest.Oil_fail.function = "Oil_TradeFail";
-		AddQuestRecord("Unique_Goods", "4");
+		AddQuestRecordInfo("Unique_Goods", "4");
 		break;
 
 	case "oil_trade":
@@ -492,8 +492,8 @@ void ProcessDialogEvent()
 	case "UpgradeOil":
 		if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 80)
 		{
-			dialog.text = "Señor" + GetSexPhrase("", "ita") + ", tu deseo de comprar más resina ciertamente muestra confianza en nuestro negocio. Sin embargo, hay una complicación\nCon volúmenes incrementados viene un mayor riesgo de atraer la atención de las autoridades de la isla, y controlar tales envíos requiere personas y medidas de seguridad, lo cual, admito, no es barato. Si estás dispuesto a añadir tres mil doblones al precio, como un pago único, contrataré personas de confianza que puedan proteger la carga y evitar filtraciones de información. Entonces nuestra ruta será más segura, y puedo suministrarte trescientas barricas de resina mensualmente. Para compensar tu inversión, te ofreceré, como comprador al por mayor, un descuento del quince por ciento en todos los envíos futuros.";
-			link.l1 = "Tres mil doblones para asegurar los envíos? Señor Sergio, no lo ocultaré, este precio parece increíble - ¡como si estuviera proponiendo una conspiración en el Escorial en lugar de simplemente asegurar la carga de brea!";
+			dialog.text = "Señor" + GetSexPhrase("", "ita") + ", tu deseo de comprar más resina ciertamente muestra confianza en nuestro negocio. Sin embargo, hay una complicación.\nCon volúmenes incrementados viene un mayor riesgo de atraer la atención de las autoridades de la isla, y controlar tales envíos requiere personas y medidas de seguridad, lo cual, admito, no es barato. Si estás dispuesto a añadir tres mil doblones al precio, como un pago único, contrataré personas de confianza que puedan proteger la carga y evitar filtraciones de información. Entonces nuestra ruta será más segura, y puedo suministrarte trescientas barricas de resina mensualmente. Para compensar tu inversión te ofreceré, como comprador al por mayor, un descuento del quince por ciento en todos los envíos futuros.";
+			link.l1 = "¿Tres mil doblones para asegurar los envíos? Señor Sergio, no lo ocultaré, este precio parece increíble, ¡como si estuviera proponiendo una conspiración en el Escorial en lugar de simplemente asegurar la carga de resina!";
 			link.l1.go = "UpgradeOil_1";
 			notification("Skill Check Passed", SKILL_COMMERCE);
 		}
@@ -521,7 +521,7 @@ void ProcessDialogEvent()
 		}
 		link.l2 = "Señor Saldo, me ha convencido de la necesidad de estas medidas. Sin embargo, tres mil doblones es una suma seria, y no la tengo en este momento. Tendré que esperar hasta reunir la cantidad requerida.";
 		link.l2.go = "UpgradeOil_4";
-		link.l3 = "¡Por tal cantidad de dinero, uno podría sobornar a toda una flota y a todos los soldados del continente, por no hablar de contratar guardias para un modesto cargamento de brea! Le pido disculpas, pero no puedo aceptar tal oferta. Dejemos todo como está, sin excesos ni gastos adicionales.";
+		link.l3 = "¡Por tal cantidad de dinero, uno podría sobornar a toda una flota y a todos los soldados del continente, por no hablar de contratar guardias para un modesto cargamento de resina! Le pido disculpas, pero no puedo aceptar tal oferta. Dejemos todo como está, sin excesos ni gastos adicionales.";
 		link.l3.go = "UpgradeOil_3";
 		break;
 
@@ -530,7 +530,7 @@ void ProcessDialogEvent()
 		link.l1 = "Eso es genial, Señor Sergio. No me defraudes.";
 		link.l1.go = "UpgradeOil_Agreed_1";
 		RemoveDublonsFromPCharTotal(3000);
-		AddQuestRecord("Unique_Goods", "4_1");
+		AddQuestRecordInfo("Unique_Goods", "4_1");
 		pchar.questTemp.UpgradeOil = true;
 		pchar.questTemp.SergioOilBlock = true;
 		DeleteAttribute(pchar, "questTemp.SergioOilPotom");
@@ -559,14 +559,14 @@ void ProcessDialogEvent()
 
 	case "Juan_abordage":
 		dialog.text = "¿Quién diablos eres tú!?";
-		link.l1 = "Me llamo " + GetFullName(pchar) + ", en cuanto a ti, Consumo, el diablo te espera - ¡y muy pronto tendrá tu alma!";
+		link.l1 = "Me llamo " + GetFullName(pchar) + ", en cuanto a ti, Consumo, el diablo te espera, ¡y muy pronto tendrá tu alma!";
 		link.l1.go = "Juan_abordage_1";
 		break;
 
 	case "Juan_abordage_1":
 		if (CheckAttribute(pchar, "questTemp.Consumption.House"))
 		{
-			dialog.text = "¡Este barco va a estallar - ya hay una mecha ardiendo en la sala de pólvora - ¿por qué deberíamos morir ambos? Bajemos las espadas. Tendrás tiempo suficiente para salir, y yo saltaré del barco, Punta Galera está a tiro de piedra de aquí. ¡Si necesitas oro, llévatelo! Quinientos doblones, en efectivo sobre la mesa - y te olvidas de mí, y yo me olvido de ti. ¿Trato hecho?";
+			dialog.text = "¡Este barco va a estallar - ya hay una mecha ardiendo en la sala de pólvora, ¿por qué deberíamos morir ambos? Bajemos las espadas. Tendrás tiempo suficiente para salir, y yo saltaré del barco, Punta Galera está a tiro de piedra de aquí. ¡Si necesitas oro, llévatelo! Quinientos doblones, en efectivo sobre la mesa y te olvidas de mí, y yo me olvido de ti. ¿Trato hecho?";
 			link.l1 = "¿Oro? No comencé todo esto por dinero, Juan, sino por matar a la escoria, y tú eres la mayor recompensa por sí mismo.";
 			link.l1.go = "Juan_abordage_2";
 			link.l2 = "¿Quinientos doblones? Te estás burlando de mí, Consumption. Creo que aquí tienes al menos el doble... Dame mil ahora mismo y puedes irte al infierno, de lo contrario...";
@@ -587,7 +587,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Juan_abordage_3":
-		dialog.text = "Tienes buen ojo para los negocios, amigo... Aquí - esto es todo lo que tengo. No es mucho para una vida, ¿verdad?";
+		dialog.text = "Tienes buen ojo para los negocios, amigo... Aquí, esto es todo lo que tengo. No es mucho para una vida, ¿verdad?";
 		link.l1 = "Tu vida no vale ni una bala, así que parece que es el negocio más rentable de mi vida. Ahora, lárgate.";
 		link.l1.go = "Juan_abordage_4";
 		TakeNItems(pchar, "gold_dublon", 1000);
@@ -653,7 +653,7 @@ void ProcessDialogEvent()
 			link.l1 = "Me lo puedo imaginar, belleza. Pero mi parte del trato ya está hecha - solo queda una pequeña cosa.";
 			link.l1.go = "Waitress_3";
 		}
-		link.l2 = "El deber llamó - y actué. Eso es todo.";
+		link.l2 = "El deber llamó y actué. Eso es todo.";
 		link.l2.go = "Waitress_5";
 		if (CheckAttribute(pchar, "questTemp.Consumption.KillJuan"))
 			AddQuestRecord("Consumption", "18");
@@ -691,7 +691,7 @@ void ProcessDialogEvent()
 	case "Waitress_5":
 		if (CheckAttribute(pchar, "questTemp.Consumption.KillJuan"))
 		{
-			dialog.text = "¡Eres un verdadero caballero! ¡Caballero! Aquí - no lo tomes como un insulto, pero quiero que lo aceptes. Reuní este dinero para rescatar a Angelo, pero ahora no es importante. Por favor, no te niegues - ¡acéptalo!";
+			dialog.text = "¡Eres un verdadero caballero! ¡Caballero! Aquí, no lo tomes como un insulto, pero quiero que lo aceptes. Reuní este dinero para rescatar a Angelo, pero ahora no es importante. Por favor, no te niegues, ¡acéptalo!";
 			link.l1 = "Bueno, recordaré tus ojos, señorita - son mucho más hermosos cuando brillan con lágrimas de felicidad y no de dolor. Acepto tu regalo. Adiós, y buena suerte a ti y a Angelo.";
 			link.l1.go = "Waitress_6";
 			AddMoneyToCharacter(pchar, 5000);

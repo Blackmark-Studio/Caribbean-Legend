@@ -189,6 +189,7 @@ void LAi_StartBoarding(int locType, ref echr, bool isMCAttack)
             //Выгружаемся в интерфейс
             
 			ChangeCrewExp(pchar, "Soldiers", 1);
+			AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 7.0);
 			LaunchRansackMain(pchar, echr, "crew"); 
 			// на деле параметры LaunchRansackMain не важны совсем - все определеятеся от реалий - жив кэп и сколько у него матросов - их и обрабатываем
 			// но они используются в сообщениях  crew - это сдался сразу
@@ -235,7 +236,8 @@ void LAi_StartBoarding(int locType, ref echr, bool isMCAttack)
 		ecrewBak = makeint(mDamage);	
 		ecrew = ecrew - ecrewBak;
 		
-		Log_Info(XI_ConvertString("MusketVolleyKilled") + ecrewBak + XI_ConvertString("MusketVolleyEnemy"));
+		if(ecrewBak > 0)
+			notification(XI_ConvertString("MusketVolleyKilled") + ecrewBak + XI_ConvertString("MusketVolleyEnemy"), "MusketsShoot");
 	}
 	if (CheckOfficersPerk(echr, "MusketsShoot") && IsFort == false) // для противника
 	{
@@ -255,7 +257,9 @@ void LAi_StartBoarding(int locType, ref echr, bool isMCAttack)
 		ecrewBak = makeint(eDamage);	
 		mcrew = mcrew - ecrewBak;
 		
-		Log_Info(XI_ConvertString("MusketVolleyKilled") + ecrewBak + XI_ConvertString("MusketVolleyPlayer"));
+		if(ecrewBak > 0)
+			notification(XI_ConvertString("MusketVolleyKilled") + ecrewBak + XI_ConvertString("MusketVolleyPlayer"), "X");
+		
         Statistic_AddValue(mchr, "DeadCrewBoard", ecrewBak);
 		Statistic_AddValue(mchr, "Sailors_dead", ecrewBak);
 		
@@ -392,7 +396,7 @@ void LAi_StartBoarding(int locType, ref echr, bool isMCAttack)
     }
     if (iMaxcrew < maxcrew) maxcrew = iMaxcrew;
     
-	if (boarding_location_type == BRDLT_SHIP && eclass != 6)  // на тартане каюты нет
+	if (boarding_location_type == BRDLT_SHIP && eclass != 7)  // на тартане каюты нет
 	{
     	boarding_enemy.ShipCabinLocationId = GetShipCabinID(echr);
 	}
@@ -576,66 +580,7 @@ void LAi_LoadLocation(string locationID, int locType)
 		int    mclass = GetCharacterShipClass(GetMainCharacter());
 		int    eclass = GetCharacterShipClass(boarding_enemy);
 		// определение стороны на палубе
-		/* if (CheckAttribute(&Locations[locIndex], "UpDeckType"))
-		{
-			if(mclass == 5 && eclass == 5)
-			{
-				if(IsMerchantShipType(mchr) || IsMerchantShipType(boarding_enemy))
-				{
-					if(GetShipTypeName(mchr) != "Barque")
-					{
-						sLocType = "aloc"
-					}
-					else
-					{
-						sLocType = "loc"
-					}
-				}
-				else
-				{
-					if(GetShipTypeName(mchr) == "lugger")
-					{
-						sLocType = "aloc"
-					}
-					if(GetShipTypeName(mchr) == "sloop")
-					{
-						sLocType = "loc"
-					}
-				}
-			}
-			else
-			{
-				if(mclass == 4 && eclass == 4)
-				{
-					if(IsMerchantShipType(mchr) || IsMerchantShipType(boarding_enemy))
-					{
-						if(!IsMerchantShipType(mchr))
-						{
-							sLocType = "aloc"
-						}
-						else
-						{
-							sLocType = "loc"
-						}
-					}
-					else
-					{
-						if(GetShipTypeName(mchr) == "Brigantine")
-						{
-							sLocType = "aloc"
-						}
-						else
-						{
-							sLocType = "loc"
-						}
-					}
-				}
-				else
-				{ */
-					sLocType = ChooseShipUpDeck(mchr, boarding_enemy);
-				//}
-			//}
-		//}
+		sLocType = ChooseShipUpDeck(mchr, boarding_enemy);
 
 		mchr.location.locator = sLocType + locNum[locI];
 		// для каюты перекрыть
@@ -1028,12 +973,13 @@ void LAi_EnableReload()
 			case 3: Locations[boarding_location].boarding.nextdeck = "Boarding_Campus"; break;
 			case 4: Locations[boarding_location].boarding.nextdeck = "Boarding_Campus"; break;
 			case 5: Locations[boarding_location].boarding.nextdeck = "Boarding_Cargohold"; break;
-			case 6: Locations[boarding_location].boarding.nextdeck = ""; break;
+			case 6: Locations[boarding_location].boarding.nextdeck = "Boarding_Cargohold"; break;
+			case 7: Locations[boarding_location].boarding.nextdeck = ""; break;
 		}
 	}
 	if (IsFort && Locations[boarding_location].boarding.nextdeck == "Boarding_bastion")
 	{
-		Locations[boarding_location].boarding.nextdeck = "Boarding_bastion"+(drand(1)+1);
+		Locations[boarding_location].boarding.nextdeck = "Boarding_bastion"+(hrand(1, boarding_enemy.id + boarding_enemy.name)+1); // TO_DO: другой тэг
 	}
 	// END MOD Code by Stone-D : 01/08/2003 -->
 	Log_TestInfo("New boarding_player_crew: " + boarding_player_crew);
@@ -1753,16 +1699,16 @@ string chooseDeck(ref mchr, ref echr)
 	{
 		int HighClass = func_min(mclass, eclass);
 		if(HighClass > 5) HighClass = 5;
-		if(IsMerchantShipType(mchr) || IsMerchantShipType(echr))
+		if(isTradeDeck(mchr) || isTradeDeck(echr))
 		{
-			if(IsMerchantShipType(mchr) && IsMerchantShipType(echr))
+			if(isTradeDeck(mchr) && isTradeDeck(echr))
 			{
 				return "BOARDING_"+HighClass+"_TRADE";
 			}
 			else
 			{
-				if(IsMerchantShipType(mchr)) return "BOARDING_"+mclass+"_TRADE";
-				if(IsMerchantShipType(echr)) return "BOARDING_"+eclass+"_TRADE";
+				if(isTradeDeck(mchr)) return "BOARDING_"+mclass+"_TRADE";
+				if(isTradeDeck(echr)) return "BOARDING_"+eclass+"_TRADE";
 			}
 		}
 		return "BOARDING_"+HighClass+"_WAR"
@@ -1773,4 +1719,9 @@ string chooseDeck(ref mchr, ref echr)
 	}
 	
 	return "";
+}
+
+bool isTradeDeck(ref chr)
+{
+	return IsUniversalShipType(chr) || IsMerchantShipType(chr);
 }

@@ -10,7 +10,7 @@ To {D}
 From {Z}
 day {dzien}
 day2 {dni}
-days {days}
+days {dni}
 hour {hour}
 hour2 {hours}
 hours {hours}

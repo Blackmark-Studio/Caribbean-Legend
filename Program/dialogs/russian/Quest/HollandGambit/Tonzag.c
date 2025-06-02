@@ -651,8 +651,8 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			
 			NextDiag.TempNode = "tonzag_officer";
-			locations[FindLocation("Minentown_town")].locators_radius.reload.gate_back = 1.0;
-			DeleteAttribute(&locations[FindLocation("Minentown_town")], "locators_radius.reload.reload1_back");
+			locations[FindLocation("LosTeques_town")].locators_radius.reload.gate_back = 1.0;
+			DeleteAttribute(&locations[FindLocation("LosTeques_town")], "locators_radius.reload.reload1_back");
 			AddDialogExitQuestFunction("Tonzag_PrepareJournal");
 		break;
 		

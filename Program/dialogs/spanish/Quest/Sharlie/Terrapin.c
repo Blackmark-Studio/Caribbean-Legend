@@ -108,7 +108,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "rober_3":
-		dialog.text = "¡Caramba! ¡Ahora te reconozco! ¡Eres el hombre que hizo un desastre con el Coronel Doiley y se apoderó de toda su isla! Estuviste involucrado en algún gran negocio con la Compañía Neerlandesa de las Indias Occidentales, te codeas con un barón del Main Occidental... Tu nombre es... " + GetFullName(pchar) + ", ¿verdad?";
+		dialog.text = "¡Caramba! ¡Ahora te reconozco! ¡Eres el hombre que hizo un desastre con el Coronel Doiley y se apoderó de toda su isla! Estuviste involucrado en algún gran negocio con la Compañía Holandesa de las Indias Occidentales, te codeas con un barón de Tierra Firme occidental... Tu nombre es... " + GetFullName(pchar) + ", ¿verdad?";
 		link.l1 = "Posees información bastante precisa. Sí, soy yo. Pero, ¿podrías calmarte un segundo, Robert?";
 		link.l1.go = "rober_4";
 		break;
@@ -291,7 +291,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "tibo_6":
-		dialog.text = "  Parece que está diciendo la verdad, señor. Dile a Martene...";
+		dialog.text = "Parece que está diciendo la verdad, señor. Dile a Martene...";
 		link.l1 = "No creo que entiendas, Henry. Martene no va a esperarte. Tu única esperanza es sacar a esa chica de aquí, la razón por la que tanto tú como Robert tienen la soga al cuello. Corre hacia donde la escondes, tómala por sus bonitas manitas y llévala al Voltigeur. Encuéntrala rápido, y tráela aún más rápido. Tu tío no oirá ni una palabra de esto de mi parte.";
 		link.l1.go = "tibo_7";
 		break;
@@ -392,7 +392,7 @@ void ProcessDialogEvent()
 
 	case "tibo_19":
 		PlaySound("Voice\Spanish\sharlie\Henry Thibault-03.wav");
-		dialog.text = "¡Preferiría arder en el fuego del infierno, antes que jugar a ser un títere para tí! ¡Sin vergüenza!.. " + GetFullName(pchar) + "¡Cómo no te reconocí desde el principio? ¡Butcher! ¡No planeas dejarme a mí o a Robert con vida! ¡Tus 'métodos' son bien conocidos! ¡No hay manera de que entregue a Molly... o Catherine, para el caso, a una escoria como tú! ¡No saldrás vivo de Tortuga, cabrón!";
+		dialog.text = "¡Preferiría arder en el fuego del infierno, antes que jugar a ser un títere para tí! ¡Sin vergüenza!... " + GetFullName(pchar) + "¿Cómo no te reconocí desde el principio? ¡Butcher! ¡No planeas dejarme a mí o a Robert con vida! ¡Tus 'métodos' son bien conocidos! ¡No hay manera de que entregue a Molly... o Catherine, para el caso, a una escoria como tú! ¡No saldrás vivo de Tortuga, cabrón!";
 		link.l1 = "...";
 		link.l1.go = "tibo_20";
 		break;
@@ -418,7 +418,7 @@ void ProcessDialogEvent()
 		pchar.quest.Terrapin_tibo_call.over = "yes";	// снять прерывание
 		PlaySound("Voice\Spanish\sharlie\Henry Thibault-04.wav");
 		dialog.text = "¡Bueno, finalmente! Capitán " + GetFullName(pchar) + ", me complace mucho que hayas venido. Entra, siéntate. ¿Algo de beber? Tengo una propuesta de negocio bastante lucrativa para ti, amigo mío...";
-		link.l1 = "Bueno, ¿no estás en el más cortés de los ánimos hoy, Monsieur Thibaut... No nos quedemos aquí sentados. Vayamos directo al meollo del asunto.";
+		link.l1 = "Bueno, parece que estás de buenos ánimos hoy, Monsieur Thibaut... No nos quedemos aquí sentados. Vayamos directo al meollo del asunto.";
 		link.l1.go = "tibo_23";
 		break;
 
@@ -580,7 +580,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "tibo_over":
-		dialog.text = "¿Qué quieres, " + GetFullName(pchar) + "¿No tengo tiempo para charlar. Tengo peces más grandes que freír. Tengo que encontrar a Martene antes de que lo haga Fox...";
+		dialog.text = "¿Qué quieres, " + GetFullName(pchar) + "? No tengo tiempo para charlar. Tengo peces más grandes que freír. Tengo que encontrar a Martene antes de que lo haga Fox...";
 		link.l1 = "Sí, sí. Estoy en camino.";
 		link.l1.go = "exit";
 		NextDiag.TempNode = "tibo_over";
@@ -724,8 +724,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "roof_girl_2":
-		dialog.text = "Monsieur Thibaut?";
-		link.l1 = "¡Bueno, entonces, así que lo conoces! ¿A dónde se fue? ¿Vas a responder o debería darte una buena sacudida para que funcione tu cabeza?";
+		dialog.text = "¿Monsieur Thibaut?";
+		link.l1 = "¡Bueno, entonces, lo conoces! ¿A dónde se fue? ¿Vas a responder o debería darte una buena sacudida para que funcione tu cabeza?";
 		link.l1.go = "roof_girl_3";
 		break;
 

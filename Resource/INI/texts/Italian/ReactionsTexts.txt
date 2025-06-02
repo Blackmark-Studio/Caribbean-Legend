@@ -1,0 +1,21 @@
+NoLootCorpse0 {This lad's pockets are as empty as a ghost ship.}
+NoLootCorpse1 {Seems he had nothing of value.}
+NoLootCorpse2 {This one's pockets are empty.}
+NoLootCorpse3 {Did I miss something? No, definitely empty.}
+NoLootCorpse4 {Another dead man without a penny to his name.}
+NoLootCorpse5 {Looks like he lived on borrowed coin.}
+NoLootCorpse6 {This corpse can't even pay the ferryman.}
+NoLootCorpse7 {No spare shot, no powder. Wasted my time.}
+NoLootCorpse8 {Not a coin in his pockets, nor in his shirt.}
+NoLootCorpse9 {He was dirt poor, not even a single coin.}
+NoLootCorpse10 {Why did I even bother? This one's empty.}
+NoLootCorpse11 {His pockets are a gaping void.}
+NoLootCorpse12 {Nothing here. Perhaps hidden pockets?}
+NoLootCorpse13 {No money, no keys, no will.}
+NoLootCorpse14 {Departed to the beyond without a single valuable.}
+NoLootCorpse15 {He clearly wasn't wealthy - empty pockets.}
+NoLootCorpse16 {Poor devil clearly went into battle traveling light.}
+NoLootCorpse17 {He armed himself with his last coins.}
+NoLootCorpse18 {A corpse is a corpse. Nothing here.}
+NoLootCorpse19 {He must have left all his treasures in a chest.}
+NoLootCorpse20 {Seems he lost all his valuables during the fight.}

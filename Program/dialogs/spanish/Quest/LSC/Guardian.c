@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 			}
 			else // если друг нарвалам
 			{
-				dialog.text = TimeGreeting() + ", " + pchar.name + "¡Cómo estás?";
+				dialog.text = TimeGreeting() + ", " + pchar.name + ". ¿Cómo estás?";
 				link.l1 = "¡Bien, gracias!";
 				link.l1.go = "exit";
 			}
@@ -241,7 +241,7 @@ void ProcessDialogEvent()
 		}
 		if (CheckAttribute(pchar, "questTemp.LSC.nrv_friend"))
 		{
-			dialog.text = TimeGreeting() + ", " + pchar.name + "¡Cómo estás?";
+			dialog.text = TimeGreeting() + ", " + pchar.name + ". ¿Cómo estás?";
 			link.l1 = "Estoy bien, gracias...";
 			link.l1.go = "exit";
 		}
@@ -312,7 +312,7 @@ void ProcessDialogEvent()
 			}
 			else // если друг ривадос
 			{
-				dialog.text = TimeGreeting() + ", " + pchar.name + "¡Cómo te va?";
+				dialog.text = TimeGreeting() + ", " + pchar.name + ". ¿Cómo te va?";
 				link.l1 = "Estoy bien, gracias...";
 				link.l1.go = "exit";
 			}
@@ -497,7 +497,7 @@ void ProcessDialogEvent()
 		}
 		if (CheckAttribute(pchar, "questTemp.LSC.rvd_friend"))
 		{
-			dialog.text = TimeGreeting() + ", " + pchar.name + "¡Cómo te va?";
+			dialog.text = TimeGreeting() + ", " + pchar.name + ". ¿Cómo te va?";
 			link.l1 = "Estoy bien, gracias...";
 			link.l1.go = "exit";
 		}
@@ -588,7 +588,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "first_talk_day":
-		dialog.text = " No pongas ojos redondos, muchacho. Todo el mundo sabe que Steve Shark es nuestro almirante. ¿Tienes algún asunto con él?";
+		dialog.text = "No pongas ojos redondos, muchacho. Todo el mundo sabe que Steve Shark es nuestro almirante. ¿Tienes algún asunto con él?";
 		link.l1 = "¡Sí, maldita sea! Tengo asuntos con él y es urgente.";
 		link.l1.go = "first_talk_day_1";
 		break;

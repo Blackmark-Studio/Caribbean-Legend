@@ -28,7 +28,7 @@ void ProcessDialogEvent()
 	// вестовой капитан в порту
 	case "cureer":
 		dialog.text = "Monsieur de Maure, ¡qué suerte! ¡Te he estado buscando durante meses!";
-		link.l1 = "Mi querida, no compro mapas falsos, información dudosa ni ron casero - ¡gracias! ¿O eres un cazarrecompensas? ¿Y cuánto vale mi cabeza ahora?";
+		link.l1 = "Mi querida, no compro mapas falsos, información dudosa ni ron casero, ¡gracias! ¿O eres un cazarrecompensas? ¿Y cuánto vale mi cabeza ahora?";
 		link.l1.go = "cureer_1";
 		break;
 
@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "cureer_2":
-		dialog.text = "Un abad me lo entregó y pidió que lo llevara al capitán de Maure personalmente, de mano en mano. Ya había perdido toda esperanza de encontrarte y quería dejarlo en la oficina del puerto en Saint Pierre, ¡pero qué suerte, aquí estás!";
+		dialog.text = "Un abad me lo entregó y pidió que lo llevara al capitán de Maure personalmente, de mano en mano. Ya había perdido toda esperanza de encontrarte y quería dejarlo en la oficina del puerto en Saint-Pierre, ¡pero qué suerte, aquí estás!";
 		link.l1 = "Sí, aquí estoy, estoy esperando - dame la carta.";
 		link.l1.go = "cureer_3";
 		break;
@@ -167,7 +167,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Svenson_1":
-		dialog.text = "¡Claro, alcanfor, maldita sea! He estado pensando - ¡por qué me pican los ojos y me escuece la nariz! Bien, hablaremos en Sharptown, abrazaremos a Gladys y nos iremos a los demás. Tienen unas caras como si estuviéramos firmando la Paz de Westfalia.";
+		dialog.text = "¡Claro, alcanfor, maldita sea! He estado pensando, ¡por qué me pican los ojos y me escuece la nariz! Bien, hablaremos en Sharptown, abrazaremos a Gladys y nos iremos a los demás. Tienen unas caras como si estuviéramos firmando la Paz de Westfalia.";
 		link.l1 = "Gracias por venir aquí, Jan. Me alegra verte, y significa mucho para Helen.";
 		link.l1.go = "Guests_block";
 		break;
@@ -175,13 +175,13 @@ void ProcessDialogEvent()
 	// Ян Свенсон на Исла Тесоро
 	case "Svenson_2":
 		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
-		dialog.text = "¡Aquí estás, finalmente, Charles! Mi corbeta te adelantó por casi un día - bastante motivo para estar orgulloso.";
+		dialog.text = "¡Aquí estás, finalmente, Charles! Mi corbeta te adelantó por casi un día... bastante motivo para estar orgulloso.";
 		link.l1 = "Eres bienvenido Jan, pero ¿dónde está Gladys, y tu esposa?";
 		link.l1.go = "Svenson_3";
 		break;
 
 	case "Svenson_3":
-		dialog.text = "Mandé a Gladys de vuelta a Blueveld en un barco mercante - no aprueba todas estas fiestas deslumbrantes. Joanna no pudo llegar - ¡oh, no tuve tiempo de contártelo en Martinica! Imagínate, en mi vejez, me convertiré en un padre legítimo, ¿qué te parece? Mira, si te das prisa, ¡nuestras crías tendrán casi la misma edad, jajaja!";
+		dialog.text = "Mandé a Gladys de vuelta a Blueveld en un barco mercante - no aprueba todas estas fiestas deslumbrantes. Joanna no pudo llegar, ¡oh, no tuve tiempo de contártelo en Martinica! Imagínate, en mi vejez, me convertiré en un padre legítimo, ¿qué te parece? Mira, si te das prisa, ¡nuestras crías tendrán casi la misma edad, jajaja!";
 		link.l1 = "¡Jan, mis felicitaciones, esas son buenas noticias! ¡Debemos brindar por ello!";
 		link.l1.go = "Svenson_4";
 		break;
@@ -214,7 +214,7 @@ void ProcessDialogEvent()
 	case "Svenson_7":
 		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "¡Y aquí estás, finalmente! ¿Cómo te fue en Martinica? ¿Sientes que tu vida ha cambiado para siempre?";
-		link.l1 = "Ha cambiado mucho antes, Jan. Pero todo salió sorprendentemente bien. ¿Dónde está Joahnna y...";
+		link.l1 = "Ha cambiado mucho antes, Jan. Pero todo salió sorprendentemente bien. ¿Dónde está Joahnna y...?";
 		link.l1.go = "Svenson_8";
 		break;
 
@@ -256,12 +256,12 @@ void ProcessDialogEvent()
 
 	case "Svenson_14":
 		dialog.text = "El vino estaba amontonado en las bodegas bajo el astillero, ¿los recuerdas? Hawk dijo que lo guardáramos en el corredor lejano, ''para guardar hasta las fiestas'' - dice él. También dice que allí está la temperatura y humedad perfectas, dice que sería un lugar perfecto para una bodega. Bueno, es un gran snob.";
-		link.l1 = "Hizo una decisión correcta, Jan. Me iré, pero primero, dime - ¿viste a mi esposa?";
+		link.l1 = "Hizo una decisión correcta, Jan. Me iré, pero primero, dime, ¿viste a mi esposa?";
 		link.l1.go = "Svenson_15";
 		break;
 
 	case "Svenson_15":
-		dialog.text = " Ella y Dannie fueron a algún lugar. Deja que las chicas hablen, Charles, y nosotros tenemos que empezar una verdadera fiesta. Ve a las bodegas mientras yo me ocupo de la comida. ¡Porque huele como que pronto estaremos comiendo carbón en lugar de costillas de cordero!";
+		dialog.text = "Ella y Dannie fueron a algún lugar. Deja que las chicas hablen, Charles, y nosotros tenemos que empezar una verdadera fiesta. Ve a las bodegas mientras yo me ocupo de la comida. ¡Porque huele como que pronto estaremos comiendo carbón en lugar de costillas de cordero!";
 		link.l1 = "Está bien, ve a salvar la carne, yo traeré nuestro vino.";
 		link.l1.go = "Svenson_16";
 		break;
@@ -274,7 +274,7 @@ void ProcessDialogEvent()
 
 	case "Svenson_17":
 		dialog.text = "¡Charles, Nathan, qué ocurrió, ¿empezaron una pelea de borrachos?!";
-		link.l1 = "No, Jan, luchamos juntos contra unos cúteres armados en las mazmorras. Nos encargamos de ellos, pero solo eran exploradores - ¡el escuadrón principal está justo detrás de nosotros!";
+		link.l1 = "No, Jan, luchamos juntos contra unos cúteres armados en las mazmorras. Nos encargamos de ellos, pero solo eran exploradores, ¡el escuadrón principal está justo detrás de nosotros!";
 		link.l1.go = "Svenson_18";
 		break;
 
@@ -295,7 +295,7 @@ void ProcessDialogEvent()
 
 	case "Svenson_20":
 		dialog.text = "Reconozco sus caras... este, y ese bastardo tirado junto a la puerta. Son matones de Jacques el Amable. No recuerdo sus nombres, pero lo sé con certeza.";
-		link.l1 = "¿Así que esto es culpa de Barbazon? ¿Está fuera de sí o qué?¡";
+		link.l1 = "¿Así que esto es culpa de Barbazon? ¿Está fuera de sí o qué?";
 		link.l1.go = "Svenson_21";
 		break;
 
@@ -314,9 +314,9 @@ void ProcessDialogEvent()
 
 	case "Svenson_23":
 		if (CheckAttribute(pchar, "questTemp.LongHappy.SvensonsShipSink"))
-			dialog.text = "Bueno, no puedo decir que todo haya terminado - ¡nuestra vida sigue! Aunque me siento completamente destrozado. Soy demasiado viejo para saltar al mar desde un barco cubierto de fuego y nadar una hora entera hasta la orilla, cuidándome de los tiburones. Espero que todavía tengamos algo de ron...";
+			dialog.text = "Bueno, no puedo decir que todo haya terminado, ¡nuestra vida sigue! Aunque me siento completamente destrozado. Soy demasiado viejo para saltar al mar desde un barco cubierto de fuego y nadar una hora entera hasta la orilla, cuidándome de los tiburones. Espero que todavía tengamos algo de ron...";
 		else
-			dialog.text = "Bueno, no puedo decir que todo haya terminado - ¡nuestra vida continúa! ¡Maldita sea, me siento diez años más joven! ¡Hace mucho tiempo que no peleaba así! Espero que tus reservas de ron y vino no hayan sido robadas durante el caos - ¡necesitamos beber por ello bien!";
+			dialog.text = "Bueno, no puedo decir que todo haya terminado, ¡nuestra vida continúa! ¡Maldita sea, me siento diez años más joven! ¡Hace mucho tiempo que no peleaba así! Espero que tus reservas de ron y vino no hayan sido robadas durante el caos, ¡necesitamos beber por ello bien!";
 		link.l1 = "Sí, yo también bebería, pero primero tengo que revisar la residencia, no sé si te lo han dicho o no...";
 		link.l1.go = "Svenson_24";
 		break;
@@ -465,8 +465,8 @@ void ProcessDialogEvent()
 	case "Svenson_38":
 		if (CheckAttribute(pchar, "questTemp.LongHappy.TerraxShipSink"))
 		{
-			dialog.text = "Marcus nadó hasta la orilla después de que su barco se hundiera. Bueno, ya sabes, Tyrex no es de esos que se ahogan por una insignificancia así. Ahora está en algún lugar del pueblo. Probablemente sacudiendo las almas de los centinelas que pasaron por alto toda esta inmundicia. Hombre de hierro, no de otra manera.";
-			link.l1 = " El hierro se hundiría. Supongo que nuestro barón está hecho de un material que aún es desconocido para la ciencia, ¡jajaja!";
+			dialog.text = "Marcus nadó hasta la orilla después de que su barco se hundiera. Bueno, Tyrex no es de esos que se ahogan por una insignificancia así. Ahora está en algún lugar del pueblo. Probablemente sacudiendo las almas de los centinelas que pasaron por alto toda esta inmundicia. Hombre de hierro, no de otra manera.";
+			link.l1 = "El hierro se hundiría. Supongo que nuestro barón está hecho de un material que aún es desconocido para la ciencia, ¡jajaja!";
 		}
 		else
 		{
@@ -638,7 +638,7 @@ void ProcessDialogEvent()
 
 	// Форже - патер Мэри
 	case "forge":
-		dialog.text = "Monsieur de Maure,  me disculpo por la familiaridad, pero lo diré de esta manera - ¡Charles, amigo mío, estoy sinceramente feliz por ti! Si puedo hacer algo por ti o tu prometida, ¡solo dilo!";
+		dialog.text = "Monsieur de Maure,  me disculpo por la familiaridad, pero lo diré de esta manera, ¡Charles, amigo mío, estoy sinceramente feliz por ti! Si puedo hacer algo por ti o tu prometida, ¡solo dilo!";
 		link.l1 = "Le agradezco, Barón, estoy tan feliz, y los viñedos que mi padre quería como dote, creo que puedo redimirme - afortunadamente, mi situación financiera durante mi estancia en el Nuevo Mundo ha mejorado considerablemente.";
 		link.l1.go = "forge_1";
 		break;
@@ -657,7 +657,7 @@ void ProcessDialogEvent()
 
 	// Форже - патер ГГ
 	case "forge_3":
-		dialog.text = "Monsieur de Maure, me disculpo por la familiaridad, pero lo diré de esta manera - ¡Charles, amigo mío, me alegro sinceramente por ti! Si puedo hacer algo por ti o por tu novia, ¡solo dilo!";
+		dialog.text = "Monsieur de Maure, me disculpo por la familiaridad, pero lo diré de esta manera, ¡Charles, amigo mío, me alegro sinceramente por ti! Si puedo hacer algo por ti o por tu novia, ¡solo dilo!";
 		link.l1 = "Gracias, Barón, pero ya ha hecho mucho por mí. Nos basta con que haya respondido a la invitación.";
 		link.l1.go = "forge_4";
 		break;
@@ -714,7 +714,7 @@ void ProcessDialogEvent()
 
 	// Пуанси гость
 	case "puancie_4":
-		dialog.text = "¡Charles, mi amigo, permíteme felicitarte! Hemos recorrido un camino largo y difícil, y sinceramente me alegra estar aquí hoy. Nuestro Señor es testigo: ¡te mereces tu felicidad! Cuídala y protégela - ¡deseándote muchos años felices por venir!";
+		dialog.text = "¡Charles, mi amigo, permíteme felicitarte! Hemos recorrido un camino largo y difícil, y sinceramente me alegra estar aquí hoy. Nuestro Señor es testigo: ¡te mereces tu felicidad! Cuídala y protégela, ¡deseándote muchos años felices por venir!";
 		link.l1 = "Gracias, Chevalier, mi esposa y yo estamos muy agradecidos.";
 		link.l1.go = "Guests_block";
 		break;
@@ -760,7 +760,7 @@ void ProcessDialogEvent()
 
 	// Проспер Трубаль
 	case "Prosper":
-		dialog.text = "¡Charles, no podía perdérmelo, te felicito a ti y a tu elegido con todo mi corazón! ¡Sed felices! Sabes, hace un par de meses casé a mi hija, con una buena persona y enamorada, pero sinceramente, me molestó que no fueras tú... Bueno, está bien... de qué estoy hablando - ¡felicidades! ¡Que viváis felices para siempre!";
+		dialog.text = "¡Charles, no podía perdérmelo, te felicito a ti y a tu elegido con todo mi corazón! ¡Sed felices! Sabes, hace un par de meses casé a mi hija, con una buena persona y enamorada, pero sinceramente, me molestó que no fueras tú... Bueno, está bien... de qué estoy hablando, ¡felicidades! ¡Que viváis felices para siempre!";
 		link.l1 = "Gracias, Prosper, me alegra que hayas venido.";
 		link.l1.go = "Guests_block";
 		break;
@@ -776,11 +776,11 @@ void ProcessDialogEvent()
 		break;
 
 	case "Tichingitu_1":
-		dialog.text = "¿Agua de fuego otra vez? Tichingitu no puede decir que le guste. Tal vez, un abordaje de celebración sea mejor, o al menos bailar alrededor de una hoguera.";
+		dialog.text = "¿Aguardiente otra vez? Tichingitu no puede decir que le guste. Tal vez, un abordaje de celebración sea mejor, o al menos bailar alrededor de una hoguera.";
 		if (CheckAttribute(pchar, "questTemp.LongHappy.MarrySP"))
-			link.l1 = "Espero que no termine en danzas alrededor de hogueras mucho antes del final, y preferiría evitar abordajes. Bien, ten paciencia - falta poco, y nos dirigimos inmediatamente a la taberna.";
+			link.l1 = "Espero que no termine en danzas alrededor de la hoguera, y preferiría evitar abordajes. Bien, ten paciencia, ya falta poco, y luego nos dirigiremos a la taberna.";
 		else
-			link.l1 = "Tengo miedo de que terminemos bailando alrededor de hogueras mucho antes del final, y preferiría evitar los abordajes. Bien, ten paciencia - queda poco, y zarpamos inmediatamente hacia Sharptown.";
+			link.l1 = "Me temo que falta mucho tiempo para que termine el baile alrededor de la hoguera, y preferiría evitar los abordajes. Bien, ten paciencia, ya queda poco, y luego zarparemos hacia Sharptown.";
 		link.l1.go = "Guests_block";
 		break;
 
@@ -863,7 +863,7 @@ void ProcessDialogEvent()
 
 	case "Tichingitu_11":
 		dialog.text = "Tichingitu se despertó hace una hora por los gritos de esta chica. Corría por la playa casi desnuda y gritaba algo sobre los secuestradores y salvajes... Pero no hay nadie aquí excepto nosotros. ¿Tienes agua? ¿No la ardiente otra vez, Tichingitu la odia ahora?";
-		link.l1 = "Había un frasco en algún lugar, si no lo perdí en una batalla... aquí tienes. ¿Cómo lograste hacer esto? Su tío, un tabernero local, está buscando a un indio que ha secuestrado a su sobrina, y amenaza con arrancarle la cabeza vacía emplumada. ¿De quién crees que está hablando?";
+		link.l1 = "Había un frasco en algún lugar, si no lo perdí en una batalla... aquí tienes. ¿Cómo lograste hacer esto? Su tío, un tabernero, está buscando a un indio que ha secuestrado a su sobrina, y amenaza con arrancarle la cabeza vacía emplumada. ¿De quién crees que está hablando?";
 		link.l1.go = "Tichingitu_12";
 		break;
 
@@ -1072,7 +1072,7 @@ void ProcessDialogEvent()
 
 	case "Terrax_3":
 		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
-		dialog.text = "Casada con Charles de Maure - todavía no puedo acostumbrarme... Primero Svenson, ahora tú - ¿y luego qué? ¿El pastor Marlow, o Jacques el Bondadoso?";
+		dialog.text = "Casada con Charles de Maure - todavía no puedo acostumbrarme... Primero Svenson, ahora tú, ¿y luego qué? ¿El pastor Marlow, o Jacques el Bondadoso?";
 		link.l1 = "Te olvidaste de los Hawks. ¿Y tú, Marcus? ¿No estás cansado de ser un lobo de mar solitario?";
 		link.l1.go = "Terrax_4";
 		break;
@@ -1084,7 +1084,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Dannie y Nathan son un caso de larga data - ya me he reconciliado con esto, ¡pero me sorprendiste, no hay nada que decir! Aunque, como escuché, tu Mary sabe mucho sobre espadas y claramente sabe cómo usarlas - ¡mis respetos! Una verdadera compañera de guerra. Te contaré un secreto, por el bien de tal dama, yo mismo reconsideraría mis convicciones de soltero. Eres un afortunado, capitán - ¡cuídala bien!";
+			dialog.text = "Dannie y Nathan son un caso de larga data - ya me he reconciliado con esto, ¡pero me sorprendiste, no hay nada que decir! Aunque, como escuché, tu Mary sabe mucho sobre espadas y claramente sabe cómo usarlas, ¡mis respetos! Una verdadera compañera de guerra. Te contaré un secreto, por el bien de tal dama, yo mismo reconsideraría mis convicciones de soltero. Eres un afortunado, capitán, ¡cuídala bien!";
 		}
 		link.l1 = "Lo sé, ella es un milagro y estoy de nuevo en el séptimo cielo de felicidad, ¡igual que aquellos días cuando nos conocimos por primera vez!";
 		link.l1.go = "Terrax_5";
@@ -1111,7 +1111,7 @@ void ProcessDialogEvent()
 
 	case "Terrax_7":
 		dialog.text = "¿Jacques? Esto definitivamente no es bueno...";
-		link.l1 = "Marcus, ¿crees que...";
+		link.l1 = "Marcus, ¿crees que...?";
 		link.l1.go = "Terrax_8";
 		break;
 
@@ -1307,7 +1307,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("Helena");
 		else
 			sld = characterFromId("Mary");
-		dialog.text = "¡Estamos bien, Charles! Voy a desatarla. Oigo disparos en el puerto - tú y Nathan deben ir allí, de lo contrario, Barbazon destruirá todos nuestros barcos. ¡No pierdan tiempo!";
+		dialog.text = "¡Estamos bien, Charles! Voy a desatarla. Oigo disparos en el puerto, tú y Nathan deben ir allí, de lo contrario, Barbazon destruirá todos nuestros barcos. ¡No pierdan tiempo!";
 		link.l1 = "Encontraré a Gino y lo enviaré aquí, él ayudará... ¡debe hacerlo!" + sld.name + ", querida, quédate aquí, cuida de él, ambos ustedes.";
 		link.l1.go = "Nathaniel_19";
 		break;
@@ -1365,7 +1365,7 @@ void ProcessDialogEvent()
 
 	// Даниэль Хоук
 	case "Danielle":
-		dialog.text = "Hola, Charles. Déjame verte - ¡te has vuelto más guapo, no puedo quejarme! ¡Casi como Nathan, hace unos diez años! Entra, no te quedes en la puerta, ¡todos te han estado esperando!";
+		dialog.text = "Hola, Charles. Déjame verte, ¡te has vuelto más guapo, no puedo quejarme! ¡Casi como Nathan, hace unos diez años! Entra, no te quedes en la puerta, ¡todos te han estado esperando!";
 		link.l1 = "¡Gracias, Dannie, me alegra mucho verte! ¡Iré a verte a ti y a Nathan un poco más tarde y entonces hablaremos!";
 		link.l1.go = "Danielle_1";
 		break;
@@ -1378,7 +1378,7 @@ void ProcessDialogEvent()
 
 	case "Danielle_2":
 		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
-		dialog.text = "Charles, siéntate - ¡Nathan y yo estamos tan felices por ti! Marcus, Jan y mi esposo han preparado algo para ti - pero los regalos esperarán. Por ahora, permíteme felicitarte y desearte felicidad. ¡Tu elegida es simplemente un milagro! Dime, no lograste que ella llevara un vestido blanco allá en Martinica, ¿verdad?";
+		dialog.text = "Charles, siéntate, ¡Nathan y yo estamos tan felices por ti! Marcus, Jan y mi esposo han preparado algo para ti - pero los regalos esperarán. Por ahora, permíteme felicitarte y desearte felicidad. ¡Tu elegida es simplemente un milagro! Dime, no lograste que ella llevara un vestido blanco allá en Martinica, ¿verdad?";
 		link.l1 = "Gracias, Dannie. Sí, resultó gracioso con el vestido - estoy seguro de que en la alta sociedad nuestra boda dio lugar a muchos rumores escandalosos. Todos honestamente desviaron la mirada y fingieron que no pasaba nada fuera de lo común. Modales y todo eso - pero no me importan los chismes, la amo y eso es lo más importante.";
 		link.l1.go = "Danielle_3";
 		break;
@@ -1507,7 +1507,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Está bien, la bala pasó de largo, y nuestro cirujano del 'Centurión' no estaba lejos. Se estaba escondiendo de todo este lío. Así que Nathan vivirá, un par de semanas en cama - ¡poca cosa!";
+			dialog.text = "Está bien, la bala pasó de largo, y nuestro cirujano del 'Centurión' no estaba lejos. Se estaba escondiendo de todo este lío. Así que Nathan vivirá, un par de semanas en cama, ¡poca cosa!";
 			link.l1 = "Dannie, él cubrió a mi esposa y a ti de una bala y siempre le deberé por esto. No puedes ni imaginar lo contento que estoy de saber que se está recuperando. Déjalo descansar, te veré más tarde.";
 			link.l1.go = "Danielle_14";
 		}
@@ -1558,7 +1558,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("Helena");
 		else
 			sld = characterFromId("Mary");
-		dialog.text = "No, el italiano prohibió estrictamente molestarlo, déjalo descansar, y Gino debería descansar después de todas las preocupaciones. Incluso le dije " + sld.name + " salir a dar un paseo cuando nos enteramos de que todo iba a estar bien\nY una cosa más... tu amigo, él me cubrió de la bala. Ni siquiera sé cómo agradecérselo, dile que a partir de ahora él también es parte de nuestra familia, y tú - ¡tú nos salvaste de nuevo, Charles!";
+		dialog.text = "No, el italiano prohibió estrictamente molestarlo, déjalo descansar, y Gino debería descansar después de todas las preocupaciones. Incluso le dije " + sld.name + " salir a dar un paseo cuando nos enteramos de que todo iba a estar bien\nY una cosa más... tu amigo, él me cubrió de la bala. Ni siquiera sé cómo agradecérselo, dile que a partir de ahora él también es parte de nuestra familia, y tú, ¡tú nos salvaste de nuevo, Charles!";
 		link.l1 = "Bien está lo que bien acaba, Dannie. Ve con Nathan, que te ha estado esperando, y yo tomaré un pequeño descanso aquí y buscaré mi " + sld.name + ".";
 		link.l1.go = "Danielle_23";
 		break;
@@ -1689,146 +1689,143 @@ void ProcessDialogEvent()
 		break;
 
 	case "Vensan_7":
-		dialog.text = "Marcus me dejó para organizar una defensa en la costa. Nos faltan hombres, los muchachos en el puerto necesitan pólvora. Pensé en pasar, tomar un par de barriles... y luego estos matones. Ja, se escondieron, supongo, querían esperar o robar a alguien. Y todavía estoy lleno de ron de Hawk, así que sin ti, no sé, si todavía viviría o no.";
-		link.l1 = "Siempre eres bienvenido. Bien, Bernard, asegúrate de que la ciudad esté segura, y yo debo irme, ¡cuídate!";
+		dialog.text = "Marcus me dejó para organizar una defensa en la costa. Nos faltan hombres, los muchachos en el puerto necesitan pólvora. Pensé en pasar, tomar un par de barriles... y luego estos matones. Ja, se escondieron, supongo, querían esperar o robar a alguien. Y todavía estoy lleno de ron de Hawk, así que sin ti no sé si ahora estaría respirando o no.";
+		link.l1 = "De nada. Bien, Bernard, asegúrate de que la ciudad esté segura. Yo debo irme, ¡cuídate!";
 		link.l1.go = "Vensan_8";
 		break;
-
-	case "Vensan_8":
-		DialogExit();
-		LAi_SetActorType(npchar);
-		LAi_ActorRunToLocation(npchar, "reload", "reload1_back", "none", "", "", "OpenTheDoors", 10.0);
-		pchar.questTemp.LongHappy.Vensan_alive = "true";
+		
+		case "Vensan_8":
+			DialogExit();
+			LAi_SetActorType(npchar);
+			LAi_ActorRunToLocation(npchar, "reload", "reload1_back", "none", "", "", "OpenTheDoors", 10.0);
+			pchar.questTemp.LongHappy.Vensan_alive = "true";
 		break;
 
-	// Джино
-	case "Jino":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
-		dialog.text = "¡Capitán, permítame felicitarle de todo corazón a usted y a su amada en este día tan auspicioso! ¡Sean felices y cuídense mutuamente!";
-		link.l1 = "Gracias, Gino. ¡Me alegra que hayas decidido venir! Espero que el color local... no te moleste.";
-		link.l1.go = "Jino_1";
+		// Джино
+		case "Jino":
+			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+			dialog.text = "¡Capitán, permítame felicitarle de todo corazón a usted y a su amada en este día tan auspicioso! ¡Sean felices y cuídense mutuamente!";
+			link.l1 = "Gracias, Gino. ¡Me alegra que hayas decidido venir! Espero que mi color... no te moleste.";
+			link.l1.go = "Jino_1";
 		break;
-
-	case "Jino_1":
-		dialog.text = "Este es... un viaje muy educativo. Debo decir que no he salido de Antigua durante mucho tiempo, y en esta sociedad no me resulta fácil sentirme cómodo. Pero, siempre supiste cómo entender a las personas, así que intentaré mantener la calma, ya que confío en ti.";
-		link.l1 = "¿Quizás necesites beber algo más fuerte? ¿Relájate y encuentra a alguien con quien hablar?";
-		link.l1.go = "Jino_2";
+		
+		case "Jino_1":
+			dialog.text = "Este es... un viaje muy educativo. Debo decir que no he salido de Antigua durante mucho tiempo, y en esta sociedad no me resulta fácil sentirme cómodo. Pero, siempre supiste cómo entender a las personas, así que intentaré mantener la calma, ya que confío en ti.";
+			link.l1 = "¿Quizás necesites beber algo más fuerte? ¿Relájate y encuentra a alguien con quien hablar?";
+			link.l1.go = "Jino_2";
 		break;
-
-	case "Jino_2":
-		dialog.text = "Gracias, capitán, ya tengo suficiente vino diluido. El alcohol, debo advertirle, no es muy bueno para el hígado y posiblemente para el corazón. En cuanto a las conversaciones, intenté discutir las propiedades curativas del Chirik-Sanango con ese caballero de allí, también se le llama Manaka. Los nativos de Tierra Firme lo utilizan para...";
-		link.l1 = "Déjame adivinar, ¿ese caballero no pudo sostener la conversación? Gino, por mi bien y solo por hoy, prueba el ron que Jan está sirviendo allá en el mostrador.  Si puedes adivinar todos sus ingredientes, Nathaniel Hawk, que está allí, quedará extremadamente impresionado. Estoy seguro de que estará encantado de estar en tu compañía, así como Svenson, el hombre en el mostrador, ambos respetan a las personas educadas.";
-		link.l1.go = "Jino_3";
+		
+		case "Jino_2":
+			dialog.text = "Gracias, capitán, ya tengo suficiente vino diluido. El alcohol, debo advertirle, no es muy bueno para el hígado y posiblemente para el corazón. En cuanto a las conversaciones, intenté discutir las propiedades curativas del Chirik-Sanango con ese caballero de allí, también se le llama Manaka. Los nativos de Tierra Firme lo utilizan para...";
+			link.l1 = "Déjame adivinar, ¿ese caballero no pudo sostener la conversación? Gino, por mi bien y solo por hoy, prueba el ron que Jan está sirviendo allá en el mostrador.  Si puedes adivinar todos sus ingredientes, Nathaniel Hawk, que está allí, quedará extremadamente impresionado. Estoy seguro de que estará encantado de estar en tu compañía, así como Svenson, el hombre en el mostrador, ambos respetan a las personas educadas.";
+			link.l1.go = "Jino_3";
 		break;
-
-	case "Jino_3":
-		DialogExit();
-		npchar.dialog.currentnode = "Jino_3_1";
-		if (CheckAttribute(pchar, "questTemp.LongHappy.MarrySP"))
-		{
-			if (CheckAttribute(pchar, "questTemp.LongHappy.HambitOfficer"))
+		
+		case "Jino_3":
+			DialogExit();
+			npchar.dialog.currentnode = "Jino_3_1";
+			if (CheckAttribute(pchar, "questTemp.LongHappy.MarrySP"))
 			{
-				sld = characterFromId(pchar.questTemp.LongHappy.HambitOfficer);
-				LAi_SetActorType(sld);
-				LAi_ActorDialog(sld, pchar, "", -1, 0);
-			}
-			else
-			{
-				if (GetCharacterIndex("Baker") != -1)
+				if (CheckAttribute(pchar, "questTemp.LongHappy.HambitOfficer"))
 				{
-					sld = characterFromId("Baker");
+					sld = characterFromId(pchar.questTemp.LongHappy.HambitOfficer);
 					LAi_SetActorType(sld);
 					LAi_ActorDialog(sld, pchar, "", -1, 0);
 				}
 				else
 				{
-					if (GetCharacterIndex("Tichingitu") != -1)
+					if (GetCharacterIndex("Baker") != -1)
 					{
-						sld = characterFromId("Tichingitu");
+						sld = characterFromId("Baker");
 						LAi_SetActorType(sld);
 						LAi_ActorDialog(sld, pchar, "", -1, 0);
 					}
 					else
 					{
-						sld = characterFromId("Mary");
-						sld.dialog.currentnode = "LongHappy_57";
-						LAi_SetActorType(sld);
-						LAi_ActorDialog(sld, pchar, "", -1, 0);
+						if (GetCharacterIndex("Tichingitu") != -1)
+						{
+							sld = characterFromId("Tichingitu");
+							LAi_SetActorType(sld);
+							LAi_ActorDialog(sld, pchar, "", -1, 0);
+						}
+						else
+						{
+							sld = characterFromId("Mary");
+							sld.dialog.currentnode = "LongHappy_57";
+							LAi_SetActorType(sld);
+							LAi_ActorDialog(sld, pchar, "", -1, 0);
+						}
 					}
 				}
 			}
-		}
-		else
-			(!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+			else (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 		break;
-
-	case "Jino_3_1":
+		
+		case "Jino_3_1":
 		dialog.text = "¡A tu salud y a la salud de tu encantadora esposa!";
 		link.l1 = "¡Gracias, amigo!";
 		link.l1.go = "Jino_3";
 		break;
-
-	case "Jino_4":
-		dialog.text = "¡Capitán, eres tú, gracias a Dios! Esas personas enmascaradas, las vi y me escondí aquí, y trataron de romper la puerta...";
-		link.l1 = "Está bien, Gino, nadie te va a hacer daño ya. Es una gran suerte que te encontré, necesito tu ayuda. Mi amigo está herido - le han disparado y ha perdido mucha sangre. ¡Debemos darnos prisa!";
-		link.l1.go = "Jino_5";
+		
+		case "Jino_4":
+			dialog.text = "¡Capitán, eres tú, gracias a Dios! Esas personas enmascaradas, las vi y me escondí aquí, y trataron de romper la puerta...";
+			link.l1 = "Está bien, Gino, nadie te va a hacer daño ya. Es una gran suerte que te encontré, necesito tu ayuda. Mi amigo está herido - le han disparado y ha perdido mucha sangre. ¡Debemos darnos prisa!";
+			link.l1.go = "Jino_5";
 		break;
-
-	case "Jino_5":
-		dialog.text = "Disparo... sangre... bien, capitán. Mientras venía aquí, agarré mi cofre de campamento con todas las herramientas en caso de una herida. Llévame con él, veré qué se puede hacer. Y estos... hombres enmascarados, ¿quizás se han escondido en otro lugar?";
-		link.l1 = "Estoy seguro, eran los últimos. Gino, hay batalla en el puerto y debo ir allí ahora mismo. Tienes que llegar a la residencia por tu cuenta, no está lejos. La casa grande está a la vuelta de la esquina, no la perderás. No tengas miedo, las calles están llenas de nuestra gente, ¡y date prisa, te lo suplico!";
-		link.l1.go = "Jino_6";
+		
+		case "Jino_5":
+			dialog.text = "Disparo... sangre... bien, capitán. Mientras venía aquí, agarré mi cofre de campamento con todas las herramientas en caso de una herida. Llévame con él, veré qué se puede hacer. Y estos... hombres enmascarados, ¿quizás se han escondido en otro lugar?";
+			link.l1 = "Estoy seguro, eran los últimos. Gino, hay batalla en el puerto y debo ir allí ahora mismo. Tienes que llegar a la residencia por tu cuenta, no está lejos. La casa grande está a la vuelta de la esquina, no la perderás. No tengas miedo, las calles están llenas de nuestra gente, ¡y date prisa, te lo suplico!";
+			link.l1.go = "Jino_6";
 		break;
-
-	case "Jino_6":
-		DialogExit();
-		LAi_SetActorType(npchar);
-		LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "none", "", "", "OpenTheDoors", 7.0);
-		LocatorReloadEnterDisable("Pirates_tavern", "reload1_back", false);
-		pchar.questTemp.LongHappy.Jino_alive = "true";
-		AddQuestRecord("LongHappy", "18");
-		if (CheckAttribute(pchar, "questTemp.LongHappy.Tichingitu_Victim"))
-			sld = characterFromId("Tichingitu");
-		else
-			sld = characterFromId("Nathaniel");
-		sTemp = sld.name;
-		AddQuestUserData("LongHappy", "sName1", sTemp);
+		
+		case "Jino_6":
+			DialogExit();
+			LAi_SetActorType(npchar);
+			LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "none", "", "", "OpenTheDoors", 7.0);
+			LocatorReloadEnterDisable("Pirates_tavern", "reload1_back", false);
+			pchar.questTemp.LongHappy.Jino_alive = "true";
+			AddQuestRecord("LongHappy", "18");
+			if (CheckAttribute(pchar, "questTemp.LongHappy.Tichingitu_Victim")) sld = characterFromId("Tichingitu");
+			else sld = characterFromId("Nathaniel");
+			sTemp = sld.name;
+			AddQuestUserData("LongHappy", "sName1", sTemp);
 		break;
-
-	case "Jino_7":
-		dialog.text = "¡Capitán, permítame felicitarle de todo corazón a usted y a su amada en este día tan auspicioso! Sean felices y cuídense mutuamente.";
-		link.l1 = "Gracias, Gino. ¡Me alegra que hayas decidido venir! ¿El viaje fue tranquilo?";
-		link.l1.go = "Jino_8";
+		
+		case "Jino_7":
+			dialog.text = "¡Capitán, permítame felicitarle de todo corazón a usted y a su amada en este día tan auspicioso! Sean felices y cuídense mutuamente.";
+			link.l1 = "Gracias, Gino. ¡Me alegra que hayas decidido venir! ¿El viaje fue tranquilo?";
+			link.l1.go = "Jino_8";
 		break;
-
-	case "Jino_8":
-		dialog.text = "Todo está bien, capitán, gracias por preocuparse. Debo decir - no he salido de Antigua durante mucho tiempo, y entre la élite yo... no me siento muy cómodo. Pero la razón para venir no me dejó elección. Por cierto, el servicio fue excelente, ¡estoy muy contento por ambos! La novia en este atuendo es encantadora - ¿es esta una nueva moda? Resulta que me quedé atrás en la vida, pero me gusta, de verdad.";
-		link.l1 = "La moda... De alguna manera sí, o al menos, lo será pronto. Bien, diviértete, Gino, y si los nobles interlocutores te aburren, entonces ven al puerto. Toda la tripulación está en la taberna. Los muchachos estarán felices de verte.";
-		link.l1.go = "Guests_block";
+		
+		case "Jino_8":
+			dialog.text = "Todo está bien, capitán, gracias por preocuparse. Debo decir - no he salido de Antigua durante mucho tiempo, y entre la élite yo... no me siento muy cómodo. Pero la razón para venir no me dejó elección. Por cierto, el servicio fue excelente, ¡estoy muy contento por ambos! La novia en este atuendo es encantadora, ¿es esta una nueva moda? Resulta que me quedé atrás en la vida, pero me gusta, de verdad.";
+			link.l1 = "La moda... De alguna manera sí, o al menos, lo será pronto. Bien, diviértete, Gino, y si los nobles interlocutores te aburren, entonces ven al puerto. Toda la tripulación está en la taberna. Los muchachos estarán felices de verte.";
+			link.l1.go = "Guests_block";
 		break;
-
-	case "Jino_9":
-		dialog.text = "¡Capitán, una vez más, le felicito a usted y a su hermosa esposa! ¡Largos y felices años para ustedes juntos!";
-		link.l1 = "Gracias, Gino. ¡Me alegra que hayas venido! Espero que el color local... no te moleste?";
-		link.l1.go = "Jino_10";
+		
+		case "Jino_9":
+			dialog.text = "¡Capitán, una vez más, le felicito a usted y a su hermosa esposa! ¡Largos y felices años para ustedes juntos!";
+			link.l1 = "Gracias, Gino. ¡Me alegra que hayas venido! Espero que mi color... no te moleste.";
+			link.l1.go = "Jino_10";
 		break;
-
-	case "Jino_10":
-		dialog.text = "Esta sociedad no es fácil para mí para sentirme cómodo. Pero, siempre supiste elegir a la gente, así que intentaré mantener la calma, ya que confío en ti..";
-		link.l1 = "¿Quizás necesites beber algo más fuerte? ¿Relajarte y encontrar a alguien con кем hablar?";
-		link.l1.go = "Jino_11";
+		
+		case "Jino_10":
+			dialog.text = "Esta sociedad no es fácil para mí para sentirme cómodo. Pero, siempre supiste elegir a la gente, así que intentaré mantener la calma, ya que confío en ti..";
+			link.l1 = "¿Quizás necesites beber algo más fuerte? ¿Relajarte y encontrar alguien con quien hablar?";
+			link.l1.go = "Jino_11";
 		break;
-
-	case "Jino_11":
-		dialog.text = "Gracias, capitán, tengo suficiente vino diluido. El alcohol, debo advertirle, no es muy bueno para el hígado y posiblemente para el corazón. En cuanto a las conversaciones, intenté discutir las propiedades curativas del Chirik-Sanango con ese caballero, también se le llama Manaka. Los nativos de Tierra Firme lo usan para...";
-		link.l1 = "Déjame adivinar, ¿ese caballero no pudo sostener la discusión? Gino, por mi bien y solo hoy, prueba el ron que Jan está sirviendo allá en el mostrador. Si puedes adivinar todos sus ingredientes, Nathaniel Hawk, allá, quedará extremadamente impresionado. Estoy seguro de que también estará encantado de estar en tu compañía, al igual que Svenson, el hombre en el mostrador, ambos respetan a las personas educadas.";
-		link.l1.go = "Jino_3";
+		
+		case "Jino_11":
+			dialog.text = "Gracias, capitán, tengo suficiente vino diluido. El alcohol, debo advertirle, no es muy bueno para el hígado y posiblemente para el corazón. En cuanto a las conversaciones, intenté discutir las propiedades curativas del Chirik-Sanango con ese caballero, también se le llama Manaka. Los nativos de Tierra Firme lo usan para...";
+			link.l1 = "Déjame adivinar, ¿ese caballero no pudo sostener la discusión? Gino, por mi bien y solo hoy, prueba el ron que Jan está sirviendo allá en el mostrador. Si puedes adivinar todos sus ingredientes, Nathaniel Hawk, allá, quedará extremadamente impresionado. Estoy seguro de que también estará encantado de estar en tu compañía, al igual que Svenson, el hombre en el mostrador, ambos respetan a las personas educadas.";
+			link.l1.go = "Jino_3";
 		break;
 
 	// Лонгвэй
 	case "Longway":
 		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
-		dialog.text = " 'Solo ahora en un país extraño, sintiéndome un forastero, en este brillante día de fiesta, siento doblemente nostalgia por mis parientes' ";
+		dialog.text = "'Solo ahora en un país extraño, sintiéndome un forastero, en este brillante día de fiesta, siento doblemente nostalgia por mis parientes'.";
 		link.l1 = "¡Longway, nunca pensé que eras un maestro de la palabra!";
 		link.l1.go = "Longway_1";
 		break;
@@ -2057,7 +2054,7 @@ void ProcessDialogEvent()
 		sTemp = "Sharptown";
 		if (CheckAttribute(pchar, "questTemp.LongHappy.MarrySP"))
 			sTemp = "Sent Pierre";
-		dialog.text = "Parece que estás demasiado sobrio para tu propia boda, capitán. ¿Te gustaría arreglarlo? He tomado una botella de excelente jerez en el bar. ¡La mezcla con ron local va de maravilla!";
+		dialog.text = "Parece que estás demasiado sobrio para tu propia boda, capitán. ¿Te gustaría arreglarlo? He tomado una botella de excelente jerez en el bar. ¡La mezcla con ron va de maravilla!";
 		link.l1 = "Me gustaría, pero alguien tiene que vigilar las cosas aquí. De lo contrario, en " + sTemp + " no solo la taberna se echará de menos cuando llegue la mañana.";
 		link.l1.go = "Baker_2";
 		break;
@@ -2287,7 +2284,7 @@ void ProcessDialogEvent()
 
 	// официантка
 	case "waitress":
-		dialog.text = "¡Capitán, ayúdeme, este salvaje, me ha secuestrado! Yo... necesito regresar a casa - ¡tío probablemente ya haya puesto toda la ciudad patas arriba!";
+		dialog.text = "¡Capitán, ayúdeme, este salvaje, me ha secuestrado! Yo... necesito regresar a casa, ¡tío probablemente ya haya puesto toda la ciudad patas arriba!";
 		link.l1 = "Tranquilízate, belleza, todo estará bien. Hazte a un lado, necesito hablar con tu 'salvaje'.";
 		link.l1.go = "waitress_1a";
 		break;
@@ -2329,7 +2326,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "waitress_5":
-		dialog.text = "¡Me robó como... como una cabra de un granero! ¡Se lo contaré a todos! ¡El tío lo matará! ¡Es terrible cuando está enojado! Solía robar barcos españoles - ¡con él no se hacen bromas!";
+		dialog.text = "¡Me robó como... como una cabra de un granero! ¡Se lo contaré a todos! ¡El tío lo matará! ¡Es terrible cuando está enojado! Solía robar barcos españoles, ¡con él no se hacen bromas!";
 		link.l1 = "Está bien, calla, hermosa dama, calla. ¿Quizás veinte mil 'razones' para perdonarlo serán más elocuentes que mis palabras? ¿O debería dárselas a tu tío, como un rescate por una esposa? Después de todo, todos están en la isla, ¿verdad? Mañana podemos organizar otra boda...";
 		link.l1.go = "waitress_6";
 		break;
@@ -2355,7 +2352,7 @@ void ProcessDialogEvent()
 
 	// тавернщик Сен Пьер
 	case "tavernkeeper":
-		dialog.text = "Bueno, Capitán, ¿estás contento con todo? ¡El mejor ron, costillas de cordero, jamones de cerdo e incluso un excelente vino de mis reservas personales para tu amigo científico! Y - ¡mis felicitaciones para ti y tu hermosa esposa!";
+		dialog.text = "Bueno, Capitán, ¿estás contento con todo? ¡El mejor ron, costillas de cordero, jamones de cerdo e incluso un excelente vino de mis reservas personales para tu amigo científico! Y, ¡mis felicitaciones para ti y tu hermosa esposa!";
 		link.l1 = "¡Gracias! Debo admitir que organizaste todo a la perfección. Espero que tengas suficientes reservas de ron en tus bodegas, la mañana está lejos.";
 		link.l1.go = "tavernkeeper_1";
 		break;
@@ -2440,7 +2437,7 @@ void ProcessDialogEvent()
 
 	case "JanDavid_3":
 		dialog.text = "Y yo me encargaré del resto. Forest Devil dijo que no tendrías tiempo para ocuparte de cosas tan pequeñas como Le Francois...";
-		link.l1 = " Te lo dijeron correctamente. Bien, Jean, confío en ti, espero que no me defraudes.";
+		link.l1 = "Te lo dijeron correctamente. Bien, Jean, confío en ti, espero que no me defraudes.";
 		link.l1.go = "JanDavid_4";
 		break;
 

@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Ah, " + GetFullName(pchar) + "¡ " + TimeGreeting() + "¡Quieres algo?";
+			dialog.text = "¡Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+". ¿Quieres algo?";
 			link.l1 = LinkRandPhrase("¿Tienes algo interesante que decir?", "¿Ha sucedido algo nuevo en la isla?", "¿Me contarás los últimos chismes?");
 			link.l1.go = "rumours_LSC";
 			link.l2 = "Quiero hacerte unas preguntas sobre la isla.";
@@ -210,7 +210,7 @@ void ProcessDialogEvent()
 
 	case "ring_13a":
 		dialog.text = "Es nuestro objetivo. Nada recto y no te desvíes. Te mostraré el camino de regreso cuando alcancemos el anillo exterior. La entrada a la bodega de carga es el agujero en la proa del barco. Sepas que no entraré hasta que mates a todos los cangrejos.";
-		link.l1 = " Sí, tuvimos un trato ayer, lo recuerdo. Tú mostrarás el barco y yo mataré cangrejos. ¿Nadamos?";
+		link.l1 = "Sí, tuvimos un trato ayer, lo recuerdo. Tú mostrarás el barco y yo mataré cangrejos. ¿Nadamos?";
 		link.l1.go = "ring_14";
 		break;
 
@@ -271,7 +271,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ring_19":
-		dialog.text = "  Nada especial.   Es una lástima que no haya bienes valiosos aquí.  Hay provisiones en barriles y copra en cajas.  Sin embargo, he encontrado una caja con vino caro.  ¿Y qué tienes tú?  ";
+		dialog.text = "Nada especial. Es una lástima que no haya bienes valiosos aquí. Hay provisiones en barriles y copra en cajas. Sin embargo, he encontrado una caja con vino caro. ¿Y qué tienes tú?";
 		link.l1 = "Nada interesante tampoco. Unas cajas son bastante valiosas, pero el resto es carne enlatada y copra como has dicho.";
 		link.l1.go = "ring_20";
 		break;
@@ -369,7 +369,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ring_31":
-		dialog.text = "  Parece que tuve suerte - ni cangrejos ni otra inmundicia aquí. Y ahora vamos a dar vuelta esta cabaña, carajo, juro que estoy empezando a enojarme. ¡He encontrado solo dos malditas docenas de doblones y algunas baratijas!";
+		dialog.text = "Parece que tuve suerte... ni cangrejos ni otra inmundicia aquí. Y ahora vamos a dar vuelta esta cabaña, carajo, juro que estoy empezando a enojarme. ¡He encontrado solo dos malditas docenas de doblones y algunas baratijas!";
 		link.l1 = "Calma. Tenías razón, todos los objetos de valor siempre están guardados en la cabina del capitán. ¡Veamos qué tenemos!";
 		link.l1.go = "ring_32";
 		break;
@@ -550,7 +550,7 @@ void ProcessDialogEvent()
 
 	case "ring_49":
 		DialogExit();
-		SetLaunchFrameFormParam("Dos horas después..." + NewStr() + "¡El oro fue compartido!", "", 0, 5); // табличка
+		SetLaunchFrameFormParam("Dos horas después..." + NewStr() + "¡Has compartido el oro!", "", 0, 5); // табличка
 		WaitDate("", 0, 0, 0, 2, 10);
 		LaunchFrameForm();
 		RecalculateJumpTable();

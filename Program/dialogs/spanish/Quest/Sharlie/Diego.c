@@ -27,20 +27,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patrol_1":
-			dialog.text = "Está bien... Todo parece en orden. Está debidamente cumplimentado con la firma del inquisidor. Mis disculpas por mis sospechas. ¿Qué haces en el faro?";
-			link.l1 = "No estoy autorizado para responder a tales preguntas. Si está genuinamente interesado en el propósito de mi trabajo para el inquisidor, le recomendaría dirigirse directamente a él en Santiago para obtener aclaraciones. Usted es un oficial, seguramente tiene conocimiento de secretos militares y de servicio. Lo único que puedo decirle es que estoy investigando las circunstancias de un naufragio de un barco español.";
+			dialog.text = "Está bien... Todo parece en orden. Está debidamente escrito con la firma del inquisidor. Mis disculpas por mis sospechas. ¿Qué haces en el faro?";
+			link.l1 = "No estoy autorizado para responder a tales preguntas. Si está genuinamente interesado en el propósito de mi trabajo para el inquisidor, le recomendaría dirigirse directamente a él en Santiago, para obtener aclaraciones. Usted es un oficial, seguramente tiene conocimiento de secretos militares y de servicio. Lo único que puedo decirle es que estoy investigando las circunstancias de un naufragio de un barco español.";
 			link.l1.go = "patrol_2";
 		break;
 		
 		case "patrol_2":
-			dialog.text = "Mis disculpas una vez más, Monsieur. No me atreveré a retrasarlo más... ¡ah, un momento! ¿Acabo de ver la hoja de un acero frío o fue solo mi imaginación? ¡Qué daga tan interesante tienes! ¿Puedes mostrármela?";
-			link.l1 = "Asegúrate de no olvidar devolverlo. Es muy importante para mí.";
+			dialog.text = "Mis disculpas una vez más, monsieur. No me atreveré a retrasarlo más... ¡ah, un momento! ¿Acabo de ver la hoja de un acero frío, o fue solo mi imaginación? ¡Qué daga tan interesante tienes! ¿Puedes mostrármela?";
+			link.l1 = "Asegúrate de no olvidar devolverla. Es muy importante para mí.";
 			link.l1.go = "patrol_3";
 		break;
 		
 		case "patrol_3":
-			dialog.text = "¡Dios mío! ¡Conozco este puñal, lo vi en uno de los libros de la biblioteca! ¡Este es el puñal del propio Cortés! Está marcado justo aquí... Monsieur, por favor no se niegue. ¡Déjeme tener este puñal! Colecciono armas antiguas y personalizadas y este es simplemente un espécimen increíble. Le pagaré bien por él.";
-			link.l1 = "Señor, este puñal no está en venta. Lo recibí como un regalo y no tengo intención de venderlo a nadie. Devuélvamelo, por favor.";
+			dialog.text = "¡Dios mío! ¡Conozco este puñal, lo vi en uno de los libros de la biblioteca! ¡Este es el puñal del propio Cortés! Está marcado justo aquí... Monsieur, por favor no se niegue. ¡Déjeme tener este puñal! Colecciono armas antiguas y personalizadas, y este es simplemente un objeto increíble. Le pagaré bien por él.";
+			link.l1 = "Señor, este puñal no está en venta. Lo recibí como un regalo, y no tengo intención de venderlo a nadie. Devuélvamelo, por favor.";
 			link.l1.go = "patrol_4";
 		break;
 		
@@ -51,8 +51,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patrol_5":
-			dialog.text = "Eh, qué lástima... Está bien, toma tu valioso. No me atreveré a molestarte más. ¡Buena suerte!";
-			link.l1 = "Todo lo mejor, oficial.";
+			dialog.text = "Eh, qué lástima... Está bien, toma tu valioso tesoro. No me atreveré a molestarte más. ¡Buena suerte!";
+			link.l1 = "Todo lo mejor para usted, oficial.";
 			link.l1.go = "patrol_6";
 		break;
 		
@@ -72,37 +72,37 @@ void ProcessDialogEvent()
 		case "shore":
 			PlaySound("Voice\Spanish\Sharlie\Diego De Montoya.wav");
 			dialog.text = "¡Basta! Quiero hablar con él...";
-			link.l1 = "Entonces, veo al propio Diego de Montoya justo frente a mí... Pero disculpe, señor. Nos hemos conocido antes, ¿verdad? Ah, sí, es cierto. Trinidad, en el faro local. Pero estoy seguro de que allí se hacía llamar de otra manera...";
+			link.l1 = "Entonces, veo al propio Diego de Montoya justo frente a mí... Pero disculpe, señor. Nos hemos visto antes, ¿verdad? Ah, sí, es cierto. Trinidad, en el faro. Pero estoy seguro de que allí se hacía llamar de otra manera...";
 			link.l1.go = "shore_1";
 		break;
 		
 		case "shore_1":
-			dialog.text = "Vuestra memoria os sirve bien, señor. Bueno, no sois el único capaz de encender intrigas y librar guerras entre bastidores. Estoy bien informado de vuestro deseo inquebrantable de verme. Vaya, parece que vuestro deseo se ha hecho realidad.";
+			dialog.text = "Su memoria le sirve bien, señor. Bueno, no eres el único capaz de encender intrigas y librar guerras entre bastidores. Estoy bien informado de su deseo inquebrantable de verme. Vaya, parece que su deseo se ha hecho realidad.";
 			link.l1 = "Este no era exactamente el tipo de encuentro que esperaba, señor.";
 			link.l1.go = "shore_2";
 		break;
 		
 		case "shore_2":
 			dialog.text = "Bueno, es lo que es. Pero te daré una oportunidad de salir de aquí con vida si me das tu daga.";
-			link.l1 = "¿Tu pasión por coleccionar rarezas realmente te ha llevado tan lejos por las cañerías, caballero, que has tenido que preparar una trampa tan bien pensada para mí?  Oh, no lo creo. ¿El Guardián de la Verdad te mantiene trotando o estoy muy equivocado?";
+			link.l1 = "¿Tu pasión por coleccionar rarezas realmente te ha llevado tan lejos por las cañerías, caballero, que has tenido que preparar una trampa tan bien pensada para mí?  Oh, no lo creo. ¿El Guardián de la Verdad te mantiene trotando, o estoy muy equivocado?";
 			link.l1.go = "shore_3";
 		break;
 		
 		case "shore_3":
-			dialog.text = "No tengo ni idea de lo que estás hablando. La daga debe regresar a donde pertenece y eso es todo lo que necesitas saber. No quisiste entregarla por oro, así que ahora la entregarás por tu propia vida.";
-			link.l1 = "¿De verdad creéis, señor, que voy a creer en lo que acabáis de decirme? Ya habéis decidido que no saldré de esta bahía, ¿verdad?";
+			dialog.text = "No tengo ni idea de lo que estás hablando. La daga debe regresar a donde pertenece, y eso es todo lo que necesitas saber. No quisiste entregarla por oro, así que ahora la entregarás por tu propia vida.";
+			link.l1 = "¿De verdad piensas, que voy a creer en lo que acabas de decirme? Ya has decidido que no saldré de esta bahía, ¿verdad?";
 			link.l1.go = "shore_4";
 		break;
 		
 		case "shore_4":
 			dialog.text = "¿Y qué si te doy mi palabra?";
-			link.l1 = "La palabra para un 'comedor de ranas'? Hm...";
+			link.l1 = "¿La palabra de un 'comedor de ranas'? Hm...";
 			link.l1.go = "shore_5";
 		break;
 		
 		case "shore_5":
-			dialog.text = "Monsieur, te doy una última oportunidad. O entregas la daga que me interesa o saquearé tu cadáver en unos minutos. La resistencia es inútil, tenemos una ventaja abrumadora en número.";
-			if (CheckAttribute(pchar, "questTemp.Guardoftruth.SanAntonio")) link.l1 = "Me has sorprendido, señor, eso seguro. ¿De verdad crees que soy un imbécil tan cabezota que metería la cabeza en las fauces de un tiburón sin preocuparme de enganchar mi arpón? ¡Chicos, mátenlos!";
+			dialog.text = "Monsieur, te doy una última oportunidad. O entregas la daga que me interesa, o saquearé tu cadáver en unos minutos. La resistencia es inútil, tenemos una ventaja abrumadora en número.";
+			if (CheckAttribute(pchar, "questTemp.Guardoftruth.SanAntonio")) link.l1 = "Me has sorprendido, eso seguro. ¿De verdad crees que soy un imbécil tan cabezota que metería la cabeza en las fauces de un tiburón sin preocuparme de enganchar mi arpón? ¡Chicos, mátenlos!";
 			else link.l1 = "¡El verdadero poder no está en los números, sino en la habilidad, señor!";
 			link.l1.go = "shore_6";
 		break;

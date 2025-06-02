@@ -20,7 +20,7 @@ void SantaMisericordia_init()
 	ChangeCrewExp(chref, "Cannoners", 100);
 	ChangeCrewExp(chref, "Soldiers",  100); 
 	LAi_SetHP(chref, 200 + makeint(pchar.rank) * 2, 200 + makeint(pchar.rank) * 2);
-	SelAllPerksToChar(chref, true);
+	SetAllPerksToChar(chref, true);
 	chref.name = GetConvertStr("Cap_Name", LangFile);
 	chref.lastname = GetConvertStr("Cap_lastname", LangFile);
 	UpgradeShipParameter(chref, "SpeedRate");	//апгрейдить скорость
@@ -182,6 +182,8 @@ void SantaMisericordia_ToCity(string sChar)
     PChar.quest.SantaMisericordia_toMap.win_condition.l1.date.month = GetAddingDataMonth(0, 0, Qty);
     PChar.quest.SantaMisericordia_toMap.win_condition.l1.date.year  = GetAddingDataYear(0, 0, Qty);
     PChar.quest.SantaMisericordia_toMap.function					= "SantaMisericordia_toMap";
+	
+	DeleteQuestCheck("SantaMisericordia_MapRelease");
 	
 	ref sld = &characters[GetCharacterIndex(sChar)];
 	sld.quest = "InCity"; //флаг кэпа ходит по городу
@@ -359,6 +361,55 @@ void SantaMisericordia_ToMap(string sQuest)
 		DeleteAttribute(sld, "quest.SantaMisericordia");
 		LAi_CharacterEnableDialog(sld);
 	}
+}
+
+void CheckSantaMisericordia()
+{
+	if(CharacterIsAlive("SantaMisericordia_cap"))
+	{
+		ref sld = CharacterFromID("SantaMisericordia_cap")
+		if(CheckAttribute(sld,"quest") && sld.quest == "InMap")
+		{
+			//проверяем на карте
+			bool bAtMap = false;
+			aref encs;
+
+			makearef(encs, worldMap.encounters);
+
+			int num = GetAttributesNum(encs);
+			aref enc;
+			
+			for (int i = 0; i < num; i++)
+			{
+				enc = GetAttributeN(encs, i);
+				if(CheckAttribute(enc, "quest.chrID") && enc.quest.chrID == "SantaMisericordia_cap")
+				{
+					bAtMap = true;
+				}
+			}
+			// на карте нет, но и атрибут "в порту" отсутствует
+			if(!bAtMap)
+			{
+				SantaMisericordia_ToCity("SantaMisericordia_cap");
+			}
+			else
+			{
+				if(CheckQuestCondition("SantaMisericordia_MapRelease"))
+				{
+					Map_ReleaseQuestEncounter("SantaMisericordia_cap");
+				}
+				else
+				{
+					SetFunctionTimerCondition("SantaMisericordia_MapRelease", 0, 0, 31, false);
+				}
+			}
+		}
+	}
+}
+
+void SantaMisericordia_MapRelease(string qName)
+{
+	
 }
 
 void SantaMisericordia_fromMapBattle(string sChar)

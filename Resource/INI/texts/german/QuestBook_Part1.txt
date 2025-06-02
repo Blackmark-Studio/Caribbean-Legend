@@ -123,7 +123,7 @@ Erfolg! Aber wieder einmal sind wir in den Händen des Sturms. Unser Rumpf ist b
 Karibik Chroniken - Die Legende von Kapitän Butcher
 #TEXT	1
 
-Es ist unbekannt, woher dieser grausame und rücksichtslose Pirat kam. Manche hielten ihn für einen Teufel, andere bewunderten seine Tapferkeit und sein Glück, das es ihm ermöglichte, auf seiner Fregatte 'Neptun' jeder Verfolgung zu entgehen. Sein Name war in allen Tavernen des Archipels bekannt. Butcher verschonte niemanden. Weder seine Männer noch seine Feinde, aber seine Mannschaft war immer voll, denn neue Halsabschneider waren immer willkommen. Nur der Kapitän, sein Quartiermeister Jacob Jackman, Bootsmann Henry the Hangman und seine rothaarige Schönheit Jessica waren unbesiegbar. Jessica begleitete Butcher bei jedem Raubzug. Es hieß, sie sei eine Tochter von Oliver Rose, einem reichen Plantagenbesitzer aus Barbados.
+Es ist unbekannt, woher dieser grausame und rücksichtslose Pirat kam. Manche hielten ihn für einen Teufel, andere bewunderten seine Tapferkeit und sein Glück, das es ihm ermöglichte, auf seiner Fregatte 'Neptune' jeder Verfolgung zu entgehen. Sein Name war in allen Tavernen des Archipels bekannt. Butcher verschonte niemanden. Weder seine Männer noch seine Feinde, aber seine Mannschaft war immer voll, denn neue Halsabschneider waren immer willkommen. Nur der Kapitän, sein Quartiermeister Jacob Jackman, Bootsmann Henry the Hangman und seine rothaarige Schönheit Jessica waren unbesiegbar. Jessica begleitete Butcher bei jedem Raubzug. Es hieß, sie sei eine Tochter von Oliver Rose, einem reichen Plantagenbesitzer aus Barbados.
 Diese rothaarige Dämonin war eine Art Glücksbringer für Butcher. Doch eines Tages verliebte sich unser Kapitän. In die Tochter des berühmten Nicolas Sharp. Er war zu diesem Zeitpunkt längst tot.
 Also beschloss Butcher, sich seiner treuen Assistentin zu entledigen. Entweder nahm er wirklich ein hohes Lösegeld für sie, oder er schickte sie einfach weg.... Aber niemand hat die rothaarige Jess seitdem auf seiner Fregatte gesehen.
 Jeder zweite Pirat auf der Isla Tesoro war in die junge Schönheit Beatrice Sharp verliebt, und jeder erste Pirat verehrte sie und war bereit, sein Leben für sie zu geben. Kurz gesagt, sie hatte keinen Mangel an geeigneten Verehrern, und auch ihr Bruder Blaze hatte die Qual der Wahl. Es ist nicht bekannt, warum Butcher ihm nicht gefiel, aber es gab eine schwarze Ratte zwischen ihnen. Also musste Butcher Beatrice direkt vor der Nase ihres Bruders entführen. Was hätte er sonst tun können? Allerdings heißt es auch, dass niemand Beatrice entführt hat und sie selbst mit Butcher durchgebrannt ist, weil sie sich in den hübschen Kapitän verliebt hatte. Nun, das kann jeder denken, wie er will.
@@ -138,8 +138,8 @@ Doch die Maske freute sich nicht lange über ihren Sieg. Am Tag nach seiner Hinr
 Karibik Chroniken - Der maskierte Mann
 #TEXT	1
 
-... am 17. Juni 1634 verließ die Fregatte 'Neptun' die Stadt Glasgow in Schottland in Richtung Bridgetown.
-Die 'Neptun' beförderte nicht nur Passagiere, Briefe und Waffen für die Garnison der Insel, sondern transportierte auch Sträflinge für die Plantagen von Barbados.
+... am 17. Juni 1634 verließ die Fregatte 'Neptune' die Stadt Glasgow in Schottland in Richtung Bridgetown.
+Die 'Neptune' beförderte nicht nur Passagiere, Briefe und Waffen für die Garnison der Insel, sondern transportierte auch Sträflinge für die Plantagen von Barbados.
 Diese Militärfregatte war nicht für den Transport von Sklaven ausgelegt, die armen Gefangenen wurden in dem kleinen Frachtraum ohne Frischluft gehalten und mit einer einzigen Kette gefesselt.
 Die Bedeutung dieser Verbrecher war der Hauptgrund, warum ein so mächtiges Kriegsschiff ausgewählt wurde, um sie auszuliefern. Sie alle waren an einem Staatsstreich beteiligt. Einer von ihnen war wirklich bemerkenswert. Lawrence, ein junger Adliger aus London. Athletisch, kühne Augen. Sein Anwesen wurde verwüstet und verkauft. Sein Vater, ein ehemaliger Korsar von Providence, ein wohlhabender Grundbesitzer und Mitglied des britischen Parlaments, hatte den Wahnsinn des Bürgerkriegs nicht überstanden und war gestorben. Diese Tatsache veranlasste Lawrence, seine politische Einstellung zu ändern und sich anderen adligen Verschwörern gegen den Lord Protector anzuschließen.
 Kapitän Joshua Leadbeater war nicht glücklich darüber, ein Kerkermeister zu sein, doch die Anwesenheit der hübschen und jungen Passagierin Jessica Rose hellte die eintönige Reise auf. Als Tochter eines reichen Plantagenbesitzers aus Barbados eroberte sie das Herz des strengen Kapitäns im Sturm. Obwohl es seine erste Reise zu den Westindischen Inseln war, vergingen die zwei Monate für ihn wie im Flug.
@@ -273,7 +273,7 @@ Ich würde meine Seele für ihr Stöhnen am Sterbebett verkaufen.
 Nur die Glut raucht in den Ruinen der Hoffnung...
 Finde ihr Herz, mein treues Flamberge!
 **********
-... ich kann die Masten meiner 'Neptun' sehen. Sie hat viel einstecken müssen, aber für heute ist sie gut genug für mich. Bald werde ich sie sehen, die kleine Hure, die mir alles genommen hat.
+... ich kann die Masten meiner 'Neptune' sehen. Sie hat viel einstecken müssen, aber für heute ist sie gut genug für mich. Bald werde ich sie sehen, die kleine Hure, die mir alles genommen hat.
 **********
 ...ich bin ruhig! Ich bin völlig ruhig! Lasst uns Rache üben!
 
@@ -1346,9 +1346,9 @@ Roger, lies sorgfältig und befolge diese Anweisungen auf den Buchstaben genau.
 Ein verrückter britischer Schatzjäger schnüffelt in der Karibik herum. Wenn du rote Röcke mit Schaufeln siehst, lauf, als wäre der Teufel selbst hinter dir her - sie kennen keine Gnade gegenüber Rivalen. Räume alle unsere Verstecke aus, sammle alles Wertvolle ein und mach dich dann auf nach Antigua, wo unser Mann wartet - ich habe alles arrangiert. Wir werden beim Waschen etwas Gold verlieren, aber der Rest wird sauber wie ein Pfiff herauskommen. Halte dich an britische Gebiete - dieser Blackwood wird es nicht wagen, dort sein Gesicht zu zeigen. Du kannst arbeiten, ohne über deine Schulter schauen zu müssen. Keine Ahnung, welchen Groll sie gegen ihn hegen, aber sein Schiff legt nur in französischen Häfen an.
 #TEXT	23
 ************************************************************
-Jan, wenn du dies liest, dann wisse - meine Rache bleibt unerfüllt, selbst hier in der Karibik. Unsere Beute ist nicht hier. Die Erinnerung an das Schwert meines Vaters verblasst in meinem Gedächtnis, und das Gesicht unseres Feindes verschwindet im Schatten.
+Hans, wenn du dies liest, dann wisse - meine Rache bleibt unerfüllt, selbst hier in der Karibik. Unsere Beute ist nicht hier. Die Erinnerung an das Schwert meines Vaters verblasst in meinem Gedächtnis, und das Gesicht unseres Feindes verschwindet im Schatten.
 Wir haben viel zusammen durchgestanden, alter Freund, doch meine Wut bleibt ungezähmt. Hätte ich die Konsequenzen vorausgesehen, hätte ich mit größerem Eifer nach Frieden gestrebt. Vielleicht wären weniger Seelen über die letzte Schwelle gegangen. Sag Teresa, dass ich sie noch immer liebe und meine Schwüre gehalten habe, obwohl ich die Heimreise nie überleben werde. Diese Truhe enthält alles, was ich durch Blut und Stahl verdient habe, obwohl der Geschmack müßigen Komforts längst zu Asche geworden ist. Vielleicht kannst du ihn noch genießen.
-I.
+H.
 #TEXT	24
 ************************************************************
 René, die Karibik wird von Tag zu Tag gefährlicher. Bald wird unsere Art hier keinen Hafen mehr finden. Du und ich waren unter den ersten, die von Cromwells neuer Schwadron erfuhren, angeführt von ihrem Kronjuwel - der Victory. Sie wollen diese wilden Inseln zähmen und die Niederländer in ihre Schranken weisen, aber mein Bauchgefühl sagt mir, dass dies für alle Beteiligten schlecht enden wird.
@@ -1419,7 +1419,7 @@ P.S. Dort, wo die Wellen mit dem Ufer sprechen, findest du eine Tür, hinter der
 
 #TEXT 5
 ************************************************************
-Meine Liebe, du hast also endlich mein Geschenk gefunden. Ich möchte, dass alles, was mir gehörte, dir zufällt. Möge es dir helfen, dieses Kapitel ein für alle Mal zu schließen. Und mich … lass mich einfach los. Trage meinen Schatten nicht weiter mit dir.
+Meine Liebe, du hast also endlich mein Geschenk gefunden. Ich möchte, dass alles, was mir gehörte, dir zufällt. Möge es dir helfen, dieses Kapitel ein für alle Mal zu schließen. Und mich ... lass mich einfach los. Trage meinen Schatten nicht weiter mit dir.
 Ich wollte dich zu meiner Frau machen, aber das Schicksal entschied anders. Der Tod meiner Eltern stellte alles auf den Kopf, und unsere Hochzeit blieb ein unerfüllter Traum. Ich habe dir nie gesagt, wie sehr mich das verletzt hat – mehr als alles andere wollte ich dich glücklich sehen.
 Lebe, als hätte es diesen Schmerz nie gegeben. Als würde alles erst beginnen. In Liebe,
 dein James.
@@ -1498,3 +1498,54 @@ Heute habe ich Matrosen in der Taverne belauscht. "Blackwood ist jetzt reicher a
 ***************
 Diese Expedition wird wahrscheinlich meine letzte sein. Von nun an werde ich nach der neuen Charta arbeiten - keine Rekrutierung mehr und keine Zeitverschwendung in Tavernen. Diese Insel wird meine Festung, und der Raum darum herum - mein Nährgebiet. Lustig - einst war ich stolz darauf, wie ich vom Boden der Gesellschaft aufgestiegen bin. Jetzt weiß ich - man muss noch tiefer fallen, um wirklich hoch aufzusteigen.
 Warte nur auf mich.
+
+#QUEST SharlieTutorial_Journal
+Tagebuch des Kapitäns 'Ulysse'
+#TEXT 1
+19. September 1654  
+Wir sind planmäßig in die Gewässer des Mare Caribaeum eingelaufen. Der Wind steht günstig, keine Zwischenfälle.
+
+20. September 1654  
+Unerwartetes Treffen auf See mit einem kastilischen Kollegen: Habe die Karavelle 'La Pícara' gesichtet, unterwegs nach San José über Dominica. Ganz schön weit bist du gekommen, Lorenzo.
+
+21. September 1654  
+Der Wind bleibt günstig. Matrose Paul Lourie hat sich mit seinen Kameraden gestritten, also gibt Alonso ihm jetzt die härtesten Arbeiten. Ich sollte diese Angelegenheit nicht vergessen.
+
+22. September 1654  
+Der Kurierlugger 'Augustin' aus dem Hafen von Capsterville hat eine Zollinspektion unseres Schiffes durchgeführt. Unsere Kolonialbehörden misstrauen einander so sehr, dass der Generalgouverneur nicht zögert, wichtige Handelsschiffe noch vor dem Einlaufen in den Zielhafen abzufangen und zu durchsuchen.  
+Nach Sichtung der Passagierliste befahl mir der Leutnant der “Augustin”, auf der Stelle zu treiben und auf weitere Anweisungen zu warten. Da wir nur einen Passagier an Bord haben, ist es nicht schwer zu erraten, wer mir all diesen Ärger eingebrockt hat.  
+Zum Glück mussten wir ihnen nicht nach Capsterville folgen, aber dieser Unsinn wird mich trotzdem eine Menge Geld kosten.  
+Ich sollte mit diesem Gecken sprechen und ihn mal ordentlich durchrütteln.
+
+#QUEST SharlieTutorial_ListOfSailors
+Notiz des Zahlmeisters
+#TEXT 1
+Auszuzahlen:  
+Obermatrose Alonso Pimentel: 50 Dublonen  
+Matrose Henri Chaussone: 35 Dublonen  
+Matrose Paul Lourie: 25 Dublonen (verfluchter Idiot hätte beinahe alles ruiniert!)  
+Einzufordern:  
+Von Matrose Germain Chat: 7 Pesos für Papier, das Chantals Katze ruiniert hat  
+Vom Kapitän Devegni: 2000 Pesos für medizinische Instrumente  
+Vom Passagier Charles de Maure: 30 Pesos für ein verdorbenes Fass Frischwasser und 200 Pesos für ein beschädigtes Ankertau
+
+#TEXT 2
+Auszuzahlen:  
+Obermatrose Alonso Pimentel: 50 Dublonen  
+Matrose Henri Chaussone: 35 Dublonen  
+Matrose Paul Lourie: 25 Dublonen (verfluchter Idiot hätte beinahe alles ruiniert!)  
+Einzufordern:  
+Von Matrose Germain Chat: 7 Pesos für Papier, das Chantals Katze ruiniert hat  
+Vom Kapitän Devegni: 2000 Pesos für medizinische Instrumente  
+Vom Passagier Charles de Maure: 30 Pesos für ein verdorbenes Fass Frischwasser
+
+#QUEST GS_Letters
+Briefe, die das wahre Gesicht eines Beamten aus Belize enthüllen
+#TEXT 1
+***************
+Fleute "Bat". Abfahrt am 14. Handelsroute Belize-Port Royal. Minimale Sicherheit. Transportieren Zucker. Meine zwanzig Prozent werden an die Kontakte weitergegeben.
+***************
+Pinasse "Wavebreaker". Abfahrt am 26. Handelsroute Belize-Capsterville. Ebenholz. Sie sind mit feuchtem Schießpulver aufgebrochen. Vergesst meinen Anteil nicht.
+***************
+Galeone "Silver Wind". Abfahrt am 18. Handelsroute Belize-Blueveld. Sklaven! Große Beute, verzögert die Versendung meines Anteils nicht. Es wird keine Begleitung geben.
+***************

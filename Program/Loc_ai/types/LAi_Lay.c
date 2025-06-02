@@ -24,15 +24,21 @@ void LAi_type_lay_Init(aref chr)
 //Процессирование типа персонажа
 void LAi_type_lay_CharacterUpdate(aref chr, float dltTime)
 {
-	string snd = "PEOPLE\snore.wav";
+	if(bGlobalTutor && !CheckAttribute(pchar, "questTemp.SharlieTutorial_SailorSnore"))
+	{
+		LAi_CharacterPlaySound(chr, "snore");
+		pchar.questTemp.SharlieTutorial_SailorSnore = true;
+		DoQuestFunctionDelay("SharlieTutorial_SailorSnore", 4.0);
+		return;
+	}
 	if(!CheckAttribute(chr,"InDialog"))
 	{
-		if(rand(300) == 123) { LAi_CharacterPlaySound(chr, snd); }
+		if(rand(300) == 123) { LAi_CharacterPlaySound(chr, "snore"); }
 		else
 		{
 			if(FindNearCharacters(chr, 2.5, -1.0, 30.0, 0.1, false, false) > 0)
 			{
-				if(rand(100) == 10) { LAi_CharacterPlaySound(chr, snd); }
+				if(rand(100) == 10) { LAi_CharacterPlaySound(chr, "snore"); }
 			}
 		}
 	}

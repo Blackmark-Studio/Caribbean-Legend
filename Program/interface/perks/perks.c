@@ -563,4 +563,29 @@ bool bPerksMaxShip(ref chr)
 	
 	return false;
 }
+
+bool HaveAllPerks(ref chr, string type) // any, self, ship
+{
+	string perkName;
+	aref arPerksRoot;
+	makearef(arPerksRoot,ChrPerksList.list);
+	int perksQ = GetAttributesNum(arPerksRoot);
+
+    bool bHero = (sti(chr.index) == GetMainCharacterIndex());
+    bool bAny  = (type == "any");
+
+	for(int i = 0; i < perksQ; i++)
+	{
+		perkName = GetAttributeName(GetAttributeN(arPerksRoot,i));
+        if(!CheckAttribute(arPerksRoot, perkName + ".BaseType")) continue;   // Предыстории
+		if(!bAny && ChrPerksList.list.(perkName).BaseType != type) continue; // Не тот тип
+        if(CheckAttribute(arPerksRoot, perkName + ".HeroType")) continue;    // Личные спецперки
+        if(!bHero && CheckAttribute(arPerksRoot, perkName + ".PlayerOnly")) continue; // Не ГГ
+        if(bHero && CheckAttribute(arPerksRoot, perkName + ".NPCOnly")) continue;     // Не НПЦ
+        if(CheckAttribute(arPerksRoot, perkName + ".Hiden")) continue;       // Скрытые
+
+		if(!CheckCharacterPerk(sld, perkName)) return false; // Перк доступен, но не прокачан
+	}
+    return true;
+}
 // <-- подсчёт перков для интерфейса

@@ -731,7 +731,12 @@ void TransactionOK()
 		if(refStore.Colony == "none" && CheckAttribute(refShipChar,"money"))
 		{			
 			refShipChar.money = sti(refShipChar.money) - moneyback;			
-		}	
+		}
+		else if(HasShipTrait(pchar, "trait03") && moneyback >= 25000)
+		{
+			ref rColony = GetColonyRefByID(refStore.Colony);
+			ChangeCharacterNationReputation(pchar, sti(rColony.nation), moneyback/25000);
+		}
 		Statistic_AddValue(Pchar, "Money_get", moneyback);
 		Achievment_SetStat(39, moneyback);
 		if(iCurGoodsIdx == GOOD_SLAVES) Achievment_SetStat(43, nTradeQuantity);

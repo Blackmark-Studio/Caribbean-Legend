@@ -43,8 +43,17 @@ void locCameraSetRadius(float fRadius)
 //Set camera follow mode
 bool locCameraFollow()
 {
+	return locCameraFollowEx(false);
+}
+
+bool locCameraFollowEx(bool isTeleport)
+{
 	if(IsEntity(&locCamera) == 0) return false;
-	bool res = SendMessage(&locCamera, "l", MSG_CAMERA_FOLLOW);
+	bool res;
+	if(isTeleport)
+		res = SendMessage(&locCamera, "ll", MSG_CAMERA_FOLLOW, isTeleport);
+	else
+		res = SendMessage(&locCamera, "l", MSG_CAMERA_FOLLOW);
 	locCameraCurMode = LOCCAMERA_FOLLOW;
 	return res;
 }
@@ -185,6 +194,29 @@ bool locCameraRotateAroundHero(float _offsetX, float _offsetY, float _offsetZ, f
 	if(iLocCameraCurState == -1) iLocCameraCurState = 0;
 	
 	return true;
+}
+
+
+bool locCameraSetSpeedpoint(int spNum, float accel, float timer)
+{
+	if(iLocCameraCurState == -1)
+		return false;
+	
+	ref curCameraState = &objLocCameraStates[iLocCameraCurState];
+	string sPoint = "point" + spNum;
+	curCameraState.speedpoints.(sPoint).timer = timer;
+	curCameraState.speedpoints.(sPoint).accel = accel * GetRealDeltaTime() / timer;
+}
+
+void locCameraSetCurSpeedpoint(int spNum)
+{
+	if(iLocCameraCurState == -1)
+		return;
+	ref curCameraState = &objLocCameraStates[iLocCameraCurState];
+	if(!CheckAttribute(curCameraState, "speedpoints"))
+		return;
+	
+	curCameraState.speedpoints.cur = spNum;
 }
 
 // Полет камеры от начальных точек _startX ... _startZ до конечных точек _endX ... _endZ
@@ -387,6 +419,11 @@ void locCameraUpdate()
 	float rotateRadius, rotateAngle;
 	float time; // Здесь время дробное, т.к. учитывается ещё ускорение времени
 	
+	float accel = 0.0;
+	float kSpeedTimer = -1.0;
+	string sPoint = "";
+	float dltTime = GetRealDeltaTime();
+	
 	float timeScale = 1 + TimeScaleCounter * 0.25; // Текущее ускорение времени
 	
 	if(iLocCameraCurState != -1 && !sti(InterfaceStates.Launched))
@@ -399,6 +436,13 @@ void locCameraUpdate()
 			
 			bool bSetPoint = false;
 			
+			if(CheckAttribute(curCameraState, "speedpoints.cur"))
+			{
+				sPoint = "point" + curCameraState.speedpoints.cur;
+				accel = stf(curCameraState.speedpoints.(sPoint).accel);
+				kSpeedTimer = stf(curCameraState.speedpoints.(sPoint).timer);
+			}
+			
 			switch(curCameraState.type)
 			{
 				case LOCCAMERA_ROTATE:
@@ -408,6 +452,7 @@ void locCameraUpdate()
 					// X rotation
 					if(stf(curCameraState.rotateX) != 0.0)
 					{
+						curCameraState.rotateX = stf(curCameraState.rotateX) + accel * dltTime;
 						curCameraState.curCameraX = charX + sin(rotateAngle) * rotateRadius + stf(curCameraState.offsetX);
 						curCameraState.curCameraZ = charZ + cos(rotateAngle) * rotateRadius + stf(curCameraState.offsetZ);
 						curCameraState.angle = rotateAngle + stf(curCameraState.rotateX) * timeScale;
@@ -421,6 +466,7 @@ void locCameraUpdate()
 					// Y rotation
 					if(stf(curCameraState.rotateY) != 0.0)
 					{
+						curCameraState.rotateY = stf(curCameraState.rotateY) + accel * dltTime;
 						curCameraState.curCameraY = charY + cos(rotateAngle) * rotateRadius + stf(curCameraState.offsetY);
 						curCameraState.curCameraX = charX + sin(rotateAngle) * rotateRadius + stf(curCameraState.offsetX);
 						curCameraState.angle = rotateAngle + stf(curCameraState.rotateY) * timeScale;
@@ -432,6 +478,9 @@ void locCameraUpdate()
 				break;
 				
 				case LOCCAMERA_FLYTOPOS:
+					curCameraState.speedX = stf(curCameraState.speedX) + accel * dltTime;
+					curCameraState.speedY = stf(curCameraState.speedY) + accel * dltTime;
+					curCameraState.speedZ = stf(curCameraState.speedZ) + accel * dltTime;
 					curCameraState.curCameraX = stf(curCameraState.curCameraX) + stf(curCameraState.speedX) * timeScale;
 					curCameraState.curCameraY = stf(curCameraState.curCameraY) + stf(curCameraState.speedY) * timeScale;
 					curCameraState.curCameraZ = stf(curCameraState.curCameraZ) + stf(curCameraState.speedZ) * timeScale;
@@ -475,6 +524,21 @@ void locCameraUpdate()
 			{
 				time -= 1 * timeScale; // Учет ускорения времени
 				curCameraState.time = time;
+			}
+			
+			if(kSpeedTimer > -1.0)
+			{
+				kSpeedTimer -= dltTime;
+				if(kSpeedTimer <= 0.0)
+				{
+					sPoint = "point" + (sti(curCameraState.speedpoints.cur) + 1);
+					if(CheckAttribute(curCameraState, "speedpoints."+sPoint))
+						curCameraState.speedpoints.cur = sti(curCameraState.speedpoints.cur) + 1;
+					else
+						DeleteAttribute(curCameraState, "speedpoints");
+				}
+				else
+					curCameraState.speedpoints.(sPoint).timer = kSpeedTimer;
 			}
 			
 			if(time <= 0.0 && time != -1.0)

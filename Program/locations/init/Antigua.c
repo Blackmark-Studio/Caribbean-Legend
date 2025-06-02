@@ -178,6 +178,12 @@ int LocationInitAntigua(int n)
 	locations[n].reload.l14.autoreload = "0";
 	locations[n].reload.l14.label = "Fleetwood_House";
 	locations[n].reload.l14.close_for_night = 1;
+	
+	locations[n].reload.l15.name = "houseS3";
+	locations[n].reload.l15.go = "SentJons_houseS3";
+	locations[n].reload.l15.emerge = "reload1";
+	locations[n].reload.l15.autoreload = "0";
+	locations[n].reload.l15.label = "House";
 
     // --> Комоны, загрушки. Номера с начинаются с 20.
 	locations[n].reload.l20.name = "houseF2";
@@ -221,12 +227,6 @@ int LocationInitAntigua(int n)
 	locations[n].reload.l27.emerge = "reload1";
 	locations[n].reload.l27.autoreload = "0";
 	locations[n].reload.l27.label = "House";
-
-	locations[n].reload.l29.name = "houseS3";
-	locations[n].reload.l29.go = "CommonStoneHouse";
-	locations[n].reload.l29.emerge = "reload1";
-	locations[n].reload.l29.autoreload = "0";
-	locations[n].reload.l29.label = "House";
 
 	locations[n].reload.l30.name = "houseF4";
 	locations[n].reload.l30.go = "CommonRoom_MH5";
@@ -983,6 +983,98 @@ int LocationInitAntigua(int n)
 	//Reload map
 	locations[n].reload.l1.name = "reload1";
 	locations[n].reload.l1.go = "SentJons_houseSP3";
+	locations[n].reload.l1.emerge = "reload2";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "room";
+	LAi_LocationFightDisable(&locations[n], true);
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////
+	/////Дом Томаса Моррисона
+	//////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "SentJons_houseS3";
+	locations[n].filespath.models = "locations\inside\StoneHouse";
+	locations[n].id.label = "House";
+	locations[n].image = "loading\inside\stonehouse.tga";
+	//Town sack
+	locations[n].townsack = "SentJons";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "SentJons";
+	locations[n].islandId = "Antigua";
+	//Models
+	//Always
+	locations[n].models.always.tavern = "StoneHouse";
+	locations[n].models.always.tavern.level = 65538;
+	locations[n].models.always.window = "StoneHouse_window";
+	locations[n].models.always.window.tech = "LocationWindows";
+	locations[n].models.always.window.level = 65539;
+    locations[n].models.day.locators = "StoneHouse_lPrivate";
+    locations[n].models.night.locators = "StoneHouse_lPrivateN";
+
+	locations[n].models.always.back = "..\inside_back";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	locations[n].models.day.charactersPatch = "StoneHouse_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "StoneHouse_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "SentJons_town";
+	locations[n].reload.l1.emerge = "houseS3";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Street";
+	
+	locations[n].reload.l2.name = "reload2";
+	locations[n].reload.l2.go = "SentJons_houseS3_room";
+	locations[n].reload.l2.emerge = "reload1";
+	locations[n].reload.l2.autoreload = "0";
+	locations[n].reload.l2.label = "Room";
+	LAi_LocationFightDisable(&locations[n], true);
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////
+	/////Комната в доме
+	//////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "SentJons_houseS3_room";
+	locations[n].id.label = "Room";
+	locations[n].image = "loading\inside\mediumhouse10.tga";
+	//Town sack
+	locations[n].townsack = "";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "SentJons";
+	locations[n].islandId = "Antigua";
+	//Models
+	//Always
+	locations[n].filespath.models = "locations\inside\mediumhouse05";
+	locations[n].models.always.mediumhouse05 = "mediumhouse05";
+	locations[n].models.always.mediumhouse05.level = 65538;
+	locations[n].models.day.locators = "mediumhouse05_locators";
+	locations[n].models.night.locators = "mediumhouse05_Nlocators";
+
+	Locations[n].models.always.mediumhouse05windows = "mediumhouse05_windows";
+	Locations[n].models.always.mediumhouse05windows.tech = "LocationWindows";
+	locations[n].models.always.mediumhouse05windows.level = 65539;
+
+	locations[n].models.always.back = "..\inside_back3";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	Locations[n].models.day.mediumhouse05rand= "mediumhouse05_rand";
+	locations[n].models.day.charactersPatch = "mediumhouse05_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "mediumhouse05_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "SentJons_houseS3";
 	locations[n].reload.l1.emerge = "reload2";
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "room";

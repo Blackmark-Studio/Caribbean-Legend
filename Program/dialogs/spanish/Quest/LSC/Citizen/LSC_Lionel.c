@@ -25,8 +25,8 @@ void ProcessDialogEvent()
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "Saludo, "+GetAddress_Form(NPChar)+"¿Eres un recién llegado aquí?";
-				link.l1 = TimeGreeting()+". Mi nombre es "+GetFullName(pchar)+"Sí, lo soy.";
+				dialog.text = "Saludos, "+GetAddress_Form(NPChar)+". ¿Eres un recién llegado?";
+				link.l1 = TimeGreeting()+". Mi nombre es "+GetFullName(pchar)+". Sí, lo soy.";
 				link.l1.go = "meeting";
 				npchar.quest.meeting = "1";
 			}

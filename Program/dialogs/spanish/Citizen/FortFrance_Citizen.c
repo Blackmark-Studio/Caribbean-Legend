@@ -53,7 +53,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		else
 		{
 			dialog.text = LinkRandPhrase("No, no he oído hablar de él.", "No puedo ayudarte, tengo trabajo que hacer.", "¿Quién? No me suena, no. Debo irme a otra parte.");
-			link.l1 = "Ya veo...  Entonces seguiré mi camino. ";
+			link.l1 = "Ya veo... Entonces seguiré mi camino.";
 			link.l1.go = "exit";
 			npchar.quest.Sharlie = "true";
 		}

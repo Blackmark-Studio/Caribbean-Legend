@@ -1,0 +1,15 @@
+News {1.5.0 BETA}
+News_descr
+{
+************************   Ahoi!   ***********************
+Vielen Dank für die Teilnahme am Beta-Test der Version 1.5.0!
+------------------------------------------------------------------------------------------------
+— Ein neues Spiel ist erforderlich
+— Deaktivieren Sie alle Modifikationen
+— Teilen Sie Ihre Eindrücke in den entsprechenden Discord-Kanälen und Steam-Foren
+}
+
+News_Attention
+{
+
+}

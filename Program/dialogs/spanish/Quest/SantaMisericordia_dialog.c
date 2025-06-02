@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 		
 		case "Alamida_guber_5":
 			dialog.text = "Hum. Sabes, solía pensar de la misma manera. Pero la prisión es demasiado simple. Se necesita algo más... Purificación.";
-			link.l1 = " No te distraeré más de tu trabajo.";
+			link.l1 = "No te distraeré más de tu trabajo.";
 			link.l1.go = "Alamida_guber_6";
 		break;
 		
@@ -164,7 +164,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "¿Cómo te atreves? ¡¿Atacar la 'Santa Misericordia'?! Un barco que lleva la voluntad del rey y... Bueno. Ya que estás aquí, dime - ¿por qué? ¿Por qué elegiste esta locura?";
+				dialog.text = "¿Cómo te atreves? ¡¿Atacar la 'Santa Misericordia'?! Un barco que lleva la voluntad del rey y... Bueno. Ya que estás aquí, dime, ¿por qué? ¿Por qué elegiste esta locura?";
 				link.l1 = "Soy un pirata. Y tu galeón seguramente está lleno de tesoros.";
 				link.l1.go = "Alamida_abordage_Gold";
 				link.l2 = "Qué hermoso barco... Debo poseerlo.";
@@ -539,7 +539,7 @@ void ProcessDialogEvent()
 		
 		case "Alamida_monah_3":
 			dialog.text = "Ah... El diario. Una cosa notable - la palabra escrita. Es como... un camino en la oscuridad. Lleva a donde... espera la revelación. Nuestra parroquia era visitada a menudo por don Fernando. Especialmente en el último año.";
-			link.l1 = "¿Sirves en la parroquia local? ¿Conocías al don Fernando?";
+			link.l1 = "¿Sirves en la parroquia? ¿Conocías al don Fernando?";
 			link.l1.go = "Alamida_monah_4";
 			ChangeCharacterComplexReputation(pchar, "nobility", 2);
 		break;
@@ -617,7 +617,7 @@ void ProcessDialogEvent()
 		
 		case "Alamida_monah_Second_2":
 			dialog.text = "¿Sabes qué tiene de especial esta cripta? Dos almas descansan aquí, unidas por... lazos de sangre. Padre e hijo de Alamida. Uno cayó en manos de los pecadores, el otro... encontró su camino hacia el Señor.";
-			link.l1 = "¿Sirves en la parroquia local? ¿Conocías a don Fernando?";
+			link.l1 = "¿Sirves en la parroquia? ¿Conocías a don Fernando?";
 			link.l1.go = "Alamida_monah_Second_3";
 		break;
 

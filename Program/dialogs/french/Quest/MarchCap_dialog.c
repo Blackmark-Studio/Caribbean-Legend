@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 				case 1: //энкаунтер на глобалке, установка параметров
 					pchar.GenQuest.MarchCap.Startcity = SelectAnyColony(pchar.GenQuest.MarchCap.basecity);
 					pchar.GenQuest.MarchCap.Finishcity = SelectAnyColony2(pchar.GenQuest.MarchCap.basecity, pchar.GenQuest.MarchCap.Startcity);
-					pchar.GenQuest.MarchCap.DaysQty = 5+drand(5);
+					pchar.GenQuest.MarchCap.DaysQty = 5+hrand(5);
 					dialog.text = "J'ai réussi à découvrir que dans "+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+" un petit convoi marchand sous le pavillon de "+NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation))+", deux navires marchands et un navire de garde, vont partir de "+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Startcity+"Gén")+" à "+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Finishcity+"Acc")+" Les marchands ont beaucoup de "+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+" dans leurs cales. Ce serait idiot de ne pas utiliser cette information, capitaine.\nVous et moi pouvons facilement nous occuper des gardes et prendre la cargaison pour nous. Le plus difficile est de les trouver en pleine mer entre ces deux colonies. Alors, vous êtes partant ?";
 					link.l1 = "Cela semble tentant. Je dirais oui!";
 					link.l1.go = "MarchCap_2_1";
@@ -64,7 +64,7 @@ void ProcessDialogEvent()
 				break;
 				
 				case 2: //одиночный пиратский кулсейлор у бухты, установка параметров
-					pchar.GenQuest.MarchCap.Goods = GOOD_GOLD + drand(makeint(GOOD_SILVER - GOOD_GOLD));
+					pchar.GenQuest.MarchCap.Goods = GOOD_GOLD + hrand(makeint(GOOD_SILVER - GOOD_GOLD));
 					pchar.GenQuest.MarchCap.GoodsQty = sti(pchar.rank)*50+170+rand(30);
 					if (sti(pchar.GenQuest.MarchCap.GoodsQty) > 1600) pchar.GenQuest.MarchCap.GoodsQty = 1500+rand(100);
 					pchar.GenQuest.MarchCap.Island = GetRandomIslandId();
@@ -366,7 +366,7 @@ void ProcessDialogEvent()
 int SelectMarchCapGoods1()
 {
 	int iGoods;
-	switch (drand(5))
+	switch (hrand(5))
 	{
 		case 0: iGoods = GOOD_EBONY; break;
 		case 1: iGoods = GOOD_MAHOGANY; break;
@@ -380,13 +380,14 @@ int SelectMarchCapGoods1()
 
 int SelectPirateShipType()
 {
-	int iShip;
+	int iClass = 6;
+	int iRank = sti(pchar.rank);
 	
-	if(sti(pchar.rank) >= 19) iShip = SHIP_LINESHIP;	
-	if(sti(pchar.rank) >= 13 && sti(pchar.rank) < 18) iShip = SHIP_GALEON_H;	
-	if(sti(pchar.rank) >= 8 && sti(pchar.rank) < 12) iShip = SHIP_CORVETTE;
-	if(sti(pchar.rank) >= 5 && sti(pchar.rank) < 8) iShip = SHIP_SCHOONER_W;	
-	if(sti(pchar.rank) < 5) iShip = SHIP_LUGGER + drand(makeint(SHIP_BRIG - SHIP_LUGGER));
+	if(iRank < 6) iClass = 6;
+	if(iRank >= 6 && iRank < 12) iClass = 5;
+	if(iRank >= 12 && iRank < 21) iClass = 4;
+	if(iRank >= 21 && iRank < 30) iClass = 4 - rand(1);
+	if(iRank >= 30) iClass = 2;
 	
-	return iShip;
+	return GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 }

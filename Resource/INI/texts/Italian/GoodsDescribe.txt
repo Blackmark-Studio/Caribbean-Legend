@@ -1,0 +1,390 @@
+﻿newline{
+
+}
+
+Balls {Colpo tondo}
+Balls_descr
+{
+Il tipo di munizioni più economico, più semplice da usare e affidabile. I colpi rotondi vengono generalmente utilizzati per infliggere danni allo scafo di una nave e attaccare le strutture difensive costieri a lungo raggio, ma non sono molto efficaci nel danneggiare l'equipaggio nemico.
+Danno base: scafo - #f.2dannoHull#, vele-#f.2dannoRig#, equipaggio-#f.2dannoCrew#
+}
+
+
+Grapes {Colpo a grappolo}
+Grapes_descr
+{
+Un carico di piccole palline forgiate di piombo o ferro tenute insieme da un sacco di lino.
+Ha una gamma molto breve efficace. Non danneggia molto lo scafo sull'impatto, ma infligge danni devastanti alla troupe nemica. È ampiamente usato nel combattimento navale per ‘ammorbidire’ una nave nemica prima di salire.
+Danno base: scafo - #f.2dannoHull#, vele-#f.2dannoRig#, equipaggio-#f.2dannoCrew#
+}
+
+
+Knippels {Colpo a catena}
+Knippels_descr
+{
+Un proiettile composto da due palle di cannone collegate da una catena di ferro o da una canna. Questa munizione viene utilizzata per danneggiare alberi, longaroni e sartiame.
+Generalmente, la catena ha una bassa efficacia a media e lungo raggio poiché la catena tende a muoversi in modo inaccurato. Hanno una traiettoria imprevedibile e fanno pochissimi danni allo scafo della nave. Tuttavia, strappano le vele e il sartiame e possono abbattere gli alberi, immobilizzando le navi nemiche.
+Danno base: hull - #f.2dannoHull#, vele-#f.2dannoRig#, equipaggio-#f.2dannoCrew#
+}
+
+
+Bombs {Bombe}
+Bombs_descr
+{
+Le bombe sono il tipo di munizioni più costose e distruttive. Queste bombe sono fatte di una palla cave di ghisa piena di polvere da sparo e dotate di un fusibile di legno. Dopo l'accensione, la palla esplode all'impatto, colpendo i membri dell'equipaggio con le schegge, distruggendo gli alberi, dando fuoco al  sartiame e sconvolgendo gli scafi con l'onda d'urto.
+Danno base: hull - #f.2dannoHull#, vele-#f.2dannoRig#, equipaggio-#f.2dannoCrew#
+}
+
+
+Sailcloth {Tessuto vela}
+Sailcloth_descr
+{
+Tela spessa e densa utilizzata per la produzione di vele.
+Le colonie inglesi del Nord America producono cotone e canapa di alta qualità e tessono tele con le due diverse fibre. Le fibre trasversali sono fatte di cotone e quelle longitudinali (la base) di canapa. La tela ha un colore bianco sporco, è più leggera e si asciuga più rapidamente rispetto alla tradizionale tela europea di tonalità grigia fatta di lino non sbiancato.
+}
+
+
+Planks {Assi}
+Planks_descr
+{
+Tavole asciutte di legno selezionato di seconda scelta, ottenute spaccando con cunei tronchi di vecchia crescita. Queste tavole sono più robuste rispetto a quelle segate, sono meno soggette all'essiccamento e non si spaccano e non si incrinano così tanto.
+È il materiale migliore per le riparazioni di emergenza dello scafo di una nave.
+}
+
+
+Wheat {Grano}
+Wheat_descr
+{
+Le varietà locali di grano sono molto apprezzate per la loro farina, che viene utilizzata dai panettieri per produrre deliziose pagnotte con una crosta straordinaria.
+Considerando l'elevata resa del raccolto e il periodo di maturazione fuori stagione (gennaio), è possibile guadagnare bene importando il grano in Europa per l'inverno.
+}
+
+
+Ebony {Ebano}
+Ebony_descr
+{
+Il legno di ebano (nero) ha sempre affascinato falegnami e gente comune per la sua bellezza e durezza: questo legno è due volte più duro della quercia. Grazie al colore unico del legno, è uno dei preferiti dalla nobiltà europea che cerca di impressionare i propri pari.
+Ogni tipo di ebano ha un colore unico, che va dal marrone-verdastro al nero vellutato. Con il tempo, il legno diventa più scuro, più duro e più costoso.
+}
+
+
+Chocolate {Cacao}
+Chocolate_descr
+{
+I frutti di cacao maturi vengono raccolti e spezzati per estrarre i semi. I semi di cacao, una volta fermentati ed essiccati, possono essere conservati a lungo.
+L'elevata domanda di cacao tra gli indiani e i ricchi locali impone già prezzi elevati per questa merce, ma gli spagnoli e gli italiani sono disposti a pagarla in oro, rendendo i prezzi esorbitanti.
+}
+
+
+Sugar {Zucchero}
+Sugar_descr
+{
+Facendo bollire per ore il succo di canna da zucchero in grandi bollitori di rame, il dolce sciroppo si riduce in grandi cristalli marroni di zucchero grezzo, pronti per essere essiccati e preparati per il trasporto in Europa dove verranno raffinati.
+L'usanza di offrire agli ospiti tè o caffè dolcificati con lo zucchero - una moda intramontabile e un simbolo aristocratico di benessere - è una garanzia sicura che lo zucchero grezzo è sempre molto richiesto.
+}
+
+
+Wine {Vino}
+Wine_descr
+{
+Sebbene ci siano stati molti tentativi di viticoltura nel Nuovo Mondo (la maggior parte non riuscita), i vini importati da Francia, Spagna, Italia e Portogallo sono ancora molto apprezzati per scopi sacramentali e ricreativi!
+Il vino europeo è molto richiesto in qualsiasi insediamento e i commercianti locali lo compreranno in grandi quantità.
+}
+
+
+ShipSilk {Seta}
+ShipSilk_descr
+{
+Un capolavoro delle fabbriche tessili di Lione: una fitta tela da vela in seta.
+La seta è estremamente resistente, i filamenti sono forti, elastici e di spessore uniforme. Questo tessuto è leggero e traspirante; assorbe rapidamente l'umidità, ma si asciuga ancora più velocemente. Mantiene la forma ed è resistente allo stiramento.
+Con tutti i suoi vantaggi, il tessuto di seta ha comunque un inconveniente significativo: l'esposizione alla luce solare tende a degradare il materiale.
+}
+
+
+Rum {Rum}
+Rum_descr
+{
+Una forte bevanda alcolica distillata dal succo di canna da zucchero fermentato con un gusto e un sapore leggermente strano. È una merce preziosa, che può sempre essere venduta con profitto, ma che alza anche il morale dei marinai finché ne avete. Il rum viene anche aggiunto alle scorte di acqua dolce delle navi per fare il grog, che disinfetta l'acqua e ne migliora il sapore. 
+Una carenza di rum sulla nave può causare disordini tra i marinai e persino diventare la causa di un ammutinamento.
+}
+
+
+Tobacco {Tabacco}
+Tobacco_descr
+{
+Nella lontana Europa, negli insediamenti locali e negli angusti alloggi dell'equipaggio sottocoperta, il tabacco è il piacere di ogni uomo. È anche considerato un'affidabile misura profilattica contro molte malattie, almeno così crede la gente.
+Esistono tre tipi di tabacco pronti per il consumo: il tabacco da fumo, il tabacco da fiuto e il tabacco da masticare. Le foglie di tabacco in sacchi di lino sono un carico prezioso per molti mercanti.
+}
+
+
+Coffee {Caffè}
+Coffee_descr
+{
+Una bevanda profumata ed energizzante a base di chicchi di caffè, miele e cannella è oggi molto popolare tra gli abitanti del Nuovo Mondo, non solo per il gran numero di piantagioni di caffè che sono diventate la principale fonte di reddito per molti ricchi europei, ma anche perché il tè proveniente dall'India e dalla Cina è piuttosto difficile da reperire.
+I chicchi di caffè verdi e non tostati, che mantengono a lungo la loro commerciabilità e le loro proprietà utili, sono sempre molto richiesti nell'Europa continentale, dal momento che il caffè è ormai un must di ogni famiglia ricca.
+}
+
+
+Mahogany {Mogano}
+Mahogany_descr
+{
+Il legno di questi alberi ha un disegno molto distinto e bello, oltre a essere molto robusto, resistente al fuoco e di lunga durata. Può essere lucidato molto facilmente e non viene danneggiato dai parassiti del legno. Gli spagnoli sono stati i primi ad apprezzarlo: oggi il mogano è ampiamente utilizzato nella costruzione di navi, chiese e palazzi.
+I mobili in mogano sono un esempio di lusso classico, buon gusto e benessere del proprietario.
+}
+
+
+Cinnamon {Vaniglia}
+Cinnamon_descr
+{
+I baccelli essiccati e fermentati di questa pianta sempreverde originaria del Messico hanno un aroma dolce, ma un sapore amaro.
+La vaniglia è utilizzata in Europa per la preparazione di cacao e cioccolata calda. Viene anche utilizzata come aromatizzante per il tabacco; altri la masticano semplicemente, anche se per lo più è solo per dimostrare il proprio status!
+}
+
+
+Copra {Copra(cocco)}
+Copra_descr
+{
+Carne di cocco essiccata.
+La copra viene utilizzata per la produzione di olio e sapone di copra. Questo sapone ha un buon profumo e tinge anche i capelli, mascherando i capelli grigi con una nobile tonalità bionda.
+}
+
+
+Paprika {Paprika}
+Paprika_descr
+{
+Peperoncino rosso macinato ed essiccato, una spezia dolce e piccante molto diffusa in cucina come agente aromatizzante.
+La paprika è molto popolare tra i tedeschi, gli spagnoli e nell'Europa mediterranea, poiché si abbina perfettamente a tutto: carne, pollame, pesce, frutti di mare, verdure e formaggi.
+}
+
+
+Fruits {Frutta}
+Fruits_descr
+{
+Frutta tropicale commestibile raccolta dalla flora locale. Ottimo per allontanare lo scorbuto o aromatizzare vino economico.
+La frutta può essere venduta in qualsiasi insediamento: ci sono acquirenti anche per rare prelibatezze.
+}
+
+
+Ale {Birra}
+Ale_descr
+{
+Bevanda a bassa gradazione alcolica, preparata per fermentazione superiore. 
+La birra, insieme al pane, è considerata un alimento di base ed è inclusa nelle razioni delle guarnigioni locali (soprattutto quelle inglesi). La birra può essere conservata per lunghi periodi di tempo; inoltre, possiede proprietà antibiotiche grazie al gruit (una miscela di erbe e spezie utilizzata al posto del luppolo).
+}
+
+
+Ropes {Corde}
+Ropes_descr
+{
+Corde forti fatte di canapa. Resistente all'acqua salata, queste sono le migliori corde da utilizzare in sartiame.
+Le corde migliori e più famose sono fabbricate nel tsardom della Russia.
+}
+
+
+Clothes {Vestiti}
+Clothes_descr
+{
+Pratici abiti classici in tessuto scuro, semplice lino cambric, colletti e polsini risvoltati: un abbigliamento comodo per ogni uomo onesto, laborioso, modesto ed economico.
+Merce poco costosa, sempre richiesta.
+}
+
+
+Cotton {Cotone}
+Cotton_descr
+{
+Il cotone matura tardi e la resa del raccolto è piuttosto bassa nelle piantagioni delle isole caraibiche rispetto alle colonie nordamericane, ma le sue fibre sono ancora molto preziose, poiché sono insolitamente lunghe e sottili. Da queste fibre cremose e setose si ricavano i fili per i tessuti più sottili e di qualità migliore.
+Questa laboriosa lavorazione richiede la creazione di una piantagione relativamente grande e almeno 20 schiavi che vi lavorino.
+}
+
+
+Sandal {LegnoFerro}
+Sandal_descr
+{
+Il legno ferro è noto anche come 'lignum vitae'. Questo legno denso, duro e robusto è quasi impossibile da rompere. È molto pesante e, a differenza della maggior parte dei legni, affonda anziché galleggiare nell'acqua.
+Come suggerisce il nome, è un legno molto robusto, anche se difficile da lavorare. Ha anche proprietà autolubrificanti, soprattutto in acqua.
+Grazie alla robustezza e alla lubrificazione naturale, gli elementi navali in legno ferro non richiedono molta manutenzione, anche nelle peggiori condizioni di mare.
+}
+
+
+Oil {Tar}
+Oil_descr
+{
+Questo catrame d'asfalto naturale è una miscela appiccicosa di colore grigio-nero composta da bitume, argilla fine e acqua salata. È la più famosa esportazione di Trinidad, anche se sicuramente non la più bella.
+Questo catrame viene utilizzato per impermeabilizzare e calafatare le giunture degli scafi delle navi.
+Si ritiene che questo catrame sia di gran lunga superiore a quello prodotto nei paesi del Nord Europa a partire dai pini.
+}
+
+
+Leather {Pelle}
+Leather_descr
+{
+Le pelli essiccate e vestite dei bovini sono una merce universale sempre richiesta in Europa. È così che i bucanieri originali si guadagnavano da vivere, vendendo le pelli e la carne dei bovini selvatici di Hispaniola.
+Sebbene non siano molti i mercanti che caricherebbero le loro navi con il solo cuoio, esso è ottimo per riempire lo spazio vuoto del carico, poiché è molto resistente e può affrontare qualsiasi condizione di navigazione.
+}
+
+
+Slaves {Schiavi}
+Slaves_descr
+{
+Uomini e donne - bianchi e neri - venduti come schiavi in seguito a battaglie perse, punizioni per crimini commessi o debiti. Dal punto di vista del piantatore o del proprietario della miniera, si tratta di una merce del tutto legittima, poiché la persona era già uno schiavo al momento dell'acquisto. La vita di uno schiavo è solitamente brutta, brutale e breve: la maggior parte muore nei primi sette anni dopo essere stata venduta per lavorare nelle piantagioni.
+}
+
+
+Powder {Polvere da sparo}
+Powder_descr
+{
+Merce strategica importata, prodotto di fabbriche di polvere da sparo sporche, rumorose, maleodoranti e pericolose. 'Tieni la polvere asciutta', dicono gli esperti cannonieri. Non lo si sottolineerà mai abbastanza: senza polvere da sparo i cannoni sono solo un peso morto per una nave.
+Un capitano saggio terrà sempre molta polvere da sparo nella parte più asciutta e sicura della stiva.
+}
+
+
+Food {Cibo}
+Food_descr
+{
+Un set standard di razioni conservate e acqua dolce, richiesto per nutrire l'equipaggio e gli schiavi durante un viaggio.
+La mancanza di cibo a bordo porta a carestia, morti e caduta del morale.
+Consumo giornaliero: marinai - 0,1 unità, schiavi - 0,05 unità.
+}
+
+
+Weapon {Armi}
+Weapon_descr
+{
+Una collezione di armi: da sciabole e spade a pistole e moschetti.
+Durante gli abbordaggi, ogni partecipante alla battaglia deve essere armato. Se mancano le armi, le perdite aumentano.
+Quando i marinai muoiono in battaglia, la quantità di armi a bordo diminuisce.
+}
+
+
+Gold {Oro}
+Gold_descr
+{
+Lingotti d'oro massiccio, contrassegnati dal Tesoro di Spagna.
+Catturare una nave del tesoro carica d'oro è il sogno di ogni pirata e corsaro.
+}
+
+
+Silver {Argento}
+Silver_descr
+{
+Lingotti d'argento massiccio, contrassegnati dal Tesoro di Spagna.
+Un premio desiderato, poiché l'argento ha un discreto valore, essendo la seconda scelta del Tesoro spagnolo per contenere e trasportare la ricchezza. Si stima che nel corso del XVI secolo la Corona spagnola abbia importato oltre 210 milioni di pesos di argento dal Nuovo Mondo all'Europa.
+}
+
+
+Brick {Mattoni}
+Brick_descr
+{
+Blocchi ordinati e tegole in terracotta. Sono molto utilizzati nella costruzione di città, poiché il legno tende a marcire rapidamente negli umidi Caraibi.
+A causa dei frequenti incendi, le autorità incoraggiano l'uso dei mattoni nelle costruzioni, quindi questa merce è sempre richiesta.
+}
+
+
+Medicament {Medicine}
+Medicament_descr
+{
+Un insieme di medicinali e strumenti destinati al trattamento delle malattie più comuni e al primo soccorso dei feriti e degli infortunati.
+Avere medicinali a bordo aiuta a salvare i feriti, a ridurre le perdite di imbarco e a curare i malati durante la navigazione.
+}
+
+Cannon_3 {Falconetti}
+Cannon_3_descr
+{
+Cannoni da ponte dotati di torretta. Offrono la massima mobilità e, a causa delle loro piccole dimensioni, la minima potenza e gittata.
+Spesso sono dotati di una culatta intercambiabile che consente una ricarica rapida.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Cannon_6 {Semicanne da 6 libbre}
+Cannon_6_descr
+{
+Piccoli cannoni, molto popolari su navi corriere e mercantili per il loro peso ridotto, basso costo e durata. Facili da mantenere e non richiedono un equipaggio esperto.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Cannon_8 {Semicanne da 8 libbre}
+Cannon_8_descr
+{
+Uno dei calibri più popolari sulle piccole navi, presente sia su mercantili che su pattugliatori. Apprezzati per l'eccellente combinazione di dimensioni, peso e potenza di fuoco.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Cannon_12 {Semicanne da 12 libbre}
+Cannon_12_descr
+{
+Un calibro comune tra le piccole navi da guerra. Per le loro dimensioni e peso, offrono una potenza di fuoco impressionante, ma richiedono equipaggi completi, aumentando il numero di membri dell'equipaggio a bordo.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Cannon_16 {Semicanne da 16 libbre}
+Cannon_16_descr
+{
+Cannoni moderni di tipo francese. Grazie al loro design avanzato, offrono eccellente gittata, affidabilità e potenza di fuoco. Un calibro molto comune tra le navi di pattuglia e ricognizione.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Cannon_18 {Semicanne da 18 libbre}
+Cannon_18_descr
+{
+Cannoni universali potenti che un tempo venivano spesso installati sulle navi da guerra. Abbastanza comuni nell'arcipelago e apprezzati per la loro semplicità e affidabilità, anche se il loro design obsoleto limita un po' la gittata.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Cannon_20 {Cannoni da 20 libbre}
+Cannon_20_descr
+{
+Cannoni d'artiglieria a canna lunga utilizzati su incrociatori e navi ausiliarie di convogli militari. Richiedono un lavoro di squadra coordinato per un fuoco efficace.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Cannon_24 {Cannoni da 24 libbre}
+Cannon_24_descr
+{
+Il calibro principale sulle navi da guerra, il culmine dell'evoluzione dell'artiglieria navale. Offrono un perfetto equilibrio tra gittata e potenza di fuoco, e il loro design di successo consente di resistere a lunghe battaglie navali senza danni critici.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Cannon_32 {Cannoni da 32 libbre}
+Cannon_32_descr
+{
+Cannoni pesanti di grosso calibro che infliggono enormi danni e sono adatti al bombardamento delle fortezze. A causa dei limiti di resistenza dei materiali, viene utilizzata una carica di polvere ridotta, che limita la gittata.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Cannon_36 {Cannoni da 36 libbre}
+Cannon_36_descr
+{
+Cannoni a canna lunga, rari sul ponte d'artiglieria. La loro ricarica lenta e la gittata limitata sono compensate dai danni devastanti inflitti dalle loro pesanti palle di cannone. Richiedono grandi equipaggi.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Cannon_42 {Bombarde da 42 libbre}
+Cannon_42_descr
+{
+Cannoni formidabili, il culmine della potenza di fuoco navale. Utilizzati esclusivamente su navi di linea, nelle fortezze e nelle grandi battaglie europee. Richiedono un grande equipaggio ben addestrato.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Culverine_8 {Mezze colubrine}
+Culverine_8_descr
+{
+Cannoni da 8 libbre a canna lunga su un supporto speciale con base robusta e ruote in legno massiccio.
+Hanno una gittata di tiro aumentata. Comunemente usati per il fuoco di sbarramento.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Culverine_18 {Colubrine}
+Culverine_18_descr
+{
+Cannoni medi da 18 libbre con gittata aumentata, adatti all'uso su navi relativamente piccole.
+Nonostante l'impressionante distanza di tiro, sono estremamente pesanti e richiedono molto tempo per essere ricaricati.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}
+
+Culverine_36 {Colubrine complete}
+Culverine_36_descr
+{
+Cannoni da fortezza da 36 libbre progettati per il fuoco di breccia: vince chi spara per primo!
+A causa della loro grande lunghezza, possono essere installati solo in porti progettati per cannoni da 42 libbre.
+Gittata - #dFireRange#, danno - x#f.1DamageMultiply#, ricarica - #dReloadTime# sec.
+}

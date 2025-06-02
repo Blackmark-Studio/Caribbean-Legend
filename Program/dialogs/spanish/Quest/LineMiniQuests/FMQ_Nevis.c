@@ -176,7 +176,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "seafox_16":
-		dialog.text = "Los holandeses pueden saber que venimos, pero no saben *cómo* venimos. Ya nos hemos encargado del disfraz: mira este uniforme. Hermoso, ¿verdad? Si nuestro plan no hubiera sido traicionado, simplemente habríamos ido a la prisión local, los habríamos tomado por sorpresa y matado a todos dentro. Pero ciertamente están tendiendo una emboscada allí. Así que improvisamos. \nCapitán, ve a la iglesia de Philipsburg y encuentra a un predicador allí llamado Filippe Jacobsen. Debería estar allí de seis a diez de la mañana. Filippe es uno de los nuestros en el interior. \nDile esta contraseña: '¿Hace cuánto confesaron los marineros cautivos?'. Después de eso, cuéntale sobre la situación y exige su ayuda en nombre del Coronel Fox. Luego me entregas su respuesta. Simple y sin riesgo para ti.";
+		dialog.text = "Los holandeses pueden saber que venimos, pero no saben *cómo* venimos. Ya nos hemos encargado del disfraz: mira este uniforme. Hermoso, ¿verdad? Si nuestro plan no hubiera sido traicionado, simplemente habríamos ido a la prisión, los habríamos tomado por sorpresa y matado a todos dentro. Pero ciertamente están tendiendo una emboscada allí. Así que improvisamos. \nCapitán, ve a la iglesia de Philipsburg y encuentra a un predicador allí llamado Filippe Jacobsen. Debería estar allí de seis a diez de la mañana. Filippe es uno de los nuestros en el interior. \nDile esta contraseña: '¿Hace cuánto confesaron los marineros cautivos?'. Después de eso, cuéntale sobre la situación y exige su ayuda en nombre del Coronel Fox. Luego me entregas su respuesta. Simple y sin riesgo para ti.";
 		link.l1 = "Parece bastante malditamente arriesgado preguntar sobre la confesión en una iglesia calvinista holandesa, teniente. El pastor intentará colgarme por ser papista. Está bien, cuéntame sobre estos uniformes... ¿los tomaste de una patrulla holandesa?";
 		link.l1.go = "seafox_17";
 		break;
@@ -353,13 +353,13 @@ void ProcessDialogEvent()
 
 	case "soldier":
 		PlaySound("Voice\Spanish\soldier_common_2.wav");
-		dialog.text = "Capitán " + GetFullName(pchar) + "?";
+		dialog.text = "¿Capitán " + GetFullName(pchar) + "?";
 		link.l1 = "Mm... Sí, ¿qué puedo hacer por ti?";
 		link.l1.go = "soldier_1";
 		break;
 
 	case "soldier_1":
-		dialog.text = " La oficina del puerto nos ha informado sobre la reciente llegada de su barco. Su Excelencia, Mynheer Martin Thomas, el gobernador de Philipsburg, desea verlo. ";
+		dialog.text = "La oficina del puerto nos ha informado sobre la reciente llegada de su barco. Su Excelencia, Mynheer Martin Thomas, el gobernador de Philipsburg, desea verlo. ";
 		link.l1 = "¿Para qué? ¿Estoy bajo arresto?";
 		link.l1.go = "soldier_2";
 		break;

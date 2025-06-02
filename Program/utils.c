@@ -134,28 +134,13 @@ String GetRussianNumberString(int _num)
 
 float GetDotProduct(float fA1, float fA2)
 {
-    return cos(fA2 - fA1);  // boal бешенная оптимизация моря
+    return cos(fA2 - fA1); // boal
 
 	/*float x1, y1, x2, y2;
 	x1 = sin(fA1);	y1 = cos(fA1);
 	x2 = sin(fA2);	y2 = cos(fA2);
 	return (x2 * x1 + y2 * y1); */
 }
-
-/*float Clampf(float fClamp)
-{
-	if (fClamp > 1.0) return 1.0;
-	if (fClamp < 0.0) return 0.0;
-	return fClamp;
-}*/
-
-/*float Bring2Range(float fMin1, float fMax1, float fMin2, float fMax2, float fValue)
-{
-	if (fValue < fMin2) { fValue = fMin2; }
-	if (fValue > fMax2) { fValue = fMax2; }
-	float fDelta = (fValue - fMin2) / (fMax2 - fMin2);
-	return fMin1 + fDelta * (fMax1 - fMin1);
-}*/
 
 void ParseString()
 {
@@ -579,4 +564,12 @@ object DeserializeAttributes(string serialized) {
 	}
 	
 	return attributes;
+}
+
+float GetRealDeltaTime()
+{
+    float timeScale = 1 + TimeScaleCounter * 0.25;
+    if (timeScale != 0.0)
+        return GetDeltaTime() * 0.001 / timeScale;
+    return 0.0;
 }

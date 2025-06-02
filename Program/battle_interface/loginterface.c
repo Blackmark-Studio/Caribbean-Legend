@@ -11,11 +11,11 @@ object IBoardingStatus;
 bool   bYesBoardStatus;
 string g_ActiveActionName;
 string cname = "";
-int fTmp1,fTmp2,fTmp3,fTmp4,fTmp5,fTmp6,fTmp7,fTmp8,fTmp9,fTmp10;
 
 #define NOTIFICATIONS_SPEED 0.03
 object Notifications[9];
 int notificationsQty = -1;
+int fTmp,fTmp2;
 
 #event_handler("blieGetMsgIconRoot","BI_GetMsgIconRoot");
 
@@ -120,6 +120,12 @@ void Log_SetActiveAction(string actionName)
 	if(bMainMenu) return;
 	if(questMovieIsLockPlayerCtrl) return;
 	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	string sActionText, sTextFont;
+	float fFontScale;
+	int iTextWidth;
+	int iKeyWidth = makeint(20 * fHtRatio);
+	int iTextOffset = makeint(5 * fHtRatio);
+	
 	if(ILogAndActions.type=="sea" && g_ActiveActionName!=actionName)
 	{
 		// LDH 13Feb17 clear MoorName when leave moor location
@@ -129,38 +135,39 @@ void Log_SetActiveAction(string actionName)
 	
 	g_ActiveActionName = actionName;
 	// change text
-	if( CheckAttribute(&ILogAndActions,"ActiveActions."+actionName+".Text") && actionName != "Map" && actionName != "EnterToSea" && !dialogRun) {
+	if(CheckAttribute(&ILogAndActions,"ActiveActions."+actionName+".Text") && actionName != "Map" && actionName != "EnterToSea" && !dialogRun)
+    {
 		if(iControlsTips > 1)//подсказки включены в настройках
 		{
-			cname = ControlNameToName(FindControlFromActionName(actionName));
-			if( CheckAttribute(&objControlsState,"key_codes."+cname+".img")) {
-				ILogAndActions.ActiveActions.text1.text = objControlsState.key_codes.(cname).img;
-			}
-			if(actionName == "Closed") {
+			sActionText = ILogAndActions.ActiveActions.(actionName).Text;
+			sTextFont	= ILogAndActions.ActiveActions.text2.font;
+			fFontScale	= ILogAndActions.ActiveActions.text1.scale;
+			iTextWidth	= GetStringWidth(sActionText, sTextFont, fFontScale);
+			if(actionName == "Closed")
+            {
 				ILogAndActions.ActiveActions.text1.text = "";
 				ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2;
-			} else {
-				ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2+makeint(30 * fHtRatio);
+			}
+            else 
+            {
+                cname = GetKeyByControl(FindControlFromActionName(actionName));
+				if(CheckAttribute(&objControlsState,"key_codes."+cname+".img"))
+					ILogAndActions.ActiveActions.text1.text = objControlsState.key_codes.(cname).img;
+				ILogAndActions.ActiveActions.text1.pos.x = sti(showWindow.right)/2 - makeint(iTextWidth/2) - iTextOffset;
+				ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2 + iKeyWidth + iTextOffset;
 			}
 			ILogAndActions.ActiveActions.text2.text = ILogAndActions.ActiveActions.(actionName).Text;
-		} else {
+		}
+        else 
+        {
 			ILogAndActions.ActiveActions.text1.text = "";
 			ILogAndActions.ActiveActions.text2.text = "";
 		}
-	} else {
+	}
+    else
+    {
 		ILogAndActions.ActiveActions.text1.text = "";
 		ILogAndActions.ActiveActions.text2.text = "";
-	}
-	// change button position
-	if(CheckAttribute(&ILogAndActions,"ActiveActions."+actionName+".pos")) 
-	{
-		ILogAndActions.ActiveActions.text1.pos.x = ILogAndActions.ActiveActions.(actionName).pos.x;
-		ILogAndActions.ActiveActions.text1.pos.y = ILogAndActions.ActiveActions.(actionName).pos.y;
-	}
-	else 
-	{
-		ILogAndActions.ActiveActions.text1.pos.x = sti(showWindow.right)/2 - RecalculateHIcon(makeint(120 * fHtRatio));
-		ILogAndActions.ActiveActions.text1.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
 	}
 	SendMessage(&ILogAndActions,"ls",LOG_SET_ACTIVE_ACTION,actionName);
 }
@@ -190,8 +197,10 @@ void Notification(string strLog, string ability)
 		case "IronWill": IconIndex = 13; break;
 		case "Medic": IconIndex = 15; break;
 		case "Trustworthy": IconIndex = 18; break;
+		case "MusketsShoot": IconIndex = 29; break;
 		case "Brander": IconIndex = 47; break;
 		case "Troopers": IconIndex = 48; break;
+		case "Carpenter": IconIndex = 51; break;
 		case "HPPlus": IconIndex = 57; break;
 		case "EnergyPlus": IconIndex = 58; break;
 		case "Mimicry": IconIndex = 65; break;
@@ -269,8 +278,10 @@ void Notification(string strLog, string ability)
 		case "Medicament": IconIndex = 146; break;
 		case "Cannon_3": IconIndex = 147; break;
 		case "Cannon_6": IconIndex = 148; break;
+		case "Cannon_8": IconIndex = 159; break;
 		case "Cannon_12": IconIndex = 149; break;
 		case "Cannon_16": IconIndex = 150; break;
+		case "Cannon_18": IconIndex = 175; break;
 		case "Cannon_20": IconIndex = 151; break;
 		case "Cannon_24": IconIndex = 152; break;
 		case "Cannon_32": IconIndex = 153; break;
@@ -279,7 +290,6 @@ void Notification(string strLog, string ability)
 		case "Culverine_8": IconIndex = 156; break;
 		case "Culverine_18": IconIndex = 157; break;
 		case "Culverine_36": IconIndex = 158; break;
-		case "FstTravel": IconIndex = 159; break;
 		case "Tichingitu": IconIndex = 165; break;
 		case "Helena": IconIndex = 166; break;
 		case "Mary": IconIndex = 167; break;
@@ -287,8 +297,19 @@ void Notification(string strLog, string ability)
 		case "Tonzag": IconIndex = 169; break;
 		case "Knippel": IconIndex = 170; break;
 		case "Folke": IconIndex = 171; break;
-		case "FMQT_mercen": IconIndex = 172; break;
+		case "Duran": IconIndex = 172; break;
 		case "Irons": IconIndex = 174; break;
+		case "Threat1": IconIndex = 177; break;
+		case "Threat2": IconIndex = 178; break;
+		case "Threat3": IconIndex = 179; break;
+		case "Threat4": IconIndex = 180; break;
+		case "Threat5": IconIndex = 181; break;
+		case "Threat0": IconIndex = 182; break;
+		case "Discovery": IconIndex = 187; break;
+		case "Indians": IconIndex = 188; break;
+		case "Smugglers": IconIndex = 189; break;
+		case "FstTravel": IconIndex = 190; break;
+		case "Rats": IconIndex = 191; break;
 		case "Personal abilities": IconIndex = 4; break;
 		case "Ship abilities": IconIndex = 41; break;
 		case "enghunter": IconIndex = 42; break;
@@ -296,9 +317,10 @@ void Notification(string strLog, string ability)
 		case "spahunter": IconIndex = 44; break;
 		case "frahunter": IconIndex = 45; break;
 		case "pirhunter": IconIndex = 46; break;
+		case "Key": IconIndex = 107; break;
 		case "None": IconIndex = 239; break;
 	}
-	if(notificationsQty < 9)
+	if(notificationsQty < 8)
 	{
 		notificationsQty++;
 		Notifications[notificationsQty].str = strLog;
@@ -623,48 +645,42 @@ void CreateSeaActionsEnvironment()
 
 	ILogAndActions.ActiveActions.text1.font = "keyboard_symbol";
 	ILogAndActions.ActiveActions.text1.scale = 1.0 * fHtRatio;
-	ILogAndActions.ActiveActions.text1.pos.x = sti(showWindow.right)/2 - RecalculateHIcon(makeint(120 * fHtRatio));
+	ILogAndActions.ActiveActions.text1.pos.x = sti(showWindow.right)/2;
 	ILogAndActions.ActiveActions.text1.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
 	// ILogAndActions.ActiveActions.text1.text = XI_ConvertString("Press_F3");
 	ILogAndActions.ActiveActions.text2.font = "interface_normal_bold";
 	ILogAndActions.ActiveActions.text2.scale = 1.0 * fHtRatio;
-	ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2 + makeint(30 * fHtRatio)
+	ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2;
 	ILogAndActions.ActiveActions.text2.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
 	ILogAndActions.ActiveActions.text2.text = XI_ConvertString("for_quick_action");
-	// Позиции кнопки быстрого действия в зависимости от языка
-	if(LanguageGetLanguage() != "Russian"){
-		fTmp1 = makeint(40 + 2.5 * fHtRatio);
-		fTmp2 = makeint(40 + 2.5 * fHtRatio);
-		fTmp3 = makeint(75 + 2.5 * fHtRatio);
-		fTmp4 = makeint(75 + 2.5 * fHtRatio);
-		fTmp5 = makeint(60 + 2.5 * fHtRatio);
-	} else {
-		fTmp1 = makeint(75 + 2.5 * fHtRatio);
-		fTmp2 = makeint(120 + 2.5 * fHtRatio);
-		fTmp3 = makeint(175 + 2.5 * fHtRatio);
-		fTmp4 = makeint(140 + 2.5 * fHtRatio);
-		fTmp5 = makeint(120 + 2.5 * fHtRatio);
-	}
+	
+	fTmp = sti(showWindow.right)/2;
+	fTmp2 = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+
 	ILogAndActions.ActiveActions.Moor.IconNum		= 13;
-	ILogAndActions.ActiveActions.Moor.Text			= "- " + XI_ConvertString("for_quick_action_Moor");//Причалить
-	ILogAndActions.ActiveActions.Moor.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp1 * fHtRatio));
-	ILogAndActions.ActiveActions.Moor.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.Moor.Text			= XI_ConvertString("for_quick_action_Moor");//Причалить
+	ILogAndActions.ActiveActions.Moor.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.Moor.pos.y			= fTmp2;
 	ILogAndActions.ActiveActions.Board.IconNum		= 14;
-	ILogAndActions.ActiveActions.Board.Text			= "- " + XI_ConvertString("for_quick_action_Board");//Взять на абордаж
-	ILogAndActions.ActiveActions.Board.pos.x		= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp2 * fHtRatio));
-	ILogAndActions.ActiveActions.Board.pos.y		= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.Board.Text			= XI_ConvertString("for_quick_action_Board");//Взять на абордаж
+	ILogAndActions.ActiveActions.Board.pos.x		= fTmp;
+	ILogAndActions.ActiveActions.Board.pos.y		= fTmp2;
 	ILogAndActions.ActiveActions.LandTroops.IconNum	= 45;
-	ILogAndActions.ActiveActions.LandTroops.Text	= "- " + XI_ConvertString("for_quick_action_LandTroops");//Высадка союзного десанта
-	ILogAndActions.ActiveActions.LandTroops.pos.x	= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp3 * fHtRatio));
-	ILogAndActions.ActiveActions.LandTroops.pos.y	= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.LandTroops.Text	= XI_ConvertString("for_quick_action_LandTroops");//Высадка союзного десанта
+	ILogAndActions.ActiveActions.LandTroops.pos.x	= fTmp;
+	ILogAndActions.ActiveActions.LandTroops.pos.y	= fTmp2;
 	ILogAndActions.ActiveActions.Map.IconNum		= 12;
-	ILogAndActions.ActiveActions.Map.Text			= "- " + XI_ConvertString("for_quick_action_Map");//На глобальную карту
-	ILogAndActions.ActiveActions.Map.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp4 * fHtRatio));
-	ILogAndActions.ActiveActions.Map.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.Map.Text			= XI_ConvertString("for_quick_action_Map");//На глобальную карту
+	ILogAndActions.ActiveActions.Map.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.Map.pos.y			= fTmp2;
 	ILogAndActions.ActiveActions.Reload.IconNum		= 32;
-	ILogAndActions.ActiveActions.Reload.Text		= "- " + XI_ConvertString("for_quick_action_Reload_Sea");//Обмен с кораблем
-	ILogAndActions.ActiveActions.Reload.pos.x		= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp5 * fHtRatio));
-	ILogAndActions.ActiveActions.Reload.pos.y		= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.Reload.Text		= XI_ConvertString("for_quick_action_Reload_Sea");//Обмен с кораблем
+	ILogAndActions.ActiveActions.Reload.pos.x		= fTmp;
+	ILogAndActions.ActiveActions.Reload.pos.y		= fTmp2;
+	ILogAndActions.ActiveActions.Deck.IconNum		= 34;
+	ILogAndActions.ActiveActions.Deck.Text			= XI_ConvertString("for_quick_action_Deck");//Палуба
+	ILogAndActions.ActiveActions.Deck.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.Deck.pos.y			= fTmp2;
 	ILogAndActions.ActiveActions.Nothing.IconNum	= -1;
 	ILogAndActions.ActiveActions.Nothing.Text		= XI_ConvertString("for_quick_action");
 
@@ -690,92 +706,77 @@ void CreateLandActionsEnvironment()
 
 	ILogAndActions.ActiveActions.text1.font = "keyboard_symbol";
 	ILogAndActions.ActiveActions.text1.scale = 1.0 * fHtRatio;
-	ILogAndActions.ActiveActions.text1.pos.x = sti(showWindow.right)/2 - RecalculateHIcon(makeint(120 * fHtRatio));
+	ILogAndActions.ActiveActions.text1.pos.x = sti(showWindow.right)/2;
 	ILogAndActions.ActiveActions.text1.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
 	// ILogAndActions.ActiveActions.text1.text = XI_ConvertString("Press_F3");
 	ILogAndActions.ActiveActions.text2.font = "interface_normal_bold";
 	ILogAndActions.ActiveActions.text2.scale = 1.0 * fHtRatio;
-	ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2 + makeint(30 * fHtRatio);
+	ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2;
 	ILogAndActions.ActiveActions.text2.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
 	ILogAndActions.ActiveActions.text2.text = XI_ConvertString("for_quick_action");
-	// Позиции кнопки быстрого действия в зависимости от языка
-	if(LanguageGetLanguage() != "Russian"){
-		fTmp1 = makeint(45 + 2.5 * fHtRatio);
-		fTmp2 = makeint(30 + 2.5 * fHtRatio);
-		fTmp3 = makeint(35 + 2.5 * fHtRatio);
-		fTmp4 = makeint(35 + 2.5 * fHtRatio);
-		fTmp5 = makeint(45 + 2.5 * fHtRatio);
-		fTmp6 = makeint(35 + 2.5 * fHtRatio);
-		fTmp7 = makeint(30 + 2.5 * fHtRatio);//dead
-		fTmp8 = makeint(35 + 2.5 * fHtRatio);
-		fTmp9 = makeint(130 + 2.5 * fHtRatio);
-		fTmp10 = makeint(80 + 2.5 * fHtRatio);
-	} else {
-		fTmp1 = makeint(90 + 2.5 * fHtRatio);
-		fTmp2 = makeint(75 + 2.5 * fHtRatio);
-		fTmp3 = makeint(65 + 2.5 * fHtRatio);
-		fTmp4 = makeint(40 + 2.5 * fHtRatio);
-		fTmp5 = makeint(65 + 2.5 * fHtRatio);
-		fTmp6 = makeint(60 + 2.5 * fHtRatio);
-		fTmp7 = makeint(65 + 2.5 * fHtRatio);//dead
-		fTmp8 = makeint(60 + 2.5 * fHtRatio);
-		fTmp9 = makeint(100 + 2.5 * fHtRatio);
-		fTmp10 = makeint(95 + 2.5 * fHtRatio);
-	}
+
+	fTmp = sti(showWindow.right)/2;
+	fTmp2 = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+
 	ILogAndActions.ActiveActions.ToSea.IconNum			= 14;
-	ILogAndActions.ActiveActions.ToSea.Text				= " - " + XI_ConvertString("for_quick_action_ToSea");
-	ILogAndActions.ActiveActions.ToSea.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp1 * fHtRatio));
-	ILogAndActions.ActiveActions.ToSea.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.ToSea.Text				= XI_ConvertString("for_quick_action_ToSea");
+	ILogAndActions.ActiveActions.ToSea.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.ToSea.pos.y			= fTmp2;
 
 	ILogAndActions.ActiveActions.Talk.IconNum			= 1;
-	ILogAndActions.ActiveActions.Talk.Text				= " - " + XI_ConvertString("for_quick_action_Talk");
-	ILogAndActions.ActiveActions.Talk.pos.x				= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp2 * fHtRatio));
-	ILogAndActions.ActiveActions.Talk.pos.y				= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.Talk.Text				= XI_ConvertString("for_quick_action_Talk");
+	ILogAndActions.ActiveActions.Talk.pos.x				= fTmp;
+	ILogAndActions.ActiveActions.Talk.pos.y				= fTmp2;
 
 	ILogAndActions.ActiveActions.Look.IconNum			= 0;
-	ILogAndActions.ActiveActions.Look.Text				= " - " + XI_ConvertString("for_quick_action_Look");
-	ILogAndActions.ActiveActions.Look.pos.x				= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp3 * fHtRatio));
-	ILogAndActions.ActiveActions.Look.pos.y				= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.Look.Text				= XI_ConvertString("for_quick_action_Look");
+	ILogAndActions.ActiveActions.Look.pos.x				= fTmp;
+	ILogAndActions.ActiveActions.Look.pos.y				= fTmp2;
 	
 	ILogAndActions.ActiveActions.Pick.IconNum			= 0;
-	ILogAndActions.ActiveActions.Pick.Text				= " - " + XI_ConvertString("for_quick_action_Pick");
-	ILogAndActions.ActiveActions.Pick.pos.x				= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp4 * fHtRatio));
-	ILogAndActions.ActiveActions.Pick.pos.y				= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.Pick.Text				= XI_ConvertString("for_quick_action_Pick");
+	ILogAndActions.ActiveActions.Pick.pos.x				= fTmp;
+	ILogAndActions.ActiveActions.Pick.pos.y				= fTmp2;
 	
 	ILogAndActions.ActiveActions.Action.IconNum			= 0;
-	ILogAndActions.ActiveActions.Action.Text			= " - " + XI_ConvertString("for_quick_action_Action");
-	ILogAndActions.ActiveActions.Action.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp5 * fHtRatio));
-	ILogAndActions.ActiveActions.Action.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.Action.Text			= XI_ConvertString("for_quick_action_Action");
+	ILogAndActions.ActiveActions.Action.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.Action.pos.y			= fTmp2;
 
 	ILogAndActions.ActiveActions.OpenBox.IconNum		= 35;
-	ILogAndActions.ActiveActions.OpenBox.Text			= " - " + XI_ConvertString("for_quick_action_OpenBox");
-	ILogAndActions.ActiveActions.OpenBox.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp6 * fHtRatio));
-	ILogAndActions.ActiveActions.OpenBox.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.OpenBox.Text			= XI_ConvertString("for_quick_action_OpenBox");
+	ILogAndActions.ActiveActions.OpenBox.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.OpenBox.pos.y			= fTmp2;
 
 	ILogAndActions.ActiveActions.DeadBox.IconNum		= 35;
-	ILogAndActions.ActiveActions.DeadBox.Text			= " - " + XI_ConvertString("for_quick_action_DeadBox");
-	ILogAndActions.ActiveActions.DeadBox.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp7 * fHtRatio));
-	ILogAndActions.ActiveActions.DeadBox.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.DeadBox.Text			= XI_ConvertString("for_quick_action_DeadBox");
+	ILogAndActions.ActiveActions.DeadBox.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.DeadBox.pos.y			= fTmp2;
 
 	ILogAndActions.ActiveActions.Reload.IconNum			= 13;
-	ILogAndActions.ActiveActions.Reload.Text			= " - " + XI_ConvertString("for_quick_action_Reload");
-	ILogAndActions.ActiveActions.Reload.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp8 * fHtRatio));
-	ILogAndActions.ActiveActions.Reload.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.Reload.Text			= XI_ConvertString("for_quick_action_Reload");
+	ILogAndActions.ActiveActions.Reload.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.Reload.pos.y			= fTmp2;
 
 	ILogAndActions.ActiveActions.BoardingReload.IconNum	= 13;
-	ILogAndActions.ActiveActions.BoardingReload.Text	= " - " + XI_ConvertString("for_quick_action_BoardingReload");
-	ILogAndActions.ActiveActions.BoardingReload.pos.x	= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp9 * fHtRatio));
-	ILogAndActions.ActiveActions.BoardingReload.pos.y	= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.BoardingReload.Text	= XI_ConvertString("for_quick_action_BoardingReload");
+	ILogAndActions.ActiveActions.BoardingReload.pos.x	= fTmp;
+	ILogAndActions.ActiveActions.BoardingReload.pos.y	= fTmp2;
 
 	ILogAndActions.ActiveActions.BoardingEnd.IconNum	= 13;
-	ILogAndActions.ActiveActions.BoardingEnd.Text	= " - " + XI_ConvertString("for_quick_action_BoardingEnd");
-	ILogAndActions.ActiveActions.BoardingEnd.pos.x	= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp10 * fHtRatio));
-	ILogAndActions.ActiveActions.BoardingEnd.pos.y	= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.BoardingEnd.Text		= XI_ConvertString("for_quick_action_BoardingEnd");
+	ILogAndActions.ActiveActions.BoardingEnd.pos.x		= fTmp;
+	ILogAndActions.ActiveActions.BoardingEnd.pos.y		= fTmp2;
+
+	ILogAndActions.ActiveActions.PlayEvent.IconNum		= 0;
+	ILogAndActions.ActiveActions.PlayEvent.Text			= XI_ConvertString("for_quick_action_Use");
+	ILogAndActions.ActiveActions.PlayEvent.pos.x		= fTmp;
+	ILogAndActions.ActiveActions.PlayEvent.pos.y		= fTmp2;
 
 	ILogAndActions.ActiveActions.Closed.IconNum			= 29;
 	ILogAndActions.ActiveActions.Closed.Text			= XI_ConvertString("for_quick_action_Closed");
-	ILogAndActions.ActiveActions.Closed.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(0 * fHtRatio));
-	ILogAndActions.ActiveActions.Closed.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.Closed.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.Closed.pos.y			= fTmp2;
 	
 	ILogAndActions.ActiveActions.Nothing.IconNum		= -1;
 	ILogAndActions.ActiveActions.Nothing.Text			= XI_ConvertString("for_quick_action");
@@ -802,56 +803,44 @@ void CreateWorldMapActionsEnvironment()
 
 	ILogAndActions.ActiveActions.text1.font = "keyboard_symbol";
 	ILogAndActions.ActiveActions.text1.scale = 1.0 * fHtRatio;
-	ILogAndActions.ActiveActions.text1.pos.x = sti(showWindow.right)/2 - RecalculateHIcon(makeint(120 * fHtRatio));
+	ILogAndActions.ActiveActions.text1.pos.x = sti(showWindow.right)/2;
 	ILogAndActions.ActiveActions.text1.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
 	// ILogAndActions.ActiveActions.text1.text = XI_ConvertString("Press_F3");
 	ILogAndActions.ActiveActions.text2.font = "interface_normal_bold";
 	ILogAndActions.ActiveActions.text2.scale = 1.0 * fHtRatio;
-	ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2 + makeint(30 * fHtRatio)
-	ILogAndActions.ActiveActions.text2.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));//RecalculateVIcon(102);
+	ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2;
+	ILogAndActions.ActiveActions.text2.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
 	ILogAndActions.ActiveActions.text2.text = XI_ConvertString("for_quick_action");
-	// Позиции кнопки быстрого действия в зависимости от языка
-	if(LanguageGetLanguage() != "Russian"){
-		fTmp1 = makeint(45 + 2.5 * fHtRatio);
-		fTmp2 = makeint(70 + 2.5 * fHtRatio);
-		fTmp3 = makeint(50 + 2.5 * fHtRatio);
-		fTmp4 = makeint(50 + 2.5 * fHtRatio);
-		fTmp5 = makeint(80 + 2.5 * fHtRatio);
-		fTmp6 = makeint(45 + 2.5 * fHtRatio);
-	} else {
-		fTmp1 = makeint(95 + 2.5 * fHtRatio);
-		fTmp2 = makeint(150 + 2.5 * fHtRatio);
-		fTmp3 = makeint(85 + 2.5 * fHtRatio);
-		fTmp4 = makeint(75 + 2.5 * fHtRatio);
-		fTmp5 = makeint(90 + 2.5 * fHtRatio);
-		fTmp6 = makeint(50 + 2.5 * fHtRatio);
-	}
+
+	fTmp = sti(showWindow.right)/2;
+	fTmp2 = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+
 	ILogAndActions.ActiveActions.EnterToIsland.IconNum		= 8;
-	ILogAndActions.ActiveActions.EnterToIsland.Text			= "- " + XI_ConvertString("for_quick_action_EnterToIsland");
+	ILogAndActions.ActiveActions.EnterToIsland.Text			= XI_ConvertString("for_quick_action_EnterToIsland");
 	ILogAndActions.ActiveActions.EnterToSea.IconNum			= 9;
-	ILogAndActions.ActiveActions.EnterToSea.Text			= "- " + XI_ConvertString("for_quick_action_EnterToSea");//Выйти в море
-	ILogAndActions.ActiveActions.EnterToSea.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp1 * fHtRatio));
-	ILogAndActions.ActiveActions.EnterToSea.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.EnterToSea.Text			= XI_ConvertString("for_quick_action_EnterToSea");//Выйти в море
+	ILogAndActions.ActiveActions.EnterToSea.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.EnterToSea.pos.y			= fTmp2;
 	ILogAndActions.ActiveActions.EnterToAttack.IconNum		= 10;
-	ILogAndActions.ActiveActions.EnterToAttack.Text			= "- " + XI_ConvertString("for_quick_action_EnterToAttack");//Присоединиться к бою
-	ILogAndActions.ActiveActions.EnterToAttack.pos.x		= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp2 * fHtRatio));
-	ILogAndActions.ActiveActions.EnterToAttack.pos.y		= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.EnterToAttack.Text			= XI_ConvertString("for_quick_action_EnterToAttack");//Присоединиться к бою
+	ILogAndActions.ActiveActions.EnterToAttack.pos.x		= fTmp;
+	ILogAndActions.ActiveActions.EnterToAttack.pos.y		= fTmp2;
 	ILogAndActions.ActiveActions.EnterToEnemy.IconNum		= 11;
-	ILogAndActions.ActiveActions.EnterToEnemy.Text			= "- " + XI_ConvertString("for_quick_action_EnterToEnemy");//Защищаться
-	ILogAndActions.ActiveActions.EnterToEnemy.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp3 * fHtRatio));
-	ILogAndActions.ActiveActions.EnterToEnemy.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.EnterToEnemy.Text			= XI_ConvertString("for_quick_action_EnterToEnemy");//Защищаться
+	ILogAndActions.ActiveActions.EnterToEnemy.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.EnterToEnemy.pos.y			= fTmp2;
 	ILogAndActions.ActiveActions.EnterToShip.IconNum		= 12;
-	ILogAndActions.ActiveActions.EnterToShip.Text			= "- " + XI_ConvertString("for_quick_action_EnterToShip");//Атаковать
-	ILogAndActions.ActiveActions.EnterToShip.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp4 * fHtRatio));
-	ILogAndActions.ActiveActions.EnterToShip.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.EnterToShip.Text			= XI_ConvertString("for_quick_action_EnterToShip");//Атаковать
+	ILogAndActions.ActiveActions.EnterToShip.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.EnterToShip.pos.y			= fTmp2;
 	ILogAndActions.ActiveActions.GetOnBoard.IconNum			= 12;
-	ILogAndActions.ActiveActions.GetOnBoard.Text			= "- " + XI_ConvertString("for_quick_action_GetOnBoard");//Взять на борт
-	ILogAndActions.ActiveActions.GetOnBoard.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp5 * fHtRatio));
-	ILogAndActions.ActiveActions.GetOnBoard.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));	
+	ILogAndActions.ActiveActions.GetOnBoard.Text			= XI_ConvertString("for_quick_action_GetOnBoard");//Взять на борт
+	ILogAndActions.ActiveActions.GetOnBoard.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.GetOnBoard.pos.y			= fTmp2;	
 	ILogAndActions.ActiveActions.EnterToStorm.IconNum		= 13;
-	ILogAndActions.ActiveActions.EnterToStorm.Text			= "- " + XI_ConvertString("for_quick_action_EnterToStorm");//Шторм
-	ILogAndActions.ActiveActions.EnterToStorm.pos.x			= sti(showWindow.right)/2 - RecalculateHIcon(makeint(fTmp6 * fHtRatio));
-	ILogAndActions.ActiveActions.EnterToStorm.pos.y			= sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.EnterToStorm.Text			= XI_ConvertString("for_quick_action_EnterToStorm");//Шторм
+	ILogAndActions.ActiveActions.EnterToStorm.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.EnterToStorm.pos.y			= fTmp2;
 
 	ILogAndActions.ActiveActionsBack.TextureName = "interfaces\le\battle_interface\info_fader_b.tga.tx";
 	ILogAndActions.ActiveActionsBack.width = RecalculateHIcon(makeint(100 * fHtRatio)); // ширина текcтуры также зависит от длины текста
@@ -911,6 +900,15 @@ void BI_FastCommand()
 		case "Board":		bEC = true; Sea_AbordageLoad(SHIP_ABORDAGE,true); break;
 		case "LandTroops":	bEC = true; Sea_AbordageLoad(FORT_ABORDAGE,true); break;
 		case "Map":			bEC = true; Sea_MapLoad(); break; //  pchar.location = ""; тут нах не нужно
+		case "Deck":
+				bEC = true;
+				if(CheckAttribute(pchar, "TutorialToDeck_1"))
+					DoFunctionReloadToLocation("Quest_Ship_deck_Medium_trade", "quest", "quest6", "SharlieTutorial_StartKino");
+				if(CheckAttribute(pchar, "TutorialToDeck_2"))
+					DoFunctionReloadToLocation("Quest_Deck", "rld", "loc0", "SharlieTutorial_ActThree");
+				if(CheckAttribute(pchar, "TutorialToPort"))
+					SharlieTutorial_StartGameInMartinique();
+		break;			
 		case "Reload":
 			if(bi_nReloadTarget!=-1)
 			{
@@ -965,6 +963,10 @@ void BI_FastCommand()
 			case "ToSea": bEC = true; Event("Control Activation","s","ChrAction"); break;
 			case "BoardingReload":  break;
 			case "BoardingEnd":  break;
+			case "PlayEvent":
+				bEC = true; 
+				PlayLocatorEvent();
+			break;
 		}
 	}
 	if( ILogAndActions.type == "map" )

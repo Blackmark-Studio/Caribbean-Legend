@@ -18,62 +18,6 @@ GenQuests_4
 So I found the wedding ring of the girl from @<sCity>.. I need to take it to her.
 }
 
-GenQuests_5
-{
-Barque
-}
-
-GenQuests_6
-{
-Fleut
-}
-
-GenQuests_7
-{
-Galeon
-}
-
-GenQuests_8
-{
-Pinnace
-}
-
-GenQuests_9
-{
-Caracca
-}
-
-GenQuests_10
-{
-schooner
-}
-
-GenQuests_11
-{
-brig
-}
-
-GenQuests_12
-{
-brigantine
-}
-
-GenQuests_13
-{
-corvette
-}
-
-GenQuests_14
-{
-frigate
-}
-
-GenQuests_15
-{
-ship-of-the-line
-}
-
-
 GenQuests_16
 {
 Treasures are somewhere nearby!
@@ -482,17 +426,17 @@ Her name was @<pchar.GenQuest.EncGirl.name>, and she died in the jungles. Nothin
 
 GenQuests_100
 {
-Вы слышали, какой-то капитан спас девушку по имени @<pchar.GenQuest.EncGirl.name> от бандитов, буквально вытащил её из их лап! Какой прекрасный человек и настоящий мужчина!
+Słyszałeś? Jakiś kapitan uratował dziewczynę o imieniu @<pchar.GenQuest.EncGirl.name> z rąk bandytów — dosłownie wyrwał ją z ich łap! Co za wspaniały człowiek i prawdziwy mężczyzna!
 }
 
 GenQuests_101
 {
-Вы знаете, капитан @<GetFullName(pchar)> спас девушку по имени @<pchar.GenQuest.EncGirl.name> от насильников в джунглях... А-а, так это же вы!! Я вами восхищаюсь...
+Wiesz, kapitan @<GetFullName(pchar)> uratował dziewczynę o imieniu @<pchar.GenQuest.EncGirl.name> przed gwałcicielami w dżungli... A-a, to byłeś ty!! Jestem pod wrażeniem...
 }
 
 GenQuests_102
 {
-Девушке по имени @<pchar.GenQuest.EncGirl.name> здорово повезло - недавно на неё напали бандиты в джунглях, хотели изнасиловать, видать. Но ничего у них не вышло, хе-хе, и благодарить она должна капитана @<GetMainCharacterNameGen()>!
+Dziewczyna o imieniu @<pchar.GenQuest.EncGirl.name> miała niezłego farta — niedawno zaatakowali ją bandyci w dżungli, pewnie chcieli ją zgwałcić. Ale im się nie udało, hehe, i powinna podziękować kapitanowi @<GetMainCharacterNameGen()>!
 }
 
 GenQuests_103
@@ -557,17 +501,17 @@ Our commandant will enforce patrolling the jungles. You must know that already, 
 
 GenQuests_115
 {
-Вы знаете, губернатор @<sTemp> поручил некоему капитану @<GetMainCharacterNameDat()> уничтожить известного бандита по имени @<GetFullName(arAll)>. И, кажется, что капитан выполнил задание губернатора...
+Wiesz, gubernator @<sTemp> zlecił jakiemuś kapitanowi @<GetMainCharacterNameDat()> zlikwidowanie znanego bandyty o imieniu @<GetFullName(arAll)>. I wygląda na to, że kapitan wykonał zadanie...
 }
 
 GenQuests_116
 {
-Какой-то смелый капитан вызвался найти и уничтожить местного бандита по имени @<GetFullName(arAll)>. И, похоже, он сделал это!
+Jakiś odważny kapitan zgłosił się, by znaleźć i zabić lokalnego bandytę o imieniu @<GetFullName(arAll)>. I wygląda na to, że mu się udało!
 }
 
 GenQuests_117
 {
-Ха, наконец-то наш губернатор взялся за наведение порядка в джунглях - он поручил капитану @<GetMainCharacterNameDat()> разыскать в джунглях и убить наиболее известного бандита. И вы знате, этот бандит, @<GetFullName(arAll)> - мёртв!
+Ha! W końcu nasz gubernator zabrał się za zaprowadzanie porządku w dżungli — zlecił kapitanowi @<GetMainCharacterNameDat()>, by odnalazł i zabił najsłynniejszego bandytę. I wiesz co? Ten bandyta, @<GetFullName(arAll)>, nie żyje!
 }
 
 GenQuests_118

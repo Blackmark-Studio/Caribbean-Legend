@@ -104,7 +104,7 @@ void ProcessDialogEvent()
 		pchar.questTemp.pirateStartQuest = "0";
 		break;
 	case "pirateStartQuest_1":
-		dialog.text = "Entonces escucha, tenía un trato para entregar 200 esclavos hace un mes con el capitán de la goleta 'Saintblue'. Quería venderlos al dueño de la plantación local. El tiempo ha pasado y el cliente ha comenzado a preocuparse, pero ayer me dijeron que la goleta fue vista no lejos de la isla. ¡Pero! El capitán no se presentó. Hoy, mi cliente me ha exigido que le devuelva su adelanto y dijo que le ofrecieron comprar esclavos de otro vendedor. Más caro, pero todo el lote de esclavos de una vez.";
+		dialog.text = "Entonces escucha, tenía un trato para entregar 200 esclavos hace un mes con el capitán de la goleta 'Saintblue'. Quería venderlos al dueño de la plantación. El tiempo ha pasado y el cliente ha comenzado a preocuparse, pero ayer me dijeron que la goleta fue vista no lejos de la isla. ¡Pero! El capitán no se presentó. Hoy, mi cliente me ha exigido que le devuelva su adelanto y dijo que le ofrecieron comprar esclavos de otro vendedor. Más caro, pero todo el lote de esclavos de una vez.";
 		link.l1 = "¿Y? ¿Tengo que encontrar 200 esclavos en unos pocos días para salvarte de perder un adelanto? ¿Por unas pocas monedas?";
 		link.l1.go = "pirateStartQuest_2";
 		break;

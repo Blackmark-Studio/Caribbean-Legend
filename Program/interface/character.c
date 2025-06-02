@@ -1075,6 +1075,13 @@ void ChoosePerk()
 	    showCondition = false;
 	}
 	// проверка на необходимык перки <--
+
+    // проверка ранга
+    if (CheckAttribute(&ChrPerksList, "list." + perkName + ".rank") && sti(xi_refCharacter.rank) < sti(ChrPerksList.list.(perkName).rank))
+	{
+        ok = false;
+    }
+
 	XI_WindowShow("PERK_WINDOW", true);
 	XI_WindowDisable("PERK_WINDOW", false);
 	// XI_WindowDisable("MAIN_WINDOW", true);

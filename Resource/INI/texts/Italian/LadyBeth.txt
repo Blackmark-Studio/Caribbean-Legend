@@ -1,0 +1,39 @@
+LadyBeth_Ship_Name {Lady Beth}
+
+LadyBeth_Cap_Name {Albert}
+
+LadyBeth_Cap_lastname {Blackwood}
+
+LadyBeth_Pop_Name {Diego}
+
+LadyBeth_Pop_lastname {de Landa}
+
+LadyBeth_Elizabeth_Name {Elizabeth}
+
+LadyBeth_Elizabeth_lastname {Bishop}
+
+LadyBeth_WorldMap {Captain, I see 'Lady Beth'. What a beauty! But we can't intercept her - her captain is too good!}
+
+LadyBeth_Rum1 {Have you heard about Captain Albert Blackwood? Former Royal Navy officer, and now the most successful treasure hunter in the entire archipelago! His snow 'Lady Beth' is a true work of art. His crew lives like lords, and he himself walks around in silks. French authorities tip their hats to him, even though he's English. They say in the last year he's found so much gold that he could buy a title and several plantations in Barbados.}
+
+LadyBeth_Rum2 {Have you heard already? Blackwood is gone! They say there was a real massacre - his camp was completely destroyed. Nobody knows who did it, but one fisherman swears he saw a battle on the shore. A professional like Blackwood isn't easy to defeat... What will happen to his treasures now? The sea has claimed another legend...}
+
+LadyBeth_Rum3 {Did you see? Blackwood himself is in town! He's strange, though. This time he gathered so many supplies as if he's going to war. He keeps going to Cayman, digging for something there. You'd think with so much money - he could live and enjoy life, but he keeps digging and digging. The sailors say they returned from there with losses last time. That's a first.}
+
+LadyBeth_Rum4 {Look, Captain Blackwood himself has arrived! Do you know why he loves the French so much? They say he had a fiancée in Barbados, from a wealthy family. Her father didn't give his blessing - said a poor officer wasn't a match for his daughter. And now! Now he could buy the richest plantation on the island! But it's too late... they say she married Bishop.}
+
+LadyBeth_Rum5 {Captain Blackwood has arrived in port! You know, he used to serve in the Royal Navy. And not as a simple sailor - as an officer! So capable that they predicted an admiral's future for him. And then suddenly - he deserted. Took the ship and half the crew with him. Now the English offer a fortune for his head. But what does he care? He outpaces them and even laughs about it!}
+
+LadyBeth_Rum6 {Have you heard? Blackwood with his 'Lady Beth' has dropped anchor in our harbor! Before, to join him you needed recommendations, experience, and credentials. And now? He takes almost anyone without sorting. Recent expeditions haven't gone well, he's lost people. I saw his sailors in the tavern - they don't drink like before, they've lost their spirit. Something has changed.}
+
+LadyBeth_Rum7 {Look, Blackwood himself has come to town! Do you know why they don't touch him here? He pays our officials well! Everyone gets a share of his findings. That's why they turn a blind eye to him being an English deserter. Money doesn't smell! Even the governor personally comes to shake his hand when he enters the port.}
+
+LadyBeth_Rum8 {Have you heard? Blackwood and his 'Lady Beth' are in port! I don't understand this captain. Rich as Croesus, but he always wants more. What is he looking for? What does he think about when he looks at the sea? He has everything a sailor could dream of. But I think there's some demon in his head whispering something...}
+
+LadyBeth_Rum9 {Quiet! Blackwood is in town, and that priest is with him. Have you seen him? Strange fellow. Not local, that's for sure. When he's near the captain, he becomes like a different person - tense as a string.}
+
+LadyBeth_Rum10 {Blackwood himself has honored our port! Amazing man. He has everything: money, success, respect. His crew would follow him through fire and water. But his eyes are still hungry, searching. As if he's missing something important in this life. If I were in his place, I would have calmed down long ago, bought an estate and lived happily.}
+
+LadyBeth_Rum11 {Look! Blackwood with his crew is in town! His appearance is a real celebration for our port. His sailors buy everything without bargaining. And he himself! Such an elegant gentleman, though with calloused hands. Each time he orders the best fabrics and wines from us. And pays in gold, pure gold!}
+
+LadyBeth_Rum12 {Have you heard? Captain Blackwood is in town! Oh, what a handsome man, and so hopelessly in love... They say he has a sweetheart in Barbados, but her father didn't consent to the marriage. Now he's as rich as a prince, but for some reason doesn't hurry back there. Perhaps he fell out of love? I would gladly comfort him...}

@@ -259,13 +259,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_2":
-			dialog.text = "Ах, капитан, спасибо вам большое! Как она? здорова, не пострадала? Уж скоро сутки, как убежала, негодница. Разве ж я ей плохого желаю? Замуж отдать собрался... Жених богатый, молодой, а что собою не пригож, так ведь с лица воду не пить. Нет! она всё по-своему норовит - вся в мать, чтоб её...\nХотя, и она бы на свет не появилась, если бы её мамаша в своё время не сбежала с одним предприимчивым оболтусом... ну да что вспоминать... Молодость наивна, глупа... и жестока.";
+			dialog.text = "Ах, капитан, спасибо вам большое! Как она? Здорова, не пострадала? Уж скоро сутки, как убежала, негодница. Разве ж я ей плохого желаю? Замуж отдать собрался... Жених богатый, молодой, а что собою не пригож, так ведь с лица воду не пить. Нет! Она всё по-своему норовит - вся в мать, чтоб её...\nХотя, и она бы на свет не появилась, если бы её мамаша в своё время не сбежала с одним предприимчивым оболтусом... ну да что вспоминать... Молодость наивна, глупа... и жестока.";
 			link.l1 = "Конечно, вы отец и решать вам, но я бы не торопил"+ GetSexPhrase("ся","ась") +" со свадьбой...";
 			link.l1.go = "EncGirl_3";
 		break;
 		
 		case "EncGirl_3":
-			dialog.text = "Да что вы понимаете?.. У вас свои дети есть? Нету? Вот, когда будут - заходите, тогда и поговорим\nДа... я обещал вознаграждение тому, кто её вернёт, - примите, пожалуйста.";
+			dialog.text = "Да что вы понимаете?.. У вас свои дети есть? Нету? Вот, когда будут - заходите, тогда и поговорим\nДа... Я обещал вознаграждение тому, кто её вернёт, - примите, пожалуйста.";
 			link.l1 = "Спасибо. И держите её покрепче. Что-то мне подсказывает, что она на этом не остановится.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("EncGirl_ToLoverParentsExit");
@@ -586,7 +586,7 @@ void ProcessDialogEvent()
 		break;
 		
         case "ForGoodMove_1":
-			pchar.questTemp.jailCanMove.money = 20+drand(3)*10;
+			pchar.questTemp.jailCanMove.money = 20+hrand(3)*10;
 			if (sti(colonies[FindColony(npchar.city)].jail))
 			{
 				dialog.text = "Ну что же, не вижу причины вам отказывать. " + FindRussianDublonString(sti(pchar.questTemp.jailCanMove.money)) + " - и пока вы не покинете тюрьму, вы можете беспрепятственно ходить по коридорам и даже разговаривать с заключёнными.";
@@ -691,7 +691,7 @@ void ProcessDialogEvent()
 		break;
 		
         case "KnowAboutPrisoner_free":
-			pchar.questTemp.jailCanMove.ownerPrison.money = 50+drand(10)*10;
+			pchar.questTemp.jailCanMove.ownerPrison.money = 50+hrand(10)*10;
 			dialog.text = "Хорошо, договорились. " + FindRussianDublonString(sti(pchar.questTemp.jailCanMove.ownerPrison.money)) + " на бочку, и забирайте его хоть прямо сейчас.";
 			if (PCharDublonsTotal() >= sti(pchar.questTemp.jailCanMove.ownerPrison.money))
 			{
@@ -1102,8 +1102,8 @@ void ProcessDialogEvent()
 			link.l1.go = "PrisonerInPlace_3";
 			Log_Info("Вы получили свою долю клада");
 			PlaySound("interface\important_item.wav");
-			TakeNItems(pchar, "icollection", 1+drand(1));
-			TakeNItems(pchar, "chest", 4+drand(4));
+			TakeNItems(pchar, "icollection", 1+hrand(1));
+			TakeNItems(pchar, "chest", 4+hrand(4));
 			TakeNItems(pchar, "jewelry1", 70+rand(15));
 			TakeNItems(pchar, "jewelry2", 50+rand(15));
 			TakeNItems(pchar, "jewelry3", 60+rand(15));
@@ -1324,7 +1324,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_5_WithoutMoney":
-			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > dRand(100) || sti(PChar.money) < 5000)
+			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > hrand(100) || sti(PChar.money) < 5000)
 			{
 				dialog.text = "Хорошо, " + GetAddress_Form(NPChar) + ", забирайте этого проходимца и уходите, пока я не передумал.";
 				link.l1 = "Приятно наблюдать торжество правосудия, не находите?";

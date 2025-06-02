@@ -1,6 +1,6 @@
 Longway_1
 {
-Алонсо
+Alonso
 }
 Longway_2
 {
@@ -36,7 +36,7 @@ van Merden
 
 Longway_9
 {
-Formosa Island@<NewStr()>April 2, 1645.
+Wyspa Formoza@<NewStr()>2 kwietnia, 1645.
 }
 
 Longway_10
@@ -68,20 +68,20 @@ van der Vink
 
 Longway_16
 {
-Ветте
+Vette
 }
 Longway_17
 {
-ван Хаан
+van Haana
 }
 
 Longway_18
 {
-Люйтерс
+Luiters
 }
 Longway_19
 {
-ван Хаан
+van Haana
 }
 
 Longway_20
@@ -104,21 +104,21 @@ Gravel
 
 Longway_24
 {
-The meeting is set behind@<NewStr()>the city gates
+Spotkanie odbywa się tuż za @<NewStr()>bramą miasta
 }
 
 Longway_25
 {
-Гуго
+Hugo
 }
 Longway_26
 {
-Марсо
+Marceau
 }
 
 Longway_27
 {
-A day later...@<NewStr()>Evening, Outside the City Gates.
+Następnego dnia...@<NewStr()>Wieczorem, za bramami miasta.
 }
 
 Longway_28
@@ -132,12 +132,12 @@ Terugny
 
 Longway_30
 {
-Three hours later...@<NewStr()>Capsterville Pier
+Trzy godziny później...@<NewStr()>Przystań w Capsterville
 }
 
 Longway_31
 {
-Commandant
+Komendant
 }
 Longway_32
 {
@@ -146,7 +146,7 @@ Longway_32
 
 Longway_33
 {
-Stranger
+Nieznajomy
 }
 Longway_34
 {
@@ -173,27 +173,27 @@ Sotta
 
 Longway_39
 {
-Morning Star
+Jutrzenka
 }
 
 Longway_40
 {
-The Quarterdeck of Morning Star
+Pokład rufowy Jutrzenki
 }
 
 Longway_41
 {
-Seal the hatches! Time to have a word with Fermentelos...
+Zamknijcie luki! Czas zamienić słowo z Fermentelos...
 }
 
 Longway_42
 {
-The whole team is coming here now!
+Cały zespół już tu idzie!
 }
 
 Longway_43
 {
-Longway is dead!!! Let's go! We don't have any reason to be here anymore!
+Longway nie żyje!!! Pora na nas! Nie mamy już powodu, żeby tu być!
 }
 
 Longway_44
@@ -207,16 +207,16 @@ Latter
 
 Longway_46
 {
-Certain goods from the Star were swiftly transferred into our hold
+Niektóre towary z Jutrzenki zostały szybko przeniesione do naszej ładowni
 }
 
 Longway_47
 {
-Абрахам
+Abraham
 }
 Longway_48
 {
-Норман
+Norman
 }
 
 Longway_49
@@ -231,7 +231,7 @@ Helen
 
 Longway_51
 {
-Rober
+Robert
 }
 Longway_52
 {
@@ -259,12 +259,12 @@ Prevoyant
 
 Longway_57
 {
-By the way, I found the ship's log in the captain's locker, but all the pages were ripped out, so another dead lead.
+Przy okazji znalazłem dziennik pokładowy w szafce kapitana, ale wszystkie strony były wyrwane, więc to kolejny martwy trop.
 }
 
 Longway_58
 {
-Sailor
+Żeglarz
 }
 Longway_59
 {
@@ -291,7 +291,7 @@ Levasseur
 
 Longway_64
 {
-Marceline could've helped me right now - she hates her cursed husband with all her heart, if she even has one. And of course, I just had to  rob her jewelry box on my way out of her bed. She must've noticed the theft almost immediately. All I can do now is hope that Chang Xing will cooperate with us. Things could've turned out differently...
+Marceline mogłaby mi teraz pomóc - nienawidzi swojego cholernego męża całym sercem, jeśli w ogóle takowe ma. I oczywiście, musiałem ukraść jej szkatułkę na biżuterię, wychodząc z jej łóżka. Musiała zauważyć kradzież niemal natychmiast. Teraz mogę tylko mieć nadzieję, że Chang Xing będzie chciała z nami współpracować. Wszystko mogło potoczyć się inaczej...
 }
 
 Longway_65
@@ -305,5 +305,5 @@ Xing
 
 Longway_67
 {
-My beloved needs rest. I'll try not to disturb her anytime soon.
+Moja ukochana potrzebuje odpoczynku. Postaram się jej nie przeszkadzać w najbliższym czasie.
 }

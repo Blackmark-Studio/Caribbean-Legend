@@ -22,7 +22,7 @@ void ProcessDialogEvent()
 
 	//-----------------------------------бандосы Акулы в трюме с припасами--------------------------------------
 	case "PantryGuard":
-		dialog.text = "¡Ho, ho, miren esto, muchachos! ¡Quién ha venido a visitarnos! ¡Un ladrón saqueando los cofres del pueblo! ¡Ven aquí! Y tú, amigo, ni siquiera intentes hacerte el tonto y sacar tu espada - no fallaré desde tan cerca... ¡Chad estará realmente encantado de verte!";
+		dialog.text = "¡Ho, ho, miren esto, muchachos! ¡Quién ha venido a visitarnos! ¡Un ladrón saqueando los cofres del pueblo! ¡Ven aquí! Y tú, amigo, ni siquiera intentes hacerte el tonto y sacar tu espada, no fallaré desde tan cerca... ¡Chad estará realmente encantado de verte!";
 		link.l1 = "¡Pero yo... yo acabo de llegar!";
 		link.l1.go = "PantryGuard_1";
 		break;
@@ -36,7 +36,7 @@ void ProcessDialogEvent()
 	case "PantryGuard_2":
 		DialogExit();
 		chrDisableReloadToLocation = false;
-		SetLaunchFrameFormParam("Few hours later...", "", 0, 3);
+		SetLaunchFrameFormParam("Unas pocas horas después...", "", 0, 3);
 		LaunchFrameForm();
 		WaitDate("", 0, 0, 0, 7, 10); // крутим время
 		RecalculateJumpTable();
@@ -107,7 +107,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Cabin_2":
-		dialog.text = " Oh, no me gusta tu cara. Estás mintiendo. Barbier nunca confiaría esta reunión a nadie más. Habla, bastardo, ¿quién eres y qué le hiciste?";
+		dialog.text = "Oh, no me gusta tu cara. Estás mintiendo. Barbier nunca confiaría esta reunión a nadie más. Habla, bastardo, ¿quién eres y qué le hiciste?";
 		link.l1 = "Sabes, tú tampoco eres un rostro bonito. Ya te he dicho que Barbier está enfermo. ¿Eres del tipo de pensamiento lento o debo repetirme? Se suponía que debía darte la llave y...";
 		link.l1.go = "Cabin_3";
 		break;
@@ -299,7 +299,7 @@ void ProcessDialogEvent()
 
 	case "agnes_8":
 		DialogExit();
-		SetLaunchFrameFormParam("One hour later", "", 0, 5);
+		SetLaunchFrameFormParam("Una hora más tarde", "", 0, 5);
 		LaunchFrameForm();
 		WaitDate("", 0, 0, 0, 1, 10); // крутим время
 		RecalculateJumpTable();
@@ -327,7 +327,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "agnes_11":
-		dialog.text = "Mynheer... Lo siento, no pregunté por su nombre... " + pchar.name + "?";
+		dialog.text = "Mynheer... Lo siento, no pregunté por su nombre... ¿" + pchar.name + "?";
 		link.l1 = "" + GetFullName(pchar) + ", señora. Capitán " + GetFullName(pchar) + ".";
 		link.l1.go = "agnes_12";
 		break;

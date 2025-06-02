@@ -435,8 +435,8 @@ void QuestComplete(string sQuestName, string qname)
                 for (i=1; i<=9; i++)
                 {
                     sld = SetFantomDefenceForts("goto", "", PIRATE, LAI_GROUP_TmpEnemy);
-                    if (i >= (sti(PChar.Ship.Crew.Quantity)/((8-GetCharacterShipClass(PChar))*8))) break;
-                    RemoveCharacterCrew(PChar, (8-GetCharacterShipClass(PChar))*8);
+                    if (i >= (sti(PChar.Ship.Crew.Quantity)/((9-GetCharacterShipClass(PChar))*9))) break;
+                    RemoveCharacterCrew(PChar, (9-GetCharacterShipClass(PChar))*9);
                 }
                 PChar.Ship.Crew.Morale = 25;
                 ChangeCrewExp(PChar, "Soldiers", 2); // бонус на подавление
@@ -472,8 +472,8 @@ void QuestComplete(string sQuestName, string qname)
                 for (i=1; i<=9; i++)
                 {
                     sld = SetFantomSlaves("goto", "", LAI_GROUP_TmpEnemy);
-                    if (i >= (GetCargoGoods(PChar, GOOD_SLAVES)/((8-GetCharacterShipClass(PChar))*8))) break;
-                    RemoveCharacterGoodsSelf(PChar, GOOD_SLAVES, (8-GetCharacterShipClass(PChar))*8);
+                    if (i >= (GetCargoGoods(PChar, GOOD_SLAVES)/((9-GetCharacterShipClass(PChar))*9))) break;
+                    RemoveCharacterGoodsSelf(PChar, GOOD_SLAVES, (9-GetCharacterShipClass(PChar))*9);
                 }
                 DeleteAttribute(pchar, "GenQuest.SlavesMunity");
                 ChangeCrewExp(PChar, "Soldiers", 3); // бонус на подавление
@@ -647,6 +647,10 @@ void QuestComplete(string sQuestName, string qname)
 		// музыка виктори
 		case "sea_victory":
 			SetMusicOnce("music_ship_victory");
+		break;
+		
+		case "sea_victory_2":
+			SetMusicOnce("music_ship_victory2");
 		break;
 		
 		// вижу парус
@@ -1493,13 +1497,13 @@ void QuestComplete(string sQuestName, string qname)
 				LAi_SetWaitressType(sld);
 				Consumption_Close();
 			}
-			if (pchar.location == "Minentown_tavern_upstairs")//Jason
+			if (pchar.location == "LosTeques_tavern_upstairs")//Jason
 			{
-				LocatorReloadEnterDisable("Minentown_tavern", "reload1_back", false); //открыть таверну
-				LocatorReloadEnterDisable("Minentown_tavern", "reload2_back", true); //закрыть комнату
+				LocatorReloadEnterDisable("LosTeques_tavern", "reload1_back", false); //открыть таверну
+				LocatorReloadEnterDisable("LosTeques_tavern", "reload2_back", true); //закрыть комнату
 				bDisableFastReload = false;//открыть переход
 				DeleteAttribute(pchar, "GenQuest.CannotWait");
-				DeleteAttribute(pchar, "GenQuest.MinentownSex");
+				DeleteAttribute(pchar, "GenQuest.LosTequesSex");
 				if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
 				{
 					AddCharacterHealth(pchar, 10);
@@ -1508,9 +1512,9 @@ void QuestComplete(string sQuestName, string qname)
 				else AddCharacterHealth(pchar, 5);
 				sld = characterFromId("MineFuckGirl");
 				LAi_SetActorType(sld);
-				ChangeCharacterAddress(sld, "none", "Minentown_waittime");
+				ChangeCharacterAddress(sld, "none", "LosTeques_waittime");
 				LAi_ActorGoToLocation(sld, "reload", "reload1_back", "none", "", "", "", 4.0);
-				DoQuestCheckDelay("Minentown_waittime", 7.0);
+				DoQuestCheckDelay("LosTeques_waittime", 7.0);
 			}
 			if (CheckAttribute(pchar, "questTemp.FMQT") && pchar.location == "Tortuga_townhallBedroom")// Addon-2016 Jason, французские миниквесты (ФМК) Тортуга
 			{
@@ -1560,7 +1564,7 @@ void QuestComplete(string sQuestName, string qname)
 			}
 		break;
 		
-		case "Minentown_waittime":
+		case "LosTeques_waittime":
 			TavernWaitDate(sTotalTemp);
 		break;
 
@@ -1599,6 +1603,11 @@ void QuestComplete(string sQuestName, string qname)
 		if(GenQuests_QuestComplete(sQuestName, qname)) return;
 		if(MiniQuests_QuestComplete(sQuestName, qname)) return;
 		if(LadyBeth_QuestComplete(sQuestName, qname)) return;
+		if(SharlieTutorial_QuestComplete(sQuestName, qname)) return;
+		if(DarkWatersOfHealing_QuestComplete(sQuestName, qname)) return;
+		if(EdgesJustice_QuestComplete(sQuestName, qname)) return;
+		if(VPVL_QuestComplete(sQuestName, qname)) return;
+		if(MysteryOfBetsyPrice_QuestComplete(sQuestName, qname)) return;
 	}	
 }
 

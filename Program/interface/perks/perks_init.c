@@ -347,7 +347,7 @@ void extrnInitPerks()
 	/////////////////////////////////////////////////////////////
 	//новый перк гроза морей ! //zagolski
  	ChrPerksList.list.SeaDogProfessional.descr = "perkSeaDogProfessional";
-	ChrPerksList.list.SeaDogProfessional.condition.SailingProfessional = true;
+	ChrPerksList.list.SeaDogProfessional.rank  = 25;
 	ChrPerksList.list.SeaDogProfessional.BaseType = "ship";
 	ChrPerksList.list.SeaDogProfessional.PlayerOnly = true;
  

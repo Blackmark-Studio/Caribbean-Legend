@@ -82,7 +82,7 @@ void Tutorial_Navigator2(string qName)
 		}
 	}
 	LaunchTutorial("Navigator", 1);
-	if(GetCharacterShipClass(pchar) < 5) 
+	if(GetCharacterShipClass(pchar) < 6) 
 	{
 		DeleteAttribute(pchar,"systeminfo.tutorial.navigator");
 		if(CheckAttribute(pchar,"systeminfo.tutorial.navigatorNoShow"))
@@ -103,11 +103,6 @@ void DelNavigatorNoShow(string qName)
 	{
 		DeleteAttribute(pchar,"systeminfo.tutorial.navigatorNoShow");
 	}
-}
-
-void Tutorial_Alchemy(string qName)
-{
-	LaunchTutorial("Alchemy", 1);
 }
 
 void Tutorial_Salary(string qName)
@@ -145,6 +140,30 @@ void Tutorial_Dubloons2(string qName)
 	else
 	{
 		DoQuestFunctionDelay("Tutorial_Dubloons", 1.0);
+	}
+}
+
+void Tutorial_Logbook(string qName)
+{
+	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
+	{
+		DoQuestFunctionDelay("Tutorial_Logbook2", 1.0);
+	}
+	else
+	{
+		DoQuestFunctionDelay("Tutorial_Logbook2", 2.0);
+	}
+}
+
+void Tutorial_Logbook2(string qName)
+{
+	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
+	{
+		LaunchTutorial("Logbook", 1);
+	}
+	else
+	{
+		DoQuestFunctionDelay("Tutorial_Logbook", 1.0);
 	}
 }
 
@@ -284,4 +303,24 @@ void Ngt_FolkeRus(string qName)
 void Ngt_FolkeEng(string qName)
 {
 	NewGameTip("Welcome aboard your new officer! Press F4 to assign him as your Navigator.");
+}
+
+void Tutorial_Overload(string qName)
+{
+	LaunchTutorial("Overload", 1);
+}
+
+void Tutorial_DeadSearch(string qName)
+{
+	LaunchTutorial("DeadSearch", 1);
+}
+
+void Tutorial_Fighter(string qName)
+{
+	LaunchTutorial("Fighter", 1);
+}
+
+void Tutorial_Trading(string qName)
+{
+	LaunchTutorial("Trading", 1);
 }

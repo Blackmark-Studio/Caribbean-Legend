@@ -2,9 +2,9 @@
 
 int FindFreeMapEncounterSlot()
 {
-	for (int i=0;i<MAX_MAP_ENCOUNTERS;i++) 
+	for (int i=0;i<MAX_MAP_ENCOUNTERS;i++)
 	{
-		if (sti(MapEncounters[i].bUse) == false) 
+		if (sti(MapEncounters[i].bUse) == false)
 		{
 			return i;
 		}
@@ -37,7 +37,7 @@ void ManualReleaseMapEncounter(int iEncounterSlot)
 
 void ReleaseMapEncounters()
 {
-	for (int i=0;i<MAX_MAP_ENCOUNTERS;i++) 
+	for (int i=0;i<MAX_MAP_ENCOUNTERS;i++)
 	{
 		DeleteAttribute(&MapEncounters[i],"");
 		MapEncounters[i].bUse = false;
@@ -79,7 +79,7 @@ bool GenerateMapEncounter(int iMapEncounterType, string sIslandID, ref iEncounte
 	bool bReturn = false;
 	int iNearIslandNation = PIRATE;
 
-	if (sIslandID != "" && !Island_IsEncountersEnable(sIslandID)) {	return false; }
+	if (sIslandID != "" && !Island_IsEncountersEnable(sIslandID)) return false;
 
 	switch(iMapEncounterType)
 	{
@@ -87,9 +87,9 @@ bool GenerateMapEncounter(int iMapEncounterType, string sIslandID, ref iEncounte
 			bReturn = GenerateMapEncounter_Merchant(sIslandID, iEncounter1);
 		break;
 		case WDM_ETYPE_FOLLOW:			// war ship
-			bReturn = GenerateMapEncounter_War(sIslandID, iEncounter1, GetMainCharacterIndex());
+			bReturn = GenerateMapEncounter_War(sIslandID, iEncounter1, GetMainCharacterIndex(), true);
 		break;
-		case WDM_ETYPE_WARRING:			// 2 war (or 1 war and 1 trade, or 2 trade) ships in battle
+		case WDM_ETYPE_WARRING:			// war-war or war-trade ships in battle; TO_DO: trade-trade
 			bReturn = GenerateMapEncounter_Battle(sIslandID, iEncounter1, iEncounter2);
 		break;
 		case WDM_ETYPE_SPECIAL:			// barrel or shipwreck
@@ -97,7 +97,7 @@ bool GenerateMapEncounter(int iMapEncounterType, string sIslandID, ref iEncounte
 		break;
 	}
 
-	if (!bReturn) 
+	if (!bReturn)
 	{
 		return false;
 	}
@@ -110,7 +110,8 @@ bool GenerateMapEncounter(int iMapEncounterType, string sIslandID, ref iEncounte
 		rEncounter1.GroupName = ENCOUNTER_GROUP + iEncounter1;
 		if(sti(rEncounter1.nation) == PIRATE)
 		{
-			if(sti(rEncounter1.RealEncounterType) < ENCOUNTER_TYPE_PIRATE_SMALL || sti(rEncounter1.RealEncounterType) > ENCOUNTER_TYPE_PIRATE_SCOUNDREL)
+            // ~!~
+			if(sti(rEncounter1.RealEncounterType) < ENCOUNTER_TYPE_SMUGGLERS || sti(rEncounter1.RealEncounterType) > ENCOUNTER_TYPE_PIRATE)
 			{
 				iEncounter1 = -1;
 				iEncounter2 = -1;
@@ -124,7 +125,8 @@ bool GenerateMapEncounter(int iMapEncounterType, string sIslandID, ref iEncounte
 		rEncounter2.GroupName = ENCOUNTER_GROUP + iEncounter2;
 		if(sti(rEncounter2.nation) == PIRATE)
 		{
-			if(sti(rEncounter2.RealEncounterType) < ENCOUNTER_TYPE_PIRATE_SMALL || sti(rEncounter2.RealEncounterType) > ENCOUNTER_TYPE_PIRATE_SCOUNDREL)
+            // ~!~
+			if(sti(rEncounter2.RealEncounterType) < ENCOUNTER_TYPE_SMUGGLERS || sti(rEncounter2.RealEncounterType) > ENCOUNTER_TYPE_PIRATE)
 			{
 				iEncounter1 = -1;
 				iEncounter2 = -1;
@@ -171,10 +173,10 @@ bool GenerateMapEncounter_SetMapShipModel(ref rEncounter)
 			return false;
 		}
 		int iCharIndex = GetCharacterIndex(rEncounter.CharacterID);
-		if (iCharIndex < 0) 
-		{ 
+		if (iCharIndex < 0)
+		{
 			trace("Квестовому энкаунтеру назначен персонаж, но его нет!");
-			return false; 
+			return false;
 		}
 
 		ref rCharacter = GetCharacter(iCharIndex);
@@ -197,66 +199,6 @@ bool GenerateMapEncounter_SetMapShipModel(ref rEncounter)
 	return true;
 }
 
-bool GenerateMapEncounter_WriteNumShips(ref rEncounter, int iEncounterType, int iMaxShipNum)
-{
-	aref	aWar,aMerc;
-	ref		rEnc;
-
-	makeref(rEnc,EncountersTypes[iEncounterType]);
-	makearef(aWar,rEnc.War);
-	makearef(aMerc,rEnc.Merchant);
-
-	int iNumMerchantShips, iNumWarShips;
-
-	iNumMerchantShips = sti(aMerc.ShipsMin) + rand(sti(aMerc.ShipsMax) - sti(aMerc.ShipsMin));
-	iNumWarShips = sti(aWar.ShipsMin) + rand(sti(aWar.ShipsMax) - sti(aWar.ShipsMin));
-
-	int iTotalShips = iNumMerchantShips + iNumWarShips;
-	if (iTotalShips == 0) 
-	{
-		//Trace("GenerateMapEncounter_WriteNumShips: iTotalShips = 0, iEncounterType = " + iEncounterType);
-		return false;
-	}
-
-	while (iTotalShips > iMaxShipNum)
-	{
-		if (iNumWarShips) 
-		{ 
-			iNumWarShips--; 
-			iTotalShips--; 
-		}
-		if (iTotalShips <= iMaxShipNum) 
-		{
-			break;
-		}
-
-		if (iNumMerchantShips) 
-		{ 
-			iNumMerchantShips--; 
-			iTotalShips--; 
-		}
-	}
-
-	if(iNumMerchantShips > 0)
-	{
-		rEncounter.NumMerchantShips = iNumMerchantShips;
-	}
-	else
-	{
-		DeleteAttribute(rEncounter, "NumMerchantShips");
-	}
-	if(iNumWarShips > 0)
-	{
-		rEncounter.NumWarShips = iNumWarShips;
-	}
-	else
-	{
-		DeleteAttribute(rEncounter, "NumWarShips");
-	}
-
-	return true;
-}
-
 bool GenerateMapEncounter_Merchant(string sIslandID, ref iEncounter)
 {
 	// find free slot in dynamic encounter table for map
@@ -265,19 +207,17 @@ bool GenerateMapEncounter_Merchant(string sIslandID, ref iEncounter)
 	ManualReleaseMapEncounter(iEncounterSlot);
 
 	ref rEncounter = &MapEncounters[iEncounterSlot];
-	
+
 	// find real encounter
 	int iEncounterType = FindMerchantEncounter();
 	if (iEncounterType == -1) return false;
 	rEncounter.RealEncounterType = iEncounterType;
 
-	GenerateMapEncounter_WriteNumShips(rEncounter, iEncounterType, 8); //boal
-
 	// nation find
 	int iNation = GetRandomNationForMapEncounter(sIslandID, true);
-	if (iNation < 0) 
-	{ 
-		return false; 
+	if (iNation < 0)
+	{
+		return false;
 	}
 	rEncounter.nation = iNation;
 	//trace("iNation is " + iNation);
@@ -289,9 +229,8 @@ bool GenerateMapEncounter_Merchant(string sIslandID, ref iEncounter)
 	rEncounter.Task = AITASK_MOVE;
 	// create move point coordinates here
 
+	WME_FixShipTypes(rEncounter, 12); //boal
 	return GenerateMapEncounter_SetMapShipModel(rEncounter);
-
-	//return true;
 }
 
 bool GenerateMapEncounter_Special(string sIslandID, ref iEncounter)
@@ -308,26 +247,25 @@ bool GenerateMapEncounter_Special(string sIslandID, ref iEncounter)
 	if (iEncounterType == -1) return false;
 	rEncounter.RealEncounterType = iEncounterType;
 
-	GenerateMapEncounter_WriteNumShips(rEncounter, iEncounterType, 8); //boal
-	
 	// nation find
 	int iNation = GetRandomNationForMapEncounter(sIslandID, true);
-	if (iNation < 0) 
-	{ 
-		return false; 
+	if (iNation < 0)
+	{
+		return false;
 	}
-	rEncounter.nation = iNation;	
+	rEncounter.nation = iNation;
 
 	iEncounter = iEncounterSlot;
 	rEncounter.bUse = true;
 	rEncounter.Type = "special";
 
 	rEncounter.Task = AITASK_MOVE;
-	
-	return GenerateMapEncounter_SetMapShipModel(rEncounter);	
+
+	WME_FixShipTypes(rEncounter, 12); //boal
+	return GenerateMapEncounter_SetMapShipModel(rEncounter);
 }
 
-bool GenerateMapEncounter_War(string sIslandID, ref iEncounter, int iCharacterIndexAsEnemy)
+bool GenerateMapEncounter_War(string sIslandID, ref iEncounter, int iCharacterIndexAsEnemy, bool bFixTypes)
 {
 	int iEncounterType = -1;
 
@@ -349,9 +287,9 @@ bool GenerateMapEncounter_War(string sIslandID, ref iEncounter, int iCharacterIn
 			if (rand(99) < sti(rQEncounter.Rand))
 			{
 				string sGroupID = rQEncounter.ID;
-				if (!sti(rQEncounter.Permanent)) { Encounter_DeleteQuestMapEncounter(sGroupID);	}
+				if (!sti(rQEncounter.Permanent)) Encounter_DeleteQuestMapEncounter(sGroupID);
 				ref rGCommander = Group_GetGroupCommander(sGroupID);
-				
+
 				rEncounter.Nation = sti(rGCommander.Nation);
 				rEncounter.bUse = true;
 				rEncounter.qID = sGroupID;
@@ -365,17 +303,15 @@ bool GenerateMapEncounter_War(string sIslandID, ref iEncounter, int iCharacterIn
 	}
 
 	int iNation = -1;
-	
 
 	// find real encounter if not punitive
 	if (iEncounterType == -1)
 	{
-		iEncounterType = FindWarEncounter(); if (iEncounterType == -1) return false;
+		iEncounterType = FindWarEncounter();
+        if (iEncounterType == -1) return false;
 	}
 
 	rEncounter.RealEncounterType = iEncounterType;
-
-	GenerateMapEncounter_WriteNumShips(rEncounter, iEncounterType, 8); //boal
 
 	// nation find
 	if (iNation == -1)
@@ -383,43 +319,43 @@ bool GenerateMapEncounter_War(string sIslandID, ref iEncounter, int iCharacterIn
 		iNation = GetRandomNationForMapEncounter(sIslandID, false);
 	}
 
-	if (iNation < 0) 
-	{ 
-		return false; 
+	if (iNation < 0)
+	{
+		return false;
 	}
 
 	//trace("iNation is " + iNation);
 
-	if(iEncounterType > ENCOUNTER_TYPE_PATROL_LARGE && iEncounterType < ENCOUNTER_TYPE_SQUADRON)
+	if(iEncounterType >= ENCOUNTER_TYPE_SMUGGLERS && iEncounterType <= ENCOUNTER_TYPE_PIRATE)
 	{
 		iNation = PIRATE;
 	}
 
 	rEncounter.Nation = iNation;
+    rEncounter.Type = "war";
 
 	if(GetNationRelation2MainCharacter(iNation) != RELATION_ENEMY)
 	{
 		rEncounter.Task = AITASK_MOVE;
 		DeleteAttribute(rEncounter, "Task.Target");
-		rEncounter.Type = "trade";
 	}
 	else
 	{
 		rEncounter.Task = AITASK_ATTACK;
-		rEncounter.Task.Target = PLAYER_GROUP; 
-		rEncounter.Type = "war";
+		rEncounter.Task.Target = PLAYER_GROUP;
 	}
 	iEncounter = iEncounterSlot;
 
-	if (sti(rEncounter.Nation) == PIRATE) 
+	if (sti(rEncounter.Nation) == PIRATE)
 	{
 		rEncounter.Type = "pirate";
 	}
 
 	rEncounter.bUse = true;
 
-	GenerateMapEncounter_SetMapShipModel(rEncounter);
-
+    if(bFixTypes)
+        WME_FixShipTypes(rEncounter, 12); //boal
+    GenerateMapEncounter_SetMapShipModel(rEncounter);
 	return true;
 }
 
@@ -444,7 +380,7 @@ bool GenerateMapEncounter_Alone(string sCharacterID, ref iEncounterIndex)
 	rEncounter.Nation = rCharacter.Nation;
 
 	iEncounterIndex = iEncounterSlot;
-	
+
 	rEncounter.bUse = true;
 
 	if(!CheckAttribute(rCharacter, "MapEnc.type"))
@@ -477,18 +413,17 @@ bool GenerateMapEncounter_Alone(string sCharacterID, ref iEncounterIndex)
 	// create move point coordinates here
 
 	return true;
-	
 }
 
 bool GenerateMapEncounter_Battle(string sIslandID, ref iEncounter1, ref iEncounter2)
 {
 	//check for trade opposition
 	int iIsTrade = rand(3);
-	
+
 	// generate first encounter
 	if (iIsTrade != 0)
 	{
-		if (!GenerateMapEncounter_War(sIslandID, iEncounter1, -1))
+		if (!GenerateMapEncounter_War(sIslandID, iEncounter1, -1, true))
 		{
 			iEncounter1 = -1; iEncounter2 = -1;
 			return false;
@@ -507,8 +442,8 @@ bool GenerateMapEncounter_Battle(string sIslandID, ref iEncounter1, ref iEncount
 		MapEncounters[iEncounter1].Task.Pos.z = 10000.0 * cos(fAngle);
 	}
 
-	// generate second encounter
-	if (!GenerateMapEncounter_War(-1, iEncounter2, -1))
+	// generate second encounter; TO_DO: also Merchant
+	if (!GenerateMapEncounter_War(-1, iEncounter2, -1, false))
 	{
 		ManualReleaseMapEncounter(iEncounter1);
 		iEncounter1 = -1; iEncounter2 = -1;
@@ -523,12 +458,12 @@ bool GenerateMapEncounter_Battle(string sIslandID, ref iEncounter1, ref iEncount
 
 	// find nations for battle between two encounters
 
-	int iNationsCanBe[MAX_NATIONS]; 
+	int iNationsCanBe[MAX_NATIONS];
 	int iNumNationsCanBe = 0;
 
 	int iNation1 = sti(rEncounter1.Nation);
 	int iNation2 = sti(rEncounter2.Nation);
-	
+
 	// if we hit the target with nations - return
 	if (GetNationRelation(iNation1, iNation2) != RELATION_ENEMY)
 	{
@@ -542,7 +477,7 @@ bool GenerateMapEncounter_Battle(string sIslandID, ref iEncounter1, ref iEncount
 			iNumNationsCanBe++;
 		}
 
-		if (iNumNationsCanBe == 0) 
+		if (iNumNationsCanBe == 0)
 		{
 			ManualReleaseMapEncounter(iEncounter1);
 			ManualReleaseMapEncounter(iEncounter2);
@@ -553,23 +488,145 @@ bool GenerateMapEncounter_Battle(string sIslandID, ref iEncounter1, ref iEncount
 		rEncounter2.Nation = iNationsCanBe[rand(iNumNationsCanBe - 1)];
 	}
 
-	if(iRealEncounterType1 > 12 && iRealEncounterType1 < 15)
+	if(iRealEncounterType1 >= ENCOUNTER_TYPE_SMUGGLERS && iRealEncounterType1 <= ENCOUNTER_TYPE_PIRATE)
 	{
 		rEncounter1.Nation = PIRATE;
 	}
-	if(iRealEncounterType2 > 12 && iRealEncounterType2 < 15)
+	if(iRealEncounterType2 >= ENCOUNTER_TYPE_SMUGGLERS && iRealEncounterType2 <= ENCOUNTER_TYPE_PIRATE)
 	{
 		rEncounter2.Nation = PIRATE;
 	}
+    WME_FixShipTypes(rEncounter2, 12);
 
-	rEncounter1.Task = AITASK_ATTACK;	rEncounter1.Task.Target = ENCOUNTER_GROUP + iEncounter2;
-	rEncounter2.Task = AITASK_ATTACK;	rEncounter2.Task.Target = ENCOUNTER_GROUP + iEncounter1;
+	rEncounter1.Lock = true;
+	rEncounter1.bUse = true;
+	rEncounter1.Task = AITASK_ATTACK;
+    rEncounter1.Task.Target = ENCOUNTER_GROUP + iEncounter2;
 
-	rEncounter1.Lock = true;	rEncounter2.Lock = true;
-	rEncounter1.bUse = true;	rEncounter2.bUse = true;
+    rEncounter2.Lock = true;
+    rEncounter2.bUse = true;
+	rEncounter2.Task = AITASK_ATTACK;
+    rEncounter2.Task.Target = ENCOUNTER_GROUP + iEncounter1;
 
 	GenerateMapEncounter_SetMapShipModel(rEncounter1);
 	GenerateMapEncounter_SetMapShipModel(rEncounter2);
 
 	return true;
+}
+
+void WME_FixShipTypes(ref rEncounter, int iMaxShipNum)
+{
+    int iNation = sti(rEncounter.Nation);
+    int iEType  = sti(rEncounter.RealEncounterType);
+    ref rEncTemplate = &EncountersTypes[iEType];
+
+    // Общая классификация для уведомлений
+    int iNumMerchantShips = 0;
+    int iNumWarShips = 0;
+
+    string sAttr;
+    int count = 0;
+    int cMin, cMax;
+    int iShipType, i, j, max_i, qty_j;
+    aref rEncShips, rShip;
+    float fPower = 0.0;
+
+    makearef(rEncShips, rEncTemplate.Ships);
+    max_i = GetAttributesNum(rEncShips);
+    for(i = 0; i < max_i; i++)
+    {
+        rShip = GetAttributeN(rEncShips, i);
+        qty_j = sti(rShip.qMin) + rand(sti(rShip.qMax) - sti(rShip.qMin));
+        cMin = sti(rShip.cMin);
+        cMax = sti(rShip.cMax);
+        for(j = 0; j < qty_j; j++)
+        {
+            if(count+1 > iMaxShipNum) break;
+
+            iShipType = WME_GetShipTypeExt(cMin, cMax, rShip.Type, rShip.ShipSpec, -1); // ~!~ TO_DO: iNation
+            if (iShipType >= SHIP_LSHIP_FRA && iShipType <= SHIP_LSHIP_ENG && rand(100) > 8)
+            {
+                iShipType = SHIP_LINESHIP; // Дополнительный тест на линейник
+            }
+            if (iShipType == INVALID_SHIP_TYPE) continue;
+
+            count++;
+            sAttr = count;
+            rEncounter.ShipTypes.(sAttr) = iShipType;
+            fPower += GetBaseShipPower(iShipType);
+            if(rShip.Type == "Merchant")
+            {
+                rEncounter.ShipModes.(sAttr) = "trade";
+                iNumMerchantShips++;
+            }
+            else
+            {
+                if (iEType >= ENCOUNTER_TYPE_SMUGGLERS && iEType <= ENCOUNTER_TYPE_PIRATE)
+                    rEncounter.ShipModes.(sAttr) = "pirate";
+                else
+                    rEncounter.ShipModes.(sAttr) = "war";
+                iNumWarShips++;
+            }
+        }
+        if(count+1 > iMaxShipNum) break;
+    }
+
+    rEncounter.Power = fPower; // Механика мощи
+    rEncounter.NumMerchantShips = iNumMerchantShips;
+    rEncounter.NumWarShips = iNumWarShips;
+    rEncounter.FixedTypes = true;
+}
+
+int WME_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string sShipSpec, int iNation)
+{
+	int iShips[60];
+	int i, j, q, iShipsNum;
+	iShipsNum = 0;
+	aref aNation;
+	string sAttr;
+	bool bOk;
+
+    // Энкаунтеры только до линкора, квестовые корабли отдельно
+	for (i = SHIP_TARTANE; i <= SHIP_LSHIP_ENG; i++) 
+	{
+		object rShip = GetShipByType(i);
+
+		if (sti(rShip.CanEncounter) != true)     continue;
+		if (sti(rShip.Type.(sShipType)) != true) continue;
+        if (rShip.Spec != sShipSpec)             continue;
+
+		int iClass = MakeInt(rShip.Class);
+        // Сравнение классов числовое, то есть iClassMin - это большие корабли
+		if (iClass < iClassMin || iClass > iClassMax) continue;
+
+        if(iNation != -1) // Скип
+        {
+            bOk = false;
+            if(CheckAttribute(rShip, "nation"))
+            {
+                makearef(aNation, rShip.nation);
+                q = GetAttributesNum(aNation);
+                for(j = 0; j < q; j++)
+                {
+                    sAttr = GetAttributeName(GetAttributeN(aNation, j)); 
+                    if(GetNationTypeByName(sAttr) == iNation && rShip.nation.(sAttr) == true) {
+                        bOk = true;
+                        break;
+                    }
+                }
+            }	
+            if(!bOk) continue;
+        }
+
+		iShips[iShipsNum] = i;
+		iShipsNum++;
+	}
+
+	if (iShipsNum == 0) 
+	{
+		Trace("Can't find ship type '" + sShipType + "' with ClassMin = " + iClassMin + " and ClassMax = " + iClassMax);
+		return INVALID_SHIP_TYPE;
+	}
+
+	return iShips[rand(iShipsNum - 1)];
 }

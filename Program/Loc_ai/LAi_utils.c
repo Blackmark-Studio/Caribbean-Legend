@@ -302,14 +302,10 @@ float LAi_GetCharacterFightLevel(aref character)
 {
 	//Fencing skill
 	float fgtlevel = 0.0;
-	if (CheckAttribute(character,"model.animation") && character.model.animation == "mushketer")
-	{
-		fgtlevel = GetCharacterSkill(character, LAi_GetMushketFencingType(character));
-	}
+	if (CharUseMusket(character))
+		fgtlevel = GetCharacterSkill(character, SKILL_PISTOL);
 	else
-	{	
 		fgtlevel = GetCharacterSkill(character, LAi_GetBladeFencingType(character)); 
-	}
 	//Level
 	fgtlevel = fgtlevel/SKILL_MAX;
 	return fgtlevel;
@@ -835,7 +831,7 @@ void LAi_SetDefaultDead(aref chr)
 	{
 		BeginChangeCharacterActions(chr);
 		SetDefaultDead(chr);
-		EndChangeCharacterActions(chr);
+		EndChangeCharacterActionsBlend(chr);
 	}
 }
 
@@ -845,7 +841,7 @@ void LAi_SetAfraidDead(aref chr)
 	{
 		BeginChangeCharacterActions(chr);
 		SetAfraidDead(chr);
-		EndChangeCharacterActions(chr);
+		EndChangeCharacterActionsBlend(chr);
 	}
 }
 
@@ -882,7 +878,9 @@ void LAi_SetDefaultLayAnimation(aref chr)
 	{
 		chr.chr_ai.type.mode = "lay";
 		BeginChangeCharacterActions(chr);
-		chr.actions.idle.i1 = "Lay_1";
+        chr.actions.idle.i1    = "Lay_1";
+        chr.actions.HitNoFight = "Lay_2";
+        chr.actions.dead.d1    = "Lay_1";
 		EndChangeCharacterActions(chr);
 	}
 }
@@ -1082,6 +1080,19 @@ void Dead_AddLoginedCharacter(aref chr)
 	        ClearCharacterExpRate(mchr);
 	        DeleteAttribute(chr, "SaveItemsForDead");// убрать чтоб не было случайно потом
 	        //BLI_UpdateOfficers();// fix проверки на офов, не пропадала иконка
+			
+			if (CheckAttribute(chr, "CantLootBlade"))
+			{
+				itemID = chr.equip.blade;
+				count = GetCharacterItem(chref, itemID);
+				RemoveItems(chref, itemID, count);
+			}
+			if (CheckAttribute(chr, "CantLootGun") && CheckAttribute(chr, "equip.gun"))
+			{
+				itemID = chr.equip.gun;
+				count = GetCharacterItem(chref, itemID);
+				RemoveItems(chref, itemID, count);
+			}
 			
 			// Генерим предметы
 			for(value = 0; value < ITEMS_QUANTITY; value++)

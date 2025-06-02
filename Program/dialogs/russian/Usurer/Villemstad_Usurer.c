@@ -44,7 +44,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				}	
 				else
 				{
-					link.l1 = "Может быть, потому, что я за неё заплачу?";
+					link.l1 = "Может быть, потому, что я за них заплачу?";
 					link.l1.go = "guardoftruth_2_3";
 					npchar.quest.GOT_chest = "true";
 				}

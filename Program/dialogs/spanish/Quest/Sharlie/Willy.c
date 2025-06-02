@@ -21,26 +21,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "catoche":
-			dialog.text = "Hola, Monsieur. ¡Maldita sea, así que tú eres el que causó todo este alboroto militar por aquí?!";
-			link.l1 = TimeGreeting()+", señor. Sí, fue mi barco el que realizó el desembarco. ¿Cuál es el problema de todas formas? ¿Quién eres tú? Un inglés, supongo?";
+			dialog.text = "Hola, sir. ¡Maldita sea, así que tú eres el que causó todo ese alboroto militar por aquí!";
+			link.l1 = TimeGreeting()+", monsieur. Sí, fue mi barco el que realizó el desembarco. ¿Cuál es el problema de todas formas? ¿Quién eres tú? Un inglés, supongo?";
 			link.l1.go = "catoche_1";
 		break;
 		
 		case "catoche_1":
-			dialog.text = "Un escocés, Monsieur. Capitán de la Armada Inglesa William Paterson, y este es mi primer oficial y mano derecha, Archibald Calhoun. La cuestión es que hay un fuerte español en las junglas. Mi misión es echar a los malditos bastardos del fuerte, que han construido peligrosamente cerca del territorio inglés.\nRecientemente intentamos asaltarlo, pero los bastardos han logrado resistir a pesar de sus pérdidas. Partí en busca de refuerzos y...";
+			dialog.text = "Un escocés, sir. Capitán de la Armada Inglesa William Paterson, y este es mi primer oficial y mano derecha, Archibald Calhoun. La cuestión es que hay un fuerte español en las junglas. Mi misión es echar a los malditos bastardos del fuerte, que han construido peligrosamente cerca del territorio inglés.\nRecientemente intentamos asaltarlo, pero los bastardos han logrado resistir a pesar de sus pérdidas. Partí en busca de refuerzos y...";
 			link.l1 = "No hay necesidad de eso ahora. He completado tu asunto pendiente, el fuerte en la jungla está vacío. El comandante español Diego de Montoya está muerto, y su escuadrón ha sido aniquilado también.";
 			link.l1.go = "catoche_2";
 		break;
 		
 		case "catoche_2":
 			dialog.text = "¿Qué clase de vigilantismo es este? ¿Cuál es tu motivación para emprender tal acción militar en territorio inglés?";
-			link.l1 = "Me atrevo a recordarle, Capitán Paterson, que esto no es Belice. ¿Qué posesión inglesa? Todo este alboroto comenzó debido a Don Diego de Montoya y su arriesgada decisión de atacarme a mí y a mis barcos.";
+			link.l1 = "Me atrevo a recordarle, Capitán Paterson, que esto no es Belice. ¿Qué posesión inglesa? Todo este alboroto comenzó debido a Don Diego de Montoya, y su arriesgada decisión de atacarme a mí y a mis barcos.";
 			link.l1.go = "catoche_3";
 		break;
 		
 		case "catoche_3":
-			dialog.text = " Ejem... ¿y qué razón tenía Don Diego para atacarlo, eh capitán?";
-			link.l1 = "Él y yo tenemos una vieja enemistad... Desde el día en que el escuadrón que él lideraba atacó St. Pierre y poco después fue eliminado con mi participación directa.";
+			dialog.text = "Ejem... ¿y qué razón tenía Don Diego para atacarlo, eh capitán?";
+			link.l1 = "Él y yo tenemos una vieja enemistad... Desde el día en que el escuadrón que él lideraba atacó Saint-Pierre, y poco después fue eliminado con mi participación directa.";
 			link.l1.go = "catoche_4";
 		break;
 		
@@ -57,13 +57,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "catoche_6":
-			dialog.text = "Eh... ¿y quién te pidió que te entrometieras en los asuntos de los demás... Me has causado bastante dolor de cabeza...";
+			dialog.text = "Eh... ¿y quién te pidió que te entrometieras en los asuntos de los demás?... Me has causado bastante dolor de cabeza...";
 			link.l1 = "Capitán, no entiendo por qué me reprende. He hecho su trabajo, he llevado a mi propia gente a la batalla, he arriesgado mi propia vida, y sin embargo, está descontento. Todo lo que tiene que hacer ahora es informar a Port Royal de su éxito en la misión y de todos sus asuntos. No reclamaré ningún crédito por su gloria, se lo aseguro.";
 			link.l1.go = "catoche_7";
 		break;
 		
 		case "catoche_7":
-			dialog.text = "¿Reclamar el crédito? ¿Qué quieres decir con gloria? ¡No entiendes nada... Eh, está bien. Adiós, señor.";
+			dialog.text = "¿Reclamar el crédito? ¿Qué quieres decir con gloria? ¡No entiendes nada... Eh, está bien. Adiós, sir.";
 			link.l1 = "¡Todo lo mejor para ti también!";
 			link.l1.go = "catoche_8";
 		break;
@@ -81,19 +81,19 @@ void ProcessDialogEvent()
 		
 		case "isladevieques":
 			PlaySound("Voice\Spanish\sharlie\Willie Paterson.wav");
-			dialog.text = "Hombre, los chismes no mienten que tienes nueve vidas como un gato."+TimeGreeting()+", Monsieur de Maure. No parecéis estar muy bien...";
-			link.l1 = TimeGreeting()+", Sr. Paterson. Debo decir que usted y su amigo Archibald interpretaron sus papeles y me engañaron bastante bien, ¡Malditos sean todos! Ni siquiera lo vi venir...";
+			dialog.text = "Hombre, los chismes no mienten que tienes nueve vidas como un gato. "+TimeGreeting()+", Sir de Maure. No pareces estar muy bien...";
+			link.l1 = TimeGreeting()+", Sr. Paterson. Debo decir que usted y su amigo Archibald interpretaron sus papeles y me engañaron bastante bien, ¡malditos sean todos! Ni siquiera lo vi venir...";
 			link.l1.go = "isladevieques_1";
 		break;
 		
 		case "isladevieques_1":
-			dialog.text = "Eh, no jures ante las puertas de la Tierra Santa. ¿No lo viste venir? Estoy halagado: he engañado a uno de los intrigantes más famosos del archipiélago. La idea del diario fue brillante, ¿no te parece?\nTenía que atraerte a algún lugar oscuro, matarte a campo abierto sería un escándalo, eres un amigo cercano de Philippe de Poincy, ¿me equivoco? Ahora vas a desaparecer sin dejar rastro y nadie sabrá nunca cómo.";
+			dialog.text = "Eh, no jures ante las puertas de la Tierra Santa. ¿No lo viste venir? Estoy halagado: he engañado a uno de los hombres más famosos del archipiélago. La idea del diario fue brillante, ¿no te parece?\nTenía que atraerte a algún lugar oscuro, matarte a campo abierto sería un escándalo, eres un amigo cercano de Philippe de Poincy, ¿me equivoco? Ahora vas a desaparecer sin dejar rastro y nadie sabrá nunca cómo.";
 			link.l1 = "Entonces, ¿todo lo que me dijo Calhoun... era una mentira?";
 			link.l1.go = "isladevieques_2";
 		break;
 		
 		case "isladevieques_2":
-			dialog.text = "No en absoluto. Realmente encontré al pobre Archibald en este lugar. Sin embargo, él no escribió ninguna memoria, el diario que encontraste en su habitación fue escrito a mi pedido especialmente para ti, Monseñor de Maure.\nHe estado vigilándote desde que nos conocimos en Cabo Catoche. ¿Fuiste tú quien tomó el mapa de las Dos Apariciones del cadáver de don Diego? No lo niegues, sé que fuiste tú.";
+			dialog.text = "No en absoluto. Realmente encontré al pobre Archibald en este lugar. Sin embargo, él no escribió ninguna memoria, el diario que encontraste en su habitación fue escrito a mi pedido especialmente para ti, Sir de Maure.\nHe estado vigilándote desde que nos conocimos en Cabo Catoche. ¿Fuiste tú quien tomó el mapa de las Dos Apariciones del cadáver de Don Diego? No lo niegues, sé que fuiste tú.";
 			link.l1 = "¿También sabes sobre el Guardián de la Verdad?";
 			link.l1.go = "isladevieques_3";
 		break;
@@ -105,15 +105,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "isladevieques_4":
-			dialog.text = "¡Ja-ja! Bueno, seremos honestos hasta el final... ¿De verdad cree, señor, que soy tan idiota como usted y Don Diego, que llevaría conmigo un objeto tan preciado? La brújula está en Jamaica y ni siquiera en Port Royal, sino en un lugar donde nadie pensaría en buscar y bajo un seguro candado. Pero no necesitará esa información.";
+			dialog.text = "¡Ja-ja! Bueno, seremos honestos hasta el final... ¿De verdad cree, sir, que soy tan idiota como usted y Don Diego, que llevaría conmigo un objeto tan preciado? La brújula está en Jamaica y ni siquiera en Port Royal, sino en un lugar donde nadie pensaría en buscar y bajo un seguro candado. Pero no necesitará esa información.";
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth.OfficerKill"))
 			{
-				link.l1 = "Según entiendo, ¿ya me has dado por muerto, señor Paterson? ¡Me atrevo a proclamar que al gato le queda una vida más!.. ¿Dónde están mis oficiales?";
+				link.l1 = "Según entiendo, ¿ya me has dado por muerto, monsieur Paterson? ¡Me atrevo a proclamar que al gato le queda una vida más!.. ¿Dónde están mis oficiales?";
 				link.l1.go = "isladevieques_5_1";
 			}
 			else
 			{
-				link.l1 = "Por lo que entiendo, ¿ya me has dado por muerto, señor Paterson? ¡Me atrevo a proclamar que al gato le queda una vida!..";
+				link.l1 = "Por lo que entiendo, ¿ya me has dado por muerto, monsieur Paterson? ¡Me atrevo a proclamar que al gato le queda una vida!..";
 				link.l1.go = "isladevieques_5_2";
 			}
 		break;
@@ -121,14 +121,14 @@ void ProcessDialogEvent()
 		case "isladevieques_5_1":
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth.GirlKill"))
 			{
-				dialog.text = "¿Preocupado por tu dama, capitán? Tu mujer está tirada allí en los arbustos con un agujero en la frente. Ella ha trazado el camino para ti y pronto te unirás a ella. ¡Digo, qué chica tan bonita era! ¿Espero que la hayas follado más de una vez?";
-				link.l1 = "¡Es un hijo de puta! ¡Pagarás por eso, maldito enculado!";
+				dialog.text = "¿Preocupado por tu dama, capitán? Tu mujer está tirada allí en los arbustos con un agujero en la frente. Ella ha trazado el camino para ti y pronto te unirás a ella. ¡Digo, qué chica tan bonita era! ¿Espero que la hayas disfrutado más de una vez?";
+				link.l1 = "¡Eres un maldito infeliz! ¡Pagarás por eso, maldito enculado!";
 				link.l1.go = "isladevieques_6";
 			}
 			else
 			{
-				dialog.text = "Sus oficiales han tendido el camino para usted, Monsieur de Maure. Están tendidos allí en los arbustos. Pronto se unirá a ellos.";
-				link.l1 = "¡Ya veremos sobre eso!";
+				dialog.text = "Sus oficiales han tendido el camino para usted, Sir de Maure. Están tendidos allí en los arbustos. Pronto se unirá a ellos.";
+				link.l1 = "¡Eso ya lo veremos!";
 				link.l1.go = "isladevieques_6";
 			}
 		break;

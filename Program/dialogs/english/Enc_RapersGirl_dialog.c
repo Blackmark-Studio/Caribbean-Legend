@@ -488,12 +488,12 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			Log_Info("You have received your share of the treasure");
 			PlaySound("interface\important_item.wav");
-			TakeNItems(pchar, "icollection", 1+drand(1));
-			TakeNItems(pchar, "chest", 2+drand(6));
-			TakeNItems(pchar, "jewelry1", 30+drand(15));
-			TakeNItems(pchar, "jewelry2", 30+drand(15));
-			TakeNItems(pchar, "jewelry3", 30+drand(15));
-			TakeNItems(pchar, "jewelry4", 30+drand(15));
+			TakeNItems(pchar, "icollection", 1+hrand(1));
+			TakeNItems(pchar, "chest", 2+hrand(6));
+			TakeNItems(pchar, "jewelry1", 30+hrand(15));
+			TakeNItems(pchar, "jewelry2", 30+hrand(15));
+			TakeNItems(pchar, "jewelry3", 30+hrand(15));
+			TakeNItems(pchar, "jewelry4", 30+hrand(15));
 			TakeNItems(pchar, "jewelry5", 30+rand(10));
 			TakeNItems(pchar, "jewelry6", 10+rand(10));
 			TakeNItems(pchar, "jewelry42", 20+rand(10));
@@ -634,7 +634,7 @@ void ProcessDialogEvent()
 		
 		case "Node_134_End":
 			GiveItem2Character(pchar, pchar.GenQuest.EncGirl.item); 
-			TakeNItems(pchar, "jewelry1", 15+drand(8));
+			TakeNItems(pchar, "jewelry1", 15+hrand(8));
 			AddQuestRecord("JungleGirl", "2");
 			AddQuestUserData("JungleGirl", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("JungleGirl", "sName", pchar.GenQuest.EncGirl.name); 
@@ -1307,7 +1307,7 @@ void ProcessDialogEvent()
 			}
 			else 
 			{
-				if(drand(1) == 0)
+				if(hrand(1) == 0)
 				{
 					dialog.text = "I will tell everybody that you have saved me! Let everybody know, "+ GetSexPhrase("what a brave and courageous man you are","what a brave and courageous lady you are") +"!";
 					Link.l1 = "Thank you. And now you should go home.";

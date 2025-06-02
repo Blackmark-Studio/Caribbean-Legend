@@ -1,103 +1,113 @@
 RPGUtilite_1
 {
-Experience Gained ~
+Zdobyto doświadczenie ~
 }
 
 RPGUtilite_2
 {
-awful
+okropne
 }
 RPGUtilite_3
 {
-bad
+złe
 }
 
 RPGUtilite_4
 {
-poor
+kiepskie
 }
 
 RPGUtilite_5
 {
-moderate
+bez rewolucji
 }
 
 RPGUtilite_6
 {
-good
+dobre
 }
 
 RPGUtilite_7
 {
-exellent
+świetne
 }
 
 RPGUtilite_8
 {
-Vitality Increased
+Witalność wzrosła
 }
 
 RPGUtilite_9
 {
-Vitality Decreased
+Witalność spadła
 }
 
 RPGUtilite_10
 {
-Bounty Increased!
+Zwiększono nagrode za głowe!
 }
 
 RPGUtilite_11
 {
-National Rep Increased!
+Reputacja wzrosła!
 }
 
 RPGUtilite_12
 {
-National Rep Increased!
+Reputacja wzrosła!
 }
 
 RPGUtilite_13
 {
-National Rep Decreased!
+Reputacja spadła!
 }
 
 RPGUtilite_14
 {
-Bounty ~
+Nagroda ~
 }
 
 RPGUtilite_15
 {
-Hostile
+Wrogie
 }
 
 RPGUtilite_16
 {
-Neutral
+Neutralne
 }
 
 RPGUtilite_17
 {
-Good
+Dobre
 }
 
 RPGUtilite_18
 {
-Exellent
+Świetne
 }
 
 RPGUtilite_19
 {
-Admiration
+Sympatia
 }
 
 RPGUtilite_20
 {
-Rainbow
+Przyjazność
 }
 
 RPGUtilite_21
+{
+Podziw
+}
+
+RPGUtilite_22
+{
+Rainbow
+}
+
+RPGUtilite_23
 {
 Quicksilver
 }

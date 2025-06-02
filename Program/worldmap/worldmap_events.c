@@ -145,7 +145,7 @@ void wdmEvent_AddQuestEncounters()
 				worldMap.(encPath).quest.chrID = at.characterID;
 			}
 			if(at.type == "coolwarrior")
-			{			
+			{
 				if(!GenerateMapEncounter_Alone(at.characterID, &idx))
 				{
 					PostEvent("Map_WarriorEnd", 100, "s", at.characterID);
@@ -213,7 +213,7 @@ ref wdmEncounterDelete()
 	makearef(enc, worldMap.(encPath));
 	if(CheckAttribute(enc,"encdata.Task.Target") && enc.encdata.Task.Target == PLAYER_GROUP)
 	{
-		if(CheckAttribute(pchar, "worldmap.FollowCounter")) DeleteAttribute(pchar, "worldmap.FollowCounter");
+		DeleteAttribute(pchar, "worldmap.FollowCounter");
 		log_testinfo("worldmap преследователь Task Target "+enc.encdata.Task.Target+" удалён");
 	}
 	//Сохраняем событие
@@ -227,7 +227,6 @@ ref wdmEncounterDelete()
 		//Даже если его трет программист?
     	if(CheckAttribute(&enc, "Gotox") && CheckAttribute(&enc, "Gotoz"))
 		{
-
 			float fDeltaX = (stf(enc.x) - stf(enc.Gotox));
 			float fDeltaZ = (stf(enc.z) - stf(enc.Gotoz));
 			float fRadSqr = fDeltaX*fDeltaX + fDeltaZ*fDeltaZ;
@@ -347,4 +346,3 @@ string GetPlayerShipModel()
 	}
 	return "Ship";
 }
-

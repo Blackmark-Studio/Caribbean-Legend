@@ -50,7 +50,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "Portugal_2":
 		dialog.text = "¡Sí lo hace! ¿De verdad no entiendes lo que has hecho? ¡El 'Albatross' está cerca de la isla y has capturado al pirata cuya brutalidad asusta incluso a su propia gente sedienta de sangre! ¡Aléjate de aquí! ¡Aléjate de la isla! ¡Y llévate a este monstruo contigo!";
-		link.l1 = "Pero escucha, ¿qué hay de la recompensa prometida y...";
+		link.l1 = "Pero escucha, ¿qué hay de la recompensa prometida y...?";
 		link.l1.go = "Portugal_3";
 		break;
 
@@ -80,7 +80,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "FMQN_2":
-		dialog.text = "En ese caso, tengo una oferta para usted. Según nuestra inteligencia, existe el riesgo de espías ingleses aquí. Daré diez mil pesos como recompensa por cualquier información sobre embarcaciones y personas sospechosas en la isla, en la ciudad, sus alrededores, en las costas, etc. La recompensa se incrementará significativamente en caso de asistir a las autoridades en la detención o eliminación de un enemigo.\nTodo capitán civil es bienvenido a participar en la investigación y a patrullar las costas y la selva local en busca de espías.\nEs posible que encontréis nuestro corbeta militar, el Zeepard, no temáis, está de patrulla. Podéis dirigiros a su capitán en caso de encontrar a los británicos.";
+		dialog.text = "En ese caso, tengo una oferta para usted. Según nuestra inteligencia, existe el riesgo de espías ingleses aquí. Daré diez mil pesos como recompensa por cualquier información sobre embarcaciones y personas sospechosas en la isla, en la ciudad, sus alrededores, en las costas, etc. La recompensa se incrementará significativamente en caso de asistir a las autoridades en la detención o eliminación de un enemigo.\nTodo capitán civil es bienvenido a participar en la investigación y a patrullar las costas y la selva en busca de espías.\nEs posible que encontréis nuestro corbeta militar, el Zeepard, no temáis, está de patrulla. Podéis dirigiros a su capitán en caso de encontrar a los británicos.";
 		link.l1 = "¡Ay, su Excelencia, pero estoy aquí solo con intenciones pacíficas de comercio. Tendré que dejar esta isla tan pronto como me reabastezca y termine mis asuntos aquí!";
 		link.l1.go = "FMQN_3";
 		link.l2 = "¡Una oferta tentadora! Creo que participaré y saquearé las aguas y costas de tu isla. Incluso podría quedarme aquí por un tiempo.";
@@ -117,7 +117,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "FMQN_7":
 		DelLandQuestMark(npchar);
-		dialog.text = "Hemos estado esperándote, Mynheer " + GetFullName(pchar) + " Permítame expresar nuestro agradecimiento por sus acciones al eliminar al peligroso grupo de asalto inglés. Acepte estos diez mil pesos. Además: 200 piezas de seda serán cargadas en la bodega de su barco y una recompensa muy especial: una licencia de tres años de la Compañía Holandesa de Comercio de las Indias Occidentales. Este es un documento extremadamente valioso, espero que lo sepa?";
+		dialog.text = "Hemos estado esperándote, Mynheer " + GetFullName(pchar) + ". Permítame expresar nuestro agradecimiento por sus acciones al eliminar al peligroso grupo de asalto inglés. Acepte estos diez mil pesos. Además: 200 piezas de seda serán cargadas en la bodega de su barco y una recompensa muy especial: una licencia de tres años de la Compañía Holandesa de Comercio de las Indias Occidentales. Este es un documento extremadamente valioso, espero que lo sepa.";
 		link.l1 = "¡Por supuesto! Una licencia de tres años, esto es ciertamente grande.";
 		link.l1.go = "FMQN_8";
 		break;
@@ -143,7 +143,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "tomas_2":
-		dialog.text = "Pero... Pero, ¿qué nos sucederá a nosotros, con los soldados holandeses que se rindieron a usted, y los heridos? ¿Y qué...";
+		dialog.text = "Pero... Pero, ¿qué sucederá con nosotros, con los soldados holandeses que se rindieron ante usted, y los heridos? ¿Y qué...?";
 		link.l1 = "Eso dependerá solo de usted, Mynheer Thomas. Si me hace un favor, entonces permitiré que todos aquellos que se rindieron lleven a sus heridos y partan de aquí en un barco o barcos que encontraremos en los muelles, hacia Curazao, hacia Mynheer Stuyvesant.";
 		link.l1.go = "tomas_2_1";
 		break;

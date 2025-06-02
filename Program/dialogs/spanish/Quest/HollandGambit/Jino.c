@@ -222,8 +222,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "meeting_4":
-		dialog.text = "Por supuesto, Capitán. Te llamaré Capitán, " + GetAddress_Form(NPChar) + ", si no te importa? Dejaré todas mis investigaciones por si necesitas mis habilidades prácticas o conocimientos teóricos.";
-		link.l1 = "Espléndido. Me alegra que nos hayamos entendido tan rápido. No te preocupes por tus gastos, yo o mi intendente te dejaremos sumas razonables de vez en cuando.";
+		dialog.text = "Por supuesto, Capitán. Te llamaré Capitán, " + GetAddress_Form(NPChar) + ", si no te importa. Dejaré todas mis investigaciones por si necesitas mis habilidades prácticas o conocimientos teóricos.";
+		link.l1 = "Espléndido. Me alegra que nos hayamos entendido tan rápido. No te preocupes por tus gastos, mi intendente o yo te dejaremos sumas razonables de vez en cuando.";
 		link.l1.go = "meeting_5";
 		break;
 
@@ -369,8 +369,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "cartridge":
-		dialog.text = "Sí, he descubierto de qué están hechas las cargas para la pistola. Tengo que darle crédito al libro que me has presentado. No habría funcionado sin él. Pero tengo que advertirte, Capitán, no será fácil crear balas y cápsulas para esta arma.";
-		link.l1 = "Cápsulas?";
+		dialog.text = "Sí, he descubierto de qué están hechas las cargas para la pistola. Tengo que darle crédito al libro que me diste. No habría funcionado sin él. Pero tengo que advertirte, Capitán, no será fácil crear balas y cápsulas para esta arma.";
+		link.l1 = "¿Cápsulas?";
 		link.l1.go = "cartridge_1";
 		break;
 
@@ -531,7 +531,7 @@ void ProcessDialogEvent()
 
 	case "Portugal_6":
 		dialog.text = "Tres días... sí, supongo que en tres días podrías intentar zarpar, pero necesitará cuidados y medicinas y tendrás que hacer paradas.";
-		link.l1 = "He conseguido un médico, él se encargará de él. Volveré en tres días y lo llevaremos, es lo máximo que puedo permitirme. Tenemos que movernos, incluso con paradas... sí, y una cosa más - ¡Gino, eres un genio!";
+		link.l1 = "He conseguido un médico, él se encargará de él. Volveré en tres días y lo llevaremos, es lo máximo que puedo permitirme. Tenemos que movernos, incluso con paradas... sí, y una cosa más, ¡Gino, eres un genio!";
 		link.l1.go = "Portugal_7";
 		break;
 
@@ -565,12 +565,12 @@ void ProcessDialogEvent()
 	case "Portugal_9":
 		pchar.quest.Portugal_Ill2.over = "yes";
 		dialog.text = "No hay deterioro, pero tampoco ha mejorado realmente. Todavía está inconsciente, no entiende dónde está ni por qué está aquí, aunque no parece preocuparle mucho. Todavía tiene fiebre, así que no estoy seguro de que llevarlo a bordo ahora sea una buena idea.";
-		link.l1 = "No puedo esperar más, ya hemos estado aquí demasiado tiempo. Empaca tus mezclas que le ayudarán en el viaje y nos vamos. Espero que este bastardo sea lo suficientemente fuerte como para sobrevivir lo suficiente como para enfrentar su sentencia de muerte...";
+		link.l1 = "No puedo esperar más, ya hemos estado aquí demasiado tiempo. Empaca tus mezclas que le ayudarán en el viaje y nos vamos. Espero que este bastardo sea lo suficientemente fuerte como para sobrevivir el viaje y enfrentar su sentencia de muerte...";
 		link.l1.go = "Portugal_10";
 		break;
 
 	case "Portugal_10":
-		dialog.text = "¡Espera, Capitán! ¿He estado tratando con condenados? ¿Qué demonios? Se ha hecho un gran trabajo aquí, ¿tienes idea de lo difícil que es hacer la pólvora seca...";
+		dialog.text = "¡Espera, Capitán! ¿He estado tratando con condenados? ¿Qué demonios? Se ha hecho un gran trabajo aquí, ¿tienes idea de lo difícil que es hacer la pólvora seca...?";
 		link.l1 = "Gino, no necesitabas saber eso. No te preocupes demasiado, él es un pirata y uno de los más terribles de su clase. Tengo que llevarlo a Curazao para una cita con las autoridades de la Compañía lo antes posible. Punto.";
 		link.l1.go = "Portugal_11";
 		break;
@@ -582,7 +582,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Portugal_12":
-		dialog.text = " Eres bienvenido, Capitán. Recuerda que tienes cuatro días, bueno, cinco, pero no más. Y una última cosa... sabes, suelo curar a la gente no porque quiera que los cuelguen después de mi tratamiento. El doctor es responsable de sus pacientes sin importar quiénes sean. Y me siento realmente mal...";
+		dialog.text = "De nada, Capitán. Recuerda que tienes cuatro días, bueno, cinco, pero no más. Y una última cosa... sabes, suelo curar a la gente no porque quiera que los cuelguen después de mi tratamiento. El doctor es responsable de sus pacientes sin importar quiénes sean. Y me siento realmente mal...";
 		link.l1 = "Lamento haberte arrastrado a todo esto, pero no teníamos ninguna oportunidad sin ti. Tenemos que zarpar ahora o los chicos portugueses lograrán reunirse en nuestras puertas para encontrarse con su jefe.";
 		link.l1.go = "Portugal_13";
 		break;
@@ -620,7 +620,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "guardoftruth_1":
-		dialog.text = "¿Has visto al inquisidor? ¿Está él...";
+		dialog.text = "¿Has visto al inquisidor? ¿Está él...?";
 		link.l1 = "No te preocupes, Gino. No hay manera de que te entregue a él, aunque esa fue su orden: encontrarte y llevarte a él. Necesito obtener información sobre un indio del pueblo Itza. Cuéntame sobre Tayasal, sus tesoros y el 'mal' que lo rodea.";
 		link.l1.go = "guardoftruth_2";
 		break;
@@ -681,7 +681,7 @@ void ProcessDialogEvent()
 
 	case "guardoftruth_11":
 		dialog.text = "No te rías, Capitán. Kanek no estaba perdiendo años en los templos mayas leyendo sus escrituras. Un dios indio debe ser enviado al pasado en forma humana...";
-		link.l1 = "Gino, ¿de qué tonterías estás hablando? ¿Eres tú....";
+		link.l1 = "Gino, ¿de qué tonterías estás hablando? ¿Eres tú....?";
 		link.l1.go = "guardoftruth_12";
 		break;
 
@@ -692,7 +692,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "guardoftruth_13":
-		dialog.text = "Claro que lo soy. Ksatl Cha fue muy persuasivo...";
+		dialog.text = "Claro que sí. Ksatl Cha fue muy persuasivo...";
 		link.l1 = "¿Pero qué Dios eligió Kanek para tan 'noble' misión?";
 		link.l1.go = "guardoftruth_14";
 		break;
@@ -805,7 +805,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "guardoftruth_29":
-		dialog.text = "¿Vas a regresar al inquisidor? Pero, ¿cómo vas a informar sobre...";
+		dialog.text = "¿Vas a regresar al inquisidor? Pero, ¿cómo vas a informar sobre...?";
 		link.l1 = "Tengo que convencer al padre Vincento de que estás muerto, Gino. Solo entonces detendrá sus búsquedas. Digamos que tuviste un ataque repentino al verme. Debes darme un objeto que pueda usar como prueba de tu muerte.";
 		link.l1.go = "guardoftruth_30";
 		break;
@@ -893,7 +893,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ksochitam_2":
-		dialog.text = " He adivinado cómo hacer que el mapa se 'revele'. ¿Has echado un vistazo al mapa de Dos Apariciones?";
+		dialog.text = "He adivinado cómo hacer que el mapa se 'revele'. ¿Has echado un vistazo al mapa de Dos Apariciones?";
 		link.l1 = "Hm. ¿Y hubo algo especial? Unos contornos ocultos del archipiélago...";
 		link.l1.go = "ksochitam_3";
 		break;
@@ -990,13 +990,13 @@ void ProcessDialogEvent()
 
 	case "ksochitam_16":
 		dialog.text = "Solo puedo suponer que estas calaveras nos muestran algunos lugares reales. La Flecha del Camino no funciona mientras está colocada en las apariencias del mapa. ¿Quizás funcionará cerca de las apariencias geográficas reales que fueron reveladas por el mapa?";
-		link.l1 = "¡Gino, eres un genio! ¿El Main Occidental, Dominica? Las calaveras son demasiado grandes para mostrar las ubicaciones exactas.";
+		link.l1 = "¡Gino, eres un genio! ¿Tierra Firme occidental, Dominica? Las calaveras son demasiado grandes para mostrar las ubicaciones exactas.";
 		link.l1.go = "ksochitam_17";
 		break;
 
 	case "ksochitam_17":
 		chrDisableReloadToLocation = false; // открыть локацию
-		dialog.text = " " + pchar.name + ", hagamos lo siguiente: Tráeme un mapa de papel del archipiélago, combínalo con el mapa de Dos Apariciones y marca las apariciones con cruces. ¿Quizás esto te dará algunas suposiciones?";
+		dialog.text = "" + pchar.name + ", hagamos lo siguiente: Tráeme un mapa de papel del archipiélago, combínalo con el mapa de Dos Apariciones y marca las apariciones con cruces. ¿Quizás esto te dará algunas suposiciones?";
 		if (CheckCharacterItem(pchar, "map_bad"))
 		{
 			link.l1 = "Tengo este viejo mapa del archipiélago.";
@@ -1119,7 +1119,7 @@ void ProcessDialogEvent()
 
 	case "ksochitam_25":
 		dialog.text = "¿Y qué, " + pchar.name + ", ¿tenemos suerte en nuestras búsquedas?";
-		link.l1 = "  Tuvimos razón. Esto es. El ídolo indio es una de las apariencias.";
+		link.l1 = "Tuvimos razón. Esto es. El ídolo indio es una de las apariencias.";
 		link.l1.go = "ksochitam_26";
 		break;
 
@@ -1389,8 +1389,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "ksochitam_54":
-		dialog.text = "Me acostaré en mi cama sobre tierra firme con gran placer... Espero, " + pchar.name + ", que has librado tu cabeza de la idea de visitar Tayasal?";
-		link.l1 = " No lo sé aún, Gino. Para ser honesto, todavía no estoy seguro.";
+		dialog.text = "Me acostaré en mi cama sobre tierra firme con gran placer... Espero, " + pchar.name + ", que hayas abandonado la idea de visitar Tayasal.";
+		link.l1 = "No lo sé aún, Gino. Para ser honesto, todavía no estoy seguro.";
 		link.l1.go = "ksochitam_55";
 		break;
 

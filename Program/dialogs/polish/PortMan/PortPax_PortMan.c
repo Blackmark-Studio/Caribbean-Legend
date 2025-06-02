@@ -17,7 +17,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				break;
 			}
 			//регата
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie pytania?","Czego chcesz, "+GetAddress_Form(NPChar)+"?"),"Już próbowałeś zadać mi pytanie "+GetAddress_Form(NPChar)+"... ","Już po raz trzeci dzisiaj mówisz o jakimś pytaniu...","Spójrz, jeśli nie masz nic do powiedzenia na temat spraw portu, to nie zawracaj mi głowy swoimi pytaniami.","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie pytania?","Czego chcesz, "+GetAddress_Form(NPChar)+"?"),"Już próbowałeś zadać mi pytanie "+GetAddress_Form(NPChar)+"... ","Już po raz trzeci dzisiaj mówisz o jakimś pytaniu...","Spójrz, jeśli nie masz nic do powiedzenia na temat spraw portu, to nie zawracaj mi głowy swoimi pytaniami.","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniłem zdanie.","Nie mam o czym rozmawiać."),"Nieważne.","Rzeczywiście, to już trzeci raz...","Przykro mi, ale na razie nie interesują mnie sprawy portowe.",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 		break;

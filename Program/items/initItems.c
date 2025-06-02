@@ -109,7 +109,7 @@ int InitItems()
 	n = InitStdBlade(n, "blade_04", "ITEMS_16",  3, TGT_MARGINAL,       B_GOOD, "FencingS", 1, 1.00, 1.00, 1, 15, 1, 		  0); // Госсемесер
 	n = InitStdBlade(n, "blade_05", "ITEMS_15", 16, TGT_MARGINAL,   B_ORDINARY, "FencingS", 2, 1.00, 1.05, 1, 10, 1, 		  0); // Катлас
 	n = InitStdBlade(n, "blade_06", "ITEMS_17",  1, TGT_MARGINAL,       B_GOOD, "FencingH", 3, 1.00, 1.00, 1, 15, 1, 		  0); // Скьявона
-	n = InitStdBlade(n, "blade_07", "ITEMS_16", 14, TGT_MARGINAL,   B_ORDINARY, "FencingH", 4, 1.00, 1.00, 1, 10, 1, 		  0); // Эсток
+	n = InitStdBlade(n, "blade_07", "ITEMS_16", 14, TGT_MARGINAL,   B_ORDINARY, "FencingH", 4, 1.00, 1.00, 1, 10, 1, 		  0); // Риттершверт
 	n = InitStdBlade(n, "blade_08", "ITEMS_15",  5,  TGT_SOLDIER,   B_ORDINARY, "FencingL", 0, 1.10, 1.10, 1, 10, 1, 		  0); // Бильбо
 	n = InitStdBlade(n, "blade_09", "ITEMS_15",  4,  TGT_SOLDIER,   B_ORDINARY, "FencingL", 1, 0.95, 1.00, 1, 10, 1, 		  0); // Карцолета
 	n = InitStdBlade(n, "blade_10", "ITEMS_16",  4,  TGT_SOLDIER,       B_GOOD, "FencingS", 2, 0.90, 1.05, 1, 15, 1, 		  0); // Корд
@@ -1488,6 +1488,103 @@ int InitItems()
     itm.ItemType = "QUESTITEMS";
     n++;
 	
+	// Новые квестовые предметы
+	makeref(itm,Items[n]); //квестовое зелье
+	itm.id = "quest_potion";
+	itm.name = "itmname_quest_potion";
+	itm.describe = "itmdescr_quest_potion";
+	itm.model = "";
+	itm.picIndex = 1;
+	itm.picTexture = "ITEMS_41";
+	itm.price = 0;
+	itm.Weight = 0.0;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm,Items[n]); //бочонок джина
+	itm.id = "cask_gin";
+	itm.name = "itmname_cask_gin";
+	itm.describe = "itmdescr_cask_gin";
+	itm.model = "";
+	itm.picIndex = 3;
+	itm.picTexture = "ITEMS_35";
+	itm.price = 0;
+	itm.Weight = 10;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm,Items[n]); //фитиль для туториала
+	itm.id = "Wick";
+	itm.name = "itmname_Wick";
+	itm.describe = "itmdescr_Wick";
+	itm.model = "Wick";
+	itm.picIndex = 3;
+	itm.picTexture = "ITEMS_35";
+	itm.price = 0;
+	itm.Weight = 10;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm,Items[n]); //подзорная труба для туториала
+	itm.id = "Spyglass_1";
+	itm.name = "itmname_Spyglass_1";
+	itm.describe = "itmdescr_Spyglass_1";
+	itm.model = "Spyglass_1";
+	itm.picIndex = 3;
+	itm.picTexture = "ITEMS_35";
+	itm.price = 0;
+	itm.Weight = 10;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm,Items[n]); //Ожерелье Жюли
+	itm.id = "SM_necklace_Julie";
+	itm.name = "itmname_SM_necklace_Julie";
+	itm.describe = "itmdescr_SM_necklace_Julie";
+	itm.model = "";
+	itm.picIndex = 2;
+	itm.picTexture = "ITEMS_41";
+	itm.price = 0;
+	itm.Weight = 1.0;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm,Items[n]); //Письмо Тайна Бетси Прайс
+	itm.id = "TBP_letter";
+	itm.name = "itmname_TBP_letter";
+	itm.describe = "itmdescr_TBP_letter";
+	itm.model = "";
+	itm.picIndex = 7;
+	itm.picTexture = "ITEMS_26";
+	itm.price = 10;
+	itm.Weight = 0.1;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm,Items[n]); // Дневник Грима
+	itm.id = "Memento_Book";
+	itm.name = "itmname_Memento_Book";
+	itm.describe = "itmdescr_Memento_Book";
+    itm.model = "OpenBook";
+	itm.picIndex = 15;
+	itm.picTexture = "ITEMS_26";
+	itm.price = 0;
+	itm.Weight = 1.0;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm,Items[n]); // Записка на Мементо
+	itm.id = "Memento_letter"; 
+	itm.name = "itmname_Memento_letter";
+	itm.describe = "itmdescr_Memento_letter";
+	itm.model = "Letter_sp2";
+	itm.picIndex = 6;
+	itm.picTexture = "ITEMS_26";
+	itm.price = 0;
+	itm.Weight = 0.1;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
 	// резервные предметы для возможных дополнений - 10 шт
 	makeref(itm,Items[n]); // письма и депеши по НСО
 	itm.id = "Reserve_item_01"; 
@@ -2266,9 +2363,59 @@ int InitItems()
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
 	n++;
+	
+	makeref(itm, Items[n]); // ящик с ядрами
+	itm.id = "BoxOfBalls";
+	itm.name = "itmname_BoxOfBalls";
+	itm.describe = "itmdescr_BoxOfBalls";
+	itm.model = "";
+	itm.picIndex = 14;
+	itm.picTexture = "ITEMS_18";
+	itm.Weight = 127.0;
+	itm.price = 100;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm, Items[n]); // ключ для обучения
+	itm.id = "Tutorial_key";
+	itm.name = "itmname_Tutorial_key";
+	itm.describe = "itmdescr_Tutorial_key";
+	itm.model = "keysimple";
+	itm.picIndex = 5;
+	itm.picTexture = "ITEMS_36";
+	itm.Weight = 0.1;
+	itm.price = 0;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm, Items[n]); // Журнал капитана для обучения
+	itm.id = "Tutorial_journal";
+	itm.name = "itmname_Tutorial_journal";
+	itm.describe = "itmdescr_Tutorial_journal";
+	itm.model = "";
+	itm.picIndex = 15;
+	itm.picTexture = "ITEMS_22";
+	itm.price = 0;
+	itm.Weight = 0.2;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm,Items[n]); // Записки переданные наёмником
+	itm.id = "GS_letters";
+	itm.name = "itmname_GS_letters";
+	itm.describe = "itmdescr_GS_letters";
+	itm.model = "letter";
+	itm.picIndex = 16;
+	itm.picTexture = "ITEMS_22";
+	itm.Weight = 0.1;
+	itm.useLocation = "Beliz_houseS5_Room2";
+	itm.useLocator = "button01";
+	itm.price = 0;
+	itm.ItemType = "QUESTITEMS";
+	n++;
 
 	// резервные предметы для возможных дополнений - +10 шт
-	makeref(itm,Items[n]); //резервный предмет №11 (Разбросанные записки)
+	makeref(itm,Items[n]); //резервный предмет №11
 	itm.id = "Reserve_item_11"; 
 	itm.name = "itmname_Reserve_item_11";
 	itm.describe = "itmdescr_Reserve_item_11";
@@ -2281,7 +2428,7 @@ int InitItems()
 	n++;
 		
 	
-	makeref(itm,Items[n]); //резервный предмет №12 (ключ от подсвечника Порт Рояль)
+	makeref(itm,Items[n]); //резервный предмет №12
 	itm.id = "Reserve_item_12"; 
 	itm.name = "itmname_Reserve_item_12";
 	itm.describe = "itmdescr_Reserve_item_12";
@@ -2294,7 +2441,7 @@ int InitItems()
 	n++;
 	
 	
-	makeref(itm,Items[n]); //резервный предмет №13 (ключ от подсвечника Виллемстад)
+	makeref(itm,Items[n]); //резервный предмет №13
 	itm.id = "Reserve_item_13"; 
 	itm.name = "itmname_Reserve_item_13";
 	itm.describe = "itmdescr_Reserve_item_13";
@@ -3297,6 +3444,7 @@ int InitItems()
 	n = InitStdTalisman(n, "talisman16", "", "ITEMS_24",  7, rand(5000), 0.5,             ""); // Золотой нож cle 1.5
 	n = InitStdTalisman(n, "talisman17", "", "ITEMS_39",  8, rand(5000), 0.5,             ""); // Оберег Liber Misericordiae cle 1.5 DLC SP1
 	n = InitStdTalisman(n, "talisman18", "", "ITEMS_39", 16, rand(5000), 0.5,             ""); // Оберег Устав Блеквуда SP2
+	n = InitStdTalisman(n, "talisman19", "", "ITEMS_33", 11, rand(5000), 0.5,             ""); // Оберег Череп
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//					ЮВЕЛИРНЫЕ ИЗДЕЛИЯ И ДРАГОЦЕННОСТИ
@@ -3866,122 +4014,90 @@ void InitRandItems()
 	rnditem.maxQuantity = 1;
 
 	makeref(rnditem,RandItems[23]);
-	rnditem.id = "cannabis5";
-	rnditem.maxQuantity = 1;
-
-	makeref(rnditem,RandItems[24]);
 	rnditem.id = "slave_01";
 	rnditem.maxQuantity = 1;
 
-	makeref(rnditem,RandItems[25]);
+	makeref(rnditem,RandItems[24]);
 	rnditem.id = "slave_02";
 	rnditem.maxQuantity = 1;
 
-	makeref(rnditem,RandItems[26]);
+	makeref(rnditem,RandItems[25]);
 	rnditem.id = "topor_05";
 	rnditem.maxQuantity = 1;
 
-	makeref(rnditem,RandItems[27]);
+	makeref(rnditem,RandItems[26]);
 	rnditem.id = "blade_03";
 	rnditem.maxQuantity = 1;
 
-	makeref(rnditem,RandItems[28]);
-	rnditem.id = "cannabis4";
-	rnditem.maxQuantity = 1;
-
-	makeref(rnditem,RandItems[29]);
+	makeref(rnditem,RandItems[27]);
 	rnditem.id = "blade_05";
 	rnditem.maxQuantity = 1;
 
-	makeref(rnditem,RandItems[30]);
-	rnditem.id = "cannabis3";
-	rnditem.maxQuantity = 1;
-
-	makeref(rnditem,RandItems[31]);
+	makeref(rnditem,RandItems[28]);
 	rnditem.id = "jewelry1";
 	rnditem.maxQuantity = 1;
 
-	makeref(rnditem,RandItems[32]);
+	makeref(rnditem,RandItems[29]);
 	rnditem.id = "Mineral19"; // Addon-2016 Jason
 	rnditem.maxQuantity = 1;
 
-	makeref(rnditem,RandItems[33]);
+	makeref(rnditem,RandItems[30]);
 	rnditem.id = "blade_07";
 	rnditem.maxQuantity = 1;
 
-    makeref(rnditem,RandItems[34]);
+    makeref(rnditem,RandItems[31]);
 	rnditem.id = "jewelry45";
 	rnditem.maxQuantity = 4;
 
-    makeref(rnditem,RandItems[35]);
+    makeref(rnditem,RandItems[32]);
 	rnditem.id = "jewelry46";
 	rnditem.maxQuantity = 4;
 
-    makeref(rnditem,RandItems[36]);
+    makeref(rnditem,RandItems[33]);
 	rnditem.id = "bullet"; // boal "Mineral1";
 	rnditem.maxQuantity = 20;
 
-	makeref(rnditem,RandItems[37]);
+	makeref(rnditem,RandItems[34]);
 	rnditem.id = "mineral3";
 	rnditem.maxQuantity = 4;
 
-	makeref(rnditem,RandItems[38]);
+	makeref(rnditem,RandItems[35]);
 	rnditem.id = "Mineral4";  
 	rnditem.maxQuantity = 1;
 
-    makeref(rnditem,RandItems[39]);
+    makeref(rnditem,RandItems[36]);
 	rnditem.id = "Mineral5";  
 	rnditem.maxQuantity = 1;
 
-	makeref(rnditem,RandItems[40]);
+	makeref(rnditem,RandItems[37]);
 	rnditem.id = "Mineral6";  
 	rnditem.maxQuantity = 4;
 
-	makeref(rnditem,RandItems[41]);
+	makeref(rnditem,RandItems[38]);
 	rnditem.id = "Mineral7";  
 	rnditem.maxQuantity = 1;
 
-    makeref(rnditem,RandItems[42]);
+    makeref(rnditem,RandItems[39]);
 	rnditem.id = "potion5";
 	rnditem.maxQuantity = 4;
 
-	makeref(rnditem,RandItems[43]);
+	makeref(rnditem,RandItems[40]);
 	rnditem.id = "potionwine";
 	rnditem.maxQuantity = 4;
 
-	makeref(rnditem,RandItems[44]);
+	makeref(rnditem,RandItems[41]);
 	rnditem.id = "potionrum";
 	rnditem.maxQuantity = 4;
 	// boal <--
-	makeref(rnditem,RandItems[45]);
-	rnditem.id = "cannabis3";  
-	rnditem.maxQuantity = 1;
-
-	makeref(rnditem,RandItems[46]);
-	rnditem.id = "cannabis1";  
-	rnditem.maxQuantity = 1;
-
-    makeref(rnditem,RandItems[47]);
-	rnditem.id = "cannabis2";
-	rnditem.maxQuantity = 1;
-
-	makeref(rnditem,RandItems[48]);
-	rnditem.id = "cannabis4";
-	rnditem.maxQuantity = 1;
-
-	makeref(rnditem,RandItems[49]);
-	rnditem.id = "cannabis6";
-	rnditem.maxQuantity = 1;
-	
-	makeref(rnditem,RandItems[50]);
+	makeref(rnditem,RandItems[42]);
 	rnditem.id = "jewelry52";
 	rnditem.maxQuantity = 4;
 	
-	makeref(rnditem,RandItems[51]);
+	makeref(rnditem,RandItems[43]);
 	rnditem.id = "jewelry53";
 	rnditem.maxQuantity = 7;
 	
-	makeref(rnditem,RandItems[52]);
+	makeref(rnditem,RandItems[44]);
 	rnditem.id = "talisman11";
 	rnditem.maxQuantity = 1;
 }
@@ -4156,6 +4272,7 @@ int InitStdBlade( 	int		ItemIndex,
 	switch (BladeType) 
 	{
 		case "FencingL" :
+			blade.WeightAttack = stf(blade.Attack) * (0.5 + 0.2 * stf(blade.Weight));
 			if(isGenerablePrice) 
 			{
 				blade.price  = makeint(35.0 * (1.0/Curve + Lenght) * (stf(blade.Attack) * 2.0 - 30.0));
@@ -4163,6 +4280,7 @@ int InitStdBlade( 	int		ItemIndex,
 			else blade.price = Price;			
 		break;
 		case "FencingS" :
+			blade.WeightAttack = stf(blade.Attack) * (0.25 + 0.25 * stf(blade.Weight));
 			if(isGenerablePrice) 
 			{
 				blade.price  = makeint(25.0 * (Curve + Lenght) * (stf(blade.Attack) * 2.0 - 40.0));
@@ -4170,6 +4288,7 @@ int InitStdBlade( 	int		ItemIndex,
 			else blade.price = Price;			
 		break;
 		case "FencingH" :
+			blade.WeightAttack = stf(blade.Attack) * (0.25 + 0.2 * stf(blade.Weight));
 			if(isGenerablePrice) 
 			{
 				blade.price  = makeint(20.0 * ((Curve + 1.0) * 1.0/Lenght) * (stf(blade.Attack) * 2.0 - 50.0));
@@ -4873,36 +4992,24 @@ void InitGrapeGunExt(string id, string sAttr, int basedmg, int shards, float wid
 	gun.type.(sAttr).height = height;
 }
 
-void InitMushketExt(string id, 
-					float  DmgMin_butt,  
-					float  DmgMax_butt, 
-					float  DmgMin_bayonet, 
-					float  DmgMax_bayonet, 
-					string sAttack_butt, 
-					string sAttack_bayonet )
+void InitMushketExt(string id, float attack)
 {
-	ref gun = ItemsFromID(id);
-	gun.DmgMin_butt 	= DmgMin_butt;
-	gun.DmgMax_butt 	= DmgMax_butt;
-	gun.DmgMin_bayonet 	= DmgMin_bayonet;
-	gun.DmgMax_bayonet 	= DmgMax_bayonet;
-	gun.sAttack_butt 	= sAttack_butt;
-	gun.sAttack_bayonet = sAttack_bayonet;	
+	ref musket = ItemsFromID(id);
+	musket.Attack = attack;
 }					
 					
 void InitMushkets()
 {
-	//InitMushketExt(id, DmgMin_butt, DmgMax_butt, DmgMin_bayonet, DmgMax_bayonet, sAttack_butt, sAttack_bayonet );	
-	InitMushketExt(		"mushket1",  25.0,  50.0,  10.0,  25.0, "FencingH", "FencingL" );
-	InitMushketExt(		"mushket2",  10.0,  35.0,  25.0,  60.0, "FencingH", "FencingL" );
-	InitMushketExt(		"mushket3",  10.0,  25.0,  10.0,  20.0, "FencingH", "FencingL" );
-	InitMushketExt("grape_mushket",  10.0,  25.0,   5.0,  15.0, "FencingH", "FencingL" );
-	InitMushketExt(		"mushket5",  10.0,  35.0,  10.0,  25.0, "FencingH", "FencingL" );
-	InitMushketExt(		"mushket6",  10.0,  25.0,  10.0,  20.0, "FencingH", "FencingL" );
-	InitMushketExt(		"mushket7",  10.0,  25.0,  10.0,  20.0, "FencingH", "FencingL" ); // Качественный мушкет cle
-	InitMushketExt(		"mushket8",  20.0,  60.0,  10.0,  20.0, "FencingH", "FencingL" ); // Четырехзарядный штуцер cle
-	InitMushketExt(	  "mushket2x2",  10.0,  35.0,  10.0,  25.0, "FencingH", "FencingL" );
-	InitMushketExt(		"mushket9",  10.0,  25.0,  10.0,  20.0, "FencingH", "FencingL" ); // Аркебуза конкистадора SP2
+	InitMushketExt(		"mushket1", 50.0);
+	InitMushketExt(		"mushket2", 35.0);
+	InitMushketExt(		"mushket3", 25.0);
+	InitMushketExt("grape_mushket", 25.0);
+	InitMushketExt(		"mushket5", 35.0);
+	InitMushketExt(		"mushket6", 25.0);
+	InitMushketExt(		"mushket7", 25.0); // Качественный мушкет cle
+	InitMushketExt(		"mushket8", 60.0); // Четырехзарядный штуцер cle
+	InitMushketExt(	  "mushket2x2", 35.0);
+	InitMushketExt(		"mushket9", 25.0); // Аркебуза конкистадора SP2
 }
 					
 void InitGuns()

@@ -37,7 +37,7 @@ void ProcessDialogEvent()
 		break;
 
         case "Map_NotBuy":
-            dialog.Text = "Te aseguro, te harás rico. Lo envolveré para ti en un paño y en un pañuelo, si te gusta.";
+            dialog.Text = "Te aseguro, te harás rico. Lo envolveré para ti en un pañuelo, si te gusta.";
 			Link.l1 = "¡Quédate ahí, volveré enseguida!";
 			Link.l1.go = "exit";
 		break;
@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Temp_treasure":
-            dialog.Text = "Tomemos una copa, ¿verdad? Hic... ¡Aquí sirven un ron estupendo!";
+            dialog.Text = "Tomaremos una jarra, ¿verdad? Hic... ¡Aquí sirven un ron estupendo!";
 			Link.l1 = "¡No tengo tiempo!";
 			Link.l1.go = "exit";
             if (GetCharacterItem(Pchar, "map_full") == 0)

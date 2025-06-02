@@ -47,7 +47,7 @@ Dézoomer la caméra
 
 ChrAiming
 {
-Viser (maintenir)
+Mode tireur d'élite (maintenir)
 }
 
 ChrAimingShot
@@ -873,4 +873,24 @@ Masquer/afficher l'interface utilisateur
 FreeCam
 {
 Caméra libre
+}
+
+TimeScale
+{
+Le temps s'accélère/ralentit
+}
+
+TimeScaleFasterBA
+{
+Le temps s'accélère
+}
+
+TimeScaleSlowerBA
+{
+Le temps ralentit
+}
+
+FireCamera_Set
+{
+Vue de visée
 }

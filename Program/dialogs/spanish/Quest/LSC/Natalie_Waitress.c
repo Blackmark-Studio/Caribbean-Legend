@@ -26,14 +26,14 @@ void ProcessDialogEvent()
 		}
 		if (npchar.quest.meeting == "0")
 		{
-			dialog.text = "Buen día, " + GetAddress_Form(NPChar) + "¡Primera vez aquí? No te he visto antes... Espero que nos visites más a menudo, Sancho puede ofrecer una excelente variedad de bebidas. Sí, y mi nombre es Nathalie y ayudo a Sancho con los asuntos de la taberna.";
+			dialog.text = "Buen día, " + GetAddress_Form(NPChar) + ". ¿Primera vez aquí? No te he visto antes... Espero que nos visites más a menudo, Sancho puede ofrecer una excelente variedad de bebidas. Sí, y mi nombre es Nathalie y ayudo a Sancho con los asuntos de la taberna.";
 			link.l1 = TimeGreeting() + ". Mi nombre es " + GetFullName(pchar) + " Encantado de conocerte. Y no podías verme antes. He llegado aquí recientemente.";
 			link.l1.go = "meeting";
 			npchar.quest.meeting = "1";
 		}
 		else
 		{
-			dialog.text = "Ah, " + GetFullName(pchar) + "¡ " + TimeGreeting() + "¡Quieres algo?";
+			dialog.text = "¡Ah, " + GetFullName(pchar) + "! " + TimeGreeting() + ". ¿Quieres algo?";
 			link.l1 = LinkRandPhrase("¿Tienes algo interesante que decir?", "¿Ha ocurrido algo nuevo en la isla?", "¿Me contarás los últimos chismes?");
 			link.l1.go = "rumours_LSC";
 			link.l2 = "Quiero hacerte unas preguntas sobre la isla.";

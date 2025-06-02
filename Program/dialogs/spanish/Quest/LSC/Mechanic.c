@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 				break;
 			}
 
-			dialog.text = "Ah, " + GetFullName(pchar) + "¡ " + TimeGreeting() + "¡";
+			dialog.text = "Ah, " + GetFullName(pchar) + ". ¡" + TimeGreeting() + "!";
 			// квестовые ветки
 			if (pchar.questTemp.LSC == "mechanic")
 			{
@@ -407,7 +407,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "af_immersion_1":
-		dialog.text = "¿Te interesa nuestra historia? Ve a Antonio Betancourt. Nació aquí. Vive en la flauta Pluto. Si él no sabe nada al respecto, entonces nadie lo sabe.";
+		dialog.text = "¿Te interesa nuestra historia? Ve a Antonio Betancourt. Nació aquí. Vive en el filibote Pluto. Si él no sabe nada al respecto, entonces nadie lo sabe.";
 		link.l1 = "¡Excelente! Definitivamente le haré una visita.";
 		link.l1.go = "af_immersion_2";
 		pchar.questTemp.LSC.Betancur = "true";

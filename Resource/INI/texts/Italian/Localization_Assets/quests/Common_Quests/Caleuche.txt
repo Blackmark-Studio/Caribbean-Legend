@@ -1,0 +1,182 @@
+﻿Caleuche_1
+{
+Tutti i giorni
+}
+Caleuche_2
+{
+
+}
+
+Caleuche_3
+{
+capitano-nonMorto
+}
+Caleuche_4
+{
+
+}
+
+Caleuche_5
+{
+Nave fantasma
+}
+
+Caleuche_6
+{
+Fergus
+}
+Caleuche_7
+{
+Hooper
+}
+
+Caleuche_8
+{
+Sei scappato dalla nave fantasma!
+}
+
+Caleuche_9
+{
+Reginald
+}
+Caleuche_10
+{
+Jackson
+}
+
+Caleuche_11
+{
+Harpy
+}
+
+Caleuche_12
+{
+xebec 'Harpy'
+}
+
+Caleuche_13
+{
+dama di compagnia morta
+}
+Caleuche_14
+{
+
+}
+
+Caleuche_15
+{
+Chavinavy
+}
+Caleuche_16
+{
+
+}
+
+Caleuche_17
+{
+Esberto
+}
+Caleuche_18
+{
+Salinas
+}
+
+Caleuche_19
+{
+Gli amuleti di Tuttuathapak hanno perso il loro potere!
+}
+
+Caleuche_20
+{
+Premere 'T' per usare
+}
+
+Caleuche_21
+{
+Il portale è bloccato!
+}
+
+Caleuche_22
+{
+Capo tribù Chavinavy
+}
+Caleuche_23
+{
+
+}
+
+Caleuche_24
+{
+tempio nonMorto
+}
+Caleuche_25
+{
+
+}
+
+Caleuche_26
+{
+Nave fantasma all'orizzonte!
+}
+
+Caleuche_27
+{
+Baltazar
+}
+Caleuche_28
+{
+de Cordes
+}
+
+Caleuche_29
+{
+Flying Heart
+}
+
+Caleuche_30
+{
+Vi sentite più agili
+}
+Caleuche_31
+{
+Ti senti più robusto
+}
+Caleuche_32
+{
+Ti senti più forte
+}
+Caleuche_33
+{
+La tua percezione si intensifica
+}
+Caleuche_34
+{
+Ti senti più intuitivo
+}
+Caleuche_35
+{
+Ti senti più sicuro
+}
+Caleuche_36
+{
+Ti senti ispirato
+}
+
+Caleuche_37
+{
+la nave fantasma è all'orizzonte!
+}
+
+Caleuche_38
+{
+Siete svenuti per le ferite...
+}
+
+Caleuche_39
+{
+Alonso
+}
+Caleuche_40
+{
+
+}

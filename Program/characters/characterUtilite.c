@@ -538,14 +538,32 @@ string GetShipTypeName(ref _refCharacter)
 int GetCharacterShipClass(ref _refCharacter)
 {
 	int nShipType = GetCharacterShipType(_refCharacter);
-	if( nShipType==SHIP_NOTUSED ) return 6; // -1 неправильно, иначе сравнение врет, нет кораля - это лодка
+	if( nShipType==SHIP_NOTUSED ) return 7; // -1 неправильно, иначе сравнение врет, нет кораля - это лодка
 	return sti(RealShips[nShipType].Class);
+}
+bool IsUniversalShipType(ref _refCharacter)
+{
+	int nShipType = GetCharacterShipType(_refCharacter);
+	if( nShipType==SHIP_NOTUSED ) return false;
+	return RealShips[nShipType].Spec == SHIP_SPEC_UNIVERSAL;
 }
 bool IsMerchantShipType(ref _refCharacter)
 {
 	int nShipType = GetCharacterShipType(_refCharacter);
 	if( nShipType==SHIP_NOTUSED ) return false;
-	return sti(RealShips[nShipType].Type.Merchant);
+	return RealShips[nShipType].Spec == SHIP_SPEC_MERCHANT;
+}
+bool IsRaiderShipType(ref _refCharacter)
+{
+	int nShipType = GetCharacterShipType(_refCharacter);
+	if( nShipType==SHIP_NOTUSED ) return false;
+	return RealShips[nShipType].Spec == SHIP_SPEC_RAIDER;
+}
+bool IsWarShipType(ref _refCharacter)
+{
+	int nShipType = GetCharacterShipType(_refCharacter);
+	if( nShipType==SHIP_NOTUSED ) return false;
+	return RealShips[nShipType].Spec == SHIP_SPEC_WAR;
 }
 int GetMaxCrewQuantity(ref _refCharacter)
 {
@@ -910,7 +928,7 @@ int GetFreePassengersQuantity(ref _refCharacter)
 	for (int i=0; i <sti(_refCharacter.Fellows.Passengers.Quantity); i++)
 	{
 		idx = GetPassenger( _refCharacter,i);
-		if(!CheckAttribute(&characters[idx], "isfree"))
+		if(!CheckAttribute(&characters[idx], "isbusy"))
 		{
 			result = result+1;
 		}
@@ -953,7 +971,7 @@ int GetNotQuestFreePassengersQuantity(ref _refCharacter)
 		if (idx >0)
 		{
 			ok = !CheckAttribute(&characters[idx], "prisoned") || sti(characters[idx].prisoned) != true;
-			if (ok && !CheckAttribute(&characters[idx], "isquest") && !CheckAttribute(&characters[idx], "isfree"))   //to_do  isquest?
+			if (ok && !CheckAttribute(&characters[idx], "isquest") && !CheckAttribute(&characters[idx], "isbusy"))   //to_do  isquest?
 			{
 				result = result+1;
 			}
@@ -1046,7 +1064,7 @@ int GetFreePassenger(ref _refCharacter,int idx)
 		if(cn==-1) break;
 
 		curChar = GetCharacter(cn);
-		if(CheckAttribute(curChar,"isfree"))
+		if(CheckAttribute(curChar,"isbusy"))
 		{
 			continue;
 		}
@@ -1070,7 +1088,7 @@ int GetNotQuestPassenger(ref _refCharacter,int idx)
 		if(cn==-1) break;
 
 		curChar = GetCharacter(cn);
-		if(CheckAttribute(curChar,"isquest") || CheckAttribute(curChar,"isfree"))
+		if(CheckAttribute(curChar,"isquest") || CheckAttribute(curChar,"isbusy"))
 		{
 			continue;
 		}
@@ -1255,7 +1273,7 @@ int RemoveCharacterCompanion(ref _refCharacter, ref refCompanion)
 	}
 	return -1;
 }
-int GetCompanionIndex(ref _refCharacter,int _CompanionNum)
+int GetCompanionIndex(ref _refCharacter, int _CompanionNum)
 {
 	if(_CompanionNum < 0) 
 	{
@@ -1501,8 +1519,8 @@ void SetBaseShipData(ref refCharacter)
 		refShip.Cannons.Charge.Type = GOOD_BALLS;
 
 		if (!CheckAttribute(refShip,"Cannons.Type")) 
-		{ 
-			refShip.Cannons.Type = GetCannonByTypeAndCaliber("cannon", sti(refBaseShip.MaxCaliber)); // MakeInt(refBaseShip.Cannon);
+		{
+			refShip.Cannons.Type = GetCannonByTypeAndCaliber(RandPhraseSimple("cannon","culverine"), sti(refBaseShip.MaxCaliber)); // MakeInt(refBaseShip.Cannon);
 		}
 
 		if (!CheckAttribute(refShip,"Crew.Morale"))	
@@ -2057,8 +2075,7 @@ int GetCurrentLocationNation()
 void SetRandomNameToCharacter(ref rCharacter)
 {
 	int iNation = sti(rCharacter.nation);
-	if (iNation == -1) iNation = PIRATE;
-	while (iNation == PIRATE) { iNation = rand(MAX_NATIONS - 2); }
+	if (iNation == -1 || iNation == PIRATE) iNation = rand(NON_PIRATES);
 	
 	ref rNames, rLastNames;
     // fix -->
@@ -2101,8 +2118,7 @@ void SetRandomNameToCharacter(ref rCharacter)
 
 string GenerateRandomName(int iNation, string sSex)
 {
-	if (iNation == -1) iNation = PIRATE;
-	while (iNation == PIRATE) { iNation = rand(MAX_NATIONS - 2); }
+	if (iNation == -1 || iNation == PIRATE) iNation = rand(NON_PIRATES);
 	
 	ref rNames, rLastNames;
 
@@ -2145,8 +2161,7 @@ string GenerateRandomName(int iNation, string sSex)
 void SetRandomNameToCharacter_Generator(ref rCharacter)
 {
 	int iNation = sti(rCharacter.nation);
-	if (iNation == -1) iNation = PIRATE;
-	while (iNation == PIRATE) { iNation = rand(MAX_NATIONS - 2); }
+	if (iNation == -1 || iNation == PIRATE) iNation = rand(NON_PIRATES);
 	
 	ref rNames, rLastNames;
     // fix -->
@@ -2189,8 +2204,7 @@ void SetRandomNameToCharacter_Generator(ref rCharacter)
 
 string GenerateRandomName_Generator(int iNation, string sSex)
 {
-	if (iNation == -1) iNation = PIRATE;
-	while (iNation == PIRATE) { iNation = rand(MAX_NATIONS - 2); }
+	if (iNation == -1 || iNation == PIRATE) iNation = rand(NON_PIRATES);
 	
 	ref rNames, rLastNames;
 
@@ -2543,7 +2557,7 @@ void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 			}
 			if(CheckAttribute(arItm,"Weight")) //eddy.при загрузки локации если у ГГ нет оружия - ошибка
 			{
-				LAi_BladeEnergyType(chref, GetEnergyBladeDrain(stf(arItm.Weight), arItm.FencingType ) );  // энергоемкость от веса и типа
+				LAi_SetBladeEnergyType(chref, GetEnergyBladeDrain(stf(arItm.Weight), arItm.FencingType ) );  // энергоемкость от веса и типа
 			}		
 			// boal <--
 		break;
@@ -2685,27 +2699,6 @@ float GetEnergyBladeDrain(float _weight, string _bladeType)
 			drain = _weight / 3.0 + 0.4;
 		break;
 	}
-	return drain;
-}
-
-float GetEnergyMushketDrain(ref attack, float _weight, string _bladeType)
-{
-	float drain = 0.0;
-	switch(_bladeType)
-	{
-		case "FencingL" :
-			if (IsCharacterPerkOn(attack, "HT4")) 	drain = _weight / 22.0;
-			else									drain = _weight / 22.0 + 0.4;
-		break;
-		case "FencingS" :
-			if (IsCharacterPerkOn(attack, "HT4")) 	drain = _weight / 17.5;
-			else									drain = _weight / 17.5 + 0.4;		
-		break;
-		case "FencingH" :
-			if (IsCharacterPerkOn(attack, "HT4")) 	drain = _weight / 10.0;
-			else									drain = _weight / 10.0 + 0.4;		
-		break;
-	}	
 	return drain;
 }
 
@@ -4577,11 +4570,11 @@ float ChangeIndianRelation(float _val) // Jason: репутация у инде�
 	//log_testInfo("Отношение индейцев изменилось и равно "+stf(pchar.questTemp.Indian.relation)+" единицам");
 	if (_val<0)
 	{
-		notification(StringFromKey("characterUtilite_13")+stf(pchar.questTemp.Indian.relation)+")", "None");
+		notification(StringFromKey("characterUtilite_13")+stf(pchar.questTemp.Indian.relation)+")", "Indians");
 	}
 	if (_val>0)
 	{
-		notification(StringFromKey("characterUtilite_14")+stf(pchar.questTemp.Indian.relation)+")", "None");
+		notification(StringFromKey("characterUtilite_14")+stf(pchar.questTemp.Indian.relation)+")", "Indians");
 	}
 	if(!GetAchievement("ach_CL_140") && stf(pchar.questTemp.Indian.relation) >= 70.0) Achievment_Set("ach_CL_140");
 	

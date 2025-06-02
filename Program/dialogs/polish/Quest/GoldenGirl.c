@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 		
 		// маркиза Джулиана Бото
 		case "Julianna":
-			dialog.text = "Moje oczy muszą mnie mylić, jeśli to sam Charles de Maure! Nieczęsto mam takie przyjęcia i jestem zachwycony, że udało ci się znaleźć trochę czasu, by odwiedzić mój skromny klasztor. Szczęściarz ze mnie! To zasługuje na toast!";
+			dialog.text = "Moje oczy muszą mnie mylić, jeśli to sam Charles de Maure! Nieczęsto mam takie przyjęcia i jestem zachwycony, że udało ci się znaleźć trochę czasu, by odwiedzić mój skromny zaułek. Szczęściarz ze mnie! To zasługuje na toast!";
 			link.l1 = "Moje uszanowanie, pani. Proszę wybaczyć możliwe rozczarowanie moimi manierami - minęło bardzo dużo czasu, odkąd ostatnio brałem udział w takich... wydarzeniach. Etos statku sprowadza się do podporządkowania, czystych chust i regularnej filiżanki orzeźwiającej kawy każdego ranka.";
 			link.l1.go = "Julianna_1";
 		break;
@@ -94,7 +94,7 @@ void ProcessDialogEvent()
 		
 		case "Julianna_7":
 			dialog.text = "Proszę wybaczyć, Charles?";
-			link.l1 = "Zapomnij. Przedstaw mnie, proszę, swojemu natarczywemu przyjacielowi, a potem zobaczymy...";
+			link.l1 = "Nieważne. Przedstaw mnie, proszę, swojemu natarczywemu przyjacielowi, a potem zobaczymy...";
 			link.l1.go = "Julianna_8";
 		break;
 		
@@ -158,12 +158,12 @@ void ProcessDialogEvent()
 		case "Julianna_17":
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win")) 
 			{
-				dialog.text = "Spisałeś się świetnie, Charles, po prostu wspaniale. Angerran i Jacques zaraz staną naprzeciw siebie. Szkoda, że nie posłuchali i nie przełożyli turnieju na tydzień. Mógłbym zebrać prawdziwie gwiazdorską ekipę, której plotki dotarłyby do Paryża! Cóż, może następnym razem. Wygląda na to, że twój następny przeciwnik jest godnym konkurentem dla twego szczęścia, prawdziwym wilkiem morskim, kapitan Moreno! Kapitanowie, proszę!";
+				dialog.text = "Spisałeś się świetnie, Charles, po prostu wspaniale. Angerran i Jacques zaraz staną naprzeciw siebie. Szkoda, że nie posłuchali i nie przełożyli turnieju na tydzień. Mógłabym zebrać prawdziwie gwiazdorską ekipę, której plotki dotarłyby do Paryża! Cóż, może następnym razem. Wygląda na to, że twój następny przeciwnik jest godnym konkurentem dla twego szczęścia, prawdziwym wilkiem morskim, kapitan Moreno! Kapitanowie, proszę!";
 				link.l1 = "";
 			}
 			else
 			{
-				dialog.text = "Niestety, szczęście cię opuściło, Kapitanie. Przykro mi, ale gra dla ciebie się skończyła. Angerran już gra przeciwko Jacquesowi, więc powinienem iść. Żegnaj.";
+				dialog.text = "Niestety, szczęście cię opuściło, Kapitanie. Przykro mi, ale gra dla ciebie się skończyła. Angerran już gra przeciwko Jacquesowi, więc powinnam iść. Żegnaj.";
 				link.l1 = "To była przyjemność... pani.";
 			}
 			link.l1.go = "Julianna_18";
@@ -179,13 +179,13 @@ void ProcessDialogEvent()
 		case "Julianna_19":
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win")) 
 			{
-				dialog.text = "Gratuluję ci zasłużonego zwycięstwa, kapitanie! Nadal nie jest jasne, kto zmierzy się z tobą w finale... Przejdźmy na bok. Ścisz głos i spójrz na tamten stół. Patrz, oto on! Zaczynam rozumieć, co Angerran knuje! Już ogołocił słodkiego Jacques'a z pieniędzy, ale nie pozwala mu opuścić stołu. Gdy przechodziłem obok, biedny dureń grał na jakieś dokumenty o cały statek z ładunkiem. Niestety, szczęście nie jest dziś po jego stronie. Albo ktoś jej powiedział, by nie było.";
+				dialog.text = "Gratuluję ci zasłużonego zwycięstwa, kapitanie! Nadal nie jest jasne, kto zmierzy się z tobą w finale... Przejdźmy na bok. Ścisz głos i spójrz na tamten stół. Patrz, oto on! Zaczynam rozumieć, co Angerran knuje! Już ogołocił słodkiego Jacques'a z pieniędzy, ale nie pozwala mu opuścić stołu. Gdy przechodziłam obok, biedny dureń grał na jakieś dokumenty o cały statek z ładunkiem. Niestety, szczęście nie jest dziś po jego stronie. Albo ktoś jej powiedział, by nie było.";
 				link.l1 = "Myślisz, że de Chievous oszukuje?";
 				link.l1.go = "Julianna_21";
 			}
 			else
 			{
-				dialog.text = "Niestety, szczęście Cię opuściło, kapitanie. Przykro mi, ale gra dla Ciebie skończona. Angerran już gra przeciwko Jacquesowi, więc muszę iść. Żegnaj.";
+				dialog.text = "Niestety, szczęście Cię opuściło, kapitanie. Przykro mi, ale gra już jest dla ciebie skończona. Angerran już gra przeciwko Jacquesowi, więc muszę iść. Żegnaj.";
 				link.l1 = "To była przyjemność... madam.";
 				link.l1.go = "Julianna_20";
 			}
@@ -221,7 +221,7 @@ void ProcessDialogEvent()
 		
 		case "Julianna_24":
 			dialog.text = "Na mnie, Charles. Nasz słodki, głupi Jacques postawił na mnie. Angerran znalazł jego jedyną słabość i uderzył w odpowiednim momencie.";
-			link.l1 = "Piorun niech to! Ależ jestem następny w turnieju, mógłbym wygrać z powrotem jego przeklęty statek! Dlaczego?";
+			link.l1 = "A niech to! Ależ jestem następny w turnieju, mógłbym wygrać z powrotem jego przeklęty statek! Dlaczego?";
 			link.l1.go = "Julianna_25";
 		break;
 		
@@ -312,7 +312,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Julianna_36":
-			dialog.text = "Charles, obawiam się, że będę musiał również prosić cię o opuszczenie nas. Idź na górę i weź pokój dla siebie. Wszystko załatwię. Jestem nieskończenie wdzięczny za wszystko, co dla mnie zrobiłeś, ale potrzebuję trochę czasu dla siebie, a ty musisz być strasznie zmęczony.";
+			dialog.text = "Charles, obawiam się, że będę musiał również prosić cię o opuszczenie nas. Idź na górę i weź pokój dla siebie. Wszystko załatwię. Jestem nieskończenie wdzięczna za wszystko, co dla mnie zrobiłeś, ale potrzebuję trochę czasu dla siebie, a ty musisz być strasznie zmęczony.";
 			link.l1 = "Nie jest tak źle, madame, ale nie odmówię łóżka. Ta luźna biesiada uderzyła mnie mocniej niż potężna wroga eskadra morska. Rozumiem, że i dla ciebie to wszystko nie było łatwe, markizo. Odpocznij i nie martw się, niczego mi nie jesteś winna. Wszystko, czego teraz potrzebuję, to sen.";
 			link.l1.go = "Julianna_37";
 		break;
@@ -329,13 +329,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Julianna_39":
-			dialog.text = "Tam jesteś, Charles. Szczerze mówiąc, wcale nie spałem, ale wyglądasz na wypoczętego. Jak ci się spało? Śniadanie jest w drodze.";
+			dialog.text = "Tam jesteś, Charles. Szczerze mówiąc, wcale nie spałam, ale wyglądasz na wypoczętego. Jak ci się spało? Śniadanie jest w drodze.";
 			link.l1 = "Twoja gościnność jest legendarna, madame, ale obawiam się, że nie mam czasu, by się nią cieszyć. Jego Ekscelencja, sekundanci de Chievousa, statki, które zdobyłem - wszystko to czeka na mnie.";
 			link.l1.go = "Julianna_40";
 		break;
 		
 		case "Julianna_40":
-			dialog.text = "Zdobyłeś nie tylko statki. To kolejna rzecz, o którą chciałem cię zapytać, Charles...";
+			dialog.text = "Zdobyłeś nie tylko statki. To kolejna rzecz, o którą chciałam cię zapytać, Charles...";
 			link.l1 = "Nie jestem ani Jacques, ani Angerran, markizo. Nie hazarduję się o kobiety, by zdobyć ich przychylność. Nic mi nie jesteś winna.";
 			link.l1.go = "Julianna_41";
 			link.l2 = "Jesteś pod moją ochroną, markizo. Ani Jacques, ani Angerran nigdy cię nie zaniepokoją, mogę ci to obiecać.";
@@ -357,7 +357,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Julianna_43":
-			dialog.text = "Nie będę cię dłużej zatrzymywał, kapitanie. Pamiętaj jednak, Angerran jest niebezpieczny. Nie mogę ocenić jego umiejętności bojowych, ale brał udział w kilku wojnach i walczył pod Rocroi. Słyszałem też o kilku pojedynkach, które wygrał, głównie na pistolety. Przede wszystkim jest to podstępny typ, jak sam zauważyłeś. Błagam cię, bądź ostrożny i proszę, odwiedź mnie później!";
+			dialog.text = "Nie będę cię dłużej zatrzymywał, kapitanie. Pamiętaj jednak, Angerran jest niebezpieczny. Nie mogę ocenić jego umiejętności bojowych, ale brał udział w kilku wojnach i walczył pod Rocroi. Słyszałam też o kilku pojedynkach, które wygrał, głównie na pistolety. Przede wszystkim jest to podstępny typ, jak sam zauważyłeś. Błagam cię, bądź ostrożny i proszę, odwiedź mnie później!";
 			link.l1 = "Opieka niesamowicie Ci pasuje, markizo. Uwierz mi, de Chievous nie jest pierwszym bękartem, który stoi mi na drodze. Poradzę sobie. Teraz naprawdę muszę iść do Jego Ekscelencji i omówić sprawę pojedynku.";
 			link.l1.go = "Julianna_44";
 		break;
@@ -381,12 +381,12 @@ void ProcessDialogEvent()
 		
 		case "Julianna_47":
 			dialog.text = "Miałem ci zadać to samo pytanie - nie położyłeś go? Co się stało? Dlaczego widzę połowę straży miejskiej na zewnątrz?";
-			link.l1 = "Powiedziałem gubernatorowi, że możesz być w niebezpieczeństwie. De Chievous został ranny i uciekł, spuścił na nas swoich zbirów. To była masakra. Jednak takie opowieści nie są dla twoich pięknych uszu. To już koniec. Jesteś wolny od niego i od naszego 'słodkiego' Jacques'a.";
+			link.l1 = "Powiedziałem gubernatorowi, że możesz być w niebezpieczeństwie. De Chievous został ranny i uciekł, spuścił na nas swoich zbirów. To była masakra. Jednak takie opowieści nie są dla twoich pięknych uszu. To już koniec. Jesteś wolna od niego i od naszego 'słodkiego' Jacques'a.";
 			link.l1.go = "Julianna_48";
 		break;
 		
 		case "Julianna_48":
-			dialog.text = "To takie złe, Charles. Wrogowie tacy jak Angerran de Chievous powinni być zabici na dobre, gdy masz okazję. Znałem tego człowieka przez wiele lat - nie jest typem, który wybacza. Prędzej czy później znajdzie sposób na zemstę. Ale nie podoba mi się, jak się garbisz, czy twoja rana została opatrzona?";
+			dialog.text = "To takie złe, Charles. Wrogowie tacy jak Angerran de Chievous powinni być zabici na dobre, gdy masz okazję. Znałam tego człowieka przez wiele lat - nie jest typem, który wybacza. Prędzej czy później znajdzie sposób na zemstę. Ale nie podoba mi się, jak się garbisz, czy twoja rana została opatrzona?";
 			link.l1 = "To tylko zadrapanie, bywało znacznie gorzej. Trochę boli, to wszystko. Dziękuję za troskę, pani, ale powinienem iść...";
 			link.l1.go = "Julianna_49";
 		break;
@@ -415,7 +415,7 @@ void ProcessDialogEvent()
 		
 		case "Julianna_52":
 			dialog.text = "W tym przypadku żądam, abyś spełnił moje żądanie natychmiast. Chwyć moją dłoń i rób, co mówię. Denise! Przynieś len, gorące wino i coś do jedzenia na górę! Ruszajmy, mój Kapitanie. I pamiętaj - tym razem bez sprzeciwów!";
-			link.l1 = "Jak mówisz, markizo, jestem cały twój.";
+			link.l1 = "Jak sobie życzysz, markizo, jestem cały twój.";
 			link.l1.go = "Julianna_53";
 		break;
 		
@@ -443,13 +443,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Julianna_55":
-			dialog.text = "Obawiam się, że nie będzie łatwo to załatwić. Ale nigdy nie odważyłbym się cię obudzić bez poważnego powodu. Uwierz mi, strzegłem twego snu bez lęku, ale ten człowiek na dole jest bardzo uparty. Twierdzi, że jest jednym z twojej załogi i to jest pilne.";
-			link.l1 = "Mój załoga? Zrobiłaś dobrze, że mnie obudziłaś, markizo! Zaraz wyruszam.";
+			dialog.text = "Obawiam się, że nie będzie łatwo to załatwić. Ale nigdy nie odważyłabym się cię obudzić bez poważnego powodu. Uwierz mi, strzegłam twego snu bez lęku, ale ten człowiek na dole jest bardzo uparty. Twierdzi, że jest jednym z twojej załogi i to jest pilne.";
+			link.l1 = "Mój członek załogi? Zrobiłaś dobrze, że mnie obudziłaś, markizo! Zaraz wyruszam.";
 			link.l1.go = "Julianna_57";
 		break;
 		
 		case "Julianna_56":
-			dialog.text = "W innych okolicznościach bym to zrobił, mój kapitanie, ale będziemy musieli to odłożyć. Czeka na ciebie na dole wyjątkowo niewykształcony monsieur. Twierdzi, że jest jednym z twojej załogi i to jest pilne.";
+			dialog.text = "W innych okolicznościach bym to zrobiła, mój kapitanie, ale będziemy musieli to odłożyć. Czeka na ciebie na dole wyjątkowo niewykształcony monsieur. Twierdzi, że jest jednym z twojej załogi i to jest pilne.";
 			link.l1 = "Wracamy do tego, Madame, kiedy wrócę. Mam nadzieję, że to nie chodzi o to, że Hiszpanie znów oblegają.";
 			link.l1.go = "Julianna_57";
 		break;
@@ -473,7 +473,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Julianna_60":
-			dialog.text = "Teraz widzę! Jesteś rzeczywiście zakochany, mój rycerzu! Chętnie oddałbym połowę mojego życia za taką lojalność i przywiązanie bez chwili zastanowienia!";
+			dialog.text = "Teraz widzę! Jesteś rzeczywiście zakochany, mój rycerzu! Chętnie oddałabym połowę mojego życia za taką lojalność i przywiązanie bez chwili zastanowienia!";
 			link.l1 = "Nie składałem żadnych ślubów, ale ta kobieta wiele dla mnie znaczy, marquise.";
 			link.l1.go = "Julianna_61";
 		break;
@@ -485,13 +485,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Julianna_62":
-			dialog.text = "A co, jeśli mogę cię uwieść śniadaniem? Nie myślałeś o tej... dziewczynie przez dwa dni, może może poczekać jeszcze jeden dzień?";
+			dialog.text = "A co, jeśli mogę cię uwieść śniadaniem? Nie myślałeś o tej... dziewczynie przez dwa dni, może warto poczekać jeszcze jeden dzień?";
 			link.l1 = "Markizo, zdaję sobie sprawę, jak mogę wyglądać w twoich oczach, ale to, co się stało, nie da się cofnąć. Choć nie złożyłem żadnych ślubów, moje serce należy do niej. Błagam cię, zrozum mnie i pomóż mi.";
 			link.l1.go = "Julianna_63";
 		break;
 		
 		case "Julianna_63":
-			dialog.text = "Chodź, Charles! Bronić się rozmowami o miłości przed kurtyzaną? Dawno się tak nie śmiałem! Jesteś niesamowity! Spokojnie, co się wydarzyło w tym domu, zostaje w tym domu. Pamiętam, co ci jestem winien. Pytaj śmiało.";
+			dialog.text = "Chodź, Charles! Bronić się rozmowami o miłości przed kurtyzaną? Dawno się tak nie śmiałam! Jesteś niesamowity! Spokojnie, co się wydarzyło w tym domu, zostaje w tym domu. Pamiętam, co ci jestem winien. Pytaj śmiało.";
 			link.l1 = "Dziękuję. Znasz de Chievousa od dłuższego czasu. Dokąd mógł się udać po całym tym zamieszaniu, aby przeczekać gniew ojca?";
 			link.l1.go = "Julianna_64";
 		break;
@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Julianna_65":
-			dialog.text = "Poczekaj, Charles, jest jeszcze coś. Niedawno otrzymałem dla ciebie list. Przypuszczałem, że ma coś wspólnego z pojedynkiem, ale już nie jestem tego taki pewien. Oto on.";
+			dialog.text = "Poczekaj, Charles, jest jeszcze coś. Niedawno otrzymałam dla ciebie list. Przypuszczałem, że ma coś wspólnego z pojedynkiem, ale już nie jestem tego taka pewna. Oto on.";
 			link.l1 = "„Nie ma pieczęci, ale papier jest drogi. Nie podoba mi się to...”";
 			link.l1.go = "Julianna_66";
 		break;
@@ -525,7 +525,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Julianna_68":
-			dialog.text = "Monsieur de Lyons z pewnością wybierze syna Leve Vantadura zamiast ciebie. De Chievous może znowu zastawić na ciebie pułapkę! Zyskałeś bardzo potężnego wroga, broniąc mnie, Charles. Chciałbym ci pomóc, ale obawiam się, że wszystko, co mogę zrobić, to prosić cię o ostrożność.";
+			dialog.text = "Monsieur de Lyons z pewnością wybierze syna Leve Vantadura zamiast ciebie. De Chievous może znowu zastawić na ciebie pułapkę! Zyskałeś bardzo potężnego wroga, broniąc mnie, Charles. Chciałabym ci pomóc, ale obawiam się, że wszystko, co mogę zrobić, to prosić cię o ostrożność.";
 			link.l1 = "Julianne, nigdy bym sobie nie poradził w Nowym Świecie, gdybym zawsze wybierał bezpośrednie podejście. Ciemne interesy nie są moją najmocniejszą stroną, ale wiem, jak grać w tę grę.";
 			link.l1.go = "Julianna_69";
 		break;
@@ -563,7 +563,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Charles, już ci mówiłem, że nigdy nie zapomnę, co dla mnie zrobiłeś. Zrobię, co w mojej mocy, by ci się odwdzięczyć. Jestem gotów, choć nie do końca rozumiem, jak mogę ci się przydać w tej kwestii?";
+				dialog.text = "Charles, już ci mówiłam, że nigdy nie zapomnę, co dla mnie zrobiłeś. Zrobię, co w mojej mocy, by ci się odwdzięczyć. Jestem gotów, choć nie do końca rozumiem, jak mogę ci się przydać w tej kwestii?";
 			}
 			link.l1 = "Proszę, usiądź, Julianno. Widzisz, okup za Angerrana... to ty. I nie mam na myśli oficjalnego patronatu, mam na myśli więźnia związanego w ładowni jego statku.";
 			link.l1.go = "Julianna_74";
@@ -597,7 +597,7 @@ void ProcessDialogEvent()
 		
 		case "Julianna_78":
 			dialog.text = "To jest skandal! W co zamieniłeś mój salon?! Co to za demoniczny koszmar? Charles, wróć do swoich zmysłów! Jesteś szlachcicem, nie przeklętym piratem!!";
-			link.l1 = "Już cię przeprosiłem. Prosiłem, abyś nie komplikował spraw bardziej - nie posłuchałeś. Uwierz mi, nie podoba mi się to, co robię, ale nie mam wyboru. Zrobię wszystko, co trzeba, dla dobra tej kobiety.";
+			link.l1 = "Już cię przeprosiłem. Prosiłem, abyś nie komplikowała spraw bardziej - nie posłuchałaś. Uwierz mi, nie podoba mi się to, co robię, ale nie mam wyboru. Zrobię wszystko, co trzeba, dla dobra tej kobiety.";
 			link.l1.go = "Julianna_79";
 		break;
 		
@@ -1860,7 +1860,6 @@ void ProcessDialogEvent()
 			LAi_ActorRunToLocation(npchar, "reload", "reload3", "none", "", "", "", 20.0);
 			LAi_RemoveCheckMinHP(npchar); 
             LAi_SetCurHPMax(npchar);
-            LAi_SetImmortal(npchar, false); // Captain Beltrop, снимаем проверку на жизнь и восстанавливаем её
 			GoldenGirl_DuelNext();
 		break;
 		

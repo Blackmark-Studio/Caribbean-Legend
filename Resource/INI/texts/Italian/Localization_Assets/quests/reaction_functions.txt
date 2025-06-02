@@ -1,0 +1,19 @@
+﻿reaction_functions_1
+{
+Overdose di pozione Mangarosa!
+}
+
+reaction_functions_2
+{
+Sei stato avvelenato
+}
+
+reaction_functions_3
+{
+Pozione speciale di Mangarosa usata!
+}
+
+reaction_functions_4
+{
+L'effetto della pozione Mangarosa è terminato
+}

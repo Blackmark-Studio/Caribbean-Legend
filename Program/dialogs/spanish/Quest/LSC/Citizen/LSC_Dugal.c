@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Ah, "+GetFullName(pchar)+"¡ "+TimeGreeting()+"¡Quieres algo?";
+				dialog.text = "¡Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+". ¿Quieres algo?";
 				link.l1 = LinkRandPhrase("¿Tienes algo interesante que decir?","¿Ha sucedido algo nuevo en la isla?","¿Me contarás los últimos chismes?");
 				link.l1.go = "rumours_LSC";
 				link.l2 = "Quiero hacerte unas preguntas sobre la isla.";
@@ -44,7 +44,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meeting": // первая встреча
-			dialog.text = " No   los conoces bien. ¿Acabas de llegar aquí? No recuerdo ningún naufragio reciente, sin embargo... ";
+			dialog.text = "No los conoces bien. ¿Acabas de llegar aquí? No recuerdo ningún naufragio reciente, sin embargo... ";
 			link.l1 = "Vine aquí en un pequeño bergantín...";
 			link.l1.go = "meeting_1";
 		break;
@@ -88,14 +88,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_1":
-			dialog.text = "Fue hace cinco años, pero todavía lo recuerdo perfectamente como si hubiera sucedido ayer. Un día desgraciado decidí navegar en mi flauta desde Port Royal hasta Belice, había una carga demasiado valiosa como para confiar el trato a otros.\nAl día siguiente comenzaron mis desventuras, primero, nuestro contramaestre se emborrachó y cayó por la borda, luego casi chocamos con los arrecifes y al final nuestro navegante cometió un error, así que navegamos en la dirección equivocada.\nLuego fuimos perseguidos por un bergantín y un galeón. Intentamos huir, pero eran insistentes. El galeón se quedó atrás pero el bergantín finalmente nos alcanzó.\nEl galeón estaba demasiado lejos de allí, así que abordamos el bergantín sin disparar. Esos perros españoles no lo esperaban y ganamos, pero la mayoría de mi tripulación murió.\nUnas pocas horas después, nos atrapó una tormenta, no pudimos luchar contra el clima con tan poca tripulación y ahora ves el resultado. Mi flauta está en algún lugar del anillo exterior, yo y los otros tres sobrevivientes llegamos aquí.";
+			dialog.text = "Fue hace cinco años, pero todavía lo recuerdo perfectamente como si hubiera sucedido ayer. Un día desgraciado decidí navegar en mi filibote desde Port Royal hasta Belice, había una carga demasiado valiosa como para confiar el trato a otros.\nAl día siguiente comenzaron mis desventuras, primero, nuestro contramaestre se emborrachó y cayó por la borda, luego casi chocamos con los arrecifes y al final nuestro navegante cometió un error, así que navegamos en la dirección equivocada.\nLuego fuimos perseguidos por un bergantín y un galeón. Intentamos huir, pero eran insistentes. El galeón se quedó atrás pero el bergantín finalmente nos alcanzó.\nEl galeón estaba demasiado lejos de allí, así que abordamos el bergantín sin disparar. Esos perros españoles no lo esperaban y ganamos, pero la mayoría de mi tripulación murió.\nUnas pocas horas después, nos atrapó una tormenta, no pudimos luchar contra el clima con tan poca tripulación y ahora ves el resultado. Mi filibote está en algún lugar del anillo exterior, los otros tres sobrevivientes y yo llegamos aquí.";
 			link.l1 = "Entendido...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_1 = "true";
 		break;
 		
 		case "ansewer_2":
-			dialog.text = "Escoria. Todos ellos. Vidas bajas de todo tipo. Richard Shambon es un criminal, se le nota en la cara. ¿Kassel? Matar gente para él es tan natural como respirar. Jasper Pratt es un convicto. Musket es un borracho. ¿Debería continuar?\nJosef Loderdale es el único hombre decente aquí, excepto tú, él es un exmilitar de la marina inglesa. Hay dos nobles aquí - Antonio Betancourt y Lorenzo Solderra, maldita escoria española, ni siquiera me sentaría con él en la misma mesa.";
+			dialog.text = "Escoria. Todos ellos. Vidas bajas de todo tipo. Richard Shambon es un criminal, se le nota en la cara. ¿Kassel? Matar gente para él es tan natural como respirar. Jasper Pratt es un convicto. Musket es un borracho. ¿Debería continuar?\nJosef Loderdale es el único hombre decente aquí, excepto tú, él es un exmilitar de la marina inglesa. Hay dos nobles aquí, Antonio Betancourt y Lorenzo Solderra, maldita escoria española, ni siquiera me sentaría con él en la misma mesa.";
 			link.l1 = "Veo...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_2 = "true";

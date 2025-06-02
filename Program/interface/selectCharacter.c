@@ -463,7 +463,8 @@ void ProcessCommandExecute()
     		{
                 ProcessCommandExecuteRight();
     		}
-			SandBoxMode = false;
+            bGlobalTutor = true;
+			SandBoxMode  = false;
     	break;
 
 		case "BTN_START2":
@@ -475,7 +476,8 @@ void ProcessCommandExecute()
     		{
                 ProcessCommandExecuteRight();
     		}
-			SandBoxMode = true;
+            bGlobalTutor = false;
+			SandBoxMode  = true;
     	break;
 
 		case "BTN_EXIT":
@@ -919,23 +921,23 @@ void SetCharacterSPECIAL(string type, ref ch)
 {
 	switch (type)
 	{
-		case "HeroType_1":
-			SetSPECIAL(ch, 5, 6, 6, 5, 7, 7, 6);
+		case "HeroType_1": //дуэлянтыч
+			SetSPECIAL(ch, 5, 7, 6, 5, 6, 9, 5);
 			SetSelfSkill(ch, 15, 5, 3, 8, 10);
 			SetShipSkill(ch, 12, 5, 6, 3, 3, 3, 3, 3, 15);
 		break;
-		case "HeroType_2":
-			SetSPECIAL(ch, 7, 4, 7, 6, 6, 7, 5);
+		case "HeroType_2": //счетоводыч
+			SetSPECIAL(ch, 6, 5, 6, 9, 6, 4, 7);
 			SetSelfSkill(ch, 4, 15, 4, 6, 8);
 			SetShipSkill(ch, 15, 15, 3, 3, 3, 3, 3, 3, 8);
 		break;
-		case "HeroType_3":
-			SetSPECIAL(ch, 10, 3, 8, 5, 4, 8, 4);
+		case "HeroType_3": // атлетыч
+			SetSPECIAL(ch, 9, 5, 8, 4, 5, 6, 6);
 			SetSelfSkill(ch, 3, 5, 15, 7, 7);
 			SetShipSkill(ch, 5, 3, 3, 8, 3, 10, 8, 3, 3);
 		break;
-		case "HeroType_4":
-			SetSPECIAL(ch, 4, 9, 6, 4, 5, 5, 9);
+		case "HeroType_4": // стрелокыч
+			SetSPECIAL(ch, 4, 8, 7, 4, 5, 6, 9);
 			SetSelfSkill(ch, 5, 5, 5, 15, 20);
 			SetShipSkill(ch, 10, 3, 15, 12, 3, 3, 3, 3, 12);
 		break;

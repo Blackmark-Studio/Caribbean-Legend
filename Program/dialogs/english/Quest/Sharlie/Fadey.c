@@ -391,11 +391,6 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("SetTichingituJail");
 			SetFunctionTimerCondition("FreeTichingituOver", 0, 0, 10, false);
 			pchar.questTemp.Sharlie = "takeknife";
-			if(CheckAttribute(pchar, "questTemp.Tutorial_Dubloons"))
-			{
-				DeleteAttribute(pchar, "questTemp.Tutorial_Dubloons");
-				Tutorial_Dubloons("");
-			}
 		break;
 		
 		case "Tichingitu":
@@ -1013,7 +1008,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "persian_5":
-			AddQuestRecord("Unique_Goods", "2");
+			AddQuestRecordInfo("Unique_Goods", "2");
 			dialog.text = "Da. Go collect your purchase. But wait, wait, dear fellow! Besides this shamshir, which you returned to me out of true benevolence, there were two others. I beg you, please, if you find them, bring them back to me and I will pay you more than a fair price for their return.";
 			link.l1 = "Definitely, Fadey. If I find them, I'll bring them back.";
 			link.l1.go = "exit";
@@ -1308,7 +1303,7 @@ void ProcessDialogEvent()
 			dialog.Text = "Good, I will patch up the quarrel, don't you worry. They will do business with you again, just like old times.";
 			Link.l1 = "Thank you!";
 			Link.l1.go = "exit";
-			ChangeContrabandRelation(pchar, 25);
+			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
 			RemoveDublonsFromPCharTotal(700); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
 		break;
@@ -1356,7 +1351,7 @@ void ProcessDialogEvent()
 			link.l1 = "Perfect, Fadey! You're remarkably easy to do business with. I'm sure success awaits us. Until next time!";
 			link.l1.go = "exit";
 			RemoveDublonsFromPCharTotal(3000);
-			AddQuestRecord("Unique_Goods", "2_1");
+			AddQuestRecordInfo("Unique_Goods", "2_1");
 			pchar.questTemp.UpgradeRopes = true;
 			pchar.questTemp.FadeyRopesBlock = true;
 			DeleteAttribute(pchar, "questTemp.FadeyRopesPotom");

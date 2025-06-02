@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 			dialog.text = "Estoy escuchando, señor.";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
 			{
-				link.l1 = "  Dijiste que habías sido capitán. ¿Cómo llegaste a la isla?";
+				link.l1 = "Dijiste que habías sido capitán. ¿Cómo llegaste a la isla?";
 				link.l1.go = "ansewer_1";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_2"))
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "quest.answer_3"))
 			{
-				link.l3 = "  Dime, ¿los lugareños viven aquí en paz o no? No hablo de los clanes, por supuesto.";
+				link.l3 = "Dime, ¿los lugareños viven aquí en paz o no? No hablo de los clanes, por supuesto.";
 				link.l3.go = "ansewer_3";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_4"))
@@ -82,7 +82,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_1":
-			dialog.text = "   Como todos los demás. La tormenta me atrapó, perdí mi mástil y el control del timón. La corriente nos arrastró y nos lanzó contra los arrecifes. Mi barco ni siquiera llegó al anillo exterior y fue destruido. Solo unos pocos hombres sobrevivieron.";
+			dialog.text = "Como todos los demás. La tormenta me atrapó, perdí mi mástil y el control del timón. La corriente nos arrastró y nos lanzó contra los arrecifes. Mi barco ni siquiera llegó al anillo exterior y fue destruido. Solo unos pocos hombres sobrevivieron.";
 			link.l1 = "Historia triste...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_1 = "true";
@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_3":
-			dialog.text = "Es cierto, las peleas y riñas están secretamente prohibidas aquí. Si golpeas a alguien sin una razón adecuada o, Dios no lo quiera, matas, entonces acabarás siendo aislado. Podrías incluso ser arrojado por la borda una noche. Hubo algunos peleadores antes en la Isla. El primero simplemente desapareció, el segundo murió en una celda del Tártaro después de pasar meses dentro. Claro, eso no significa que no puedas protegerte. Pero los locales son bastante pacíficos en realidad. Abbott es ostentoso, pero no agresivo. Kassel es un verdadero bastardo, pero mantiene sus manos limpias. Pratt es un ex convicto, pero es inofensivo. Tenemos dos ex oficiales de la marina aquí - Loderdale y Solderra. Llegaron aquí mientras tenían una batalla no muy lejos. Irónicamente, ambos sobrevivieron para seguir haciendo planes sanguinarios el uno contra el otro.";
+			dialog.text = "Es cierto, las peleas y riñas están secretamente prohibidas aquí. Si golpeas a alguien sin una razón adecuada o, Dios no lo quiera, matas, entonces acabarás siendo aislado. Podrías incluso ser arrojado por la borda una noche. Hubo algunos peleadores antes en la Isla. El primero simplemente desapareció, el segundo murió en una celda del Tártaro después de pasar meses dentro. Claro, eso no significa que no puedas protegerte. Pero los locales son bastante pacíficos en realidad. Abbott es ostentoso, pero no agresivo. Kassel es un verdadero bastardo, pero mantiene sus manos limpias. Pratt es un ex convicto, pero es inofensivo. Tenemos dos ex oficiales de la marina aquí, Loderdale y Solderra. Llegaron aquí mientras tenían una batalla no muy lejos. Irónicamente, ambos sobrevivieron para seguir haciendo planes sanguinarios el uno contra el otro.";
 			link.l1 = "Entendido...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_3 = "true";

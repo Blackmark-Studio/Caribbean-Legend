@@ -24,7 +24,7 @@ void ProcessDialogEvent()
 	switch (Dialog.CurrentNode)
 	{
 	case "First time": // первая встреча - знакомство
-		PlaySound("Voice\Spanish\saga\Denny Hawk-05.wav");
+		PlaySound("Voice\Spanish\saga\Denny Hawk-08.wav");
 		dialog.text = "¡Espera, guapo! Creo que deberíamos hablar. ¡No perdamos tiempo, capitán!";
 		link.l1 = "¿Te conozco? De todos modos, siempre tengo unas cuantas horas extra para una dama.";
 		link.l1.go = "meeting";
@@ -284,7 +284,7 @@ void ProcessDialogEvent()
 	// перед телепортацией
 	case "shadowstar":
 		dialog.text = "Mira, " + pchar.name + "¡Juro por todo lo sagrado, hay una luz extraña sobre la estatua!";
-		link.l1 = "  Parece que el chamán no mentía. Y, si la oscuridad no me engaña, la cima de la estatua ya no parece tan pétrea. ";
+		link.l1 = "Parece que el chamán no mentía. Y, si la oscuridad no me engaña, la cima de la estatua ya no parece tan pétrea. ";
 		link.l1.go = "shadowstar_1";
 		QuestPointerDelLoc("Pearl_Jungle_02", "reload", "reload1_back");
 		QuestPointerDelLoc("Pearl_Jungle_03", "camera", "dolly");
@@ -448,7 +448,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "nathaniel_1":
-		dialog.text = "Pero ahora puedo verlo con mis propios ojos. De todos modos, dime dónde encontrar a Nathaniel?";
+		dialog.text = "Pero ahora puedo verlo con mis propios ojos. De todos modos, dime dónde encontrar a Nathaniel.";
 		link.l1 = "Está dentro de uno de los barcos. Pero debes nadar hasta allí.";
 		link.l1.go = "nathaniel_2";
 		break;
@@ -520,7 +520,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "nathaniel_8":
-		dialog.text = "Jesús, mírate a ti mismo... ¿Por qué te hiciste eso a ti mismo?!..(llorando) ¡Nunca me escuchas, nunca! ¡Te dije que no fueras a esa selva! ¡Pero fuiste de todos modos! ¿Por qué, Nathan?!";
+		dialog.text = "Jesús, mírate a ti mismo... ¿Por qué te hiciste eso a ti mismo?...(llora) ¡Nunca me escuchas, nunca! ¡Te dije que no fueras a esa selva! ¡Pero fuiste de todos modos! ¿Por qué, Nathan?!";
 		link.l1 = "Dannie... Lo siento. No tuve elección, lo sabes...";
 		link.l1.go = "nathaniel_9";
 		break;
@@ -632,7 +632,7 @@ void ProcessDialogEvent()
 			sTemp = "Shark Dodson";
 		else
 			sTemp = "Marcus Tyrex";
-		dialog.text = "Tienes algún plan, " + pchar.name + "?";
+		dialog.text = "¿Tienes algún plan, " + pchar.name + "?";
 		link.l1 = "Aún no. Necesito ir a Jan Svenson y pedirle consejo. Hagamos una cosa tras otra, tenemos que promover " + sTemp + " al jefe de la Cofradía de los Hermanos de la Costa primero. Así que, necesitamos obtener un voto de cada barón pirata para hacer eso.";
 		link.l1.go = "treatment_4";
 		break;
@@ -676,7 +676,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "islatesoro_3":
-		dialog.text = "No perdamos nuestro tiempo entonces, " + pchar.name + "?";
+		dialog.text = "No perdamos nuestro tiempo entonces, " + pchar.name + ".";
 		link.l1 = "Sí. Vamos a Isla Tesoro. El viejo 'Marlin' nos ayudará en este asalto.";
 		link.l1.go = "islatesoro_4";
 		break;
@@ -692,7 +692,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "after_boarding":
-		dialog.text = "Al fin, ese bastardo está muerto... No puedo creerlo - ¡estoy de nuevo en la cubierta del 'Centurión'! Conozco cada clavo de aquí y parece que el barco también me ha reconocido.";
+		dialog.text = "Al fin, ese bastardo está muerto... No puedo creerlo, ¡estoy de nuevo en la cubierta del 'Centurión'! Conozco cada clavo de aquí y parece que el barco también me ha reconocido.";
 		link.l1 = "Ella es tuya otra vez, Dannie. Tuya y de Nathaniel.";
 		link.l1.go = "after_boarding_1";
 		break;
@@ -838,7 +838,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "marun_town_fuckgirl_3":
-		dialog.text = "" + pchar.name + ", ¡siempre eres bienvenido en Maroon Town. Las mejores chicas son tuyas!";
+		dialog.text = "" + pchar.name + ", ¡siempre eres bienvenido en Maroon Town! ¡Las mejores chicas son tuyas!";
 		link.l1 = "Oh, Danny. Te juro, este es mi segundo hogar.";
 		link.l1.go = "exit";
 		DeleteAttribute(pchar, "GenQuest.MaruntownSex2");

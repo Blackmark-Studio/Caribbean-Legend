@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 		UnloadSegment(NPChar.FileDialog2);
 	}
     // вызов диалога по городам <--
-	crewWhoreCost = 50 + 7 * MOD_SKILL_ENEMY_RATE - drand(40);
+	crewWhoreCost = 50 + 7 * MOD_SKILL_ENEMY_RATE - hrand(40);
 	charWhoreCost = 2460 + sti(pchar.rank) * 40;
 	
 	switch(Dialog.CurrentNode)
@@ -28,15 +28,15 @@ void ProcessDialogEvent()
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
-       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase(""+GetSexPhrase("Jakie dziewczyny, drogi?! Połowa garnizonu jest za tobą, a ty idziesz prosto do domu publicznego!","Znikaj, dobrze? Połowa garnizonu jest za tobą!")+"","Każdy strażnik miasta szuka cię. Nie jestem głupcem, żeby świadczyć ci usługi w tym momencie...","Nie masz tu nic do roboty!"),LinkRandPhrase(""+GetSexPhrase("Tylko spróbuj dotknąć moje dziewczyny, a oskubię cię ze skóry na żywca!","Zgub się, ty szumowino!")+"","Brudny"+GetSexPhrase("","")+" morderco, opuść mój lokal, teraz! Strażnicy!!!","Nie boję się ciebie, "+GetSexPhrase("łotr","szczur")+"! Wkrótce zostaniesz powieszony w naszym forcie, nie uciekniesz daleko..."));
-				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Heh, alarm to nigdy nie jest dla mnie problem...","Oni nigdy mnie nie złapią."),RandPhraseSimple("Wystarczy zamknąć się, głupia wiedźmo.","Zamknij się, jeśli nie chcesz problemów..."));
+       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase(""+GetSexPhrase("Jakie dziewczyny, drogi?! Połowa garnizonu jest za tobą, a ty idziesz prosto do domu publicznego!","Znikaj już, dobrze? Połowa garnizonu jest za tobą!")+"","Każdy strażnik miasta szuka cię. Nie jestem głupcem, żeby świadczyć ci usługi w tym momencie...","Nie masz tu nic do roboty!"),LinkRandPhrase(""+GetSexPhrase("Tylko spróbuj dotknąć moje dziewczyny, a oskubię cię ze skóry na żywca!","Spływaj, ty szumowino!")+"","Brudny"+GetSexPhrase("","")+" morderco, opuść mój lokal, teraz! Strażnicy!!!","Nie boję się ciebie, "+GetSexPhrase("łotrze","gówniaro")+"! Wkrótce cie powieszą w naszym forcie, nie uciekniesz daleko..."));
+				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Heh, alarm to nigdy nie jest dla mnie problem...","Nigdy mnie nie złapią."),RandPhraseSimple("Wystarczy się zamknąć, głupia wiedźmo.","Zamknij się, jeśli nie chcesz problemów..."));
 				link.l1.go = "exit";
 				break;
 			}
 			//--> прибыла инспекция на Святом Милосердии
 			if (CheckAttribute(npchar, "quest.SantaMisericordia"))
 			{
-				dialog.text = "Oh, "+GetSexPhrase("młody człowiek","słodkie dziecko")+", dziś jesteśmy zamknięci.";
+				dialog.text = "Oh, "+GetSexPhrase("młody człowieku","słodkie dziecko")+", dziś jesteśmy zamknięci.";
 				link.l1 = "Zamknięte?";
 				link.l1.go = "SantaMisericordia_1";
 				break;
@@ -840,7 +840,8 @@ void ProcessDialogEvent()
 			string TargetLocation = SelectQuestShoreLocation();
 			if(TargetLocation != "")
 			{ 
-				Locations[FindLocation(TargetLocation)].DisableEncounters = true; 
+				Locations[FindLocation(TargetLocation)].DisableEncounters = true;
+				LAi_LocationDisableOfficersGen(TargetLocation, true);
 				pchar.quest.ReasonToFast_MeetPatrol.win_condition.l1 = "location";
 				pchar.quest.ReasonToFast_MeetPatrol.win_condition.l1.location = TargetLocation;
 				pchar.quest.ReasonToFast_MeetPatrol.function = "ReasonToFast_MeetPatrolShore";

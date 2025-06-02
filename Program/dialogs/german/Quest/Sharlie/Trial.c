@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 			else
 			{
 				link.l1 = "Ich habe ein "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype),"Name")))+", ihr Name ist "+pchar.ship.name+".";
-				if (5-sti(RealShips[sti(pchar.ship.type)].Class) < 0) link.l1.go = "lecrua_badship";
+				if (6-sti(RealShips[sti(pchar.ship.type)].Class) < 0) link.l1.go = "lecrua_badship";
 				else link.l1.go = "lecrua_2";
 			}
 		break;
@@ -70,6 +70,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("Trial", "sText", sTotalTemp);
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "lecrua_repeat":
@@ -190,6 +191,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Trial", "10");
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 			ChangeCharacterNationReputation(pchar, FRANCE, -3);
 		break;
 		
@@ -232,6 +234,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Trial", "11");
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "florian_deck_7":
@@ -329,6 +332,7 @@ void ProcessDialogEvent()
 			sld.lifeday = 0;
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "florian_failspy_5":
@@ -388,7 +392,7 @@ void ProcessDialogEvent()
 		
 		case "florian_13":
 			dialog.text = "Verdammt noch mal! Das ist furchtbar... Hast du etwas über die Galeone herausgefunden?";
-			link.l1 = "Ja. Sie wird seit einer Weile auf die Abfahrt vorbereitet, aber der Gouverneur von Portobello beabsichtigt, sie am Dock festzuhalten. Im Moment wartet er auf eine Barke namens 'Puebla', die aus Cartagena mit einer Ladung Schießpulver für die 'Alcantara' ankommt. Laut einem Matrosen vom Galeon haben sie nicht genug davon und der Gouverneur fürchtet Piraten.";
+			link.l1 = "Ja. Sie wird seit einer Weile auf die Abfahrt vorbereitet, aber der Gouverneur von Portobello beabsichtigt, sie am Dock festzuhalten. Im Moment wartet er auf eine Barkentine namens 'Puebla', die aus Cartagena mit einer Ladung Schießpulver für die 'Alcantara' ankommt. Laut einem Matrosen vom Galeon haben sie nicht genug davon und der Gouverneur fürchtet Piraten.";
 			link.l1.go = "florian_14";
 		break;
 		
@@ -422,7 +426,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "florian_18":
-			dialog.text = "Die Alacantara ist bereit in See zu stechen, aber der Kapitän des Galeons wartet auf die Bark 'Puebla', die aus Cartagena mit Munition beladen ankommen soll. Anscheinend hat die Alacantara nicht genug Schießpulver, also sind die Spanier noch nicht bereit in See zu stechen. Aber die Geduld des Kapitäns hat ihre Grenzen und wenn die Puebla in drei Tagen nicht kommt, dann wird das Galeon Portobello ohne sie verlassen.\nDie Alacantara hat wenig Schießpulver, ich kann sie aufs offene Meer hinausfahren lassen und sie dann zu einem langwierigen Seekampf zwingen, in dem ihr Pulver vor unserem ausgeht. Dein Ziel ist es, die Puebla abzufangen und sie zu zerstören. Versenke sie oder nimm sie als Preis, das ist mir egal. Verhindere nur, dass diese Versorgungsbark hierher kommt!\nWenn du Erfolg hast, dann geh nach Guadeloupe und sieh Gerard LeCroix, ich glaube, du kennst ihn bereits, oder? Er wird dir die Münze zahlen, die du verdienst.";
+			dialog.text = "Die Alacantara ist bereit in See zu stechen, aber der Kapitän des Galeons wartet auf die Barkentine 'Puebla', die aus Cartagena mit Munition beladen ankommen soll. Anscheinend hat die Alacantara nicht genug Schießpulver, also sind die Spanier noch nicht bereit in See zu stechen. Aber die Geduld des Kapitäns hat ihre Grenzen und wenn die Puebla in drei Tagen nicht kommt, dann wird das Galeon Portobello ohne sie verlassen.\nDie Alacantara hat wenig Schießpulver, ich kann sie aufs offene Meer hinausfahren lassen und sie dann zu einem langwierigen Seekampf zwingen, in dem ihr Pulver vor unserem ausgeht. Dein Ziel ist es, die Puebla abzufangen und sie zu zerstören. Versenke sie oder nimm sie als Preis, das ist mir egal. Verhindere nur, dass diese Versorgungsbark hierher kommt!\nWenn du Erfolg hast, dann geh nach Guadeloupe und sieh Gerard LeCroix, ich glaube, du kennst ihn bereits, oder? Er wird dir die Münze zahlen, die du verdienst.";
 			link.l1 = "Abgemacht! Ich mache mich auf den Weg, um die Puebla abzuschneiden!";
 			link.l1.go = "florian_19";
 			link.l2 = "Warten Sie ein wenig, Monsieur Choquet. Die Tatsache ist, dass ich immer noch ... Sagen wir mal, nicht besonders an Seeschlachten gewöhnt bin. Und Sie sind der Kapitän einer Fregatte, Sie haben offensichtlich mehr als eine Seeschlacht hinter sich. Wenn es Ihnen nicht schwer fällt, könnten Sie... Wie soll ich es ausdrücken...";
@@ -444,7 +448,7 @@ void ProcessDialogEvent()
 		// belamour legendary edition дополнительное обучение -->
 		case "florian_guide_01":
 			dialog.text = "Sie möchten, dass ich Ihnen eine Lektion in der Taktik des Seekampfs erteile? Mit Vergnügen, Kapitän! Vor allem, da es in meinem eigenen Interesse ist: Ich möchte sicher sein, dass Sie die 'Puebla' erfolgreich abfangen.";
-			link.l1 = "Nein, das habe ich nicht gemeint. Schon gut, vergiss es: Ich bin sicher, dass ich keine Probleme haben werde, eine Bark zu kapern.";
+			link.l1 = "Nein, das habe ich nicht gemeint. Schon gut, vergiss es: Ich bin sicher, dass ich keine Probleme haben werde, eine Barkentine zu kapern.";
 			link.l1.go = "florian_19";
 			link.l2 = "Ja, genau das habe ich gemeint. Ich bin sicher, dass neues Wissen mir nicht schaden wird.";
 			link.l2.go = "florian_guide_02";

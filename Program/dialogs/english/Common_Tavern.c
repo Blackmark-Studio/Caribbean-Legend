@@ -36,6 +36,8 @@ void ProcessDialogEvent()
 	{
 		pchar.questTemp.TavernVisit.(NPCCity) = true;
 		pchar.questTemp.TavernVisit.counter = sti(pchar.questTemp.TavernVisit.counter) + 1;
+		notification("Первое посещение таверны " + XI_ConvertString(NPCCity + "TavernName"), "Drunk");
+		AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 10.0);
 	}	
 	
 	switch(Dialog.CurrentNode)
@@ -137,6 +139,18 @@ void ProcessDialogEvent()
 			}
 			// <== Квест "Длинные тени старых грехов" - Sinistra
 			
+			//--> Торговля по закону
+			if (CheckAttribute(pchar, "questTemp.TPZ_Start") && !CheckAttribute(pchar, "questTemp.TPZ_Tavern_1") && npchar.city == "BasTer")
+			{
+				dialog.text = "I beg your pardon, "+GetAddress_Form(NPChar)+", but today I cannot offer you a single drop of spirits.";
+				Link.l1 = "What? What sort of tavern cannot spare even a drop of rum? Did I miss some grand celebration that drained your stores?";
+				Link.l1.go = "TPZ_Tavern_1";
+				pchar.questTemp.TPZ_Tavern_1 = true;
+				DelLandQuestMark(npchar);
+				break;
+			}
+			//<-- Торговля по закону
+
 			if(NPChar.quest.meeting == "0")
 			{
 				dialog.Text = GetNatPhrase(npchar, LinkRandPhrase("Welcome to my humble tavern '" + XI_ConvertString(NPChar.City + "TavernName") + "', sir. I'm glad to see you.","At your service, sir! In our tavern '" + XI_ConvertString(NPChar.City + "TavernName") + "' we are always glad to welcome new visitors.","First time here, sir? Do not hesitate, here at '" + XI_ConvertString(NPChar.City + "TavernName") + "' you always feel at home!"), LinkRandPhrase("Come in, monsieur captain. I don't recognize you so this must be your first time at '" + XI_ConvertString(NPChar.City + "TavernName") + "'.","Never met you before, monsieur. Let's get acquainted: I'm "+GetFullName(npchar)+", the innkeeper of '" + XI_ConvertString(NPChar.City + "TavernName") + "'.","I'm glad to welcome our new guest, Monsieur Captain! In my tavern '" + XI_ConvertString(NPChar.City + "TavernName") + "' first drink is always on the house! I am the owner of this place, "+GetFullName(npchar)+", welcomes you."), LinkRandPhrase("Senor Captain! Welcome to the tavern '" + XI_ConvertString(NPChar.City + "TavernName") + "'!","Oh, what a shining hidalgo has visited our taverna '" + XI_ConvertString(NPChar.City + "TavernName") + "'! Is it your first time here, sir?","Buenas dias, senor! I'm "+GetFullName(npchar)+", humble owner of '" + XI_ConvertString(NPChar.City + "TavernName") + "', we are glad to welcome you here!"),LinkRandPhrase("Hello, mynheer kapitein. I am the owner of tavern '" + XI_ConvertString(NPChar.City + "TavernName") + "'. First time staying with us?","Good afternoon, mynheer. Welcome to the tavern '" + XI_ConvertString(NPChar.City + "TavernName") + "'.","Very good to see you mynheer kapitein! Our very own tavern '" + XI_ConvertString(NPChar.City + "TavernName") + "' greets you! Rum, wine, or if I could tempt you, we have a naughty new little Dutch spirit called gin?"));
@@ -550,7 +564,7 @@ void ProcessDialogEvent()
 				break;
 				
 				case 1: 
-					switch (drand(3))
+					switch (hrand(3))
 					{
 						case 0:
 							pchar.GenQuest.Hold_GenQuest.foundStr = "the church";						
@@ -894,7 +908,7 @@ void ProcessDialogEvent()
 					break;
 				}
 		         // пассажир
-				if (drand(6) > 1)
+				if (hrand(6) > 1)
 				{
 					dialog.Text = "There's one man, who just came in - he was recently asking about a passing vessel. You can talk to him, if you like.";
 					link.l1 = RandPhraseSimple("Who is he? Maybe he is a scoundrel? Or, even worse, a wanted pirate?", "And who is he? Will there be any trouble with him?");
@@ -1179,7 +1193,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "hall_night_wait":
-			if (cRand(3) == 1)
+			if (hRand(3) == 1)
             {
                 Dialog.text = "Get the hell out of here, you scoundrel! The common room may be free but we have expectations of decent behavior!";
 				link.l1 = "Alright, alright, I'm leaving.";
@@ -1209,7 +1223,7 @@ void ProcessDialogEvent()
 				SetFunctionTimerCondition("NightAdventure_KillPhant", 0, 0, 0, false);
 			}
 			// <-- прерывание ночного приключенца 
-			if (CheckAttribute(pchar, "GenQuest.LigaAttack") && drand(1) == 1)
+			if (CheckAttribute(pchar, "GenQuest.LigaAttack") && hrand(1) == 1)
 			{
 				TavernWaitDate("wait_night");
 				pchar.GenQuest.LigaAttack.Go = "true"; //атака киллеров
@@ -1233,7 +1247,7 @@ void ProcessDialogEvent()
 				SetFunctionTimerCondition("NightAdventure_KillPhant", 0, 0, 0, false);
 			}
 			// <-- прерывание ночного приключенца 
-			if (CheckAttribute(pchar, "GenQuest.LigaAttack") && drand(1) == 1)
+			if (CheckAttribute(pchar, "GenQuest.LigaAttack") && hrand(1) == 1)
 			{
 				TavernWaitDate("wait_night");
 				pchar.GenQuest.LigaAttack.Go = "true"; //атака киллеров
@@ -1242,7 +1256,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "hall_day_wait":
-			if (drand(1) == 1)
+			if (hrand(1) == 1)
             {
                 Dialog.text = "Get the hell out of here, you scoundrel! The common room may be free but we have expectations of decent behavior!";
 				link.l1 = "Alright, alright, I'm leaving.";
@@ -1460,7 +1474,10 @@ void ProcessDialogEvent()
 			if (NPChar.location == pchar.questTemp.HWIC.Self.SpainCity +"_tavern")
 			{
 				//DelMapTonzagAllQM();
-				if (makeint(environment.time) > 10.0 && makeint(environment.time) < 18.0)//на улице
+				dialog.text = "Yes, I know that gentleman. He should be somewhere in the town - I just recently saw him walking past my window.";
+				link.l1 = "Thank you! I will go looking for him!";
+				link.l1.go = "Fernando_Land";
+				/* if (makeint(environment.time) > 10.0 && makeint(environment.time) < 18.0)//на улице
 				{
 					dialog.text = "Yes, I know that gentleman. He should be somewhere in the town - I just recently saw him walking past my window.";
 					link.l1 = "Thank you! I will go looking for him!";
@@ -1471,7 +1488,7 @@ void ProcessDialogEvent()
 					dialog.text = "Yes, he is now visiting our town. Right now he is not here - he sailed out on his brigantine. He's likely not far from here, within the waters of our island.";
 					link.l1 = "Thanks mate! You've helped me out a lot!";
 					link.l1.go = "Fernando_Sea";
-				}
+				} */
 				pchar.questTemp.HWIC.Self = "KillFernando";
 			}
 			else
@@ -1594,8 +1611,10 @@ void ProcessDialogEvent()
 			link.l1 = "Alright, I'll do just that! Thank you very much!";
 			link.l1.go = "exit";
 			pchar.questTemp.Sharlie = "sailor";
-			//усадим матроса
-			sld = GetCharacter(NPC_GenerateCharacter("SharlieSailor" , "citiz_31", "man", "man", 10, FRANCE, -1, true, "quest"));
+			//усадим матроса Алонсо
+			sld = GetCharacter(NPC_GenerateCharacter("SharlieSailor" , "citiz_36", "man", "man", 10, FRANCE, -1, true, "quest"));
+			sld.name 	= StringFromKey("HollandGambit_23");
+			sld.lastname = "";
 			FantomMakeCoolFighter(sld, 10, 20, 20, "blade_05", "", "", 10);
 			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
 			sld.dialog.currentnode = "Sharlie_sailor";
@@ -1648,7 +1667,7 @@ void ProcessDialogEvent()
 		break;
 		// belamour постоялец -->
 		case "Unwantedpostor_hall_day_wait":
-			if (drand(1) == 1)
+			if (hrand(1) == 1)
             {
                 Dialog.text = "Get out, scoundrel! You're taking up valuable space for paying customers!";
 				link.l1 = "Fine, alright... I'm leaving.";
@@ -1798,7 +1817,7 @@ string findTraderCity(ref NPChar)
 		}
 	}
 	if (howStore == 0) return "none";
-	nation = storeArray[cRand(howStore-1)];
+	nation = storeArray[hRand(howStore-1)];
 	return colonies[nation].id;
 }
 
@@ -1822,6 +1841,6 @@ string findPassangerCity(ref NPChar)
 	}
 	}
 	if (howStore == 0) return "none";
-	nation = storeArray[cRand(howStore-1)];
+	nation = storeArray[hRand(howStore-1)];
 	return colonies[nation].id;
 }

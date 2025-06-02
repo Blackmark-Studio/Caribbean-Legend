@@ -5,12 +5,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	{
 	case "quests":
 		dialog.text = NPCStringReactionRepeat(RandPhraseSimple("¿Qué preguntas tienes?", "¿Cómo puedo ayudarle?"), "Intentaste hacerme esa pregunta no hace mucho...", "Sí, déjame adivinar... ¿Otra vez dando vueltas en círculos?", "Escucha, yo me encargo de las finanzas aquí, no respondo preguntas...", "block", 1, npchar, Dialog.CurrentNode);
-		link.l1 = HeroStringReactionRepeat(RandPhraseSimple("He cambiado de opinión...", "No tengo nada de qué hablar en este momento."), "Umph, ¿dónde se ha ido mi memoria...", "Lo has adivinado, lo siento...", "Entiendo...", npchar, Dialog.CurrentNode);
+		link.l1 = HeroStringReactionRepeat(RandPhraseSimple("He cambiado de opinión...", "No tengo nada de qué hablar en este momento."), "Umph, ¿dónde se ha ido mi memoria...?", "Lo has adivinado, lo siento...", "Entiendo...", npchar, Dialog.CurrentNode);
 		link.l1.go = "exit";
 		// Голландский гамбит, Голландия
 		if (CheckAttribute(pchar, "questTemp.HWIC.Holl") && pchar.questTemp.HWIC.Holl == "SantiagoTripBegin")
 		{
-			link.l1 = "Señor, soy capitán " + GetFullName(pchar) + ", y estoy aquí en una diligencia para Lucas Rodenburg. Tengo un paquete de él para usted.";
+			link.l1 = "Señor, soy el capitán " + GetFullName(pchar) + ", y estoy aquí en una diligencia para Lucas Rodenburg. Tengo un paquete de él para usted.";
 			link.l1.go = "SantiagoTripBank";
 		}
 		if (CheckAttribute(pchar, "questTemp.HWIC.Holl") && pchar.questTemp.HWIC.Holl == "SantiagoTripReturn")
@@ -40,7 +40,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "SantiagoTripBank_1":
-		dialog.text = "Mm... interesante. Así que él 'envía sus disculpas'. Bueno-bueno. Aunque las disculpas del señor Rodenburg son bastante persuasivas, es difícil negarlo. Señor, tomará algún tiempo escribir una respuesta adecuada, ¿podría venir de nuevo y verme mañana alrededor del mediodía para que pueda llevarse una respuesta? Descanse en una taberna, pasee por la ciudad. Santiago tiene mucho que ofrecer.";
+		dialog.text = "Mm... interesante. Así que él 'envía sus disculpas'. Bueno-bueno. Aunque las disculpas del señor Rodenburg son bastante persuasivas, es difícil negarlo. Señor, tomará algún tiempo escribir una respuesta adecuada, ¿podría venir de nuevo y verme mañana alrededor del mediodía para que pueda llevarse una respuesta? Descanse en la taberna, camine por la ciudad. Santiago tiene mucho que ofrecer.";
 		link.l1 = "Bien, regresaré mañana al mediodía. Nos vemos entonces, señor.";
 		link.l1.go = "SantiagoTripBank_2";
 		break;

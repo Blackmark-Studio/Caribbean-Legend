@@ -18,7 +18,7 @@ string CurTable, CurRow;
 ref refCharacter;
 bool bBoxUsed = false; // Сундук-ли?
 aref refToChar, arChest, arDeadChar;
-String sCharactersArroy[INTERFACE_ITEMSBOX_CHAR_ARROYSIZE] = {"", "", "", "", "", "", "", "", "", ""};
+string sCharactersArroy[INTERFACE_ITEMSBOX_CHAR_ARROYSIZE] = {"", "", "", "", "", "", "", "", "", ""};
 
 int iTableAddAllBtnX = 570;
 int iTableAddAllBtnY = 357;
@@ -513,6 +513,14 @@ void IDoExit(int exitCode)
 		{
 			if(pchar.location == Get_My_Cabin() && CheckItemMyCabin("gold_dublon") > 29999)
 				Achievment_Set("ach_CL_125");
+		}
+		if(CheckAttribute(pchar, "systeminfo.tutorial.OverLoad") && GetCharacterFreeItem(refToChar, "BoxOfBalls"))
+		{
+			if(GetItemsWeight(pchar) + sti(Items[GetItemIndex("BoxOfBalls")].weight) > GetMaxItemsWeight(pchar))
+			{
+				DeleteAttribute(pchar, "systeminfo.tutorial.OverLoad");
+				DoQuestFunctionDelay("Tutorial_Overload", 1.0);
+			}
 		}
 	}
 	
@@ -1637,7 +1645,7 @@ void onGetAllBtnClick()
 // Нажали на табличной стрелочке "взять 1 ед. предмета одного типа"
 void onTableAddBtnClick()
 {
-	String item = Items[iCurGoodsIdx].id;
+	string item = Items[iCurGoodsIdx].id;
 	int iItemsQty = GetCharacterFreeItem(refToChar, item);
 	
 	// Учет перегруза

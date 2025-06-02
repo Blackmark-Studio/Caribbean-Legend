@@ -109,7 +109,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "shipyard_dlg":			
-			if((shipBaseHP - shipCurHP > 0) && (shipClass < 6))
+			if((shipBaseHP - shipCurHP > 0) && (shipClass < 7))
 			{
 				dialog.Text = "Могу предложить сделать капитальный ремонт корпуса вашего корыта. Здесь совершенно не умеют строить нормальные корабли - рассыпаются на раз...";						
 				Link.l1 = "Замечательно! У меня как раз есть такой кораблик, требующий ремонта. Может взглянете, что можно сделать?";
@@ -154,7 +154,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "ship_repair_again":
-			if((shipBaseHP - shipCurHP > 0) && (shipClass < 6))
+			if((shipBaseHP - shipCurHP > 0) && (shipClass < 7))
 			{
 				dialog.Text = RandPhraseSimple("А... это опять вы... Снова решили свой кораблик поправить?",
 				RandPhraseSimple("Приветствую известного капитана. Что, опять капремонт понадобился?",
@@ -1332,10 +1332,10 @@ int GetMaterialQtyRepair( ref _chr, int MaterialNum )
 		HPPrice = HPPrice * 2;
 	}					
 	
-	int     Matherial1 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (6 - shipClass) / 2) + rand(modifier);
-	int     Matherial2 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (6 - shipClass) / 2) + rand(modifier);
-	int     Matherial3 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (6 - shipClass) / 2) + rand(modifier);
-	int     Matherial4 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (6 - shipClass) / 2) + rand(modifier);
+	int     Matherial1 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
+	int     Matherial2 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
+	int     Matherial3 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
+	int     Matherial4 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
 		
 	if(MaterialNum == 0) return HPPrice;	
 	if(MaterialNum == 1) return Matherial1;

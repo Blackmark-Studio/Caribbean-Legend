@@ -229,14 +229,16 @@ void FMQG_CreateJuanship(string qName) // ставим корабль дона �
 {
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE-2; // Addon 2016-1 Jason пиратская линейка
 	int iScl = 10 + 2*sti(pchar.rank);
-	int iCannon = CANNON_TYPE_CANNON_LBS16;
-	if (MOD_SKILL_ENEMY_RATE < 4) iCannon = CANNON_TYPE_CANNON_LBS12;
-	if (MOD_SKILL_ENEMY_RATE > 6) iCannon = CANNON_TYPE_CULVERINE_LBS18;
+	int iCannon = CANNON_TYPE_CANNON_LBS8;
+	if (MOD_SKILL_ENEMY_RATE < 4) iCannon = CANNON_TYPE_CANNON_LBS6;
+	if (MOD_SKILL_ENEMY_RATE > 6) iCannon = CANNON_TYPE_CANNON_LBS12;
 	AddQuestRecord("FMQ_Guadeloupe", "11");
 	Group_FindOrCreateGroup("FMQG_shipgroup");
 	sld = GetCharacter(NPC_GenerateCharacter("FMQG_Juan", "quest_off_spain", "man", "man", iRank, SPAIN, -1, false, "soldier"));
-	FantomMakeSmallSailor(sld, SHIP_SCHOONER_W, StringFromKey("FMQ_7"), iCannon, iScl, iScl, iScl, iScl, iScl);
+	FantomMakeSmallSailor(sld, SHIP_SLOOP, StringFromKey("FMQ_7"), iCannon, iScl, iScl, iScl, iScl, iScl);
 	FantomMakeCoolFighter(sld, iRank-5, iScl, iScl, "blade_13", "pistol1", "bullet", iScl*2);
+	SetMaxShipStats(sld);
+	UpgradeShipParameter(sld, "MaxCrew");
 	sld.name = StringFromKey("FMQ_8");
 	sld.lastname = StringFromKey("FMQ_9");
 	sld.DontRansackCaptain = true;
@@ -672,7 +674,7 @@ void FMQM_ConvoyStart(string qName) // конвой со смолой
 		{
 			case 1: iTemp = iShip; break;
 			case 2: 
-				if (MOD_SKILL_ENEMY_RATE < 7) iTemp = SHIP_BARQUE;
+				if (MOD_SKILL_ENEMY_RATE > 7) iTemp = SHIP_BARQUE;
 				else iTemp = SHIP_BARKENTINE; 
 			break;
 			case 3:
@@ -730,12 +732,12 @@ void FMQM_ConvoyStart(string qName) // конвой со смолой
 		}
 		AddCharacterGoods(sld, GOOD_POWDER, 800);
 		iSpace = GetCharacterFreeSpace(sld, GOOD_SUGAR);
-		iSpace = makeint(iSpace/2 + drand(iSpace/2));
+		iSpace = makeint(iSpace/2 + hrand(iSpace/2));
 		Fantom_SetCharacterGoods(sld, GOOD_SUGAR, iSpace, 1);
 		if (i == 2) 
 		{
 			sld.Ship.Name = StringFromKey("FMQ_13");
-			SetCharacterGoods(sld, GOOD_OIL, 100+drand(10));//положить в трюм смолу
+			SetCharacterGoods(sld, GOOD_OIL, 100+hrand(10));//положить в трюм смолу
 			if (MOD_SKILL_ENEMY_RATE > 8) SetCrewQuantityOverMax(sld, hcrew+4*MOD_SKILL_ENEMY_RATE); // увеличенная команда // may-16
 		}
 		sld.mapEnc.type = "trade";
@@ -1905,10 +1907,9 @@ void FMQN_EnglandSeaAttack(string qName) // атака в море
 	DeleteAttribute(pchar, "GenQuest.MapClosedNoBattle");// Addon 2016-1 Jason пиратская линейка
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE-2;
 	int iScl = 15 + 2*sti(pchar.rank);
-	int iShipType = SHIP_SLOOP;
-	if(iRank > 10 || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_PINK) iShipType = SHIP_SCHOONER_W;
+	int iShipType = SHIP_SHNYAVA;
 	int iCannon = CANNON_TYPE_CULVERINE_LBS8;
-	if (iShipType > SHIP_SLOOP && MOD_SKILL_ENEMY_RATE > 8) iCannon = CANNON_TYPE_CULVERINE_LBS18;
+	if(sti(RealShips[sti(pchar.ship.type)].Class) == 5) iShipType = SHIP_SCHOONER_W;
 	Island_SetReloadEnableGlobal("SentMartin", false);//на остров нельзя
 	Group_FindOrCreateGroup("FMQN_shoregroup");
 	sld = GetCharacter(NPC_GenerateCharacter("FMQN_shorecap", "off_hol_4", "man", "man", iRank, HOLLAND, -1, false, "soldier"));
@@ -2330,7 +2331,7 @@ void FMQT_MercenEnter(string qName) // входит наемник
 	pchar.questTemp.FMQT = "chest_open";
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
 	LAi_group_Delete("EnemyFight");
-	sld = GetCharacter(NPC_GenerateCharacter("FMQT_mercen", "Claude_Durand", "man", "man", 1, FRANCE, -1, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Duran", "Claude_Durand", "man", "man", 1, FRANCE, -1, false, "soldier"));
 	sld.name = StringFromKey("FMQ_49");
 	sld.lastname = StringFromKey("FMQ_50");
 	sld.Dialog.Filename = "Quest\LineMiniQuests\FMQ_Tortuga.c";
@@ -2409,7 +2410,7 @@ void FMQT_MercenAttackRoom(string qName) //
 	chrDisableReloadToLocation = true;
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
 	LAi_group_Delete("EnemyFight");
-	sld = CharacterFromID("FMQT_mercen");
+	sld = CharacterFromID("Duran");
 	LAi_SetImmortal(sld, false);
 	ChangeCharacterAddressGroup(sld, "Tortuga_townhallBedroom", "reload", "reload1");
 	LAi_SetWarriorType(sld);
@@ -2665,15 +2666,11 @@ void FMQP_SetRaiders(string qName) //
 	if(bImCasual) return;
 	int iRank = MOD_SKILL_ENEMY_RATE+sti(pchar.rank);// Addon 2016-1 Jason пиратская линейка
 	int iScl = 10 + 2*sti(pchar.rank);
-	int iShipType = sti(RealShips[sti(pchar.ship.type)].basetype);
-	if (iShipType < SHIP_BARKENTINE) iShipType = SHIP_BRIGANTINE; // для умников
-	if (iShipType > SHIP_POLACRE) iShipType = SHIP_CORVETTE; // для умников
-	int iCannon = CANNON_TYPE_CULVERINE_LBS8;
-	if (iShipType > SHIP_SLOOP && MOD_SKILL_ENEMY_RATE > 4) iCannon = CANNON_TYPE_CANNON_LBS16;
+	int iShipType = GetRandomShipType(GetClassFlag(sti(RealShips[sti(pchar.ship.type)].Class)), FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY);
 	string sGroup = "FMQP_SeaGroup";
 	Group_FindOrCreateGroup(sGroup);
 	sld = GetCharacter(NPC_GenerateCharacter("FMQP_Follower", "mercen_23", "man", "man", iRank, SPAIN, 30, true, "quest"));
-	FantomMakeSmallSailor(sld, iShipType, "", iCannon, iScl, iScl, iScl, iScl, iScl);
+	FantomMakeSmallSailor(sld, iShipType, "", -1, iScl, iScl, iScl, iScl, iScl);
 	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_06", "pistol1", "bullet", 150);
 	sld.Ship.Mode = "pirate";	
 	DeleteAttribute(sld, "SinkTenPercent");
@@ -4351,14 +4348,14 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "FMQT_MercenTalk") // 
 	{
 		DoQuestCheckDelay("hide_weapon", 1.0);
-		sld = CharacterFromID("FMQT_mercen");
+		sld = CharacterFromID("Duran");
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}
 	else if (sQuestName == "FMQT_MercenHire") // 
 	{
 		chrDisableReloadToLocation = false;
-		sld = CharacterFromID("FMQT_mercen");
+		sld = CharacterFromID("Duran");
 		LAi_SetImmortal(sld, false);
 		sld.quest.OfficerPrice = sti(pchar.rank)*2000;
 		Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(sld.id);
@@ -4723,10 +4720,10 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 		DoQuestReloadToLocation("shore18", "reload", "reload1", "FMQL_BattleAgainstNations");
 		// укладываем товары
 		int iSanl, iSilk, iRope, iOil;
-		iSanl = iTotalTemp * (4 + drand(MOD_SKILL_ENEMY_RATE)); // Addon 2016-1 Jason пиратская линейка
-		iSilk = iTotalTemp * (5 + drand(MOD_SKILL_ENEMY_RATE));
-		iRope = iTotalTemp * (6 + drand(MOD_SKILL_ENEMY_RATE));
-		iOil = iTotalTemp * (7 + drand(MOD_SKILL_ENEMY_RATE));
+		iSanl = iTotalTemp * (4 + hrand(MOD_SKILL_ENEMY_RATE)); // Addon 2016-1 Jason пиратская линейка
+		iSilk = iTotalTemp * (5 + hrand(MOD_SKILL_ENEMY_RATE));
+		iRope = iTotalTemp * (6 + hrand(MOD_SKILL_ENEMY_RATE));
+		iOil = iTotalTemp * (7  + hrand(MOD_SKILL_ENEMY_RATE));
 		sld = CharacterFromID("Guide_y");
 		sld.ShipHideImmortal = 500; // непотопляемый корабль // правки прогона 3
 		SetCharacterGoods(sld, GOOD_SANDAL, GetCargoGoods(sld, GOOD_SANDAL) + iSanl);
@@ -4985,7 +4982,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 		LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
 		LAi_group_SetCheck("EnemyFight", "FMQL_AfterBattleOnBeach");
 		LAi_SetFightMode(pchar, true);
-		if (GetCharacterIndex("FMQL_Prosper") != -1 && GetCharacterIndex("FMQT_mercen") != -1) 
+		if (GetCharacterIndex("FMQL_Prosper") != -1 && GetCharacterIndex("Duran") != -1) 
 		{
 			// belamour legendary edition 
 			if (MOD_SKILL_ENEMY_RATE < 9) DoQuestCheckDelay("FMQL_BattleOnBeachHelp", 40.0);
@@ -5027,12 +5024,12 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 		pchar.quest.FMQL_prosper_dead.win_condition = "FMQL_ProsperDead";
 		if (CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
 		{
-			sld = CharacterFromID("FMQT_mercen");
+			sld = CharacterFromID("Duran");
 			ChangeCharacterAddressGroup(sld, "Shore38", "reload", "reload1");
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			/*pchar.quest.FMQL_pirate_dead.win_condition.l1 = "NPC_Death";
-			pchar.quest.FMQL_pirate_dead.win_condition.l1.character = "FMQT_mercen";
+			pchar.quest.FMQL_pirate_dead.win_condition.l1.character = "Duran";
 			pchar.quest.FMQL_pirate_dead.win_condition = "FMQL_PirateDead";*/
 		}
 	}
@@ -5072,7 +5069,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 			{
 				if (!CheckAttribute(pchar, "questTemp.FMQL.PirateDead")) // пират жив
 				{
-					sld = CharacterFromID("FMQT_mercen");
+					sld = CharacterFromID("Duran");
 					sld.dialog.FileName = "Quest\LineMiniQuests\FMQ_Lesson.c";
 					sld.Dialog.currentnode = "FMQL_beach";
 					LAi_SetActorType(sld);
@@ -5121,7 +5118,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "FMQL_PirateNormal") // 
 	{
-		sld = CharacterFromID("FMQT_mercen");
+		sld = CharacterFromID("Duran");
 		LAi_SetOfficerType(sld);
 		sld.dialog.FileName = "Enc_Officer_dialog.c";
 		sld.Dialog.currentnode = "hired";

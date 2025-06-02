@@ -32,13 +32,13 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Ah, "+GetFullName(pchar)+"¡ "+TimeGreeting()+"¡Qué quieres esta vez?";
+				dialog.text = "¡Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+". ¿Qué quieres esta vez?";
 				if(CheckAttribute(pchar, "questTemp.LSC.Betancur"))
 				{
 					link.l4 = "Antonio, dicen que conoces bien la historia de la Isla. Tengo una pregunta para ti sobre ella.";
 					link.l4.go = "dolly";
 				}
-				dialog.text = "Ah, "+GetFullName(pchar)+"¡ "+TimeGreeting()+"¡Quieres algo?";
+				dialog.text = "¡Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+". ¿Quieres algo?";
 				link.l1 = LinkRandPhrase("¿Tienes algo interesante que decir?","¿Ha ocurrido algo nuevo en la isla?","¿Me contarás los últimos chismes?");
 				link.l1.go = "rumours_LSC";
 				link.l2 = "Quiero hacerte unas preguntas sobre la isla.";
@@ -71,7 +71,7 @@ void ProcessDialogEvent()
 		// квестовая часть
 		case "dolly":
 			dialog.text = "Hm... Claro, amigo, pregúntame. Responderé tus preguntas, por supuesto, pero solo si conozco las respuestas.";
-			link.l1 = "  Dime, ¿recuerdas el tiempo cuando el galeón San Geronimo todavía estaba aquí? ";
+			link.l1 = "Dime, ¿recuerdas el tiempo cuando el galeón San Geronimo todavía estaba aquí?";
 			link.l1.go = "dolly_1";
 		break;
 		
@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "dolly_5":
-			dialog.text = "¡Eres bienvenido, siempre estoy encantado de hablar!";
+			dialog.text = "¡De nada, siempre estoy encantado de hablar!";
 			link.l1 = "¡Adiós!";
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.LSC.Betancur");
@@ -127,7 +127,7 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "quest.answer_4"))
 			{
-				link.l4 = " Dime, ¿alguna vez has querido dejar la Isla por un tiempo? Para ver el mundo...";
+				link.l4 = "Dime, ¿alguna vez has querido dejar la Isla por un tiempo? Para ver el mundo...";
 				link.l4.go = "ansewer_4";
 			}
 			link.l10 = "No hay preguntas. Perdón...";

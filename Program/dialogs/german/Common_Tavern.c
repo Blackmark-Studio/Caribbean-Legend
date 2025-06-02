@@ -36,6 +36,8 @@ void ProcessDialogEvent()
 	{
 		pchar.questTemp.TavernVisit.(NPCCity) = true;
 		pchar.questTemp.TavernVisit.counter = sti(pchar.questTemp.TavernVisit.counter) + 1;
+		notification("Первое посещение таверны " + XI_ConvertString(NPCCity + "TavernName"), "Drunk");
+		AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 10.0);
 	}	
 	
 	switch(Dialog.CurrentNode)
@@ -132,6 +134,18 @@ void ProcessDialogEvent()
 				break;
 			}
 			// <== Квест "Длинные тени старых грехов" - Sinistra
+			
+			//--> Торговля по закону
+			if (CheckAttribute(pchar, "questTemp.TPZ_Start") && !CheckAttribute(pchar, "questTemp.TPZ_Tavern_1") && npchar.city == "BasTer")
+			{
+				dialog.text = "Verzeihen Sie, "+GetAddress_Form(NPChar)+", aber heute kann ich Ihnen keinen Tropfen Alkohol anbieten.";
+				Link.l1 = "Was? Was ist das für eine Taverne, in der man nicht einmal einen Tropfen Rum bekommt? Habe ich etwa ein großes Fest verpasst, das Ihre Vorräte geleert hat?";
+				Link.l1.go = "TPZ_Tavern_1";
+				pchar.questTemp.TPZ_Tavern_1 = true;
+				DelLandQuestMark(npchar);
+				break;
+			}
+			//<-- Торговля по закону
 			
 			if(NPChar.quest.meeting == "0")
 			{
@@ -543,7 +557,7 @@ void ProcessDialogEvent()
 				break;
 				
 				case 1: 
-					switch (drand(3))
+					switch (hrand(3))
 					{
 						case 0:
 							pchar.GenQuest.Hold_GenQuest.foundStr = "the church";						
@@ -880,7 +894,7 @@ void ProcessDialogEvent()
 					break;
 				}
 		         // пассажир
-				if (drand(6) > 1)
+				if (hrand(6) > 1)
 				{
 					dialog.Text = "Da ist ein Mann, der gerade hereingekommen ist - er hat kürzlich nach einem vorbeifahrenden Schiff gefragt. Du kannst mit ihm reden, wenn du möchtest.";
 					link.l1 = RandPhraseSimple("Wer ist er? Vielleicht ist er ein Schurke? Oder, noch schlimmer, ein gesuchter Pirat?","Und wer ist er? Wird es Ärger mit ihm geben?");
@@ -1162,7 +1176,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "hall_night_wait":
-			if (cRand(3) == 1)
+			if (hRand(3) == 1)
             {
                 Dialog.text = "Verschwinde zum Teufel, du Schurke! Das Gemeinschaftszimmer mag zwar kostenlos sein, aber wir haben Erwartungen an anständiges Verhalten!";
 				link.l1 = "In Ordnung, in Ordnung, ich gehe.";
@@ -1192,7 +1206,7 @@ void ProcessDialogEvent()
 				SetFunctionTimerCondition("NightAdventure_KillPhant", 0, 0, 0, false);
 			}
 			// <-- прерывание ночного приключенца 
-			if (CheckAttribute(pchar, "GenQuest.LigaAttack") && drand(1) == 1)
+			if (CheckAttribute(pchar, "GenQuest.LigaAttack") && hrand(1) == 1)
 			{
 				TavernWaitDate("wait_night");
 				pchar.GenQuest.LigaAttack.Go = "true"; //атака киллеров
@@ -1216,7 +1230,7 @@ void ProcessDialogEvent()
 				SetFunctionTimerCondition("NightAdventure_KillPhant", 0, 0, 0, false);
 			}
 			// <-- прерывание ночного приключенца 
-			if (CheckAttribute(pchar, "GenQuest.LigaAttack") && drand(1) == 1)
+			if (CheckAttribute(pchar, "GenQuest.LigaAttack") && hrand(1) == 1)
 			{
 				TavernWaitDate("wait_night");
 				pchar.GenQuest.LigaAttack.Go = "true"; //атака киллеров
@@ -1225,7 +1239,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "hall_day_wait":
-			if (drand(1) == 1)
+			if (hrand(1) == 1)
             {
                 Dialog.text = "Verschwinde zum Teufel, du Schurke! Der Gemeinschaftsraum mag frei sein, aber wir erwarten anständiges Benehmen!";
 				link.l1 = "In Ordnung, in Ordnung, ich gehe schon.";
@@ -1443,7 +1457,10 @@ void ProcessDialogEvent()
 			if (NPChar.location == pchar.questTemp.HWIC.Self.SpainCity +"_tavern")
 			{
 				//DelMapTonzagAllQM();
-				if (makeint(environment.time) > 10.0 && makeint(environment.time) < 18.0)//на улице
+				dialog.text = "Ja, ich kenne diesen Herrn. Er sollte irgendwo in der Stadt sein - ich habe ihn erst kürzlich an meinem Fenster vorbeigehen sehen.";
+				link.l1 = "Danke! Ich werde nach ihm suchen!";
+				link.l1.go = "Fernando_Land";
+				/* if (makeint(environment.time) > 10.0 && makeint(environment.time) < 18.0)//на улице
 				{
 					dialog.text = "Ja, ich kenne diesen Herrn. Er sollte irgendwo in der Stadt sein - ich habe ihn erst kürzlich an meinem Fenster vorbeigehen sehen.";
 					link.l1 = "Danke! Ich werde nach ihm suchen!";
@@ -1454,7 +1471,7 @@ void ProcessDialogEvent()
 					dialog.text = "Ja, er besucht gerade unsere Stadt. Im Moment ist er nicht hier - er ist mit seiner Brigantine gesegelt. Er ist wahrscheinlich nicht weit von hier, innerhalb der Gewässer unserer Insel.";
 					link.l1 = "Danke Kumpel! Du hast mir sehr geholfen!";
 					link.l1.go = "Fernando_Sea";
-				}
+				} */
 				pchar.questTemp.HWIC.Self = "KillFernando";
 			}
 			else
@@ -1577,8 +1594,10 @@ void ProcessDialogEvent()
 			link.l1 = "In Ordnung, das werde ich tun! Vielen Dank!";
 			link.l1.go = "exit";
 			pchar.questTemp.Sharlie = "sailor";
-			//усадим матроса
-			sld = GetCharacter(NPC_GenerateCharacter("SharlieSailor" , "citiz_31", "man", "man", 10, FRANCE, -1, true, "quest"));
+			//усадим матроса Алонсо
+			sld = GetCharacter(NPC_GenerateCharacter("SharlieSailor" , "citiz_36", "man", "man", 10, FRANCE, -1, true, "quest"));
+			sld.name 	= StringFromKey("HollandGambit_23");
+			sld.lastname = "";
 			FantomMakeCoolFighter(sld, 10, 20, 20, "blade_05", "", "", 10);
 			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
 			sld.dialog.currentnode = "Sharlie_sailor";
@@ -1631,7 +1650,7 @@ void ProcessDialogEvent()
 		break;
 		// belamour постоялец -->
 		case "Unwantedpostor_hall_day_wait":
-			if (drand(1) == 1)
+			if (hrand(1) == 1)
             {
                 Dialog.text = "Raus, Schurke! Du nimmst wertvollen Platz für zahlende Kunden ein!";
 				link.l1 = "Gut, gut... Ich gehe.";
@@ -1781,7 +1800,7 @@ string findTraderCity(ref NPChar)
 		}
 	}
 	if (howStore == 0) return "none";
-	nation = storeArray[cRand(howStore-1)];
+	nation = storeArray[hRand(howStore-1)];
 	return colonies[nation].id;
 }
 
@@ -1805,6 +1824,6 @@ string findPassangerCity(ref NPChar)
 	}
 	}
 	if (howStore == 0) return "none";
-	nation = storeArray[cRand(howStore-1)];
+	nation = storeArray[hRand(howStore-1)];
 	return colonies[nation].id;
 }

@@ -96,11 +96,7 @@ void ProcessDialogEvent()
 		
 		case "Startsailor_6":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			i = FindLocation("Fortfrance_town");
-			setCharacterShipLocation(pchar, GetCityFrom_Sea(locations[i].fastreload));
-		    setWDMPointXZ(GetCityFrom_Sea(locations[i].fastreload));
-			DoQuestReloadToLocation("Fortfrance_town", "reload", "reload1", "Sharlie_onLand");
+			AddDialogExitQuestFunction("SharlieTutorial_StartGameInMartinique");
 		break;
 		// <-- матрос на корабле, прибытие в Сен-Пьер
 		
@@ -288,31 +284,33 @@ void ProcessDialogEvent()
 		// --> найм матросов
 		case "Sharlie_sailor":
 			DelLandQuestMark(npchar);
-			dialog.text = "Доброго здоровья, месье. Вы что-то хотели?";
-			link.l1 = "Да. У меня есть в собственности корабль, но нет команды. Бармен посоветовал мне поговорить с тобой на эту тему - ты и твои товарищи, вроде как, были уволены с какого-то судна и вам нужна работа...";
+			dialog.text = "А потом он свесился за борт... и выдал столько, что Карибскому Морю тоже поплохело! Ха-ха-ха!";
+			link.l1 = "Алонсо?";
 			link.l1.go = "Sharlie_sailor_1";
 		break;
 		
 		case "Sharlie_sailor_1":
-			dialog.text = "Ну, это действительно так. Хотите нанять нас на службу? Что у вас за корабль?";
-			link.l1 = "Корабль как корабль, "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name")))+". А вам не всё равно?";
+			dialog.text = "О! Шарль, а я как раз рассказываю парням про наши приключения!";
+			link.l1 = "Я заметил. Слушай, Алонсо. Я тут капитаном заделался...";
 			link.l1.go = "Sharlie_sailor_2";
 		break;
 		
 		case "Sharlie_sailor_2":
-			dialog.text = "Ну, знаете, месье, не очень-то хочется служить на баркасе или тартане, ну а "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name")))+" нас устраивает. Но сразу хочу предупредить, капитан, что мы пойдём на службу только все вместе. Сработались мы за прошлое время, понимаете...";
-			link.l1 = "А сколько вас человек?";
+			dialog.text = "Уже? Я думал, вам потребуется где-то с месяц, ха-ха!";
+			link.l1 = "Я серьёзно с тобой разговариваю!";
 			link.l1.go = "Sharlie_sailor_3";
 		break;
 		
 		case "Sharlie_sailor_3":
-			dialog.text = "Нас ровно сорок. Моряки мы опытные, не крысы сухопутные, да и пороху понюхать тоже приходилось не раз. И с парусами управимся, и у орудий встанем, коль нужда придёт, и за сабли возьмёмся, если потребуется.";
-			link.l1 = "Хорошо. Сколько вы хотите?";
+			dialog.text = "Если бы дело касалось только меня лично, то я бы к вам пошёл сразу, без всякой задней мысли. Но со мной - ещё сорок душ с 'Улисса'. Парни доверили мне своё будущее, и я должен быть уверен, что вы их не подведёте\n"+
+			"Что у вас за корабль?";
+			link.l1 = "Корабль как корабль, "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name")))+". А это так важно?";
 			link.l1.go = "Sharlie_sailor_4";
 		break;
 		
 		case "Sharlie_sailor_4":
-			dialog.text = "Аванс - по 120 песо на брата, ну а потом - как на всех кораблях. Мы лишнего не попросим, за это не беспокойтесь.";
+			dialog.text = "Ну знаете, после 'Улисса' не хотелось бы служить на каком-то баркасе или тартане. Ваш корабль мы уже видели и парням он понравился\n"+
+			"Теперь денежный вопрос. Мы возьмём 4800 песо авансом. Ну а после - как везде. Лишнего не попросим, за это не беспокойтесь. Потянете?";
 			if (sti(Pchar.money) >= 4800)
 			{
 				link.l1 = "Ну что же, тогда - по рукам! Вот ваши монеты.";
@@ -334,8 +332,8 @@ void ProcessDialogEvent()
 			else
 			{
 				AddMoneyToCharacter(pchar, -4800);
-				dialog.text = "Отлично, капитан! Я немедленно собираю ребят и мы сейчас же отправимся на ваш корабль.";
-				link.l1 = "Превосходно. Готовьте судно к выходу в море.";
+				dialog.text = "Ба! Поздравляю... капитан! Я немедленно собираю ребят и мы сейчас же отправимся на ваш корабль.";
+				link.l1 = "Рад продолжить наше приключение, Алонсо. Готовьте судно к выходу в море!";
 				link.l1.go = "Sharlie_sailor_6";
 			}
 		break;
@@ -498,6 +496,11 @@ void ProcessDialogEvent()
 				dialog.text = "Ну, боеприпасами вы запаслись достаточно, капитан. Этого арсенала нам хватит вполне, только не забывайте своевременно пополнять его.";
 				link.l1 = "Конечно, это же само собой разумеется. Ещё какие-то замечания?";
 				link.l1.go = "Folke_10";
+				if (CheckCharacterItem(PChar, "BoxOfBalls"))
+				{
+					link.l2 = "О! Спасибо, что напомнил. У меня как раз с собой целый ящик ядер!";
+					link.l2.go = "Folke_8_1";
+				}
 			}
 			else
 			{
@@ -505,6 +508,26 @@ void ProcessDialogEvent()
 				link.l1 = "Хорошо. Я последую твоему совету. Отправляюсь на берег.";
 				link.l1.go = "Folke_9";
 			}
+		break;
+		
+		case "Folke_8_1":
+			dialog.text = "...И давно вы таскаете его с собой?";
+			link.l1 = "Почти две недели.";
+			link.l1.go = "Folke_8_2";
+			TakeItemFromCharacter(pchar, "BoxOfBalls");
+			//AddCharacterGoodsSimple(sld, GOOD_BALLS, 10);
+		break;
+		
+		case "Folke_8_2":
+			dialog.text = "Но зачем, кэп?!";
+			link.l1 = "Люблю собирать всякую всячину. Никогда не знаешь, что пригодится.";
+			link.l1.go = "Folke_8_3";
+		break;
+		
+		case "Folke_8_3":
+			dialog.text = "Ну, тут вы дали маху, конечно. К нашим хлопушкам их применить в любом случае не получится. Никогда не видел таких крупных ядер. 'Аделине' хватит и одного такого, чтобы ко дну пойти.";
+			link.l1 = "...";
+			link.l1.go = "Folke_10";
 		break;
 		
 		case "Folke_9":
@@ -520,6 +543,11 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "Да, закончил. Ещё какие-то замечания?";
 				link.l1.go = "Folke_10";
+				if (CheckCharacterItem(PChar, "BoxOfBalls"))
+				{
+					link.l2 = "О! Спасибо, что напомнил. У меня как раз с собой целый ящик ядер!";
+					link.l2.go = "Folke_8_1";
+				}
 			}
 			else
 			{
@@ -1478,6 +1506,7 @@ void ProcessDialogEvent()
 			link.l1.go = "ZsI_officer_2";
 			sld = CharacterFromID("ListKakao");
 			LAi_CharacterEnableDialog(sld);
+			EndBattleLandInterface();
 		break;
 		
 		case "ZsI_officer_2":
@@ -1538,6 +1567,7 @@ void ProcessDialogEvent()
 			link.l2.go = "ZsI_officer_Draka";
 			link.l3 = "Вы правы, лейтенант, не имею. Прощайте.";
 			link.l3.go = "ZsI_officerKIll";
+			StartBattleLandInterface();
 		break;
 		
 		case "ZsI_officer_Mir":
@@ -1549,6 +1579,7 @@ void ProcessDialogEvent()
 		case "ZsI_officer_Mir_2":
 			DialogExit();
 			
+			DeleteAttribute(pchar, "questTemp.CameraDialogMode");
 			sld = CharacterFromID("ZsI_Patrul_off");
 			LAi_SetActorType(sld);
 			sld.lifeday = 0;
@@ -1623,6 +1654,7 @@ void ProcessDialogEvent()
 		case "ZsI_officer_Draka":
 			DialogExit();
 			
+			DeleteAttribute(pchar, "questTemp.CameraDialogMode");
 			LAi_LocationFightDisable(&Locations[FindLocation("BasTer_ExitTown")], false);
 			LAi_SetFightMode(pchar, true);
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
@@ -1693,6 +1725,7 @@ void ProcessDialogEvent()
 		case "ZsI_officerKIll":
 			DialogExit();
 			
+			DeleteAttribute(pchar, "questTemp.CameraDialogMode");
 			sld = CharacterFromID("ZsI_Patrul_off");
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, CharacterFromID("ListKakao"));
@@ -1788,7 +1821,7 @@ void ProcessDialogEvent()
 			SetQuestHeader("MoneyOnTrees");
 			AddQuestRecord("MoneyOnTrees", "1");
 			
-			FantomMakeCoolSailor(npchar, SHIP_BARQUE, "Шарль", CANNON_TYPE_CANNON_LBS6, 40, 33, 20);
+			FantomMakeCoolSailor(npchar, SHIP_BARKENTINE, "Шарль", CANNON_TYPE_CANNON_LBS3, 40, 33, 20);
 			npchar.Ship.Mode = "trade";
 			SetCharacterRemovable(npchar, false);
 			SetCompanionIndex(pchar, -1, sti(npchar.index));
@@ -1967,13 +2000,7 @@ void ProcessDialogEvent()
 		//Матрос Алонсо
 		case "Del_Alonso":
 			dialog.text = "Беда, кэп.";
-			link.l1 = "Прошу прощения... А вы кто такой, милейший?";
-			link.l1.go = "Del_Alonso_1";
-		break;
-		
-		case "Del_Alonso_1":
-			dialog.text = "Э... Матрос Алонсо я, кэп. У вас в команде служу. Да вы не переживайте, почти сорок душ сразу в лицо запомнить - трудное дело.";
-			link.l1 = "И правда. Докладывайте, матрос Алонсо. Что стряслось?";
+			link.l1 = "Ну?";
 			link.l1.go = "Del_Alonso_2";
 		break;
 		
@@ -2009,7 +2036,7 @@ void ProcessDialogEvent()
 		
 		case "Del_Alonso_7":
 			dialog.text = "Вы быстро учитесь, кэп. Команда считает, что хоть офицер в целом он и толковый, и с нашим братом ведёт себя по-людски, но хлопот таких не стоит. Недавно офицеров с большого торговца распустили, - может, загляните в таверну? Наверняка там будет нужный вам человек. А про Делюка забудьте. Такое вот у людей нарисовалось мнение.";
-			link.l1 = "Спасибо за совет, Алонсо. Дельный ты человек, теперь-то я тебя точно запомню. Отправляйся на корабль и принимай вахту, пока я буду разбираться с возникшей проблемой.";
+			link.l1 = "Спасибо за совет, Алонсо. Я знал, что всегда могу на тебя положиться. Отправляйся на корабль и принимай вахту, пока я буду разбираться с возникшей проблемой.";
 			link.l1.go = "Del_Alonso_8";
 		break;
 		

@@ -60,6 +60,27 @@ void ProcessDialogEvent()
 	        Dialog.Text = "Если вы читаете эти строки, значит, где-то явный баг в коде";
 			Link.l1 = "Выход";
 			Link.l1.go = "exit";
+			//--> Вступительный туториал на палубе корабля за Шарля
+			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1"))
+    		{
+    		    dialog.text = "Волнующе, чёрт возьми! Настоящее морское сражение!\nЖаль, конечно, что самого боя я отсюда не увижу... Ну и ладно. Думаю, я уже достаточно поднаторел в морском деле, чтобы достоверно представить ход событий\nПиратов, наверное, штук пять... Один большой корабль, пара средних и мелочь. Самое то против нашего пинаса. Рассказ выйдет отменный — Лулу будет в восторге!";
+    			link.l1 = "...";
+    			link.l1.go = "exit";
+				DeleteAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1");
+				pchar.wind.speed = 18.0;
+				fWeatherSpeed = stf(18.0);
+				//AddDialogExitQuestFunction("SharlieTutorial_StartShip");
+				AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_3");
+    		}
+			/*if (CheckAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_2"))
+    		{
+    		    dialog.text = "Кажется, нас взяли на абордаж...";
+    			link.l1 = "...";
+    			link.l1.go = "exit";
+				DeleteAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_2");
+				AddDialogExitQuestFunction("SharlieTutorial_TrumBitva");
+    		}*/
+			//<-- Вступительный туториал на палубе корабля за Шарля
 			//--> Голландский гамбит
 			if (CheckAttribute(pchar, "questTemp.HWIC_FindIsland"))
     		{
@@ -754,7 +775,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if (pchar.location == "Minentown_ExitTown")
+						if (pchar.location == "LosTeques_ExitTown")
 						{
 							Dialog.Text = "Нет смысла атаковать этот рудник без достоверных сведений о собранном на нём золоте и серебре. Только напрасно людей положу под его стенами...";
 							Link.l1 = "...";

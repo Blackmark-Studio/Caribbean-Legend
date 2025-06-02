@@ -26,7 +26,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Ah, " + GetFullName(pchar) + "¡Quieres algo?";
+			dialog.text = "Ah, " + GetFullName(pchar) + ". ¿Quieres algo?";
 			link.l5 = "Solo quería saludarte. ¡Nos vemos!";
 			link.l5.go = "exit";
 		}
@@ -120,8 +120,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "shark_13":
-		dialog.text = "Ya te he dicho que ninguno más de mis hombres fue parte de esto. Después de la muerte de Marlow, Mary prácticamente dejó el clan y se encerró en su cabaña. De hecho, no tengo idea de cómo logró persuadir a otros para participar, pero parece que lo logró. Juro que ni yo ni nadie más de mi clan estamos actuando en contra del almirante.\nHemos perdido demasiados hombres recientemente, así que no queremos meternos en un asunto complicado ahora. No tengo miedo del ataque del almirante, incluso unido con los Rivados. Los Narvales son verdaderos guerreros y lo demostraremos en nuestra última batalla. Pero esto sería inútil.\nYa hemos decidido mantener la paz con el almirante. Los Rivados son otro asunto, no negociamos con Negros. Estoy dispuesto a disculparme personalmente con el almirante, a pedir perdón por mis sospechas causadas por la muerte de Milrow y por el ataque a su vida. Juraré sobre la Biblia para probar mi sinceridad. ¿Tú y Dodson están de acuerdo con eso?";
-		link.l1 = "Lo soy. ¿Estás seguro de que no hay trucos de tus hombres que debamos esperar?";
+		dialog.text = "Ya te he dicho que ninguno más de mis hombres fue parte de esto. Después de la muerte de Marlow, Mary prácticamente dejó el clan y se encerró en su cabaña. De hecho, no tengo idea de cómo logró persuadir a otros para participar, pero parece que lo logró. Juro que ni yo ni nadie más de mi clan estamos actuando en contra del almirante.\nHemos perdido demasiados hombres recientemente, así que no queremos meternos en ningún asunto complicado ahora. No tengo miedo del ataque del almirante, incluso unido con los Rivados. Los Narvales son verdaderos guerreros y lo demostraremos en nuestra última batalla. Pero esto sería inútil.\nYa hemos decidido mantener la paz con el almirante. Los Rivados son otro asunto, no negociamos con Negros. Estoy dispuesto a disculparme personalmente con el almirante, a pedir perdón por mis sospechas causadas por la muerte de Milrow y por el ataque a su vida. Juraré sobre la Biblia para probar mi sinceridad. ¿Tú y Dodson están de acuerdo con eso?";
+		link.l1 = "Lo estamos. ¿Estás seguro de que no hay trucos de tus hombres que debamos esperar?";
 		link.l1.go = "shark_14";
 		break;
 
@@ -202,7 +202,7 @@ void ProcessDialogEvent()
 			npchar.quest.return_isl = "true";
 			break;
 		}
-		dialog.text = "A-ah, mi amigo " + GetFullName(pchar) + "¡Necesitas algo?";
+		dialog.text = "A-ah, mi amigo " + GetFullName(pchar) + ". ¿Necesitas algo?";
 		link.l1 = "No, no lo hago. Solo quería saludarte.";
 		link.l1.go = "exit";
 		NextDiag.TempNode = "grinspy_wait";
@@ -222,7 +222,7 @@ void ProcessDialogEvent()
 
 	case "negotiations_2":
 		dialog.text = "¿Mis hombres? ¿Quiénes exactamente, puedes nombrarlos?";
-		link.l1 = "No se presentaron. Solo estaban disparando y esgrimiendo. Tu gente es imprudente. Pueden atacar incluso a uno de los suyos. ¡Al diablo conmigo o con el almirante, pero intentar matar a la chica?";
+		link.l1 = "No se presentaron. Solo estaban disparando y esgrimiendo. Tu gente es imprudente. Pueden atacar incluso a uno de los suyos. ¡Al diablo conmigo o con el almirante, ¿pero intentar matar a la chica?";
 		link.l1.go = "negotiations_3";
 		break;
 
@@ -235,7 +235,8 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			link.l1 = "¿De quién estoy hablando? Estoy hablando del ataque a Mary la Roja y esos dos Narvales que la mataron." link.l1.go = "negociaciones_6";
+			link.l1 = "¿De quién estoy hablando? Estoy hablando del ataque a Mary la Roja y esos dos Narvales que la mataron."
+			link.l1.go = "negotiations_6";
 		}
 		break;
 
@@ -281,7 +282,7 @@ void ProcessDialogEvent()
 		else
 			sTemp = "Tengo una carta de Chad a Mary que lo prueba todo.";
 		dialog.text = "¡Maldita sea! ¿Por qué todo el clan tiene que pagar por las acciones de unos pocos idiotas? No pienses que tengo miedo. Somos guerreros y lo demostraremos incluso en nuestra última batalla. Pero quiero justicia. De hecho, el almirante es responsable de matar a Alan Milrow en la prisión.";
-		link.l1 = "¿Cómo puedes ser el líder, Donald... No sabes ni de Mary ni de Alan. Chad Kapper lo mató." + sTemp + " Lo hizo para hacer que los Narvales fueran hostiles hacia el almirante y arrastrar a algunos de ellos a su lado.";
+		link.l1 = "¿Cómo puedes ser el líder, Donald...? No sabes ni de Mary ni de Alan. Chad Kapper lo mató." + sTemp + " Lo hizo para hacer que los Narvales fueran hostiles hacia el almirante y arrastrar a algunos de ellos a su lado.";
 		link.l1.go = "negotiations_11";
 		break;
 

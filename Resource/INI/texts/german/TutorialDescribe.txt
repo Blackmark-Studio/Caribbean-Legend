@@ -2,14 +2,14 @@
 
 }
 
-Key Layout {Layout}
+Key Layout {Tastenbelegung}
 Key Layout_descr
 {
 Das alternative Layout enthält eine Reihe von Steuerungsänderungen, fügt neue Befehle hinzu und eröffnet neue Möglichkeiten:
 ~
-- Die Befehle für Schnellmaßnahmen und Körpersuche wurden geändert.
-- die Verwendung von Verstärkungstränken geändert
-- Die Registerkarten des Zeichenmenüs können über einzelne Tasten aufgerufen werden.
+- Schnellausführungsbefehle und das Plündern von Leichen wurden geändert
+- Die Verwendung von Verstärkungstränken wurde geändert
+- Charaktermenü-Tabs sind auf separaten Tasten verfügbar
 }
 
 OptKurs {Point of Sail}
@@ -165,6 +165,8 @@ Gute Quellen für Dublonen sind die Schatzsuche, Bankeinlagen, der Handel mit st
 
 }
 
+Dubloons_controlsimg1 {LICommandsActivate}
+
 Box {Gegenstände lagern}
 Box_descr
 {
@@ -267,9 +269,9 @@ Die goldene Regel: Im Kampf ist der Kampfsegel-Modus zu bevorzugen, außerhalb d
 }
 
 Navigation_controlsimg1 {Ship_SailUp}
-Navigation_controlsimg2 {Ship_SailDown}
-Navigation_controlsimg3 {MiniMapZoomIn}
-Navigation_controlsimg4 {MiniMapZoomOut}
+Navigation_controlsimg2 {Ship_TurnLeft}
+Navigation_controlsimg3 {Ship_SailDown}
+Navigation_controlsimg4 {Ship_TurnRight}
 
 Stealth{Tarnung}
 Stealth_descr
@@ -381,4 +383,48 @@ Je länger du zielst, desto mehr Schaden wird dein Schuss anrichten. Ein Kopfsch
 
 MarksmanMode_controlsimg1 {ChrAiming}
 
+Overload {Überlastung}
 
+Overload_descr
+{
+Sie sind zum ersten Mal auf die Begrenzung des Traggewichts gestoßen. 
+Jeder Charakter im Spiel hat ein begrenztes maximales Traggewicht, und dessen Limit hängt von Stärke, Fertigkeiten und Amuletten ab.
+Jeder Gegenstand hat ebenfalls sein eigenes Gewicht, und selbst die leichtesten können in großen Mengen zu Überlastung führen, was wiederum zu Abzügen bei Eigenschaften und Fertigkeiten führt.
+Versuchen Sie, etwas zu finden, das das maximale Traggewicht Ihres Charakters erhöht – zum Beispiel bei einem Händler. 
+}
+
+Logbook {Logbuch und Dokumente}
+
+Logbook_descr
+{
+Jede Quest, die Sie annehmen, wird im Logbuch vermerkt. Es ist sehr wichtig, Dialoge und Logbucheinträge sorgfältig zu lesen – oft enthalten sie wichtige Hinweise und Anweisungen für das weitere Vorgehen.
+Neben Quests enthält das Logbuch auch andere wichtige Informationen: Im Abschnitt Dokumente können Sie alle gefundenen Notizen lesen, und Abschnitte wie Handel und Kassenbuch werden Ihnen später nützlich sein.
+Machen Sie sich mit den Logbucheinträgen vertraut, indem Sie F3 drücken.
+~
+Und denken Sie daran – Caribbean Legend ist ein anspruchsvolles Spiel, und die Tiefe mancher Quests ist nicht immer offensichtlich. Scheuen Sie sich nicht, im Discord nach Tipps zu fragen – dort wird Ihnen sicher geholfen. 
+}
+
+DeadSearch {Leichen plündern}
+
+DeadSearch_descr
+{
+Nach jedem Kampf ist es wie in jedem guten Rollenspiel Zeit, Trophäen zu sammeln.
+Jeden gefallenen Gegner können Sie plündern, indem Sie 1 in seiner Nähe drücken, aber nicht alle haben etwas Wertvolles in den Taschen.
+~
+Wenn die Leichen zu nah beieinander liegen und sich gegenseitig behindern, können Sie im Plündermenü die Schaltfläche "Nicht plündern" drücken – das verbietet das Plündern dieser Leiche dauerhaft.
+~
+Diese Typen haben bestimmt mindestens ein Heil-Elixier in den Taschen, das Alonso dringend braucht.
+}
+
+Trading {Handel und Preisbildung}
+
+Trading_descr
+{
+Handel ist ein tiefes und komplexes System, bei dem viele Faktoren den Kauf- und Verkaufspreis beeinflussen.
+~
+Beim Landhandel werden in erster Linie die Handelsfähigkeit des Spielers und seine Vorgeschichte bewertet.
+~
+Beim Seehandel gibt es mehr Faktoren – neben den oben genannten hängt der Preis vom Warentyp, der Herkunft, der Größe der Kolonie, den Export- und Importwegen sowie den Fähigkeiten und Fertigkeiten des Zahlmeisters ab.
+~
+Früher oder später werden Sie alles verstehen, aber vorerst lohnt es sich, ein nützliches Handelsamulett zu kaufen.
+}

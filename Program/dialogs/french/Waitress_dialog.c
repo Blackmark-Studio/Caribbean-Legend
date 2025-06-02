@@ -3,6 +3,7 @@ void ProcessDialogEvent()
 {
 	ref NPChar, sld;
 	aref Link, NextDiag;
+	bool bOk1, bOk2;
 
 	DeleteAttribute(&Dialog,"Links");
 
@@ -28,7 +29,7 @@ void ProcessDialogEvent()
 			//--> Jason Цена чахотки
 			if (CheckAttribute(pchar, "questTemp.HWIC.Detector") || SandBoxMode)
 			{
-				bool bOk1 = (pchar.questTemp.HWIC.Detector == "holl_win") || (pchar.questTemp.HWIC.Detector == "eng_win") || (pchar.questTemp.HWIC.Detector == "self_win") || SandBoxMode;
+				bOk1 = (pchar.questTemp.HWIC.Detector == "holl_win") || (pchar.questTemp.HWIC.Detector == "eng_win") || (pchar.questTemp.HWIC.Detector == "self_win") || SandBoxMode;
 				if (sti(pchar.rank) > 6 && npchar.location == "PortSpein_tavern" && !CheckAttribute(npchar, "quest.Consumption")  && bOk1)
 				{
 					dialog.text = "Que désirez-vous, monsieur? Je suis désolé, je suis juste... 'sanglote'... oh... Je suis désolé.";
@@ -50,6 +51,55 @@ void ProcessDialogEvent()
 				link.l1.go = "FMQP";
 				break;
 			}
+			
+			//--> Тайна Бетси Прайс
+			if (npchar.location == "Villemstad_tavern" && CheckAttribute(pchar, "questTemp.TBP_BetsiPrice") && !CheckAttribute(pchar, "questTemp.TBP_BetsiPrice_Sex"))
+			{
+				bOk1 = CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && IsOfficer(characterFromId("Mary"));
+				bOk2 = CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && IsOfficer(characterFromId("Helena"));
+				if (bOk1 || bOk2)
+				{
+					switch (rand(1))
+					{
+						case 0:
+							dialog.text = ""+pchar.name+" ! Quel plaisir de te revoir... Merci d'être passé... mais ce n’est peut-être pas le meilleur moment pour discuter. Reviens quand tu seras seul. Nous pourrons alors aborder... des sujets plus personnels.";
+							link.l1 = "Toujours un plaisir de bavarder, mais je dois y aller. Peut-être à une prochaine fois.";
+							link.l1.go = "exit";
+						break;
+
+						case 1:
+							dialog.text = ""+pchar.name+"... Je commençais à croire que tu avais oublié le chemin de notre taverne. Dommage que tu ne sois pas seul. J’espérais que nous pourrions parler en privé.";
+							link.l1 = "Je pense que le destin nous offrira encore une occasion de discuter en tête-à-tête.";
+							link.l1.go = "exit";
+						break;
+					}
+				}
+				else
+				{
+					switch (rand(1))
+					{
+						case 0:
+							dialog.text = ""+pchar.name+" ! Je savais que tu ne me laisserais pas languir trop longtemps. Je ne veux plus perdre une minute. La chambre à l’étage est libre... rien que pour nous. Tu ne vas quand même pas me dire non ?";
+							link.l1 = "Tu sais comment m’attirer dans tes filets... Eh bien, je n’ai aucune raison de résister. On y va ?";
+							link.l1.go = "TBP_BetsiPriceSex1";
+							link.l2 = "J’ai bien peur d’avoir des affaires importantes à régler aujourd’hui. Mais je te promets que je me rattraperai la prochaine fois.";
+							link.l2.go = "exit";
+						break;
+
+						case 1:
+							dialog.text = ""+pchar.name+" ! Je commençais à penser que tu prenais plaisir à me faire attendre. Tu ne comptes tout de même pas rester planté là comme une statue, alors qu’il y a tant de manières plus agréables de passer le temps ?";
+							link.l1 = "Impossible de résister à ton charme... Je ne vais pas perdre une seconde – je monte tout de suite.";
+							link.l1.go = "TBP_BetsiPriceSex1";
+							link.l2 = "Tu sais comment séduire, Betsy... Mais hélas, je dois être ailleurs pour l’instant.";
+							link.l2.go = "exit";
+						break;
+					}
+				}
+				link.l9 = "Je voudrais te poser quelques questions.";
+				link.l9.go = "quests";
+				break;
+			}
+			//<-- Тайна Бетси Прайс
             NextDiag.TempNode = "First time";
 			if (CheckAttribute(pchar, "questTemp.different.FackWaitress"))
 			{
@@ -94,7 +144,7 @@ void ProcessDialogEvent()
 				break;
 
 				case 2:
-					if (drand(1) == 0) // Addon-2016 Jason
+					if (hrand(1) == 0) // Addon-2016 Jason
 					{
 						dialog.text = ""+GetSexPhrase("Oh, capitaine! Voudriez-vous partager un lit avec moi aujourd'hui? Je n'aime pas me vanter mais...","Prenez place, capitaine. C'est toujours un plaisir de rencontrer un vrai loup de mer comme vous.")+"";
 						link.l1 = "Dommage que je sois pressé maintenant. La prochaine fois!";
@@ -137,7 +187,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.different = "FackWaitress_toRoom";
 			SetTimerFunction("WaitressFack_null", 0, 0, 1); //освобождаем разрешалку на миниквесты на след. день
 			//Шанс, что ограбят, если рендом выпадет на 0. он же делитель сколько она вытащит из кармана
-			pchar.questTemp.different.FackWaitress.Kick = dRand(2); 
+			pchar.questTemp.different.FackWaitress.Kick = hrand(2); 
 			pchar.questTemp.different.FackWaitress.Name = GetFullName(npchar); //запомним имя официантки
 			pchar.questTemp.different.FackWaitress.City = npchar.city;
 			//делаем клона официантки

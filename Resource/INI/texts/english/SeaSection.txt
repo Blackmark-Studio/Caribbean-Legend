@@ -47,8 +47,10 @@ seg_Medicament 		{medicine}
 
 seg_Cannon_3		{3p. falconets}
 seg_Cannon_6		{6-pounders}
+seg_Cannon_8		{8-pounders}
 seg_Cannon_12		{12-pounders}
 seg_Cannon_16		{16-pounders}
+seg_Cannon_18		{18-pounders}
 seg_Cannon_20		{20-pounders}
 seg_Cannon_24		{24-pounders}
 seg_Cannon_32		{32-pounders}

@@ -271,7 +271,7 @@ void ProcessDialogEvent()
 			 link.l1.go = "trade_3";
 			 break;
             }							  
-			iMoney = (50+drand(5))*iTemp;
+			iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			dialog.text = ""+FindRussianQtyString(iTemp)+" ? W porządku. Zapłacę ci "+FindRussianMoneyString(iMoney)+". Umowa?";
 			link.l1 = "Jasne! Miło robić z tobą interesy!";
 			link.l1.go = "trade_2";
@@ -281,7 +281,7 @@ void ProcessDialogEvent()
 		break;
 		case "trade_3": // лесник 
 		    iTemp = (15000 - sti(npchar.quest.foodqty))	
-		    iMoney = (50+drand(5))*iTemp;
+		    iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			dialog.text = "Umowa stoi. Zapłacę ci "+FindRussianMoneyString(iMoney)+" za towary. Czy to wystarczy?";
 			link.l1 = "Oczywiście! Miłego handlu!";
 			link.l1.go = "trade_4";
@@ -291,7 +291,7 @@ void ProcessDialogEvent()
 		break;
 		case "trade_4": // лесник 
 		    iTemp = (15000 - sti(npchar.quest.foodqty))	
-			iMoney = (50+drand(5))*iTemp;
+			iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			AddMoneyToCharacter(pchar, iMoney);
 			RemoveCharacterGoods(pchar, GOOD_FOOD, iTemp);
 			npchar.quest.foodqty = sti(npchar.quest.foodqty)+iTemp;
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 		break;
 		case "trade_2":
 			iTemp = dialogEditStrings[4];
-			iMoney = (50+drand(5))*iTemp;
+			iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			AddMoneyToCharacter(pchar, iMoney);
 			RemoveCharacterGoods(pchar, GOOD_FOOD, iTemp);
 			npchar.quest.foodqty = sti(npchar.quest.foodqty)+iTemp;

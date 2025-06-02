@@ -1240,3 +1240,9 @@ QuestsUtilite_275
 {
 Use the Action Menu (ENTER) to Fast Travel to Le Franсois.
 }
+
+
+QuestsUtilite_276
+{
+Les eaux deviennent plus dangereuses, la menace des pirates a augmenté
+}

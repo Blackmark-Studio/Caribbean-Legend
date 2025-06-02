@@ -65,12 +65,12 @@ int LocationInitDominica(int n)
 	locations[n].environment.weather = "true";
 	locations[n].environment.sea = "true";
 	//Reload map
-	locations[n].reload.l1.name = "reload2_back";
+	locations[n].reload.l1.name = "reload1_back";
 	locations[n].reload.l1.go = "Dominica_Jungle_01";
 	locations[n].reload.l1.emerge = "reload1";
 	locations[n].reload.l1.autoreload = "1";
 	locations[n].reload.l1.label = "Jungle";
-	locations[n].locators_radius.reload.reload2_back = 2;
+	locations[n].locators_radius.reload.reload1_back = 2;
 
 	locations[n].reload.l2.name = "boat";
 	locations[n].reload.l2.go = "Dominica";
@@ -78,13 +78,6 @@ int LocationInitDominica(int n)
 	locations[n].reload.l2.autoreload = "0";
 	locations[n].reload.l2.label = "Sea";
     locations[n].locators_radius.reload.boat = 6.0;
-	
-	locations[n].reload.l3.name = "reload3_back";
-	locations[n].reload.l3.go = "Dominica_GrotS";
-	locations[n].reload.l3.emerge = "reload1";
-	locations[n].reload.l3.autoreload = "0";
-	locations[n].reload.l3.label = "Grot";
-	locations[n].locators_radius.reload.reload3_back = 2;
 	
 	n = n + 1;
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -124,7 +117,7 @@ int LocationInitDominica(int n)
 	//Reload map
 	locations[n].reload.l1.name = "reload1_back";
 	locations[n].reload.l1.go = "Shore27";
-	locations[n].reload.l1.emerge = "reload2";
+	locations[n].reload.l1.emerge = "reload1";
 	locations[n].reload.l1.autoreload = "1";
 	locations[n].reload.l1.label = "Shore27";
 	locations[n].locators_radius.reload.reload1_back = 2;
@@ -188,7 +181,7 @@ int LocationInitDominica(int n)
 	locations[n].locators_radius.reload.reload1_back = 2;
 
 	locations[n].reload.l2.name = "reload2_back";
-	locations[n].reload.l2.go = "Indian_town";
+	locations[n].reload.l2.go = "Dominica_village";
 	locations[n].reload.l2.emerge = "reload1";
 	locations[n].reload.l2.autoreload = "1";
 	locations[n].reload.l2.label = "Village";
@@ -206,7 +199,7 @@ int LocationInitDominica(int n)
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Деревня карибов
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	Locations[n].id = "Indian_town";
+	Locations[n].id = "Dominica_village";
 	locations[n].id.label = "Village";
 	Locations[n].image = "loading\Village.tga";
 	locations[n].indianVillage = true;
@@ -247,19 +240,19 @@ int LocationInitDominica(int n)
 	Locations[n].locators_radius.reload.reload1_back = 2;
 	
 	Locations[n].reload.l2.name = "reload2";
-	Locations[n].reload.l2.go = "IndianlTown_shack1";
+	Locations[n].reload.l2.go = "Dominica_shack1";
 	Locations[n].reload.l2.emerge = "reload1";
 	Locations[n].reload.l2.label = "shack";
 	Locations[n].reload.l2.autoreload = "0";
 	
 	Locations[n].reload.l3.name = "reload3";
-	Locations[n].reload.l3.go = "IndianlTown_shack2";
+	Locations[n].reload.l3.go = "Dominica_shack2";
 	Locations[n].reload.l3.emerge = "reload1";
 	Locations[n].reload.l3.label = "shack";
 	Locations[n].reload.l3.autoreload = "0";
 	
 	Locations[n].reload.l4.name = "reload4";
-	Locations[n].reload.l4.go = "IndianlTown_shack3";
+	Locations[n].reload.l4.go = "Dominica_shack3";
 	Locations[n].reload.l4.emerge = "reload1";
 	Locations[n].reload.l4.label = "shack";
 	Locations[n].reload.l4.autoreload = "0";
@@ -269,11 +262,11 @@ int LocationInitDominica(int n)
 	//////////////////////////////////////////////////////////////////////////////////////////////////
 	//// хижина №1 - большая
 	/////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "IndianlTown_shack1";
+	locations[n].id = "Dominica_shack1";
 	locations[n].id.label = "shack";
 	locations[n].image = "loading\inside\Vigwam.tga";
 	//Town sack
-	locations[n].townsack = "Indian_town";
+	locations[n].townsack = "Dominica_village";
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "house";
@@ -296,7 +289,7 @@ int LocationInitDominica(int n)
 	locations[n].environment.sea = "false";
 	//Reload map
 	locations[n].reload.l1.name = "reload1";
-	locations[n].reload.l1.go = "Indian_town";
+	locations[n].reload.l1.go = "Dominica_village";
 	locations[n].reload.l1.emerge = "reload2";
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "Street";
@@ -306,11 +299,11 @@ int LocationInitDominica(int n)
 	//////////////////////////////////////////////////////////////////////////////////////////////////
 	//// хижина №2
 	/////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "IndianlTown_shack2";
+	locations[n].id = "Dominica_shack2";
 	locations[n].id.label = "shack";
 	locations[n].image = "loading\inside\Vigwam.tga";
 	//Town sack
-	locations[n].townsack = "Indian_town";
+	locations[n].townsack = "Dominica_village";
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "house";
@@ -338,7 +331,7 @@ int LocationInitDominica(int n)
 	locations[n].environment.sea = "false";
 	//Reload map
 	locations[n].reload.l1.name = "reload1";
-	locations[n].reload.l1.go = "Indian_town";
+	locations[n].reload.l1.go = "Dominica_village";
 	locations[n].reload.l1.emerge = "reload3";
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "Street";
@@ -348,11 +341,11 @@ int LocationInitDominica(int n)
 	//////////////////////////////////////////////////////////////////////////////////////////////////
 	//// хижина №3
 	/////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "IndianlTown_shack3";
+	locations[n].id = "Dominica_shack3";
 	locations[n].id.label = "shack";
 	locations[n].image = "loading\inside\Vigwam.tga";
 	//Town sack
-	locations[n].townsack = "Indian_town";
+	locations[n].townsack = "Dominica_village";
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "house";
@@ -380,7 +373,7 @@ int LocationInitDominica(int n)
 	locations[n].environment.sea = "false";
 	//Reload map
 	locations[n].reload.l1.name = "reload1";
-	locations[n].reload.l1.go = "Indian_town";
+	locations[n].reload.l1.go = "Dominica_village";
 	locations[n].reload.l1.emerge = "reload4";
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "Street";

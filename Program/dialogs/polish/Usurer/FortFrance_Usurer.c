@@ -4,8 +4,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę pomóc?"),"Próbowałeś mi zadać to pytanie niedawno...","Tak, pozwól, że zgadnę... Znowu kręcisz się w kółko?","Słuchaj, to ja tu zajmuję się finansami, nie odpowiadam na pytania...","blokada",1,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniam zdanie...","Nie mam w tej chwili o czym rozmawiać."),"Umph, gdzie podziała się moja pamięć...","Zgadłeś, przykro mi...","Rozumiem...",npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę pomóc?"),"Próbowałeś mi zadać to pytanie niedawno...","Tak, pozwól, że zgadnę... Znowu kręcisz się w kółko?","Słuchaj, to ja tu zajmuję się finansami, nie odpowiadam na pytania...","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniłem zdanie...","Nie mam w tej chwili o czym rozmawiać."),"Umph, gdzie podziała się moja pamięć...","Zgadłeś, przykro mi...","Rozumiem...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			/* //--> Бремя гасконца
 			if (CheckAttribute(pchar, "questTemp.Sharlie.Junglejew") && !CheckAttribute(npchar, "quest.junglejew"))

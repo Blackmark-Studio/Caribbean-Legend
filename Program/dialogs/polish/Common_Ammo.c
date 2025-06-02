@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 			}
 		
 			dialog.text = RandPhraseSimple("Jestem komendantem fortu. Czego tu potrzebujesz?","Na co cię stać? Dlaczego tu przyszedłeś?");
-			link.l1 = "O, nic, po prostu rozejrzyj się po mieście i jego okolicach. Trafiłem tutaj tylko przez szczęśliwy przypadek.";
+			link.l1 = "O, nic, po prostu rozglądam się po mieście i jego okolicach. Trafiłem tutaj tylko przez szczęśliwy przypadek.";
 			//belamour legendary edition диалоги, если герой имеет звания и заслуги перед отечеством -->
 			// Офицер с патентом
 			if(IsOfficerFullEquip())
@@ -91,7 +91,7 @@ void ProcessDialogEvent()
 			// Карибские нравы
 			if (CheckAttribute(pchar, "questTemp.Trial") && pchar.questTemp.Trial == "fraht" && NPChar.location == "portpax_ammo")
 			{
-				link.l11 = "Dzień dobry, oficerze. Przybywam z kolonii Basse-Terre, na polecenie pewnego mężczyzny o imieniu Gerard LeCroix. W moim ładowni znajduje się ładunek prochu strzelniczego i bomb dla ciebie...";
+				link.l11 = "Dzień dobry, oficerze. Przybywam z kolonii Basse-Terre, na polecenie pewnego mężczyzny o imieniu Gerard LeCroix. W mojej ładowni znajduje się ładunek prochu strzelniczego i bomb dla ciebie...";
 				link.l11.go = "trial";
 			}
 			// Опасный груз -->
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 
 		// --> Орудия для форта
 		case "GiveTaskGun":
-			dialog.Text = LinkRandPhrase("Widzisz, działa forteczne są dość zużyte. Skarbiec przyznał fundusze na ich wymianę, ale po prostu nie mam pojęcia, gdzie mogę zakupić nowe: po prostu nie ma sposobu znalezienia ich w naszej kolonii w wymaganej ilości. Więc pomyślałem, że działa z okrętów, które zdobyłeś, mogłyby nam tu być całkiem przydatne.","Muszę wymienić baterię dział w forcie. Fundusze już zostały przydzielone, ale, wiesz... Po prostu nie można kupić potrzebnej ilości w naszej kolonii.","Dostalem zadanie wymiany zuzytych dział fortu, ale nie mogę nigdzie znaleźć wystarczającej ilości.");
+			dialog.Text = LinkRandPhrase("Widzisz, działa fortowe są dość zużyte. Skarbiec przyznał fundusze na ich wymianę, ale po prostu nie mam pojęcia, gdzie mogę zakupić nowe: po prostu nie ma sposobu znalezienia ich w naszej kolonii w wymaganej ilości. Więc pomyślałem, że działa z okrętów, które zdobyłeś, mogłyby nam tu być całkiem przydatne.","Muszę wymienić baterię dział w forcie. Fundusze już zostały przydzielone, ale, wiesz... Po prostu nie można kupić potrzebnej ilości w naszej kolonii.","Dostalem zadanie wymiany zuzytych dział fortu, ale nie mogę nigdzie znaleźć wystarczającej ilości.");
 			Link.l1 = "Hmm... Czy mógłbyś podać trochę więcej szczegółów? Kaliber, ilość, cena?";
 			Link.l1.go = "GiveTaskGun_1";
 			pchar.questTemp.PrisonGun = true;
@@ -365,6 +365,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Trial", "6");
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "trial_5":

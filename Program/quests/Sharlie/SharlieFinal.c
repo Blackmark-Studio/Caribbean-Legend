@@ -339,7 +339,7 @@ void CreateGriffondor() // малый фрегат Гриффондор
 {
 	sld = GetCharacter(NPC_GenerateCharacter("GriffOfficer", "off_fra_2", "man", "man", 10, FRANCE, -1, true, "soldier"));
 	SetFantomParamFromRank(sld, 10, true);
-	FantomMakeSmallSailor(sld, SHIP_CORVETTE_QUEST, StringFromKey("SharlieFinal_7"), CANNON_TYPE_CANNON_LBS24, 30, 30, 30, 30, 30);
+	FantomMakeSmallSailor(sld, SHIP_CORVETTE_QUEST, StringFromKey("SharlieFinal_7"), CANNON_TYPE_CANNON_LBS32, 30, 30, 30, 30, 30);
 	SetShipSkill(sld, 30, 40, 50, 50, 65, 40, 45, 48, 20);
 	SetSelfSkill(sld, 20, 22, 18, 25, 30);
 	sld.dialog.FileName = "Quest\Sharlie\OtherNPC.c";
@@ -426,7 +426,7 @@ void Terrapin_CreateRoberConvoy()//создаем испанский конво�
 		switch (i)
 		{
 			case 1: iTemp = SHIP_GALEON_H; break;
-			case 2: iTemp = SHIP_GALEON_H; break;
+			case 2: iTemp = SHIP_FRIGATE_H; break;
 			case 3: iTemp = SHIP_CORVETTE; break;
 		}
 		sld.Ship.Type = GenerateShipExt(iTemp, 1, sld);
@@ -607,7 +607,7 @@ void Terrapin_SetCromvelScuadron(string qName) //эскадра Кромвеля
 			
 			case 2:
 				iShip = SHIP_LINESHIP;
-				iCannon = CANNON_TYPE_CANNON_LBS32;
+				iCannon = CANNON_TYPE_CANNON_LBS36;
 				sName = StringFromKey("SharlieFinal_13");
 			break;
 			
@@ -625,7 +625,7 @@ void Terrapin_SetCromvelScuadron(string qName) //эскадра Кромвеля
 			
 			case 5:
 				iShip = SHIP_POLACRE;
-				iCannon = CANNON_TYPE_CANNON_LBS20;
+				iCannon = CANNON_TYPE_CULVERINE_LBS18;
 				sName =StringFromKey("SharlieFinal_16");
 			break;
 		}
@@ -765,8 +765,8 @@ void DefendSP_PrepareMartinique(string qName) // готовим Мартиник
 			break;
 			
 			case 5:
-				iShip = SHIP_XebekVML;
-				iCannon = CANNON_TYPE_CANNON_LBS20;
+				iShip = SHIP_POLACRE;
+				iCannon = CANNON_TYPE_CULVERINE_LBS18;
 				sName = StringFromKey("SharlieFinal_21");
 				fSpace = 2.1;
 				fDamage = 1.3;
@@ -1354,11 +1354,11 @@ void GuardOT_CreateTwoShips(string qName) // создаем галеон Гая 
 	Group_SetAddress("Marshe_group", "Guadeloupe", "quest_ships", "quest_ship_1");
 	Group_LockTask("Marshe_group");
 	
-	// каракка испанского торговца под голландским флагом
+	// бригантина испанского торговца под голландским флагом
 	Group_FindOrCreateGroup("Gevarra_group");
 	Group_SetType("Gevarra_group", "trade");//тип группы
 	sld = GetCharacter(NPC_GenerateCharacter("GOT_Gevarra", "trader_5", "man", "man", 15, HOLLAND, -1, true, "soldier"));
-	FantomMakeCoolSailor(sld, SHIP_CARACCA, StringFromKey("SharlieFinal_30"), CANNON_TYPE_CANNON_LBS12, 50, 50, 50);
+	FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, StringFromKey("SharlieFinal_30"), CANNON_TYPE_CANNON_LBS12, 50, 50, 50);
 	SetFantomParamFromRank(sld, 15, true);
 	sld.name = StringFromKey("SharlieFinal_31");
 	sld.lastname = StringFromKey("SharlieFinal_32");
@@ -1947,7 +1947,7 @@ void GuardOT_CreateDiegoShips(string qName) //
 	Group_FindOrCreateGroup("Diegohaleon_group");
 	Group_SetType("Diegohaleon_group", "war");//тип группы
 	sld = GetCharacter(NPC_GenerateCharacter("Diegohaleon_cap", "off_spa_2", "man", "man", 35, SPAIN, -1, true, "quest"));
-	FantomMakeCoolSailor(sld, SHIP_GALEON_H, StringFromKey("SharlieFinal_42"), CANNON_TYPE_CANNON_LBS32, 80, 80, 80);
+	FantomMakeCoolSailor(sld, SHIP_GALEON_H, StringFromKey("SharlieFinal_42"), CANNON_TYPE_CANNON_LBS36, 80, 80, 80);
 	FantomMakeCoolFighter(sld, 35, 80, 80, "blade_15", "pistol5", "bullet", 150);
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
@@ -1998,7 +1998,7 @@ void GuardOT_LuggerClear(string qName)
 void GuardOT_CreateDiegoLuggerInWorld()
 {
 	sld = GetCharacter(NPC_GenerateCharacter("Diego_clone", "diego_1", "man", "man", 35, SPAIN, 3, true, "soldier"));
-	FantomMakeCoolSailor(sld, SHIP_CAREERLUGGER, StringFromKey("SharlieFinal_43"), CANNON_TYPE_CANNON_LBS12, 100, 100, 100);
+	FantomMakeCoolSailor(sld, SHIP_CAREERLUGGER, StringFromKey("SharlieFinal_43"), CANNON_TYPE_CANNON_LBS6, 100, 100, 100);
 	FantomMakeCoolFighter(sld, 35, 100, 100, "blade_15", "pistol5", "bullet", 250);
 	sld.FaceId = 203;
 	sld.name = StringFromKey("SharlieFinal_44");
@@ -2052,7 +2052,7 @@ void GuardOT_CreateCatocheSquadron(string qName) // эскадра Диего
 	// ставим люггер Диего
 	Group_FindOrCreateGroup("camicadze_group");
 	sld = GetCharacter(NPC_GenerateCharacter("GOT_camicadze", "off_spa_1", "man", "man", 35, SPAIN, 2, true, "soldier"));
-	FantomMakeCoolSailor(sld, SHIP_CAREERLUGGER, StringFromKey("SharlieFinal_43"), CANNON_TYPE_CANNON_LBS12, 100, 100, 100);
+	FantomMakeCoolSailor(sld, SHIP_CAREERLUGGER, StringFromKey("SharlieFinal_43"), CANNON_TYPE_CANNON_LBS6, 100, 100, 100);
 	sld.FaceId = 333;
 	sld.name = "";
 	sld.lastname = "";
@@ -2084,12 +2084,12 @@ void GuardOT_CreateCatocheSquadron(string qName) // эскадра Диего
 		{
 			case 1:
 				iShip = SHIP_LINESHIP;
-				iCannon = CANNON_TYPE_CANNON_LBS32;
+				iCannon = CANNON_TYPE_CANNON_LBS36;
 			break;
 			
 			case 2:
 				iShip = SHIP_GALEON_H;
-				iCannon = CANNON_TYPE_CANNON_LBS32;
+				iCannon = CANNON_TYPE_CANNON_LBS36;
 			break;
 			
 			case 3:
@@ -2098,7 +2098,7 @@ void GuardOT_CreateCatocheSquadron(string qName) // эскадра Диего
 			break;
 			
 			case 4:
-				iShip = SHIP_XebekVML;
+				iShip = SHIP_CORVETTE;
 				iCannon = CANNON_TYPE_CULVERINE_LBS18;
 			break;
 		}
@@ -2451,12 +2451,12 @@ void GuardOT_SetWillySquadron(string qName) // ставим эскадру Па�
 		{
 			case 1:
 				iShip = SHIP_LINESHIP;
-				iCannon = CANNON_TYPE_CANNON_LBS32;
+				iCannon = CANNON_TYPE_CANNON_LBS36;
 			break;
 			
 			case 2:
 				iShip = SHIP_FRIGATE_H;
-				iCannon = CANNON_TYPE_CANNON_LBS24;
+				iCannon = CANNON_TYPE_CANNON_LBS32;
 			break;
 			
 			case 3:
@@ -3274,7 +3274,7 @@ void Ksochitam_CreateMaldonadoSquadron(string qName)
 		{
 			case 1:
 				iShip = SHIP_LINESHIP;
-				iCannon = CANNON_TYPE_CANNON_LBS32;
+				iCannon = CANNON_TYPE_CANNON_LBS36;
 			break;
 			
 			case 2:
@@ -3289,7 +3289,7 @@ void Ksochitam_CreateMaldonadoSquadron(string qName)
 			break;
 			
 			case 4:
-				iShip = SHIP_XebekVML;
+				iShip = SHIP_CORVETTE;
 				iCannon = CANNON_TYPE_CULVERINE_LBS18;
 			break;
 		}
@@ -3577,12 +3577,12 @@ void Tieyasal_CreateITShips(string qName) // ставим корабли у Ис
 			break;
 			
 			case 3:
-				iShip = SHIP_XebekVML;
-				iCannon = CANNON_TYPE_CULVERINE_LBS18;
+				iShip = SHIP_BRIG;
+				iCannon = CANNON_TYPE_CANNON_LBS16;
 			break;
 			
 			case 4:
-				iShip = SHIP_SCHOONER_W;
+				iShip = SHIP_SHNYAVA;
 				iCannon = CANNON_TYPE_CANNON_LBS16;
 			break;
 		}
@@ -5852,7 +5852,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		sld.dialog.FileName = "Quest\Sharlie\Ksochitam.c";
 		sld.dialog.currentnode = "guardmask";
 		SetSPECIAL(sld, 10, 10, 10, 10, 10, 10, 10);
-		SelAllPerksToChar(sld, false);
+		SetAllPerksToChar(sld, false);
 		LAi_SetHP(sld, iTemp, iTemp);
 		sld.MultiFighter = fMft; // мультифайтер
 		sld.GuardMask = true;

@@ -102,7 +102,8 @@ void ProcessDialogEvent()
 				NPChar.quest.meeting = "1";
 				// проверка наличия корабля в порту
 				bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Townpassenger") && 6-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)//горожанин-пассажир
+				if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && or(IsWarShipType(pchar), IsRaiderShipType(pchar))) ok = false;
+				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Townpassenger") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)//горожанин-пассажир
 				{
 					dialog.text = "Приветствую, "+GetAddress_Form(NPChar)+". Вижу, вы капитан собственного корабля. Я хотел бы попросить вас об одной услуге...";
 					link.l1 = "Слушаю вас, "+GetAddress_FormToNPC(NPChar)+". О чём пойдёт речь?";
@@ -132,7 +133,7 @@ void ProcessDialogEvent()
 				Link.l1.go = "Meeting";
 				
 				//==> прибыла инспекция на Святом Милосердии
-				if (pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
+				if (CheckAttribute(pchar, "questTemp.SantaMisericordia.ColonyZapret") && pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
 				{
 					dialog.Text = LinkRandPhrase(LinkRandPhrase("Весь город на ушах - прибыл дон Фернандо де Аламида, королевский ревизор. Знаете, я тут многое повидал, но такого... Людей меняет не горе, а то, как они с ним справляются. Говорят, после гибели отца он стал другим человеком. Теперь во всём Архипелаге не сыскать более неподкупного и... безжалостного служаки.", "Вы только гляньте на 'Святое Милосердие'! Говорят, сам король приказал построить его по особым чертежам. И заметьте - ни единой царапины. Словно сама Дева Мария хранит его. Хотя слухи слышал такие... может, и не Дева вовсе.", "Знаете, сколько раз пытались убить дона Фернандо? Двенадцать атак в открытом море - и это только за последний год! Ну, с таким верным и обученным экипажем, да ещё и под защитой Господа - переживёт и тринадцатую!"), LinkRandPhrase("Слышали? Дон Фернандо де Аламида прибыл в наш город, и, говорят, сейчас где-то на улицах. Увидеть бы его своими глазами...", "Сложный человек этот дон Фернандо. Одни говорят - спаситель, чистит Отечество от скверны. Другие шепчутся - мол, после смерти отца что-то надломилось в нём и скоро наплачемся. А я скажу так: бойтесь не его. Бойтесь тех, кто его таким сделал.", "Такой видный мужчина, этот дон Фернандо! Но знаете что странно? Он словно и не замечает никого. Всё служба да служба. Я слышал, была одна девушка... но после встречи с каким-то священником он полностью отверг мирские радости. Словно дал обет."), RandPhraseSimple(RandPhraseSimple("Чёртов ревизор! Пока он здесь - город словно мёртвый. Ни торговли, ни веселья. Даже дышать, кажется, нужно тише. А знаете, что самое жуткое? В каждом порту одно и то же. Как по писаному. Ну не мог Его Королевское Величество специально придумать эту пытку для всех нас!", "Дон Фернандо опять посетил приют. Щедро жертвует, молится часами. Такого достойного человека нужно ставить в пример этим проклятым казнокрадам!"), RandPhraseSimple("Ха! 'Святой' Фернандо опять закрыл все бордели. Ну, ничего, скоро он отчалит и сразу откроют обратно.", "Рези... ревизор приплыл, вот что! Дон Фернандо де Альмейда, или, как его, Аламида! Такой важный, что сам губернатор перед ним на цыпочках ходит. Говорят, он в глаза смотрит и сразу видит все грехи. Жуть!")));
 					link.l1 = "...";
@@ -140,7 +141,7 @@ void ProcessDialogEvent()
 				}
 				//<== прибыла инспекция на Святом Милосердии
 				//==> Леди Бет в порту города
-				if (pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
+				if (CheckAttribute(pchar, "questTemp.LadyBeth.CaptainInColony") && pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
 				{
 					dialog.Text = findLedyBethRumour(npchar);
 					link.l1 = "...";
@@ -388,7 +389,7 @@ void ProcessDialogEvent()
 		
 		//-------------------------------горожанин-пассажир----------------------------------------------
 		case "passenger":
-			if (crand(19) > 9) SetPassengerParameter("Townpassenger", false);
+			if (hrand(19) > 9) SetPassengerParameter("Townpassenger", false);
 			else SetPassengerParameter("Townpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Townpassenger.Enemycity"))
 			{

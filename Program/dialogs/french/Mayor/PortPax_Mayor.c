@@ -19,6 +19,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Votre Seigneurie, vous vouliez me voir ?";
 				link.l1.go = "PZ1";
 			}
+			// Украденное воспоминание
+			if (CheckAttribute(pchar, "questTemp.UV_DialogMayor"))
+			{
+				link.l1 = "Excellence, je viens portant des informations de nature des plus délicates qui requièrent votre attention.";
+				link.l1.go = "UV_1";
+			}
 		break;
 
 		case "Cupture_after":
@@ -98,6 +104,45 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			SetMusic("music_teleport");
 			pchar.questTemp.lockedMusic = true;
 		break;
+		
+		//--> Украденное воспоминание
+		case "UV_1":
+			dialog.text = "Une affaire délicate, dites-vous ? Vous avez piqué ma curiosité, Capitaine. Je vous écoute.";
+			link.l1 = "L'affaire concerne votre nièce, Julie. Elle m'a demandé de retrouver un collier qui lui avait été dérobé.";
+			link.l1.go = "UV_2";
+			ChangeCharacterComplexReputation(pchar, "nobility", -5);
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "UV_2":
+			dialog.text = "Un collier ? Curieux. Je n'ai aucun souvenir d'un tel objet parmi ses possessions.";
+			link.l1 = "Permettez-moi de présenter les faits dans l'ordre, Monsieur le Gouverneur. J'ai retrouvé le collier en question. Mon enquête a révélé que la voleuse était la femme de chambre de votre nièce, Giselle. D'après ce que j'ai observé du marchand qui a acheté l'objet volé, je crains que ce ne soit ni sa première, ni sa dernière infraction.";
+			link.l1.go = "UV_3";
+		break;
+		
+		case "UV_3":
+			dialog.text = "C'est très éclairant. Je vous prie de poursuivre votre récit.";
+			link.l1 = "Ce qui a attiré mon attention, Excellence, c'est que Julie n'a pas sollicité votre aide dans cette affaire. Le collier, semble-t-il, était un cadeau de la part d'une personne avec laquelle vous lui avez interdit tout contact. Pensant que vos restrictions sont dictées par les intentions les plus nobles et protectrices, j'ai estimé qu'il était de mon devoir de vous en informer et de vous restituer le collier.";
+			link.l1.go = "UV_4";
+			TakeItemFromCharacter(pchar, "SM_necklace_Julie");
+		break;
+		
+		case "UV_4":
+			dialog.text = "Votre jugement prouve sa sagesse"+GetSexPhrase(", Capitaine","")+". Je me félicite que vous ayez préféré m'informer directement plutôt que de céder aux caprices de jeunesse de Julie.";
+			link.l1 = "J'agis uniquement avec son bien-être en tête, et je ne doute pas que vos intentions naissent du même souci et de la même sagesse.";
+			link.l1.go = "UV_5";
+		break;
+		
+		case "UV_5":
+			dialog.text = "En effet, Capitaine. En tant que son oncle et tuteur, son bien-être est ma préoccupation principale. Veuillez accepter ces cent cinquante doublons en témoignage de ma gratitude pour votre discrétion. Je vous remets également cette boussole de navigation qu'elle vous guide en toute sécurité à travers les eaux traîtresses.";
+			link.l1 = "Je suis honoré par votre générosité, Excellence, bien que pareille récompense ne fût pas nécessaire. Mais je dois maintenant prendre congé le temps et la mer n'attendent personne.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("UV_End");
+			AddItems(pchar, "gold_dublon", 150);
+			GiveItem2Character(PChar, "compass1");
+			ChangeCharacterNationReputation(pchar, FRANCE, 5);
+		break;
+		//<-- Украденное воспоминание
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

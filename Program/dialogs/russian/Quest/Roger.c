@@ -607,7 +607,7 @@ void ProcessDialogEvent()
 				if (iRank > 45) iRank = 45;
 				Group_FindOrCreateGroup("Mtr_Utreht");
 				sld = GetCharacter(NPC_GenerateCharacter("Cap_Utreht", "mercen_19", "man", "man", iRank, ENGLAND, -1, true, "quest"));
-				FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, "Утрехт", CANNON_TYPE_CULVERINE_LBS18, 50, 50, 50);
+				FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, "Утрехт", CANNON_TYPE_CULVERINE_LBS8, 50, 50, 50);
 				FantomMakeCoolFighter(sld, iRank, 50, 50, "blade_13", "pistol5", "bullet", 100);
 				sld.name = "Йоахим";
 				sld.lastname = "Гузен";
@@ -1432,6 +1432,7 @@ void ProcessDialogEvent()
 		
 		case "Pelly_61":
             DialogExit();
+			DeleteAttribute(pchar,"questTemp.Mtraxx.MagicBox");
 			chrDisableReloadToLocation = true;
 			LocatorReloadEnterDisable("shore37", "boat", false);
 			bQuestDisableMapEnter = false;
@@ -4255,7 +4256,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_72":
             dialog.text = "У меня оберег есть особый, от Вульфрика остался. Хоть какая-то память о родной Дании. Может, пойдём все в кабак, кэп? Что-то подустали мы все за сегодня.";
-			link.l1 = "Да, было бы здорово. В карты перекинемся - сыграем на твой чудо оберег.";
+			link.l1 = "Да, было бы здорово. В карты перекинемся - сыграем на твой чудо-оберег.";
 			link.l1.go = "IslaMona_73";
 		break;
 		
@@ -4411,7 +4412,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_88":
             dialog.text = "Родриго, и вот я столкнулся прям в будуаре с нашим прелатом... А я тебе так скажу, лучшее заведение находится в Сантьяго...";
-			link.l1 = "Да уж, и если вам нравятся прелаты, то лучшего места и найти!";
+			link.l1 = "Да уж, и если вам нравятся прелаты, то лучшего места и не найти!";
 			link.l1.go = "IslaMona_89";
 		break
 		
@@ -4493,7 +4494,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win"))
 			{
 				dialog.text = "Пас! Ну-ну, больше с вами не играю! Уверен, вы мухлевали, кэп! А шулера просто так отпускать будет непорядок!";
-				link.l1 = "Я тебя очень, внимательно слушаю, Родгар.";
+				link.l1 = "Я тебя очень внимательно слушаю, Родгар.";
 			}
 			else
 			{
@@ -6493,7 +6494,7 @@ void ProcessDialogEvent()
 		
 		case "Nemezida_Knippel_13":
             dialog.text = "Хм. Я убеждал себя, что действую во благо Родины. А переживать из-за приказов - неблагодарная работа, делать-то всё равно придётся.";
-			link.l1 = "Родина... Что ж, у тебя были причины. А у меня её даже толком не было - брат сказал сблизиться с Тираксом. Но стоило ли этого всех жертв, помогло мне или Мишелю? Да-да, ни мы, ни вы донов не жалуете... Но все мы люди.";
+			link.l1 = "Родина... Что ж, у тебя были причины. А у меня её даже толком не было - брат сказал сблизиться с Тираксом. Но стоило ли это всех жертв, помогло ли мне или Мишелю? Да-да, ни мы, ни вы донов не жалуете... Но все мы люди.";
 			link.l1.go = "Nemezida_Knippel_14";
 		break;
 		

@@ -3,6 +3,7 @@ void ProcessDialogEvent()
 {
 	ref NPChar, sld;
 	aref Link, NextDiag;
+	bool bOk1, bOk2;
 
 	DeleteAttribute(&Dialog,"Links");
 
@@ -28,7 +29,7 @@ void ProcessDialogEvent()
 			//--> Jason Цена чахотки
 			if (CheckAttribute(pchar, "questTemp.HWIC.Detector") || SandBoxMode)
 			{
-				bool bOk1 = (pchar.questTemp.HWIC.Detector == "holl_win") || (pchar.questTemp.HWIC.Detector == "eng_win") || (pchar.questTemp.HWIC.Detector == "self_win") || SandBoxMode;
+				bOk1 = (pchar.questTemp.HWIC.Detector == "holl_win") || (pchar.questTemp.HWIC.Detector == "eng_win") || (pchar.questTemp.HWIC.Detector == "self_win") || SandBoxMode;
 				if (sti(pchar.rank) > 6 && npchar.location == "PortSpein_tavern" && !CheckAttribute(npchar, "quest.Consumption")  && bOk1)
 				{
 					DelMapQuestMarkCity("PortSpein");
@@ -52,6 +53,55 @@ void ProcessDialogEvent()
 				link.l1.go = "FMQP";
 				break;
 			}
+			
+			//--> Тайна Бетси Прайс
+			if (npchar.location == "Villemstad_tavern" && CheckAttribute(pchar, "questTemp.TBP_BetsiPrice") && !CheckAttribute(pchar, "questTemp.TBP_BetsiPrice_Sex"))
+			{
+				bOk1 = CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && IsOfficer(characterFromId("Mary"));
+				bOk2 = CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && IsOfficer(characterFromId("Helena"));
+				if (bOk1 || bOk2)
+				{
+					switch (rand(1))
+					{
+						case 0:
+							dialog.text = ""+pchar.name+"! Как приятно снова видеть тебя... Спасибо, что заглянул... но, кажется, сейчас не лучшее время для наших бесед. Приходи, когда будешь один. Тогда мы сможем обсудить... более личные вопросы.";
+							link.l1 = "Всегда приятно поболтать, но мне уже пора. Возможно, увидимся ещё.";
+							link.l1.go = "exit";
+						break;
+
+						case 1:
+							dialog.text = ""+pchar.name+"... Я уже начала думать, что ты забыл дорогу в нашу таверну. Жаль, что ты не один. Я надеялась, что мы сможем поговорить без посторонних.";
+							link.l1 = "Думаю, судьба ещё даст нам шанс поговорить наедине.";
+							link.l1.go = "exit";
+						break;
+					}
+				}
+				else
+				{
+					switch (rand(1))
+					{
+						case 0:
+							dialog.text = ""+pchar.name+"! Я знала, что ты не заставишь меня слишком долго тосковать. Знаешь, больше не хочу терять ни минуты. Комната наверху свободна... только для нас двоих. Ты ведь не собираешься мне отказать?";
+							link.l1 = "Ты знаешь, как заманить в свои сети... Ну что ж, у меня нет причин сопротивляться. Пойдём?";
+							link.l1.go = "TBP_BetsiPriceSex1";
+							link.l2 = "Боюсь, сегодня мне действительно нужно заняться кое-чем важным. Но, обещаю, следующий раз я заглажу свою вину.";
+							link.l2.go = "exit";
+						break;
+
+						case 1:
+							dialog.text = ""+pchar.name+"! Я уж начала думать, что тебе доставляет удовольствие заставлять меня скучать. Ты ведь не собираешься просто стоять здесь как истукан, когда есть так много более приятных способов провести это время?";
+							link.l1 = "Против твоих чар устоять невозможно... Не вижу смысла терять ни секунды - поднимаюсь наверх прямо сейчас.";
+							link.l1.go = "TBP_BetsiPriceSex1";
+							link.l2 = "Ты умеешь соблазнять, Бетси... Но, увы, сейчас мне нужно быть в другом месте.";
+							link.l2.go = "exit";
+						break;
+					}
+				}
+				link.l9 = "Я хочу задать тебе пару вопросов.";
+				link.l9.go = "quests";//(перессылка в файл города)
+				break;
+			}
+			//<-- Тайна Бетси Прайс
             NextDiag.TempNode = "First time";
 			if (CheckAttribute(pchar, "questTemp.different.FackWaitress"))
 			{
@@ -96,7 +146,7 @@ void ProcessDialogEvent()
 				break;
 
 				case 2:
-					if (drand(1) == 0) // Addon-2016 Jason
+					if (hrand(1) == 0) // Addon-2016 Jason
 					{
 						dialog.text = ""+ GetSexPhrase("О, капитан! Вы хотели бы попасть в мои объятья сегодня? Я не люблю хвастаться, но...","Присаживайтесь, капитан. Настоящей морской волчице здесь всегда рады.") +"";
 						link.l1 = ""+ GetSexPhrase("Увы, сейчас я спешу! Давай в другой раз!","Cпасибо, милашка.") +"";
@@ -139,7 +189,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.different = "FackWaitress_toRoom";
 			SetTimerFunction("WaitressFack_null", 0, 0, 1); //освобождаем разрешалку на миниквесты на след. день
 			//Шанс, что ограбят, если рендом выпадет на 0. он же делитель сколько она вытащит из кармана
-			pchar.questTemp.different.FackWaitress.Kick = dRand(2); // Addon-2016 Jason
+			pchar.questTemp.different.FackWaitress.Kick = hrand(2); // Addon-2016 Jason
 			pchar.questTemp.different.FackWaitress.Name = GetFullName(npchar); //запомним имя официантки
 			pchar.questTemp.different.FackWaitress.City = npchar.city;
 			//делаем клона официантки

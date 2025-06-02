@@ -59,6 +59,12 @@ void ProcessDialogEvent()
 	 	NPChar.SailsTypeChooseIDX = strcut(attrLoc, i+1, strlen(attrLoc)-1); // индех в конце
  	    Dialog.CurrentNode = "SailsTypeChoose2";
  	}
+	if(!CheckAttribute(NPChar, "ExpMeeting"))
+	{
+		NPChar.ExpMeeting = true;
+		notification("Первое посещение верфи " + XI_ConvertString("Colony" +NPChar.City + "Gen"), "Carpenter");
+		AddCharacterExpToSkill(pchar, SKILL_REPAIR, 10.0);
+	}
  	// генератор парусов по кейсу <--
 	switch(Dialog.CurrentNode)
 	{
@@ -451,7 +457,7 @@ void ProcessDialogEvent()
 			ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
 			if (sti(Pchar.Ship.Type) == SHIP_NOTUSED || ok)
 			{				
-				if (sti(RealShips[sti(pchar.Ship.Type)].Class) >= 6)
+				if (sti(RealShips[sti(pchar.Ship.Type)].Class) >= 7)
 				{
 					dialog.Text = "Errr... I am not dealing with boats. An old tub will still be an old tub, no matter how much effort you put into it.";
 					Link.l1 = "I see...";
@@ -782,12 +788,27 @@ void ProcessDialogEvent()
 		    // изменим
 			if(!CheckAttribute(shTo, "Bonus_Capacity"))
 			{
-				shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)/5);
+				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+				{
+					shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)* 0.65);
+				}
+				else
+				{
+					shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)/5);
+				}
 			}
 			else
 			{
-				shTo.Capacity        = makeint((sti(shTo.Capacity) - sti(shTo.Bonus_Capacity)) * 1.2 + sti(shTo.Bonus_Capacity));
-			}			
+				
+				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+				{
+					shTo.Capacity        = makeint((sti(shTo.Capacity) - sti(shTo.Bonus_Capacity)) * 1.35 + sti(shTo.Bonus_Capacity));
+				}
+				else
+				{
+					shTo.Capacity        = makeint((sti(shTo.Capacity) - sti(shTo.Bonus_Capacity)) * 1.2 + sti(shTo.Bonus_Capacity));
+				}
+			}
 	        shTo.Tuning.Capacity = true;
 
 	        // finish <--
@@ -803,6 +824,9 @@ void ProcessDialogEvent()
 			TuningAvailable();
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
+			
+			notification("Вы узнали много нового о строении корабля!", "none");
+			AddCharacterExpToSkill(pchar, SKILL_COMMERCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
 		////////////////////////////////////////// SpeedRate ////////////////////////////////////////////////////
@@ -911,12 +935,26 @@ void ProcessDialogEvent()
 		    // изменим
 			if(!CheckAttribute(shTo, "Bonus_SpeedRate"))
 			{
+				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+				{
+					shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate) * 0.65);
+				}
+				else
+				{
 					shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate)/5.0);
+				}
 			}
 			else
 			{
+				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+				{
+					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.35 + stf(shTo.Bonus_SpeedRate);
+				}
+				else
+				{
 					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.2 + stf(shTo.Bonus_SpeedRate);
-			}		
+				}
+			}
 	        shTo.Tuning.SpeedRate = true;
 			
 			if(!CheckAttribute(pchar, "achievment.Tuning.stage1") && CheckAttribute(shTo, "Bonus_SpeedRate") &&  CheckAttribute(shTo,"Tuning.WindAgainst")) 
@@ -930,6 +968,8 @@ void ProcessDialogEvent()
 			Link.l1.go = "Exit";			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
+			notification("Вы узнали много нового о строении корабля!", "none");
+			AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
 		////////////////////////////////////////// TurnRate ////////////////////////////////////////////////////
@@ -1056,6 +1096,8 @@ void ProcessDialogEvent()
 			Link.l1.go = "Exit";
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
+			notification("Вы узнали много нового о строении корабля!", "none");
+			AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
 		////////////////////////////////////////// MaxCrew ////////////////////////////////////////////////////
@@ -1162,7 +1204,14 @@ void ProcessDialogEvent()
 		    shTo = &RealShips[sti(Pchar.Ship.Type)];
 		    DeleteAttribute(NPChar, "Tuning");
 		    
-	        shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew)/5);
+	        if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+			{
+				shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew) * 0.65);
+			}
+			else
+			{
+				shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew)/5);
+			}
 	        shTo.Tuning.MaxCrew = true;
 			if(!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo,"Tuning.MaxCrew") && CheckAttribute(shTo,"Tuning.HP")) 
 			
@@ -1177,6 +1226,9 @@ void ProcessDialogEvent()
 			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
+			notification("Вы узнали много нового о строении корабля!", "none");
+			AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
+			AddCharacterExpToSkill(pchar, SKILL_GRAPPLING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 
 		
@@ -1284,7 +1336,14 @@ void ProcessDialogEvent()
 		    shTo = &RealShips[sti(Pchar.Ship.Type)];
 		    DeleteAttribute(NPChar, "Tuning");
 		    // изменим
-	        shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew)/5);
+	        if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+			{
+				shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew) * 0.65);
+			}
+			else
+			{
+				shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew)/5);
+			}
 			if(sti(shTo.MinCrew) < 1) shTo.MinCrew = 1;
 	        shTo.Tuning.MinCrew = true;
 			
@@ -1300,6 +1359,9 @@ void ProcessDialogEvent()
 			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
+			notification("Вы узнали много нового о строении корабля!", "none");
+			AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
+			AddCharacterExpToSkill(pchar, SKILL_GRAPPLING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
 		////////////////////////////////////////// HP ////////////////////////////////////////////////////
@@ -1408,12 +1470,26 @@ void ProcessDialogEvent()
 		    // изменим
 			if(!CheckAttribute(shTo, "Bonus_HP"))
 			{
-				shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
+				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+				{
+					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.65);
+				}
+				else
+				{
+					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
+				}
 			}
 			else
 			{
-				shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
-			}	
+				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+				{
+					shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
+				}
+				else
+				{
+					shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
+				}
+			}
 	        shTo.Tuning.HP = true;
 			shTo.BaseHP = sti(shTo.HP);
 
@@ -1430,13 +1506,16 @@ void ProcessDialogEvent()
 			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
+			notification("Вы узнали много нового о строении корабля!", "none");
+			AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
+			AddCharacterExpToSkill(pchar, SKILL_REPAIR, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
 		////////////////////////////////////////// WindAgainst ////////////////////////////////////////////////////
 		case "ship_tunning_WindAgainst":
 			Material 	= GetMaterialQtyUpgrade(pchar, NPChar, 1 );
 			WorkPrice 	= GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			fTmp = 180.0 - (stf(RealShips[sti(Pchar.Ship.Type)].WindAgainstSpeed) * 90.0);
+			fTmp = 180.0 - (acos(1 - stf(RealShips[sti(Pchar.Ship.Type)].WindAgainstSpeed)) * 180.0/PI);
 			s2 = "Let's see what we can do, then. At the moment the point of sail by the wind is " + makeint(fTmp) + " degrees.";
 			// belamour legendary edition если спускать курс по ветру, то это даунгрейд
 			s2 = s2 + " To accelerate the ship upwind, I will require: ship silk - "+ Material + ",";
@@ -1540,7 +1619,14 @@ void ProcessDialogEvent()
 		    DeleteAttribute(NPChar, "Tuning");
 		    // изменим			
 			// belamour legendary edtion чем больше WindAgainstSpeed, тем круче к ветру
-	        shTo.WindAgainstSpeed   = stf(shTo.WindAgainstSpeed) + 0.20 * stf(shTo.WindAgainstSpeed);	
+	        if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+			{
+				shTo.WindAgainstSpeed   = stf(shTo.WindAgainstSpeed) + 0.35 * stf(shTo.WindAgainstSpeed);	
+			}
+			else
+			{
+				shTo.WindAgainstSpeed   = stf(shTo.WindAgainstSpeed) + 0.20 * stf(shTo.WindAgainstSpeed);
+			}
 			if (stf(shTo.WindAgainstSpeed) > 1.985) shTo.WindAgainstSpeed = 1.985;
 	        shTo.Tuning.WindAgainst = true;
 
@@ -1556,6 +1642,8 @@ void ProcessDialogEvent()
 
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
+			notification("Вы узнали много нового о строении корабля!", "none");
+			AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 						
 		////////////////////////////////////////// только количество орудий  ////////////////////////////////////////////////////	
@@ -1713,11 +1801,14 @@ void ProcessDialogEvent()
 			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
+			notification("Вы узнали много нового о строении корабля!", "none");
+			AddCharacterExpToSkill(pchar, SKILL_ACCURACY, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
+			AddCharacterExpToSkill(pchar, SKILL_CANNONS, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
 		case "Tasks":
 			//--> Jason генератор Поиск корабля
-			if (drand(4) == 2 && !CheckAttribute(pchar, "GenQuest.Findship.Shipyarder") && sti(pchar.rank) < 19)
+			if (hrand(4) == 2 && !CheckAttribute(pchar, "GenQuest.Findship.Shipyarder") && sti(pchar.rank) < 19)
 			{
 				if (!CheckAttribute(npchar, "Findship") || GetNpcQuestPastDayParam(npchar, "Findship") >= 60) 
 				{
@@ -1735,11 +1826,11 @@ void ProcessDialogEvent()
 				
 			}//<-- генератор Поиск корабля
 			//Jason --> генератор Неудачливый вор
-			if (drand(6) == 1 && !CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && sti(pchar.rank) < 10 && npchar.city != "Charles")
+			if (hrand(6) == 1 && !CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && sti(pchar.rank) < 10 && npchar.city != "Charles")
 			{
 				if (!CheckAttribute(npchar, "Device")) 
 				{
-					switch (crand(4))
+					switch (hrand(4))
 					{
 						case 0:  
 							pchar.GenQuest.Device.Shipyarder.Type = "inside gage";
@@ -1830,10 +1921,10 @@ void ProcessDialogEvent()
 			pchar.GenQuest.Device.Shipyarder.Chance4 = rand(4);
 			pchar.GenQuest.Device.Shipyarder.Money = 12000+rand(8000);
 			//генерируем тип корабля для бонуса сейчас, чтобы не сливали
-			if (sti(pchar.rank) < 2) iType = SHIP_SCHOONER; 
-			if (sti(pchar.rank) >= 2 && sti(pchar.rank) < 5) iType = SHIP_BRIGANTINE; 
-			if (sti(pchar.rank) >= 5 && sti(pchar.rank) < 7) iType = SHIP_BRIG; 
-			if (sti(pchar.rank) >= 7) iType = SHIP_CORVETTE + rand(makeint(SHIP_GALEON_H - SHIP_CORVETTE)); 
+			if (sti(pchar.rank) < 5) iType = sti(RandPhraseSimple(its(SHIP_BARKENTINE), its(SHIP_SLOOP)));
+			if (sti(pchar.rank) >= 5 && sti(pchar.rank) < 11) iType = sti(RandPhraseSimple(its(SHIP_SHNYAVA), its(SHIP_BARQUE)));
+			if (sti(pchar.rank) >= 11 && sti(pchar.rank) < 16) iType = sti(RandPhraseSimple(its(SHIP_BRIG), its(SHIP_FLEUT)));
+			if (sti(pchar.rank) >= 16) iType = sti(LinkRandPhrase(its(SHIP_CORVETTE), its(SHIP_POLACRE), its(SHIP_GALEON_L)));
 			pchar.GenQuest.Device.Shipyarder.Bonus = iType;
 			dialog.text = "Of course, I'll try to explain it in simple words. It looks like "+pchar.GenQuest.Device.Shipyarder.Describe+". It's one of its kind, so you will recognize it very easily. If you bring that instrument to me, I will pay you handsomely.";
 			link.l1 = "Got it. I shall begin my search immediately!";
@@ -2762,34 +2853,36 @@ int GetSailsTypePrice(int _asis, int _tobe, float _shipCostRate, int _price)
 void SelectFindship_ShipType()
 {
 	int iRank;
-	if (sti(pchar.rank) == 1) iRank = 0;
-	if (sti(pchar.rank) > 1 && sti(pchar.rank) <= 2) iRank = 1;
-	if (sti(pchar.rank) > 2 && sti(pchar.rank) <= 4) iRank = 2;
-	if (sti(pchar.rank) > 4 && sti(pchar.rank) <= 7) iRank = 3;
-	if (sti(pchar.rank) > 7 && sti(pchar.rank) <= 10) iRank = 4;
-	if (sti(pchar.rank) > 10 && sti(pchar.rank) <= 18) iRank = 5;
+	if (sti(pchar.rank) < 7) iRank = 0;
+	if (sti(pchar.rank) >= 7 && sti(pchar.rank) < 11) iRank = 1;
+	if (sti(pchar.rank) >= 11 && sti(pchar.rank) < 20) iRank = 2;
+	if (sti(pchar.rank) >= 20 && sti(pchar.rank) <= 27) iRank = 3;
 	
+	int iShip = SHIP_WAR_TARTANE;
 	switch (iRank)
 	{
-		case 0:  
-			pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_SCHOONER + rand(makeint(SHIP_BARQUE - SHIP_SCHOONER));
-		break; 		
-		case 1:  
-			pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_BARKENTINE + rand(makeint(SHIP_SHNYAVA- SHIP_BARKENTINE));
+		case 0:
+			iShip = sti(RandPhraseSimple(its(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)), 
+										 its(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
 		break;
+		case 1:  
+			iShip = sti(LinkRandPhrase(its(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
+		break; 
 		case 2:  
-			pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_FLEUT + rand(makeint(SHIP_CARAVEL - SHIP_FLEUT));
+			iShip = sti(LinkRandPhrase(its(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
 		break;
 		case 3:  
-			pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_PINNACE + rand(makeint(SHIP_CARACCA - SHIP_PINNACE));	
-		break;
-		case 4:  
-			pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_SCHOONER_W + rand(makeint(SHIP_POLACRE - SHIP_SCHOONER_W));
-		break;
-		case 5:  
-			pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_NAVIO + rand(makeint(SHIP_FRIGATE_H - SHIP_NAVIO));
+			iShip = sti(LinkRandPhrase(its(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
 		break;
 	}
+	
+	pchar.GenQuest.Findship.Shipyarder.ShipType = iShip;
 }
 
 // проверка количества материалов для корабельного тюнинга
@@ -2836,7 +2929,7 @@ int GetMaterialQtyUpgrade( ref _chr, ref _nchar, int MaterialNum )
 
 	if(MaterialNum == 1) 
 	{
-	int Material 	= makeint((40 * (7 - shipClass) + 25 * MOD_SKILL_ENEMY_RATE + drand(shipMinCrew)) * fQuestShip * LEcoeff);
+	int Material 	= makeint((40 * (8 - shipClass) + 25 * MOD_SKILL_ENEMY_RATE + hrand(shipMinCrew)) * fQuestShip * LEcoeff);
 	if(Material < 1) 		Material 	= 1;
 		return Material;
 	}
@@ -2858,6 +2951,9 @@ int GetMaterialQtyUpgrade( ref _chr, ref _nchar, int MaterialNum )
 				WorkPrice = 3;
 			break;
 			case 5: 
+				WorkPrice = 2;
+			break;
+			case 6: 
 				WorkPrice = 1;
 			break;
 		}

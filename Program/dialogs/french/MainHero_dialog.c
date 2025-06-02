@@ -60,6 +60,21 @@ void ProcessDialogEvent()
 	        Dialog.Text = "Si vous lisez cette ligne, c'est un bug dans le code";
 			Link.l1 = "Sortie";
 			Link.l1.go = "exit";
+			
+			//--> Вступительный туториал на палубе корабля за Шарля
+		if (CheckAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1"))
+		{
+			dialog.text = "Excitant, nom d’un chien ! Un vrai combat naval !\nDommage que je ne puisse pas voir la bataille d’ici... Tant pis. Je pense être assez calé en navigation pour imaginer fidèlement le déroulement des événements\nProbablement cinq pirates... Un grand navire, deux moyens et quelques petites embarcations. Parfait pour notre pinasse. Ce sera un récit formidable — Lulu va adorer !";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1");
+			pchar.wind.speed = 18.0;
+			fWeatherSpeed = stf(18.0);
+			//AddDialogExitQuestFunction("SharlieTutorial_StartShip");
+			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_3");
+		}
+		//<-- Вступительный туториал на палубе корабля за Шарля
+
 			//--> Голландский гамбит
 			if (CheckAttribute(pchar, "questTemp.HWIC_FindIsland"))
     		{
@@ -754,7 +769,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if (pchar.location == "Minentown_ExitTown")
+						if (pchar.location == "LosTeques_ExitTown")
 						{
 							Dialog.Text = "Il n'y a aucun intérêt à attaquer cette mine sans d'abord rassembler des informations sur l'or et l'argent qui y sont extraits. Sinon, j'envoie mes hommes mourir en vain.";
 							Link.l1 = "...";

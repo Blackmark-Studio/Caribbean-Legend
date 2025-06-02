@@ -154,14 +154,16 @@ float Cannon_GetRechargeTime()
 	float fMultiply = 1.0;
 	// boal -->
 
-       // EvgAnat - фикс fMultiply --> 
-
-        fMultiply = fMultiply * AIShip_isPerksUse(aCharacter.TmpPerks.FastReload, 1.0, 0.9);
-        fMultiply = fMultiply * AIShip_isPerksUse(aCharacter.TmpPerks.ImmediateReload, 1.0, 0.5); 
-        fMultiply = fMultiply * isEquippedArtefactUse(aCharacter, "amulet_5", 1.0, 0.85);
-  
-       //<-- EvgAnat 
-
+	// EvgAnat - фикс fMultiply --> 
+	fMultiply = fMultiply * AIShip_isPerksUse(aCharacter.TmpPerks.FastReload, 1.0, 0.9);
+	fMultiply = fMultiply * AIShip_isPerksUse(aCharacter.TmpPerks.ImmediateReload, 1.0, 0.5); 
+	fMultiply = fMultiply * isEquippedArtefactUse(aCharacter, "amulet_5", 1.0, 0.85);
+	//<-- EvgAnat 
+	if(CheckAttribute(aCharacter,"Tmp.LastBortFire.Bonus"))
+	{
+		fMultiply *= 1.0 - stf(aCharacter.Tmp.LastBortFire.Bonus) / 100.0;
+	}
+	
 	ref refBaseShip = GetRealShip(sti(aCharacter.ship.Type));
 	if (sti(refBaseShip.BaseType) != SHIP_FORT)
 	{
@@ -199,37 +201,46 @@ float Cannon_GetRechargeTime()
 // calculate delay before fire
 float Cannon_GetFireTime()
 {
-	//aref aCharacter = GetEventData();
 	aref aCharacter = GetEventData();
 	ref refBaseShip = GetRealShip(sti(aCharacter.ship.Type));
 
-	// make 10 seconds random delay between fire from fort cannons
-	if (refBaseShip.Name == ShipsTypes[SHIP_FORT].Name) { return frnd() * 20.0; }   // иначе пулеметный залп
+	// форт
+	if(refBaseShip.Name == ShipsTypes[SHIP_FORT].Name)
+		return frnd() * 20.0;
 
+	// количество пушек и навык орудий
+	float fBaseFireTime = 1.3;
+	if(refBaseShip.CannonsQuantity >= 31 && refBaseShip.CannonsQuantity <= 59)
+		fBaseFireTime = 3.0;
+	if(refBaseShip.CannonsQuantity >= 60)
+		fBaseFireTime = 4.3;
 	float fCannonSkill = stf(aCharacter.TmpSkill.Cannons);
-	float fFireTime = 1.3;
-	if(refBaseShip.CannonsQuantity > 30 && refBaseShip.CannonsQuantity < 60) fFireTime = 3.0;
-	if(refBaseShip.CannonsQuantity > 59) fFireTime = 4.3;
-	fFireTime -= fCannonSkill;
-	//fFireTime = fFireTime * Bring2RangeNoCheck(3.0, 1.0, 0.0, 1.0, stf(aCharacter.Ship.Crew.MinRatio));
-	fFireTime = frnd() * fFireTime * 6.0;
-	if (iArcadeSails) { fFireTime = fFireTime * 0.5; }
-				   
-	float crewQ   = GetCrewQuantity(aCharacter);
+	float fBase = pow((fBaseFireTime - fCannonSkill), 0.6);
+	
+	// рандом
+	float fRandom = uniform(0.0, 6.0);
+	
+	// аркадный режим
+	float fArcade = 0.5;
+	if(!iArcadeSails)
+		fArcade = 1.0;
+	
+	// мораль
+	float fMorale = Bring2Range(1.2, 0.8, 0.0, 100.0, GetCharacterCrewMorale(aCharacter));
+	
+	// опыт канониров и укомплектованность команды
+	float crewQ = GetCrewQuantity(aCharacter);
  	float crewMax = stf(refBaseShip.MaxCrew);
  	float crewOpt = stf(refBaseShip.OptCrew);
- 	if (crewMax < crewQ) crewQ  = crewMax; 
- 	
-	float fCrewMorale = GetCharacterCrewMorale(aCharacter);
-
-    float  fExp;
-	fExp = 0.05 + stf(GetCrewExp(aCharacter, "Cannoners") * crewQ) / stf(crewOpt * GetCrewExpRate());
-	if (fExp > 1.0) fExp = 1.0;
+ 	if(crewMax < crewQ)
+		crewQ = crewMax;
+	float fCrew = crewQ / crewOpt;
+	float fCannonersExp = GetCrewExp(aCharacter, "Cannoners");
+	float fExp = 1.93 - (fCannonersExp / GetCrewExpRate()) * (crewQ / crewOpt);
+	if(fExp < 1.0)
+		fExp = 1.0;
 	
-	fFireTime = fFireTime * (2.0 - fExp);
-	fFireTime = fFireTime * (1.0 + (1.0 - fCrewMorale/MORALE_NORMAL)/5.0);
-	
-	return fFireTime;  
+	return fBase * fRandom * fArcade * fMorale * fExp;
 }
 
 void Cannon_FireCannon()
@@ -248,9 +259,12 @@ void Cannon_FireCannon()
 	fHeightAng = GetEventData();
 	fCannonDirAng = GetEventData();
 	fMaxFireDistance = GetEventData();
-		
+	float fAngle = GetEventData();
+	string bort = GetEventData();
+	
+	//log_testinfo("Ядро для борта " + 	bort);
 	 // boal навел порядок по оптимизации
-	Ball_AddBall(aCharacter, fX, fY, fZ, fSpeedV0, fDirAng, fHeightAng, fCannonDirAng, fMaxFireDistance);
+	Ball_AddBall(aCharacter, fX, fY, fZ, fSpeedV0, fDirAng, fHeightAng, fCannonDirAng, fMaxFireDistance, bort);
 }
 
 // Damage 2 cannon from balls

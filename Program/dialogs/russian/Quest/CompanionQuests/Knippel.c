@@ -357,50 +357,6 @@ void ProcessDialogEvent()
 		case "DTSG_PiterAdams_IdemKDomu":
 			DialogExit();
 			
-			n = Findlocation("Location_reserve_06");
-			locations[n].id = "Location_reserve_06";
-			locations[n].image = "loading\inside\mediumhouse10.tga";
-			locations[n].id.label = "Room";
-			locations[n].townsack = "PortPax";
-			locations[n].islandId = "Hispaniola";
-			locations[n].type = "house";
-			DeleteAttribute(&locations[n], "models.always.room");
-			DeleteAttribute(&locations[n], "models.always.windows");
-			locations[n].filespath.models = "locations\inside\mediumhouse09";
-			locations[n].models.always.house = "mediumhouse09";
-			locations[n].models.always.house.level = 65538;
-			locations[n].models.day.locators = "mediumhouse09_locators";
-			locations[n].models.night.locators = "mediumhouse09_Nlocators";
-
-			Locations[n].models.always.mediumhouse09windows = "mediumhouse09_windows";
-			Locations[n].models.always.mediumhouse09windows.tech = "LocationWindows";
-			locations[n].models.always.mediumhouse09windows.level = 65539;
-
-			locations[n].models.always.back = "..\inside_back3";
-			locations[n].models.always.back.level = 65529;
-			//Day
-			Locations[n].models.day.mediumhouse09rand = "mediumhouse09_rand";
-			locations[n].models.day.charactersPatch = "mediumhouse09_patch";
-			//Night
-			locations[n].models.night.charactersPatch = "mediumhouse09_patch";
-			//Environment
-			locations[n].environment.weather = "true";
-			locations[n].environment.sea = "false";
-			//Reload map
-			locations[n].reload.l1.name = "reload1";
-			locations[n].reload.l1.go = "PortPax_town";
-			locations[n].reload.l1.emerge = "houseF1";
-			locations[n].reload.l1.autoreload = "0";
-			locations[n].reload.l1.label = "Street";
-			
-			sld = &Locations[FindLocation("PortPax_town")];
-			sld.reload.l31.name = "houseF1";
-			sld.reload.l31.go = "Location_reserve_06";
-			sld.reload.l31.emerge = "reload1";
-			sld.reload.l31.autoreload = "0";
-			sld.reload.l31.label = "Room";
-			LocatorReloadEnterDisable("PortPax_town", "houseF1", true);
-			
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocator(npchar, "reload", "houseF1", "DTSG_PiterAdams_VDom", -1);
 			LAi_SetActorType(pchar);
@@ -428,7 +384,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_PiterAdamsRyadomSDomom_3":
-			DoQuestReloadToLocation("Location_reserve_06", "reload", "reload1", "DTSG_PiterAdams_VDom_2");
+			DoQuestReloadToLocation("PortPax_houseF1", "reload", "reload1", "DTSG_PiterAdams_VDom_2");
 		break;
 		
 		case "DTSG_PiterAdamsRyadomSDomom_4":
@@ -581,104 +537,7 @@ void ProcessDialogEvent()
 			
 			LAi_ActorGoToLocation(npchar, "reload", "reload1", "", "", "", "", -1);
 			npchar.location = "None";
-			
-			bDisableFastReload = false;
-			chrDisableReloadToLocation = false;
-			QuestCloseSeaExit()
-			
-			n = Findlocation("PortPax_town");
-			locations[n].reload.l32.name = "houseS2";
-			locations[n].reload.l32.go = "Location_reserve_06";
-			locations[n].reload.l32.emerge = "reload1";
-			locations[n].reload.l32.autoreload = "0";
-			locations[n].reload.l32.label = "Room";
-			LocatorReloadEnterDisable("PortPax_town", "houseS2", false);
-			
-			n = Findlocation("Location_reserve_06");
-			DeleteAttribute(&locations[n], "models.day.mediumhouse09rand");
-			DeleteAttribute(&locations[n], "models.always.mediumhouse09windows");
-			locations[n].filespath.models = "locations\inside\TwoFloorHouse";
-			locations[n].models.always.house = "TwoFloorHouse";
-			locations[n].models.always.house.level = 65538;
-			locations[n].models.day.locators = "TwoFloorHouse_locators";
-			locations[n].models.night.locators = "TwoFloorHouse_Nlocators";
-			locations[n].models.always.window = "TwoFloorHouse_windows";
-			locations[n].models.always.window.tech = "LocationWindows";
-			locations[n].models.always.window.level = 65539;
-
-			locations[n].models.always.back = "..\inside_back";
-			locations[n].models.always.back.level = 65529;
-			//Day
-			Locations[n].models.day.TwoFloorHouseRand = "TwoFloorHouse_rand";
-			locations[n].models.day.charactersPatch = "TwoFloorHouse_patch";
-			//Night
-			locations[n].models.night.charactersPatch = "TwoFloorHouse_patch";
-			//Environment
-			locations[n].environment.weather = "true";
-			locations[n].environment.sea = "false";
-			//Reload map
-			locations[n].reload.l1.name = "reload1";
-			locations[n].reload.l1.go = "PortPax_town";
-			locations[n].reload.l1.emerge = "houseS2";
-			locations[n].reload.l1.autoreload = "0";
-			locations[n].reload.l1.label = "Street";
-			
-			sld = CharacterFromID("DTSG_PiterAdams");
-			ChangeCharacterAddressGroup(sld, "none", "", "");
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_FrederikStouks", "mercen_26", "man", "man", 30, ENGLAND, -1, false, "quest"));
-			sld.name = "Фредерик";
-			sld.lastname = "Стоукс";
-			GiveItem2Character(sld, "blade_13");
-			EquipCharacterByItem(sld, "blade_13");
-			GiveItem2Character(sld, "pistol5");
-			EquipCharacterByItem(sld, "pistol5");
-			GiveItem2Character(sld, "cirass1");
-			EquipCharacterByItem(sld, "cirass1");
-			AddItems(sld, "purse2", 1);
-			sld.SaveItemsForDead = true;
-			sld.DontClearDead = true;
-			ChangeCharacterAddressGroup(sld, "Location_reserve_06", "goto", "goto7");
-			LAi_SetActorType(sld);
-			SetSelfSkill(sld, 80, 80, 80, 80, 80);
-			LAi_SetHP(sld, 225+MOD_SKILL_ENEMY_RATE*10, 200+MOD_SKILL_ENEMY_RATE*10);
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_RalfFaggl", "mush_ctz_12", "man", "mushketer", 30, ENGLAND, -1, false, "quest"));
-			sld.name = "Ральф";
-			sld.lastname = "Фаггл";
-			SetCharacterPerk(sld, "Gunman");
-			SetCharacterPerk(sld, "GunProfessional");
-			GiveItem2Character(sld, "mushket2");
-			EquipCharacterbyItem(sld, "mushket2");
-			AddItems(sld, "purse2", 1);
-			sld.SaveItemsForDead = true;
-			sld.DontClearDead = true;
-			//sld.MushketType = "mushket2";
-			//sld.MushketBulletType = "cartridge";
-			LAi_SetStayType(sld);
-			ChangeCharacterAddressGroup(sld, "Location_reserve_06", "goto", "goto1");
-			sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
-			sld.dialog.currentnode = "DTSG_RalfFaggl";
-			SetSelfSkill(sld, 80, 80, 80, 80, 80);
-			LAi_SetHP(sld, 250+MOD_SKILL_ENEMY_RATE*10, 200+MOD_SKILL_ENEMY_RATE*10);
-			
-			PChar.quest.DTSG_Sosedi.win_condition.l1 = "location";
-			PChar.quest.DTSG_Sosedi.win_condition.l1.location = "Location_reserve_06";
-			PChar.quest.DTSG_Sosedi.win_condition = "DTSG_Sosedi";
-			
-			PChar.quest.DTSG_PoP_DuelTime.win_condition.l1 = "Timer";
-			PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.hour = sti(GetTime() + 2);
-			PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.day = GetAddingDataDay(0, 0, 0);
-			PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
-			PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.year = GetAddingDataYear(0, 0, 0);
-			PChar.quest.DTSG_PoP_DuelTime.win_condition = "DTSG_PoP_DuelTime";
-			
-			PChar.quest.DTSG_PoP_Duel.win_condition.l1 = "location";
-			PChar.quest.DTSG_PoP_Duel.win_condition.l1.location = "PortPax_ExitTown";
-			PChar.quest.DTSG_PoP_Duel.win_condition = "DTSG_PoP_Duel";
-			LAi_LocationDisableOfficersGen("PortPax_ExitTown", true);
-			pchar.questTemp.DTSG_ZovemMatrosov = true;
-			AddQuestRecord("DTSG", "4");
+			AddDialogExitQuestFunction("DTSG_Knippel_36");
 		break;
 		
 		case "DTSG_RalfFaggl":
@@ -1100,78 +959,7 @@ void ProcessDialogEvent()
 			
 			LAi_RemoveCheckMinHP(npchar);
 			LAi_SetImmortal(npchar, false);
-			LAi_SetActorType(npchar);
-			LAi_ActorFollow(npchar, pchar, "", -1);
-			LAi_SetOfficerType(npchar);
-			npchar.Dialog.Filename = "Quest\HollandGambit\Knippel.c";
-			npchar.Dialog.CurrentNode = "Knippel_officer";
-			npchar.location = "None";
-			bDisableFastReload = false;
-			chrDisableReloadToLocation = false;
-			
-			ChangeItemName("letter_1", "itmname_specialletter");
-			ChangeItemDescribe("letter_1", "itmdescr_DTSG_letter2");
-			
-			n = Findlocation("PortPax_town");
-			locations[n].reload.l31.name = "houseF1";
-			locations[n].reload.l31.go = "Location_reserve_06";
-			locations[n].reload.l31.emerge = "reload1";
-			locations[n].reload.l31.autoreload = "0";
-			locations[n].reload.l31.label = "Room";
-			LocatorReloadEnterDisable("PortPax_town", "houseF1", false);
-			
-			locations[n].reload.l32.name = "houseS2";
-			locations[n].reload.l32.go = "CommonPirateHouse";
-			locations[n].reload.l32.emerge = "reload1";
-			locations[n].reload.l32.autoreload = "0";
-			locations[n].reload.l32.label = "House";
-			//
-			n = Findlocation("Location_reserve_06");
-			DeleteAttribute(&locations[n], "models");
-			DeleteAttribute(&locations[n], "environment");
-			locations[n].image = "loading\inside\mediumhouse10.tga";
-			locations[n].id.label = "Room";
-			locations[n].townsack = "PortPax";
-			locations[n].islandId = "Hispaniola";
-			locations[n].type = "house";
-			locations[n].filespath.models = "locations\inside\mediumhouse09";
-			locations[n].models.always.house = "mediumhouse09";
-			locations[n].models.always.house.level = 65538;
-			locations[n].models.day.locators = "mediumhouse09_locators";
-			locations[n].models.night.locators = "mediumhouse09_Nlocators";
-
-			Locations[n].models.always.mediumhouse09windows = "mediumhouse09_windows";
-			Locations[n].models.always.mediumhouse09windows.tech = "LocationWindows";
-			locations[n].models.always.mediumhouse09windows.level = 65539;
-
-			locations[n].models.always.back = "..\inside_back3";
-			locations[n].models.always.back.level = 65529;
-			//Day
-			Locations[n].models.day.mediumhouse09rand = "mediumhouse09_rand";
-			locations[n].models.day.charactersPatch = "mediumhouse09_patch";
-			//Night
-			locations[n].models.night.charactersPatch = "mediumhouse09_patch";
-			//Environment
-			locations[n].environment.weather = "true";
-			locations[n].environment.sea = "false";
-			//Reload map
-			locations[n].reload.l1.name = "reload1";
-			locations[n].reload.l1.go = "PortPax_town";
-			locations[n].reload.l1.emerge = "houseF1";
-			locations[n].reload.l1.autoreload = "0";
-			locations[n].reload.l1.label = "Street";
-			
-			pchar.GenQuestBox.Location_reserve_06.box1.items.gold = 8000;
-			pchar.GenQuestBox.Location_reserve_06.box1.items.chest = 1;
-			pchar.GenQuestBox.Location_reserve_06.box1.items.jewelry2 = 10;
-			pchar.GenQuestBox.Location_reserve_06.box1.items.jewelry3 = 5;
-			pchar.GenQuestBox.Location_reserve_06.box1.items.jewelry4 = 5;
-			pchar.GenQuestBox.Location_reserve_06.box1.items.jewelry8 = 1;
-			pchar.GenQuestBox.Location_reserve_06.box1.items.letter_1 = 1;
-			
-			PChar.quest.DTSG_Duel_SundukPismo.win_condition.l1 = "item";
-			PChar.quest.DTSG_Duel_SundukPismo.win_condition.l1.item = "letter_1";
-			PChar.quest.DTSG_Duel_SundukPismo.win_condition = "DTSG_Duel_SundukPismo";
+			AddDialogExitQuestFunction("DTSG_Knippel_64");
 		break;
 		
 		case "DTSG_Knippel_70":
@@ -2020,7 +1808,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Fleetwood_13":
 			DialogExit();
-			EndQuestMovie();
+			//EndQuestMovie();
 			AddItems(pchar, "potion4", 10);
 			AddItems(pchar, "bullet", 10);
 			AddItems(pchar, "GunPowder", 10);

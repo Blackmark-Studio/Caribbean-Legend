@@ -188,16 +188,16 @@ int CreateCumanaCharacters(int n)
 	
 	//////////////////////////////  Рудник  ///////////////////////
 	makeref(ch,Characters[n]);			//Комендант
-	ch.id		= "Minentown_Mayor";
+	ch.id		= "LosTeques_Mayor";
 	ch.model	= "off_spa_6";
 	ch.sex = "man";
 	ch.name 	= GetCharacterName("Esteban");	// Эстебан
     ch.lastname = GetCharacterName("Garcia");		// Гарсия
-	ch.City = "Minentown";
-	ch.location	= "Minentown_townhall";
+	ch.City = "LosTeques";
+	ch.location	= "LosTeques_townhall";
 	ch.location.group = "sit";
 	ch.location.locator = "sit1";
-	ch.Dialog.Filename = "Mayor\Minentown_mayor.c";
+	ch.Dialog.Filename = "Mayor\LosTeques_mayor.c";
 	ch.greeting = "mayor_4";
 	ch.nation = SPAIN;
 	ch.quest.type = "hovernor";
@@ -216,17 +216,17 @@ int CreateCumanaCharacters(int n)
 	n = n + 1;
 	
 	makeref(ch,Characters[n]);			//Торговец
-	ch.id = "Minentown_trader";
+	ch.id = "LosTeques_trader";
 	ch.model	= "off_spa_3";
 	ch.greeting = "store_2";
 	ch.sex = "man";
 	ch.name 	= GetCharacterName("Carlos");	// Карлос
     ch.lastname = GetCharacterName("Estrada");	// Эстрада
-	ch.City = "Minentown";
-	ch.location	= "Minentown_Store";
+	ch.City = "LosTeques";
+	ch.location	= "LosTeques_Store";
 	ch.location.group = "barmen";
 	ch.location.locator = "stay";
-	ch.Dialog.Filename = "Store\Minentown_Store.c";
+	ch.Dialog.Filename = "Store\LosTeques_Store.c";
 	ch.quest.type = "trader";
 	ch.nation = SPAIN;
 	LAi_SetOwnerType(ch);
@@ -234,22 +234,22 @@ int CreateCumanaCharacters(int n)
 	LAi_SetImmortal(ch, true);
 	ch.item_date = "";
 	ch.Merchant = true;
-	ch.Merchant.type = "minentown";
+	ch.Merchant.type = "LosTeques";
 	ch.money = TRADER_MIN_MONEY + rand(TRADER_NORM);
 	n = n + 1;
 	
 	makeref(ch,Characters[n]);			//Трактирщик
-	ch.id		= "Minentown_tavernkeeper";
+	ch.id		= "LosTeques_tavernkeeper";
 	ch.model	= "barmen_14";
 	ch.greeting = "barmen_1";
 	ch.sex = "man";
 	ch.name 	= GetCharacterName("Ignasio");	// Игнасио
     ch.lastname = GetCharacterName("Ortega");	// Ортега
-	ch.City = "Minentown";
-	ch.location	= "Minentown_Tavern";
+	ch.City = "LosTeques";
+	ch.location	= "LosTeques_Tavern";
 	ch.location.group = "barmen";
 	ch.location.locator = "stay";
-	ch.Dialog.Filename = "Tavern\Minentown_Tavern.c";
+	ch.Dialog.Filename = "Tavern\LosTeques_Tavern.c";
 	ch.TavernMan = true;
 	ch.nation = SPAIN;
 	LAi_SetBarmanType(ch);
@@ -259,12 +259,12 @@ int CreateCumanaCharacters(int n)
 	n = n + 1;
 	
 	makeref(ch,Characters[n]);			//Священник
-	ch.id		= "Minentown_Priest";
+	ch.id		= "LosTeques_Priest";
 	ch.model	= "monk_5";
 	ch.model.animation = "man_B";
 	ch.sex = "man";
-	ch.City = "Minentown";
-	ch.location	= "Minentown_church";
+	ch.City = "LosTeques";
+	ch.location	= "LosTeques_church";
 	ch.location.group = "barmen";
 	ch.location.locator = "stay";
 	ch.Dialog.Filename = "Common_church.c";

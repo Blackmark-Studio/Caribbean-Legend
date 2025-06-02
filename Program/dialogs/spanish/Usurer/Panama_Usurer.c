@@ -25,7 +25,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		}
 		else
 		{
-			link.l1 = "Tu pérdida. Adiós.";
+			link.l1 = "Como quieras. Adiós.";
 			link.l1.go = "exit";
 		}
 		NextDiag.TempNode = "NeHochuRazgovarivat";

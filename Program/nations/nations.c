@@ -24,8 +24,10 @@ void Nation_InitAfterLoading()
 
 		// меняем таблицу отношений между нациями
 		SetArraySize(&NationsRelations,MAX_NATIONS_SQR);
-		for(i=MAX_NATIONS-2;i>=0;i--) {
-			for(j=MAX_NATIONS-2;j>=0;j--) {
+		for(i = NON_PIRATES; i>=0; i--)
+        {
+			for(j = NON_PIRATES; j>=0; j--)
+            {
 				NationsRelations[i * MAX_NATIONS + j] = NationsRelations[i * (MAX_NATIONS-1) + j];
 			}
 			NationsRelations[i * MAX_NATIONS + MAX_NATIONS-1] = RELATION_FRIEND;
@@ -370,7 +372,7 @@ int FindNationExceptNationWithoutPirates(int iNation)
 {
 	object RandNations[MAX_NATIONS];
 	int m = 0;
-	for(int i = 0; i < MAX_NATIONS - 2; i++)
+	for(int i = 0; i < NON_PIRATES; i++)
 	{
 		if(i != iNation)
 		{

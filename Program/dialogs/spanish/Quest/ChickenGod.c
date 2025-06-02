@@ -248,14 +248,14 @@ void ProcessDialogEvent()
 		break;
 		
         case "native_dice_story_3":
-			dialog.text = " He visto tus barcos, maravillas del ingenio humano, y he deseado tener uno para mí. He visto a tus mujeres en corsés apretados, y he soñado con quitarle uno a una mía. He observado incluso a los peores de tus comandantes ejercer un poder más allá de los sueños de cualquiera de nuestros líderes. He oído historias sobre Europa y las enormes casas de piedra donde la gente vive en lugar de sobrevivir. ¡Y lo he tenido todo! Además, ¡incluso he estado en Europa y todo eso en el último año!";
+			dialog.text = "He visto tus barcos, maravillas del ingenio humano, y he deseado tener uno para mí. He visto a tus mujeres en corsés apretados, y he soñado con quitarle uno a una mía. He observado incluso a los peores de tus comandantes ejercer un poder más allá de los sueños de cualquiera de nuestros líderes. He oído historias sobre Europa y las enormes casas de piedra donde la gente vive en lugar de sobrevivir. ¡Y lo he tenido todo! Además, ¡incluso he estado en Europa y todo eso en el último año!";
 			link.l1 = "Has bebido demasiado vino, jefe. Los únicos boletos a Europa para ti serían cadenas, para deleite del Vaticano y los artistas callejeros. Lo que dices es simplemente imposible en el mundo en que vivimos.";
 			link.l1.go = "native_dice_story_4";
 		break;
 		
         case "native_dice_story_4":
 			dialog.text = "Este es el mundo en el que vivimos, capitán. Ya me han explicado que nuestro mundo es erróneo, imaginario, y que todo es posible.";
-			link.l1 = "А ¿quién fue el listillo que te dijo eso? ¡Aparentemente, no solo te dejan entrar a burdeles, sino también a manicomios!";
+			link.l1 = "¿Y quién fue el listillo que te dijo eso? ¡Aparentemente, no solo te dejan entrar a burdeles, sino también a manicomios!";
 			link.l1.go = "native_dice_story_5";
 		break;
 		
@@ -266,7 +266,7 @@ void ProcessDialogEvent()
 		break;
 		
         case "native_dice_story_6":
-			dialog.text = "Solo los dioses pueden cumplir nuestros deseos más profundos y vergonzosos. Si no puedes vivir la vida que deseas, entonces pídeles que interfieran con el destino. Solo ellos pueden cumplir nuestros deseos más profundos y vergonzosos. Este es el camino. Pero aquí está el problema: casi todos nuestros dioses ya están muertos, y aunque no lo estuvieran, nunca estuvieron interesados en el oro de todos modos. Afortunadamente, la naturaleza aborrece el vacío, y un nuevo dios ha aparecido en una de las viejas pirámides. A él no le importa quién eres: local o europeo, villano o héroe, solo paga y obtendrás lo que pediste. Todas las tribus lo saben, y algunos de los tuyos también. He pagado el precio en oro y he vivido como uno de ustedes. Mañana será un año.";
+			dialog.text = "Solo los dioses pueden cumplir nuestros deseos más profundos y vergonzosos. Si no puedes vivir la vida que deseas, entonces pídeles que interfieran con el destino. Solo ellos pueden cumplir nuestros deseos más profundos y vergonzosos. Este es el camino. Pero aquí está el problema: casi todos nuestros dioses ya están muertos, y aunque no lo estuvieran, nunca estuvieron interesados en el oro de todos modos. Afortunadamente, la naturaleza aborrece el vacío, y un nuevo dios ha aparecido en una de las viejas pirámides. A él no le importa si eres de aquí o de la vieja europa, villano o héroe, solo paga y obtendrás lo que pediste. Todas las tribus lo saben, y algunos de los tuyos también. He pagado el precio en oro y he vivido como uno de ustedes. Mañana será un año.";
 			link.l1 = "¿Qué dios? ¿A Europa y de regreso en un año? ¿Y el punto culminante de tu viaje fue algún burdel de mala muerte en el Caribe? Oh, qué demonios. Suena como el cuento de un borracho, y lo compraré como tal. Vamos a tomar un trago y continuar con tu historia.";
 			link.l1.go = "native_dice_story_7";
 		break;
@@ -440,7 +440,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_9A":
-			dialog.text = " No está tan mal, capitán. O eres listo o eres tan tonto como un burro, pero tus probabilidades acaban de mejorar un poco. El precio no será un problema.";
+			dialog.text = "No está tan mal, capitán. O eres listo o eres tan tonto como un burro, pero tus probabilidades acaban de mejorar un poco. El precio no será un problema.";
 			link.l1 = "¿Necesitas matar a alguien? No hago eso.";
 			link.l1.go = "joruba_10";
 		break;
@@ -526,7 +526,7 @@ void ProcessDialogEvent()
 					}
 					/*if (FindCompanionShips(SHIP_GALEON_SM))
 					{
-						link.(sTemp) = "Aruba, ahoy! Galeon '" + chref.Ship.Name + "' is all yours!";
+						link.(sTemp) = "¡Ahoy Aruba! ¡El galeón '" + chref.Ship.Name + "' es todo tuyo!";
 						link.(sTemp).go = "joruba_p3_HolyMercy";
 					}*/
 				}
@@ -564,11 +564,11 @@ void ProcessDialogEvent()
 			}
 			
 			if (CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.p4.Completed")) {
-				link.respec = "(Respec character's stats)";
+				link.respec = "(Redistribuir características del personaje)";
 				link.respec.go = "joruba_respec";
 			}
 			
-			link.exit = "I am just passing by.";
+			link.exit = "Solo estoy de paso.";
 			link.exit.go = "joruba_wait_1";
 			
 			NextDiag.TempNode = "joruba_wait";
@@ -648,7 +648,7 @@ void ProcessDialogEvent()
 		case "joruba_p2_1":
 			dialog.text = "Oh, vosotros dos os encontraréis. Ahora, espero que no seas uno de esos pomposos imbéciles que desprecian el trabajo manual. Si es así, estás jodido, porque la segunda parte de la recompensa son los planos de la munición de doble carga.";
 			if (pchar.HeroParam.HeroType == "HeroType_4") {
-				link.l1 = " Oh, me encantan esos. Pero, ¿qué tienen de único? Una carga doble de pólvora no es novedad, por lo tanto concluyo que obviamente no has dejado tu pirámide desde los tiempos de ese machete de museo.";
+				link.l1 = "Oh, me encantan esos. Pero, ¿qué tienen de único? Una carga doble de pólvora no es novedad, por lo tanto concluyo que obviamente no has dejado tu pirámide desde los tiempos de ese machete de museo.";
 			} else {
 				link.l1 = "¿Eso es todo? Oye...";
 			}
@@ -673,7 +673,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_p2_4":
-			dialog.text = "No te va a encantar. Necesito un barco... no, necesito el barco. Ya sabes, con una historia detrás de él.";
+			dialog.text = "No te va a encantar. Necesito un barco... no, necesito el barco. Como puedes imaginar, con una historia detrás de él.";
 			link.l1 = "¿Por qué? Ni siquiera eres capitán.";
 			link.l1.go = "joruba_p2_5";
 		break;
@@ -729,7 +729,7 @@ void ProcessDialogEvent()
 						sTemp = GetStrSmallRegister(GetAddress_FormTitle(sti(Items[sti(pchar.EquipedPatentId)].Nation), sti(Items[sti(pchar.EquipedPatentId)].TitulCur)));
 					}
 					
-					dialog.text = "¡Mira esto! Eres una desgracia para tu comisión, "+sTemp+"¡";
+					dialog.text = "¡Mira esto! ¡Eres una desgracia para tu comisión, "+sTemp+"!";
 				break;
 				
 				case SHIP_POLACRE_QUEST:
@@ -855,7 +855,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_p3_8":
-			dialog.text = " No, pero no te gustará la alternativa. Si no quieres pagar con sangre, puedes pagar con oro. Tres mil doblones y una conciencia tranquila. El dinero puede hacer eso y más - ¡me encanta!";
+			dialog.text = "No, pero no te gustará la alternativa. Si no quieres pagar con sangre, puedes pagar con oro. Tres mil doblones y una conciencia tranquila. El dinero puede hacer eso y más, ¡me encanta!";
 			link.l1 = "Adiós, Aruba. Ya no quiero hablar contigo.";
 			link.l1.go = "joruba_p3_9";
 		break;
@@ -872,7 +872,7 @@ void ProcessDialogEvent()
 			dialog.text = "Vamos a hacer esto rápido antes de que aparezca la Inquisición Española. ¿Sangre u oro?";
 			if (PCharDublonsTotal() >= 3000)
 			{
-				link.l1 = "  Oro es. Aquí tienes tus tres mil, aunque no puedo imaginar cómo es posible que puedas gastar una cantidad tan enorme en este desierto. ";
+				link.l1 = "Oro es. Aquí tienes tus tres mil, aunque no puedo imaginar cómo es posible que puedas gastar una cantidad tan enorme en este desierto. ";
 				link.l1.go = "joruba_p4_1";
 			}
 			if (ChickenGod_HaveOfficers()) 
@@ -895,7 +895,7 @@ void ProcessDialogEvent()
 		case "joruba_p4_other":
 			dialog.text = "Que así sea. Di el nombre.";
 			
-			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "FMQT_mercen");
+			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Duran");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Baker");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Folke");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Avendel");
@@ -907,7 +907,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_p4_off":
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
 			{
 				dialog.text = "Claude Durand no es un oficial, sino un mercenario despiadado, así que elige otra víctima.";
 				link.l1 = "";
@@ -1083,7 +1083,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_o6":
-			dialog.text = "  Hagámoslo rápido antes de que aparezca la Inquisición Española. ¿Sangre u oro?";
+			dialog.text = "Hagámoslo rápido antes de que aparezca la Inquisición Española. ¿Sangre u oro?";
 			
 			if (PCharDublonsTotal() >= 25000)
 			{
@@ -1103,7 +1103,7 @@ void ProcessDialogEvent()
 		case "joruba_o6_blood":
 			dialog.text = "Di el nombre.";
 			
-			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "FMQT_mercen");
+			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Duran");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Baker");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Folke");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Avendel");
@@ -1135,14 +1135,14 @@ void ProcessDialogEvent()
 				AddDialogExitQuestFunction("ChickenGod_KickedFromTemple");
 				break;
 			}
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
 			{
 				dialog.text = "Claude Durand no es un oficial, sino un mercenario despiadado, así que elige otra víctima.";
 				link.l1 = "";
 				link.l1.go = "exit";
 				break;
 			}
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
 			{
 				Achievment_Set("ach_CL_116");
 			}
@@ -1204,7 +1204,7 @@ void ProcessDialogEvent()
 		
 		case "joruba_final_4":
 			dialog.text = "Bueno, todos necesitan desahogarse de vez en cuando, ¿no es así? Estoy realmente contento de que hayas venido aquí porque, gracias a ti, finalmente puedo partir de este mundo. Oro, tripulación, equipo y un barco, amigo mío. ¿Recuerdas? ¿Te suena familiar? Eso es todo lo que necesitaba, y tú lo proporcionaste todo.";
-			link.l1 = "Eres bienvenido. Sin embargo, eso aún no aclara tu peculiar manera de hablar y tus casi divinos poderes. ¡Si eres tan todopoderoso, podrías haber conjurado tu propio barco, tripulación y oro hace mucho tiempo!";
+			link.l1 = "De nada. Sin embargo, eso aún no aclara tu peculiar manera de hablar y tus casi divinos poderes. ¡Si eres tan todopoderoso, podrías haber conjurado tu propio barco, tripulación y oro hace mucho tiempo!";
 			link.l1.go = "joruba_final_5";
 		break;
 		
@@ -1225,7 +1225,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_insult":
-			dialog.text = "  Parece que todos los tratos están cancelados. Es hora de irnos, capitán. ";
+			dialog.text = "Parece que todos los tratos están cancelados. Es hora de irnos, capitán. ";
 			link.l1 = "Hora de que te j... ";
 			link.l1.go = "exit";
 			
@@ -1294,7 +1294,7 @@ void ProcessDialogEvent()
 		
 		case "ChickenGod_TheInquisition_11":
 			dialog.text = "La embriaguez lo mató. Sin embargo, su muerte no resolvió nuestros problemas, porque la herejía se había arraigado en todo el archipiélago, y cientos de personas emprendieron una especie de peregrinación a este antiguo templo.";
-			link.l1 = "  Nunca he visto multitudes de gente aquí antes... ¿Entonces qué, ibas a invadir Aruba y llevarlo a juicio?";
+			link.l1 = "Nunca he visto multitudes de gente aquí antes... ¿Entonces qué, ibas a invadir Aruba y llevarlo a juicio?";
 			link.l1.go = "ChickenGod_TheInquisition_12";
 		break;
 		
@@ -1444,7 +1444,7 @@ bool ChickenGod_TalkedToAmelia() {
 bool ChickenGod_HaveOfficers() {
 	object fakelink;
 	
-	ChickenGod_AddOfficerLink(&fakelink, "", "FMQT_mercen");
+	ChickenGod_AddOfficerLink(&fakelink, "", "Duran");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Baker");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Folke");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Avendel");

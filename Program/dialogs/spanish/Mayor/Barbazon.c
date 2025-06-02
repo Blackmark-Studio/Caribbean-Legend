@@ -105,7 +105,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "I_know_you_good":
-		dialog.text = NPCStringReactionRepeat(GetFullName(pchar) + "¡Qué necesitas esta vez?", "¿Has olvidado algo que decirme? Estoy escuchando.", "¿Cuánto tiempo durará esto... Si no tienes nada que hacer, entonces no molestes a los demás!", "¡Me has pedido que sea educado! ¡Pero exijo lo mismo de ti!", "repeat", 10, npchar, Dialog.CurrentNode);
+		dialog.text = NPCStringReactionRepeat(GetFullName(pchar) + ". ¿Qué necesitas esta vez?", "¿Has olvidado algo? Estoy escuchando.", "¿Cuánto tiempo durará esto?... Si no tienes nada que hacer, ¡entonces no molestes a los demás!", "¡Me has pedido que sea educado! ¡Pero exijo lo mismo de ti!", "repeat", 10, npchar, Dialog.CurrentNode);
 		link.l1 = HeroStringReactionRepeat("No es nada. Solo una visita.", "Nada...", "Está bien...", "Tienes razón. Lo siento.", npchar, Dialog.CurrentNode);
 		link.l1.go = "exit";
 		NextDiag.TempNode = "I_know_you_good";
@@ -268,7 +268,7 @@ void ProcessDialogEvent()
 
 	case "terrax":
 		dialog.text = "¿Qué?! ¡Te arrancaré tu...";
-		link.l1 = " No lo harás, Barbazon. ¡Veamos nuestras cartas! Trabajo para Jan Svenson. He revelado tu conspiración con Jackman. Sé todo, lo que planeabas y qué papel tenías también. Jackman y su hermano están muertos, el primero mató a Blaze Sharp y eso determinó su destino, el segundo no fue lo suficientemente hablador, me temo...";
+		link.l1 = "No lo harás, Barbazon. ¡Veamos nuestras cartas! Trabajo para Jan Svenson. He revelado tu conspiración con Jackman. Sé todo, lo que planeabas y qué papel tenías también. Jackman y su hermano están muertos, el primero mató a Blaze Sharp y eso determinó su destino, el segundo no fue lo suficientemente hablador, me temo...";
 		link.l1.go = "terrax_1";
 		break;
 
@@ -288,7 +288,7 @@ void ProcessDialogEvent()
 		dialog.text = "¿Qué quieres de mí? ¿Dinero? ¿Cuánto?";
 		if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie")) // Акула жив
 		{
-			link.l1 = " Oh, no, déjaselo a tus agentes sin cerebro. Necesito algo diferente. Necesito tu voto para Steven Dodson.";
+			link.l1 = "Oh, no, déjaselo a tus agentes sin cerebro. Necesito algo diferente. Necesito tu voto para Steven Dodson.";
 		}
 		else
 		{
@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "    Sé más    cortés conmigo la próxima vez que nos veamos. Créeme, 'chico', nos volveremos a encontrar, y más de una vez, supongo. No olvides, tengo a todos los barones piratas de mi lado. Adiós, Barbazon...   ";
+				link.l1 = "Sé más cortés conmigo la próxima vez que nos veamos. Créeme, 'chico', nos volveremos a encontrar, y más de una vez, supongo. No olvides, tengo a todos los barones piratas de mi lado. Adiós, Barbazon...";
 				link.l1.go = "terrax_9";
 			}
 		}
@@ -428,7 +428,7 @@ void ProcessDialogEvent()
 		if (rand(3) == 1)
 		{
 
-			dialog.text = "Bueno, " + pchar.name + ", ya sabes, no funciona así. Vuelve con el dinero y obtendrás a tu debilucho, ja-ja.";
+			dialog.text = "Bueno, " + pchar.name + ", no funciona así. Vuelve con el dinero y obtendrás a tu debilucho, ja-ja.";
 			link.l1 = "Está bien. Nos vemos.";
 			link.l1.go = "CapComission2_4";
 		}
@@ -690,7 +690,7 @@ void ProcessDialogEvent()
 	case "Marginpassenger_offer":
 		pchar.GenQuest.Marginpassenger.Goods = GOOD_EBONY + rand(makeint(GOOD_MAHOGANY - GOOD_EBONY));
 		pchar.GenQuest.Marginpassenger.GoodsQty = 200 + rand(10) * 10;
-		switch (drand(1))
+		switch (hrand(1))
 		{
 		case 0: // бухта на южном мейне
 			SelectSouthshore();
@@ -831,7 +831,7 @@ void SelectSouthshore()
 
 void SelectSouthcity()
 {
-	switch (drand(2))
+	switch (hrand(2))
 	{
 	case 0:
 		pchar.GenQuest.Marginpassenger.Southcity = "Maracaibo";

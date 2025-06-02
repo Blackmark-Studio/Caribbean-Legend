@@ -14,8 +14,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "work_1":  // работа на благо короны - линейка нации
 			if (CheckAttribute(npchar, "notQuestLine"))
 			{
-                dialog.text = "Lamentablemente no puedo considerarte para un trabajo. No eres alguien con quien quiero trabajar en este momento. Adiós.";
-                link.l1 = "No puedes estar hablando en serio... pero está bien.";
+                dialog.text = "Lamentablemente, no puedo considerarte para un trabajo. No eres alguien con quien quisiera trabajar en este momento. Adiós.";
+                link.l1 = "No puede estar hablando en serio... Pero en fin, como quiera.";
                 link.l1.go = "exit";
 				break;
 			}                   

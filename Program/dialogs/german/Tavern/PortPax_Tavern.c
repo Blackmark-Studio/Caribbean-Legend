@@ -12,6 +12,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Sag mir, hat ein Galeone namens 'Santa Margarita' in letzter Zeit in deiner Kolonie Halt gemacht? Vielleicht als Preis eines Freibeuters?";
                 link.l1.go = "guardoftruth";
 			}
+			//--> Украденное воспоминание
+			if (CheckAttribute(pchar, "questTemp.UV_DialogCitizen"))
+			{
+				link.l1 = "Hat Tristan Renier hier vorbeigeschaut?";
+				link.l1.go = "UV_DialogTavern";
+			}
+			//<-- Украденное воспоминание
 		break;
 		
 		case "guardoftruth":
@@ -21,6 +28,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddQuestRecord("Guardoftruth", "7");
 			pchar.questTemp.Guardoftruth = "tortuga";
 		break;
+		
+		//--> Украденное воспоминание
+		case "UV_DialogTavern":
+			dialog.text = "Tristan? Ja, er war hier. Und tatsächlich – er ist immer in einem der Zimmer.";
+			link.l1 = "Ausgezeichnet, dann komme ich gerade rechtzeitig"+GetSexPhrase("","e")+". Ich habe eine dringende Angelegenheit mit ihm zu besprechen – ich fürchte, ich muss seine Ruhe stören.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("UV_GoldSeagull_RoomInTavern");
+			DelLandQuestMark(npchar);
+		break;
+		//<-- Украденное воспоминание
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

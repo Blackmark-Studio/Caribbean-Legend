@@ -1,4 +1,4 @@
 Debuger_1
 {
-Наш город  @<GetCN(city)> в осаде!
+Nasze miasto @<GetCN(city)> jest oblężone!
 }

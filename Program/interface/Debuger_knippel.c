@@ -703,7 +703,7 @@ void CalculateInfoDataF14()
 
     LAi_SetCharacterUseBullet(mc, "cartridge");
 
-    SelAllPerksToChar(mc, false);
+    SetAllPerksToChar(mc, false);
 	
 	totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
 	
@@ -777,7 +777,7 @@ void CalculateInfoDataF15()
 
     LAi_SetCharacterUseBullet(mc, "cartridge");
 
-    SelAllPerksToChar(mc, false);
+    SetAllPerksToChar(mc, false);
 	
 	totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
 	

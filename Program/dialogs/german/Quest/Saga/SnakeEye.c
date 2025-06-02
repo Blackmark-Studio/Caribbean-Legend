@@ -21,23 +21,23 @@ void ProcessDialogEvent()
 				break;
 			}
 			dialog.text = "Grüße, mein blasser Freund.";
-			link.l1 = "Ich freue mich auch, dich zu sehen, Schlangenauge.";
+			link.l1 = "Ich freue mich auch, dich zu sehen, Snake Eye.";
 			link.l1.go = "exit";
 			if (CheckAttribute(npchar, "quest.amulet") && CheckCharacterItem(pchar, pchar.questTemp.Saga.BaronReturn.Indian) && CheckCharacterItem(pchar, pchar.questTemp.Saga.BaronReturn.Amulet) && CheckCharacterItem(pchar, pchar.questTemp.Saga.BaronReturn.Obereg))
 			{
-				link.l2 = "Ich habe euch die Amulette gebracht, nach denen ihr gefragt habt. Lassen uns handeln.";
+				link.l2 = "Ich habe dir die Amulette gebracht, nach denen du gefragt hast. Lassen uns handeln.";
 				link.l2.go = "SnakeEye_potion";
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC")) // был в LSC
 			{
 				if (CheckAttribute(npchar, "quest.LSC_hello") && CheckCharacterItem(pchar, "buben"))
 				{
-					link.l2 = "Ich habe deine Tamburin gefunden, Schlangenauge. Schau es dir an.";
+					link.l2 = "Ich habe deine Tamburin gefunden, Snake Eye. Schau es dir an.";
 					link.l2.go = "LSC_buben";
 				}
 				if (CheckAttribute(npchar, "quest.LSC_tube") && CheckCharacterItem(pchar, "smoking_tube"))
 				{
-					link.l2 = "Ich habe eine interessante Indianerpfeife gefunden, Schlangenauge. Schau mal.";
+					link.l2 = "Ich habe eine interessante Indianerpfeife gefunden, Snake Eye. Schau mal.";
 					link.l2.go = "LSC_tube";
 				}
 				if (!CheckAttribute(npchar, "quest.LSC_hello"))
@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 				}
 				if (CheckAttribute(npchar, "quest.LSC_hello") && pchar.questTemp.Saga.BaronReturn == "shamane")
 				{
-					link.l3 = "Schlangenauge, ich brauche deine Hilfe.";
+					link.l3 = "Snake Eye, ich brauche deine Hilfe.";
 					link.l3.go = "Saga_nathaniel";
 				}
 			}		
@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SnakeEye_3":
-			dialog.text = "Wenn Kukulcan den Habicht gefressen hat, könnte er ihn überall ausspucken. Vielleicht sogar in einer anderen Welt. Kukulcan hat mich dreimal gefressen. Und jedes Mal war ich an verschiedenen Orten. Vor langer Zeit bin ich hierher gekommen und habe beschlossen, kein Risiko mehr einzugehen. Ich bin nicht in Kukulcans Mund gegangen und ich weiß nicht, wo er seine Opfer ausspuckt.";
+			dialog.text = "Wenn Kukulcan den Hawk gefressen hat, könnte er ihn überall ausspucken. Vielleicht sogar in einer anderen Welt. Kukulcan hat mich dreimal gefressen. Und jedes Mal war ich an verschiedenen Orten. Vor langer Zeit bin ich hierher gekommen und habe beschlossen, kein Risiko mehr einzugehen. Ich bin nicht in Kukulcans Mund gegangen und ich weiß nicht, wo er seine Opfer ausspuckt.";
 			link.l1 = "Jesus, das geht über mein Verständnis hinaus! Sagst du mir, dass die Steinidole Menschen weit weg teleportieren können?";
 			link.l1.go = "SnakeEye_4";
 		break;
@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 		
 		case "SnakeEye_5":
 			dialog.text = "Um Mitternacht beginnt das Idol zu leben und wird zu Gold. In diesem Moment lebt der Geist von Kukulcan in ihm. Fürchte dich, ihm nahe zu kommen, sonst könntest du den Sonnenaufgang an einem anderen Ort sehen. Sogar die Sterne können ihre Plätze am Himmel wechseln. Du triffst diejenigen, die noch nicht geboren wurden, oder siehst die Geburt von denen, die schon lange gestorben sind oder überhaupt nicht geboren wurden.";
-			link.l1 = "Was zum... Rätsel und nochmals Rätsel... Du faszinierst mich, Schlangenauge. Du hast gesagt, dass du drei Begegnungen mit Kukulcan, dem Gott an den du glaubst, überlebt hast. Warum versuche ich nicht mein Glück mit dem Idol des Gottes, an den ich nicht glaube?";
+			link.l1 = "Was zum... Rätsel und nochmals Rätsel... Du faszinierst mich, Snake Eye. Du hast gesagt, dass du drei Begegnungen mit Kukulcan, dem Gott an den du glaubst, überlebt hast. Warum versuche ich nicht mein Glück mit dem Idol des Gottes, an den ich nicht glaube?";
 			link.l1.go = "SnakeEye_6";
 		break;
 		
@@ -99,7 +99,7 @@ void ProcessDialogEvent()
 		
 		case "SnakeEye_7":
 			dialog.text = "So nennen Feinde mein Volk, das ich nie wieder sehen werde. Der Trank stellt Kraft und Ausdauer wieder her, heilt auch und schützt dich vor starken Giften. Du brauchst mehrere Flaschen, aber ich habe nur noch drei übrig.\nEs gab vier Flaschen, aber ich habe eine an einem seltsamen Ort verloren, es sieht aus wie ein Friedhof der Schiffe der Weißen. Dort begann meine Reise in dieser Welt. Vielleicht hat Kukulcan den Kapitän dort ausgespuckt. Wenn das so ist, beneide ich ihn nicht.";
-			link.l1 = "Wo sind wir? Der Schiffsfriedhof?";
+			link.l1 = "Was ist das für ein Ort? Der Schiffsfriedhof?";
 			link.l1.go = "SnakeEye_8";
 		break;
 		
@@ -110,17 +110,17 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SnakeEye_9":
-			Log_Info("You have received a white pearl");
+			Log_Info("Du hast eine weiße Perle erhalten");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "jewelry52");
-			dialog.text = "Wenn du den Kapitän lebend findest, könnte er sehr krank sein. Ich hatte keine Zeit, ihm den Trank zu geben. Such dort nach meiner Pauke. Ich habe sie von meinem Großvater bekommen. Es gibt viele Dinge in der Tasche, die ich verloren habe, aber ich brauche nur die Pauke. Es ist schwierig, ohne sie mit den Geistern zu sprechen.";
+			dialog.text = "Wenn du den Kapitän lebend findest, könnte er sehr krank sein. Ich hatte keine Zeit, ihm den Trank zu geben. Such dort nach meiner Tamburin. Ich habe sie von meinem Großvater bekommen. Es gibt viele Dinge in der Tasche, die ich verloren habe, aber ich brauche nur die Tamburin. Es ist schwierig, ohne sie mit den Geistern zu sprechen.";
 			link.l1 = "Nun, dieser Ort klingt sehr interessant! Hoffen wir, dass Hawk dorthin teleportiert wurde... Gibst du mir deinen Trank?";
 			link.l1.go = "SnakeEye_10";
 		break;
 		
 		case "SnakeEye_10":
 			dialog.text = "Ich werde es dir geben. Aber du gibst mir im Austausch drei lokale Amulette: "+XI_ConvertString(pchar.questTemp.Saga.BaronReturn.Indian)+", "+XI_ConvertString(pchar.questTemp.Saga.BaronReturn.Amulet)+" und "+XI_ConvertString(pchar.questTemp.Saga.BaronReturn.Obereg)+". Eine Flasche für jedes Amulett. So ist es fair. Komm zurück, wenn du alle Amulette hast. Dann tauschen wir sie aus. Denk nicht, dass ich gierig bin. Oder, vielleicht überdenkst du es, während du nach Amuletten suchst.";
-			link.l1 = "Ich werde nicht so denken. Warte auf mich, Schlangenauge, ich komme bald zurück.";
+			link.l1 = "Ich werde nicht so denken. Warte auf mich, Snake Eye, ich komme bald zurück.";
 			link.l1.go = "SnakeEye_11";
 		break;
 		
@@ -162,17 +162,17 @@ void ProcessDialogEvent()
 			RemoveItems(pchar, pchar.questTemp.Saga.BaronReturn.Amulet, 1);
 			RemoveItems(pchar, pchar.questTemp.Saga.BaronReturn.Obereg, 1);
 			TakeNItems(pchar, "Ultimate_potion", 3);
-			Log_Info("You have given amulets");
-			Log_Info("You have received three versatile potions");
+			Log_Info("Du hast die Amulette gegeben");
+			Log_Info("Du hast drei vielseitige Tränke erhalten");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Nimm diese Tränke. Denke daran, dass du einen sofort nach dem Ausspucken durch Kukulcan trinken musst, sonst stirbst du oder bleibst sehr, sehr krank. Denke auch daran, nicht in den Laderaum zu gehen, wo die Bleichgesichter ihre Vorräte lagern. Es gibt einen anderen Weg, das Schiff zu verlassen. Tatsächlich gibt es zwei Wege. Finde die rote Frau in der ersten Nacht, das ist sehr wichtig. Das ist alles, was ich dir sagen kann.";
-			link.l1 = "Ich werde das behalten, Rothaut-Bruder.";
+			link.l1 = "Ich werde das im Kopf behalten, Rothaut-Bruder.";
 			link.l1.go = "SnakeEye_potion_2";
 		break;
 		
 		case "SnakeEye_potion_2":
 			dialog.text = "Dann geh. Berühre Kukulcan um Mitternacht und es wird dich fressen. Ich werde Geister rufen, um dich zu führen.";
-			link.l1 = "Danke dir, Schlangenauge. Mach dir keine Sorgen um mich, alles wird gut gehen. Wir werden uns wiedersehen!";
+			link.l1 = "Danke dir, Snake Eye. Mach dir keine Sorgen um mich, alles wird gut gehen. Wir werden uns wiedersehen!";
 			link.l1.go = "SnakeEye_potion_3";
 		break;
 		
@@ -202,7 +202,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LSC_hello_1":
-			dialog.text = "Hat Monkitekuvri euch dort getroffen?";
+			dialog.text = "Hat Monkitekuvri dich dort getroffen?";
 			link.l1 = "Hm. Monkitekuvri? Wer ist das?";
 			link.l1.go = "LSC_hello_2";
 		break;
@@ -227,7 +227,7 @@ void ProcessDialogEvent()
 		
 		case "LSC_hello_5":
 			dialog.text = "Ja, mein bleicher Freund. Meine Reise endete auch hier.";
-			link.l1 = "Die Idole teleportieren im Kreis... Aber was ist der Sinn davon? Hast du irgendwelche Ideen, Schlangenauge?";
+			link.l1 = "Die Idole teleportieren im Kreis... Aber was ist der Sinn davon? Hast du irgendwelche Ideen, Snake Eye?";
 			link.l1.go = "LSC_hello_6";
 		break;
 		
@@ -266,7 +266,7 @@ void ProcessDialogEvent()
 		
 		case "LSC_hello_10":
 			dialog.text = "Such danach, mein blasser Freund. Ich bitte dich inständig. Ohne mein Tamburin höre ich die Geister nicht gut.";
-			link.l1 = "In Ordnung, Schlangenauge. Wir sehen uns!";
+			link.l1 = "In Ordnung, Snake Eye. Wir sehen uns!";
 			link.l1.go = "exit";
 		break;
 		
@@ -280,7 +280,7 @@ void ProcessDialogEvent()
 		
 		case "LSC_buben_1":
 			GiveItem2Character(pchar, "pistol7");
-			Log_Info("You have received a Colt revolver");
+			Log_Info("Du hast einen Colt-Revolver erhalten");
 			PlaySound("interface\important_item.wav");
 			TakeNItems(pchar, "shotgun_cartridge", 3);
 			TakeNItems(pchar, "GunCap_colt", 3);
@@ -291,7 +291,7 @@ void ProcessDialogEvent()
 		
 		case "LSC_buben_2":
 			dialog.text = "Es heißt Colt Revolver. Keine andere Pistole wie diese zu deiner Zeit. Einfach zu bedienen, den Hahn heben und den Abzug ziehen. Es schießt gut.";
-			link.l1 = "Danke! Danke, Schlangenauge! Es wird eine nette Überraschung für meine Feinde sein... Schade, dass es nur drei Anklagen gibt...";
+			link.l1 = "Danke! Danke, Snake Eye! Es wird eine nette Überraschung für meine Feinde sein... Schade, dass es nur drei Ladungen gibt...";
 			link.l1.go = "LSC_buben_3";
 		break;
 		
@@ -314,16 +314,16 @@ void ProcessDialogEvent()
 			RemoveItems(pchar, "smoking_tube", 1);
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Das ist meine Pfeife, mein Bruder. Ich bin froh, dass du sie gefunden hast. Und ich kann dir ein weiteres Geschenk dafür geben. Das ist ein kluges Buch der Bleichgesichter aus meiner Zeit. Ich kann es nicht verstehen. Versuche, einen klugen Mann zu finden, der dieses Buch lesen und verstehen kann.";
-			link.l1 = "Danke dir, Schlangenauge. Ich glaube, ich kenne jemanden, der sich dafür interessieren wird.";
+			link.l1 = "Danke dir, Snake Eye. Ich glaube, ich kenne jemanden, der sich dafür interessieren wird.";
 			link.l1.go = "LSC_tube_1";
 		break;
 		
 		case "LSC_tube_1":
 			GiveItem2Character(pchar, "chemistry");
-			Log_Info("You have received a Lavoisier's chemistry textbook");
+			Log_Info("Du hast ein Lehrbuch der Chemie von Lavoisier erhalten");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Gib es ihm, weißer Bruder. Dieses Buch birgt große Geheimnisse der Bleichgesichts-Weisheit.";
-			link.l1 = "Gut. Auf Wiedersehen, Schlangenauge!";
+			link.l1 = "Gut. Auf Wiedersehen, Snake Eye!";
 			link.l1.go = "exit";
 		break;
 		
@@ -348,7 +348,7 @@ void ProcessDialogEvent()
 		
 		case "Saga_nathaniel_3":
 			dialog.text = "Hinterlasse den gefesselten Kapitän in meiner Hütte, weißer Bruder, und gehe ohne Sorge. Nimm auch seine Frau mit, niemand darf meine Riten sehen.";
-			link.l1 = "Gut, Schlangenauge. Ich nehme Danielle mit mir. Bis dann!";
+			link.l1 = "Gut, Snake Eye. Ich nehme Danielle mit mir. Bis dann!";
 			link.l1.go = "Saga_nathaniel_4";
 		break;
 		
@@ -384,7 +384,7 @@ void ProcessDialogEvent()
 		
 		case "calendar_3":
 			dialog.text = "Sehr interessant. Wie wissen Sie das?";
-			link.l1 = "Es ist eine lange Geschichte, Schlangenauge. Ich verstehe auch, wie du hierher gekommen bist. Du bist noch nicht einmal geboren, oder?";
+			link.l1 = "Es ist eine lange Geschichte, Snake Eye. Ich verstehe auch, wie du hierher gekommen bist. Du bist noch nicht einmal geboren, oder?";
 			link.l1.go = "calendar_4";
 		break;
 		
@@ -402,7 +402,7 @@ void ProcessDialogEvent()
 		
 		case "calendar_6":
 			dialog.text = "";
-			link.l1 = "Aber etwas ist mit den Portalen passiert und sie haben angefangen, Menschen im Kreis anstatt nach Tayasal zu teleportieren. Und deshalb bin ich hier, ich brauche deinen Rat, Schlangenauge.";
+			link.l1 = "Aber etwas ist mit den Portalen passiert und sie haben angefangen, Menschen im Kreis anstatt nach Tayasal zu teleportieren. Und deshalb bin ich hier, ich brauche deinen Rat, Snake Eye.";
 			link.l1.go = "calendar_7";
 		break;
 		
@@ -447,7 +447,7 @@ void ProcessDialogEvent()
 		
 		case "calendar_12":
 			dialog.text = "Ich muss dir etwas sagen, weißer Bruder.";
-			link.l1 = "Haben Sie etwas gefunden? Oder haben Sie eine Vermutung?";
+			link.l1 = "Hast du etwas gefunden? Oder hast du eine Vermutung?";
 			link.l1.go = "calendar_13";
 		break;
 		
@@ -459,7 +459,7 @@ void ProcessDialogEvent()
 		
 		case "calendar_14":
 			dialog.text = "Die Kukulcan-Statue hat zwei Eisenklammern und eine Vertiefung. Die Vertiefung hat eine runde, glatte Form. Sie ist auf das runde und flache Objekt von Ihrer Ledertkarte ausgerichtet.";
-			link.l1 = "Was ist los?";
+			link.l1 = "Was ist es?";
 			link.l1.go = "calendar_15";
 		break;
 		
@@ -488,20 +488,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "calendar_19":
-			dialog.text = "Er hat es mir gesagt. Er war ein großer Freund von Miskito und er lebt im Dorf Blueweld. Sein Name ist Waldteufel. Ich kenne ihn, du musst ihn auch kennen.";
-			link.l1 = "Jan Svenson? Warte mal... rot bemalte Steine, sagst du? Es sieht so aus, als ob ich gerade sehr viel Glück hatte. Schau mal, Schamane, schau dir diese roten Steine an, die ich habe! Der Waldteufel hat sie mir geschenkt.";
+			dialog.text = "Er hat es mir gesagt. Er war ein großer Freund von Miskito und er lebt im Dorf Blueweld. Sein Name ist Forest Devil. Ich kenne ihn, du musst ihn auch kennen.";
+			link.l1 = "Jan Svenson? Warte mal... rot bemalte Steine, sagst du? Es sieht so aus, als ob ich gerade sehr viel Glück hatte. Schau mal, Schamane, schau dir diese roten Steine an, die ich habe! Der Forest Devil hat sie mir geschenkt.";
 			link.l1.go = "calendar_20";
 		break;
 		
 		case "calendar_20":
-			Log_Info("You have given ornamental pattern fragments");
+			Log_Info("Du hast die ornamentale Musterfragmente gegeben");
 			RemoveItems(pchar, "splinter_js", 1);
 			RemoveItems(pchar, "splinter_nh", 1);
 			RemoveItems(pchar, "splinter_mt", 1);
 			RemoveItems(pchar, "splinter_zm", 1);
 			RemoveItems(pchar, "splinter_jb", 1);
 			dialog.text = "Das müssen sie sein. Fünf Steine. Schau mal, weißer Bruder. Wenn du sie so anordnest... (zusammenfügt)";
-			link.l1 = "..., Freund.";
+			link.l1 = "...";
 			link.l1.go = "calendar_21";
 		break;
 		
@@ -525,7 +525,7 @@ void ProcessDialogEvent()
 		
 		case "calendar_24":
 			dialog.text = "Überlass es mir und den Ahnengeistern, weißer Bruder. Es sind nicht nur einfache Steine. Es ist ein Wundergegenstand. Komm in drei Nächten wieder, weißer Bruder. Ich rufe die Geister, Weisheit und Fähigkeiten des Lebens und versuche, die Scherben zu vereinen.";
-			link.l1 = "Unglaublich... Wie kann ich dir jemals danken, Schlangenauge?";
+			link.l1 = "Unglaublich... Wie kann ich dir jemals danken, Snake Eye?";
 			link.l1.go = "calendar_25";
 		break;
 		
@@ -563,21 +563,21 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "calendar_maya");
 			sld = ItemsFromID("calendar_maya");
 			sld.shown = "0";
-			Log_Info("You have received a Maya calendar");
+			Log_Info("Du hast einen Maya-Kalender erhalten");
 			dialog.text = "Nimm es, weißer Kapitän. Leg es in die Vertiefung der Statue. Dann spuckt es dich vielleicht in der indischen Stadt aus.";
-			link.l1 = "Wie kann ich Ihnen danken, Schlangenauge?";
+			link.l1 = "Wie kann ich dir danken, Snake Eye?";
 			link.l1.go = "calendar_32";
 		break;
 		
 		case "calendar_32":
 			dialog.text = "Sag 'Danke'. Die Götter leiten dich auf deinem Weg, auch wenn du es nicht siehst. Die Weißen sagen - Schicksal. Kukulcan hat dich gerufen, die Götter leiten dich. Geh jetzt. Tu deine Arbeit und lass gute Geister dich leiten.";
-			link.l1 = "Danke dir, Schlangenauge! Ich werde dich nie vergessen.";
+			link.l1 = "Danke dir, Snake Eye! Ich werde dich nie vergessen.";
 			link.l1.go = "calendar_33";
 		break;
 		
 		case "calendar_33":
 			TakeNItems(pchar, "Ultimate_potion", 4);
-			Log_Info("You have received four versatile potions");
+			Log_Info("Du hast vier vielseitige Tränke erhalten");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Warte. Wir haben fast das Wichtigste vergessen. Kukulcan frisst den Menschen und verzehrt sein Leben. Ich habe dir Tränke gemacht. Comanche-Tränke. Ich gebe sie dir. Ich habe vier Flaschen gemacht, damit du drei treue und mutige Gefährten mitnehmen kannst.";
 			link.l1 = "Du hast so viel für mich getan, rothäutiger Bruder...";

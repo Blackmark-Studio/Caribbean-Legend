@@ -399,7 +399,7 @@ void ProcessDialogEvent()
 			pchar.quest.Oil_fail.win_condition.l1 = "NPC_Death";
 			pchar.quest.Oil_fail.win_condition.l1.character = "Sergio";
 			pchar.quest.Oil_fail.function = "Oil_TradeFail";
-			AddQuestRecord("Unique_Goods", "4");
+			AddQuestRecordInfo("Unique_Goods", "4");
 		break;
 		
 		case "oil_trade":
@@ -523,7 +523,7 @@ void ProcessDialogEvent()
 			link.l1 = "Excellent, Señor Sergio. Don't let me down.";
 			link.l1.go = "UpgradeOil_Agreed_1";
 			RemoveDublonsFromPCharTotal(3000);
-			AddQuestRecord("Unique_Goods", "4_1");
+			AddQuestRecordInfo("Unique_Goods", "4_1");
 			pchar.questTemp.UpgradeOil = true;
 			pchar.questTemp.SergioOilBlock = true;
 			DeleteAttribute(pchar, "questTemp.SergioOilPotom");

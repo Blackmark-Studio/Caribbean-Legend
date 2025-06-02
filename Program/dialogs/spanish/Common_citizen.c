@@ -158,7 +158,7 @@ void ProcessDialogEvent()
 				// --> квестовый генератор мэра, поиск шпиёна на улице. eddy
 				if (CheckAttribute(pchar, "GenQuest.SeekSpy.City") && pchar.location == (npchar.city + "_town"))
 	            {
-					link.l4 = NPCharSexPhrase(npchar,LinkRandPhrase("¡Espera! Dime quién eres, ¡ahora mismo! Estoy buscando a un espía enemigo por petición del gobernador de "+XI_ConvertString("Colonia"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+"¡!","¡Alto! Actúo en interés de la ciudad "+XI_ConvertString("Colonia"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+"por orden del gobernador. Estoy buscando por la ciudad a un agente hostil.","¡Alto, amigo! El gobernador local "+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].lastname+" quiere encontrar a un espía en la ciudad."),LinkRandPhrase("¡Espera, señora! Dime quién eres, ¡ahora mismo! Estoy buscando a un espía enemigo a petición del gobernador de "+XI_ConvertString("Colonia"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+"¡!","Mujer, ¡debo detenerte! Actúo en interés del pueblo "+XI_ConvertString("Colonia"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+" por orden del gobernador. Estoy buscando en la ciudad a un agente hostil","¡Quédate quieta, belleza! Un gobernador local "+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].lastname+" quiere encontrar un espía en la ciudad..."));
+					link.l4 = NPCharSexPhrase(npchar,LinkRandPhrase("¡Espera! Dime quién eres, ¡ahora mismo! Estoy buscando a un espía enemigo por petición del gobernador de "+XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+"¡!","¡Alto! Actúo en interés de la ciudad "+XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+"por orden del gobernador. Estoy buscando por la ciudad a un agente hostil.","¡Alto, amigo! El gobernador "+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].lastname+" quiere encontrar a un espía en la ciudad."),LinkRandPhrase("¡Espera, señora! Dime quién eres, ¡ahora mismo! Estoy buscando a un espía enemigo a petición del gobernador de "+XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+"¡!","Mujer, ¡debo detenerte! Actúo en interés del pueblo "+XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+" por orden del gobernador. Estoy buscando en la ciudad a un agente hostil","¡Quédate quieta, belleza! El gobernador "+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].lastname+" quiere encontrar un espía en la ciudad..."));
 					link.l4.go = "SitySpy";
 				}
 				// <-- квестовый генератор мэра, поиск шпиёна на улице
@@ -174,13 +174,13 @@ void ProcessDialogEvent()
 				// Квестовый генератор священника. Квест №2. Warship -->
 				if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
 	            {
-					link.l5 = LinkRandPhrase("¿Estás consciente?","¿Sabías tú?","¿Has oído?")+"¿que una iglesia local ha sido saqueada recientemente?");
+					link.l5 = LinkRandPhrase("¿Estás consciente?","¿Sabías tú?","¿Has oído?")+"¿que la iglesia ha sido saqueada recientemente?");
 					link.l5.go = "Citiz_GenQuest_Church_2_1";
 				}
 				// <-- Квестовый генератор священника. Квест №2.
 				
                 dialog.Text = NPCharRepPhrase(npchar,PCharRepPhrase(LinkRandPhrase("Oh, eres tú, "+GetFullName(Pchar)+" "+GetSexPhrase(", viejo sinvergüenza","- damisela audaz")+"","Me alegra verte de nuevo, "+GetSexPhrase("viejo amigo","belleza")+" "+Pchar.name,"Oh, es el buen viejo "+GetSexPhrase("Capitán","señora")+" "+GetFullName(Pchar))+LinkRandPhrase("¡.Pensé que estabas muerto!",". Y, ciertamente, "+GetSexPhrase("borracho como siempre.","ya bajo mal tiempo.")+"",". Y, como veo, ¡aún en libertad!")+LinkRandPhrase("Entonces, habla lo que piensas: ¿qué necesitas?","¿Qué necesitas esta vez?","¿Me estás molestando de nuevo por nada?"),LinkRandPhrase(TimeGreeting()+", Capitán ","Hola, "+GetAddress_Form(NPChar)+" ","Te saludo, Capitán ")+GetFullName(Pchar)+LinkRandPhrase(". ¿Qué podría "+GetSexPhrase("un caballero tan gallardo","una dama tan audaz")+", ¿como? ¿Podrías necesitar algo de mí?","¿Para qué has venido?",". ¿Qué quieres saber esta vez?")),PCharRepPhrase(LinkRandPhrase("Hola, Capitán ","Hola. Oh, eres tú "+GetAddress_Form(NPChar)+" ","Oh, Capitán ")+GetFullName(Pchar)+LinkRandPhrase(", pensé"+NPCharSexPhrase(NPChar," "," ")+"nunca nos volveríamos a encontrar,",", no puedo decir que estoy contento"+NPCharSexPhrase(NPChar," "," ")+"verte, pero",", Veo, todavía estás vivo. Lamentable. Entonces,")+LinkRandPhrase("¿qué necesitas?","¿a qué has venido?"," ¿qué puedo yo "+NPCharSexPhrase(NPChar,"¿en qué puedo ayudarte?","¿en qué puedo ayudarte?")),LinkRandPhrase(TimeGreeting()+", Capitán "+GetFullName(Pchar)+". ¿Con qué puedo ayudarte?","Oh, si no es"+GetSexPhrase("","")+" Capitán "+GetFullName(Pchar)+"¡ ¿Qué te gustaría saber esta vez?","Hola, "+GetAddress_Form(NPChar)+" "+Pchar.lastname+". ¿Querías algo?")));                         
-	   			link.l6 = PCharRepPhrase(RandPhraseSimple("No, estás oyendo cosas. Me voy ahora.","No, nada - Solo me estaba yendo"+GetSexPhrase("","")+" a la taberna."),RandPhraseSimple("No, nada. ¡Buena suerte para ti!","Solo estoy mirando alrededor. Adiós."));
+	   			link.l6 = PCharRepPhrase(RandPhraseSimple("No, estás oyendo cosas. Me voy ahora.","No, nada. Solo me iba a "+GetSexPhrase("","")+" a la taberna."),RandPhraseSimple("No, nada. ¡Buena suerte para ti!","Solo estoy mirando alrededor. Adiós."));
 				link.l6.go = "exit";
 			}
 			NextDiag.TempNode = "First time";
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Meeting":
-		    dialog.Text = NPCharRepPhrase(npchar,LinkRandPhrase("¿Pero no estás mintiendo, Capitán "+GetFullName(Pchar)+"¿?","¿Y qué, "+PChar.name+"¿?","Te recordaré, "+GetFullName(Pchar)+".")+"¿Y ahora, qué es lo que necesitas?",LinkRandPhrase("Un placer conocerte, Capitán "+PChar.name,"Contento"+NPCharSexPhrase(NPChar," "," ")+", conocerle, "+GetAddress_Form(NPChar)+" "+PChar.lastname,"Encantado de conocerte, Capitán "+PChar.name)+". Pero, supongo, viniste aquí por algo más que solo aprender mi nombre?");
+		    dialog.Text = NPCharRepPhrase(npchar,LinkRandPhrase("¿Pero no estás mintiendo, Capitán "+GetFullName(Pchar)+"?","¿Y qué, "+PChar.name+"?","Te recordaré, "+GetFullName(Pchar)+".")+" ¿Y ahora, qué es lo que necesitas?",LinkRandPhrase("Un placer conocerte, Capitán "+PChar.name,"Contento"+NPCharSexPhrase(NPChar," "," ")+", conocerle, "+GetAddress_Form(NPChar)+" "+PChar.lastname,"Encantado de conocerte, Capitán "+PChar.name)+". Pero, supongo, viniste aquí por algo más que solo aprender mi nombre?");
 
             link.l1 = PCharRepPhrase("Quería"+GetSexPhrase("","")+"¡para saber algo sobre este agujero que llamas ciudad!","Quería"+GetSexPhrase("","")+"para saber algo sobre esta ciudad.");
 			link.l1.go = "new question";
@@ -239,27 +239,27 @@ void ProcessDialogEvent()
 			// --> квестовый генератор мэра, поиск шпиёна на улице. eddy
 			if (CheckAttribute(pchar, "GenQuest.SeekSpy.City") && pchar.location == (npchar.city + "_town"))
 	        {
-				link.l4 = NPCharSexPhrase(npchar,LinkRandPhrase("¡Alto ahí! Dime quién eres, ¡ahora mismo! Estoy buscando a un espía enemigo a petición del gobernador de "+XI_ConvertString("Colonia"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+"¡","¡Alto! Actúo en el interés de"+XI_ConvertString("Colonia"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+" por orden del gobernador. Estoy buscando en la ciudad a un agente hostil.","¡Alto, amigo! El gobernador local "+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].lastname+" quiere encontrar a un espía en el pueblo."),LinkRandPhrase("¡Espera, dama! Dime quién eres, ¡ahora mismo! Estoy buscando a un espía enemigo por petición del gobernador de "+XI_ConvertString("Colonia"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+"¡","Mujer, ¡debo detenerte! Actúo en interés de la ciudad "+XI_ConvertString("Colonia"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+"por orden del gobernador. Estoy buscando por la ciudad a un agente hostil.","¡Alto, hermosa mujer! El gobernador local "+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].lastname+" quiere buscar a un espía en el pueblo..."));
+				link.l4 = NPCharSexPhrase(npchar,LinkRandPhrase("¡Alto ahí! Dime quién eres, ¡ahora mismo! Estoy buscando a un espía enemigo a petición del gobernador de "+XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+".","¡Alto! Actúo en el interés de"+XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+" por orden del gobernador. Estoy buscando en la ciudad a un agente hostil.","¡Alto, amigo! El gobernador "+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].lastname+" quiere encontrar a un espía en el pueblo."),LinkRandPhrase("¡Espera, dama! Dime quién eres, ¡ahora mismo! Estoy buscando a un espía enemigo por petición del gobernador de "+XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+".","Mujer, ¡debo detenerte! Actúo en interés de la ciudad "+XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen")+" por orden del gobernador. Estoy buscando por la ciudad a un agente hostil.","¡Alto, hermosa mujer! El gobernador "+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].lastname+" quiere buscar a un espía en el pueblo..."));
 				link.l4.go = "SitySpy";
 			}
 			// <-- квестовый генератор мэра, поиск шпиёна на улице
 			// Квестовый генератор священника. Квест №2. Warship -->
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
 	        {
-				link.l5 = LinkRandPhrase("¿Estás consciente?","¿Has oído","¿Has oído")+" ¿que una iglesia local fue saqueada recientemente?");
+				link.l5 = LinkRandPhrase("¿Estás consciente?","¿Has oído","¿Has oído")+" ¿que la iglesia fue saqueada recientemente?");
 				link.l5.go = "Citiz_GenQuest_Church_2_1";
 			}
 			// <-- Квестовый генератор священника. Квест №2.
 			
-			Link.l6 = PCharRepPhrase(RandPhraseSimple("No, estás oyendo cosas. Me voy ahora.","No, nada - Solo iba a la taberna."),RandPhraseSimple("¡No, nada. ¡Buena suerte para ti!","Solo estoy mirando alrededor. Adiós."));
+			Link.l6 = PCharRepPhrase(RandPhraseSimple("No, estás oyendo cosas. Me voy ahora.","No, nada. Solo iba a la taberna."),RandPhraseSimple("¡No, nada. ¡Buena suerte para ti!","Solo estoy mirando alrededor. Adiós."));
 			Link.l6.go = "exit";
 		break;
 		
 		case "new question":
-            dialog.text = NPCharRepPhrase(npchar,PCharRepPhrase(LinkRandPhrase("Oh sí, estoy casi tan contento"+NPCharSexPhrase(NPChar," "," ")+" verte como una copa de licor. Pregunta lo que quieras.","¿Te gusta hablar, Capitán? Bueno, a mí también... Especialmente con una copa de ron.","Sí, "+PChar.name+"¿?"),LinkRandPhrase("¿Qué necesitas?","Ya veo, Capitán "+PChar.name+". Eres"+GetSexPhrase("","")+" bastante hablador. ","Me has cansado"+GetSexPhrase("","")+" con tus preguntas, Capitán. Mejor ayúdame con el ron.")),PCharRepPhrase(LinkRandPhrase("¿Qué quieres saber "+GetAddress_Form(NPChar)+"?","Te estoy escuchando, Capitán.","Tengo que irme, así que por favor sea rápido, Capitán."),LinkRandPhrase("Siempre contento"+NPCharSexPhrase(NPChar," "," ")+"  tener buena compañía, "+GetAddress_Form(NPChar)+" "+PChar.lastname+". Habla tu mente.","Sí, "+GetAddress_Form(NPChar)+"¿?","¿Te gusta charlar, Capitán? Bueno, a mí también...")));
+            dialog.text = NPCharRepPhrase(npchar,PCharRepPhrase(LinkRandPhrase("Oh sí, estoy casi tan contento"+NPCharSexPhrase(NPChar," "," ")+" verte como una copa de licor. Pregunta lo que quieras.","¿Te gusta hablar, Capitán? Bueno, a mí también... Especialmente con una copa de ron.","¿Sí, "+PChar.name+"?"),LinkRandPhrase("¿Qué necesitas?","Ya veo, Capitán "+PChar.name+". Eres"+GetSexPhrase("","")+" bastante hablador. ","Me has cansado"+GetSexPhrase("","")+" con tus preguntas, Capitán. Mejor ayúdame con el ron.")),PCharRepPhrase(LinkRandPhrase("¿Qué quieres saber "+GetAddress_Form(NPChar)+"?","Te estoy escuchando, Capitán.","Tengo que irme, así que por favor sea rápido, Capitán."),LinkRandPhrase("Siempre contento"+NPCharSexPhrase(NPChar," "," ")+" de tener buena compañía, "+GetAddress_Form(NPChar)+" "+PChar.lastname+". Habla tu mente.","¿Sí, "+GetAddress_Form(NPChar)+"?","¿Te gusta charlar, Capitán? Bueno, a mí también...")));
 
             // homo 25/06/06
-			link.l1 = LinkRandPhrase("¿Qué chismes son populares en la taberna local?","¿Qué está pasando en estas tierras?","¿Qué hay de nuevo en tierra aquí?");
+			link.l1 = LinkRandPhrase("¿Qué chismes son populares en la taberna?","¿Qué está pasando en estas tierras?","¿Qué hay de nuevo en tierra aquí?");
 			link.l1.go = "rumours_citizen";
 			link.l2 = LinkRandPhrase("¿Puede dirigirme allí?","No puedo encontrar el camino a un lugar en particular...","¿Podrías mostrar el camino...?");
 			link.l2.go = "town";  //(перессылка в файл города)
@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 			}
             link.l4 = RandPhraseSimple("¡Tengo asuntos importantes!","Tengo asuntos contigo.");
 			link.l4.go = "quests";  //(перессылка в файл города)
-			link.l5 = PCharRepPhrase(RandPhraseSimple("No, estás oyendo cosas. Me voy ahora.","No, nada - Solo iba camino a la taberna."),RandPhraseSimple("No, nada. ¡Buena suerte para ti!","Solo estoy echando un vistazo. Adiós."));
+			link.l5 = PCharRepPhrase(RandPhraseSimple("No, estás oyendo cosas. Me voy ahora.","No, nada. Solo iba camino a la taberna."),RandPhraseSimple("No, nada. ¡Buena suerte para ti!","Solo estoy echando un vistazo. Adiós."));
 			link.l5.go = "exit";
 		break;
 		
@@ -296,7 +296,7 @@ void ProcessDialogEvent()
 			}
 			if(GetCharacterIndex(NPChar.city + "_TavernKeeper") != -1)
 			{
-				link.l2 = "Sobre el dueño de la taberna local.";
+				link.l2 = "Sobre el dueño de la taberna.";
 				link.l2.go = "RumourAboutOwners_TavernKeeper";
 			}
 			if(GetCharacterIndex(NPChar.city + "_ShipYarder") != -1)
@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 			}
 			if(GetCharacterIndex(NPChar.city + "_Trader") != -1)
 			{
-				link.l4 = "Sobre el dueño de la tienda local.";
+				link.l4 = "Sobre el dueño de la tienda.";
 				link.l4.go = "RumourAboutOwners_Trader";
 			}
 			link.l9 = "No importa, olvídalo.";
@@ -370,15 +370,15 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "No, no he visto nada parecido.";
-				link.l1 = "Ya veo. Bueno - ¡hora de preguntar por ahí!";
+				link.l1 = "Ya veo. Bueno, ¡hora de preguntar por ahí!";
 				link.l1.go = "exit";
 			}
 		break;
 		
 		//============================ Генератор мэра. Квест по розыску шпиона на улице ============================
 		case "SitySpy":
-			dialog.text = NPCStringReactionRepeat(NPCharSexPhrase(npchar,"¿Y qué tiene que ver eso conmigo? ¡Soy un local!","¡Vaya, por qué me molestas con esto? Vivo en esta ciudad y no sé nada de tales cosas!"),NPCharSexPhrase(npchar,"¿Qué quieres de mí otra vez? ¿No te he dicho ya que no soy el espía?!","¿No te dije ya que soy local?!"),NPCharSexPhrase(npchar,"¡Mi querido, eres tú de nuevo! Déjame en paz, soy un local.","¿Por qué me molestas con tus estúpidas preguntas otra vez?"),NPCharSexPhrase(npchar,"¡Otra vez! ¡Esto es un ultraje!","Escucha, solo déjame en paz, ¿vale? ¡Por favor!"),"block",0,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("¿Quién puede confirmar tu declaración?","Oh, lo siento - Ya te había preguntado...","Lo siento, hay tantas personas...","Está bien, está bien...",npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(NPCharSexPhrase(npchar,"¿Y qué tiene que ver eso conmigo? ¡Soy de aquí!","¡Vaya, por qué me molestas con esto? Vivo en esta ciudad y no sé nada de tales cosas!"),NPCharSexPhrase(npchar,"¿Qué quieres de mí otra vez? ¿No te he dicho ya que no soy el espía?!","¿No te dije ya que soy de aquí?!"),NPCharSexPhrase(npchar,"¡Mi querido, eres tú de nuevo! Déjame en paz, soy de aquí.","¿Por qué me molestas con tus estúpidas preguntas otra vez?"),NPCharSexPhrase(npchar,"¡Otra vez! ¡Esto es un ultraje!","Escucha, solo déjame en paz, ¿vale? ¡Por favor!"),"block",0,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("¿Quién puede confirmar tu declaración?","Oh, lo siento, ya te había preguntado...","Lo siento, hay tantas personas...","Está bien, está bien...",npchar,Dialog.CurrentNode);
 		    link.l1.go = DialogGoNodeRepeat("SitySpy_1", "exit", "exit", "exit", npchar, Dialog.CurrentNode);
 			// ==> выбираем подтверждателя
 			int num = FindNearCharacters(npchar, 20.0, -1.0, -1.0, 1.0, false, true);
@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 		break;
 		//=================== ноды квеста мэра. поиск шпиона на улице, опрос свидетеля ==================
 		case "SeekSpy_Checking":
-			dialog.text = "Sí, "+NPCharSexPhrase(&characters[sti(pchar.GenQuest.SeekSpy.BaseIdx)]," es de hecho un local.","ella es de hecho local.");
+			dialog.text = "Sí, "+NPCharSexPhrase(&characters[sti(pchar.GenQuest.SeekSpy.BaseIdx)]," de hecho es de aquí.","ella es de aquí.");
 			link.l1 = RandPhraseSimple("Lo veo"+GetSexPhrase("","")+". Gracias por la ayuda.","Todo despejado. Gracias por la ayuda.");
 			link.l1.go = "SeekSpy_Checking_1";
 		break;
@@ -464,7 +464,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "CitizenFindItem_4":
-			dialog.text = "Sí, por favor hazlo. Y apúrate - recuerda que solo tienes "+sti(NPChar.LifeDay)+" días.";
+			dialog.text = "Sí, por favor hazlo. Y apúrate, recuerda que solo tienes "+sti(NPChar.LifeDay)+" días.";
 			link.l1 = "Recuerdo.";
 			link.l1.go = "exit";
 			PChar.GenQuest.CitizenFindItem.StartQuest = true;
@@ -475,7 +475,7 @@ void ProcessDialogEvent()
 				
 			//sTemp = "randitem" + (rand(1)+1); // Т.е. может получиться, что его вовсе найти не удастся. И это гуд.
 			sTemp = "randitem1";
-			Log_TestInfo("El anillo estará en la ubicación - " + sTemp);
+			Log_TestInfo("El anillo estará en la ubicación, " + sTemp);
 			PChar.GenQuest.CitizenFindItem.ItemLocator = sTemp;
 			ChangeItemDescribe("DOjeronRing", "itmdescr_WeddingRing");			
 			items[FindItem("DOjeronRing")].Name = "itmname_WeddingRing";
@@ -493,7 +493,7 @@ void ProcessDialogEvent()
 			
 		case "CitizenFindItem_Complete_1":
 			dialog.text = ""+GetSexPhrase("Capitán","señorita")+"¡Estoy tan feliz! ¿Cómo puedo agradecerte?";
-			link.l1 = "Oh, no hace falta agradecer - lo hice bastante desinteresadamente.";
+			link.l1 = "Oh, no hace falta agradecer, lo hice bastante desinteresadamente.";
 			link.l1.go = "CitizenFindItem_Complete_2";
 			link.l2 = "Un par de cientos de pesos ciertamente no harían daño...";
 			link.l2.go = "CitizenFindItem_Complete_3";
@@ -546,7 +546,7 @@ void ProcessDialogEvent()
 		case "CitizenNotBlade":
 			if (loadedLocation.type == "town")
 			{
-				dialog.text = NPCharSexPhrase(NPChar,"Escucha - como ciudadano de esta ciudad, debo pedirte que te abstengas de andar con una espada desenvainada.","Escucha - como ciudadano de esta ciudad, debo pedirte que te abstengas de andar con una espada desenvainada.");
+				dialog.text = NPCharSexPhrase(NPChar,"Escucha, como ciudadano de esta ciudad, debo pedirte que te abstengas de andar con una espada desenvainada.","Escucha, como ciudadano de esta ciudad, debo pedirte que te abstengas de andar con una espada desenvainada.");
 				link.l1 = LinkRandPhrase("Bien.","Bien.","Como usted diga...");
 			}
 			else

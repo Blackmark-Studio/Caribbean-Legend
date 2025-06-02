@@ -15,6 +15,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Скажи, в вашу колонию в последнее время не заходил галеон под названием 'Санта-Маргарита'? Быть может, в качестве каперского приза?";
                 link.l1.go = "guardoftruth";
 			}
+			if (CheckAttribute(pchar, "questTemp.UV_DialogCitizen"))
+			{
+				link.l1 = "Тристан Ренье сюда не заходил?";
+                link.l1.go = "UV_DialogTavern";
+			}
 		break;
 		
 		case "guardoftruth":
@@ -23,6 +28,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1.go = "exit";
 			AddQuestRecord("Guardoftruth", "7");
 			pchar.questTemp.Guardoftruth = "tortuga";
+		break;
+		
+		case "UV_DialogTavern":
+			dialog.text = "Тристан? Конечно, заходил. Да он и сейчас здесь, в комнате.";
+			link.l1 = "Отлично, значит, я успел"+GetSexPhrase("","а")+". У меня к нему срочное дело, так что придётся потревожить его покой.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("UV_GoldSeagull_RoomInTavern");
+			DelLandQuestMark(npchar);
 		break;
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод

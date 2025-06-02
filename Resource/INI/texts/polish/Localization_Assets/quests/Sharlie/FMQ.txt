@@ -46,12 +46,12 @@ FMQ_10
 
 FMQ_11
 {
-~ As for Pinette.. Hell with him, the scum banker won't have him.
+~ A co do Pinette'a... Do diabła z nim, ten bankier-szuler go nie zechce.
 }
 
 FMQ_12
 {
-~ The scum banker will help me to sort this out under a threat of exposure - Pinette's letter is a very serious argument. I should head to Guadeloupe and enter the town through the city gates at night.
+~ Bankier-szumowina pomoże mi to rozwiązać pod groźbą ujawnienia - list Pinette'a to bardzo poważny argument. Powinienem udać się na Gwadelupę i wjechać do miasta przez bramy miasta nocą.
 }
 
 FMQ_13
@@ -61,17 +61,17 @@ Benseсho
 
 FMQ_14
 {
-trade convoy from San Jose
+konwój handlowy z San Jose
 }
 
 FMQ_15
 {
-Exploration mode: timer extended. Complete the quest!
+Tryb eksploracji: wydłużony czas. Ukończ zadanie!
 }
 
 FMQ_16
 {
-Evening has come...@<NewStr()>The resin was unloaded at the shipyard...
+Nadszedł wieczór...@<NewStr()>Żywica została pokryjomu rozładowana w stoczni...
 }
 
 FMQ_17
@@ -81,17 +81,17 @@ Topaz
 
 FMQ_18
 {
-Sounds of alarm on the Topaz tartane!
+Alarm na tartanie Topaz!
 }
 
 FMQ_19
 {
-You are free to land on shore
+Możesz swobodnie wylądować na brzegu
 }
 
 FMQ_20
 {
-Exploration mode: the quest is not failed
+Tryb eksploracji: zadanie nie jest nieudane
 }
 
 FMQ_21
@@ -110,12 +110,12 @@ Zeepard
 
 FMQ_24
 {
-English raiding party tried to infiltrate our prison but got into a trap arranged by our vigilant commandant. Now every Englishman is locked behind bars, ha ha!
+Angielski oddział próbował zinfiltrować nasze więzienie, ale wpadł w pułapkę zastawioną przez naszego czujnego komendanta. Teraz każdy Anglik siedzi za kratkami, ha ha!
 }
 
 FMQ_25
 {
-Hear, hear. They caught British raiding party not long ago. They wanted to free their countrymen from our prison but got locked there as well instead!
+Słuchajcie, słuchajcie! Niedawno złapali brytyjską grupę ratunkową. Chcieli uwolnić swoich rodaków z naszego więzienia, ale i tak zostali tam zamknięci!
 }
 
 FMQ_26
@@ -129,57 +129,57 @@ Jaсobsen
 
 FMQ_28
 {
-British raiding party had come to our island yet our vigilant commandant found and slain them all. This is big!
+Brytyjska grupa zwiadowców przybyła na naszą wyspę, ale nasz czujny dowódca znalazł i zabił ich wszystkich!
 }
 
 FMQ_29
 {
-Have you heard? There was a skirmish outside the town. They have found English raiding party. Brits refused to surrender and were killed in action. Good job, commandant!
+Słyszałeś? Doszło do potyczki poza miastem. Znaleźli angielski oddział zwiadowczy. Brytyjczycy odmówili poddania się i zginęli w akcji. Dobra robota dla komendanta!
 }
 
 FMQ_30
 {
-Ship silk + 200
+Jedwab + 200
 }
 
 FMQ_31
 {
-Oh, it's you! Bravo, captain! You were brave enough to face English spies armed to the teeth!
+O, to ty! Brawo, kapitanie! Byłeś na tyle odważny, by stawić czoła angielskim szpiegom uzbrojonym po zęby!
 }
 
 FMQ_32
 {
-Our powers praise you highly, captain. And for reasons: helping to eliminate English spies is a big deal!
+Nasze władze bardzo cię chwalą, kapitanie. Pomoc w eliminacji angielskich szpiegów to wielka sprawa!
 }
 
 FMQ_33
 {
-The English landing came to our island, but our vigilant commandant did not yawn, found all the villains and killed them. That's it!
+Angielski desant przybył na naszą wyspę, ale nasz czujny dowódca nie ziewnął, wytropił wszystkich złoczyńców i ich zabił. To wszystko!
 }
 
 FMQ_34
 {
-Have you heard? There was a fight outside the city. We found English saboteurs. They refused to surrender, and were killed by soldiers. Well done to our commandant!
+Słyszałeś? Doszło do potyczki poza miastem. Znaleźliśmy angielskich sabotażystów. Odmówili poddania się i zostali zabici przez żołnierzy. Brawo dla naszego komendanta!
 }
 
 FMQ_35
 {
-Alarm in the town!
+Alarm w mieście!
 }
 
 FMQ_36
 {
-What insolence! The Brits infiltrated our town at night! And yet our commandant had them found and killed. Big deal!
+Cóż za bezczelność! Brytyjczycy w nocy zinfiltrowali nasze miasto! A jednak nasz komendant ich znalazł i zabił. Wielka sprawa!
 }
 
 FMQ_37
 {
-Have you heard? There was a skirmish in the town. They have found English raiding party. Brits refused to surrender and were killed in action. Good job, commandant!
+Słyszałeś? Doszło do w mieście do starcia. Znaleźliśmy angielskich sabotażystów. Odmówili poddania się i zostali zabici przez żołnierzy. Brawo dla naszego komendanta!
 }
 
 FMQ_38
 {
-Вы не поставили свое судно в бухту!
+Nie umieściłeś swojego statku w zatoce!
 }
 
 FMQ_39
@@ -193,32 +193,32 @@ Shulte
 
 FMQ_41
 {
-The Zeepard corvette is on us!
+Korweta 'Zeepard' siedzi nam na ogonie!
 }
 
 FMQ_42
 {
-Have you heard about the mess happening here? The governor is outraged. English spies have freed their countrymen from our prison! They say some French had something to do with this.
+Czy słyszałeś o tym bałaganie, który się tu wydarzył? Gubernator jest oburzony. Angielscy szpiedzy uwolnili swoich rodaków z naszego więzienia! Mówią, że jakiś Francuz miał z tym coś wspólnego.
 }
 
 FMQ_43
 {
-Have you heard?? The governor is outraged. English spies have freed their countrymen from our prison! They say some French had something to do with this.
+Słyszałeś?? Gubernator jest oburzony. Angielscy szpiedzy uwolnili swoich rodaków z naszego więzienia! Mówią, że jakiś Francuz miał z tym coś wspólnego.
 }
 
 FMQ_44
 {
-Exploration mode: timer extended. Drop off passengers at their destination!
+Tryb eksploracji: timer przedłużony. Wysadź pasażerów w miejscu docelowym!
 }
 
 FMQ_45
 {
-Oh, it's you! Bravo, captain! You were brave enough to assist our marines right in the Dutch den!
+O, to ty! Brawo, kapitanie! Byłeś na tyle odważny, żeby pomóc naszym marines w holenderskiej koloni!
 }
 
 FMQ_46
 {
-The governor praise you highly, captain. And for reasons: helping Fox's men to save the imprisoned officers is a big deal!
+Gubernator bardzo cię chwali, kapitanie. Pomoc ludziom Foxa w ratowaniu uwięzionych oficerów to wielka sprawa!
 }
 
 FMQ_47
@@ -250,17 +250,17 @@ FMQ_52
 
 FMQ_53
 {
-interceptor
+przechwytywacz
 }
 
 FMQ_54
 {
-Domingo Albalate has left your ship
+Domingo Albalate opuścił twój statek
 }
 
 FMQ_55
 {
-You have found a heavy accounting book
+Znalazłeś ciężką książkę rachunkową
 }
 
 FMQ_56
@@ -306,7 +306,7 @@ FMQ_64
 
 FMQ_65
 {
-You have spared 20 000 pesos for Selina Trubal
+Prosper nie żyje! Musiałeś więc odstąpić od 20 000 pesos dla Seliny Trubal
 }
 
 FMQ_66
@@ -320,12 +320,12 @@ Gronier
 
 FMQ_68
 {
-Exploration mode: quest duration doubled
+Tryb eksploracji: podwojono czas trwania zadania
 }
 
 FMQ_69
 {
-Exploration mode: deleted the timer
+Tryb eksploracji: usunięto licznik czasu
 }
 
 FMQ_70
@@ -357,5 +357,5 @@ Albalate
 
 FMQ_76
 {
-Several hours later...@<NewStr()>The goods were delivered to the shore
+Pare godzin później...@<NewStr()>Towar został dostarczony na brzeg
 }

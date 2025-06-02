@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 		int iMoney = makeint(makeint(Pchar.money) / 20) * 10;
 		AddMoneyToCharacter(pchar, -iMoney);
 		AddSimpleRumour(LinkRandPhrase("¿Te has enterado? El ladrón " + GetFullName(npchar) + " encontró una nueva víctima. Un capitán se asustó y le timó. Dicen que le dio " + FindRussianMoneyString(iMoney) + ", he-he... ",
-									   "Sí, capitán. " + GetFullName(pchar) + ", Ya he oído que tuviste que pagar " + FindRussianMoneyString(iMoney) + ", para comprar a un bandido local, " + GetFullName(npchar) + ". ¡Eso es lo que yo llamo mala suerte! ¡Ja, ja, ja!",
+									   "Sí, capitán. " + GetFullName(pchar) + ", Ya he oído que tuviste que pagar " + FindRussianMoneyString(iMoney) + ", para comprar a un bandido, " + GetFullName(npchar) + ". ¡Eso es lo que yo llamo mala suerte! ¡Ja, ja, ja!",
 									   "¿Has oído que los bandidos de la zona atacaron a un capitán? ¡Se lo robaron todo, perdió " + FindRussianMoneyString(iMoney) + "!"),
 						sti(npchar.nation), 5, 1);
 		for (i = 0; i < iTemp; i++)
@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 		AddSimpleRumour(LinkRandPhrase(RandPhraseSimple("¿Te has enterado? Ese bandido " + GetFullName(npchar) + " por fin ha encontrado justicia. Él y sus chicos trataron de robar " + GetSexPhrase("a cierto capitán, pero resultó ser", "a cierta dama capitana, pero resultó ser") + " un hueso duro de roer. ¡Así que nuestro querido ladrón se cagó en los pantalones, ja, ja! Eso le servirá de lección. Robar a los granjeros locales es una cosa, ¡pero un capitán valiente es una historia diferente!",
 														"Gracias, capitán " + GetFullName(pchar) + ". Te has ocupado finalmente de la banda de ese bandido " + GetFullName(npchar) + ". Los bribones de esa banda eran realmente como un grano en el culo de todos. Teníamos miedo incluso de enviar mensajeros a la granja a por leche, podían interceptarlos y robarnos todo el dinero."),
 									   "¿Te has enterado? " + GetSexPhrase("Finalmente, cierto capitán", "Por fin, cierta señora capitana") + " detuvo al bribón " + GetFullName(npchar) + ", que estaba campando por la selva, aterrorizando a todos los granjeros. Espero, que esos les impida maquinar sus sucias acciones durante el tiempo suficiente...",
-									   "¿Has oído que el bandido local " + GetFullName(npchar) + " y sus chicos intentaron robar " + GetSexPhrase("a cierto capitán", "a cierta dama capitana") + "? ¡Bah! ¡Nada de eso! Ese capitán resultó ser un hueso duro de roer. Dicen que persiguió a esos ladrones por toda la selva como un tiburón persigue a un banco de sardinas. Gracias a Dios, todavía hay gente que puede dar la cara por nosotros cuando las autoridades no hacen nada, están demasiado ocupadas con sus oscuras hazañas..."),
+									   "¿Has oído que el bandido " + GetFullName(npchar) + " y sus chicos intentaron robar " + GetSexPhrase("a cierto capitán", "a cierta dama capitana") + "? ¡Bah! ¡Nada de eso! Ese capitán resultó ser un hueso duro de roer. Dicen que persiguió a esos ladrones por toda la selva como un tiburón persigue a un banco de sardinas. Gracias a Dios, todavía hay gente que puede dar la cara por nosotros cuando las autoridades no hacen nada, están demasiado ocupadas con sus oscuras hazañas..."),
 						sti(npchar.nation), 5, 1);
 		for (i = 0; i < iTemp; i++)
 		{

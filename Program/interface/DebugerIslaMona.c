@@ -1040,7 +1040,7 @@ void CalculateInfoDataF13()
 	EquipCharacterByArtefact(mc, "totem_06");
 	AddItems(pchar, "gold_dublon", 1000);
 	pchar.skill.Sailing = 100;
-    SelAllPerksToChar(mc, false);
+    SetAllPerksToChar(mc, false);
 	EquipCharacterbyItem(mc, "pistol7");
 	
 	sld = characterFromId("Tonzag");
@@ -2159,7 +2159,7 @@ void CalculateInfoDataF25()
 	string sEquipItem;
 	SetSelfSkill(mc, 70, 70, 100, 100, 100);
 	SetShipSkill(mc, 95, 70, 55, 65, 100, 55, 55, 45, 55);
-	//SelAllPerksToChar(mc, false);
+	//SetAllPerksToChar(mc, false);
 	SetCharacterPerk(mc, "HullDamageUp");
 	SetCharacterPerk(mc, "SailsDamageUp");
 	SetCharacterPerk(mc, "CrewDamageUp");
@@ -2581,7 +2581,7 @@ void CalculateInfoDataF31()
 	
 	LAi_SetCharacterUseBullet(mc, "cartridge");
 	
- 	SelAllPerksToChar(mc, false);
+ 	SetAllPerksToChar(mc, false);
 	 	
 	totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
 	
@@ -2707,7 +2707,7 @@ void CalculateInfoDataF32()
 	LAi_SetCharacterUseBullet(mc, "cartridge");
 	
 // 	SetHalfPerksToChar(mc, false);
-	SelAllPerksToChar(mc, false);
+	SetAllPerksToChar(mc, false);
 	
 	ref realShip;
 	int shipType = sti(mc.Ship.Type);
@@ -2791,7 +2791,7 @@ void CalculateInfoDataF33()
 	
 	LAi_SetCharacterUseBullet(mc, "cartridge");
 	
- 	SelAllPerksToChar(mc, false);
+ 	SetAllPerksToChar(mc, false);
 
 // указываем вражеский корабль
 	sld = GetCharacter(NPC_GenerateCharacter("CapitainWrag", "mercen_1", "man", "man", 33, PIRATE, -1, true, "CapitainWrag"));

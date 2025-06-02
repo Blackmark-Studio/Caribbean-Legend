@@ -1,6 +1,6 @@
 time_events_1
 {
-Vous avez reçu une part des bénéfices de Poinsey
+Vous avez reçu une part des bénéfices de de Poincy
 }
 
 time_events_2

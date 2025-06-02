@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Ah, "+GetFullName(pchar)+"¡ "+TimeGreeting()+"¡Quieres algo?";
+				dialog.text = "¡Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+". ¿Quieres algo?";
 				link.l1 = LinkRandPhrase("¿Tienes algo interesante que decir?","¿Ha ocurrido algo nuevo en la isla?","¿Me contarás los últimos chismes?");
 				link.l1.go = "rumours_LSC";
 				link.l2 = "Quiero hacerte algunas preguntas sobre la isla.";
@@ -57,7 +57,8 @@ void ProcessDialogEvent()
 		
 		case "meeting_2":
 			dialog.text = "Me alegro por ti. No te preocupes, a pesar de mi pasado, no soy una amenaza para las bolsas y cofres de los habitantes de la Isla. Me alegra poder vivir en paz al fin.";
-			link.l1 = "Encantado de conocerte, Jasper. ¡Nos vemos!"link.l1.go ="salida";
+			link.l1 = "Encantado de conocerte, Jasper. ¡Nos vemos!"
+			link.l1.go = "exit";
 			link.l2 = LinkRandPhrase("¿Tienes algo interesante que decir?","¿Ha ocurrido algo nuevo en la isla?","¿Me contarás los últimos chismes?");
 			link.l2.go = "rumours_LSC";
 			link.l3 = "Quiero hacerte algunas preguntas sobre la isla.";
@@ -114,7 +115,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_4":
-			dialog.text = "Sí, estoy de acuerdo. He nadado mucho alrededor de los barcos internos de la Isla. Hay muy pocas salidas del agua. San Agustín, el lugar del puente. Gloria, el mástil caído. Si nadas cerca de la plataforma Fénix y luego alrededor de Ceres Smitie, llegarás a la cabina de Mary Casper en la proa del barco.\nLa grieta en el Tártaro te llevará a la prisión. Hay un agujero en la proa de San Agustín, puedes entrar en la sala de almacenamiento del almirante, pero es una acción poco aconsejable. La puerta más baja del Tártaro suele estar cerrada, recuerda eso.\n Y por supuesto, puedes entrar en Fernanda, es la flauta solitaria y destrozada. Dicen que nadie vive allí, pero a menudo noto luces dentro de la cabina y a veces puedo oír extrañas canciones de borrachos y llantos.";
+			dialog.text = "Sí, estoy de acuerdo. He nadado mucho alrededor de los barcos internos de la Isla. Hay muy pocas salidas del agua. San Agustín, el lugar del puente. Gloria, el mástil caído. Si nadas cerca de la plataforma Fénix y luego alrededor de Ceres Smitie, llegarás a la cabina de Mary Casper en la proa del barco.\nLa grieta en el Tártaro te llevará a la prisión. Hay un agujero en la proa de San Agustín, puedes entrar en la sala de almacenamiento del almirante, pero es una acción poco aconsejable. La puerta más baja del Tártaro suele estar cerrada, recuerda eso.\n Y por supuesto, puedes entrar en Fernanda, es el filibote solitario y destrozado. Dicen que nadie vive allí, pero a menudo noto luces dentro de la cabina y a veces puedo oír extrañas canciones de borrachos y llantos.";
 			link.l1 = "Interesante... Necesito explorar más este lugar.";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";

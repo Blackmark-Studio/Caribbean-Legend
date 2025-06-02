@@ -143,6 +143,11 @@ Ce personnage peut occuper deux postes d'officier à la fois.
 Uniquement pour les officiers.
 }
 
+perkByWorkerShort
+{
+Ce personnage peut occuper deux postes d'officier à la fois
+}
+
 ByWorker2	{Homme à tout faire}
 perkByWorker2
 {
@@ -153,6 +158,11 @@ Ce personnage peut occuper trois postes d'officier à la fois.
 ~
 ~
 Uniquement pour les officiers.
+}
+
+perkByWorker2Short
+{
+Ce personnage peut occuper trois postes d'officier à la fois
 }
 
 Trustworthy	{Digne de confiance}
@@ -305,15 +315,16 @@ perkSailingProfessional
 La vitesse et la maniabilité du navire sont augmentées de 20 %. Les 3/4 des navires ordinaires de la carte du monde peuvent être contournés.
 }
 
-SeaDogProfessional	{Fléau des Mers}
+SeaDogProfessional	{Terreur des Mers}
 perkSeaDogProfessional
 {
-Même les aventuriers invétérés et les brigands n'oseront pas tenter leur chance lorsqu'ils verront le drapeau du Fléau des mers. Protège des attaques des flottes ennemies. Ne fonctionne pas sur les petits navires.
+En voyant la bannière de la Terreur des Mers, même les aventuriers et bandits les plus audacieux n'osent pas tenter leur chance. Augmente la Puissance de la Flotte de 30%.
 ~
 ~
 ~
-Disponible uniquement pour le joueur
+La compétence est disponible uniquement pour le joueur et nécessite le niveau 25.
 }
+
 
 FlagPir	{Drapeau Pirate}
 perkFlagPir

@@ -4,7 +4,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat("Wszystkie plotki o "+GetCityName(npchar.city)+" do usług. Czego chciałbyś się dowiedzieć?"," Właśnie o tym rozmawialiśmy. Musiałeś zapomnieć...","To już trzeci raz dzisiaj, kiedy mówisz o jakimś pytaniu...","Powtarzasz to wszystko jak papuga...","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Wszystkie plotki o "+GetCityName(npchar.city)+" do usług. Czego chciałbyś się dowiedzieć?"," Właśnie o tym rozmawialiśmy. Musiałeś zapomnieć...","To już trzeci raz dzisiaj, kiedy mówisz o jakimś pytaniu...","Powtarzasz to wszystko jak papuga...","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Wiesz, "+NPChar.name+"Może następnym razem.","Dobrze, zapomniałem z jakiegoś powodu...","Tak, to naprawdę już trzeci raz...","Tak...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			if (pchar.questTemp.Slavetrader == "FindRatPanama")
@@ -22,7 +22,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		//-->работорговец
 		case "Panama_rat_1":
-			dialog.text = NPCStringReactionRepeat("Tak, mieliśmy tu takiego jegomościa. Kręcił się po ciemnych zaułkach... Potem przyszli do niego jego kumple, wyglądali jak banda zbirów. Opuścił miasto razem z nimi.","Już o to pytałeś, a ja ci odpowiedziałem.","Mówiłem ci, że już o to pytałeś Gontiera.","Słuchaj, odejdź i przestań mnie niepokoić! Czyś ty zupełnie stracił rozum?","blokada",0,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Tak, mieliśmy tu takiego jegomościa. Kręcił się po ciemnych zaułkach... Potem przyszli do niego jego kumple, wyglądali jak banda zbirów. Opuścił miasto razem z nimi.","Już o to pytałeś, a ja ci odpowiedziałem.","Mówiłem ci, że już o to pytałeś Gontiera.","Słuchaj, odejdź i przestań mnie niepokoić! Czyś ty zupełnie stracił rozum?","block",0,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("I gdzie on poszedł, wiesz może?","Hm, chyba tak...","Tak, prawda, pytałem o to...","Przepraszam, "+npchar.name+"...",npchar,Dialog.CurrentNode);
 			link.l1.go = "Panama_rat_2";
 		break;

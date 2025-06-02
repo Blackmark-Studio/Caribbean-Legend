@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "crew":
-			switch (drand(2))
+			switch (hrand(2))
 			{
 				case 0: sTemp = "Me and my messmates were put shoreside from our last ship due to various sickness and injuries. But we are all healthy now and want to get back to work as sailors again. Do you want to hire us?"; break;
 				case 1: sTemp = "Me and a few of my boys were paid off from a merchantman due to the end of its contract. We have been without a single piece of eight for a long time already so we want to get back to work again. Do you need some skillful sailors for your crew?"; break;

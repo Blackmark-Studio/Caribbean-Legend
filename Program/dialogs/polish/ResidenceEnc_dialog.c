@@ -35,12 +35,12 @@ void ProcessDialogEvent()
 		case "ResWoman":
 			NextDiag.TempNode = "ResWoman";
 			if (LAi_grp_playeralarm <= 0 && CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.o2") && !CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.o2.Done") && !CheckAttribute(npchar, "quest.chickengod") && sti(npchar.nation) == SPAIN) {
-				link.chickengod = "Senora, please excuse me, but I was asked to tell you that you have... a date inside an old pagan pyramid.";
+				link.chickengod = "Senora, proszę mi wybaczyć, ale poproszono mnie, abym pani powiedział, że ma pani... randkę w środku starej pogańskiej piramidy.";
 				link.chickengod.go = "chickengod";
 			}
 			if (isBadReputation(pchar, 30))
 			{
-				dialog.text = LinkRandPhrase("Jezusie! Taki nikczemny człowiek w moich komnatach! Odejdź stąd, albo wezwę straże!","To nie może się dziać... Kto pozwolił temu szczurowi wejść do mojego domu? Wynoś się stąd, ty bękart! Nie masz tu nic do roboty! Znikaj!","Takie dziwne czasy nadeszły. Szczury dostają się do mojej sypialni! Idź stąd!");
+				dialog.text = LinkRandPhrase("Jezu! Taki nikczemny człowiek w moich komnatach! Odejdź stąd, albo wezwę straże!","To się nie dzieje... Kto pozwolił temu szczurowi wejść do mojego domu? Wynoś się stąd, ty draniu! Nie masz tu nic do roboty! Znikaj!","Takie dziwne czasy nadeszły. Szczury dostają się do mojej sypialni! Idź stąd!");
 				link.l1 = RandPhraseSimple("Spokojnie tam...","Uważaj na swoje słowa...");
 				link.l1.go = "exit";
 			}
@@ -63,7 +63,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "ResMan";
 			if (isBadReputation(pchar, 30))
 			{
-				dialog.text = LinkRandPhrase("Znikaj stąd, szczurze!","Odejdź natychmiast od rezydencji gubernatora, szczurze!","Nie obchodzi mnie, co robisz w domu gubernatora "+XI_ConvertString("Kolonia"+npchar.city+"Gen")+"Ale moja rada brzmi: znikaj, teraz!");
+				dialog.text = LinkRandPhrase("Znikaj stąd, szczurze!","Odejdź natychmiast od rezydencji gubernatora, szczurze!","Nie obchodzi mnie, co robisz w domu gubernatora "+XI_ConvertString("Colony"+npchar.city+"Gen")+"Ale moja rada brzmi następująco: znikaj, teraz!");
 				link.l1 = RandPhraseSimple("Trzymaj się na wodzie, kolego...","Uważaj na swoje słowa!");
 				link.l1.go = "exit";
 			}
@@ -102,7 +102,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.ChickenGod.Tasks.o2.Counter = sti(pchar.questTemp.ChickenGod.Tasks.o2.Counter) + 1;
 			if (sti(pchar.questTemp.ChickenGod.Tasks.o2.Counter) >= 3) {
 				dialog.text = "Ach, tak. Wreszcie! Jestem gotów iść z tobą, kapitanie.";
-				link.l1 = "Po prostu tak? Senora, czy jesteś pewna, że tego chcesz?";
+				link.l1 = "Tak po prostu? Senora, czy jesteś pewna, że tego chcesz?";
 				link.l1.go = "chickengod_accept";
 			} else {
 				sld = CharacterFromID(npchar.city + "_Mayor");
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 		
 		case "chickengod_accept_nottake":
 			dialog.text = "W takim razie, mój drogi kapitanie, weź swoje wiejskie poczucie honoru i wsadź je sobie w tyłek! Poczekam na innego posłańca, kogoś nie tak ograniczonego jak ty!";
-			link.l1 = "Uroczy!";
+			link.l1 = "Nawet tego nie skomentuje...";
 			link.l1.go = "exit";
 			
 			pchar.questTemp.ChickenGod.Tasks.o2.Done = true;

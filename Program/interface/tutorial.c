@@ -8,6 +8,7 @@ string cimg4 = "";
 string cimg5 = "";
 string cimg6 = "";
 int curShowTutorial;
+object obGKIC;
 
 void InitInterface_SB(string iniName, string tutorialName, bool bShowVideo)
 {
@@ -78,7 +79,9 @@ void InitInterface_SB(string iniName, string tutorialName, bool bShowVideo)
 
 	PlaySound("Ambient\SEA\Ship_bell_Two.wav");											
 
+    SetKeyAttrs();
 	descr = GetConvertStr(tutorialName + "_descr", "TutorialDescribe.txt");
+    descr = GetAssembledString(descr, &obGKIC);
 	SetFormatedText("INFO_TEXT", descr);
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"INFO_TEXT",5);
 
@@ -189,4 +192,12 @@ void HideInfoWindow()
 {
 	XI_WindowDisable("INFO_WINDOW", true);
 	XI_WindowShow("INFO_WINDOW", false);
+}
+
+void SetKeyAttrs()
+{
+    // GKIC - взять из конкретной группы
+    // GetKeyCodeImg - взять из релевантной группы
+    obGKIC.Ship_TurnLeft = GKIC("Ship_TurnLeft", "Sailing3Pers");
+    obGKIC.TimeScale = GetKeyCodeImg("TimeScale");
 }

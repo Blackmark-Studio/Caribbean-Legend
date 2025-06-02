@@ -260,7 +260,7 @@ void IslaMona_AdvanceStageToFourth() {
 void IslaMona_SelectShipyard() // выбрать рандомную верфь из столиц
 {
 	string sTemp;
-	int i = drand(3);
+	int i = hrand(3);
 	switch (i)
 	{
 		case 0: sTemp = "PortRoyal"; break;

@@ -297,16 +297,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_18":
-			dialog.text = "Fünfhundert Dublonen im Voraus! Damit ich weiß, dass du es ernst meinst und nicht nur ein Versager bist. Und danach eine monatliche Gebühr. Ich denke, wir können einen Deal machen.";
+			dialog.text = "Zweihundertfünfzig Dublonen im Voraus! Damit ich weiß, dass du es ernst meinst und nicht nur ein Versager bist. Und danach eine monatliche Gebühr. Ich denke, wir können einen Deal machen.";
 			link.l1 = "Und du tust nicht...";
 			link.l1.go = "BM_Irons_19";
 		break;
 		
 		case "BM_Irons_19":
 			dialog.text = "... glaubst du, du hast den Mut? Heh, ich werde nicht einmal mit dir streiten - hast du gesehen, wie ich diesen Hahnrei vom Leuchtturm geschossen habe? Erster Schuss! Und auch kein Handeln, wenn das ist, was du denkst. Du musst zeigen, dass du dir einen Profi wie mich leisten kannst.";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
-				link.l1 = "Ja, das kann ich! Fünfhundert Goldstücke. Hier, nimm sie.";
+				link.l1 = "Ja, das kann ich! Zweihundertfünfzig Goldstücke. Hier, nimm sie.";
 				link.l1.go = "BM_Irons_Hire1";
 			}
 			link.l2 = "Du hattest Glück mit diesem Schuss. Und jetzt versuchst du, deinen Wert durch Prahlerei zu steigern. Ich kann auf einen Profi wie dich verzichten. Es ist zu viel Ehre und zu viel Geld.";
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_Hire1":
-			RemoveDublonsFromPCharTotal(500);
+			RemoveDublonsFromPCharTotal(250);
 			
 			dialog.text = "Du bist nicht so schlimm wie ich dachte! Aber du solltest besser dafür sorgen, dass ich mich nicht langweile. Es wäre eine Verschwendung meines Talents, nicht wahr? Tommy und "+pchar.name+"! Lasst uns die Karibik aufmischen!";
 			link.l1 = "Lerne die Befehlskette zu respektieren, Tommy. Und zweitens, ich bin der Kapitän für dich. Verstanden?";
@@ -411,7 +411,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave2":
 			dialog.text = "Offensichtlich hast du noch nicht in Gruben während der Regenzeit in Irland versteckt, "+GetSexPhrase("Jüngling","mein Mädchen")+"! Aber mit dir zu gehen ist besser als hier zu verstecken. Nun, über dieses Gold...";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
 				link.l1 = "Hier ist dein Gold.";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -421,7 +421,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_HireInCave1":
-			RemoveDublonsFromPCharTotal(500);
+			RemoveDublonsFromPCharTotal(250);
 			pchar.quest.BM_IronsTimeOver.over = "yes";
 			pchar.questTemp.BM_hireInGrot = true;
 			
@@ -446,7 +446,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave3":
 			dialog.text = "Hast du das Gold mitgebracht?";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
 				link.l1 = "Hier ist dein Gold.";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -800,8 +800,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_Sea3":
-			dialog.text = "Ja, das könnte funktionieren! Aber wieder, nichts Größeres als eine Bark! Gabe ist nicht nur ein Feigling - er war nie gierig genug, um das seine Vorsicht überwiegen zu lassen.";
-			link.l1 = "Lass uns hoffen, dass es funktioniert, Tommy. Also, eine fünftklassige Bark unter spanischer oder niederländischer Flagge. Mach dich bereit, deinen alten Kriegskameraden zu treffen!";
+			dialog.text = "Ja, das könnte funktionieren! Aber wieder, nichts Größeres als eine Bark oder Barkentina! Gabe ist nicht nur ein Feigling - er war nie gierig genug, um das seine Vorsicht überwiegen zu lassen.";
+			link.l1 = "Lass uns hoffen, dass es funktioniert, Tommy. Also, eine fünftklassige Bark oder Barkentina unter spanischer oder niederländischer Flagge. Mach dich bereit, deinen alten Kriegskameraden zu treffen!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("BM_SeaVariant");
 		break;

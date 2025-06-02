@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "quest.answer_4"))
 			{
-				link.l4 = "   Dices que no estás casada... ¿No tiene una chica tan bonita pretendientes aquí?";
+				link.l4 = "Dices que no estás casada... ¿No tiene una chica tan bonita pretendientes aquí?";
 				link.l4.go = "ansewer_4";
 			}
 			link.l10 = "Sin preguntas. Perdón...";
@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_1":
-			dialog.text = "Estaba navegando desde Inglaterra con mis padres. Queríamos comenzar una nueva vida, y... he comenzado una nueva vida aquí. Mis padres murieron y yo apenas sobreviví. Alcancé un barco del anillo exterior y estuve tendido allí inconsciente por un día hasta que un local me encontró. Habría muerto allí si no me hubiera encontrado.";
+			dialog.text = "Estaba navegando desde Inglaterra con mis padres. Queríamos comenzar una nueva vida, y... he comenzado una nueva vida aquí. Mis padres murieron y yo apenas sobreviví. Alcancé un barco del anillo exterior y estuve tendido allí inconsciente por un día hasta que uno que pasaba por ahí me encontró. Habría muerto allí si no me hubiera encontrado.";
 			link.l1 = "Veo...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_1 = "true";

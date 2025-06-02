@@ -15,7 +15,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		}
 		if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu") && pchar.questTemp.Sharlie.Tichingitu == "commandante")
 		{
-			link.l1 = "  Dime, ¿de verdad vas a colgar a este indio? ¿No es un castigo demasiado severo para un delito tan pequeño?";
+			link.l1 = "Dime, ¿de verdad vas a colgar a este indio? ¿No es un castigo demasiado severo para un delito tan pequeño?";
 			link.l1.go = "Tichingitu_3";
 		}
 		if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu") && pchar.questTemp.Sharlie.Tichingitu == "pay")
@@ -69,7 +69,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "Tichingitu_3":
 		DelLandQuestMark(npchar);
-		dialog.text = " Eres nuevo aquí, ¿no es así, monsieur? ¿Recién llegado de Europa? No entiendes la situación en las colonias. Esta ejecución será una lección para esos malditos pieles rojas que se atrevan a usurpar la propiedad de los colonos franceses. Además, el propio Fadey insiste en ello y es un hombre muy respetado aquí y un amigo cercano de nuestro gobernador.";
+		dialog.text = "Eres nuevo aquí, ¿no es así, monsieur? ¿Recién llegado de Europa? No entiendes la situación en las colonias. Esta ejecución será una lección para esos malditos pieles rojas que se atrevan a usurpar la propiedad de los colonos franceses. Además, el propio Fadey insiste en ello y es un hombre muy respetado aquí y un amigo cercano de nuestro gobernador.";
 		link.l1 = "¿Hay alguna manera de suavizar el castigo? Sigo pensando que es demasiado severo...";
 		link.l1.go = "Tichingitu_4";
 		break;
@@ -171,7 +171,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "PZ_IshemLongway_2":
 		dialog.text = "Bueno, bueno. ¿Y por qué buscas a ese Longway tuyo, monsieur?";
-		link.l1 = "Es un amigo mío. Ya he oído lo que pasó - es un triste malentendido, te lo aseguro.";
+		link.l1 = "Es un amigo mío. Ya he oído lo que pasó, es un triste malentendido, te lo aseguro.";
 		link.l1.go = "PZ_IshemLongway_Zashita_1";
 		if (pchar.location.from_sea != "BasTer_Town")
 		{
@@ -211,14 +211,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "PZ_IshemLongway_Blef_2":
-		dialog.text = "Heh, no es sorprendente - considerando el tamaño de tu cuerpo, Capitán. Sí, tenemos a esos canallas en la isla estos días...";
+		dialog.text = "Heh, no es sorprendente, considerando el tamaño de tu cuerpo, Capitán. Sí, tenemos a esos canallas en la isla estos días...";
 		link.l1 = "¡Exactamente! Entonces, podrían haber masacrado a la patrulla y al pobre teniente junior.";
 		link.l1.go = "PZ_IshemLongway_Blef_3";
 		break;
 
 	case "PZ_IshemLongway_Blef_3":
 		dialog.text = "Desafortunadamente, eso es totalmente posible.";
-		link.l1 = "Precisamente. Así que una vez más, te pido que me dejes unirme a la próxima partida de búsqueda - Longway me escuchará, y de esa manera podemos evitar más muertes.";
+		link.l1 = "Precisamente. Así que una vez más, te pido que me dejes unirme a la próxima partida de búsqueda, Longway me escuchará, y de esa manera podemos evitar más muertes.";
 		link.l1.go = "PZ_IshemLongway_Blef_4";
 		break;
 
@@ -238,7 +238,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		dialog.text = "Trescientos doblones. Ese dinero irá a la ciudad, no a los charlatanes de la plaza del mercado.";
 		if (PCharDublonsTotal() >= 300)
 		{
-			link.l1 = "Por supuesto. Trescientos doblones - aquí tienes.";
+			link.l1 = "Por supuesto. Trescientos doblones, aquí tienes.";
 			link.l1.go = "PZ_IshemLongway_Blef_7";
 		}
 		link.l2 = "No traje mis doblones a la ciudad esta vez. Pero si me permites ir a buscarlos...";
@@ -404,8 +404,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "PZ_BasTer_ComendantDialog_Opozdal_1":
-		dialog.text = "Exactamente. ¿Quién eres tú para él si lo quieres tanto? No importa - lo que importa es el propósito de tu visita a la ciudad.";
-		link.l1 = "Nada ilegal, señor. Pero, ¿qué quiso decir con “ya no importa”? ¿Acaso él...";
+		dialog.text = "Exactamente. ¿Quién eres tú para él si lo quieres tanto? No importa, lo que importa es el propósito de tu visita a la ciudad.";
+		link.l1 = "Nada ilegal, señor. Pero, ¿qué quiso decir con “ya no importa”? ¿Acaso él...?";
 		link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_2";
 		break;
 
@@ -422,7 +422,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "PZ_BasTer_ComendantDialog_Opozdal_4":
-		dialog.text = "Simplemente se me olvidó, aye. ¿Así que tú también sufriste por sus acciones? Eso te dará una lección, Capitán. Sabrás mejor que contratar a alguien en quien no puedes confiar. Nunca confíes en un hombre de piel amarilla - ¡recuerda mis palabras!";
+		dialog.text = "Simplemente se me olvidó, aye. ¿Así que tú también sufriste por sus acciones? Eso te dará una lección, Capitán. Sabrás mejor que contratar a alguien en quien no puedes confiar. Nunca confíes en un hombre de piel amarilla, ¡recuerda mis palabras!";
 		link.l1 = "Sí, lo tendré en cuenta. ¿Encontraste algo en él?";
 		link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_5";
 		break;

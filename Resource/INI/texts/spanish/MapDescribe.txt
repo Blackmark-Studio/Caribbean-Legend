@@ -228,13 +228,13 @@ Tortuga_Grot_box1		{en un cofre en la playa}
 Tortuga_Cave			{en la mazmorra de la ciudad de Tortuga}
 Tortuga_Cave_box1		{en un cofre, tras una puerta cerrada}
 
-Trinidad_Grot			{en una cueva, enfrente del faro de Trinidad y Tobago}
+Trinidad_Grot			{en una cueva, enfrente del faro de Trinidad}
 Trinidad_Grot_box1		{en un cofre, en la playa}
 
 Martinique_Grot 		{en una cueva, no lejos de la playa Lamentin}
 Martinique_Grot_box1 	{en un cofre en la playa}
 
-FortFrance_Dungeon		{en la mazmorra de la ciudad de St. Pierre}
+FortFrance_Dungeon		{en la mazmorra de la ciudad de Saint-Pierre}
 FortFrance_Dungeon_box1	{en un cofre, en un montículo}
 FortFrance_Dungeon_box2	{en un cofre, detrás de una puerta abierta en la parte superior}
 FortFrance_Dungeon_box3	{en un cofre, no muy lejos del montacargas}

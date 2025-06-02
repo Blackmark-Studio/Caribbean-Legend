@@ -672,7 +672,7 @@ void ProcessDialogEvent()
 			dialog.Text = "Doskonale, rozwiążę twój problem. Wkrótce znów będą chcieli z tobą robić interesy.";
 			Link.l1 = "Dzięki!";
 			Link.l1.go = "exit";
-			ChangeContrabandRelation(pchar, 25);
+			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
 			AddMoneyToCharacter(pchar, -sti(npchar.quest.contrasum));
 		break;
 		

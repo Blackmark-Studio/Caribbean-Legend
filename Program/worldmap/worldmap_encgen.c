@@ -66,10 +66,10 @@ void wdmStormGen(float dltTime, float playerShipX, float playerShipZ, float play
 void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float playerShipAY)
 {
 	int numShips = wdmGetNumberShipEncounters();
-	if( CheckAttribute(pchar,"worldmap.shipcounter") ) {
+	if(CheckAttribute(pchar,"worldmap.shipcounter")) {
 		numShips = numShips - sti(pchar.worldmap.shipcounter);
 	}
-	if( numShips < 0 )
+	if(numShips < 0)
 	{
 //		trace("Warning! World map ship quantity < 0 : numShips = " + numShips);
 //		trace("pchar.worldmap.shipcounter = " + pchar.worldmap.shipcounter);
@@ -78,10 +78,10 @@ void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float
 	if(numShips < 8)
 	{
 		//Вероятности появления
-		wdmTimeOfLastMerchant = wdmTimeOfLastMerchant + dltTime*WDM_MERCHANTS_RATE*1000.0*iEncountersRate;
-		wdmTimeOfLastWarring = wdmTimeOfLastWarring + dltTime*WDM_WARRING_RATE*1000.0*iEncountersRate;
-		wdmTimeOfLastFollow = wdmTimeOfLastFollow + dltTime*WDM_FOLLOW_RATE*1000.0*iEncountersRate;
-		wdmTimeOfLastSpecial = wdmTimeOfLastSpecial + dltTime*WDM_SPECIAL_RATE*1000.0*iEncountersRate;
+		wdmTimeOfLastMerchant = wdmTimeOfLastMerchant + dltTime * WDM_MERCHANTS_RATE * 1000.0 * iEncountersRate;
+		wdmTimeOfLastWarring  = wdmTimeOfLastWarring  + dltTime * WDM_WARRING_RATE   * 1000.0 * iEncountersRate;
+		wdmTimeOfLastFollow   = wdmTimeOfLastFollow   + dltTime * WDM_FOLLOW_RATE    * 1000.0 * iEncountersRate;
+		wdmTimeOfLastSpecial  = wdmTimeOfLastSpecial  + dltTime * WDM_SPECIAL_RATE   * 1000.0 * iEncountersRate;
 		//Вероятность от количества созданных
 		float nump = 1.0 - numShips*0.15;
 		//Выбираем
@@ -93,7 +93,7 @@ void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float
 		else
 		{
 			bool encoff = false;
-			if(CheckAttribute(pchar,"worldmapencountersoff") == 1)
+			if(CheckAttribute(pchar,"worldmapencountersoff"))
 			{
 				encoff = sti(pchar.worldmapencountersoff);
 			}
@@ -137,9 +137,10 @@ void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float
 	}
 }
 
-
+// to_do: Map_BattleEnd
 #event_handler("Map_TraderSucces", "Map_TraderSucces");
 #event_handler("Map_WarriorEnd", "Map_WarriorEnd");
+
 // to_do -->
 void Map_WarriorEnd()
 {
@@ -327,12 +328,12 @@ void Map_TraderSucces_quest(string sChar)
 		SGF_Curier_ReleaseInGlobal();
 	}
 	
-	if (sChar == "SantaMisericordia_cap" && characters[GetCharacterIndex(sChar)].quest == "InMap")
+	if (sChar == "SantaMisericordia_cap" /* && characters[GetCharacterIndex(sChar)].quest == "InMap" */)
 	{
 		SantaMisericordia_ToCity(sChar);
 	}
 	
-	if (sChar == "LadyBeth_cap" && characters[GetCharacterIndex(sChar)].quest == "InMap")
+	if (sChar == "LadyBeth_cap"/*  && characters[GetCharacterIndex(sChar)].quest == "InMap" */)
 	{
 		LadyBeth_ToCity(sChar);
 	}

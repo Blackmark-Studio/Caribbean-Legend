@@ -9,27 +9,27 @@ Jiménez
 
 IslaMona_3
 {
-Next morning...
+Następnego ranka...
 }
 
 IslaMona_4
 {
-Rodrigo Jimenez prepared another batch of ironwood at Isla Mona
+Rodrigo Jimenez przygotował kolejną partię drewna twardego na Isla Mona
 }
 
 IslaMona_5
 {
-You delivered @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> bottles of rum
+Dostarczyłeś @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> butelek rumu
 }
 
 IslaMona_6
 {
-You delivered @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> bottles of wine
+Dostarczyłeś @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> butelek wina
 }
 
 IslaMona_7
 {
-Added @<sti(pchar.questTemp.IslaMona.Factory.Goods)> of ironwood to your warehouse
+Dodano @<sti(pchar.questTemp.IslaMona.Factory.Goods)> drewna twardego do Twojego magazynu
 }
 
 IslaMona_8
@@ -52,5 +52,5 @@ de Alba
 
 IslaMona_12
 {
-Судя по звукам, ловушка удалась! Пора в посёлок!
+Sądząc po dźwiękach, pułapka okazała się sukcesem! Czas wracać do wioski!
 }

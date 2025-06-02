@@ -35,8 +35,8 @@ void ProcessDialogEvent()
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
-       			dialog.text = PCharRepPhrase(LinkRandPhrase("Alarm został podniesiony w mieście. Wygląda na to, że nadszedł czas, abym też wziął do ręki broń...","Czy przypadkiem strażnicy miejski nie gonią za tobą?","Nie znajdziesz tu schronienia, ale możesz znaleźć kilka cali zimnej stali pod swoim żebrem!"),LinkRandPhrase("Czego potrzebujesz, "+GetSexPhrase("łotr","łobuz")+"?! Strażnicy są na twoim tropie, daleko nie uciekniesz, "+GetSexPhrase("brudny pirat","śmierdziel")+"!",""+GetSexPhrase("Brudny","Brudny")+" morderca! Strażnicy!!!","Nie boję się ciebie, "+GetSexPhrase("paskuda","śmierdziel")+"! Wkrótce zostaniesz powieszony w naszym forcie, nie uciekniesz daleko..."));
-				link.l1 = PCharRepPhrase(RandPhraseSimple("Widzę, że jesteś zmęczony życiem...","Wygląda na to, że nie ma tu pokojowych ludzi w "+XI_ConvertString("Colonia"+npchar.city+"Gen")+", wszyscy chcą być bohaterem!"),RandPhraseSimple("Idź do diabła!","Heh, to będą ostatnie sekundy twojego życia..."));
+       			dialog.text = PCharRepPhrase(LinkRandPhrase("Alarm został podniesiony w mieście. Wygląda na to, że nadszedł czas, abym też wziął do ręki broń...","Czy przypadkiem strażnicy miejski nie gonią za tobą?","Nie znajdziesz tu schronienia, ale możesz znaleźć kilka cali zimnej stali pod swoim żebrem!"),LinkRandPhrase("Czego chcesz, "+GetSexPhrase("łotrze","łobuzie")+"?! Strażnicy są na twoim tropie, daleko nie uciekniesz, "+GetSexPhrase("brudny piracie","cwaniaro")+"!",""+GetSexPhrase("Brudny","Brudny")+" morderca! Strażnicy!!!","Nie boję się ciebie, "+GetSexPhrase("ty draniu","paskudo")+"! Wkrótce będziesz wisieć w naszym forcie, nie uciekniesz daleko..."));
+				link.l1 = PCharRepPhrase(RandPhraseSimple("Widzę, że jesteś zmęczony życiem...","Wygląda na to, że nie ma tu pokojowych ludzi w "+XI_ConvertString("Colony"+npchar.city+"Gen")+", wszyscy chcą być bohaterem!"),RandPhraseSimple("Idź do diabła!","Heh, to będą ostatnie sekundy twojego życia..."));
 				link.l1.go = PCharRepPhrase("exit_setOwner", "fight");
 				break;
 			}
@@ -118,13 +118,13 @@ void ProcessDialogEvent()
 		
 		case "Trade_lighthouse":
 			//иногда продает корабельные товары // Addon-2016 Jason
-			npchar.quest.goods = GOOD_COFFEE + drand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
-			npchar.quest.goodsqty = 50+drand(100);
-			if (sti(npchar.quest.goods) == GOOD_EBONY || sti(npchar.quest.goods) == GOOD_MAHOGANY) npchar.quest.goodsqty = 25+drand(50);
+			npchar.quest.goods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
+			npchar.quest.goodsqty = 50+hrand(100);
+			if (sti(npchar.quest.goods) == GOOD_EBONY || sti(npchar.quest.goods) == GOOD_MAHOGANY) npchar.quest.goodsqty = 25+hrand(50);
 			npchar.quest.goodsprice = makeint(sti(Goods[sti(npchar.quest.goods)].Cost)/4);//цена единицы товара
 			npchar.quest.goodscost = sti(npchar.quest.goodsprice)*sti(npchar.quest.goodsqty);//стоимость товара
 			ok = (!CheckAttribute(npchar, "goods_date")) || (GetNpcQuestPastDayParam(npchar, "goods_date") >= 10)
-			if (drand(4) == 1 && makeint(GetCharacterFreeSpace(pchar, sti(npchar.quest.goods))) > sti(npchar.quest.goodsqty) && sti(pchar.money) >= sti(npchar.quest.goodscost) && ok)
+			if (hrand(4) == 1 && makeint(GetCharacterFreeSpace(pchar, sti(npchar.quest.goods))) > sti(npchar.quest.goodsqty) && sti(pchar.money) >= sti(npchar.quest.goodscost) && ok)
 			{
 				dialog.text = "Kapitanie, niedawno na brzeg wyrzuciło ilość towarów - "+GetGoodsNameAlt(sti(npchar.quest.goods))+". Niektóre części zostały zniszczone przez słoną wodę, ale "+FindRussianQtyString(sti(npchar.quest.goodsqty))+" Udało mi się zachować w świetnym stanie. Chcesz kupić trochę? Przydam je tanio, tylko za "+FindRussianMoneyString(sti(npchar.quest.goodsprice))+" za jednostkę.";
 				link.l1 = "Nie. Pokaż mi swoje najnowsze zdobycze.";
@@ -664,6 +664,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(npchar, "quest.trial_usurer");
 			pchar.questTemp.IslamonaSpaOfficer = true;
 			CloseQuestHeader("Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		// <-- legendary edition
 	}

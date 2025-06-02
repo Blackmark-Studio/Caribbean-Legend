@@ -19,7 +19,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			//--> Sinistra, Травля крысы
 			if (CheckAttribute(pchar, "questTemp.TK_Potopil"))
 			{
-				link.l1 = "Ваша Светлость, задание выполнено! Но обеспечить городу зрелище мне не удалось: преступник не пережил своего корабля, и на свою казнь не явится.";
+				link.l1 = "Ваша Светлость, задание выполнено! Но обеспечить городу зрелище мне не удалось: преступник не пережил своего корабля и на свою казнь не явится.";
                 link.l1.go = "TK_Potopil";
 			}
 			if (CheckAttribute(pchar, "questTemp.TK_Plen"))
@@ -50,6 +50,20 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Случилось несчастье, монсеньор!";
                 link.l1.go = "goldengirl_10";
 			}
+			// andre39966 ===> В плену великого улова.
+			if (CheckAttribute(pchar, "questTemp.VPVL_Magor_Dialogue"))
+			{
+				link.l1 = "Месье, у меня есть достоверная информация о предстоящей контрабандной сделке в пределах этого острова. Я полагаю, вам это будет интересно.";
+				link.l1.go = "VPVL_Magor_1";
+				break;
+				
+			}
+			if (CheckAttribute(pchar, "questTemp.VPVL_GovernorDialogueAvailable"))
+			{
+				link.l1 = "Месье, я прибыл, чтобы узнать о судьбе корабля, с контрабандой.";
+				link.l1.go = "VPVL_Magor_4";
+			}
+			//  <=== В плену великого улова.  andre39966
 		break;
 		
 		case "Sharlie_junglejew":
@@ -74,7 +88,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		//--> Sinistra, Травля крысы
 		case "TK_Potopil":
-			dialog.text = "Жаль, Шарль, но победителей не судят. Прошу, после вычета всех налогов, вам положена награда: пять тысяч песо.";
+			dialog.text = "Жаль, Шарль, но победителей не судят. Прошу, после вычета всех налогов вам положена награда: пять тысяч песо.";
 			link.l1 = "Я рад, что смог оказаться полезным Сен-Пьеру и вам лично. Бой был непростым, но мне даже понравилось.";
 			link.l1.go = "TK_Potopil_3";
 			link.l2 = "Это был нелёгкий бой, Ваша Светлость, мой корабль сильно пострадал. Могу ли я просить вас компенсировать мои потери?";
@@ -106,7 +120,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "TK_Plen":
-			dialog.text = "Блестяще, Шарль! Вам будет приятно знать, что ваша победа поможет нашим друзьям из Ордена в проведении одной щекотливой операции... Прошу, после вычета всех налогов, вам положена награда: восемь тысяч песо.";
+			dialog.text = "Блестяще, Шарль! Вам будет приятно знать, что ваша победа поможет нашим друзьям из Ордена в проведении одной щекотливой операции... Прошу, после вычета всех налогов вам положена награда: восемь тысяч песо.";
 			link.l1 = "Я рад, что смог оказаться полезным Сен-Пьеру, Ордену и вам лично. Бой был непростым, но мне даже понравилось.";
 			link.l1.go = "TK_Plen_3";
 			link.l2 = "Это был нелёгкий бой, Ваша Светлость, мой корабль сильно пострадал. Могу ли я просить вас компенсировать мои потери?";
@@ -289,6 +303,51 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
 			pchar.questTemp.GoldenGirl = "find_girl";
 		break;
+		
+		// В плену великого улова    andre39966
+		case "VPVL_Magor_1":
+			dialog.text = "Контрабандная сделка, говорите? Хм... весьма любопытно. Расскажите подробнее, что вам известно?";
+			link.l1 = "Три дня назад в бухту Ле Марен должен был прибыть корабль с неким грузом контрабанды. Однако он опоздал. У меня есть основания полагать, что он всё же явится со дня на день. Возможно, стоит подготовить встречу, месье губернатор.";
+			link.l1.go = "VPVL_Magor_2";
+			pchar.questTemp.VPVL_DontSpawnSmugglersShip = true; 
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "VPVL_Magor_2":
+			dialog.text = "Некий корабль, некий груз... И вы полагаете, что я должен довериться столь туманной информации?";
+			link.l1 = "Месье, я понимаю, что информация довольно расплывчата. Но позвольте мне объяснить, при каких обстоятельствах я её получил. (рассказывает) ";
+			link.l1.go = "VPVL_Magor_3";
+		break;
+		
+		case "VPVL_Magor_3":
+			dialog.text = "Что ж, мы проверим вашу информацию. Если судно с контрабандой действительно бросит якорь у Ле Марен, вас капитан, ждёт достойная награда. Загляните ко мне через три дня. К тому времени всё должно проясниться.";
+			link.l1 = "Отлично. Тогда до встречи через три дня.";
+			link.l1.go = "VPVL_Delete_Spawn_Ship";
+			AddDialogExitQuest("VPVL_SetGovernorDialogueFlag");
+			AddQuestRecord("VPVL", "6");
+		break;
+		
+		case "VPVL_Magor_4":
+			dialog.text = "Хорошо, что вы пришли, капитан. Ваши сведения оказались весьма ценными и заслуживают награды. Вот. Сто пятьдесят дублонов, извольте получить.";
+			link.l1 = "Благодарю, месье губернатор. Рад, что информация оказалась полезной. Всегда к вашим услугам.";
+			link.l1.go = "VPVL_Delete_Flag";
+			AddItems(PChar, "gold_dublon", 150);
+			ChangeCharacterNationReputation(pchar, FRANCE, 5);
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "VPVL_Delete_Flag":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.VPVL_GovernorDialogueAvailable");
+			DeleteAttribute(pchar, "questTemp.VPVL_DontSpawnSmugglersShip");
+		break;
+		
+		case "VPVL_Delete_Spawn_Ship":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.VPVL_Magor_Dialogue");
+			AddDialogExitQuest("VPVL_KillCapitanOfSmuggler");
+		break;
+		// <=== В плену великого улова     andre39966
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

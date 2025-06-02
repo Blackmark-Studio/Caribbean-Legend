@@ -16,7 +16,7 @@ void LadyBeth_init()
 	ChangeCrewExp(sld, "Cannoners", 100);
 	ChangeCrewExp(sld, "Soldiers",  100); 
 	LAi_SetHP(sld, 200 + makeint(pchar.rank) * 2, 200 + makeint(pchar.rank) * 2);
-	SelAllPerksToChar(sld, true);
+	SetAllPerksToChar(sld, true);
 	sld.name = GetConvertStr("LadyBeth_Cap_Name", "LadyBeth.txt");
 	sld.lastname = GetConvertStr("LadyBeth_Cap_lastname", "LadyBeth.txt");
 	UpgradeShipParameter(sld, "SpeedRate");	//апгрейдить скорость
@@ -84,7 +84,7 @@ void LadyBeth_ToCity(string sChar)
 	pchar.questTemp.LadyBeth.colony = LadyBeth_findColony(sti(pchar.questTemp.LadyBeth.stage)+1);
 	Log_testinfo("капитан шнявы сошёл в порту "+ pchar.questTemp.LadyBeth.colony);
 	
-	//DeleteQuestCondition("LadyBeth_ToMap");
+	DeleteQuestCheck("LadyBeth_MapRelease");
 	
 	//таймер через сколько опять выйти на карту
 	int Qty = 3; //через сколько дней выйдем на карту
@@ -229,6 +229,55 @@ string findLedyBethRumour(ref chr)
 	else return Rumors[rand(9)];
 }
 
+void CheckLadyBeth()
+{
+	if(CharacterIsAlive("LadyBeth_cap"))
+	{
+		ref sld = CharacterFromID("LadyBeth_cap")
+		if(CheckAttribute(sld,"quest") && sld.quest == "InMap")
+		{
+			//проверяем на карте
+			bool bAtMap = false;
+			aref encs;
+
+			makearef(encs, worldMap.encounters);
+
+			int num = GetAttributesNum(encs);
+			aref enc;
+			
+			for (int i = 0; i < num; i++)
+			{
+				enc = GetAttributeN(encs, i);
+				if(CheckAttribute(enc, "quest.chrID") && enc.quest.chrID == "LadyBeth_cap")
+				{
+					bAtMap = true;
+				}
+			}
+			// на карте нет, но и атрибут "в порту" отсутствует
+			if(!bAtMap)
+			{
+				LadyBeth_ToCity("LadyBeth_cap");
+			}
+			else
+			{
+				if(CheckQuestCondition("LadyBeth_MapRelease"))
+				{
+					Map_ReleaseQuestEncounter("LadyBeth_cap");
+				}
+				else
+				{
+					SetFunctionTimerCondition("LadyBeth_MapRelease", 0, 0, 31, false);
+				}
+			}
+		}
+	}
+}
+
+void LadyBeth_MapRelease(string qName)
+{
+	
+}
+
 
 //==============Ловушка в каюте================
 void LadyBeth_Lovushka(string qName)
@@ -276,7 +325,7 @@ void LadyBeth_CaimanSea_2(string qName)
 void LadyBeth_CaimanSea_3(string qName)
 {
 	StartQuestMovie(true, false, true);
-	TeleportCharacterToPosAy(pchar, 2.24, 9.00, -22.29, 1.50);
+	TeleportCharacterToPosAy(pchar, -7.70, 8.01, -22.31, 1.50);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("Alonso", "citiz_36", "man", "man", 25, pchar.nation, -1, true, "soldier"));
 	sld.name 	= StringFromKey("SharlieTrial_29");
@@ -288,31 +337,7 @@ void LadyBeth_CaimanSea_3(string qName)
 	ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto9");
 	LAi_SetActorType(sld);
 	
-	if (CheckAttribute(pchar, "questTemp.LadyBeth_AlonsoNaPalube"))
-	{
-		locCameraFromToPos(7.51, 11.42, -24.27, true, 2.01, 9.00, -22.04);
-		DoQuestFunctionDelay("LadyBeth_CaimanSea_6", 2.0);
-	}
-	else
-	{
-		locCameraFromToPos(7.51, 11.42, -24.27, true, 2.01, 9.00, -22.04);
-		DoQuestFunctionDelay("LadyBeth_CaimanSea_6", 2.0);
-		/*locCameraFlyToPositionLookToPoint(7.78, 4.62, 7.54, 6.59, 6.07, -14.21, -7.50, 22.70, -3000.00, 0.002000*GetDeltaTime(), -1);
-			
-		DoQuestFunctionDelay("LadyBeth_CaimanSea_4", 8.0);*/
-	}
-}
-
-void LadyBeth_CaimanSea_4(string qName)
-{
-	LAi_FadeLong("", "");
-	DoQuestFunctionDelay("LadyBeth_CaimanSea_5", 1.0);
-}
-
-void LadyBeth_CaimanSea_5(string qName)
-{
-	locCameraResetState();
-	locCameraFromToPos(7.51, 11.42, -24.27, true, 2.01, 9.00, -22.04);
+	locCameraFromToPos(-4.01, 8.92, -20.43, true, -8.43, 7.52, -22.04);
 	DoQuestFunctionDelay("LadyBeth_CaimanSea_6", 2.0);
 }
 
@@ -365,6 +390,7 @@ void LadyBeth_CaimanBuhta_2(string qName)
 	locations[FindLocation("Shore17")].DisableEncounters = true;
 	locations[FindLocation("Caiman_Grot")].DisableEncounters = true;
 	locations[FindLocation("Caiman_CaveEntrance")].DisableEncounters = true;
+	pchar.GenQuest.HunterLongPause = true;
 	pchar.questTemp.BlackMark.IronsBlock = true;
 	setCharacterShipLocation(pchar, "Shore17");
 	DoFunctionReloadToLocation("Shore17", "reload", "sea", "LadyBeth_CaimanBuhta_3");
@@ -569,7 +595,7 @@ void LadyBeth_CaimanBitva_1(string qName)
 	ref itm;
 	makeref(itm, items[FindItem("mushket9")]);
 	itm.UpgradeStage = 1;
-    Render.QuestSlot.LadyBeth = "LadyBeth_Treasure"; // Части будут рандомиться в сокровища
+    TreasureTiers[0].QuestSlot.LadyBeth = "LadyBeth_Treasure"; // Части будут рандомиться в сокровища
 	// Наш обычный отряд
 	if (CheckAttribute(pchar, "questTemp.LadyBeth_LiteGroup"))
 	{
@@ -2077,6 +2103,7 @@ void LadyBeth_KorablNash(string qName)
 	LocatorReloadEnterDisable("Shore17", "boat", false);
 	DeleteAttribute(pchar,"questTemp.TimeLock");
 	DeleteAttribute(pchar, "GenQuest.CannotWait");
+	DeleteAttribute(pchar, "GenQuest.HunterLongPause");
 	if(CheckAttribute(pchar,"questTemp.BlackMark.IronsBlock")) DeleteAttribute(pchar,"questTemp.BlackMark.IronsBlock");
 	//через день приводим Кайман в порядок
 	DelQMfromCaiman();
@@ -2208,7 +2235,7 @@ void LadyBeth_Barbados_Elizabeth_1(string qName)
 	sld = GetCharacter(NPC_GenerateCharacter("LadyVeth_Elizabeth", "girl_11", "woman", "woman", 5, ENGLAND, -1, false, "quest"));
 	sld.name 	= GetConvertStr("LadyBeth_Elizabeth_Name", "LadyBeth.txt");
 	sld.lastname = GetConvertStr("LadyBeth_Elizabeth_lastname", "LadyBeth.txt");
-	ChangeCharacterAddressGroup(sld, "Plantation_Sp1", "goto", "goto1");
+	ChangeCharacterAddressGroup(sld, "Bridgetown_Plantation_Sp1", "goto", "goto1");
 	sld.dialog.filename = "Quest\LadyBeth_dialog.c";
 	sld.dialog.currentnode = "LadyBeth_Elizabeth_1";
 	LAi_SetStayType(sld);
@@ -2359,7 +2386,7 @@ void LadyBeth_Treasure(int iTier, int iBonus, ref item)
         DeleteAttribute(PChar, "Items.FirearmStockPart_1");
         DeleteAttribute(PChar, "Items.FirearmStockPart_2");
         DeleteAttribute(PChar, "Items.FirearmStockPart_3");
-        DeleteAttribute(&Render, "QuestSlot.LadyBeth");
+        DeleteAttribute(&TreasureTiers[0], "QuestSlot.LadyBeth");
         return;
     }
     */
@@ -2380,7 +2407,7 @@ void LadyBeth_Treasure(int iTier, int iBonus, ref item)
     {
         if(iTier < 9) return;
         item.BoxTreasure.FirearmStockPart_3 = 1;
-        DeleteAttribute(&Render, "QuestSlot.LadyBeth"); // Положили последнюю часть, больше не генерим
+        DeleteAttribute(&TreasureTiers[0], "QuestSlot.LadyBeth"); // Положили последнюю часть, больше не генерим
     }
 }
 

@@ -21,7 +21,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth_1":
-			dialog.text = "Entonces navega hacia Barbados. Pero dudo que lo encuentres allí, fue hace mucho tiempo. Al menos puedes pedirle ayuda al maestro del puerto local.";
+			dialog.text = "Entonces navega hacia Barbados. Pero dudo que lo encuentres allí, fue hace mucho tiempo. Al menos puedes pedirle ayuda al maestro del puerto.";
 			link.l1 = "Allá voy de nuevo, supongo.";
 			link.l1.go = "guardoftruth_2";
 		break;

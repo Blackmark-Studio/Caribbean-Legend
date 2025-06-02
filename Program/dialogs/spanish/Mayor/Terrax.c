@@ -70,13 +70,13 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar, "questTemp.Patria.Pirate.Terrax") && pchar.questTemp.Patria == "epizode_12_talk")
 			{
 				dialog.text = "¡Ese es nuestro cliente! El trabajo está hecho, tu Barón está sentado en una mazmorra bien custodiada. ¿Quizás te gustaría echar un vistazo, je-je?!";
-				link.l1 = " Tendré mucho tiempo para hacer eso, ja-ja. ¿Lo tratan bien?";
+				link.l1 = "Tendré mucho tiempo para hacer eso, ja-ja. ¿Lo tratan bien?";
 				link.l1.go = "patria_10";
 				break;
 			}
 			if(CheckAttribute(pchar, "questTemp.Patria.Pirate.Terrax") && CheckAttribute(pchar, "questTemp.Patria.DodsonFail"))
 			{
-				dialog.text = "¡Charles, qué demonios?!";
+				dialog.text = "¡Charles!, ¿qué demonios?";
 				link.l1 = "Marcus, todo salió mal. No pude ni venir ni informarte...";
 				link.l1.go = "patria_x33";
 				break;
@@ -128,12 +128,12 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.Mtraxx == "silk_14")
 			{
-				link.l1 = "He encontrado un comprador. Es un constructor de barcos de Port Royal. Necesita seda de barco para su producción y podrá comprar lotes de cien rollos cada mes por 25 doblones por rollo. Sus hombres recibirán las mercancías del 10 al 15, por la noche, la ubicación es el Cabo Negril. La contraseña - 'Un comerciante de Lyon'. Bald Geffrey ya ha entregado el primer lote a Jamaica.";
+				link.l1 = "He encontrado un comprador. Es un constructor de barcos de Port Royal. Necesita seda de barco para su producción y podrá comprar lotes de cien rollos cada mes por 25 doblones por rollo. Sus hombres recibirán las mercancías del 10 al 15, por la noche, la ubicación es el Cabo Negril. La contraseña es: 'Un comerciante de Lyon'. Bald Geffrey ya ha entregado el primer lote a Jamaica.";
 				link.l1.go = "mtraxx_13";
 			}
 			if (pchar.questTemp.Mtraxx == "silk_15")
 			{
-				link.l1 = "He encontrado un comprador para ti. Es un constructor naval de Port Royal. Necesita seda de barco para su producción y podrá comprar lotes de cien rollos cada mes por 25 doblones por rollo. Sus hombres recibirán las mercancías del 10 al 15, por la noche, la ubicación es Cabo Negril. La contraseña - 'Un comerciante de Lyons'. Me tomó más de dos meses encontrar a tal comprador, Geffrey ya debe haber vendido la seda a los contrabandistas. Lo siento, Marcus.";
+				link.l1 = "He encontrado un comprador para ti. Es un constructor naval de Port Royal. Necesita seda de barco para su producción y podrá comprar lotes de cien rollos cada mes por 25 doblones por rollo. Sus hombres recibirán las mercancías del 10 al 15, por la noche, la ubicación es Cabo Negril. La contraseña es: 'Un comerciante de Lyons'. Me tomó más de dos meses encontrar a tal comprador, Geffrey ya debe haber vendido la seda a los contrabandistas. Lo siento, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 		break;
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 			// Jason НСО
 			if(!CheckAttribute(pchar, "questTemp.Patria.Pirate.Terrax") && CheckAttribute(pchar, "questTemp.Patria.DodsonFail"))
 			{
-				dialog.text = "¡Charles, qué demonios?!";
+				dialog.text = "¡Charles!, ¿qué demonios?";
 				link.l1 = "Marcus, todo salió mal. No pude ni venir ni informarte...";
 				link.l1.go = "patria_33";
 				break;
@@ -204,7 +204,7 @@ void ProcessDialogEvent()
 			}
 			if(CheckAttribute(pchar, "questTemp.Patria.Pirate.Terrax") && CheckAttribute(pchar, "questTemp.Patria.DodsonFail"))
 			{
-				dialog.text = "¡Charles, qué demonios?!";
+				dialog.text = "¡Charles!, ¿qué demonios?";
 				link.l1 = "Marcus, todo salió mal. No pude ni venir ni informarte...";
 				link.l1.go = "patria_x33";
 				break;
@@ -446,7 +446,7 @@ void ProcessDialogEvent()
 		
 		case "shadows_5":
 			DialogExit();
-			SetLaunchFrameFormParam("One hour later", "Saga_FinalLedbitterStory", 0, 4);
+			SetLaunchFrameFormParam("Una hora más tarde", "Saga_FinalLedbitterStory", 0, 4);
 			LaunchFrameForm();
 			WaitDate("", 0, 0, 0, 1, 10); //крутим время
 			RecalculateJumpTable();
@@ -460,13 +460,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shadows_7":
-			dialog.text = "¡Claro! Ella acompañó a Carnicero en todos sus viajes hasta que él la dejó por Beatrice. Jess no pudo perdonárselo. La gente la llamaba el talismán del Carnicero, porque siempre tenía suerte mientras ella estaba allí con él.\nCréelo o no, pero tan pronto como se deshizo de ella en Barbados, su negocio fue mal, el botín se volvió pobre y el 'Neptuno' se convirtió en un visitante frecuente del astillero de Isla Tesoro. Pero eso se puede explicar por el hecho de que Carnicero había pasado la mayor parte de su tiempo con Beatrice en la cabina en lugar de en el puente.\nBeatrice no era como Jessica, no era adicta a las aventuras y la guerra, aunque Nicholas le enseñó esgrima y navegación. Sí, le gustaban los romances marinos, pero no tenía la suficiente dureza en su interior. El 'Neptuno' de Carnicero no era el lugar adecuado para ella. Al final, eso la mató.";
+			dialog.text = "¡Claro! Ella acompañó a Carnicero en todos sus viajes hasta que él la dejó por Beatrice. Jess no pudo perdonárselo. La gente la llamaba el talismán del Carnicero, porque siempre tenía suerte mientras ella estaba allí con él.\nCréelo o no, pero tan pronto como se deshizo de ella en Barbados, su negocio fue mal, el botín se volvió pobre y el 'Neptune' se convirtió en un visitante frecuente del astillero de Isla Tesoro. Pero eso se puede explicar por el hecho de que Carnicero había pasado la mayor parte de su tiempo con Beatrice en la cabina en lugar de en el puente.\nBeatrice no era como Jessica, no era adicta a las aventuras y la guerra, aunque Nicholas le enseñó esgrima y navegación. Sí, le gustaban los romances marinos, pero no tenía la suficiente dureza en su interior. El 'Neptune' de Carnicero no era el lugar adecuado para ella. Al final, eso la mató.";
 			link.l1 = "¿Y qué hay de Jessica?";
 			link.l1.go = "shadows_8";
 		break;
 		
 		case "shadows_8":
-			dialog.text = "Oh, ella era algo de verdad... Todos los marineros del 'Neptuno' obedecían sus órdenes y no solo porque era la novia del capitán. Jess era una maestra de la esgrima y la navegación, los esfuerzos de Butcher no fueron en vano. Era dura e imprudente, y era tan hermosa.\nMuchos hombres querían compartir una cama con ella, pero solo quería a Butcher, molestarla era realmente arriesgado, muchos sintieron los resultados en su propia piel literalmente, y para los más persistentes sus lecciones de esgrima resultaron ser las últimas de sus vidas.\nJess poseía una espada muy especial, la única de su clase en el Caribe, no tengo idea de dónde la consiguió. Una espada de hoja flameante. La hoja no podía ser agarrada con la mano e incluso el más mínimo toque dejaba una herida terrible.\nJess era una aventurera no de nacimiento, sino de vocación. Por cierto, si necesitas saber más sobre ella, puedes hablar con un conocido tuyo. Él puede contarte mucho más sobre ella de lo que yo puedo.";
+			dialog.text = "Oh, ella era algo de verdad... Todos los marineros del 'Neptune' obedecían sus órdenes y no solo porque era la novia del capitán. Jess era una maestra de la esgrima y la navegación, los esfuerzos de Butcher no fueron en vano. Era dura e imprudente, y era tan hermosa.\nMuchos hombres querían compartir una cama con ella, pero solo quería a Butcher, molestarla era realmente arriesgado, muchos sintieron los resultados en su propia piel literalmente, y para los más persistentes sus lecciones de esgrima resultaron ser las últimas de sus vidas.\nJess poseía una espada muy especial, la única de su clase en el Caribe, no tengo idea de dónde la consiguió. Una espada de hoja flameante. La hoja no podía ser agarrada con la mano e incluso el más mínimo toque dejaba una herida terrible.\nJess era una aventurera no de nacimiento, sino de vocación. Por cierto, si necesitas saber más sobre ella, puedes hablar con un conocido tuyo. Él puede contarte mucho más sobre ella de lo que yo puedo.";
 			link.l1 = "¿De veras? ¿Y quién es este hombre?";
 			link.l1.go = "shadows_9";
 		break;
@@ -716,7 +716,7 @@ void ProcessDialogEvent()
 				}
 			}
 			// <-- legendary edition
-            dialog.text = "Necesitas a una chica del burdel llamada Gabriela Chapado. Di mi nombre y la contraseña - 'Collar de Ámbar'. Ella te dará detalles. Y no pierdas tiempo - la información aún está fresca, pero en un día o dos puede volverse obsoleta."+sTemp;
+            dialog.text = "Necesitas a una chica del burdel llamada Gabriela Chapado. Di mi nombre y la contraseña es: 'Collar de Ámbar'. Ella te dará detalles. Y no pierdas tiempo - la información aún está fresca, pero en un día o dos puede volverse obsoleta."+sTemp;
 			link.l1 = "Entendido, Marcus. Me dirijo a Santo Domingo.";
 			link.l1.go = "mtraxx_6";
 		break;
@@ -807,15 +807,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_12":
-            dialog.text = "¡Ja! Aquí está el valiente capitán "+GetFullName(pchar)+"¡Qué hay del comprador?";
+            dialog.text = "¡Ja! Aquí está el valiente capitán "+GetFullName(pchar)+". ¿Qué hay del comprador?";
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.SilkLate"))
 			{
-				link.l1 = "He encontrado un comprador. Es un constructor naval de Port Royal. Necesita seda para su producción y podrá comprar lotes de cien rollos cada mes por 25 doblones el rollo. Sus hombres recibirán la mercancía del 10 al 15, por la noche, el lugar es Cabo Negril. La contraseña - 'Un comerciante de Lyon'. Me tomó más de dos meses encontrar tal comprador, Geffrey ya debe haber vendido la seda a los contrabandistas. Lo siento, Marcus.";
+				link.l1 = "He encontrado un comprador. Es un constructor naval de Port Royal. Necesita seda para su producción y podrá comprar lotes de cien rollos cada mes por 25 doblones el rollo. Sus hombres recibirán la mercancía del 10 al 15, por la noche, el lugar es Cabo Negril. La contraseña es: 'Un comerciante de Lyon'. Me tomó más de dos meses encontrar tal comprador, Geffrey ya debe haber vendido la seda a los contrabandistas. Lo siento, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 			else
 			{
-				link.l1 = "Te he encontrado un comprador. Es un constructor de barcos de Port Royal. Necesita seda para barcos para su producción y podrá comprar lotes de cien rollos cada mes por 25 doblones el rollo. Sus hombres recibirán las mercancías del 10 al 15, por la noche, el lugar es Cabo Negril. La contraseña - 'Un mercader de Lyons'. El Calvo Geffrey ya ha entregado el primer lote a Jamaica.";
+				link.l1 = "Te he encontrado un comprador. Es un constructor de barcos de Port Royal. Necesita seda para barcos para su producción y podrá comprar lotes de cien rollos cada mes por 25 doblones el rollo. Sus hombres recibirán las mercancías del 10 al 15, por la noche, el lugar es Cabo Negril. La contraseña es: 'Un mercader de Lyons'. El Calvo Geffrey ya ha entregado el primer lote a Jamaica.";
 				link.l1.go = "mtraxx_13";
 			}
 		break;
@@ -1475,7 +1475,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_71":
-            dialog.text = "Tengo la sospecha de que Marco está conectado con alguien... Y necesito que lo averigües. Navega a Martinica. Deja tu barco en Saint Pierre y llega a Le Francois a través de la jungla. Me dijeron que han visto a nuestro hombre allí. No preguntes a los piratas, solo observa y vigila. Una vez que encuentres al tipo, síguelo y ve a dónde va o con quién se encuentra. ¡No lo ataques a él o a su barco porque al hacerlo arruinarías un plan que estoy preparando ahora mismo! ¡Te lo he advertido!\nSíguelo y obsérvalo, regresa una vez que hayas aprendido lo suficiente. Entiendo que tus manos están deseando estrangular al bastardo, pero mantén la calma. Ahora vete. Tienes tres semanas. Buena suerte.";
+            dialog.text = "Tengo la sospecha de que Marco está conectado con alguien... Y necesito que lo averigües. Navega a Martinica. Deja tu barco en Saint-Pierre y llega a Le Francois a través de la jungla. Me dijeron que han visto a nuestro hombre allí. No preguntes a los piratas, solo observa y vigila. Una vez que encuentres al tipo, síguelo y ve a dónde va o con quién se encuentra. ¡No lo ataques a él o a su barco porque al hacerlo arruinarías un plan que estoy preparando ahora mismo! ¡Te lo he advertido!\nSíguelo y obsérvalo, regresa una vez que hayas aprendido lo suficiente. Entiendo que tus manos están deseando estrangular al bastardo, pero mantén la calma. Ahora vete. Tienes tres semanas. Buena suerte.";
 			link.l1 = "En camino, jefe.";
 			link.l1.go = "mtraxx_72";
 		break;
@@ -1506,7 +1506,7 @@ void ProcessDialogEvent()
 				break;
 			}*/
 			dialog.text = "¡Buen momento! Infórmame ahora.";
-			link.l1 = "He rastreado a mi deudor en Le Francois. Su polacra formaba parte de un escuadrón compuesto por una corbeta y una fragata. Marco en persona fue a visitar a Barbaszon, tuvieron una reunión en su lugar durante dos horas, otros visitantes fueron despachados por sus guardias. Luego salió de la casa con dos tipos sombríos: uno era pelirrojo y barbudo con una coraza de reiter, el otro tenía bigote y llevaba una armadura pesada de trincheras. Todos se dirigieron al puerto y zarparon antes de que yo llegara a Saint Pierre.";
+			link.l1 = "He rastreado a mi deudor en Le Francois. Su polacra formaba parte de un escuadrón compuesto por una corbeta y una fragata. Marco en persona fue a visitar a Barbaszon, tuvieron una reunión en su lugar durante dos horas, otros visitantes fueron despachados por sus guardias. Luego salió de la casa con dos tipos sombríos: uno era pelirrojo y barbudo con una coraza de reiter, el otro tenía bigote y llevaba una armadura pesada de trincheras. Todos se dirigieron al puerto y zarparon antes de que yo llegara a Saint-Pierre.";
 			link.l1.go = "mtraxx_74";
 		break;
 		
@@ -1588,7 +1588,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_85":
-            dialog.text = " Mientras estamos teniendo esta charla, el barco navega rápidamente hacia Philipsburg desde Cuba. Debe estar alrededor de Tortuga ahora o un poco al este de allí. Así que levanta anclas y navega hacia Saint Martin, alcanza el 'Torero' no lejos de la isla, solo no dejes que los hombres de Barbazon vean la pelea, de lo contrario mi plan se arruina.";
+            dialog.text = "Mientras estamos teniendo esta charla, el barco navega rápidamente hacia Philipsburg desde Cuba. Debe estar alrededor de Tortuga ahora o un poco al este de allí. Así que levanta anclas y navega hacia Saint Martin, alcanza el 'Torero' no lejos de la isla, solo no dejes que los hombres de Barbazon vean la pelea, de lo contrario mi plan se arruina.";
 			link.l1 = "¡Enseguida!";
 			// belamour legendary edition испанский флаг к выдаче -->
 			if(IsCharacterPerkOn(pchar,"FlagSpa")) link.l1.go = "mtraxx_86";
@@ -1891,7 +1891,7 @@ void ProcessDialogEvent()
 		break;
 		// <-- legendary edition
 		case "mtraxx_97":
-            dialog.text = "Príncipe, ¡por fin! Mira, chicos - le hemos preparado un regalo, y él anda por ahí, ¿quién sabe dónde! ¡Siéntate, empezamos!\nAsí que, valientes corsarios! ¡El oro de Cartagena nos espera, ja-ja! Y lo conseguiremos, lo juro por el trueno! Pero aquellos que trabajan bien también deben descansar bien. ¡Por eso hoy pasaremos un tiempo maravilloso en este magnífico establecimiento! ¡Sirve un poco de ron, cuanto más, mejor! ¡Llenen sus jarras hasta el borde! ¡Por el viento del tesoro, por el viento de la suerte! ¡Brindamos hasta el fondo!\nPara ustedes, la mejor bebida de los sótanos de nuestra taberna, y las damas más hermosas de la isla, ja-ja-ja!\nY para ti, Charles, de nuestra parte - un espléndido sombrero. ¡Póntelo y no discutas!\n¡Corsarios, canten nuestra canción! ¡Nuestra favorita!..";
+            dialog.text = "Prince, ¡por fin! Miren, chicos... le hemos preparado un regalo y él anda por ahí, ¿quién sabe dónde? ¡Siéntate, empezamos!\nBien, ¡valientes corsarios! ¡El oro de Cartagena nos espera, ja-ja! Y lo conseguiremos, lo juro por el trueno! Pero aquellos que trabajan bien también deben descansar bien. ¡Por eso hoy pasaremos un tiempo maravilloso en este magnífico establecimiento! ¡Sirve un poco de ron, cuanto más, mejor! ¡Llenen sus jarras hasta el borde! ¡Por el viento del tesoro, por el viento de la suerte! ¡Brindamos hasta el fondo!\n¡Para ustedes, la mejor bebida de los sótanos de nuestra taberna, y las damas más hermosas de la isla, ja-ja-ja!\nY para ti, Charles, de nuestra parte... un espléndido sombrero. ¡Póntelo y no discutas!\n¡Corsarios, canten nuestra canción! ¡Nuestra favorita!...";
 			link.l1 = "";
 			link.l1.go = "mtraxx_98";
 		break;
@@ -2358,7 +2358,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_29":
-			dialog.text = "Eres bienvenido, muchacho. ¡Para mí esto fue lo más divertido que he tenido este año! ¡Nos reímos tanto, yo y mis muchachos! Así que me gustaría agradecerte por esto. Aquí está tu dinero.";
+			dialog.text = "De nada, muchacho. ¡Para mí esto fue lo más divertido que he tenido este año! ¡Nos reímos tanto, yo y mis muchachos! Así que me gustaría agradecerte por esto. Aquí está tu dinero.";
 			link.l1 = "Deberías guardar una parte de ello por tu actuación.";
 			link.l1.go = "patria_30";
 		break;

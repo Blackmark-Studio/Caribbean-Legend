@@ -2,11 +2,20 @@
 
 int ChangeContrabandRelation(ref pchar, int _val)
 {
-   pchar.questTemp.Contraband.relation = makeint(pchar.questTemp.Contraband.relation) + _val;
-   if (makeint(pchar.questTemp.Contraband.relation) > 99) pchar.questTemp.Contraband.relation = 99;
-   if (makeint(pchar.questTemp.Contraband.relation) < 0) pchar.questTemp.Contraband.relation = 0;
-   
-   return makeint(pchar.questTemp.Contraband.relation);
+	pchar.questTemp.Contraband.relation = makeint(pchar.questTemp.Contraband.relation) + _val;
+	if (makeint(pchar.questTemp.Contraband.relation) > 100) pchar.questTemp.Contraband.relation = 100;
+	if (makeint(pchar.questTemp.Contraband.relation) < 0) pchar.questTemp.Contraband.relation = 0;
+	
+	if (_val>0)
+	{
+		notification(StringFromKey("smuggling_1")+stf(pchar.questTemp.Contraband.relation)+")", "Smugglers");
+	}
+	if (_val<0)
+	{
+		notification(StringFromKey("smuggling_2")+stf(pchar.questTemp.Contraband.relation)+")", "Smugglers");
+	}
+	
+	return makeint(pchar.questTemp.Contraband.relation);
 }
 
 // работа с контрабандой
@@ -380,6 +389,8 @@ void RemoveSmugglersFromShore()
 
 void SetCoastalGuardPursuit()
 {
+	if(HasShipTrait(pchar, "trait05") && rand(1) == 0) return;
+	
 	ref Smuggler;
 	int i;
 	int iNation = sti(pchar.GenQuest.Contraband.GuardNation);// Нация патруля
@@ -499,7 +510,7 @@ int GetContrabandGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref
 				if(CheckOfficersPerk(chref,"BasicCommerce"))	{ skillModify -= 0.10; }
 			}				
 		}
-				
+
 		costModify = 1.05;
 	}
 	else	// цена продажи товара игроком

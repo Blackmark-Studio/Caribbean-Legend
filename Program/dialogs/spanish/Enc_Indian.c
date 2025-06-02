@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "select_trade": // индейская торговля
-		switch (drand(7))
+		switch (hrand(7))
 		{
 		case 0: // торговля через интерфейс
 			dialog.text = "Tienes suerte, hermano blanco." + npchar.name + " tiene algunas cosas a la venta. Mira aquí.";
@@ -54,8 +54,8 @@ void ProcessDialogEvent()
 			break;
 
 		case 2: // жемчуг большой
-			npchar.quest.item.qty = 25 + drand(25);
-			npchar.quest.item.price = 30 + drand(10);
+			npchar.quest.item.qty = 25 + hrand(25);
+			npchar.quest.item.price = 30 + hrand(10);
 			dialog.text = "" + npchar.name + " tiene lágrimas de dioses. Grandes, hermano blanco. En la cantidad de " + FindRussianQtyString(sti(npchar.quest.item.qty)) + ". ¿Quieres comprarlos? Los vendo por " + FindRussianMoneyString(sti(npchar.quest.item.price)) + "para uno.";
 			link.l1 = "No, no estoy interesado.";
 			link.l1.go = "exit";
@@ -72,8 +72,8 @@ void ProcessDialogEvent()
 			break;
 
 		case 3: // жемчуг малый
-			npchar.quest.item.qty = 40 + drand(40);
-			npchar.quest.item.price = 10 + drand(5);
+			npchar.quest.item.qty = 40 + hrand(40);
+			npchar.quest.item.price = 10 + hrand(5);
 			dialog.text = "" + npchar.name + " tiene lágrimas de dioses. Pequeñas, hermano blanco. En la cantidad de " + FindRussianQtyString(sti(npchar.quest.item.qty)) + ". ¿Quieres comprarlos? Los vendo por " + FindRussianMoneyString(sti(npchar.quest.item.price)) + " para uno.";
 			link.l1 = "No, no estoy interesado.";
 			link.l1.go = "exit";
@@ -90,8 +90,8 @@ void ProcessDialogEvent()
 			break;
 
 		case 4: // золотые самородки
-			npchar.quest.item.qty = 20 + drand(20);
-			npchar.quest.item.price = 90 + drand(20);
+			npchar.quest.item.qty = 20 + hrand(20);
+			npchar.quest.item.price = 90 + hrand(20);
 			dialog.text = "" + npchar.name + " tiene metal amarillo que vosotros carapálidas amáis mucho. En la cantidad de " + FindRussianQtyString(sti(npchar.quest.item.qty)) + ". Vendo solo por " + FindRussianMoneyString(sti(npchar.quest.item.price)) + " para uno.";
 			link.l1 = "No, no estoy interesado.";
 			link.l1.go = "exit";
@@ -108,8 +108,8 @@ void ProcessDialogEvent()
 			break;
 
 		case 5: // серебряные самородки
-			npchar.quest.item.qty = 40 + drand(40);
-			npchar.quest.item.price = 40 + drand(10);
+			npchar.quest.item.qty = 40 + hrand(40);
+			npchar.quest.item.price = 40 + hrand(10);
 			dialog.text = "" + npchar.name + " tiene metal blanco que a vosotros, caras pálidas, os gusta mucho. En la cantidad de " + FindRussianQtyString(sti(npchar.quest.item.qty)) + ". Solo vendo por " + FindRussianMoneyString(sti(npchar.quest.item.price)) + "para uno.";
 			link.l1 = "No, no estoy interesado.";
 			link.l1.go = "exit";
@@ -140,7 +140,7 @@ void ProcessDialogEvent()
 			break;
 
 		case 7: // повтор не торгует
-			dialog.text = "No, hermano blanco. " + npchar.name + "  no comercia. " + npchar.name + " -  es un guerrero.";
+			dialog.text = "No, hermano blanco. " + npchar.name + "  no comercia. " + npchar.name + ",  es un guerrero.";
 			link.l1 = "Ya veo. Bueno, adiós, hermano de piel roja.";
 			link.l1.go = "exit";
 			break;
@@ -173,14 +173,14 @@ void ProcessDialogEvent()
 		if (iQty < 1)
 		{
 			dialog.text = "¿Bromeas, cara pálida? ¿No necesitas las lágrimas de los dioses? Entonces adiós.";
-			link.l1 = "¿Hmm...";
+			link.l1 = "Hmm...";
 			link.l1.go = "exit";
 			break;
 		}
 		if (iQty > sti(npchar.quest.item.qty))
 		{
 			dialog.text = "Te dije cuántas lágrimas tengo. ¿Bromeas con el indio, cara pálida? Entonces adiós.";
-			link.l1 = "¿Hmm...";
+			link.l1 = "Hmm...";
 			link.l1.go = "exit";
 			break;
 		}
@@ -219,7 +219,7 @@ void ProcessDialogEvent()
 		if (iQty < 1)
 		{
 			dialog.text = "¿Bromeas, rostro pálido? ¿No necesitas las lágrimas de los dioses? Entonces adiós.";
-			link.l1 = "¿Hmm...";
+			link.l1 = "Hmm...";
 			link.l1.go = "exit";
 			break;
 		}
@@ -265,7 +265,7 @@ void ProcessDialogEvent()
 		if (iQty < 1)
 		{
 			dialog.text = "¿Bromeas, carapálida? ¿No necesitas metal? Entonces adiós.";
-			link.l1 = "¿Hmm...";
+			link.l1 = "Hmm...";
 			link.l1.go = "exit";
 			break;
 		}
@@ -318,7 +318,7 @@ void ProcessDialogEvent()
 		if (iQty > sti(npchar.quest.item.qty))
 		{
 			dialog.text = "Te conté cuántos tengo. ¿Bromeas con el indio, cara pálida? Entonces adiós.";
-			link.l1 = "¿Hmm...";
+			link.l1 = "Hmm...";
 			link.l1.go = "exit";
 			break;
 		}
@@ -351,8 +351,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "mangarosa_1":
-		npchar.quest.mangarosa = "indian_" + (drand(10) + 1);
-		dialog.text = "Sí. Este es uno de los nombres que tiene - Manga Rosa. Te doy un amuleto por ello. Muy buen amuleto, tiene nombre - " + XI_ConvertString(npchar.quest.mangarosa) + "¿Haces comercio?";
+		npchar.quest.mangarosa = "indian_" + (hrand(10) + 1);
+		dialog.text = "Sí. Ese es uno de los nombres que tiene, Manga Rosa. Te doy un amuleto por ello. Muy buen amuleto, tiene nombre, " + XI_ConvertString(npchar.quest.mangarosa) + "¿Haces comercio?";
 		link.l1 = "Escucha, hermano de piel roja, me gustaría aprender más sobre esta planta. ¿Me dirás por qué la necesitas tanto?";
 		link.l1.go = "mangarosa_2";
 		break;

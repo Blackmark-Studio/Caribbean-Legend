@@ -93,7 +93,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			else
 			{
 				pchar.questTemp.Regata.FourthTransitionTime = GetPastTime("hour", sti(pchar.questTemp.Regata.StartYear), sti(pchar.questTemp.Regata.StartMonth), sti(pchar.questTemp.Regata.StartDay), stf(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime()); // истратил ГГ в часах на 1+2+3+4 переход
-				dialog.text = "Puede que hayas notado, capitán, que la ciudad está bajo asedio. Esperamos que los españoles nos ataquen en cualquier momento y estamos movilizando nuestras fuerzas. Pero la regata sigue adelante\nVamos a registrarnos: capitán " + GetFullName(pchar) + ", el barco está - " + pchar.Ship.Name + "... El tiempo de la regata en horas es " + sti(pchar.questTemp.Regata.FourthTransitionTime) + ". Hecho, tu resultado está registrado, puedes continuar tu camino.";
+				dialog.text = "Puede que hayas notado, capitán, que la ciudad está bajo asedio. Esperamos que los españoles nos ataquen en cualquier momento y estamos movilizando nuestras fuerzas. Pero la regata sigue adelante\nVamos a registrarnos: capitán " + GetFullName(pchar) + ", el barco está, " + pchar.Ship.Name + "... El tiempo de la regata en horas es " + sti(pchar.questTemp.Regata.FourthTransitionTime) + ". Hecho, tu resultado está registrado, puedes continuar tu camino.";
 				link.l1 = "Dime mi rango.";
 				link.l1.go = "Regata_info";
 			}
@@ -250,7 +250,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	case "caleuche_name":
 		if (GetStrSmallRegister(dialogEditStrings[2]) == "harpy")
 		{
-			dialog.text = "¿'Harpy'? Por supuesto, conozco ese xebec. Su capitán es Reginald Jackson. Pero no había estado en Bridgetown por mucho tiempo. Escuché que ahora trabaja para la Compañía Neerlandesa de las Indias Occidentales. Así que deberías buscarlo en Willemstad.";
+			dialog.text = "¿'Harpy'? Por supuesto, conozco ese xebec. Su capitán es Reginald Jackson. Pero no había estado en Bridgetown por mucho tiempo. Escuché que ahora trabaja para la Compañía Holandesa de las Indias Occidentales. Así que deberías buscarlo en Willemstad.";
 			link.l1 = "¡Muchas gracias! Me has ayudado mucho.";
 			link.l1.go = "caleuche_3";
 		}

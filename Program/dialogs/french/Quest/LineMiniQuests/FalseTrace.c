@@ -44,7 +44,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_1":
 			//выбираем целевой пункт
-			switch (drand(2))
+			switch (hrand(2))
 			{
 				case 0: 
 					pchar.questTemp.FalseTrace.DayQty = 18;
@@ -64,19 +64,19 @@ void ProcessDialogEvent()
 			}
 			pchar.questTemp.FalseTrace.ShipName = GenerateRandomNameToShip(sti(npchar.nation));
 			pchar.questTemp.FalseTrace.Mation = sti(npchar.nation);
-			dialog.text = "Kha ! C'est un plaisir de faire affaire avec un esprit aussi vif que le vôtre, Capitaine. Alors, le travail est simple : il y a un galion rempli d'une belle quantité d'argent et il va bientôt quitter l'un des ports locaux. Un seul navire, sans escorte. Ridicule, n'est-ce pas ? K-kha\n Aussi simple que bonjour. Je vous dis où et quand, vous prenez le butin et je reçois ma part.";
+			dialog.text = "Kha ! C'est un plaisir de faire affaire avec un esprit aussi vif que le vôtre, Capitaine. Alors, le travail est simple : il y a un flûte rempli d'une belle quantité d'argent et il va bientôt quitter l'un des ports locaux. Un seul navire, sans escorte. Ridicule, n'est-ce pas ? K-kha\n Aussi simple que bonjour. Je vous dis où et quand, vous prenez le butin et je reçois ma part.";
 			link.l1 = "Et bien sûr, tu veux le recevoir en espèces immédiatement ?";
 			link.l1.go = "FalseTrace_2";
 		break;
 		
 		case "FalseTrace_2":
-			dialog.text = "Est-ce que j'ai l'air d'un misérable vaurien, capitaine ? Pas question. Je me joindrai à vous dans ce raid et nous le ferons ensemble. Je ne resterai pas dans la cale pendant le combat, bien au contraire - je vous demande de me mettre dans l'équipe d'abordage en tant qu'officier, temporairement, bien sûr.\nJe connais mon métier, je sais comment poignarder et tirer sur les gens. Alors je risquerai ma peau tout comme vous... khe... kha ! Vous me paierez ma part après que nous aurons capturé le galion.";
+			dialog.text = "Est-ce que j'ai l'air d'un misérable vaurien, capitaine ? Pas question. Je me joindrai à vous dans ce raid et nous le ferons ensemble. Je ne resterai pas dans la cale pendant le combat, bien au contraire - je vous demande de me mettre dans l'équipe d'abordage en tant qu'officier, temporairement, bien sûr.\nJe connais mon métier, je sais comment poignarder et tirer sur les gens. Alors je risquerai ma peau tout comme vous... khe... kha ! Vous me paierez ma part après que nous aurons capturé le flûte.";
 			link.l1 = "Quelle part du butin réclames-tu pour toi-même ?";
 			link.l1.go = "FalseTrace_3";
 		break;
 		
 		case "FalseTrace_3":
-			dialog.text = "Je ne suis pas un homme avide, capitaine. Ma part est autant que l'on peut charger dans la cale de ma vieille chaloupe et cela représente environ 200 paquets d'argent. Selon mes informations, il y aura pas moins de 2000 paquets d'argent sur le galion, donc j'obtiendrai la dixième partie. C'est juste, n'est-ce pas ?";
+			dialog.text = "Je ne suis pas un homme avide, capitaine. Ma part est autant que l'on peut charger dans la cale de ma vieille chaloupe et cela représente environ 200 paquets d'argent. Selon mes informations, il y aura pas moins de 2000 paquets d'argent sur le flûte, donc j'obtiendrai la dixième partie. C'est juste, n'est-ce pas ?";
 			link.l1 = "Un dixième du butin juste pour des informations ? J'achete de telles informations aux ivrognes pour un verre de rhum dans une taverne locale. Non, nous n'allons pas dans la même direction, ami !";
 			link.l1.go = "FalseTrace_4";
 			link.l2 = "Hm. Je suppose que je suis d'accord. J'accepte ton offre, Adam. Bienvenue à bord. Maintenant, à propos de ton information : d'où, vers où, heure, nom du navire ?";
@@ -90,7 +90,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_5":
-			dialog.text = "Le nom du galion est le "+pchar.questTemp.FalseTrace.ShipName+", elle quitte Carthagene et navigue "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+"  Nous n'avons pas beaucoup de temps, pourtant. Deux semaines, trois tout au plus. Si nous ne la trouvons pas en trois semaines, c'est fini. ";
+			dialog.text = "Le nom du flûte est le "+pchar.questTemp.FalseTrace.ShipName+", elle quitte Carthagene et navigue "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+"  Nous n'avons pas beaucoup de temps, pourtant. Deux semaines, trois tout au plus. Si nous ne la trouvons pas en trois semaines, c'est fini. ";
 			link.l1 = "N'attendons pas plus longtemps, alors ! L'aventure nous appelle !";
 			link.l1.go = "FalseTrace_6";
 		break;
@@ -127,24 +127,24 @@ void ProcessDialogEvent()
 		case "FalseTrace_7":
 			chrDisableReloadToLocation = true;
 			dialog.text = "Vouliez-vous me voir, capitaine ?";
-			link.l1 = "Je pense que tu l'as vu venir... Où est l'argent, bon sang? Où est-il? Je te parle! Le capitaine du galion m'a dit que c'était un navire de ravitaillement! Tu m'as menti!";
+			link.l1 = "Je pense que tu l'as vu venir... Où est l'argent, bon sang? Où est-il? Je te parle! Le capitaine du flûte m'a dit que c'était un navire de ravitaillement! Tu m'as menti!";
 			link.l1.go = "FalseTrace_8";
 		break;
 		
 		case "FalseTrace_8":
 			dialog.text = "Calmez-vous, Capitaine. Je vais essayer d'expliquer tout.";
-			link.l1 = "Bien sûr que tu vas le faire ! Je me suis déjà calmé ! Tu n'es pas pendu à une vergue en ce moment uniquement parce que je n'arrive toujours pas à comprendre tes motivations. Tu as poursuivi ce galion avec moi, sachant d'avance qu'il n'y avait pas d'argent. Alors, je te prie de t'expliquer.";
+			link.l1 = "Bien sûr que tu vas le faire ! Je me suis déjà calmé ! Tu n'es pas pendu à une vergue en ce moment uniquement parce que je n'arrive toujours pas à comprendre tes motivations. Tu as poursuivi ce flûte avec moi, sachant d'avance qu'il n'y avait pas d'argent. Alors, je te prie de t'expliquer.";
 			link.l1.go = "FalseTrace_9";
 		break;
 		
 		case "FalseTrace_9":
-			dialog.text = "Oui, je t'ai vraiment berné, Capitaine. Mais c'était la seule façon de te convaincre de faire ce dont j'ai besoin, de capturer... khe kha! De capturer ce maudit galion\nMais je te promets de rembourser ma dette envers toi. Maintenant, laisse-moi te dire pourquoi je l'ai fait. As-tu trouvé une femme sur le galion? J'ai vu les membres de l'équipage la prendre sur ton navire...";
+			dialog.text = "Oui, je t'ai vraiment berné, Capitaine. Mais c'était la seule façon de te convaincre de faire ce dont j'ai besoin, de capturer... khe kha! De capturer ce maudit flûte\nMais je te promets de rembourser ma dette envers toi. Maintenant, laisse-moi te dire pourquoi je l'ai fait. As-tu trouvé une femme sur le flûte? J'ai vu les membres de l'équipage la prendre sur ton navire...";
 			link.l1 = "Hm... Alors, tu avais besoin de la fille, hein? Et c'est pour ça que tu m'as forcé à engager une bataille navale et à tuer un tas de gens !?";
 			link.l1.go = "FalseTrace_10";
 		break;
 		
 		case "FalseTrace_10":
-			dialog.text = "C'est ma femme. Katerine Rayner. Elle s'est enfuie de chez moi il y a trois mois avec ce misérable Capitaine. J'ai fait tous les efforts possibles pour les retrouver, et je l'ai fait. Ils allaient tous les deux "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+" . Je ne pouvais imaginer une meilleure façon de ramener Katerine et de m'occuper même de ce voleur de femme\nSi je vous disais la vérité, vous partiriez. J'ai donc dû vous raconter une histoire juteuse sur un galion rempli d'argent.";
+			dialog.text = "C'est ma femme. Katerine Rayner. Elle s'est enfuie de chez moi il y a trois mois avec ce misérable Capitaine. J'ai fait tous les efforts possibles pour les retrouver, et je l'ai fait. Ils allaient tous les deux "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+" . Je ne pouvais imaginer une meilleure façon de ramener Katerine et de m'occuper même de ce voleur de femme\nSi je vous disais la vérité, vous partiriez. J'ai donc dû vous raconter une histoire juteuse sur un flûte rempli d'argent.";
 			link.l1 = "Hmpf... Ta femme t'a quitté, n'est-ce pas ? Très intéressant !";
 			link.l1.go = "FalseTrace_11";
 		break;
@@ -173,7 +173,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_13":
 			dialog.text = "Parce que je n'ai pas encore cette information. Laissez-moi vous expliquer en détail. Un gentilhomme de fortune nommé Solly l'Œil-de-Lynx - en avez-vous déjà entendu parler ? - il a l'intention de piller des mines d'or non loin de Blueweld. En raison de certains événements, il devra laisser tout son or dans un endroit caché et mettre quelques gardes pour le protéger. L'homme lui-même ira à pied jusqu'à Belize ou à Blueweld pour obtenir un navire. J'ai un agent parmi l'équipage de Solly, il m'attendra à "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.QuestCity)+". Une fois que nous jetterons l'ancre là-bas, il me dira où Solly cache ses trésors\nTu iras là-bas, élimineras les gardes et prendras tout l'or pour toi. J'allais le faire moi-même, mais étant donné la situation actuelle, je te laisse tout. Pas de frais.";
-			link.l1 = "Ton histoire ressemble fort à ta précédente fable sur un galion chargé d'argent. Tu m'as déjà trompé une fois. Comment peux-tu garantir que tu ne mens pas cette fois-ci ?";
+			link.l1 = "Ton histoire ressemble fort à ta précédente fable sur un flûte chargé d'argent. Tu m'as déjà trompé une fois. Comment peux-tu garantir que tu ne mens pas cette fois-ci ?";
 			link.l1.go = "FalseTrace_14";
 		break;
 		
@@ -290,7 +290,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_25":
 			dialog.text = "Quoi ?! Kha ! Quel genre d'affaire avec ma femme ? Qu'est-ce que tu racontes, espèce de poisson pourri ?!";
-			link.l1 = "À cause de tes fausses informations, j'ai capturé un galion vide et tué son capitaine. Je regrette de l'avoir fait, bien qu'il soit trop tard pour les regrets. Ta femme était amoureuse de ce marin, si j'ai bien compris. C'est pourquoi elle m'a demandé de te tuer. C'est pourquoi nous sommes ici dans cette baie maintenant.";
+			link.l1 = "À cause de tes fausses informations, j'ai capturé un flûte vide et tué son capitaine. Je regrette de l'avoir fait, bien qu'il soit trop tard pour les regrets. Ta femme était amoureuse de ce marin, si j'ai bien compris. C'est pourquoi elle m'a demandé de te tuer. C'est pourquoi nous sommes ici dans cette baie maintenant.";
 			link.l1.go = "FalseTrace_26";
 		break;
 		
@@ -332,7 +332,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_abordage_2":
-			dialog.text = "Je le répète - je n'ai aucune cargaison à bord. Ce galion est un navire de ravitaillement en route vers "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+" pour prendre une cargaison de boulets de canon et de provisions pour les troupes.";
+			dialog.text = "Je le répète - je n'ai aucune cargaison à bord. Ce flûte est un navire de ravitaillement en route vers "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+" pour prendre une cargaison de boulets de canon et de provisions pour les troupes.";
 			link.l1 = "Tu me montes un bateau. Tes cales doivent être pleines d'argent. Et je vais les vérifier, une fois que nous aurons terminé cette conversation...";
 			link.l1.go = "FalseTrace_abordage_3";
 		break;
@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.FalseTrace.KillCaptain"))
 			{
 				dialog.text = "Que veux-tu de moi? Me jeter aux requins, comme tu as dit que tu le ferais? Tu as ruiné ma vie et je...";
-				link.l1 = "Allez, ma chère. Personne ne va te jeter nulle part. Je veux juste clarifier la situation, puisque j'ai attaqué ce galion à cause de toi et non pour une autre raison.";
+				link.l1 = "Allez, ma chère. Personne ne va te jeter nulle part. Je veux juste clarifier la situation, puisque j'ai attaqué ce flûte à cause de toi et non pour une autre raison.";
 				link.l1.go = "FalseTrace_wife_7";
 			}
 			else
@@ -456,7 +456,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_wife_10":
 			dialog.text = "Oui. Je suis la femme de ce monstre. J'étais sous l'illusion que ce cauchemar était enfin terminé... Vous a-t-il engagé pour me rattraper ?";
-			link.l1 = "Généralement, c'est ce qui s'est passé. Adam m'a menti à propos de l'argent, pour que je capture le galion '"+pchar.questTemp.FalseTrace.ShipName+"'. Assurément, il était déterminé à te ramener. Il y a un quart d'heure, il m'a expliqué toutes ses actions.";
+			link.l1 = "Généralement, c'est ce qui s'est passé. Adam m'a menti à propos de l'argent, pour que je capture le flûte '"+pchar.questTemp.FalseTrace.ShipName+"'. Assurément, il était déterminé à te ramener. Il y a un quart d'heure, il m'a expliqué toutes ses actions.";
 			link.l1.go = "FalseTrace_wife_11";
 		break;
 		
@@ -479,7 +479,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_wife_14":
-			dialog.text = "Au début, il était différent... Et son passé me semblait si romantique... Mais finalement tout a changé. Et je ne veux même pas le voir, sans parler de vivre avec lui, ne peux-tu pas comprendre cela? Je ne veux pas! Surtout après cette attaque sur le galion, qu'il a organisée!";
+			dialog.text = "Au début, il était différent... Et son passé me semblait si romantique... Mais finalement tout a changé. Et je ne veux même pas le voir, sans parler de vivre avec lui, ne peux-tu pas comprendre cela? Je ne veux pas! Surtout après cette attaque sur le flûte, qu'il a organisée!";
 			link.l1 = "Hm... Que devrais-je faire de toi, alors, douce dame ?";
 			link.l1.go = "FalseTrace_wife_15";
 		break;
@@ -493,7 +493,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = ""+pchar.questTemp.FalseTrace.CapName+"... Le capitaine du galion. Vous l'avez enfermé. Parlez-lui, je vous en prie ! Il vous offrira quelque chose pour nos vies et notre liberté ! Il trouvera une idée ! Je... Je ne veux pas retourner chez Adam, à partir de maintenant "+pchar.questTemp.FalseTrace.CapName+" est mon mari ! Je vous en supplie - ne me ramenez pas à Adam, à ce monstre !";
+				dialog.text = ""+pchar.questTemp.FalseTrace.CapName+"... Le capitaine du flûte. Vous l'avez enfermé. Parlez-lui, je vous en prie ! Il vous offrira quelque chose pour nos vies et notre liberté ! Il trouvera une idée ! Je... Je ne veux pas retourner chez Adam, à partir de maintenant "+pchar.questTemp.FalseTrace.CapName+" est mon mari ! Je vous en supplie - ne me ramenez pas à Adam, à ce monstre !";
 				link.l1 = "Hm. Intéressant. Et que peut bien m'offrir mon prisonnier ? Je peux obtenir une rançon pour lui des autorités, et j'aurai aussi l'or de Solly le Louche...";
 				link.l1.go = "FalseTrace_wife_21";
 			}
@@ -706,7 +706,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_Remove1":
-			dialog.text = "Tu es vraiment un empoté, capitaine ! Perdre un galion rempli d'argent... J'ai fait une erreur en comptant sur toi. Adieu !";
+			dialog.text = "Tu es vraiment un empoté, capitaine ! Perdre un flûte rempli d'argent... J'ai fait une erreur en comptant sur toi. Adieu !";
 			link.l1 = "Adieu, Adam.";
 			link.l1.go = "FalseTrace_Remove2";
 		break;

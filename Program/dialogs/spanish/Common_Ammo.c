@@ -132,15 +132,15 @@ void ProcessDialogEvent()
 		pchar.questTemp.PrisonGun.Sum = makeint(sti(pchar.questTemp.PrisonGun.Price) * sti(pchar.questTemp.PrisonGun.Qty));
 		pchar.questTemp.PrisonGun.Luck = rand(4);
 		pchar.questTemp.PrisonGun.Id = npchar.location;
-		dialog.Text = "Necesito " + pchar.questTemp.PrisonGun.Text + ", en la cantidad de " + sti(pchar.questTemp.PrisonGun.Qty) + "  unidades exactamente. Pagaré en doblones de oro, " + sti(pchar.questTemp.PrisonGun.Price) + " por pieza. Eso sumará a " + FindRussianDublonString(sti(pchar.questTemp.PrisonGun.Sum)) + " en total. ¿Qué dirás? Ah, y una cosa más - Aceptaré todo el lote, pero no antes de un mes - el dinero aún no ha llegado.";
+		dialog.Text = "Necesito " + pchar.questTemp.PrisonGun.Text + ", en la cantidad de " + sti(pchar.questTemp.PrisonGun.Qty) + "  unidades exactamente. Pagaré en doblones de oro, " + sti(pchar.questTemp.PrisonGun.Price) + " por pieza. Eso sumará a " + FindRussianDublonString(sti(pchar.questTemp.PrisonGun.Sum)) + " en total. ¿Qué dirás? Ah, y una cosa más. Aceptaré todo el lote, pero no antes de un mes el dinero aún no ha llegado.";
 		Link.l1 = RandPhraseSimple("No, oficial, su oferta no me interesó en absoluto... Lo siento.", "Es tentador, pero creo que paso. Permíteme guardar mis razones para mí mismo.");
 		Link.l1.go = "exit_gun";
-		Link.l2 = RandPhraseSimple("Bueno, esa oferta es ciertamente interesante. Considéralo un trato.", "Supongo que lo tomaré. No es tan difícil y claramente lucrativo.");
+		Link.l2 = RandPhraseSimple("Bueno, esa oferta es ciertamente interesante. Considéralo un trato.", "Supongo que lo tomaré. No es tan difícil y es claramente lucrativo.");
 		Link.l2.go = "GiveTaskGun_2";
 		break;
 
 	case "exit_gun":
-		dialog.Text = "Qué lástima, capitán, contaba contigo. Y... espero que esta conversación se quede dentro del fuerte?";
+		dialog.Text = "Qué lástima, capitán, contaba contigo. Y... ¿puedo esperar que esta conversación se quede dentro del fuerte?";
 		Link.l1 = "No tienes que recordarme eso. Mis mejores saludos.";
 		Link.l1.go = "exit";
 		DeleteAttribute(pchar, "questTemp.PrisonGun");
@@ -236,7 +236,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "TakeGun_late":
-		dialog.Text = "No tengo ni idea. Es tu problema. Véndelos, deshazte de ellos, húndelos - realmente no me importa.";
+		dialog.Text = "No tengo ni idea. Es tu problema. Véndelos, deshazte de ellos o húndelos realmente no me importa.";
 		Link.l1 = "Oh, eso fue simplemente una pérdida de tiempo...";
 		Link.l1.go = "exit";
 		AddQuestRecord("PrisonGun", "4");
@@ -251,7 +251,7 @@ void ProcessDialogEvent()
 		iGunGoods = pchar.questTemp.PrisonGun.Goods;
 		amount = sti(pchar.questTemp.PrisonGun.Qty);
 		iTemp = sti(pchar.questTemp.PrisonGun.Sum);
-		dialog.Text = "Por supuesto. Aquí tienes tu oro - haz lo que quieras.";
+		dialog.Text = "Por supuesto. Aquí tienes tu oro, haz lo que quieras.";
 		Link.l1 = "¡Gracias! ¡Fue un placer hacer negocios contigo!";
 		Link.l1.go = "TakeGun_2";
 		TakeNItems(pchar, "gold_dublon", iTemp);
@@ -327,7 +327,7 @@ void ProcessDialogEvent()
 	case "trial_1":
 		if (!bImCasual)
 			pchar.quest.Trial_FrahtFail.over = "yes"; // belamour legendary edition если был - снять таймер
-		dialog.text = "Bien, bombas y pólvora, 2500 unidades cada una... Bueno. Los soldados descargarán la carga, tus hombres pueden tomar un descanso. Aquí está tu pago por el flete - cinco mil pesos.";
+		dialog.text = "Bien, bombas y pólvora, 2500 unidades cada una... Bueno. Los soldados descargarán la carga, tus hombres pueden tomar un descanso. Aquí está tu pago por el flete, cinco mil pesos.";
 		link.l1 = "¡Gracias! ¿Qué debería hacer a continuación? Monsieur LeCroix dijo...";
 		link.l1.go = "trial_2";
 		DelLandQuestMark(npchar);
@@ -343,8 +343,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "trial_3":
-		dialog.text = "Así pues, nuestro buque militar el 'Warlike' está navegando cerca de la colonia española de Porto Bello, en la parte sur de Tierra Firme. Esta nave está bajo el mando de Florian Shoke, que prepara una emboscada a un galeón pesado español que zarpará de Porto Bello dentro de dos semanas.\nEl problema es que los cañones de nuestra fragata adolecen de un defecto de fundición, necesitamos reemplazar quince cañones para salvar la misión; de lo contrario, el galeón superará a 'Warlike' tanto en cañones como en hombres.\nSin el reemplazo, Florian Shoke se verá obligado a navegar sin sentido. Tal secuencia de acontecimientos es altamente indeseable. Tu tarea es salvar la misión entregando quince cañones en un plazo de catorce días.";
-		link.l1 = "Entonces, ¿necesito llevar a bordo quince cañones, dirigirme a Portobelo, buscar la fragata 'Militante' y entregar los cañones al capitán Florian Shoke?";
+		dialog.text = "Así pues, nuestro buque militar el 'Warlike' está navegando cerca de la colonia española de Portobello, en la parte sur de Tierra Firme. Esta nave está bajo el mando de Florian Shoke, que prepara una emboscada a un galeón pesado español que zarpará de Portobello dentro de dos semanas.\nEl problema es que los cañones de nuestra fragata adolecen de un defecto de fundición, necesitamos reemplazar quince cañones para salvar la misión; de lo contrario, el galeón superará a 'Warlike' tanto en cañones como en hombres.\nSin el reemplazo, Florian Shoke se verá obligado a navegar sin sentido. Tal secuencia de acontecimientos es altamente indeseable. Tu tarea es salvar la misión entregando quince cañones en un plazo de catorce días.";
+		link.l1 = "Entonces, ¿necesito llevar a bordo quince cañones, dirigirme a Portobello, buscar la fragata 'Militante' y entregar los cañones al capitán Florian Shoke?";
 		link.l1.go = "trial_4";
 		break;
 
@@ -367,6 +367,7 @@ void ProcessDialogEvent()
 		AddQuestRecord("Trial", "6");
 		CloseQuestHeader("Trial");
 		DeleteAttribute(pchar, "questTemp.Trial");
+		pchar.questTemp.TrialEnd = true;
 		break;
 
 	case "trial_5":
@@ -451,7 +452,7 @@ void ProcessDialogEvent()
 
 	case "zpq_prs2":
 		dialog.text = "Espléndido. Espléndido. El problema es que la reciente tormenta ha dañado nuestro suministro de pólvora en el arsenal del fuerte. Espero que no necesite explicarte que tenemos un problema delicado aquí. En caso de un asedio prolongado, el fuerte no podrá hacer nada. No duraremos mucho.";
-		link.l1 = "Ahora veo. ¿Qué carga necesitas - y qué cantidad?";
+		link.l1 = "Ahora veo. ¿Qué carga necesitas y qué cantidad?";
 		link.l1.go = "zpq_prs3";
 		DelLandQuestMark(npchar);
 		DelMapQuestMarkCity("Cumana");
@@ -536,7 +537,7 @@ void ProcessDialogEvent()
 			link.l1.go = "zpq_ex_agry";
 			link.l2 = "Perdóneme... Bien, tomaré la suma que ofreces y estamos a mano.";
 			link.l2.go = "zpq_ex5";
-			Log_info("Tu capacidad de liderazgo no es suficiente");
+			Log_info("¡Tu capacidad de liderazgo no es suficiente!");
 		}
 		break;
 
@@ -557,7 +558,7 @@ void ProcessDialogEvent()
 		AddMoneyToCharacter(pchar, makeint(pchar.questTemp.zpq.sum));
 		/*else
 		{
-			dialog.text = "¿¡Qué?! ¡Soy un oficial militar! ¿Crees que puedes asustarme, niño?! ¡Guardias, llevad "+GetSexPhrase("él","ella")+"¡";
+			dialog.text = "¡¿Qué?! ¡Soy un oficial militar! ¿Crees que puedes asustarme, niño? ¡Guardias, arrésten"+GetSexPhrase("lo","la")+"!";
 			link.l1 = "Buena suerte en intentarlo, ratas de casamates...";
 			link.l1.go = "zpq_ex_war";
 		}*/
@@ -576,7 +577,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "zpq_ex_agry":
-		dialog.text = "¡Ah, bastardo! ¡Guardias, llevaos a " + GetSexPhrase("él", "ella") + "¡";
+		dialog.text = "¡Ah, bastardo! ¡Guardias, arrésten" + GetSexPhrase("lo", "la") + "!";
 		link.l1 = "¡Argh! Parece que tendré que quitar mi dinero de tu cuerpo sin aliento...";
 		link.l1.go = "zpq_ex_war";
 		break;

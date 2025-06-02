@@ -22,6 +22,23 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "I've heard that wretched scoundrel Bart the Portuguese has finally met justice! Is he in prison? When will his execution be, do you know? I want to come watch, I have a bone to pick with that scum...";
                 link.l1.go = "Portugal";
             }
+			//--> Тайна Бетси Прайс
+			if (CheckAttribute(pchar, "questTemp.TBP_Tavern"))
+			{
+				link.l1 = "Listen, "+npchar.name+", I heard you recently had a new beautiful waitress... and she’s already disappeared?";
+				link.l1.go = "TBP_Tavern_1";
+			}
+			if (CheckAttribute(pchar, "questTemp.TBP_Tavern2"))
+			{
+				link.l1 = "Tell me, "+npchar.name+", on the night Betsy disappeared, did you notice anyone suspicious near her? Maybe she was talking to someone?";
+				link.l1.go = "TBP_Tavern2_11";
+			}
+			if (CheckAttribute(pchar, "questTemp.TBP_Tavern3"))
+			{
+				link.l1 = "Well, "+npchar.name+", good news – your precious waitress is alive and well. You’ll have to restock your rum, people will soon be coming back.";
+				link.l1.go = "TBP_Tavern3_21";
+			}
+			//<-- Тайна Бетси Прайс
  		break;
 
 		//работорговец
@@ -92,6 +109,96 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.questTemp.Portugal = "PortugalInPrison";
 			AddQuestRecord("Portugal", "32");
 		break;
+		
+		//--> Тайна Бетси Прайс
+		case "TBP_Tavern_1":
+			dialog.text = "Oh, if only you had seen her, Captain! Betsy... such grace, such a smile! Men would flock here just to look at her. And the silver they left in my tavern... But three days ago, she didn’t show up for work. Of course I sent people to her house, but she’s not there. The place is a mess, her personal belongings are gone\nI don’t know what to think anymore. The guards, as always, just shrugged it off. Said they have more important things to do than search for a missing girl. Said she probably just went out and will be back soon. Captain, maybe you could find her? If you bring her back here, I’ll pay you a hundred doubloons. I can’t just lose her, you understand? She’s a real treasure! I must get her back at all costs!";
+			link.l1 = "Let’s see what I can do. Did she act strangely before she vanished, or receive any bad news?";
+			link.l1.go = "TBP_Tavern_2";
+			link.l2 = "Search for a girl who probably just ran off? I’ve got better things to do. Handle it yourself.";
+			link.l2.go = "TBP_Tavern_End";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "TBP_Tavern_End":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.TBP_Tavern");
+			CloseQuestHeader("TBP");
+		break;
+
+		case "TBP_Tavern_2":
+			dialog.text = "On her last day before disappearing, she left in high spirits, even happy! No sign of trouble, not a word about leaving. She just vanished!";
+			link.l1 = "Interesting... Where can I find her house?";
+			link.l1.go = "TBP_Tavern_3";
+		break;
+
+		case "TBP_Tavern_3":
+			dialog.text = "She lived further up the street, in a shack just behind the house across from the mansion with the blue balcony. It's not far from here.";
+			link.l1 = "Well then, I won't waste time. If I find anything, I’ll let you know.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("TBP_Poorman");
+		break;
+
+		case "TBP_Tavern2_11":
+			dialog.text = "Suspicious? There were always crowds of suitors around her, and each one suspicious in his own way! She was quite the flirt, knew how to draw attention.";
+			link.l1 = "That much I figured"+GetSexPhrase(""," out")+" already. But was there someone who stood out?";
+			link.l1.go = "TBP_Tavern2_12";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "TBP_Tavern2_12":
+			dialog.text = "Hmm... Well, there was one. That evening, he gave her a pendant with gems. He sat here, eyes glued to her, hovered around all night.";
+			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon"))
+			{
+				link.l1 = "That pendant, by chance, wouldn’t be this one? (Show the cameo bought from the beggar)";
+				link.l1.go = "TBP_Tavern2_13";
+			}
+			else
+			{
+				link.l1 = "Pendant with gems, you say...";
+				link.l1.go = "exit";
+				AddDialogExitQuestFunction("TBP_SearchHouseWithFonar");
+			}
+		break;
+
+		case "TBP_Tavern2_13":
+			dialog.text = "That’s the one! Exactly! Captain, have you found something already?";
+			link.l1 = "Details later, "+npchar.name+", right now there’s no time to lose.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("TBP_SearchHouseWithFonar");
+			RemoveItems(pchar, "jewelry24", 1); 
+			notification("Given: Cameo pendant", "None");
+		break;
+
+		case "TBP_Tavern3_21":
+			dialog.text = "That’s excellent, Captain! I was beginning to think I’d never see her again. So what happened? Did she really want to run away?";
+			link.l1 = "Let’s just say she had to deal with some problems from her past. But it seems that’s all behind her now, and she’ll soon be back at work.";
+			link.l1.go = "TBP_Tavern3_22_leadership";
+			link.l2 = "Well, let’s say she needed a little break from looking at your boring face. Ha-ha! Don’t frown, I’m joking. Every lady should have her little secrets...";
+			link.l2.go = "TBP_Tavern3_22_fortune";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "TBP_Tavern3_22_leadership":
+			dialog.text = "Well, the main thing is she’ll be back to work. You’ve earned your reward, Captain. Here, take it – one hundred doubloons, as agreed. Also, take this map. One of the patrons left it here and never returned. Looks like it leads to treasure.";
+			link.l1 = "Well then, I’ll check it out. Thanks.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("TBP_BetsiBackToWork");
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			AddItems(pchar, "gold_dublon", 100);
+			GiveItem2Character(PChar, "map_full");
+		break;
+
+		case "TBP_Tavern3_22_fortune":
+			dialog.text = "Well, the main thing is she’ll be back to work. You’ve earned your reward, Captain. Here, take it – one hundred doubloons, as agreed. Also, take this map. One of the patrons left it here and never returned. Looks like it leads to treasure.";
+			link.l1 = "Well then, I’ll check it out. Thanks.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("TBP_BetsiBackToWork");
+			AddCharacterExpToSkill(pchar, "Fortune", 100);
+			AddItems(pchar, "gold_dublon", 100);
+			GiveItem2Character(PChar, "map_full");
+		break;
+		//<-- Тайна Бетси Прайс
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

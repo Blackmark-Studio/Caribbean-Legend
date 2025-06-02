@@ -329,7 +329,7 @@ int FindItem(string sItemID)
 /*
 	for(int i = 0; i < TOTAL_ITEMS; i++)
 	{
-		if(CheckAttribute(Items[i], "ID") && Items[i].id == sItemID)
+		if(CheckAttribute(&Items[i], "ID") && Items[i].id == sItemID)
 		{
 			return i;
 		}
@@ -647,18 +647,21 @@ String GenerateItem(String _itemId)
 	switch (realItem.FencingType) 
 	{
 		case "FencingL" :
+			realItem.WeightAttack = stf(realItem.Attack) * (0.5 + 0.2 * stf(realItem.Weight));
 			if(sti(realItem.Generation.price)) 
 			{
 				realItem.price  = makeint(35.0 * (1.0/stf(realItem.curve) + stf(realItem.lenght)) * (stf(realItem.Attack) * 2.0 - 30.0));
 			}	
 		break;
 		case "FencingS" :
+			realItem.WeightAttack = stf(realItem.Attack) * (0.25 + 0.25 * stf(realItem.Weight));
 			if(sti(realItem.Generation.price)) 
 			{
 				realItem.price  = makeint(25.0 * (stf(realItem.curve) + stf(realItem.lenght)) * (stf(realItem.Attack) * 2.0 - 40.0));
 			}	
 		break;
 		case "FencingH" :
+			realItem.WeightAttack = stf(realItem.Attack) * (0.25 + 0.2 * stf(realItem.Weight));
 			if(sti(realItem.Generation.price)) 
 			{
 				realItem.price  = makeint(20.0 * ((stf(realItem.curve) + 1.0) * 1.0/stf(realItem.lenght)) * (stf(realItem.Attack) * 2.0 - 50.0));
@@ -857,11 +860,12 @@ int GetItemIndex(string _ItemID)
 
 ref ItemsFromID(string _Items)
 {
-	if(GetItemIndex(_Items) == -1) 
+    int idx = GetItemIndex(_Items);
+	if(idx == -1) 
 	{
 		trace("Bad index for item : " + _Items);
 	}
-	return &items[GetItemIndex(_Items)];
+	return &items[idx];
 }
 
 void ChangeItemDescribe(string _Items, string _Describe)
@@ -1078,7 +1082,7 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 		if (CheckAttribute(pchar, "questTemp.Tieyasal.LockGate") && _locator == "defend4") Tieyasal_TempleDefendActivation();
 	}
 	// калеуче - головоломки 'девять каменных плит' и 'шесть рычагов'
-	if (_location.id == "labirint_3")
+	if (_location.id == "KhaelRoa_Labirint_3")
     {
 		if (CheckAttribute(pchar, "questTemp.Caleuche.NextTile") && findsubstr(_locator, "step" , 0) != -1)
 		{
@@ -1266,7 +1270,7 @@ void QuestCheckUseButton(aref _location, string _locator, string _itemId) /// <<
 		Tieyasal_CheckTwoTablets();
 	}
 	// калеуче
-	if (_location.id == "Treasure_Alcove" && _locator == "button01")
+	if (_location.id == "KhaelRoa_Treasure_Alcove" && _locator == "button01")
     {
 		PlaySound("Ambient\Teno_inside\big_ring.wav");
 		SetItemModelOnLocation(_location, "skullaztec", _locator);
@@ -1290,6 +1294,10 @@ void QuestCheckUseButton(aref _location, string _locator, string _itemId) /// <<
 		PlaySound("Ambient\Teno_inside\big_ring.wav");
 		PlaySound("interface\key.wav");
 		OpenWardrobe_Villemstad();
+	}
+	if (_location.id == "Beliz_houseS5_room2" && _locator == "button01")
+    {
+		GS_PolozhilZapiski();
 	}
 }
 //проверка взятия предметов из локатора item
@@ -1465,8 +1473,7 @@ bool ShipBonus2Artefact(ref chr, int shipType)
 	}
 	else
 	{
-		ref mc = GetMainCharacter();
-		if(sti(RealShips[sti(mc.Ship.Type)].BaseType) == shipType)
+		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == shipType)
 		{
 			return isOfficerInShip(chr, true);
 		}

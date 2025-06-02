@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Begin_21":
-		dialog.text = RandPhraseSimple("¡Violadores me están persiguiendo!" + GetSexPhrase("¿Defenderías el honor de una dama?", "") + "", "Capitán, " + GetSexPhrase("sé un hombre", "tú eres una mujer, también") + "¿no salvarías a una chica de la deshonra!");
+		dialog.text = RandPhraseSimple("¡Me están persiguiendo violadores!" + GetSexPhrase("¿Defenderías el honor de una dama?", "") + "", "Capitán, " + GetSexPhrase("sé un hombre,", "tú también eres una mujer,") + " ¿salvarás a una chica de la deshonra?");
 		link.l1 = "Deja de entrar en pánico" + GetSexPhrase(", belleza", "") + "¿Qué ha sucedido aquí?";
 		link.l1.go = "exit_1";
 		break;
@@ -131,15 +131,15 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "¿Qué has hecho? ¿Por qué los has matado?! ¡Ahora me buscarán a mí! Dios mío, ¿qué he hecho para merecer esto!";
+				dialog.text = "¿Qué has hecho? ¡¿Por qué los has matado?! ¡Ahora me buscarán a mí! Dios mío, ¿qué he hecho para merecer esto?";
 				link.l1 = "¡Eso sí que es gratitud!";
 				link.l1.go = "Node_22";
 			}
 		}
 		if (pchar.GenQuest.EncGirl == "Begin_33")
 		{
-			dialog.text = "¿Qué has hecho, " + GetSexPhrase("capitán", "señorita") + "¿¡Por qué los has matado? En realidad, fueron enviados por mi padre... Ay Dios, ahora seguro que me va a matar...";
-			link.l1 = "¡Eso sí que son noticias! ¿Y qué te creías gritando que estabas perseguido por bandidos?!";
+			dialog.text = "¿Qué has hecho, " + GetSexPhrase("capitán", "señorita") + "? ¿Por qué los has matado? En realidad, fueron enviados por mi padre... Ay Dios, ahora seguro que me va a matar...";
+			link.l1 = "¡Eso sí que son noticias! ¿Y qué te creías gritando que eras perseguida por bandidos?";
 			link.l1.go = "Node_31";
 		}
 		break;
@@ -164,7 +164,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Node_22":
-		dialog.text = "¡Pensaba que solo los asustarías! Ahora debes llevarme a la taberna en el asentamiento de " + XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.city) + ", no tengo a nadie más que a ti a quien podría pedir ayuda.";
+		dialog.text = "¡Pensaba que solo los asustarías! Ahora debes llevarme a la taberna en el asentamiento de " + XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.city) + ", no tengo a nadie más que a ti para pedir ayuda.";
 		link.l1 = "¡Oh, maldita sea! Bueno, vamos. Solo no te quedes atrás.";
 		link.l1.go = "Node_122Next";
 		link.l2 = "No, eso es todo, " + GetSexPhrase("hermosura", "querido") + "¡Ya he tenido suficientes sorpresas por hoy. Busca a alguien más para que te ayude.";
@@ -224,8 +224,8 @@ void ProcessDialogEvent()
 
 	case "Node_12End":
 		Diag.TempNode = "Node_12End";
-		dialog.text = RandPhraseSimple("Sabes, " + GetSexPhrase("capitán", "señorita") + "¿Estaba tan asustado que incluso mis piernas todavía están un poco temblorosas.", "Oh, ya sabes, estaba tan asustado. Es genial que Dios te haya enviado en mi camino.");
-		link.l1 = RandPhraseSimple("Gracias a Dios que todavía estás vivo.", "No te lo tomes a pecho. Es bueno que haya terminado así, ya sabes.");
+		dialog.text = RandPhraseSimple("Sabes, " + GetSexPhrase("capitán", "señorita") + ", estaba tan asustada que mis piernas todavía están un poco temblorosas.", "Oh, estaba tan asustada. Es un milagro que Dios te haya enviado por mi camino.");
+		link.l1 = RandPhraseSimple("Gracias a Dios que todavía estás viva.", "No te lo tomes a pecho. Es bueno que haya terminado así, ya sabes.");
 		link.l1.go = "exit";
 		break;
 
@@ -280,13 +280,13 @@ void ProcessDialogEvent()
 			if (rand(1) == 0)
 			{
 				dialog.text = "Probablemente te rías de mí, pero... estaba recolectando una poción de amor... Una bruja me dijo que había una raíz que puede ayudar en asuntos de amor.";
-				link.l1 = "¡Dios mío! ¿Qué " + GetSexPhrase("¿en qué están pensando estas mujeres?", "¿estabas pensando en") + "¿¡? Al parecer, has recogido a muchos de ellos, había bastantes pretendientes persiguiéndote, me ha costado mucho trabajo ahuyentarlos a todos. Ja-ja-ja-ja... Adiós.";
+				link.l1 = "¡Dios mío! " + GetSexPhrase("¿En qué están pensando estas mujeres?", "¿En qué estabas pensando?") + " Al parecer, has recogido a muchos de ellos, había bastantes pretendientes persiguiéndote, me ha costado mucho trabajo ahuyentarlos a todos. Ja-ja-ja-ja... Adiós.";
 				link.l1.go = "Node_1End";
 			}
 			else
 			{
 				dialog.text = "Acabo de salir a pasear para recolectar algunas hierbas y respirar aire fresco. Aparentemente, no era el mejor momento para caminar.";
-				link.l1 = "¡Qué descuido?! Gracias a Dios que llegué a tiempo. Bueno, te deseo la mejor de las suertes.";
+				link.l1 = "¡Qué descuido! Gracias a Dios que llegué a tiempo. Bueno, te deseo la mejor de las suertes.";
 				link.l1.go = "Node_1End";
 			}
 			break;
@@ -340,7 +340,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Node_132_2":
-		dialog.text = "Más fácil decirlo que hacerlo. No tengo dinero para fletar un barco, y... tengo miedo... ¿Cómo se supone que debo desenterrarlo todo, llevarlo al barco... Y a dónde llevaría el tesoro luego? Cualquiera me haría presa fácil en el camino...";
+		dialog.text = "Más fácil decirlo que hacerlo. No tengo dinero para fletar un barco, y... tengo miedo... ¿Cómo se supone que debo desenterrarlo todo, llevarlo al barco... Y a dónde llevaría el tesoro luego? Sería presa fácil para cualquiera en el camino...";
 		link.l1 = "Eso es un buen punto... Está bien, adelante y esconde tu mapa, entonces. Solo recuerda colocarlo bien.";
 		link.l1.go = "Node_132_2End";
 		if (GetCharacterItem(pchar, "map_full") == 0)
@@ -488,12 +488,12 @@ void ProcessDialogEvent()
 		chrDisableReloadToLocation = false;
 		Log_Info("Has recibido tu parte del tesoro");
 		PlaySound("interface\important_item.wav");
-		TakeNItems(pchar, "icollection", 1 + drand(1));
-		TakeNItems(pchar, "chest", 2 + drand(6));
-		TakeNItems(pchar, "jewelry1", 30 + drand(15));
-		TakeNItems(pchar, "jewelry2", 30 + drand(15));
-		TakeNItems(pchar, "jewelry3", 30 + drand(15));
-		TakeNItems(pchar, "jewelry4", 30 + drand(15));
+		TakeNItems(pchar, "icollection", 1 + hrand(1));
+		TakeNItems(pchar, "chest", 2 + hrand(6));
+		TakeNItems(pchar, "jewelry1", 30 + hrand(15));
+		TakeNItems(pchar, "jewelry2", 30 + hrand(15));
+		TakeNItems(pchar, "jewelry3", 30 + hrand(15));
+		TakeNItems(pchar, "jewelry4", 30 + hrand(15));
 		TakeNItems(pchar, "jewelry5", 30 + rand(10));
 		TakeNItems(pchar, "jewelry6", 10 + rand(10));
 		TakeNItems(pchar, "jewelry42", 20 + rand(10));
@@ -541,7 +541,7 @@ void ProcessDialogEvent()
 
 	case "Node_132_20":
 		dialog.text = "Espera... Este trinkete estaba entre los tesoros de mi padre. No tengo uso para él, pero a ti podría gustarte. Por favor, acéptalo como mi gratitud personal por lo que has hecho por mí. ¡Eso es de mi parte, ja-ja-ja!";
-		link.l1 = "Vaya, eso sí que es un regalo bonito. Gracias" + GetSexPhrase(", belleza", "") + ". Encuentra un buen novio para ti, ¿quieres...";
+		link.l1 = "Vaya, eso sí que es un regalo bonito. Gracias" + GetSexPhrase(", belleza", "") + ". Encuentra un buen novio para ti, ¿si?";
 		link.l1.go = "Node_132_21";
 		break;
 
@@ -602,7 +602,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Node_134":
-		dialog.text = RandPhraseSimple("" + GetSexPhrase("Capitán", "Joven señorita") + ", ¡Estoy tan feliz de verte de nuevo! ¿Has logrado recolectar perlas para el collar?", "¡Hola, capitán! ¿Me has traído las perlas? Ya sabes, mi señora se está poniendo tan nerviosa...");
+		dialog.text = RandPhraseSimple("" + GetSexPhrase("Capitán", "Joven señorita") + ", ¡Estoy tan feliz de verte de nuevo! ¿Has logrado recolectar perlas para el collar?", "¡Hola, capitán! ¿Me has traído las perlas? Como puedes imaginar, mi señora se está poniendo tan nerviosa...");
 		if (GetCharacterItem(pchar, "jewelry52") >= sti(pchar.GenQuest.EncGirl.BigCoins) && GetCharacterItem(pchar, "jewelry53") >= sti(pchar.GenQuest.EncGirl.SmallCoins))
 		{
 			link.l1 = "Sí. Aquí están tus perlas. Llévaselas a tu señora y dile que sea más cuidadosa la próxima vez.";
@@ -634,7 +634,7 @@ void ProcessDialogEvent()
 
 	case "Node_134_End":
 		GiveItem2Character(pchar, pchar.GenQuest.EncGirl.item);
-		TakeNItems(pchar, "jewelry1", 15 + drand(8));
+		TakeNItems(pchar, "jewelry1", 15 + hrand(8));
 		AddQuestRecord("JungleGirl", "2");
 		AddQuestUserData("JungleGirl", "sSex", GetSexPhrase("", ""));
 		AddQuestUserData("JungleGirl", "sName", pchar.GenQuest.EncGirl.name);
@@ -649,7 +649,7 @@ void ProcessDialogEvent()
 		addMoneyToCharacter(pchar, -15000);
 		ChangeCharacterComplexReputation(pchar, "nobility", 10);
 		dialog.text = "Oh, " + GetSexPhrase("capitán", "Joven señorita") + ", me has ayudado por segunda vez hoy. Muchas gracias. Nunca olvidaré tu bondad.";
-		link.l1 = "Eres bienvenido. Di 'hola' a tu señora...";
+		link.l1 = "De nada. Di 'hola' a tu señora...";
 		link.l1.go = "Node_135End";
 		break;
 
@@ -689,10 +689,10 @@ void ProcessDialogEvent()
 			link.l1.go = "Node_200";
 			break;
 		case 1:
-			dialog.text = "¡Oh, qué noble acción! Podía decir de inmediato que tú eras " + GetSexPhrase("un verdadero caballero", "una dama noble") + "¡Por favor, acepta mi más sincera gratitud. Espero que no creyeras lo que decían estos granujas?";
+			dialog.text = "¡Oh, qué noble acción! Pude ver de inmediato que eras " + GetSexPhrase("un verdadero caballero", "una dama noble") + ". ¡Por favor, acepta mi más sincera gratitud. Espero que no hayas creído lo que decían estos granujas.";
 			link.l1 = "Eso no importa. Una chica y una banda de pillos en la jungla, es simplemente tan natural...";
 			link.l1.go = "Node_210";
-			link.l2 = "¿De qué estás hablando, " + GetSexPhrase("belleza", "querido") + "¿Cómo podría yo?";
+			link.l2 = "¿De qué estás hablando, " + GetSexPhrase("linda", "querido") + "? ¿Cómo podría?";
 			link.l2.go = "Node_211";
 			break;
 		case 2:
@@ -723,7 +723,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Node_201":
-		dialog.text = "¡Oh no, qué estás diciendo? Conozco a estos canallas demasiado bien. Son antiguos compañeros de mi padre. Están tratando de localizar el lugar donde escondió sus tesoros.";
+		dialog.text = "¡Oh no!, ¿qué estás diciendo? Conozco a estos canallas demasiado bien. Son antiguos compañeros de mi padre. Están tratando de localizar el lugar donde escondió sus tesoros.";
 		link.l1 = "¿Y qué pasa con tu padre?";
 		link.l1.go = "Node_202";
 		break;
@@ -802,8 +802,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "Node_211":
-		dialog.text = "¡Estaba tan agitado! ¿Podrías llevarme a la taberna en el asentamiento de " + XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.city) + "¿De lo contrario, me temo, van a perseguirme de nuevo.";
-		link.l1 = "Quizás, tienes razón. Vamos...";
+		dialog.text = "¡Estaba tan agitada! ¿Podrías llevarme a la taberna en el asentamiento de " + XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.city) + "? De lo contrario, me temo, van a perseguirme de nuevo.";
+		link.l1 = "Tienes razón. Vamos...";
 		link.l1.go = "Node_122Next";
 		ChangeCharacterComplexReputation(pchar, "nobility", 1);
 		break;
@@ -976,7 +976,7 @@ void ProcessDialogEvent()
 
 	case "Node_233":
 		pchar.GenQuest.EncGirl.Parents_City = GetQuestNationsCity(sti(pchar.GenQuest.EncGirl.nation));
-		dialog.text = "Mi familia vive en el asentamiento de " + XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.Parents_City) + ". Llegué aquí por casualidad, en el barco, en el que mi prometido me estaba llevando a sus padres, pero fue capturado por piratas. El barco fue llevado, y los pasajeros fueron desembarcados en la bahía no muy lejos de aquí. Mi prometido fue asesinado durante el abordaje del barco, y yo estuve gravemente enferma durante el tránsito por la jungla\nLa Señora del burdel local me trató, y cuando me puse en pie, ella exigió trabajar el dinero gastado en el tratamiento. Fui una puta pero no agradé a la Madame, y entonces la Señora me vendió a unos bandidos para ganar al menos algo de dinero. La otra parte de la historia ya la conoces.";
+		dialog.text = "Mi familia vive en el asentamiento de " + XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.Parents_City) + ". Llegué aquí por casualidad, en el barco, en el que mi prometido me estaba llevando a sus padres, pero fue capturado por piratas. El barco fue llevado, y los pasajeros fueron desembarcados en la bahía no muy lejos de aquí. Mi prometido fue asesinado durante el abordaje del barco, y yo estuve gravemente enferma durante el tránsito por la jungla\nLa Señora del burdel me trató, y cuando me puse en pie, ella exigió trabajar el dinero gastado en el tratamiento. Fui una puta pero no agradé a la Madame, y entonces la Señora me vendió a unos bandidos para ganar al menos algo de dinero. La otra parte de la historia ya la conoces.";
 		link.l1 = "¡Así que simplemente renuncia y regresa a casa! ¿Por qué permites que te traten como a un esclavo?!";
 		link.l1.go = "Node_234";
 		break;
@@ -1308,9 +1308,9 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			if (drand(1) == 0)
+			if (hrand(1) == 0)
 			{
-				dialog.text = "¡Le contaré a todos que me has salvado! Que todos lo sepan, " + GetSexPhrase("qué hombre tan valiente y corajudo eres", "qué valiente y valerosa dama eres") + "¡";
+				dialog.text = "¡Le contaré a todos que me has salvado! ¡Que todos sepan " + GetSexPhrase("lo valiente y corajudo que eres", "la valiente y audaz dama que eres") + "!";
 				Link.l1 = "Gracias. Y ahora deberías irte a casa.";
 				Link.l1.go = "exit";
 			}
@@ -1326,7 +1326,7 @@ void ProcessDialogEvent()
 
 	case "ThanksAgain":
 		Diag.TempNode = "ThanksAgain";
-		dialog.text = "¡Le diré a todos que tú me has salvado! Que todo el mundo lo sepa, " + GetSexPhrase("qué hombre tan valiente y corajudo eres", "qué valiente y audaz dama eres") + "¡";
+		dialog.text = "¡Le diré a todos que me has salvado! ¡Que todo el mundo sepa " + GetSexPhrase("lo valiente y corajudo que eres", "la valiente y audaz dama que eres") + "!";
 		Link.l1 = "Gracias. Y ahora deberías irte a casa.";
 		Link.l1.go = "exit";
 		break;

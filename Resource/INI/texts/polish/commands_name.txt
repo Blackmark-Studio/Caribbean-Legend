@@ -1,7 +1,7 @@
 sea_Cancel {Anuluj}
 sea_Moor {Przybij}
 sea_Cabin {Kajuta}
-sea_SailTo {Płyn do}
+sea_SailTo {Płyń do}
 sea_Board {Abordaż}
 sea_LandTroops {Oddziały lądowe}
 sea_Map {Mapa}
@@ -16,11 +16,11 @@ sea_Speed {Żagle}
 sea_CCommand {Rozkazy}
 sea_Ability {Zdolność}
 sea_ImmediateDeath {Zniszcz!}
-sea_InstantBoarding {Instant Boarding}
+sea_InstantBoarding {Natychmiastowy abordaż}
 sea_Speak {Mów}
 sea_Sneak {Skradnij się do miasta}
 sea_Repair {Napraw}
-sea_SailDir {Płyn do ...}
+sea_SailDir {Płyń do ...}
 sea_SailNW {Północny-zachód}
 sea_SailN {Północ}
 sea_SailNE {Północny-wschód}
@@ -54,7 +54,7 @@ land_ActivateCabine {Kajuta kapitana}
 land_DeActivateCabine {Ład}
 land_Look {Spojrzenie}
 land_Exit {Morze}
-land_SelfRepair {Naprawa}
+land_SelfRepair {Naprawy}
 land_Alchemy {Wytwarzanie}
 land_MapAtlas {Mapy}
 land_Rest {Odpocznij}
@@ -67,7 +67,7 @@ go_port {Port}
 go_loanshark {Bank}
 go_church {Kościół}
 go_prison {Więzienie}
-go_brothel {Burdel}
+go_brothel {Zamtuz}
 go_usurer {Lichwiarz}
 go_portman {Administracja}
 go_duel {Pojedynek}

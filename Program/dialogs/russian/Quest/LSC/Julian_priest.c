@@ -170,7 +170,7 @@ void ProcessDialogEvent()
 		
 		case "amulet":
 			bool bOK = (!CheckAttribute(npchar, "amulet_date")) || (GetNpcQuestPastDayParam(npchar, "amulet_date") >= 3)
-			if (bOk && GetSummonSkillFromName(pchar, SKILL_FORTUNE) > (10+drand(110)))
+			if (bOk && GetSummonSkillFromName(pchar, SKILL_FORTUNE) > (10+hrand(110)))
 			{
 				npchar.quest.amulet = SelectLSCChurchAmulet();
 				dialog.text = "Да, у меня бывают освящённые обереги, способные защитить тебя от ранений или недугов. Стоимость одинакова для всех - десять золотых дублонов. Сегодня могу предложить тебе "+XI_ConvertString(npchar.quest.amulet)+".";
@@ -337,7 +337,7 @@ void ProcessDialogEvent()
 string SelectLSCChurchAmulet();
 {
 	string sAmulet;
-	switch (drand(3))
+	switch (hrand(3))
 	{
 		case 0: sAmulet = "amulet_2"; break;
 		case 1: sAmulet = "amulet_3"; break;

@@ -59,6 +59,12 @@ void ProcessDialogEvent()
 		NPChar.SailsTypeChooseIDX = strcut(attrLoc, i + 1, strlen(attrLoc) - 1); // индех в конце
 		Dialog.CurrentNode = "SailsTypeChoose2";
 	}
+	if(!CheckAttribute(NPChar, "ExpMeeting"))
+	{
+		NPChar.ExpMeeting = true;
+		notification("Первое посещение верфи " + XI_ConvertString("Colony" +NPChar.City + "Gen"), "Carpenter");
+		AddCharacterExpToSkill(pchar, SKILL_REPAIR, 10.0);
+	}
 	// генератор парусов по кейсу <--
 	switch (Dialog.CurrentNode)
 	{
@@ -91,8 +97,8 @@ void ProcessDialogEvent()
 	case "First time":
 		if (LAi_grp_playeralarm > 0)
 		{
-			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("La alarma se ha dado en el pueblo, y todos te están buscando. Si yo fuera tú, no me quedaría aquí.", "Todos los guardias de la ciudad están peinando el pueblo buscándote. ¡No soy un tonto y no hablaré contigo!", "Corre, " + GetSexPhrase("compañero", "moza") + ", antes de que los soldados te conviertan en un colador..."), LinkRandPhrase("¿Qué necesitas, " + GetSexPhrase("canalla", "apestoso") + "¿! Los guardias de la ciudad ya tienen tu rastro, no llegarás lejos, sucio pirata!", "¡Asesino, sal de mi casa de inmediato! ¡Guardias!", "No te tengo miedo, " + GetSexPhrase("canalla", "rata") + "¡Pronto serás colgado en nuestro fuerte, no llegarás lejos..."));
-			link.l1 = NPCharRepPhrase(pchar, RandPhraseSimple("Je, una alarma no es un problema para mí...", "  Nunca me atraparán.  "), RandPhraseSimple("Cierra la boca, " + GetWorkTypeOfMan(npchar, "") + ", ¡o te arrancaré la lengua!", "Heh, " + GetWorkTypeOfMan(npchar, "") + ", y allí también - ¡para atrapar piratas! Eso es lo que te digo, compañero: ¡estate quieto y no morirás!"));
+			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("La alarma se ha dado en el pueblo, y todos te están buscando. Si yo fuera tú, no me quedaría aquí.", "Todos los guardias de la ciudad están peinando el pueblo buscándote. ¡No soy un tonto y no hablaré contigo!", "Corre, " + GetSexPhrase("compañero", "moza") + ", antes de que los soldados te conviertan en un colador..."), LinkRandPhrase("¿Qué necesitas, " + GetSexPhrase("apestoso", "canalla") + "? ¡Los guardias de la ciudad ya tienen tu rastro, no llegarás lejos, sucio pirata!", "¡Asesino, sal de mi casa de inmediato! ¡Guardias!", "No te tengo miedo, " + GetSexPhrase("canalla", "rata") + "¡Pronto serás colgado en nuestro fuerte, no llegarás lejos!"));
+			link.l1 = NPCharRepPhrase(pchar, RandPhraseSimple("Je, una alarma no es un problema para mí...", "  Nunca me atraparán.  "), RandPhraseSimple("Cierra la boca, " + GetWorkTypeOfMan(npchar, "") + ", ¡o te arrancaré la lengua!", "Heh, " + GetWorkTypeOfMan(npchar, "") + ", y allí también, ¡para atrapar piratas! Eso es lo que te digo, compañero: ¡estate quieto y no morirás!"));
 			link.l1.go = "fight";
 			break;
 		}
@@ -166,8 +172,8 @@ void ProcessDialogEvent()
 
 		if (NPChar.quest.meeting == "0") // первая встреча
 		{
-			dialog.Text = GetNatPhrase(npchar, LinkRandPhrase("¡Ja! ¡Un verdadero viejo lobo de mar ha venido a mi humilde taller! ¿Es nuevo en estas aguas, capitán?", "¡Bienvenido, señor! Si no eres un extraño al mar y tienes un barco, ¡has venido al lugar correcto!", "¡Hola, señor! Tienes suerte: este es el mejor taller de barcos de todo el Nuevo Mundo británico."), LinkRandPhrase("Monsieur, supongo que eres un capitán apuesto, ¿verdad? Si lo eres, ¡hiciste bien en visitar mi modesto astillero!", "¿Primera vez aquí, Monsieur Capitán? Entra y conoce a este viejo constructor naval.", "¡Tengamos el placer de conocernos, Monsieur! Un barco necesita ser acariciado, al igual que una mujer, ¡y nosotros, los franceses, somos expertos en eso! Créame, no se arrepentirá de venir aquí."), LinkRandPhrase("¡Nunca te he visto por aquí antes, señor. Encantado de conocerte!", "¡Saludo a un valiente conquistador de los mares! ¿Eres un marinero, no es así? Y yo soy el constructor naval local, deberíamos conocernos.", "¡Hola, caballero! ¡Me alegra darte la bienvenida a mi taller!"), LinkRandPhrase("Buenas tardes, señor. No lo he visto antes, ¿verdad? ¿Tiene negocios conmigo?", "Hola, señor capitán. No se sorprenda, he conocido a bastantes capitanes, así que me di cuenta de que usted también es capitán a primera vista.", "Entre, señor. Soy el constructor naval local. Un placer conocerle."));
-			Link.l1 = LinkRandPhrase("También me alegra conocerte. Mi nombre es " + GetFullName(pchar) + ", y soy nuevo en estos lugares. Así que decidí pasarme por aquí.", "Simplemente no podía pasar de largo - ya sabes, ese olor a tablones recién cepillados... Yo soy " + GetFullName(pchar) + ", Capitán del barco '" + pchar.ship.name + "'.", "Permítame presentarme - " + GetFullName(pchar) + ", Capitán del barco '" + pchar.ship.name + "Encantado de conocerte. Entonces, estás construyendo y reparando barcos aquí, ¿verdad?");
+			dialog.Text = GetNatPhrase(npchar, LinkRandPhrase("¡Ja! ¡Un verdadero viejo lobo de mar ha venido a mi humilde taller! ¿Es nuevo en estas aguas, capitán?", "¡Bienvenido, señor! Si no eres un extraño al mar y tienes un barco, ¡has venido al lugar correcto!", "¡Hola, señor! Tienes suerte: este es el mejor taller de barcos de todo el Nuevo Mundo británico."), LinkRandPhrase("Monsieur, supongo que eres un capitán apuesto, ¿verdad? Si lo eres, ¡hiciste bien en visitar mi modesto astillero!", "¿Primera vez aquí, Monsieur Capitán? Entra y conoce a este viejo constructor naval.", "¡Tengamos el placer de conocernos, Monsieur! Un barco necesita ser acariciado, al igual que una mujer, ¡y nosotros, los franceses, somos expertos en eso! Créame, no se arrepentirá de venir aquí."), LinkRandPhrase("¡Nunca te he visto por aquí antes, señor. Encantado de conocerte!", "¡Saludo a un valiente conquistador de los mares! ¿Eres un marinero, no es así? Y yo soy el constructor naval, deberíamos conocernos.", "¡Hola, caballero! ¡Me alegra darte la bienvenida a mi taller!"), LinkRandPhrase("Buenas tardes, señor. No lo he visto antes, ¿verdad? ¿Tiene negocios conmigo?", "Hola, señor capitán. No se sorprenda, he conocido a bastantes capitanes, así que me di cuenta de que usted también es capitán a primera vista.", "Entre, señor. Soy el constructor naval. Un placer conocerle."));
+			Link.l1 = LinkRandPhrase("También me alegra conocerte. Mi nombre es " + GetFullName(pchar) + ", y soy nuevo en estos lugares. Así que decidí pasarme por aquí.", "Simplemente no podía pasar de largo, el olor a tablones recién cepillados... Yo soy " + GetFullName(pchar) + ", Capitán del barco '" + pchar.ship.name + "'.", "Permítame presentarme, " + GetFullName(pchar) + ", Capitán del barco '" + pchar.ship.name + "Encantado de conocerte. Entonces, estás construyendo y reparando barcos aquí, ¿verdad?");
 			Link.l1.go = "meeting";
 			NPChar.quest.meeting = "1";
 			if (startHeroType == 4 && NPChar.location == "SantaCatalina_shipyard")
@@ -179,8 +185,8 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("¡Oh! El terror de las aguas locales, Capitán " + GetFullName(pchar) + "¡Qué puedo hacer por ti?", "Vamos directo al grano, " + GetAddress_Form(NPChar) + ", No tengo tiempo para charlar. ¿Necesitas una reparación o solo quieres reemplazar tu bañera?", "¡Oh, no es eso " + GetFullName(pchar) + "¡ Qué pasa, " + GetAddress_Form(NPChar) + "¿Algo malo le pasó a tu bañera?"), LinkRandPhrase("¿Qué necesitas ahí, Capitán? Ni un solo minuto de paz - siempre todos estos bribones, qué día maldito...", "Hola, " + GetAddress_Form(NPChar) + ". Debo decir que tu visita espantó a todos mis clientes. ¿Espero que tu pedido cubra mis daños?", "¿De negocios conmigo, " + GetAddress_Form(NPChar) + "¿Bueno, sigue con ello y hazlo rápido?"), LinkRandPhrase("¿Qué te trae a mí, señor " + GetFullName(pchar) + "¿Puedo entender que tu barco pueda tener dificultades, considerando tu estilo de vida...?", "Me alegra saludar a un noble... oh, disculpe, " + GetAddress_Form(NPChar) + ", te confundí con otra persona. ¿Qué querías?", "No me gusta mucho tu tipo, Capitán, pero no te echaré, de todos modos. ¿Qué querías?")), LinkRandPhrase(LinkRandPhrase("Me alegra mucho verte, señor " + GetFullName(pchar) + "¡Entonces, cómo está funcionando? ¿Necesitas una reparación o careenado?", "Bienvenido, " + GetAddress_Form(NPChar) + "¡ Capitán " + GetFullName(pchar) + " ¡siempre es un huésped bienvenido en mi taller!", "Oh, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + "¡Me has visitado de nuevo! Espero que tu belleza esté bien, ¿no es así?"), LinkRandPhrase("" + GetAddress_Form(NPChar) + ", ¡Me alegra tanto verte de nuevo! ¿Cómo está tu hermoso barco? ¿Necesitas ayuda?", "Oh, " + GetAddress_Form(NPChar) + ", ¡saludos! ¿Cómo va todo? ¿Quizás los mástiles crujen o necesitas limpiar la sentina? ¡Mis muchachos harán lo mejor para ti!", "Buenas tardes, Capitán " + GetFullName(pchar) + "Me alegra que hayas venido de nuevo, y siempre estoy dispuesto a ayudarte."), LinkRandPhrase("¡Me alegra tenerte aquí, Capitán! Eres un cliente muy amable, " + GetAddress_Form(NPChar) + ", y deseo que sigas siendo así.", "Oh, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + "¡Estoy realmente feliz de tenerte aquí! ¿Qué puedo hacer por ti?", "Capitán, de nuevo has visitado " + XI_ConvertString("Colony" + npchar.City + "Acc") + "¡Créeme, estaremos encantados de ayudarte!")));
-			Link.l1 = pcharrepphrase(RandPhraseSimple(RandPhraseSimple("Consigue tus instrumentos, maestro, y mantente en silencio, ¿de acuerdo? No estoy de humor.", "¡Deja de charlar, compañero! Necesito tu ayuda, y no tus tonterías."), RandPhraseSimple("Estoy pagando - y tú estás trabajando. Silenciosamente. ¿Está claro?", "¡Eh, camarada, ahuyéntalos a todos - soy yo, tu cliente preferido!")), RandPhraseSimple(RandPhraseSimple("También me alegra verte, maestro. Por desgracia, no tengo mucho tiempo, así que vayamos al grano.", "Y yo también estoy feliz de verte, camarada. ¿Quieres ayudar a tu cliente preferido?"), RandPhraseSimple("Buenas tardes, amigo. Vayamos al grano de inmediato. Prometo, la próxima vez nos sentaremos con una botella, seguro.", "Me alegra verte, maestro. Siempre es un placer verte, pero ahora mismo necesito tu ayuda.")));
+			dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("¡Oh! El terror de las aguas locales, Capitán " + GetFullName(pchar) + "¡Qué puedo hacer por ti?", "Vamos directo al grano, " + GetAddress_Form(NPChar) + ", No tengo tiempo para charlar. ¿Necesitas una reparación o solo quieres reemplazar tu bañera?", "¡Oh, no es eso " + GetFullName(pchar) + "¡ Qué pasa, " + GetAddress_Form(NPChar) + "¿Algo malo le pasó a tu bañera?"), LinkRandPhrase("¿Qué necesitas ahí, Capitán? Ni un solo minuto de paz, siempre todos estos bribones, qué día maldito...", "Hola, " + GetAddress_Form(NPChar) + ". Debo decir que tu visita espantó a todos mis clientes. ¿Espero que tu pedido cubra mis daños?", "¿De negocios conmigo, " + GetAddress_Form(NPChar) + "¿Bueno, sigue con ello y hazlo rápido?"), LinkRandPhrase("¿Qué te trae a mí, señor " + GetFullName(pchar) + "¿Puedo entender que tu barco pueda tener dificultades, considerando tu estilo de vida...?", "Me alegra saludar a un noble... oh, disculpe, " + GetAddress_Form(NPChar) + ", te confundí con otra persona. ¿Qué querías?", "No me gusta mucho tu tipo, Capitán, pero no te echaré, de todos modos. ¿Qué querías?")), LinkRandPhrase(LinkRandPhrase("Me alegra mucho verte, señor " + GetFullName(pchar) + "¡Entonces, cómo está funcionando? ¿Necesitas una reparación o careenado?", "Bienvenido, " + GetAddress_Form(NPChar) + "¡ Capitán " + GetFullName(pchar) + " ¡siempre es un huésped bienvenido en mi taller!", "Oh, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + "¡Me has visitado de nuevo! Espero que tu belleza esté bien, ¿no es así?"), LinkRandPhrase("" + GetAddress_Form(NPChar) + ", ¡Me alegra tanto verte de nuevo! ¿Cómo está tu hermoso barco? ¿Necesitas ayuda?", "Oh, " + GetAddress_Form(NPChar) + ", ¡saludos! ¿Cómo va todo? ¿Quizás los mástiles crujen o necesitas limpiar la sentina? ¡Mis muchachos harán lo mejor para ti!", "Buenas tardes, Capitán " + GetFullName(pchar) + "Me alegra que hayas venido de nuevo, y siempre estoy dispuesto a ayudarte."), LinkRandPhrase("¡Me alegra tenerte aquí, Capitán! Eres un cliente muy amable, " + GetAddress_Form(NPChar) + ", y deseo que sigas siendo así.", "Oh, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + "¡Estoy realmente feliz de tenerte aquí! ¿Qué puedo hacer por ti?", "Capitán, de nuevo has visitado " + XI_ConvertString("Colony" + npchar.City + "Acc") + "¡Créeme, estaremos encantados de ayudarte!")));
+			Link.l1 = pcharrepphrase(RandPhraseSimple(RandPhraseSimple("Consigue tus instrumentos, maestro, y mantente en silencio, ¿de acuerdo? No estoy de humor.", "¡Deja de charlar, compañero! Necesito tu ayuda, y no tus tonterías."), RandPhraseSimple("Estoy pagando y tú estás trabajando. Silenciosamente. ¿Está claro?", "¡Eh, camarada, ahuyéntalos a todos, soy tu cliente preferido!")), RandPhraseSimple(RandPhraseSimple("También me alegra verte, maestro. Por desgracia, no tengo mucho tiempo, así que vayamos al grano.", "Y yo también estoy feliz de verte, camarada. ¿Quieres ayudar a tu cliente preferido?"), RandPhraseSimple("Buenas tardes, amigo. Vayamos al grano de inmediato. Prometo, la próxima vez nos sentaremos con una botella, seguro.", "Me alegra verte, maestro. Siempre es un placer verte, pero ahora mismo necesito tu ayuda.")));
 			Link.l1.go = "Shipyard";
 			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) != RELATION_ENEMY)
 			{
@@ -442,7 +448,7 @@ void ProcessDialogEvent()
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
 		if (sti(Pchar.Ship.Type) == SHIP_NOTUSED || ok)
 		{
-			if (sti(RealShips[sti(pchar.Ship.Type)].Class) >= 6)
+			if (sti(RealShips[sti(pchar.Ship.Type)].Class) >= 7)
 			{
 				dialog.Text = "Errr... Yo no trato con barcos. Una vieja bañera seguirá siendo una vieja bañera, no importa cuánto esfuerzo le pongas.";
 				Link.l1 = "Veo...";
@@ -452,7 +458,7 @@ void ProcessDialogEvent()
 			// belamour legendary edition -->
 			if (!TuningAvailable())
 			{
-				dialog.Text = "Más o menos... veamos qué tenemos aquí... Sí - " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + "Tu barco ya tiene el máximo número de características mejoradas, me temo que seguir trabajando en él no tiene sentido y solo puede hacer daño.";
+				dialog.Text = "Más o menos... veamos qué tenemos aquí... Sí, " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + "Tu barco ya tiene el máximo número de características mejoradas, me temo que seguir trabajando en él no tiene sentido y solo puede hacer daño.";
 				Link.l1 = "Ya veo...";
 				Link.l1.go = "ship_tunning_not_now_1";
 				break;
@@ -466,7 +472,7 @@ void ProcessDialogEvent()
 				break;
 			}
 
-			s2 = "Alright, let's see what we've got here... Aha " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + ".";
+			s2 = "De acuerdo, veamos que tenemos aquí... Ajá, un " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + ".";
 			// belamour legendary edition -->
 			if (NPChar.city == "PortRoyal")
 			{
@@ -520,7 +526,7 @@ void ProcessDialogEvent()
 						Link.l2.go = "ship_tunning_not_now_1";
 						break;
 					}
-					Link.l1 = LinkRandPhrase("¡Oh! Mi embarcación ya está mejorada de esta manera. Bueno, ¡gracias por tu tiempo!", "Gracias, maestro, pero ya tengo una mejora, y es exactamente lo que me has mencionado. ¡Buena suerte con otros barcos y sus Capitanes!", "¡Eh! Supongo que mi barco ya había sido reacondicionado antes por un dueño anterior - debe haber sido en este mismo astillero. Bueno, supongo que debo agradecerle por su previsión, y a ti y a tus muchachos por su excelente trabajo.");
+					Link.l1 = LinkRandPhrase("¡Oh! Mi embarcación ya está mejorada de esta manera. Bueno, ¡gracias por tu tiempo!", "Gracias, maestro, pero ya tengo una mejora, y es exactamente lo que me has mencionado. ¡Buena suerte con otros barcos y sus Capitanes!", "¡Eh! Supongo que mi barco ya había sido reacondicionado antes por un dueño anterior, debe haber sido en este mismo astillero. Bueno, supongo que debo agradecerle por su previsión, y a ti y a tus muchachos por su excelente trabajo.");
 					Link.l1.go = "ship_tunning_not_now_1";
 				}
 				// <-- legendary edition
@@ -700,7 +706,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Exit";
 			ReOpenQuestHeader("ShipTuning");
 			AddQuestRecord("ShipTuning", "t1");
-			AddQuestUserData("ShipTuning", "sText", "Por el trabajo para aumentar el tonelaje de " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el astillero requiere: Sándalo - " + NPChar.Tuning.Matherial + ". Se me pagará una fianza por adelantado por importe de " + NPChar.Tuning.Money + " cofres de doblones.");
+			AddQuestUserData("ShipTuning", "sText", "Por el trabajo para aumentar el tonelaje de " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el astillero requiere: Sándalo, " + NPChar.Tuning.Matherial + ". Se me pagará una fianza por adelantado por importe de " + NPChar.Tuning.Money + " cofres de doblones.");
 		}
 		else
 		{
@@ -747,7 +753,7 @@ void ProcessDialogEvent()
 		else
 		{
 			NextDiag.TempNode = "ship_tunning_Capacity_again";
-			dialog.Text = "Todavía necesito: madera de hierro - " + sti(NPChar.Tuning.Matherial) + ".";
+			dialog.Text = "Todavía necesito: sándalo, " + sti(NPChar.Tuning.Matherial) + ".";
 			link.l1 = "Bien.";
 			link.l1.go = "Exit";
 			AddQuestRecord("ShipTuning", "t1");
@@ -760,13 +766,28 @@ void ProcessDialogEvent()
 		shTo = &RealShips[sti(Pchar.Ship.Type)];
 		DeleteAttribute(NPChar, "Tuning");
 		// изменим
-		if (!CheckAttribute(shTo, "Bonus_Capacity"))
+		if(!CheckAttribute(shTo, "Bonus_Capacity"))
 		{
-			shTo.Capacity = sti(shTo.Capacity) + makeint(sti(shTo.Capacity) / 5);
+			if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+			{
+				shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)* 0.65);
+			}
+			else
+			{
+				shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)/5);
+			}
 		}
 		else
 		{
-			shTo.Capacity = makeint((sti(shTo.Capacity) - sti(shTo.Bonus_Capacity)) * 1.2 + sti(shTo.Bonus_Capacity));
+			
+			if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+			{
+				shTo.Capacity        = makeint((sti(shTo.Capacity) - sti(shTo.Bonus_Capacity)) * 1.35 + sti(shTo.Bonus_Capacity));
+			}
+			else
+			{
+				shTo.Capacity        = makeint((sti(shTo.Capacity) - sti(shTo.Bonus_Capacity)) * 1.2 + sti(shTo.Bonus_Capacity));
+			}
 		}
 		shTo.Tuning.Capacity = true;
 
@@ -783,6 +804,8 @@ void ProcessDialogEvent()
 		TuningAvailable();
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
+		notification("Вы узнали много нового о строении корабля!", "none");
+		AddCharacterExpToSkill(pchar, SKILL_COMMERCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 
 	////////////////////////////////////////// SpeedRate ////////////////////////////////////////////////////
@@ -790,7 +813,7 @@ void ProcessDialogEvent()
 		Material = GetMaterialQtyUpgrade(pchar, NPChar, 1);
 		WorkPrice = GetMaterialQtyUpgrade(pchar, NPChar, 2);
 		s2 = "Veamos qué podemos hacer. En este momento la velocidad de su nave es de " + stf(RealShips[sti(Pchar.Ship.Type)].SpeedRate);
-		s2 = s2 + " nudos. Para sustituir las velas necesitaré: Seda para velas - " + Material + ".";
+		s2 = s2 + " nudos. Para sustituir las velas necesitaré: Seda para velas, " + Material + ".";
 		s2 = s2 + " Como pago por mi trabajo pido: " + WorkPrice + " cofres de doblones para cubrir mis gastos. Eso es todo. Ah, el dinero será por adelantado.";
 		dialog.Text = s2;
 		Link.l1 = "Acordado. Acepto tus términos. Te traeré lo que necesites.";
@@ -826,7 +849,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Exit";
 			ReOpenQuestHeader("ShipTuning");
 			AddQuestRecord("ShipTuning", "t1");
-			AddQuestUserData("ShipTuning", "sText", "Por mi trabajo para aumentar la velocidad a " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " del '" + pchar.ship.name + "'" + " el astillero requiere: Seda de barco - " + NPChar.Tuning.Matherial + ". Como un depósito de " + NPChar.Tuning.Money + " cofres con doblones.");
+			AddQuestUserData("ShipTuning", "sText", "Por mi trabajo para aumentar la velocidad a " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " del '" + pchar.ship.name + "'" + " el astillero requiere: Seda de barco, " + NPChar.Tuning.Matherial + ". Como un depósito de " + NPChar.Tuning.Money + " cofres con doblones.");
 		}
 		else
 		{
@@ -873,7 +896,7 @@ void ProcessDialogEvent()
 		else
 		{
 			NextDiag.TempNode = "ship_tunning_SpeedRate_again";
-			dialog.Text = " Todavía necesito: seda de barco - " + sti(NPChar.Tuning.Matherial) + ".";
+			dialog.Text = "Todavía necesito: seda de barco, " + sti(NPChar.Tuning.Matherial) + ".";
 			link.l1 = "Bien.";
 			link.l1.go = "Exit";
 			AddQuestRecord("ShipTuning", "t1");
@@ -886,13 +909,27 @@ void ProcessDialogEvent()
 		shTo = &RealShips[sti(Pchar.Ship.Type)];
 		DeleteAttribute(NPChar, "Tuning");
 		// изменим
-		if (!CheckAttribute(shTo, "Bonus_SpeedRate"))
+		if(!CheckAttribute(shTo, "Bonus_SpeedRate"))
 		{
-			shTo.SpeedRate = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate) / 5.0);
+			if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+			{
+				shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate) * 0.65);
+			}
+			else
+			{
+				shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate)/5.0);
+			}
 		}
 		else
 		{
-			shTo.SpeedRate = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.2 + stf(shTo.Bonus_SpeedRate);
+			if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+			{
+				shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.35 + stf(shTo.Bonus_SpeedRate);
+			}
+			else
+			{
+				shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.2 + stf(shTo.Bonus_SpeedRate);
+			}
 		}
 		shTo.Tuning.SpeedRate = true;
 
@@ -907,6 +944,8 @@ void ProcessDialogEvent()
 		Link.l1.go = "Exit";
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
+		notification("Вы узнали много нового о строении корабля!", "none");
+		AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 
 	////////////////////////////////////////// TurnRate ////////////////////////////////////////////////////
@@ -914,7 +953,7 @@ void ProcessDialogEvent()
 		Material = GetMaterialQtyUpgrade(pchar, NPChar, 1);
 		WorkPrice = GetMaterialQtyUpgrade(pchar, NPChar, 2);
 		s2 = "Veamos qué podemos hacer, entonces. De momento la maniobrabilidad de su nave es de " + stf(RealShips[sti(Pchar.Ship.Type)].TurnRate);
-		s2 = s2 + " Para añadir nuevas velas que lo mejoren necesitaré: Cuerdas - " + Material + ".";
+		s2 = s2 + " Para añadir nuevas velas que lo mejoren necesitaré: Cuerdas, " + Material + ".";
 		s2 = s2 + " Como pago por mi trabajo pido: " + WorkPrice + " cofres de doblones para cubrir mis gastos. Eso es todo. Ah, el dinero será por adelantado.";
 		dialog.Text = s2;
 		Link.l1 = "Acordado. Acepto tus términos. Te traeré lo que necesites.";
@@ -950,7 +989,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Exit";
 			ReOpenQuestHeader("ShipTuning");
 			AddQuestRecord("ShipTuning", "t1");
-			AddQuestUserData("ShipTuning", "sText", "Por su trabajo para aumentar la agilidad " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el astillero requiere: Cuerdas - " + NPChar.Tuning.Matherial + ". Se me abonará una fianza por adelantado por importe de  " + NPChar.Tuning.Money + " cofres con doblones.");
+			AddQuestUserData("ShipTuning", "sText", "Por su trabajo para aumentar la agilidad " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el astillero requiere: Cuerdas, " + NPChar.Tuning.Matherial + ". Se me abonará una fianza por adelantado por importe de  " + NPChar.Tuning.Money + " cofres con doblones.");
 		}
 		else
 		{
@@ -997,7 +1036,7 @@ void ProcessDialogEvent()
 		else
 		{
 			NextDiag.TempNode = "ship_tunning_TurnRate_again";
-			dialog.Text = " Todavía necesito: cuerdas - " + sti(NPChar.Tuning.Matherial) + ".";
+			dialog.Text = "Todavía necesito: cuerdas, " + sti(NPChar.Tuning.Matherial) + ".";
 			link.l1 = "Bien.";
 			link.l1.go = "Exit";
 			AddQuestRecord("ShipTuning", "t1");
@@ -1037,7 +1076,7 @@ void ProcessDialogEvent()
 		Material = GetMaterialQtyUpgrade(pchar, NPChar, 1);
 		WorkPrice = GetMaterialQtyUpgrade(pchar, NPChar, 2);
 		s2 = "Veamos qué podemos hacer, entonces. Por el momento, el número máximo de marineros en su tripulación, incluyendo la sobrecarga, es de " + sti(RealShips[sti(Pchar.Ship.Type)].MaxCrew) + " hombres.";
-		s2 = s2 + " Necesitaré: Sándalo - " + Material + ".";
+		s2 = s2 + " Necesitaré: Sándalo, " + Material + ".";
 		s2 = s2 + " Como pago por mi trabajo pido: " + WorkPrice + " cofres de doblones para cubrir mis gastos. Eso es todo. Ah, el dinero será por adelantado.";
 		dialog.Text = s2;
 		Link.l1 = "Acordado. Acepto tus términos. Te traeré lo que necesites.";
@@ -1073,7 +1112,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Exit";
 			ReOpenQuestHeader("ShipTuning");
 			AddQuestRecord("ShipTuning", "t1");
-			AddQuestUserData("ShipTuning", "sText", "Por sus esfuerzos para aumentar la tripulación del " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el  astillero requiere: Sándalo - " + NPChar.Tuning.Matherial + ". Se me abonará una fianza por adelantado por importe de " + NPChar.Tuning.Money + " cofres con doblones.");
+			AddQuestUserData("ShipTuning", "sText", "Por sus esfuerzos para aumentar la tripulación del " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el  astillero requiere: Sándalo, " + NPChar.Tuning.Matherial + ". Se me abonará una fianza por adelantado por importe de " + NPChar.Tuning.Money + " cofres con doblones.");
 		}
 		else
 		{
@@ -1120,7 +1159,7 @@ void ProcessDialogEvent()
 		else
 		{
 			NextDiag.TempNode = "ship_tunning_MaxCrew_again";
-			dialog.Text = "Todavía necesito: madera de hierro - " + sti(NPChar.Tuning.Matherial) + ".";
+			dialog.Text = "Todavía necesito: sándalo, " + sti(NPChar.Tuning.Matherial) + ".";
 			link.l1 = "Bien.";
 			link.l1.go = "Exit";
 			AddQuestRecord("ShipTuning", "t1");
@@ -1133,7 +1172,14 @@ void ProcessDialogEvent()
 		shTo = &RealShips[sti(Pchar.Ship.Type)];
 		DeleteAttribute(NPChar, "Tuning");
 
-		shTo.MaxCrew = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew) / 5);
+		if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+		{
+			shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew) * 0.65);
+		}
+		else
+		{
+			shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew)/5);
+		}
 		shTo.Tuning.MaxCrew = true;
 		if (!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo, "Tuning.MaxCrew") && CheckAttribute(shTo, "Tuning.HP"))
 
@@ -1148,6 +1194,9 @@ void ProcessDialogEvent()
 
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
+		notification("Вы узнали много нового о строении корабля!", "none");
+		AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
+		AddCharacterExpToSkill(pchar, SKILL_GRAPPLING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 
 	////////////////////////////////////////// MinCrew ////////////////////////////////////////////////////
@@ -1155,7 +1204,7 @@ void ProcessDialogEvent()
 		Material = GetMaterialQtyUpgrade(pchar, NPChar, 1);
 		WorkPrice = GetMaterialQtyUpgrade(pchar, NPChar, 2);
 		s2 = "Veamos qué podemos hacer, entonces. Por el momento, el número mínimo de marineros necesarios en su tripulación es de " + sti(RealShips[sti(Pchar.Ship.Type)].MinCrew) + " hombres.";
-		s2 = s2 + " Para mejorar el control del barco y reducir el número necesario de marineros en la tripulación necesitaré: Cuerdas - " + Material + ".";
+		s2 = s2 + " Para mejorar el control del barco y reducir el número necesario de marineros en la tripulación necesitaré: Cuerdas, " + Material + ".";
 		s2 = s2 + " Como pago por mi trabajo pido: " + WorkPrice + " cofres de doblones para cubrir mis gastos. Eso es todo. Ah, el dinero será por adelantado.";
 		dialog.Text = s2;
 		Link.l1 = "De acuerdo. Acepto tus términos. Te traeré lo que necesites.";
@@ -1191,7 +1240,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Exit";
 			ReOpenQuestHeader("ShipTuning");
 			AddQuestRecord("ShipTuning", "t1");
-			AddQuestUserData("ShipTuning", "sText", "Por su trabajo para reducir el número mínimo requerido de tripulantes en " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el astillero requiere: Cuerdas - " + NPChar.Tuning.Matherial + ". Se me abonará una fianza por adelantado por importe de " + NPChar.Tuning.Money + " cofres con doblones.");
+			AddQuestUserData("ShipTuning", "sText", "Por su trabajo para reducir el número mínimo requerido de tripulantes en " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el astillero requiere: Cuerdas, " + NPChar.Tuning.Matherial + ". Se me abonará una fianza por adelantado por importe de " + NPChar.Tuning.Money + " cofres con doblones.");
 		}
 		else
 		{
@@ -1238,7 +1287,7 @@ void ProcessDialogEvent()
 		else
 		{
 			NextDiag.TempNode = "ship_tunning_MinCrew_again";
-			dialog.Text = " Todavía necesito: cuerdas - " + sti(NPChar.Tuning.Matherial) + ".";
+			dialog.Text = "Todavía necesito: cuerdas, " + sti(NPChar.Tuning.Matherial) + ".";
 			link.l1 = "Bien.";
 			link.l1.go = "Exit";
 			AddQuestRecord("ShipTuning", "t1");
@@ -1251,7 +1300,14 @@ void ProcessDialogEvent()
 		shTo = &RealShips[sti(Pchar.Ship.Type)];
 		DeleteAttribute(NPChar, "Tuning");
 		// изменим
-		shTo.MinCrew = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew) / 5);
+		if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+		{
+			shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew) * 0.65);
+		}
+		else
+		{
+			shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew)/5);
+		}
 		if (sti(shTo.MinCrew) < 1)
 			shTo.MinCrew = 1;
 		shTo.Tuning.MinCrew = true;
@@ -1268,6 +1324,9 @@ void ProcessDialogEvent()
 
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
+		notification("Вы узнали много нового о строении корабля!", "none");
+		AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
+		AddCharacterExpToSkill(pchar, SKILL_GRAPPLING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 
 	////////////////////////////////////////// HP ////////////////////////////////////////////////////
@@ -1275,7 +1334,7 @@ void ProcessDialogEvent()
 		Material = GetMaterialQtyUpgrade(pchar, NPChar, 1);
 		WorkPrice = GetMaterialQtyUpgrade(pchar, NPChar, 2);
 		s2 = "Veamos qué podemos hacer, entonces. En este momento el casco de la nave es de " + sti(RealShips[sti(Pchar.Ship.Type)].HP);
-		s2 = s2 + ". Para reforzar el casco, necesitaré: Resina - " + Material + ".";
+		s2 = s2 + ". Para reforzar el casco, necesitaré: Resina, " + Material + ".";
 		s2 = s2 + " Como pago por mi trabajo pido: " + WorkPrice + " cofres de doblones para cubrir mis gastos. Eso es todo. Ah, el dinero será por adelantado.";
 		dialog.Text = s2;
 		Link.l1 = "Acordado. Acepto tus términos. Te traeré lo que necesites.";
@@ -1311,7 +1370,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Exit";
 			ReOpenQuestHeader("ShipTuning");
 			AddQuestRecord("ShipTuning", "t1");
-			AddQuestUserData("ShipTuning", "sText", "Por sus esfuerzos para aumentar la resistencia del casco " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el astillero requiere: Resina - " + NPChar.Tuning.Matherial + ". Se me abonará una fianza por adelantado por importe de " + NPChar.Tuning.Money + " cofres con doblones.");
+			AddQuestUserData("ShipTuning", "sText", "Por sus esfuerzos para aumentar la resistencia del casco " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el astillero requiere: Resina, " + NPChar.Tuning.Matherial + ". Se me abonará una fianza por adelantado por importe de " + NPChar.Tuning.Money + " cofres con doblones.");
 		}
 		else
 		{
@@ -1358,7 +1417,7 @@ void ProcessDialogEvent()
 		else
 		{
 			NextDiag.TempNode = "ship_tunning_HP_again";
-			dialog.Text = "Todavía requiero: resina - " + sti(NPChar.Tuning.Matherial) + ".";
+			dialog.Text = "Todavía requiero: resina, " + sti(NPChar.Tuning.Matherial) + ".";
 			link.l1 = "Bien.";
 			link.l1.go = "Exit";
 			AddQuestRecord("ShipTuning", "t1");
@@ -1371,13 +1430,27 @@ void ProcessDialogEvent()
 		shTo = &RealShips[sti(Pchar.Ship.Type)];
 		DeleteAttribute(NPChar, "Tuning");
 		// изменим
-		if (!CheckAttribute(shTo, "Bonus_HP"))
+		if(!CheckAttribute(shTo, "Bonus_HP"))
 		{
-			shTo.HP = sti(shTo.HP) + makeint(sti(shTo.HP) / 5);
+			if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+			{
+				shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.65);
+			}
+			else
+			{
+				shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
+			}
 		}
 		else
 		{
-			shTo.HP = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
+			if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+			{
+				shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
+			}
+			else
+			{
+				shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
+			}
 		}
 		shTo.Tuning.HP = true;
 		shTo.BaseHP = sti(shTo.HP);
@@ -1395,16 +1468,19 @@ void ProcessDialogEvent()
 
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
+		notification("Вы узнали много нового о строении корабля!", "none");
+		AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
+		AddCharacterExpToSkill(pchar, SKILL_REPAIR, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 
 	////////////////////////////////////////// WindAgainst ////////////////////////////////////////////////////
 	case "ship_tunning_WindAgainst":
 		Material = GetMaterialQtyUpgrade(pchar, NPChar, 1);
 		WorkPrice = GetMaterialQtyUpgrade(pchar, NPChar, 2);
-		fTmp = 180.0 - (stf(RealShips[sti(Pchar.Ship.Type)].WindAgainstSpeed) * 90.0);
+		fTmp = 180.0 - (acos(1 - stf(RealShips[sti(Pchar.Ship.Type)].WindAgainstSpeed)) * 180.0/PI);
 		s2 = "Veamos qué podemos hacer, entonces. En este momento el ángulo de la vela contra el viento es de " + makeint(fTmp) + " grados.";
 		// belamour legendary edition если спускать курс по ветру, то это даунгрейд
-		s2 = s2 + " Para acelerar el barco a barlovento, necesitaré: Seda del barco - " + Material + ",";
+		s2 = s2 + " Para acelerar el barco a barlovento, necesitaré: Seda del barco, " + Material + ",";
 		s2 = s2 + " Como pago por mi trabajo pido: " + WorkPrice + " cofres de doblones para cubrir mis gastos. Eso es todo. Ah, el dinero será por adelantado.";
 		dialog.Text = s2;
 		Link.l1 = "De acuerdo. Acepto tus términos. Te traeré lo que necesites.";
@@ -1441,7 +1517,7 @@ void ProcessDialogEvent()
 
 			ReOpenQuestHeader("ShipTuning");
 			AddQuestRecord("ShipTuning", "t1");
-			AddQuestUserData("ShipTuning", "sText", "Por su trabajo sobre el cambio del ángulo del viento de " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el astillero requiere: Seda de barco - " + NPChar.Tuning.Matherial + ". Se me abonará una fianza por adelantado por importe de " + NPChar.Tuning.Money + " cofres con doblones.");
+			AddQuestUserData("ShipTuning", "sText", "Por su trabajo sobre el cambio del ángulo del viento de " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el astillero requiere: Seda de barco, " + NPChar.Tuning.Matherial + ". Se me abonará una fianza por adelantado por importe de " + NPChar.Tuning.Money + " cofres con doblones.");
 		}
 		else
 		{
@@ -1488,7 +1564,7 @@ void ProcessDialogEvent()
 		else
 		{
 			NextDiag.TempNode = "ship_tunning_WindAgainst_again";
-			dialog.Text = "Aún necesito: seda para el barco - " + sti(NPChar.Tuning.Matherial) + ".";
+			dialog.Text = "Aún necesito: seda para el barco, " + sti(NPChar.Tuning.Matherial) + ".";
 			link.l1 = "Bien.";
 			link.l1.go = "Exit";
 			AddQuestRecord("ShipTuning", "t1");
@@ -1502,7 +1578,14 @@ void ProcessDialogEvent()
 		DeleteAttribute(NPChar, "Tuning");
 		// изменим
 		// belamour legendary edtion чем больше WindAgainstSpeed, тем круче к ветру
-		shTo.WindAgainstSpeed = stf(shTo.WindAgainstSpeed) + 0.20 * stf(shTo.WindAgainstSpeed);
+		if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+		{
+			shTo.WindAgainstSpeed   = stf(shTo.WindAgainstSpeed) + 0.35 * stf(shTo.WindAgainstSpeed);	
+		}
+		else
+		{
+			shTo.WindAgainstSpeed   = stf(shTo.WindAgainstSpeed) + 0.20 * stf(shTo.WindAgainstSpeed);
+		}
 		if (stf(shTo.WindAgainstSpeed) > 1.985)
 			shTo.WindAgainstSpeed = 1.985;
 		shTo.Tuning.WindAgainst = true;
@@ -1519,6 +1602,8 @@ void ProcessDialogEvent()
 
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
+		notification("Вы узнали много нового о строении корабля!", "none");
+		AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 
 	////////////////////////////////////////// только количество орудий  ////////////////////////////////////////////////////
@@ -1526,7 +1611,7 @@ void ProcessDialogEvent()
 		Material = GetMaterialQtyUpgrade(pchar, NPChar, 1);
 		WorkPrice = GetMaterialQtyUpgrade(pchar, NPChar, 2);
 		s2 = "A ver qué se puede hacer. En este momento, el número de cañones en su nave es de " + sti(RealShips[sti(Pchar.Ship.Type)].CannonsQuantity) + ", y el número máximo posible es de " + sti(RealShips[sti(Pchar.Ship.Type)].CannonsQuantityMax) + ".";
-		s2 = s2 + " Puedo decirte desde ya que no va a ser barato. Necesitaré: Resina - " + Material + ",";
+		s2 = s2 + " Puedo decirte desde ya que no va a ser barato. Necesitaré: Resina, " + Material + ",";
 		s2 = s2 + " Como pago por mi trabajo pido: " + WorkPrice + " cofres de doblones para cubrir mis gastos. Eso es todo. Ah, el dinero será por adelantado.";
 		dialog.Text = s2;
 		Link.l1 = "De acuerdo. Acepto tus términos. Te traeré lo que necesites.";
@@ -1563,7 +1648,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Exit";
 			ReOpenQuestHeader("ShipTuning");
 			AddQuestRecord("ShipTuning", "t1");
-			AddQuestUserData("ShipTuning", "sText", "Por el trabajo de aumentar el número de cañones del " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el astillero requiere: Resina - " + NPChar.Tuning.Matherial + ". Se me abonará una fianza por adelantado por importe de " + NPChar.Tuning.Money + " cofres con doblones.");
+			AddQuestUserData("ShipTuning", "sText", "Por el trabajo de aumentar el número de cañones del " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName + "Voc")) + " '" + pchar.ship.name + "'" + " el astillero requiere: Resina, " + NPChar.Tuning.Matherial + ". Se me abonará una fianza por adelantado por importe de " + NPChar.Tuning.Money + " cofres con doblones.");
 		}
 		else
 		{
@@ -1610,7 +1695,7 @@ void ProcessDialogEvent()
 		else
 		{
 			NextDiag.TempNode = "ship_c_quantity_again";
-			dialog.Text = "Todavía necesito: resina - " + sti(NPChar.Tuning.Matherial) + ".";
+			dialog.Text = "Todavía necesito: resina, " + sti(NPChar.Tuning.Matherial) + ".";
 			link.l1 = "Bien.";
 			link.l1.go = "Exit";
 			AddQuestRecord("ShipTuning", "t1");
@@ -1675,18 +1760,21 @@ void ProcessDialogEvent()
 
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
+		notification("Вы узнали много нового о строении корабля!", "none");
+		AddCharacterExpToSkill(pchar, SKILL_ACCURACY, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
+		AddCharacterExpToSkill(pchar, SKILL_CANNONS, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 
 	case "Tasks":
 		//--> Jason генератор Поиск корабля
-		if (drand(4) == 2 && !CheckAttribute(pchar, "GenQuest.Findship.Shipyarder") && sti(pchar.rank) < 19)
+		if (hrand(4) == 2 && !CheckAttribute(pchar, "GenQuest.Findship.Shipyarder") && sti(pchar.rank) < 19)
 		{
 			if (!CheckAttribute(npchar, "Findship") || GetNpcQuestPastDayParam(npchar, "Findship") >= 60)
 			{
 				SelectFindship_ShipType();																																							 // выбор типа корабля
 				pchar.GenQuest.Findship.Shipyarder.ShipBaseName = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Findship.Shipyarder.ShipType), "Name") + "Acc")); // new
 				pchar.GenQuest.Findship.Shipyarder.City = npchar.city;																																 // город квестодателя
-				dialog.text = "Tengo un asunto que necesita ser resuelto. Tengo un pedido para un barco - " + pchar.GenQuest.Findship.Shipyarder.ShipBaseName + " Sin embargo, en mi astillero no hay tal barco ahora y dentro de dos meses tampoco tengo posibilidad de conseguir uno.\nSi puedes proporcionarme tal barco, te estaré muy agradecido y te pagaré una suma una vez y media mayor que su precio de venta.";
+				dialog.text = "Tengo un asunto que necesita ser resuelto. Tengo un pedido para un barco, " + pchar.GenQuest.Findship.Shipyarder.ShipBaseName + " Sin embargo, en mi astillero no hay tal barco ahora y dentro de dos meses tampoco tengo posibilidad de conseguir uno.\nSi puedes proporcionarme tal barco, te estaré muy agradecido y te pagaré una suma una vez y media mayor que su precio de venta.";
 				link.l1 = "Una oferta interesante. ¡Estoy de acuerdo!";
 				link.l1.go = "Findship";
 				link.l2 = "Esto no me interesa.";
@@ -1697,11 +1785,11 @@ void ProcessDialogEvent()
 
 		} //<-- генератор Поиск корабля
 		// Jason --> генератор Неудачливый вор
-		if (drand(6) == 1 && !CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && sti(pchar.rank) < 10 && npchar.city != "Charles")
+		if (hrand(6) == 1 && !CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && sti(pchar.rank) < 10 && npchar.city != "Charles")
 		{
 			if (!CheckAttribute(npchar, "Device"))
 			{
-				switch (crand(4))
+				switch (hrand(4))
 				{
 				case 0:
 					pchar.GenQuest.Device.Shipyarder.Type = "inside gage";
@@ -1724,7 +1812,7 @@ void ProcessDialogEvent()
 					pchar.GenQuest.Device.Shipyarder.Describe = "un mayal normal, pero la cadena tiene forma de vara y sólo se mueve en una dirección.";
 					break;
 				}
-				dialog.text = "Llegas justo a tiempo. Tal vez podrías ayudarme. Alguien me robó un instrumento muy valioso ayer mismo - " + pchar.GenQuest.Device.Shipyarder.Type + ". No tengo la posibilidad de hacer otro y no puedo permitirme el tiempo ni el costo de pedirlo desde Europa. Y sin él, no puedo construir barcos normalmente, ¿sabes?\nY la parte más molesta es que esta cosa no la necesita nadie excepto los constructores de barcos, y yo soy el único constructor de barcos en la colonia. Este ladrón no se lo venderá a nadie y simplemente lo tirará. Tal vez puedas intentar rastrear al ladrón, preguntar por el pueblo, pero simplemente no tengo tiempo para estar fuera del astillero - necesito completar urgentemente pedidos especiales.";
+				dialog.text = "Llegas justo a tiempo. Tal vez podrías ayudarme. Alguien me robó un instrumento muy valioso ayer mismo, " + pchar.GenQuest.Device.Shipyarder.Type + ". No tengo la posibilidad de hacer otro y no puedo permitirme el tiempo ni el costo de pedirlo desde Europa. Y sin él, no puedo construir barcos normalmente, ¿sabes?\nY la parte más molesta es que esta cosa no la necesita nadie excepto los constructores de barcos, y yo soy el único constructor de barcos en la colonia. Este ladrón no se lo venderá a nadie y simplemente lo tirará. Tal vez puedas intentar rastrear al ladrón, preguntar por el pueblo, pero simplemente no tengo tiempo para estar fuera del astillero, necesito completar urgentemente pedidos especiales.";
 				link.l1 = "Está bien, lo intentaré. Dime, ¿cómo era ese... artefacto tuyo?";
 				link.l1.go = "Device";
 				link.l2 = "Esto no me interesa.";
@@ -1773,7 +1861,7 @@ void ProcessDialogEvent()
 		sld = GetCharacter(sti(pchar.GenQuest.Findship.Shipyarder.CompanionIndex));
 		RemoveCharacterCompanion(PChar, sld);
 		AddPassenger(PChar, sld, false);
-		dialog.text = "Aquí está tu dinero - " + FindRussianMoneyString(sti(pchar.GenQuest.Findship.Shipyarder.Money)) + ". Gracias por el trabajo. No olvides venir a verme de nuevo. ¡Adiós!";
+		dialog.text = "Aquí está tu dinero, " + FindRussianMoneyString(sti(pchar.GenQuest.Findship.Shipyarder.Money)) + ". Gracias por el trabajo. No olvides venir a verme de nuevo. ¡Adiós!";
 		link.l1 = "Adiós, " + npchar.name + ".";
 		link.l1.go = "exit";
 		AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Findship.Shipyarder.Money));
@@ -1792,14 +1880,10 @@ void ProcessDialogEvent()
 		pchar.GenQuest.Device.Shipyarder.Chance4 = rand(4);
 		pchar.GenQuest.Device.Shipyarder.Money = 12000 + rand(8000);
 		// генерируем тип корабля для бонуса сейчас, чтобы не сливали
-		if (sti(pchar.rank) < 2)
-			iType = SHIP_SCHOONER;
-		if (sti(pchar.rank) >= 2 && sti(pchar.rank) < 5)
-			iType = SHIP_BRIGANTINE;
-		if (sti(pchar.rank) >= 5 && sti(pchar.rank) < 7)
-			iType = SHIP_BRIG;
-		if (sti(pchar.rank) >= 7)
-			iType = SHIP_CORVETTE + rand(makeint(SHIP_GALEON_H - SHIP_CORVETTE));
+		if (sti(pchar.rank) < 5) iType = sti(RandPhraseSimple(its(SHIP_BARKENTINE), its(SHIP_SLOOP)));
+		if (sti(pchar.rank) >= 5 && sti(pchar.rank) < 11) iType = sti(RandPhraseSimple(its(SHIP_SHNYAVA), its(SHIP_BARQUE)));
+		if (sti(pchar.rank) >= 11 && sti(pchar.rank) < 16) iType = sti(RandPhraseSimple(its(SHIP_BRIG), its(SHIP_FLEUT)));
+		if (sti(pchar.rank) >= 16) iType = sti(LinkRandPhrase(its(SHIP_CORVETTE), its(SHIP_POLACRE), its(SHIP_GALEON_L)));
 		pchar.GenQuest.Device.Shipyarder.Bonus = iType;
 		dialog.text = "Por supuesto, trataré de explicarlo en palabras sencillas. Parece que " + pchar.GenQuest.Device.Shipyarder.Describe + ". Es único en su clase, así que lo reconocerás muy fácilmente. Si me traes ese instrumento, te pagaré generosamente.";
 		link.l1 = "Entendido. ¡Empezaré mi búsqueda de inmediato!";
@@ -1843,7 +1927,7 @@ void ProcessDialogEvent()
 		if (sti(pchar.GenQuest.Device.Shipyarder.Chance4) == 3)
 		{
 			dialog.text = "Aparte, me gustaría hacerle una oferta, como agradecimiento adicional.";
-			link.l1 = "Eso es interesante. Bueno, adelante - me gustan las sorpresas agradables.";
+			link.l1 = "Eso es interesante. Bueno, adelante, me gustan las sorpresas agradables.";
 			link.l1.go = "Device_complete_3";
 		}
 		else
@@ -1855,7 +1939,7 @@ void ProcessDialogEvent()
 
 	case "Device_complete_3":
 		iType = sti(pchar.GenQuest.Device.Shipyarder.Bonus);
-		dialog.text = "Acabo de lanzar un nuevo barco - " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(iType, "Name") + "Acc")) + "Ya hay varios clientes para este barco, pero te daré prioridad. Si te gusta este barco y no te asusta el precio, puedes comprarlo.";
+		dialog.text = "Acabo de lanzar un nuevo barco, " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(iType, "Name") + "Acc")) + "Ya hay varios clientes para este barco, pero te daré prioridad. Si te gusta este barco y no te asusta el precio, puedes comprarlo.";
 		link.l1 = "¡Je! ¡Claro, echemos un vistazo!";
 		link.l1.go = "Device_complete_4";
 		link.l2 = "Gracias, pero mi barco actual me queda bien, y no estoy buscando reemplazarlo.";
@@ -1875,7 +1959,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Device_complete_5":
-		dialog.text = "Bueno, como desees. Gracias una vez más - ¡y buena suerte!";
+		dialog.text = "Bueno, como desees. Gracias una vez más, ¡y buena suerte!";
 		link.l1 = "¡Buena suerte para ti también!";
 		link.l1.go = "exit";
 		DeleteAttribute(pchar, "GenQuest.Device.Shipyarder");
@@ -2030,7 +2114,7 @@ void ProcessDialogEvent()
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
 		if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 		{
-			dialog.text = "Cambiar el color de las velas cuesta " + FindRussianMoneyString(GetSailsTuningPrice(Pchar, npchar, SAILSCOLOR_PRICE_RATE)) + ", cambiar el escudo de armas cuesta " + FindRussianMoneyString(GetSailsTuningPrice(Pchar, npchar, SAILSGERALD_PRICE_RATE)) + ", reemplazar las velas - depende de tu barco.";
+			dialog.text = "Cambiar el color de las velas cuesta " + FindRussianMoneyString(GetSailsTuningPrice(Pchar, npchar, SAILSCOLOR_PRICE_RATE)) + ", cambiar el escudo de armas cuesta " + FindRussianMoneyString(GetSailsTuningPrice(Pchar, npchar, SAILSGERALD_PRICE_RATE)) + ", reemplazar las velas dependerá del barco.";
 
 			link.l1 = "Elige un nuevo color.";
 			link.l1.go = "SailsColorChoose";
@@ -2171,7 +2255,7 @@ void ProcessDialogEvent()
 		else
 		{
 			dialog.text = "Mm. Sí, en efecto. Pero...";
-			link.l1 = "Y ya hay un depósito en él - cinco mil pesos. Michel de Monper, quien depositó el dinero, me otorgó todos los derechos sobre este barco.";
+			link.l1 = "Y ya hay una fianza de cinco mil pesos. Michel de Monper, quien depositó el dinero, me otorgó todos los derechos sobre este barco.";
 			link.l1.go = "Sharlie_2";
 		}
 		break;
@@ -2196,7 +2280,7 @@ void ProcessDialogEvent()
 		if (CheckAttribute(pchar, "questTemp.Sharlie.Rum") || CheckAttribute(pchar, "questTemp.Sharlie.Gigolo") || CheckAttribute(pchar, "questTemp.Sharlie.RescueDaughter"))
 		{
 			dialog.text = "¿Puedo ayudarle, Monsieur?";
-			Link.l1 = "Solo pasé para echar un vistazo a los barcos que tienes disponibles... Pero ahora estoy un poco ocupado - tengo un asunto sin terminar que atender. Volveré tan pronto como lo termine.";
+			Link.l1 = "Solo pasé para echar un vistazo a los barcos que tienes disponibles... Pero ahora estoy un poco ocupado, tengo un asunto sin terminar que atender. Volveré tan pronto como lo termine.";
 			Link.l1.go = "exit";
 			break;
 		}
@@ -2610,7 +2694,7 @@ void ProcessDialogEvent()
 		RemoveItems(pchar, "gold_dublon", sti(pchar.questTemp.IslaMona.Shipyarder.Money));
 		PlaySound("interface\important_item.wav");
 		dialog.text = "Eso es estupendo. La cantidad completa está en su lugar. Las herramientas serán entregadas a su barco. Estas son algunas cajas pesadas.";
-		link.l1 = "Gracias, " + npchar.name + "¡";
+		link.l1 = "Gracias, " + npchar.name + ".";
 		link.l1.go = "IslaMona_9";
 		break;
 
@@ -2741,40 +2825,36 @@ int GetSailsTypePrice(int _asis, int _tobe, float _shipCostRate, int _price)
 void SelectFindship_ShipType()
 {
 	int iRank;
-	if (sti(pchar.rank) == 1)
-		iRank = 0;
-	if (sti(pchar.rank) > 1 && sti(pchar.rank) <= 2)
-		iRank = 1;
-	if (sti(pchar.rank) > 2 && sti(pchar.rank) <= 4)
-		iRank = 2;
-	if (sti(pchar.rank) > 4 && sti(pchar.rank) <= 7)
-		iRank = 3;
-	if (sti(pchar.rank) > 7 && sti(pchar.rank) <= 10)
-		iRank = 4;
-	if (sti(pchar.rank) > 10 && sti(pchar.rank) <= 18)
-		iRank = 5;
-
+	if (sti(pchar.rank) < 7) iRank = 0;
+	if (sti(pchar.rank) >= 7 && sti(pchar.rank) < 11) iRank = 1;
+	if (sti(pchar.rank) >= 11 && sti(pchar.rank) < 20) iRank = 2;
+	if (sti(pchar.rank) >= 20 && sti(pchar.rank) <= 27) iRank = 3;
+	
+	int iShip = SHIP_WAR_TARTANE;
 	switch (iRank)
 	{
-	case 0:
-		pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_SCHOONER + rand(makeint(SHIP_BARQUE - SHIP_SCHOONER));
+		case 0:
+			iShip = sti(RandPhraseSimple(its(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)), 
+										 its(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
 		break;
-	case 1:
-		pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_BARKENTINE + rand(makeint(SHIP_SHNYAVA - SHIP_BARKENTINE));
+		case 1:  
+			iShip = sti(LinkRandPhrase(its(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
+		break; 
+		case 2:  
+			iShip = sti(LinkRandPhrase(its(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
 		break;
-	case 2:
-		pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_FLEUT + rand(makeint(SHIP_CARAVEL - SHIP_FLEUT));
-		break;
-	case 3:
-		pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_PINNACE + rand(makeint(SHIP_CARACCA - SHIP_PINNACE));
-		break;
-	case 4:
-		pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_SCHOONER_W + rand(makeint(SHIP_POLACRE - SHIP_SCHOONER_W));
-		break;
-	case 5:
-		pchar.GenQuest.Findship.Shipyarder.ShipType = SHIP_NAVIO + rand(makeint(SHIP_FRIGATE_H - SHIP_NAVIO));
+		case 3:  
+			iShip = sti(LinkRandPhrase(its(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
 		break;
 	}
+	
+	pchar.GenQuest.Findship.Shipyarder.ShipType = iShip;
 }
 
 // проверка количества материалов для корабельного тюнинга
@@ -2825,7 +2905,7 @@ int GetMaterialQtyUpgrade(ref _chr, ref _nchar, int MaterialNum)
 
 	if (MaterialNum == 1)
 	{
-		int Material = makeint((40 * (7 - shipClass) + 25 * MOD_SKILL_ENEMY_RATE + drand(shipMinCrew)) * fQuestShip * LEcoeff);
+		int Material = makeint((40 * (8 - shipClass) + 25 * MOD_SKILL_ENEMY_RATE + hrand(shipMinCrew)) * fQuestShip * LEcoeff);
 		if (Material < 1)
 			Material = 1;
 		return Material;
@@ -2848,8 +2928,11 @@ int GetMaterialQtyUpgrade(ref _chr, ref _nchar, int MaterialNum)
 			WorkPrice = 3;
 			break;
 		case 5:
-			WorkPrice = 1;
+			WorkPrice = 2;
 			break;
+		case 6:
+			WorkPrice = 1;
+		break;
 		}
 		return WorkPrice;
 	}

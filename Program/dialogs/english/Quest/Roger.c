@@ -1432,6 +1432,7 @@ void ProcessDialogEvent()
 		
 		case "Pelly_61":
             DialogExit();
+			DeleteAttribute(pchar,"questTemp.Mtraxx.MagicBox");
 			chrDisableReloadToLocation = true;
 			LocatorReloadEnterDisable("shore37", "boat", false);
 			bQuestDisableMapEnter = false;
@@ -3904,7 +3905,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.IslaMona.Nodublon = "true"; // дублоны не заплатил
 			AddQuestRecord("IslaMona", "8");
             dialog.text = "Aye-aye, Captain! We're ready to work on the land! Oh, and one more thing, I almost forgot. Now there are quite a few people living here, and they need something to eat. Have you seen those ladies? They're not accustomed to survival and feeding off the land. They won't be of any help.";
-			link.l1 = "Только не говори, что мне придётся искать ещё и буканьеров вам в помощь.";
+			link.l1 = "Don’t tell me I’ll have to go look for buccaneers to help you too...";
 			link.l1.go = "IslaMona_26";
 		break;
 		

@@ -5,84 +5,87 @@ info
 }
 type_full_1
 {
-La carte est manifestement fraîche et le papier n'a pas encore jauni. Les marques semblent dessinées à la hâte, mais si nous devons les croire, le trésor est caché à l'emplacement #sMaplocName# sur l'#sMapIslName#.
+La carte est manifestement fraîche et le papier n'a pas encore jauni. Les inscriptions de #sMapIslName# semblent avoir été tracées à la hâte, mais si nous les croyons, le trésor est caché #sMaplocName#.
 }
 type_full_1_isl {île}
 type_full_1_mein {continent}
 
 type_full_2
 {
-La carte est dessinée plutôt négligemment, et #sMapIslName# est à peine discernable. À en juger par les marques, le trésor est caché à #sMaplocName#, mais nous ne pouvons en être certains qu'en y allant.
+La carte est dessinée sans soin, et #sMapIslName# est à peine discernable. D'après les marques, le trésor est caché #sMaplocName#, mais nous ne pourrons en être sûrs qu'en nous rendant sur place.
 }
 type_full_2_isl {île}
 type_full_2_mein {continent}
 
 type_full_3
 {
-Cette carte n'était pas précieuse pour son propriétaire - le contour de #sMapIslName# est gâché par des taches d'eau. L'emplacement du trésor semble être #sMaplocName#.
+Cette carte n'avait pas de valeur pour son propriétaire - le contour de #sMapIslName# est gâché par des taches d'eau. L'emplacement du trésor semble être #sMaplocName#.
 }
 type_full_3_isl {îles}
 type_full_3_mein {continent}
 
 type_full_4
 {
-La carte représente #sMapIslName#. L'endroit où les trésors sont gardés est #sMaplocName#. Le manque de compétence de l'auteur a été compensé par l'effort - des animaux fantaisistes, comme s'ils avaient été dessinés par la main d'un enfant, ornent les marges.
+La carte représente #sMapIslName#. L'endroit où les trésors sont entreposés est #sMaplocName#. Le manque d'habileté de l'auteur a été compensé par ses efforts : des animaux fantaisistes, comme dessinés par la main d'un enfant, ornent les marges.
 }
 type_full_4_isl {île}
 type_full_4_mein {continent}
 
 type_full_5
 {
-La carte reflète avec précision les contours de #sMapIslName#. L'emplacement du trésor est #sMaplocName#. Il ne sera pas difficile de le trouver, car l'auteur a laissé des indications assez précises.
+La carte reflète fidèlement les contours de #sMapIslName#. L'emplacement du trésor est #sMaplocName#. Il ne sera pas difficile de le trouver, car l'auteur a laissé des indications assez précises. 
 }
+
 type_full_5_isl {île}
 type_full_5_mein {continent}
+
+
 type_full_6
 {
-Cette carte est dessinée sur du papier ligné de haute qualité. Le contour de #sMapIslName# est facilement reconnaissable. Selon la note au dos, l'emplacement du trésor est #sMaplocName#.
+Cette carte est dessinée sur du papier ligné de haute qualité. Le contour de #sMapIslName# est facilement reconnaissable. D'après la note au verso, l'emplacement du trésor est #sMaplocName#.
 }
 type_full_6_isl {île}
 type_full_6_mein {continent}
 
 type_full_7
 {
-Ceci est #sMapIslName#. La carte indique l'emplacement du trésor caché — c'est #sMaplocName#. Un pirate notoire a caché son trésor là-bas.  
-L'authenticité de la carte est suggérée par les taches brunes de sang, ce qui indique également que ce morceau de papier a changé de mains plusieurs fois.
+Il s'agit de #sMapIslName#. La carte indique l'emplacement du trésor caché - c'est #sMaplocName#. Un pirate notoire y a caché son trésor.  
+L'authenticité de la carte est suggérée par les taches brunes de sang, qui indiquent également que ce morceau de papier a changé de mains à plusieurs reprises.
 }
 type_full_7_isl {île}
 type_full_7_mein {continent}
 
 type_full_8
 {
-Cette carte a clairement vu de nombreuses mains — le papier est brûlé à plusieurs endroits, et le contour de #sMapIslName# est marqué par des signes de multiples plis. L'emplacement du trésor est #sMaplocName#. Apparemment, quelque chose de véritablement précieux s'y trouve.
+Cette carte a manifestement été manipulée à plusieurs reprises - le papier est brûlé à plusieurs endroits et le contour de #sMapIslName# est barré par des signes de plis multiples. L'emplacement du trésor est #sMaplocName#. Apparemment, quelque chose de vraiment précieux s'y trouve.
 }
 type_full_8_isl {îles}
 type_full_8_mein {continent}
 
 type_full_9
 {
-#sMapIslName#, assez précisément représenté sur cette carte, est entouré de motifs enroulés et de dessins de monstres marins. Quoi qu’il en soit, l'auteur de la carte savait clairement ce qu'il faisait, cachant quelque chose de très précieux dans le trésor. Tout ce qui reste, c'est d'atteindre l'emplacement — #sMaplocName#.
+#sMapIslName#, très exactement représenté sur cette carte, est entouré de motifs de parchemins et de dessins de monstres marins. L'auteur de la carte, quel qu'il soit, connaissait manifestement son métier et a caché un objet de grande valeur dans le trésor. Il ne reste plus qu'à atteindre l'endroit - #sMaplocName#.
 }
 type_full_9_isl {île}
 type_full_9_mein {continent}
 
 type_full_10
 {
-Les moitiés de cette carte ne s'emboîtent pas, bien que l'écriture, la couleur de l'encre et l'état du papier indiquent clairement le même auteur. Les contours de #sMapIslName# sont flous et tachés d'encre, et le trésor semble être situé à #sMaplocName#.
+Les deux moitiés de cette carte ne correspondent pas, bien que l'écriture, la couleur de l'encre et l'état du papier indiquent clairement qu'il s'agit du même auteur. Les contours de #sMapIslName# sont flous et tachés d'encre, et le trésor, semble-t-il, se trouve à #sMaplocName#.
 }
 type_full_10_isl {île}
 type_full_10_mein {continent}
 
 type_full_11
 {
-Cette carte a été soigneusement divisée en diagonale, rendant impossible la reconnaissance de #sMapIslName# avec seulement une moitié. Les notes sont écrites d'une écriture soignée, ce qui facilite la compréhension de l'emplacement du trésor — à #sMaplocName#. À en juger par l'état du papier, les trésors y sont depuis de nombreuses décennies.
+Cette carte a été soigneusement divisée en diagonale, de sorte qu'il est impossible de discerner #sMapIslName# avec une seule moitié. Les notes sont rédigées dans une écriture soignée, ce qui permet de comprendre facilement où se trouve le trésor - à #sMaplocName#. À en juger par l'état du papier, les trésors sont là depuis plusieurs décennies.
 }
 type_full_11_isl {île}
 type_full_11_mein {continent}
 
 type_full_12
 {
-Cette carte, faite de deux parties, semble incroyablement ancienne. Les contours de #sMapIslName# sont obsolètes depuis plusieurs décennies. Les descriptions et indices sont écrits dans un langage désuet et regorgent de latin. Il est difficile d'évaluer l'ampleur des trésors stockés à #sMaplocName#.
+Cette carte, composée de deux morceaux, semble incroyablement ancienne. Les contours de #sMapIslName# sont dépassés de plusieurs décennies. Les descriptions et les indices sont rédigés dans une langue ancienne et riche en latin. Il est difficile de mesurer l'ampleur des trésors que recèle #sMaplocName#.
 }
 type_full_12_isl {îles}
 type_full_12_mein {continent}

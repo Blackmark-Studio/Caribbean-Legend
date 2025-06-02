@@ -49,7 +49,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 6-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && 6-sti(RealShips[sti(Pchar.Ship.Type)].Class) < 3)//монах-пассажир
+				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) < 3)//монах-пассажир
 				{
 					dialog.text = "Good day to you, my son. I'd like to ask you to do my favor. I will pay of course.";
 					link.l1 = "I am listening to you, father. What do you need?";
@@ -79,7 +79,7 @@ void ProcessDialogEvent()
 					link.l3 = "Father, I've got people on my ship. They are slaves, both Christians and non-baptized pagans. I want you to baptize the pagans and to administer communion to the Christians. Afterwards I will free them all for the glory of God and our Church.";
 					link.l3.go = "slaves";
 				}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 6-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
 				{
 					link.l4 = "Father, I want you to bless my ship and offer mass for my crew. How much would that cost?";
 					link.l4.go = "shipshine";
@@ -101,7 +101,7 @@ void ProcessDialogEvent()
 						link.l3 = "Father, I've got people on my ship. They are slaves, both Christians and non-baptized pagans. I want you to baptize the pagans and to administer communion to the Christians. Afterwards I will free them all for the glory of God and our Church.";
 						link.l3.go = "slaves";
 					}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 6-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
 				{
 					link.l4 = "Father, I want you to bless my ship and offer mass for my crew. How much would that cost?";
 					link.l4.go = "shipshine";
@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 	
 //--------------------------------------------монах-пассажир---------------------------------------------------
 		case "passenger":
-			if (drand(19) < 15) SetPassengerParameter("Monkpassenger", false);
+			if (hrand(19) < 15) SetPassengerParameter("Monkpassenger", false);
 			else SetPassengerParameter("Monkpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
 			{
@@ -604,7 +604,7 @@ void ProcessDialogEvent()
 string DonationType()
 {
 	string sText;
-	switch (drand(9))
+	switch (hrand(9))
 	{
 		case 0: sText = "I am gathering money for building "+LinkRandPhrase("a chapel","an almshouse","a hospital")+". The local citizens give little in alms so I must ask prosperous men like you." break;
 		case 1: sText = "I am gathering donations for our church. Sailors don't usually have much time to visit the house of God, but everyone must do his best in saving his own soul." break;

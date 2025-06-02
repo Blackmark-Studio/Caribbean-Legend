@@ -575,3 +575,7 @@ Saga_121
 {
 Der Versuch ist gelungen!
 }
+Saga_122
+{
+Eine Stunde ist vergangen...@<NewStr()>Ihr habt das zerstörte Schiff erreicht
+}

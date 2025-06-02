@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 		case "First time":
 			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
 			{
-				dialog.text = " No quiero hablar contigo. Atacas a civiles pacíficos sin razón y los provocas a pelear. ¡Piérdete!";
+				dialog.text = "No quiero hablar contigo. Atacas a civiles pacíficos sin razón y los provocas a pelear. ¡Piérdete!";
 				link.l1 = "Mm...";
 				link.l1.go = "exit";
 				break;
@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Ah, "+GetFullName(pchar)+"¡ "+TimeGreeting()+"¡Quieres algo?";
+				dialog.text = "¡Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+". ¿Quieres algo?";
 				link.l1 = LinkRandPhrase("¿Tienes algo interesante que decir?","¿Ha sucedido algo nuevo en la isla?","¿Me contarás los últimos chismes?");
 				link.l1.go = "rumours_LSC";
 				link.l2 = "Quiero hacerte unas preguntas sobre la isla.";
@@ -51,7 +51,7 @@ void ProcessDialogEvent()
 		
 		case "meeting_1":
 			dialog.text = "Pareces más un armador o un pagador... Sin duda eres un hombre bien educado. Encantado de conocerte. ¿Cómo llegaste aquí?";
-			link.l1 = " He decidido explorar un área desconocida. Los bucaneros de Cuba me dijeron que había algo en esta área y decidí comprobarlo... ";
+			link.l1 = "He decidido explorar un área desconocida. Los bucaneros de Cuba me dijeron que había algo en esta área y decidí comprobarlo... ";
 			link.l1.go = "meeting_2";
 		break;
 		
@@ -107,7 +107,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_2":
-			dialog.text = "  Ojalá lo supiera, amigo. Lo sabía antes, pero ya no. La vida aquí está bien, mucho ron y vino, buena comida, no mucha, pero de todas formas mejor que esa mierda que comía en los barcos\nTambién hay buena gente en la Isla. Hay gente con la que beber o con la que charlar. Me gusta aquí. Así que ni siquiera estoy seguro... No, supongo que no, no quiero irme. Solía estar enfadado y hambriento, ¡mira mi barriga ahora, ja-ja!";
+			dialog.text = "Ojalá lo supiera, amigo. Lo sabía antes, pero ya no. La vida aquí está bien, mucho ron y vino, buena comida, no mucha, pero de todas formas mejor que esa mierda que comía en los barcos\nTambién hay buena gente en la Isla. Hay gente con la que beber o con la que charlar. Me gusta aquí. Así que ni siquiera estoy seguro... No, supongo que no, no quiero irme. Solía estar enfadado y hambriento, ¡mira mi barriga ahora, ja-ja!";
 			link.l1 = "¡Genial! Me alegro por ti.";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_2 = "true";

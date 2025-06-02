@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 		case "First time":
 			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
 			{
-				dialog.text = "  No quiero hablar contigo. Atacas a civiles pacíficos sin razón alguna y los provocas a pelear. ¡Piérdete! ";
+				dialog.text = "No quiero hablar contigo. Atacas a civiles pacíficos sin razón alguna y los provocas para pelear. ¡Piérdete!";
 				link.l1 = "Mm...";
 				link.l1.go = "exit";
 				break;
@@ -26,13 +26,13 @@ void ProcessDialogEvent()
 			if (npchar.quest.meeting == "0")
 			{
 				dialog.text = "¿Deseas algo, joven?";
-				link.l1 = TimeGreeting()+" Permíteme presentarme - "+GetFullName(pchar)+"Soy un recién llegado.";
+				link.l1 = TimeGreeting()+" Permíteme presentarme, "+GetFullName(pchar)+"Soy un recién llegado.";
 				link.l1.go = "meeting";
 				npchar.quest.meeting = "1";
 			}
 			else
 			{
-				dialog.text = "Ah, "+GetFullName(pchar)+"¡ "+TimeGreeting()+"¡Quieres algo?";
+				dialog.text = "¡Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+". ¿Quieres algo?";
 				link.l1 = LinkRandPhrase("¿Tienes algo interesante que decir?","¿Ha ocurrido algo nuevo en la isla?","¿Me contarás los últimos chismes?");
 				link.l1.go = "rumours_LSC";
 				link.l2 = "Quiero hacerte unas preguntas sobre la isla.";
@@ -70,7 +70,7 @@ void ProcessDialogEvent()
 		
 //--------------------------------------- блок вопросов и ответов ---------------------------------------------
 		case "int_quests":
-			dialog.text = "Sí, joven?";
+			dialog.text = "¿Sí, joven?";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
 			{
 				link.l1 = "¿Y cómo llegaste aquí, señora?";
@@ -110,14 +110,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_3":
-			dialog.text = "Y no hay mucho que pueda decir, joven... todos son diferentes. Tenemos a todos aquí - blancos, negros, indios, ex esclavos y nobles, convictos del estado y soldados. Y antes había más de ellos. Cada uno tiene su propia historia y sus propias costumbres. A alguien no le importa pero alguien más todavía está ansioso por regresar. Así es como vivimos...";
+			dialog.text = "Y no hay mucho que pueda decir, joven... todos son diferentes. Tenemos a todos aquí, blancos, negros, indios, ex esclavos y nobles, convictos del estado y soldados. Y antes había más de ellos. Cada uno tiene su propia historia y sus propias costumbres. A alguien no le importa pero alguien más todavía está ansioso por regresar. Así es como vivimos...";
 			link.l1 = "Interesante...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_3 = "true";
 		break;
 		
 		case "ansewer_4":
-			dialog.text = "Las personas más interesantes aquí son: el mecánico-inventor de los Narvales, Herr Schmidt - armero de los Narvales, Sancho Carpentero - el cantinero nativo. Y ahora también tenemos al almirante con su segundo al mando.";
+			dialog.text = "Las personas más interesantes aquí son: El mecánico-inventor de los Narvales, Herr Schmidt, armero de los Narvales, Sancho Carpentero, el cantinero nativo. Y ahora también tenemos al almirante con su segundo al mando.";
 			link.l1 = "Lo consideraré...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";

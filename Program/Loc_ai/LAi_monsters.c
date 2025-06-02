@@ -74,7 +74,7 @@ void LAi_GenerateFantomFromMe(aref chr)
 		PlaceCharacter(sld, "patrol", "random_free");
 	}
 	else
-	{
+	{   // TO_DO: МЕТОД ДРЕВНИЙ И КРИВОЙ (ИЗ ВМЛ), ФАНТОМЫ МОЛЧАТ, НАДО ПЕРЕПИСАТЬ
 		ref fnt = LAi_CreateFantomCharacterEx(model, ani, LAi_CharacterReincarnationGroup(chr), "");
 		string curidx = fnt.index;
 		//Устанавливаем параметры предыдущего персонажа
@@ -108,6 +108,7 @@ void LAi_GenerateFantomFromMe(aref chr)
 		SetRandomNameToCharacter(fnt);
 		fnt.id = chr.id;
 		fnt.index = curidx;
+        fnt.lifeDay = 0;
 		LAi_tmpl_stay_InitTemplate(fnt);
 		fnt.chr_ai.type = "";
 		if(chrtype != "")
@@ -185,12 +186,12 @@ bool LAi_CreateShoreChest(ref location) // Jason: выброшенные на б
 	{
 		location.box1.NotChest = true;
 		location.box2.NotChest = true;
-		if(CheckAttribute(location, "Chestgennot")) return false;
+		if (CheckAttribute(location, "Chestgennot")) return false;
 		if (CheckAttribute(pchar, "questTemp.Sharlie.Lock")) return false; // 021012
-		if (!CheckAttribute(location, "shorechest") && drand(100) < 5) // нет сундука
+		if (!CheckAttribute(location, "shorechest") && hrand(100, sTemp) < 5) // нет сундука
 		{
 			string sModel = "chest_"+(rand(2)+1);
-			location.num = drand(1)+1;
+			location.num = hrand(1, sTemp)+1;
 			location.numbox = "box"+(sti(location.num));
 			location.shorechest = true;
 			location.models.always.chest = sModel;
@@ -218,7 +219,7 @@ bool LAi_CreateShoreChest(ref location) // Jason: выброшенные на б
 			{
 				if(!CheckAttribute(location, "shorefill")) 
 				{
-					FillShorechestBox(sTemp, sti(location.num), drand(5));
+					FillShorechestBox(sTemp, sti(location.num), hrand(5, sTemp));
 					SaveCurrentNpcQuestDateParam(location, "chest_date");
 					location.shorefill = true;
 					//log_testinfo("Сундук на берегу!");// patch
@@ -284,7 +285,7 @@ bool LAi_CreateEncounters(ref location)
 {
 	aref grp, st, at;
 	ref chr, rCharacter, rItm;
-	string encGroup, str, locator, sAreal, sCity, sEncType;
+	string encGroup, str, locator, sAreal, sCity, sEncType, tag;
 	int num, i, iChar, iNation, iRank, n, iTemp, iMassive, iRnd, iRand, iEncrnd;
 	string model[10];
 	if (!bLandEncountersGen) //если прерывание на локацию, энкаунтеров не генерим
@@ -516,6 +517,7 @@ bool LAi_CreateEncounters(ref location)
 				{
 					chr = GetCharacter(NPC_GenerateCharacter(str + i, model[iMassive], "man", "man", iRank, PIRATE, 1, true, "native"));
 					SetFantomParamFromRank(chr, iRank, true);
+                    tag = chr.id + chr.name;
 					//Получим локатор для логина
 					if (iEncrnd > 0)
 					{
@@ -536,7 +538,7 @@ bool LAi_CreateEncounters(ref location)
 						LAi_SetStayType(chr);
 					}
 					// первый амулет Калеуче
-					if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && i == 0 && drand(2) == 1) 
+					if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && i == 0 && hrand(2, tag) == 1) 
 					{
 						GiveItem2Character(chr, "kaleuche_amulet1");
 						chr.SaveItemsForDead = true;
@@ -551,13 +553,13 @@ bool LAi_CreateEncounters(ref location)
 					if (sEncType == "war")
 					{
 						chr.dialog.currentnode = "war_indian";
-						if (drand(9) < 8) LAi_SetCheckMinHP(chr, LAi_GetCharacterHP(chr)-1, true, "LandEnc_CaribBeforeDialog");
+						if (hrand(9, tag) < 8) LAi_SetCheckMinHP(chr, LAi_GetCharacterHP(chr)-1, true, "LandEnc_CaribBeforeDialog");
 						else LAi_SetCheckMinHP(chr, LAi_GetCharacterHP(chr)-1, true, "LandEnc_MiskitoBeforeDialog");
 					}
 					else
 					{
 						chr.dialog.currentnode = "peace_indian";
-						if (drand(9) > 8) LAi_SetCheckMinHP(chr, LAi_GetCharacterHP(chr)-1, true, "LandEnc_CaribBeforeDialog");
+						if (hrand(9, tag) > 8) LAi_SetCheckMinHP(chr, LAi_GetCharacterHP(chr)-1, true, "LandEnc_CaribBeforeDialog");
 						else LAi_SetCheckMinHP(chr, LAi_GetCharacterHP(chr)-1, true, "LandEnc_MiskitoBeforeDialog");
 					}
 					LAi_group_MoveCharacter(chr, "CaribGroup_" + location.index);
@@ -999,7 +1001,7 @@ bool LAi_CreateEncounters(ref location)
 				i = 0;
 				iRank = sti(PChar.rank) + MOD_SKILL_ENEMY_RATE;
 				
-				num = 2 + makeint(MOD_SKILL_ENEMY_RATE / 3) + dRand(1); // Кол-во пиратов
+				num = 2 + makeint(MOD_SKILL_ENEMY_RATE / 3) + hRand(1, location.id); // Кол-во пиратов
 				PChar.GenQuest.PiratesOnUninhabited.PiratesQty = num;
 				
 				while(i < num)
@@ -1063,9 +1065,9 @@ bool LAi_CreateEncounters(ref location)
 				i = 0;
 				iRank = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE;
 				
-				num = 3 + dRand(5); // Кол-во кораблекрушенцев
+				num = 3 + hRand(5, location.id); // Кол-во кораблекрушенцев
 				pchar.GenQuest.ShipWreck.Qty = num;	
-				pchar.GenQuest.ShipWreck.Nation = drand(3); // нация
+				pchar.GenQuest.ShipWreck.Nation = hrand(NON_PIRATES, location.id); // нация
 				pchar.GenQuest.ShipWreck.Prize = GenQuest_GeneratePrize();
 				
 				while(i < num)
@@ -1118,6 +1120,11 @@ bool LAi_CreateCaveEncounters(ref location) // Jason 061012 пещерные э�
 {
 	if (CheckAttribute(location, "type") && location.type == "cave")
 	{
+        // На if'ах оставил старую логику (TO_DO: переверить)
+        // За счёт "&" для каждой конкретной location в конкретный день используется одна и та же дробь
+        string tag2 = location.id;
+        string tag = "&" + tag2;
+
 		if (!bLandEncountersGen) //если прерывание на локацию, энкаунтеров не генерим
 		{		
 			bLandEncountersGen = true;
@@ -1128,7 +1135,7 @@ bool LAi_CreateCaveEncounters(ref location) // Jason 061012 пещерные э�
 		if (findsubstr(location.id, "Ksochitam_" , 0) != -1 || findsubstr(location.id, "mine_" , 0) != -1) return false;
 		if (CheckAttribute(pchar, "questTemp.Sharlie.Lock")) return false;
 		if (location.id == "Bermudes_Cavern" || location.id == "FortFrance_Dungeon") return false; // patch
-		if (drand(12) > 5) return false;
+		if (hrand(12, tag2) > 5) return false;
 		
 		//log_Testinfo("Работают пещерные энкаунтеры");
 		ref chr, rItm;
@@ -1172,7 +1179,7 @@ bool LAi_CreateCaveEncounters(ref location) // Jason 061012 пещерные э�
 							rItm.startLocation = location.id;
 							rItm.startLocator = "fire";
 							location.fire = true;
-		CreateFireParticles("goto", "fire");
+                            CreateFireParticles("goto", "fire");
 							locator = "ass"+(i+1);
 							ChangeCharacterAddressGroup(chr, location.id, "goto", locator);
 							LAi_SetGroundSitTypeNoGroup(chr);
@@ -1185,22 +1192,25 @@ bool LAi_CreateCaveEncounters(ref location) // Jason 061012 пещерные э�
 							LAi_SetGuardianType(chr);
 							chr.protector = true;
 						}
-						if (drand(14) == 1) // кладокопатели
+						if (hrand(14, tag2) == 1) // кладокопатели
 						{
 							chr.dialog.currentnode = "CaveBanditosTreasure";
 							chr.SaveItemsForDead = true;
-							AddMoneyToCharacter(chr, 2000+drand(2000));
-							TakeNItems(chr, "gold_dublon", drand(25));
-							if (drand(5) == 1) TakeNItems(chr, "chest", 1);
-							if (drand(10) == 2) TakeNItems(chr, "icollection", 1);
-							if (drand(7) == 0) TakeNItems(chr, "jewelry1", drand(50));
-							if (drand(7) == 1) TakeNItems(chr, "jewelry2", drand(30));
-							if (drand(7) == 2) TakeNItems(chr, "jewelry3", drand(40));
-							if (drand(7) == 3) TakeNItems(chr, "jewelry4", drand(30));
-							if (drand(7) == 4) TakeNItems(chr, "jewelry5", drand(100));
-							if (drand(7) == 5) TakeNItems(chr, "jewelry6", drand(200));
-							if (drand(7) == 6) TakeNItems(chr, "jewelry52", drand(200));
-							if (drand(7) == 7) TakeNItems(chr, "jewelry53", drand(500));
+							AddMoneyToCharacter(chr, 2000 + hrand(2000, chr.id + chr.name));
+							TakeNItems(chr, "gold_dublon",  hrand(25,   chr.id + chr.name));
+							if (hrand(5, tag)  == 1) TakeNItems(chr, "chest", 1);
+							if (hrand(10, tag) == 2) TakeNItems(chr, "icollection", 1);
+							switch (hrand(7, tag))
+                            {                            
+                                case 0: TakeNItems(chr, "jewelry1",  hrand(50, tag2)); break;
+                                case 1: TakeNItems(chr, "jewelry2",  hrand(30, tag2)); break;
+							    case 2: TakeNItems(chr, "jewelry3",  hrand(40, tag2)); break;
+							    case 3: TakeNItems(chr, "jewelry4",  hrand(30, tag2)); break;
+							    case 4: TakeNItems(chr, "jewelry5",  hrand(100, tag2)); break;
+							    case 5: TakeNItems(chr, "jewelry6",  hrand(200, tag2)); break;
+							    case 6: TakeNItems(chr, "jewelry52", hrand(200, tag2)); break;
+							    case 7: TakeNItems(chr, "jewelry53", hrand(500, tag2)); break;
+                            }
 						}
 						i++;
 						model[iMassive] = "";
@@ -1257,7 +1267,7 @@ bool LAi_CreateCaveEncounters(ref location) // Jason 061012 пещерные э�
 							ChangeCharacterAddressGroup(chr, location.id, "goto", locator);
 							LAi_SetGroundSitTypeNoGroup(chr);
 						}
-						else // стоймя
+						else // стоя
 						{
 							chr.dialog.currentnode = "CaveCaribStay";
 							GetCharacterPos(pchar, &locx, &locy, &locz);
@@ -1265,13 +1275,16 @@ bool LAi_CreateCaveEncounters(ref location) // Jason 061012 пещерные э�
 							LAi_SetGuardianType(chr);
 							chr.protector = true;
 						}
-						if (drand(10) == 0) // богатенькие
+						if (hrand(10, tag2) == 0) // богатенькие
 						{
 							chr.SaveItemsForDead = true;
-							if (drand(3) == 0) TakeNItems(chr, "jewelry5", drand(100));
-							if (drand(3) == 1) TakeNItems(chr, "jewelry6", drand(150));
-							if (drand(3) == 2) TakeNItems(chr, "jewelry52", drand(300));
-							if (drand(3) == 3) TakeNItems(chr, "jewelry53", drand(700));
+							switch (hrand(3, tag))
+                            {                            
+                                case 0: TakeNItems(chr, "jewelry5",  hrand(100, tag2)); break;
+                                case 1: TakeNItems(chr, "jewelry6",  hrand(150, tag2)); break;
+                                case 2: TakeNItems(chr, "jewelry52", hrand(300, tag2)); break;
+                                case 3: TakeNItems(chr, "jewelry53", hrand(700, tag2)); break;
+                            }
 						}
 						i++;
 						model[iMassive] = "";
@@ -1326,26 +1339,29 @@ bool LAi_CreateCaveEncounters(ref location) // Jason 061012 пещерные э�
 			
 			case 4: // заполним сундук
 				str = location.id;
-				sJew = "jewelry"+(drand(11)+12);
-				sGem = "jewelry"+(drand(5)+1);
-				sMin = "mineral"+(drand(13)+13);
-				switch (drand(2))
+				sJew = "jewelry"+(hrand(11, tag2)+12);
+				sGem = "jewelry"+(hrand(5,  tag2)+1);
+				sMin = "mineral"+(hrand(13, tag2)+13);
+				switch (hrand(2, tag2))
 				{
-					case 0: sItm = "indian_"+(drand(10)+1); break;
-					case 1: sItm = "amulet_"+(drand(10)+1); break;
-					case 2: sItm = "obereg_"+(drand(10)+1); break;
+					case 0: sItm = "indian_"+(hrand(10, tag2)+1); break;
+					case 1: sItm = "amulet_"+(hrand(10, tag2)+1); break;
+					case 2: sItm = "obereg_"+(hrand(10, tag2)+1); break;
 				}
 				pchar.GenQuestBox.(str) = true;
-				if (drand(10) == 0) pchar.GenQuestBox.(str).box1.items.gold_dublon = drand(100);
-				if (drand(10) == 1) pchar.GenQuestBox.(str).box1.items.chest = drand(1);
-				if (drand(10) == 2) pchar.GenQuestBox.(str).box1.items.jewelry7 = drand(3);
-				if (drand(10) == 3) pchar.GenQuestBox.(str).box1.items.jewelry5 = drand(100);
-				if (drand(10) == 4) pchar.GenQuestBox.(str).box1.items.jewelry6 = drand(200);
-				if (drand(10) == 5) pchar.GenQuestBox.(str).box1.items.jewelry6 = drand(200);
-				if (drand(10) > 5) pchar.GenQuestBox.(str).box1.items.(sMin) = 1;
-				if (drand(7) == 0) pchar.GenQuestBox.(str).box1.items.(sItm) = 1;
-				if (drand(7) == 1) pchar.GenQuestBox.(str).box1.items.(sJew) = drand(20);
-				if (drand(7) == 2) pchar.GenQuestBox.(str).box1.items.(sGem) = drand(30);
+				switch (hrand(10, tag)) 
+                {
+                    case 0: pchar.GenQuestBox.(str).box1.items.gold_dublon = hrand(100, tag2); break;
+                    case 1: pchar.GenQuestBox.(str).box1.items.chest    = hrand(1, tag2);   break;
+                    case 2: pchar.GenQuestBox.(str).box1.items.jewelry7 = hrand(3, tag2);   break;
+                    case 3: pchar.GenQuestBox.(str).box1.items.jewelry5 = hrand(100, tag2); break;
+                    case 4: pchar.GenQuestBox.(str).box1.items.jewelry6 = hrand(200, tag2); break;
+                    case 5: pchar.GenQuestBox.(str).box1.items.jewelry6 = hrand(200, tag2); break;
+                }
+				if (hrand(10, tag) > 5) pchar.GenQuestBox.(str).box1.items.(sMin) = 1;
+				if (hrand(7, tag) == 0) pchar.GenQuestBox.(str).box1.items.(sItm) = 1;
+				if (hrand(7, tag) == 1) pchar.GenQuestBox.(str).box1.items.(sJew) = hrand(20, tag2);
+				if (hrand(7, tag) == 2) pchar.GenQuestBox.(str).box1.items.(sGem) = hrand(30, tag2);
 				SaveCurrentNpcQuestDateParam(location, "enc");
 			break;
 		}

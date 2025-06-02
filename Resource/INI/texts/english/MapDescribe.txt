@@ -230,7 +230,7 @@ Tortuga_Grot_box1        {a chest on the shore}
 Tortuga_Cave             {in a dungeon beneath Tortuga}
 Tortuga_Cave_box1        {a chest behind a closed door}
 
-Trinidad_Grot            {in a cave opposite the lighthouse of Trinidad and Tobago}
+Trinidad_Grot            {in a cave opposite the lighthouse of Trinidad}
 Trinidad_Grot_box1       {a chest on the shore}
 
 Martinique_Grot          {in a cave near Lamentin Beach}

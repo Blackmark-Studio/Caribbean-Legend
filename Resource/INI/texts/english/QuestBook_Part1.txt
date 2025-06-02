@@ -1193,9 +1193,9 @@ Roger, read carefully and follow these instructions to the letter.
 Some mad British treasure hunter has been sniffing around the Caribbean. If you spot red coats with shovels, run like the devil himself is at your heels - they show no mercy to rivals. Clear out all our stashes, gather everything of value, then make for Antigua where our man awaits - I've made the arrangements. We'll lose some gold in the washing, but the rest will come out clean as a whistle. Stick to British territories - this Blackwood character won't dare show his face there. You can operate without looking over your shoulder. No idea what grudge they hold against him, but his vessel only docks at French harbors.
 #TEXT	23
 ************************************************************
-Jan, if you're reading this, then know - my vengeance remains unfulfilled, even here in the Caribbean. Our quarry is not here. The memory of my father's sword grows dim in my mind, and our enemy's face fades to shadow.
+Hans, if you're reading this, then know - my vengeance remains unfulfilled, even here in the Caribbean. Our quarry is not here. The memory of my father's sword grows dim in my mind, and our enemy's face fades to shadow.
 We've weathered much together, old friend, yet my rage remains untamed. Had I foreseen the consequences, I would have sought peace with greater vigor. Perhaps fewer souls would have crossed the final threshold. Tell Teresa I love her still and kept my vows, though I'll never survive the journey home. This chest holds all I've earned through blood and steel, though the taste of idle comfort has long since turned to ash. Perhaps you can still savor it.
-I.
+H.
 #TEXT	24
 ************************************************************
 René, the Caribbean grows more treacherous by the day. Soon our kind will find no harbor here. You and I were among the first to catch wind of Cromwell's new squadron, led by their crown jewel - the Victory. They aim to tame these wild isles and put the Dutch in their place, but my gut tells me this ends badly for everyone involved.
@@ -1351,3 +1351,56 @@ Today I overheard sailors talking in the tavern. "Blackwood is now richer than a
 This expedition will probably be my last. From now on, I'll work according to the new charter - no more recruitment and wasting time in taverns. This island will become my fortress, and the space around it - my feeding ground. Funny - once I was proud of how I rose from the bottom of society. Now I know - you need to fall even lower to rise truly high.
 Just wait for me.
 
+#QUEST SharlieTutorial_Journal
+Captain Ulysse’s Journal
+#TEXT 1
+September 19, 1654  
+We entered the waters of Mare Caribaeum right on schedule. The wind is fair, and there are no incidents.
+
+September 20, 1654  
+An unexpected encounter at sea with a Castilian colleague: spotted the caravel "La Pícara" en route to San José via Dominica. You've strayed quite far, Lorenzo.
+
+September 21, 1654  
+The wind remains favorable. Sailor Paul Lourie managed to get into some dispute with his mates, so Alonso now assigns him the hardest tasks. I must remember to look into this matter.
+
+September 22, 1654  
+The courier lugger "Augustine", registered at the port of Capsterville, conducted a customs inspection of our ship. Our colonial authorities distrust each other so much that the governor-general doesn’t shy away from intercepting and searching major merchant vessels even before they reach their destination ports.
+
+Upon reviewing the passenger list, the lieutenant of the "Augustine" ordered us to drift and await further instructions. Given that we have only one passenger, it’s not hard to guess who brought all this trouble upon me.  
+Good thing they didn’t order us to follow them to Capsterville, but this foolishness will still cost me a tidy sum.  
+I should have a word with that fop and give him a good shake.
+
+#QUEST SharlieTutorial_ListOfSailors
+Note from the Purser
+#TEXT 1
+To be paid:  
+Senior Sailor Alonso Pimentel: 50 doubloons  
+Sailor Henry Chaussone: 35 doubloons  
+Sailor Paul Lourie: 25 doubloons (bloody idiot nearly ruined everything!)
+
+To be collected:  
+From Sailor Germain Chat: 7 pesos for paper ruined by Chantal’s cat  
+From Captain Devegni: 2000 pesos for medical instruments  
+From Passenger Charles de Maure: 30 pesos for a spoiled barrel of fresh water and 200 pesos for a damaged windlass rope
+
+#TEXT 2
+To be paid:  
+Senior Sailor Alonso Pimentel: 50 doubloons  
+Sailor Henry Chaussone: 35 doubloons  
+Sailor Paul Lourie: 25 doubloons (bloody idiot nearly ruined everything!)
+
+To be collected:  
+From Sailor Germain Chat: 7 pesos for paper ruined by Chantal’s cat  
+From Captain Devegni: 2000 pesos for medical instruments  
+From Passenger Charles de Maure: 30 pesos for a spoiled barrel of fresh water
+
+#QUEST GS_Letters
+Notes revealing the true face of a Belizean official
+#TEXT 1
+***************
+Flyut "Bat". Sailing forth on the 14th. Trading voyage Belize to Port Royal. Scant guardsmen aboard. Cargo of sugar cane. My fifth share to be delivered through the usual channels.
+***************
+Pinnace "Wavebreaker". Sets sail on the 26th. Trade passage Belize to Capsterville. Precious ebony aboard. The fools depart with powder spoilt by damp. Remember my portion, lest ye face my displeasure.
+***************
+Galleon "Silver Wind". To weigh anchor the 18th day. Commerce voyage Belize to Blueveld. Human cargo - slaves! Rich plunder this, so see my portion reaches me with haste. The fools sail unescorted.
+***************

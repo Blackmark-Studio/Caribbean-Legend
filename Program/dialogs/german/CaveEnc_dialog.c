@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaveBanditosSit":
-			if (drand(2) == 1) 
+			if (hrand(2) == 1) 
 			{
 				dialog.text = NPCStringReactionRepeat("Woah-ho, schau mal wer da ist! Nun, heute ist dein Glückstag, Kumpel. Wir sind gute Kerle, siehst du, kochen etwas Essen und so... Ich lade dich nicht zu unserem Abendessen ein, aber du solltest verschwinden, solange du noch kannst.","Verschwinde jetzt und belästige uns nicht. Komm morgen wieder - und vergiss nicht, deinen Geldbeutel mitzubringen, ha-ha-ha!","Mach mich nicht wütend, Seemann! Erinnerst du dich noch, wo der Eingang zur Höhle ist? Du solltest jetzt dorthin gehen, sehr, sehr schnell...","Nun, jetzt hast du die Linie überschritten, Kamerad! Scheint, als müsste ich mich von meinen Angelegenheiten losreißen und mich mit dir beschäftigen, Arschloch!","Block",1,npchar,Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("So nett von dir, Kumpel...","Ich sehe, du bist ganz der Scherzkeks...","Also gut, brat weiter deine Pfannkuchen...","Jetzt reden wir, ha-ha!",npchar,Dialog.CurrentNode); 
@@ -52,7 +52,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaveCaribSit":
-			if (drand(2) == 2) 
+			if (hrand(2) == 2) 
 			{
 				dialog.text = NPCStringReactionRepeat("Bleichgesicht geht weg. Er sei glücklich, dass "+npchar.name+"  nett. Die Götter haben heute Mitleid mit dir.","Verlass meine Höhle, bevor ich und meine Brüder wütend werden!","Verschwinde, bleichgesichtiger Hund!","Dein Glück und Leben ist vorbei, weißer Hund!","Block",1,npchar,Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Nun, danke dir, Kamerad, sehr freundlich von dir...","Diese Höhle gehört dir nicht, und ich gehe, wohin ich will.","Nimm einen Gang runter, Sumpfbrut.","Jetzt werde ich dir diese Worte zurück in den Hals stopfen, du Tier...",npchar,Dialog.CurrentNode); 

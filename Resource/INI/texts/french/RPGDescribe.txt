@@ -104,7 +104,7 @@ Habileté à manier des armes lourdes telles que des épées et des haches. Néc
 Pistol
 {
 Habileté à utiliser toutes sortes d'armes à feu.
-(R*0,5+S*0,5)
+(R*0,4+S*0,6)
 }
 
 Fortune
@@ -116,7 +116,7 @@ Basé sur(S).
 Leadership
 {
 Affecte les résultats de certains événements et dialogues. C'est aussi la compétence principale pour recruter de nouveaux membres d'équipage.
-(A*0,9+T*0,1)
+(A*0,8+T*0,2)
 }
 
 Commerce
@@ -139,16 +139,17 @@ Chargez le canon rapidement, roulez-le et pendant que l'écho de la salve gronde
 
 Sailing
 {
-La capacité à amener le navire à bon port malgré la tempête et le brouillard ; l'habileté à utiliser l'équipement de navigation et à contrôler la flotte. Le navire le plus grand et le plus terrifiant volera comme un oiseau, obéissant à la main ferme d'un navigateur expérimenté. 
-(I*0,2+T*0,8)
+La capacité de guider un navire à travers les tempêtes et le brouillard épais. L'art d'utiliser les instruments de navigation et de commander des flottes. Même le plus grand et redoutable navire filera comme un oiseau, obéissant facilement à la main ferme d'un capitaine expérimenté.
+Dépend de la Perception et de l'Apprentissage (I*0.2+T*0.8)
 ~
-L'absence de navigation entraîne des pénalités pour chaque compétence et chaque statut.
-Les navires de rang 1 requièrent 95
-De rang 2 requièrent 80
-De rang 3 requièrent 65
-De rang 4 requièrent 45
-De rang 5 requièrent 25
-De rang 6 requièrent 1
+Pour commander un navire d'une certaine classe, un niveau minimum de Navigation est requis :
+classe 1 nécessite 95
+classe 2 nécessite 80
+classe 3 nécessite 65
+classe 4 nécessite 45
+classe 5 nécessite 25
+classe 6 nécessite 05
+Un manque de Navigation entraîne des pénalités sur toutes les compétences et caractéristiques du héros. Plus la différence entre la valeur actuelle et la valeur requise de Navigation est grande, plus les pénalités sont importantes.
 }
 
 Repair

@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaveBanditosSit":
-			if (drand(2) == 1) 
+			if (hrand(2) == 1) 
 			{
 				dialog.text = NPCStringReactionRepeat("Ho-ho, regarde qui est là ! Eh bien, c'est ton jour de chance, mon pote. Nous sommes de bons gars, vois-tu, en train de cuisiner et tout... Je ne t'invite pas à notre dîner, mais tu devrais te perdre pendant que tu le peux encore.","Dégage maintenant et ne nous dérange pas. Reviens demain - et n'oublie pas d'apporter ta bourse avec toi, ha-ha-ha!","Ne me rends pas fou, marin! Te souviens-tu encore où se trouve l'entrée de la grotte? Tu devrais y aller maintenant, très, très vite...","Eh bien, maintenant tu as franchi la ligne, mon pote ! Je suppose que je vais devoir me détourner de mes affaires et m'occuper de toi, enfoiré !","bloc",1,npchar,Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("C'est très gentil de ta part, camarade...","Je vois que tu es tout un farceur...","D'accord, continue à frire tes crêpes plates, alors...","Maintenant, on parle, ha-ha!",npchar,Dialog.CurrentNode); 
@@ -52,7 +52,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaveCaribSit":
-			if (drand(2) == 2) 
+			if (hrand(2) == 2) 
 			{
 				dialog.text = NPCStringReactionRepeat("Visage pâle s'en va. Il est heureux que "+npchar.name+"  gentil. Les dieux ont pitié de toi aujourd'hui.","Sors de ma grotte, avant que moi et mes frères ne nous mettions en colère!","Va-t'en, chien visage pale!","Ton chance et ta vie sont finies, chien blanc!","bloc",1,npchar,Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Eh bien, merci, mon pote, très gentil de ta part...","Cette grotte n'est pas la tienne, et je vais où je veux.","Baisse d'un cran, rejeton du marais.","Maintenant, je vais te faire ravaler tes paroles, animal...",npchar,Dialog.CurrentNode); 

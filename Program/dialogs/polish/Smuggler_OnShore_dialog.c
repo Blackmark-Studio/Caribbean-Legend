@@ -308,7 +308,7 @@ void ProcessDialogEvent()
                 // установим окружение -->
                 if (sti(Pchar.quest.Contraband.Counter) == 0) // не торговали ещё
                 {
-                    if(drand(11) == 3)
+                    if(hrand(11) == 3)
                     {
         				dialog.Text = "Rozumiem.. Wiesz, weźmiemy twoje towary za darmo. Wątpię, czy będziesz mógł się i tak poskarżyć.";
         				Link.l1 = "Spróbuj, szumowino!";

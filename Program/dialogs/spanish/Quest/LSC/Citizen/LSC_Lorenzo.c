@@ -52,7 +52,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meeting_no":
-			dialog.text = "Pensé que lo habíamos dejado claro - ¡no hablo con los enemigos de España!";
+			dialog.text = "Pensé que lo habíamos dejado claro, ¡no hablo con los enemigos de España!";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "meeting_no";

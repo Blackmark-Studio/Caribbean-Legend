@@ -23,32 +23,32 @@ Dassien
 
 Patria_6
 {
-Exploration mode: timer extended. Complete the quest!
+Tryb eksploracji: wydłużony czas. Ukończ zadanie!
 }
 
 Patria_7
 {
-The Spanish has been given a note to send parleys to Trinidad's lighthouse to start negotiations!
+Hiszpanie otrzymali notę ​​z prośbą o wysłanie delegacji do latarni morskiej Trynidadu w celu rozpoczęcia negocjacji!
 }
 
 Patria_8
 {
-One day has passed...
+Mija cały dzień...
 }
 
 Patria_9
 {
-Exploration mode: timer is not disabled. Meet the deadline!
+Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!
 }
 
 Patria_10
 {
-Baron Noel Forget has left your ship!
+Baron Noel Forget opuścił twój statek!
 }
 
 Patria_11
 {
-Another enemy ship is on us!
+Ściga nas kolejny statek wroga!
 }
 
 Patria_12
@@ -67,12 +67,12 @@ Stuyvesant
 
 Patria_15
 {
-The Company's trade convoy
+Konwój handlowy Kompanii
 }
 
 Patria_16
 {
-The Company's Ost-Indian has been captured!
+East-Indian Kompanii został schwytany!
 }
 
 Patria_17
@@ -114,27 +114,27 @@ Beusson
 
 Patria_25
 {
-The Company's Africa convoy
+Konwój Kompanii z Afryki
 }
 
 Patria_26
 {
-Exploration mode: timer is disabled.
+Tryb eksploracji: licznik czasu jest wyłączony.
 }
 
 Patria_27
 {
-We must destroy the enemy squadron!
+Musimy zniszczyć eskadrę wroga!
 }
 
 Patria_28
 {
-Colonel Doily has given a signal to land in Blanca lagoon!
+Pułkownik Doily dał sygnał do lądowania w lagunie Blanca!
 }
 
 Patria_29
 {
-After a two hours bombardement,@<NewStr()>the Dutch has sent a parley party
+Po dwóch godzinach nieustannego bombardowania@<NewStr()>Holendrzy wysłali grupę negocjacyjną
 }
 
 Patria_30
@@ -176,12 +176,12 @@ Tyrex
 
 Patria_38
 {
-Two hours later...@<NewStr()>
+Dwie godziny później...@<NewStr()>
 }
 
 Patria_39
 {
-Baron Noel Forget died of fever!
+Baron Noel Forget zmarł na gorączke tropikalną!
 }
 
 Patria_40
@@ -204,15 +204,15 @@ Casper
 
 Patria_44
 {
-The governor of the mine has been spotted in one of the houses, caught and imprisoned
+Zarządce kopalni zauważono w jednym z domów, złapano a następnie uwięziono
 }
 
 Patria_45
 {
-Twenty three hours later...@<NewStr()>Peter Stuyvesant has shown himself at the gates
+Dwadzieścia trzy godziny później...@<NewStr()>Peter Stuyvesant pokazał się u bram
 }
 
 Patria_46
 {
-One day later...@<NewStr()>
+Następnego dnia...@<NewStr()>
 }

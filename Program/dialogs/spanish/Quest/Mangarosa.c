@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 
 	case "amelia_5":
 		dialog.text = "No hay regateo, amigo. Te diré el precio y será tu decisión pagarlo o no. No cuentes con ningún regateo o descuento, esto no es un mercado. Y respecto a tu pregunta... Puedes hacer pociones especiales de Manga Rosa que fortificarán tus habilidades físicas. Pueden hacerte más fuerte, más resistente o más rápido, o pueden alterar completamente tu cuerpo haciéndote más fuerte en todos los aspectos, pero tal poción tendría un efecto más débil que las dos anteriores.";
-		link.l1 = " Muy interesante. Nombra tu precio.";
+		link.l1 = "Muy interesante. Nombra tu precio.";
 		link.l1.go = "amelia_6";
 		break;
 

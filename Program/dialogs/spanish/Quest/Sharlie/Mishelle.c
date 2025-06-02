@@ -40,7 +40,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					dialog.text = "Es bueno verte, hermano. No olvides tus compromisos con los demás. Tan pronto como estés libre, te estaré esperando - ¡tengo ideas para nuestro próximo paso!";
+					dialog.text = "Es bueno verte, hermano. No olvides tus compromisos con los demás. Tan pronto como estés libre, te estaré esperando, ¡tengo ideas para nuestro próximo paso!";
 					link.l1 = "Entendido, hermano. Me tomaré un tiempo para mis compromisos, pero volveré pronto.";
 					link.l1.go = "exit";
 				}
@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 			}
 			if (sti(pchar.rank) < 12)
 			{
-				Log_info("Se requiere el nivel 12");
+				Log_info("¡Se requiere el nivel 12!");
 				dialog.text = "¡Charles el Navegante! ¡He oído sobre tus aventuras! Estás casi listo para la siguiente etapa de mi plan. Regresa tan pronto como hayas ganado un poco más de experiencia.";
 				if (sti(pchar.rank) < 7)
 				{
@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				if (sti(pchar.rank) > 8)
 				{
-					link.l2 = "No lo creo, hermano. Quizás ya te hayas acostumbrado a esta jaula, pero no pienso quedarme aquí mucho tiempo - nuestro padre no puede esperar para siempre. Suéltalo ya.";
+					link.l2 = "No lo creo, hermano. Quizás ya te hayas acostumbrado a esta jaula, pero no pienso quedarme aquí mucho tiempo, nuestro padre no puede esperar para siempre. Suéltalo ya.";
 					link.l2.go = "gambitA";
 				}
 				break;
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		}
 		if (!CheckAttribute(npchar, "quest.givelink_saga") && CheckAttribute(pchar, "questTemp.HWIC.Detector")) // признак, что Гамбит пройден или провален
 		{
-			dialog.text = "Veo. ¡Veo que tienes noticias para mí, Charles! Bueno, ¿cuál es la palabra? ¿Con suerte nada sombrío?";
+			dialog.text = "Puedo verlo, ¡tienes noticias para mí, Charles! Bueno, ¿de qué se trata? ¿Con suerte nada sombrío?";
 			link.l1 = "Seguí el consejo que me diste la última vez...";
 			link.l1.go = "saga"; // переход на Сагу
 			DelLandQuestMark(npchar);
@@ -89,7 +89,7 @@ void ProcessDialogEvent()
 		}
 		if (CheckAttribute(pchar, "questTemp.HWIC.Fail1") && CheckAttribute(pchar, "questTemp.HWIC.Fail2") && CheckAttribute(pchar, "questTemp.HWIC.Fail3")) // признак, что Гамбит провален по всем трем вариантам
 		{
-			dialog.text = "Finalmente estás aquí... ¿Qué novedades, querido hermano?";
+			dialog.text = "Finalmente estás aquí... ¿Qué novedades hay, querido hermano?";
 			link.l1 = "Seguí el consejo que me diste la última vez...";
 			link.l1.go = "gambit_fale";
 			DelLandQuestMark(npchar);
@@ -98,8 +98,8 @@ void ProcessDialogEvent()
 		}
 		if (CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "mishelle") // Сага готова к старту
 		{
-			dialog.text = "¡Encantado de verte, Charles! ¿Has visto al Caballero de Poincy? ¿Cómo fue tu reunión?";
-			link.l1 = "Sí, querido hermano. Nos hemos encontrado. Y tengo dos noticias para ti, una buena y otra mala. Empezaré con la buena. He saldado tu deuda con de Poincy. La mala noticia es que no te liberará hasta que cumpla tu promesa de arreglar las cosas con algún hereje...";
+			dialog.text = "¡Encantado de verte, Charles! ¿Has visto al Chevalier de Poincy? ¿Cómo fue tu reunión?";
+			link.l1 = "Sí, querido hermano. Nos hemos encontrado. Y tengo dos noticias para ti, una buena y otra mala. Empezaré con la buena. He saldado tu deuda con De Poincy. La mala noticia es que no te liberará hasta que cumpla tu promesa de arreglar las cosas con algún hereje...";
 			link.l1.go = "saga_5";
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity("FortFrance");
@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 		}
 		if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "full_complete") // пиратская линейка пройдена полностью
 		{
-			dialog.text = "Bueno, saludos... Corsario Charlie Príncipe. Dime, Charles, ¿cómo caíste tan bajo? No puedo creer esto. ¡Mi hermano, que ponía cara de asco cuando una vez mencioné saquear un galeón mercante español, ahora es uno de los piratas más buscados y peligrosos de esta región! Incluso yo, sentado en la mierda, me sonrojo cada vez que tu infamia llega a mis oídos. He maldecido el día en que te envié a La Vega. ¡Qué vergüenza! ¡Un noble francés se ha unido a los piratas y se ha convertido en el peor de todos ellos en tan poco tiempo! ¿Y ahora qué, hermano? ¿Buscas una vacante en el trabajo de barón pirata?";
+			dialog.text = "Bueno, saludos... Corsario Charlie Prince. Dime, Charles, ¿cómo caíste tan bajo? No puedo creer esto. ¡Mi hermano, que ponía cara de asco cuando una vez mencioné saquear un galeón mercante español, ahora es uno de los piratas más buscados y peligrosos de esta región! Incluso yo, sentado aquí en esta letrina, me sonrojo cada vez que tu infamia llega a mis oídos. He maldecido el día en que te envié a La Vega. ¡Qué vergüenza! ¡Un noble francés se ha unido a los piratas y se ha convertido en el peor de todos ellos en tan poco tiempo! ¿Y ahora qué, hermano? ¿Buscas una vacante en el trabajo de barón pirata?";
 			link.l1 = "No. He terminado con la piratería de una vez por todas.";
 			link.l1.go = "saga_17g";
 			DelLandQuestMark(npchar);
@@ -159,25 +159,25 @@ void ProcessDialogEvent()
 		break;
 
 	case "Mishelle_prisoner_1a":
-		dialog.text = "Charles, ¿en qué palabras le contaría al padre lo que me sucedió? ¿Qué le escribiría? No, hermano, por muy difícil que sea, es mejor que nuestro padre no sepa nada aún. Y sería inútil escribirte a ti, siempre estás en diferentes direcciones en París... ¿Cómo me encontraste?..";
-		link.l1 = "A la súplica de mi padre fui a Malta. Allí recibí alguna información de tu amigo el caballero de La Brignais. Me escribió sobre tus problemas y que probablemente estás en algún lugar de Martinica. Luego volví a Francia y visité al padre. Y después de todo eso, vine a este agujero infernal en el calor sofocante donde los mosquitos literalmente te mastican hasta la muerte...";
+		dialog.text = "Charles, ¿en qué palabras le contaría a nuestro padre lo que me sucedió? ¿Qué le escribiría? No, hermano, por muy difícil que sea, es mejor que nuestro padre no sepa nada aún. Y sería inútil escribirte a ti, siempre estás en diferentes direcciones en París... ¿Cómo me encontraste?..";
+		link.l1 = "A la súplica de nuestro padre fui a Malta. Allí recibí alguna información de tu amigo el caballero de La Brignais. Me escribió sobre tus problemas y que probablemente estás en algún lugar de Martinica. Luego volví a Francia y visité a nuestro padre. Y después de todo eso, vine a este agujero infernal en el calor sofocante donde los mosquitos literalmente te mastican hasta la muerte...";
 		link.l1.go = "Mishelle_prisoner_1b";
 		break;
 
 	case "Mishelle_prisoner_1b":
-		dialog.text = "¿Le contaste al padre acerca de todo esto?";
-		link.l1 = "No. Y el caballero de La Brignais no respondió a sus cartas, temiendo las tristes consecuencias... El padre aún no sabe nada de tu destino. Decidí encontrarte y llegar al fondo del asunto. Solo para que sepas, ¡vine a Martinica no por ti, sino por nuestro pobre padre!";
+		dialog.text = "¿Le contaste a nuestro padre acerca de todo esto?";
+		link.l1 = "No. Y el caballero de La Brignais no respondió a sus cartas, temiendo las tristes consecuencias... Nuestro padre aún no sabe nada de tu destino. Decidí encontrarte y llegar al fondo del asunto. Solo para que sepas, ¡vine a Martinica no por ti, sino por nuestro pobre padre!";
 		link.l1.go = "Mishelle_prisoner_2";
 		break;
 
 	case "Mishelle_prisoner_2":
-		dialog.text = "¿De verdad? Charles, ¿desde cuándo te importa tu familia? Seamos honestos, hermano, todos en París saben quién es tu padre. Puede que lleves el apellido de De Maure, pero no quieres que el nombre de De Monper sea deshonrado.\nPorque en ese caso no podrías usar tu linaje para contarle a todos historias ficticias sobre tus heroicas hazañas, ¿verdad? Las puertas de las mejores casas de París estarán cerradas para ti y no te dejarán acercarte a menos de una milla del Louvre.\n¿De verdad crees que tus cortesanas y amantes, cuyos maridos haces cornudos mientras ellos luchan en el campo de batalla por nuestra patria, estarán felices de engañar a sus señores y amos con el hermano de un criminal del estado como yo?.\nSupongo que has llegado aquí directamente desde el lecho de alguna chica casada, ¿me equivoco? Charles, ¿qué pasa con tu cara? ¿Te he tocado un nervio?";
+		dialog.text = "¿De verdad? Charles, ¿desde cuándo te importa tu familia? Seamos honestos, hermano, todos en París saben quién es tu padre. Puede que lleves el apellido de De Maure, pero no quieres que el nombre de De Monper sea deshonrado.\nPorque en ese caso no podrías usar tu linaje para contarle a todos historias ficticias sobre tus heroicas hazañas, ¿verdad? Las puertas de las mejores casas de París estarán cerradas para ti, y no te dejarán acercarte a menos de una milla del Louvre.\n¿De verdad crees que tus cortesanas y amantes, cuyos maridos haces cornudos mientras ellos luchan en el campo de batalla por nuestra patria, estarán felices de engañar a sus señores y amos con el hermano de un criminal del estado como yo?.\nSupongo que has llegado aquí directamente desde el lecho de alguna chica casada, ¿me equivoco? Charles, ¿qué pasa con tu cara? ¿Te he tocado un nervio?";
 		link.l1 = "Tú... ¡Tú!..";
 		link.l1.go = "Mishelle_prisoner_3";
 		break;
 
 	case "Mishelle_prisoner_3":
-		dialog.text = "Está bien, hermano. Hemos intercambiado pullas, es suficiente. Estoy de acuerdo en que no soy perfecto. Pero tú tampoco eres un ángel. Charles, realmente no es el momento para discutir. Ambos tenemos el mismo objetivo de salvar el honor y la dignidad de la familia Monper... no importa cuáles sean nuestros motivos. Hermano, por una vez en nuestras vidas, reemplacemos la animosidad por la paz. ¿Trato?";
+		dialog.text = "Está bien, hermano. Hemos intercambiado pullas, es suficiente. Estoy de acuerdo en que no soy perfecto. Pero tú tampoco eres un ángel. Charles, realmente no es el momento para discutir. Ambos tenemos el mismo objetivo de salvar el honor y la dignidad de la familia Monper... no importa cuáles sean nuestros motivos. Hermano, por una vez en nuestras vidas, reemplacemos la animosidad por la paz. ¿Trato hecho?";
 		link.l1 = "Probémoslo... Pero, ¿puedes explicarme de qué te acusan?";
 		link.l1.go = "Mishelle_prisoner_4";
 		break;
@@ -189,14 +189,14 @@ void ProcessDialogEvent()
 		break;
 
 	case "Mishelle_prisoner_5":
-		dialog.text = "Te dije que esos eran los cargos oficiales. No tomé ni un solo luis de oro. Así fue como sucedió... verás, no puedo explicarte todo en detalle mientras esté tras las rejas. No tengo el derecho moral de divulgar los secretos de nuestra Sociedad.";
+		dialog.text = "Te dije que esos eran los cargos oficiales. No tomé ni un solo Luis de oro. Así fue como sucedió... verás, no puedo explicarte todo en detalle mientras esté tras las rejas. No tengo el derecho moral de divulgar los secretos de nuestra Sociedad.";
 		link.l1 = "Por favor, trata de explicar, querido hermano. Tengo derecho a saber, ¿no crees?";
 		link.l1.go = "Mishelle_prisoner_6";
 		break;
 
 	case "Mishelle_prisoner_6":
-		dialog.text = "Bien. Había recibido dinero para una operación muy peligrosa y delicada que se suponía cambiaría el equilibrio político en el Caribe. Estaba actuando bajo órdenes directas de Philippe de Poincy, él es el general-gobernador de las colonias francesas. Pero la operación fracasó a pesar de todos mis esfuerzos.\nDe Poincy tuvo un ataque de ira debido al hecho de que todos sus planes arriesgados se vinieron abajo. Personalmente firmó la orden de mi arresto y se aseguró de que se ejecutara. Luego vino aquí y declaró que me acusaría de peculado y traición contra la Orden, si mis familiares o yo no devolvíamos el dinero gastado en la operación.";
-		link.l1 = "Vaya situación. ¿Dónde está, este dinero que, según entiendo, nuestra familia tiene que pagar por tus desatinos?";
+		dialog.text = "Bien. Había recibido dinero para una operación muy peligrosa y delicada que se suponía cambiaría el equilibrio político en el Caribe. Estaba actuando bajo órdenes directas de Philippe de Poincy, él es el Gobernador General de las Colonias Francesas. Pero la operación fracasó a pesar de todos mis esfuerzos.\nDe Poincy tuvo un ataque de ira debido al hecho de que todos sus planes arriesgados se vinieron abajo. Personalmente firmó la orden de mi arresto y se aseguró de que se ejecutara. Luego vino aquí y declaró que me acusaría de peculado y traición contra la Orden, si mis familiares o yo no devolvíamos el dinero gastado en la operación.";
+		link.l1 = "Vaya situación. ¿Dónde está este dinero que, según entiendo, nuestra familia tiene que pagar por tus desatinos?";
 		link.l1.go = "Mishelle_prisoner_7";
 		break;
 
@@ -208,31 +208,31 @@ void ProcessDialogEvent()
 
 	case "Mishelle_prisoner_8":
 		dialog.text = "Un millón.";
-		link.l1 = "¡Merde! ¡Estás bromeando, verdad?!";
+		link.l1 = "¡Merde! Estás bromeando, ¿verdad?";
 		link.l1.go = "Mishelle_prisoner_9";
 		break;
 
 	case "Mishelle_prisoner_9":
-		dialog.text = "¿Acaso parezco alguien con humor para bromas? No, querido hermano, esta es la amarga verdad. Vamos a necesitar entregar a de Poincy un millón de pesos.";
+		dialog.text = "¿Acaso parezco alguien con humor para bromas? No, querido hermano, esta es la amarga verdad. Vamos a necesitar entregar a De Poincy un millón de pesos.";
 		link.l1 = "¡Pero maldita sea! ¡Nuestra familia no tiene ni de cerca ese tipo de dinero! ¡No podríamos juntar tanto en veinte años!";
 		link.l1.go = "Mishelle_prisoner_10";
 		break;
 
 	case "Mishelle_prisoner_10":
 		dialog.text = "Si no estuviera tras las rejas y restringido por mis obligaciones con la Sociedad, lo haría en seis meses a un año, un año y medio como máximo. Charles, este es el Nuevo Mundo. Todo es diferente aquí. Un hombre motivado y ambicioso puede hacerse una fortuna aquí sin dedicarle toda su vida como en Europa.";
-		link.l1 = "¿Un millón en medio año? ¿Estás loco? Si estás tan seguro, ¿por qué no le cuentas eso a tu de Poincy? Que te libere. Da lo mejor de ti...";
+		link.l1 = "¿Un millón en medio año? ¿Estás loco? Si estás tan seguro, ¿por qué no le cuentas eso a tu De Poincy? Que te libere. Da lo mejor de ti...";
 		link.l1.go = "Mishelle_prisoner_11";
 		break;
 
 	case "Mishelle_prisoner_11":
 		dialog.text = "¡Oh, no digas tonterías, Charles! No hay manera de que Poincy me libere de esta celda. Si fuera tan fácil, no pediría tu ayuda.";
-		link.l1 = "¿Así que soy yo quien tiene que conseguir el dinero para tu libertad?!";
+		link.l1 = "¡¿Así que soy yo quien tiene que conseguir el dinero para tu libertad?!";
 		link.l1.go = "Mishelle_prisoner_12";
 		break;
 
 	case "Mishelle_prisoner_12":
-		dialog.text = "No solo mi libertad. ¿O lo has olvidado? ¿Deberíamos volver a nuestra conversación sobre los palacios, los bailes y el sexo con prostitutas nobles? Sí, Charles, eres tú quien tiene que hacerlo. Si, por supuesto, te gustaría seguir llevando tu vida meretricia en París como antes. Te gustaría eso, ¿verdad, hermano?";
-		link.l1 = "¡Pero maldita sea, ¿de dónde diablos se supone que lo voy a conseguir?! ¿Conoces algún bosque viejo por aquí donde crezcan luis de oros en lugar de hojas?";
+		dialog.text = "No solo mi libertad, ¿o lo has olvidado? ¿Deberíamos volver a nuestra conversación sobre los palacios, los bailes y el sexo con cortesanas nobles? Sí, Charles, eres tú quien tiene que hacerlo. Si, por supuesto, te gustaría seguir llevando tu vida meretricia en París como antes. Te gustaría eso, ¿verdad, hermano?";
+		link.l1 = "¡Pero maldita sea, ¿de dónde diablos se supone que lo voy a conseguir?! ¿Conoces algún bosque viejo por aquí donde crezcan Luis de oros en lugar de hojas?";
 		link.l1.go = "Mishelle_prisoner_13";
 		break;
 
@@ -243,8 +243,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "Mishelle_prisoner_14":
-		dialog.text = "Corta la mierda. ¿Tenemos un acuerdo o no?";
-		link.l1 = "Lo siento, hermano. Se me escapó. Es que no estoy acostumbrado a oír esas palabras de ti. Es como si una ramera de la calle predicara sobre salvar un alma.";
+		dialog.text = "Ya basta, Charles. ¿Tenemos un acuerdo o no?";
+		link.l1 = "Lo siento, hermano. Se me escapó. Es que no estoy acostumbrado a oír esas palabras de ti. Es como si una cortesana de la calle predicara sobre salvar un alma.";
 		link.l1.go = "Mishelle_prisoner_15";
 		break;
 
@@ -255,7 +255,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Mishelle_prisoner_16":
-		dialog.text = "Sí, hermano, vas a quedarte aquí por un tiempo. Es bueno que puedas verlo ahora. Así que si alguna cortesana está esperando tu regreso en París, te sugiero que te olvides de ella. Pero no te sientas mal por eso, las chicas locales tienen sus propios encantos.\nAunque, les gustan los hombres de verdad, fuertes e insistentes, incluso rudos. Así que si vas a acostarte con alguna chica de la colonia, no cuentes con poesía, discusiones sobre pinturas o paseos bajo la luna. No lo aprobarán.";
+		dialog.text = "Sí, hermano, vas a quedarte aquí por un tiempo. Es bueno que puedas verlo claramente. Así que si alguna cortesana está esperando tu regreso en París, te sugiero que te olvides de ella. Pero no te sientas mal por eso, las chicas locales tienen sus propios encantos.\nAunque, les gustan los hombres de verdad, fuertes e insistentes, incluso rudos. Así que si vas a acostarte con alguna chica de la colonia, no cuentes con poesía, discusiones sobre pinturas o paseos bajo la luna. No lo aprobarán.";
 		link.l1 = "Está bien, hermano. ¿Te ha golpeado un rayo de charlatanería? Vamos al grano. Estoy dispuesto a escuchar tus consejos, pero no tus insidias maliciosas.";
 		link.l1.go = "Mishelle_prisoner_17";
 		break;
@@ -267,13 +267,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "Mishelle_prisoner_18":
-		dialog.text = "Entonces, es hora de convertirte en uno. No tienes otra opción de todos modos. No pensaste en convertirte en empleado de la oficina del puerto o registrarte en la guarnición, ¿verdad? ¿No? Entonces serás un capitán.";
+		dialog.text = "Entonces, es hora de convertirte en uno. No tienes otra opción de todos modos. No pensaste en convertirte en empleado de la oficina del puerto o registrarte en la guarnición, ¿verdad? ¿No? Entonces, serás un capitán.";
 		link.l1 = "¡Qué giro de los acontecimientos en mi carrera! ¿Y dónde encontraré un barco?";
 		link.l1.go = "Mishelle_prisoner_19";
 		break;
 
 	case "Mishelle_prisoner_19":
-		dialog.text = "Hay un excelente lanchón esperando en nuestro astillero local. No es grande, pero es un barco muy cómodo, perfecto para dar los primeros pasos en la arena de un marinero. Este lanchón fue construido especialmente para mí. He dejado un depósito de cinco mil pesos por la embarcación con la ayuda de mis amigos. Dirígete al constructor de barcos y dile que Michel de Monper te envía. Él entenderá para qué estás allí.";
+		dialog.text = "Hay una excelente barca esperando en nuestro astillero. No es grande, pero es un barco muy cómodo, perfecto para dar los primeros pasos en la arena de un marinero. Esta barca fue construida especialmente para mí. He dejado un depósito de cinco mil pesos por la embarcación con la ayuda de mis amigos. Dirígete al constructor de barcos y dile que Michel de Monper te envía. Él entenderá para qué estás allí.";
 		link.l1 = "¿El barco solo cuesta cinco mil? Eso es un poco raro...";
 		link.l1.go = "Mishelle_prisoner_20";
 		break;
@@ -285,45 +285,45 @@ void ProcessDialogEvent()
 		break;
 
 	case "Mishelle_prisoner_21":
-		dialog.text = "No es de extrañar. Gánatelo. ¿Cómo si no? Aquí el dinero se encuentra detrás de cada arbusto, solo tienes que saber dónde buscar y no temer a la adversidad. Pasea por los diferentes establecimientos por aquí. Habla con la gente local. Seguro que consigues algún tipo de trabajo. Pero ten cuidado, hay muchos más estafadores que personas honestas. Si no eres un hombre honesto, podrías intentar robar algo valioso de las casas.";
-		link.l1 = "Pero somos nobleza, ¿verdad?";
+		dialog.text = "No es de extrañar. Gánatelo. ¿Cómo si no? Aquí el dinero se encuentra detrás de cada arbusto, solo tienes que saber dónde buscar y no temer a la adversidad. Pasea por los diferentes establecimientos por aquí. Habla con la gente. Seguro que consigues algún tipo de trabajo. Pero ten cuidado, hay muchos más estafadores que personas honestas. Si no eres un hombre honesto, podrías intentar robar algo valioso de las casas.";
+		link.l1 = "Pero somos nobles, ¿verdad?";
 		link.l1.go = "Mishelle_prisoner_22";
 		break;
 
 	case "Mishelle_prisoner_22":
-		dialog.text = "Los títulos no valen una mierda aquí. Trabaja, pelea, roba como todos los demás. Después de comprar un barco, contrata una tripulación. No podrás gobernar el barco tú solo al principio, así que necesitarás un navegante. Puedes hablar de todo esto con el dueño de la taberna, él te ayudará. Y asegúrate de no perderte, por supuesto. Cuando zarpes al mar, pon rumbo directo a Guadalupe...";
+		dialog.text = "Los títulos no valen nada aquí. Trabaja, pelea, roba como todos los demás. Después de comprar un barco, contrata una tripulación. No podrás dirigir el barco tú solo al principio, así que necesitarás un navegante. Puedes hablar de todo esto con el dueño de la taberna, él te ayudará. Y asegúrate de no perderte, por supuesto. Cuando zarpes al mar, pon rumbo directo a Guadalupe...";
 		link.l1 = "¿Qué es eso? ¿Un pueblo?";
 		link.l1.go = "Mishelle_prisoner_23";
 		break;
 
 	case "Mishelle_prisoner_23":
-		dialog.text = "Es una isla a casi dos días de aquí. Intenta conseguir un mapa del archipiélago lo antes posible y apréndelo como el 'Padrenuestro', para que no parezcas un idiota ante todos los que pueden diferenciar entre un pueblo y una isla. Tendrás que navegar mucho alrededor del archipiélago, así que prepárate con anticipación.";
+		dialog.text = "Es una isla a casi dos días de aquí. Intenta conseguir un mapa del archipiélago lo antes posible y apréndelo como el 'Padre Nuestro', para que no parezcas un idiota ante todos los que pueden diferenciar entre un pueblo y una isla. Tendrás que navegar mucho alrededor del archipiélago, así que prepárate con anticipación.";
 		link.l1 = "Mm. Está bien. Entonces, ¿qué hago en esta, eh... Guadalupe?";
 		link.l1.go = "Mishelle_prisoner_24";
 		break;
 
 	case "Mishelle_prisoner_24":
-		dialog.text = "Busca a un hombre allí llamado 'Fadey'. Tiene su propia casa no muy lejos del muelle. Dile que me conoces y pídele que pague su deuda; perdió una buena mano contra mí en una partida de cartas. El dinero que recibas te ayudará a levantarte. Úsalo para poner las cosas en marcha.";
+		dialog.text = "Busca a un hombre allí llamado 'Fadey'. Tiene su propia casa no muy lejos del muelle. Dile que me conoces y pídele que pague su deuda. Perdió una buena mano contra mí en una partida de cartas. El dinero que recibas te ayudará a levantarte. Úsalo para poner las cosas en marcha.";
 		link.l1 = "¿Qué quieres decir con poner las cosas en marcha?";
 		link.l1.go = "Mishelle_prisoner_25";
 		break;
 
 	case "Mishelle_prisoner_25":
-		dialog.text = "Quiero decir que uses este dinero para ganar aún más dinero, y así sucesivamente. Por ejemplo, comerciando. Volveremos a esta conversación más tarde. Ahora debes ocuparte del barco, navegar a Guadalupe, encontrar a ese gordo moscovita y sacarle la deuda.\nNo literalmente, por supuesto, Fadey es un hombre muy respetado en Guadalupe y amigo del mismo gobernador local. Así que no tiene sentido pelearse. Al contrario, intenta hacerte amigo de él. Vuelve a mí tan pronto como tengas el dinero. ¿Entendido, hermano?";
-		link.l1 = "Entendido. Oh, por qué... ¿Qué hice para merecer este castigo...";
+		dialog.text = "Quiero decir que uses este dinero para ganar aún más dinero, y así sucesivamente. Por ejemplo, comerciando. Volveremos a esta conversación más tarde. Ahora debes ocuparte del barco, navegar a Guadalupe, encontrar a ese gordo moscovita y sacarle la deuda.\nNo literalmente, por supuesto, Fadey es un hombre muy respetado en Guadalupe y amigo del mismo gobernador. Así que no tiene sentido pelearse. Al contrario, intenta hacerte amigo de él. Vuelve a mí tan pronto como tengas el dinero. ¿Entendido, hermano?";
+		link.l1 = "Entendido. Oh, por qué... ¿Qué hice para merecer este castigo...?";
 		link.l1.go = "Mishelle_prisoner_26";
 		break;
 
 	case "Mishelle_prisoner_26":
 		dialog.text = "No te aflijas, Charles. Acéptalo como un mal inevitable o... como algo bueno. Más adelante, agradecerás al destino que tu vida haya tomado este giro. Tú, hermano, finalmente tienes la oportunidad de hacer algo para demostrar que eres un hombre de verdad. Incluso podrías convertirte en un ser humano decente...";
-		link.l1 = "¿Otra vez esa porquería?";
+		link.l1 = "¿Otra vez con sermones?";
 		link.l1.go = "Mishelle_prisoner_27";
 		link.l2 = "Hermano, no tengo tiempo para esto. Quiero saltarme la parte aburrida y zarpar en alta mar de inmediato. Cuanto antes tenga un barco, antes saldrás de este agujero. ¿O prefieres quedarte aquí más tiempo?";
 		link.l2.go = "Mishelle_prisoner_29"; // Addon 2016-1 Jason пиратская линейка 1
 		break;
 
 	case "Mishelle_prisoner_27":
-		dialog.text = "No, no. No lo tomes a mal... Está bien, Charles, no pierdas tiempo. Sabes lo que tienes que hacer. Te esperaré viniendo de Guadalupe como capitán de tu propio barco con el dinero de Fadey. Buena suerte, hermano. Cuento contigo.";
+		dialog.text = "No, no. No lo tomes a mal... Está bien, Charles, no pierdas tiempo. Sabes lo que tienes que hacer. Te esperaré regresando de Guadalupe como capitán de tu propio barco con el dinero de Fadey. Buena suerte, hermano. Cuento contigo.";
 		link.l1 = "Trataré de no defraudarte. Está bien, Michel. ¡Hasta la próxima!";
 		link.l1.go = "Mishelle_prisoner_28";
 		break;
@@ -380,15 +380,15 @@ void ProcessDialogEvent()
 		break;
 
 	case "Mishelle_prisoner_29": // Addon 2016-1 Jason пиратская линейка 1
-		dialog.text = "¡Heh! Esta 'parte aburrida' podría salvarte la vida algún día... Lo que sea. Hay una forma fácil de conseguir el dinero ahora mismo.\nVe a la iglesia local y habla con el Abad Benoit. Él es un viejo amigo de nuestro padre. Cuéntale sobre la situación, cae de rodillas y suplica que te preste suficientes monedas para comprar un barco.";
-		link.l1 = "¡Mucho mejor ahora!  Dirigiéndome al abad.";
+		dialog.text = "¡Heh! Esta 'parte aburrida' podría salvarte la vida algún día... Lo que sea. Hay una forma fácil de conseguir el dinero ahora mismo.\nVe a la iglesia y habla con el Abad Benoit. Él es un viejo amigo de nuestro padre. Cuéntale sobre la situación, cae de rodillas y suplica que te preste suficientes monedas para comprar un barco.";
+		link.l1 = "¡Mucho mejor ahora! Dirigiéndome al abad.";
 		link.l1.go = "Mishelle_prisoner_31";
-		link.l2 = "(COMENZAR TUTORIAL) ¿Quieres que comience aumentando tus deudas a niveles aún más altos? ¿Crees que soy un idiota, hermano? Puedo ver que no puedes ayudarme en absoluto con esto. Todo esto recae sobre mí entonces.";
+		link.l2 = "(COMENZAR TUTORIAL) ¿Quieres que comience aumentando tus deudas a niveles aún más altos? ¿Crees que soy un idiota, hermano? Puedo ver que no puedes ayudarme en absoluto con esto. Todo esto recae sobre mí, entonces.";
 		link.l2.go = "Mishelle_prisoner_30";
 		break;
 
 	case "Mishelle_prisoner_30":
-		dialog.text = "¡Vaya! Parece que no me equivoqué contigo, hermano. Espero con ansias tu regreso de Guadalupe como capitán de tu propio barco con el dinero de Fadey. ¡Buena suerte!";
+		dialog.text = "¡Vaya! Parece que no me equivoqué contigo, hermano. Espero con ansias tu regreso de Guadalupe, como capitán de tu propio barco con el dinero de Fadey. ¡Buena suerte!";
 		link.l1 = "Nos vemos. Que te diviertas aquí.";
 		link.l1.go = "Mishelle_prisoner_28";
 		break;
@@ -421,18 +421,18 @@ void ProcessDialogEvent()
 	case "trial":
 		DelLandQuestMark(npchar);
 		dialog.text = "¿Estás tratando de decir que eso fue aterrador? No te pongas tenso, hermano. Está todo absolutamente bien. Yo tampoco me sentí mucho como un héroe en mi primera batalla naval. Tonterías. En un mes o dos, tales encuentros te parecerán de lo más comunes... ¿Has visitado a Fadey?";
-		link.l1 = "Tengo... Pero con este tipo de éxito... ¿Por qué me molesté siquiera?";
+		link.l1 = "Así es... Pero con este tipo de éxito... ¿Por qué me molesté siquiera?";
 		link.l1.go = "trial_1";
 		break;
 
 	case "trial_1":
-		dialog.text = "Mm. ¿Por qué es eso?";
-		link.l1 = "Porque está en apuros. Recientemente fue robado y tiene sus propios problemas de dinero. En cambio, me ofreció una daga de su colección. Dijo que tiene valor y que su valor es mayor que la suma de toda la deuda. Así que la tomé...";
+		dialog.text = "Mm. ¿A qué te refieres?";
+		link.l1 = "Porque está en apuros. Recientemente fue robado y tiene sus propios problemas de dinero. En cambio, me ofreció una daga de su colección. Dijo que tiene valor, y que su valor es mayor que la suma de toda la deuda. Así que la tomé...";
 		link.l1.go = "trial_2";
 		break;
 
 	case "trial_2":
-		dialog.text = "¿Desvanecido? ¿En las rocas? ¿Problemas de dinero? ¡Ja-ja-ja! ¡Me has hecho reír, querido hermano! Ese maldito moscovita te vio de inmediato y te reconoció como un novato y... ¡ah, ese bribón! Muéstrame la daga que te dio el viejo a cambio de su deuda.";
+		dialog.text = "¿Está en apuros? ¿Robado? ¿Problemas de dinero? ¡Ja-ja-ja! ¡Me has hecho reír, querido hermano! Ese maldito moscovita te vio de inmediato, y te reconoció como un novato y... ¡ah, ese bribón! Muéstrame la daga que te dio el viejo a cambio de su deuda.";
 		if (CheckCharacterItem(pchar, "knife_01"))
 		{
 			link.l1 = "Aquí tienes...";
@@ -441,33 +441,33 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			link.l1 = "No lo tengo conmigo. A simple vista es solo una daga común. Fadey me dijo que está encantada por un chamán indio y se llama la Garra del Jefe.";
+			link.l1 = "No la tengo conmigo. A simple vista es solo una daga común. Fadey me dijo que está encantada por un chamán indio, y se llama la Garra del Jefe.";
 			link.l1.go = "trial_4";
 		}
 		break;
 
 	case "trial_3":
 		PlaySound("interface\important_item.wav");
-		dialog.text = "Mm. Bueno, veamos... Dios juzgará a ese oso rechoncho. Chatarra como esa, Charles, podrías comprar en cualquier tienda local. Te engañó, aprovechándose de tu falta de experiencia... Aquí tienes, toma de vuelta este pedazo de acero. Guárdalo como recuerdo. Puedes colgarlo sobre tu cama en tu camarote.";
+		dialog.text = "Mm. Bueno, veamos... Dios juzgará a ese oso rechoncho. Es una chatarra, Charles. Podrías comprarla en cualquier tienda. Te engañó, aprovechándose de tu falta de experiencia... Aquí tienes, toma de vuelta este pedazo de acero. Guárdala como recuerdo. Puedes colgarla sobre tu cama en tu camarote.";
 		link.l1 = "¡Cabrón! Oh, a quién le importa... ¡Volveré a verlo en Guadalupe y le daré una buena sacudida a este grasiento insolente!";
 		link.l1.go = "trial_5";
 		break;
 
 	case "trial_4":
-		dialog.text = "¿Encantado por un chamán? ¿Garra del jefe? Sí... todo claro. Dios juzgará a ese oso rechoncho. Chatarra como esa, Charles, podrías comprarla en cualquier tienda local. Te hizo una jugada astuta, aprovechándose de tu falta de experiencia... Intentó contarme algún tipo de cuentos de hadas y lo puse de nuevo en su lugar. Así que puedes colgar esta garra en tu camarote sobre tu cama como un recuerdo... Si no la has tirado a la papelera todavía.";
+		dialog.text = "¿Encantada por un chamán? ¿Garra del jefe? Sí... todo claro. Dios juzgará a ese oso rechoncho. Es una chatarra, Charles. Podrías comprarla en cualquier tienda. Te hizo una jugada astuta, aprovechándose de tu falta de experiencia... Intentó contarme algún tipo de cuentos de hadas y lo puse de nuevo en su lugar. Así que puedes colgar esta garra en tu camarote sobre tu cama como un recuerdo... Si no la has tirado a la papelera todavía.";
 		link.l1 = "¡Cabrón! Oh, ¿a quién le importa...? Volveré a verlo en Guadalupe y le daré una sacudida a este grasiento caluroso.";
 		link.l1.go = "trial_5";
 		break;
 
 	case "trial_5":
 		dialog.text = "Calma, querido hermano, relájate. No hay necesidad de eso a menos que quieras pasar un par de meses en una celda de la prisión de Basse-Terre. ¿Has olvidado lo que te he dicho? Ese oso inflado es un amigo de Claude Francois de Lyon, el gobernador de Guadalupe. Tan pronto como salga de este lugar, iré a hablar con él... de corazón a corazón. No va a ir a ninguna parte.";
-		link.l1 = "Está bien. Será mejor que trates con él... ¿Parece que me quedaré sin los fondos iniciales prometidos?";
+		link.l1 = "Está bien. Será mejor que trates con él... ¿Crees que me quedaré sin los fondos iniciales prometidos?";
 		link.l1.go = "trial_6";
 		break;
 
 	case "trial_6":
 		dialog.text = "Parece que sí, Charles. Pero mantén la cabeza en alto. Quien tiene un barco y cabeza sobre los hombros no puede equivocarse en el Caribe. Y tú tienes ambos, ¿verdad?";
-		link.l1 = "¿Qué estás insinuando? He metido la pata con este puñal, entonces ¿qué debería...";
+		link.l1 = "¿Qué estás insinuando? He metido la pata con este puñal, entonces ¿qué debería...?";
 		link.l1.go = "trial_7";
 		break;
 
@@ -484,7 +484,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "trial_9":
-		dialog.text = "Hermano, permíteme recordarte que yo, o más específicamente, nosotros, le debemos a de Poincy un millón de pesos. ¿Realmente crees que puedes ganarlos honestamente? Claro, puedes comerciar tanto, es posible si la fortuna te sonríe, pero comerciar en el Caribe tampoco es una actividad pacífica.\nLas aventuras te encontrarán incluso si no quieres participar, la cuestión es - ¿estarás listo para ellas cuando llegue el momento? Es mejor atacar primero. Si vis pacem, para bellum, Charles...";
+		dialog.text = "Hermano, permíteme recordarte que yo, o más específicamente, nosotros, le debemos a de Poincy un millón de pesos. ¿Realmente crees que puedes ganarlos honestamente? Claro, puedes comerciar tanto, es posible si la fortuna te sonríe, pero comerciar en el Caribe tampoco es una actividad pacífica.\nLas aventuras te encontrarán incluso si no quieres participar, la cuestión es, ¿estarás listo para ellas cuando llegue el momento? Es mejor atacar primero. Si vis pacem, para bellum, Charles...";
 		link.l1 = "¿Otra vez con las palabras elegantes? Habla francés, te lo ruego...";
 		link.l1.go = "trial_10";
 		break;
@@ -496,7 +496,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "trial_11":
-		dialog.text = "Soy específico, simplemente no sigues todavía. Bien. Primero, necesitas familiarizarte con el archipiélago y acostumbrarte a tu nueva vida como capitán de un barco. Tendrás que trabajar duro para asegurar tu bienestar y un salario para tu tripulación. Hay muchas maneras de ganar dinero.\nTomar cargas y pasajeros a bordo son las más simples. Los comerciantes en las tiendas pueden ofrecerte contratos de carga y los pasajeros te abordarán en las calles ellos mismos. También deberías considerar revisar las oficinas del puerto, tener un lanchón o cualquier barco rápido te permitirá ganar buen dinero en un trabajo de mensajero.\nLos maestros de puerto te proporcionarán contratos de carga muy rentables una vez que consigas un barco más grande. Habla con la gente, no presumas de tu linaje, sé amable y las cosas irán bien. Visita a los gobernadores de las colonias, a menudo ofrecen trabajo bien pagado.\nPuedes intentar comerciar, pero en ese caso deberías contratar a un buen intendente. Ten cuidado en el mar, evita los escuadrones militares españoles y los barcos de guerra. Si encuentras a un solo comerciante español o un convoy desprotegido, puedes intentar capturarlos.";
+		dialog.text = "Soy específico, simplemente no sigues todavía. Bien. Primero, necesitas familiarizarte con el archipiélago y acostumbrarte a tu nueva vida como capitán de un barco. Tendrás que trabajar duro para asegurar tu bienestar y un salario para tu tripulación. Hay muchas maneras de ganar dinero.\nTomar cargas y pasajeros a bordo son las más simples. Los comerciantes en las tiendas pueden ofrecerte contratos de carga, y los pasajeros te abordarán en las calles ellos mismos. También deberías considerar revisar las oficinas del puerto, tener cualquier barco rápido te permitirá ganar buen dinero en un trabajo de mensajero.\nLos maestros de puerto te proporcionarán contratos de carga muy rentables una vez que consigas un barco más grande. Habla con la gente, no presumas de tu linaje, sé amable y las cosas irán bien. Visita a los gobernadores de las colonias, a menudo ofrecen trabajo bien pagado.\nPuedes intentar comerciar, pero en ese caso deberías contratar a un buen intendente. Ten cuidado en el mar, evita los escuadrones militares españoles y los barcos de guerra. Si encuentras a un solo comerciante español o un convoy desprotegido, puedes intentar capturarlos.";
 		link.l1 = "¿Qué?! Michel, ¿he perdido el oído? ¿Estás sugiriendo que me convierta en pirata? ¿Tú, el orgullo de la Sociedad, un siervo de Dios y la Trinidad, me propones semejante vida?";
 		link.l1.go = "trial_12";
 		break;
@@ -508,7 +508,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "trial_13":
-		dialog.text = "Y tendrás que usar estos métodos, Charles. Después de todo, esto es apoyado por las autoridades actuantes abiertamente o a puerta cerrada. Incluso si te mantienes en el comercio, un día te verás obligado a luchar contra piratas o asaltantes españoles, porque para ellos eres el botín.\nEs en tu mejor interés olvidar tus puntos de vista anteriores sobre la vida. Créeme, hermano, puedes hacer un gran número de cosas no solo sin perder la cara, sino también ganar el favor de las autoridades y el amor del pueblo.";
+		dialog.text = "Y tendrás que usar estos métodos, Charles. Después de todo, esto es apoyado por las autoridades actuantes abiertamente o a puerta cerrada. Incluso si te mantienes en el comercio, un día te verás obligado a luchar contra piratas o asaltantes españoles, porque para ellos eres el botín.\nTu mejor interés es olvidar tus puntos de vista anteriores sobre la vida. Créeme, hermano, puedes hacer un gran número de cosas no solo sin perder la cara, sino también ganar el favor de las autoridades y el amor del pueblo.";
 		link.l1 = "Jamás dejas de sorprenderme, Michel. Ahora me dices que me convierta en pirata. ¿Qué sigue?";
 		link.l1.go = "trial_14";
 		break;
@@ -521,7 +521,7 @@ void ProcessDialogEvent()
 
 	// Rebbebion, небольшое изменение диалога
 	case "trial_15":
-		dialog.text = "Ves, entiendes, hermano. Pero basta de palabras. Es hora de ponerte a prueba. Ven a verme solo cuando te sientas listo. Gana algo de dinero decente, consigue un mejor barco, conoce el archipiélago y mejora tus habilidades.\nPero ten cuidado, si pasas los próximos meses en tabernas y burdeles y no aprendes nada útil en el proceso... ni siquiera regreses entonces. ¿Estamos claros, Charles?";
+		dialog.text = "Ves, entiendes, hermano. Pero basta de palabras. Es hora de ponerte a prueba. Ven a verme sólo cuando te sientas listo. Gana algo de dinero decente, consigue un mejor barco, conoce el archipiélago y mejora tus habilidades.\nPero ten cuidado, si pasas los próximos meses en tabernas y burdeles, y no aprendes nada útil en el proceso... ni siquiera regreses entonces. ¿Estamos claros, Charles?";
 		link.l1 = "No te preocupes. No vine aquí para recrearme... ¿Qué viene después de eso?";
 		link.l1.go = "trial_16";
 		break;
@@ -534,13 +534,13 @@ void ProcessDialogEvent()
 
 	case "trial_17":
 		dialog.text = "Confía en mí, hermano, te reirás de tu pasado sin valor y agradecerás al destino por salvarte de él. Sé optimista y positivo. Te encantará esta vida. Ya verás.\nAh, una cosa más: visita a nuestro amigo común Fadey y pídele que te consiga un trabajo. El oso tiene buenas conexiones, estoy seguro de que encontrará algo para ti. No te demores o podrías perder una oportunidad. Y por favor, no me falles.";
-		link.l1 = "Enseñanzas morales otra vez... Señor, ¿cuándo terminará todo esto? Está bien, Michel... ¿Puedo seguir mi camino?";
+		link.l1 = "Enseñanzas moral otra vez... Señor, ¿cuándo terminará todo esto? Está bien, Michel... ¿Puedo seguir mi camino?";
 		link.l1.go = "trial_18";
 		break;
 
 	case "trial_18":
-		dialog.text = "Espera. Unos cuantos consejos tácticos más. Si te encuentras en conflicto con alguna nación y te vuelves un forajido, visita la iglesia local y habla con el Abad Benoit. Dile que te he enviado yo. Él tiene conexiones tanto en la sociedad Papista como en la Calvinista y me ha ayudado mucho con estos asuntos más de una vez. Pero ten en cuenta que no es ni fácil ni barato, así que intenta evitar hacer enemigos. \n¡Espera, una cosa más! Somos nobles, pero es insensato tener aversión a trabajar con nuestras propias manos, especialmente aquí. Puedes elaborar muchos objetos útiles, siempre que tengas las herramientas y componentes necesarios... Dime, hermano, ¿cómo cargas cualquiera de tus pistolas?";
-		link.l1 = "  Hm.  Como de costumbre, una bala y una pizca de pólvora. ";
+		dialog.text = "Espera. Unos cuantos consejos tácticos más. Si te encuentras en conflicto con alguna nación y te vuelves un forajido, visita la iglesia y habla con el Abad Benoit. Dile que te he enviado yo. Él tiene conexiones tanto en la sociedad Papista como en la Calvinista y me ha ayudado mucho con estos asuntos más de una vez. Pero ten en cuenta que no es ni fácil ni barato, así que intenta evitar hacer enemigos. \n¡Espera, una cosa más! Somos nobles, pero es insensato tener aversión a trabajar con nuestras propias manos, especialmente aquí. Puedes elaborar muchos objetos útiles, siempre que tengas las herramientas y componentes necesarios... Dime, hermano, ¿cómo cargas cualquiera de tus pistolas?";
+		link.l1 = "Hm. Como de costumbre, una bala y una pizca de pólvora. ";
 		link.l1.go = "trial_19";
 		break;
 
@@ -631,16 +631,19 @@ void ProcessDialogEvent()
 		PChar.quest.Del_Alonso.win_condition.l1 = "location";
 		PChar.quest.Del_Alonso.win_condition.l1.location = "FortFrance_town";
 		PChar.quest.Del_Alonso.win_condition = "Del_Alonso";
-		// Rebbebion, теперь на гамбит только ранг, без трёх месяцев
-		pchar.quest.Sharlie_GambitReady.win_condition.l1 = "Rank";
-		pchar.quest.Sharlie_GambitReady.win_condition.l1.value = 12;
-		pchar.quest.Sharlie_GambitReady.win_condition.l1.operation = ">=";
-		pchar.quest.Sharlie_GambitReady.function = "Sharlie_GambitStage";
+		// при достижении уровня даём флаг на квест "Голландский Гамбит"
+		pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1 = "Rank";
+		pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1.value = 9;
+		pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1.operation = ">=";
+		pchar.quest.Sharlie_GambitStage_level_9.function = "Sharlie_GambitStage_level_9";
+		pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1 = "Rank";
+		pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1.value = 12;
+		pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1.operation = ">=";
+		pchar.quest.Sharlie_GambitStage_level_12.function = "Sharlie_GambitStage_level_12";
 		// маркер на контрабандиста по квесту "Деньги на деревьях"
 		AddLandQuestMark(characterFromId("FortFrance_Smuggler"), "questmarkmain");
 		PChar.quest.MOT_UbratMarku.win_condition.l1 = "MapEnter";
 		PChar.quest.MOT_UbratMarku.win_condition = "MOT_UbratMarku";
-		DoQuestFunctionDelay("Tutorial_Alchemy", 2.0);
 		// Sinistra - Старт квеста "Травля крысы"
 		pchar.questTemp.TK_TravlyaKrys = true;
 		AddLandQuestMark(characterFromId("FortFrance_Mayor"), "questmarkmain");
@@ -738,7 +741,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "gambit_1":
-		dialog.text = "¡Oh! Una respuesta encomiable. Me alegra, Charles, que te hayas convertido en un hombre. Sin embargo, no seas tan severo con tu hermano. Concedido, tengo algo que decirte. He estado esperando nuestro reencuentro y ya he desarrollado un plan para lo que harás a continuación.";
+		dialog.text = "¡Oh! Una respuesta encomiable. Me alegra, Charles, que te hayas convertido en un hombre. Sin embargo, no seas tan severo con tu hermano. Concedido, tengo algo que decirte. He estado esperando nuestro reencuentro, y ya he desarrollado un plan para lo que harás a continuación.";
 		link.l1 = "Bien. Entonces, infórmame.";
 		link.l1.go = "gambit_2";
 		break;
@@ -750,7 +753,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "gambit_3":
-		dialog.text = "No hay tantas organizaciones poderosas en el Caribe. Una de ellas es la Compañía Neerlandesa de las Indias Occidentales. Puedes unirte a ellos. Su sede está en Willemstad, en Curazao. La Compañía a menudo contrata a capitanes independientes y ofrece contratos especiales a largo plazo a los más útiles de ellos. \nSi tienes suerte, podrías hacer una carrera decente allí. He oído que están experimentando serios problemas ahora: algún corsario inglés se ha alzado en armas contra la Compañía y está hundiendo constantemente sus barcos. No pueden hacer nada contra él, es un oficial de la armada, lo que lo hace demasiado duro para ellos.\nDicen que está de alguna manera conectado con la inteligencia militar británica y son personas muy serias. Así que, tal vez, tomar el lado de este capitán podría ser incluso más rentable para ti, pero el problema es que no conozco su nombre, solo sé que Antigua es su base operativa.\nPuedes navegar allí y preguntar. También he oído hablar de alguna organización extraña que también participa en este conflicto anglo-holandés, pero no sé de qué lado están. Todo lo que sé es que los rastros conducen a Barbados, a Bridgetown...";
+		dialog.text = "No hay tantas organizaciones poderosas en el Caribe. Una de ellas es la Compañía Holandesa de las Indias Occidentales. Puedes unirte a ellos. Su sede está en Willemstad, en Curazao. La Compañía a menudo contrata a capitanes independientes y ofrece contratos especiales a largo plazo a los más útiles de ellos. \nSi tienes suerte, podrías hacer una carrera decente allí. He oído que están experimentando serios problemas ahora: algún corsario inglés se ha alzado en armas contra la Compañía y está hundiendo constantemente sus barcos. No pueden hacer nada contra él, es un oficial de la armada, lo que lo hace demasiado duro para ellos.\nDicen que está de alguna manera conectado con la inteligencia militar británica y son personas muy serias. Así que, tal vez, tomar el lado de este capitán podría ser incluso más rentable para ti, pero el problema es que no conozco su nombre, solo sé que Antigua es su base operativa.\nPuedes navegar allí y preguntar. También he oído hablar de alguna organización extraña que también participa en este conflicto anglo-holandés, pero no sé de qué lado están. Todo lo que sé es que los rastros conducen a Barbados, a Bridgetown...";
 		link.l1 = "¿Así que propones que me aliste al servicio de los holandeses o busque un capitán sospechoso o una 'organización' aún más sospechosa?";
 		link.l1.go = "gambit_4";
 		break;
@@ -768,13 +771,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "gambit_6":
-		dialog.text = "Charles, me estás sorprendiendo. La Compañía Neerlandesa de las Indias Occidentales maneja sumas que un rey envidiaría. El corsario del que te hablé ha saqueado tantos barcos holandeses que ya debe estar rebosante de riqueza. Y la gente de la 'organización' no solo tiene mucho dinero. Tienen un montón de dinero.\nTrabajar para ellos siempre te garantizará un buen pedazo del pastel. Gente como ellos siempre juega en grande. Y si eres listo, siempre puedes jugar tu propio juego y ganar aún más.";
+		dialog.text = "Charles, me estás sorprendiendo. La Compañía Holandesa de las Indias Occidentales maneja sumas que un rey envidiaría. El corsario del que te hablé ha saqueado tantos barcos holandeses que ya debe estar rebosante de riqueza. Y la gente de la 'organización' no solo tiene mucho dinero. Tienen un montón de dinero.\nTrabajar para ellos siempre te garantizará un buen pedazo del pastel. Gente como ellos siempre juegan en grande. Y si eres listo, siempre puedes jugar tu propio juego y ganar aún más.";
 		link.l1 = "Está bien. Lo pensaré y decidiré cuál es mi mejor opción. ¿Tienes alguna otra instrucción?";
 		link.l1.go = "gambit_7";
 		break;
 
 	case "gambit_7":
-		dialog.text = "Sí. Deberías aprender a usar las herramientas de navegación. Ay, muchos navegantes solo pueden orientarse por la brújula y las estrellas y no pueden estimar las coordenadas. Y esto es crítico.\nEntonces. Usa un boussole para estimar la latitud. Es una herramienta bastante rara y no la encontrarás en las tiendas, pero puedes fabricarla tú mismo usando dos artículos comunes: una brújula y un astrolabio. Aquí, toma las instrucciones.\nEstimando la longitud es un poco más complicado. Necesitarás un cronómetro clasificado. Puedes hacer uno a partir de un cronómetro de barco común ajustándolo con un reloj de arena. El problema es que tal herramienta funciona eficientemente solo durante un mes antes de volverse demasiado inexacta debido a errores.\nUn cronómetro siempre requiere ser reajustado. Los relojes de arena se pueden comprar en la oficina de la Compañía Neerlandesa de las Indias Occidentales. Yo también compré cronómetros allí. Aquí, toma estas instrucciones.";
+		dialog.text = "Sí. Deberías aprender a usar las herramientas de navegación. Eh, muchos navegantes solo pueden orientarse por la brújula y las estrellas y no pueden estimar las coordenadas. Y esto es crítico.\nEntonces. Usa un boussole para estimar la latitud. Es una herramienta bastante rara y no la encontrarás en las tiendas, pero puedes fabricarla tú mismo usando dos artículos comunes: una brújula y un astrolabio. Aquí, toma las instrucciones.\nEstimando la longitud es un poco más complicado. Necesitarás un cronómetro clasificado. Puedes hacer uno a partir de un cronómetro de barco común ajustándolo con un reloj de arena. El problema es que tal herramienta funciona eficientemente solo durante un mes antes de volverse demasiado inexacta debido a errores.\nUn cronómetro siempre requiere ser reajustado. Los relojes de arena se pueden comprar en la oficina de la Compañía Holandesa de las Indias Occidentales. Yo también compré cronómetros allí. Aquí, toma estas instrucciones.";
 		link.l1 = "Gracias. Me pondré a estudiar de inmediato.";
 		link.l1.go = "gambit_8";
 		break;
@@ -854,11 +857,11 @@ void ProcessDialogEvent()
 			break;
 
 		case "eng_win_half":
-			sTemp = "He encontrado al verdadero corsario inglés, Richard Fleetwood, y he llevado a cabo varias tareas importantes en nombre de la armada inglesa, en particular, he liquidado el 'barco fantasma' pirata. Por supuesto, Fleetwood partió hacia Inglaterra y mi servicio con él ha terminado, pero aún así...";
+			sTemp = "He encontrado al verdadero corsario inglés, Richard Fleetwood, y he llevado a cabo varias tareas importantes en nombre de la armada inglesa, en particular, he liquidado al 'barco fantasma' pirata. Por supuesto, Fleetwood partió hacia Inglaterra y mi servicio con él ha terminado, pero aún así...";
 			break;
 
 		case "eng_fail":
-			sTemp = "He entrado en servicio con el corsario inglés de Antigua, sin embargo los asuntos han ido modestamente, he fallado en una tarea importante, y me he visto obligado a una baja deshonrosa sin nada.";
+			sTemp = "He entrado en servicio con el corsario inglés de Antigua, sin embargo los asuntos han ido modestamente. He fallado en una tarea importante, y me he visto obligado a una baja deshonrosa sin nada.";
 			break;
 
 		case "self_win":
@@ -989,21 +992,21 @@ void ProcessDialogEvent()
 		break;
 
 	case "saga_16":
-		dialog.text = "Has comprendido excelentemente todas las lecciones de la vida, Charles. Estoy verdaderamente feliz por ti. Y me alegra que hayas seguido adelante y aceptado la petición de de Poincy en lugar de zarpar de regreso a Francia. Espero que todo salga bien para ti y que puedas llevar a cabo lo que yo no pude hacer yo mismo.";
-		link.l1 = "Tengo miedo de que no me quede otra opción. Desde mi primer día en el Caribe, estoy haciendo todo solo. Nos vemos luego, Michel. Creo que nuestro próximo encuentro incluirá la orden para tu liberación.";
+		dialog.text = "Has comprendido excelentemente todas las lecciones de la vida, Charles. Estoy verdaderamente feliz por ti. Y me alegra que hayas seguido adelante y aceptado la petición de de Poincy en lugar de zarpar de regreso a Francia. Espero que todo salga bien para ti y que puedas llevar a cabo lo que yo no pude hacer.";
+		link.l1 = "Me temo que no me queda otra opción. Como desde mi primer día en el Caribe. Nos vemos luego, Michel. Creo que nuestro próximo encuentro incluirá la orden para tu liberación.";
 		link.l1.go = "saga_17a";
 
 		break;
 
 	// Addon 2016-1 Jason Пиратская линейка
 	case "saga_17a":
-		dialog.text = "¡Espera un momento! Antes de ir a Jan Svenson, asegúrate de visitar a Marcus Tyrex - Él es el Guardián del Código. Gobierna La Vega en La Española. Tiene una autoridad ilimitada entre los piratas y los españoles le temen a muerte.";
+		dialog.text = "¡Espera un momento! Antes de ir a Jan Svenson, asegúrate de visitar a Marcus Tyrex. Él es el Guardián del Código. Gobierna La Vega en La Española. Tiene una autoridad ilimitada entre los piratas y los españoles le temen a muerte.";
 		link.l1 = "¿Podría ayudarme con nuestro asunto?";
 		link.l1.go = "saga_17b";
 		break;
 
 	case "saga_17b":
-		dialog.text = "Dudo que sí. No puedo decir realmente de qué lado está, lo más probable es que esté solo por sí mismo. Necesitarás al Shark y a Svenson de todos modos, pero en este momento - Tyrex es el pirata más poderoso por aquí. Lo eligieron como Guardián del Código por una razón. No deberías ignorar a una figura tan importante. Podría ser útil conocer mejor a los piratas antes de encontrarte con Svenson. Incluso podrías hacerte un nombre entre ellos...";
+		dialog.text = "Dudo que sí. No puedo decir realmente de qué lado está, lo más probable es que esté solo por sí mismo. Necesitarás al Shark y a Svenson de todos modos, pero en este momento, Tyrex es el pirata más poderoso por aquí. Lo eligieron como Guardián del Código por una razón. No deberías ignorar a una figura tan importante. Podría ser útil conocer mejor a los piratas antes de encontrarte con Svenson. Incluso podrías hacerte un nombre entre ellos...";
 		link.l1 = "Y una vez más, estamos de vuelta con la jerga pirata. No hay manera de que me libre de esto, ¿verdad? Muy bien. Le haré una visita.";
 		link.l1.go = "saga_17c";
 		break;
@@ -1164,7 +1167,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Fort_attack":
-		dialog.text = "Aquí está hermano, nuestro ejército. Toda la gente que pude encontrar. No son muchos en términos de números, ¡pero lucharemos por nuestra Patria! ¡Echaremos a estos malditos intrusos del fuerte! El elemento sorpresa nos ayudará - no esperan nuestro ataque. ¡Adelante!";
+		dialog.text = "Aquí está hermano, nuestro ejército. Toda la gente que pude encontrar. No son muchos en términos de números, ¡pero lucharemos por nuestra Patria! ¡Echaremos a estos malditos intrusos del fuerte! El elemento sorpresa nos ayudará, no esperan nuestro ataque. ¡Adelante!";
 		link.l1 = "¡Dulce et decorum est pro patria mori! ¡Adelante!";
 		link.l1.go = "Fort_attack_1";
 		break;
@@ -1356,8 +1359,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "kukulkan_4":
-		dialog.text = "Hermano? Solo por la sangre de nuestro padre. Tenemos diferentes madres, " + pchar.name + "Sepas que mi madre era una hija de Kanek, llamada Shochikezhal. Fue secuestrada por corsarios franceses bajo el mando del famoso Nicolas Gotier después de que tontamente dejara Tayasal. Habían decidido esclavizarla. Un hombre llamado Serge Benoit estaba entre ellos.\nAvergonzado por la acción de su capitán, lo dejó, tomó el hábito y ahora lo conoces como el abad Benoit. Henri de Monper, nuestro padre, era oficial de la marina en ese entonces. Compró a Shochikezhal y la llevó a Francia donde me dio a luz. Alrededor del mismo tiempo tú naciste también, " + pchar.name + ". Tu madre murió al dar a luz y nuestro padre declaró que su esposa legítima había dado a luz a gemelos.\nShochikezhal, mi madre, se convirtió en nodriza para ambos. Fuiste alimentado con la leche de una mujer india del pueblo Itza, " + pchar.name + "¡Más tarde, tu abuela por parte de madre decidió acogerte para darte una educación y te dieron el nombre de tu madre - de Maure!";
-		link.l1 = "¿Cómo descubriste todo eso?!";
+		dialog.text = "¿Hermano? Solo por la sangre de nuestro padre. Tenemos diferentes madres, " + pchar.name + ". Debes saber que mi madre era una hija de Kanek, llamada Shochikezhal. Fue secuestrada por corsarios franceses bajo el mando del famoso Nicolas Gotier después de que tontamente dejara Tayasal. Habían decidido esclavizarla. Un hombre llamado Serge Benoit estaba entre ellos.\nAvergonzado por la acción de su capitán, lo dejó, tomó el hábito y ahora lo conoces como el abad Benoit. Henri de Monper, nuestro padre, era oficial de la marina en ese entonces. Compró a Shochikezhal y la llevó a Francia donde me dio a luz. Alrededor del mismo tiempo tú naciste también, " + pchar.name + ". Tu madre murió al dar a luz y nuestro padre declaró que su esposa legítima había dado a luz a gemelos.\nShochikezhal, mi madre, se convirtió en nodriza para ambos. Fuiste alimentado con la leche de una mujer india del pueblo Itza, " + pchar.name + "¡Más tarde, tu abuela por parte de madre decidió acogerte para darte una educación y te dieron el nombre de tu madre, de Maure!";
+		link.l1 = "¡¿Cómo descubriste todo eso?!";
 		link.l1.go = "kukulkan_5";
 		break;
 
@@ -1374,7 +1377,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "kukulkan_7":
-		dialog.text = "Además de curarme, este ritual me otorgó otras habilidades también, además de abrir una conexión con el mundo de los dioses. Y ya conoces el resto. Como ya sabes, llevaré la luz del conocimiento y la experiencia de la raza blanca al pasado y la transmitiré al pueblo maya. La historia será reescrita y ustedes, los blancos, no dominarán este mundo. Me aseguraré de ello.";
+		dialog.text = "Además de curarme, este ritual me otorgó otras habilidades también, además de abrir una conexión con el mundo de los dioses. Y ya conoces el resto. Como llevaré la luz del conocimiento y la experiencia de la raza blanca al pasado y la transmitiré al pueblo maya. La historia será reescrita y ustedes, los blancos, no dominarán este mundo. Me aseguraré de ello.";
 		link.l1 = "¿Así que toda tu vida, estudiando en la mejor academia naval, sirviendo en el ejército y en la Orden de Malta, fue básicamente solo una acumulación de experiencia militar?";
 		link.l1.go = "kukulkan_8";
 		break;
@@ -1393,7 +1396,7 @@ void ProcessDialogEvent()
 
 	case "kukulkan_10":
 		dialog.text = "Sí, Kanek se había engañado a sí mismo allí. Realizó el ritual más difícil, un ritual que ni siquiera los antiguos se atrevieron a realizar. Ocultó la máscara en la isla desierta recién creada y logró perder la llave de Ksocheatem, el llamado Guardián de la Verdad.\nTuve que actuar con astucia. El ritual impedía que cualquier barco que transportara objetos protegidos del tesoro de Taysal a bordo, saliera del Caribe arrojando tales embarcaciones a las costas de Ksocheatem. Tenía la intención de usar eso. Tomé suficientes tesoros para apaciguar a Mendoza. También tomé un objeto especial protegido por el ritual.\nUn barco con este objeto a bordo estaría condenado a ser entregado directamente a Ksocheatem, directamente a mi máscara. Así que me hice a la mar y le hice saber a Mendoza sobre mí.";
-		link.l1 = " Entonces, ¿saliste de Tayasal por tu cuenta?";
+		link.l1 = "Entonces, ¿saliste de Tayasal por tu cuenta?";
 		link.l1.go = "kukulkan_11";
 		break;
 
@@ -1441,7 +1444,7 @@ void ProcessDialogEvent()
 		if (CheckCharacterItem(pchar, "mask_true"))
 		{
 			dialog.text = "";
-			link.l1 = "  Parece que tus poderes te están abandonando, gran Kukulcán... Puedes ser fuerte, pero tu cuerpo sigue siendo mortal!";
+			link.l1 = "Parece que tus poderes te están abandonando, gran Kukulcán... Puedes ser fuerte, pero tu cuerpo sigue siendo mortal!";
 			link.l1.go = "kukulkan_win";
 		}
 		else
@@ -1469,7 +1472,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "kukulkan_fail_2":
-		dialog.text = "Pobre, pobre Capitán " + GetFullName(pchar) + "… Has llegado tan lejos, sobrevivido a todos los peligros, matado a muchos de los enemigos más fuertes sólo para ser derrotado al final!.. ¡La máscara de jade que encontraste dentro de la caja de metal cerca de los restos del 'Santa Quiteria' en Ksocheatem es una farsa! Es solo una máscara antigua del tesoro de Taysal. ¡NO ES LA MÁSCARA DE KUKULCÁN!.\nLa había tomado personalmente de aquí después de mi fallida expedición, está custodiada por el antiguo ritual. Esta máscara fue la razón por la que la tormenta llevó al Santa Quiteria a Ksocheatem. También tenía un segundo propósito. Se suponía que debía engañar a cualquiera que viniera allí por mi VERDADERO artefacto.";
+		dialog.text = "Pobre, pobre Capitán " + GetFullName(pchar) + "... Has llegado tan lejos, sobrevivido a todos los peligros, matado a muchos de los enemigos más fuertes sólo para ser derrotado al final!.. ¡La máscara de jade que encontraste dentro de la caja de metal cerca de los restos del 'Santa Quiteria' en Ksocheatem es una farsa! Es solo una máscara antigua del tesoro de Taysal. ¡NO ES LA MÁSCARA DE KUKULCÁN!.\nLa había tomado personalmente de aquí después de mi fallida expedición, está custodiada por el antiguo ritual. Esta máscara fue la razón por la que la tormenta llevó al Santa Quiteria a Ksocheatem. También tenía un segundo propósito. Se suponía que debía engañar a cualquiera que viniera allí por mi VERDADERO artefacto.";
 		link.l1 = "Pero... ¿dónde estaba la máscara real entonces? ¡He buscado por todo Ksocheatem!..";
 		link.l1.go = "kukulkan_fail_3";
 		break;

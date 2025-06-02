@@ -395,7 +395,7 @@ bool CanStartDialog()
 bool DlgCameraSpecAng(ref chrRef)
 {
 	ref loc = loadedLocation;
-	if(CheckAttribute(loc,"type"))
+	if(CheckAttribute(loc,"type") && !CheckAttribute(pchar, "questTemp.CameraDialogMode"))
 	{
 		if(loc.type == "town") return true;
 		if(loc.type == "jungle") return true;

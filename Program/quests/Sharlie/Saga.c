@@ -75,10 +75,10 @@ void Saga_createDonovan(string qName)//ставим корвет Донован�
 	SetCharacterPerk(sld, "Doctor1");
 	Group_AddCharacter("DonovanGroup", "Donovan");
 	Group_SetGroupCommander("DonovanGroup", "Donovan");
-	if (sti(pchar.rank > 17) && MOD_SKILL_ENEMY_RATE > 4)
+	if (sti(pchar.rank > 17) && MOD_SKILL_ENEMY_RATE > 2)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("DonovanHelper", "off_eng_2", "man", "man", 25, ENGLAND, 2, true, "quest"));
-		FantomMakeSmallSailor(sld, SHIP_FRIGATE, "", CANNON_TYPE_CANNON_LBS24, 80, 65, 75, 80, 65);
+		FantomMakeSmallSailor(sld, SHIP_GALEON_H, "", CANNON_TYPE_CANNON_LBS36, 80, 65, 75, 80, 65);
 		FantomMakeCoolFighter(sld, 25, 70, 70, "blade_15", "pistol6", "bullet", 200);
 		sld.DontRansackCaptain = true;
 		sld.AnalizeShips = true;
@@ -260,8 +260,7 @@ void Saga_LightmanReturn(string qName)//вертаем назад смотрит
 	sld.location.locator = "bar2";
 	sld.model = "citiz_32";
 	sld.model.animation = "man";
-	sld.name = "Хуан";
-	sld.lastname = "Перес";
+	SetRandomNameToCharacter(sld);
 	sld.dialog.currentnode = "First time";
 }
 
@@ -416,7 +415,7 @@ void Dolly_TeleportContinue_4(string qName)
 		break;
 		
 		case "dolly2":
-			DoQuestReloadToLocation("Indian_town", "quest", "teleport1", "Dominica_TeleportArrive");
+			DoQuestReloadToLocation("Dominica_village", "quest", "teleport1", "Dominica_TeleportArrive");
 		break;
 		
 		case "dolly3": 
@@ -1804,7 +1803,7 @@ void LSC_RingStart(string qName) // готовы
 void LSC_RingEnter(string qName) // входим
 {
 	pchar.quest.LSC_Ring_Over.over = "yes"; //снять прерывание
-	SetLaunchFrameFormParam("Прошёл час..."+ NewStr() +"Вы добрались до разбитого корабля", "", 0, 6);//табличка
+	SetLaunchFrameFormParam(StringFromKey("Saga_122", NewStr()), "", 0, 6);//табличка
 	LaunchFrameForm();
 	WaitDate("", 0, 0, 0, 1, 10); //крутим время
 	RecalculateJumpTable();
@@ -1928,8 +1927,17 @@ void LSC_ReturnJackmanAttack(string qName) //наймиты Джекмана а�
     {
 		switch (sti(RealShips[sti(pchar.ship.type)].Class))
 		{
+			case 7:
+				iShip = SHIP_WAR_TARTANE;
+				iCannons = CANNON_TYPE_CANNON_LBS3;
+				if(i == 1)
+				{
+					iShip = SHIP_SLOOP;
+					iCannons = CANNON_TYPE_CANNON_LBS12;
+				}
+			break;
 			case 6:
-				iShip = SHIP_TARTANE;
+				iShip = SHIP_WAR_TARTANE;
 				iCannons = CANNON_TYPE_CANNON_LBS3;
 				if(i == 1)
 				{
@@ -1939,47 +1947,47 @@ void LSC_ReturnJackmanAttack(string qName) //наймиты Джекмана а�
 			break;
 			
 			case 5:
-				iShip = SHIP_SLOOP;
-				iCannons = CANNON_TYPE_CANNON_LBS12;
+				iShip = SHIP_LUGGER;
+				iCannons = CANNON_TYPE_CANNON_LBS16;
 				if(i == 1)
 				{
-					iShip = SHIP_BRIGANTINE;
-					iCannons = CANNON_TYPE_CANNON_LBS16;
+					iShip = SHIP_SLOOP;
+					iCannons = CANNON_TYPE_CANNON_LBS12;
 				}
 			break;
 			
 			case 4:
 				iShip = SHIP_BRIGANTINE;
-				iCannons = CANNON_TYPE_CANNON_LBS16;
+				iCannons = CANNON_TYPE_CANNON_LBS12;
 				if(i == 1)
 				{
-					iShip = SHIP_CORVETTE;
-					iCannons = CANNON_TYPE_CULVERINE_LBS18;
+					iShip = SHIP_XebekVML;
+					iCannons = CANNON_TYPE_CANNON_LBS16;
 				}
 			break;
 			
 			case 3:
-				iShip = SHIP_CORVETTE;
+				iShip = SHIP_POLACRE;
 				iCannons = CANNON_TYPE_CULVERINE_LBS18;
 				if(i == 1)
 				{
-					iShip = SHIP_FRIGATE_H;
-					iCannons = CANNON_TYPE_CANNON_LBS24;
+					iShip = SHIP_CORVETTE;
+					iCannons = CANNON_TYPE_CANNON_LBS20;
 				}
 			break;
 			
 			case 2:
-				iShip = SHIP_FRIGATE_H;
-				iCannons = CANNON_TYPE_CANNON_LBS24;
+				iShip = SHIP_CORVETTE;
+				iCannons = CANNON_TYPE_CANNON_LBS20;
 				if(i == 1)
 				{
-					iShip = SHIP_LINESHIP;
+					iShip = SHIP_FRIGATE;
 					iCannons = CANNON_TYPE_CANNON_LBS32;
 				}
 			break;
 			
 			case 1:
-				iShip = SHIP_LINESHIP;
+				iShip = SHIP_FRIGATE_H;
 				iCannons = CANNON_TYPE_CANNON_LBS32;
 			break;
 		}
@@ -3639,7 +3647,7 @@ void Saga_SetBaldMaggy(string qName) // ставим плешивую мэгги
 	sld.lastname = StringFromKey("Saga_74");
 	sld.Dialog.Filename = "Quest\Saga\OtherNPC.c";
 	sld.DeckDialogNode = "Benson";
-	FantomMakeCoolSailor(sld, SHIP_BARKENTINE, StringFromKey("Saga_75"), CANNON_TYPE_CANNON_LBS12, 40, 40, 40);
+	FantomMakeCoolSailor(sld, SHIP_BARKENTINE, StringFromKey("Saga_75"), CANNON_TYPE_CANNON_LBS3, 40, 40, 40);
 	FantomMakeCoolFighter(sld, 15, 40, 40, "blade_10", "pistol1", "bullet", 50);
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
@@ -4587,11 +4595,11 @@ void SGF_CreatBattleShips(string qName)
 	}
 	if(MOD_SKILL_ENEMY_RATE > 7)
 	{
-		Ship3 = SHIP_LINESHIP;
+		Ship3 = SHIP_GALEON_H;
 		Ship4 = SHIP_FRIGATE_H;
 		Ship5 = SHIP_FRIGATE_H;
 		Ship6 = SHIP_CORVETTE;
-		Cannon3 = CANNON_TYPE_CANNON_LBS32;
+		Cannon3 = CANNON_TYPE_CANNON_LBS36;
 		Cannon4 = CANNON_TYPE_CANNON_LBS32;
 		Cannon5 = CANNON_TYPE_CANNON_LBS24;
 		Cannon6 = CANNON_TYPE_CULVERINE_LBS18;
@@ -5305,7 +5313,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		RefreshLandTime();
 		RecalculateJumpTable();
 		Whr_UpdateWeather();
-		SetCharacterGoods(pchar, GOOD_SILVER, GetCargoGoods(pchar, GOOD_SILVER) + 2000 + drand(100)); // кладем серебро
+		SetCharacterGoods(pchar, GOOD_SILVER, GetCargoGoods(pchar, GOOD_SILVER) + 2000 + hrand(100)); // кладем серебро
 		LAi_SetPlayerType(pchar);
 		sld = characterFromId("Svenson");
 		sld.dialog.currentnode = "mine_attack_47";
@@ -5439,7 +5447,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		LAi_LocationFightDisable(&Locations[FindLocation("Dominica_jungle_02")], true); // запретить драться
 		chrDisableReloadToLocation = true; // закрыть локацию
 		pchar.GenQuest.CirassExchangeDisable = true; // чтобы не снял скафандр
-		LAi_LocationDisableOfficersGen("Indian_town", true); // не пускать офицеров в деревню
+		LAi_LocationDisableOfficersGen("Dominica_village", true); // не пускать офицеров в деревню
 		LAi_LocationDisableOfficersGen("Dominica_jungle_02", true); // не пускать офицеров в локу телепорта
 		for (i = 1; i <= 10; i++)
 		{
@@ -5533,9 +5541,9 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		LAi_ActorAnimation(pchar, "Ground_sitting", "LSC_TeleportArrive_1", 3.0);
 		LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true); // запретить драться
 		// снимаем старые запреты
-		LAi_LocationDisableOfficersGen("Indian_town", false); // пускать офицеров в деревню
+		LAi_LocationDisableOfficersGen("Dominica_village", false); // пускать офицеров в деревню
 		LAi_LocationDisableOfficersGen("Dominica_jungle_02", false); // пускать офицеров в локу телепорта
-		LAi_LocationFightDisable(&Locations[FindLocation("Indian_town")], false); // разрешить драться
+		LAi_LocationFightDisable(&Locations[FindLocation("Dominica_village")], false); // разрешить драться
 		LAi_LocationFightDisable(&Locations[FindLocation("Dominica_jungle_02")], false); // разрешить драться
 		// Даниэль бежит к нам
 		sld = characterFromId("Danielle");

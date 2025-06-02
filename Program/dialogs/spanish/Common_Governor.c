@@ -62,14 +62,14 @@ void ProcessDialogEvent()
 		NextDiag.TempNode = "First time";
 		if (LAi_grp_playeralarm > 0)
 		{
-			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("¿Te atreves a mostrar tu cara en la oficina del gobernador general?! Estás loco, de verdad...", "¿Cómo dejaron estos holgazanes que un enemigo irrumpiera en mi residencia? Esto está más allá de mi comprensión...", "Ciertamente, mis guardias no valen un centavo si algún vagabundo anda por mi residencia..."), LinkRandPhrase("¿Qué necesitas, " + GetSexPhrase("reptil", "apestoso") + "¿¡? Mis soldados ya han sido enviados tras tu rastro, " + GetSexPhrase("pirata asqueroso", "apestoso") + "¡", "" + GetSexPhrase("Sucio", "Sucio") + "¡Asesino, abandona mi residencia de inmediato! ¡Guardias!", "No tengo miedo de ti, " + GetSexPhrase("canalla", "granuja") + "¡Pronto serás colgado en nuestro fuerte, no llegarás lejos..."));
+			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("¿Te atreves a mostrar tu cara en la oficina del gobernador general? Estás loco, de verdad...", "¿Cómo dejaron estos holgazanes que un enemigo irrumpiera en mi residencia? Esto está más allá de mi comprensión...", "Ciertamente, mis guardias no valen un centavo si algún vagabundo anda por mi residencia..."), LinkRandPhrase("¿Qué necesitas, " + GetSexPhrase("reptil", "apestosa") + "? Mis soldados ya han sido enviados tras tu rastro, " + GetSexPhrase("pirata asqueroso", "apestosa") + ".", "" + GetSexPhrase("¡Sucio asesino", "¡Sucia asesina") + ", abandona mi residencia de inmediato! ¡Guardias!", "No te tengo miedo, " + GetSexPhrase("canalla", "granuja") + ". ¡Pronto serás colgado en nuestro fuerte, no llegarás lejos!"));
 			link.l1 = NPCharRepPhrase(pchar, RandPhraseSimple("Los soldados no valen una mierda...", "Jamás me capturarás."), RandPhraseSimple("¡Cállate, compañero, o te arrancaré esa lengua podrida tuya!", "Te lo digo, compañero: siéntate tranquilamente o te cortaré la cabeza y la lanzaré por esa puerta a tus perros guardianes..."));
 			link.l1.go = "fight";
 			break;
 		}
 		if (npchar.quest.meeting == "0")
 		{
-			dialog.text = "He oído que has sido muy persistente al solicitar una audiencia. Mi nombre es " + GetFullName(npchar) + ". Soy el gobernador general de las colonias de " + NationNameGenitive(sti(NPChar.nation)) + ", delegado de la Corona de " + NationKingsName(npchar) + " en estas aguas. Ahora, por favor, sea tan amable de decirme, ¿cuál es el propósito de su visita, " + GetAddress_Form(NPChar) + ".";
+			dialog.text = "He oído que has sido muy persistente al solicitar una audiencia. Mi nombre es " + GetFullName(npchar) + ". Soy el gobernador general de las colonias de " + NationNameGenitive(sti(NPChar.nation)) + ", delegado de la Corona de " + NationKingsName(npchar) + " en estas aguas. Ahora, por favor, sea tan amable de decirme, ¿cuál es el propósito de su visita, " + GetAddress_Form(NPChar) + "?";
 			link.l1 = "Mi nombre es " + GetFullName(pchar) + ".";
 			link.l1.go = "node_1";
 			npchar.quest.meeting = "1";
@@ -171,7 +171,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Regata_complete":
-		dialog.text = "Ahora pasemos a la parte más agradable para ti - la ceremonia de recompensa. El primer premio en dinero es de 250000 pesos. ¡Aquí tienes!";
+		dialog.text = "Ahora pasemos a la parte más agradable para ti, la ceremonia de recompensa. El primer premio en dinero es de 250000 pesos. ¡Aquí tienes!";
 		link.l1 = "¡Gracias!";
 		link.l1.go = "Regata_complete_1";
 		break;

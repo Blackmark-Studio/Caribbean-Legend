@@ -41,7 +41,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "greguar_1":
-		dialog.text = "¡Ay! Eso hago. Seré breve, el tiempo es oro. Entonces, un escuadrón de la corona holandesa que navegaba de Brasil a Curazao con una carga de bienes de valor estratégico fue emboscado por los ingleses entre Trinidad y el continente. Una flauta de la Compañía logró huir y atracar en la Costa de Boca de la Serpiente. Salvó parte de la carga, pero no por mucho tiempo: fueron atacados por una tribu india local. Según mi información, han exterminado a todos los holandeses en esa costa y llevaron la carga a su aldea. Los indios también se apoderaron de las armas de fuego holandesas, pero sufrieron grandes bajas. ¡Esta es nuestra oportunidad! Los británicos y los holandeses todavía están luchando en esa región y están demasiado ocupados para preocuparse por la flauta perdida. Por ahora... Tienes un barco y una tripulación. Podemos navegar allí, desembarcar y acabar con los indios. La carga es extremadamente valiosa y hay una gran cantidad de ella allí. Ya he enviado una pequeña expedición para hacer el reconocimiento, eso era todo lo que podía permitirme, problemas de dinero, ¿recuerdas? Tengo un comprador de confianza, puedes contar con mi espada y mis mercenarios. División al cincuenta por ciento, tenemos una semana para llegar allí. Entonces, amigo mío, ¿estás dentro?";
+		dialog.text = "¡Ay! Eso hago. Seré breve, el tiempo es oro. Entonces, un escuadrón de la corona holandesa que navegaba de Brasil a Curazao con una carga de bienes de valor estratégico fue emboscado por los ingleses entre Trinidad y el continente. Un filibote de la Compañía logró huir y atracar en la Costa de Boca de la Serpiente. Salvó parte de la carga, pero no por mucho tiempo: fueron atacados por una tribu india. Según mi información, han exterminado a todos los holandeses en esa costa y llevaron la carga a su aldea. Los indios también se apoderaron de las armas de fuego holandesas, pero sufrieron grandes bajas. ¡Esta es nuestra oportunidad! Los británicos y los holandeses todavía están luchando en esa región y están demasiado ocupados para preocuparse por el filibote perdido. Por ahora... Tienes un barco y una tripulación. Podemos navegar allí, desembarcar y acabar con los indios. La carga es extremadamente valiosa y hay una gran cantidad de ella allí. Ya he enviado una pequeña expedición para hacer el reconocimiento, eso era todo lo que podía permitirme, problemas de dinero, ¿recuerdas? Tengo un comprador de confianza, puedes contar con mi espada y mis mercenarios. División al cincuenta por ciento, tenemos una semana para llegar allí. Entonces, amigo mío, ¿estás dentro?";
 		link.l1 = "Perdóname, monsieur, pero pasaré. Acabo de llegar de un viaje difícil, no tenemos suficiente tiempo para hacer reparaciones y reclutamiento. Incluso en este lugar olvidado por Dios un hombre no puede tenerlo todo.";
 		link.l1.go = "greguar_exit";
 		link.l2 = "Suena como un negocio peligroso con olor a buen beneficio y aventuras. ¡Por supuesto que estoy dentro! ¡No perdamos tiempo!";
@@ -248,7 +248,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "mercen":
-		PlaySound("Voice\Spanish\soldier\Pirati v Gorode-03.wav");
+		PlaySound("Voice\Spanish\EvilPirates06.wav");
 		dialog.text = "¡Justo a tiempo! Apenas huimos de la horda de los caribes, se dirigían en tu dirección y, por tu aspecto, ya te los has encontrado. Su aldea está cerca, pero nuestros problemas apenas comienzan.";
 		link.l1 = "";
 		link.l1.go = "prosper_2";
@@ -357,7 +357,7 @@ void ProcessDialogEvent()
 	case "prosper_11":
 		pchar.quest.FMQL_prosper_dead.over = "yes";
 		LAi_RemoveCheckMinHP(npchar);
-		PlaySound("Voice\Spanish\Prosper_Trubal_01.wav");
+		PlaySound("Voice\Spanish\LE\Trubal\Prosper_Trubal_07.wav");
 		dialog.text = "Te he advertido, capitán, ¡ten cuidado! Tenía sospechas sobre ese bastardo.";
 		link.l1 = "¡Prospera! ¡Gracias! ¿Pero cómo?";
 		link.l1.go = "prosper_12";
@@ -373,7 +373,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "prosper_13":
-		dialog.text = "No, mi amigo. Tengo obligaciones con mi hija. Ella me hizo jurar dejar mis aventuras atrás. Fue mi última. Maldita sea, qué lástima, pero amo a mi hija más que a nada en el mundo. Adiós, " + pchar.name + ". Y... Selina habla de ti todo el tiempo. Quizás, podrías hacernos una visita algún día?";
+		dialog.text = "No, mi amigo. Tengo obligaciones con mi hija. Ella me hizo jurar dejar mis aventuras atrás. Fue mi última. Maldita sea, qué lástima, pero amo a mi hija más que a nada en el mundo. Adiós, " + pchar.name + ". Y... Selina habla de ti todo el tiempo. Quizás podrías hacernos una visita algún día.";
 		link.l1 = "¿Quién sabe?, tal vez lo haga... ¡Adiós, Prosper! Deseo que tu hija encuentre un buen esposo... (para sí mismo) Lección aprendida, monsieur Gregoire, lección aprendida... a cada uno lo suyo, decía... Recordaré esto.";
 		link.l1.go = "prosper_14";
 		break;
@@ -399,13 +399,13 @@ void ProcessDialogEvent()
 
 	case "contra_1":
 		dialog.text = "Ja. Muy interesado. Especialmente mi cliente. ¿Cuál es la ganancia?";
-		link.l1 = "" + FindRussianQtyString(sti(pchar.questTemp.FMQL.Sanl)) + " de madera de hierro, " + FindRussianQtyString(sti(pchar.questTemp.FMQL.Silk)) + " de barco de seda, " + FindRussianQtyString(sti(pchar.questTemp.FMQL.Rope)) + " de soga y " + FindRussianQtyString(sti(pchar.questTemp.FMQL.Oil)) + " de resina.";
+		link.l1 = "" + FindRussianQtyString(sti(pchar.questTemp.FMQL.Sanl)) + " de sándalo, " + FindRussianQtyString(sti(pchar.questTemp.FMQL.Silk)) + " de barco de seda, " + FindRussianQtyString(sti(pchar.questTemp.FMQL.Rope)) + " de soga y " + FindRussianQtyString(sti(pchar.questTemp.FMQL.Oil)) + " de resina.";
 		link.l1.go = "contra_2";
 		break;
 
 	case "contra_2": // Addon 2016-1 Jason пиратская линейка
 		iTotalTemp = 2200 * sti(pchar.questTemp.FMQL.Sanl) + 1600 * sti(pchar.questTemp.FMQL.Silk) + 1000 * sti(pchar.questTemp.FMQL.Rope) + 900 * sti(pchar.questTemp.FMQL.Oil);
-		dialog.text = "Muy bien. 2200 pesos por cada pieza de madera de hierro, 900 pesos por resina, 1600 pesos por seda de barco y 1000 pesos por cuerdas. ¿Qué tenemos aquí...? Bueno-bueno. " + iTotalTemp + " pesos. ¿Trato hecho?";
+		dialog.text = "Muy bien. 2200 pesos por cada pieza de sándalo, 900 pesos por resina, 1600 pesos por seda de barco y 1000 pesos por cuerdas. ¿Qué tenemos aquí...? Bueno-bueno. " + iTotalTemp + " pesos. ¿Trato hecho?";
 		link.l1 = "¡Trato hecho!";
 		link.l1.go = "contra_3";
 		break;

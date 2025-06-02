@@ -1,0 +1,56 @@
+IslaMona_1
+{
+Rodrigo
+}
+IslaMona_2
+{
+Jiménez
+}
+
+IslaMona_3
+{
+Mattina dopo...
+}
+
+IslaMona_4
+{
+Rodrigo Jimenez ha preparato un altro lotto di legna da ardere a Isla Mona
+}
+
+IslaMona_5
+{
+Hai consegnato @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> bottiglie di rum
+}
+
+IslaMona_6
+{
+Hai consegnato @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> bottiglie di vino
+}
+
+IslaMona_7
+{
+Aggiunto @<sti(pchar.questTemp.IslaMona.Factory.Goods)> di legnoFerro al tuo magazzino
+}
+
+IslaMona_8
+{
+Alonso
+}
+IslaMona_9
+{
+
+}
+
+IslaMona_10
+{
+Francisco
+}
+IslaMona_11
+{
+de Alba
+}
+
+IslaMona_12
+{
+A giudicare dai suoni, la trappola è stata un successo! È ora per il villaggio!
+}

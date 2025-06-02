@@ -58,7 +58,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			dialog.text = "Buen día. ¿Quieres algo de mí?";
-			link.l1 = " No, lo siento.";
+			link.l1 = "No, lo siento.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 		break;
@@ -227,9 +227,9 @@ void ProcessDialogEvent()
 		
 		// калеуче
 		case "caleuche":
-			PlaySound("Voice\Spanish\LSC\Chymiset-03.wav");
+			PlaySound("Voice\Spanish\LSC\Chymiset-05.wav");
 			dialog.text = "Síííí. ¡Las piedras sacrificiales corren rojas con la sangre de mis enemigos! ¡Yum Cimil me ha concedido su poder para comandar a los muertos! ¡Con este poder pronto gobernaré a los vivos!";
-			link.l1 = " Muy melodramático, Merriman. ¿Qué planeas hacer con tu ejército de cadáveres ambulantes? ¿Estás jugando a ser César, tratando de conquistar el mundo?";
+			link.l1 = "Muy melodramático, Merriman. ¿Qué planeas hacer con tu ejército de cadáveres ambulantes? ¿Estás jugando a ser César, tratando de conquistar el mundo?";
 			link.l1.go = "caleuche_1";
 			CreateLocationParticles("large_smoke", "goto", "goto37", 0.5, 0, 0, "");
 		break;
@@ -241,7 +241,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "caleuche_2":
-			PlaySound("Types\Spanish\warrior04.wav");
+			PlaySound("Types\Spanish\warrior07.wav");
 			dialog.text = "¡Oh ho ho! ¿Te atreverías a desafiarme a mí y a mis sirvientes esqueléticos? ¡Entonces contempla lo que realmente soy y tiembla de miedo!";
 			link.l1 = "Ven a por algo.";
 			link.l1.go = "caleuche_3";

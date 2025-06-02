@@ -262,7 +262,8 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 	int 	iNation;
 	int     iRnd; 
 	string amap, amulet; // dlc
-	
+    string tag = _location.id + _npchar.id + _npchar.name;
+
 	_location.box1 = Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear()); // нужно, чтоб не перетерлось
 	// нужно отметить, что в сундуке сгенерятся рандомные вещи, этот код срабатывает потом и правит токо деньги
 	
@@ -273,14 +274,14 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 	if (CheckAttribute(_npchar, "Ship.Name") && _npchar.Ship.Name == StringFromKey("QuestsUtilite_1") )
 	{
 		DeleteAttribute(_location, "box1");
-		if(drand(100) > 85)
+		if(hrand(100, tag) > 85)
 		{		
 			if(rand(1) == 0) { _location.box1.items.jewelry1 = rand(1500) + 461; }
 			if(rand(1) == 0) { _location.box1.items.jewelry2 = rand(800) + 1214; }
 			if(rand(1) == 0) { _location.box1.items.jewelry3 = rand(2210) + 750; }
 			if(rand(1) == 0) { _location.box1.items.jewelry4 = rand(3450) + 280; }
 			if(rand(1) == 0) { _location.box1.items.jewelry5 = rand(2471) + 370; }
-			iRnd = drand(4);
+			iRnd = hrand(4, tag);
 			switch (iRnd)
 			{
 				case 0:
@@ -310,7 +311,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		_location.box1.money = 12560 + rand(1000);
 		ok = false;
 	}
-		
+
 	// Осады  homo 22/10/06	 
 	if (findsubstr(_npchar.id, "SiegeCap_" , 0) != -1)
 	{
@@ -330,13 +331,12 @@ void FillAboardCabinBox(ref _location, ref _npchar)
             {
                 _location.box1.items.(idmap) = 1;
             }
-			if (drand(4) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты, 20% 250912
+			if (hrand(4, tag) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты, 20% 250912
 			{
 				amap = SelectAdmiralMaps();
 				if (amap != "") _location.box1.items.(amap)	= 1;
 			}
-			
-			if (drand(4) == 2 && sti(RealShips[sti(_npchar.ship.type)].Class) < 2) _location.box1.items.Hat5 = 1;
+			if (hrand(4, tag) == 2 && sti(RealShips[sti(_npchar.ship.type)].Class) < 2) _location.box1.items.Hat5 = 1;
 
 	        ok = false;
 		}
@@ -347,9 +347,9 @@ void FillAboardCabinBox(ref _location, ref _npchar)
         if (trap)
         {
             DeleteAttribute(_location, "box1");
-            _location.box1.money = (cRand(30)+1) * 40;
+            _location.box1.money = (hRand(30, tag)+1) * 40;
             _location.box1.items.blade_13 = 1;
-			if (drand(4) == 2 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
+			if (hrand(4, tag) == 2 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
 			{
 				amap = SelectAdmiralMaps();
 				if (amap != "") _location.box1.items.(amap)	= 1;
@@ -369,14 +369,14 @@ void FillAboardCabinBox(ref _location, ref _npchar)
         _location.box2.items.map_normal = 1;
 		}
 		
-		if(drand(100) > 75)
+		if(hrand(100, tag) > 75)
 		{		
-			if(rand(1) == 0) { _location.box1.items.jewelry1 = rand(1200) + 122; }
-			if(rand(1) == 0) { _location.box1.items.jewelry2 = rand(461)  + 225; }
-			if(rand(1) == 0) { _location.box1.items.jewelry3 = rand(515)  + 750; }
-			if(rand(1) == 0) { _location.box1.items.jewelry4 = rand(346)  + 311; }
-			if(rand(1) == 0) { _location.box1.items.jewelry5 = rand(678)  + 420; }
-			if(rand(1) == 0) { _location.box1.items.hat5 = 1; }
+			if(rand(1) == 0) _location.box1.items.jewelry1 = rand(1200) + 122;
+			if(rand(1) == 0) _location.box1.items.jewelry2 = rand(461)  + 225;
+			if(rand(1) == 0) _location.box1.items.jewelry3 = rand(515)  + 750;
+			if(rand(1) == 0) _location.box1.items.jewelry4 = rand(346)  + 311;
+			if(rand(1) == 0) _location.box1.items.jewelry5 = rand(678)  + 420;
+			if(rand(1) == 0) _location.box1.items.hat5 = 1;
 		}	
 		if (CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
 		{
@@ -452,27 +452,27 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		_location.box1.items.jewelry46 = rand(200);
 		DeleteAttribute(_location, "box2");
 		iRnd = rand(5);
-			switch (iRnd)
-			{
-				case 0:
-					_location.box2.items.cirass2 = 1; 
-				break;
-				case 1:
-					_location.box2.items.spyglass3 = 1; 
-				break;
-				case 2:
-					_location.box2.items.pistol5 = 1; 
-				break;
-				case 3:
-					_location.box2.items.blade_10 = 1; 
-				break;
-				case 4:
-					_location.box2.items.blade_15 = 1; 
-				break;
-				case 5:
-					_location.box2.items.pistol4 = 1; 
-				break;
-			}			
+        switch (iRnd)
+        {
+            case 0:
+                _location.box2.items.cirass2 = 1; 
+            break;
+            case 1:
+                _location.box2.items.spyglass3 = 1; 
+            break;
+            case 2:
+                _location.box2.items.pistol5 = 1; 
+            break;
+            case 3:
+                _location.box2.items.blade_10 = 1; 
+            break;
+            case 4:
+                _location.box2.items.blade_15 = 1; 
+            break;
+            case 5:
+                _location.box2.items.pistol4 = 1; 
+            break;
+        }			
         ok = false;
 	}
 	// ложный след, галеон
@@ -617,6 +617,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		_location.box2.items.berserker_potion = 3;
         ok = false;
 	}
+
 	// Моллиган, Устрица
 	if (_npchar.id == "Molligan" && CheckAttribute(PChar, "questTemp.Saga"))
 	{
@@ -639,7 +640,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		_location.box2.items.mineral31 = 1;
         ok = false;
 	}
-	
+
 	// Суп из черепахи
 	// Мартэн, Вольтижёр
 	if (_npchar.id == "Rober" && CheckAttribute(PChar, "questTemp.Terrapin"))
@@ -794,8 +795,8 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		 DeleteAttribute(_location, "box1");
         _location.box1.money = rand(10000);
 		_location.box1.items.gold_dublon = rand(50);
-		_location.box1.items.chest = drand(2);
-		amulet = SelectRandomArtefact(3);
+		_location.box1.items.chest = hrand(2, tag);
+		amulet = SelectRandomArtefact(3, tag);
 		_location.box1.items.(amulet) = 1;
 		_location.box1.items.ContraPostLetters = 1;
         ok = false;
@@ -807,9 +808,9 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		 DeleteAttribute(_location, "box1");
         _location.box1.money = rand(10000);
 		_location.box1.items.gold_dublon = rand(50);
-		amulet = SelectRandomArtefact(1);
+		amulet = SelectRandomArtefact(1, tag);
 		_location.box1.items.(amulet) = 1;
-		switch (drand(6))
+		switch (hrand(6, tag))
 		{
 			case 0: _location.box1.items.pistol3 = 1; break;
 			case 1: _location.box1.items.pistol5 = 1; break;
@@ -828,11 +829,11 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		 DeleteAttribute(_location, "box1");
         _location.box1.money = rand(15000);
 		_location.box1.items.gold_dublon = rand(100);
-		_location.box1.items.icollection = drand(3);
-		amulet = SelectRandomArtefact(2);
+		_location.box1.items.icollection = hrand(3, tag);
+		amulet = SelectRandomArtefact(2, tag);
 		_location.box1.items.(amulet) = 1;
-		if (drand(4) == 1) _location.box1.items.mushket3 = 1;
-		if (drand(4) == 3) _location.box1.items.mushket1 = 1;
+		if (hrand(4, "&CCC" + tag) == 1) _location.box1.items.mushket3 = 1;
+		else if (hrand(4, "&CCC" + tag) == 3) _location.box1.items.mushket1 = 1;
         ok = false;
 	}
 	
@@ -842,12 +843,12 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		 DeleteAttribute(_location, "box1");
         _location.box1.money = rand(5000);
 		_location.box1.items.gold_dublon = rand(30);
-		if (drand(3) == 0) _location.box1.items.mushket1 = 1;
-		amulet = SelectRandomArtefact(1);
+		if (hrand(3, tag) == 0) _location.box1.items.mushket1 = 1;
+		amulet = SelectRandomArtefact(1, tag);
 		_location.box1.items.(amulet) = 1;
-		amulet = SelectRandomArtefact(2);
+		amulet = SelectRandomArtefact(2, tag);
 		_location.box1.items.(amulet) = 1;
-		amulet = SelectRandomArtefact(3);
+		amulet = SelectRandomArtefact(3, tag);
 		_location.box1.items.(amulet) = 1;
         ok = false;
 	}
@@ -920,7 +921,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		
 		DeleteAttribute(_location, "box2");
 		_location.box2.items.clock1 = 1;
-		if (drand(2) == 2) _location.box2.items.cirass3 = 1;
+		if (hrand(2, tag) == 2) _location.box2.items.cirass3 = 1;
         ok = false;
 	}
 	// бригантина Утрехт
@@ -935,7 +936,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		
 		DeleteAttribute(_location, "box2");
 		_location.box2.items.purse1 = 1;
-		if (drand(4) == 1) _location.box2.items.pistol2 = 1;
+		if (hrand(4, tag) == 1) _location.box2.items.pistol2 = 1;
         ok = false;
 	}
 	// Розбоом
@@ -951,7 +952,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		
 		DeleteAttribute(_location, "box2");
 		_location.box2.items.spyglass2 = 1;
-		if (drand(3) == 1) _location.box2.items.blade_16 = 1;
+		if (hrand(3, tag) == 1) _location.box2.items.blade_16 = 1;
         ok = false;
 	}
 	// голландец по Игнасио
@@ -974,7 +975,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		_location.box1.items.chest = 1;
 		_location.box1.items.obereg_10 = 1;
 		_location.box1.items.amulet_8 = 1;
-		if (drand(3) == 3) _location.box1.items.spyglass4 = 1;
+		if (hrand(3, tag) == 3) _location.box1.items.spyglass4 = 1;
 		
         ok = false;
 	}
@@ -1175,6 +1176,15 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		
         ok = false;
 	}
+	// Брин по квесту "Торговля по закону"
+	if (_npchar.id == "TPZ_Pirate")
+	{
+		DeleteAttribute(_location, "box2");
+		_location.box2.items.potionrum = 100;
+		_location.box2.items.potionwine = 100;
+		
+        ok = false;
+	}
 	
     if (ok) // не квестовый
     {
@@ -1193,22 +1203,22 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 				else if (GetCharacterItem(pchar, "map_full") == 0 && GetCharacterItem(pchar, "map_part2") == 0)
                     _location.box1.items.map_part2 = 1;
 			}
-			FillCabinBoxMap(_location, 200 - (7 - iTemp) * 5); 
+			FillCabinBoxMap(_location, 200 - (8 - iTemp) * 5); 
 			if(rand(10) == 5) _location.box1.items.Chest_open = 1;
 			if(SandBoxMode && rand(9) == 7 && sti(pchar.rank) > 19) _location.box1.items.Hat8 = 1;
 		}
 		else
 		{
-			FillCabinBoxMap(_location, 250 - (7 - iTemp) * 5);
+			FillCabinBoxMap(_location, 250 - (8 - iTemp) * 5);
 		}
 		
 		if (CheckAttribute(_npchar, "Ship.Mode") && _npchar.Ship.Mode == "Trade")  // торговец
 		{
-			_location.box1.money = (10 - iTemp) * 200 + rand(10 - iTemp) * 2000 + rand(10)*50 + rand(6 - iTemp) * 4000;
+			_location.box1.money = (11 - iTemp) * 200 + rand(11 - iTemp) * 2000 + rand(10)*50 + rand(7 - iTemp) * 4000;
 			if(rand(5) > 2)
 			{
 				_location.box1.items.gold_dublon = rand(10) + 4;
-				if(drand(20) == 15) _location.box1.items.rat_poison = 1;		
+				if(hrand(20, tag) == 15) _location.box1.items.rat_poison = 1;		
 			}
 			
 			if(rand(10) == 1 && sti(RealShips[sti(_npchar.ship.type)].Class) == 3) _location.box1.items.Hat6 = 1;
@@ -1216,7 +1226,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		else // все остальные
 		{
 			if(rand(3) == 1) _location.box1.items.gunpowder = 5 + rand(10);
-			_location.box1.money = (10 - iTemp) * 90 + rand((10 - iTemp) * 2000);
+			_location.box1.money = (11 - iTemp) * 90 + rand((11 - iTemp) * 2000);
 			if(rand(4) == 1)
 			{
 				_location.box1.items.gold_dublon = rand(5) + 2;			
@@ -1224,7 +1234,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		}				
 		if (2-sti(RealShips[sti(_npchar.ship.type)].Class) > 0) // 1 класс
 		{
-			if (drand(2) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
+			if (hrand(2, tag) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
 			{
 				amap = SelectAdmiralMaps();
 				if (amap != "") _location.box1.items.(amap)	= 1;
@@ -1232,7 +1242,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		}
 		if (CheckAttribute(_npchar, "Ship.Mode") && _npchar.Ship.Mode == "war" && 2-sti(RealShips[sti(_npchar.ship.type)].Class) == 0) // военный 2 класс
 		{
-			if (drand(4) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
+			if (hrand(4, tag) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
 			{
 				amap = SelectAdmiralMaps();
 				if (amap != "") _location.box1.items.(amap)	= 1;
@@ -1240,17 +1250,17 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		}
 		if (CheckAttribute(_npchar, "Ship.Mode") && _npchar.Ship.Mode == "war" && 3-sti(RealShips[sti(_npchar.ship.type)].Class) == 0) // военный 3 класс
 		{
-			if (drand(6) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
+			if (hrand(6, tag) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
 			{
 				amap = SelectAdmiralMaps();
 				if (amap != "") _location.box1.items.(amap)	= 1;
 			}
 		}
-		if (CheckAttribute(pchar, "questTemp.Persian.skimitar") && drand(20) == 5 && 3-sti(RealShips[sti(_npchar.ship.type)].Class) >= 0) // 3 класс и выше. Скимитар - 5% 021012
+		if (CheckAttribute(pchar, "questTemp.Persian.skimitar") && hrand(20, tag) == 5 && 3-sti(RealShips[sti(_npchar.ship.type)].Class) >= 0) // 3 класс и выше. Скимитар - 5% 021012
 		{
 			_location.box1.items.blade_23 = 1;
 		}
-		if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && drand(3) == 3) // первый амулет на Калеуче
+		if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(3, tag) == 3) // первый амулет на Калеуче
 		{
 			_location.box1.items.kaleuche_amulet1 = 1;
 		}
@@ -1258,24 +1268,24 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		{
 			if(sti(pchar.rank) < 12)
 			{
-				if(drand(10) == 3)) _location.box1.items.hat1 = 1;
-				if(drand(10) == 8)) _location.box1.items.hat3 = 1;
+				if(hrand(10, "&SMW_hat" + tag) == 3)) _location.box1.items.hat1 = 1;
+				else if(hrand(10, "&SMW_hat" + tag) == 8)) _location.box1.items.hat3 = 1;
 			}
 			else
 			{
-				if(drand(10) == 3)) _location.box1.items.hat2 = 1;
-				if(drand(10) == 8)) _location.box1.items.hat4 = 1;
+				if(hrand(10, "&SMW_hat" + tag) == 3)) _location.box1.items.hat2 = 1;
+				else if(hrand(10, "&SMW_hat" + tag) == 8)) _location.box1.items.hat4 = 1;
 			}
 		}
 		// Озги
 		if (findsubstr(_npchar.id, "Hunter0" , 0) != -1)
 		{
-			if(rand(10) == 3)) _location.box1.items.hat7 = 1;
+			if(rand(10) == 3 && sti(pchar.rank) > 11) _location.box1.items.hat7 = 1;
 		}
 		// Джентельмен удачи
 		if (findsubstr(_npchar.id, "Follower0" , 0) != -1)
 		{
-			if(rand(10) == 4)) _location.box1.items.hat7 = 1;
+			if(rand(10) == 4 && sti(pchar.rank) > 11) _location.box1.items.hat7 = 1;
 		}
 		
     } else {
@@ -1295,7 +1305,7 @@ int SetQuestCharacterRank()
 // ==> две функции Эдди для крутизны невероятной.
 void FantomMakeCoolSailor(ref _Character, int _ShipType, string _ShipName, int _CannonsType, int _Sailing, int _Accuracy, int _Cannons)
 {
-    _Character.Ship.Cannons.Type = _CannonsType;
+    if(_CannonsType >= 0) _Character.Ship.Cannons.Type = _CannonsType;
 	_Character.skill.Sailing  = GetCoffDiff(_Sailing, SKILL_MAX);
 	_Character.skill.Accuracy = GetCoffDiff(_Accuracy, SKILL_MAX);
 	_Character.skill.Cannons  = GetCoffDiff(_Cannons, SKILL_MAX);
@@ -1307,8 +1317,8 @@ void FantomMakeCoolSailor(ref _Character, int _ShipType, string _ShipName, int _
 	_Character.AlwaysSandbankManeuver = true;
 
     _Character.Ship.Type = GenerateShipExt(_ShipType, true, _Character);
-    if (_ShipName == "none" || _ShipName == "") {SetRandomNameToShip(_Character)}
-    else {_Character.Ship.Name = _ShipName}
+    if (_ShipName == "none" || _ShipName == "") SetRandomNameToShip(_Character);
+    else _Character.Ship.Name = _ShipName;
 
     SetBaseShipData(_Character);
     SetCrewQuantityFull(_Character);
@@ -1337,7 +1347,7 @@ void FantomMakeCoolSailor(ref _Character, int _ShipType, string _ShipName, int _
 //Jason, функция уменьшенного кулсейлора + скилл защиты и абордажа
 void FantomMakeSmallSailor(ref _Character, int _ShipType, string _ShipName, int _CannonsType, int _Sailing, int _Accuracy, int _Cannons, int _Grappling, int _Defence)
 {
-    _Character.Ship.Cannons.Type = _CannonsType;
+	if(_CannonsType >= 0) _Character.Ship.Cannons.Type = _CannonsType;
 	_Character.skill.Sailing  = GetCoffDiff(_Sailing, SKILL_MAX);
 	_Character.skill.Accuracy = GetCoffDiff(_Accuracy, SKILL_MAX);
 	_Character.skill.Cannons  = GetCoffDiff(_Cannons, SKILL_MAX);
@@ -2413,9 +2423,16 @@ void SetQuestAboardCabinDialog(ref refChar)
 		// Леди Бет
 		if (refChar.CaptanId == "LadyBeth_cap")
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+			LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
 			refChar.Dialog.FileName = "Quest\LadyBeth_dialog.c";
 			refChar.Dialog.CurrentNode = "LadyBeth_abordage"; //даем абордажную ноду	
+		}
+		// квест "Торговля по закону"
+		if (refChar.CaptanId == "TPZ_Pirate")
+		{
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+			refChar.Dialog.FileName = "Quest\MiniEvents\TradingByLaw_dialog.c";
+			refChar.Dialog.CurrentNode = "Pirate_1"; //даем абордажную ноду	
 		}
 	}
 }
@@ -2610,7 +2627,7 @@ void SelectSlavetraderRendom() // работорговец, выбор горо�
 		int howStore = 0;
 		for(n=0; n<MAX_COLONIES; n++)
 		{			
-			if (colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && colonies[n].id != "FortOrange" && colonies[n].id != "Havana" && colonies[n].id != "Santiago" && colonies[n].id != "Portroyal" && colonies[n].id != "Villemstad" && colonies[n].id != "Charles" && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres")
+			if (colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && colonies[n].id != "FortOrange" && colonies[n].id != "Havana" && colonies[n].id != "Santiago" && colonies[n].id != "Portroyal" && colonies[n].id != "Villemstad" && colonies[n].id != "Charles" && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres")
 			{           
 				storeArray[howStore] = n;
 				howStore++;
@@ -4518,9 +4535,9 @@ string GetStrSmallRegister(string sBase)
 
 // Warship 15.08.09 -->
 // Перевод всей строки в верхний регистр
-string ToUpper(String _text)
+string ToUpper(string _text)
 {
-	String retString, symbol;
+	string retString, symbol;
 	retString = "";
 	int length = strlen(_text);
 	
@@ -4626,7 +4643,7 @@ string ToUpper(String _text)
 }
 
 // Первый символ в верхний регистр
-string UpperFirst(String _text)
+string UpperFirst(string _text)
 {
 	String firstSymbol = GetSymbol(_text, 0);
 	firstSymbol = ToUpper(firstSymbol);
@@ -4635,9 +4652,9 @@ string UpperFirst(String _text)
 }
 
 // Первый символ в нижний регистр
-string LowerFirst(String _text)
+string LowerFirst(string _text)
 {
-	String firstSymbol = GetSymbol(_text, 0);
+	string firstSymbol = GetSymbol(_text, 0);
 	firstSymbol = GetStrSmallRegister(firstSymbol);
 	
 	return firstSymbol + strcut(_text, 1, strlen(_text) - 1);
@@ -4961,7 +4978,7 @@ string DesIsland()//Jason выбор рандомной необитайки - �
 	return sIsland;
 }
 
-string FindFriendCityToMC(bool bRand)//Jason выбрать радномный дружественный к ГГ город - вынес сюда
+string FindFriendCityToMC(bool bRand) //Jason выбрать радномный дружественный к ГГ город - вынес сюда
 {
 	int n;
     int storeArray[2];
@@ -4976,7 +4993,7 @@ string FindFriendCityToMC(bool bRand)//Jason выбрать радномный �
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		bool notSameIsland = (curIsland < 0) || (Islands[curIsland].id != colonies[n].island);
-		if (notSameIsland && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].id != "IslaMona" && colonies[n].nation != "none" && colonies[n].nation != PIRATE && GetNationRelation(nation, sti(colonies[n].nation)) != RELATION_ENEMY) // mitrokosta фикс зависимости от флага
+		if (notSameIsland && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "IslaMona" && colonies[n].nation != "none" && colonies[n].nation != PIRATE && GetNationRelation(nation, sti(colonies[n].nation)) != RELATION_ENEMY) // mitrokosta фикс зависимости от флага
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -4984,11 +5001,11 @@ string FindFriendCityToMC(bool bRand)//Jason выбрать радномный �
 	}
 	if (howStore == 0) return "none";
 	if (bRand) nation = storeArray[Rand(howStore-1)];
-	else nation = storeArray[dRand(howStore-1)];
+	else nation = storeArray[hrand(howStore-1)]; // По умолчанию функция в диалоге, тэг пока не нужен
 	return colonies[nation].id;
 }
 
-string FindEnemyCityToMC(bool bRand)//Jason выбрать радномный враждебный к ГГ город - вынес сюда
+string FindEnemyCityToMC(bool bRand) //Jason выбрать радномный враждебный к ГГ город - вынес сюда
 {
 	int n;
     int storeArray[2];
@@ -5003,7 +5020,7 @@ string FindEnemyCityToMC(bool bRand)//Jason выбрать радномный в
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		bool notSameIsland = (curIsland < 0) || (Islands[curIsland].id != colonies[n].island);
-		if (notSameIsland && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].id != "IslaMona" && colonies[n].nation != "none" && colonies[n].nation != PIRATE && GetNationRelation(nation, sti(colonies[n].nation)) == RELATION_ENEMY) // mitrokosta фикс зависимости от флага
+		if (notSameIsland && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "IslaMona" && colonies[n].nation != "none" && colonies[n].nation != PIRATE && GetNationRelation(nation, sti(colonies[n].nation)) == RELATION_ENEMY) // mitrokosta фикс зависимости от флага
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -5011,7 +5028,7 @@ string FindEnemyCityToMC(bool bRand)//Jason выбрать радномный в
 	}
 	if (howStore == 0) return "none";
 	if (bRand) nation = storeArray[Rand(howStore-1)];
-	else nation = storeArray[dRand(howStore-1)];
+	else nation = storeArray[hrand(howStore-1)]; // По умолчанию функция в диалоге, тэг пока не нужен
 	return colonies[nation].id;
 }
 
@@ -5027,7 +5044,7 @@ neutral - только нейтральные колонии
 all," " или другое значение - любая колония независимо от отношений
 int _Nation - выборка среди определённой нации, ставить -1, если такая не нужна
 bool pirate - true - включая пиратские колонии, false - исключая пиратские колонии
-bool bRand - вид рандома true - обычный rand(), false - drand()
+bool bRand - вид рандома true - обычный rand(), false - hrand()
 */
 string FindQuestCity(ref ch, string relation, int _nation, bool bpirate, bool bRand)
 {
@@ -5042,14 +5059,14 @@ string FindQuestCity(ref ch, string relation, int _nation, bool bpirate, bool bR
 	{
 		nationSort = false;
 		if(bRand) _nation = rand(4);
-		else _nation = drand(4);
+		else _nation = hrand(4); // По умолчанию в диалоге, тэг пока не нужен
 	}
 	int curIsland = GetCharacterCurrentIsland(pchar);
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		bool notSameIsland = (curIsland < 0) || (Islands[curIsland].id != colonies[n].island);
-		if(notSameIsland && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].id != "IslaMona" && colonies[n].nation != "none")
+		if(notSameIsland && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "IslaMona" && colonies[n].nation != "none")
 		{
 			if(!bpirate && colonies[n].nation == PIRATE) continue;
 			if(relation == "enemy" && GetNationRelation(nation, sti(colonies[n].nation)) != RELATION_ENEMY) continue;
@@ -5063,7 +5080,7 @@ string FindQuestCity(ref ch, string relation, int _nation, bool bpirate, bool bR
 	}
 	if (howStore == 0) return "none";
 	if (bRand) nation = storeArray[Rand(howStore-1)];
-	else nation = storeArray[dRand(howStore-1)];
+	else nation = storeArray[hrand(howStore-1)];
 	return colonies[nation].id;
 }
 // <-- legendary edition
@@ -5071,113 +5088,88 @@ string FindQuestCity(ref ch, string relation, int _nation, bool bpirate, bool bR
 void SelectLevelWarShipParameter()//Jason автолевеллинг на военные корабли противника
 {
 	int iShipRank;
-	if(sti(pchar.rank) >= 30) iShipRank = 5;
-	if(sti(pchar.rank) >= 24 && sti(pchar.rank) < 30) iShipRank = 4;	
-	if(sti(pchar.rank) >= 19 && sti(pchar.rank) < 24) iShipRank = 3;	
-	if(sti(pchar.rank) >= 14 && sti(pchar.rank) < 19) iShipRank = 2;
-	if(sti(pchar.rank) >= 7 && sti(pchar.rank) < 14) iShipRank = 1;	
-	if(sti(pchar.rank) < 7) iShipRank = 0;
+	if(sti(pchar.rank) >= 30) iShipRank = 4;
+	if(sti(pchar.rank) >= 21 && sti(pchar.rank) < 30) iShipRank = 3;
+	if(sti(pchar.rank) >= 12 && sti(pchar.rank) < 21) iShipRank = 2;
+	if(sti(pchar.rank) >= 6 && sti(pchar.rank) < 12) iShipRank = 1;
+	if(sti(pchar.rank) < 6) iShipRank = 0;
+	
+	int iClassFlag = FLAG_SHIP_CLASS_6;
 	switch (iShipRank)
 	{
 		case 0:  
-			iGlobalTemp = SHIP_CAREERLUGGER + rand(makeint(SHIP_SLOOP - SHIP_CAREERLUGGER));     					
+			iClassFlag = FLAG_SHIP_CLASS_6;					
 			iTotalTemp = CANNON_TYPE_CANNON_LBS6;
 			sTotalTemp = "blade_12";
-		break; 	
+		break; 
 		case 1:  
-			iGlobalTemp = SHIP_BRIGANTINE + rand(makeint(SHIP_SCHOONER_W - SHIP_BRIGANTINE));					
+			iClassFlag = FLAG_SHIP_CLASS_5;					
 			iTotalTemp = CANNON_TYPE_CANNON_LBS12;
 			sTotalTemp = "blade_14";
-		break; 		
+		break; 	
 		case 2:  
-			iGlobalTemp = SHIP_GALEON_L + rand(makeint(SHIP_POLACRE - SHIP_GALEON_L));			
+			iClassFlag = FLAG_SHIP_CLASS_4;				
 			iTotalTemp = CANNON_TYPE_CANNON_LBS16;
 			sTotalTemp = "blade_13";
-		break; 
-		case 3: 
-			iGlobalTemp = SHIP_GALEON_L + rand(makeint(SHIP_POLACRE - SHIP_GALEON_L));			
-			iTotalTemp = CANNON_TYPE_CULVERINE_LBS18;
-			sTotalTemp = "blade_13";
-		break; 
-		case 4: 
-			iGlobalTemp = SHIP_GALEON_H + rand(makeint(SHIP_FRIGATE_H - SHIP_GALEON_H));         			
-			iTotalTemp = CANNON_TYPE_CANNON_LBS24;
+		break; 		
+		case 3:  
+			iClassFlag = FLAG_SHIP_CLASS_4 + FLAG_SHIP_CLASS_3;	
+			iTotalTemp = CANNON_TYPE_CANNON_LBS16;
 			sTotalTemp = "blade_15";
 		break; 
-		case 5: 
-			iGlobalTemp = SHIP_GALEON_H + rand(makeint(SHIP_LINESHIP - SHIP_GALEON_H));  						
-			iTotalTemp = CANNON_TYPE_CANNON_LBS32;
+		case 4: 
+			iClassFlag = FLAG_SHIP_CLASS_2;		
+			iTotalTemp = CANNON_TYPE_CULVERINE_LBS18;
 			sTotalTemp = "blade_19";
-		break;  				
+		break;			
 	}
+	
+	iGlobalTemp = GetRandomShipType(iClassFlag, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY);
 }
 
 void SelectLevelTradeShipParameter()//Jason автолевеллинг на торговые корабли противника
 {
 	int iShipRank;
-	if(sti(pchar.rank) >= 30) iShipRank = 5;
-	if(sti(pchar.rank) >= 23 && sti(pchar.rank) < 30) iShipRank = 4;	
-	if(sti(pchar.rank) >= 17 && sti(pchar.rank) < 23) iShipRank = 3;	
-	if(sti(pchar.rank) >= 11 && sti(pchar.rank) < 17) iShipRank = 2;
-	if(sti(pchar.rank) >= 5 && sti(pchar.rank) < 11) iShipRank = 1;	
+	if(sti(pchar.rank) >= 26) iShipRank = 4;
+	if(sti(pchar.rank) >= 17 && sti(pchar.rank) < 26) iShipRank = 3;	
+	if(sti(pchar.rank) >= 10 && sti(pchar.rank) < 17) iShipRank = 2;
+	if(sti(pchar.rank) >= 5 && sti(pchar.rank) < 10) iShipRank = 1;	
 	if(sti(pchar.rank) < 5) iShipRank = 0;
 	switch (iShipRank)
 	{
 		case 0:  
-			iGlobalTemp = SHIP_BARQUE;     					
+			iGlobalTemp = GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY);
 			iTotalTemp = CANNON_TYPE_CANNON_LBS3;
 			sTotalTemp = "blade_03";
 		break; 	
 		case 1:  
-			iGlobalTemp = SHIP_BARQUE + rand(makeint(SHIP_BARKENTINE - SHIP_BARQUE));					
+			iGlobalTemp = GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY);
 			iTotalTemp = CANNON_TYPE_CANNON_LBS6;
 			sTotalTemp = "blade_05";
 		break; 		
 		case 2:  
-			iGlobalTemp = SHIP_SHNYAVA + rand(makeint(SHIP_FLEUT - SHIP_SHNYAVA));			
-			iTotalTemp = CANNON_TYPE_CANNON_LBS12;
+			iGlobalTemp = GetRandomShipType(FLAG_SHIP_CLASS_4 + FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY);
+			iTotalTemp = CANNON_TYPE_CANNON_LBS6;
 			sTotalTemp = "blade_07";
 		break; 
 		case 3: 
-			iGlobalTemp = SHIP_CARAVEL + rand(makeint(SHIP_CARACCA - SHIP_CARAVEL));		
-			iTotalTemp = CANNON_TYPE_CANNON_LBS16;
+			iGlobalTemp = GetRandomShipType(FLAG_SHIP_CLASS_3 + FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY);
+			iTotalTemp = CANNON_TYPE_CANNON_LBS8;
 			sTotalTemp = "blade_10";
 		break; 
 		case 4: 
-			iGlobalTemp = SHIP_NAVIO + rand(makeint(SHIP_EASTINDIAMAN - SHIP_NAVIO));         			
-			iTotalTemp = CANNON_TYPE_CANNON_LBS20;
+			iGlobalTemp = GetRandomShipType(FLAG_SHIP_CLASS_2 + FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY);
+			iTotalTemp = CANNON_TYPE_CANNON_LBS16;
 			sTotalTemp = "blade_06";
-		break; 
-		case 5: 
-			iGlobalTemp = SHIP_NAVIO + rand(makeint(SHIP_EASTINDIAMAN - SHIP_NAVIO));         			
-			iTotalTemp = CANNON_TYPE_CANNON_LBS24;
-			sTotalTemp = "blade_13";
-		break;  				
+		break; 		
 	}
 }
 
 int SelectLevelCannonParameter(int iShipType)//Jason автолевеллинг на орудия - иногда надо
 {
-	int iCannon = CANNON_TYPE_CANNON_LBS12;
-	if (rand(1) == 1) iCannon = CANNON_TYPE_CANNON_LBS16;
+	ref refBaseShip = GetRealShip(iShipType);
 	
-	if (iShipType < SHIP_BRIGANTINE) iCannon = CANNON_TYPE_CANNON_LBS6;
-	
-	if (iShipType > SHIP_SCHOONER_W && iShipType < SHIP_GALEON_H)
-	{
-		if (rand(1) == 1) iCannon = CANNON_TYPE_CANNON_LBS20;
-		else iCannon = CANNON_TYPE_CULVERINE_LBS18;
-	}
-	
-	if (iShipType == SHIP_FRIGATE) iCannon = CANNON_TYPE_CANNON_LBS24;
-	
-	if (iShipType == SHIP_GALEON_H || iShipType == SHIP_FRIGATE_H)
-	{
-		if (rand(1) == 1) iCannon = CANNON_TYPE_CANNON_LBS24;
-		else iCannon = CANNON_TYPE_CANNON_LBS32;
-	}
-	
-	if (iShipType >= SHIP_LINESHIP) iCannon = CANNON_TYPE_CANNON_LBS32;
+	int iCannon = GetCannonByTypeAndCaliber(RandPhraseSimple("cannon","culverine"), sti(refBaseShip.MaxCaliber));
 	
 	return iCannon;
 }
@@ -5246,7 +5238,7 @@ bool LSC_CheckShips() // проверка, можно ли подойти к о�
 	return true;
 }
 
-void SetPassengerParameter(string _sIndex, bool bEnemy)//Jason, общие параметры пассажиров
+void SetPassengerParameter(string _sIndex, bool bEnemy) //Jason, общие параметры пассажиров
 {
 	if(CheckAttribute(pchar, "questTemp.StatusCity"))
 	{
@@ -5265,7 +5257,7 @@ void SetPassengerParameter(string _sIndex, bool bEnemy)//Jason, общие па�
 	if (DaysQty < 1) DaysQty = 10; // оставлю на всяк пожарный пока
 	pchar.GenQuest.(_sIndex).DaysQty = makeint(sti(DaysQty)*(frand(1.5)+1.0)); //дни
 	float fShipIdx;
-	switch(6-sti(RealShips[sti(Pchar.Ship.Type)].Class))
+	switch(7-sti(RealShips[sti(Pchar.Ship.Type)].Class))
 	{
 		case 0: fShipIdx = 1.0; break;
 		case 1: fShipIdx = 1.2;	break;
@@ -5273,6 +5265,7 @@ void SetPassengerParameter(string _sIndex, bool bEnemy)//Jason, общие па�
 		case 3: fShipIdx = 2.2; break;
 		case 4: fShipIdx = 3.0; break;
 		case 5:	fShipIdx = 4.5; break;
+		case 6:	fShipIdx = 5.0; break;
 	}
 	pchar.GenQuest.(_sIndex).Money = (sti(DaysQty)*500*stf(fShipIdx)+rand(100))*sti(DaysQty)/sti(pchar.GenQuest.(_sIndex).DaysQty);
 	if (bEnemy) pchar.GenQuest.(_sIndex).Money = makeint(sti(pchar.GenQuest.(_sIndex).Money) / 50); //оплата в дублонах
@@ -5456,7 +5449,7 @@ void Tortuga_SetShipGuard()
 		sld = GetCharacter(NPC_GenerateCharacter("TortugaGuardCap_"+i, "citiz_"+(rand(9)+51), "man", "man", 45, FRANCE, -1, true, "soldier"));	
 		FantomMakeCoolFighter(sld, 45, 110, 100, "blade_19", "pistol5", "bullet", 200);
 		FantomMakeCoolSailor(sld, iShipType, "", iCannonType, 110, 110, 110);
-		SelAllPerksToChar(sld, false);
+		SetAllPerksToChar(sld, false);
 		sld.Ship.Mode = "mercenary";
 		sld.DontRansackCaptain = true;
 		sld.AnalizeShips = true;
@@ -5534,7 +5527,7 @@ void Tortuga_BranderGo(string qName) // 2015
 		sld = GetCharacter(NPC_GenerateCharacter("TortugaGuardCapAdd_"+i, "citiz_"+(rand(9)+51), "man", "man", 45, FRANCE, 1, true, "soldier"));	
 		FantomMakeCoolFighter(sld, 45, 110, 100, "blade_19", "pistol5", "bullet", 200);
 		FantomMakeCoolSailor(sld, iShipType, "", iCannonType, 110, 110, 110);
-		SelAllPerksToChar(sld, false);
+		SetAllPerksToChar(sld, false);
 		sld.Ship.Mode = "mercenary";
 		sld.DontRansackCaptain = true;
 		sld.AnalizeShips = true;
@@ -5590,76 +5583,82 @@ void Map_NationQuestHunter(int Nation)//квестовый энкаунтер-о
 
 void FillShorechestBox(string loc, int n, int i) // Jason: заполнение выброшенных на берег сундуков
 {
-
 	pchar.GenQuestBox.(loc) = true;
 	string boxx = "box"+n;
-	string sgem1 = "jewelry"+(drand(3)+1);
-	string sgem2 = "jewelry"+(drand(9)+14);
-	string sring = "jewelry"+(drand(11)+40);
-	string smin1 = "mineral"+(drand(12)+1);
-	string smin2 = "mineral"+(drand(14)+12);
-	string sind = "indian_"+(drand(10)+1);
-	string saml = "amulet_"+(drand(10)+1);
-	string sobr = "obereg_"+(drand(10)+1);
-	string srec = "recipe_totem_0"+(drand(8)+1);
-	string srecd = "recipe_totem_"+(drand(3)+10);
+
+    // На if'ах оставил старую логику (TO_DO: переверить)
+    // За счёт "&" для каждой конкретной loc в конкретный день используется одна и та же дробь
+    string tag2 = loc + boxx;
+    string tag  = "&SBoxx" + tag2;
+
+	string sgem1 = "jewelry"+(hrand(3, tag2)+1);
+	string sgem2 = "jewelry"+(hrand(9, tag2)+14);
+	string sring = "jewelry"+(hrand(11, tag2)+40);
+	string smin1 = "mineral"+(hrand(12, tag2)+1);
+	string smin2 = "mineral"+(hrand(14, tag2)+12);
+	string sind  = "indian_"+(hrand(10, tag2)+1);
+	string saml  = "amulet_"+(hrand(10, tag2)+1);
+	string sobr  = "obereg_"+(hrand(10, tag2)+1);
+	string srec  = "recipe_totem_0"+(hrand(8, tag2)+1);
+	string srecd = "recipe_totem_" +(hrand(3, tag2)+10);
+
 	switch (i)
 	{
 		// good
 		case 0:
 			if (rand(1) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).money = drand(7000);
+            	pchar.GenQuestBox.(loc).(boxx).money = hrand(7000, tag2);
 	        }
 			if (rand(1) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.gold_dublon = 30+drand(100);
+            	pchar.GenQuestBox.(loc).(boxx).items.gold_dublon = 30+hrand(100, tag2);
 	        }
 		    if (rand(1) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.(sgem1) = 2+drand(10);
+            	pchar.GenQuestBox.(loc).(boxx).items.(sgem1) = 2+hrand(10, tag2);
 	        }
 	        else
 	        {
-	            pchar.GenQuestBox.(loc).(boxx).items.(sgem2) = 5+drand(20);
+	            pchar.GenQuestBox.(loc).(boxx).items.(sgem2) = 5+hrand(20, tag2);
 	        }
-	        if (drand(10) > 6)
+	        if (hrand(10, tag) > 6)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.jewelry8 = drand(12);
+            	pchar.GenQuestBox.(loc).(boxx).items.jewelry8 = hrand(12, tag2);
 	        }
 	        if (rand(1) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.(sring) = 1+drand(9);
+            	pchar.GenQuestBox.(loc).(boxx).items.(sring) = 1+hrand(9, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.potion3 = 5+drand(15);
+            	pchar.GenQuestBox.(loc).(boxx).items.potion3 = 5+hrand(15, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.potion1 = 5+drand(25);
+            	pchar.GenQuestBox.(loc).(boxx).items.potion1 = 5+hrand(25, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.(smin1) = 1+drand(6);
+            	pchar.GenQuestBox.(loc).(boxx).items.(smin1) = 1+hrand(6, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.(smin2) = 1+drand(7);
+            	pchar.GenQuestBox.(loc).(boxx).items.(smin2) = 1+hrand(7, tag2);
 	        }
-	        if (drand(30) == 5)
+	        if (hrand(30, tag) == 5)
 	        {
             	pchar.GenQuestBox.(loc).(boxx).items.(sind) = 1;
 	        }
-	        if (drand(30) == 15)
+	        if (hrand(30, tag) == 15)
 	        {
             	pchar.GenQuestBox.(loc).(boxx).items.(saml) = 1;
 	        }
-			if (drand(30) == 25)
+			if (hrand(30, tag) == 25)
 	        {
             	pchar.GenQuestBox.(loc).(boxx).items.(sobr) = 1;
 	        }
-	        if (drand(9) == 3)
+	        if (hrand(9, tag) == 3)
 	        {
             	pchar.GenQuestBox.(loc).(boxx).items.cirass6 = 1;
 	        }
@@ -5668,11 +5667,11 @@ void FillShorechestBox(string loc, int n, int i) // Jason: заполнение 
 	    case 1:
 			if (rand(1) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).money = drand(15000);
+            	pchar.GenQuestBox.(loc).(boxx).money = hrand(15000, tag2);
 	        }
             if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.chest = 1+drand(3);
+            	pchar.GenQuestBox.(loc).(boxx).items.chest = 1+hrand(3, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
@@ -5680,62 +5679,62 @@ void FillShorechestBox(string loc, int n, int i) // Jason: заполнение 
 	        }
 	        if (rand(1) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.(sgem1) = 20+drand(40);
+            	pchar.GenQuestBox.(loc).(boxx).items.(sgem1) = 20+hrand(40, tag2);
 	        }
 	        if (rand(1) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.jewelry53 = 15+drand(100);
+            	pchar.GenQuestBox.(loc).(boxx).items.jewelry53 = 15+hrand(100, tag2);
 	        }
 	        if (rand(1) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.jewelry52 = 15+drand(100);
+            	pchar.GenQuestBox.(loc).(boxx).items.jewelry52 = 15+hrand(100, tag2);
 	        }
 	        if (rand(1) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.jewelry8 = 5+drand(30);
+            	pchar.GenQuestBox.(loc).(boxx).items.jewelry8 = 5+hrand(30, tag2);
 	        }
-			if (drand(3) == 1)
+			if (hrand(3, tag) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.jewelry9 = drand(2);
+            	pchar.GenQuestBox.(loc).(boxx).items.jewelry9 = hrand(2, tag2);
 	        }
-	        if (drand(4) == 1)
+	        if (hrand(4, tag) == 1)
 	        {
             	pchar.GenQuestBox.(loc).(boxx).items.cirass7 = 1;
 	        }
 			if (rand(1) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.(sring) = 10+drand(25);
+            	pchar.GenQuestBox.(loc).(boxx).items.(sring) = 10+hrand(25, tag2);
 	        }
-			if (drand(5) == 1)
+			if (hrand(5, tag) == 1)
 			{
 				pchar.GenQuestBox.(loc).(boxx).items.rat_poison = 1;
 			}
-			if (drand(5) == 1)
+			if (hrand(5, tag) == 1)
 			{
 				pchar.GenQuestBox.(loc).(boxx).items.(srec) = 1;
 			}
 			if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.potion2 = 5+drand(15);
+            	pchar.GenQuestBox.(loc).(boxx).items.potion2 = 5+hrand(15, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.potion4 = 5+drand(15);
+            	pchar.GenQuestBox.(loc).(boxx).items.potion4 = 5+hrand(15, tag2);
 	        }
 	    break;
 	    // bad
 	    case 2:
 			if (rand(1) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).money = drand(1000);
+            	pchar.GenQuestBox.(loc).(boxx).money = hrand(1000, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.slave_01 = drand(5);
+            	pchar.GenQuestBox.(loc).(boxx).items.slave_01 = hrand(5, tag2);
 	        }
 	        else
 	        {
-                pchar.GenQuestBox.(loc).(boxx).items.blade_05 = drand(5);
+                pchar.GenQuestBox.(loc).(boxx).items.blade_05 = hrand(5, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
@@ -5747,7 +5746,7 @@ void FillShorechestBox(string loc, int n, int i) // Jason: заполнение 
 	        }
 	        if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.(sgem2) = 1+drand(2);
+            	pchar.GenQuestBox.(loc).(boxx).items.(sgem2) = 1+hrand(2, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
@@ -5771,59 +5770,59 @@ void FillShorechestBox(string loc, int n, int i) // Jason: заполнение 
 	        }
 	        if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.potion5 = 1+drand(20);
+            	pchar.GenQuestBox.(loc).(boxx).items.potion5 = 1+hrand(20, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.jewelry51 = +drand(10);
+            	pchar.GenQuestBox.(loc).(boxx).items.jewelry51 = +hrand(10, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.jewelry49 = drand(5);
+            	pchar.GenQuestBox.(loc).(boxx).items.jewelry49 = hrand(5, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.jewelry48 = drand(11);
+            	pchar.GenQuestBox.(loc).(boxx).items.jewelry48 = hrand(11, tag2);
 	        }
 	        if (rand(2) == 1)
 	        {
             	pchar.GenQuestBox.(loc).(boxx).items.jewelry9 = 1;
 	        }
-	        if (drand(9) == 1)
+	        if (hrand(9, tag) == 1)
 	        {
             	pchar.GenQuestBox.(loc).(boxx).items.cirass1 = 1;
 	        }
-			 if (drand(100) == 30)
+			 if (hrand(100, tag) == 30)
 	        {
             	pchar.GenQuestBox.(loc).(boxx).items.(sind) = 1;
 	        }
-			if (drand(100) == 60)
+			if (hrand(100, tag) == 60)
 	        {
             	pchar.GenQuestBox.(loc).(boxx).items.(saml) = 1;
 	        }
-			if (drand(100) == 90)
+			if (hrand(100, tag) == 90)
 	        {
             	pchar.GenQuestBox.(loc).(boxx).items.(sobr) = 1;
 	        }
-	        if (drand(9) == 5)
+	        if (hrand(9, tag) == 5)
 	        {
             	pchar.GenQuestBox.(loc).(boxx).items.cirass6 = 1;
 	        }
 	    break;
 		// gold
 		case 3:
-	        if (drand(1) == 1 && GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+drand(50)+drand(50))
+	        if (hrand(1, tag2) == 1 && GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10 + hrand(50, tag2 + "1") + hrand(50, tag2 + "2"))
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.jewelry5 = 500+drand(500);
+            	pchar.GenQuestBox.(loc).(boxx).items.jewelry5 = 500+hrand(500, tag2);
 	        }
 			else
 			{
-				pchar.GenQuestBox.(loc).(boxx).items.potionwine = 60+drand(40);
-				if (drand(12) == 10)
+				pchar.GenQuestBox.(loc).(boxx).items.potionwine = 60+hrand(40, tag2);
+				if (hrand(12, tag) == 10)
 				{
 					pchar.GenQuestBox.(loc).(boxx).items.(srecd) = 1;
 				}
-				if (drand(10) == 6)
+				if (hrand(10, tag) == 6)
 				{
 					pchar.GenQuestBox.(loc).(boxx).items.(srec) = 1;
 				}
@@ -5831,18 +5830,18 @@ void FillShorechestBox(string loc, int n, int i) // Jason: заполнение 
 	    break;
 		// silver
 		case 4:
-	        if (drand(1) == 0 && GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+drand(50)+drand(50))
+	        if (hrand(1, tag2) == 0 && GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10 + hrand(50, tag2 + "1") + hrand(50, tag2 + "2"))
 	        {
-            	pchar.GenQuestBox.(loc).(boxx).items.jewelry6 = 1000+drand(1000);
+            	pchar.GenQuestBox.(loc).(boxx).items.jewelry6 = 1000+hrand(1000, tag2);
 	        }
 			else
 			{
-				pchar.GenQuestBox.(loc).(boxx).items.potionrum = 60+drand(40);
-				if (drand(12) == 10)
+				pchar.GenQuestBox.(loc).(boxx).items.potionrum = 60+hrand(40, tag2);
+				if (hrand(12, tag) == 10)
 				{
 					pchar.GenQuestBox.(loc).(boxx).items.(srecd) = 1;
 				}
-				if (drand(10) == 6)
+				if (hrand(10, tag) == 6)
 				{
 					pchar.GenQuestBox.(loc).(boxx).items.(srec) = 1;
 				}
@@ -5852,19 +5851,19 @@ void FillShorechestBox(string loc, int n, int i) // Jason: заполнение 
 		case 5:
 			if (rand(1) == 1)
 			{
-				pchar.GenQuestBox.(loc).(boxx).items.GunPowder = 50+drand(50);
+				pchar.GenQuestBox.(loc).(boxx).items.GunPowder = 50+hrand(50, tag2);
 			}
 			if (rand(1) == 1)
 			{
-				pchar.GenQuestBox.(loc).(boxx).items.bullet = 50+drand(50);
+				pchar.GenQuestBox.(loc).(boxx).items.bullet = 50+hrand(50, tag2);
 			}
 			if (rand(1) == 1)
 			{
-				pchar.GenQuestBox.(loc).(boxx).items.grapeshot = 50+drand(50);
+				pchar.GenQuestBox.(loc).(boxx).items.grapeshot = 50+hrand(50, tag2);
 			}
 			if (rand(2) == 1)
 			{
-				pchar.GenQuestBox.(loc).(boxx).items.cartridge = 25+drand(25);
+				pchar.GenQuestBox.(loc).(boxx).items.cartridge = 25+hrand(25, tag2);
 			}
 			if (rand(3) == 1)
 			{
@@ -5878,7 +5877,7 @@ void FillShorechestBox(string loc, int n, int i) // Jason: заполнение 
 			{
 				pchar.GenQuestBox.(loc).(boxx).items.clock1 = 1;
 			}
-			if (drand(5) == 2)
+			if (hrand(5, tag) == 2)
 			{
 				pchar.GenQuestBox.(loc).(boxx).items.pistol3 = 1;
 			}
@@ -5886,11 +5885,11 @@ void FillShorechestBox(string loc, int n, int i) // Jason: заполнение 
 			{
 				pchar.GenQuestBox.(loc).(boxx).items.pistol1 = 2;
 			}
-			if (drand(20) == 5)
+			if (hrand(20, tag) == 5)
 			{
 				pchar.GenQuestBox.(loc).(boxx).items.pistol6 = 1;
 			}
-			if (drand(10) == 1)
+			if (hrand(10, tag) == 1)
 			{
 				pchar.GenQuestBox.(loc).(boxx).items.(srec) = 1;
 			}
@@ -6161,7 +6160,7 @@ string SelectAdmiralMaps() // выбор случайной не повторя�
 		sTemp = map[i];
 		if (!CheckAttribute(sld, "quest.map." + sTemp))
         {
-			if(CheckAttribute(&Render, "map_a." + sTemp))
+			if(CheckAttribute(&TreasureTiers[0], "map_a." + sTemp))
                 continue; // Если есть такой атрибут, значит мы сейчас генерим карту в клад, и там такая уже лежит
             storeArray[howStore] = sTemp;
 			howStore++;
@@ -6179,7 +6178,7 @@ string SelectAdmiralMaps() // выбор случайной не повторя�
 void GiveAdmiralMapToCharacter(ref chr, int abl) // дать случайную с рандомом
 {
 	if (!CheckAttribute(pchar, "questTemp.AdmiralMap")) return;
-	if (drand(abl) == 0)
+	if (hrand(abl, chr.id + chr.name) == 0)
 	{
 		string amap = SelectAdmiralMaps();
 		if (amap != "") GiveItem2Character(chr, amap);
@@ -6417,36 +6416,41 @@ string CheckNIdentifyPersian()
 
 void CaveEnc_FillSkeleton(ref chr, int i) // лут для скелетов в пещерах
 {
+    // На if'ах оставил старую логику (TODO: переверить)
+    // За счёт "&" для каждого конкретного chr в конкретный день используется одна и та же дробь
+    string tag2 = chr.id + chr.name;
+    string tag  = "&FillSkeleton" + tag2;
+
 	switch (i)
 	{
 		case 0:
-			if (drand(7) == 0) TakeNItems(chr, "gold_dublon", drand(50));// Addon-2016 Jason
-			if (drand(7) == 1) TakeNItems(chr, "chest", drand(1));
-			if (drand(7) == 2) TakeNItems(chr, "purse"+(drand(2)+1), 1);
-			if (drand(7) > 2) TakeNItems(chr, "mineral"+(drand(12)+1), drand(5));
+			if (hrand(7, tag) == 0) TakeNItems(chr, "gold_dublon", hrand(50, tag2)); // Addon-2016 Jason
+			else if (hrand(7, tag) == 1) TakeNItems(chr, "chest", hrand(1, tag2));
+			else if (hrand(7, tag) == 2) TakeNItems(chr, "purse"+(hrand(2, tag2)+1), 1);
+			else if (hrand(7, tag) >  2) TakeNItems(chr, "mineral"+(hrand(12, tag2)+1), hrand(5, tag2 + "2"));
 		break;
 	
 		case 1:
-			if (drand(6) == 0) TakeNItems(chr, "indian_"+(drand(10)+1), 1);
-			if (drand(6) == 1) TakeNItems(chr, "blade_0"+(drand(2)+7), 1);
-			if (drand(6) == 2) TakeNItems(chr, "pistol1", 1);
-			if (drand(6) > 2) TakeNItems(chr, "mineral"+(drand(13)+13), drand(2));
+			if (hrand(6, tag) == 0) TakeNItems(chr, "indian_"+(hrand(10, tag2)+1), 1);
+			else if (hrand(6, tag) == 1) TakeNItems(chr, "blade_0"+(hrand(2,  tag2)+7), 1);
+			else if (hrand(6, tag) == 2) TakeNItems(chr, "pistol1", 1);
+			else if (hrand(6, tag) >  2) TakeNItems(chr, "mineral"+(hrand(13, tag2)+13), hrand(2, tag2 + "2"));
 		break;
 		
 		case 2:
-			if (drand(5) == 0) TakeNItems(chr, "amulet_"+(drand(10)+1), 1);
-			if (drand(5) == 1) TakeNItems(chr, "jewelry"+(drand(5)+1), drand(20));
-			if (drand(5) > 1) TakeNItems(chr, "mineral"+(drand(25)+1), drand(3));
+			if (hrand(5, tag) == 0) TakeNItems(chr, "amulet_"+(hrand(10, tag2)+1), 1);
+			else if (hrand(5, tag) == 1) TakeNItems(chr, "jewelry"+(hrand(5,  tag2)+1), hrand(20, tag2 + "2"));
+			else if (hrand(5, tag) >  1) TakeNItems(chr, "mineral"+(hrand(25, tag2)+1), hrand(3,  tag2 + "2"));
 		break;
 		
 		case 3:
-			if (drand(8) == 0) TakeNItems(chr, "obereg_"+(drand(10)+1), 1);
-			if (drand(8) == 1) TakeNItems(chr, "jewelry8", drand(10));
-			if (drand(8) == 2) TakeNItems(chr, "jewelry7", drand(2));
-			if (drand(8) == 3) TakeNItems(chr, "jewelry11", drand(5));
-			if (drand(8) == 4) TakeNItems(chr, "jewelry"+(drand(10)+41), drand(6));
-			if (drand(8) == 5) TakeNItems(chr, "jewelry"+(drand(11)+12), drand(6));
-			if (drand(8) > 5) TakeNItems(chr, "mineral"+(drand(20)+1), drand(4));
+			if (hrand(8, tag) == 0) TakeNItems(chr, "obereg_"+(hrand(10, tag2)+1), 1);
+			else if (hrand(8, tag) == 1) TakeNItems(chr, "jewelry8",hrand(10, tag2));
+			else if (hrand(8, tag) == 2) TakeNItems(chr, "jewelry7",hrand(2,  tag2));
+			else if (hrand(8, tag) == 3) TakeNItems(chr, "jewelry11",hrand(5, tag2));
+			else if (hrand(8, tag) == 4) TakeNItems(chr, "jewelry"+(hrand(10, tag2)+41), hrand(6, tag2 + "2"));
+			else if (hrand(8, tag) == 5) TakeNItems(chr, "jewelry"+(hrand(11, tag2)+12), hrand(6, tag2 + "2"));
+			else if (hrand(8, tag) >  5) TakeNItems(chr, "mineral"+(hrand(20, tag2)+1),  hrand(4, tag2 + "2"));
 		break;
 	}
 }
@@ -6587,10 +6591,10 @@ bool Caleuche_CheckAmulet() // Калеуче, амулеты
 	return false;
 }
 
-string SelectRandomArtefact(int kind) // dlc
+string SelectRandomArtefact(int kind, string tag) // dlc
 {
 	string prefix, suffix, amulet;
-	suffix = "_"+(drand(10)+1);
+	suffix = "_"+(hrand(10, tag)+1);
 	switch (kind)
 	{
 		case 1: prefix = "indian"; break;
@@ -6604,13 +6608,11 @@ string SelectRandomArtefact(int kind) // dlc
 // Addon 2016-1 Jason Пиратская линейка
 bool Mtraxx_MeridaCheckCarpenter() // проверка наличия плотника и его умений
 {
-	if (GetSummonSkillFromName(pchar, SKILL_REPAIR) >= 30 && sti(pchar.TmpPerks.BasicBattleState)) return true;
-	if (sti(pchar.Fellows.Passengers.carpenter) > 0)
-	{
-		sld = GetCharacter(sti(pchar.Fellows.Passengers.carpenter));
-		if (GetSummonSkillFromName(sld, SKILL_REPAIR) >= 30 && sti(sld.TmpPerks.BasicBattleState)) return true;
-	}
-	return false;
+    DelBakSkillAttr(PChar);
+    ClearCharacterExpRate(PChar);
+    RefreshCharacterSkillExpRate(PChar);
+
+	return GetSummonSkillFromName(PChar, SKILL_REPAIR) >= 30 && CheckOfficersPerk(PChar, "BasicBattleState");
 }
 
 string Mtraxx_RetributionSelectRanditem() // выбор рандитема
@@ -7102,14 +7104,6 @@ void IslaMona_RemoveCandles()
 		}
 	}
 	PlaySound("interface\important_item.wav");
-}
-
-// Rebbebion, проверяем наличие барка по квесту "Чёрная метка"
-bool BlackMark_CheckBarque()
-{
-	if(sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_BARQUE || GetCompanionQuantity(pchar) > 1) return false;
-	
-	return true;
 }
 
 // Rebbebion, проверяем время, в которое зашли в дом Кэллоу

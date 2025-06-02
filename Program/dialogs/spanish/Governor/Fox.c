@@ -15,8 +15,8 @@ void ProcessDialogEvent()
 	case "First time":
 		if (CheckAttribute(pchar, "questTemp.Terrapin_KathyReward"))
 		{
-			dialog.text = "¿Qué desea, señor? Oh... mi... ¡espera! ¡Eres el capitán francés que ha salvado a mi hija de las sucias manos de los servidores de Levasseur!";
-			link.l1 = "Veo que Catherine ya te ha hablado de mí...";
+			dialog.text = "¿Qué desea, señor? Oh... por... ¡espera! ¡Eres el capitán francés que ha salvado a mi hija de las sucias manos de los servidores de Levasseur!";
+			link.l1 = "Veo que Catherine ya le ha hablado de mí...";
 			link.l1.go = "terrapin";
 			break;
 		}
@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 		// Addon-2016 Jason, французские миниквесты (ФМК) Сент-Кристофер
 		if (CheckAttribute(pchar, "questTemp.FMQN") && pchar.questTemp.FMQN == "eng_reward")
 		{
-			dialog.text = "Por lo que entiendo, ¿eres el Capitán francés que ayudó a mis hombres en su misión en Sint-Maarten?" + TimeGreeting() + "¡";
+			dialog.text = "Por lo que entiendo, ¿eres el Capitán francés que ayudó a mis hombres en su misión en Sint-Maarten?" + TimeGreeting() + ".";
 			link.l1 = TimeGreeting() + ", Coronel. Sí, ese sería yo.";
 			link.l1.go = "FMQN";
 			break;
@@ -43,19 +43,19 @@ void ProcessDialogEvent()
 
 	case "guardoftruth":
 		dialog.text = "Entonces, escúpelo de una vez, ya que has llegado hasta aquí...";
-		link.l1 = "Recientemente abordaste una goleta bajo el mando de Rollie el Capitán, un pirata holandés, y trajiste al Capitán aquí, a San Juan.";
+		link.l1 = "Recientemente abordaste una goleta bajo el mando de Rollie el Cap, un pirata holandés, y trajiste al capitán aquí, a Saint-John's.";
 		link.l1.go = "guardoftruth_1";
 		break;
 
 	case "guardoftruth_1":
-		dialog.text = "¿Capitán? ¡Oh, no me hagas reír! Este miserable criminal no tiene derecho a ser llamado por este honorable rango. He capturado a un maldito pirata, el jefe de una manada de lobos, que ha robado y asesinado a comerciantes y mercaderes ingleses. Y me aseguré de que él y sus degenerados obtuvieran lo que merecían: ¡todo San Juan ha visto su ahorcamiento en el muelle!";
-		link.l1 = "Supongo que no podré interrogar a este canalla entonces... Coronel, ¿quizás podrías ayudarme? El pirata tenía algo en su posesión que no le pertenecía: el incensario de oro. ¿Encontraste algo en él que se parezca a eso?";
+		dialog.text = "¿Capitán? ¡Oh, no me hagas reír! Este miserable criminal no tiene derecho a ser llamado por este honorable rango. He capturado a un maldito pirata, el jefe de una manada de lobos, que ha robado y asesinado a comerciantes y mercaderes ingleses. Y me aseguré de que él y sus degenerados obtuvieran lo que merecían: ¡todo Saint-John's ha visto su ahorcamiento en el muelle!";
+		link.l1 = "Supongo que no podré interrogar a este canalla entonces... Coronel, ¿quizás podrías ayudarme? El pirata tenía algo en su posesión que no le pertenecía: un incensario de oro. ¿Encontraste algo en él que se parezca a eso?";
 		link.l1.go = "guardoftruth_2";
 		break;
 
 	case "guardoftruth_2":
-		dialog.text = "No, lo registramos y ese bribón no poseía ninguna pertenencia, además, ¡todas ellas seguramente fueron tomadas de comerciantes honestos! Y sobre tu preocupación... hmm no, no lo hemos encontrado. ¿Y qué podría hacer un incensario en un barco pirata? ¿Realmente crees que había un sacerdote entre ellos?";
-		link.l1 = "No, no lo tengo. Rollie el Capitán lo compró del usurero en Willemstad, quien lo había comprado de otro pirata. El incensario es fino y caro, y estoy intentando devolverlo a sus legítimos dueños. Supongo que Rollie le echó el ojo como una urraca.";
+		dialog.text = "No, lo registramos y ese bribón no poseía ninguna pertenencia. Además, ¡todas ellas seguramente fueron tomadas de comerciantes honestos! Y sobre tu preocupación... hmm no, no lo hemos encontrado. ¿Y qué podría hacer un incensario en un barco pirata? ¿Realmente crees que había un sacerdote entre ellos?";
+		link.l1 = "No, no es así. Rollie el Cap lo compró del usurero en Willemstad, quien lo había comprado de otro pirata. El incensario es fino y caro, y estoy intentando devolverlo a sus legítimos dueños. Supongo que Rollie le echó el ojo como una urraca.";
 		link.l1.go = "guardoftruth_3";
 		break;
 
@@ -108,17 +108,17 @@ void ProcessDialogEvent()
 		break;
 
 	case "terrapin_2":
-		dialog.text = "¡Y lo has demostrado! Una recompensa te espera, capitán. Por supuesto, la vida de una hija no tiene precio, pero Jonathan Fox siempre paga sus deudas, ¡lo juro! Eres un verdadero soldado, por lo tanto, mi regalo para ti es un obsequio de soldado. Aquí, echa un vistazo.\nEste es un trabuco, un excelente mosquete naval, puede ser usado con una mano. Puedes cargarlo con flechas especiales que siempre atravesarán incluso la coraza más duradera. También dispara metralla y su sólida construcción te permite cargarlo con clavos. Aquí, tómalo, ahora es tuyo.";
+		dialog.text = "¡Y lo has demostrado! Una recompensa te espera, capitán. Por supuesto, la vida de una hija no tiene precio, pero Jonathan Fox siempre paga sus deudas, ¡lo juro! Eres un verdadero soldado, por lo tanto, mi regalo para ti es un obsequio de soldado. Aquí, echa un vistazo.\nEste es un trabuco, un excelente mosquete naval, puede ser usado con una mano. Puedes cargarlo con flechas especiales que siempre atravesarán incluso la coraza más duradera. También dispara metralla y su sólida construcción te permite cargarlo con clavos. Ten, tómalo, ahora es tuyo.";
 		link.l1 = "¡Un regalo tan excelente para un soldado, le agradezco, Coronel!";
 		link.l1.go = "terrapin_3";
 		break;
 
 	case "terrapin_3":
-		Log_Info("Has recibido un trabuco");
-		Log_Info("Has recibido 10 flechas");
-		Log_Info("Has recibido 10 cargas de clavos");
-		Log_Info("Has recibido instrucciones para crear flechas arpón");
-		Log_Info("Has recibido instrucciones para crear cargas de clavos");
+		Log_Info("¡Has recibido un trabuco!");
+		Log_Info("¡Has recibido 10 flechas!");
+		Log_Info("¡Has recibido 10 cargas de clavos!");
+		Log_Info("¡Has recibido instrucciones para crear flechas arpón!");
+		Log_Info("¡Has recibido instrucciones para crear cargas de clavos!");
 		GiveItem2Character(pchar, "pistol8");
 		TakeNItems(pchar, "harpoon", 10);
 		TakeNItems(pchar, "GunEchin", 10);
@@ -132,7 +132,7 @@ void ProcessDialogEvent()
 
 	case "terrapin_4":
 		dialog.text = "Lo sé, capitán. Eso le honra doblemente. Catherine quedó realmente encantada por usted y no es tarea fácil causarle una buena impresión. Nuevamente, le debemos nuestra gratitud por haberla rescatado. ¡Le debo una!";
-		link.l1 = "Bueno, te agradezco por el regalo, Coronel. Envía mis mejores saludos a Catherine, y deseo que ella escuche a su padre la próxima vez.";
+		link.l1 = "Bueno, le agradezco por el regalo, Coronel. Envíe mis mejores saludos a Catherine, y deseo que ella escuche a su padre la próxima vez.";
 		link.l1.go = "terrapin_5";
 		break;
 
@@ -149,19 +149,19 @@ void ProcessDialogEvent()
 	// Addon-2016 Jason, французские миниквесты (ФМК) Сент-Кристофер
 	case "FMQN":
 		DelLandQuestMark(npchar);
-		dialog.text = "He leído el informe. Tus acciones son altamente valoradas, por lo tanto, debes ser recompensado. Treinta mil pesos por servicios de expedición y armas por heroísmo en la soldadesca. ¡Acepta esta espada y este arcabuz. Ahora son todos tuyos!";
+		dialog.text = "He leído el informe. Tus acciones son altamente valoradas, por lo tanto, debes ser recompensado. Treinta mil pesos por servicios de expedición y armas por heroísmo en la soldadesca. ¡Acepta esta espada y este arcabuz! ¡Ahora son todos tuyos!";
 		link.l1 = "Gracias, señor.";
 		link.l1.go = "FMQN_1";
 		break;
 
 	case "FMQN_1":
-		dialog.text = "Por supuesto, Capitán. También se le recompensa con el amor y respeto de las colonias británicas, las autoridades y de mí personalmente. ¡Gracias por no abandonar a mis hombres y ayudarles en su misión!";
-		link.l1 = "Es un placer, Coronel...";
+		dialog.text = "Por supuesto, capitán. También se le recompensa con el amor y respeto de las colonias británicas, las autoridades y de mí personalmente. ¡Gracias por no abandonar a mis hombres y ayudarles en su misión!";
+		link.l1 = "Es un placer, coronel...";
 		link.l1.go = "FMQN_2";
 		break;
 
 	case "FMQN_2":
-		dialog.text = "Ahora, por favor disculpe - tengo otros asuntos que atender. Que Dios le acompañe, Capitán.";
+		dialog.text = "Ahora, por favor disculpe... tengo otros asuntos que atender. Que Dios le acompañe, capitán.";
 		link.l1 = "Adiós, señor.";
 		link.l1.go = "exit";
 		AddDialogExitQuestFunction("FMQN_EnglandComplete");

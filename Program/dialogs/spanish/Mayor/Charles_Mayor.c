@@ -20,7 +20,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		dialog.text = "Ajá, bueno, estoy informado sobre esa deuda... ¿Tienes la suma requerida contigo?";
 		if (sti(pchar.money) >= 1000000)
 		{
-			link.l1 = "Claro que sí. ¿Cómo podría ser иначе?";
+			link.l1 = "Claro que sí. ¿Cómo podría ser si no?";
 			link.l1.go = "puancie_1";
 		}
 		else

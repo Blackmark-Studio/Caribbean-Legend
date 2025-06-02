@@ -41,7 +41,7 @@ void ProcessDialogEvent()
 					{
 						if (GetDataDay() == 14 || GetDataDay() == 28)
 						{
-							link.l2 = "Jan, me gustaría comprar madera de hierro.";
+							link.l2 = "Jan, me gustaría comprar sándalo.";
 							link.l2.go = "trade_bakaut";
 						}
 					}
@@ -177,14 +177,14 @@ void ProcessDialogEvent()
 				}
 				if(pchar.questTemp.Saga == "sellbakaut" && GetSquadronGoods(pchar, GOOD_SANDAL) >= 1) // отдает бакаут
 				{
-					dialog.text = "Bueno, "+pchar.name+"¿Has alcanzado a Molligan?";
-					link.l1 = "Lo hice. Él fue quien robó tu madera de hierro.";
+					dialog.text = "Bueno, "+pchar.name+" ¿Has alcanzado a Molligan?";
+					link.l1 = "Lo hice. Él fue quien robó tu sándalo.";
 					link.l1.go = "saga_55";
 					break;
 				}
 				if(CheckAttribute(npchar, "quest.bakaut") && GetNpcQuestPastDayParam(npchar, "bakaut_date") >= 1) // за деньгами за бакаут
 				{
-					dialog.text = "A tiempo como siempre, "+pchar.name+". Vendí la madera de hierro que me trajiste.";
+					dialog.text = "A tiempo como siempre, "+pchar.name+". Vendí la sándalo que me trajiste.";
 					link.l1 = "Excelente. ¿Cuánto dinero ganaste?";
 					link.l1.go = "saga_57";
 					break;
@@ -192,7 +192,7 @@ void ProcessDialogEvent()
 				if(CheckAttribute(npchar, "quest.bakaut_sum")) // сам продал бакаут
 				{
 					dialog.text = "Bueno, "+pchar.name+"¿Alcanzaste a Molligan?";
-					link.l1 = "Así fue. Él fue quien robó tu madera de hierro. También me encontré con su comprador. Era algún comandante militar holandés. Le vendí el producto a él.";
+					link.l1 = "Así fue. Él fue quien robó tu sándalo. También me encontré con su comprador. Era algún comandante militar holandés. Le vendí el producto a él.";
 					link.l1.go = "saga_59";
 					link.l2 = "Lo hice. Traté de obligarlo a mostrarme su bodega de carga... nos metimos en una refriega y... ahora no hay más Molligan. Pero no hay nada que puedas ver en la bodega excepto ébano y caoba.";
 					link.l2.go = "saga_59_1";
@@ -213,7 +213,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				if (pchar.questTemp.Saga == "end") sTemp = "¡Oh, mi amigo "+pchar.name+"! ¡Me alegro de verte! ¿Qué le trae por aquí?";
-				else sTemp = "¡Qué deseas, "+pchar.name+"?";
+				else sTemp = "¿Qué deseas, "+pchar.name+"?";
 				dialog.text = sTemp;
 				link.l1 = "No, Jan. Nada en este momento.";
 				link.l1.go = "exit";
@@ -221,7 +221,7 @@ void ProcessDialogEvent()
 				{
 					if (GetDataDay() == 14 || GetDataDay() == 28)
 					{
-						link.l2 = "Jan, me gustaría comprar algo de tu madera de hierro.";
+						link.l2 = "Jan, me gustaría comprar algo de tu sándalo.";
 						link.l2.go = "trade_bakaut";
 					}
 				}
@@ -271,12 +271,12 @@ void ProcessDialogEvent()
 		
 		case "saga_4":
 			dialog.text = "¡Maldita sea! Eso son malas noticias. Jackman es más fuerte que nunca ahora. Además, tengo un mal presentimiento de que no está trabajando solo. Tiene una sombra bastante ominosa detrás de él. Si realmente necesita a Helen, entonces la chica necesita desesperadamente un protector. Me temo que soy un poco demasiado viejo para hacerlo yo mismo...";
-			link.l1 = "Eso no es todo. Jackman también está buscando a alguien llamado Henry el Verdugo, antiguo contramaestre del 'Neptuno', de la tripulación del capitán Carnicero.";
+			link.l1 = "Eso no es todo. Jackman también está buscando a alguien llamado Henry el Verdugo, antiguo contramaestre del 'Neptune', de la tripulación del capitán Carnicero.";
 			link.l1.go = "saga_5";
 		break;
 		
 		case "saga_5":
-			dialog.text = "¡Caramba! ¡Mis peores sospechas se han hecho realidad! Ese Carnicero y su 'Neptuno' solían mantener aterrorizado a todo el archipiélago. No había Hermanos en aquel entonces, todos estaban por su cuenta. Ese hombre hizo muchas cosas malas, una persona querida para mí murió por su culpa.\nNunca tuve la oportunidad de conocerlo. El 'Neptuno' fue hundido por una fragata inglesa, y el Carnicero fue ejecutado en San Juan. ¡Qué alivio! Aunque había mucha gente que admiraba su suerte y su temeraria valentía.\nJackman mismo era su mano derecha y primer oficial en el 'Neptuno'. ¿Sorprendido? ¡Los ex-criminales se han convertido en héroes de la Nación, todo gracias a Cromwell! ¿Dónde ha quedado la buena y vieja Inglaterra?\nDebemos encontrar a Henry el Verdugo antes de que lo hagan los hombres de Jackman. Tal vez, él tenga la clave de este misterio, si es que sigue vivo.";
+			dialog.text = "¡Caramba! ¡Mis peores sospechas se han hecho realidad! Ese Carnicero y su 'Neptune' solían mantener aterrorizado a todo el archipiélago. No había Hermanos en aquel entonces, todos estaban por su cuenta. Ese hombre hizo muchas cosas malas, una persona querida para mí murió por su culpa.\nNunca tuve la oportunidad de conocerlo. El 'Neptune' fue hundido por una fragata inglesa, y el Carnicero fue ejecutado en San Juan. ¡Qué alivio! Aunque había mucha gente que admiraba su suerte y su temeraria valentía.\nJackman mismo era su mano derecha y primer oficial en el 'Neptune'. ¿Sorprendido? ¡Los ex-criminales se han convertido en héroes de la Nación, todo gracias a Cromwell! ¿Dónde ha quedado la buena y vieja Inglaterra?\nDebemos encontrar a Henry el Verdugo antes de que lo hagan los hombres de Jackman. Tal vez, él tenga la clave de este misterio, si es que sigue vivo.";
 			link.l1 = "Apuesto a que te resultaría más fácil encontrar una aguja en un pajar. ¿Tienes al menos alguna pista?";
 			link.l1.go = "saga_6";
 		break;
@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_9":
-			dialog.text = "Bueno, espléndido. Toma esta licencia de la Compañía Neerlandesa de las Indias Occidentales por tres meses. Escribe tu nombre allí, podría serte útil en tus búsquedas. Mientras tanto, pensaré en lo que has dicho sobre Levasseur y Tortuga.";
+			dialog.text = "Bueno, espléndido. Toma esta licencia de la Compañía Holandesa de las Indias Occidentales por tres meses. Escribe tu nombre allí, podría serte útil en tus búsquedas. Mientras tanto, pensaré en lo que has dicho sobre Levasseur y Tortuga.";
 			link.l1 = "¡Gracias un millón! Este papel me va a ser muy útil. En ese caso, me voy a Cartagena entonces.";
 			link.l1.go = "saga_10";
 		break;
@@ -567,13 +567,13 @@ void ProcessDialogEvent()
 		
 		case "return_LSC_7":
 			dialog.text = "¡Maldita sea, "+pchar.name+", apenas has bebido un vaso de ron y ya estás hablando tonterías como si te hubieras bebido hasta perder el sentido. ¿Qué, nadaste a través del Caribe? ¿O te ataste unas tortugas a los pies?";
-			link.l1 = "No, no nadé. Jan, llegué a la isla directamente desde la jungla del continente, tal como lo hizo Nathan, a través de un ídolo indio mágico. Ya le he contado esta historia a tanta gente y estoy cansado de demostrar que no me he vuelto loco, así que todo lo que tengo que decir es: ¡simplemente créeme, está bien!?";
+			link.l1 = "No, no nadé. Jan, llegué a la isla directamente desde la jungla del continente, tal como lo hizo Nathan, a través de un ídolo indio mágico. Ya le he contado esta historia a tanta gente y estoy cansado de demostrar que no me he vuelto loco, así que todo lo que tengo que decir es: ¡simplemente créeme!, ¿está bien?";
 			link.l1.go = "return_LSC_8";
 		break;
 		
 		case "return_LSC_8":
 			dialog.text = "¿Ídolo indio?";
-			link.l1 = "Hay al menos tres ídolos en el Caribe conocidos como las estatuas de Kukulcán: uno cerca de la aldea miskita de West Main, otro en el fondo de las aguas poco profundas de la Isla de la Justicia, y otro en la aldea caribeña de Dominica. Estos ídolos, con la ayuda de la magia india, son capaces de transferir instantáneamente a los seres humanos a través del tiempo y el espacio.";
+			link.l1 = "Hay al menos tres ídolos en el Caribe conocidos como las estatuas de Kukulcán: uno cerca de la aldea miskita de Tierra Firme occidental, otro en el fondo de las aguas poco profundas de la Isla de la Justicia, y otro en la aldea caribeña de Dominica. Estos ídolos, con la ayuda de la magia india, son capaces de transferir instantáneamente a los seres humanos a través del tiempo y el espacio.";
 			link.l1.go = "return_LSC_9";
 		break;
 		
@@ -926,7 +926,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_35":
-			dialog.text = "Es un nativo local, el hijo de Thomas Beltrope, hace mucho tiempo el hermano jurado de Nicholas Sharp y el corsario de la Compañía de la Isla Providencia. Yo mismo conocía muy bien a Thomas. Hace un año, Lawrence vino al Caribe una vez más. Resulta que Jackman estaba trabajando para él. ¡Tenlo en cuenta y mantén los ojos bien abiertos!";
+			dialog.text = "Es un nativo, el hijo de Thomas Beltrope, hace mucho tiempo el hermano jurado de Nicholas Sharp y el corsario de la Compañía de la Isla Providencia. Yo mismo conocía muy bien a Thomas. Hace un año, Lawrence vino al Caribe una vez más. Resulta que Jackman estaba trabajando para él. ¡Tenlo en cuenta y mantén los ojos bien abiertos!";
 			link.l1 = "Entonces el misterioso 'jefe' de Jackman, mencionado en esa carta, es Lawrence Beltrope... Está bien, recordaré ese nombre.";
 			link.l1.go = "saga_36";
 		break;
@@ -1022,25 +1022,25 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_49":
-			dialog.text = "Están mintiendo un poco sobre los equipos, pero el resto está en lo cierto. Así que, previendo gastos, preparé un gran lote de madera de hierro, pero algún bastardo vació mi almacén hace un par de días. Es alguien de los nuestros, lo sé. Tengo una sospecha, pero no puedo asegurarlo.";
+			dialog.text = "Están mintiendo un poco sobre los equipos, pero el resto está en lo cierto. Así que, previendo gastos, preparé un gran lote de sándalo, pero algún bastardo vació mi almacén hace un par de días. Es alguien de los nuestros, lo sé. Tengo una sospecha, pero no puedo asegurarlo.";
 			link.l1 = "¡Las ratas deben ser aplastadas! ¿A quién sospechas?";
 			link.l1.go = "saga_50";
 		break;
 		
 		case "saga_50":
-			dialog.text = "Paul Molligan. Su 'Ostras' de la India Oriental navegó hacia Barbados ayer. No tuve la oportunidad de revisar sus bodegas. Pero no llevaría la madera de hierro a Bridgetown de todos modos, el lord Willoughby tiene oficiales de aduanas serios allí y la madera de hierro es una materia prima de importancia estratégica para la marina inglesa.\nSi realmente tiene mi madera de hierro, entonces la venderá antes de llegar a Bridgetown. ¡Si tan solo pudieras interceptar a Molligan e inspeccionar sus bodegas!..";
-			link.l1 = "Dices que partió hacia Bridgetown ayer? No todo está perdido aún. Intentaré alcanzarlo.";
+			dialog.text = "Paul Molligan. Su 'Ostras' de la India Oriental navegó hacia Barbados ayer. No tuve la oportunidad de revisar sus bodegas. Pero no llevaría el sándalo a Bridgetown de todos modos, el lord Willoughby tiene oficiales de aduanas serios allí y el sándalo es una materia prima de importancia estratégica para la marina inglesa.\nSi realmente tiene mi sándalo, entonces lo venderá antes de llegar a Bridgetown. ¡Si tan solo pudieras interceptar a Molligan e inspeccionar sus bodegas!..";
+			link.l1 = "¿Dices que partió hacia Bridgetown ayer? No todo está perdido aún. Intentaré alcanzarlo.";
 			link.l1.go = "saga_51";
 		break;
 		
 		case "saga_51":
-			dialog.text = "Sabes qué hacer, si Molligan es la rata. Pero intenta averiguar el nombre de su cliente primero. Luego puedes entregar la carga al cliente tú mismo o devolvérmela.\nLleva la 'Oyster' a Blueweld también, es un buen barco, me gustaría quedármelo y reequiparlo para mis propias necesidades. A ti también se te permite tomar lo que quieras como premio... Y en caso de que Molligan no sea el culpable... no, estoy seguro de que es la rata que robó mi madera de hierro.";
+			dialog.text = "Sabes qué hacer, si Molligan es la rata. Pero intenta averiguar el nombre de su cliente primero. Luego puedes entregar la carga al cliente tú mismo o devolvérmela.\nLleva la 'Oyster' a Blueweld también, es un buen barco, me gustaría quedármelo y reequiparlo para mis propias necesidades. A ti también se te permite tomar lo que quieras como premio... Y en caso de que Molligan no sea el culpable... no, estoy seguro de que es la rata que robó mi sándalo.";
 			link.l1 = "¡Haré buen uso de mi tiempo!";
 			link.l1.go = "saga_52";
 		break;
 		
 		case "saga_52":
-			dialog.text = "Si vendes la madera de hierro tú mismo, aparta mil quinientos doblones de oro para Loxley y el resto lo dividiremos a la mitad. Puedo confiar en ti para esto, ¿verdad?";
+			dialog.text = "Si vendes el sándalo tú mismo, aparta mil quinientos doblones de oro para Loxley y el resto lo dividiremos a la mitad. Puedo confiar en ti para esto, ¿verdad?";
 			link.l1 = "Por supuesto. No soy una rata.";
 			link.l1.go = "saga_53";
 		break;
@@ -1103,7 +1103,7 @@ void ProcessDialogEvent()
 				link.l1.go = "saga_oust";
 				break;
 			}
-			dialog.text = "Hombre, simplemente estoy jodido. Ha vendido casi todo... Aquí, quédate con esta madera de hierro para ti, "+pchar.name+", haz lo que quieras con ello. Eres mi única esperanza de ganar algo de dinero ahora.";
+			dialog.text = "Hombre, simplemente estoy jodido. Ha vendido casi todo... Aquí, quédate con este sándalo para ti, "+pchar.name+", haz lo que quieras con él. Eres mi única esperanza de ganar algo de dinero ahora.";
 			link.l1 = "Entendido. Bien, buscaré yo mismo. Esto no es mi primera corrida... Adiós, Jan.";
 			link.l1.go = "saga_oust";
 		break;
@@ -1143,7 +1143,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_oust_no":
-			dialog.text = "Qué pena. Pero es lo que es. Hasta luego, "+pchar.name+"¡";
+			dialog.text = "Qué pena. Pero es lo que es. Hasta luego, "+pchar.name+".";
 			link.l1 = "Adiós, Jan.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
@@ -1165,7 +1165,7 @@ void ProcessDialogEvent()
 			if (iTemp > 1600)
 			{
 				idlt = makeint(iTemp-1500)/2; // доля Бонса :)
-				dialog.text = "Recibí "+iTemp+" monedas por ello. Mil quinientos es para el abogado, más tu parte de doblones - "+idlt+"Aquí tienes.";
+				dialog.text = "Recibí "+iTemp+" monedas por ello. Mil quinientos es para el abogado, más tu parte de doblones, "+idlt+"Aquí tienes.";
 				link.l1 = "¡Loable! Ahora puedo partir fácilmente hacia Loxley.";
 				link.l1.go = "saga_58";
 				TakeNItems(pchar, "gold_dublon", 1500+idlt);
@@ -1268,22 +1268,22 @@ void ProcessDialogEvent()
 		break;
 		
 		case "bakaut_done": // рассчитались
-			dialog.text = "Tengo una proposición para ti. Ya que pudiste encontrar un comprador lucrativo, entonces te podría vender un poco de madera de hierro. Solía recibir treinta doblones por pieza. Si quieres, puedes comprármela a ese precio. Prefiero vendértela a ti que a alguien más.";
-			link.l1 = "¿Cuánta madera de hierro eres capaz de vender?";
+			dialog.text = "Tengo una proposición para ti. Ya que pudiste encontrar un comprador lucrativo, entonces te podría vender un poco de sándalo. Solía recibir treinta doblones por pieza. Si quieres, puedes comprármelo a ese precio. Prefiero vendértelo a ti que a alguien más.";
+			link.l1 = "¿Cuánto sándalo eres capaz de vender?";
 			link.l1.go = "bakaut_done_1";
 		break;
 		
 		case "bakaut_done_1":
-			dialog.text = "Aviso de no acumular grandes lotes. Lo de Molligan fue una excepción. A las autoridades no les gustará la noticia de un mercado negro local. Así que, aquí está el trato: Guardaré 25 piezas de madera de hierro para ti cada 14 y 24 del mes. \nSi quieres comprarlas, trae setecientos cincuenta doblones y llévate todo el lote. Si no apareces ese día, entonces se lo venderé a otro cliente. Así, podrás tener 50 piezas al mes. ¿Trato?";
+			dialog.text = "Aviso de no acumular grandes lotes. Lo de Molligan fue una excepción. A las autoridades no les gustará la noticia de un mercado negro. Así que, aquí está el trato: Guardaré 25 piezas de sándalo para ti cada 14 y 24 del mes. \nSi quieres comprarlas, trae setecientos cincuenta doblones y llévate todo el lote. Si no apareces ese día, entonces se lo venderé a otro cliente. Así, podrás tener 50 piezas al mes. ¿Trato?";
 			link.l1 = "¡Tienes un trato, Jan! Hagámoslo. Ahora, es hora de que me ponga en marcha...";
 			link.l1.go = "saga_oust";
 			DeleteAttribute(npchar, "quest.bakaut_sum");
 			npchar.quest.trade_bakaut = "true"; // генератор купли-продажи бакаута
-			AddQuestRecord("Unique_Goods", "1");
+			AddQuestRecordInfo("Unique_Goods", "1");
 		break;
 		
 		case "saga_59_1": // укрысил у Яна - нет генератора на бакаут, потерял больше
-			dialog.text = "Ah, así que o no fue él o ya ha vendido la madera de hierro antes... Qué lástima. Bueno, ahora eres mi única esperanza para conseguir el dinero para el abogado.";
+			dialog.text = "Ah, así que o no fue él o ya ha vendido el sándalo antes... Qué lástima. Bueno, ahora eres mi única esperanza para conseguir el dinero para el abogado.";
 			link.l1 = "Estaré dispuesto a asumir esa responsabilidad. Este no es mi primer rodeo.";
 			link.l1.go = "exit";
 			// Ян расстроен и забыл про Устрицу - так что и Устрицы тоже не будет
@@ -1323,14 +1323,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_66a":
-			dialog.text = "Era especial... También es bastante probable que Jess matara a Beatrice. Después de que el Carnicero la echara del 'Neptuno', probablemente no pensó en otra cosa más que en vengarse de él y de Beatrice. Por cierto, ¿sabes cómo se deshizo el Carnicero de Jessica?";
+			dialog.text = "Era especial... También es bastante probable que Jess matara a Beatrice. Después de que el Carnicero la echara del 'Neptune', probablemente no pensó en otra cosa más que en vengarse de él y de Beatrice. Por cierto, ¿sabes cómo se deshizo el Carnicero de Jessica?";
 			link.l1 = "No. O la dejó en Barbados o la puso a pedir rescate.";
 			link.l1.go = "saga_67";
 		break;
 		
 		case "saga_67":
 			dialog.text = "El segundo. La humilló más allá de lo creíble. Simplemente la encerró en el camarote, la llevó a Barbados, comenzó a negociar con su padre Oliver Rose y de hecho la vendió por un montón de doblones... después de todo lo que ella había hecho por él.";
-			link.l1 = "Hm. Pensé que el Carnicero protegió su honor cuando los piratas capturaron el 'Neptuno' de Joshua Leadbeater...";
+			link.l1 = "Hm. Pensé que el Carnicero protegió su honor cuando los piratas capturaron el 'Neptune' de Joshua Leadbeater...";
 			link.l1.go = "saga_68";
 		break;
 		
@@ -1347,7 +1347,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_70":
-			dialog.text = "Todos los piratas pensaban así, incluido Blaze Sharp, su hermano. No podía soportar al Carnicero... Pero volvamos a Jessica. Ni siquiera me atrevía a pensar en ella mientras estaba en el 'Neptuno', nunca dejaría a su amado capitán. Pero cuando el Carnicero se deshizo de ella de una manera tan vil...\nLlegué a Barbados y me hice amigo de ella. No fue fácil para ella, amaba el mar y las aventuras peligrosas. Esa vida monótona de la colonia la estaba matando. Además, se había convertido en una persona muy infame en el Caribe mientras servía en el 'Neptuno' y la gente de Bridgetown tenía razones para considerarla cómplice del Carnicero...";
+			dialog.text = "Todos los piratas pensaban así, incluido Blaze Sharp, su hermano. No podía soportar al Carnicero... Pero volvamos a Jessica. Ni siquiera me atrevía a pensar en ella mientras estaba en el 'Neptune', nunca dejaría a su amado capitán. Pero cuando el Carnicero se deshizo de ella de una manera tan vil...\nLlegué a Barbados y me hice amigo de ella. No fue fácil para ella, amaba el mar y las aventuras peligrosas. Esa vida monótona de la colonia la estaba matando. Además, se había convertido en una persona muy infame en el Caribe mientras servía en el 'Neptune' y la gente de Bridgetown tenía razones para considerarla cómplice del Carnicero...";
 			link.l1 = "Pero no pudieron probar una mierda...";
 			link.l1.go = "saga_71";
 		break;
@@ -1359,14 +1359,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_72":
-			dialog.text = "Sentía lo mismo por ella. Y más tarde ella comenzó a interesarse por los antiguos cultos y rituales indios. Ocurrió después de que capturaron a un mago indio y lo trajeron de las profundidades de las selvas de Yucatán a la plantación local. Jessica lo compró y le dio una casa en su plantación.\nPasaba mucho tiempo con el mago. Decía que todo era por su interés histórico en los rituales mágicos indios. La gente de Bridgetown se preocupó, especialmente el pastor local. En realidad, él era uno de los pocos que fue amable con Jessica.\nEl sacerdote a menudo hablaba con ella, persuadiéndola para que se deshiciera del mago, amenazándola con peligros y la inquisición, pero tratar de asustar a Jessica era un ejercicio inútil. Una noche, unos extraños irrumpieron en la casa del mago y lo asesinaron.\nEsa misma noche, dos hombres atacaron a Jessica en su propia habitación, pero no les fue bien - nadie en Bridgetown sabía lo bien que Jess manejaba su espada con hoja de fuego. Literalmente los cortó en rebanadas.";
+			dialog.text = "Sentía lo mismo por ella. Y más tarde ella comenzó a interesarse por los antiguos cultos y rituales indios. Ocurrió después de que capturaron a un mago indio y lo trajeron de las profundidades de las selvas de Yucatán a la plantación. Jessica lo compró y le dio una casa en su plantación.\nPasaba mucho tiempo con el mago. Decía que todo era por su interés histórico en los rituales mágicos indios. La gente de Bridgetown se preocupó, especialmente el pastor. En realidad, él era uno de los pocos que fue amable con Jessica.\nEl sacerdote a menudo hablaba con ella, persuadiéndola para que se deshiciera del mago, amenazándola con peligros y la inquisición, pero tratar de asustar a Jessica era un ejercicio inútil. Una noche, unos extraños irrumpieron en la casa del mago y lo asesinaron.\nEsa misma noche, dos hombres atacaron a Jessica en su propia habitación, pero no les fue bien - nadie en Bridgetown sabía lo bien que Jess manejaba su espada con hoja de fuego. Literalmente los cortó en rebanadas.";
 			link.l1 = "Sí, claro... ¡esa virago temeraria!";
 			link.l1.go = "saga_73";
 		break;
 		
 		case "saga_73":
 			dialog.text = "Después de eso, todo el pueblo empezó a temerle. Y luego apareció la Máscara. Se encontraron bastante rápido.";
-			link.l1 = "Según los escritos, la Máscara es Joshua Leadbeater, el antiguo capitán del 'Neptuno'...";
+			link.l1 = "Según los escritos, la Máscara es Joshua Leadbeater, el antiguo capitán del 'Neptune'...";
 			link.l1.go = "saga_74";
 		break;
 		
@@ -1473,7 +1473,7 @@ void ProcessDialogEvent()
 		case "saga_86":
 			sTemp = "Shark Dodson";
 			if (CheckAttribute(pchar, "questTemp.Saga.DodsonDie")) sTemp = "Marcus Tyrex";
-			dialog.text = " Mientras estabas fuera, "+sTemp+" y yo ya lo hemos discutido y llegamos a una opinión común respecto a la eliminación de Levasseur. Zarpa hacia Isla Tesoro y habla con nuestro nuevo jefe, él te dará los detalles de nuestro plan y te brindará toda la ayuda que pueda darte.";
+			dialog.text = "Mientras estabas fuera, "+sTemp+" y yo ya lo hemos discutido y llegamos a una opinión común respecto a la eliminación de Levasseur. Zarpa hacia Isla Tesoro y habla con nuestro nuevo jefe, él te dará los detalles de nuestro plan y te brindará toda la ayuda que pueda darte.";
 			link.l1 = "¡Por fin huelo el aroma de la pólvora! No hay tiempo que perder, ¡me dirijo a Isla Tesoro!";
 			link.l1.go = "saga_87";
 		break;
@@ -1506,7 +1506,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_90":
-			dialog.text = "Buena suerte, "+pchar.name+"¡";
+			dialog.text = "Buena suerte, "+pchar.name+".";
 			link.l1 = "Nos vemos...";
 			link.l1.go = "saga_91";
 		break;
@@ -1608,7 +1608,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_l3":
-			dialog.text = "Sí... Realmente acabamos de sufrir una dura derrota. Y lo peor de todo es que estábamos literalmente a un paso de la victoria. ¡Caramba! ¿Cómo pudo suceder esto, eh, "+pchar.name+"¿Te esforzaste tanto, hiciste tanto y... qué mala suerte!";
+			dialog.text = "Sí... Realmente acabamos de sufrir una dura derrota. Y lo peor de todo es que estábamos literalmente a un paso de la victoria. ¡Caramba! ¿Cómo pudo suceder esto, eh, "+pchar.name+"? Te esforzaste tanto, hiciste tanto y... ¡qué mala suerte!";
 			link.l1 = "Soy el imbécil responsable de esto. Debería haber sido más rápido. Y gracias a mí, Helen va a perder su herencia. Y el plan de Tortuga nunca se realizará.";
 			link.l1.go = "saga_f_2";
 			pchar.questTemp.Saga_Late = true; // второй атрибут, отсекающий диалоги, на всякий пожарный
@@ -1661,7 +1661,7 @@ void ProcessDialogEvent()
 			RemoveDublonsFromPCharTotal(750);
 			Log_Info("Has dado 750 doblones");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Loable. Ordenaré a mi gente que transporte la madera de hierro a tu barco.";
+			dialog.text = "Loable. Ordenaré a mi gente que transporte el sándalo a tu barco.";
 			link.l1 = "¡Gracias!";
 			link.l1.go = "trade_bakaut_2";
 		break;
@@ -1721,11 +1721,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "UpgradeBakaut_Agreed":
-			dialog.text = "¡Ahora sí que hablamos! Con tu contribución nuestro negocio funcionará como la seda, y estos avaros recibirán lo suyo - y dejarán incluso de mirar en dirección al guayacán. Te aseguro que pronto recuperaremos todas las inversiones multiplicadas por cien.";
+			dialog.text = "¡Ahora sí que hablamos! Con tu contribución nuestro negocio funcionará como la seda, y estos avaros recibirán lo suyo y dejarán incluso de mirar en dirección al guayacán. Te aseguro que pronto recuperaremos todas las inversiones multiplicadas por cien.";
 			link.l1 = "Eso espero, Jan, eso espero.";
 			link.l1.go = "UpgradeBakaut_Agreed_1";
 			RemoveDublonsFromPCharTotal(3000);
-			AddQuestRecord("Unique_Goods", "1_1");
+			AddQuestRecordInfo("Unique_Goods", "1_1");
 			pchar.questTemp.UpgradeBakaut = true;
 			pchar.questTemp.SvensonBakautBlock = true;
 			DeleteAttribute(pchar, "questTemp.SvensonBakautPotom");
@@ -1853,7 +1853,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mine_attack_11":
-			dialog.text = "Buena suerte, "+pchar.name+"¡";
+			dialog.text = "Buena suerte, "+pchar.name+".";
 			link.l1 = "... ";
 			link.l1.go = "mine_attack_12";
 		break;
@@ -2081,7 +2081,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mine_attack_27":
-			dialog.text = "Uf, ¿no llegamos demasiado tarde, "+pchar.name+"¿?";
+			dialog.text = "Uf, ¿no llegamos demasiado tarde, "+pchar.name+"?";
 			link.l1 = "¡Jan, maldita sea! ¿Qué te tomó tanto tiempo? ¡Mi escuadrón acaba de recibir un golpe enorme!";
 			link.l1.go = "mine_attack_28";
 		break;
@@ -2240,7 +2240,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mine_attack_47":
-			dialog.text = "¿Descansaste bien, "+pchar.name+"¿?";
+			dialog.text = "¿Descansaste bien, "+pchar.name+"?";
 			link.l1 = "No estuvo mal... Aunque, honestamente, mataría por encontrarme una taberna, tomar una copa y dormir en una cama limpia.";
 			link.l1.go = "mine_attack_48";
 		break;

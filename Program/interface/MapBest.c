@@ -117,7 +117,7 @@ void InitInterface(string iniName)
 		if(sColony == "Caiman") continue;
 		if(sColony == "LostShipsCity") continue;
 		if(sColony == "KhaelRoa") continue;
-		if(sColony == "Minentown") continue;
+		if(sColony == "LosTeques") continue;
 		if(sColony == "Ksochitam") continue;
 		if(sColony == "RockIsland") continue;
 		if(sColony == "SantaQuiteria") continue;
@@ -219,7 +219,7 @@ void InitInterface(string iniName)
 			sSiegeCol = "SiegeOn" + sColony;
 			AddImageToImageList(sSiegeCol, "ICONS_SPEC", "weapon button", X + 35, Y - 3, 24, 24);
 			
-			if(CheckAttribute(NullCharacter, "siege.nation"))
+			if(CheckAttribute(&NullCharacter, "siege.nation"))
 			{
 				string sSiegeNation = GetNationNameByType(sti(NullCharacter.Siege.nation));
 				sSiegeCol = sSiegeCol + "NationPic" + sSiegeNation;
@@ -414,16 +414,8 @@ void FillTable()
 		}
 		if (fMouseX >= 515.0 && fMouseX <= 617.0 && fMouseY >= 610.0 && fMouseY <= 722.0)
 		{
-			if (PChar.ColonyBuilding.Stage == "0" || PChar.ColonyBuilding.Stage == "1")
-			{
-				setCharacterShipLocation(pchar, "Shore17");
-				setWDMPointXZ("Shore17");
-			}
-			if (PChar.ColonyBuilding.Stage == "2" || PChar.ColonyBuilding.Stage == "3")
-			{
-				setCharacterShipLocation(pchar, "Caiman_Town");
-				setWDMPointXZ("Shore17");
-			}
+			setCharacterShipLocation(pchar, "Shore17");
+			setWDMPointXZ("Shore17");
 			ssColony = "Caiman";
 		}
 		if (fMouseX >= 648.0 && fMouseX <= 694.0 && fMouseY >= 1955.0 && fMouseY <= 2028.0)
@@ -455,6 +447,42 @@ void FillTable()
 			setCharacterShipLocation(pchar, "LostShipsCity_town");
 			setWDMPointXZ("LostShipsCity_town");
 			ssColony = "LostShipsCity";
+		}
+		if (fMouseX >= 1568.0 && fMouseX <= 1642.0 && fMouseY >= 1074.0 && fMouseY <= 1170.0)
+		{
+			setCharacterShipLocation(pchar, "Shore31");
+			setWDMPointXZ("Shore31");
+			ssColony = "MarieGalante";
+		}
+		if (fMouseX >= 1916.0 && fMouseX <= 1996.0 && fMouseY >= 1715.0 && fMouseY <= 1812.0)
+		{
+			setCharacterShipLocation(pchar, "Shore59");
+			setWDMPointXZ("Shore59");
+			ssColony = "Tobago";
+		}
+		if (fMouseX >= 1627.0 && fMouseX <= 1669.0 && fMouseY >= 1941.0 && fMouseY <= 1986.0)
+		{
+			setCharacterShipLocation(pchar, "Shore20");
+			setWDMPointXZ("Shore20");
+			ssColony = "LosTeques";
+		}
+		if (fMouseX >= 1023.0 && fMouseX <= 1052.0 && fMouseY >= 840.0 && fMouseY <= 901.0)
+		{
+			setCharacterShipLocation(pchar, "Shore75");
+			setWDMPointXZ("Shore75");
+			ssColony = "IslaMona";
+		}
+		if (fMouseX >= 414.0 && fMouseX <= 485.0 && fMouseY >= 906.0 && fMouseY <= 995.0)
+		{
+			setCharacterShipLocation(pchar, "Shore65");
+			setWDMPointXZ("Shore65");
+			ssColony = "Ksochitam";
+		}
+		if (fMouseX >= 1097.0 && fMouseX <= 1180.0 && fMouseY >= 1143.0 && fMouseY <= 1254.0)
+		{
+			setCharacterShipLocation(pchar, "Shore74");
+			setWDMPointXZ("Shore74");
+			ssColony = "IslaDeVieques";
 		}
 		if (ssColony == "") return;
 		XI_WindowShow("TP_WINDOW", true);
@@ -568,18 +596,9 @@ void SelectRColony()
 		}
 		if (fMouseX >= 515.0 && fMouseX <= 617.0 && fMouseY >= 610.0 && fMouseY <= 722.0)
 		{
-			if (PChar.ColonyBuilding.Stage == "0" || PChar.ColonyBuilding.Stage == "1")
-			{
-				setCharacterShipLocation(pchar, "Shore17");
-				setWDMPointXZ("Shore17");
-				DoQuestReloadToLocation("Shore17", "reload", "reload1", "");
-			}
-			if (PChar.ColonyBuilding.Stage == "2" || PChar.ColonyBuilding.Stage == "3")
-			{
-				setCharacterShipLocation(pchar, "Caiman_Town");
-				setWDMPointXZ("Shore17");
-				DoQuestReloadToLocation("Caiman_Town", "reload", "reload1", "");
-			}
+			setCharacterShipLocation(pchar, "Shore17");
+			setWDMPointXZ("Shore17");
+			DoQuestReloadToLocation("Shore17", "reload", "reload1", "");
 		}
 		if (fMouseX >= 648.0 && fMouseX <= 694.0 && fMouseY >= 1955.0 && fMouseY <= 2028.0)
 		{
@@ -610,6 +629,42 @@ void SelectRColony()
 			setCharacterShipLocation(pchar, "LostShipsCity_town");
 			setWDMPointXZ("LostShipsCity_town");
 			DoQuestReloadToLocation("LostShipsCity_town", "reload", "reload1", "");
+		}
+		if (fMouseX >= 1568.0 && fMouseX <= 1642.0 && fMouseY >= 1074.0 && fMouseY <= 1170.0)
+		{
+			setCharacterShipLocation(pchar, "Shore31");
+			setWDMPointXZ("Shore31");
+			DoQuestReloadToLocation("Shore31", "reload", "reload1", "");
+		}
+		if (fMouseX >= 1916.0 && fMouseX <= 1996.0 && fMouseY >= 1715.0 && fMouseY <= 1812.0)
+		{
+			setCharacterShipLocation(pchar, "Shore59");
+			setWDMPointXZ("Shore59");
+			DoQuestReloadToLocation("Shore59", "reload", "reload1", "");
+		}
+		if (fMouseX >= 1627.0 && fMouseX <= 1669.0 && fMouseY >= 1941.0 && fMouseY <= 1986.0)
+		{
+			setCharacterShipLocation(pchar, "Shore20");
+			setWDMPointXZ("Shore20");
+			DoQuestReloadToLocation("Shore20", "reload", "reload1", "");
+		}
+		if (fMouseX >= 1023.0 && fMouseX <= 1052.0 && fMouseY >= 840.0 && fMouseY <= 901.0)
+		{
+			setCharacterShipLocation(pchar, "Shore75");
+			setWDMPointXZ("Shore75");
+			DoQuestReloadToLocation("Shore75", "reload", "reload1", "");
+		}
+		if (fMouseX >= 414.0 && fMouseX <= 485.0 && fMouseY >= 906.0 && fMouseY <= 995.0)
+		{
+			setCharacterShipLocation(pchar, "Shore65");
+			setWDMPointXZ("Shore65");
+			DoQuestReloadToLocation("Shore65", "reload", "reload1", "");
+		}
+		if (fMouseX >= 1097.0 && fMouseX <= 1180.0 && fMouseY >= 1143.0 && fMouseY <= 1254.0)
+		{
+			setCharacterShipLocation(pchar, "Shore74");
+			setWDMPointXZ("Shore74");
+			DoQuestReloadToLocation("Shore74", "reload", "reload1", "");
 		}
 	}
 }
@@ -882,7 +937,7 @@ void ShowColonyInfo(int iColony)
 		}
 		if(sti(refStore.Goods.(sGood).TradeType) == 8 && i4 > 0)
 		SetFormatedText("AGGRESSIVE_CAPTION", GetLangStr("AGGRESSIVE"));
-		sText = "Aктуальность данных о товарах";
+		sText = XI_ConvertString("GoodsRelevance");
 		AddLineToFormatedText("COLONY_INFO_TEXT", sText);
 		sText =  NullCharacter.PriceList.(sColony).AltDate;
 		AddLineToFormatedText("COLONY_INFO_TEXT2", sText);

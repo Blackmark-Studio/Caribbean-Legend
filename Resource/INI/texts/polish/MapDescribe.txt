@@ -5,44 +5,44 @@ info
 }
 type_full_1
 {
-Mapa jest wyraźnie świeża, a papier jeszcze nie zżółkł. Oznaczenia wydają się narysowane w pośpiechu, ale jeśli mamy im wierzyć, skarb jest ukryty w miejscu #sMaplocName# na #sMapIslName#.
+Mapa jest wyraźnie świeża, a papier jeszcze nie zżółkł. Oznaczenia wydają się narysowane w pośpiechu, ale jeśli mamy im wierzyć, skarb jest ukryty na #sMaplocName# na #sMapIslName#.
 }
-type_full_1_isl {wyspa}
-type_full_1_mein {lądy}
+type_full_1_isl {wyspie}
+type_full_1_mein {kontynencie}
 
 type_full_2
 {
-Mapa jest narysowana dość niedbale, a #sMapIslName# jest ledwie dostrzegalna. Sądząc po oznaczeniach, skarb jest ukryty w #sMaplocName#, ale możemy mieć pewność tylko idąc tam.
+Mapa jest narysowana dość niedbale, przez co ledwo można dostrzeć, że jest to #sMapIslName#. Sądząc po oznaczeniach, skarb jest ukryty w #sMaplocName#, lecz tylko poprzez udanie się do wskazanej lokacji, będzie można stwierdzić czy skarb faktycznie tam jest.
 }
 type_full_2_isl {wyspa}
-type_full_2_mein {lądy}
+type_full_2_mein {kontynent}
 
 type_full_3
 {
-Ta mapa nie była cenna dla jej właściciela - kontur #sMapIslName# został zniszczony przez plamy wody. Miejsce skarbu wydaje się być #sMaplocName#.
+Ta mapa nie była cenna dla jej właściciela - kontury #sMapIslName# został zniszczony przez plamy wody. Miejsce skarbu wydaje się być #sMaplocName#.
 }
 type_full_3_isl {wyspy}
-type_full_3_mein {lądy}
+type_full_3_mein {kontynentu}
 
 type_full_4
 {
 Mapa przedstawia #sMapIslName#. Miejsce, w którym przechowywane są skarby, to #sMaplocName#. Brak umiejętności autora został zrekompensowany wysiłkiem - fantazyjne zwierzęta, jakby narysowane ręką dziecka, zdobią marginesy.
 }
-type_full_4_isl {wyspa}
-type_full_4_mein {lądy}
+type_full_4_isl {wyspe}
+type_full_4_mein {kontynent}
 
 type_full_5
 {
 Mapa dokładnie odzwierciedla kontury #sMapIslName#. Miejsce skarbu to #sMaplocName#. Nie będzie trudno je znaleźć, ponieważ autor zostawił dość precyzyjne wskazówki.
 }
-type_full_5_isl {wyspa}
-type_full_5_mein {lądy}
+type_full_5_isl {wyspy}
+type_full_5_mein {kontynentu}
 type_full_6
 {
 Ta mapa jest narysowana na wysokiej jakości papierze w linię. Kontur #sMapIslName# jest łatwo rozpoznawalny. Zgodnie z notatką na odwrocie, lokalizacja skarbu to #sMaplocName#.
 }
-type_full_6_isl {wyspa}
-type_full_6_mein {lądy}
+type_full_6_isl {wyspy}
+type_full_6_mein {kontynentu}
 
 type_full_7
 {
@@ -50,42 +50,42 @@ To jest #sMapIslName#. Mapa wskazuje miejsce ukrytego skarbu — to #sMaplocName
 Autentyczność mapy sugerują brązowe plamy krwi, co również wskazuje, że ten kawałek papieru zmieniał właścicieli wielokrotnie.
 }
 type_full_7_isl {wyspa}
-type_full_7_mein {lądy}
+type_full_7_mein {kontynent}
 
 type_full_8
 {
 Ta mapa wyraźnie widziała wiele rąk — papier jest spalony w kilku miejscach, a kontur #sMapIslName# jest zaznaczony śladami wielu zagięć. Miejsce skarbu to #sMaplocName#. Jak się zdaje, coś naprawdę cennego tam leży.
 }
-type_full_8_isl {wyspy}
-type_full_8_mein {lądy}
+type_full_8_isl {wyspa}
+type_full_8_mein {kontynent}
 
 type_full_9
 {
 #sMapIslName#, przedstawiony dość dokładnie na tej mapie, jest otoczony powyginanymi zdobieniami i rysunkami morskich potworów. Kto by nie był autorem mapy, z pewnością znał się na swoim fachu, ukrywając coś bardzo cennego w skarbie. Pozostaje tylko dotrzeć do lokalizacji — #sMaplocName#.
 }
 type_full_9_isl {wyspa}
-type_full_9_mein {lądy}
+type_full_9_mein {kontynent}
 
 type_full_10
 {
 Połówki tej mapy nie pasują do siebie, chociaż pismo, kolor atramentu i stan papieru wyraźnie wskazują na tego samego autora. Kontury #sMapIslName# są rozmyte i poplamione atramentem, a skarb, jak się wydaje, znajduje się w #sMaplocName#.
 }
 type_full_10_isl {wyspa}
-type_full_10_mein {lądy}
+type_full_10_mein {kontynent}
 
 type_full_11
 {
 Ta mapa została starannie podzielona na pół, co uniemożliwia dostrzeżenie #sMapIslName# tylko z jedną połówką. Notatki są napisane starannym pismem, co ułatwia zrozumienie, gdzie leży skarb — w #sMaplocName#. Sądząc po stanie papieru, skarby są tam od wielu dziesięcioleci.
 }
 type_full_11_isl {wyspa}
-type_full_11_mein {lądy}
+type_full_11_mein {kontynent}
 
 type_full_12
 {
 Ta mapa, złożona z dwóch części, wygląda niesamowicie staro. Kontury #sMapIslName# są przestarzałe o kilka dziesiątek lat. Opisy i wskazówki są napisane w przestarzałym języku i obfitują w łacinę. Trudno ocenić rozmiar skarbów przechowywanych w #sMaplocName#.
 }
-type_full_12_isl {wyspy}
-type_full_12_mein {lądy}
+type_full_12_isl {wyspa}
+type_full_12_mein {kontynent}
 
 
 
@@ -229,7 +229,7 @@ Tortuga_Grot_box1		{w skrzyni na wybrzeżu}
 Tortuga_Cave			{w lochach Tortugi}
 Tortuga_Cave_box1		{w skrzyni za zamkniętymi drzwiami}
 
-Trinidad_Grot			{w jaskini naprzeciwko latarni morskiej Trynidad i Tobago}
+Trinidad_Grot			{w jaskini naprzeciwko latarni morskiej Trynidad}
 Trinidad_Grot_box1		{w skrzyni na wybrzeżu}
 
 Martinique_Grot 		{w jaskini niedaleko Plaży Lamentin}

@@ -62,7 +62,6 @@ void SalaryNextDayUpdate()
 void WorldSituationsUpdate()
 {
 	int 	iStep = GetEventData();
-	float 	dayRandom;
 
 	switch(iStep)
 	{
@@ -71,13 +70,11 @@ void WorldSituationsUpdate()
 		
             DeleteAttribute(pchar, "SkipEshipIndex");// boal
 			Log_QuestInfo("WorldSituationsUpdate DailyEatCrewUpdate");
-			
-			dayRandom = Random();
-			PChar.DayRandom = dayRandom;
-			Log_TestInfo("dayRandom == " + dayRandom);
+
+			UpdateSeeds();
 
 			CheckCharactersUpdateItems();
-						
+
 			if (CheckAttribute(pchar, "questTemp.LSC")) 
 			{ //Jason: еженедельное обновление паролей кланов LSC и ежедневное вытирание
 				if (GetDataDay() == 7 || GetDataDay() == 14 || GetDataDay() == 21 || GetDataDay() == 28)
@@ -102,7 +99,7 @@ void WorldSituationsUpdate()
 		
 		case 1:			
 			if(bRains) Whr_RainFogGenerator(); // генератор дождей и туманов в локациях
-		
+
 			SalaryNextDayUpdate();  // зряплата
 			Log_QuestInfo("WorldSituationsUpdate SalaryNextDayUpdate");
 
@@ -115,14 +112,28 @@ void WorldSituationsUpdate()
 					if (!CheckAttribute(&Islands[i], "hidden")) Island_SetReloadEnableGlobal(Islands[i].id, true);
 				}
 			}
-			
+
 			// Мерзкий Божок - без НИ
 			if (GetDLCenabled(DLC_APPID_2) && !CheckAttribute(pchar, "questTemp.CG_SpawnAguebana") && pchar.rank >= 9) DoQuestFunctionDelay("ChickenGod_BrothelCheck", 1.0);
 			// Чёрная Метка - без НИ
 			if (GetDLCenabled(DLC_APPID_3) && !CheckAttribute(pchar, "questTemp.BM_StartQuest") && pchar.rank >= 5) DoQuestCheckDelay("BM_StartQuest", 1.0);
-			if (GetDLCenabled(DLC_APPID_4) && !CheckAttribute(pchar, "questTemp.SantaMisericordia")) SantaMisericordia_init();
-			if (GetDLCenabled(DLC_APPID_5) && !SandBoxMode &&  sti(pchar.rank) >= 7 && !CheckAttribute(pchar, "questTemp.LadyBeth")) LadyBeth_init();
-			if (GetDLCenabled(DLC_APPID_5) && SandBoxMode && !CheckAttribute(pchar, "questTemp.LadyBeth")) LadyBeth_init();
+			if (GetDLCenabled(DLC_APPID_4))
+			{
+				if(!CheckAttribute(pchar, "questTemp.SantaMisericordia")) SantaMisericordia_init();
+				else if (GetDataDay() == 4) CheckSantaMisericordia();
+			}
+			if (GetDLCenabled(DLC_APPID_5))
+			{	
+				if(!CheckAttribute(pchar, "questTemp.LadyBeth"))
+				{
+					if(SandBoxMode) LadyBeth_init();
+					else if (CheckAttribute(pchar, "questTemp.TrialEnd")) LadyBeth_init();
+				}
+				else if(GetDataDay() == 13)
+				{
+					CheckLadyBeth();
+				}
+			}
 			CheckAchievments();
 		break;
 		
@@ -135,11 +146,11 @@ void WorldSituationsUpdate()
 			// Addon 2016-1 Jason пиратская линейка
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.CharleePrince"))
 			{
-				if (GetDataDay() == 5 || GetDataDay() == 10 || GetDataDay() == 15 || GetDataDay() == 20 || GetDataDay() == 25 || GetDataDay() == 30)
+				if (GetDataDay() % 5 == 0)
 				{
 					ChangeCharacterComplexReputation(pchar, "nobility", -1);
 				}
-				if (GetDataDay() == 10 || GetDataDay() == 20 || GetDataDay() == 30)
+				if (GetDataDay() % 10 == 0)
 				{
 					OfficersReaction("bad");
 				}
@@ -233,11 +244,12 @@ void Tut_StartGame(string sQuest)
 	LAi_LocationFightDisable(loadedLocation, true);
 	DoQuestFunctionDelay("Tut_locCamera_1", 0.1);
 	LAi_SetStayType(pchar);
+	TeleportCharacterToPosAy(pchar, -1.15, 3.20, 11.80, -0.90);
 }
 
 void Tut_locCamera_1(string _tmp)
 {
-    locCameraToPos(-5, 2.5, 5.6, false);
+    locCameraFromToPos(-4.33, 3.66, 13.51, true, -0.81, 3.10, 10.99);
 }
 
 void Tut_Continue()

@@ -60,6 +60,29 @@ void ProcessDialogEvent()
 	        Dialog.Text = "Wenn du diese Zeile liest, ist es ein Fehler im Code";
 			Link.l1 = "Schließen";
 			Link.l1.go = "exit";
+			
+			//--> Вступительный туториал на палубе корабля за Шарля
+		if (CheckAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1"))
+		{
+			dialog.text = "Verdammt aufregend! Ein echtes Seegefecht!\nSchade nur, dass ich die Schlacht von hier aus nicht sehen kann... Na gut. Ich kenne mich inzwischen gut genug mit dem Seemannshandwerk aus, um mir den Ablauf gut vorstellen zu können\nWahrscheinlich fünf Piratenschiffe... Ein großes, ein paar mittlere und kleinere. Genau richtig für unsere Pinasse. Das gibt eine großartige Geschichte — Lulu wird begeistert sein!";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1");
+			pchar.wind.speed = 18.0;
+			fWeatherSpeed = stf(18.0);
+			//AddDialogExitQuestFunction("SharlieTutorial_StartShip");
+			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_3");
+		}
+		/*if (CheckAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_2"))
+		{
+			dialog.text = "Sieht so aus, als wären wir geentert worden...";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_2");
+			AddDialogExitQuestFunction("SharlieTutorial_TrumBitva");
+		}*/
+		//<-- Вступительный туториал на палубе корабля за Шарля
+
 			//--> Голландский гамбит
 			if (CheckAttribute(pchar, "questTemp.HWIC_FindIsland"))
     		{
@@ -754,7 +777,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if (pchar.location == "Minentown_ExitTown")
+						if (pchar.location == "LosTeques_ExitTown")
 						{
 							Dialog.Text = "Es hat keinen Sinn, diese Mine anzugreifen, ohne zuerst Informationen über das dort abgebaute Gold und Silber zu sammeln. Andernfalls schicke ich meine Männer umsonst in den Tod.";
 							Link.l1 = "...";

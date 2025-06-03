@@ -513,7 +513,7 @@ void ShowInfoWindow()
 			    refBaseShip = GetRealShip(iShip);
 				sHeader = XI_ConvertString(refBaseShip.BaseName);
 				sText = XI_Convertstring("Captain") + " - " + GetFullName(refCharacter);
-				sText1 = sText + "\n\n" + GetConvertStr(refBaseShip.BaseName, "ShipsDescribe.txt");
+				sText1 = sText + "\n\n" + GetShipDescr(refBaseShip);
 			}
 			else
 			{

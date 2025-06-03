@@ -8,6 +8,18 @@ object	RealShips[REAL_SHIPS_QUANTITY];
 #define SAIL_COST_PERCENT 10
 #define HULL_COST_PERCENT 20
 
+string GetShipDescr(ref refRealShip)
+{
+	ref refShip;
+	makeref(refShip, ShipsTypes[sti(refRealShip.basetype)]);
+
+	if (CheckAttribute(refShip, "modname"))
+	{
+		return GetConvertStr(refRealShip.BaseName, "mods\"+refShip.modname+"\ShipsDescribe.txt");
+	}
+	return GetConvertStr(refRealShip.BaseName, "ShipsDescribe.txt");
+}
+
 ref GetRealShip(int iType) 
 { 
 	if(iType >= REAL_SHIPS_QUANTITY)

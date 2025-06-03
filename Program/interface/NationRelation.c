@@ -235,7 +235,7 @@ void ShowInfoWindow()
 			    sPicture = "interfaces\le\portraits\512\face_" + refChar.FaceId + ".tga"
 				sHeader = XI_ConvertString(refBaseShip.BaseName);
 				sText = XI_Convertstring("Captain") + " - " + GetFullName(refChar);
-				sText1 = sText + "\n\n" + GetConvertStr(refBaseShip.BaseName, "ShipsDescribe.txt");
+				sText1 = sText + "\n\n" + GetShipDescr(refBaseShip);
 				sText3 = XI_ConvertString("ShipPower") + ": " + makeint(GetRealShipPower(refChar)) + " / " + makeint(GetBaseShipPower(sti(refBaseShip.BaseType)));
 			}
 		break; 

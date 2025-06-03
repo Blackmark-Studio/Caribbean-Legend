@@ -100,3 +100,6 @@
 #define MSG_SET_VIDEO_FLAGS 49002 //"l" flags (1<<0 - loop video)
 #define EVENT_END_VIDEO "EndVideoPlay"
 //============================================================================================
+
+#define MSG_INTERFACE_LOAD_PICTURES_INI_FILE 45400 //"s"        filename
+#define MSG_INTERFACE_LOAD_STRINGS_INI_FILE  45401 //"s"        filename

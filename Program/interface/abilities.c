@@ -110,7 +110,7 @@ void IDoExit(int exitCode)
 		}
 		if(totalMush > 2) Achievment_Set("ach_CL_132");
 	}
-	if(bGlobalTutor)
+	/* if(bGlobalTutor)
 	{
 		for(i = 1; i < 4; i++)
 		{		
@@ -120,7 +120,7 @@ void IDoExit(int exitCode)
 				DoQuestFunctionDelay("SharlieTutorial_AlonsoHired", 1.0);
 			}
 		}
-	}
+	} */
 	DelEventHandler("InterfaceBreak","ProcessExitCancel");
 	DelEventHandler("exitCancel","ProcessExitCancel");
     DelEventHandler("ievnt_command","ProcessCommandExecute");
@@ -450,9 +450,9 @@ void ShowInfoWindow()
 						sHeader = XI_ConvertString("companionship");
 					}
 					sPicture = "interfaces\le\portraits\512\face_" + rchr.FaceId + ".tga"
-					if(CheckCharacterPerk(xi_refCharacter, "ByWorker")) 
+					if(CheckCharacterPerk(rchr, "ByWorker")) 
 					{
-						if(CheckCharacterPerk(xi_refCharacter, "ByWorker2")) sText2 = sText2 + NewStr() + GetConvertStr("perkByWorker2Short", "AbilityDescribe.txt"));
+						if(CheckCharacterPerk(rchr, "ByWorker2")) sText2 = sText2 + NewStr() + GetConvertStr("perkByWorker2Short", "AbilityDescribe.txt"));
 						else sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt"));
 					}
 				}
@@ -577,7 +577,7 @@ void FillSkillTables()
     // boal оптимизация скилов <--
 
     // Оптимизон для проверок пенальти в десятках вызовов ниже и внутри функций
-    xi_refCharacter.TempSailing = GetCharacterSkillSimple(xi_refCharacter, SKILL_SAILING);
+    xi_refCharacter.TempSailing = GetSummonSkillFromNameSimple(xi_refCharacter, SKILL_SAILING);
 
     if (!CheckAttribute(xi_refCharacter,"perks.FreePoints_self") )
 		xi_refCharacter.perks.FreePoints_self = 0;
@@ -612,7 +612,8 @@ void FillSkillTables()
 		GameInterface.TABLE_SPECIAL.(row).td1.str = XI_ConvertString(skillName + "T");
 		GameInterface.TABLE_SPECIAL.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillValue(xi_refCharacter, SPECIAL_TYPE, skillName);
-		GameInterface.TABLE_SPECIAL.(row).td4.str = skillVal;
+		//GameInterface.TABLE_SPECIAL.(row).td4.str = skillVal; // старый метод
+		GameInterface.TABLE_SPECIAL.(row).td4.str = GetCharacterSPECIAL(xi_refCharacter, skillName);
 		// рассчет драйна
 		diff = GetCharacterSPECIAL(xi_refCharacter, skillName) - skillVal;
 		if (diff == 0)
@@ -661,7 +662,8 @@ void FillSkillTables()
 
 		GameInterface.TABLE_SKILL_1.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillValue(xi_refCharacter, SKILL_TYPE, skillName);
-		GameInterface.TABLE_SKILL_1.(row).td5.str = skillVal;
+		//GameInterface.TABLE_SKILL_1.(row).td5.str = skillVal; // старый метод
+		GameInterface.TABLE_SKILL_1.(row).td5.str = GetSummonSkillFromName(xi_refCharacter, skillName);
 		// расчёт драйна
 		diff = GetSummonSkillFromName(xi_refCharacter, skillName) - skillVal;
 		
@@ -716,7 +718,8 @@ void FillSkillTables()
 
 		GameInterface.TABLE_SKILL_2.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillValue(xi_refCharacter, SKILL_TYPE, skillName);
-		GameInterface.TABLE_SKILL_2.(row).td5.str = skillVal;
+		//GameInterface.TABLE_SKILL_2.(row).td5.str = skillVal; // старый метод
+		GameInterface.TABLE_SKILL_2.(row).td5.str = GetSummonSkillFromName(xi_refCharacter, skillName);
 		// рассчет драйна
 		diff = GetSummonSkillFromName(xi_refCharacter, skillName) - skillVal;
 
@@ -946,7 +949,7 @@ void OfficerChange()
 {
 	string attributeName = "pic" + (nCurScrollNum+1);
 	
-	if(bGlobalTutor && nCurScrollNum < 7) return;
+	//if(bGlobalTutor && nCurScrollNum < 7) return;
 	
 	if(GameInterface.CHARACTERS_SCROLL.(attributeName).character != "0")
 	{

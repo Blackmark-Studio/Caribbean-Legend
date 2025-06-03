@@ -415,6 +415,9 @@ void WM_SetParameterData()
 	BattleInterface.CommandList.UDArrow_Offset_Down = RecalculateHIcon(makeint(-30 * fHtRatio)) + "," + RecalculateVIcon(makeint(45 * fHtRatio));
 
 	BattleInterface.maincharindex = pchar.index;
+	
+	// evganat - динамический интерфейс
+	WM_SetNationsThreat();
 
 	WM_SetShipData();
 }
@@ -460,4 +463,112 @@ void GetStarProgressByValue(int n, ref rLeft, ref rTop, ref rRight, ref rBottom)
     rTop = 0.0; 
     rRight = fRight;
     rBottom = 1.0; 
+}
+
+void WM_NullNationsThreat()
+{
+	DeleteAttribute(&BattleInterface, "wm_dynamic.images");
+//	BattleInterface.wm_dynamic.images.backtexture.group = "TUTORIAL_BACK";
+//	BattleInterface.wm_dynamic.images.backtexture.picture = "background";
+	BattleInterface.wm_dynamic.images.englandflag.group = "message_icons";
+	BattleInterface.wm_dynamic.images.englandflag.picture = "england";
+	BattleInterface.wm_dynamic.images.englandthreat.group = "message_icons";
+	BattleInterface.wm_dynamic.images.englandthreat.picture = "threat0";
+	BattleInterface.wm_dynamic.images.franceflag.group = "message_icons";
+	BattleInterface.wm_dynamic.images.franceflag.picture = "france";
+	BattleInterface.wm_dynamic.images.francethreat.group = "message_icons";
+	BattleInterface.wm_dynamic.images.francethreat.picture = "threat0";
+	BattleInterface.wm_dynamic.images.spainflag.group = "message_icons";
+	BattleInterface.wm_dynamic.images.spainflag.picture = "spain";
+	BattleInterface.wm_dynamic.images.spainthreat.group = "message_icons";
+	BattleInterface.wm_dynamic.images.spainthreat.picture = "threat0";
+	BattleInterface.wm_dynamic.images.hollandflag.group = "message_icons";
+	BattleInterface.wm_dynamic.images.hollandflag.picture = "holland";
+	BattleInterface.wm_dynamic.images.hollandthreat.group = "message_icons";
+	BattleInterface.wm_dynamic.images.hollandthreat.picture = "threat0";
+	BattleInterface.wm_dynamic.images.pirateflag.group = "message_icons";
+	BattleInterface.wm_dynamic.images.pirateflag.picture = "pirate";
+	BattleInterface.wm_dynamic.images.piratethreat.group = "message_icons";
+	BattleInterface.wm_dynamic.images.piratethreat.picture = "threat0";
+}
+
+void WM_SetNationsThreat()
+{
+	WM_NullNationsThreat();
+	int iNation;
+	int iThreat[5];
+	int nLevels = 0;
+	for(iNation = ENGLAND; iNation <= PIRATE; iNation++)
+	{
+		iThreat[iNation] = wdmGetNationThreat(iNation);
+		if(iThreat[iNation] > 0 && !wdmCompareEncPower(iNation))
+			nLevels++;
+	}
+	
+	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	int x1, y1, x2, y2;
+	int backwidth, widthFlag, heightFlag, widthThreat, heightThreat, spaceM, spaceL, voffset, vspace, offsetThreat;
+
+	// задаём все размеры и интервалы
+	widthFlag = makeint(60 * fHtRatio);
+	heightFlag = makeint(60 * fHtRatio);
+	widthThreat = makeint(28 * fHtRatio);
+	heightThreat = makeint(28 * fHtRatio);
+	offsetThreat = makeint(30 * fHtRatio);
+	spaceM = makeint(4 * fHtRatio);
+	spaceL = makeint(18 * fHtRatio);
+	voffset = makeint(20 * fHtRatio);
+	vspace = makeint(8 * fHtRatio);
+	
+	// задаём задник через размеры и интервалы
+	backwidth = spaceL + widthFlag * nLevels + spaceM * (nLevels - 1) + spaceL;
+	y1 = sti(showWindow.top) + voffset;
+	y2 = y1 + vspace + heightFlag + vspace;
+	int centerH = sti(showWindow.right) / 2;
+	x1 = centerH - backwidth / 2;
+	x2 = x1 + backwidth;
+	
+	// выставляем задник
+	aref arImage;
+//	makearef(arImage, BattleInterface.wm_dynamic.images.backtexture);
+//	arImage.pos = GetPosString(x1, y1, x2, y2);
+	if(nLevels == 0)
+		DeleteAttribute(&BattleInterface, "wm_dynamic.images.backtexture");
+	
+	// выставляем флаги и значки угрозы
+	string sFlag, sThreat, sNation;
+	int iFlag = 0;
+	for(iNation = ENGLAND; iNation <= PIRATE; iNation++)
+	{
+		sNation = Nations[iNation].name;
+		sFlag = sNation + "flag";
+		sThreat = sNation + "threat";
+		if(iThreat[iNation] > 0 && !wdmCompareEncPower(iNation))
+		{
+			// флаг
+			makearef(arImage, BattleInterface.wm_dynamic.images.(sFlag));
+			// задаём позицию через размеры и интервалы
+			x1 = centerH - backwidth / 2 + spaceL + (widthFlag + spaceM) * iFlag;
+			x2 = x1 + widthFlag;
+			y1 = sti(showWindow.top) + voffset + vspace;
+			y2 = y1 + heightFlag;
+			arImage.pos = GetPosString(x1, y1, x2, y2);
+			// угроза
+			makearef(arImage, BattleInterface.wm_dynamic.images.(sThreat));
+			arImage.picture = "threat" + iThreat[iNation];
+			// задаём позицию через размеры и интервалы
+			x1 = centerH - backwidth / 2 + spaceL + (widthFlag + spaceM) * iFlag + offsetThreat;
+			x2 = x1 + widthThreat;
+			y1 = sti(showWindow.top) + voffset + vspace + offsetThreat;
+			y2 = y1 + heightThreat;
+			arImage.pos = GetPosString(x1, y1, x2, y2);
+			
+			iFlag++;
+		}
+	}
+}
+
+string GetPosString(int x1, int y1, int x2, int y2)
+{
+	return x1 + "," + y1 + "," + x2 + "," + y2;
 }

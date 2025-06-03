@@ -715,9 +715,9 @@ Ho trovato la chiave del capitano! Mi chiedo quali tesori apra...
 #QUEST DWH
 Oscure acque della guarigione
 #TEXT	1
-A Bridgetown si mormora che la zingara del posto sia l’ultima speranza per la figlia gravemente malata di Thomas Morrison. Ma lei si ostina a non voler aiutare. Possibile che non provi davvero compassione per la povera ragazza?
+A  St. John's si mormora che la zingara del posto sia l’ultima speranza per la figlia gravemente malata di Thomas Morrison. Ma lei si ostina a non voler aiutare. Possibile che non provi davvero compassione per la povera ragazza?
 #TEXT	2
-La donna gitana mi ha detto che sarebbe disposta ad aiutare la ragazza, ma Thomas si rifiuta categoricamente di farla entrare in casa sua. Voglio andare da Thomas e capire perché sta respingendo l’ultima speranza di salvare la ragazza.
+La donna gitana mi ha detto che sarebbe disposta ad aiutare la ragazza, ma Thomas si rifiuta categoricamente di farla entrare in casa sua. Voglio andare da Thomas e capire perché sta respingendo l’ultima speranza di salvare la ragazza. La sua casa si trova nella parte nord della città, vicino al muro, accanto a una lussuosa villa con colonne.
 #TEXT	3
 Il prete della chiesa locale ha minacciato Thomas Morrison di scomunica se accetterà l’aiuto della zingara per salvare la figlia gravemente malata. Ora Thomas è diviso tra la paura di perdere il favore della chiesa e la disperazione per la salute della bambina. Proverò a convincere il prete a chiudere un occhio su questo peccato, per un bene superiore: salvare la vita della ragazza!
 #TEXT	4
@@ -774,7 +774,7 @@ Il capo del porto sostiene di non avere la minima idea di chi l’abbia aggredit
 #TEXT	4
 Il Capo del Porto mi ha pagato per intero, anzi, è stato persino più generoso del previsto. Mi ha offerto uno sconto permanente del cinquanta percento sull’ormeggio di una nave, per qualsiasi durata. Ma questa generosità non fa che aumentare i miei sospetti. E se il mercenario avesse detto la verità? Se davvero si fosse imbattuto nei pirati, perché non ha chiamato la guardia? Perché non ne ha parlato quando mi ha mandato a cercare il “killer”? Sono solo supposizioni, comunque. Quello che è fatto è fatto, e forse solo il tempo svelerà la verità. Devo andare avanti.
 #TEXT	5
-Il Capo del Porto è davvero un farabutto! Sorride mentre saluta i miei compagni che salpano, poi vende senza scrupoli le rotte delle loro navi ai pirati. Gente come lui non può restare impunita. Aspetterò che cali la notte e sistemerò la faccenda. Le sue luride azioni verranno alla luce. Gli appunti che mi ha dato il mercenario resteranno nella sua casa, ben visibili. Così tutta la città vedrà chi è davvero.
+Il Capo del Porto è davvero un farabutto! Sorride mentre saluta i miei compagni che salpano, poi vende senza scrupoli le rotte delle loro navi ai pirati. Gente come lui non può restare impunita. Aspetterò che cali la notte e sistemerò la faccenda. Le sue luride azioni verranno alla luce. Gli appunti che mi ha dato il mercenario resteranno nella sua casa, ben visibili. Così tutta la città vedrà chi è davvero. È ironico che viva vicino alla prigione - in fondo, dovrebbe esserne un ospite.
 #TEXT	6
 Il bastardo è morto! Ora devo solo lasciare gli appunti e sparire prima che tutta la guarnigione sia messa in allarme.
 #TEXT	7

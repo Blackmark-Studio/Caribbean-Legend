@@ -101,7 +101,7 @@ void InitInterface(string iniName)
 		SetNodeUsing("A_UPDATES", false);
 	}
 	
-	if(VERSION_NUM == VERSION_NUM_PRE) NewsRead = true; // есть новости
+	if(!CheckNews()) NewsRead = true; // есть новости
 	SetNodeUsing("A_NEWS", NewsRead);
 
 	// belamour ачивка за установленный мод
@@ -249,7 +249,6 @@ void ShowNews()
 	XI_WindowDisable("MAIN_WINDOW",true);
 	XI_WindowShow("NEWS_WINDOW", true);
 	XI_WindowDisable("NEWS_WINDOW",false);
-	// SetNodeUsing("A_NEWS", false);
 	SetCurrentNode("NEWS_TEXT");
 	title = GetConvertStr("News", "News.txt");
 	descr = GetConvertStr("News" + "_descr", "News.txt");
@@ -262,6 +261,9 @@ void ShowNews()
 		SetNodeUsing("NEWS_SCROLL_TEXT",false);
 		SendMessage( &GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE,"NEWS_TEXT", 13, 1 ); //1 - запрет, 0 - нет
 	}
+	SendMessage(&GameInterface, "lssss", MSG_INTERFACE_SAVE_STRINGS_TO_FILE, "Resource\INI\texts\\" + LanguageGetLanguage() + "\News.txt", "News", "IsRead", "true");
+	NewsRead = false;
+	SetNodeUsing("A_NEWS", NewsRead);
 }
 
 void NewsCancel()
@@ -797,4 +799,19 @@ bool ModelExists(string path) {
     bool result = SendMessage(&testModel, "ls", MSG_MODEL_LOAD_GEO, path);
     DeleteClass(&testModel);
     return result;
+}
+
+/* belamour проверяем прочитана ли новость
+для апдейтов удаляем блок из txt файла
+[News]
+IsRead = true*/
+bool CheckNews()
+{
+	string value;
+	string fileName = "Resource\INI\texts\\" + LanguageGetLanguage() + "\News.txt";
+	
+	if(!SendMessage(&GameInterface, "lssse", MSG_INTERFACE_READ_STRINGS_FROM_FILE, fileName, "News", "IsRead", &value)) return false;
+	if(value == "true") return true;
+	
+	return false;
 }

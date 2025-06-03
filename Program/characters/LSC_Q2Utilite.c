@@ -607,7 +607,7 @@ void initStartState2Character(ref ch)
     objTask.land = "";
     // Более быстрая, нежели CheckAttribute, проверка апдейтов WME
     for(i = 0; i < 60; i++) EncProgress[i] = false;
-    // Первичная мощь
+    // Механика мощи
     PChar.Squadron.RawPower = 0.0;
     PChar.Squadron.ModPower = 0.0;
 }

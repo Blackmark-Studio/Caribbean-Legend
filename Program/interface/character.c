@@ -371,7 +371,8 @@ void FillSkillTables()
 		GameInterface.TABLE_SPECIAL.(row).td1.str = XI_ConvertString(skillName + "T");
 		GameInterface.TABLE_SPECIAL.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillValue(xi_refCharacter, SPECIAL_TYPE, skillName);
-		GameInterface.TABLE_SPECIAL.(row).td4.str = skillVal;
+		//GameInterface.TABLE_SPECIAL.(row).td4.str = skillVal; // старый метод
+		GameInterface.TABLE_SPECIAL.(row).td4.str = GetCharacterSPECIAL(xi_refCharacter, skillName);
 		// рассчет драйна
 		diff = GetCharacterSPECIAL(xi_refCharacter, skillName) - skillVal;
 		if (diff == 0)
@@ -414,7 +415,8 @@ void FillSkillTables()
 
 		GameInterface.TABLE_SKILL_1.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillValue(xi_refCharacter, SKILL_TYPE, skillName);
-		GameInterface.TABLE_SKILL_1.(row).td5.str = skillVal;
+		//GameInterface.TABLE_SKILL_1.(row).td5.str = skillVal; // старый метод
+		GameInterface.TABLE_SKILL_1.(row).td5.str = GetSummonSkillFromName(xi_refCharacter, skillName);
 		// рассчет драйна
 		diff = GetSummonSkillFromName(xi_refCharacter, skillName) - skillVal;
 
@@ -467,7 +469,9 @@ void FillSkillTables()
 
 		GameInterface.TABLE_SKILL_2.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillValue(xi_refCharacter, SKILL_TYPE, skillName);
-		GameInterface.TABLE_SKILL_2.(row).td5.str = skillVal;
+		//GameInterface.TABLE_SKILL_2.(row).td5.str = skillVal; // старый метод
+		GameInterface.TABLE_SKILL_2.(row).td5.str = skillVal; // старый метод
+		
 		// рассчет драйна
 		diff = GetSummonSkillFromName(xi_refCharacter, skillName) - skillVal;
 

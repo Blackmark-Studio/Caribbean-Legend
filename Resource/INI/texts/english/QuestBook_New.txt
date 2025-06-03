@@ -713,9 +713,9 @@ I found the captain's key! I wonder what treasures it opens...
 #QUEST DWH
 Dark waters of healing
 #TEXT	1
-In Bridgetown, they whisper that the local gypsy is the last hope for Thomas Morrison's gravely ill daughter. But she stubbornly refuses to help. Does she truly feel no pity for the poor girl?
+In St. John's, they whisper that the local gypsy is the last hope for Thomas Morrison's gravely ill daughter. But she stubbornly refuses to help. Does she truly feel no pity for the poor girl?
 #TEXT	2
-The gypsy woman informed me that she is quite willing to help the girl, but Thomas flatly refuses to let her into his home. I want to visit Thomas and find out why he's rejecting the last hope for saving the girl.
+The gypsy woman informed me that she is quite willing to help the girl, but Thomas flatly refuses to let her into his home. I want to visit Thomas and find out why he's rejecting the last hope for saving the girl. His house is in the northern part of the city, by the wall, next to a luxurious mansion with columns.
 #TEXT	3
 The local church priest threatened Thomas Morrison with excommunication if he accepts the gypsy's help to save his gravely ill daughter. Now Thomas is torn between his fear of falling out of the church's favor and his despair over his daughter's illness. I'll try to convince the priest to turn a blind eye to this sin for the greater good - saving the girl's life!
 #TEXT	4
@@ -772,7 +772,7 @@ It’s done. Time to report back to the Port Chief and claim my well-earned rewa
 #TEXT	4
 The Port Chief paid me in full, even more generously than agreed. He offered a permanent fifty percent discount on docking one ship for any period. But that generosity only deepens my suspicions. What if the mercenary spoke the truth? If he really encountered pirates, why didn’t he call the guard? Why didn’t he mention it when sending me after the “killer”? Still, it’s all speculation. What’s done is done, and perhaps only time will reveal the truth. I must move on.
 #TEXT	5
-The Port Chief is a true scoundrel! Smiling as he waves my comrades off to sea, then casually sells their ship routes to pirates. People like him must not go unpunished. I'll wait for nightfall and deal with him. deal with him. His filthy deeds will be exposed. The notes given to me by the mercenary will remain in his house, in plain sight. Let the whole town see him for what he really is.
+The Port Chief is a true scoundrel! Smiling as he waves my comrades off to sea, then casually sells their ship routes to pirates. People like him must not go unpunished. I'll wait for nightfall and deal with him. deal with him. His filthy deeds will be exposed. The notes given to me by the mercenary will remain in his house, in plain sight. Let the whole town see him for what he really is. It's ironic that he lives near the prison-by rights, he ought to be an inmate.
 #TEXT	6
 The bastard is dead! Now I just need to leave the notes and vanish before the entire garrison is put on high alert.
 #TEXT	7

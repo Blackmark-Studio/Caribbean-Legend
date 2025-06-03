@@ -325,7 +325,7 @@ void ProcessDialogEvent()
 
 				case 1:
 					dialog.text = "Ах, дорог"+GetSexPhrase("ой","ая")+"... Ты даже не представляешь, как мне сложно держать себя в руках, когда ты рядом...";
-					link.l1 = "огда хватит с тебя этой сладкой пытки... Иди ко мне...";
+					link.l1 = "Тогда хватит с тебя этой сладкой пытки... Иди ко мне...";
 					link.l1.go = "exit";
 					NextDiag.TempNode = "OS_Matros_again";
 				break;

@@ -362,9 +362,39 @@ int doDescribe(int gNum)
 					loadScr = "interfaces\le\loading\sea_3.tga";
 				break;
 			}
+			if(sQuestSeaCharId != "")
+			{
+				switch (sQuestSeaCharId)
+				{
+					case "SantaMisericordia_cap":
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_sm.tga"); 
+						totalInfo = GetConvertStr("SM_WorldMap", "SantaMisericordia.txt");
+						sOkBtn = XI_ConvertString("map_attack");
+					break;
 
-			SetNewPicture("INFO_PICTURE", loadScr); 
-			totalInfo = XI_ConvertString("NavalSignal") + dirOff + XI_ConvertString("dir sail someone sails") + totalInfo;
+					case "LadyBeth_cap":
+                        bPowerCompare = false;
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_lb.tga"); 
+						totalInfo = GetConvertStr("LadyBeth_WorldMap", "LadyBeth.txt");
+						sOkBtn = XI_ConvertString("map_ok");
+					break;
+
+                    case "MaryCelesteCapitan":
+                        bPowerCompare = false;
+                    break;
+
+                    //default:
+                        SetNewPicture("INFO_PICTURE", loadScr); 
+                        totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+                    //break;
+				}
+				//sQuestSeaCharId = ""; ~!~ WTF
+			}
+			else
+			{
+				SetNewPicture("INFO_PICTURE", loadScr); 
+				totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+			}
 		}
 
         // Механика мощи

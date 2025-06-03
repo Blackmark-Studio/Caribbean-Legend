@@ -59,6 +59,11 @@
 
 #define MSG_INTERFACE_GET_FREE_SPACE 45300
 
+#define MSG_INTERFACE_LOAD_PICTURES_INI_FILE 45400 //"s"        filename
+#define MSG_INTERFACE_LOAD_STRINGS_INI_FILE  45401 //"s"        filename
+#define MSG_INTERFACE_SAVE_STRINGS_TO_FILE  45402 //"ssss"      filename, sectionName, keyName, value
+#define MSG_INTERFACE_READ_STRINGS_FROM_FILE  45403 //"ssse"    filename, sectionName, keyName, &value
+
 #define INTERFACE_CHANGE_INTERMEDIA 0
 #define INTERFACE_CHANGE_WAVE 1
 

@@ -10,6 +10,9 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	LAi_SetPlayerType(pchar);
 	LAi_SetCurHPMax(pchar);
 	AddQuestRecord("SharlieTutorial", "0");
+	AddQuestRecordInfo("Sharlie_Father", "1");
+	AddQuestRecordInfo("Sharlie_Shevallie", "1");
+	AddQuestRecordInfo("Sharlie_Lover", "1");
 	
 	DeleteAttribute(pchar, "TutorialToDeck_1");
 	
@@ -479,7 +482,7 @@ void SharlieTutorial_Trevoga_5(string qName)
 
 void SharlieTutorial_Trevoga_6(string qName)
 {
-	locCameraToPos(-7.80, 10.38, -20.86, true);
+	locCameraFollowEx(true);
 	sld = CharacterFromID("SharlieTutorial_Sailor_10");
 	TeleportCharacterToPosAy(sld, -9.69, 7.93, -21.64, 1.50);
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
@@ -894,7 +897,7 @@ void SharlieTutorial_TrumBitva_6_1(string qName)
 	AddLandQuestMark(sld, "questmarkmain");
 }
 
-void SharlieTutorial_TrumBitva_7() // здесь нужен туториал на назначение офицера в абордажники
+/*void SharlieTutorial_TrumBitva_7() // здесь нужен туториал на назначение офицера в абордажники
 {
 	sld = CharacterFromID("SharlieTutorial_Alonso");
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
@@ -906,7 +909,7 @@ void SharlieTutorial_TrumBitva_7() // здесь нужен туториал н�
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	DoQuestFunctionDelay("Tutorial_Fighter", 1.0);
 	//LaunchTutorial("Fighter", 1);
-}
+}*/
 
 void SharlieTutorial_TrumBitva_8()
 {
@@ -977,15 +980,6 @@ void SharlieTutorial_TrumBitva_9_1(string qName)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", 1, PIRATE, 0, true, "pirate"));
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_hold1");
-		if(i>=7 && i<=8)
-		{
-			GiveItem2Character(sld, "pistol1");
-			EquipCharacterByItem(sld, "pistol1");
-			AddItems(sld, "bullet", 1);
-			AddItems(sld, "GunPowder", 1);
-			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
-			LAi_GunSetChargeQuant(sld, GUN_ITEM_TYPE, 1);
-		}	
 		LAi_SetHP(sld, 20.0, 20.0);
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -1074,7 +1068,7 @@ void SharlieTutorial_PobedaPaluba(string qName)
 	sld.Dialog.currentnode = "AfterBattle_Alonso_1";
 	ChangeCharacterAddressGroup(sld, "Quest_Ship_deck_Medium_trade", "quest", "quest7");
 	TeleportCharacterToPos(sld, -11.73, 4.46, 5.58);
-	RemovePassenger(pchar, sld);
+	//RemovePassenger(pchar, sld);
 	sld.lifeday = 0;
 	LAi_SetActorType(sld);
 	LAi_ActorDialog(sld, pchar, "", 0, 0);
@@ -1446,6 +1440,7 @@ void SharlieTutorial_windlass_9(string qName)
 	EndQuestMovie();
 	DeleteAttribute(pchar, "questTemp.NoFast");
 	locCameraSleep(false);
+	locCameraFollowEx(true);
 	LAi_SetPlayerType(pchar);
 	sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
 	DelLocatorEvent(sld.id, "event1");

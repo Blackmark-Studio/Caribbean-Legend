@@ -128,7 +128,7 @@ void IDoExit(int exitCode)
 		}
 		if(totalMush > 2) Achievment_Set("ach_CL_132");
 	}
-	if(bGlobalTutor)
+	/* if(bGlobalTutor)
 	{
 		for(i = 1; i < 4; i++)
 		{		
@@ -138,7 +138,7 @@ void IDoExit(int exitCode)
 				DoQuestFunctionDelay("SharlieTutorial_AlonsoHired", 1.0);
 			}
 		}
-	}
+	} */
 	if(CheckAttribute(pchar, "questTemp.SantaMisericordia") && !GetAchievement("ach_CL_139"))
 	{
 		if(ach139condition()) Achievment_Set("ach_CL_139");
@@ -826,9 +826,9 @@ void ShowInfoWindow()
 						sHeader = XI_ConvertString("companionship");
 					}
 					sPicture = "interfaces\le\portraits\512\face_" + rchr.FaceId + ".tga"
-					if(CheckCharacterPerk(xi_refCharacter, "ByWorker")) 
+					if(CheckCharacterPerk(rchr, "ByWorker")) 
 					{
-						if(CheckCharacterPerk(xi_refCharacter, "ByWorker2")) sText2 = sText2 + NewStr() + GetConvertStr("perkByWorker2Short", "AbilityDescribe.txt"));
+						if(CheckCharacterPerk(rchr, "ByWorker2")) sText2 = sText2 + NewStr() + GetConvertStr("perkByWorker2Short", "AbilityDescribe.txt"));
 						else sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt"));
 					}
 				}
@@ -1636,7 +1636,7 @@ void OfficerChange()
 {
     string attributeName = "pic" + (nCurScrollNum+1);
 	
-	if(bGlobalTutor && nCurScrollNum < 7) return;
+	//if(bGlobalTutor && nCurScrollNum < 7) return;
 
 	if(GameInterface.CHARACTERS_SCROLL.(attributeName).character != "0")
 	{

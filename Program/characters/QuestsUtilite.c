@@ -5167,9 +5167,9 @@ void SelectLevelTradeShipParameter()//Jason автолевеллинг на то
 
 int SelectLevelCannonParameter(int iShipType)//Jason автолевеллинг на орудия - иногда надо
 {
-	ref refBaseShip = GetRealShip(iShipType);
+	//ref refBaseShip = GetRealShip(iShipType);
 	
-	int iCannon = GetCannonByTypeAndCaliber(RandPhraseSimple("cannon","culverine"), sti(refBaseShip.MaxCaliber));
+	int iCannon = GetCannonByTypeAndCaliber(RandPhraseSimple("cannon","culverine"), sti(ShipsTypes[iShipType].MaxCaliber));
 	
 	return iCannon;
 }
@@ -5286,7 +5286,7 @@ void SetPassengerParameterToStatusCity(string _sIndex)
 	if (DaysQty < 1) DaysQty = 10; // оставлю на всяк пожарный пока
 	pchar.GenQuest.(_sIndex).DaysQty = makeint(sti(DaysQty)*(frand(1.5)+1.0)); //дни
 	float fShipIdx;
-	switch(6-sti(RealShips[sti(Pchar.Ship.Type)].Class))
+	switch(7-sti(RealShips[sti(Pchar.Ship.Type)].Class))
 	{
 		case 0: fShipIdx = 1.0; break;
 		case 1: fShipIdx = 1.2;	break;
@@ -5294,6 +5294,7 @@ void SetPassengerParameterToStatusCity(string _sIndex)
 		case 3: fShipIdx = 2.2; break;
 		case 4: fShipIdx = 3.0; break;
 		case 5:	fShipIdx = 4.5; break;
+		case 6:	fShipIdx = 5.0; break;
 	}
 	pchar.GenQuest.(_sIndex).Money = (sti(DaysQty)*500*stf(fShipIdx)+rand(100))*sti(DaysQty)/sti(pchar.GenQuest.(_sIndex).DaysQty);
 }

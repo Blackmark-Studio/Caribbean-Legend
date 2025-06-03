@@ -417,15 +417,15 @@ void SetThreatLevel()
 {
 	string groupName = "message_icons";
 	string pictureName = "threat0";
-	pictureName = "threat" + GetNationThreatLevel(FRANCE);
+	pictureName = "threat" + wdmGetNationThreat(FRANCE);
 	SendMessage(&GameInterface,"lslss",MSG_INTERFACE_MSG_TO_NODE,"FRA_THR", 6, groupName, pictureName );
-	pictureName = "threat" + GetNationThreatLevel(ENGLAND);
+	pictureName = "threat" + wdmGetNationThreat(ENGLAND);
 	SendMessage(&GameInterface,"lslss",MSG_INTERFACE_MSG_TO_NODE,"ENG_THR", 6, groupName, pictureName );
-	pictureName = "threat" + GetNationThreatLevel(SPAIN);
+	pictureName = "threat" + wdmGetNationThreat(SPAIN);
 	SendMessage(&GameInterface,"lslss",MSG_INTERFACE_MSG_TO_NODE,"SPA_THR", 6, groupName, pictureName );
-	pictureName = "threat" + GetNationThreatLevel(HOLLAND);
+	pictureName = "threat" + wdmGetNationThreat(HOLLAND);
 	SendMessage(&GameInterface,"lslss",MSG_INTERFACE_MSG_TO_NODE,"HOL_THR", 6, groupName, pictureName );
-	pictureName = "threat" + GetNationThreatLevel(PIRATE);
+	pictureName = "threat" + wdmGetNationThreat(PIRATE);
 	SendMessage(&GameInterface,"lslss",MSG_INTERFACE_MSG_TO_NODE,"PIR_THR", 6, groupName, pictureName );
 }
 
@@ -500,12 +500,14 @@ void SetNationThreatLevel()
 				break;
 			}
 		}
+		if(fHunterScore[i] > fRealLevel[5])
+			fNationThreat[i] = 100.0;
 
 		if(fNationThreat[i] > fMaxThreat)
 			fMaxThreat = fNationThreat[i];
 	}
     // PIRATE
-	int iPiratesThreatLevel = GetNationThreatLevel(PIRATE);
+	int iPiratesThreatLevel = wdmGetNationThreat(PIRATE);
 	float fPiratesThreat = fBarLevel[iPiratesThreatLevel];
     if(fPiratesThreat > fMaxThreat)
 		fMaxThreat = fPiratesThreat;
@@ -591,7 +593,7 @@ void SetNationThreatLevel()
 
 void SetPiratesThreatLevel()
 {
-	int iThreat = GetNationThreatLevel(PIRATE);
+	int iThreat = wdmGetNationThreat(PIRATE);
 	int x;
 	switch(iThreat)
 	{
@@ -612,41 +614,6 @@ void SetPiratesThreatLevel()
 	x1 += makeint(x * width / 100.0) - makeint((xt2 - xt1)/2.0);
 	x2 = x1 + (xt2 - xt1);
 	SetNodePosition("PIRATESRISKSPIC", x1, y1, x2, y2);
-}
-
-int GetNationThreatLevel(int iNation)
-{
-	int iThreat;
-	if(iNation == PIRATE)
-	{
-		int iRank;
-		iRank = sti(pchar.rank);
-		if(iRank <= 8)
-			return 1;
-		else if(iRank <= 16)
-			return 2;
-		else if(iRank <= 25)
-			return 3;
-		else if(iRank <= 30)
-			return 4;
-		else
-			return 5;
-	}
-	
-	string sAttr = strleft(Nations[iNation].name, 3) + "hunter";
-	iThreat = sti(pchar.reputation.(sAttr));
-	if(iThreat < 10)
-		return 0;
-	else if(iThreat < 15)
-		return 1;
-	else if(iThreat < 20)
-		return 2;
-	else if(iThreat < 30)
-		return 3;
-	else if(iThreat < 50)
-		return 4;
-	else
-		return 5;
 }
 
 void SetSquadronTable()
@@ -723,16 +690,43 @@ void SetSquadronTable()
 	GameInterface.StatusLine.BAR_POWER.Max   = 925;
 	GameInterface.StatusLine.BAR_POWER.Min   = 0;
 
+    // Механика мощи
     PChar.Squadron.RawPower = fSquadronMight; // Кэш
     if(CheckCharacterPerk(PChar, "SeaDogProfessional")) fSquadronMight *= 1.3;
     if(IsEquipCharacterByArtefact(PChar, "talisman15")) fSquadronMight *= 1.15;
     PChar.Squadron.ModPower = fSquadronMight; // Кэш
-    GameInterface.StatusLine.BAR_POWER.Value = fSquadronMight;
+	
+	float fBarLevel[6];
+	fBarLevel[0] = 0.0;
+	fBarLevel[1] = 0.08;
+	fBarLevel[2] = 0.2;
+	fBarLevel[3] = 0.38;
+	fBarLevel[4] = 0.64;
+	fBarLevel[5] = 1.0;
+	float fRealLevel[6];
+	fRealLevel[0] = 0.0;
+	fRealLevel[1] = 200.0;
+	fRealLevel[2] = 325.0;
+	fRealLevel[3] = 475.0;
+	fRealLevel[4] = 675.0;
+	fRealLevel[5] = 925.0;
+	
+	float fBarPower = fSquadronMight;
+	for(int iLevel = 1; iLevel <= 5; iLevel++)
+	{
+		if(fSquadronMight > fRealLevel[iLevel - 1] && fSquadronMight <= fRealLevel[iLevel])
+		{
+			fBarPower = Bring2Range(fBarLevel[iLevel - 1] * 925, fBarLevel[iLevel] * 925, fRealLevel[iLevel - 1], fRealLevel[iLevel], fSquadronMight);
+			break;
+		}
+	}
+	
+    GameInterface.StatusLine.BAR_POWER.Value = fBarPower;
 
 	SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "BAR_POWER", 0);
 
 	GetNodePosition("BAR_POWER", &x1, &y1, &x2, &y2);
-	int x = x1 + makeint((x2 - x1) * fSquadronMight / stf(GameInterface.StatusLine.BAR_POWER.Max));
+	int x = x1 + makeint((x2 - x1) * fBarPower / stf(GameInterface.StatusLine.BAR_POWER.Max));
 	int y = y1;
 	
 	GetNodePosition("POINTER_POWER", &x1, &y1, &x2, &y2);

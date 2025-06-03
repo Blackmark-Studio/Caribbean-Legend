@@ -24,7 +24,7 @@ void LAi_type_lay_Init(aref chr)
 //Процессирование типа персонажа
 void LAi_type_lay_CharacterUpdate(aref chr, float dltTime)
 {
-	if(bGlobalTutor && !CheckAttribute(pchar, "questTemp.SharlieTutorial_SailorSnore"))
+	if(bGlobalTutor && !CheckAttribute(pchar, "questTemp.SharlieTutorial_SailorSnore") && dialogRun == false)
 	{
 		LAi_CharacterPlaySound(chr, "snore");
 		pchar.questTemp.SharlieTutorial_SailorSnore = true;

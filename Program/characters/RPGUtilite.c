@@ -1703,7 +1703,7 @@ void RefreshCharacterSkillExpRate(ref _chref)
     // Посмотреть порог -> посмотреть спешиал -> проверить пенальти -> посмотреть Навигацию 
     AddCharacterExpToSkill(_chref, SKILL_SAILING, 0.0);
     ApplayNewSkill(_chref, SKILL_SAILING, 0);
-    _chref.TempSailing = GetCharacterSkillSimple(_chref, SKILL_SAILING); // бэкапим её
+    _chref.TempSailing = GetSummonSkillFromNameSimple(_chref, SKILL_SAILING); // бэкапим её
     // <-- Оптимизация (and its really works!)
 
     for (i=1; i<15; i++)

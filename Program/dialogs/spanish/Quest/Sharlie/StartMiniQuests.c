@@ -103,7 +103,11 @@ void ProcessDialogEvent()
 		pchar.questTemp.Sharlie.Storehelper = "return";
 		LAi_CharacterDisableDialog(npchar);
 		pchar.quest.StorehelperOver.over = "yes"; // снять таймер
-		// Rebbebion, новые марки до места назначения
+		
+		pchar.quest.Sharlie_JungleBandos.win_condition.l1 = "location";
+		pchar.quest.Sharlie_JungleBandos.win_condition.l1.location = "Martinique_Jungle_01";
+		pchar.quest.Sharlie_JungleBandos.function = "SharlieJungleBandos";
+			
 		QuestPointerToLoc("lefransua_town", "reload", "gate_back");
 		QuestPointerToLoc("lefransua_exittown", "reload", "reload2_back");
 		QuestPointerToLoc("martinique_jungle_02", "reload", "reload1_back");
@@ -206,34 +210,26 @@ void ProcessDialogEvent()
 		break;
 
 	case "Newstorehelper_exit":
-		DialogExit();
-		chrDisableReloadToLocation = false; // открыть локацию
-		pchar.questTemp.Sharlie.Storehelper.id = npchar.id;
-		DeleteAttribute(npchar, "LifeDay")
-			chrDisableReloadToLocation = true;
-		for (i = 1; i <= 3; i++)
-		{
-			sld = characterFromId("Newstorehelper_" + i);
-			LAi_SetActorType(sld);
-			LAi_ActorGoToLocation(sld, "reload", "reload1_back", "none", "", "", "OpenTheDoors", 10.0);
-		}
-		pchar.quest.storehelper2.win_condition.l1 = "location";
-		pchar.quest.storehelper2.win_condition.l1.location = "LeFransua_town";
-		pchar.quest.storehelper2.function = "NewstorehelperAdd";
-		AddQuestRecord("SharlieA", "4");
-		pchar.questTemp.Sharlie.Storehelper = "choise";
-		pchar.quest.storehelper.over = "yes"; // снять прерывание
-		pchar.quest.Sharlie_JungleBandos.win_condition.l1 = "location";
-		pchar.quest.Sharlie_JungleBandos.win_condition.l1.location = "Martinique_Jungle_01";
-		pchar.quest.Sharlie_JungleBandos.function = "SharlieJungleBandos";
-
-		QuestPointerToLoc("lefransua_town", "reload", "gate_back");
-		QuestPointerToLoc("lefransua_exittown", "reload", "reload2_back");
-		QuestPointerToLoc("martinique_jungle_02", "reload", "reload1_back");
-		QuestPointerToLoc("martinique_jungle_01", "reload", "reload2_back");
-		QuestPointerToLoc("fortfrance_exittown", "reload", "reload3");
-		QuestPointerToLoc("fortfrance_town", "reload", "reload6_back");
-		AddLandQuestMark(characterFromId("FortFrance_trader"), "questmarkmain");
+			DialogExit();
+			pchar.questTemp.Sharlie.Storehelper.id = npchar.id;
+			DeleteAttribute(npchar, "LifeDay")
+			for (i=1; i<=3; i++)
+			{
+				sld = characterFromId("Newstorehelper_"+i);
+				ChangeCharacterAddressGroup(sld, "none", "", "");
+			}
+			pchar.quest.storehelper4.win_condition.l1 = "location";
+			pchar.quest.storehelper4.win_condition.l1.location = "FortFrance_store";
+			pchar.quest.storehelper4.function = "NewstorehelperRegard";
+			AddQuestRecord("SharlieA", "4");
+			pchar.questTemp.Sharlie.Storehelper = "choise";
+			pchar.quest.storehelper.over = "yes"; //снять прерывание
+			
+			AddLandQuestMark(characterFromId("FortFrance_trader"), "questmarkmain");
+			
+			SetLaunchFrameFormParam("De vuelta a Saint-Pierre...", "Reload_To_Location", 0, 4.0);
+			SetLaunchFrameReloadLocationParam("FortFrance_store", "reload", "reload1", "");
+			LaunchFrameForm();
 		break;
 
 	case "Newstorehelper_regard":

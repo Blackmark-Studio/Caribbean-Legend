@@ -119,7 +119,7 @@ string wrand(string sLottery)
 #event_handler("evntWeightHashRandom","WeightHashRandom");
 string WeightHashRandom()
 {
-    LTR.WRM.TAG  = GetEventData();
+    LTR.WRM.TAG = GetEventData();
     string sLottery = GetEventData();
 
     if(LTR.WRM.TAG == "")

@@ -135,7 +135,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "Sharlie_10":
 			dialog.text = "Bardzo dobrze. Miło to słyszeć. W takim razie powinieneś udać się do zatoki Le Marin, piraci będą tam od siódmej wieczorem do czwartej rano. Nie przegap ich! I nawet nie myśl o używaniu statku! Takie działania ich spłoszą, idź tam przez dżunglę!\nPrzyprowadź mi więźnia, gdy go znajdziesz, zostawię drzwi otwarte. Polecam poczekać do pierwszej w nocy, zanim wrócisz do miasta, ponieważ musisz unikać uwagi strażników. Bądź ostrożny i powodzenia!";
 			link.l1 = "Dziękuję! Z pewnością będę potrzebować trochę szczęścia...";
-			if (CheckCharacterItem(pchar, "pistol1")) link.l1.go = "Sharlie_13";
+			if (CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE)) link.l1.go = "Sharlie_13";
 			else link.l1.go = "Sharlie_11";
 		break;
 		

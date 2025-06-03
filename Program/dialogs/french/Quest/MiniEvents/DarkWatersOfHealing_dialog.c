@@ -23,6 +23,82 @@ void ProcessDialogEvent()
 			link.l1 = "Rien.";
 			link.l1.go = "exit";
 		break;
+		
+		case "dwh_gypsy_0":
+			dialog.text = "...";
+			link.l1 = "Je cherche la bohémienne qui soigne les gens. Serait-ce toi ?";
+			link.l1.go = "dwh_ne_ta";
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "dwh_gypsy_1":
+			dialog.text = "Vérité, "+GetSexPhrase("mon chéri","belle")+". Pour chaque mal, j'ai ma méthode. J'ai remis sur pied des paysans, des riches et des marchands. Même le gouverneur lui-même a eu recours à mes potions quand personne d'autre ne pouvait l'aider. Les maladies n'ont que faire de l'or, mais mes potions, elles, les terrassent.";
+			link.l1 = "Alors pourquoi refuses-tu de soigner une fillette gravement malade, la fille de Thomas Morrison ?";
+			link.l1.go = "dwh_gypsy_2";
+			pchar.questTemp.DWH_gipsy = true;
+		break;
+
+		case "dwh_gypsy_2":
+			dialog.text = "Qui t’a raconté pareille histoire, "+GetSexPhrase("Fauconnet","Petite colombe")+" ? Je n'étais pas contre aider, mais c'est son père qui m'a chassée de la maison. Nous étions convenus que je m'occuperais du traitement, puis tout à coup, il a changé d'avis et m'a mise à la porte comme une ennemie.";
+			link.l1 = "Vraiment ? Il aurait condamné sa propre fille à souffrir ?";
+			link.l1.go = "dwh_gypsy_2_1";
+		break;
+
+		case "dwh_gypsy_2_1":
+			dialog.text = "Non, c'est un père attentionné, je n'arrive pas à comprendre pourquoi il aurait agi ainsi.";
+			link.l1 = "As-tu essayé de lui reparler ?";
+			link.l1.go = "dwh_gypsy_3";
+		break;
+
+		case "dwh_gypsy_3":
+			dialog.text = "Il ne me laisse même pas approcher de sa maison. Écoute, "+GetSexPhrase("mon chéri","belle")+", puisque tu n'es pas indifférent au sort d'une pauvre fille, peut-être pourrais-tu essayer de découvrir ce qui se passe ? Parle avec Thomas, aide-moi à sauver cette enfant de la souffrance.";
+			link.l1 = "Bien sûr, je vais t'aider. Où puis-je trouver Thomas ?";
+			link.l1.go = "dwh_gypsy_4";
+			link.l2 = "Non, ma belle. Quelle que soit la raison, je suis sûr que son père a de bonnes raisons de refuser ton aide. Je ne veux pas m'en mêler. C'est sa décision, après tout, c'est sa fille.";
+			link.l2.go = "dwh_gypsy_otkaz";
+		break;
+
+		case "dwh_gypsy_otkaz":
+			DialogExit();
+			CloseQuestHeader("DWH");
+		break;
+
+		case "dwh_gypsy_4":
+			dialog.text = "Leur maison est près du mur, dans la partie nord de la ville, à côté d’un manoir luxueux avec des colonnes. Vas-y, "+GetSexPhrase("Fauconnet","Petite colombe")+", parle-lui et reviens vers moi.";
+			link.l1 = "Je reviens vite.";
+			link.l1.go = "dwh_gypsy_5";
+		break;
+
+		case "dwh_gypsy_5":
+			DialogExit();
+			
+			AddQuestRecord("DWH", "2");
+			
+			sld = CharacterFromID("DWH_gypsy");
+			sld.dialog.currentnode = "dwh_gypsy_repeat";
+			
+			sld = GetCharacter(NPC_GenerateCharacter("DWH_Tomas", "citiz_13", "man", "man", 1, ENGLAND, -1, false, "quest"));
+			sld.name = "Thomas";
+			sld.lastname = "Morrison";
+			LAi_SetStayType(sld);
+			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+			sld.dialog.currentnode = "Tomas";
+			ChangeCharacterAddressGroup(sld, "SentJons_houseS3", "goto", "goto1");
+			sld.City = "SentJons";
+			LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
+			AddLandQuestMark(sld, "questmarkmain");
+		break;
+		
+		case "dwh_gypsy_repeat":
+			dialog.text = "Eh bien, "+GetSexPhrase("mon chéri","ma chérie")+", tu as parlé"+GetSexPhrase("","e")+" à Thomas ?";
+			link.l1 = "Pas encore.";
+			link.l1.go = "dwh_exit";
+		break;
+		
+		case "dwh_exit":
+			DialogExit();
+			NextDiag.TempNode = "dwh_gypsy_repeat";
+		break;
 
 		case "Tomas":
 			dialog.text = ""+TimeGreeting()+" ! Qu'est-ce qui vous amène chez moi ?";
@@ -74,6 +150,9 @@ void ProcessDialogEvent()
 			AddQuestRecord("DWH", "3");
 			pchar.questTemp.DWH_pastor = true;
 			AddLandQuestMark(characterFromId("SentJons_Priest"), "questmarkmain");
+			
+			sld = CharacterFromID("DWH_gypsy");
+			LAi_CharacterDisableDialog(sld);
 		break;
 		
 		case "Tomas_11":
@@ -116,6 +195,9 @@ void ProcessDialogEvent()
 			link.l1.go = "Tomas_16_1";
 			link.l2 = "Bon, puisque vous insistez... Y a-t-il autre chose que je puisse faire ?";
 			link.l2.go = "Tomas_16_2";
+			
+			sld = CharacterFromID("DWH_gypsy");
+			LAi_CharacterEnableDialog(sld);
 		break;
 		
 		case "Tomas_16_1":
@@ -256,7 +338,7 @@ void ProcessDialogEvent()
 			LAi_LocationDisableOfficersGen("Antigua_Grot", false);
 			locations[FindLocation("Antigua_Grot")].DisableEncounters = false;
 			
-			if (CheckAttribute(pchar, "questTemp.DWH_GoodChoice")) SetFunctionLocatorCondition("DWH_VorovstvoSunduk", "Antigua_Grot", "box", "box1", false)
+			/*if (CheckAttribute(pchar, "questTemp.DWH_GoodChoice"))*/ SetFunctionLocatorCondition("DWH_VorovstvoSunduk", "Antigua_Grot", "box", "box1", false)
 			
 			sld = CharacterFromID("DWH_gypsy");
 			LAi_SetStayType(sld);

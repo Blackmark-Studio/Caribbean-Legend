@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 		case "guide_0":
 			SetAchievement("Test_Ach");
 			PlaySound("Voice\English\LE\Greguar\Greguar_01.wav");
-			dialog.text = "Piacere darle il benvenuto nelle colonie, signore! Mi permetta di presentarmi: "+GetFullName(pchar)+". Viene dall'Europa? È la prima volta qui?";
+			dialog.text = "Piacere darle il benvenuto nelle colonie, signore! Mi permetta di presentarmi: "+GetFullName(npchar)+". Viene dall'Europa? È la prima volta qui?";
 			link.l1 = "Buongiorno, monsieur. Il mio nome è "+GetFullName(pchar)+". Sì, sono appena sceso dalla nave.";
 			link.l1.go = "guide_1";
 		break;

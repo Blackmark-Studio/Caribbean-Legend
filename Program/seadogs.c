@@ -348,6 +348,7 @@ void Main_InitGame()
 		UnloadSegment("Interface\BaseInterface.c");
 	}
 }
+
 void Main_LogoVideo()
 {
 	int i = sti(InterfaceStates.videoIdx);
@@ -363,13 +364,13 @@ void Main_LogoVideo()
 		InterfaceStates.videoIdx = 2;
 		StartPostVideo("Valkyrie",1);
 	break;
-	
-	default:
+
+	//default:
 		DelEventHandler(EVENT_END_VIDEO,"Main_LogoVideo");
 		DeleteClass(&aviVideoObj);
 		Event("DoInfoShower","sl","game prepare",true);
 		SetEventHandler("frame","Main_Start",1);
-	break;
+	//break;
 	}
 }
 

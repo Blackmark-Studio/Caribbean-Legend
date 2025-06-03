@@ -209,7 +209,8 @@ void WorldSituationsUpdate()
 			{
 				EmptyAllFantomCharacter(); // трем НПС
 				wdmEmptyAllDeadQuestEncounter();
-			}				
+				WM_SetNationsThreat();	// обновляем индикаторы угрозы
+			}
 		break;
 		
 		case 9:		
@@ -260,8 +261,8 @@ void Tut_Continue()
     LAi_LockFightMode(pchar, true);
     
 	sld = GetCharacter(NPC_GenerateCharacter("Sailor_1", "citiz_31", "man", "man", 1, PIRATE, 0, false, "soldier"));
-    sld.name 	= StringFromKey("time_events_3");
-    sld.lastname 	= StringFromKey("time_events_4");
+    sld.name 	= StringFromKey("time_events_7");
+    sld.lastname 	= "";
     sld.Dialog.CurrentNode = "First time";
     sld.dialog.filename = "Quest\StartGame_dialog.c";
     sld.greeting = "Teacher_pirat";

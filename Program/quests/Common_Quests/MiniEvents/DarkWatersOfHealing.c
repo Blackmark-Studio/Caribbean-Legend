@@ -97,6 +97,7 @@ void DWH_GypsyPrigotovilaZelie(string qName)
 	sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
 	sld.dialog.currentnode = "gypsy_31";
 	AddLandQuestMark(sld, "questmarkmain");
+	ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
 }
 
 void DWH_Vizdorovela(string qName)	// выздоровела
@@ -117,6 +118,7 @@ void DWH_Vizdorovela_2(string qName)
 	
 	sld = CharacterFromID("DWH_gypsy");
 	LAi_SetCitizenType(sld);
+	LAi_SetLoginTime(sld, 07.00, 21.99);
 	LAi_CharacterDisableDialog(sld);
 	ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto23");
 }

@@ -574,7 +574,7 @@ void WME_FixShipTypes(ref rEncounter, int iMaxShipNum)
     rEncounter.Power = fPower; // Механика мощи
     rEncounter.NumMerchantShips = iNumMerchantShips;
     rEncounter.NumWarShips = iNumWarShips;
-    rEncounter.FixedTypes = true;
+    if(max_i) rEncounter.FixedTypes = true; // iNumMerchantShips + iNumWarShips != 0
 }
 
 int WME_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string sShipSpec, int iNation)

@@ -713,9 +713,9 @@ J’ai trouvé la clé du capitaine ! Je me demande quels trésors elle peut bie
 #QUEST DWH
 Eaux sombres de guérison
 #TEXT	1
-À Bridgetown, on chuchote que la gitane locale est le dernier espoir pour la fille gravement malade de Thomas Morrison. Mais elle refuse obstinément d'aider. N'éprouve-t-elle donc aucune pitié pour la pauvre enfant ?
+À St.  St. John's, on chuchote que la gitane locale est le dernier espoir pour la fille gravement malade de Thomas Morrison. Mais elle refuse obstinément d'aider. N'éprouve-t-elle donc aucune pitié pour la pauvre enfant ?
 #TEXT	2
-La gitane m'a informé qu'elle est tout à fait disposée à aider la fille, mais Thomas refuse catégoriquement de la laisser entrer dans sa maison. Je veux rendre visite à Thomas et découvrir pourquoi il rejette le dernier espoir de sauver la petite fille.
+La gitane m'a informé qu'elle est tout à fait disposée à aider la fille, mais Thomas refuse catégoriquement de la laisser entrer dans sa maison. Je veux rendre visite à Thomas et découvrir pourquoi il rejette le dernier espoir de sauver la petite fille. Sa maison se trouve dans la partie nord de la ville, près du mur, à côté d’un manoir luxueux avec des colonnes.
 #TEXT	3
 Le prêtre de l'église locale a menacé Thomas Morrison d'excommunication s'il accepte l'aide de la gitane pour sauver sa fille gravement malade. Maintenant, Thomas est déchiré entre sa peur de tomber en disgrâce auprès de l'église et son désespoir face à la maladie de sa fille. Je vais essayer de convaincre le prêtre de fermer les yeux sur ce péché pour un bien supérieur - sauver la vie de la petite fille !
 #TEXT	4
@@ -772,7 +772,7 @@ C’est fait. Il est temps de faire mon rapport au chef du port et de recevoir l
 #TEXT	4
 Le chef du port m’a payé intégralement, même plus généreusement que prévu. Il m’a offert une réduction permanente de cinquante pour cent sur les frais de mouillage d’un navire, pour une durée illimitée. Mais cette générosité ne fait qu’accentuer mes soupçons. Et si le mercenaire disait la vérité ? S’il avait vraiment eu affaire à des pirates, pourquoi ne pas avoir alerté la garde ? Pourquoi ne rien avoir mentionné à ce sujet en m’envoyant éliminer l’assassin ? Mais tout cela n’est que spéculation. Ce qui est fait est fait, et seul le temps révélera peut-être la vérité. Il est temps pour moi de partir.
 #TEXT	5
-Le chef du port est un véritable salaud ! Il sourit en regardant partir mes camarades en mer, puis vend sans scrupules leurs itinéraires aux pirates. Des individus comme lui ne doivent pas rester impunis. J’attendrai la nuit et j’en finirai avec lui. Ses actes infâmes seront connus de tous. Les notes que m’a confiées le mercenaire resteront dans sa maison, bien en vue. Que toute la ville sache qui il était réellement.
+Le chef du port est un véritable salaud ! Il sourit en regardant partir mes camarades en mer, puis vend sans scrupules leurs itinéraires aux pirates. Des individus comme lui ne doivent pas rester impunis. J’attendrai la nuit et j’en finirai avec lui. Ses actes infâmes seront connus de tous. Les notes que m’a confiées le mercenaire resteront dans sa maison, bien en vue. Que toute la ville sache qui il était réellement. C’est ironique qu’il vive près de la prison - car, à juste titre, il devrait en être un pensionnaire.
 #TEXT	6
 Le misérable est mort ! Il ne reste plus qu’à laisser les notes et disparaître avant que toute la garnison ne soit mise en alerte.
 #TEXT	7

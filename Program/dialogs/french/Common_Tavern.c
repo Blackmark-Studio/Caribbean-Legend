@@ -36,7 +36,7 @@ void ProcessDialogEvent()
 	{
 		pchar.questTemp.TavernVisit.(NPCCity) = true;
 		pchar.questTemp.TavernVisit.counter = sti(pchar.questTemp.TavernVisit.counter) + 1;
-		notification("Первое посещение таверны " + XI_ConvertString(NPCCity + "TavernName"), "Drunk");
+		notification("Première visite à la taverne " + XI_ConvertString(NPCCity + "TavernName"), "Drunk");
 		AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 10.0);
 	}	
 	

@@ -24,6 +24,82 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 		break;
 		
+		case "dwh_gypsy_0":
+			dialog.text = "...";
+			link.l1 = "Послушай, чернобровая, говорят, ты исцеляешь людей - даже от тяжких болезней. Это правда?";
+			link.l1.go = "dwh_gypsy_1";
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "dwh_gypsy_1":
+			dialog.text = "Правда, "+GetSexPhrase("милок","красавица")+". Ко всякой хвори у меня свой подход. И простолюдинов, и богатеев, и купцов на ноги ставила. Да что там - сам губернатор к моим зельям прибегал, когда никто другой помочь не мог. Болезни, они золота не стращаются, а вот зелий моих - не выдерживают.";
+			link.l1 = "Тогда почему ты отказываешься лечить тяжело больную девочку - дочку Томаса Моррисона?";
+			link.l1.go = "dwh_gypsy_2";
+			pchar.questTemp.DWH_gipsy = true;
+		break;
+		
+		case "dwh_gypsy_2":
+			dialog.text = "Кто ж тебе такую небылицу наплёл, "+GetSexPhrase("соколик","голубушка")+"? Помочь-то я не против, только вот отец её сам из дома меня прогнал. Мы уж договорились, что я возьмусь за лечение, а он вдруг как переменился. Выставил меня за порог - будто врага лютого.";
+			link.l1 = "Вот как? Значит, он собственноручно обрёк свою дочь на мучения?";
+			link.l1.go = "dwh_gypsy_2_1";
+		break;
+		
+		case "dwh_gypsy_2_1":
+			dialog.text = "Что ты, он заботливый отец - сложно представить, почему он мог так поступить.";
+			link.l1 = "Ты пыталась снова с ним поговорить?";
+			link.l1.go = "dwh_gypsy_3";
+		break;
+		
+		case "dwh_gypsy_3":
+			dialog.text = "Да он меня и близко к дому не подпускает. Слушай, "+GetSexPhrase("милок","красавица")+", раз уж тебе не безразлична судьба бедной девчушки, может, попробуешь узнать, в чём дело? Поговори с Томасом - помоги мне спасти дитё от страданий.";
+			link.l1 = "Разумеется, я помогу. Где мне найти Томаса?";
+			link.l1.go = "dwh_gypsy_4";
+			link.l2 = "Нет, чернобровая. Как бы там ни было, я думаю, что у её отца есть веские причины отвергать твою помощь. Я не стану в это ввязываться. Пускай он сам решает - это ведь его дочь.";
+			link.l2.go = "dwh_gypsy_otkaz";
+		break;
+		
+		case "dwh_gypsy_otkaz":
+			DialogExit();
+			CloseQuestHeader("DWH");
+		break;
+		
+		case "dwh_gypsy_4":
+			dialog.text = "Их дом находится у стены, в северной части города, рядом с роскошным особняком с колоннами. Ступай, "+GetSexPhrase("соколик","голубушка")+", поговори с ним и возвращайся ко мне.";
+			link.l1 = "Скоро вернусь.";
+			link.l1.go = "dwh_gypsy_5";
+		break;
+		
+		case "dwh_gypsy_5":
+			DialogExit();
+			
+			AddQuestRecord("DWH", "2");
+			
+			sld = CharacterFromID("DWH_gypsy");
+			sld.dialog.currentnode = "dwh_gypsy_repeat";
+			
+			sld = GetCharacter(NPC_GenerateCharacter("DWH_Tomas", "citiz_13", "man", "man", 1, ENGLAND, -1, false, "quest"));
+			sld.name = "Томас";
+			sld.lastname = "Моррисон";
+			LAi_SetStayType(sld);
+			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+			sld.dialog.currentnode = "Tomas";
+			ChangeCharacterAddressGroup(sld, "SentJons_houseS3", "goto", "goto1");
+			sld.City = "SentJons";
+			LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
+			AddLandQuestMark(sld, "questmarkmain");
+		break;
+		
+		case "dwh_gypsy_repeat":
+			dialog.text = "Ну, "+GetSexPhrase("соколик","голубушка")+", ты поговорил"+GetSexPhrase("","а")+" с Томасом?";
+			link.l1 = "Пока нет.";
+			link.l1.go = "dwh_exit";
+		break;
+		
+		case "dwh_exit":
+			DialogExit();
+			NextDiag.TempNode = "dwh_gypsy_repeat";
+		break;
+		
 		case "Tomas":
 			dialog.text = ""+TimeGreeting()+"! Что привело вас в мой дом?";
 			link.l1 = "Я капитан "+GetFullName(pchar)+". Пришёл по просьбе цыганки. Она не понимает, почему вы отвергли её помощь, и хочет узнать причину. Разве вы сейчас в таком положении, чтобы отказываться от любой - даже малейшей возможности помочь?";
@@ -74,6 +150,9 @@ void ProcessDialogEvent()
 			AddQuestRecord("DWH", "3");
 			pchar.questTemp.DWH_pastor = true;
 			AddLandQuestMark(characterFromId("SentJons_Priest"), "questmarkmain");
+			
+			sld = CharacterFromID("DWH_gypsy");
+			LAi_CharacterDisableDialog(sld);
 		break;
 		
 		case "Tomas_11":
@@ -116,6 +195,9 @@ void ProcessDialogEvent()
 			link.l1.go = "Tomas_16_1";
 			link.l2 = "Ну, раз уж вы настаиваете... Я могу ещё чем-нибудь помочь?";
 			link.l2.go = "Tomas_16_2";
+			
+			sld = CharacterFromID("DWH_gypsy");
+			LAi_CharacterEnableDialog(sld);
 		break;
 		
 		case "Tomas_16_1":
@@ -657,11 +739,14 @@ void ProcessDialogEvent()
 		
 		case "gypsy_43":
 			DialogExit();
-			LAi_CharacterDisableDialog(npchar);
-			npchar.lifeday = 0;
+			
 			AddCharacterExpToSkill(pchar, "Leadership", 200);
 			AddQuestRecord("DWH", "9");
 			CloseQuestHeader("DWH");
+			
+			sld = CharacterFromID("DWH_gypsy");
+			sld.lifeday = 0;
+			LAi_CharacterDisableDialog(sld);
 			
 			AddSimpleRumourCity("Вы слышали? "+GetFullName(pchar)+" достал для дочери Томаса Моррисона снадобье, которое вмиг поставило бедную девочку на ноги!", "SentJons", 10, 1, "");
 			AddSimpleRumourCity("Томас Моррисон ежедневно ставит в приходе свечку за здоровье "+GetFullName(pchar)+". Поговаривают, он спас его дочь от затяжной болезни.", "SentJons", 10, 1, "");

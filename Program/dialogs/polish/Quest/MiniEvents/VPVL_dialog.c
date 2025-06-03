@@ -279,7 +279,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Pier_2":
-			dialog.text = "Proszę wybaczyć, nic nie rozumiem... Ból i głód odebrały mi zdolność jasnego myślenia... Dlaczego pan"+GetSexPhrase("","i")+" tu "+GetSexPhrase("przyszedł","przyszła")+";
+			dialog.text = "Proszę wybaczyć, nic nie rozumiem... Ból i głód odebrały mi zdolność jasnego myślenia... Dlaczego pan"+GetSexPhrase("","i")+" tu "+GetSexPhrase("przyszedł","przyszła");
 			link.l1 = "To proste. Od chwili pana zaginięcia pańska wierna żona czuwa przy molo, wypatrując żagli 'Kormorana'. Jej rozpacz była tak przejmująca, że nie mogłem"+GetSexPhrase("","am")+" przejść obojętnie i postanowiłem"+GetSexPhrase("","am")+" wyruszyć na poszukiwania.";
 			link.l1.go = "Pier_3";
 		break;

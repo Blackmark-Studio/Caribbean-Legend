@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 			link.l3.go  = "Finish_2_3";
 			link.l4 = "Zawsze marzyłem o romantycznym uroku bycia poszukiwaczem skarbów!";
 			link.l4.go  = "Finish_2_4";
-			link.l5 = "Zachowaj swoje rady, Sandro. Czemu się ograniczać? Wiem, czego chcę, i chcę to wszystko!";
+			link.l5 = "Zachowaj swoje rady, Alonso. Czemu się ograniczać? Wiem, czego chcę, i chcę to wszystko!";
 			link.l5.go  = "Finish_2_5";
 		break;
 		
@@ -143,7 +143,7 @@ void ProcessDialogEvent()
 					link.l0 = "BetaTest - pomiń i rozpocznij grę";
 					link.l0.go = "Finish_2";
 				}
-				link.l1 = "Sandro? Co się, u diabła, stało? I dlaczego mam taki okropny ból głowy?";
+				link.l1 = "Alonso? Co się, u diabła, stało? I dlaczego mam taki okropny ból głowy?";
 				link.l1.go = "Node_1_Jess";
 			}
 			else
@@ -1308,7 +1308,7 @@ void ProcessDialogEvent()
 			bGameMenuStart = false;
 			StartBattleLandInterface();
 			dialog.text = "Jak ci czerwonoskórzy ateiści, nawet mówiłeś w ich języku.";
-			link.l1 = "Do diabła! Sandro, co ty, u licha, wygadujesz?!";
+			link.l1 = "Do diabła! Alonso, co ty, u licha, wygadujesz?!";
 			link.l1.go  = "Node_2";
 		break;
 		
@@ -1354,7 +1354,7 @@ void ProcessDialogEvent()
 			dialog.text = "...";
 			//link.l1 = "Hm... daj mi chwilę, muszę zebrać myśli.";
 			//link.l1.go  = "ChangePIRATES_Jess";
-			link.l2 = "Czuję się teraz dobrze. Dzięki za troskę, Sandro.";
+			link.l2 = "Czuję się teraz dobrze. Dzięki za troskę, Alonso.";
 			link.l2.go  = "Node_5_Jess";
 		break;
 		
@@ -1380,7 +1380,7 @@ void ProcessDialogEvent()
 				dialog.text = "Jesteśmy teraz w porcie "+XI_ConvertString("Colony"+pchar.HeroParam.ToCityId+"Gen")+". Musimy jakoś zacząć nowe życie bez tych wszystkich Masek i Beltropów, niech wszyscy zgniją w piekle... I nie zawiedziemy cię, kapitanie. Zostaniemy z tobą do końca.";
 				link.l1 = "No cóż, chyba mam szczęście, że żyję! Nie zawiodę cię ani was wszystkich. To wszystko, muszę wylądować.";
 				link.l1.go  = "Finish_2";
-				link.l2 = "Jeden drań mniej, jeden drań więcej, tak już jest, Sandro. Dasz mi parę rad przed lądowaniem?";
+				link.l2 = "Jeden drań mniej, jeden drań więcej, tak już jest, Alonso. Dasz mi parę rad przed lądowaniem?";
 				link.l2.go  = "Advice_1";
 			}
 			else

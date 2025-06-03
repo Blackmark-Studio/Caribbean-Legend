@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 		case "guide_0":
 			SetAchievement("Test_Ach");
 			PlaySound("Voice\English\LE\Greguar\Greguar_01.wav");
-			dialog.text = "Pleasure to welcome you to the colonies, sir! Allow me to present myself: "+GetFullName(pchar)+". Are you coming from good old home?";
+			dialog.text = "Pleasure to welcome you to the colonies, sir! Allow me to present myself: "+GetFullName(npchar)+". Are you coming from good old home?";
 			link.l1 = "Good day, monsieur. My name is "+GetFullName(pchar)+". Yes, I've just stepped off the ship.";
 			link.l1.go = "guide_1";
 		break;
@@ -240,7 +240,7 @@ void ProcessDialogEvent()
 		
 		case "guide_49":
 			dialog.text = "My friend, I take it you’re no stranger to fencing?";
-			link.l1 = "Ha! Einen Entern habe ich schon hinter mir und sogar...";
+			link.l1 = "Ha! I’ve already lived through one boarding action and even—";
 			link.l1.go = "guide_50";
 			if (FindCharacterItemByGroupWithout_knife_03(pchar, BLADE_ITEM_TYPE) == "")
 			{

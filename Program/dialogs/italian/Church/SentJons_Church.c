@@ -105,6 +105,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto23");
 			LAi_SetImmortal(sld, true);
 			AddLandQuestMark(sld, "questmarkmain");
+			LAi_CharacterEnableDialog(sld);
 		break;
 
 		case "dwh_pastor_VD_5":

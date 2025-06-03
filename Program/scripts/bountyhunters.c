@@ -81,18 +81,12 @@ void SeaHunterCheck()
             }
 
             Group_SetGroupCommander(sGroup, sCapId+ "1");
+            Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
+            Group_LockTask(sGroup);
 
             // Механика мощи
-            if(wdmCompareEncPower(j))
-            {
-                Map_CreateTrader("", "", sCapId + "1", 8);
-            }
-            else 
-            {
-                Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
-                Group_LockTask(sGroup);
-                Map_CreateWarrior("", sCapId + "1", 8);
-            }
+            if(wdmCompareEncPower(j)) Map_CreateTrader("", "", sCapId + "1", 8);
+            else Map_CreateWarrior("", sCapId + "1", 8);
         }
     }
 }

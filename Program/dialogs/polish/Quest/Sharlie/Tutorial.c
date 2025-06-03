@@ -404,6 +404,9 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "Daj mi znać, kiedy będziesz gotów. Mamy jeszcze trochę czasu, więc możesz swobodnie pochodzić po statku — pod warunkiem, że nie będziesz przeszkadzać moim ludziom w pracy.";
 				npchar.SharlieTutorial_question_0 = true;
+				// теперь можно пострелять из пушки
+				sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
+				SetLocatorEvent(sld.id, "event3", "SharlieTutorial_cannon_1");
 			}
 			else dialog.text = "Jeszcze jakieś pytania?";
 			link.l1 = "(Zakończ sprawy) Jestem gotów, kapitanie. Z panem wypiję nawet burgunda!";
@@ -425,9 +428,6 @@ void ProcessDialogEvent()
 			}
 			link.l5 = "Do zobaczenia, kapitanie.";
 			link.l5.go = "Captain_7_exit";
-			// теперь можно пострелять из пушки
-			sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
-			SetLocatorEvent(sld.id, "event3", "SharlieTutorial_cannon_1");
 		break;
 		
 		case "Captain_7_exit":
@@ -1242,7 +1242,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "BallsGold_2":
-			dialog.text = "Zawsze cieszę się, że mogę mu pomóc! Ile mi się tym razem należy?";
+			dialog.text = "Euh... o-oui.";
+			link.l1 = "Ton nom est sur la liste que m'a donnée monsieur Pinchon.";
+			link.l1.go = "BallsGold_3";
+		break;
+		
+		case "BallsGold_3":
+			dialog.text = "Ouf, j'ai cru un instant... Oui, Paul - c'est bien moi. Combien avez-vous là pour moi ?";
 			if (PCharDublonsTotal() >= 20)
 			{
 				link.l1 = "20 dublońców.";
@@ -1857,15 +1863,16 @@ void ProcessDialogEvent()
 		case "SailorAlive_12":
 			dialog.text = "A w smaku niezłe, ha-ha! Dzięki, "+pchar.name+". I tych trzech ładnie położyliście. Skoro naprawdę jesteście takim szlachetnym dżentelmenem, przejmujcie dowodzenie. We dwóch na pewno utrzymamy pokład, a jeśli chłopaki na górze też dadzą radę — dzień będzie nasz!";
 			link.l1 = "...";
-			link.l1.go = "exit";
-			AddDialogExitQuestFunction("SharlieTutorial_TrumBitva_7");
+			//link.l1.go = "exit";
+			link.l1.go = "SailorAlive_13";
+			//AddDialogExitQuestFunction("SharlieTutorial_TrumBitva_7");
 			TakeItemFromCharacter(pchar, "quest_potion");
 			PlaySound("Ambient\Tavern\glotok_001.wav");
 			DelLandQuestMark(npchar);
 		break;
 
 		case "SailorAlive_13":
-			if (CheckAttribute(npchar, "fighter"))
+			/*if (CheckAttribute(npchar, "fighter"))
 			{
 				dialog.text = "Tak lepiej. Załadowaliście kartaczownicę?";
 				link.l1 = "Właśnie się tym zajmuję... A czemu nagle tak ucichło?";
@@ -1878,7 +1885,14 @@ void ProcessDialogEvent()
 				link.l1 = "...";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "SailorAlive_13";
-			}
+			}*/
+			dialog.text = "Tak lepiej. Załadowaliście kartaczownicę?";
+			link.l1 = "Właśnie się tym zajmuję... A czemu nagle tak ucichło?";
+			link.l1.go = "SailorAlive_14";
+			SetMusic("");
+			LAi_SetActorType(npchar);
+			LAi_ActorSetGroundSitMode(npchar);
+			LAi_ActorAnimation(npchar, "ground_standup", "1", -1);
 		break;
 
 		case "SailorAlive_14":

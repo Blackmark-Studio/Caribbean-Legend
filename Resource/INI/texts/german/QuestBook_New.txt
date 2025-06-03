@@ -707,9 +707,9 @@ Ich habe den Schlüssel des Kapitäns gefunden! Ich frage mich, welche Schätze 
 #QUEST DWH
 Dunkle Wasser der Heilung
 #TEXT	1
-In Bridgetown flüstert man, dass die örtliche Zigeunerin die letzte Hoffnung für Thomas Morrisons schwerkranke Tochter sei. Doch sie weigert sich hartnäckig zu helfen. Empfindet sie denn kein Mitleid mit dem armen Mädchen?
+In  St. John's flüstert man, dass die örtliche Zigeunerin die letzte Hoffnung für Thomas Morrisons schwerkranke Tochter sei. Doch sie weigert sich hartnäckig zu helfen. Empfindet sie denn kein Mitleid mit dem armen Mädchen?
 #TEXT	2
-Die Zigeunerin hat mir mitgeteilt, dass sie durchaus bereit ist, dem Mädchen zu helfen, aber Thomas weigert sich entschieden, sie in sein Haus zu lassen. Ich möchte Thomas besuchen und herausfinden, warum er die letzte Hoffnung auf Rettung des Mädchens ablehnt.
+Die Zigeunerin hat mir mitgeteilt, dass sie durchaus bereit ist, dem Mädchen zu helfen, aber Thomas weigert sich entschieden, sie in sein Haus zu lassen. Ich möchte Thomas besuchen und herausfinden, warum er die letzte Hoffnung auf Rettung des Mädchens ablehnt. Sein Haus befindet sich im nördlichen Teil der Stadt, an der Mauer, neben einer luxuriösen Villa mit Säulen.
 #TEXT	3
 Der örtliche Kirchenpriester hat Thomas Morrison mit Exkommunikation gedroht, wenn er die Hilfe der Zigeunerin annimmt, um seine schwerkranke Tochter zu retten. Nun ist Thomas hin- und hergerissen zwischen seiner Angst, bei der Kirche in Ungnade zu fallen, und seiner Verzweiflung über die Krankheit seiner Tochter. Ich werde versuchen, den Priester zu überzeugen, bei dieser Sünde ein Auge zuzudrücken, um des höheren Wohls willen - um das Leben des Mädchens zu retten!
 #TEXT	4
@@ -766,7 +766,7 @@ Die Sache ist erledigt. Es ist Zeit, dem Hafenmeister Bericht zu erstatten und d
 #TEXT	4
 Der Hafenmeister hat mich vollständig bezahlt, sogar großzügiger als vereinbart. Er bot mir einen dauerhaften Rabatt von fünfzig Prozent auf die Liegegebühr eines Schiffs – für beliebige Dauer. Doch diese Großzügigkeit verstärkt nur meine Zweifel. Was, wenn der Söldner die Wahrheit sagte? Wenn er wirklich auf Piraten gestoßen ist – warum rief er dann nicht die Wache? Und warum erwähnte er das nicht, als er mich losschickte, den Mörder zu beseitigen? Doch das alles sind nur Vermutungen. Was geschehen ist, lässt sich nicht rückgängig machen – vielleicht wird nur die Zeit zeigen, wie es wirklich war. Ich muss weiterziehen.
 #TEXT	5
-Der Hafenmeister – ein wahrer Schuft! Lächelt, wenn er meine Kameraden zur See verabschiedet, und verkauft dann bereitwillig ihre Routen an Piraten. Solche Menschen dürfen nicht ungestraft davonkommen. Ich werde die Nacht abwarten und mit ihm abrechnen. Seine abscheulichen Taten sollen jedem bekannt werden. Die Notizen, die mir der Söldner gegeben hat, werde ich in seinem Haus zurücklassen – gut sichtbar. Ganz Belize soll wissen, wer er wirklich war.
+Der Hafenmeister – ein wahrer Schuft! Lächelt, wenn er meine Kameraden zur See verabschiedet, und verkauft dann bereitwillig ihre Routen an Piraten. Solche Menschen dürfen nicht ungestraft davonkommen. Ich werde die Nacht abwarten und mit ihm abrechnen. Seine abscheulichen Taten sollen jedem bekannt werden. Die Notizen, die mir der Söldner gegeben hat, werde ich in seinem Haus zurücklassen – gut sichtbar. Ganz Belize soll wissen, wer er wirklich war. Es ist ironisch, dass er in der Nähe des Gefängnisses wohnt - denn eigentlich müsste er selbst einsitzen.
 #TEXT	6
 Der Schurke ist tot! Jetzt müssen nur noch die Notizen hinterlassen und der Ort verlassen werden, bevor die gesamte Garnison in Alarmbereitschaft versetzt wird.
 #TEXT	7

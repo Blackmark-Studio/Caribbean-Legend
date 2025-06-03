@@ -264,7 +264,7 @@ void wdmRecalcReloadToSea()
 			{
         		totalInfo = totalInfo + "БАГА -1.";
       		}
-	        
+
 			if(iRealEncounterType != ENCOUNTER_TYPE_BARREL && iRealEncounterType != ENCOUNTER_TYPE_BOAT)
 			{
 				switch(sti(rEncounter.Nation))
@@ -294,7 +294,7 @@ void wdmRecalcReloadToSea()
 		}
 	}
 	//Log_TestInfo("isShipEncounterType :" + isShipEncounterType);
-	
+
 	if (isShipEncounterType > 1)
 	{
 		switch (rand(1))
@@ -347,15 +347,22 @@ void wdmRecalcReloadToSea()
 						totalInfo = GetConvertStr("SM_WorldMap", "SantaMisericordia.txt");
 						sOkBtn = XI_ConvertString("map_attack");
 					break;
-					
+
 					case "LadyBeth_cap":
                         bPowerCompare = false;
 						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_lb.tga"); 
 						totalInfo = GetConvertStr("LadyBeth_WorldMap", "LadyBeth.txt");
 						sOkBtn = XI_ConvertString("map_ok");
 					break;
-					SetNewPicture("INFO_PICTURE", loadScr); 
-					totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+
+                    case "MaryCelesteCapitan":
+                        bPowerCompare = false;
+                    break;
+
+                    //default:
+                        SetNewPicture("INFO_PICTURE", loadScr); 
+                        totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+                    //break;
 				}
 				//sQuestSeaCharId = ""; ~!~ WTF
 			}

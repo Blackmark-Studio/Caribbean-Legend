@@ -277,7 +277,7 @@ void ProcessDialogEvent()
 //----------------------------------------------освятить корабль------------------------------------------------
 		case "shipshine":
 			//поиск старшего класса
-			iTemp = 6;
+			iTemp = 7;
 			for (i=0; i<COMPANION_MAX; i++)
 			{
 				int iIdx = GetCompanionIndex(GetMainCharacter(), i);
@@ -291,23 +291,23 @@ void ProcessDialogEvent()
 			{
 				case 1: 
 					sTemp = "I have only one ship in my squadron and it's "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = 5000*(6-iTemp);
+					pchar.GenQuest.Shipshine.Money = 5000*(7-iTemp);
 				break;
 				case 2:
 					sTemp = "I have two ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(1.8*(5000*(6-iTemp)));
+					pchar.GenQuest.Shipshine.Money = makeint(1.8*(5000*(7-iTemp)));
 				break;
 				case 3:
 					sTemp = "I have three ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(2.6*(5000*(6-iTemp)));
+					pchar.GenQuest.Shipshine.Money = makeint(2.6*(5000*(7-iTemp)));
 				break;
 				case 4:
 					sTemp = "I have four ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(3.4*(5000*(6-iTemp)));
+					pchar.GenQuest.Shipshine.Money = makeint(3.4*(5000*(7-iTemp)));
 				break;
 				case 5:
 					sTemp = "I have five ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(4.2*(5000*(6-iTemp)));
+					pchar.GenQuest.Shipshine.Money = makeint(4.2*(5000*(7-iTemp)));
 				break;
 			}
 			dialog.text = "Tout dépend du nombre total de navires dans votre escadre et de leur taille.";

@@ -356,63 +356,11 @@ void ProcessDialogEvent()
 		break;
 		
 		// --> Тёмные воды исцеления
-		case "dwh_gypsy_1":
-			dialog.text = "Vérité, "+GetSexPhrase("mon chéri","belle")+". Pour chaque mal, j'ai ma méthode. J'ai remis sur pied des paysans, des riches et des marchands. Même le gouverneur lui-même a eu recours à mes potions quand personne d'autre ne pouvait l'aider. Les maladies n'ont que faire de l'or, mais mes potions, elles, les terrassent.";
-			link.l1 = "Alors pourquoi refuses-tu de soigner une fillette gravement malade, la fille de Thomas Morrison ?";
-			link.l1.go = "dwh_gypsy_2";
-			pchar.questTemp.DWH_gipsy = true;
-		break;
-
-		case "dwh_gypsy_2":
-			dialog.text = "Qui t’a raconté pareille histoire, "+GetSexPhrase("Fauconnet","Petite colombe")+" ? Je n'étais pas contre aider, mais c'est son père qui m'a chassée de la maison. Nous étions convenus que je m'occuperais du traitement, puis tout à coup, il a changé d'avis et m'a mise à la porte comme une ennemie.";
-			link.l1 = "Vraiment ? Il aurait condamné sa propre fille à souffrir ?";
-			link.l1.go = "dwh_gypsy_2_1";
-		break;
-
-		case "dwh_gypsy_2_1":
-			dialog.text = "Non, c'est un père attentionné, je n'arrive pas à comprendre pourquoi il aurait agi ainsi.";
-			link.l1 = "As-tu essayé de lui reparler ?";
-			link.l1.go = "dwh_gypsy_3";
-		break;
-
-		case "dwh_gypsy_3":
-			dialog.text = "Il ne me laisse même pas approcher de sa maison. Écoute, "+GetSexPhrase("mon chéri","belle")+", puisque tu n'es pas indifférent au sort d'une pauvre fille, peut-être pourrais-tu essayer de découvrir ce qui se passe ? Parle avec Thomas, aide-moi à sauver cette enfant de la souffrance.";
-			link.l1 = "Bien sûr, je vais t'aider. Où puis-je trouver Thomas ?";
-			link.l1.go = "dwh_gypsy_4";
-			link.l2 = "Non, ma belle. Quelle que soit la raison, je suis sûr que son père a de bonnes raisons de refuser ton aide. Je ne veux pas m'en mêler. C'est sa décision, après tout, c'est sa fille.";
-			link.l2.go = "dwh_gypsy_otkaz";
-		break;
-
-		case "dwh_gypsy_otkaz":
-			DialogExit();
-			CloseQuestHeader("DWH");
-		break;
-
-		case "dwh_gypsy_4":
-			dialog.text = "Leur maison est près du mur, dans la partie nord de la ville, à côté d’un manoir luxueux avec des colonnes. Vas-y, "+GetSexPhrase("Fauconnet","Petite colombe")+", parle-lui et reviens vers moi.";
-			link.l1 = "Je reviens vite.";
-			link.l1.go = "dwh_gypsy_5";
-		break;
-
-		case "dwh_gypsy_5":
-			DialogExit();
-			
-			AddQuestRecord("DWH", "2");
-			
-			sld = GetCharacter(CreateCharacterClone(npchar, -1));
-			sld.id = "DWH_gypsy";
-			npchar.lifeday = 0;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_Tomas", "citiz_13", "man", "man", 1, ENGLAND, -1, false, "quest"));
-			sld.name = "Thomas";
-			sld.lastname = "Morrison";
-			LAi_SetStayType(sld);
-			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "Tomas";
-			ChangeCharacterAddressGroup(sld, "SentJons_houseS3", "goto", "goto1");
-			sld.City = "SentJons";
-			LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
-			AddLandQuestMark(sld, "questmarkmain");
+		case "dwh_ne_ta":
+			sld = CharacterFromID("DWH_gypsy");
+			dialog.text = "Non, mon cher, ce n’est pas moi que tu cherches, c’est " + sld.name + ". Elle est en ville en ce moment. Je l’ai vue récemment.";
+			link.l1 = "Merci.";
+			link.l1.go = "exit";
 		break;
 		// <-- Тёмные воды исцеления
 		

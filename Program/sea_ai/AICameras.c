@@ -298,8 +298,7 @@ bool SeaCameras_isCameraOutside()
 {
 	if (SeaCameras.Camera == "SeaShipCamera") return true;
 	if (SeaCameras.Camera == "SeaFreeCamera") return true;
-	if (SeaCameras.Camera == "SeaDeckCamera") return false;
-    if (SeaCameras.Camera == "SeaFireCamera") return false;
+	if (SeaCameras.Camera == "SeaDeckCamera") return true;
 	return false;
 }
 

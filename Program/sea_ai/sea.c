@@ -1354,8 +1354,7 @@ void Sea_FirstInit()
 { 
 	bSeaLoaded = true;
 	RefreshBattleInterface();
-	if(SeaCameras.Camera == "SeaDeckCamera" || SeaCameras.Camera == "SeaFireCamera")
-    {
+	if( SeaCameras.Camera == "SeaDeckCamera" ) {
 		Sailors.IsOnDeck = "1";
 	}
 	CreateEntity(&Seafoam,"Seafoam");//				ReloadProgressUpdate();

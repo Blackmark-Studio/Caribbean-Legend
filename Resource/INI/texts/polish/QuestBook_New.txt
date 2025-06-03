@@ -923,9 +923,9 @@ Znalazłem klucz kapitana! Ciekawe, jakie skarby może otwierać...
 #QUEST DWH
 Ciemne wody uzdrowienia
 #TEXT	1
-W Bridgetown szepta się, że miejscowa cyganka to ostatnia nadzieja dla ciężko chorej córki Thomasa Morrisona. Ale ona uparcie odmawia pomocy. Czy naprawdę nie ma w niej ani odrobiny współczucia dla biednej dziewczyny?
+W  St. John's szepta się, że miejscowa cyganka to ostatnia nadzieja dla ciężko chorej córki Thomasa Morrisona. Ale ona uparcie odmawia pomocy. Czy naprawdę nie ma w niej ani odrobiny współczucia dla biednej dziewczyny?
 #TEXT	2
-Cyganka poinformowała mnie, że jest całkiem chętna, by pomóc dziewczynce, ale Thomas stanowczo odmawia wpuszczenia jej do swojego domu. Chcę odwiedzić Thomasa i dowiedzieć się, dlaczego odrzuca ostatnią nadzieję na uratowanie dziewczynki.
+Cyganka poinformowała mnie, że jest całkiem chętna, by pomóc dziewczynce, ale Thomas stanowczo odmawia wpuszczenia jej do swojego domu. Chcę odwiedzić Thomasa i dowiedzieć się, dlaczego odrzuca ostatnią nadzieję na uratowanie dziewczynki. Jego dom znajduje się w północnej części miasta, przy murze, obok luksusowej rezydencji z kolumnami.
 #TEXT	3
 Miejscowy ksiądz zagroził Thomasowi Morrisonowi ekskomuniką, jeśli przyjmie pomoc cyganki, by uratować swoją ciężko chorą córkę. Teraz Thomas jest rozdarty między strachem przed popadnięciem w niełaskę kościoła a rozpaczą z powodu choroby córki. Spróbuję przekonać księdza, by przymknął oko na ten grzech dla wyższego dobra - ocalenia życia dziewczynki!
 #TEXT	4
@@ -982,7 +982,7 @@ Sprawa zakończona. Czas zgłosić się do szefa portu i odebrać zasłużoną n
 #TEXT	4
 Szef portu zapłacił mi w całości, nawet hojniej, niż się umawialiśmy. Zaproponował stałą zniżkę na postój jednego statku – o pięćdziesiąt procent, bez ograniczeń czasowych. Ale ta hojność tylko wzmaga moje podejrzenia. A jeśli najemnik mówił prawdę? Jeśli naprawdę miał do czynienia z piratami – czemu nie wezwał straży? Dlaczego nic nie wspomniał, kiedy wysyłał mnie po „mordercę”? Ale to wszystko tylko domysły. Tego, co się stało, już nie zmienię – może tylko czas pokaże prawdę. Ja tymczasem ruszam dalej.
 #TEXT	5
-Szef portu to prawdziwa kanalia! Uśmiecha się, żegnając moich towarzyszy w rejs, a potem bez skrupułów sprzedaje piratom informacje o ich statkach. Tacy ludzie nie mogą pozostać bezkarni. Poczekam do nocy i z nim skończę. Jego nikczemne czyny poznają wszyscy. Notatki, które przekazał mi najemnik, zostaną w jego domu – na widoku. Niech cały port dowie się, kim był naprawdę.
+Szef portu to prawdziwa kanalia! Uśmiecha się, żegnając moich towarzyszy w rejs, a potem bez skrupułów sprzedaje piratom informacje o ich statkach. Tacy ludzie nie mogą pozostać bezkarni. Poczekam do nocy i z nim skończę. Jego nikczemne czyny poznają wszyscy. Notatki, które przekazał mi najemnik, zostaną w jego domu – na widoku. Niech cały port dowie się, kim był naprawdę. To ironiczne, że mieszka blisko więzienia - bo tak naprawdę powinien być jego lokatorem.
 #TEXT	6
 Drań nie żyje! Teraz trzeba tylko zostawić notatki i zniknąć, zanim cały garnizon zostanie postawiony w stan gotowości.
 #TEXT	7

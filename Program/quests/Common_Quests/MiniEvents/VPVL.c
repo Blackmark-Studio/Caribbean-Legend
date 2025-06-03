@@ -145,6 +145,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		sld.lastname = StringFromKey("Neutral_18");
 		sld.dialog.FileName = "Quest\MiniEvents\VPVL_dialog.c";
 		sld.dialog.currentnode = "PierFirstTalk";
+		LAi_CharacterDisableDialog(sld);
 		LAi_SetGroundSitType(sld);
 		LAi_group_MoveCharacter(sld, "PLAYER_GROUP");
 		LAi_SetImmortal(sld, true);
@@ -153,12 +154,17 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		LAi_LocationDisableOfficersGen("Martinique_Grot", true);
 		locations[FindLocation("Martinique_Grot")].DisableEncounters = true;
 		chrDisableReloadToLocation = true;
+
 	}
 	
 	else if (sQuestName == "VPVL_AfterFight") {
 		LAi_SetStayType(pchar);
 		DoQuestCheckDelay("VPVL_PlayerType", 1);//убрать оружие, (если убрать стандартным способом, после убийства пистолетом - не убирает)
 		LAi_LocationFightDisable(&Locations[FindLocation("Martinique_Grot")], true);
+		
+		sld = CharacterFromID("VPVL_Pier_carno");
+		LAi_CharacterEnableDialog(sld);
+		
 	}
 	
 	else if (sQuestName == "VPVL_PlayerType") {

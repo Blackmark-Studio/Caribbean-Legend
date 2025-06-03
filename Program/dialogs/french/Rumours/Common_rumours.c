@@ -24,7 +24,16 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			SetQuestHeader("DWH");
 			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
+			pchar.questTemp.DWH_Start = true;;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
+			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+			sld.dialog.currentnode = "dwh_gypsy_0";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
 			
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
 			break;
@@ -101,8 +110,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Украденное воспоминание
 		
 		//--> В плену великого улова andre39966
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Le bruit court que le pêcheur Pierre Carno a disparu sans laisser de trace. Il y a deux aubes, il a pris la mer et depuis, pas le moindre signe de lui. Sa femme, Lea, est folle d'inquiétude. Jour et nuit, elle monte la garde sur le quai, les youux rivés sur les eaux infinies, priant pour apercevoir la voile de son bien-aimé.";
@@ -189,7 +198,16 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			SetQuestHeader("DWH");
 			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
+			pchar.questTemp.DWH_Start = true;;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
+			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+			sld.dialog.currentnode = "dwh_gypsy_0";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
 			
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
 			break;
@@ -266,29 +284,18 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Украденное воспоминание
 		
 		//--> В плену великого улова andre39966
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Le bruit court que le pêcheur Pierre Carno a disparu sans laisser de trace. Il y a deux aubes, il a pris la mer et depuis, pas le moindre signe de lui. Sa femme, Lea, est folle d'inquiétude. Jour et nuit, elle monte la garde sur le quai, les youux rivés sur les eaux infinies, priant pour apercevoir la voile de son bien-aimé.";
 			link.l1 = "Merci, je dois prendre congé.";
 			link.l1.go = "exit";
 			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
+			SetQuestHeader("VPVL");
+			AddQuestRecord("VPVL", "1");
+			pchar.questTemp.VPVL_Start = true;
+			AddDialogExitQuest("VPVL_Gegerate_Lea");
 			
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
 			break;
@@ -664,8 +671,9 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		}
 		//<-- квест "Путеводная звезда"
 		//--> Тёмные воды исцеления
-		if (!CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons" && sti(pchar.rank) >= 5)
-        {
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
+		if (bOk1 || bOk2)
 			dialog.text = "Avez-vous entendu ? On dit que la fille de Thomas Morrison est clouée au lit depuis six mois. Les médecins sont totalement impuissants face à sa maladie. La seule qui pourrait lui venir en aide est une gitane célèbre pour ses potions qui remettent sur pied même les plus malades. Mais elle a catégoriquement refusé de faire quoi que ce soit pour la pauvre enfant.";
 			link.l1 = RandPhraseSimple(RandSwear() + "Cela mérite une autre chope...",
                                  "Très bien. Servons-nous une autre chope de rhum.");
@@ -676,7 +684,16 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			SetQuestHeader("DWH");
 			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
+			pchar.questTemp.DWH_Start = true;;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
+			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+			sld.dialog.currentnode = "dwh_gypsy_0";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
 			
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
 			break;
@@ -784,8 +801,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- Украденное воспоминание
 		//--> В плену великого улова andre39966
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Le bruit court que le pêcheur Pierre Carno a disparu sans laisser de trace. Il y a deux aubes, il a pris la mer et depuis, pas le moindre signe de lui. Sa femme, Lea, est folle d'inquiétude. Jour et nuit, elle monte la garde sur le quai, les youux rivés sur les eaux infinies, priant pour apercevoir la voile de son bien-aimé.";

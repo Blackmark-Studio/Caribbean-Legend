@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 			link.l3.go  = "Finish_2_3";
 			link.l4 = "Ho sempre sognato il fascino romantico di fare il cacciatore di tesori!";
 			link.l4.go  = "Finish_2_4";
-			link.l5 = "Tieniti i tuoi consigli, Sandro. Perché dovrei pormi dei limiti? So cosa voglio, e lo voglio tutto!";
+			link.l5 = "Tieniti i tuoi consigli, Alonso. Perché dovrei pormi dei limiti? So cosa voglio, e lo voglio tutto!";
 			link.l5.go  = "Finish_2_5";
 		break;
 		
@@ -143,7 +143,7 @@ void ProcessDialogEvent()
 					link.l0 = "BetaTest - salta e inizia la partita";
 					link.l0.go = "Finish_2";
 				}
-				link.l1 = "Sandro? Diavolo, che diamine è successo? E perché mi scoppia così la testa?";
+				link.l1 = "Alonso? Diavolo, che diamine è successo? E perché mi scoppia così la testa?";
 				link.l1.go = "Node_1_Jess";
 			}
 			else
@@ -1308,7 +1308,7 @@ void ProcessDialogEvent()
 			bGameMenuStart = false;
 			StartBattleLandInterface();
 			dialog.text = "Come quei selvaggi dalla pelle rossa, parlavi pure la loro dannata lingua.";
-			link.l1 = "Maledizione! Sandro, che diavolo stai blaterando?!";
+			link.l1 = "Maledizione! Alonso, che diavolo stai blaterando?!";
 			link.l1.go  = "Node_2";
 		break;
 		
@@ -1354,7 +1354,7 @@ void ProcessDialogEvent()
 			dialog.text = "...";
 			//link.l1 = "Hm... dammi un momento, devo raccogliere i miei pensieri.";
 			//link.l1.go  = "ChangePIRATES_Jess";
-			link.l2 = "Mi sento di nuovo in forma. Grazie per la tua premura, Sandro.";
+			link.l2 = "Mi sento di nuovo in forma. Grazie per la tua premura, Alonso.";
 			link.l2.go  = "Node_5_Jess";
 		break;
 		
@@ -1380,7 +1380,7 @@ void ProcessDialogEvent()
 				dialog.text = "Siamo ora in porto "+XI_ConvertString("Colony"+pchar.HeroParam.ToCityId+"Gen")+". Dobbiamo in qualche modo ricominciare da capo, senza più queste Maschere e Cinturoni, che marciscano tutti all’inferno... E non ti deluderemo, capitano. Resteremo al tuo fianco fino alla fine.";
 				link.l1 = "Ebbene, credo di esser stato fortunato a restare vivo! Non vi deluderò né vi farò rimpiangere di avermi dato fiducia. Ora basta, devo sbarcare.";
 				link.l1.go  = "Finish_2";
-				link.l2 = "Un bastardo in meno, un bastardo in più, che importa, Sandro. Mi darai qualche dritta prima che metta piede a terra?";
+				link.l2 = "Un bastardo in meno, un bastardo in più, che importa, Alonso. Mi darai qualche dritta prima che metta piede a terra?";
 				link.l2.go  = "Advice_1";
 			}
 			else

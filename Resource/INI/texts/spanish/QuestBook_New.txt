@@ -724,9 +724,9 @@ A duras penas llevé esas malditas balas hasta Paul. Ese marinero se comporta de
 #QUEST DWH
 Aguas oscuras de sanación
 #TEXT	1
-En Bridgetown se susurra que la gitana local es la última esperanza para la hija gravemente enferma de Thomas Morrison. Pero se niega obstinadamente a ayudar. ¿Acaso no siente ni una pizca de compasión por la pobre niña?
+En  St. John's se susurra que la gitana local es la última esperanza para la hija gravemente enferma de Thomas Morrison. Pero se niega obstinadamente a ayudar. ¿Acaso no siente ni una pizca de compasión por la pobre niña?
 #TEXT	2
-La gitana me informó que está bastante dispuesta a ayudar a la niña, pero Thomas se niega rotundamente a dejarla entrar en su casa. Quiero visitar a Thomas y averiguar por qué está rechazando la última esperanza para salvar a la niña.
+La gitana me informó que está bastante dispuesta a ayudar a la niña, pero Thomas se niega rotundamente a dejarla entrar en su casa. Quiero visitar a Thomas y averiguar por qué está rechazando la última esperanza para salvar a la niña. Su casa está en la parte norte de la ciudad, junto al muro, al lado de una lujosa mansión con columnas.
 #TEXT	3
 El sacerdote de la iglesia local amenazó a Thomas Morrison con la excomunión si acepta la ayuda de la gitana para salvar a su hija gravemente enferma. Ahora Thomas está dividido entre su miedo a caer en desgracia ante la iglesia y su desesperación por la enfermedad de su hija. ¡Intentaré convencer al sacerdote de que haga la vista gorda ante este pecado por el bien mayor: salvar la vida de la niña!
 #TEXT	4
@@ -783,7 +783,7 @@ El trabajo está hecho. Es hora de informar al jefe del puerto y reclamar la rec
 #TEXT	4
 El jefe del puerto me pagó en su totalidad, incluso con más generosidad de la acordada. Me ofreció un descuento permanente del cincuenta por ciento en el atraque de un barco, por el tiempo que quiera. Pero esa generosidad sólo aumenta mis sospechas. ¿Y si el mercenario decía la verdad? Si realmente se enfrentó a piratas, ¿por qué no llamó a la guardia? ¿Por qué no mencionó nada cuando me envió a eliminar al asesino? Aunque todo son suposiciones. No puedo cambiar lo que pasó, tal vez sólo el tiempo revele la verdad. Por ahora, debo seguir adelante.
 #TEXT	5
-¡El jefe del puerto es un verdadero canalla! Sonríe mientras despide a mis compañeros de viaje, y luego vende a los piratas información sobre sus barcos. Gente como él no debe quedar impune. Esperaré a la noche y acabaré con él. Sus viles actos serán conocidos por todos. Las notas que me entregó el mercenario quedarán en su casa, en un lugar visible. Que todo el puerto sepa quién era en realidad.
+¡El jefe del puerto es un verdadero canalla! Sonríe mientras despide a mis compañeros de viaje, y luego vende a los piratas información sobre sus barcos. Gente como él no debe quedar impune. Esperaré a la noche y acabaré con él. Sus viles actos serán conocidos por todos. Las notas que me entregó el mercenario quedarán en su casa, en un lugar visible. Que todo el puerto sepa quién era en realidad. Es irónico que viva cerca de la prisión - con justicia, debería ser uno de sus inquilinos.
 #TEXT	6
 ¡El bastardo está muerto! Ahora debo dejar las notas y desaparecer antes de que todo el destacamento del fuerte se ponga en alerta.
 #TEXT	7

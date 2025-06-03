@@ -24,7 +24,16 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			SetQuestHeader("DWH");
 			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
+			pchar.questTemp.DWH_Start = true;;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
+			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+			sld.dialog.currentnode = "dwh_gypsy_0";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
 			
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
 			break;
@@ -101,8 +110,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Украденное воспоминание
 		
 		//--> В плену великого улова andre39966
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Krążą słuchy, że rybak Pierre Carno zniknął bez śladu. Dwa świty temu wypłynął w morze i dotąd nie ma po nim śladu. Jego żona, Lea, jest zrozpaczona. Dniem i nocą pełni wartę na molo, wpatrując się w bezkresne wody, modląc się o choćby cień żagla ukochanego.";
@@ -190,7 +199,16 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			SetQuestHeader("DWH");
 			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
+			pchar.questTemp.DWH_Start = true;;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
+			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+			sld.dialog.currentnode = "dwh_gypsy_0";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
 			
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
 			break;
@@ -267,8 +285,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Украденное воспоминание
 		
 		//--> В плену великого улова andre39966
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Krążą słuchy, że rybak Pierre Carno zniknął bez śladu. Dwa świty temu wypłynął w morze i dotąd nie ma po nim śladu. Jego żona, Lea, jest zrozpaczona. Dniem i nocą pełni wartę na molo, wpatrując się w bezkresne wody, modląc się o choćby cień żagla ukochanego.";
@@ -313,7 +331,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
             posrep2 = " Hej, kapitanie, czy masz jakieś wieści dla naszej kolonii?";
             answ1 = RandPhraseSimple(RandSwear() + "To bardzo interesujące., "+GetFullName(NPChar)+".",
                                  "A teraz opowiedz mi o...");
-            answ2 = RandPhraseSimple(RandSwear() + "Nieważne, powiedz mi coś jeszcze...","Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?"");
+            answ2 = RandPhraseSimple(RandSwear() + "Nieważne, powiedz mi coś jeszcze...","Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?");
             answ3 = RandPhraseSimple("Cóż, w naszym świecie może zdarzyć się wszystko. Przepraszam, ale nie mam nic specjalnego do powiedzenia. ","Bardzo się spieszę, więc może następnym razem.");
             answ4 = "";
         }
@@ -322,7 +340,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
             posrep1 = " Tutaj jest dość nudno. Więc jeśli coś się wydarzy, to wszyscy będą o tym mówić.";
             posrep2 = " Nic interesującego. " + GetAddress_Form(NPChar) + " może coś wiedzieć?";
             answ1 = RandPhraseSimple("Opowiedz mi zatem o...",RandSwear() + "Nic nie wiesz! Dobra, inny temat...");
-            answ2 = RandPhraseSimple("Nieważne, powiedz mi coś jeszcze...", "Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?"");
+            answ2 = RandPhraseSimple("Nieważne, powiedz mi coś jeszcze...", "Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?");
             answ3 = RandPhraseSimple("Wątpię, żebym miał ci coś ciekawego do powiedzenia.","To będzie dla mnie przyjemność, ale porozmawiajmy następnym razem.");
             answ4 = "";
         }
@@ -353,7 +371,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
             posrep2 = " Hej, kapitanie, czy masz jakieś wieści dla naszej kolonii?";
             answ1 = RandPhraseSimple(RandSwear() + "To bardzo interesujące., "+GetFullName(NPChar)+".",
                                  "A teraz opowiedz mi o...");
-            answ2 = RandPhraseSimple(RandSwear() + "Nieważne, powiedz mi coś jeszcze...","Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?"");
+            answ2 = RandPhraseSimple(RandSwear() + "Nieważne, powiedz mi coś jeszcze...","Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?");
             answ3 = RandPhraseSimple("Cóż, w naszym świecie może zdarzyć się wszystko. Przepraszam, ale nie mam nic specjalnego do powiedzenia. ","Bardzo się spieszę, więc może następnym razem.");
             answ4 = "";
         }
@@ -362,7 +380,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
             posrep1 = " Tutaj jest dość nudno. Więc jeśli coś się wydarzy, to wszyscy będą o tym mówić.";
             posrep2 = " Nic interesującego. " + GetAddress_Form(NPChar) + " może coś wiedzieć?";
             answ1 = RandPhraseSimple("Opowiedz mi zatem o...",RandSwear() + "Nic nie wiesz! Dobra, inny temat...");
-            answ2 = RandPhraseSimple("Nieważne, powiedz mi coś jeszcze...", "Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?"");
+            answ2 = RandPhraseSimple("Nieważne, powiedz mi coś jeszcze...", "Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?");
             answ3 = RandPhraseSimple("Wątpię, żebym miał ci coś ciekawego do powiedzenia.","To będzie dla mnie przyjemność, ale porozmawiajmy następnym razem.");
             answ4 = "";
         }
@@ -418,7 +436,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
             posrep2 = " Hej, kapitanie, czy masz jakieś wieści dla naszej kolonii?";
             answ1 = RandPhraseSimple(RandSwear() + "To bardzo interesujące., "+GetFullName(NPChar)+".",
                                  "A teraz opowiedz mi o...");
-            answ2 = RandPhraseSimple(RandSwear() + "Nieważne, powiedz mi coś jeszcze...","Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?"");
+            answ2 = RandPhraseSimple(RandSwear() + "Nieważne, powiedz mi coś jeszcze...","Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?");
             answ3 = RandPhraseSimple("Cóż, w naszym świecie może zdarzyć się wszystko. Przepraszam, ale nie mam nic specjalnego do powiedzenia. ","Bardzo się spieszę, więc może następnym razem.");
             answ4 = "";
         }
@@ -427,7 +445,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
             posrep1 = " Tutaj jest dość nudno. Więc jeśli coś się wydarzy, to wszyscy będą o tym mówić.";
             posrep2 = " Nic interesującego. " + GetAddress_Form(NPChar) + " może coś wiedzieć?";
             answ1 = RandPhraseSimple("Opowiedz mi zatem o...",RandSwear() + "Nic nie wiesz! Dobra, inny temat...");
-            answ2 = RandPhraseSimple("Nieważne, powiedz mi coś jeszcze...", "Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?"");
+            answ2 = RandPhraseSimple("Nieważne, powiedz mi coś jeszcze...", "Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?");
             answ3 = RandPhraseSimple("Wątpię, żebym miał ci coś ciekawego do powiedzenia.","To będzie dla mnie przyjemność, ale porozmawiajmy następnym razem.");
             answ4 = "";
         }
@@ -483,7 +501,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
             posrep2 = " Hej, kapitanie, czy masz jakieś wieści dla naszej kolonii?";
             answ1 = RandPhraseSimple(RandSwear() + "To bardzo interesujące., "+GetFullName(NPChar)+".",
                                  "A teraz opowiedz mi o...");
-            answ2 = RandPhraseSimple(RandSwear() + "Nieważne, powiedz mi coś jeszcze...","Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?"");
+            answ2 = RandPhraseSimple(RandSwear() + "Nieważne, powiedz mi coś jeszcze...","Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?");
             answ3 = RandPhraseSimple("Cóż, w naszym świecie może zdarzyć się wszystko. Przepraszam, ale nie mam nic specjalnego do powiedzenia. ","Bardzo się spieszę, więc może następnym razem.");
             answ4 = "";
         }
@@ -492,7 +510,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
             posrep1 = " Tutaj jest dość nudno. Więc jeśli coś się wydarzy, to wszyscy będą o tym mówić.";
             posrep2 = " Nic interesującego. " + GetAddress_Form(NPChar) + " może coś wiedzieć?";
             answ1 = RandPhraseSimple("Opowiedz mi zatem o...",RandSwear() + "Nic nie wiesz! Dobra, inny temat...");
-            answ2 = RandPhraseSimple("Nieważne, powiedz mi coś jeszcze...", "Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?"");
+            answ2 = RandPhraseSimple("Nieważne, powiedz mi coś jeszcze...", "Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?");
             answ3 = RandPhraseSimple("Wątpię, żebym miał ci coś ciekawego do powiedzenia.","To będzie dla mnie przyjemność, ale porozmawiajmy następnym razem.");
             answ4 = "";
         }
@@ -541,7 +559,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
             posrep2 = " Hej, kapitanie, czy masz jakieś wieści dla naszej kolonii?";
             answ1 = RandPhraseSimple(RandSwear() + "To bardzo interesujące., "+GetFullName(NPChar)+".",
                                  "A teraz opowiedz mi o...");
-            answ2 = RandPhraseSimple(RandSwear() + "Nieważne, powiedz mi coś jeszcze...","Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?"");
+            answ2 = RandPhraseSimple(RandSwear() + "Nieważne, powiedz mi coś jeszcze...","Tak, nie byłeś zbyt pomocny, masz coś jeszcze do powiedzenia?");
             answ3 = RandPhraseSimple("Cóż, w naszym świecie może zdarzyć się wszystko. Przepraszam, ale nie mam nic specjalnego do powiedzenia. ","Bardzo się spieszę, więc może następnym razem.");
             answ4 = "";
         }
@@ -666,7 +684,16 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			SetQuestHeader("DWH");
 			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
+			pchar.questTemp.DWH_Start = true;;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
+			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+			sld.dialog.currentnode = "dwh_gypsy_0";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
 			
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
 			break;
@@ -779,8 +806,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Украденное воспоминание
 		
 		//--> В плену великого улова andre39966
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "pchar.questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Krążą słuchy, że rybak Pierre Carno zniknął bez śladu. Dwa świty temu wypłynął w morze i dotąd nie ma po nim śladu. Jego żona, Lea, jest zrozpaczona. Dniem i nocą pełni wartę na molo, wpatrując się w bezkresne wody, modląc się o choćby cień żagla ukochanego.";
@@ -1146,7 +1173,7 @@ pcharrepphrase(RandSwear() +" Jeszcze jedno i pójdę.","Masz rację, czas to pi
 			    NextDiag.CurrentNode = NextDiag.TempNode;
 		break;
 //Jason ------------------------------------почтовый генератор 2 уровня-------------------------------------------
-		case "Postcureer_LevelUp_ForAll":
+		 case "Postcureer_LevelUp_ForAll":
 			//начинаем проверять
 			if (!CheckCharacterItem(pchar, pchar.questTemp.WPU.Current.Item))
 			{
@@ -1358,7 +1385,7 @@ pcharrepphrase(RandSwear() +" Jeszcze jedno i pójdę.","Masz rację, czas to pi
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////		Грабеж среди бела дня, попытка залезть в сундуки
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        case "Man_FackYou":
+       /* case "Man_FackYou":
 			dialog.text = LinkRandPhrase("Kradzież w środku dnia!!! Naprawdę?! Zostań tam, gdzie jesteś, kolego...", "Hej, co tam robisz?! Wygląda na to, że ktoś zamierzał mnie okraść. Jesteś skończony...", "Czekaj, co ty robisz? Złodziej! Koniec drogi, kolego...");
 			link.l1 = LinkRandPhrase("O w morde! Pora na mnie", "Karamba! Czas spierdalać!", "Cholera! Nie przemyślałem tego.");
 			link.l1.go = "fight_owner";
@@ -1369,7 +1396,7 @@ pcharrepphrase(RandSwear() +" Jeszcze jedno i pójdę.","Masz rację, czas to pi
 			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
 			NextDiag.CurrentNode = "First time";
 			DialogExit();
-		break;
+		break; */
 	}
 }
 

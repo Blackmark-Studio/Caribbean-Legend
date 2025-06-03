@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 		link.l3.go = "Finish_2_3";
 		link.l4 = "¡Siempre he soñado con el atractivo romántico de ser un cazador de tesoros!";
 		link.l4.go = "Finish_2_4";
-		link.l5 = "Guarda tus consejos, Sandro. ¿Por qué limitarme? ¡Sé lo que quiero, y lo quiero todo!";
+		link.l5 = "Guarda tus consejos, Alonso. ¿Por qué limitarme? ¡Sé lo que quiero, y lo quiero todo!";
 		link.l5.go = "Finish_2_5";
 		break;
 
@@ -144,7 +144,7 @@ void ProcessDialogEvent()
 				link.l0 = "BetaTest - omitir y comenzar el juego";
 				link.l0.go = "Finish_2";
 			}
-			link.l1 = "¿Sandro? ¿Qué demonios ha pasado? ¿Y por qué tengo un dolor de cabeza tan terrible?";
+			link.l1 = "¿Alonso? ¿Qué demonios ha pasado? ¿Y por qué tengo un dolor de cabeza tan terrible?";
 			link.l1.go = "Node_1_Jess";
 		}
 		else
@@ -1309,7 +1309,7 @@ void ProcessDialogEvent()
 		bGameMenuStart = false;
 		StartBattleLandInterface();
 		dialog.text = "Como esos ateos de piel roja, incluso hablabas en su idioma.";
-		link.l1 = "¡Maldita sea! ¡Sandro, ¿de qué demonios estás hablando?!";
+		link.l1 = "¡Maldita sea! ¡Alonso, ¿de qué demonios estás hablando?!";
 		link.l1.go = "Node_2";
 		break;
 
@@ -1355,7 +1355,7 @@ void ProcessDialogEvent()
 		dialog.text = "...";
 		// link.l1 = "Mm... dame un minuto, necesito ordenar mis pensamientos.";
 		// link.l1.go  = "ChangePIRATES_Jess";
-		link.l2 = "Me siento bien ahora. Gracias por tu preocupación, Sandro.";
+		link.l2 = "Me siento bien ahora. Gracias por tu preocupación, Alonso.";
 		link.l2.go = "Node_5_Jess";
 		break;
 
@@ -1381,7 +1381,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ahora estamos en el puerto " + XI_ConvertString("Colony" + pchar.HeroParam.ToCityId + "Gen") + "Necesitamos de alguna manera comenzar una nueva vida sin todas estas Máscaras y Beltropes, que se pudran todos en el infierno... Y no te defraudaremos, capitán. Nos quedaremos contigo hasta el final.";
 			link.l1 = "¡Pues, supongo que tengo suerte de estar vivo! No os defraudaré ni decepcionaré a ninguno de vosotros. Eso sería todo, necesito desembarcar.";
 			link.l1.go = "Finish_2";
-			link.l2 = "Un bastardo menos, un bastardo más, es lo que es, Sandro. ¿Me darás un par de consejos antes de que desembarque?";
+			link.l2 = "Un bastardo menos, un bastardo más, es lo que es, Alonso. ¿Me darás un par de consejos antes de que desembarque?";
 			link.l2.go = "Advice_1";
 		}
 		else

@@ -42,7 +42,7 @@ void FaceMaker(aref rCharacter)
 	// Warship 07.07.09 Пасхалка с кораблем "Мэри Селест" - за место лица кэпа - море с облаками
 	if(rCharacter.ID == "MaryCelesteCapitan")
 	{
-		rCharacter.FaceId = 333;
+		rCharacter.FaceId = 2;
 		return;
 	}
 	if (findsubstr(rCharacter.model, "banker", 0) != -1)
@@ -563,7 +563,7 @@ void FaceMaker(aref rCharacter)
 		case "horse06": 		rCharacter.FaceId = 165; break;
 		case "horse07": 		rCharacter.FaceId = 166; break;
 		case "horse08": 		rCharacter.FaceId = 167; break;
-		
+
 		case "Aguebana": 		rCharacter.FaceId = 241; break;
 		case "panhandler_6": 	rCharacter.FaceId = 500; break;
 	}

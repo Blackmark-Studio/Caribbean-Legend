@@ -1518,7 +1518,7 @@ void ReactivateTrait04(string quest)
 	DeleteAttribute(pchar, "Tmp.trait04");
 }
 
-// --> Механика мощи
+// Механика мощи -->
 float GetBaseShipPower(int iBaseType)
 {
     ref rBaseShip = &ShipsTypes[iBaseType];
@@ -1573,4 +1573,4 @@ void UpdatePlayerSquadronPower() // Кэш
     if(IsEquipCharacterByArtefact(PChar, "talisman15")) fPower *= 1.15;
     PChar.Squadron.ModPower = fPower;
 }
-// <-- Механика мощи
+// Механика мощи <--

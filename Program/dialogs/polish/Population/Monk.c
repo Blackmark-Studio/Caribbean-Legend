@@ -309,10 +309,6 @@ void ProcessDialogEvent()
 					sTemp = "I have five ships in my squadron and the biggest one is "+iTemp+" rank.";
 					pchar.GenQuest.Shipshine.Money = makeint(4.2*(5000*(7-iTemp)));
 				break;
-				case 6:
-					sTemp = "I have five ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(4.2*(5000*(7-iTemp)));
-				break;
 			}
 			dialog.text = "To wszystko zależy od całkowitej liczby statków w twojej eskadrze i ich rozmiaru.";
 			link.l1 = " "+sTemp+"Got it. Please provide the text you want translated.";

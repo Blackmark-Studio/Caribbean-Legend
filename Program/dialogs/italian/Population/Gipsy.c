@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 			// --> Тёмные воды исцеления
 			if (CheckAttribute(pchar, "questTemp.DWH_Start") && !CheckAttribute(pchar, "questTemp.DWH_gipsy") && npchar.city == "SentJons")
 			{
-				link.l6 = "Ascolta, bruna, ho sentito dire che curi la gente, anche da malattie gravi. È vero?";
+				link.l6 = "Cerco la zingara che cura gli ammalati. Sei tu?";
 				link.l6.go = "dwh_gypsy_1";
 			}
 			// <-- Тёмные воды исцеления
@@ -357,63 +357,11 @@ void ProcessDialogEvent()
 		break;
 		
 		// --> Тёмные воды исцеления
-		case "dwh_gypsy_1":
-			dialog.text = "Verità, "+GetSexPhrase("tesoro","bellezza")+". Ho il mio modo di affrontare ogni malattia. Ho aiutato comuni cittadini, mercanti, persino i ricchi a rimettersi in piedi. Perché, persino il governatore ha fatto ricorso alle mie pozioni quando nessun altro poteva aiutare. La malattia non teme l'oro, ma non può resistere ai miei rimedi.";
-			link.l1 = "Allora perché rifiuti di curare una ragazza gravemente malata, la figlia di Thomas Morrison?";
-			link.l1.go = "dwh_gypsy_2";
-			pchar.questTemp.DWH_gipsy = true;
-		break;
-		
-		case "dwh_gypsy_2":
-			dialog.text = "Chi ti ha raccontato una tale sciocchezza, "+GetSexPhrase("falconetto","piccioncino")+"? Non ho rifiutato di aiutare. È stato suo padre che mi ha cacciato di casa. Avevamo concordato che l'avrei curata, e improvvisamente ha cambiato idea. Mi ha buttato fuori come se fossi un nemico giurato.";
-			link.l1 = "Allora ha condannato sua figlia a soffrire con le sue stesse mani?";
-			link.l1.go = "dwh_gypsy_2_1";
-		break;
-		
-		case "dwh_gypsy_2_1":
-			dialog.text = "No, no, è un padre amorevole. È difficile immaginare perché abbia agito in quel modo.";
-			link.l1 = "Hai provato a parlare di nuovo con lui?";
-			link.l1.go = "dwh_gypsy_3";
-		break;
-		
-		case "dwh_gypsy_3":
-			dialog.text = "Non mi lascia nemmeno avvicinarmi alla casa. Ascolta, "+GetSexPhrase("tesoro","bellezza")+", dal momento che ti preoccupi per il destino di una povera ragazza, forse potresti cercare di capire cosa sta succedendo? Parla con Thomas, aiutami a salvare il bambino dalla sofferenza.";
-			link.l1 = "Certo che aiuterò. Dove posso trovare Thomas?";
-			link.l1.go = "dwh_gypsy_4";
-			link.l2 = "No, moro. In ogni caso, sono sicuro che suo padre ha i suoi motivi per rifiutare il tuo aiuto. Non mi intrometterò. Lascia che decida lui, è sua figlia.";
-			link.l2.go = "dwh_gypsy_otkaz";
-		break;
-		
-		case "dwh_gypsy_otkaz":
-			DialogExit();
-			CloseQuestHeader("DWH");
-		break;
-		
-		case "dwh_gypsy_4":
-			dialog.text = "La loro casa è vicino al muro, nella parte settentrionale della città, accanto a una grande villa con colonne. Vai avanti, "+GetSexPhrase("falconetto","piccioncino")+", parla con lui e torna da me.";
-			link.l1 = "Torno presto.";
-			link.l1.go = "dwh_gypsy_5";
-		break;
-		
-		case "dwh_gypsy_5":
-			DialogExit();
-			
-			AddQuestRecord("DWH", "2");
-			
-			sld = GetCharacter(CreateCharacterClone(npchar, -1));
-			sld.id = "DWH_gypsy";
-			npchar.lifeday = 0;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_Tomas", "citiz_13", "man", "man", 1, ENGLAND, -1, false, "quest"));
-			sld.name = "Thomas";
-			sld.lastname = "Morrison";
-			LAi_SetStayType(sld);
-			sld.dialog.filename = "Quest\\MiniEvents\\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "Tomas";
-			ChangeCharacterAddressGroup(sld, "SentJons_houseS3", "goto", "goto1");
-			sld.City = "SentJons";
-			LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
-			AddLandQuestMark(sld, "questmarkmain");
+		case "dwh_ne_ta":
+			sld = CharacterFromID("DWH_gypsy");
+			dialog.text = "No, " + GetSexPhrase("caro", "bella") + ", non sono io quella che cerchi, è " + sld.name + ". È qui in città in questo momento. L’ho vista di recente.";
+			link.l1 = "Grazie.";
+			link.l1.go = "exit";
 		break;
 		// <-- Тёмные воды исцеления
 		

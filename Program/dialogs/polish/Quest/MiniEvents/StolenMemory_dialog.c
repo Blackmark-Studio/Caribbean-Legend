@@ -129,14 +129,14 @@ void ProcessDialogEvent()
 		case "Juli_7_again":
 			if (CheckCharacterItem(PChar, "SM_necklace_Julie"))
 			{
-				dialog.text = "Ach, kapitanie, to ty... "+GetSexPhrase(" "Znalazłeś","Znalazłaś")+" go? Proszę, powiedz mi, że naszyjnik jest już u ciebie.";
+				dialog.text = "Ach, kapitanie, to ty... "+GetSexPhrase("Znalazłeś","Znalazłaś")+" go? Proszę, powiedz mi, że naszyjnik jest już u ciebie.";
 				link.l1 = "Twoje zmartwienia dobiegły końca, Julie. Naszyjnik mam przy sobie i z przyjemnością oddam go tam, gdzie jego miejsce – w twe delikatne ręce.";
 				link.l1.go = "Juli_22";
 				DelLandQuestMark(npchar);
 			}
 			else
 			{
-				dialog.text = "Ach, kapitanie, to wy... "+GetSexPhrase(" "Znalazłeś","Znalazłaś")+" go? Proszę, powiedz mi, że naszyjnik jest już u ciebie.";
+				dialog.text = "Ach, kapitanie, to wy... "+GetSexPhrase("Znalazłeś","Znalazłaś")+" go? Proszę, powiedz mi, że naszyjnik jest już u ciebie.";
 				link.l1 = "Niestety, Julie, jeszcze nie. Ale proszę się nie martwić – zrobię wszystko, co w mojej mocy, aby go odzyskać.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "Juli_7_again";

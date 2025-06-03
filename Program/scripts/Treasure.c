@@ -680,6 +680,7 @@ void TreasureNotesHandler(aref arItm)
 
 void Treasure_SetCaribWarrior()
 {
+	if (bDisableLandEncounters || CheckAttribute(pchar, "questTemp.Sharlie.Lock")) return;
 	chrDisableReloadToLocation = true;//закрыть локацию
 	int iRank = 10+sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE)/2;
 	for(int i=1; i<=4; i++)
@@ -701,6 +702,7 @@ void Treasure_SetCaribWarrior()
 
 void Treasure_SetBandosWarrior()
 {
+	if (bDisableLandEncounters || CheckAttribute(pchar, "questTemp.Sharlie.Lock")) return;
 	chrDisableReloadToLocation = true;//закрыть локацию
 	int iRank = 8+sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE)/2;
 	for(int i=1; i<=4; i++)

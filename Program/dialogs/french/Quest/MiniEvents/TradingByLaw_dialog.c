@@ -272,10 +272,7 @@ void ProcessDialogEvent()
 			
 			LAi_SetCurHPMax(npchar);
 			QuestAboardCabinDialogFree();
-			LAi_group_SetRelation(LAI_GROUP_BRDENEMY, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups(LAI_GROUP_BRDENEMY, LAI_GROUP_PLAYER, true);
-			LAi_group_SetCheck(LAI_GROUP_BRDENEMY, "CitizSeekCap_GivePrisoner");
-			AddDialogExitQuest("MainHeroFightModeOn");
+			LAi_SetFightMode(pchar, true);
 		break;
 		
 		case "Kristian_41":

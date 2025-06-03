@@ -416,7 +416,7 @@ void ProcessDialogEvent()
 			
 			if(rand(1) == 0)
 			{
-				dialog.text = RandPhraseSimple(" Witaj, jestem "+pchar.GenQuest.ShipWreck.Name+", kapitanie z "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Acc"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+", mój statek rozbił się na rafach niedaleko wybrzeża."+"Z całej załogi przeżyło tylko kilku marynarzy. Przypływ wyrzucił nas na ten opustoszały brzeg. Głodowaliśmy i pragnęliśmy "+(5+dRand(7))+"tygodnie do teraz","Cześć, jestem "+pchar.GenQuest.ShipWreck.Name+", kapitanie z "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Gen"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+". Nasz statek rozbił się niedaleko stąd."+"Udało nam się dotrzeć do tego brzegu na wrakach statków, ale to miejsce wydaje się niezamieszkałe. Byliśmy zmuszeni przetrwać na skorupiakach i owocach palm przez "+(5+dRand(7))+" tygodni do tej pory.");
+				dialog.text = RandPhraseSimple(" Witaj, jestem "+pchar.GenQuest.ShipWreck.Name+", kapitanie z "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Acc"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+", mój statek rozbił się na rafach niedaleko wybrzeża."+"Z całej załogi przeżyło tylko kilku marynarzy. Przypływ wyrzucił nas na ten opustoszały brzeg. Głodowaliśmy i pragnęliśmy "+(5+hRand(7))+"tygodnie do teraz","Cześć, jestem "+pchar.GenQuest.ShipWreck.Name+", kapitanie z "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Gen"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+". Nasz statek rozbił się niedaleko stąd."+"Udało nam się dotrzeć do tego brzegu na wrakach statków, ale to miejsce wydaje się niezamieszkałe. Byliśmy zmuszeni przetrwać na skorupiakach i owocach palm przez "+(5+hRand(7))+" tygodni do tej pory.");
 				link.l1 = RandPhraseSimple("Ilu z was zostało?","Ilu z was udało się przeżyć?");
 				link.l1.go = "ShipWreck_3";
 			}
@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 				pchar.GenQuest.ShipWreck.Mutiny = "true"; // belamour gen кавычки
 				pchar.GenQuest.ShipWreck.BadName = GenerateRandomName_Generator(sti(pchar.GenQuest.ShipWreck.Nation), "man");
 				pchar.GenQuest.ShipWreck.City = GetQuestNationsCity(sti(pchar.GenQuest.ShipWreck.Nation));
-				dialog.text = "O, kapitanie, nasze straty są naprawdę straszne... Witaj, jestem "+pchar.GenQuest.ShipWreck.Name+", kapitan i właściciel "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Gen"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+"Albo, powinienem rzec, były kapitanie i właścicielu."+"Ten drań "+pchar.GenQuest.ShipWreck.BadName+" którego wynająłem w "+XI_ConvertString("Colony"+pchar.GenQuest.ShipWreck.City+"Voc")+" sprowokował moją załogę do buntu. W końcu wylądowaliśmy w tym zagubionym miejscu. To się stało "+(5+dRand(7))+" tygodnie temu.";
+				dialog.text = "O, kapitanie, nasze straty są naprawdę straszne... Witaj, jestem "+pchar.GenQuest.ShipWreck.Name+", kapitan i właściciel "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Gen"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+"Albo, powinienem rzec, były kapitanie i właścicielu."+"Ten drań "+pchar.GenQuest.ShipWreck.BadName+" którego wynająłem w "+XI_ConvertString("Colony"+pchar.GenQuest.ShipWreck.City+"Voc")+" sprowokował moją załogę do buntu. W końcu wylądowaliśmy w tym zagubionym miejscu. To się stało "+(5+hRand(7))+" tygodnie temu.";
 				link.l1 = "I co wtedy? Cała twoja załoga dołączyła do buntowników?";
 				link.l1.go = "ShipWreck_4";			
 			}
@@ -5104,7 +5104,7 @@ void ProcessDialogEvent()
 			{
 				PChar.GenQuest.PiratesOnUninhabited.Shipwrecked = true;
 				
-				dialog.text = "Witaj, kapitanie! Najwyraźniej sama Opatrzność cię przysłała, byś nas ocalił "+PChar.GenQuest.PiratesOnUninhabited.MainPirateName+" i jego chłopcy. Jesteśmy tutaj w pilnej potrzebie."+"Nasz "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[i].Name))+" rozbił się w burzy na lokalnych rafach, a fale wyrzuciły na brzeg ocalałych członków załogi."+"Dla "+(5+dRand(7))+" tygodni przyglądaliśmy się horyzontowi, mając nadzieję ujrzeć żagiel statku, który przybędzie nas uratować.";
+				dialog.text = "Witaj, kapitanie! Najwyraźniej sama Opatrzność cię przysłała, byś nas ocalił "+PChar.GenQuest.PiratesOnUninhabited.MainPirateName+" i jego chłopcy. Jesteśmy tutaj w pilnej potrzebie."+"Nasz "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[i].Name))+" rozbił się w burzy na lokalnych rafach, a fale wyrzuciły na brzeg ocalałych członków załogi."+"Dla "+(5+hRand(7))+" tygodni przyglądaliśmy się horyzontowi, mając nadzieję ujrzeć żagiel statku, który przybędzie nas uratować.";
 				link.l1 = RandPhraseSimple(RandPhraseSimple("Tak, to nie do pozazdroszczenia los. Ale taki jest los życia marynarzy, każdy mógłby skończyć na twoim miejscu.","Widzę... Bóg trzyma każde życie, tylko że jest zbyt zajęty, by pamiętać o wszystkich."),RandPhraseSimple("Rzeczywiście. Człowiek planuje, ale to Bóg dysponuje.","Tak, to z pewnością był pech."));
 				link.l1.go = "PiratesOnUninhabited_4";
 			}

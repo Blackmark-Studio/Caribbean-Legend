@@ -180,53 +180,8 @@ void Storehelper_hire(string qName)//кандидаты
 	}
 }
 
-void NewstorehelperAddOver(string qName)//не отвёл в город
-{
-	pchar.quest.storehelper4.over = "yes"; //снять прерывание
-	sld = characterFromId(pchar.questTemp.Sharlie.Storehelper.id);
-	sld.lifeday = 0;
-	LAi_SetActorType(sld);
-	LAi_ActorGoToLocation(sld, "reload", "reload2_back", "none", "", "", "", 10.0);
-	DeleteAttribute(pchar, "questTemp.Sharlie.Storehelper");
-	ChangeCharacterComplexReputation(pchar, "nobility", -3);
-	CloseQuestHeader("SharlieA");
-}
-
-void NewstorehelperAddKill(string qName)//сам прибил
-{
-	pchar.quest.storehelper4.over = "yes"; //снять прерывание
-	DeleteAttribute(pchar, "questTemp.Sharlie.Storehelper");
-	ChangeCharacterComplexReputation(pchar, "nobility", -10);
-	CloseQuestHeader("SharlieA");
-}
-
-void NewstorehelperAdd(string qName)//добавляем в спутники
-{
-	sld = characterFromId(pchar.questTemp.Sharlie.Storehelper.id);
-	LAi_SetActorType(sld);
-	GetCharacterPos(pchar, &locx, &locy, &locz);
-	ChangeCharacterAddressGroup(sld, "LeFransua_town", "goto", LAi_FindNearestFreeLocator("goto", locx, locy, locz));
-	LAi_ActorFollowEverywhere(sld, "", -1);
-	LAi_SetImmortal(sld, true);
-	pchar.quest.storehelper3.win_condition.l1 = "Timer";
-	pchar.quest.storehelper3.win_condition.l1.date.hour  = sti(GetTime()+12);
-	pchar.quest.storehelper3.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
-	pchar.quest.storehelper3.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
-	pchar.quest.storehelper3.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
-	pchar.quest.storehelper3.function = "NewstorehelperAddOver";
-	pchar.quest.storehelper4.win_condition.l1 = "location";
-	pchar.quest.storehelper4.win_condition.l1.location = "FortFrance_store";
-	pchar.quest.storehelper4.function = "NewstorehelperRegard";
-	//для дикарей
-	pchar.quest.storehelper0.win_condition.l1 = "NPC_Death";
-	pchar.quest.storehelper0.win_condition.l1.character = pchar.questTemp.Sharlie.Storehelper.id;
-	pchar.quest.storehelper0.function = "NewstorehelperAddKill";
-}
-
 void NewstorehelperRegard(string qName)//пришли в магазин
 {
-	pchar.quest.storehelper3.over = "yes";
-	pchar.quest.storehelper0.over = "yes";
 	chrDisableReloadToLocation = true;//закрыть локацию
 	sld = characterFromId(pchar.questTemp.Sharlie.Storehelper.id);
 	sld.dialog.currentnode = "Newstorehelper_regard";
@@ -1059,8 +1014,6 @@ void SharlieJungleBandos(string qName)
 	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
 	LAi_group_SetCheck("EnemyFight", "SharlieJungleBandos_kill");
 	LAi_SetFightMode(pchar, true);
-	ref sld1 = characterFromId(pchar.questTemp.Sharlie.Storehelper.id);
-	LAi_ActorAfraid(sld1, sld, 1);
 }
 
 void Sharlie_removeLocks(string qName)
@@ -2099,9 +2052,6 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			i = FindColony("Fortfrance");
 			colonies[i].DontSetShipInPort = true;//не ставить в порту корабли
 			AddQuestRecord("Sharlie", "1");
-			AddQuestRecordInfo("Sharlie_Father", "1");
-			AddQuestRecordInfo("Sharlie_Shevallie", "1");
-			AddQuestRecordInfo("Sharlie_Lover", "1");
 			pchar.questTemp.Sharlie = "Start";
 			pchar.questTemp.Sharlie.Lock = "true";
 			pchar.NoNavyPenalty = true; // не штрафовать за нехватку навигации

@@ -1247,6 +1247,7 @@ void ShowCannonsMenu()
 	}
     DeleteAttribute(&GameInterface, "CANNONS_TABLE.BackUp")
     CannonsMenuRefresh();
+  currentCannonsMode = 1;
 }
 void CannonsMenuRefresh()
 {
@@ -1288,6 +1289,7 @@ void HideCannonsMenu()
 
 	SetCurrentNode("TABLE_OTHER");
 	sMessageMode = "";
+  currentCannonsMode = 0;
 }
 
 /// установить орудия по борту (сперва расчитать дельту было стало - лишнее в запасы)

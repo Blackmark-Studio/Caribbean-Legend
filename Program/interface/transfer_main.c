@@ -819,14 +819,14 @@ void ShowInfoWindow()
 		    iShip = sti(pchar.ship.type);
 		    refBaseShip = GetRealShip(iShip);
 			sHeader = XI_ConvertString(refBaseShip.BaseName);
-			sText1 = GetConvertStr(refBaseShip.BaseName, "ShipsDescribe.txt");
+			sText1 = GetShipDescr(refBaseShip);
 		break; 
 		
 		case "SHIP_BIG_PICTURE2":
 		    iShip = sti(xi_refCharacter.ship.type);
 		    refBaseShip = GetRealShip(iShip);
 			sHeader = XI_ConvertString(refBaseShip.BaseName);
-			sText1 = GetConvertStr(refBaseShip.BaseName, "ShipsDescribe.txt");
+			sText1 = GetShipDescr(refBaseShip);
 		break;
 
 		case "SHIP_PERK1":

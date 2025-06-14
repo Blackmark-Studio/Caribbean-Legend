@@ -471,7 +471,7 @@ void FillShipParam(ref _chr)
 		SetShipOTHERTable2("TABLE_OTHER", _chr);
 		string sShipName = refBaseShip.BaseName;
 		SetFormatedText("INFO_CAPTION", XI_ConvertString(sShipName));
-		string descr = GetConvertStr(sShipName, "ShipsDescribe.txt");
+		string descr = GetShipDescr(refBaseShip);
 		SetFormatedText("INFO_TEXT", descr);
 		int nStrings = GetNumberOfStringsInFormatedText("INFO_TEXT", descr); // считаем сколько строк в форме
 		SetNodeUsing("SCROLL_TEXT",true);
@@ -615,7 +615,7 @@ void ShowInfoWindow()
 			    iShip = sti(refCharacter.ship.type);
 			    refBaseShip = GetRealShip(iShip);
 				sHeader = XI_ConvertString(refBaseShip.BaseName);
-				sText1 = GetConvertStr(refBaseShip.BaseName, "ShipsDescribe.txt");
+				sText1 = GetShipDescr(refBaseShip);
 			}
 			else
 			{

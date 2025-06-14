@@ -10,6 +10,7 @@
 #include "battle_interface\WmInterface.c"
 
 #define BI_ICONS_SHIPS_TEXTURE_NAME "interfaces\le\battle_interface\icons.tga"
+#define BI_ICONS_TEXTURE_FIRST_MOD 6
 
 #define BI_ICONS_ST_NONE			0
 #define BI_ICONS_ST_MYSHIPS			1
@@ -1587,300 +1588,36 @@ void BI_SetSeaState()
 	// boal хрен вам убираем - нужное это делов в игре bReloadCanBe = 0;//убираем перегруз товара кроме как через меню.
 }
 
-void SetShipPictureDataByShipTypeName(string sType)
+void SetShipPictureDataByShipType(int idx)
 {
-	switch(sType)
+	if(idx < 0 || idx >= GetArraySize(&ShipsTypes))
 	{
-		case "tartane": 		// баркас
-			BI_intNRetValue[0] = 0+0*16;
-			BI_intNRetValue[1] = 0+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "WarTartane":  	// тартана
-			BI_intNRetValue[0] = 2+0*16;
-			BI_intNRetValue[1] = 2+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "barque":			// барк
-			BI_intNRetValue[0] = 4+0*16;
-			BI_intNRetValue[1] = 4+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "schooner":		// торговая шхуна
-			BI_intNRetValue[0] = 6+0*16;
-			BI_intNRetValue[1] = 6+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "barkentine":		// баркентина
-			BI_intNRetValue[0] = 8+0*16;
-			BI_intNRetValue[1] = 8+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "shnyava":			// шнява
-			BI_intNRetValue[0] = 10+0*16;
-			BI_intNRetValue[1] = 10+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "fleut":			// флейт
-			BI_intNRetValue[0] = 12+0*16;
-			BI_intNRetValue[1] = 12+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "caravel":			// каравелла
-			BI_intNRetValue[0] = 14+0*16;
-			BI_intNRetValue[1] = 14+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "pinnace":			// пинасс
-			BI_intNRetValue[0] = 0+1*16;
-			BI_intNRetValue[1] = 0+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "caracca":			// каракка
-			BI_intNRetValue[0] = 2+1*16;
-			BI_intNRetValue[1] = 2+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Navio":			// Навио
-			BI_intNRetValue[0] = 4+1*16;
-			BI_intNRetValue[1] = 4+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "EastIndiaMan":	// Ост-индец
-			BI_intNRetValue[0] = 6+1*16;
-			BI_intNRetValue[1] = 6+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-				
-		case "LuggerQuest":	// курьерский люггер
-			BI_intNRetValue[0] = 8+1*16;
-			BI_intNRetValue[1] = 8+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "lugger":			// люггер
-			BI_intNRetValue[0] = 10+1*16;
-			BI_intNRetValue[1] = 10+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "sloop":			// шлюп
-			BI_intNRetValue[0] = 12+1*16;
-			BI_intNRetValue[1] = 12+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "brigantine":		// бригантина
-			BI_intNRetValue[0] = 14+1*16;
-			BI_intNRetValue[1] = 14+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "brig":			// бриг
-			BI_intNRetValue[0] = 0+2*16;
-			BI_intNRetValue[1] = 0+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "schooner_w":		// военная шхуна
-			BI_intNRetValue[0] = 2+2*16;
-			BI_intNRetValue[1] = 2+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "galeon_l":		// галеон
-			BI_intNRetValue[0] = 4+2*16;
-			BI_intNRetValue[1] = 4+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "corvette":		// корвет
-			BI_intNRetValue[0] = 6+2*16;
-			BI_intNRetValue[1] = 6+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "XebekVML":		// шебека
-			BI_intNRetValue[0] = 8+2*16;
-			BI_intNRetValue[1] = 8+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Polacre":			// Полакр
-			BI_intNRetValue[0] = 10+2*16;
-			BI_intNRetValue[1] = 10+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-				
-		case "Galeon_h":		// Тяжелый галеон
-			BI_intNRetValue[0] = 12+2*16;
-			BI_intNRetValue[1] = 12+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "frigate":			// Фрегат
-			BI_intNRetValue[0] = 14+2*16;
-			BI_intNRetValue[1] = 14+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "frigate_h":		// Тяжелый Фрегат
-			BI_intNRetValue[0] = 0+3*16;
-			BI_intNRetValue[1] = 0+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "lineship":		// Военный корабль
-			BI_intNRetValue[0] = 2+3*16;
-			BI_intNRetValue[1] = 2+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "warship":			// Французский военный корабль
-			BI_intNRetValue[0] = 4+3*16;
-			BI_intNRetValue[1] = 4+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "battleship":		// Голландский военный корабль
-			BI_intNRetValue[0] = 6+3*16;
-			BI_intNRetValue[1] = 6+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "manowar":			// Испанский военный корабль
-			BI_intNRetValue[0] = 8+3*16;
-			BI_intNRetValue[1] = 8+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "manowar_e":		// Английский военный корабль
-			BI_intNRetValue[0] = 10+3*16;
-			BI_intNRetValue[1] = 10+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Mayfang":			// легкая шебека "Мэйфэнг"
-			BI_intNRetValue[0] = 12+3*16;
-			BI_intNRetValue[1] = 12+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Mirage":			// приватирский кеч "Мираж"
-			BI_intNRetValue[0] = 14+3*16;
-			BI_intNRetValue[1] = 14+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Valciria":		// патрульный бриг "Валькирия"
-			BI_intNRetValue[0] = 0+4*16;
-			BI_intNRetValue[1] = 0+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Corvette_quest":	// малый фрегат "Гриффондор"
-			BI_intNRetValue[0] = 2+4*16;
-			BI_intNRetValue[1] = 2+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Polacre_q":		// Полакр "Тореро" // Addon 2016-1 Jason пиратская линейка
-			BI_intNRetValue[0] = 4+4*16;
-			BI_intNRetValue[1] = 4+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "ArabellaShip":	// быстрый фрегат "Акула"
-			BI_intNRetValue[0] = 6+4*16;
-			BI_intNRetValue[1] = 6+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Flyingdutchman":	// проклятый "Калеуче"
-			BI_intNRetValue[0] = 8+4*16;
-			BI_intNRetValue[1] = 8+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Flyingdutchman_l":// копия "Калеуче"
-			BI_intNRetValue[0] = 10+4*16;
-			BI_intNRetValue[1] = 10+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Elcasador":	// галеон Эль Касадор
-			BI_intNRetValue[0] = 12+4*16;
-			BI_intNRetValue[1] = 12+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Ecliaton":	// галеон Эклятон
-			BI_intNRetValue[0] = 14+4*16;
-			BI_intNRetValue[1] = 14+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "NewFlyingdutchman":	// Отреставрированный Калеуче
-			BI_intNRetValue[0] = 0+5*16;
-			BI_intNRetValue[1] = 0+5*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Himera":		// Химера
-			BI_intNRetValue[0] = 2+5*16;
-			BI_intNRetValue[1] = 2+5*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Pink":		// Пинк
-			BI_intNRetValue[0] = 4+5*16;
-			BI_intNRetValue[1] = 4+5*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "galeon_sm":	// галеон см
-			BI_intNRetValue[0] = 6+5*16;
-			BI_intNRetValue[1] = 6+5*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "LadyBeth":	// Леди Бет
-			BI_intNRetValue[0] = 8+5*16;
-			BI_intNRetValue[1] = 8+5*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Memento":	// Мементо
-			BI_intNRetValue[0] = 10+5*16;
-			BI_intNRetValue[1] = 10+5*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Santisima":	// Линейный корабль "Реус де Сан-Педро"
-			BI_intNRetValue[0] = 8+3*16;
-			BI_intNRetValue[1] = 8+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
+		return;
 	}
-	BI_intNRetValue[3] = false;
-}
 
-void SetShipPictureDataByShipType(int st)
-{
-	if(st>=0 && st<GetArraySize(&ShipsTypes)-1)
+	ref refShip;
+	makeref(refShip,ShipsTypes[idx]);
+
+	BI_intNRetValue[3] = false;
+
+	if (CheckAttribute(refShip, "modname"))
 	{
-		SetShipPictureDataByShipTypeName( ShipsTypes[st].name );
+		BI_intNRetValue[2] = FindIconTextureIndexWithInserting(idx, BI_ICONS_TEXTURE_FIRST_MOD);
+	}
+	else
+	{
+		BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
+	}
+
+	if (CheckAttribute(refShip, "icons"))
+	{
+		BI_intNRetValue[0] = sti(refShip.icons.FirstIconPos);
+		BI_intNRetValue[1] = sti(refShip.icons.SecondIconPos);
+	}
+	else
+	{
+		BI_intNRetValue[0] = 0;
+		BI_intNRetValue[1] = 1;
 	}
 }
 
@@ -1958,6 +1695,107 @@ ref BI_GetData()
 	return &BI_intNRetValue;
 }
 
+int FindIconTextureIndexWithInserting(int idx, int startIdx)
+{
+	ref refShip;
+	makeref(refShip,ShipsTypes[idx]);
+	string modname = refShip.modname;
+
+	object mods;
+	int ret = startIdx;
+	for (int i = 0; i < idx; i++)
+	{
+		makeref(refShip,ShipsTypes[i]);
+
+		if (CheckAttribute(refShip, "modname"))
+		{
+			string curModname = refShip.modname;
+			if (!CheckAttribute(mods, curModname)) 
+			{
+				mods.(curModname) = 1;
+				ret++;
+			}
+		}
+	}
+
+	return ret;
+}
+
+
+int GetIconTextureIndexWithInserting(int idx, int startIdx)
+{
+	ref refShip;
+	makeref(refShip,ShipsTypes[idx]);
+
+	string modname = refShip.modname;
+
+
+	string smallFilePath = "interfaces\le\battle_interface\mods\"+modname+"\ship_icons1.tga.tx";
+	string largeFilePath = "interfaces\le\battle_interface\mods\"+modname+"\ship_icons2.tga.tx";
+
+	int i = startIdx;
+
+	aref smallTextureList;
+	makearef(smallTextureList,BattleInterface.CommandTextures.list);
+	aref largeTextureList;
+	makearef(largeTextureList,BattleInterface.IconTextures.list);
+	while (true)
+	{
+		string attName = "t"+i;
+		if (!CheckAttribute(smallTextureList, attName))
+		{
+			smallTextureList.(attName).name = smallFilePath;
+			smallTextureList.(attName).xsize = 16;
+			smallTextureList.(attName).ysize = 8;
+
+			largeTextureList.(attName).name = largeFilePath;
+			largeTextureList.(attName).xsize = 16;
+			largeTextureList.(attName).ysize = 8;
+			return i;
+		}
+
+		if (!CheckAttribute(largeTextureList, attName))
+		{
+			continue;
+		}
+
+		if (smallTextureList.(attName).name == smallFilePath && largeTextureList.(attName).name == largeFilePath)
+		{
+			return i;
+		}
+		i++;
+	}
+
+	return BI_ICONS_TEXTURE_SHIP1;
+}
+
+void InitShipsTextures(int startPos)
+{
+	ref refShip;
+	for (i = 0; i < SHIP_TYPES_QUANTITY; i++)
+	{
+		makeref(refShip,ShipsTypes[i]);
+		if (CheckAttribute(refShip, "modname"))
+		{
+			GetIconTextureIndexWithInserting(i, startPos);
+		}
+	}
+}
+
+
+void FillEmptyLargeTextures(int firstIdx, int lastIdx)
+{
+	aref textureList;
+	makearef(textureList,BattleInterface.IconTextures.list);
+	for (int i = firstIdx; i < lastIdx; i++)
+	{
+		string attName = "t"+i;
+		textureList.(attName).name = "interfaces\le\battle_interface\ship_icons2.tga.tx";
+		textureList.(attName).xsize = 16;
+		textureList.(attName).ysize = 8;
+	}
+}
+
 void SetParameterData()
 {
     float fHtRatio = stf(Render.screen_y) / iHudScale;
@@ -1983,6 +1821,13 @@ void SetParameterData()
 	BattleInterface.CommandTextures.list.t4.name = "interfaces\le\battle_interface\LandCommands.tga.tx";
 	BattleInterface.CommandTextures.list.t4.xsize = 16;
 	BattleInterface.CommandTextures.list.t4.ysize = 2;
+	
+	BattleInterface.CommandTextures.list.t5.name = "interfaces\le\battle_interface\list_icons.tga.tx";
+	BattleInterface.CommandTextures.list.t5.xsize = 16;
+	BattleInterface.CommandTextures.list.t5.ysize = 8;
+
+	FillEmptyLargeTextures(0, BI_ICONS_TEXTURE_FIRST_MOD);
+	InitShipsTextures(BI_ICONS_TEXTURE_FIRST_MOD);
 
 	BattleInterface.charge.charge1.picNum = 19; // balls
 	BattleInterface.charge.charge1.selPicNum = 3;

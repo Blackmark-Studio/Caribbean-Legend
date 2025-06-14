@@ -193,6 +193,14 @@ void SetSpyGlassData()
 				GetTextureUVForShip(iShip, &uvLeft, &uvTop, &uvRight, &uvBottom);
 
 				shipClass = GetCharacterShipClass(chref);
+				
+				ref refShip;
+				makeref(refShip, ShipsTypes[sti(RealShips[sti(chref.Ship.Type)].basetype)]);
+				if (CheckAttribute(refShip, "modname"))
+				{
+					string largeFilePath = "interfaces\le\battle_interface\mods\"+refShip.modname+"\ship_icons2.tga.tx";
+					sTextureName = largeFilePath;
+				}
 	
 				if (CheckAttribute(arScopeItm,"scope.show.cannons") && sti(arScopeItm.scope.show.cannons)!=0 )
 				{

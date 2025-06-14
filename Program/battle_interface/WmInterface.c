@@ -443,6 +443,15 @@ void WM_SetShipData()
 			BattleInterface.wm_sign.(signattr).faceuv = uvleft+","+uvtop + "," + uvright+","+uvbottom;
 			BattleInterface.wm_sign.(signattr).text = GetCrewQuantity(&Characters[cn]);
 			BattleInterface.wm_sign.(signattr).shipname = Characters[cn].Ship.Name;
+			
+			ref refShip;
+			makeref(refShip, ShipsTypes[sti(RealShips[sti(characters[cn].Ship.Type)].basetype)]);
+			if (CheckAttribute(refShip, "modname"))
+			{
+				string largeFilePath = "interfaces\le\battle_interface\mods\"+refShip.modname+"\ship_icons2.tga.tx";
+				BattleInterface.wm_sign.(signattr).texturePath = largeFilePath;
+			}
+			
 			i++;
 		}
 	}

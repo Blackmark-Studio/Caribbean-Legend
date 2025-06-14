@@ -700,7 +700,7 @@ void ShowInfoWindow()
 			if (shipIndex != -1)
 			{
 				sHeader = XI_ConvertString(refBaseShip.BaseName);
-				sText1 = GetConvertStr(refBaseShip.BaseName, "ShipsDescribe.txt");
+				sText1 = GetShipDescr(refBaseShip);
 			}
 			else
 			{
@@ -747,7 +747,7 @@ void ShowInfoWindow()
 			    iShip = sti(xi_refCharacter.ship.type);
 			    refBaseShip = GetRealShip(iShip);
 				sHeader = XI_ConvertString(refBaseShip.BaseName);
-				sText1 = GetConvertStr(refBaseShip.BaseName, "ShipsDescribe.txt");
+				sText1 = GetShipDescr(refBaseShip);
 				sText2 = GetRPGText("shipChoose_hint");
 			}
 			else

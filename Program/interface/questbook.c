@@ -645,7 +645,7 @@ void ShowInfoWindow()
 				picW = 512;
 				picH = 512;
 				sHeader = XI_ConvertString(refBaseShip.BaseName);
-				sText1 = GetConvertStr(refBaseShip.BaseName, "ShipsDescribe.txt");
+				sText1 = GetShipDescr(refBaseShip);
 				sText2 = XI_ConvertString("ShipsPlaceBook_Descr2");
 				sText3 = " ";
 			}

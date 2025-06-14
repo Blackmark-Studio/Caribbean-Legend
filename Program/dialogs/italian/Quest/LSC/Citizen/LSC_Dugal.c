@@ -26,7 +26,7 @@ void ProcessDialogEvent()
 			if (npchar.quest.meeting == "0")
 			{
 				dialog.text = "Salute a voi, messere. Permettetemi di presentarmi: Dougall Abbot. È un piacere vedere un uomo di rango da queste parti. Sono stufo di questa plebaglia locale. Giammai avrei pensato di dover passare il resto dei miei giorni tra la gente comune.";
-				link.l1 = TimeGreeting()+"… Il mio nome è "+GetFullName(pchar)+"È un piacere incontrarti. E perché non ti stanno simpatici i locali?";
+				link.l1 = TimeGreeting()+"... Il mio nome è "+GetFullName(pchar)+"È un piacere incontrarti. E perché non ti stanno simpatici i locali?";
 				link.l1.go = "meeting";
 				npchar.quest.meeting = "1";
 			}
@@ -109,7 +109,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_4":
-			dialog.text = "Non lo fanno mai. Le tempeste infuriano spesso attorno all’Isola Giustizia, ma qui regna sempre una quiete strana, come se fosse opera di qualche magia… o forse è la mano di Dio, chissà. Al massimo, a volte arriva una folata più forte e tutto finisce lì. Nemmeno la pioggia riesce a farci davvero del male.";
+			dialog.text = "Non lo fanno mai. Le tempeste infuriano spesso attorno all’Isola Giustizia, ma qui regna sempre una quiete strana, come se fosse opera di qualche magia... o forse è la mano di Dio, chissà. Al massimo, a volte arriva una folata più forte e tutto finisce lì. Nemmeno la pioggia riesce a farci davvero del male.";
 			link.l1 = "Interessante...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";

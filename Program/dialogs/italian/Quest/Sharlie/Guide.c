@@ -21,7 +21,6 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_0":
-			SetAchievement("Test_Ach");
 			PlaySound("Voice\English\LE\Greguar\Greguar_01.wav");
 			dialog.text = "Piacere darle il benvenuto nelle colonie, signore! Mi permetta di presentarmi: "+GetFullName(npchar)+". Viene dall'Europa? È la prima volta qui?";
 			link.l1 = "Buongiorno, monsieur. Il mio nome è "+GetFullName(pchar)+". Sì, sono appena sceso dalla nave.";
@@ -197,21 +196,21 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_portoffice":
-			dialog.text = "Zarząd portu. Tu można zostawić statek na postoju i znaleźć uczciwą pracę dla kapitana: fracht, eskorta, dostarczanie poczty. Im więcej zleceń wykonasz, tym lepsze stawki.";
+			dialog.text = "Qui puoi lasciare la tua nave in sosta e trovare un lavoro onesto per un capitano: carichi, scorte, consegna della posta. Più incarichi completi, più saranno redditizi.";
 			link.l1 = "";
 			link.l1.go = "guide_store";
 			locCameraFromToPos(48.38, 9.48, 43.95, true, 43.69, 5.47, 48.13);
 		break;
 		
 		case "guide_store":
-			dialog.text = "Sklep. Kapitanowie zaglądają tu po prowiant, rum, lekarstwa, proch i amunicję. Jeśli czegoś brakuje — szukaj przemytników w tawernie. Ale bez dobrego kwatermistrza handel to strata czasu i pieniędzy.";
+			dialog.text = "Il negozio. I capitani vengono qui più spesso di tutto — per provviste, rum, medicine, polvere da sparo e munizioni. Se manca qualcosa — cercate i contrabbandieri nella taverna. Ma ricordate: senza un buon tesoriere, il commercio è una perdita di tempo e denaro.";
 			link.l1 = "";
 			link.l1.go = "guide_gate";
 			locCameraFromToPos(-21.10, 6.60, 45.21, true, -30.00, 3.70, 45.00);
 		break;
 		
 		case "guide_gate":
-			dialog.text = "Brama. Jeśli molo to brama na morze, to tutaj jest wejście na dzikie tereny. Niebezpieczne, ale konieczne, gdy trzeba dotrzeć do fortu, znaleźć skarb lub przejść do innej osady.";
+			dialog.text = "Se il molo è il portale verso il mare, qui si apre il portale verso le terre selvagge. È pericoloso, ma assolutamente necessario se devi raggiungere il forte, trovare tesori o attraversare la terra verso un altro insediamento.";
 			link.l1 = "";
 			link.l1.go = "guide_45";
 			locCameraFromToPos(50.58, 5.74, 23.21, true, 100.00, 0.00, 20.00);
@@ -219,16 +218,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_45":
-			dialog.text = "Nie każda kolonia wita obcych. Jeśli nie chcesz czekać do nocy, podnieś inną flagę na morzu, a potem polegaj na skradaniu się lub kup licencję handlową.";
+			dialog.text = "Tieni presente che non tutte le colonie ti daranno il benvenuto. Se non vuoi aspettare la notte per entrare in una colonia ostile, issa un'altra bandiera sulla tua nave e poi affidati alla tua abilità di furtività o compra una licenza commerciale.";
 			link.l1 = "";
 			link.l1.go = "guide_46";
 		break;
 		
 		case "guide_46":
-			dialog.text = "Jest pan świetnym słuchaczem, mój przyjacielu. Może trochę rozrywki? Proponuję treningowy pojedynek za bramą.";
-			link.l1 = "Oczywiście! To się świetnie składa.";
+			dialog.text = "Sei un ottimo ascoltatore, amico mio. Che ne dici di divertirci un po'? Ti propongo un combattimento di allenamento oltre le porte.";
+			link.l1 = "Certo! Arriva al momento giusto.";
 			link.l1.go = "guide_47";
-			link.l2 = "Dziękuję z całego serca, monsieur, ale dalej poradzę sobie sam.";
+			link.l2 = "Grazie di cuore, monsieur, ma da qui ce la farò da solo.";
 			link.l2.go = "guide_exit_11";
 		break;
 		
@@ -239,8 +238,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_49":
-			dialog.text = "Mój przyjacielu, zakładam, że nie jest pan nowicjuszem w szermierce?";
-			link.l1 = "Ha! Jeden abordaż już przeżyłem i nawet...";
+			dialog.text = "Amico mio, suppongo che non siate un principiante nell'arte della spada?";
+			link.l1 = "Ah! Ho già superato un abbordaggio e addirittura...";
 			link.l1.go = "guide_50";
 			if (FindCharacterItemByGroupWithout_knife_03(pchar, BLADE_ITEM_TYPE) == "")
 			{
@@ -250,8 +249,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_50":
-			dialog.text = "Doskonale. Zaczynamy?";
-			link.l1 = "Zatańczmy!";
+			dialog.text = "Perfetto. Cominciamo?";
+			link.l1 = "Balliamo!";
 			link.l1.go = "guide_56";
 			npchar.quest.guide_win = 0;
 		break;
@@ -283,12 +282,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_57": // побил гида с первого раза
-			dialog.text = "You... you are a man who knows how to hold his sword. Well done, Monsieur. You need more practice, but you have the potential to become a true swordmaster.";
-			link.l1 = "Merci beaucoup. What now?";
+			dialog.text = "Ecco, questo sì che è un uomo che sa impugnare la spada. Complimenti, monsieur. Ora vi serve solo un po’ di pratica — avete tutte le carte in regola per diventare un vero maestro della lama.";
+			link.l1 = "Grazie! Che succede ora?";
 			link.l1.go = "guide_62"; // нода на выход
 			if (MOD_SKILL_ENEMY_RATE >= 6)
 			{
-				link.l2 = "More practice you say? Are you serious? I'm tired of this patronizing tone ever since I set foot in this miserable place!";				//Пасхалка Корсары 2 для сложности СФ и выше
+				link.l2 = "Pratica, eh... Pratica?! Siete tutti d'accordo?! Ne ho abbastanza di questo tono condiscendente che sento da quando ho messo piede in questo buco!";
 				link.l2.go = "guide_64";
 			}
 			AddComplexSelfExpToScill(50, 50, 50, 50);
@@ -296,38 +295,38 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_58": // побил гида со второго или третьего раза
-			dialog.text = "Much better! See, all you need is to concentrate. You need more practice, one day you will become a decent fencer.";
-			link.l1 = "Merci beaucoup. What now?";
+			dialog.text = "Molto meglio! Vedete - bastava concentrarsi, e ce l’avete fatta. Ora vi serve solo più pratica, e diventerete un abile spadaccino.";
+			link.l1 = "Grazie! Che succede ora?";
 			link.l1.go = "guide_62"; // нода на выход
 			AddComplexSelfExpToScill(20, 20, 20, 20);
 			AddCharacterExpToSkill(pchar, "Leadership", 30);
 		break;
 		
 		case "guide_59": // побили первый раз
-			dialog.text = "I won, Monsieur. Move faster, parry my stabs, jump back. A rematch?";
-			link.l1 = "Oui! No mercy, Monsieur!";
+			dialog.text = "Questo duello non si è concluso a vostro favore, monsieur. Muovetevi più velocemente, parate i miei colpi, schivate all’indietro o di lato. Desiderate una rivincita?";
+			link.l1 = "Certo! Non aspettatevi clemenza, monsieur!";
 			link.l1.go = "guide_56";
-			link.l2 = "No, I had enough. Let's finish the lesson. What now?";
+			link.l2 = "No, credo che possa bastare. Concludiamo la nostra lezione di scherma. E adesso?";
 			link.l2.go = "guide_62"; // нода на выход
 		break;
-		
+
 		case "guide_60": // побили второй раз
-			dialog.text = "I won again, "+pchar.name+"! Don't lose your initiative. Catch my hits, feint them. If you see that I am going to hit hard - jump away or parry, don't just guard. Again!";
-			link.l1 = "Come, Monsieur, I shall thrash you this time!";
+			dialog.text = "Due a zero a mio favore, "+pchar.name+"! Non lasciate che vi porti via l'iniziativa. Anticipate i miei colpi con una finta. Se vedete che sto per colpire con forza, schivate o parate, ma non restate in guardia. Ancora una volta!";
+			link.l1 = "Venite qui, signore, e stavolta sarò io a dare la lezione!";
 			link.l1.go = "guide_56";
-			link.l2 = "No, I've had enough. Let's finish the lesson. What now?";
+			link.l2 = "No, credo che possa bastare. Concludiamo la nostra lezione di scherma. E adesso?";
 			link.l2.go = "guide_62"; // нода на выход
 		break;
-		
+
 		case "guide_61": // побили третий раз
-			dialog.text = "You have a lot to learn, "+pchar.name+". Don't worry, you still got a lot of time to master your fencing. But be careful, don't take any chances until you know how to hold a weapon.";
-			link.l1 = "I will consider it, Monsieur, but I have to say that you were just too lucky! This blasted heat... the only reason why I didn't beat the hell out of you. Merde, let's end our fencing lesson. What now?";
+			dialog.text = "Eh sì, siete ancora un po’ debole, "+pchar.name+". Ma non scoraggiatevi: avrete tempo e occasioni per affinare la vostra maestria. Ma siate estremamente prudenti e non cercate guai finché non padroneggerete bene la spada.";
+			link.l1 = "Terrò a mente le vostre parole, monsieur, ma lasciate che vi dica che è solo fortuna! Questo caldo infernale mi ha sfiancato, altrimenti vi avrei mostrato io... Va bene, concludiamo la lezione. E adesso?";
 			link.l1.go = "guide_62"; // нода на выход
 		break;
-		
+
 		case "guide_62":
-			dialog.text = "Now it's time to say farewell, Monsieur. It was a pleasure. I hope that my presentation and training did you some good and will prove useful in the future. Perhaps, we shall meet again one day.\nAnd about the money you need - talk to important people of our city. Visit all the places that I have shown you today and speak to their owners. Ask around. Take a walk to the jungle and to the fort. Find a job or... well, I am not a priest or a judge, check people's houses and see what trinkets you can find in their unlocked chests. Just do it when their backs are turned or the guards will catch you.\nGood luck, "+pchar.name+", I have a strong feeling that you have the spark of true greatness inside you. Do your best to kindle it into a roaring fire!";
-			link.l1 = "Merci, Monsieur. The pleasure was mine. Godspeed!";
+			dialog.text = "Ora è tempo di salutarci, signore. È stato un vero piacere conoscervi. Spero che la mia guida e l’addestramento vi siano stati utili, e che i saperi acquisiti vi tornino utili in futuro. Forse un giorno ci rivedremo.\nQuanto al denaro — parlate con le persone influenti della città: il mercante, il barista, l’usuraio, l’impiegato del porto, chiedete in giro per le strade, visitate il forte o la giungla — così troverete lavoro o un altro modo per mettere le mani su un po’ d’argento e oro.\nBuona fortuna, "+pchar.name+", siate audace e tutto andrà per il meglio.";
+			link.l1 = "Grazie, monsieur. Il piacere è stato mio. Vi auguro ogni bene!";
 			link.l1.go = "guide_63";
 		break;
 		
@@ -341,8 +340,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_64": // решили убить Валинье
-			dialog.text = "Hold your tongue, Monsieur! I won't tolerate such insolence any further. However, I understand your reaction to a new environment, therefore I forgive your outburst this time. But mind your words from now on. Farewell, Monsieur de Maure.";
-			link.l1 = "No offense, Monsieur Valinnie. If we were in the Louvre at this moment, you'd watch your tone! It's time to teach a province a final lesson. Defend yourself!";
+			dialog.text = "Non esagerate, monsieur! Mantenete la calma! Non tollererò insolenze nei miei confronti!\nTuttavia, capisco che questo scatto sia una reazione alla situazione completamente nuova per voi, dunque farò un'eccezione questa volta e vi perdonerò l’isteria. In futuro, fate attenzione a cosa e a chi dite. Addio, monsieur de More.";
+			link.l1 = "Oh no, monsieur Valigny. Se fossimo al Louvre, vi sareste morso la lingua! È ora che anch’io dia una lezione alla provincia. In guardia!";
 			link.l1.go = "guide_65";
 		break;
 		

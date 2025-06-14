@@ -30,13 +30,13 @@ Eccellente! Ora resta solo una piccola cosa da fare: far fuori quel mascalzone.
 #TEXT 4
 Il lavoro è fatto, e padre e figlio possono dormire sonni tranquilli... almeno fino alla prossima volta. Ah, e mi sono guadagnato una ricompensa. Andiamo a prenderla!
 #TEXT 4_1
-Beh, me lo sono perso – e allora? Non è la fine del mondo.
+Beh, me lo sono perso, e allora? Non è la fine del mondo.
 #TEXT 5
 Le cose vanno davvero così male se le autorità stanno distribuendo lettere di corsa a furfanti e ubriaconi a caso? Meglio che faccia un salto in taverna e scopra chi sta spaventando la gente del posto.
 #TEXT 6
 Un furfante in meno su questa terra. È bello fare del bene.
 #TEXT 6_1
-Ho cambiato idea – non combatterò. Non sono proprio dell’umore. E poi, la ragazza dovrebbe provare cosa vuol dire essere la concubina di un coraggioso corsaro, invece che una semplice cameriera in taverna.
+Ho cambiato idea, non combatterò. Non sono proprio dell’umore. E poi, la ragazza dovrebbe provare cosa vuol dire essere la concubina di un coraggioso corsaro, invece che una semplice cameriera in taverna.
 #TEXT 7
 Un duello! E non potrebbe esserci motivo più serio.
 #TEXT 8
@@ -50,7 +50,7 @@ Sì, il cittadino aveva ragione. Povero Tom, anche lui, come gli altri, è cadut
 #TEXT 10_1
 Pfff! Carte, bari, duelli... Non ho tempo per queste sciocchezze!
 #TEXT 11
-Un maestro di scherma che ha paura di combattere – chi ci crederebbe mai! Il nipote del governatore non avrà vita facile con un insegnante così. Ma non sono affari miei, dopotutto. Preferisco andare dal mercante.
+Un maestro di scherma che ha paura di combattere, chi ci crederebbe mai! Il nipote del governatore non avrà vita facile con un insegnante così. Ma non sono affari miei, dopotutto. Preferisco andare dal mercante.
 #TEXT 12
 Il mercenario è morto. Andiamo a dare la buona notizia al maestro.
 #TEXT 12_1
@@ -84,7 +84,7 @@ Ho deciso di tenere la nave per me. Mi è sembrato che @<money> pesos fossero da
 #QUEST GiveShipLetters
 Extra: Oggetti Smarriti
 #TEXT 1
-Una scoperta curiosa! Qualcuno aveva fretta o era semplicemente distratto – in ogni caso, ha perso l’intero set di documenti della nave. Sono certo che il proprietario presto si farà vivo per reclamarli.
+Una scoperta curiosa! Qualcuno aveva fretta o era semplicemente distratto, in ogni caso, ha perso l’intero set di documenti della nave. Sono certo che il proprietario presto si farà vivo per reclamarli.
 #TEXT 2
 Beh, ho fatto un favore a della brava gente, e non mi è costato alcuna fatica.
 #TEXT 3
@@ -100,7 +100,7 @@ Forse è meglio così. Non ci ho guadagnato molto, ma almeno adesso non devo pi�
 #TEXT 8
 È fantastico quando i tuoi favori vengono ricompensati come si deve!
 #TEXT 9
-Ad ognuno secondo le sue opere! I documenti presto torneranno al loro legittimo proprietario – e il denaro è già finito nelle mie tasche.
+Ad ognuno secondo le sue opere! I documenti presto torneranno al loro legittimo proprietario, e il denaro è già finito nelle mie tasche.
 #TEXT 10
 Avrei dovuto consegnare questi documenti prima, così il loro proprietario non avrebbe dovuto procurarsene un nuovo set.
 
@@ -162,7 +162,7 @@ Sono riuscito a cavarmela con quella storia del pattugliatore. Non credo che i p
 #QUEST PiratesOnUninhabited
 Extra: Salvato da @<shoreName>
 #TEXT 1
-A @<shoreName> ho accolto a bordo @<count> marinai dal relitto del pirata @<shipTypeName>. Mi hanno chiesto di portarli in una qualsiasi baia abitata. Beh, li capisco – in fondo, sono in rotta con la legge...
+A @<shoreName> ho accolto a bordo @<count> marinai dal relitto del pirata @<shipTypeName>. Mi hanno chiesto di portarli in una qualsiasi baia abitata. Beh, li capisco, in fondo, sono in rotta con la legge...
 #TEXT 2
 Ho consegnato i pirati naufraghi a @<toShore> e ho persino ricevuto una piccola ricompensa. Non è molto, certo, ma fa sempre comodo...
 #TEXT 3
@@ -227,7 +227,7 @@ Ho informato il governatore di @<sCity> dei marinai abbandonati a @<ShoreName>, 
 #TEXT 14
 Ho informato il governatore di @<sCity> dei marinai abbandonati a @<ShoreName> e ho persino ricevuto una piccola ricompensa. Il governatore si è rallegrato nel sapere che il capitano della nave naufragata è sopravvissuto. Organizzerà subito una spedizione di salvataggio.
 #TEXT 15
-Ho accompagnato il capitano @<sName> e i suoi marinai fino all’insediamento più vicino e sono stato ricompensato generosamente, anche se non l’avevo mai chiesto…
+Ho accompagnato il capitano @<sName> e i suoi marinai fino all’insediamento più vicino e sono stato ricompensato generosamente, anche se non l’avevo mai chiesto...
 #TEXT 16
 A @<shoreName> ho accolto a bordo il capitano @<sName> insieme a @<count> dei suoi marinai. Il capitano sostiene che il pirata @<sBadName> abbia spinto l’equipaggio alla rivolta, lo abbia privato della sua nave e abbandonato lui e i suoi uomini a terra. Gli ho promesso che cercherò la sua nave, la '@<ShipName>', e gliela riporterò; in cambio, il contenuto della stiva sarà mio.
 #TEXT 17
@@ -339,7 +339,7 @@ Oh, cielo... Non avrei mai immaginato che un compito così semplice potesse rich
 #QUEST ChurchGenQuest2
 Extra: Rapina alla chiesa di @<sCity>
 #TEXT 1
-Rubare i soldi della chiesa! Ma che succede a questo mondo?! Beh, mentre padre @<sName> lancia maledizioni su questi sacrileghi, io dovrei passare a qualcosa di più concreto – e se il Signore non mi ricompenserà, di certo lo farà il Padre... Non possono essere andati lontano...
+Rubare i soldi della chiesa! Ma che succede a questo mondo?! Beh, mentre padre @<sName> lancia maledizioni su questi sacrileghi, io dovrei passare a qualcosa di più concreto, e se il Signore non mi ricompenserà, di certo lo farà il Padre... Non possono essere andati lontano...
 #TEXT 2
 La gente in città dice che i soldi sono stati rubati dai banditi locali, che sono stati abbastanza furbi da sparire. Forse dovrei andare a cercarli nei loro territori di caccia.
 #TEXT 3
@@ -357,7 +357,7 @@ I ladri dei beni della chiesa erano più furbi di quanto pensassi e sono fuggiti
 #TEXT 9
 Beh, con i contrabbandieri è stato facile trovare un accordo. Aiutavano i furfanti per denaro e li tradivano per denaro. Va bene, allora rotta verso @<sShore>.
 #TEXT 10_1
-Ora, questa sì che è una storia... Possibile che padre @<sName> sia davvero così infido? In ogni caso, prima devo parlargli – magari sto sospettando di un uomo del tutto innocente...
+Ora, questa sì che è una storia... Possibile che padre @<sName> sia davvero così infido? In ogni caso, prima devo parlargli, magari sto sospettando di un uomo del tutto innocente...
 #TEXT 10_2
 Ora, questa sì che è una storia incredibile... Possibile che padre @<sName> sia davvero così infido? Beh, visto che ho eliminato tutti quei furfanti, ormai solo il padre in persona può confermare o smentire le loro parole...
 #TEXT 11_1
@@ -373,13 +373,13 @@ Vorrei credere che il pentimento del prete di @<sCity> fosse sincero. Certo, ho 
 #TEXT 12_2
 Che svolta inaspettata! A quanto pare, anche i sacerdoti possono cadere vittima dell’avidità. Ma, come si suol dire, tutto è bene quel che finisce bene. Padre @<sName> è riuscito a resistere alla tentazione e mi ha persino rimborsato le spese.
 #TEXT 12_3
-Che colpo di scena! A quanto pare, perfino i sacerdoti possono cadere vittima dell’avidità. Ma, come si suol dire, tutto è bene quel che finisce bene. Padre @<sName> è riuscito a resistere alla sua tentazione. Peccato che si sia dimenticato di rimborsarmi le spese—forse era troppo agitato. Ho dovuto ricordarglielo io.
+Che colpo di scena! A quanto pare, perfino i sacerdoti possono cadere vittima dell’avidità. Ma, come si suol dire, tutto è bene quel che finisce bene. Padre @<sName> è riuscito a resistere alla sua tentazione. Peccato che si sia dimenticato di rimborsarmi le spese, forse era troppo agitato. Ho dovuto ricordarglielo io.
 #TEXT 12_4
 In questi tempi dominati dall’avidità, persino il clero può cadere nelle tentazioni del Diavolo, figuriamoci la gente comune. Forse sembrerà una sciocchezza, ma io non ho accettato il denaro sporco di quel furfante in tonaca.
 #TEXT 12_5
-In effetti, il Signore è misericordioso se permette a peccatori come Padre @<sName> di ingannare la sua ingenua congregazione. Io però non sono così indulgente, e sarei felice di consegnare quel furfante alle autorità – ma, purtroppo, non ho prove concrete della sua complicità... Beh, direi che per oggi basta opere pie in nome del Signore. Almeno sono riuscito a farmi rimborsare le spese da quel mascalzone.
+In effetti, il Signore è misericordioso se permette a peccatori come Padre @<sName> di ingannare la sua ingenua congregazione. Io però non sono così indulgente, e sarei felice di consegnare quel furfante alle autorità, ma, purtroppo, non ho prove concrete della sua complicità... Beh, direi che per oggi basta opere pie in nome del Signore. Almeno sono riuscito a farmi rimborsare le spese da quel mascalzone.
 #TEXT 12_6
-In verità, il Signore è misericordioso se permette a peccatori come padre @<sName> di ingannare la sua ingenua congregazione. Io però non sono così indulgente, e sarei ben felice di consegnare quel furfante alle autorità – ma purtroppo non ho prove concrete della sua complicità... Beh, basta così con le buone azioni in nome del Signore – tutto quello che mi resta sono spese e delusioni.
+In verità, il Signore è misericordioso se permette a peccatori come padre @<sName> di ingannare la sua ingenua congregazione. Io però non sono così indulgente, e sarei ben felice di consegnare quel furfante alle autorità, ma purtroppo non ho prove concrete della sua complicità... Beh, basta così con le buone azioni in nome del Signore, tutto quello che mi resta sono spese e delusioni.
 #TEXT 12_7
 Non riesco ancora a scrollarmi di dosso i sospetti sul prete di @<sCity>. Certo, la parola di un prete vale più di quella di un bandito, ma tutta questa storia puzza. Basta così con le buone azioni in nome del Signore: tutto quello che mi resta sono spese e delusioni.
 #TEXT 12_8
@@ -515,9 +515,9 @@ Si è scoperto che il capitano della pattuglia @<sShipType>, @<sName>, è coinvo
 #TEXT 20
 Non sono riuscito a trovare il nascondiglio del capitano @<sName>. Credo sia meglio non disturbare il governatore di @<sCity> per questa faccenda.
 #TEXT 21
-Il capitano @<sName> ha accettato di mostrarmi il nascondiglio in cambio della metà del bottino. Prima però devo mettere al безопасное место беглеца на своём корабле, а потом займусь остальным.
+Il capitano @<sName> ha accettato di mostrarmi il nascondiglio in cambio della metà del bottino. Prima però devo mettere in cella il fuggitivo sulla mia nave, e poi farò il resto.
 #TEXT 22
-Il capitano @<sName> è morto – e con lui sono svanite anche le mie speranze di trovare il tesoro.
+Il capitano @<sName> è morto, e con lui sono svanite anche le mie speranze di trovare il tesoro.
 #TEXT 23
 Ho completamente fallito la missione del governatore... Che vergogna...
 #TEXT 24
@@ -691,8 +691,10 @@ Ho deciso che non mi interessano i rumori o i terribili lamenti che il guardiano
 Sei Capitani
 #TEXT	1
 Forse è la prima volta che un semplice incontro con qualcuno che non aveva né affari né lavoro per me mi spinge a scrivere qualcosa su questo diario. Non capisco perché questo prete mi abbia colpito così tanto. Non so nemmeno come si chiama, e a volte diceva cose senza senso, ma è riuscito a farsi ricordare. Ci siamo già incontrati due volte, e potrei pensare che sia solo una coincidenza. Ma se dovessimo incontrarci ancora...
-Devo ammettere che il suo interesse è quasi lusinghiero. Quello sguardo che mi rivolge... sembra valutarmi, come se ammirasse ciò che ho fatto. E come dargli torto? Due navi leggendarie, due capitani le cui storie si raccontano in tutto l’arcipelago—entrambi caduti per mano mia.
+Devo ammettere che il suo interesse è quasi lusinghiero. Quello sguardo che mi rivolge... sembra valutarmi, come se ammirasse ciò che ho fatto. E come dargli torto? Due navi leggendarie, due capitani le cui storie si raccontano in tutto l’arcipelago, entrambi caduti per mano mia.
 Mi chiedo cosa dirà quando scoprirà delle mie prossime imprese. L’arcipelago è immenso, ma la mia fama, a quanto pare, si sta diffondendo più in fretta di quanto immaginassi.
+#TEXT	2
+Diego de Landa - così ti chiami. Allora ci incontreremo di nuovo. Continua.
 
 #QUEST SharlieTutorial
 Prologo
@@ -715,16 +717,16 @@ Ho trovato la chiave del capitano! Mi chiedo quali tesori apra...
 #QUEST DWH
 Oscure acque della guarigione
 #TEXT	1
-A  St. John's si mormora che la zingara del posto sia l’ultima speranza per la figlia gravemente malata di Thomas Morrison. Ma lei si ostina a non voler aiutare. Possibile che non provi davvero compassione per la povera ragazza?
+A Bridgetown si mormora che la zingara del posto sia l’ultima speranza per la figlia gravemente malata di Thomas Morrison. Ma lei si ostina a non voler aiutare. Possibile che non provi davvero compassione per la povera ragazza?
 #TEXT	2
-La donna gitana mi ha detto che sarebbe disposta ad aiutare la ragazza, ma Thomas si rifiuta categoricamente di farla entrare in casa sua. Voglio andare da Thomas e capire perché sta respingendo l’ultima speranza di salvare la ragazza. La sua casa si trova nella parte nord della città, vicino al muro, accanto a una lussuosa villa con colonne.
+La donna gitana mi ha detto che sarebbe disposta ad aiutare la ragazza, ma Thomas si rifiuta categoricamente di farla entrare in casa sua. Voglio andare da Thomas e capire perché sta respingendo l’ultima speranza di salvare la ragazza.
 #TEXT	3
 Il prete della chiesa locale ha minacciato Thomas Morrison di scomunica se accetterà l’aiuto della zingara per salvare la figlia gravemente malata. Ora Thomas è diviso tra la paura di perdere il favore della chiesa e la disperazione per la salute della bambina. Proverò a convincere il prete a chiudere un occhio su questo peccato, per un bene superiore: salvare la vita della ragazza!
 #TEXT	4
 Dovrò trovare delle soluzioni alternative. Il prete è senza dubbio testardo, e per certi versi ha anche ragione. Ma non posso comunque dargli ragione. Se c’è una possibilità di rimettere in sesto la ragazza, devo provarci.
 #TEXT	5
 Sono riuscito a convincere il prete. Ha accettato di chiudere un occhio sul coinvolgimento della zingara nella cura, a patto che Thomas si riscatti davanti a Dio con sincero pentimento e buone azioni.
-Ora devo trovare la mangarosa, l’ingrediente principale per la pozione della zingara. Questa pianta si riconosce dal profumo gradevole, dallo stelo alto e dalle foglie frastagliate. Posso trovare la mangarosa in una grotta fuori città, da certi “loschi individui” – probabilmente vagabondi o banditi. Meglio così: magari non dovrò nemmeno pagarli.
+Ora devo trovare la mangarosa, l’ingrediente principale per la pozione della zingara. Questa pianta si riconosce dal profumo gradevole, dallo stelo alto e dalle foglie frastagliate. Posso trovare la mangarosa in una grotta fuori città, da certi “loschi individui”, probabilmente vagabondi o banditi. Meglio così: magari non dovrò nemmeno pagarli.
 #TEXT	6
 Ho fatto tutto ciò che era in mio potere. Ora non resta che confidare nelle capacità della zingara. Mi sono talmente dedicato a salvare la bambina che ho completamente trascurato i miei affari. Tornerò ad Antigua tra un mese. Entro allora, Esther dovrebbe essere completamente guarita.
 #TEXT	7
@@ -766,15 +768,15 @@ I regolamenti commerciali sull’isola si sono rivelati piuttosto semplici: cent
 #QUEST GS
 Confini della Giustizia
 #TEXT	1
-È stato fatto un audace attentato contro il capo dell’Autorità Portuale di Belize. L’assalitore è riuscito a fuggire, ma ora è lui la preda. Si dice che il funzionario abbia messo una taglia sulla sua testa. Beh, il nemico sembra pericoloso – dovrò pensarci bene prima di mettermi sulle sue tracce.
+È stato fatto un audace attentato contro il capo dell’Autorità Portuale di Belize. L’assalitore è riuscito a fuggire, ma ora è lui la preda. Si dice che il funzionario abbia messo una taglia sulla sua testa. Beh, il nemico sembra pericoloso, dovrò pensarci bene prima di mettermi sulle sue tracce.
 #TEXT	2
 Il capo del porto sostiene di non avere la minima idea di chi l’abbia aggredito, né del motivo. Dice che l’assalitore è solo un pazzo qualunque, uno dei tanti che girano per i Caraibi. Non sembra molto credibile, ma poco importa. Per la testa di questo “pazzo” c’è una taglia di duecento dobloni. Questo è ciò che conta davvero. Inizierò le ricerche nelle insenature e grotte vicine: è lì che il fuggitivo probabilmente si nasconde dalla giustizia.
 #TEXT	3
 È fatta. È ora di tornare dal Capo del Porto e riscuotere la mia meritata ricompensa. Eppure, forse avrei dovuto ascoltare cosa aveva da dire il mercenario. Sembrava davvero convincente. D’altra parte, chi non cercherebbe di salvarsi la pelle, aggrappandosi anche alla più flebile speranza? Probabilmente era solo un altro dei suoi trucchi.
 #TEXT	4
-Il Capo del Porto mi ha pagato per intero, anzi, è stato persino più generoso del previsto. Mi ha offerto uno sconto permanente del cinquanta percento sull’ormeggio di una nave, per qualsiasi durata. Ma questa generosità non fa che aumentare i miei sospetti. E se il mercenario avesse detto la verità? Se davvero si fosse imbattuto nei pirati, perché non ha chiamato la guardia? Perché non ne ha parlato quando mi ha mandato a cercare il “killer”? Sono solo supposizioni, comunque. Quello che è fatto è fatto, e forse solo il tempo svelerà la verità. Devo andare avanti.
+Il Capo del Porto mi ha pagato per intero, anzi, è stato persino più generoso del previsto. Mi ha offerto uno sconto permanente del cinquanta percento sull’ormeggio di una nave, per qualsiasi durata. Ma questa generosità non fa che aumentare i miei sospetti. E se il mercenario avesse detto la verità? Se davvero si fosse imbattuto nei pirati, perché non ha chiamato la guardia? Perché non ne ha parlato quando mi ha mandato a cercare l'assassino? Sono solo supposizioni, comunque. Quello che è fatto è fatto, e forse solo il tempo svelerà la verità. Devo andare avanti.
 #TEXT	5
-Il Capo del Porto è davvero un farabutto! Sorride mentre saluta i miei compagni che salpano, poi vende senza scrupoli le rotte delle loro navi ai pirati. Gente come lui non può restare impunita. Aspetterò che cali la notte e sistemerò la faccenda. Le sue luride azioni verranno alla luce. Gli appunti che mi ha dato il mercenario resteranno nella sua casa, ben visibili. Così tutta la città vedrà chi è davvero. È ironico che viva vicino alla prigione - in fondo, dovrebbe esserne un ospite.
+Il Capo del Porto è davvero un farabutto! Sorride mentre saluta i miei compagni che salpano, poi vende senza scrupoli le rotte delle loro navi ai pirati. Gente come lui non può restare impunita. Aspetterò che cali la notte e sistemerò la faccenda. Le sue luride azioni verranno alla luce. Gli appunti che mi ha dato il mercenario resteranno nella sua casa, ben visibili. Così tutta la città vedrà chi è davvero.
 #TEXT	6
 Il bastardo è morto! Ora devo solo lasciare gli appunti e sparire prima che tutta la guarnigione sia messa in allarme.
 #TEXT	7
@@ -783,15 +785,15 @@ Il Capo del Porto non c’è più. Non manderà più nessuno nelle mani dei pira
 #QUEST OS
 Vecchi conti
 #TEXT 1
-Il taverniere di Puerto Principe ha perso un intero barile di gin raro, arrivato dall’Europa. Se non si ritrova la merce, rischia davvero grosso. A giudicare dal suo panico, questa spedizione era destinata a qualcuno di importante – altrimenti, perché tutto questo trambusto?
+Il taverniere di Puerto Principe ha perso un intero barile di gin raro, arrivato dall’Europa. Se non si ritrova la merce, rischia davvero grosso. A giudicare dal suo panico, questa spedizione era destinata a qualcuno di importante, altrimenti, perché tutto questo trambusto?
 #TEXT 2
 Il gin è stato rubato proprio sotto il naso dell’oste. Ora la sua vita è appesa a un filo: il cliente misterioso non è certo uno che perdona gli errori. Offre centocinquanta dobloni a chiunque riesca a recuperare la botte. Ho già qualche idea. Primo passo: interrogare i marinai. Magari qualcuno ha visto qualcosa.
 #TEXT 3
 Tutta questa storia suona davvero sospetta. Ma credo di avere una teoria su cosa sia successo davvero. È ora di parlare con la cameriera.
 #TEXT 4
-Sotto pressione, la cameriera ha confessato che tutta la scena era stata organizzata da uno chiamato Jack Wales. Insieme al capitano della "Sea Wolf", hanno messo su un vero spettacolo per rubare la botte. Che fatica per un po’ di gin! A quanto pare, non sono solo bevitori, ma veri intenditori. La casa del ladro è proprio lì, a due passi — di fronte alla taverna.
+Sotto pressione, la cameriera ha confessato che tutta la scena era stata organizzata da uno chiamato Jack Wales. Insieme al capitano della "Sea Wolf", hanno messo su un vero spettacolo per rubare la botte. Che fatica per un po’ di gin! A quanto pare, non sono solo bevitori, ma veri intenditori. La casa del ladro è proprio lì, a due passi ,  di fronte alla taverna.
 #TEXT 5
-Sono riuscito a riportare la botte all’oste giusto in tempo, salvandolo da un bel guaio. Devo dire che mi ha ricompensato generosamente: oltre ai dobloni, mi ha concesso vitto e alloggio gratis a vita nella sua taverna. Quanto alla cameriera, ha fatto bene a svanire – l’oste ha capito subito che anche lei era coinvolta nella faccenda.
+Sono riuscito a riportare la botte all’oste giusto in tempo, salvandolo da un bel guaio. Devo dire che mi ha ricompensato generosamente: oltre ai dobloni, mi ha concesso vitto e alloggio gratis a vita nella sua taverna. Quanto alla cameriera, ha fatto bene a svanire, l’oste ha capito subito che anche lei era coinvolta nella faccenda.
 #TEXT 6
 L’equipaggio del “Lupo di Mare” ha seguito il suo capitano. Meritavano davvero una fine simile? Chi può dirlo... Ma una cosa è certa: avrebbero dovuto pensarci due volte prima di mettersi contro di me.
 
@@ -800,22 +802,22 @@ Memoria Rubata
 #TEXT 1
 Si dice che Julie d’Armagnac, la nipote del governatore in persona, sia più triste che mai a Port-au-Prince. Un tempo era solare e piena di vita, ma ora si aggira per la città cupa come una nuvola di tempesta. Nessuno sa davvero cosa possa averla cambiata così, ma è chiaro che è successo qualcosa di grave.
 #TEXT 2
-Julie si trova in una situazione difficile. Le hanno rubato una collana a cui teneva molto. Non può rivolgersi alle guardie: suo zio, il governatore della parte francese di Hispaniola, le ha proibito severamente di contattare chi le aveva regalato il gioiello. Julie sospetta che sia stata la sua stessa domestica a rubarla. Non posso certo lasciarla sola in questo momento: ho deciso di aiutarla. Credo che la cosa migliore sia iniziare interrogando i mercanti del posto—il ladro avrà sicuramente cercato di vendere subito la collana.
+Julie si trova in una situazione difficile. Le hanno rubato una collana a cui teneva molto. Non può rivolgersi alle guardie: suo zio, il governatore della parte francese di Hispaniola, le ha proibito severamente di contattare chi le aveva regalato il gioiello. Julie sospetta che sia stata la sua stessa domestica a rubarla. Non posso certo lasciarla sola in questo momento: ho deciso di aiutarla. Credo che la cosa migliore sia iniziare interrogando i mercanti del posto, il ladro avrà sicuramente cercato di vendere subito la collana.
 #TEXT 3
-Un certo Tristan Renier, capitano della "Gabbiano Dorato", ha recentemente comprato una collana da un mercante—potrebbe essere quella di Julie. La sua nave è ancora ancorata in porto. Se il mio intuito è giusto, la ladra potrebbe essere proprio Giselle, il cui nome il mercante ha lasciato sfuggire per sbaglio.
+Un certo Tristan Renier, capitano della "Gabbiano Dorato", ha recentemente comprato una collana da un mercante, potrebbe essere quella di Julie. La sua nave è ancora ancorata in porto. Se il mio intuito è giusto, la ladra potrebbe essere proprio Giselle, il cui nome il mercante ha lasciato sfuggire per sbaglio.
 #TEXT 4
 Tristan non era a bordo. Dovrei cercarlo in città.
 #TEXT 5
 Sono riuscito a recuperare la collana di Julie. Ora devo restituirla alla sua legittima proprietaria. Oppure... forse dovrei andare dal governatore e raccontargli tutto?
 #TEXT 6
-La collana è tornata alla sua affascinante proprietaria. La ladra si è rivelata essere la sua stessa cameriera—Giselle. Ora Julie sta mettendo in campo tutta la sua astuzia per punire la furba. Non vorrei proprio essere nei suoi panni.
+La collana è tornata alla sua affascinante proprietaria. La ladra si è rivelata essere la sua stessa cameriera, Giselle. Ora Julie sta mettendo in campo tutta la sua astuzia per punire la furba. Non vorrei proprio essere nei suoi panni.
 
 #QUEST VPVL
 Intrappolato nella Grande Cattura
 #TEXT   1
 Voci si diffondono a Saint Pierre sulla scomparsa del pescatore locale Pierre Carno. Da due cicli di marea la sua barca non è più tornata in porto, mentre sua moglie Lea, consumata dall’angoscia, veglia da sola sul molo, scrutando le acque agitate nella speranza di scorgere il marito. Solo il suo ritorno potrebbe lenire il dolore che la tormenta. Ma il mare, impietoso, non svela i suoi segreti e, con ogni rintocco di campana, la speranza si fa più flebile e le possibilità di sfuggire alla morte si riducono sempre di più.
 #TEXT   2
-Lea ha raccontato che suo marito ha fatto rotta verso la baia di Le Marin, nascosta lungo la costa sud dell’isola. Sono già passati due giorni da quando è salpato, ma di lui ancora nessuna traccia. Il dolore che si leggeva sul volto di questa povera donna mi ha spinto a offrirle il mio aiuto. Per prima cosa perlustrerò le acque della baia di Le Marin—magari Pierre è ancora in mare, trattenuto da qualche imprevisto. Se il mare sarà deserto, dovrò allora cercare lungo la riva ogni segno di lui o della sua nave.
+Lea ha raccontato che suo marito ha fatto rotta verso la baia di Le Marin, nascosta lungo la costa sud dell’isola. Sono già passati due giorni da quando è salpato, ma di lui ancora nessuna traccia. Il dolore che si leggeva sul volto di questa povera donna mi ha spinto a offrirle il mio aiuto. Per prima cosa perlustrerò le acque della baia di Le Marin, magari Pierre è ancora in mare, trattenuto da qualche imprevisto. Se il mare sarà deserto, dovrò allora cercare lungo la riva ogni segno di lui o della sua nave.
 #TEXT   3
 Quei contrabbandieri che vivono sulla spiaggia mi hanno scambiato per uno degli scagnozzi del governatore e hanno cercato di mandarmi a fondo. Ma la sorte ha voltato loro le spalle: ora è il loro sangue che macchia la sabbia, non il mio. Devo indagare nella grotta marina di cui parlavano. Forse è proprio lì che tengono Pierre incatenato in quella prigione umida.
 #TEXT   4
@@ -830,12 +832,12 @@ Mistero di Betsy Price
 #TEXT	1
 A Willemstad ho sentito una storia interessante: la taverna del posto aveva assunto di recente una cameriera di straordinaria bellezza, ma tre giorni fa è sparita all’improvviso. Il proprietario è preoccupato ed è disposto a pagare chiunque riesca a trovarla.
 #TEXT	2
-Le voci non mentono: la cameriera è davvero sparita. Il taverniere è visibilmente preoccupato... se per la sua scomparsa o per i profitti che calano, chi può dirlo. È disposto a pagare cento dobloni a chiunque la riporti indietro. Ho accettato di aiutarlo nelle ricerche. Cento dobloni sono un bel incentivo, ma ciò che mi incuriosisce di più è Betsy stessa. Che tipo di donna era, capace di incantare gli uomini al punto che lasciavano tutto pur di restare ore in taverna solo per guardarla? Per cominciare, dovremmo dare un’occhiata a casa sua. Secondo il locandiere, non è lontana dalla taverna, su una collina—proprio di fronte alla casa elegante con il balcone blu.
+Le voci non mentono: la cameriera è davvero sparita. Il taverniere è visibilmente preoccupato... se per la sua scomparsa o per i profitti che calano, chi può dirlo. È disposto a pagare cento dobloni a chiunque la riporti indietro. Ho accettato di aiutarlo nelle ricerche. Cento dobloni sono un bel incentivo, ma ciò che mi incuriosisce di più è Betsy stessa. Che tipo di donna era, capace di incantare gli uomini al punto che lasciavano tutto pur di restare ore in taverna solo per guardarla? Per cominciare, dovremmo dare un’occhiata a casa sua. Secondo il locandiere, non è lontana dalla taverna, su una collina, proprio di fronte alla casa elegante con il balcone blu.
 #TEXT	3
 Betsy è chiaramente invischiata in faccende oscure. La lettera che ho trovato è una minaccia diretta alla sua vita, quindi la sua scomparsa è molto più grave di una semplice fuga. Forse è riuscita a nascondersi, ma non posso escludere il peggio. Devo scoprire chi potrebbe aver lasciato questo messaggio. Inizierò dal barista: magari ha notato qualcuno di sospetto vicino a lei.
 #TEXT	4
 Il ciondolo comprato dal vagabondo appartiene a Betsy. Lui l’ha trovato nell’aiuola vicino alla casa con la lanterna. Dobbiamo dare un’occhiata attenta da quelle parti.
 #TEXT	5
-Beh, che donna questa Betsy... O forse Miranda? No, meglio restare su Betsy – non c’è bisogno di scavare nel suo passato. In ogni caso, l’ho tirata fuori dalle grinfie di quei bastardi... È ora di riscuotere la ricompensa che mi spetta.
+Beh, che donna questa Betsy... O forse Miranda? No, meglio restare su Betsy, non c’è bisogno di scavare nel suo passato. In ogni caso, l’ho tirata fuori dalle grinfie di quei bastardi... È ora di riscuotere la ricompensa che mi spetta.
 #TEXT	6
 Il taverniere mi ha pagato generosamente per aver riportato indietro la sua preziosa cameriera. A dire il vero, non riesco a smettere di pensare a Betsy... Forse dovrei farle visita, prima o poi.

@@ -259,7 +259,7 @@ void ProcessDialogEvent()
 		
 		case "negotiations_7":
 			dialog.text = "Giuro, non ne sapevo nulla!";
-			link.l1 = "Certo, non l’hai fatto… Ma parliamo dell’ammiraglio. Chad Kapper ha orchestrato il tentativo e i tuoi uomini gli hanno dato man forte. Han provato ad avvelenare Dodson e io per un soffio l’ho impedito.";
+			link.l1 = "Certo, non l’hai fatto... Ma parliamo dell’ammiraglio. Chad Kapper ha orchestrato il tentativo e i tuoi uomini gli hanno dato man forte. Han provato ad avvelenare Dodson e io per un soffio l’ho impedito.";
 			link.l1.go = "negotiations_8";
 		break;
 		

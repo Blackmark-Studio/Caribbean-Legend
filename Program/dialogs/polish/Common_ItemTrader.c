@@ -510,10 +510,18 @@ void ProcessDialogEvent()
 		case "UV_Lavochniki_3_1":
     		dialog.text = "Tristan Renier, kapitan 'Golden Seagull'. Jego statek nadal stoi w porcie. Ale szczerze mówiąc, wątpię, by chciał się rozstać z tym naszyjnikiem. Jeśli odmówi, wpadnijcie jutro. Przysięgam, kapitanie, nie pożałujecie.";
     		link.l1 = "...";
-    		link.l1.go = "exit";
+    		link.l1.go = "UV_Lavochniki_exit";
 			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_3");
 			AddDialogExitQuestFunction("UV_GoldSeagull");
- 		break;
+		break;
+		
+		case "UV_Lavochniki_exit":
+			DialogExit();
+			AddQuestRecord("UV", "3");
+			/*AddQuestUserData("UV", "sSex", NPCharSexPhrase(NPChar,"ца","ки"));
+			AddQuestUserData("UV", "sSex1", NPCharSexPhrase(NPChar,"ец","ка"));
+			AddQuestUserData("UV", "sSex2", NPCharSexPhrase(NPChar,"","а"));*/
+		break;
 		//<-- Украденное воспоминание
 		
 // ======================== блок нод angry ===============>>>>>>>>>>>>>>>

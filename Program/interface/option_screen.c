@@ -357,10 +357,6 @@ void IReadVariableAfterInit()
 	}
 	SetFormatedText("SHIPMARKS_DESCRIP_TEXT", EnabledShipMarksDes(iEnabledShipMarks));
 
-	if(CheckAttribute(&InterfaceStates,"ArcadeSails")) {
-		iArcadeSails = sti(InterfaceStates.ArcadeSails);
-	}
-	SetFormatedText("ARCADESAILS_DESCRIP_TEXT", ArcadeSailsDes(iArcadeSails));
 	int nClassicSoundScene = 0;
 	if(CheckAttribute(&InterfaceStates,"ClassicSoundScene")) {
 		nClassicSoundScene = sti(InterfaceStates.ClassicSoundScene);
@@ -849,29 +845,6 @@ void procBtnAction()
 			iDifficulty += 2;
 			SetFormatedText("DIFFICULTY_DESCRIP_TEXT", DifficultyDes(iDifficulty));
 			InterfaceStates.Difficulty = iDifficulty;
-		}
-		return;
-	}
-	if(sNodName == "LEFTCHANGE_ARCADESAILS") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_LEFTSTEP ) 
-		{
-			if(iArcadeSails > 0) return;
-			iArcadeSails += 1;
-
-			SetFormatedText("ARCADESAILS_DESCRIP_TEXT", ArcadeSailsDes(iArcadeSails));
-			InterfaceStates.ArcadeSails = iArcadeSails;
-		}
-		return;
-	}	
-	if(sNodName == "RIGHTCHANGE_ARCADESAILS") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_RIGHTSTEP) 
-		{
-			if(iArcadeSails < 1) return;
-			iArcadeSails -= 1;
-			SetFormatedText("ARCADESAILS_DESCRIP_TEXT", ArcadeSailsDes(iArcadeSails));
-			InterfaceStates.ArcadeSails = iArcadeSails;
 		}
 		return;
 	}
@@ -1428,17 +1401,6 @@ string EnabledShipMarksDes(int esm)
 	return sText;
 }
 
-string ArcadeSailsDes(int as)
-{
-	string sText = " "; 
-	switch (iArcadeSails)
-	{
-		case 0: sText =  XI_ConvertString("SailType_2"); break;
-		case 1: sText =  XI_ConvertString("SailType_1"); break;
-	}
-	return sText;
-}
-
 string DifficultyDes(int df)
 {
 	string sText = " "; 
@@ -1643,7 +1605,7 @@ bool DoMapToOtherKey(int keyIdx, int stickUp)
 	if(CheckAttribute(arKeyRoot,sName+".stick") && sti(arKeyRoot.(sName).stick) == true) return false;
 
 	if(bAltPress) MapControlToGroup(sControl, "AltPressedGroup");
-	else DeleteAttribute(&objControlsState, "keygroups.AltPressedGroup" + "." + sControl);
+	else DeleteAttribute(&objControlsState, "keygroups.AltPressedGroup." + sControl);
 
     // Обновим клавишу
     GroupKeyUpdate(sControl, keyCode, groupName);
@@ -1694,8 +1656,8 @@ bool DoMapToOtherKey(int keyIdx, int stickUp)
                     // синхронизированная, но нет текущей обновляемой (sControl)
                     GroupKeyUpdate(sName, keyCode, groupName); 
                 }
-                else if(sti(aFriend.(sName)) == 2) BI_CheckWASD(arControlGroup.(sName) == CI_GetKeyName(keyCode));
-                else if(sti(aFriend.(sName)) == 3) BI_CheckWASDSail(arControlGroup.(sName) == CI_GetKeyName(keyCode));
+                else if(sti(aFriend.(sName)) == 2) BI_CheckWASD(arControlGroup.(sName) == CI_GetKeyName(keyCode), groupName);
+                else if(sti(aFriend.(sName)) == 3) BI_CheckWASDSail(arControlGroup.(sName) == CI_GetKeyName(keyCode), groupName);
             }   
         }
     }
@@ -1812,11 +1774,6 @@ void ShowInfo()
 		case "MOREINFO_DESCRIP_TEXT":
 			sHeader = XI_ConvertString("More Info");
 			sText1 = XI_ConvertString("More Info_descr");
-		break;
-
-		case "ARCADESAILS_DESCRIP_TEXT":
-			sHeader = XI_ConvertString("Sailing Mode");
-			sText1 = GetRPGText("ArcadeSailMode_desc");
 		break;
 
 		case "ALWAYS_RUN_CHECKBOX":
@@ -1966,7 +1923,7 @@ bool KeyAlreadyUsed(string sGrpName, string sControl, string sKey, bool bAltPres
 	bool bAPgroup = false;
 	if(CheckAttribute(&objControlsState,"keygroups.AltPressedGroup." + sControl))
 	{
-		bAPgroup = objControlsState.keygroups.AltPressedGroup.(sControl) == sKey;
+		bAPgroup = (objControlsState.keygroups.AltPressedGroup.(sControl) == sKey);
 	}
 	if(!CheckAttribute(&objControlsState,"keygroups." + sGrpName + "." + sControl)) return false;
 
@@ -2109,10 +2066,6 @@ void RestoreDefaultSettings()
 	InterfaceStates.ControlsTips = 2;
 	iControlsTips = 2;
 	SetFormatedText("CONTROLS_TIPS_DESCRIP_TEXT", ControlsTipsDes(iControlsTips));
-
-	InterfaceStates.ArcadeSails = 1;
-	iArcadeSails = 1;
-	SetFormatedText("ARCADESAILS_DESCRIP_TEXT", ArcadeSailsDes(iArcadeSails));
 
 	InterfaceStates.ClassicSoundScene =  1;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CLASSIC_SOUNDSCENE_CHECKBOX", 2, 1, 1);
@@ -2307,8 +2260,10 @@ void EraseCopiesInAllGroups(string sControl)
 }
 
 // Особые указания на случай дубля WASD и Стрелок
-void BI_CheckWASD(bool bSame)
+void BI_CheckWASD(bool bSame, string sGroup)
 {
+    if(bAdvancedChange && sGroup != "FightModeControls") return;
+
     aref arControlGroup;
 
     if(bSame)
@@ -2323,14 +2278,8 @@ void BI_CheckWASD(bool bSame)
     else if(!CheckAttribute(&objControlsState, "keygroups.BattleInterfaceControls.ChrForward"))
     {
         // Если дубля нет, то проверим остальные, можем ли вернуть в BI
-        makearef(arControlGroup, objControlsState.keygroups.PrimaryLand);
-        bSame = arControlGroup.ChrForward     == arControlGroup.BICommandsUp   ||
-                arControlGroup.ChrBackward    == arControlGroup.BICommandsDown ||
-                arControlGroup.ChrStrafeLeft  == arControlGroup.BICommandsLeft ||
-                arControlGroup.ChrStrafeRight == arControlGroup.BICommandsRight;
         makearef(arControlGroup, objControlsState.keygroups.FightModeControls);
-        bSame = bSame ||
-                arControlGroup.ChrForward     == arControlGroup.BICommandsUp   ||
+        bSame = arControlGroup.ChrForward     == arControlGroup.BICommandsUp   ||
                 arControlGroup.ChrBackward    == arControlGroup.BICommandsDown ||
                 arControlGroup.ChrStrafeLeft  == arControlGroup.BICommandsLeft ||
                 arControlGroup.ChrStrafeRight == arControlGroup.BICommandsRight;
@@ -2344,8 +2293,10 @@ void BI_CheckWASD(bool bSame)
     }
 }
 
-void BI_CheckWASDSail(bool bSame)
+void BI_CheckWASDSail(bool bSame, string sGroup)
 {
+    if(bAdvancedChange && sGroup != "Sailing3Pers") return;
+
     aref arControlGroup;
 
     if(bSame)
@@ -2360,14 +2311,8 @@ void BI_CheckWASDSail(bool bSame)
     else if(!CheckAttribute(&objControlsState, "keygroups.BattleInterfaceControls.Ship_SailUp"))
     {
         // Если дубля нет, то проверим остальные, можем ли вернуть в BI
-        makearef(arControlGroup, objControlsState.keygroups.PrimaryLand);
+        makearef(arControlGroup, objControlsState.keygroups.Sailing3Pers);
         bSame = arControlGroup.Ship_SailUp    == arControlGroup.BICommandsUp   ||
-                arControlGroup.Ship_SailDown  == arControlGroup.BICommandsDown ||
-                arControlGroup.Ship_TurnLeft  == arControlGroup.BICommandsLeft ||
-                arControlGroup.Ship_TurnRight == arControlGroup.BICommandsRight;
-        makearef(arControlGroup, objControlsState.keygroups.FightModeControls);
-        bSame = bSame ||
-                arControlGroup.Ship_SailUp    == arControlGroup.BICommandsUp   ||
                 arControlGroup.Ship_SailDown  == arControlGroup.BICommandsDown ||
                 arControlGroup.Ship_TurnLeft  == arControlGroup.BICommandsLeft ||
                 arControlGroup.Ship_TurnRight == arControlGroup.BICommandsRight;

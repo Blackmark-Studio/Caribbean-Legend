@@ -21,7 +21,6 @@
 #include "scripts\CompanionTravel.c" // Warship 17.07.08 Методы для свободного плавания компаньонов
 #include "scripts\GameModeCondition.c" // Warship. Обраобтка прерывания, выполняющегося в каждом фрейме
 #include "scripts\GenQuests_common.c" // Ugeen 12.01.10 общие функции для генераторов
-#include "scripts\Santa_Misericordia.c" // Sinistra & belamour 13.12.2024 Santa Misericordia
 
 #define MAN 			0
 #define WOMAN 			1
@@ -1155,6 +1154,9 @@ void GiveItemToTrader(aref ch)
 			AddItems(ch, "obereg_8", 	1); // Амулет 'Чётки торговца'
 			AddItems(ch, "potionrum", 	1); // Бутылка рома
 			AddItems(ch, "potion1", 	10); // Лечебное зелье
+
+            itm = ItemsFromID("map_full");
+            SharlieTutorial_GenerateTreasureMap(itm);
 			AddItems(ch, "map_full", 	1); // Карта сокровищ
 		break;
 	}	
@@ -2379,7 +2381,16 @@ bool CheckFreeLocator(string location, string locator, int idxDontSee)
 }
 // boal <--
 
-int RandFromThreeDight(int _Num1, int _Num2, int _Num3)
+int RandFromTwo(int _Num1, int _Num2)
+{
+	switch (rand(1))
+	{
+		case 0: return _Num1; break;
+		case 1: return _Num2; break;
+	}
+}
+
+int RandFromThree(int _Num1, int _Num2, int _Num3)
 {
 	switch (rand(2))
 	{
@@ -2389,7 +2400,7 @@ int RandFromThreeDight(int _Num1, int _Num2, int _Num3)
 	}
 }
 
-int RandFromFiveDight(int _Num1, int _Num2, int _Num3, int _Num4, int _Num5)
+int RandFromFive(int _Num1, int _Num2, int _Num3, int _Num4, int _Num5)
 {
 	switch (rand(4))
 	{
@@ -2401,6 +2412,10 @@ int RandFromFiveDight(int _Num1, int _Num2, int _Num3, int _Num4, int _Num5)
 	}
 }
 
+int RandFromAny(ref iMassive)
+{
+    return iMassive[rand(GetArraySize(iMassive)-1)];
+}
 
 // Отключить на время форт (потом сам восстановится)
 void MakeFortDead(string _ColonyFort)

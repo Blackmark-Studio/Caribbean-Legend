@@ -9,7 +9,7 @@ Rayner
 
 FalseTrace_3
 {
-galeone '@<pchar.questTemp.FalseTrace.ShipName>'
+fluita '@<pchar.questTemp.FalseTrace.ShipName>'
 }
 
 FalseTrace_4
@@ -28,7 +28,7 @@ Solly
 
 FalseTrace_7
 {
-galeone con minerali d'oro
+fluita con minerali d'oro
 }
 
 FalseTrace_8

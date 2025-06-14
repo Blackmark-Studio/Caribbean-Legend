@@ -105,6 +105,11 @@ Un magnifico esempio di costruzione navale inglese, creato per il servizio di pa
 I suoi anni di servizio militare sono ormai lontani, e la gloria del suo precedente proprietario attira ora più commercianti di antiquariato e mappe del tesoro che lupi di mare.
 }
 
+Memento
+{
+In questa nave è difficile riconoscere il vecchio design di un brigantino inglese, che compensa la sua scarsa manovrabilità con una potente artiglieria e uno scafo pesante e resistente. Ricoperto di amuleti nativi e impregnato di morte, spaventa non solo i nemici, ma anche il suo stesso equipaggio.
+}
+
 Corvette
 {
 Le corvette sono progettate per il riconoscimento, il servizio di corriere e le operazioni di crociera. Con buona velocità e manovrabilità, una corvetta può raggiungere navi più leggere ed evitare con successo il combattimento con navi più pesanti.

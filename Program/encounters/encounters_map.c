@@ -543,18 +543,15 @@ void WME_FixShipTypes(ref rEncounter, int iMaxShipNum)
         {
             if(count+1 > iMaxShipNum) break;
 
-            iShipType = WME_GetShipTypeExt(cMin, cMax, rShip.Type, rShip.ShipSpec, -1); // ~!~ TO_DO: iNation
-            if (iShipType >= SHIP_LSHIP_FRA && iShipType <= SHIP_LSHIP_ENG && rand(100) > 8)
-            {
-                iShipType = SHIP_LINESHIP; // Дополнительный тест на линейник
-            }
+            iShipType = WME_GetShipTypeExt(cMin, cMax, rShip.Type, rShip.ShipSpec, iNation, false); // ~!~ TO_DO: true
             if (iShipType == INVALID_SHIP_TYPE) continue;
 
             count++;
             sAttr = count;
             rEncounter.ShipTypes.(sAttr) = iShipType;
             fPower += GetBaseShipPower(iShipType);
-            if(rShip.Type == "Merchant")
+            bool bTrade = (sti(rShip.ShipSpec) == SHIP_SPEC_UNIVERSAL) && (rEncounter.type == "trade");
+            if(rShip.Type == "Merchant" || bTrade)
             {
                 rEncounter.ShipModes.(sAttr) = "trade";
                 iNumMerchantShips++;
@@ -577,7 +574,7 @@ void WME_FixShipTypes(ref rEncounter, int iMaxShipNum)
     if(max_i) rEncounter.FixedTypes = true; // iNumMerchantShips + iNumWarShips != 0
 }
 
-int WME_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string sShipSpec, int iNation)
+int WME_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string sShipSpec, int iNation, bool bNationCheck)
 {
 	int iShips[60];
 	int i, j, q, iShipsNum;
@@ -599,7 +596,7 @@ int WME_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string sS
         // Сравнение классов числовое, то есть iClassMin - это большие корабли
 		if (iClass < iClassMin || iClass > iClassMax) continue;
 
-        if(iNation != -1) // Скип
+        if(bNationCheck || iClass == 1)
         {
             bOk = false;
             if(CheckAttribute(rShip, "nation"))
@@ -622,11 +619,32 @@ int WME_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string sS
 		iShipsNum++;
 	}
 
-	if (iShipsNum == 0) 
+	if (iShipsNum == 0)
 	{
-		Trace("Can't find ship type '" + sShipType + "' with ClassMin = " + iClassMin + " and ClassMax = " + iClassMax);
+        Log_TestInfo("WARNING! CANT FIND SHIP IN WME_GetShipTypeExt!");
+		Trace("Can't find ship type '" + sShipType + "'" + " with spec " + wdmGetSpec(sti(sShipSpec)) + " and ClassMin = " + iClassMin + ", ClassMax = " + iClassMax);
 		return INVALID_SHIP_TYPE;
 	}
 
-	return iShips[rand(iShipsNum - 1)];
+    iShipsNum = rand(iShipsNum - 1);
+    if(iShipsNum >= SHIP_LSHIP_FRA && iShipsNum <= SHIP_LSHIP_ENG)
+    {
+        // Доля линейников 10% от кораблей первого класса
+        // В ваниле ещё может выпасть только военник
+        if(rand(99) >= 20) iShipsNum = SHIP_LINESHIP;
+    }
+
+	return iShips[iShipsNum];
+}
+
+string wdmGetSpec(int iSpec)
+{
+    switch(iSpec)
+    {
+        case SHIP_SPEC_UNIVERSAL: return "Универсал"; break;
+        case SHIP_SPEC_MERCHANT: return "Торговец"; break;
+        case SHIP_SPEC_RAIDER: return "Рейдер"; break;
+        case SHIP_SPEC_WAR: return "Военный"; break;
+    }
+    return "UNKNOWN";
 }

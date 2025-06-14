@@ -99,6 +99,7 @@ void ProcessDialogEvent()
 					link.l8 = "Je suis désolé, mais je suis occupé pour le moment.";
 					link.l8.go = "exit";
 					npchar.quest.Portugal = "true";
+					DelLandQuestMark(npchar);
 					break;
 				}
 			}

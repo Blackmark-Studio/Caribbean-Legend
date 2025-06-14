@@ -223,7 +223,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Captain_4_commerce":
-			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 45)
+			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 25)
 			{
 				dialog.text = "Пять тысяч? Ну что ж, хорошо, капитан. Забирайте, раз это для вас так важно.";
 				link.l1 = "Благодарю вас. Вы сделали правильный выбор.";
@@ -240,7 +240,7 @@ void ProcessDialogEvent()
 				link.l1 = "Раз уж вы не хотите расстаться с ожерельем по-хорошему, значит - я заберу его силой.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie_Duel");
-				notification("Недостаточно развит навык (45)", SKILL_COMMERCE);
+				notification("Недостаточно развит навык (25)", SKILL_COMMERCE);
 			}
 		break;
 		
@@ -268,6 +268,7 @@ void ProcessDialogEvent()
 			link.l1 = "Разумное решение! Прощайте.";
 			AddDialogExitQuestFunction("UV_Ozherelie");
 			GiveItem2Character(pchar, "SM_necklace_Julie");
+			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 		break;
 		
 		case "Juli_22":
@@ -287,14 +288,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Juli_24_nobility":
-			dialog.text = "Я совсем забыла спросить: вам известно, кто же совершил кражу этого ожерелья?";
+			dialog.text = "Я совсем забыла спросить: вам известно, кто же совершил кражу?";
 			link.l1 = "Мне известно только одно, мадемуазель: торговцу это ожерелье, похоже, принесла некая Жизель. И, судя по всему, это далеко не последнее украшение, которое она собирается продать.";
 			link.l1.go = "Juli_25";
 			ChangeCharacterComplexReputation(pchar, "nobility", 3);
 		break;
 		
 		case "Juli_24_chest":
-			dialog.text = "Я совсем забыла спросить: вам известно, кто же совершил кражу этого ожерелья?";
+			dialog.text = "Я совсем забыла спросить: вам известно, кто же совершил кражу?";
 			link.l1 = "Мне известно только одно, мадемуазель: торговцу это ожерелье, похоже, принесла некая Жизель. И, судя по всему, это далеко не последнее украшение, которое она собирается продать.";
 			link.l1.go = "Juli_25";
 			GiveItem2Character(PChar, "chest");

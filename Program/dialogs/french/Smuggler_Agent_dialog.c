@@ -522,6 +522,7 @@ void ProcessDialogEvent()
 		case "Meeting_2":
 			Dialog.Text = "Pour quoi ?";
 			Link.l1 = "Peut-être, vous serez intéressé par des marchandises spéciales ? Ou peut-être, avez-vous quelque chose à me proposer à la place ?"Link.l1.go ="Rencontre_3";				
+			Link.l.go = "Meeting_3";
 		break;
 
 		case "Meeting_3":
@@ -870,7 +871,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TPZ_smugglers_2":
-			dialog.text = "Je peux tout trouver, tu vois? Suffit de payer correctement. Mais ce foutu gouverneur nous met la pression. Plus question de toucher à l’alcool – ça fait du bruit, on l’entend à un kilomètre, les marges sont minables, et le risque de finir pendu est immense. Alors désolé.";
+			dialog.text = "Je peux tout trouver, tu vois? Suffit de payer correctement. Mais ce foutu gouverneur nous met la pression. Plus question de toucher à l’alcool - ça fait du bruit, on l’entend à une bonne lieue, les marges sont minables, et le risque de finir pendu est immense. Alors désolé.";
 			link.l1 = "Hmm... Et tu dis que tu peux tout trouver.";
 			link.l1.go = "TPZ_smugglers_3";		
 		break;

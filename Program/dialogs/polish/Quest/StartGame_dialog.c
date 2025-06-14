@@ -148,7 +148,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Cóż, kapitanie, teraz wyglądasz jak ty sam. Jak się czujesz?";
+				dialog.text = "Cóż, kapitanie, teraz wyglądasz jak powinieneś. Jak się czujesz?";
 				//link.l2 = "BetaTest - Rozpocznij test zadania Longwaya";
 				//link.l2.go = "PZ_Test_Start_1";
 				if (bBettaTestMode)
@@ -1319,7 +1319,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_2":
-			dialog.text = "Nie martw się, nie musisz się martwić. Wdychaj świeże powietrze i spójrz na morze, wtedy twoja głowa będzie w porządku. Doktor powiedział, że niczego nie będziesz pamiętać, gdy dojdziesz do siebie. Więc nie próbuj sobie przypominać, nie potrzebujesz tego.";
+			dialog.text = "Nie martw się, nie musisz się martwić. Wdychaj świeże powietrze i spójrz na morze, wtedy twoja głowa będzie w porządku. Lekarz powiedział, że niczego nie będziesz pamiętać, gdy dojdziesz do siebie. Więc nie próbuj sobie przypominać, nie potrzebujesz tego.";
 			link.l1 = "Jestem ciekaw mojej innej opcji.";
 			link.l1.go  = "Node_3";
 		break;
@@ -1332,7 +1332,7 @@ void ProcessDialogEvent()
 		
 		case "Node_3":
 			dialog.text = "Doktor powiedział, że to na pewno będzie azyl. Rozdwojenie jaźni, powiedział. A Hopkins i ja nie widzieliśmy tu żadnej innej osobowości oprócz ciebie ...";
-			link.l1 = " Bzdura!   Czy to naprawdę mi się przydarzyło?";
+			link.l1 = " Bzdura! Czy to naprawdę mi się przydarzyło?";
 			link.l1.go  = "Node_4";
 		break;
 		

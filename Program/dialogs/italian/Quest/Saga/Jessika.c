@@ -159,7 +159,7 @@ void ProcessDialogEvent()
 		
 		case "exit_talk_3":
 			PlaySound("Voice\English\saga\Jessica Rose-01.wav");
-			dialog.text = "So molte cose. Più dei vivi. L’ho vista… Ti serve un documento per lei e lo avrai. Otterrai anche di più, ti darò qualcosa in aggiunta. Portami da lui…";
+			dialog.text = "So molte cose. Più dei vivi. L’ho vista... Ti serve un documento per lei e lo avrai. Otterrai anche di più, ti darò qualcosa in aggiunta. Portami da lui...";
 			link.l1 = "Hm. Non mi piacciono le tue intenzioni sanguinarie verso Helen. Non osare nemmeno sfiorarla. In fin dei conti, non è colpevole delle azioni di sua madre.";
 			link.l1.go = "exit_talk_4";
 		break;
@@ -254,7 +254,7 @@ void ProcessDialogEvent()
 		
 		case "shore_3":
 			dialog.text = "È finita... Tieni, prendi pure, è questo che cercavi. Questa è la lettera della mia rivale, era sepolta con lei. Si è conservata bene. L’ho perdonata, e nel mio cuore più non alberga odio.";
-			link.l1 = "L’hai… incontrato? Con Lawrence?";
+			link.l1 = "L’hai... incontrato? Con Lawrence?";
 			link.l1.go = "shore_4";
 		break;
 		

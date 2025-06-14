@@ -1520,7 +1520,7 @@ void SetBaseShipData(ref refCharacter)
 
 		if (!CheckAttribute(refShip,"Cannons.Type")) 
 		{
-			refShip.Cannons.Type = GetCannonByTypeAndCaliber(RandPhraseSimple("cannon","culverine"), sti(refBaseShip.MaxCaliber)); // MakeInt(refBaseShip.Cannon);
+			refShip.Cannons.Type = GetCannonByTypeAndCaliber(RandPhraseSimple("cannon","culverine"), sti(refBaseShip.MaxCaliber));
 		}
 
 		if (!CheckAttribute(refShip,"Crew.Morale"))	
@@ -1939,7 +1939,7 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 	if(n > 0)
 	{
         //if (findsubstr(itemName, "map_part" , 0) != -1 && GetCharacterItem(_refCharacter,itemName) > 0) return true;
-        if (itemName == "treasure_note") TreasureNotesHandler(arItm);
+        if (itemName == "treasure_note" && !TreasureNotesHandler(arItm)) return false;
 	}
 	
 	if (itemName == "talisman11" && IsMainCharacter(_refCharacter) && !CheckAttribute(pchar, "TookChickenGod")) {
@@ -1951,7 +1951,7 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 	{
 		if(arItm.ID != "Gold") // Warship. Для нового интерфейса обмена - проверка на золото
 		{
-			if(sti(_refCharacter.index) == GetMainCharacterIndex() && IsEntity(&_refCharacter))
+			if(CheckAttribute(_refCharacter, "index") && sti(_refCharacter.index) == GetMainCharacterIndex() && IsEntity(_refCharacter))
 			{
 				PlayStereoSound("interface\important_item.wav");
 			}
@@ -2031,6 +2031,25 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 		}
 	}
 	
+	if(TW_IsActive() && IsMainCharacter(_refCharacter))
+	{
+		if(arItm.id == "chest_open" && CheckAttribute(&objTask, "land_craft") && objTask.land_craft == "1_Inventory" && CheckAttribute(&TEV, "Tutor.Alchemy"))
+		{
+			TW_ColorWeak(TW_GetTextARef("Inventory_alchemy"));
+			DeleteAttribute(&TEV, "Tutor.Alchemy");
+			if(!CheckAttribute(&TEV, "Tutor.Document"))
+				TW_FinishLand_Craft_1_Inventory();
+		}
+		else if(arItm.id == "quest_potion" && objTask.land == "1_Loot" && CheckAttribute(&TEV, "Tutor.NeedPotion"))
+		{
+			if(TW_IncreaseCounter("land", "Loot_search", 1))
+				TW_ColorWeak(TW_GetTextARef("Loot_search"));
+			TW_AddBottomText("Loot_potion", StringFromKey("Tutorial_32"), "Default");
+			DeleteAttribute(&TEV, "Tutor.NeedPotion");
+			TW_RecalculateLayout();
+		}
+	}
+	
 	return true;
 }
 
@@ -2046,6 +2065,7 @@ string GetCharacterCurrentIslandId(ref _refCharacter)
 	int curLocNum = FindLocation(_refCharacter.location);
 	if(curLocNum < 0) return "";
 	int CurIdx = GetIslandIdxByLocationIdx(curLocNum);
+    if(CurIdx == -1) return "";
 	ref CurIsland = GetIslandByIndex(CurIdx);
 	return CurIsland.id;
 }

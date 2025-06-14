@@ -7,31 +7,54 @@ object objTask;
 //  TASK WINDOW
 ////////////////////////////////////////////////////////////////////////
 
+void TW_SetDefines()
+{
+	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	aref arDef;
+	makearef(arDef, objTask.defines);
+	
+	// основная точка, от которой рассчитываются все остальные
+	arDef.left = sti(showWindow.right) / 32;
+	arDef.top = sti(showWindow.bottom) / 2.5;
+	
+	// вертикальные расстояния
+	arDef.header = makeint(TW_DEF_HEADER * fHtRatio);
+	arDef.first_string = makeint(TW_DEF_FIRSTSTRING * fHtRatio);
+	arDef.interval = makeint(TW_DEF_INTERVAL * fHtRatio);
+	arDef.counter_offset = makeint(TW_DEF_COUNTERVOFFSET * fHtRatio);
+	arDef.mark_offset = makeint(TW_DEF_MARKOFFSET * fHtRatio);
+	arDef.bottom_space = makeint(TW_DEF_BOTTOMSPACE * fHtRatio);
+	
+	// размеры картинок
+	arDef.caption = makeint(TW_DEF_CAPTIONHEIGHT * fHtRatio);
+	arDef.mark = makeint(TW_DEF_MARKSIZE * fHtRatio);
+	arDef.line = makeint(TW_DEF_LINEHEIGHT * fHtRatio);
+	
+	// отступы слева и справа
+	arDef.indent = makeint(TW_DEF_INDENT * fHtRatio);
+}
+
 // Вычислить корректные координаты (каждый раз при открытии)
 // TO_DO: Можно и реже по другим условиям
 void TW_RecalculateLayout()
 {
     int  i, num;
-    aref arNode, arTask;
+    aref arNode, arTask, arTexts;
     string sTask = objTask.current;
-
-    makearef(arTask, objTask.(sTask).texts);
-    num = GetAttributesNum(arTask);
+	
+	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	
+	makearef(arTask, objTask.(sTask));
+    makearef(arTexts, objTask.(sTask).texts);
+    num = GetAttributesNum(arTexts);
     for(i=0; i<num; i++)
     {
-        arNode = GetAttributeN(arTask, i);
-        if(CheckAttribute(arNode, "pos"))
-        {
-            // Уже было выставлено, адаптируем текущие
-            
-        }
-        else
-        {
-            // TO_DO: RECALCULATE
-            arNode.pos.y = arNode.base.pos.y;
-            if(CheckAttribute(arNode, "base.scale"))
-                arNode.scale = arNode.base.scale;
-        }
+        arNode = GetAttributeN(arTexts, i);
+        arNode.pos.y = sti(objTask.defines.top) + makeint(sti(arNode.base.pos.y) * fHtRatio);
+        if(CheckAttribute(arNode, "base.scale"))
+            arNode.scale = stf(arNode.base.scale) * fHtRatio;
+		else
+			arNode.scale = fHtRatio;
     }
 
 /*
@@ -62,8 +85,7 @@ void TW_RecalculateLayout()
 
     // Установить размер подложки и раздать всем x-координаты
     TW_SetBack();
-
-    makearef(arTask, objTask.(sTask));
+    
     if(bSeaActive && !bAbordageStarted)
         SendMessage(&BattleInterface , "lla", BI_MSG_TUTORIAL_SHOW, true, arTask);
     else
@@ -80,65 +102,126 @@ void TW_SetBack()
     int width  = 0;
     int height = 0;
     float scale;
+	float fHtRatio = stf(Render.screen_y) / iHudScale;
 
-    aref arTextRoot, arText, arImage;
+    aref arTextRoot, arText, arImage, arDef, arTask;
     string sTask = objTask.current;
-    makearef(arTextRoot, objTask.(sTask).texts);
-    makearef(arImage, objTask.(sTask).images.background);
-
-    // Default values (TO_DO: RECALCULATE)
-    arImage.x2 = 1900; // Правый край
-    arImage.y1 = 300;  // Верхний край
+	makearef(arTask, objTask.(sTask));
+    makearef(arTextRoot, arTask.texts);
+    makearef(arImage, arTask.images.background);
+	makearef(arDef, objTask.defines);
+	arImage.group   = "TUTORIAL_BACK1";
+    arImage.picture = "background";
+	
+	int base_x1, base_y1, base_x2, base_y2;
+	base_x1 = sti(arDef.left);
+	base_y1 = sti(arDef.top);
+	
+	int x1, y1, x2, y2;
 
     // Pre-calculated values
-    bool bFixW = CheckAttribute(&objTask, sTask + ".fixWidth");
-    bool bFixH = CheckAttribute(&objTask, sTask + ".fixHeight");
+    bool bFixW = CheckAttribute(arTask, "fixWidth");
+    bool bFixH = CheckAttribute(arTask, "fixHeight");
 
+	int maxY = 0;
+	int num = GetAttributesNum(arTextRoot);
+	int i;
     // Dynamic values
-    if(!bFixW || !bFixH)
+    if(!bFixW)
     {
-        // Get max text width and max height
-        int num = GetAttributesNum(arTextRoot);
-        for(int i=0; i<num; i++)
+        // Get max text width
+        for(i=0; i<num; i++)
         {
             arText = GetAttributeN(arTextRoot, i);
             scale  = 1.0;
-            if(CheckAttribute(arText, "scale")) scale = stf(arText.scale);
+            if(CheckAttribute(arText, "scale")) 
+				scale = stf(arText.scale);
             iTemp = GetStringWidth(arText.text, arText.font, scale);
-            if(iTemp > width) width = iTemp;
-            iTemp = sti(arText.pos.y);
-            if(iTemp > height) height = iTemp;
+            if(iTemp > width)
+				width = iTemp;
         }
     }
+	if(!bFixH)
+	{
+		// Get max text height
+		for(i=0; i<num; i++)
+        {
+            arText = GetAttributeN(arTextRoot, i);
+            iTemp = sti(arText.pos.y);
+            if(iTemp > maxY)
+				maxY = iTemp;
+        }
+	}
+	
+	if(bFixW)
+		width = TW_GetFixWidth(arTask);
+	
+	height = maxY - base_y1;
 
-    // TO_DO: RECALCULATE
-    if(bFixW)
-        arImage.x1 = objTask.(sTask).fixWidth;
-    else
-        arImage.x1 = 1900 - width - 200; // Левый край (отступ от правого и 200 в запас)
+	base_x2 = base_x1 + width + sti(arDef.indent) * 2;
+	int center = base_x1 + (base_x2 - base_x1) / 2;
 
     if(bFixH)
-        arImage.y2 = objTask.(sTask).fixHeight;
+        base_y2 = base_y1 + sti(objTask.(sTask).fixHeight);
     else
-        arImage.y2 = height + 50; // Нижний край (отступ от верха и 50 в запас)
+        base_y2 = base_y1 + height + sti(arDef.bottom_space);
+	
+	if(base_x2 - base_x1 > sti(arDef.first_string) + sti(arDef.interval) + sti(arDef.bottom_space))
+		arImage.group = "TUTORIAL_BACK2";
 
-    arImage.pos = arImage.x1 + "," +
-                  arImage.y1 + "," +
-                  arImage.x2 + "," +
-                  arImage.y2;
-
-    width = sti(arImage.x1);
-    iTemp = width + (1900 - width) / 2;
-    width += 70; // Добавим отступ
+    arImage.pos = GetPosString(base_x1, base_y1, base_x2, base_y2);
+	
+	// caption - полоска сверху
+	makearef(arImage, objTask.(sTask).images.back_caption);
+	arImage.group = "LE_ICONS";
+    arImage.picture = "captionback";
+	x1 = base_x1;
+	x2 = base_x2;
+	y1 = base_y1;
+	y2 = base_y1 + sti(arDef.caption);
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+	
+	// line - черта
+	makearef(arImage, objTask.(sTask).images.back_line);
+	arImage.group = "LE_ICONS";
+    arImage.picture = "gline_hs";
+	x1 = base_x1;
+	x2 = base_x2;
+	y1 = base_y1 + sti(arDef.caption);
+	y2 = base_y1 + sti(arDef.caption) + sti(arDef.line);
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+	
+	// exclamation - восклицательный знак
+	makearef(arImage, objTask.(sTask).images.back_mark);
+	arImage.group = "MARKERS";
+    arImage.picture = "exclamation";
+	x1 = center - sti(arDef.mark) / 2;
+	x2 = center + sti(arDef.mark) / 2;
+	y1 = base_y1 - sti(arDef.mark) + sti(arDef.mark_offset);
+	y2 = base_y1 + sti(arDef.mark_offset);
+	arImage.pos = GetPosString(x1, y1, x2, y2);
+	
+	string sAlign;
     for(i=0; i<num; i++)
     {
-        // TO_DO: align == "right" (не нужно пока)
         arText = GetAttributeN(arTextRoot, i);
-        if(CheckAttribute(arText, "align") && arText.align == "center")
-            arText.pos.x = iTemp;
-        else
-            arText.pos.x = width;
-    }
+		sAlign = "left";
+        if(CheckAttribute(arText, "align"))
+			sAlign = arText.align;
+		
+		switch(sAlign)
+		{
+			case "left":	
+				arText.pos.x = base_x1 + sti(arDef.indent);
+				break;
+			case "center":
+				arText.pos.x = center;
+				break;
+			case "right":
+				arText.pos.x = base_x2 - sti(arDef.indent);
+				break;
+		}
+	}
 }
 
 // Открыть требуемый таск
@@ -174,6 +257,7 @@ void TW_Close()
 // Когда снова включается BI/LI, таск продолжается
 void TW_Init()
 {
+	TW_SetDefines();
     if(!TW_IsActive()) return;
     TW_Open(objTask.current);
 }
@@ -241,7 +325,7 @@ void TW_Reset(aref arTask)
 ////////////////////////////////////////////////////////////////////////
 
 void TW_ColorDefault(aref arText) {arText.color = argb(255, 255, 255, 255);}
-void TW_ColorHead(aref arText)    {arText.color = argb(255, 255, 255, 192);}
+void TW_ColorHead(aref arText)    {arText.color = argb(255, 240, 175, 95);}
 void TW_ColorDone(aref arText)    {arText.color = argb(255, 128, 220, 128);}
 void TW_ColorWeak(aref arText)    {arText.color = argb(200, 200, 200, 200);}
 
@@ -256,6 +340,9 @@ bool TW_IncreaseCounter(string sTask, string sParent, int add)
     sParent += "_cnt";
     makearef(arCnt, objTask.(sTask).texts.(sParent));
     if(arCnt.end == "1") return false;
+	
+	if(abs(add) > 0)
+		TW_RestartTimer();
 
     arCnt.count = sti(arCnt.count) + add;
     if(sti(arCnt.count) >= sti(arCnt.max))
@@ -275,6 +362,16 @@ bool TW_IncreaseCounter(string sTask, string sParent, int add)
     return false;
 }
 
+bool TW_CheckCounter(string sTask, string sParent)
+{
+	aref arCnt;
+    sParent += "_cnt";
+    makearef(arCnt, objTask.(sTask).texts.(sParent));
+    if(CheckAttribute(arCnt, "end") && arCnt.end == "1")
+		return true;
+	return false;
+}
+
 // Проценты
 bool TW_IncreasePercents(string sTask, string sParent, float add)
 {
@@ -282,6 +379,9 @@ bool TW_IncreasePercents(string sTask, string sParent, float add)
     sParent += "_percents";
     makearef(arCnt, objTask.(sTask).texts.(sParent));
     if(arCnt.end == "1") return false;
+	
+	if(abs(add) > 0.0)
+		TW_RestartTimer();
 
     arCnt.count = stf(arCnt.count) + add;
     if(stf(arCnt.count) >= stf(arCnt.max))
@@ -307,6 +407,53 @@ void TW_IncreaseLine(string sTask, string sParent, float add)
 
 }
 
+void TW_SetTaskTimer(aref arTask, string sTask)
+{
+	if(!CheckAttribute(arTask, "timer"))
+		PostEvent("TW_RefreshTimer", 1000);
+	arTask.timer = TW_TASK_TIMER;
+	arTask.timer.task = sTask;
+}
+
+#event_handler("TW_RefreshTimer", "TW_RefreshTimer");
+void TW_RefreshTimer()
+{
+	string sTask = objTask.current;
+	aref arTask;
+	makearef(arTask, objTask.(sTask));
+	if(!CheckAttribute(arTask, "timer"))
+		return;
+	int iCurTimer = sti(arTask.timer);
+	Log_TestInfo("Таймер задачи " + GetAttributeValue(arTask) + " из раздела " + GetAttributeName(arTask) + ": " + iCurTimer);
+	iCurTimer--;
+	if(iCurTimer <= 0)
+	{
+		if(!CheckAttribute(arTask, "timer.task"))
+			return;
+		string sFinishTask = arTask.timer.task;
+		DeleteAttribute(arTask, "timer");
+		string sFunction = "TW_Finish" + GetAttributeName(arTask) + "_" + sFinishTask;
+		call sFunction();
+		return;
+	}
+	arTask.timer = iCurTimer;
+	float timeScale = 1 + TimeScaleCounter * 0.25;
+	PostEvent("TW_RefreshTimer", makeint(1000 * timeScale));
+}
+
+void TW_RestartTimer()
+{
+	string sTask = objTask.current;
+	objTask.(sTask).timer = TW_TASK_TIMER;
+}
+
+void TW_DeleteTimer()
+{
+	string sTask = objTask.current;
+	if(CheckAttribute(&objTask, sTask + ".timer"))
+		DeleteAttribute(&objTask, sTask + ".timer");
+}
+
 ////////////////////////////////////////////////////////////////////////
 //  TEXT
 ////////////////////////////////////////////////////////////////////////
@@ -319,7 +466,7 @@ aref TW_GetTextARef(string sText)
     return arText;
 }
 
-void TW_AddBottomText(string curText, string Text, string Color, int OffSet)
+void TW_AddBottomText(string curText, string Text, string Color)
 {
     aref arText, arTextUp;
     string sTask = objTask.current;
@@ -327,13 +474,16 @@ void TW_AddBottomText(string curText, string Text, string Color, int OffSet)
 
     arTextUp = TW_GetBottom(sTask);
     arText.font = arTextUp.font;
-    arText.base.pos.y = sti(arTextUp.base.pos.y) + OffSet;
+    arText.base.pos.y = sti(arTextUp.base.pos.y) + TW_DEF_INTERVAL;
     arText.base.scale = arTextUp.base.scale;
     arText.text = Text;
     TW_MarkBottom(sTask, curText);
 
     Color = "TW_Color" + Color;
     call Color(arText);
+	
+	if(CheckAttribute(&objTask, sTask + ".timer"))
+		TW_RestartTimer();
 }
 
 void TW_MarkBottom(string sTask, string sText)
@@ -375,27 +525,42 @@ aref TW_GetBottom(string sTask)
         return arBottom;
     }
 
-    Log_Info("objTask." + sTask + " has no texts");
+    Log_TestInfo("objTask." + sTask + " has no texts");
     return ErrorAttr();
 }
 
-void TW_SetFixWidth(aref arTask, ref Root)
+int TW_GetFixWidth(aref arTask)
 {
-    aref arText;
-    int iTemp, width = 0;
+    aref arText, arBase;
+	makearef(arBase, arTask.base_text);
+    int iTemp =0;
+	int widthL = 0;
+	int	widthR = 0;
     float scale;
-
-    int num = GetAttributesNum(Root);
+	float fHtRatio = stf(Render.screen_y) / iHudScale;
+    int num = GetAttributesNum(arBase);
     for(int i=0; i<num; i++)
     {
-        arText = GetAttributeN(Root, i);
-        scale  = 1.0;
-        if(CheckAttribute(arText, "scale")) scale = stf(arText.scale);
+        arText = GetAttributeN(arBase, i);
+        scale  = fHtRatio;
+        if(CheckAttribute(arText, "scale"))
+			scale = stf(arText.scale) * fHtRatio;
         iTemp = GetStringWidth(arText.text, arText.font, scale);
-        if(iTemp > width) width = iTemp;
+		if(!CheckAttribute(arText, "align") || arText.align == "left")
+		{
+			if(iTemp > widthL)
+				widthL = iTemp;
+		}
+		else if(arText.align == "right")
+		{
+			if(iTemp > widthR)
+				widthR = iTemp;
+		}
     }
-
-    arTask.fixWidth = 1900 - width - 200;
+	if(widthR > 0)
+		return widthL + sti(objTask.defines.indent) + widthR;
+	
+	return widthL;
 }
 
 // TW_GetKeyImageChar

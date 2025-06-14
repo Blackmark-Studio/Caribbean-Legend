@@ -531,7 +531,7 @@ void ProcessDialogEvent()
 			pchar.quest.MakeAbiPoor.over = "yes"; //снять прерывание
 			ChangeCharacterComplexReputation(pchar, "nobility", 10);
 			dialog.text = "Come posso ringraziarti?! Come?!";
-			link.l1 = "Non c’è bisogno di ringraziamenti, Abi. Era il minimo che potessi fare per te. Ora puoi cominciare una nuova vita, senza Rodenburg, Fleetwood o altri furfanti che cerchino di approfittarsi di te. Sono certo che tuo padre saprà far fruttare questi soldi… pare che sia una dote di famiglia.";
+			link.l1 = "Non c’è bisogno di ringraziamenti, Abi. Era il minimo che potessi fare per te. Ora puoi cominciare una nuova vita, senza Rodenburg, Fleetwood o altri furfanti che cerchino di approfittarsi di te. Sono certo che tuo padre saprà far fruttare questi soldi... pare che sia una dote di famiglia.";
 			link.l1.go = "Abigile_GiveMoney_2";
 		break;
 		

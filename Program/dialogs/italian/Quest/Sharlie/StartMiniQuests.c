@@ -396,20 +396,20 @@ void ProcessDialogEvent()
 		//доставить девочку из борделя
 		case "GigoloMan":
 			DelLandQuestMark(npchar);
-			dialog.text = "Buon pomeriggio, monsieur! Perbacco, non avete l’aria dei soliti cani sciolti che bazzicano la nostra colonia. A giudicare dal vostro abito, dovete aver fatto un bel viaggio… Siete forse giunto dall’Europa, eh?";
+			dialog.text = "Buon pomeriggio, monsieur! Perbacco, non avete l’aria dei soliti cani sciolti che bazzicano la nostra colonia. A giudicare dal vostro abito, dovete aver fatto un bel viaggio... Siete forse giunto dall’Europa, eh?";
 			link.l1 = "Esattamente, monsieur. "+GetFullName(pchar)+", al vostro servizio. Di che avete bisogno?";
 			link.l1.go = "GigoloMan_1";
 		break;
 		
 		case "GigoloMan_1":
-			dialog.text = "Permettetemi di presentarmi - "+GetFullName(npchar)+" Sono giunto in questo lurido posto dalla Francia qualche anno fa. Ma non è questo il punto. Ho per voi una faccenda assai delicata.\nSappiate, per cortesia, che mai бы осмелился просить вас о таком одолжении, кабы не был уверен, что вы истинный джентльмен.";
+			dialog.text = "Permettetemi di presentarmi - "+GetFullName(npchar)+" Sono giunto in questo lurido posto dalla Francia qualche anno fa. Ma non è questo il punto. Ho per voi una faccenda assai delicata.\nSappiate, per cortesia, che mai mi sarei permesso di chiedervi un tale favore, se non fossi certo che siete un vero gentiluomo.";
 			link.l1 = "Per favore, esponete la vostra richiesta, monsieur. Se sarà nei miei poteri, ebbene, tenterò senz’altro di prestarvi aiuto.";
 			link.l1.go = "GigoloMan_2";
 		break;
 		
 		case "GigoloMan_2":
-			dialog.text = "I am glad to hear that, monsieur de Maure. Now, how to put this delicately...There is a brothel in this town. A new girl appeared there recently; young, pale, blonde, stunningly beautiful! Now, I've been watching her for weeks and... got a very strong desire to spend some time with her in private\nBut my estate and status make it...inconvenient to visit such a place. Imagine the gossip!\nThat is why I am appealing to you. Plainly put, you are a newcomer to our island, people don't know you and they don't care about what you do... yet. You could do me a great favour, monsieur.";
-			link.l1 = "Penso di afferrare dove vuoi arrivare.";
+			dialog.text = "Mi rincresce sentirle queste parole, monsieur de Mor. Ebbene, nella nostra landa c’è un bordello. È arrivata da poco una ragazza nuova, probabilmente dall’Europa, giovane, pelle chiara, bionda. La osservo da settimane e… bramo intensamente di restare solo con lei.\nTuttavia, la mia posizione sociale e il mio rango non mi permettono di frequentare questo luogo di peccato. No, come avrà intuito, amico mio, non ho nulla in contrario – ma la reputazione ha un prezzo molto elevato.\nEcco perché mi rivolgo a lei. Lei è un uomo nuovo qui, nessuno lo conosce e a nessuno interessa… per ora. Mi farebbe un immenso favore, monsieur…";
+			link.l1 = "E come posso esservi utile, signore?";
 			link.l1.go = "GigoloMan_3";
 		break;
 		
@@ -434,8 +434,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GigoloMan_4":
-			dialog.text = "I am damn glad to hear it. Now listen, the girl's name is Lucille. I ask you to deliver her to my place when it's dark, no earlier than eleven p.m., in order to avoid unwanted attention from any gawkers. Knock on the door, and I will open.\nMy house is located to the left of the governor's residence, facing away from it - a two-story mansion with a red roof. You can easily find it, and there's a shop nearby, too. Actually, I am heading to my house now; feel free to follow me to see what it looks like and where it is exactly, so you won't get lost at night.\n Regarding the matter at hand - here, take six thousand pesos. I expect you by the agreed-upon time!";
-			link.l1 = "Affare fatto. La tua bionda Lucille sarà sulla tua soglia stanotte.";
+			dialog.text = "Sono molto contento. Ora ascolta: la ragazza di cui ho bisogno si chiama Lucilla. Ti chiedo di portarmela a casa quando farà buio, non prima delle undici di sera, così nessuno vi vedrà. Bussa alla porta e io ti aprirò\nLa mia casa si trova a sinistra rispetto alla residenza del governatore, se ti metti di schiena — un palazzo su due piani con il tetto rosso. La troverai facilmente, tra l’altro c’è un negozio proprio accanto. Tra l’altro sto andando proprio verso casa, puoi seguirmi e vedere com’è e dove si trova esattamente, per non sbagliarti di notte\nEcco, prendi seimila pesos. E ti aspetto all’ora concordata!";
+			link.l1 = "Perfetto, monsieur, è un accordo. Per la notte la tua bionda sarà alla tua porta.";
 			link.l1.go = "GigoloMan_5";
 		break;
 		
@@ -748,7 +748,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_6":
-			dialog.text = "Storie, dici? Beh, certi uomini come te la pensavano allo stesso modo, finché i Caribi non li hanno cotti allo spiedo e mangiati… Così sono corso subito dal comandante, chiedendo una spedizione punitiva per salvare la mia Célène. Mi ha riso in faccia! Secondo lui, quando spariscono le ragazze, di solito scappano con qualche giovanotto, non con gli indiani. Mi ha pure consigliato di cercarla nei fienili qui intorno.\nQuanto agli altri due scomparsi… uno sospettato di contrabbando, l’altro probabilmente annega nel rum alla taverna di Le François. Insomma, non ho concluso un accidente e ho deciso di darmi da fare per conto mio.";
+			dialog.text = "Storie, dici? Beh, certi uomini come te la pensavano allo stesso modo, finché i Caribi non li hanno cotti allo spiedo e mangiati... Così sono corso subito dal comandante, chiedendo una spedizione punitiva per salvare la mia Célène. Mi ha riso in faccia! Secondo lui, quando spariscono le ragazze, di solito scappano con qualche giovanotto, non con gli indiani. Mi ha pure consigliato di cercarla nei fienili qui intorno.\nQuanto agli altri due scomparsi... uno sospettato di contrabbando, l’altro probabilmente annega nel rum alla taverna di Le François. Insomma, non ho concluso un accidente e ho deciso di darmi da fare per conto mio.";
 			link.l1 = "Che hai intenzione di fare?";
 			link.l1.go = "Prosper_7";
 		break;
@@ -950,8 +950,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_21":
-			dialog.text = "Sei un vero cavaliere cristiano, "+pchar.name+"Orsù, non attardiamoci oltre. Facciamo vela verso casa senza indugio!";
-			link.l1 = "…";
+			dialog.text = "Sei un vero cavaliere cristiano, "+pchar.name+". Orsù, non attardiamoci oltre. Facciamo vela verso casa senza indugio!";
+			link.l1 = "...";
 			link.l1.go = "Prosper_22";
 		break;
 		

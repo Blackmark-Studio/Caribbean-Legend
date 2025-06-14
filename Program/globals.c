@@ -11,13 +11,13 @@ string savefile_info = "ver 1.5.0";
 #define DLC_APPID_3       3162620
 #define DLC_APPID_4       3398030
 #define DLC_APPID_5       3549890
-#define DLC_APPID_6       0
+#define DLC_APPID_6       3549900
 #define DLC_NAME_1        "Loyalty Pack"
 #define DLC_NAME_2        "Vile Liittle God"
 #define DLC_NAME_3        "Black Mark"
 #define DLC_NAME_4        "Ships Pack #1"
 #define DLC_NAME_5        "Ships Pack #2"
-#define DLC_NAME_6        ""
+#define DLC_NAME_6        "Ships Pack #3"
 #define DLC_DATE_1	      ""
 #define DLC_DATE_2        ""
 #define DLC_DATE_3        ""
@@ -112,7 +112,7 @@ int     MAX_CHARACTERS   = 10;
 int storeArray[2];
 SetArraySize(&storeArray, MAX_LOCATIONS);*/
 
-int MAX_LOCATIONS = 1094;
+int MAX_LOCATIONS = 1096;
 int MAX_ISLANDS = 38;
 int MAX_COLONIES = 43;
 
@@ -151,7 +151,7 @@ object  Names;
 
 object  NullCharacter;
 object	Characters[TOTAL_CHARACTERS];
-object	Locations[1094];
+object	Locations[1096];
 object	Islands[38];
 object	Colonies[43];
 
@@ -259,5 +259,13 @@ int EventReturn_isGrassLightsOn()
 	{
 	    return 1;
 	}
+	return 0;
+}
+
+#event_handler("Event_DevMode", "IsDevMode");
+int IsDevMode()
+{
+	if(MOD_BETTATESTMODE == "on")
+		return 1;
 	return 0;
 }

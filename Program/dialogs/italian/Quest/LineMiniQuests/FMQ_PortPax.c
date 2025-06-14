@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noble_34":
-			PlaySound("Voice\English\LE\Domingo\Domingo_04.wav");
+			//PlaySound("Voice\English\LE\Domingo\Domingo_04.wav");
 			dialog.text = "Questa è una lurida, sfacciata menzogna! Come osa infangare il buon nome dei miei genitori con quella lingua da miserabile! Maledetto sia, gliela farò pagare! Spada alla mano, furfante!";
 			link.l1 = "";
 			link.l1.go = "noble_35";

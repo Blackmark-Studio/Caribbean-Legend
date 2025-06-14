@@ -639,7 +639,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_Prisoner_1":
 			dialog.text = "I am listening, captain.";
-			link.l1 = "I have boarded your galleon because Adam Rayner, Katerin's husband, told me that there was a lot of silver on your ship. This trick allowed him to take a woman that once belonged to him, and escaped from him to you.";
+			link.l1 = "I have boarded your fleut because Adam Rayner, Katerin's husband, told me that there was a lot of silver on your ship. This trick allowed him to take a woman that once belonged to him, and escaped from him to you.";
 			link.l1.go = "FalseTrace_Prisoner_2";
 		break;
 		

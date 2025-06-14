@@ -1376,7 +1376,7 @@ Produciré un lote de 20 troncos de sándalo el día 15 de cada mes gracias a Ro
 Hilos que Mover
 #TEXT   1
 ************************************************************
-Siempre podré comprar mangarosa a la gitana de Saint John's: cinco tallos por doscientos doblones de oro.
+Siempre podré comprar mangarosa a la gitana de Saint John's: tres tallos por trescientos cincuenta doblones de oro.
 #TEXT   2
 ************************************************************
 En la taberna de Willemstad siempre me esperan descanso y placer. De ello se encarga la encantadora Betsy Price.

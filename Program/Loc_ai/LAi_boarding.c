@@ -262,6 +262,7 @@ void LAi_StartBoarding(int locType, ref echr, bool isMCAttack)
 		
         Statistic_AddValue(mchr, "DeadCrewBoard", ecrewBak);
 		Statistic_AddValue(mchr, "Sailors_dead", ecrewBak);
+		AddMementoShipBonus(ecrewBak);
 		
 		Achievment_SetStat(21, ecrewBak);
 	}
@@ -823,6 +824,7 @@ void LAi_ReloadEndFade()
 		crew = boarding_player_base_crew - deadCrew; // выжившие с бонусом
 		Statistic_AddValue(mchar, "Sailors_dead", deadCrew);
 		Statistic_AddValue(mchar, "DeadCrewBoard", deadCrew);
+		AddMementoShipBonus(deadCrew);
 		
 		Achievment_SetStat(21, deadCrew);
 		
@@ -913,6 +915,8 @@ void LAi_ReloadEndFade()
 #event_handler("LAi_event_boarding_EnableReload", "LAi_EnableReload");
 void LAi_EnableReload()
 {
+    if(CheckAttribute(&TEV, "boardingReloadFreeze")) return; //TO_DO: на глобальный бул
+
     //Log_Testinfo("LAi_BoardingGroupKill boardM = " + boardM);
 	if (boardM == 1)
 	{
@@ -1342,6 +1346,10 @@ void LAi_SetBoardingActors(string locID)
 			ihp = LAi_GetCharacterHP(chr)/1.5;
 			LAi_SetHP(chr, ihp, ihp);
 		}
+		if(boarding_enemy.id == "Memento_Cap" && !CheckAttribute(&Locations[locIndex], "CabinType"))
+		{
+			chr.QuestCorpseLoot = "Memento_Cap";
+		}
 	}
 	//ставим вражеских мушкетеров -->
 	if (CheckCharacterPerk(boarding_enemy, "MusketsShoot") || IsFort)
@@ -1396,6 +1404,11 @@ void LAi_SetBoardingActors(string locID)
 			AddCharHP(chr, boarding_enemy_hp); // влияение опыта и морали в НР			
 		}
 	}
+	if(boarding_enemy.id == "Memento_Cap")
+	{
+		//if(chr.chr_ai.group == LAI_GROUP_BRDENEMY)
+			chr.QuestCorpseLoot = "Memento_Cap";
+	}
 	//<-- ставим вражеских мушкетеров
 	//Заставим драться эти 2 группы
 	LAi_group_FightGroupsEx(LAI_GROUP_PLAYER, LAI_GROUP_BRDENEMY, true, GetMainCharacterIndex(), -1, false, false);
@@ -1422,11 +1435,17 @@ string LAi_GetBoardingModel(ref rCharacter, ref ani)
 	
 	
 	if (CheckAttribute(rCharacter, "GenQuest.CrewSkelMode"))
-    {
-        model = GetRandSkelModel();
+	{
+		model = GetRandSkelModel();
 		ani = "skeleton";
 		return model;
-    }	
+	}
+	if (CheckAttribute(rCharacter, "GenQuest.CrewMementoMode"))
+	{
+		model = GetRandMementoModel();
+		ani = "man";
+		return model;
+	}	
 
 	if(sti(rCharacter.index) == GetMainCharacterIndex())
 	{
@@ -1436,21 +1455,21 @@ string LAi_GetBoardingModel(ref rCharacter, ref ani)
             model = GetRandSkelModel();
 			ani = "skeleton";
 			return model;
-        }
-	//--> Jason - национальная форма солдат на квестовиках по мультиквесту
-	if (CheckAttribute(rCharacter, "questTemp.HWIC.HollEquip") && sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MAYFANG)
-        {
-            model = GetRandQuestSoldierModel(HOLLAND);
+		}
+		//--> Jason - национальная форма солдат на квестовиках по мультиквесту
+		if (CheckAttribute(rCharacter, "questTemp.HWIC.HollEquip") && sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MAYFANG)
+		{
+			model = GetRandQuestSoldierModel(HOLLAND);
 			ani = "man";
 			return model;
-        }
-	if (CheckAttribute(rCharacter, "questTemp.HWIC.EngEquip") && sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_VALCIRIA)
-        {
-            model = GetRandQuestSoldierModel(ENGLAND);
+		}
+		if (CheckAttribute(rCharacter, "questTemp.HWIC.EngEquip") && sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_VALCIRIA)
+		{
+			model = GetRandQuestSoldierModel(ENGLAND);
 			ani = "man";
 			return model;
-        }
-	if (CheckAttribute(rCharacter, "questTemp.Mtraxx.CharleePrince")) //команда пиратов Fullback7
+		}
+		if (CheckAttribute(rCharacter, "questTemp.Mtraxx.CharleePrince")) //команда пиратов Fullback7
 	    {
 			model = "citiz_" + (rand(9) + 41);
 			ani = "man";
@@ -1462,7 +1481,7 @@ string LAi_GetBoardingModel(ref rCharacter, ref ani)
 			ani = "man";
 			return model;
 		}
-	//<-- форма солдат на квестовиках
+		//<-- форма солдат на квестовиках
         if (isMainCharacterPatented() && sti(Items[sti(rCharacter.EquipedPatentId)].TitulCur) > 1) //форма только со звания капитан
         {
             atr = "boardingModel.enemy";
@@ -1490,9 +1509,9 @@ string LAi_GetBoardingModel(ref rCharacter, ref ani)
 			}
 			else
 			{
-            atr = "boardingModel.enemy";
-        }
-	}
+				atr = "boardingModel.enemy";
+			}
+		}
 	}
 	
 	if (iNation < 0) iNation = PIRATE;
@@ -1664,6 +1683,12 @@ bool CheckForSurrender(ref mchr, ref echr, int _deck)
     
     mcrew = mcrew * (1.0 + (mShip-1) / 5.0);
     ecrew = ecrew * (1.0 + (eShip-1) / 5.0);
+	
+	if(ShipBonus2Artefact(mchr, SHIP_MEMENTO) && CheckAttribute(&RealShips[sti(mchr.Ship.Type)], "DeadSailors.SurrenderChanceBonus"))
+	{
+		mcrew *= 1.0 + stf(RealShips[sti(mchr.Ship.Type)].DeadSailors.SurrenderChanceBonus) / 100.0;
+	}
+	
     if (bBettaTestMode) // иначе плодил компил.лог в подзорку
     {
     	Log_Info("Surrender Hero = "+ mcrew + "    Enemy = " + ecrew + " eShipQty = " + eShip);
@@ -1695,6 +1720,7 @@ string chooseDeck(ref mchr, ref echr)
 	int eclass = GetCharacterShipClass(echr);
 	
 	if(GetShipTypeName(echr) == "Galeon_sm") return "BOARDING_3_WAR_SM";
+	if(GetShipTypeName(echr) == "Memento") return "BOARDING_3_WAR";
 	if(mclass > 2 && eclass > 2)
 	{
 		int HighClass = func_min(mclass, eclass);

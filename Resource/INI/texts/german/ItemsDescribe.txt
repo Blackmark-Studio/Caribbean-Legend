@@ -485,6 +485,21 @@ Ein reich verziertes Schwert besitzt trotz seines zeremoniellen Aussehens hervor
 
 lacrima_patris_parameters{Erhöhung der Feuerreichweite der Kanone: #f.1RangeBonus#%}
 
+itmname_blade_SP_3low {Galgenstrick}
+itmdescr_blade_SP_3low
+{
+Dieser Krummsäbel vereint Merkmale türkischer Säbel und europäischer Falchions – seine breite Klinge durchdringt selbst die härteste Rüstung. Mit dem Galgenstrick endet jedes Entern schnell und gnadenlos.
+}
+
+itmname_blade_SP_3 {Galgenstrick}
+itmdescr_blade_SP_3
+{
+Der Yorick-Schädel als Parierstange fordert den Besitzer auf, die Angst vor dem Tod abzulegen und dem Sensenmann ins Auge zu blicken, um wahre Kampfkraft zu entfesseln.
+~
+Verhindert Heilung aus jeglicher Quelle.
+Alle 2% verlorene Gesundheit erhöhen Schaden und Energiewiederherstellung um 1,5% bzw. 1,75%.
+}
+
 ; ==================================================================================================================== ОГНЕСТРЕЛЬНОЕ ОРУЖИЕ
 
 
@@ -935,6 +950,15 @@ Dieser Hut erschreckt Händler, besonders spanische, mehr als der Jolly Roger. D
 Rum und Wein stellen 50% mehr Gesundheit her. Betrunken zu sein wirkt sich positiver aus.
 }
 
+itmname_hat9 {Grims Hut}
+itmdescr_hat9
+{
+Dieser Hut ist in jeder Ecke der Karibik bekannt und wird überall mit Schauder erinnert. Nur ein Wahnsinniger greift das Schiff seines Besitzers an, und wer ihm begegnet, vergisst vor Angst, wie man Klinge oder Pistole hält. Und denkt daran: Sterben ist leicht. Zurückzukehren ist schwer.
+~
+Verringert den Schadensmalus des Schiffs um 30%.
+10% Chance, Schussverletzungen zu vermeiden.
+}
+
 ; ==================================================================================================================== ОПТИКА
 
 itmname_spyglass1	{Billiges Fernrohr}
@@ -969,6 +993,14 @@ itmname_spyglass5	{Nautisches Teleskop}
 itmdescr_spyglass5
 {
 Ein einzigartiges Teleskop, das sich gleichermaßen für die Beobachtung von Jupitermonden und Schiffen auf See eignet. Perfekt justierte Linsen aus reinem Bergkristall und die Verwendung des Stativs ermöglichen es, alles über dem Horizont zu sehen, einschließlich der Kanonen, die auf einem Schiff oder in einer Festung verwendet werden. Damit könnte man König Ludwigs Nasenhaare in Versailles zählen. +1500 Yards Bonus auf den Sichtradius.
+}
+
+itmname_spyglassSP3 {Fernrohr „Auge des Toten“}
+itmdescr_spyglassSP3
+{
+Dieses mit Knochen verzierte Fernrohr hat überraschend gute Linsen und zeigt: Schiffstyp, Name, Geschwindigkeit, Anzahl und Kaliber der Kanonen, Zustand des Schiffs, Musketiere an Deck und die Angst in den Augen des feindlichen Kapitäns.
+Reichweitenbonus: +850 Yards.
+Sichtweite auf der Weltkarte: +15%.
 }
 
 ; ==================================================================================================================== НАВИГАЦИЯ
@@ -1201,6 +1233,27 @@ Jeder gefundene Schatz verstärkt die Feuerkraft des Musketenfeuerstoßes der Be
 talisman18_Bonus{Gefundene Schätze : #dQBonus# / 10}
 
 talisman18_NoBonus{Gefundene Schätze : 0 / 10}
+
+itmname_talisman19	{Talisman „Yoricks Schädel“}
+itmdescr_talisman19
+{
+Der Schädel von Kapitän Mortimer Grim von der „Memento“, der seinen Tod nie ganz begriff. Du kanntest ihn, #sName#.
+Die Toten lehren die Lebenden, und dieses Artefakt passt sich den Wünschen seines Besitzers an.
+Im Inventar macht es alle Offiziere unsterblich.
+~
+Keine Nachteile, mehrfach aktivierbar.
+}
+
+talisman19_InSlot
+{
+Das Schiff existiert gleichzeitig auf beiden Seiten des Schleiers. Das Holz war lebendig und wurde tot, um den Lebenden zu dienen. Yoricks Schädel erinnert jede Crew daran, dass es keinen Tod gibt und man bis zum Ende kämpfen muss.
+~
+Alle 2% verlorene Hülle erhöhen Kanonengeschwindigkeit und -schaden um 0,75% bzw. 0,5%.
+~
+Keine Nachteile, mehrfach aktivierbar.
+}
+
+
 ; ==================================================================================================================== ТАЛИСМАНЫ
 
 itmname_totem_01 {Talisman 'Blechkehle'}
@@ -4105,4 +4158,18 @@ itmname_islamona_toolbox	{Werkzeugkiste}
 itmdescr_islamona_toolbox
 {
 Hochwertige Werkzeuge für den Schiffs- und Hausbau. Hergestellt in Europa.
+}
+
+;=============================== SP3 =======================================================
+
+itmname_Memento_Book	{Grimms Tagebuch}
+itmdescr_Memento_Book
+{
+Eine Tragödie in drei Akten
+}
+
+itmname_Memento_letter	{Письмо Мементо}
+itmdescr_Memento_letter
+{
+Письмо Мементо
 }

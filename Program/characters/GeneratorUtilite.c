@@ -360,9 +360,20 @@ bool GetBoardingHP(ref mchr, ref echr, ref float_boarding_player_hp, ref float_b
 	float b_p_hp, b_e_hp;
 	float moral;
 	float exp;
+	float fShipBonus = 0.0;
 	b_p_hp = LAi_GetCharacterMaxHP(mchr) / 3.0;  // треть от НР кэпа идет в базу бонуса
 	
 	exp = GetCrewExp(mchr, "Soldiers") / GetCrewExpRate() - 0.7;
+	
+	if(ShipBonus2Artefact(mchr, SHIP_MEMENTO))
+	{
+		if(CheckAttribute(&RealShips[sti(mchr.Ship.Type)], "DeadSailors.SailorsBoardingBonus"))
+		{
+			fShipBonus = stf(RealShips[sti(mchr.Ship.Type)].DeadSailors.SailorsBoardingBonus) / 100.0;
+		}
+	}
+	
+	exp += fShipBonus;
 	moral = 0;
 	if(CheckAttribute(mchr, "ship.crew.morale"))
 	{

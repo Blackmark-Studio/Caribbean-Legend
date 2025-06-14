@@ -334,12 +334,10 @@ void FillBoxForNotes(ref item)
     string sNumb = GetRandomAttrName(aTreasureStories);
     if(sNumb != "error")
     {
-        string box = item.MapBoxId;
-        ref loc = &Locations[FindLocation(item.MapLocId)];
-        loc.(box).treasure_note = sNumb; // Бокс запоминает номер
+        item.NoteNum = sNumb;
         item.BoxTreasure.treasure_note = 1;
-        DeleteAttribute(aTreasureStories, sNumb);
     }
+    else DeleteAttribute(item, "NoteNum");
 }
 
 // Вся логика выдачи у каждого квеста своя, это не общий пулл
@@ -348,10 +346,10 @@ void FillBoxForNotes(ref item)
 // Не забыть по надобности (например, сразу же в той же функции или по завершению квеста) удалить QuestSlot.attrName атрибут
 void FillBoxForQuest(ref item, int iTier, int iBonus)
 {
-    string func, itmName;
+    string func;
     aref aQuests;
     makearef(aQuests, TreasureTiers[0].QuestSlot);
-    int qty, num = GetAttributesNum(aQuests);
+    int num = GetAttributesNum(aQuests);
     // Обязательно идём сверху вниз! Если в каком-то вызове удалится один из атрибутов, то верхние перенумеруются
     for(int i = num - 1; i >= 0; i--)
     {
@@ -372,15 +370,18 @@ void SetTreasureBoxFromMap()
     {
 		notification(XI_ConvertString("TreasuresNear"), "Icollection");
         PlaySound("interface\notebook.wav");
-        // ОЗК (Пещера)
+
+        Items_FindItem("map_full", &item);
+        int iTier = sti(item.TreasureTier);
+
+        // Охотники за кладом - ОЗК (Пещера)
         switch (sti(pchar.GenQuest.Treasure.Vario))
         {
             case 0: Treasure_SetCaribWarrior();  break;
             case 1: Treasure_SetBandosWarrior(); break;  
         }
-        // ДУ (Море)
-        if (rand(1) == 0) TraderHunterOnMap();
-		else CoolTraderHunterOnMap();
+        // Джентельмены удачи - ДУ (Море) 50%
+        if(rand(1)) TreasureHunterOnMap(rand(1), iTier);
         // ОЗК (Бухта)
         if( CheckAttribute(Pchar,"location.from_sea") )
         {
@@ -393,8 +394,6 @@ void SetTreasureBoxFromMap()
             }
         }
 
-        Items_FindItem("map_full", &item);
-
         box = item.MapBoxId;
 
         loc = &locations[FindLocation(item.MapLocId)];
@@ -405,7 +404,13 @@ void SetTreasureBoxFromMap()
         CopyAttributes(arToBox, arFromBox);
 
         loc.(box) = Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear());
-        loc.(box).Treasure = sti(item.TreasureTier); // признак сокровища в сундуке; запоминаем тир для ачивки и опыта
+        loc.(box).Treasure = iTier; // признак сокровища в сундуке; запоминаем тир для ачивки и опыта
+        if(CheckAttribute(item, "NoteNum"))
+        {
+            loc.(box).treasure_note = item.NoteNum; // Бокс запоминает номер
+            DeleteAttribute(PChar, "questTemp.Treasure_Stories." + item.NoteNum); // История ушла из пула
+            DeleteAttribute(item, "NoteNum");
+        }
 
         DeleteAttribute(item, "MapIslId");
         TakeNItems(Pchar, "map_full", -1);
@@ -418,20 +423,51 @@ void SetTreasureBoxFromMap()
 }
 
 // Обычные ДУ
-void  TraderHunterOnMap()
+void TraderHunterOnMap(bool bCool)
 {
-    // Немного веселой жизни
+    int Rank = sti(PChar.Rank);
+    int iShips[4];
+    int i, num, max, add = 5;
+    iShips[0] = 0; // Рейдер
+    iShips[1] = 0; // Универсал
+    iShips[2] = 0; // Рейдер
+    iShips[3] = 0; // Военник
+    if(bCool) add = 8;
+
+    if(Rank < 8)      {iShips[0] = 6; num = 1;}
+    else if(Rank < 15){iShips[0] = 5+rand(1); iShips[1] = 5+rand(1); num = 2;}
+    else if(Rank < 20){iShips[0] = 4+rand(1); iShips[1] = 4+rand(1); num = 2;}
+    else if(Rank < 25){iShips[0] = 3+rand(1); iShips[1] = 3+rand(1); iShips[2] = 3+rand(1); num = 3;}
+    else              {iShips[0] = 3+rand(1); iShips[1] = 3+rand(1); iShips[2] = 3+rand(1); iShips[3] = 2; num = 4;}
+
+    max = num;
+    i = GetCompanionQuantity(PChar);
+    if(i > num) max += rand(i-num);
+
     ref  sld;
-    int  i;
-
-    string sCapId = "Follower0";
+    string sCapId = "TraderHunter0";
     string sGroup = "Sea_" + sCapId + "1";
-
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
-    for (i = 1; i <= GetCompanionQuantity(pchar); i++)
+
+    for (i = 1; i <= max; i++)
     {
-        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.rank) + 5, PIRATE, 15, true, "hunter"));
+        if(i > num) Rank = iShips[rand(num-1)];
+        else Rank = iShips[i-1];
+        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.Rank) + add, PIRATE, 10, true, "hunter"));
+        sld.GenShip.Class = Rank;
+        if(i > num)
+        {   // Вероятности на спеки специально равные (рейдеру не больше остальных), если у игрока большая эскадра
+            if(num == 1) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
+            else if(num < 4) sld.GenShip.Spec = RandFromTwo(SHIP_SPEC_RAIDER, SHIP_SPEC_UNIVERSAL);
+            else sld.GenShip.Spec = RandFromThree(SHIP_SPEC_RAIDER, SHIP_SPEC_UNIVERSAL, SHIP_SPEC_WAR);
+        }
+        else
+        {
+            if(i == 1 || i == 3) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
+            else if(i == 2) sld.GenShip.Spec = SHIP_SPEC_UNIVERSAL;
+            else sld.GenShip.Spec = SHIP_SPEC_WAR;
+        }
         SetShipHunter(sld);
         SetFantomParamHunter(sld); //крутые парни
         SetCaptanModelByEncType(sld, "war");
@@ -441,28 +477,64 @@ void  TraderHunterOnMap()
         sld.mapEnc.Name = XI_ConvertString("GentlemenOfFortune");
 		sld.hunter = "pirate";
         Group_AddCharacter(sGroup, sCapId + i);
+        if(Rank < 3 && rand(1)) SetRandGeraldSail(sld, PIRATE);
     }
 
     Group_SetGroupCommander(sGroup, sCapId+ "1");
     Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
     Group_LockTask(sGroup);
-    Map_CreateWarrior("", sCapId + "1", 8);
+    if(bCool) Map_CreateCoolWarrior("", sCapId + "1", 8); // Быстрые
+    else Map_CreateWarrior("", sCapId + "1", 8);
 }
 
-// Jason. Быстрые ДУ
-void CoolTraderHunterOnMap()
+// ДУ - ОЗК
+void TreasureHunterOnMap(bool bCool, int iTier)
 {
+    if (iTier < 2) return;
+    int iShips[4];
+    int i, num, max, add = 5;
+    iShips[0] = 0; // Рейдер
+    iShips[1] = 0; // Рейдер
+    iShips[2] = 0; // Универсал
+    iShips[3] = 0; // Военник
+    if(bCool) add = 8;
+
+    if(iTier < 4)      {iShips[0] = 6; num = 1;}
+    else if(iTier < 6) {iShips[0] = 5+rand(1); num = 1;}
+    else if(iTier < 8) {iShips[0] = 5+rand(1); iShips[1] = 5; num = 2;}
+    else if(iTier < 10){iShips[0] = 4+rand(1); iShips[1] = 4+rand(1); num = 2;}
+    else if(iTier < 12){iShips[0] = 3+rand(1); iShips[1] = 3+rand(1); iShips[2] = 3; num = 3;}
+    else if(iTier < 14){iShips[0] = 2+rand(1); iShips[1] = 2+rand(1); iShips[2] = 2+rand(1); num = 3;}
+    else               {iShips[0] = 2+rand(1); iShips[1] = 2+rand(1); iShips[2] = 2+rand(1); iShips[3] = 2+rand(1); num = 4;}
+
+    max = num;
+    i = GetCompanionQuantity(PChar);
+    if(i > num) max += rand(i-num);
+
     ref  sld;
-    int  i;
-
-    string sCapId = "Follower0";
+    string sCapId = "TreasureHunter0";
     string sGroup = "Sea_" + sCapId + "1";
-
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
-    for (i = 1; i <= GetCompanionQuantity(pchar); i++)
+
+    for (i = 1; i <= max; i++)
     {
-        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.rank) + 8, PIRATE, 15, true, "hunter"));
+        if(i > num) iTier = iShips[rand(num-1)];
+        else iTier = iShips[i-1];
+        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.rank) + add, PIRATE, 10, true, "hunter"));
+        sld.GenShip.Class = iTier;
+        if(i > num)
+        {   // Вероятности на спеки специально равные (рейдеру не больше остальных), если у игрока большая эскадра
+            if(num < 3) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
+            else if(num == 3) sld.GenShip.Spec = RandFromTwo(SHIP_SPEC_RAIDER, SHIP_SPEC_UNIVERSAL);
+            else sld.GenShip.Spec = RandFromThree(SHIP_SPEC_RAIDER, SHIP_SPEC_UNIVERSAL, SHIP_SPEC_WAR);
+        }
+        else
+        {
+            if(i < 3) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
+            else if(i == 3) sld.GenShip.Spec = SHIP_SPEC_UNIVERSAL;
+            else sld.GenShip.Spec = SHIP_SPEC_WAR;
+        }
         SetShipHunter(sld);
         SetFantomParamHunter(sld); //крутые парни
         SetCaptanModelByEncType(sld, "war");
@@ -472,12 +544,14 @@ void CoolTraderHunterOnMap()
         sld.mapEnc.Name = XI_ConvertString("GentlemenOfFortune");
 		sld.hunter = "pirate";
         Group_AddCharacter(sGroup, sCapId + i);
+        if(iTier < 3 && rand(1)) SetRandGeraldSail(sld, PIRATE);
     }
 
     Group_SetGroupCommander(sGroup, sCapId+ "1");
     Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
     Group_LockTask(sGroup);
-    Map_CreateCoolWarrior("", sCapId + "1", 8);
+    if(bCool) Map_CreateCoolWarrior("", sCapId + "1", 8); // Быстрые
+    else Map_CreateWarrior("", sCapId + "1", 8);
 }
 
 void SetTreasureHunter(string temp)
@@ -669,18 +743,20 @@ void Treasure_Stories(string attr)
 
 // Записка попала в инвентарь из клада
 // Добавим её в последовательность прочтения, уберём атрибут с сундука
-void TreasureNotesHandler(aref arItm)
+bool TreasureNotesHandler(aref arItm)
 {
+    if(!CheckAttribute(arItm, "curNumb")) return false;
+
     string attr = arItm.curNumb;
     PChar.Treasure_Stories_Read.(attr) = attr;
     ref loc = &Locations[FindLocation(arItm.curLoc)];
     attr = arItm.curBox;
     DeleteAttribute(loc, attr + ".treasure_note");
+    return true;
 }
 
 void Treasure_SetCaribWarrior()
 {
-	if (bDisableLandEncounters || CheckAttribute(pchar, "questTemp.Sharlie.Lock")) return;
 	chrDisableReloadToLocation = true;//закрыть локацию
 	int iRank = 10+sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE)/2;
 	for(int i=1; i<=4; i++)
@@ -702,7 +778,6 @@ void Treasure_SetCaribWarrior()
 
 void Treasure_SetBandosWarrior()
 {
-	if (bDisableLandEncounters || CheckAttribute(pchar, "questTemp.Sharlie.Lock")) return;
 	chrDisableReloadToLocation = true;//закрыть локацию
 	int iRank = 8+sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE)/2;
 	for(int i=1; i<=4; i++)

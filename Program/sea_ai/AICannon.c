@@ -260,11 +260,12 @@ void Cannon_FireCannon()
 	fCannonDirAng = GetEventData();
 	fMaxFireDistance = GetEventData();
 	float fAngle = GetEventData();
+	int iMode = GetEventData();
 	string bort = GetEventData();
 	
 	//log_testinfo("Ядро для борта " + 	bort);
 	 // boal навел порядок по оптимизации
-	Ball_AddBall(aCharacter, fX, fY, fZ, fSpeedV0, fDirAng, fHeightAng, fCannonDirAng, fMaxFireDistance, bort);
+	Ball_AddBall(aCharacter, fX, fY, fZ, fSpeedV0, fDirAng, fHeightAng, fCannonDirAng, fMaxFireDistance, iMode, bort);
 }
 
 // Damage 2 cannon from balls

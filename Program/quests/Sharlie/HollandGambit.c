@@ -598,7 +598,7 @@ void CreateFleetwoodOnMap(string qName)//подгружаем в море энк
 	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
 	Sea_LoginGroupCurrentSea("Fleetwood_Attack");
 	log_info(StringFromKey("HollandGambit_9"));
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy1.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy1.wav");
 	AddLandQuestMark(characterFromId("Lucas"), "questmarkmain");
 	AddMapQuestMarkCity("Villemstad", true);
 	
@@ -2115,7 +2115,7 @@ void Knippel_AfterBattle(string qName)//реакция на победу
 			if (i == 1) ChangeCharacterAddressGroup(sld, "My_Deck", "rld", "aloc2");
 			else ChangeCharacterAddressGroup(sld, "My_Deck", "rld", "loc3");
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("Sailor_3", "citiz_36", "man", "man", 25, pchar.nation, -1, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Sailor_3", "Alonso", "man", "man", 25, pchar.nation, -1, false, "soldier"));
 		sld.name 	= StringFromKey("HollandGambit_23");
 		sld.lastname = StringFromKey("HollandGambit_24");
 		sld.greeting = "hambit_other_4";

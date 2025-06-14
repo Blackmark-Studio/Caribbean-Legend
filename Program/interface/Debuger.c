@@ -435,7 +435,7 @@ void CalculateInfoDataF1()
     Statistic_AddValue(PChar, "Cheats.F1", 1);
 }
 ////////////////////////////////////////////////////////////////////////
-string descF2 = "";
+string descF2 = "Вкл/выкл подсветку попаданий картечи у ГГ";
 
 void CalculateInfoDataF2()
 {
@@ -452,6 +452,19 @@ void CalculateInfoDataF2()
 	sld.locators_radius.goto.goto31 = 50.0;
 	locations[FindLocation("Mayak2")].DisableEncounters = true;
 	LAi_LocationDisableOfficersGen("Mayak2", true);*/
+	
+	if(!CheckAttribute(pchar, "chr_ai.musket.test_lights") || !CheckAttribute(pchar, "chr_ai.gun.test_lights") || pchar.chr_ai.musket.test_lights == "0" || pchar.chr_ai.gun.test_lights == "0")
+	{
+		pchar.chr_ai.musket.test_lights = 1;
+		pchar.chr_ai.gun.test_lights = 1;
+		totalInfo += NewStr() + "Подсветка попаданий включена.";
+	}
+	else
+	{
+		pchar.chr_ai.musket.test_lights = 0;
+		pchar.chr_ai.gun.test_lights = 0;
+		totalInfo += NewStr() + "Подсветка попаданий выключена.";
+	}
 
     totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
 
@@ -678,7 +691,7 @@ string descF11 = "Увеличить уровень +5";
 void CalculateInfoDataF11()
 {
 	pchar.rank = sti(pchar.rank) + 5;
-    Event("PlayerLevelUp", "l", sti(pchar.rank));
+    Event("PlayerLevelUp");
 	
 	totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
 	
@@ -1180,42 +1193,70 @@ void CalculateInfoDataF23()
     Statistic_AddValue(PChar, "Cheats.F23", 1);
 }
 
-string descF24 = "Выдать Аркебузу и включить возможность ее прокачки";
+string descF24 = "SP3: +1 встреча с Диего";
 void CalculateInfoDataF24()
 {
 	totalInfo = descF24;
-	ref itm;
-	makeref(itm, items[FindItem("mushket9")]);
-	itm.UpgradeStage = 1;
-	GiveItem2Character(pchar, "mushket9");
 	
-    totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
-
+	pchar.questTemp.ISawDiegoDeLanda = sti(pchar.questTemp.ISawDiegoDeLanda) + 1; // встретил Диего де Ланда
+	Log_Info("Было встреч с Диего " + pchar.questTemp.ISawDiegoDeLanda + " раз");
+	
+    totalInfo = totalInfo + NewStr() + NewStr() + "Было встреч с Диего " + pchar.questTemp.ISawDiegoDeLanda + " раз";
     SetFormatedText("INFO_TEXT", totalInfo);
-
     // Статистика по читам
     Statistic_AddValue(PChar, "Cheats.F24", 1);
 }
 
-string descF25 = "Выдать запчасть от Аркебузы";
+string descF25 = "SP3: -1 встреча с Диего";
 void CalculateInfoDataF25()
 {
 	totalInfo = descF25;
-	GiveItem2Character(pchar, "FirearmStockPart");
-    totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
-
+	
+	pchar.questTemp.ISawDiegoDeLanda = sti(pchar.questTemp.ISawDiegoDeLanda) - 1; // встретил Диего де Ланда
+	Log_Info("Было встреч с Диего " + pchar.questTemp.ISawDiegoDeLanda + " раз");
+	
+	totalInfo = totalInfo + NewStr() + NewStr() + "Было встреч с Диего " + pchar.questTemp.ISawDiegoDeLanda + " раз";
     SetFormatedText("INFO_TEXT", totalInfo);
-
     // Статистика по читам
-    ProcessCancelExit();
     Statistic_AddValue(PChar, "Cheats.F25", 1);
 }
 
-string descF26 = "Дамп атрибутов ГГ";
+string descF26 = "";
 void CalculateInfoDataF26()
 {
     totalInfo = descF26;
-    // -->
+    
+	// пусто
+	
+    totalInfo = totalInfo + NewStr() + NewStr() +
+                "Команда отработала успешно!";
+    SetFormatedText("INFO_TEXT", totalInfo);
+
+    // Статистика по читам
+    Statistic_AddValue(PChar, "Cheats.26", 1);
+}
+
+string descF27 = "";
+void CalculateInfoDataF27()
+{
+    totalInfo = descF27;
+   
+    // пусто
+	
+    totalInfo = totalInfo + NewStr() + NewStr() +
+                "Команда отработала успешно!";
+    SetFormatedText("INFO_TEXT", totalInfo);
+
+    // Статистика по читам
+    Statistic_AddValue(PChar, "Cheats.F27", 1);
+}
+
+string descF28 = "Дамп атрибутов ГГ";
+void CalculateInfoDataF28()
+{
+    totalInfo = descF28;
+	
+	// -->
     ref characterRef = GetMainCharacter();
     float sdp = 0.0;
 
@@ -1249,35 +1290,6 @@ void CalculateInfoDataF26()
 
     Log_Info("Дамп аттрибутов ГГ");
     // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "Команда отработала успешно!";
-    SetFormatedText("INFO_TEXT", totalInfo);
-
-    // Статистика по читам
-    Statistic_AddValue(PChar, "Cheats.26", 1);
-}
-
-string descF27 = "Выдать Устав";
-void CalculateInfoDataF27()
-{
-    totalInfo = descF27;
-   
-    GiveItem2Character(pchar, "talisman18");
-	
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "Команда отработала успешно!";
-    SetFormatedText("INFO_TEXT", totalInfo);
-
-    // Статистика по читам
-    Statistic_AddValue(PChar, "Cheats.F27", 1);
-}
-
-string descF28 = "Прокачать Устав";
-void CalculateInfoDataF28()
-{
-    totalInfo = descF28;
-    
-	addArticlesBonus();
 	
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
@@ -1331,7 +1343,7 @@ void CalculateInfoDataF31()
     SetRandSelfSkill(mc, 100, 100);
     SetRandShipSkill(mc, 100, 100);
     mc.rank = 20;
-    Event("PlayerLevelUp", "l", sti(mc.rank));
+    Event("PlayerLevelUp");
     LAi_SetHP(mc, 250.0, 250.0);
 
     mc.Ship.Type = GenerateShipExt(SHIP_FRIGATE, true, mc);
@@ -1413,7 +1425,7 @@ void CalculateInfoDataF32()
     SetRandSelfSkill(mc, 60, 85);
     SetRandShipSkill(mc, 60, 85);
     mc.rank = 22;
-    Event("PlayerLevelUp", "l", sti(mc.rank));
+    Event("PlayerLevelUp");
     LAi_SetHP(mc, 250.0, 250.0);
 
     // mc.Ship.Type = GenerateShipExt(SHIP_CORVETTE_QUEST, true, mc);
@@ -1556,7 +1568,7 @@ void CalculateInfoDataF33()
     /*SetRandSelfSkill(mc, 50, 85);
     SetRandShipSkill(mc, 50, 85);
     mc.rank = 15;
-    Event("PlayerLevelUp", "l", sti(mc.rank));
+    Event("PlayerLevelUp");
     LAi_SetHP(mc, 250.0, 250.0);
     mc.Ship.Type = GenerateShipExt(SHIP_CORVETTE, true, mc);    
     SetBaseShipData(mc);

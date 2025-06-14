@@ -9,7 +9,7 @@ Rayner
 
 FalseTrace_3
 {
-galleon '@<pchar.questTemp.FalseTrace.ShipName>'
+flauta '@<pchar.questTemp.FalseTrace.ShipName>'
 }
 
 FalseTrace_4
@@ -28,7 +28,7 @@ Solly
 
 FalseTrace_7
 {
-Galeón con mineral de oro
+Flauta con mineral de oro
 }
 
 FalseTrace_8

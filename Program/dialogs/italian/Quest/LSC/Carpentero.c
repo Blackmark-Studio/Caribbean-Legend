@@ -385,7 +385,7 @@ void ProcessDialogEvent()
 			{
 				notification("Skill Check Failed (90)", SKILL_COMMERCE);
 				dialog.text = "No, "+pchar.name+", non se ne parla proprio. Ai topi posso pensare con il veleno, ma questa corazza potrebbe salvarti la pelle un giorno. E ti farà sembrare un duca italiano, indossandola. Millecinquecento, questa è la mia ultima offerta. Prenditi pure il tempo che vuoi per pensarci e fammi sapere. L’armatura ti aspetterà finché vorrai, la venderò solo a te.";
-				link.l1 = "Sancho, se non fossi l’unico oste in questa lugubre necropoli… Ci penserò sulla tua proposta.";
+				link.l1 = "Sancho, se non fossi l’unico oste in questa lugubre necropoli... Ci penserò sulla tua proposta.";
 				link.l1.go = "rat_yes_1500exit";
 				AddCharacterExpToSkill(pchar, "Commerce", 600);
 			}

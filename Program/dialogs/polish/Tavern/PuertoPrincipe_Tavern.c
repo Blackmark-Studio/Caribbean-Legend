@@ -61,7 +61,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "OS_Tavern1_4":
-			dialog.text = "Właściwie nikt! No, może moja kelnerka – ale to niemożliwe. Tego dnia w tawernie był istny bal – załoga 'Sea Wolf' wróciła z łowów z niezłym łupem. Nie miała nawet chwili, by usiąść, nie mówiąc już o kręceniu się za ladą.";
+			dialog.text = "Właściwie nikt! No, może moja kelnerka – ale to niemożliwe. Tego dnia w tawernie był istny bal – załoga 'Sea Beast' wróciła z łowów z niezłym łupem. Nie miała nawet chwili, by usiąść, nie mówiąc już o kręceniu się za ladą.";
 			link.l1 = "Jesteś tego pewien?";
 			link.l1.go = "OS_Tavern1_5";
 		break;
@@ -96,7 +96,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OS_Tavern3_1":
 			dialog.text = "Znalazł"+GetSexPhrase("eś","aś")+" ją?! Czy to może być prawda? Kapitanie, dosłownie uratował"+GetSexPhrase("eś","aś")+" mi życie! Kto za tym stoi? Muszę poznać nazwisko tego łajdaka!";
-			link.l1 = "To był skrupulatnie zaplanowany spisek niejakiego Jacka Veilsa, działającego wspólnie z kapitanem 'Sea Wolf'. Zaangażowali swoich marynarzy i zainscenizowali wymyślną dywersję, by cię odciągnąć. Kiedy opuściłeś swoje stanowisko, beczka pozostała bez ochrony, a oni łatwo ją zabrali.";
+			link.l1 = "To był skrupulatnie zaplanowany spisek niejakiego Jacka Veilsa, działającego wspólnie z kapitanem 'Sea Beast'. Zaangażowali swoich marynarzy i zainscenizowali wymyślną dywersję, by cię odciągnąć. Kiedy opuściłeś swoje stanowisko, beczka pozostała bez ochrony, a oni łatwo ją zabrali.";
 			link.l1.go = "OS_Tavern3_2";
 			DelLandQuestMark(npchar);
 			pchar.questTemp.CameraDialogMode = true;

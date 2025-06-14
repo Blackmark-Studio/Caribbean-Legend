@@ -1359,7 +1359,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_2":
-			dialog.text = "Co? Ha! Masz niezłą wyobraźnię, Chińczyku! Antoon to tchórz, a van der Vink jest tam, by go chronić, gdyby ktoś zakłócił ich „prywatny czas”. /nJoep zawsze nosi ciężką zbroję - nieprzeniknioną dla większości zimnych broni. Dlatego potrzebujesz czegoś specjalnego. Weź tę szpadę. Jest długa, mocniejsza niż większość innych mieczy i waży jak porządne ostrze.";
+			dialog.text = "Co? Ha! Masz niezłą wyobraźnię, Chińczyku! Antoon to tchórz, a van der Vink jest tam, by go chronić, gdyby ktoś zakłócił ich 'prywatny czas\nJoep zawsze nosi ciężką zbroję - nieprzeniknioną dla większości zimnych broni. Dlatego potrzebujesz czegoś specjalnego. Weź tę szpadę. Jest długa, mocniejsza niż większość innych mieczy i waży jak porządne ostrze.";
 			link.l1 = "Szpada do walki z opancerzonymi wrogami...?";
 			link.l1.go = "PZ_OliverTrust_lubovnitsa_3";
 			//Log_Info("Вы получили асоледу");

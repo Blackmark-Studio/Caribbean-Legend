@@ -4,6 +4,7 @@ void ProcessDialogEvent()
 	aref Link, NextDiag;
 	int i, iTemp;
 	string sTemp;
+	bool bOk1, bOk2;
 	
 	DeleteAttribute(&Dialog,"Links");
 	
@@ -25,19 +26,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "OS_Matros_sluh":
-			if (!CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe" && sti(pchar.rank) >= 5)
+			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			if (bOk1 || bOk2)
 			{
-				dialog.text = RandPhraseSimple("Hé, "+GetSexPhrase("l'ami","l'amie")+", t'as pas vu ma botte quelque part ? Un fichu voleur est parti avec pendant que j'étais évanoui sous la table de la taverne.",
-									 "Il paraît qu'il y a eu une bagarre à la taverne hier... Bien que qui se battait soit difficile à dire. Mon visage semble intact. Je crois.", "Par tous les diables des profondeurs, j'avais une bourse pleine d'or hier ! Où diable est-elle maintenant ?");
-				link.l1 = "...";
-				link.l1.go = "exit";
-				NextDiag.TempNode = "OS_Matros_sluh";
-
-				SetQuestHeader("OS");
-				AddQuestRecord("OS", "1");
-				pchar.questTemp.OS_Start = true;
-				pchar.questTemp.OS_Tavern_1 = true;
-				AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
+				dialog.text = "On dit qu'il y a eu une bagarre à la taverne hier soir... Mais qui se battait — allez savoir. Mon visage est intact, je crois.";
+				link.l1 = "On dirait qu'il y a eu une sacrée beuverie ici ?";
+				link.l1.go = "OS_Matros_sluh_2";
 			}
 			else
 			{
@@ -65,6 +60,19 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
+		break;
+		
+		case "OS_Matros_sluh_2":
+			dialog.text = "Et comment ! Le tavernier a eu du pain sur la planche... hic... Et en plus... on lui a volé du gin ! Pas une bouteille, non, un tonneau entier ! Et pas n'importe lequel : un gin qu'on ne trouve nulle part dans les Caraïbes ! On dit qu'il vient directement d'Europe. Le vieux filou ne veut pas dire pour qui il le gardait, mais une chose est sûre : s'il ne retrouve pas cette barrique bientôt, il va subir une sacrée tempête !";
+			link.l1 = "Intéressant. Bon, prends soin de toi, l’ivrogne.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "OS_Matros_sluh";
+			
+			SetQuestHeader("OS");
+			AddQuestRecord("OS", "1");
+			pchar.questTemp.OS_Start = true;
+			pchar.questTemp.OS_Tavern_1 = true;
+			AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
 		break;
 
 		case "OS_Matros_again":
@@ -284,7 +292,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Zaharia_3";
 			CharacterTurnByChr(npchar, pchar);
 			TakeItemFromCharacter(pchar, "cask_gin");
-			Log_Info("Vous avez remis le tonneau de gin");
+			notification("Vous avez remis le tonneau de gin", "NONE");
 		break;
 
 		case "Zaharia_3":

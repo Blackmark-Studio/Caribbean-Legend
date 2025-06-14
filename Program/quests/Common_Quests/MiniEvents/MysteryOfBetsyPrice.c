@@ -19,7 +19,7 @@ void TBP_Poorman_2(string qName)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Villemstad_Poorman", "panhandler_"+(rand(5)+1), "man", "man", 5, HOLLAND, -1, false, "slave"));
 	}
-	//LAi_RemoveLoginTime(sld);
+	LAi_RemoveLoginTime(sld);
 	sld.dialog.filename = "Quest\MiniEvents\MysteryOfBetsyPrice_dialog.c";
 	sld.dialog.currentnode = "Poorman_1";
 	ChangeCharacterAddressGroup(sld, "Villemstad_town", "goto", "goto9");

@@ -1587,7 +1587,8 @@ void ProcessDialogEvent()
 		break;
 				
 		case "Convict_14":
-			dialog.text = RandPhraseSimple(RandPhraseSimple("Eh, capitano, anche tu una volta eri povero, avevi le tasche vuote. E ora disprezzi la gente semplice come noi."),RandPhraseSimple("Eh, la gente sta davvero diventando troppo egoista in questi giorni. Vivi come se avessi ancora due secoli davanti a te.","Oh, vedo che sei appena arrivato dall'Europa, non hai ancora fiutato la puzza del nostro discarico tropicale."));
+			dialog.text = RandPhraseSimple(RandPhraseSimple("Eh, capitano, anche tu una volta eri povero, avevi le tasche vuote. E ora disprezzi la gente semplice come noi.", "Capitano, non è giusto trattare così la gente comune. Siamo tutti sotto lo stesso Dio."),
+						RandPhraseSimple("Eh, la gente sta davvero diventando troppo egoista in questi giorni. Vivi come se avessi ancora due secoli davanti a te.","Oh, vedo che sei appena arrivato dall'Europa, non hai ancora fiutato la puzza del nostro discarico tropicale."));
 			link.l1 = LinkRandPhrase("Stai cercando di mettermi in imbarazzo? Ti accorcerò la lingua di un paio di centimetri!","Mi stai intimidendo? Tieniti forte al cappello ora!","Sei un filosofo o cosa? Ti picchierò fino a farti tornare il senso della realtà!");
 			link.l1.go = "Convict_Fight";	
 			pchar.GenQuest.Convict = "fight";

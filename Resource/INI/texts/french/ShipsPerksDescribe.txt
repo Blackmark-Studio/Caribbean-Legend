@@ -248,15 +248,35 @@ Augmentation de la réserve de pesos : 100%.
 Augmentation de la réserve de doublons : ~30%.
 }
 
-sp3 {SP3}
+sp3 {Creuset}
 
 sp3_desc
 {
-DLC.
+Sur ce navire, la vie humaine n’est qu’une courte étape avant la révélation du vrai pouvoir. Peu franchissent le Seuil et reviennent, mais ceux qui y parviennent ne craignent plus la mort.
 }
 
 sp3_desc2
 {
-DLC.
+Les marins tombés augmentent l’expérience et le moral de l’équipage.
+}
+
+sp3_SailorsBoardingBonus_desc
+{
+Bonus d’expérience à l’abordage : #dSailorsBoardingBonus#%
+}
+
+sp3_SailorsBoardingBonus1_desc
+{
+~ (#dDeadSailors#/500 marins tombés)
+}
+
+sp3_SurrenderChanceBonus_desc
+{
+Augmentation de la chance de reddition : #dSurrenderChanceBonus#%
+}
+
+sp3_SurrenderChanceBonus1_desc
+{
+~ (#dDeadSailors#/2000 marins tombés)
 }
 

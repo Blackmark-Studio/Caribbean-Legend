@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "escape_5":
-			dialog.text = "Anche a me le azioni di tuo fratello hanno lasciato di stucco, Charles. Mi capita ancora di restare perplesso. Un servitore fedele dell’Ordine e della Trinità… e ora si comporta come un rinnegato.";
+			dialog.text = "Anche a me le azioni di tuo fratello hanno lasciato di stucco, Charles. Mi capita ancora di restare perplesso. Un servitore fedele dell’Ordine e della Trinità... e ora si comporta come un rinnegato.";
 			link.l1 = "Hai forse qualche idea sulle ragioni di un comportamento tanto bizzarro?";
 			link.l1.go = "escape_6";
 		break;
@@ -332,7 +332,9 @@ void ProcessDialogEvent()
 		
 		case "agree_1":
 			DialogExit();
-			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, 10+rand(5), false);
+            rate = 10 + rand(5);
+            rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, rate, false);
 			pchar.GenQuest.BenuaNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.BenuaNation), 0));
 			npchar.quest.relation = "true";
 		break;

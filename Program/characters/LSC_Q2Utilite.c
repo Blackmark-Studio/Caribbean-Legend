@@ -460,6 +460,8 @@ void SetAlchemyRecipeKnown(string Recipe)
 {
 	pchar.alchemy.(Recipe).isKnown = true;
 	if(!CheckAttribute(pchar,"alchemy.known")) pchar.alchemy.known = 1;
+	notification(XI_ConvertString("Recipe Update"), "Alchemy");
+	PlaySound("interface\notebook.wav");
 }
 
 void initStartState2Character(ref ch)
@@ -550,6 +552,8 @@ void initStartState2Character(ref ch)
 	SagaNpcInit();
 	//==> основные НПС LSC
 	LSC_NpcInit();
+	//==> Остальные ключевые персонажи
+	OtherNpcInit();
 	//--> Мини-квесты, инициализирующиеся по достижении ранга
 	pchar.quest.Red_Chieftain.win_condition.l1 = "Rank";
 	pchar.quest.Red_Chieftain.win_condition.l1.value = 8; // 280313
@@ -1485,7 +1489,6 @@ void MaryCelesteInit()
 	character.mapEnc.type = "trade";
 	character.mapEnc.Name = StringFromKey("LSC_Q2Utilite_20");
 	LAi_SetImmortal(character, true);
-	SetCharacterGoods(character, GOOD_RUM, 700);
 	Character_SetAbordageEnable(character, false); // Низя абордировать
 	
 	SetCrewQuantityOverMax(character, 0); // Никого живого
@@ -1500,7 +1503,8 @@ void MaryCelesteInit()
 	realShip.capacity = 2820;
 	
 	NullCharacterGoods(character); // Нулим товары в трюме
-	
+
+    SetCharacterGoods(character, GOOD_RUM, 700);
 	AddCharacterGoodsSimple(character, GOOD_BALLS, 		200 + rand(50));
 	AddCharacterGoodsSimple(character, GOOD_GRAPES, 	200 + rand(50));
 	AddCharacterGoodsSimple(character, GOOD_KNIPPELS, 	200 + rand(50));

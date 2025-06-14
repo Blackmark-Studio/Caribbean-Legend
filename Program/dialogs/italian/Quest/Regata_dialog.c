@@ -600,7 +600,7 @@ void ProcessDialogEvent()
 			iTemp = sti(dialogEditStrings[4]);
 			if (iTemp <= 0 || sti(pchar.money) < iTemp)
 			{
-				dialog.text = "Questa è una cattiva disposizione d’animo, figliolo. Tutti portiamo dei peccati, non dimenticare la tua anima. Dovrai presentarti davanti al nostro Creatore… e forse molto presto.";
+				dialog.text = "Questa è una cattiva disposizione d’animo, figliolo. Tutti portiamo dei peccati, non dimenticare la tua anima. Dovrai presentarti davanti al nostro Creatore... e forse molto presto.";
 				link.l1 = "Non mi servono le tue prediche, reverendo. Addio.";
 				link.l1.go = "Padre_exit";
 				ChangeCharacterComplexReputation(pchar, "nobility", -3);

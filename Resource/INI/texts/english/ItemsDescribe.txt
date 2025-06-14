@@ -491,6 +491,21 @@ A richly adorned sword, despite its ceremonial appearance, possesses excellent c
 
 lacrima_patris_parameters{Cannon fire range boost: #f.1RangeBonus#%}
 
+itmname_blade_SP_3low {Hangman}
+itmdescr_blade_SP_3low
+{
+This cutlass combines features of Turkish sabers and European falchions — its widened blade can cut through even the toughest armor. With the Hangman, any boarding fight ends quickly and brutally.
+}
+
+itmname_blade_SP_3 {Hangman}
+itmdescr_blade_SP_3
+{
+The Yorick skull in place of the guard urges the owner to cast aside fear of death and look the Reaper in the eye to unlock true martial power.
+~
+Prevents healing from any source.
+For every 2% of health lost, damage and energy recovery speed increase by 1.5% and 1.75% respectively.
+}
+
 ; ==================================================================================================================== ОГНЕСТРЕЛЬНОЕ ОРУЖИЕ
 
 
@@ -939,6 +954,15 @@ This hat frightens merchants, especially Spanish ones, more than the Jolly Roger
 Rum and wine restore 50% more health. Being drunk has a more positive effect.
 }
 
+itmname_hat9 {Grim’s Hat}
+itmdescr_hat9
+{
+This hat is known in every corner of the Caribbean, and everywhere it is remembered with a shudder. Only a madman would dare attack the ship of its owner, and meeting him in person, fear will make you forget how to hold a blade or pistol. And remember: it's not getting to the land of the dead that's the problem. It's getting back.
+~
+Reduces ship damage penalty by 30%.
+Gives a 10% chance to avoid gunshot damage.
+}
+
 ; ==================================================================================================================== ОПТИКА
 
 itmname_spyglass1	{Cheap Spyglass}
@@ -973,6 +997,14 @@ itmname_spyglass5	{Nautical Telescope}
 itmdescr_spyglass5
 {
 A one-of-a-kind telescope equally suited to spotting Jupiter's moons or ships at sea. Perfectly adjusted lenses made of pure rock crystal together with the usage of the tripod allow you to see absolutely everything above the horizon, including the types of cannons used on a ship or in a fort. You could count King Louis' nose hairs back in Versailles with this. +1500 yards bonus to fast travel distance.
+}
+
+itmname_spyglassSP3 {Spyglass 'Dead Man’s Eye'}
+itmdescr_spyglassSP3
+{
+This bone-adorned spyglass has surprisingly good lenses, letting you see: ship type, name, speed, number and caliber of cannons, ship damage, musketeers on deck, and the fear in the enemy captain’s eyes.
+Fast travel range: +850 yards.
+World map vision radius: +15%.
 }
 
 ; ==================================================================================================================== НАВИГАЦИЯ
@@ -1199,6 +1231,26 @@ No penalties, no activation limits.
 talisman18_Bonus{Treasures Found : #dQBonus# / 10}
 
 talisman18_NoBonus{Treasures Found : 0 / 10}
+
+itmname_talisman19	{Talisman 'Yorick’s Skull'}
+itmdescr_talisman19
+{
+The skull of Captain Mortimer Grim of the 'Memento', who never fully realized his own death. You knew him, #sName#.
+The dead teach the living, and this artifact adapts to its owner's desires.
+When in your inventory, it makes all officers immortal.
+~
+No penalties, can be activated multiple times.
+}
+
+talisman19_InSlot
+{
+A ship exists on both sides of the veil at once. The wood was alive and became dead to serve the living. The skull of Captain 'Memento' reminds any ship that death does not exist, and you must fight to the end.
+~
+For every 2% of hull lost, ship speed and cannon damage increase by 0.75% and 0.5% respectively.
+~
+No penalties, can be activated multiple times.
+}
+
 ; ==================================================================================================================== ТАЛИСМАНЫ
 
 itmname_totem_01 {Talisman 'Throat of cast iron'}
@@ -4099,4 +4151,18 @@ itmname_islamona_toolbox	{Toolbox}
 itmdescr_islamona_toolbox
 {
 High class tools for building ships and houses. Made in Europe.
+}
+
+;=============================== SP3 =======================================================
+
+itmname_Memento_Book	{Grim's Journal}
+itmdescr_Memento_Book
+{
+A tragedy in three acts
+}
+
+itmname_Memento_letter	{Письмо Мементо}
+itmdescr_Memento_letter
+{
+Письмо Мементо
 }

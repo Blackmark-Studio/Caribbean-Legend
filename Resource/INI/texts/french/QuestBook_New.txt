@@ -691,6 +691,8 @@ Six capitaines
 C'est peut-être la première fois qu'une brève rencontre avec quelqu'un qui n'a rien à voir avec moi me fait écrire dans ce journal. Je ne comprends pas pourquoi ce prêtre m'a fait une telle impression. Je ne connais pas son nom et il disait parfois des bêtises, mais il s'est rendu mémorable. Cela fait deux fois que nous nous rencontrons, et cela pourrait être considéré comme une coïncidence. Mais si nous nous rencontrons à nouveau...
 Je dois admettre que son intérêt est plutôt flatteur. Son regard est si... évaluateur. Comme s'il admirait mes réalisations. Et qui ne le serait pas ? Deux navires légendaires, deux capitaines dont les récits ont traversé tout l'Archipel, tous deux tombés de ma main.
 Je me demande ce qu'il dira lorsqu'il apprendra mes futurs exploits. L'Archipel est vaste, mais ma renommée, semble-t-il, grandit plus vite que je ne le pensais.
+#TEXT	2
+Diego de Landa - voilà comment tu t'appelles. Alors nous nous reverrons. À suivre.
 
 #QUEST SharlieTutorial
 Prologue
@@ -724,7 +726,7 @@ Il faudra trouver d'autres moyens. Le pasteur est sans aucun doute un homme obst
 J’ai réussi à convaincre le pasteur. Il a accepté de fermer les yeux sur la participation de la gitane au traitement si Thomas expie sa faute devant le Seigneur par un repentir sincère et de bonnes actions.
  À présent, je dois trouver la mangarosa - l’ingrédient clé du remède de la gitane. Cette plante se distingue par son parfum agréable, sa tige haute et ses feuilles finement découpées. Je peux trouver la mangarosa dans une grotte en dehors de la ville, chez des 'personnes peu recommandables' - des vagabonds ou peut-être des brigands. Tant mieux. Peut-être que je n’aurai même pas à les payer.
 #TEXT	6
-J'ai fait tout ce qui était en mon pouvoir. Il ne reste plus qu'à espérer dans les capacités de la gitane. Je me suis tellement impliqué(e) dans le sauvetage de la petite fille que j'ai complètement oublié mes propres affaires. Je visiterai Antigua dans un mois. D'ici là, Esther devrait être complètement rétablie.
+J'ai fait tout ce qui était en mon pouvoir. Il ne reste plus qu'à espérer dans les capacités de la gitane. Je me suis tellement impliqué dans le sauvetage de la petite fille que j'ai complètement oublié mes propres affaires. Je visiterai Antigua dans un mois. D'ici là, Esther devrait être complètement rétablie.
 #TEXT	7
 La gitane est prête à aider la fillette en secret - afin que Thomas n'encoure pas la colère de l'Église. À présent, il faut surtout le convaincre de nous faire confiance.
 #TEXT	8
@@ -732,8 +734,8 @@ Thomas m’a remis un objet personnel d’Esther - un collier de jade. Il ne me 
 #TEXT	9
 Grâce aux efforts conjoints de la gitane et moi, la maladie d’Esther a été vaincue ! C’est réconfortant de savoir que tous ces efforts n’ont pas été vains, et que la fillette est maintenant en bonne santé.
 #TEXT	10
-J'ai fait tout ce qui était nécessaire. Maintenant, il ne reste plus qu'à croire que la potion de la gitane s'avérera efficace. Je me suis tellement impliqué(e) dans le sauvetage de la petite fille que j'ai complètement oublié mes propres affaires. Je visiterai Antigua dans un mois. D'ici là, Esther devrait être complètement rétablie.
-#TEXT	11
+Grâce à nos efforts avec la gitane, la maladie d'Esther est vaincue ! Il est réconfortant de savoir que tous ces efforts n'ont pas été vains, et que la fillette est désormais en bonne santé. Chez la gitane de Saint John's, je peux toujours acheter de la mangarosa - trois tiges pour trois cent cinquante doublons d'or.
+#TEXT 11
 À présent, la gitane a tout ce qu’il faut pour préparer le remède. Demain matin, je devrai récupérer le médicament chez elle et l’apporter à Thomas.
 
 #QUEST TPZ
@@ -787,11 +789,11 @@ Le gin a été volé sous le nez de cet étourdi d’aubergiste. Sa vie ne tient
 #TEXT	3
 Toute cette histoire semble vraiment louche. Mais j’ai ma petite idée. Il est temps d’avoir une conversation avec la serveuse.
 #TEXT	4
-Sous la pression, la serveuse a avoué que toute la mise en scène avait été orchestrée par un certain Jack Wales. Avec le capitaine du 'Sea Wolf', ils ont monté une véritable pièce de théâtre pour s’emparer du tonnelet. Tout ça pour du gin ! Visiblement, ce ne sont pas de simples ivrognes, mais de vrais connaisseurs. La maison du voleur est juste en face de la taverne.
+Sous la pression, la serveuse a avoué que toute la mise en scène avait été orchestrée par un certain Jack Wales. Avec le capitaine du 'Sea Beast', ils ont monté une véritable pièce de théâtre pour s’emparer du tonnelet. Tout ça pour du gin ! Visiblement, ce ne sont pas de simples ivrognes, mais de vrais connaisseurs. La maison du voleur est juste en face de la taverne.
 #TEXT	5
 J’ai rendu le tonnelet à temps à l’aubergiste, sauvant ainsi sa peau d’ennuis certains. À sa manière, il a su me remercier : en plus des doublons, j’ai obtenu le droit à une consommation gratuite à vie, ainsi qu’un toit assuré dans sa taverne. Quant à la serveuse, elle a bien fait de s’éclipser – le tavernier a rapidement deviné son rôle dans toute cette affaire.
 #TEXT	6
-L’équipage du 'Sea Wolf' a suivi son capitaine dans la tombe. Méritaient-ils un tel sort ? Allez savoir... Mais une chose est sûre – ils n’auraient jamais dû me défier.
+L’équipage du 'Sea Beast' a suivi son capitaine dans la tombe. Méritaient-ils un tel sort ? Allez savoir... Mais une chose est sûre – ils n’auraient jamais dû me défier.
 
 #QUEST UV
 Souvenir volé

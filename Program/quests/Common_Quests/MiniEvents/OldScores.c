@@ -1,7 +1,7 @@
 void OS_ShipWolf(string qName)
 {
 	sld = GetCharacter(NPC_GenerateCharacter("OS_Pirate", "mercen_11", "man", "man", sti(PChar.rank), PIRATE, -1, true, "pirate"));
-	FantomMakeSmallSailor(sld, SHIP_BRIG, StringFromKey("Neutral_5"), CANNON_TYPE_CANNON_LBS16, 40, 40, 40, 40, 40);
+	FantomMakeSmallSailor(sld, SHIP_SCHOONER_W, StringFromKey("Neutral_5"), CANNON_TYPE_CANNON_LBS8, 40, 40, 40, 40, 40);
 	LAi_SetHP(sld, 200.0, 200.0);
 	sld.AlwaysFriend = true;
 	sld.ShipEnemyDisable  = true;
@@ -29,10 +29,13 @@ void OS_ShipWolf(string qName)
 	}
 }
 
-void OS_Zasada(string qName)
+void DWH_Close_House(string qName)
 {
 	chrDisableReloadToLocation = true;
-	
+}
+
+void OS_Zasada(string qName)
+{
 	sld = GetCharacter(NPC_GenerateCharacter("OS_Jack", "mercen_8", "man", "man", sti(pchar.rank), PIRATE, 0, true, "pirate"));
 	sld.name = StringFromKey("Neutral_3");
 	sld.lastname = StringFromKey("Neutral_4");
@@ -79,8 +82,8 @@ void OS_AttackSea(string qName)
 
 void OS_AttackSea_2(string qName)
 {
-	Log_Info(StringFromKey("Neutral_11"));
-	PlaySound("interface\notebook.wav");
+	notification(StringFromKey("Neutral_11"), "NONE");
+	PlaySound("Ambient\SEA\Ship_bell_OneShot.wav");
 }
 
 void OS_Pobeda(string qName)

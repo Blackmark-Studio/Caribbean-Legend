@@ -338,7 +338,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_abordage_3":
-			dialog.text = "Non so chi ti abbia parlato dell’argento. Ma sono tutte fandonie… Ho perso con te, quindi mi arrendo. Prendi la mia spada. Ora puoi andare a controllare le stive. Sono vuote.";
+			dialog.text = "Non so chi ti abbia parlato dell’argento. Ma sono tutte fandonie... Ho perso con te, quindi mi arrendo. Prendi la mia spada. Ora puoi andare a controllare le stive. Sono vuote.";
 			link.l1 = "Arrenderti? Mai! Non ho bisogno di testimoni. Prendi la tua spada e combatti, o ti sventro come un agnello.";
 			link.l1.go = "FalseTrace_abordage_4";
 			link.l2 = "Bene per te che hai mostrato un po' di senno. Credo che riuscirò a ricavare un bel riscatto per la tua testa... Ohé, ragazzi – sbattetelo in stiva!";

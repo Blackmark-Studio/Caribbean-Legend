@@ -929,10 +929,11 @@ bool LoadLocation(ref loc)
 			pchar.questTemp.TownVisit.counter = sti(pchar.questTemp.TownVisit.counter) + 1;
 			AddCharacterExpToSkill(pchar, "Sailing", 15.0);
 		}
-		if(sti(pchar.questTemp.TownVisit.counter) == 28)
+		if(!CheckAttribute(pchar, "questTemp.TownVisit.counter.All") && sti(pchar.questTemp.TownVisit.counter) == 28)
 		{
 			notification(StringFromKey("locations_loader_2"), "none");
 			AddCharacterExpToSkill(pchar, "Sailing", 200.0);
+			pchar.questTemp.TownVisit.counter.All = true;
 		}
 	}
 	if (TownId == "KhaelRoa_port" ||

@@ -496,7 +496,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ахой, капитан. С чем приш" + GetSexPhrase("ёл","ла") + "?";
 			
 			if (CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.p1") && !CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.p1.Completed") && PCharDublonsTotal() >= 2000) {
-				link.p1 = "Вот твои дублоны. А-ать, как же тяжело таскать это проклятый металл... но ещё тяжелее его отдавать!";
+				link.p1 = "Вот твои дублоны. А-ать, как же тяжело таскать этот проклятый металл... но ещё тяжелее его отдавать!";
 				link.p1.go = "joruba_p1";
 			}
 			

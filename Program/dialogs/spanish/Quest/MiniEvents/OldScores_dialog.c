@@ -4,6 +4,7 @@ void ProcessDialogEvent()
 	aref Link, NextDiag;
 	int i, iTemp;
 	string sTemp;
+	bool bOk1, bOk2;
 	
 	DeleteAttribute(&Dialog,"Links");
 	
@@ -25,19 +26,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "OS_Matros_sluh":
-			if (!CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe" && sti(pchar.rank) >= 5)
+			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			if (bOk1 || bOk2)
 			{
-				dialog.text = RandPhraseSimple("Oye, "+GetSexPhrase("amigo","amiga")+", ¿has visto mi bota por algún lado? Algún ladrón desgraciado se escapó con ella mientras estaba inconsciente debajo de la mesa de la taberna.",
-									 "Dicen que hubo una pelea en la taberna ayer... Aunque quién peleaba es cosa de adivinanzas. Mi cara parece intacta. Eso creo.", "¡Por todos los diablos de las profundidades, ayer tenía una bolsa llena de oro! ¡¿Dónde demonios está ahora?!");
-				link.l1 = "...";
-				link.l1.go = "exit";
-				NextDiag.TempNode = "OS_Matros_sluh";
-
-				SetQuestHeader("OS");
-				AddQuestRecord("OS", "1");
-				pchar.questTemp.OS_Start = true;
-				pchar.questTemp.OS_Tavern_1 = true;
-				AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
+				dialog.text = "Dicen que anoche hubo una pelea en la taberna... Pero ¿quiénes peleaban? Ni idea. Mi cara está intacta. Creo.";
+				link.l1 = "¿Parece que hubo una gran juerga aquí, no?";
+				link.l1.go = "OS_Matros_sluh_2";
 			}
 			else
 			{
@@ -65,6 +60,19 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
+		break;
+		
+		case "OS_Matros_sluh_2":
+			dialog.text = "¡Y tanto! El tabernero tuvo mucho trabajo... hip... Y además... ¡le robaron el ginebra! ¡No una botella, sino todo un barril! Y uno tan raro que no se encuentra en todo el Caribe. Dicen que vino directamente de Europa. No dice para quién lo tenía guardado, pero está claro: si no aparece pronto, una tormenta infernal caerá sobre él.";
+			link.l1 = "Interesante. Bueno, cuídate, borrachín.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "OS_Matros_sluh";
+			
+			SetQuestHeader("OS");
+			AddQuestRecord("OS", "1");
+			pchar.questTemp.OS_Start = true;
+			pchar.questTemp.OS_Tavern_1 = true;
+			AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
 		break;
 
 		case "OS_Matros_again":
@@ -283,7 +291,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Zaharia_3";
 			CharacterTurnByChr(npchar, pchar);
 			TakeItemFromCharacter(pchar, "cask_gin");
-			Log_Info("Has entregado el barril de ginebra");
+			notification("Has entregado el barril de ginebra", "NONE");
 		break;
 
 		case "Zaharia_3":

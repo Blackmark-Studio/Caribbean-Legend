@@ -145,7 +145,7 @@ void LaunchDeath()	// Интерфейс смерти
 
 void LaunchTutorial(string tutorialName, bool bShowVideo)	// Интерфейс окна обучения
 {
-	if(CheckAttribute(&InterfaceStates, "ShowTutorial") && sti(InterfaceStates.ShowTutorial) == 0) return;
+	if(CheckAttribute(&InterfaceStates, "ShowTutorial") && sti(InterfaceStates.ShowTutorial) == 0 && !bGlobalTutor) return;
 	if(questMovieIsLockPlayerCtrl) return;
 	if(procInterfacePrepare(INTERFACE_TUTORIAL))
 	{
@@ -2792,9 +2792,5 @@ void SetInterfaceGlobalsVariables()
 	if(CheckAttribute(&InterfaceStates,"CompassPos")) 
 	{
 		iCompassPos = sti(InterfaceStates.CompassPos);
-	}
-	if(CheckAttribute(&InterfaceStates,"ArcadeSails")) 
-	{
-		iArcadeSails = sti(InterfaceStates.ArcadeSails);
 	}
 }

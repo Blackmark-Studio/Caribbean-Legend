@@ -48,13 +48,13 @@ Sono salito a bordo della "Valkyrie", ma non ho trovato il giornale di bordo. No
 #TEXT 1-22
 La 'Meifeng' è qui, in porto, ma di Longway ancora nessuna traccia. Non è nemmeno salpato per Dominica. Strano...
 #TEXT 1-23
-Non so perché l’ho fatto, ma ho attaccato la “Meifeng” proprio al porto. Ora gli olandesi mi odiano. Forse bevo troppo rum…
+Non so perché l’ho fatto, ma ho attaccato la “Meifeng” proprio al porto. Ora gli olandesi mi odiano. Forse bevo troppo rum...
 #TEXT 1-24
 Lucas mi ha pagato per il mio lavoro. Inoltre, sono stato nominato comandante della 'Meifeng' al posto della Longway, che abbiamo perso. Tutto fantastico, ma la mia nave è stata affondata dagli inglesi proprio nel porto. Devo andare a chiedere il risarcimento. Domani dovrei anche fare visita al governatore: Rodenburg ha detto che mi proporranno per un'onorificenza statale.
 #TEXT 1-25
 Un ordine da Matthias Beck e uno strumento di navigazione prezioso da Lucas Rodenburg. Direi che la mia carriera sta andando proprio alla grande...
 #TEXT 1-26
-Devo andare a trovare una ragazza di nome Abigail Shneur e convincerla a sposare Lucas Rodenburg. Non mi sono mai occupato di combinare matrimoni prima d’ora. Beh, proviamoci…
+Devo andare a trovare una ragazza di nome Abigail Shneur e convincerla a sposare Lucas Rodenburg. Non mi sono mai occupato di combinare matrimoni prima d’ora. Beh, proviamoci...
 #TEXT 1-27
 Così banale... Si tratta di soldi, ancora una volta. È sempre così? Devo parlare con il padre di Abigail; forse si ricorderà dove si trova l’isola.
 #TEXT 1-28
@@ -126,7 +126,7 @@ Ho fatto finta di essere un mercante ingenuo, disposto a vendere tutti i cannoni
 #TEXT 2-11
 Tutti al negozio locale ormai sanno che sono un ricco armatore che acquista ogni sorta di merce.
 #TEXT 2-12
-L’oste si è divertito parecchio quando ha sentito che volevo rifornire Barbados di schiavi con regolarità. Chissà perché? Le piantagioni di Barbados sono famose, qui gli schiavi sono sempre richiesti…
+L’oste si è divertito parecchio quando ha sentito che volevo rifornire Barbados di schiavi con regolarità. Chissà perché? Le piantagioni di Barbados sono famose, qui gli schiavi sono sempre richiesti...
 #TEXT 2-13
 Ho parlato con l'usuraio riguardo a un grosso prestito per comprare un bel po' di merci di valore.
 #TEXT 2-14
@@ -144,7 +144,7 @@ Abigail mi ha chiesto di trovare le monete di suo padre. Pare che Solomon le abb
 
 *USA IL MENU AZIONI ALL'INTERNO DELLA TUA CABINA*
 #TEXT 2-19
-Gesù, dovrei andare in chiesa e accendere una candela appena ne avrò l’occasione... È stato il giorno più spaventoso della mia vita. Appena mi sono avvicinato al forziere, è esploso e sono sopravvissuto per miracolo. C’era anche un dannato mostro! Ora credo davvero nella magia di queste terre. Forse dovrei chiedere a Richard un aumento. E poi, un’altra sorpresa: dentro il forziere c’era la testa di Gaston, il barista di Barbados. Lui conosceva la latitudine, su questo non ci sono dubbi. Van Berg non l’ha mai nascosto. Ma la longitudine… solo Fleetwood la sapeva! Che diavolo sta succedendo? Devo raccontare tutto a Richard e lasciar decidere a lui il da farsi. In fondo, riguarda prima di tutto lui.
+Gesù, dovrei andare in chiesa e accendere una candela appena ne avrò l’occasione... È stato il giorno più spaventoso della mia vita. Appena mi sono avvicinato al forziere, è esploso e sono sopravvissuto per miracolo. C’era anche un dannato mostro! Ora credo davvero nella magia di queste terre. Forse dovrei chiedere a Richard un aumento. E poi, un’altra sorpresa: dentro il forziere c’era la testa di Gaston, il barista di Barbados. Lui conosceva la latitudine, su questo non ci sono dubbi. Van Berg non l’ha mai nascosto. Ma la longitudine... solo Fleetwood la sapeva! Che diavolo sta succedendo? Devo raccontare tutto a Richard e lasciar decidere a lui il da farsi. In fondo, riguarda prima di tutto lui.
 #TEXT 2-20
 Ero troppo preso dai miei affari e non sono riuscito ad arrivare a Curaçao in tempo.
 #TEXT 2-21
@@ -316,18 +316,18 @@ Sono arrivato troppo tardi a Guadalupa. E Longway è morto di febbre tropicale. 
 #QUEST Sharlie
 Il Fardello del Guascone
 #TEXT 1
-Le vie del Signore sono imperscrutabili!
-Chi avrebbe mai pensato, solo sei mesi fa, che mio fratello—un cavaliere maltese e l’eroe di Barcellona, Michel de Monper—avrebbe infangato il nome di nostro padre? E ora tocca a me, il “figlio prodigo”, il “dissoluto”, il “viveur”, rimettere a posto tutto questo disastro. Il disastro combinato dal mio fratello “infallibile”.
-Eppure eccomi qui. Navigo verso i confini del mondo, lontano da Parigi e dalla mia Lulu. Avevo intenzione di ritrarla come Venere che emerge dal mare, ma devo ammettere: il mare è molto diverso da как я себе его представлял. Forse подумаю об этом после возвращения... Надеюсь, моё путешествие закончится до Рождества, а муж девушки погибнет в бою с испанцами во Фландрии. Именно из-за него воздух Парижа стал для меня смертельно опасен.
-Dovrei informarmi su mio caro fratello presso la missione dell’Ordine. Immagino che il governatore locale, Jacques Dyel du Parquet, sia al corrente di ciò che accade nei suoi territori. Tuttavia, mi hanno consigliato di non essere troppo diretto e di agire con prudenza. A volte, la via più ovvia non è la migliore. Forse dovrei farmi qualche domanda in giro…
-È una fortuna che mi siano rimasti ancora alcuni gioielli di Lulu e qualche moneta d’argento. Dovrebbero bastare per tirare avanti qui un po’ di tempo e tornare appena scoprirò cos’ha combinato l’incosciente Michel.
+Chi avrebbe potuto immaginare, sei mesi fa, che mio fratello Michel, valoroso cavaliere maltese, eroe di Barcellona e via dicendo, avrebbe compiuto azioni tali da disonorare il glorioso casato dei de Montpé? E che a me, Charles de Mor, 'figlio prodigo' del rispettabile nobiluomo Henri de Montpé, 'scapestrato incallito' e 'cortigiano delle dame', sarebbe toccato rimediare agli affari del mio 'senza peccato' fratellino!
+E così eccomi qui, come un folle Don Chisciotte, che veleggia a tutta forza verso i confini del mondo, lasciandomi alle spalle Parigi e un ritratto incompiuto di Lulu nelle vesti di Afrodite emergente dalla spuma del mare. A proposito, va detto che, contrariamente alle grazie di quella diavoletta, la spuma marina, in realtà, ha un aspetto piuttosto diverso da come me l’ero immaginata. Dovrò tenerne conto al ritorno... Spero che, per allora, il marito di Lulu, con la sua gelosia da babbuino, sarà davvero ai confini orientali e lascerà finalmente la ragazza in pace. A causa sua, l’aria di Parigi è diventata per me mortalmente pericolosa.
+Spero davvero che con Michel non sia tutto così terribile come descritto nella lettera del cavaliere de La Brignè. Quei nobili cavalieri tendono spesso a drammatizzare tutto eccessivamente. Di sicuro si tratta di qualche questione locale di poco conto, che verrà presto risolta, e la mia attuale 'avventura' si concluderà entro Natale. Tornerò in Francia, rassicurerò mio padre e andrò a Parigi, da Lulu.
+Ma cosa può mai aver combinato mio irrequieto fratello? Una volta arrivato alla Martinica, dove probabilmente si trova Michel, inizierò subito a raccogliere informazioni su di lui. Immagino che il governatore locale sappia cosa sta succedendo nei suoi territori... Anche se il servo del cavaliere de La Brignè mi ha trasmesso a voce l’avvertimento del suo padrone: di stare attento e di non cercare percorsi diretti - perché non sempre sono i più brevi.
+Per fortuna mi restano ancora un paio di ninnoli donatimi dalla generosa Lulu e un po’ d’argento. Dovrebbe bastare per tirare avanti nei primi tempi...
 #TEXT 2
 Sono stato arrestato non appena ho provato a chiedere di mio fratello. Gesù, non dimenticherò mai i topi e gli insetti di questo posto. Per fortuna, la situazione si è risolta a mio favore: un tizio pieno di sé è venuto a trovarmi in prigione e ha ordinato ai suoi uomini di liberarmi. Si è presentato come il governatore generale delle colonie francesi, Philippe de Poincy.
 Si scopre che il nostro coraggioso Michel è nei guai fino al collo! De Poincy lo sospetta di ogni crimine possibile. Non perderò tempo: devo vedere mio fratello e lasciargli spiegare tutto di persona. Cosa avrà mai fatto, se basta il suo nome per finire in cella? Mi dirigo verso la base segreta dell’Ordine di Malta a Saint-Pierre.
 #TEXT 3
 Uno dei cittadini mi ha consigliato di parlare con l’abate Benoit nella chiesa locale. Il nome di mio fratello mette tutti a disagio. Sembra proprio che sia nei guai seri...
 #TEXT 4
-L’abate a malapena mi ha riconosciuto come fratello di Michel e figlio di Henri de Monper. Sembra che conosca mio padre… Devo affittare una stanza alla taverna del posto e tornare da lui domattina: monsieur Benoit ha promesso di organizzare un incontro con l’uomo che può aiutarmi a trovare mio fratello.
+L’abate a malapena mi ha riconosciuto come fratello di Michel e figlio di Henri de Monper. Sembra che conosca mio padre... Devo affittare una stanza alla taverna del posto e tornare da lui domattina: monsieur Benoit ha promesso di organizzare un incontro con l’uomo che può aiutarmi a trovare mio fratello.
 #TEXT 5
 Ho parlato con mio fratello. Incredibile, davvero! Ancora non riesco a crederci. Michel è accusato di aver rubato i soldi dell’Ordine e deve un milione di pesos a Philippe de Poincy, il governatore generale delle colonie francesi! Impossibile! E ora tocca a me recuperare quei soldi!
 Sembra che il mio viaggio si stia per allungare, e la povera Lulu dovrà trovarsi un altro amante. Beh, conoscendo le sue abitudini, non ci metterà molto. E io sto per affrontare una “grande” opportunità. Michel ha detto che diventerò marinaio e capitano di una mia nave. Non posso dire di esserne entusiasta, ma temo di non avere scelta e dovrò accettare il mio destino. Mio fratello ha parlato di una buona nave, una lugger, così l’ha chiamata. Dovrei andare dal costruttore navale locale e informarmi sull’acquisto dell’imbarcazione. E dove li troverò i soldi?
@@ -425,7 +425,7 @@ La fortezza è nostra! Tutti i nemici sono stati eliminati. Ora devo tornare all
 #TEXT 38
 Lo squadrone spagnolo è stato completamente distrutto. Saint-Pierre è al sicuro, finalmente. È stata una battaglia dura, ma ce l’ho fatta! Ora devo sbarcare e cercare Michel in città.
 #TEXT 39
-Michel si è congratulato con me, ma c’era qualcosa di strano nel suo tono. Anche il modo in cui mi guardava non mi è piaciuto… o forse è solo la mia immaginazione? Comunque sia, domani lo vedrò da padre Benoît. È ora che mi mostri le sue carte…
+Michel si è congratulato con me, ma c’era qualcosa di strano nel suo tono. Anche il modo in cui mi guardava non mi è piaciuto... o forse è solo la mia immaginazione? Comunque sia, domani lo vedrò da padre Benoît. È ora che mi mostri le sue carte...
 #TEXT 40
 Padre Vincento è di nuovo in scena. Il suo messaggero mi ha portato una lettera e mi ha assicurato che l'inquisitore non rappresenta una minaccia per me. Vediamo un po’ cosa vuole dirmi Sua Eminenza. Meglio leggere subito la lettera.
 #TEXT 41
@@ -521,7 +521,7 @@ Ho trovato il cadavere di un pirata o bandito nella giungla. Aveva con sé degli
 #TEXT 2
 Si è scoperto che gli orecchini appartenevano alla moglie del governatore. Jacques Dyel du Parquet è stato molto contento che il gioiello sia finalmente tornato alla sua famiglia. In segno di gratitudine, mi ha persino regalato una mappa dell’arcipelago.
 #TEXT 3
-Ho venduto gli orecchini all’usuraio del posto per trentacinque dobloni d’oro. Un buon affare…
+Ho venduto gli orecchini all’usuraio del posto per trentacinque dobloni d’oro. Un buon affare...
 #TEXT 4
 Ho venduto gli orecchini al mercante locale per quattromila pesos. Un buon affare...
 
@@ -608,7 +608,7 @@ La corvetta Arbutus sta pattugliando vicino ad Antigua. Non so perché, ma sono 
 #TEXT 8
 Donovan era troppo forte per me. Ho dovuto ritirarmi. Peccato, non riuscirò a trovare Rumba...
 #TEXT 9
-Ho affondato l’Arbutus insieme al suo capitano, all’equipaggio e al povero Rumba. Eh, che sfortuna davvero…
+Ho affondato l’Arbutus insieme al suo capitano, all’equipaggio e al povero Rumba. Eh, che sfortuna davvero...
 #TEXT 10
 Sono salito a bordo della corvetta di Donovan. Come immaginavo, Helen era tenuta lì prigioniera. Quel bastardo l’aveva rinchiusa nella stiva, tra i topi, quindi sono arrivato proprio in tempo. Ora devo tornare nella mia cabina e parlare con lei.
 #TEXT 11
@@ -737,7 +737,7 @@ Henrik Vedecker era contento che gli avessi restituito il suo abito. Mi ha regal
 #QUEST LSC_Drink
 Bottoms Up!
 #TEXT 1
-Leonard Musket, l’ubriacone del posto, mi ha proposto un trucco interessante: controllare uno scrigno del tesoro di Giuseppe Fazio. Mi ha spiegato il suo piano astuto: devo far bere Fazio fino a farlo crollare. Beh, proviamoci…
+Leonard Musket, l’ubriacone del posto, mi ha proposto un trucco interessante: controllare uno scrigno del tesoro di Giuseppe Fazio. Mi ha spiegato il suo piano astuto: devo far bere Fazio fino a farlo crollare. Beh, proviamoci...
 #TEXT 2
 Fazio mi ha proposto di giocare personalmente al “bevi e dimentica”. La sfida tra me e Giuseppe inizia oggi alle nove di sera nella taverna del posto. Devo arrivare puntuale, altrimenti perderò i miei dobloni. Dubito di riuscire a bere più del grassone...
 #TEXT 3
@@ -759,7 +759,7 @@ Domani mattina, alle otto, ci arriveremo a nuoto. Devo andare al "ponte storto" 
 #TEXT 2
 Sono stato troppo lento e Richard è partito senza di me. Purtroppo, il nostro viaggio è annullato...
 #TEXT 3
-Eccoci! Nuoto verso l’anello esterno. Richard mi mostrerà la pinaccia e poi dovrò vedermela da solo con i granchi, lui non potrà aiutarmi. Spero solo che non ce ne siano troppi…
+Eccoci! Nuoto verso l’anello esterno. Richard mi mostrerà la pinaccia e poi dovrò vedermela da solo con i granchi, lui non potrà aiutarmi. Spero solo che non ce ne siano troppi...
 #TEXT 4
 La battaglia non è stata facile, ma tutti i granchi sono stati eliminati. Ora possiamo controllare la stiva.
 #TEXT 5
@@ -791,16 +791,16 @@ Suppongo che dovrei cominciare andando al quartier generale di Rivados e parland
 #TEXT 11
 Chimiset ha detto che potrebbero tentare di sparare a Shark mentre farà la sua solita passeggiata sulla galleria di poppa della 'San Augustine'. Potrebbero colpirlo dalla piattaforma della 'Furie' o dal bompresso della 'Santa Florentine'. Per un colpo del genere serve un moschetto preciso e in grado di sparare a lunga distanza. Chimiset non ha mai visto un’arma simile sull’isola, ma questo non significa che non possa trovarsi qui. Dovrei chiedere in giro tra la gente del posto, magari qualcuno ha sentito parlare di un moschetto del genere. Sarebbe un indizio per scoprire il possibile assassino.
 #TEXT 12
-Il mercante mi ha detto che sull’isola esiste un moschetto a lunga gittata e molto preciso, e che appartiene a un certo Adolf Barbier. Interessante… ma pare che anche una certa Red Mary e Cyclops Marcello abbiano messo gli occhi su quest’arma. Barbier si fa vedere spesso in taverna. Meglio andare a scambiare due parole con lui…
+Il mercante mi ha detto che sull’isola esiste un moschetto a lunga gittata e molto preciso, e che appartiene a un certo Adolf Barbier. Interessante... ma pare che anche una certa Red Mary e Cyclops Marcello abbiano messo gli occhi su quest’arma. Barbier si fa vedere spesso in taverna. Meglio andare a scambiare due parole con lui...
 #TEXT 13
 Non ho trovato Adolf nella taverna, ma ho scoperto il nome dell’ultimo uomo che ha visto Barbier. Giuseppe Fazio, vive sulla “Caroline”. È ora di fargli visita.
 Sancho mi ha raccontato cose interessanti: entrambi hanno motivi per odiare Shark. Red Mary pensa che lui abbia ucciso il suo amante, Alan Milrow, mentre Marcello odia tutti i pirati. Inoltre, Cyclops era un cacciatore reale, quindi dev’essere un tiratore formidabile. Uno di loro è il cecchino che sto cercando. Ora devo trovare Barbier e il suo fucile...
 #TEXT 14
 Sembra che ora tutto sia più chiaro. Adolf Barbier si è arricchito all’improvviso, ha riscattato il suo fucile e si è comprato una nuova cabina sulla ‘Santa Florentine’. Chimiset aveva ragione: è davvero un ottimo posto da cui sparare. Quindi, le mie supposizioni su Red Mary e Cyclops erano sbagliate... Beh, è ora di andare a scoprire la verità da questo Adolf.
 #TEXT 15
-Il gentile Adolfo, in realtà, tanto gentile non был. Mi ha dato del “pazzo” quando ho provato ad accusarlo di tramare contro l’ammiraglio, poi mi ha aggredito. Ho dovuto calmarlo a modo mio… Ora dovrei controllare il suo cadavere e la sua cabina, magari trovo qualcosa di interessante. Anche il fucile deve essere qui da qualche parte.
+Il gentile Adolfo, in realtà, tanto gentile non был. Mi ha dato del “pazzo” quando ho provato ad accusarlo di tramare contro l’ammiraglio, poi mi ha aggredito. Ho dovuto calmarlo a modo mio... Ora dovrei controllare il suo cadavere e la sua cabina, magari trovo qualcosa di interessante. Anche il fucile deve essere qui da qualche parte.
 #TEXT 16
-C’era una chiave e una nota interessante sul corpo di Adolf. Non agiva da solo. Tutto si è di nuovo complicato… Forse Adolf non era affatto un assassino. Ma allora chi? L’unico modo per scoprirlo — nascondere il corpo, restare qui e aspettare che i misteriosi visitёri vengano a trovare Adolf a mezzanotte per la sua chiave.
+C’era una chiave e una nota interessante sul corpo di Adolf. Non agiva da solo. Tutto si è di nuovo complicato... Forse Adolf non era affatto un assassino. Ma allora chi? L’unico modo per scoprirlo — nascondere il corpo, restare qui e aspettare che i misteriosi visitёri vengano a trovare Adolf a mezzanotte per la sua chiave.
 #TEXT 17
 Red Mary e Marcello Cyclops erano complici di Barbier. Tutti e due. Non abbiamo avuto modo di parlare: Mary ha capito subito chi ero e mi ha attaccato. Ho dovuto ucciderli. Mi dispiace per lei, è stata ingannata da Chad ed è morta per colpa dei suoi intrighi. Lui ha solo sfruttato il suo carattere e i suoi sentimenti.
 Tempo di controllare di nuovo i cadaveri – magari troverò qualche altra prova.
@@ -945,7 +945,7 @@ Sono arrivato troppo tardi e, ovviamente, la seta è già finita. Che sciocco so
 #TEXT   5
 Ho trovato una barca nel posto di cui mi aveva parlato Jacques. Non stavano pescando pesci, ma merce. Era chiaro che cercavano la mia seta, così sono salito a bordo della loro carretta. Ho contato nove balle di seta, non sei come mi avevano detto. Cosa fare adesso? Dire la verità a Jacques o tenermi tre balle per me?
 #TEXT   6
-Ho trovato una barca nella zona di cui mi parlava Jacques. Non stригали рыбу, а что-то другое. Оказалось, что они ловили мой шелк — это было очевидно. Я припугнул капитана, и весь шелк оказался у меня на борту. Всего девять тюков, а не шесть, как мне сказали. Что делать? Рассказать Жаку правду или оставить себе три тюка?
+Ho trovato una barca nella zona di cui mi parlava Jacques. Non stavano pescando pesce, ma qualcos'altro. Si è scoperto che stavano recuperando la mia seta, era evidente. Ho spaventato il capitano e tutta la seta è finita a bordo della mia nave. In totale erano nove balle, non sei come mi era stato detto. Cosa fare? Dire la verità a Jacques o tenere per me le tre balle in più?
 #TEXT   7
 Finalmente, qui si fa sul serio. Sembra che qualcuno abbia bisogno di uno sciocco da usare come pedina. È il momento di prendere l’iniziativa.
 #TEXT   8
@@ -958,7 +958,7 @@ La polacca "Marlin" è stata catturata. Questo mi sarà molto utile: potrò avvi
 #TEXT   10
 'Marlin' è affondata durante uno scontro. Maledizione, che sfortuna! Ora non potrò avvicinarmi alla nave di Jackman senza farmi notare. Forse dovrei trovare un'altra polacca, darle un nuovo nome e provare a ingannarli...
 #TEXT   11
-Sto navigando vicino alle Turks, ma non c’è traccia del mio nemico… Strano, forse la mia squadra li ha messi in fuga. Dovrei tornare qui da solo, a bordo della polacca chiamata ‘Marlin’ – solo così avrò una possibilità di mettere fine a questa banda.
+Sto navigando vicino alle Turks, ma non c’è traccia del mio nemico... Strano, forse la mia squadra li ha messi in fuga. Dovrei tornare qui da solo, a bordo della polacca chiamata ‘Marlin’ – solo così avrò una possibilità di mettere fine a questa banda.
 #TEXT   12
 Bene bene... Vedo la brigantina, è ferma in una baia, le vele sono ammainate. Nessuna traccia della corvetta 'Devilfish' né della fregata 'Merciless'. Non mi piace questa calma prima della tempesta...
 #TEXT   13
@@ -974,7 +974,7 @@ Ho liberato Bernard Vensan, il capitano della "Separator", e gli ho ordinato di 
 #TEXT   18
 Io e Danielle abbiamo parlato di Jacob, e lei mi ha davvero aiutato. La lettera di Knives mi ha dato qualche indizio su dove trovare Jackman: navigherà vicino a Isla Tesoro, aspettando il suo caro fratello. È ora di fargli visita. Il nostro eroico "Marlin" mi accompagnerà ancora una volta; usare altre navi potrebbe mettere Jacob in allerta.
 #TEXT   19
-Sto navigando vicino a Isla Tesoro, ma di Jackman non c’è traccia… Sembra che quel bastardo si stia nascondendo. Dovrei venire qui da solo, a bordo della polacca chiamata “Marlin”: forse così Jacob uscirà finalmente allo scoperto.
+Sto navigando vicino a Isla Tesoro, ma di Jackman non c’è traccia... Sembra che quel bastardo si stia nascondendo. Dovrei venire qui da solo, a bordo della polacca chiamata “Marlin”: forse così Jacob uscirà finalmente allo scoperto.
 #TEXT   20
 Ho trovato Jackman. Una polacca contro una fregata: non è affatto una sfida leale, soprattutto visto che voglio abbordare il "Centurio". La nave è piena di mercenari e non mi piace per niente l’aria feroce che hanno. Di certo, tra la ciurma di Jackman non ci sono principianti. Speriamo solo che il "Marlin" ci permetta di avvicinarci abbastanza. Sono sicuro che ingannare Jackman non sarà affatto semplice... @<sText>
 #TEXT   21
@@ -1050,7 +1050,7 @@ Forse potrei prima parlare con Svenson: qualche informazione in più su Jessica,
 #TEXT   7
 Ho trovato l’isola. Non mi piace questo posto, anche se non vedo nulla, что могло бы представлять угрозу. Очевидно, здесь раньше кто-то жил — старые руины небольшого дома и подвесной мост говорят о том, что когда-то остров был обитаем. Но я не понимаю, как кто-то мог выбрать такое место для жизни.
 Ho trovato una vecchia tomba qui. Non devo scavare, qualcuno l’ha già fatto prima di me. È vuota, e vicino c’è una bara con dei resti. Niente carte, nessun documento, neanche un anello o una croce. Forse il mio viaggio è stato inutile... Eppure, sento che questo scoglio deserto nasconde ciò che cerco. Una chiave per dimostrare le origini di Helen.
-Ho passato qui solo poche ore, ma questo posto mi mette davvero a disagio. Provo una paura strana, quasi animale. Se non fosse per Helen, sarei già scappato via. La tomba mi dà i brividi, nonostante il caldo. Gli scheletri non migliorano certo l’atmosfera. E poi, non riesco a scrollarmi di dosso la sensazione di essere osservato da qualcuno che non riesco a vedere. Sono sicuro di non essere solo qui…
+Ho passato qui solo poche ore, ma questo posto mi mette davvero a disagio. Provo una paura strana, quasi animale. Se non fosse per Helen, sarei già scappato via. La tomba mi dà i brividi, nonostante il caldo. Gli scheletri non migliorano certo l’atmosfera. E poi, non riesco a scrollarmi di dosso la sensazione di essere osservato da qualcuno che non riesco a vedere. Sono sicuro di non essere solo qui...
 #TEXT   8
 Maledizione alla mia testardaggine! Ho sempre contato solo su me stesso e sulla mia spada, così ho deciso di esplorare quella scogliera inquietante di notte. Da solo, senza i miei ufficiali! E sono sopravvissuto per un pelo...
 I miei istinti non mi hanno tradito. Non ero solo qui, e avevo tutte le ragioni per temere questo posto. È strano che la mia mente non sia impazzita... Ho incontrato un cadavere vivente vicino alla tomba. Jessica Rose, l’assassina di Beatrice, è morta vent’anni fa. È la creatura più spaventosa che abbia mai visto nei miei incubi. E mi ha attaccato.
@@ -1244,7 +1244,7 @@ Non me lo aspettavo! Mio caro fratello è sparito. Mi ha lasciato solo una stran
 Nonostante tutte le strane insinuazioni dell’abate Benoit, sono certo che Michel intenda proseguire la sua avventura con quell’oro indiano. Ne ha parlato una volta. Pare che ce ne sia davvero tanto, e mio fratello è un tipo ingegnoso: di certo non si muoverebbe per quattro monete. A dire il vero, a me dell’oro importa poco—anche se, ammetto, non farebbe male—ma quello che voglio davvero è parlare con mio fratello. È stato lui a farmi capire che non sono altro che una pedina nella sua partita, una pedina il cui unico scopo era tirarlo fuori di prigione.
 Cosa dovrei fare per prima? Chi conosce meglio Michel? Sicuramente Philippe de Poincy. Ma non credo che quella vecchia volpe mi rivelerà i suoi segreti. Meglio andare alla base sotterranea e parlare con l’ufficiale: i maltesi sapranno sicuramente qualcosa su mio fratello!
 #TEXT   2
-Non ho ottenuto molto dall’ufficiale. A parte le cose che già sapevo, mi ha detto che Michel e de Poincy collaboravano contro gli spagnoli, catturando le loro navi cariche di tesori. Hm. Ma perché il cavaliere si è infuriato così tanto con mio fratello? Per cosa, per un solo errore? Quel trasporto doveva essere davvero importante. Forse Michel era solo deluso da tutta quell’ingiustizia e ha deciso di sparire in silenzio? Di tagliare i ponti col passato? No… La mia esperienza mi dice di no. Mio fratello non è una ragazzina sentimentale, ma uno stratega esperto e un soldato. Teme forse la vendetta di de Poincy? No… Ha già ottenuto tutto ciò che voleva, e se avesse voluto uccidere Michel, lo avrebbe già fatto. Qui c’è qualcos’altro… Meglio che interroghi il prigioniero spagnolo.
+Non ho ottenuto molto dall’ufficiale. A parte le cose che già sapevo, mi ha detto che Michel e de Poincy collaboravano contro gli spagnoli, catturando le loro navi cariche di tesori. Hm. Ma perché il cavaliere si è infuriato così tanto con mio fratello? Per cosa, per un solo errore? Quel trasporto doveva essere davvero importante. Forse Michel era solo deluso da tutta quell’ingiustizia e ha deciso di sparire in silenzio? Di tagliare i ponti col passato? No... La mia esperienza mi dice di no. Mio fratello non è una ragazzina sentimentale, ma uno stratega esperto e un soldato. Teme forse la vendetta di de Poincy? No... Ha già ottenuto tutto ciò che voleva, e se avesse voluto uccidere Michel, lo avrebbe già fatto. Qui c’è qualcos’altro... Meglio che interroghi il prigioniero spagnolo.
 #TEXT   3
 Ed eccomi di nuovo a cacciarmi nei guai. Solo che stavolta lo faccio di mia spontanea volontà. Gli spagnoli mi hanno detto abbastanza... Basta pensare a mio fratello, no? Spero di arrivare al suo oro prima che lasci l’arcipelago. Credo di avere abbastanza tempo, non sembra che il tesoro sia stato nascosto bene, visto che non si collega agli ultimi avvenimenti. Non è poi così scontato...
 Ci penserò nel frattempo. Ora devo occuparmi degli spagnoli, ho già un piano pronto.
@@ -1276,13 +1276,13 @@ Sembra che il viaggio sia finito. Il nostro novello mercante ha fatto un passo f
 Ebbene, finalmente ho raggiunto il mio cliente. Il suo galeone, l’“Admirable”, è qui. Ora devo trovare un modo per catturare il capitano e dare un’occhiata alla sua cabina. Spero proprio di trovare lì le suppellettili della chiesa. Un assalto diretto sarebbe una follia: non sono così stupido da attaccare una nave francese proprio in porto. Meglio iniziare facendo visita a Gaius Marchais a bordo della sua nave.
 #TEXT   16
 Fama e gloria sono belle cose, certo, ma non nella mia situazione attuale. Il nostromo di Gaius mi ha riconosciuto subito come "l’eroe di Saint Pierre" appena sono salito a bordo... Basta un mio errore, e tutto il Caribe saprà chi ha rapito Marchais. Non mi renderà più popolare, e de Poincy non ne sarà affatto contento.
-Ecco la situazione: Gaius Marchais è seduto in una taverna, aspetta quei famosi mercanti, il suo galeone è all’ancora e regna l’incertezza. Quel maledetto mercante fallito potrebbe restare qui per un anno e io non potrei farci nulla: non posso attaccare il suo galeone e non posso catturarlo in città. Devo trovare un modo per far uscire Gaius da Basse-Terre, magari da solo in mare, senza testimoni… Ma quell’idiota non se ne andrà finché non avrà venduto la sua vaniglia. Che diavolo dovrei fare?
+Ecco la situazione: Gaius Marchais è seduto in una taverna, aspetta quei famosi mercanti, il suo galeone è all’ancora e regna l’incertezza. Quel maledetto mercante fallito potrebbe restare qui per un anno e io non potrei farci nulla: non posso attaccare il suo galeone e non posso catturarlo in città. Devo trovare un modo per far uscire Gaius da Basse-Terre, magari da solo in mare, senza testimoni... Ma quell’idiota non se ne andrà finché non avrà venduto la sua vaniglia. Che diavolo dovrei fare?
 #TEXT   17
 Improvvisamente mi è venuta un’idea: ho visto una brigantina al porto, ho conosciuto il suo capitano, che si è rivelato spagnolo, e gli ho proposto di comprare la vaniglia da Marchais. Carlos mi ha assicurato che l’affare si farà. In fondo, anche lui ci guadagna. Appena avrà venduto il suo carico e sarà salpato verso il mare aperto, potrò avere Gaius.
 #TEXT   18
 Carlos è riuscito a concludere l’accordo. Il carico verrà trasbordato sulla sua brigantina domani a mezzogiorno nella baia di Casper. Devo salpare e dirigermi verso Capo Inaccessibile – così penseranno che ho lasciato la Guadalupa. Nessuno sospetterà che io sia coinvolto nella scomparsa di Marchais.
 #TEXT   19
-Ecco perché l’“Admirable” è ancora qui! La città pullula di marinai ubriachi del galeone—ovviamente, li ha pagati usando i miei soldi. Sembra che sulla nave siano rimaste solo poche sentinelle; devo approfittare di questa occasione e salire a bordo. Poi mi intrufolerò nella cabina del capitano e rapirò Gaius. È rischioso, ma la ricompensa… Nessuno sospetterà di me.
+Ecco perché l’“Admirable” è ancora qui! La città pullula di marinai ubriachi del galeone—ovviamente, li ha pagati usando i miei soldi. Sembra che sulla nave siano rimaste solo poche sentinelle; devo approfittare di questa occasione e salire a bordo. Poi mi intrufolerò nella cabina del capitano e rapirò Gaius. È rischioso, ma la ricompensa... Nessuno sospetterà di me.
 #TEXT   20
 Il mio piano ha funzionato alla perfezione. Gaius è stato rinchiuso nella cabina come un prigioniero di valore, sotto sorveglianza e in catene. Posso solo immaginare la faccia che faranno i marinai dell’"Admirable" quando torneranno a bordo... Ma io sono fuori da ogni sospetto, ed è questo che conta davvero.
 Il corsaro sfortunato si è rifiutato di parlarmi dei vasi sacri. Non ne ho trovato nessuno nella sua cabina, quindi li ha già venduti. Prima o poi parlerà. L’Inquisizione sa bene come far confessare la gente. Salpo verso Cuba, al faro di Santiago: devo consegnare il prigioniero all’inquisitore e prendere la mia vaniglia.
@@ -1294,7 +1294,7 @@ Padre Vincento mi ha dato le informazioni di cui avevo bisogno, proprio come pen
 Un banchiere di Curaçao mi ha detto che un certo pirata chiamato Rollie il Cappello ha comprato un turibolo d’oro, ma poco dopo è stato catturato dal colonnello Fox. Probabilmente ora si sta seccando al sole cocente di St. John’s. Dovrei chiedere a Fox del turibolo: magari i suoi uomini l’hanno confiscato.
 Ostensory è stato comprato da una certa señora Belinda de Ribero di Cumana, parente addirittura del governatore. Le cose si fanno sempre più interessanti...
 #TEXT   24
-Il colonnello Fox mi ha detto che il turibolo d’oro, insieme ad altra roba di Rollie, potrebbe essere nascosto da qualche parte a Dominica. Non ho altri indizi, dovrò esplorare i luoghi più appartati dell’isola… magari troverò qualcosa.
+Il colonnello Fox mi ha detto che il turibolo d’oro, insieme ad altra roba di Rollie, potrebbe essere nascosto da qualche parte a Dominica. Non ho altri indizi, dovrò esplorare i luoghi più appartati dell’isola... magari troverò qualcosa.
 #TEXT   25
 Ho trovato un nascondiglio segreto nella grotta: lì c’erano i risparmi di Rollie e anche il turibolo d’oro, quello che cercavo.
 #TEXT   26
@@ -1324,7 +1324,7 @@ Quindi, ho trovato Gino Gvineili a St. John's. Vive a casa di John Murdock. Prov
 Non è incredibile! Gino ha detto che il nostro mondo sta per finire. Kukulcan in persona cancellerà la nostra realtà cambiando il passato. Forse Gino ha respirato troppo a lungo dai suoi flaconi ed è impazzito, ma questo significherebbe che anche padre Vincento ha perso la testa, e questo è davvero difficile da credere. Quindi devo trovare gli altri due componenti del Guardiano della Verità: la bussola e la mappa. Poi dovrò cercare quella misteriosa isola di Ksocheatem.
 Qualcuno di nome Archibald Calhoun possiede la bussola. E la mappa appartiene all’Inquisizione... Meglio chiedere a padre Vincento, ma con molta cautela.
 #TEXT   38
-Sembra che padre Vincento si sia fidato di me e creda che Gino sia morto. Beh, è meglio così per tutti noi! Mi chiedo quanto sarebbe sopravvissuto nelle mani dell’Inquisizione… Un giorno, due o forse una settimana?
+Sembra che padre Vincento si sia fidato di me e creda che Gino sia morto. Beh, è meglio così per tutti noi! Mi chiedo quanto sarebbe sopravvissuto nelle mani dell’Inquisizione... Un giorno, due o forse una settimana?
 La mappa "delle Due Apparizioni" è nelle mani di Ramon de Mendoza, così come tutte le altre appartenenti a Ksatl Cha. Peccato, non va affatto bene! Questo caballero è irraggiungibile per ora... ma tutto a suo tempo. Adesso devo dirigermi a Trinidad, l’ultimo posto dove è stata avvistata la fregata di Miguel Dichoso.
 #TEXT   39
 Secondo il capo del porto locale, Miguel Dichoso era davvero a San Jose sulla sua fregata "Santa Quiteria". Aveva intenzione di salpare per Cadice, in Europa. Devo continuare a interrogare chiunque abbia legami con il mare: forse qualcuno saprà dirmi qualcosa di utile.
@@ -1349,9 +1349,11 @@ Alcuni tipi davvero loschi hanno cercato di rapinarmi. Questa è nuova per me. C
 #TEXT   46
 Sono arrivato a L'Avana, ma non vedo nessую squadra navale. Non entrerò direttamente in porto: meglio sbarcare nella baia di Batabanó senza attirare l’attenzione. È vicino alla città, così potrò chiedere alla gente del posto di Diego e della sua squadra. La mia lettera di credito non stupirà le guardie, ma dovrebbe bastare con la gente comune.
 #TEXT   47
-L’oste mi ha dato informazioni dettagliate sul luogo dove si trova Diego, e l’ha fatto con una facilità sospetta. Davvero i fratelli gesуити пользуются здесь таким уважением? Похоже, Монтойя чинит свой корабль где-то у мыса Сан-Антонио, это южная точка Кубы. Мне нужно высадиться там и осмотреться. Но я поступлю иначе: отправлю абордажную команду пешком через джунгли — они прикроют меня...
+L'oste mi ha dato informazioni dettagliate sul luogo dove si trova Diego, e l'ha fatto con una facilità sospetta. Davvero i fratelli gesuiti godono di tanto rispetto da queste parti?
+Sembra che Montoya stia riparando la sua nave da qualche parte vicino a Capo San Antonio, il punto più meridionale di Cuba.
+Dovrei sbarcare lì e dare un’occhiata in giro. Ma farò diversamente: manderò la squadra d’abbordaggio a piedi attraverso la giungla - loro mi copriranno...
 #TEXT   48
-La squadra d’abbordaggio sta attraversando la giungla diretta a Capo San Antonio e ci arriverà tra sei ore. Sbarcherò anch’io lì tra sei ore, allora. Spero solo che Diego stia davvero riparando la sua nave, e non preparando i cannoni...
+La squadra d'abbordaggio sta attraversando la giungla diretta a Capo San Antonio e ci arriverà tra sei ore. Sbarcherò anch’io lì tra sei ore, allora. Spero solo che Diego stia davvero riparando la sua nave, e non preparando i cannoni...
 #TEXT   49
 Era prevedibile: don Diego de Montoya, noto anche come il misterioso collezionista di pugnali, mi ha teso una trappola con l’aiuto della mia ex prigioniera. Sembra che anche l’oste dell’Havana abbia avuto la sua parte in questa storia. Dovrò fargli visita più tardi... e magari impiccarlo al suo lurido grembiule... Gli spagnoli sono stati sconfitti, ma Diego è riuscito a fuggire. È ora di salpare.
 #TEXT   50
@@ -1381,7 +1383,7 @@ Ma adesso Archibald Colhaun è la mia priorità assoluta: solo lui può dirmi qu
 Il mio colloquio con Steven non solo non mi ha aiutato, ma ha aggiunto nuove contraddizioni. La 'Santa Quiteria' si è rivelata essere la 'San Martin'... oppure è un'altra fregata? Lo Squalo conosceva Dichoso tempo fa... E poi c’è di nuovo Paterson: la sua nave ammiraglia, che mi era tanto piaciuta, è proprio quella che Steven ha comprato da Dichoso. Colhaun, Paterson, don Miguel Dichoso – sono tutti legati in qualche modo.
 Visitare padre Vincento sarebbe inutile: non ho scoperto nulla di interessante. Devo occuparmi della nostra simpatica coppia, Paterson e Colhaun. Comincerò parlando con Fadey: è stato lui a darmi il pugnale che Colhaun aveva preso da Tayasal.
 #TEXT   60_1
-La mia conversazione con l’oste locale non solo non mi ha aiutato, ma ha creato ancora più confusии. La “Santa Quiteria” in realtà è la “San Martin”… o forse è un’altra fregata? E poi di nuovo Paterson: la sua nave ammiraglia, quella che mi era tanto piaciuta, è proprio quella che Steven Dodson ha comprato da Dichoso. Colhaun, Paterson, don Miguel Dichoso – sono tutti collegati in qualche modo.
+La mia conversazione con l’oste locale non solo non mi ha aiutato, ma ha creato ancora più confusии. La “Santa Quiteria” in realtà è la “San Martin”... o forse è un’altra fregata? E poi di nuovo Paterson: la sua nave ammiraglia, quella che mi era tanto piaciuta, è proprio quella che Steven Dodson ha comprato da Dichoso. Colhaun, Paterson, don Miguel Dichoso – sono tutti collegati in qualche modo.
 Visitare padre Vincento sarebbe inutile: non ho scoperto nulla di interessante. Devo occuparmi della nostra simpatica coppia, Paterson e Colhaun. Comincerò parlando con Fadey: è stato lui a darmi il pugnale che Colhaun ha preso a Tayasal.
 #TEXT   61
 Due loschi individui hanno cercato di derubarmi proprio nella mia cabina. Quanto ancora dovrà durare questa storia? Chi li ha mandati? Hanno aperto e rovistato tutti i bauli, ma non hanno preso nulla. È chiaro che cercavano qualcosa che porto sempre con me.
@@ -1406,7 +1408,7 @@ Dannazione... È una trappola! Non c’è nessuna “Freccia della Via”, solo 
 #TEXT   70
 Paterson e Colhaun mi hanno attirato su un’isola deserta e sconosciuta per prendersi il pugnale e la mappa, e liberarsi di un rivale. Paterson sa del “Guardiano della Verità” e, credo, vuole anche lui trovare Ksocheatem... Sono riuscito a malapena a sfuggire alla trappola organizzata dallo scozzese. I suoi moschettieri sono stati eliminati. Paterson è fuggito nella giungla. Devo prenderlo!
 #TEXT   71
-Il vile scozzese è fuggito verso la baia, dove mi hanno aspettato Archibald Colhaun e le sue ragazze. La battaglia è stata dura, ma ora tutti giacciono sulla sabbia. Meglio che dia un’occhiata al corpo di Achi: usava un curioso moschetto a doppia canna, magari trovo anche qualcos’altro di utile…
+Il vile scozzese è fuggito verso la baia, dove mi hanno aspettato Archibald Colhaun e le sue ragazze. La battaglia è stata dura, ma ora tutti giacciono sulla sabbia. Meglio che dia un’occhiata al corpo di Achi: usava un curioso moschetto a doppia canna, magari trovo anche qualcos’altro di utile...
 #TEXT   72
 Ho trovato non solo un ottimo moschetto, ma anche una chiave interessante sul cadavere di Archibald. Ora devo solo scoprire quale serratura apre.
 È il momento di prepararsi per la battaglia: la squadra di Paterson è da queste parti.
@@ -1414,7 +1416,7 @@ Ho trovato non solo un ottimo moschetto, ma anche una chiave interessante sul ca
 La squadra di Paterson è stata annientata e lo scozzese stesso eliminato. Un nemico in meno... Quanti ne ho già affrontato? E quanti ancora mi aspettano?
 Ora la mia priorità assoluta è trovare la "Freccia della Via". Paterson ha detto che è nascosta in Giamaica, ma non a Port Royal, bensì in un posto dove nessuno la cercherebbe. Ma la troverò, devo mettere le mani su questa maledetta bussola!
 #TEXT   74
-L’ultimo componente è stato trovato. Ora devo pensare a come usare il Guardiano della Verità per trovare Ksocheatem. Credo che scoprire quest’isola risponderebbe a molte domande e risolverebbe parecchi enigmi su Dichoso, la sua fregata perduta, i tesori indiani e mio fratello. Diego e Paterson erano così ansiosi di mettere le mani sul Guardiano! Questo significa che c’è qualcosa di sensato in tutto ciò… Se davvero esiste quest’isola, allora esiste anche la maschera di Kukulcan, che potrebbe permettermi di salvare il nostro destino e fermare Kukulcan… maledizione, non avrei mai pensato di ragionare in questo modo! Sembra proprio che condivida l’inquietudine di mio padre Vincento e le preoccupazioni di Gino…
+L’ultimo componente è stato trovato. Ora devo pensare a come usare il Guardiano della Verità per trovare Ksocheatem. Credo che scoprire quest’isola risponderebbe a molte domande e risolverebbe parecchi enigmi su Dichoso, la sua fregata perduta, i tesori indiani e mio fratello. Diego e Paterson erano così ansiosi di mettere le mani sul Guardiano! Questo significa che c’è qualcosa di sensato in tutto ciò... Se davvero esiste quest’isola, allora esiste anche la maschera di Kukulcan, che potrebbe permettermi di salvare il nostro destino e fermare Kukulcan... maledizione, non avrei mai pensato di ragionare in questo modo! Sembra proprio che condivida l’inquietudine di mio padre Vincento e le preoccupazioni di Gino...
 Non andrò da padre Vincento finché non troverò Ksocheatem. Tutta questa confusione su ‘Santa Quiteria’, ‘San Martin’, ‘Fortuna’ e Miguel Dichoso non avrà senso finché non scoprirò l’isola. Gino mi aiuterà a far funzionare il Guardiano. È ora di salpare verso Antigua!
 #TEXT   75
 La squadriglia di Paterson è stata sconfitta, e lo scozzese è morto. Un nemico in meno... Ma quanti ne ho già affrontati, e quanti ancora ne arriveranno?
@@ -1477,7 +1479,7 @@ Steven Dodson non ha visto Dichoso. Devo chiedere in giro per la città.
 #TEXT   3
 L’oste di Isla Tesoro mi ha raccontato una cosa interessante e un po’ inquietante: Miguel Dichoso mi sta cercando di persona. Beh, non ho intenzione di scappare da lui. Pare che sia salpato verso Blueweld. Continuerò comunque a chiedere in giro di Dichoso...
 #TEXT   4
-Quell’uomo strambo, Abraham Norman, mi ha davvero aiutato. Forse non è poi così pazzo, visto che è riuscito a farmi vedere cose che avevo sempre avuto davanti agli occhi. Come ho fatto a essere così cieco per tutto questo tempo? Miguel Dichoso e Michel de Monper sono la stessa persona, è mio fratello! Michel il Fortunato, così lo chiamavano nell’esercito per la sua sorte… Non capisco perché Abraham sia convinto che Michel sia un mezzosangue, è mio fratello. Forse è il peggiore dei fratelli, suppongo…
+Quell’uomo strambo, Abraham Norman, mi ha davvero aiutato. Forse non è poi così pazzo, visto che è riuscito a farmi vedere cose che avevo sempre avuto davanti agli occhi. Come ho fatto a essere così cieco per tutto questo tempo? Miguel Dichoso e Michel de Monper sono la stessa persona, è mio fratello! Michel il Fortunato, così lo chiamavano nell’esercito per la sua sorte... Non capisco perché Abraham sia convinto che Michel sia un mezzosangue, è mio fratello. Forse è il peggiore dei fratelli, suppongo...
 Michel è andato a Blueweld e ha lasciato i suoi scagnozzi a Isla Tesoro per tenermi qui. Beh, me ne occuperò io. È ora di combattere.
 #TEXT   5
 Sono stato attaccato da uno squadrone di pirati a Isla Tesoro. È stato strano, sembrava che mi stessero aspettando.
@@ -1550,7 +1552,7 @@ Il guardiano del faro mi ha raccontato una storia interessante su quell’amulet
 #TEXT   3
 Ho parlato con Tuttuathapak, lo sciamano dei Caribi. A quanto pare, questo amuleto non mi serve a nulla da solo, ma se riuscirò a trovare altri due amuleti simili, che un tempo sono stati portati via dalla terra di Tuttuathapak da un trafficante di schiavi, lo sciamano mi concederà un certo “potere”. Tuttuathapak non sembra proprio uno che scherza, quindi vale la pena mettersi alla ricerca. Dovrei tornare dal mio vecchio conoscente, il guardiano del faro, e fargli qualche domanda in più.
 #TEXT   4
-Non appena abbiamo lasciato il porto, una tempesta improvvisa ci ha colpiti, e poi è successo l’impensabile: siamo stati attaccati dalla nave fantasma, la “Olandese Volante”! Sono saliti a bordo con una destrezza incredibile, e tutto per via di quell’amuleto indiano. Il capitano della nave fantasma me l’ha strappato di mano, quasi uccidendomi… È stato un vero miracolo che sia sopravvissuto.
+Non appena abbiamo lasciato il porto, una tempesta improvvisa ci ha colpiti, e poi è successo l’impensabile: siamo stati attaccati dalla nave fantasma, la “Olandese Volante”! Sono saliti a bordo con una destrezza incredibile, e tutto per via di quell’amuleto indiano. Il capitano della nave fantasma me l’ha strappato di mano, quasi uccidendomi... È stato un vero miracolo che sia sopravvissuto.
 #TEXT   5
 La mia nave è stata gravemente danneggiata dal "Vascello Fantasma", ma io, gli ufficiali e parte dell’equipaggio siamo riusciti a sopravvivere. Ora andrò da Tuttuathapak: lui di certo saprà perché il capitano morto potrebbe aver bisogno di quell’amuleto.
 #TEXT   6
@@ -1654,7 +1656,7 @@ Il riscatto dal governatore è stato ricevuto. È ora di tornare indietro, ma do
 #TEXT   7
 Ci ho messo troppo tempo a tornare a Saint Christopher. Forse è meglio не тревожить Пуанси и заняться чем-то более стоящим. Ufficiale, così я никогда не стану.
 #TEXT   8
-Nonostante il mio successo, Poincy è rimasto inorridito per la perdita dell’“Éclatant”. Non avevo idea che quella nave fosse così importante… Ma ormai, la mia carriera da ufficiale di marina è sicuramente finita…
+Nonostante il mio successo, Poincy è rimasto inorridito per la perdita dell’“Éclatant”. Non avevo idea che quella nave fosse così importante... Ma ormai, la mia carriera da ufficiale di marina è sicuramente finita...
 #TEXT   9
 Poincy era soddisfatto di me e mi ha ricompensato con 50.000 pesos. Ora devo accompagnare un ispettore da Parigi, il barone Noel Forget, nelle colonie di Tortuga e Port-au-Prince per un controllo. Si parte! Ho due mesi di tempo per andare e tornare.
 #TEXT   10
@@ -1676,7 +1678,7 @@ A ovest di Hispaniola, pericolosamente vicino a Port-au-Prince, abbiamo davvero 
 #TEXT   18
 Lo squadrone spagnolo è stato distrutto, il governatore e gli abitanti di Port-au-Prince possono dormire sonni tranquilli. Sto tornando a Poincy.
 #TEXT   19
-Nonostante il mio successo, Poincy è rimasto sconvolto dalla perdita dell’“Éclatant”. Non avevo idea che quella nave fosse così importante… Ma una cosa è certa: la mia carriera da ufficiale di marina è finita qui…
+Nonostante il mio successo, Poincy è rimasto sconvolto dalla perdita dell’“Éclatant”. Non avevo idea che quella nave fosse così importante... Ma una cosa è certa: la mia carriera da ufficiale di marina è finita qui...
 #TEXT   20
 Ho un incarico diplomatico: devo portare a Willemstad, a Curaçao, una lettera per Peter Stuyvesant, il capo della Compagnia Olandese delle Indie, e scortare una spedizione di merci. Mi chiedo che affari abbia Poincy con Stuyvesant... Devo sbrigarmi: tutto va fatto entro tre settimane, prima che Peter lasci Curaçao.
 #TEXT   21
@@ -1698,7 +1700,7 @@ Maledetto sia questo giorno! Sono appena entrato nel porto di Philipsburg e stav
 #TEXT   28
 Le navi olandesi sono state distrutte. Devo andarmene di qui il più in fretta possibile.
 #TEXT   29
-Chevalier stesso è rimasto sconvolto dall’incidente: non ha saputo dare una spiegazione chiara dell’improvvisa aggressività degli olandesi, anche se mi sembra che sappia molto più di quanto dica… Andrò di nuovo a Curaçao, da Stuyvesant.
+Chevalier stesso è rimasto sconvolto dall’incidente: non ha saputo dare una spiegazione chiara dell’improvvisa aggressività degli olandesi, anche se mi sembra che sappia molto più di quanto dica... Andrò di nuovo a Curaçao, da Stuyvesant.
 #TEXT   30
 Sembra che Poincy e Stuyvesant abbiano litigato per qualcosa che non riuscivano a dividersi in modo equo. Va bene. Riferirò tutto al Cavaliere appena arriverò a Saint Christopher.
 #TEXT   31
@@ -1858,7 +1860,7 @@ Domani devo andare al bordello tra le 21 e mezzanotte. Meglio non fare tardi.
 #TEXT   3
 Non ho mantenuto la promessa e ho saltato il ricevimento della Madame Botot. Spero che il governatore sia comunque indulgente con me.
 #TEXT   4
-Nessuna tregua per i malvagi, come si dice nel Libro. La notte di divertimento si è trasformata in fretta in una nuova avventura. Ancora non capisco davvero cosa ci sia dietro tutto questo, ma è proprio il momento di ricordare come si gioca a carte prima di unirmi agli altri ospiti. Mi chiedo solo cosa intendano loro per “vincite grosse”…
+Nessuna tregua per i malvagi, come si dice nel Libro. La notte di divertimento si è trasformata in fretta in una nuova avventura. Ancora non capisco davvero cosa ci sia dietro tutto questo, ma è proprio il momento di ricordare come si gioca a carte prima di unirmi agli altri ospiti. Mi chiedo solo cosa intendano loro per “vincite grosse”...
 #TEXT   5
 Le distrazioni dell’alta società si sono rivelate troppo raffinate per me. Ho perso una bella somma e sono dovuto andarmene con la coda tra le gambe. Beh, credo che la mia vita da salotto sia ormai acqua passata.
 #TEXT   6
@@ -1983,7 +1985,7 @@ Sembra che sia arrivato giusto in tempo: la battaglia non sta andando a nostro f
 #QUEST IslaMona
 Un posto da chiamare casa
 #TEXT   1
-Mi è venuta in mente una follia: trasformare la mia Isla Mona in qualcosa di più di un semplice rifugio di pirati sperduto nel cuore dei Caraibi. Il mio fedele “governatore” Rodgar non ha gradito l’idea, ma almeno mi ha detto cosa bisogna fare. Il primo passo sarà trovare attrezzi di qualità e dei coloni davvero speciali. Per gli attrezzi è semplice: parlerò con i maestri del cantiere navale. Ma i coloni… Chi mai accetterebbe di partecipare alla costruzione di qualcosa di misterioso, chissà dove e sotto quale bandiera? E tutto questo dovrà avvenire in gran segreto, senza poter tornare alla civiltà per anni. Non porterò schiavi laggiù! Comincerò dagli attrezzi, poi vedremo. Non ho fretta con questa faccenda. O forse dovrei semplicemente lasciar perdere?
+Mi è venuta in mente una follia: trasformare la mia Isla Mona in qualcosa di più di un semplice rifugio di pirati sperduto nel cuore dei Caraibi. Il mio fedele “governatore” Rodgar non ha gradito l’idea, ma almeno mi ha detto cosa bisogna fare. Il primo passo sarà trovare attrezzi di qualità e dei coloni davvero speciali. Per gli attrezzi è semplice: parlerò con i maestri del cantiere navale. Ma i coloni... Chi mai accetterebbe di partecipare alla costruzione di qualcosa di misterioso, chissà dove e sotto quale bandiera? E tutto questo dovrà avvenire in gran segreto, senza poter tornare alla civiltà per anni. Non porterò schiavi laggiù! Comincerò dagli attrezzi, poi vedremo. Non ho fretta con questa faccenda. O forse dovrei semplicemente lasciar perdere?
 #TEXT   2
 Ho comprato un set di strumenti europei di alta qualità per una bella somму. Di solito, con таким набором основывают целые колонии, ma per quello che ho pagato, dovrebbe quasi costruirsi da solo! Ora, andiamo a rallegrare la giornata di Rodgar.
 #TEXT   3
@@ -2122,7 +2124,7 @@ Aruba ha ricevuto le erbe che aveva richiesto e, in cambio, mi ha ricompensato c
 #TEXT 8
 Avrei dovuto aspettarmelo! Una nave non bastava, ora Aruba vuole non solo più oro, ma anche sangue. Forse riesco a trovare tremila dobloni, ma un sacrificio di sangue non è uno scherzo. Devo prendere una decisione importante e solo io posso scegliere: il potere promesso vale davvero questo prezzo?
 #TEXT 9
-L’ho fatto. Il prezzo è stato pagato e, se la Chiesa ha ragione, l’inferno mi aspetta. Eppure, non ho paura. È una sensazione strana, ma giusta… Comunque sia, Aruba ha bisogno di un altro sacrificio, oppure di venticinquemila dobloni.
+L’ho fatto. Il prezzo è stato pagato e, se la Chiesa ha ragione, l’inferno mi aspetta. Eppure, non ho paura. È una sensazione strana, ma giusta... Comunque sia, Aruba ha bisogno di un altro sacrificio, oppure di venticinquemila dobloni.
 Non si può tornare indietro, posso solo fermarmi o andare fino in fondo.
 #TEXT 10
 L’impresa è compiuta. Aruba sta finalmente uscendo dalla piramide, dove a quanto pare si era rinchiuso. Forse dovrei cercare un regalo d’addio: sarebbe proprio nel suo strano stile.
@@ -2208,15 +2210,17 @@ Che storia: sfidare qualcuno a duello e poi chiedere a un altro di combattere al
 Si è scoperto che, in pieno giorno e proprio davanti a lui e ai suoi vicini, un ubriacone del posto di nome Ralph Faggle ha importunato sua moglie Jane. Peter non ha avuto altra scelta che sfidarlo a duello. Tuttavia, non può combattere a causa di una febbre recente. Se non fosse stato per l’onore della signora, avrei sicuramente rifiutato. Ma prima ancora che potessi rispondere, Charlie ha deciso per me, visto che Adams ha detto che un tempo aveva servito nella Royal Navy inglese e aveva navigato con il leggendario ammiraglio Blake.
 Ora devo combattere al posto di Peter in un duello, tra un paio d’ore, appena fuori città. Non mi dispiace aiutare chi se lo merita. Ma dopo dovrò avere una bella chiacchierata con Charlie, per fargli capire che non deve più prendere decisioni al posto mio.
 #TEXT   4
-Oggi un uomo che un tempo serviva nella Royal Navy inglese mi ha chiesto помощи. Peter Adams sostiene, что он плавал вместе с адмиралом Блейком, героем Английской революции и «освободителем» Ямайки от испанцев.
-Recentemente, Adams ha avuto una sfortuna dopo l’altra: prima è stato colpito da una forte febbre e poi, mentre era ancora convalescente, un certo Ralph Faggle del posto ha importunato sua moglie Jane davanti a lui e ai vicini. Nonostante la sua debolezza, Peter ha sfidato Ralph a duello. Anche se tutta questa storia mi sembra un po’ sospetta, ho deciso di dare una mano: a volte si aiuta davvero chi ne ha bisogno, non solo dei furfanti. La moglie di Adams ha confermato tutto, anche se chiaramente non si aspettava la nostra visita. Mancano ancora circa due ore al duello, che si terrà appena fuori dalle mura della città.
-Il vecchio Charlie “non si abbasserebbe mai così tanto”, eh? È davvero facile farlo arrabbiare. Ha vissuto tanti anni e ancora non capisce che non c’è niente di vergognoso nella semplice prudenza. La mia prudenza mi dice che, se avrò tempo, potrei scambiare due parole coi vicini: magari vedono la faccenda in modo diverso. Comunque, non credo sia davvero indispensabile – non è il mio primo duello, e sono certo che non sarà l’ultimo, anche se Ralph dovesse barare in qualche modo.
+Oggi un uomo che un tempo serviva nella Royal Navy inglese mi ha chiesto aiuto. Peter Adams sostiene di aver navigato insieme all’ammiraglio Blake, eroe della Rivoluzione inglese e "liberatore" della Giamaica dagli spagnoli.
+Recentemente, Adams ha avuto una sfortuna dopo l'altra: prima una forte febbre, poi, mentre era ancora convalescente, un certo Ralph Faggle del posto ha molestato sua moglie Jane davanti a lui e ai vicini. Nonostante la debolezza, Peter ha sfidato Ralph a duello. Anche se tutta la storia mi sembra un po' sospetta, ho deciso di aiutare: a volte si tende la mano a chi ha davvero bisogno, non solo ai furfanti.
+La moglie di Adams ha confermato tutto, anche se chiaramente non si aspettava la nostra visita. Mancano circa due ore al duello, che si terrà appena fuori le mura della città.
+Il vecchio Charlie "non si abbasserebbe mai così tanto", eh? È davvero facile farlo arrabbiare. Ha vissuto tanti anni e ancora non capisce che non c'è niente di vergognoso nella semplice prudenza.
+La mia prudenza mi dice che, se avrò tempo, potrei scambiare due parole con i vicini: magari vedono la faccenda in modo diverso. Comunque, non credo sia davvero indispensabile. Non è il mio primo duello, e sono certo che non sarà l'ultimo, anche se Ralph dovesse barare in qualche modo.
 #TEXT   5
 I vicini sono sempre pieni di fandonie. Il buon vicino, Ralph Faggle in persona, mi ha raccontato parecchie cose interessanti. È un mercenario, proprio come Peter Adams. E il loro bersaglio non ero io, ma Charlie. L’ho capito dalla lettera che ho trovato addosso ad Adams: descriveva Charlie nei minimi dettagli. E in casa sua c’erano soldi, proprio come in quell’incidente alla taverna di un mese fa.
 Ho dovuto insistere un po’ con Charlie per farlo parlare. A quanto pare, tempo fa ha preso in prestito dei soldi da un usuraio a St. John's, senza alcuna intenzione di restituirli. Non per cattiveria, ma perché Richard Fleetwood gli aveva promesso che avrebbe saldato il debito al posto suo. Forse però non ha mantenuto la parola prima di lasciare i Caraibi. È proprio questo che dobbiamo scoprire adesso.
 #TEXT   6
 Ho sentito storie di usurai che mandano cacciatori di taglie dietro ai debitori in fuga, ma qui si sta davvero esagerando. È già la seconda volta di fila che danno la caccia a Charlie: li eliminiamo e poi troviamo lettere e scrigni d’oro nelle loro case. Stavolta, però, la lettera era intatta e descriveva Charlie nei minimi dettagli. Chi lo ha attaccato questa volta? Il rispettabile signor Peter Adams! E Ralph Faggle si è rivelato suo complice.
-Charlie crede che sia una vendetta dell’usuraio di St. John’s: tempo fa aveva preso in prestito dei soldi da lui. Richard Fleetwood si era offerto di saldare il debito dello sfortunato cannoniere, ma a quanto pare non l’ha mai fatto. Non c’è da stupirsi…
+Charlie crede che sia una vendetta dell’usuraio di St. John’s: tempo fa aveva preso in prestito dei soldi da lui. Richard Fleetwood si era offerto di saldare il debito dello sfortunato cannoniere, ma a quanto pare non l’ha mai fatto. Non c’è da stupirsi...
 #TEXT   7
 Quindi, ci stiamo avvicinando a St. John's. Visto fin dove si è spinto l’usuraio per punire Charlie per i suoi debiti, dovremo muoverci per la città con la massima cautela.
 #TEXT   8
@@ -2280,7 +2284,7 @@ Devo tornare subito sulla nave e issare le vele – dopo quello che è successo,
 #TEXT   11
 Perché non mi hai ascoltato? Ci conosciamo da così tanto tempo – davvero credevi che ti avrei attaccato? O forse hai semplicemente perso la testa? Quando sono andato avanti ai soldati per parlare con Longway e calmare sia lui che le guardie, lui ha pensato che fossi con loro e ci ha attaccati. Se avessimo combattuto uno contro uno, forse sarei riuscito a fargli capire la verità. Ma i soldati avevano la loro scusa, e ormai non si potevano più fermare. Ho dovuto uccidere Longway insieme a loro. Aveva con sé le pagine strappate, spiegazzate e insanguinate dell’archivio di Johan van Merden. Quindi era stato Longway, per tutto questo tempo, a strapparle proprio sotto il mio naso... Una brutta notizia dopo l’altra, maledizione. Almeno la città non ha più nulla contro di me, e finalmente posso andarmene. Dubito che tornerò qui per molto, molto tempo.
 #TEXT   12
-Non so nemmeno cosa sia andato storto per te, Longway. Era la stanchezza? Una parata sbagliata? Mancanza di abilità all’ultimo istante? Qualunque sia stata la ragione, quando finalmente ti ho raggiunto e abbiamo respinto insieme i soldati, hai esalato l’ultimo respiro proprio lì. E anche se i fogli nelle tue tasche erano ormai irrimediabilmente intrisi di sangue, li ho riconosciuti subito… erano pagine strappate dagli archivi di van Merden. Perché ti servivano? Ora non lo sapremo mai. Non ha più importanza – tutto ciò che posso fare è tornare alla nave.
+Non so nemmeno cosa sia andato storto per te, Longway. Era la stanchezza? Una parata sbagliata? Mancanza di abilità all’ultimo istante? Qualunque sia stata la ragione, quando finalmente ti ho raggiunto e abbiamo respinto insieme i soldati, hai esalato l’ultimo respiro proprio lì. E anche se i fogli nelle tue tasche erano ormai irrimediabilmente intrisi di sangue, li ho riconosciuti subito... erano pagine strappate dagli archivi di van Merden. Perché ti servivano? Ora non lo sapremo mai. Non ha più importanza – tutto ciò che posso fare è tornare alla nave.
 #TEXT   13
 Anche se i soldati hanno cercato di fermarci, sono riuscito a portare il mio navigatore fuori dalla giungla senza provocare un altro massacro. Ma meglio non sfidare la sorte: è ora di issare le vele prima che qualcuno sull’isola cambi di nuovo idea.
 #TEXT   14
@@ -2339,7 +2343,7 @@ Quella serpe infame di Henri Thibaut, un furfante proprio come suo zio, mi ha in
 #TEXT   38
 Dannazione! Oh Dio, aiutami. Mandami vento nelle vele, fa’ qualcosa, qualsiasi cosa, basta che io arrivi in tempo... Rober Martene non ha resistito alla tortura quando Alonso ha preso in mano la graticola. Forse è stato un errore chiamarlo, ma non avevo alternative migliori. Ho visto una lugger non lontano dalla Voltigeur, probabilmente la nave di quel bastardo di Thibaut. Le sue vele erano già sparite oltre l’orizzonte, portando via il mio amore. Dovremo affrontare Levasseur nella sua tana. Non avrò tempo per cercare tutta l’isola. Darò fondo all’ancora a Fisheye Beach. Un assalto diretto al forte è fuori discussione. Quel bastardo la ucciderà all’istante se mi lancio all’attacco. Dovremo muoverci con cautela. Ti prego, resisti ancora un po’...
 #TEXT   39
-Devo la vita a Longway. Non avrei mai pensato che un buon cristiano, quale spero di essere ancora, potesse provare piacere per quello che ha fatto a quel cane di Martene – ma non me ne vergogno affatto. Ne è valsa la pena, se non altro perché Rober mi ha raccontato tutto. Il mio amore è sul lugro di Thibault. Non c’è modo di raggiungerla in mare, quindi dovrò trovarla a Tortuga, nel covo segreto di Levasseur, sotto terra, nascosto sotto la città. L’ingresso è celato in una botte enorme, in uno dei vicoli ciechi. Furbo, glielo devo riconoscere. Ma non servirà a lui, né a quel bastardo di Henri, né a chiunque mi ostacoli laggiù. Ho cinque giorni per riuscirci. Poi… poi sarà troppo tardi. Non ho mai pregato così tanto per un vento in poppa in tutta la mia vita, e spero che il Signore lo mandi nelle mie vele.
+Devo la vita a Longway. Non avrei mai pensato che un buon cristiano, quale spero di essere ancora, potesse provare piacere per quello che ha fatto a quel cane di Martene – ma non me ne vergogno affatto. Ne è valsa la pena, se non altro perché Rober mi ha raccontato tutto. Il mio amore è sul lugro di Thibault. Non c’è modo di raggiungerla in mare, quindi dovrò trovarla a Tortuga, nel covo segreto di Levasseur, sotto terra, nascosto sotto la città. L’ingresso è celato in una botte enorme, in uno dei vicoli ciechi. Furbo, glielo devo riconoscere. Ma non servirà a lui, né a quel bastardo di Henri, né a chiunque mi ostacoli laggiù. Ho cinque giorni per riuscirci. Poi... poi sarà troppo tardi. Non ho mai pregato così tanto per un vento in poppa in tutta la mia vita, e spero che il Signore lo mandi nelle mie vele.
 #TEXT   40
 Vensan è ormai irriconoscibile. Sembra che il passaggio dal ponte di una nave a un ufficio sull’isola lo abbia logorato col tempo: è sempre più stanco e frustrato. Comunque sia, nessuno ha visto la Belle Étoile a La Vega – probabilmente è salpata direttamente verso Port-au-Prince.
 #TEXT   41
@@ -2370,7 +2374,7 @@ A volte, persone che non vediamo da decenni si trasformano da esseri luminosi in
 #TEXT   53
 Alcuni dicono che la famiglia non si sceglie. Altri invece pensano che la famiglia non sia solo una questione di sangue. Longway ha cercato Chang Xing per anni, ma alla fine ha scoperto che era diventata una persona terribile, incapace persino di venirgli incontro. Questo lo ha colpito così tanto che ha deciso di lasciarla andare e fermarla, per mettere fine agli incubi su Tortuga. Ora è convinto che la sua vera famiglia siamo noi. Quanto a me, devo riferire tutto al Governatore Generale, così potrà mantenere la sua promessa e farmi riabbracciare mio fratello. Spero solo che per me non finisca come è finita per Longway.
 #TEXT   54
-Perché è così difficile? Pensavo davvero che Longway fosse mio amico, non solo un ufficiale? Speravo che tutto questo casino si potesse risolvere senza spargimenti di sangue? O forse sono turbato perché la decisione finale l’hanno presa Longway e Mary, non io? In ogni caso, ormai è fatta. Forse in Longway c’era sempre stato qualcosa di marcio. Abbiamo parlato con sua sorella, un mostro quasi terribile quanto Levasseur, e poi Longway ha cercato di sbarazzarsi di noi per la sua ‘vera’ famiglia. Volevo andarmene senza violenza, ma Mary… essendo Mary, non poteva lasciar correre. Ora, le due mele marce nutrono i vermi insieme, proprio come Longway ha sempre voluto. Quanto a me e Mary, l’incubo è finito. Spero che presto il Cavaliere rilasci mio fratello e che inizi per noi un nuovo capitolo, più luminoso.
+Perché è così difficile? Pensavo davvero che Longway fosse mio amico, non solo un ufficiale? Speravo che tutto questo casino si potesse risolvere senza spargimenti di sangue? O forse sono turbato perché la decisione finale l’hanno presa Longway e Mary, non io? In ogni caso, ormai è fatta. Forse in Longway c’era sempre stato qualcosa di marcio. Abbiamo parlato con sua sorella, un mostro quasi terribile quanto Levasseur, e poi Longway ha cercato di sbarazzarsi di noi per la sua ‘vera’ famiglia. Volevo andarmene senza violenza, ma Mary... essendo Mary, non poteva lasciar correre. Ora, le due mele marce nutrono i vermi insieme, proprio come Longway ha sempre voluto. Quanto a me e Mary, l’incubo è finito. Spero che presto il Cavaliere rilasci mio fratello e che inizi per noi un nuovo capitolo, più luminoso.
 #TEXT   55
 Si scopre che sono un pessimo capitano—almeno così ha detto Longway quando abbiamo trovato sua sorella. Abbiamo avuto una discussione sincera, accusandoci a vicenda di tutto. Dopo tutto quello che ho fatto per lui! Gli animi si sono scaldati e stavamo quasi per venire alle mani, ma Helen è intervenuta e ha calmato gli spiriti. Una volta ridevo delle storie di perdono all’ultimo minuto, ma quando lei ha proposto di andarcene e lasciarli godersi la loro riunione, mi sono sentito stranamente sollevato. Penso che presto dimenticherò Longway e sua sorella. Non auguro loro del male—magari riuscirà a riaccendere la sua stella spenta. Ma sono certo che ora la mia e quella di Helen brillano ancora di più. È ora di lasciare questa prigione che chiamano Tortuga e tornare a riferire a Poincy.
 #TEXT   56
@@ -2380,9 +2384,9 @@ Brutto momento, brutto posto. Io e Longway abbiamo finalmente trovato sua sorell
 #TEXT 	58
 L'audacia è una seconda forma di fortuna, come si suol dire. E spesso funziona. Ma non oggi. È stato davvero un momento fuori luogo quando Longway è piombato nella mia stanza della taverna subito dopo una battaglia furiosa con i mercenari di Levasseur, che volevano... @<sText>. Longway aveva ricevuto una lettera da Gravel e scoperto la rotta attuale di Joep van der Vink. Per questo gli servivano una nave e un equipaggio di mercenari pronti a catturare quel furfante, mentre io mi occupavo di raccogliere informazioni a Tortuga. E cosa ha chiesto Longway? Solo... duemilacinquecento. Doppioni!!! Doppioni, per l’amor del cielo. Quando con cinquantamila pesos ci si compra e si arma un bel brigantino da cima a fondo. Glieli ho dati, anche se era tutt’altro che soddisfatto. Sono una cattiva persona? No. Ho questioni più urgenti da seguire: rotta su Tortuga.
 #TEXT 	59
-I pesos davvero crescono sugli alberi, ma i dobloni no. O forse è solo la mia solita fortuna: sempre a dover sborsare queste fortune invece di tenerle per me. Pensavo che non avrei mai più visto niente come quando ho consegnato un milione di pesos al Cavaliere. E invece eccomi qui, a separarmi di nuovo da una somma indecente, anche se stavolta è più piccola – solo circa un quarto di milione. Ma chi l’ha chiesta!… Il mio primo ufficiale, Longway. Dopo aver letto la lettera di Georges e scoperto dove potrebbe trovarsi Joep van der Vink, era impaziente di dividere le nostre forze e inseguirlo di persona. E gli servivano soldi per una ciurma armata e pronta a salpare subito, disposta a tutto senza fare domande. A casa, con quei soldi ci vivresti da re, ma Longway e la sua famiglia hanno sofferto troppo in questi anni. Che si prenda la sua rivincita. In fondo, tutto quell’oro e quell’argento non te li porti certo nella tomba. Anch’io devo mollare gli ormeggi e puntare su Tortuga il prima possibile: gli uomini di Levasseur ci hanno attaccato, @<sText> e me, proprio nella stanza della taverna, quindi il tempo stringe e nessuno di noi è più al sicuro.
+I pesos davvero crescono sugli alberi, ma i dobloni no. O forse è solo la mia solita fortuna: sempre a dover sborsare queste fortune invece di tenerle per me. Pensavo che non avrei mai più visto niente come quando ho consegnato un milione di pesos al Cavaliere. E invece eccomi qui, a separarmi di nuovo da una somma indecente, anche se stavolta è più piccola – solo circa un quarto di milione. Ma chi l’ha chiesta!... Il mio primo ufficiale, Longway. Dopo aver letto la lettera di Georges e scoperto dove potrebbe trovarsi Joep van der Vink, era impaziente di dividere le nostre forze e inseguirlo di persona. E gli servivano soldi per una ciurma armata e pronta a salpare subito, disposta a tutto senza fare domande. A casa, con quei soldi ci vivresti da re, ma Longway e la sua famiglia hanno sofferto troppo in questi anni. Che si prenda la sua rivincita. In fondo, tutto quell’oro e quell’argento non te li porti certo nella tomba. Anch’io devo mollare gli ormeggi e puntare su Tortuga il prima possibile: gli uomini di Levasseur ci hanno attaccato, @<sText> e me, proprio nella stanza della taverna, quindi il tempo stringe e nessuno di noi è più al sicuro.
 #TEXT 	60
-La "Meifeng". Avrei dovuto immaginare che Longway non sarebbe mai riuscito a lasciarla andare. Quando qualcuno in città gli ha consegnato una lettera di Georges Gravel con i luoghi che Joep van der Vink frequentava più spesso, Longway mi ha subito chiesto una nave e un mucchio d’oro per arruolare una ciurma di mercenari pronti a salpare all’istante, senza fare domande. È pura follia, certo, ma Longway è un amico leale, un vero compagno, e non posso voltargli le spalle in un momento così… o sì?
+La "Meifeng". Avrei dovuto immaginare che Longway non sarebbe mai riuscito a lasciarla andare. Quando qualcuno in città gli ha consegnato una lettera di Georges Gravel con i luoghi che Joep van der Vink frequentava più spesso, Longway mi ha subito chiesto una nave e un mucchio d’oro per arruolare una ciurma di mercenari pronti a salpare all’istante, senza fare domande. È pura follia, certo, ma Longway è un amico leale, un vero compagno, e non posso voltargli le spalle in un momento così... o sì?
 Se “Mei” non dovesse andare bene, forse Longway si accontenterà di un’altra nave unica. Al peggio, posso sempre catturare o comprare una nave da guerra leggera: una goletta armata, un brigantino, una corvetta, una polacca, uno sciabecco o un brigantino a palo.
 Longway, per ora, sta andando a incontrare i mercenari. E questo dopo che gli uomini di Levasseur ci hanno attaccato, a me e @<sText>, proprio nella stanza della taverna. Che inizio di giornata folle...
 
@@ -2391,7 +2395,7 @@ Marchio Nero
 #TEXT   1
 Oggi ho assistito a una scena insolita e ho incontrato un uomo fuori dal comune. Passando vicino al faro di Barbados, ho visto dei contrabbandieri in attesa di un cliente. Anche loro mi hanno notato e mi hanno intimato di andarmene per non spaventare il loro compratore. Ironia della sorte, la loro minaccia era anche un avvertimento: se me ne fossi andato subito, mi sarei perso tutto il divertimento. Proprio mentre iniziavamo a parlare, siamo stati sorpresi da una pattuglia e da un cittadino che cercava qualcuno tra noi. Quello che cercavano era Tommy Irons, un tiratore scelto che aveva perso la memoria durante la Rivoluzione inglese. Irons era andato a letto con la moglie di quel civile, così il poveretto aveva radunato una squadra di soldati per dargli la caccia. Sono rimasto colpito da come Tommy abbia fatto saltare la testa a quell’uomo con un solo colpo dal faro, così l’ho assunto quando mi ha offerto i suoi servigi. Ha anche preteso condizioni piuttosto esigenti. Le sue continue vanterie e battute cominciano a darmi sui nervi, ma in fondo è il talento che conta, no?
 #TEXT   2
-Cinquecento monete d’oro. Con quella somma potresti comprare… beh, un bel po’ di cose. È un furto! Al faro di Barbados ho incontrato Tommy Irons, un mercenario e tiratore scelto che sa bene quanto vale. Fin troppo bene, direi. Abbiamo deciso che si unirà a me in cambio di una borsa d’oro. Mi aspetterà in una grotta qui vicino per un paio di giorni.
+Cinquecento monete d’oro. Con quella somma potresti comprare... beh, un bel po’ di cose. È un furto! Al faro di Barbados ho incontrato Tommy Irons, un mercenario e tiratore scelto che sa bene quanto vale. Fin troppo bene, direi. Abbiamo deciso che si unirà a me in cambio di una borsa d’oro. Mi aspetterà in una grotta qui vicino per un paio di giorni.
 #TEXT   3
 Non sono riuscito a mettere insieme così tanti soldi in appena un paio di giorni. Se avesse chiesto dei pesos, nessun problema—qui davvero crescono sugli alberi. Ma no, monsieur il miglior tiratore del mondo voleva solo dobloni. Con un carattere e delle pretese del genere, non c’è da stupirsi che viaggi ancora da solo. Nessun rimpianto.
 #TEXT   4

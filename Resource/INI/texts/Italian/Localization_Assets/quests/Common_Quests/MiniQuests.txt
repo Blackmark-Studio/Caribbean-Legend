@@ -107,3 +107,7 @@ MiniQuests_23
 {
 , che il ~
 }
+MiniQuests_24
+{
+Alonso
+}

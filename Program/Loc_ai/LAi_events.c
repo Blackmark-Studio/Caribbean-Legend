@@ -217,6 +217,28 @@ void LAi_CharacterAttack()
 	if(CheckAttribute(enemy, "cheats.NOsliding")) isBlocked = true;
 	//Реакция груп на атаку
 	LAi_group_Attack(attack, enemy);
+	
+	// TUTOR-ВСТАВКА
+	if(TW_IsActive())
+	{
+		if(objTask.land_fight == "1_Attack" && IsMainCharacter(attack))
+		{
+			if(attackType == "fast" || attackType == "force" || attackType == "break")
+			{
+				string sAttr = "FightAttack_" + attackType;
+				TW_IncreaseCounter("land_fight", sAttr, 1);
+				if(TW_CheckCounter("land_fight", "FightAttack_fast") && TW_CheckCounter("land_fight", "FightAttack_force") && TW_CheckCounter("land_fight", "FightAttack_break"))
+					TW_FinishLand_Fight_1_Attack();
+			}
+		}
+		if(objTask.land_fight == "2_Defence" && IsMainCharacter(enemy) && isBlocked)
+		{
+			TW_IncreaseCounter("land_fight", "FightDefence_block", 1);
+			if(TW_CheckCounter("land_fight", "FightDefence_block") && TW_CheckCounter("land_fight", "FightDefence_parry"))
+				TW_FinishLand_Fight_2_Defence();
+		}
+	}
+	
 	//Начисление повреждений
 	LAi_ApplyCharacterAttackDamage(attack, enemy, attackType, isBlocked);
 	//Обновим цель сразу
@@ -295,7 +317,7 @@ void LAi_CharacterFire()
 		return;
 	}
 	// belamour legendary edition пороховой тестер уменьшает разрыв ствола -->
-	if(attack.id != "Blaze" && CheckAttribute(attack, "chr_ai."+sType+".misfire") && sti(attack.chr_ai.(sType).misfire) > 0 && rand(100)*isEquippedArtefactUse(attack, "indian_2", 1.0, 2.0) < sti(attack.chr_ai.misfire) && !HasSubStr(weapon.id, "mushket") && GetCharacterEquipByGroup(attack, CIRASS_ITEM_TYPE) != "cirass10")
+	if(attack.id != "Blaze" && CheckAttribute(attack, "chr_ai."+sType+".misfire") && sti(attack.chr_ai.(sType).misfire) > 0 && rand(100)*isEquippedArtefactUse(attack, "indian_2", 1.0, 2.0) < sti(attack.chr_ai.(sType).misfire) && !HasSubStr(weapon.id, "mushket") && GetCharacterEquipByGroup(attack, CIRASS_ITEM_TYPE) != "cirass10")
 	{
 		LAi_Explosion(attack, rand(20));
   		if(GetCharacterItem(attack, weaponID) <= 1) RemoveCharacterEquip(attack, weapon.groupID);
@@ -335,7 +357,7 @@ void LAi_CharacterFire()
 			findCh = GetCharacter(idx);	
 			if(findCh.chr_ai.group != LAI_GROUP_PLAYER)
 			{
-				LAi_ApplyCharacterFireDamage(attack, &Characters[idx], kDist, fAimingTime, isHeadShot);
+				LAi_ApplyCharacterFireDamage(attack, &Characters[idx], kDist, fAimingTime, isHeadShot, 1);
 			}	
 			
 			if(CheckAttribute(attack, "chr_ai."+sType+".stun" ) && sti(attack.chr_ai.(sType).stun) > 0 && !LAi_IsFightMode(enemy) && !IsMainCharacter(enemy))
@@ -386,7 +408,7 @@ void LAi_CharacterFire()
 	//Реакция груп на атаку
 	LAi_group_Attack(attack, enemy);
 	//Начисление повреждений
-	LAi_ApplyCharacterFireDamage(attack, enemy, kDist, fAimingTime, isHeadShot);
+	LAi_ApplyCharacterFireDamage(attack, enemy, kDist, fAimingTime, isHeadShot, 1);
 	if(CheckAttribute(attack, "chr_ai." + sType + ".multidmg") && sti(attack.chr_ai.(sType).multidmg) > 0)
 	{
 		if(stf(enemy.chr_ai.hp) < 1.0 && enemy.chr_ai.group == LAI_GROUP_PLAYER) enemy.chr_ai.hp = 5;
@@ -745,6 +767,7 @@ void LAi_TieItemToCharacter(aref chr, int nItemIndex)
 	SendMessage(chr, "lslss", MSG_CHARACTER_EX_MSG, "TieItem", nItemIndex, sModel, sLocator);
 }
 
+/*
 #event_handler("Location_CharacterFireShard","Location_CharacterFireShard");
 void Location_CharacterFireShard()
 {
@@ -787,6 +810,62 @@ void Location_CharacterFireShard()
 	string sIdx = enemy.index;
 	string sAttr = "t" + sIdx;
 	attack.chr_ai.grapeshot_target.(sAttr) = sIdx;
+}*/
+
+#event_handler("Location_CharacterFireShards","Location_CharacterFireShards");
+void Location_CharacterFireShards()
+{
+	aref attack = GetEventData();
+	aref enemy = GetEventData();
+	float fAimingTime = GetEventData();
+	int nShots = GetEventData();
+	int nHeadShots = GetEventData();
+	
+	string sType;
+	if(!CharUseMusket(attack))
+		sType = "gun";
+	else
+		sType = "musket";
+	
+	if(CheckAttribute(attack, "chr_ai."+sType+".stun" ) && sti(attack.chr_ai.(sType).stun) > 0 && !LAi_IsFightMode(enemy) && !IsMainCharacter(enemy))
+	{
+		if(CheckAttribute(enemy, "cirassId"))
+		{
+			if(sti(attack.chr_ai.(sType).Stun_C) > 0) 
+				LAi_Stunned_StunCharacter(enemy, 10, true);
+		}
+		else
+		{		
+			if(sti(attack.chr_ai.(sType).Stun_NC) > 0) 
+				LAi_Stunned_StunCharacter(enemy, 10, true);
+		}		
+	}
+	
+	LAi_group_Attack(attack, enemy);
+	
+	if(nHeadShots > 0)
+		LAi_ApplyCharacterFireDamage(attack, enemy, 1.0, fAimingTime, true, nHeadShots);
+	LAi_CheckKillCharacter(enemy);
+	
+	if(nShots > 0)
+		LAi_ApplyCharacterFireDamage(attack, enemy, 1.0, fAimingTime, false, nShots);
+	if(stf(enemy.chr_ai.hp) < 1.0 && enemy.chr_ai.group == LAI_GROUP_PLAYER) 
+		enemy.chr_ai.hp = 5;
+	LAi_CheckKillCharacter(enemy);
+	
+	string func = attack.chr_ai.type;
+	if(func == "")
+		return;
+	func = "LAi_type_" + func + "_Fire";
+	call func(attack, enemy, 1.0, true);
+	LAi_group_UpdateTargets(enemy);
+	func = enemy.chr_ai.type;
+	if(func == "")
+		return;
+	func = "LAi_type_" + func + "_Attacked";
+	call func(enemy, attack);
+	func = "LAi_type_" + enemy.chr_ai.type + "_CharacterUpdate";
+	call func(enemy, 0.0001);
 }
 
 #event_handler("Location_CharacterFireShardEnd","Location_CharacterFireShardEnd");
@@ -856,32 +935,4 @@ void Location_CharacterFireShardEnd()
 	
 	if(CheckAttribute(attack, "chr_ai.explosion" ) && sti(attack.chr_ai.explosion) > 0)
 		PlayStereoSound("Sea Battles\cannon_fire_03.wav");
-	
-	// закрываем все открытые цели
-	if(!CheckAttribute(attack, "chr_ai.grapeshot_target"))
-		return;
-	aref targets, target;
-	ref chr;
-	int idx;
-	string func;
-	makearef(targets, attack.chr_ai.grapeshot_target);
-	int n = GetAttributesNum(targets);
-	for(int i = n-1; i>=0; i--)
-	{
-		target = GetAttributeN(targets, i);
-		idx = sti(GetAttributeValue(target));
-		chr = GetCharacter(idx);
-		func = attack.chr_ai.type;
-		if(func == "") return;
-		func = "LAi_type_" + func + "_Fire";
-		call func(attack, chr, 1.0, true);
-		LAi_group_UpdateTargets(chr);
-		func = chr.chr_ai.type;
-		if(func == "") return;
-		func = "LAi_type_" + func + "_Attacked";
-		call func(chr, attack);
-		func = "LAi_type_" + chr.chr_ai.type + "_CharacterUpdate";
-		call func(chr, 0.0001);
-		DeleteAttribute(targets, GetAttributeName(target));
-	}
 }

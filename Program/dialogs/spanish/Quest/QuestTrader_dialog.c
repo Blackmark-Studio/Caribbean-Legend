@@ -147,15 +147,15 @@ void ProcessDialogEvent()
 		{
 			pchar.GenQuest.Escort.Trader.Location = pchar.GenQuest.Escort.Trader.City + "_tavern";
 			if (sti(pchar.GenQuest.Escort.Trader.Chance) == 1)
-				CoolTraderHunterOnMap();
+				TraderHunterOnMap(true);
 			else
-				TraderHunterOnMap(); // запуск ДУ на глобалке
+				TraderHunterOnMap(false); // запуск ДУ на глобалке
 		}
 		if (CheckAttribute(pchar, "GenQuest.Escort.Trader.Type2")) // в бухту
 		{
 			pchar.GenQuest.Escort.Trader.Location = pchar.GenQuest.Escort.Trader.Shore;
 			if (sti(pchar.GenQuest.Escort.Trader.Chance) != 2)
-				TraderHunterOnMap();
+				TraderHunterOnMap(false);
 			else
 			{
 				pchar.quest.EscortTrader_Attack.win_condition.l1 = "location";
@@ -167,7 +167,7 @@ void ProcessDialogEvent()
 		{
 			pchar.GenQuest.Escort.Trader.Location = pchar.GenQuest.Escort.Trader.Shore;
 			if (sti(pchar.GenQuest.Escort.Trader.Chance) == 0)
-				TraderHunterOnMap();
+				TraderHunterOnMap(false);
 			if (sti(pchar.GenQuest.Escort.Trader.Chance) == 1)
 			{
 				if(sti(RealShips[sti(pchar.Ship.Type)].Class) >= sti(RealShips[sti(pchar.GenQuest.Escort.Trader.ShipType)].Class) && sti(RealShips[sti(pchar.Ship.Type)].BaseType) != SHIP_GALEON_H && GetCompanionQuantity(pchar) < 3)//меряемся кораблями
@@ -177,7 +177,7 @@ void ProcessDialogEvent()
 					pchar.quest.EscortTrader_Attack.function = "DesIslandAttack";
 				}
 				else
-					CoolTraderHunterOnMap();
+					TraderHunterOnMap(true);
 			}
 			else
 			{ // будет засада + сам нападет

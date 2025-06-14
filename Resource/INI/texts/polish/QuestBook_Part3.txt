@@ -185,9 +185,9 @@ Cholera! Zapomniałem odciąć draniowi palec i Gaston mi nie uwierzył. Do diab
 #TEXT 3-9
 Cholera! Nie przyniosłem żadnych przedmiotów z ciała Fernando, a Gaston odmówił współpracy... Do diabła z tym!
 #TEXT 3-10
-Dobrze mi zapłacono za eliminację celu. Nieźle… A teraz mam kolejne zadanie. Muszę popłynąć na Antiguę, do St. John’s, i zakraść się do domu kapitana Fleetwooda, aby ukraść jego dziennik pokładowy. Jego posiadłość powinna być pusta za dziesięć dni.
+Dobrze mi zapłacono za eliminację celu. Nieźle... A teraz mam kolejne zadanie. Muszę popłynąć na Antiguę, do St. John’s, i zakraść się do domu kapitana Fleetwooda, aby ukraść jego dziennik pokładowy. Jego posiadłość powinna być pusta za dziesięć dni.
 #TEXT 3-11
-Co za wstyd… Byłem zbyt wolny. Nie ma sensu ponownie widzieć się z Gastonem…
+Co za wstyd... Byłem zbyt wolny. Nie ma sensu ponownie widzieć się z Gastonem...
 #TEXT 3-12
 To było chaotyczne: udało mi się zakraść do domu i ukraść dziennik pokładowy, ale na schodach natknąłem się na marynarzy Fleetwooda, więc musiałem stoczyć z nimi walkę. Kolejnych dwóch czekało na ulicy przed domem; dali mi mocno w kość, a gdyby nie jakiś nieznajomy, który mi pomógł, już bym nie żył. Straciłem przytomność z powodu ran i później obudziłem się w aptece w St. John’s. Jej właściciel, John Murdock, opowiedział mi o całej sytuacji. Teraz muszę opuścić dom nocą przez lochy pod nim. I spotkać się z nieznajomym.
 #TEXT 3-13
@@ -215,7 +215,7 @@ Abigail jest na pokładzie. Kierunek – Antigua.
 #TEXT 3-24
 John przygotowuje pokój dla Abigail. Czas ją tam zaprowadzić.
 #TEXT 3-25
-Teraz zamierzam szantażować Fleetwooda i zażądać prywatnego spotkania. Jeśli ma serce, musi zgodzić się na moje warunki… Potrzebuję posłańca. John polecił mi pijaka imieniem Jack Garrison. Znajdę go w tawernie.
+Teraz zamierzam szantażować Fleetwooda i zażądać prywatnego spotkania. Jeśli ma serce, musi zgodzić się na moje warunki... Potrzebuję posłańca. John polecił mi pijaka imieniem Jack Garrison. Znajdę go w tawernie.
 #TEXT 3-26
 List został przekazany Jackowi. Muszę za nim podążyć.
 #TEXT 3-27
@@ -545,7 +545,7 @@ Komendant fortu w Port-au-Prince powierzył mi bardzo ważną misję – muszę 
 #TEXT 7_1
 Karaiby w pigułce, faktycznie... Dzięki, Fadey, świetną robotę mi załatwiłeś. Muszę w końcu zacząć na tym zarabiać, bo jak na razie więcej tracę, niż zyskuję.
 Wygląda na to, że wplątałem się w jakieś brudne spory między Hiszpanią a Francją. Statek jest uszkodzony, część załogi nie żyje, a czasu na dostarczenie dział jest coraz mniej.
-Mogę spróbować przez Jamajkę – uzupełnić tam załogę i naprawić statek, zanim ruszę ku wybrzeżom hiszpańskiego kontynentu. Ale czasu jest niewiele, więc może lepiej od razu płynąć do Portobello…
+Mogę spróbować przez Jamajkę – uzupełnić tam załogę i naprawić statek, zanim ruszę ku wybrzeżom hiszpańskiego kontynentu. Ale czasu jest niewiele, więc może lepiej od razu płynąć do Portobello...
 #TEXT 8
 Byłem zbyt wolny i nie dotarłem do Portobello na czas. Teraz wszystko jest stracone. Moja opieszałość zrujnowała operację wojskową... Nie zarobiłem ani grosza i zepsułem swoje relacje z Francją.
 #TEXT 9
@@ -734,7 +734,7 @@ Powinienem znaleźć Antonio Betancourta, on może mi powiedzieć o statuie. Mie
 Wracam na wyspę. Najpierw muszę zabrać Danielle do jej męża i oczywiście odwiedzić „admirała”. Tak, muszę również oddać strój Henrikowi Vedeckerowi.
 
 #TEXT 16
-Antonio powiedział mi, że statua Kukulcana aktywuje się rano, a nie w nocy. Nadal nie znam dokładnej godziny, ale to wystarczy, przynajmniej nie muszę nurkować w nocy. Rano… to nie taki wielki problem, prawda?
+Antonio powiedział mi, że statua Kukulcana aktywuje się rano, a nie w nocy. Nadal nie znam dokładnej godziny, ale to wystarczy, przynajmniej nie muszę nurkować w nocy. Rano... to nie taki wielki problem, prawda?
 #TEXT 17
 Jurgen Schmidt, kowal Narwala, może zrobić dla mnie specjalny nóż. Tylko jeden i bardzo drogi nóż. Tysiąc dukatów.
 
@@ -2262,7 +2262,7 @@ To był naprawdę długi i ciężki dzień, ale w końcu się skończył. Zwyci�
 #QUEST IslaMona
 Miejsce, Które Można Nazwać Domem
 #TEXT 1
-Szalony pomysł wpadł mi do głowy – zamienić moją Isla Mona w coś więcej niż tylko opuszczone gniazdo piratów w sercu Karaibów. Mój wierny „gubernator” Rodgar nie docenił tego pomysłu, ale przynajmniej zasugerował, co trzeba zrobić. Pierwszym krokiem będzie znalezienie wysokiej jakości narzędzi i bardzo specjalnych osadników. Co do narzędzi, to jasne – porozmawiam z mistrzami stoczni. Ale osadnicy… Nikt w zdrowym rozumie nie zgodzi się brać udziału w budowie nie wiadomo czego, gdzie i pod czyją flagą! A wszystko to musi zostać zrobione w pełnej tajemnicy, bez prawa powrotu do cywilizacji przez następne kilka lat. Nie przywiozę tam niewolników! Zacznę od narzędzi, a potem zobaczę, co dalej. Na to zadanie nie jestem pod presją czasu. A może po prostu zapomnieć o tym?
+Szalony pomysł wpadł mi do głowy – zamienić moją Isla Mona w coś więcej niż tylko opuszczone gniazdo piratów w sercu Karaibów. Mój wierny „gubernator” Rodgar nie docenił tego pomysłu, ale przynajmniej zasugerował, co trzeba zrobić. Pierwszym krokiem będzie znalezienie wysokiej jakości narzędzi i bardzo specjalnych osadników. Co do narzędzi, to jasne – porozmawiam z mistrzami stoczni. Ale osadnicy... Nikt w zdrowym rozumie nie zgodzi się brać udziału w budowie nie wiadomo czego, gdzie i pod czyją flagą! A wszystko to musi zostać zrobione w pełnej tajemnicy, bez prawa powrotu do cywilizacji przez następne kilka lat. Nie przywiozę tam niewolników! Zacznę od narzędzi, a potem zobaczę, co dalej. Na to zadanie nie jestem pod presją czasu. A może po prostu zapomnieć o tym?
 #TEXT 2
 Kupiłem zestaw wysokiej jakości europejskich narzędzi za sporą sumę. Zwykle takie zestawy używane są do zakładania kolonii, ale osobiście uważam, że to powinno prawie samo się zbudować za cenę, którą zapłaciłem! Teraz pora na poprawienie humoru Rodgarowi.
 #TEXT 3
@@ -2507,7 +2507,7 @@ Cokolwiek Charlie skrzyżował, trafiło na niego. Prosto w więzieniu St. John'
 #TEXT 11
 Odpowiedzi na dwa pytania już mam, ale sytuacja wcale nie stała się łatwiejsza. Po pierwsze – Fleetwood rzeczywiście spłacił dług Charliego przed opuszczeniem Karaibów. A więc po drugie – lichwiarz nie wysłał łowców głów. Więc będę musiał ukłonić się komendantowi i zapłacić kaucję za Charliego. Albo go przekupić. Wszystko jedno dla mojej kieszeni.
 #TEXT 12
-Spotkałem kogoś z słynnych Sea Foxes, marynarza Królewskiej Marynarki Wojennej. Z mojego profesjonalnego punktu widzenia są nieco przereklamowani i w bitwie niewiele różnią się od najemników, których spotkaliśmy wcześniej. Musiałem uwolnić Charliego z więzienia siłą, ledwie docierając do jego celi, zanim ten Sea Fox wysłał go do zaświatów. „Najlepsze pozdrowienia od Sussex”… Co to mogło znaczyć? Myślę, że Charlie coś wie – w jego oczach było więcej smutku niż zdziwienia, gdy usłyszał tę nazwę. Porozmawiamy dokładnie, jak już stąd wyjdziemy.
+Spotkałem kogoś z słynnych Sea Foxes, marynarza Królewskiej Marynarki Wojennej. Z mojego profesjonalnego punktu widzenia są nieco przereklamowani i w bitwie niewiele różnią się od najemników, których spotkaliśmy wcześniej. Musiałem uwolnić Charliego z więzienia siłą, ledwie docierając do jego celi, zanim ten Sea Fox wysłał go do zaświatów. „Najlepsze pozdrowienia od Sussex”... Co to mogło znaczyć? Myślę, że Charlie coś wie – w jego oczach było więcej smutku niż zdziwienia, gdy usłyszał tę nazwę. Porozmawiamy dokładnie, jak już stąd wyjdziemy.
 #TEXT 13
 Dotarliśmy do St. John's w środku nocy, i chyba to dobrze. W końcu w ciągu dnia, jeśli rozmowa z lichwiarzem nie pójdzie zgodnie z planem, może wezwać strażników, a w ciągu kilku minut będziemy otoczeni prawie przez całą garnizon wyspy. Problem w tym, że bank jest zamknięty w nocy, a Charlie dokładnie nie wie, gdzie teraz mieszka właściciel. Szukanie na chybił trafił odpada – obudzimy i przestraszymy ludzi, przyciągając uwagę. Dobrze by było zapytać kogoś, kto zna wszystko i wszystkich w mieście, ale nie podejrzewa nas o takie pytanie. Szczególnie o tej porze nocy.
 #TEXT 14
@@ -2516,7 +2516,7 @@ Niech żyją pijacy Karaibów! W każdej tawernie, dzień czy noc, można znale�
 Fleetwood może nie był takim złym człowiekiem, jak Charlie go emocjonalnie opisał, gdy czytaliśmy pożegnalny list Richarda. Lichwiarz potwierdził, że dotrzymał swojej obietnicy i w pełni spłacił wszystkie długi Charliego. Na początku, oczywiście, jak każdy w jego sytuacji, był trochę... przestraszony moim pojawieniem się w jego domu w tym czasie, ale udało mi się go uspokoić i uniknąć niepotrzebnego hałasu. Więc martwiliśmy się na próżno – mało prawdopodobne, że ktoś poluje na Charliego tutaj, w kolonii, która jest mu tak dobrze znana i niemal droga. Możemy spokojnie wrócić na statek i pomyśleć o tym, gdzie kopać dalej.
 #TEXT 16
 To już nie tylko splątana sieć, ale prawdziwa, przeklęta i brudna pułapka. Charlie, który kiedyś służył w Królewskiej Marynarce i generalnie jest porządnym człowiekiem, jest ścigany przez swoich rodaków. Zaraz po wyjściu z domu bankiera spotkaliśmy żołnierzy dowodzonych przez marynarza, Lisią Zatokę, który przekazał Charlie'emu "serdeczne pozdrowienia od Sussex". Jednak mimo tego przekazu, nie czekała nas rozmowa z Sussex, ani aresztowanie, ale egzekucja bez procesu i dochodzenia. Charlie i ja musimy porozmawiać poważnie.
-#TEXT 17 Wezwałem Charliego do kajuty, a on opowiedział mi historię Sussex. Gdy skończyliśmy rozmawiać, weszli chłopcy i zgłosili, że zbliża się do nas lekki okręt wojenny. Angielskie barwy. To… Mirage. Jak to w ogóle możliwe?
+#TEXT 17 Wezwałem Charliego do kajuty, a on opowiedział mi historię Sussex. Gdy skończyliśmy rozmawiać, weszli chłopcy i zgłosili, że zbliża się do nas lekki okręt wojenny. Angielskie barwy. To... Mirage. Jak to w ogóle możliwe?
 #TEXT 18
 Niektórzy myślą, że ich tytuły i pozycje zawsze ich ochronią. Błąd! Silny zgnębia słabego. Nauczyłem tego upokarzającego, ale zasłużonego lekcji pułkownika Thomasa Lyncha - człowieka stojącego za wszystkimi tymi atakami. Osiągnął wiele: spalił Sussex rękami Fleetwooda, odtworzył Mirage, zdobywając oryginalne plany, i zlikwidował prawie wszystkich świadków, w tym samego Fleetwooda. Jednak jego szczęście skończyło się ze mną, bo wszystkie próby zabicia Charliego rozbiły się jak fale o niezłomną skałę, którą mój ojciec zawsze chciał, żebym był. Lynch z aroganckim uśmiechem powiedział, że nie mogę go dotknąć, bo wtedy cała flota angielska ruszy za mną? Dobrze. Nawet go nie dotknąłem, jak wyleciał przez okno własnej kajuty. Mam nadzieję, że to ostatnia lekcja, którą muszę mu dać. W każdym razie zapamięta ją na długo. A nawet jeśli pułkownik nigdy się nie uspokoi, flota w końcu się podda. Więc możemy cieszyć się naszą wolnością znowu.
 #TEXT 19
@@ -2668,7 +2668,7 @@ Pięćset sztuk złota. Za takie pieniądze można kupić – no cóż, sporo. T
 #TEXT 3
 Nie udało mi się zebrać takiej sumy w zaledwie parę dni. Gdyby zażądał peso – w porządku – tu rzeczywiście rosną na drzewach. Ale nie, monsieur najlepszy strzelec świata chciał tylko dobrówek. Nic dziwnego, że przy takim podejściu i wymaganiach wciąż podróżuje samotnie. Nie żałuję.
 #TEXT 4
-Przyniosłem Tommy’emu złoto, którego chciał, i jeśli jest choć w połowie tak dobry, jak się przechwala, to był to opłacalny wydatek. Oby tylko nie wpędził mnie w kłopoty…
+Przyniosłem Tommy’emu złoto, którego chciał, i jeśli jest choć w połowie tak dobry, jak się przechwala, to był to opłacalny wydatek. Oby tylko nie wpędził mnie w kłopoty...
 #TEXT 5
 Widziałem już różne dziwactwa, ale Tommy Irons wyróżnia się nawet w tym szalonym świecie. Kiedyś, na obrzeżach miasta, poprosił mnie o jedną papierową nabojnicę. Tylko jedną. Gdy powiedziałem mu, że nie mam czegoś takiego w kieszeniach, ale mogę przynieść więcej ze statku, Tommy opuścił moją załogę. I zrobił z tego niezłą scenę. Chyba za mocno oberwał w głowę tam w Anglii. Mam nadzieję, że nigdy więcej nie spotkam kogoś takiego jak on – kto zostawia mnie tylko dlatego, że nie spełniłem jego zachcianki od razu.
 #TEXT 6
@@ -2696,7 +2696,7 @@ Zawsze było w Tommym coś, co nie dawało mi spokoju. I miałem rację, że por
 #TEXT 17
 Mam dość ludzi próbujących mnie wykorzystywać. Tommy, dzięki swoim doświadczeniom w armii i wśród piratów, stał się świetnym sędzią charakteru, więc od razu domyślił się, że spóźniłem się, bo rozmawiałem z Gabe’em. Ten pojawił się zaraz po tym, jak zabiłem wściekłego Ironsa – ani sekundy wcześniej. Callow powiedział, że tylko zbierał najlepszych ludzi do aresztowania Toma. I wtedy wszystko stało się jasne – Gabe po prostu czekał, aż pozabijamy się nawzajem. Powiedziałem mu więc, co o nim myślę. Najwyraźniej Tommy miał rację przez cały czas, bo Callow, zamiast uspokajać człowieka, który właśnie pozbył się jego starego wroga, stwierdził, że nie zamierza słuchać moich spekulacji, a potem rzucił się na mnie ze swoimi „najlepszymi ludźmi”. Najwyraźniej to miał być koniec tej historii, która zaczęła się w Anglii – śmierć wszystkich zamieszanych w tę sprawę: Tommy’ego, Franka, a teraz także Gabe’a.
 #TEXT 18
-Czy na świecie jest wielu ludzi gotowych walczyć na śmierć o porcelanę po babci, której nigdy nawet nie użyją? Albo o inną zbędną rzecz, ale podarowaną przez jakiegoś wielkiego człowieka? W tym przypadku zamiast porcelany chodzi o rapier, który Gabe otrzymał od pułkownika Doyley’a. Piękny sam w sobie, ale problem w tym, że Callow woli szerokie miecze, więc szabla po prostu wisiała na gwoździu. Pożyczył mi ją do walki z Tommym, a potem w obrzydliwy sposób zażądał jej zwrotu… Nasza rozmowa donikąd nie prowadziła, więc po Ironsie musiałem rozprawić się także z Gabe’em. Mam nadzieję, że dziś – albo w najbliższym czasie – nie będę miał już do czynienia z takim szaleństwem.
+Czy na świecie jest wielu ludzi gotowych walczyć na śmierć o porcelanę po babci, której nigdy nawet nie użyją? Albo o inną zbędną rzecz, ale podarowaną przez jakiegoś wielkiego człowieka? W tym przypadku zamiast porcelany chodzi o rapier, który Gabe otrzymał od pułkownika Doyley’a. Piękny sam w sobie, ale problem w tym, że Callow woli szerokie miecze, więc szabla po prostu wisiała na gwoździu. Pożyczył mi ją do walki z Tommym, a potem w obrzydliwy sposób zażądał jej zwrotu... Nasza rozmowa donikąd nie prowadziła, więc po Ironsie musiałem rozprawić się także z Gabe’em. Mam nadzieję, że dziś – albo w najbliższym czasie – nie będę miał już do czynienia z takim szaleństwem.
 #TEXT 19
 Który z nich mówił prawdę? Chyba nigdy się nie dowiem. Walczyliśmy i musiałem rozprawić się z nim tu i teraz, sam. Callow pojawił się dokładnie w momencie, gdy kończyłem Ironsa. Jego wymówki były, szczerze mówiąc, słabe, i uświadomiłem sobie, że zostałem po prostu wykorzystany. Tommy może nie był świętym, ale zabicie Callowa oznaczałoby, że śmierć tego pierwszego była na nic. Może Gabe zasługiwał na śmierć. Chustka, którą Irons przerobił na czarną plamę, i wyszyty na niej uśmiech czaszki i skrzyżowanych piszczeli już na zawsze będą mi o tym dniu przypominać.
 

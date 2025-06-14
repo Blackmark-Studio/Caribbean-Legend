@@ -1,0 +1,159 @@
+Tutorial_1
+{
+Faire tourner le navire
+}
+
+Tutorial_2
+{
+Appuyez sur @<key1> et @<key2> pour tourner le navire
+}
+
+Tutorial_3
+{
+Contrôle du temps
+}
+
+Tutorial_4
+{
+Activer l’accélération du temps @<key>
+}
+
+Tutorial_5
+{
+Appuyez de nouveau sur @<key> pour désactiver
+}
+
+Tutorial_6
+{
+Appuyez sur @<key> pour accélérer jusqu’à x6
+}
+
+Tutorial_7
+{
+Appuyez sur @<key1> pour ralentir, ou @<key2>
+}
+
+Tutorial_8
+{
+Contrôle des voiles
+}
+
+Tutorial_9
+{
+Mettez les voiles en mode combat @<key1>
+}
+
+Tutorial_10
+{
+Affalez complètement les voiles @<key1>
+}
+
+Tutorial_11
+{
+Bases du combat naval
+}
+
+Tutorial_12
+{
+Utilisez @<key1> pour une bordée rapide
+}
+
+Tutorial_13
+{
+Combat naval avancé
+}
+
+Tutorial_14
+{
+@<key1> Passez en mode visée
+}
+
+Tutorial_15
+{
+Appuyez sur @<key1> pour une bordée précise
+}
+
+Tutorial_16
+{
+@<key1> Quittez le mode visée
+}
+
+Tutorial_17
+{
+Remportez la victoire
+}
+
+Tutorial_18
+{
+Coulez les navires pirates restants
+}
+
+Tutorial_19
+{
+Attaquez l’ennemi
+}
+
+Tutorial_20
+{
+@<key1> Attaque tranchante
+}
+
+Tutorial_21
+{
+@<key1> Estocade
+}
+
+Tutorial_22
+{
+@<key1> Attaque lourde
+}
+
+Tutorial_23
+{
+Défendez-vous
+}
+
+Tutorial_24
+{
+@<key1> Bloquez les attaques
+}
+
+Tutorial_25
+{
+@<key1> Parez les attaques
+}
+
+Tutorial_26
+{
+Vainquez le pirate !
+}
+
+Tutorial_27
+{
+Quêtes
+}
+
+Tutorial_28
+{
+Lisez le document @<key1>
+}
+
+Tutorial_29
+{
+Ouvrez le coffre de doubloons @<key1>
+}
+
+Tutorial_30
+{
+Fouille
+}
+
+Tutorial_31
+{
+Fouillez les marins
+}
+
+Tutorial_32
+{
+Donnez la potion mystérieuse à Alonso
+}

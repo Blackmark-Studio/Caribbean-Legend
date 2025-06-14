@@ -277,15 +277,18 @@ void Rum_FindLugger(string qName)//вышли в море - ставим люг�
 
 void Rum_NewGameTip0(string qName) // Обучение уехало в новый туториал 
 {
-	LaunchTutorial("Navigation", 1);
-    if(bGlobalTutor) DoQuestFunctionDelay("SharlieTutorial_ActivateButtonInTheSea_1", 15.0);
-    /*if(bGlobalTutor)
+	LaunchTutorial("Prologue_Navigation", 1);
+    if(bGlobalTutor)
     {
         DontRefreshBLI = false;
         DeleteAttribute(pchar, "systeminfo.BLIoff");
         TW_InitSea_1_Turn();
         TW_Open("sea");
-	}*/
+	}
+	else
+	{
+		DoQuestFunctionDelay("SharlieTutorial_ActivateButtonInTheSea_1", 15.0);
+	}
 	//if(!SandBoxMode) DoQuestFunctionDelay("Rum_NewGameTip1", 15.0);
 }
 
@@ -1369,7 +1372,7 @@ void VsD_Vzriv_2(string qName)
 	}
 	else
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "citiz_36", "man", "man", 25, pchar.nation, -1, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
 		sld.name 	= StringFromKey("SharlieTrial_29");
 		sld.lastname = StringFromKey("SharlieTrial_30");
 		LAi_SetActorType(sld);
@@ -2125,6 +2128,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			LocatorReloadEnterDisable("FortFrance_townhall", "reload3", true);
 			sld = &Locations[FindLocation("FortFrance_prison")];
 			sld.locators_radius.item.detector1 = 0;
+			DoQuestFunctionDelay("AutoSaveDelay", 1.5);
 	}
 	else if (sQuestName == "NgtF3")
 	{
@@ -2334,10 +2338,6 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_SetStayType(pchar);
 			LAi_ActorDialogDelay(sld, pchar, "", 1.0);
-	}
-	else if (sQuestName == "GuideFight_tutorial")
-	{
-			LaunchTutorial("GuideFight", 1);
 	}
 	else if (sQuestName == "Guide_HeroWin") // ГГ выиграл фехт
 	{
@@ -2796,7 +2796,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	// Sinistra - Миниквест "Делюк" ==>
 	else if (sQuestName == "Del_Alonso")
 	{
-			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "citiz_36", "man", "man", 25, pchar.nation, -1, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
 			sld.name 	= StringFromKey("SharlieTrial_29");
 			sld.lastname = StringFromKey("SharlieTrial_30");
 			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";

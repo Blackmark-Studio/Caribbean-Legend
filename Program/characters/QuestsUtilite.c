@@ -1176,12 +1176,22 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		
         ok = false;
 	}
-	// Брин по квесту "Торговля по закону"
+	// Бриг по квесту "Торговля по закону"
 	if (_npchar.id == "TPZ_Pirate")
 	{
 		DeleteAttribute(_location, "box2");
 		_location.box2.items.potionrum = 100;
 		_location.box2.items.potionwine = 100;
+		
+        ok = false;
+	}
+	// Бриг Мементо
+	if (_npchar.id == "Memento_cap")
+	{
+		DeleteAttribute(_location, "box1");
+		_location.box1.items.Mineral30 = 150;
+		_location.box1.items.Memento_Book = 1;
+		_location.box1.items.spyglassSP3 = 1;
 		
         ok = false;
 	}
@@ -1457,7 +1467,7 @@ int GetCoffDiff(float _num, int _maxRange)
 	}
 	_num += 0.5;
 	if (_num > _maxRange) return _maxRange;
-	else return sti(_num);
+	else return MakeInt(_num);
 }
 // заполнение сундуков и рандитема по квесту
 bool SetLocationQuestRandItem(int _index, aref _location, string _locatorName, aref al) // al - ветка локатора из модели, остальное тоже из обратотки локации
@@ -2169,7 +2179,7 @@ void SetQuestAboardCabinDialog(ref refChar)
         // как использовать, пример
 		/*if (true) // true - для теста, должно быть это CheckAttribute(pchar, "квестовая ветка, если нужно") && refChar.CaptanId == "IdNPC")
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
             refChar.Dialog.Filename    = "Capitans_dialog.c";   // это нужно задать на изначальном кэпе в др месте
 	    	refChar.Dialog.CurrentNode = "QuestAboardCabinDialog";
 	    	// все остальное в диалоге, по образцу
@@ -2177,263 +2187,258 @@ void SetQuestAboardCabinDialog(ref refChar)
 		//капитан по квесту мэра на поиск и уничтожение пирата.
 		if (refChar.CaptanId == "MQPirate" && CheckAttribute(pchar, "GenQuest.DestroyPirate"))
 		{
-		    LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");
 			refChar.dialog.currentnode = "DestroyPirate_Abordage";
 		}
-		//засада на ГГ по наводке на купца homo
-		if (findsubstr(refChar.CaptanId, "_QuestMerchant" , 0) != -1  && trap)
+		else if (findsubstr(refChar.CaptanId, "_QuestMerchant" , 0) != -1  && trap)
 		{
-		    LAi_SetCheckMinHP(refChar, 30, true, "QuestAboardCabinDialog");  // сколько НР мин
+            //засада на ГГ по наводке на купца homo
+		    LAi_SetCheckMinHP(refChar, 30, true, "QuestAboardCabinDialog");
 		    refChar.dialog.filename = "Capitans_dialog.c";  //fix homo 23/03/07
 			refChar.dialog.currentnode = "MerchantTrap_Abordage";
 		}
-		//квест возврата украденного корабля
-		if (findsubstr(refChar.CaptanId, "SeekCap_" , 0) != -1)
+		else if (findsubstr(refChar.CaptanId, "SeekCap_" , 0) != -1)
 		{
-		    LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");  // сколько НР мин
-			refChar.Dialog.CurrentNode = "SeekCap"; //даем абордажную ноду
+            //квест возврата украденного корабля
+		    LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");
+			refChar.Dialog.CurrentNode = "SeekCap";
 		}
-		//поисковый генератор
-		if (findsubstr(refChar.CaptanId, "SeekCitizCap_" , 0) != -1)
+		else if (findsubstr(refChar.CaptanId, "SeekCitizCap_" , 0) != -1) //поисковый генератор
 		{
 			if (refChar.quest.SeekCap == "NM_battle")
 			{
-				LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");  // сколько НР мин
-				refChar.Dialog.CurrentNode = "NM_battleBoard"; //даем абордажную ноду
+				LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");
+				refChar.Dialog.CurrentNode = "NM_battleBoard";
 			}
-			if (refChar.quest.SeekCap == "NM_prisoner")
+			else if (refChar.quest.SeekCap == "NM_prisoner")
 			{
-				LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");  // сколько НР мин
-				refChar.Dialog.CurrentNode = "NM_prisonerBoard"; //даем абордажную ноду
+				LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");
+				refChar.Dialog.CurrentNode = "NM_prisonerBoard";
 			}
-			if (refChar.quest.SeekCap == "manRapeWife")
+			else if (refChar.quest.SeekCap == "manRapeWife")
 			{
-				LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");  // сколько НР мин
-				refChar.Dialog.CurrentNode = "RapeWifeCap_Board"; //даем абордажную ноду
+				LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");
+				refChar.Dialog.CurrentNode = "RapeWifeCap_Board";
 			}
-		    if (refChar.quest.SeekCap == "womanRevenge")
+		    else if (refChar.quest.SeekCap == "womanRevenge")
 			{
-				LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");  // сколько НР мин
-				refChar.Dialog.CurrentNode = "RevengeCap_board"; //даем абордажную ноду
+				LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");
+				refChar.Dialog.CurrentNode = "RevengeCap_board";
 			}
-			if (refChar.quest.SeekCap == "womanPirates")
+			else if (refChar.quest.SeekCap == "womanPirates")
 			{
-				LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");  // сколько НР мин
-				refChar.Dialog.CurrentNode = "PiratesCap_Board"; //даем абордажную ноду
+				LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");
+				refChar.Dialog.CurrentNode = "PiratesCap_Board";
 			}
 		}
-		//генератор "Продажный патруль" 
-		if (refChar.CaptanId == "PirateCapt")
+		else if (refChar.CaptanId == "PirateCapt") //генератор "Продажный патруль" 
 		{
-			LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+			LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 		}
-		
-		// Warship Генер "Пираты на необитайке"
-		if(refChar.CaptanId == "PiratesOnUninhabited_BadPirate")
+		else if(refChar.CaptanId == "PiratesOnUninhabited_BadPirate") // Warship Генер "Пираты на необитайке"
 		{
-			LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+			LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "GenQuests_Dialog.c";
-			refChar.Dialog.CurrentNode = "PiratesOnUninhabited_46"; //даем абордажную ноду
+			refChar.Dialog.CurrentNode = "PiratesOnUninhabited_46";
 		}
-		
-		// Генерратор "Поручение капитана 'Выкуп' или 'Операция Галеон'"
-		if(CheckAttribute(pchar,"GenQuest.CaptainComission") && pchar.GenQuest.CaptainComission == "Begin")
+        else if(CheckAttribute(pchar,"GenQuest.CaptainComission") && pchar.GenQuest.CaptainComission == "Begin")
 		{
-			LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+            // Генерратор "Поручение капитана 'Выкуп' или 'Операция Галеон'"
+			LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "GenQuests_Dialog.c";
-			refChar.Dialog.CurrentNode = "CaptainComission_1"; //даем абордажную ноду
+			refChar.Dialog.CurrentNode = "CaptainComission_1";
 		}
-		
-		if(refChar.CaptanId == "ShipWreck_BadPirate")
+		else if(refChar.CaptanId == "ShipWreck_BadPirate")
 		{
-			LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+			LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "GenQuests_Dialog.c";
-			refChar.Dialog.CurrentNode = "ShipWreck_50"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "ShipWreck_50";
 		}
-		if (refChar.CaptanId == "Slaveshorecap")
+		else if (refChar.CaptanId == "Slaveshorecap")
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\Other_Quests_NPC.c";
-			refChar.Dialog.CurrentNode = "TakeShoreCap"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "TakeShoreCap";
 		}
-		if (refChar.CaptanId == "RatCaptain")
+		else if (refChar.CaptanId == "RatCaptain")
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\Other_Quests_NPC.c";
-			refChar.Dialog.CurrentNode = "Rat_talk"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "Rat_talk";
 		}
-		if (refChar.CaptanId == "Jafar")
+		else if (refChar.CaptanId == "Jafar")
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\Other_Quests_NPC.c";
-			refChar.Dialog.CurrentNode = "Ja_talk"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "Ja_talk";
 		}
-		if (refChar.CaptanId == "Fleetwood")
+		else if (refChar.CaptanId == "Fleetwood")
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\HollandGambit\Fleetwood.c";
-			refChar.Dialog.CurrentNode = "Fleetwood_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "Fleetwood_abordage";
 		}
-		if (refChar.CaptanId == "JacobBerg")
+		else if (refChar.CaptanId == "JacobBerg")
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\HollandGambit\JacobBerg.c";
-			refChar.Dialog.CurrentNode = "JacobBerg_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "JacobBerg_abordage";
 		}
-		if (refChar.CaptanId == "Lucas")
+		else if (refChar.CaptanId == "Lucas")
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\HollandGambit\LucasRodenburg.c";
-			refChar.Dialog.CurrentNode = "Lucas_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "Lucas_abordage";
 		}
-		if (refChar.CaptanId == "Knippel")
+		else if (refChar.CaptanId == "Knippel")
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\HollandGambit\Knippel.c";
-			refChar.Dialog.CurrentNode = "Knippel_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "Knippel_abordage";
 		}
-		if (refChar.CaptanId == "CureerCap")
+		else if (refChar.CaptanId == "CureerCap")
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\HollandGambit\OtherNPC.c";
-			refChar.Dialog.CurrentNode = "Cureer_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "Cureer_abordage";
 		}
-		if (refChar.CaptanId == "Longway")
+		else if (refChar.CaptanId == "Longway")
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\HollandGambit\Longway.c";
-			refChar.Dialog.CurrentNode = "Longway_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "Longway_abordage";
 		}
-		if (refChar.CaptanId == "FalseTraceCap")//ложный след
+		else if (refChar.CaptanId == "FalseTraceCap")//ложный след
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\LineMiniQuests\FalseTrace.c";
-			refChar.Dialog.CurrentNode = "FalseTrace_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "FalseTrace_abordage";
 		}
-		if (refChar.CaptanId == "Vaskezs_helper")//португалец
+		else if (refChar.CaptanId == "Vaskezs_helper")//португалец
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\Portugal_dialog.c";
-			refChar.Dialog.CurrentNode = "VaskezsHelper_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "VaskezsHelper_abordage";
 		}
-		if (refChar.CaptanId == "ConJuan")//цена чахотки
+		else if (refChar.CaptanId == "ConJuan")//цена чахотки
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\LineMiniQuests\Consumption.c";
-			refChar.Dialog.CurrentNode = "Juan_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "Juan_abordage";
 		}
-		if (refChar.CaptanId == "MarginCap")//захват пассажиров
+		else if (refChar.CaptanId == "MarginCap")//захват пассажиров
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\Marginpassenger.c";
-			refChar.Dialog.CurrentNode = "MarginCap_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "MarginCap_abordage";
 		}
-		if (refChar.CaptanId == "ContraPassCap")//генер губера - ОЗГ - пассажир
+		else if (refChar.CaptanId == "ContraPassCap")//генер губера - ОЗГ - пассажир
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "MayorQuests_dialog.c";
-			refChar.Dialog.CurrentNode = "ContraPass_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "ContraPass_abordage";
 		}
-		if (refChar.CaptanId == "Donovan")//Сага, корвет Донована
+		else if (refChar.CaptanId == "Donovan")//Сага, корвет Донована
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\Saga\OtherNPC.c";
-			refChar.Dialog.CurrentNode = "Donovan_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "Donovan_abordage";
 		}
-		if (refChar.CaptanId == "Jackman")//Сага, Джекман
+		else if (refChar.CaptanId == "Jackman")//Сага, Джекман
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Mayor\Jackman.c";
-			refChar.Dialog.CurrentNode = "Jackman_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "Jackman_abordage";
 		}
-		if (refChar.CaptanId == "RoberCap2")//Черепаха, Мартэн
+		else if (refChar.CaptanId == "RoberCap2")//Черепаха, Мартэн
 		{
-		    LAi_SetCheckMinHP(refChar, 100, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 100, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\Sharlie\Terrapin.c";
-			refChar.Dialog.CurrentNode = "rober_abordage"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "rober_abordage";
 		}
-		if (refChar.CaptanId == "Kaleuche_khaelroacap")//Калеуче
+		else if (refChar.CaptanId == "Kaleuche_khaelroacap")//Калеуче
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\Caleuche_dialog.c";
-			refChar.Dialog.CurrentNode = "CaleucheCap_3"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "CaleucheCap_3";
 		}
-		if (refChar.CaptanId == "FMQG_Juan" && CheckAttribute(pchar,"questTemp.FMQG") && pchar.questTemp.FMQG != "fail") // Addon-2016 Jason ФМК-Гваделупа
+		else if (refChar.CaptanId == "FMQG_Juan" && CheckAttribute(pchar,"questTemp.FMQG") && pchar.questTemp.FMQG != "fail") // Addon-2016 Jason ФМК-Гваделупа
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\LineMiniQuests\FMQ_Guadeloupe.c";
-			refChar.Dialog.CurrentNode = "Juan"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "Juan";
 		}
-		// Addon 2016-1 Jason Пиратская линейка
-		if (refChar.CaptanId == "Ignasio" && CheckAttribute(pchar, "questTemp.Mtraxx.Corrida.Logbook"))
+		else if (refChar.CaptanId == "Ignasio" && CheckAttribute(pchar, "questTemp.Mtraxx.Corrida.Logbook"))
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+            // Addon 2016-1 Jason Пиратская линейка
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\Roger.c";
-			refChar.Dialog.CurrentNode = "ignasio_boarding"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "ignasio_boarding";
 		}
-		// Jason Долго и счастливо
-		if (refChar.CaptanId == "LH_BarbSeaCap_1")
+		else if (refChar.CaptanId == "LH_BarbSeaCap_1") // Jason Долго и счастливо
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\LongHappy.c";
-			refChar.Dialog.CurrentNode = "Barbazon_boarding"; //даем абордажную ноду		
+			refChar.Dialog.CurrentNode = "Barbazon_boarding";
 		}
-		// Sinistra Травля крысы
-		if (refChar.CaptanId == "TK_Heiter")
+		else if (refChar.CaptanId == "TK_Heiter") // Sinistra Травля крысы
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\Sharlie\OtherNPC.c";
-			refChar.Dialog.CurrentNode = "TK_Kapitan"; //даем абордажную ноду			
+			refChar.Dialog.CurrentNode = "TK_Kapitan";	
 		}
-		// Sinistra Длинные тени старых грехов
-		if (refChar.CaptanId == "DTSG_Kortni")
+		else if (refChar.CaptanId == "DTSG_Kortni") // Sinistra Длинные тени старых грехов
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\CompanionQuests\Knippel.c";
-			refChar.Dialog.CurrentNode = "DTSG_Kortni"; //даем абордажную ноду	
+			refChar.Dialog.CurrentNode = "DTSG_Kortni";	
 		}
-		// Rebbebion, квест "Путеводная звезда"
-		if (refChar.CaptanId == "PZ_KlemanLebren")
+		else if (refChar.CaptanId == "PZ_KlemanLebren") // Rebbebion, квест "Путеводная звезда"
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\CompanionQuests\Longway.c";
-			refChar.Dialog.CurrentNode = "PZ_KlemanLebren_7"; //даем абордажную ноду	
+			refChar.Dialog.CurrentNode = "PZ_KlemanLebren_7";	
 		}
-		// Sinistra, квест "Путеводная звезда"
-		if (refChar.CaptanId == "PZ_RobertMartin")
+		else if (refChar.CaptanId == "PZ_RobertMartin") // Sinistra, квест "Путеводная звезда"
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\CompanionQuests\Longway.c";
-			refChar.Dialog.CurrentNode = "PZ_RobertMartin_8"; //даем абордажную ноду	
+			refChar.Dialog.CurrentNode = "PZ_RobertMartin_8";	
 		}
-		// Rebbebion, квест "Чёрная метка"
-		if (refChar.CaptanId == "BM_GabeCallow")
+		else if (refChar.CaptanId == "BM_GabeCallow") // Rebbebion, квест "Чёрная метка"
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\BlackMark.c";
-			refChar.Dialog.CurrentNode = "BM_Callow1"; //даем абордажную ноду	
+			refChar.Dialog.CurrentNode = "BM_Callow1";	
 		}
-		// Святое Милосердие
-		if (refChar.CaptanId == "SantaMisericordia_cap")
+		else if (refChar.CaptanId == "SantaMisericordia_cap") // Святое Милосердие
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
-			refChar.Dialog.FileName = "Quest\SantaMisericordia_dialog.c";
-			refChar.Dialog.CurrentNode = "Alamida_abordage"; //даем абордажную ноду	
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
+			refChar.Dialog.FileName = "Quest\ShipsPack\SantaMisericordia_dialog.c";
+			refChar.Dialog.CurrentNode = "Alamida_abordage";	
 		}
-		// Леди Бет
-		if (refChar.CaptanId == "LadyBeth_cap")
+		else if (refChar.CaptanId == "LadyBeth_cap") // Леди Бет
 		{
-			LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
-			refChar.Dialog.FileName = "Quest\LadyBeth_dialog.c";
-			refChar.Dialog.CurrentNode = "LadyBeth_abordage"; //даем абордажную ноду	
+			LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
+			refChar.Dialog.FileName = "Quest\ShipsPack\LadyBeth_dialog.c";
+			refChar.Dialog.CurrentNode = "LadyBeth_abordage";	
 		}
-		// квест "Торговля по закону"
-		if (refChar.CaptanId == "TPZ_Pirate")
+		else if (refChar.CaptanId == "TPZ_Pirate") // квест "Торговля по закону"
 		{
-		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");  // сколько НР мин
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
 			refChar.Dialog.FileName = "Quest\MiniEvents\TradingByLaw_dialog.c";
-			refChar.Dialog.CurrentNode = "Pirate_1"; //даем абордажную ноду	
+			refChar.Dialog.CurrentNode = "Pirate_1";	
 		}
+		else if (refChar.CaptanId == "Memento_cap") // Мементо
+		{
+		    LAi_SetCheckMinHP(refChar, 1, false, "Memento_MortimerGrimDead");
+		}
+        else if (refChar.CaptanId == NationShortName(sti(refChar.nation)) + "Brigadier01") // Пожарная команда
+        {
+            LAi_SetCheckMinHP(refChar, 1, true, "QuestAboardCabinDialog");
+            refChar.Dialog.FileName = "Quest\FireBrigade.c";
+			refChar.Dialog.CurrentNode = "FireBrigade_" + NationShortName(sti(refChar.nation));	
+        }
 	}
 }
 
@@ -3550,7 +3555,7 @@ void LSC_NpcInit()// ключевые НПС LSC
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
     TakeNItems(sld, "bullet", 50);
 	AddItems(sld, "gunpowder", 50);
-	TakeNItems(sld, "potion2", 2+makeint(MOD_SKILL_ENEMY_RATE/2));
+	TakeNItems(sld, "potion2", 2+makeint(MOD_SKILL_ENEMY_RATE * 0.5));
 	sld.location = "SanAugustineResidence";
 	sld.location.group = "goto";
 	sld.location.locator = "goto11";
@@ -4429,6 +4434,21 @@ void LSC_CreateStateCitizens() // создание горожан-статико
 	sld.LSC_clan = true;
 }
 
+void OtherNpcInit() // остальные ключевые НПС
+{
+	// Диего де Ланда
+	ref sld = GetCharacter(NPC_GenerateCharacter("DiegoDeLanda", "priest_sp1", "man", "man2", 100, SPAIN, -1, false, "quest"));
+	sld.name = StringFromKey("QuestsUtilite_279");
+	sld.lastname = StringFromKey("QuestsUtilite_280");
+	sld.dialog.filename = "Quest\ShipsPack\DiegoDeLanda_dialog.c";
+	sld.dialog.currentnode = "DiegoDeLanda_Meeting";
+	LAi_SetHP(sld, 999.0, 999.0);
+	LAi_SetImmortal(sld, true);
+	sld.SaveItemsForDead = true;
+	sld.DontClearDead = true;
+	LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+}
+
 string GetStrSmallRegister(string sBase)
 {
 	string sResult, Simbol;
@@ -4774,11 +4794,16 @@ void QuestCheckTakeBoxes(ref itemsRef)
 	}
     if (CheckAttribute(itemsRef, "treasure_note")) // Проверка записок
     {
-        // Пока открыт этот сундук, запоминаем всю инфу для взятия записки
-        ref rNote = &items[FindItem("treasure_note")];
-        rNote.curNumb = itemsRef.treasure_note;
-        rNote.curLoc  = PChar.location;
-        rNote.curBox  = GetAttributeName(itemsRef);
+        if(GetCharacterItem(itemsRef, "treasure_note") > 0)
+        {
+            // Пока открыт этот сундук, запоминаем всю инфу для взятия записки
+            ref rNote = &items[FindItem("treasure_note")];
+            rNote.curNumb = itemsRef.treasure_note;
+            rNote.curLoc  = PChar.location;
+            rNote.curBox  = GetAttributeName(itemsRef);
+        }
+        else
+            DeleteAttribute(itemsRef, "treasure_note");
     }
 	//<<<<<<<<<<---------- КЛАДЫ --------------------------
 }
@@ -5165,12 +5190,11 @@ void SelectLevelTradeShipParameter()//Jason автолевеллинг на то
 	}
 }
 
-int SelectLevelCannonParameter(int iShipType)//Jason автолевеллинг на орудия - иногда надо
+// TO_DO: DEL/REF
+// Jason автолевеллинг на орудия - иногда надо
+int SelectLevelCannonParameter(int iShipType)
 {
-	//ref refBaseShip = GetRealShip(iShipType);
-	
 	int iCannon = GetCannonByTypeAndCaliber(RandPhraseSimple("cannon","culverine"), sti(ShipsTypes[iShipType].MaxCaliber));
-	
 	return iCannon;
 }
 
@@ -5562,7 +5586,7 @@ void Map_NationQuestHunter(int Nation)//квестовый энкаунтер-о
 	int iNation = sti(Nation);
     for (int i = 1; i <= GetCompanionQuantity(pchar)+1; i++)
     {
-        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_"+NationShortName(iNation)+"_"+(rand(1)+1), "man", "man", iRank, iNation, 45, true, "hunter"));
+        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_"+NationShortName(iNation)+"_"+(rand(1)+1), "man", "man", iRank, iNation, 46, true, "hunter"));
         SetShipHunter(sld);
         SetFantomParamHunter(sld);
         SetCaptanModelByEncType(sld, "war");
@@ -5573,7 +5597,7 @@ void Map_NationQuestHunter(int Nation)//квестовый энкаунтер-о
         sld.mapEnc.type = "war";
 		sld.mapEnc.worldMapShip = "Galleon_red";
         sld.mapEnc.Name = StringFromKey("QuestsUtilite_197");
-		sld.hunter = ""+iNation+"";
+		sld.hunter = iNation;
         Group_AddCharacter(sGroup, sCapId + i);
     }
     Group_SetGroupCommander(sGroup, sCapId+ "1");

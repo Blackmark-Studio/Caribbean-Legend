@@ -173,7 +173,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Santiago_Trip_8":
-			dialog.text = "Là se ne va tutta quell’arroganza… Quando la tempesta si avvicina, il nostro prode capitano si fa finalmente ragionevole. Potevi pensarci prima e ci avresti risparmiato tempo e rogne. Vabbè, ora devo andare a controllare una faccenda, ma poi torno e parleremo ancora, sempre che ce ne sia bisogno. Resta qui per ora. Miguel ti terrà d’occhio mentre sono via.";
+			dialog.text = "Là se ne va tutta quell’arroganza... Quando la tempesta si avvicina, il nostro prode capitano si fa finalmente ragionevole. Potevi pensarci prima e ci avresti risparmiato tempo e rogne. Vabbè, ora devo andare a controllare una faccenda, ma poi torno e parleremo ancora, sempre che ce ne sia bisogno. Resta qui per ora. Miguel ti terrà d’occhio mentre sono via.";
 			link.l1 = "Giuro, 'mio caro', te ne pentirai amaramente! ";
 			link.l1.go = "Santiago_Trip_11";
 		break;
@@ -1353,7 +1353,7 @@ void ProcessDialogEvent()
 		case "Stivesant_49":
 			if (sti(pchar.money) >= 1000000)
 			{
-				dialog.text = "Non ne avevo dubbi, Vice Ammiraglio Charles de Maure, che mi avresti portato questi soldi. Forse, ti ho persino chiesto troppo poco, ma tant’è… Il Barone è solo una pedina nella tua prossima partita, vero? Il grado e il denaro non ti bastano più, ora punti a scalzare de Poincy, dico bene? Ammettilo, un milione è una cifra da nulla per diventare Governatore Generale delle colonie francesi! Quei soldi li rifarai in pochi mesi, con la tua presa di ferro.";
+				dialog.text = "Non ne avevo dubbi, Vice Ammiraglio Charles de Maure, che mi avresti portato questi soldi. Forse, ti ho persino chiesto troppo poco, ma tant’è... Il Barone è solo una pedina nella tua prossima partita, vero? Il grado e il denaro non ti bastano più, ora punti a scalzare de Poincy, dico bene? Ammettilo, un milione è una cifra da nulla per diventare Governatore Generale delle colonie francesi! Quei soldi li rifarai in pochi mesi, con la tua presa di ferro.";
 				link.l1 = "Prendi il tuo milione, Mynheer. Ora vorrei ricevere il registro che mi hai promesso.";
 				link.l1.go = "Stivesant_50";
 			}
@@ -1398,7 +1398,7 @@ void ProcessDialogEvent()
 		
 		case "vanberg_sold":
 			dialog.text = "Ah-ah-ah! Guarda un po’! Jacob aveva ragione, come sempre – questa volpe non è venuta sull’isola per caso. Sembra che nel forziere ci sia una bella montagna d’oro. Sei stato proprio uno sprovveduto a venire qui da solo, compare. Ma d’altronde, così ci faciliti il lavoro!";
-			link.l1 = "Quelle canaglie mi hanno trovato! Non l’avevo previsto… Ma non sarò una preda facile!";
+			link.l1 = "Quelle canaglie mi hanno trovato! Non l’avevo previsto... Ma non sarò una preda facile!";
 			link.l1.go = "vanberg_sold_1";			
 		break;
 		

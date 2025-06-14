@@ -134,6 +134,18 @@ void WorldSituationsUpdate()
 					CheckLadyBeth();
 				}
 			}
+			if (GetDLCenabled(DLC_APPID_6))
+			{
+				if(!CheckAttribute(pchar, "questTemp.Memento"))
+				{
+					if(SandBoxMode) Memento_init();
+					else if (CheckAttribute(pchar, "questTemp.TrialEnd")) Memento_init();
+				}
+				else if(GetDataDay() == 6)
+				{
+					CheckMemento();
+				}
+			}
 			CheckAchievments();
 		break;
 		
@@ -245,7 +257,7 @@ void Tut_StartGame(string sQuest)
 	LAi_LocationFightDisable(loadedLocation, true);
 	DoQuestFunctionDelay("Tut_locCamera_1", 0.1);
 	LAi_SetStayType(pchar);
-	TeleportCharacterToPosAy(pchar, -1.15, 3.20, 11.80, -0.90);
+	TeleportCharacterToPosAy(pchar, -1.00, 3.20, 11.60, -0.90);
 }
 
 void Tut_locCamera_1(string _tmp)
@@ -260,7 +272,7 @@ void Tut_Continue()
     LAi_SetFightMode(Pchar, false);
     LAi_LockFightMode(pchar, true);
     
-	sld = GetCharacter(NPC_GenerateCharacter("Sailor_1", "citiz_31", "man", "man", 1, PIRATE, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Sailor_1", "Alonso", "man", "man", 1, PIRATE, 0, false, "soldier"));
     sld.name 	= StringFromKey("time_events_7");
     sld.lastname 	= "";
     sld.Dialog.CurrentNode = "First time";
@@ -281,7 +293,7 @@ void Tut_Continue()
 	LAi_ActorDialog(sld, pchar, "", 5.0, 0);
 
 	// генерим второго матроса, но пока не ставим
-	sld = GetCharacter(NPC_GenerateCharacter("Sailor_2", "citiz_36", "man", "man", 1, PIRATE, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Sailor_2", "citiz_31", "man", "man", 1, PIRATE, 0, false, "soldier"));
     sld.name 	= StringFromKey("time_events_5");
     sld.lastname 	= StringFromKey("time_events_6");
 

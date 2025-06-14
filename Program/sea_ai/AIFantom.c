@@ -242,146 +242,95 @@ void Fantom_SetCannons(ref rFantom, string sFantomType)
 {
 	int iSClass = GetCharacterShipClass(rFantom);
 	ref rShip = GetRealShip(GetCharacterShipType(rFantom));
-
- 	int iCannonsType = sti(rShip.Cannon);
-	string sCannonType = "cannon";
-	int iCaliber = sti(rShip.MaxCaliber);
-    // boal 03.02.2004 -->
-    switch(iCaliber)
-	{
-		case 3:
-            iCaliber = 0;
-		break;				
-		case 6:
-			iCaliber = 1;
-		break;				
-		case 8:
-			iCaliber = 2;
-		break;				
-		case 12:
-			iCaliber = 3;
-		break;				
-		case 16:
-			iCaliber = 4;
-		break;
-		case 18:
-			iCaliber = 5;
-		break;
-		case 20:
-			iCaliber = 6;
-		break;				
-		case 24:
-			iCaliber = 7;
-		break;
-		case 32:
-			iCaliber = 8;
-		break;
-		case 36:
-			iCaliber = 9;
-		break;
-		case 42:
-			iCaliber = 10;
-		break;	
-	}
-	if (iCaliber > 0)
-	{
-	   iCaliber = iCaliber - rand(1);
-	}
-	else
-	{
-		iCaliber = 0;
-	}
-	switch(iCaliber)
-	{
-		case 0:
-			iCaliber = 3;
-		break;
-		case 1:
-			iCaliber = 6;
-		break;
-		case 2:
-			iCaliber = 8;
-		break;
-		case 3:
-			iCaliber = 12;
-		break;
-		case 4:
-			iCaliber = 16;
-		break;
-		case 5:
-			iCaliber = 18;
-		break;
-		case 6:
-			iCaliber = 20;
-		break;
-		case 7:
-			iCaliber = 24;
-		break;
-		case 8:
-			iCaliber = 32;
-		break;
-		case 9:
-			iCaliber = 36;
-		break;
-		case 10:
-			iCaliber = 42;
-		break;	
-	}
-	if (iCaliber < 3)
-	{
-	   iCaliber = 3;
-	}
-    // boal 03.02.2004 <--
-	if (iCaliber > sti(rShip.MaxCaliber)) { iCaliber=sti(rShip.MaxCaliber); }
-
-	switch (sFantomType)
-	{
-        case "trade":
-            // boal 20.01.2004 -->
-		    if (rand(1000) < 700)
-		    {
-			   sCannonType = "cannon";
-			}
-			else
-			{
-			   sCannonType = "culverine";
-			}
-		break;
-
-		case "war":
-			if (rand(1000) < 200)
-		    {
-			   sCannonType = "cannon";
-			}
-			else
-			{
-			   sCannonType = "culverine";
-			}
-		    break;
-
-		case "pirate":
-			if (rand(1000) < 400)
-		    {
-			   sCannonType = "cannon";
-			}
-			else
-			{
-			   sCannonType = "culverine";
-			}
-		    break;
-		    // boal 20.01.2004 <--
-	}
-
 	if (sti(rShip.Cannon) == CANNON_TYPE_NONECANNON)
 	{
 		rFantom.Ship.Cannons.Type = CANNON_TYPE_NONECANNON;
 		return;
 	}
-	if (iCaliber == 42)
+    int iCaliber = sti(rShip.MaxCaliber);
+	string sCannonType = "cannon";
+	switch (sFantomType)
 	{
-	    sCannonType = "cannon";
+        case "trade":
+            if(rand(9) > 1) // 80%
+			   sCannonType = "culverine";
+            break;
+
+		case "war":
+			if(rand(9) > 6) // 30%
+			   sCannonType = "culverine";
+		    break;
+
+		case "pirate":
+			if(rand(9) > 4) // 50%
+			   sCannonType = "culverine";
+		    break;
 	}
+
+    // Для поиска кулеврин своя логика
+    if(sCannonType != "cannon")
+    {
+        if(FindRelevantCulverine(rFantom, iCaliber))
+            return; // Либо нашли, либо пушки принудительно
+    }
+
+    switch(iCaliber)
+	{
+        case 3:  iCaliber = 0;  break;
+        case 6:  iCaliber = 1;  break;
+        case 8:  iCaliber = 2;  break;
+        case 12: iCaliber = 3;  break;
+        case 16: iCaliber = 4;  break;
+        case 18: iCaliber = 5;  break;
+        case 20: iCaliber = 6;  break;				
+        case 24: iCaliber = 7;  break;
+        case 32: iCaliber = 8;  break;
+        case 36: iCaliber = 9;  break;
+        case 42: iCaliber = 10; break;
+	}
+	if (iCaliber > 0 && rand(1))
+	    iCaliber -= 1;
+	else iCaliber = 0;
+
+	switch(iCaliber)
+	{
+        case 0:  iCaliber = 3;  break;
+        case 1:  iCaliber = 6;  break;
+        case 2:  iCaliber = 8;  break;
+        case 3:  iCaliber = 12; break;
+        case 4:  iCaliber = 16; break;
+        case 5:  iCaliber = 18; break;
+        case 6:  iCaliber = 20; break;
+        case 7:  iCaliber = 24; break;
+        case 8:  iCaliber = 32; break;
+        case 9:  iCaliber = 36; break;
+        case 10: iCaliber = 42; break;	
+	}
+	if (iCaliber < 3)
+        iCaliber = 3;
+
+	if (iCaliber > sti(rShip.MaxCaliber))
+        iCaliber = sti(rShip.MaxCaliber);
+
 	rFantom.Ship.Cannons.Type = GetCannonByTypeAndCaliber(sCannonType, iCaliber);
+}
+
+bool FindRelevantCulverine(ref rFantom, int iMaxCaliber)
+{
+    int iRes = 0;
+
+    // Допустим даунгрейд на 1 вниз, либо ставим пушки
+    if(iMaxCaliber == 42) iRes = CANNON_TYPE_CULVERINE_LBS36;
+    else if(iMaxCaliber == 20 || iMaxCaliber == 18) iRes = CANNON_TYPE_CULVERINE_LBS18;
+    else if(iMaxCaliber == 12 || iMaxCaliber == 8)  iRes = CANNON_TYPE_CULVERINE_LBS8;
+    // Нашли
+    if(iRes)
+    {
+        rFantom.Ship.Cannons.Type = iRes;
+        return true;
+    }
+    // Нет валидных
+    return false;
 }
 
 void Fantom_SetSails(ref rFantom, string sFantomType)
@@ -453,7 +402,14 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
             iFinish = GOOD_BRICK - iStart - 1;
             iMultiply = (rand(5)+5) * (rand(iShipClass) + 1);
 			iRandMultiply = 1 + rand(iShipClass);		
-			iRandGoods = rand(5)+3; 
+			iRandGoods = rand(5)+3;
+            // Провиант на корабли снабжения (to_do ref)
+            if(IsMerchantShipType(rFantom) && CheckAttribute(rFantom, "RealEncounterType"))
+            {
+                i = sti(rFantom.RealEncounterType);
+                if(i >= ENCOUNTER_TYPE_PATROL_SMALL && i <= ENCOUNTER_TYPE_NAVAL_LARGE)
+                    Fantom_SetCharacterGoods(rFantom, GOOD_FOOD, 1000 * iShipClass + rand(300 * iShipClass), rand(1));
+            }
 			for (i = 0; i < iRandGoods; i++)
 			{
 				if(rand(4) == 1) isLock = 1; 
@@ -461,7 +417,6 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 				isLock = isLock || bOk; 
 			    Fantom_SetCharacterGoods(rFantom, iStart + rand(iFinish), iMultiply * rand(iRandMultiply * 3), isLock);
 			}
-
 			iMultiply = GetCannonGoodsIdxByType(sti(rFantom.Ship.Cannons.Type));
 			if (iMultiply != -1)
 			{
@@ -509,14 +464,17 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 					break;
 
 					case ENCOUNTER_TYPE_MERCHANT_EXPEDITION:
-						iGoods = rand(2) + 2; 
+						iGoods = 2 + rand(2);
 						fModifikator = 0.4 + 12.0/iGoods;
 						iStart = GOOD_SHIPSILK;
 						iFinish = GOOD_CANNON_3 - iStart - 1;
 					break;
 
                     case ENCOUNTER_TYPE_MERCHANT_SLAVES:
-                        // TO_DO
+						iGoods = 2 + rand(1);
+						fModifikator = 0.4 + 12.0/iGoods;
+						iStart  = GOOD_SLAVES;
+						iFinish = 0;
                     break;
 				}
 
@@ -539,7 +497,7 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 						else			 isLock = 0; 	
 						isLock = isLock || bOk; 
 						Fantom_SetCharacterGoods(rFantom, iGoodName, iGoodQuantity, isLock);
-					}	
+					}
 				}
 			}
 		break;
@@ -554,12 +512,37 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 			{
 				switch (sti(rFantom.RealEncounterType))
 				{
-					case ENCOUNTER_TYPE_PIRATE:
-						iRandGoods = rand(3) + 1;
-						iStart 	= GOOD_BALLS;
-						iFinish = GOOD_COFFEE - iStart - 1;
+					case ENCOUNTER_TYPE_PIRATE: // TO_DO: REF
+                        i = sti(EncountersTypes[ENCOUNTER_TYPE_PIRATE].Stage);
+                        if(i == 1) i = rand(1);
+                        else if(i == 2) i = 1 + rand(1);
+                        else if(i == 3) i = 2;
+                        else if(i == 4) i = 2 + rand(1);
+                        switch(i)
+                        {
+                            case 0:
+                                iRandGoods = rand(3) + 1;
+                                iStart 	= GOOD_BALLS;
+                                iFinish = GOOD_BRICK - iStart - 1;
+                            break;
+                            case 1:
+                                iRandGoods = rand(4) + 1;
+                                iStart 	= GOOD_BALLS;
+                                iFinish = GOOD_COFFEE - iStart - 1;
+                            break;
+                            case 2:
+                                iRandGoods = rand(5) + 1;
+                                iStart 	= GOOD_BALLS;
+                                iFinish = GOOD_POWDER - iStart - 1;
+                            break;
+                            case 3:
+                                iRandGoods = rand(6) + 1;
+                                iStart = GOOD_FOOD;
+                                iFinish = GOOD_SHIPSILK - iStart - 1;
+                            break;
+                        }
 					break;
-					
+
 					case ENCOUNTER_TYPE_SMUGGLERS:
 						// TO_DO
 					break;
@@ -575,7 +558,7 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 				else			 isLock = 0; 	
 				isLock = isLock || bOk; 
 				Fantom_SetCharacterGoods(rFantom, iGoodName, iGoodQuantity, isLock);
-			}			
+			}
 
 			iMultiply = GetCannonGoodsIdxByType(sti(rFantom.Ship.Cannons.Type));
 			if (iMultiply != -1)

@@ -37,19 +37,19 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu":
 			DelLandQuestMark(npchar);
-			dialog.text = "Czego chcesz, blade licze? Tichingitu nie ma ci nic do powiedzenia.";
-			link.l1 = "Twoje imię to Tichingitu? Hm. Słuchaj, wojowniku, nie przyszedłem tu, żeby się na ciebie gapić. Przyszedłem zadać ci pytanie: Dlaczego wtargnąłeś do domu tego grubego człowieka?";
+			dialog.text = "Czego chcesz, blada twarz? Tichingitu nie ma ci nic do powiedzenia.";
+			link.l1 = "Twoje imię to Tichingitu? Hm. Słuchaj, wojowniku, nie przyszedłem tu, żeby się na ciebie gapić. Przyszedłem zadać ci pytanie: Dlaczego wtargnąłeś do domu tego grubego gościa?";
 			link.l1.go = "Tichingitu_1";
 		break;
 		
 		case "Tichingitu_1":
 			dialog.text = "";
-			link.l1 = "Nie mówisz nic? Niezbyt mądrze. Zostaniesz powieszony za kradzież i wszystko inne, co uczyniłeś. Powiedz mi, dlaczego popełniłeś taki czyn, a może będę w stanie ci pomóc.";
+			link.l1 = "Nic nie mówisz? Niezbyt mądrze z twojej strony. Zostaniesz powieszony za kradzież i wszystko inne, co uczyniłeś. Powiedz mi, dlaczego popełniłeś taki czyn, a może będę w stanie ci pomóc.";
 			link.l1.go = "Tichingitu_2";
 		break;
 		
 		case "Tichingitu_2":
-			dialog.text = "Tichingitu przybył do miasta bladych twarzy przez wiele, wiele dróg, przez wielką wodę, z wielkich lasów i bagien. Tichingitu zmęczony i chciał jeść. Tichingitu umiera z głodu. Nikt nie chce pomóc Tichingitu. Krzyczą, 'Odejdź, czerwonoskóry psie'. Właściciel tawerny wyrzuca Indianina jak parszywego psa. Tichingitu chce jeść.";
+			dialog.text = "Tichingitu przybył do miasta bladych twarzy przez wiele, wiele dróg, przez wielką wodę, z wielkich lasów i bagien. Tichingitu zmęczony i chciał jeść. Tichingitu umiera z głodu. Nikt nie chce pomóc Tichingitu. Krzyczą, 'Odejdź, czerwonoskóry psie'. Właściciel karczmy wyrzuca Indianina jak parszywego psa. Tichingitu chce jeść.";
 			link.l1 = "Do diabła, ale dlaczego przybyłeś do tej osady z... twojego lasu?";
 			link.l1.go = "Tichingitu_3";
 		break;
@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_4":
-			dialog.text = "Szaman plemienia złym człowiekiem. Mówi, że zły duch osiedlił się w ciele żony. Żona musi umrzeć. Moja żona po prostu chora, żaden duch nie osiedlił się. Tichingitu leczy żonę, szaman zabija żonę. Tichingitu sprzeciwia się szamanowi, wszyscy sprzeciwiają się Tichingitu, Tichingitu odchodzi.";
+			dialog.text = "Szaman plemienia złym człowiekiem. Mówi, że zły duch zamieszkał w ciele żony. Żona musi umrzeć. Moja żona po prostu chora, żaden duch nie zamieszkał. Tichingitu leczy żonę, szaman zabija żonę. Tichingitu sprzeciwia się szamanowi, wszyscy sprzeciwiają się Tichingitu, Tichingitu odchodzi.";
 			link.l1 = "Próbowałeś uratować swoją żonę? Dlatego cię wyrzucili z wioski?";
 			link.l1.go = "Tichingitu_5";
 		break;
@@ -91,7 +91,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_7":
-			dialog.text = "Twarz blada żart? Tichingitu wolny?";
+			dialog.text = "Blada twarz żartuje? Tichingitu wolny?";
 			link.l1 = "Nie, nie żartuję. Zaraz otworzą twoją celę i wypuszczą cię. Chodź za mną, wyprowadzę cię z więzienia.";
 			link.l1.go = "Tichingitu_8";
 		break;
@@ -138,7 +138,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_12":
 			dialog.text = "Tichingitu nie jest niewolnikiem. Tichingitu jest wolnym Indianinem. Tichingitu chce ci służyć. Tichingitu wie, jak walczyć, każdy pies zginie, zanim zbliży się do pana. Tichingitu wie, jak czyścić i ładować muszkiet. Tichingitu potrafi strzelać z muszkietu.";
-			link.l1 = "Chociaż... Wiesz, Tichingitu, to niezły pomysł. Potrzebuję lojalnych ludzi, a ty nie wydajesz się złym człowiekiem. Poza tym wiesz, jak strzelać z muszkietu. A co zamierzasz robić sam? Skończysz kradnąc coś innego, a następnym razem na pewno cię powieszą... Dobrze, możesz zostać. Ale pamiętaj: życie ze mną nie będzie spokojne.";
+			link.l1 = "Jesteś niereformowalny... Chociaż... Wiesz co, Tichingitu? To niezły pomysł. Potrzebuję lojalnych ludzi, a ty nie wydajesz się być złym człowiekiem. Poza tym wiesz, jak strzelać z muszkietu. A co zamierzasz robić sam? Skończysz kradnąc coś innego, a następnym razem na pewno cię powieszą... Dobrze, możesz zostać. Ale pamiętaj: życie ze mną nie będzie spokojne.";
 			link.l1.go = "Tichingitu_13";
 			link.l2 = "Dobrze, dość. Idź w pokoju, czerwonoskóry bracie. Niech twoi bogowie czuwają nad tobą!";
 			link.l2.go = "Tichingitu_exit";
@@ -213,7 +213,7 @@ void ProcessDialogEvent()
 			dialog.text = "Tichingitu słucha cię, Kapitanie "+pchar.name+"!";
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
-				Link.l4 = "Tichingitu, zamierzam wyruszyć do starej indyjskiej wioski zwanej Tayasal. Nie będę ci kłamać, to niezwykle niebezpieczna podróż i bardzo nietypowa: przez idol teleportacyjny. Ty... Czy dołączysz do mnie?";
+				Link.l4 = "Tichingitu, zamierzam wyruszyć do starej indiańskiej wioski zwanej Tayasal. Nie będę kłamać, to niezwykle niebezpieczna podróż i bardzo nietypowa: przez idol teleportacyjny. Ty... Czy dołączysz do mnie?";
 				Link.l4.go = "tieyasal";
 			}
 			
@@ -239,19 +239,19 @@ void ProcessDialogEvent()
 		/////////////////////////// ответы для казначея ///////////////////////////////////
 		case "QMASTER_1":
 			dialog.Text = "Raport z okrętu? Tichingitu nie ma raportu, panie. Tylko broń i ubrania. Tichingitu nie wziął raportu znikąd.";
-			Link.l1 = "Dobrze, cokolwiek.";
+			Link.l1 = "Dobrza, nieważne.";
 			Link.l1.go = "exit";
 		break;	
 
 		case "QMASTER_2":
 			dialog.text = "Mistrzu, Tichingitu nigdy nie wszedłby do kolonii bez ciebie. Gdy Tichingitu wchodzi do sklepu - wszyscy myślą, że Tichingitu znów jest złodziejem. Potem, więzienie.";
-			link.l1 = "Tak, pewnie masz rację. Nie znowu ta więzienna sprawa. Poza tym, nikt nigdy nie uwierzy, że jesteś kwatermistrzem.";
+			link.l1 = "Tak, pewnie masz rację. Znowu ta więzienna sprawa. Poza tym, nikt nigdy nie uwierzy, że jesteś kwatermistrzem.";
 			link.l1.go = "exit";
 		break;
 		
 		case "stay_follow":
             dialog.Text = "Jakie masz rozkazy?";
-            Link.l1 = "Trzymaj się tutaj!";
+            Link.l1 = "Zostań tutaj!";
             Link.l1.go = "Boal_Stay";
             Link.l2 = "Chodź za mną i nie zostawaj w tyle!";
             Link.l2.go = "Boal_Follow";
@@ -278,7 +278,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SetGunBullets":
-			Dialog.Text = " Wybierz rodzaj amunicji: ";
+			Dialog.Text = " Jaka amunicja, biały panie? ";
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
@@ -309,7 +309,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SetMusketBullets":
-			Dialog.Text = "Wybierz rodzaj amunicji:";
+			Dialog.Text = "Jaka amunicja, biały panie?";
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
@@ -340,10 +340,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SetPriorityMode":
-			Dialog.Text = "Na początku walki będziesz używać:";
-			Link.l1 = "Ostrze";
+			Dialog.Text = "Na początku walki użyje?";
+			Link.l1 = "Ostrza";
 			Link.l1.go = "BladePriorityMode";
-			Link.l2 = "Muszkiet";
+			Link.l2 = "Muszkietu";
 			Link.l2.go = "MusketPriorityMode";
 		break;
 		
@@ -435,26 +435,26 @@ void ProcessDialogEvent()
 		
 		case "tonzag_jailed":
 			dialog.text = "Płacimy białemu człowiekowi sto dublonów, odchodzimy i swobodnie wykonujemy nasze zadanie.";
-			link.l1 = "A co, jeśli złapią nas znowu?";
+			link.l1 = "A co, jeśli znowu nas złapią?";
 			link.l1.go = "tonzag_jailed_1";
 			locCameraFromToPos(-16.78, 1.88, -1.70, true, -5.00, -6.10, -20.70);
 		break;
 		
 		case "tonzag_jailed_1":
 			dialog.text = "Płacimy tysiąc dublonów.";
-			link.l1 = "Cyniczny, ale bardzo przenikliwy.";
+			link.l1 = "Cynicznie, ale dość przenikliwie.";
 			link.l1.go = "tonzag_jailed_2";
 		break;
 		
 		case "tonzag_jailed_2":
 			dialog.text = "Gwadelupa jest gorsza.";
-			link.l1 = "Jak to?";
+			link.l1 = "Niby czemu?";
 			link.l1.go = "tonzag_jailed_3";
 		break;
 		
 		case "tonzag_jailed_3":
-			dialog.text = "Tam chcą powiesić tylko Tichingitu. Tutaj, chcą powiesić więcej niż jednego. Nie jest tak źle.";
-			link.l1 = "To jest po prostu zwykły cynizm!";
+			dialog.text = "Tam chcą powiesić tylko Tichingitu. Tutaj, chcą powiesić razem z Tichingitu. Nie jest tak źle.";
+			link.l1 = "To już było naprawde cyniczne z twojej strony!";
 			link.l1.go = "exit";
 		break;
 		
@@ -483,7 +483,7 @@ void ProcessDialogEvent()
 		
 	// Тичингиту говорит о том, что нужно спасти Делюка
 		case "Del_Deluck":
-			dialog.text = "Jeszcze sto dubloonów?";
+			dialog.text = "Jeszcze sto dublonów?";
 			link.l1 = "Co? Pytasz, czy znowu zapłacę za uwolnienie Deluca z więzienia?";
 			link.l1.go = "Del_Deluck_1";
 		break;
@@ -502,19 +502,19 @@ void ProcessDialogEvent()
 		
 		case "Del_Deluck_3":
 			dialog.text = "Albo zostaw go. Zostaw słabego jaguarowi w dżungli.";
-			link.l1 = "Kto?";
+			link.l1 = "Komu?";
 			link.l1.go = "Del_Deluck_4";
 		break;
 		
 		case "Del_Deluck_4":
 			dialog.text = "Wielki kot.";
-			link.l1 = "Tichingitu, mam trudności z zrozumieniem ciebie. Po prostu powiedz mi: co powinienem zrobić w tej sytuacji?";
+			link.l1 = "Tichingitu, mam trudności ze zrozumieniem ciebie. Po prostu powiedz mi: co powinienem zrobić w tej sytuacji?";
 			link.l1.go = "Del_Deluck_5";
 		break;
 		
 		case "Del_Deluck_5":
 			dialog.text = "Użyj własnej głowy.";
-			link.l1 = "Bardzo pomocne!";
+			link.l1 = "To żeś mi pomógł...";
 			link.l1.go = "Del_Deluck_6";
 		break;
 		

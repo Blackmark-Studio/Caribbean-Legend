@@ -1404,3 +1404,36 @@ Pinnace "Wavebreaker". Sets sail on the 26th. Trade passage Belize to Capstervil
 ***************
 Galleon "Silver Wind". To weigh anchor the 18th day. Commerce voyage Belize to Blueveld. Human cargo - slaves! Rich plunder this, so see my portion reaches me with haste. The fools sail unescorted.
 ***************
+
+#QUEST Memento_Book
+Grim's Journal
+#TEXT 1
+A new assignment from the Admiralty. Transporting "special cargo" to a hostile colony. Captain Mortimer Grim agreed to provide his fine brig for a generous fee. A good man, an honest sailor. His crew is excellent—experienced, loyal people. It's a shame I have to deceive them about the cargo.
+
+And yes, I know how this looks. Secret agent of the English Crown Yorick Graves keeps a journal where he openly shares the secrets of his mission. I don't care! Otherwise, with this kind of work, you'd go mad. Courtney, if you're reading this—kiss my ass!
+
+Mortimer asks too many questions about the cargo. I had to lie—mumbled something about medicine for those suffering from fever in the Caribbean jungle. He believed me, of course. Grim lives in a world where a Royal Navy officer's word still means something.
+
+The cargo was brought aboard in sealed crates. The crew grumbles—the crates are heavy and the smell is odd. Mortimer joked it off with skill. Even made me laugh.
+
+Damn! It got out! The first cases of fever among the crew. Mortimer asks for permission to open the crates, check the medicine. I had to forbid it under threat of court-martial. I hate myself for this.
+
+God have mercy, what have I done... Plague. The captain died yesterday.
+
+Alone.
+
+I talk to Mortimer. Or rather, to what's left of him. He's not angry anymore. He understands. Says everyone gets a chance at redemption. But how do you redeem this? How do you bring these people back?
+
+Saved by natives off the coast of Dominica. The shaman said—let the dead teach the living. What could I possibly teach anyone?
+
+A great battle took place near the island. The survivors washed ashore, ready to continue the slaughter, but I stopped them. I don't know where this strength in me comes from. I don't know if I'm alive or if this is the afterlife. But the Memento won't sail without a crew. And without a ship, I can't atone for my sins.
+
+Yorick Graves is dead, and Mortimer Grim will be remembered as the savior of the doomed. That's how it should be. I hope you appreciate the idea. Now you're part of the Memento. Part of the ship.
+
+We rescued a dozen Indians from a slaver's hold. I gave most of the doubloons to my men, and I'll take the former captives to Dominica.
+
+The shaman tore off the skull and hid it somewhere! Feathered idiot! I would have cut him down with my new cutlass if it weren't for the missionary visiting the tribe.
+
+I told him everything. An incredible feeling. Now I know what to do! "Let the dead teach the living." Of course! It's not enough to save people from chains or the noose. You have to save them from death itself! And you can only do that by making another person go through what I did. Die and come back. Do I pity them? Of course. But I. was right. No one ever pitied me.
+
+I've already found a new skull—not everyone can pass the trial of death. It's even better this way. Let Mortimer's eye sockets stay on Dominica and not see what happens on his ship. He wouldn't understand.

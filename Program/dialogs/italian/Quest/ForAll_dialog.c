@@ -2614,7 +2614,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AffairOfHonor_CowardFencer_1_1":
-			dialog.text = "Pensavo che quell’uomo fosse un mercenario e che si potesse sempre trattare coi mercenari. Vecchi debiti o chissà cosa… Ma quello era davvero deciso a continuare a tormentare il mercante. Volevo chiederti di aiutare sia me che lui: salva il mercante dalle grinfie di quel cane e così adempirai pure agli ordini del governatore.\nHo davvero bisogno di questo posto e non riesco a liberarmi del mercenario da solo. Ti scongiuro, aiutami! Ti darò fino all’ultimo reale che ho messo da parte, oppure sarò costretto a lasciare la città coperto di vergogna!";
+			dialog.text = "Pensavo che quell’uomo fosse un mercenario e che si potesse sempre trattare coi mercenari. Vecchi debiti o chissà cosa... Ma quello era davvero deciso a continuare a tormentare il mercante. Volevo chiederti di aiutare sia me che lui: salva il mercante dalle grinfie di quel cane e così adempirai pure agli ordini del governatore.\nHo davvero bisogno di questo posto e non riesco a liberarmi del mercenario da solo. Ti scongiuro, aiutami! Ti darò fino all’ultimo reale che ho messo da parte, oppure sarò costretto a lasciare la città coperto di vergogna!";
 			link.l1 = "Va bene, va bene, ti aiuterò... 'gran maestro di scherma'.";
 			link.l1.go = "AffairOfHonor_CowardFencer_1_2";
 		break;

@@ -782,11 +782,11 @@ void ProcessDialogEvent()
 		case "gypsy_46":
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				dialog.text = "Ton âme est pure, je vois que tu ne brûleras pas la mangarosa pour un plaisir momentané. Si tu as besoin d’elle en urgence, viens me voir, "+GetSexPhrase("Fauconnet","Petite colombe")+" Cinq tiges te coûteront deux cents doublons\nCette herbe est capricieuse, tu le sais, tout le monde ne peut pas la trouver. Alors ne me presse pas - ne demande pas plus d'une fois par mois, de toute façon je ne pourrai pas l'obtenir.";
+				dialog.text = "Ton âme est pure, je vois que tu ne brûleras pas la mangarosa pour un plaisir momentané. Si tu as besoin d’elle en urgence, viens me voir, "+GetSexPhrase("Fauconnet","Petite colombe")+" Trois tiges te coûteront trois cent cinquante doublons\nCette herbe est capricieuse, tu le sais, tout le monde ne peut pas la trouver. Alors ne me presse pas - ne demande pas plus d'une fois par mois, de toute façon je ne pourrai pas l'obtenir.";
 			}
 			else
 			{
-				dialog.text = "Ton âme est lumineuse, je vois que tu n'es pas bête, tu comprends les herbes pas pire que certaines guérisseuses. Tu peux trouver beaucoup de choses, bien que la chance ne sourie pas toujours. Il y a une plante rare que tout le monde ne peut pas trouver. Elle s'appelle mangarosa. Si jamais tu en as besoin, viens me voir, "+GetSexPhrase("Fauconnet","Petite colombe")+". Je te procurerai cinq tiges, mais je ne les donnerai pas gratuitement - je prendrai deux cents doublons\nMais cette herbe est capricieuse, alors ne me presse pas. Ne demande pas plus d'une fois par mois - même si tu étales toutes les cartes du destin, je ne l'obtiendrai pas plus tôt.";
+				dialog.text = "Ton âme est lumineuse, je vois que tu n'es pas bête, tu comprends les herbes pas pire que certaines guérisseuses. Tu peux trouver beaucoup de choses, bien que la chance ne sourie pas toujours. Il y a une plante rare que tout le monde ne peut pas trouver. Elle s'appelle mangarosa. Si jamais tu en as besoin, viens me voir, "+GetSexPhrase("Fauconnet","Petite colombe")+". Je te procurerai trois tiges, mais je ne les donnerai pas gratuitement - je prendrai trois cent cinquante doublons\nMais cette herbe est capricieuse, alors ne me presse pas. Ne demande pas plus d'une fois par mois - même si tu étales toutes les cartes du destin, je ne l'obtiendrai pas plus tôt.";
 			}
 			link.l1 = "Eh bien, merci, "+npchar.name+".";
 			link.l1.go = "gypsy_47";
@@ -831,8 +831,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "gypsy_Mangarosa_1":
-			dialog.text = "Qui d’autre que moi, "+GetSexPhrase("mon chéri","belle")+", te procurerait une telle rareté ? Deux cents doublons – et elle est à toi, cinq tiges, pas plus, pas moins.";
-			if (PCharDublonsTotal() >= 300)
+			dialog.text = "Qui d’autre que moi, "+GetSexPhrase("mon chéri","belle")+", te procurerait une telle rareté ? Trois cent cinquante doublons – et elle est à toi, trois tiges, pas plus, pas moins.";
+			if (PCharDublonsTotal() >= 350)
 			{
 				link.l1 = "Tiens, prends tes doublons.";
 				link.l1.go = "gypsy_Mangarosa_2";
@@ -846,8 +846,8 @@ void ProcessDialogEvent()
 			dialog.text = "Là, c’est mieux, "+GetSexPhrase("Fauconnet","Petite colombe")+". Prends-la. Mais attention, ne la gaspille pas inutilement – tu sais bien que la mangarosa n’est pas une herbe ordinaire. Elle renferme une puissance que peu peuvent maîtriser.";
 			link.l1 = "Ne t’inquiète pas, sourcils noirs, je trouverai un usage digne de sa puissance.";
 			link.l1.go = "gypsy_Mangarosa_3";
-			AddItems(pchar, "cannabis7", 5);
-			RemoveDublonsFromPCharTotal(300);
+			AddItems(pchar, "cannabis7", 3);
+			RemoveDublonsFromPCharTotal(350);
 		break;
 		
 		case "gypsy_Mangarosa_3":

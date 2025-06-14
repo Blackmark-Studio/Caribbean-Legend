@@ -39,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern2_4_HO":
-			dialog.text = "I... I... Ti dirò tutto! È stato tutto il mio... pretendente, Jack. Jack Veils! Mi ha persuasa a sedurre qualsiasi marinaio della 'Sea Wolf'. E quando lui avrebbe fatto le sue avances, dovevo causare una scena per attirare l'oste da dietro il bancone. Quando il tumulto cominciava a calmarsi, due marinai avrebbero iniziato una rissa per tenerlo occupato nella sala principale. È esattamente quello che è successo\nDurante quel tempo, il capitano della 'Sea Wolf' è riuscito a rubare il barile. Questo... questo è tutto quello che so, "+GetSexPhrase("signore","signora")+"! Per favore, non mi denunciare! Io solo... Io solo... Volevo semplicemente... che Jack finalmente mi trattasse con un po' di rispetto! Dopotutto l'ho aiutato...";
+			dialog.text = "I... I... Ti dirò tutto! È stato tutto il mio... pretendente, Jack. Jack Veils! Mi ha persuasa a sedurre qualsiasi marinaio della 'Sea Beast'. E quando lui avrebbe fatto le sue avances, dovevo causare una scena per attirare l'oste da dietro il bancone. Quando il tumulto cominciava a calmarsi, due marinai avrebbero iniziato una rissa per tenerlo occupato nella sala principale. È esattamente quello che è successo\nDurante quel tempo, il capitano della 'Sea Beast' è riuscito a rubare il barile. Questo... questo è tutto quello che so, "+GetSexPhrase("signore","signora")+"! Per favore, non mi denunciare! Io solo... Io solo... Volevo semplicemente... che Jack finalmente mi trattasse con un po' di rispetto! Dopotutto l'ho aiutato...";
 			link.l1 = "Hai aiutato un uomo mentre ne lanciavi un altro ai lupi senza esitare un attimo?! Comunque, mantengo la mia parola - non rivelerò il tuo ruolo in tutto questo. Ma dovrai vivere con ciò che hai fatto! La tua insensatezza avrebbe potuto mettere il locandiere in grave pericolo. Dove posso trovare questo tuo Jack? E ricorda: mentimi, e tornerò. Credimi, non ti piacerà la mia seconda visita.";
 			link.l1.go = "OS_Tavern2_5";
 			AddComplexSelfExpToScill(40, 40, 40, 0);
@@ -47,7 +47,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern2_4_harizma":
-			dialog.text = "Io... Io... Ti dirò tutto! E' stato tutto merito del mio... pretendente, Jack. Jack Veils! Mi ha convinto a sedurre qualsiasi marinaio della 'Sea Wolf'. E quando lui avrebbe fatto le sue avances, avrei dovuto causare un trambusto per attirare il gestore della taverna fuori dal bancone. Quando l'agitazione iniziava a placarsi, due marinai avrebbero iniziato una rissa per mantenerlo occupato nella sala principale. E' esattamente quello che è successo\nDurante quel tempo, il capitano della 'Sea Wolf' è riuscito a rubare il barile. Questo è... questo è tutto quello che so, "+GetSexPhrase("signore","signora")+"! Per favore, non mi denunciare! Io solo... Stavo solo... Volevo semplicemente... che Jack finalmente mi trattasse con un po' di rispetto! Dopotutto l'ho aiutato...";
+			dialog.text = "Io... Io... Ti dirò tutto! E' stato tutto merito del mio... pretendente, Jack. Jack Veils! Mi ha convinto a sedurre qualsiasi marinaio della 'Sea Beast'. E quando lui avrebbe fatto le sue avances, avrei dovuto causare un trambusto per attirare il gestore della taverna fuori dal bancone. Quando l'agitazione iniziava a placarsi, due marinai avrebbero iniziato una rissa per mantenerlo occupato nella sala principale. E' esattamente quello che è successo\nDurante quel tempo, il capitano della 'Sea Beast' è riuscito a rubare il barile. Questo è... questo è tutto quello che so, "+GetSexPhrase("signore","signora")+"! Per favore, non mi denunciare! Io solo... Stavo solo... Volevo semplicemente... che Jack finalmente mi trattasse con un po' di rispetto! Dopotutto l'ho aiutato...";
 			link.l1 = "Hai aiutato un uomo mentre gettavi un altro ai lupi senza un attimo di esitazione?! Tuttavia, mantengo la mia parola: non rivelerò il tuo ruolo in tutto questo. Ma dovrai vivere con quello che hai fatto! La tua insensatezza avrebbe potuto mettere il locandiere in grave pericolo. Dove posso trovare questo tuo Jack? E ricorda: mentimi, e tornerò. Credimi, non ti piacerà la visita di ritorno.";
 			link.l1.go = "OS_Tavern2_5";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -74,6 +74,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			PChar.quest.OS_Zasada.win_condition.l1 = "item";
 			PChar.quest.OS_Zasada.win_condition.l1.item = "cask_gin";
 			PChar.quest.OS_Zasada.function = "OS_Zasada";
+			
+			SetFunctionLocationCondition("DWH_Close_House", "PuertoPrincipe_QuestHouse_1", false);
 		break;
 		//<-- Старые счёты
 	}

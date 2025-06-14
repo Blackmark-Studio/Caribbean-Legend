@@ -783,11 +783,11 @@ void ProcessDialogEvent()
 		case "gypsy_46":
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				dialog.text = "Tu alma es pura, veo que no quemarás mangarosa por un placer momentáneo. Si la necesitas con urgencia, ven a mí, "+GetSexPhrase("halconcito","palomita")+". Cinco tallos te costarán doscientos doblones\nEsta hierba es caprichosa, ya sabes, no cualquiera puede encontrarla. Así que no me apresures: no la pidas más de una vez al mes, no la conseguiré antes de eso.";
+				dialog.text = "Tu alma es pura, veo que no quemarás mangarosa por un placer momentáneo. Si la necesitas con urgencia, ven a mí, "+GetSexPhrase("halconcito","palomita")+". Tres tallos te costarán trescientos cincuenta doblones\nEsta hierba es caprichosa, ya sabes, no cualquiera puede encontrarla. Así que no me apresures: no la pidas más de una vez al mes, no la conseguiré antes de eso.";
 			}
 			else
 			{
-				dialog.text = "Tu alma es brillante, veo que no eres ningún ignorante, sabes de hierbas como las mejores curanderas. Puedes encontrar muchas cosas, aunque la suerte no siempre esté de tu lado. Si lo necesitas, ven a mí, "+GetSexPhrase("halconcito","palomita")+" Se llama mangarosa. Si la necesitas, ven a mí, mi halcón. Te conseguiré cinco tallos, pero no serán gratis: te costarán doscientos doblones\nPero esta hierba es caprichosa, así que no me apresures. No la pidas más de una vez al mes - aunque eches todas las cartas del destino, no la conseguiré antes.";
+				dialog.text = "Tu alma es brillante, veo que no eres ningún ignorante, sabes de hierbas como las mejores curanderas. Puedes encontrar muchas cosas, aunque la suerte no siempre esté de tu lado. Se llama mangarosa. Si la necesitas, ven a mí, "+GetSexPhrase("halconcito","palomita")+". Te conseguiré tres tallos, pero no serán gratis: te costarán trescientos cincuenta doblones\nPero esta hierba es caprichosa, así que no me apresures. No la pidas más de una vez al mes - aunque eches todas las cartas del destino, no la conseguiré antes.";
 			}
 			link.l1 = "Bueno, gracias, "+npchar.name+".";
 			link.l1.go = "gypsy_47";
@@ -832,8 +832,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gypsy_Mangarosa_1":
-			dialog.text = "¿¿Quién, si no yo, "+GetSexPhrase("cariño","hermosa")+", te conseguiría una rareza así? Doscientos doblones – y será tuya, cinco tallos, ni más, ni menos.";
-			if (PCharDublonsTotal() >= 300)
+			dialog.text = "¿¿Quién, si no yo, "+GetSexPhrase("cariño","hermosa")+", te conseguiría una rareza así? Trescientos cincuenta doblones – y será tuya, tres tallos, ni más, ni menos.";
+			if (PCharDublonsTotal() >= 350)
 			{
 				link.l1 = "Tu precio es justo. El oro es tuyo.";
 				link.l1.go = "gypsy_Mangarosa_2";
@@ -847,8 +847,8 @@ void ProcessDialogEvent()
 			dialog.text = " Así está mejor, "+GetSexPhrase("halconcito","palomita")+". Toma. Y no la desperdicies en vano, ya sabes – la mangarosa no es una hierba cualquiera, guarda un poder que no cualquiera puede manejar.";
 			link.l1 = "No te preocupes, cejinegra, sabré darle un uso digno.";
 			link.l1.go = "gypsy_Mangarosa_3";
-			AddItems(pchar, "cannabis7", 5);
-			RemoveDublonsFromPCharTotal(300);
+			AddItems(pchar, "cannabis7", 3);
+			RemoveDublonsFromPCharTotal(350);
 		break;
 		
 		case "gypsy_Mangarosa_3":

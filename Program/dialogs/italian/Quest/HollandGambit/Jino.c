@@ -209,7 +209,7 @@ void ProcessDialogEvent()
 		
 		case "meeting_2":
 			dialog.text = "";
-			link.l1 = "E se mai avrò bisogno dell’aiuto d’un alchimista, d’un cerusico o d’un sapiente… saprò a chi rivolgermi. Dimmi, perché stai sempre rintanato qua dentro? Non ti capita mai di uscire a respirare il vento?";
+			link.l1 = "E se mai avrò bisogno dell’aiuto d’un alchimista, d’un cerusico o d’un sapiente... saprò a chi rivolgermi. Dimmi, perché stai sempre rintanato qua dentro? Non ti capita mai di uscire a respirare il vento?";
 			link.l1.go = "meeting_3";
 		break;
 		
@@ -349,7 +349,7 @@ void ProcessDialogEvent()
 			Log_Info("You have given a revolver's cartridge");
 			Log_Info("You have given a capsule");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Interessante! Pare facile, c’è della polvere dentro, una palla si mette da sopra, ma ha un’aria un po’ bizzarra. E questa ‘cosa’… hmm. Senza di lei la polvere non scoppia, giusto? Che diavolo… Senti, Capitano, lascia tutto a me: pistola e cariche. Vieni a trovarmi tra un mese, mi serve un po’ per capire come funziona.";
+			dialog.text = "Interessante! Pare facile, c’è della polvere dentro, una palla si mette da sopra, ma ha un’aria un po’ bizzarra. E questa ‘cosa’... hmm. Senza di lei la polvere non scoppia, giusto? Che diavolo... Senti, Capitano, lascia tutto a me: pistola e cariche. Vieni a trovarmi tra un mese, mi serve un po’ per capire come funziona.";
 			link.l1 = "Magnifico! Cerca di capire come funziona, ho proprio voglia di sparare con questa pistola.";
 			link.l1.go = "colt_3";
 		break;
@@ -697,7 +697,7 @@ void ProcessDialogEvent()
 		
 		case "guardoftruth_14":
 			dialog.text = "Il rito doveva evocare un solo Alto Essere. Il serpente piumato, Quetzalcoatl, Kukulcan...";
-			if (CheckAttribute(pchar, "questTemp.Dolly")) link.l1 = "Kukulcan?! Ho già avuto la sventatezza d’incontrare il suo ‘spirito’ che dimora in statue. Ora capisco… continua!";
+			if (CheckAttribute(pchar, "questTemp.Dolly")) link.l1 = "Kukulcan?! Ho già avuto la sventatezza d’incontrare il suo ‘spirito’ che dimora in statue. Ora capisco... continua!";
 			else link.l1 = "Mm. Interessante. Quel nome l’ho già sentito dal padre Vincento... continua!";
 			link.l1.go = "guardoftruth_15";
 		break;
@@ -1265,7 +1265,7 @@ void ProcessDialogEvent()
 		
 		case "adversary_2":
 			dialog.text = "E come sarebbe fatta questa grotta?";
-			link.l1 = "Ebbene, c’è una piccola grotta nella roccia, è umida e sul fondo l’acqua si muove come la risacca…";
+			link.l1 = "Ebbene, c’è una piccola grotta nella roccia, è umida e sul fondo l’acqua si muove come la risacca...";
 			link.l1.go = "adversary_2_1";
 		break;
 		

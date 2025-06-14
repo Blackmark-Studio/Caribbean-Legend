@@ -2106,7 +2106,7 @@ void Mtraxx_PasqualeCreateConvoy(string qName) // создаем конвой
 {
 	log_info(StringFromKey("Roger_47"));
 	PlaySound("interface\notebook.wav");
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	Group_FindOrCreateGroup("Mtr_PasqSeaGroup");
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	int iScl = 20 + 2*sti(pchar.rank);
@@ -4385,7 +4385,7 @@ void Mtraxx_WolfreekReadLogbook() // чтение судового журнал�
 				sld.Balance = 2.0;
 				sld.Weight = 3.5;
 				sld.Attack = 88.0;
-				sld.WeightAttack = stf(sld.Attack) * (0.25 + 0.2 * stf(sld.Weight));
+				SetBladeWeightAttack(sld);
 			}
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Ignasio.Journal"))
 			{
@@ -6020,7 +6020,7 @@ void Mtraxx_CartahenaPrepareFortBattle() // готовим атаку форта
 	PlaySound("MUSIC\Victory.mp3");
 	Log_Info(StringFromKey("Roger_97"));
 	PlaySound("interface\notebook.wav");
-	PlaySound("interface\" + LanguageGetLanguage() + "\_GTTown2.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_GTTown2.wav");
 	// расчет числа десанта
 	int iCrew1 = GetCrewQuantity(pchar) - GetMinCrewQuantity(pchar));
 	if (iCrew1 <= GetMinCrewQuantity(pchar)) iCrew1 = 0; // патч 17/1
@@ -7940,7 +7940,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Mtraxx_IgnasioEscape") // 
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Ignasio_spy", "citiz_36", "man", "man", 25, FRANCE, 0, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Ignasio_spy", "Alonso", "man", "man", 25, FRANCE, 0, false, "soldier"));
 		sld.name = StringFromKey("Roger_107");
 		sld.lastname = StringFromKey("Roger_108");
 		FantomMakeCoolFighter(sld, 25, 30, 30, "blade_05", "pistol1", "bullet", 120);
@@ -8843,7 +8843,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Mtraxx_CartahenaExittownBattle") // бой на выходе из города
 	{
-		PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");;
+		PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");
 		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 		chrDisableReloadToLocation = true;
 		// наши
@@ -8936,7 +8936,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		// прячем нищеброда
 		sld = characterFromId("Cartahena_Poorman");
 		ChangeCharacterAddressGroup(sld, "none", "", "");
-		PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");;
+		PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");
 		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 		// считаем выживших бойцов. Участвует только 20 рыл. Их запоминаем.
 		if (iTotalTemp > 20) n = 20;
@@ -9475,7 +9475,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "citiz_36", "man", "man", sti(pchar.rank), pchar.nation, -1, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, -1, true, "soldier"));
 			LAi_SetImmortal(sld, true);
 			sld.name = StringFromKey("Roger_107");
 			sld.lastname = StringFromKey("Roger_108");

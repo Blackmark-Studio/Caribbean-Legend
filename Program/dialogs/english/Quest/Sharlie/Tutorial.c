@@ -290,8 +290,8 @@ void ProcessDialogEvent()
 				link.l3 = "60 doubloons.";
 				link.l3.go = "AlonsoGold_DatDeneg_3_gold60";
 			}
-			link.l4 = "I need to double-check everything. I'll come back later.";
-			link.l4.go = "AlonsoWait_2";
+			// link.l4 = "I need to double-check everything. I'll come back later.";
+			// link.l4.go = "AlonsoWait_2";
 		break;
 		
 		case "AlonsoGold_DatDeneg_3_gold40":
@@ -551,6 +551,7 @@ void ProcessDialogEvent()
 			{
 				LAi_SetStayType(npchar);
 				npchar.SharlieTutorial_OhrannikStay = true;
+				DeleteQuestCondition("SharlieTutorial_OhrannikStopaet");
 			}
 		break;
 		
@@ -882,8 +883,8 @@ void ProcessDialogEvent()
 				link.l3 = "42 doubloons.";
 				link.l3.go = "RumGold_DatDeneg_gold42";
 			}
-			link.l4 = "I need to double-check everything. I’ll be back.";
-			link.l4.go = "RumGold_DatDeneg_3";
+			// link.l4 = "I need to double-check everything. I’ll be back.";
+			// link.l4.go = "RumGold_DatDeneg_3";
 		break;
 
 		case "RumGold_DatDeneg_gold28":
@@ -1273,8 +1274,8 @@ void ProcessDialogEvent()
 				link.l3 = "30 doubloons.";
 				link.l3.go = "BallsGold_DatDeneg_gold30";
 			}
-			link.l4 = "I need to double-check everything. I'll be back later.";
-			link.l4.go = "BallsGold_DatDeneg_3";
+			// link.l4 = "I need to double-check everything. I'll be back later.";
+			// link.l4.go = "BallsGold_DatDeneg_3";
 		break;
 		
 		case "BallsGold_DatDeneg_gold20":
@@ -1579,8 +1580,6 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_ActivateWindlass")) AddQuestRecordInfo("SharlieTutorial_ListOfSailors", "1");
 			else AddQuestRecordInfo("SharlieTutorial_ListOfSailors", "2");
 			GiveItem2Character(PChar, "chest");
-			SetFunctionExitFromLocationCondition("Tutorial_Logbook", pchar.location, false);
-			Tutorial_Dubloons("");
 			if (!isMultiObjectKnown("gold_dublon"))
 			{
 				SetAlchemyRecipeKnown("gold_dublon");
@@ -1645,6 +1644,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.SharlieTutorial_KaznacheyQuestCompleted = true;
 			DeleteAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuestActive");
 			npchar.Merchant.type = "SharlieTurorialK";
+			pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
 		break;
 		
 		case "OfficerKaznachey_15_gold_115":
@@ -1673,29 +1673,52 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_16_Proval": // Если не выполнил задание, то отбирает дублоны
 			dialog.text = "Loafing around, monsieur "+pchar.lastname+"?";
-			link.l2 = "You got assigned to the hold too?";
-			link.l2.go = "OfficerKaznachey_16_Proval_2";
+			link.l1 = "You got assigned to the hold too?";
+			link.l1.go = "OfficerKaznachey_16_Proval_2";
 		break;
-
+		
 		case "OfficerKaznachey_16_Proval_2":
 			dialog.text = "I’m the ship’s doctor, "+pchar.lastname+"! Soon the wardroom will be full of wounded, and I’ll see more blood than any fighter. And even if I were just the treasurer, I’d still take my place in the line of fire. No, the only one who was sent to rest in the cozy hold is you.";
-			link.l2 = "Then what are you doing down here?";
-			link.l2.go = "OfficerKaznachey_16_Proval_3";
+			link.l1 = "Then what are you doing down here?";
+			link.l1.go = "OfficerKaznachey_16_Proval_3";
 		break;
-
+		
 		case "OfficerKaznachey_16_Proval_3":
+			dialog.text = "The battle won't start for a couple hours, so it's the perfect time to close the daily accounts. You have my chest of doubloons, de Maure. Kindly return it.";
+			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
+			{
+				link.l1 = "Take it. And don't show your face down here again.";
+				link.l1.go = "OfficerKaznachey_16_Proval_4";
+			}
+			else
+			{
+				link.l1 = "I left your junk somewhere else.";
+				link.l1.go = "OfficerKaznachey_16_Proval_5";
+			}
+		break;
+		
+		case "OfficerKaznachey_16_Proval_4":
 			addGold = GetCharacterItem(pchar, "gold_dublon");
-			dialog.text = "The battle won’t begin for a couple of hours, so now is the perfect time to close the day’s accounts. You’ve got my chest of doubloons, "+pchar.lastname+". Kindly return it.";
-			link.l2 = "...";
-			link.l2.go = "exit";
+			dialog.text = "I had no intention of it. I'm not a landlubber - my place isn't in the hold. Farewell.";
+			link.l1 = "...";
+			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
-			ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			else ChangeCharacterComplexReputation(pchar, "nobility", -6);
 			RemoveDublonsFromPCharTotal(addGold);
 			AddItems(npchar, "gold_dublon", addGold);
 			TakeItemFromCharacter(pchar, "chest");
 			TakeItemFromCharacter(pchar, "chest_open");
 		break;
-
+		
+		case "OfficerKaznachey_16_Proval_5":
+			dialog.text = "Somewhere else... We'll discuss this after the battle - in the captain's presence. Until then.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
+			ChangeCharacterComplexReputation(pchar, "nobility", -6);
+		break;
+		
 		case "TreasurerTrade":
 			dialog.text = "Interested in doubloons, monsieur "+pchar.lastname+"?";
 			link.l1 = "Let’s make a deal.";

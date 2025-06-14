@@ -19,7 +19,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		//--> Старые счёты
 		case "OS_Tavern2_1":
 			dialog.text = "Yo... yo no sé qué decir. Todo fue como siempre, no pasó nada extraño.";
-			link.l1 = "¿Nada extraño? ¿Y qué hay del marinero del 'Sea Wolf' que ese día te acosaba? Parece que pensó que no te importaría pasar la noche con él.";
+			link.l1 = "¿Nada extraño? ¿Y qué hay del marinero del 'Sea Beast' que ese día te acosaba? Parece que pensó que no te importaría pasar la noche con él.";
 			link.l1.go = "OS_Tavern2_2";
 			DelLandQuestMark(npchar);
 		break;
@@ -39,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern2_4_HO":
-			dialog.text = "¡Yo... yo... se lo contaré todo! Todo fue idea de... mi pretendiente, Jack. ¡Jack Wales! Me convenció para seducir a cualquier marinero del 'Sea Wolf'. Y cuando ese se pasara de listo, yo debía hacer un escándalo para sacar al tabernero de la barra. Mientras los ánimos se calmaban, dos marineros debían empezar una pelea para retenerlo en la sala. Así fue como ocurrió\nDurante ese tiempo, el capitán del 'Sea Wolf' robó el barril. ¡Eso es todo lo que sé, "+GetSexPhrase("señor","señora")+"! Por favor, no me delate. ¡Yo solo quería que Jack me respetara al fin! ¡Yo lo ayudé...";
+			dialog.text = "¡Yo... yo... se lo contaré todo! Todo fue idea de... mi pretendiente, Jack. ¡Jack Wales! Me convenció para seducir a cualquier marinero del 'Sea Beast'. Y cuando ese se pasara de listo, yo debía hacer un escándalo para sacar al tabernero de la barra. Mientras los ánimos se calmaban, dos marineros debían empezar una pelea para retenerlo en la sala. Así fue como ocurrió\nDurante ese tiempo, el capitán del 'Sea Beast' robó el barril. ¡Eso es todo lo que sé, "+GetSexPhrase("señor","señora")+"! Por favor, no me delate. ¡Yo solo quería que Jack me respetara al fin! ¡Yo lo ayudé...";
 			link.l1 = "¿Ayudaste a uno y traicionaste al otro sin remordimiento? Bien, cumpliré mi palabra: no te delataré. Pero tendrás que vivir con esto. Por tu estupidez, el tabernero pudo haber tenido serios problemas. ¿Dónde está Jack? Y recuerda: si mientes, volveré. Y no te gustará.";
 			link.l1.go = "OS_Tavern2_5";
 			AddComplexSelfExpToScill(40, 40, 40, 0);
@@ -47,7 +47,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern2_4_harizma":
-			dialog.text = "¡Yo... yo... se lo contaré todo! Todo fue idea de... mi pretendiente, Jack. ¡Jack Wales! Me convenció para seducir a cualquier marinero del 'Sea Wolf'. Y cuando ese se pasara de listo, yo debía hacer un escándalo para sacar al tabernero de la barra. Mientras los ánimos se calmaban, dos marineros debían empezar una pelea para retenerlo en la sala. Así fue como ocurrió\nDurante ese tiempo, el capitán del 'Sea Wolf' robó el barril. ¡Eso es todo lo que sé, "+GetSexPhrase("señor","señora")+"! Por favor, no me delate. ¡Yo solo quería que Jack me respetara al fin! ¡Yo lo ayudé...";
+			dialog.text = "¡Yo... yo... se lo contaré todo! Todo fue idea de... mi pretendiente, Jack. ¡Jack Wales! Me convenció para seducir a cualquier marinero del 'Sea Beast'. Y cuando ese se pasara de listo, yo debía hacer un escándalo para sacar al tabernero de la barra. Mientras los ánimos se calmaban, dos marineros debían empezar una pelea para retenerlo en la sala. Así fue como ocurrió\nDurante ese tiempo, el capitán del 'Sea Beast' robó el barril. ¡Eso es todo lo que sé, "+GetSexPhrase("señor","señora")+"! Por favor, no me delate. ¡Yo solo quería que Jack me respetara al fin! ¡Yo lo ayudé...";
 			link.l1 = "¿Ayudaste a uno y traicionaste al otro sin remordimiento? Bien, cumpliré mi palabra: no te delataré. Pero tendrás que vivir con esto. Por tu estupidez, el tabernero pudo haber tenido serios problemas. ¿Dónde está Jack? Y recuerda: si mientes, volveré. Y no te gustará.";
 			link.l1.go = "OS_Tavern2_5";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -74,6 +74,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			PChar.quest.OS_Zasada.win_condition.l1 = "item";
 			PChar.quest.OS_Zasada.win_condition.l1.item = "cask_gin";
 			PChar.quest.OS_Zasada.function = "OS_Zasada";
+			
+			SetFunctionLocationCondition("DWH_Close_House", "PuertoPrincipe_QuestHouse_1", false);
 		break;
 		//<-- Старые счёты
 	}

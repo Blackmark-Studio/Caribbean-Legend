@@ -248,15 +248,35 @@ Erhöhung des Peso-Vorrats: 100%.
 Erhöhung des Dublonenvorrats: ~30%.
 }
 
-sp3 {SP3}
+sp3 {Schmelztiegel}
 
 sp3_desc
 {
-DLC.
+Auf diesem Schiff gilt das menschliche Leben nur als kurze Etappe, bevor wahre Macht offenbart wird. Nur wenige überschreiten die Schwelle und kehren zurück, doch wer es schafft, fürchtet den Tod nicht mehr.
 }
 
 sp3_desc2
 {
-DLC.
+Gefallene Matrosen steigern Erfahrung und Moral der Mannschaft.
+}
+
+sp3_SailorsBoardingBonus_desc
+{
+Entermesserfahrung-Bonus: #dSailorsBoardingBonus#%
+}
+
+sp3_SailorsBoardingBonus1_desc
+{
+~ (#dDeadSailors#/500 gefallene Matrosen)
+}
+
+sp3_SurrenderChanceBonus_desc
+{
+Kapitulationschance erhöht: #dSurrenderChanceBonus#%
+}
+
+sp3_SurrenderChanceBonus1_desc
+{
+~ (#dDeadSailors#/2000 gefallene Matrosen)
 }
 

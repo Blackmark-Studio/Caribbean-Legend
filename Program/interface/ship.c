@@ -690,6 +690,8 @@ void ShowInfoWindow()
 	int iShip;
 	ref refBaseShip;
 	float fRepairPercent;
+	iShip = sti(xi_refCharacter.ship.type);
+	refBaseShip = GetRealShip(iShip);
 	
 	bool  bShowHint = true;
 	switch (sCurrentNode)
@@ -697,8 +699,6 @@ void ShowInfoWindow()
 		case "SHIP_BIG_PICTURE":
 			if (shipIndex != -1)
 			{
-			    iShip = sti(xi_refCharacter.ship.type);
-			    refBaseShip = GetRealShip(iShip);
 				sHeader = XI_ConvertString(refBaseShip.BaseName);
 				sText1 = GetConvertStr(refBaseShip.BaseName, "ShipsDescribe.txt");
 			}
@@ -725,6 +725,15 @@ void ShowInfoWindow()
 			sHeader = GetConvertStr(sPerkName2, "ShipsPerksDescribe.txt");
 			sText1 = GetConvertStr(sPerkName2 + "_desc", "ShipsPerksDescribe.txt");
 			sText3 = GetConvertStr(sPerkName2 + "_desc2", "ShipsPerksDescribe.txt");
+			if(CheckAttribute(refBaseShip, "DeadSailors"))
+			{
+				aref arShipBonus;
+				makearef(arShipBonus, refBaseShip.DeadSailors);
+				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
+									 + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
+				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
+								   + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
+			}
 		break;
 
 		case "FLAGPIC":
@@ -1830,17 +1839,17 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
     GameInterface.(_tabName).tr9.td1.icon.image = "Cannons";
 	GameInterface.(_tabName).tr9.td2.str = XI_ConvertString(GetCannonType(sti(_chr.Ship.Cannons.Type)) + "s2");
 	
-	if (sti(_chr.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
-	{
-		if(GetCannonsNum(_chr) > 0)
-		{
-		GameInterface.(_tabName).tr9.td3.str = XI_ConvertString("caliber" + GetCannonCaliber(sti(_chr.Ship.Cannons.Type))) + " / " + GetCannonsNum(_chr);
-	}
-	else
-	{
-			GameInterface.(_tabName).tr9.td3.str = GetCannonsNum(_chr);
-		}	
-	}
+    if (sti(_chr.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
+    {
+        if(GetCannonsNum(_chr) > 0)
+        {
+            GameInterface.(_tabName).tr9.td3.str = XI_ConvertString("caliber" + GetCannonCaliber(sti(_chr.Ship.Cannons.Type))) + " / " + GetCannonsNum(_chr);
+        }
+        else
+        {
+            GameInterface.(_tabName).tr9.td3.str = GetCannonsNum(_chr);
+        }	
+    }
 	else
 	{
 	    GameInterface.(_tabName).tr9.td3.str = "";

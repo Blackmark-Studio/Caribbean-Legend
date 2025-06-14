@@ -1401,3 +1401,36 @@ Pinasse "Wavebreaker". Départ le 26. Route commerciale Belize-Capsterville. Éb
 ***************
 Galion "Silver Wind". Départ le 18. Route commerciale Belize-Blueveld. Esclaves ! Gros butin, ne tardez pas avec l'envoi de ma part. Il n'y aura pas d'escorte.
 ***************
+
+#QUEST Memento_Book
+Journal de Grim
+#TEXT 1
+Nouvelle mission de l'Amirauté. Transport d'une "cargaison spéciale" vers une colonie ennemie. Le capitaine Mortimer Grim a accepté de fournir sa belle goélette pour une somme généreuse. Un homme bien, un marin honnête. Son équipage est excellent—des gens expérimentés et fidèles. Dommage de devoir les tromper sur la cargaison.
+
+Et oui, je sais à quoi ça ressemble. L'agent secret de la Couronne anglaise Yorick Graves tient un journal où il partage ouvertement les secrets de sa mission. Je m'en fiche ! Sinon, avec ce boulot, on deviendrait fou. Courtney, si tu lis ça—tu peux m'embrasser le derrière !
+
+Mortimer pose trop de questions sur la cargaison. J'ai dû mentir—j'ai marmonné quelque chose à propos de médicaments pour les fiévreux de la jungle caribéenne. Il m'a cru, bien sûr. Grim vit dans un monde où la parole d'un officier de Sa Majesté a encore du poids.
+
+La cargaison a été embarquée dans des caisses scellées. L'équipage grogne—les caisses sont lourdes et l'odeur étrange. Mortimer a plaisanté habilement. Il m'a même fait rire.
+
+Diable ! C'est sorti ! Les premiers cas de fièvre dans l'équipage. Mortimer demande la permission d'ouvrir les caisses, de vérifier les médicaments. J'ai dû l'interdire sous peine de cour martiale. Je me déteste pour ça.
+
+Mon Dieu, qu'ai-je fait... La peste. Le capitaine est mort hier.
+
+Seul.
+
+Je parle à Mortimer. Ou plutôt à ce qu'il en reste. Il n'est plus en colère. Il comprend. Il dit que chacun a droit à la rédemption. Mais comment racheter ça ? Comment rendre la vie à ces gens ?
+
+Sauvé par des indigènes au large de la Dominique. Le chaman a dit—que le mort enseigne au vivant. Qu'est-ce que je pourrais bien apprendre à quelqu'un ?
+
+Près de l'île, il y a eu une grande bataille. Les survivants ont échoué sur la plage, prêts à continuer le massacre, mais je les ai arrêtés. Je ne sais pas d'où me vient cette force. Je ne sais pas si je suis vivant ou si tout cela est l'au-delà. Mais le Memento ne prendra pas la mer sans équipage. Et sans navire, je ne pourrai pas expier mes péchés.
+
+Yorick Graves est mort, et Mortimer Grim restera dans les mémoires comme le sauveur des damnés. C'est juste. J'espère que tu apprécies l'idée. Maintenant tu fais partie du Memento. Partie du navire.
+
+Nous avons sauvé une douzaine d'Indiens de la cale d'un négrier. J'ai donné la plupart des doublons à mes hommes, et j'emmènerai les anciens captifs à la Dominique.
+
+Le chaman a arraché le crâne et l'a caché quelque part ! Idiot à plumes ! Je l'aurais découpé avec mon nouveau sabre si le missionnaire n'avait pas été là.
+
+Je lui ai tout raconté. Sensation incroyable. Maintenant je sais quoi faire ! "Que le mort enseigne au vivant." Bien sûr ! Sauver les gens des chaînes ou de la potence ne suffit pas. Il faut les sauver de la mort elle-même ! Et on ne peut le faire qu'en forçant quelqu'un à traverser ce que j'ai traversé. Mourir et revenir. Est-ce que je les plains ? Bien sûr. Mais I. avait raison. Personne ne m'a jamais plaint.
+
+J'ai déjà trouvé un nouveau crâne—tout le monde ne peut pas passer l'épreuve de la mort. C'est même mieux ainsi. Que les orbites de Mortimer restent à la Dominique et ne voient pas ce qui se passe sur son navire. Il ne comprendrait pas.

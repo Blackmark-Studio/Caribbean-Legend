@@ -160,7 +160,7 @@ void ProcessDialogEvent()
 			link.l2 = "Addressing me, are you? Perhaps learn some manners before barking questions like bilge rats!";
 			link.l2.go = "Exit_Lucky";
 			//locCameraFromToPos(-3.35, 2.23, 6.93, false, 20, -1, 10);
-			locCameraFromToPos(-5.73, 2.45, 5.75, true, -0.53, 0.40, 7.17);
+			locCameraFromToPos(-3.53, 2.35, 6.35, true, 1.93, -0.60, 11.17);
 			DeleteAttribute(pchar, "questTemp.VPVL_Contr_V_Lemaren");
 		break;
 		
@@ -191,8 +191,9 @@ void ProcessDialogEvent()
 			dialog.text = ""+sld.name+", you addled barnacle! Open your deadlights, you daft fool—this ain't our contact at all!";
 			link.l1 = "Argh... Another of the governor's lapdogs! Sure as the tide! Since "+GetSexPhrase("this blackguard","this foolish girl")+" dragged "+GetSexPhrase("himself","herself")+" here, let’s haul "+GetSexPhrase("him","her")+" to the cave with the other rat. We'll show "+GetSexPhrase("him","her")+" how we get secrets out—quick enough they'll spill every filthy plan their master ever dreamt!";
 			link.l1.go = "Kontr Le Maren1";
-			locCameraFromToPos(-3.40, 2.38, 5.79, true, -0.49, 0.5, 7.59);
+			locCameraFromToPos(-3.53, 2.35, 6.35, false, -0.03, 0.40, 7.77);
 			CharacterTurnByChr(sld, CharacterFromID("VPVL_contr_1"));
+			CharacterTurnByChr(pchar, CharacterFromID("VPVL_contr_2"));
 			
 			sld = CharacterFromID("VPVL_contr_1");
 			CharacterTurnByChr(sld, CharacterFromID("VPVL_contr_2"));
@@ -217,9 +218,10 @@ void ProcessDialogEvent()
 					link.l2 = "If that barnacle-brain’s your sharpest cutlass, I dread to think what addled nonsense rattles in the heads of the rest!";
 					link.l2.go = "Kontr Le Maren3";
 					CharacterTurnByChr(npchar, CharacterFromID("Blaze"));
-					//locCameraFromToPos(-3.35, 2.23, 6.93, false, 20, -1, 10);
+					locCameraFromToPos(-3.73, 2.45, 5.75, false, -0.53, -0.0, 9.17);
 					sld = CharacterFromID("VPVL_contr_1");
 					CharacterTurnByChr(sld, CharacterFromID("Blaze"));
+					CharacterTurnByChr(pchar, CharacterFromID("VPVL_contr_1"));
 				}
 				else
 				{
@@ -235,7 +237,8 @@ void ProcessDialogEvent()
 				CharacterTurnByChr(npchar, CharacterFromID("Blaze"));
 				sld = CharacterFromID("VPVL_contr_2");
 				CharacterTurnByChr(sld, CharacterFromID("Blaze"));
-				locCameraFromToPos(-5.73, 2.45, 5.75, true, -0.53, 0.40, 7.17);
+				locCameraFromToPos(-3.73, 2.45, 5.75, false, -0.53, -0.0, 9.17);
+				CharacterTurnByChr(pchar, CharacterFromID("VPVL_contr_1"));
 			}
 			link.l2 = "If that barnacle-brain’s your sharpest cutlass, I dread to think what addled nonsense rattles in the heads of the rest!";
 			link.l2.go = "Kontr Le Maren3";
@@ -258,7 +261,7 @@ void ProcessDialogEvent()
 		case "murder":
 			DialogExit();
 			AddDialogExitQuest("VPVL_Pistol_Murder");
-			locCameraFromToPos(-5.04, 2.62, 8.65, false, 20, -6, -15);
+			//locCameraFromToPos(-5.04, 2.62, 8.65, false, 20, -6, -15);
 		break;
 		
 		/////////////   Пьер Карно   /////////////

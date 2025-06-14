@@ -9,7 +9,7 @@ Rayner
 
 FalseTrace_3
 {
-Galeone '@<pchar.questTemp.FalseTrace.ShipName>'
+Flöte '@<pchar.questTemp.FalseTrace.ShipName>'
 }
 
 FalseTrace_4
@@ -28,7 +28,7 @@ Solly
 
 FalseTrace_7
 {
-Galeone mit Golderz
+Flöte mit Golderz
 }
 
 FalseTrace_8

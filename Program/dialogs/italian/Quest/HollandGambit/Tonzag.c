@@ -367,7 +367,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -611,7 +611,7 @@ void ProcessDialogEvent()
 		
 		case "tonzag_drink_notknow":
 			dialog.text = "Non è molto, ma per gente come noi basta e avanza. Che ne dici, scendiamo a sud? Vediamo se becchiamo qualche impresa commerciale spagnola? E grazie per aver ascoltato la mia storia.";
-			link.l1 = "Eh già, ci siamo proprio aperti l’un l’altro… Allora, issiamo le vele!";
+			link.l1 = "Eh già, ci siamo proprio aperti l’un l’altro... Allora, issiamo le vele!";
 			link.l1.go = "exit";
 			
 			AddDialogExitQuestFunction("Tonzag_ExitToSea");

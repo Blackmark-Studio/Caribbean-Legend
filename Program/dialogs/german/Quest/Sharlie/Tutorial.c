@@ -291,8 +291,8 @@ void ProcessDialogEvent()
 				link.l3 = "60 Dublonen.";
 				link.l3.go = "AlonsoGold_DatDeneg_3_gold60";
 			}
-			link.l4 = "Ich muss das nochmal überprüfen. Ich komme später zurück.";
-			link.l4.go = "AlonsoWait_2";
+			// link.l4 = "Ich muss das nochmal überprüfen. Ich komme später zurück.";
+			// link.l4.go = "AlonsoWait_2";
 		break;
 		
 		case "AlonsoGold_DatDeneg_3_gold40":
@@ -552,6 +552,7 @@ void ProcessDialogEvent()
 			{
 				LAi_SetStayType(npchar);
 				npchar.SharlieTutorial_OhrannikStay = true;
+				DeleteQuestCondition("SharlieTutorial_OhrannikStopaet");
 			}
 		break;
 
@@ -883,8 +884,8 @@ void ProcessDialogEvent()
 				link.l3 = "42 Dublonen.";
 				link.l3.go = "RumGold_DatDeneg_gold42";
 			}
-			link.l4 = "Ich muss alles noch einmal überprüfen. Ich komme später wieder.";
-			link.l4.go = "RumGold_DatDeneg_3";
+			// link.l4 = "Ich muss alles noch einmal überprüfen. Ich komme später wieder.";
+			// link.l4.go = "RumGold_DatDeneg_3";
 		break;
 		
 		case "RumGold_DatDeneg_gold28":
@@ -1263,8 +1264,8 @@ void ProcessDialogEvent()
 				link.l3 = "30 Dublonen.";
 				link.l3.go = "BallsGold_DatDeneg_gold30";
 			}
-			link.l4 = "Ich muss alles noch mal prüfen. Ich komme später zurück.";
-			link.l4.go = "BallsGold_DatDeneg_3";
+			// link.l4 = "Ich muss alles noch mal prüfen. Ich komme später zurück.";
+			// link.l4.go = "BallsGold_DatDeneg_3";
 		break;
 
 		case "BallsGold_DatDeneg_gold20":
@@ -1569,8 +1570,6 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_ActivateWindlass")) AddQuestRecordInfo("SharlieTutorial_ListOfSailors", "1");
 			else AddQuestRecordInfo("SharlieTutorial_ListOfSailors", "2");
 			GiveItem2Character(PChar, "chest");
-			SetFunctionExitFromLocationCondition("Tutorial_Logbook", pchar.location, false);
-			Tutorial_Dubloons("");
 			if (!isMultiObjectKnown("gold_dublon"))
 			{
 				SetAlchemyRecipeKnown("gold_dublon");
@@ -1637,6 +1636,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.SharlieTutorial_KaznacheyQuestCompleted = true;
 			DeleteAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuestActive");
 			npchar.Merchant.type = "SharlieTurorialK";
+			pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
 		break;
 		
 		case "OfficerKaznachey_15_gold_115":
@@ -1667,27 +1667,50 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_16_Proval":
 			dialog.text = "Lassen Sie es sich gutgehen, Monsieur "+pchar.lastname+"?";
-			link.l2 = "Sind Sie auch in den Laderaum verbannt worden?";
-			link.l2.go = "OfficerKaznachey_16_Proval_2";
+			link.l1 = "Sind Sie auch in den Laderaum verbannt worden?";
+			link.l1.go = "OfficerKaznachey_16_Proval_2";
 		break;
 
 		case "OfficerKaznachey_16_Proval_2":
 			dialog.text = "Ich bin der Schiffsarzt, "+pchar.lastname+"! Bald wird der Aufenthaltsraum voller Verwundeter sein, und ich werde mehr Blut sehen als jeder Kämpfer. Und selbst wenn ich nur Zahlmeister wäre – im Gefecht würde ich mich wie alle anderen in die Reihe stellen. Nein, der Einzige, der es sich im gemütlichen Laderaum bequem gemacht hat – das sind Sie.";
-			link.l2 = "Was machen Sie dann hier?";
-			link.l2.go = "OfficerKaznachey_16_Proval_3";
+			link.l1 = "Was machen Sie dann hier?";
+			link.l1.go = "OfficerKaznachey_16_Proval_3";
 		break;
 
 		case "OfficerKaznachey_16_Proval_3":
+			dialog.text = "Die Schlacht beginnt erst in ein paar Stunden, also ist es die perfekte Zeit, die Tagesabrechnung zu schließen. Ihr habt meine Truhe mit Dublonen, de Maure. Seid so freundlich und gebt sie zurück.";
+			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
+			{
+				link.l1 = "Nehmt es. Und zeigt Eure Visage hier unten nicht mehr.";
+				link.l1.go = "OfficerKaznachey_16_Proval_4";
+			}
+			else
+			{
+				link.l1 = "Ich habe Euren Kram woanders gelassen.";
+				link.l1.go = "OfficerKaznachey_16_Proval_5";
+			}
+		break;
+		
+		case "OfficerKaznachey_16_Proval_4":
 			addGold = GetCharacterItem(pchar, "gold_dublon");
-			dialog.text = "Die Schlacht beginnt erst in ein paar Stunden, also ist jetzt der richtige Moment, um die Tagesabrechnung zu machen. Sie haben meine Truhe mit Dublonen, "+pchar.lastname+". Bitte geben Sie sie zurück.";
-			link.l2 = "...";
-			link.l2.go = "exit";
+			dialog.text = "Hatte ich auch nicht vor. Ich bin ja keine Landratte - mein Platz ist nicht im Laderaum. Lebt wohl.";
+			link.l1 = "...";
+			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
-			ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			else ChangeCharacterComplexReputation(pchar, "nobility", -6);
 			RemoveDublonsFromPCharTotal(addGold);
 			AddItems(npchar, "gold_dublon", addGold);
 			TakeItemFromCharacter(pchar, "chest");
 			TakeItemFromCharacter(pchar, "chest_open");
+		break;
+		
+		case "OfficerKaznachey_16_Proval_5":
+			dialog.text = "Woanders... Wir besprechen das nach der Schlacht - in Anwesenheit des Kapitäns. Bis dahin.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
+			ChangeCharacterComplexReputation(pchar, "nobility", -6);
 		break;
 
 		case "TreasurerTrade":

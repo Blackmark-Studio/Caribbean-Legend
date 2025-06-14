@@ -107,7 +107,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_2":
-			dialog.text = "Vorrei saperlo, compare. Un tempo lo sapevo, ora più no. Qui la vita va, c’è rum e vino a fiumi, buon cibo — non tanto, ma meglio di quella sbobba che mangiavo a bordo, per mille balene.\nSull’Isola vivono anche brave persone. Gente con cui bere o scambiare due chiacchiere. Mi piace stare qui. Quindi non so nemmeno io… No, direi proprio che non voglio andarmene. Un tempo ero rabbioso e affamato, guarda la mia pancia ora, ah-ah!";
+			dialog.text = "Vorrei saperlo, compare. Un tempo lo sapevo, ora più no. Qui la vita va, c’è rum e vino a fiumi, buon cibo — non tanto, ma meglio di quella sbobba che mangiavo a bordo, per mille balene.\nSull’Isola vivono anche brave persone. Gente con cui bere o scambiare due chiacchiere. Mi piace stare qui. Quindi non so nemmeno io... No, direi proprio che non voglio andarmene. Un tempo ero rabbioso e affamato, guarda la mia pancia ora, ah-ah!";
 			link.l1 = "Magnifico! Son lieto per te.";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_2 = "true";

@@ -3046,8 +3046,8 @@ void EquipPress()
 							SetOfficerToMushketer(xi_refCharacter, itmRef.id, true);
 							SetVariable();
 							UpdateItemInfo();
-								FillItemsSelected();
-								FillTableOther();
+							FillItemsSelected();
+							FillTableOther();
 							return;
 						}
 						else // Мушкетер. Делаем обычным фехтовальщиком
@@ -3055,15 +3055,15 @@ void EquipPress()
 							SetOfficerToMushketer(xi_refCharacter, itmRef.id, false);
 							SetVariable();
 							UpdateItemInfo();
-								FillItemsSelected();
-								FillTableOther();
+							FillItemsSelected();
+							FillTableOther();
 							return;
 						}
 					//}
 				} 
 				else
 				{
-					if (itmGroup == ITEM_SLOT_TYPE)
+					if(itmGroup == ITEM_SLOT_TYPE)
 					{
 						if(IsEquipCharacterByArtefact(xi_refCharacter, itmRef.id))
 						{
@@ -3078,9 +3078,22 @@ void EquipPress()
 							EquipCharacterByArtefact(xi_refCharacter, itmRef.id);
 							if(CheckAttribute(pchar,"systeminfo.tutorial.Amulet"))
 							{
-								DoQuestFunctionDelay("Tutorial_Amulet", 0.1);
-								ProcessExitCancel();
-								return;
+								DeleteAttribute(pchar,"systeminfo.tutorial.Amulet");
+								if(bGlobalTutor)
+								{
+									DoQuestFunctionDelay("Tutorial_Amulet", 0.1);
+									ProcessExitCancel();
+									return;
+								}
+								else
+								{
+									if(CheckAttribute(&InterfaceStates, "ShowTutorial") && sti(InterfaceStates.ShowTutorial) == 1)
+									{
+										DoQuestFunctionDelay("Tutorial_Amulet", 0.1);
+										ProcessExitCancel();
+										return;
+									}
+								}
 							}
 						}
 						if (itmRef.id == "indian_poison") // ugeen 2016
@@ -3090,7 +3103,7 @@ void EquipPress()
 					}
 					else
 					{
-						if (itmRef.groupID == AMMO_ITEM_TYPE) // боеприпасы для пистолей и мушкетов
+						if(itmGroup == AMMO_ITEM_TYPE) // боеприпасы для пистолей и мушкетов
 						{
 							if(isMusketLoadPress || and(GetCharacterEquipByGroup(xi_refCharacter, MUSKET_ITEM_TYPE) != "", GetCharacterEquipByGroup(xi_refCharacter, GUN_ITEM_TYPE) == ""))
 							{
@@ -3140,7 +3153,7 @@ void EquipPress()
 						}
 						else
 						{
-							if (itmRef.groupID == LANTERN_ITEM_TYPE)
+							if(itmGroup == LANTERN_ITEM_TYPE)
 							{
 								if(IsEquipCharacterByItem(xi_refCharacter, itmRef.id))
 								{
@@ -3166,13 +3179,11 @@ void EquipPress()
 									{
 										xi_refCharacter.reputation.fame = COMPLEX_REPUTATION_MAX - sti(xi_refCharacter.reputation.fame.talisman9);
 										DeleteAttribute(xi_refCharacter, "reputation.fame.talisman9");
-										SetVariable();
 									}
 									if(itmRef.id == "suit5" && CheckAttribute(xi_refCharacter, "reputation.fame.talisman9"))
 									{
 										xi_refCharacter.reputation.fame = COMPLEX_REPUTATION_MAX - sti(xi_refCharacter.reputation.fame.talisman9);
 										DeleteAttribute(xi_refCharacter, "reputation.fame.talisman9");
-										SetVariable();
 									}
 									RemoveCharacterEquip(xi_refCharacter, itmGroup);
 								}
@@ -3182,13 +3193,11 @@ void EquipPress()
 									{
 										xi_refCharacter.reputation.fame.talisman9 = COMPLEX_REPUTATION_MAX - sti(xi_refCharacter.reputation.fame);
 										xi_refCharacter.reputation.fame = COMPLEX_REPUTATION_MAX;
-										SetVariable();
 									}
 									if(sti(xi_refCharacter.index) == GetMainCharacterIndex() && itmRef.id == "suit5")
 									{
 										xi_refCharacter.reputation.fame.talisman9 = COMPLEX_REPUTATION_MAX - sti(xi_refCharacter.reputation.fame);
 										xi_refCharacter.reputation.fame = COMPLEX_REPUTATION_MAX;
-										SetVariable();
 									}
 									// <-- legendary edition
 									// belamour cle Цзань -->
@@ -3208,7 +3217,8 @@ void EquipPress()
 			SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("Equip that"));
 			SetSelectable("EQUIP_BUTTON",ThisItemCanBeEquip(itmRef));
 			SetItemInfo(iGoodIndex);
-			SetVariable(); // еще раз обновим
+			SetFormatedText("Weight", FloatToString(GetItemsWeight(xi_refCharacter), 1) + " / " + GetMaxItemsWeight(xi_refCharacter)); // обновим вес
+			FillTableOther(); // обновим статы
 		}
 	}
 	else
@@ -3350,7 +3360,6 @@ void SetHatSlot(ref xi_refCharacter)
 	SetNodeUsing("HATS_BACK", bState);
 	SetNodeUsing("TABBTNSLOT_11", bState);
 	SetNodeUsing("EMPTY_HATS", bState);
-	SetNodeUsing("ITEM_11", bState);
 	SetNodeUsing("BTN_ITEM_11", bState);
 }
 

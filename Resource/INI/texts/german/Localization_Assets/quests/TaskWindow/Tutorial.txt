@@ -1,0 +1,159 @@
+Tutorial_1
+{
+Schiff drehen
+}
+
+Tutorial_2
+{
+Drücke @<key1> und @<key2>, um das Schiff zu drehen
+}
+
+Tutorial_3
+{
+Zeitsteuerung
+}
+
+Tutorial_4
+{
+Zeitbeschleunigung aktivieren @<key>
+}
+
+Tutorial_5
+{
+Drücke @<key> erneut, um zu deaktivieren
+}
+
+Tutorial_6
+{
+Drücke @<key>, um auf x6 zu beschleunigen
+}
+
+Tutorial_7
+{
+Drücke @<key1> zum Verlangsamen oder @<key2>
+}
+
+Tutorial_8
+{
+Segelsteuerung
+}
+
+Tutorial_9
+{
+Setze die Segel in den Kampfmodus @<key1>
+}
+
+Tutorial_10
+{
+Segel komplett einholen @<key1>
+}
+
+Tutorial_11
+{
+Grundlagen des Schiffskampfs
+}
+
+Tutorial_12
+{
+Nutze @<key1> für einen schnellen Breitseitenschuss
+}
+
+Tutorial_13
+{
+Fortgeschrittener Schiffskampf
+}
+
+Tutorial_14
+{
+@<key1> Zielmodus aktivieren
+}
+
+Tutorial_15
+{
+Drücke @<key1> für gezielte Breitseite
+}
+
+Tutorial_16
+{
+@<key1> Zielmodus verlassen
+}
+
+Tutorial_17
+{
+Sieg erringen
+}
+
+Tutorial_18
+{
+Versenke die restlichen Piratenschiffe
+}
+
+Tutorial_19
+{
+Greife den Feind an
+}
+
+Tutorial_20
+{
+@<key1> Hieb ausführen
+}
+
+Tutorial_21
+{
+@<key1> Stich ausführen
+}
+
+Tutorial_22
+{
+@<key1> Durchschlagenden Angriff ausführen
+}
+
+Tutorial_23
+{
+Verteidige dich
+}
+
+Tutorial_24
+{
+@<key1> Angriffe blocken
+}
+
+Tutorial_25
+{
+@<key1> Angriffe parieren
+}
+
+Tutorial_26
+{
+Besiege den Piraten!
+}
+
+Tutorial_27
+{
+Quests
+}
+
+Tutorial_28
+{
+Lies das Dokument @<key1>
+}
+
+Tutorial_29
+{
+Öffne die Dublonenkiste @<key1>
+}
+
+Tutorial_30
+{
+Plündern
+}
+
+Tutorial_31
+{
+Matrosen plündern
+}
+
+Tutorial_32
+{
+Gib Alonso den geheimnisvollen Trank
+}

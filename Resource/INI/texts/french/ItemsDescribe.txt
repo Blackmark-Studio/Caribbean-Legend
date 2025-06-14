@@ -54,7 +54,6 @@ used_item {Objet utilisé - }
 youve_gotNotif {Nouvel objet : }
 used_itemNotif {Objet perdu : }
 
-
 flower_find {Découverte chanceuse !}
 
 
@@ -247,14 +246,16 @@ Long fleuret de duel à lame légère et très étroite, fabriqué à Verdun. La
 itmname_blade_27	{Rapière à garde balayée}
 itmdescr_blade_27
 {
-Cette rapière est appelée "Plume de Saxe" en raison de son équilibre légendaire qui permet au manieur de porter des coups tranchants et perçants avec facilité. La lame obéit au moindre mouvement de la main. La garde complexe offre une bonne protection à la main.
+Cette rapière est appelée "Plume de Saxe" en raison de son équilibre légendaire qui permet au manieur de porter des coups tranchants et perçants avec facilité. La lame obéit au moindre mouvement de la main. 
+La garde complexe offre une bonne protection à la main.
 }
 
 itmname_blade_28	{Katana}
 itmdescr_blade_28
 {
 Une étrange épée provenant de l'île légendaire de Cipangu, dont la lame est faite d'un acier de haute qualité et dont la longue poignée permet de la manier à une ou deux mains.
-Cette épée pourrait raconter l'histoire de son voyage de l'Orient exotique aux Caraïbes... comment a-t-elle atterri ici ?
+Cette épée pourrait raconter l'histoire de son voyage de l'Orient exotique aux Caraïbes... 
+Comment a-t-elle atterri ici ?
 }
 
 itmname_blade_29	{Storta}
@@ -272,7 +273,8 @@ Un coutelas commandé par le capitaine de la Compagnie des Indes orientales. Le 
 itmname_blade_31	{Narwhal}
 itmdescr_blade_31
 {
-Une épée d'abordage de maître, avec une garde en forme de coquillage et une poignée en corne de narval. La lame est faite d'un acier de qualité supérieure et est parfaitement équilibrée.
+Une épée d'abordage de maître, avec une garde en forme de coquillage et une poignée en corne de narval. 
+La lame est faite d'un acier de qualité supérieure et est parfaitement équilibrée.
 }
 
 itmname_blade_32	{Thanatos}
@@ -491,6 +493,21 @@ Une épée richement ornée, malgré son aspect cérémoniel, possède d'excelle
 }
 
 lacrima_patris_parameters{Augmentation de la portée des canons : #f.1RangeBonus#%}
+
+itmname_blade_SP_3low {Pendu}
+itmdescr_blade_SP_3low
+{
+Ce sabre combine des traits de sabres turcs et de fauchons européens ; sa lame élargie peut trancher même l’armure la plus solide. Avec le Pendu, tout abordage se termine vite et brutalement.
+}
+
+itmname_blade_SP_3 {Pendu}
+itmdescr_blade_SP_3
+{
+Le crâne de Yorick à la place de la garde pousse son porteur à ne plus craindre la mort et à regarder la Faucheuse en face pour libérer sa vraie puissance.
+~
+Empêche toute guérison.
+Chaque 2% de santé perdue augmente les dégâts et la régénération d’énergie de 1,5% et 1,75% respectivement.
+}
 
 ; ==================================================================================================================== ОГНЕСТРЕЛЬНОЕ ОРУЖИЕ
 
@@ -934,6 +951,15 @@ Ce chapeau effraie les marchands, surtout les Espagnols, plus que le Jolly Roger
 Le rhum et le vin redonnent 50 % de santé en plus. L'ivresse a un effet plus positif.
 }
 
+itmname_hat9 {Chapeau de Grim}
+itmdescr_hat9
+{
+Ce chapeau est connu dans tous les coins des Caraïbes et partout on s’en souvient avec un frisson. Seul un fou oserait attaquer le navire de son propriétaire, et en le rencontrant, la peur vous fera oublier comment tenir une lame ou un pistolet. Souvenez-vous : mourir est facile. Revenir est difficile.
+~
+Réduit la pénalité de dégâts du navire de 30%.
+10% de chance d’éviter les dégâts de tir.
+}
+
 ; ==================================================================================================================== ОПТИКА
 
 itmname_spyglass1	{Longue-vue bon marché}
@@ -969,6 +995,15 @@ itmdescr_spyglass5
 {
 Une lunette unique en son genre qui convient aussi bien à l'observation des lunes de Jupiter qu'à celle des navires en mer. Les lentilles parfaitement ajustées en cristal de roche pur et l'utilisation du trépied permettent de voir absolument tout ce qui se trouve au-dessus de l'horizon, y compris les types de canons utilisés sur un navire ou dans un fort. Vous pourriez compter les poils de nez du roi Louis à Versailles avec cette arme. Bonus de +1500 mètres à la distance de déplacement rapide.
 }
+
+itmname_spyglassSP3 {Longue-vue "Œil du Mort"}
+itmdescr_spyglassSP3
+{
+Cette longue-vue ornée d’os possède des lentilles étonnamment bonnes, permettant de voir : type de navire, nom, vitesse, nombre et calibre des canons, état du navire, mousquetaires sur le pont et la peur dans les yeux du capitaine ennemi.
+Bonus de portée de navigation : +850 yards.
+Augmente le rayon de vision sur la carte globale : +15%.
+}
+
 
 ; ==================================================================================================================== НАВИГАЦИЯ
 
@@ -1194,6 +1229,26 @@ Aucune pénalité, aucune limite d'activation.
 talisman18_Bonus{Trésors trouvés : #dQBonus# / 10}
 
 talisman18_NoBonus{Trésors trouvés : 0 / 10}
+
+itmname_talisman19	{Talisman "Crâne de Yorick"}
+itmdescr_talisman19
+{
+Le crâne du capitaine Mortimer Grim du « Memento », qui n’a jamais vraiment compris sa propre mort. Tu le connaissais, #sName#.
+Les morts enseignent aux vivants, et cet artefact s’adapte aux désirs de son propriétaire.
+Dans l’inventaire, il rend tous les officiers immortels.
+~
+Aucun malus, activation multiple possible.
+}
+
+talisman19_InSlot
+{
+Le navire existe des deux côtés du voile à la fois. Le bois était vivant et est devenu mort pour servir les vivants. Le crâne du capitaine « Memento » rappelle à tout navire que la mort n’existe pas et qu’il faut se battre jusqu’au bout.
+~
+Chaque 2% de coque perdue augmente la vitesse et les dégâts des canons de 0,75% et 0,5% respectivement.
+~
+Aucun malus, activation multiple possible.
+}
+
 ; ==================================================================================================================== ТАЛИСМАНЫ
 
 itmname_totem_01 {Talisman "Gorge en fonte"}
@@ -3857,6 +3912,11 @@ itmdescr_SM_necklace_Julie
 Un bijou cher au cœur de Julie. Élégant et raffiné, il semble conserver ses souvenirs lui-même. S’il existe des objets capables de garder des secrets, ce collier en fait sans doute partie.
 }
 
+itmname_TBP_letter	{Lettre ouverte}
+itmdescr_TBP_letter
+{
+Tu pensais pouvoir me faire chanter et t’en tirer sans conséquences ? Tu t’es trompée. Très bientôt, tu regretteras ton audace. Ta mort sera lente et douloureuse, et personne ne viendra te sauver.
+}
 
 ;====================================== предметы для DLC ===============================
 
@@ -4100,4 +4160,18 @@ itmname_islamona_toolbox	{Boîte à outils}
 itmdescr_islamona_toolbox
 {
 Outils de grande qualité pour la construction de bateaux et de maisons. Fabriqués en Europe.
+}
+
+;=============================== SP3 =======================================================
+
+itmname_Memento_Book	{Journal de Grim}
+itmdescr_Memento_Book
+{
+Une tragédie en trois actes
+}
+
+itmname_Memento_letter	{Письмо Мементо}
+itmdescr_Memento_letter
+{
+Письмо Мементо
 }

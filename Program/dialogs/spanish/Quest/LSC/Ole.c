@@ -493,6 +493,7 @@ void ProcessDialogEvent()
 		SetMusic("music_romantic");
 		bDisableCharacterMenu = true; // лоченые интерфейсы
 		locCameraRotateAroundHero(0.0, 2.0, 0.0, 0.005, 0.0, 2.0, 0.0, 1000);
+		Pchar.FuncCameraFly = "";
 		DoQuestFunctionDelay("LSC_OleReturnHome", 18.0);
 		break;
 

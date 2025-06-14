@@ -43,7 +43,7 @@ float LAi_CalcMeleeDamage(aref attack, aref enemy, string attackType, bool isBlo
 	// Warship 27.08.09 Для сильных противников
 	// Если долбить совсем сильных (хардкорные абордажи), то шансов взять шип будет меньше
 	if(sti(enemy.Rank) > 50)
-		dmg *= 45 / sti(enemy.Rank);	// TODO: ошибка целочисленного деления, нужно принять решение о необходимости этого коэффициента
+		dmg *= 45.0 / stf(enemy.Rank);
 
 	if(CheckAttribute(loadedLocation, "CabinType") && sti(enemy.index) == GetMainCharacterIndex())
 	{
@@ -360,6 +360,19 @@ float Lai_UpdateEnergyPerDltTime(aref chr, float curEnergy, float dltTime)
 	{
 		fMultiplier = fMultiplier * 1.15;
 	}
+	if(GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_SP_3")
+	{
+		fMultiplier *= 1.0 + Bring2Range(0.0, 0.75, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(chr)) / 2.0);
+	}
+
+	bool bPeace = true;
+	if(CheckAttribute(chr, "chr_ai.group") && chr.chr_ai.group == LAI_GROUP_PLAYER && LAi_group_IsActivePlayerAlarm())
+		bPeace = false;
+	else if(CheckAttribute(chr, "chr_ai.tmpl") && chr.chr_ai.tmpl == LAI_TMPL_FIGHT)
+		bPeace = false;
+	if(bPeace)
+		fMultiplier *= 3.0;
+
 	if(CheckAttribute(chr, "cheats.energyupdate")) fMultiplier = fMultiplier * 10.0;
 	float fEnergy;
 	fEnergy = curEnergy + dltTime * fMultiplier; 
@@ -420,7 +433,7 @@ float LAi_GunCalcProbability(aref attack, aref enemy, float kDist, string sType)
 }
 
 //Получить повреждение от пистолета
-float LAi_GunCalcDamage(aref attack, aref enemy, string sType)
+float LAi_GunCalcDamage(aref attack, aref enemy, string sType, int nShots)
 {
 	//Расчитываем повреждение
 	float min = 10.0;
@@ -467,7 +480,7 @@ float LAi_GunCalcDamage(aref attack, aref enemy, string sType)
 	if (IsCharacterPerkOn(attack, "Sniper") && enemy.chr_ai.group != LAI_GROUP_PLAYER) 
 	{
 		if(IsBulletGrape(sBullet))
-			Lai_CharacterChangeEnergy(enemy, -(rand(1) + 1));
+			Lai_CharacterChangeEnergy(enemy, -(rand(1) + 1) * nShots);
 		else
 			Lai_CharacterChangeEnergy(enemy, -(rand(20) + 20));
 	}	
@@ -480,7 +493,7 @@ float LAi_GunCalcDamage(aref attack, aref enemy, string sType)
 	// evganat - урон картечью
 	if(IsBulletGrape(sBullet))
 	{
-		dmg = stf(attack.chr_ai.(sType).basedmg);
+		dmg = stf(attack.chr_ai.(sType).basedmg) * nShots;
 		dmg *= Bring2Range(0.75, 1.5, 0.0, 1.0, dmg);
 		if(IsEquipCharacterByArtefact(attack, "talisman18"))
 		{
@@ -743,6 +756,10 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 		if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh2") dmg *= 2.0;
 		if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh3") dmg *= 1.4;
 	}
+	if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "blade_SP_3")
+	{
+		dmg *= 1.0 + Bring2Range(0.0, 0.875, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(attack)) / 2.0);
+	}
 	//Аттака своей группы
 	bool noExp = false;
 	if(CheckAttribute(attack, "chr_ai.group") && CheckAttribute(enemy, "chr_ai.group"))
@@ -849,6 +866,12 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	// belamour legendary edtion атрибут уменьшенного урона
 	if(CheckAttribute(enemy,"ReducedDamage")) dmg = dmg * makefloat(enemy.ReducedDamage);
 	dmg *= fLiberMisBonus(enemy);
+	if(IsDummy(attack) || IsDummy(enemy))
+	{
+		if(bDrawBars)
+			SendMessage(enemy, "lfff", MSG_CHARACTER_VIEWDAMAGE, dmg, stf(enemy.chr_ai.hp), stf(enemy.chr_ai.hp_max));
+		dmg = 0.0;
+	}
 	if(dmg > 0.0)
 	{
 		if(!CheckAttribute(pchar,"Achievment.ExtraDamage"))
@@ -1001,7 +1024,7 @@ void LAi_SetResultOfDeath(ref attack, ref enemy, bool isSetBalde)
 // boal <--
 
 //Начисление повреждений при попадании
-void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fAimingTime, bool isHeadShot)
+void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fAimingTime, bool isHeadShot, int nShots)
 {
 	ref rItm;
 	
@@ -1026,13 +1049,19 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 			return;
 		}
 	}
+	// belamour шляпа Грима
+	if(rand(9) == 5 && GetCharacterEquipByGroup(enemy, HAT_ITEM_TYPE) == "hat9")
+	{
+		notification(StringFromKey("LAi_fightparams_1"), "Hat9");
+		return;
+	}
 	//Вероятность поподания
 	float p = LAi_GunCalcProbability(attack, enemy, kDist, sType);
 	//Если промахнулись, то выйдем
 	if(rand(10000) > p*10000) return;	  
 	// boal 23.05.2004 <--
 	//Начисляем повреждение
-	float damage = LAi_GunCalcDamage(attack, enemy, sType);
+	float damage = LAi_GunCalcDamage(attack, enemy, sType, nShots);
 	
 	// evganat - прицеливание
 	if(fAimingTime >= 0.0)
@@ -1105,6 +1134,8 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 	if(CheckAttribute(enemy,"ReducedDamage")) damage = damage * makefloat(enemy.ReducedDamage);
 	damage *= fLiberMisBonus(enemy);
 	
+	if(IsMainCharacter(enemy))
+		isHeadShot = false;
 	if(isHeadShot)
 	{
 		damage *= 2;
@@ -1467,6 +1498,14 @@ void LAi_ChrFightActionApply()
 	string attackType = GetEventData();
 	float needEnergy = LAi_CalcUseEnergyForBlade(attack, attackType);
 	Lai_CharacterChangeEnergy(attack, -needEnergy);
+	
+	// TUTOR-ВСТАВКА
+	if(TW_IsActive() && objTask.land_fight == "2_Defence" && attack.id == "SharlieTutorial_EnemyPirate_0" && attackType == "hit_parry")
+	{
+		TW_IncreaseCounter("land_fight", "FightDefence_parry", 1);
+		if(TW_CheckCounter("land_fight", "FightDefence_block") && TW_CheckCounter("land_fight", "FightDefence_parry"))
+			TW_FinishLand_Fight_2_Defence();
+	}
 }
 
 //Получить относительную затрачиваемую энергию

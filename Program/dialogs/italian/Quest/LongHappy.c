@@ -314,7 +314,7 @@ void ProcessDialogEvent()
 		case "Svenson_23":
 			if (CheckAttribute(pchar, "questTemp.LongHappy.SvensonsShipSink")) dialog.text = "Beh, non si può certo dire che sia finita – la nostra vita continua! Anche se mi sento a pezzi, come se fossi passata sotto la chiglia. Ormai sono troppo vecchia per lanciarmi in mare da una nave in fiamme e nuotare per un’ora fino a riva, con gli squali che mi girano intorno. Spero che ci sia rimasto ancora un po’ di rum...";
 			else dialog.text = "Beh, non si può certo dire che sia finita - la nostra vita continua! Dannazione, mi sento più giovane di dieci anni! Era da un sacco che non combattevo così! Spero che le tue scorte di rum e vino non siano state saccheggiate durante quel casino - dobbiamo brindare come si deve, giusto?";
-			link.l1 = "Giusto, anch’io berrei volentieri, ma prima devo controllare la residenza, non so se te l’hanno già detto o no…";
+			link.l1 = "Giusto, anch’io berrei volentieri, ma prima devo controllare la residenza, non so se te l’hanno già detto o no...";
 			link.l1.go = "Svenson_24";
 		break;
 		
@@ -377,7 +377,7 @@ void ProcessDialogEvent()
 		
 		case "Svenson_29":
 			dialog.text = "Parlami di loro. Quel medico sembrava sveglio. Si esprimeva con una tale saggezza.";
-			link.l1 = "L’ha fatto. Ma temo che il mondo della scienza abbia perso molto più di me. Era un genio… raffinato, come tutti loro. Un vero mago dei prodigi!";
+			link.l1 = "L’ha fatto. Ma temo che il mondo della scienza abbia perso molto più di me. Era un genio... raffinato, come tutti loro. Un vero mago dei prodigi!";
 			link.l1.go = "Svenson_30";
 		break;
 		
@@ -424,7 +424,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Svenson_36":
-			dialog.text = "Di Hawk sai già. Dannie non lo farà lasciare l’isola per almeno un mese, questo è certo. Aveva solo una faccenda che ci preoccupava… oh, pazienza.";
+			dialog.text = "Di Hawk sai già. Dannie non lo farà lasciare l’isola per almeno un mese, questo è certo. Aveva solo una faccenda che ci preoccupava... oh, pazienza.";
 			link.l1 = "";
 			if (CheckAttribute(pchar, "questTemp.LongHappy.Terrax.Prisoner")) link.l1.go = "Svenson_37";
 			else link.l1.go = "Svenson_38";
@@ -731,7 +731,7 @@ void ProcessDialogEvent()
 		
 		// Проспер Трубаль
 		case "Prosper":
-			dialog.text = "Charles, non potevo mancare, ti faccio i miei più sinceri auguri a te e alla tua sposa! Siate felici! Sai, un paio di mesi fa ho sposato mia figlia, con un brav’uomo che la ama, ma a dire il vero ero un po’ rattristato che non fossi tu… Beh, lasciamo perdere… cosa vado cianciando – congratulazioni! Che la vostra vita sia lunga e felice!";
+			dialog.text = "Charles, non potevo mancare, ti faccio i miei più sinceri auguri a te e alla tua sposa! Siate felici! Sai, un paio di mesi fa ho sposato mia figlia, con un brav’uomo che la ama, ma a dire il vero ero un po’ rattristato che non fossi tu... Beh, lasciamo perdere... cosa vado cianciando – congratulazioni! Che la vostra vita sia lunga e felice!";
 			link.l1 = "Grazie, Prosper, sono felice che tu sia venuto, giusto?";
 			link.l1.go = "Guests_block";
 		break;
@@ -828,7 +828,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_11":
-			dialog.text = "Tichingitu si è svegliato un’ora fa per via delle urla di quella ragazza. Correva sulla spiaggia quasi nuda e urlava qualcosa sui rapitori e sui selvaggi… Ma qui non c’è nessuno oltre a noi. Hai dell’acqua? Non quella infuocata di nuovo, Tichingitu ormai la detesta.";
+			dialog.text = "Tichingitu si è svegliato un’ora fa per via delle urla di quella ragazza. Correva sulla spiaggia quasi nuda e urlava qualcosa sui rapitori e sui selvaggi... Ma qui non c’è nessuno oltre a noi. Hai dell’acqua? Non quella infuocata di nuovo, Tichingitu ormai la detesta.";
 			link.l1 = "C'era una fiaschetta da qualche parte, se non l'ho persa durante una rissa... eccola qua. Come hai fatto a combinare tutto questo? Suo zio, un oste del posto, cerca un indiano che ha rapito la nipote e minaccia di staccargli quella testa vuota piena di piume. Secondo te, di chi sta parlando?";
 			link.l1.go = "Tichingitu_12";
 		break;
@@ -847,7 +847,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_14":
 			dialog.text = "Un abbordaggio? Il Capitano aveva già accennato a una battaglia. I pensieri non ascoltano ancora Tichingitu. Cos’è accaduto in città?";
-			link.l1 = "Una vera battaglia, sia sulla terra che in mare. I cannoni hanno tuonato tutta la notte, credo che persino a San Jose li abbiano sentiti. Però tu eri impegnato in un’altra 'battaglia', posso capirlo… Su, ti racconto tutto strada facendo.";
+			link.l1 = "Una vera battaglia, sia sulla terra che in mare. I cannoni hanno tuonato tutta la notte, credo che persino a San Jose li abbiano sentiti. Però tu eri impegnato in un’altra 'battaglia', posso capirlo... Su, ti racconto tutto strada facendo.";
 			link.l1.go = "Tichingitu_15";
 		break;
 		
@@ -1322,7 +1322,7 @@ void ProcessDialogEvent()
 		case "Danielle_2":
 			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "Charles, accomodati – Nathan ed io siamo davvero felici per te! Marcus, Jan e mio marito hanno preparato qualcosa per te, ma i regali possono aspettare. Ora lasciami solo farti le mie congratulazioni e augurarti ogni felicità! La tua scelta è davvero un prodigio! Dimmi, non sarai riuscito a farle indossare un abito bianco laggiù a Martinica, vero?";
-			link.l1 = "Grazie, Dannie. Sì, è stato buffo con l’abito – sono sicuro che tra la gente di alto rango il nostro matrimonio ha fatto nascere pettegolezzi a non finire. Tutti distoglievano lo sguardo facendo finta che non accadesse nulla di insolito. Modi, etichetta e simili… ma a me delle chiacchiere non importa niente, io la amo e questo è ciò che conta davvero.";
+			link.l1 = "Grazie, Dannie. Sì, è stato buffo con l’abito – sono sicuro che tra la gente di alto rango il nostro matrimonio ha fatto nascere pettegolezzi a non finire. Tutti distoglievano lo sguardo facendo finta che non accadesse nulla di insolito. Modi, etichetta e simili... ma a me delle chiacchiere non importa niente, io la amo e questo è ciò che conta davvero.";
 			link.l1.go = "Danielle_3";
 		break;
 		

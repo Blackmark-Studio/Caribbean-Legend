@@ -40,7 +40,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = TimeGreeting()+", "+GetAddress_Form(NPChar)+"! Jak się masz? Potrzebujesz czegoś?";
-					link.l1 = TimeGreeting()+", "+GetAddress_FormToNPC(NPChar)+"Nie, nie mam. Po prostu chciałem się przywitać. Miłego pobytu!";
+					link.l1 = TimeGreeting()+", "+GetAddress_FormToNPC(NPChar)+". Nie, nie mam. Po prostu chciałem się przywitać. Miłego pobytu!";
 					link.l1.go = "exit";
 				}
 			}
@@ -71,7 +71,7 @@ void ProcessDialogEvent()
 					pchar.GenQuest.Escort.Trader.Type1 = "true";//тип задания
 					pchar.GenQuest.Escort.Trader.Chance = rand(1);
 					pchar.GenQuest.Escort.Trader.Add = "to "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+"";
-					dialog.text = "Chciałbym prosić cię o eskortowanie mnie do "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Generał")+" w środku "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+"Zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
+					dialog.text = "Chciałbym prosić cię o eskortowanie mnie do "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+" w środku "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+"Zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
 					link.l1 = "A dlaczego nie? Zawsze bezpieczniej jest żeglować razem, rozumiem to. Zgadzam się.";
 					link.l1.go = "EscortType";
 					link.l2 = "Z przyjemnością bym pomógł, ale zmierzam w innym kierunku.";
@@ -89,7 +89,7 @@ void ProcessDialogEvent()
 					pchar.GenQuest.Escort.Trader.Type2 = "true";//тип задания
 					pchar.GenQuest.Escort.Trader.Chance = rand(2);
 					pchar.GenQuest.Escort.Trader.Add = "to "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+", not far from "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+"";
-					dialog.text = "Chciałbym prosić cię o eskortowanie mnie do "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Generał")+", niedaleko od "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+" wewnątrz "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+" Zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
+					dialog.text = "Chciałbym prosić cię o eskortowanie mnie do "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+", niedaleko od "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+" wewnątrz "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+" Zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
 					link.l1 = "I dlaczego nie? Zawsze bezpieczniej jest żeglować razem, rozumiem to. Zgadzam się.";
 					link.l1.go = "EscortType";
 					link.l2 = "Chętnie pomogę, ale zmierzam w innym kierunku.";
@@ -148,13 +148,13 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "GenQuest.Escort.Trader.Type1"))//в дружественный город
 			{
 				pchar.GenQuest.Escort.Trader.Location = pchar.GenQuest.Escort.Trader.City+"_tavern";
-			if (sti(pchar.GenQuest.Escort.Trader.Chance) == 1) CoolTraderHunterOnMap();
-				else TraderHunterOnMap();//запуск ДУ на глобалке
+			if (sti(pchar.GenQuest.Escort.Trader.Chance) == 1) TraderHunterOnMap(true);
+				else TraderHunterOnMap(false);//запуск ДУ на глобалке
 			}
 			if (CheckAttribute(pchar, "GenQuest.Escort.Trader.Type2"))//в бухту
 			{
 				pchar.GenQuest.Escort.Trader.Location = pchar.GenQuest.Escort.Trader.Shore;
-				if (sti(pchar.GenQuest.Escort.Trader.Chance) != 2) TraderHunterOnMap();
+				if (sti(pchar.GenQuest.Escort.Trader.Chance) != 2) TraderHunterOnMap(false);
 				else
 				{
 					pchar.quest.EscortTrader_Attack.win_condition.l1 = "location";
@@ -165,7 +165,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "GenQuest.Escort.Trader.Type3"))//на необитайку
 			{
 				pchar.GenQuest.Escort.Trader.Location = pchar.GenQuest.Escort.Trader.Shore;
-				if (sti(pchar.GenQuest.Escort.Trader.Chance) == 0) TraderHunterOnMap();
+				if (sti(pchar.GenQuest.Escort.Trader.Chance) == 0) TraderHunterOnMap(false);
 				if (sti(pchar.GenQuest.Escort.Trader.Chance) == 1) 
 				{
 					if(sti(RealShips[sti(pchar.Ship.Type)].Class) >= sti(RealShips[sti(pchar.GenQuest.Escort.Trader.ShipType)].Class) && sti(RealShips[sti(pchar.Ship.Type)].BaseType) != SHIP_GALEON_H && GetCompanionQuantity(pchar) < 3)//меряемся кораблями
@@ -174,7 +174,7 @@ void ProcessDialogEvent()
 						pchar.quest.EscortTrader_Attack.win_condition.l1.location = pchar.GenQuest.Escort.Trader.Island;
 						pchar.quest.EscortTrader_Attack.function = "DesIslandAttack";
 					}
-					else CoolTraderHunterOnMap();
+					else TraderHunterOnMap(true);
 				}
 				else
 				{//будет засада + сам нападет
@@ -204,7 +204,7 @@ void ProcessDialogEvent()
 			if (sti(sld.ship.HP) < makeint(sti(pchar.GenQuest.Escort.Trader.ShipMaxHP)/2))//если корпуса осталось меньше 1/2 - вторая проверка
 			{
 				pchar.GenQuest.Escort.Trader.Money = makeint(sti(pchar.GenQuest.Escort.Trader.Money))/2;
-				dialog.text = "Kapitanie, powiedz mi dlaczego cię zatrudniłem? Spójrz na mój statek! Jak ona wygląda? Jest zrujnowana! Ledwo utrzymuje się na wodzie... Nie widzisz tego? Tak czy inaczej, zapłacę ci tylko połowę twojej nagrody. Nie licz na więcej!";
+				dialog.text = "Kapitanie, powiedz mi dlaczego cię zatrudniłem? Spójrz na mój statek! Jak on wygląda? Jest zrujnowany! Ledwo utrzymuje się na wodzie... Nie widzisz tego? Tak czy inaczej, zapłacę ci tylko połowę twojej nagrody. Nie licz na więcej!";
 				link.l1 = "Hmm... Dobrze, zgadzam się. Twój statek jest naprawdę... trochę uszkodzony...";
 				link.l1.go = "EscortTrader_complete_2";
 				break;
@@ -258,7 +258,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.Escort.Trader.Enemyname = GenerateRandomName_Generator(sti(npchar.nation), "man");
 			GetEnemyTraderGoods();
 			pchar.GenQuest.Escort.Trader.EnIsland = DesIsland();
-			dialog.text = "Jest jeden kupiec - "+pchar.GenQuest.Escort.Trader.Enemyname+". Posiada i dowodzi fletą. Zostałem poinformowany, że za dwa tygodnie przybędzie na zamieszkaną wyspę "+XI_ConvertString(pchar.GenQuest.Escort.Trader.EnIsland)+", aby uzupełnić zapasy wody i handlować z miejscowymi Indianami. Będzie miał dużo "+pchar.GenQuest.Escort.Trader.add+" na pokładzie. Żałosny wojownik, nie napotkasz żadnych trudności w przejęciu jego statku\nWięc i tak na tym skorzystasz, kapitanie.";
+			dialog.text = "Jest jeden kupiec - "+pchar.GenQuest.Escort.Trader.Enemyname+". Posiada i dowodzi fluitą. Zostałem poinformowany, że za dwa tygodnie przybędzie na zamieszkaną wyspę "+XI_ConvertString(pchar.GenQuest.Escort.Trader.EnIsland)+", aby uzupełnić zapasy wody i handlować z miejscowymi Indianami. Będzie miał dużo "+pchar.GenQuest.Escort.Trader.add+" na pokładzie. Żałosny wojownik, nie napotkasz żadnych trudności w przejęciu jego statku\nWięc i tak na tym skorzystasz, kapitanie.";
 			link.l1 = "Człowiek człowiekowi wilkiem jest?";
 			link.l1.go = "EscortTrader_complete_5";
 		break;
@@ -499,7 +499,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Racing_exit":
-			dialog.text = "Zmieniliście zdanie, co? Nie jesteście przypadkiem przerażeni? Dobra, do diabła z wami. Ale nie osądzajcie tak szybko innych ludzi, wśród kupców jest wielu doświadczonych żeglarzy... o wiele bardziej doświadczonych niż wy.";
+			dialog.text = "Zmieniłeś zdanie, co? Nie jesteś przypadkiem przerażony? Dobra, do diabła z tobą. Ale nie osądzaj tak szybko innych ludzi, wśród kupców jest wielu doświadczonych żeglarzy... o wiele bardziej doświadczonych niż ty.";
 			link.l1 = " Dobrze, dobrze, nie moralizuj mi tu, filozofie. Żegnaj...";
 			link.l1.go = "exit_sit";
 			DeleteAttribute(pchar, "GenQuest.Racing.Go");

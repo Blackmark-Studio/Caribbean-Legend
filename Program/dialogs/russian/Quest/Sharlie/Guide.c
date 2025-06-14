@@ -21,7 +21,6 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_0":
-			SetAchievement("Test_Ach");
 			PlaySound("VOICE\Russian\LE\Greguar\Greguar_01.wav");
 			dialog.text = "Рад приветствовать вас в колониях, сударь! Позвольте представиться: "+GetFullName(npchar)+". Вы из Европы? Впервые у нас?";
 			link.l1 = "Здравствуйте, месье. Моё имя — "+GetFullName(pchar)+". Да, я только-только с корабля.";

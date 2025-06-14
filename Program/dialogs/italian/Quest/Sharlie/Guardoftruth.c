@@ -79,7 +79,7 @@ void ProcessDialogEvent()
 		
 		case "spa_prisoner_9":
 			dialog.text = "Certo che l'ho fatto, ma di solito non metto in discussione gli ordini.";
-			link.l1 = "Ascolta bene ciò che sto per dirti. Forte St. Pierre non ha mai visto argento, e quei magazzini non hanno mai contenuto né legno di ferro né seta. Rifletti bene, señor, prima di rispondere, perché se la tua risposta non m’andrà a genio, mi volterò e lascerò che il destino ti travolga… un destino assai amaro.";
+			link.l1 = "Ascolta bene ciò che sto per dirti. Forte St. Pierre non ha mai visto argento, e quei magazzini non hanno mai contenuto né legno di ferro né seta. Rifletti bene, señor, prima di rispondere, perché se la tua risposta non m’andrà a genio, mi volterò e lascerò che il destino ti travolga... un destino assai amaro.";
 			link.l1.go = "spa_prisoner_10";			
 		break;
 		
@@ -114,7 +114,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spa_prisoner_15":
-			dialog.text = "L’ufficiale al comando dello squadrone. È scappato subito dopo il tuo… teatrale arrivo.";
+			dialog.text = "L’ufficiale al comando dello squadrone. È scappato subito dopo il tuo... teatrale arrivo.";
 			link.l1 = "Chi è costui, questo Don Diego?";
 			link.l1.go = "spa_prisoner_16";			
 		break;
@@ -611,7 +611,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gevarra_6":
-			dialog.text = "Sì, di sprovveduti in giro ce n’è fin troppi al giorno d’oggi, e il denaro non resta mai a lungo in tasca a uno sciocco…";
+			dialog.text = "Sì, di sprovveduti in giro ce n’è fin troppi al giorno d’oggi, e il denaro non resta mai a lungo in tasca a uno sciocco...";
 			link.l1 = "Ingenuo è una cosa, ma questo è proprio uno scimunito! Gli ho offerto duecentodieci pesos per la sua vaniglia, qui non ne prenderebbe nemmeno duecento in bottega. E tu ci credi? Mi ha mandato al diavolo! Dice che la vende solo a duecentocinquanta!";
 			link.l1.go = "gevarra_7";			
 		break;

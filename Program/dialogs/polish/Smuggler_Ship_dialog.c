@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 
 		case "start":
 			dialog.text = "Obudź się, "+Pchar.name+"! Dotarliśmy do "+Pchar.HeroParam.Land+" w końcu, po wszystkich tych burzach!"+"  Co zamierzasz teraz zrobić? Straciłeś swój statek, kumplu.";
-			link.l1 = "To nie mój pierwszy raz! Fortuna jest suka.";
+			link.l1 = "To nie mój pierwszy raz! Fortuna jest suką.";
 			link.l1.go = "start1";
 			link.l2 = "Czy chcesz mi zaproponować pracę, Abrahamie?";
 			link.l2.go = "start2";
@@ -36,14 +36,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "start2":
-            ret = Pchar.name + ", I am a smuggler not a governor, what kind of job are you even talking about?";
+            ret = Pchar.name + ", Jestem przemytnikiem, nie gubernatorem, o jakiej pracy w ogóle mówisz?";
             if (sti(Pchar.nation) == PIRATE)
             {
-                dialog.text = ret+"Sprawdź tawernę Inness. Ona wie o każdym w mieście."+"  Idź do Urksena, on jest tutaj liderem. Ale najpierw porozmawiaj z lokalnymi piratami.";
+                dialog.text = ret+"Sprawdź karczme Inness. Ona wie o każdym w mieście."+"  Idź do Urksena, on jest tutaj liderem. Ale najpierw porozmawiaj z lokalnymi piratami.";
             }
             else
             {
-                dialog.text = ret+"Pozycz trochę pieniędzy, sprzedaj swoje rzeczy. Wiesz co robić.";
+                dialog.text = ret+"Pożycz trochę pieniędzy, sprzedaj swoje rzeczy. Wiesz co robić.";
             }
             link.l1 = "Dobrze, dzięki za radę. Do widzenia.";
 			link.l1.go = "game_begin";
@@ -57,7 +57,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "start3":
-			dialog.text = "Zły żart, kolego.";
+			dialog.text = "Kiepski żart, kolego.";
 			link.l1 = "Nie martw się, stary człowieku. Do widzenia!";
 			link.l1.go = "game_begin";
 			link.l2 = "Kto powiedział, że żartuję? Powiesz swoim ludziom, że sprzedałeś mi swój statek. A ja oszczędzę ci życie. Umowa?";

@@ -1345,7 +1345,7 @@ void ChoosePerk(string perkName)
     }
 	if (CheckPerkFilter(perkName)) ok = false;
 	
-	// проверка на необходимы перки -->
+	// проверка на необходимые перки -->
 	if (CheckAttribute(&ChrPerksList, "list." + perkName + ".condition"))
 	{
         makearef(rootItems, ChrPerksList.list.(perkName).condition);
@@ -1384,7 +1384,7 @@ void ChoosePerk(string perkName)
 	{
 	    showCondition = false;
 	}
-	// проверка на необходимы перки <--
+	// проверка на необходимые перки <--
 
     // проверка ранга
     if (CheckAttribute(&ChrPerksList, "list." + perkName + ".rank") && sti(xi_refCharacter.rank) < sti(ChrPerksList.list.(perkName).rank))

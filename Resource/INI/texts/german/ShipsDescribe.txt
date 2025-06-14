@@ -105,6 +105,11 @@ Ein großartiges Beispiel englischen Schiffbaus, geschaffen für den eigenständ
 Ihre Jahre im Militärdienst sind längst vorbei, und der Ruhm ihres früheren Besitzers zieht heute eher Antiquitätenhändler und Schatzkartenhändler als Seewölfe an.
 }
 
+Memento
+{
+In diesem Schiff ist es schwer, das alte Design eines englischen Brigs zu erkennen, das seine schwachen Segeleigenschaften mit starker Feuerkraft und einem schweren, langlebigen Rumpf ausgleicht. Überzogen mit einheimischen Amuletten und durchdrungen von Tod, erschreckt es nicht nur Feinde, sondern auch die eigene Besatzung.
+}
+
 Corvette
 {
 Korvetten sind für Aufklärung, Kurierdienste und Kreuzfahrteinsätze konzipiert. Mit guter Geschwindigkeit und Wendigkeit kann eine Korvette leichtere Schiffe einholen und erfolgreich Kämpfen mit schwereren Schiffen ausweichen.

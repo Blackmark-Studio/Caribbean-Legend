@@ -222,7 +222,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Captain_4_commerce":
-			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 45)
+			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 25)
 			{
 				dialog.text = "¿Cinco mil? Bueno, capitán, tómelo si es tan importante para usted.";
 				link.l1 = "Gracias. Ha tomado la decisión correcta.";
@@ -239,7 +239,7 @@ void ProcessDialogEvent()
 				link.l1 = "Si no quiere entregarlo por las buenas, lo tomaré por la fuerza.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie_Duel");
-				notification("Habilidad insuficiente (45)", SKILL_COMMERCE);
+				notification("Habilidad insuficiente (25)", SKILL_COMMERCE);
 			}
 		break;
 
@@ -267,6 +267,7 @@ void ProcessDialogEvent()
 			link.l1 = "¡Una decisión sensata! Adiós.";
 			AddDialogExitQuestFunction("UV_Ozherelie");
 			GiveItem2Character(pchar, "SM_necklace_Julie");
+			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 		break;
 
 		case "Juli_22":

@@ -372,8 +372,8 @@ void ProcessDialogEvent()
 				AddQuestRecord("BlackMark", "1");
 			}
 			
-			// Продолжение через месяц в джунглях
-			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 14, false);
+			// Продолжение через неделю в джунглях
+			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_Irons_NoHire1":
@@ -532,7 +532,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
 			Return_IronsOfficer();
-			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 14, false);
+			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_IronsSecondJungle_1":
@@ -588,7 +588,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
 			Return_IronsOfficer();
-			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 14, false);
+			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_IronsThirdJungle_1":

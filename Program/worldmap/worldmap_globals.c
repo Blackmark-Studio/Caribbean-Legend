@@ -123,45 +123,40 @@ void Map_CreateBattle(string characterID, int iEnemyNation, int TimeOut)
 }
 
 //Удалить квестового энкоунтера
+// ~!~ TO_DO: Почему тут другим методом, нежели в wdmFindOrCreateQuestEncounter?
 void Map_ReleaseQuestEncounter(string characterID)
 {
+    int i, num;
+    aref encs, enc;
+
 	//Просматриваем список создаваемых
-	aref encs, at;
-	string aname;
 	makearef(encs, worldMap.addQuestEncounters);
-	int num = GetAttributesNum(encs);
-	for(int cnt = 0; cnt < num; cnt++)
-	{
-		for(int i = 0; i < num; i++)
-		{
-			at = GetAttributeN(encs, i);
-			aname = GetAttributeName(at);
-			aname = "addQuestEncounters." + aname + ".characterID";
-			if(worldMap.(aname) == characterID)
-			{
-				DeleteAttribute(&worldMap, aname);
-				break;
-			}
-		}
-		if(i >= num)
-		{
-			break;
-		}
-	}
+	num = GetAttributesNum(encs);
+    for(i = 0; i < num; i++)
+    {
+        enc = GetAttributeN(encs, i);
+        if(enc.characterID == characterID)
+        {
+            DeleteAttribute(enc, "characterID");
+            //pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+            //break;
+        }
+    }
+
 	//Просматриваем список созданных
 	makearef(encs, worldMap.encounters);
 	num = GetAttributesNum(encs);
-	for(i = 0; i < num; i++)
+	for(i = num-1; i >= 0; i--)
 	{
-		aref enc = GetAttributeN(encs, i);
-		if(CheckAttribute(enc, "quest.chrID") == 0) continue;
+		enc = GetAttributeN(encs, i);
+		if(!CheckAttribute(enc, "quest.chrID")) continue;
 		if(enc.quest.chrID == characterID)
-		{
+        {
 			wdmDeleteLoginEncounter(GetAttributeName(enc));
-		}
-        num--; //fix
-        i--;
+            //pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+        }
 	}
+
 	worldMap.deleteUpdate = "";
 }
 
@@ -455,186 +450,35 @@ void WdmCopyEncounterData(ref mapEncSlotRef, string encStringID)
 //Зарезервировать место для добавления нового энкоунтера
 aref wdmCreateNewQuestEncDescription()
 {
-	string gname, aname;
-	aref encs, at;
+	aref encs;
 	makearef(encs, worldMap.addQuestEncounters);
-	int num = GetAttributesNum(encs);
-	for(int cnt = 0; cnt < num + 10; cnt++)
-	{	
-		gname = "e" + cnt;
-		for(int i = 0; i < num; i++)
-		{
-			at = GetAttributeN(encs, i);
-			aname = GetAttributeName(at);
-			if(aname == gname)
-			{
-				break;
-			}
-		}
-		if(i >= num)
-		{
-			break;
-		}
-	}
-	aref retVal;
-	makearef(retVal, worldMap.addQuestEncounters.(gname));
-	return retVal;
+    string attr = "QEnc" + (GetAttributesNum(encs)+1);
+    while(CheckAttribute(encs, attr)) attr += "_a";
+	makearef(encs, worldMap.addQuestEncounters.(attr));
+	return encs;
 }
 
-//// boal & homosapienz
-void  wdmEmptyAllDeadQuestEncounter()
+// boal
+void wdmEmptyAllDeadQuestEncounter()
 {
-    aref encs;
-    string sdel,aname;
+    int  i, iChar, num;
+    aref encs, enc;
 	bool isWMap = IsEntity(&worldMap);
-	
-    makearef(encs, worldMap.encounters);
 
-    int num = GetAttributesNum(encs);
-    for(int i = 0; i < num; i++)
+    makearef(encs, worldMap.encounters);
+    num = GetAttributesNum(encs);
+    for(i = num-1; i >= 0; i--)
     {
-        aref enc = GetAttributeN(encs, i);
+        enc = GetAttributeN(encs, i);
         DeleteAttribute(enc, "dirSailEnc");
         if(CheckAttribute(enc, "quest.chrID"))
         {
-            int iChar = GetCharacterIndex(enc.quest.chrID)
-            sdel  = "encounters."+GetAttributeName(enc);
+            iChar = GetCharacterIndex(enc.quest.chrID)
             if (iChar == -1 || CharacterIsDead(&characters[iChar]))
             {
 	            if (!isWMap)
 				{
-					DeleteAttribute(&worldMap, sdel);
-	                num = GetAttributesNum(encs);
-	                pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
-	            }
-	            else
-	            {
-	            	 enc.livetime = 0;
-	            }
-	        }
-        }
-    }
-
-   	makearef(encs, worldMap.addQuestEncounters);
-    num = GetAttributesNum(encs);
-	for(i = 0; i < num; i++)
-	{
-		aref at = GetAttributeN(encs, i);
-		sdel = GetAttributeName(at);
-		aname = "addQuestEncounters." + sdel + ".characterID";
-		if (CheckAttribute(&worldMap, aname))
-		{
-	        iChar = GetCharacterIndex(worldMap.(aname));
-	        if (iChar == -1 || CharacterIsDead(&characters[iChar]))
-	        {
-	            DeleteAttribute(&worldMap, "addQuestEncounters." + sdel);
-	            num = GetAttributesNum(encs);
-	            pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
-	        }
-        }
-    }
-}
-
-// чистка энкоутеров на карте homosapienz
-void  wdmEmptyAllOldEncounter()
-{
-    aref encs;
-    string sdel,aname;
-	bool isWMap = IsEntity(&worldMap);
-
-    makearef(encs, worldMap.encounters);
-
-    int num = GetAttributesNum(encs);
-    aref enc;
-    int  i;
-    
-    for (i = 0; i < num; i++)
-    {
-        enc = GetAttributeN(encs, i);
-        if (CheckAttribute(enc, "needDelete") && enc.needDelete == "wdmEncounterDelete")
-        {
-			// Captain Beltrop, 07.05.21 - раньше проверка вызывалась на уже удалённый атрибут, из-за чего на глобалке могли случиться вылеты
-			if (CheckAttribute(enc, "quest")) pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
-	        sdel  = "encounters."+GetAttributeName(enc);
-			DeleteAttribute(&worldMap, sdel);
-	        num--; //fix
-	        i--;
-        }
-    }
-}
-// время жизни на карте для квестовых энкоутеров
-void  wdmUpdateAllEncounterLivetime()
-{
-    aref encs;
-    int ihours;
-    string sdel, sChar;
-    float b,k;
-    if(!actLoadFlag)
-    {
-		ihours = GetQuestPastTimeParam("WordMapEncounters_DailyUpdate");
-		if (ihours > 0)
-		{
-            Log_TestInfo("Прошло дней : "+makeint(ihours/24.0));
-            float timeOutInSec = ihours/stf(worldMap.date.hourPerSec);
-
-            makearef(encs, worldMap.encounters);
-            int num = GetAttributesNum(encs);
-            aref enc;
-            int  i;
-
-            for (i = 0; i < num; i++)
-            {
-                enc = GetAttributeN(encs, i);          // только квестовые
-                if (CheckAttribute(enc, "livetime") && CheckAttribute(enc, "quest"))
-                {
-                    Log_TestInfo(enc.livetime+" - "+timeOutInSec+" : "+stf(stf(enc.livetime) - timeOutInSec));
-                    /* По идее можно и координату приращивтаь, чтоб не просто время шло, но ещё и плыли.
-                    k = (enc.gotoz - enc.z)/(enc.gotox - enc.x);
-                    b = enc.z - k*enc.x
-                    ...
-                    */
-                    enc.livetime = stf(stf(enc.livetime) - timeOutInSec);
-
-                    if (sti(enc.livetime)<=0)
-                    {
-						if(CheckAttribute(enc, "quest.event")) DeleteAttribute(enc, "quest.event"); //  удаляем  event = Map_TraderSucces
-						sChar = enc.quest.chrID; // belamour запомним айди, иначе трется атрибут и квестовые кэпы дают вылет на глобусе
-               	        sdel  = "encounters."+GetAttributeName(enc);
-                        if(CheckAttribute(&worldMap, sdel)) DeleteAttribute(&worldMap, sdel);
-						pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
-						num--;
-						i--;
-						Map_TraderSucces_quest(sChar); // belamour теперь запустим обрапотку нпс-кэпов
-                    }
-                }
-            }
-		}
-	}
-}
-
-// найти сущ случайку для НПС
-aref wdmFindOrCreateQuestEncounter(string _chrId)
-{
-    aref encs;
-    string sdel,aname;
-	bool isWMap = IsEntity(&worldMap);
-
-    makearef(encs, worldMap.encounters);
-
-    int num = GetAttributesNum(encs);
-    for(int i = 0; i < num; i++)
-    {
-        aref enc = GetAttributeN(encs, i);
-        if (CheckAttribute(enc, "quest.chrID"))
-        {
-            int iChar = GetCharacterIndex(enc.quest.chrID)
-            sdel  = "encounters."+GetAttributeName(enc);
-            if (iChar == -1 || characters[iChar].id == _chrId)
-            {
-	            if (!isWMap)
-				{
-					DeleteAttribute(&worldMap, sdel);
-	                num = GetAttributesNum(encs);
+					DeleteAttribute(encs, GetAttributeName(enc));
 	                pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
 	            }
 	            else
@@ -647,19 +491,132 @@ aref wdmFindOrCreateQuestEncounter(string _chrId)
 
    	makearef(encs, worldMap.addQuestEncounters);
     num = GetAttributesNum(encs);
-	for(i = 0; i < num; i++)
+	for(i = num-1; i >= 0; i--)
 	{
-		aref at = GetAttributeN(encs, i);
-		sdel = GetAttributeName(at);
-		aname = "addQuestEncounters." + sdel + ".characterID";
-		if (CheckAttribute(&worldMap, aname))
+		enc = GetAttributeN(encs, i);
+		if (CheckAttribute(enc, "characterID"))
 		{
-	        iChar = GetCharacterIndex(worldMap.(aname));
-	        if (iChar == -1 || characters[iChar].id == _chrId)
+	        iChar = GetCharacterIndex(enc.characterID);
+	        if (iChar == -1 || CharacterIsDead(&characters[iChar]))
 	        {
-	            DeleteAttribute(&worldMap, "addQuestEncounters." + sdel);
-	            num = GetAttributesNum(encs);
+	            DeleteAttribute(encs, GetAttributeName(enc));
 	            pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+	        }
+        }
+    }
+}
+
+// чистка энкоутеров на карте
+void  wdmEmptyAllOldEncounter()
+{
+    int  i, num;
+    aref encs, enc;
+	bool isWMap = IsEntity(&worldMap); // ???
+
+    makearef(encs, worldMap.encounters);
+    num = GetAttributesNum(encs);
+    for(i = num-1; i >= 0; i--)
+    {
+        enc = GetAttributeN(encs, i);
+        if(CheckAttribute(enc, "needDelete") && enc.needDelete == "wdmEncounterDelete")
+        {
+			if(CheckAttribute(enc, "quest")) // ???
+                pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+			DeleteAttribute(encs, GetAttributeName(enc));
+        }
+    }
+}
+// время жизни на карте для квестовых энкоутеров
+void  wdmUpdateAllEncounterLivetime()
+{
+    int ihours, i, num;
+    aref encs, enc;
+    string sChar, sEvent;
+    //float b,k;
+
+    if(!actLoadFlag)
+    {
+		ihours = GetQuestPastTimeParam("WordMapEncounters_DailyUpdate");
+		if (ihours > 0)
+		{
+            Log_TestInfo("Прошло дней : "+makeint(ihours/24.0));
+            float timeOutInSec = ihours/stf(worldMap.date.hourPerSec);
+
+            makearef(encs, worldMap.encounters);
+            num = GetAttributesNum(encs);
+            for (i = num-1; i >= 0; i--)
+            {
+                enc = GetAttributeN(encs, i);
+                if (CheckAttribute(enc, "livetime") && CheckAttribute(enc, "quest"))
+                {
+                    Log_TestInfo(enc.livetime+" - "+timeOutInSec+" : "+stf(stf(enc.livetime) - timeOutInSec));
+                    /* По идее можно и координату приращивтаь, чтоб не просто время шло, но ещё и плыли.
+                    k = (enc.gotoz - enc.z)/(enc.gotox - enc.x);
+                    b = enc.z - k*enc.x
+                    ...
+                    */
+                    enc.livetime = stf(enc.livetime) - timeOutInSec;
+
+                    if (sti(enc.livetime)<=0)
+                    {
+                        sEvent = enc.quest.event; // TO_DO: REF
+                        sChar  = enc.quest.chrID;
+                        DeleteAttribute(encs,  GetAttributeName(enc));
+						pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+						if(sEvent == "Map_TraderSucces")    Map_TraderSucces_quest(sChar); // belamour теперь запустим обработку нпс-кэпов
+                        else if(sEvent == "Map_WarriorEnd") Map_WarriorEnd_quest(sChar);
+                    }
+                }
+            }
+		}
+	}
+}
+
+// найти сущ случайку для НПС
+// ~!~ TO_DO: Почему тут другим методом, нежели в Map_ReleaseQuestEncounter?
+aref wdmFindOrCreateQuestEncounter(string _chrId)
+{
+    int i, num, iChar;
+    aref encs, enc;
+	bool isWMap = IsEntity(&worldMap);
+
+    //Просматриваем список создаваемых
+   	makearef(encs, worldMap.addQuestEncounters);
+    num = GetAttributesNum(encs);
+	for(i = num-1; i >= 0; i--)
+	{
+		enc = GetAttributeN(encs, i);
+		if(CheckAttribute(enc, "characterID"))
+		{
+	        iChar = GetCharacterIndex(enc.characterID);
+	        if(iChar == -1 || characters[iChar].id == _chrId)
+	        {
+	            DeleteAttribute(encs, GetAttributeName(enc));
+	            pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+	        }
+        }
+    }
+
+    //Просматриваем список созданных
+    makearef(encs, worldMap.encounters);
+    num = GetAttributesNum(encs);
+    for(i = num-1; i >= 0; i--)
+    {
+        enc = GetAttributeN(encs, i);
+        if(CheckAttribute(enc, "quest.chrID"))
+        {
+            iChar = GetCharacterIndex(enc.quest.chrID)
+            if(iChar == -1 || characters[iChar].id == _chrId)
+            {
+	            if(!isWMap)
+				{
+					DeleteAttribute(encs, GetAttributeName(enc));
+	                pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+	            }
+	            else
+	            {
+	            	enc.livetime = 0;
+	            }
 	        }
         }
     }
@@ -731,6 +688,8 @@ string GetBattleDifficulty(ref rEnc)
             rShip = GetRealShip(iShipType);
             encPow += GetRealShipPower(rChar);
         }
+
+        rEnc.CurPower = encPow;
     }
     else
     {

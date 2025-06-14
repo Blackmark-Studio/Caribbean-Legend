@@ -290,7 +290,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_6":
 			dialog.text = "Ah ah! Ecco qua! Ma questa è solo la minima delle sue virtù. Se brandirai questo pugnale in battaglia, vedrai che mostrerà la sua potenza in mille modi spettacolari! Allora, lo prendi?";
-			link.l1 = "Ebbene, ho forse scelta? Me lo prendo, visto che non hai uno scudo bucato…";
+			link.l1 = "Ebbene, ho forse scelta? Me lo prendo, visto che non hai uno scudo bucato...";
 			link.l1.go = "Sharlie_7";
 		break;
 		
@@ -1282,7 +1282,9 @@ void ProcessDialogEvent()
 		
 		case "agree_1":
 			DialogExit();
-			SetFunctionTimerCondition("ChangeNationRelationFromFadeyComplete", 0, 0, 10+rand(5), false);
+            rate = 10 + rand(5);
+            rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+			SetFunctionTimerCondition("ChangeNationRelationFromFadeyComplete", 0, 0, rate, false);
 			pchar.GenQuest.FadeyNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.FadeyNation), 0));
 			npchar.quest.relation = "true";
 		break;

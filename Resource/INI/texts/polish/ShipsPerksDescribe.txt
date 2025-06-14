@@ -248,15 +248,35 @@ Zwiększenie zapasu peso: 100%.
 Zwiększenie zapasu dublonów: ~30%.
 }
 
-sp3 {SP3}
+sp3 {Tygiel}
 
 sp3_desc
 {
-DLC.
+Na tym okręcie ludzkie życie to tylko krótki etap przed ujawnieniem prawdziwej potęgi. Niewielu przekracza Próg i wraca, ale ci, którym się to udaje, nie boją się już śmierci.
 }
 
 sp3_desc2
 {
-DLC.
+Polegli marynarze zwiększają doświadczenie i morale załogi.
+}
+
+sp3_SailorsBoardingBonus_desc
+{
+Premia do doświadczenia abordażowego: #dSailorsBoardingBonus#%
+}
+
+sp3_SailorsBoardingBonus1_desc
+{
+~ (#dDeadSailors#/500 poległych marynarzy)
+}
+
+sp3_SurrenderChanceBonus_desc
+{
+Zwiększenie szansy na kapitulację: #dSurrenderChanceBonus#%
+}
+
+sp3_SurrenderChanceBonus1_desc
+{
+~ (#dDeadSailors#/2000 poległych marynarzy)
 }
 

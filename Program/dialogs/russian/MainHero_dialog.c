@@ -72,14 +72,6 @@ void ProcessDialogEvent()
 				//AddDialogExitQuestFunction("SharlieTutorial_StartShip");
 				AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_3");
     		}
-			/*if (CheckAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_2"))
-    		{
-    		    dialog.text = "Кажется, нас взяли на абордаж...";
-    			link.l1 = "...";
-    			link.l1.go = "exit";
-				DeleteAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_2");
-				AddDialogExitQuestFunction("SharlieTutorial_TrumBitva");
-    		}*/
 			//<-- Вступительный туториал на палубе корабля за Шарля
 			//--> Голландский гамбит
 			if (CheckAttribute(pchar, "questTemp.HWIC_FindIsland"))
@@ -597,7 +589,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;
@@ -626,7 +618,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetMusketBullets1_" + i;
 			}
 		break;
@@ -882,15 +874,19 @@ void ProcessDialogEvent()
 		break;
 
 		case "TalkSelf_SlavesToCrew_1":
-			// belamour legendary edition перк получил время работы, старый метод не подходит
-	        if (GetOfficersPerkUsing(pchar, "IronWill"))
-	        {
-	            AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 5.0))
-	        }
-	        else
-	        {
-	            AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 3.0))
-	        }
+			bOk = ShipBonus2Artefact(pchar, SHIP_MEMENTO) && CheckAttribute(&RealShips[sti(pchar.Ship.Type)], "DeadSailors.RecruitSlaveBonus");
+			if(!bOk)
+			{
+				// belamour legendary edition перк получил время работы, старый метод не подходит
+				if (GetOfficersPerkUsing(pchar, "IronWill"))
+				{
+					AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 5.0))
+				}
+				else
+				{
+					AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 3.0))
+				}
+			}
 			ChangeCharacterComplexReputation(pchar,"authority", -0.5);
 	        // падение опыта -->
 	        fTemp =  stf(GetCrewQuantity(pchar) + sti(pchar.GenQuest.SlavesToCrew));
@@ -1337,8 +1333,9 @@ void ProcessDialogEvent()
 	}
 }
 
-void  DialogExit_Self()
+void DialogExit_Self()
 {
+    SendMessage(PChar, "ls", MSG_CHARACTER_EX_MSG, "forceBlend");
     DialogExit();
 	locCameraSleep(false); //boal
 }

@@ -292,8 +292,8 @@ void ProcessDialogEvent()
 				link.l3 = "60 dobloni.";
 				link.l3.go = "AlonsoGold_DatDeneg_3_gold60";
 			}
-			link.l4 = "Devo ricontrollare tutto. Tornerò più tardi.";
-			link.l4.go = "AlonsoWait_2";
+			// link.l4 = "Devo ricontrollare tutto. Tornerò più tardi.";
+			// link.l4.go = "AlonsoWait_2";
 		break;
 		
 		case "AlonsoGold_DatDeneg_3_gold40":
@@ -554,6 +554,7 @@ void ProcessDialogEvent()
 			{
 				LAi_SetStayType(npchar);
 				npchar.SharlieTutorial_OhrannikStay = true;
+				DeleteQuestCondition("SharlieTutorial_OhrannikStopaet");
 			}
 		break;
 
@@ -884,8 +885,8 @@ void ProcessDialogEvent()
 				link.l3 = "42 dobloni.";
 				link.l3.go = "RumGold_DatDeneg_gold42";
 			}
-			link.l4 = "Devo controllare tutto. Tornerò più tardi.";
-			link.l4.go = "RumGold_DatDeneg_3";
+			// link.l4 = "Devo controllare tutto. Tornerò più tardi.";
+			// link.l4.go = "RumGold_DatDeneg_3";
 		break;
 		
 		case "RumGold_DatDeneg_gold28":
@@ -1264,8 +1265,8 @@ void ProcessDialogEvent()
 				link.l3 = "30 dobloni.";
 				link.l3.go = "BallsGold_DatDeneg_gold30";
 			}
-			link.l4 = "Devo ricontrollare tutto. Tornerò più tardi.";
-			link.l4.go = "BallsGold_DatDeneg_3";
+			// link.l4 = "Devo ricontrollare tutto. Tornerò più tardi.";
+			// link.l4.go = "BallsGold_DatDeneg_3";
 		break;
 		
 		case "BallsGold_DatDeneg_gold20":
@@ -1572,8 +1573,6 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_ActivateWindlass")) AddQuestRecordInfo("SharlieTutorial_ListOfSailors", "1");
 			else AddQuestRecordInfo("SharlieTutorial_ListOfSailors", "2");
 			GiveItem2Character(PChar, "chest");
-			SetFunctionExitFromLocationCondition("Tutorial_Logbook", pchar.location, false);
-			Tutorial_Dubloons("");
 			if (!isMultiObjectKnown("gold_dublon"))
 			{
 				SetAlchemyRecipeKnown("gold_dublon");
@@ -1640,6 +1639,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.SharlieTutorial_KaznacheyQuestCompleted = true;
 			DeleteAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuestActive");
 			npchar.Merchant.type = "SharlieTurorialK";
+			pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
 		break;
 		
 		case "OfficerKaznachey_15_gold_115":
@@ -1670,43 +1670,66 @@ void ProcessDialogEvent()
 
 		case "OfficerKaznachey_16_Proval": // Если не выполнил задание, то отбирает дублоны
 			dialog.text = "Te la spassi, monsieur "+pchar.lastname+"?";
-			link.l2 = "Anche tu sei stato mandato nella stiva?";
-			link.l2.go = "OfficerKaznachey_16_Proval_2";
+			link.l1 = "Anche tu sei stato mandato nella stiva?";
+			link.l1.go = "OfficerKaznachey_16_Proval_2";
 		break;
 
 		case "OfficerKaznachey_16_Proval_2":
 			dialog.text = "Io sono il medico di bordo, "+pchar.lastname+"! Presto la sala ufficiali sarà piena di feriti, e vedrò più sangue di qualsiasi partecipante alla battaglia. E anche se non fossi un medico, ma solo un tesoriere — in battaglia mi sarei schierato come tutti gli altri. No, l’unico che è stato mandato a poltrire nella comoda stiva — sei tu.";
-			link.l2 = "Allora cosa ci fai qui?";
-			link.l2.go = "OfficerKaznachey_16_Proval_3";
+			link.l1 = "Allora cosa ci fai qui?";
+			link.l1.go = "OfficerKaznachey_16_Proval_3";
 		break;
 		
 		case "OfficerKaznachey_16_Proval_3":
-		addGold = GetCharacterItem(pchar, "gold_dublon");
-		dialog.text = "La battaglia inizierà solo tra un paio d'ore, quindi è il momento ideale per chiudere la contabilità del giorno. Hai il mio scrigno con i dobloni, "+pchar.lastname+". Abbia la cortesia di restituirlo.";
-		link.l2 = "...";
-		link.l2.go = "exit";
-		AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
-		ChangeCharacterComplexReputation(pchar, "nobility", -3);
-		RemoveDublonsFromPCharTotal(addGold);
-		AddItems(npchar, "gold_dublon", addGold);
-		TakeItemFromCharacter(pchar, "chest");
-		TakeItemFromCharacter(pchar, "chest_open");
-	break;
+			dialog.text = "Bitwa zacznie się dopiero za kilka godzin, więc to idealny czas, żeby zamknąć dzienny rachunek. Macie moją skrzynkę z dublonami, de Maure. Łaskawie ją zwróćcie.";
+			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
+			{
+				link.l1 = "Zabierajcie. I nie pokazujcie już tutaj swojej gęby.";
+				link.l1.go = "OfficerKaznachey_16_Proval_4";
+			}
+			else
+			{
+				link.l1 = "Zostawiłem wasze graty w innym miejscu.";
+				link.l1.go = "OfficerKaznachey_16_Proval_5";
+			}
+		break;
+		
+		case "OfficerKaznachey_16_Proval_4":
+			addGold = GetCharacterItem(pchar, "gold_dublon");
+			dialog.text = "Nie miałem zamiaru. Nie jestem przecież szczurem lądowym - moje miejsce nie jest w ładowni. Żegnajcie.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
+			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			else ChangeCharacterComplexReputation(pchar, "nobility", -6);
+			RemoveDublonsFromPCharTotal(addGold);
+			AddItems(npchar, "gold_dublon", addGold);
+			TakeItemFromCharacter(pchar, "chest");
+			TakeItemFromCharacter(pchar, "chest_open");
+		break;
+		
+		case "OfficerKaznachey_16_Proval_5":
+			dialog.text = "W innym miejscu... Omówimy to po bitwie - w obecności kapitana. Do zobaczenia.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
+			ChangeCharacterComplexReputation(pchar, "nobility", -6);
+		break;
 
-	case "TreasurerTrade":
-		dialog.text = "Interessato ai dobloni, monsieur "+pchar.lastname+"?";
-		link.l1 = "Facciamo affari.";
-		link.l1.go = "TreasurerTrade_1";
-		link.l2 = "Non adesso.";
-		link.l2.go = "exit";
-		NextDiag.TempNode = "TreasurerTrade";
-	break;
+		case "TreasurerTrade":
+			dialog.text = "Interessato ai dobloni, monsieur "+pchar.lastname+"?";
+			link.l1 = "Facciamo affari.";
+			link.l1.go = "TreasurerTrade_1";
+			link.l2 = "Non adesso.";
+			link.l2.go = "exit";
+			NextDiag.TempNode = "TreasurerTrade";
+		break;
 
-	case "TreasurerTrade_1":
-		DialogExit();
-		LaunchItemsTrade(NPChar, 0);
-		NextDiag.CurrentNode = "TreasurerTrade";
-	break;
+		case "TreasurerTrade_1":
+			DialogExit();
+			LaunchItemsTrade(NPChar, 0);
+			NextDiag.CurrentNode = "TreasurerTrade";
+		break;
 
 	// <-- Диалог с офицером-казначеем
 

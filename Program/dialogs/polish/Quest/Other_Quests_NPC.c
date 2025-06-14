@@ -510,7 +510,7 @@ void ProcessDialogEvent()
 			dialog.text = "To była twoja decyzja...";
 			link.l1 = "...";
 			link.l1.go = "PostHunters_fight";
-			TraderHunterOnMap();//если деремся - запускаем ДУ вдогонку
+			TraderHunterOnMap(false);//если деремся - запускаем ДУ вдогонку
 		break;
 		
 		case "PostHunters_fight":

@@ -21,7 +21,6 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_0":
-			SetAchievement("Test_Ach");
 			PlaySound("Voice\English\LE\Greguar\Greguar_01.wav");
 			dialog.text = "Plaisir de vous accueillir dans les colonies, monsieur ! Permettez-moi de me présenter : "+GetFullName(npchar)+". Venez-vous d'Europe ? C'est votre première fois ici ?";
 			link.l1 = "Bonjour, monsieur. Mon nom est "+GetFullName(pchar)+". Oui, je viens tout juste de débarquer.";
@@ -240,7 +239,7 @@ void ProcessDialogEvent()
 		
 		case "guide_49":
 			dialog.text = "Mon ami, je suppose que vous n’êtes pas novice en escrime ?";
-			link.l1 = "Ha ! J’ai déjà survécu à un abordage et même…";
+			link.l1 = "Ha ! J’ai déjà survécu à un abordage et même...";
 			link.l1.go = "guide_50";
 			if (FindCharacterItemByGroupWithout_knife_03(pchar, BLADE_ITEM_TYPE) == "")
 			{

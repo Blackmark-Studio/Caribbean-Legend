@@ -137,6 +137,12 @@ void CreateSeaCamerasEnvironment()
 	
 	Crosshair.TargetSize = 0.75;
 	
+	Crosshair.CrosshairSizeMin = 1.0;
+	Crosshair.CrosshairSizeMaxDefault = 8.0;
+	Crosshair.CrosshairSizeMaxSpyglass = 4.0;
+	
+	Crosshair.CrosshairSizeMax = Crosshair.CrosshairSizeMaxDefault;
+	
 	// стартовая координата мыши (дистанция)
 	Crosshair.StartMouseDist = -140.0;
 
@@ -167,10 +173,12 @@ void SeaCameras_TelescopeActive()
 	if (iTelescopeActive)
 	{
 		bCanSwitchCameras = false;
+		Crosshair.CrosshairSizeMax = Crosshair.CrosshairSizeMaxSpyglass;
 	}
 	else
 	{
 		bCanSwitchCameras = true;
+		Crosshair.CrosshairSizeMax = Crosshair.CrosshairSizeMaxDefault;
 	}
 }
 
@@ -222,6 +230,9 @@ void SeaCameras_SetFireCamera()
 {
 	if(!bCanSwitchCameras)
 		return;
+
+	if(SeaCameras.Camera == "SeaFreeCamera")
+		return;
 	
 	if(SeaCameras.Camera != "SeaFireCamera")
 	{
@@ -262,6 +273,13 @@ void SeaCameras_UpdateCamera()
 				SendMessage(&SeaShipCamera, "lf", MSG_SHIP_CAMERA_SET_AY, stf(TEV.ShipCameraAy));
 				DeleteAttribute(&TEV, "ShipCameraAy");
 			}
+			
+			// TUTOR-ВСТАВКА
+			if(TW_IsActive() && objTask.sea_battle == "4_AimingFire")
+			{
+				TW_ColorWeak(TW_GetTextARef("AimingFire_exit"));
+				TW_FinishSea_Battle_2_AimingFire();
+			}
 		break;
 		case "SeaFreeCamera":
 			SendMessage(&SeaCameras, "lia", AI_CAMERAS_SET_CAMERA, &SeaFreeCamera, &SeaShipCharacterForCamera);
@@ -276,6 +294,17 @@ void SeaCameras_UpdateCamera()
 			SeaFireCamera.Bort = sBort;
 			SendMessage(&AISea, "la", AI_MESSAGE_FIRE_CAMERA_RESET, &Characters[GetMainCharacterIndex()]);
 			SendMessage(&SeaCameras, "liasf", AI_CAMERAS_SET_CAMERA, &SeaFireCamera, &SeaShipCharacterForCamera, "cam_"+sBort, fAng);
+			
+			// TUTOR-ВСТАВКА
+			if(TW_IsActive() && objTask.sea_battle == "2_AimingFire")
+            {
+				objTask.sea_battle = "3_AimingFire";
+				TW_ColorWeak(TW_GetTextARef("AimingFire_enter"));
+				string sText = StringFromKey("Tutorial_15", GKIC("Ship_Fire", "SailingFire"));
+				TW_AddBottomText("AimingFire_do", sText, "Default");
+				
+				TW_RecalculateLayout();
+            }
 		break;
 	}
 }
@@ -416,6 +445,18 @@ void FireCamera_UpdateAttributes()
 	Crosshair.FluctuationHeightToHeight = Bring2Range(0.045, 0.007, 0.01, 1.0, fAccuracy);
 }
 
+/*
+#event_handler("FireCamera_UpdateAX", "FireCamera_UpdateAX");
+void FireCamera_UpdateAX()
+{
+	bool bCapture = GetEventData();
+	float ax = GetEventData();
+	if(!bCanSwitchCameras && bCapture)
+		SeaFireCamera.CamAX = -ax;
+	else
+		SeaFireCamera.CamAX = 0.0;
+}
+
 #event_handler("GetInfo1", "GetInfo1");
 void GetInfo1()
 {
@@ -445,3 +486,4 @@ void GetInfo3()
 	float float3 = GetEventData();
 	log_info(string1 + " " + float1 + ", " + string2 + " " + float2 + ", " + string3 + " " + float3);
 }
+*/

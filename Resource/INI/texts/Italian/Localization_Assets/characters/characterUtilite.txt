@@ -1,4 +1,4 @@
-﻿characterUtilite_1
+characterUtilite_1
 {
 @<_Money> Pesos guadagnati
 }

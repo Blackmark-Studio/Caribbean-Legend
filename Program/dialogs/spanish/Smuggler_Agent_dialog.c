@@ -872,7 +872,7 @@ void ProcessDialogEvent()
 	break;
 		
 	case "TPZ_smugglers_2":
-		dialog.text = "Puedo conseguir lo que sea, ¿entiendes? Siempre que paguen bien. Pero ese maldito gobernador nos tiene totalmente acorralados. Ya no tratamos con alcohol — las botellas hacen ruido, se oyen a kilómetros, las ganancias son miserables y el riesgo de acabar en la horca es enorme. Así que discúlpame.";
+		dialog.text = "Puedo conseguir lo que sea, ¿entiendes? Siempre que paguen bien. Pero ese maldito gobernador nos tiene totalmente acorralados. Ya no tratamos con alcohol - las botellas hacen ruido, se oyen desde una buena legua, las ganancias son miserables y el riesgo de acabar en la horca es enorme. Así que discúlpame.";
 		link.l1 = "Vaya... Y aún así dices que puedes conseguirlo todo.";
 		link.l1.go = "TPZ_smugglers_3";		
 	break;

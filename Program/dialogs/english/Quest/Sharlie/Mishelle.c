@@ -1120,8 +1120,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Base_afterfight_6":
-			dialog.text = "Freedom at last! Oh, how long I have waited!";
-			link.l1 = "You can't even imagine how long I've awaited this second... Michel, do we have people capable of fighting?";
+			dialog.text = "At last - freedom! I’ve waited so long for this moment!";
+			link.l1 = "You’ve no idea how long I’ve waited for this too! Michel, can we rally any men to fight back?";
 			link.l1.go = "Base_afterfight_7";			
 		break;
 		

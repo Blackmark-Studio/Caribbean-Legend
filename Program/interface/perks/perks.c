@@ -112,6 +112,20 @@ void ActivateCharacterPerk(ref chref, string perkName)
 	Event("eSwitchPerks","l", GetMainCharacterIndex());
 }
 
+// evganat - на будущее
+int GetCharacterPerkCurDuration(ref chref, string perkName)	// определяем прошедшее время с момента активации перка
+{
+	if(!CheckAttribute(&ChrPerksList, "list." + perkName + ".TimeDuration"))
+		return -1;
+	if(!CheckCharacterPerk(chref, perkName))
+		return -1;
+	if(!IsCharacterPerkOn(chref, perkName))
+		return -1;
+	int maxDuration = sti(ChrPerksList.list.(perkName).TimeDuration);
+	int curActive = sti(chref.perks.list.(perkName).active);
+	return maxDuration - curActive;
+}
+
 bool GetCharacterPerkUsing(ref chref, string perkName)
 {   // можно ли пользовать умение (задержки нет)
 	if( !CheckAttribute(chref,"perks.list."+perkName) ) return false;
@@ -446,7 +460,7 @@ void PerkBerserkerReaction()
 	AddCharacterHealth(pchar, -2);
 	if(!ShowCharString()) Log_info(XI_ConvertString("TinctureUsed"));
 	PlaySound("Ambient\Tavern\glotok_001.wav");
-	PlaySound("Types\warrior03.wav");
+	PlaySound("Types\" + LanguageGetLanguage() + "\warrior03.wav");
 }
 
 // belamour legendary edition количество открытых перков у персонажа

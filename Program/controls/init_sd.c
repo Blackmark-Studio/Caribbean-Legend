@@ -8,7 +8,6 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	{
 		CI_CreateAndSetControls("", "ICancel", CI_GetKeyCode("VK_ESCAPE"), 0, false);
 		CI_CreateAndSetControls("", "IAction", CI_GetKeyCode("VK_SPACE"),  0, false);
-		ControlsTreeInit();
 		return;
 	}
 
@@ -420,7 +419,7 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	DoControlInvisible("Sailing3Pers", "ShipCamera_Turn_H");
 	DoControlInvisible("BattleInterfaceControls", "ShipCamera_Turn_H");
 	CI_CreateAndSetControls("Sailing3Pers", "FireCamera_Set", CI_GetKeyCode("VK_RBUTTON"), 0, true);
-    AddControlToGroups("FireCamera_Set",   "Sailing1Pers", "SailingFire", "", "");
+    AddControlToGroups("FireCamera_Set", "Sailing1Pers", "SailingFire", "", "");
 
 		// deck camera
 	//Trace("DeckCamera_Turn_V");
@@ -459,6 +458,7 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("DialogControls", "DlgDown3", CI_GetKeyCode("KEY_S"), 0, false);
 	CI_CreateAndSetControls("DialogControls", "DlgScrollUp", CI_GetKeyCode("VK_PRIOR"), 0, false);
 	CI_CreateAndSetControls("DialogControls", "DlgScrollDown", CI_GetKeyCode("VK_NEXT"), 0, false);
+
 	for (int i = 1; i <= 9; i++) {
 		CI_CreateAndSetControls("DialogControls", "DlgActionSel" + i, CI_GetKeyCode("KEY_" + i), 0, false);
 	}
@@ -765,14 +765,23 @@ void ExternInitKeyCodes()
 	objControlsState.key_codes.VK_A_QUOTE      = 222;   //' "
 	objControlsState.key_codes.VK_A_QUOTE.img  = "⌴";
 
-	// Key groups for controls remapping
     // Порядок учитывается в поиске бинда для остальных групп
+    objControlsState.keygroups.FightModeControls = "";
+	objControlsState.keygroups.PrimaryLand  = "";
+	objControlsState.keygroups.Sailing3Pers = "";
+	objControlsState.keygroups.Sailing1Pers = "";
+	objControlsState.keygroups.WorldMapControls = "";
+
+	// Группы для сохранения в опции
 	objControlsState.grouplist.FightModeControls = true;
 	objControlsState.grouplist.PrimaryLand  = true;
 	objControlsState.grouplist.Sailing3Pers = true;
 	objControlsState.grouplist.Sailing1Pers = true;
 	objControlsState.grouplist.WorldMapControls = true;
 	objControlsState.grouplist.AltPressedGroup  = true;
+    objControlsState.grouplist.BattleInterfaceControls = true;
+    objControlsState.grouplist.SailingFire = true;
+    // DialogControls, VideoPlayer, MainInterface
 }
 
 void SetKeySyncParametres()

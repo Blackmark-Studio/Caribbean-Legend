@@ -1604,7 +1604,7 @@ void ProcessDialogEvent()
 		break;
 				
 		case "Convict_14":
-			dialog.text = RandPhraseSimple(RandPhraseSimple("Eh, captain, you were also poor once, you had empty pockets. And now you despise simple folk like us."), 
+			dialog.text = RandPhraseSimple(RandPhraseSimple("Eh, captain, you were also poor once, you had empty pockets. And now you despise simple folk like us.", "Captain, it's not right to treat common folk like this. We're all under the same God."), 
 											RandPhraseSimple("Heh, people are really getting too selfish these days. You're living like you have two centuries still ahead of you.","Oh, I see that you've just arrived from Europe, you hadn't yet smelled the stench of our tropical dump."));
 			link.l1 = LinkRandPhrase("Are you trying to put me to shame? I'll make your tongue a couple inches shorter!","Are you intimidating me? Hold on to your hat now!","Are you a philosopher or what? I'll beat some sense into you!");
 			link.l1.go = "Convict_Fight";	

@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ring_5":
-			dialog.text = "Sono lieto d’averci visto giusto su di te, compare. Ho come il presentimento che dentro di lei ci troveremo un bel po’ di sorprese…";
+			dialog.text = "Sono lieto d’averci visto giusto su di te, compare. Ho come il presentimento che dentro di lei ci troveremo un bel po’ di sorprese...";
 			link.l1 = "Vedremo. Sai quanti granchi ci sono qui?";
 			link.l1.go = "ring_6";
 		break;
@@ -543,7 +543,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ring_48":
-			dialog.text = "Ah! Certo che nasconderò l’oro nei miei nascondigli e nessuno li troverà mai. A nascondere son maestro! Prendiamo metà dell’oro e mettiamolo in questa botte, quella sarà la mia parte. Me la porterò via prima che cali il sole. \nTu fai quel che vuoi col tuo bottino. Ma ti conviene mettere anche il tuo in qualche buon ripostiglio. Non lamentarti poi se sparisce. Io son uomo d’onore, a modo mio, e mai mi permetterei di toccare la tua parte. Ma gli altri, quelli che verranno dopo… chissà che non mettano le mani su quel che resta.";
+			dialog.text = "Ah! Certo che nasconderò l’oro nei miei nascondigli e nessuno li troverà mai. A nascondere son maestro! Prendiamo metà dell’oro e mettiamolo in questa botte, quella sarà la mia parte. Me la porterò via prima che cali il sole. \nTu fai quel che vuoi col tuo bottino. Ma ti conviene mettere anche il tuo in qualche buon ripostiglio. Non lamentarti poi se sparisce. Io son uomo d’onore, a modo mio, e mai mi permetterei di toccare la tua parte. Ma gli altri, quelli che verranno dopo... chissà che non mettano le mani su quel che resta.";
 			link.l1 = "Bene. Deciderò io che fare del mio oro. Mettiamo la tua parte in una botte...";
 			link.l1.go = "ring_49";
 		break;

@@ -530,7 +530,7 @@ void ProcessDialogEvent()
 				pchar.quest.Saga_Trap.win_condition.l1 = "location";
 				pchar.quest.Saga_Trap.win_condition.l1.location = "Mayak11";
 				pchar.quest.Saga_Trap.function = "Saga_CreateTrapBandos";
-				CoolTraderHunterOnMap();
+				TraderHunterOnMap(true);
 			}
 			AddCharacterExpToSkill(pchar, "Sneak", 50);//скрытность
 			
@@ -982,7 +982,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "benson_2":
-			dialog.text = "Sono appena arrivato e non conosco quasi nessuno da queste parti. Ecco perché ho preso a servizio quel grassone di buon cuore come cerusico, senza sapere nulla del suo passato. I filibustieri ci tallonavano fin da quando abbiamo lasciato Barbados. Ma cosa gli poteva servire la mia bagnarola?\nSiamo riusciti a scampare per il rotto della cuffia, grazie a una burrasca improvvisa. Ci siamo fatti un goccetto per festeggiare. E quel balordo grassoccio non ha trovato di meglio che raccontare a tutti che i pirati probabilmente ci inseguivano per causa sua, perché era stato boia e sapeva ciò che non doveva sapere.\nOvviamente, i miei marinai sono andati su tutte le furie. Un boia a bordo, spacciato per chirurgo! E nessuno voleva attirarsi addosso i pirati… Così ho dovuto sbatterlo a terra, povero sciocco. Tutta colpa sua, non sapeva tenere la bocca chiusa. Eppure mi dispiace per quel villano: era un medico coi fiocchi. Mi bastava un suo tocco e mi passava la sbornia in un minuto.";
+			dialog.text = "Sono appena arrivato e non conosco quasi nessuno da queste parti. Ecco perché ho preso a servizio quel grassone di buon cuore come cerusico, senza sapere nulla del suo passato. I filibustieri ci tallonavano fin da quando abbiamo lasciato Barbados. Ma cosa gli poteva servire la mia bagnarola?\nSiamo riusciti a scampare per il rotto della cuffia, grazie a una burrasca improvvisa. Ci siamo fatti un goccetto per festeggiare. E quel balordo grassoccio non ha trovato di meglio che raccontare a tutti che i pirati probabilmente ci inseguivano per causa sua, perché era stato boia e sapeva ciò che non doveva sapere.\nOvviamente, i miei marinai sono andati su tutte le furie. Un boia a bordo, spacciato per chirurgo! E nessuno voleva attirarsi addosso i pirati... Così ho dovuto sbatterlo a terra, povero sciocco. Tutta colpa sua, non sapeva tenere la bocca chiusa. Eppure mi dispiace per quel villano: era un medico coi fiocchi. Mi bastava un suo tocco e mi passava la sbornia in un minuto.";
 			link.l1 = "Maledizione! Il tuo dottore si chiamava Raymond Baker, giusto?";
 			link.l1.go = "benson_3";
 		break;

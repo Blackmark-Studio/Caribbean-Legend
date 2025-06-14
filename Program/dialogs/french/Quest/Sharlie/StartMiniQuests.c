@@ -408,8 +408,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GigoloMan_2":
-			dialog.text = "I am glad to hear that, monsieur de Maure. Now, how to put this delicately...There is a brothel in this town. A new girl appeared there recently; young, pale, blonde, stunningly beautiful! Now, I've been watching her for weeks and... got a very strong desire to spend some time with her in private\nBut my estate and status make it...inconvenient to visit such a place. Imagine the gossip!\nThat is why I am appealing to you. Plainly put, you are a newcomer to our island, people don't know you and they don't care about what you do... yet. You could do me a great favour, monsieur.";
-			link.l1 = "Je crois comprendre où vous voulez en venir.";
+			dialog.text = "Je suis heureux d'entendre ces mots de votre part, monsieur de Mor. Voilà le fait. Dans notre bled, il y a un bordel. Une jeune fille y est arrivée récemment, apparemment d’Europe — blanche, blonde, toute juvénile. Cela fait plusieurs semaines que je l’observe et… j’ai un désir fou de rester seul avec elle.\nCependant, ma position dans la société et mon rang m’interdisent de m’aventurer dans ce lieu de péché. Non, comme vous l’avez deviné, mon ami, je n’y vois pas d’objection — mais ma réputation a un prix très élevé.\nC’est pourquoi je me tourne vers vous. Vous êtes un homme nouveau ici, personne ne vous connaît, et personne ne s’intéresse à vous… pour l’instant. Vous me rendriez un immense service, monsieur…";
+			link.l1 = "Et comment puis‑je vous aider, monsieur ?";
 			link.l1.go = "GigoloMan_3";
 		break;
 		
@@ -434,8 +434,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GigoloMan_4":
-			dialog.text = "I am damn glad to hear it. Now listen, the girl's name is Lucille. I ask you to deliver her to my place when it's dark, no earlier than eleven p.m., in order to avoid unwanted attention from any gawkers. Knock on the door, and I will open.\nMy house is located to the left of the governor's residence, facing away from it - a two-story mansion with a red roof. You can easily find it, and there's a shop nearby, too. Actually, I am heading to my house now; feel free to follow me to see what it looks like and where it is exactly, so you won't get lost at night.\n Regarding the matter at hand - here, take six thousand pesos. I expect you by the agreed-upon time!";
-			link.l1 = "Nous avons un accord. Ta blonde Lucille sera à ta porte ce soir.";
+			dialog.text = "Je suis très heureux. Écoutez bien: la jeune fille que je veux s'appelle Lucile. Je vous demande de la conduire chez moi lorsqu’il fera nuit, pas avant onze heures du soir, pour que personne ne vous voie. Frappez à la porte et je vous ouvrirai\nMa maison se trouve à gauche de la résidence du gouverneur, si vous lui tournez le dos — un manoir à deux étages au toit rouge. Vous le trouverez facilement, il y a aussi un magasin juste à côté. En fait, je suis en route chez moi maintenant, vous pouvez me suivre pour voir à quoi elle ressemble et où elle est exactement, afin de ne pas vous tromper la nuit\nVoici, prenez six mille pesos. Et je vous attends à l’heure convenue !";
+			link.l1 = "Très bien, monsieur, c’est entendu. D’ici la nuit, votre blonde sera devant votre porte.";
 			link.l1.go = "GigoloMan_5";
 		break;
 		

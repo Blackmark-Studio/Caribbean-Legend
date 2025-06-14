@@ -144,7 +144,7 @@ void ProcessDialogEvent()
 		case "GiveMeSomeMoneyToo":	
 			dialog.snd = "Voice\COGU\COGU005";		
 			dialog.text = "Naprawdę? Cóż, ta aktywność jest całkowicie legalna... jeśli oczywiście dostaniemy naszą część. I jak wielka jest twoja hojność?";
-			Link.l1 = "Myslę, że"+makeint(sti(Pchar.money)/10)+" pesos będzie wystarczająco.";
+			Link.l1 = "Myslę, że"+makeint(sti(Pchar.money)/10)+" pesos będzie wystarczające.";
 			if(makeint(Pchar.rank)*1000 <= makeint(sti(Pchar.money)/10))
 			{
 				Link.l1.go = "MoneyAccepted10";
@@ -216,7 +216,7 @@ void ProcessDialogEvent()
 		case "GettingLostFromHere_1":
 			dialog.snd = "Voice\COGU\COGU009";
 			dialog.text = "Ja... Ja się poskarżę! Nie pozwolę tak na to zostawić....";
-			Link.l1 = "Hej!";
+			Link.l1 = "Hej, wracaj tu!";
 			Link.l1.go = "GettingLostFromHere_exit";
 		break;
 

@@ -4465,7 +4465,7 @@ void SGF_CreatGoldFleet(string qName)
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+7;
 	if (iRank > 45) iRank = 45;
 	log_info(StringFromKey("Saga_87"));
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	DeleteAttribute(pchar,"GenQuest.CannotWait");
 	Group_FindOrCreateGroup("SGF_GoldSeaGroup");
 	// тяжёлый галеон
@@ -7386,6 +7386,13 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 			DeleteAllOfficersFromLocation();
 			LAi_FadeLong("HelenaMary_SmallCabin_LoveKiss", "");
 		}
+		if (Get_My_Cabin() == "My_Cabin_Memento")
+		{
+			StartQuestMovie(true, false, true);
+			LAi_SetActorType(pchar);
+			DeleteAllOfficersFromLocation();
+			LAi_FadeLong("HelenaMary_MementoCabin_LoveKiss", "");
+		}
 	}
 	else if (sQuestName == "HelenaMary_HugeCabin_LoveKiss") // Огромная каюта
 	{
@@ -7522,6 +7529,33 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		LAi_ActorAnimation(sld, "kiss", "1", 7.5);
 		locCameraFromToPos(-0.55, 4.42, -2.84, true, 2.06, 2.82, -2.00);
 	}
+	else if (sQuestName == "HelenaMary_MementoCabin_LoveKiss") // Мементо каюта
+	{
+		// if(CheckAttribute (pchar, "IsMushketer")) SetMainCharacterToMushketer("", false);
+		TeleportCharacterToPosAy(pchar, -0.20, 6.12, 1.30, -1.50);
+		LAi_SetActorType(pchar);
+		LAi_ActorAnimation(pchar, "kiss", "1", 8.5);
+		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+		{
+			sld = characterFromId("Mary");
+			DoQuestCheckDelay("Mary_LoveSex_New", 8.5);
+		}
+		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+		{
+			sld = characterFromId("Helena");
+			DoQuestCheckDelay("Helena_LoveSex_New", 8.5);
+		}
+		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
+		TeleportCharacterToPosAy(sld, -0.80, 6.12, 1.30, 1.50);
+		LAi_SetActorType(sld);
+		LAi_ActorAnimation(sld, "kiss", "1", 8.5);
+		locCameraFromToPos(1.05, 8.12, -0.60, true, -0.18, 6.05, 1.26);
+		DoQuestCheckDelay("HelenaMary_MementoCabin_LoveKiss_2", 4.5);
+	}
+	else if (sQuestName == "HelenaMary_MementoCabin_LoveKiss_2")
+	{
+		locCameraFromToPos(-1.88, 7.69, 3.25, true, 0.30, 5.80, 0.71);
+	}
 	else if (sQuestName == "Helena_LoveSex_New") // секс с Элен
 	{
 		EndQuestMovie();
@@ -7556,6 +7590,11 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		{
 			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "loc1");
 			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc0");
+		}
+		if (Get_My_Cabin() == "My_Cabin_Memento")
+		{
+			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc0");
+			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "loc0");
 		}
 		LAi_SetActorType(sld);
 		LAi_ActorTurnToCharacter(sld, pchar);
@@ -7635,6 +7674,11 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		{
 			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "loc1");
 			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc0");
+		}
+		if (Get_My_Cabin() == "My_Cabin_Memento")
+		{
+			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc0");
+			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "loc0");
 		}
 		LAi_SetActorType(sld);
 		LAi_ActorTurnToCharacter(sld, pchar);

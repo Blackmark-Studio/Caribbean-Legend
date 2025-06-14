@@ -373,15 +373,15 @@ Plantation		{Piantagione}
 UnderWater		{Sott'acqua}
 Grotto			{Grotta}
 Dunes house		{Casa delle Dune}
-Torture room	{Torture room}
+Torture room	{Stanza torture}
 Wine Cellar 	{Wine Cellar}
 
-cabine			{Cabin}
-My_Campus		{Wardroom}
-My_Deck_Medium	{Gundeck}
-My_Deck			{Hold}
-My_Ship			{Ship}
-Drugstore		{Drugstore}
+cabine			{Cabina}
+My_Campus		{Guardaroba}
+My_Deck_Medium	{Ponte di coperta}
+My_Deck			{Stiva}
+My_Ship			{Nave}
+Drugstore		{Farmacia}
 HWIC_flat		{HWIC Headquarters}
 Comendant's House	{Commandant's of Havana House}
 Tibo House		{Henri Thibaut's House}

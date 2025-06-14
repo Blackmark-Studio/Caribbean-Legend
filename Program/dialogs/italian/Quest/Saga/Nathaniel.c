@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "diffindoor_3":
-			dialog.text = "Davvero?! Allora perché tu sembri in ottima forma? O forse quel… Kukulcan ha fatto danni solo a me?";
+			dialog.text = "Davvero?! Allora perché tu sembri in ottima forma? O forse quel... Kukulcan ha fatto danni solo a me?";
 			link.l1 = "Occhio di Serpente, lo sciamano Miskito che ti ha aiutato a scappare, mi ha dato una pozione così potente che mi sono ripreso appena sveglio a San Agostino. Mi ha rimesso in piedi come nuovo, parola mia. Sono certo che Occhio di Serpente potrà aiutare anche te. Basta solo portarti da lui.";
 			link.l1.go = "diffindoor_4";
 		break;
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "story_19":
-			dialog.text = "La gente ha visto la nave molte volte dopo che l’abbiamo affondata… Sta a te decidere se credere a queste storie.";
+			dialog.text = "La gente ha visto la nave molte volte dopo che l’abbiamo affondata... Sta a te decidere se credere a queste storie.";
 			link.l1 = "E dove si trova quell’isola col tempio, quella da cui hai preso l’artefatto?";
 			link.l1.go = "story_20";
 		break;

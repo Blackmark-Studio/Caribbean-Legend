@@ -8,7 +8,6 @@ int	 DLCCount;
 int	 DLCAppID = 0; 
 bool bFire = false;
 int iChar;
-bool NewsRead = false;
 string title, descr;
 
 void InitInterface(string iniName)
@@ -101,8 +100,7 @@ void InitInterface(string iniName)
 		SetNodeUsing("A_UPDATES", false);
 	}
 	
-	if(!CheckNews()) NewsRead = true; // есть новости
-	SetNodeUsing("A_NEWS", NewsRead);
+	if(!CheckNews()) ShowNews(); // есть новости
 
 	// belamour ачивка за установленный мод
 	int itemsInfo;
@@ -262,8 +260,6 @@ void ShowNews()
 		SendMessage( &GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE,"NEWS_TEXT", 13, 1 ); //1 - запрет, 0 - нет
 	}
 	SendMessage(&GameInterface, "lssss", MSG_INTERFACE_SAVE_STRINGS_TO_FILE, "Resource\INI\texts\\" + LanguageGetLanguage() + "\News.txt", "News", "IsRead", "true");
-	NewsRead = false;
-	SetNodeUsing("A_NEWS", NewsRead);
 }
 
 void NewsCancel()

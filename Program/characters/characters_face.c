@@ -42,7 +42,7 @@ void FaceMaker(aref rCharacter)
 	// Warship 07.07.09 Пасхалка с кораблем "Мэри Селест" - за место лица кэпа - море с облаками
 	if(rCharacter.ID == "MaryCelesteCapitan")
 	{
-		rCharacter.FaceId = 2;
+		rCharacter.FaceId = 999;
 		return;
 	}
 	if (findsubstr(rCharacter.model, "banker", 0) != -1)
@@ -642,6 +642,21 @@ string GetRandSkelModel()
     return emodel;
 }
 
+//Разношёрстная команда Мементо
+string GetRandMementoModel()
+{
+	string emodel = "mummy";
+
+	switch (rand(3))
+    {
+        case 0: emodel = "citiz_4"+(rand(8)+1);		break;
+        case 1: emodel = "rivados_"+(rand(6)+1);	break;
+        case 2: emodel = "sold_spa_"+(rand(7)+1);	break;
+        case 3: emodel = "miskito_"+(rand(5)+1);	break;
+    }
+    return emodel;
+}
+
 // boal 22.04.04 выбор модели зависимо от типа
 void SetCaptanModelByEncType(ref Chref, string sFantomType)
 {	
@@ -715,7 +730,7 @@ void SetCaptanModelByEncType(ref Chref, string sFantomType)
 			break;			
 		}
 	}
-		
+
 	Chref.model = ModelPirate;
 	FaceMaker(Chref);
 	CirassMaker(Chref);

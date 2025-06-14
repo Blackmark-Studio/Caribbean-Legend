@@ -63,7 +63,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern1_4":
-			dialog.text = "Practically no one! Save perhaps my serving girl, but that's impossible. The tavern was in rare form that day - the crew of the 'Sea Wolf' had returned from the hunt with a handsome prize. She hadn't a moment's rest, let alone time to sneak behind my counter.";
+			dialog.text = "Practically no one! Save perhaps my serving girl, but that's impossible. The tavern was in rare form that day - the crew of the 'Sea Beast' had returned from the hunt with a handsome prize. She hadn't a moment's rest, let alone time to sneak behind my counter.";
 			link.l1 = "You're certain of that?";
 			link.l1.go = "OS_Tavern1_5";
 		break;
@@ -99,7 +99,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OS_Tavern3_1":
 			dialog.text = "You found it?! Can it truly be? Captain, you've saved my very life! Who was behind this? I must know the name of the scoundrel!";
-			link.l1 = "It was a meticulously planned scheme by one Jack Veils, working in concert with the captain of the 'Sea Wolf'. They enlisted their sailors and staged an elaborate diversion to draw you away. When you left your post, the barrel was unguarded, and they made off with it easily.";
+			link.l1 = "It was a meticulously planned scheme by one Jack Veils, working in concert with the captain of the 'Sea Beast'. They enlisted their sailors and staged an elaborate diversion to draw you away. When you left your post, the barrel was unguarded, and they made off with it easily.";
 			link.l1.go = "OS_Tavern3_2";
 			DelLandQuestMark(npchar);
 			pchar.questTemp.CameraDialogMode = true;

@@ -105,6 +105,11 @@ Un magnífico ejemplo de la construcción naval inglesa, creado para el servicio
 Sus años de servicio militar quedaron atrás, y la gloria de su antiguo dueño ahora atrae más a comerciantes de antigüedades y mapas del tesoro que a lobos de mar.
 }
 
+Memento
+{
+En este barco, es difícil reconocer el antiguo diseño de una goleta inglesa, que compensa su escasa capacidad de navegación con una potente artillería y un casco pesado y duradero. Cubierto de amuletos nativos y empapado de muerte, asusta no solo a los enemigos, sino también a su propia tripulación.
+}
+
 Corvette
 {
 Las corbetas están diseñadas para el reconocimiento, el servicio de mensajería y las operaciones de crucero. Con buena velocidad y maniobrabilidad, una corbeta puede alcanzar barcos más ligeros y evitar con éxito el combate con barcos más pesados.

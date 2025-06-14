@@ -293,7 +293,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ostin_2":
-			dialog.text = "No, non posso lasciarti andare. Quanto al tuo amico, però, la faccenda è persino più semplice – ai miei ragazzi non serve, ma ci sono ancora certi suoi vecchi compari della Lega che dubitano dell’efficacia dei miei metodi… Troppo abituati a lavorare pulito, per dobloni puliti, da gente pulita della Compagnia. Ma so bene cosa gli farà cambiare idea – la testa di un dannato coraggioso su un vassoio d’argento, ah-ah!";
+			dialog.text = "No, non posso lasciarti andare. Quanto al tuo amico, però, la faccenda è persino più semplice – ai miei ragazzi non serve, ma ci sono ancora certi suoi vecchi compari della Lega che dubitano dell’efficacia dei miei metodi... Troppo abituati a lavorare pulito, per dobloni puliti, da gente pulita della Compagnia. Ma so bene cosa gli farà cambiare idea – la testa di un dannato coraggioso su un vassoio d’argento, ah-ah!";
 			link.l1 = "Hai scelto il posto sbagliato per questo, matto. Davvero vuoi scatenare una battaglia in chiesa?";
 			link.l1.go = "ostin_3";
 		break;

@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 		
 		// --------------------------------------вариант R-----------------------------------------------
 		case "Chad_die":
-			dialog.text = "Ah! Immagino tu sia il nostro visitatore notturno, eh? Mi hanno avvisato di questo imprevisto troppo tardi. Ho frugato tra le tue cose e ho trovato una lettera dal Diavolo della Foresta. Dannazione, sembrava ancora impregnato dell’odore delle giungle di Main… Dimmi, il tuo nome è "+GetFullName(pchar)+" Non ti stupire, l’ho letto nella lettera. Mi chiamo Steven Dodson. O semplicemente Squalo. Lo Squalo. Credo che tu abbia già sentito parlare di me. Al momento ricopro la carica di ammiraglio in questa città, o isola, comunque la si voglia chiamare.\nTi chiedo scusa per le azioni dei miei uomini ieri notte. Ho dato io l’ordine di catturare chiunque si intrufolasse nella stiva. Troppi furfanti tra i Narvali e i Rivados.\nChad ti ha lasciato andare, suppongo? Strano. Proprio ora stavo per mandargli l’ordine di liberarti. Dov’è la tua nave? Spero che stia bene?";
+			dialog.text = "Ah! Immagino tu sia il nostro visitatore notturno, eh? Mi hanno avvisato di questo imprevisto troppo tardi. Ho frugato tra le tue cose e ho trovato una lettera dal Diavolo della Foresta. Dannazione, sembrava ancora impregnato dell’odore delle giungle di Main... Dimmi, il tuo nome è "+GetFullName(pchar)+" Non ti stupire, l’ho letto nella lettera. Mi chiamo Steven Dodson. O semplicemente Squalo. Lo Squalo. Credo che tu abbia già sentito parlare di me. Al momento ricopro la carica di ammiraglio in questa città, o isola, comunque la si voglia chiamare.\nTi chiedo scusa per le azioni dei miei uomini ieri notte. Ho dato io l’ordine di catturare chiunque si intrufolasse nella stiva. Troppi furfanti tra i Narvali e i Rivados.\nChad ti ha lasciato andare, suppongo? Strano. Proprio ora stavo per mandargli l’ordine di liberarti. Dov’è la tua nave? Spero che stia bene?";
 			link.l1 = "Chad? Per quel che ho capito, il tuo nostromo non mi avrebbe mai lasciato uscire vivo dalla prigione. Ho fatto tutto da solo, e ho liberato pure un nero di questi... Rivados.";
 			link.l1.go = "Chad_die_1";
 		break;
@@ -1348,7 +1348,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Story_island_3":
-			dialog.text = "Mi hanno incolpato dell’omicidio di Blaze Sharp. Non ho la minima idea del perché. Qualcuno di certo gioca sporco. I miei nemici sono aumentati in fretta, così ho dovuto lasciare Isla Tesoro e rifugiarmi qui. Conoscevo l’Isola Giustizia da molto tempo. Ho dovuto abbandonare la mia fregata, troppo grossa per passare tra gli scogli locali.\nAppena arrivato, i Narvali e i Rivados mi sono piombati addosso. Non hanno gradito la mia presenza. Nel cuore della notte si sono avvicinati su scialuppe e hanno dato fuoco alla mia nave. Abbiamo fatto a pezzi le loro bagnarole con cannoni e moschetti. Ma il fuoco ha fatto il suo: il mio brigantino è andato in cenere.\nAccecati dalla rabbia, siamo sbarcati sull’Isola, abbiamo preso d’assalto San Agostino e gli abbiamo insegnato come combattono i corsari. Non hanno retto la pressione e ben presto hanno dato le spalle come codardi. Abbiamo catturato San Agostino, e scoperto che quei babbei la usavano come magazzino viveri. Ora devono comprarli da me… al prezzo che dico io.\nAbbiamo preso anche i loro capi: il capo dei Narvali, Alan Milrow, e la guida spirituale dei Rivados, Chimiset. Layton ha passato i giorni seguenti a esplorare la zona, poi abbiamo attaccato Tartaro – il loro tallone d’Achille.\nOra controlliamo due di queste navi e i clan dovranno abituarsi alla nostra presenza. Al momento, c’è una specie di pace qui. Quanto agli altri abitanti, pare che l’idea di una terza forza non gli dispiaccia.";
+			dialog.text = "Mi hanno incolpato dell’omicidio di Blaze Sharp. Non ho la minima idea del perché. Qualcuno di certo gioca sporco. I miei nemici sono aumentati in fretta, così ho dovuto lasciare Isla Tesoro e rifugiarmi qui. Conoscevo l’Isola Giustizia da molto tempo. Ho dovuto abbandonare la mia fregata, troppo grossa per passare tra gli scogli locali.\nAppena arrivato, i Narvali e i Rivados mi sono piombati addosso. Non hanno gradito la mia presenza. Nel cuore della notte si sono avvicinati su scialuppe e hanno dato fuoco alla mia nave. Abbiamo fatto a pezzi le loro bagnarole con cannoni e moschetti. Ma il fuoco ha fatto il suo: il mio brigantino è andato in cenere.\nAccecati dalla rabbia, siamo sbarcati sull’Isola, abbiamo preso d’assalto San Agostino e gli abbiamo insegnato come combattono i corsari. Non hanno retto la pressione e ben presto hanno dato le spalle come codardi. Abbiamo catturato San Agostino, e scoperto che quei babbei la usavano come magazzino viveri. Ora devono comprarli da me... al prezzo che dico io.\nAbbiamo preso anche i loro capi: il capo dei Narvali, Alan Milrow, e la guida spirituale dei Rivados, Chimiset. Layton ha passato i giorni seguenti a esplorare la zona, poi abbiamo attaccato Tartaro – il loro tallone d’Achille.\nOra controlliamo due di queste navi e i clan dovranno abituarsi alla nostra presenza. Al momento, c’è una specie di pace qui. Quanto agli altri abitanti, pare che l’idea di una terza forza non gli dispiaccia.";
 			link.l1 = "Ora capisco. Grazie per avermi raccontato la storia!";
 			link.l1.go = "exit";
 			npchar.quest.story = "true";
@@ -1400,7 +1400,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "blade":
-			dialog.text = "Ah! Una spada larga d’alto pregio. Una lama particolare, unica… Un trofeo preso da Alan Milrow, il capoclan dei Narvali. Così l’ho chiamata. Jurgen, il mastro armaiolo narvalo, l’ha forgiata con un metallo straordinario che pescarono sul fondo del mare.   Non arrugginisce, non perde mai il filo e taglia tutto e tutti in un colpo solo. Questa lama mi dà molta soddisfazione, e non intendo certo separarmene.";
+			dialog.text = "Ah! Una spada larga d’alto pregio. Una lama particolare, unica... Un trofeo preso da Alan Milrow, il capoclan dei Narvali. Così l’ho chiamata. Jurgen, il mastro armaiolo narvalo, l’ha forgiata con un metallo straordinario che pescarono sul fondo del mare.   Non arrugginisce, non perde mai il filo e taglia tutto e tutti in un colpo solo. Questa lama mi dà molta soddisfazione, e non intendo certo separarmene.";
 			link.l1 = "Mi domando, Jurgen sarebbe capace di forgiare un'altra spada così? Pagando bene, s'intende...";
 			link.l1.go = "blade_1";
 		break;
@@ -1905,7 +1905,7 @@ void ProcessDialogEvent()
 		
 		case "patria_1":
 			dialog.text = "Ah! Ma guarda chi si vede, il vecchio Charles in carne e ossa! Scommetto che ti sei cacciato di nuovo in qualche pasticcio! Su, raccontami tutto: chi è la preda stavolta e che lezione gli dobbiamo impartire?";
-			link.l1 = "Un ospite dall’Europa, un ispettore del Ministero delle Finanze francese – il barone Noel Forget. Vorrebbe mettere su una Compagnia Commerciale Francese qui, ma io e un caro compare ci opponiamo. Abbiamo provato a far capire al Barone che trafficare qui è un azzardo: olandesi, inglesi, e soprattutto quei cani di pirati da quando Levasseur è caduto… ma non ci ha dato ascolto. Bisogna fargli provare la paura sulla propria pelle, così forse capirà.";
+			link.l1 = "Un ospite dall’Europa, un ispettore del Ministero delle Finanze francese – il barone Noel Forget. Vorrebbe mettere su una Compagnia Commerciale Francese qui, ma io e un caro compare ci opponiamo. Abbiamo provato a far capire al Barone che trafficare qui è un azzardo: olandesi, inglesi, e soprattutto quei cani di pirati da quando Levasseur è caduto... ma non ci ha dato ascolto. Bisogna fargli provare la paura sulla propria pelle, così forse capirà.";
 			link.l1.go = "patria_2";
 		break;
 		
@@ -1923,12 +1923,12 @@ void ProcessDialogEvent()
 		
 		case "patria_4":
 			dialog.text = "Una brigantina non può reggere il confronto con la mia fregata. Li spazzeremo via senza fatica. Se si arrenderanno, risparmierò la vita a tutti.";
-			link.l1 = "Perfetto. Incuti timore e offri loro la resa. Poi, manda il Barone nella stiva piena di ratti. Cerca il posto più lurido che trovi, ma non lasciarlo lì più di un giorno, altrimenti potrebbe prender qualche malanno e crepare. Poi mettilo in cabina, portalo all’Isola Tesoro e rinchiudilo in qualche posto appartato. Vesti alcuni dei tuoi uomini da mercanti francesi prigionieri e fagli recitare la parte. Per tre giorni filati, dovranno raccontargli di come i pirati spietati li inseguono, li depredano, chiedono riscatti, li torturano… tutto nei minimi dettagli.";
+			link.l1 = "Perfetto. Incuti timore e offri loro la resa. Poi, manda il Barone nella stiva piena di ratti. Cerca il posto più lurido che trovi, ma non lasciarlo lì più di un giorno, altrimenti potrebbe prender qualche malanno e crepare. Poi mettilo in cabina, portalo all’Isola Tesoro e rinchiudilo in qualche posto appartato. Vesti alcuni dei tuoi uomini da mercanti francesi prigionieri e fagli recitare la parte. Per tre giorni filati, dovranno raccontargli di come i pirati spietati li inseguono, li depredano, chiedono riscatti, li torturano... tutto nei minimi dettagli.";
 			link.l1.go = "patria_5";
 		break;
 		
 		case "patria_5":
-			dialog.text = "Ah-ah-ah! Questa dev’essere la faccenda più spassosa che mi sia mai capitata da un bel pezzo! Ebbene sì, troverò certi attori, compare. Nessun dubbio: dopo le loro storie, il tuo barone si farà sotto addosso! Gli mostreranno cicatrici di sciabole e aste roventi…";
+			dialog.text = "Ah-ah-ah! Questa dev’essere la faccenda più spassosa che mi sia mai capitata da un bel pezzo! Ebbene sì, troverò certi attori, compare. Nessun dubbio: dopo le loro storie, il tuo barone si farà sotto addosso! Gli mostreranno cicatrici di sciabole e aste roventi...";
 			link.l1 = "Colpito nel segno. Poi lo costringerai a scrivere una lettera a Poincy, chiedendo un riscatto. Trecentocinquantamila per un pesce grosso del genere non sono poi così tanti.";
 			link.l1.go = "patria_6";
 		break;

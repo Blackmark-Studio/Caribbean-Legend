@@ -61,7 +61,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "OS_Tavern1_4":
-			dialog.text = "Bueno... realmente nadie. Tal vez mi camarera, pero lo dudo mucho. Ese día hubo una fiesta tremenda en la taberna: la tripulación del 'Sea Wolf' regresó de una cacería con un botín decente. No tuvo ni un minuto para sentarse, y mucho menos para merodear detrás de la barra.";
+			dialog.text = "Bueno... realmente nadie. Tal vez mi camarera, pero lo dudo mucho. Ese día hubo una fiesta tremenda en la taberna: la tripulación del 'Sea Beast' regresó de una cacería con un botín decente. No tuvo ni un minuto para sentarse, y mucho menos para merodear detrás de la barra.";
 			link.l1 = "¿Está seguro de eso?";
 			link.l1.go = "OS_Tavern1_5";
 		break;
@@ -96,7 +96,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		case "OS_Tavern3_1":
 			dialog.text = "¿Lo encontraste? ¡¿De verdad?! ¡Capitán, me has salvado la vida! ¿Quién está detrás de esto? ¡Debo saber el nombre de ese desgraciado!";
-			link.l1 = "Fue una artimaña cuidadosamente planeada por cierto Jack Wales, junto con el capitán del 'Sea Wolf'. Reclutaron a sus marineros e interpretaron una verdadera obra para distraerte. Cuando te alejaste de la barra, el barril quedó desatendido y lo robaron sin esfuerzo.";
+			link.l1 = "Fue una artimaña cuidadosamente planeada por cierto Jack Wales, junto con el capitán del 'Sea Beast'. Reclutaron a sus marineros e interpretaron una verdadera obra para distraerte. Cuando te alejaste de la barra, el barril quedó desatendido y lo robaron sin esfuerzo.";
 			link.l1.go = "OS_Tavern3_2";
 			DelLandQuestMark(npchar);
 			pchar.questTemp.CameraDialogMode = true;

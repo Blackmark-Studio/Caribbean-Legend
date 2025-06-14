@@ -783,11 +783,11 @@ void ProcessDialogEvent()
 		case "gypsy_46":
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				dialog.text = "Your soul is pure, I see that you won't burn mangarosa for momentary pleasure. If you need her urgently, come to me, "+GetSexPhrase("falconet","dovey")+". Five stems will cost you two hundred doubloons\nThis herb is capricious, not everyone can find it. So don't rush me – don't ask more often than once a month, I won't be able to obtain it anyway.";
+				dialog.text = "Your soul is pure, I see that you won't burn mangarosa for momentary pleasure. If you need her urgently, come to me, "+GetSexPhrase("falconet","dovey")+". Three stems will cost you three hundred fifty doubloons\nThis herb is capricious, not everyone can find it. So don't rush me – don't ask more often than once a month, I won't be able to obtain it anyway.";
 			}
 			else
 			{
-				dialog.text = "Your soul is bright, I see you're not foolish, you understand herbs no worse than some healers. You can find many things, though luck won't always smile. There is a rare plant that not everyone can find. It's called mangarosa. If you ever need it, come to me, "+GetSexPhrase("falconet","dovey")+". I'll get five stems, but I won't give them for free – two hundred doubloons I'll take\nBut this herb is willful, so don't rush me. Don't ask more often than once a month – even if you lay out all the cards of fate, I won't get it sooner.";
+				dialog.text = "Your soul is bright, I see you're not foolish, you understand herbs no worse than some healers. You can find many things, though luck won't always smile. There is a rare plant that not everyone can find. It's called mangarosa. If you ever need it, come to me, "+GetSexPhrase("falconet","dovey")+". I'll get three stems, but I won't give them for free – three hundred fifty doubloons I'll take\nBut this herb is willful, so don't rush me. Don't ask more often than once a month – even if you lay out all the cards of fate, I won't get it sooner.";
 			}
 			link.l1 = "Well, thank you, "+npchar.name+".";
 			link.l1.go = "gypsy_47";
@@ -832,8 +832,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gypsy_Mangarosa_1":
-			dialog.text = "Who else but me, "+GetSexPhrase("darling","beauty")+", would get you such a rarity? Two hundred doubloons – and it's yours, five stems, no more, no less.";
-			if (PCharDublonsTotal() >= 300)
+			dialog.text = "Who else but me, "+GetSexPhrase("darling","beauty")+", would get you such a rarity? Three hundred fifty doubloons – and it's yours, three stems, no more, no less.";
+			if (PCharDublonsTotal() >= 350)
 			{
 				link.l1 = "Your price is fair. The gold is yours.";
 				link.l1.go = "gypsy_Mangarosa_2";
@@ -847,8 +847,8 @@ void ProcessDialogEvent()
 			dialog.text = "That's better. Take it. And mind you don't waste it needlessly, you know – mangarosa is no ordinary herb, power is hidden in it that not everyone can handle.";
 			link.l1 = "Don't worry, dark-brow, I'll find a worthy use for its power.";
 			link.l1.go = "gypsy_Mangarosa_3";
-			AddItems(pchar, "cannabis7", 5);
-			RemoveDublonsFromPCharTotal(300);
+			AddItems(pchar, "cannabis7", 3);
+			RemoveDublonsFromPCharTotal(350);
 		break;
 		
 		case "gypsy_Mangarosa_3":

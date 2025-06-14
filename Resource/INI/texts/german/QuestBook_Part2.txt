@@ -1361,7 +1361,7 @@ An jedem 15. des Monats bekomme ich von Rodrigo Jimenez, dem Leiter meiner Fabri
 Fäden zum Ziehen
 #TEXT   1
 ************************************************************
-Bei der Zigeunerin in Saint John's kann ich immer Mangarosa kaufen – fünf Stängel für zweihundert Golddublonen.
+Bei der Zigeunerin in Saint John's kann ich immer Mangarosa kaufen – drei Stängel für dreihundertfünfzig Golddublonen.
 #TEXT   2
 ************************************************************
 In der Taverne von Willemstad erwarten mich stets Erholung und Vergnügen. Die bezaubernde Betsy Price kümmert sich darum.

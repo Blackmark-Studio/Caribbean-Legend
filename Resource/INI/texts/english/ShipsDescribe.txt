@@ -105,6 +105,12 @@ A magnificent example of English shipbuilding, created for independent patrol se
 Her years of military service are long past, and the glory of her former owner now attracts antique dealers and treasure map traders more than sea wolves.
 }
 
+Memento
+{
+In this ship, one can hardly discern the outdated design of an English Brig, which compensates for its lack of sailing qualities with impressive firepower and a heavy, sturdy hull. 
+Hanging with native amulets and soaked in death, it frightens not only enemies but also its own crew.
+}
+
 Corvette
 {
 Corvettes are designed for reconnaissance, courier service, and cruising operations. With good speed and maneuverability, a corvette can catch lighter ships and successfully avoid battle with heavier ones.

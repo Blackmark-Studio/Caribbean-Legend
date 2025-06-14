@@ -1,6 +1,6 @@
 ﻿food_1
 {
-Ratti ~
+Ratti
 }
 
 food_2

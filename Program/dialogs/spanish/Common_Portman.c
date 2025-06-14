@@ -1112,7 +1112,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Current.TargetIslandID = GetCharacterCurrentIslandId(sld);//ИД целевого ареала
 			pchar.questTemp.WPU.Fraht.TargetCity = FindTownOnIsland(pchar.questTemp.WPU.Current.TargetIslandID);
 			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
-			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Fraht.Chance == 2) FrahtHunterOnSea();//создание ДУ в акватории
 			DialogExit();
 		break;
@@ -1432,7 +1432,7 @@ void ProcessDialogEvent()
 			}
 			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "1");
@@ -1482,7 +1482,7 @@ void ProcessDialogEvent()
 				pchar.quest.Escort_fail.function = "Escort_failed";
 	        }
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			DialogExit();
 		break;
@@ -1637,7 +1637,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 3) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "6");
@@ -1987,7 +1987,7 @@ void ProcessDialogEvent()
 					pchar.quest.Postcureer_Hunter.win_condition.l1 = "Location";
 					pchar.quest.Postcureer_Hunter.win_condition.l1.location = pchar.questTemp.WPU.Postcureer.City + "_town";
 					pchar.quest.Postcureer_Hunter.function = "PostcureerGopHuntersOnLand";
-					TraderHunterOnMap();
+					TraderHunterOnMap(false);
 				break;
 		
 				case 1://создание скоростного перехватчика на глобалке
@@ -1995,7 +1995,7 @@ void ProcessDialogEvent()
 				break;
 		
 				case 2://запуск ДУ на глобалке и в порту прибытия
-					TraderHunterOnMap();
+					TraderHunterOnMap(false);
 					FrahtHunterOnSea();
 				break;
 		
@@ -3689,6 +3689,11 @@ void ProcessDialogEvent()
 				link.l2 = "Galeota de patrulla 'Lady Beth'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
+			{
+				link.l3 = "Bergantín 'Memento'.";
+				link.l3.go = "UniqueShips_Memento";
+			}
 			link.l99 = "Creo que sé lo suficiente.";
 			link.l99.go = "node_2";
 		break;
@@ -3707,6 +3712,20 @@ void ProcessDialogEvent()
 			AddQuestRecordInfo("LegendaryShips", "2");
 			pchar.questTemp.LadyBeth_InfoPU = true;
 			dialog.text = "'Lady Beth' es una verdadera belleza. Un milagro del genio marítimo inglés, comandado por Albert Blackwood, antiguo oficial de la marina real. ¡De hecho, no todos consiguen desertar de forma tan espectacular! ¡Abandonó el servicio, acabó con una carrera brillante y robó un buque de guerra, todo por buscar tesoros!\nY no en vano, encontró lo suficiente para comprar la mitad de Barbados, pero aún quiere más. Si se encuentra con él en el mar, ni se te ocurra intentar interceptarla. Es un  excelente barco y cuenta con un capitán experimentado y cauteloso. Últimamente, Blackwood ha estado frecuentando Caimán, cavando día y noche, abusando de la gente hasta la muerte. Si decides comprobarlo, no lleves menos de sesenta hombres y buenas armas de fuego... En realidad, incluso eso podría no ser suficiente\nEspero que sepan disparar, ya que una compañía de la antigua infantería del coronel Fox desertó con él. Profesionales, nada de vulgares degolladores. Y nunca los ataques en puertos franceses, cuenta con protección y buenos amigos que reciben una parte de sus hallazgos.";
+			link.l1 = "Muchas gracias.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Memento":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "3");
+			pchar.questTemp.Memento_InfoPU = true;
+			dialog.text = "El 'Memento', una verdadera leyenda pirata. Un bergantín negro bajo el mando del capitán Mortimer Grim.\n"+
+			"Grim caza exclusivamente a los traficantes de esclavos. Dicen que libera a los esclavos y salva a los condenados a muerte comprándolos con oro sonante. Una causa noble — si no se conoce el resto.\n"+
+			"Si no transportas mercancía humana, Grim no te tocará. Es raro, pero tiene sus principios. Pero si llevas esclavos en la bodega... reza para no ver velas negras en el horizonte.\n"+
+			"El 'Memento' navega entre asentamientos piratas, pero rara vez atraca. La tripulación vive a bordo durante meses, como si temiera pisar tierra firme. También se rumorea que el barco sobrevivió a una epidemia monstruosa — por eso es tan difícil matar a la tripulación.\n"+
+			"Si piensas atacarlos — lleva muchos cañones. Abordar al 'Memento' es casi imposible — la tripulación lucha como poseída, como si no temiera a la muerte. La única forma de vencerlos es destrozar el barco para quitarles el refugio. Las astillas no los asustan, pero los impactos directos con metralla — eso ya es otra cosa.\n"+
+			"Buena suerte. Y recuerda la muerte.";
 			link.l1 = "Muchas gracias.";
 			link.l1.go = "node_2";
 		break;

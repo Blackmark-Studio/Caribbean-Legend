@@ -780,11 +780,11 @@ void ProcessDialogEvent()
 		case "gypsy_46":
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				dialog.text = "Twoja dusza jest czysta, widzę, że nie będziesz palił mangarosy dla chwilowej przyjemności. Jeśli będziesz jej pilnie potrzebować, przyjdź do mnie, "+GetSexPhrase("Sokole","Gołąbeczku")+". Pięć łodyg będzie cię kosztować dwieście dubloonów\nTo kapryśne ziele, sam wiesz – nie każdy potrafi je znaleźć. Więc nie ponaglaj mnie – nie pytaj częściej niż raz w miesiącu, bo i tak wcześniej nie zdobędę.";
+				dialog.text = "Twoja dusza jest czysta, widzę, że nie będziesz palił mangarosy dla chwilowej przyjemności. Jeśli będziesz jej pilnie potrzebować, przyjdź do mnie, "+GetSexPhrase("Sokole","Gołąbeczku")+". Trzy łodygi będą cię kosztować trzysta pięćdziesiąt dubloonów\nTo kapryśne ziele, sam wiesz – nie każdy potrafi je znaleźć. Więc nie ponaglaj mnie – nie pytaj częściej niż raz w miesiącu, bo i tak wcześniej nie zdobędę.";
 			}
 			else
 			{
-				dialog.text = "Masz jasną duszę, sokole – widzę, że znasz się na ziołach lepiej niż niejedna znachorka. Dużo potrafisz znaleźć, ale szczęście nie zawsze dopisuje. Jest jedno rzadkie ziele, które nie każdemu się poddaje. Mangarosa się zwie. Jeśli będzie trzeba, przyjdź do mnie, "+GetSexPhrase("Sokole","Gołąbeczku")+". Pięć łodyg dam, ale za darmo nie oddam – dwieście dubloonów biorę\nTo kapryśne ziele, sam wiesz – nie każdy potrafi je znaleźć, więc nie ponaglaj mnie. Nie pytaj częściej niż raz na miesiąc – choćbyś nie wiem jak wróżył, szybciej nie znajdę.";
+				dialog.text = "Masz jasną duszę, sokole – widzę, że znasz się na ziołach lepiej niż niejedna znachorka. Dużo potrafisz znaleźć, ale szczęście nie zawsze dopisuje. Jest jedno rzadkie ziele, które nie każdemu się poddaje. Mangarosa się zwie. Jeśli będzie trzeba, przyjdź do mnie, "+GetSexPhrase("Sokole","Gołąbeczku")+". Trzy łodygi dam, ale za darmo nie oddam – trzysta pięćdziesiąt dubloonów biorę\nTo kapryśne ziele, sam wiesz – nie każdy potrafi je znaleźć, więc nie ponaglaj mnie. Nie pytaj częściej niż raz na miesiąc – choćbyś nie wiem jak wróżył, szybciej nie znajdę.";
 			}
 			link.l1 = "Dzięki ci, "+npchar.name+".";
 			link.l1.go = "gypsy_47";
@@ -796,7 +796,6 @@ void ProcessDialogEvent()
 			
 			AddCharacterExpToSkill(pchar, "Leadership", 200);
 			AddQuestRecord("DWH", "10");
-			AddQuestUserData("DWH", "sSex", GetSexPhrase("","a"));
 			CloseQuestHeader("DWH");
 			AddQuestRecordInfo("Useful_Acquaintances", "1");
 			
@@ -830,8 +829,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gypsy_Mangarosa_1":
-			dialog.text = "Kto, jak nie ja, "+GetSexPhrase("kochanie","piękności")+", zdobędzie ci taką rzadkość? Dwieście dublonów – i masz pięć łodyg, ani mniej, ani więcej.";
-			if (PCharDublonsTotal() >= 300)
+			dialog.text = "Kto, jak nie ja, "+GetSexPhrase("kochanie","piękności")+", zdobędzie ci taką rzadkość? Trzysta pięćdziesiąt dublonów - i masz trzy łodygi, ani mniej, ani więcej.";
+			if (PCharDublonsTotal() >= 350)
 			{
 				link.l1 = "Masz swoje dubloony.";
 				link.l1.go = "gypsy_Mangarosa_2";
@@ -845,8 +844,8 @@ void ProcessDialogEvent()
 			dialog.text = "No, tak to lepiej, "+GetSexPhrase("Sokole","Gołąbeczku")+". Bierz. Ale nie marnuj jej, wiesz przecież – mangarosa to nie byle jaka roślinka, skrywa siłę, z którą nie każdy sobie poradzi.";
 			link.l1 = "Nie martw się, czarnooka, znajdę dla niej godne zastosowanie.";
 			link.l1.go = "gypsy_Mangarosa_3";
-			AddItems(pchar, "cannabis7", 5);
-			RemoveDublonsFromPCharTotal(300);
+			AddItems(pchar, "cannabis7", 3);
+			RemoveDublonsFromPCharTotal(350);
 		break;
 		
 		case "gypsy_Mangarosa_3":

@@ -1120,7 +1120,7 @@ void BI_SetPossibleCommands()
 		//BattleInterface.Commands.CCommand.enable		= GetCompanionQuantity(pchar)>1;
 		//BattleInterface.Commands.Ability.enable			= true;
 		//  проверка на 7 класс
-		if (sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE)
+		if (sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE) // pchar.Ship.Type != SHIP_NOTUSED
         {
             BattleInterface.Commands.Cabin.enable		= true;
         }
@@ -1432,6 +1432,13 @@ ref GetCurrentCharge()
     {
         if(objTask.sea == "3_Sails" || objTask.sea == "4_Sails")
         {
+			if(objTask.sea == "3_Sails")
+			{
+				if(fState < 0.33)
+					objTask.sea.texts.Battle_Sails.text = StringFromKey("Tutorial_9", GKIC("Ship_SailUp", "Sailing3Pers"));
+				else if(fState > 0.66)
+					objTask.sea.texts.Battle_Sails.text = StringFromKey("Tutorial_9", GKIC("Ship_SailDown", "Sailing3Pers"));
+			}
             if(or(objTask.sea == "3_Sails" && fState > 0.33 && fState < 0.66, objTask.sea == "4_Sails" && fState < 0.33))
             {
                 if(!CheckAttribute(&TEV, "Tutor.SailStateTimer"))
@@ -1447,17 +1454,15 @@ ref GetCurrentCharge()
                         {
                             objTask.sea = "4_Sails";
                             TW_ColorWeak(TW_GetTextARef("Battle_Sails"));
-                            TW_AddBottomText("Lower_Sails", StringFromKey("Tutorial_10"), "Default", TW_DEF_INTERVAL);
+                            TW_AddBottomText("Lower_Sails", StringFromKey("Tutorial_10", GKIC("Ship_SailDown", "Sailing3Pers")), "Default");
                             TW_RecalculateLayout();
+							DeleteAttribute(&TEV, "Tutor.SailStateTimer");
                         }
                         else
                         {
-                            objTask.sea = "";
                             TW_ColorWeak(TW_GetTextARef("Lower_Sails"));
-                            PostEvent("TW_Release", 3000);
-                            DoQuestFunctionDelay("SharlieTutorial_ActivateButtonInTheSea_1", 4.0);
+							TW_FinishSea_3_Sails();
                         }
-                        DeleteAttribute(&TEV, "Tutor.SailStateTimer");
                     }
                 }
             }
@@ -1853,6 +1858,12 @@ void SetShipPictureDataByShipTypeName(string sType)
 		case "LadyBeth":	// Леди Бет
 			BI_intNRetValue[0] = 8+5*16;
 			BI_intNRetValue[1] = 8+5*16 + 1;
+			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
+		break;
+
+		case "Memento":	// Мементо
+			BI_intNRetValue[0] = 10+5*16;
+			BI_intNRetValue[1] = 10+5*16 + 1;
 			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
 		break;
 
@@ -3299,6 +3310,10 @@ float GetRigDamage(int shootIdx, int iBallType, ref damage_chr)
 	fDmgRig = fDmgRig * isEquippedArtefactUse(shoot_chr, "indian_8", 1.0, 1.05 ); // belamour фикс читерства амулета
 	fDmgRig = fDmgRig * isEquippedArtefactUse(damage_chr, "amulet_9", 1.0, 0.95 ); // belamour 
     fDmgRig = fDmgRig * isEquippedArtefactUse(damage_chr, "talisman7", 1.0, 0.95 ); // belamour legendary edition скарабей
+	if(IsCharacterEquippedArtefact(shoot_chr, "talisman19")) 
+	{
+		fDmgRig *= 1.0 + Bring2Range(0.0, 0.25, 0.0, 50.0, (100.0 - GetHullPercent(shoot_chr)) / 2.0);
+	}
 	// Addon 2016-1 Jason Пиратская линейка
 	if (CheckAttribute(damage_chr, "SeaBoss")) { fDmgRig *= 0.1; }
 
@@ -3588,7 +3603,7 @@ void BI_ProcessControlPress()
 		break;
 		
 		case "hk_Cabin":
-			if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE && !bSeaReloadStarted)
+			if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE && !bSeaReloadStarted) // pchar.Ship.Type != SHIP_NOTUSED
 			{
 				Sea_CabinStartNow();
 			}
@@ -3935,22 +3950,21 @@ void ControlsDesc()
 			sAttrB = "Con"+numLine+"Back";
 			sAttr = "Con"+numLine;
 			sAttrDes = "Con"+numLine+"desc";
-			
+
 			BattleInterface.textinfo.(sAttrB).text = "" ;
 			BattleInterface.textinfo.(sAttr).text = "";
 			BattleInterface.textinfo.(sAttrDes).text = "" ;
-			
-			
+
 			BattleInterface.textinfo.(sAttr).color = colorbase;
 			BattleInterface.textinfo.(sAttrDes).color = colorbase;
 			
 		}
-		
+
 		numLine = 7;
 		sAttrB = "Con"+numLine+"Back";
 		sAttr = "Con"+numLine;
 		sAttrDes = "Con"+numLine+"desc";
-		
+
         // TUTOR-ВСТАВКА
 		if(TW_IsActive())
 		{
@@ -4028,7 +4042,7 @@ void ControlsDesc()
 			sAttrDes = "Con"+numLine+"desc";
 			sAttrB = "Con"+numLine+"Back";
 			
-			if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE )
+			if(!bGlobalTutor && sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE) // pchar.Ship.Type != SHIP_NOTUSED
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_Cabin");
 				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("hk_Cabin","ControlsNames.txt");

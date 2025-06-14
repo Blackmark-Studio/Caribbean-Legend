@@ -68,6 +68,8 @@ bool locCameraToPosEx(float x, float y, float z, bool isTeleport, float fMorphSp
 {
 	if(IsEntity(&locCamera) == 0) return false;
 	if(locCameraEnableFree == true) return true;
+	int delta = GetDeltaTime();
+	fMorphSpeed *= delta * 0.02;
 	bool res = SendMessage(&locCamera, "lffflf", MSG_CAMERA_TOPOS, x, y, z, isTeleport, fMorphSpeed);
 	locCameraCurMode = LOCCAMERA_TOPOS;
 	return res;

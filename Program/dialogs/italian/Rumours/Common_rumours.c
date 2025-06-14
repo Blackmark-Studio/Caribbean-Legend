@@ -24,7 +24,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			SetQuestHeader("DWH");
 			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;;
+			pchar.questTemp.DWH_Start = true;
 			
 			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
 			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
@@ -148,27 +148,34 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         string posrep1, posrep2, answ1, answ2, answ3, answ4;
         if (RumourHasInformation(srum))
         {
-            posrep1 = RandPhraseSimple(" That's it...", " You might find it interesting.");
-            posrep2 = " Hey, captain, do you have any news for our colony to tell?";
-            answ1 = RandPhraseSimple(RandSwear() + "That's very interesting, "+GetFullName(NPChar)+".",
-                                 "Then tell me about...");
-            answ2 = RandPhraseSimple(RandSwear() + "Interesting! There is one more question I want to ask...","One more question.");
-            answ3 = RandPhraseSimple("Well, anything can happen. Sorry, but I have nothing special to tell you. ","I am quite in a hurry, so next time perhaps.");
+            posrep1 = RandPhraseSimple(" Così stanno le cose...", " Forse lo troverai divertente.");
+            posrep2 = " E lei, capitano, ha qualche notizia per la nostra colonia?";
+            answ1 = RandPhraseSimple(RandSwear() + "Storie interessanti, quelle che racconti, "+GetFullName(NPChar)+".",
+                                 "Allora raccontami ancora...");
+            answ2 = RandPhraseSimple(RandSwear() + "Molto interessante! Vorrei chiederti anche un'altra cosa...","Un'altra domanda, per favore.");
+            answ3 = RandPhraseSimple("Succedono tante cose strane al mondo. Mi dispiace, ma non ho novità.","Ho un po’ di fretta, magari un’altra volta.");
             answ4 = "";
         }
         else
         {
-            posrep1 = " It is quite a dull place here. So if something does happen, then everyone will talk about it.";
-            posrep2 = " Nothing of interest. Maybe " + GetAddress_Form(NPChar) + " might know something?";
-            answ1 = RandPhraseSimple("Then tell me about...",RandSwear() + "You know nothing! Fine, another topic...");
-            answ2 = RandPhraseSimple("Whatever, just tell me something else...","Yeah, you were not much of help, got anything else to share with me?");
-            answ3 = RandPhraseSimple("I doubt that I've got anything of interest to tell you.","It will be a pleasure for me, but let's talk next time.");
+            posrep1 = " Qui succede raramente qualcosa. Ma se accade qualcosa di insolito, tutti ne parlano.";
+            posrep2 = " Quindi nessuna novità. Ma forse il capitano " + GetAddress_Form(NPChar, false) + " sa qualcosa?";
+            answ1 = RandPhraseSimple("Allora raccontami qualcos'altro...",RandSwear() + "Non sai niente! Va bene, volevo chiederti anche un'altra cosa...");
+            answ2 = RandPhraseSimple("Dici che non sai nulla, va bene, allora dimmi...","Non mi sei stato molto d’aiuto"+NPCharSexPhrase(NPChar, "","a")+", ma forse sai qualcos'altro?");
+            answ3 = RandPhraseSimple("Non credo di avere nulla di interessante da raccontare.","Sarei felice di raccontare qualcosa, ma un’altra volta.");
             answ4 = "";
         }
-		Dialog.Text = NPCStringReactionRepeat(srum,srum+posrep1,srum+posrep2,RandPhraseSimple("Purtroppo, non ho altro da dirti, lasciami passare.","Ne ho abbastanza delle tue domande, scusami, ho un sacco di altre cose da fare."),"block",1,npchar,Dialog.CurrentNode);
-        link.l1 = HeroStringReactionRepeat(answ1,answ2,answ3,answ4,npchar,Dialog.CurrentNode);
+		Dialog.Text = NPCStringReactionRepeat(srum,
+            srum+posrep1,
+            srum+posrep2,
+            RandPhraseSimple("Purtroppo non so altro, lasciami andare.","Mi hai stancato con tutte queste domande, scusami, ma ho altro da fare."),"block", 1, npchar, Dialog.CurrentNode);
+        link.l1 = HeroStringReactionRepeat(answ1,
+                                            answ2,
+                                            answ3,
+                                            answ4,
+                                            npchar, Dialog.CurrentNode);
 		link.l1.go = "new question";
-		link.l2 = RandPhraseSimple("Grazie, dovrei andare.","Addio.");
+		link.l2 = RandPhraseSimple("Grazie, devo congedarmi.","Arrivederci.");
 		link.l2.go = "exit";
 	break;
 
@@ -187,7 +194,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			SetQuestHeader("DWH");
 			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;;
+			pchar.questTemp.DWH_Start = true;
 			
 			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
 			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
@@ -313,27 +320,34 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // fix
         if (RumourHasInformation(srum))
         {
-            posrep1 = RandPhraseSimple(" That's it...", " You might find it interesting.");
-            posrep2 = " Hey, captain, do you have any news for our colony to tell?";
-            answ1 = RandPhraseSimple(RandSwear() + "That's very interesting, "+GetFullName(NPChar)+".",
-                                 "Then tell me about...");
-            answ2 = RandPhraseSimple(RandSwear() + "Interesting! There is one more question I want to ask...","One more question.");
-            answ3 = RandPhraseSimple("Well, everything can happen in our world. Sorry, but I have nothing special to tell you. ","I am quite in a hurry, so next time perhaps.");
+            posrep1 = RandPhraseSimple(" Così stanno le cose...", " Forse lo troverai divertente.");
+            posrep2 = " E lei, capitano, ha qualche notizia per la nostra colonia?";
+            answ1 = RandPhraseSimple(RandSwear() + "Storie interessanti, quelle che racconti, "+GetFullName(NPChar)+".",
+"Allora raccontami ancora...");
+            answ2 = RandPhraseSimple(RandSwear() + "Molto interessante! Vorrei chiederti anche un'altra cosa...","Un'altra domanda, per favore.");
+            answ3 = RandPhraseSimple("Succedono tante cose strane al mondo. Mi dispiace, ma non ho novità.","Ho un po’ di fretta, magari un’altra volta.");
             answ4 = "";
         }
         else
         {
-            posrep1 = " It is quite a dull place here. So if something does happen, then everyone will talk about it.";
-            posrep2 = " Nothing of interest. Maybe " + GetAddress_Form(NPChar) + " might know something?";
-            answ1 = RandPhraseSimple("Then tell me about...",RandSwear() + "You know nothing! Fine, another topic...");
-            answ2 = RandPhraseSimple("Whatever, just tell me something else...","Yeah, you were not much of help, got anything else to share with me?");
-            answ3 = RandPhraseSimple("I doubt that I've got anything of interest to tell you.","It will be a pleasure for me, but let's talk next time.");
+            posrep1 = " Qui succede raramente qualcosa. Ma se accade qualcosa di insolito, tutti ne parlano.";
+            posrep2 = " Quindi nessuna novità. Ma forse il capitano " + GetAddress_Form(NPChar, false) + " sa qualcosa?";
+            answ1 = RandPhraseSimple("Allora raccontami qualcos'altro...",RandSwear() + "Non sai niente! Va bene, volevo chiederti anche un'altra cosa...");
+            answ2 = RandPhraseSimple("Dici che non sai nulla, va bene, allora dimmi...","Non mi sei stato molto d’aiuto"+NPCharSexPhrase(NPChar, "","a")+", ma forse sai qualcos'altro?");
+            answ3 = RandPhraseSimple("Non credo di avere nulla di interessante da raccontare.","Sarei felice di raccontare qualcosa, ma un’altra volta.");
             answ4 = "";
         }
-		Dialog.Text = NPCStringReactionRepeat(srum,srum+posrep1,srum+posrep2,RandPhraseSimple("Purtroppo, non ho altro da dirti, lasciami passare.","Ne ho abbastanza delle tue domande, scusami, ho un sacco di altre cose da fare."),"block",1,npchar,Dialog.CurrentNode);
-        link.l1 = HeroStringReactionRepeat(answ1,answ2,answ3,answ4,npchar,Dialog.CurrentNode);
+		Dialog.Text = NPCStringReactionRepeat(srum,
+            srum+posrep1,
+            srum+posrep2,
+            RandPhraseSimple("Purtroppo non so altro, lasciami andare.","Mi hai stancato con tutte queste domande, scusami, ma ho altro da fare."),"block", 1, npchar, Dialog.CurrentNode);
+        link.l1 = HeroStringReactionRepeat(answ1,
+            answ2,
+            answ3,
+            answ4,
+            npchar, Dialog.CurrentNode);
 		link.l1.go = "new question";
-		link.l2 = RandPhraseSimple("Grazie, dovrei andare.","Addio.");
+		link.l2 = RandPhraseSimple("Grazie, devo congedarmi.","Arrivederci.");
 		link.l2.go = "exit";
 	break;
 	
@@ -346,27 +360,34 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // fix
         if (RumourHasInformation(srum))
         {
-            posrep1 = RandPhraseSimple(" That's it...", " You might find it interesting.");
-            posrep2 = " Hey, captain, do you have any news for our colony to tell?";
-            answ1 = RandPhraseSimple(RandSwear() + "That's very interesting, "+GetFullName(NPChar)+".",
-                                 "Then tell me about...");
-            answ2 = RandPhraseSimple(RandSwear() + "Whatever, just tell me something else...","Yeah, you were not much of help, got anything else to share with me?");
-            answ3 = RandPhraseSimple("Well, everything can happen in our world. Sorry, but I have nothing special to tell you. ","I am quite in a hurry, so next time perhaps.");
+            posrep1 = RandPhraseSimple(" Così stanno le cose...", " Forse la divertirà.");
+            posrep2 = " E lei, capitano, ha qualche notizia per la nostra colonia?";
+            answ1 = RandPhraseSimple(RandSwear() + "Cose interessanti, quelle che racconti, "+GetFullName(NPChar)+".",
+"Allora raccontami ancora...");
+            answ2 = RandPhraseSimple(RandSwear() + "Molto interessante! Vorrei chiederti anche un'altra cosa...","Un'altra domanda, per favore.");
+            answ3 = RandPhraseSimple("Succedono tante cose strane al mondo. Mi dispiace, ma non ho novità.","Ho un po’ di fretta, magari un’altra volta.");
             answ4 = "";
         }
         else
         {
-            posrep1 = " It is quite a dull place here. So if something does happen, then everyone will talk about it.";
-            posrep2 = " Nothing of interest. Maybe " + GetAddress_Form(NPChar) + " might know something?";
-            answ1 = RandPhraseSimple("Then tell me about...",RandSwear() + "You know nothing! Fine, another topic...");
-            answ2 = RandPhraseSimple("Whatever, just tell me something else...","Yeah, you were not much of help, got anything else to share with me?");
-            answ3 = RandPhraseSimple("I doubt that I've got anything of interest to tell you.","It will be a pleasure for me, but let's talk next time.");
+            posrep1 = " Qui succede raramente qualcosa. Ma se accade qualcosa di insolito, tutti ne parlano.";
+            posrep2 = " Nessuna novità. Ma forse il capitano " + GetAddress_Form(NPChar, false) + " sa qualcosa?";
+            answ1 = RandPhraseSimple("Allora raccontami qualcos'altro...",RandSwear() + "Non sai nulla! Va bene, volevo chiederti anche un'altra cosa...");
+            answ2 = RandPhraseSimple("Dici che non sai nulla, va bene, allora dimmi...","Non mi sei stato molto d’aiuto"+NPCharSexPhrase(NPChar, "","a")+", ma forse sai qualcos'altro?");
+            answ3 = RandPhraseSimple("Non credo di avere nulla di interessante da raccontare.","Sarei felice di raccontare qualcosa, ma un’altra volta.");
             answ4 = "";
         }
-		Dialog.Text = NPCStringReactionRepeat(srum,srum+posrep1,srum+posrep2,RandPhraseSimple("Ahimè, non ho altro da dirti, lasciami passare.","Ne ho abbastanza delle tue domande, scusami, ho un sacco di altre cose da fare."),"block",1,npchar,Dialog.CurrentNode);
-        link.l1 = HeroStringReactionRepeat(answ1,answ2,answ3,answ4,npchar,Dialog.CurrentNode);
+		Dialog.Text = NPCStringReactionRepeat(srum,
+            srum+posrep1,
+            srum+posrep2,
+            RandPhraseSimple("Purtroppo non so altro, lasciami andare.","Mi hai stancato con tutte queste domande, scusami, ma ho altro da fare."),"block", 1, npchar, Dialog.CurrentNode);
+        link.l1 = HeroStringReactionRepeat(answ1,
+            answ2,
+            answ3,
+            answ4,
+            npchar, Dialog.CurrentNode);
 		link.l1.go = "question";
-		link.l2 = RandPhraseSimple("Grazie, dovrei andare.","Addio.");
+		link.l2 = RandPhraseSimple("Grazie, devo congedarmi.","Arrivederci.");
 		link.l2.go = "exit";
 	break;
 	
@@ -402,29 +423,36 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			break;
         }
 		//<-- Украденное воспоминание
-        if (RumourHasInformation(srum))
+       if (RumourHasInformation(srum))
         {
-            posrep1 = RandPhraseSimple(" That's it...", " You might find it interesting.");
-            posrep2 = " Hey, captain, do you have any news for our colony to tell?";
-            answ1 = RandPhraseSimple(RandSwear() + "That's very interesting, "+GetFullName(NPChar)+".",
-                                 "Then tell me about...");
-            answ2 = RandPhraseSimple(RandSwear() + "Whatever, just tell me something else...","Yeah, you were not much of help, got anything else to share with me?");
-            answ3 = RandPhraseSimple("Well, everything can happen in our world. Sorry, but I have nothing special to tell you. ","I am quite in a hurry, so next time perhaps.");
+            posrep1 = RandPhraseSimple(" Così stanno le cose...", " Ecco qua.");
+            posrep2 = " Sì, tutto qui. Non ho altro da aggiungere a quanto detto.";
+            answ1 = RandPhraseSimple("Storie interessanti, quelle che raccontate, signore! Ma forse mi permettete un’altra domanda...",
+"Permettete un’altra domanda...");
+            answ2 = RandPhraseSimple("Molto interessante! Vorrei chiedervi anche un'altra cosa...","Un'altra domanda, per favore.");
+            answ3 = RandPhraseSimple("Succedono tante cose strane al mondo! Posso fare un'altra domanda...","Vi ringrazio, signore. Ma forse sapete ancora qualcosa...");
             answ4 = "";
         }
         else
         {
-            posrep1 = " It is quite a dull place here. So if something does happen, then everyone will talk about it.";
-            posrep2 = " Nothing of interest. Maybe " + GetAddress_Form(NPChar) + " might know something?";
-            answ1 = RandPhraseSimple("Then tell me about...",RandSwear() + "You know nothing! Fine, another topic...");
-            answ2 = RandPhraseSimple("Whatever, just tell me something else...","Yeah, you were not much of a help, got anything else to share with me?");
-            answ3 = RandPhraseSimple("I doubt that I've got anything of interest to tell you.","It will be a pleasure for me, but let's talk next time.");
+            posrep1 = " Qui succede raramente qualcosa. Ma se succede qualcosa di insolito, tutti ne parlano.";
+            posrep2 = " Quindi nessuna novità. Ma forse il capitano " + GetAddress_Form(NPChar, false) + " sa qualcosa?";
+            answ1 = RandPhraseSimple("Allora raccontatemi qualcos'altro...",RandSwear() + "Non sapete nulla! Va bene, volevo chiedervi anche un'altra cosa...");
+            answ2 = RandPhraseSimple("Dite che non sapete nulla, va bene, allora ditemi...","Non mi siete stato molto d’aiuto"+NPCharSexPhrase(NPChar, "","a")+", ma forse sapete qualcos'altro?");
+            answ3 = RandPhraseSimple("Non credo di avere nulla di interessante da raccontare.","Sarei felice di raccontare qualcosa, ma un’altra volta.");
             answ4 = "";
         }
-		Dialog.Text = NPCStringReactionRepeat(srum,srum+posrep1,srum+posrep2,RandPhraseSimple("Spero di aver reso chiaro il mio punto - ho finito.","Ne ho abbastanza delle tue domande, capitano. Vai a trovare qualcosa di meglio da fare!"),"block",1,npchar,Dialog.CurrentNode);
-        link.l1 = HeroStringReactionRepeat(answ1,answ2,answ3,answ4,npchar,Dialog.CurrentNode);
+		Dialog.Text = NPCStringReactionRepeat(srum,
+            srum+posrep1,
+            srum+posrep2,
+            RandPhraseSimple("Mi pare di essere stato chiaro – ho detto tutto.","Mi avete stancato con tutte queste domande, capitano. Andate a fare il vostro dovere!"),"block", 1, npchar, Dialog.CurrentNode);
+        link.l1 = HeroStringReactionRepeat(answ1,
+            answ2,
+            answ3,
+            answ4,
+            npchar, Dialog.CurrentNode);
 		link.l1.go = "question";
-		link.l2 = RandPhraseSimple("Grazie, dovrei andare.","Addio.");
+		link.l2 = RandPhraseSimple("Grazie, devo congedarmi.","Arrivederci.");
 		link.l2.go = "exit";
 	break;
 	
@@ -462,27 +490,33 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Украденное воспоминание
         if (RumourHasInformation(srum))
         {
-            posrep1 = RandPhraseSimple(" That's it...", " You might find it interesting.");
-            posrep2 = " Hey, captain, do you have any news for our colony to tell?";
-            answ1 = RandPhraseSimple(RandSwear() + "That's very interesting, "+GetFullName(NPChar)+".",
-                                 "Then tell me about...");
-            answ2 = RandPhraseSimple(RandSwear() + "Whatever, just tell me something else...","Yeah, you were not much of help, got anything else to share with me?");
-            answ3 = RandPhraseSimple("Well, everything can happen in our world. Sorry, but I have nothing special to tell you. ","I am quite in a hurry, so next time perhaps.");
+            posrep1 = RandPhraseSimple(" Così stanno le cose...", " Forse la divertirà.");
+            posrep2 = " Sì, e questo è tutto. Non ho altro da aggiungere a quanto detto.";
+            answ1 = RandPhraseSimple("Storie interessanti, quelle che raccontate, signora! Ma forse mi permettete un’altra domanda...", "Permettete un’altra domanda...");
+            answ2 = RandPhraseSimple("Molto interessante! Vorrei chiedervi anche un'altra cosa...","Un'altra domanda, per favore.");
+            answ3 = RandPhraseSimple("Quante cose strane succedono nel mondo! Posso chiedervi ancora qualcosa...","Vi ringrazio, signora. Ma forse sapete ancora qualcosa...");
             answ4 = "";
         }
         else
         {
-            posrep1 = " It is quite a dull place here. So if something does happen, then everyone will talk about it.";
-            posrep2 = " Nothing of interest. " + GetAddress_Form(NPChar) + " might know something?";
-            answ1 = RandPhraseSimple("Then tell me about...",RandSwear() + "You know nothing! Fine, another topic...");
-            answ2 = RandPhraseSimple("Whatever, just tell me something else...","Yeah, you were not much of help, got anything else to share with me?");
-            answ3 = RandPhraseSimple("I doubt that I've got anything of interest to tell you.","It will be my pleasure, but let's talk next time.");
+            posrep1 = " Qui succede raramente qualcosa. Ma se accade qualcosa di insolito, tutti ne parlano.";
+            posrep2 = " Quindi nessuna novità. Ma forse il capitano " + GetAddress_Form(NPChar, false) + " sa qualcosa?";
+            answ1 = RandPhraseSimple("Allora raccontatemi qualcos'altro...",RandSwear() + "Non sapete nulla! Va bene, volevo chiedervi anche un'altra cosa...");
+            answ2 = RandPhraseSimple("Dite che non sapete nulla, va bene, allora ditemi...","Non mi siete stata molto d’aiuto"+NPCharSexPhrase(NPChar, "","a")+", ma forse sapete qualcos'altro?");
+            answ3 = RandPhraseSimple("Non credo di avere nulla di interessante da raccontare.","Sarei felice di raccontare qualcosa, ma un’altra volta.");
             answ4 = "";
         }
-		Dialog.Text = NPCStringReactionRepeat(srum,srum+posrep1,srum+posrep2,RandPhraseSimple("Spero di aver reso il mio punto - ho finito.","Ne ho abbastanza delle tue domande, capitano. Vai a trovare qualcosa di meglio da fare!"),"block",1,npchar,Dialog.CurrentNode);
-        link.l1 = HeroStringReactionRepeat(answ1,answ2,answ3,answ4,npchar,Dialog.CurrentNode);
+		Dialog.Text = NPCStringReactionRepeat(srum,
+            srum+posrep1,
+            srum+posrep2,
+            RandPhraseSimple("Mi pare di essere stata chiara – ho detto tutto.","Mi avete stancata con tutte queste domande, capitano. Andate a svolgere i vostri compiti!"),"block", 1, npchar, Dialog.CurrentNode);
+        link.l1 = HeroStringReactionRepeat(answ1,
+            answ2,
+            answ3,
+            answ4,
+            npchar, Dialog.CurrentNode);
 		link.l1.go = "question";
-		link.l2 = RandPhraseSimple("Grazie, dovrei andare.","Addio.");
+		link.l2 = RandPhraseSimple("Grazie, devo congedarmi.","Arrivederci.");
 		link.l2.go = "exit";
 	break;
 	
@@ -513,27 +547,34 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // fix
         if (RumourHasInformation(srum))
         {
-            posrep1 = RandPhraseSimple(" That's it...", " You might find it interesting.");
-            posrep2 = " Hey, captain, do you have any news for our colony to tell?";
-            answ1 = RandPhraseSimple(RandSwear() + "That's very interesting, "+GetFullName(NPChar)+".",
-                                 "Then tell me about...");
-            answ2 = RandPhraseSimple(RandSwear() + "Whatever, just tell me something else...","Yeah, you were not much of a help, got anything else to share with me?");
-            answ3 = RandPhraseSimple("Well, everything can happen in our world. Sorry, but I have nothing special to tell you. ","I am quite in a hurry, so next time perhaps.");
+            posrep1 = RandPhraseSimple(" Così stanno le cose...", " Forse la divertirà.");
+            posrep2 = " E lei, capitano, ha qualche notizia per la nostra colonia?";
+            answ1 = RandPhraseSimple(RandSwear() + "Cose interessanti, quelle che racconti, "+GetFullName(NPChar)+".",
+"Allora raccontami ancora...");
+            answ2 = RandPhraseSimple(RandSwear() + "Molto interessante! Vorrei chiederti anche un'altra cosa...","Un'altra domanda, per favore.");
+            answ3 = RandPhraseSimple("Succedono tante cose strane al mondo. Mi dispiace, ma non ho novità.","Ho un po’ di fretta, magari un’altra volta.");
             answ4 = "";
         }
         else
         {
-            posrep1 = " It is quite a dull place here. So if something does happen, then everyone will talk about it.";
-            posrep2 = " Nothing of interest. " + GetAddress_Form(NPChar) + " might know something?";
-            answ1 = RandPhraseSimple("Then tell me about...",RandSwear() + "You know nothing! Fine, another topic...");
-            answ2 = RandPhraseSimple("Whatever, just tell me something else...","Yeah, you were not much of help, got anything else to share with me?");
-            answ3 = RandPhraseSimple("I doubt that I've got anything of interest to tell you.","It will be my pleasure, but let's talk next time.");
+            posrep1 = " Qui succede raramente qualcosa. Ma se accade qualcosa di insolito, tutti ne parlano.";
+            posrep2 = " Quindi nessuna novità. Ma forse il capitano " + GetAddress_Form(NPChar, false) + " sa qualcosa?";
+            answ1 = RandPhraseSimple("Allora raccontami qualcos'altro...",RandSwear() + "Non sai nulla! Va bene, volevo chiederti anche un'altra cosa...");
+            answ2 = RandPhraseSimple("Dici che non sai nulla, va bene, allora dimmi...","Non mi sei stato molto d’aiuto"+NPCharSexPhrase(NPChar, "","a")+", ma forse sai qualcos'altro?");
+            answ3 = RandPhraseSimple("Non credo di avere nulla di interessante da raccontare.","Sarei felice di raccontare qualcosa, ma un’altra volta.");
             answ4 = "";
         }
-		Dialog.Text = NPCStringReactionRepeat(srum,srum+posrep1,srum+posrep2,RandPhraseSimple("Purtroppo, non ho altro da raccontarti, lasciami passare.","Ne ho abbastanza delle tue domande, scusami, ho molte altre cose da fare."),"block",1,npchar,Dialog.CurrentNode);
-        link.l1 = HeroStringReactionRepeat(answ1,answ2,answ3,answ4,npchar,Dialog.CurrentNode);
+		Dialog.Text = NPCStringReactionRepeat(srum,
+            srum+posrep1,
+            srum+posrep2,
+            RandPhraseSimple("Purtroppo non so altro, lasciami andare.","Mi hai stancato con tutte queste domande, scusami, ma ho altro da fare."),"block", 1, npchar, Dialog.CurrentNode);
+        link.l1 = HeroStringReactionRepeat(answ1,
+            answ2,
+            answ3,
+            answ4,
+            npchar, Dialog.CurrentNode);
 		link.l1.go = "question";
-		link.l2 = RandPhraseSimple("Grazie, dovrei andare.","Addio.");
+		link.l2 = RandPhraseSimple("Grazie, devo congedarmi.","Arrivederci.");
 		link.l2.go = "exit";
 	break;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -633,7 +674,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			SetQuestHeader("DWH");
 			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;;
+			pchar.questTemp.DWH_Start = true;
 			
 			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
 			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
@@ -1428,41 +1469,41 @@ string sRumourAboutOwners_Init(string sOwnerType, int iRumourNum) // База с
 {
 	
 	string STR_MAYOR[MAX_RUMOURS_ABOUT_OWNERS]; // Губернаторы
-	STR_MAYOR[0] = "Oh, sir governor is an excellent man. He manages our colony with great skill, never had a single conflict since the day of foundation\nHis only flaw is... he is... well... he is quite thrifty. It might be just another virtue though.";
-	STR_MAYOR[1] = "Oh, sir governor is an excellent man. He manages our colony with great skill, never had a single conflict since the day of foundation\nHis only flaw is... he is... well... he is quite thrifty. It might be just another virtue though.";
-	STR_MAYOR[2] = "Our governor is a good man but he is weak character. If he had a little firmness in his soul, our merchants could've got small tax breaks ... And it's already time to allocate subsidies for repairing the fort.";
-	STR_MAYOR[3] = "Hmm ... He's recently become our governor. He is quite young and therefore very initiative. With him our colony is flourishing.";
-	STR_MAYOR[4] = "Our governor is still relatively young. They say he is a good-for-nothing younger son of a Spanish count, sent far away from the yard to stop shaming his family. He has been appointed here quite recently, and didn't have time to create anything memorable.";
-	STR_MAYOR[5] = "Hmm ... He's recently become our governor. He is quite young and therefore very initiative. With him our colony is flourishing";
-	STR_MAYOR[6] = "Well... Nothing... I can't say anything bad about him...";
+	STR_MAYOR[0] = "Oh, il Signor Governatore è una persona straordinaria. Amministra abilmente la nostra colonia — sin dalla sua fondazione non abbiamo avuto alcun conflitto importante\nIl suo unico difetto è che è... hmm... molto parsimonioso. Anche se, forse, è una virtù.";
+	STR_MAYOR[1] = "Oh, il Signor Governatore è una persona straordinaria. Amministra abilmente la nostra colonia — sin dalla sua fondazione non abbiamo avuto alcun conflitto importante\nIl suo unico difetto è che è... hmm... molto parsimonioso. Anche se, forse, è una virtù.";
+	STR_MAYOR[2] = "Ahimè, il nostro governatore è una brava persona... ma priva di carattere. Se avesse un po' più di fermezza, i nostri mercanti godrebbero di alcune agevolazioni fiscali... E i fondi per la riparazione del forte sarebbero già stati stanziati.";
+	STR_MAYOR[3] = "Hmm... È diventato il nostro governatore di recente. È piuttosto giovane e quindi molto intraprendente — sotto la sua guida, la nostra colonia prospera.";
+	STR_MAYOR[4] = "Il nostro governatore è ancora relativamente giovane. Si dice che sia il figlio minore scapestrato di un conte spagnolo, mandato lontano dalla corte per smettere di disonorare la sua famiglia. È stato nominato qui da poco e non ha ancora avuto l'opportunità di distinguersi.";
+	STR_MAYOR[5] = "Hmm... È diventato il nostro governatore di recente. È piuttosto giovane e quindi molto intraprendente — sotto la sua guida, la nostra colonia prospera.";
+	STR_MAYOR[6] = "Ehm... Non posso dire nulla di male su di lui.";
 	
 	string STR_TAVERNKEEPER[MAX_RUMOURS_ABOUT_OWNERS]; // Тавернщики
-	STR_TAVERNKEEPER[0] = "Hm, I wouldn't trust my property to this rogue. Don't misunderstand me, but it seems to me that this is the most unreliable person in our town\nI heard he's working with pirates and smugglers whom often can be seen in his tavern.";
-	STR_TAVERNKEEPER[1] = "What can we say about him! Cowardly, also not the smartest person I know. Besides, he is greedy for money, which is why he constantly gets into various troubles! But he is always up to date with all the news.";
-	STR_TAVERNKEEPER[2] = "Quite a pleasant guy. It is always nice spending time in his tavern, he also got a great sense of humor. The most important thing about him is that he keeps a tavern in order and prevents drunk lowlifes from pestering good citizens.";
-	STR_TAVERNKEEPER[3] = "Incredible man. He shouldn't keep a tavern but should be an informant for intelligence office. Sometimes it seems that he knows literally everything that happens in our town. It even scares me.";
-	STR_TAVERNKEEPER[4] = "I don't know what to tell you. A man. Keeps a tavern. Knows everything about the town and its citizens.";
-	STR_TAVERNKEEPER[5] = "They say that one can rely on it. On the other hand, I heard that he doesn't like unnecessary risk and always careful in doing his business. Yes, and dark affairs is not his type of business.";
-	STR_TAVERNKEEPER[6] = "He's got the tavern from his father. His father kept a tavern not far from here, on the island of Highrock on another archipelago. Then his father moved here, built a new tavern here, and now his son runs it..";
-	
+	STR_TAVERNKEEPER[0] = "Hmm, non affiderei i miei beni a quel furfante. Non fraintendetemi, ma mi sembra la persona meno affidabile della nostra città. Si dice che abbia a che fare con contrabbandieri e pirati – e nella sua taverna c'è sempre un'accozzaglia di gente losca!";
+	STR_TAVERNKEEPER[1] = "Cosa si può dire di lui! È codardo e non molto intelligente. Inoltre, è avido di denaro, il che lo mette costantemente nei guai! Ma è sempre aggiornato su tutte le novità.";
+	STR_TAVERNKEEPER[2] = "Un tipo piuttosto simpatico. La sua taverna è sempre accogliente, e lui ha un buon senso dell'umorismo. Soprattutto, mantiene l'ordine e non permette ai ubriaconi di infastidire i cittadini rispettabili.";
+	STR_TAVERNKEEPER[3] = "Una persona straordinaria. Dovrebbe fare l'informatore per la cancelleria segreta invece di gestire una taverna. A volte sembra sapere tutto ciò che accade nella nostra città. È quasi inquietante.";
+	STR_TAVERNKEEPER[4] = "Non so cosa dirvi su di lui. È una persona come tante. Gestisce una taverna e, di conseguenza, è al corrente di tutte le notizie della nostra isola.";
+	STR_TAVERNKEEPER[5] = "Si dice che sia affidabile. D'altra parte, ho sentito che evita i rischi inutili e gestisce i suoi affari con calcolo. E non sembra essere coinvolto in attività losche.";
+	STR_TAVERNKEEPER[6] = "Ha ereditato la taverna da suo padre. Suo padre gestiva una taverna non lontano da qui, sulla piccola isola di Hairoch in un altro arcipelago. Poi il padre si trasferì qui, costruì una nuova taverna, e ora è il figlio a gestirla.";
+		
 	string STR_SHIPYARDER[MAX_RUMOURS_ABOUT_OWNERS]; // Верфисты
-	STR_SHIPYARDER[0] = "Builds ships. I dunno. He's a quiet and peaceful. I guess, he's a good man.";
-	STR_SHIPYARDER[1] = "Builds ships. I dunno. He's a quiet and peaceful. I guess, he's a good man.";
-	STR_SHIPYARDER[2] = "A good man, but they say that he is too harsh. Constantly scolds all employees. Therefore, they often leave. Still, in spite of this, he is an excellent shipbuilder.";
-	STR_SHIPYARDER[3] = "He is a very educated person. I heard that he studied shipbuilding in England, then in Holland. And in the end, he ended up here - far from the metropolis, in the provincial archipelago\nPeople say that he had troubles with the Holy Inquisition, and he had to flee to the colony.";
-	STR_SHIPYARDER[4] = "This old man has to retire already and give the road for some fresh blood. He constantly dreams of past times, and grumbles when someone orders something from him besides caravels or galleons.";
-	STR_SHIPYARDER[5] = "Great lad. Always willing to help. I have to say, he builds fine ships for such a shithole like this place.";
-	STR_SHIPYARDER[6] = "He was a prisoner, exiled from Europe to our colony until it turned out that he had a talent for shipbuilding. After two magnificent brigs had been built under his leadership at the shipyard of our colony, he was forgiven for his transgressions, and now he is a full member of our society.";
+	STR_SHIPYARDER[0] = "Costruisce buone navi... Ma come persona, è difficile dire qualcosa – vive tranquillamente e riservatamente. Probabilmente è una brava persona.";
+	STR_SHIPYARDER[1] = "Costruisce buone navi... Ma come persona, è difficile dire qualcosa – vive tranquillamente e riservatamente. Probabilmente è una brava persona.";
+	STR_SHIPYARDER[2] = "Una brava persona, ma si dice che sia troppo severo. Rimprovera costantemente i suoi operai. Per questo motivo cambiano spesso. Tuttavia, nonostante ciò, è un eccellente costruttore navale.";
+	STR_SHIPYARDER[3] = "È una persona molto istruita. Si dice che abbia studiato costruzione navale in Inghilterra e poi in Olanda. Alla fine è finito qui – lontano dalla metropoli, in un arcipelago sperduto. Pare che abbia avuto problemi con la Santa Inquisizione, e sia dovuto fuggire nelle colonie.";
+	STR_SHIPYARDER[4] = "Sì, quel vecchio non serve più a molto. Sogna continuamente i tempi passati e brontola quando gli si ordina qualcosa che non sia una caravella o un galeone.";
+	STR_SHIPYARDER[5] = "Un tipo in gamba. Sempre pronto ad aiutare e a tirarti fuori dai guai. Bisogna dire che costruisce navi molto buone per un posto così remoto.";
+	STR_SHIPYARDER[6] = "Era un esiliato nella nostra colonia finché non si è scoperto il suo talento nella costruzione navale. Dopo che sotto la sua direzione furono costruite due splendide brigantine, gli furono perdonati i peccati, e ora è un membro a pieno titolo della nostra comunità.";
 	
 	string STR_TRADER[MAX_RUMOURS_ABOUT_OWNERS]; // Магазинщики
-	STR_TRADER[0] = "I can't say anything bad about him. A decent citizen, often visits our chapel. People seem to like him. Never heard of anyone being angry at him.";
-	STR_TRADER[1] = "He is the main supplier of our governor, and this gives him a good income. But he conducts his affairs honestly. Well, at least he hasn't been noticed in anything shaming for him.";
-	STR_TRADER[2] = "This fat man has a big respect in our city. His goods are always excellent, and I don't remember a single case he has ever cheated someone.";
-	STR_TRADER[3] = "He's good-for-nothing, really. Trades, but no sense. Sometimes one good is out of stock, sometimes another, sometimes a half of goods... He can't even get himself out of debts.";
-	STR_TRADER[4] = "He is not a good man, monsieur. I heard that he was Piere Thiers's right hand, previous trader, but he ruined his business it and then bought the store. I don't know how about the quality of the goods that he sells, but as a person he is very unpleasant to me.";
-	STR_TRADER[5] = "Oh! He is an ugly man, I wouldn't advise you to have any business with him\nHe keeps a half of the inhabitants of our city in debt! And the goods those are sold in his store are always of poor quality.";
-	STR_TRADER[6] = "Nobody really knows anything about him. He has recently moved here, and immediately opened his business. Trades honestly, wasn't caught at smuggling.";
-	
+	STR_TRADER[0] = "Non posso dire nulla di male su di lui. Un cittadino rispettabile, un parrocchiano diligente della nostra chiesa. Non ho mai sentito nessuno parlarne male o avere rancore nei suoi confronti.";
+	STR_TRADER[1] = "È il principale fornitore del nostro governatore, e questo gli garantisce un buon reddito. Ma gestisce i suoi affari onestamente. Almeno, finora non è mai stato colto in fallo.";
+	STR_TRADER[2] = "Quel grassone è rispettato con merito nella nostra città. La sua merce è sempre di ottima qualità, e non ricordo che abbia mai imbrogliato qualcuno.";
+	STR_TRADER[3] = "È un tipo inconcludente. Fa commercio, sì, ma senza risultati. A volte manca una merce, a volte un’altra. E lui stesso è sempre indebitato.";
+	STR_TRADER[4] = "È una brutta persona, monsieur. Si dice che fosse l’assistente di Baudouin Coffier, ma lo rovinò e poi acquistò il negozio. Non so quanto valga la merce che vende, ma come persona mi è molto sgradevole.";
+	STR_TRADER[5] = "Oh! È un uomo disgustoso, non vi consiglierei affatto di fare affari con lui. Tiene metà della città in debito! E i prodotti del suo negozio sono sempre di bassa qualità.";
+	STR_TRADER[6] = "Nessuno sa davvero molto di lui. Si è trasferito qui da poco e ha subito aperto un’attività. Sembra commerciare onestamente, non fa contrabbando.";
+		
 	string sTempMayor = STR_MAYOR[iRumourNum];
 	string sTempTavernkeper = STR_TAVERNKEEPER[iRumourNum];
 	string sTempShipyarder = STR_SHIPYARDER[iRumourNum];

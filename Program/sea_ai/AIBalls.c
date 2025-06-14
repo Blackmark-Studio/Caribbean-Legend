@@ -76,7 +76,7 @@ void Ball_FlyNearCamera()
 
 int ballNumber;
 
-void Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0, float fDirAng, float fHeightAng, float fCannonDirAng, float fMaxFireDistance, string bort)
+void Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0, float fDirAng, float fHeightAng, float fCannonDirAng, float fMaxFireDistance, bool isAutoFire, string bort)
 {
 	int iCannonType = sti(aCharacter.Ship.Cannons.Type);
 	ref rCannon = GetCannonByType(iCannonType);
@@ -96,8 +96,15 @@ void Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0,
 	AIBalls.FromBort   = bort;
 	
 	// evganat - отключаем встроенный разброс
-	float fTempDispersionY = 0.0;//Degree2Radian(15.0);
-	float fTempDispersionX = 0.0;//Degree2Radian(5.0);
+	float fTempDispersionY = 0.0;
+	float fTempDispersionX = 0.0;
+	
+	// включаем разброс для автозалпа
+	if(isAutoFire)
+	{
+		fTempDispersionY = Degree2Radian(15.0);
+		fTempDispersionX = Degree2Radian(5.0);
+	}
 
 	//float fDamage2Cannons = 100.0;
 

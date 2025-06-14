@@ -1502,7 +1502,7 @@ void Tonzag_EnterAlonso() {
 	LAi_ActorTurnToCharacter(pchar, CharacterFromID("Tonzag_Captive"));
 	LAi_ActorTurnToCharacter(CharacterFromID("Tonzag"), CharacterFromID("Tonzag_Captive"));
 	
-	sld = GetCharacter(NPC_GenerateCharacter("Tonzag_Alonso", "citiz_36", "man", "man", 25, FRANCE, -1, true, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("Tonzag_Alonso", "Alonso", "man", "man", 25, FRANCE, -1, true, "pirate"));
 	sld.name = StringFromKey("Tonzag_2");
 	sld.lastname = StringFromKey("Tonzag_3");
 	sld.greeting = "hambit_other_4";

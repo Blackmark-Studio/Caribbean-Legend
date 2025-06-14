@@ -1359,7 +1359,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_2":
-			dialog.text = "Cosa? Ah! Hai proprio una bella fantasia, cinese! Antoon è un codardo, e van der Vink sta lì solo per proteggerlo, nel caso qualcuno rovini il loro “momento privato.”/nJoep indossa sempre una corazza pesante – quasi nessuna lama riesce a trapassarla. Ecco perché anche a te serve qualcosa di speciale. Prendi questo stocco. È lungo, più robusto della maggior parte delle altre spade, e pesa come una vera lama.";
+			dialog.text = "Cosa? Ah! Hai proprio una bella fantasia, cinese! Antoon è un codardo, e van der Vink sta lì solo per proteggerlo, nel caso qualcuno rovini il loro 'momento privato'\nJoep indossa sempre una corazza pesante – quasi nessuna lama riesce a trapassarla. Ecco perché anche a te serve qualcosa di speciale. Prendi questo stocco. È lungo, più robusto della maggior parte delle altre spade, e pesa come una vera lama.";
 			link.l1 = "Una rapier per combattere chi porta corazza...?";
 			link.l1.go = "PZ_OliverTrust_lubovnitsa_3";
 			//Log_Info("Вы получили асоледу");
@@ -1369,7 +1369,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_3":
-			dialog.text = "Non puntare direttamente sull'armatura – non hai in mano uno stocco. Mira alle fessure, ai punti deboli: l’inguine, le ascelle, la gola. Sfiancalo, imposta tu il ritmo. Joep brandisce pure un’ascia pesante, quindi non cercare di parare – schiva, piuttosto./nSe non trovi spiragli, prendi questa archibugio. Di solito è caricato a pallettoni, ma per te ho preparato una serie di dardi d’acciaio.";
+			dialog.text = "Non puntare direttamente sull'armatura – non hai in mano uno stocco. Mira alle fessure, ai punti deboli: l’inguine, le ascelle, la gola. Sfiancalo, imposta tu il ritmo. Joep brandisce pure un’ascia pesante, quindi non cercare di parare – schiva, piuttosto\nSe non trovi spiragli, prendi questa archibugio. Di solito è caricato a pallettoni, ma per te ho preparato una serie di dardi d’acciaio.";
 			link.l1 = "Frecce per un moschetto...?";
 			link.l1.go = "PZ_OliverTrust_lubovnitsa_4";
 			//Log_Info("Вы получили бландербуз");
@@ -1622,7 +1622,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "(in mandarino) Proprio qui. All’inizio non mi noteranno nemmeno. Le battaglie migliori sono quelle che non cominciano… o che finiscono in fretta, senza troppo spargimento di sangue.";
+				link.l1 = "(in mandarino) Proprio qui. All’inizio non mi noteranno nemmeno. Le battaglie migliori sono quelle che non cominciano... o che finiscono in fretta, senza troppo spargimento di sangue.";
 				link.l1.go = "Exit";
 			}
 			AddDialogExitQuest("MainHeroFightModeOn");
@@ -2164,7 +2164,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_PosleRasskaza_Shifr_14":
-			dialog.text = "Sì, esatto. E non solo lui – anche Van Berg. Van Merden mi disse che fu lui a consigliare Rodenburg di risparmiarmi. Ma tempo dopo Longway seppe da una fonte poco raccomandabile che in realtà fu proprio Johan a mandare i portoghesi sulle mie tracce. Allora non ci credevo… ma ora capisco che potrebbe essere vero…";
+			dialog.text = "Sì, esatto. E non solo lui – anche Van Berg. Van Merden mi disse che fu lui a consigliare Rodenburg di risparmiarmi. Ma tempo dopo Longway seppe da una fonte poco raccomandabile che in realtà fu proprio Johan a mandare i portoghesi sulle mie tracce. Allora non ci credevo... ma ora capisco che potrebbe essere vero...";
 			link.l1 = "Rivoltante.";
 			link.l1.go = "PZ_Longway_PosleRasskaza_Shifr_15";
 		break;
@@ -3154,7 +3154,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Beliz_Komendant_10":
-			dialog.text = "Cosa? Oh, sì. È vivo – l’esecuzione non c’è ancora stata. Puoi andare a parlargli – non è mai stato così ciarliero. Ma ultimamente straparla, conversa da solo e dice solo sciocchezze. Quel Sacco di vento è impazzito… Non vedo l’ora di impiccarlo, prima che la sua lingua ci faccia perdere il senno a tutti.";
+			dialog.text = "Cosa? Oh, sì. È vivo – l’esecuzione non c’è ancora stata. Puoi andare a parlargli – non è mai stato così ciarliero. Ma ultimamente straparla, conversa da solo e dice solo sciocchezze. Quel Sacco di vento è impazzito... Non vedo l’ora di impiccarlo, prima che la sua lingua ci faccia perdere il senno a tutti.";
 			link.l1 = "";
 			link.l1.go = "PZ_Beliz_Komendant_11";
 		break;
@@ -3878,7 +3878,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_70_5":
 			dialog.text = "Sì... dai bianchi. Longway potrebbe avere problemi con questo, ma... credo di poterli convincere, se insisto abbastanza. C'è sempre una via.";
-			link.l1 = "Be’, questa è una cosa. Ed è solo per l’equipaggio… E poi devi anche arrivare alla tua nave. Pure quella in qualche ‘posto speciale’, vero? Ho paura solo a chiedere quanto ci costerà questa faccenda…";
+			link.l1 = "Be’, questa è una cosa. Ed è solo per l’equipaggio... E poi devi anche arrivare alla tua nave. Pure quella in qualche ‘posto speciale’, vero? Ho paura solo a chiedere quanto ci costerà questa faccenda...";
 			link.l1.go = "PZ_Longway_70_6";
 		break;
 		
@@ -4439,7 +4439,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_RobertMartin2":
 			dialog.text = "Il Charles de Maure? Merda, basta che non mi trascini in qualche porcheria. Sì, sono io. Allora, che vuoi?";
-			link.l1 = "Mi hanno detto che siete amico di Joep van der Vink, e…";
+			link.l1 = "Mi hanno detto che siete amico di Joep van der Vink, e...";
 			link.l1.go = "PZ_RobertMartin3";
 		break;
 		
@@ -4685,7 +4685,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_ElitaShluha_13":
-			dialog.text = "Qui la vita non va poi così male, te lo dico io. Ma ce la dobbiamo sudare ogni giorno, e stare dietro alle sue pretese… Quanto alla signora, è partita per Espanola, vuole valutare se convenga trasferirci tutti a Port-au-Prince – in fondo è lì che si incrociano più rotte, e il nostro commercio non resterà fermo a marcire o a subire perdite continue, almeno.";
+			dialog.text = "Qui la vita non va poi così male, te lo dico io. Ma ce la dobbiamo sudare ogni giorno, e stare dietro alle sue pretese... Quanto alla signora, è partita per Espanola, vuole valutare se convenga trasferirci tutti a Port-au-Prince – in fondo è lì che si incrociano più rotte, e il nostro commercio non resterà fermo a marcire o a subire perdite continue, almeno.";
 			link.l1 = "Ah davvero? E non era forse Levasseur a mettere i denari qui per mantenere la sua lurida stabilità?";
 			link.l1.go = "PZ_ElitaShluha_14";
 		break;
@@ -4991,7 +4991,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_MaryRazgovorOBordeli_Bad_13":
 			dialog.text = "Com’è fatta lei?";
-			link.l1 = "Non ne ho la minima idea. Lei non c’era, così mi sono ritrovato a conversare con un’altra… stella.";
+			link.l1 = "Non ne ho la minima idea. Lei non c’era, così mi sono ritrovato a conversare con un’altra... stella.";
 			link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_14";
 		break;
 		
@@ -6455,7 +6455,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_ChangShin_WithLongwayAndGirl1":
-			dialog.text = "Dove sono finite le tue buone maniere, Charles de Maure? Mi avevano detto che eri un uomo d’eccelsa educazione, un vero cavaliere con le dame. Solo chiacchiere, eh? In realtà… un fallimento? Proprio come pensavo. E ti sbagli: io odio uomini e donne allo stesso modo. Anzi, non mi fido di nessuno, non mi sorprendo mai, non mi aspetto nulla. Ti schiaccerei volentieri le palle, se solo riuscissi a metterti le mani addosso. Però… sentire il mio vero nome dopo tutti questi anni è stato… quasi rinvigorente.";
+			dialog.text = "Dove sono finite le tue buone maniere, Charles de Maure? Mi avevano detto che eri un uomo d’eccelsa educazione, un vero cavaliere con le dame. Solo chiacchiere, eh? In realtà... un fallimento? Proprio come pensavo. E ti sbagli: io odio uomini e donne allo stesso modo. Anzi, non mi fido di nessuno, non mi sorprendo mai, non mi aspetto nulla. Ti schiaccerei volentieri le palle, se solo riuscissi a metterti le mani addosso. Però... sentire il mio vero nome dopo tutti questi anni è stato... quasi rinvigorente.";
 			link.l1 = "Sono un uomo per le dame, non per streghe come te. E poi, cosa ti aspettavi, visto che sei coinvolta nel tormentare la persona a cui tengo di più? Faccio fatica a trattenermi dal farti qualcosa anch’io, e non solo per lui, sia chiaro. Longway è mio amico. E tu sei la sua famiglia. Ti cerca da più di dieci anni. Merita di parlarti.";
 			link.l1.go = "PZ_ChangShin_WithLongwayAndGirl2";
 		break;
@@ -6491,7 +6491,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_ChangShin3":
-			dialog.text = "Mi ha fatto la corte e mi ha confessato i suoi sentimenti, ma io l’ho respinto. E fu allora che massacrò la nostra famiglia e mi rapì. E poi…";
+			dialog.text = "Mi ha fatto la corte e mi ha confessato i suoi sentimenti, ma io l’ho respinto. E fu allora che massacrò la nostra famiglia e mi rapì. E poi...";
 			link.l1 = "Posso intuire.";
 			link.l1.go = "PZ_ChangShin4";
 		break;
@@ -6509,7 +6509,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_ChangShin6":
-			dialog.text = "Certo. Mi ha presa con la forza, brutalmente e senza un briciolo di pietà. Non che importi mai agli stupratori, ma non era stato proprio lui, poco prima, a piangere dichiarandomi un grande amore? Bah! Quell’amore era svanito, pare. E tutto questo continuava ogni giorno, come fosse una dannata abitudine. All’inizio ho urlato e mi sono ribellata, poi ho smesso – che senso aveva, dopotutto…?";
+			dialog.text = "Certo. Mi ha presa con la forza, brutalmente e senza un briciolo di pietà. Non che importi mai agli stupratori, ma non era stato proprio lui, poco prima, a piangere dichiarandomi un grande amore? Bah! Quell’amore era svanito, pare. E tutto questo continuava ogni giorno, come fosse una dannata abitudine. All’inizio ho urlato e mi sono ribellata, poi ho smesso – che senso aveva, dopotutto...?";
 			link.l1 = "Ma Fermentelos ha avuto quello che si meritava, e tu sei finito qui. Come ci sei arrivato?";
 			link.l1.go = "PZ_ChangShin7";
 		break;
@@ -6563,7 +6563,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_ChangShin15":
-			dialog.text = "Ho stuzzicato la sua curiosità. Gli ho suggerito idee di tortura, consigliato quali strumenti sarebbe meglio non usare e da quali invece iniziare. All’inizio, ovviamente, ha sperimentato tutto su di me. Ma poi… ha cominciato a rispettarmi, a modo suo, tutto distorto. Cosa gli passa per la testa? Ho provato a capire come sia diventato così, ma mi ha massacrato di nuovo a metà tra la vita e la morte. Poi ha portato il suo medico personale.";
+			dialog.text = "Ho stuzzicato la sua curiosità. Gli ho suggerito idee di tortura, consigliato quali strumenti sarebbe meglio non usare e da quali invece iniziare. All’inizio, ovviamente, ha sperimentato tutto su di me. Ma poi... ha cominciato a rispettarmi, a modo suo, tutto distorto. Cosa gli passa per la testa? Ho provato a capire come sia diventato così, ma mi ha massacrato di nuovo a metà tra la vita e la morte. Poi ha portato il suo medico personale.";
 			link.l1 = "Questo è ancora più strano e ripugnante di tutto ciò che avevo già sentito su di lui.";
 			link.l1.go = "PZ_ChangShin16";
 		break;
@@ -6593,7 +6593,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_ChangShin20":
-			dialog.text = "Perché sanno bene cosa Levasseur o anche io faremmo loro se solo osassero fiatare. Ma in parte hai ragione, mio Signore Capitano. Il vino, il cibo, le sete, l’assenza delle torture quotidiane… molti hanno iniziato a vedermi come un salvatore. Stolti dannati! Qui sono in pochi a non essere contenti di restare. Alcuni li ha ceduti via con il cuore pesante. E rideva, dicendo che potevo sempre restituirglieli in cambio di una soluzione ai debiti della mia casa. Ma io ho sempre rifiutato. Almeno così sarebbero tornati con dell’oro invece che morire nel buio della cantina per niente. Sarebbe troppo facile, per loro, uscirsene così.";
+			dialog.text = "Perché sanno bene cosa Levasseur o anche io faremmo loro se solo osassero fiatare. Ma in parte hai ragione, mio Signore Capitano. Il vino, il cibo, le sete, l’assenza delle torture quotidiane... molti hanno iniziato a vedermi come un salvatore. Stolti dannati! Qui sono in pochi a non essere contenti di restare. Alcuni li ha ceduti via con il cuore pesante. E rideva, dicendo che potevo sempre restituirglieli in cambio di una soluzione ai debiti della mia casa. Ma io ho sempre rifiutato. Almeno così sarebbero tornati con dell’oro invece che morire nel buio della cantina per niente. Sarebbe troppo facile, per loro, uscirsene così.";
 			link.l1 = "Che peccato che non tutti si siano sentiti umiliati, passando da chiostri peggio dell’Inquisizione a una gabbia dorata come il vostro bordello...";
 			link.l1.go = "PZ_ChangShin21";
 		break;
@@ -6723,7 +6723,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Ci arriverete, Mio Signore Capitano. Siete l’uomo più saggio che abbia mai posato gli occhi. Quell’insetto, che sa solo tormentare le donne, non è nulla per voi. Vi supplico, non costringetemi. Mia sorella ha mille parole da sussurrarmi! E… il mio nome è Chang Tu.";
+				dialog.text = "Ci arriverete, Mio Signore Capitano. Siete l’uomo più saggio che abbia mai posato gli occhi. Quell’insetto, che sa solo tormentare le donne, non è nulla per voi. Vi supplico, non costringetemi. Mia sorella ha mille parole da sussurrarmi! E... il mio nome è Chang Tu.";
 				link.l1 = "Ti rendi conto che lasciandomi adesso, mi stai tradendo?! E soprattutto restando con lei – la donna che ha dato inizio a tutto questo!";
 			}
 			link.l1.go = "PZ_Longway_SisterDialog_Ubezhdaet7";
@@ -6920,7 +6920,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_SisterDialog_ReactiaMary5":
-			dialog.text = "Charles, hai davvero ascoltato le bestemmie che ha tirato fuori quella lì? È colpevole quanto quel porco puzzolente per tutto ciò che è successo in quella cantina. E ora guarda Longway – o come diavolo si fa chiamare adesso. Hai visto con che velocità lei l’ha tirato dalla sua parte, giusto? Chissà quali altre schifezze riuscirà a ficcargli in testa a quel traditore. Pensi davvero che quella strega farà fatica a spingerlo sulla strada di Levasseur? Non pensare a cosa sia adesso, Charles. Immagina che razza di bestia potrebbe diventare tra un anno… o magari anche solo tra un mese. Lo sai che ho ragione, giusto?";
+			dialog.text = "Charles, hai davvero ascoltato le bestemmie che ha tirato fuori quella lì? È colpevole quanto quel porco puzzolente per tutto ciò che è successo in quella cantina. E ora guarda Longway – o come diavolo si fa chiamare adesso. Hai visto con che velocità lei l’ha tirato dalla sua parte, giusto? Chissà quali altre schifezze riuscirà a ficcargli in testa a quel traditore. Pensi davvero che quella strega farà fatica a spingerlo sulla strada di Levasseur? Non pensare a cosa sia adesso, Charles. Immagina che razza di bestia potrebbe diventare tra un anno... o magari anche solo tra un mese. Lo sai che ho ragione, giusto?";
 			link.l1 = "Per quanto mi dispiaccia ammetterlo, non ho nulla da obiettare, Mary...";
 			link.l1.go = "PZ_Longway_SisterDialog_ReactiaMary6";
 		break;
@@ -7009,7 +7009,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_SisterDialog13":
 			dialog.text = "Davvero vuoi uccidere tua sorella, Chung Tu? Non che tu ci riesca, ma il fatto resta...";
-			link.l1 = "Tu non sei più mia sorella. Xing è morta dieci anni fa. E oggi è il giorno in cui Chung Tu trova la sua fine, per sempre. D’ora in avanti, il mio nome sarà… Longway.";
+			link.l1 = "Tu non sei più mia sorella. Xing è morta dieci anni fa. E oggi è il giorno in cui Chung Tu trova la sua fine, per sempre. D’ora in avanti, il mio nome sarà... Longway.";
 			link.l1.go = "Exit";
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
 			AddDialogExitQuest("MainHeroFightModeOn");
@@ -7193,7 +7193,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_TortureRoom_Levasser_7_1":
-			dialog.text = "Ma certo, ma certo. Tutto già sentito – che tu non hai paura di nessuno, de Maure. Me l'ha detto lei. ‘O-oh, Charles verrà, Charles mi salverà… Charles di qua, Charles di là…’ Beh, Charles è arrivato. Charles ha il posto migliore in prima fila. Henri, fai sentire il nostro ospite… a casa sua.";
+			dialog.text = "Ma certo, ma certo. Tutto già sentito – che tu non hai paura di nessuno, de Maure. Me l'ha detto lei. ‘O-oh, Charles verrà, Charles mi salverà... Charles di qua, Charles di là...’ Beh, Charles è arrivato. Charles ha il posto migliore in prima fila. Henri, fai sentire il nostro ospite... a casa sua.";
 			link.l1 = "";
 			link.l1.go = "PZ_TortureRoom_Levasser_8";
 		break;
@@ -7645,7 +7645,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_TortureRoom_Levasser_33":
 			dialog.text = "Non ti basta, eh? Va bene, c’è dell’altro...";
-			link.l1 = "Le urla delle tue vittime ti hanno reso sordo, Levasseur. Te l’ho già detto, non si tratta dell’oro. Hai paura di Poincy, e non senza motivo, eh? Non voglio nemmeno sapere cosa ti farà quello. Ma se servirà almeno un po’ come punizione per la tua… arte, che sia così.";
+			link.l1 = "Le urla delle tue vittime ti hanno reso sordo, Levasseur. Te l’ho già detto, non si tratta dell’oro. Hai paura di Poincy, e non senza motivo, eh? Non voglio nemmeno sapere cosa ti farà quello. Ma se servirà almeno un po’ come punizione per la tua... arte, che sia così.";
 			link.l1.go = "PZ_TortureRoom_Levasser_34";
 			pchar.questTemp.PZ_LevasserPlenen = true;
 			pchar.questTemp.PZ_LevasserPobezhden = true;

@@ -1112,7 +1112,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Current.TargetIslandID = GetCharacterCurrentIslandId(sld);//ИД целевого ареала
 			pchar.questTemp.WPU.Fraht.TargetCity = FindTownOnIsland(pchar.questTemp.WPU.Current.TargetIslandID);
 			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
-			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Fraht.Chance == 2) FrahtHunterOnSea();//создание ДУ в акватории
 			DialogExit();
 		break;
@@ -1432,7 +1432,7 @@ void ProcessDialogEvent()
 			}
 			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "1");
@@ -1482,7 +1482,7 @@ void ProcessDialogEvent()
 				pchar.quest.Escort_fail.function = "Escort_failed";
 	        }
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			DialogExit();
 		break;
@@ -1637,7 +1637,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 3) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "6");
@@ -1987,7 +1987,7 @@ void ProcessDialogEvent()
 					pchar.quest.Postcureer_Hunter.win_condition.l1 = "Location";
 					pchar.quest.Postcureer_Hunter.win_condition.l1.location = pchar.questTemp.WPU.Postcureer.City + "_town";
 					pchar.quest.Postcureer_Hunter.function = "PostcureerGopHuntersOnLand";
-					TraderHunterOnMap();
+					TraderHunterOnMap(false);
 				break;
 		
 				case 1://создание скоростного перехватчика на глобалке
@@ -1995,7 +1995,7 @@ void ProcessDialogEvent()
 				break;
 		
 				case 2://запуск ДУ на глобалке и в порту прибытия
-					TraderHunterOnMap();
+					TraderHunterOnMap(false);
 					FrahtHunterOnSea();
 				break;
 		
@@ -3689,6 +3689,11 @@ void ProcessDialogEvent()
 				link.l2 = "Patrouillenschnau 'Lady Beth'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
+			{
+				link.l3 = "Brigg 'Memento'.";
+				link.l3.go = "UniqueShips_Memento";
+			}
 			link.l99 = "Ich glaube, ich weiß genug.";
 			link.l99.go = "node_2";
 		break;
@@ -3707,6 +3712,20 @@ void ProcessDialogEvent()
 			AddQuestRecordInfo("LegendaryShips", "2");
 			pchar.questTemp.LadyBeth_InfoPU = true;
 			dialog.text = "'Lady Beth' ist eine wahre Schönheit. Ein Wunder britischer Marinekunst unter dem Kommando von Albert Blackwood, einem ehemaligen Offizier der Royal Navy. Nicht jeder schafft es, so spektakulär zu desertieren! Er verließ den Dienst, zerstörte eine glänzende Karriere und stahl ein Kriegsschiff - alles wegen der Schatzsuche!\nUnd es war nicht umsonst. Er hat schon so viel gefunden, dass er die Hälfte von Barbados kaufen könnte, aber ihm reicht das nicht. Wenn ihr ihm auf See begegnet - versucht gar nicht erst, ihn abzufangen\nZu gutes Schiff, und der Kapitän ist erfahren und vorsichtig. In letzter Zeit ist Blackwood oft auf den Kaimaninseln - gräbt dort Tag und Nacht, treibt die Leute bis zum Umfallen. Wenn ihr nachsehen wollt - nehmt mindestens 60 Mann und gute Schusswaffen... Vielleicht reicht selbst das nicht\nIch hoffe, ihr könnt schießen, denn mit ihm ist eine Kompanie ehemaliger Marineinfanteristen unter Colonel Fox desertiert. Profis, keine gewöhnlichen Halunken. Und greift ihn niemals in französischen Häfen an - dort hat er Schutz und Gönner, die an seinen Funden mitverdienen.";
+			link.l1 = "Vielen Dank.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Memento":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "3");
+			pchar.questTemp.Memento_InfoPU = true;
+			dialog.text = "Die 'Memento' – eine wahre Piratenlegende. Eine schwarze Brigg unter dem Kommando von Kapitän Mortimer Grim.\n"+
+			"Grim jagt ausschließlich Sklavenhändler. Man sagt, er befreit Sklaven und rettet zum Tode Verurteilte, indem er sie mit hartem Gold freikauft. Eine edle Sache – wenn man den Rest nicht kennt.\n"+
+			"Wenn ihr keine menschliche Fracht transportiert, wird Grim euch nicht anrühren. Er ist sonderbar, aber er hat Prinzipien. Doch wenn ihr Sklaven im Laderaum habt... betet, dass ihr keine schwarzen Segel am Horizont seht.\n"+
+			"Die 'Memento' kreuzt zwischen Piratensiedlungen, legt jedoch fast nie an. Die Mannschaft lebt monatelang an Bord, als fürchte sie, festen Boden zu betreten. Man munkelt, das Schiff habe einst eine schreckliche Seuche überstanden – deshalb ist die Crew so schwer zu töten.\n"+
+			"Wenn ihr angreifen wollt – nehmt viele Kanonen mit. Die 'Memento' zu entern ist nahezu unmöglich – die Mannschaft kämpft wie von Dämonen besessen, als hätte sie keine Angst vor dem Tod. Der einzige Weg, sie zu besiegen, ist, das Schiff in Stücke zu schießen und ihnen so das Versteck zu nehmen. Splitter schrecken sie nicht, aber gezielte Kartätschentreffer – das ist etwas anderes.\n"+
+			"Viel Glück. Und denkt an den Tod.";
 			link.l1 = "Vielen Dank.";
 			link.l1.go = "node_2";
 		break;

@@ -1353,7 +1353,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_71":
-			dialog.text = "No. Ma nessuno voleva averci a che fare comunque. La tenevano per maledetta, nonostante il suo rango a Bridgetown. Credo d’esser stato l’unico a passarci più di mezz’ora insieme, laggiù con Jessica.\nLe proposi di venire con me nelle Indie Occidentali e cominciare una nuova vita. Quella vita che aveva sempre sognato – il mare, le navi, i viaggi, l’avventura. Avevo già messo su un bel giro a Blueweld allora, potevo offrirle cento volte di più di quell’infame del Macellaio. Ma Jess era ferita, dentro e fuori. Non aveva perdonato il Macellaio per il tradimento e per come la trattò poi. E credo che, in fondo, provasse ancora qualcosa per lui… Nonostante ogni mio sforzo, non riuscii a farle scordare il passato, era accecata dalla voglia di vendetta.";
+			dialog.text = "No. Ma nessuno voleva averci a che fare comunque. La tenevano per maledetta, nonostante il suo rango a Bridgetown. Credo d’esser stato l’unico a passarci più di mezz’ora insieme, laggiù con Jessica.\nLe proposi di venire con me nelle Indie Occidentali e cominciare una nuova vita. Quella vita che aveva sempre sognato – il mare, le navi, i viaggi, l’avventura. Avevo già messo su un bel giro a Blueweld allora, potevo offrirle cento volte di più di quell’infame del Macellaio. Ma Jess era ferita, dentro e fuori. Non aveva perdonato il Macellaio per il tradimento e per come la trattò poi. E credo che, in fondo, provasse ancora qualcosa per lui... Nonostante ogni mio sforzo, non riuscii a farle scordare il passato, era accecata dalla voglia di vendetta.";
 			link.l1 = "Sì, non la invidio affatto. Poveretta...";
 			link.l1.go = "saga_72";
 		break;
@@ -1699,7 +1699,7 @@ void ProcessDialogEvent()
 		
 		case "UpgradeBakaut_1":
 			dialog.text = "Ahimè, "+pchar.name+", tale è il prezzo della pace in questi tempi - gli appetiti di quei galantuomini in parrucche e uniformi crescono ogni giorno. Nulla li stuzzica più del tintinnio dei dobloni nei loro forzieri. Ti garantisco uno sconto del quindici per cento su tutte le spedizioni future, se questo può consolarti.";
-			link.l1 = "Maledetti! Chiedere simili somme! Con quell’avidità dovrebbero comprare tesori reali, non mercanteggiare per un po’ di silenzio! Jan, forse dovremmo… mostrare loro chi comanda davvero in questo arcipelago, eh?";
+			link.l1 = "Maledetti! Chiedere simili somme! Con quell’avidità dovrebbero comprare tesori reali, non mercanteggiare per un po’ di silenzio! Jan, forse dovremmo... mostrare loro chi comanda davvero in questo arcipelago, eh?";
 			link.l1.go = "UpgradeBakaut_2";
 		break;
 		
@@ -2211,7 +2211,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mine_attack_43":
-			dialog.text = "Bene. Ora viene la parte migliore: trasporterò l’argento alle navi. I Miskitos ci daranno una mano. Metteremo insieme un carro… Nel frattempo, tu vai pure a riposarti, "+pchar.name+" Te lo sei meritato più di chiunque altro!";
+			dialog.text = "Bene. Ora viene la parte migliore: trasporterò l’argento alle navi. I Miskitos ci daranno una mano. Metteremo insieme un carro... Nel frattempo, tu vai pure a riposarti, "+pchar.name+" Te lo sei meritato più di chiunque altro!";
 			link.l1 = "Grazie, Jan. Faremo campo su quella collina, l’odore di bruciato qui è insopportabile. Già, e dobbiamo anche spegnere gli incendi in queste catapecchie, vai a sapere, magari ci torneranno utili più avanti...";
 			link.l1.go = "mine_attack_44";
 		break;

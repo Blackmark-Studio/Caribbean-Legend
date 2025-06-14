@@ -1576,6 +1576,8 @@ void LI_Reload()
 
 bool SetUsedPotionIcons()
 {
+	if(GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "blade_SP_3") return false;
+	
 	aref arItm, ar, uiref;
 	int i, itmIdx, nq;
 
@@ -1868,7 +1870,10 @@ void SetCharacterIconData(int chrindex, aref arData)
 			//objLandInterface.equipment.musprogress = LAi_GetGunChargeProgress(chref);
 			objLandInterface.equipment.musprogress = 0.0;
 		}
-		objLandInterface.equipment.potionprogress = LAi_GetPotionProgress(chref);
+		if(GetCharacterEquipByGroup(chref, BLADE_ITEM_TYPE) == "blade_SP_3")
+			objLandInterface.equipment.potionprogress = Bring2Range(0.0, 1.0, 0.0, 0.5, (LAi_GetCharacterRelHP(chref)) / 2.0);
+		else
+			objLandInterface.equipment.potionprogress = LAi_GetPotionProgress(chref);
 	}
 	//arData.charge = LAi_GetCharacterRelCharge(chref);
 	//arData.poison = LAi_IsPoison(chref);
@@ -2139,18 +2144,26 @@ void EquipmentDesc()
 		
 	if(iControlsTips > 0 && !IsSteamDeck())
 	{
-		int ptQty = FindPotionTypesQty(pchar);
-		objLandInterface.textinfo.PotionCtrl.text = "";
-		if(ptQty - CheckAttribute(pchar,"GenQuest.Potion_choice") > 0)
+		if(GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "blade_SP_3")
 		{
-			if(!iMoreInfo && bInFight) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("PotionChanger");
-			if(iMoreInfo) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("PotionChanger");
+			objLandInterface.textinfo.PotionCtrl.text = "";
 		}
-		if(LAi_GetCharacterHP(pchar)<LAi_GetCharacterMaxHP(pchar) && ptQty > 0)
+		else
 		{
-			if(!iMoreInfo && bInFight) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("BOAL_UsePotion");
-			if(iMoreInfo) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("BOAL_UsePotion");
+			int ptQty = FindPotionTypesQty(pchar);
+			objLandInterface.textinfo.PotionCtrl.text = "";
+			if(ptQty - CheckAttribute(pchar,"GenQuest.Potion_choice") > 0)
+			{
+				if(!iMoreInfo && bInFight) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("PotionChanger");
+				if(iMoreInfo) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("PotionChanger");
+			}
+			if(LAi_GetCharacterHP(pchar)<LAi_GetCharacterMaxHP(pchar) && ptQty > 0)
+			{
+				if(!iMoreInfo && bInFight) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("BOAL_UsePotion");
+				if(iMoreInfo) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("BOAL_UsePotion");
+			}
 		}
+		
 		objLandInterface.textinfo.GunCtrl.text = "";
 		if(bInFight && GetCharacterEquipByGroup(pchar, GUN_ITEM_TYPE) != "" && LAi_CharacterCanFrie(pchar))
 		{
@@ -2223,7 +2236,11 @@ string GetItemVis(string type)
 		break;
 		
 		case "Potion":
-			if(CheckAttribute(pchar,"GenQuest.Potion_choice"))
+			if(GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "blade_SP_3")
+			{
+				return "Yorick";
+			}
+			else if(CheckAttribute(pchar,"GenQuest.Potion_choice"))
 			{
 				Itm = &Items[FindItem(pchar.GenQuest.Potion_choice)];
 				return Itm.picTexture+"_"+Itm.picIndex;
@@ -2252,7 +2269,11 @@ string GetItemVis(string type)
 		break;
 		
 		case "PotionDesc":
-			if(CheckAttribute(pchar,"GenQuest.Potion_choice"))
+			if(GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "blade_SP_3")
+			{
+				objLandInterface.equipment.PotionQty = "";
+			}
+			else if(CheckAttribute(pchar,"GenQuest.Potion_choice"))
 			{
 				Itm = &Items[FindItem(pchar.GenQuest.Potion_choice)];
 				objLandInterface.equipment.PotionQty = GetCharacterFreeItem(pchar, Itm.id);
@@ -2275,6 +2296,8 @@ string GetItemVis(string type)
 
 bool bShowEquipment()
 {
+	if(TW_IsActive() && CheckAttribute(&TEV, "Tutor.BackControlsTips"))
+		return false;
 	if(!LAi_IsFightMode(pchar) && !iMoreInfo) return false;
 	return true;
 }

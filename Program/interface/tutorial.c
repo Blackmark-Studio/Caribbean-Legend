@@ -100,12 +100,13 @@ void InitInterface_SB(string iniName, string tutorialName, bool bShowVideo)
 	SetEventHandler("evntDoPostExit","DoPostExit",0); // выход из интерфейса
 	SetEventHandler("ShowInfoWindow","ShowInfoWindow",0);
 	SetEventHandler("MouseRClickUp","HideInfoWindow",0);
-	
+
 	if(CheckAttribute(&InterfaceStates,"ShowTutorial")) 
 	{
 		curShowTutorial = sti(InterfaceStates.ShowTutorial);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TUTORIAL_CHECKBOX", 2, 1, curShowTutorial);
+	SetNodeUsing("TUTORIAL_CHECKBOX",!bGlobalTutor);
 }
 
 void ProcessBreakExit()

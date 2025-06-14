@@ -1359,7 +1359,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_2":
-			dialog.text = "¿Qué? ¡Ja! ¡Tienes una imaginación increíble, chino! Antoon es un cobarde, y van der Vink está allí para protegerlo en caso de que alguien interrumpa su “tiempo privado.”/nJoep siempre lleva una pesada armadura de trinchera - impenetrable para la mayoría de las armas blancas. Por eso tú también necesitarás algo especial. Toma este estoque. Es largo, más fuerte que la mayoría de las otras espadas, y pesa como una buena hoja.";
+			dialog.text = "¿Qué? ¡Ja! ¡Tienes una imaginación increíble, chino! Antoon es un cobarde, y van der Vink está allí para protegerlo en caso de que alguien interrumpa su 'tiempo privado'\nJoep siempre lleva una pesada armadura de trinchera - impenetrable para la mayoría de las armas blancas. Por eso tú también necesitarás algo especial. Toma este estoque. Es largo, más fuerte que la mayoría de las otras espadas, y pesa como una buena hoja.";
 			link.l1 = "¿Un estoque para luchar contra enemigos con armadura...?";
 			link.l1.go = "PZ_OliverTrust_lubovnitsa_3";
 			//Log_Info("Вы получили асоледу");
@@ -1369,7 +1369,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_3":
-			dialog.text = "No apuntes a la armadura en sí - no es un estoque. Golpea en las rendijas y puntos vulnerables, como la ingle, las axilas y la garganta. Desgástale, dicta los términos. Joep también empuña un hacha pesada, así que no intentes desviar sus golpes - mejor esquiva./nPor si acaso no encuentras una abertura, toma esta trabuco. Normalmente está cargado con perdigones, pero he preparado un juego de flechas de acero para ti.";
+			dialog.text = "No apuntes a la armadura en sí - no es un estoque. Golpea en las rendijas y puntos vulnerables, como la ingle, las axilas y la garganta. Desgástale, dicta los términos. Joep también empuña un hacha pesada, así que no intentes desviar sus golpes - mejor esquiva\nPor si acaso no encuentras una abertura, toma esta trabuco. Normalmente está cargado con perdigones, pero he preparado un juego de flechas de acero para ti.";
 			link.l1 = "¿Flechas para un mosquete...?";
 			link.l1.go = "PZ_OliverTrust_lubovnitsa_4";
 			//Log_Info("Вы получили бландербуз");

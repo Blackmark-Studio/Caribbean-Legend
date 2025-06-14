@@ -20,7 +20,7 @@ Veils
 
 Neutral_5
 {
-Sea Wolf
+Sea Beast
 }
 
 Neutral_6

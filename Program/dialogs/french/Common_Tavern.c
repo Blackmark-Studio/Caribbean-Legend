@@ -1595,7 +1595,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			pchar.questTemp.Sharlie = "sailor";
 			//усадим матроса Алонсо
-			sld = GetCharacter(NPC_GenerateCharacter("SharlieSailor" , "citiz_36", "man", "man", 10, FRANCE, -1, true, "quest"));
+			sld = GetCharacter(NPC_GenerateCharacter("SharlieSailor" , "Alonso", "man", "man", 10, FRANCE, -1, true, "quest"));
 			sld.name 	= StringFromKey("HollandGambit_23");
 			sld.lastname = "";
 			FantomMakeCoolFighter(sld, 10, 20, 20, "blade_05", "", "", 10);

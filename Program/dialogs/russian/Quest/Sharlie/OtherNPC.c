@@ -516,6 +516,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Folke_8_2";
 			TakeItemFromCharacter(pchar, "BoxOfBalls");
 			//AddCharacterGoodsSimple(sld, GOOD_BALLS, 10);
+			Achievment_Set("ach_CL_164");
 		break;
 		
 		case "Folke_8_2":

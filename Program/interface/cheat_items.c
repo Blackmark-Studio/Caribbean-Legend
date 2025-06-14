@@ -577,6 +577,7 @@ void CalculateInfoDataF7()
 	sld.Balance = 2.0;
 	sld.Weight = 3.5;
 	sld.Attack = 88.0;
+	SetBladeWeightAttack(sld);
 	GiveItem2Character(pchar, "topor_06");
 	
 	sBlade = GetBestGeneratedItem("blade_38");

@@ -1210,6 +1210,11 @@ bool Ship_CheckSurrendered(ref echr)
     
     mcrew = mcrew * (1.0 + (mShip-1) / 5.0);
     ecrew = ecrew * (1.0 + (eShip-1) / 5.0);
+	
+	if(ShipBonus2Artefact(mchr, SHIP_MEMENTO) && CheckAttribute(&RealShips[sti(mchr.Ship.Type)], "DeadSailors.SurrenderChanceBonus"))
+	{
+		mcrew *= 1.0 + stf(RealShips[sti(mchr.Ship.Type)].DeadSailors.SurrenderChanceBonus) / 100.0;
+	}
 
     if (mcrew > ecrew)
 	{
@@ -1285,7 +1290,7 @@ void Ship_CheckSituation()
 	// boal -->
 	if (CheckAttribute(rCharacter, "ShipCannonChargeType")) // офам приказ, чем палить все время
 	{
-	    if (GetCargoGoods(rCharacter, sti(rCharacter.ShipCannonChargeType))    < iShipCannonsNum)
+	    if (GetCargoGoods(rCharacter, sti(rCharacter.ShipCannonChargeType)) < iShipCannonsNum)
 	    {
 	        DeleteAttribute(rCharacter, "ShipCannonChargeType"); // следующий проход решит на что менять заряд
 	    }
@@ -2451,6 +2456,7 @@ void Ship_ApplyCrewHitpoints(ref rOurCharacter, float fCrewHP)
 		{
 			Statistic_AddValue(GetMainCharacter(), "Sailors_dead", stf(rOurCharacter.Ship.Crew.Quantity) - fNewCrewQuantity);
 			Achievment_SetStat(21, makeint(sti(rOurCharacter.Ship.Crew.Quantity) - fNewCrewQuantity));
+			AddMementoShipBonus(stf(rOurCharacter.Ship.Crew.Quantity) - fNewCrewQuantity);
 		}
 		rOurCharacter.Ship.Crew.Quantity = fNewCrewQuantity;
 	}
@@ -2602,6 +2608,10 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
                         if(!CheckAttribute(rDead, "DontRansackCaptain") || rDead.DontRansackCaptain == false) AISeaGoods_AddGood(rDead, "enemy_boat", "lo_boat", 1000.0, 1); //homo 25/06/07 спасается на шлюпке
                     }
                     //homo
+					if(!GetAchievement("ach_CL_161") && CheckAttribute(Crosshair, "hidden") && sti(Crosshair.hidden) == 0)
+					{
+						Achievment_Set("ach_CL_161");
+					}
 			    break;
 			    case KILL_BY_ABORDAGE:
 			        AddCharacterExpToSkill(rKillerCharacter, "Grappling", stf(rKillerBaseShip.Class) / stf(rBaseShip.Class) * 110);
@@ -2785,6 +2795,16 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
 	}
 	// спасем офицеров boal 07/02/05
 	Play3DSound("ship_sink", fX, fY, fZ);
+	
+	// TUTOR-ВСТАВКА
+	if(TW_IsActive() && objTask.sea_battle == "3_WinBattle" && Ship_GetGroupID(rDead) == "SharlieTutorial_SeaAttack")
+	{
+		if(TW_IncreaseCounter("sea_battle", "WinBattle_do", 1))
+		{
+			objTask.sea_battle = "";
+			PostEvent("TW_Release", 2000);
+		}
+	}
 
 	// Message to AI
 	SendMessage(&AISea, "la", AI_MESSAGE_CHARACTER_DEAD, rDead);
@@ -3003,7 +3023,12 @@ void Ship_HullHitEvent()
     if (sti(rOurCharacter.TmpPerks.ShipDefenseProfessional) && rand(1000) < 700) { bSeriousBoom = false; }				// no seriouse boom
 
     float fCrewDamage = stf(rBall.DamageCrew) * fCannonDamageMultiply * AIShip_isPerksUse(rBallCharacter.TmpPerks.CrewDamageUp, 1.0, 1.15);
-
+	
+	if(rOurCharacter.id == "Memento_cap" && GetHullPercent(rOurCharacter) > 30.0)
+	{
+		fCrewDamage /= 10.0;
+	}
+	
 	if (bSeriousBoom)
 	{
 		fCrewDamage = fCrewDamage * 7.0;
@@ -3151,6 +3176,10 @@ void Ship_HullHitEvent()
 	if(!CheckAttribute(pchar, "questTemp.SantaMisericordia.AttackFromMap") && !CheckAttribute(pchar, "questTemp.SantaMisericordia.SpainReputation") && rOurCharacter.id == "SantaMisericordia_cap")
 	{
 		SantaMisericordia_SpainReputation();
+	}
+	if(rOurCharacter.id == "Memento_cap" && !CheckAttribute(rOurCharacter, "PlayerAttack"))
+	{
+		Memento_PlayerAttack();
 	}
     // boal 290704 раз в минуту проверяем обиду на гл героя, если жухлит через желтый прицел <--sti(AIBalls.CurrentBallType)
 }
@@ -3598,7 +3627,10 @@ void Ship_CheckMainCharacter()
 				iAbordageShipEnemyCharacter = sti(rShipCharacter.index);
 			}
 		}
-
+		
+		//bool MementoDisableBoarding = rShipCharacter.id == "Memento_cap" && GetHullPercent(rShipCharacter) > 30.0;
+		//if(MementoDisableBoarding) bAbordageShipCanBe = false;
+		
 		// test enemy ship with our
 		float fEnemyGrappling = stf(rShipCharacter.TmpSkill.Grappling);
 
@@ -3622,6 +3654,9 @@ void Ship_CheckMainCharacter()
 				{ 
 					fRatio = fRatio * 1.6; 
 				}
+				
+				//if(MementoDisableBoarding) continue;
+				
 				if (fRatio > 1.2 && !CheckAttribute(rShipCharacter, "Abordage.MakeDisable")) // Jason НСО
 				{
 					iAbordageStartNowCharacter = sti(rShipCharacter.index);
@@ -3786,6 +3821,16 @@ void Ship_CheckMainCharacter()
 				seaAlarmed = true;
 				string ClassicSoundScene = "";
 				if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) ClassicSoundScene = "classic_";
+				if(bGlobalTutor)
+				{
+					SetMusic("music_q_Seabattle");
+					break;
+				}
+				if(CheckAttribute(pchar, "questTemp.Memento.AttackFromMap"))
+				{
+					SetMusic("music_Memento");
+					break;
+				}
 				if(CheckAttribute(pchar, "questTemp.SantaMisericordia.AttackFromMap"))
 					SetMusic(ClassicSoundScene+"SantaMisericordia");
 				else
@@ -4030,12 +4075,10 @@ void Ship_UpdateParameters()
         }
         else
         {
-            fShipSpeed = abs(stf(TEV.Tutor.BackAY) - stf(arCharShip.Ang.y));
+            fShipSpeed = abs(stf(TEV.Tutor.BackAY) - stf(arCharShip.Ang.y)) * 2.0;
             if(TW_IncreasePercents("sea", "turn_text", fShipSpeed))
             {
-                objTask.sea = "";
-                DeleteAttribute(&TEV, "Tutor.BackAY");
-                DoQuestFunctionDelay("TW_InitSea_2_TimeScale", 2.5);
+                TW_FinishSea_1_Turn();
             }
             else TEV.Tutor.BackAY = arCharShip.Ang.y;
         }

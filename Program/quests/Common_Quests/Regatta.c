@@ -286,7 +286,7 @@ void RegataSpyglassGirl(string qName)//девушка с подзорной тр
 
 void RegataAttack_Hunter(string qName)//атака ДУ
 {
-	CoolTraderHunterOnMap();
+	TraderHunterOnMap(true);
 }
 
 void RegataAttack_Lugger(string qName)//засада из 2 люггеров

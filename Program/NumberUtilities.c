@@ -106,6 +106,7 @@ int wPercentInt(int _num, int _percent)
 }
 
 // belamour возвращает значение в зависимости от условия
+// TO_DO: в сигнатуре у тернарного оператора слева true, справа false
 int GetIntByCondition(bool condition, int falseValue, int trueValue)
 {
 	if(condition) return trueValue;

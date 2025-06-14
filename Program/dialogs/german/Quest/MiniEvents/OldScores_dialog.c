@@ -4,6 +4,7 @@ void ProcessDialogEvent()
 	aref Link, NextDiag;
 	int i, iTemp;
 	string sTemp;
+	bool bOk1, bOk2;
 	
 	DeleteAttribute(&Dialog,"Links");
 	
@@ -25,19 +26,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "OS_Matros_sluh":
-			if (!CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe" && sti(pchar.rank) >= 5)
+			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			if (bOk1 || bOk2)
 			{
-				dialog.text = RandPhraseSimple("He, "+GetSexPhrase("Kumpel","Mädel")+", hast du irgendwo meinen Stiefel gesehen? Ein räudiger Dieb ist damit abgehauen, während ich unter dem Tavernen-Tisch bewusstlos war.",
-									 "Man sagt, es gab gestern eine Schlägerei in der Taverne... Obwohl, wer kämpfte, ist schwer zu sagen. Mein Gesicht scheint intakt zu sein. Glaube ich.", "Bei allen Teufeln der Tiefe, ich hatte gestern einen Beutel voller Gold! Wo zum Teufel ist er jetzt?!");
-				link.l1 = "...";
-				link.l1.go = "exit";
-				NextDiag.TempNode = "OS_Matros_sluh";
-
-				SetQuestHeader("OS");
-				AddQuestRecord("OS", "1");
-				pchar.questTemp.OS_Start = true;
-				pchar.questTemp.OS_Tavern_1 = true;
-				AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
+				dialog.text = "Man sagt, gestern gab es eine Schlägerei in der Taverne... Aber wer gekämpft hat — keine Ahnung. Mein Gesicht ist zumindest noch heil. Glaube ich.";
+				link.l1 = "Sieht aus, als hätte es hier eine ordentliche Sauforgie gegeben?";
+				link.l1.go = "OS_Matros_sluh_2";
+				
 			}
 			else
 			{
@@ -65,6 +61,19 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
+		break;
+		
+		case "OS_Matros_sluh_2":
+			dialog.text = "Und ob! Der Wirt hatte ordentlich zu tun... hicks... Und dann... hat man ihm auch noch den Gin geklaut! Nicht nur eine Flasche, nein, ein ganzes Fass! Und so ein besonderes, dass man in der ganzen Karibik kein zweites findet! Man sagt, es wurde direkt aus Europa gebracht. Für wen der alte Schlitzohr es aufbewahrte, sagt er nicht, aber eines ist klar: Wenn das Fass nicht bald gefunden wird, wird der arme Kerl vom Teufel höchstpersönlich geholt!";
+			link.l1 = "Interessant. Na dann, mach’s gut, alter Säufer.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "OS_Matros_sluh";
+			
+			SetQuestHeader("OS");
+			AddQuestRecord("OS", "1");
+			pchar.questTemp.OS_Start = true;
+			pchar.questTemp.OS_Tavern_1 = true;
+			AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
 		break;
 
 		case "OS_Matros_again":
@@ -284,7 +293,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Zaharia_3";
 			CharacterTurnByChr(npchar, pchar);
 			TakeItemFromCharacter(pchar, "cask_gin");
-			Log_Info("Ihr habt das Fass Gin abgegeben");
+			notification("Ihr habt das Fass Gin abgegeben", "NONE");
 		break;
 
 		case "Zaharia_3":

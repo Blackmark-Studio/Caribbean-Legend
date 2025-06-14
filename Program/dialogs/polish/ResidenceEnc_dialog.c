@@ -46,13 +46,13 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = LinkRandPhrase("Co robisz w mojej sypialni? Znikaj stąd!","Jaka szkoda! Proszę cię, opuść to miejsce natychmiast!","Przepraszam, panie, ale nie byłeś tu zaproszony. Proszę, opuść mój pokój!");
-				link.l1 = RandPhraseSimple("Przepraszam... Wyjeżdżam.","Przepraszam, złe drzwi. Muszę iść.");
+				dialog.text = LinkRandPhrase("Co robisz w mojej sypialni? Znikaj stąd!","Proszę cię, opuść to miejsce natychmiast!","Przepraszam, panie, ale nie byłeś tu zaproszony. Proszę, opuść mój pokój!");
+				link.l1 = RandPhraseSimple("Przepraszam... już wychodze.","Przepraszam, złe drzwi. Muszę iść.");
 				link.l1.go = "exit";
 			}
 		break;
 		case "Woman_FackYou":
-			dialog.text = "O, co to było?! Jestem taki głupi! Chodzę wokół, nic nie widzę... Strażnicy!!!";
+			dialog.text = "O, co to było?! Jestem taka głupia! Chodzę wokół, nic nie widzę... Strażnicy!!!";
 			link.l1 = "Zamknij się!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
@@ -63,13 +63,13 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "ResMan";
 			if (isBadReputation(pchar, 30))
 			{
-				dialog.text = LinkRandPhrase("Znikaj stąd, szczurze!","Odejdź natychmiast od rezydencji gubernatora, szczurze!","Nie obchodzi mnie, co robisz w domu gubernatora "+XI_ConvertString("Colony"+npchar.city+"Gen")+"Ale moja rada brzmi następująco: znikaj, teraz!");
+				dialog.text = LinkRandPhrase("Znikaj stąd, szczurze!","Odejdź natychmiast od rezydencji gubernatora, szczurze!","Nie obchodzi mnie, co robisz w domu gubernatora "+XI_ConvertString("Colony"+npchar.city+"Gen")+", Ale moja rada brzmi następująco: znikaj, teraz!");
 				link.l1 = RandPhraseSimple("Trzymaj się na wodzie, kolego...","Uważaj na swoje słowa!");
 				link.l1.go = "exit";
 			}
 			else
 			{
-				dialog.text = LinkRandPhrase("Pozdrowienia! Jestem sługą gubernatora. Nazywam się "+GetFullName(NPChar)+".","Strzegę tego miejsca, "+GetAddress_Form(NPChar)+".","Wiesz, "+GetAddress_Form(NPChar)+", nasz gubernator to dobry człowiek i dobrze nas płaci...");
+				dialog.text = LinkRandPhrase("Pozdrowienia! Jestem sługą gubernatora. Nazywam się "+GetFullName(NPChar)+".","Strzegę tego miejsca, "+GetAddress_Form(NPChar)+".","Wiesz, "+GetAddress_Form(NPChar)+", nasz gubernator to dobry człowiek i dobrze nam płaci...");
 				link.l1 = RandPhraseSimple("Miło.","Hm, bardzo dobrze...");
 				link.l1.go = "exit";
 			}
@@ -86,13 +86,13 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "ResGuard";
 			if (isBadReputation(pchar, 30))
 			{
-				dialog.text = LinkRandPhrase("Lepiej stąd uciekaj, "+GetSexPhrase("kumpel","dziewczyna")+"...","Odejdź!","Pominąłeś drzwi, "+GetSexPhrase("kumpel","dziewczyna")+"? ? Ten majątek należy do gubernatora "+XI_ConvertString("Kolonia"+npchar.city+"Gen")+".");
+				dialog.text = LinkRandPhrase("Lepiej stąd uciekaj, "+GetSexPhrase("kolego","dziewczyno")+"...","Odejdź!","Pominąłeś drzwi, "+GetSexPhrase("kolego","dziewczyno")+"? ? Ten majątek należy do gubernatora "+XI_ConvertString("Colony"+npchar.city+"Gen")+".");
 				link.l1 = RandPhraseSimple("Odejdę, kiedy tylko zechcę!","To nie twoja sprawa...");
 				link.l1.go = "exit";
 			}
 			else
 			{
-				dialog.text = LinkRandPhrase("Dziś dostałem rozkaz służyć tutaj. Miłe miejsce...","Chronię majątek "+GetAddress_Form(NPChar)+".","Moim zadaniem jest ochrona posiadłości gubernatora.");
+				dialog.text = LinkRandPhrase("Dziś dostałem rozkaz stania na warcie. Miłe miejsce...","Chronię majątek "+GetAddress_Form(NPChar)+".","Moim zadaniem jest ochrona posiadłości gubernatora.");
 				link.l1 = RandPhraseSimple("Powodzenia, więc...","Hmm, rozumiem...");
 				link.l1.go = "exit";
 			}

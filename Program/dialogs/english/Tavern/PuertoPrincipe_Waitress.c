@@ -21,7 +21,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		//--> Старые счёты
 		case "OS_Tavern2_1":
 			dialog.text = "I... I don't know what to say. Everything was normal, nothing out of the ordinary.";
-			link.l1 = "Is that so? Nothing strange? What about that sailor from the 'Sea Wolf' who was pestering you? He seemed convinced you'd welcome his company for the night.";
+			link.l1 = "Is that so? Nothing strange? What about that sailor from the 'Sea Beast' who was pestering you? He seemed convinced you'd welcome his company for the night.";
 			link.l1.go = "OS_Tavern2_2";
 			DelLandQuestMark(npchar);
 		break;
@@ -41,7 +41,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern2_4_HO":
-			dialog.text = "I... I... I'll tell you everything! It was all my... suitor, Jack. Jack Veils! He persuaded me to entice any sailor from the 'Sea Wolf'. And when he would make his advances, I was to cause a scene to lure the tavern keeper from behind the counter. As the commotion began to settle, two sailors would start a brawl to keep him occupied in the main room. That's exactly what happened\nDuring that time, the captain of the 'Sea Wolf' managed to steal the barrel. That's... that's all I know, "+GetSexPhrase("sir","madam")+"! Please, don't turn me in! I just... I was only... I simply... wanted Jack to finally treat me with some respect! I did help him after all...";
+			dialog.text = "I... I... I'll tell you everything! It was all my... suitor, Jack. Jack Veils! He persuaded me to entice any sailor from the 'Sea Beast'. And when he would make his advances, I was to cause a scene to lure the tavern keeper from behind the counter. As the commotion began to settle, two sailors would start a brawl to keep him occupied in the main room. That's exactly what happened\nDuring that time, the captain of the 'Sea Beast' managed to steal the barrel. That's... that's all I know, "+GetSexPhrase("sir","madam")+"! Please, don't turn me in! I just... I was only... I simply... wanted Jack to finally treat me with some respect! I did help him after all...";
 			link.l1 = "You helped one man while throwing another to the wolves without a moment's hesitation?! Nevertheless, I keep my word — I won't expose your part in this. But you'll have to live with what you've done! Your foolishness could have landed the innkeeper in grave danger. Where can I find this Jack of yours? And remember: lie to me, and I'll be back. Trust me, you won't enjoy the return visit.";
 			link.l1.go = "OS_Tavern2_5";
 			AddComplexSelfExpToScill(40, 40, 40, 0);
@@ -49,7 +49,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern2_4_harizma":
-			dialog.text = "I... I... I'll tell you everything! It was all my... suitor, Jack. Jack Veils! He persuaded me to entice any sailor from the 'Sea Wolf'. And when he would make his advances, I was to cause a scene to lure the tavern keeper from behind the counter. As the commotion began to settle, two sailors would start a brawl to keep him occupied in the main room. That's exactly what happened\nDuring that time, the captain of the 'Sea Wolf' managed to steal the barrel. That's... that's all I know, "+GetSexPhrase("sir","madam")+"! Please, don't turn me in! I just... I was only... I simply... wanted Jack to finally treat me with some respect! I did help him after all...";
+			dialog.text = "I... I... I'll tell you everything! It was all my... suitor, Jack. Jack Veils! He persuaded me to entice any sailor from the 'Sea Beast'. And when he would make his advances, I was to cause a scene to lure the tavern keeper from behind the counter. As the commotion began to settle, two sailors would start a brawl to keep him occupied in the main room. That's exactly what happened\nDuring that time, the captain of the 'Sea Beast' managed to steal the barrel. That's... that's all I know, "+GetSexPhrase("sir","madam")+"! Please, don't turn me in! I just... I was only... I simply... wanted Jack to finally treat me with some respect! I did help him after all...";
 			link.l1 = "You helped one man while throwing another to the wolves without a moment's hesitation?! Nevertheless, I keep my word — I won't expose your part in this. But you'll have to live with what you've done! Your foolishness could have landed the innkeeper in grave danger. Where can I find this Jack of yours? And remember: lie to me, and I'll be back. Trust me, you won't enjoy the return visit.";
 			link.l1.go = "OS_Tavern2_5";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -76,6 +76,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			PChar.quest.OS_Zasada.win_condition.l1 = "item";
 			PChar.quest.OS_Zasada.win_condition.l1.item = "cask_gin";
 			PChar.quest.OS_Zasada.function = "OS_Zasada";
+			
+			SetFunctionLocationCondition("DWH_Close_House", "PuertoPrincipe_QuestHouse_1", false);
 		break;
 		//<-- Старые счёты
 	}

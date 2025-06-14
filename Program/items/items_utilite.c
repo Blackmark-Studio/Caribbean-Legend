@@ -171,6 +171,11 @@ int FindPotionTypesQty(ref chref)
 
 int UseBestPotion(ref chref, bool needAntidote)
 {
+	if(GetCharacterEquipByGroup(chref, BLADE_ITEM_TYPE) == "blade_SP_3")
+	{
+		return -1;
+	}
+	
 	int i;
 	int curPotionID = -1;
 	int curPotionHealAmt = 0;
@@ -644,30 +649,29 @@ String GenerateItem(String _itemId)
 		break;
 	}
 	
+	SetBladeWeightAttack(realItem);
+	
 	switch (realItem.FencingType) 
 	{
 		case "FencingL" :
-			realItem.WeightAttack = stf(realItem.Attack) * (0.5 + 0.2 * stf(realItem.Weight));
 			if(sti(realItem.Generation.price)) 
 			{
 				realItem.price  = makeint(35.0 * (1.0/stf(realItem.curve) + stf(realItem.lenght)) * (stf(realItem.Attack) * 2.0 - 30.0));
 			}	
 		break;
 		case "FencingS" :
-			realItem.WeightAttack = stf(realItem.Attack) * (0.25 + 0.25 * stf(realItem.Weight));
 			if(sti(realItem.Generation.price)) 
 			{
 				realItem.price  = makeint(25.0 * (stf(realItem.curve) + stf(realItem.lenght)) * (stf(realItem.Attack) * 2.0 - 40.0));
 			}	
 		break;
 		case "FencingH" :
-			realItem.WeightAttack = stf(realItem.Attack) * (0.25 + 0.2 * stf(realItem.Weight));
 			if(sti(realItem.Generation.price)) 
 			{
 				realItem.price  = makeint(20.0 * ((stf(realItem.curve) + 1.0) * 1.0/stf(realItem.lenght)) * (stf(realItem.Attack) * 2.0 - 50.0));
 			}	
 		break;
-	}	
+	}
 
 	realItem.ID = _itemId + "_" + itemIndex; // Новый АйДи предмету
 	realItem.Index = itemIndex; // Новый индекс
@@ -1527,6 +1531,7 @@ void addBonusToBlade(aref _attack, aref _enemy)
             if(stf(Blade.KillerBonus.RangeBonus) > 15.0)
                 Blade.KillerBonus.RangeBonus = 15.0;
 			Blade.Attack = stf(Blade.KillerBonus.DefAttack) + stf(Blade.KillerBonus.Attack);
+			SetBladeWeightAttack(Blade);
 		}
 	}
 }
@@ -1687,3 +1692,19 @@ void AddMapPart()
         GiveItem2Character(PChar, "map_part2");
 }
 
+void SetBladeWeightAttack(ref blade)
+{
+	string sType = blade.FencingType;
+	switch(sType) 
+	{
+		case "FencingL":
+			blade.WeightAttack = stf(blade.Attack) * (0.5 + 0.2 * stf(blade.Weight));
+		break;
+		case "FencingS":
+			blade.WeightAttack = stf(blade.Attack) * (0.25 + 0.25 * stf(blade.Weight));
+		break;
+		case "FencingH":
+			blade.WeightAttack = stf(blade.Attack) * (0.25 + 0.2 * stf(blade.Weight));
+		break;
+	}
+}

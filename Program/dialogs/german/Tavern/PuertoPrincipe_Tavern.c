@@ -61,7 +61,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "OS_Tavern1_4":
-			dialog.text = "Eigentlich niemand! Außer vielleicht meiner Kellnerin, aber das kann ich ausschließen. An dem Tag war in der Taverne ein riesiger Rummel – die Crew vom 'Sea Wolf' war von der Jagd zurück und hatte ordentlich Beute gemacht. Sie hatte keine Minute zum Verschnaufen, geschweige denn Zeit, sich hinter den Tresen zu schleichen.";
+			dialog.text = "Eigentlich niemand! Außer vielleicht meiner Kellnerin, aber das kann ich ausschließen. An dem Tag war in der Taverne ein riesiger Rummel – die Crew vom 'Sea Beast' war von der Jagd zurück und hatte ordentlich Beute gemacht. Sie hatte keine Minute zum Verschnaufen, geschweige denn Zeit, sich hinter den Tresen zu schleichen.";
 			link.l1 = "Seid Ihr Euch da sicher?";
 			link.l1.go = "OS_Tavern1_5";
 		break;
@@ -96,7 +96,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OS_Tavern3_1":
 			dialog.text = "Ihr habt es gefunden?! Ist das wahr? Kapitän, Ihr habt mir das Leben gerettet! Wer steckt dahinter? Ich muss den Namen dieses Halunken wissen!";
-			link.l1 = "Es war ein sorgfältig geplanter Trick von einem gewissen Jack Veils, zusammen mit dem Kapitän des 'Sea Wolf'. Sie haben ihre Matrosen mit ins Spiel gebracht und ein richtiges Schauspiel aufgeführt, um Euch abzulenken. Als Ihr den Tresen verlasst, blieb das Fass unbeaufsichtigt – und sie konnten es problemlos stehlen.";
+			link.l1 = "Es war ein sorgfältig geplanter Trick von einem gewissen Jack Veils, zusammen mit dem Kapitän des 'Sea Beast'. Sie haben ihre Matrosen mit ins Spiel gebracht und ein richtiges Schauspiel aufgeführt, um Euch abzulenken. Als Ihr den Tresen verlasst, blieb das Fass unbeaufsichtigt – und sie konnten es problemlos stehlen.";
 			link.l1.go = "OS_Tavern3_2";
 			DelLandQuestMark(npchar);
 			pchar.questTemp.CameraDialogMode = true;

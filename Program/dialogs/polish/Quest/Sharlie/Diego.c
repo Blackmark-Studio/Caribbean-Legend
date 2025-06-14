@@ -21,8 +21,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patrol":
-			dialog.text = TimeGreeting()+", "+GetFullName(npchar)+", Szefie patrolu San Jose. Otrzymaliśmy wiadomość dotyczącą podejrzanego zachowania na obrzeżach tego miasta. Czy byłbyś tak uprzejmy i wyjaśnił nam, kim jesteś i co planujesz?";
-			link.l1 = "Kapitan "+GetFullName(pchar)+", senor oficerze. Jestem tutaj na mocy autorytetu i bezpośrednich instrukcji Ojca Inkwizytora Vincento. Oto dokument potwierdzający moje uprawnienia.";
+			dialog.text = TimeGreeting()+", "+GetFullName(npchar)+", Szef patrolu San Jose. Otrzymaliśmy wiadomość dotyczącą podejrzanego zachowania na obrzeżach miasta. Czy byłbyś tak uprzejmy i wyjaśnił nam, kim jesteś i co planujesz?";
+			link.l1 = "Kapitan "+GetFullName(pchar)+", señor oficerze. Jestem tutaj na mocy autorytetu i bezpośrednich instrukcji Ojca Inkwizytora Vincento. Oto dokument potwierdzający moje uprawnienia.";
 			link.l1.go = "patrol_1";
 		break;
 		
@@ -33,13 +33,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patrol_2":
-			dialog.text = "Moje przeprosiny raz jeszcze, Monsieur. Nie śmiałbym cię dłużej zatrzymywać... ah, jeden moment! Czy właśnie zobaczyłem ostrze zimnej stali, czy to tylko moja wyobraźnia? Co za interesujący sztylet masz! Czy możesz mi go pokazać?";
-			link.l1 = "Upewnij się, że nie zapomnisz tego oddać. To dla mnie bardzo ważne.";
+			dialog.text = "Przepraszam, Monsieur. Nie śmiałbym cię dłużej zatrzymywać... ah, jeden moment! Czy właśnie zobaczyłem ostrze zimnej stali, czy to tylko moja wyobraźnia? Co za interesujący sztylet! Czy możesz mi go pokazać?";
+			link.l1 = "Upewnij się, że nie zapomnisz mi go oddać. To dla mnie bardzo ważne.";
 			link.l1.go = "patrol_3";
 		break;
 		
 		case "patrol_3":
-			dialog.text = "Dios mio! Znam ten sztylet, widziałem go w jednej z książek bibliotecznych! To jest sztylet samego Cortésa! Jest tu wyraźnie oznakowany... Monsieur, proszę, nie odmawiaj. Pozwól mi mieć ten sztylet! Zbieram starożytną i spersonalizowaną broń, a to jest po prostu niezwykły okaz. Dobrze za niego zapłacę.";
+			dialog.text = "Dios mio! Znam ten sztylet, widziałem go w jednej z książek bibliotecznych! To jest sztylet samego Cortésa! Jest tu wyraźnie oznakowany... Monsieur, proszę, nie odmawiaj. Pozwól mi zachować ten sztylet! Zbieram starożytną i spersonalizowaną broń, a to jest po prostu niezwykły okaz. Dobrze za niego zapłacę.";
 			link.l1 = "Señor, ten sztylet nie jest na sprzedaż. Dostałem go w prezencie i nie zamierzam go nikomu sprzedawać. Oddaj go, proszę.";
 			link.l1.go = "patrol_4";
 		break;
@@ -72,7 +72,7 @@ void ProcessDialogEvent()
 		case "shore":
 			PlaySound("Voice\English\Sharlie\Diego De Montoya.wav");
 			dialog.text = "Dość! Chcę z nim porozmawiać...";
-			link.l1 = "Widzę więc samego Diego de Montoya tuż przede mną... Ale wybacz mi, señor. Spotkaliśmy się wcześniej, prawda? Och tak, to prawda. Trynidad, w miejscowej latarni morskiej. Ale jestem pewien, że tam nazywałeś się inaczej...";
+			link.l1 = "Widzę więc samego Diego de Montoya tuż przede mną... Ale wybacz mi, señor. Spotkaliśmy się wcześniej, prawda? Och tak, to prawda. Trynidad, przy miejscowej latarni morskiej. Ale jestem pewny, że tam przedstawiłeś się jakoś inaczej...";
 			link.l1.go = "shore_1";
 		break;
 		
@@ -84,12 +84,12 @@ void ProcessDialogEvent()
 		
 		case "shore_2":
 			dialog.text = "No cóż, jest jak jest. Ale dam ci szansę wyjść stąd żywym, jeśli oddasz mi swój sztylet.";
-			link.l1 = "Czy twoja pasja do zbierania rzadkości naprawdę zaprowadziła cię tak daleko, caballero, że musiałeś przygotować tak przemyślaną pułapkę na mnie?  Och, nie sądzę. Czy Strażnik Prawdy cię prowadzi, czy jestem daleko od prawdy?";
+			link.l1 = "Czy twoja pasja do zbierania rzadkości naprawdę zaprowadziła cię tak daleko, caballero, że musiałeś przygotować tak przemyślaną pułapkę na mnie?  Och, nie sądzę.  Strażnik Prawdy cię prowadzi, czy jestem od tej prawdy daleko?";
 			link.l1.go = "shore_3";
 		break;
 		
 		case "shore_3":
-			dialog.text = "Nie mam pojęcia, o czym mówisz. Sztylet musi wrócić tam, gdzie jego miejsce, i to wszystko, co musisz wiedzieć. Nie chciałeś go oddać za złoto, więc teraz oddasz go za własne życie.";
+			dialog.text = "Nie mam pojęcia, o czym ty mówisz. Sztylet musi wrócić tam, gdzie jego miejsce, i to wszystko, co musisz wiedzieć. Nie chciałeś go oddać za złoto, więc teraz oddasz go za własne życie.";
 			link.l1 = "Czy naprawdę sądzisz, señor, że uwierzę w to, co mi właśnie powiedziałeś? Już postanowiłeś, że nie opuszczę tej zatoki, prawda?";
 			link.l1.go = "shore_4";
 		break;
@@ -102,7 +102,7 @@ void ProcessDialogEvent()
 		
 		case "shore_5":
 			dialog.text = "Monsieur, daję ci ostatnią szansę. Albo oddasz mi sztylet, który mnie interesuje, albo za kilka minut ograbię twoje martwe ciało. Opór jest daremny, mamy przytłaczającą przewagę liczebną.";
-			if (CheckAttribute(pchar, "questTemp.Guardoftruth.SanAntonio")) link.l1 = "Zaskoczyłeś mnie, señor, to pewne. Czy naprawdę myślisz, że jestem takim upartym kretynem, że po prostu wsadzę głowę w paszczę rekina, nie trudząc się, by chwycić swoją harpun? Chłopcy, zabić ich!";
+			if (CheckAttribute(pchar, "questTemp.Guardoftruth.SanAntonio")) link.l1 = "Zaskoczyłeś mnie, señor, to pewne. Czy naprawdę myślisz, że jestem takim upartym kretynem, że po prostu wsadzę głowę w paszczę rekina, nie trudząc się, by chwycić za swój harpun? Chłopcy, zabić ich!";
 			else link.l1 = "Prawdziwa siła nie tkwi w liczbach, lecz w umiejętnościach, señor!";
 			link.l1.go = "shore_6";
 		break;

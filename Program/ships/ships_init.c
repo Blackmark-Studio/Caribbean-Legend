@@ -221,7 +221,6 @@ void InitShips()
 	refShip.Price								= 4800;
 	refShip.HP									= 400;
 	refShip.SP									= 100;
-	refship.CanEncounter						= true;
 	refship.Type.Merchant						= true;
 	refship.Type.War							= true;
 	refship.Spec                                = SHIP_SPEC_UNIVERSAL;
@@ -467,7 +466,7 @@ void InitShips()
 	
 	refship.nation.england	= false;
 	refship.nation.france	= false
-	refship.nation.spain	= true;;
+	refship.nation.spain	= true;
 	refship.nation.holland	= false;
 	refship.nation.pirate	= true;
 	
@@ -574,7 +573,7 @@ void InitShips()
 	refShip.SP              			= 100;
 
 	refship.Type.Merchant				= true;
-	refship.Type.War					= false;
+	refship.Type.War					= true;
 	refship.Spec                        = SHIP_SPEC_UNIVERSAL;
 	refShip.lowpolycrew 				= 20;
 	
@@ -629,7 +628,7 @@ void InitShips()
 	refShip.Name            			= "Barkentine";
 	refship.Soundtype					= "lugger";
 	refShip.Class						= 6;
-	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS6;
+	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS3;
 	refShip.MaxCaliber      			= 3;
 	refShip.Weight						= Tonnes2CWT(300);
 	refShip.Capacity       				= 1650
@@ -910,7 +909,7 @@ void InitShips()
 	refShip.Name            			= "Navio";
 	refship.Soundtype					= "frigate";
 	refShip.Class						= 2;
-	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS20;
+	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS18;
 	refShip.MaxCaliber      			= 18;
 	refShip.Weight						= Tonnes2CWT(1100);
 	refShip.Capacity        			= 6800;
@@ -1880,7 +1879,7 @@ void InitShips()
 
 	refship.Rocking.y 					= 0.5;
 	refship.Rocking.az 					= 0.035;
-		
+
 	refship.WaterLine					= 1.6;
 	refship.SpeedDependWeight			= 0.3;
 	refship.SubSeaDependWeight			= 1.15;
@@ -1951,7 +1950,6 @@ void InitShips()
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
 	refship.Spec                        = SHIP_SPEC_WAR;
-	refShip.CanEncounter				= false;
 	
 	refShip.lowpolycrew 				= 24;
 	refship.Rocking.y 					= 0.5;
@@ -2027,7 +2025,6 @@ void InitShips()
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
 	refship.Spec                        = SHIP_SPEC_WAR;
-	refShip.CanEncounter				= false;
 	
 	refShip.lowpolycrew 				= 24;
 	refship.Rocking.y 					= 0.5;
@@ -2103,7 +2100,6 @@ void InitShips()
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
 	refship.Spec                        = SHIP_SPEC_WAR;
-	refShip.CanEncounter				= false;
 	refShip.lowpolycrew 				= 28;
 
 	refship.Rocking.y 					= 0.3;
@@ -2178,7 +2174,6 @@ void InitShips()
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
 	refship.Spec                        = SHIP_SPEC_WAR;
-	refShip.CanEncounter				= false;
 	refShip.lowpolycrew 				= 28;
 
 	refship.Rocking.y 					= 0.3;
@@ -2742,7 +2737,7 @@ void InitShips()
 	refship.Rocking.y 					= 0.45;
 	refship.Rocking.az 					= 0.035;
 	
-	refship.WaterLine					= 0.85;
+	refship.WaterLine					= 0.0;
 	refship.SpeedDependWeight			= 0.15;
 	refship.SubSeaDependWeight			= 0.95;
 	refship.TurnDependWeight			= 0.2;
@@ -2793,7 +2788,7 @@ void InitShips()
 	refShip.lcannon 					= 30;
 	refShip.fcannon 					= 2;
 	refShip.bcannon 					= 4;		
-	refShip.MaxCrew         			= 9328;
+	refShip.MaxCrew         			= 928;
 	refShip.OptCrew         			= 742;
 	refShip.MinCrew         			= 186;	
 	refShip.SpeedRate					= 12.85;
@@ -2919,7 +2914,7 @@ void InitShips()
 	refShip.Name            			= "Galeon_sm";
 	refship.Soundtype					= "frigate";
 	refShip.Class						= 3;
-	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS32;
+	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS24;
 	refShip.MaxCaliber      			= 24;
 	refShip.Weight						= Tonnes2CWT(820);
 	refShip.Capacity        			= 6100;
@@ -2989,7 +2984,7 @@ void InitShips()
 	refShip.Name            			= "LadyBeth";
 	refship.Soundtype					= "corvette";
 	refShip.Class						= 5;
-	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS24;
+	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS16;
 	refShip.MaxCaliber      			= 16;	
 	refShip.Weight						= Tonnes2CWT(386);	
 	refShip.Capacity        			= 3150;
@@ -3055,32 +3050,31 @@ void InitShips()
 	
 	
 	///////////////////////////////////////////////////////////////////////////
-	//// СП3 - квестовый военный
+	//// Мементо - квестовый военный
 	///////////////////////////////////////////////////////////////////////////
-	makeref(refShip,ShipsTypes[SHIP_SP3]);
-	refShip.Name            			= "LadyBeth";
-	refship.Soundtype					= "corvette";
-	refShip.Class						= 3;
-	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS24;
-	refShip.MaxCaliber      			= 16;	
-	refShip.Weight						= Tonnes2CWT(386);	
-	refShip.Capacity        			= 3150;
+	makeref(refShip,ShipsTypes[SHIP_MEMENTO]);
+	refShip.Name            			= "Memento";
+	refship.Soundtype					= "lugger";
+	refShip.Class						= 4;
+	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS18;
+	refShip.MaxCaliber      			= 18;	
+	refShip.Weight						= Tonnes2CWT(430);	
+	refShip.Capacity        			= 4250;
 	refShip.CannonsQuantity				= 22; // 9,9,2,2
 	refShip.CannonsQuantityMin			= 22;
 	refShip.rcannon 					= 9;
 	refShip.lcannon 					= 9;
 	refShip.fcannon 					= 2;
 	refShip.bcannon 					= 2;		
-	refShip.MaxCrew         			= 125;
-	refShip.OptCrew         			= 100;
-	refShip.MinCrew         			= 25;	
-	refShip.SpeedRate       			= 16.5;
-	refShip.TurnRate        			= 52.0;
-	refShip.Price           			= 33333;
-	refShip.HP              			= 2350;
+	refShip.MaxCrew         			= 175;
+	refShip.OptCrew         			= 140;
+	refShip.MinCrew         			= 35;	
+	refShip.SpeedRate       			= 17.25;
+	refShip.TurnRate        			= 50.5;
+	refShip.Price           			= 52000;
+	refShip.HP              			= 3420;
 	refShip.SP              			= 100;
 
-	refship.Type.Merchant				= true;
 	refship.Type.War					= true;
 	refship.Spec                        = SHIP_SPEC_WAR;
 	refship.QuestShip                   = true;
@@ -3091,13 +3085,13 @@ void InitShips()
 	refship.Rocking.y 					= 0.5;
 	refship.Rocking.az 					= 0.04;
 	
-	refship.WaterLine					= 0.8;
+	refship.WaterLine					= 0.3;
 	refship.SpeedDependWeight			= 0.27;
 	refship.SubSeaDependWeight			= 0.6;
 	refship.TurnDependWeight			= 0.3;
-	refship.WindAgainstSpeed   			= 0.70;
+	refship.WindAgainstSpeed   			= 0.65;
 	
-	refship.CabinType          			= "Cabin_Medium";
+	refship.CabinType          			= "Cabin_memento";
 	refship.DeckType           			= "memento";
 
 	refship.InertiaAccelerationX	= 5.5;	refship.InertiaBrakingX		= 5.5;
@@ -3111,8 +3105,13 @@ void InitShips()
 	
 	refShip.GeraldSails.rey_b2		= 1;
 	refShip.GeraldSails.rey_b3		= 1;
-	refShip.GeraldSails.rey_b2.vscale		= 0.8;
-	refShip.GeraldSails.rey_b3.vscale		= 0.8;
+	refShip.GeraldSails.rey_a33		= 1;
+	refShip.GeraldSails.rey_b2.vscale		= 1.0;
+	refShip.GeraldSails.rey_b2.hscale		= 1.0;
+	refShip.GeraldSails.rey_b3.vscale		= 1.0;
+	refShip.GeraldSails.rey_b3.hscale		= 1.0;
+	refShip.GeraldSails.rey_a33.vscale		= 1.0;
+	refShip.GeraldSails.rey_a33.hscale		= 1.0;
 	
 	refship.Track.Enable	= true;
 	refship.Track1.ZStart	= 0.20;
@@ -3404,7 +3403,7 @@ void InitShips()
 	
 	refship.nation.england	= false;
 	refship.nation.france	= false
-	refship.nation.spain	= true;;
+	refship.nation.spain	= true;
 	refship.nation.holland	= false;
 	refship.nation.pirate	= true;
 	

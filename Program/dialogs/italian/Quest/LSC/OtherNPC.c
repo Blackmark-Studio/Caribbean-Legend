@@ -236,7 +236,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AxelHelper_1":
-			dialog.text = "Axel è occupato. Sta avendo un incontro con Donald Greenspen e rimarrà con lui fino a stasera. Quindi se vuoi comprare qualcosa – torna domattina. E io tengo d’occhio la bottega, perciò non pensare nemmeno di rubare…";
+			dialog.text = "Axel è occupato. Sta avendo un incontro con Donald Greenspen e rimarrà con lui fino a stasera. Quindi se vuoi comprare qualcosa – torna domattina. E io tengo d’occhio la bottega, perciò non pensare nemmeno di rubare...";
 			link.l1 = "Capisco. E perché proprio oggi si mette a fare questo? Va bene, tornerò qui domattina.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "AxelHelper_2";

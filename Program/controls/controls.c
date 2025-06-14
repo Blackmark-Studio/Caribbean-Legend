@@ -27,29 +27,13 @@ extern void ExternControlsInit(bool bFirst, int iControlKeys);
 
 native int AddControlTreeNode(int nParent,string sBaseControl,string sOutControl,float fTimeOut);
 
-void ControlsTreeInit()
-{
-	int n;
-	// belamour финт и пари на отдельные кнопки
-	/* n = AddControlTreeNode(-1,"ChrAttackFient1","ChrAttackFient",0.0);
-	n = AddControlTreeNode(-1,"ChrParry1","ChrParry",0.0); */
-}
-
-void ControlsInit(string sPlatformName,bool bFirst, int iControlKeys)
+void ControlsInit(string sPlatformName, bool bFirst, int iControlKeys)
 {
 	DeleteAttribute(&objControlsState,"");
 
-	string initFileName = "";
-	
-	
-	initFileName = "controls\init_pc.c";
+	string initFileName = "controls\init_pc.c";
 	if(IsSteamDeck()) initFileName = "controls\init_sd.c";
 
-	if(initFileName == "")
-	{
-		trace("Can`t init controls because not right platform");
-		return;
-	}
 	if(LoadSegment(initFileName))
 	{
 		ExternControlsInit(bFirst, !iControlKeys);
@@ -64,12 +48,11 @@ void ControlsInit(string sPlatformName,bool bFirst, int iControlKeys)
 
 void RestoreKeysFromOptions(aref arControlsRoot)
 {
-	aref arRootKey,arKey;
+	aref arRootKey, arKey;
 	int nGroupQ,nKeyQ, i,j, state,ctrlCode,keyCode;
 	string ctrlName,grName;
 
 	nGroupQ = GetAttributesNum(arControlsRoot);
-
 	for(i=0; i<nGroupQ; i++)
 	{
 		arRootKey = GetAttributeN(arControlsRoot,i);
@@ -89,6 +72,33 @@ void RestoreKeysFromOptions(aref arControlsRoot)
 			CI_CreateAndSetControls(grName, ctrlName, keyCode, state, arKey.remapping);
 		}
 	}
+
+    // --> ВРЕМЕННЫЙ КОСТЫЛЬ НА ВОЗМОЖНЫЕ НЕСОВПАДЕНИЯ (TO_DO: REF)
+    makearef(arRootKey, objControlsState.keygroups.AltPressedGroup);
+    nKeyQ = GetAttributesNum(arRootKey);
+    for(j = nKeyQ-1; j >= 0; j--)
+    {
+        arKey = GetAttributeN(arRootKey,j);
+        ctrlName = GetAttributeName(arKey);
+        if(!CheckAttribute(arControlsRoot, "AltPressedGroup." + ctrlName))
+            DeleteAttribute(&objControlsState, "keygroups.AltPressedGroup." + ctrlName);
+    }
+    makearef(arRootKey, objControlsState.keygroups.BattleInterfaceControls);
+    if(!CheckAttribute(&arControlsRoot, "BattleInterfaceControls.ChrForward"))
+    {
+        DeleteAttribute(arRootKey, "ChrForward");
+        DeleteAttribute(arRootKey, "ChrBackward");
+        DeleteAttribute(arRootKey, "ChrStrafeLeft");
+        DeleteAttribute(arRootKey, "ChrStrafeRight");
+    }
+    if(!CheckAttribute(&arControlsRoot, "BattleInterfaceControls.Ship_SailUp"))
+    {
+        DeleteAttribute(arRootKey, "Ship_SailUp");
+        DeleteAttribute(arRootKey, "Ship_SailDown");
+        DeleteAttribute(arRootKey, "Ship_TurnLeft");
+        DeleteAttribute(arRootKey, "Ship_TurnRight");
+    }
+    // <-- ВРЕМЕННЫЙ КОСТЫЛЬ НА ВОЗМОЖНЫЕ НЕСОВПАДЕНИЯ (TO_DO: REF)
 
 	RunControlsContainers();
 }

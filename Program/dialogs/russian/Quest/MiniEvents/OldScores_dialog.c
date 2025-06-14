@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
 			if (bOk1 || bOk2)
 			{
-				dialog.text = "Слыхали? У бармена-то нашего беда! Джин у него спёрли! Да не бутылочку, а целый бочонок, да ещё такой, что на всех Карибах не сыщешь! Говорят, аж из самой Европы привезён. Для кого старый прохвост его держал - не признаётся, но одно ясно: если эту пропажу не найдут скоро, бедолагу шторм адский накроет!";
+				dialog.text = "Говорят, вчера в таверне драка была... Только вот кто дрался - чёрт его разберёт. Моя рожа-то цела. Вроде.";
 				link.l1 = "Похоже, здесь была грандиозная попойка?";
 				link.l1.go = "OS_Matros_sluh_2";
 			}
@@ -251,7 +251,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Жалкая постанова? Да чтоб мне в аду сгореть, я же с тебя сейчас кожу сниму и на парус пущу! Хватит болтать - конец тебе, скотина!";
+				dialog.text = "Жалкая постановка? Да чтоб мне в аду сгореть, я же с тебя сейчас кожу сниму и на парус пущу! Хватит болтать - конец тебе, скотина!";
 				link.l1 = "Ну, раз вы так настаиваете - то к бою, мерзавцы!";
 			}
 			link.l1.go = "OS_Dialog_bitva";
@@ -292,7 +292,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Zaharia_3";
 			CharacterTurnByChr(npchar, pchar);
 			TakeItemFromCharacter(pchar, "cask_gin");
-			Log_Info("Вы отдали бочонок джина");
+			notification("Вы отдали бочонок джина", "NONE");
 		break;
 		
 		case "Zaharia_3":

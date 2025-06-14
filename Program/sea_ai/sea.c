@@ -832,6 +832,11 @@ void SeaLogin(ref Login)
 		if (CheckAttribute(rEncounter, "qID"))
 		{
 			//Trace("SEA: Login quest encounter " + rEncounter.qID);
+            if(CheckAttribute(&Characters[iAloneCharIndex], "QuestHandler"))
+            {
+                sGName = Characters[iAloneCharIndex].QuestHandler;
+                call sGName(&Characters[iAloneCharIndex]);
+            }
 			Group_SetAddressNone(rEncounter.qID);
 			Group_SetXZ_AY(rEncounter.qID, x, z, ay);
 			Sea_LoginGroup(rEncounter.qID);
@@ -1004,14 +1009,12 @@ void SeaLogin(ref Login)
                 rFantom.MainCaptanId = Characters[seaFantoms[seaFantomsNum - iNumFantomShips]].id;
 				rFantom.WatchFort = true; //следить за фортом
 				rFantom.AnalizeShips = true; //анализить враждебные корабли сразу же с загрузки и далее
-				if (CheckAttribute(rFantom, "Ship.Mode"))
-                {
+                if (iEncounterType >= ENCOUNTER_TYPE_PATROL_SMALL && iEncounterType <= ENCOUNTER_TYPE_NAVAL_LARGE)
+                    SetCaptanModelByEncType(rFantom, "war"); // принудительно для военных корабли снабжения
+				else if (CheckAttribute(rFantom, "Ship.Mode"))
                 	SetCaptanModelByEncType(rFantom, rFantom.Ship.Mode);
-                }
                 else
-                {
                     SetCaptanModelByEncType(rFantom, rEncounter.Type);
-                }
                 // boal разговор в море <--
 
 				SetRandomNameToCharacter(rFantom);
@@ -1972,5 +1975,4 @@ void Sea_LoginGroupCurrentSeaEx(string sGroupID, float baseDis, int diff)
     TEV.TempSeaLoginParam.diff = diff;
     Sea_LoginGroupCurrentSea(sGroupID);
     DeleteAttribute(&TEV, "TempSeaLoginParam");
-
 }

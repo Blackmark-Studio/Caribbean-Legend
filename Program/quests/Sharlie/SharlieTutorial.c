@@ -15,6 +15,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	AddQuestRecordInfo("Sharlie_Lover", "1");
 	
 	DeleteAttribute(pchar, "TutorialToDeck_1");
+	Achievment_Set("Test_Ach");
 	
 	// убираем корабль
 	pchar.Ship.Type = SHIP_NOTUSED;
@@ -117,7 +118,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	sld.name 	= StringFromKey("SharlieTutorial_2");
 	sld.lastname = "";
 	ChangeCharacterAddressGroup(sld, "Quest_Ship_deck_Medium_trade", "quest", "quest4");
-	LAi_SetActorType(sld);
+	LAi_SetStayType(sld);
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.Dialog.currentnode = "OhrannikCabin";
 	AddLandQuestMark(sld, "questmarkgen");
@@ -169,7 +170,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	sld.lastname = "";
 	sld.Merchant.type = "SharlieTurorial";
 	GiveItemToTrader(sld);
-	ChangeCharacterAddressGroup(sld, "Quest_Campus", "goto", "goto8");
+	ChangeCharacterAddressGroup(sld, "Quest_Campus", "quest", "quest1");
 	LAi_SetStayType(sld);
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.Dialog.currentnode = "OfficerTorgovets";
@@ -180,7 +181,6 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	sld.name 	= StringFromKey("SharlieTutorial_9");
 	sld.lastname = StringFromKey("SharlieTutorial_10");
 	//sld.tutorial.overload = true;
-	sld.tutorial.trading = true;
 	ChangeCharacterAddressGroup(sld, "Quest_Campus", "sit", "sit5");
 	LAi_SetSitType(sld);
 	sld.nonTable = true;
@@ -194,6 +194,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	sld.lastname = "";
 	sld.Unpushable = "";
 	ChangeCharacterAddressGroup(sld, "Quest_Ship_deck_Medium_trade", "quest", "quest8");
+	SendMessage(sld, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("Brush_Props"), "Brush_Props", "Saber_hand", 1);
 	LAi_SetActorType(sld);
 	LAi_ActorAnimation(sld, "tutorial_4", "", -1.0);
 	SetFunctionLocationCondition("SharlieTutorial_SailorCleansFloors", "Quest_Ship_deck_Medium_trade", true);
@@ -242,11 +243,18 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	sld.type = "quest_deck";
 	
 	pchar.systeminfo.tutorial.OverLoad = true;
-	pchar.systeminfo.tutorial.Amulet = true;
+	pchar.systeminfo.tutorial.prologue_amulet = true;
 	
 	pchar.quest.Tutorial_Amulet.win_condition.l1 = "ItemGroup";
 	pchar.quest.Tutorial_Amulet.win_condition.l1.group = ITEM_SLOT_TYPE;
-	pchar.quest.Tutorial_Amulet.function = "Tutorial_Amulet";
+	pchar.quest.Tutorial_Amulet.function = "Tutorial_Prologue_Amulet";
+	
+	pchar.quest.Tutorial_Talisman.win_condition.l1 = "ItemGroup";
+	pchar.quest.Tutorial_Talisman.win_condition.l1.group = TALISMAN_ITEM_TYPE;
+	pchar.quest.Tutorial_Talisman.function = "Tutorial_Prologue_Amulet";
+	
+	TEV.Tutor.PopUpLogbook = true;
+	TEV.Tutor.PopUpTrading = true;
 	
 	DoQuestFunctionDelay("AutoSaveDelay", 4.0);
 }
@@ -283,7 +291,7 @@ void SharlieTutorial_StartKino_3(string qName)
 	//LAi_SetActorType(pchar);
 	//LAi_ActorAnimation(pchar, "tutorial_4", "1", 7.2);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Sailor_10", "citiz_36", "man", "man", 5, FRANCE, -1, false, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Sailor_10", "Alonso", "man", "man", 5, FRANCE, -1, false, "pirate"));
 	sld.name 	= StringFromKey("HollandGambit_23");
 	sld.lastname = "";
 	ChangeCharacterAddressGroup(sld, "Quest_Ship_deck_Medium_trade", "quest", "quest7");
@@ -337,28 +345,6 @@ void SharlieTutorial_StartKino_6()
 	DoQuestFunctionDelay("SharlieTutorial_StartGameInPaluba", 1.0);
 }
 
-/*void SharlieTutorial_StartKino_2(string qName)
-{
-	locCameraFromToPos(-8.74, 6.30, 7.38, true, -14.34, 4.16, 6.56);
-	DoQuestFunctionDelay("SharlieTutorial_StartKino_3", 3.0);
-}
-
-void SharlieTutorial_StartKino_3(string qName) // Алонсо подходит в самом начале
-{
-	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Sailor_10", "citiz_36", "man", "man", 5, FRANCE, -1, false, "pirate"));
-	sld.name 	= StringFromKey("HollandGambit_23");
-	sld.lastname = "";
-	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
-	sld.Dialog.currentnode = "StartSailor";
-	ChangeCharacterAddressGroup(sld, "Quest_Ship_deck_Medium_trade", "quest", "quest8");
-	LAi_SetActorType(sld);
-	LAi_ActorAnimation(sld, "tutorial_3", "1", 10.0);
-	//LAi_ActorGoToLocatorNoCheck(sld, "quest", "quest7", "", -1);
-	//TeleportCharacterToPosAy(sld, -10.80, 4.96, 11.79, 3.00);
-	//LAi_SetActorType(sld);
-	//LAi_ActorDialog(sld, pchar, "", -1, 0);
-}*/
-
 void SharlieTutorial_ResetInterface(string qName)
 {
 	StartBattleLandInterface();
@@ -378,6 +364,7 @@ void SharlieTutorial_PrinestiRumFinal()
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.dialog.currentnode = "SailorWantRum_PrinestiRum";
 	DelLandQuestMark(sld);
+	pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
 }
 
 void SharlieTutorial_SailorNeedBoxOfBalls()
@@ -392,6 +379,7 @@ void SharlieTutorial_SailorNeedBoxOfBallsFinal()
 	AddQuestRecord("SharlieTutorial", "4");
 	sld = CharacterFromID("SharlieTutorial_Sailor_8");
 	DelLandQuestMark(sld);
+	pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
 }
 
 void SharlieTutorial_QuestRazdatZoloto()
@@ -411,6 +399,12 @@ void SharlieTutorial_QuestRazdatZoloto()
 	
 	sld = CharacterFromID("SharlieTutorial_Sailor_10");
 	AddLandQuestMark(sld, "questmarkgen");
+	
+	if(bGlobalTutor)
+	{
+		TW_InitLand_Craft_1_Inventory();
+		TW_Open("land_craft");
+	}
 }
 
 void SharlieTutorial_journal(string qName)
@@ -425,22 +419,35 @@ void SharlieTutorial_OldSailorKey()
 	LAi_CharacterDisableDialog(sld);
 	
 	// прячем ключ
-	switch (rand(4))
+	switch (rand(2))
 	{
-		case 0: SetItemInLocation("Tutorial_key", "Quest_Cabin_Medium", "item2") break;
-		case 1: SetItemInLocation("Tutorial_key", "Quest_Ship_deck_Medium_trade", "item1") break;
-		case 2:
-			SetItemInLocation("Tutorial_key", "Quest_Deck", "item2"); 
-			Item_OnUnLoadLocation();
-			Item_OnLoadLocation("Quest_Ship_deck_Medium_trade");
+		case 0: 
+			SetItemInLocation("Tutorial_key", "Quest_Cabin_Medium", "item2") 
+			Log_TestInfo("Ключ в каюте капитана");
 		break;
-		case 3: SetItemInLocation("Tutorial_key", "Quest_Deck_Medium", "item1") break;
-		case 4: SetItemInLocation("Tutorial_key", "Quest_Deck_Medium", "item2") break;
+		case 1:
+			SetItemInLocation("Tutorial_key", "Quest_Ship_deck_Medium_trade", "item1") 
+			Log_TestInfo("Ключ на верхней палубе");
+		break;
+		case 2:
+			SetItemInLocation("Tutorial_key", "Quest_Deck_Medium", "item2") 
+			Log_TestInfo("Ключ на орудийной палубе");
+		break;
 	}
+	
+	PChar.quest.SharlieTutorial_FoundTheKey.win_condition.l1 = "item";
+	PChar.quest.SharlieTutorial_FoundTheKey.win_condition.l1.item = "Tutorial_key";
+	PChar.quest.SharlieTutorial_FoundTheKey.function = "SharlieTutorial_FoundTheKey";
+}
+
+void SharlieTutorial_FoundTheKey(string qName)
+{
+	pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
 }
 
 void SharlieTutorial_Trevoga()
 {
+	TW_Release();
 	StartQuestMovie(true, false, true);
 	pchar.questTemp.NoFast = true;
 	LAi_SetStayType(pchar);
@@ -535,7 +542,7 @@ void SharlieTutorial_TrumLoad_3()
 	}
 }
 
-void SharlieTutorial_TrumLoad_4(string qName)
+void SharlieTutorial_TrumLoad_4()
 {
 	sld = CharacterFromID("SharlieTutorial_Officer_3");
 	LAi_SetActorType(sld);
@@ -558,7 +565,9 @@ void SharlieTutorial_StartShip(string qName)//начинается морско�
 	SetBaseShipData(pchar);
 	RealShips[sti(pchar.Ship.Type)].ship.upgrades.hull = 2;
 	SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
-	realships[sti(pchar.ship.type)].SpeedRate = 18;
+	realships[sti(pchar.ship.type)].SpeedRate = 15.5;
+	realships[sti(pchar.ship.type)].TurnRate = 52.5;
+	realships[sti(pchar.ship.type)].WaterLine = 1.3;
 	realships[sti(pchar.ship.type)].Capacity = 6500;
 	realships[sti(pchar.ship.type)].WindAgainstSpeed = 1.1;
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
@@ -578,7 +587,10 @@ void SharlieTutorial_StartShip(string qName)//начинается морско�
 	bDisableCharacterMenu = true;
 	InterfaceStates.Buttons.Save.enable = false;
 	QuestToSeaLogin_Launch();
-	DoQuestFunctionDelay("SharlieTutorial_StartShip_2", 2.0);
+	DoQuestFunctionDelay("SharlieTutorial_StartShip_2", 1.5);
+	DoQuestFunctionDelay("SharlieTutorial_StartShip_3", 3.0);
+	DoQuestFunctionDelay("SharlieTutorial_StartShip_4", 4.5);
+	DoQuestFunctionDelay("SharlieTutorial_StartShip_5", 6.0);
 	
 	// Очищаем палубу и возвращаем её в исходное состояние
 	for (i=1; i<=11; i++)
@@ -620,8 +632,22 @@ void SharlieTutorial_StartShip(string qName)//начинается морско�
 
 void SharlieTutorial_StartShip_2(string qName)
 {
+	// evganat - туториал
+	if(bGlobalTutor)
+	{
+		bCanSwitchCameras = false;
+		LaunchTutorial("Prologue_AutoFire", 1);
+	}
+}
+
+void SharlieTutorial_StartShip_3(string qName)
+{
+	LAi_FadeToBlackStart();
+}
+
+void SharlieTutorial_StartShip_4(string qName)
+{
 	LAi_SetImmortal(pchar, true);
-	DoQuestFunctionDelay("SharlieTutorial_SeaBattleMusic", 0.1);
 	//pchar.HullDamageTutorial = true;
 	bCannonsRangeShow = true;
 	SendMessage(&AISea, "lllllffl", AI_MESSAGE_CANNONS_RANGE, argb(0,255,255,255), argb(25,255,255,255), argb(0,255,0,0), argb(75,255,0,0), 0.002, 0.002, bCannonsRangeShow);
@@ -676,7 +702,7 @@ void SharlieTutorial_StartShip_2(string qName)
 	Group_LockTask("SharlieTutorial_SeaAttack");
 	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
 	
-	Sea_LoginGroupCurrentSeaEx("SharlieTutorial_SeaAttack", 100, 0)
+	Sea_LoginGroupCurrentSeaEx("SharlieTutorial_SeaAttack", 150.0, 0);
 	//log_info("Враг на горизонте!");
 	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy1.wav");
 	// вражеский флот <--
@@ -685,9 +711,11 @@ void SharlieTutorial_StartShip_2(string qName)
 	PChar.quest.SharlieTutorial_AttackDead.function = "SharlieTutorial_AttackDead";
 }
 
-void SharlieTutorial_SeaBattleMusic(string qName)
+void SharlieTutorial_StartShip_5(string qName)
 {
-	SetMusic("music_q_Seabattle");
+	LAi_FadeToBlackEnd();
+	TW_InitSea_Battle_1_AutoFire();
+	TW_Open("sea_battle");
 }
 
 void SharlieTutorial_AttackDead(string qName)
@@ -697,7 +725,7 @@ void SharlieTutorial_AttackDead(string qName)
 	DoQuestFunctionDelay("SharlieTutorial_ActivateButtonInTheSea_2", 12.0);
 }
 
-void SharlieTutorial_ActThree(string qName)
+void SharlieTutorial_ActThree()
 {
 	// убираем корабль и запреты
 	pchar.Ship.Type = SHIP_NOTUSED;
@@ -747,9 +775,6 @@ void SharlieTutorial_ActThree(string qName)
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
 	sld.CantLootBlade = true;
-	
-	//AutoSave();
-	DoQuestFunctionDelay("AutoSaveDelay", 1.5);
 }
 
 void SharlieTutorial_TrumBitva_2()
@@ -765,23 +790,44 @@ void SharlieTutorial_TrumBitva_2()
 	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
 	LAi_group_SetCheckFunction("EnemyFight", "SharlieTutorial_TrumBitva_3");
 	
-	DoQuestCheckDelay("GuideFight_tutorial", 1.0);
+	// evganat - туториал
+	if(bGlobalTutor)
+    {
+		SetDummy(sld, true);
+		TEV.Tutor.BackControlsTips = iControlsTips;
+		iControlsTips = 0;
+        TW_InitLand_Fight_1_Attack();
+        TW_Open("land_fight");
+	}
 }
 
 void SharlieTutorial_TrumBitva_3(string qName)
 {
+	DoQuestFunctionDelay("SharlieTutorial_TrumBitva_3_1", 1.5);
+}
+
+void SharlieTutorial_TrumBitva_3_1(string qName)
+{
+	if(bGlobalTutor)
+	{
+		objTask.land_fight = "";
+		PostEvent("TW_Release", 2000);
+	}
 	chrDisableReloadToLocation = false;
 	LAi_RemoveCheckMinHP(pchar);
 	sld = &Locations[FindLocation("Quest_Deck_Medium")];
 	sld.locators_radius.item.item1 = 0.5;
 	sld.locators_radius.item.item2 = 0.5;
 	SetFunctionLocationCondition("SharlieTutorial_TrumBitva_4", "Quest_Deck_Medium", false);
+	QuestPointerToLoc("Quest_Deck", "reload", "reload_gundeck1");
+	AutoSave();
 }
 
 void SharlieTutorial_TrumBitva_4(string qName)
 {
 	chrDisableReloadToLocation = true;
 	InterfaceStates.Buttons.Save.enable = false;
+	QuestPointerDelLoc("Quest_Deck", "reload", "reload_gundeck1");
 	LAi_SetCheckMinHP(pchar, 1, true, "SharlieTutorial_Ranen");
 	for (i=1; i<=8; i++)
 	{
@@ -809,7 +855,7 @@ void SharlieTutorial_TrumBitva_4(string qName)
 	GiveItem2Character(sld, "Mineral21");
 	GiveItem2Character(sld, "chest_open");
 	
-	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Alonso", "citiz_36", "man", "man", 1, FRANCE, 0, true, "pirate"));	// раненый Алонсо
+	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Alonso", "Alonso", "man", "man", 1, FRANCE, 0, true, "pirate"));	// раненый Алонсо
 	sld.name 	= StringFromKey("HollandGambit_23");
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
@@ -867,12 +913,15 @@ void SharlieTutorial_TrumBitva_5()
 		LAi_group_SetCheckFunction("EnemyFight", "SharlieTutorial_TrumBitva_6");
 	}
 	
+	TEV.Tutor.Loot.Pirate2 = 1;
+	TEV.Tutor.Loot.Pirate3 = 1;
+	
 	sld = CharacterFromID("SharlieTutorial_Alonso");
 	LAi_SetActorType(sld);
 	LAi_ActorSetGroundSitMode(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 	
-	LaunchTutorial("MarksmanMode", 1);
+	LaunchTutorial("Prologue_Marksmanship", 1);
 }
 
 void SharlieTutorial_TrumBitva_6(string qName)
@@ -888,7 +937,7 @@ void SharlieTutorial_TrumBitva_6(string qName)
 	PChar.quest.SharlieTutorial_TrumBitva_6_1.win_condition.l1 = "item";
 	PChar.quest.SharlieTutorial_TrumBitva_6_1.win_condition.l1.item = "quest_potion";
 	PChar.quest.SharlieTutorial_TrumBitva_6_1.function = "SharlieTutorial_TrumBitva_6_1";
-	DoQuestFunctionDelay("Tutorial_DeadSearch", 2.0);
+	DoQuestFunctionDelay("Tutorial_DeadSearch", 1.5);
 }
 
 void SharlieTutorial_TrumBitva_6_1(string qName)
@@ -907,12 +956,12 @@ void SharlieTutorial_TrumBitva_6_1(string qName)
 	SetCharacterRemovable(sld, true);
 	LAi_SetOfficerType(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-	DoQuestFunctionDelay("Tutorial_Fighter", 1.0);
 	//LaunchTutorial("Fighter", 1);
 }*/
 
 void SharlieTutorial_TrumBitva_8()
 {
+	TW_Release();
 	LAi_GunSetChargeQuant(pchar, GUN_ITEM_TYPE, 1);
 	DoQuestFunctionDelay("SharlieTutorial_TrumBitva_8_1", 2.5);
 }
@@ -1022,10 +1071,8 @@ void SharlieTutorial_TrumBitva_10_1(string qName)
 void SharlieTutorial_TrumBitva_11(string qName)
 {
 	chrDisableReloadToLocation = false;
-	//LocatorReloadEnterDisable("Quest_Deck_Medium", "reload_camp", true);
+	LocatorReloadEnterDisable("Quest_Deck_Medium", "reload_camp", true);
 	LocatorReloadEnterDisable("Quest_Deck_Medium", "reload_hold1", true);
-	LocatorReloadEnterDisable("Quest_Deck_Medium", "reload_hold2", true);
-	LocatorReloadEnterDisable("Quest_Deck_Medium", "reload_hold3", true);
 	sld = &Locations[FindLocation("Quest_Deck_Medium")];
 	sld.type = "quest_deck";
 	sld = &Locations[FindLocation("Quest_Campus")];
@@ -1040,6 +1087,11 @@ void SharlieTutorial_TrumBitva_11(string qName)
 	PlaySound("interface\abordage_wining.wav");
 	SetFunctionLocationCondition("SharlieTutorial_PobedaPaluba", "Quest_Ship_deck_Medium_trade", false);
 	QuestPointerToLoc("Quest_Deck_Medium", "reload", "reload_deck");
+}
+
+void SharlieTutorial_PobedaPaluba_NoParam()
+{
+    SharlieTutorial_PobedaPaluba("");
 }
 
 void SharlieTutorial_PobedaPaluba(string qName)
@@ -1077,9 +1129,8 @@ void SharlieTutorial_PobedaPaluba(string qName)
 	sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
 	DelLocatorEvent(sld.id, "event1");
 	DelLocatorEvent(sld.id, "event3");
+	LocatorReloadEnterDisable("Quest_Deck_Medium", "reload_camp", false);
 	LocatorReloadEnterDisable("Quest_Deck_Medium", "reload_hold1", false);
-	LocatorReloadEnterDisable("Quest_Deck_Medium", "reload_hold2", false);
-	LocatorReloadEnterDisable("Quest_Deck_Medium", "reload_hold3", false);
 	QuestPointerDelLoc("Quest_Deck_Medium", "reload", "reload_deck");
 	// Расставляем людей
 	/*sld = CharacterFromID("SharlieTutorial_Captain");
@@ -1444,6 +1495,7 @@ void SharlieTutorial_windlass_9(string qName)
 	LAi_SetPlayerType(pchar);
 	sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
 	DelLocatorEvent(sld.id, "event1");
+	pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
 }
 
 /*void SharlieTutorial_windlass_2(string qName)
@@ -1597,6 +1649,7 @@ void SharlieTutorial_cannon_10(string qName)
 	
 	sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
 	DelLocatorEvent(sld.id, "event3");
+	pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
 }
 
 void SharlieTutorial_cannon_11()
@@ -1608,10 +1661,15 @@ void SharlieTutorial_cannon_11()
 	LAi_SetStayType(sld);
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.Dialog.currentnode = "AlonsoWait";
+	
+	sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
+	DelLocatorEvent(sld.id, "event3");
 }
 
 void SharlieTutorial_StartGameInMartinique()
 {
+	SharlieTutorial_ShowLogo_End();
+	
 	// Очищаем палубу и возвращаем её в исходное состояние
 	if (CharacterIsAlive("SharlieTutorial_Captain"))
 	{
@@ -1648,6 +1706,17 @@ void SharlieTutorial_StartGameInMartinique()
 	// возвращаем ванильную цену за карту
 	sld = ItemsFromID("map_full");
 	sld.price = 0;
+    if(GetCharacterItem(PChar, "map_full") == 0)
+    {
+        // Стереть конды и карту
+        locations[FindLocation(sld.MapLocId)].DisableEncounters = false;
+        DeleteAttribute(sld, "MapIslId");
+        DeleteAttribute(sld, "MapLocId");
+        DeleteAttribute(sld, "MapBoxId");
+        DeleteAttribute(sld, "BoxTreasure");
+        DeleteAttribute(PChar, "GenQuest.Treasure.Vario");
+        DeleteAttribute(PChar, "quest.SetTreasureFromMap");
+    }
 	// возвращаем предмету ванильное описание
 	sld = ItemsFromID("quest_potion");
 	sld.name = "itmname_quest_potion";
@@ -1744,11 +1813,12 @@ void SharlieTutorial_ActivateButtonInTheSea_3(string qName)
 	pchar.TutorialToPort = true;
 	ILogAndActions.ActiveActions.Deck.Text = XI_ConvertString("for_quick_action_To_Martinique");//Палуба
 	Log_SetActiveAction("Deck");
+	DoQuestFunctionDelay("SharlieTutorial_SeaNearMartinique_AutoTeleport", 60.0);
 }
 
 void SharlieTutorial_Ranen_2(string qName)
 {
-	DoFunctionReloadToLocation("Quest_Ship_deck_Medium_trade", "goto", "goto8", "SharlieTutorial_PobedaPaluba");
+	DoFunctionReloadToLocation("Quest_Ship_deck_Medium_trade", "goto", "goto8", "SharlieTutorial_PobedaPaluba_NoParam");
 }
 
 void SharlieTutorial_OhrannikStopaet(string qName)
@@ -1766,13 +1836,14 @@ void SharlieTutorial_BoxOfBallsFind(string qName)
 void SharlieTutorial_SailorCleansFloors(string qName)
 {
 	sld = CharacterFromID("SharlieTutorial_Sailor_11");
+	SendMessage(sld, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("Brush_Props"), "Brush_Props", "Saber_hand", 1);
 	LAi_SetActorType(sld);
 	LAi_ActorAnimation(sld, "tutorial_4", "", -1.0);
 }
 
 void SharlieTutorial_SailorSnore(string qName)
 {
-	DeleteAttribute(pchar, "questTemp.SharlieTutorial_SailorSnore");
+	DeleteAttribute(&TEV, "SharlieTutorial_SailorSnore");
 }
 
 void SharlieTutorial_AlonsoHired(string qName)
@@ -1819,7 +1890,9 @@ void SharlieTutorial_SeaNearMartinique()
 	SetBaseShipData(pchar);
 	RealShips[sti(pchar.Ship.Type)].ship.upgrades.hull = 2;
 	SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
-	realships[sti(pchar.ship.type)].SpeedRate = 18;
+	realships[sti(pchar.ship.type)].SpeedRate = 15.5;
+	realships[sti(pchar.ship.type)].TurnRate = 52.5;
+	realships[sti(pchar.ship.type)].WaterLine = 1.3;
 	realships[sti(pchar.ship.type)].Capacity = 6500;
 	realships[sti(pchar.ship.type)].WindAgainstSpeed = 1.1;
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
@@ -1855,9 +1928,7 @@ void SharlieTutorial_SeaNearMartinique()
 void SharlieTutorial_SeaNearMartinique_2(string qName)
 {
 	DoQuestFunctionDelay("SharlieTutorial_SeaNearMartinique_music", 0.1);
-	DoQuestFunctionDelay("SharlieTutorial_SeaNearMartinique_Logo", 10.0);
-	DoQuestFunctionDelay("SharlieTutorial_ActivateButtonInTheSea_3", 14.0);
-	DoQuestFunctionDelay("SharlieTutorial_SeaNearMartinique_AutoTeleport", 74.0);
+	DoQuestFunctionDelay("SharlieTutorial_SeaNearMartinique_Logo", 5.0);
 	pchar.wind.speed = 18.0;
 	fWeatherSpeed = stf(18.0);
 	pchar.wind.angle = 0.0;
@@ -1869,6 +1940,8 @@ void SharlieTutorial_SeaNearMartinique_2(string qName)
 void SharlieTutorial_SeaNearMartinique_Logo(string qName)
 {
 	SharlieTutorial_ShowLogo_Start();
+	Achievment_Set("ach_CL_162");
+	if (CheckAttribute(PChar, "SharlieTutorial.FullyComplete") && sti(pchar.SharlieTutorial.FullyCompleted) == 6) Achievment_Set("ach_CL_163");
 }
 
 void SharlieTutorial_SeaNearMartinique_AutoTeleport(string qName)
@@ -1906,7 +1979,7 @@ bool SharlieTutorial_QuestComplete(string sQuestName, string qname)
 			if (CharacterIsAlive("SharlieTutorial_EnemyPirate_"+i))
 			{
 				sld = CharacterFromID("SharlieTutorial_EnemyPirate_"+i);
-				LAi_SetActorType(sld);
+				//LAi_SetActorType(sld);
 				sld.lifeday = 0;
 			}
 		}
@@ -2010,7 +2083,7 @@ void SharlieTutorial_ShowLogo_Start()
 
 void TutorialLogo_Refresh()
 {
-	int delta = 10;
+	int delta = GetDeltaTime();
 	
 	aref arImage, arColor, arPos;
 	makearef(arImage, ILogAndActions.TutorialLogo.images.logo);
@@ -2034,14 +2107,14 @@ void TutorialLogo_Refresh()
 		
 			case 2:
 				alpha_start = 255;
-				timer = 6.0;
+				timer = 3.0;
 				alpha_end = 255;
 			break;
 			
 			case 3:
 				alpha_start = 255;
 				alpha_end = 0;
-				timer = 5.0;
+				timer = 2.0;
 			break;
 		}
 		time = stf(arColor.time);
@@ -2076,7 +2149,7 @@ void TutorialLogo_Refresh()
 				y1_end = sti(showWindow.bottom) / 2 - RecalculateVIcon(addEnd);
 				x2_end = sti(showWindow.right) / 2 + RecalculateHIcon(addEnd);
 				y2_end = sti(showWindow.bottom) / 2 + RecalculateVIcon(addEnd);
-				timer = 5.0;
+				timer = 2.0;
 			break;
 		}
 		time = stf(arPos.time);
@@ -2105,7 +2178,32 @@ void TutorialLogo_Refresh()
 
 void SharlieTutorial_ShowLogo_End()
 {
+	DoQuestFunctionDelay("SharlieTutorial_ActivateButtonInTheSea_3", 0.5);
 	SendMessage(&ILogAndActions , "ll", LI_MSG_TUTORIAL_SHOW, false);
 	DeleteAttribute(&ILogAndActions, "TutorialLogo");
 	DelEventHandler("TutorialLogo_Refresh", "TutorialLogo_Refresh");
+}
+
+void SharlieTutorial_GenerateTreasureMap(ref item)
+{
+    // Уже заполнена
+    if(CheckAttribute(PChar, "quest.SetTreasureFromMap")) return;
+
+    string sIsland = GetIslandForTreasure();
+    while (sIsland == "Martinique") 
+           sIsland = GetIslandForTreasure();
+
+    item.MapIslId = sIsland;
+    item.MapLocId = GetLocationForTreasure(item.MapIslId);
+    item.MapBoxId = GetBoxForTreasure(item.MapIslId, item.MapLocId);
+    DeleteAttribute(item, "BoxTreasure");
+
+    FillBoxForTreasure(item);
+
+    // Выставим конды сразу. Если карта не будет приобретена, то потом удалим
+    PChar.quest.SetTreasureFromMap.win_condition.l1          = "location";
+    PChar.quest.SetTreasureFromMap.win_condition.l1.location = item.MapLocId;
+    PChar.quest.SetTreasureFromMap.win_condition             = "SetTreasureFromMap";
+    PChar.GenQuest.Treasure.Vario = rand(5); // Определяем событие (33% скип)
+    locations[FindLocation(item.MapLocId)].DisableEncounters = true;
 }

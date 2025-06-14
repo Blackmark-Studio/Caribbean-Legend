@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meeting_5":
-			dialog.text = "Adesso capisco. Sei proprio come Adolf Barbier, hai letto troppe storie di capitan Alvarado e t’è venuta la voglia di trovare l’oro dell’ammiraglio de Betancourt. Ahimè, capitano, se uno scaltro furfante come Barbier non ci ha messo le mani, dubito che tu abbia più fortuna… E ti dirò, secondo me quell’oro dell’ammiraglio è solo una invenzione: Antonio se l’è inventata per farci credere che suo nonno fosse qualcuno di importante… Beh, ormai resterai con noi. Arrivare fin qui è stato facile, ma andarsene… è quasi impossibile. Uscirne intero, poi, è tutta un’altra storia.";
+			dialog.text = "Adesso capisco. Sei proprio come Adolf Barbier, hai letto troppe storie di capitan Alvarado e t’è venuta la voglia di trovare l’oro dell’ammiraglio de Betancourt. Ahimè, capitano, se uno scaltro furfante come Barbier non ci ha messo le mani, dubito che tu abbia più fortuna... E ti dirò, secondo me quell’oro dell’ammiraglio è solo una invenzione: Antonio se l’è inventata per farci credere che suo nonno fosse qualcuno di importante... Beh, ormai resterai con noi. Arrivare fin qui è stato facile, ma andarsene... è quasi impossibile. Uscirne intero, poi, è tutta un’altra storia.";
 			link.l1 = "Non è nulla. Credo che riuscirò a cavarmela, e non parlo dell’oro di Betancourt che hai menzionato – lo sento nominare adesso per la prima volta – parlo di lasciare l’Isola. Vivo. È stato un piacere chiacchierare con te, Tanneke. A presto!";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";

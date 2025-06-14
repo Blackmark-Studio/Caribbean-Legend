@@ -40,7 +40,6 @@ void PrepareDefaultOption(ref optref)
 	optref.icontrolsmode = 0;
 	optref.icompasspos = 0;
 	optref.icontrolstips = 2;
-	optref.iarcadesails = 1;
 	optref.FoliageDrawDistance = 1000;
 	optref.GrassDrawDistance = 50;
 	
@@ -106,12 +105,6 @@ void GetRealOptions(ref optref)
 		optref.icontrolstips = sti(InterfaceStates.ControlsTips);
 	} else {
 		optref.icontrolstips = 2;
-	}
-
-	if( CheckAttribute(&InterfaceStates,"ArcadeSails") ) {
-		optref.iarcadesails = sti(InterfaceStates.ArcadeSails);
-	} else {
-		optref.iarcadesails = 1;
 	}
 	
 	if( CheckAttribute(&InterfaceStates,"SeaDetails") ) {
@@ -299,7 +292,7 @@ void GetRealOptions(ref optref)
 
 void SetCurentOptions(ref optref)
 {
-	SendMessage(&sound,"lfff", MSG_SOUND_SET_MASTER_VOLUME, stf(optref.volume.sound),	stf(optref.volume.music),	stf(optref.volume.dialog));
+	SendMessage(&sound,"lfff", MSG_SOUND_SET_MASTER_VOLUME, stf(optref.volume.sound), stf(optref.volume.music), stf(optref.volume.dialog));
 
 	/*bArcadeSails = sti(optref.arcademode.bArcadeSails);
 	bArcadeShipSpeed = sti(optref.arcademode.bArcadeShipSpeed);
@@ -489,12 +482,6 @@ void SetCurentOptions(ref optref)
 	} else {
 		InterfaceStates.ControlsTips = 2;
 	}
-
-	if( CheckAttribute(optref,"iarcadesails") ) {
-		InterfaceStates.ArcadeSails = sti(optref.iarcadesails);
-	} else {
-		InterfaceStates.ArcadeSails = 1;
-	}		
 
 	if( CheckAttribute(optref,"seadetails") ) {
 		InterfaceStates.SeaDetails = stf(optref.seadetails);

@@ -248,15 +248,38 @@ Aumento de la reserva de pesos: 100%.
 Aumento de la reserva de doblones: ~30%.
 }
 
-sp3 {SP3}
+sp3 {Crisol}
 
 sp3_desc
 {
-DLC.
+En este barco, la vida humana es solo una etapa breve antes de que se revele el verdadero poder. Pocos cruzan el Umbral y regresan, pero quienes lo logran ya no temen a la muerte.
 }
 
 sp3_desc2
 {
-DLC.
+Los marineros caídos aumentan la experiencia y la moral de la tripulación.
 }
+
+sp3_SailorsBoardingBonus_desc
+{
+Bonificación de experiencia en abordaje: #dSailorsBoardingBonus#%
+}
+
+sp3_SailorsBoardingBonus1_desc
+{
+~ (#dDeadSailors#/500 marineros caídos)
+}
+
+sp3_SurrenderChanceBonus_desc
+{
+Aumento de probabilidad de rendición: #dSurrenderChanceBonus#%
+}
+
+sp3_SurrenderChanceBonus1_desc
+{
+~ (#dDeadSailors#/2000 marineros caídos)
+}
+
+
+
 

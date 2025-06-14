@@ -1596,14 +1596,14 @@ void PiratesOnUninhabited_InTreasureLoc(String _quest)
 	{
 		// Тут ничего вообще - не успели
 		
-		PChar.Quest.PiratesOnUninhabited_ClearQuest.win_condition.l1 = "ExitFromLocation";;
+		PChar.Quest.PiratesOnUninhabited_ClearQuest.win_condition.l1 = "ExitFromLocation";
 		PChar.Quest.PiratesOnUninhabited_ClearQuest.win_condition.l1.Location = PChar.GenQuest.PiratesOnUninhabited.TreasureShore;
 		PChar.Quest.PiratesOnUninhabited_ClearQuest.function = "PiratesOnUninhabited_ClearQuest";
 		
 		Log_TestInfo("Пираты на необитайке: пришли поздно, ничего не найдем");
 	}
 	
-	TraderHunterOnMap(); // Немного веселой жизни
+	TraderHunterOnMap(false); // Немного веселой жизни
 }
 
 // Зарубили пиратов, можно лезть в сундук
@@ -1749,6 +1749,7 @@ void RemoveCrewEpidemy_GenQuest()
 			}
 			Log_SetStringToLog(StringFromKey("GenQuests_21", chref.Ship.Name, crew));
 			Statistic_AddValue(mainCh, "Sailors_dead", crew);
+			AddMementoShipBonus(crew);
 			Achievment_SetStat(21, crew);
 			hcrew = GetCrewQuantity(chref);
 			SetCrewQuantity(chref, hcrew - crew);

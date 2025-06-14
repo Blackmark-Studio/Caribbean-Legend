@@ -1112,7 +1112,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Current.TargetIslandID = GetCharacterCurrentIslandId(sld);//ИД целевого ареала
 			pchar.questTemp.WPU.Fraht.TargetCity = FindTownOnIsland(pchar.questTemp.WPU.Current.TargetIslandID);
 			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
-			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Fraht.Chance == 2) FrahtHunterOnSea();//создание ДУ в акватории
 			DialogExit();
 		break;
@@ -1432,7 +1432,7 @@ void ProcessDialogEvent()
 			}
 			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "1");
@@ -1482,7 +1482,7 @@ void ProcessDialogEvent()
 				pchar.quest.Escort_fail.function = "Escort_failed";
 	        }
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			DialogExit();
 		break;
@@ -1637,7 +1637,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 3) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "6");
@@ -1987,7 +1987,7 @@ void ProcessDialogEvent()
 					pchar.quest.Postcureer_Hunter.win_condition.l1 = "Location";
 					pchar.quest.Postcureer_Hunter.win_condition.l1.location = pchar.questTemp.WPU.Postcureer.City + "_town";
 					pchar.quest.Postcureer_Hunter.function = "PostcureerGopHuntersOnLand";
-					TraderHunterOnMap();
+					TraderHunterOnMap(false);
 				break;
 		
 				case 1://создание скоростного перехватчика на глобалке
@@ -1995,7 +1995,7 @@ void ProcessDialogEvent()
 				break;
 		
 				case 2://запуск ДУ на глобалке и в порту прибытия
-					TraderHunterOnMap();
+					TraderHunterOnMap(false);
 					FrahtHunterOnSea();
 				break;
 		
@@ -3689,6 +3689,11 @@ void ProcessDialogEvent()
 				link.l2 = "Patrullare la neve 'Signora Beth'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
+			{
+				link.l3 = "Brigantino 'Memento'.";
+				link.l3.go = "UniqueShips_Memento";
+			}
 			link.l99 = "Credo di saperne abbastanza.";
 			link.l99.go = "node_2";
 		break;
@@ -3707,6 +3712,20 @@ void ProcessDialogEvent()
 			AddQuestRecordInfo("LegendaryShips", "2");
 			pchar.questTemp.LadyBeth_InfoPU = true;
 			dialog.text = "La signora Beth è una vera bellezza. Un miracolo del genio marittimo inglese, comandato da Albert Blackwood, ex ufficiale della marina reale. Infatti, non tutti riescono a disertare in modo così spettacolare! Ha lasciato il servizio, ha ucciso una brillante carriera e ha rubato una nave da guerra - tutto per la caccia al tesoro!\nE non invano. Ha già trovato abbastanza per comprare metà di Barbados, ma vuole ancora di più. Se lo incontri in mare - non cercare nemmeno di intercettarlo. Troppo buona una nave, e il capitano è esperto e cauto. Ultimamente, Blackwood ha frequentato Cayman - scavando giorno e notte, lavorando la gente fino alla morte. Se decidi di controllare - non prendere meno di sessanta uomini e buone armi da fuoco... In realtà, anche quello potrebbe non essere abbastanza\nSpero che tu sappia sparare, poiché una compagnia di ex fanteria marina del colonnello Fox è disertata con lui. Professionisti, niente a che vedere con i comuni tagliagole. E non attaccarlo mai nei porti francesi - ha protezione e patroni lì, ricevendo una quota dei suoi ritrovamenti.";
+			link.l1 = "Grazie mille.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Memento":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "3");
+			pchar.questTemp.Memento_InfoPU = true;
+			dialog.text = "La 'Memento' — una vera leggenda dei pirati. Una brigantina nera al comando del capitano Mortimer Grim.\n"+
+			"Grim dà la caccia esclusivamente agli schiavisti. Si dice che liberi gli schiavi e salvi i condannati a morte riscattandoli con oro sonante. Una causa nobile — se si ignora il resto.\n"+
+			"Se non trasportate esseri umani, Grim non vi toccherà. È strano, ma ha i suoi principi. Ma se avete schiavi nella stiva... pregate di non vedere le vele nere all’orizzonte.\n"+
+			"La 'Memento' naviga tra gli insediamenti dei pirati, ma attracca raramente. L’equipaggio vive a bordo per mesi, come se avesse paura di mettere piede a terra. Si dice anche che la nave abbia superato un’epidemia mostruosa — per questo l’equipaggio è così difficile da uccidere.\n"+
+			"Se pensate di attaccarli — portate molti cannoni. Abbordare la 'Memento' è quasi impossibile — l’equipaggio combatte come posseduto, come se non temesse la morte. L’unico modo per sconfiggerli è fare a pezzi la nave, togliendogli il rifugio. Le schegge non li spaventano, ma un colpo diretto di mitraglia — è tutta un’altra storia.\n"+
+			"In bocca al lupo. E ricordate la morte.";
 			link.l1 = "Grazie mille.";
 			link.l1.go = "node_2";
 		break;

@@ -222,7 +222,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Captain_4_commerce":
-			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 45)
+			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 25)
 			{
 				dialog.text = "Fünftausend, sagt Ihr? Gut, Kapitän. Nehmt es – wenn es Euch so wichtig ist.";
 				link.l1 = "Vielen Dank. Ihr habt die richtige Entscheidung getroffen.";
@@ -243,28 +243,6 @@ void ProcessDialogEvent()
 			}
 		break;
 		
-		case "Captain_4_commerce":
-			if (GetSummonSkillFromName(pchar, SKILL_Commerce) >= 45)
-			{
-				dialog.text = "Fünftausend, sagt Ihr? Nun gut, Kapitän, Ihr treibt einen überzeugenden Handel. Hier, nehmt das Schmuckstück, wenn es so viel bedeutet.";
-				link.l1 = "Eure Weisheit entspricht Eurer Großzügigkeit, mein Herr. Diese Entscheidung wird nicht bereut werden.";
-				link.l1.go = "exit";
-				AddDialogExitQuestFunction("UV_Ozherelie");
-				notification("Überprüfung bestanden", SKILL_COMMERCE);
-				GiveItem2Character(pchar, "SM_necklace_Julie");
-				ChangeCharacterComplexReputation(pchar, "nobility", 2);
-				AddMoneyToCharacter(pchar, -5000);
-			}
-			else
-			{
-				dialog.text = "Ich habe diese Halskette nicht erworben, um sie an den ersten Vagabunden zu verhökern, der mit Münzen raschelt! Sie ist als Geschenk für meine Frau gedacht, und ich werde nichts mehr zu diesem Thema hören. Entfernt Euch aus meiner Gegenwart, bevor ich Männer rufe, um Euch hinauszubegleiten!";
-				link.l1 = "Wenn Ihr eine Übereinkunft unter Ehrenmännern ablehnt, dann werde ich das, was ich suche, mit weniger zivilisierten Mitteln beanspruchen.";
-				link.l1.go = "exit";
-				AddDialogExitQuestFunction("UV_Ozherelie_Duel");
-				notification("Fähigkeit nicht ausreichend (45)", SKILL_COMMERCE);
-			}
-		break;
-		
 		case "Captain_4_leadership":
 			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 45)
 			{
@@ -280,7 +258,7 @@ void ProcessDialogEvent()
 				link.l1 = "Wenn du das Halsband nicht freiwillig hergeben willst, werde ich es mir mit Gewalt holen.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie_Duel");
-				notification("Fertigkeit zu niedrig (45)", SKILL_Leadership);
+				notification("Fertigkeit zu niedrig (25)", SKILL_Leadership);
 			}
 		break;
 
@@ -289,6 +267,7 @@ void ProcessDialogEvent()
 			link.l1 = "Eine weise Entscheidung! Lebt wohl.";
 			AddDialogExitQuestFunction("UV_Ozherelie");
 			GiveItem2Character(pchar, "SM_necklace_Julie");
+			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 		break;
 
 		case "Juli_22":

@@ -1361,7 +1361,7 @@ void IslaMona_DefAttackCommonArmy(string qName) // абордажная рота
 	chrDisableReloadToLocation = true;
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	int iScl = 20 + 2*sti(pchar.rank);
-	sld = GetCharacter(NPC_GenerateCharacter("Alonso", "citiz_36", "man", "man", 35, FRANCE, -1, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 35, FRANCE, -1, false, "soldier"));
 	FantomMakeCoolFighter(sld, 35, 90, 90, "blade_10", "pistol5", "bullet", 250);
 	sld.name = StringFromKey("IslaMona_8");
 	sld.lastname = StringFromKey("IslaMona_9");

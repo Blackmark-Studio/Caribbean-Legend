@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Naemnik":
-			dialog.text = "Sei in gamba"+GetSexPhrase("","ess")+"... dannatamente buono"+GetSexPhrase("","ess")+"… Ma prima che tu finisca il lavoro, ascoltami. Son certo che quel che ho da dirti t’intrigherà.";
+			dialog.text = "Sei in gamba"+GetSexPhrase("","ess")+"... dannatamente buono"+GetSexPhrase("","ess")+"... Ma prima che tu finisca il lavoro, ascoltami. Son certo che quel che ho da dirti t’intrigherà.";
 			link.l1 = "Suppongo tu possa dire le tue ultime parole prima di crepare. Ma non illuderti. Da questa caverna non ci esci vivo.";
 			link.l1.go = "Naemnik_2";
 		break;

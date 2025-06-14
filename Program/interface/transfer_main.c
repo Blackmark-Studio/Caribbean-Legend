@@ -810,6 +810,7 @@ void ShowInfoWindow()
 	ref refBaseShip;
 	ref Cannon;
 	ref chr;
+	aref arShipBonus;
 
 	bool  bShowHint = true;
 	switch (sCurrentNode)
@@ -844,6 +845,16 @@ void ShowInfoWindow()
 			sHeader = GetConvertStr(sPerkName2, "ShipsPerksDescribe.txt");
 			sText1 = GetConvertStr(sPerkName2 + "_desc", "ShipsPerksDescribe.txt");
 			sText3 = GetConvertStr(sPerkName2 + "_desc2", "ShipsPerksDescribe.txt");
+			iShip = sti(pchar.ship.type);
+			refBaseShip = GetRealShip(iShip);
+			if(CheckAttribute(refBaseShip, "DeadSailors"))
+			{
+				makearef(arShipBonus, refBaseShip.DeadSailors);
+				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
+									 + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
+				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
+								   + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
+			}
 		break;
 
 		case "SHIP_PERK12":
@@ -862,6 +873,17 @@ void ShowInfoWindow()
 			sHeader = GetConvertStr(sPerkName2, "ShipsPerksDescribe.txt");
 			sText1 = GetConvertStr(sPerkName2 + "_desc", "ShipsPerksDescribe.txt");
 			sText3 = GetConvertStr(sPerkName2 + "_desc2", "ShipsPerksDescribe.txt");
+			iShip = sti(xi_refCharacter.ship.type);
+			refBaseShip = GetRealShip(iShip);
+			if(CheckAttribute(refBaseShip, "DeadSailors"))
+			{
+				
+				makearef(arShipBonus, refBaseShip.DeadSailors);
+				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
+									 + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
+				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
+								   + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
+			}
 		break;
 		
 		case "MAIN_CHARACTER_PICTURE":

@@ -465,15 +465,13 @@ void QuestsCheck()
 		}
 	}
     nQuestsNum = GetAttributesNum(quests); // оптимизация fix boal
-	for(n = 0; n < nQuestsNum; n++)
+	for(n = nQuestsNum-1; n >= 0; n--)
 	{
-		quest = GetAttributeN(quests,n);
-		if(CheckAttribute(quest,"over") && quest.over=="yes")
+		quest = GetAttributeN(quests, n);
+		if(CheckAttribute(quest, "over") && quest.over == "yes")
 		{
 			// delete quests already completed or failed
-			DeleteAttribute(quests,GetAttributeName(quest));
-			n--;
-			nQuestsNum--;
+			DeleteAttribute(quests, GetAttributeName(quest));
 		}
 	}
 	bQuestCheckProcess = false;

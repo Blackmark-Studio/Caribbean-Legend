@@ -97,7 +97,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OS_Tavern3_1":
 			dialog.text = "L'hai trovato?! Può davvero essere? Capitano, hai salvato la mia stessa vita! Chi c'era dietro? Devo conoscere il nome dello scellerato!";
-			link.l1 = "È stato un piano meticolosamente pianificato da un certo Jack Veils, in collaborazione con il capitano del 'Sea Wolf'. Hanno arruolato i loro marinai e organizzato una diversione elaborata per distoglierti. Quando hai lasciato il tuo posto, la botte era senza custodia, e se ne sono andati facilmente con essa.";
+			link.l1 = "È stato un piano meticolosamente pianificato da un certo Jack Veils, in collaborazione con il capitano del 'Sea Beast'. Hanno arruolato i loro marinai e organizzato una diversione elaborata per distoglierti. Quando hai lasciato il tuo posto, la botte era senza custodia, e se ne sono andati facilmente con essa.";
 			link.l1.go = "OS_Tavern3_2";
 			DelLandQuestMark(npchar);
 			pchar.questTemp.CameraDialogMode = true;

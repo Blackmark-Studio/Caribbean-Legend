@@ -290,7 +290,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_sailor_1":
 			dialog.text = "Oh! Charles, I was just regaling the lads with our exploits!";
-			link.l1 = "I noticed. Listen, Alonso. I have… become a captain.";
+			link.l1 = "I noticed. Listen, Alonso. I have... become a captain.";
 			link.l1.go = "Sharlie_sailor_2";
 		break;
 		
@@ -330,7 +330,7 @@ void ProcessDialogEvent()
 			else
 			{
 				AddMoneyToCharacter(pchar, -4800);
-				dialog.text = "Bah! Congratulations… Captain! I shall gather the boys at once and we’ll head for your ship.";
+				dialog.text = "Bah! Congratulations... Captain! I shall gather the boys at once and we’ll head for your ship.";
 				link.l1 = "Glad to resume our adventure, Alonso. Ready the vessel for sea!";
 				link.l1.go = "Sharlie_sailor_6";
 			}
@@ -509,11 +509,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_8_1":
-			dialog.text = "…And how long have you been lugging it about?";
+			dialog.text = "...And how long have you been lugging it about?";
 			link.l1 = "Nigh on a fortnight.";
 			link.l1.go = "Folke_8_2";
 			TakeItemFromCharacter(pchar, "BoxOfBalls");
 			//AddCharacterGoodsSimple(sld, GOOD_BALLS, 10);
+			Achievment_Set("ach_CL_164");
 		break;
 		
 		case "Folke_8_2":

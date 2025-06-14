@@ -493,6 +493,21 @@ Una espada ricamente adornada, a pesar de su aspecto ceremonial, posee excelente
 
 lacrima_patris_parameters{Aumento del alcance del cañón: #f.1RangeBonus#%}
 
+itmname_blade_SP_3low {Ahorcado}
+itmdescr_blade_SP_3low
+{
+Este sable combina rasgos de sables turcos y falchiones europeos; su hoja ancha puede cortar incluso la armadura más resistente. Con el Ahorcado, cualquier abordaje termina rápido y brutalmente.
+}
+
+itmname_blade_SP_3 {Ahorcado}
+itmdescr_blade_SP_3
+{
+La calavera de Yorick en lugar de la guarda anima a su dueño a dejar de temer a la muerte y mirar al Segador a los ojos para liberar su verdadero poder.
+~
+Impide la curación de cualquier fuente.
+Por cada 2% de salud perdida, el daño y la velocidad de recuperación de energía aumentan un 1,5% y un 1,75% respectivamente.
+}
+
 ; ==================================================================================================================== ОГНЕСТРЕЛЬНОЕ ОРУЖИЕ
 
 
@@ -940,6 +955,15 @@ Este sombrero asusta a los comerciantes, especialmente a los españoles, más qu
 El ron y el vino restauran un 50% más de salud. Estar ebrio tiene un efecto más positivo.
 }
 
+itmname_hat9 {Sombrero de Grim}
+itmdescr_hat9
+{
+Este sombrero es conocido en todos los rincones del Caribe y en todas partes se recuerda con escalofríos. Solo un loco se atrevería a atacar el barco de su dueño, y al encontrarse con él, el miedo te hará olvidar cómo sostener una espada o una pistola. Recuerda: morir es fácil. Volver es difícil.
+~
+Reduce la penalización por daño al barco en un 30%.
+10% de probabilidad de evitar daño por disparo.
+}
+
 ; ==================================================================================================================== ОПТИКА
 
 itmname_spyglass1	{Catalejo cutre}
@@ -974,6 +998,14 @@ itmname_spyglass5	{Telescopio náutico}
 itmdescr_spyglass5
 {
 Es un dispositivo óptico único. Tiene lentes perfectamente ajustadas hechas con el cristal de cuarzo más puro que junto con el uso de un trípode permiten ver absolutamente todo, incluyendo el tipo de cañones del barco o del fuerte. Aumenta el alcance del comando 'Navegar a' en 1500 yardas.
+}
+
+itmname_spyglassSP3 {Catalejo "Ojo del Muerto"}
+itmdescr_spyglassSP3
+{
+Este catalejo adornado con huesos tiene lentes sorprendentemente buenas, permitiendo ver: tipo de barco, nombre, velocidad, número y calibre de cañones, daño del barco, mosqueteros en cubierta y el terror en los ojos del capitán enemigo.
+Bonificación de alcance de navegación: +850 yardas.
+Aumenta el radio de visión en el mapa global: +15%.
 }
 
 ; ==================================================================================================================== НАВИГАЦИЯ
@@ -1200,6 +1232,26 @@ Sin penalizaciones, sin límites de activación.
 talisman18_Bonus{Tesoros Encontrados : #dQBonus# / 10}
 
 talisman18_NoBonus{Tesoros Encontrados : 0 / 10}
+
+itmname_talisman19	{Talismán "Calavera de Yorick"}
+itmdescr_talisman19
+{
+La calavera del capitán Mortimer Grim del "Memento", quien nunca comprendió del todo su propia muerte. Lo conocías, #sName#.
+Los muertos enseñan a los vivos, y este artefacto se adapta a los deseos de su dueño.
+En el inventario, hace inmortales a todos los oficiales.
+~
+Sin penalizaciones, se puede activar varias veces.
+}
+
+talisman19_InSlot
+{
+El barco existe a ambos lados del velo al mismo tiempo. La madera estuvo viva y murió para servir a los vivos. La calavera del capitán "Memento" recuerda a cualquier tripulación que la muerte no existe y que hay que luchar hasta el final.
+~
+Por cada 2% de casco perdido, la velocidad y el daño de los cañones aumentan un 0,75% y un 0,5% respectivamente.
+~
+Sin penalizaciones, se puede activar varias veces.
+}
+
 
 ; ==================================================================================================================== ТАЛИСМАНЫ
 
@@ -4115,4 +4167,18 @@ itmname_islamona_toolbox	{Caja de herramientas}
 itmdescr_islamona_toolbox
 {
 Herramientas de alta calidad para la construcción de barcos y casas. Fabricado en Europa.
+}
+
+;=============================== SP3 =======================================================
+
+itmname_Memento_Book	{Diario de Grim}
+itmdescr_Memento_Book
+{
+Una tragedia en tres actos
+}
+
+itmname_Memento_letter	{Письмо Мементо}
+itmdescr_Memento_letter
+{
+Письмо Мементо
 }

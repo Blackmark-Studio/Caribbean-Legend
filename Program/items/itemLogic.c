@@ -681,8 +681,8 @@ void Box_EnterToLocator(aref loc, string locName)
 					}
 					else 
 					{
-						if (CheckCharacterItem(pchar, "keys_skel")) Log_Info(XI_ConvertString("BoxClosed"));
-						Log_SetStringToLog(XI_ConvertString("You have not need key"));
+						if (CheckCharacterItem(pchar, "keys_skel")) notification(XI_ConvertString("BoxClosed"), "none");
+						notification(XI_ConvertString("You have not need key"), "Key");
 						PlaySound("interface\box_locked.wav");
 						return;
 				}
@@ -691,7 +691,7 @@ void Box_EnterToLocator(aref loc, string locName)
 			{	
 				if(CheckAttribute(loc, locName+".closed")) //проверяем, не закрыт ли сундук
 				{
-					Log_SetStringToLog(XI_ConvertString("Box is closed"));
+					notification(XI_ConvertString("Box is closed"), "none");
 					PlaySound("interface\door_locked.wav");
 					return;
 			}
@@ -702,7 +702,7 @@ void Box_EnterToLocator(aref loc, string locName)
 	// Warship 15.08.09 Проверка на квестовую закрытость сундуков (не только приватов, вообще всех)
 	if(CheckAttribute(loc, locName + ".QuestClosed"))
 	{
-		Log_SetStringToLog(XI_ConvertString("Box is closed"));
+		notification(XI_ConvertString("Box is closed"), "none");
 		PlaySound("interface\door_locked.wav");
 		return;
 	}

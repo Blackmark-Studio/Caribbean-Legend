@@ -1,0 +1,25 @@
+Memento_1
+{
+Memento
+}
+
+Memento_2
+{
+Mortimer
+}
+
+Memento_3
+{
+Grim
+}
+
+Memento_4
+{
+¡Capitán, ese es el mismísimo 'Memento' - el azote de los traficantes de esclavos! 
+No es nuestro enemigo, así que podemos enviar un bote.
+}
+
+Memento_5
+{
+Condenado
+}

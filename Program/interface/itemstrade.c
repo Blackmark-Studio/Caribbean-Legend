@@ -134,9 +134,9 @@ void IDoExit(int exitCode)
 	{
 		LAi_SetPlayerType(pchar);
 	}
-	if(CheckAttribute(refStoreChar, "tutorial.trading"))
+	if(CheckAttribute(&TEV, "Tutor.PopUpTrading"))
 	{
-		DeleteAttribute(refStoreChar, "tutorial.trading");
+		DeleteAttribute(&TEV, "Tutor.PopUpTrading");
 		DoQuestFunctionDelay("Tutorial_Trading", 1.0);
 	}
 	
@@ -1320,7 +1320,7 @@ int GetTradeItemPrice(int itmIdx, int tradeType, ref chr)
 				if(itmtype == ITEM_TRADE_ARTEFACT || sItemid == "potionrum") skillModify *= 30.0;
 				if(sItemid == "jewelry8") skillModify *= 10.0;
 			}	
-			if(chr.Merchant.type == "jeweller")
+			else if(chr.Merchant.type == "jeweller")
 			{
 				if(sItemid == "gold_dublon") 
 				{
@@ -1328,25 +1328,28 @@ int GetTradeItemPrice(int itmIdx, int tradeType, ref chr)
 					return FinalItmPrice;
 				}	
 			}
-			if(bGlobalTutor && chr.Merchant.type == "SharlieTurorial")
+			else if(bGlobalTutor)
 			{
-				switch(sItemid)
-				{
-					case "obereg_3": itmprice = 114; break; //150
-					case "obereg_5": itmprice = 114; break; //150
-					case "obereg_6": itmprice = 61; break; //80
-					case "obereg_8": itmprice = 76; break; //100
-					case "potionrum": itmprice = 151; break; //200
-					case "map_full": itmprice = 4537; break; //6000
-					//case "potion1": return 100; break;
-				}
-			}
-			if(bGlobalTutor && chr.Merchant.type == "SharlieTurorialK")
-			{
-				switch(sItemid)
-				{
-					case "gold_dublon": return sti(chr.questTemp.GoldPrice); break;
-				}
+                if(chr.Merchant.type == "SharlieTurorial")
+                {
+                    switch(sItemid)
+                    {
+                        case "obereg_3":  itmprice = 114;  break; //150
+                        case "obereg_5":  itmprice = 114;  break; //150
+                        case "obereg_6":  itmprice = 61;   break; //80
+                        case "obereg_8":  itmprice = 76;   break; //100
+                        case "potionrum": itmprice = 151;  break; //200
+                        case "map_full":  itmprice = 4537; break; //6000
+                        //case "potion1": return 100; break;
+                    }
+                }
+                else if(chr.Merchant.type == "SharlieTurorialK")
+                {
+                    switch(sItemid)
+                    {
+                        case "gold_dublon": return sti(chr.questTemp.GoldPrice); break;
+                    }
+                }
 			}
 		}
 		if(CheckCharacterPerk(pchar,"HT2")) // belamour legendary edition скидка 15%

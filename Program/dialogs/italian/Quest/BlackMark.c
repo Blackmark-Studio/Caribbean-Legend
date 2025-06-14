@@ -372,8 +372,8 @@ void ProcessDialogEvent()
 				AddQuestRecord("BlackMark", "1");
 			}
 			
-			// Продолжение через месяц в джунглях
-			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 14, false);
+			// Продолжение через неделю в джунглях
+			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_Irons_NoHire1":
@@ -532,7 +532,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
 			Return_IronsOfficer();
-			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 14, false);
+			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_IronsSecondJungle_1":
@@ -588,7 +588,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
 			Return_IronsOfficer();
-			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 14, false);
+			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_IronsThirdJungle_1":
@@ -1175,7 +1175,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsPinkPotopil6":
-			dialog.text = "È un MARCHIO nero, testa di cazzo. Sai, inizio a credere che da quando ho ricamato il teschio e le ossa su questa sciarpa, mi porti fortuna. Non so spiegartelo. Tienila. E poi… se vuoi, puoi sempre prenderti in prestito la mia fedele spada e l’armatura… quel che ne resta, ah-ah! Ti sarà utile! Farai strada. E voglio vederlo coi miei occhi. Non voglio che ti freghino con una palla vagante.";
+			dialog.text = "È un MARCHIO nero, testa di cazzo. Sai, inizio a credere che da quando ho ricamato il teschio e le ossa su questa sciarpa, mi porti fortuna. Non so spiegartelo. Tienila. E poi... se vuoi, puoi sempre prenderti in prestito la mia fedele spada e l’armatura... quel che ne resta, ah-ah! Ti sarà utile! Farai strada. E voglio vederlo coi miei occhi. Non voglio che ti freghino con una palla vagante.";
 			link.l1 = "Grazie, compare! Farò del mio meglio. E tu - guarda e impara, ah-ha-ha!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("BM_PinkPotopil_4");
@@ -1751,7 +1751,7 @@ void ProcessDialogEvent()
 			//////
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal") && !CheckAttribute(pchar, "questTemp.BM_TommiTieyasalOtkaz"))
 			{
-				Link.l4 = "Tommy, vorrei chiederti qualcosa di molto serio. C’è… un idolo di pietra dei pellirosse. E avrò bisogno d’aiuto. Posso rivolgermi solo ai miei compagni più fidati, come te. Novellini o gente di cui non mi fido abbastanza non vanno bene.";
+				Link.l4 = "Tommy, vorrei chiederti qualcosa di molto serio. C’è... un idolo di pietra dei pellirosse. E avrò bisogno d’aiuto. Posso rivolgermi solo ai miei compagni più fidati, come te. Novellini o gente di cui non mi fido abbastanza non vanno bene.";
 				Link.l4.go = "tieyasal_1";
 			}
 			

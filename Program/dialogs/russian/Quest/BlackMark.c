@@ -376,8 +376,8 @@ void ProcessDialogEvent()
 				AddQuestUserData("BlackMark", "sSex2", GetSexPhrase("был впечатлён","была впечатлена"));
 			}
 			
-			// Продолжение через месяц в джунглях
-			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 14, false);
+			// Продолжение через неделю в джунглях
+			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_Irons_NoHire1":
@@ -536,7 +536,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
 			Return_IronsOfficer();
-			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 14, false);
+			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_IronsSecondJungle_1":
@@ -592,7 +592,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
 			Return_IronsOfficer();
-			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 14, false);
+			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_IronsThirdJungle_1":
@@ -1991,7 +1991,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetMusketBullets1_" + i;
 			}
 		break;

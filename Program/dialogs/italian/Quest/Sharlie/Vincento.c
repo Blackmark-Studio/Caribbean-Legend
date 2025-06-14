@@ -140,7 +140,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "utensil_14":
-			dialog.text = "No. Ho le prove che questi tesori sono ancora qui nei Caraibi. Non hai ancora bisogno di sapere da dove le ho; dovrai fidarti di me. Inoltre, credo che Dichoso abbia raccontato frottole al barone.\nLa sua storia sulle rovine di Tayasal non quadra con quello che mi ha confessato il mio indio Itza sotto torchio. E poi, che Dichoso sia uscito vivo da quell’agguato dei Zanzarosi… troppo comodo, non trovi?";
+			dialog.text = "No. Ho le prove che questi tesori sono ancora qui nei Caraibi. Non hai ancora bisogno di sapere da dove le ho; dovrai fidarti di me. Inoltre, credo che Dichoso abbia raccontato frottole al barone.\nLa sua storia sulle rovine di Tayasal non quadra con quello che mi ha confessato il mio indio Itza sotto torchio. E poi, che Dichoso sia uscito vivo da quell’agguato dei Zanzarosi... troppo comodo, non trovi?";
 			link.l1 = "Immagino che anche Don Mendosa la pensi così, visto che ha assaltato Saint-Pierre alla ricerca di Dichoso?";
 			link.l1.go = "utensil_15";
 		break;
@@ -259,7 +259,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_10":
-			dialog.text = "Che l’Onnipotente ti benedica e ti protegga… Che ne è stato di Miguel Dichoso? Hai scoperto qualcosa?";
+			dialog.text = "Che l’Onnipotente ti benedica e ti protegga... Che ne è stato di Miguel Dichoso? Hai scoperto qualcosa?";
 			link.l1 = "Ahimè, no. L’ultima cosa che i testimoni mi hanno detto è che la Santa Quiteria fu spinta dai venti impetuosi verso la Martinica. Nessuno sa se la nave sia sopravvissuta o sia andata a fondo. Ma io sospetto che Miguel Dichoso sia riuscito a salvarsi.";
 			link.l1.go = "guardoftruth_11";
 		break;

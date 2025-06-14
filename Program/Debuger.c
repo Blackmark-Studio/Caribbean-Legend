@@ -95,6 +95,7 @@ void setclock()
 void ActiveF10Control()
 {
 	Log_Info("ЛОГЛОГ");
+	
 }
 
 void AdvanceTime() {

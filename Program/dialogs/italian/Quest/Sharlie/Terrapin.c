@@ -443,7 +443,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tibo_27":
-			dialog.text = "Quando Caterina fu fatta prigioniera, nascose di proposito la sua vera identità fingendosi Molly Jones, una servetta morta durante l’abbordaggio. Temeva che Martene scoprisse chi fosse davvero. E riuscì a ingannarlo. Ma durante l’ultimo viaggio, in qualche modo Roberto scoprì la sua vera natura. Disse di aver trovato alcune sue lettere, o dei documenti…";
+			dialog.text = "Quando Caterina fu fatta prigioniera, nascose di proposito la sua vera identità fingendosi Molly Jones, una servetta morta durante l’abbordaggio. Temeva che Martene scoprisse chi fosse davvero. E riuscì a ingannarlo. Ma durante l’ultimo viaggio, in qualche modo Roberto scoprì la sua vera natura. Disse di aver trovato alcune sue lettere, o dei documenti...";
 			link.l1 = "E dove si trova la fanciulla adesso, se non è salita a bordo del 'Voltigeur'?";
 			link.l1.go = "tibo_28";
 		break;
@@ -746,7 +746,7 @@ void ProcessDialogEvent()
 		// Кати
 		case "kathy":
 			PlaySound("Voice\English\Armo02.wav");
-			dialog.text = "Chi sei tu? Sei venuto ad ammazzarmi o… peggio?";
+			dialog.text = "Chi sei tu? Sei venuto ad ammazzarmi o... peggio?";
 			link.l1 = "Niente affatto, madame. Riporterò te, Catherine Fox, da tuo padre a St. John's. Se poi lui ti darà una sculacciata per avergli disobbedito, la mia colpa si ripeterà. Tuttavia, spero che il colonnello sarà lieto di rivedere la figlia viva, nonostante tutti gli affanni che gli hai procurato.";
 			link.l1.go = "kathy_1";
 		break;

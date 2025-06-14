@@ -429,7 +429,7 @@ void ProcessDialogEvent()
 			dialog.text = "L'Alacantara è pronta a salpare, ma il capitano del galeone aspetta che la barkentina 'Puebla' arrivi da Cartagena carica di munizioni. Pare che all'Alacantara manchi la polvere da sparo, dunque gli spagnoli non sono ancora pronti a mollare gli ormeggi. Ma la pazienza del capitano ha un limite: se la Puebla non arriva entro tre giorni, il galeone lascerà Portobello senza di lei.\nL'Alacantara ha scarsa polvere da sparo; potrei lasciarla prendere il largo e poi costringerla a un lungo scontro navale, così finiranno le scorte prima di noi. Il tuo compito è intercettare la Puebla e distruggerla. Affondala o prendila come bottino, poco mi importa. Basta che questa maledetta barkentina non arrivi a destinazione!\nSe ci riesci, vai a Guadalupa da Gérard LeCroix. Credo che già lo conosci, vero? Ti pagherà la ricompensa che ti sei guadagnato.";
 			link.l1 = "Affare fatto! Mi metto subito in rotta per tagliare la strada a Puebla!";
 			link.l1.go = "florian_19";
-			link.l2 = "Aspetti un momento, Monsieur Choquet. Il fatto è che io sono ancora... Diciamo che non sono proprio avvezzo alle battaglie navali. Lei invece è capitano di una fregata, sicuramente ha già visto più di uno scontro in mare. Se non le pesa, potrebbe… come dire…";
+			link.l2 = "Aspetti un momento, Monsieur Choquet. Il fatto è che io sono ancora... Diciamo che non sono proprio avvezzo alle battaglie navali. Lei invece è capitano di una fregata, sicuramente ha già visto più di uno scontro in mare. Se non le pesa, potrebbe... come dire...";
 			link.l2.go = "florian_guide_01";
 		break;
 		

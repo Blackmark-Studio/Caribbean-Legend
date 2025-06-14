@@ -165,7 +165,7 @@ perkByWorker2Short
 This character can occupy three officer positions at once
 }
 
-Trustworthy	{Trustworthy}
+Trustworthy	{Affidabilità}
 perkTrustworthy
 {
 La reputazione negativa dell'eroe non influisce più sulle assunzioni.

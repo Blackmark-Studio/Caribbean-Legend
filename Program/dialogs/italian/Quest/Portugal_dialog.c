@@ -539,7 +539,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Avendel_seapatrol_6":
-			dialog.text = "Scommetto che quella nave era l’‘Albatross’. Ho visto quei portoghesi, sono entrati in taverna e io… sono scappato. Mi dispiace, ma incontrare il Cane Guercio era troppo, perfino per tutti quei soldi!";
+			dialog.text = "Scommetto che quella nave era l’‘Albatross’. Ho visto quei portoghesi, sono entrati in taverna e io... sono scappato. Mi dispiace, ma incontrare il Cane Guercio era troppo, perfino per tutti quei soldi!";
 			link.l1 = "Merda! Dimmi almeno che diavolo è successo in taverna?";
 			link.l1.go = "Avendel_seapatrol_7";
 		break;
@@ -878,7 +878,7 @@ void ProcessDialogEvent()
 			dialog.text = "Questi cani non erano uomini, fidati, ora stanno tutti dove meritano – all’inferno, ah-ah! In cambio della mia libertà e della mia vita, posso svelarti l’esatta posizione dei tesori olandesi.";
 			link.l1 = "No, Bart, il tuo tradimento mi ha ormai convinto della tua bassezza. Willemstad e la giusta punizione ti aspettano. Nessun accordo.";
 			link.l1.go = "Portugal_treasure_2_1";
-			link.l2 = "E dovrei davvero credere che ‘ste gemme esistano? Bah, tanto non ci rimetto nulla… L’accordo ha dato inizio a ‘sta storia e sarà l’accordo a mettervi fine. Accetto le tue condizioni, portoghese.";
+			link.l2 = "E dovrei davvero credere che ‘ste gemme esistano? Bah, tanto non ci rimetto nulla... L’accordo ha dato inizio a ‘sta storia e sarà l’accordo a mettervi fine. Accetto le tue condizioni, portoghese.";
 			link.l2.go = "Portugal_treasure_11";
 		break;
 		

@@ -66,7 +66,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spa_prisoner_7":
-			dialog.text = "Nie mieliśmy dokładnych informacji co do ilości, ale Baron de Mendosa y Riba powiedział nam, że pod fortem przechowywane jest srebro, a magazyny portowe mają strategiczne surowce niezbędne do wysiłku wojennego: żelazne drzewo i jedwab okrętowy.";
+			dialog.text = "Nie mieliśmy dokładnych informacji co do ilości, ale Baron de Mendosa y Riba powiedział nam, że pod fortem przechowywane jest srebro, a magazyny portowe mają strategiczne surowce niezbędne do wysiłku wojennego: drewno twarde i jedwab okrętowy.";
 			link.l1 = "Czy znalazłeś te cenne rzeczy?";
 			link.l1.go = "spa_prisoner_8";			
 		break;
@@ -79,7 +79,7 @@ void ProcessDialogEvent()
 		
 		case "spa_prisoner_9":
 			dialog.text = "Oczywiście, że tak, ale zazwyczaj nie kwestionuję rozkazów.";
-			link.l1 = "Słuchaj uważnie, co mam ci powiedzieć. Fort St. Pierre nigdy nie skrywał srebra, a te magazyny nigdy nie przechowywały żelaznego drewna i jedwabiu. Pomyśl dobrze, senor, zanim odpowiesz, bo jeśli twoja odpowiedź mnie nie zadowoli, odwrócę się i wyjdę stąd, zostawiając cię na łaskę losu... smutnego losu.";
+			link.l1 = "Słuchaj uważnie, co mam ci powiedzieć. Fort St. Pierre nigdy nie skrywał srebra, a te magazyny nigdy nie przechowywały drewna twardego i jedwabiu. Pomyśl dobrze, señor, zanim odpowiesz, bo jeśli twoja odpowiedź mnie nie zadowoli, odwrócę się i wyjdę stąd, zostawiając cię na łaskę losu... smutnego losu.";
 			link.l1.go = "spa_prisoner_10";			
 		break;
 		
@@ -150,7 +150,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spa_prisoner_21":
-			dialog.text = "Opowiem ci. Baron dopiero niedawno przybył na Karaiby z Hiszpanii. Jego rozkazy były takie, aby zapewnić bezpieczeństwo konwojom Hiszpańskiej Floty Skarbowej, ale zamiast tego szukał na lądzie... poszukując indiańskiego złota. Jego głowę zawróciły plotki o ukrytych skarbach. Zdecydował, że starożytne miasto Majów istnieje gdzieś głęboko w dżunglach Jukatanu - Tayasal, legendarne miasto złota\nBaron wysłał kilka ekspedycji, aby znaleźć to miasto, ale wszystkie zostały całkowicie zniszczone w dzikiej selwie. Bez wątpienia każda z nich została zmasakrowana przez wojowniczych ludzi Itza, którzy tam mieszkają\nOstatecznie inkwizytor Vincento miał dość fantazji Don Mendosy i bezsensownej śmierci dobrych żołnierzy. Inkwizytor poinformował Madryt o sytuacji. Wicekról zabronił Don Mendozie poszukiwania mitycznego miasta i nakazał mu skupić się na swoich obowiązkach. Wtedy pojawił się Miguel Dichoso\nPrzekonał barona do zorganizowania kolejnej ekspedycji, która zaskakująco zakończyła się sukcesem. Znaleźli ruiny starożytnego miasta i stos złota inkrustowanego klejnotami. Ale w drodze powrotnej zostali zaatakowani przez plemię Mosquito\nWszyscy poza Miguelem zginęli, indiańskie strzały są nasączone miejscową trucizną, nawet małe zadrapanie prowadzi do pewnej, agonizującej śmierci w ciągu kilku dni. Dichoso powrócił do Providence z takim skarbem, jaki mógł unieść\nCarajo! Baron był niewymownie szczęśliwy, wysłał pilne listy do Madrytu i do ojca Vincento w Santiago, bez wątpienia chciał wytknąć swoje sukcesy ojcu zakonu. Następnie przygotowano fregatę, aby dostarczyć skarb z powrotem do Hiszpanii. Dichoso zgłosił się na ochotnika, aby ją eskortować.";
+			dialog.text = "Opowiem ci. Baron dopiero niedawno przybył na Karaiby z Hiszpanii. Jego rozkazy były takie, aby zapewnić bezpieczeństwo konwojom Hiszpańskiej Floty Skarbowej, ale zamiast tego szukał na lądzie... poszukując indiańskiego złota. Jego głowę zawróciły plotki o ukrytych skarbach. Zdecydował, że starożytne miasto Majów istnieje gdzieś głęboko w dżunglach Jukatanu - Tayasal, legendarne miasto złota\nBaron wysłał kilka ekspedycji, aby znaleźć to miasto, ale wszystkie zostały całkowicie zniszczone w dzikiej dżungli. Bez wątpienia każda z nich została zmasakrowana przez wojowniczych ludzi Itza, którzy tam mieszkają\nOstatecznie inkwizytor Vincento miał dość fantazji Don Mendosy i bezsensownej śmierci dobrych żołnierzy. Inkwizytor poinformował Madryt o sytuacji. Wicekról zabronił Don Mendozie poszukiwania mitycznego miasta i nakazał mu skupić się na swoich obowiązkach. Wtedy pojawił się Miguel Dichoso\nPrzekonał barona do zorganizowania kolejnej ekspedycji, która zaskakująco zakończyła się sukcesem. Znaleźli ruiny starożytnego miasta i stos złota inkrustowanego klejnotami. Ale w drodze powrotnej zostali zaatakowani przez plemię Mosquito\nWszyscy poza Miguelem zginęli, indiańskie strzały są nasączone miejscową trucizną, nawet małe zadrapanie prowadzi do pewnej, agonizującej śmierci w ciągu kilku dni. Dichoso powrócił do Providence z takim skarbem, jaki mógł unieść\nCarajo! Baron był niewymownie szczęśliwy, wysłał pilne listy do Madrytu i do ojca Vincento w Santiago, bez wątpienia chciał wytknąć swoje sukcesy ojcu zakonu. Następnie przygotowano fregatę, aby dostarczyć skarb z powrotem do Hiszpanii. Dichoso zgłosił się na ochotnika, aby ją eskortować.";
 			link.l1 = "Niech zgadnę. Nie dostarczył złota?";
 			link.l1.go = "spa_prisoner_22";			
 		break;
@@ -163,7 +163,7 @@ void ProcessDialogEvent()
 		
 		case "spa_prisoner_23":
 			dialog.text = "Baron przysiągł w uniesieniu, że był pewien, iż Dichoso go zdradził. Nie znam szczegółów. Po kilku tygodniach przybył Don Diego de Montoya z nowymi informacjami, że Miguel Dichoso może być w St. Pierre.";
-			link.l1 = "Hm.  Interesujące.  Te indiańskie skarby znowu.  Wszystko wydaje się podejrzanie związane z nimi...  Więc,  nie znalazłeś Dichoso?";
+			link.l1 = "Hm.  Interesujące. Znowu te indiańskie skarby. Wszystko wydaje się podejrzanie związane z nimi...  Więc, nie znalazłeś Dichoso?";
 			link.l1.go = "spa_prisoner_24";			
 		break;
 		
@@ -174,13 +174,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spa_prisoner_25":
-			dialog.text = "To ojciec Vincento jako pierwszy usłyszał o rzekomym istnieniu Tayasal i miasta złota. Gdzie się o tym dowiedział, nie mam pojęcia...";
+			dialog.text = "To ojciec Vincento jako pierwszy usłyszał o rzekomym istnieniu Tayasal i mieście złota. Gdzie się o tym dowiedział, nie mam pojęcia...";
 			link.l1 = "To ciekawy rozwój wydarzeń. Ojciec Vincento sam wymyślił teorię istnienia Tayasal, sam poinformował Hiszpanię i zaczął wrzucać muchy do maści barona...";
 			link.l1.go = "spa_prisoner_26";			
 		break;
 		
 		case "spa_prisoner_26":
-			dialog.text = "Jako współwyznawca katolicki powinieneś wiedzieć, jak ci czcigodni ojcowie z Świętego Trybunału działają... Nie poinformował Madrytu bez powodu. Ma jakiś plan, ale przybycie barona najwyraźniej nie było jego częścią. W każdym razie, nie wiem nic więcej na ten temat. Nigdy nie miałem ochoty zajmować się Inkwizycją.";
+			dialog.text = "Jako współwyznawca katolicyzmu powinieneś wiedzieć, jak ci czcigodni ojcowie z Świętego Trybunału działają... Nie poinformował Madrytu bez powodu. Ma jakiś plan, ale przybycie barona najwyraźniej nie było jego częścią. W każdym razie, nie wiem nic więcej na ten temat. Nigdy nie miałem ochoty zajmować się Inkwizycją.";
 			link.l1 = "Dobrze. Przekazałeś mi wiele interesujących informacji, "+npchar.name+", i zgodnie z moją przysięgą wyprowadzam cię stąd. Wrócę po ciebie później, ale na razie... pozwól mi chwilę pomyśleć o tym, co mi powiedziałeś...";
 			link.l1.go = "spa_prisoner_27";			
 		break;
@@ -349,14 +349,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spa_prisoner_50":
-			dialog.text = "Nie. Jutro wyjeżdżam do garnizonu w San Juan, który znajduje się w Puerto Rico. Na Providence nie jestem już mile widziany z Donem Mendosą tam.";
+			dialog.text = "Nie. Jutro wyjeżdżam do garnizonu w San Juan, który znajduje się w Puerto Rico. Na Providence nie jestem już mile widziany z Donem Mendosą.";
 			link.l1 = "No cóż, wznieśmy toast za twój nowy przydział i oby czekały na ciebie tam tylko szczęśliwe chwile i piękne dziewczęta.";
 			link.l1.go = "spa_prisoner_51";
 		break;
 		
 		case "spa_prisoner_51":
 			dialog.text = "Wielkie dzięki, monsieur. Wszystkiego dobrego również dla ciebie. Ach, myślę, że czas na mnie. Skończę tego drinka i potem się z tobą pożegnam.";
-			link.l1 = "Vaya con Dios, señor "+npchar.name+"Może spotkamy się ponownie w pokoju.";
+			link.l1 = "Vaya con Dios, señor "+npchar.name+". Może spotkamy się ponownie w pokoju.";
 			link.l1.go = "spa_prisoner_52";
 		break;
 		
@@ -367,7 +367,7 @@ void ProcessDialogEvent()
 		
 		case "spa_prisoner_53":
 			PlaySound("Voice\English\other\OZGi-01.wav");
-			dialog.text = "Just as I told you, Don Diego: the fish took the bait; hook, line, and sinker... Oh, looks like we meet again, monsieur. Unfortunately, not under the peaceful auspices that we wished.";
+			dialog.text = "Tak jak ci powiedziałem, Don Diego: ryba wzięła przynętę; haczyk, żyłka i ciężarek... Och, wygląda na to, że znów się spotykamy, monsieur. Niestety, nie pod pokojowymi auspicjami, jakich chcieliśmy.";
 			link.l1 = ""+npchar.name+"? Cóż! Nie spodziewałem się tego. Z jakiegoś powodu sądziłem, że jesteś uczciwym, szlachetnym oficerem. Okazuje się, że się myliłem.";
 			link.l1.go = "spa_prisoner_54";
 		break;
@@ -459,13 +459,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "boatsvandega_2":
-			dialog.text = "Nie sądzę, by wielu żołnierzy zdołało zrobić to, co ty zrobiłeś, kapitanie... Eh, chciałbym cię poczęstować rumem w tawernie, ale niestety: kapitan zabronił ludziom pić choćby kroplę rumu i nie chcę dawać złego przykładu...";
+			dialog.text = "Nie sądzę, by wielu żołnierzy zdołało zrobić to, co ty zrobiłeś, kapitanie... Eh, chciałbym cię poczęstować rumem w karczmie, ale niestety: kapitan zabronił ludziom pić choćby kroplę rumu i nie chcę dawać złego przykładu...";
 			link.l1 = "Hm... Więc nie jesteś kapitanem samym w sobie?";
 			link.l1.go = "boatsvandega_3";
 		break;
 		
 		case "boatsvandega_3":
-			dialog.text = "„Czy wyglądam na kapitana? Hoho! Nie, jestem tylko bosmanem. Nazywam się Serge Degas. Nasz kapitan, Gaius Marchais, spędza cały dzień w tawernie, podczas gdy my leżymy tu w oczekiwaniu na jakąś karawanę 'kupców'. Kapitan jest winien żołd marynarzom, i nam też, cała załoga jest kompletnie spłukana...”";
+			dialog.text = "„Czy wyglądam na kapitana? Hoho! Nie, jestem tylko bosmanem. Nazywam się Serge Degas. Nasz kapitan, Gaius Marchais, spędza cały dzień w karczmie, podczas gdy my leżymy tu w oczekiwaniu na jakąś karawanę 'kupców'. Kapitan jest winien żołd marynarzom, i nam też, cała załoga jest kompletnie spłukana...”";
 			link.l1 = "Co się stało? Hiszpańska karawana waniliowa nie pojawiła się, by oskubać jej pióra?";
 			link.l1.go = "boatsvandega_4";
 		break;
@@ -478,7 +478,7 @@ void ProcessDialogEvent()
 		
 		case "boatsvandega_5":
 			dialog.text = "Cóż, jeśli warto coś robić, to warto robić to dobrze. On nie robi ani jednego, ani drugiego. Jest okropnym negocjatorem. Byłoby inaczej, gdyby zajmował się również przewozem towarów, ale chciał poczuć się jak prawdziwy kupiec. Mam nadzieję, że pewnej nocy wypadnie za burtę...";
-			link.l1 = "Zrozumiałem cię, Siergiej. Nie martw się, jestem pewien, że pewnego dnia twoja... karawana się pojawi.";
+			link.l1 = "Zrozumiałem cię, Sergo. Nie martw się, jestem pewien, że pewnego dnia twoja... karawana się pojawi.";
 			link.l1.go = "boatsvandega_6";
 		break;
 		
@@ -786,7 +786,7 @@ void ProcessDialogEvent()
 		
 		case "galeonguard":
 			PlaySound("Voice\English\EvilPirates01.wav");
-			dialog.text = "Stój! Kto idzie? Alarm! Odpierać abordaż!";
+			dialog.text = "Stój! Kto tam idzie? Alarm! Odeprzeć abordaż!";
 			link.l1 = "...";
 			link.l1.go = "galeonguard_1";
 		break;
@@ -810,7 +810,7 @@ void ProcessDialogEvent()
 		
 		// англичане в бухте
 		case "dominica_hunter":
-			dialog.text = "Har har! Przyszedłeś też po skarb Rollie'ego Kapitana, co? Szukaliśmy i szukaliśmy, i szukaliśmy, ale nie mogliśmy go znaleźć. Mam nadzieję, że przynajmniej jeden z tych imbecyli wpadnie na pomysł, żeby przepłynąć za wodospad na półkę!";
+			dialog.text = "Har har! Też przyszedłeś po skarb Rollie'ego Kapitana, co? Szukaliśmy i szukaliśmy, i szukaliśmy, ale nie mogliśmy go znaleźć. Mam nadzieję, że przynajmniej jeden z tych imbecyli wpadnie na pomysł, żeby przepłynąć za wodospad na półkę!";
 			link.l1 = "Jesteś jednym z ludzi pułkownika Foxa, prawda?";
 			link.l1.go = "dominica_hunter_1";
 		break;

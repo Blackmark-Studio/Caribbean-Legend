@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "facio_2":
-			dialog.text = "L’affare non è proprio legale, certo, ma rende… e avremo modo di dare una lezione a un tipo che si è fatto troppo schizzinoso. Non finirà in miseria, ha più dobloni di quanti ne possa contare. Tutti qui dividono con lui, ora tocca a lui ricambiare. Dimmi, reggi il rum? Quanti bicchieri riesci a buttare giù prima di strisciare sotto il tavolo?";
+			dialog.text = "L’affare non è proprio legale, certo, ma rende... e avremo modo di dare una lezione a un tipo che si è fatto troppo schizzinoso. Non finirà in miseria, ha più dobloni di quanti ne possa contare. Tutti qui dividono con lui, ora tocca a lui ricambiare. Dimmi, reggi il rum? Quanti bicchieri riesci a buttare giù prima di strisciare sotto il tavolo?";
 			link.l1 = "Dipende. Non sono certo d’aver la tendenza a bere fino alla follia... Ma insomma, mi racconti finalmente di che si tratta?";
 			link.l1.go = "facio_3";
 		break;

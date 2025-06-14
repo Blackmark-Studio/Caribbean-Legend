@@ -2421,7 +2421,62 @@ int LocationInitBoarding(int n)
 	Locations[n].boarding.Loc.Hero = "loc2";
     Locations[n].boarding.Loc.Capt = "loc0";
 	
-	n = n + 1;	
+	n = n + 1;
+	
+	Locations[n].id = "Cabin_Memento";
+	Locations[n].id.label = "cabine";
+	//Locations[n].filespath.models = "locations\decks\capmd";
+    Locations[n].image = "loading\Capdeck_" + rand(4) + ".tga";
+	//Sound
+	locations[n].type = "boarding_cabine";
+	//Models
+	Locations[n].filespath.models = "locations\decks\inside_cabin_4"; // каюта брига/"Мементо"
+	//Always
+	Locations[n].models.always.main = "inside_cabin_4";
+	Locations[n].models.always.parts = "inside_cabin_4_parts";
+	Locations[n].models.always.partsQ = "inside_cabin_4_partsMemento"; // декор "Мементо"
+	Locations[n].models.always.locators = "inside_cabin_4_locators";
+	//Locations[n].models.always.locators = "inside_cabin_4_locators_private"; // приватные сундуки
+	Locations[n].models.always.camcollider = "inside_cabin_4_camcollider";
+	Locations[n].models.always.windows = "inside_cabin_4_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.windows.level = 65539;
+	//Day
+	Locations[n].models.day.charactersPatch = "inside_cabin_4_patch";
+	Locations[n].models.day.fonar = "inside_cabin_4_fd";
+	Locations[n].models.day.rays = "inside_cabin_4_rays"; // лучи только днем
+	Locations[n].models.day.rays.uvslide.v0 = 0.08;
+	Locations[n].models.day.rays.uvslide.v1 = 0.0;
+	Locations[n].models.day.rays.tech = "LocationWaterFall";
+	Locations[n].models.day.rays.level = 99950;
+	//Night
+	Locations[n].models.night.charactersPatch = "inside_cabin_4_patch";
+	Locations[n].models.night.fonar = "inside_cabin_4_fn";
+	
+	//Environment
+	Locations[n].environment.sea = "true";
+	Locations[n].environment.weather = "true";
+
+    Locations[n].locators_radius.randitem.randitem1 = 1;
+    Locations[n].locators_radius.randitem.randitem2 = 1;
+
+    Locations[n].locators_radius.rld.loc0 = 0.5;
+    Locations[n].locators_radius.rld.loc1 = 0.5;
+    Locations[n].locators_radius.rld.loc2 = 0.5;
+    Locations[n].locators_radius.rld.aloc0 = 0.5;
+    Locations[n].locators_radius.rld.aloc1 = 0.5;
+    Locations[n].locators_radius.rld.aloc2 = 0.5;
+
+	Locations[n].boarding = "true";
+	Locations[n].boarding.nextdeck = "";
+	//Locations[n].camshuttle = 1;
+	Locations[n].boarding.locatorNum = 1;
+	Locations[n].CabinType = true;
+	locations[n].environment.weather.rain = false;
+	Locations[n].boarding.Loc.Hero = "loc2";
+    Locations[n].boarding.Loc.Capt = "loc0";
+
+	n = n + 1;
 	
 	/////////////////////////////////////////////
 	//  каюты для ГГ
@@ -2812,7 +2867,72 @@ int LocationInitBoarding(int n)
 	//Locations[n].camshuttle = 1;
 	locations[n].environment.weather.rain = false;
 
-	n = n + 1;	
+	n = n + 1;
+	
+	Locations[n].id = "My_Cabin_Memento";
+	Locations[n].id.label = "cabine";
+	//Locations[n].filespath.models = "locations\decks\capmd";
+    Locations[n].image = "loading\Capdeck_" + rand(4) + ".tga";
+	//Sound
+	locations[n].type = "residence";
+	//Models
+	Locations[n].filespath.models = "locations\decks\inside_cabin_4"; // каюта брига/"Мементо"
+	//Always
+	Locations[n].models.always.main = "inside_cabin_4";
+	Locations[n].models.always.parts = "inside_cabin_4_parts";
+	Locations[n].models.always.partsQ = "inside_cabin_4_partsMemento"; // декор "Мементо"
+	Locations[n].models.always.locators = "inside_cabin_4_locators";
+	//Locations[n].models.always.locators = "inside_cabin_4_locators_private"; // приватные сундуки
+	Locations[n].models.always.camcollider = "inside_cabin_4_camcollider";
+	Locations[n].models.always.windows = "inside_cabin_4_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.windows.level = 65539;
+	//Day
+	Locations[n].models.day.charactersPatch = "inside_cabin_4_patch";
+	Locations[n].models.day.fonar = "inside_cabin_4_fd";
+	Locations[n].models.day.rays = "inside_cabin_4_rays"; // лучи только днем
+	Locations[n].models.day.rays.uvslide.v0 = 0.08;
+	Locations[n].models.day.rays.uvslide.v1 = 0.0;
+	Locations[n].models.day.rays.tech = "LocationWaterFall";
+	Locations[n].models.day.rays.level = 99950;
+	//Night
+	Locations[n].models.night.charactersPatch = "inside_cabin_4_patch";
+	Locations[n].models.night.fonar = "inside_cabin_4_fn";
+
+	//Environment
+	Locations[n].environment.sea = "true";
+	Locations[n].environment.weather = "true";
+
+	locations[n].box1 = Items_MakeTime(0, 1, 1, 2013); //капитанский рундук, у левого борта
+    locations[n].box2 = Items_MakeTime(0, 1, 1, 2013); //сундук у правого борта
+    locations[n].box3 = Items_MakeTime(0, 1, 1, 2013); //шкатулка с принадлежностями, на столе, ночью слева, днём справа
+    locations[n].box4 = Items_MakeTime(0, 1, 1, 2013); //шкап
+
+    Locations[n].locators_radius.randitem.randitem1 = 1;
+    Locations[n].locators_radius.randitem.randitem2 = 1;
+
+    Locations[n].locators_radius.rld.loc0 = 0.5;
+    Locations[n].locators_radius.rld.loc1 = 0.5;
+    Locations[n].locators_radius.rld.loc2 = 0.5;
+    Locations[n].locators_radius.rld.aloc0 = 0.5;
+    Locations[n].locators_radius.rld.aloc1 = 0.5;
+    Locations[n].locators_radius.rld.aloc2 = 0.5;
+
+    LAi_LocationFightDisable(&Locations[n], true);
+
+    Locations[n].reload.l1.name = "reload1";
+	Locations[n].reload.l1.go = "My_Deck";
+	Locations[n].reload.l1.emerge = "reload1";
+	Locations[n].reload.l1.label = "Deck.";
+
+	Locations[n].items.randitem2 = "";
+	Locations[n].items.randitem1 = "";
+
+	Locations[n].boarding = "true";
+	//Locations[n].camshuttle = 1;
+	locations[n].environment.weather.rain = false;
+
+	n = n + 1;
 	
 	Locations[n].id = "My_Campus";
 	Locations[n].id.label = "My_Campus";
@@ -3104,25 +3224,26 @@ int LocationInitBoarding(int n)
 	Locations[n].lockCamAngle = 0.4;
 	//Locations[n].camshuttle = 1;	
 	//Models	
-	Locations[n].filespath.models = "locations\decks\outside_deck_3_war"; // корвет
+	Locations[n].filespath.models = "locations\decks\outside_deck_4_Memento"; // бриг "Мементо"
 	//Always
-	Locations[n].models.always.main = "outside_deck_3_war";
-	Locations[n].models.always.parts = "outside_deck_3_war_parts";
-	Locations[n].models.always.ropes = "outside_deck_3_war_ropes";
-	Locations[n].models.always.locators = "outside_deck_3_war_locators";
-	Locations[n].models.always.windows = "outside_deck_3_war_windows";
+	Locations[n].models.always.main = "outside_deck_4_Memento";
+	Locations[n].models.always.parts = "outside_deck_4_Memento_parts";
+	Locations[n].models.always.ropes = "outside_deck_4_Memento_ropes";
+	Locations[n].models.always.locators = "outside_deck_4_Memento_locators";
+	Locations[n].models.always.windows = "outside_deck_4_Memento_windows";
 	Locations[n].models.always.windows.tech = "LocationWindows";
-	Locations[n].models.always.watermask = "outside_deck_3_war_watermask";
+	Locations[n].models.always.windows.level = 65539;
+	Locations[n].models.always.watermask = "outside_deck_4_Memento_watermask";
 	Locations[n].models.always.watermask.tech = "WaterMask";
 	Locations[n].models.always.watermask.level = 65500;
 	//Day
-	locations[n].models.day.charactersPatch = "outside_deck_3_war_patch";
-	Locations[n].models.day.deckMediumFonarsDay = "outside_deck_3_war_fd";  
-	Locations[n].models.day.jumpPatch = "outside_deck_3_war_jump";
+	locations[n].models.day.charactersPatch = "outside_deck_4_Memento_patch";
+	Locations[n].models.day.deckMediumFonarsDay = "outside_deck_4_Memento_fd";  
+	//Locations[n].models.day.jumpPatch = "outside_deck_4_Memento_jump";
 	//Night
-	locations[n].models.night.charactersPatch = "outside_deck_3_war_patch";
-	Locations[n].models.night.deckMediumFonarsNight = "outside_deck_3_war_fn";  
-	Locations[n].models.night.jumpPatch = "outside_deck_3_war_jump";
+	locations[n].models.night.charactersPatch = "outside_deck_4_Memento_patch";
+	Locations[n].models.night.deckMediumFonarsNight = "outside_deck_4_Memento_fn";  
+	//Locations[n].models.night.jumpPatch = "outside_deck_4_Memento_jump";
 	//Environment
 	locations[n].environment.weather = "true";
 	locations[n].environment.sea = "true"; 
@@ -3375,25 +3496,30 @@ int LocationInitBoarding(int n)
 	Locations[n].lockCamAngle = 0.4;
 	//Locations[n].camshuttle = 1;
 	//Models	
-	Locations[n].filespath.models = "locations\decks\outside_deck_3_war"; // корвет
+	Locations[n].filespath.models = "locations\decks\outside_deck_4_Memento"; // бриг "Мементо"
 	//Always
-	Locations[n].models.always.main = "outside_deck_3_war";
-	Locations[n].models.always.parts = "outside_deck_3_war_parts";
-	Locations[n].models.always.ropes = "outside_deck_3_war_ropes";
-	Locations[n].models.always.locators = "outside_deck_3_war_locators";
-	Locations[n].models.always.windows = "outside_deck_3_war_windows";
+	Locations[n].models.always.main = "outside_deck_4_Memento";
+	Locations[n].models.always.parts = "outside_deck_4_Memento_parts";
+	Locations[n].models.always.ropes = "outside_deck_4_Memento_ropes";
+	Locations[n].models.always.locators = "outside_deck_4_Memento_locators";
+	Locations[n].models.always.windows = "outside_deck_4_Memento_windows";
 	Locations[n].models.always.windows.tech = "LocationWindows";
-	Locations[n].models.always.watermask = "outside_deck_3_war_watermask";
+	Locations[n].models.always.windows.level = 65539;
+	Locations[n].models.always.watermask = "outside_deck_4_Memento_watermask";
 	Locations[n].models.always.watermask.tech = "WaterMask";
 	Locations[n].models.always.watermask.level = 65500;
 	//Day
-	locations[n].models.day.charactersPatch = "outside_deck_3_war_patch";
-	Locations[n].models.day.deckMediumFonarsDay = "outside_deck_3_war_fd";  
-	Locations[n].models.day.jumpPatch = "outside_deck_3_war_jump";
+	locations[n].models.day.charactersPatch = "outside_deck_4_Memento_patch";
+	Locations[n].models.day.deckMediumFonarsDay = "outside_deck_4_Memento_fd";  
+	//Locations[n].models.day.jumpPatch = "outside_deck_4_Memento_jump";
 	//Night
-	locations[n].models.night.charactersPatch = "outside_deck_3_war_patch";
-	Locations[n].models.night.deckMediumFonarsNight = "outside_deck_3_war_fn";  
-	Locations[n].models.night.jumpPatch = "outside_deck_3_war_jump";
+	locations[n].models.night.charactersPatch = "outside_deck_4_Memento_patch";
+	Locations[n].models.night.deckMediumFonarsNight = "outside_deck_4_Memento_fn";  
+	//Locations[n].models.night.jumpPatch = "outside_deck_4_Memento_jump";
+	
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "true";
 
 	locations[n].box1 = Items_MakeTime(0, 0, 1, 2003);
 	locations[n].box2 = Items_MakeTime(0, 0, 1, 2003);
@@ -3428,6 +3554,7 @@ int LocationInitBoarding(int n)
 	locations[n].models.night.charactersPatch = "outside_deck_3_trade_patch";
 	Locations[n].models.night.deckMediumFonarsNight = "outside_deck_3_trade_fn";  
 	Locations[n].models.night.jumpPatch = "outside_deck_3_trade_jump";
+	
 	
  	/* //Models
 	//Always

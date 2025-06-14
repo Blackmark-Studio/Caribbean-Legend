@@ -1192,7 +1192,7 @@ void ProcessDialogEvent()
 		
 		case "ShipWreck_50":
 			dialog.text = "Какого чёрта тебе нужно?";
-			link.l1 = "Я приш"+ GetSexPhrase("ел","ла") +" передать тебе привет от человека по имени " + pchar.GenQuest.ShipWreck.Name + ". Знаешь такого?"; // belamour gen
+			link.l1 = "Я приш"+ GetSexPhrase("ёл","ла") +" передать тебе привет от человека по имени " + pchar.GenQuest.ShipWreck.Name + ". Знаешь такого?"; // belamour gen
 			link.l1.go = "ShipWreck_51";
 		break;
 		
@@ -4111,7 +4111,7 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_384":
 			dialog.text = "Капитан, вы выбрали неудачное место для моциона. Этот док уже занят.";
-			link.l1 = "Джентльмены, я приш"+ GetSexPhrase("ел","ла") +" сюда не окрестностями любоваться. У меня здесь дело.";
+			link.l1 = "Джентльмены, я приш"+ GetSexPhrase("ёл","ла") +" сюда не окрестностями любоваться. У меня здесь дело.";
 			link.l1.go = "CaptainComission_385";
 		break;
 		
@@ -5822,7 +5822,7 @@ void ProcessDialogEvent()
 		// Диалог с кэпом в каюте
 		case "PiratesOnUninhabited_46":
 			dialog.text = "Какого чёрта тебе нужно?";
-			link.l1 = "Я приш"+ GetSexPhrase("ел","ла") +" передать тебе привет от " + ChangeNameCase(NAMETYPE_NICK, PChar.GenQuest.PiratesOnUninhabited.MainPirateName, NAME_GEN) + ". Знаешь такого?";
+			link.l1 = "Я приш"+ GetSexPhrase("ёл","ла") +" передать тебе привет от " + ChangeNameCase(NAMETYPE_NICK, PChar.GenQuest.PiratesOnUninhabited.MainPirateName, NAME_GEN) + ". Знаешь такого?";
 			link.l1.go = "PiratesOnUninhabited_47";
 			
 			PChar.Quest.PiratesOnUninhabited_ShipSink.over = "yes";

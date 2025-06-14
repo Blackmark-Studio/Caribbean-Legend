@@ -1245,3 +1245,22 @@ QuestsUtilite_276
 {
 The waters are becoming more dangerous, the pirate threat has increased
 }
+
+QuestsUtilite_277
+{
+Chimera
+}
+
+QuestsUtilite_278
+{
+~ We really made them mad! The squadron's flagship is ~
+}
+
+QuestsUtilite_279
+{
+Diego
+}
+QuestsUtilite_280
+{
+de Landa
+}

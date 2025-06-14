@@ -160,7 +160,7 @@ void ProcessDialogEvent()
 			link.l2 = "Spricht Ihr mit mir? Hm, vielleicht lernt Ihr zuerst Manieren, bevor Ihr Fragen stellt?";
 			link.l2.go = "Exit_Lucky";
 			//locCameraFromToPos(-3.35, 2.23, 6.93, false, 20, -1, 10);
-			locCameraFromToPos(-5.73, 2.45, 5.75, true, -0.53, 0.40, 7.17);
+			locCameraFromToPos(-3.53, 2.35, 6.35, true, 1.93, -0.60, 11.17);
 			DeleteAttribute(pchar, "questTemp.VPVL_Contr_V_Lemaren");
 		break;
 		
@@ -195,8 +195,9 @@ void ProcessDialogEvent()
 				link.l1 = "Arrgh... Noch ein Lakai des Gouverneurs! War ja klar! Und wenn sich dieser Dreckskerl schon selbst herbemüht hat, werfen wir ihn gleich zu seinem Kameraden in die Höhle. Soll ruhig sehen, wie wir mit Schnüfflern umgehen. Der wird ganz schnell singen und die Pläne seines Herrn ausspucken!";
 			}
 			link.l1.go = "Kontr Le Maren1";
-			locCameraFromToPos(-3.40, 2.38, 5.79, true, -0.49, 0.5, 7.59);
+			locCameraFromToPos(-3.53, 2.35, 6.35, false, -0.03, 0.40, 7.77);
 			CharacterTurnByChr(sld, CharacterFromID("VPVL_contr_1"));
+			CharacterTurnByChr(pchar, CharacterFromID("VPVL_contr_2"));
 			
 			sld = CharacterFromID("VPVL_contr_1");
 			CharacterTurnByChr(sld, CharacterFromID("VPVL_contr_2"));
@@ -221,10 +222,11 @@ void ProcessDialogEvent()
 				link.l2 = "Wenn das der Schlauste unter euch ist, dann will ich gar nicht wissen, was in den Köpfen der anderen vor sich geht!";
 				link.l2.go = "Kontr Le Maren3";
 				CharacterTurnByChr(npchar, CharacterFromID("Blaze"));
-				//locCameraFromToPos(-3.35, 2.23, 6.93, false, 20, -1, 10);
+				locCameraFromToPos(-3.73, 2.45, 5.75, false, -0.53, -0.0, 9.17);
 				CharacterTurnByChr(npchar, CharacterFromID("Blaze"));
 				sld = CharacterFromID("VPVL_contr_1");
 				CharacterTurnByChr(sld, CharacterFromID("Blaze"));
+				CharacterTurnByChr(pchar, CharacterFromID("VPVL_contr_1"));
 				}
 				else
 				{
@@ -240,7 +242,8 @@ void ProcessDialogEvent()
 			CharacterTurnByChr(npchar, CharacterFromID("Blaze"));
 			sld = CharacterFromID("VPVL_contr_2");
 			CharacterTurnByChr(sld, CharacterFromID("Blaze"));
-			locCameraFromToPos(-5.73, 2.45, 5.75, true, -0.53, 0.40, 7.17);
+			locCameraFromToPos(-3.73, 2.45, 5.75, false, -0.53, -0.0, 9.17);
+			CharacterTurnByChr(pchar, CharacterFromID("VPVL_contr_1"));
 			}
 			link.l2 = "Wenn das der Schlauste unter euch ist, dann will ich gar nicht wissen, was in den Köpfen der anderen vor sich geht!";
 			link.l2.go = "Kontr Le Maren3";
@@ -263,7 +266,7 @@ void ProcessDialogEvent()
 		case "murder":
 			DialogExit();
 			AddDialogExitQuest("VPVL_Pistol_Murder");
-			locCameraFromToPos(-5.04, 2.62, 8.65, false, 20, -6, -15);
+			//locCameraFromToPos(-5.04, 2.62, 8.65, false, 20, -6, -15);
 		break;
 		
 		/////////////   Пьер Карно   /////////////

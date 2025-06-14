@@ -19,7 +19,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		//--> Старые счёты
 		case "OS_Tavern2_1":
 			dialog.text = "Ja... nie wiem, co powiedzieć. Wszystko było normalne, nic nadzwyczajnego.";
-			link.l1 = "Naprawdę? Nic dziwnego? A co z tym marynarzem z 'Sea Wolf', który cię nagabywał? Wydawał się przekonany, że chętnie spędzisz z nim noc.";
+			link.l1 = "Naprawdę? Nic dziwnego? A co z tym marynarzem z 'Sea Beast', który cię nagabywał? Wydawał się przekonany, że chętnie spędzisz z nim noc.";
 			link.l1.go = "OS_Tavern2_2";
 			DelLandQuestMark(npchar);
 		break;
@@ -39,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "OS_Tavern2_4_HO":
-			dialog.text = "Ja... powiem wszystko! To wszystko przez mojego... zalotnika, Jacka. Jacka Veilsa! Namówił mnie, żebym uwiodła dowolnego marynarza z 'Sea Wolf'. Gdyby się narzucał, miałam zrobić scenę, by wyciągnąć karczmarza zza lady. Gdyby zamieszanie zaczęło cichnąć, dwóch marynarzy miało rozpocząć bójkę, by go zatrzymać. Tak właśnie było\nW tym czasie kapitan 'Sea Wolf' zdołał ukraść beczkę. To wszystko, co wiem, "+GetSexPhrase("panie","pani")+"! Proszę, nie wydawaj mnie! Chciałam tylko, żeby Jack w końcu zaczął mnie szanować!";
+			dialog.text = "Ja... powiem wszystko! To wszystko przez mojego... zalotnika, Jacka. Jacka Veilsa! Namówił mnie, żebym uwiodła dowolnego marynarza z 'Sea Beast'. Gdyby się narzucał, miałam zrobić scenę, by wyciągnąć karczmarza zza lady. Gdyby zamieszanie zaczęło cichnąć, dwóch marynarzy miało rozpocząć bójkę, by go zatrzymać. Tak właśnie było\nW tym czasie kapitan 'Sea Beast' zdołał ukraść beczkę. To wszystko, co wiem, "+GetSexPhrase("panie","pani")+"! Proszę, nie wydawaj mnie! Chciałam tylko, żeby Jack w końcu zaczął mnie szanować!";
 			link.l1 = "Pomogłaś jednemu, a drugiego bez wahania rzuciłaś na pożarcie? No cóż, dotrzymuję słowa – nie wydam cię. Ale będziesz musiała z tym żyć. Przez twoją głupotę karczmarz mógł mieć poważne kłopoty. Gdzie znajdę Jacka? I pamiętaj – jeśli skłamiesz, wrócę. I nie spodoba ci się to.";
 			link.l1.go = "OS_Tavern2_5";
 			AddComplexSelfExpToScill(40, 40, 40, 0);
@@ -47,7 +47,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "OS_Tavern2_4_harizma":
-			dialog.text = "Ja... powiem wszystko! To wszystko przez mojego... zalotnika, Jacka. Jacka Veilsa! Namówił mnie, żebym uwiodła dowolnego marynarza z 'Sea Wolf'. Gdyby się narzucał, miałam zrobić scenę, by wyciągnąć karczmarza zza lady. Gdyby zamieszanie zaczęło cichnąć, dwóch marynarzy miało rozpocząć bójkę, by go zatrzymać. Tak właśnie było\nW tym czasie kapitan 'Sea Wolf' zdołał ukraść beczkę. To wszystko, co wiem, "+GetSexPhrase("panie","pani")+"! Proszę, nie wydawaj mnie! Chciałam tylko, żeby Jack w końcu zaczął mnie szanować!";
+			dialog.text = "Ja... powiem wszystko! To wszystko przez mojego... zalotnika, Jacka. Jacka Veilsa! Namówił mnie, żebym uwiodła dowolnego marynarza z 'Sea Beast'. Gdyby się narzucał, miałam zrobić scenę, by wyciągnąć karczmarza zza lady. Gdyby zamieszanie zaczęło cichnąć, dwóch marynarzy miało rozpocząć bójkę, by go zatrzymać. Tak właśnie było\nW tym czasie kapitan 'Sea Beast' zdołał ukraść beczkę. To wszystko, co wiem, "+GetSexPhrase("panie","pani")+"! Proszę, nie wydawaj mnie! Chciałam tylko, żeby Jack w końcu zaczął mnie szanować!";
 			link.l1 = "Pomogłaś jednemu, a drugiego bez wahania rzuciłaś na pożarcie? No cóż, dotrzymuję słowa – nie wydam cię. Ale będziesz musiała z tym żyć. Przez twoją głupotę karczmarz mógł mieć poważne kłopoty. Gdzie znajdę Jacka? I pamiętaj – jeśli skłamiesz, wrócę. I nie spodoba ci się to.";
 			link.l1.go = "OS_Tavern2_5";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -74,6 +74,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			PChar.quest.OS_Zasada.win_condition.l1 = "item";
 			PChar.quest.OS_Zasada.win_condition.l1.item = "cask_gin";
 			PChar.quest.OS_Zasada.function = "OS_Zasada";
+			
+			SetFunctionLocationCondition("DWH_Close_House", "PuertoPrincipe_QuestHouse_1", false);
 		break;
 		//<-- Старые счёты
 	}

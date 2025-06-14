@@ -530,7 +530,7 @@ void ProcessDialogEvent()
 				pchar.quest.Saga_Trap.win_condition.l1 = "location";
 				pchar.quest.Saga_Trap.win_condition.l1.location = "Mayak11";
 				pchar.quest.Saga_Trap.function = "Saga_CreateTrapBandos";
-				CoolTraderHunterOnMap();
+				TraderHunterOnMap(true);
 			}
 			AddCharacterExpToSkill(pchar, "Sneak", 50);//скрытность
 			

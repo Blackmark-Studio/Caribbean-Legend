@@ -30,26 +30,26 @@ void ProcessDialogEvent()
 		// ==> индейцы в поселении
 		case "IndianMan":
 			NextDiag.TempNode = "IndianMan";
-			dialog.text = NPCStringReactionRepeat(""+GetSexPhrase("Białotwarz","Biała squaw")+" chce rozmawiać?","Ty znowu, "+GetSexPhrase("Białotwarz","Biała squaw")+".",""+GetSexPhrase("Białotwarz lubi mówić. Wygląda jak squaw.","Biała squaw lubi rozmawiać.")+"","Duchy przyprowadziły moją bladą twarz "+GetSexPhrase("brat","siostra")+" do mnie.","block",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(""+GetSexPhrase("Blada twarz","Blada twarz")+" chce rozmawiać?","Ty znowu, "+GetSexPhrase("Blada twarz","Blada twarz")+".",""+GetSexPhrase("Blada twarz lubi mówić.","Blada twarz lubi rozmawiać.")+"","Duchy przyprowadziły moją bladą twarz do mnie.","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Tak.","Tak, to znowu ja.","Bardzo poetycko.","Ja również cieszę się, że cię widzę.",npchar,Dialog.CurrentNode);
 			link.l1.go = "IndPearlMan_1";
 		break;
 		
 		case "IndPearlMan_1":
-			dialog.text = "Powiedz, dlaczego przyszedłeś, bladolicy?";
+			dialog.text = "Powiedz, dlaczego przyszedłeś, blada twarzy?";
 			link.l1 = "O, nic konkretnego, po prostu chciałem posłuchać, co masz do powiedzenia...";
 			link.l1.go = "exit";
 		break;
 		
 		case "IndianWoman":
 			NextDiag.TempNode = "IndianWoman";
-			dialog.text = NPCStringReactionRepeat("Biały człowiek chce rozmawiać?","Ty znowu, bladolicy?","Białotwarz lubi rozmawiać.","Duchy przyprowadziły mojego bladotwarzego brata do mnie.","block",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Biały człowiek chce rozmawiać?","Ty znowu, blada twarz?","Blada twarz lubi rozmawiać.","Duchy przyprowadziły mojego bladotwarzego brata do mnie.","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Tak.","Tak, to znowu ja.","Bardzo poetycko.","Cieszę się, że też cię widzę.",npchar,Dialog.CurrentNode);
 			link.l1.go = "IndianWoman_1";
 		break;
 		
 		case "IndianWoman_1":
-			dialog.text = LinkRandPhrase(""+npchar.name+" słucham cię, synu morza.","Czego chcesz od "+npchar.name+", bladolicy?","Moje uszy są otwarte na twoje słowa, obcy.");
+			dialog.text = LinkRandPhrase(""+npchar.name+" słucham cię, synu morza.","Czego chcesz od "+npchar.name+", blada twarz?","Moje uszy są otwarte na twoje słowa, obcy.");
 			if (CheckIndianGift() && !CheckAttribute(npchar, "quest.gift"))
 			{
 				link.l1 = LinkRandPhrase("Mam coś dla ciebie. Chcesz zobaczyć?","Chcesz zobaczyć coś naprawdę ciekawego? Na pewno ci się spodoba...","Mam coś, co cię ucieszy, dziecko dżungli. Chcesz zobaczyć?");
@@ -90,7 +90,7 @@ void ProcessDialogEvent()
 		case "gift_47":
 			RemoveItems(pchar, "jewelry47", 1);
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Och! Tak piękny! Ta bransoletka jest dla "+npchar.name+"Dziękuję, życzliwy obcy!";
+			dialog.text = "Och! Tak piękny! Ta bransoletka jest dla "+npchar.name+". Dziękuję, życzliwy obcy!";
 			link.l1 = "Załóż to na swoją ciemną rękę, piękności, będziesz wyglądać fantastycznie...";
 			link.l1.go = "gift_exit";
 		break;
@@ -114,16 +114,16 @@ void ProcessDialogEvent()
 		case "gift_50":
 			RemoveItems(pchar, "jewelry50", 1);
 			PlaySound("interface\important_item.wav");
-			dialog.text = "O, jaki piękny zielony pierścień! To prezent dla "+npchar.name+"Dziękuję Ci, życzliwy nieznajomy!";
-			link.l1 = "Będzie wyglądało wspaniale na twojej ręce piękna...";
+			dialog.text = "O, jaki piękny zielony pierścień! To prezent dla "+npchar.name+". Dziękuję Ci, życzliwy nieznajomy!";
+			link.l1 = "Będzie wyglądało wspaniale na twojej ręce, piękna...";
 			link.l1.go = "gift_exit";
 		break;
 		
 		case "gift_exit":
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Merida.Women")) // Addon 2016-1 Jason Пиратская линейка
 			{
-				dialog.text = "Chciałem zapytać "+npchar.name+" cokolwiek, synie morza?";
-				link.l1 = "Masz rację, piękna. Ja i moi nieustraszeni wojownicy idziemy do selva, do hiszpańskiej osady wśród gór i szukamy przewodnika. Będę hojny dla samego mężczyzny, a także dla jego żony. Mam wiele bogactw: piękne pistolety, magiczne szkła, lustra, naszyjniki, bransoletki i pierścienie. Być może twój mąż może być przewodnikiem, którego szukamy?";
+				dialog.text = "Chciałeś zapytać "+npchar.name+" cokolwiek, synie morza?";
+				link.l1 = "Masz rację, piękna. Ja i moi nieustraszeni wojownicy idziemy do selvy, do hiszpańskiej osady wśród gór i szukamy przewodnika. Będę hojny dla samego mężczyzny, a także dla jego żony. Mam wiele bogactw: piękne pistolety, magiczne szkła, lustra, naszyjniki, bransoletki i pierścienie. Być może twój mąż może być przewodnikiem, którego szukamy?";
 				link.l1.go = "hayamee";
 			}
 			else
@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 			}
 			else 
 			{
-				link.l1 = "Wódz, przyszedłem prosić o twoją pomoc. Chcę dotrzeć do hiszpańskiej osady o nazwie Merida, która znajduje się wśród gór w twojej dżungli, problem w tym, że nie wiem, jak tam dotrzeć.";
+				link.l1 = "Wodzu, przyszedłem prosić o twoją pomoc. Chcę dotrzeć do hiszpańskiej osady o nazwie Merida, która znajduje się wśród gór w twojej dżungli, problem w tym, że nie wiem, jak tam dotrzeć.";
 				link.l1.go = "cumvana_no";
 			}
 			DelLandQuestMark(npchar);
@@ -153,13 +153,13 @@ void ProcessDialogEvent()
 		
 		case "cumvana_no":
 			dialog.text = "To bardzo dobrze dla ciebie, synu morza, nie znając drogi tam. Prowadzi przez las, ziemię nieustraszonego plemienia Capong. Prawdziwe jaguary, oni są, oh-ey! Ja nigdy nie idę do tego hiszpańskiego miejsca. Moi ludzie - pokojowi ludzie, nie idziemy do ziemi Capong. Kumwana nie może ci dać rady. Droga zbyt niebezpieczna.";
-			link.l1 = "Ale Hiszpanie znaleźli drogę tam! I nie boję się tych Capongów...";
+			link.l1 = "Ale Hiszpanie znaleźli bezpieczną droge! A poza tym nie boję się tych Capongów...";
 			link.l1.go = "cumvana_no_1";
 		break;
 		
 		case "cumvana_no_1":
 			dialog.text = "Ale powinieneś. To okrutni ludzie. Zabili wielu moich ludzi w lesie. Kumwana powiedział wszystko.";
-			link.l1 = "Cóż, gówno...";
+			link.l1 = "Cóż, szlag by to...";
 			link.l1.go = "cumvana_no_2";
 		break;
 		
@@ -202,24 +202,24 @@ void ProcessDialogEvent()
 			}
 			if (GetCharacterFreeItem(pchar, "spyglass1") > 0)
 			{
-				link.l3 = "Podaruj tani lunetę szpiegowską.";
+				link.l3 = "Podaruj tanią lunetę.";
 				link.l3.go = "cumvana_2_3";
 			}
 			if (GetCharacterFreeItem(pchar, "spyglass2") > 0)
 			{
-				link.l4 = "Podaruj zwykły lunetę szpiegowską."; // 2
+				link.l4 = "Podaruj zwykłą lunetę."; // 2
 				link.l4.go = "cumvana_2_4";
 			}
 			if (GetCharacterFreeItem(pchar, "spyglass3") > 0)
 			{
-				link.l5 = "Podaruj porządny lunet."; // 4
+				link.l5 = "Podaruj dobrą lunete."; // 4
 				link.l5.go = "cumvana_2_5";
 			}
 		break;
 		
 		case "cumvana_2_1":
-			Log_Info("You have given a pistol");
-			//Log_Info("You have received amulets");
+			Log_Info("Dałeś pistolet");
+			//Log_Info("Otrzymałeś amulety");
 			PlaySound("interface\important_item.wav");
 			RemoveItems(pchar, "pistol5", 1);
 			GiveItem2Character(pchar, "obereg_9");
@@ -231,8 +231,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "cumvana_2_2":
-			Log_Info("You have given a compass");
-			//Log_Info("You have received amulets");
+			Log_Info("Dałeś kompas");
+			//Log_Info("Otrzymałeś amulety");
 			PlaySound("interface\important_item.wav");
 			RemoveItems(pchar, "compass1", 1);
 			GiveItem2Character(pchar, "indian_10");
@@ -244,8 +244,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "cumvana_2_3":
-			Log_Info("You have given a cheap spy glass");
-			//Log_Info("You have received amulets");
+			Log_Info("Dałeś tanią lunetę");
+			//Log_Info("Otrzymałeś amulety");
 			PlaySound("interface\important_item.wav");
 			RemoveItems(pchar, "spyglass1", 1);
 			GiveItem2Character(pchar, "obereg_2");
@@ -257,8 +257,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "cumvana_2_4":
-			Log_Info("You have given a common spy glass");
-			//Log_Info("You have received amulets");
+			Log_Info("Dałeś zwykłą lunetę");
+			//Log_Info("Otrzymałeś amulety");
 			PlaySound("interface\important_item.wav");
 			RemoveItems(pchar, "spyglass2", 1);
 			GiveItem2Character(pchar, "obereg_6");
@@ -270,8 +270,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "cumvana_2_5":
-			Log_Info("You have given a decent spy glass");
-			//Log_Info("You have received amulets");
+			Log_Info("Dałeś dobrą lunetę");
+			//Log_Info("Otrzymałeś amulety");
 			PlaySound("interface\important_item.wav");
 			RemoveItems(pchar, "spyglass3", 1);
 			GiveItem2Character(pchar, "obereg_9");
@@ -296,7 +296,7 @@ void ProcessDialogEvent()
 		
 		case "cumvana_5":
 			dialog.text = "Bardzo dobrze, synu morza. Zgromadzę krąg wojowników i opowiem im o twoich pragnieniach. Zobacz mnie jutro po świcie.";
-			link.l1 = "Dziękuję, szefie!";
+			link.l1 = "Dziękuję, wodzu!";
 			link.l1.go = "cumvana_6";
 		break;
 		
@@ -315,7 +315,7 @@ void ProcessDialogEvent()
 		
 		case "cumvana_7":
 			dialog.text = "Oh-ey! Ty znowu, synu morza. Co chcesz powiedzieć Kumwanie?";
-			link.l1 = "Nic jeszcze, szefie.";
+			link.l1 = "Nic jeszcze, wodzu.";
 			link.l1.go = "cumvana_7x";
 			if(CheckAttribute(pchar,"questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "merida_hayamee")
 			{
@@ -328,7 +328,7 @@ void ProcessDialogEvent()
 			dialog.text = "Moi łowcy już cię poinformowali, że...";
 			link.l1 = "Nie ma potrzeby powtarzać się dwa razy, Kumwana. Ale spójrz na zewnątrz - i nie przeceniaj swoich możliwości. Moi odważni chłopcy, którzy przyszli tu po hiszpańskie kamienie, są rozproszeni po twojej wiosce. I ich cierpliwość się kończy. A co się stanie, gdy w końcu się skończy, lepiej, żebyś nie wiedział - uwierz mi.";
 			link.l1.go = "cumvana_medium_1";
-			link.l2 = "Zamknij swoją paszczę i słuchaj, czerwonoskóry małpo. Moi ludzie mogą być o wiele straszniejsi niż te przeklęte Kapongi. Nie daj się zmylić tym, że jesteśmy teraz tacy mili. Daję ci prosty wybór: albo znajdziesz przewodnika w ciągu dwudziestu czterech godzin, albo związujemy was wszystkich i wyślemy przez dżunglę przed naszym oddziałem. Jeśli poprowadzisz nas w niewłaściwym kierunku, sam zginiesz w bagnach albo pójdziesz związany walczyć z Kapongami. Zrozumiałeś?";
+			link.l2 = "Zamknij swoją paszczę i słuchaj, czerwonoskóra małpo. Moi ludzie mogą być o wiele straszniejsi niż te przeklęte Kapongi. Nie daj się zmylić tym, że jesteśmy teraz tacy mili. Daję ci prosty wybór: albo znajdziesz przewodnika w ciągu dwudziestu czterech godzin, albo związujemy was wszystkich i wyślemy przez dżunglę przed naszym oddziałem. Jeśli poprowadzisz nas w niewłaściwym kierunku, sam zginiesz w bagnach albo pójdziesz związany walczyć z Kapongami. Zrozumiałeś?";
 			link.l2.go = "cumvana_hard_1";
 			link.l3 = "Kumwana, potrzebuję tego przewodnika. Przebyliśmy długą drogę i naprawdę nie chcę mówić moim ludziom, że to było na próżno.";
 			link.l3.go = "cumvana_good_1";
@@ -337,7 +337,7 @@ void ProcessDialogEvent()
 		
 		case "cumvana_good_1":
 			dialog.text = "Kumwana już powiedział, żaden z Lokono nie chce iść z bladą twarzą.";
-			link.l1 = "I nie możesz nic z tym zrobić? Poproś kogoś osobiście. Nakazuj, przecież. Jesteś szefem czy nie?";
+			link.l1 = "I nie możesz nic z tym zrobić? Poproś kogoś osobiście. Nakazuj, przecież. Jesteś wodzem czy nie?";
 			link.l1.go = "cumvana_good_2";
 		break;
 		
@@ -366,14 +366,14 @@ void ProcessDialogEvent()
 		
 		case "cumvana_medium_1":
 			dialog.text = "Dlaczego mi grozisz tak? Myślimy, że jesteś dobry...";
-			link.l1 = "Dobrze mi, o ile będziesz współpracować, rozumiesz? Masz jeden dzień. I wierz mi, moi ludzie zrobią wszystko, co im rozkażę. Jesteśmy silniejsi. A jeśli w to wątpisz... Widziałem twoją żonę. I twoje córki. Myślę, że teraz zrozumiałeś przekaz.";
+			link.l1 = "Będe dobry, o ile będziesz współpracować, rozumiesz? Masz jeden dzień. I wierz mi, moi ludzie zrobią wszystko, co im rozkażę. Jesteśmy silniejsi. A jeśli w to wątpisz... Widziałem twoją żonę. I twoje córki. Myślę, że teraz zrozumiałeś przekaz.";
 			link.l1.go = "cumvana_hard_2";
 			AddCharacterExpToSkill(pchar, "Leadership", 300);
 		break;
 		
 		case "cumvana_hard_1":
 			dialog.text = "Dlaczego mi grozisz? Myślimy, że jesteś dobry...";
-			link.l1 = "Dobrze mi, o ile współpracujesz, rozumiesz? Masz jeden dzień. I uwierz mi, moi ludzie zrobią wszystko, co rozkażę. Jesteśmy silniejsi. A jeśli w to wątpisz... Widziałem twoją żonę. I twoje córki. Myślę, że teraz rozumiesz przekaz.";
+			link.l1 = "Będe dobry, o ile współpracujesz, rozumiesz? Masz jeden dzień. I uwierz mi, moi ludzie zrobią wszystko, co rozkażę. Jesteśmy silniejsi. A jeśli w to wątpisz... Widziałem twoją żonę. I twoje córki. Myślę, że teraz rozumiesz przekaz.";
 			link.l1.go = "cumvana_hard_2";
 		break;
 		
@@ -410,7 +410,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "cumvana_8":
-			dialog.text = "Synie morza, to ty. Kumwana rozmawiała z wojownikami Locono.";
+			dialog.text = "Synie morza, to ty. Kumwana rozmawiał z wojownikami Locono.";
 			link.l1 = "No cóż? Masz ochotnika?";
 			link.l1.go = "cumvana_9";
 		break;
@@ -429,7 +429,7 @@ void ProcessDialogEvent()
 		
 		case "cumvana_11":
 			dialog.text = "Aby tam dotrzeć, powinieneś popłynąć rzeką, a następnie wysiąść w specjalnym miejscu. Jeśli to złe miejsce, wpadniesz do bagna i umrzesz. Nasza selva pełna jest niebezpieczeństw. Nie znajdziesz tego miejsca sam, synu morza.";
-			link.l1 = RandSwear()+"A co powinienem wtedy zrobić? Jak przekonać twoich myśliwych?";
+			link.l1 = RandSwear()+", A co powinienem wtedy zrobić? Jak przekonać twoich myśliwych?";
 			link.l1.go = "cumvana_12";
 		break;
 		
@@ -457,7 +457,7 @@ void ProcessDialogEvent()
 				dialog.text = "Mój mąż Tagofa to najlepszy myśliwy w plemieniu. Oh-ey! "+npchar.name+" jest dumna ze swojego męża. "+npchar.name+" często idzie z Tagofą do Selvy. Idź daleko. Tagofa wie, gdzie jest hiszpańska osada.";
 				if (IsCharacterPerkOn(pchar, "Trustworthy") && stf(pchar.questTemp.Indian.relation) >= 40.0)
 				{
-					link.l1 = "Czy Tagofa zna drogę do hiszpańskiego miasta, które bladolicy nazywają Merida?";
+					link.l1 = "Czy Tagofa zna drogę do hiszpańskiego miasta, które blade twarze nazywają Merida?";
 					link.l1.go = "hayamee_1";
 				}
 				else
@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 			link.l1 = "Czy myślisz, że te Kapongi to wszystko, o co musisz się martwić? Bardzo się mylisz...";
 			link.l1.go = "hayamee_bad_4";
 			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("The Indians don't respect you "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
-			if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Perk Check Failed", "Trustworthy");
+			if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Brak zdolności", "Godny Zaufania");
 		break;
 		
 		case "hayamee_bad_4":

@@ -699,7 +699,7 @@ void Patria_PortPaxNextBattle(string qName) // добавочный ТГ
 {
 	PlaySound("interface\notebook.wav");
 	Log_Info(RandSwear()+StringFromKey("Patria_11"));
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	Group_FindOrCreateGroup("PatriaPPSeaGroup1");
 	sld = GetCharacter(NPC_GenerateCharacter("PatriaPP_Seacap_add", "off_spa_4", "man", "man", 20+MOD_SKILL_ENEMY_RATE*2, SPAIN, -1, true, "quest"));
 	FantomMakeCoolSailor(sld, SHIP_GALEON_H, "", CANNON_TYPE_CANNON_LBS24, 65, 65, 65);
@@ -809,7 +809,7 @@ void Patria_CureerBegin() // отсоединяем Эклятон, присое
 
 void Patria_CureerCreatePirates(string qName)//атака ДУ
 {
-	CoolTraderHunterOnMap();
+	TraderHunterOnMap(true);
 }
 
 void Patria_CureerTimeOver(string qName) // опоздание по времени
@@ -965,7 +965,7 @@ void Patria_SanMartinFortAttack()
 void Patria_SanMartinSetSquadron(string qName) // ставим эскадру голандцев
 {
 	AddQuestRecord("Patria", "27");
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	Group_FindOrCreateGroup("Patria_SanMartinSeaGroup");
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
 	if (iRank > 45) iRank = 45;
@@ -1183,7 +1183,7 @@ void Patria_DiplomatSeabattle(string qName) // вышли в море
 void Patria_DiplomatSeabattleGo(string qName) // ставим эскадру голандцев
 {
 	PlaySound("interface\notebook.wav");
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	Group_FindOrCreateGroup("Patria_DiplomatSeaGroup");
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
 	if (iRank > 45) iRank = 45;
@@ -1819,7 +1819,7 @@ void Patria_SiegeEscape(string qName) // вышли в море, начинае�
 	pchar.questTemp.Patria.Escape_count = sti(pchar.questTemp.Patria.Escape_count)+1;
 	if (sti(pchar.questTemp.Patria.Escape_count) > 3) return;
 	PlaySound("interface\notebook.wav");
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	string sGroup = "Patria_EscapeSeaGroup_"+sti(pchar.questTemp.Patria.Escape_count);
 	Group_FindOrCreateGroup(sGroup);
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;

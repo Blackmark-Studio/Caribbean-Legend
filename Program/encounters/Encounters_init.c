@@ -68,8 +68,7 @@ void InitEncounters()
 
     Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT,  "Merchant", 1, 1, 3, 4);
     Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      1, 2, 4, 5);
-    Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War",      0, 1, 4, 5);
-    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      1, 1, 3, 4);
+    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      1, 1, 3, 5);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Торговая экспедиция - Большая
@@ -83,15 +82,21 @@ void InitEncounters()
     Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT,  "Merchant", 1, 1, 2, 3);
     Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      1, 2, 3, 4);
     Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War",      0, 1, 3, 4);
-    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      2, 2, 2, 3);
+    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      1, 2, 2, 3);
 
 	///////////////////////////////////////////////////////////////////////////////////////
-	/// Работорговцы (TO_DO)
+	/// Работорговцы
 	///////////////////////////////////////////////////////////////////////////////////////
 	makeref(rEnc, EncountersTypes[ENCOUNTER_TYPE_MERCHANT_SLAVES]);
- 	rEnc.Chance = 0;
-	rEnc.Skip   = true;
-    Enc_ExcludeNation(rEnc, PIRATE);
+ 	rEnc.Chance = 80;
+	rEnc.Type = ENCOUNTER_TRADE;
+	rEnc.worldMapShip = "galleon";
+	Enc_ExcludeNation(rEnc, PIRATE);
+
+    Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT,  "Merchant", 1, 2, 2, 4);
+    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      1, 1, 3, 4);
+    Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War",      1, 1, 3, 4);
+    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      0, 1, 3, 4);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Военная эскадра - Средняя
@@ -158,12 +163,14 @@ void InitEncounters()
 	makeref(rEnc, EncountersTypes[ENCOUNTER_TYPE_PIRATE]);
  	rEnc.Type = ENCOUNTER_WAR;
     rEnc.worldMapShip = "sloop";
+    rEnc.Stage = 0;
 	Enc_ExcludeNation(rEnc, ENGLAND);
 	Enc_ExcludeNation(rEnc, FRANCE);
 	Enc_ExcludeNation(rEnc, SPAIN);
 	Enc_ExcludeNation(rEnc, HOLLAND);
-    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      1, 2, 6, 6);
+    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      1, 1, 6, 6);
     Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War",      0, 1, 6, 6);
+    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      0, 1, 6, 6);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Бочонок

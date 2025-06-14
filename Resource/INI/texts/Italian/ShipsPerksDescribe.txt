@@ -248,15 +248,35 @@ Aumento della riserva di pesos: 100%.
 Aumento della riserva di dobloni: ~30%.
 }
 
-sp3 {SP3}
+sp3 {Crogiolo}
 
 sp3_desc
 {
-DLC.
+Su questa nave, la vita umana è solo una breve tappa prima che si riveli il vero potere. Pochi attraversano la Soglia e tornano, ma chi ci riesce non teme più la morte.
 }
 
 sp3_desc2
 {
-DLC.
+I marinai caduti aumentano l’esperienza e il morale dell’equipaggio.
+}
+
+sp3_SailorsBoardingBonus_desc
+{
+Bonus esperienza all’abbordaggio: #dSailorsBoardingBonus#%
+}
+
+sp3_SailorsBoardingBonus1_desc
+{
+~ (#dDeadSailors#/500 marinai caduti)
+}
+
+sp3_SurrenderChanceBonus_desc
+{
+Aumento probabilità di resa: #dSurrenderChanceBonus#%
+}
+
+sp3_SurrenderChanceBonus1_desc
+{
+~ (#dDeadSailors#/2000 marinai caduti)
 }
 

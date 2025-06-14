@@ -1,4 +1,3 @@
-
 #include "quests\quests.h"
 
 #event_handler("LocationWaitNihgtEnd","WaitDatePostEventControl");
@@ -410,6 +409,13 @@ void AddQuestRecordEx(string idQuest,string idReferenceQuest,string idText)
 	// покраска новой СЖ
 	// SetQuestHeaderColor(idQuest, argb(255,255,128,255));
 	SetQuestHeaderColor(idQuest, argb(190,110,0,0));
+	
+	// evganat - пролог
+	if(idQuest == "SharlieTutorial" && CheckAttribute(&TEV, "Tutor.PopUpLogbook"))
+	{
+		DoQuestFunctionDelay("Tutorial_Logbook", 1.0);
+		DeleteAttribute(&TEV, "Tutor.PopUpLogbook");
+	}
 }
 
 // boal метод для инфы  -->

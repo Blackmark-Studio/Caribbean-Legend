@@ -1112,7 +1112,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Current.TargetIslandID = GetCharacterCurrentIslandId(sld);//ИД целевого ареала
 			pchar.questTemp.WPU.Fraht.TargetCity = FindTownOnIsland(pchar.questTemp.WPU.Current.TargetIslandID);
 			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
-			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Fraht.Chance == 2) FrahtHunterOnSea();//создание ДУ в акватории
 			DialogExit();
 		break;
@@ -1432,7 +1432,7 @@ void ProcessDialogEvent()
 			}
 			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "1");
@@ -1482,7 +1482,7 @@ void ProcessDialogEvent()
 				pchar.quest.Escort_fail.function = "Escort_failed";
 	        }
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			DialogExit();
 		break;
@@ -1637,7 +1637,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 3) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "6");
@@ -1987,7 +1987,7 @@ void ProcessDialogEvent()
 					pchar.quest.Postcureer_Hunter.win_condition.l1 = "Location";
 					pchar.quest.Postcureer_Hunter.win_condition.l1.location = pchar.questTemp.WPU.Postcureer.City + "_town";
 					pchar.quest.Postcureer_Hunter.function = "PostcureerGopHuntersOnLand";
-					TraderHunterOnMap();
+					TraderHunterOnMap(false);
 				break;
 		
 				case 1://создание скоростного перехватчика на глобалке
@@ -1995,7 +1995,7 @@ void ProcessDialogEvent()
 				break;
 		
 				case 2://запуск ДУ на глобалке и в порту прибытия
-					TraderHunterOnMap();
+					TraderHunterOnMap(false);
 					FrahtHunterOnSea();
 				break;
 		
@@ -3689,6 +3689,11 @@ void ProcessDialogEvent()
 				link.l2 = "Senau de patrouille 'Lady Beth'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
+			{
+				link.l3 = "Brick 'Memento'.";
+				link.l3.go = "UniqueShips_Memento";
+			}
 			link.l99 = "Je pense que j'en sais assez.";
 			link.l99.go = "node_2";
 		break;
@@ -3710,6 +3715,20 @@ void ProcessDialogEvent()
 			link.l1 = "Merci beaucoup.";
 			link.l1.go = "node_2";
 		break;
+		
+		case "UniqueShips_Memento":
+		AddMoneyToCharacter(pchar, -25000);
+		AddQuestRecordInfo("LegendaryShips", "3");
+		pchar.questTemp.Memento_InfoPU = true;
+		dialog.text = "Le 'Memento' - une vraie légende pirate. Une brig noir sous le commandement du capitaine Mortimer Grim.\n"+
+		"Grim chasse exclusivement les négriers. On dit qu’il libère les esclaves et sauve les condamnés à mort en les rachetant avec de l’or. Une noble cause — si l’on ignore le reste.\n"+
+		"Si vous ne faites pas de commerce humain, Grim ne vous touchera pas. Il est étrange, mais il a ses principes. Mais si vous avez des esclaves à bord... priez pour ne pas voir ses voiles noires à l’horizon.\n"+
+		"Le 'Memento' navigue entre les repaires pirates, mais accoste rarement. Son équipage vit à bord pendant des mois, comme s’il craignait de poser le pied à terre. On raconte aussi que le navire a survécu à une terrible épidémie — c’est pour cela que l’équipage est si difficile à tuer.\n"+
+		"Si vous voulez l’affronter, prenez beaucoup de canons. Aborder le 'Memento' est presque impossible — l’équipage se bat comme des possédés, comme s’ils ne craignaient pas la mort. La seule façon de les vaincre est de réduire le navire en miettes pour leur ôter tout abri. Les échardes ne les effraient pas, mais un tir direct à la mitraille, c’est une autre affaire.\n"+
+		"Bonne chance. Et souvenez-vous de la mort.";
+		link.l1 = "Merci beaucoup.";
+		link.l1.go = "node_2";
+	break;
 		
 		// уникальные корабли и легендарные капитаны <--
 	}

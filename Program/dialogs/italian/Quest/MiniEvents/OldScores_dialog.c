@@ -4,6 +4,7 @@ void ProcessDialogEvent()
 	aref Link, NextDiag;
 	int i, iTemp;
 	string sTemp;
+	bool bOk1, bOk2;
 	
 	DeleteAttribute(&Dialog,"Links");
 	
@@ -25,18 +26,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "OS_Matros_sluh":
-			if (!CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe" && sti(pchar.rank) >= 5)
+			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			if (bOk1 || bOk2)
 			{
-				dialog.text = RandPhraseSimple("Ehi, "+GetSexPhrase("compare","ragazza")+", hai visto il mio stivale da qualche parte? Qualche lurido furfante me l’ha fregato mentre dormivo sbronzo sotto il tavolo della taverna.","Si dice che ieri ci sia stata una rissa nella taverna... Ma chi ci fosse di mezzo, nessuno lo sa. La mia faccia sembra intatta. Credo.","Per tutti i diavoli dell’oceano, ieri avevo la borsa piena d’oro! Dove diamine s’è cacciata adesso?!");
-				link.l1 = "...";
-				link.l1.go = "exit";
-				NextDiag.TempNode = "OS_Matros_sluh";
-
-				SetQuestHeader("OS");
-				AddQuestRecord("OS", "1");
-				pchar.questTemp.OS_Start = true;
-				pchar.questTemp.OS_Tavern_1 = true;
-				AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
+				dialog.text = "Dicono che ieri sera ci sia stata una rissa alla taverna... Ma chi stava litigando — non ne ho idea. La mia faccia è intatta. Credo.";
+				link.l1 = "Pare che ci sia stata una gran bevuta qui, eh?";
+				link.l1.go = "OS_Matros_sluh_2";
 			}
 			else
 			{
@@ -64,6 +60,19 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
+		break;
+		
+		case "OS_Matros_sluh_2":
+			dialog.text = "Eccome! Il locandiere ha avuto da fare... hic... E poi... gli hanno rubato il gin! Non una bottiglia, ma un'intera botte! E una così rara che non se ne trova un'altra in tutti i Caraibi! Si dice venga direttamente dall’Europa. Non vuole dire per chi la stava conservando, ma una cosa è certa: se non la ritrovano presto, lo aspetta un inferno!";
+			link.l1 = "Interessante. Stammi bene, ubriacone.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "OS_Matros_sluh";
+			
+			SetQuestHeader("OS");
+			AddQuestRecord("OS", "1");
+			pchar.questTemp.OS_Start = true;
+			pchar.questTemp.OS_Tavern_1 = true;
+			AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
 		break;
 
 		case "OS_Matros_again":
@@ -283,7 +292,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Zaharia_3";
 			CharacterTurnByChr(npchar, pchar);
 			TakeItemFromCharacter(pchar, "cask_gin");
-			Log_Info("You gave the barrel of gin");
+			notification("You gave the barrel of gin", "NONE");
 		break;
 
 		case "Zaharia_3":

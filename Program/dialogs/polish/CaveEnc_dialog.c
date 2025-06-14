@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = LinkRandPhrase("O rety, na Boga! Nie ma potrzeby polować na zdobycz - ona już tu jest... Hej, chłopaki - potrząśnijmy tym fircykiem, co?","Nikt cię tu nie zaprosił, kumplu... Ale dobrze, że jednak jesteś. Zobaczmy teraz, jak ciężki jest twój sakiewka!","Nikt cię tutaj na siłę nie ciągnął, he-he... Ale skoro już tu jesteś, chyba trochę cię pożartujemy, żeby zobaczyć, co ci z kieszeni wypadnie...");
+				dialog.text = LinkRandPhrase("O rety, na Boga! Nie ma potrzeby polować na zdobycz - ona już tu jest... Hej, chłopaki - potrząśnijmy tym fircykiem, co?","Nikt cię tu nie zaprosił, kumplu... Ale dobrze, że jednak jesteś. Zobaczmy teraz, jak ciężka jest twoja sakiewka!","Nikt cię tutaj na siłę nie ciągnął, he-he... Ale skoro już tu jesteś, chyba trochę cię pożartujemy, żeby zobaczyć, co ci z kieszeni wypadnie...");
 				link.l1 = LinkRandPhrase("Teraz trochę skrócę twój język...","Mam nadzieję, że twoje umiejętności szermierki dorównują twojemu dowcipowi, gadatliwy!","Cóż, wygląda na to, że nadszedł czas, aby zrobić kilka dodatkowych dziur w twoim znikomym ciele...");
 				link.l1.go = "fight";
 			}

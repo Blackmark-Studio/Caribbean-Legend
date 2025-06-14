@@ -9,7 +9,7 @@ FalseTrace_2
 
 FalseTrace_3
 {
-галеон '@<pchar.questTemp.FalseTrace.ShipName>'
+флейт '@<pchar.questTemp.FalseTrace.ShipName>'
 }
 
 FalseTrace_4
@@ -28,7 +28,7 @@ FalseTrace_6
 
 FalseTrace_7
 {
-галеон с золотой рудой
+флейт с золотой рудой
 }
 
 FalseTrace_8

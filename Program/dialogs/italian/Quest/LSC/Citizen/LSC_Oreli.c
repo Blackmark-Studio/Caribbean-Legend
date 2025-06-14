@@ -56,7 +56,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meeting_2":
-			dialog.text = "No, tutto va bene. Ma per qualche motivo ora dobbiamo pagare i pirati per il nostro cibo, che fino a poco tempo fa era gratis per tutti. E quando i clan iniziano a litigare nella nostra parte dell’Isola, dobbiamo rintanarci dentro le navi per non rischiare di prenderci una palla o una coltellata.\nVoglio dire, loro possono fare il diavolo a quattro nei nostri territori, mentre noi non possiamo mettere piede nei loro. Ma va bene così, niente altri guai…";
+			dialog.text = "No, tutto va bene. Ma per qualche motivo ora dobbiamo pagare i pirati per il nostro cibo, che fino a poco tempo fa era gratis per tutti. E quando i clan iniziano a litigare nella nostra parte dell’Isola, dobbiamo rintanarci dentro le navi per non rischiare di prenderci una palla o una coltellata.\nVoglio dire, loro possono fare il diavolo a quattro nei nostri territori, mentre noi non possiamo mettere piede nei loro. Ma va bene così, niente altri guai...";
 			link.l1 = "Capisco. Bene, lieto d'averti incontrato. A presto!";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
@@ -90,7 +90,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_1":
-			dialog.text = "Da moltissimo tempo. Ho perso ormai il conto. Dev’essere diciassette anni… no, forse diciotto… o sono venti? Qual è l’anno corrente?";
+			dialog.text = "Da moltissimo tempo. Ho perso ormai il conto. Dev’essere diciassette anni... no, forse diciotto... o sono venti? Qual è l’anno corrente?";
 			link.l1 = "Capisco... Dunque, sei un vecchio lupo di quest’isola?";
 			link.l1.go = "ansewer_1_1";
 		break;

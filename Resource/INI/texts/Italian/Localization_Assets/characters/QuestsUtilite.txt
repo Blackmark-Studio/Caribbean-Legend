@@ -1245,3 +1245,22 @@ QuestsUtilite_276
 {
 Le acque stanno diventando più pericolose, la minaccia dei pirati è aumentata
 }
+
+
+QuestsUtilite_277
+{
+Chimera
+}
+
+QuestsUtilite_278
+{
+~ Quanto li abbiamo fatti arrabbiare! La nave ammiraglia della squadra è ~
+}
+QuestsUtilite_279
+{
+Diego
+}
+QuestsUtilite_280
+{
+de Landa
+}

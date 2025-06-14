@@ -1,0 +1,25 @@
+Memento_1
+{
+Memento
+}
+
+Memento_2
+{
+Mortimer
+}
+
+Memento_3
+{
+Grim
+}
+
+Memento_4
+{
+Kapitän, das ist die berüchtigte 'Memento' - der Schrecken der Sklavenhändler! 
+Sie ist nicht unser Feind, also können wir ein Boot schicken.
+}
+
+Memento_5
+{
+Verdammt
+}

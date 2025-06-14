@@ -686,6 +686,16 @@ Ich habe dem Wächter die Wahrheit gesagt. Natürlich war er zuerst wütend, abe
 #TEXT	5
 Ich beschloss, mich nicht um die Geräusche und das schreckliche Stöhnen zu kümmern, die sich der Wächter einbildete. Meine Zeit ist viel wertvoller.
 
+#QUEST SixCaptains
+Sechs Kapitäne
+#TEXT	1
+Wahrscheinlich ist es das erste Mal, dass eine flüchtige Begegnung mit jemandem, der weder Arbeit noch ein besonderes Anliegen für mich hatte, mich dazu brachte, einen Eintrag in diesem Tagebuch zu machen. Ich verstehe nicht, warum dieser Priester solch einen Eindruck bei mir hinterlassen hat. Ich kenne nicht einmal seinen Namen, und manchmal sprach er reinen Unsinn, aber dennoch – er bleibt im Gedächtnis. Wir haben uns bereits zweimal getroffen, und das könnte man noch als Zufall abtun. Aber wenn wir uns noch ein drittes Mal begegnen...
+
+Ehrlich gesagt, schmeichelt mir sein Interesse ein wenig. Sein Blick war... abschätzend. Als würde er meine Erfolge bewundern. Und wer würde das nicht tun? Zwei legendäre Schiffe, zwei Kapitäne, von denen im ganzen Archipel die Rede war – beide sind durch meine Hand gefallen.
+Ich frage mich, was er sagen wird, wenn er von meinen weiteren Taten erfährt. Der Archipel ist groß, aber mein Ruhm scheint sich schneller zu verbreiten, als ich dachte.
+#TEXT	2
+Diego de Landa – so heißt du also. Dann sehen wir uns wieder. Fortsetzung folgt.
+
 #QUEST SharlieTutorial
 Prolog
 #TEXT 0
@@ -726,8 +736,8 @@ Thomas hat mir einen persönlichen Gegenstand von Esther gegeben - eine Jadekett
 #TEXT	9
 Durch die gemeinsamen Bemühungen der Zigeunerin und mir wurde Esthers Krankheit besiegt! Es ist ein gutes Gefühl zu wissen, dass all die Mühe nicht umsonst war und das Mädchen nun gesund ist.
 #TEXT	10
-Ich habe alles getan, was erforderlich war. Jetzt bleibt nur noch zu glauben, dass sich der Trank der Zigeunerin als wirksam erweisen wird. Ich bin so in die Rettung des kleinen Mädchens verwickelt worden, dass ich meine eigenen Angelegenheiten völlig vergessen habe. Ich werde Antigua in einem Monat besuchen. Bis dahin sollte Esther vollständig genesen sein.
-#TEXT	11
+Dank unserer Bemühungen mit der Zigeunerin ist Esthers Krankheit besiegt! Es ist ein gutes Gefühl zu wissen, dass all unsere Anstrengungen nicht umsonst waren und das Mädchen jetzt gesund ist. Bei der Zigeunerin in Saint John's kann ich immer Mangarosa kaufen - drei Stängel für dreihundertfünfzig goldene Dublonen.
+#TEXT 11
 Nun hat die Zigeunerin alles, was sie zur Herstellung des Heilmittels braucht. Morgen früh muss ich das Mittel bei ihr abholen und zu Thomas bringen.
 
 #QUEST TPZ
@@ -781,11 +791,11 @@ Der Gin wurde direkt unter der Nase des Wirts gestohlen. Sein Leben hängt nun a
 #TEXT 3
 Diese ganze Geschichte klingt äußerst seltsam. Aber ich glaube, ich habe bereits eine Theorie. Es ist Zeit, mit der Bedienung zu sprechen​.
 #TEXT 4
-Unter Druck hat die Bedienung schließlich zugegeben, dass hinter der Inszenierung ein gewisser Jack Wales steckt. Zusammen mit dem Kapitän der 'Sea Wolf' organisierte er eine ausgeklügelte Ablenkung, um das Fass zu stehlen. Ganz schön viel Aufwand für Gin! Offenbar handelt es sich nicht bloß um Trinkfreunde, sondern wahre Kenner. Der Unterschlupf des Diebes liegt direkt gegenüber der Taverne​.
+Unter Druck hat die Bedienung schließlich zugegeben, dass hinter der Inszenierung ein gewisser Jack Wales steckt. Zusammen mit dem Kapitän der 'Sea Beast' organisierte er eine ausgeklügelte Ablenkung, um das Fass zu stehlen. Ganz schön viel Aufwand für Gin! Offenbar handelt es sich nicht bloß um Trinkfreunde, sondern wahre Kenner. Der Unterschlupf des Diebes liegt direkt gegenüber der Taverne​.
 #TEXT 5
 Ich habe dem Wirt das Fass rechtzeitig zurückgebracht und ihm damit wohl das Leben gerettet. Er erwies sich als dankbar – neben Dublonen erhielt ich lebenslangen Anspruch auf kostenlose Unterkunft und Getränke in seiner Taverne. Die Bedienung hat klugerweise das Weite gesucht, denn der Wirt hat schnell ihre Beteiligung erkannt​.
 #TEXT 6
-Die Mannschaft der 'Sea Wolf' ist ihrem Kapitän in die Tiefe gefolgt. Haben sie ein solches Schicksal verdient? Wer weiß... Doch eines ist sicher – sie hätten besser zweimal nachgedacht, bevor sie mir die Stirn boten​.
+Die Mannschaft der 'Sea Beast' ist ihrem Kapitän in die Tiefe gefolgt. Haben sie ein solches Schicksal verdient? Wer weiß... Doch eines ist sicher – sie hätten besser zweimal nachgedacht, bevor sie mir die Stirn boten​.
 
 #QUEST UV
 Gestohlenes Andenken

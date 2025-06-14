@@ -2493,7 +2493,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 		pchar.quest.generate_convoy_quest_completed.win_condition.l1 = "Location";
 		pchar.quest.generate_convoy_quest_completed.win_condition.l1.location = attrName;
 		pchar.quest.generate_convoy_quest_completed.win_condition = "generate_convoy_quest_completed";			
-		if (rand(2) == 1) TraderHunterOnMap();
+		if (rand(2) == 1) TraderHunterOnMap(false);
 	}
 	////////////////////////////////////////////////////////////////////////
 	//  Конец    Сопровождение торговца
@@ -2591,7 +2591,9 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 	//////////////////////////////////////////////////////////////////////// 
 	else if (sQuestName == "ContraPass_GivePrisoner") {
 		chrDisableReloadToLocation = true;//закрыть локацию
-		sld = GetCharacter(NPC_GenerateCharacter("ContraPassTempsailor", "citiz_36", "man", "man", 10, sti(pchar.Mation), 0, true, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("ContraPassTempsailor", "Alonso", "man", "man", 10, sti(pchar.Mation), 0, true, "quest"));
+		sld.name 	= StringFromKey("MiniQuests_24");
+		sld.lastname = "";
 		sld.Dialog.Filename = "MayorQuests_dialog.c";
 		sld.dialog.currentnode = "Tempsailor";
 		GetCharacterPos(pchar, &locx, &locy, &locz);

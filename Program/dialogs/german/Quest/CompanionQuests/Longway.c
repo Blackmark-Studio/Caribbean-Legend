@@ -1359,7 +1359,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_2":
-			dialog.text = "Was? Ha! Du hast eine ziemlich lebhafte Fantasie, Chinesenmann! Antoon ist ein Feigling, und van der Vink ist da, um ihn zu schützen, falls jemand ihre „privaten Stunden“ stört. /nJoep trägt immer schwere Schützengrabenrüstung - unempfindlich gegen die meisten Kaltwaffen. Deshalb brauchst du auch etwas Besonderes. Nimm diesen Degen. Er ist lang, stärker als die meisten anderen Schwerter, und wiegt wie eine gute Klinge.";
+			dialog.text = "Was? Ha! Du hast eine ziemlich lebhafte Fantasie, Chinesenmann! Antoon ist ein Feigling, und van der Vink ist da, um ihn zu schützen, falls jemand ihre 'privaten Stunden' stört\nJoep trägt immer schwere Schützengrabenrüstung - unempfindlich gegen die meisten Kaltwaffen. Deshalb brauchst du auch etwas Besonderes. Nimm diesen Degen. Er ist lang, stärker als die meisten anderen Schwerter, und wiegt wie eine gute Klinge.";
 			link.l1 = "Ein Degen zum Kampf gegen gepanzerte Feinde...?";
 			link.l1.go = "PZ_OliverTrust_lubovnitsa_3";
 			//Log_Info("Вы получили асоледу");
@@ -1369,7 +1369,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_3":
-			dialog.text = "Zielen Sie nicht auf die Rüstung selbst - es ist kein Estoc. Schlagen Sie in die Spalten und anfälligen Stellen, wie die Leistengegend, die Achselhöhlen und den Hals. Zermürben Sie ihn, diktieren Sie die Bedingungen. Joep führt auch eine schwere Axt, also versuchen Sie nicht, seine Schläge zu parieren - weichen Sie stattdessen aus/nFalls Sie keine Öffnung finden, nehmen Sie diesen Donnerbüchse. Sie ist normalerweise mit Schrot geladen, aber ich habe einen Satz Stahlpfeile für Sie vorbereitet.";
+			dialog.text = "Zielen Sie nicht auf die Rüstung selbst - es ist kein Estoc. Schlagen Sie in die Spalten und anfälligen Stellen, wie die Leistengegend, die Achselhöhlen und den Hals. Zermürben Sie ihn, diktieren Sie die Bedingungen. Joep führt auch eine schwere Axt, also versuchen Sie nicht, seine Schläge zu parieren - weichen Sie stattdessen aus\nFalls Sie keine Öffnung finden, nehmen Sie diesen Donnerbüchse. Sie ist normalerweise mit Schrot geladen, aber ich habe einen Satz Stahlpfeile für Sie vorbereitet.";
 			link.l1 = "Pfeile für ein Musket...?";
 			link.l1.go = "PZ_OliverTrust_lubovnitsa_4";
 			//Log_Info("Вы получили бландербуз");

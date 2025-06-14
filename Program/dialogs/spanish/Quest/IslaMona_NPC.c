@@ -1285,6 +1285,7 @@ void ProcessDialogEvent()
 			bDisableCharacterMenu = true;
 			pchar.GenQuest.FrameLockEsc = true;
 			locCameraRotateAroundHero(0.0, 1.5, 0.0, 0.005, 0.0, 1.5, 0.0, 10000);
+			Pchar.FuncCameraFly = "";
 			DoQuestCheckDelay("IslaMona_ChurchTavernExit", 45.0);
 		break;
 		

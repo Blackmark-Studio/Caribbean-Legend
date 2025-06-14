@@ -702,6 +702,8 @@ Seis Capitanes
 Quizás sea la primera vez que un breve encuentro con alguien que no tenía ni trabajo ni asuntos para mí me ha hecho escribir una entrada en este diario. No entiendo por qué este sacerdote me causó tal impresión. No sé su nombre, y a veces hablaba tonterías, pero se hizo memorable. Nos hemos encontrado dos veces ahora, y podría descartarse como una coincidencia. Pero si nos encontramos de nuevo...
 Debo admitir que su interés es algo halagador. Esa mirada en sus ojos es tan... evaluadora. Como si admirara mis logros. ¿Y quién no lo haría? Dos barcos legendarios, dos capitanes cuyas historias se extendieron por todo el Archipiélago, ambos caídos por mi mano.
 Me pregunto qué dirá cuando se entere de mis futuras hazañas. El Archipiélago es vasto, pero mi fama, al parecer, está creciendo más rápido de lo que pensaba.
+#TEXT	2
+Diego de Landa - así te llamas. Entonces nos volveremos a encontrar. Continuará.
 
 #QUEST SharlieTutorial
 El Prólogo
@@ -743,8 +745,8 @@ Thomas me entregó una pertenencia personal de Esther - un collar de jade. Ahora
 #TEXT	9
 ¡Gracias a los esfuerzos míos y de la gitana, la enfermedad de Esther ha sido vencida! Es reconfortante saber que todos los esfuerzos no fueron en vano y que la niña ahora está sana.
 #TEXT	10
-He hecho todo lo que se requería. Ahora solo queda creer que la poción de la gitana resultará efectiva. Me he involucrado tanto en salvar a la niña que he olvidado por completo mis propios asuntos. Visitaré Antigua en un mes. Para entonces, Esther ya debería estar completamente recuperada.
-#TEXT	11
+¡Gracias a nuestros esfuerzos con la gitana, la enfermedad de Esther ha sido superada! Es reconfortante saber que todos los esfuerzos no fueron en vano y que la niña ahora está sana. De la gitana de Saint John's siempre puedo comprar mangarosa - tres tallos por trescientos cincuenta doblones de oro.
+#TEXT 11
 Ahora la gitana tiene todo lo necesario para preparar el brebaje curativo. Mañana por la mañana tendré que recoger la medicina de ella y llevársela a Thomas.
 
 #QUEST TPZ
@@ -798,11 +800,11 @@ Le robaron el ginebra justo delante de sus narices. Ahora su pellejo está en ju
 #TEXT 3
 Esta historia suena realmente sospechosa. Pero ya tengo una teoría sobre lo que pasó. Es hora de hablar con la camarera.
 #TEXT 4
-Bajo presión, la camarera confesó que todo fue un montaje planeado por un tal Jack Wales. Junto con el capitán del 'Sea Wolf' organizaron una verdadera farsa para robar el barril. ¡Cuánto esfuerzo por una ginebra! Está claro que no son simples borrachos, sino verdaderos aficionados. El ladrón vive justo enfrente de la taberna.
+Bajo presión, la camarera confesó que todo fue un montaje planeado por un tal Jack Wales. Junto con el capitán del 'Sea Beast' organizaron una verdadera farsa para robar el barril. ¡Cuánto esfuerzo por una ginebra! Está claro que no son simples borrachos, sino verdaderos aficionados. El ladrón vive justo enfrente de la taberna.
 #TEXT 5
 He devuelt el barril al tabernero justo a tiempo, salvando su preciado pellejo de un destino peor. Y para ser justos, supo recompensarme: además de los doblones, me concedió alojamiento y bebida gratis de por vida en su taberna. La camarera, por su parte, hizo bien en desaparecer, pues el tabernero no tardó en sospechar de su implicación.
 #TEXT 6
-La tripulación del 'Sea Wolf' siguió a su capitán. ¿Se merecían tal destino? Quién sabe... Pero una cosa está clara: no deberían haberse metido conmigo.
+La tripulación del 'Sea Beast' siguió a su capitán. ¿Se merecían tal destino? Quién sabe... Pero una cosa está clara: no deberían haberse metido conmigo.
 
 #QUEST UV
 Recuerdo robado

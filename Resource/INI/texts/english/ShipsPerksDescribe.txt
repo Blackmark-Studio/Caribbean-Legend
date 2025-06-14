@@ -248,14 +248,34 @@ Peso reserve increase: 100%.
 Doubloon reserve increase: ~30%.
 }
 
-sp3 {SP3}
+sp3 {Crucible}
 
 sp3_desc
 {
-DLC.
+On this ship, human life is seen as just a brief stage before true power is revealed. Few cross the Veil and return, but those who do no longer fear death.
 }
 
 sp3_desc2
 {
-DLC.
+Fallen sailors increase the crew’s experience and morale.
+}
+
+sp3_SailorsBoardingBonus_desc
+{
+Boarding experience bonus: #dSailorsBoardingBonus#%
+}
+
+sp3_SailorsBoardingBonus1_desc
+{
+~ (#dDeadSailors#/500 fallen sailors)
+}
+
+sp3_SurrenderChanceBonus_desc
+{
+Surrender chance increase: #dSurrenderChanceBonus#%
+}
+
+sp3_SurrenderChanceBonus1_desc
+{
+~ (#dDeadSailors#/2000 fallen sailors)
 }

@@ -330,7 +330,7 @@ void ProcessDialogEvent()
 			else
 			{
 				AddMoneyToCharacter(pchar, -4800);
-				dialog.text = "Bah ! Félicitations… capitaine ! Je rassemble les gars et nous allons tout de suite à votre navire.";
+				dialog.text = "Bah ! Félicitations... capitaine ! Je rassemble les gars et nous allons tout de suite à votre navire.";
 				link.l1 = "Heureux de poursuivre notre aventure, Alonso. Préparez le navire à prendre la mer !";
 				link.l1.go = "Sharlie_sailor_6";
 			}
@@ -514,6 +514,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Folke_8_2";
 			TakeItemFromCharacter(pchar, "BoxOfBalls");
 			//AddCharacterGoodsSimple(sld, GOOD_BALLS, 10);
+			Achievment_Set("ach_CL_164");
 		break;
 		
 		case "Folke_8_2":

@@ -691,6 +691,8 @@ Six Captains
 Perhaps this is the first time that a brief encounter with someone who had neither work nor business for me has made me record an entry in this journal. I don't understand why this priest made such an impression on me. I don't know his name, and he sometimes talked nonsense, but he made himself memorable. We've met twice now, and it could be dismissed as coincidence. But if we meet again...
 I must admit, his interest is somewhat flattering. That look in his eyes is so... appraising. As if he admires my accomplishments. And who wouldn't? Two legendary ships, two captains whose tales spread across the entire Archipelago-both fallen by my hand.
 I wonder what he'll say when he learns of my future exploits? The Archipelago is vast, but my fame, it seems, is growing faster than I thought.
+#TEXT	2
+Diego de Landa - that's what your name is. So we'll meet again. To be continued.
 
 #QUEST SharlieTutorial
 The Prologue
@@ -732,7 +734,7 @@ Thomas gave me Esther's personal item - jade beads. Now I need to find two stems
 #TEXT	9
 Through the gypsy's and my efforts, Esther's illness has been defeated! It's nice to know that all the efforts were not in vain, and the girl is now healthy.
 #TEXT	10
-I've done everything that was required. Now all that remains is to believe that the gypsy's potion will prove effective. I've become so involved with saving the little girl that I've completely forgotten about my own affairs. I'll visit Antigua in a month. By then, Esther should be fully recovered.
+Our efforts with the gypsy have overcome Esther's illness! It's heartwarming to know that all the efforts were not in vain, and the girl is now healthy. From the gypsy woman in Saint John's, I can always buy mangarosa - three stalks for three hundred and fifty golden doubloons.
 #TEXT	11
 Now the gypsy has everything needed to prepare the healing potion. Tomorrow morning I'll need to get the medicine from her and take it to Thomas.
 
@@ -787,11 +789,11 @@ The gin was stolen right from under the barkeep's nose. Now his life hangs by a 
 #TEXT 3
 This whole story truly sounds suspicious. But I think I’ve got a theory about what really happened. Time to speak with the waitress.
 #TEXT 4
-Under pressure, the waitress confessed that the whole scene was staged by someone named Jack Wales. Together with the captain of the 'Sea Wolf', they put on quite a performance to steal the barrel. Such effort for gin! Looks like they’re not just drinkers, but true connoisseurs. The thief's house is just a few steps away – right across from the tavern.
+Under pressure, the waitress confessed that the whole scene was staged by someone named Jack Wales. Together with the captain of the 'Sea Beast', they put on quite a performance to steal the barrel. Such effort for gin! Looks like they’re not just drinkers, but true connoisseurs. The thief's house is just a few steps away – right across from the tavern.
 #TEXT 5
 I managed to return the barrel to the tavern keeper just in time, saving his skin from serious trouble. To be fair, he repaid me well: besides the doubloons, I was granted lifetime rights to free drinks and lodging at his tavern. As for the waitress, she wisely disappeared – the tavern keeper quickly figured out her involvement in the scheme.
 #TEXT 6
-The crew of the 'Sea Wolf' followed their captain. Did they deserve such a fate? Who’s to say... But one thing is certain – they should’ve thought twice before challenging me.
+The crew of the 'Sea Beast' followed their captain. Did they deserve such a fate? Who’s to say... But one thing is certain – they should’ve thought twice before challenging me.
 
 #QUEST UV
 Stolen Memory

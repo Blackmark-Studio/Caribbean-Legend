@@ -33,7 +33,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "VPVL_SetFollowAfterLoad") {
 			sld = GetCharacter(NPC_GenerateCharacter("VPVL_contr_1", "citiz_42", "man", "man", 1, PIRATE, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, 20, 40, 40, "blade_14", "pistol1", "bullet", 70);
+			FantomMakeCoolFighter(sld, 5, 40, 40, "blade_14", "pistol1", "bullet", 70);
 			LAi_group_MoveCharacter(sld, "EnemyFight");
 			ChangeCharacterAddressGroup(sld, "Shore39", "goto", "goto2");
 			TeleportCharacterToPosAy(sld, 3.88, 1.26, 2.68, 0.00);
@@ -44,7 +44,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 			LAi_ActorTurnToCharacter(pchar, sld);
 			
 			sld = GetCharacter(NPC_GenerateCharacter("VPVL_contr_2", "citiz_43", "man", "man", 1, PIRATE, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, 20, 40, 40, "blade_14", "pistol1", "bullet", 70);
+			FantomMakeCoolFighter(sld, 5, 20, 20, "blade_14", "pistol1", "bullet", 20);
 			ChangeCharacterAddressGroup(sld, "Shore39", "goto", "goto1");
 			sld.dialog.filename = "Quest\MiniEvents\VPVL_dialog.c";
 			sld.dialog.currentnode = "Kontr Le Maren";
@@ -55,7 +55,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 			for (i=4; i<=5; i++)
 			{
 			sld = GetCharacter(NPC_GenerateCharacter("VPVL_contr_"+i, "citiz_" + (rand(9) + 21), "man", "man", sti(pchar.rank), PIRATE, -1, true, "pirate"));
-			FantomMakeCoolFighter(sld, 20, 40, 40, "blade_14", "pistol1", "bullet", 70);
+			FantomMakeCoolFighter(sld, 5, 20, 20, "blade_14", "none", "none", 20);
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, "EnemyGroup");
 			ChangeCharacterAddressGroup(sld, "Shore39", "smugglers", LAi_FindRandomLocator("smugglers")););
@@ -126,12 +126,15 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		pchar.quest.PierInGrot.win_condition.l1.location = "Martinique_Grot"; 
 		pchar.quest.PierInGrot.win_condition = "VPVL_Generate_Pier";
 		LocatorReloadEnterDisable("Shore39", "boat", true);
+		DeleteAttribute(&locations[FindLocation("Shore39")], "DisableEncounters");
 	}
 	
 	else if (sQuestName == "VPVL_Generate_Pier") {
 		
 		sld = GetCharacter(NPC_GenerateCharacter("VPVL_contr_3", "citiz_41", "man", "man", 1, PIRATE, -1, false, "quest"));
-		FantomMakeCoolFighter(sld, 35, 70, 70, "blade_10", "pistol1", "bullet", 150); 
+		FantomMakeCoolFighter(sld, 10, 50, 50, "blade_19", "pistol5", "bullet", 20);
+		TakeNItems(sld, "bullet", 5);
+		AddItems(sld, "gunpowder", 5);
 		ChangeCharacterAddressGroup(sld, "Martinique_Grot", "goto", "goto2"); 
 		LAi_SetWarriorType(sld); 
 		LAi_group_MoveCharacter(sld, "EnemyFight"); 

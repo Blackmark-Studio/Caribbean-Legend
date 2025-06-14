@@ -1,6 +1,6 @@
 void UV_GoldSeagull(string qName)
 {
-	AddQuestRecord("UV", "3");
+	//AddQuestRecord("UV", "3");
 	
 	Group_FindOrCreateGroup("UV_GoldSeagull_Group");
 	Group_SetType("UV_GoldSeagull_Group", "trade");
@@ -79,7 +79,7 @@ void UV_Ozherelie(string qName)
 	}
 }
 
-void UV_Ozherelie_Duel(string qName)
+void UV_Ozherelie_Duel()
 {
 	LAi_SetFightMode(pchar, true);
 	sld = CharacterFromID("UV_GoldSeagull_cap");
@@ -89,6 +89,7 @@ void UV_Ozherelie_Duel(string qName)
 	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
 	LAi_group_SetCheckFunction("EnemyFight", "UV_Ozherelie");
+	ChangeCharacterComplexReputation(pchar, "nobility", -2);
 }
 
 void UV_Juli_GoodEnd(string qName)

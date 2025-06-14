@@ -1,6 +1,6 @@
 food_1
 {
-Szczury ~
+Szczury
 }
 
 food_2

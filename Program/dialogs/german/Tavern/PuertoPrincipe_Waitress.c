@@ -19,7 +19,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		//--> Старые счёты
 		case "OS_Tavern2_1":
 			dialog.text = "Ich... ich weiß nicht, was ich sagen soll. Es war alles wie immer, nichts Ungewöhnliches.";
-			link.l1 = "Ach ja? Nichts Ungewöhnliches? Und was ist mit dem Matrosen vom 'Sea Wolf', der dir an dem Tag nachgestellt hat? Er schien zu glauben, du wärst bereit, die Nacht mit ihm zu verbringen.";
+			link.l1 = "Ach ja? Nichts Ungewöhnliches? Und was ist mit dem Matrosen vom 'Sea Beast', der dir an dem Tag nachgestellt hat? Er schien zu glauben, du wärst bereit, die Nacht mit ihm zu verbringen.";
 			link.l1.go = "OS_Tavern2_2";
 			DelLandQuestMark(npchar);
 		break;
@@ -39,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern2_4_HO":
-			dialog.text = "Ich... ich... ich erzähle Euch alles! Es war... mein Geliebter, Jack. Jack Veils! Er hat mich überredet, einen beliebigen Matrosen vom 'Sea Wolf' zu verführen. Und sobald der zudringlich wurde, sollte ich eine Szene machen, damit der Wirt hinter dem Tresen hervorkommt. Wenn sich alles beruhigte, sollten zwei Matrosen eine Schlägerei anfangen, um ihn weiter abzulenken. Genau so lief es ab\nWährenddessen hat der Kapitän des 'Sea Wolf' das Fass gestohlen. Das... das ist alles, was ich weiß, "+GetSexPhrase("mein Herr","meine Dame")+"! Bitte verratet mich nicht! Ich wollte doch nur... ich wollte nur, dass Jack mich endlich respektiert! Ich habe ihm doch geholfen...";
+			dialog.text = "Ich... ich... ich erzähle Euch alles! Es war... mein Geliebter, Jack. Jack Veils! Er hat mich überredet, einen beliebigen Matrosen vom 'Sea Beast' zu verführen. Und sobald der zudringlich wurde, sollte ich eine Szene machen, damit der Wirt hinter dem Tresen hervorkommt. Wenn sich alles beruhigte, sollten zwei Matrosen eine Schlägerei anfangen, um ihn weiter abzulenken. Genau so lief es ab\nWährenddessen hat der Kapitän des 'Sea Beast' das Fass gestohlen. Das... das ist alles, was ich weiß, "+GetSexPhrase("mein Herr","meine Dame")+"! Bitte verratet mich nicht! Ich wollte doch nur... ich wollte nur, dass Jack mich endlich respektiert! Ich habe ihm doch geholfen...";
 			link.l1 = "Einem hast du geholfen, und den anderen hast du bedenkenlos ins Verderben geschickt?! Na schön, ich halte mein Wort – ich werde dich nicht verraten. Aber du wirst damit leben müssen! Wegen deiner Dummheit hätte der Wirt ernsthafte Probleme bekommen können. Wo finde ich deinen Jack? Und lüg nicht – ich komme wieder. Und glaub mir, das willst du nicht.";
 			link.l1.go = "OS_Tavern2_5";
 			AddComplexSelfExpToScill(40, 40, 40, 0);
@@ -47,7 +47,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern2_4_harizma":
-			dialog.text = "Ich... ich... ich erzähle Euch alles! Es war... mein Geliebter, Jack. Jack Veils! Er hat mich überredet, einen beliebigen Matrosen vom 'Sea Wolf' zu verführen. Und sobald der zudringlich wurde, sollte ich eine Szene machen, damit der Wirt hinter dem Tresen hervorkommt. Wenn sich alles beruhigte, sollten zwei Matrosen eine Schlägerei anfangen, um ihn weiter abzulenken. Genau so lief es ab\nWährenddessen hat der Kapitän des 'Sea Wolf' das Fass gestohlen. Das... das ist alles, was ich weiß, "+GetSexPhrase("mein Herr","meine Dame")+"! Bitte verratet mich nicht! Ich wollte doch nur... ich wollte nur, dass Jack mich endlich respektiert! Ich habe ihm doch geholfen...";
+			dialog.text = "Ich... ich... ich erzähle Euch alles! Es war... mein Geliebter, Jack. Jack Veils! Er hat mich überredet, einen beliebigen Matrosen vom 'Sea Beast' zu verführen. Und sobald der zudringlich wurde, sollte ich eine Szene machen, damit der Wirt hinter dem Tresen hervorkommt. Wenn sich alles beruhigte, sollten zwei Matrosen eine Schlägerei anfangen, um ihn weiter abzulenken. Genau so lief es ab\nWährenddessen hat der Kapitän des 'Sea Beast' das Fass gestohlen. Das... das ist alles, was ich weiß, "+GetSexPhrase("mein Herr","meine Dame")+"! Bitte verratet mich nicht! Ich wollte doch nur... ich wollte nur, dass Jack mich endlich respektiert! Ich habe ihm doch geholfen...";
 			link.l1 = "Einem hast du geholfen, und den anderen hast du bedenkenlos ins Verderben geschickt?! Na schön, ich halte mein Wort – ich werde dich nicht verraten. Aber du wirst damit leben müssen! Wegen deiner Dummheit hätte der Wirt ernsthafte Probleme bekommen können. Wo finde ich deinen Jack? Und lüg nicht – ich komme wieder. Und glaub mir, das willst du nicht.";
 			link.l1.go = "OS_Tavern2_5";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -74,6 +74,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			PChar.quest.OS_Zasada.win_condition.l1 = "item";
 			PChar.quest.OS_Zasada.win_condition.l1.item = "cask_gin";
 			PChar.quest.OS_Zasada.function = "OS_Zasada";
+			
+			SetFunctionLocationCondition("DWH_Close_House", "PuertoPrincipe_QuestHouse_1", false);
 		break;
 		//<-- Старые счёты
 	}

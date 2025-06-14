@@ -1,0 +1,25 @@
+Memento_1
+{
+Memento
+}
+
+Memento_2
+{
+Mortimer
+}
+
+Memento_3
+{
+Grim
+}
+
+Memento_4
+{
+Captain, that's the very 'Memento' - the scourge of slave traders! 
+He's not our enemy, so we can send a boat.
+}
+
+Memento_5
+{
+Forsaken
+}

@@ -1549,3 +1549,36 @@ Pinasse "Wavebreaker". Abfahrt am 26. Handelsroute Belize-Capsterville. Ebenholz
 ***************
 Galeone "Silver Wind". Abfahrt am 18. Handelsroute Belize-Blueveld. Sklaven! Große Beute, verzögert die Versendung meines Anteils nicht. Es wird keine Begleitung geben.
 ***************
+
+#QUEST Memento_Book
+Grimms Tagebuch
+#TEXT 1
+Neuer Auftrag von der Admiralität. Transport einer "besonderen Ladung" in eine feindliche Kolonie. Kapitän Mortimer Grim hat sich bereit erklärt, seine prächtige Brigg für ein großzügiges Honorar zur Verfügung zu stellen. Ein guter Mensch, ein ehrlicher Seemann. Seine Crew ist hervorragend—erfahrene, loyale Leute. Schade, dass ich sie wegen der Ladung belügen muss.
+
+Und ja, ich weiß, wie das aussieht. Der Geheimagent der englischen Krone Yorick Graves führt ein Tagebuch, in dem er offen die Geheimnisse seines Auftrags preisgibt. Ist mir egal! Bei so einem Job wird man sonst verrückt. Courtney, falls du das liest—kannst mich mal!
+
+Mortimer stellt zu viele Fragen zur Ladung. Ich musste lügen—habe etwas von Medizin für Fieberkranke im karibischen Dschungel gestammelt. Er hat es natürlich geglaubt. Grim lebt in einer Welt, in der das Wort eines Offiziers Seiner Majestät noch etwas gilt.
+
+Die Ladung wurde in versiegelten Kisten an Bord gebracht. Die Crew murrt—die Kisten sind schwer und riechen seltsam. Mortimer hat das mit einem Scherz abgetan. Sogar ich musste lachen.
+
+Verdammt! Es ist ausgebrochen! Die ersten Fieberfälle in der Crew. Mortimer bittet um Erlaubnis, die Kisten zu öffnen und die Medikamente zu prüfen. Ich musste es unter Androhung eines Kriegsgerichts verbieten. Ich hasse mich dafür.
+
+Gott erbarme sich, was habe ich getan... Pest. Der Kapitän ist gestern gestorben.
+
+Allein.
+
+Ich spreche mit Mortimer. Oder besser gesagt, mit dem, was von ihm übrig ist. Er ist nicht mehr wütend. Er versteht. Sagt, jeder bekommt eine Chance auf Erlösung. Aber wie kann man so etwas wiedergutmachen? Wie bringt man diese Menschen zurück?
+
+Von Eingeborenen vor der Küste von Dominica gerettet. Der Schamane sagte—lass die Toten die Lebenden lehren. Was könnte ich schon jemanden lehren?
+
+In der Nähe der Insel fand eine große Schlacht statt. Die Überlebenden wurden an Land gespült und wollten das Gemetzel fortsetzen, aber ich habe sie aufgehalten. Ich weiß nicht, woher diese Kraft in mir kommt. Ich weiß nicht, ob ich lebe oder ob das alles das Jenseits ist. Aber die "Memento" wird ohne Crew nicht auslaufen. Und ohne Schiff kann ich meine Sünden nicht sühnen.
+
+Yorick Graves ist tot, und Mortimer Grim wird als Retter der Verdammten in Erinnerung bleiben. So ist es gerecht. Ich hoffe, du verstehst die Idee. Jetzt bist du Teil der "Memento". Teil des Schiffs.
+
+Wir haben ein Dutzend Indianer aus dem Laderaum eines Sklavenhändlers gerettet. Die meisten Dublonen habe ich meiner Mannschaft gegeben, die ehemaligen Gefangenen bringe ich nach Dominica.
+
+Der Schamane hat den Schädel abgerissen und irgendwo versteckt! Ein Federnarr! Ich hätte ihn mit meinem neuen Krummsäbel erschlagen, wenn nicht gerade ein Missionar beim Stamm zu Gast gewesen wäre.
+
+Ich habe ihm alles erzählt. Ein unglaubliches Gefühl. Jetzt weiß ich, was zu tun ist! "Lass den Toten den Lebenden lehren." Natürlich! Es reicht nicht, Menschen vor Ketten oder dem Strick zu retten. Man muss sie vor dem Tod selbst retten! Und das geht nur, wenn man einen anderen durch das schickt, was ich selbst erlebt habe. Sterben und zurückkehren. Tun sie mir leid? Natürlich. Aber I. hatte recht. Mich hat auch nie jemand bemitleidet.
+
+Einen neuen Schädel habe ich schon gefunden—nicht jeder besteht die Prüfung des Todes. So ist es sogar besser. Sollen Mortimers Augenhöhlen auf Dominica bleiben und nicht sehen, was auf seinem Schiff geschieht. Er würde es nicht verstehen.

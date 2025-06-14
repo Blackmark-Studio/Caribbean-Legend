@@ -449,6 +449,9 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		PChar.quest.BM_FirstJungle.win_condition.l1 = "Location_Type";
 		PChar.quest.BM_FirstJungle.win_condition.l1.location_type = "jungle";
 		PChar.quest.BM_FirstJungle.win_condition = "BM_FirstJungle";
+		PChar.quest.BM_FirstTown.win_condition.l1 = "Location_Type";
+		PChar.quest.BM_FirstTown.win_condition.l1.location_type = "town";
+		PChar.quest.BM_FirstTown.win_condition = "BM_FirstJungle";
 	}
 	
 	else if (sQuestName == "BM_FirstJungle") {
@@ -458,11 +461,13 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 			return true;
 		}
 		chrDisableReloadToLocation = true;
+		DeleteQuestCondition("BM_FirstJungle");
+		DeleteQuestCondition("BM_FirstTown");
 		
 		sld = characterFromID("Irons");
 		sld.dialog.filename = "Quest\BlackMark.c";
 		sld.dialog.currentnode = "BM_IronsFirstJungle_1";
-		if (!CharacterIsHere("Irons")) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestFreeLocator2Pchar("reload"));
+		if (!CharacterIsHere("Irons")) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestLocator2Pchar("reload"));
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}
@@ -472,6 +477,9 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		PChar.quest.BM_SecondJungle.win_condition.l1 = "Location_Type";
 		PChar.quest.BM_SecondJungle.win_condition.l1.location_type = "jungle";
 		PChar.quest.BM_SecondJungle.win_condition = "BM_SecondJungle";
+		PChar.quest.BM_SecondTown.win_condition.l1 = "Location_Type";
+		PChar.quest.BM_SecondTown.win_condition.l1.location_type = "town";
+		PChar.quest.BM_SecondTown.win_condition = "BM_SecondJungle";
 	}
 	
 	else if (sQuestName == "BM_SecondJungle") {
@@ -481,11 +489,13 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 			return true;
 		}
 		chrDisableReloadToLocation = true;
+		DeleteQuestCondition("BM_SecondJungle");
+		DeleteQuestCondition("BM_SecondTown");
 		
 		sld = characterFromID("Irons");
 		sld.dialog.filename = "Quest\BlackMark.c";
 		sld.dialog.currentnode = "BM_IronsSecondJungle_1";
-		if (!CharacterIsHere("Irons")) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestFreeLocator2Pchar("reload"));
+		if (!CharacterIsHere("Irons")) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestLocator2Pchar("reload"));
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}
@@ -493,9 +503,12 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "BM_ThirdJungle_Time") {
 		if (!GetDLCenabled(DLC_APPID_3)) return;
 		bDisableLandEncounters = true;
-		PChar.quest.BM_SecondJungle.win_condition.l1 = "Location_Type";
-		PChar.quest.BM_SecondJungle.win_condition.l1.location_type = "jungle";
-		PChar.quest.BM_SecondJungle.win_condition = "BM_ThirdJungle";
+		PChar.quest.BM_ThirdJungle.win_condition.l1 = "Location_Type";
+		PChar.quest.BM_ThirdJungle.win_condition.l1.location_type = "jungle";
+		PChar.quest.BM_ThirdJungle.win_condition = "BM_ThirdJungle";
+		PChar.quest.BM_ThirdTown.win_condition.l1 = "Location_Type";
+		PChar.quest.BM_ThirdTown.win_condition.l1.location_type = "town";
+		PChar.quest.BM_ThirdTown.win_condition = "BM_ThirdJungle";
 	}
 	
 	else if (sQuestName == "BM_ThirdJungle") {
@@ -505,11 +518,13 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 			return true;
 		}
 		chrDisableReloadToLocation = true;
+		DeleteQuestCondition("BM_ThirdJungle");
+		DeleteQuestCondition("BM_ThirdTown");
 		
 		sld = characterFromID("Irons");
 		sld.dialog.filename = "Quest\BlackMark.c";
 		sld.dialog.currentnode = "BM_IronsThirdJungle_1";
-		if (!CharacterIsHere("Irons")) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestFreeLocator2Pchar("reload"));
+		if (!CharacterIsHere("Irons")) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestLocator2Pchar("reload"));
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}

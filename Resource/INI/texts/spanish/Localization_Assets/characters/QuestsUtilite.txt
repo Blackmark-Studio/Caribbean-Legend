@@ -1245,3 +1245,21 @@ QuestsUtilite_276
 {
 Las aguas se vuelven más peligrosas, la amenaza pirata ha aumentado
 }
+
+QuestsUtilite_277
+{
+Quimera
+}
+
+QuestsUtilite_278
+{
+~ ¡Cuánto los hemos enfadado! El buque insignia de la escuadra es ~
+}
+QuestsUtilite_279
+{
+Diego
+}
+QuestsUtilite_280
+{
+de Landa
+}

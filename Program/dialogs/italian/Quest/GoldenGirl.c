@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 		// маркиза Джулиана Бото
 		case "Julianna":
 			dialog.text = "I miei occhi devono ingannarmi se è davvero Charles de Maure in persona! Non mi capita spesso di fare certi ricevimenti, e sono lieta che tu abbia trovato un po' di tempo per il mio umile rifugio. Che fortuna! Questo merita un brindisi!";
-			link.l1 = "I miei omaggi, madama. Perdonate se il mio comportamento dovesse risultare deludente – è passato davvero tanto tempo dall’ultima volta che ho preso parte a simili… occasioni. L’etichetta di bordo si riduce a subordine, fazzoletti puliti e una tazza regolare di caffè rinvigorente ogni mattina.";
+			link.l1 = "I miei omaggi, madama. Perdonate se il mio comportamento dovesse risultare deludente – è passato davvero tanto tempo dall’ultima volta che ho preso parte a simili... occasioni. L’etichetta di bordo si riduce a subordine, fazzoletti puliti e una tazza regolare di caffè rinvigorente ogni mattina.";
 			link.l1.go = "Julianna_1";
 		break;
 		
@@ -357,7 +357,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Julianna_43":
-			dialog.text = "Non ti trattengo oltre, Mio Capitano. Ma ricorda, Angerran è pericoloso. Non so giudicare le sue doti in battaglia, ma ha partecipato a diverse guerre e ha combattuto a Rocroi. Ho pure sentito che ha vinto più di un duello, soprattutto con le pistole. Soprattutto, però, è un uomo falso, come hai già notato. Ti prego di fare attenzione e… vieni da me, dopo!";
+			dialog.text = "Non ti trattengo oltre, Mio Capitano. Ma ricorda, Angerran è pericoloso. Non so giudicare le sue doti in battaglia, ma ha partecipato a diverse guerre e ha combattuto a Rocroi. Ho pure sentito che ha vinto più di un duello, soprattutto con le pistole. Soprattutto, però, è un uomo falso, come hai già notato. Ti prego di fare attenzione e... vieni da me, dopo!";
 			link.l1 = "La premura ti si addice proprio, marchesa. Fidati, de Chievous non è il primo bastardo che cerchi di ostacolarmi. Me la caverò. Ora devo davvero andare da Sua Eccellenza a discutere della questione del duello.";
 			link.l1.go = "Julianna_44";
 		break;
@@ -387,7 +387,7 @@ void ProcessDialogEvent()
 		
 		case "Julianna_48":
 			dialog.text = "È davvero brutto, Charles. Nemici come Angerran de Chievous vanno eliminati per sempre quando ne hai l’occasione. Conosco quell’uomo da anni – non è certo uno che dimentica i torti. Prima o poi troverà il modo di vendicarsi. Ma non mi piace vederti tutto abbandonato così, la tua ferita è stata curata?";
-			link.l1 = "Solo un graffio, ne ho passate di peggiori. Fa un po’ male, tutto qui. Grazie per la premura, signora, ma dovrei andare…";
+			link.l1 = "Solo un graffio, ne ho passate di peggiori. Fa un po’ male, tutto qui. Grazie per la premura, signora, ma dovrei andare...";
 			link.l1.go = "Julianna_49";
 		break;
 		
@@ -1000,7 +1000,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Hai preso la tua decisione, ti ho sostenuto fin dall’inizio, ma ora basta. Sacrificare tutto per un amore che avevi già lasciato sul mio cuscino… È tutto molto commovente, Charles, ma non sono più così giovane e ingenua.";
+				dialog.text = "Hai preso la tua decisione, ti ho sostenuto fin dall’inizio, ma ora basta. Sacrificare tutto per un amore che avevi già lasciato sul mio cuscino... È tutto molto commovente, Charles, ma non sono più così giovane e ingenua.";
 				link.l1 = "Temo, marchesa, che dovrò insistere. Non posso permettermi di perderla.";
 				link.l1.go = "Julianna_127";
 			}
@@ -1127,7 +1127,7 @@ void ProcessDialogEvent()
 		
 		case "Julianna_138":
 			dialog.text = "Perdonami, ma non voglio parlarne. Chiedilo a lei, piuttosto. Addio, Capitano. Tornerò per conto mio. Ho bisogno di riposare un po’ dalla vita di mare – François è un ospite davvero piacevole, quando non viene infastidito da quegli noiosi funzionari inglesi.";
-			link.l1 = "Mi dispiace sinceramente per tutto questo, Madame. Grazie comunque per la collaborazione. Sono lieto di sentire che avete trovato un nuovo… amico.";
+			link.l1 = "Mi dispiace sinceramente per tutto questo, Madame. Grazie comunque per la collaborazione. Sono lieto di sentire che avete trovato un nuovo... amico.";
 			link.l1.go = "Julianna_139";
 		break;
 		
@@ -1208,7 +1208,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Julianna_148":
-			dialog.text = "Eppure a quanto pare non abbastanza straordinaria… ma sono felice che per te sia finita bene. Non mi devi nulla, dopo quello che hai fatto non ti ringrazierò mai abbastanza! Passa a trovarmi quando sarai a terra. Sarai sempre il benvenuto a casa mia, come amico!";
+			dialog.text = "Eppure a quanto pare non abbastanza straordinaria... ma sono felice che per te sia finita bene. Non mi devi nulla, dopo quello che hai fatto non ti ringrazierò mai abbastanza! Passa a trovarmi quando sarai a terra. Sarai sempre il benvenuto a casa mia, come amico!";
 			link.l1 = "Grazie, marchesa. Ti auguro ogni bene. Addio!";
 			link.l1.go = "Julianna_149";
 		break;
@@ -1348,7 +1348,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "governor_15":
-			dialog.text = "Sei troppo perso nei tuoi pensieri, amico mio. Alcune cose in questo mondo non girano tutte intorno a te. Fidati, sono davvero delusa da come sono andate le cose ieri notte. Ma davvero. Prima però, parliamo del destino delle tue… vincite.";
+			dialog.text = "Sei troppo perso nei tuoi pensieri, amico mio. Alcune cose in questo mondo non girano tutte intorno a te. Fidati, sono davvero delusa da come sono andate le cose ieri notte. Ma davvero. Prima però, parliamo del destino delle tue... vincite.";
 			link.l1 = "Va bene. Vuoi sapere come riavere il tuo flauto o come se la passa Madame Julianne, giusto?";
 			link.l1.go = "governor_16";
 		break;
@@ -1496,7 +1496,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Un capitano famoso, dici? Non ho mai sentito parlare di te… Che veleno preferisci?";
+				dialog.text = "Un capitano famoso, dici? Non ho mai sentito parlare di te... Che veleno preferisci?";
 			}
 			link.l1 = "...";
 			if (pchar.questTemp.GoldenGirl.Vine == "red") link.l1.go = "Angerran_1";
@@ -1662,7 +1662,7 @@ void ProcessDialogEvent()
 		
 		case "Angerran_15_2":
 			dialog.text = "Capitano, non c’è proprio nulla da ridere. Sbrighiamoci – l’alba è alle porte. Discuteremo il riscatto della mia fregata domani.";
-			link.l1 = "Bene, eccoti qua – tre navi! Compresa una vera nave da guerra contro la più… beh, costosa signorina del Nuovo Mondo. Puoi davvero rifiutare una posta simile, giusto?";
+			link.l1 = "Bene, eccoti qua – tre navi! Compresa una vera nave da guerra contro la più... beh, costosa signorina del Nuovo Mondo. Puoi davvero rifiutare una posta simile, giusto?";
 			link.l1.go = "Angerran_15_3";
 		break;
 		
@@ -1710,7 +1710,7 @@ void ProcessDialogEvent()
 		
 		case "Angerran_17_1":
 			dialog.text = "I tuoi tentativi di provocarmi mi divertono. Per questioni come favori, amore e tutto il resto che si può comprare o meno, chiedi alla signora Juliana. Ma sbrigati – domani lascia la città.";
-			link.l1 = "Almeno la tua conoscenza dell’argomento è tutta da una parte. Non conquisterai il favore di Lady Fortuna né vincendo né pagando qui, quindi non potrai conoscere il suo amore. Ci vuole coraggio, monsieur, e una volontà ferrea per rischiare. Senza contare che anche le dame più… terrene apprezzano queste qualità. Metto in gioco due delle mie navi contro una delle tue, accetti la sfida?";
+			link.l1 = "Almeno la tua conoscenza dell’argomento è tutta da una parte. Non conquisterai il favore di Lady Fortuna né vincendo né pagando qui, quindi non potrai conoscere il suo amore. Ci vuole coraggio, monsieur, e una volontà ferrea per rischiare. Senza contare che anche le dame più... terrene apprezzano queste qualità. Metto in gioco due delle mie navi contro una delle tue, accetti la sfida?";
 			link.l1.go = "Angerran_17_2";
 		break;
 		
@@ -2867,7 +2867,7 @@ void ProcessDialogEvent()
 		
 		case "statist_1_1":
 			dialog.text = "Questa serata passerà alla storia, lo sento! Se ne parlerà da qui fino a Versailles! La mia Marianne sarà entusiasta e vorrà sapere ogni dettaglio. Per favore, monsieur, si sposti, mi sta oscurando la vista.";
-			link.l1 = "Me ne vado già, monsieur, goditi lo spettacolo e saluta l’indimenticabile Marianne… chiunque sia, giusto?";
+			link.l1 = "Me ne vado già, monsieur, goditi lo spettacolo e saluta l’indimenticabile Marianne... chiunque sia, giusto?";
 			link.l1.go = "statist_1a";
 		break;
 		
@@ -2900,7 +2900,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "statist_3_1":
-			dialog.text = "Monsieur de Maure, hai visto questo?! Il nostro stimato governatore e monsieur de Chievous in persona – credevo si sarebbero sbranati a vicenda sul posto! Magnifico! La marchesa Botot oggi si è superata – tutto così maledettamente emozionante! Non vedo l’ora di scoprire come andrà avanti. Tra l’altro, magari questo è il momento giusto? Avevi promesso di presentarmeli… ";
+			dialog.text = "Monsieur de Maure, hai visto questo?! Il nostro stimato governatore e monsieur de Chievous in persona – credevo si sarebbero sbranati a vicenda sul posto! Magnifico! La marchesa Botot oggi si è superata – tutto così maledettamente emozionante! Non vedo l’ora di scoprire come andrà avanti. Tra l’altro, magari questo è il momento giusto? Avevi promesso di presentarmeli... ";
 			link.l1 = "Non ricordo di aver promesso nulla. Mi dispiace, ma devo andare.";
 			link.l1.go = "statist_3a";
 		break;
@@ -2934,7 +2934,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "statist_5_1":
-			dialog.text = "E allora, che ne pensi dell’atmosfera qui, capitano? Pare che questi sciocchi vecchiacci abbiano deciso di scatenare un vero inferno! Mi domando, la sedia del governatore si può mettere in palio come una posta a carte? Ricorda le mie parole – finirà tutto a colpi d’acciaio. Peccato, con il mio ginocchio certe baldorie non fanno più per me. Però, mi pare d’aver visto Jacqueline – il suo gentiluomo è proprio preso da tutta questa faccenda… Beh, credo che andrò a tentare la sorte, giusto che qui è ancora tutto tranquillo.";
+			dialog.text = "E allora, che ne pensi dell’atmosfera qui, capitano? Pare che questi sciocchi vecchiacci abbiano deciso di scatenare un vero inferno! Mi domando, la sedia del governatore si può mettere in palio come una posta a carte? Ricorda le mie parole – finirà tutto a colpi d’acciaio. Peccato, con il mio ginocchio certe baldorie non fanno più per me. Però, mi pare d’aver visto Jacqueline – il suo gentiluomo è proprio preso da tutta questa faccenda... Beh, credo che andrò a tentare la sorte, giusto che qui è ancora tutto tranquillo.";
 			link.l1 = "Buona decisione, ti auguro ogni successo, monsieur. E ora devo tornare dai... babbei.";
 			link.l1.go = "statist_5a";
 		break;

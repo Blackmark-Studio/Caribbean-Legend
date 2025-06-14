@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noble_34":
-			PlaySound("Voice\English\LE\Domingo\Domingo_04.wav");
+			//PlaySound("Voice\English\LE\Domingo\Domingo_04.wav");
 			dialog.text = "Das ist nichts als eine schmutzige und freche Lüge! Wie wagt er es, den guten Namen meiner Eltern mit seiner unwürdigen Zunge zu beschmutzen! Verdammt sei er, ich werde ihn dafür bezahlen lassen! Zieh dein Schwert, du Mörder!";
 			link.l1 = "";
 			link.l1.go = "noble_35";

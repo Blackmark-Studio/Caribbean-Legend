@@ -222,7 +222,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Captain_4_commerce":
-			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 45)
+			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 25)
 			{
 				dialog.text = "Cinq mille, dites-vous ? Eh bien, Capitaine, vous proposez un marché persuasif. Tenez, prenez ce bijou s’il compte tant pour vous.";
 				link.l1 = "Votre sagesse égale votre générosité, monsieur. Cette décision ne sera pas regrettée.";
@@ -239,7 +239,7 @@ void ProcessDialogEvent()
 				link.l1 = "Puisque vous refusez un accord à l’amiable, je le prendrai par des moyens moins civilisés.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie_Duel");
-				notification("Compétence insuffisante (45)", SKILL_COMMERCE);
+				notification("Compétence insuffisante (25)", SKILL_COMMERCE);
 			}
 		break;
 
@@ -267,6 +267,7 @@ void ProcessDialogEvent()
 			link.l1 = "Une sage décision ! Adieu.";
 			AddDialogExitQuestFunction("UV_Ozherelie");
 			GiveItem2Character(pchar, "SM_necklace_Julie");
+			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 		break;
 
 		case "Juli_22":

@@ -1360,7 +1360,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_2":
-			dialog.text = "What? Ha! You've got quite an imagination, Chinaman! Antoon is a coward, and van der Vink is there to protect him in case anyone disrupts their “private time.”/nJoep always wears heavy trench armor - impenetrable to most cold arms. That's why you'll need something special too. Take this rapier. It's long, stronger than most other swords, and weighs like a good blade.";
+			dialog.text = "What? Ha! You've got quite an imagination, Chinaman! Antoon is a coward, and van der Vink is there to protect him in case anyone disrupts their 'private time'\nJoep always wears heavy trench armor - impenetrable to most cold arms. That's why you'll need something special too. Take this rapier. It's long, stronger than most other swords, and weighs like a good blade.";
 			link.l1 = "A rapier for fighting armored foes...?";
 			link.l1.go = "PZ_OliverTrust_lubovnitsa_3";
 			//Log_Info("Вы получили асоледу");
@@ -1370,7 +1370,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_3":
-			dialog.text = "Don't aim for the armor itself - it's not an estoc. Strike at the crevices and vulnerable spots, like the groin, armpits, and throat. Wear him down, dictate the terms. Joep also wields a heavy axe, so don't try to parry his blows - dodge instead/nJust in case you fail to find an opening, take this blunderbuss. It's usually loaded with buckshot, but I've prepared a set of steel arrows for you.";
+			dialog.text = "Don't aim for the armor itself - it's not an estoc. Strike at the crevices and vulnerable spots, like the groin, armpits, and throat. Wear him down, dictate the terms. Joep also wields a heavy axe, so don't try to parry his blows - dodge instead\nJust in case you fail to find an opening, take this blunderbuss. It's usually loaded with buckshot, but I've prepared a set of steel arrows for you.";
 			link.l1 = "Arrows for a musket...?";
 			link.l1.go = "PZ_OliverTrust_lubovnitsa_4";
 			//Log_Info("Вы получили бландербуз");
@@ -1383,7 +1383,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_4":
-			dialog.text = "Unusual, right? A blend of old and new. It's designed to be fired with one hand, but if it's too heavy, use both. Many do/nAnd here, try this wicker armor. It's lighter than Joep's cuirass but still offers decent protection. Don't let his axe land a direct hit - even Milanese armor wouldn't hold up against a weapon like that. Do you understand?";
+			dialog.text = "Unusual, right? A blend of old and new. It's designed to be fired with one hand, but if it's too heavy, use both. Many do\nAnd here, try this wicker armor. It's lighter than Joep's cuirass but still offers decent protection. Don't let his axe land a direct hit - even Milanese armor wouldn't hold up against a weapon like that. Do you understand?";
 			link.l1 = "Yes, I understand. Thank you, Mr. Trust!";
 			link.l1.go = "PZ_OliverTrust_13";
 			//Log_Info("Вы получили кожаный корсет");

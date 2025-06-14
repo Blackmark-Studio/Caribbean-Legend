@@ -1166,7 +1166,7 @@ Nie dowiedziałem się wiele od właściciela gospody. Jednak potwierdził moje 
 #TEXT 3  
 Senor Komendant nie docenił mojego zainteresowania. Co więcej, próbował mnie wyrzucić. Cóż, przyznaję, że mężczyzna był niezwykle uprzejmy i cierpliwy. Spróbuję dowiedzieć się więcej o Senor Komendancie.
 #TEXT 4  
-Właściciel gospody potwierdził moje podejrzenia. Wydaje się, że "Gruźlica" zabija mężczyzn od roku, a nikt się tym nie przejmuje. Albo udają? O Senor Komendancie… Został tu wysłany z powodu swoich machinacji w Europie. Ufortyfikował swój dom i nigdy nie wychodził bez straży. Ten człowiek zdecydowanie coś ukrywa. Coś związanego z "Gruźlicą" w jego lochach. Powinienem sprawdzić jego dom. Znalazłem również kolejny trop: był przemytnik, który trafił do lochów i przeżył. W końcu zmarł, ale zdarzyło się to poza więzieniem. Może powinienem porozmawiać z jego towarzyszami – mogą powiedzieć mi coś więcej.
+Właściciel gospody potwierdził moje podejrzenia. Wydaje się, że "Gruźlica" zabija mężczyzn od roku, a nikt się tym nie przejmuje. Albo udają? O Senor Komendancie... Został tu wysłany z powodu swoich machinacji w Europie. Ufortyfikował swój dom i nigdy nie wychodził bez straży. Ten człowiek zdecydowanie coś ukrywa. Coś związanego z "Gruźlicą" w jego lochach. Powinienem sprawdzić jego dom. Znalazłem również kolejny trop: był przemytnik, który trafił do lochów i przeżył. W końcu zmarł, ale zdarzyło się to poza więzieniem. Może powinienem porozmawiać z jego towarzyszami – mogą powiedzieć mi coś więcej.
 #TEXT 5  
 Moje podejrzenia względem Senora Komendanta stają się coraz silniejsze. Mówią, że został tu wysłany z powodu swoich machinacji w Europie. Ufortyfikował swój dom i nigdy nie wychodził bez straży. Ten człowiek zdecydowanie coś ukrywa. Coś związanego z "Gruźlicą" w jego lochach. Powinienem sprawdzić jego dom. Znalazłem również kolejny trop: był przemytnik, który trafił do lochów i przeżył. W końcu zmarł, ale zdarzyło się to poza więzieniem. Może powinienem porozmawiać z jego towarzyszami – mogą powiedzieć mi coś więcej.
 #TEXT 6  
@@ -1394,7 +1394,7 @@ Partia 20 kawałków żelaznego drewna każdego 15. dnia miesiąca od Rodrigo Ji
 Sznurki do Pociągnięcia
 #TEXT   1
 ************************************************************
-U Cyganki z Saint John's zawsze mogę kupić mangarosę – pięć łodyg za dwieście złotych dublonów.
+U Cyganki z Saint John's zawsze mogę kupić mangarosę - trzy łodygi za trzysta pięćdziesiąt złotych dublonów.
 #TEXT   2
 ************************************************************
 W tawernie w Willemstad zawsze czekają na mnie odpoczynek i przyjemność. Zatroszczy się o to urocza Betsy Price.
@@ -1530,7 +1530,7 @@ Zabrałem sobie czas na rejs, a Brytyjczycy zaczęli bunt. Musiałem ich zabić.
 #TEXT 3
 Porucznik Caspar Gratton postanowił, że pomogę mu w jego operacji wojskowej przeciwko Holendrom. Ani mowy. Ucieczka z Sint-Maarten to już jego problem.
 #TEXT 4
-Dostarczylem porucznika Caspara Grattona i jego żołnierzy na Sint-Maarten, ale nie dostałem zapłaty. Zamiast tego porucznik poprosił, abym poczekał na niego kilka dni, a potem zabrał jego drużynę na Antiguę, gdzie pułkownik Fox hojnie wypłaci mi całą należność. Żadne żarty, sir. Mam nadzieję, że Holendrzy się o tym nie dowiedzą, bo pomoc w brytyjskich operacjach wojskowych nie jest uważana za coś dobrego w ich książce… Muszę popłynąć do Philipsburga i sprawdzić sytuację. Zastanawiam się również, co brytyjscy marini mają w planach?
+Dostarczylem porucznika Caspara Grattona i jego żołnierzy na Sint-Maarten, ale nie dostałem zapłaty. Zamiast tego porucznik poprosił, abym poczekał na niego kilka dni, a potem zabrał jego drużynę na Antiguę, gdzie pułkownik Fox hojnie wypłaci mi całą należność. Żadne żarty, sir. Mam nadzieję, że Holendrzy się o tym nie dowiedzą, bo pomoc w brytyjskich operacjach wojskowych nie jest uważana za coś dobrego w ich książce... Muszę popłynąć do Philipsburga i sprawdzić sytuację. Zastanawiam się również, co brytyjscy marini mają w planach?
 #TEXT 5
 Minęły trzy dni, a nic się nie dowiedziałem. Powinienem wrócić na plażę Grand Case – może porucznik już tam jest?
 #TEXT 6

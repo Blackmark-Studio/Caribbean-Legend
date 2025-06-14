@@ -143,6 +143,7 @@ void wdmRecalcReloadToSea()
 	int isShipEncounterType = 0;
     bool bPowerCompare = true;
 	string sOkBtn = XI_ConvertString("map_attack");
+    ref rChar;
 	//Log_TestInfo("Начинаем перебирать энкаунтеров");
 	for(int i = 0; i < numEncounters; i++)
 	{
@@ -179,8 +180,9 @@ void wdmRecalcReloadToSea()
                 iNumWarShips = GetCharacterIndex(rEncounter.CharacterID);
                 if (iNumWarShips != -1)
                 {
-					sQuestSeaCharId = characters[iNumWarShips].id; // квестовый 
-					if (CheckAttribute(&characters[iNumWarShips], "mapEnc.Name"))
+                    rChar = &characters[iNumWarShips];
+					sQuestSeaCharId = rChar.id; // квестовый 
+					if (CheckAttribute(rChar, "mapEnc.Name"))
 					{
 						totalInfo = totalInfo + characters[iNumWarShips].mapEnc.Name;
 						//sOkBtn = XI_ConvertString("map_defend");
@@ -218,7 +220,7 @@ void wdmRecalcReloadToSea()
                 // Работорговцы
                 if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_SLAVES)
                 {
-                   // TO_DO
+                    totalInfo = totalInfo + XI_ConvertString("Slave traders") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
                 }
 
                 // Патруль
@@ -307,6 +309,7 @@ void wdmRecalcReloadToSea()
 				loadScr = "interfaces\le\sea_3.tga";
 			break;
 		}
+        bPowerCompare = false;
 		SetNewPicture("INFO_PICTURE", loadScr); 
 		totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("battle on course") + totalInfo;
 		sOkBtn = XI_ConvertString("map_join");
@@ -343,25 +346,40 @@ void wdmRecalcReloadToSea()
 				switch (sQuestSeaCharId)
 				{
 					case "SantaMisericordia_cap":
-						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_sm.tga"); 
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_sm.tga");
 						totalInfo = GetConvertStr("SM_WorldMap", "SantaMisericordia.txt");
 						sOkBtn = XI_ConvertString("map_attack");
 					break;
 
 					case "LadyBeth_cap":
                         bPowerCompare = false;
-						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_lb.tga"); 
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_lb.tga");
 						totalInfo = GetConvertStr("LadyBeth_WorldMap", "LadyBeth.txt");
 						sOkBtn = XI_ConvertString("map_ok");
+					break;
+					
+					case "Memento_cap":
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_mem.tga");
+						totalInfo = StringFromKey("Memento_4");
+						sOkBtn = XI_ConvertString("map_attack");
 					break;
 
                     case "MaryCelesteCapitan":
                         bPowerCompare = false;
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_cel.tga");
+                        totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
                     break;
 
                     //default:
                         SetNewPicture("INFO_PICTURE", loadScr); 
-                        totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+                        if(CheckAttribute(rChar, "Brigadier"))
+                        {
+                            totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone follows") + totalInfo + 
+                                        StringFromKey("QuestsUtilite_278") + GetStrSmallRegister(XI_ConvertString(GetShipTypeName(rChar))) + 
+                                        " '" + rChar.Ship.Name + "'.";
+                        }
+                        else
+                            totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
                     //break;
 				}
 				//sQuestSeaCharId = ""; ~!~ WTF
@@ -374,7 +392,11 @@ void wdmRecalcReloadToSea()
 		}
 	}
 	if(!isSkipable) sOkBtn = XI_ConvertString("map_defend");
-    if(bPowerCompare) totalInfo += NewStr() + NewStr() + XI_ConvertString("Battle difficulty") + GetBattleDifficulty(rEncounter); // Механика мощи
+    if(bPowerCompare)
+    {
+        totalInfo += NewStr() + XI_ConvertString("Battle difficulty") + GetBattleDifficulty(rEncounter); // Механика мощи
+        if(bBettaTestMode) MapEncInfo(rEncounter, iRealEncounterType);
+    }
 	SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"B_OK",0, "#" + sOkBtn);
 }
 
@@ -419,4 +441,148 @@ void CalculateInfoData()
 		bEscDisable = true; // belamour BigPatch
 	}
 	pchar.space_press = 0;
+}
+
+void MapEncInfo(ref rEncounter, int iRealEncounterType)
+{
+    int i, qty;
+    string sInfo;
+    ref rChar, rShip, rBaseShip;
+
+    // БАЗОВАЯ ИНФА ПО ЭНКАУНТЕРУ
+    switch(iRealEncounterType)
+    {
+        case ENCOUNTER_TYPE_ALONE: sInfo = "Alone / Quest / Custom"; break;
+        case ENCOUNTER_TYPE_MERCHANT_SMALL: sInfo = "MERCHANT_SMALL"; break;
+        case ENCOUNTER_TYPE_MERCHANT_MEDIUM: sInfo = "MERCHANT_MEDIUM"; break;
+        case ENCOUNTER_TYPE_MERCHANT_LARGE: sInfo = "MERCHANT_LARGE"; break;
+        case ENCOUNTER_TYPE_MERCHANT_CROWN: sInfo = "MERCHANT_CROWN"; break;
+        case ENCOUNTER_TYPE_MERCHANT_EXPEDITION: sInfo = "MERCHANT_EXPEDITION"; break;
+        case ENCOUNTER_TYPE_MERCHANT_SLAVES: sInfo = "MERCHANT_SLAVES"; break;
+        case ENCOUNTER_TYPE_NAVAL_MEDIUM: sInfo = "NAVAL_MEDIUM"; break;
+        case ENCOUNTER_TYPE_NAVAL_LARGE: sInfo = "NAVAL_LARGE"; break;
+        case ENCOUNTER_TYPE_PATROL_SMALL: sInfo = "PATROL_SMALL"; break;
+        case ENCOUNTER_TYPE_PATROL_MEDIUM: sInfo = "PATROL_MEDIUM"; break;
+        case ENCOUNTER_TYPE_SMUGGLERS: sInfo = "SMUGGLERS"; break;
+        case ENCOUNTER_TYPE_PIRATE: sInfo = "PIRATE"; break;
+        case ENCOUNTER_TYPE_BARREL: sInfo = "BARREL"; break;
+        case ENCOUNTER_TYPE_BOAT: sInfo = "BOAT"; break;
+        //default:
+            sInfo = "UNKNOWN";
+    }
+    float pcharPower = stf(PChar.Squadron.RawPower);
+    sInfo = NewStr() + NewStr() + "ENC LOG" + NewStr() + "Encounter: " + sInfo + NewStr();
+    sInfo += "Raw player power: " + fts(pcharPower, 2) + NewStr() + "Modified player power: " + fts(stf(PChar.Squadron.ModPower), 2) + NewStr();
+    if(pcharPower == 0.0) pcharPower = 1.0;
+    if(CheckAttribute(rEncounter, "CurPower"))
+        sInfo += "Enc power: " + fts(stf(rEncounter.CurPower), 2) + NewStr() + "Ratio (Enc * 0.9 / Raw): " + fts(stf(rEncounter.CurPower) / pcharPower * 0.9, 2);
+    else if(CheckAttribute(rEncounter, "Power"))
+        sInfo += "Enc power: " + fts(stf(rEncounter.Power), 2) + NewStr() + "Ratio (Enc * 0.9 / Raw): " + fts(stf(rEncounter.Power) / pcharPower * 0.9, 2);
+    else
+        sInfo += "Enc power: UNKNOWN" + NewStr() + "Ratio: UNKNOWN";
+    sInfo += NewStr() + XI_ConvertString("Battle difficulty") + GetBattleDifficulty(rEncounter);
+
+    // ИНФА О ТЕКУЩЕМ СОСТОЯНИИ ШАБЛОНА ГЕНЕРАЦИИ
+    ref rTmpl = &EncountersTypes[iRealEncounterType];
+    aref arShips, aShip;
+    if(iRealEncounterType != ENCOUNTER_TYPE_ALONE)
+    {
+        sInfo += NewStr() + NewStr() + "TEMPLATE LOG" + NewStr();
+        sInfo += "WorldMap model: " + rTmpl.worldMapShip + NewStr();
+        sInfo += "Type: ";
+        switch(sti(rTmpl.Type))
+        {
+            case ENCOUNTER_TRADE: sInfo += "Trade"; break;
+            case ENCOUNTER_WAR:   sInfo += "War"; break;
+            case ENCOUNTER_SPECIAL: sInfo += "Special"; break;
+            //default:
+                sInfo += "UNKNOWN";
+        }
+        sInfo += NewStr() + "Chance: " + rTmpl.Chance + NewStr();
+        sInfo += "Слоты кораблей в шаблоне:";
+        makearef(arShips, rTmpl.Ships);
+        qty = GetAttributesNum(arShips);
+        for(i = 0; i<qty; i++)
+        {
+            sInfo += NewStr() + "    " + (i) + ") ";
+            aShip = GetAttributeN(arShips, i);
+            sInfo += "Spec ";
+            switch(sti(aShip.ShipSpec))
+            {
+                case SHIP_SPEC_UNIVERSAL: sInfo += "UNIVERSAL; "; break;
+                case SHIP_SPEC_MERCHANT: sInfo += "MERCHANT; "; break;
+                case SHIP_SPEC_RAIDER: sInfo += "RAIDER; "; break;
+                case SHIP_SPEC_WAR: sInfo += "WAR; "; break;
+                //default:
+                    sInfo += "UNKNOWN; ";
+            }
+            sInfo += "Qty " + aShip.qMin + " - " + (sti(aShip.qMin) + sti(aShip.qMax) - sti(aShip.qMin)) + "; ";
+            sInfo += "Cls " + aShip.cMin + " - " + (sti(aShip.cMin) + sti(aShip.cMax) - sti(aShip.cMin)) + "; ";
+            sInfo += "Type " + aShip.Type + "; ";
+        }
+    }
+
+    // ИНФА О КОРАБЛЯХ ТЕКУЩЕЙ ЭНКИ
+    int iShipType, idx, num;
+    sInfo += NewStr() + NewStr() + "Корабли текущей эночки:";
+    if(CheckAttribute(rEncounter, "CharacterID"))
+    {
+        string sTemp;
+        ref chr = CharacterFromID(rEncounter.CharacterID);
+        if(CheckAttribute(chr, "SeaAI.Group.Name"))
+        {
+            sTemp = chr.SeaAI.Group.Name;
+            int	iGroupIndex = Group_FindGroup(sTemp);
+            if (iGroupIndex > 0)
+            {
+                ref rGroup = Group_GetGroupByIndex(iGroupIndex);
+                if (CheckAttribute(rGroup, "Quest"))
+                {
+                    aref aCompanions, aCharInfo;
+                    makearef(aCompanions, rGroup.Quest);
+                    qty = GetAttributesNum(aCompanions);
+                    num = 0;
+                    for(i = 0; i < qty; i++)
+                    {
+                        aCharInfo = GetAttributeN(aCompanions, i);
+                        idx = sti(aCharInfo.index);
+                        if(idx == -1) continue;
+                        rChar = GetCharacter(idx);
+                        if(!CheckAttribute(rChar, "index") || rChar.index == "none" || LAi_IsDead(rChar)) continue;
+                        iShipType = sti(rChar.Ship.Type);
+                        if(iShipType == SHIP_NOTUSED) continue;
+                        rShip = GetRealShip(iShipType);
+                        rBaseShip = &ShipsTypes[sti(rShip.BaseType)];
+
+                        num++;
+                        sInfo += NewStr() + "    " + (num) + ") ";
+                        sInfo += XI_ConvertString(rBaseShip.Name) + "; ";
+                        sInfo += wdmGetSpec(sti(rBaseShip.Spec)) + "; ";
+                        sInfo += rBaseShip.Class + " класс; ";
+                        sInfo += fts(GetRealShipPower(rChar), 2) + " мощь";
+                    }
+                }
+            }
+        }
+    }
+    else if(CheckAttribute(rEncounter, "ShipTypes"))
+    {
+        num = 0;
+        makearef(arShips, rEncounter.ShipTypes);
+        qty = GetAttributesNum(arShips);
+        for(i = 0; i < qty; i++)
+        {
+            iShipType = GetAttributeValue(GetAttributeN(arShips, i));
+            rBaseShip = &ShipsTypes[iShipType];
+
+            num++;
+            sInfo += NewStr() + "    " + (num) + ") ";
+            sInfo += XI_ConvertString(rBaseShip.Name) + "; ";
+            sInfo += wdmGetSpec(sti(rBaseShip.Spec)) + "; ";
+            sInfo += rBaseShip.Class + " класс; ";
+            sInfo += fts(GetBaseShipPower(iShipType), 2) + " мощь";
+        }
+    }
+
+    trace(sInfo);
 }

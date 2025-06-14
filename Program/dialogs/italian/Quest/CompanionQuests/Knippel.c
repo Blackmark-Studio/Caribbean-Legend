@@ -702,7 +702,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Knippel_54":
-			dialog.text = "Non l’avrei mai creduto prima, ma dopo quello che ti ha fatto e se n’è filato via dai Caraibi con Abi… Forse si è scordato del debito. O magari no, ma se n’è andato lo stesso… Richard si è comportato proprio da bastardo, signore. Non mi stupirei se fosse di nuovo così, ma mi deluderebbe lo stesso.";
+			dialog.text = "Non l’avrei mai creduto prima, ma dopo quello che ti ha fatto e se n’è filato via dai Caraibi con Abi... Forse si è scordato del debito. O magari no, ma se n’è andato lo stesso... Richard si è comportato proprio da bastardo, signore. Non mi stupirei se fosse di nuovo così, ma mi deluderebbe lo stesso.";
 			link.l1 = "Non essere così categorico prima del tempo, Charlie. Dunque, St. John's sia.";
 			link.l1.go = "DTSG_Knippel_55";
 		break;
@@ -741,7 +741,7 @@ void ProcessDialogEvent()
 		case "DTSG_PiterAdams_20":
 			if (CheckAttribute(pchar, "questTemp.DTSG_ZovemMatrosov"))
 			{
-				dialog.text = "Ah, eccovi qui, signore – pare che tutti abbiano deciso d’arrivare in anticipo. A giudicare dal vostro aspetto, sembrate ben allegro… Siete così sicuro delle vostre capacità?";
+				dialog.text = "Ah, eccovi qui, signore – pare che tutti abbiano deciso d’arrivare in anticipo. A giudicare dal vostro aspetto, sembrate ben allegro... Siete così sicuro delle vostre capacità?";
 				link.l1 = "Naturalmente, questo non è di certo il mio primo duello.";
 				link.l1.go = "DTSG_PiterAdams_Nastoroje_21";
 				ChangeCharacterComplexReputation(pchar, "authority", 1);
@@ -1994,7 +1994,6 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Graf_Sheffild_25":
 			DialogExit();
-			EndQuestMovie();
 			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Kortni", "off_eng_5", "man", "man", 40, ENGLAND, -1, false, "quest"));
 			sld.name = "Thomas";
 			sld.lastname = "Lynch";
@@ -2104,7 +2103,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("Alonso", "citiz_36", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
+				sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
 				sld.name 	= "Alonso";
 				sld.lastname = "";
 				ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
@@ -2310,7 +2309,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.DTSG_Nastoroje2"))
 			{
 				dialog.text = "Non risponderò a questa provocazione, signore.";
-				link.l1 = "Allora rispondi a questo – come hai messo le mani su questa nave? È… la ‘Mirage’?";
+				link.l1 = "Allora rispondi a questo – come hai messo le mani su questa nave? È... la ‘Mirage’?";
 			}
 			else
 			{
@@ -2833,7 +2832,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_VizyvaemKnippel_2":
-			dialog.text = "State bene, signore? Quello… è il colonnello?";
+			dialog.text = "State bene, signore? Quello... è il colonnello?";
 			link.l1 = "Sì, Charlie, è il colonnello. Sei arrivato proprio in tempo – stavo per venire a cercarti di persona.";
 			link.l1.go = "DTSG_Kortni_VizyvaemKnippel_3";
 		break;

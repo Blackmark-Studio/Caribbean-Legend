@@ -21,7 +21,6 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_0":
-			SetAchievement("Test_Ach");
 			PlaySound("Voice\English\LE\Greguar\Greguar_01.wav");
 			dialog.text = "Miło powitać pana w koloniach, panie! Pozwolę sobie się przedstawić: "+GetFullName(npchar)+". Czy przybywa pan z Europy? Pierwszy raz u nas?";
 			link.l1 = "Dzień dobry, monsieur. Nazywam się "+GetFullName(pchar)+". Tak, właśnie zsedłem ze statku.";
@@ -190,28 +189,28 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_port":
-			dialog.text = "Molo — brama do morza. Jak tylko będziesz miał statek — będzie tu na ciebie czekała szalupa. A na razie polecam zatrudnić nawigatora, kwatermistrza i kanoniera — z nimi będziesz czuł się pewniej na morzu.";
+			dialog.text = "Molo - brama do morza. Jak tylko będziesz miał statek — będzie tu na ciebie czekała szalupa. A na razie polecam zatrudnić nawigatora, kwatermistrza i kanoniera — z nimi będziesz czuł się pewniej na morzu.";
 			link.l1 = "";
 			link.l1.go = "guide_portoffice";
 			locCameraFromToPos(-8.55, 4.06, 91.31, true, 40.00, -8.00, 0.00);
 		break;
 		
 		case "guide_portoffice":
-			dialog.text = "Ufficio portuale. Qui puoi lasciare la nave in sosta e trovare lavoro onesto: trasporti, scorte, consegna della posta. Più incarichi completi, più diventano vantaggiosi.";
+			dialog.text = "Tutaj możesz zostawić statek na postoju, a także znaleźć uczciwą pracę dla kapitana: fracht, eskortę, dostawę poczty. Im więcej zadań wykonasz - tym bardziej opłacalne się staną.";
 			link.l1 = "";
 			link.l1.go = "guide_store";
 			locCameraFromToPos(48.38, 9.48, 43.95, true, 43.69, 5.47, 48.13);
 		break;
 		
 		case "guide_store":
-			dialog.text = "Negozio. I capitani vengono qui per provviste, rum, medicine, polvere e munizioni. Se manca qualcosa, cerca i contrabbandieri in taverna. Ma senza un buon tesoriere, il commercio è solo una perdita di tempo e denaro.";
+			dialog.text = "Sklep. Kapitanowie bywają tu najczęściej - po zapasy, rum, lekarstwa, proch i amunicję. Jeśli czegoś brakuje - szukaj przemytników w tawernie. Ale pamiętaj: bez dobrego skarbnika handel to strata czasu i pieniędzy.";
 			link.l1 = "";
 			link.l1.go = "guide_gate";
 			locCameraFromToPos(-21.10, 6.60, 45.21, true, -30.00, 3.70, 45.00);
 		break;
 		
 		case "guide_gate":
-			dialog.text = "Porta. Se il molo è la porta sul mare, qui si apre la via verso la natura selvaggia. Pericoloso, ma necessario per raggiungere forti, cercare tesori o attraversare la terra verso un altro insediamento.";
+			dialog.text = "Jeśli molo to brama na morze, to tu jest brama do dziczy. Niebezpiecznie, ale niezbędne, gdy musisz dostać się do fortu, znaleźć skarb lub przejść lądem do innej osady.";
 			link.l1 = "";
 			link.l1.go = "guide_45";
 			locCameraFromToPos(50.58, 5.74, 23.21, true, 100.00, 0.00, 20.00);
@@ -219,16 +218,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_45":
-			dialog.text = "Non tutte le colonie accolgono gli stranieri. Se non vuoi aspettare la notte, issa un’altra bandiera in mare e poi affidati alla furtività o acquista una licenza commerciale.";
+			dialog.text = "Pamiętaj, że nie we wszystkich koloniach będziesz mile widziany. Jeśli nie chcesz czekać na noc, by przeniknąć wrogą kolonię, najpierw podnieś inny sztandar na statku, a potem polegaj na umiejętności skradania się lub kup licencję handlową.";
 			link.l1 = "";
 			link.l1.go = "guide_46";
 		break;
 		
 		case "guide_46":
-			dialog.text = "Siete un ottimo ascoltatore, amico mio. Che ne dite di un po’ di divertimento? Propongo un duello di allenamento oltre la porta.";
-			link.l1 = "Certo! È proprio quello che ci vuole.";
+			dialog.text = "Jesteś świetnym słuchaczem, mój przyjacielu. A może dla rozrywki? Proponuję treningowy pojedynek za bramą.";
+			link.l1 = "Oczywiście! To będzie idealnie.";
 			link.l1.go = "guide_47";
-			link.l2 = "Grazie di cuore, monsieur, ma da qui in poi me la caverò da solo.";
+			link.l2 = "Serdeczne dzięki, monsieur, ale dalej poradzę sobie sam.";
 			link.l2.go = "guide_exit_11";
 		break;
 		

@@ -1,0 +1,159 @@
+Tutorial_1
+{
+Turning the ship
+}
+
+Tutorial_2
+{
+Press @<key1> and @<key2> to turn the ship
+}
+
+Tutorial_3
+{
+Time control
+}
+
+Tutorial_4
+{
+Enable time acceleration @<key>
+}
+
+Tutorial_5
+{
+Press @<key> again to disable
+}
+
+Tutorial_6
+{
+Press @<key> to speed up to x6
+}
+
+Tutorial_7
+{
+Press @<key1> to slow down, or @<key2>
+}
+
+Tutorial_8
+{
+Sail control
+}
+
+Tutorial_9
+{
+Set sails to battle mode @<key1>
+}
+
+Tutorial_10
+{
+Lower sails completely @<key1>
+}
+
+Tutorial_11
+{
+Ship combat basics
+}
+
+Tutorial_12
+{
+Use @<key1> for a quick broadside
+}
+
+Tutorial_13
+{
+Advanced ship combat
+}
+
+Tutorial_14
+{
+@<key1> Enter aiming mode
+}
+
+Tutorial_15
+{
+Press @<key1> for an aimed broadside
+}
+
+Tutorial_16
+{
+@<key1> Exit aiming mode
+}
+
+Tutorial_17
+{
+Claim victory
+}
+
+Tutorial_18
+{
+Sink the remaining pirate ships
+}
+
+Tutorial_19
+{
+Attack the enemy
+}
+
+Tutorial_20
+{
+@<key1> Strike
+}
+
+Tutorial_21
+{
+@<key1> Thrust
+}
+
+Tutorial_22
+{
+@<key1> Heavy attack
+}
+
+Tutorial_23
+{
+Defend yourself
+}
+
+Tutorial_24
+{
+@<key1> Block attacks
+}
+
+Tutorial_25
+{
+@<key1> Parry attacks
+}
+
+Tutorial_26
+{
+Defeat the pirate!
+}
+
+Tutorial_27
+{
+Quests
+}
+
+Tutorial_28
+{
+Read the document @<key1>
+}
+
+Tutorial_29
+{
+Open the doubloon chest @<key1>
+}
+
+Tutorial_30
+{
+Looting
+}
+
+Tutorial_31
+{
+Loot the sailors
+}
+
+Tutorial_32
+{
+Give Alonso the mysterious potion
+}

@@ -167,16 +167,17 @@ void QuestComplete(string sQuestName, string qname)
             PChar.GenQuest.CallFunctionParam = "Tut_StartDialog";
 			DoQuestCheckDelay("CallFunctionParam", 2.0);
         break;
-		//  Карты сокровищ  ГЕНЕРАТОР -->
+
+		//  Карты сокровищ  ГЕНЕРАТОР
         case "SetTreasureFromMap":
             SetTreasureBoxFromMap();
         break;
-        //  Карты сокровищ  ГЕНЕРАТОР <--
-        
+
 		case "ArestInResidenceEnd":
 		    LAi_LockFightMode(Pchar, false); // ножками убежал
         break;
-        // ОЗГи
+
+        // ОЗГи и Пожарная команда
         case "Battle_Hunters_Land":
             Lai_SetPlayerType(pchar);
             LAi_SetFightMode(Pchar, true);
@@ -191,7 +192,7 @@ void QuestComplete(string sQuestName, string qname)
             LAi_group_SetRelation("LAND_HUNTER", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
             LAi_group_FightGroups("LAND_HUNTER", LAI_GROUP_PLAYER, true);
         break;
-        
+
         case "GoAway_Hunters_Land":
             DoQuestCheckDelay("OpenTheDoors", 4.0);
             sTemp = LAi_FindNearestFreeLocator2Pchar("reload");
@@ -202,7 +203,45 @@ void QuestComplete(string sQuestName, string qname)
 				LAi_ActorGoToLocation(sld, "reload", sTemp, "none", "", "", "", 4.0);
 			}
         break;
-        
+
+        case "KnippelAppearance":
+            TEV.boardingReloadFreeze = "";
+            DoQuestCheckDelay("KnippelAppearance_2", 4.0);
+        break;
+
+        case "KnippelAppearance_2":
+            PlaySound("Ambient\LAND\door_004.wav");
+            // TO_DO:
+            sld = GetCharacter(NPC_GenerateCharacter("Kneepel_FP", "Kneepel", "man", "man_B", 20, ENGLAND, -1, false, "quest"));
+            sld.name = StringFromKey("QuestsUtilite_36");
+            sld.lastname = StringFromKey("QuestsUtilite_37");
+            sld.greeting = "knippel_1";
+            LAi_SetHP(sld, 120, 120);
+            SetSelfSkill(sld, 10, 12, 10, 10, 70);
+            SetShipSkill(sld, 50, 20, 75, 75, 45, 20, 20, 10, 15);
+            SetSPECIAL(sld, 9, 10, 6, 5, 5, 5, 9);
+            SetCharacterPerk(sld, "HullDamageUp");
+            SetCharacterPerk(sld, "SailsDamageUp");
+            SetCharacterPerk(sld, "CrewDamageUp");
+            SetCharacterPerk(sld, "CriticalShoot");
+            SetCharacterPerk(sld, "LongRangeShoot");
+            SetCharacterPerk(sld, "CannonProfessional");
+            SetCharacterPerk(sld, "FastReload");
+            sld.Dialog.Filename = "Quest\FireBrigade.c";
+            sld.dialog.currentnode = "Kneepel";
+            sTemp = GetGeneratedItem("blade_12");
+            GiveItem2Character(sld, sTemp);
+            EquipCharacterbyItem(sld, sTemp);
+            GiveItem2Character(sld, "pistol1");
+            EquipCharacterbyItem(sld, "pistol1");
+            TakeNItems(sld, "bullet", 50);
+            AddItems(sld, "gunpowder", 50);
+            ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload1");
+            LAi_SetActorType(sld);
+            LAi_ActorDialog(sld, pchar, "", -1.0, 0.0);
+            LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+        break;
+
 		// офицеры выживают!
         case "Survive_In_SeaOfficer":
 			sld = GetCharacter(sti(Pchar.GenQuest.Survive_In_SeaOfficerIdx));
@@ -255,7 +294,7 @@ void QuestComplete(string sQuestName, string qname)
 			if (iTemp != -1)
 			{
                 npchar = &Characters[iTemp];
-                PlaySound("interface\" + LanguageGetLanguage() + "\_EvShip1.wav");;
+                PlaySound("interface\" + LanguageGetLanguage() + "\_EvShip1.wav");
                 // лишнее, помер ПГГ и все тут if (findsubstr(sld.id, "PsHero_" , 0) != -1) npchar = sld.id; //homo for navy (ПГГ fix)
                 LAi_SetCurHPMax(npchar);
     			sld.location = "none";
@@ -265,10 +304,6 @@ void QuestComplete(string sQuestName, string qname)
         break;
         
 		/////////////////////////Квест награда за голову//////////////////////////////////////
-        case "SeaHunterCheck":
-            SeaHunterCheck();
-        break;
-
 		case "CheckMaxHealthQuest":
             SetTimerCondition("CheckMaxHealthQuest", 0, 0, 5, true);
             SetNewDayHealthMax();
@@ -426,7 +461,7 @@ void QuestComplete(string sQuestName, string qname)
         case "Munity_on_Ship":
             pchar.quest.Munity = "";
             pchar.GenQuest.MunityStart = true;
-            PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");;
+            PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");
             InterfaceStates.Buttons.Save.enable = 0;
             LAi_SetFightMode(Pchar, true);
 
@@ -533,7 +568,7 @@ void QuestComplete(string sQuestName, string qname)
 
 			if (!CheckAttribute(Pchar, "GenQuestFort.SoundOff"))
 			{
-            	PlaySound("interface\" + LanguageGetLanguage() + "\_GTTown2.wav");;
+            	PlaySound("interface\" + LanguageGetLanguage() + "\_GTTown2.wav");
             	AddCharacterExpToSkill(Pchar, "Leadership", 100);
 			    AddCharacterExpToSkill(Pchar, "Sneak", 100);
             }
@@ -655,7 +690,7 @@ void QuestComplete(string sQuestName, string qname)
 		
 		// вижу парус
 		case "see_sails":
-			PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy1.wav");;
+			PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy1.wav");
 			PlaySound("interface\notebook.wav");
 		break;
         
@@ -1131,7 +1166,7 @@ void QuestComplete(string sQuestName, string qname)
     		AddQuestUserData("DELIVERY_TRADE_QUEST", "sTermsDelivery", FindRussianDaysString(makeint(pchar.CargoQuest.iDaysExpired)));
     		AddQuestUserData("DELIVERY_TRADE_QUEST", "sMoney", FindRussianMoneyString(iMoney));
             // немного веселой жизни
-            TraderHunterOnMap();
+            TraderHunterOnMap(false);
 		break;
 		
 		case "generate_trade_quest":
@@ -1603,6 +1638,8 @@ void QuestComplete(string sQuestName, string qname)
 		if(GenQuests_QuestComplete(sQuestName, qname)) return;
 		if(MiniQuests_QuestComplete(sQuestName, qname)) return;
 		if(LadyBeth_QuestComplete(sQuestName, qname)) return;
+		if(Memento_QuestComplete(sQuestName, qname)) return;
+		if(DiegoDeLanda_QuestComplete(sQuestName, qname)) return;
 		if(SharlieTutorial_QuestComplete(sQuestName, qname)) return;
 		if(DarkWatersOfHealing_QuestComplete(sQuestName, qname)) return;
 		if(EdgesJustice_QuestComplete(sQuestName, qname)) return;
@@ -1772,14 +1809,9 @@ void StartActorSelfDialog(string _CurrentNode)
     LAi_SetActorType(pchar);
     LAi_CharacterSaveAy(pchar);
     locCameraSleep(true);
-    if (stf(pchar.chr_ai.type.ay) > 0)
-    {
-    	CharacterTurnAy(pchar,  -PI + abs(stf(pchar.chr_ai.type.ay)));  // 180 == 1
-    }
-    else
-    {
-    	CharacterTurnAy(pchar,  PI - abs(stf(pchar.chr_ai.type.ay)));  // 180 == 1
-    }
+    float fAng;
+	SendMessage(&locCamera, "le", MSG_CAMERA_GET_AY, &fAng);
+    CharacterTurnAy(pchar, fAng-PI);
     pchar.Dialog.CurrentNode = _CurrentNode;
     LAi_ActorSelfDialog(pchar, "pchar_back_to_player");
 }

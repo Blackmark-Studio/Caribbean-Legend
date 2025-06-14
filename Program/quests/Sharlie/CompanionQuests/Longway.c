@@ -92,7 +92,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			LAi_ActorDialog(sld, pchar, "", 0, 0);
 			return true;
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "citiz_36", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
 		sld.name 	= StringFromKey("Longway_1");
 		sld.lastname = StringFromKey("Longway_2");
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
@@ -1854,7 +1854,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "citiz_36", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
 			sld.name = StringFromKey("Longway_1");
 			sld.lastname = StringFromKey("Longway_2");
 			ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
@@ -2225,7 +2225,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "PZ_ShturmZvezdy_Rasstavlyaem") {
-		PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");;
+		PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");
 		PlaySound("interface\abordage_wining.wav");
 		DoQuestFunctionDelay("Terrapin_SetMusic", 1.2);
 		bDisableCharacterMenu = true;
@@ -3612,7 +3612,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "PZ_AlonsoKazn") {
-		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "citiz_36", "man", "man", 25, pchar.nation, -1, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
 		sld.name = StringFromKey("Longway_1");
 		sld.lastname = StringFromKey("Longway_2");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";

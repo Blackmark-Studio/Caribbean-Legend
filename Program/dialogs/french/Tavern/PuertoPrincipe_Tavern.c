@@ -61,7 +61,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern1_4":
-			dialog.text = "Eh bien, personne, en vérité ! Sauf peut-être ma serveuse, mais c’est impossible. Ce jour-là, la taverne était en pleine fête – l’équipage du 'Sea Wolf' est revenu de chasse avec une belle prise. Elle n’a pas eu une minute pour souffler, encore moins pour traîner derrière le comptoir.";
+			dialog.text = "Eh bien, personne, en vérité ! Sauf peut-être ma serveuse, mais c’est impossible. Ce jour-là, la taverne était en pleine fête – l’équipage du 'Sea Beast' est revenu de chasse avec une belle prise. Elle n’a pas eu une minute pour souffler, encore moins pour traîner derrière le comptoir.";
 			link.l1 = "Vous en êtes sûr ?";
 			link.l1.go = "OS_Tavern1_5";
 		break;
@@ -96,7 +96,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OS_Tavern3_1":
 			dialog.text = "Vous l'avez trouvé ?! Est-ce vraiment possible ? Capitaine, vous avez littéralement sauvé ma vie ! Qui était derrière tout ça ? Je dois connaître le nom de ce scélérat !";
-			link.l1 = "C'était une machination méticuleusement planifiée par un certain Jack Veils, de connivence avec le capitaine du 'Sea Wolf'. Ils ont mobilisé leurs marins et monté une véritable mise en scène pour vous distraire. Quand vous avez quitté votre poste, le tonneau est resté sans surveillance, et ils l'ont volé sans difficulté.";
+			link.l1 = "C'était une machination méticuleusement planifiée par un certain Jack Veils, de connivence avec le capitaine du 'Sea Beast'. Ils ont mobilisé leurs marins et monté une véritable mise en scène pour vous distraire. Quand vous avez quitté votre poste, le tonneau est resté sans surveillance, et ils l'ont volé sans difficulté.";
 			link.l1.go = "OS_Tavern3_2";
 			DelLandQuestMark(npchar);
 			pchar.questTemp.CameraDialogMode = true;

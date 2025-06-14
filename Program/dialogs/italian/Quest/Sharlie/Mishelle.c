@@ -237,8 +237,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mishelle_prisoner_13":
-			dialog.text = "Tutto il Nuovo Mondo è come un bosco di alberi carichi d’oro, ma la gente è troppo pigra per alzare il голову e allungare la mano verso i rami. Non temere, Charles, te la caverai alla grande. Ti conosco da quando eravamo marmocchi, e mai avrei perso tempo a convincere nostro padre a spedirti quaggiù se ti avessi creduto uno stupido o un buono a nulla. \nPer quanto tu abbia i tuoi difetti, come già ti dissi, hai coraggio, ambizione, cervello; la lingua sciolta e la mano ferma sulla spada – dote, questa, che qui può far la differenza tra la vita e la morte...";
-			link.l1 = "Grazie infinite. Mio caro fratello si è davvero degnato di lodarmi? E io che pensavo d’essere solo un triste pittore, un damerino di corte...";
+			dialog.text = "Il Nuovo Mondo è come un bosco pieno di alberi simili, ma nessuno ha voglia di alzare la testa e allungare la mano verso i suoi rami. Non preoccuparti, Charles, ce la farai. Ti conosco fin dall'infanzia, e se fossi stato irrimediabilmente stupido o pigro, non avrei perso tempo a spiegarti i dettagli della mia attuale situazione.\nNonostante tutti i tuoi 'pregi', di cui ho già parlato, sei coraggioso, ambizioso, sveglio, con la lingua sciolta e sai maneggiare la spada, cosa molto importante da queste parti...";
+			link.l1 = "Grazie mille. Mio caro fratello che finalmente si degna di farmi un complimento? E pensare che credevo di essere solo un misero pittore da cortile...";
 			link.l1.go = "Mishelle_prisoner_14";
 		break;
 		
@@ -267,8 +267,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mishelle_prisoner_18":
-			dialog.text = "Allora, è tempo di diventarlo. Tanto altra via non hai. Non vorrai же fare lo scribacchino in porto o marcire nella guarnigione, vero? No? Allora, sarai capitano.";
-			link.l1 = "Che svolta nella mia carriera! E dove mai troverò una nave per me?";
+			dialog.text = "Allora è giunto il momento di diventarlo. Non hai altra scelta. Non vorrai mica lavorare come impiegato nell’ufficio portuale o arruolarti nella guarnigione, vero? No? Allora diventerai capitano.";
+			link.l1 = "Che svolta interessante per la mia carriera! E dove troverò una nave?";
 			link.l1.go = "Mishelle_prisoner_19";
 		break;
 		
@@ -752,7 +752,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gambit_3":
-			dialog.text = "Non ci sono poi così tante potenti organizzazioni nei Caraibi. Una di queste è la Compagnia Olandese delle Indie Occidentali. Puoi unirti a loro. La loro sede è a Willemstad, su Curaçao. La Compagnia spesso assume capitani indipendenti e offre contratti speciali a lungo termine ai più abili tra loro. \nSe la fortuna ti assiste, potresti farti una bella carriera là dentro. Ho sentito che ora stanno passando un brutto periodo – un corsaro inglese si è rivoltato contro la Compagnia e affonda regolarmente le loro navi. Non riescono a fargli nulla, è un ufficiale della marina: troppo tosto per loro. \nSi mormora che abbia contatti con i servizi segreti di Sua Maestà, e quelli non scherzano affatto. Forse, quindi, schierarti dalla parte di questo capitano ti farebbe guadagnare ancora di più… ma il guaio è che non so come si chiami; so soltanto che ha base ad Antigua. \nPotresti salpare fin là e fare qualche domanda. Ho pure sentito parlare di una strana organizzazione che si è intromessa in questa faida anglo-olandese, ma non saprei proprio da che parte stia. Tutto ciò che so è che le tracce portano a Barbados, a Bridgetown...";
+			dialog.text = "Non ci sono poi così tante potenti organizzazioni nei Caraibi. Una di queste è la Compagnia Olandese delle Indie Occidentali. Puoi unirti a loro. La loro sede è a Willemstad, su Curaçao. La Compagnia spesso assume capitani indipendenti e offre contratti speciali a lungo termine ai più abili tra loro. \nSe la fortuna ti assiste, potresti farti una bella carriera là dentro. Ho sentito che ora stanno passando un brutto periodo – un corsaro inglese si è rivoltato contro la Compagnia e affonda regolarmente le loro navi. Non riescono a fargli nulla, è un ufficiale della marina: troppo tosto per loro. \nSi mormora che abbia contatti con i servizi segreti di Sua Maestà, e quelli non scherzano affatto. Forse, quindi, schierarti dalla parte di questo capitano ti farebbe guadagnare ancora di più... ma il guaio è che non so come si chiami; so soltanto che ha base ad Antigua. \nPotresti salpare fin là e fare qualche domanda. Ho pure sentito parlare di una strana organizzazione che si è intromessa in questa faida anglo-olandese, ma non saprei proprio da che parte stia. Tutto ciò che so è che le tracce portano a Barbados, a Bridgetown...";
 			link.l1 = "Quindi mi suggerisci di arruolarmi sotto la bandiera olandese, oppure di mettermi a caccia di qualche capitano losco o, peggio ancora, di una di quelle 'organizzazioni' che puzzano di guai?";
 			link.l1.go = "gambit_4";
 		break;
@@ -896,7 +896,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_3_2":
-			dialog.text = "Inutile parlare con de Poincy allora. Non ti lascerà nemmeno entrare. Raccogli i soldi, fratello mio, ormai hai già un po’ di esperienza quindi non dovrebbe essere un gran problema. Appena li hai, salpa per Capsterville su Saint Christopher.\nIl Cavaliere dev’essere al palazzo del governatore. Chiedi udienza e ti faranno entrare. Poi vedi con i tuoi occhi e fa' attenzione: Poincy è furbo, ma davvero furbo… Ho come la sensazione che questa storia non finirà così facilmente.";
+			dialog.text = "Inutile parlare con de Poincy allora. Non ti lascerà nemmeno entrare. Raccogli i soldi, fratello mio, ormai hai già un po’ di esperienza quindi non dovrebbe essere un gran problema. Appena li hai, salpa per Capsterville su Saint Christopher.\nIl Cavaliere dev’essere al palazzo del governatore. Chiedi udienza e ti faranno entrare. Poi vedi con i tuoi occhi e fa' attenzione: Poincy è furbo, ma davvero furbo... Ho come la sensazione che questa storia non finirà così facilmente.";
 			link.l1 = "Terrò a mente le tue cautele, Michel. Non preoccuparti, non sono nato ieri nemmeno io. Appena metto insieme la somma, andrò dritto a quel vecchio volpone. Ci si vede!";
 			link.l1.go = "saga_4";			
 		break;
@@ -1197,7 +1197,7 @@ void ProcessDialogEvent()
 		
 		case "Fort_attack_5":
 			dialog.text = "A giudicare dalle circostanze, non sono certo io quello che deve insegnarti qualcosa. Ora basta sprecare tempo, avanti!";
-			link.l1 = "…";
+			link.l1 = "...";
 			link.l1.go = "Fort_attack_6";			
 		break;
 		

@@ -77,7 +77,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "caleuche_10":
-			dialog.text = "Och, niech Cię Bóg błogosławi, Señor! Wiem, jak dostać się do jaskini. Jest klucz, drugi klucz... Ja go mam. Merriman nie wie, że do tego zamka są dwa klucze. Nigdy bym nie odważył się wejść, ale ty...";
+			dialog.text = "Och, niech Cię Bóg błogosławi, señor! Wiem, jak dostać się do jaskini. Jest klucz, drugi klucz... Ja go mam. Merriman nie wie, że do tego zamka są dwa klucze. Nigdy bym nie odważył się wejść, ale ty...";
 			link.l1 = "Daj mi klucz, a uwolnię cię od tego koszmaru.";
 			link.l1.go = "caleuche_11";
 		break;
@@ -85,13 +85,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "caleuche_11":
 			GiveItem2Character(pchar, "kaleuche_key");
 			ChangeItemDescribe("kaleuche_key", "itmdescr_kaleuche_key_crypt");
-			dialog.text = "Proszę bardzo, Señor. Naprawdę zamierzasz wejść do jego legowiska?";
+			dialog.text = "Proszę bardzo, señor. Naprawdę zamierzasz wejść do jego legowiska?";
 			link.l1 = "Zaiste, zamierzam. Zamknij się w domu i czekaj, gdy ja wejdę do środka. Jeśli nie wrócę, zostaw wszystko i uciekaj, ile sił w nogach.";
 			link.l1.go = "caleuche_12";
 		break;
 		
 		case "caleuche_12":
-			dialog.text = "Ale bądź ostrożny, Señor. Z jego jaskini dochodzą przerażające dźwięki i boję się nawet pomyśleć, kto mógłby tam zamieszkiwać. Ale Merriman nie jest sam - to pewne.";
+			dialog.text = "Ale bądź ostrożny, señor. Z jego jaskini dochodzą przerażające dźwięki i boję się nawet pomyśleć, kto mógłby tam zamieszkiwać. Ale Merriman nie jest sam - to pewne.";
 			link.l1 = "Będe ostrożny, w sumie to zawsze jestem. Żegnaj.";
 			link.l1.go = "caleuche_13";
 		break;

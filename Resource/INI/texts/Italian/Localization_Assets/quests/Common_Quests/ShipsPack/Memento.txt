@@ -1,0 +1,25 @@
+Memento_1
+{
+Memento
+}
+
+Memento_2
+{
+Mortimer
+}
+
+Memento_3
+{
+Grim
+}
+
+Memento_4
+{
+Capitano, quello è il famoso 'Memento' - il flagello dei mercanti di schiavi! 
+Non è nostro nemico, quindi possiamo mandare una scialuppa.
+}
+
+Memento_5
+{
+Dannato
+}

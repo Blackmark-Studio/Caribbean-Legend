@@ -384,3 +384,7 @@ SharlieFinal_84
 {
 Świat się zmienił, a wraz z nim Twój bohater@<NewStr()>Ale to już inna historia...
 }
+SharlieFinal_85
+{
+Alonso
+}

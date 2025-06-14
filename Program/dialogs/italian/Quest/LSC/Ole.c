@@ -380,7 +380,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "givemepearl_no":
-			dialog.text = "Nessuna perla? Ma com’è possibile, zio "+pchar.name+"?! Solo qualche perlina ancora… Devo raccoglierle. Se è così, scenderò a terra. Andrò in cerca di perline…";
+			dialog.text = "Nessuna perla? Ma com’è possibile, zio "+pchar.name+"?! Solo qualche perlina ancora... Devo raccoglierle. Se è così, scenderò a terra. Andrò in cerca di perline...";
 			if (CheckCharacterItem(pchar, "jewelry52"))
 			{
 				link.l1 = "E dove pensi di andare? Che farai da solo? No, non voglio portare il peso del tuo destino sulla coscienza. Aspetta, fammi controllare le tasche... Ecco! Prendi questa perla e resta con me. Va bene così?";

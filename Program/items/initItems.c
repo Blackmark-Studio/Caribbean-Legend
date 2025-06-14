@@ -162,6 +162,8 @@ int InitItems()
 	n = InitStdBlade(n, "blade_42", "ITEMS_39",   3,  TGT_QUEST,    B_ORDINARY, "FencingH", 9, 1.00, 1.00, 0, 0, 0, 	    1500); // Армейский палаш cle
 	// <-- cle 1.3
 	n = InitStdBlade(n, "lacrima_patris", "ITEMS_39",   9,  TGT_QUEST,   B_EXCELLENT, "FencingH", 9, 1.05, 1.10, 0, 0, 0,100000); // Меч священника ДЛЦ
+	n = InitStdBlade(n, "blade_SP_3low", 	"ITEMS_41",     5,  TGT_QUEST,   B_EXCELLENT, "FencingS", 9, 1.05, 1.10, 0, 0, 0,100000); // Катлас висельник без черепа
+	n = InitStdBlade(n, "blade_SP_3", 	"ITEMS_41",     6,  TGT_QUEST,   B_EXCELLENT, "FencingS", 9, 1.05, 1.10, 0, 0, 0,100000); // Катлас висельник с черепом
 	n = InitStdBlade(n, "blade_33", "ITEMS_17",  6,    TGT_QUEST,  B_EXCELLENT, "FencingH",16, 1.00, 1.10, 1, 15, 1, 		  0); // Меч Стража
 	n = InitStdBlade(n, "blade_34", "ITEMS_17", 12,    TGT_QUEST,  B_EXCELLENT, "FencingL", 19, 0.95, 1.15, 0, 0, 0, 	   8000); // резервный клинок 1
 	n = InitStdBlade(n, "blade_35", "ITEMS_17", 12,    TGT_QUEST,  B_EXCELLENT, "FencingS", 20, 0.95, 1.15, 0, 0, 0, 	   8000); // резервный клинок 2
@@ -1521,7 +1523,7 @@ int InitItems()
 	itm.picIndex = 3;
 	itm.picTexture = "ITEMS_35";
 	itm.price = 0;
-	itm.Weight = 10;
+	itm.Weight = 1.0;
 	itm.ItemType = "QUESTITEMS";
 	n++;
 	
@@ -1533,7 +1535,19 @@ int InitItems()
 	itm.picIndex = 3;
 	itm.picTexture = "ITEMS_35";
 	itm.price = 0;
-	itm.Weight = 10;
+	itm.Weight = 1.0;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm,Items[n]); //щётка
+	itm.id = "Brush_Props";
+	itm.name = "itmname_Brush_Props";
+	itm.describe = "itmdescr_Brush_Props";
+	itm.model = "Brush_Props";
+	itm.picIndex = 12;
+	itm.picTexture = "ITEMS_33";
+	itm.price = 0;
+	itm.Weight = 0.2;
 	itm.ItemType = "QUESTITEMS";
 	n++;
 	
@@ -1568,7 +1582,7 @@ int InitItems()
     itm.model = "OpenBook";
 	itm.picIndex = 15;
 	itm.picTexture = "ITEMS_26";
-	itm.price = 0;
+	itm.price = 10;
 	itm.Weight = 1.0;
 	itm.ItemType = "QUESTITEMS";
 	n++;
@@ -2369,8 +2383,8 @@ int InitItems()
 	itm.name = "itmname_BoxOfBalls";
 	itm.describe = "itmdescr_BoxOfBalls";
 	itm.model = "";
-	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_18";
+	itm.picIndex = 3;
+	itm.picTexture = "ITEMS_41";
 	itm.Weight = 127.0;
 	itm.price = 100;
 	itm.ItemType = "QUESTITEMS";
@@ -2834,6 +2848,43 @@ int InitItems()
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
 	n++;
+	
+	makeref(itm,Items[n]);
+	itm.id = "spyglassSP3"; // подзорная труба SP3
+	itm.groupID = SPYGLASS_ITEM_TYPE;
+	itm.name = "itmname_spyglassSP3";
+	itm.describe = "itmdescr_spyglassSP3";
+	itm.picIndex = 4;
+	itm.picTexture = "ITEMS_41";
+	itm.price = 75000;
+	// boal 19.01.2004 -->
+	itm.Weight = 2;
+    // boal 19.01.2004 <--
+	itm.folder = "items";
+	itm.model = "Spyglass_SP3";
+	itm.radius = 850.0;
+	itm.scope.texture = "eye_GoodTub.tga";
+	itm.scope.zoom = 7.0;
+	itm.scope.time_activate = 500;
+	itm.scope.time_update = 150;
+	itm.scope.show.nation = 1;
+	itm.scope.show.cannons = 1;
+	itm.scope.show.ship_name = 1;
+	itm.scope.show.ship_type = 1;
+	itm.scope.show.hull = 1;
+	itm.scope.show.sail = 1;
+	itm.scope.show.crew = 0;
+	itm.scope.show.speed = 1;
+	itm.scope.show.charge = 0;
+	itm.scope.show.cannontype = 1;
+	itm.scope.show.captain_skills = 0;
+	itm.scope.show.mushketshot = 1;
+	itm.scope.show.CheckSurrender = 1;
+	itm.minlevel = 1;
+	itm.rare = 0.0001;
+	itm.ItemType = "SUPPORT";
+	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	n++;
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//							НАВИГАЦИОННЫЕ ИНСТРУМЕНТЫ
@@ -3100,6 +3151,20 @@ int InitItems()
 	itm.describe = "itmdescr_hat8";
 	itm.model = "hat8";
 	itm.picIndex = 8;
+	itm.picTexture = "ITEMS_40";
+	itm.price = 450000;
+	itm.Weight = 0.1;
+	itm.ItemType = "SUPPORT";
+	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	n++;
+	
+	makeref(itm,Items[n]); // Шляпа Грима
+	itm.id = "hat9";
+	itm.groupID	= HAT_ITEM_TYPE;
+	itm.name = "itmname_hat9";
+	itm.describe = "itmdescr_hat9";
+	itm.model = "hat9";
+	itm.picIndex = 9;
 	itm.picTexture = "ITEMS_40";
 	itm.price = 450000;
 	itm.Weight = 0.1;
@@ -3444,7 +3509,7 @@ int InitItems()
 	n = InitStdTalisman(n, "talisman16", "", "ITEMS_24",  7, rand(5000), 0.5,             ""); // Золотой нож cle 1.5
 	n = InitStdTalisman(n, "talisman17", "", "ITEMS_39",  8, rand(5000), 0.5,             ""); // Оберег Liber Misericordiae cle 1.5 DLC SP1
 	n = InitStdTalisman(n, "talisman18", "", "ITEMS_39", 16, rand(5000), 0.5,             ""); // Оберег Устав Блеквуда SP2
-	n = InitStdTalisman(n, "talisman19", "", "ITEMS_33", 11, rand(5000), 0.5,             ""); // Оберег Череп
+	n = InitStdTalisman(n, "talisman19", "", "ITEMS_41", 7, rand(5000), 2.2,             ""); // Оберег Череп
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//					ЮВЕЛИРНЫЕ ИЗДЕЛИЯ И ДРАГОЦЕННОСТИ
@@ -4211,6 +4276,8 @@ int InitStdBlade( 	int		ItemIndex,
 	if(ModelID == "blade_40") blade.Weight = 5.0;
 	if(ModelID == "blade_41") blade.Weight = 2.0;
 	if(ModelID == "blade_42") blade.Weight = 3.0;
+	if(ModelID == "blade_SP_3low") blade.Weight = 1.6;
+	if(ModelID == "blade_SP_3")    blade.Weight = 3.8;
 	
 	blade.Balance = fRandSmall(2.0);
 	switch (Quality)
@@ -4269,10 +4336,17 @@ int InitStdBlade( 	int		ItemIndex,
 	if(ModelID == "blade_41") blade.Attack = 90.0;
 	if(ModelID == "blade_42") blade.Attack = 70.0;
 	
+	if(ModelID == "blade_SP_3low") blade.Balance = 1.2;
+	if(ModelID == "blade_SP_3") blade.Balance = 1.2;
+	
+	if(ModelID == "blade_SP_3low") blade.Attack = 77.0;
+	if(ModelID == "blade_SP_3") blade.Attack = 77.0;
+	
+	SetBladeWeightAttack(blade);
+		
 	switch (BladeType) 
 	{
 		case "FencingL" :
-			blade.WeightAttack = stf(blade.Attack) * (0.5 + 0.2 * stf(blade.Weight));
 			if(isGenerablePrice) 
 			{
 				blade.price  = makeint(35.0 * (1.0/Curve + Lenght) * (stf(blade.Attack) * 2.0 - 30.0));
@@ -4280,7 +4354,6 @@ int InitStdBlade( 	int		ItemIndex,
 			else blade.price = Price;			
 		break;
 		case "FencingS" :
-			blade.WeightAttack = stf(blade.Attack) * (0.25 + 0.25 * stf(blade.Weight));
 			if(isGenerablePrice) 
 			{
 				blade.price  = makeint(25.0 * (Curve + Lenght) * (stf(blade.Attack) * 2.0 - 40.0));
@@ -4288,7 +4361,6 @@ int InitStdBlade( 	int		ItemIndex,
 			else blade.price = Price;			
 		break;
 		case "FencingH" :
-			blade.WeightAttack = stf(blade.Attack) * (0.25 + 0.2 * stf(blade.Weight));
 			if(isGenerablePrice) 
 			{
 				blade.price  = makeint(20.0 * ((Curve + 1.0) * 1.0/Lenght) * (stf(blade.Attack) * 2.0 - 50.0));
@@ -4297,7 +4369,22 @@ int InitStdBlade( 	int		ItemIndex,
 		break;
 	}
 	
+	
+	
 	//trace("blade.id : " + blade.id + " blade.price : " + blade.price + " blade.Attack : " + blade.Attack + " blade.Balance : " + blade.Balance + " blade.Weight : " + blade.Weight);
+	
+	if(blade.id == "blade_SP_3low")
+	{
+		blade.multiobject = true;		
+		blade.multiobject.qty = 1;
+		blade.multiobject.alchemy = false;
+	}
+	if(blade.id == "blade_SP_3")
+	{
+		blade.multiobject = true;		
+		blade.multiobject.qty = 1;
+		blade.multiobject.alchemy = false;
+	}
 	
 	bladeIndex++;
 	return bladeIndex;
@@ -4925,6 +5012,14 @@ void InitMultiObjectAmulets()
 	// Обрез четерехзарядного штуцера
 	InitMultiObject(  		 "pistol12",	"t1",      "mushket8",    "Component", 	  1); // мушкет
 	InitMultiObject(  		 "pistol12",	"t2","m8_barrel",   "Additional",   0); // приклад
+	
+	// катлас Висельник с черепом
+	InitMultiObject(  		 "blade_SP_3",	"t1",     "talisman19",   "Component", 	  1); // череп
+	InitMultiObject(  		 "blade_SP_3",	"t2",      "blade_SP_3low",    "Component", 	  1); // стоковый катлас
+	
+	// катлас Висельник без черепа
+	InitMultiObject(  		 "blade_SP_3low",	"t1",      "blade_SP_3",    "Component", 	  1); // катлас с черепом
+	InitMultiObject(  		 "blade_SP_3low",	"t2",      "talisman19",   "Additional",  0); // череп
 }
 	 	
 void InitGunExt(string id,			

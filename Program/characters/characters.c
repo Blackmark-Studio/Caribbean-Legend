@@ -311,13 +311,21 @@ void SetDefaultStayIdle(ref character)
 	character.actions.HitNoFight = "HitNoFight";
 
     // TO_DO: УДАЛИТЬ
-	if(bGlobalTutor && character.id == "SharlieTutorial_Captain" && CheckAttribute(character, "watchglass"))
+	if(CheckAttribute(character, "watchglass"))
 	{
 		character.actions.idle.i1 = "tutorial_1";
 		character.actions.idle.i4 = "tutorial_1";
 		character.actions.idle.i6 = "tutorial_1";
 		character.actions.idle.i8 = "tutorial_1";
 		SendMessage(character, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("Spyglass_1"), "Spyglass_1", "Saber_hand", 1);
+	}
+	if(CheckAttribute(character, "SpyglassWithSkull"))
+	{
+		character.actions.idle.i1 = "tutorial_1";
+		character.actions.idle.i4 = "tutorial_1";
+		character.actions.idle.i6 = "tutorial_1";
+		character.actions.idle.i8 = "tutorial_1";
+		SendMessage(character, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("Spyglass_1"), "Spyglass_SP3", "Saber_hand", 1);
 	}
 }
 

@@ -490,6 +490,21 @@ Bogato zdobiony miecz, pomimo swojego ceremonialnego wyglądu, posiada doskonał
 
 lacrima_patris_parameters{Zasięg strzału armat: #f.1RangeBonus#%}
 
+itmname_blade_SP_3low {Wisielec}
+itmdescr_blade_SP_3low
+{
+Ten kordelas łączy cechy tureckich szabel i europejskich falchionów – jego szerokie ostrze przebija nawet najtwardszy pancerz. Z Wisielcem każda walka abordażowa kończy się szybko i brutalnie.
+}
+
+itmname_blade_SP_3 {Wisielec}
+itmdescr_blade_SP_3
+{
+Czaszka Yoricka zamiast jelca zachęca właściciela, by porzucił strach przed śmiercią i spojrzał Kostusze w oczy, by odkryć prawdziwą siłę wojownika.
+~
+Blokuje leczenie ze wszystkich źródeł.
+Każde 2% utraconego zdrowia zwiększa obrażenia i szybkość regeneracji energii o 1,5% i 1,75%.
+}
+
 ==================================================================================================================== BROŃ PALNA
 
 
@@ -941,6 +956,15 @@ Ten kapelusz przeraża kupców, zwłaszcza hiszpańskich, bardziej niż Wesoły 
 Rum i wino przywracają o 50% więcej zdrowia. Stan upojenia jest bardziej korzystny.
 }
 
+itmname_hat9 {Kapelusz Grima}
+itmdescr_hat9
+{
+Ten kapelusz jest znany w każdym zakątku Karaibów i wszędzie wspominany z dreszczem. Tylko szaleniec odważy się zaatakować statek jego właściciela, a spotykając go, strach sprawi, że zapomnisz, jak trzymać szablę czy pistolet. Pamiętaj: umrzeć jest łatwo. Wrócić – trudno.
+~
+Zmniejsza karę za uszkodzenia statku o 30%.
+10% szans na uniknięcie obrażeń od strzału.
+}
+
 ; ==================================================================================================================== OPTYKA
 
 itmname_spyglass1 {Tania luneta}
@@ -978,6 +1002,14 @@ itmdescr_spyglass5
 {
 Unikatowy teleskop równie dobrze nadający się do obserwacji księżyców Jowisza, jak i statków na morzu. Perfekcyjnie dopasowane soczewki z czystego kryształu górskiego oraz wykorzystanie statywu pozwalają zobaczyć absolutnie wszystko ponad horyzontem, w tym rodzaje armat używanych na statku lub w forcie. Można by nim policzyć włosy w nosie króla Ludwika w Wersalu.
 Bonus +1500 jardów do dystansu w szybkiej podróży.
+}
+
+itmname_spyglassSP3 {Luneta „Oko Zmarłego”}
+itmdescr_spyglassSP3
+{
+Ta ozdobiona kośćmi luneta ma zaskakująco dobre soczewki, pozwalając zobaczyć: typ statku, nazwę, prędkość, liczbę i kaliber dział, stan statku, muszkieterów na pokładzie oraz strach w oczach wrogiego kapitana.
+Premia do zasięgu żeglugi: +850 jardów.
+Zwiększa zasięg widzenia na mapie globalnej: +15%.
 }
 
 ; ==================================================================================================================== NAWIGACJA
@@ -1202,8 +1234,26 @@ talisman18_Bonus{Znalezione Skarby : #dQBonus# / 10}
 
 talisman18_NoBonus{Znalezione Skarby : 0 / 10}
 
-; 
-==================================================================================================================== TALIZMANY
+itmname_talisman19	{Talizman „Czaszka Yoricka”}
+itmdescr_talisman19
+{
+Czaszka kapitana Mortimera Grima z „Memento”, który nigdy w pełni nie zrozumiał własnej śmierci. Znałeś go, #sName#.
+Umarli uczą żywych, a ten artefakt dostosowuje się do pragnień właściciela.
+W ekwipunku czyni wszystkich oficerów nieśmiertelnymi.
+~
+Brak kar, można używać wielokrotnie.
+}
+
+talisman19_InSlot
+{
+Statek istnieje po obu stronach zasłony jednocześnie. Drewno było żywe, stało się martwe, by służyć żywym. Czaszka kapitana „Memento” przypomina każdej załodze, że śmierci nie ma i trzeba walczyć do końca.
+~
+Każde 2% utraconego kadłuba zwiększa szybkość i obrażenia dział o 0,75% i 0,5%.
+~
+Brak kar, można używać wielokrotnie.
+}
+
+; ==================================================================================================================== TALIZMANY
 
 itmname_totem_01 {Talizman 'Żeliwne Gardło'}
 itmdescr_totem_01
@@ -1416,7 +1466,7 @@ Efekt znika po 50 dniach użytkowania lub wcześniej w momencie zdjęcia.
 itmname_indian_9 {Amulet 'Baldo'}
 itmdescr_indian_9
 {
-The ship's cannons get a 10% accuracy bonus.
+Działa okrętowe otrzymują 10% premię do celności.
 ~
 Bez żadnych kar, efekty nie duplikują się.
 Może być używany przez kapitana, jego towarzysza czy też kanoniera.
@@ -4118,4 +4168,18 @@ itmname_islamona_toolbox {Skrzynka z Narzędziami}
 itmdescr_islamona_toolbox
 {
 Wysokiej jakości narzędzia, świetnie nadające się do budowy statków czy różnorakich obiektów lądowych. Wykonane w Europie.
+}
+
+;=============================== SP3 =======================================================
+
+itmname_Memento_Book	{Dziennik Grima}
+itmdescr_Memento_Book
+{
+Tragedia w trzech aktach
+}
+
+itmname_Memento_letter	{Письмо Мементо}
+itmdescr_Memento_letter
+{
+Письмо Мементо
 }

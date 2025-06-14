@@ -70,7 +70,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Town_1":
-			dialog.text = "Vedi, ho comprato uno scrigno pieno di ogni sorta di pezzi di metallo da Sessile Gallard. Lei vive sull’‘Eva’. Jurgen mi ha promesso che mi forgerà una bella cosa, giusto… L’ho comprato, sì, però non riesco a portarglielo. Che sciocca che sono!\nMagari potresti aiutarmi a trasportare lo scrigno dall’‘Eva’ al blocco del Narvalo sulla ‘Esmeralda’? Ti prego, te ne sarei davvero grata!";
+			dialog.text = "Vedi, ho comprato uno scrigno pieno di ogni sorta di pezzi di metallo da Sessile Gallard. Lei vive sull’‘Eva’. Jurgen mi ha promesso che mi forgerà una bella cosa, giusto... L’ho comprato, sì, però non riesco a portarglielo. Che sciocca che sono!\nMagari potresti aiutarmi a trasportare lo scrigno dall’‘Eva’ al blocco del Narvalo sulla ‘Esmeralda’? Ti prego, te ne sarei davvero grata!";
 			link.l1 = "E tutto qui? Certo, signorina, ti do volentieri una mano. Non è mica un gran fastidio, giusto?";
 			link.l1.go = "Town_2";
 		break;
@@ -204,7 +204,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mary_7":
-			dialog.text = "Devi essere arrivato stanotte, se ancora non lo sai. Dove altro potrebbe stare Squalo, se non qui? I miei guai sono cominciati quando è arrivato qui alcuni mesi fa. Anche se, devo ammettere, è tutta colpa dei Narvali e dei Rivados. Quando Squalo è sbarcato con la sua ciurma, voleva mettere su una base, ma la nostra gente e i Rivados proprio non l’hanno digerita. Hanno assaltato la brigantina di Squalo di notte e l’hanno data alle fiamme… Non dovevano farlo! La ciurma di Squalo è piena di diavoli, non di uomini, giusto? Prima hanno affondato le barche dei nemici, poi sono sbarcati e hanno iniziato una vera carneficina. I Narvali si sono ritirati e i Rivados sono scappati più veloci che potevano. Alla fine, i pirati hanno preso San Augustine, dove stavano la maggior parte delle provviste dell’Isola, poi si sono presi anche il Tartaro… Squalo ha imprigionato il nostro capo Alan Milrow, che era anche il mio… mio caro amico, e il mago Rivados Chimiset. Li ha mandati a marcire come bestie nelle gabbie del Tartaro. Da qui arrivare al Tartaro è uno scherzo a nuoto, e sono riuscita a trovare Alan qualche volta. Lì ho incontrato Chad Kapper, Squalo lo ha messo a fare il carceriere. Ho chiesto a Chad di liberare Alan, gli ho promesso denaro, ma aveva troppa paura di mettersi contro l’ammiraglio… E poi Alan è stato assassinato in prigione. Chad mi ha detto che è stato Squalo, giusto? Così sono andata da Donald, che avevano eletto capo al posto di Alan, e gli ho ordinato di attaccare subito i pirati, ma ha rifiutato, dicendo che quei demoni del mare sono troppo per noi. A quel punto gli ho detto di andare al diavolo… La mia gente non valeva nulla in questa faccenda, così ho fatto un patto con Kapper, quella carogna voleva prendere il posto di Squalo. Avevamo un piano: attirare l’ammiraglio fuori dalla sua fortezza in qualche bettola e farlo fuori lì. Avevamo trovato anche un tiratore con un buon fucile. Avrebbe potuto sparare all’ammiraglio dall’albero maestro della Fury… Ora viene il bello: l’altro ieri notte sono passata al Tartaro, volevo dire a Chad una cosa importante sul nostro piano. Sono arrivata alla barca e per caso ho sentito Chad parlare con due Narvali. È venuto fuori che Squalo non aveva ucciso Alan. È stato Chad. Poi ha fatto circolare voci di nascosto per dare la colpa all’ammiraglio… L’ha ammazzato per colpa mia. Prima, mi voleva nel suo letto come un giocattolo. Poi, voleva servirmi per sbarazzarsi di Squalo – sapeva che io avrei sempre cercato vendetta. Riesci a crederci? Che vigliacco, giusto?";
+			dialog.text = "Devi essere arrivato stanotte, se ancora non lo sai. Dove altro potrebbe stare Squalo, se non qui? I miei guai sono cominciati quando è arrivato qui alcuni mesi fa. Anche se, devo ammettere, è tutta colpa dei Narvali e dei Rivados. Quando Squalo è sbarcato con la sua ciurma, voleva mettere su una base, ma la nostra gente e i Rivados proprio non l’hanno digerita. Hanno assaltato la brigantina di Squalo di notte e l’hanno data alle fiamme... Non dovevano farlo! La ciurma di Squalo è piena di diavoli, non di uomini, giusto? Prima hanno affondato le barche dei nemici, poi sono sbarcati e hanno iniziato una vera carneficina. I Narvali si sono ritirati e i Rivados sono scappati più veloci che potevano. Alla fine, i pirati hanno preso San Augustine, dove stavano la maggior parte delle provviste dell’Isola, poi si sono presi anche il Tartaro... Squalo ha imprigionato il nostro capo Alan Milrow, che era anche il mio... mio caro amico, e il mago Rivados Chimiset. Li ha mandati a marcire come bestie nelle gabbie del Tartaro. Da qui arrivare al Tartaro è uno scherzo a nuoto, e sono riuscita a trovare Alan qualche volta. Lì ho incontrato Chad Kapper, Squalo lo ha messo a fare il carceriere. Ho chiesto a Chad di liberare Alan, gli ho promesso denaro, ma aveva troppa paura di mettersi contro l’ammiraglio... E poi Alan è stato assassinato in prigione. Chad mi ha detto che è stato Squalo, giusto? Così sono andata da Donald, che avevano eletto capo al posto di Alan, e gli ho ordinato di attaccare subito i pirati, ma ha rifiutato, dicendo che quei demoni del mare sono troppo per noi. A quel punto gli ho detto di andare al diavolo... La mia gente non valeva nulla in questa faccenda, così ho fatto un patto con Kapper, quella carogna voleva prendere il posto di Squalo. Avevamo un piano: attirare l’ammiraglio fuori dalla sua fortezza in qualche bettola e farlo fuori lì. Avevamo trovato anche un tiratore con un buon fucile. Avrebbe potuto sparare all’ammiraglio dall’albero maestro della Fury... Ora viene il bello: l’altro ieri notte sono passata al Tartaro, volevo dire a Chad una cosa importante sul nostro piano. Sono arrivata alla barca e per caso ho sentito Chad parlare con due Narvali. È venuto fuori che Squalo non aveva ucciso Alan. È stato Chad. Poi ha fatto circolare voci di nascosto per dare la colpa all’ammiraglio... L’ha ammazzato per colpa mia. Prima, mi voleva nel suo letto come un giocattolo. Poi, voleva servirmi per sbarazzarsi di Squalo – sapeva che io avrei sempre cercato vendetta. Riesci a crederci? Che vigliacco, giusto?";
 			link.l1 = "Sì, di tipi come lui ne ho già incontrati, giusto?";
 			link.l1.go = "mary_8";
 		break;
@@ -222,7 +222,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mary_10":
-			dialog.text = "Giusto? "+pchar.name+"Ho sottovalutato Chad e sopravvalutato me stessa. Ha trovato quei bastardi che avrebbero osato attaccare una ragazza sola nella sua cabina. E ora che dovrei fare? Non posso fidarmi di nessuno. Nemmeno della mia stessa ciurma, giusto. Quei due sono Narvali, li conoscevo entrambi, giusto? Finché Chad respira – sono in pericolo, ne manderà altri, sicuro come il sole che sorge.\nHo paura persino ad uscire, il cecchino che avevamo pagato per far fuori Shark potrebbe spararmi dal territorio di Rivados e svignarsela senza problemi. Da Donald non ci vado, quello non mi ascolta, giusto?\nL’Ammiraglio? Non posso mica spiegargli il mio ruolo nei preparativi per l’assassinio! Mi butterebbe a marcire nelle celle del 'Tartaro', ne sono certa! Maledizione, sono in trappola. Resterò qui con le pistole cariche finché non finiscono le provviste e poi… non ho la più pallida idea di cosa ne sarà di me, giusto?";
+			dialog.text = "Giusto? "+pchar.name+"Ho sottovalutato Chad e sopravvalutato me stessa. Ha trovato quei bastardi che avrebbero osato attaccare una ragazza sola nella sua cabina. E ora che dovrei fare? Non posso fidarmi di nessuno. Nemmeno della mia stessa ciurma, giusto. Quei due sono Narvali, li conoscevo entrambi, giusto? Finché Chad respira – sono in pericolo, ne manderà altri, sicuro come il sole che sorge.\nHo paura persino ad uscire, il cecchino che avevamo pagato per far fuori Shark potrebbe spararmi dal territorio di Rivados e svignarsela senza problemi. Da Donald non ci vado, quello non mi ascolta, giusto?\nL’Ammiraglio? Non posso mica spiegargli il mio ruolo nei preparativi per l’assassinio! Mi butterebbe a marcire nelle celle del 'Tartaro', ne sono certa! Maledizione, sono in trappola. Resterò qui con le pistole cariche finché non finiscono le provviste e poi... non ho la più pallida idea di cosa ne sarà di me, giusto?";
 			link.l1 = "Beh, in questo caso non ho altra scelta che darti una mano, giusto? Tanto la tua situazione si incastra perfettamente con i miei piani qui...";
 			link.l1.go = "mary_11";
 		break;
@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 		
 		case "mary_20":
 			dialog.text = "Ho ricevuto la sua lettera, portata qui da uno di questi... sciocchi stesi per terra. Ci sono minacce e dettagli che l’ammiraglio troverebbe interessanti. Aspetta! E io che fine faccio? Lo Squalo scoprirà che collaboravo con Chad, giusto?";
-			link.l1 = "Mary, hai intenzione di restare qui per l’eternità armata di pistole e nascondere quel tuo dolce viso a tutti? Davvero mi prendi per uno dei babbei che bramano la morte di una dama così bella? Fammi vedere prima la lettera, giusto? Vediamo cosa posso fare…";
+			link.l1 = "Mary, hai intenzione di restare qui per l’eternità armata di pistole e nascondere quel tuo dolce viso a tutti? Davvero mi prendi per uno dei babbei che bramano la morte di una dama così bella? Fammi vedere prima la lettera, giusto? Vediamo cosa posso fare...";
 			link.l1.go = "mary_21";
 		break;
 		
@@ -843,7 +843,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "dolly_1":
-			dialog.text = "Ricordo, sì. La tua barca è affondata e hai dovuto nuotare fin qui… giusto?";
+			dialog.text = "Ricordo, sì. La tua barca è affondata e hai dovuto nuotare fin qui... giusto?";
 			link.l1 = "Ho mentito. Avresti pensato che fossi matta se ti avessi detto la verità, giusto? Nessuna barca, davvero. Ho usato una forza inspiegabile di un dio indiano, Kukulcan, per arrivare qui.";
 			link.l1.go = "dolly_2";
 		break;
@@ -892,7 +892,7 @@ void ProcessDialogEvent()
 		
 		case "dolly_9":
 			dialog.text = "E adesso che succederà, giusto?";
-			link.l1 = "Questa è l’unica via d’uscita di qui. Sono arrivata in questo posto grazie a un idolo proprio come questo, e lo userò di nuovo per tornare indietro… Mary! Stai piangendo? Mary! Basta così, giusto?";
+			link.l1 = "Questa è l’unica via d’uscita di qui. Sono arrivata in questo posto grazie a un idolo proprio come questo, e lo userò di nuovo per tornare indietro... Mary! Stai piangendo? Mary! Basta così, giusto?";
 			link.l1.go = "dolly_10";
 		break;
 		
@@ -1105,7 +1105,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "return_2":
-			dialog.text = "No, non ho freddo. È solo che… non voglio parlarne qui. Vieni alla mia cabina quando hai finito. Voglio restare sola con te, giusto… Non vai ora dall’ammiraglio e da Nathaniel?";
+			dialog.text = "No, non ho freddo. È solo che... non voglio parlarne qui. Vieni alla mia cabina quando hai finito. Voglio restare sola con te, giusto... Non vai ora dall’ammiraglio e da Nathaniel?";
 			link.l1 = "Sì. Devo parlare con Shark e, ovviamente, portare Danielle da Nathaniel. Non ci metterò molto. Ci vediamo presto, Mary.";
 			link.l1.go = "return_3";
 		break;
@@ -1664,7 +1664,7 @@ void ProcessDialogEvent()
 		
 		case "brothel_6":
 			dialog.text = ""+pchar.name+"... È tutto vero? Sei sincero con me? Non sei mai stato con loro, giusto?";
-			link.l1 = "Mary, cara, sei l’unica donna che amo, è la verità. Vieni qui vicino, bella. Lasciami stringerti… Asciuga quelle lacrime e, per favore, smettila di essere gelosa! Non metterò più piede in un bordello, se è quello che vuoi, giusto?";
+			link.l1 = "Mary, cara, sei l’unica donna che amo, è la verità. Vieni qui vicino, bella. Lasciami stringerti... Asciuga quelle lacrime e, per favore, smettila di essere gelosa! Non metterò più piede in un bordello, se è quello che vuoi, giusto?";
 			link.l1.go = "brothel_7";
 		break;
 		
@@ -1720,13 +1720,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GoldenGirl_2":
-			dialog.text = "Sì, ho sentito parlare di un paio di quei ‘nobili’, giusto? Li ho visti anche in tua compagnia. Le cortigiane sono il loro pane quotidiano! Le ‘alte’ società, i loro ‘divertimenti dignitosi’… ma va’ al diavolo! Neanche il matrimonio li ferma dal visitare queste… signore. Maledizione, non avevo idea che anche tu fossi come loro. Noi nemmeno… Vaffà, a tutti quanti!";
+			dialog.text = "Sì, ho sentito parlare di un paio di quei ‘nobili’, giusto? Li ho visti anche in tua compagnia. Le cortigiane sono il loro pane quotidiano! Le ‘alte’ società, i loro ‘divertimenti dignitosi’... ma va’ al diavolo! Neanche il matrimonio li ferma dal visitare queste... signore. Maledizione, non avevo idea che anche tu fossi come loro. Noi nemmeno... Vaffà, a tutti quanti!";
 			link.l1 = "Mary, aspetta! Maledizione...";
 			link.l1.go = "GoldenGirl_6";
 		break;
 		
 		case "GoldenGirl_3":
-			dialog.text = "Ce la siamo proprio meritata una vacanza, giusto? Pensi che riusciranno a reggere la vista di una signorina con un cappotto rosso? Immagina tutte le chiacchiere negli angoli… Qualcuno di sicuro sviene, sarebbe divertente, giusto?";
+			dialog.text = "Ce la siamo proprio meritata una vacanza, giusto? Pensi che riusciranno a reggere la vista di una signorina con un cappotto rosso? Immagina tutte le chiacchiere negli angoli... Qualcuno di sicuro sviene, sarebbe divertente, giusto?";
 			link.l1 = "Mary, mia cara, questa non è proprio la festa dove si porta una signora... almeno non una signora come te. Beh, è un po’ complicato ma lascia che ti spieghi, giusto?";
 			link.l1.go = "GoldenGirl_4";
 		break;
@@ -1912,7 +1912,7 @@ void ProcessDialogEvent()
 		
 		case "GoldenGirl_32":
 			dialog.text = "Charles, sei davvero tu?! Avevo quasi perso ogni speranza, giusto! Dio, quanto mi sei mancato! Ti prego, ti prego, perdonami, giusto?";
-			link.l1 = "No, perdonami, non l’avevo previsto… Grazie al cielo che sei arrivata, Mary! Sono davvero felice, giusto?";
+			link.l1 = "No, perdonami, non l’avevo previsto... Grazie al cielo che sei arrivata, Mary! Sono davvero felice, giusto?";
 			link.l1.go = "GoldenGirl_33";
 		break;
 		
@@ -1923,7 +1923,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GoldenGirl_34":
-			dialog.text = "Già, come se fosse servito a qualcosa, ma… Dannazione, anch’io Charles. Ti amo anch’io, giusto? Dio, finalmente siamo insieme!";
+			dialog.text = "Già, come se fosse servito a qualcosa, ma... Dannazione, anch’io Charles. Ti amo anch’io, giusto? Dio, finalmente siamo insieme!";
 			link.l1 = "E non voglio sprecare il tempo che abbiamo parlando di sciocchezze. Vieni con me e non oserò lasciarti stanotte, giusto? Anche se il cielo dovesse crollare su questa lurida città, io non ti lascerò mai più. Mai, giusto?";
 			link.l1.go = "GoldenGirl_35";
 		break;
@@ -2720,7 +2720,7 @@ void ProcessDialogEvent()
 			}
 			if (rLoc.type == "tavern" && !CheckAttribute(npchar, "quest.daily_sex") && sti(pchar.money) >= 10)
 			{
-				Link.l2 = RandPhraseSimple("Mary, affittiamo una stanza e restiamo insieme, giusto?","Amore, vorrei restare un po’ con te da soli… che ne dici se affittiamo una stanza e dimentichiamo tutto il resto per qualche ora, giusto?");
+				Link.l2 = RandPhraseSimple("Mary, affittiamo una stanza e restiamo insieme, giusto?","Amore, vorrei restare un po’ con te da soli... che ne dici se affittiamo una stanza e dimentichiamo tutto il resto per qualche ora, giusto?");
 				Link.l2.go = "room_sex";
 			}
 			link.l9 = "Non è niente finora, Mary, giusto?";
@@ -2770,7 +2770,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	

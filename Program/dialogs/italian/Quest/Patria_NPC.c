@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 		
 		case "noel_47":
 			dialog.text = "Hmm...";
-			link.l1 = "Parlando per esperienza, fondare una compagnia commerciale francese qui nell’Arcipelago sarebbe una pessima idea. Ora capisci quali difficoltà dovrai affrontare? Quanti cani bastardi vogliono la loro fetta dei profitti da queste parti? E non sono tipi che mollano facilmente. E i pirati… sono capaci di follie, chiamali pure pazzi, ma quasi sempre raggiungono i loro sporchi scopi. Per difendere i mercantili dovresti mantenere una flotta da guerra imponente, ma ne varrebbe la pena, da un punto di vista di dobloni?";
+			link.l1 = "Parlando per esperienza, fondare una compagnia commerciale francese qui nell’Arcipelago sarebbe una pessima idea. Ora capisci quali difficoltà dovrai affrontare? Quanti cani bastardi vogliono la loro fetta dei profitti da queste parti? E non sono tipi che mollano facilmente. E i pirati... sono capaci di follie, chiamali pure pazzi, ma quasi sempre raggiungono i loro sporchi scopi. Per difendere i mercantili dovresti mantenere una flotta da guerra imponente, ma ne varrebbe la pena, da un punto di vista di dobloni?";
 			link.l1.go = "noel_48";
 		break;
 		
@@ -340,7 +340,7 @@ void ProcessDialogEvent()
 		
 		case "noel_51":
 			dialog.text = "La vostra grazia è davvero ammirevole, Vice Ammiraglio! Che nobile animo! Non mi stupisce che siate rimasto qui così a lungo senza fretta di tornare a casa. Ma ci rivedremo: farò ritorno tra sei mesi. La Compagnia Francese dei Mercanti sorgerà. E quanto ai pirati, credo che esageriate un po'. In fin dei conti, abbiamo navi da guerra e capitani valorosi, come voi.";
-			link.l1 = "Mi dispiace, Barone, ma sono solo un uomo, e oltre a me la Francia ha solo una nave robusta nell’arcipelago, l’‘Eclatant’. Non basterà, ci rimetteremo più di quanto potremmo mai guadagnare… Eh, tant’è, così va il mondo, vedremo di inventarci qualcosa nel frattempo… Quand’è che ve ne tornerete in Francia?";
+			link.l1 = "Mi dispiace, Barone, ma sono solo un uomo, e oltre a me la Francia ha solo una nave robusta nell’arcipelago, l’‘Eclatant’. Non basterà, ci rimetteremo più di quanto potremmo mai guadagnare... Eh, tant’è, così va il mondo, vedremo di inventarci qualcosa nel frattempo... Quand’è che ve ne tornerete in Francia?";
 			link.l1.go = "noel_52";
 		break;
 		
@@ -1656,7 +1656,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tailor_09":
-			dialog.text = "Immagina un po’! Ho spiegato quanto fosse importante, ho fatto l’ordine… Ma hanno spedizioni più urgenti da sbrigare! E io che dovrei fare? Ordinare con un anno d’anticipo, sperando che si degnino di portarmi i materiali?";
+			dialog.text = "Immagina un po’! Ho spiegato quanto fosse importante, ho fatto l’ordine... Ma hanno spedizioni più urgenti da sbrigare! E io che dovrei fare? Ordinare con un anno d’anticipo, sperando che si degnino di portarmi i materiali?";
 			link.l1 = "Che cosa ti manca esattamente? Magari si può trovare qui nei Caraibi?";
 			link.l1.go = "Tailor_10";
 		break;
@@ -1704,7 +1704,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tailor_17":
-			dialog.text = "C’è ancora una cosa… I miei ferri da sarto sono ormai inutilizzabili. Ne ho ordinati di nuovi da Parigi, ma ahimè… Se potessi procurarmi tutti i materiali necessari e prestarmi gli attrezzi, se li hai – solo in prestito, poi me ne procurerò altri! – inizierei subito a cucire.";
+			dialog.text = "C’è ancora una cosa... I miei ferri da sarto sono ormai inutilizzabili. Ne ho ordinati di nuovi da Parigi, ma ahimè... Se potessi procurarmi tutti i materiali necessari e prestarmi gli attrezzi, se li hai – solo in prestito, poi me ne procurerò altri! – inizierei subito a cucire.";
 			link.l1 = "Ebbene, che posso fare? Ti porterò tutto ciò che ti serve. Dove posso trovarti? Non starai mica ad aspettarmi all’ufficio del porto, vero?";
 			link.l1.go = "Tailor_18";
 		break;

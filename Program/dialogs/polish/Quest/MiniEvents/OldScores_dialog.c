@@ -4,6 +4,7 @@ void ProcessDialogEvent()
 	aref Link, NextDiag;
 	int i, iTemp;
 	string sTemp;
+	bool bOk1, bOk2;
 	
 	DeleteAttribute(&Dialog,"Links");
 	
@@ -25,19 +26,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "OS_Matros_sluh":
-			if (!CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe" && sti(pchar.rank) >= 5)
+			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			if (bOk1 || bOk2)
 			{
-				dialog.text = RandPhraseSimple("Hej, "+GetSexPhrase("chłopie","koleżanko")+", nie widział"+GetSexPhrase("eś","aś")+" mojego buta? Ktoś go ukradł, gdy spałem pijany pod stołem w tawernie.",
-									 "Mówią, że wczoraj w karczmie była bójka... Ale kto się bił – nikt nie wie. Moja gęba jest cała. Chyba.", "Na wszystkie diabły, wczoraj miałem sakiewkę ze złotem! Gdzie ona się podziała?!");
-				link.l1 = "...";
-				link.l1.go = "exit";
-				NextDiag.TempNode = "OS_Matros_sluh";
-
-				SetQuestHeader("OS");
-				AddQuestRecord("OS", "1");
-				pchar.questTemp.OS_Start = true;
-				pchar.questTemp.OS_Tavern_1 = true;
-				AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
+				dialog.text = "Mówią, że wczoraj w tawernie była bójka... Ale kto się bił - diabli wiedzą. Moja gęba cała. Chyba.";
+				link.l1 = "Wygląda na to, że była tu niezła popijawa?";
+				link.l1.go = "OS_Matros_sluh_2";
 			}
 			else
 			{
@@ -65,6 +60,19 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
+		break;
+		
+		case "OS_Matros_sluh_2":
+			dialog.text = "I to jaka! Karczmarz miał pełne ręce roboty... hik... A jeszcze... ktoś ukradł mu gin! Nie butelkę, ale całą beczkę! I to taką, jakiej nie znajdziesz w całych Karaibach! Mówią, że sprowadzona aż z Europy. Dla kogo ją trzymał — nie mówi, ale jedno jest pewne: jeśli szybko jej nie znajdą, biedaka czeka piekielna burza!";
+			link.l1 = "Ciekawe. Trzymaj się, pijaku.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "OS_Matros_sluh";
+			
+			SetQuestHeader("OS");
+			AddQuestRecord("OS", "1");
+			pchar.questTemp.OS_Start = true;
+			pchar.questTemp.OS_Tavern_1 = true;
+			AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
 		break;
 
 		case "OS_Matros_again":
@@ -284,7 +292,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Zaharia_3";
 			CharacterTurnByChr(npchar, pchar);
 			TakeItemFromCharacter(pchar, "cask_gin");
-			Log_Info("Oddałeś beczkę ginu");
+			notification("Oddałeś beczkę ginu", "NONE");
 		break;
 
 		case "Zaharia_3":

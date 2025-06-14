@@ -354,7 +354,7 @@ void OnAddBtnClick()
 void OnRemoveBtnClick()
 {
 	ref rGood;
-	int iNum = MakeInt(GameInterface.TG_EDIT.str);;
+	int iNum = MakeInt(GameInterface.TG_EDIT.str);
 	
 	if(iNum > 0)
 	{

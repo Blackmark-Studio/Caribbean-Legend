@@ -24,7 +24,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			SetQuestHeader("DWH");
 			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;;
+			pchar.questTemp.DWH_Start = true;
 			
 			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
 			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
@@ -195,7 +195,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			SetQuestHeader("DWH");
 			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;;
+			pchar.questTemp.DWH_Start = true;
 			
 			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
 			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
@@ -688,7 +688,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			SetQuestHeader("DWH");
 			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;;
+			pchar.questTemp.DWH_Start = true;
 			
 			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
 			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");

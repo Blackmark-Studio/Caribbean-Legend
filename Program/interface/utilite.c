@@ -995,6 +995,18 @@ string GetItemDescribe(int iGoodIndex)
 			describeStr += newStr() + LanguageConvertString(lngFileID, "talisman18_NoBonus") + newStr();
 		}
 	}
+	if(arItm.id == "talisman19")
+	{
+		if(IsEquipCharacterByArtefact(pchar, "talisman19"))
+		{
+			describeStr = LanguageConvertString(lngFileID, "talisman19_InSlot") + newStr();
+			
+		}
+		else
+		{
+			describeStr = GetAssembledString( LanguageConvertString(lngFileID,"itmdescr_talisman19"), pchar) + newStr();
+		}
+	}
 	if(CheckAttribute(arItm, "UpgradeStage"))
 	{
 		describeStr += newStr() + LanguageConvertString(lngFileID,"UpgradeStageInfo_" + arItm.id + "_" + sti(arItm.UpgradeStage));

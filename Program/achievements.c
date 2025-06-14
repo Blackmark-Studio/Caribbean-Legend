@@ -297,3 +297,25 @@ void CheckAchievments()
 		}
 	}
 }
+
+// belamour cle 1.5 пожарные бригады
+void CheckFireBrigadeAchievements(int iNation, string sWinType)
+{
+	string shortName = NationShortName(iNation);
+	if(!CheckAttribute(pchar,"Achievment.FireBrigade." + shortName))
+	{
+		if(iNation == SPAIN) Achievment_Set("ach_CL_158");
+		pchar.Achievment.FireBrigade.(shortName) = true;
+	}
+	if(SandBoxMode && !GetAchievement("ach_CL_160"))
+	{
+		int fireBrigadeWinQty = 0;
+		for(int i = 0; i <= NON_PIRATES; i++)
+		{
+			shortName = NationShortName(i);
+			if(CheckAttribute(pchar,"Achievment.FireBrigade." + shortName))
+				fireBrigadeWinQty ++;
+		}
+		if(fireBrigadeWinQty > NON_PIRATES) Achievment_Set("ach_CL_160");
+	}
+}

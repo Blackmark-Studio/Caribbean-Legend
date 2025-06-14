@@ -1245,3 +1245,22 @@ QuestsUtilite_276
 {
 Wody stają się bardziej niebezpieczne, zagrożenie ze strony piratów wzrosło
 }
+
+QuestsUtilite_277
+{
+Chimera
+}
+
+QuestsUtilite_278
+{
+~ Ale ich rozjuszyliśmy! Okręt flagowy eskadry to ~
+}
+
+QuestsUtilite_279
+{
+Diego
+}
+QuestsUtilite_280
+{
+de Landa
+}

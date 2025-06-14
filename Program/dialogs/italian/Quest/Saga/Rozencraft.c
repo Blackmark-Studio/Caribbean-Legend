@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 			}
 			if(iTemp >= 70 && iTemp < 90)
 			{
-				dialog.text = "Bene.   Ecco l’oro. Se trovi altro legno di ferro, vai alla taverna di Philipsburg e parla con… lo sai tu chi. Lui mi farà sapere. Mi pare che con te si possa far affari non peggio, che con quel babbeo di Molligan.";
+				dialog.text = "Bene.   Ecco l’oro. Se trovi altro legno di ferro, vai alla taverna di Philipsburg e parla con... lo sai tu chi. Lui mi farà sapere. Mi pare che con te si possa far affari non peggio, che con quel babbeo di Molligan.";
 				link.l1 = "D'accordo. Affare fatto.";
 				link.l1.go = "rozencraft_5";
 				pchar.GenQuest.Bakaut = "true"; // генератор сбыта бакаута

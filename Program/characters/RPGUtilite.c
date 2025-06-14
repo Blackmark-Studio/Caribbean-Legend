@@ -2,6 +2,7 @@
 // метод для совместимости с .ИНИ файлом (секция SKILLCHANGER)
 
 #define MAX_ACHIEVMENTS		73
+#define MAIN_HP_BONUS		30.0
 
 // имя персонажа
 string GetCharacterName(string _param)
@@ -69,6 +70,11 @@ int GetCharacterAddHPValue(ref _refCharacter)
 int GetCharacterBaseHPValue(ref _refCharacter)
 {
 	int ret = makeint(30.0 + GetCharacterSPECIALSimple(_refCharacter, SPECIAL_S)*GetCharacterSPECIALSimple(_refCharacter, SPECIAL_E)*0.5);
+	if(IsMainCharacter(_refCharacter))	// бонус хп у ГГ
+	{
+		_refCharacter.chr_ai.main_hp_bonus = MAIN_HP_BONUS;
+		ret += makeint(MAIN_HP_BONUS);
+	}
 	return ret;
 }
 
@@ -90,6 +96,10 @@ float GetCharacterMaxEnergyValue(ref _refCharacter)
 	{
 		ret += stf(_refCharacter.cheats.energyplus);
 	}
+	if(CheckAttribute(_refCharacter, "bonusEnergy"))
+	{
+		ret = ret + stf(_refCharacter.bonusEnergy);
+	}
 	return ret;
 }
 
@@ -105,6 +115,29 @@ float GetCharacterMaxEnergyABSValue(ref _refCharacter)
 		ret += stf(_refCharacter.questTemp.ChickenGod.EnergyMod);
 	}
 	return ret;
+}
+
+void AddBonusEnergyToCharacter(ref _refCharacter, int iEnrg)
+{
+	if(CheckAttribute(_refCharacter, "bonusEnergy"))
+	{
+		_refCharacter.bonusEnergy = sti(_refCharacter.bonusEnergy) + iEnrg;
+	}
+	else
+	{
+		_refCharacter.bonusEnergy = iEnrg;
+	}
+	SetEnergyToCharacter(_refCharacter);
+}
+
+void RemoveBonusEnergyFromCharacter(ref _refCharacter, int howMuch)
+{
+	_refCharacter.bonusEnergy = sti(_refCharacter.bonusEnergy) - howMuch;
+	if (sti(_refCharacter.bonusEnergy) <= 0)
+	{
+		DeleteAttribute(_refCharacter, "bonusEnergy");
+	}
+	SetEnergyToCharacter(_refCharacter);
 }
 
 void SetEnergyToCharacter(ref _refCharacter)
@@ -714,7 +747,7 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
         {
             AddMsgToCharacter(_chref, MSGICON_LEVELUP);
             LA_LevelUp(XI_ConvertString("Level Up"), ""+sti(_chref.rank)+"");
-            Event("PlayerLevelUp", "l", sti(_chref.rank));
+            Event("PlayerLevelUp");
             //QuestsCheck();
         }
     }
@@ -1743,6 +1776,11 @@ int GetSummonSkillFromName(ref _refCharacter, string skillName)
 
     _refCharacter.BakSkill.(skillName)      =  sumSkill; // значение
     _refCharacter.BakSkillCount.(skillName) = rand(5); // счетчик немного размажем пересчет
+	
+	if(GetCharacterIndex(_refCharacter.id) == GetMainCharacterIndex())
+	{
+		GetCharacterCrewMorale(_refCharacter);
+	}
 
     return sumSkill;
 }
@@ -2015,7 +2053,7 @@ int GetMaxItemsWeight(ref _chref)
         int iBonus = 0;
         if (IsCharacterPerkOn(_chref, "Grus")) iBonus = 30;
         //опасная рекурсия  если писать GetCharacterSPECIAL
-        iBonus = iBonus + CHAR_ITEMS_WEIGHT + GetCharacterSPECIALSimple(_chref, SPECIAL_S)*(GetCharacterSPECIALSimple(_chref, SPECIAL_E) + 12 - MOD_SKILL_ENEMY_RATE);
+        iBonus = iBonus + CHAR_ITEMS_WEIGHT + GetCharacterSPECIALSimple(_chref, SPECIAL_S)*(GetCharacterSPECIALSimple(_chref, SPECIAL_E) + 10);
 		if(IsEquipCharacterByArtefact(_chref, "obereg_3")) iBonus = makeint(iBonus * 1.15);
 		if(IsEquipCharacterByArtefact(_chref, "indian_7")) iBonus = makeint(iBonus * 0.9);
 		if(IsEquipCharacterByArtefact(_chref, "totem_06")) iBonus = makeint(iBonus * 1.10); // belamour legendary edition гонтер
@@ -2565,7 +2603,6 @@ void setWDMPointXZ(string _location)
 	// координаты на гловал карте <--
 }
 
-
 // нужно не перекрывать еще и признаки фантома
 void ChangeAttributesFromCharacter(ref CopyChref, ref PastChref, bool _dialogCopy)
 {
@@ -2764,6 +2801,11 @@ void ChangeAttributesFromCharacter(ref CopyChref, ref PastChref, bool _dialogCop
 	if (CheckAttribute(PastChref, "PerkValue.EnergyPlus"))
 	{
 		CopyChref.PerkValue.EnergyPlus =   PastChref.PerkValue.EnergyPlus;
+	}
+	
+	if (CheckAttribute(PastChref,"bonusEnergy"))
+	{
+		CopyChref.bonusEnergy = PastChref.bonusEnergy;
 	}
 
 	// ugeen --> нужно для генерации различных ситуации в каюте абордированного кэпа
@@ -3051,14 +3093,27 @@ void initNewMainCharacter()//инициализация главного гер�
  	SetNationRelations();
  	// от кого драпаем
 	ch.HeroParam.EnemyNation  = FindEnemyNation2Nation(sti(ch.nation));
-	
+
     // boal вешаем прерывание на охотников навечно (для моря и земли) -->
-    SetTimerCondition("SeaHunterCheck", 0, 0, 6, true);
+    SetFunctionTimerCondition("SeaHunterCheck_eng", 0, 0, 6, true);
+    SetFunctionTimerCondition("SeaHunterCheck_fra", 0, 0, 6, true);
+    SetFunctionTimerCondition("SeaHunterCheck_spa", 0, 0, 6, true);
+    SetFunctionTimerCondition("SeaHunterCheck_hol", 0, 0, 6, true);
+
+    SetFunctionTimerCondition("FireBrigade_spa", 0, 0, 5, true);
+    if(SandBoxMode)
+    {
+        SetFunctionTimerCondition("FireBrigade_eng", 0, 0, 5, true);
+        SetFunctionTimerCondition("FireBrigade_fra", 0, 0, 5, true);
+        SetFunctionTimerCondition("FireBrigade_hol", 0, 0, 5, true);
+    }
+
     SaveCurrentQuestDateParam("Land_HunterTimerEng");
     SaveCurrentQuestDateParam("Land_HunterTimerFra");
     SaveCurrentQuestDateParam("Land_HunterTimerSpa");
     SaveCurrentQuestDateParam("Land_HunterTimerHol");
     // boal вешаем прерывание на охотников навечно (для моря и земли) <--
+
     LAi_SetHP(ch, LAI_DEFAULT_HP, LAI_DEFAULT_HP);
 
     ch.HeroParam.HeroType = NullCharacter.HeroParam.HeroType;
@@ -3156,7 +3211,9 @@ void initNewMainCharacter()//инициализация главного гер�
 		SetBaseShipData(pchar);
 		RealShips[sti(pchar.Ship.Type)].ship.upgrades.hull = 2;
 		SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
-		realships[sti(pchar.ship.type)].SpeedRate = 18;
+		realships[sti(pchar.ship.type)].SpeedRate = 15.5;
+		realships[sti(pchar.ship.type)].TurnRate = 52.5;
+		realships[sti(pchar.ship.type)].WaterLine = 1.3;
 		realships[sti(pchar.ship.type)].Capacity = 6500;
 		realships[sti(pchar.ship.type)].WindAgainstSpeed = 1.3;
 		pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS12;

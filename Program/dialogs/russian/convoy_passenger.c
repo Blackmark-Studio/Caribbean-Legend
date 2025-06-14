@@ -76,7 +76,7 @@ void ProcessDialogEvent()
 			pchar.quest.(sTemp).win_condition.l1.location = sTavern;
 			pchar.quest.(sTemp).win_condition = "AllPassangersComplited";	
 			pchar.quest.(sTemp).Idx	= npchar.index; 
-			if (rand(2) == 1) TraderHunterOnMap();
+			if (rand(2) == 1) TraderHunterOnMap(false);
 			AddPassenger(pchar, npchar, false);
 			SetCharacterRemovable(npchar, false);
 			chrDisableReloadToLocation = false;

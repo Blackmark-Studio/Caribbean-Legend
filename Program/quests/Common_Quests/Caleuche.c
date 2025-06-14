@@ -137,7 +137,7 @@ void Caleuche_CreateGhostship(string qName)//подгружаем в море К
 
 void Caleuche_GhostshipBoarding() // калеуче готовит абордаж
 {
-	PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard0.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard0.wav");
 	SetLaunchFrameFormParam("", "", 0, 4);
 	SetLaunchFrameFormPic("loading\boarding_b3.tga");
 	LaunchFrameForm();
@@ -411,7 +411,7 @@ void Caleuche_MapGhostshipBoarding() // подпустили слишком бл
 {
 	pchar.GenQuest.FrameLockEsc = true;
 	SetMusicAlarm("");
-	PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");
 	PlaySound("interface\abordage2.wav");
 	SetLaunchFrameFormParam("", "", 0, 15);
 	SetLaunchFrameFormPic("loading\boarding_b3.tga");
@@ -1566,7 +1566,7 @@ void Caleuche_FinalBattle(string qName) // последний бой калеу�
 void Caleuche_CreateGhostshipKhalRoa(string qName)//подгружаем в море Калеуче
 {
 	log_info(StringFromKey("Caleuche_26"));
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy1.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy1.wav");
 	SetMusicAlarm("music_storm");
 	int iRank = 20+MOD_SKILL_ENEMY_RATE*3;
 	Group_FindOrCreateGroup("Caleuche_Attack");
@@ -1930,7 +1930,7 @@ bool Caleuche_QuestComplete(string sQuestName, string qname)
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sld = characterFromId("Helena");
 			else
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("caleuche_oursailor", "citiz_36", "man", "man", 25, FRANCE, 1, false, "soldier"));
+				sld = GetCharacter(NPC_GenerateCharacter("caleuche_oursailor", "Alonso", "man", "man", 25, FRANCE, 1, false, "soldier"));
 				sld.name = StringFromKey("Caleuche_39");
 				sld.lastname = StringFromKey("Caleuche_40");
 				sld.dialog.FileName = "Quest\Caleuche_dialog.c";

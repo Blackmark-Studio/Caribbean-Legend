@@ -257,14 +257,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BetsiPrice_12":
-			dialog.text = "Ah, che nobile gesto, Capitano "+pchar.name+"! Anche se, sono certa che l’oste era più preoccupato per il suo bottino che per la mia pelle. Purtroppo oggi non posso invitarti – devo rimettermi in sesto. Il tempo passato in cantina non mi ha certo resa più graziosa. Ma se non ci rivediamo… giuro che non te la perdonerò. Quindi torna domani in taverna, avrò un… dono per te.";
+			dialog.text = "Ah, che nobile gesto, Capitano "+pchar.name+"! Anche se, sono certa che l’oste era più preoccupato per il suo bottino che per la mia pelle. Purtroppo oggi non posso invitarti – devo rimettermi in sesto. Il tempo passato in cantina non mi ha certo resa più graziosa. Ma se non ci rivediamo... giuro che non te la perdonerò. Quindi torna domani in taverna, avrò un... dono per te.";
 			link.l1 = "Ebbene, ora ho un altro buon motivo per tornare qui. A presto, M... Betsy.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("TBP_ProvodimDoDoma_3");
 		break;
 		
 		case "BetsiPrice_12_otdal_kulon":
-			dialog.text = "Ah, che nobile gesto, Capitano "+pchar.name+"! Anche se, sono certa che l’oste era più preoccupato per i suoi guadagni che per la mia sorte. Purtroppo oggi non posso invitarti dentro – devo riprendermi. Il tempo passato in cantina non mi ha certo reso più bella. Ma se non ci rivedremo – non te lo perdonerò mai. Quindi passa domani in taverna, avrò un… dono per te.";
+			dialog.text = "Ah, che nobile gesto, Capitano "+pchar.name+"! Anche se, sono certa che l’oste era più preoccupato per i suoi guadagni che per la mia sorte. Purtroppo oggi non posso invitarti dentro – devo riprendermi. Il tempo passato in cantina non mi ha certo reso più bella. Ma se non ci rivedremo – non te lo perdonerò mai. Quindi passa domani in taverna, avrò un... dono per te.";
 			link.l1 = "Ebbene, adesso ho un'altra buona ragione per far tappa da queste parti. Ci vediamo, M... Betsy.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("TBP_ProvodimDoDoma_3");

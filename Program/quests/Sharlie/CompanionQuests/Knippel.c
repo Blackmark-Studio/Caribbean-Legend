@@ -994,7 +994,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "DTSG_ProshloeDominika_2") {
-		StartQuestMovie(true, false, true);
+		//StartQuestMovie(true, false, true);
 		LAi_SetActorType(pchar);
 		TeleportCharacterToPosAy(pchar, -5.91, 4.56, 6.02, 1.50);
 		locCameraToPos(-0.99, 6.15, 7.09, true);
@@ -1279,6 +1279,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		LAi_SetPlayerType(PChar);
 		
 		pchar.GenQuest.CabinLock = true;
+		EndQuestMovie();
 		QuestToSeaLogin_Launch();
 		QuestToSeaLogin_PrepareLoc("Antigua", "Quest_Ships", "Quest_ship_1", false);
 		DoQuestCheckDelay("DTSG_SegodnyaVremya_2", 3.5);

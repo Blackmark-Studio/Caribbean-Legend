@@ -130,6 +130,11 @@ void wdmCreateWorldMap()
 	if(HasShipTrait(pchar, "trait01")) fSpeedBonus += 0.05;
 	worldMap.kPlayerMaxSpeed = 1.0 + fSpeedBonus;
 	worldMap.shipSpeedOppositeWind = 0.55;
+	bool IsEquipGlassSP3 = GetCharacterEquipByGroup(pchar, SPYGLASS_ITEM_TYPE) == "itmname_spyglassSP3";
+	worldMap.enemyshipViewDistMin = GetFloatByCondition(IsEquipGlassSP3, 60.0, 69.0);
+	worldMap.enemyshipViewDistMax = GetFloatByCondition(IsEquipGlassSP3, 120.0, 138.0);
+	worldMap.stormViewDistMin = GetFloatByCondition(IsEquipGlassSP3, 90.0, 103.5);
+	worldMap.stormViewDistMax = GetFloatByCondition(IsEquipGlassSP3, 180.0, 207.0);
 	wdmLockReload = false;
     // Механика мощи
     UpdatePlayerSquadronPower();
@@ -418,12 +423,18 @@ void wdmMarkDeleteEncounters()
 void wdmAddNavyExp()
 {
 	if(!isEntity(&WorldMap)) return;
-	if(GetHour() == 12.00 || GetHour() == 0.00)
+	
+	float hour = GetHour();
+	
+	if(hour == 12.00 || hour == 0.00)
 	{
 		if(IsEquipCharacterByItem(pchar, "bussol") && IsCharacterEquippedArtefact(pchar, "clock2"))
 			AddCharacterExpToSkill(pchar, "Sailing", 2.0);
 		else
 			AddCharacterExpToSkill(pchar, "Sailing", 1.5);
+		// belamour пока на тесты раз в три дня
+		if(hour == 0.00 && GetDataDay() % 3 == 0) notification(StringFromKey("RPGUtilite_1"), "Sailing");
+			
 	}
 	if(GetSkillValue(pchar, SKILL_TYPE, "Sailing") < 100)
 	{

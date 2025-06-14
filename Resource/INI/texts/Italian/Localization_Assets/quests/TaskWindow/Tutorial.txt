@@ -1,0 +1,159 @@
+Tutorial_1
+{
+Gira la nave
+}
+
+Tutorial_2
+{
+Premi @<key1> e @<key2> per girare la nave
+}
+
+Tutorial_3
+{
+Controllo del tempo
+}
+
+Tutorial_4
+{
+Attiva l’accelerazione del tempo @<key>
+}
+
+Tutorial_5
+{
+Premi di nuovo @<key> per disattivare
+}
+
+Tutorial_6
+{
+Premi @<key> per accelerare fino a x6
+}
+
+Tutorial_7
+{
+Premi @<key1> per rallentare, oppure @<key2>
+}
+
+Tutorial_8
+{
+Controllo delle vele
+}
+
+Tutorial_9
+{
+Imposta le vele in modalità battaglia @<key1>
+}
+
+Tutorial_10
+{
+Ammaina completamente le vele @<key1>
+}
+
+Tutorial_11
+{
+Basi del combattimento navale
+}
+
+Tutorial_12
+{
+Usa @<key1> per una bordata rapida
+}
+
+Tutorial_13
+{
+Combattimento navale avanzato
+}
+
+Tutorial_14
+{
+@<key1> Entra in modalità mira
+}
+
+Tutorial_15
+{
+Premi @<key1> per una bordata mirata
+}
+
+Tutorial_16
+{
+@<key1> Esci dalla modalità mira
+}
+
+Tutorial_17
+{
+Vinci la battaglia
+}
+
+Tutorial_18
+{
+Affonda le navi pirata rimaste
+}
+
+Tutorial_19
+{
+Attacca il nemico
+}
+
+Tutorial_20
+{
+@<key1> Colpo duro
+}
+
+Tutorial_21
+{
+@<key1> Affondo
+}
+
+Tutorial_22
+{
+@<key1> Attacco pesante
+}
+
+Tutorial_23
+{
+Difenditi
+}
+
+Tutorial_24
+{
+@<key1> Blocca gli attacchi
+}
+
+Tutorial_25
+{
+@<key1> Para gli attacchi
+}
+
+Tutorial_26
+{
+Sconfiggi il pirata!
+}
+
+Tutorial_27
+{
+Missioni
+}
+
+Tutorial_28
+{
+Leggi il documento @<key1>
+}
+
+Tutorial_29
+{
+Apri il baule dei dobloni @<key1>
+}
+
+Tutorial_30
+{
+Perquisizione
+}
+
+Tutorial_31
+{
+Perquisisci i marinai
+}
+
+Tutorial_32
+{
+Dai ad Alonso la pozione misteriosa
+}

@@ -1,3 +1,4 @@
+// залп в авторежиме
 void Ship_BortFire()
 {
 	float	dx, dy, dz, d2x, d2y, d2z;
@@ -9,12 +10,27 @@ void Ship_BortFire()
 	ref rCharacter = GetCharacter(GetEventData());
 	firedShip = GetEventData();
 	bortName = GetEventData();
-	dx = GetEventData();
-	dy = GetEventData();
-	dz = GetEventData();
-	d2x = GetEventData();
-	d2y = GetEventData();
-	d2z = GetEventData();
+	
+	string sMode = GetEventData();
+	
+	// TUTOR-ВСТАВКА
+	if(TW_IsActive() && IsMainCharacter(rCharacter))
+	{
+		if(sMode == "auto" && objTask.sea_battle == "1_AutoFire")
+		{
+			if(TW_IncreaseCounter("sea_battle", "AutoFire_do", 1))
+				TW_FinishSea_Battle_1_AutoFire();
+		}
+		if(sMode == "aiming" && objTask.sea_battle == "3_AimingFire")
+		{
+			objTask.sea_battle = "4_AimingFire";
+            TW_ColorWeak(TW_GetTextARef("AimingFire_do"));
+            string sText = StringFromKey("Tutorial_16", GKIC("FireCamera_Set", "SailingFire"));
+            TW_AddBottomText("AimingFire_exit", sText, "Default");
+            TW_RecalculateLayout();
+		}
+	}
+	
     // boal fix charge 29.11.03 -->
     if (bortName == "cannonr" || bortName == "cannonl")
     { // только для бортов проверяем.
@@ -90,6 +106,16 @@ void Ship_BortFire()
 			DeleteAttribute(rCharacter,"Tmp.LastBortFire");
 		}
 	}
+	
+	if(sMode == "aiming")
+		return;
+	
+	dx = GetEventData();
+	dy = GetEventData();
+	dz = GetEventData();
+	d2x = GetEventData();
+	d2y = GetEventData();
+	d2z = GetEventData();
 
 	SendMessage(&SeaOperator, "lisffffff", MSG_SEA_OPERATOR_FIRE, firedShip, bortName, dx, dy, dz, d2x, d2y, d2z);
 }

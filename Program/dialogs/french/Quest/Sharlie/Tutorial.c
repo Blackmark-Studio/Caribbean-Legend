@@ -291,8 +291,8 @@ void ProcessDialogEvent()
 				link.l3 = "60 doublons.";
 				link.l3.go = "AlonsoGold_DatDeneg_3_gold60";
 			}
-			link.l4 = "Je dois tout revérifier. Je reviendrai plus tard.";
-			link.l4.go = "AlonsoWait_2";
+			// link.l4 = "Je dois tout revérifier. Je reviendrai plus tard.";
+			// link.l4.go = "AlonsoWait_2";
 		break;
 		
 		case "AlonsoGold_DatDeneg_3_gold40":
@@ -553,6 +553,7 @@ void ProcessDialogEvent()
 			{
 				LAi_SetStayType(npchar);
 				npchar.SharlieTutorial_OhrannikStay = true;
+				DeleteQuestCondition("SharlieTutorial_OhrannikStopaet");
 			}
 		break;
 		
@@ -884,8 +885,8 @@ void ProcessDialogEvent()
 				link.l3 = "42 doublons.";
 				link.l3.go = "RumGold_DatDeneg_gold42";
 			}
-			link.l4 = "Je dois tout revérifier. Je reviendrai plus tard.";
-			link.l4.go = "RumGold_DatDeneg_3";
+			// link.l4 = "Je dois tout revérifier. Je reviendrai plus tard.";
+			// link.l4.go = "RumGold_DatDeneg_3";
 		break;
 		
 		case "RumGold_DatDeneg_gold28":
@@ -985,7 +986,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWantRum_PrinestiRum_10":
-			dialog.text = "Heureusement, il n’est pas nécessaire d’être expert en tout. Vous pouvez toujours engager un bon navigateur, il couvrira vos lacunes. Assurez-vous simplement qu’il soit payé à temps et vous soit loyal. Être sans navigateur sur un navire que vous ne pouvez pas contrôler… c’est peu recommandable.";
+			dialog.text = "Heureusement, il n’est pas nécessaire d’être expert en tout. Vous pouvez toujours engager un bon navigateur, il couvrira vos lacunes. Assurez-vous simplement qu’il soit payé à temps et vous soit loyal. Être sans navigateur sur un navire que vous ne pouvez pas contrôler... c’est peu recommandable.";
 			link.l1 = "Merci pour la leçon, Henry. Je ne sais pas si cela me servira, mais un savoir de plus ne fait jamais de mal.";
 			link.l1.go = "SailorWantRum_PrinestiRum_11";
 			AddCharacterSkillPoints(pchar, "Sailing", 3);
@@ -1263,8 +1264,8 @@ void ProcessDialogEvent()
 				link.l3 = "30 doublons.";
 				link.l3.go = "BallsGold_DatDeneg_gold30";
 			}
-			link.l4 = "Je dois tout revérifier. Je reviendrai plus tard.";
-			link.l4.go = "BallsGold_DatDeneg_3";
+			// link.l4 = "Je dois tout revérifier. Je reviendrai plus tard.";
+			// link.l4.go = "BallsGold_DatDeneg_3";
 		break;
 		
 		case "BallsGold_DatDeneg_gold20":
@@ -1568,8 +1569,6 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_ActivateWindlass")) AddQuestRecordInfo("SharlieTutorial_ListOfSailors", "1");
 			else AddQuestRecordInfo("SharlieTutorial_ListOfSailors", "2");
 			GiveItem2Character(PChar, "chest");
-			SetFunctionExitFromLocationCondition("Tutorial_Logbook", pchar.location, false);
-			Tutorial_Dubloons("");
 			if (!isMultiObjectKnown("gold_dublon"))
 			{
 				SetAlchemyRecipeKnown("gold_dublon");
@@ -1636,6 +1635,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.SharlieTutorial_KaznacheyQuestCompleted = true;
 			DeleteAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuestActive");
 			npchar.Merchant.type = "SharlieTurorialK";
+			pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
 		break;
 		
 		case "OfficerKaznachey_15_gold_115":
@@ -1666,27 +1666,50 @@ void ProcessDialogEvent()
 
 		case "OfficerKaznachey_16_Proval": // Если не выполнил задание, то отбирает дублоны
 			dialog.text = "Vous flânez, monsieur "+pchar.lastname+" ?";
-			link.l2 = "Vous aussi, relégué à la cale ?";
-			link.l2.go = "OfficerKaznachey_16_Proval_2";
+			link.l1 = "Vous aussi, relégué à la cale ?";
+			link.l1.go = "OfficerKaznachey_16_Proval_2";
 		break;
 		
 		case "OfficerKaznachey_16_Proval_2":
 			dialog.text = "Je suis le médecin de bord, "+pchar.lastname+" ! Bientôt, la salle commune sera remplie de blessés, et je verrai plus de sang que n’importe quel combattant. Et même si je n’étais que le trésorier — je me battrai comme tout le monde. Non, le seul à s’être vu relégué dans la cale confortable — c’est vous.";
-			link.l2 = "Alors qu’est-ce que vous faites ici ?";
-			link.l2.go = "OfficerKaznachey_16_Proval_3";
+			link.l1 = "Alors qu’est-ce que vous faites ici ?";
+			link.l1.go = "OfficerKaznachey_16_Proval_3";
 		break;
 
 		case "OfficerKaznachey_16_Proval_3":
+			dialog.text = "La bataille ne commencera que dans quelques heures, c'est donc le moment parfait pour clôturer les comptes quotidiens. Vous avez mon coffre de doublons, de Maure. Veuillez le rendre.";
+			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
+			{
+				link.l1 = "Prenez-le. Et ne montrez plus votre tête ici en bas.";
+				link.l1.go = "OfficerKaznachey_16_Proval_4";
+			}
+			else
+			{
+				link.l1 = "J'ai laissé vos affaires ailleurs.";
+				link.l1.go = "OfficerKaznachey_16_Proval_5";
+			}
+		break;
+		
+		case "OfficerKaznachey_16_Proval_4":
 			addGold = GetCharacterItem(pchar, "gold_dublon");
-			dialog.text = "Le combat ne commencera que dans quelques heures, alors c’est le moment idéal pour clore la comptabilité du jour. Vous avez ma cassette de doublons, "+pchar.lastname+". Rendez-la, je vous prie.";
-			link.l2 = "...";
-			link.l2.go = "exit";
+			dialog.text = "Je n'en avais pas l'intention. Je ne suis pas un rat de terre - ma place n'est pas dans la cale. Adieu.";
+			link.l1 = "...";
+			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
-			ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			else ChangeCharacterComplexReputation(pchar, "nobility", -6);
 			RemoveDublonsFromPCharTotal(addGold);
 			AddItems(npchar, "gold_dublon", addGold);
 			TakeItemFromCharacter(pchar, "chest");
 			TakeItemFromCharacter(pchar, "chest_open");
+		break;
+		
+		case "OfficerKaznachey_16_Proval_5":
+			dialog.text = "Ailleurs... Nous en discuterons après la bataille - en présence du capitaine. À bientôt.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
+			ChangeCharacterComplexReputation(pchar, "nobility", -6);
 		break;
 
 		case "TreasurerTrade":

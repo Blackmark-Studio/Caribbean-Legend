@@ -898,17 +898,19 @@ Stwierdziłem, że nie obchodzą mnie żadne dźwięki, czy straszne jęki wymy�
 #QUEST SixCaptains
 Sześciu Kapitanów
 #TEXT	1
- Być może to pierwszy raz, gdy krótkie spotkanie z kimś, kto nie miał dla mnie ani pracy, ani interesu, skłoniło mnie do zapisania wpisu w tym dzienniku. Nie rozumiem, dlaczego ten ksiądz wywarł na mnie takie wrażenie. Nie znam jego imienia, a czasami gadał bzdury, ale zapadł mi w pamięć. Spotkaliśmy się już dwa razy i można by to uznać za zbieg okoliczności. Ale jeśli spotkamy się ponownie...
+Być może to pierwszy raz, gdy krótkie spotkanie z kimś, kto nie miał dla mnie ani pracy, ani interesu, skłoniło mnie do zapisania wpisu w tym dzienniku. Nie rozumiem, dlaczego ten ksiądz wywarł na mnie takie wrażenie. Nie znam jego imienia, a czasami gadał bzdury, ale zapadł mi w pamięć. Spotkaliśmy się już dwa razy i można by to uznać za zbieg okoliczności. Ale jeśli spotkamy się ponownie...
 Muszę przyznać, że jego zainteresowanie jest nieco pochlebne. To spojrzenie w jego oczach jest takie... oceniające. Jakby podziwiał moje osiągnięcia. A kto by nie podziwiał? Dwa legendarne statki, dwóch kapitanów, o których krążyły opowieści po całym Archipelagu – obaj polegli z mojej ręki.
 Ciekawe, co powie, gdy dowie się o moich przyszłych wyczynach? Archipelag jest ogromny, ale moja sława, jak się zdaje, rośnie szybciej, niż myślałem.
+#TEXT	2
+Diego de Landa - tak się nazywasz. Więc spotkamy się ponownie. Ciąg dalszy nastąpi.
 
 #QUEST SharlieTutorial
 Prolog
 #TEXT 0
-Mam już tego serdecznie dość! Pięć dni… i w końcu zejdę na ląd. Ostatnie dwa miesiące to był istny koszmar i naprawdę nie rozumiem, jak ktoś przy zdrowych zmysłach może wiązać swoje życie z morzem!
-A tymczasem… czeka mnie spotkanie z kapitanem. Ostatnio mi się nie podoba. Właściwie nic mi się tu nie podoba.
+Mam już tego serdecznie dość! Pięć dni... i w końcu zejdę na ląd. Ostatnie dwa miesiące to był istny koszmar i naprawdę nie rozumiem, jak ktoś przy zdrowych zmysłach może wiązać swoje życie z morzem!
+A tymczasem... czeka mnie spotkanie z kapitanem. Ostatnio mi się nie podoba. Właściwie nic mi się tu nie podoba.
 #TEXT 0.1
-Wygląda na to, że dziś wieczór będzie interesujący. A tymczasem kapitan dał mi wolną rękę… oczywiście w granicach statku, ha-ha! Mogę wrócić do niego w każdej chwili i zakończyć ten męczący dzień.
+Wygląda na to, że dziś wieczór będzie interesujący. A tymczasem kapitan dał mi wolną rękę... oczywiście w granicach statku, ha-ha! Mogę wrócić do niego w każdej chwili i zakończyć ten męczący dzień.
 #TEXT 1
 Za 500 peso mogę sprzedać 3 butelki rumu marynarzowi Henriemu na górnym pokładzie. Zdaje się, że bosman w mesie handluje różnymi rzeczami. Może warto przeszukać statek i porozmawiać z innymi marynarzami.
 #TEXT 2
@@ -942,8 +944,8 @@ Thomas przekazał mi osobistą rzecz Esther - jadeitowy naszyjnik. Teraz muszę 
 #TEXT	9
 Dzięki wspólnym wysiłkom moim i cyganki choroba Esther została pokonana! To miłe uczucie wiedzieć, że cały trud nie poszedł na marne i dziewczynka jest teraz zdrowa.
 #TEXT	10
-Zrobił@<sSex> wszystko, co było wymagane. Teraz pozostaje tylko wierzyć, że wywar cyganki okaże się skuteczny. Tak bardzo zaangażował@<sSex1> się w ratowanie dziewczynki, że kompletnie zapomniał@<sSex2> o własnych sprawach. Odwiedzę Antiguę za miesiąc. Do tego czasu Esther powinna być już całkowicie zdrowa.
-#TEXT	11
+Dzięki naszym staraniom z Cyganką choroba Esther została pokonana! To miłe uczucie wiedzieć, że wszystkie wysiłki nie poszły na marne, a dziewczynka jest teraz zdrowa. Od Cyganki z Saint John's mogę zawsze kupić mangarosę - trzy łodygi za trzysta pięćdziesiąt złotych dublonów.
+#TEXT 11
 Teraz cyganka ma wszystko, czego potrzebuje do przygotowania leczniczego eliksiru. Jutro rano będę musiał@<sSex> odebrać lekarstwo od niej i zanieść je do Thomasa.
 
 #QUEST TPZ
@@ -997,11 +999,11 @@ Gin został ukradziony tuż spod nosa roztargnionego karczmarza. Teraz jego życ
 #TEXT 3
 Cała ta historia brzmi naprawdę podejrzanie. Ale mam już pewną teorię, co mogło się wydarzyć. Czas porozmawiać z kelnerką.
 #TEXT 4
-Pod presją kelnerka przyznała, że za całą inscenizacją stoi niejaki Jack Wales. Razem z kapitanem 'Sea Wolf' odegrali teatrzyk, by odciągnąć uwagę właściciela tawerny i ukraść beczułkę. Tyle zachodu dla ginu! Wygląda na to, że nie są to zwykli pijacy, lecz prawdziwi koneserzy. Miejsce pobytu złodzieja? Tuż obok – naprzeciwko tawerny.
+Pod presją kelnerka przyznała, że za całą inscenizacją stoi niejaki Jack Wales. Razem z kapitanem 'Sea Beast' odegrali teatrzyk, by odciągnąć uwagę właściciela tawerny i ukraść beczułkę. Tyle zachodu dla ginu! Wygląda na to, że nie są to zwykli pijacy, lecz prawdziwi koneserzy. Miejsce pobytu złodzieja? Tuż obok – naprzeciwko tawerny.
 #TEXT 5
 Odzyskałem beczułkę i oddał ją właścicielowi na czas, ratując mu skórę. Trzeba przyznać, że odwdzięczył się sowicie – oprócz dublońców dał mi prawo do dożywotniego darmowego noclegu i napitków w swojej tawernie. Kelnerka zachowała się rozsądnie i ulotniła się zawczasu – karczmarz bez trudu pojął, że była w to zamieszana.
 #TEXT 6
-Załoga 'Sea Wolf' podążyła śladem swojego kapitana. Czy zasłużyli na taki los? Trudno powiedzieć... Ale jedno jest pewne – nie powinni byli ze mną zadzierać.
+Załoga 'Sea Beast' podążyła śladem swojego kapitana. Czy zasłużyli na taki los? Trudno powiedzieć... Ale jedno jest pewne – nie powinni byli ze mną zadzierać.
 
 #QUEST UV
 Skradzione wspomnienie

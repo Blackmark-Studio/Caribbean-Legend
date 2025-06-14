@@ -218,8 +218,18 @@ void SetQTextShow(aref pA,int qnum)
 {
 	// boal Покраска, выбрали 22.06.07 -->
 	aref arTopic = GetAttributeN(pA, qnum);
-	DeleteQuestHeaderColor(GetAttributeName(arTopic));
+	string sTopic = GetAttributeName(arTopic);
+	DeleteQuestHeaderColor(sTopic);	
 	// boal <--
+	
+	if(sTopic == "SharlieTutorial_ListOfSailors" && TW_IsActive() && CheckAttribute(&objTask, "land_craft") && objTask.land_craft == "1_Inventory" && CheckAttribute(&TEV, "Tutor.Document"))
+	{
+		TW_ColorWeak(TW_GetTextARef("Inventory_document"));
+		DeleteAttribute(&TEV, "Tutor.Document");
+		if(!CheckAttribute(&TEV, "Tutor.Alchemy"))
+			TW_FinishLand_Craft_1_Inventory();
+	}
+	
 	SendMessage(&GameInterface,"lsal",MSG_INTERFACE_INIT_QTEXT_SHOW,"QUEST_TEXT",pA,qnum);
 	SetCurrentNode("QUEST_TEXT");
 }

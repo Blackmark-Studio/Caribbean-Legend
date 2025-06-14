@@ -341,7 +341,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_3":
-			dialog.text = "So, our military ship 'Warlike' is cruising near the Spanish colony Porto Bello, in the southern part of the Spanish Main. This vessel is under the command of Florian Shoke, who is preparing an ambush of a Spanish heavy galleon set to leave Porto Bello in two weeks.\nThe problem is that our frigate's cannons are suffering from a casting defect, and we need to replace fifteen cannons to save the mission; otherwise, the galleon will outnumber 'Warlike' in both guns and men. \nWithout the replacement, Florian Shoke will be forced to sail away with no result. Such a sequence of events is highly undesirable. Your task is to save the mission by delivering fifteen cannons within fourteen days.";
+			dialog.text = "Więc nasz okręt wojenny „Warlike” pływa w pobliżu hiszpańskiej kolonii Portobelo, w południowej części hiszpańskiego kontynentu. Statek ten jest pod dowództwem Floriana Shoke, który przygotowuje zasadzkę na hiszpański ciężki galeon, który ma opuścić Porto Bello za dwa tygodnie.\nProblem polega na tym, że działa naszej fregaty cierpią z powodu wady odlewu i musimy wymienić piętnaście dział, aby uratować misję; w przeciwnym razie galeon przewyższy liczebnie „Warlike” zarówno pod względem dział, jak i ludzi. \nBez wymiany Florian Shoke będzie zmuszony odpłynąć bez rezultatu. Taka sekwencja zdarzeń jest wysoce niepożądana. Twoim zadaniem jest uratowanie misji poprzez dostarczenie piętnastu dział w ciągu czternastu dni.";
 			link.l1 = "Czyli, muszę wziąć na pokład piętnaście dział, udać się do Portobello, poszukać fregaty 'Militant' i przekazać działa kapitanowi Florianowi Shoke?";
 			link.l1.go = "trial_4";
 		break;
@@ -412,20 +412,20 @@ void ProcessDialogEvent()
 				link.l1.go = "zpq_prs2";
 				link.l2 = "Powiedziałbym nie, przypuszczam... gdybym dał ci słowo, musiałbym wykonywać pracę, która wydaje się dość kłopotliwa. Nie zrobię tego.";
 				link.l2.go = "zpq_fld";
-				notification("Reputation Check Passed", "None");
+				notification("Sukces!", "None");
 			}
 			else
 			{
 				dialog.text = "Twoja reputacja jest dla mnie nie do przyjęcia. Proszę cię, opuść ten pokój. Potrafimy sami rozwiązać nasze problemy.";
 				link.l1 = "Cokolwiek, rozwiąż je potem...";
 				link.l1.go = "exit";
-				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+				notification("Reputacja zbyt niska! ("+XI_ConvertString(GetReputationName(71))+")", "None");
 			}		
 		break;
 		
 		case "zpq_fld":
 			dialog.text = "Cóż, przynajmniej odrzuciłeś w uczciwy sposób... Nie zatrzymuję cię już dłużej.";
-			link.l1 = "Pożegnanie.";
+			link.l1 = "Do widzenia.";
 			link.l1.go = "exit";
 			pchar.questTemp.zpq = "failed";
 			DelLandQuestMark(npchar);

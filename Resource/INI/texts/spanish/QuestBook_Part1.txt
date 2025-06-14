@@ -1515,3 +1515,36 @@ Pinaza "Wavebreaker". Salida el día 26. Ruta comercial Belice-Capsterville. Éb
 ***************
 Galeón "Silver Wind". Salida el día 18. Ruta comercial Belice-Blueveld. ¡Esclavos! Gran botín, no se demoren con el envío de mi parte. No habrá escolta.
 ***************
+
+#QUEST Memento_Book
+Diario de Grim
+#TEXT 1
+Nueva misión del Almirantazgo. Transportar "carga especial" a una colonia hostil. El capitán Mortimer Grim aceptó ofrecer su magnífico bergantín por una generosa paga. Buen hombre, marinero honesto. Su tripulación es excelente—gente experimentada y leal. Lástima tener que engañarlos sobre la carga.
+
+Y sí, sé cómo suena esto. El agente secreto de la Corona inglesa Yorick Graves lleva un diario donde cuenta abiertamente los secretos de su misión. ¡Me da igual! Con este trabajo, uno se volvería loco de otra forma. Courtney, si lees esto—¡bésame el trasero!
+
+Mortimer hace demasiadas preguntas sobre la carga. Tuve que mentir—balbuceé algo sobre medicinas para los que sufren fiebre en la selva caribeña. Por supuesto, me creyó. Grim vive en un mundo donde la palabra de un oficial de Su Majestad aún significa algo.
+
+La carga llegó a bordo en cajas selladas. La tripulación se queja—las cajas son pesadas y el olor es raro. Mortimer lo tomó a broma. Incluso me hizo reír.
+
+¡Maldita sea! ¡Se ha escapado! Los primeros casos de fiebre en la tripulación. Mortimer pide permiso para abrir las cajas y revisar los medicamentos. Tuve que prohibírselo bajo amenaza de consejo de guerra. Me odio por esto.
+
+Dios mío, ¿qué he hecho...? Peste. El capitán murió ayer.
+
+Solo.
+
+Hablo con Mortimer. O mejor dicho, con lo que queda de él. Ya no está enfadado. Entiende. Dice que a todos se les da una oportunidad de redención. ¿Pero cómo redimir esto? ¿Cómo devolver la vida a esta gente?
+
+Salvado por nativos en la costa de Dominica. El chamán dijo—que el muerto enseñe al vivo. ¿Qué podría yo enseñar a alguien?
+
+Cerca de la isla hubo una gran batalla. Los supervivientes llegaron a la orilla, listos para seguir matando, pero los detuve. No sé de dónde me viene esta fuerza. No sé si estoy vivo o si esto es el más allá. Pero el Memento no zarpará sin tripulación. Y sin barco no podré expiar mis pecados.
+
+Yorick Graves ha muerto, y Mortimer Grim será recordado como el salvador de los condenados. Así debe ser. Espero que aprecies la idea. Ahora eres parte del Memento. Parte del barco.
+
+Rescatamos a una docena de indios de la bodega de un negrero. La mayor parte de los doblones la repartí entre mis hombres, y a los antiguos prisioneros los llevaré a Dominica.
+
+¡El chamán arrancó el cráneo y lo escondió en algún sitio! ¡Idiota emplumado! Lo habría partido con mi nuevo sable si no fuera por el misionero que visitaba la tribu.
+
+Le conté todo. Una sensación increíble. ¡Ahora sé qué hacer! "Que el muerto enseñe al vivo." ¡Por supuesto! No basta con salvar a la gente de las cadenas o la horca. ¡Hay que salvarlos de la muerte misma! Y solo se puede haciendo que otro pase por lo que pasé yo. Morir y volver. ¿Me dan pena? Por supuesto. Pero I. tenía razón. A mí nunca me compadecieron.
+
+Ya he encontrado un nuevo cráneo—no todos pueden superar la prueba de la muerte. Así es incluso mejor. Que las cuencas de Mortimer se queden en Dominica y no vean lo que pasa en su barco. No lo entendería.

@@ -781,11 +781,11 @@ void ProcessDialogEvent()
 		case "gypsy_46":
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				dialog.text = "Deine Seele ist rein, ich sehe, dass du Mangarosa nicht für momentane Freude verbrennen wirst. Wenn du sie dringend brauchst, komm zu mir, "+GetSexPhrase("Falkenlein","Täubchen")+". Fünf Stängel kosten dich zweihundert Dublonen.\nDieses Kraut ist launisch, du weißt es selbst, nicht jeder kann es finden. Also dränge mich nicht – frage nicht öfter als einmal im Monat, ich werde es sowieso nicht früher beschaffen können.";
+				dialog.text = "Deine Seele ist rein, ich sehe, dass du Mangarosa nicht für momentane Freude verbrennen wirst. Wenn du sie dringend brauchst, komm zu mir, "+GetSexPhrase("Falkenlein","Täubchen")+". Drei Stängel kosten dich dreihundertfünfzig Dublonen\nDieses Kraut ist launisch, du weißt es selbst, nicht jeder kann es finden. Also dränge mich nicht – frage nicht öfter als einmal im Monat, ich werde es sowieso nicht früher beschaffen können.";
 			}
 			else
 			{
-				dialog.text = "Deine Seele ist hell, ich sehe, du bist nicht dumm, du verstehst dich auf Kräuter nicht schlechter als manche Heilerinnen. Du kannst vieles finden, obwohl das Glück nicht immer lächelt. Es gibt eine seltene Pflanze, die nicht jeder finden kann. Sie heißt Mangarosa. Wenn du es brauchst, komm zu mir, "+GetSexPhrase("Falkenlein","Täubchen")+". Ich werde fünf Stängel besorgen, aber ich werde sie nicht umsonst geben – zweihundert Dublonen nehme ich.\nAber dieses Kraut ist eigenwillig, also dränge mich nicht. Frage nicht öfter als einmal im Monat – selbst wenn du alle Schicksalskarten auslegst, werde ich es nicht früher beschaffen.";
+				dialog.text = "Deine Seele ist hell, ich sehe, du bist nicht dumm, du verstehst dich auf Kräuter nicht schlechter als manche Heilerinnen. Du kannst vieles finden, obwohl das Glück nicht immer lächelt. Es gibt eine seltene Pflanze, die nicht jeder finden kann. Sie heißt Mangarosa. Wenn du es brauchst, komm zu mir, "+GetSexPhrase("Falkenlein","Täubchen")+". Ich werde drei Stängel besorgen, aber ich werde sie nicht umsonst geben – dreihundertfünfzig Dublonen nehme ich.\nAber dieses Kraut ist eigenwillig, also dränge mich nicht. Frage nicht öfter als einmal im Monat – selbst wenn du alle Schicksalskarten auslegst, werde ich es nicht früher beschaffen.";
 			}
 			link.l1 = "Nun, danke dir, "+npchar.name+".";
 			link.l1.go = "gypsy_47";
@@ -830,8 +830,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "gypsy_Mangarosa_1":
-			dialog.text = "Wer, wenn nicht ich, "+GetSexPhrase("liebling","schönheit")+", würde dir so eine Rarität besorgen? Zweihundert Dublonen – und sie gehört dir, fünf Stängel, nicht mehr, nicht weniger.";
-			if (PCharDublonsTotal() >= 300)
+			dialog.text = "Wer, wenn nicht ich, "+GetSexPhrase("liebling","schönheit")+", würde dir so eine Rarität besorgen? Dreihundertfünfzig Dublonen – und sie gehört dir, drei Stängel, nicht mehr, nicht weniger.";
+			if (PCharDublonsTotal() >= 350)
 			{
 				link.l1 = "Hier, nimm deine Dublonen.";
 				link.l1.go = "gypsy_Mangarosa_2";
@@ -845,8 +845,8 @@ void ProcessDialogEvent()
 			dialog.text = "So ist’s besser, "+GetSexPhrase("Falkenlein","Täubchen")+". Nimm sie. Und pass auf, verschwende sie nicht unnötig, du weißt selbst – Mangarosa ist kein gewöhnliches Kraut, in ihr ist eine Kraft verborgen, die nicht jeder bewältigen kann.";
 			link.l1 = "Keine Sorge, Schwarzbraue, ich werde eine würdige Verwendung für ihre Kraft finden.";
 			link.l1.go = "gypsy_Mangarosa_3";
-			AddItems(pchar, "cannabis7", 5);
-			RemoveDublonsFromPCharTotal(300);
+			AddItems(pchar, "cannabis7", 3);
+			RemoveDublonsFromPCharTotal(350);
 		break;
 
 		case "gypsy_Mangarosa_3":

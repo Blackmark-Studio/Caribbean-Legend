@@ -1342,7 +1342,7 @@ Un lot de 20 rondins de bois de fer tous les 15 du mois de la part de Rodrigo Ji
 Ficelles à Tirer
 #TEXT   1
 ************************************************************
-Je peux toujours acheter de la mangarosa à la gitane de Saint John's — cinq tiges pour deux cents doublons d’or.
+Je peux toujours acheter de la mangarosa à la gitane de Saint John's - trois tiges pour trois cent cinquante doublons d’or.
 #TEXT   2
 ************************************************************
 À la taverne de Willemstad, repos et plaisir m’attendent toujours. La charmante Betsy Price s’occupera de tout.

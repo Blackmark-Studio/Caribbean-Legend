@@ -1136,7 +1136,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Current.TargetIslandID = GetCharacterCurrentIslandId(sld);//ИД целевого ареала
 			pchar.questTemp.WPU.Fraht.TargetCity = FindTownOnIsland(pchar.questTemp.WPU.Current.TargetIslandID);
 			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
-			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Fraht.Chance == 2) FrahtHunterOnSea();//создание ДУ в акватории
 			DialogExit();
 		break;
@@ -1456,7 +1456,7 @@ void ProcessDialogEvent()
 			}
 			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "1");
@@ -1506,7 +1506,7 @@ void ProcessDialogEvent()
 				pchar.quest.Escort_fail.function = "Escort_failed";
 	        }
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			DialogExit();
 		break;
@@ -1661,7 +1661,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 3) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "6");
@@ -2009,7 +2009,7 @@ void ProcessDialogEvent()
 					pchar.quest.Postcureer_Hunter.win_condition.l1 = "Location";
 					pchar.quest.Postcureer_Hunter.win_condition.l1.location = pchar.questTemp.WPU.Postcureer.City + "_town";
 					pchar.quest.Postcureer_Hunter.function = "PostcureerGopHuntersOnLand";
-					TraderHunterOnMap();
+					TraderHunterOnMap(false);
 				break;
 		
 				case 1://создание скоростного перехватчика на глобалке
@@ -2017,7 +2017,7 @@ void ProcessDialogEvent()
 				break;
 		
 				case 2://запуск ДУ на глобалке и в порту прибытия
-					TraderHunterOnMap();
+					TraderHunterOnMap(false);
 					FrahtHunterOnSea();
 				break;
 		
@@ -2890,7 +2890,7 @@ void ProcessDialogEvent()
 		
 		case "BurntShip17":
 			dialog.text = "О чём вы хотели поговорить?";
-			link.l1 = "Я приш"+ GetSexPhrase("ел","ла") +" за вознаграждением. Нужное вам судно по-прежнему у меня.";
+			link.l1 = "Я приш"+ GetSexPhrase("ёл","ла") +" за вознаграждением. Нужное вам судно по-прежнему у меня.";
 			link.l1.go = "BurntShip18";
 		break;
 		
@@ -3722,6 +3722,11 @@ void ProcessDialogEvent()
 				link.l2 = "Шнява 'Леди Бет'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
+			{
+				link.l3 = "Бриг 'Мементо'.";
+				link.l3.go = "UniqueShips_Memento";
+			}
 			link.l99 = "Думаю, я знаю достаточно.";
 			link.l99.go = "node_2";
 		break;
@@ -3740,6 +3745,20 @@ void ProcessDialogEvent()
 			AddQuestRecordInfo("LegendaryShips", "2");
 			pchar.questTemp.LadyBeth_InfoPU = true;
 			dialog.text = "'Леди Бет' - настоящая красавица. Чудо морского гения Англии, под командованием Альберта Блэквуда, бывшего офицера королевского флота. Да уж, не каждому удаётся так эффектно дезертировать! Покинул службу, убил блестящую карьеру, и украл боевой корабль - и всё ради охоты за сокровищами!\nИ не зря. Уже нашёл столько, что мог бы купить половину Барбадоса, да только всё ему мало. Если встретите его в море - даже не пытайтесь перехватить его. Слишком хороший корабль, да и капитан опытен и осторожен. В последнее время Блэквуд зачастил на Кайман - что-то там копает день и ночь, загоняя людей до смерти. Если решите проверить - берите не меньше 60 человек и хорошее стрелковое оружие... Хотя, может и этого будет мало.\nНадеюсь, стрелять вы умеете, поскольку с ним дезертировала рота уже бывших морских пехотинцев полковника Фокса. Профессионалы, не чета обычным головорезам. И никогда не атакуйте его во французских портах - у него там защита и покровители, получающие долю с его находок.";
+			link.l1 = "Спасибо большое.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Memento":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "3");
+			pchar.questTemp.Memento_InfoPU = true;
+			dialog.text = "'Мементо' - настоящая пиратская легенда. Чёрный бриг под командованием капитана Мортимера Грима\n"+
+			"Грим охотится исключительно на работорговцев. Говорят, освобождает рабов и спасает приговорённых к смерти, выкупая их за звонкое золото. Благородное дело, если не знать остального\n"+
+			"Если вы не торгуете живым товаром, Грим вас не тронет. Он странный, но у него свои принципы. А вот если в трюме у вас рабы... тогда молитесь, чтобы не встретить чёрные паруса на горизонте\n"+
+			"'Мементо' курсирует между пиратскими поселениями, но почти никогда не причаливает. Команда живёт на корабле месяцами, словно боится ступить на твёрдую землю. А ещё ходят слухи, что корабль когда-то пережил чудовищную эпидемию - потому экипаж так просто не убить\n"+
+			"Если вздумаете на них напасть - берите побольше пушек. Взять 'Мементо' на абордаж практически невозможно - команда сражается как одержимая, словно смерти не боится. Единственный способ их одолеть - расстрелять корабль в щепки, чтобы лишить укрытия. Осколки и щепа их не пугают, а вот прямые попадания картечью - совсем другое дело\n"+
+			"Удачи вам. И помните о смерти.";
 			link.l1 = "Спасибо большое.";
 			link.l1.go = "node_2";
 		break;

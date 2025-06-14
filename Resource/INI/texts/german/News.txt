@@ -1,15 +1,18 @@
-News {1.5.0 BETA}
+News {Patch 1.5.0}
 News_descr
 {
 ************************   Ahoi!   ***********************
-Vielen Dank für die Teilnahme am Beta-Test der Version 1.5.0!
+Willkommen zu Version 1.5.0!
 ------------------------------------------------------------------------------------------------
 — Ein neues Spiel ist erforderlich
-— Deaktivieren Sie alle Modifikationen
-— Teilen Sie Ihre Eindrücke in den entsprechenden Discord-Kanälen und Steam-Foren
+— Wenn Sie Ihren Spielstand fortsetzen möchten, wechseln Sie in Steam zu Version 1.4 oder 1.3.5
+— Deaktivieren Sie alle Modifikationen, bis die Steam Workshop-Autoren ihre Arbeiten aktualisieren
+— Eine detaillierte Liste der Änderungen finden Sie in den Neuigkeiten über die Schaltfläche unten
+— Danke fürs Spielen!
 }
-
 News_Attention
 {
-
 }
+
+[News]
+IsRead = false

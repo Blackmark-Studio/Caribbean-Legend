@@ -278,18 +278,18 @@ void Notification(string strLog, string ability)
 		case "Medicament": IconIndex = 146; break;
 		case "Cannon_3": IconIndex = 147; break;
 		case "Cannon_6": IconIndex = 148; break;
-		case "Cannon_8": IconIndex = 159; break;
-		case "Cannon_12": IconIndex = 149; break;
-		case "Cannon_16": IconIndex = 150; break;
-		case "Cannon_18": IconIndex = 175; break;
-		case "Cannon_20": IconIndex = 151; break;
-		case "Cannon_24": IconIndex = 152; break;
-		case "Cannon_32": IconIndex = 153; break;
-		case "Cannon_36": IconIndex = 154; break;
-		case "Cannon_42": IconIndex = 155; break;
-		case "Culverine_8": IconIndex = 156; break;
-		case "Culverine_18": IconIndex = 157; break;
-		case "Culverine_36": IconIndex = 158; break;
+		case "Cannon_8": IconIndex = 149; break;
+		case "Cannon_12": IconIndex = 150; break;
+		case "Cannon_16": IconIndex = 151; break;
+		case "Cannon_18": IconIndex = 152; break;
+		case "Cannon_20": IconIndex = 153; break;
+		case "Cannon_24": IconIndex = 154; break;
+		case "Cannon_32": IconIndex = 155; break;
+		case "Cannon_36": IconIndex = 156; break;
+		case "Cannon_42": IconIndex = 157; break;
+		case "Culverine_8": IconIndex = 158; break;
+		case "Culverine_18": IconIndex = 159; break;
+		case "Culverine_36": IconIndex = 175; break;
 		case "Tichingitu": IconIndex = 165; break;
 		case "Helena": IconIndex = 166; break;
 		case "Mary": IconIndex = 167; break;
@@ -317,7 +317,8 @@ void Notification(string strLog, string ability)
 		case "spahunter": IconIndex = 44; break;
 		case "frahunter": IconIndex = 45; break;
 		case "pirhunter": IconIndex = 46; break;
-		case "Key": IconIndex = 107; break;
+		case "Key": IconIndex = 186; break;
+		case "Hat9": IconIndex = 185; break;
 		case "None": IconIndex = 239; break;
 	}
 	if(notificationsQty < 8)
@@ -1101,4 +1102,12 @@ string FindControlFromActionName(string _actionName)
 	}
 	
 	return control;
+}
+
+#event_handler("Event_ErrorLog","Event_ErrorLog");
+void Event_ErrorLog()
+{
+	string string1 = GetEventData();
+	string string2 = GetEventData();
+	log_info(string1 + string2);
 }

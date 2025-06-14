@@ -291,8 +291,8 @@ void ProcessDialogEvent()
 				link.l3 = "60 дублонов.";
 				link.l3.go = "AlonsoGold_DatDeneg_3_gold60";
 			}
-			link.l4 = "Мне нужно всё перепроверить. Вернусь позже.";
-			link.l4.go = "AlonsoWait_2";
+			// link.l4 = "Мне нужно всё перепроверить. Вернусь позже.";
+			// link.l4.go = "AlonsoWait_2";
 		break;
 		
 		case "AlonsoGold_DatDeneg_3_gold40":
@@ -553,6 +553,7 @@ void ProcessDialogEvent()
 			{
 				LAi_SetStayType(npchar);
 				npchar.SharlieTutorial_OhrannikStay = true;
+				DeleteQuestCondition("SharlieTutorial_OhrannikStopaet");
 			}
 		break;
 		
@@ -884,8 +885,8 @@ void ProcessDialogEvent()
 				link.l3 = "42 дублонов.";
 				link.l3.go = "RumGold_DatDeneg_gold42";
 			}
-			link.l4 = "Мне нужно всё перепроверить. Вернусь позже.";
-			link.l4.go = "RumGold_DatDeneg_3";
+			// link.l4 = "Мне нужно всё перепроверить. Вернусь позже.";
+			// link.l4.go = "RumGold_DatDeneg_3";
 		break;
 		
 		case "RumGold_DatDeneg_gold28":
@@ -1264,8 +1265,8 @@ void ProcessDialogEvent()
 				link.l3 = "30 дублонов.";
 				link.l3.go = "BallsGold_DatDeneg_gold30";
 			}
-			link.l4 = "Мне нужно всё перепроверить. Вернусь позже.";
-			link.l4.go = "BallsGold_DatDeneg_3";
+			// link.l4 = "Мне нужно всё перепроверить. Вернусь позже.";
+			// link.l4.go = "BallsGold_DatDeneg_3";
 		break;
 		
 		case "BallsGold_DatDeneg_gold20":
@@ -1572,8 +1573,6 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_ActivateWindlass")) AddQuestRecordInfo("SharlieTutorial_ListOfSailors", "1");
 			else AddQuestRecordInfo("SharlieTutorial_ListOfSailors", "2");
 			GiveItem2Character(PChar, "chest");
-			SetFunctionExitFromLocationCondition("Tutorial_Logbook", pchar.location, false);
-			Tutorial_Dubloons("");
 			if (!isMultiObjectKnown("gold_dublon"))
 			{
 				SetAlchemyRecipeKnown("gold_dublon");
@@ -1630,7 +1629,7 @@ void ProcessDialogEvent()
 					link.l1 = "Дублоны всё ещё меняете?";
 					link.l1.go = "OfficerKaznachey_15_gold_105";
 				}
-				AddMoneyToCharacter(pchar, 300);
+				AddMoneyToCharacter(pchar, 150);
 				AddCharacterSkillPoints(pchar, "Commerce", 1);
 			}
 			DelLandQuestMark(npchar);
@@ -1640,6 +1639,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.SharlieTutorial_KaznacheyQuestCompleted = true;
 			DeleteAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuestActive");
 			npchar.Merchant.type = "SharlieTurorialK";
+			pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
 		break;
 		
 		case "OfficerKaznachey_15_gold_115":
@@ -1670,27 +1670,50 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_16_Proval": // Если не выполнил задание, то отбирает дублоны
 			dialog.text = "Прохлаждаетесь, месье де Мор?";
-			link.l2 = "Вас тоже в трюм сослали?";
-			link.l2.go = "OfficerKaznachey_16_Proval_2";
+			link.l1 = "Вас тоже в трюм сослали?";
+			link.l1.go = "OfficerKaznachey_16_Proval_2";
 		break;
 		
 		case "OfficerKaznachey_16_Proval_2":
 			dialog.text = "Я — судовой врач, де Мор! Скоро кают-компания будет полна раненых, а я увижу больше крови, чем любой участник сражения. И даже не будь я врачом, а только казначеем — в бою стал бы в строй, как и все. Нет, единственный, кого сослали отсиживаться в уютном трюме — это вы.";
-			link.l2 = "Тогда что вы тут забыли?";
-			link.l2.go = "OfficerKaznachey_16_Proval_3";
+			link.l1 = "Тогда что вы тут забыли?";
+			link.l1.go = "OfficerKaznachey_16_Proval_3";
 		break;
 		
 		case "OfficerKaznachey_16_Proval_3":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
 			dialog.text = "Сражение начнётся только через пару часов, так что самое время закрыть дневной учёт. У вас мой сундучок с дублонами, де Мор. Потрудитесь вернуть.";
-			link.l2 = "...";
-			link.l2.go = "exit";
+			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
+			{
+				link.l1 = "Забирайте. И больше сюда свою физиономию не показывайте.";
+				link.l1.go = "OfficerKaznachey_16_Proval_4";
+			}
+			else
+			{
+				link.l1 = "Я оставил ваше барахло в другом месте.";
+				link.l1.go = "OfficerKaznachey_16_Proval_5";
+			}
+		break;
+		
+		case "OfficerKaznachey_16_Proval_4":
+			addGold = GetCharacterItem(pchar, "gold_dublon");
+			dialog.text = "И не собирался. Я же не сухопутная крыса - моё место не в трюме. Прощайте.";
+			link.l1 = "...";
+			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
-			ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			else ChangeCharacterComplexReputation(pchar, "nobility", -6);
 			RemoveDublonsFromPCharTotal(addGold);
 			AddItems(npchar, "gold_dublon", addGold);
 			TakeItemFromCharacter(pchar, "chest");
 			TakeItemFromCharacter(pchar, "chest_open");
+		break;
+		
+		case "OfficerKaznachey_16_Proval_5":
+			dialog.text = "В другом месте... Обсудим после сражения - в присутствии капитана. До встречи.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
+			ChangeCharacterComplexReputation(pchar, "nobility", -6);
 		break;
 		
 		case "TreasurerTrade":

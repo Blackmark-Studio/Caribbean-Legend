@@ -103,6 +103,7 @@ void ProcessDialogEvent()
 					link.l8 = "Извини, но я сейчас занят"+GetSexPhrase("","а")+".";
 					link.l8.go = "exit";
 					npchar.quest.Portugal = "true";
+					DelLandQuestMark(npchar);
 					break;
 				}
 			}

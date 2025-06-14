@@ -1994,7 +1994,6 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Graf_Sheffild_25":
 			DialogExit();
-			EndQuestMovie();
 			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Kortni", "off_eng_5", "man", "man", 40, ENGLAND, -1, false, "quest"));
 			sld.name = "Thomas";
 			sld.lastname = "Lynch";
@@ -2104,7 +2103,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("Alonso", "citiz_36", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
+				sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
 				sld.name 	= "Alonso";
 				sld.lastname = "";
 				ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");

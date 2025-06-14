@@ -1293,7 +1293,9 @@ void ProcessDialogEvent()
 
 	case "agree_1":
 		DialogExit();
-		SetFunctionTimerCondition("ChangeNationRelationFromFadeyComplete", 0, 0, 10 + rand(5), false);
+        rate = 10 + rand(5);
+        rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+        SetFunctionTimerCondition("ChangeNationRelationFromFadeyComplete", 0, 0, rate, false);
 		pchar.GenQuest.FadeyNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.FadeyNation), 0));
 		npchar.quest.relation = "true";
 		break;

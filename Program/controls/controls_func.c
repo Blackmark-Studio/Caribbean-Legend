@@ -206,15 +206,15 @@ void Process_Controls(string ControlName)
             {
                 objTask.sea = "5_TimeScale";
                 TW_ColorWeak(TW_GetTextARef("TimeScale_plus"));
-                itemID = StringFromKey("Tutorial_7", GKIC("TimeScaleFasterBA", "Sailing3Pers"), GKIC("TimeScale", "Sailing3Pers"));
-                TW_AddBottomText("TimeScale_minus", itemID, "Default", TW_DEF_INTERVAL);
+                itemID = StringFromKey("Tutorial_7", GKIC("TimeScaleSlowerBA", "Sailing3Pers"), GKIC("TimeScale", "Sailing3Pers"));
+                TW_AddBottomText("TimeScale_minus", itemID, "Default");
+				TW_RestartTimer();
                 TW_RecalculateLayout();
             }
             else if(objTask.sea == "5_TimeScale" && TimeScaleCounter == 0)
             {
-                objTask.sea = "";
                 TW_ColorWeak(TW_GetTextARef("TimeScale_minus"));
-                DoQuestFunctionDelay("TW_InitSea_3_Sails", 2.0);
+                TW_FinishSea_2_TimeScale();
             }
         }
 	}
@@ -288,7 +288,7 @@ void Process_Controls(string ControlName)
                     objTask.sea = "3_TimeScale";
                     TW_ColorWeak(TW_GetTextARef("TimeScale_R_on"));
                     itemID = StringFromKey("Tutorial_5", GKIC("TimeScale", "Sailing3Pers"));
-                    TW_AddBottomText("TimeScale_R_off", itemID, "Default", TW_DEF_INTERVAL);
+                    TW_AddBottomText("TimeScale_R_off", itemID, "Default");
                     TW_RecalculateLayout();
                 }
                 else if(objTask.sea == "3_TimeScale" && TimeScaleCounter == 0)
@@ -296,14 +296,13 @@ void Process_Controls(string ControlName)
                     objTask.sea = "4_TimeScale";
                     TW_ColorWeak(TW_GetTextARef("TimeScale_R_off"));
                     itemID = StringFromKey("Tutorial_6", GKIC("TimeScaleFasterBA", "Sailing3Pers"));
-                    TW_AddBottomText("TimeScale_plus", itemID, "Default", TW_DEF_INTERVAL);
+                    TW_AddBottomText("TimeScale_plus", itemID, "Default");
                     TW_RecalculateLayout();
                 }
                 else if(objTask.sea == "5_TimeScale" && TimeScaleCounter == 0)
                 {
-                    objTask.sea = "";
                     TW_ColorWeak(TW_GetTextARef("TimeScale_minus"));
-                    DoQuestFunctionDelay("TW_InitSea_3_Sails", 2.0);
+                    TW_FinishSea_2_TimeScale();
                 }
             }
 		break;

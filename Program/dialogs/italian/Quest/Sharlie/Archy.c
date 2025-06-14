@@ -79,7 +79,7 @@ void ProcessDialogEvent()
 		
 		case "portroyal_9":
 			LAi_SetSitType(Pchar);
-			dialog.text = "Vedi com’è piacevole qua dentro? Bello fresco… E guarda qui, barili di whisky! Alla salute, Capitano!";
+			dialog.text = "Vedi com’è piacevole qua dentro? Bello fresco... E guarda qui, barili di whisky! Alla salute, Capitano!";
 			link.l1 = "Ebbene, beviamo al nostro fortunato incontro e a questa piacevole conoscenza!";
 			link.l1.go = "portroyal_10";
 		break;
@@ -103,7 +103,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "portroyal_13":
-			dialog.text = "Eccome, maledetto posto! Per fortuna c’era acqua dolce. Mi sono mantenuto con granchi, cirripedi, pesci e uccelli. Ecco perché l’ho chiamata Isola dei Granchi. Non avevo armi, così ho imparato a maneggiare fiocina, lancia e freccia come un selvaggio! Ohoo! Beviamo, capitano! Non mi tiro certo indietro davanti a un sorso…";
+			dialog.text = "Eccome, maledetto posto! Per fortuna c’era acqua dolce. Mi sono mantenuto con granchi, cirripedi, pesci e uccelli. Ecco perché l’ho chiamata Isola dei Granchi. Non avevo armi, così ho imparato a maneggiare fiocina, lancia e freccia come un selvaggio! Ohoo! Beviamo, capitano! Non mi tiro certo indietro davanti a un sorso...";
 			link.l1 = "Eh... Non ti invidio, davvero.";
 			link.l1.go = "portroyal_14";
 		break;
@@ -121,7 +121,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "portroyal_16":
-			dialog.text = "Eh già, il vecchio Calhaun non è nato in Scozia per caso! Proprio così! Siamo figli delle montagne – forti, coraggiosi e duri, ben più degli smidollati delle paludi. Versa ancora un goccio… Già, di che blateravo? Ah, sì! Ho sgobbato e mi sono costruito una casa degna. E ho pure iniziato un diario per annotare ogni sventura quotidiana. Il diario l'ho portato con me quando Willy mi ha tirato fuori dai guai.\nOra lo tengo qui su questo tavolo e lo rileggo ogni volta che ci fermiamo a Port Royal, bello sdraiato in un letto caldo e morbido.\nCi ho scritto tutto, ogni cosa accaduta prima e dopo il mio arrivo. È una delle ragioni per cui non ho ancora perso il senno.";
+			dialog.text = "Eh già, il vecchio Calhaun non è nato in Scozia per caso! Proprio così! Siamo figli delle montagne – forti, coraggiosi e duri, ben più degli smidollati delle paludi. Versa ancora un goccio... Già, di che blateravo? Ah, sì! Ho sgobbato e mi sono costruito una casa degna. E ho pure iniziato un diario per annotare ogni sventura quotidiana. Il diario l'ho portato con me quando Willy mi ha tirato fuori dai guai.\nOra lo tengo qui su questo tavolo e lo rileggo ogni volta che ci fermiamo a Port Royal, bello sdraiato in un letto caldo e morbido.\nCi ho scritto tutto, ogni cosa accaduta prima e dopo il mio arrivo. È una delle ragioni per cui non ho ancora perso il senno.";
 			link.l1 = "Allora è stato il signor Paterson a pescarti dall’isola? Ma come diavolo ha fatto a trovarla? Avevi detto...";
 			link.l1.go = "portroyal_17";
 		break;

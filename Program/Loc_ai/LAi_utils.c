@@ -333,6 +333,10 @@ float LAi_GetCharacterLuckLevel(aref character)
 //Применить повреждение к персонажу
 void LAi_ApplyCharacterDamage(aref chr, int dmg, string DamageType)
 {
+	// временная неуязвимость
+	if(IsInvulnerable(chr))
+		return;
+	
 	float damage    = MakeFloat(dmg);
 	bool  bIsOfficer = false;
 	//Офицерам ослабляем поврежрение
@@ -406,14 +410,32 @@ void LAi_CheckKillCharacter(aref chr)
 		{
 			if(sti(chr.index) == nMainCharacterIndex || IsOfficer(chr)) // только офицеры и ГГ
 			{
-				if(ShowCharString()) Log_Chr(chr, XI_ConvertString("IronWillUseLog"));
-				else Log_Info(GetFullName(chr) + XI_ConvertString("IronWillUse"));
-				if(bImCasual) {chr.chr_ai.hp = LAi_GetCharacterMaxHP(chr)/2.0;}
-				else {chr.chr_ai.hp = LAi_GetCharacterMaxHP(chr)/4.0;}
+				if(sti(chr.index) == nMainCharacterIndex)
+					SetInvulnerable(chr, 0.5);
+				
+				if(ShowCharString())
+					Log_Chr(chr, XI_ConvertString("IronWillUseLog"));
+				else
+					Log_Info(GetFullName(chr) + XI_ConvertString("IronWillUse"));
+				
+				if(bImCasual)
+					chr.chr_ai.hp = 10.0 + LAi_GetCharacterMaxHP(chr) * 0.5;
+				else
+					chr.chr_ai.hp = 10.0 + LAi_GetCharacterMaxHP(chr) * 0.3;
+				
 				ActivateCharacterPerk(chr,"IronWill");
 				return;
 			}
 		}
+		// Бессмертные офицеры с Йориком
+		if(GetCharacterFreeItem(pchar, "talisman19") > 0 && IsOfficer(chr) && chr.id != pchar.id)
+		{
+			Notification(XI_ConvertString("BoarderUnconscious1") + GetFullName(chr) + XI_ConvertString("BoarderUnconscious2"), "Yorick");
+			chr.chr_ai.hp = LAi_GetCharacterMaxHP(chr);
+			SetCharacterTask_Dead(chr);
+			return;
+		}
+		
 		// бессмертные квестовые офицеры
 		if(CheckAttribute(chr, "OfficerImmortal"))
 		{
@@ -940,6 +962,21 @@ void LAi_FadeToBlackStart()
 	//InterfaceStates.Buttons.Save.enable = 0;
 }
 
+void LAi_FadeToBlackStartInstantly()
+{
+	if(IsEntity(&LAi_QuestFader))
+	{
+		Trace("LAi_Fade -> previous fade operation not ended!");
+		return;
+	}
+	//Fader
+	SetEventHandler("FaderEvent_EndFadeIn", "LAi_FadeEndFadeIn", 0);
+	CreateEntity(&LAi_QuestFader, "fader");
+	SendMessage(&LAi_QuestFader, "lfl", FADER_OUT, 0.0, false);
+	//LAi_QuestFader.oldSaveState = InterfaceStates.Buttons.Save.enable;
+	//InterfaceStates.Buttons.Save.enable = 0;
+}
+
 void LAi_FadeEndFadeOut()
 {
 	DelEventHandler("FaderEvent_EndFade", "LAi_FadeEndFadeOut");
@@ -1147,23 +1184,28 @@ void Dead_AddLoginedCharacter(aref chr)
 						}	
 					}
 				}
-				if(CheckAttribute(chr, "equip.gun") || CheckAttribute(chr, "equip.musket"))
+                bool bGun = CheckAttribute(chr, "equip.gun");
+				if(bGun || CheckAttribute(chr, "equip.musket"))
 				{
 					if(rand(MOD_SKILL_ENEMY_RATE + 10) == 2)
 					{
-						rItem = ItemsFromID(chr.equip.gun);
-						if(CheckAttribute(rItem,"quality") && rItem.quality != "excellent" && rItem.quality != B_UNIQUE) // ugeen --> на обычных трупах топовое оружие не даем !!!
-						{
-							if(CheckAttribute(rItem,"quality") && rItem.quality == B_GOOD)
-							{
-								if(rand(MOD_SKILL_ENEMY_RATE*5+50) == 50) GiveItem2Character(chref, chr.equip.gun);
-							}
-							else GiveItem2Character(chref, chr.equip.gun);
-						}	
-						sBullet = LAi_GetCharacterBulletType(chr);						
-						sGunPowder = LAi_GetCharacterGunpowderType(chr, GUN_ITEM_TYPE);							
+                        if(bGun)
+                        {
+                            rItem = ItemsFromID(chr.equip.gun);
+                            if(CheckAttribute(rItem,"quality") && rItem.quality != "excellent" && rItem.quality != B_UNIQUE) // ugeen --> на обычных трупах топовое оружие не даем !!!
+                            {
+                                if(CheckAttribute(rItem,"quality") && rItem.quality == B_GOOD)
+                                {
+                                    if(rand(MOD_SKILL_ENEMY_RATE*5+50) == 50) GiveItem2Character(chref, chr.equip.gun);
+                                }
+                                else GiveItem2Character(chref, chr.equip.gun);
+                            }
+                        }
+
 						if (chr.model.animation != "mushketer") //с мушкетеров пуль меньше, слишком у них их много - халява
-						{							
+						{
+                            sBullet = LAi_GetCharacterBulletType(chr, GUN_ITEM_TYPE);
+                            sGunPowder = LAi_GetCharacterGunpowderType(chr, GUN_ITEM_TYPE);
 							TakeNItems(chref, sBullet, GetCharacterItem(chr, sBullet));// boal gun bullet													
 							if(sGunPowder != "")
 							{
@@ -1171,7 +1213,9 @@ void Dead_AddLoginedCharacter(aref chr)
 							}	
 						}
 						else
-						{							
+						{
+                            sBullet = LAi_GetCharacterBulletType(chr, MUSKET_ITEM_TYPE);
+                            sGunPowder = LAi_GetCharacterGunpowderType(chr, MUSKET_ITEM_TYPE);
 							TakeNItems(chref, sBullet, makeint(GetCharacterItem(chr, sBullet)/2));// boal gun bullet											
 							if(sGunPowder != "")
 							{
@@ -1228,6 +1272,13 @@ void Dead_AddLoginedCharacter(aref chr)
 						}
 					}
     			}
+				if(CheckAttribute(chr, "QuestCorpseLoot"))
+				{
+					if(chr.QuestCorpseLoot == "Memento_Cap")
+					{
+						AddItems(chref, "Gold_Dublon", 10 + rand(20));
+					}
+				}
 			}
 			// заполнили по списку
 	    }
@@ -1331,6 +1382,21 @@ void Dead_OpenBoxProcedure()
     if (dchr_index == -1)
         return; // Лог на этот случай в другом месте
     deadCh = &Dead_Characters[dchr_index];
+	
+	// TUTOR-вставка
+	if(deadCh.id == "SharlieTutorial_EnemyPirate_2" && CheckAttribute(&TEV, "Tutor.Loot.Pirate2"))
+	{
+		DeleteAttribute(&TEV, "Tutor.Loot.Pirate2");
+		if(TW_IsActive() && objTask.land == "1_Loot" && TW_IncreaseCounter("land", "Loot_search", 1))
+			TW_ColorWeak(TW_GetTextARef("Loot_search"));
+	}
+	if(deadCh.id == "SharlieTutorial_EnemyPirate_3" && CheckAttribute(&TEV, "Tutor.Loot.Pirate3"))
+	{
+		DeleteAttribute(&TEV, "Tutor.Loot.Pirate3");
+		if(TW_IsActive() && objTask.land == "1_Loot" && TW_IncreaseCounter("land", "Loot_search", 1))
+			TW_ColorWeak(TW_GetTextARef("Loot_search"));
+	}
+
     if (isEmpty)
     {
         // Дубль квестовых триггеров из интерфейса:
@@ -1574,4 +1640,34 @@ bool CharIsFromStockPirCity(ref rChar)
 	else return false;
 	
 	return false;
+}
+
+bool IsDummy(ref chr)
+{
+	if(CheckAttribute(chr, "chr_ai.dummy"))
+		return true;
+	return false;
+}
+
+void SetDummy(ref chr, bool _isDummy)
+{
+	if(_isDummy)
+	{
+		chr.chr_ai.dummy = 1;
+		return;
+	}
+	DeleteAttribute(chr, "chr_ai.dummy");
+}
+
+void SetInvulnerable(ref chr, float time)
+{
+	if(time > 0.0)
+		chr.chr_ai.invulnerability = time;
+	else
+		DeleteAttribute(chr, "chr_ai.invulnerability");
+}
+
+bool IsInvulnerable(ref chr)
+{
+	return CheckAttribute(chr, "chr_ai.invulnerability");
 }

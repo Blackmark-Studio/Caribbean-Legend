@@ -62,7 +62,7 @@ void ProcessDialogEvent()
 	if(!CheckAttribute(NPChar, "ExpMeeting"))
 	{
 		NPChar.ExpMeeting = true;
-		notification("Первое посещение верфи " + XI_ConvertString("Colony" +NPChar.City + "Gen"), "Carpenter");
+		notification("Primera visita al astillero " + XI_ConvertString("Colony" +NPChar.City + "Gen"), "Carpenter");
 		AddCharacterExpToSkill(pchar, SKILL_REPAIR, 10.0);
 	}
 	// генератор парусов по кейсу <--
@@ -2323,6 +2323,7 @@ void ProcessDialogEvent()
 		pchar.questTemp.Sharlie = "crew";
 		// стартовый люггер
 		pchar.Ship.Type = GenerateShipHand(pchar, SHIP_LUGGER, 6, 800, 40, 610, 16000, 15.2, 58.8, 1.42);
+		SetMaxShipStats(pchar);
 		SetBaseShipData(pchar);
 		ResetShipCannonsDamages(pchar);
 		SetShipCannonsDamagesNull(pchar);
@@ -2397,18 +2398,19 @@ void ProcessDialogEvent()
 		DialogExit();
 		pchar.questTemp.Sharlie.Ship = "sloop";
 		pchar.questTemp.Sharlie = "crew";
-		// стартовый шлюп
-		pchar.Ship.Type = GenerateShipHand(SHIP_SLOOP, 6, 700, 50, 790, 20000, 13.1, 50.1, 1.25);
+		//стартовый шлюп
+		pchar.Ship.Type = GenerateShipExt(SHIP_SLOOP, true, pchar);
+		SetMaxShipStats(pchar);
 		SetBaseShipData(pchar);
 		ResetShipCannonsDamages(pchar);
 		SetShipCannonsDamagesNull(pchar);
 		NullCharacterGoods(pchar);
 		SetCrewQuantityOverMax(PChar, 0);
-		UpgradeShipParameter(pchar, "SpeedRate");
+		/* UpgradeShipParameter(pchar, "SpeedRate");
 		UpgradeShipParameter(pchar, "TurnRate");
 		UpgradeShipParameter(pchar, "WindAgainstSpeed");
 		UpgradeShipParameter(pchar, "HP");
-		UpgradeShipParameter(pchar, "MaxCrew");
+		UpgradeShipParameter(pchar, "MaxCrew"); */
 		UpgradeShipParameter(pchar, "Capacity");
 		AddCharacterGoods(pchar, GOOD_BALLS, 51);
 		AddCharacterGoods(pchar, GOOD_GRAPES, 39);

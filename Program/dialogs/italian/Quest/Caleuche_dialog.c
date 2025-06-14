@@ -1031,7 +1031,7 @@ void ProcessDialogEvent()
 		
 		case "on_coast_4":
 			dialog.text = "Questo è certo... Era forse l’Olandese Volante, capitano? Perché ci hanno attaccati? E perché prima dell’abbordaggio non ci hanno sparato, ma poi han quasi mandato a fondo la nostra nave con una sola bordata?";
-			link.l1 = "Il loro capitano aveva bisogno dell’amuleto di cui avevo parlato con Tuttuathapak, uno stregone indiano. Ecco perché non ci hanno affondato subito, ma appena il loro capo ha preso l’amuleto, ci hanno sbarazzato in un batter d’occhio… Che orrore! Una nave governata dai morti! Da non crederci…";
+			link.l1 = "Il loro capitano aveva bisogno dell’amuleto di cui avevo parlato con Tuttuathapak, uno stregone indiano. Ecco perché non ci hanno affondato subito, ma appena il loro capo ha preso l’amuleto, ci hanno sbarazzato in un batter d’occhio... Che orrore! Una nave governata dai morti! Da non crederci...";
 			link.l1.go = "on_coast_5";
 		break;
 		
@@ -1107,7 +1107,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "fergus_7":
-			dialog.text = "Già, proprio così. È solo un gingillo inutile, seppur di gran bellezza. Senti, te l’avrei venduto senza troppi discorsi, ma vedi… non ce l’ho più. Me l’hanno rubato dalla capanna insieme ad altra roba, mentre ero a caccia nella giungla. È successo di recente, sarà stato un mese fa. Mi dispiace, ma non posso aiutarti in alcun modo.";
+			dialog.text = "Già, proprio così. È solo un gingillo inutile, seppur di gran bellezza. Senti, te l’avrei venduto senza troppi discorsi, ma vedi... non ce l’ho più. Me l’hanno rubato dalla capanna insieme ad altra roba, mentre ero a caccia nella giungla. È successo di recente, sarà stato un mese fa. Mi dispiace, ma non posso aiutarti in alcun modo.";
 			link.l1 = "E chi l’ha rubato?";
 			link.l1.go = "fergus_8";
 		break;

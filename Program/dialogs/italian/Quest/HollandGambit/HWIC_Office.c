@@ -161,7 +161,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckCharacterItem(pchar, "Cromvel_depeshe"))
 			{
-				link.l3 = "Ho tra le mani un documento interessante per voi, signor mio. Date un’occhiata alle prime righe: riguarda la sopravvivenza della Repubblica e i profitti della Compagnia. Troverete anche le coordinate di un certo incontro. Se vi interessa, sono disposto a cederle… naturalmente a un prezzo generoso.";
+				link.l3 = "Ho tra le mani un documento interessante per voi, signor mio. Date un’occhiata alle prime righe: riguarda la sopravvivenza della Repubblica e i profitti della Compagnia. Troverete anche le coordinate di un certo incontro. Se vi interessa, sono disposto a cederle... naturalmente a un prezzo generoso.";
 				link.l3.go = "depeshe";	
 			}
 			// калеуче

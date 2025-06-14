@@ -892,5 +892,5 @@ Time slow down
 
 FireCamera_Set
 {
-Aiming view
+Vista di puntamento
 }

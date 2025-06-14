@@ -274,6 +274,7 @@ void DailyEatCrewUpdateForShip(ref rChar, bool IsCompanionTraveler) // IsCompani
 
 				iCrewQty = iCrewQty - cn;
 				Statistic_AddValue(pchar, "Sailors_dead", cn);
+				AddMementoShipBonus(cn);
 				Achievment_SetStat(21, cn);
 				rChar.Ship.Crew.Quantity = iCrewQty;
 				// мораль в минус
@@ -435,6 +436,7 @@ void DailyEatCrewUpdateForShip(ref rChar, bool IsCompanionTraveler) // IsCompani
 			iDeadCrew = makeint(cn/10 +0.5);
 			rChar.Ship.Crew.Quantity = cn - iDeadCrew;
 			Statistic_AddValue(pchar, "Sailors_dead", iDeadCrew);
+			AddMementoShipBonus(iDeadCrew);
 			Achievment_SetStat(21, iDeadCrew);
 			if(!IsCompanionTraveler) Log_Info(StringFromKey("food_14"));
 		}

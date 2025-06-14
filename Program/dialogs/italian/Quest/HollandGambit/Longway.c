@@ -236,7 +236,7 @@ void ProcessDialogEvent()
 		
 		case "Longway_prisoner_2":
 			dialog.text = "";
-			link.l1 = "So che capisci l’inglese, l’olandese e il francese. E sei anche un buon ascoltatore. Ora però è il momento di parlare. Alla fine mi racconterai tutto quello che sai. So che voi cinesi andate fieri della vostra arte della tortura, ma anche noi dell’Occidente abbiamo fatto passi avanti in quell’antica scienza. Alonso qui è un vero maestro nello sciogliere le lingue. Prima di imbarcarsi sulla mia nave, interrogava per conto della Santa Inquisizione a Santiago. Conosce ogni sorta di trucco imparato dai santi padri, veri artisti nel far confessare la gente… e non serve nemmeno essere protestanti!";
+			link.l1 = "So che capisci l’inglese, l’olandese e il francese. E sei anche un buon ascoltatore. Ora però è il momento di parlare. Alla fine mi racconterai tutto quello che sai. So che voi cinesi andate fieri della vostra arte della tortura, ma anche noi dell’Occidente abbiamo fatto passi avanti in quell’antica scienza. Alonso qui è un vero maestro nello sciogliere le lingue. Prima di imbarcarsi sulla mia nave, interrogava per conto della Santa Inquisizione a Santiago. Conosce ogni sorta di trucco imparato dai santi padri, veri artisti nel far confessare la gente... e non serve nemmeno essere protestanti!";
 			link.l1.go = "Longway_prisoner_3";			
 		break;
 		
@@ -571,7 +571,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	

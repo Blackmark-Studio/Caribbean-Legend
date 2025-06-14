@@ -117,6 +117,11 @@ native bool ShowSteamVirtualKeyboard(int iVKMode, int iTextFieldX, int iTextFiel
 native int GetOverlaysInfo(ref paOutOverlaysInfo);
 native bool GameOverlayToWebPage(string url);
 //GameOverlayToWebPage("https://steamcommunity.com/app/2230980/workshop/");
+native bool IsInSafeMode();
+//if true then either
+//1: the game crashed and the user chose safe mode
+//OR
+//2: enabled in engine.ini mod_safe_mode = 1
 
 #libriary "script_libriary_test"
 #libriary "dx9render_script_libriary"

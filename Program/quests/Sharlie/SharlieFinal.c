@@ -165,7 +165,9 @@ void Terrapin_OwrInGrot() // пришли свои
 		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sld = characterFromId("Helena");
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("TerrapinOurChar", "citiz_35", "man", "man", 20, FRANCE, 0, true, "quest"));
+			sld = GetCharacter(NPC_GenerateCharacter("TerrapinOurChar", "Alonso", "man", "man", 20, FRANCE, 0, true, "quest"));
+			sld.name = StringFromKey("SharlieFinal_85");
+			sld.lastname = "";
 			FantomMakeCoolFighter(sld, 20, 50, 50, "blade_10", "pistol1", "bullet", 100);
 			sld.dialog.FileName = "Quest\Sharlie\Terrapin.c";
 		}
@@ -638,9 +640,9 @@ void Terrapin_SetCromvelScuadron(string qName) //эскадра Кромвеля
 		sld.Ship.Mode = "war";
 		sld.AlwaysEnemy = true;
 		sld.ship.Crew.Morale = 50+(60-i*12);
-		sld.Ship.Crew.Exp.Sailors = 50+(60-i*12);;
-		sld.Ship.Crew.Exp.Cannoners = 50+(60-i*12);;
-		sld.Ship.Crew.Exp.Soldiers = 50+(60-i*12);;
+		sld.Ship.Crew.Exp.Sailors = 50+(60-i*12);
+		sld.Ship.Crew.Exp.Cannoners = 50+(60-i*12);
+		sld.Ship.Crew.Exp.Soldiers = 50+(60-i*12);
 		if (i < 4) SetCharacterPerk(sld, "MusketsShoot");
 		if (i < 5) SetRandGeraldSail(sld, ENGLAND);
 		Group_AddCharacter("CromvelGroup", "Cromvel_cap_"+i);

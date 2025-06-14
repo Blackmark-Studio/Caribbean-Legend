@@ -122,7 +122,6 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Teach_battle_1":
-		    LAi_SetPlayerType(pchar);
 			NextDiag.CurrentNode = "Teach_6";
 			AddDialogExitQuestFunction("Tut_TeachBattle");
 			DialogExit();

@@ -349,7 +349,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "result_4":
-			dialog.text = "Basta con queste moine, anche per scherzo. Resto sempre Helen per te. Ma non è tutto quello che volevo dirti. Ho ritrovato mio padre, anche se è stato… piuttosto strano. Ha sacrificato la sua reputazione di nobile inglese per la mia eredità, e questo mi turba. Ora il Commonwealth inglese gli dà la caccia e io non voglio che tu, "+pchar.name+",   per prendervi parte.";
+			dialog.text = "Basta con queste moine, anche per scherzo. Resto sempre Helen per te. Ma non è tutto quello che volevo dirti. Ho ritrovato mio padre, anche se è stato... piuttosto strano. Ha sacrificato la sua reputazione di nobile inglese per la mia eredità, e questo mi turba. Ora il Commonwealth inglese gli dà la caccia e io non voglio che tu, "+pchar.name+",   per prendervi parte.";
 			link.l1 = "Rinsavisci, Hélène! Quello è un furfante e un bucaniere!";
 			link.l1.go = "result_5";
 		break;
@@ -456,7 +456,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "result_17":
-			dialog.text = ""+pchar.name+", Ho sempre desiderato dirti che sei l’uomo più straordinario che abbia mai incontrato! Hai fatto così tanto per me che non potrò mai ripagarti. Voglio restare con te. Per sempre. Se lo desideri, ti sposerò… Ti amo.";
+			dialog.text = ""+pchar.name+", Ho sempre desiderato dirti che sei l’uomo più straordinario che abbia mai incontrato! Hai fatto così tanto per me che non potrò mai ripagarti. Voglio restare con te. Per sempre. Se lo desideri, ti sposerò... Ti amo.";
 			link.l1 = "Saremo insieme. Lo giuro!"; // а куда же ты теперь денешься :)
 			if (!CheckAttribute(pchar, "questTemp.Saga.Helena_friend")) {
 				link.l1.go = "result_17A";
@@ -690,7 +690,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
-				Link.l4 = "Hélène, sto per avventurarmi nella perduta città indiana di Tayasal. Non ti mentirò: è un viaggio dannatamente pericoloso e, per di più, ci sarà da teletrasportarsi attraverso quell’idolo. Vuoi… seguirmi?";
+				Link.l4 = "Hélène, sto per avventurarmi nella perduta città indiana di Tayasal. Non ti mentirò: è un viaggio dannatamente pericoloso e, per di più, ci sarà da teletrasportarsi attraverso quell’idolo. Vuoi... seguirmi?";
 				Link.l4.go = "tieyasal";
 			}
        ////////////////////////казначей///////////////////////////////////////////////////////////
@@ -735,7 +735,7 @@ void ProcessDialogEvent()
             Link.l1.go = "stay_follow";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && pchar.location == Get_My_Cabin() && GetNpcQuestPastDayWOInit(npchar, "sex_date") >= 1) // mitrokosta - очередные исправления интима
 			{
-				Link.l2 = RandPhraseSimple("Hélène, restiamo nella cabina insieme… solo noi due… per qualche ora? Che ne dici?","Tesoro, perché non passiamo qualche ora insieme, solo noi due? Ti piace l’idea?");
+				Link.l2 = RandPhraseSimple("Hélène, restiamo nella cabina insieme... solo noi due... per qualche ora? Che ne dici?","Tesoro, perché non passiamo qualche ora insieme, solo noi due? Ti piace l’idea?");
 				Link.l2.go = "cabin_sex";
 			}
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && rLoc.type == "tavern" && sti(pchar.money) >= 10 && GetNpcQuestPastDayWOInit(npchar, "sex_date") >= 1) // mitrokosta - очередные исправления интима
@@ -860,7 +860,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -1050,7 +1050,7 @@ void ProcessDialogEvent()
 		
 		case "GoldenGirl_6":
 			dialog.text = "Ah! Puttane e depravazione! Magnifico – dunque vai a una bisboccia! Perché non l’hai detto subito, maledizione? Ringrazia il cielo che non sono una strega gelosa pronta a spararti dove stai. Almeno, non ancora.";
-			link.l1 = "Helen, ti prego, sto solo accompagnando il nostro governatore, me l'ha chiesto lui ed era più ostinato d'un mulo. Non ci saranno dannate cortigiane… Aspetta, mi è uscito male… voglio dire, non ci sarà nessun casino con cortigiane… oh maledizione! Voglio solo rendere i miei omaggi, tutto qui!";
+			link.l1 = "Helen, ti prego, sto solo accompagnando il nostro governatore, me l'ha chiesto lui ed era più ostinato d'un mulo. Non ci saranno dannate cortigiane... Aspetta, mi è uscito male... voglio dire, non ci sarà nessun casino con cortigiane... oh maledizione! Voglio solo rendere i miei omaggi, tutto qui!";
 			link.l1.go = "GoldenGirl_7";
 		break;
 		
@@ -1170,7 +1170,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GoldenGirl_26":
-			dialog.text = "L’ho già fatto. Ho avuto tutto il tempo per rimuginare su ciò che ho detto… Mi dispiace anche a me, Charles. Se solo non avessi preso così a cuore i tuoi affari con quel marchese. Avrei messo una guardia come si deve quella notte, sarei stata più attenta. Ah! Non sono che una donna buona a nulla!";
+			dialog.text = "L’ho già fatto. Ho avuto tutto il tempo per rimuginare su ciò che ho detto... Mi dispiace anche a me, Charles. Se solo non avessi preso così a cuore i tuoi affari con quel marchese. Avrei messo una guardia come si deve quella notte, sarei stata più attenta. Ah! Non sono che una donna buona a nulla!";
 			link.l1 = "Smettila di dirlo, il passato è passato. Ti amo e non ti lascerò mai più. Lo giuro!";
 			link.l1.go = "GoldenGirl_27";
 		break;
@@ -1368,7 +1368,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LongHappy_8":
-			dialog.text = "Già, c’è un problema – la maggior parte dei nostri veri amici, quelli con cui vorremmo davvero condividere questo giorno, non metteranno mai piede in città, per non dire in chiesa. Perciò… sposiamoci qui, come si conviene, tra la gente giusta, e poi salpiamo per Isla Tessoro e festeggiamo davvero con chi conta per noi, che ne dici?";
+			dialog.text = "Già, c’è un problema – la maggior parte dei nostri veri amici, quelli con cui vorremmo davvero condividere questo giorno, non metteranno mai piede in città, per non dire in chiesa. Perciò... sposiamoci qui, come si conviene, tra la gente giusta, e poi salpiamo per Isla Tessoro e festeggiamo davvero con chi conta per noi, che ne dici?";
 			link.l1 = "Mi sembra un'ottima idea! Parlerò con l’Abate Benoit, ma dobbiamo mandare gli inviti e tutto il resto...";
 			link.l1.go = "LongHappy_9";
 		break;
@@ -1540,7 +1540,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LongHappy_32":
-			dialog.text = "Sai, pensavo che questo non avrebbe cambiato nulla, e forse è così – ti amavo già prima e desideravo passare il resto dei miei giorni con te, ma oggi, questa sacra cerimonia… Sono davvero felice, Charles! Felice come non mai, e guarda Gladys e Jan – brillano di gioia! Quante facce liete intorno a noi! A proposito – è ora che tu vada tra gli ospiti a ricevere i loro auguri. Torna quando avrai finito, non scordare – ci aspettano a Sharptown.";
+			dialog.text = "Sai, pensavo che questo non avrebbe cambiato nulla, e forse è così – ti amavo già prima e desideravo passare il resto dei miei giorni con te, ma oggi, questa sacra cerimonia... Sono davvero felice, Charles! Felice come non mai, e guarda Gladys e Jan – brillano di gioia! Quante facce liete intorno a noi! A proposito – è ora che tu vada tra gli ospiti a ricevere i loro auguri. Torna quando avrai finito, non scordare – ci aspettano a Sharptown.";
 			link.l1 = "Lo faccio subito, tesoro. Un bacio prima che salpi!";
 			link.l1.go = "LongHappy_33";
 		break;
@@ -1674,7 +1674,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.LongHappy.Tichingitu_died") && CheckAttribute(pchar, "questTemp.LongHappy.Jino_died"))
 			{
 				dialog.text = "Mi dispiace tanto, caro... Prima il nostro fedele amico Tichingitu, ora Gino... Barbazon avrebbe dovuto essere impiccato dozzine di volte per tutte le sue malefatte!";
-				link.l1 = "Ahimè, l’ho fatto solo una volta. Mi sento in colpa anch’io… Ma abbiamo vinto, e lui non farà mai più del male a nessuno.";
+				link.l1 = "Ahimè, l’ho fatto solo una volta. Mi sento in colpa anch’io... Ma abbiamo vinto, e lui non farà mai più del male a nessuno.";
 				link.l1.go = "LongHappy_50";
 			}
 			else
@@ -2066,7 +2066,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drinking_my_background_6":
-			dialog.text = "Sì. Tutti i baroni dissero direttamente a mio padre che era uno sciocco, ma fu il Diavolo della Foresta a dargli il suo benestare e a stringergli la mano dopo che avevo battuto il record dell’equipaggio scalando l’albero maestro. Quel momento non lo dimenticherò mai: le urla trionfanti dell’equipaggio e, ovunque guardassi, solo il mare pulito all’orizzonte. E lo sguardo compiaciuto di mio padre… non potevo vederlo, ma lo sentivo con tutto il cuore.";
+			dialog.text = "Sì. Tutti i baroni dissero direttamente a mio padre che era uno sciocco, ma fu il Diavolo della Foresta a dargli il suo benestare e a stringergli la mano dopo che avevo battuto il record dell’equipaggio scalando l’albero maestro. Quel momento non lo dimenticherò mai: le urla trionfanti dell’equipaggio e, ovunque guardassi, solo il mare pulito all’orizzonte. E lo sguardo compiaciuto di mio padre... non potevo vederlo, ma lo sentivo con tutto il cuore.";
 			link.l1 = "La mia gloria finì quando caddi dagli alberi il primo giorno, mentre si andava verso Guadalupa.";
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.TakeFolke")) {
 				link.l1 = link.l1+" Anche il mio timoniere, Deluc, aveva uno sguardo molto eloquente."}
@@ -2554,7 +2554,7 @@ void ProcessDialogEvent()
 		
 		case "drinking_at_miskito_1":
 			dialog.text = "Charles, ma... proprio adesso...";
-			link.l1 = "Niente storie. Mi spiace essere dura, ma questa non è una burla. Questo te lo tolgo subito. Non riesco a credere a cosa avevi in mente… Su, bevi questo e rimettiti in sesto.";
+			link.l1 = "Niente storie. Mi spiace essere dura, ma questa non è una burla. Questo te lo tolgo subito. Non riesco a credere a cosa avevi in mente... Su, bevi questo e rimettiti in sesto.";
 			link.l1.go = "drinking_at_miskito_2";
 			
 			GiveItem2Character(pchar, "cannabis7");
@@ -2592,7 +2592,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drinking_at_miskito_7":
-			dialog.text = "Succede che mi trovo assai meglio in compagnia di indiani, zingari e altri bravi sbandati. Gli stufati di mamma, i falò sulla spiaggia, la passerella dell’Arcobaleno… mi sono creata un piccolo mondo tutto mio, capitano. Peccato che tutto sia andato in malora proprio quando pensavo d’aver capito la vita.";
+			dialog.text = "Succede che mi trovo assai meglio in compagnia di indiani, zingari e altri bravi sbandati. Gli stufati di mamma, i falò sulla spiaggia, la passerella dell’Arcobaleno... mi sono creata un piccolo mondo tutto mio, capitano. Peccato che tutto sia andato in malora proprio quando pensavo d’aver capito la vita.";
 			link.l1 = "La botte è quasi vuota... Un’ultima bevuta?";
 			link.l1.go = "exit";
 			
@@ -3059,7 +3059,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "after_cave_1":
-			dialog.text = "Non capisco i duelli. Roba da uomini, quasi sempre finisce con due cadaveri, e se la sorte è davvero beffarda, pure di più. E l’onore… Io credo che l’onore si fondi proprio sul tentativo di evitare la rissa fino all’ultimo respiro, ché tanto di rado ne vale la pena. Ah! Sentimi qui – che sciocchezze sto dicendo!";
+			dialog.text = "Non capisco i duelli. Roba da uomini, quasi sempre finisce con due cadaveri, e se la sorte è davvero beffarda, pure di più. E l’onore... Io credo che l’onore si fondi proprio sul tentativo di evitare la rissa fino all’ultimo respiro, ché tanto di rado ne vale la pena. Ah! Sentimi qui – che sciocchezze sto dicendo!";
 			link.l1 = "È un punto di vista curioso, Helen. Ma non tutti la penserebbero così.";
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Duel")) {
 				link.l1.go = "after_cave_duel";

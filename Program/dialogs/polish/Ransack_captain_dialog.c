@@ -619,7 +619,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_Prisoner_1":
 			dialog.text = "Słucham, kapitanie.";
-			link.l1 = "Znalazłem się na twoim galeonie, ponieważ Adam Rayner, mąż Kateriny, powiedział mi, że na twoim statku jest mnóstwo srebra. Ten sztuczka pozwoliła mu odebrać kobietę, która kiedyś do niego należała i uciekła od niego do ciebie.";
+			link.l1 = "Znalazłem się na twoim fluita, ponieważ Adam Rayner, mąż Kateriny, powiedział mi, że na twoim statku jest mnóstwo srebra. Ten sztuczka pozwoliła mu odebrać kobietę, która kiedyś do niego należała i uciekła od niego do ciebie.";
 			link.l1.go = "FalseTrace_Prisoner_2";
 		break;
 		

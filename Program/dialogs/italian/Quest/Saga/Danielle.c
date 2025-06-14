@@ -34,7 +34,7 @@ void ProcessDialogEvent()
 		case "meeting":
 			PlaySound("Voice\English\saga\Denny Hawk-01.wav");
 			dialog.text = "Non fare ancora progetti, Capitano. Cercati una ragazzina più giovane e sprovveduta per passare qualche ora in più. Ho degli affari da proporti. Sono sposata, in realtà. Mio marito si chiama Nathaniel Hawk.";
-			link.l1 = "Ma guarda un po’! Allora dev’esser lei… eh, Dannie Hawk, di cui parlava messer Svenson.";
+			link.l1 = "Ma guarda un po’! Allora dev’esser lei... eh, Dannie Hawk, di cui parlava messer Svenson.";
 			link.l1.go = "meeting_1";
 		break;
 		
@@ -983,7 +983,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	

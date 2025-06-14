@@ -1342,7 +1342,7 @@ A batch of 20 logs of ironwood every 15th of the month from Rodrigo Jimenez, the
 Strings to Pull
 #TEXT   1
 ************************************************************
-I can always buy mangarosa from the gypsy woman in Saint John's — five stalks for two hundred gold doubloons.
+I can always buy mangarosa from the gypsy woman in Saint John's - three stalks for three hundred and fifty gold doubloons.
 #TEXT   2
 ************************************************************
 In the tavern of Willemstad, rest and pleasure always await me. The charming Betsy Price will take care of everything.

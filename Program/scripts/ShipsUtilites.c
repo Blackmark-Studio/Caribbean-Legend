@@ -751,6 +751,7 @@ float FindShipSpeed(aref refCharacter)
 			
 	fMaxSpeedZ = fMaxSpeedZ * AIShip_isPerksUse(CheckCharacterPerk(refCharacter, "MapMaker"), 1.0, 1.05) * isEquippedArtefactUse(refCharacter, "obereg_9", 1.0, 1.15);
 	//if(IsEquipCharacterByItem(refCharacter, "sextant2")) fMaxSpeedZ *= 1.05; // belamour legendary edition Секстант Алексуса
+	if(IsCharacterEquippedArtefact(refCharacter, "talisman19")) fMaxSpeedZ *= 1.0 + Bring2Range(0.0, 0.375, 0.0, 50.0, (100.0 - GetHullPercent(refCharacter)) / 2.0);
 	
 	if(CheckAttribute(refCharacter, "cheats.ArcadeSailing")) return fMaxSpeedZ*SpeedBySkill(refCharacter);
 	
@@ -1014,14 +1015,14 @@ void SetShipyardStore(ref NPChar)
 	iTest_ship = rand(2);
 	if (iTest_ship != 0) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship3");
 	iTest_ship = rand(3);
-	if (iTest_ship != 0) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_MERCHANT, iNationFlag), NPChar), "ship4");
+	if (iTest_ship != 0) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship4");
 	iTest_ship = rand(1);
 	if (iTest_ship != 0) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship5");
 	
 	if (sti(PChar.rank) > 3)
 	{
 		iTest_ship = rand(4);
-		if (iTest_ship <= 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_MERCHANT, iNationFlag), NPChar), "ship6");
+		if (iTest_ship <= 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship6");
 		iTest_ship = rand(4);
 		if (iTest_ship <= 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship7");
 	}
@@ -1033,7 +1034,7 @@ void SetShipyardStore(ref NPChar)
 		iTest_ship = rand(6);
 		if (iTest_ship <= 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship9");
 		iTest_ship = rand(6);
-		if (iTest_ship <= 3) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_MERCHANT, iNationFlag), NPChar), "ship10");
+		if (iTest_ship <= 3) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship10");
 	}
 	
 	if (sti(PChar.rank) > 9)
@@ -1043,7 +1044,7 @@ void SetShipyardStore(ref NPChar)
 		iTest_ship = rand(6);
 		if (iTest_ship <= 1) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship12");
 		iTest_ship = rand(6);
-		if (iTest_ship <= 3) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_MERCHANT, iNationFlag), NPChar), "ship13");
+		if (iTest_ship <= 3) FillShipParamShipyard(NPChar, GenerateStoreShipExt(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_ANY, iNationFlag), NPChar), "ship13");
 	}
 	
 	if (sti(PChar.rank) > 11)
@@ -1496,6 +1497,7 @@ string GetShipTraitDesc(ref chr)
 	{
 		if(GetShipTypeName(chr) == "Galeon_sm")  return "sp1"; 
 		if(GetShipTypeName(chr)  == "LadyBeth")  return "sp2"; 
+		if(GetShipTypeName(chr)  == "Memento")   return "sp3"; 
 	}
 	if(!CheckAttribute(&RealShips[nShipType],"Traits")) return "";
 	
@@ -1535,7 +1537,7 @@ float GetBaseShipPower(int iBaseType)
 		case SHIP_SPEC_RAIDER:		fSpec = 1.3;	break;
 		case SHIP_SPEC_WAR:			fSpec = 1.5;	break;
 	}
-	float fPower = 20.0 * (7.0 - iClass) * 1.6 * fSpec;
+	float fPower = 23.0 * (7.0 - iClass) * 1.6 * fSpec;
     rBaseShip.Power = fPower;
     return fPower;
 }
@@ -1548,7 +1550,10 @@ float GetRealShipPower(ref rChar)
     if (kCrew > 1.0) kCrew = 1.0;
     float kHull  = stf(rChar.ship.HP) / stf(rShip.HP);
     float kSails = stf(rChar.ship.SP) / stf(rShip.SP);
-    fPower *= pow(kCrew, 2.25)*0.5 + pow(kSails, 2.25)*0.3 + pow(kHull, 2.25)*0.2;
+    float kCannons = MakeFloat(GetCannonsNum(rChar)) / stf(rShip.CannonsQuantity);
+    fPower *= pow(kCrew, 2.25)*0.45 + pow(kSails, 2.25)*0.25 + pow(kHull, 2.25)*0.2 + pow(kCannons, 2.25)*0.1;
+	// belamour Шляпа Грима минус 30% штрафа
+	fPower = GetFloatByCondition(GetCharacterEquipByGroup(rChar, HAT_ITEM_TYPE) == "hat9", fPower, fClamp(fPower, 1.0, fPower + 0.3));
     return fPower;
 }
 
@@ -1574,3 +1579,35 @@ void UpdatePlayerSquadronPower() // Кэш
     PChar.Squadron.ModPower = fPower;
 }
 // Механика мощи <--
+
+// belamour добавить бонус "Мементо"
+void AddMementoShipBonus(int deadCrew)
+{
+	if(!GetDLCenabled(DLC_APPID_6)) return;
+	if(!ShipBonus2Artefact(pchar, SHIP_MEMENTO)) return;
+	
+	ref rShip;
+	
+	makeref(rShip, RealShips[sti(pchar.Ship.Type)]);
+	
+	if(!CheckAttribute(rShip,"DeadSailors"))
+	{
+		rShip.DeadSailors = 0;
+		rShip.DeadSailors.SailorsExpBonus = 0;     // бонус к опыту экипажа
+		rShip.DeadSailors.SailorsMoraleBonus = 0;  // бонус к морали
+		rShip.DeadSailors.SailorsBoardingBonus = 0;  // бонус команды на абордаже
+		rShip.DeadSailors.SurrenderChanceBonus = 0; // бонус к шансу сдачи врага
+		rShip.DeadSailors.RecruitPiratesBonus = 0; // бонус к рекрутам пиратам
+		rShip.DeadSailors.RecruitSlaveBonus = 0;  // увеличение количества рабов - рекрутов
+   	}
+	
+	int deadSailors = sti(rShip.DeadSailors) + deadCrew;
+	rShip.DeadSailors = deadSailors;
+
+	rShip.DeadSailors.SailorsExpBonus = func_min((deadSailors * 2), 100); // 0...100
+	rShip.DeadSailors.SailorsMoraleBonus = func_min(deadSailors, 100); //0...100
+	rShip.DeadSailors.SailorsBoardingBonus = func_min((deadSailors / 50), 10); //0...5
+	rShip.DeadSailors.SurrenderChanceBonus = func_min((deadSailors / 100), 20); // 0...20
+	rShip.DeadSailors.RecruitPiratesBonus = Bring2Range(0.0, 10.0, 0.0, 0.2, stf(rShip.DeadSailors.SailorsBoardingBonus)); // 0.0...0.2
+	rShip.DeadSailors.RecruitSlaveBonus = stf(rShip.DeadSailors.RecruitPiratesBonus); // 0.0...0.2
+}

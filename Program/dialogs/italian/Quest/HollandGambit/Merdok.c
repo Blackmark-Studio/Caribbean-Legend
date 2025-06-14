@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity("SentJons");
 			dialog.text = "Davvero? E perché ne sei così sicuro?";
-			link.l1 = "Perché Charlie ora riposa sul fondo del mare a dar da mangiare ai pesci. Ho arrembato la 'Zeekalf' e spedito Knippel dritto all’inferno. Ovviamente, prima l’ho interrogato… Addosso gli ho trovato una lettera che mi ha permesso di spacciarmi per Knippel quando ho parlato con la nostra ebrea Abigail, la dolce metà del nostro valoroso Richard.";
+			link.l1 = "Perché Charlie ora riposa sul fondo del mare a dar da mangiare ai pesci. Ho arrembato la 'Zeekalf' e spedito Knippel dritto all’inferno. Ovviamente, prima l’ho interrogato... Addosso gli ho trovato una lettera che mi ha permesso di spacciarmi per Knippel quando ho parlato con la nostra ebrea Abigail, la dolce metà del nostro valoroso Richard.";
 			link.l1.go = "Abigile_1";
 		break;
 		

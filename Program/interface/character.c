@@ -1078,7 +1078,7 @@ void ChoosePerk()
 	{
 	    showCondition = false;
 	}
-	// проверка на необходимык перки <--
+	// проверка на необходимые перки <--
 
     // проверка ранга
     if (CheckAttribute(&ChrPerksList, "list." + perkName + ".rank") && sti(xi_refCharacter.rank) < sti(ChrPerksList.list.(perkName).rank))

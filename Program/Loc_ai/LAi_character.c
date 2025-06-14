@@ -303,6 +303,22 @@ float LAi_GetCharacterMaxHP(aref chr)
 		}
 	}
 	
+	if(IsMainCharacter(chr))	// бонус хп у ГГ
+	{
+		float fMainAdd = 0.0;
+		if(!CheckAttribute(chr, "chr_ai.main_hp_bonus"))
+		{
+			chr.chr_ai.main_hp_bonus = MAIN_HP_BONUS;
+			fMainAdd = MAIN_HP_BONUS;
+		}
+		else if(stf(chr.chr_ai.main_hp_bonus) != MAIN_HP_BONUS)
+		{
+			fMainAdd = MAIN_HP_BONUS - stf(chr.chr_ai.main_hp_bonus);
+			chr.chr_ai.main_hp_bonus = MAIN_HP_BONUS;
+		}
+		max_hp += fMainAdd;
+	}
+
 	chr.chr_ai.hp_max = max_hp;
 	return max_hp;
 }
@@ -517,6 +533,8 @@ void LAi_SetFightMode(aref chr, int isFightMode)
 		if(CheckAttribute(chr, "PriorityMode"))
 			isFightMode = sti(chr.PriorityMode);
 	}
+	if(IsMainCharacter(chr))
+		SendMessage(&objLandInterface, "ll", MSG_BATTLE_LAND_CROSSHAIR_SHOW, 0);
 	SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "ChangeFightMode", isFightMode);
 }
 // boal
@@ -1130,13 +1148,27 @@ void LAi_AllCharactersUpdate(float dltTime)
 					
 				}
 			}
+			
+			// временная неуязвимость
+			if(idx == GetMainCharacterIndex() && IsInvulnerable(chr))
+			{
+				float invulTime = stf(chr_ai.invulnerability);
+				invulTime -= dltTime;
+				if(invulTime <= 0.0)
+					SetInvulnerable(chr, -1.0);
+				else
+					chr_ai.invulnerability = invulTime;
+			}
+			
 			if(CheckAttribute(chr_ai, "poison"))
 			{
 				chr_ai.poison = stf(chr_ai.poison) - dltTime;
 				if(stf(chr_ai.poison) <= 0.0)
 				{
 					DeleteAttribute(chr_ai, "poison");
-				}else{
+				}
+				else if(IsInvulnerable(chr))
+				{
 					hp = hp - dltTime*2.0;
 					if (!CheckAttribute(chr, "poison.hp") || hp < sti(chr.poison.hp)-1.0)
 					{

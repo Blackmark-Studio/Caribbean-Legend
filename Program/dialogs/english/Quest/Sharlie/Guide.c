@@ -21,7 +21,6 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_0":
-			SetAchievement("Test_Ach");
 			PlaySound("Voice\English\LE\Greguar\Greguar_01.wav");
 			dialog.text = "Pleasure to welcome you to the colonies, sir! Allow me to present myself: "+GetFullName(npchar)+". Are you coming from good old home?";
 			link.l1 = "Good day, monsieur. My name is "+GetFullName(pchar)+". Yes, I've just stepped off the ship.";
@@ -103,7 +102,7 @@ void ProcessDialogEvent()
 		
 		case "guide_12":
 			dialog.text = "Am I keeping you, my friend?";
-			link.l1 = "Monsieur, I'm here to find my brother. They say he's in Saint-Pierre. A man of some importance—surely the Governor knows him…";
+			link.l1 = "Monsieur, I'm here to find my brother. They say he's in Saint-Pierre. A man of some importance—surely the Governor knows him...";
 			link.l1.go = "guide_13";
 			SetCameraDialogMode(npchar);
 		break;
@@ -138,12 +137,12 @@ void ProcessDialogEvent()
 		
 		case "guide_21":
 			dialog.text = "Ah, it's you again! I hear you've set foot in the Knights' stronghold. Clearly you travel in high circles. Did you find your brother?";
-			link.l1 = "Found him… in a way.";
+			link.l1 = "Found him... in a way.";
 			link.l1.go = "guide_22";
 		break;
 		
 		case "guide_22":
-			dialog.text = "Forgive me, but I don't hear much joy in that answer…";
+			dialog.text = "Forgive me, but I don't hear much joy in that answer...";
 			link.l1 = "True. I'd hoped to sail home on the next ship, but fate laughs at me. I'm stuck here—who knows for how long—and, on top of that, must learn to be a sailor.";
 			link.l1.go = "guide_23";
 		break;

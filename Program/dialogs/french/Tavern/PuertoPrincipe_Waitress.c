@@ -19,7 +19,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		//--> Старые счёты
 		case "OS_Tavern2_1":
 			dialog.text = "Je... je ne sais pas quoi dire. Tout était comme d’habitude, rien d’étrange.";
-			link.l1 = "Ah oui ? Rien d’étrange ? Et ce marin du 'Sea Wolf' qui t’a draguée ce jour-là ? Il semblait penser que tu étais partante pour passer la nuit avec lui.";
+			link.l1 = "Ah oui ? Rien d’étrange ? Et ce marin du 'Sea Beast' qui t’a draguée ce jour-là ? Il semblait penser que tu étais partante pour passer la nuit avec lui.";
 			link.l1.go = "OS_Tavern2_2";
 			DelLandQuestMark(npchar);
 		break;
@@ -39,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern2_4_HO":
-			dialog.text = "Je... je... je vais tout vous dire ! C’est... c’est mon prétendant, Jack. Jack Veils ! C’est lui qui m’a demandé de séduire un marin quelconque du 'Sea Wolf'. Et quand l’un d’eux se montrerait trop audacieux, je devais faire un esclandre pour faire sortir le patron de derrière le comptoir. Quand les choses se seraient un peu calmées, deux autres marins devaient se battre pour le retenir dans la salle. C’est exactement ce qui s’est passé\nPendant ce temps, le capitaine du 'Sea Wolf' a volé le tonneau. C’est... c’est tout ce que je sais, "+GetSexPhrase("monsieur","madame")+" ! Je vous en supplie, ne me dénoncez pas ! Je voulais juste que Jack commence enfin à me respecter ! Je l’ai aidé...";
+			dialog.text = "Je... je... je vais tout vous dire ! C’est... c’est mon prétendant, Jack. Jack Veils ! C’est lui qui m’a demandé de séduire un marin quelconque du 'Sea Beast'. Et quand l’un d’eux se montrerait trop audacieux, je devais faire un esclandre pour faire sortir le patron de derrière le comptoir. Quand les choses se seraient un peu calmées, deux autres marins devaient se battre pour le retenir dans la salle. C’est exactement ce qui s’est passé\nPendant ce temps, le capitaine du 'Sea Beast' a volé le tonneau. C’est... c’est tout ce que je sais, "+GetSexPhrase("monsieur","madame")+" ! Je vous en supplie, ne me dénoncez pas ! Je voulais juste que Jack commence enfin à me respecter ! Je l’ai aidé...";
 			link.l1 = "Tu en as aidé un, mais tu as sacrifié l’autre sans scrupules ? Très bien, j’ai promis de ne pas te dénoncer – je tiendrai parole. Mais tu devras vivre avec ça ! À cause de ta stupidité, l’aubergiste aurait pu avoir de graves ennuis. Où est ton Jack ? Et attention : si tu mens, je reviendrai. Et crois-moi, tu ne veux pas que ça arrive.";
 			link.l1.go = "OS_Tavern2_5";
 			AddComplexSelfExpToScill(40, 40, 40, 0);
@@ -47,7 +47,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern2_4_harizma":
-			dialog.text = "Je... je... je vais tout vous dire ! C’est... c’est mon prétendant, Jack. Jack Veils ! C’est lui qui m’a demandé de séduire un marin quelconque du 'Sea Wolf'. Et quand l’un d’eux se montrerait trop audacieux, je devais faire un esclandre pour faire sortir le patron de derrière le comptoir. Quand les choses se seraient un peu calmées, deux autres marins devaient se battre pour le retenir dans la salle. C’est exactement ce qui s’est passé\nPendant ce temps, le capitaine du 'Sea Wolf' a volé le tonneau. C’est... c’est tout ce que je sais, "+GetSexPhrase("monsieur","madame")+" ! Je vous en supplie, ne me dénoncez pas ! Je voulais juste que Jack commence enfin à me respecter ! Je l’ai aidé...";
+			dialog.text = "Je... je... je vais tout vous dire ! C’est... c’est mon prétendant, Jack. Jack Veils ! C’est lui qui m’a demandé de séduire un marin quelconque du 'Sea Beast'. Et quand l’un d’eux se montrerait trop audacieux, je devais faire un esclandre pour faire sortir le patron de derrière le comptoir. Quand les choses se seraient un peu calmées, deux autres marins devaient se battre pour le retenir dans la salle. C’est exactement ce qui s’est passé\nPendant ce temps, le capitaine du 'Sea Beast' a volé le tonneau. C’est... c’est tout ce que je sais, "+GetSexPhrase("monsieur","madame")+" ! Je vous en supplie, ne me dénoncez pas ! Je voulais juste que Jack commence enfin à me respecter ! Je l’ai aidé...";
 			link.l1 = "Tu en as aidé un, mais tu as sacrifié l’autre sans scrupules ? Très bien, j’ai promis de ne pas te dénoncer – je tiendrai parole. Mais tu devras vivre avec ça ! À cause de ta stupidité, l’aubergiste aurait pu avoir de graves ennuis. Où est ton Jack ? Et attention : si tu mens, je reviendrai. Et crois-moi, tu ne veux pas que ça arrive.";
 			link.l1.go = "OS_Tavern2_5";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
@@ -74,6 +74,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			PChar.quest.OS_Zasada.win_condition.l1 = "item";
 			PChar.quest.OS_Zasada.win_condition.l1.item = "cask_gin";
 			PChar.quest.OS_Zasada.function = "OS_Zasada";
+			
+			SetFunctionLocationCondition("DWH_Close_House", "PuertoPrincipe_QuestHouse_1", false);
 		break;
 		//<-- Старые счёты
 	}

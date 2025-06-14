@@ -155,7 +155,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = NPCharSexPhrase(NPChar,"Attento, compare, a correre in giro con l’arma sfoderata. Mi fai venire i nervi…","Non mi piace quando gli uomini mi passano davanti con l’arma sguainata. Mi mette i brividi...");
+				dialog.text = NPCharSexPhrase(NPChar,"Attento, compare, a correre in giro con l’arma sfoderata. Mi fai venire i nervi...","Non mi piace quando gli uomini mi passano davanti con l’arma sguainata. Mi mette i brividi...");
 				link.l1 = RandPhraseSimple("Capito.","Me ne sto andando.");
 			}
 			link.l1.go = "exit";

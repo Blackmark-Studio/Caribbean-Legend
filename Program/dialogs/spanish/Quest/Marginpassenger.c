@@ -33,8 +33,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "MarginCap_2":
-		int MCparam = (6 - sti(RealShips[sti(pchar.ship.type)].Class)) * 100 + sti(pchar.ship.Crew.Morale) + sti(pchar.Ship.Crew.Exp.Sailors) + sti(pchar.Ship.Crew.Exp.Cannoners) + sti(pchar.Ship.Crew.Exp.Soldiers);
-		int NPCparam = (6 - sti(RealShips[sti(npchar.ship.type)].Class)) * 100 + sti(npchar.ship.Crew.Morale) + sti(npchar.Ship.Crew.Exp.Sailors) + sti(npchar.Ship.Crew.Exp.Cannoners) + sti(npchar.Ship.Crew.Exp.Soldiers);
+		int MCparam = (7 - sti(RealShips[sti(pchar.ship.type)].Class)) * 100 + sti(pchar.ship.Crew.Morale) + sti(pchar.Ship.Crew.Exp.Sailors) + sti(pchar.Ship.Crew.Exp.Cannoners) + sti(pchar.Ship.Crew.Exp.Soldiers);
+		int NPCparam = (7 - sti(RealShips[sti(npchar.ship.type)].Class)) * 100 + sti(npchar.ship.Crew.Morale) + sti(npchar.Ship.Crew.Exp.Sailors) + sti(npchar.Ship.Crew.Exp.Cannoners) + sti(npchar.Ship.Crew.Exp.Soldiers);
 		if (MCparam > NPCparam) // отдаст сам
 		{
 			dialog.text = "No tengo otra opción entonces. El destino de mi tripulación es más valioso para mí que el destino de un solo hombre. ¡Pero no te saldrás con la tuya tan fácilmente! ¡No lo olvidaré!";

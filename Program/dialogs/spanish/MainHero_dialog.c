@@ -891,14 +891,18 @@ void ProcessDialogEvent()
 		break;
 
 	case "TalkSelf_SlavesToCrew_1":
-		// belamour legendary edition перк получил время работы, старый метод не подходит
-		if (GetOfficersPerkUsing(pchar, "IronWill"))
+		bOk = ShipBonus2Artefact(pchar, SHIP_MEMENTO) && CheckAttribute(&RealShips[sti(pchar.Ship.Type)], "DeadSailors.RecruitSlaveBonus");
+		if(!bOk)
 		{
-			AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 5.0))
-		}
-		else
-		{
-			AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 3.0))
+			// belamour legendary edition перк получил время работы, старый метод не подходит
+			if (GetOfficersPerkUsing(pchar, "IronWill"))
+			{
+				AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 5.0))
+			}
+			else
+			{
+				AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 3.0))
+			}
 		}
 		ChangeCharacterComplexReputation(pchar, "authority", -0.5);
 		// падение опыта -->
@@ -1363,6 +1367,7 @@ void ProcessDialogEvent()
 
 void DialogExit_Self()
 {
+    SendMessage(PChar, "ls", MSG_CHARACTER_EX_MSG, "forceBlend");
 	DialogExit();
 	locCameraSleep(false); // boal
 }

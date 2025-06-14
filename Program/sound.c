@@ -704,6 +704,16 @@ void SetSchemeForSea ()
 		{ 
 			if (pchar.Ship.POS.Mode == SHIP_WAR)
 			{
+				if(bGlobalTutor)
+				{
+					SetMusic("music_q_Seabattle");
+					return;
+				}
+				if(CheckAttribute(pchar, "questTemp.Memento.AttackFromMap"))
+				{
+					SetMusic("music_Memento");
+					return;
+				}
 				if(CheckAttribute(pchar, "questTemp.SantaMisericordia.AttackFromMap"))
 					SetMusic(ClassicSoundScene+"SantaMisericordia");
 				else
@@ -735,6 +745,16 @@ void SetSchemeForSea ()
 		{ 
    			if (pchar.Ship.POS.Mode == SHIP_WAR)
 			{
+				if(bGlobalTutor)
+				{
+					SetMusic("music_q_Seabattle");
+					return;
+				}
+				if(CheckAttribute(pchar, "questTemp.Memento.AttackFromMap"))
+				{
+					SetMusic("music_Memento");
+					return;
+				}
 				if(CheckAttribute(pchar, "questTemp.SantaMisericordia.AttackFromMap"))
 					SetMusic(ClassicSoundScene+"SantaMisericordia");
 				else
@@ -967,6 +987,11 @@ void Sound_OnAlarm(bool _alarmed)
 	{ //alarm on!
 		if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0)
 		{
+			if (CheckAttribute(pchar, "questTemp.Memento_BitvaSkeletMusic"))
+			{
+				SetMusic("classic_music_retribution_1");
+				return;
+			}
 			if (loadedLocation.id == "shore67") SetMusic("music_q_battle");
 			else SetMusic("music_bitva");
 		}
@@ -993,6 +1018,16 @@ void Sound_OnSeaAlarm(bool _seaAlarmed)
 	if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) ClassicSoundScene = "classic_";
 	if (seaAlarmed)
 	{ //alarm on!
+		if(bGlobalTutor)
+		{
+			SetMusic("music_q_Seabattle");
+			return;
+		}
+		if(CheckAttribute(pchar, "questTemp.Memento.AttackFromMap"))
+		{
+			SetMusic("music_Memento");
+			return;
+		}
 		if(CheckAttribute(pchar, "questTemp.SantaMisericordia.AttackFromMap"))
 			SetMusic(ClassicSoundScene+"SantaMisericordia");
 		else

@@ -1459,7 +1459,7 @@ void ChoosePerk()
 		SetFormatedText("PERK_TEXT_FREE", XI_ConvertString("Ship abilities") + ": " + xi_refCharacter.perks.FreePoints_ship);
 		if (sti(xi_refCharacter.perks.FreePoints_ship) <= 0) ok = false;
     }
-	// проверка на необходимы перки -->
+	// проверка на необходимые перки -->
 	if (CheckAttribute(&ChrPerksList, "list." + perkName + ".condition"))
 	{
         makearef(rootItems, ChrPerksList.list.(perkName).condition);
@@ -1497,7 +1497,7 @@ void ChoosePerk()
 	{
 	    showCondition = false;
 	}
-	// проверка на необходимы перки <--
+	// проверка на необходимые перки <--
 
     // проверка ранга
     if (CheckAttribute(&ChrPerksList, "list." + perkName + ".rank") && sti(xi_refCharacter.rank) < sti(ChrPerksList.list.(perkName).rank))

@@ -39,12 +39,14 @@ new_string	{
 
 Potion parameters{Volume}
 health value{hp}
-weapon blade parameters{attacco: #f.1WeightAttack# Bilanciato: #f.1Balance#}
+weapon blade parameters{attacco: #f.1attacco# Bilanciato: #f.1Bilanciato#}
 weapon blade type {Tipo: #sFencingTypeName#}
 weapon gun parameters{Danno: #ddmg_min#-#ddmg_max#}
 weapon gun parameters equipped{Danno: #ddmg_min#-#ddmg_max#, tempo ricarica: #dchargespeed# sec., precisione: #daccuracy#%}
 mushket parameters{Danno: #ddmg_min#-#ddmg_max#}
 mushket parameters equipped{Danno: #ddmgmin#-#ddmgmax#, tempo ricarica: #dchargespeed# sec., precisione: #daccuracy#%}
+weapon grape parameters{Danno: #dbasedmg#x#dshards#, dispersione: #sarea#}
+weapon grape parameters equipped{Danno: #dbasedmg#x#dshards#, dispersione: #sarea#, tempo di ricarica: #dchargespeed# sec.}
 
 youve_got {Pezzo trovato - }
 used_item {Pezzo utilizzato - }
@@ -52,8 +54,9 @@ used_item {Pezzo utilizzato - }
 youve_gotNotif {Nuovo oggetto: }
 used_itemNotif {Oggetto perso: }
 
-
 flower_find {Scoperta fortunata!}
+
+
 ;====================================================================================================================================
 ;=========================================================================================================================== MUNIZIONI
 ;====================================================================================================================================	
@@ -342,6 +345,7 @@ itmname_knife_03 {Pugnale di famiglia}
 itmdescr_knife_03
 {
 Arma della famiglia de Montpe: un oggetto di valore, adatto per una vendita redditizia o come regalia di famiglia nei momenti di bisogno.
+(+1 'Fortuna')
 }
 
 itmname_khopesh1 {Khopesh}
@@ -488,6 +492,20 @@ Una spada riccamente ornata, nonostante il suo aspetto cerimoniale, possiede ecc
 
 lacrima_patris_parameters{Potenziamento gittata cannoni: #f.1RangeBonus#%}
 
+itmname_blade_SP_3low {Impiccato}
+itmdescr_blade_SP_3low
+{
+Questo coltellaccio unisce tratti di sciabole turche e falcioni europei; la lama larga può tagliare anche l’armatura più resistente. Con l’Impiccato, ogni abbordaggio finisce in fretta e con brutalità.
+}
+
+itmname_blade_SP_3 {Impiccato}
+itmdescr_blade_SP_3
+{
+Il teschio di Yorick al posto della guardia spinge il proprietario a non temere la morte e a guardare il Mietitore negli occhi per sbloccare la vera forza guerriera.
+~
+Blocca la cura da qualsiasi fonte.
+Ogni 2% di salute persa aumenta danno e velocità di recupero energia dell’1,5% e 1,75%.
+}
 ; ==================================================================================================================== ОГНЕСТРЕЛЬНОЕ ОРУЖИЕ
 
 
@@ -506,7 +524,7 @@ Questo primo revolver è un'arma a tre canne. Un'arma molto difficile da produrr
 itmname_pistol3 {Trombone}
 itmdescr_pistol3
 {
-Pistola ad anima liscia corta e pesante, non molto utile contro nemici agili e solitari o pesantemente corazzati, ma un colpo contro una folla di straccioni sarà sicuramente impressionante. Utilizza il colpo a grappolo.
+Pistola a canna liscia corta e pesante, non molto utile contro nemici agili e solitari o pesantemente corazzati, ma un colpo contro una folla di straccioni sarà sicuramente impressionante. Utilizza il colpo a grappolo.
 }
 
 itmname_pistol4 {Pistola a quattro canne}
@@ -631,6 +649,42 @@ itmname_m8_barrel {Calcio e canna}
 itmdescr_m8_barrel
 {
 Calcio e canna di un fucile a quattro colpi smontato.
+}
+
+itmname_mushket9 {Vecchia archibugio}
+itmdescr_mushket9
+{
+Un antico ma affidabile archibugio. Secondo le storie, fu con quest'arma che lo stesso Cortés crivellò la giungla di mitraglia, seminando il terrore tra gli indigeni.
+}
+
+UpgradeStageInfo_mushket9_1 {Attualmente ha un aspetto piuttosto trascurato, ma una manutenzione competente e buoni strumenti potrebbero trasformarla.}
+
+UpgradeStageInfo_mushket9_2 {Dopo aver sostituito il calcio e fatto una buona pulizia, ha smesso di sembrare un pezzo di ferro arrugginito. Ora non è più imbarazzante portarla in giro sulla schiena.}
+
+UpgradeStageInfo_mushket9_3 {Con la sostituzione della serratura, ha iniziato ad assomigliare a un'arma moderna. Il metallo, lubrificato con olio d'ossa, brilla al sole come se fosse appena uscito dalle mani di un artigiano.}
+
+UpgradeStageInfo_mushket9_4
+{
+Nelle vostre mani quest'arma ha raggiunto il suo apice — oltre non si può sviluppare. L'ultimo tocco — una canna ampliata — ha semplificato e velocizzato il caricamento, aumentando notevolmente l'efficacia.
+Potete esserne orgogliosi.
+}
+
+itmname_FirearmStockPart_1 {Calcio e bacchetta}
+itmdescr_FirearmStockPart_1
+{
+Un bel calcio intagliato per vecchi fucili e una bacchetta con spazzola per la pulizia della canna. Erano avvolti in un panno di lino e accuratamente sistemati in un angolo remoto del tesoro, come se fossero stati messi lì molto tempo dopo.
+}
+
+itmname_FirearmStockPart_2 {Serratura e olio d'ossa}
+itmdescr_FirearmStockPart_2
+{
+Una moderna serratura a molla, stracci e una boccetta di olio d'ossa per la manutenzione dell'arma, stranamente adatti all’archibugio trovato presso Blackwood. Anch’essi erano sistemati separatamente dal resto del bottino.
+}
+
+itmname_FirearmStockPart_3 {Canna e polveriera}
+itmdescr_FirearmStockPart_3
+{
+Questo set di oggetti velocizzerà notevolmente il caricamento di qualsiasi arma a canna lunga, ma avete la sensazione che siano perfetti proprio per quell’archibugio. Erano avvolti in un piccolo pacco di carta, chiaramente per proteggerli dall'umidità, a differenza degli altri oggetti del tesoro.
 }
 
 itmname_grape_mushket {Mortaio a mano}
@@ -775,6 +829,9 @@ itmname_suit2 {Uniforme inglese}
 itmdescr_suit2
 {
 Un'uniforme da ufficiale dei Black Watch, un reggimento d'élite di Highlander scozzesi al servizio della Corona inglese.
+~
+Riduce del 10% i danni inflitti da qualsiasi arma da taglio.
+Previene i danni critici nel 30% dei casi.
 (-1 Reazione, -15 Furtività, +15 Leadership)
 }
 
@@ -825,7 +882,84 @@ Un pezzo pregiato, una meraviglia realizzata da Henrick Vedecker. Offre la massi
 itmname_lantern {Lanterna}
 itmdescr_lantern
 {
-Una piccola lanterna è un oggetto indispensabile nell'oscurità. Attaccatela alla cintura per illuminare il vostro cammino di notte, così come nelle caverne, nelle grotte e nei sotterranei. Si attiva e si disattiva facilmente premendo “L” sulla tastiera.}
+Una piccola lanterna è un oggetto indispensabile nell'oscurità. Attaccatela alla cintura per illuminare il vostro cammino di notte, così come nelle caverne, nelle grotte e nei sotterranei. Si attiva e si disattiva facilmente premendo “L” sulla tastiera.
+}
+
+; ==================================================================================================================== ШЛЯПЫ
+
+itmname_hat1 {Condottiere’s Hat}
+itmdescr_hat1
+{
+Being the favorite headgear of duelists and fencers, this hat motivates one to constantly hone their cold weapon skills in order to look appropriate.
+~
+Increases experience gain with Light, Medium, and Heavy melee weapons by 10%.
+}
+
+itmname_hat2 {Cavalier’s Hat}
+itmdescr_hat2
+{
+A richly decorated colorful hat, typically worn by nobles, has acquired a notorious reputation in the Caribbean. Its wearers here are not pampered European aristocrats, but experienced duelists and adventurers capable of fighting tirelessly with any weapon in hand.
+~
+Killing an enemy with a melee weapon restores 25% of energy.
+}
+
+itmname_hat3 {Sailor’s Tricorn}
+itmdescr_hat3
+{
+A rather ordinary tricorn hat, widespread among sailors. According to an old maritime tradition, this tricorn is given to a crew member who has passed three severe tests - sailing in a storm, their first naval battle, and patching holes afterwards.
+~
+Increases experience gain in Navigation, Accuracy, and Repair by 10%.
+}
+
+itmname_hat4 {Naval Officer’s Tricorn}
+itmdescr_hat4
+{
+A tricorn popular among ship officers. Upon seeing such a hat, ordinary sailors begin to fulfill their duties particularly quickly. Whether out of respect or fear of punishment is a rhetorical question.
+~
+Increases experience gain in all Naval Skills by 15%.
+}
+
+itmname_hat5 {Admiral’s Hat}
+itmdescr_hat5
+{
+Such headgear is rarely seen by an ordinary sailor even once in a lifetime; it inspires and motivates everyone around. Being in the same squadron as the owner of this hat is a great honor, and everyone from sailor to officer is ready to follow them to hell and back.
+~
+Gives your Naval Skills to every captain in your fleet. Reduces the salaries of all crew and officers on every ship except the flagship by 15%. Ends the hostility of nations toward the corresponding warships and allows captured national warships to enter the ports of their former owners.
+}
+
+itmname_hat6 {Dutch Hat}
+itmdescr_hat6
+{
+An expensive and exquisite hat, much beloved by middle-tier merchants. Thanks to its unusual shape, it allows one to spot a merchant from afar and prepare for fierce trade negotiations.
+~
+Once every three days, you automatically make a small trading deal when arriving at a port.
+}
+
+itmname_hat7 {Lucky Hat}
+itmdescr_hat7
+{
+They say this dashing hat brings luck. Worn and battered by time, it nevertheless looks noble. If you happen to acquire such a hat, be assured that in the most difficult moment you'll be able to slip past a guard, pull the right card from the deck, and find a stray bullet at the bottom of your pocket.
+~
+There is a 10% chance not to spend ammunition when firing, to dig up a more valuable treasure, and to avoid trouble with hostile guards.
+}
+
+itmname_hat8 {Charlie Prince’s Tricorn}
+itmdescr_hat8
+{
+This hat frightens merchants, especially Spanish ones, more than the Jolly Roger. The fame surrounding its wearer would make even the toughest sea wolf pale and shiver. Cursed be the day when Charlie Prince came into this world.
+~
+Rum and wine restore 50% more health. 
+Being drunk has a more positive effect.
+}
+
+itmname_hat9 {Cappello di Grim}
+itmdescr_hat9
+{
+Questo cappello è conosciuto in ogni angolo dei Caraibi e ovunque viene ricordato con un brivido. Solo un folle oserebbe attaccare la nave del suo proprietario, e incontrandolo la paura ti farà dimenticare come tenere una lama o una pistola. Ricorda: morire è facile. Tornare è difficile.
+~
+Riduce la penalità ai danni della nave del 30%.
+10% di probabilità di evitare danni da sparo.
+}
 
 ; ==================================================================================================================== ОПТИКА
 
@@ -863,6 +997,14 @@ itmdescr_spyglass5
 Un telescopio unico nel suo genere, adatto per osservare le lune di Giove o le navi in mare. Le lenti perfettamente regolate in puro cristallo di rocca e l'uso del treppiede consentono di vedere tutto ciò che si trova sopra l'orizzonte, compresi i tipi di cannoni utilizzati su una nave o in un forte. Con questa lente si possono contare i peli del naso di Re Luigi a Versailles. Bonus di +1500 metri alla distanza di viaggio veloce.
 }
 
+itmname_spyglassSP3 {Cannocchiale "Occhio del Morto"}
+itmdescr_spyglassSP3
+{
+Questo cannocchiale decorato con ossa ha lenti sorprendentemente buone, permettendo di vedere: tipo di nave, nome, velocità, numero e calibro dei cannoni, danni alla nave, moschettieri sul ponte e il terrore negli occhi del capitano nemico.
+Bonus portata navigazione: +850 iarde.
+Aumenta il raggio visivo sulla mappa globale: +15%.
+}
+
 ; ==================================================================================================================== НАВИГАЦИЯ
 
 
@@ -894,8 +1036,7 @@ Un cronometro per la nave. Questo dispositivo viene utilizzato per determinare l
 itmname_clock2 {Cronometro da lavoro}
 itmdescr_clock2
 {
-Un cronometro di bordo calibrato dell'isola di Forro. Permette di determinare la longitudine della nave con un errore minimo per 30 giorni.
-Aumenta la crescita dell'abilità Navigazione quando equipaggiato.
+Un cronometro per navi impostato sull'ora esatta dell'isola di Forro. Permette di determinare la longitudine della nave per un periodo di 30 giorni con un errore minimo.
 }
 
 itmname_sextant1 {Sestante}
@@ -907,16 +1048,13 @@ Un dispositivo unico nel suo genere, utilizzato per determinare le coordinate ge
 itmname_sextant2 {Sestante funzionante}
 itmdescr_sextant2
 {
-Un dispositivo unico per determinare le coordinate geografiche. Ora che possiedi un cronografo del futuro, può determinare costantemente latitudine e longitudine.
-Grazie alla sua alta precisione, puoi ottenere un aumento del 5% della velocità della nave.
-Aumenta la crescita dell'abilità Navigazione quando equipaggiato.
+Un dispositivo unico per determinare le coordinate geografiche. Ora che hai il cronometro di Alexus, può determinare la latitudine e la longitudine in qualsiasi momento.
 }
 
 itmname_bussol {Bussola}
 itmdescr_bussol
 {
-Uno strumento di bordo che combina un astrolabio e una bussola. Permette, tra le altre cose, di determinare costantemente la latitudine geografica.
-Aumenta la crescita dell'abilità Navigazione quando equipaggiato.
+Un dispositivo navale che combina un astrolabio e una bussola della nave. Oltre a vari calcoli, consente di determinare latitudine.
 }
 
 itmname_clock3 {Cronometro di Alexus}
@@ -1046,11 +1184,10 @@ Nessuna penalità, nessun limite di attivazione.
 itmname_talisman15	{Talismano 'Macchia nera'}
 itmdescr_talisman15
 {
-Il portatore del Marchio Nero è immediatamente circondato da superstizioni, leggende e voci, il che aumenta la Potenza della Flotta del 15%. Realizzato con il fazzoletto degli Ironsides, la cavalleria di Cromwell.
+La macchia nera raddoppia misteriosamente ogni cambiamento di onore. È stato ricavato dal fazzoletto da collo degli Ironsides, la cavalleria di Cromwell.
 ~
-Non ha penalità, può essere attivato più volte.
+Nessuna penalità, nessun limite di attivazione.
 }
-
 
 itmname_talisman16	{Talismano 'Coltello rituale d'oro'}
 itmdescr_talisman16
@@ -1072,6 +1209,38 @@ Nessuna penalità, nessun limite di attivazione.
 talisman17_quests{Church Quests: #dQBonus# / 5}
 
 talisman17_questsNoBonus{Church Quests: 0 / 5}
+
+itmname_talisman18	{Ward 'Blackwood's Charter'}
+itmdescr_talisman18
+{
+Albert Blackwood's personal charter that details the structure of Lady Beth, the positioning of shooters, and the battle tactics of Sea Foxes. 
+A separate section is dedicated to treasure hunting and rewarding skilled marksmen with the recovered riches. Each found treasure enhances the crew's musket volley power by 1% and increases damage from the shotguns by 2%.
+~
+No penalties, no activation limits.
+}
+
+talisman18_Bonus{Treasures Found : #dQBonus# / 10}
+
+talisman18_NoBonus{Treasures Found : 0 / 10}
+
+itmname_talisman19	{Talismano "Teschio di Yorick"}
+itmdescr_talisman19
+{
+Il teschio del capitano Mortimer Grim della "Memento", che non ha mai compreso del tutto la propria morte. Lo conoscevi, #sName#.
+I morti insegnano ai vivi, e questo artefatto si adatta ai desideri del suo proprietario.
+Nell’inventario rende immortali tutti gli ufficiali.
+~
+Nessuna penalità, attivabile più volte.
+}
+
+talisman19_InSlot
+{
+La nave esiste su entrambi i lati del velo allo stesso tempo. Il legno era vivo ed è morto per servire i vivi. Il teschio del capitano "Memento" ricorda a ogni equipaggio che la morte non esiste e bisogna combattere fino alla fine.
+~
+Ogni 2% di scafo perso aumenta la velocità e il danno dei cannoni dello 0,75% e 0,5%.
+~
+Nessuna penalità, attivabile più volte.
+}
 
 ; ==================================================================================================================== ТАЛИСМАНЫ
 
@@ -1232,14 +1401,14 @@ Funziona per qualsiasi personaggio.
 Scompare dopo 70 giorni di utilizzo o per rimozione.
 }
 
-itmname_indian_4 {Amuleto 'Ascia'}
+itmname_indian_4 {Amuleto 'Poleaxe'}
 itmdescr_indian_4
 {
-Un pendente coperto di rune aumenta la potenza degli attacchi perforanti del 25%.
-~
-Gli avversari infliggono il 25% in più di danni con colpi critici.
-Si attiva una volta, da qualsiasi personaggio.
-Scompare dopo 70 giorni o quando viene rimosso.
+Aumento del 25% dei danni per gli attacchi pesanti.
+La possibilità di colpire i nemici in modo critico aumenta del 10%.
+Può essere attivata una sola volta.
+Funziona per qualsiasi personaggio.
+Scompare dopo 70 giorni di utilizzo o per rimozione.
 }
 
 itmname_indian_5 {Amuleto 'Zanza'}
@@ -1335,10 +1504,11 @@ Disappears after 70 days of usage or by removal.
 itmname_amulet_3 {Amuleto 'Crucifix'}
 itmdescr_amulet_3
 {
-Una croce cattolica consacrata riduce del 15% i danni critici inflitti dai nemici.
-La potenza dell'attacco pesante del personaggio è ridotta del 10%.
-Si attiva una volta, da qualsiasi personaggio.
-Scompare dopo 70 giorni o quando viene rimosso.
+Riduce del 10% la possibilità di ricevere un colpo critico.
+Gli attacchi pesanti infliggono il 10% di danni in meno.
+Può essere attivato una sola volta.
+Funziona per qualsiasi personaggio.
+Scompare dopo 70 giorni di utilizzo o per rimozione.
 }
 
 itmname_amulet_4 {Amuleto 'El trozo'}
@@ -1614,7 +1784,7 @@ Un diamante dalle miniere sulla costa portoghese del Sud America aiuterà un uom
 itmname_jewelry3	{Rubino}
 itmdescr_jewelry3
 {
-Un Ruby è una scoperta rara nei Caraibi. L'unica gemma che può competere con un diamante sia in rarità che in durezza.
+Un Rubino è una scoperta rara nei Caraibi. L'unica gemma che può competere con un diamante sia in rarità che in durezza.
 }
 
 itmname_jewelry4	{Smeraldo}
@@ -3496,6 +3666,12 @@ itmdescr_cask_whisky
 Una bara di legno contenente diverse bottiglie di whisky irlandese 'Bushmills', distillata nella città di Dublino.
 }
 
+itmname_cask_gin	{Botte di gin}
+itmdescr_cask_gin
+{
+Una botte di raffinato gin europeo. Qui nei Caraibi, una bevanda del genere è riservata solo a pochi eletti.
+}
+
 itmname_buben	{Shaman's Tambourine}
 itmdescr_buben
 {
@@ -3690,6 +3866,41 @@ itmdescr_alexs_chest
 Scatola di metallo del maestro Alexus, chiusa a chiave.
 }
 
+itmname_treasure_note {Biglietto del tesoro}
+itmdescr_treasure_note
+{
+Questo biglietto è stato trovato all’interno di un tesoro. Con ogni probabilità, il suo autore ha lasciato da tempo questo mondo terreno. Il contenuto merita di essere trascritto con cura nella sezione apposita del giornale di bordo.
+}
+
+itmname_PR_Letter	{Biglietto lasciato da qualcuno}
+itmdescr_PR_Letter
+{
+Un biglietto scritto su carta vecchia e consunta. Il suo contenuto non è chiaramente destinato a occhi indiscreti.
+}
+
+itmname_quest_potion	{Decotto alle erbe}
+itmdescr_quest_potion
+{
+Le vere proprietà di questo decotto sono note solo a chi lo ha preparato.
+}
+
+itmname_GS_letters	{Biglietti consegnati dal mercenario}
+itmdescr_GS_letters
+{
+Indicazioni scritte di pugno dal capo dell’amministrazione portuale. Contengono informazioni sulle rotte e sugli orari di partenza dei suoi clienti, ognuno dei quali è stato attaccato dai pirati.
+}
+
+itmname_SM_necklace_Julie	{Collana di Julie d’Armagnac}
+itmdescr_SM_necklace_Julie
+{
+Un gioiello caro al cuore di Julie. Elegante e raffinato, sembra custodire i suoi ricordi. Se esistono oggetti in grado di conservare segreti, questa collana è senza dubbio uno di essi.
+}
+
+itmname_TBP_letter	{Lettera aperta}
+itmdescr_TBP_letter
+{
+"Pensavi di potermi ricattare e farla franca? Ti sbagliavi. Presto rimpiangerai la tua audacia. La tua morte sarà lenta e dolorosa, e nessuno verrà a salvarti."
+}
 
 ;====================================== предметы для DLC ===============================
 
@@ -3934,4 +4145,18 @@ itmname_islamona_toolbox	{Cassetta attrezzi}
 itmdescr_islamona_toolbox
 {
 Strumenti pregiati per la costruzione di navi e case. Realizzato in Europa.
+}
+
+;=============================== SP3 =======================================================
+
+itmname_Memento_Book	{Diario di Grim}
+itmdescr_Memento_Book
+{
+Una tragedia in tre atti
+}
+
+itmname_Memento_letter	{Письмо Мементо}
+itmdescr_Memento_letter
+{
+Письмо Мементо
 }

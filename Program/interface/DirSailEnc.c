@@ -181,7 +181,7 @@ void assignByID(string eID)
 int doDescribe(int gNum)
 {
 	string loadScr = "";
-
+    ref rChar;
     int mapEncSlot = FindFreeMapEncounterSlot();
     if(mapEncSlot < 0) return;
     rEncounter = GetMapEncounterRef(mapEncSlot);
@@ -197,7 +197,7 @@ int doDescribe(int gNum)
     iEncounterType = sti(rEncounter.RealEncounterType);
     iRealEncounterType = iEncounterType;
 	bool bPowerCompare = true;
-
+	string sOkBtn = XI_ConvertString("map_attack");
     //Get description
     if (isShipEncounterType > 1 && gNum > 0 && iRealEncounterType < ENCOUNTER_TYPE_BARREL)
     {
@@ -208,8 +208,9 @@ int doDescribe(int gNum)
         int nEncChar = GetCharacterIndex(rEncounter.CharacterID);
         if (nEncChar != -1)
         {
-            sQuestSeaCharId = characters[nEncChar].id;
-            if (CheckAttribute(&characters[nEncChar], "mapEnc.Name"))
+            rChar = &characters[nEncChar];
+            sQuestSeaCharId = rChar.id;
+            if (CheckAttribute(rChar, "mapEnc.Name"))
             {
                 totalInfo = totalInfo + characters[nEncChar].mapEnc.Name;
             }
@@ -245,7 +246,7 @@ int doDescribe(int gNum)
         // Работорговцы
         if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_SLAVES)
         {
-           // TO_DO
+           totalInfo = totalInfo + XI_ConvertString("Slave traders") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
         }
 
         // Патруль
@@ -333,6 +334,7 @@ int doDescribe(int gNum)
 				loadScr = "interfaces\le\loading\sea_3.tga";
 			break;
 		}
+        bPowerCompare = false;
 		SetNewPicture("INFO_PICTURE", loadScr); 
 		totalInfo = XI_ConvertString("NavalSignal") + dirOff + XI_ConvertString("dir sail battle on course") + totalInfo;
 	}
@@ -367,25 +369,40 @@ int doDescribe(int gNum)
 				switch (sQuestSeaCharId)
 				{
 					case "SantaMisericordia_cap":
-						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_sm.tga"); 
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_sm.tga");
 						totalInfo = GetConvertStr("SM_WorldMap", "SantaMisericordia.txt");
 						sOkBtn = XI_ConvertString("map_attack");
 					break;
 
 					case "LadyBeth_cap":
                         bPowerCompare = false;
-						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_lb.tga"); 
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_lb.tga");
 						totalInfo = GetConvertStr("LadyBeth_WorldMap", "LadyBeth.txt");
+						sOkBtn = XI_ConvertString("map_ok");
+					break;
+					
+					case "Memento_cap":
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_mem.tga");
+						totalInfo = StringFromKey("Memento_4");
 						sOkBtn = XI_ConvertString("map_ok");
 					break;
 
                     case "MaryCelesteCapitan":
                         bPowerCompare = false;
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_cel.tga");
+                        totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
                     break;
 
                     //default:
                         SetNewPicture("INFO_PICTURE", loadScr); 
-                        totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+                        if(CheckAttribute(rChar, "Brigadier"))
+                        {
+                            totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone follows") + totalInfo + 
+                                        StringFromKey("QuestsUtilite_278") + GetStrSmallRegister(XI_ConvertString(GetShipTypeName(rChar))) + 
+                                        " '" + rChar.Ship.Name + "'.";
+                        }
+                        else
+                            totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
                     //break;
 				}
 				//sQuestSeaCharId = ""; ~!~ WTF

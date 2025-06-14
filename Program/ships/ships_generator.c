@@ -1,6 +1,4 @@
 
-
-
 #define FLAG_SHIP_TYPE_MERCHANT 1
 #define FLAG_SHIP_TYPE_WAR 2
 #define FLAG_SHIP_TYPE_RAIDER 4
@@ -28,10 +26,6 @@ int gShipClassFlags[8] = {0, 1, 2, 4, 8, 16, 32, 64}
 #define FLAG_SHIP_NATION_HOLLAND   8
 #define FLAG_SHIP_NATION_PIRATE   16
 #define FLAG_SHIP_NATION_ANY      31
-
-
-
-
 
 string gNationFields[MAX_NATIONS] = {"england", "france", "spain", "holland", "pirate"};
 int gShipNationFlags[MAX_NATIONS] = {1, 2, 4, 8, 16}
@@ -167,7 +161,7 @@ int GetRandomShipType(int classFlags, int typeFlags, int nationFlags)
 	//Генерируем рандомную стоимость, после чего будем искать ее в массиве shipArrScore
 	//Если найденная стоимость попадает между shipArrScore[i - 1] и shipArrScore[i] - мы выбираем корабль i
 	//Таким образом чем больше очков у корабля, тем выше вероятность его сгенерировать
-	int searchScore = rand(shipArrScore[shipCount - 1] - 1)
+	int searchScore = rand(shipArrScore[shipCount - 1] - 1);
 
 	//Дальше двоичным поиском ищем по массиву shipArrScore, чтобы вместо n^2 поиск был бы n*log(n)
 	int left = 0;
@@ -195,10 +189,7 @@ int GetRandomShipType(int classFlags, int typeFlags, int nationFlags)
 
     if (result == SHIP_NOTUSED)
 	    result = shipArr[middle];
-
 	
 	//По итогу получаем что shipArrScore[left] меньше искомого, shipArrScore[right] - больше, но они соседние. Значит наш выбор - right.
 	return result;
 }
-
-

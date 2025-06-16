@@ -2279,9 +2279,9 @@ string GetItemVis(string type)
 				objLandInterface.equipment.PotionQty = GetCharacterFreeItem(pchar, Itm.id);
 				if(CheckAttribute(Itm,"potion.drunk") && GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) == "hat8")
 				{
-					return GetConvertStr(Itm.name, "ItemsDescribe.txt")+ " + "+sti(Itm.potion.health) * 15 / 10);
+					return GetItemName(Itm)+ " + "+sti(Itm.potion.health) * 15 / 10);
 				}
-				return GetConvertStr(Itm.name, "ItemsDescribe.txt")+ " + "+sti(Itm.potion.health));
+				return GetItemName(Itm)+ " + "+sti(Itm.potion.health));
 			}	
 			else 
 			{

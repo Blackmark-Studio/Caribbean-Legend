@@ -902,11 +902,10 @@ void ShowInfoWindow()
 			if (CheckAttribute(&GameInterface, CurTable + "." + CurRow + ".index")) {
 				iItem = sti(GameInterface.(CurTable).(CurRow).index)
 				string GoodName = goods[iItem].name;
-				int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 				sHeader = XI_ConvertString(GoodName);
-				sGroup = "GOODS";
+				sGroup = GetGoodImageGroup(&Goods[iItem]);
 				sGroupPicture = GoodName;
-				sText1 = GetAssembledString(LanguageConvertString(lngFileID,GoodName+"_descr"), &Goods[iItem]) + newStr() + "***";
+				sText1 = GetAssembledString(GetGoodDescr(&Goods[iItem]), &Goods[iItem]) + newStr() + "***";
 			} else {
 				sHeader = XI_Convertstring("Goods");
 				sText1  = GetRPGText("GoodsCargo_hint");
@@ -938,8 +937,18 @@ void ShowInfoWindow()
 					sText2 = sText2 + NewStr() + XI_ConvertString("CannonsTime") + ": " + sti(GetCannonReloadTime(Cannon)) + " " + XI_ConvertString("sec.");
 					sText2 = sText2 + NewStr() + XI_ConvertString("Weight") + ": " + sti(Cannon.Weight) + " " + XI_ConvertString("cwt");
 
-					sGroup = "GOODS";
-					sGroupPicture = GetCannonType(sti(chr.Ship.Cannons.Type)) + "_" + GetCannonCaliber(sti(chr.Ship.Cannons.Type));
+					int idx = GetCannonGoodsIdxByType(sti(chr.Ship.Cannons.Type));
+				
+					if (idx != -1)
+					{
+						sGroup = GetGoodImageGroup(&Goods[idx]);
+						sGroupPicture = Goods[idx].Name;
+					}
+					else
+					{
+						sGroup = "GOODS";
+						sGroupPicture = "";
+					}
 				}
 				if (GameInterface.(CurTable).(CurRow).UserData.ID == "Crew" && sti(chr.ship.type) != SHIP_NOTUSED)
 				{
@@ -1103,7 +1112,7 @@ void FillGoodsTable()
 		GameInterface.TABLE_LIST.(row).td5.str = GetGoodWeightByType(i, qty2);
 		GameInterface.TABLE_LIST.(row).td6.str = Goods[i].Units + " / " + Goods[i].Weight;
 
-        GameInterface.TABLE_LIST.(row).td3.icon.group = "GOODS";
+        GameInterface.TABLE_LIST.(row).td3.icon.group = GetGoodImageGroup(&Goods[i]);
 		GameInterface.TABLE_LIST.(row).td3.icon.image = sGood;
 		GameInterface.TABLE_LIST.(row).td3.icon.offset = "-5, 0";
 		GameInterface.TABLE_LIST.(row).td3.icon.width = 40;
@@ -1156,11 +1165,10 @@ void ShowGoodsInfo(int iGoodIndex)
 {
 	string GoodName = goods[iGoodIndex].name;
 
-	int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 	string sHeader = XI_ConvertString(GoodName);
 
     iCurGoodsIdx = iGoodIndex;
-	string goodsDescr = GetAssembledString( LanguageConvertString(lngFileID,goodName+"_descr"), &Goods[iGoodIndex]);
+	string goodsDescr = GetAssembledString(GetGoodDescr(&Goods[iGoodIndex]), &Goods[iGoodIndex]);
     goodsDescr += newStr() + XI_ConvertString("weight") + " " + Goods[iGoodIndex].weight + " " + XI_ConvertString("cwt") +
 	              ", " + XI_ConvertString("PackHolds") + " " + Goods[iGoodIndex].Units + " " + XI_ConvertString("units");
 
@@ -1173,10 +1181,9 @@ void ShowGoodsInfo(int iGoodIndex)
 	}
     GameInterface.qty_edit.str = "0";
 
-	SetNewGroupPicture("QTY_GOODS_PICTURE", "GOODS", GoodName);
+	SetNewGroupPicture("QTY_GOODS_PICTURE", GetGoodImageGroup(&goods[iGoodIndex]), GoodName);
     SetFormatedText("QTY_CAPTION", sHeader);
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
-	LanguageCloseFile(lngFileID);
 	
 	iShipQty = GetCargoGoods(pchar, iGoodIndex);
     SetFormatedText("QTY_INFO_SHIP_QTY", its(iShipQty))

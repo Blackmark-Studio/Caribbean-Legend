@@ -263,7 +263,7 @@ bool AISeaGoods_ShipEatGood()
         PlaySound("interface\" + LanguageGetLanguage() + "\_Gotcha.wav"); // boal
 		//notification("+ "+iQuantity, sGoodName);
 		//notification("+ "+iQuantity, sGood);
-		notification(GetConvertStr(sGood, "GoodsDescribe.txt") + " + "+iQuantity, sGood);
+		notification(GetGoodName(&Goods[iGood]) + " + "+iQuantity, sGood);
 		/* string sGoodQuantity = iQuantity * iGoodWeight;
 		string sShipGotGood = LanguageConvertString(iSeaSectionLang, "Ship_got_good");
 		Event(PARSE_STRING, "aslss", &oRes, sShipGotGood, 2, sGoodQuantity, sGoodName);

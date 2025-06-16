@@ -39,7 +39,7 @@ string NO_RUMOUR_TEXT[SIMPLE_RUMOUR_NUM] = {
 "A kto wybierze morze, ten będzie szukał łaski u Pani Fortuny i uciekał przed Jednonogą... Wojna zawsze idzie w parze z biedą i rozbojem.",
 "Słyszałeś? Z Europy przypłynęła nowa eskadra – niby żeby wzmocnić patrole i walczyć z korsarstwem. Ale te patrole od piratów różnią się tylko flagą na grotmaszcie.",
 
-"Jeszcze chwila, a spotkają cię na otwartym morzu, skonfiskują ładunek, a powód zawsze znajdą. Potem próbuj udowodnić, że to nie twoja krowa zjadła owies… Więc kupcy muszą płacić konwojentom i najemnikom za ochronę swoich interesów. A co z tego mamy my? Ano tyle, że rum znowu podrożeje! Niech to wszystko diabli wezmą!",
+"Jeszcze chwila, a spotkają cię na otwartym morzu, skonfiskują ładunek, a powód zawsze znajdą. Potem próbuj udowodnić, że to nie twoja krowa zjadła owies... Więc kupcy muszą płacić konwojentom i najemnikom za ochronę swoich interesów. A co z tego mamy my? Ano tyle, że rum znowu podrożeje! Niech to wszystko diabli wezmą!",
 "Mówią, że w Europie znowu niespokojnie... To znaczy, że znów zaczną tu ściągać uchodźcy i różnej maści awanturnicy. A komu oni tu potrzebni? Wiadomo, dla takich jest tylko jedna droga – albo na trakt, rabować podróżnych, albo na morze, piracić.",
 
 "Heh, a gubernatorzy znowu podniosą podatki na utrzymanie garnizonów. Czy to bandyci w dżungli, czy urzędnicy w eleganckich gabinetach – dla zwykłych ludzi to jedno i to samo: krwiopijcy i rozbójnicy...",
@@ -59,13 +59,13 @@ string NO_RUMOUR_TEXT[SIMPLE_RUMOUR_NUM] = {
 "Ostatnio krąży plotka, że nasz gubernator jest wściekły na pewnego kapitana, z którym kiedyś był prawie jak brat. Wszystko przez to, że ten kapitan oszukał go przy podziale łupów i nie oddał należnej części.",
 "Mówią, że jeden z asystentów naszego gubernatora znów widziano w towarzystwie przemytników. Wygląda na to, że omawiali jakieś swoje ciemne interesy.",
 "Mówią, że niedawno pewien korsarz pojmał dwóch pirackich kapitanów. Jednak jeden z nich zmarł z powodu ran odniesionych w walce. Chociaż są też plotki, że ten rzekomo zmarły pirat wykupił się wolnością w zamian za informacje o skarbie. Ot, takie historie...",
-"Ostatnio w mieście pojawił się złodziej – już kilka domów okradł, a ani straż miejska, ani wojsko nie mogą go złapać. Ludzie zaczęli się niepokoić, a w zeszłą niedzielę przez to prawie wybili okna w rezydencji gubernatora! Nawet żołnierzy z fortu ściągnęli na pomoc miejskiej straży i ci rozpędzili tłum. Kogoś nawet aresztowali…",
+"Ostatnio w mieście pojawił się złodziej – już kilka domów okradł, a ani straż miejska, ani wojsko nie mogą go złapać. Ludzie zaczęli się niepokoić, a w zeszłą niedzielę przez to prawie wybili okna w rezydencji gubernatora! Nawet żołnierzy z fortu ściągnęli na pomoc miejskiej straży i ci rozpędzili tłum. Kogoś nawet aresztowali...",
 "W naszym mieście pojawił się złodziejaszek. Okrada domy, gdy gospodarze wychodzą za swoimi sprawami, a komendantura nic nie może na to poradzić. Ten złodziej jest nieuchwytny, jakby był duchem...",
-"Mówią, że nasz szef portu potrafi załatwić papiery na każdy statek, jaki tylko zechcesz. Ale nie dla każdego – trzeba umieć podejść, a najlepiej znać go osobiście…",
+"Mówią, że nasz szef portu potrafi załatwić papiery na każdy statek, jaki tylko zechcesz. Ale nie dla każdego – trzeba umieć podejść, a najlepiej znać go osobiście...",
 "Mówią, że nasza flota szykuje wyprawę karną przeciwko piratom, którzy ostatnio zupełnie się rozpanoszyli. Do tej ekspedycji mają dołączyć tylko korsarze, a kim są korsarze – sami wiecie. To przecież też piraci... Kruk krukowi oka nie wykole, tak myślę.",
 "Mówią, że pewien holenderski kaper gra na dwa fronty. Rabuje zarówno swoich, jak i obcych. Gdyby go tak złapać na gorącym uczynku i powiesić – innym odechciałoby się takich numerów!",
 "Mówią, że niedawno z wyprawy wróciła ekspedycja karna i przyprowadziła ze sobą cały konwój zdobycznych statków. Podobno ich ładownie były tak wypchane, że linii wodnej w ogóle nie było widać.",
-"Mówią, że pułkownik Fox znów złapał jakiegoś pirata i powiesił go na słońcu na molo w St. John’s. Z dowódcą „morskich lisów” nie ma żartów…",//30
+"Mówią, że pułkownik Fox znów złapał jakiegoś pirata i powiesił go na słońcu na molo w St. John’s. Z dowódcą „morskich lisów” nie ma żartów...",//30
 "Mówią, że ostatnio jeden z pirackich hersztów potajemnie odwiedził naszego gubernatora. Najzabawniejsze jest to, że od tamtej pory piraci przestali pojawiać się w naszych wodach, choć wcześniej bywali tu całkiem często.",
 "Mówią, że nasz lichwiarz ma tajny układ z piratami. W ciągu tygodnia to już trzeci atak na statki kupców, którym właśnie ten lichwiarz pożyczył pieniądze.",
 "Mówią, że w jednej z pobliskich zatok widziano piratów, którzy przenosili jakieś skrzynie z okrętu na szalupę. Ciekawe, co w nich było?",
@@ -149,7 +149,7 @@ string CAPTAIN_RUMOUR_TEXT[CITIZEN_RUMOUR_NUM] = {
 
 // Слухи мещан мужские
 string CITIZEN_MAN_RUMOUR_TEXT[CITIZEN_RUMOUR_NUM] = {
-"Handel to niełatwe zajęcie. Prawie wszystkie kolonie produkują te same towary, więc trudno znaleźć miejsce, gdzie lokalne dobra naprawdę są w cenie – choć w Europie zarobiłbyś na nich fortunę. Jeśli nie masz porządnego skarbnika albo sam nie jesteś mistrzem targowania, lepiej spróbuj szczęścia gdzie indziej. Na przykład zaciągnij się do gubernatora…",
+"Handel to niełatwe zajęcie. Prawie wszystkie kolonie produkują te same towary, więc trudno znaleźć miejsce, gdzie lokalne dobra naprawdę są w cenie – choć w Europie zarobiłbyś na nich fortunę. Jeśli nie masz porządnego skarbnika albo sam nie jesteś mistrzem targowania, lepiej spróbuj szczęścia gdzie indziej. Na przykład zaciągnij się do gubernatora...",
 "Najpotężniejszą organizacją handlową na Karaibach jest Holenderska Kompania Zachodnioindyjska. Jej siedziba mieści się w Willemstadzie. Jeśli będziesz w okolicy, koniecznie tam zajrzyj – często mają ciekawe zlecenia dla sprytnych kapitanów.",
 "Jeśli pilnie potrzebujesz zarobić trochę grosza i masz własny statek, skieruj się do zarządu portu. Tam mogą wynająć twoją jednostkę, zatrudnić cię do eskorty albo powierzyć przewóz pilnych dokumentów. Pamiętaj jednak o możliwościach swojego statku – na powolnej krypie nie zostaniesz kurierem, a mając łajbę niewiele większą od łódki, raczej nie licz na poważne zlecenia.",
 "Jeśli chcesz zarabiać na frachcie, pamiętaj, że w urzędach portowych dostaniesz poważne zlecenia, ale potrzebny jest do tego odpowiedni statek. Jeśli twoja jednostka jest niewielka, spróbuj szczęścia u miejscowego kupca – często wynajmuje statki do przewozu mniejszych partii towaru.",
@@ -164,7 +164,7 @@ string CITIZEN_MAN_RUMOUR_TEXT[CITIZEN_RUMOUR_NUM] = {
 // Слухи мещан женские
 string CITIZEN_WOMAN_RUMOUR_TEXT[CITIZEN_RUMOUR_NUM] = {
 "Nie odmawiaj pomocy zwykłym ludziom, którzy proszą cię o coś na ulicy. Pamiętaj – każdy może kiedyś znaleźć się w potrzebie. Dobro, które okażesz, wróci do ciebie z nawiązką – jeśli nie w pieniądzach, to w dobrej opinii.",
-"Jeśli brakuje ci marynarzy na statku, a w tawernie nie ma nikogo do zaciągu, rozejrzyj się po ulicach – czasem znajdziesz tam chętnych do załogi. Niektórzy przyprowadzą nawet kolegów. Mój mąż jest kapitanem i zawsze tak robi…",
+"Jeśli brakuje ci marynarzy na statku, a w tawernie nie ma nikogo do zaciągu, rozejrzyj się po ulicach – czasem znajdziesz tam chętnych do załogi. Niektórzy przyprowadzą nawet kolegów. Mój mąż jest kapitanem i zawsze tak robi...",
 "Jeśli nie masz ochoty na korsarstwo i rabowanie statków biednych kupców, możesz zatrudnić się w porcie albo u gubernatora. Tam zawsze znajdzie się poważne zadanie dla uczciwego kapitana, często wymagające odwagi i gotowości do ryzyka. Zarobki też są całkiem niezłe. Zyskasz nie tylko pieniądze, ale też szacunek i sławę wśród mieszkańców kolonii.",
 "Oj, kapitanie, wszyscy wiedzą, że na archipelagu jest kilka pirackich osad. Jak to możliwe, że władze pozwalają tym rzezimieszkom mieszkać tak blisko nas? Każda taka osada ma swojego przywódcę – nazywają go baronem. Ci baronowie zajmują się różnymi szemranymi interesami, a złota, mówią, mają całe góry!",
 "Wiecie, kapitanie, że Anglicy co roku organizują wielką regatę? Wyobraźcie sobie – doświadczeni kapitanowie na lugrach ścigają się, kto szybciej opłynie archipelag wyznaczoną trasą! Zwycięzca zdobywa szacunek, świetne nagrody i sporo pieniędzy. Ale żeby dostać zaproszenie na regatę, trzeba najpierw udowodnić, że potrafi się prowadzić statek szybciej niż wiatr!",
@@ -192,7 +192,7 @@ string NOBLE_MAN_RUMOUR_TEXT[CITIZEN_RUMOUR_NUM] = {
 // Слухи дворянок
 string NOBLE_WOMAN_RUMOUR_TEXT[CITIZEN_RUMOUR_NUM] = {
 "Nie odmawiaj pomocy zwykłym ludziom, którzy proszą cię o coś na ulicy. Pamiętaj, każdy może kiedyś znaleźć się w potrzebie. Dobro zawsze wraca – jeśli nie w złocie, to w dobrej opinii.",
-"Jeśli brakuje ci marynarzy na statku, a w tawernie nie ma nikogo do zaciągu, spróbuj popytać ludzi na ulicach. Niektórzy chętnie dołączą do załogi, a czasem przyprowadzą też znajomych. Mój mąż jest kapitanem i zawsze tak robi…",
+"Jeśli brakuje ci marynarzy na statku, a w tawernie nie ma nikogo do zaciągu, spróbuj popytać ludzi na ulicach. Niektórzy chętnie dołączą do załogi, a czasem przyprowadzą też znajomych. Mój mąż jest kapitanem i zawsze tak robi...",
 "Jeśli nie masz ochoty na korsarstwo i rabowanie biednych kupców, możesz zatrudnić się w porcie lub u gubernatora. Tam zawsze znajdzie się poważne zadanie dla uczciwego kapitana, często wymagające odwagi. Zarobki są całkiem przyzwoite, więc nie wyjdziesz na tym źle, a przy okazji zyskasz szacunek i sławę wśród kolonistów.",
 "Kapitanie, to żadna tajemnica, że na archipelagu jest kilka pirackich osad. Jak to możliwe, że władze pozwalają tym rzezimieszkom mieszkać tak blisko nas? Każda taka osada ma swojego przywódcę – nazywają go baronem. Ci baronowie zajmują się różnymi szemranymi interesami, a złota, mówią, mają całe góry!",
 "Wiecie, kapitanie, że Anglicy co roku organizują wielką regatę? Wyobraźcie sobie – doświadczeni kapitanowie na lugrach ścigają się, kto szybciej opłynie cały archipelag wyznaczoną trasą! Zwycięzca zyskuje szacunek, świetne nagrody i sporo pieniędzy. Ale żeby dostać zaproszenie na regatę, trzeba najpierw udowodnić, że potrafi się prowadzić statek szybciej niż wiatr!",

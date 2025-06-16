@@ -1072,6 +1072,15 @@ W każdym porcie Alamida spędza kilka dni, czasami dłużej. Mówią, że w tym
 I słusznie. Już znalazł tyle, że mógłby kupić połowę Barbadosu, ale wciąż mu mało. Jeśli spotkasz go na morzu - nawet nie próbuj go przechwycić. Zbyt dobry statek, a kapitan doświadczony i ostrożny.
 Ostatnio Blackwood często bywa na Kajmanach - kopie tam dniami i nocami, wykańczając ludzi. Jeśli chcesz to sprawdzić - zabierz co najmniej 60 ludzi i dobrą broń palną... Choć może i to nie wystarczy. Mam nadzieję, że potrafisz strzelać, bo wraz z nim zdezerterowała kompania byłych marines pułkownika Foxa.
 Profesjonaliści, nie byle rzezimieszki. I nigdy nie atakuj go we francuskich portach - tam ma ochronę i protektorów, którzy czerpią z jego znalezisk zyski.
+#TEXT	3
+"Memento"
+***********************
+'Memento' – prawdziwa piracka legenda. Czarna brygantyna pod dowództwem kapitana Mortimera Grima.
+Grim poluje wyłącznie na handlarzy niewolników. Mówią, że uwalnia niewolników i ratuje skazanych na śmierć, wykupując ich za złoto. Szlachetna sprawa — jeśli nie zna się reszty.
+Jeśli nie handlujesz ludźmi, Grim cię nie tknie. Jest dziwny, ale ma swoje zasady. Ale jeśli masz niewolników w ładowni... módl się, by nie zobaczyć czarnych żagli na horyzoncie.
+'Memento' krąży między pirackimi osadami, ale prawie nigdy nie cumuje. Załoga żyje na statku miesiącami, jakby bała się postawić stopę na lądzie. Mówi się też, że statek przetrwał kiedyś potworną epidemię — dlatego tak trudno zabić załogę.
+Jeśli planujesz ich zaatakować - zabierz dużo dział. Zdobycie 'Memento' abordażem jest prawie niemożliwe — załoga walczy jak opętana, jakby nie bała się śmierci. Jedyny sposób, by ich pokonać, to rozstrzelać statek na kawałki, by pozbawić ich schronienia. Odłamki ich nie ruszają, ale bezpośrednie trafienia kartaczami — to już co innego.
+Powodzenia. I pamiętaj o śmierci.
 
 #QUEST StoriesTreasures
 Skarbowe Opowieści

@@ -1800,7 +1800,7 @@ void ProcessDialogEvent()
 			link.l2.go = "EnemyPirate_3_Leadership";
 			if (IsCharacterPerkOn(pchar, "HT1"))
 			{
-				link.l3 = "(Duelista) Esto es justo lo que necesitaba.";
+				link.l3 = "(Duelista) Cuánto echaba esto de menos.";
 				link.l3.go = "EnemyPirate_3_Duelyant";
 			}
 		break;

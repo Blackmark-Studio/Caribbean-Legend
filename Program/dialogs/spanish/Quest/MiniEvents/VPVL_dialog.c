@@ -108,6 +108,7 @@ void ProcessDialogEvent()
 			npchar.dialog.currentnode = "Return back to Lea";
 			AddQuestRecord("VPVL", "2"); 
 			DoQuestCheckDelay("VPVL_Start", 0.1);
+			LocatorReloadEnterDisable("FortFrance_Town", "gate_back", true);
 		break;
 		
 		case "Rejection":
@@ -200,12 +201,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "Kontr Le Maren1":
+			sld = CharacterFromID("VPVL_contr_2");
 			dialog.text = "¿Qué estás soñando, animal? ¡Límpiate la baba! Mejor vendámosla... ya sabes a quién. Por una chica así, soltará una bolsa de monedas, y nosotros vamos a festejar todo un mes.";
 			if (pchar.sex == "man")
 			{
 				dialog.text = "¿Y para qué demonios queremos otro mono más? Presionaremos al compinche y lo soltará todo. Y a este lo matamos aquí mismo para que no estorbe.";
 			}
-			link.l1 = "¡Mil tiburones se traguen tu panza, Simon! ¡Eres el contrabandista más astuto de todo el archipiélago!";
+			link.l1 = "¡Mil tiburones se traguen tu panza, "+sld.name+"! ¡Eres el contrabandista más astuto de todo el archipiélago!";
 			link.l1.go = "Kontr Le Maren2";
 		break;
 

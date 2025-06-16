@@ -670,14 +670,14 @@ Quel furbo da quattro soldi ha provato a pagarmi solo metà della somma promessa
 #TEXT 6
 Ho deciso di rifiutare questa missione. Centomila pesos sono una fortuna, ma la mia vita vale ancora di più per me.
 #TEXT 7
-All’uscita dalla città sono stato avvicinato da alcuni scagnozzi che, a quanto pare, mi stavano aspettando. Mi hanno gentilmente chiesto di consegnare tutto il mio denaro. Di sicuro erano stati mandati da quel lurido ratto. Beh, temo di averlo deluso ancora una volta…
+All’uscita dalla città sono stato avvicinato da alcuni scagnozzi che, a quanto pare, mi stavano aspettando. Mi hanno gentilmente chiesto di consegnare tutto il mio denaro. Di sicuro erano stati mandati da quel lurido ratto. Beh, temo di averlo deluso ancora una volta...
 #TEXT 8
-All’uscita dal forte sono stato avvicinato da alcuni scagnozzi che, a quanto pare, mi stavano aspettando. Mi hanno “gentilmente” chiesto di restituire tutti i miei soldi. Di sicuro li ha mandati quel lurido ratto. Ho preferito non mettermi nei guai: erano armati fino ai denti. Così ho dovuto consegnare tutto il denaro…
+All’uscita dal forte sono stato avvicinato da alcuni scagnozzi che, a quanto pare, mi stavano aspettando. Mi hanno “gentilmente” chiesto di restituire tutti i miei soldi. Di sicuro li ha mandati quel lurido ratto. Ho preferito non mettermi nei guai: erano armati fino ai denti. Così ho dovuto consegnare tutto il denaro...
 
 #QUEST NoiseCemetery
 Cimitero Spettrale
 #TEXT 1
-La guardia del cimitero sull’isola di @<sCity> è terrorizzata. Da alcune notti sente strani rumori e lamenti inquietanti, come se ci fosse un fantasma. Non credo molto a queste storie, ma ho deciso di aiutare il povero vecchio e scoprire cosa sta succedendo. Nel peggiore dei casi, dovrò affrontare dei predoni… oppure scappare a gambe levate se davvero si tratta di uno spettro. Ora non mi resta che aspettare che cali la notte.
+La guardia del cimitero sull’isola di @<sCity> è terrorizzata. Da alcune notti sente strani rumori e lamenti inquietanti, come se ci fosse un fantasma. Non credo molto a queste storie, ma ho deciso di aiutare il povero vecchio e scoprire cosa sta succedendo. Nel peggiore dei casi, dovrò affrontare dei predoni... oppure scappare a gambe levate se davvero si tratta di uno spettro. Ora non mi resta che aspettare che cali la notte.
 #TEXT 2
 È insieme divertente e triste. Tutti questi rumori e lamenti non sono affatto i pianti di un fantasma, ma semplicemente gli incontri segreti di due innamorati. I loro genitori non vogliono che si vedano, così hanno pensato di trovarsi in un posto appartato. Ora posso tranquillizzare la guardia. Mentre vado da lui, dovrò pensare a cosa raccontargli.
 #TEXT 3
@@ -745,7 +745,7 @@ Commercio secondo la legge
 #TEXT 1
 I cittadini di Bas-Ter si lamentano perché nella taverna manca l’alcol. L’oste continua a promettere che sistemerà la cosa, ma finora non è cambiato nulla. Sembra proprio nei guai. E dove ci sono guai, c’è sempre la possibilità di guadagnarci qualcosa.
 #TEXT 2
-L’oste mi ha detto che il suo fornitore di Antigua ha perso la distilleria durante un’incursione di pirati e non potrà consegnare nulla per almeno due mesi. È disposto ad accettare qualsiasi partita di vino e rum, purché il commerciante abbia una buona reputazione. Stavolta niente controlli sui documenti, ma in futuro lavorerà solo con mercanti onesti e affidabili. Forse dovrei provare a procurarmi la merce tramite canali non ufficiali… Se gioco bene le mie carte, ci si può guadagnare.
+L’oste mi ha detto che il suo fornitore di Antigua ha perso la distilleria durante un’incursione di pirati e non potrà consegnare nulla per almeno due mesi. È disposto ad accettare qualsiasi partita di vino e rum, purché il commerciante abbia una buona reputazione. Stavolta niente controlli sui documenti, ma in futuro lavorerà solo con mercanti onesti e affidabili. Forse dovrei provare a procurarmi la merce tramite canali non ufficiali... Se gioco bene le mie carte, ci si può guadagnare.
 #TEXT 3
 I contrabbandieri al momento non hanno alcol da offrire. Però, vicino alla residenza del governatore vive un commerciante che traffica di nascosto piccole quantità di liquori. Forse vale la pena fargli visita.
 #TEXT 4
@@ -823,7 +823,7 @@ Quei contrabbandieri che vivono sulla spiaggia mi hanno scambiato per uno degli 
 #TEXT   4
 Pierre ora respira la dolce aria della libertà, ed è giunto il momento di restituirlo tra le braccia della sua devota moglie. Il destino è stato crudele con lui: la sua barca si è schiantata contro la barriera corallina e, appena sbarcato, è finito nelle mani di quei contrabbandieri confusi che l’hanno scambiato per un agente del governatore. Il poveretto ha subito torture e fame, costretto a confessare segreti che non aveva mai conosciuto. Rabbrividisco al pensiero di quale triste fine lo avrebbe atteso, se la Provvidenza non avesse guidato i miei passi verso quella maledetta grotta proprio in quel momento.
 #TEXT   5
-Pierre è tornato sano e salvo tra le braccia premurose della sua devota moglie. Ha promesso di mostrare la sua gratitudine non appena si sarà ripreso e insiste per condividere un bicchiere alla taverna domani dopo il sesto rintocco della campana. Eppure una domanda continua a rosicchiarmi la mente come un topo la cima di una nave: chi stavano davvero aspettando quei contrabbandieri sfortunati sulle rive di Le Marin? Dicevano che una nave sarebbe presto approdata. Gli uomini del governatore pagherebbero profumatamente per essere avvisati in anticipo di un simile carico di contrabbando. Oppure…
+Pierre è tornato sano e salvo tra le braccia premurose della sua devota moglie. Ha promesso di mostrare la sua gratitudine non appena si sarà ripreso e insiste per condividere un bicchiere alla taverna domani dopo il sesto rintocco della campana. Eppure una domanda continua a rosicchiarmi la mente come un topo la cima di una nave: chi stavano davvero aspettando quei contrabbandieri sfortunati sulle rive di Le Marin? Dicevano che una nave sarebbe presto approdata. Gli uomini del governatore pagherebbero profumatamente per essere avvisati in anticipo di un simile carico di contrabbando. Oppure...
 #TEXT   6
 Ho riferito al governatore dei contrabbandieri che aspettavano una nave. Mi ha promesso che indagherà e dovrò tornare da lui tra tre giorni. Se il mio rapporto si rivelerà corretto, potrei ottenere una ricompensa.
 

@@ -138,30 +138,38 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		}
 		else
 		{
-			LAi_LocationFightDisable(&Locations[FindLocation(PChar.location)], true);
-			chrDisableReloadToLocation = true;
-			GetCharacterPos(pchar, &locx, &locy, &locz);
-			for (i=1; i<=4; i++)
-			{	
-				sld = GetCharacter(NPC_GenerateCharacter("LigaInJungle_"+i, "killer_4", "man", "man", sti(pchar.rank), PIRATE, -1, true, "hunter"));
-				ChangeCharacterAddressGroup(sld, pchar.location, "goto",  LAi_FindFarLocator("goto", locx, locy, locz));
-				sld.viper = true;
-				if (i>=2 && i<=4)
-				{
-					LAi_SetActorType(sld);
-					LAi_ActorFollow(sld, pchar, "", -1);
+			if(!CheckAttribute(pchar,"questTemp.BlockSpawnQuestNPC"))
+			{
+				LAi_LocationFightDisable(&Locations[FindLocation(PChar.location)], true);
+				chrDisableReloadToLocation = true;
+				DeleteQuestCondition("PZ_LigaInJungle");
+				GetCharacterPos(pchar, &locx, &locy, &locz);
+				for (i=1; i<=4; i++)
+				{	
+					sld = GetCharacter(NPC_GenerateCharacter("LigaInJungle_"+i, "killer_4", "man", "man", sti(pchar.rank), PIRATE, -1, true, "hunter"));
+					ChangeCharacterAddressGroup(sld, pchar.location, "goto",  LAi_FindFarLocator("goto", locx, locy, locz));
+					sld.viper = true;
+					if (i>=2 && i<=4)
+					{
+						LAi_SetActorType(sld);
+						LAi_ActorFollow(sld, pchar, "", -1);
+					}
+					if (i==1)
+					{
+						sld.model = "killer_2";
+						sld.model.animation = "man";
+						Characters_RefreshModel(sld);
+						FantomMakeCoolFighter(sld, sti(pchar.rank)+5, 50, 50, "blade_13", "pistol3", "grapeshot", 100);
+						sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
+						sld.dialog.currentnode = "PZ_LigaInJungle_1";
+						LAi_SetActorType(sld);
+						LAi_ActorDialog(sld, pchar, "", -1, 0);
+					}
 				}
-				if (i==1)
-				{
-					sld.model = "killer_2";
-					sld.model.animation = "man";
-					Characters_RefreshModel(sld);
-					FantomMakeCoolFighter(sld, sti(pchar.rank)+5, 50, 50, "blade_13", "pistol3", "grapeshot", 100);
-					sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
-					sld.dialog.currentnode = "PZ_LigaInJungle_1";
-					LAi_SetActorType(sld);
-					LAi_ActorDialog(sld, pchar, "", -1, 0);
-				}
+			}
+			else
+			{
+				SetTimerCondition("PZ_LigaInJungle", 0, 0, 7, true);
 			}
 		}
 	}

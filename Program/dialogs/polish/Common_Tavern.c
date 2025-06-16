@@ -80,6 +80,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Sharlie") && pchar.questTemp.Sharlie == "crew" && npchar.city == "FortFrance")
 			{
 				DelLandQuestMark(npchar);
+				FreeSitLocator("FortFrance_tavern", "sit7");
 				dialog.text = "Czegoś potrzeba, Panie?";
 				Link.l1 = "Witaj karczmarzu, pilnie potrzebuję załogi do mojego statku. Czy możesz mi w tym pomóc?";
 				Link.l1.go = "Sharlie_crew";

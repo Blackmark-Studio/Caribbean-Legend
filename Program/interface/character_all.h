@@ -50,14 +50,11 @@ void FillCharactersScroll()
 	pRef2.str5 = "#" + pchar.rank;
 	if(CheckAttribute(pchar,"perks.FreePoints_self") && CheckAttribute(pchar,"perks.FreePoints_ship"))
 	{
-		if(sti(pchar.perks.FreePoints_self) > 0 || sti(pchar.perks.FreePoints_ship) > 0)
-		{
-			if(!HaveAllPerks(pchar, "any")) 
-			{
-				GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
-				GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
-			}
-		}
+        if(!HaveAllPerks(pchar, "any")) 
+        {
+            GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
+            GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
+        }
 	}
 
 	m = m + 1;
@@ -106,14 +103,11 @@ void FillCharactersScroll()
 			pRef2.str5 = "#" + Characters[_curCharIdx].rank;
 			if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
 			{
-				if(sti(Characters[_curCharIdx].perks.FreePoints_self) > 0 || sti(Characters[_curCharIdx].perks.FreePoints_ship) > 0)
-				{
-					if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
-					{
-						GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
-						GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
-					}
-				}
+                if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
+                {
+                    GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
+                    GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
+                }
 			}
 		}
 		else
@@ -148,14 +142,11 @@ void FillCharactersScroll()
 			pRef2.str5 = "#" + Characters[_curCharIdx].rank;
 			if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
 			{
-				if(sti(Characters[_curCharIdx].perks.FreePoints_self) > 0 || sti(Characters[_curCharIdx].perks.FreePoints_ship) > 0)
-				{
-					if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
-					{
-						GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
-						GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
-					}
-				}
+                if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
+                {
+                    GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
+                    GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
+                }
 			}
 		}
 		else
@@ -199,14 +190,11 @@ void FillCharactersScroll()
 				pRef2.str5 = "#" + Characters[_curCharIdx].rank;
 				if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
 				{
-					if(sti(Characters[_curCharIdx].perks.FreePoints_self) > 0 || sti(Characters[_curCharIdx].perks.FreePoints_ship) > 0)
-					{
-						if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
-						{
-							GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
-							GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
-						}
-					}
+                    if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
+                    {
+                        GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
+                        GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
+                    }
 				}
 				m++;
 			}
@@ -248,14 +236,11 @@ void FillCharactersScroll()
 			}
 			if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
 			{
-				if(sti(Characters[_curCharIdx].perks.FreePoints_self) > 0 || sti(Characters[_curCharIdx].perks.FreePoints_ship) > 0)
-				{
-					if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
-					{
-						GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
-						GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
-					}
-				}
+                if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
+                {
+                    GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
+                    GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
+                }
 			}
 			m++;
 		}
@@ -326,14 +311,11 @@ void FillCharactersScrollEx(bool bOfficers)
 	pRef2.str5 = "#" + pchar.rank;
 	if(CheckAttribute(pchar,"perks.FreePoints_self") && CheckAttribute(pchar,"perks.FreePoints_ship"))
 	{
-		if(sti(pchar.perks.FreePoints_self) > 0 || sti(pchar.perks.FreePoints_ship) > 0)
-		{
-			if(!HaveAllPerks(pchar, "any")) 
-			{
-				GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
-				GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
-			}
-		}
+        if(!HaveAllPerks(pchar, "any")) 
+        {
+            GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
+            GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
+        }
 	}
 
 	m = m + 1;
@@ -384,13 +366,10 @@ void FillCharactersScrollEx(bool bOfficers)
                 pRef2.str5 = "#" + Characters[_curCharIdx].rank;
                 if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
                 {
-                    if(sti(Characters[_curCharIdx].perks.FreePoints_self) > 0 || sti(Characters[_curCharIdx].perks.FreePoints_ship) > 0)
+                    if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
                     {
-                        if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
-                        {
-                            GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
-                            GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
-                        }
+                        GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
+                        GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
                     }
                 }
 				if(CheckCharacterPerk(&characters[_curCharIdx], "ByWorker"))
@@ -436,13 +415,10 @@ void FillCharactersScrollEx(bool bOfficers)
                 pRef2.str5 = "#" + Characters[_curCharIdx].rank;
                 if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
                 {
-                    if(sti(Characters[_curCharIdx].perks.FreePoints_self) > 0 || sti(Characters[_curCharIdx].perks.FreePoints_ship) > 0)
+                    if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
                     {
-                        if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
-                        {
-                            GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
-                            GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
-						}
+                        GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
+                        GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
                     }
                 }
 				if(CheckCharacterPerk(&characters[_curCharIdx], "ByWorker"))
@@ -497,13 +473,10 @@ void FillCharactersScrollEx(bool bOfficers)
                     pRef2.str5 = "#" + Characters[_curCharIdx].rank;
                     if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
                     {
-                        if(sti(Characters[_curCharIdx].perks.FreePoints_self) > 0 || sti(Characters[_curCharIdx].perks.FreePoints_ship) > 0)
+                        if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
                         {
-                            if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
-                            {
-                                GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
-                                GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
-                            }
+                            GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
+                            GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
                         }
                     }
 					if(CheckCharacterPerk(&characters[_curCharIdx], "ByWorker"))
@@ -563,13 +536,10 @@ void FillCharactersScrollEx(bool bOfficers)
                 }
                 if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
                 {
-                    if(sti(Characters[_curCharIdx].perks.FreePoints_self) > 0 || sti(Characters[_curCharIdx].perks.FreePoints_ship) > 0)
+                    if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
                     {
-                        if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
-                        {
-                            GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
-                            GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
-                        }
+                        GameInterface.CHARACTERS_SCROLL.(attributeName).img2 = "upgrade";
+                        GameInterface.CHARACTERS_SCROLL.(attributeName).tex2 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_upgrade");
                     }
                 }
 				if(CheckCharacterPerk(&characters[_curCharIdx], "ByWorker"))

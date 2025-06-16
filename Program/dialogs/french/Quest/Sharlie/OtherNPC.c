@@ -439,7 +439,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_4":
-			dialog.text = "Oui, capitaine ! Je vous attendrai dans votre cabine. *Utilisez le menu d'action en mer pour accéder à la cabine et aux autres zones du navire*";
+			dialog.text = "Oui, capitaine ! Je vous attendrai dans votre cabine. 'Utilisez le menu d'action en mer pour accéder à la cabine et aux autres zones du navire'.";
 			link.l1 = "Merci, Folke. À bord.";
 			link.l1.go = "Folke_5";
 			Log_Info("You have received amulet 'Merchant's Rosary'");

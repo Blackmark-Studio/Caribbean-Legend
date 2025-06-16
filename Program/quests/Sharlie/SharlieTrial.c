@@ -360,6 +360,9 @@ void MessageRum1(string qName)
 void MessageRum2(string qName) 
 {
 	DoQuestFunctionDelay("MessageRum2d", 5.0);
+	
+	sld = CharacterFromID("Rum_Cap");
+	Ship_SetTaskRunAway(SECONDARY_TASK, sti(sld.index), sti(pchar.index));
 }
 
 void MessageRum2d(string qName) 

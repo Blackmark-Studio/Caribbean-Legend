@@ -580,25 +580,38 @@ bool bPerksMaxShip(ref chr)
 
 bool HaveAllPerks(ref chr, string type) // any, self, ship
 {
-	string perkName;
-	aref arPerksRoot;
-	makearef(arPerksRoot,ChrPerksList.list);
-	int perksQ = GetAttributesNum(arPerksRoot);
-
-    bool bHero = (sti(chr.index) == GetMainCharacterIndex());
+    bool bFreeSelf, bFreeShip;
     bool bAny  = (type == "any");
+    if (bAny)
+    {
+        bFreeSelf = sti(chr.perks.FreePoints_self) > 0;
+        bFreeShip = sti(chr.perks.FreePoints_ship) > 0;
+        if(!bFreeSelf && !bFreeShip) return true; // Нечего прокачивать
+    }
+
+	string perkName, perkType;
+	aref arPerksRoot;
+	makearef(arPerksRoot, ChrPerksList.list);
+	int perksQ = GetAttributesNum(arPerksRoot);
+    bool bHero = (sti(chr.index) == GetMainCharacterIndex());
 
 	for(int i = 0; i < perksQ; i++)
 	{
 		perkName = GetAttributeName(GetAttributeN(arPerksRoot,i));
         if(!CheckAttribute(arPerksRoot, perkName + ".BaseType")) continue;   // Предыстории
-		if(!bAny && ChrPerksList.list.(perkName).BaseType != type) continue; // Не тот тип
+        perkType = ChrPerksList.list.(perkName).BaseType;
+		if(!bAny && perkType != type) continue; // Не тот тип
+        if(bAny)
+        {
+            if(!bFreeSelf && perkType == "self") continue;
+            if(!bFreeShip && perkType == "ship") continue;
+        }
         if(CheckAttribute(arPerksRoot, perkName + ".HeroType")) continue;    // Личные спецперки
         if(!bHero && CheckAttribute(arPerksRoot, perkName + ".PlayerOnly")) continue; // Не ГГ
         if(bHero && CheckAttribute(arPerksRoot, perkName + ".NPCOnly")) continue;     // Не НПЦ
         if(CheckAttribute(arPerksRoot, perkName + ".Hiden")) continue;       // Скрытые
 
-		if(!CheckCharacterPerk(sld, perkName)) return false; // Перк доступен, но не прокачан
+		if(!CheckCharacterPerk(chr, perkName)) return false; // Перк доступен, но не прокачан
 	}
     return true;
 }

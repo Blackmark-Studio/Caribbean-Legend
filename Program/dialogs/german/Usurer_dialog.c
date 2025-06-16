@@ -1409,7 +1409,7 @@ void ProcessDialogEvent()
 		case "GiveTaskSlave_1":
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity(npchar.city);
-			dialog.Text = "Sehr gut, hör zu. Sklaverei ist heutzutage das profitabelste Geschäft in der Karibik. Ich bin kein Pflanzer, aber ich habe vertrauenswürdige Kunden\nAlso, ich brauche die folgende Anzahl von Sklaven - "+pchar.questTemp.Slavetrader.iSlaveQuantity+" Köpfe. Ich bin bereit, Ihnen 250 Pesos für jeden zu zahlen. Glauben Sie mir, das ist ein guter Preis. Insgesamt werden Sie verdienen "+FindRussianMoneyString(sti(pchar.questTemp.Slavetrader.iSlaveMoney))+" Pesos.";
+			dialog.Text = "Sehr gut, hör zu. Sklaverei ist heutzutage das profitabelste Geschäft in der Karibik. Ich bin kein Pflanzer, aber ich habe vertrauenswürdige Kunden\nAlso, ich brauche die folgende Anzahl von Sklaven - "+pchar.questTemp.Slavetrader.iSlaveQuantity+" Köpfe. Ich bin bereit, Ihnen 250 Pesos für jeden zu zahlen. Glauben Sie mir, das ist ein guter Preis. Insgesamt werden Sie verdienen "+FindRussianMoneyString(sti(pchar.questTemp.Slavetrader.iSlaveMoney))+".";
 			Link.l1 = "Nein, ich bin kein Sklavenhändler. Such dir einen anderen Gehilfen, dem sein Gewissen egal ist.";
 			Link.l1.go = "exit_slaves";
 			Link.l2 = "Ein verlockendes Angebot. Ich würde das gerne tun. Wann benötigen Sie die Sklaven?";

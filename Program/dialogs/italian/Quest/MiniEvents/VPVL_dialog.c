@@ -110,6 +110,7 @@ void ProcessDialogEvent()
 			npchar.dialog.currentnode = "Return back to Lea";
 			AddQuestRecord("VPVL", "2"); 
 			DoQuestCheckDelay("VPVL_Start", 0.1);
+			LocatorReloadEnterDisable("FortFrance_Town", "gate_back", true);
 		break;
 		
 		case "Rejection":
@@ -200,12 +201,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Kontr Le Maren1":
+			sld = CharacterFromID("VPVL_contr_2");
 			dialog.text = "Che turpi fantasie ribollono nella tua testa, bestia inzuppata di mare? Smettila di sbavare! Meglio venderla a... sai tu chi. Quello ci sgancerà uno scrigno d’oro per una donzella così, e noi scialeremo tra vino e puttane per un mese intero!";
 			if (pchar.sex == "man")
 			{
 				dialog.text = "Che razza di dannazione ci serve un altro mozzo a intasare la nostra stiva? Stringi di più col suo compare—canterà come un gabbiano all’alba. Quanto a questo qui, sventriamolo qui e ora, così ci risparmiamo la fatica di rivedere la sua faccia!";
 			}
-			link.l1 = "Mille squali affamati ti rodano le viscere, Simone! Sei il contrabbandiere più furbo di tutto l’arcipelago!";
+			link.l1 = "Mille squali affamati ti rodano le viscere, "+sld.name+"! Sei il contrabbandiere più furbo di tutto l’arcipelago!";
 			link.l1.go = "Kontr Le Maren2";
 		break;
 

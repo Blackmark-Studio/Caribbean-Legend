@@ -307,7 +307,7 @@ void Tut_Continue()
 	EquipCharacterByItem(sld, "blade_12");
 	GiveItem2Character(sld, "pistol1");
 	EquipCharacterByItem(sld, "pistol1");
-		
+
 	AddItems(sld, "bullet", 30);
 	AddItems(sld, "gunpowder", 30);
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");	

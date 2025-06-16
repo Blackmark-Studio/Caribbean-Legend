@@ -431,33 +431,46 @@ void SetQuestHeaderInfo(string idQuest)
 	}
 }
 
+// Со звуком
 void AddQuestRecordInfo(string idQuest, string idText)
+{
+    AddQuestRecordInfoEx(idQuest, idText, true);
+}
+
+// Без
+void AddQuestRecordInfo_Silent(string idQuest, string idText)
+{
+    AddQuestRecordInfoEx(idQuest, idText, false);
+}
+
+void AddQuestRecordInfoEx(string idQuest, string idText, bool bSound)
 {
     string idReferenceQuest = idQuest;
     
-	if(CheckAttribute(pchar,"QuestInfo."+idQuest)==false)
+	if(!CheckAttribute(pchar,"QuestInfo."+idQuest))
 	{
 		SetQuestHeaderInfo(idQuest);
 	}
 	string sTextLbl = "l0";
-	if( CheckAttribute(pchar,"QuestInfo."+idQuest+".Text") )
+	if(CheckAttribute(pchar,"QuestInfo."+idQuest+".Text"))
 	{
 		aref arTmp; makearef( arTmp, pchar.QuestInfo.(idQuest) );
 		makearef(arTmp,pchar.QuestInfo.(idQuest).Text);
 		sTextLbl = "l" + GetAttributesNum(arTmp);
 	}
-	if( sTextLbl != "" )
+	if(sTextLbl != "")
 	{
 		pchar.QuestInfo.(idQuest).Text.(sTextLbl) = "@"+idReferenceQuest+"@  @"+idText;
 		if(idQuest == "recipe") notification(XI_ConvertString("Recipe Update"), "Alchemy");
 		else notification(XI_ConvertString("Document Update"), "Document");
-		AddMsgToCharacter(pchar,MSGICON_LOGBOOK);
-                PlaySound("interface\notebook.wav");
+		AddMsgToCharacter(pchar, MSGICON_LOGBOOK);
+        if(bSound) PlaySound("interface\notebook.wav");
 	}
 	// покраска новой СЖ
-        // SetQuestHeaderColor(idQuest, argb(255, 60, 140, 255));
-        SetQuestHeaderColor(idQuest, argb(185,0,20,185));
+    // SetQuestHeaderColor(idQuest, argb(255, 60, 140, 255));
+    SetQuestHeaderColor(idQuest, argb(185,0,20,185));
 }
+
 // boal метод для инфы <--
 void AddQuestRecord(string idQuest,string idText)
 {

@@ -4113,6 +4113,7 @@ void InitShips()
 	refShip.Price           			= 100000;
 	refShip.HP              			= 8900;
 	refShip.SP              			= 100;
+	refship.EmblemedSails.normalTex 	= "ships/parus_silk.tga";	
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
 	refship.Spec                		= SHIP_SPEC_WAR;
@@ -4188,6 +4189,7 @@ void InitShips()
 	refShip.Price           			= 141600;
 	refShip.HP              			= 12600;
 	refShip.SP              			= 100;
+	refship.EmblemedSails.normalTex 	= "ships\parus_silk.tga";
 
 	refship.CanEncounter 				= false;	
 	refship.Type.Merchant				= false;

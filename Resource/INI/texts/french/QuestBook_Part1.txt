@@ -1072,6 +1072,15 @@ Santa Misericordia dispose d'un équipage expérimenté et loyal, personnellemen
 Lady Beth est une véritable beauté. Un miracle du génie maritime anglais, commandé par Albert Blackwood, ancien officier de la Royal Navy. En effet, il n'est pas donné à tout le monde de déserter de façon aussi spectaculaire ! Il a quitté le service, tué une brillante carrière et volé un navire de guerre - tout cela pour la chasse au trésor !
 Et ce n'est pas en vain. Il a déjà trouvé de quoi acheter la moitié de la Barbade, mais il en veut encore. Si vous le rencontrez en mer, n'essayez même pas de l'intercepter. Le navire est trop bon, et le capitaine est expérimenté et prudent. Dernièrement, Blackwood a fréquenté les Caïmans, creusant jour et nuit, faisant travailler les gens jusqu'à ce que mort s'ensuive. Si vous décidez d'aller voir, prenez pas moins de soixante hommes et de bonnes armes à feu... En fait, même cela pourrait ne pas suffire.
 J'espère que vous savez tirer, car une compagnie d'anciens fantassins de marine du colonel Fox a déserté avec lui. Des professionnels, rien à voir avec de vulgaires égorgeurs. Et ne l'attaquez jamais dans les ports français - il y bénéficie d'une protection et de mécènes qui reçoivent une partie de ses gains.
+#TEXT	3
+"Memento"
+***********************
+Le 'Memento' - une vraie légende pirate. Une brig noir sous le commandement du capitaine Mortimer Grim.
+Grim chasse exclusivement les négriers. On dit qu’il libère les esclaves et sauve les condamnés à mort en les rachetant avec de l’or. Une noble cause — si l’on ignore le reste.
+Si vous ne faites pas de commerce humain, Grim ne vous touchera pas. Il est étrange, mais il a ses principes. Mais si vous avez des esclaves à bord... priez pour ne pas voir ses voiles noires à l’horizon.
+Le 'Memento' navigue entre les repaires pirates, mais accoste rarement. Son équipage vit à bord pendant des mois, comme s’il craignait de poser le pied à terre. On raconte aussi que le navire a survécu à une terrible épidémie — c’est pour cela que l’équipage est si difficile à tuer.
+Si vous voulez l’affronter, prenez beaucoup de canons. Aborder le 'Memento' est presque impossible — l’équipage se bat comme des possédés, comme s’ils ne craignaient pas la mort. La seule façon de les vaincre est de réduire le navire en miettes pour leur ôter tout abri. Les échardes ne les effraient pas, mais un tir direct à la mitraille, c’est une autre affaire.
+Bonne chance. Et souvenez-vous de la mort.
 
 #QUEST StoriesTreasures
 Histoires de trésor

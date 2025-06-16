@@ -3198,7 +3198,7 @@ void FMQL_GoToJungle() //
 	pchar.quest.FMQL_jungle.win_condition.l1 = "location";
 	pchar.quest.FMQL_jungle.win_condition.l1.location = "Common_jungle_01";
 	pchar.quest.FMQL_jungle.function = "FMQL_InJungle";
-	pchar.questTemp.BlackMark.IronsBlock = true;
+	pchar.questTemp.BlockSpawnQuestNPC = true;
 }
 
 void FMQL_InJungle(string qName) // в джунглях
@@ -4627,7 +4627,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "FMQL_JungleExit") // 
 	{
-		if(CheckAttribute(pchar,"questTemp.BlackMark.IronsBlock")) DeleteAttribute(pchar,"questTemp.BlackMark.IronsBlock");
+		if(CheckAttribute(pchar,"questTemp.BlockSpawnQuestNPC")) DeleteAttribute(pchar,"questTemp.BlockSpawnQuestNPC");
 		FMQL_ClearAllCharacters();
 		chrDisableReloadToLocation = false;
 		LocatorReloadEnterDisable("shore18", "boat", false);
@@ -4814,7 +4814,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 		LAi_group_FightGroups("TmpEnemy", "EnemyFight", true);
 		LAi_group_SetCheck("TmpEnemy", "FMQL_EngDestroy");
 		LAi_group_SetCheck("EnemyFight", "FMQL_HolDestroy");
-		if (CheckAttribute(pchar, "questTemp.BlackMark.IronsBlock")) DeleteAttribute(pchar, "questTemp.BlackMark.IronsBlock");
+		if (CheckAttribute(pchar, "questTemp.BlockSpawnQuestNPC")) DeleteAttribute(pchar, "questTemp.BlockSpawnQuestNPC");
 	}
 	else if (sQuestName == "FMQL_EngDestroy") // 
 	{

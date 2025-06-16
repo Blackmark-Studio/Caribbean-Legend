@@ -1582,7 +1582,7 @@ int InitItems()
     itm.model = "OpenBook";
 	itm.picIndex = 15;
 	itm.picTexture = "ITEMS_26";
-	itm.price = 10;
+	itm.price = 0;
 	itm.Weight = 1.0;
 	itm.ItemType = "QUESTITEMS";
 	n++;

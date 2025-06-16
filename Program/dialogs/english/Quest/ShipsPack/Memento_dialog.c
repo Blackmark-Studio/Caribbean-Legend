@@ -30,6 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "For some reason, I expected to make some grand speech. But he just charged in.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
+			if (sti(pchar.rank) <= 13) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -234,7 +235,7 @@ void ProcessDialogEvent()
 
 		case "Memento_Dich_EtapThree_Alonso_4":
 			dialog.text = "Fighting, dirty wounds, spoiled salt meat — just regular sailor math. If we hadn’t all whipped ourselves up with tales of cursed ships, maybe we'd have lost a few less\n"+
-			"That skeleton on the stern didn’t help. Good thing some… prankster stole its hat during the night\n"+
+			"That skeleton on the stern didn’t help. Good thing some... prankster stole its hat during the night\n"+
 			"Since lightning didn’t strike us down for such blasphemy, the crew perked up and their sailor wits got busy cooking up mischief. Like, for example...";
 			link.l1 = "No touching the skeleton!";
 			link.l1.go = "Memento_Dich_EtapThree_Alonso_5";

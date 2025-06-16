@@ -127,6 +127,8 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		pchar.quest.PierInGrot.win_condition = "VPVL_Generate_Pier";
 		LocatorReloadEnterDisable("Shore39", "boat", true);
 		DeleteAttribute(&locations[FindLocation("Shore39")], "DisableEncounters");
+		
+		LAi_LocationDisableOfficersGen("Martinique_Grot", true);
 	}
 	
 	else if (sQuestName == "VPVL_Generate_Pier") {
@@ -154,7 +156,6 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		LAi_SetImmortal(sld, true);
 		AddLandQuestMark(sld, "questmarkmain");
 		LAi_group_SetCheck("EnemyFight", "VPVL_AfterFight"); 
-		LAi_LocationDisableOfficersGen("Martinique_Grot", true);
 		locations[FindLocation("Martinique_Grot")].DisableEncounters = true;
 		chrDisableReloadToLocation = true;
 
@@ -200,6 +201,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		LAi_LocationDisableOfficersGen("Martinique_Grot", false);
 		locations[FindLocation("Martinique_Grot")].DisableEncounters = false;
 		LocatorReloadEnterDisable("Shore39", "boat", false);
+		LAi_LocationDisableOfficersGen("FortFrance_Town", true);
 		
 		sld = CharacterFromID("VPVL_Lea_girl");
 		ChangeCharacterAddressGroup(sld, "FortFrance_Town", "rld", "loc0");
@@ -218,6 +220,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		CharacterTurnToLoc(pchar, "rld", "loc0");
 		DoQuestCheckDelay("VPVL_FortFranceVPVLcamera", 0.1);
 		LocatorReloadEnterDisable("Martinique_jungle_01", "reload2_back", false);
+		LAi_LocationDisableOfficersGen("FortFrance_Town", false);
 	}
 	
 	else if (sQuestName == "VPVL_FortFranceVPVLcamera") {
@@ -248,6 +251,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(sld);
 		LAi_ActorRunToLocation(sld, "reload", "houseK16", "none", "", "", "OpenTheDoors", 7);
 		DoQuestCheckDelay("VPVL_SpawnPierInTavern", 7);
+		LocatorReloadEnterDisable("FortFrance_Town", "gate_back", false);
 	}
 	
 	else if (sQuestName == "VPVL_SpawnPierInTavern") {

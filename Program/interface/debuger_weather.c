@@ -106,10 +106,10 @@ void IDoExit(int exitCode)
 	Sea.MaxSeaHeight = stf(GameInterface.oldMaxSeaHeight);
 	fGlobalFoamV = stf(GameInterface.oldGlobalFoamV);
 	WhrCreateSeaEnvironment();
-	DeleteAttribute(GameInterface, "oldWeatherSpeed");
-	DeleteAttribute(GameInterface, "oldWeatherAngle");
-	DeleteAttribute(GameInterface, "oldMaxSeaHeight");
-	DeleteAttribute(GameInterface, "oldGlobalFoamV");
+	DeleteAttribute(&GameInterface, "oldWeatherSpeed");
+	DeleteAttribute(&GameInterface, "oldWeatherAngle");
+	DeleteAttribute(&GameInterface, "oldMaxSeaHeight");
+	DeleteAttribute(&GameInterface, "oldGlobalFoamV");
 
 	if(!isEntity(&WorldMap) || !bSeaActive)
 	{

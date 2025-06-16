@@ -286,7 +286,7 @@ void ShowHelpHint()
 int GetMultiObjectQty()
 {
 	int Qty = 0;
-	for(int n = 0; n < ITEMS_QUANTITY; n++)
+	for(int n = 0; n < TOTAL_ITEMS; n++)
 	{
 		if( CheckAttribute(&Items[n],"multiobject") )
 		{
@@ -322,7 +322,7 @@ void FillItemsScroll()
 	GameInterface.ITEMS_SCROLL.BadPic1 = "empty";
 		
 	int m = 0;
-	for(int n = 0; n < ITEMS_QUANTITY; n++)
+	for(int n = 0; n < TOTAL_ITEMS; n++)
 	{
 		makeref(itm, Items[n]); 
 				

@@ -305,6 +305,9 @@ void Notification(string strLog, string ability)
 		case "Threat4": IconIndex = 180; break;
 		case "Threat5": IconIndex = 181; break;
 		case "Threat0": IconIndex = 182; break;
+		case "Yorick": IconIndex = 184; break;
+		case "Hat9": IconIndex = 185; break;
+		case "Key": IconIndex = 186; break;
 		case "Discovery": IconIndex = 187; break;
 		case "Indians": IconIndex = 188; break;
 		case "Smugglers": IconIndex = 189; break;
@@ -317,8 +320,6 @@ void Notification(string strLog, string ability)
 		case "spahunter": IconIndex = 44; break;
 		case "frahunter": IconIndex = 45; break;
 		case "pirhunter": IconIndex = 46; break;
-		case "Key": IconIndex = 186; break;
-		case "Hat9": IconIndex = 185; break;
 		case "None": IconIndex = 239; break;
 	}
 	if(notificationsQty < 8)

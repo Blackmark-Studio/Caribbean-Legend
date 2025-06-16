@@ -110,6 +110,7 @@ void ProcessDialogEvent()
 			npchar.dialog.currentnode = "Return back to Lea";
 			AddQuestRecord("VPVL", "2"); 
 			DoQuestCheckDelay("VPVL_Start", 0.1);
+			LocatorReloadEnterDisable("FortFrance_Town", "gate_back", true);
 		break;
 		
 		case "Rejection":
@@ -200,12 +201,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "Kontr Le Maren1":
+			sld = CharacterFromID("VPVL_contr_2");
 			dialog.text = "Pourquoi tu salives comme ça, espèce de brute ? Retiens ta langue ! On ferait mieux de la... tu sais bien à qui. Il payera un bon sac de pièces pour une fille pareille, et nous, on fêtera ça pendant un mois !";
 			if (pchar.sex == "man")
 			{
 				dialog.text = "Qu’est-ce qu’on ferait d’un autre singe ici ? Faisons parler son copain, il craquera vite. Et ce type, faut s’en débarrasser ici même, qu’il ne nous gêne plus !";
 			}
-			link.l1 = "Par mille requins, Simon ! Tu es le contrebandier le plus rusé de tout l’archipel !";
+			link.l1 = "Par mille requins, "+sld.name+" ! Tu es le contrebandier le plus rusé de tout l’archipel !";
 			link.l1.go = "Kontr Le Maren2";
 		break;
 		

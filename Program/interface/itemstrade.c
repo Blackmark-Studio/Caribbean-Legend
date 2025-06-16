@@ -946,9 +946,9 @@ bool ShowCorrectLastGood()
     {
 		stringRow = "tr" + (selectedRow + 1);
 		if (BuyOrSell == -1) {
-            if (!CheckAttribute(GameInterface, "TABLE_LIST." + stringRow + ".index")) isLastLine = true;
+            if (!CheckAttribute(&GameInterface, "TABLE_LIST." + stringRow + ".index")) isLastLine = true;
         } else {
-            if (!CheckAttribute(GameInterface, "TABLE_LIST2." + stringRow + ".index")) isLastLine = true;
+            if (!CheckAttribute(&GameInterface, "TABLE_LIST2." + stringRow + ".index")) isLastLine = true;
         }
         if (isLastLine)
         {
@@ -957,11 +957,11 @@ bool ShowCorrectLastGood()
             if (selectedRow >= 1)
             {
                 if (BuyOrSell == -1) {
-                    if (CheckAttribute(GameInterface, "TABLE_LIST." + stringRow + ".index")) {
+                    if (CheckAttribute(&GameInterface, "TABLE_LIST." + stringRow + ".index")) {
                         iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(stringRow).index);
                     }
                 } else {
-                    if (CheckAttribute(GameInterface, "TABLE_LIST2." + stringRow + ".index")) {
+                    if (CheckAttribute(&GameInterface, "TABLE_LIST2." + stringRow + ".index")) {
                         iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(stringRow).index);
                     }
                 }
@@ -971,14 +971,14 @@ bool ShowCorrectLastGood()
                 selectedRow = 1;
                 stringRow = "tr" + selectedRow;
                 if (BuyOrSell == -1) {
-                    if (CheckAttribute(GameInterface, "TABLE_LIST2." + stringRow + ".index"))
+                    if (CheckAttribute(&GameInterface, "TABLE_LIST2." + stringRow + ".index"))
                     {
                         iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(stringRow).index);
                         GameInterface.TABLE_LIST2.select = selectedRow;
                         valid = true;
                     }
                 } else {
-                    if (CheckAttribute(GameInterface, "TABLE_LIST." + stringRow + ".index"))
+                    if (CheckAttribute(&GameInterface, "TABLE_LIST." + stringRow + ".index"))
                     {
                         iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(stringRow).index);
                         GameInterface.TABLE_LIST.select = selectedRow;

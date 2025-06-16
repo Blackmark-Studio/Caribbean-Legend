@@ -1484,7 +1484,7 @@ void SetControlsTabMode(int nMode)
 	FillControlsList(nMode);
 	SendMessage(&GameInterface,"lsf",MSG_INTERFACE_SET_SCROLLER,"SCROLL_ITEMS",0);
 	validLineClicked = false;
-	if(CheckAttribute(GameInterface, "TABLE_ITEMS.tr1.index"))
+	if(CheckAttribute(&GameInterface, "TABLE_ITEMS.tr1.index"))
 	{
 		SendMessage(&GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ITEMS", 2, 0); // ставим принудительно первую строку
 		iGoodIndex = sti(GameInterface.TABLE_ITEMS.tr1.index)
@@ -1522,9 +1522,9 @@ void FillControlsList(int nMode)
 void SetOfficersSkills()
 {
 	string sCharacter = "pic"+(sti(GameInterface.PASSENGERSLIST.current)+1);
-	if (checkAttribute(GameInterface, "PASSENGERSLIST."+sCharacter))
+	if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter))
 	{
-		if (checkAttribute(GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
+		if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
 		{
 			sCharacter = GameInterface.PASSENGERSLIST.(sCharacter).character;
 			ref otherchr = &characters[sti(sCharacter)];
@@ -1677,7 +1677,7 @@ void AcceptAddOfficer()
 	
 	string attributeName2 = "pic"+(nCurScrollOfficerNum+1);
 
-    if (checkAttribute(GameInterface, "PASSENGERSLIST."+attributeName2 + ".character"))
+    if (checkAttribute(&GameInterface, "PASSENGERSLIST."+attributeName2 + ".character"))
     {
 		int iChar = sti(GameInterface.PASSENGERSLIST.(attributeName2).character);
 
@@ -2498,7 +2498,7 @@ void HideItemInfo()
 
 void UpdateItemInfo();
 {
-	if(CheckAttribute(GameInterface, "TABLE_ITEMS." + CurRow + ".index"))
+	if(CheckAttribute(&GameInterface, "TABLE_ITEMS." + CurRow + ".index"))
 	{
 		iGoodIndex = sti(GameInterface.TABLE_ITEMS.(CurRow).index)
 		SetItemInfo(iGoodIndex);

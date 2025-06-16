@@ -85,7 +85,7 @@ void SetAllContraGoods(ref _refStore, ref _refCharacter)
     string 	tmpstr;
 	int		qty;
 	
-	for (int i = 0; i < GOODS_QUANTITY; i++)
+	for (int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		tmpstr = Goods[i].name;
 		if( CheckAttribute(_refStore,"Goods."+tmpstr+".canbecontraband") )		
@@ -115,7 +115,7 @@ int FindContrabandGoods(ref _refCharacter)
 	if(curStoreIdx >= 0)
 	{
 		_refCharacter.FindContrabandGoods.StoreIdx = curStoreIdx;
-		for(i=0; i<GOODS_QUANTITY; i++)
+		for(i=0; i<GetArraySize(&Goods); i++)
 		{
 			if( GetStoreGoodsType(&Stores[curStoreIdx],i) == T_TYPE_CONTRABAND_NAME || GetContrabandGoods(&Stores[curStoreIdx],i) == CONTRA_SELL )
 			{
@@ -142,7 +142,7 @@ int FindFirstContrabandGoods(ref _refCharacter)
 	if(curStoreIdx>=0)
 	{
 		_refCharacter.FindContrabandGoods.StoreIdx = curStoreIdx;
-		for(i=0; i<GOODS_QUANTITY; i++)
+		for(i=0; i<GetArraySize(&Goods); i++)
 		{
 			if( GetStoreGoodsType(&Stores[curStoreIdx],i) == T_TYPE_CONTRABAND_NAME )
 			{
@@ -186,7 +186,7 @@ int FindNextContrabandGoods(ref _refCharacter)
 			int curStoreIdx = sti(_refCharacter.FindContrabandGoods.StoreIdx);
 			if(curStoreIdx>=0)
 			{
-				for(i=sti(_refCharacter.FindContrabandGoods.GoodsIdx)+1; i<GOODS_QUANTITY; i++)
+				for(i=sti(_refCharacter.FindContrabandGoods.GoodsIdx)+1; i<GetArraySize(&Goods); i++)
 				{
 					if( GetStoreGoodsType(&Stores[curStoreIdx],i) == T_TYPE_CONTRABAND_NAME )
 					{

@@ -17,7 +17,7 @@ void InitInterface(string iniName)
 	}
 	GameInterface.title = "titleGoodsTransfer";
 
-	for(i = 0; i < GOODS_QUANTITY; i++)	// Картинки товаров
+	for(i = 0; i < GetArraySize(&Goods); i++)	// Картинки товаров
 	{
 		if(i == 6 || i == 12 || i == 18 || i == 24 || i == 30)	// Другой столбец
 		{
@@ -86,7 +86,7 @@ void CreateGoodNamesStrings()
 	String sGood;
 	String companionId = Characters[GetCompanionIndex(PChar, iCurCompanion)].Id;
 	
-	for(int i = 0; i < GOODS_QUANTITY; i++)	// Названия товаров
+	for(int i = 0; i < GetArraySize(&Goods); i++)	// Названия товаров
 	{
 		sGood = Goods[i].name;
 		
@@ -118,7 +118,7 @@ void RefreshGoodsCountStrings()
 	String sGood;
 	String companionId = Characters[GetCompanionIndex(PChar, iCurCompanion)].Id;
 	
-	for(int i = 0; i < GOODS_QUANTITY; i++)	// Названия товаров
+	for(int i = 0; i < GetArraySize(&Goods); i++)	// Названия товаров
 	{
 		sGood = Goods[i].name;
 		
@@ -156,7 +156,7 @@ void ShowItemsWindow()	// Принцип тот-же, что и в интерф�
 	fMouseY = fOffsetY + fMouseY * stf(GameInterface.GOODS_ICONS.scale.y);
 	
 	string sGood;
-	for(int i=0; i<GOODS_QUANTITY; i++)
+	for(int i=0; i<GetArraySize(&Goods); i++)
 	{
 		sGood = goods[i].name;
 		if(CheckAttribute(&GameInterface, "GOODS_ICONS.imagelist." + sGood))

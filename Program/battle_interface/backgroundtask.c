@@ -169,7 +169,7 @@ void BackgroundTaskAddLoot( int nCharIndex, int nDifficult )
 	ref chref = &Characters[nCharIndex];
 
 	int nFreeSpace = GetCargoFreeSpace( chref );
-	for( n=0; n<GOODS_QUANTITY; n++ )
+	for( n=0; n<GetArraySize(&Goods); n++ )
 	{
 		nMax = GetGoodQuantityByWeight( n, nFreeSpace );
 		nCur = rand( nMax );

@@ -92,7 +92,7 @@ void FillStoreGoods(ref pRef)
 		trace("Mistake Colony id into store:  id=" + pRef.Colony);
 	}
 	
-	for (i=0; i<GOODS_QUANTITY; i++)
+	for (i=0; i<GetArraySize(&Goods); i++)
 	{
 	   	goodName = Goods[i].Name;
 	   	// boal 22.01.2004 -->
@@ -165,7 +165,7 @@ void StoreVoidFill(ref pRef)
 {
 	string goodName;
 	pRef.Island = "";
-	for(int i = 0; i < GOODS_QUANTITY; i++)
+	for(int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		goodName = Goods[i].Name;
 		if (CheckAttribute(&Goods[i], "trade_type"))

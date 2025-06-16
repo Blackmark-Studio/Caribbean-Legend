@@ -1087,7 +1087,7 @@ void FillGoodsTable()
 		GameInterface.TABLE_LIST.top    = 0;
 		GameInterface.TABLE_LIST.BackUp = true;
 	}
-    for (i = 0; i< GOODS_QUANTITY; i++)
+    for (i = 0; i< GetArraySize(&Goods); i++)
 	{
         row = "tr" + n;
 		sGood = Goods[i].name;
@@ -1746,11 +1746,11 @@ void TakeAllGoods()
 	int i, j, idx, qty;
 	float fMaxCost;
 	
-	for (j = 0; j< GOODS_QUANTITY; j++)
+	for (j = 0; j< GetArraySize(&Goods); j++)
 	{
 		fMaxCost = 0;
 		idx = -1; 
-		for (i = 0; i< GOODS_QUANTITY; i++)
+		for (i = 0; i< GetArraySize(&Goods); i++)
 		{
 			if (GetCargoGoods(xi_refCharacter, i) > 0)
 			{

@@ -34,110 +34,21 @@ ref GetCannonByType(int iCannonType)
 
 int GetCannonCaliber(int nCannon)
 {
-    switch(nCannon)
-    {
-		case CANNON_TYPE_NONECANNON:
-			return 0;
-        break;
-		case CANNON_TYPE_CANNON_LBS3:
-			return 3;
-		break;
-		case CANNON_TYPE_CANNON_LBS6:
-			return 6;
-		break;
-		case CANNON_TYPE_CANNON_LBS8:
-			return 8;
-		break;
-		case CANNON_TYPE_CULVERINE_LBS8:
-			return 8;
-        break;
-		case CANNON_TYPE_CANNON_LBS12:
-			return 12;
-        break;
-		case CANNON_TYPE_CANNON_LBS16:
-			return 16;
-        break;
-		case CANNON_TYPE_CANNON_LBS18:
-			return 18;
-        break;
-		case CANNON_TYPE_CULVERINE_LBS18:
-			return 18;
-        break;
-		case CANNON_TYPE_CANNON_LBS20:
-			return 20;
-        break;		
-		case CANNON_TYPE_CANNON_LBS24:
-			return 24;
-        break;
-		case CANNON_TYPE_CANNON_LBS32:
-			return 32;
-        break;	
-		case CANNON_TYPE_CANNON_LBS36:
-			return 36;
-        break;  		
-		case CANNON_TYPE_CULVERINE_LBS36:
-			return 36;
-        break;		
-		case CANNON_TYPE_CANNON_LBS42:
-			return 42;
-        break;
-		case CANNON_TYPE_CANNON_LBS48:
-			return 48;
-        break;
-    }
+	ref curCannon;
+	makeref(curCannon, Cannon[nCannon]);
+	
+	if (CheckAttribute(curCannon, "RealCaliber"))
+	{
+		return sti(curCannon.RealCaliber);
+	}
+	return sti(curCannon.caliber);
 }
 
 int GetCannonCaliberNominal(int nCannon)
 {
-    switch(nCannon)
-    {
-		case CANNON_TYPE_NONECANNON:
-			return 0;
-        break;
-		case CANNON_TYPE_CANNON_LBS3:
-			return 3;
-		break;
-		case CANNON_TYPE_CANNON_LBS6:
-			return 6;
-		break;
-		case CANNON_TYPE_CANNON_LBS8:
-			return 8;
-		break;
-		case CANNON_TYPE_CULVERINE_LBS8:
-			return 8;
-        break;
-		case CANNON_TYPE_CANNON_LBS12:
-			return 12;
-        break;
-		case CANNON_TYPE_CANNON_LBS16:
-			return 16;
-        break;
-		case CANNON_TYPE_CANNON_LBS18:
-			return 18;
-        break;
-		case CANNON_TYPE_CULVERINE_LBS18:
-			return 18;
-        break;
-		case CANNON_TYPE_CANNON_LBS20:
-			return 20;
-        break;		
-		case CANNON_TYPE_CANNON_LBS24:
-			return 24;
-        break;
-		case CANNON_TYPE_CANNON_LBS32:
-			return 32;
-        break;	
-		case CANNON_TYPE_CANNON_LBS36:
-			return 36;
-        break;  		
-		case CANNON_TYPE_CULVERINE_LBS36:
-			return 42;
-        break;		
-		case CANNON_TYPE_CANNON_LBS42:
-			return 42;
-        break;
-		case CANNON_TYPE_CANNON_LBS48:
-			return 48;
-        break;
-    }
+	ref curCannon;
+	makeref(curCannon, Cannon[nCannon]);
+	
+	
+	return sti(curCannon.caliber);
 }

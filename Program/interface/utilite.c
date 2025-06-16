@@ -947,7 +947,7 @@ string GetItemDescribe(int iGoodIndex)
 		}
 	}
 
-	describeStr = describeStr + GetAssembledString(LanguageConvertString(lngFileID, Items[iGoodIndex].describe), &Items[iGoodIndex]);
+	describeStr = describeStr + GetAssembledString(GetItemDescr(&Items[iGoodIndex]), &Items[iGoodIndex]);
 	if (CheckAttribute(arItm, "potion"))
 	{
 		if (CheckAttribute(arItm, "potion.health"))
@@ -1016,16 +1016,6 @@ string GetItemDescribe(int iGoodIndex)
 	LanguageCloseFile(lngFileID);
 	
 	return describeStr;
-}
-// boal <--
-
-string GetItemName(string sItemID)
-{
-	ref refItem = ItemsFromID(sItemID);
-	if (CheckAttribute(refItem, "name"))
-		return GetConvertStr(refItem.name, "ItemsDescribe.txt");
-	else
-		return sItemID;
 }
 
 #event_handler("Tips_GetTipsDirectory","Tips_GetTipsDirectory");

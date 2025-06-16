@@ -643,8 +643,18 @@ void ShowInfoWindow()
 		    	sText2 = sText2 + NewStr() + XI_ConvertString("CannonsTime") + ": " + sti(GetCannonReloadTime(Cannon)) + " " + XI_ConvertString("sec.");
 		    	sText2 = sText2 + NewStr() + XI_ConvertString("Weight") + ": " + sti(Cannon.Weight) + " " + XI_ConvertString("cwt");
 
-		    	sGroup = "GOODS";
-				sGroupPicture = GetCannonType(sti(rChr.Ship.Cannons.Type)) + "_" + GetCannonCaliber(sti(rChr.Ship.Cannons.Type));
+		    	int idx = GetCannonGoodsIdxByType(sti(rChr.Ship.Cannons.Type));
+				
+				if (idx != -1)
+				{
+					sGroup = GetGoodImageGroup(&Goods[idx]);
+					sGroupPicture = Goods[idx].Name;
+				}
+				else
+				{
+					sGroup = "GOODS";
+					sGroupPicture = "";
+				}
 		    }
 		    if (GameInterface.(CurTable).(CurRow).UserData.ID == "Crew" && sti(rChr.ship.type) != SHIP_NOTUSED)
 			{
@@ -806,7 +816,7 @@ void CannonsMenuRefresh()
 	int idx = GetCannonGoodsIdxByType(sti(rChr.Ship.Cannons.Type));
 	if (idx != -1)
 	{
-	    SetNewGroupPicture("CANNONS_PIC", "GOODS", Goods[idx].Name);
+	    SetNewGroupPicture("CANNONS_PIC", GetGoodImageGroup(&Goods[idx]), Goods[idx].Name);
 		SetFormatedText("CANNONS_TEXT", XI_ConvertString(Goods[idx].Name));
 		if (bShipyardOnTop)
 		{
@@ -814,7 +824,7 @@ void CannonsMenuRefresh()
 			SetFormatedText("CANNONS_QTY_B", its(GetBortCannonsQtyMax(rChr, "cannonb")));
 			SetFormatedText("CANNONS_QTY_R", its(GetBortCannonsQtyMax(rChr, "cannonr")));
 			SetFormatedText("CANNONS_QTY_L", its(GetBortCannonsQtyMax(rChr, "cannonl")));
-			SetNewGroupPicture("CANNONS_PIC", "GOODS", "");
+			SetNewGroupPicture("CANNONS_PIC", GetGoodImageGroup(&Goods[idx]), "");
 			SetFormatedText("CANNONS_TEXT", "");
 		} else {
 			if (!bEmptySlot)

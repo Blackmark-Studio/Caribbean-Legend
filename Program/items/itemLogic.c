@@ -237,7 +237,7 @@ void Item_OnPickItem()
 		{
 			SendMessage(&randItemModels[sti(chr.activeItem)], "lslff", MSG_MODEL_BLEND, "blenditemlit", 1000, 1.0, 0.0);
 			GenerateAndAddItems(GetMainCharacter(), Items[sti(activeLocation.(activeRandItemAttribute))].id, 1);
-			displayItemName = LanguageConvertString(langFile, Items[sti(activeLocation.(activeRandItemAttribute))].name);
+			displayItemName = GetItemName(&Items[sti(activeLocation.(activeRandItemAttribute))]);
 			//Log_SetStringToLog(youvegotString+" "+displayItemName+"!");
 			//notification(youvegotString+" "+displayItemName+"", "BoxPlus");
 
@@ -271,7 +271,7 @@ void Item_OnPickItem()
 		SendMessage(itemModel, "lslff", MSG_MODEL_BLEND, "blenditemlit", 1000, 1.0, 0.0);
 		GenerateAndAddItems(GetMainCharacter(), Items[activeItem].id, 1);
 
-		displayItemName = LanguageConvertString(langFile, Items[activeItem].name);
+		displayItemName = GetItemName(&Items[activeItem].name);
 		//Log_SetStringToLog(youvegotString+" "+displayItemName+"!");
 		// ===> перехват взятия предметов из локатора item на метод обрабоки для квестовых нужд 
 		QuestCheckTakeItem(activeLocation, Items[activeItem].id);
@@ -318,7 +318,7 @@ void Item_OnUseItem()
 	int langFile = LanguageOpenFile("ItemsDescribe.txt");
 	string displayItemName, youvegotString;
 	youvegotString = LanguageConvertString(langFile, "used_itemNotif");
-	displayItemName = LanguageConvertString(langFile, Items[activeItem].name);
+	displayItemName = GetItemName(&Items[activeItem]);;
 	//Log_SetStringToLog(youvegotString+" "+displayItemName+"!");
 	notification(youvegotString+" "+displayItemName+"!", "BoxMinus");
     PlaySound("interface\sobitie_na_karte_001.wav");

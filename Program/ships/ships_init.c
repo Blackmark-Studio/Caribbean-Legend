@@ -2,7 +2,7 @@ void InitShips()
 {
 	ref refShip;
 
-	for (int idx=0;idx<SHIP_TYPES_QUANTITY_WITH_FORT;idx++)
+	for (int idx=0;idx<GetArraySize(&ShipsTypes);idx++)
 	{
 		makeref(refShip,ShipsTypes[idx]);
 
@@ -4264,11 +4264,9 @@ void InitShips()
 	refShip.SP									= 100;
 	refShip.CanEncounter						= false;
 	refship.ShipHolder					        = true; 
-	
-	makeref(refShip,ShipsTypes[SHIP_FORT + 1]);
-	refShip.ShipHolder  = true;
+
 	/// Check
-	for (int i=0; i<SHIP_TYPES_QUANTITY_WITH_FORT-1; i++)
+	for (int i=0; i<GetArraySize(&ShipsTypes); i++)
 	{
 	  	makeref(refShip, ShipsTypes[i]);
 		if (!CheckAttribute(refShip,"Name")) { continue; }

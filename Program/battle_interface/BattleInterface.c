@@ -1772,7 +1772,7 @@ int GetIconTextureIndexWithInserting(int idx, int startIdx)
 void InitShipsTextures(int startPos)
 {
 	ref refShip;
-	for (i = 0; i < SHIP_TYPES_QUANTITY; i++)
+	for (i = 0; i < GetArraySize(&ShipsTypes); i++)
 	{
 		makeref(refShip,ShipsTypes[i]);
 		if (CheckAttribute(refShip, "modname"))

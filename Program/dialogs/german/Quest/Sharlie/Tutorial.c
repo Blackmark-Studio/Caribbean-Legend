@@ -1802,7 +1802,7 @@ void ProcessDialogEvent()
 			link.l2.go = "EnemyPirate_3_Leadership";
 			if (IsCharacterPerkOn(pchar, "HT1"))
 			{
-				link.l3 = "(Duellant) Das habe ich so vermisst.";
+				link.l3 = "(Duellant) Wie sehr hab ich das vermisst.";
 				link.l3.go = "EnemyPirate_3_Duelyant";
 			}
 		break;

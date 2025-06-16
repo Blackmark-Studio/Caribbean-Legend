@@ -1242,8 +1242,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "BallsGold_2":
-			dialog.text = "Э-э-э. Ну д-да.";
-			link.l1 = "Твоё имя есть в списке, который мне дал месье Пиншон.";
+			dialog.text = "Euh... O-oui.";
+			link.l1 = "Ton nom figure sur la liste que m'a donnée Monsieur Pinchon.";
 			link.l1.go = "BallsGold_3";
 		break;
 		
@@ -1799,7 +1799,7 @@ void ProcessDialogEvent()
 			link.l2.go = "EnemyPirate_3_Leadership";
 			if (IsCharacterPerkOn(pchar, "HT1"))
 			{
-				link.l3 = "(Duelliste) Ça m’avait manqué.";
+				link.l3 = "(Duelliste) Comme cela m'a manqué.";
 				link.l3.go = "EnemyPirate_3_Duelyant";
 			}
 		break;

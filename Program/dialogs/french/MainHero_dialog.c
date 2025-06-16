@@ -272,7 +272,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Boats") && pchar.location == "Maracaibo_river")
     		{
     		    dialog.text = "Alors, nous devons construire six longboats. Pour cela, j'ai besoin d'un charpentier, de 20 planches et de 10 paquets de cuir";
-    			link.l1 = "*UTILISEZ UNE OPTION DE PENSÉE À VOIX HAUTE POUR COMMENCER À CONSTRUIRE DES DRAGONS LONGS*";
+    			link.l1 = "'UTILISEZ UNE OPTION DE PENSÉE À VOIX HAUTE POUR COMMENCER À CONSTRUIRE DES DRAGONS LONGS'";
     			link.l1.go = "exit";
 				DeleteAttribute(pchar, "questTemp.Mtraxx.Boats");
 				AddQuestRecord("Roger_5", "11");

@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "DiegoDeLanda_LadyBeth_4":
-			dialog.text = "Mes peurs ne sont rien comparées à ce que vous avez laissé derrière cette porte. Et ce livret que vous avez pris à cette pauvre femme… Si la peur avait une forme, elle ressemblerait à cela.\n"+
+			dialog.text = "Mes peurs ne sont rien comparées à ce que vous avez laissé derrière cette porte. Et ce livret que vous avez pris à cette pauvre femme... Si la peur avait une forme, elle ressemblerait à cela.\n"+
 			"Bonne journée, capitaine.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_leaving";
@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DiegoDeLanda_leaving_Second_2": // Второе прощание
-			dialog.text = "\nUn vrai mystère se tient devant moi. Vous avez déjà rassemblé deux… reliques. Aimez-vous collectionner de telles choses ? Êtes-vous un collectionneur ?";
+			dialog.text = "\nUn vrai mystère se tient devant moi. Vous avez déjà rassemblé deux... reliques. Aimez-vous collectionner de telles choses ? Êtes-vous un collectionneur ?";
 			link.l1 = "Comment le savez-vous ?";
 			link.l1.go = "DiegoDeLanda_leaving_Second_3";
 		break;

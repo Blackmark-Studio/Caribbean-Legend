@@ -3042,10 +3042,10 @@ void SharlieNpcInit()//создаем всех ключевых персонаж
 	LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
 	
 	// Алонсо де Мальдонадо
-	sld = GetCharacter(NPC_GenerateCharacter("Maldonado", "Alonso", "man", "man", 1, SPAIN, -1, false, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("Maldonado", "Maldonado", "man", "man", 1, SPAIN, -1, false, "quest"));
 	sld.name = StringFromKey("QuestsUtilite_56");
 	sld.lastname = StringFromKey("QuestsUtilite_57");
-	sld.greeting = "alonso";
+	//sld.greeting = "alonso";
     sld.Dialog.Filename = "Quest\Sharlie\Maldonado.c";
 	sld.dialog.currentnode = "First time";
 	sld.rank = 20+MOD_SKILL_ENEMY_RATE;

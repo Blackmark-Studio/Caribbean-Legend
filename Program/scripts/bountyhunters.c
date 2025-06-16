@@ -351,8 +351,8 @@ void FireBrigadeCheck(int iNation)
                     {
                         sld.name = StringFromKey("QuestsUtilite_56");
                         sld.lastname = StringFromKey("QuestsUtilite_57");
-                        sld.model = "Alonso";
-                        sld.greeting = "Alonso";
+                        sld.model = "Maldonado";
+                        //sld.greeting = "Alonso";
                     }
                     else sld.model = "SpaOfficer2";
                     sld.Ship.Type = GenerateShipExt(SHIP_ELCASADOR, true, sld);

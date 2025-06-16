@@ -668,7 +668,7 @@ void ShowInfo()
 		break;
 		
 		case "TABLE_SMALLSKILL":
-			if(CheckAttribute(GameInterface, "TABLE_SMALLSKILL." + CurRow + "." + CurCol + ".UserData.ID"))
+			if(CheckAttribute(&GameInterface, "TABLE_SMALLSKILL." + CurRow + "." + CurCol + ".UserData.ID"))
 			{
 				sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).(CurCol).UserData.ID);
 				sText1  = GetRPGText(GameInterface.(CurTable).(CurRow).(CurCol).UserData.ID);

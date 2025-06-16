@@ -250,7 +250,7 @@ void ProcessDialogEvent()
 		
 		case "guide_50":
 			dialog.text = "Parfait. On commence ?";
-			link.l1 = "¡Bailemos!";
+			link.l1 = "Dansons !";
 			link.l1.go = "guide_56";
 			npchar.quest.guide_win = 0;
 		break;

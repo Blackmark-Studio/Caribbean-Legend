@@ -110,6 +110,7 @@ void ProcessDialogEvent()
 			npchar.dialog.currentnode = "Return back to Lea";
 			AddQuestRecord("VPVL", "2"); 
 			DoQuestCheckDelay("VPVL_Start", 0.1);
+			LocatorReloadEnterDisable("FortFrance_Town", "gate_back", true);
 		break;
 		
 		case "Rejection":
@@ -202,12 +203,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "Kontr Le Maren1":
+			sld = CharacterFromID("VPVL_contr_2");
 			dialog.text = "Co się tak rozmarzyłeś, bydlaku? Ślinę sobie otrzyj! Lepiej sprzedajmy ją... wiesz komu. Za taką panienkę dostaniemy worek monet, a potem hulanka przez miesiąc!";
 			if (pchar.sex == "man")
 			{
 				dialog.text = "Na co nam jeszcze jedna małpa w jaskini? Przypuśćmy większy nacisk na jego wspólnika – i tak wszystko wyśpiewa. A tego zabijmy na miejscu, żeby nam oczu nie raził!";
 			}
-			link.l1 = "Niech cię tysiąc rekinów pożre, Simon! Jesteś najbardziej przebiegłym przemytnikiem w całym archipelagu!";
+			link.l1 = "Niech cię tysiąc rekinów pożre, "+sld.name+"! Jesteś najbardziej przebiegłym przemytnikiem w całym archipelagu!";
 			link.l1.go = "Kontr Le Maren2";
 		break;
 		

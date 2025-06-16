@@ -1414,7 +1414,7 @@ void ProcessDialogEvent()
 		case "GiveTaskSlave_1":
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity(npchar.city);
-			dialog.Text = "Хорошо, слушайте. Сейчас нет на всех Карибах прибыльнее дела, чем работорговля. Я не плантатор, но у меня есть надёжный покупатель на этот товар, и не один\nВ общем, мне нужны рабы в количестве " + pchar.questTemp.Slavetrader.iSlaveQuantity + " штук. За каждого я готов заплатить по 250 песо - это неплохая цена, согласитесь. Всего сумма сделки составит " + FindRussianMoneyString(sti(pchar.questTemp.Slavetrader.iSlaveMoney)) + " золотом.";
+			dialog.Text = "Хорошо, слушайте. Сейчас нет на всех Карибах прибыльнее дела, чем работорговля. Я не плантатор, но у меня есть надёжный покупатель на этот товар, и не один\nВ общем, мне нужны рабы в количестве " + pchar.questTemp.Slavetrader.iSlaveQuantity + " штук. За каждого я готов заплатить по 250 песо - это неплохая цена, согласитесь. Всего сумма сделки составит " + FindRussianMoneyString(sti(pchar.questTemp.Slavetrader.iSlaveMoney)) + ".";
 			Link.l1 = "Нет, работорговлей я не занимаюсь. Ищите себе другого помощника, не обременённого наличием совести.";
 			Link.l1.go = "exit_slaves";
 			Link.l2 = "Хм, предложение действительно заманчивое. Я бы взял"+ GetSexPhrase("ся","ась") +". Как срочно вам нужны эти рабы?";

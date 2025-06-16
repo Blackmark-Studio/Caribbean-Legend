@@ -110,6 +110,7 @@ void ProcessDialogEvent()
 			npchar.dialog.currentnode = "Return back to Lea";
 			AddQuestRecord("VPVL", "2"); 
 			DoQuestCheckDelay("VPVL_Start", 0.1);
+			LocatorReloadEnterDisable("FortFrance_Town", "gate_back", true);
 		break;
 		
 		case "Rejection":
@@ -200,12 +201,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Kontr Le Maren1":
+			sld = CharacterFromID("VPVL_contr_2");
 			dialog.text = "What foul fantasies be festering in your head, you salt-soaked beast? Stow your drooling! Better we sell her to... you know who. He’ll part with a chest of coin for such a fine lass, and we’ll be drinking and wenching for a month of Sundays!";
 			if (pchar.sex == "man")
 			{
 				dialog.text = "What in Davy Jones' locker do we need another swab cluttering our brig for? Bear down harder on his mate—he’ll sing like a gull at sunrise. As for this one, let’s gut him here and now, save us the trouble of looking at his face!";
 			}
-			link.l1 = "A thousand hungry sharks gnaw your guts, Simon! You be the slyest smuggler in the whole archipelago!";
+			link.l1 = "A thousand hungry sharks gnaw your guts, "+sld.name+"! You be the slyest smuggler in the whole archipelago!";
 			link.l1.go = "Kontr Le Maren2";
 		break;
 

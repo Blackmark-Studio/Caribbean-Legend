@@ -73,6 +73,8 @@ void DiegoDeLanda_Leaving_End_2(string qName)
 	if (CharacterIsAlive("DiegoDeLanda"))
 	{
 		sld = CharacterFromID("DiegoDeLanda");
+		sld.dialog.filename = "Quest\ShipsPack\DiegoDeLanda_dialog.c";
+		sld.dialog.currentnode = "DiegoDeLanda_Meeting";
 		ChangeCharacterAddressGroup(sld, "none", "", "");
 	}
 }

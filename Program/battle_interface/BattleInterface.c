@@ -1126,6 +1126,10 @@ void BI_SetPossibleCommands()
             BattleInterface.Commands.Cabin.enable		= true;
         }
         BattleInterface.Commands.Boat.enable           = true;
+		if(IsSteamDeck())
+		{
+			BattleInterface.Commands.Charge.enable		   = CheckAttribute(GetCharacter(chIdx), "Ship.Cannons.Charge.Type"); // 1.2.4
+		}
 	}
 	// для спутников
 	else

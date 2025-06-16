@@ -194,7 +194,7 @@ void InitInterface_RS(string iniName, ref itemsRef, string faceID)
 
 	SetFormatedText("STORECAPTION", XI_ConvertString(sGetInterfaceTypeStr("titleExchangeItems", "titleItemsBox", "titleDeadItems","titleBarrel")));
 	SetFormatedText("OTHER_TABLE_CAPTION", OtherTableCaption);
-	if(sInterfaceType == INTERFACETYPE_DEADMAN && CheckAttribute(GameInterface, "TABLE_LIST2.tr1.index"))	
+	if(sInterfaceType == INTERFACETYPE_DEADMAN && CheckAttribute(&GameInterface, "TABLE_LIST2.tr1.index"))	
 	{
 		iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.tr1.index);
 	}
@@ -1235,7 +1235,7 @@ void AddToTable(ref rChar)
 				sList = "tr" + targetSelect;
 			}
 
-			if (CheckAttribute(GameInterface, "TABLE_LIST." + sList + ".index"))
+			if (CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
 			{
 				iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
 				ShowGoodsInfo(iCurGoodsIdx);
@@ -1274,7 +1274,7 @@ void AddToTable(ref rChar)
 				sList2 = "tr" + targetSelect;
 			}
 
-			if (CheckAttribute(GameInterface, "TABLE_LIST2." + sList2 + ".index"))
+			if (CheckAttribute(&GameInterface, "TABLE_LIST2." + sList2 + ".index"))
 			{
 				iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList2).index);
 				ShowGoodsInfo(iCurGoodsIdx);
@@ -2069,7 +2069,7 @@ void OfficerReincarnation(ref rPassanger);
 // проверка на наличие последнего предмета
 bool CheckLastItemOnDead()
 {
-	if(CheckAttribute(GameInterface, "TABLE_LIST2.tr1.index"))
+	if(CheckAttribute(&GameInterface, "TABLE_LIST2.tr1.index"))
 		iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.tr1.index);
     if(iCurGoodsIdx < 1)
         return false;

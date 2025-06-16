@@ -444,7 +444,7 @@ void InitAlchemy()
 bool isMultiObjectKnown(string itemId)
 {
 	ref item;		
-	for(int n = 0; n < ITEMS_QUANTITY; n++)
+	for(int n = 0; n < TOTAL_ITEMS; n++)
 	{
 		item = &Items[n];
 		if( CheckAttribute(item,"multiobject") )
@@ -462,6 +462,12 @@ void SetAlchemyRecipeKnown(string Recipe)
 	if(!CheckAttribute(pchar,"alchemy.known")) pchar.alchemy.known = 1;
 	notification(XI_ConvertString("Recipe Update"), "Alchemy");
 	PlaySound("interface\notebook.wav");
+}
+
+void SetAlchemyRecipeKnown_Silent(string Recipe)
+{
+	pchar.alchemy.(Recipe).isKnown = true;
+	if(!CheckAttribute(pchar,"alchemy.known")) pchar.alchemy.known = 1;
 }
 
 void initStartState2Character(ref ch)
@@ -517,7 +523,7 @@ void initStartState2Character(ref ch)
     for(i = 1; i <= TREASURE_NOTES; i++)
     {
         sTemp = i; //Safe moment
-        ch.questTemp.Treasure_Stories.(sTemp) = i;
+        ch.questTemp.Treasure_Stories.(sTemp) = sTemp;
 	}
     // ==> Номер пиратского флага (берется из текстуры персональных флагов ГГ)
 	ch.Flags.Pirate = 3;

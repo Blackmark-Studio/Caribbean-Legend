@@ -779,20 +779,12 @@ void ProcessDialogEvent()
 				case SHIP_LADYBETH:
 					dialog.text = "Et avez-vous vu le prêtre? Eh bien, vous le rencontrerez. Et vous feriez mieux de faire le plein de munitions à double charge pour pistolet. Si cela ne fonctionne pas - essayez un pieu en bois.";
 				break;
+				
+				case SHIP_MEMENTO:
+					dialog.text = "Et avez-vous vu le prêtre? Eh bien, vous le rencontrerez. Et vous feriez mieux de faire le plein de munitions à double charge pour pistolet. Si cela ne fonctionne pas - essayez un pieu en bois.";
+				break;
 			}
 		break;
-		
-		/*case "joruba_p3_HolyMercy":
-			dialog.text = "Et as-tu vu le pretre ?";
-			link.l1 = "Quel pretre ?";
-			link.l1.go = "joruba_p3_HolyMercy_2";
-		break;
-		
-		case "joruba_p3_HolyMercy_2":
-			dialog.text = "Eh bien, tu le rencontreras. Et tu ferais mieux de faire le plein de charges doubles pour pistolets. Si cela ne marche pas - essaie un pieu en bois.";
-			link.l1 = "D'accord...";
-			link.l1.go = "joruba_p3_1";
-		break;*/
 		
 		case "joruba_p3_PinkOtkaz":
 			dialog.text = "Oui, ce navire peut avoir une histoire... mais n'était-ce pas trop facile à obtenir ? Aucun moyen ! Tu as encore une tonne de travail inachevé sur la liste. Une fois que tu auras fait cela, nous discuterons à nouveau de ce sacrifice.";

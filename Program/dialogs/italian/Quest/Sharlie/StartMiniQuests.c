@@ -408,7 +408,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GigoloMan_2":
-			dialog.text = "Mi rincresce sentirle queste parole, monsieur de Mor. Ebbene, nella nostra landa c’è un bordello. È arrivata da poco una ragazza nuova, probabilmente dall’Europa, giovane, pelle chiara, bionda. La osservo da settimane e… bramo intensamente di restare solo con lei.\nTuttavia, la mia posizione sociale e il mio rango non mi permettono di frequentare questo luogo di peccato. No, come avrà intuito, amico mio, non ho nulla in contrario – ma la reputazione ha un prezzo molto elevato.\nEcco perché mi rivolgo a lei. Lei è un uomo nuovo qui, nessuno lo conosce e a nessuno interessa… per ora. Mi farebbe un immenso favore, monsieur…";
+			dialog.text = "Mi rincresce sentirle queste parole, monsieur de Mor. Ebbene, nella nostra landa c’è un bordello. È arrivata da poco una ragazza nuova, probabilmente dall’Europa, giovane, pelle chiara, bionda. La osservo da settimane e... bramo intensamente di restare solo con lei.\nTuttavia, la mia posizione sociale e il mio rango non mi permettono di frequentare questo luogo di peccato. No, come avrà intuito, amico mio, non ho nulla in contrario – ma la reputazione ha un prezzo molto elevato.\nEcco perché mi rivolgo a lei. Lei è un uomo nuovo qui, nessuno lo conosce e a nessuno interessa... per ora. Mi farebbe un immenso favore, monsieur...";
 			link.l1 = "E come posso esservi utile, signore?";
 			link.l1.go = "GigoloMan_3";
 		break;

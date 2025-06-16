@@ -1054,7 +1054,7 @@ void AcceptAddOfficer()
 	string  attributeName2 = "pic"+(nCurScrollOfficerNum+1);
     ref     sld;
 
-    if (checkAttribute(GameInterface, "PASSENGERSLIST."+attributeName2 + ".character"))
+    if (checkAttribute(&GameInterface, "PASSENGERSLIST."+attributeName2 + ".character"))
     {
 		int iChar = sti(GameInterface.PASSENGERSLIST.(attributeName2).character);
         // назначение нового кэпа, возможно, если там уже не наш, те или враг или снят
@@ -1080,9 +1080,9 @@ void AcceptAddOfficer()
 void SetOfficersSkills()
 {
 	string sCharacter = "pic"+(sti(GameInterface.PASSENGERSLIST.current)+1);
-	if (checkAttribute(GameInterface, "PASSENGERSLIST."+sCharacter))
+	if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter))
 	{
-		if (checkAttribute(GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
+		if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
 		{
 			sCharacter = GameInterface.PASSENGERSLIST.(sCharacter).character;
 			ref otherchr = &characters[sti(sCharacter)];

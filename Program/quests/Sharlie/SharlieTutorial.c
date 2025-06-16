@@ -21,6 +21,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	pchar.Ship.Type = SHIP_NOTUSED;
 	// прописываем локации
 	sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
+	LocatorReloadEnterDisable("Quest_Ship_deck_Medium_trade", "reload_cabin", true);
 	
 	// активируемые объекты на корабле
 	SetLocatorEvent(sld.id, "event1", "SharlieTutorial_windlass_1");
@@ -252,7 +253,9 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	pchar.quest.Tutorial_Talisman.win_condition.l1 = "ItemGroup";
 	pchar.quest.Tutorial_Talisman.win_condition.l1.group = TALISMAN_ITEM_TYPE;
 	pchar.quest.Tutorial_Talisman.function = "Tutorial_Prologue_Amulet";
-	
+
+	pchar.SharlieTutorial.FullyCompleted = 0;
+
 	TEV.Tutor.PopUpLogbook = true;
 	TEV.Tutor.PopUpTrading = true;
 	
@@ -441,6 +444,11 @@ void SharlieTutorial_OldSailorKey()
 }
 
 void SharlieTutorial_FoundTheKey(string qName)
+{
+	SetFunctionLocatorCondition("SharlieTutorial_OpenBox", "Quest_Cabin_Medium", "box", "private1", false)
+}
+
+void SharlieTutorial_OpenBox(string qName)
 {
 	pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
 }
@@ -1728,6 +1736,8 @@ void SharlieTutorial_StartGameInMartinique()
 	DeleteQuestCondition("SharlieTutorial_PobedaPaluba");
 	DeleteQuestCondition("SharlieTutorial_AttackDead");
 	DeleteQuestCondition("SharlieTutorial_SailorCleansFloors");
+	DeleteQuestCondition("SharlieTutorial_FoundTheKey");
+	DeleteQuestCondition("SharlieTutorial_OpenBox");
 	// чистим сундуки и возвращаем стандартную музыку на палубах
 	sld = &Locations[FindLocation("Quest_Deck_Medium")];
 	sld.type = "residence";
@@ -1941,7 +1951,8 @@ void SharlieTutorial_SeaNearMartinique_Logo(string qName)
 {
 	SharlieTutorial_ShowLogo_Start();
 	Achievment_Set("ach_CL_162");
-	if (CheckAttribute(PChar, "SharlieTutorial.FullyComplete") && sti(pchar.SharlieTutorial.FullyCompleted) == 6) Achievment_Set("ach_CL_163");
+	if(sti(pchar.SharlieTutorial.FullyCompleted) == 6) Achievment_Set("ach_CL_163");
+    DeleteAttribute(PChar, "SharlieTutorial.FullyCompleted");
 }
 
 void SharlieTutorial_SeaNearMartinique_AutoTeleport(string qName)

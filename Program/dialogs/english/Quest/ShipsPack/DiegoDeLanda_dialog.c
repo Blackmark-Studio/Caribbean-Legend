@@ -58,7 +58,7 @@ void ProcessDialogEvent()
 		case "DiegoDeLanda_Meeting_2":
 			if (CheckAttribute(pchar, "questTemp.DiegoDeLanda_SantaMisericordia"))
 			{
-				dialog.text = "You know what’s special about this crypt? Here lie two souls connected by blood. Father and son de Alameda. One fell to the hands of sinners, the other… hmm, found his way to the Lord.";
+				dialog.text = "You know what’s special about this crypt? Here lie two souls connected by blood. Father and son de Alameda. One fell to the hands of sinners, the other... hmm, found his way to the Lord.";
 				link.l1 = "Don Fernando’s diary brought me here.";
 				link.l1.go = "DiegoDeLanda_SantaMisericordia_2";
 			}
@@ -123,19 +123,19 @@ void ProcessDialogEvent()
 		
 		//--> Леди Бет
 		case "DiegoDeLanda_LadyBeth_2":
-			dialog.text = "Oh, yes. Poor woman. Her husband… not the kindest man. They say his plantations are the most productive on Barbados. And the cruelest. Do you know how many slaves die there each month? Recently, he beat to death a real doctor from England — a man of great mind and talent. But her fate isn’t much better, believe me.";
+			dialog.text = "Oh, yes. Poor woman. Her husband... not the kindest man. They say his plantations are the most productive on Barbados. And the cruelest. Do you know how many slaves die there each month? Recently, he beat to death a real doctor from England — a man of great mind and talent. But her fate isn’t much better, believe me.";
 			link.l1 = "You seem very well informed.";
 			link.l1.go = "DiegoDeLanda_LadyBeth_3";
 		break;
 
 		case "DiegoDeLanda_LadyBeth_3":
-			dialog.text = "People come to me for confession, Captain. I hear things they’re afraid to tell even their loved ones. Their fears, their sins… their pain.";
+			dialog.text = "People come to me for confession, Captain. I hear things they’re afraid to tell even their loved ones. Their fears, their sins... their pain.";
 			link.l1 = "Aren’t you afraid of persecution? It’s not easy for a Catholic priest on English soil.";
 			link.l1.go = "DiegoDeLanda_LadyBeth_4";
 		break;
 
 		case "DiegoDeLanda_LadyBeth_4":
-			dialog.text = "My fears are nothing compared to what you just left behind that door. And that little book you took from that unfortunate woman… If fear had a form, it would be exactly like that.\n"+
+			dialog.text = "My fears are nothing compared to what you just left behind that door. And that little book you took from that unfortunate woman... If fear had a form, it would be exactly like that.\n"+
 		"Good day, Captain.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_leaving";
@@ -214,7 +214,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "DiegoDeLanda_Leaving_First_3":
-			dialog.text = "One, for example, seeks justice. Another… obsessed with the dark waters of death. People so easily lose themselves in their desires. Don’t you think?";
+			dialog.text = "One, for example, seeks justice. Another... obsessed with the dark waters of death. People so easily lose themselves in their desires. Don’t you think?";
 			link.l1 = "You’re a strange priest, Father.";
 			link.l1.go = "DiegoDeLanda_Leaving_First_4";
 		break;
@@ -232,7 +232,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "DiegoDeLanda_leaving_Second_2": // Второе прощание
-			dialog.text = "\nThe true riddle stands before me. You’ve already gathered two… relics. You like collecting such things? Are you a collector?";
+			dialog.text = "\nThe true riddle stands before me. You’ve already gathered two... relics. You like collecting such things? Are you a collector?";
 			link.l1 = "How do you know?";
 			link.l1.go = "DiegoDeLanda_leaving_Second_3";
 		break;
@@ -256,7 +256,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "DiegoDeLanda_leaving_Second_6":
-			dialog.text = "Oh, Captain. I can’t. Sometimes answers wound more than ignorance. Go in peace. And take care of your collection… of trophies. They might come in handy for the journey ahead.";
+			dialog.text = "Oh, Captain. I can’t. Sometimes answers wound more than ignorance. Go in peace. And take care of your collection... of trophies. They might come in handy for the journey ahead.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_Leaving_End";
 		break;
@@ -272,7 +272,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "DiegoDeLanda_Leaving_Third_3":
-			dialog.text = "Go ahead. But then you won’t learn everything and won’t get the complete set of trophies. Though you’ll get all the ships anyway…\n"+
+			dialog.text = "Go ahead. But then you won’t learn everything and won’t get the complete set of trophies. Though you’ll get all the ships anyway...\n"+
 			"Good day, Captain.";
 			link.l1 = "(Let him go)";
 			link.l1.go = "DiegoDeLanda_Leaving_End";

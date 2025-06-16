@@ -773,26 +773,18 @@ void ProcessDialogEvent()
 				break;
 				
 				case SHIP_GALEON_SM:
-					dialog.text = "  A widzieliście księdza? No cóż, spotkacie go. I lepiej zaopatrzcie się w naboje do pistoletu z podwójnym ładunkiem. Jeśli to nie pomoże - spróbujcie drewnianego kołka.";
+					dialog.text = "A widzieliście księdza? No cóż, spotkacie go. I lepiej zaopatrzcie się w naboje do pistoletu z podwójnym ładunkiem. Jeśli to nie pomoże - spróbujcie drewnianego kołka.";
 				break;
 				
 				case SHIP_LADYBETH:
-					dialog.text = "  A widzieliście księdza? No cóż, spotkacie go. I lepiej zaopatrzcie się w naboje do pistoletu z podwójnym ładunkiem. Jeśli to nie pomoże - spróbujcie drewnianego kołka.";
+					dialog.text = "A widzieliście księdza? No cóż, spotkacie go. I lepiej zaopatrzcie się w naboje do pistoletu z podwójnym ładunkiem. Jeśli to nie pomoże - spróbujcie drewnianego kołka.";
+				break;
+				
+				case SHIP_MEMENTO:
+					dialog.text = "A widzieliście księdza? No cóż, spotkacie go. I lepiej zaopatrzcie się w naboje do pistoletu z podwójnym ładunkiem. Jeśli to nie pomoże - spróbujcie drewnianego kołka.";
 				break;
 			}
 		break;
-		
-		/*case "joruba_p3_HolyMercy":
-			dialog.text = "I widzieliście księdza?";
-			link.l1 = "Jaki ksiądz?";
-			link.l1.go = "joruba_p3_HolyMercy_2";
-		break;
-		
-		case "joruba_p3_HolyMercy_2":
-			dialog.text = "Cóż, spotkasz go. I lepiej zaopatrz się w podwójne ładunki do pistoletu. Jeśli to nie pomoże - spróbuj drewnianego kołka.";
-			link.l1 = "...";
-			link.l1.go = "joruba_p3_1";
-		break;*/
 		
 		case "joruba_p3_PinkOtkaz":
 			dialog.text = "Aye, ten statek może mieć swoją historię... ale czyż nie było zbyt łatwo go zdobyć? Nie ma mowy! Masz jeszcze mnóstwo niedokończonej roboty z listy. Gdy to zrobisz, porozmawiamy ponownie o tej ofierze.";

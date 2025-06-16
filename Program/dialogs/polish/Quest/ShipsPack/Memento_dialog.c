@@ -30,6 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "Jakoś oczekiwałem"+GetSexPhrase("","a")+" od niego pompatycznej przemowy. A on od razu rzucił się do walki.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
+			if (sti(pchar.rank) <= 13) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -151,7 +152,7 @@ void ProcessDialogEvent()
 		
 		// Диалог с Алонсо во вторую ночь
 		case "Memento_Dich_EtapTwo_Alonso_2":
-			dialog.text = "Rozumiem. Wielu z załogi śpi teraz razem – boją się zostać sami. Można pomyśleć, że na tym statku w ogóle można być samemu…";
+			dialog.text = "Rozumiem. Wielu z załogi śpi teraz razem – boją się zostać sami. Można pomyśleć, że na tym statku w ogóle można być samemu...";
 			link.l1 = "Jak widzisz, mnie się nie udało. Co się stało?";
 			link.l1.go = "Memento_Dich_EtapTwo_Alonso_3";
 		break;
@@ -234,7 +235,7 @@ void ProcessDialogEvent()
 
 		case "Memento_Dich_EtapThree_Alonso_4":
 			dialog.text = "Walka, brudne rany, zepsuta solona wołowina — zwykła morska arytmetyka. Gdybyśmy się tak nie nakręcali opowieściami o przeklętych statkach, może byśmy stracili o dwóch ludzi mniej\n"+
-			"Szkielet na rufie też nie pomagał. Dobrze, że jakiś… dowcipniś ukradł mu w nocy kapelusz\n"+
+			"Szkielet na rufie też nie pomagał. Dobrze, że jakiś... dowcipniś ukradł mu w nocy kapelusz\n"+
 			"Ponieważ po takim bluźnierstwie statek nie został trafiony piorunem, załoga trochę się ożywiła i zaczęła knuć, jakby tu jeszcze bardziej drażnić szkielet. Na przykład...";
 			link.l1 = "Nie ruszać szkieletu!";
 			link.l1.go = "Memento_Dich_EtapThree_Alonso_5";
@@ -735,7 +736,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_MortimerGrim_phantom_26":
-			dialog.text = "Nie rozdzielaj 'Memento' i jego kapitana. Mortimer… Kapitan Mortimer był dobrym człowiekiem. Znajdź go na Dominice. A statek… statek cię przyjmie.";
+			dialog.text = "Nie rozdzielaj 'Memento' i jego kapitana. Mortimer... Kapitan Mortimer był dobrym człowiekiem. Znajdź go na Dominice. A statek... statek cię przyjmie.";
 			link.l1 = "...";
 			link.l1.go = "Memento_MortimerGrim_phantom_27";
 		break;

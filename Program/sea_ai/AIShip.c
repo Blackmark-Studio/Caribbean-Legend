@@ -2608,7 +2608,7 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
                         if(!CheckAttribute(rDead, "DontRansackCaptain") || rDead.DontRansackCaptain == false) AISeaGoods_AddGood(rDead, "enemy_boat", "lo_boat", 1000.0, 1); //homo 25/06/07 спасается на шлюпке
                     }
                     //homo
-					if(!GetAchievement("ach_CL_161") && CheckAttribute(Crosshair, "hidden") && sti(Crosshair.hidden) == 0)
+					if(!GetAchievement("ach_CL_161") && !SeaCameras_isCameraOutside())
 					{
 						Achievment_Set("ach_CL_161");
 					}

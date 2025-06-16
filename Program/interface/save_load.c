@@ -460,7 +460,7 @@ void DeleteProfile(string profileName)
 	string oldpath = "";
 	
 	// Warship 08.07.09 fix - ошибка движка об отсутствии атрибута
-	if(CheckAttribute(GameInterface, "SavePath"))
+	if(CheckAttribute(&GameInterface, "SavePath"))
 	{
 		oldpath = GameInterface.SavePath;
 	}

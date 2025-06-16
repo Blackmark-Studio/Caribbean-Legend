@@ -779,20 +779,12 @@ void ProcessDialogEvent()
 				case SHIP_LADYBETH:
 					dialog.text = "E hai incontrato il prete? Beh, lo incontrerai. E ti conviene fare scorta di cariche doppie per la pistola. Se non basta – prova con un paletto di legno.";
 				break;
+				
+				case SHIP_MEMENTO:
+					dialog.text = "E hai incontrato il prete? Beh, lo incontrerai. E ti conviene fare scorta di cariche doppie per la pistola. Se non basta – prova con un paletto di legno.";
+				break;
 			}
 		break;
-		
-		/*case "joruba_p3_HolyMercy":
-			dialog.text = "E hai visto il prete?";
-			link.l1 = "Che prete?";
-			link.l1.go = "joruba_p3_HolyMercy_2";
-		break;
-		
-		case "joruba_p3_HolyMercy_2":
-			dialog.text = "Ebbene, lo incontrerai. E ti conviene far scorta di cariche doppie per la pistola. Se non basta... prova con un palo di legno.";
-			link.l1 = "...";
-			link.l1.go = "joruba_p3_1";
-		break;*/
 		
 		case "joruba_p3_PinkOtkaz":
 			dialog.text = "Ay, questa nave avrà pure una storia... ma non ti sembra che sia finita nelle tue mani fin troppo facilmente? Neanche per sogno! Hai ancora un mare di faccende lasciate a metà. Quando le avrai sbrigate tutte, torneremo a parlare di questo sacrificio.";

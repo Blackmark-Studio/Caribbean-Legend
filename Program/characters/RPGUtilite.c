@@ -3472,10 +3472,10 @@ void initMainFreePlayCharacterItem()
 	SetCharacterPerk(ch, "FlagHol");
 	//GiveNationLicence(HOLLAND, 180);
 	ch.alchemy.known = 1;
-	AddQuestRecordInfo("Recipe", "cartridge");
-	SetAlchemyRecipeKnown("cartridge");
-    AddQuestRecordInfo("Recipe", "clock2");
-	SetAlchemyRecipeKnown("clock2");
+	AddQuestRecordInfo_Silent("Recipe", "cartridge");
+	SetAlchemyRecipeKnown_Silent("cartridge");
+    AddQuestRecordInfo_Silent("Recipe", "clock2");
+	SetAlchemyRecipeKnown_Silent("clock2");
 	if(GetDLCenabled(DLC_APPID_1))
 	{
 		AddItems(ch, "knife_03", 1);

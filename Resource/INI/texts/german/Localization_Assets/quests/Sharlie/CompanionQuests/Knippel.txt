@@ -106,3 +106,23 @@ Knippel_24
 {
 Faggle
 }
+Knippel_25
+{
+2 hours later...@<NewStr()>Boarding the 'Sussex'
+}
+Knippel_26
+{
+Thomas
+}
+Knippel_27
+{
+Lynch
+}
+Knippel_28
+{
+Сhimera
+}
+Knippel_29
+{
+Present time
+}

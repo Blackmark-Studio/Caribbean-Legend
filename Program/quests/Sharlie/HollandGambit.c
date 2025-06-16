@@ -893,6 +893,10 @@ void DeleteJoakimFromRoom(string qName)//закрыть комнату Жоак�
 //-------------------------------------------5 задание-----------------------------------------------------
 void GollandGambit_5_ZadanieStart(string qName)//Квестовая марка
 {
+	pchar.quest.Merdok_prepare.win_condition.l1 = "location";
+	pchar.quest.Merdok_prepare.win_condition.l1.location = "Villemstad_town";
+	pchar.quest.Merdok_prepare.function = "GiveTaskMerdok";
+	
 	AddLandQuestMark(characterFromId("Lucas"), "questmarkmain");
 	AddMapQuestMarkCity("Villemstad", false);
 }
@@ -907,9 +911,8 @@ void GiveTaskMerdok(string qName)//посыльный на последнее з
     sld.Dialog.Filename = "Quest\HollandGambit\OtherNPC.c";
 	sld.dialog.currentnode = "HollQuest_Officer";
     FantomMakeCoolFighter(sld, 20, 20, 20, "blade_12", "pistol3", "grapeshot", 50);
-	GetCharacterPos(pchar, &locx, &locy, &locz);
+	ChangeCharacterAddressGroup(sld, "Villemstad_town", "goto", LAi_FindNearestLocator2Pchar("goto"));
 	LAi_SetActorType(sld);
-	ChangeCharacterAddressGroup(sld, "Villemstad_town", "goto", LAi_FindNearestFreeLocator("goto", locx, locy, locz));
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 }
 

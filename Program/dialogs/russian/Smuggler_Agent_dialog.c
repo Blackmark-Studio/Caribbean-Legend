@@ -276,7 +276,7 @@ void ProcessDialogEvent()
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					dialog.text = "Как сказать? Может быть, и пригодится твой 'товар'. Бери " + sti(pchar.questTemp.different.GiveShipLetters.price2) + " золотых, и забудь об этом.";
+					dialog.text = "Как сказать? Может быть, и пригодится твой 'товар'. Бери " + sti(pchar.questTemp.different.GiveShipLetters.price2) + " песо, и забудь об этом.";
 					link.l1 = "Пожалуй, нет.";
 					link.l1.go = "SM_ShipLetters_2";	
 					link.l2 = "Да, ты угадал, уже начинаю забывать!";
@@ -286,7 +286,7 @@ void ProcessDialogEvent()
 				{
 					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 					{
-						dialog.text = "Точно! Мне уже не просто любопытно. Думаю, если заплачу тебе "+ sti(pchar.questTemp.different.GiveShipLetters.price3) +" золотых, то и тебе станет совсем не любопытно, что да как в этих бумагах.";
+						dialog.text = "Точно! Мне уже не просто любопытно. Думаю, если заплачу тебе "+ sti(pchar.questTemp.different.GiveShipLetters.price3) +" песо, то и тебе станет совсем не любопытно, что да как в этих бумагах.";
 						link.l1 = "Пожалуй, нет.";
 						link.l1.go = "SM_ShipLetters_2";
 						link.l2 = "Да, ты угадал, уже начинаю забывать!";
@@ -294,7 +294,7 @@ void ProcessDialogEvent()
 					}
 					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 					{
-						dialog.text = "Вот это шанс прищучить наглеца! Это очень, очень любопытно. Давай так: я плачу тебе " + sti(pchar.questTemp.different.GiveShipLetters.price4) + " золотом, а ты делаешь вид, что забыл"+ GetSexPhrase("","а") +" документы на столе?";
+						dialog.text = "Вот это шанс прищучить наглеца! Это очень, очень любопытно. Давай так: я плачу тебе " + sti(pchar.questTemp.different.GiveShipLetters.price4) + " песо, а ты делаешь вид, что забыл"+ GetSexPhrase("","а") +" документы на столе?";
 						link.l1 = "Пожалуй, нет.";
 						link.l1.go = "SM_ShipLetters_2";
 						link.l2 = "Да, ты угадал, уже начинаю забывать!";
@@ -704,7 +704,7 @@ void ProcessDialogEvent()
 							SaveCurrentQuestDateParam("contraTravel");
 
 							Dialog.Text = "Что ж, можем доставить тебя до места " + GetConvertStr(locations[FindLocation(pchar.GenQuest.contraTravel.destination.loc)].id, "LocLables.txt") + " близ " +
-								XI_ConvertString("Colony" + pchar.GenQuest.contraTravel.destination + "Gen") + " за " + pchar.GenQuest.contraTravel.price + " золотых. Принесешь деньги через " +
+								XI_ConvertString("Colony" + pchar.GenQuest.contraTravel.destination + "Gen") + " за " + pchar.GenQuest.contraTravel.price + " песо. Принесешь деньги через " +
 								FindRussianDaysString(nDay) + ". Корабль будет ждать тебя в месте под названием " +
 								GetConvertStr(locations[FindLocation(Pchar.GenQuest.contraTravel.CurrentPlace)].id, "LocLables.txt") + " ровно сутки.";
 

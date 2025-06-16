@@ -4084,7 +4084,6 @@ void CaptainComission_DialogInShore()
 	sld.CaptainComission.CapName = pchar.GenQuest.CaptainComission.CapName;
 	sld.CaptainComission.FullName = GetFullName(pchar);
 	sld.CaptainComission.ShipTypeVictim = pchar.GenQuest.CaptainComission.ShipTypeVictim;
-	ChangeShowIntarface();
 	StartQuestMovie(true, false, true);
 	LAi_SetActorType(pchar);	
 

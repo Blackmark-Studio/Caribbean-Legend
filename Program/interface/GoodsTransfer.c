@@ -90,7 +90,7 @@ void CreateGoodNamesStrings()
 	{
 		sGood = Goods[i].name;
 		
-		if(CheckAttribute(GameInterface, "GOODS_ICONS.imagelist." + sGood))
+		if(CheckAttribute(&GameInterface, "GOODS_ICONS.imagelist." + sGood))
 		{
 			x = MakeInt(GameInterface.GOODS_ICONS.imagelist.(sGood).x);
 			y = MakeInt(GameInterface.GOODS_ICONS.imagelist.(sGood).y) - 54;
@@ -122,7 +122,7 @@ void RefreshGoodsCountStrings()
 	{
 		sGood = Goods[i].name;
 		
-		if(CheckAttribute(GameInterface, "GOODS_ICONS.imagelist." + sGood))
+		if(CheckAttribute(&GameInterface, "GOODS_ICONS.imagelist." + sGood))
 		{
 			if(CheckAttribute(PChar, "TransferGoods." + companionId + "." + sGood))
 			{

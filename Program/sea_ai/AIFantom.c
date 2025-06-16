@@ -579,7 +579,7 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 int Fantom_SetCharacterGoods(ref rFantom, int iGoods, int iQuantity, bool isLock)
 {
 	if(iQuantity == 0) return 0;
-	if(iGoods > GOODS_QUANTITY - 1 || iGoods < 0) //fix
+	if(iGoods > GetArraySize(&Goods) - 1 || iGoods < 0) //fix
 	{ 
 		trace("rChar " + rFantom.id +"     goods :" + iGoods + " out of order" );
         return 0; 

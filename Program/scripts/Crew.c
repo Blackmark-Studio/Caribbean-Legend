@@ -643,7 +643,7 @@ int Partition_GetCargoValue(ref chref)
 			else costCoeff = 1.0;	
 		    ret += sti(Cannon.Cost) * 0.33 * costCoeff * GetCannonsNum(chref);
 		}
-		for (i=0; i<GOODS_QUANTITY; i++)
+		for (i=0; i<GetArraySize(&Goods); i++)
 		{
 			sGood = Goods[i].name;
 			costCoeff = 1.0;
@@ -668,7 +668,7 @@ void Partition_GetCargoCostCoeff(string state) // state = "before" || "after" - 
 	ref         chref, cannon;
 	
 	//trace("Partition_GetCargoCostCoeff    state :"+state);
-	for (i=0; i<GOODS_QUANTITY; i++)
+	for (i=0; i<GetArraySize(&Goods); i++)
 	{
 		sGood = Goods[i].name;
 		if(i > GOOD_CANNON_3 - 1) // учёт пушек - как установленных, так и в виде товара

@@ -207,7 +207,7 @@ void AddToTable()
 	n = 1;
 	Table_Clear("TABLE_LIST", false, true, false);
 
-    for (i = 0; i< GOODS_QUANTITY; i++)
+    for (i = 0; i< GetArraySize(&Goods); i++)
 	{
         row = "tr" + n;
 		sGood = Goods[i].name;

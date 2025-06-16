@@ -563,7 +563,7 @@ void Hat6_deal(string qName)
 			ref loc = &locations[FindLocation(pchar.location)];
 			if(CheckAttribute(loc, "type") && loc.type == "town")
 			{
-				int iGood = GOOD_COFFEE + rand(10);
+				int iGood = GetRandomGood(FLAG_GOODS_TYPE_EXPORT, FLAG_GOODS_NONE);
 				ref rColony = GetColonyByIndex(FindColony(GetCityNameByIsland(GiveArealByLocation(loc))));
 				int iPrice = sti(GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], iGood, PRICE_TYPE_BUY, pchar, 1));
 				

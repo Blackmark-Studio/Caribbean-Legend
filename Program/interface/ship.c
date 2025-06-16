@@ -917,7 +917,7 @@ void FillGoodsTable()
 		GameInterface.TABLE_LIST.top    = 0;
 		GameInterface.TABLE_LIST.BackUp = true;
 	}
-    for (i = 0; i< GOODS_QUANTITY; i++)
+    for (i = 0; i< GetArraySize(&Goods); i++)
 	{
         row = "tr" + n;
 		sGood = Goods[i].name;
@@ -1554,7 +1554,7 @@ void FillCannonsTable()
 	}
 	if (GetCannonQuantity(xi_refCharacter) > 0)
 	{
-	    for (i = 0; i< GOODS_QUANTITY; i++)
+	    for (i = 0; i< GetArraySize(&Goods); i++)
 		{
 	        row = "tr" + n;
 			sGood = Goods[i].name;

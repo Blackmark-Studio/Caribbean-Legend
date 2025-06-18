@@ -795,7 +795,7 @@ void Ship_Add2Sea(int iCharacterIndex, bool bFromCoast, string sFantomType, bool
 		if (MOD_BETTATESTMODE == "On") Log_Info("Ship_Add2Sea ERROR : SHIP " + iShipType + ", have no name!   NPCid = "+ rCharacter.id);
 		return;
 	}
-	if (iRealShip >= GetArraySize(&ShipsTypes) - 1)
+	if (iRealShip >= GetArraySize(&ShipsTypes))
 	{
 		Trace("Character.id = " + rCharacter.id + ", have invalid ship type = " + iShipType + ", and try load to sea");
 		return;

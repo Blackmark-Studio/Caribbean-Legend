@@ -1538,6 +1538,7 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple(""+pchar.name+", there is no a greater happiness to me than being in your arms, alright... Let's go!",""+pchar.name+", I'd like to be with you every waking moment if it were possible. Let's go!");
 			link.l1 = RandPhraseSimple("You are the best, my love...","You are wonderful, my talisman...");
 			link.l1.go = "exit";
+			pchar.quest.sex_partner = Npchar.id;
 			AddDialogExitQuest("cabin_sex_go");
 		break;
 		
@@ -1567,6 +1568,7 @@ void ProcessDialogEvent()
 		
 		case "room_sex_go":
 			DialogExit();
+			pchar.quest.sex_partner = Npchar.id;
 			chrDisableReloadToLocation = true;//закрыть локацию
 			if (sti(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
 			if (npchar.chr_ai.type == "actor")

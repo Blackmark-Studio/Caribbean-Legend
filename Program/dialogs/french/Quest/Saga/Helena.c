@@ -614,6 +614,7 @@ void ProcessDialogEvent()
 				dialog.text = RandPhraseSimple("Bonjour, monami."+pchar.name+" , l'ambiance est parfaite, allons-y !",""+pchar.name+"Bien sûr, sans poser de questions! Allons-y!");
 				link.l1 = RandPhraseSimple("C'est ma fille...","Tu es si ravissante, Hélène...");
 				link.l1.go = "exit";
+				pchar.quest.sex_partner = Npchar.id;
 				AddDialogExitQuest("cabin_sex_go");
 			}
 		break;
@@ -657,6 +658,7 @@ void ProcessDialogEvent()
 		
 		case "room_sex_go":
 			DialogExit();
+			pchar.quest.sex_partner = Npchar.id;
 			chrDisableReloadToLocation = true;
 			//npchar.quest.daily_sex_room = true; // для первого раза в таверне чтобы счетчик запустить . лесник
 			//npchar.quest.daily_sex_cabin = true;

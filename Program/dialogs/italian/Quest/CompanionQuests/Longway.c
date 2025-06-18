@@ -5011,6 +5011,7 @@ void ProcessDialogEvent()
 			dialog.text = "In realtà è facilissimo scoprire la verità, giusto, ehehe. Se non sei stato con nessuno, adesso devi avere un sacco di energia. Ed è proprio quello che andremo a verificare ora, giusto!";
 			link.l1 = "Mary, per favore...";
 			link.l1.go = "exit";
+			pchar.quest.sex_partner = Npchar.id;
 			AddDialogExitQuest("cabin_sex_go");
 			pchar.questTemp.PZ_MaryRazgovorOBordeli = true;
 		break;
@@ -8458,6 +8459,7 @@ void ProcessDialogEvent()
 				dialog.text = "Va tutto bene, Charles, davvero. Cerco solo di non pensarci troppo. E poi, mi hai salvata dal peggio, giusto? Quindi smettiamola di parlarne e... pensiamo ad altro.";
 				link.l1 = "Questa sì che è un’ottima idea, Helen.";
 				link.l1.go = "exit";
+				pchar.quest.sex_partner = Npchar.id;
 				AddDialogExitQuest("cabin_sex_go");
 			}
 		break;
@@ -8466,6 +8468,7 @@ void ProcessDialogEvent()
 				dialog.text = "Charles, non lo voglio, lo pretendo, giusto!";
 				link.l1 = "Non oserei mai rifiutare, Mio Signore Capitano...";
 				link.l1.go = "exit";
+				pchar.quest.sex_partner = Npchar.id;
 				AddDialogExitQuest("cabin_sex_go");
 		break;
 		

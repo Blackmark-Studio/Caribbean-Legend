@@ -289,7 +289,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_25":
-			dialog.text = "¿Qué?! ¡Ja! ¿Qué clase de trato con mi esposa? ¿De qué estás hablando, pez podrido?";
+			dialog.text = "¿Qué? ¡Ja! ¿Qué clase de trato con mi esposa? ¿De qué estás hablando, pez podrido?";
 			link.l1 = "Por tu información falsa capturé un filibote vacío y maté a su capitán. Lamento haber hecho eso, aunque ya es tarde para lamentaciones. Tu esposa estaba enamorada de ese marinero, según entendí. Por eso me pidió que te matara. Por eso estamos aquí en esta bahía ahora.";
 			link.l1.go = "FalseTrace_26";
 		break;
@@ -637,13 +637,13 @@ void ProcessDialogEvent()
 			LAi_SetActorType(pchar);
 			LAi_SetImmortal(npchar, false);
 			//  belamour legendary edition если не надет пистоль или мушкет, то выдадим строевой -->
-			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE) || !CheckAttribute(pchar,"equip."+MUSKET_ITEM_TYPE))
+			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
 			{
 				GiveItem2Character(pchar, "pistol1");
 				EquipCharacterbyItem(pchar, "pistol1");
 			}
 			// <-- legendary edition
-			LAi_ActorAnimation(pchar, "shot", "FalseTrace_CaterinaKilled", 1.0);
+			LAi_ActorAnimation(pchar, "shot", "FalseTrace_CaterinaKilled", 1.8);
 		break;
 		
 		case "FalseTrace_wife_35":

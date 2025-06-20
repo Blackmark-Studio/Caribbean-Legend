@@ -1067,7 +1067,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Selina_5":
-		dialog.text = "¿Qué?! Mi padre... ¡Oh Dios! Yo... Yo... (sollozando)";
+		dialog.text = "¿Qué? Mi padre... ¡Oh Dios! Yo... Yo... (sollozando)";
 		link.l1 = "Mis condolencias, Celine. Hay otro aquí contigo, ¿verdad?";
 		link.l1.go = "Selina_6";
 		break;

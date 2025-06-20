@@ -217,7 +217,7 @@ void ProcessDialogEvent()
 
 	case "whiskey_5":
 		dialog.text = "Lo envió a matar... a María la Roja.";
-		link.l1 = "¿Qué?! Habla ahora, ¿cómo piensa hacer eso? ¡Es imposible entrar en su camarote! ¿Cómo planea matarla?!";
+		link.l1 = "¿Qué? Habla ahora, ¿cómo piensa hacer eso? ¡Es imposible entrar en su camarote! ¿Cómo planea matarla?!";
 		link.l1.go = "whiskey_6";
 		break;
 

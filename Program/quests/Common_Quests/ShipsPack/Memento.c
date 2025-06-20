@@ -754,13 +754,14 @@ void Memento_Dominica_DeLanda(string qName)
 		sld = CharacterFromID("DiegoDeLanda");
 		ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto14");
 		LAi_SetStayType(sld);
-		LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+		LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 		AddLandQuestMark(sld, "questmarkmain");
 		pchar.questTemp.ISawDiegoDeLanda = sti(pchar.questTemp.ISawDiegoDeLanda) + 1; // встретил Диего де Ланда
 		pchar.questTemp.DiegoDeLanda_Memento = true;
 	}
-	pchar.GenQuestBox.Shore27.box1.items.talisman19 = 1;
-	Box_OnLoadLocation(loadedLocation);
+	sld = &Locations[FindLocation("Shore27")];
+	sld.box1.items.talisman19 = 1;
+	//Box_OnLoadLocation(loadedLocation);
 	Achievment_Set("ach_CL_155");
 }
 
@@ -823,7 +824,7 @@ void Memento_OnUpdeck()
 		sld = GetCharacter(NPC_GenerateCharacter("Memento_Sailor_6", "citiz_12", "man", "man", 5, PIRATE, -1, false, "pirate"));
 		sld.name = StringFromKey("Memento_5");
 		sld.lastname = "";
-		sld.Unpushable = "";
+        MakeUnpushable(sld, true);
 		ChangeCharacterAddressGroup(sld, "Deck_Near_Ship", "quest", "quest2");
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "tutorial_4", "", -1.0);

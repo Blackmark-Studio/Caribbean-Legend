@@ -1659,13 +1659,6 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.lockedMusic");
 		break;
 		
-		case "DTSG_Knippel_SamSoboi_2":
-			DialogExit();
-			SetLaunchFrameFormParam("17 августа 1654 г."+ NewStr() +"к юго-востоку от острова Доминика", "Reload_To_Location", 0, 4.0);
-			SetLaunchFrameReloadLocationParam("Ship_deck_Big", "reload", "reload1", "DTSG_ProshloeDominika_2");
-			LaunchFrameForm();
-		break;
-		
 		case "DTSG_Fleetwood_10":
 			dialog.text = "'Сассекс' на горизонте, Чарли, приготовься.";
 			link.l1 = "Всегда готов, капитан.";

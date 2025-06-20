@@ -1655,15 +1655,9 @@ void ProcessDialogEvent()
 	case "DTSG_Knippel_SamSoboi":
 		dialog.text = " Nunca he visto a Richard así... ¿Estaba tan preocupado o incluso... asustado?";
 		link.l1 = "¿Pero por qué? Ni siquiera lo compartió conmigo. Bueno, no importa. Es un gran capitán, así que seguramente manejaremos esta fragata y su tripulación cansada.";
-		link.l1.go = "DTSG_Knippel_SamSoboi_2";
+		link.l1.go = "exit";
+		AddDialogExitQuestFunction("DTSG_Knippel_SamSoboi_2");
 		DeleteAttribute(pchar, "questTemp.lockedMusic");
-		break;
-
-	case "DTSG_Knippel_SamSoboi_2":
-		DialogExit();
-		SetLaunchFrameFormParam("August 17th, 1654"+ NewStr() +", SE of Dominica", "Reload_To_Location", 0, 4.0);
-		SetLaunchFrameReloadLocationParam("Ship_deck_Big", "reload", "reload1", "DTSG_ProshloeDominika_2");
-		LaunchFrameForm();
 	break;
 
 	case "DTSG_Fleetwood_10":
@@ -1777,7 +1771,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "DTSG_Graf_Sheffild_16":
-		dialog.text = "¿Qué?! ¿Qué tonterías estás diciendo? ¡Te han engañado, y has seguido un rastro falso como un perro loco\nEjem, es cierto, me dirijo a negociar con la Compañía Holandesa de las Indias Occidentales. Pero en interés de nuestra Inglaterra, Capitán. Este es un error terrible, pero aún podemos corregirlo.";
+		dialog.text = "¿Qué? ¿Qué tonterías estás diciendo? ¡Te han engañado, y has seguido un rastro falso como un perro loco\nEjem, es cierto, me dirijo a negociar con la Compañía Holandesa de las Indias Occidentales. Pero en interés de nuestra Inglaterra, Capitán. Este es un error terrible, pero aún podemos corregirlo.";
 		link.l1 = "";
 		link.l1.go = "DTSG_Graf_Sheffild_17";
 		CharacterTurnByChr(npchar, CharacterFromID("Fleetwood"));

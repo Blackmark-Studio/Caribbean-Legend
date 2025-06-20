@@ -902,6 +902,7 @@ void ShowInfoWindow()
 				sText1  = GetAssembledString(LanguageConvertString(lngFileID, arItm.describe), rItem);
 				sGroup = rItem.picTexture;
 				sGroupPicture = "itm" + rItem.picIndex;
+				if(rItem.id == "talisman19") sText1 = GetItemDescribe(iGoodIndex);
 			}
 			else
 			{
@@ -2541,7 +2542,11 @@ bool ThisItemCanBeEquip(aref arItem)
 		if(IsMainCharacter(xi_refCharacter) && LAi_GetCharacterHP(xi_refCharacter)<LAi_GetCharacterMaxHP(xi_refCharacter)) // неполное здоровье
 		{
 			if(arItem.id == "potion1" || arItem.id == "potion2" || arItem.id == "potion3" || arItem.id == "potion4" || 
-			   arItem.id == "potion5" || arItem.id == "potion6" || arItem.id == "potionrum" || arItem.id == "potionwine") return true; // лечилки
+			   arItem.id == "potion5" || arItem.id == "potion6" || arItem.id == "potionrum" || arItem.id == "potionwine") 
+			   {
+				   if(GetCharacterEquipByGroup(xi_refCharacter, BLADE_ITEM_TYPE) == "blade_SP_3") return false;
+				   return true; // лечилки
+			   }
 		}
 		return false;
 	}

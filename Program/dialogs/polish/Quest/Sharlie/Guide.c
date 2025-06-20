@@ -196,7 +196,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_portoffice":
-			dialog.text = "Tutaj możesz zostawić statek na postoju, a także znaleźć uczciwą pracę dla kapitana: fracht, eskortę, dostawę poczty. Im więcej zadań wykonasz - tym bardziej opłacalne się staną.";
+			dialog.text = "Biuro portowe. Tutaj możesz zostawić statek na postoju, a także znaleźć uczciwą pracę dla kapitana: fracht, eskortę, dostawę poczty. Im więcej zadań wykonasz - tym bardziej opłacalne się staną.";
 			link.l1 = "";
 			link.l1.go = "guide_store";
 			locCameraFromToPos(48.38, 9.48, 43.95, true, 43.69, 5.47, 48.13);

@@ -1181,7 +1181,7 @@ void ProcessDialogEvent()
 			PlaySound("interface\important_item.wav");
 			LAi_SetActorType(pchar);
 			// если не надет пистоль или мушкет, то выдадим строевой -->
-			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE) || !CheckAttribute(pchar,"equip."+MUSKET_ITEM_TYPE))
+			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
 			{
 				GiveItem2Character(pchar, "pistol1");
 				EquipCharacterbyItem(pchar, "pistol1");

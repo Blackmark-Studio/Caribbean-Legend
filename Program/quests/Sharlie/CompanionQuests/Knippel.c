@@ -153,6 +153,13 @@ void DTSG_Knippel_64()
 	PChar.quest.DTSG_Duel_SundukPismo.win_condition = "DTSG_Duel_SundukPismo";
 }
 
+void DTSG_Knippel_SamSoboi_2()
+{
+	SetLaunchFrameFormParam(StringFromKey("Knippel_30", NewStr()), "Reload_To_Location", 0, 4.0);
+	SetLaunchFrameReloadLocationParam("Ship_deck_Big", "reload", "reload1", "DTSG_ProshloeDominika_2");
+	LaunchFrameForm();
+}
+
 void DTSG_Kurier_3()
 {
 	locCameraSleep(true);
@@ -1094,17 +1101,9 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		pchar.questTemp.TimeLock = true;
 		InterfaceStates.Buttons.Save.enable = false;
 		pchar.BaseNation = ENGLAND;
-		//DoQuestCheckDelay("DTSG_KnippelDoma_1", 0.2);
 		DoQuestCheckDelay("DTSG_KnippelDoma_2", 4.0);
 		DoQuestCheckDelay("DTSG_KnippelDoma_3", 1.0);
 		DoQuestCheckDelay("DTSG_KnippelDoma_4", 5.5);
-	}
-	
-	else if (sQuestName == "DTSG_KnippelDoma_1") {
-		//SetLaunchFrameFormParam(StringFromKey("Knippel_11", NewStr()), "", 0, 4.0);
-		//LaunchFrameForm();
-		//StartQuestMovie(true, false, true);
-		//locCameraFromToPos(-2.13, 1.36, -2.72, false, 1.45, -0.20, -2.70);
 	}
 	
 	else if (sQuestName == "DTSG_KnippelDoma_2") {

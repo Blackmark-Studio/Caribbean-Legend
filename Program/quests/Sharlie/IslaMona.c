@@ -1067,7 +1067,7 @@ void IslaMona_DefKillCapral(string qName) //
 	LAi_LocationFightDisable(&Locations[FindLocation("Shore75")], false);
 	LAi_LocationFightDisable(&Locations[FindLocation("IslaMona_Jungle_01")], false);
 	// если не надет пистоль или мушкет, то выдадим строевой -->
-	if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE) || !CheckAttribute(pchar,"equip."+MUSKET_ITEM_TYPE))
+	if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
 	{
 		GiveItem2Character(pchar, "pistol1");
 		EquipCharacterbyItem(pchar, "pistol1");
@@ -1672,7 +1672,7 @@ void IslaMona_KillSpanish(string qName) // решил убить испанца
 {
 	LAi_LocationFightDisable(&Locations[FindLocation("IslaMona_factoria")], false);
 	// если не надет пистоль или мушкет, то выдадим строевой -->
-	if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE) || !CheckAttribute(pchar,"equip."+MUSKET_ITEM_TYPE))
+	if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
 	{
 		GiveItem2Character(pchar, "pistol1");
 		EquipCharacterbyItem(pchar, "pistol1");

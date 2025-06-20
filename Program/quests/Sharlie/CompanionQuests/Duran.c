@@ -4,7 +4,7 @@
 bool Duran_QuestComplete(string sQuestName, string qname)
 {
 	ref sld;
-	
+	string sTemp;
 	bool condition = true;
 	
 	// Sinistra - Событие с Клодом Дюраном ==>
@@ -53,8 +53,9 @@ bool Duran_QuestComplete(string sQuestName, string qname)
 			sld = GetCharacter(NPC_GenerateCharacter("SKD_Anri", "citiz_12", "man", "man", 25, FRANCE, -1, false, "quest"));
 			sld.name = StringFromKey("Duran_1");
 			sld.lastname = StringFromKey("Duran_2");
-			GiveItem2Character(sld, "blade_38");
-			EquipCharacterByItem(sld, "blade_38");
+            sTemp = GetGeneratedItem("blade_38");
+            GiveItem2Character(sld, sTemp);
+            EquipCharacterbyItem(sld, sTemp);
 			GiveItem2Character(sld, "pistol2");
 			EquipCharacterByItem(sld, "pistol2");
 			AddItems(sld, "cartridge", rand(10)+20);

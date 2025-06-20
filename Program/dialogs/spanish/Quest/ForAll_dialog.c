@@ -2185,7 +2185,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "AffairOfHonor_Cavalier_3":
-		dialog.text = "¿Qué?! No vas a retarme por esto...";
+		dialog.text = "¿Qué? No vas a retarme por esto...";
 		link.l1 = "¡Basta! Te estaré esperando cerca del faro en dos horas. ¡Y no olvides traer tu espada!";
 		link.l1.go = "AffairOfHonor_Cavalier_4";
 		break;

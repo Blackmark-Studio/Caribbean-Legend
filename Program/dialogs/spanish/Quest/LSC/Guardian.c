@@ -583,7 +583,7 @@ void ProcessDialogEvent()
 
 	case "first_talk_night":
 		dialog.text = NPCStringReactionRepeat("¿Estás borracho? Da la vuelta y cruza el puente, pasa dos barcos y luego encontrarás otro puente que te llevará a la taberna. Duerme allí.", "¿Estás tratando de enfurecerme? ¡Ya te he dicho qué hacer. ¡Lárgate!", "Ve y duerme, cara de borracho...", "¡Vete!!", "block", 1, npchar, Dialog.CurrentNode);
-		link.l1 = HeroStringReactionRepeat("Gracias, señor. Podrías ser más cortés, en realidad...", "Lo siento, olvidé...", "¡No estoy borracho!", "¿Qué?!", npchar, Dialog.CurrentNode);
+		link.l1 = HeroStringReactionRepeat("Gracias, señor. Podrías ser más cortés, en realidad...", "Lo siento, olvidé...", "¡No estoy borracho!", "¿Qué?", npchar, Dialog.CurrentNode);
 		link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);
 		break;
 

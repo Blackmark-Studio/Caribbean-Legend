@@ -217,7 +217,7 @@ void ProcessDialogEvent()
 
 		if (npchar.quest.meeting == "0")
 		{
-			dialog.text = "Mis hombres me dijeron que fuiste muy persistente al solicitar una audiencia. Mi nombre es " + GetFullName(npchar) + ". Soy el gobernador del pueblo de " + GetCityName(NPChar.city) + ", súbdito de " + NationKingsName(npchar) + ". Y ahora, por favor, ¿qué es lo que desea? " + GetAddress_Form(NPChar) + "?";
+			dialog.text = "Mis hombres me dijeron que fuiste muy persistente al solicitar una audiencia. Mi nombre es " + GetFullName(npchar) + " y soy el gobernador del asentamiento de " + GetCityName(NPChar.city) + ", súbdito de " + NationKingsName(npchar) + ". Y ahora, por favor, ¿qué es lo que desea? ¿" + GetAddress_Form(NPChar) + "?";
 			link.l1 = "Mi nombre es " + GetFullName(pchar) + ".";
 			link.l1.go = "node_1";
 			npchar.quest.meeting = "1";

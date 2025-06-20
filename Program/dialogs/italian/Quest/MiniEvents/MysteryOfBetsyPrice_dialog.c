@@ -247,12 +247,15 @@ void ProcessDialogEvent()
 
 		case "BetsiPrice_11":
 			dialog.text = "Eccoci qua. Dimmi, quale vento ti ha portato in quella casa, eh?";
-			link.l1 = "Non ero lì per caso. L’oste pareva davvero turbato dalla tua sparizione e m’ha chiesto di scoprire che fine avessi fatto. Eh, potevo forse tirarmi indietro? Lasciar una dama nei guai non si confà a un capitano degno di questo nome.";
-			link.l1.go = "BetsiPrice_12";
 			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulonOtdatBetsy") && pchar.questTemp.TBP_BuyKulonOtdatBetsy == true)
             {
 			link.l2 = "Non ci sono finito per caso. È stato questo ciondolo a portarmici. Prendilo.​ Il taverniere sembrava davvero turbato per la tua sparizione e mi ha chiesto di scoprire cosa fosse successo. Beh, potevo forse rifiutare? Abbandonare una dama in pericolo è roba da capitani senza onore.";
 			link.l2.go = "BetsiPrice_12_otdal_kulon";
+			}
+			else
+			{
+			link.l1 = "Non ero lì per caso. L’oste pareva davvero turbato dalla tua sparizione e m’ha chiesto di scoprire che fine avessi fatto. Eh, potevo forse tirarmi indietro? Lasciar una dama nei guai non si confà a un capitano degno di questo nome.";
+			link.l1.go = "BetsiPrice_12";
 			}
 		break;
 		

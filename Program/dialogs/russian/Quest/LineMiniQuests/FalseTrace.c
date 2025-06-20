@@ -90,7 +90,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_5":
-			dialog.text = "флейт называется '"+pchar.questTemp.FalseTrace.ShipName+"', выходит из Картахены и направляется в колонию "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+". Времени у нас немного, не больше двух-трёх недель. Если не отыщем за эти дни - значит, прозевали.";
+			dialog.text = "Флейт называется '"+pchar.questTemp.FalseTrace.ShipName+"', выходит из Картахены и направляется в колонию "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+". Времени у нас немного, не больше двух-трёх недель. Если не отыщем за эти дни - значит, прозевали.";
 			link.l1 = "Тогда не будем терять ни минуты! В путь!";
 			link.l1.go = "FalseTrace_6";
 		break;
@@ -638,7 +638,7 @@ void ProcessDialogEvent()
 			LAi_SetActorType(pchar);
 			LAi_SetImmortal(npchar, false);
 			//  belamour legendary edition если не надет пистоль или мушкет, то выдадим строевой -->
-			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE)  || !CheckAttribute(pchar,"equip."+MUSKET_ITEM_TYPE))
+			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
 			{
 				GiveItem2Character(pchar, "pistol1");
 				EquipCharacterbyItem(pchar, "pistol1");

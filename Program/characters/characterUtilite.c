@@ -1771,7 +1771,8 @@ void GenerateAndAddItems(ref _chr, string _itemID, int _qty)
 }
 
 // mitrokosta переделка
-bool CheckCharacterItem(ref _refCharacter, string itemName) {
+bool CheckCharacterItem(ref _refCharacter, string itemName)
+{
 	if(CheckAttribute(_refCharacter, "Items." + itemName) && sti(_refCharacter.Items.(itemName)) > 0) {
 		return true;
 	}
@@ -1793,7 +1794,7 @@ bool CheckCharacterItem(ref _refCharacter, string itemName) {
 	return false;
 }
 
-int GetCharacterItem(ref _refCharacter,string itemName)
+int GetCharacterItem(ref _refCharacter, string itemName)
 {
 	if(CheckAttribute(_refCharacter,"Items."+itemName))
 	{
@@ -1833,7 +1834,7 @@ int GetCharacterFreeGenerableItem(ref _refCharacter,string itemName) // patch-8
 		for(int i = ITEMS_QUANTITY; i < TOTAL_ITEMS; i++)
 		{
 			tmpRef = &Items[i];
-			if(CheckAttribute(tmpRef, "ID") && (tmpRef.DefItemID == itemName) )
+			if(CheckAttribute(tmpRef, "ID") && (tmpRef.DefItemID == itemName))
 			{				
 				string sItm = tmpRef.ID;	
 				if(CheckAttribute(_refCharacter,"Items."+sItm))

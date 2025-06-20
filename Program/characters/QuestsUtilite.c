@@ -4446,7 +4446,7 @@ void OtherNpcInit() // остальные ключевые НПС
 	LAi_SetImmortal(sld, true);
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
-	LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 }
 
 string GetStrSmallRegister(string sBase)
@@ -5110,6 +5110,7 @@ string FindQuestCity(ref ch, string relation, int _nation, bool bpirate, bool bR
 }
 // <-- legendary edition
 
+// TO_DO: KILL IT WITH FIRE!!!
 void SelectLevelWarShipParameter()//Jason автолевеллинг на военные корабли противника
 {
 	int iShipRank;

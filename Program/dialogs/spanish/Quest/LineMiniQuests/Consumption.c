@@ -196,7 +196,7 @@ void ProcessDialogEvent()
 		Play3DSound("lomanie_vetki", -33.25, 1.00, 3.73) break;
 
 	case "Sergio_7":
-		dialog.text = "¿Qué?! ¿Dónde?";
+		dialog.text = "¿Qué? ¿Dónde?";
 		link.l1 = "Mierda, no estamos solos aquí... ¿A quién trajiste contigo, escoria?";
 		link.l1.go = "exit";
 		AddDialogExitQuestFunction("Consumption_CreateBandits");

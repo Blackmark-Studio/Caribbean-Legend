@@ -724,11 +724,11 @@ string GetIslandByCityName(string city) // имена острова по гор
 		case "Tenotchitlan":
             return "Mein";
 		break;
+		case "LosTeques":
+            return "Mein";
+		break;
 		case "IslaMona":
             return "IslaMona";
-		break;
-		case "LosTeques":
-            return "LosTeques";
 		break;
 	}
 	return "";

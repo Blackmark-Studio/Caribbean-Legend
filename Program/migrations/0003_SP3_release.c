@@ -556,5 +556,5 @@ void DiegoDeLanda()
 	LAi_SetImmortal(sld, true);
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
-	LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 }

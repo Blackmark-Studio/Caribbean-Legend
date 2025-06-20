@@ -1271,13 +1271,21 @@ int SetCharacterSkillByQuestBlade(ref rChar, String sSkillName)
     {
         if(sSkillName == SKILL_F_LIGHT)
         {
-            if(rBlade.DefItemID == "blade_39")      return 10; // Рапира бретера cle
-            else if(rBlade.DefItemID == "blade_38") return 5;  // Дуэльная шпага cle
+            if(rBlade.DefItemID == "blade_38")      return 5;  // Дуэльная шпага cle
+            else if(rBlade.DefItemID == "blade_39") return 10; // Рапира бретера cle
         }
 	}
 
 	switch(sBlade)
-	{	
+	{
+		case "blade_38"	:
+			if(sSkillName == SKILL_F_LIGHT) iValue = 5;
+		break;
+
+		case "blade_39"	:
+			if(sSkillName == SKILL_F_LIGHT) iValue = 10;
+		break;
+
 		case "knife_01"	:
 			if(sSkillName == SKILL_F_LIGHT) iValue = 5;
 		break;
@@ -3171,7 +3179,7 @@ void initNewMainCharacter()//инициализация главного гер�
 	SetCharacterPerk(ch, "FlagPir");
 	SetCharacterPerk(ch, "Energaiser"); // скрытый перк даёт 1.5 к приросту энергии, даётся ГГ и боссам уровней
 	SetCharacterPerk(ch, "Rush");
-    ch.BonusPush = ""; // Rosarak - Коллизии
+    SetBonusPush(ch, true); // Rosarak - Коллизии
 	// начальные скилы задать
     //InitStartParam(ch); // Jason - fix
 	LAi_SetHP(ch, GetCharacterBaseHPValue(ch), GetCharacterBaseHPValue(ch));

@@ -771,7 +771,7 @@ void ProcessDialogEvent()
 			{
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
-					shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)* 0.65);
+					shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)* 0.35);
 				}
 				else
 				{
@@ -915,7 +915,7 @@ void ProcessDialogEvent()
 			{
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate) * 0.65);
+					shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate) * 0.35);
 				}
 				else
 				{
@@ -1178,7 +1178,14 @@ void ProcessDialogEvent()
 		    shTo = &RealShips[sti(Pchar.Ship.Type)];
 		    DeleteAttribute(NPChar, "Tuning");
 		    
-	        shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew)/5);
+	        if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
+			{
+				shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew) * 0.35);
+			}
+			else
+			{
+				shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew)/5);
+			}
 	        shTo.Tuning.MaxCrew = true;
 			if(!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo,"Tuning.MaxCrew") && CheckAttribute(shTo,"Tuning.HP")) 
 			
@@ -1303,7 +1310,7 @@ void ProcessDialogEvent()
 		    // изменим
 	        if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 			{
-				shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew) * 0.65);
+				shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew) * 0.35);
 			}
 			else
 			{
@@ -1435,7 +1442,7 @@ void ProcessDialogEvent()
 			{
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
-					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.65);
+					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.35);
 				}
 				else
 				{

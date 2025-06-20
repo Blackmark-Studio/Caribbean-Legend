@@ -1653,15 +1653,9 @@ void ProcessDialogEvent()
 		case "DTSG_Knippel_SamSoboi":
 			dialog.text = "Jeszcze nigdy nie widziałem Richarda w takim stanie... Był tak zmartwiony czy nawet... przestraszony?";
 			link.l1 = "Ale dlaczego? Nawet się tym ze mną nie podzielił. No, nieważne. Jest świetnym kapitanem, więc na pewno poradzimy sobie z tą fregatą i jej zmęczoną załogą.";
-			link.l1.go = "DTSG_Knippel_SamSoboi_2";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("DTSG_Knippel_SamSoboi_2");
 			DeleteAttribute(pchar, "questTemp.lockedMusic");
-		break;
-		
-		case "DTSG_Knippel_SamSoboi_2":
-			DialogExit();
-			SetLaunchFrameFormParam("August 17th, 1654"+ NewStr() +", SE of Dominica", "Reload_To_Location", 0, 4.0);
-			SetLaunchFrameReloadLocationParam("Ship_deck_Big", "reload", "reload1", "DTSG_ProshloeDominika_2");
-			LaunchFrameForm();
 		break;
 		
 		case "DTSG_Fleetwood_10":

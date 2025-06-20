@@ -625,7 +625,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_Prisoner_2":
 			dialog.text = "Adam? Dieser Bastard? Es war alles sein Plan! Jetzt sehe ich... Ja, ich habe Katrine vor drei Monaten geholfen zu fliehen. Solch ein armes Mädchen, du hast keine Vorstellung wie er sie behandelt hat...";
-			link.l1 = "Sie war seine Frau und es war mir egal, was passiert ist, es geht mich nichts an. Ich habe einen Fehler gemacht, als ich Ihre Galeone betreten habe, aber es ist zu spät, darüber zu sprechen. Adam hat mir versprochen, für meine Hilfe zu bezahlen.";
+			link.l1 = "Sie war seine Frau und es war mir egal, was passiert ist, es geht mich nichts an. Ich habe einen Fehler gemacht, als ich Ihre Fluyt betreten habe, aber es ist zu spät, darüber zu sprechen. Adam hat mir versprochen, für meine Hilfe zu bezahlen.";
 			link.l1.go = "FalseTrace_Prisoner_3";
 		break;
 		
@@ -654,7 +654,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_Prisoner_7":
-			dialog.text = "Du wirst Adam Rayner verhaften und ihn in Ketten legen. Dann bringst du mich und Katerine zu "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+". Lande nicht in der Stadt, schließlich warst du es, der meine Galeone versenkt hat, setze uns alle drei ab bei "+XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen")+"\nIch würde dich auch um eine Waffe bitten. Wir werden durch den Dschungel in die Stadt gehen und ich werde dafür sorgen, dass dieser Abschaum nicht nur für seine Verbrechen, sondern auch für deine bezahlt. Er hat es verdient\nDu hast mein Wort, dass dein Name nicht auftauchen wird. Im Gegenzug gebe ich dir wahre Informationen über ein Schiff mit Gold des Feindstaates\nEs wird für dich keine große Herausforderung sein, aber es hat Zähne, du wirst eine feine Beute erlangen. Viel besser als mein Lösegeld und die 'sogenannten' Schätze des Squint-Eyed Solly. Haben wir einen Deal?";
+			dialog.text = "Du wirst Adam Rayner verhaften und ihn in Ketten legen. Dann bringst du mich und Katerine zu "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+". Lande nicht in der Stadt, schließlich warst du es, der meine Fluyt versenkt hat, setze uns alle drei ab bei "+XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen")+"\nIch würde dich auch um eine Waffe bitten. Wir werden durch den Dschungel in die Stadt gehen und ich werde dafür sorgen, dass dieser Abschaum nicht nur für seine Verbrechen, sondern auch für deine bezahlt. Er hat es verdient\nDu hast mein Wort, dass dein Name nicht auftauchen wird. Im Gegenzug gebe ich dir wahre Informationen über ein Schiff mit Gold des Feindstaates\nEs wird für dich keine große Herausforderung sein, aber es hat Zähne, du wirst eine feine Beute erlangen. Viel besser als mein Lösegeld und die 'sogenannten' Schätze des Squint-Eyed Solly. Haben wir einen Deal?";
 			link.l1 = "Ich mag deinen Plan nicht. Ich denke, dass die örtlichen Behörden sofort eine Jagd auf mich organisieren werden, sobald ich die Küsten verlasse "+XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen")+". Nein, Kapitän, ich werde meinen Kopf nicht riskieren. Unser Gespräch ist vorbei.";
 			link.l1.go = "FalseTrace_Prisoner_8";
 			link.l2 = "Nun, es sieht so aus, als ob Katerine recht hatte. Dein Vorschlag gefällt mir. Adam Rayner wird verhaftet werden. Ich werde es sofort erledigen. Du wirst freigelassen, nachdem wir Adam verhaftet haben. Auf Wiedersehen, Kapitän!";

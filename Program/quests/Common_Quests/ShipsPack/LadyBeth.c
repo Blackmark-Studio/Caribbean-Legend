@@ -2221,7 +2221,7 @@ void LadyBeth_Barbados_Diego_1(string qName)
 		ChangeCharacterAddressGroup(sld, "Bridgetown_Plantation", "goto", "goto9");
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
-		LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+		LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 		pchar.questTemp.ISawDiegoDeLanda = sti(pchar.questTemp.ISawDiegoDeLanda) + 1; // встретил Диего де Ланда
 		pchar.questTemp.DiegoDeLanda_LadyBeth = true;
 	}

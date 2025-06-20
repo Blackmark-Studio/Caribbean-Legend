@@ -69,7 +69,7 @@ void SantaMisericordia_init()
 	chref.mapEnc.type = "trade";
 	chref.mapEnc.worldMapShip = "galeon_sm";
 	chref.mapEnc.Name = GetConvertStr("Ship_Name", LangFile);
-	Map_CreateTrader(chref.city, chref.quest.targetCity, chref.id, 1000);
+	Map_CreateTrader(chref.city, chref.quest.targetCity, chref.id, 30);
 	
 	// журнал капитана Фернандо де Аламиды
 	sld = ItemsFromID("Reserve_item_02");
@@ -338,7 +338,7 @@ void SantaMisericordia_ToMap(string sQuest)
 	chref.mapEnc.type = "trade";
 	chref.mapEnc.worldMapShip = "galeon_sm";
 	chref.mapEnc.Name = GetConvertStr("Ship_Name", LangFile);
-	Map_CreateTrader(chref.city, chref.quest.targetCity, chref.id, 1000);
+	Map_CreateTrader(chref.city, chref.quest.targetCity, chref.id, 30);
 	
 	//убираем ограничения в колонии, где находился ревизор
 	pchar.questTemp.SantaMisericordia.ColonyZapret = "";
@@ -707,7 +707,7 @@ void SantaMisericordia_HavanaCrypt_6(string sQuest)
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload2");
 		LAi_SetActorType(sld);
 		LAi_ActorFollow(sld, pchar, "", -1);
-		LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+		LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 		pchar.questTemp.ISawDiegoDeLanda = sti(pchar.questTemp.ISawDiegoDeLanda) + 1; // встретил Диего де Ланда
 		pchar.questTemp.DiegoDeLanda_SantaMisericordia = true;
 		

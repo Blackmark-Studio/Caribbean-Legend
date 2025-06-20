@@ -1352,7 +1352,7 @@ void ProcessDialogEvent()
 
 	case "Pelly_50":
 		dialog.text = "Está bajo la bandera francesa.";
-		link.l1 = "¿Qué?!";
+		link.l1 = "¿Qué?";
 		link.l1.go = "Pelly_51";
 		break;
 
@@ -5412,7 +5412,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "CartahenaMayor_3":
-		dialog.text = "¿Qué?! ¡Tu insolencia no tiene límites! ¡Esto es un robo!";
+		dialog.text = "¿Qué? ¡Tu insolencia no tiene límites! ¡Esto es un robo!";
 		link.l1 = "Es un robo, por supuesto. ¿Qué más podría ser? Reúne a tus élites, tus mercaderes y comerciantes, junta oro en un gran cofre porque de lo contrario... lo haré mucho peor para ti y tu gente.";
 		link.l1.go = "CartahenaMayor_4";
 		break;
@@ -5754,7 +5754,7 @@ void ProcessDialogEvent()
 	case "enrico_1":
 		PlaySound("Voice\Spanish\LE\Zorro\Don_Enriko_02.wav");
 		dialog.text = "Soy don Enrico. La escoria inglesa me llama Fox, los holandeses me llaman Vos, los franceses me llaman Renaud. Pero prefiero mi apodo español de casa - Zorro. Castigo al mal que tortura y aterroriza a la gente común, la parte menos protegida del pueblo.\nEste juicio de hoy juzgará a cuatro piratas de Marcus Tyrex: Jeffry el Audaz, Pelly el Alfanje, Luke el Duende y Charlie Prince - estos bandidos son responsables de una masacre en Mérida y Cartagena. El último bastardo llamado Jean Handsome no se presentó aquí, debe ser el más listo de tu grupo.";
-		link.l1 = "¿Qué?!";
+		link.l1 = "¿Qué?";
 		link.l1.go = "enrico_2";
 		break;
 

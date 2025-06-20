@@ -626,7 +626,7 @@ void ProcessDialogEvent()
 
 	case "FalseTrace_Prisoner_2":
 		dialog.text = "¿Adam? ¿Ese bastardo? ¡Todo era su plan! Ahora veo... Sí, ayudé a Katrine a escapar hace tres meses. Una pobre chica, no tienes idea de cómo la trataba...";
-		link.l1 = "Ella era su esposa y no me importaba lo que sucediera, no es asunto mío. Cometí un error al abordar tu galeón pero ya es demasiado tarde para hablar de ello. Adam me ha prometido pagar por mi ayuda.";
+		link.l1 = "Ella era su esposa y no me importaba lo que sucediera, no es asunto mío. Cometí un error al abordar tu flauta pero ya es demasiado tarde para hablar de ello. Adam me ha prometido pagar por mi ayuda.";
 		link.l1.go = "FalseTrace_Prisoner_3";
 		break;
 
@@ -655,7 +655,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "FalseTrace_Prisoner_7":
-		dialog.text = "Arrestarás a Adam Rayner y lo pondrás en cadenas. Luego me llevarás a mí y a Katerine a " + XI_ConvertString("Colony" + pchar.questTemp.FalseTrace.TargetCity) + ". No desembarques en la ciudad, después de todo, fuiste tú quien hundió mi galeón, deja a los tres de nosotros en " + XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore + "Gen") + "\nTambién te pediría un arma. Iremos a la ciudad a través de las junglas y me aseguraré de que esa escoria pague no solo por sus crímenes, sino también por los tuyos. Se lo merece\nTienes mi palabra de que tu nombre no saldrá a la luz. A cambio, te daré información verídica sobre un barco con oro del estado enemigo\nNo será un gran desafío para ti, pero sí tiene dientes, obtendrás un buen botín. Mucho mejor que mi rescate y los tesoros del 'llamado' Solly Bizco. ¿Tenemos un trato?";
+		dialog.text = "Arrestarás a Adam Rayner y lo pondrás en cadenas. Luego me llevarás a mí y a Katerine a " + XI_ConvertString("Colony" + pchar.questTemp.FalseTrace.TargetCity) + ". No desembarques en la ciudad, después de todo, fuiste tú quien hundió mi flauta, deja a los tres de nosotros en " + XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore + "Gen") + "\nTambién te pediría un arma. Iremos a la ciudad a través de las junglas y me aseguraré de que esa escoria pague no solo por sus crímenes, sino también por los tuyos. Se lo merece\nTienes mi palabra de que tu nombre no saldrá a la luz. A cambio, te daré información verídica sobre un barco con oro del estado enemigo\nNo será un gran desafío para ti, pero sí tiene dientes, obtendrás un buen botín. Mucho mejor que mi rescate y los tesoros del 'llamado' Solly Bizco. ¿Tenemos un trato?";
 		link.l1 = "No me gusta tu plan. Creo que las autoridades locales organizarán una cacería para mí tan pronto como deje las costas de " + XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore + "Gen") + ". No, capitán, no voy a arriesgar mi cabeza. Nuestra conversación ha terminado.";
 		link.l1.go = "FalseTrace_Prisoner_8";
 		link.l2 = "Bueno, parece que Katerine tenía razón. Me gusta tu propuesta. Adam Rayner será arrestado. Lo haré inmediatamente. Serás liberado después de que arrestemos a Adam. ¡Nos vemos, capitán!";

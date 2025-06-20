@@ -87,7 +87,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "FMQN_3":
 			DelLandQuestMark(npchar);
-			dialog.text = "¿Qué?! Espero que no estés bromeando. ¡Dame un informe!";
+			dialog.text = "¿Qué? Espero que no estés bromeando. ¡Dame un informe!";
 			link.l1 = "Me encontré con una patrulla cerca de una cueva en la jungla. Me detuvieron y preguntaron adónde me dirigía y por qué, luego me dejaron ir. ¡Maldita sea, si esos no eran los británicos disfrazados con uniformes holandeses! También vi algo curioso en la jungla que parecía exactamente un grupo de hombres desnudos escondidos entre los arbustos. Supongo que el grupo de asalto británico había desarmado a tu patrulla y se había apoderado de sus uniformes.";
 			link.l1.go = "FMQN_4";
 		break;

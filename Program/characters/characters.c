@@ -172,10 +172,12 @@ bool CreateCharacter(ref character)
 	float fgtlevel = LAi_GetCharacterFightLevel(character); // boal fix
 
 	//Rosarak - Коллизии
-	if(CheckAttribute(character, "BonusPush"))
+	if(CheckAttribute(character, "col_modif.BonusPush"))
 		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetBonusPush", true);
-    if(CheckAttribute(character, "Unpushable"))
+    if(CheckAttribute(character, "col_modif.Unpushable"))
 		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "MakeUnpushable", true);
+    if(CheckAttribute(character, "col_modif.IgnoreCollision"))
+		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "IgnoreCollision", true);
 
 	SendMessage(character, "lf", MSG_CHARACTER_SETFTGLEVEL, fgtlevel);
 	//Set character sex
@@ -959,4 +961,26 @@ string StrConCheck(string str1, string str2)
 	if(str1 != "" && str2 != "")
 		return str1 + str2;
 	return "";
+}
+
+// Модификаторы коллизий (to_do: мб это на битмаску посадить?)
+void SetBonusPush(ref chr, bool bSet)
+{
+    if(bSet) chr.col_modif.BonusPush = "";
+    else DeleteAttribute(chr, "col_modif.BonusPush");
+    SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "SetBonusPush", bSet);
+}
+
+void MakeUnpushable(ref chr, bool bSet)
+{
+    if(bSet) chr.col_modif.Unpushable = "";
+    else DeleteAttribute(chr, "col_modif.Unpushable");
+    SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "MakeUnpushable", bSet);
+}
+
+void IgnoreCollision(ref chr, bool bSet)
+{
+    if(bSet) chr.col_modif.IgnoreCollision = "";
+    else DeleteAttribute(chr, "col_modif.IgnoreCollision");
+    SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "IgnoreCollision", bSet);
 }

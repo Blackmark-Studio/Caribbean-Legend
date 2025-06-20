@@ -248,12 +248,15 @@ void ProcessDialogEvent()
 
 		case "BetsiPrice_11":
 			dialog.text = "No i jesteśmy. Wiesz, nawet nie zapytałam, jakim wiatrem zawiało cię do tego domu?";
-			link.l1 = "Nie znalazł"+GetSexPhrase("em","am")+" się tam przypadkiem. Karczmarz wydawał się poważnie zmartwiony twoim zniknięciem i poprosił mnie, żebym sprawdził"+GetSexPhrase("","a")+", co się stało. No a czy miał"+GetSexPhrase("em","am")+" wybór, by odmówić? Porzucenie damy w potrzebie to czyn niegodny kapitana.";
-			link.l1.go = "BetsiPrice_12";
 			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulonOtdatBetsy") && pchar.questTemp.TBP_BuyKulonOtdatBetsy == true)
             {
 			link.l2 = "​Nie znalazł"+GetSexPhrase("em","am")+" się tam przypadkiem. Ten wisiorek zaprowadził mnie tam. Weź go.​ Karczmarz wydawał się poważnie zmartwiony twoim zniknięciem i poprosił mnie, żebym sprawdził"+GetSexPhrase("","a")+", co się stało. No a czy miał"+GetSexPhrase("em","am")+" wybór, by odmówić? Porzucenie damy w potrzebie to czyn niegodny kapitana.";
 			link.l2.go = "BetsiPrice_12_otdal_kulon";
+			}
+			else
+			{
+			link.l1 = "Nie znalazł"+GetSexPhrase("em","am")+" się tam przypadkiem. Karczmarz wydawał się poważnie zmartwiony twoim zniknięciem i poprosił mnie, żebym sprawdził"+GetSexPhrase("","a")+", co się stało. No a czy miał"+GetSexPhrase("em","am")+" wybór, by odmówić? Porzucenie damy w potrzebie to czyn niegodny kapitana.";
+			link.l1.go = "BetsiPrice_12";
 			}
 		break;
 

@@ -282,6 +282,7 @@ void ProcessDialogEvent()
 			CloseQuestHeader("TheFormerKnight");
 			chrDisableReloadToLocation = false;
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
+			LocatorReloadEnterDisable("PortRoyal_houseSp1", "reload2", true);
 			
 			sld = CharacterFromID("Duran");	//Клод Дюран становится постоянным офицером
 			sld.OfficerWantToGo.DontGo = true;

@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.DWH_Start") && !CheckAttribute(pchar, "questTemp.DWH_gipsy") && npchar.city == "SentJons")
 			{
 				link.l6 = "Szukam Cyganki, która leczy ludzi. Czy to ty?";
-				link.l6.go = "dwh_gypsy_1";
+				link.l6.go = "dwh_ne_ta";
 			}
 			// <-- Тёмные воды исцеления
 			if (!CheckAttribute(npchar, "quest.poison_price") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && rand(2) == 0)

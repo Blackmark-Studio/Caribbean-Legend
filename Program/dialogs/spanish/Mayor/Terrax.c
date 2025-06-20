@@ -478,7 +478,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shadows_10":
-			dialog.text = "¿Qué?! ¿He oído mal?! ¿¡Él está vivo?!";
+			dialog.text = "¿Qué? ¿He oído mal?! ¿¡Él está vivo?!";
 			link.l1 = "Sí. El Capitán Carnicero no fue ahorcado. Hm, en realidad lo fue, pero gracias a Jacob Jackman y Henry el Verdugo, quienes habían asustado al verdugo, él sobrevivió. La ejecución fue solo una actuación. Tengo pruebas.";
 			link.l1.go = "shadows_11";
 		break;
@@ -1243,7 +1243,7 @@ void ProcessDialogEvent()
 		break;
 		// belamour legendary edition -->
 		case "mtraxx_44a":
-            dialog.text = "¿Qué?! ¡Te saqué de la calle, llené tus bolsillos de ámbar y gemas! ¿Así es como me lo pagas?";
+            dialog.text = "¿Qué? ¡Te saqué de la calle, llené tus bolsillos de ámbar y gemas! ¿Así es como me lo pagas?";
 			link.l1 = "Merida me mostró que no soy lo suficientemente despiadado para este trabajo. No tan despiadado como tú y tus muchachos. No seas malvado.";
 			link.l1.go = "mtraxx_45a";
 		break;
@@ -2063,7 +2063,7 @@ void ProcessDialogEvent()
 		
 		// Addon 2016-1 Jason пиратская линейка патч 17/1
 		case "mtraxx_113":
-            dialog.text = "¿Qué?! ¡Jean ahora es una puta de los ingleses, Bold y Cutlass han desaparecido, Leprechaun y sus hombres no se encuentran por ningún lado! ¿Y ahora tú?!";
+            dialog.text = "¿Qué? ¡Jean ahora es una puta de los ingleses, Bold y Cutlass han desaparecido, Leprechaun y sus hombres no se encuentran por ningún lado! ¿Y ahora tú?!";
 			link.l1 = "Marcus, he tomado mi decisión. He ganado buen dinero, tú también hiciste una fortuna conmigo. Pero he terminado. Me voy.";
 			link.l1.go = "mtraxx_114";
 		break;

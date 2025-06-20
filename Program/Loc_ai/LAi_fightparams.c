@@ -362,7 +362,7 @@ float Lai_UpdateEnergyPerDltTime(aref chr, float curEnergy, float dltTime)
 	}
 	if(GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_SP_3")
 	{
-		fMultiplier *= 1.0 + Bring2Range(0.0, 0.75, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(chr)) / 2.0);
+		fMultiplier *= 1.0 + Bring2Range(0.0, 0.875, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(chr)) / 2.0);
 	}
 
 	bool bPeace = true;
@@ -758,7 +758,7 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	}
 	if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "blade_SP_3")
 	{
-		dmg *= 1.0 + Bring2Range(0.0, 0.875, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(attack)) / 2.0);
+		dmg *= 1.0 + Bring2Range(0.0, 0.75, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(attack)) / 2.0);
 	}
 	//Аттака своей группы
 	bool noExp = false;
@@ -900,7 +900,7 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	{
 		if(GetCharacterEquipByGroup(attack, HAT_ITEM_TYPE) == "hat2")
 		{
-			attack.chr_ai.energy = stf(attack.chr_ai.energy) + stf(attack.chr_ai.energy)*1.25;
+			attack.chr_ai.energy = stf(attack.chr_ai.energy) + stf(attack.chr_ai.energy)*0.25;
 			//Log_Chr(enemy, XI_ConvertString("Hat2 Hit"));
 			notification(XI_ConvertString("Hat2 Hit"), "EnergyPlus");
 		}

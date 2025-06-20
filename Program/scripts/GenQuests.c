@@ -7357,7 +7357,7 @@ void FrahtHunterOnSea()//охотники в акватории порта пр�
 {
 	ref sld;
 	int i, iShipType, iRank, iShipRank, iCannonType, iNation;
-	string sBlade, sTemp;
+	string sBlade;
     Group_FindOrCreateGroup("Fraht_Attack");
 	Group_SetType("Fraht_Attack", "war");
 	iNation = PIRATE;
@@ -7373,49 +7373,47 @@ void FrahtHunterOnSea()//охотники в акватории порта пр�
 		if(makeint(pchar.rank) >= 8 && makeint(pchar.rank) < 12) { iShipRank = 2; }	
 		if(makeint(pchar.rank) >= 5 && makeint(pchar.rank) < 8) { iShipRank = 1; }	
 		if(makeint(pchar.rank) < 5) { iShipRank = 0; }
-		
-		
+
 		int iClassFlag = FLAG_SHIP_CLASS_5;
 		switch (iShipRank)
 		{
-			case 0:  
-				iClassFlag = FLAG_SHIP_CLASS_6;					
-				iTotalTemp = CANNON_TYPE_CANNON_LBS6;
-				sTotalTemp = "blade_03";
+			case 0:
+				iClassFlag = FLAG_SHIP_CLASS_6;
+				iCannonType = CANNON_TYPE_CANNON_LBS6;
+				sBlade = "blade_03";
 			break;
-			case 1:  
-				iClassFlag = FLAG_SHIP_CLASS_5;					
-				iTotalTemp = CANNON_TYPE_CANNON_LBS6;
-				sTotalTemp = "blade_03";
-			break; 	
-			case 2:  
-				iClassFlag = FLAG_SHIP_CLASS_4;				
-				iTotalTemp = CANNON_TYPE_CANNON_LBS12;
-				sTotalTemp = "blade_05";
-			break; 		
-			case 3:  
-				iClassFlag = FLAG_SHIP_CLASS_3;	
-				iTotalTemp = CANNON_TYPE_CANNON_LBS16;
-				sTotalTemp = "blade_06";
-			break; 
-			case 4: 
-				iClassFlag = FLAG_SHIP_CLASS_3;		
-				iTotalTemp = CANNON_TYPE_CULVERINE_LBS18;
-				sTotalTemp = "blade_10";
-			break; 
-			case 5: 
-				iClassFlag = FLAG_SHIP_CLASS_2;     			
-				iTotalTemp = CANNON_TYPE_CANNON_LBS20;
-				sTotalTemp = "blade_13";
-			break; 
-			case 6: 
-				iClassFlag = FLAG_SHIP_CLASS_2;					
-				iTotalTemp = CANNON_TYPE_CANNON_LBS24;
-				sTotalTemp = "blade_19";
-			break;  				
+			case 1:
+				iClassFlag = FLAG_SHIP_CLASS_5;
+				iCannonType = CANNON_TYPE_CANNON_LBS6;
+				sBlade = "blade_03";
+			break;
+			case 2:
+				iClassFlag = FLAG_SHIP_CLASS_4;
+				iCannonType = CANNON_TYPE_CANNON_LBS12;
+				sBlade = "blade_05";
+			break;
+			case 3:
+				iClassFlag = FLAG_SHIP_CLASS_3;
+				iCannonType = CANNON_TYPE_CANNON_LBS16;
+				sBlade = "blade_06";
+			break;
+			case 4:
+				iClassFlag = FLAG_SHIP_CLASS_3;
+				iCannonType = CANNON_TYPE_CULVERINE_LBS18;
+				sBlade = "blade_10";
+			break;
+			case 5:
+				iClassFlag = FLAG_SHIP_CLASS_2;
+				iCannonType = CANNON_TYPE_CANNON_LBS20;
+				sBlade = "blade_13";
+			break;
+			case 6:
+				iClassFlag = FLAG_SHIP_CLASS_2;
+				iCannonType = CANNON_TYPE_CANNON_LBS24;
+				sBlade = "blade_19";
+			break;
 		}
-		
-		
+
 		iShipType = GetRandomShipType(iClassFlag, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
 		sld = GetCharacter(NPC_GenerateCharacter("FrahtAttack_"+i, "citiz_"+(rand(9)+41), "man", "man", iRank, iNation, 30, true, "quest"));//создание кэпа
 		FantomMakeSmallSailor(sld, iShipType, "", iCannonType, 30+rand(15), 20+rand(10), 20+rand(15), 20+rand(15), 20+rand(15));

@@ -463,15 +463,15 @@ void LAi_StartBoarding(int locType, ref echr, bool isMCAttack)
 	// верхнюю палубу оставляем без изменений по количеству, но срезаем 15% HP у воинов противника, на нижних палубах будут добавочные враги, но это компенсация за разделенность сил противника относительно сил героя
 	inside_ecrew_1 = makeint(ecrew*0.3+0.5); // 30% - инсайд первого прохода
 	inside_ecrew_2 = makeint(ecrew*0.2+0.5); // 20% - инсайд второго прохода
-	if (inside_ecrew_1 < 1) inside_ecrew_1 = 1;
-	if (inside_ecrew_2 < 1) inside_ecrew_2 = 1;
 	if(IsFort) // на двор и бастион - поровну, по рез. тестов будем решать пропорции
 	{
-		inside_ecrew_1 = ecrew*0.3+0.5; // 30% - инсайд первого прохода
-		inside_ecrew_2 = ecrew*0.3+0.5; // 30% - инсайд второго прохода
+		inside_ecrew_1 = makeint(ecrew*0.3+0.5); // 30% - инсайд первого прохода
+		inside_ecrew_2 = makeint(ecrew*0.3+0.5); // 30% - инсайд второго прохода
 		ecrew = ecrew*0.6+0.5;
 	}
-	
+	if (inside_ecrew_1 < 1) inside_ecrew_1 = 1;
+	if (inside_ecrew_2 < 1) inside_ecrew_2 = 1;
+
 	//ecrew = ecrew*0.7+1;
 	
 	boarding_enemy_crew        = ecrew;
@@ -1367,7 +1367,7 @@ void LAi_SetBoardingActors(string locID)
 				else iQty = 3;
 			} */
 			if (!IsFort) iQty = 2;
-				else iQty = 3;
+            else iQty = 3;
 			for(i=1; i<=iQty; i++)
 			{
 				if (LAi_CheckLocatorFree("rld", sLocType+"mush"+i))
@@ -1390,7 +1390,7 @@ void LAi_SetBoardingActors(string locID)
 					LAi_SetWarriorType(chr);
 					LAi_group_MoveCharacter(chr, LAI_GROUP_BRDENEMY);
 					ChangeCharacterAddressGroup(chr, locID, "rld", sLocType+"mush"+i);
-					boarding_enemy_crew = boarding_enemy_crew - 1;
+					boarding_enemy_crew = boarding_enemy_crew - 1; // to_do: если сухопутных нет, уйдёт в минус
 				}
 			}
 			if (!IsFort)
@@ -1411,8 +1411,8 @@ void LAi_SetBoardingActors(string locID)
 	}
 	//<-- ставим вражеских мушкетеров
 	//Заставим драться эти 2 группы
-	LAi_group_FightGroupsEx(LAI_GROUP_PLAYER, LAI_GROUP_BRDENEMY, true, GetMainCharacterIndex(), -1, false, false);
-	LAi_group_SetCheckEvent(LAI_GROUP_BRDENEMY);
+    LAi_group_FightGroupsEx(LAI_GROUP_PLAYER, LAI_GROUP_BRDENEMY, true, GetMainCharacterIndex(), -1, false, false);
+    LAi_group_SetCheckEvent(LAI_GROUP_BRDENEMY);
 }
 
 //Убийство группы

@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 		case "dwh_gypsy_0":
 			dialog.text = "...";
 			link.l1 = "Je cherche la bohémienne qui soigne les gens. Serait-ce toi ?";
-			link.l1.go = "dwh_ne_ta";
+			link.l1.go = "dwh_gypsy_1";
 			DelLandQuestMark(npchar);
 		break;
 		

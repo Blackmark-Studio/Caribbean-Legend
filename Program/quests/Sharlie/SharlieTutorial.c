@@ -3,6 +3,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SharlieTutorial_StartGameInPaluba(string qName)
 {
+    ref sld;
+
 	//После диалога с матросом Шарль получает полный контроль над персонажем
 	EndQuestMovie();
 	locCameraSleep(false);
@@ -176,7 +178,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.Dialog.currentnode = "OfficerTorgovets";
 	AddMoneyToCharacter(sld, 1000);
-	sld.Unpushable = "";
+	MakeUnpushable(sld, true);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Officer_3", "trader_8", "man", "man", 10, FRANCE, -1, false, "quest")); // офицер-казначей
 	sld.name 	= StringFromKey("SharlieTutorial_9");
@@ -193,7 +195,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Sailor_11", "citiz_37", "man", "man", 5, FRANCE, -1, false, "quest"));
 	sld.name 	= StringFromKey("SharlieTutorial_2");
 	sld.lastname = "";
-	sld.Unpushable = "";
+	MakeUnpushable(sld, true);
 	ChangeCharacterAddressGroup(sld, "Quest_Ship_deck_Medium_trade", "quest", "quest8");
 	SendMessage(sld, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("Brush_Props"), "Brush_Props", "Saber_hand", 1);
 	LAi_SetActorType(sld);
@@ -876,7 +878,7 @@ void SharlieTutorial_TrumBitva_4(string qName)
 	LAi_SetGroundSitType(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 	AddLandQuestMark(sld, "questmarkmain");
-	sld.Unpushable = "";
+	MakeUnpushable(sld, true);
 	
 	/*CreateLocationParticles("large_smoke", "reload", "reload_hold3", 0, 0, 0, "");
 	CreateLocationParticles("shipfire", "reload", "reload_hold3", 0, 0, 0, "fortfire");

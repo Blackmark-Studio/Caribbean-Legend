@@ -4578,7 +4578,7 @@ void ProcessDialogEvent()
 			if(rand(1) == 0) // Денег не даёт
 			{
 				dialog.text = "¡Excelente! ¡Y ahora puedes perderte!";
-					link.l1 = "¿Qué?! ¿Y qué pasa con el dinero? Teníamos un trato...";
+					link.l1 = "¿Qué? ¿Y qué pasa con el dinero? Teníamos un trato...";
 					link.l1.go = "ContraDeliverQuest_NoMon";
 			}
 			else // Деньги или патруль
@@ -4586,7 +4586,7 @@ void ProcessDialogEvent()
 				if(rand(2) == 1) // Патруль
 				{
 					dialog.text = "Gracias por la entrega. Ahora puedes largarte... espera, alguien viene...";
-						link.l1 = "¿Qué?!";
+						link.l1 = "¿Qué?";
 						link.l1.go = "ContraDeliverQuest_Patrol";
 				}
 				else // Просто отдает деньги
@@ -5946,7 +5946,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_3":
-			dialog.text = "Nuestro capitán "+PChar.GenQuest.JusticeOnSale.SmugglerName+" fue atrapado por la patrulla de "+XI_ConvertString("Colony"+PChar.GenQuest.JusticeOnSale.CityId+"Gen")+"Lo tienen encarcelado, pero no tienen suficientes pruebas para colgarlo. No podemos sacarlo nosotros mismos\n"+"Usted es un hombre respetado. La gente le conoce. Tal vez podría negociar, pagar la fianza o simplemente comprar su libertad. Confíe en nosotros, dejaremos la isla tan pronto como tengamos a nuestro hombre, ¡así que su renombre no sufrirá!"; // belamour gen
+			dialog.text = "Nuestro capitán "+PChar.GenQuest.JusticeOnSale.SmugglerName+" fue atrapado por la patrulla de "+XI_ConvertString("Colony"+PChar.GenQuest.JusticeOnSale.CityId+"Gen")+". Lo tienen encarcelado, pero no tienen suficientes pruebas para colgarlo. No podemos sacarlo por nuestros medios\n"+"Usted es un hombre respetado y la gente le conoce. Tal vez podría negociar, pagar la fianza o simplemente comprar su libertad. Confíe en nosotros, dejaremos la isla tan pronto como tengamos a nuestro hombre, ¡así que su renombre no sufrirá!"; // belamour gen
 			link.l1 = "Digamos que puedo ayudarte. Pero, ¿qué hay de mi pago?";
 			link.l1.go = "JusticeOnSale_4";
 			link.l2 = "¡Vete al infierno, engendro del diablo! ¡No quiero tener nada que ver contigo!";
@@ -6179,7 +6179,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GuiltySailor_1":
-			dialog.text = "¿Qué?! ¿Sabes con quién estás hablando? Soy un marinero del barco '"+pchar.ship.name+"¡Solo tengo que decirle al capitán, y no tendrás tiempo ni de salir de la ciudad! Lárgate de aquí mientras aún estés entero."; 
+			dialog.text = "¿Qué? ¿Sabes con quién estás hablando? Soy un marinero del barco '"+pchar.ship.name+"¡Solo tengo que decirle al capitán, y no tendrás tiempo ni de salir de la ciudad! Lárgate de aquí mientras aún estés entero."; 
 			link.l1 = "...";
 			link.l1.go = "GuiltySailor_2";
 		break;
@@ -6653,7 +6653,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NightAdventure_CardProf_Fight_2":
-			dialog.text = "¿Qué?! ¿Quién te crees que eres?! ¿Intentas chantajearme?! ¡Te haré un par de agujeros ahora, si no te largas!";
+			dialog.text = "¿Qué? ¿Quién te crees que eres?! ¿Intentas chantajearme?! ¡Te haré un par de agujeros ahora, si no te largas!";
 			link.l1 = "Prefiero quedarme aquí y mostrarle a todos tus dados.";
 			link.l1.go = "NightAdventure_CardProf_Fight_3";
 		break;
@@ -7647,7 +7647,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CemeteryGirl":
-			dialog.text = "¿Qué?!";
+			dialog.text = "¿Qué?";
 			link.l1 = "Oh, nada...";
 			link.l1.go = "CemeteryGirl_1";
 		break;

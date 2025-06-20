@@ -1110,5 +1110,6 @@ void Event_ErrorLog()
 {
 	string string1 = GetEventData();
 	string string2 = GetEventData();
-	log_info(string1 + string2);
+	if(MOD_BETTATESTMODE != "off")
+		log_info(string1 + string2);
 }

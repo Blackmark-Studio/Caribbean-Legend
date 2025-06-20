@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.DWH_Start") && !CheckAttribute(pchar, "questTemp.DWH_gipsy") && npchar.city == "SentJons")
 			{
 				link.l6 = "Ich suche die Zigeunerin, die Kranke heilt. Bist du das??";
-				link.l6.go = "dwh_gypsy_1";
+				link.l6.go = "dwh_ne_ta";
 			}
 			// <-- Тёмные воды исцеления
 			if (!CheckAttribute(npchar, "quest.poison_price") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && rand(2) == 0)

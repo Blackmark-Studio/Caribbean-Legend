@@ -126,3 +126,7 @@ Knippel_29
 {
 Present time
 }
+Knippel_30
+{
+August 17th, 1654@<NewStr()>, SE of Dominica"
+}

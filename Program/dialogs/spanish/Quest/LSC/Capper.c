@@ -95,7 +95,7 @@ void ProcessDialogEvent()
 
 	case "Fightfail_Final_1":
 		dialog.text = "Lo conocerás, seguro... ¡Lo encontrarás en el camino al infierno!";
-		link.l1 = "¿Qué?!";
+		link.l1 = "¿Qué?";
 		link.l1.go = "Fightfail_Final_2";
 		break;
 

@@ -75,7 +75,7 @@ void ProcessDialogEvent()
 					if (sti(pchar.GenQuest.Piratekill) > 20)
 					{
 						dialog.text = RandPhraseSimple("¡Alarma! ¡Un lunático armado está aquí! ¡A las armas!","¡A las armas! ¡Un lunático armado está aquí!");
-						link.l1 = RandPhraseSimple("¿Qué?!","¿Qué estás haciendo?!");
+						link.l1 = RandPhraseSimple("¿Qué?","¿Qué estás haciendo?!");
 						link.l1.go = "pirate_fight";
 					}
 					else
@@ -116,7 +116,7 @@ void ProcessDialogEvent()
 				}
 
                 // homo 05/08/06
-				dialog.Text = NPCharRepPhrase(npchar,LinkRandPhrase("Yo soy ","Mi nombre es ","Puedes llamarme ")+GetFullName(npchar)+LinkRandPhrase("¿Qué quieres?",". No te he visto antes. ¿Quién eres?","¿Quién eres y qué quieres de mí?"),LinkRandPhrase("Saludos, "+GetAddress_Form(NPChar)+". Mi nombre es "+GetFullName(npchar)+"¿Y cuál es tu nombre?","Hola, "+GetAddress_Form(NPChar)+"¡ Soy "+GetFullName(npchar)+"¿Puedo saber tu nombre?","Sí, "+GetAddress_Form(NPChar)+". ¿Qué quieres? Y por cierto, mi nombre es "+GetFullName(npchar)+"¿Y cómo te llamas?"));
+				dialog.Text = NPCharRepPhrase(npchar,LinkRandPhrase("Yo soy ","Mi nombre es ","Puedes llamarme ")+GetFullName(npchar)+LinkRandPhrase("¿Qué quieres?",". No te he visto antes. ¿Quién eres?","¿Quién eres y qué quieres de mí?"),LinkRandPhrase("Saludos, "+GetAddress_Form(NPChar)+". Mi nombre es "+GetFullName(npchar)+"¿Y cuál es tu nombre?","Hola, "+GetAddress_Form(NPChar)+". ¡Soy "+GetFullName(npchar)+"! ¿Puedo saber tu nombre?","Sí, "+GetAddress_Form(NPChar)+". ¿Qué quieres? Y por cierto, mi nombre es "+GetFullName(npchar)+"¿Y cómo te llamas?"));
 
 				Link.l1 = pcharrepphrase(LinkRandPhrase("¡Maldita sea!","¡Maldita sea! ","¡Maldito seas! ")+"Sí, soy el capitán "+GetFullName(Pchar)+LinkRandPhrase(", ¿nunca has oído "+NPCharSexPhrase(NPChar,", bastardo?","?")," y "+GetSexPhrase("el pirata más famoso","la pirata-chica más famosa")+" ¡en el mar!","¡y maldita sea si me equivoco!"),LinkRandPhrase("Yo soy "+GetFullName(Pchar)+", capitán.","Mi nombre es "+GetFullName(Pchar)+".","Puedes llamarme capitán "+GetFullName(Pchar)+"."));
 				Link.l1.go = "Meeting";

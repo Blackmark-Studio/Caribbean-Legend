@@ -128,6 +128,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			LAi_SetActorType(sld);
 			ChangeCharacterAddressGroup(sld, "SentJons_houseS3", "barmen", "bar1");
 			DelLandQuestMark(sld);
+			LAi_RemoveLoginTime(sld);
 		break;
 		// <-- Тёмные воды исцеления
 	}

@@ -1408,7 +1408,7 @@ Los Secretos de Willemstad
 ************************************************************
 Has logrado encontrar este mensaje, lo que significa que el señor Attano te ha entrenado bien. Pero no todos son capaces de convertirse en uno de los nuestros. Debes demostrar que posees todas las habilidades necesarias para cumplir incluso las misiones más difíciles.
 Te observamos atentamente. En cuanto completes esta tarea, dejaremos otra para ti. Si logras superar todas las pruebas, te convertirás en uno de nosotros.
-La siguiente tarea es encontrar el mejor lugar para vigilar la oficina de la Compañía Neerlandesa de las Indias Occidentales. Solo una mente aguda y una mirada penetrante pueden elegir el punto de observación adecuado. Observa las calles, escucha el bullicio de la ciudad y utiliza las sombras para permanecer sin ser visto.
+La siguiente tarea es encontrar el mejor lugar para vigilar la oficina de la Compañía Holandesa de las Indias Occidentales. Solo una mente aguda y una mirada penetrante pueden elegir el punto de observación adecuado. Observa las calles, escucha el bullicio de la ciudad y utiliza las sombras para permanecer sin ser visto.
 Recuerda: la guardia está siempre alerta. Notarán de inmediato a quien se quede allí, mirando fijamente la entrada. Debes parecer alguien ocupado con sus propios asuntos, aunque sean triviales.
 P.S. El camino hacia lo oculto no siempre es obvio. Solo quien comprenda que incluso una vela apagada puede revelar un secreto llegará hasta el final.
 
@@ -1428,7 +1428,7 @@ P.S. Una casa de ladrillo es símbolo de solidez y fiabilidad. Es capaz de prote
 
 #TEXT 4
 ************************************************************
-Ya has aprendido mucho, pero la regla principal es siempre tener un plan de respaldo. Cualquiera que quiera tener éxito en nuestro trabajo debe tener un refugio secreto confiable. Un hogar donde se pueda ocultarse, esperar o aguardar nuevas órdenes.  
+Ya has aprendido mucho, pero la regla principal es siempre tener un plan de respaldo. Cualquiera que quiera tener éxito en nuestro trabajo debe tener un refugio secreto confiable. Un hogar donde pueda ocultarse, esperar o aguardar nuevas órdenes.  
 Tu próximo paso es encontrar ese lugar. Está lejos de las miradas curiosas, pero las callejuelas que lo rodean son lo suficientemente concurridas y ruidosas como para ocultar tus movimientos, especialmente por las noches, cuando la taberna está llena de gente y es difícil entrar en el callejón sin tener que enfrentar una pelea.  
 Los ciudadanos ebrios y los carpinteros cansados te mirarán al regresar a casa, sin sospechar nada, pues su verdadera naturaleza será conocida solo por ti. Solo podrás acceder a él con el anillo: un símbolo de tu lealtad al Orden. También servirá como tu llave. Busca el anillo frente a la residencia, en un lugar apartado.  
 Recuerda: tu refugio debe contener todo lo necesario: dinero, provisiones, medicinas. Y lo más importante: debe seguir siendo un secreto conocido solo por ti.  
@@ -1456,7 +1456,7 @@ La decisión está tomada. "Beth" es un barco hermoso, y la tripulación me es l
 ¡Éxito! No solo suerte, sino confirmación del método. Mapas, cálculos, interrogatorio a los lugareños, todo funciona como un reloj. La tripulación está de buen ánimo, aunque veo que algunos no están acostumbrados a tal minuciosidad en la organización de las búsquedas. Estoy empezando a entender, esto no es suficiente.
 ***************
 Segundo año en el "Beth". Oro suficiente para comprar un título. Los marineros se han comprado jubones de moda, invitan a todos en las tabernas, presumen de costosos adornos. Me alegro por ellos, ¿quién mejor que yo para saber lo que es trabajar por miserables centavos?
-En cuanto a mí... todavía veo estos sueños. Elizabeth escribe que está esperando. Y su padre todavía me llama "ese marinero". Necesito algo más. Algo real. Para distraerme, incluso escribí un pequeño estatuto sobre la búsqueda de tesoros y lo envié a Barbados. Qué se puede decir, a los militares les encanta escribir reglamentos. Y me alegra hacerlo.
+En cuanto a mí, todavía veo estos sueños. Elizabeth escribe que está esperando. Y su padre todavía me llama "ese marinero". Necesito algo más. Algo real. Para distraerme, incluso escribí un pequeño estatuto sobre la búsqueda de tesoros y lo envié a Barbados. Qué se puede decir, a los militares les encanta escribir reglamentos. Y me alegra hacerlo.
 ***************
 Hoy todo cambió. I. parece leer mis pensamientos. "Está buscando en el lugar equivocado, Capitán. Estos hallazgos lamentables son apenas migajas y un desperdicio de su talento. Los verdaderos tesoros no solo enriquecen, permiten cambiar el destino". Pensé que estaba en el camino correcto. Qué equivocado estaba.
 ***************

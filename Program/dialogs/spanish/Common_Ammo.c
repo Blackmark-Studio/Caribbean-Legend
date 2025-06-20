@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 
 	case "zpq_ex2":
 		dialog.text = "Sí, por supuesto. Se te pagará 50 000 pesos como acordamos.";
-		link.l1 = "¿Probablemente me estás tomando el pelo, señor?! ¡Tuvimos un trato por 100 000 pesos!";
+		link.l1 = "¡¿Probablemente me estás tomando el pelo, señor?! ¡Tuvimos un trato por 100 000 pesos!";
 		link.l1.go = "zpq_ex3";
 		if (CheckCharacterPerk(pchar, "Trustworthy"))
 		{

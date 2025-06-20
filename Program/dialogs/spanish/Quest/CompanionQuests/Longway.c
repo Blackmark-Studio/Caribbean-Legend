@@ -34,7 +34,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Alonso_2":
 			dialog.text = "Encontramos que tu casillero había sido saqueado.";
-			link.l1 = "¿Qué?! Espera... ¿Cómo lo averiguaste? ¿Y qué estaban haciendo todos en mi camarote?";
+			link.l1 = "¿Qué? Espera... ¿Cómo lo averiguaste? ¿Y qué estaban haciendo todos en mi camarote?";
 			link.l1.go = "PZ_Alonso_3";
 		break;
 		
@@ -5062,7 +5062,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_MaryRazgovorOBordeli_Bad_21":
-			dialog.text = "¿Qué?! Entonces tú eres...";
+			dialog.text = "¿Qué? Entonces tú eres...";
 			link.l1 = "No lo lamento. Mierda. Quiero decir, no estuve con nadie más que contigo, te lo dije. Solo que... no podía calmar mi mente, eso es todo. Es difícil hacerlo, con los cañones de La Roche apuntándote.";
 			link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_22";
 		break;
@@ -5413,7 +5413,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_72":
 			dialog.text = "¡Pero vi a Chang Xing!";
-			link.l1 = "¿Qué?! ¿Dónde? ¿Cuándo? ¿Está en tu barco?";
+			link.l1 = "¿Qué? ¿Dónde? ¿Cuándo? ¿Está en tu barco?";
 			link.l1.go = "PZ_Longway_73";
 		break;
 		
@@ -7079,7 +7079,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sStr = "Mary";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sStr = "Helen";
 			dialog.text = "Primero, rescatamos a Chang Xing.";
-			link.l1 = "¿Qué?! No parece que lo entiendas, amigo mío. Tu hermana no está en peligro inmediato, pero "+sStr+"es. ¿Y necesito recordarte que Chang Xing tiene tanta culpa de esto como Martene y Thibaut?";
+			link.l1 = "¿Qué? No parece que lo entiendas, amigo mío. Tu hermana no está en peligro inmediato, pero "+sStr+"es. ¿Y necesito recordarte que Chang Xing tiene tanta culpa de esto como Martene y Thibaut?";
 			link.l1.go = "PZ_Longway_FlagMartinInfo_2";
 		break;
 		
@@ -7435,7 +7435,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_TortureRoom_Levasser_FlagMarselinaInfo_2":
-			dialog.text = "¿QUÉ?! Ja-ja... Maldita Marceline... ¡Maldita perra, perra, perra, perra!";
+			dialog.text = "¿Qué? Ja-ja... Maldita Marceline... ¡Maldita perra, perra, perra, perra!";
 			link.l1 = "Ella lo es. Se merecen el uno al otro. Aunque ella tiene un poco más de cabeza, al menos a primera vista.";
 			link.l1.go = "PZ_TortureRoom_Levasser_FlagMarselinaInfo_3";
 		break;

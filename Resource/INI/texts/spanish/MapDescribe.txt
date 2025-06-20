@@ -5,7 +5,7 @@ info
 }
 type_full_1
 {
-El mapa está claramente fresco y el papel aún no se ha amarillado. Las marcas parecen estar dibujadas a prisa, pero si les creemos, el tesoro está oculto en la ubicación #sMaplocName# en la #sMapIslName#.
+El mapa es reciente y el papel no amarillea. Las marcas parecen estar dibujadas con prisa. Si les creemos, el tesoro está oculto en #sMaplocName# en #sMapIslName#.
 }
 type_full_1_isl {isla}
 type_full_1_mein {continente}

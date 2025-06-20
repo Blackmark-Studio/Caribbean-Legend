@@ -476,7 +476,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "entrance_13":
-		dialog.text = "¿Qué?! ¿Chad mató a Alan? ¡Ese brujo está loco! ¡Simplemente no puede ser verdad!";
+		dialog.text = "¿Qué? ¿Chad mató a Alan? ¡Ese brujo está loco! ¡Simplemente no puede ser verdad!";
 		link.l1 = "Sabes, Steve, Chimiset está realmente asustado. No creo que me estuviera mintiendo.";
 		link.l1.go = "entrance_14";
 		break;
@@ -701,7 +701,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "mary_2":
-		dialog.text = "¿Qué?! Explícate. ¿Quién dijo eso?";
+		dialog.text = "¿Qué? Explícate. ¿Quién dijo eso?";
 		link.l1 = "Déjame contarte toda la historia. Eso sería mejor.";
 		link.l1.go = "mary_3";
 		break;

@@ -125,7 +125,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Woman_FackYou":
-			dialog.text = "¿Qué?! ¿Decidiste revisar mis cofres? ¡No te saldrás con la tuya!";
+			dialog.text = "¿Qué? ¿Decidiste revisar mis cofres? ¡No te saldrás con la tuya!";
 			link.l1 = "¡Chiquilla tonta!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);

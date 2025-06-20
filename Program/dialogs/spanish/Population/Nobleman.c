@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 		if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
 		{
 			dialog.text = NPCStringReactionRepeat("Hm. Navegáis bajo la bandera de " + NationNameGenitive(sti(pchar.nation)) + ", camarada. ¿Qué diablos haces aquí, en nuestra ciudad? ¡Piérdete!", "No quiero ser sospechoso de ser amigo de " + NationNameAblative(sti(pchar.nation)) + "¡Lárgate o informaré a los guardias!", "Es tu última oportunidad para escapar. De lo contrario, solo tendrás a ti mismo para culpar.", "Te he advertido. ¡Ahora pagarás por tu insolencia, bastardo!", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("¡Vaya patriota, ja!", "Está bien, está bien, cálmate. Me voy.", "No hagas tanto ruido. Me voy.", "¿Qué?!", npchar, Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("¡Vaya patriota, ja!", "Está bien, está bien, cálmate. Me voy.", "No hagas tanto ruido. Me voy.", "¿Qué?", npchar, Dialog.CurrentNode);
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "fight", npchar, Dialog.CurrentNode);
 			break;
 		}
@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 		if (sti(pchar.reputation.nobility) < 10)
 		{
 			dialog.text = NPCStringReactionRepeat("¡Mira eso! ¿Y cómo es que nuestros guardias permiten que un bastardo como tú simplemente ande por la ciudad? Imposible...", "¡Piérdete, ni siquiera quiero hablar contigo! ¡Verdugo...", "Es tu última oportunidad para escapar. De lo contrario, solo te tendrás a ti mismo para culpar.", "Te he advertido. ¡Ahora pagarás por tu insolencia, bastardo!", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("¡Eh, eh! ¡Muéstrame más respeto, señor!", "Mírate a ti mismo, santo...", "Calma...", "¿Qué?!", npchar, Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("¡Eh, eh! ¡Muéstrame más respeto, señor!", "Mírate a ti mismo, santo...", "Calma...", "¿Qué?", npchar, Dialog.CurrentNode);
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "fight", npchar, Dialog.CurrentNode);
 			break;
 		}
@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 		else //--> повторные обращения
 		{
 			dialog.text = NPCStringReactionRepeat("¿Qué? ¿Otra vez? No tengo tiempo para ti. Busca a alguien más para hablar. Hay muchos plebeyos deambulando por las calles. Y tengo que irme, habrá un banquete esta noche en la residencia del gobernador y tengo que preparar mi atuendo...", "¡No, ahora es realmente molesto! ¿No lo entiendes? ¿O eres lento de mente?", "Señor, empiezo a sospechar que no solo es un idiota, sino también un patán y un grosero. Le advierto, déjeme en paz o se arrepentirá de molestarme.", "Basta. ¡Te enseñaré, insolente!", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("Ya veo. Adiós.", "Sí-sí, solo olvidé lo que quería preguntar...", "Me has entendido mal...", "¿Qué?!", npchar, Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("Ya veo. Adiós.", "Sí-sí, solo olvidé lo que quería preguntar...", "Me has entendido mal...", "¿Qué?", npchar, Dialog.CurrentNode);
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "fight", npchar, Dialog.CurrentNode);
 		}
 		NextDiag.TempNode = "First time";

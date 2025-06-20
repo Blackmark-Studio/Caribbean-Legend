@@ -1033,7 +1033,7 @@ string Tips_GetTipsDirectory() {
   return "interfaces\tips\" + LanguageGetLanguage();
 }
 
-#event_handler("Tips_GetText", "Tips_GetText");
+//#event_handler("Tips_GetText", "Tips_GetText");
 aref Tips_GetText()
 {
 	DeleteAttribute(&InterfaceStates, "Tip");

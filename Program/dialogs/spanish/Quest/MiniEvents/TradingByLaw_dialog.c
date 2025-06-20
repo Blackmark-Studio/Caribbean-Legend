@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Kristian_2":
-			dialog.text = "¿Qué??? ¿Quién le dijo eso? ¡Debe haber un error! Le aseguro que no vendo ningún tipo de licor.";
+			dialog.text = "¿Qué? ¿Quién le dijo eso? ¡Debe haber un error! Le aseguro que no vendo ningún tipo de licor.";
 			link.l1 = "Vaya, parece que estoy en el lugar correcto.";
 			link.l1.go = "Kristian_3";
 		break;
@@ -80,14 +80,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Kristian_10":
-			dialog.text = "¿Quiere actuar como intermediario? Bueno, no me opongo... hace poco trajimos un cargamento —¡todo un récord! Debería haber durado al menos medio año. Pero, ¡Dios es testigo!, sólo un milagro nos salvó de ser descubiertos.\nTodavía no entiendo cómo logramos escapar. Intentar algo así de nuevo sería un suicidio.";
+			dialog.text = "¿Quiere actuar como intermediario? Bueno, no me opongo... hace poco trajimos un cargamento. ¡Todo un récord! Debería haber durado al menos medio año. Pero, ¡Dios es testigo!, sólo un milagro nos salvó de ser descubierto.\nTodavía no entiendo cómo logramos escapar. Intentar algo así de nuevo sería un suicidio.";
 			link.l1 = "Entonces debería dejar la clandestinidad. Al menos en parte.";
 			link.l1.go = "Kristian_11";
 		break;
 		
 		case "Kristian_11":
-			dialog.text = "¿Salir de la clandestinidad? Pero... eso requiere contactos... ¡y dinero! ¿Y para qué? ¿Acaso usted, capitán de un barco, se establecerá en la ciudad y se encargará de suministros para la taberna local?";
-			link.l1 = "En cuanto a contactos, creo que puedo ayudarle. En cuanto al dinero... no creo que sea tanto. Y sobre lo último, no hará falta. Usted actuará en mi nombre. Yo le ayudaré, y usted me ayudará a mí. De manera regular. Usted gana un canal estable de ventas, y yo un proveedor confiable. ¿Qué me dice?";
+			dialog.text = "¿Salir de la clandestinidad? Pero... eso requiere contactos... ¡y dinero! ¿Y para qué? ¿Acaso usted, capitán de un barco, se establecerá en la ciudad y se encargará de suministros para la taberna?";
+			link.l1 = "En cuanto a contactos, creo que puedo ayudarle. En cuanto al dinero... no creo que sea tanto. Y sobre lo último, no hará falta. Usted actuará en mi nombre, yo le ayudo y usted a mí. De manera regular, tendrás un canal estable de ventas, y yo un proveedor confiable. ¿Qué me dice?";
 			link.l1.go = "Kristian_12";
 		break;
 		

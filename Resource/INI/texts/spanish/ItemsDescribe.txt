@@ -653,10 +653,10 @@ itmdescr_m8_barrel
 La culata y el cañón de un rifle de cuatro cañones desmontado.
 }
 
-itmname_mushket9 {Vieja arcabuz}
+itmname_mushket9 {Viejo arcabuz}
 itmdescr_mushket9
 {
-Starożytna, ale niezawodna arkebuz. Jeśli wierzyć opowieściom, sam Kortez używał jej do zasypywania dżungli kartaczami, wzbudzając przerażenie wśród tubylców.
+Un arcabuz antiguo, pero fiable. Según cuentan, el mismísimo Cortés lo utilizó para sembrar la selva de metralla, sembrando el terror entre los nativos.
 }
 
 UpgradeStageInfo_mushket9_1 

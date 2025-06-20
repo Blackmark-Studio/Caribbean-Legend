@@ -169,7 +169,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SKD_DomAnri_DuranDraka":
-			dialog.text = "Хе! Сколько верёвочке не виться... Видать, судьбой было суждено нам укокошить друг друга, да, кэп?";
+			dialog.text = "Хе! Сколько верёвочке ни виться... Видать, судьбой было суждено нам сойтись в бою ещё раз. Да, кэп?";
 			link.l1 = "Видимо, так. Продолжим на чём остановились?";
 			link.l1.go = "SKD_DomAnri_DuranDraka_2";
 		break;
@@ -282,6 +282,7 @@ void ProcessDialogEvent()
 			CloseQuestHeader("TheFormerKnight");
 			chrDisableReloadToLocation = false;
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
+			LocatorReloadEnterDisable("PortRoyal_houseSp1", "reload2", true);
 			
 			sld = CharacterFromID("Duran");	//Клод Дюран становится постоянным офицером
 			sld.OfficerWantToGo.DontGo = true;

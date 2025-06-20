@@ -1643,7 +1643,7 @@ void ProcessDialogEvent()
 	// ругается за то, что ходил по борделям, ГГ изворачивается
 	case "brothel":
 		dialog.text = "¡Ahí está! Ya no te gusto, ¿verdad? ¡Dímelo!";
-		link.l1 = "¿Qué?! Mary, ¿qué tonterías estás diciendo? ¿Por qué piensas eso?";
+		link.l1 = "¿Qué? Mary, ¿qué tonterías estás diciendo? ¿Por qué piensas eso?";
 		link.l1.go = "brothel_1";
 		break;
 

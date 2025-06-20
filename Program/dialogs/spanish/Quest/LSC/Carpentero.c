@@ -319,7 +319,7 @@ void ProcessDialogEvent()
 
 	// крыс
 	case "rat":
-		dialog.text = "¿Qué?! ¡Muéstramelo! ¡Déjame verlo!";
+		dialog.text = "¿Qué? ¡Muéstramelo! ¡Déjame verlo!";
 		link.l1 = "Claro.";
 		link.l1.go = "rat_1";
 		break;

@@ -2070,7 +2070,7 @@ void ProcessDialogEvent()
 			link.l1 = "Mein Triumph endete damit, dass ich am ersten Tag auf dem Weg nach Guadeloupe aus dem Rigg fiel.";
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.TakeFolke")) {
 				link.l1 = link.l1+" Mein Steuermann, Deluc, hatte auch einen sehr aussagekräftigen Blick."}
-			link.l1.go ="trinkend_mein_Hintergrund_7";
+			link.l1.go ="drinking_my_background_7";
 		break;
 		
 		case "drinking_my_background_7":

@@ -92,16 +92,16 @@ void ProcessDialogEvent()
 		switch (sti(npchar.quest.crew.type))
 		{
 		case 0:
-			sTemp = "Somos los mejores trabajando con velas y aparejos. Sin ser demasiado modesto, diría que somos profesionales en el manejo de barcos, así que no se preocupe, no le fallaremos ni en las tormentas más fuertes.";
+			sTemp = " Somos los mejores trabajando con velas y aparejos. Sin ser demasiado modesto, diría que somos profesionales en el manejo de barcos, así que no se preocupe, no le fallaremos ni en las tormentas más fuertes.";
 			break;
 		case 1:
-			sTemp = "Lo que más nos gusta es estar en la cubierta del cañón. Pocos de nosotros hemos servido en buques de guerra de verdad. Podemos cargar y disparar cañones como nadie de tu tripulación puede. Puedes contar con nosotros en cada combate duro.";
+			sTemp = " Lo que más nos gusta es estar en la cubierta del cañón. Pocos de nosotros hemos servido en buques de guerra de verdad. Podemos cargar y disparar cañones como nadie de tu tripulación puede. Puedes contar con nosotros en cada combate duro.";
 			break;
 		case 2:
-			sTemp = "Somos buenos abordadores capitán, hicimos algunas carreras en corsarios antes de esto. Conocemos el brillo de los sables y el olor de la pólvora y la sangre. Esa es nuestra vocación. No es fácil derrotarnos en una lucha cuerpo a cuerpo, ¡así que siempre puede contar con nuestras espadas, capitán!";
+			sTemp = " Somos buenos abordadores capitán, hicimos algunas carreras en corsarios antes de esto. Conocemos el brillo de los sables y el olor de la pólvora y la sangre. Esa es nuestra vocación. No es fácil derrotarnos en una lucha cuerpo a cuerpo, ¡así que siempre puede contar con nuestras espadas, capitán!";
 			break;
 		}
-		dialog.text = "Hay " + sti(npchar.quest.crew.qty) + " de nosotros y contrataremos solo juntos. Podemos realizar todas las tareas básicas de marinero." + sTemp + "";
+		dialog.text = "Somos " + sti(npchar.quest.crew.qty) + " y para contratarnos tenemos que ir todos juntos. Podemos realizar todas las tareas básicas de marinero." + sTemp + "";
 		if (GetFreeCrewQuantity(pchar) >= sti(npchar.quest.crew.qty))
 		{
 			link.l1 = "Suena como los hombres que estoy buscando. ¿Qué hay de tu adelanto?";

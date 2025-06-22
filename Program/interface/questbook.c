@@ -625,10 +625,11 @@ void ShowInfoWindow()
 			} else {
 				iItem = sti(GameInterface.(CurTable).(CurRow).UserData.IDX);
 				sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).UserData.ID);
+				sGroup = GetGoodImageGroup(&Goods[iItem]);
 				sGroupPicture = GameInterface.(CurTable).(CurRow).UserData.ID;
 				picW = 128;
 				picH = 128;
-				sText1  = GetAssembledString(GetConvertStr(GameInterface.(CurTable).(CurRow).UserData.ID + "_descr", "GoodsDescribe.txt"), &Goods[iItem]);
+				sText1  = GetAssembledString(GetGoodDescr(&Goods[iItem]), &Goods[iItem]);
 			}
 		break;
 		case "TABLE_SHIP_PLACE":
@@ -662,13 +663,14 @@ void ShowInfoWindow()
 				sText1  = XI_ConvertString("TradeBook_Descr1");
 				sText2  = XI_ConvertString("TradeBook_Descr2");
 			} else {
-		    iItem = sti(GameInterface.(CurTable).(CurRow).UserData.IDX);
-			sGroupPicture = GameInterface.(CurTable).(CurRow).UserData.ID;
-		    sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).UserData.ID);
-		    sText1  = GetAssembledString(GetConvertStr(GameInterface.(CurTable).(CurRow).UserData.ID + "_descr", "GoodsDescribe.txt"), &Goods[iItem]);
-			sText2 = XI_ConvertString("TradeBook_Descr3");
-			picW = 128;
-			picH = 128;
+				iItem = sti(GameInterface.(CurTable).(CurRow).UserData.IDX);
+				sGroupPicture = GameInterface.(CurTable).(CurRow).UserData.ID;
+				sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).UserData.ID);
+				sGroup = GetGoodImageGroup(&Goods[iItem]);
+				sText1  = GetAssembledString(GetGoodDescr(&Goods[iItem]), &Goods[iItem]);
+				sText2 = XI_ConvertString("TradeBook_Descr3");
+				picW = 128;
+				picH = 128;
 			}
 		break;
 		// sith --->
@@ -1315,7 +1317,7 @@ void FillPriceList(string _tabName, string  attr1)
 				if(iStoreQ == 0) continue;
 				GameInterface.(_tabName).(row).UserData.ID = Goods[i].name;
 				GameInterface.(_tabName).(row).UserData.IDX = i;
-				GameInterface.(_tabName).(row).td1.icon.group = "GOODS";
+				GameInterface.(_tabName).(row).td1.icon.group = GetGoodImageGroup(&Goods[i]);
 				GameInterface.(_tabName).(row).td1.icon.image = Goods[i].name;
 				GameInterface.(_tabName).(row).td1.icon.offset = "20, 0";
 				GameInterface.(_tabName).(row).td1.icon.width = 40;
@@ -1428,7 +1430,7 @@ void TradebookFillPriceList(string _tabName, string  attr1)
             GameInterface.(_tabName).(row).UserData.ID = Goods[i].name;
             GameInterface.(_tabName).(row).UserData.IDX = i;
             
-	        GameInterface.(_tabName).(row).td1.icon.group = "GOODS";
+	        GameInterface.(_tabName).(row).td1.icon.group = GetGoodImageGroup(&Goods[i]);
 			GameInterface.(_tabName).(row).td1.icon.image = Goods[i].name;
 			GameInterface.(_tabName).(row).td1.icon.offset = "5, 0";
 			GameInterface.(_tabName).(row).td1.icon.width = 40;

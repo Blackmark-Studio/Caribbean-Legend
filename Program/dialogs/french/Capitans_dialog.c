@@ -1683,7 +1683,7 @@ void ProcessDialogEvent()
 					case 31: sTemp = "obereg_10"; break;	
 				}
 				pchar.GenQuest.FishingBoatSTemp = sTemp;
-				dialog.text = "C'est "+GetConvertStr("itmname_"+sTemp,"DescriptionDesObjets.txt")+". J'ai réussi à obtenir ... eh bien, peu importe où. Pensais à vendre à un connaisseur. Je te le donnerai pour seulement 10 000 pesos! Tu le prends?";
+				dialog.text = "C'est "+GetConvertStr("itmname_"+sTemp,"ItemsDescribe.txt")+". J'ai réussi à obtenir ... eh bien, peu importe où. Pensais à vendre à un connaisseur. Je te le donnerai pour seulement 10 000 pesos! Tu le prends?";
 				if(sti(pchar.money) > 9999)
 				{
 					link.l1 = "Je le prendrai, bien sûr ! La chose est debout. ";

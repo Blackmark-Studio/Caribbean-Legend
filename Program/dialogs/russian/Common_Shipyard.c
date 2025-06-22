@@ -1464,34 +1464,38 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ship_tunning_HP_complite":
-		    AddTimeToCurrent(6, 30);
-		    shTo = &RealShips[sti(Pchar.Ship.Type)];
-		    DeleteAttribute(NPChar, "Tuning");
-		    // изменим
+			AddTimeToCurrent(6, 30);
+			shTo = &RealShips[sti(Pchar.Ship.Type)];
+			DeleteAttribute(NPChar, "Tuning");
+			// изменим
 			if(!CheckAttribute(shTo, "Bonus_HP"))
 			{
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
-					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.35);
+					shTo.HP        = makeint(stf(shTo.HP) * 1.35);
+					shTo.BaseHP    = makeint(stf(shTo.BaseHP) * 1.35);
 				}
 				else
 				{
-					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
+					shTo.HP        = makeint(stf(shTo.HP) * 1.2);
+					shTo.BaseHP    = makeint(stf(shTo.BaseHP) * 1.2);
 				}
 			}
 			else
 			{
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
-					shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
+					shTo.HP        = makeint((stf(shTo.HP) - stf(shTo.Bonus_HP)) * 1.35 + stf(shTo.Bonus_HP));
+					shTo.BaseHP    = makeint((stf(shTo.BaseHP) - stf(shTo.Bonus_HP)) * 1.35 + stf(shTo.Bonus_HP));
 				}
 				else
 				{
-					shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
+					shTo.HP        = makeint((stf(shTo.HP) - stf(shTo.Bonus_HP)) * 1.2 + stf(shTo.Bonus_HP));
+					shTo.BaseHP    = makeint((stf(shTo.BaseHP) - stf(shTo.Bonus_HP)) * 1.2 + stf(shTo.Bonus_HP));
 				}
 			}
-	        shTo.Tuning.HP = true;
-			shTo.BaseHP = sti(shTo.HP);
+			shTo.Tuning.HP = true;
+			//shTo.BaseHP = sti(shTo.HP); Этого не должно существовать
 			
 			if(!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo,"Tuning.MaxCrew") && CheckAttribute(shTo,"Tuning.HP")) 
 			{

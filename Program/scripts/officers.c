@@ -493,7 +493,7 @@ int FindFreeRandomOfficer()
 	int Counter, OfficerIdx;
 	string OfficerId;
 	// special -->
-	if (GetCharacterMaxOfficersQty(Pchar) <= (GetOfficerPassengerQuantity(Pchar) + GetCompanionQuantity(Pchar) - 1)) return -1;
+	if (GetCharacterMaxOfficersQty(Pchar) <= (GetOfficerPassengerQuantity(Pchar) + GetRemovableCompanionsNumber(Pchar) - 1)) return -1;
 	return 1;
 }
 void LandEnc_OfficerHired()

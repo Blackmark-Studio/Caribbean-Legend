@@ -755,6 +755,7 @@ void DesIslandAttack(string qName)//нападение торговца-пира
 	sld.alwaysenemy = true;
 	sld.nation = PIRATE;
 	sld.Ship.Mode = "pirate";
+	sld.Abordage.Enable = true;
 	Ship_FlagRefresh(sld);
 	Ship_NationAgressivePatent(sld);
 	Ship_SetTaskAttack(SECONDARY_TASK, sti(sld.index), sti(pchar.index));

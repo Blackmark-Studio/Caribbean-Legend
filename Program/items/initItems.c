@@ -4342,8 +4342,6 @@ int InitStdBlade( 	int		ItemIndex,
 	if(ModelID == "blade_SP_3low") blade.Attack = 77.0;
 	if(ModelID == "blade_SP_3") blade.Attack = 77.0;
 
-	SetBladeWeightAttack(blade);
-
 	switch (BladeType) 
 	{
 		case "FencingL" :

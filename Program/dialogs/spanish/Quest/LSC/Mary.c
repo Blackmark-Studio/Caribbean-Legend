@@ -1551,7 +1551,8 @@ void ProcessDialogEvent()
 		dialog.text = RandPhraseSimple("" + pchar.name + ", no hay mayor felicidad para mí que estar en tus brazos, sí, ¿eh?... ¡Vamos!", "" + pchar.name + "Me gustaría estar contigo cada momento del día si fuera posible. ¡Vamos!");
 		link.l1 = RandPhraseSimple("Eres el mejor, mi amor...", "Eres maravilloso, mi talismán...");
 		link.l1.go = "exit";
-		AddDialogExitQuest("cabin_sex_go");
+		pchar.quest.sex_partner = Npchar.id;
+		AddDialogExitQuestFunction("LoveSex_Cabin_Go");
 		break;
 
 	case "sex_after":
@@ -1580,6 +1581,7 @@ void ProcessDialogEvent()
 
 	case "room_sex_go":
 		DialogExit();
+		pchar.quest.sex_partner = Npchar.id;
 		chrDisableReloadToLocation = true; // закрыть локацию
 		if (sti(pchar.money) >= 10)
 			AddMoneyToCharacter(pchar, -10);
@@ -1591,10 +1593,10 @@ void ProcessDialogEvent()
 		if (findsubstr(locations[FindLocation(pchar.location)].id, "tavern_upstairs", 0) == -1)
 		{
 			// DoQuestReloadToLocation(pchar.location+"_upstairs", "quest", "quest4", "");
-			DoFunctionReloadToLocation(pchar.location + "_upstairs", "quest", "quest4", "GiveKissInRoom");
+			DoFunctionReloadToLocation(pchar.location + "_upstairs", "quest", "quest4", "LoveSex_Room_Go");
 			ChangeCharacterAddressGroup(npchar, pchar.location + "_upstairs", "quest", "quest3");
 		} // patch-8
-		// DoQuestCheckDelay("Mary_LoveSex", 2.5);
+		// DoQuestFunctionDelay("LoveSex_Classic", 2.5);
 		NextDiag.CurrentNode = "sex_after";
 		npchar.greeting = "mary_hire";
 		break;
@@ -2025,7 +2027,7 @@ void ProcessDialogEvent()
 	case "LongHappy_3":
 		DialogExit();
 		chrDisableReloadToLocation = true; // закрыть локацию
-		DoQuestCheckDelay("Mary_LoveSex", 1.0);
+		DoQuestFunctionDelay("LoveSex_Classic", 1.0);
 		npchar.dialog.currentnode = "LongHappy_5";
 		LAi_SetStayType(npchar);
 		break;
@@ -2519,7 +2521,7 @@ void ProcessDialogEvent()
 
 	case "LongHappy_60":
 		DialogExit();
-		DoQuestCheckDelay("Mary_LoveSex", 1.0);
+		DoQuestFunctionDelay("LoveSex_Classic", 1.0);
 		npchar.dialog.currentnode = "LongHappy_61";
 		LAi_SetStayType(npchar);
 		break;
@@ -2605,7 +2607,7 @@ void ProcessDialogEvent()
 		LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
 		DoQuestFunctionDelay("IslaMona_ChurchReloadToRoom", 0.5);
 		ChangeCharacterAddressGroup(npchar, "IslaMona_TwoFloorRoom", "goto", "goto4");
-		DoQuestCheckDelay("Mary_LoveSex", 2.0);
+		DoQuestFunctionDelay("LoveSex_Classic", 2.0);
 		NextDiag.CurrentNode = "sex_after";
 		npchar.greeting = "mary_hire";
 		pchar.questTemp.IslaMona.Doorlock = "true";

@@ -938,6 +938,8 @@ void QuestComplete(string sQuestName, string qname)
 			{
 				iTemp = sti(pchar.GenQuest.Contraband.GuardNation);// Нация патруля
 			}	
+			if (Pchar.quest.contraband.CurrentPlace == "shore30" || Pchar.quest.contraband.CurrentPlace == "shore31") iTemp = 1;
+			if (Pchar.quest.contraband.CurrentPlace == "shore59") iTemp = 2;
 			Pchar.quest.contraband.SoldierQty = makeint(2*GetOfficersQuantity(Pchar) + 3);
 			for (i = 2; i <= sti(Pchar.quest.contraband.SoldierQty); i++)
 			{

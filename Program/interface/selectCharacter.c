@@ -628,7 +628,7 @@ void IDoExit(int exitCode, bool bCode)
 	}
 	else
 	{
-		MOD_EXP_RATE = makeint(5 + MOD_SKILL_ENEMY_RATE);  // 0т 5 до 15
+		MOD_EXP_RATE = makeint(5 + MOD_SKILL_ENEMY_RATE);  // 0т 7 до 15
 		interfaceResultCommand = exitCode;
 		EndCancelInterface(bCode);
 	}

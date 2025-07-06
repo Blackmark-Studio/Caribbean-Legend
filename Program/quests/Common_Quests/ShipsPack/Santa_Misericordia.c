@@ -42,7 +42,6 @@ void SantaMisericordia_init()
 	//Усиленный меч
 	sld = ItemsFromID("lacrima_patris");
 	sld.Attack = 90.0;
-	SetBladeWeightAttack(sld);
 	//Товары в трюме
 	SetCharacterGoods(chref, GOOD_ROPES, 100+rand(50));
 	SetCharacterGoods(chref, GOOD_CINNAMON, 100+rand(50));

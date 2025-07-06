@@ -449,8 +449,8 @@ void FillISpyGlassParameters()
 	int nbottom = sti(showWindow.bottom);
 	objISpyGlass.lens.texture = "interfaces\le\battle_interface\spyglass\" + sTexture + ".tga";
 	float fratio = stf(showWindow.right)/stf(showWindow.bottom);
-	if (stf(fratio)>2.0) objISpyGlass.lens.pos = (nleft-1)+","+(ntop-1)+","+nright+","+nbottom;// fix wide screen
-	else objISpyGlass.lens.pos = (nHCenter-sti(showWindow.bottom))+","+(sti(showWindow.top)-1)+","+(nHCenter+sti(showWindow.bottom))+","+showWindow.bottom;
+//	if (stf(fratio)>2.0) objISpyGlass.lens.pos = (nleft-1)+","+(ntop-1)+","+nright+","+nbottom;// fix wide screen
+	objISpyGlass.lens.pos = (nHCenter-sti(showWindow.bottom)*4)+","+(sti(showWindow.top)-1)+","+(nHCenter+sti(showWindow.bottom)*4)+","+showWindow.bottom;
 
 	//==========================================================
 	float fRes = 0.85; // для ресайза

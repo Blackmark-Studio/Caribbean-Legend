@@ -11,6 +11,10 @@ native string LanguageGetFaderPic(string faderPicName);
 native string DialogAssembleStr(string idStr, string paramStr);
 native string DialogAddParamToStr(string oldParamStr, string paramID, string paramValue);
 native string StringFromKey(string key_name, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9, string arg10, string arg11, string arg12, string arg13, string arg14, string arg15, string arg16, string arg17, string arg18, string arg19);
+native int u8strlen(string inStr);
+native string u8strcut(string inStr, int bPos, int ePos);
+native int u8findSubStr(string inStr, string findStr, int pos);
+native bool u8IsDigit(string inStr, int pos);
 
 //native int NFFindFiles(ref rObject, string sDirectory, string sMask, bool bRecursive);
 
@@ -932,6 +936,7 @@ string GetItemDescribe(int iGoodIndex)
 		}
 		if(arItm.groupID==BLADE_ITEM_TYPE)
 		{
+			SetBladeWeightAttack(arItm);
 			describeStr += GetAssembledString(
 				LanguageConvertString(lngFileID,"weapon blade parameters"),
 				arItm) + newStr();

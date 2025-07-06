@@ -1167,7 +1167,7 @@ void LAi_AllCharactersUpdate(float dltTime)
 				{
 					DeleteAttribute(chr_ai, "poison");
 				}
-				else if(IsInvulnerable(chr))
+				else if(!IsInvulnerable(chr))
 				{
 					hp = hp - dltTime*2.0;
 					if (!CheckAttribute(chr, "poison.hp") || hp < sti(chr.poison.hp)-1.0)
@@ -1316,7 +1316,7 @@ void LAi_AllCharactersUpdate(float dltTime)
 			}
 			//<-- Восстановление зарядов огнестрельного оружия
 			
-			//Востановление энергии
+			// Восстановление энергии
 			if(CheckAttribute(chr_ai, "energy"))
 			{
 				float energy = stf(chr_ai.energy);

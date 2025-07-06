@@ -3083,6 +3083,7 @@ void Ksochitam_FindShowScene(string qName) // сценка
 	LAi_SetBarmanType(pchar);
 	StartQuestMovie(true, false, true);
 	locCameraLockNearHero(-5.0, 2.0, -5.0, 600, true);
+	Pchar.FuncCameraFly = "";
 	DoQuestFunctionDelay("Ksochitam_FindShowSceneEnd", 7.0);
 	AddCharacterExpToSkill(pchar, "Fortune", 200);
 }

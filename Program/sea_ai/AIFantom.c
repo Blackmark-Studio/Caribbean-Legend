@@ -1182,7 +1182,8 @@ void UpgradeShipParameter(ref _chr, string _param)
 		case "MinCrew":
 			if(!CheckAttribute(shTo, "Tuning.MinCrew"))
 			{
-				shTo.MinCrew        = sti(shTo.MinCrew) * 2;
+				shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew)/5);
+				if(sti(shTo.MinCrew) < 1) shTo.MinCrew = 1;
 				shTo.Tuning.MinCrew = true;
 			}	
 		break;

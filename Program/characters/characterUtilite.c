@@ -1940,7 +1940,7 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 	if(n > 0)
 	{
         //if (findsubstr(itemName, "map_part" , 0) != -1 && GetCharacterItem(_refCharacter,itemName) > 0) return true;
-        if (itemName == "treasure_note" && !TreasureNotesHandler(arItm)) return false;
+        if (itemName == "treasure_note" && !TreasureNotesHandler(_refCharacter, arItm)) return false;
 	}
 	
 	if (itemName == "talisman11" && IsMainCharacter(_refCharacter) && !CheckAttribute(pchar, "TookChickenGod")) {

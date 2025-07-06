@@ -494,7 +494,7 @@ float LAi_GunCalcDamage(aref attack, aref enemy, string sType, int nShots)
 	if(IsBulletGrape(sBullet))
 	{
 		dmg = stf(attack.chr_ai.(sType).basedmg) * nShots;
-		dmg *= Bring2Range(0.75, 1.5, 0.0, 1.0, dmg);
+		dmg *= Bring2Range(0.75, 1.5, 0.0, 1.0, aSkill);
 		if(IsEquipCharacterByArtefact(attack, "talisman18"))
 		{
 			dmg *= 1.0 + 2.0 * ArticlesBonus(attack); 

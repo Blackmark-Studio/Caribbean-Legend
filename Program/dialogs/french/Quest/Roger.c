@@ -447,7 +447,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jeffry_32":
-            PlaySound("Voice\English\LE\Jeffry\Jeffry_gold.wav");
+            //PlaySound("Voice\English\LE\Jeffry\Jeffry_gold.wav");
 			dialog.text = "Quel spectacle spectaculaire ! C'est un gros tas d'or ! Je comprends maintenant pourquoi Cutlass est devenu fou. Nous sommes très chanceux, Prince ! Que penses-tu, combien d'or trouverons-nous ici ?";
 			link.l1 = "Beaucoup. Nous le saurons avec certitude lorsque nous nous occuperons de ces barreaux.";
 			link.l1.go = "Jeffry_33";
@@ -1352,8 +1352,8 @@ void ProcessDialogEvent()
             dialog.text = "Je comprends ta frustration, ha-ha. La décision te revient... Amiral. Tu veux les détails?";
 			link.l1 = "Merde... D'accord, crache le morceau. Nous n'avons pas beaucoup de temps - si toi ou moi ne les grignotons pas, quelqu'un d'autre le fera.";
 			link.l1.go = "Pelly_52";
-			link.l2 = "Je ne touche pas aux Français à moins de n'avoir pas le choix. Fin de la discussion.";
-			link.l2.go = "Pelly_51_1";
+			// link.l2 = "Je ne touche pas aux Français à moins de n'avoir pas le choix. Fin de la discussion.";
+			// link.l2.go = "Pelly_51_1";
 		break;
 		
 		case "Pelly_51_1":
@@ -1369,7 +1369,6 @@ void ProcessDialogEvent()
 			AddQuestRecord("Roger_3", "28");
 			SetTimerCondition("Mtraxx_PlantCaravanGuadeloupe", 0, 0, 14, false);
 			SetTimerCondition("Mtraxx_PlantCaravanGuadeloupe_time", 0, 0, 45, false);
-			//DoQuestCheckDelay("Mtraxx_PlantCaravanGuadeloupe", 1.0);
 		break;
 		
 		case "Pelly_52":
@@ -1383,10 +1382,8 @@ void ProcessDialogEvent()
 			
 			LAi_SetActorType(npchar);
 			AddQuestRecord("Roger_3", "28");
-			//if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup")) AddQuestUserData("Roger_3", "sText", "Who would've thought that among the captains of Terrax, there'd be someone with at least the spark of a negotiator or a true entrepreneurial streak? That person turned out to be my temporary companion, Paul "Cutlass." Understanding the consequences of Marcus's wrath if we fail his assignment, Cutlass suggested... officially buying Picard from the plantation owner. While I scouted the situation and spoke with Jean, Cutlass didn't waste time either. He discovered that the plantation owner frequently sells valuable captives, with the average price for such transactions being around 500 doubloons - a small fortune. But Paul is right - it's better to do this than risk Picard being killed by a stray bullet or blade. Now all that's left is to load up on the plantation's usual trade goods - be it coffee, copra, or vanilla - in large quantities.");
 			SetTimerCondition("Mtraxx_PlantCaravanGuadeloupe", 0, 0, 14, false);
 			SetTimerCondition("Mtraxx_PlantCaravanGuadeloupe_time", 0, 0, 45, false);
-			//DoQuestCheckDelay("Mtraxx_PlantCaravanGuadeloupe", 1.0);
 		break;
 		
 		case "Pelly_54": // провал выкупа Красавчика
@@ -1552,9 +1549,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Pelly_70":
-            dialog.text = "Ouais, c'est un problème. Quel est ton plan, Amiral ?\nJ'ai tout examiné à propos de la plantation. Y compris les marchandises qui sont demandées ici et qui circulent sur le marché. Si tu veux te faire passer pour un commerçant légitime, tu ferais mieux de te procurer ces marchandises au lieu de simplement jeter une pile d'or sur le bureau du planteur.";
-			link.l1 = "Ça fait sens. De quels types de marchandises parlons-nous ?";
-			link.l1.go = "Pelly_48";
+            dialog.text = "Ouais, c'est un problème. Quel est ton plan, Amiral ?";
+			link.l1 = "Je dois vite faire le plein quelque part. Ou attaquer une caravane et espérer qu'elle transporte ce dont j'ai besoin.";
+			link.l1.go = "Pelly_49";
 			DeleteAttribute(pchar, "questTemp.mtraxx_PlantInfoTovar");
 		break;
 		

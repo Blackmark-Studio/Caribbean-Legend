@@ -115,7 +115,7 @@ void ProcessDialogEvent()
 		
 		case "guide_14":
 			dialog.text = "Si su hermano es realmente conocido en Martinica, pregunte a los transeúntes. Tal vez alguien pueda indicarle. Por cierto, ¿cómo se llama?";
-			link.l1 = "Michelle de Monper.";
+			link.l1 = "Michel de Monper.";
 			link.l1.go = "guide_15";
 		break;
 		

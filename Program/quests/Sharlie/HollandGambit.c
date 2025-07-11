@@ -62,6 +62,7 @@ void Create_BaltazarOver(string qName)//не пошли на стрелку - ж
 void Baltazar_ConvoyOver(string qName)//опоздали
 {
 	pchar.quest.BaltazarConvoy_fail.over = "yes";//снять прерывание
+	pchar.quest.BaltazarConvoy_complete.over = "yes";//снять прерывание
 	AddQuestRecord("Holl_Gambit", "1-4");
 	CloseQuestHeader("Holl_Gambit");
 	sld = characterFromId("Baltazar");
@@ -75,6 +76,7 @@ void Baltazar_ConvoyOver(string qName)//опоздали
 void Baltazar_fail(string qName)//утонул Бальтазар
 {
 	pchar.quest.Baltazar_ConvoyOver.over = "yes";//снять прерывание
+	pchar.quest.BaltazarConvoy_complete.over = "yes";//снять прерывание
 	if (CheckAttribute(pchar, "questTemp.HWIC.Holl.BaltazarAttack")) pchar.quest.BaltazarConvoy_Attack.over = "yes";//снять прерывание, если не было атаки
 	AddQuestRecord("Holl_Gambit", "1-5");
 	CloseQuestHeader("Holl_Gambit");

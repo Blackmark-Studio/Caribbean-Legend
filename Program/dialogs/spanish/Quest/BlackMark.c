@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsFirstJungle_3":
-			dialog.text = "¿Por qué estás tomando tan mal mi petición? No estoy pidiendo malditas perlas, solo un cartucho. Incluso esperé hasta que estuviéramos en la jungla para no distraerte de los asuntos en la ciudad. Entonces, ¿tienes una ronda?";
+			dialog.text = "¿Por qué estás tomando tan mal mi petición? No estoy pidiendo malditas perlas, solo un cartucho. Estuve esperando el momento justo para no distraerte de tus asuntos ni meterme en medio como un loco cualquiera, jeje. Entonces... ¿tienes un cartucho?";
 			if (CheckCharacterItem(PChar, "cartridge"))
 			{
 				link.l1 = "Sí, tengo una ronda. Aquí tienes. Solo no me hagas una broma estúpida con esa bala. ¿Entiendes, Tommy?";

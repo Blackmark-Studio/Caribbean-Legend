@@ -262,7 +262,7 @@ Ho affondato la "Meifeng". Ora non potrò più portare a termine ciò che avevo 
 #TEXT 3-47
 Ho perso la "Meifeng" ed è andata per sempre. Ora non potrò più realizzare ciò che avevo in mente.
 #TEXT 3-48
-I cinesi hanno accettato di darmi informazioni in cambio della sua libertà. Devo sbarcarlo a Capo Inaccessibile, a Guadalupa.
+I cinesi hanno accettato di darmi informazioni in cambio della sua libertà. Devo sbarcarlo a Capo Inaccessibile, a Marie Galante.
 #TEXT 3-49
 Sta diventando sempre più interessante! Rodenburg ha ordinato a Longway di uccidere Peter Stuyvesant! È decisamente un colpo di stato. Per una cosa del genere ti impiccano. Devo trovare Stuyvesant e raccontargli tutto. Lui sistemerà Lucas subito. Il galeone di Peter pattuglierà le acque vicino a Saint-Christopher per una settimana.
 #TEXT 3-50

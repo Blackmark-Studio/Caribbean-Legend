@@ -142,7 +142,7 @@ void ProcessDialogEvent()
 
 		case "StartSailor_13":
 			dialog.text = "Nie przejmuj się tak. Saint-Pierre to niewielkie miasteczko – nie Luwr, oczywiście, ale i nie dżungla. A w bandyckim Le François, nie daj Boże – porządny człowiek nie ma czego szukać.";
-			link.l1 = "Jeśli zajdzie potrzeba – odwiedzę i bandytów. Michelle zawsze ratował mnie z kłopotów. Teraz moja kolej.";
+			link.l1 = "Jeśli zajdzie potrzeba – odwiedzę i bandytów. Michel zawsze ratował mnie z kłopotów. Teraz moja kolej.";
 			link.l1.go = "StartSailor_14";
 		break;
 		

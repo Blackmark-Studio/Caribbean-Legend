@@ -110,14 +110,14 @@ void ProcessDialogEvent()
 		
 		case "StartSailor_9_nobilityplus":
 			dialog.text = "Et comment s'appelle votre frère ?";
-			link.l1 = "Michelle de Monper.";
+			link.l1 = "Michel de Monper.";
 			link.l1.go = "StartSailor_10";
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 		break;
 		
 		case "StartSailor_9_nobilityminus":
 			dialog.text = "Et comment s'appelle votre frère ?";
-			link.l1 = "Michelle de Monper.";
+			link.l1 = "Michel de Monper.";
 			link.l1.go = "StartSailor_10";
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
 		break;

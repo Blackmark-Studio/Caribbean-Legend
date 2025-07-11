@@ -167,7 +167,8 @@ float LAi_GetDamageAttackType(aref attack, aref enemy, string attackType, ref aW
 			// остальное только для клинков
 			kLengthCurve = fLength * fCurve;
 			kBalance = 0.88 + fBalance * 0.12;
-			if(CheckCharacterPerk(attack, "HT3"))
+			//if(CheckCharacterPerk(attack, "HT3"))
+			if(CheckCharacterPerk(attack, "Dragoon"))
 				kBonus *= 1.15;
 		break;
 		case "force":
@@ -218,7 +219,8 @@ float LAi_GetDamageAttackType(aref attack, aref enemy, string attackType, ref aW
 			// остальное только для клинков
 			kLengthCurve = fCurve / fLength;
 			kBalance = 0.88 + fBalance * 0.12;
-			if(CheckCharacterPerk(attack, "HT3"))
+			//if(CheckCharacterPerk(attack, "HT3"))
+			if(CheckCharacterPerk(attack, "Dragoon"))
 				kBonus *= 1.3;
 		break;
 		case "feint":
@@ -849,7 +851,8 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	{
 		dmg = dmg * (1.0 - stf(Items[sti(enemy.cirassId)].B_CirassLevel));
 		
-		if(CheckCharacterPerk(enemy, "HT3") && GetCharacterSuitType(enemy) == 2)
+		//if(CheckCharacterPerk(enemy, "HT3") && GetCharacterSuitType(enemy) == 2)
+		if(CheckCharacterPerk(enemy, "Dragoon") && GetCharacterSuitType(enemy) == 2)
 		{
 			dmg = dmg * 0.85;
 		}
@@ -1117,7 +1120,8 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 	if(CheckAttribute(enemy, "cirassId"))
 	{
 		damage = damage * (1.0 - stf(Items[sti(enemy.cirassId)].G_CirassLevel));
-		if(CheckCharacterPerk(enemy, "HT3") && GetCharacterSuitType(enemy) == 2 )
+		//if(CheckCharacterPerk(enemy, "HT3") && GetCharacterSuitType(enemy) == 2 )
+		if(CheckCharacterPerk(enemy, "Dragoon") && GetCharacterSuitType(enemy) == 2 )
 		{
 			damage = damage * 0.85;
 		}

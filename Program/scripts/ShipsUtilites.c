@@ -1475,7 +1475,8 @@ float GetRealShipPower(ref rChar)
     if (kCrew > 1.0) kCrew = 1.0;
     float kHull  = stf(rChar.ship.HP) / stf(rShip.HP);
     float kSails = stf(rChar.ship.SP) / stf(rShip.SP);
-    float kCannons = MakeFloat(GetCannonsNum(rChar)) / stf(rShip.CannonsQuantity);
+    float kCannons = 1.0;
+    if(rShip.CannonsQuantity != "0") kCannons = MakeFloat(GetCannonsNum(rChar)) / stf(rShip.CannonsQuantity);
     fPower *= pow(kCrew, 2.25)*0.45 + pow(kSails, 2.25)*0.25 + pow(kHull, 2.25)*0.2 + pow(kCannons, 2.25)*0.1;
 	// belamour Шляпа Грима минус 30% штрафа
 	fPower = GetFloatByCondition(GetCharacterEquipByGroup(rChar, HAT_ITEM_TYPE) == "hat9", fPower, fPower + (fMaxPower - fPower) * 0.3);

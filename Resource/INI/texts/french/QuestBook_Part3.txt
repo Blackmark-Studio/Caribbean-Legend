@@ -262,7 +262,7 @@ J'ai coulé le "Meifeng". Je ne pourrai plus faire ce que j'avais prévu.
 #TEXT 3-47
 J'ai perdu le "Meifeng", et il est parti maintenant. Je ne pourrai plus faire ce que j'avais prévu.
 #TEXT 3-48
-Le Chinois a accepté de donner des informations en échange de sa liberté. Je dois le débarquer au Cap Inaccessible de la Guadeloupe.
+Le Chinois a accepté de donner des informations en échange de sa liberté. Je dois le débarquer au Cap Inaccessible de la Marie Galante.
 #TEXT 3-49
 C'est de mieux en mieux ! Rodenburg a ordonné à Longway de tuer Peter Stuyvesant ! Il s'agit bien d'un coup d'État. Ils pendent les gens pour ça. Je dois trouver Stuyvesant et tout lui dire. Il s'occupera de Lucas immédiatement. Le galion de Peter naviguera près de Saint-Christophe pendant une semaine.
 #TEXT 3-50

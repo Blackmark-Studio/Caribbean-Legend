@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsFirstJungle_3":
-			dialog.text = "Why are you taking my request so badly? I ain't asking for bloody pearls, just a cartridge. I even waited until we were out in the jungle so as not to distract you from business in the city. So, got a round?";
+			dialog.text = "Why are you taking my request so badly? I ain't asking for bloody pearls, just a cartridge. I even waited for the right moment so I wouldn’t distract you from business or get in your way like some lunatic, hehe. So... got a bullet?";
 			if (CheckCharacterItem(PChar, "cartridge"))
 			{
 				link.l1 = "Yes, I got a round. Here you go. Just don't play a stupid joke on me with that bullet. Understand, Tommy?";

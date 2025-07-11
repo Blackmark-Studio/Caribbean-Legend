@@ -1173,7 +1173,7 @@ void InitShips()
 	refShip.CannonsQuantityMin			= 14;
 	refShip.rcannon 					= 7;
 	refShip.lcannon 					= 7;
-	refShip.fcannon 					= 4;
+	refShip.fcannon 					= 2;
 	refShip.bcannon 					= 2;
 	refShip.MaxCrew        				= 113;
 	refShip.OptCrew        				= 90;

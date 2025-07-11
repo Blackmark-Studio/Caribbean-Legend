@@ -240,7 +240,7 @@ void EndOfGoldFleet(string temp)
     DeleteAttribute (&colonies[FindColony("Havana")], "DontSetShipInPort"); //возвращаем жизнь
 }
 
-void StartGoldFleet(string temp);
+void StartGoldFleet(string temp)
 {
     if (Colonies[FindColony("Havana")].nation == SPAIN && Colonies[FindColony("PortoBello")].nation == SPAIN
     && !CheckAttribute(&Colonies[FindColony("Havana")], "Siege") && !CheckAttribute(&Colonies[FindColony("PortoBello")], "Siege"))

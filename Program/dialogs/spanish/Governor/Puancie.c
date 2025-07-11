@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Puancie_Jail_2":
-			dialog.text = "Mejor. Ahora, en cuanto a tu pregunta anterior, fuiste considerado, por error, como un espía español y puesto bajo arresto hasta que se aclare la situación. Malditos castellanos, se han vuelto más activos últimamente, por eso ordené detener a toda persona sospechosa.\nPero ahora sabemos quién eres... eres realmente Charles de Maure, hermano de Michelle de Monper, y personalmente vine aquí para liberarte. ¡Y me gritas como un niño pequeño!";
+			dialog.text = "Mejor. Ahora, en cuanto a tu pregunta anterior, fuiste considerado, por error, como un espía español y puesto bajo arresto hasta que se aclare la situación. Malditos castellanos, se han vuelto más activos últimamente, por eso ordené detener a toda persona sospechosa.\nPero ahora sabemos quién eres... eres realmente Charles de Maure, hermano de Michel de Monper, y personalmente vine aquí para liberarte. ¡Y me gritas como un niño pequeño!";
 			link.l1 = "Perdóneme de nuevo, su Excelencia. ¿Estoy libre ahora?";
 			link.l1.go = "Puancie_Jail_3";			
 		break;

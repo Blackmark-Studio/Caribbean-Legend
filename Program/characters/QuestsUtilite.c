@@ -5442,7 +5442,8 @@ void SetNull2ShipInStockMan(string _city)
     	{
             if(chref.ShipInStockMan == (rColony.id + "_PortMan"))
 		    {
-				sld = CharacterFromId(rColony.id + "_PortMan");  
+				if(CheckAttribute(chref, "DontNullShip")) continue;
+				sld = CharacterFromId(rColony.id + "_PortMan");
 				DeleteAttribute(chref, "ShipInStockMan");
 				chref.lifeDay = 0;
 				pchar.ShipInStock = sti(pchar.ShipInStock) - 1; 

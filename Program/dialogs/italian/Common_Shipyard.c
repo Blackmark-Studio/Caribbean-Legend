@@ -806,7 +806,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
 			
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Hai imparato molto sulla struttura di questa nave!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_COMMERCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
@@ -947,7 +947,7 @@ void ProcessDialogEvent()
 			Link.l1.go = "Exit";			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Hai imparato molto sulla struttura di questa nave!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
@@ -1073,7 +1073,7 @@ void ProcessDialogEvent()
 			Link.l1.go = "Exit";
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Hai imparato molto sulla struttura di questa nave!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
@@ -1332,7 +1332,7 @@ void ProcessDialogEvent()
 			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Hai imparato molto sulla struttura di questa nave!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 			AddCharacterExpToSkill(pchar, SKILL_GRAPPLING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
@@ -1477,7 +1477,7 @@ void ProcessDialogEvent()
 			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Hai imparato molto sulla struttura di questa nave!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 			AddCharacterExpToSkill(pchar, SKILL_REPAIR, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
@@ -1611,7 +1611,7 @@ void ProcessDialogEvent()
 
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Hai imparato molto sulla struttura di questa nave!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 						
@@ -1768,7 +1768,7 @@ void ProcessDialogEvent()
 			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Hai imparato molto sulla struttura di questa nave!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_ACCURACY, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 			AddCharacterExpToSkill(pchar, SKILL_CANNONS, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;

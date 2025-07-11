@@ -263,7 +263,7 @@ Zatopiłem „Meifeng”. Teraz nie będę mógł zrealizować swojego planu.
 #TEXT 3-47
 Straciłem „Meifeng”, statek odpłynął. Teraz nie będę mógł zrealizować swojego planu.
 #TEXT 3-48
-Chińczyk zgodził się udzielić informacji w zamian za wolność. Muszę go wysadzić na Przylądku Niedostępnym na Gwadelupie.
+Chińczyk zgodził się udzielić informacji w zamian za wolność. Muszę go wysadzić na Przylądku Niedostępnym na Marie Galante.
 #TEXT 3-49
 To się robi coraz ciekawsze! Rodenburg rozkazał Longwayowi zabić Petera Stuyvesanta! To zdecydowanie zamach stanu. Wieszają ludzi za coś takiego. Muszę odnaleźć Stuyvesanta i powiedzieć mu wszystko. On zajmie się Lucasem natychmiast. Galeon Petera będzie krążył w pobliżu Saint-Christopher przez tydzień.
 #TEXT 3-50

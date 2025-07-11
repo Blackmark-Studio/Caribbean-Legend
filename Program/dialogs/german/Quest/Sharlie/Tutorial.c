@@ -110,14 +110,14 @@ void ProcessDialogEvent()
 		
 		case "StartSailor_9_nobilityplus":
 			dialog.text = "Und wie heißt Euer Bruder?";
-			link.l1 = "Michelle de Monper.";
+			link.l1 = "Michel de Monper.";
 			link.l1.go = "StartSailor_10";
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 		break;
 
 		case "StartSailor_9_nobilityminus":
 			dialog.text = "Und wie heißt Euer Bruder?";
-			link.l1 = "Michelle de Monper.";
+			link.l1 = "Michel de Monper.";
 			link.l1.go = "StartSailor_10";
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
 		break;
@@ -142,7 +142,7 @@ void ProcessDialogEvent()
 		
 		case "StartSailor_13":
 			dialog.text = "Macht Euch keine Sorgen. Saint-Pierre ist ein kleines Städtchen – nicht der Louvre natürlich, aber auch kein Dschungel. Aber im banditenverseuchten Le François, Gott bewahre, hat ein anständiger Mensch nichts verloren.";
-			link.l1 = "Wenn es nötig ist, gehe ich auch zu den Banditen. Michelle hat mich immer aus Schwierigkeiten geholt. Jetzt bin ich dran.";
+			link.l1 = "Wenn es nötig ist, gehe ich auch zu den Banditen. Michel hat mich immer aus Schwierigkeiten geholt. Jetzt bin ich dran.";
 			link.l1.go = "StartSailor_14";
 		break;
 
@@ -1009,7 +1009,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OldSailor_1":
-			dialog.text = "Ich bin wohl wie Madame Michelle – suche die Katze. Aber ich schreie nicht – sie mag es nicht, wenn man sie anschreit.";
+			dialog.text = "Ich bin wohl wie Madame Michel – suche die Katze. Aber ich schreie nicht – sie mag es nicht, wenn man sie anschreit.";
 			link.l1 = "Ich sah sie heute Morgen – sie hat wieder meine Stiefel zerkratzt.";
 			link.l1.go = "OldSailor_2";
 		break;

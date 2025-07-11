@@ -459,7 +459,7 @@ void ProcessDialogEvent()
 			if (startHeroType == 1)
 			{
 				dialog.text = "Хм-м-м, как ваш сказать, капитан. Наш закончить здесь?";
-				link.l1 = "СДа. Я ещё осмотрюсь немного, а потом присоединюсь к остальным.";
+				link.l1 = "Да. Я ещё осмотрюсь немного, а потом присоединюсь к остальным.";
 				link.l1.go = "Alamida_BitvaEnd";
 			}
 			if (startHeroType == 2)

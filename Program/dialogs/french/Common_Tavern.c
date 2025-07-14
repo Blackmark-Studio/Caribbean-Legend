@@ -1110,6 +1110,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_day":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "La chambre est à votre disposition, capitaine. Absolument gratuitement.";
+				link.l1 = "Merci, mon ami.";
+				link.l1.go = "room_day_wait";
+				link.l3 = "Pas maintenant. Parlons d'autre chose.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "Cela vous coûtera 5 pièces de huit.";
 			if (makeint(pchar.money) >= 5)
 			{
@@ -1126,6 +1135,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_day_next":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "La chambre est à votre disposition, capitaine. Absolument gratuitement.";
+				link.l1 = "Merci, mon ami.";
+				link.l1.go = "room_day_wait";
+				link.l3 = "Pas maintenant. Parlons d'autre chose.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "Cela vous coûtera 10 pièces de huit.";
 			if (makeint(pchar.money) >= 10)
 			{
@@ -1142,6 +1160,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_night":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "La chambre est à votre disposition, capitaine. Absolument gratuitement.";
+				link.l1 = "Merci, mon ami.";
+				link.l1.go = "room_night_wait";
+				link.l3 = "Pas maintenant. Parlons d'autre chose.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "Cela vous coûtera 5 pièces de huit.";
 			if (makeint(pchar.money) >= 5)
 			{

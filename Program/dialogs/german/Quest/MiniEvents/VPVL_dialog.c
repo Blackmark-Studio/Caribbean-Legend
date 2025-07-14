@@ -110,6 +110,7 @@ void ProcessDialogEvent()
 			npchar.dialog.currentnode = "Return back to Lea";
 			AddQuestRecord("VPVL", "2"); 
 			DoQuestCheckDelay("VPVL_Start", 0.1);
+			LocatorReloadEnterDisable("FortFrance_Town", "gate_back", true);
 		break;
 		
 		case "Rejection":
@@ -204,12 +205,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Kontr Le Maren1":
+			sld = CharacterFromID("VPVL_contr_2");
 			dialog.text = "Was träumst du da, du Vieh? Wisch dir lieber den Sabber vom Kinn! Wir verkaufen sie besser an... du weißt schon wen. Für so ein Mädchen zahlt er einen Sack voller Münzen, und wir feiern dann einen Monat lang durch!";
 			if (pchar.sex == "man")
 			{
 				dialog.text = "Wozu zum Henker brauchen wir noch so einen Affen? Wir setzen seinen Kumpan unter Druck – der wird schon auspacken. Und den hier bringen wir gleich um, damit er uns nicht mehr auf die Nerven geht!";
 			}
-			link.l1 = "Tausend Haie sollen dich verschlingen, Simon! Du bist der gerissenste Schmuggler im ganzen Archipel!";
+			link.l1 = "Tausend Haie sollen dich verschlingen, "+sld.name+"! Du bist der gerissenste Schmuggler im ganzen Archipel!";
 			link.l1.go = "Kontr Le Maren2";
 		break;
 

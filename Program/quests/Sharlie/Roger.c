@@ -2643,11 +2643,11 @@ void Mtraxx_MirabellaLife(string qName) // поведение Мирабель �
 	LAi_SetStayType(sld);
 	if (stf(environment.time) > 7.99 && stf(environment.time) < 21.0) // днем внизу
 	{
-		ChangeCharacterAddressGroup(sld, "IslaMona_TwoFloorHouse", "goto", "goto"+(rand(2)+1));
+		ChangeCharacterAddressGroup(sld, "IslaMona_TwoFloorHouse", "goto", "goto3");
 	}
 	else
 	{
-		ChangeCharacterAddressGroup(sld, "IslaMona_TwoFloorRoom", "goto", "goto"+(rand(4)+1));
+		ChangeCharacterAddressGroup(sld, "IslaMona_TwoFloorRoom", "goto", "goto3");
 	}
 }
 
@@ -4385,7 +4385,6 @@ void Mtraxx_WolfreekReadLogbook() // чтение судового журнал�
 				sld.Balance = 2.0;
 				sld.Weight = 3.5;
 				sld.Attack = 88.0;
-				SetBladeWeightAttack(sld);
 			}
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Ignasio.Journal"))
 			{

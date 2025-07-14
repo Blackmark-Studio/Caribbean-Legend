@@ -310,6 +310,10 @@ void ProcessDialogEvent()
 			sTemp = "Tengo cinco barcos en mi escuadrón y el más grande es " + iTemp + " rango.";
 			pchar.GenQuest.Shipshine.Money = makeint(4.2 * (5000 * (7 - iTemp)));
 			break;
+		case 6:
+			sTemp = "Tengo cinco barcos en mi escuadrón y el más grande es " + iTemp + " rango.";
+			pchar.GenQuest.Shipshine.Money = makeint(4.2 * (5000 * (7 - iTemp)));
+			break;
 		}
 		dialog.text = "Todo depende de la cantidad total de barcos en tu escuadrón y su tamaño.";
 		link.l1 = "" + sTemp + " ";

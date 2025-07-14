@@ -1408,7 +1408,7 @@ void ProcessDialogEvent()
 		case "GiveTaskSlave_1":
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity(npchar.city);
-			dialog.Text = "Molto bene, allora ascolta. La schiavitù è l'attività più redditizia ai Caraibi in questi giorni. Non sono un coltivatore, ma ho clienti di fiducia\nQuindi, ho bisogno della seguente quantità di schiavi - "+pchar.questTemp.Slavetrader.iSlaveQuantity+" teste. Sono pronto a pagarti 250 pesos per ciascuna. Credimi, è un prezzo onesto. In totale guadagnerai "+FindRussianMoneyString(sti(pchar.questTemp.Slavetrader.iSlaveMoney))+" pesos.";
+			dialog.Text = "Molto bene, allora ascolta. La schiavitù è l'attività più redditizia ai Caraibi in questi giorni. Non sono un coltivatore, ma ho clienti di fiducia\nQuindi, ho bisogno della seguente quantità di schiavi - "+pchar.questTemp.Slavetrader.iSlaveQuantity+" teste. Sono pronto a pagarti 250 pesos per ciascuna. Credimi, è un prezzo onesto. In totale guadagnerai "+FindRussianMoneyString(sti(pchar.questTemp.Slavetrader.iSlaveMoney))+".";
 			Link.l1 = "No, non sono un mercante di schiavi. Trovati un altro assistente che non si preoccupa della sua coscienza.";
 			Link.l1.go = "exit_slaves";
 			Link.l2 = "Un'offerta allettante. Mi piacerebbe farlo. Quando avrai bisogno degli schiavi?";

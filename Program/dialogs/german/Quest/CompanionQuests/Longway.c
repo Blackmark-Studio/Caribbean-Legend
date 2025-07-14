@@ -5011,7 +5011,8 @@ void ProcessDialogEvent()
 			dialog.text = "Eigentlich ist es wirklich einfach, die Wahrheit herauszufinden, ja, gell, hihi. Wenn du mit niemandem zusammen warst, musst du jetzt voller Energie sein. Das werden wir jetzt überprüfen, ja, gell!";
 			link.l1 = "Mary, bitte..";
 			link.l1.go = "exit";
-			AddDialogExitQuest("cabin_sex_go");
+			pchar.quest.sex_partner = Npchar.id;
+			AddDialogExitQuestFunction("LoveSex_Cabin_Go");
 			pchar.questTemp.PZ_MaryRazgovorOBordeli = true;
 		break;
 		
@@ -8458,7 +8459,8 @@ void ProcessDialogEvent()
 				dialog.text = "Es ist in Ordnung, Charles, wirklich. Ich versuche einfach, nicht darüber nachzudenken. Und außerdem hast du mich vor dem Schlimmsten bewahrt. Also lassen wir das Reden und... holen wir einfach auf.";
 				link.l1 = "Das ist eine verdammt gute Idee, Helen.";
 				link.l1.go = "exit";
-				AddDialogExitQuest("cabin_sex_go");
+				pchar.quest.sex_partner = Npchar.id;
+				AddDialogExitQuestFunction("LoveSex_Cabin_Go");
 			}
 		break;
 		
@@ -8466,7 +8468,8 @@ void ProcessDialogEvent()
 				dialog.text = "Charles, ich will es nicht, ich fordere es, ja, gell!";
 				link.l1 = "Ich würde es nicht wagen, Ihnen zu widersprechen...";
 				link.l1.go = "exit";
-				AddDialogExitQuest("cabin_sex_go");
+				pchar.quest.sex_partner = Npchar.id;
+				AddDialogExitQuestFunction("LoveSex_Cabin_Go");
 		break;
 		
 		case "PZ_DevushkaSnovaOfficer_Dialog1":

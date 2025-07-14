@@ -230,6 +230,7 @@ void Memento_AfterBattle(string qName)
 
 void Memento_Book(string qName)
 {
+	TakeItemFromCharacter(pchar, "Memento_Book");
 	AddQuestRecordInfo("Memento_Book", "1");
 }
 
@@ -479,9 +480,10 @@ void Memento_Dich_EtapThree_Paluba_4_1()
 	sld.locators_radius.box.private3 = 0.0;
 	sld.locators_radius.box.private4 = 0.0;
 	// меняем модель квестовой каюты
-	sld = &Locations[FindLocation("Quest_Cabin_Medium")];
+	CloneLocation("Quest_Cabin_Medium", "Clone_location");
+	sld = &locations[FindLocation("Clone_location")];
 	//убираем сначала лишнее
-	DeleteAttribute(&locations[FindLocation("Quest_Cabin_Medium")], "models");
+	DeleteAttribute(&locations[FindLocation("Clone_location")], "models");
 	//Models
 	sld.filespath.models = "locations\decks\inside_cabin_4"; // каюта брига/"Мементо"
 	//Always
@@ -565,7 +567,7 @@ void Memento_Dich_EtapThree_Paluba_8(string qName)
 void Memento_Dich_EtapThree_Paluba_9(string qName)
 {
 	QuestPointerDelLoc("My_Deck_Medium", "reload", "reload_cabin");
-	DoFunctionReloadToLocation("Quest_Cabin_Medium", "reload", "reload1", "Memento_Dich_EtapThree_Paluba_10");
+	DoFunctionReloadToLocation("Clone_location", "reload", "reload1", "Memento_Dich_EtapThree_Paluba_10");
 }
 
 void Memento_Dich_EtapThree_Paluba_10()
@@ -616,7 +618,7 @@ void Memento_Dich_EtapThree_Paluba_13()
 	sld.locators_radius.box.private2 = 1.0;
 	sld.locators_radius.box.private3 = 1.0;
 	sld.locators_radius.box.private4 = 1.0;
-	sld = &Locations[FindLocation("Quest_Cabin_Medium")];
+	sld = &Locations[FindLocation("Clone_location")];
 	sld.locators_radius.box.private1 = 1.0;
 	sld.locators_radius.box.private2 = 1.0;
 	sld.locators_radius.box.private3 = 1.0;
@@ -701,7 +703,7 @@ void Memento_Dich_EtapThree_Paluba_22()
 	LAi_SetActorType(pchar);
 	LAi_ActorAnimation(pchar, "tablesleep_2", "1", -1);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, -1, false, "soldier"));
 	sld.name 	= StringFromKey("SharlieTrial_29");
 	sld.lastname = StringFromKey("SharlieTrial_30");
 	GiveItem2Character(sld, "blade_10");
@@ -716,6 +718,10 @@ void Memento_Dich_EtapThree_Paluba_22()
 
 void Memento_Dich_EtapThree_End()
 {
+	sld = CharacterFromID("Memento_Alonso");
+	sld.lifeday = 0;
+	ChangeCharacterAddressGroup(sld, "none", "", "");
+	
 	EndQuestMovie();
 	DeleteSea();
 	DeleteWeather();
@@ -727,6 +733,7 @@ void Memento_Dich_EtapThree_End()
 	LAi_SetImmortal(pchar, false);
 	pchar.questTemp.Memento_Dich_EtapDominika = true;
 	Memento_Dominica_SpawnObereg();
+	QuestToSeaLogin_Prepare(0.0, 0.0, "");
 	QuestToSeaLogin_Launch();
 }
 
@@ -734,14 +741,8 @@ void Memento_Dich_EtapThree_End()
 
 void Memento_Dominica_SpawnObereg()
 {
-	//pchar.questTemp.Memento_Dominica = true; // НЕ ЗАБЫТЬ вставить в нужный момент
-	//DeleteAttribute(pchar, "questTemp.Memento_Dominica");
 	// в бухте Скотс Хед острова Доминика прячем Череп-оберег в сундуке
-	pchar.GenQuestBox.Shore27.box1.items.talisman19 = 1;
 	SetFunctionLocatorCondition("Memento_Dominica_DeLanda", "Shore27", "box", "box1", false)
-	// Если вышел на глобалку, не забрав череп
-	//PChar.quest.Memento_Dominica_Proval.win_condition.l1 = "MapEnter";
-	//PChar.quest.Memento_Dominica_Proval.function = "Memento_Dominica_Proval";
 }
 
 void Memento_Dominica_DeLanda(string qName)
@@ -753,13 +754,15 @@ void Memento_Dominica_DeLanda(string qName)
 		sld = CharacterFromID("DiegoDeLanda");
 		ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto14");
 		LAi_SetStayType(sld);
-		LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+		LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 		AddLandQuestMark(sld, "questmarkmain");
 		pchar.questTemp.ISawDiegoDeLanda = sti(pchar.questTemp.ISawDiegoDeLanda) + 1; // встретил Диего де Ланда
 		pchar.questTemp.DiegoDeLanda_Memento = true;
 	}
+	sld = &Locations[FindLocation("Shore27")];
+	sld.box1.items.talisman19 = 1;
+	//Box_OnLoadLocation(loadedLocation);
 	Achievment_Set("ach_CL_155");
-	if (sti(pchar.rank) <= 13) Achievment_Set("ach_CL_156");
 }
 
 //===============Высылаем шлюпку на Мементо==============
@@ -776,7 +779,6 @@ void Memento_OnUpdeck()
 		sld.lastname = StringFromKey("Memento_3");
 		sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
 		sld.dialog.currentnode = "Memento_MortimerGrim_1";
-		FantomMakeCoolFighter(sld, 30, 70, 70, "blade_05", "pistol4", "bullet", 200);
 		sld.SpyglassWithSkull = true;
 		ChangeCharacterAddressGroup(sld, "Deck_Near_Ship", "quest", "quest1");
 		LAi_SetStayType(sld);
@@ -822,7 +824,7 @@ void Memento_OnUpdeck()
 		sld = GetCharacter(NPC_GenerateCharacter("Memento_Sailor_6", "citiz_12", "man", "man", 5, PIRATE, -1, false, "pirate"));
 		sld.name = StringFromKey("Memento_5");
 		sld.lastname = "";
-		sld.Unpushable = "";
+        MakeUnpushable(sld, true);
 		ChangeCharacterAddressGroup(sld, "Deck_Near_Ship", "quest", "quest2");
 		LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "tutorial_4", "", -1.0);

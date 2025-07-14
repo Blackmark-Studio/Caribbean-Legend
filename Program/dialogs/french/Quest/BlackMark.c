@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsFirstJungle_3":
-			dialog.text = "Pourquoi prends-tu si mal ma demande ? Je ne demande pas des foutues perles, juste une cartouche. J'ai même attendu que nous soyons dans la jungle pour ne pas te distraire des affaires en ville. Alors, t'as une cartouche ?";
+			dialog.text = "Pourquoi prends-tu si mal ma demande ? Je ne demande pas des foutues perles, juste une cartouche. J’ai même attendu le bon moment pour ne pas te détourner de tes affaires et ne pas me fourrer dans les jambes comme un espèce de fou, héhé. Alors... t’as une cartouche ?";
 			if (CheckCharacterItem(PChar, "cartridge"))
 			{
 				link.l1 = "Ouais, j'ai un tour. Tiens. Ne me fais pas une mauvaise blague avec cette balle. Compris, Tommy ?";

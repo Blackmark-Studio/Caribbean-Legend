@@ -401,7 +401,6 @@ void GetFireCameraBort(ref sBort, ref fAng)
 		return;
 	}
 	sBort = "b";
-	return;
 }
 
 #event_handler("GetCurBort", "GetCurBort");

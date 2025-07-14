@@ -253,7 +253,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "kanek_3":
-			dialog.text = "¿Qué?! ¡Recapacita, hijo!";
+			dialog.text = "¿Qué? ¡Recapacita, hijo!";
 			link.l1 = "Este hombre es el hermano de Kukulcán y un gran guerrero. ¡Veo la encarnación del mismo Cavil en él! Nadie, aparte de él, soporta a un dios así. ¡No es un juego de niños en el duelo de dioses, padre! Y si traes ofrendas a Kukulcán, ¡mis guerreros darán su sangre a Cavil!";
 			link.l1.go = "kanek_4";
 		break;

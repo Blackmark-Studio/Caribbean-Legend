@@ -81,6 +81,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Sharlie") && pchar.questTemp.Sharlie == "crew" && npchar.city == "FortFrance")
 			{
 				DelLandQuestMark(npchar);
+				FreeSitLocator("FortFrance_tavern", "sit7");
 				dialog.text = "Haben Sie etwas gewünscht, Monsieur?";
 				Link.l1 = "Hallo Wirt, ich muss eine Crew für mein Schiff anheuern. Kannst du mir dabei helfen?";
 				Link.l1.go = "Sharlie_crew";
@@ -1109,6 +1110,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_day":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "Das Zimmer steht Ihnen zur Verfügung, Kapitän. Absolut kostenlos.";
+				link.l1 = "Danke, mein Freund.";
+				link.l1.go = "room_day_wait";
+				link.l3 = "Nicht jetzt. Lass uns über etwas anderes sprechen.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "Das wird Sie 5 Achtel kosten.";
 			if (makeint(pchar.money) >= 5)
 			{
@@ -1125,6 +1135,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_day_next":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "Das Zimmer steht Ihnen zur Verfügung, Kapitän. Absolut kostenlos.";
+				link.l1 = "Danke, mein Freund.";
+				link.l1.go = "room_day_wait_next";
+				link.l3 = "Nicht jetzt. Lass uns über etwas anderes sprechen.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "Das kostet dich 10 Achtelstücke.";
 			if (makeint(pchar.money) >= 10)
 			{
@@ -1141,6 +1160,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_night":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "Das Zimmer steht Ihnen zur Verfügung, Kapitän. Absolut kostenlos.";
+				link.l1 = "Danke, mein Freund.";
+				link.l1.go = "room_night_wait";
+				link.l3 = "Nicht jetzt. Lass uns über etwas anderes sprechen.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "Das wird Sie 5 Achtelstücke kosten.";
 			if (makeint(pchar.money) >= 5)
 			{

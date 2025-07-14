@@ -97,6 +97,11 @@ void ProcessDialogEvent()
 		SetCompanionIndex(pchar, -1, iChar);
 		DelBakSkill(compref);
 		DeleteAttribute(chref, "ShipInStockMan");
+		if(CheckAttribute(chref, "DontNullShip"))
+		{
+			DeleteAttribute(chref, "DontNullShip");
+			DeleteAttribute(NPChar, "DontNullShipBeliz");
+		}
 		chref.id = "ShipInStockMan";//сбрасываем индекс к стандартному, чтобы этот номер массива в следующий раз можно было занять
 		DeleteAttribute(chref,"ship");//затираем данные корабля у сторожа
 		chref.ship = "";
@@ -105,6 +110,7 @@ void ProcessDialogEvent()
 		NPChar.Portman	= sti(NPChar.Portman) - 1;
 		pchar.ShipInStock = sti(pchar.ShipInStock) - 1;
 		Dialog.CurrentNode = "exit";//закрываем диалог, ещё одно подтверждение уже не справшиваем
+		
 	}
 	
 	if(HasSubStr(attrL, "ShipStockMan11_"))
@@ -3380,7 +3386,7 @@ void ProcessDialogEvent()
 */
 		case "ShipStock_2":
             chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-			if (CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && npchar.id == "Beliz_portman")	// В Белизе скидка 50%
+			if (CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && npchar.id == "Beliz_portman" && !CheckAttribute(npchar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)	// В Белизе скидка 50%
 			{
 				NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref)/2;
 			}
@@ -3415,43 +3421,43 @@ void ProcessDialogEvent()
 			if (sti(NPChar.StoreWithOff))
 			{
 				AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForShip));
-			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-			chref.ShipInStockMan = NPChar.id;
-			// Warship 22.03.09 fix Не перенеслось с КВЛ 1.2.3
-			chref.ShipInStockMan.MoneyForShip = NPChar.MoneyForShip;
-			chref.ShipInStockMan.AltDate = GetQuestBookDataDigit(); // для печати
-			SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date"); // для расчёта
-			chref.Ship.Crew.Quantity  = 0;
-			RemoveCharacterCompanion(pchar, chref);
+				chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+				chref.ShipInStockMan = NPChar.id;
+				// Warship 22.03.09 fix Не перенеслось с КВЛ 1.2.3
+				chref.ShipInStockMan.MoneyForShip = NPChar.MoneyForShip;
+				chref.ShipInStockMan.AltDate = GetQuestBookDataDigit(); // для печати
+				SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date"); // для расчёта
+				chref.Ship.Crew.Quantity  = 0;
+				RemoveCharacterCompanion(pchar, chref);
 			}
 			else
 			{
 				AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForShip));
-			chref = GetCharacter(NPC_GenerateCharacter("ShipInStockMan_", "citiz_"+(rand(9)+31), "man", "man", 1, NPChar.nation, -1, false, "quest"));
-			chref.id = "ShipInStockMan_" + chref.index; //меняем ID на оригинальный
-			chref.loyality = MAX_LOYALITY; 
-			chref.name = "";
-			chref.lastname = "";
-			 chref.Ship.Crew.Quantity  = 0;
-			DeleteAttribute(chref,"ship");
-			chref.ship = "";
-			
-			chref.ShipInStockMan = NPChar.id;
-			chref.ShipInStockMan.MoneyForShip = NPChar.MoneyForShip;
-			chref.ShipInStockMan.AltDate = GetQuestBookDataDigit(); // для печати
-			SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date"); // для расчёта
-			//  chref.Ship.Crew.Quantity  = 0;
-			compref = GetCharacter(sti(NPChar.ShipToStoreIdx));//компаньон, у которого надо забрать корабль
-			compref.Ship.Crew.Quantity  = 0;
-            RemoveCharacterCompanion(pchar, compref);
-			makearef(arTo, chref.ship);
-			makearef(arFrom, compref.Ship);
-			CopyAttributes(arTo, arFrom);
+				chref = GetCharacter(NPC_GenerateCharacter("ShipInStockMan_", "citiz_"+(rand(9)+31), "man", "man", 1, NPChar.nation, -1, false, "quest"));
+				chref.id = "ShipInStockMan_" + chref.index; //меняем ID на оригинальный
+				chref.loyality = MAX_LOYALITY; 
+				chref.name = "";
+				chref.lastname = "";
+				chref.Ship.Crew.Quantity  = 0;
+				DeleteAttribute(chref,"ship");
+				chref.ship = "";
+				
+				chref.ShipInStockMan = NPChar.id;
+				chref.ShipInStockMan.MoneyForShip = NPChar.MoneyForShip;
+				chref.ShipInStockMan.AltDate = GetQuestBookDataDigit(); // для печати
+				SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date"); // для расчёта
+				//  chref.Ship.Crew.Quantity  = 0;
+				compref = GetCharacter(sti(NPChar.ShipToStoreIdx));//компаньон, у которого надо забрать корабль
+				compref.Ship.Crew.Quantity  = 0;
+				RemoveCharacterCompanion(pchar, compref);
+				makearef(arTo, chref.ship);
+				makearef(arFrom, compref.Ship);
+				CopyAttributes(arTo, arFrom);
 
-			compref.ship.type = SHIP_NOTUSED;
-			RemoveCharacterCompanion(pchar, compref);
-			AddPassenger(pchar, compref, false);
-			DelBakSkill(compref);
+				compref.ship.type = SHIP_NOTUSED;
+				RemoveCharacterCompanion(pchar, compref);
+				AddPassenger(pchar, compref, false);
+				DelBakSkill(compref);
 			}
 
 			chref.location = "";
@@ -3459,6 +3465,11 @@ void ProcessDialogEvent()
 			chref.location.locator = "";
 			NPChar.Portman	= sti(NPChar.Portman) + 1;
 			pchar.ShipInStock = sti(pchar.ShipInStock) + 1;
+			if(NPChar.id == "Beliz_portman" && CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && !CheckAttribute(NPChar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)
+			{
+				chref.DontNullShip = true;
+				NPChar.DontNullShipBeliz = true;
+			}
 
 			dialog.text = "Хорошо. Заберёте, когда будет нужно.";
 			Link.l1 = "Спасибо.";
@@ -3545,27 +3556,32 @@ void ProcessDialogEvent()
 		case "ShipStockManBack2": // hasert новый кейс для сторожа.
 			if (sti(NPChar.StoreWithOff))
 			{   
-			NextDiag.CurrentNode = NextDiag.TempNode;
-			DialogExit();
+				NextDiag.CurrentNode = NextDiag.TempNode;
+				DialogExit();
 
-			AddMoneyToCharacter(Pchar, -sti(NPChar.MoneyForShip));
-			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-			DeleteAttribute(chref, "ShipInStockMan");
-			SetCompanionIndex(pchar, -1, sti(NPChar.ShipToStoreIdx));
+				AddMoneyToCharacter(Pchar, -sti(NPChar.MoneyForShip));
+				chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+				DeleteAttribute(chref, "ShipInStockMan");
+				if(CheckAttribute(chref, "DontNullShip"))
+				{
+					DeleteAttribute(chref, "DontNullShip");
+					DeleteAttribute(NPChar, "DontNullShipBeliz");
+				}
+				SetCompanionIndex(pchar, -1, sti(NPChar.ShipToStoreIdx));
 
-			NPChar.Portman	= sti(NPChar.Portman) - 1;
-			pchar.ShipInStock = sti(pchar.ShipInStock) - 1;
+				NPChar.Portman	= sti(NPChar.Portman) - 1;
+				pchar.ShipInStock = sti(pchar.ShipInStock) - 1;
 			}
 			else
 			{   
-			dialog.Text = "Кому из ваших офицеров передать его?";
-			int _curCharIdx;
-			int q = 0;
-			int nListSize = GetPassengersQuantity(pchar);
-			for(i=0; i<nListSize; i++)
+				dialog.Text = "Кому из ваших офицеров передать его?";
+				int _curCharIdx;
+				int q = 0;
+				int nListSize = GetPassengersQuantity(pchar);
+				for(i=0; i<nListSize; i++)
 				{
-				_curCharIdx = GetPassenger(pchar,i);
-				sld = GetCharacter(_curCharIdx);
+					_curCharIdx = GetPassenger(pchar,i);
+					sld = GetCharacter(_curCharIdx);
 					if (_curCharIdx!=-1)
 					{
 						ok = CheckAttribute(&characters[_curCharIdx], "prisoned") && sti(characters[_curCharIdx].prisoned) == true;

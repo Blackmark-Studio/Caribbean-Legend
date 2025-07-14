@@ -1021,7 +1021,7 @@ void CreateCitizens(aref loc)
 			chr.CityType = sType;
 			chr.chr_ai.hp_max = 1;
 			chr.chr_ai.hp = 1;
-            chr.Unpushable = "";
+            MakeUnpushable(chr, true);
 			ChangeCharacterAddressGroup(chr, loc.id, "fisher", "fisher"+i);
 			LAi_SetLoginTime(chr, 6.0, 15.99);
 			LAi_SetFisherSitType(chr);
@@ -1049,7 +1049,7 @@ void CreateCitizens(aref loc)
 			chr.CityType = sType;
 			chr.chr_ai.hp_max = 1;
 			chr.chr_ai.hp = 1;
-            chr.Unpushable = "";
+            MakeUnpushable(chr, true);
 			ChangeCharacterAddressGroup(chr, loc.id, "fisherstay", "fisherstay"+i);
 			LAi_SetLoginTime(chr, 6.0, 15.99);
 			LAi_SetFisherStayType(chr);
@@ -1135,7 +1135,7 @@ void CreateCitizens(aref loc)
 				chr.CityType = "citizen";
 				chr.chr_ai.hp_max = 1;
 				chr.chr_ai.hp = 1;
-                chr.Unpushable = "";
+                MakeUnpushable(chr, true);
 				if(HasSubStr(chr.model, "drinker"))
 				{
 					LAi_SetDrinkerSitBenchType(chr);
@@ -1170,7 +1170,7 @@ void CreateCitizens(aref loc)
 			chr.CityType = sType;
 			chr.chr_ai.hp_max = 1;
 			chr.chr_ai.hp = 1;
-            chr.Unpushable = "";
+            MakeUnpushable(chr, true);
 			LAi_SetLoginTime(chr, 10.0, 17.99);
 			LAi_SetBlacksmithType(chr);
 			ChangeCharacterAddressGroup(chr, loc.id, "blacksmith", "blacksmith"+i);
@@ -1207,7 +1207,7 @@ void CreateCitizens(aref loc)
 				LAi_SetLoginTime(chr, 18.29, 23.99);
 				chr.chr_ai.hp_max = 1;
 				chr.chr_ai.hp = 1;
-                chr.Unpushable = "";
+                MakeUnpushable(chr, true);
 				LAi_SetDrinkerSitType(chr);
 				ChangeCharacterAddressGroup(chr, loc.id, "drinkersit", "drinkersit"+i);
 				if (sti(Colonies[iColony].HeroOwn) == true) LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
@@ -1243,7 +1243,7 @@ void CreateCitizens(aref loc)
 				LAi_SetLoginTime(chr, 18.29, 23.99);
 				chr.chr_ai.hp_max = 1;
 				chr.chr_ai.hp = 1;
-                chr.Unpushable = "";
+                MakeUnpushable(chr, true);
 				LAi_SetDrinkerStayType(chr);
 				ChangeCharacterAddressGroup(chr, loc.id, "drinkerstay", "drinkerstay"+i);
 				if (sti(Colonies[iColony].HeroOwn) == true) LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
@@ -2017,7 +2017,7 @@ void CreateHabitues(aref loc)
 					RemoveAllCharacterItems(chr, true);
 					chr.chr_ai.hp_max = 1;
 					chr.chr_ai.hp = 1;
-                    chr.Unpushable = "";
+                    MakeUnpushable(chr, true);
 					ChangeCharacterAddressGroup(chr, loc.id, "band", "band"+i);
 					if (sti(Colonies[iColony].HeroOwn) == true) LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
 					else LAi_group_MoveCharacter(chr, slai_group);
@@ -4044,7 +4044,7 @@ void CreatIslaMonaNPC(ref loc)
 					chr.CityType = "sailor";
 					chr.chr_ai.hp_max = 1;
 					chr.chr_ai.hp = 1;
-                    chr.Unpushable = "";
+                    MakeUnpushable(chr, true);
 					ChangeCharacterAddressGroup(chr, loc.id, "blacksmith", "blacksmith"+i);
 					LAi_SetLoginTime(chr, 6.0, 21.99);
 					LAi_SetBlacksmithType(chr);
@@ -4128,7 +4128,7 @@ void CreatIslaMonaNPC(ref loc)
 					chr.CityType = "sailor";
 					chr.chr_ai.hp_max = 1;
 					chr.chr_ai.hp = 1;
-                    chr.Unpushable = "";
+                    MakeUnpushable(chr, true);
 					ChangeCharacterAddressGroup(chr, loc.id, "fisher", "fisher"+i);
 					LAi_SetLoginTime(chr, 6.0, 21.99);
 					LAi_SetFisherSitType(chr);
@@ -4156,7 +4156,7 @@ void CreatIslaMonaNPC(ref loc)
 					chr.CityType = "sailor";
 					chr.chr_ai.hp_max = 1;
 					chr.chr_ai.hp = 1;
-                    chr.Unpushable = "";
+                    MakeUnpushable(chr, true);
 					ChangeCharacterAddressGroup(chr, loc.id, "fisherstay", "fisherstay"+i);
 					LAi_SetLoginTime(chr, 6.0, 21.99);
 					LAi_SetFisherStayType(chr);

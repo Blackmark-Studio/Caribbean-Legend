@@ -653,10 +653,10 @@ itmdescr_m8_barrel
 La culata y el cañón de un rifle de cuatro cañones desmontado.
 }
 
-itmname_mushket9 {Vieja arcabuz}
+itmname_mushket9 {Viejo arcabuz}
 itmdescr_mushket9
 {
-Starożytna, ale niezawodna arkebuz. Jeśli wierzyć opowieściom, sam Kortez używał jej do zasypywania dżungli kartaczami, wzbudzając przerażenie wśród tubylców.
+Un arcabuz antiguo, pero fiable. Según cuentan, el mismísimo Cortés lo utilizó para sembrar la selva de metralla, sembrando el terror entre los nativos.
 }
 
 UpgradeStageInfo_mushket9_1 
@@ -712,7 +712,7 @@ Esta hermosa versión de la carabina de carga lateral es el arma que se usa trad
 itmname_howdah {Howdah}
 itmdescr_howdah
 {
-Es una pistola de doble cañón y gran calibre, la mejor compañera del cazador en la selva y la jungla. Dispara con fiabilidad a jabalíes, tigres y nativos agresivos. Utiliza pólvora y bolas de plomo para disparar y requiere de la habilidad 'Pistolero'.
+Es una pistola de doble cañón y gran calibre, la mejor compañera del cazador en la selva y la jungla. Está cargado con postas y clavos triturados. Utiliza pólvora y bolas de plomo para disparar y requiere de la habilidad 'Pistolero'.
 } 
 
 ; ==================================================================================================================== ДОСПЕХИ
@@ -1517,7 +1517,7 @@ Desaparece en 70 días o al desequipar.
 itmname_amulet_3 {Amuleto 'Crucifijo'}
 itmdescr_amulet_3
 {
-Una cruz católica consagrada reduce el daño crítico infligido por los enemigos en un 15%.
+Una cruz católica consagrada reduce en un 15 % el daño crítico infligido por los enemigos con armas blancas.
 El poder del ataque fuerte del personaje se reduce en un 10%.
 Se activa una vez, por cualquier personaje.
 Desaparece después de 70 días o al ser eliminado.

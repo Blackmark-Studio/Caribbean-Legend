@@ -1072,6 +1072,15 @@ Holy Mercy has an experienced and loyal crew, personally selected by Alamida. Ea
 Lady Beth is a true beauty. A miracle of England's maritime genius, commanded by Albert Blackwood, former officer of the royal navy. Indeed, not everyone manages to desert so spectacularly! He left service, killed a brilliant career, and stole a warship - all for treasure hunting!
 And not in vain. He's already found enough to buy half of Barbados, but he still wants more. If you meet him at sea - don't even try to intercept him. Too good a ship, and the captain is experienced and cautious. Lately, Blackwood has been frequenting Cayman - digging day and night, working people to death. If you decide to check it out - take no less than sixty men and good firearms... Actually, even that might not be enough.
 I hope you know how to shoot, since a company of former marine infantry of Colonel Fox deserted with him. Professionals, nothing like common cutthroats. And never attack him in French ports - he has protection and patrons there, receiving a share of his findings.
+#TEXT	3
+"Memento"
+***********************
+The 'Memento' — a true pirate legend. A black brig captained by Mortimer Grim.
+Grim preys exclusively on slavers. They say he frees the slaves and buys out the condemned with hard gold. A noble cause — if you don’t know the rest. 
+If you’re not hauling human cargo, Grim won’t touch you. He’s odd, but he’s got his principles. But if you’ve got slaves in your hold... pray you don’t spot black sails on the horizon. 
+The 'Memento' sails between pirate havens but rarely docks. The crew lives on board for months, as if afraid to set foot on solid ground. Rumor has it the ship once survived a monstrous epidemic — that’s why the crew is so hard to kill.
+If you plan to take them on, pack more cannons. Boarding the 'Memento' is near impossible — the crew fights like they’re possessed, like they don’t fear death. Only way to beat them is to blast the ship to splinters and take away their shelter. Splinters don’t scare them, but direct grapeshot hits — that’s another matter.
+Good luck. And remember death.
 
 #QUEST StoriesTreasures
 Treasure Tales

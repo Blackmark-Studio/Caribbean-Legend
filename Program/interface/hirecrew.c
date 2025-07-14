@@ -544,7 +544,7 @@ void ShowInfoWindow()
 		case "TABLE_EFFECTS":
 			sHeader = XI_Convertstring("HireEffects");
 			sText1 = XI_Convertstring("HireEffects_descr");
-			if(CheckAttribute(GameInterface, CurTable + "." + CurRow + "." + CurCol + ".effectID"))
+			if(CheckAttribute(&GameInterface, CurTable + "." + CurRow + "." + CurCol + ".effectID"))
 			{
 				sText = "E" + GameInterface.(CurTable).(CurRow).(CurCol).effectID;
 				sHeader = XI_Convertstring(sText);

@@ -707,6 +707,7 @@ ref LAi_CreateFantomCharacterEx(string model, string ani, string group, string l
 	if(SendMessage(chr, "lss", MSG_CHARACTER_ENTRY_TO_LOCATION, group, locator) == false)
 	{
 		Trace("LAi_CreateFantomCharacter -> can't teleportation character to <" + group + "::" + locator + ">");
+		Log_TestInfo("NPC: Error teleportation on locator: <" + group + "::" + locator + ">");
 	}
 	return chr;
 }

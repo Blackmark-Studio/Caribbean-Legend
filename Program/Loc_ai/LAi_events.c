@@ -767,51 +767,6 @@ void LAi_TieItemToCharacter(aref chr, int nItemIndex)
 	SendMessage(chr, "lslss", MSG_CHARACTER_EX_MSG, "TieItem", nItemIndex, sModel, sLocator);
 }
 
-/*
-#event_handler("Location_CharacterFireShard","Location_CharacterFireShard");
-void Location_CharacterFireShard()
-{
-	aref attack = GetEventData();
-	aref enemy = GetEventData();
-	float kDist = GetEventData();
-	float fAimingTime = GetEventData();
-	int isHeadShot = GetEventData();
-
-	string sType;
-	if(!CharUseMusket(attack))
-		sType = "gun";
-	else
-		sType = "musket";
-
-	if(CheckAttribute(attack, "chr_ai."+sType+".stun" ) && sti(attack.chr_ai.(sType).stun) > 0 && !LAi_IsFightMode(enemy) && !IsMainCharacter(enemy))
-	{
-		if(CheckAttribute(enemy, "cirassId"))
-		{
-			if(sti(attack.chr_ai.(sType).Stun_C) > 0) 
-			{
-				LAi_Stunned_StunCharacter(enemy, 10, true);
-			}
-		}
-		else
-		{		
-			if(sti(attack.chr_ai.(sType).Stun_NC) > 0) 
-			{
-				LAi_Stunned_StunCharacter(enemy, 10, true);
-			}
-		}		
-	}
-	
-	LAi_group_Attack(attack, enemy);
-	LAi_ApplyCharacterFireDamage(attack, enemy, 1.0, fAimingTime, isHeadShot);
-	if(stf(enemy.chr_ai.hp) < 1.0 && enemy.chr_ai.group == LAI_GROUP_PLAYER) 
-		enemy.chr_ai.hp = 5;
-	LAi_CheckKillCharacter(enemy);
-	
-	string sIdx = enemy.index;
-	string sAttr = "t" + sIdx;
-	attack.chr_ai.grapeshot_target.(sAttr) = sIdx;
-}*/
-
 #event_handler("Location_CharacterFireShards","Location_CharacterFireShards");
 void Location_CharacterFireShards()
 {

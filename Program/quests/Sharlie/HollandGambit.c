@@ -62,6 +62,7 @@ void Create_BaltazarOver(string qName)//не пошли на стрелку - ж
 void Baltazar_ConvoyOver(string qName)//опоздали
 {
 	pchar.quest.BaltazarConvoy_fail.over = "yes";//снять прерывание
+	pchar.quest.BaltazarConvoy_complete.over = "yes";//снять прерывание
 	AddQuestRecord("Holl_Gambit", "1-4");
 	CloseQuestHeader("Holl_Gambit");
 	sld = characterFromId("Baltazar");
@@ -75,6 +76,7 @@ void Baltazar_ConvoyOver(string qName)//опоздали
 void Baltazar_fail(string qName)//утонул Бальтазар
 {
 	pchar.quest.Baltazar_ConvoyOver.over = "yes";//снять прерывание
+	pchar.quest.BaltazarConvoy_complete.over = "yes";//снять прерывание
 	if (CheckAttribute(pchar, "questTemp.HWIC.Holl.BaltazarAttack")) pchar.quest.BaltazarConvoy_Attack.over = "yes";//снять прерывание, если не было атаки
 	AddQuestRecord("Holl_Gambit", "1-5");
 	CloseQuestHeader("Holl_Gambit");
@@ -893,6 +895,10 @@ void DeleteJoakimFromRoom(string qName)//закрыть комнату Жоак�
 //-------------------------------------------5 задание-----------------------------------------------------
 void GollandGambit_5_ZadanieStart(string qName)//Квестовая марка
 {
+	pchar.quest.Merdok_prepare.win_condition.l1 = "location";
+	pchar.quest.Merdok_prepare.win_condition.l1.location = "Villemstad_town";
+	pchar.quest.Merdok_prepare.function = "GiveTaskMerdok";
+	
 	AddLandQuestMark(characterFromId("Lucas"), "questmarkmain");
 	AddMapQuestMarkCity("Villemstad", false);
 }
@@ -907,9 +913,8 @@ void GiveTaskMerdok(string qName)//посыльный на последнее з
     sld.Dialog.Filename = "Quest\HollandGambit\OtherNPC.c";
 	sld.dialog.currentnode = "HollQuest_Officer";
     FantomMakeCoolFighter(sld, 20, 20, 20, "blade_12", "pistol3", "grapeshot", 50);
-	GetCharacterPos(pchar, &locx, &locy, &locz);
+	ChangeCharacterAddressGroup(sld, "Villemstad_town", "goto", LAi_FindNearestLocator2Pchar("goto"));
 	LAi_SetActorType(sld);
-	ChangeCharacterAddressGroup(sld, "Villemstad_town", "goto", LAi_FindNearestFreeLocator("goto", locx, locy, locz));
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 }
 

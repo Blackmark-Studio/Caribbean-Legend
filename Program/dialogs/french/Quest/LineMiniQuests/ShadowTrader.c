@@ -174,7 +174,7 @@ void ProcessDialogEvent()
 			LAi_SetImmortal(npchar, false);
 			LAi_SetActorType(pchar);
 			//  belamour legendary edition если не надет пистоль или мушкет, то выдадим строевой -->
-			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE) || !CheckAttribute(pchar,"equip."+MUSKET_ITEM_TYPE))
+			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
 			{
 				GiveItem2Character(pchar, "pistol1");
 				EquipCharacterbyItem(pchar, "pistol1");

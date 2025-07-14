@@ -265,7 +265,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_7":
-			dialog.text = "C’è una piccola isola a sud della Guadalupa. Capo Inaccessibile. Sbarca Longway laggiù e consegnagli l’arma. Solo allora Longway ti rivelerà tutto ciò che sa su Lucas Rodenburg.";
+			dialog.text = "C’è una piccola isola Marie Galante a sud della Guadalupa. Capo Inaccessibile. Sbarca Longway laggiù e consegnagli l’arma. Solo allora Longway ti rivelerà tutto ciò che sa su Lucas Rodenburg.";
 			link.l1 = "Non sei in condizione di mercanteggiare con me, cinese.";
 			link.l1.go = "Longway_prisoner_8";			
 		break;
@@ -324,7 +324,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_0":
-			dialog.text = "Siamo approdati a Guadalupa, chuanzhang?";
+			dialog.text = "Siamo approdati a Marie Galante, chuanzhang?";
 			link.l1 = "Calma i bollori, tra poco ci arriviamo.";
 			link.l1.go = "exit";
 			NextDiag.Tempnode = "Longway_prisoner_0";

@@ -649,8 +649,6 @@ String GenerateItem(String _itemId)
 		break;
 	}
 	
-	SetBladeWeightAttack(realItem);
-	
 	switch (realItem.FencingType) 
 	{
 		case "FencingL" :
@@ -1531,7 +1529,6 @@ void addBonusToBlade(aref _attack, aref _enemy)
             if(stf(Blade.KillerBonus.RangeBonus) > 15.0)
                 Blade.KillerBonus.RangeBonus = 15.0;
 			Blade.Attack = stf(Blade.KillerBonus.DefAttack) + stf(Blade.KillerBonus.Attack);
-			SetBladeWeightAttack(Blade);
 		}
 	}
 }

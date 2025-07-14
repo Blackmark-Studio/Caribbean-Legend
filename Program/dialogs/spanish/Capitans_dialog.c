@@ -1252,7 +1252,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Stivesant_7":
-		dialog.text = "Hm... Eso parece probable. Nadie, excepto Rodenburg, sabía o podría saber sobre mi horario y ruta. ¡Maldición! ¡Es traición! ¿Dónde está Longway?!";
+		dialog.text = "Hm... Eso parece probable. Nadie, excepto Rodenburg, sabía o podría saber sobre mi horario y ruta. ¡Maldición! ¡Es traición! ¡¿Dónde está Longway?!";
 		link.l1 = "Lo liberé a cambio de su confesión voluntaria. Debo decir, no estaba demasiado ansioso por llevar a cabo la orden de Rodenburg, pero tampoco podía ignorarla. También dijo que no volvería a servir a Rodenburg, este último sucio asunto hizo que su copa se desbordara.";
 		link.l1.go = "Stivesant_8";
 		break;

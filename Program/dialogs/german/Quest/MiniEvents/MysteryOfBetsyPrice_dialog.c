@@ -249,12 +249,15 @@ void ProcessDialogEvent()
 
 		case "BetsiPrice_11":
 			dialog.text = "Da sind wir also. Weißt du, ich habe dich gar nicht gefragt, was dich in dieses Haus geführt hat?";
-			link.l1 = "Ich bin dort nicht zufällig gelandet. Der Wirt war ziemlich besorgt über dein Verschwinden und bat mich, nach dir zu sehen. Wie hätte ich ablehnen können? Eine Dame in Not zurückzulassen – das wäre eines Kapitäns unwürdig.";
-			link.l1.go = "BetsiPrice_12";
 			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulonOtdatBetsy") && pchar.questTemp.TBP_BuyKulonOtdatBetsy == true)
             {
 			link.l2 = "Ich bin dort nicht zufällig gelandet. Dieser Anhänger hat mich dorthin geführt. Nimm ihn.​ Der Wirt war ziemlich besorgt über dein Verschwinden und bat mich, nach dir zu sehen. Wie hätte ich ablehnen können? Eine Dame in Not zurückzulassen – das wäre eines Kapitäns unwürdig.​";
 			link.l2.go = "BetsiPrice_12_otdal_kulon";
+			}
+			else
+			{
+			link.l1 = "Ich bin dort nicht zufällig gelandet. Der Wirt war ziemlich besorgt über dein Verschwinden und bat mich, nach dir zu sehen. Wie hätte ich ablehnen können? Eine Dame in Not zurückzulassen – das wäre eines Kapitäns unwürdig.";
+			link.l1.go = "BetsiPrice_12";
 			}
 		break;
 

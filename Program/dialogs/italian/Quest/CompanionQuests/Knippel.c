@@ -1225,71 +1225,8 @@ void ProcessDialogEvent()
 		case "DTSG_Killer_4":
 			dialog.text = "Non posso. Il dovere chiama e, a differenza tua, io sono uomo di fatti, non di chiacchiere.";
 			link.l1 = "Per l’amor di Dio, qualcuno si deciderà mai a spiegarmi che diavolo sta succedendo?!";
-			link.l1.go = "DTSG_Killer_5";
-		break;
-		
-		case "DTSG_Killer_5":
-			DialogExit();
-			LAi_SetFightMode(pchar, true);
-			
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			LAi_SetImmortal(npchar, false);
-			
-			for (i=1; i<=12; i++)
-			{
-				if (GetCharacterIndex("SentJonsPrisoner_"+i) != -1)
-				{
-					sld = CharacterFromID("SentJonsPrisoner_"+i);
-					sld.lifeday = 0;
-					ChangeCharacterAddressGroup(sld, "none", "", "");
-				}
-			}
-			
-			for (i = 0; i < MAX_CHARACTERS; i++)
-			{
-				sld = GetCharacter(i);
-				if (sld.city == "sentjons" && sld.location == "SentJons_prison")
-				{
-					sld.lifeday = 0;
-					ChangeCharacterAddressGroup(sld, "none", "", "");
-				}
-			}
-			
-			sld = CharacterFromID("SentJonsJailOff");
-			sld.lifeday = 0;
-			ChangeCharacterAddressGroup(sld, "none", "", "");
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_SentJonsJailOff", "off_eng_1", "man", "man", 30, PIRATE, 0, true, "soldier"));
-			ChangeCharacterAddressGroup(sld, "SentJons_prison", "goto", "goto18");
-			LAi_SetWarriorType(sld);
-			LAi_group_MoveCharacter(sld, "EnemyFight");
-			sld.rank = 30;
-			SetSelfSkill(sld, 80, 80, 80, 80, 80);
-			LAi_SetHP(sld, 200+MOD_SKILL_ENEMY_RATE*20, 200+MOD_SKILL_ENEMY_RATE*20);
-			
-			for (i=1; i<=3; i++)
-			{
-				sld = GetCharacter(NPC_GenerateCharacter("DTSG_AntiguaSoldTurma_"+i, "sold_eng_"+(rand(7)+1), "man", "man", sti(pchar.rank), PIRATE, 0, true, "soldier"));
-				ChangeCharacterAddressGroup(sld, "SentJons_prison", "goto", "goto22");
-				LAi_SetWarriorType(sld);
-				LAi_group_MoveCharacter(sld, "EnemyFight");
-			}
-			
-			for (i=4; i<=7; i++)
-			{
-				sld = GetCharacter(NPC_GenerateCharacter("DTSG_AntiguaSoldTurma_"+i, "sold_eng_"+(rand(7)+1), "man", "man", sti(pchar.rank), PIRATE, 0, true, "soldier"));
-				ChangeCharacterAddressGroup(sld, "SentJons_prison", "reload", "reload1");
-				LAi_SetWarriorType(sld);
-				LAi_group_MoveCharacter(sld, "EnemyFight");
-			}
-			
-			/*sld = CharacterFromID("SentJons_Mayor");
-			LAi_group_Attack(sld, Pchar);*/
-			
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
-			LAi_group_SetCheck("EnemyFight", "DTSG_TurmaDayPobeda");
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("DTSG_Killer_5");
 		break;
 		
 		case "DTSG_KnippelDaySpasen":
@@ -1647,31 +1584,8 @@ void ProcessDialogEvent()
 		case "DTSG_Kurier_2":
 			dialog.text = "Non lo so. Dice che vuole parlarne direttamente con te. Sono affari vostri, sistematevela tra di voi.";
 			link.l1 = "Oh, ho un brutto presentimento su questa faccenda...";
-			link.l1.go = "DTSG_Kurier_3";
-		break;
-		
-		case "DTSG_Kurier_3":
-			DialogExit();
-			
-			locCameraSleep(true);
-			LAi_SetActorType(npchar);
-			LAi_ActorGoToLocation(npchar, "reload", "reload1", "", "", "", "DTSG_KD1", -1);
-			npchar.lifeday = 0;
-			npchar.location = "None";
-			
-			/*PChar.quest.DTSG_KD1.win_condition.l1 = "locator";
-			PChar.quest.DTSG_KD1.win_condition.l1.location = "SentJons_houseH1";
-			PChar.quest.DTSG_KD1.win_condition.l1.locator_group = "reload";
-			PChar.quest.DTSG_KD1.win_condition.l1.locator = "reload1";
-			PChar.quest.DTSG_KD1.win_condition = "DTSG_KD1";
-			
-			PChar.quest.DTSG_KD2.win_condition.l1 = "locator";
-			PChar.quest.DTSG_KD2.win_condition.l1.location = "SentJons_town";
-			PChar.quest.DTSG_KD2.win_condition.l1.locator_group = "reload";
-			PChar.quest.DTSG_KD2.win_condition.l1.locator = "houseSp3";
-			PChar.quest.DTSG_KD2.win_condition = "DTSG_KD2";*/
-			
-			pchar.questTemp.Knippel.Soldiers_1 = true;
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("DTSG_Kurier_3");
 		break;
 		
 		case "DTSG_Cortny":
@@ -1683,31 +1597,8 @@ void ProcessDialogEvent()
 		case "DTSG_Cortny_2":
 			dialog.text = "Buona notte. Lasciami passare.";
 			link.l1 = "Ma certo, procedi pure, chiedo venia, signore.";
-			link.l1.go = "DTSG_Cortny_3";
-		break;
-		
-		case "DTSG_Cortny_3":
-			DialogExit();
-			
-			LAi_SetActorType(npchar);
-			LAi_ActorGoToLocation(npchar, "reload", "reload1", "", "", "", "", -1);
-			npchar.lifeday = 0;
-			npchar.location = "None";
-			
-			/*PChar.quest.DTSG_KD4.win_condition.l1 = "locator";
-			PChar.quest.DTSG_KD4.win_condition.l1.location = "SentJons_houseSP3";
-			PChar.quest.DTSG_KD4.win_condition.l1.locator_group = "reload";
-			PChar.quest.DTSG_KD4.win_condition.l1.locator = "reload2";
-			PChar.quest.DTSG_KD4.win_condition = "DTSG_KD4";*/
-			DoQuestCheckDelay("DTSG_KD3_2", 3.0);
-			locCameraSleep(true);
-			
-			sld = CharacterFromID("Fleetwood");
-			LAi_SetStayType(sld);
-			ChangeCharacterAddressGroup(sld, "SentJons_houseSP3_room", "goto", "goto1");
-			sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
-			sld.dialog.currentnode = "DTSG_Fleetwood";
-			sld.greeting = "";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("DTSG_Cortny_3");
 		break;
 		
 		case "DTSG_Fleetwood":
@@ -1721,7 +1612,6 @@ void ProcessDialogEvent()
 			dialog.text = "Questo non lo posso dire. E non permetterò che nessun orecchio indiscreto ascolti le nostre parole. Non fiatare a nessuno di questo affare, intesi?";
 			link.l1 = "Sì, signore. È successo qualcosa? Vi vedo stranamente preoccupato, non è da voi.";
 			link.l1.go = "DTSG_Fleetwood_3";
-			//locCameraFromToPos(0.77, 1.87, -0.42, true, -1.34, -0.10, -1.35);
 		break;
 		
 		case "DTSG_Fleetwood_3":
@@ -1757,33 +1647,16 @@ void ProcessDialogEvent()
 		case "DTSG_Fleetwood_8":
 			dialog.text = "Lo so. Solo che stavolta la posta in gioco è più alta che mai. Raduna le tue cose e preparati – salpiamo all’alba.";
 			link.l1 = "Aye, signore. Buonanotte, signore.";
-			link.l1.go = "DTSG_Fleetwood_9";
-		break;
-		
-		case "DTSG_Fleetwood_9":
-			DeleteAttribute(pchar,"questTemp.TimeLock");
-			SetCurrentTime(11, 00);
-			RecalculateJumpTable();
-			RefreshWeather();
-			RefreshLandTime();
-			DoQuestReloadToLocation("SentJons_houseH1", "reload", "reload1", "DTSG_KD6");
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("DTSG_Fleetwood_9");
 		break;
 		
 		case "DTSG_Knippel_SamSoboi":
 			dialog.text = "Non ho mai visto Richard così... Era così preoccupato o forse... impaurito?";
 			link.l1 = "Ma perché? Non me l'ha nemmeno confidato. Beh, poco importa. È un gran capitano, saprà certo domare questa fregata e la sua ciurma sfiancata.";
-			link.l1.go = "DTSG_Knippel_SamSoboi_2";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("DTSG_Knippel_SamSoboi_2");
 			DeleteAttribute(pchar, "questTemp.lockedMusic");
-		break;
-		
-		case "DTSG_Knippel_SamSoboi_2":
-			DialogExit();
-			SetLaunchFrameFormParam("August 17th, 1654"+ NewStr() +", SE of Dominica", "Reload_To_Location", 0, 4.0);
-			SetLaunchFrameReloadLocationParam("Ship_deck_Big", "reload", "reload1", "DTSG_ProshloeDominika_2");
-			LaunchFrameForm();
-			DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_1");
-			DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_2");
-			DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_3");
 		break;
 		
 		case "DTSG_Fleetwood_10":
@@ -1801,57 +1674,11 @@ void ProcessDialogEvent()
 		case "DTSG_Fleetwood_12":
 			dialog.text = "Tristemente. Anche a me pesa, Charlie. Ma gli ordini son ordini. Almeno non lo facciamo per spasso. Quindi sbrighiamocela in fretta.";
 			link.l1 = "Sì, signore...";
-			link.l1.go = "DTSG_Fleetwood_13";
-		break;
-		
-		case "DTSG_Fleetwood_13":
-			DialogExit();
-			EndQuestMovie();
-			AddItems(pchar, "potion4", 10);
-			AddItems(pchar, "bullet", 10);
-			AddItems(pchar, "GunPowder", 10);
-			AddItems(pchar, "grapeshot", 10);
-			AddItems(pchar, "cartridge", 10);
-			PlaySound("interface\abordage.wav");
-			PlaySound("interface\abordage.wav");
-			PlaySound("interface\MusketFire1.wav");
-			PlaySound("interface\MusketFire1.wav");
-			
-			SetLaunchFrameFormParam("2 hours later..."+ NewStr() +"Boarding the 'Sussex'", "Reload_To_Location", 0, 4.0);
-			SetLaunchFrameReloadLocationParam("Location_reserve_06", "rld", "aloc14", "DTSG_ProshloeDominika_12");
-			LaunchFrameForm();
-			
-			n = Findlocation("Location_reserve_06");
-			DeleteAttribute(&locations[n], "IslandId");
-			DeleteAttribute(&locations[n], "type");
-			DeleteAttribute(&locations[n], "models");
-			DeleteAttribute(&locations[n], "environment");
-			DeleteAttribute(&locations[n], "Box1");
-			DeleteAttribute(&locations[n], "Box2");
-			DeleteAttribute(&locations[n], "Box3");
-			Locations[n].id.label = "Orlop deck";
-			Locations[n].filespath.models = "locations\decks\oldeck";
-			Locations[n].image = "loading\Boarding_B" + rand(3) + ".tga";
-			//Sound
-			locations[n].type = "deck_fight";
-			//Models
-			//Always
-			Locations[n].models.always.ODeck = "oldeck";
-			Locations[n].models.always.locators = "oldeck_locators";
-
-			//Day
-			Locations[n].models.day.charactersPatch = "oldeck_patch";
-			Locations[n].models.day.fonar = "oldeck_fday";
-			//Night
-			Locations[n].models.night.charactersPatch = "oldeck_patch";
-			Locations[n].models.night.fonar = "oldeck_fnight";
-			//Environment
-			Locations[n].environment.sea = "true";
-			Locations[n].environment.weather = "true";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("DTSG_Fleetwood_13");
 		break;
 		
 		case "DTSG_Graf_Sheffild_1":
-			//StartQuestMovie(true, false, true);
 			dialog.text = "Basta! Sono pronto a consegnare la mia spada e ascoltare le vostre richieste. Ma prima, presentatevi! Chi siete voi e con quale coraggio osate attaccarci?! Questo è tradimento!";
 			link.l1 = "...";
 			link.l1.go = "DTSG_Graf_Sheffild_2";
@@ -1989,64 +1816,8 @@ void ProcessDialogEvent()
 		case "DTSG_Graf_Sheffild_24":
 			dialog.text = "Allora il sangue ricadrà sulle loro mani tanto quanto sulle nostre, se non di più. Che questo ti dia sollievo. L'importante è che le nostre intenzioni erano nobili – eliminare il nemico della patria.\nOra dammi una mano, Charlie, dobbiamo ancora far sembrare che sia stato un attacco olandese.";
 			link.l1 = "Sì, signore...";
-			link.l1.go = "DTSG_Graf_Sheffild_25";
-		break;
-		
-		case "DTSG_Graf_Sheffild_25":
-			DialogExit();
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Kortni", "off_eng_5", "man", "man", 40, ENGLAND, -1, false, "quest"));
-			sld.name = "Thomas";
-			sld.lastname = "Lynch";
-			sld.rank = 40;
-			GiveItem2Character(sld, "blade_16");
-			EquipCharacterByItem(sld, "blade_16");
-			GiveItem2Character(sld, "pistol6");
-			EquipCharacterByItem(sld, "pistol6");
-			SetSelfSkill(sld, 100, 100, 100, 100, 100);
-			LAi_SetHP(sld, 400.0, 400.0);
-			FantomMakeCoolSailor(sld, SHIP_HIMERA, "Сhimera", CANNON_TYPE_CANNON_LBS20, 70, 70, 70);
-			SetCharacterPerk(sld, "Energaiser");
-			SetCharacterPerk(sld, "BasicDefense");
-			SetCharacterPerk(sld, "AdvancedDefense");
-			SetCharacterPerk(sld, "CriticalHit");
-			SetCharacterPerk(sld, "Tireless");
-			SetCharacterPerk(sld, "Gunman");
-			SetCharacterPerk(sld, "GunProfessional");
-			SetCharacterPerk(sld, "Sliding");
-			SetCharacterPerk(sld, "HardHitter");
-			SetCharacterPerk(sld, "SwordplayProfessional");
-			SetCharacterPerk(sld, "ShipSpeedUp");
-			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
-			SetCharacterPerk(sld, "WindCatcher");
-			SetCharacterPerk(sld, "SailsMan");
-			SetCharacterPerk(sld, "Doctor1");
-			SetCharacterPerk(sld, "MusketsShoot");
-			SetCharacterPerk(sld, "LongRangeGrappling");
-			SetCharacterPerk(sld, "HullDamageUp");
-			SetCharacterPerk(sld, "HullDamageUp");
-			SetCharacterPerk(sld, "SailsDamageUp");
-			SetCharacterPerk(sld, "CrewDamageUp");
-			SetCharacterPerk(sld, "CriticalShoot");
-			SetCharacterPerk(sld, "BasicCommerce");
-			SetCharacterPerk(sld, "AdvancedCommerce");
-			sld.Ship.Mode = "war";
-			sld.alwaysEnemy = true;
-			sld.Coastal_Captain = true;
-			sld.AlwaysSandbankManeuver = true;
-			sld.DontRansackCaptain = true;
-			
-			Group_FindOrCreateGroup("DTSG_KortniAttack");
-			Group_SetType("DTSG_KortniAttack", "pirate");
-			Group_AddCharacter("DTSG_KortniAttack", "DTSG_Kortni");
-
-			Group_SetGroupCommander("DTSG_KortniAttack", "DTSG_Kortni");
-			Group_SetTaskAttack("DTSG_KortniAttack", PLAYER_GROUP);
-			Group_SetAddress("DTSG_KortniAttack", "Antigua", "Quest_Ships", "Quest_Ship_10");
-			Group_LockTask("DTSG_KortniAttack");
-			
-			SetLaunchFrameFormParam("Present time", "DTSG_SegodnyaVremya", 0, 4.0);
-			LaunchFrameForm();
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("DTSG_Graf_Sheffild_25");
 		break;
 		
 		case "DTSG_Knippel_101":
@@ -2769,6 +2540,8 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_Kech_2":
 			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
 			{
+				notification("Reputation Check Passed", "None");
+				notification("Trustworthy", "Trustworthy");
 				dialog.text = "Sei davvero un osso duro nelle trattative. Hai almeno un'idea di quanto ci sia costato costruire anche solo uno di questi?";
 				link.l1 = "(Fidato) (Onore) Lo so fin troppo bene, ecco perché te lo chiedo. Hai la mano tra le mie fauci fino al gomito. Puoi anche provare a sparare a questo lupo. Ma ci rimetterai la mano. E non solo quella.";
 			}

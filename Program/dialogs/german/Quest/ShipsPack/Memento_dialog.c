@@ -26,10 +26,11 @@ void ProcessDialogEvent()
 
 		// Диалог с Алонсо после успешного абордажа
 		case "Memento_MortimerGrimDead_Alonso_1":
-			dialog.text = "Käpt’n, der Tag gehört uns. Die Vorhut beendet gerade die Säuberung des unteren Decks. Keine Gefangenen… Ha! Ich sehe, auch Sie haben keine Gnade gezeigt.";
+			dialog.text = "Käpt’n, der Tag gehört uns. Die Vorhut beendet gerade die Säuberung des unteren Decks. Keine Gefangenen... Ha! Ich sehe, auch Sie haben keine Gnade gezeigt.";
 			link.l1 = "Irgendwie habe ich von ihm eine pathetische Rede erwartet. Aber er stürzte sich sofort in den Kampf.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
+			if (sti(pchar.rank) <= 13) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -151,7 +152,7 @@ void ProcessDialogEvent()
 		
 		// Диалог с Алонсо во вторую ночь
 		case "Memento_Dich_EtapTwo_Alonso_2":
-			dialog.text = "Verstehe. Viele aus der Mannschaft schlafen jetzt zusammen – sie haben Angst, allein zu sein. Als ob man auf diesem Schiff überhaupt allein sein könnte…";
+			dialog.text = "Verstehe. Viele aus der Mannschaft schlafen jetzt zusammen – sie haben Angst, allein zu sein. Als ob man auf diesem Schiff überhaupt allein sein könnte...";
 			link.l1 = "Wie du siehst, hat’s bei mir auch nicht geklappt. Was ist passiert?";
 			link.l1.go = "Memento_Dich_EtapTwo_Alonso_3";
 		break;
@@ -735,7 +736,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_MortimerGrim_phantom_26":
-			dialog.text = "Trennt die 'Memento' nicht von ihrem Kapitän. Mortimer… Kapitän Mortimer war ein guter Mensch. Findet ihn auf Dominica. Und das Schiff... das Schiff wird euch annehmen.";
+			dialog.text = "Trennt die 'Memento' nicht von ihrem Kapitän. Mortimer... Kapitän Mortimer war ein guter Mensch. Findet ihn auf Dominica. Und das Schiff... das Schiff wird euch annehmen.";
 			link.l1 = "...";
 			link.l1.go = "Memento_MortimerGrim_phantom_27";
 		break;

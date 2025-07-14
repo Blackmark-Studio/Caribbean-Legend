@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Escucha, chaval, no nos hagas a mí y a mis chicos llamarte para ver si tu espada es tan afilada como tu lengua. Solo desaparece y...";
+				dialog.text = "Escucha, chaval, no nos pidas que comprobemos que está más afilada, tu lengua o tu espada. Solo desaparece y...";
 			}
 			link.l1 = "...";
 			link.l1.go = "exit";
@@ -89,7 +89,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Contra_5":
-			dialog.text = "¿Qué?! ¿Estás seguro?";
+			dialog.text = "¿Qué? ¿Estás seguro?";
 			link.l1 = "...";
 			link.l1.go = "BM_Contra_5_1";
 			CharacterTurnByChr(npchar, CharacterFromID("BM_PatrolZhitel"));
@@ -99,7 +99,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Contra_6":
-			dialog.text = "¿Crees que estoy ciego?! ¡Te digo que, qué...";
+			dialog.text = "¡¿Crees que estoy ciego?! ¡Te digo que, qué...";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			CharacterTurnByChr(npchar, CharacterFromID("BM_PatrolOff"));
@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsFirstJungle_3":
-			dialog.text = "¿Por qué estás tomando tan mal mi petición? No estoy pidiendo malditas perlas, solo un cartucho. Incluso esperé hasta que estuviéramos en la jungla para no distraerte de los asuntos en la ciudad. Entonces, ¿tienes una ronda?";
+			dialog.text = "¿Por qué estás tomando tan mal mi petición? No estoy pidiendo malditas perlas, solo un cartucho. Estuve esperando el momento justo para no distraerte de tus asuntos ni meterme en medio como un loco cualquiera, jeje. Entonces... ¿tienes un cartucho?";
 			if (CheckCharacterItem(PChar, "cartridge"))
 			{
 				link.l1 = "Sí, tengo una ronda. Aquí tienes. Solo no me hagas una broma estúpida con esa bala. ¿Entiendes, Tommy?";

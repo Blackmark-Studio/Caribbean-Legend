@@ -97,6 +97,11 @@ void ProcessDialogEvent()
 		SetCompanionIndex(pchar, -1, iChar);
 		DelBakSkill(compref);
 		DeleteAttribute(chref, "ShipInStockMan");
+		if(CheckAttribute(chref, "DontNullShip"))
+		{
+			DeleteAttribute(chref, "DontNullShip");
+			DeleteAttribute(NPChar, "DontNullShipBeliz");
+		}
 		chref.id = "ShipInStockMan";//сбрасываем индекс к стандартному, чтобы этот номер массива в следующий раз можно было занять
 		DeleteAttribute(chref,"ship");//затираем данные корабля у сторожа
 		chref.ship = "";
@@ -3374,8 +3379,15 @@ void ProcessDialogEvent()
 */		
 		case "ShipStock_2":
             chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-			if (MOD_SKILL_ENEMY_RATE >= 6) NPChar.MoneyForShip = 5*GetPortManPriceExt(NPChar, chref); // для высокой сложности - 5x цена
-			else NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref);
+			if (CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && npchar.id == "Beliz_portman" && !CheckAttribute(npchar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)	// В Белизе скидка 50%
+			{
+				NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref)/2;
+			}
+			else
+			{
+				if (MOD_SKILL_ENEMY_RATE >= 6) NPChar.MoneyForShip = MOD_SKILL_ENEMY_RATE/2*GetPortManPriceExt(NPChar, chref); // для высокой сложности - 5x цена
+				else NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref);
+			}
 			dialog.Text = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "', class " + RealShips[sti(chref.Ship.Type)].Class +
                      ", mooring cost is " + FindRussianMoneyString(sti(NPChar.MoneyForShip)) + " per month, payment for one month in advance.";
 			Link.l1 = "Yes, that suits me.";
@@ -3446,6 +3458,11 @@ void ProcessDialogEvent()
 			chref.location.locator = "";
 			NPChar.Portman	= sti(NPChar.Portman) + 1;
 			pchar.ShipInStock = sti(pchar.ShipInStock) + 1;
+			if(NPChar.id == "Beliz_portman" && CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && !CheckAttribute(NPChar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)
+			{
+				chref.DontNullShip = true;
+				NPChar.DontNullShipBeliz = true;
+			}
 
 			dialog.text = "Alright. You can take your ship back anytime you need.";
 			Link.l1 = "Thanks.";
@@ -3538,6 +3555,11 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(Pchar, -sti(NPChar.MoneyForShip));
 			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
 			DeleteAttribute(chref, "ShipInStockMan");
+			if(CheckAttribute(chref, "DontNullShip"))
+			{
+				DeleteAttribute(chref, "DontNullShip");
+				DeleteAttribute(NPChar, "DontNullShipBeliz");
+			}
 			SetCompanionIndex(pchar, -1, sti(NPChar.ShipToStoreIdx));
 
 			NPChar.Portman	= sti(NPChar.Portman) - 1;

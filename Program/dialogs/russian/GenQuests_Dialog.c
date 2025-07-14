@@ -2230,7 +2230,7 @@ void ProcessDialogEvent()
 		// Генератор "Поручение капитана"
 		case "CaptainComission_1":
 			dialog.text = RandPhraseSimple("Стой!.. Стой, капитан! подожди.","Капитан, подожди, умоляю...");
-			link.l1 = LinkRandPhrase("Что, одышка замучила?","Подними клинок! трус.","В чём дело?! Забыл завещание оставить?");
+			link.l1 = LinkRandPhrase("Что, одышка замучила?","Подними клинок! Трус.","В чём дело?! Забыл завещание оставить?");
 			link.l1.go = "CaptainComission_2";
 		break;
 		
@@ -3596,6 +3596,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_333":
+			StartBattleLandInterface();
 		    LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);// лесник - разрешить снова драться после сдачи денег. но после драки кулаками не машут ..как говориться))
 			addMoneyToCharacter(pchar, -sti(pchar.GenQuest.CaptainComission.GoodsSum));
 			AddQuestRecord("CaptainComission2", "17");
@@ -3609,6 +3610,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CaptainComission_334":
+			StartBattleLandInterface();
 			LAi_SetPlayerType(pchar);
 			sTemp = "Gang_";
 			sGroup = "GangGroup_0";			

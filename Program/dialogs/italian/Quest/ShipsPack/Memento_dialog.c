@@ -30,6 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "Per qualche motivo mi aspettav"+GetSexPhrase("o","a")+" un discorso pomposo da lui. E invece si è lanciato subito nella battaglia.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
+			if (sti(pchar.rank) <= 13) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -151,7 +152,7 @@ void ProcessDialogEvent()
 
 		// Диалог с Алонсо во вторую ночь
 		case "Memento_Dich_EtapTwo_Alonso_2":
-			dialog.text = "Capisco. Molti dell’equipaggio ora dormono tutti insieme — hanno paura di restare soli. Come se fosse possibile rimanere davvero soli su una nave…";
+			dialog.text = "Capisco. Molti dell’equipaggio ora dormono tutti insieme — hanno paura di restare soli. Come se fosse possibile rimanere davvero soli su una nave...";
 			link.l1 = "Come vedi, non ci sono riuscito. Cos’è successo?";
 			link.l1.go = "Memento_Dich_EtapTwo_Alonso_3";
 		break;
@@ -234,7 +235,7 @@ void ProcessDialogEvent()
 		
 		case "Memento_Dich_EtapThree_Alonso_4":
 			dialog.text = "Combattimenti, ferite sporche, carne salata andata a male — normale aritmetica marinaresca. Se non ci fossimo lasciati influenzare tanto dai racconti su navi maledette, chissà, forse avremmo perso un paio di uomini in meno\n"+
-			"Lo scheletro a poppa non aiutava certo il morale. Per fortuna qualche… burlone gli ha rubato il cappello durante la notte\n"+
+			"Lo scheletro a poppa non aiutava certo il morale. Per fortuna qualche... burlone gli ha rubato il cappello durante la notte\n"+
 			"Visto che il sacrilegio non ha attirato un fulmine sulla nave, l'equipaggio si è un po' rincuorato e l'astuzia marinaresca ha cominciato a pianificare nuovi scherzi allo scheletro. Tipo questo...";
 			link.l1 = "Non toccate lo scheletro!";
 			link.l1.go = "Memento_Dich_EtapThree_Alonso_5";

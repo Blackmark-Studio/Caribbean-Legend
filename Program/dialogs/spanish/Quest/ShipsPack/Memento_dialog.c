@@ -30,6 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "Por alguna razón esperaba un discurso pomposo de su parte. Pero se lanzó al combate de inmediato.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
+			if (sti(pchar.rank) <= 13) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -235,7 +236,7 @@ void ProcessDialogEvent()
 		case "Memento_Dich_EtapThree_Alonso_4":
 			dialog.text = "Batallas, heridas sucias, carne salada podrida — la aritmética marina habitual. Si no nos hubiéramos alterado tanto con cuentos de barcos malditos, tal vez habríamos perdido a menos hombres.\n"+
 			"El esqueleto en la popa tampoco ayudaba. Menos mal que un... bromista le robó el sombrero por la noche.\n"+
-			"Y como el rayo no alcanzó el barco por tal sacrilegio, la tripulación se animó un poco y su astucia empezó a maquinar planes para molestar al esqueleto. Por ejemplo…";
+			"Y como el rayo no alcanzó el barco por tal sacrilegio, la tripulación se animó un poco y su astucia empezó a maquinar planes para molestar al esqueleto. Por ejemplo...";
 			link.l1 = "¡No toquen al esqueleto!";
 			link.l1.go = "Memento_Dich_EtapThree_Alonso_5";
 		break;
@@ -382,7 +383,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Sailor_3_5":
-			dialog.text = "Cada uno espera tener suerte. El capitán tiene una llave para cada uno: miedo a la horca, codicia por el oro, deuda por una vida salvada. A mí nada de eso me interesa. No necesito dinero, y una deuda… ¿qué deuda si no recuerdo nada?";
+			dialog.text = "Cada uno espera tener suerte. El capitán tiene una llave para cada uno: miedo a la horca, codicia por el oro, deuda por una vida salvada. A mí nada de eso me interesa. No necesito dinero, y una deuda... ¿qué deuda si no recuerdo nada?";
 			link.l1 = "¿No temes hablar de esto abiertamente?";
 			link.l1.go = "Memento_Sailor_3_6";
 		break;

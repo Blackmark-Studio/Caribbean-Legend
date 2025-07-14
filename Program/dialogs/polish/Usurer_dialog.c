@@ -1409,7 +1409,7 @@ void ProcessDialogEvent()
 		case "GiveTaskSlave_1":
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity(npchar.city);
-			dialog.Text = "Bardzo dobrze, słuchaj zatem. Niewolnictwo to obecnie najbardziej dochodowy interes na Karaibach. Nie jestem plantatorem, ale mam zaufanych klientów\nWięc potrzebuję następującej liczby niewolników - "+pchar.questTemp.Slavetrader.iSlaveQuantity+"głów. Jestem gotów zapłacić Ci 250 pesos za każdą. Uwierz mi, to dobra cena. W sumie zarobisz "+FindRussianMoneyString(sti(pchar.questTemp.Slavetrader.iSlaveMoney))+"pesos.";
+			dialog.Text = "Bardzo dobrze, słuchaj zatem. Niewolnictwo to obecnie najbardziej dochodowy interes na Karaibach. Nie jestem plantatorem, ale mam zaufanych klientów\nWięc potrzebuję następującej liczby niewolników - "+pchar.questTemp.Slavetrader.iSlaveQuantity+"głów. Jestem gotów zapłacić Ci 250 pesos za każdą. Uwierz mi, to dobra cena. W sumie zarobisz "+FindRussianMoneyString(sti(pchar.questTemp.Slavetrader.iSlaveMoney))+".";
 			Link.l1 = "Nie, nie jestem handlarzem niewolników. Znajdź sobie innego pomocnika, który nie ma sumienia.";
 			Link.l1.go = "exit_slaves";
 			Link.l2 = "Kusząca oferta. Chciałbym to zrobić. Jak szybko będziesz potrzebować niewolników?";

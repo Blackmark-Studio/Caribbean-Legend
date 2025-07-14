@@ -36,6 +36,7 @@ void LoginCharacter(aref chr, string locID)
 				if((CheckAttribute(chr, "index") != false) && (GetMainCharacterIndex() == sti(chr.index)))
 				{
 					Trace("Main character <" + chr.id + "> error teleportation by location: " + chr.location + "  on locator: " + chr.location.group + "::" + chr.location.locator);
+					Log_TestInfo("Player: Error teleportation on locator: <" + chr.location.group + "::" + chr.location.locator + ">");
 				}
 				else
 				{

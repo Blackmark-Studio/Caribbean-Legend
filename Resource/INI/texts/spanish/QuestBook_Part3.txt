@@ -262,7 +262,7 @@ He hundido el Meifeng, ahora no puedo hacer lo que había planeado.
 #TEXT   3-47
 El Meifeng se ha marchado, ahora no podré hacer lo que había planeado.
 #TEXT   3-48
-El chino ha acordado darme información a cambio de su libertad. Tengo que desembarcar en el Cabo Inaccesible de Guadalupe.
+El chino ha acordado darme información a cambio de su libertad. Tengo que desembarcar en el Cabo Inaccesible de Marie Galante.
 #TEXT   3-49
 ¡Esto está cada vez mejor! ¡Rodenburg ordenó a Longway que matara a Peter Stuyvesant! Definitivamente es un golpe de suerte, cuelgan a la gente por eso. Tengo que encontrar a Stuyvesant para contárselo todo, así se solucionará lo de Lucas de una vez. El galeón de Peter estará navegando cerca de Saint-Christopher durante una semana.
 #TEXT   3-50

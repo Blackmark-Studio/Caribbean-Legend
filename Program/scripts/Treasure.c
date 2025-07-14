@@ -743,8 +743,9 @@ void Treasure_Stories(string attr)
 
 // Записка попала в инвентарь из клада
 // Добавим её в последовательность прочтения, уберём атрибут с сундука
-bool TreasureNotesHandler(aref arItm)
+bool TreasureNotesHandler(ref _refCharacter, aref arItm)
 {
+    if(!IsMainCharacter(_refCharacter))   return false;
     if(!CheckAttribute(arItm, "curNumb")) return false;
 
     string attr = arItm.curNumb;
@@ -752,6 +753,9 @@ bool TreasureNotesHandler(aref arItm)
     ref loc = &Locations[FindLocation(arItm.curLoc)];
     attr = arItm.curBox;
     DeleteAttribute(loc, attr + ".treasure_note");
+    DeleteAttribute(arItm, "curNumb");
+    DeleteAttribute(arItm, "curLoc");
+    DeleteAttribute(arItm, "curBox");
     return true;
 }
 

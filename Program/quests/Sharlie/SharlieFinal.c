@@ -1619,6 +1619,7 @@ void GuardOT_DominicaChest(string qName) // нашли сундук в бухт�
 
 void GuardOT_CreateDominicaHunters(string qName) // 
 {
+	chrDisableReloadToLocation = true;
 	DoQuestCheckDelay("hide_weapon", 1.0); // patch-9
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретить драться
 	int iRank = 20+MOD_SKILL_ENEMY_RATE*2;
@@ -3082,6 +3083,7 @@ void Ksochitam_FindShowScene(string qName) // сценка
 	LAi_SetBarmanType(pchar);
 	StartQuestMovie(true, false, true);
 	locCameraLockNearHero(-5.0, 2.0, -5.0, 600, true);
+	Pchar.FuncCameraFly = "";
 	DoQuestFunctionDelay("Ksochitam_FindShowSceneEnd", 7.0);
 	AddCharacterExpToSkill(pchar, "Fortune", 200);
 }

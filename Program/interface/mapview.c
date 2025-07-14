@@ -253,7 +253,7 @@ void ProcessCommandExecute()
 			}
 		break;
 		case "MAPS":
-			if (CheckAttribute(GameInterface, "TABLE_MAPS." + CurRow + ".index")){
+			if (CheckAttribute(&GameInterface, "TABLE_MAPS." + CurRow + ".index")){
 				iGoodIndex = sti(GameInterface.TABLE_MAPS.(CurRow).index);
 			}
 			ref itmRef = &Items[iGoodIndex];
@@ -370,7 +370,7 @@ void TableSelectChange()
 
 void SetNewMapPicture()
 {
-	if (CheckAttribute(GameInterface, "TABLE_MAPS." + CurRow + ".index")){
+	if (CheckAttribute(&GameInterface, "TABLE_MAPS." + CurRow + ".index")){
 		iGoodIndex = sti(GameInterface.TABLE_MAPS.(CurRow).index);
 	}
 	ref itmRef = &Items[iGoodIndex];
@@ -406,7 +406,7 @@ void SetNewMapPicture()
 
 void ShowInfoWindow()
 {
-	if (CheckAttribute(GameInterface, "TABLE_MAPS." + CurRow + ".index")){
+	if (CheckAttribute(&GameInterface, "TABLE_MAPS." + CurRow + ".index")){
 		iGoodIndex = sti(GameInterface.TABLE_MAPS.(CurRow).index);
 	}
 	ref  itmRef = &Items[iGoodIndex];

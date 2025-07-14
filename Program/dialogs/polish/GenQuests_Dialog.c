@@ -6097,7 +6097,7 @@ void ProcessDialogEvent()
 				link.l1.go = "Unwantedpostor_peace";
 				break;
 			}
-			dialog.text = "I'm sorry, I need the content in order to provide a translation. Can you please provide the text that needs to be translated?"+GetSexPhrase("Tak to jest, co? Cóż, wybieram trudną drogę.","Ty suko! Chciałem z tobą postąpić po ludzku...")+" ";
+			dialog.text = GetSexPhrase("Tak to jest, co? Cóż, wybieram trudną drogę.","Ty suko! Chciałem z tobą postąpić po ludzku...");
 			link.l1 = ""+GetSexPhrase("Jak sobie życzysz...","I ty nazywasz to 'grzecznie'? Żal mi ciebie. Chociaż, może nie.")+"";
 			link.l1.go = "Unwantedpostor_fight";
 		break;

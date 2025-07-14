@@ -504,12 +504,12 @@ void ProcessDialogEvent()
 		// пассажир возмущен игроком и сваливает <--
 		
 		case "Node_2":
-			dialog.text = NPCharRepPhrase(Npchar,RandSwear()+"Soy el mejor "+XI_ConvertString(Npchar.quest.officertype)+" dentro de estas aguas. "+Npchar.quest.officertype_2+"Y estoy listo para hacerte un favor y servir bajo tu mando.","Bueno, dicen que no soy malo "+XI_ConvertString(Npchar.quest.officertype)+". "+Npchar.quest.officertype_2+"Puedes llevarme en tu barco, capitán, y verlo por ti mismo.");
+			dialog.text = NPCharRepPhrase(Npchar,RandSwear()+"Soy el mejor "+XI_ConvertString(Npchar.quest.officertype)+" dentro de estas aguas. "+Npchar.quest.officertype_2+"Y estoy listo para hacerte un favor y servir bajo tu mando.","Bueno, dicen que no soy un mal "+XI_ConvertString(Npchar.quest.officertype)+". "+Npchar.quest.officertype_2+"Puedes llevarme en tu barco, capitán, y verlo por ti mismo.");
 			Link.l1 = "¿Y cuánto quieres?";
 			Link.l1.go = "price";
 			Link.l2 = "¿Y qué tipo de especialista eres tú?";
 			Link.l2.go = "ShowParam_exit";
-			Link.l3 = "¡Ay, ya tengo un "+XI_ConvertString(Npchar.quest.officertype)+".";
+			Link.l3 = "¡Ay, ya tengo un "+XI_ConvertString(Npchar.quest.officertype)+"!";
 			Link.l3.go = "Exit";
 		break;
 

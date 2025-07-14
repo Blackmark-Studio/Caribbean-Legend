@@ -625,7 +625,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_Prisoner_2":
 			dialog.text = "Adam? Ten łajdak? To wszystko było jego planem! Teraz widzę... Tak, pomogłem Katrine uciec trzy miesiące temu. Ta biedna dziewczyna, nie masz pojęcia, jak ją traktował...";
-			link.l1 = "Ona była jego żoną i nie obchodziło mnie, co się stało, to nie moja sprawa. Popełniłem błąd, wchodząc na twój galeon, ale teraz jest za późno, żeby o tym rozmawiać. Adam obiecał mi zapłacić za moją pomoc.";
+			link.l1 = "Ona była jego żoną i nie obchodziło mnie, co się stało, to nie moja sprawa. Popełniłem błąd, wchodząc na twój fluita, ale teraz jest za późno, żeby o tym rozmawiać. Adam obiecał mi zapłacić za moją pomoc.";
 			link.l1.go = "FalseTrace_Prisoner_3";
 		break;
 		
@@ -654,7 +654,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_Prisoner_7":
-			dialog.text = "Zaarestujesz Adama Raynera i zakujesz go w kajdany. Potem zabierzesz mnie i Katerine do "+XI_ConvertString("Colonia"+pchar.questTemp.FalseTrace.TargetCity)+". Nie ląduj w mieście, przecież to ty zatopiłeś mój galeon, wysadź nas wszystkich trzech na "+XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen")+"\nPoprosiłbym cię również o broń. Pójdziemy do miasta przez dżunglę i upewniam się, że ta kanalia zapłaci nie tylko za swoje przestępstwa, ale i za twoje. On na to zasługuje\nMasz moje słowo, że twoje imię nie wyjdzie na jaw. W zamian dostaniesz prawdziwe informacje dotyczące statku z złotem wroga\nTo nie będzie dla ciebie wielkim wyzwaniem, ale ma zęby, zdobędziesz dobre łupy. Dużo lepsze niż moje okup i 'tak zwane' skarby Zezowatego Solly. Czy mamy umowę?";
+			dialog.text = "Zaarestujesz Adama Raynera i zakujesz go w kajdany. Potem zabierzesz mnie i Katerine do "+XI_ConvertString("Colonia"+pchar.questTemp.FalseTrace.TargetCity)+". Nie ląduj w mieście, przecież to ty zatopiłeś mój fluita, wysadź nas wszystkich trzech na "+XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen")+"\nPoprosiłbym cię również o broń. Pójdziemy do miasta przez dżunglę i upewniam się, że ta kanalia zapłaci nie tylko za swoje przestępstwa, ale i za twoje. On na to zasługuje\nMasz moje słowo, że twoje imię nie wyjdzie na jaw. W zamian dostaniesz prawdziwe informacje dotyczące statku z złotem wroga\nTo nie będzie dla ciebie wielkim wyzwaniem, ale ma zęby, zdobędziesz dobre łupy. Dużo lepsze niż moje okup i 'tak zwane' skarby Zezowatego Solly. Czy mamy umowę?";
 			link.l1 = "Nie podoba mi się twój plan. Myślę, że lokalne władze zorganizują na mnie polowanie, jak tylko opuszczę brzegi "+XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen")+". Nie, kapitanie, nie zamierzam ryzykować swoją głową. Nasza rozmowa jest zakończona.";
 			link.l1.go = "FalseTrace_Prisoner_8";
 			link.l2 = "Cóż, wygląda na to, że Katerine miała rację. Podoba mi się twoja propozycja. Adam Rayner zostanie aresztowany. Zaraz to załatwię. Zostaniesz zwolniony po aresztowaniu Adama. Do zobaczenia, kapitanie!";

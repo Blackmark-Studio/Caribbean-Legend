@@ -81,22 +81,22 @@ He oído que nuestra escuadra no logró asediar la colonia @<NationNameSK(sti(aD
 
 Siege_17
 {
-británico
+británica
 }
 
 Siege_18
 {
-francés
+francesa
 }
 
 Siege_19
 {
-español
+española
 }
 
 Siege_20
 {
-holandés
+holandesa
 }
 
 Siege_21

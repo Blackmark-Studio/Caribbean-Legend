@@ -1924,7 +1924,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.HelenDrinking.IslaTesoroAmbush.TriedB = true;
 		
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 60) {
-			dialog.text = "¿Qué?! ¡Diablo, sabía que estabas coludido con ese canalla de gafas! ¡Córtenlos a todos, muchachos, y recogeremos a la chica más tarde!";
+			dialog.text = "¿Qué? ¡Diablo, sabía que estabas coludido con ese canalla de gafas! ¡Córtenlos a todos, muchachos, y recogeremos a la chica más tarde!";
 			link.l1 = "";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("HelenDrinking_IslaTesoroB");

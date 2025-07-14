@@ -1294,8 +1294,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_2":
-			dialog.text = "Debes notificar al gobernador, "+GetAddress_Form(NPChar)+"¡, estos granujas deben ser todos capturados!";
-			link.l1 = "Haré justo eso.";
+			dialog.text = "Debes notificar al gobernador, "+GetAddress_Form(NPChar)+". ¡Estos granujas deben ser todos capturados!";
+			link.l1 = "Eso haré.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First_officer";
 		break;
@@ -1307,8 +1307,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_4":
-			dialog.text = "No tenemos ni testigos ni las mercancías, pero eso no cambia nada, capitán "+GetFullName(PChar)+"¡Esa persona es definitivamente culpable, y quizás no solo de comercio ilegal. De cualquier manera, ¿por qué te importaría el prisionero?";
-			link.l1 = "Quizás, ¿mi palabra puede ser la fianza para ese prisionero desafortunado?";
+			dialog.text = "No tenemos ni testigos ni las mercancías, pero eso no cambia nada, capitán "+GetFullName(PChar)+". ¡Esa persona es definitivamente culpable, y quizás no solo de comercio ilegal. De cualquier manera, ¿por qué te importaría el prisionero?";
+			link.l1 = "Quizás, ¿mi palabra sea suficiente fianza para ese prisionero desafortunado?";
 			link.l1.go = "JusticeOnSale_5_WithoutMoney";
 			
 			if(sti(PChar.money) >= 5000)

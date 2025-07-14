@@ -110,14 +110,14 @@ void ProcessDialogEvent()
 
 		case "StartSailor_9_nobilityplus":
 			dialog.text = "¿Y cómo se llama su hermano?";
-			link.l1 = "Michelle de Monper.";
+			link.l1 = "Michel de Monper.";
 			link.l1.go = "StartSailor_10";
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 		break;
 
 		case "StartSailor_9_nobilityminus":
 			dialog.text = "¿Y cómo se llama su hermano?";
-			link.l1 = "Michelle de Monper.";
+			link.l1 = "Michel de Monper.";
 			link.l1.go = "StartSailor_10";
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
 		break;
@@ -1800,7 +1800,7 @@ void ProcessDialogEvent()
 			link.l2.go = "EnemyPirate_3_Leadership";
 			if (IsCharacterPerkOn(pchar, "HT1"))
 			{
-				link.l3 = "(Duelista) Esto es justo lo que necesitaba.";
+				link.l3 = "(Duelista) Cuánto echaba esto de menos.";
 				link.l3.go = "EnemyPirate_3_Duelyant";
 			}
 		break;

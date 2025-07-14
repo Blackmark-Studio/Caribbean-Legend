@@ -705,7 +705,7 @@ Cette magnifique carabine à canons juxtaposés est, le plus souvent, utilisée 
 itmname_howdah {Howdah}
 itmdescr_howdah
 {
-Pistolet de gros calibre à double canon, le meilleur ami du chasseur dans la brousse africaine et la jungle indienne. Il permet d'abattre, avec fiabilité, sangliers, tigres, lions et indigènes agressifs d'un seul coup ! Utilise de la mitraille. Nécessite des balles de plomb pour tirer. Nécessite l'avantage Tirailleur.
+Pistolet de gros calibre à double canon, le meilleur ami du chasseur dans la brousse africaine et la jungle indienne. Il permet d'abattre, avec fiabilité, sangliers, tigres, lions et indigènes agressifs d'un seul coup ! Schießt mit Schrot und zerkleinerten Nägeln. Nécessite l'avantage Tirailleur.
 } 
 
 ; ==================================================================================================================== ДОСПЕХИ
@@ -1511,7 +1511,7 @@ Disparaît après 70 jours d'utilisation ou par retrait.
 itmname_amulet_3 {Amulette "Crucifix"}
 itmdescr_amulet_3
 {
-Diminue vos chances de recevoir un coup critique de 10%.
+Un crucifix catholique consacré réduit de 15 % les dégâts critiques infligés par les ennemis avec des armes blanches.
 Vos attaques lourdes infligent 10% de dégâts en moins.
 Ne peut être activé qu'une seule fois.
 Fonctionne pour n'importe quel personnage.
@@ -2655,7 +2655,7 @@ M."
 }
 itmdescr_letter_adolf_1
 {
-"Marchello, nous avions convenu d'une somme deux fois supérieure à celle que tu me remets. La carabine vaut beaucoup plus, et vous le savez. Si tu ne me paies pas le reste, l'amiral saura immédiatement que tu as traité avec Kapper sur " Eva ".
+"Marcello, nous avions convenu d'une somme deux fois supérieure à celle que tu me remets. La carabine vaut beaucoup plus, et vous le savez. Si tu ne me paies pas le reste, l'amiral saura immédiatement que tu as traité avec Kapper sur " Eva ".
 Adolf."
 }
 itmdescr_letter_aeva

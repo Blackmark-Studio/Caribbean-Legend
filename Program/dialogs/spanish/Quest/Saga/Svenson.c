@@ -271,12 +271,12 @@ void ProcessDialogEvent()
 		
 		case "saga_4":
 			dialog.text = "¡Maldita sea! Eso son malas noticias. Jackman es más fuerte que nunca ahora. Además, tengo un mal presentimiento de que no está trabajando solo. Tiene una sombra bastante ominosa detrás de él. Si realmente necesita a Helen, entonces la chica necesita desesperadamente un protector. Me temo que soy un poco demasiado viejo para hacerlo yo mismo...";
-			link.l1 = "Eso no es todo. Jackman también está buscando a alguien llamado Henry el Verdugo, antiguo contramaestre del 'Neptune', de la tripulación del capitán Carnicero.";
+			link.l1 = "Eso no es todo. Jackman también está buscando a alguien llamado Henry el Verdugo, antiguo contramaestre del 'Neptuno', de la tripulación del capitán Carnicero.";
 			link.l1.go = "saga_5";
 		break;
 		
 		case "saga_5":
-			dialog.text = "¡Caramba! ¡Mis peores sospechas se han hecho realidad! Ese Carnicero y su 'Neptune' solían mantener aterrorizado a todo el archipiélago. No había Hermanos en aquel entonces, todos estaban por su cuenta. Ese hombre hizo muchas cosas malas, una persona querida para mí murió por su culpa.\nNunca tuve la oportunidad de conocerlo. El 'Neptune' fue hundido por una fragata inglesa, y el Carnicero fue ejecutado en San Juan. ¡Qué alivio! Aunque había mucha gente que admiraba su suerte y su temeraria valentía.\nJackman mismo era su mano derecha y primer oficial en el 'Neptune'. ¿Sorprendido? ¡Los ex-criminales se han convertido en héroes de la Nación, todo gracias a Cromwell! ¿Dónde ha quedado la buena y vieja Inglaterra?\nDebemos encontrar a Henry el Verdugo antes de que lo hagan los hombres de Jackman. Tal vez, él tenga la clave de este misterio, si es que sigue vivo.";
+			dialog.text = "¡Caramba! ¡Mis peores sospechas se han hecho realidad! Ese Carnicero y su 'Neptune' solían mantener aterrorizado a todo el archipiélago. No había Hermanos en aquel entonces, todos estaban por su cuenta. Ese hombre hizo muchas cosas malas, una persona querida para mí murió por su culpa.\nNunca tuve la oportunidad de conocerlo. El 'Neptune' fue hundido por una fragata inglesa, y el Carnicero fue ejecutado en San Juan. ¡Qué alivio! Aunque había mucha gente que admiraba su suerte y su temeraria valentía.\nJackman mismo era su mano derecha y primer oficial en el 'Neptuno'. ¿Sorprendido? ¡Los ex-criminales se han convertido en héroes de la Nación, todo gracias a Cromwell! ¿Dónde ha quedado la buena y vieja Inglaterra?\nDebemos encontrar a Henry el Verdugo antes de que lo hagan los hombres de Jackman. Tal vez, él tenga la clave de este misterio, si es que sigue vivo.";
 			link.l1 = "Apuesto a que te resultaría más fácil encontrar una aguja en un pajar. ¿Tienes al menos alguna pista?";
 			link.l1.go = "saga_6";
 		break;
@@ -1323,7 +1323,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_66a":
-			dialog.text = "Era especial... También es bastante probable que Jess matara a Beatrice. Después de que el Carnicero la echara del 'Neptune', probablemente no pensó en otra cosa más que en vengarse de él y de Beatrice. Por cierto, ¿sabes cómo se deshizo el Carnicero de Jessica?";
+			dialog.text = "Era especial... También es bastante probable que Jess matara a Beatrice. Después de que el Carnicero la echara del 'Neptuno', probablemente no pensó en otra cosa más que en vengarse de él y de Beatrice. Por cierto, ¿sabes cómo se deshizo el Carnicero de Jessica?";
 			link.l1 = "No. O la dejó en Barbados o la puso a pedir rescate.";
 			link.l1.go = "saga_67";
 		break;
@@ -1347,7 +1347,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_70":
-			dialog.text = "Todos los piratas pensaban así, incluido Blaze Sharp, su hermano. No podía soportar al Carnicero... Pero volvamos a Jessica. Ni siquiera me atrevía a pensar en ella mientras estaba en el 'Neptune', nunca dejaría a su amado capitán. Pero cuando el Carnicero se deshizo de ella de una manera tan vil...\nLlegué a Barbados y me hice amigo de ella. No fue fácil para ella, amaba el mar y las aventuras peligrosas. Esa vida monótona de la colonia la estaba matando. Además, se había convertido en una persona muy infame en el Caribe mientras servía en el 'Neptune' y la gente de Bridgetown tenía razones para considerarla cómplice del Carnicero...";
+			dialog.text = "Todos los piratas pensaban así, incluido Blaze Sharp, su hermano. No podía soportar al Carnicero... Pero volvamos a Jessica. Ni siquiera me atrevía a pensar en ella mientras estaba en el 'Neptuno', nunca dejaría a su amado capitán. Pero cuando el Carnicero se deshizo de ella de una manera tan vil...\nLlegué a Barbados y me hice amigo de ella. No fue fácil para ella, amaba el mar y las aventuras peligrosas. Esa vida monótona de la colonia la estaba matando. Además, se había convertido en una persona muy infame en el Caribe mientras servía en el 'Neptune' y la gente de Bridgetown tenía razones para considerarla cómplice del Carnicero...";
 			link.l1 = "Pero no pudieron probar una mierda...";
 			link.l1.go = "saga_71";
 		break;
@@ -1366,7 +1366,7 @@ void ProcessDialogEvent()
 		
 		case "saga_73":
 			dialog.text = "Después de eso, todo el pueblo empezó a temerle. Y luego apareció la Máscara. Se encontraron bastante rápido.";
-			link.l1 = "Según los escritos, la Máscara es Joshua Leadbeater, el antiguo capitán del 'Neptune'...";
+			link.l1 = "Según los escritos, la Máscara es Joshua Leadbeater, el antiguo capitán del 'Neptuno'...";
 			link.l1.go = "saga_74";
 		break;
 		

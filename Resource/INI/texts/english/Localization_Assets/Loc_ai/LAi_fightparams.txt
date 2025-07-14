@@ -1,4 +1,4 @@
 LAi_fightparams_1
 {
-Уворот от выстрела
+The dodge from the shot
 }

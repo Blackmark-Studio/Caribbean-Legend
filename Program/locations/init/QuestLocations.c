@@ -1385,7 +1385,7 @@ int LocationInitQuestLocations(int n)
 	locations[n].reload.l1.go = "Quest_Cabin_Medium";
 	locations[n].reload.l1.emerge = "reload1";
 	locations[n].reload.l1.label = "cabine";
-	locations[n].reload.l1.disable = true;
+	locations[n].reload.l1.disable = false;
 	
 	locations[n].reload.l2.name = "reload_camp1";
 	locations[n].reload.l2.go = "Quest_Campus";
@@ -1866,7 +1866,7 @@ int LocationInitQuestLocations(int n)
 	n = n + 1;
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// резервная локация 5	// Sinistra Одноразовая локация для всего
+	// резервная локация 5
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	locations[n].id = "Location_reserve_05";
 	locations[n].id.label = "Jungle";

@@ -704,7 +704,7 @@ Dieser schöne Doppelläufige Karabiner ist eher bei hochrangigen Adligen auf de
 itmname_howdah {Howdahpistole}
 itmdescr_howdah
 {
-Eine doppelläufige, großkalibrige Pistole, der beste Begleiter des Jägers im afrikanischen Busch und im indischen Dschungel. Besiegt zuverlässig Wildschweine, Tiger und aggressive Eingeborene. Beim Schießen verwendet sie Schrotkugeln. Die Fertigkeit 'Schütze' ist erforderlich.
+Eine doppelläufige, großkalibrige Pistole, der beste Begleiter des Jägers im afrikanischen Busch und im indischen Dschungel. Besiegt zuverlässig Wildschweine, Tiger und aggressive Eingeborene. Verwendet Kartätsche oder Schrot. Die Fertigkeit 'Schütze' ist erforderlich.
 } 
 
 ; ==================================================================================================================== ДОСПЕХИ
@@ -1516,7 +1516,7 @@ Hält nach Anwendung 70 Tage, kann auch vorher entfernt werden.
 itmname_amulet_3 {Amulett "Kruzifix"}
 itmdescr_amulet_3
 {
-Ein geweihter katholischer Kreuzanhänger verringert den von Feinden verursachten kritischen Schaden um 15%.
+Ein geweihter katholischer Kreuzanhänger verringert den von Feinden mit Klingenwaffen verursachten kritischen Schaden um 15%.
 Die Stärke des schweren Angriffs des Charakters wird um 10% reduziert.
 Wird einmalig von jedem Charakter aktiviert.
 Verschwindet nach 70 Tagen oder beim Entfernen.
@@ -2659,7 +2659,7 @@ M.'
 }
 itmdescr_letter_adolf_1
 {
-'Marchello, wir hatten uns auf eine Summe geeinigt, die doppelt so hoch ist wie die, die Sie mir übergeben haben. Der Karabiner ist viel mehr wert, und das wissen Sie. Wenn Sie mir den Rest nicht zahlen, erfährt der Admiral sofort von Ihren Geschäften mit Kapper auf der "Eva".
+'Marcello, wir hatten uns auf eine Summe geeinigt, die doppelt so hoch ist wie die, die Sie mir übergeben haben. Der Karabiner ist viel mehr wert, und das wissen Sie. Wenn Sie mir den Rest nicht zahlen, erfährt der Admiral sofort von Ihren Geschäften mit Kapper auf der "Eva".
 Adolf.'
 }
 itmdescr_letter_aeva

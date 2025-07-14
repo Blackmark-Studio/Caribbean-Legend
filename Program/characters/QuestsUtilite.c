@@ -3042,10 +3042,10 @@ void SharlieNpcInit()//создаем всех ключевых персонаж
 	LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
 	
 	// Алонсо де Мальдонадо
-	sld = GetCharacter(NPC_GenerateCharacter("Maldonado", "Alonso", "man", "man", 1, SPAIN, -1, false, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("Maldonado", "Maldonado", "man", "man", 1, SPAIN, -1, false, "quest"));
 	sld.name = StringFromKey("QuestsUtilite_56");
 	sld.lastname = StringFromKey("QuestsUtilite_57");
-	sld.greeting = "alonso";
+	//sld.greeting = "alonso";
     sld.Dialog.Filename = "Quest\Sharlie\Maldonado.c";
 	sld.dialog.currentnode = "First time";
 	sld.rank = 20+MOD_SKILL_ENEMY_RATE;
@@ -4446,7 +4446,7 @@ void OtherNpcInit() // остальные ключевые НПС
 	LAi_SetImmortal(sld, true);
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
-	LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 }
 
 string GetStrSmallRegister(string sBase)
@@ -4531,6 +4531,10 @@ string GetStrSmallRegister(string sBase)
 			case "Ó": sResult += "ó"; continue; break;
 			case "Ú": sResult += "ú"; continue; break;
 
+			// Итальянские символы
+			case "Ì": sResult += "ì"; continue; break;
+			case "Ò": sResult += "ò"; continue; break;
+
 			// Польские символы
 			case "Ą": sResult += "ą"; continue; break;
 			case "Ć": sResult += "ć"; continue; break;
@@ -4547,6 +4551,13 @@ string GetStrSmallRegister(string sBase)
 			case "Є": sResult += "є"; continue; break;
 			case "І": sResult += "і"; continue; break;
 			case "Ї": sResult += "ї"; continue; break;
+
+			// Диакритические знаки
+			case "Â": sResult += "â"; continue; break;
+			case "Î": sResult += "î"; continue; break;
+			case "Ô": sResult += "ô"; continue; break;
+			case "Û": sResult += "û"; continue; break;
+			case "Ç": sResult += "ç"; continue; break;
 		}
 		sResult += Simbol;
 	}
@@ -4639,6 +4650,10 @@ string ToUpper(string _text)
 			case "ó": retString += "Ó"; continue; break;
 			case "ú": retString += "Ú"; continue; break;
 
+			// Итальянские символы
+			case "ì": retString += "Ì"; continue; break;
+			case "ò": retString += "Ò"; continue; break;
+
 			// Польские символы
 			case "ą": retString += "Ą"; continue; break;
 			case "ć": retString += "Ć"; continue; break;
@@ -4654,6 +4669,13 @@ string ToUpper(string _text)
 			case "є": retString += "Є"; continue; break;
 			case "і": retString += "І"; continue; break;
 			case "ї": retString += "Ї"; continue; break;
+
+			// Диакритические знаки
+			case "â": retString += "Â"; continue; break;
+			case "î": retString += "Î"; continue; break;
+			case "ô": retString += "Ô"; continue; break;
+			case "û": retString += "Û"; continue; break;
+			case "ç": retString += "Ç"; continue; break;
 		}
 		
 		retString += symbol;
@@ -5110,6 +5132,7 @@ string FindQuestCity(ref ch, string relation, int _nation, bool bpirate, bool bR
 }
 // <-- legendary edition
 
+// TO_DO: KILL IT WITH FIRE!!!
 void SelectLevelWarShipParameter()//Jason автолевеллинг на военные корабли противника
 {
 	int iShipRank;
@@ -5419,7 +5442,8 @@ void SetNull2ShipInStockMan(string _city)
     	{
             if(chref.ShipInStockMan == (rColony.id + "_PortMan"))
 		    {
-				sld = CharacterFromId(rColony.id + "_PortMan");  
+				if(CheckAttribute(chref, "DontNullShip")) continue;
+				sld = CharacterFromId(rColony.id + "_PortMan");
 				DeleteAttribute(chref, "ShipInStockMan");
 				chref.lifeDay = 0;
 				pchar.ShipInStock = sti(pchar.ShipInStock) - 1; 

@@ -84,7 +84,7 @@ void ProcessDialogEvent()
 		
 		case "Startsailor_4a":
 			dialog.text = "Così si vocifera. Sii grato che abbia avuto la briga di avvisarti, preoccupandomi del tuo soggiorno qui. Altrimenti la tua delicata rosa guascone potrebbe appassire sotto il nostro sole rovente. Che sia verità o fandonia, tieni gli occhi aperti: di guai ne abbiamo già abbastanza senza i fanatici. Briganti nei vicoli e nella giungla, filibustieri per mare e cannibali dalla pelle rossa...";
-			link.l1 = "Su, su! Me la caverò. Magari qui fa un caldo del diavolo, ma a casa mia il sole m’ha temprato, mica come quei normanni smidollati. E se c’è da risolver qualcosa a fil di spada, potete fare affidamento su di me. Ma le zanzare… ah, quella sì che è vera tortura! Beh, ho tutta la mia roba con me. Dici che la barca è pronta?";
+			link.l1 = "Su, su! Me la caverò. Magari qui fa un caldo del diavolo, ma a casa mia il sole m’ha temprato, mica come quei normanni smidollati. E se c’è da risolver qualcosa a fil di spada, potete fare affidamento su di me. Ma le zanzare... ah, quella sì che è vera tortura! Beh, ho tutta la mia roba con me. Dici che la barca è pronta?";
 			link.l1.go = "Startsailor_5a";			
 		break;
 		
@@ -920,7 +920,7 @@ void ProcessDialogEvent()
 		
 		case "spanish_15":
 			dialog.text = "Sei il benvenuto... Allora, che ne pensi, Monsieur de Maure, dove si trova tuo fratello adesso?";
-			link.l1 = "Anch’io vorrei sapere la risposta a questa domanda. E la scoprirò… presto o tardi. Au revoir!";
+			link.l1 = "Anch’io vorrei sapere la risposta a questa domanda. E la scoprirò... presto o tardi. Au revoir!";
 			link.l1.go = "spanish_16";
 		break;
 		
@@ -2130,7 +2130,7 @@ case "Europe":
 		case "Del_Folke_11b":
 			AddComplexSelfExpToScill(10, 10, 10, 10);
 			dialog.text = "Aye aye, Capitano!";
-			link.l1 = "…";
+			link.l1 = "...";
 			link.l1.go = "Del_Folke_12";
 		break;
 		

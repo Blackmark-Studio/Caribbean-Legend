@@ -3,6 +3,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SharlieTutorial_StartGameInPaluba(string qName)
 {
+    ref sld;
+
 	//После диалога с матросом Шарль получает полный контроль над персонажем
 	EndQuestMovie();
 	locCameraSleep(false);
@@ -21,6 +23,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	pchar.Ship.Type = SHIP_NOTUSED;
 	// прописываем локации
 	sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
+	LocatorReloadEnterDisable("Quest_Ship_deck_Medium_trade", "reload_cabin", true);
 	
 	// активируемые объекты на корабле
 	SetLocatorEvent(sld.id, "event1", "SharlieTutorial_windlass_1");
@@ -175,7 +178,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.Dialog.currentnode = "OfficerTorgovets";
 	AddMoneyToCharacter(sld, 1000);
-	sld.Unpushable = "";
+	MakeUnpushable(sld, true);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Officer_3", "trader_8", "man", "man", 10, FRANCE, -1, false, "quest")); // офицер-казначей
 	sld.name 	= StringFromKey("SharlieTutorial_9");
@@ -192,7 +195,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Sailor_11", "citiz_37", "man", "man", 5, FRANCE, -1, false, "quest"));
 	sld.name 	= StringFromKey("SharlieTutorial_2");
 	sld.lastname = "";
-	sld.Unpushable = "";
+	MakeUnpushable(sld, true);
 	ChangeCharacterAddressGroup(sld, "Quest_Ship_deck_Medium_trade", "quest", "quest8");
 	SendMessage(sld, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("Brush_Props"), "Brush_Props", "Saber_hand", 1);
 	LAi_SetActorType(sld);
@@ -252,7 +255,9 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	pchar.quest.Tutorial_Talisman.win_condition.l1 = "ItemGroup";
 	pchar.quest.Tutorial_Talisman.win_condition.l1.group = TALISMAN_ITEM_TYPE;
 	pchar.quest.Tutorial_Talisman.function = "Tutorial_Prologue_Amulet";
-	
+
+	pchar.SharlieTutorial.FullyCompleted = 0;
+
 	TEV.Tutor.PopUpLogbook = true;
 	TEV.Tutor.PopUpTrading = true;
 	
@@ -441,6 +446,11 @@ void SharlieTutorial_OldSailorKey()
 }
 
 void SharlieTutorial_FoundTheKey(string qName)
+{
+	SetFunctionLocatorCondition("SharlieTutorial_OpenBox", "Quest_Cabin_Medium", "box", "private1", false)
+}
+
+void SharlieTutorial_OpenBox(string qName)
 {
 	pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
 }
@@ -868,7 +878,7 @@ void SharlieTutorial_TrumBitva_4(string qName)
 	LAi_SetGroundSitType(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 	AddLandQuestMark(sld, "questmarkmain");
-	sld.Unpushable = "";
+	MakeUnpushable(sld, true);
 	
 	/*CreateLocationParticles("large_smoke", "reload", "reload_hold3", 0, 0, 0, "");
 	CreateLocationParticles("shipfire", "reload", "reload_hold3", 0, 0, 0, "fortfire");
@@ -1728,6 +1738,8 @@ void SharlieTutorial_StartGameInMartinique()
 	DeleteQuestCondition("SharlieTutorial_PobedaPaluba");
 	DeleteQuestCondition("SharlieTutorial_AttackDead");
 	DeleteQuestCondition("SharlieTutorial_SailorCleansFloors");
+	DeleteQuestCondition("SharlieTutorial_FoundTheKey");
+	DeleteQuestCondition("SharlieTutorial_OpenBox");
 	// чистим сундуки и возвращаем стандартную музыку на палубах
 	sld = &Locations[FindLocation("Quest_Deck_Medium")];
 	sld.type = "residence";
@@ -1941,7 +1953,8 @@ void SharlieTutorial_SeaNearMartinique_Logo(string qName)
 {
 	SharlieTutorial_ShowLogo_Start();
 	Achievment_Set("ach_CL_162");
-	if (CheckAttribute(PChar, "SharlieTutorial.FullyComplete") && sti(pchar.SharlieTutorial.FullyCompleted) == 6) Achievment_Set("ach_CL_163");
+	if(sti(pchar.SharlieTutorial.FullyCompleted) == 6) Achievment_Set("ach_CL_163");
+    DeleteAttribute(PChar, "SharlieTutorial.FullyCompleted");
 }
 
 void SharlieTutorial_SeaNearMartinique_AutoTeleport(string qName)

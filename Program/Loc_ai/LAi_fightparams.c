@@ -167,7 +167,8 @@ float LAi_GetDamageAttackType(aref attack, aref enemy, string attackType, ref aW
 			// остальное только для клинков
 			kLengthCurve = fLength * fCurve;
 			kBalance = 0.88 + fBalance * 0.12;
-			if(CheckCharacterPerk(attack, "HT3"))
+			//if(CheckCharacterPerk(attack, "HT3"))
+			if(CheckCharacterPerk(attack, "Dragoon"))
 				kBonus *= 1.15;
 		break;
 		case "force":
@@ -218,7 +219,8 @@ float LAi_GetDamageAttackType(aref attack, aref enemy, string attackType, ref aW
 			// остальное только для клинков
 			kLengthCurve = fCurve / fLength;
 			kBalance = 0.88 + fBalance * 0.12;
-			if(CheckCharacterPerk(attack, "HT3"))
+			//if(CheckCharacterPerk(attack, "HT3"))
+			if(CheckCharacterPerk(attack, "Dragoon"))
 				kBonus *= 1.3;
 		break;
 		case "feint":
@@ -362,7 +364,7 @@ float Lai_UpdateEnergyPerDltTime(aref chr, float curEnergy, float dltTime)
 	}
 	if(GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_SP_3")
 	{
-		fMultiplier *= 1.0 + Bring2Range(0.0, 0.75, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(chr)) / 2.0);
+		fMultiplier *= 1.0 + Bring2Range(0.0, 0.875, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(chr)) / 2.0);
 	}
 
 	bool bPeace = true;
@@ -494,7 +496,7 @@ float LAi_GunCalcDamage(aref attack, aref enemy, string sType, int nShots)
 	if(IsBulletGrape(sBullet))
 	{
 		dmg = stf(attack.chr_ai.(sType).basedmg) * nShots;
-		dmg *= Bring2Range(0.75, 1.5, 0.0, 1.0, dmg);
+		dmg *= Bring2Range(0.75, 1.5, 0.0, 1.0, aSkill);
 		if(IsEquipCharacterByArtefact(attack, "talisman18"))
 		{
 			dmg *= 1.0 + 2.0 * ArticlesBonus(attack); 
@@ -758,7 +760,7 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	}
 	if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "blade_SP_3")
 	{
-		dmg *= 1.0 + Bring2Range(0.0, 0.875, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(attack)) / 2.0);
+		dmg *= 1.0 + Bring2Range(0.0, 0.75, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(attack)) / 2.0);
 	}
 	//Аттака своей группы
 	bool noExp = false;
@@ -849,7 +851,8 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	{
 		dmg = dmg * (1.0 - stf(Items[sti(enemy.cirassId)].B_CirassLevel));
 		
-		if(CheckCharacterPerk(enemy, "HT3") && GetCharacterSuitType(enemy) == 2)
+		//if(CheckCharacterPerk(enemy, "HT3") && GetCharacterSuitType(enemy) == 2)
+		if(CheckCharacterPerk(enemy, "Dragoon") && GetCharacterSuitType(enemy) == 2)
 		{
 			dmg = dmg * 0.85;
 		}
@@ -900,7 +903,7 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	{
 		if(GetCharacterEquipByGroup(attack, HAT_ITEM_TYPE) == "hat2")
 		{
-			attack.chr_ai.energy = stf(attack.chr_ai.energy) + stf(attack.chr_ai.energy)*1.25;
+			attack.chr_ai.energy = stf(attack.chr_ai.energy) + stf(attack.chr_ai.energy)*0.25;
 			//Log_Chr(enemy, XI_ConvertString("Hat2 Hit"));
 			notification(XI_ConvertString("Hat2 Hit"), "EnergyPlus");
 		}
@@ -1117,7 +1120,8 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 	if(CheckAttribute(enemy, "cirassId"))
 	{
 		damage = damage * (1.0 - stf(Items[sti(enemy.cirassId)].G_CirassLevel));
-		if(CheckCharacterPerk(enemy, "HT3") && GetCharacterSuitType(enemy) == 2 )
+		//if(CheckCharacterPerk(enemy, "HT3") && GetCharacterSuitType(enemy) == 2 )
+		if(CheckCharacterPerk(enemy, "Dragoon") && GetCharacterSuitType(enemy) == 2 )
 		{
 			damage = damage * 0.85;
 		}

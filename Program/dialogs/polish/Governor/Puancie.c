@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Puancie_Jail_2":
-			dialog.text = "Od razu lepiej. A teraz, odnośnie twojego poprzedniego pytania - zostałeś uznany - przez pomyłkę - za hiszpańskiego szpiega i aresztowany, dopóki nie wyjaśni się twój status. Przeklęci Kastylijczycy stali się ostatnio bardziej aktywni, dlatego nakazałem zatrzymywać wszystkich podejrzanych.\nAle teraz wiemy, kim jesteś - naprawdę jesteś Charles de Maure, bratem Michelle de Monper, i osobiście przyszedłem tutaj, aby cię uwolnić. A ty krzyczysz na mnie jak mały chłopiec!";
+			dialog.text = "Od razu lepiej. A teraz, odnośnie twojego poprzedniego pytania - zostałeś uznany - przez pomyłkę - za hiszpańskiego szpiega i aresztowany, dopóki nie wyjaśni się twój status. Przeklęci Kastylijczycy stali się ostatnio bardziej aktywni, dlatego nakazałem zatrzymywać wszystkich podejrzanych.\nAle teraz wiemy, kim jesteś - naprawdę jesteś Charles de Maure, bratem Michel de Monper, i osobiście przyszedłem tutaj, aby cię uwolnić. A ty krzyczysz na mnie jak mały chłopiec!";
 			link.l1 = "Przepraszam ponownie, Wasza Ekscelencjo. Czy teraz jestem wolny?";
 			link.l1.go = "Puancie_Jail_3";			
 		break;

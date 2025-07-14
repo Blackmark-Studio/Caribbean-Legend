@@ -1409,7 +1409,7 @@ void ProcessDialogEvent()
 		case "GiveTaskSlave_1":
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity(npchar.city);
-			dialog.Text = "Très bien, écoutez donc. L'esclavage est le commerce le plus rentable des Caraïbes de nos jours. Je ne suis pas un planteur, mais j'ai des clients dignes de confiance\nDonc, j'ai besoin de la quantité suivante d'esclaves - "+pchar.questTemp.Slavetrader.iSlaveQuantity+" têtes. Je suis prêt à vous payer 250 pesos pour chacune. Croyez-moi, c'est un bon prix. Au total, vous gagnerez "+FindRussianMoneyString(sti(pchar.questTemp.Slavetrader.iSlaveMoney))+" pesos.";
+			dialog.Text = "Très bien, écoutez donc. L'esclavage est le commerce le plus rentable des Caraïbes de nos jours. Je ne suis pas un planteur, mais j'ai des clients dignes de confiance\nDonc, j'ai besoin de la quantité suivante d'esclaves - "+pchar.questTemp.Slavetrader.iSlaveQuantity+" têtes. Je suis prêt à vous payer 250 pesos pour chacune. Croyez-moi, c'est un bon prix. Au total, vous gagnerez "+FindRussianMoneyString(sti(pchar.questTemp.Slavetrader.iSlaveMoney))+".";
 			Link.l1 = "Non, je ne suis pas un marchand d'esclaves. Trouvez-vous un autre assistant qui ne se soucie pas de sa conscience.";
 			Link.l1.go = "exit_slaves";
 			Link.l2 = "Une offre tentante. J'aimerais faire cela. Dans combien de temps aurez-vous besoin des esclaves ?";

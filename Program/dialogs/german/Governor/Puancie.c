@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Puancie_Jail_2":
-			dialog.text = "Besser. Nun, bezüglich Ihrer vorherigen Frage - Sie wurden - fälschlicherweise - für einen spanischen Spion gehalten und unter Arrest gestellt, bis Ihr Status geklärt ist. Verdammte Kastilier sind in letzter Zeit aktiver geworden, daher habe ich angeordnet, alle verdächtigen Personen festzunehmen.\nAber wir wissen jetzt, wer Sie sind - Sie sind wirklich Charles de Maure, ein Bruder von Michelle de Monper, und ich bin persönlich hierher gekommen, um Sie freizulassen. Und Sie schreien mich an wie ein kleiner Junge!";
+			dialog.text = "Besser. Nun, bezüglich Ihrer vorherigen Frage - Sie wurden - fälschlicherweise - für einen spanischen Spion gehalten und unter Arrest gestellt, bis Ihr Status geklärt ist. Verdammte Kastilier sind in letzter Zeit aktiver geworden, daher habe ich angeordnet, alle verdächtigen Personen festzunehmen.\nAber wir wissen jetzt, wer Sie sind - Sie sind wirklich Charles de Maure, ein Bruder von Michel de Monper, und ich bin persönlich hierher gekommen, um Sie freizulassen. Und Sie schreien mich an wie ein kleiner Junge!";
 			link.l1 = "Verzeihen Sie mir nochmals, Eure Exzellenz. Bin ich jetzt frei?";
 			link.l1.go = "Puancie_Jail_3";			
 		break;

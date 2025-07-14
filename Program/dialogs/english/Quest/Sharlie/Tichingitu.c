@@ -146,6 +146,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_exit":
 			DialogExit();
+			chrDisableReloadToLocation = false;
 			AddQuestRecord("Tichingitu", "5");
 			CloseQuestHeader("Tichingitu");
 			LAi_SetActorType(npchar);

@@ -743,7 +743,7 @@ int TraderShipType(ref iShipCoef)//корабль торговца
 			break;
 		}
 	}
-	if(iRank > 25)
+	if(iRank >= 25)
 	{
 		switch (rand(3))
 		{

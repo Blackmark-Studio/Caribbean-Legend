@@ -111,14 +111,14 @@ void ProcessDialogEvent()
 
 		case "StartSailor_9_nobilityplus":
 			dialog.text = "E come si chiama vostro fratello?";
-			link.l1 = "Michelle de Monper.";
+			link.l1 = "Michel de Monper.";
 			link.l1.go = "StartSailor_10";
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 		break;
 
 		case "StartSailor_9_nobilityminus":
 			dialog.text = "E come si chiama vostro fratello?";
-			link.l1 = "Michelle de Monper.";
+			link.l1 = "Michel de Monper.";
 			link.l1.go = "StartSailor_10";
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
 		break;
@@ -1803,13 +1803,13 @@ void ProcessDialogEvent()
 			link.l2.go = "EnemyPirate_3_Leadership";
 			if (IsCharacterPerkOn(pchar, "HT1"))
 			{
-				link.l3 = "(Duellante) Questo mi mancava.";
+				link.l3 = "(Duellante) Quanto mi è mancato tutto questo.";
 				link.l3.go = "EnemyPirate_3_Duelyant";
 			}
 		break;
 
 		case "EnemyPirate_3_Fencing":
-			dialog.text = "He-he. Provaci, damerino.";
+			dialog.text = "Eh-eh. Provaci allora, bellimbusto.";
 			link.l1 = "...";
 			link.l1.go = "EnemyPirate_4";
 			AddCharacterSkillPoints(pchar, "FencingL", 1);
@@ -1827,8 +1827,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "EnemyPirate_3_Duelyant":
-			dialog.text = "Cosa stai blaterando?!";
-			link.l1 = "Due mesi. Per due mesi ho dovuto tenere la spada nel fodero. Balliamo!";
+			dialog.text = "Che cosa stai blaterando?!";
+			link.l1 = "Due mesi. Due mesi sono stato costretto a tenere la spada nel fodero. Balliamo!";
 			link.l1.go = "EnemyPirate_4";
 			AddCharacterSkillPoints(pchar, "FencingL", 1);
 			AddCharacterSkillPoints(pchar, "FencingS", 1);

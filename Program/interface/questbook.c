@@ -6,12 +6,15 @@ int curQuestTop;
 string CurTable, CurRow;
 int iMaxGoodsStore = 50000;
 int currentTab = 0;
+int maxQuestsNum = 0;
 
 void InitInterface(string iniName)
 {
 	xi_refCharacter = pchar;
 	InterfaceStack.SelectMenu_node = "LaunchQuestBook"; // запоминаем, что звать по Ф2
 	GameInterface.title = "titleQuestBook";
+	
+	SetEventHandler("SetMaxStringsQuantity", "SetMaxStringsQuantity", 0);
 
 	SendMessage(&GameInterface,"ls",MSG_INTERFACE_INIT,iniName);
 	SetFontType();
@@ -27,7 +30,6 @@ void InitInterface(string iniName)
 	SetEventHandler("ScrollTopChange","ProcScrollChange",0);
 	SetEventHandler("ievnt_command","ProcessCommandExecute",0);
 	SetEventHandler("QuestTopChange","QuestTopChange",0);
-	SetEventHandler("BackToTitle","BackToTitle",0);
 	SetEventHandler("QuestActivate","XI_QuestActivate",0);
 	SetEventHandler("QuestDeActivate","QuestDeActivate",0);
 	SetEventHandler("MouseRClickUp","HideInfoWindow",0);
@@ -99,31 +101,33 @@ void SetControlsTabModeManual(int mode)
     SetControlsTabMode(mode);
 }
 
-void XI_SetQuestData(bool qtitle)
+void SetMaxStringsQuantity()
+{
+	maxQuestsNum = GetEventData();
+}
+
+void XI_SetQuestData()
 {
 	aref arefTmp;
 	makearef(arefTmp,pchar.TmpQuestInfo);
+	int nQuestsNum = GetAttributesNum(arefTmp);
 
-	XI_SetQuestTitles("QUEST_TITLE",arefTmp,0);
+	XI_SetQuestTitles("QUEST_TITLE", arefTmp, 0);
 	curQuestTop = 0;
-
-	SetNodeUsing("QUEST_TITLE",qtitle);
-	SetNodeUsing("QUEST_TEXT",!qtitle);
-	SetNodeUsing("QUESTSCROLL_TITLE",qtitle);
-	SetNodeUsing("QUESTSCROLL_TEXT",!qtitle);
 	
-	if(qtitle == true)
-	{
-		SetCurrentNode("QUEST_TITLE");
-		SetNodeUsing("QUESTSCROLL_TITLE",true);
-		if(currentTab > 2) HideQuests();
-	}
+	if(currentTab > 2)
+		HideQuests();
 	else
 	{
-		SetCurrentNode("QUEST_TITLE");
-		SetNodeUsing("QUEST_TITLE",true);
-		SetNodeUsing("QUESTSCROLL_TEXT",true);	
+		SetNodeUsing("QUEST_TITLE", true);
+		if(nQuestsNum < maxQuestsNum)
+			SetNodeUsing("QUESTSCROLL_TITLE", false);
+		else
+			SetNodeUsing("QUESTSCROLL_TITLE", true);
+		SetNodeUsing("QUEST_TEXT", false);
+		SetNodeUsing("QUESTSCROLL_TEXT", false);
 	}
+
 	SetAlertMarks(xi_refCharacter);
 }
 
@@ -179,11 +183,6 @@ void HideStatistic()
 
 void ProcessCancelExit()
 {
-	// if( GetSelectable("QUEST_TEXT") )
-	// {
-		// XI_SetQuestData(true);
-		// return;
-	// }
 	IDoExit(RC_INTERFACE_ANY_EXIT);
 }
 
@@ -191,14 +190,20 @@ void QuestTopChange()
 {
 	if( GetSelectable("QUEST_TITLE") )
 	{
-		int newTop = curQuestTop+GetEventData();
-
+		int iAdd = GetEventData();
+		int iCurOnPage = GetEventData();
+		int iCurQuest = curQuestTop + iCurOnPage + 2;
 		aref arefTmp;
 		makearef(arefTmp,pchar.TmpQuestInfo);
-		int maxVal = GetAttributesNum(arefTmp);
-		if(newTop>=maxVal)
+		int nQuestsNum = GetAttributesNum(arefTmp);
+		int maxVal = nQuestsNum - maxQuestsNum;
+		if(iCurQuest > nQuestsNum)
+			return;
+		
+		int newTop = curQuestTop + iAdd;
+		if(newTop>=nQuestsNum)
 		{
-			newTop=maxVal-1;
+			newTop=nQuestsNum-1;
 		}
 		if(newTop<0)
 		{
@@ -209,7 +214,7 @@ void QuestTopChange()
 		{
 			curQuestTop=newTop;
 			XI_SetQuestTitles("QUEST_TITLE",arefTmp,curQuestTop);
-			XI_SetScroller(MakeFloat(newTop)/MakeFloat(maxVal));
+			XI_SetScroller("QUEST_TITLE", MakeFloat(newTop) / MakeFloat(maxVal));
 		}
 	}
 }
@@ -231,13 +236,6 @@ void SetQTextShow(aref pA,int qnum)
 	}
 	
 	SendMessage(&GameInterface,"lsal",MSG_INTERFACE_INIT_QTEXT_SHOW,"QUEST_TEXT",pA,qnum);
-	SetCurrentNode("QUEST_TEXT");
-}
-
-void BackToTitle()
-{
-	// XI_SetQuestData(true);
-	selectJournal(currentTab+1);
 }
 
 void XI_QuestActivate()
@@ -246,30 +244,37 @@ void XI_QuestActivate()
 	aref pA;
 	makearef(pA,pchar.TmpQuestInfo);
 	if (GetAttributesNum(pA) == 0) return;
-	XI_SetQuestData(false);
+	SetNodeUsing("QUEST_TEXT", true);
+	SetNodeUsing("QUESTSCROLL_TEXT", true);
 	SetQTextShow(pA,aq);
-	SetCurrentNode("QUEST_TEXT");
 }
 
-void XI_SetScroller(float pos)
+void XI_SetScroller(string nodName, float pos)
 {
-	SendMessage(&GameInterface,"lsf",MSG_INTERFACE_SET_SCROLLER,"QUESTSCROLL_TITLE",pos);
-	SendMessage(&GameInterface,"lsf",MSG_INTERFACE_SET_SCROLLER,"QUESTSCROLL_TEXT",pos);
+	switch(nodName)
+	{
+		case "QUEST_TITLE":
+			SendMessage(&GameInterface,"lsf",MSG_INTERFACE_SET_SCROLLER,"QUESTSCROLL_TITLE",pos);
+		break;
+		case "QUEST_TEXT":
+			SendMessage(&GameInterface,"lsf",MSG_INTERFACE_SET_SCROLLER,"QUESTSCROLL_TEXT",pos);
+		break;
+	}
 }
 
 void SetScrollerPos()
 {
 	string nodName = GetEventData();
 	float pos = GetEventData();
-	XI_SetScroller(pos);
+	XI_SetScroller(nodName, pos);
 }
 
 void IDoExit(int exitCode)
 {
+	DelEventHandler("SetMaxStringsQuantity", "SetMaxStringsQuantity");
 	DelEventHandler("InterfaceBreak","ProcessCancelExit");
 	DelEventHandler("exitCancel","ProcessCancelExit");
 	DelEventHandler("QuestTopChange","QuestTopChange");
-	DelEventHandler("BackToTitle","BackToTitle");
 	DelEventHandler("QuestActivate","XI_QuestActivate");
 	DelEventHandler("SetScrollerPos","SetScrollerPos");
 	DelEventHandler("ScrollPosChange","ProcScrollPosChange");
@@ -294,7 +299,7 @@ void IDoExit(int exitCode)
 }
 void QuestDeActivate()
 {
-	XI_SetQuestData(true);
+	XI_SetQuestData();
 }
 
 void ProcScrollPosChange()
@@ -305,8 +310,9 @@ void ProcScrollPosChange()
 	{
 		aref arefTmp;
 		makearef(arefTmp,pchar.TmpQuestInfo);
-		int maxVal = GetAttributesNum(arefTmp);
-		int newTop = makeint(newPos*maxVal);
+		int nQuests = GetAttributesNum(arefTmp);
+		int maxVal = nQuests - maxQuestsNum;
+		int newTop = makeint(newPos * maxVal + 0.5);
 
 		if(newTop!=curQuestTop)
 		{
@@ -475,7 +481,7 @@ void selectJournal(int iMode)
 			CopyAttributes(newAttr, arTmp);
         }
     }
-	XI_SetQuestData(true);
+	XI_SetQuestData();
 }
 
 void selectCashBook()
@@ -797,7 +803,7 @@ void SetControlsTabMode(int nMode)
 	
 	currentTab = nMode-1;
 	FillControlsList(nMode);
-	if(currentTab > 2) XI_SetQuestData(true);
+	if(currentTab > 2) XI_SetQuestData();
 }
 
 void FillControlsList(int nMode)

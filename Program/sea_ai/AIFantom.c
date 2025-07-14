@@ -288,9 +288,9 @@ void Fantom_SetCannons(ref rFantom, string sFantomType)
         case 36: iCaliber = 9;  break;
         case 42: iCaliber = 10; break;
 	}
-	if (iCaliber > 0 && rand(1))
-	    iCaliber -= 1;
-	else iCaliber = 0;
+
+    iCaliber = iCaliber - rand(1);
+    if (iCaliber < 0) iCaliber = 0;
 
 	switch(iCaliber)
 	{
@@ -1182,7 +1182,8 @@ void UpgradeShipParameter(ref _chr, string _param)
 		case "MinCrew":
 			if(!CheckAttribute(shTo, "Tuning.MinCrew"))
 			{
-				shTo.MinCrew        = sti(shTo.MinCrew) * 2;
+				shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew)/5);
+				if(sti(shTo.MinCrew) < 1) shTo.MinCrew = 1;
 				shTo.Tuning.MinCrew = true;
 			}	
 		break;

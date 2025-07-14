@@ -262,7 +262,7 @@ I have sunk the 'Meifeng'. Now I won't be able to do what I have planned.
 #TEXT 3-47
 I have lost the 'Meifeng', and she is gone now. Now I won't be able to do what I have planned.
 #TEXT 3-48
-The Chinese agreed to give information in exchange for his freedom. I have to land him at Cape Inaccessible of Guadeloupe.
+The Chinese agreed to give information in exchange for his freedom. I have to land him at Cape Inaccessible of Marie Galante.
 #TEXT 3-49
 This is just getting better and better! Rodenburg ordered Longway to kill Peter Stuyvesant! It is definitely a coup. They hang people for that. I have to find Stuyvesant and tell him everything. He will deal with Lucas at once. Peter's galleon will be cruising near Saint-Christopher for a week.
 #TEXT 3-50

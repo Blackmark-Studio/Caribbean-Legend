@@ -708,7 +708,7 @@ This beautiful side-by-side carbine is more commonly seen with high-class noblem
 itmname_howdah {Howdah}
 itmdescr_howdah
 {
-Double-barreled, large-caliber pistol, best friend to the hunter in the African bush and the Indian jungle. Reliably put down wild boars, tigers, lions, and aggressive natives in a single shot! Uses grapeshot. Requires lead balls to fire. Requires the Skirmisher perk.
+Double-barreled, large-caliber pistol, best friend to the hunter in the African bush and the Indian jungle. Reliably put down wild boars, tigers, lions, and aggressive natives in a single shot! It loads with buckshot and shredded nails. Requires the Skirmisher perk.
 } 
 
 ; ==================================================================================================================== ДОСПЕХИ
@@ -1513,7 +1513,7 @@ Disappears after 70 days of usage or by removal.
 itmname_amulet_3 {Amulet 'Crucifix'}
 itmdescr_amulet_3
 {
-A consecrated Catholic cross reduces critical damage dealt by enemies by 15%.
+A consecrated Catholic cross reduces critical damage dealt by enemies with melee weapons by 15%.
 The character's heavy attack power is reduced by 10%.
 Activates once, by any character.
 Disappears after 70 days or when removed.
@@ -2653,7 +2653,7 @@ M.'
 }
 itmdescr_letter_adolf_1
 {
-'Marchello, we had agreed on a sum twice as much as the one you have handed me. The carbine is worth a lot more, and you know it. If you don't pay me the rest, the admiral shall immediately know about your dealings with Kapper on 'Eva'.
+'Marcello, we had agreed on a sum twice as much as the one you have handed me. The carbine is worth a lot more, and you know it. If you don't pay me the rest, the admiral shall immediately know about your dealings with Kapper on 'Eva'.
 Adolf.'
 }
 itmdescr_letter_aeva

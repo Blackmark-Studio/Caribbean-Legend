@@ -74,20 +74,20 @@ void ProcessDialogEvent()
 
 	case "passenger_2":
 		pchar.GenQuest.Marginpassenger.Dublon = 70 + hrand(5) * 10;
-		dialog.text = "Sería muy imprudente engañarte, perro de mar. Vivo en esta ciudad y no necesito problemas. Por solo " + sti(pchar.GenQuest.Marginpassenger.Dublon) + " doblones proporcionaré información completa. Ganarás mucho más.";
+		dialog.text = "Sería muy imprudente engañarte, perro de mar. Vivo en esta ciudad y no necesito problemas. Por solo " + sti(pchar.GenQuest.Marginpassenger.Dublon) + " doblones te proporcionaré un información muy completa. Ganarás mucho más.";
 		if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.GenQuest.Marginpassenger.Dublon))
 		{
 			link.l1 = "Tienes razón. Toma el oro y empieza a hablar.";
 			link.l1.go = "passenger_4";
 		}
-		link.l2 = "No tengo suficientes monedas conmigo ahora.";
+		link.l2 = "No tengo suficientes monedas encima.";
 		link.l2.go = "passenger_3";
 		link.l3 = "¿Te estás burlando de mí? ¿Pagar oro real por promesas vacías? Piérdete...";
 		link.l3.go = "exit_quest";
 		break;
 
 	case "passenger_3":
-		dialog.text = "¿No lo haces? Bien, capitán. Puedo esperar unos días más y esta información también. Encuéntrame cuando consigas tu oro. No será difícil encontrarme... hoy, ¡ja-ja-ja!";
+		dialog.text = "¿No tienes suficiente? Está bien, capitán. Puedo esperar unos días más y la información también. Búscame cuando consigas el oro. No será difícil encontrarme... hoy, ¡ja-ja-ja!";
 		link.l1 = "No enseñes los dientes así. Está bien, te traeré el oro... si no cambio de opinión.";
 		link.l1.go = "passenger_wait";
 		break;

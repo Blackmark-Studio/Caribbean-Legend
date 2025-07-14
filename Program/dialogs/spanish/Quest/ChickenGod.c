@@ -779,20 +779,12 @@ void ProcessDialogEvent()
 				case SHIP_LADYBETH:
 					dialog.text = "¿Y has visto al cura? Bueno, lo conocerás. Y será mejor que te abastezcas de balas para pistolas de doble cañón. Si eso no ayuda, prueba con una estaca de madera.";
 				break;
+				
+				case SHIP_MEMENTO:
+					dialog.text = "¿Y has visto al cura? Bueno, lo conocerás. Y será mejor que te abastezcas de balas para pistolas de doble cañón. Si eso no ayuda, prueba con una estaca de madera.";
+				break;
 			}
 		break;
-		
-		/*case "joruba_p3_HolyMercy":
-			dialog.text = "¿Y has visto al sacerdote?";
-			link.l1 = "¿Qué sacerdote?";
-			link.l1.go = "joruba_p3_HolyMercy_2";
-		break;
-		
-		case "joruba_p3_HolyMercy_2":
-			dialog.text = "Bueno, lo conocerás. Y será mejor que te abastezcas de cargas de pistola de doble tiro. Si eso no ayuda, prueba con una estaca de madera.";
-			link.l1 = "...";
-			link.l1.go = "joruba_p3_1";
-		break;*/
 		
 		case "joruba_p3_PinkOtkaz":
 			dialog.text = "¡Aye, este barco puede tener una historia... pero, ¿no fue demasiado fácil de obtener? ¡De ninguna manera! Todavía tienes un montón de trabajo sin terminar de la lista. Una vez que hayas hecho eso, discutiremos este sacrificio nuevamente.";

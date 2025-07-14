@@ -91,47 +91,40 @@ void ApplyModMigrations() {
 
 
 		object fileFinderRes;
+		aref fileResList;
+
 		fileFinderRes.dir = modGrAliasPath;
 		fileFinderRes.mask = "Greetings_alias.ini";
-		fileFinderRes.onlydirs = "0";
-		fileFinderRes.onlyfiles = "1";
 		CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
 		DeleteClass(&fileFinderRes);
-
-		aref fileResList;
 		makearef(fileResList, fileFinderRes.filelist);
 		if (GetAttributesNum(fileResList) > 0)
 		{
 			SendMessage( &Sound, "ls", MSG_SOUND_ALIAS_ADD,  loc + "\mods\" + fileName + "\Greetings_alias.ini");
 		}
-
+		DeleteAttribute(&fileFinderRes, ""); 
 
 		fileFinderRes.dir = modStringCommonPath;
 		fileFinderRes.mask = "common.ini";
-		fileFinderRes.onlydirs = "0";
-		fileFinderRes.onlyfiles = "1";
 		CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
 		DeleteClass(&fileFinderRes);
-
 		makearef(fileResList, fileFinderRes.filelist);
 		if (GetAttributesNum(fileResList) > 0)
 		{
 			SendMessage(&GameInterface, "ls", MSG_INTERFACE_LOAD_STRINGS_INI_FILE, "mods\" + fileName + "\common.ini");
 		}
-
+		DeleteAttribute(&fileFinderRes, ""); 
 
 		fileFinderRes.dir = modPicturesPath;
 		fileFinderRes.mask = "pictures.ini";
-		fileFinderRes.onlydirs = "0";
-		fileFinderRes.onlyfiles = "1";
 		CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
 		DeleteClass(&fileFinderRes);
-
 		makearef(fileResList, fileFinderRes.filelist);
 		if (GetAttributesNum(fileResList) > 0)
 		{
 			SendMessage(&GameInterface, "ls", MSG_INTERFACE_LOAD_PICTURES_INI_FILE, "mods\" + fileName + "\pictures.ini");
 		}
+		DeleteAttribute(&fileFinderRes, ""); 
 	}
 }
 

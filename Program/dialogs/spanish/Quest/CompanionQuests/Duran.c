@@ -138,7 +138,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_13":
 			dialog.text = "Aún no del todo, primero tenemos que limpiar y eliminar a la chica que se escapó tan rápido al segundo piso.";
-			link.l1 = "¿Qué?! ¡Baja las armas! ¿Has perdido la cabeza, Claude? ¡No soy un carnicero!";
+			link.l1 = "¿Qué? ¡Baja las armas! ¿Has perdido la cabeza, Claude? ¡No soy un carnicero!";
 			link.l1.go = "SKD_DomAnri_14";
 		break;
 		
@@ -282,6 +282,7 @@ void ProcessDialogEvent()
 			CloseQuestHeader("TheFormerKnight");
 			chrDisableReloadToLocation = false;
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
+			LocatorReloadEnterDisable("PortRoyal_houseSp1", "reload2", true);
 			
 			sld = CharacterFromID("Duran");	//Клод Дюран становится постоянным офицером
 			sld.OfficerWantToGo.DontGo = true;

@@ -30,6 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "Je m’attendais à un discours pompeux de sa part. Mais non, il s’est jeté directement au combat.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
+			if (sti(pchar.rank) <= 13) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -151,7 +152,7 @@ void ProcessDialogEvent()
 		
 		// Диалог с Алонсо во вторую ночь
 		case "Memento_Dich_EtapTwo_Alonso_2":
-			dialog.text = "Je comprends. Beaucoup dans l’équipage dorment ensemble maintenant – ils ont peur de rester seuls. Comme si c’était même possible d’être seul sur ce navire…";
+			dialog.text = "Je comprends. Beaucoup dans l’équipage dorment ensemble maintenant – ils ont peur de rester seuls. Comme si c’était même possible d’être seul sur ce navire...";
 			link.l1 = "Comme tu vois, je n’ai pas réussi. Que s’est-il passé ?";
 			link.l1.go = "Memento_Dich_EtapTwo_Alonso_3";
 		break;
@@ -717,25 +718,25 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_MortimerGrim_phantom_23":
-			dialog.text = "Je suis un lâche, collègue. Un lâche ordinaire et pitoyable qui a eu peur de la mort — comme des milliers d’hommes avant moi. Quand l’équipage est mort de la peste… et que c’était ma faute, j’ai perdu la raison. Un mois à dériver seul sur un navire de morts.";
+			dialog.text = "Je suis un lâche, collègue. Un lâche ordinaire et pitoyable qui a eu peur de la mort — comme des milliers d’hommes avant moi. Quand l’équipage est mort de la peste... et que c’était ma faute, j’ai perdu la raison. Un mois à dériver seul sur un navire de morts.";
 			link.l1 = "Que s’est-il vraiment passé ?";
 			link.l1.go = "Memento_MortimerGrim_phantom_24";
 		break;
 
 		case "Memento_MortimerGrim_phantom_24":
-			dialog.text = "Je n’ai pas su affronter la mort. Au lieu de l’accepter, de survivre et d’en tirer une leçon, j’ai encore plus paniqué. Et pour étouffer cette peur… j’ai obligé les autres à traverser ce que j’avais vécu.";
+			dialog.text = "Je n’ai pas su affronter la mort. Au lieu de l’accepter, de survivre et d’en tirer une leçon, j’ai encore plus paniqué. Et pour étouffer cette peur... j’ai obligé les autres à traverser ce que j’avais vécu.";
 			link.l1 = "...";
 			link.l1.go = "Memento_MortimerGrim_phantom_25";
 		break;
 
 		case "Memento_MortimerGrim_phantom_25":
-			dialog.text = "Merci, collègue. De m’avoir libéré de cette… existence. Maintenant, je sais vraiment qu’il n’y a pas de mort. Et je n’ai plus peur. Je n’ai plus personne à blâmer ni à asservir.";
+			dialog.text = "Merci, collègue. De m’avoir libéré de cette... existence. Maintenant, je sais vraiment qu’il n’y a pas de mort. Et je n’ai plus peur. Je n’ai plus personne à blâmer ni à asservir.";
 			link.l1 = "...";
 			link.l1.go = "Memento_MortimerGrim_phantom_26";
 		break;
 
 		case "Memento_MortimerGrim_phantom_26":
-			dialog.text = "Ne sépare pas le ‘Memento’ de son capitaine. Mortimer… Le capitaine Mortimer était un homme bien. Retrouve-le à la Dominique. Et le navire… il t’acceptera.";
+			dialog.text = "Ne sépare pas le ‘Memento’ de son capitaine. Mortimer... Le capitaine Mortimer était un homme bien. Retrouve-le à la Dominique. Et le navire... il t’acceptera.";
 			link.l1 = "...";
 			link.l1.go = "Memento_MortimerGrim_phantom_27";
 		break;

@@ -80,6 +80,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Sharlie") && pchar.questTemp.Sharlie == "crew" && npchar.city == "FortFrance")
 			{
 				DelLandQuestMark(npchar);
+				FreeSitLocator("FortFrance_tavern", "sit7");
 				dialog.text = "Czegoś potrzeba, Panie?";
 				Link.l1 = "Witaj karczmarzu, pilnie potrzebuję załogi do mojego statku. Czy możesz mi w tym pomóc?";
 				Link.l1.go = "Sharlie_crew";
@@ -1108,6 +1109,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_day":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "Pokój jest do twojej dyspozycji, kapitanie. Całkowicie za darmo.";
+				link.l1 = "Dzięki, przyjacielu.";
+				link.l1.go = "room_day_wait";
+				link.l3 = "Nie teraz. Porozmawiajmy o czymś innym.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "To będzie cię kosztować 5 peso.";
 			if (makeint(pchar.money) >= 5)
 			{
@@ -1124,6 +1134,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_day_next":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "Pokój jest do twojej dyspozycji, kapitanie. Całkowicie za darmo.";
+				link.l1 = "Dzięki, przyjacielu.";
+				link.l1.go = "room_day_wait_next";
+				link.l3 = "Nie teraz. Porozmawiajmy o czymś innym.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "To będzie cię kosztować 10 peso.";
 			if (makeint(pchar.money) >= 10)
 			{
@@ -1140,6 +1159,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_night":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "Pokój jest do twojej dyspozycji, kapitanie. Całkowicie za darmo.";
+				link.l1 = "Dzięki, przyjacielu.";
+				link.l1.go = "room_night_wait";
+				link.l3 = "Nie teraz. Porozmawiajmy o czymś innym.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "To będzie cię kosztować 5 peso.";
 			if (makeint(pchar.money) >= 5)
 			{

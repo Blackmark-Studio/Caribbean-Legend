@@ -625,7 +625,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_Prisoner_2":
 			dialog.text = "Adam? Quel bastardo? Era tutto il suo piano! Ora capisco... Sì, ho aiutato Katrine a scappare tre mesi fa. Povera ragazza, non hai idea di come la trattasse...";
-			link.l1 = "Era sua moglie e non mi importava affatto di quello che è successo, non sono affari miei. Ho commesso un errore salendo sulla tua galea, ma è troppo tardi per parlarne. Adam mi ha promesso di pagarmi per il mio aiuto.";
+			link.l1 = "Era sua moglie e non mi importava affatto di quello che è successo, non sono affari miei. Ho commesso un errore salendo sulla tua fluita, ma è troppo tardi per parlarne. Adam mi ha promesso di pagarmi per il mio aiuto.";
 			link.l1.go = "FalseTrace_Prisoner_3";
 		break;
 		
@@ -654,7 +654,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_Prisoner_7":
-			dialog.text = "Arresterai Adam Rayner e lo metterai in catene. Poi mi porterai me e Katerine a "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+". Non attraccare in città, dopotutto, sei stato tu a affondare il mio galeone, lascia tutti e tre noi a "+XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen")+"\nTi chiederei anche un'arma. Andremo in città attraverso la giungla e mi assicurerò che quel fetente paghi non solo per i suoi crimini ma anche per i tuoi. Se lo merita.\nHai la mia parola che il tuo nome non verrà menzionato. In cambio, ti darò informazioni vere su una nave con l'oro del nemico.\nNon sarà una grande sfida per te ma ha i suoi denti, otterrai un bel bottino. Molto meglio del mio riscatto e dei cosiddetti tesori di Solly Strabico. Abbiamo un accordo?";
+			dialog.text = "Arresterai Adam Rayner e lo metterai in catene. Poi mi porterai me e Katerine a "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+". Non attraccare in città, dopotutto, sei stato tu a affondare il mio fluita, lascia tutti e tre noi a "+XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen")+"\nTi chiederei anche un'arma. Andremo in città attraverso la giungla e mi assicurerò che quel fetente paghi non solo per i suoi crimini ma anche per i tuoi. Se lo merita.\nHai la mia parola che il tuo nome non verrà menzionato. In cambio, ti darò informazioni vere su una nave con l'oro del nemico.\nNon sarà una grande sfida per te ma ha i suoi denti, otterrai un bel bottino. Molto meglio del mio riscatto e dei cosiddetti tesori di Solly Strabico. Abbiamo un accordo?";
 			link.l1 = "Non mi piace il tuo piano. Credo che le autorità locali organizzino una caccia per me non appena lascio le coste di "+XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen")+". No, capitano, non sto per rischiare la mia testa. La nostra conversazione è finita.";
 			link.l1.go = "FalseTrace_Prisoner_8";
 			link.l2 = "Ebbene, sembra che Katerine avesse ragione. Mi piace la tua proposta. Adam Rayner sarà arrestato. Lo farò subito. Sarai liberato dopo che arresteremo Adam. Ci vediamo, capitano!";

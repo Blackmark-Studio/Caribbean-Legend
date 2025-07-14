@@ -256,8 +256,8 @@ void FaceMaker(aref rCharacter)
 		case "Maskog_mush"	:     	rCharacter.FaceId = 205; 	break;		// Тиничгиту - модель мушкетера		
 		case "Archy"		:		rCharacter.FaceId = 206; 	break;		// Арчибальд Колкхаун
 		case "Archy_mush"	:		rCharacter.FaceId = 206; 	break;		// Арчибальд Колкхаун - модель мушкетера		
-		case "Alonso"		:		rCharacter.FaceId = 207; 	break;		// Алонсо де Мальдонадо
-		case "Alonso_mush"	:		rCharacter.FaceId = 207; 	break;		// Алонсо де Мальдонадо - модель мушкетера
+		case "Maldonado"    :		rCharacter.FaceId = 207; 	break;		// Алонсо де Мальдонадо
+		case "Maldonado_mush" :		rCharacter.FaceId = 207; 	break;		// Алонсо де Мальдонадо - модель мушкетера
 		
 		// Пиратские бароны
 		case "Jeckman"		:		rCharacter.FaceId = 208; 	break;		// Якоб Джекман

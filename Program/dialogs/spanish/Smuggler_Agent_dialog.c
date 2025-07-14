@@ -67,6 +67,14 @@ void ProcessDialogEvent()
 		else
 		{
 			AddQuestRecord("Gen_Contraband", "t1");
+			if (Pchar.quest.contraband.CurrentPlace == "shore30" || Pchar.quest.contraband.CurrentPlace == "shore31")
+			{
+				AddQuestUserData("Gen_Contraband", "sIsland", "Marie Galante");
+			}
+			if (Pchar.quest.contraband.CurrentPlace == "shore59")
+			{
+				AddQuestUserData("Gen_Contraband", "sIsland", "Tobago");
+			}
 			AddQuestUserData("Gen_Contraband", "sIsland", XI_ConvertString(GetIslandByCityName(npchar.city)));
 		}
 		AddQuestUserData("Gen_Contraband", "sLoc", GetConvertStr(Pchar.quest.contraband.CurrentPlace, "LocLables.txt"));
@@ -872,7 +880,7 @@ void ProcessDialogEvent()
 	break;
 		
 	case "TPZ_smugglers_2":
-		dialog.text = "Puedo conseguir lo que sea, ¿entiendes? Siempre que paguen bien. Pero ese maldito gobernador nos tiene totalmente acorralados. Ya no tratamos con alcohol - las botellas hacen ruido, se oyen desde una buena legua, las ganancias son miserables y el riesgo de acabar en la horca es enorme. Así que discúlpame.";
+		dialog.text = "Puedo conseguir lo que sea, ¿entiendes? Siempre que paguen bien. Pero ese maldito gobernador nos tiene totalmente acorralados. Ya no tratamos con alcohol — las botellas hacen ruido, se oyen a kilómetros, las ganancias son miserables y el riesgo de acabar en la horca es enorme. Así que discúlpame.";
 		link.l1 = "Vaya... Y aún así dices que puedes conseguirlo todo.";
 		link.l1.go = "TPZ_smugglers_3";		
 	break;

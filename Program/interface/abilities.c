@@ -835,9 +835,9 @@ void SetSkillArrows()
 void SetOfficersSkills()
 {
 	string sCharacter = "pic"+(sti(GameInterface.PASSENGERSLIST.current)+1);
-	if (checkAttribute(GameInterface, "PASSENGERSLIST."+sCharacter))
+	if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter))
 	{
-		if (checkAttribute(GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
+		if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
 		{
 			sCharacter = GameInterface.PASSENGERSLIST.(sCharacter).character;
 			ref otherchr = &characters[sti(sCharacter)];
@@ -991,7 +991,7 @@ void AcceptAddOfficer()
 	
 	string attributeName2 = "pic"+(nCurScrollOfficerNum+1);
 
-    if (checkAttribute(GameInterface, "PASSENGERSLIST."+attributeName2 + ".character"))
+    if (checkAttribute(&GameInterface, "PASSENGERSLIST."+attributeName2 + ".character"))
     {
 		int iChar = sti(GameInterface.PASSENGERSLIST.(attributeName2).character);
 
@@ -1452,7 +1452,8 @@ void AcceptPerk()
     SetFormatedText("SHIP_AVAILABLE", XI_ConvertString("Ship abilities") + "  -  " + xi_refCharacter.perks.FreePoints_ship);
     RefreshPerksPictures();
 	RefreshPerksNames();
-	FillCharactersScrollEx(true);
+	if(currentScrollTab == 1) FillCharactersScrollEx(true);
+	else FillCharactersScrollEx(false);
 	FillPassengerScroll();
 	GameInterface.CHARACTERS_SCROLL.current = iCurrentNode;
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"CHARACTERS_SCROLL",-1);

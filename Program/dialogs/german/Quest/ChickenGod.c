@@ -779,20 +779,12 @@ void ProcessDialogEvent()
 				case SHIP_LADYBETH:
 					dialog.text = "Und hast du den Priester gesehen? Nun, du wirst ihn treffen. Und du solltest dich besser mit Doppelschuss-Pistolenladungen eindecken. Wenn das nicht hilft - versuche es mit einem Holzpflock.";
 				break;
+				
+				case SHIP_MEMENTO:
+					dialog.text = "Und hast du den Priester gesehen? Nun, du wirst ihn treffen. Und du solltest dich besser mit Doppelschuss-Pistolenladungen eindecken. Wenn das nicht hilft - versuche es mit einem Holzpflock.";
+				break;
 			}
 		break;
-		
-		/*case "joruba_p3_HolyMercy":
-			dialog.text = "Und hast du den Priester gesehen?";
-			link.l1 = "Welcher Priester?";
-			link.l1.go = "joruba_p3_HolyMercy_2";
-		break;
-		
-		case "joruba_p3_HolyMercy_2":
-			dialog.text = "Nun, du wirst ihn treffen. Und du solltest dich besser mit Doppelschuss-Pistolenladungen eindecken. Wenn das nicht hilft - versuche es mit einem Holzpflock.";
-			link.l1 = "...";
-			link.l1.go = "joruba_p3_1";
-		break;*/
 		
 		case "joruba_p3_PinkOtkaz":
 			dialog.text = "Jawohl, dieses Schiff mag eine Geschichte haben... aber war es nicht zu einfach zu bekommen? Auf keinen Fall! Du hast noch einen Haufen unerledigter Arbeit auf der Liste. Wenn du das erledigt hast, werden wir dieses Opfer nochmal besprechen.";

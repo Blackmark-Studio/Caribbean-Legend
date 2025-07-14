@@ -248,12 +248,15 @@ void ProcessDialogEvent()
 
 		case "BetsiPrice_11":
 			dialog.text = "Nous y voilà. Tu sais, je ne t’ai même pas demandé ce qui t’a conduit dans cette maison ?";
-			link.l1 = "Je n’"+GetSexPhrase("étais","étais")+" pas là par hasard. Le tavernier semblait vraiment inquiet de ta disparition et m’a demandé d’enquêter. Et moi, refuser ? Abandonner une dame en détresse ? Ce serait indigne d’un capitaine.";
-			link.l1.go = "BetsiPrice_12";
 			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulonOtdatBetsy") && pchar.questTemp.TBP_BuyKulonOtdatBetsy == true)
             {
 			link.l2 = "Je n’"+GetSexPhrase("étais","étais")+" pas là par hasard. Ce pendentif m’a conduit là-bas. Prends-le.​ Le tavernier semblait vraiment inquiet de ta disparition et m’a demandé d’enquêter. Et moi, refuser ? Abandonner une dame en détresse ? Ce serait indigne d’un capitaine.";
 			link.l2.go = "BetsiPrice_12_otdal_kulon";
+			}
+			else
+			{
+			link.l1 = "Je n’"+GetSexPhrase("étais","étais")+" pas là par hasard. Le tavernier semblait vraiment inquiet de ta disparition et m’a demandé d’enquêter. Et moi, refuser ? Abandonner une dame en détresse ? Ce serait indigne d’un capitaine.";
+			link.l1.go = "BetsiPrice_12";
 			}
 		break;
 		

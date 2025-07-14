@@ -265,7 +265,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_7":
-			dialog.text = "Es gibt eine kleine Insel südlich von Guadeloupe. Kap Unzugänglich. Lande dort und gebe Longway die Waffe. Nur dann wird Longway dir alles erzählen, was er über Lucas Rodenburg weiß.";
+			dialog.text = "Es gibt eine kleine Insel Marie Galante südlich von Guadeloupe. Kap Unzugänglich. Lande dort und gebe Longway die Waffe. Nur dann wird Longway dir alles erzählen, was er über Lucas Rodenburg weiß.";
 			link.l1 = "Du bist in keiner Position, um mit mir zu verhandeln, Chinese.";
 			link.l1.go = "Longway_prisoner_8";			
 		break;
@@ -324,7 +324,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_0":
-			dialog.text = "Sind wir auf Guadeloupe angekommen, Kapitän?";
+			dialog.text = "Sind wir auf Marie Galante angekommen, Kapitän?";
 			link.l1 = "Beruhige dich, wir werden bald da sein.";
 			link.l1.go = "exit";
 			NextDiag.Tempnode = "Longway_prisoner_0";

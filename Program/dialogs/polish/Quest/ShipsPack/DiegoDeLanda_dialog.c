@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "DiegoDeLanda_leaving_Second_2": // Второе прощание
-			dialog.text = "\nPrawdziwa zagadka stoi teraz przede mną. Zebraliście już dwie… relikwie. Lubicie zbierać takie rzeczy? Jesteście kolekcjonerem?";
+			dialog.text = "\nPrawdziwa zagadka stoi teraz przede mną. Zebraliście już dwie... relikwie. Lubicie zbierać takie rzeczy? Jesteście kolekcjonerem?";
 			link.l1 = "Skąd wiecie?";
 			link.l1.go = "DiegoDeLanda_leaving_Second_3";
 		break;

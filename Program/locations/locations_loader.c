@@ -1174,7 +1174,9 @@ bool LocCheckDLight(ref loc)
 				|| loc.id == "Deck_Near_Ship_Memento"
 				|| loc.id == "Ship_deck_Memento"
 				|| loc.id == "Quest_Ship_deck_Medium_trade"
-				|| loc.id == "Deck_Near_Ship")
+				|| loc.id == "Deck_Near_Ship"
+				|| loc.id == "Clone_location"
+				|| loc.id == "Ship_deck")
 			checkDLight = true;
 		}
 	}

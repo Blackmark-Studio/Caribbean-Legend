@@ -73,7 +73,10 @@ void DiegoDeLanda_Leaving_End_2(string qName)
 	if (CharacterIsAlive("DiegoDeLanda"))
 	{
 		sld = CharacterFromID("DiegoDeLanda");
+		sld.dialog.filename = "Quest\ShipsPack\DiegoDeLanda_dialog.c";
+		sld.dialog.currentnode = "DiegoDeLanda_Meeting";
 		ChangeCharacterAddressGroup(sld, "none", "", "");
+		LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 	}
 }
 
@@ -99,7 +102,6 @@ void DiegoDeLanda_Leaving_End_3(string qName)
 			AddQuestRecord("SixCaptains", "2");
 		}
 	}
-	Achievment_Set("ach_CL_157");
 }
 
 // Убиваем Диего де Ланду
@@ -122,6 +124,7 @@ void DiegoDeLanda_Leaving_Shoot_3(string qName)
 {
 	if (questMovieIsLockPlayerCtrl) LAi_FadeLong("", "");
 	DoQuestFunctionDelay("DiegoDeLanda_Leaving_End_3", 1.0);
+	Achievment_Set("ach_CL_157");
 }
 
 //=======================================================

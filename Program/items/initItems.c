@@ -1582,7 +1582,7 @@ int InitItems()
     itm.model = "OpenBook";
 	itm.picIndex = 15;
 	itm.picTexture = "ITEMS_26";
-	itm.price = 10;
+	itm.price = 0;
 	itm.Weight = 1.0;
 	itm.ItemType = "QUESTITEMS";
 	n++;
@@ -4224,10 +4224,10 @@ int InitStdBlade( 	int		ItemIndex,
 	ref	blade;
 	int	bladeIndex;
 	float MaxAttack = 0.0;
-	
+
 	bladeIndex = ItemIndex;
 	makeref(blade, Items[bladeIndex]);
-	
+
 	blade.id				= ModelID;		
 	blade.groupID 			= BLADE_ITEM_TYPE;
 	blade.model				= ModelID;
@@ -4246,14 +4246,14 @@ int InitStdBlade( 	int		ItemIndex,
 	blade.quality			= Quality;
 	blade.target			= TargetGroup;
 	blade.TradeType 		= ITEM_TRADE_AMMUNITION;
-		
-	if(isGenerable)				blade.Generation.qty 	= GenerationQty;
+
+	if(isGenerable) blade.Generation.qty = GenerationQty;
 	if(isGenerablePrice)    	
 	{
 		blade.Generation.price 	= true; // Флаг "генерить цену"	
 	}
 	else blade.price 	= Price;	
-	
+
 	switch (BladeType) 
 	{
 		case "FencingL" :
@@ -4278,7 +4278,7 @@ int InitStdBlade( 	int		ItemIndex,
 	if(ModelID == "blade_42") blade.Weight = 3.0;
 	if(ModelID == "blade_SP_3low") blade.Weight = 1.6;
 	if(ModelID == "blade_SP_3")    blade.Weight = 3.8;
-	
+
 	blade.Balance = fRandSmall(2.0);
 	switch (Quality)
 	{
@@ -4328,22 +4328,20 @@ int InitStdBlade( 	int		ItemIndex,
 	if(ModelID == "blade_41") blade.Balance = 1.0;
 	// <-- legendary edition
 	if(HasSubStr(ModelID, "khopesh")) blade.Balance = 2.0;
-	
+
 	if(ModelID == "unarmed") blade.Attack = 15.0;
 	if(ModelID == "knife_01") blade.Attack = 34.5;
 	if(ModelID == "knife_03") blade.Attack = 50.0;
 	if(ModelID == "blade_40") blade.Attack = 42.0;
 	if(ModelID == "blade_41") blade.Attack = 90.0;
 	if(ModelID == "blade_42") blade.Attack = 70.0;
-	
+
 	if(ModelID == "blade_SP_3low") blade.Balance = 1.2;
 	if(ModelID == "blade_SP_3") blade.Balance = 1.2;
-	
+
 	if(ModelID == "blade_SP_3low") blade.Attack = 77.0;
 	if(ModelID == "blade_SP_3") blade.Attack = 77.0;
-	
-	SetBladeWeightAttack(blade);
-		
+
 	switch (BladeType) 
 	{
 		case "FencingL" :
@@ -4368,11 +4366,9 @@ int InitStdBlade( 	int		ItemIndex,
 			else blade.price = Price;			
 		break;
 	}
-	
-	
-	
+
 	//trace("blade.id : " + blade.id + " blade.price : " + blade.price + " blade.Attack : " + blade.Attack + " blade.Balance : " + blade.Balance + " blade.Weight : " + blade.Weight);
-	
+
 	if(blade.id == "blade_SP_3low")
 	{
 		blade.multiobject = true;		
@@ -4385,7 +4381,7 @@ int InitStdBlade( 	int		ItemIndex,
 		blade.multiobject.qty = 1;
 		blade.multiobject.alchemy = false;
 	}
-	
+
 	bladeIndex++;
 	return bladeIndex;
 }

@@ -108,7 +108,7 @@ void ProcessDialogEvent()
             PlaySound("Ambient\Tavern\glotok_001.wav");
             PlaySound("Types\" + LanguageGetLanguage() + "\warrior03.wav");
             SendMessage(NPChar, "lfffsfff", MSG_CHARACTER_VIEWSTRPOS, 0.0, 0.0, 0.1, XI_ConvertString("Rampage"), 255.0, 30.0, 30.0);
-            NPChar.Unpushable = "";
+            MakeUnpushable(NPChar, true);
 			LAi_SetCurHPMax(NPChar);
 			LAi_GetCharacterMaxEnergy(NPChar);
 			QuestAboardCabinDialogExitWithBattle(""); 
@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 		break;
 
         case "Kneepel":
-            dialog.text = "Книппель мне в корму, не успел! Будь мои старые кости чуть растропнее, сам бы отправил этого ублюдка к праотцам. Спасибо тебе, кэп. И от моего почившего патрона - тоже спасибо!";
+            dialog.text = "Книппель мне в корму, не успел! Будь мои старые кости чуть расторопнее, сам бы отправил этого ублюдка к праотцам. Спасибо тебе, кэп. И от моего почившего патрона - тоже спасибо!";
 			link.l1 = "Ты кто? Пленник? Это мои ребята тебя освободили?";
 			link.l1.go = "Kneepel_1";	
 		break;

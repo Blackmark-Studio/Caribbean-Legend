@@ -813,7 +813,7 @@ void ProcessDialogEvent()
 				break;
 
 				case 5:
-					if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > rand(110) )
+					if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > rand(110) || CheckAttribute(pchar, "questTemp.Sharlie.Lock"))
 					{
 						dialog.text = "...A potem złapałem jego szablę za ostrze...";
 						link.l1 = "...a potem ona powiedziała...";

@@ -260,7 +260,7 @@ Ich habe die 'Meifeng' versenkt. Jetzt kann ich nicht mehr tun, was ich geplant 
 #TEXT   3-47
 Ich habe die 'Meifeng' verloren und sie ist jetzt weg. Jetzt kann ich nicht mehr tun, was ich geplant habe.
 #TEXT   3-48
-Der Chinese hat sich bereit erklärt, im Gegenzug für seine Freiheit Informationen zu liefern. Ich muss ihn am Kap Inaccessible auf Guadeloupe anlanden.
+Der Chinese hat sich bereit erklärt, im Gegenzug für seine Freiheit Informationen zu liefern. Ich muss ihn am Kap Inaccessible auf Marie Galante anlanden.
 #TEXT   3-49
 Das wird ja immer besser! Rodenburg befahl Longway, Peter Stuyvesant zu töten! Das ist definitiv ein Staatsstreich. Dafür werden Leute gehängt. Ich muss Stuyvesant finden und ihm alles erzählen. Er wird sich sofort mit Lucas befassen. Peters Galeone wird eine Woche lang in der Nähe von Saint-Christopher kreuzen.
 #TEXT   3-50

@@ -4,6 +4,7 @@
 #include "quests\characters_task.c"
 #include "quests\quests_scenes.c"
 #include "quests\tutorial.c"
+#include "quests\lovesex.c"
 #include "quests\quests_reaction.c"
 #include "quests\reaction_functions.c"
 

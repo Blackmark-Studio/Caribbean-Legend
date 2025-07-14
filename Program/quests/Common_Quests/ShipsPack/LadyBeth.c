@@ -401,7 +401,7 @@ void LadyBeth_CaimanBuhta_2(string qName)
             PChar.GenQuest.Treasure.Vario = 5; // Это скип встречающих
     }
 	pchar.GenQuest.HunterLongPause = true;
-	pchar.questTemp.BlackMark.IronsBlock = true;
+	pchar.questTemp.BlockSpawnQuestNPC = true;
 	setCharacterShipLocation(pchar, "Shore17");
 	DoFunctionReloadToLocation("Shore17", "reload", "sea", "LadyBeth_CaimanBuhta_3");
 }
@@ -1752,83 +1752,18 @@ void LadyBeth_ShipInShore_15(string qName)
 
 void LadyBeth_ShipInShore_16(string qName)
 {
+	CloneLocation("Quest_Cabin_Medium", "Clone_location");
+	DeleteAttribute(&locations[FindLocation("Clone_location")], "boarding");
+	
 	// прописываем каюту внутри корабля -->
 	sld = &Locations[FindLocation("Shore16")];
 	sld.models.always.locators = "bay_sp2_locators_ship";
 	sld.reload.l41.name = "reload4";
-	sld.reload.l41.go = "Location_reserve_05";
+	sld.reload.l41.go = "Clone_location";
 	sld.reload.l41.emerge = "reload1";
 	sld.reload.l41.autoreload = "0";
 	sld.reload.l41.label = "cabine";
 	sld.reload.l41.disable = false;
-	
-	//sld = Findlocation("Location_reserve_05");
-	sld = &Locations[FindLocation("Location_reserve_05")];
-	DeleteAttribute(sld, "IslandId");
-	DeleteAttribute(sld, "type");
-	DeleteAttribute(sld, "models");
-	DeleteAttribute(sld, "environment");
-	DeleteAttribute(sld, "Box1");
-	DeleteAttribute(sld, "Box2");
-	DeleteAttribute(sld, "Box3");
-	sld.id.label = "cabine";
-	sld.filespath.models = "locations\decks\capmd";
-	sld.image = "loading\Capdeck_" + rand(4) + ".tga";
-	//Sound
-	sld.type = "boarding_cabine";
-	//Models
-	//Always
-	sld.models.always.l1 = "capmd";
-	sld.models.always.l1.level = 65538;
-
-	sld.models.always.window = "capmd_bdw";
-	sld.models.always.window.tech = "LocationWindows";
-	sld.models.always.window.level = 65539;
-
-	//Day
-	sld.models.day.l2 = "capmd_bd"; //пушки с кормы, старые портреты и сундуки
-	sld.models.day.l2.level = 65538;
-	sld.models.day.locators = "capmd_lbd"; //боевые локаторы, смещаем loc0 к центру
-	sld.models.day.charactersPatch = "capmd_pbd"; //дерево, без стола и ковра
-	sld.models.day.fonar = "capmd_fd"; //фонарь общий, днём дополнительное освещение не работает
-
-	//Night
-	sld.models.night.l3 = "capmd_bn"; //пушки по бортам, старые портреты и сундуки
-    sld.models.night.l3.level = 65538;
-    sld.models.night.locators = "capmd_lbn";  //боевые локаторы, смещаем loc0 к торцу стола
-    sld.models.night.charactersPatch = "capmd_pbn"; //дерево, без ковра
-    sld.models.night.fonar = "capmd_fn"; //фонарь общий, добавляет локаторы каретной и настольной свечей
-
-	//Environment
-	sld.environment.sea = "true";
-	sld.environment.weather = "true";
-
-    sld.locators_radius.randitem.randitem1 = 1;
-    sld.locators_radius.randitem.randitem2 = 1;
-
-    sld.locators_radius.rld.loc0 = 0.5;
-    sld.locators_radius.rld.loc1 = 0.5;
-    sld.locators_radius.rld.loc2 = 0.5;
-    sld.locators_radius.rld.aloc0 = 0.5;
-    sld.locators_radius.rld.aloc1 = 0.5;
-    sld.locators_radius.rld.aloc2 = 0.5;
-
-	sld.boarding = "true";
-	sld.boarding.nextdeck = "";
-	sld.camshuttle = 1;
-	sld.boarding.locatorNum = 1;
-	sld.CabinType = true;
-	sld.environment.weather.rain = false;
-	sld.boarding.Loc.Hero = "loc2";
-    sld.boarding.Loc.Capt = "loc0";
-	
-	sld.reload.l1.name = "reload1";
-	sld.reload.l1.go = "Shore16";
-	sld.reload.l1.emerge = "reload3";
-	sld.reload.l1.autoreload = "0";
-	sld.reload.l1.label = "Shore16";
-	sld.reload.l1.disable = false;
-	// прописываем каюту внутри корабля <--
 	//
 	//EndQuestMovie();
 	//DeleteAttribute(pchar, "questTemp.NoFast");
@@ -1839,6 +1774,7 @@ void LadyBeth_ShipInShore_16(string qName)
 void LadyBeth_ShipInShore_17(string qName)
 {
 	chrDisableReloadToLocation = true;
+	LocatorReloadEnterDisable("Shore16", "boat", true);
 	//LAi_LocationFightDisable(loadedLocation, true);
 	locCameraFromToPos(-15.48, 1.21, 60.26, true, -11.17, 0.33, 53.97);
 	
@@ -1990,7 +1926,7 @@ void LadyBeth_ShipInShore_Vnutri_1(string qName)
 	LAi_SetPlayerType(pchar);
 	DeleteAttribute(pchar, "questTemp.NoFast");
 	chrDisableReloadToLocation = false;
-	SetFunctionLocationCondition("LadyBeth_ShipInShore_Vnutri_2", "Location_reserve_05", false);
+	SetFunctionLocationCondition("LadyBeth_ShipInShore_Vnutri_2", "Clone_location", false);
 	
 	for (i=1; i<=8; i++)
 	{
@@ -2009,26 +1945,43 @@ void LadyBeth_ShipInShore_Vnutri_1(string qName)
 
 void LadyBeth_ShipInShore_Vnutri_2(string qName)
 {
-	CreateSea(EXECUTE, REALIZE);
-	CreateWeather(EXECUTE,REALIZE);
+	ref sld = &locations[FindLocation(pchar.location)];
+	sld.private1.items.gold = 25000;
+	sld.private1.items.spyglass3 = 1;
+	sld.private1.items.icollection = 1;
+	sld.private1.items.map_normal = 1;
+	sld.private1.items.LadyBeth_Book = 1;
 	
-	Locations[FindLocation(pchar.location)].box1.items.gold = 25000;
-	Locations[FindLocation(pchar.location)].box1.items.spyglass3 = 1;
-	Locations[FindLocation(pchar.location)].box1.items.icollection = 1;
-	Locations[FindLocation(pchar.location)].box1.items.map_normal = 1;
-	Locations[FindLocation(pchar.location)].box1.items.LadyBeth_Book = 1;
+	// продублируем на всякий случай в приваты и боксы, потом удалить:
+	DeleteAttribute(sld, "box1");
+	sld.box1 = Items_MakeTime(0, 0, 0, 2025);
+	sld.box1.items.gold = 25000;
+	sld.box1.items.spyglass3 = 1;
+	sld.box1.items.icollection = 1;
+	sld.box1.items.map_normal = 1;
+	sld.box1.items.LadyBeth_Book = 1;
+	
+	sld.private2.QuestClosed = true;
+	sld.private3.QuestClosed = true;
+	
+	sld.reload.l1.name = "reload1";
+	sld.reload.l1.go = "Shore16";
+	sld.reload.l1.emerge = "reload3";
+	sld.reload.l1.autoreload = "0";
+	sld.reload.l1.label = "Shore16";
+	sld.reload.l1.disable = false;
 	
 	PChar.quest.LadyBeth_Book.win_condition.l1 = "item";
 	PChar.quest.LadyBeth_Book.win_condition.l1.item = "LadyBeth_Book";
 	PChar.quest.LadyBeth_Book.function = "LadyBeth_Book";
-	
-	SetFunctionLocationCondition("LadyBeth_ShipInShore_Vnutri_3", "Shore16", false);
 }
 
 void LadyBeth_Book(string qName)
 {
 	TakeItemFromCharacter(pchar, "LadyBeth_Book");
 	AddQuestRecordInfo("LadyBeth_Book", "1");
+	
+	SetFunctionLocationCondition("LadyBeth_ShipInShore_Vnutri_3", "Shore16", false);
 }
 
 void LadyBeth_ShipInShore_Vnutri_3(string qName)
@@ -2097,14 +2050,7 @@ void LadyBeth_ShipInShore_Vnutri_3(string qName)
 		sld = CharacterFromID("LadyBeth_Alonso");
 		sld.lifeday = 0;
 	}
-	chrDisableReloadToLocation = true;
-	DoQuestFunctionDelay("LadyBeth_KorablNash", 3.0);
-}
-
-void LadyBeth_KorablNash(string qName)
-{
-	QuestToSeaLogin_Launch();
-	QuestToSeaLogin_PrepareLoc("Caiman", "Quest_Ships", "Quest_ship_1", true);
+	
 	//убираем запреты
 	bQuestDisableMapEnter = false;
 	chrDisableReloadToLocation = false;
@@ -2114,7 +2060,7 @@ void LadyBeth_KorablNash(string qName)
 	DeleteAttribute(pchar,"questTemp.TimeLock");
 	DeleteAttribute(pchar, "GenQuest.CannotWait");
 	DeleteAttribute(pchar, "GenQuest.HunterLongPause");
-	if(CheckAttribute(pchar,"questTemp.BlackMark.IronsBlock")) DeleteAttribute(pchar,"questTemp.BlackMark.IronsBlock");
+	if(CheckAttribute(pchar,"questTemp.BlockSpawnQuestNPC")) DeleteAttribute(pchar,"questTemp.BlockSpawnQuestNPC");
 	//через день приводим Кайман в порядок
 	DelQMfromCaiman();
 	SetTimerFunction("LadyBeth_CaimanReset", 0, 0, 1);
@@ -2181,6 +2127,7 @@ void LadyBeth_CaimanReset(string qName)
 	sld.models.always.grassPatch = "shore07_grass";
 	sld.models.day.charactersPatch = "shore07_patch";
 	sld.models.night.charactersPatch = "shore07_patch";
+	
 	//остальное
 	LocatorReloadEnterDisable("Caiman_Jungle_01", "reload1_back", false);
 	locations[FindLocation("Caiman_Jungle_01")].DisableEncounters = false;
@@ -2274,7 +2221,7 @@ void LadyBeth_Barbados_Diego_1(string qName)
 		ChangeCharacterAddressGroup(sld, "Bridgetown_Plantation", "goto", "goto9");
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
-		LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+		LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 		pchar.questTemp.ISawDiegoDeLanda = sti(pchar.questTemp.ISawDiegoDeLanda) + 1; // встретил Диего де Ланда
 		pchar.questTemp.DiegoDeLanda_LadyBeth = true;
 	}

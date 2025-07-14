@@ -173,7 +173,7 @@ void ProcessDialogEvent()
 		if (NPChar.quest.meeting == "0") // первая встреча
 		{
 			dialog.Text = GetNatPhrase(npchar, LinkRandPhrase("¡Ja! ¡Un verdadero viejo lobo de mar ha venido a mi humilde taller! ¿Es nuevo en estas aguas, capitán?", "¡Bienvenido, señor! Si no eres un extraño al mar y tienes un barco, ¡has venido al lugar correcto!", "¡Hola, señor! Tienes suerte: este es el mejor taller de barcos de todo el Nuevo Mundo británico."), LinkRandPhrase("Monsieur, supongo que eres un capitán apuesto, ¿verdad? Si lo eres, ¡hiciste bien en visitar mi modesto astillero!", "¿Primera vez aquí, Monsieur Capitán? Entra y conoce a este viejo constructor naval.", "¡Tengamos el placer de conocernos, Monsieur! Un barco necesita ser acariciado, al igual que una mujer, ¡y nosotros, los franceses, somos expertos en eso! Créame, no se arrepentirá de venir aquí."), LinkRandPhrase("¡Nunca te he visto por aquí antes, señor. Encantado de conocerte!", "¡Saludo a un valiente conquistador de los mares! ¿Eres un marinero, no es así? Y yo soy el constructor naval, deberíamos conocernos.", "¡Hola, caballero! ¡Me alegra darte la bienvenida a mi taller!"), LinkRandPhrase("Buenas tardes, señor. No lo he visto antes, ¿verdad? ¿Tiene negocios conmigo?", "Hola, señor capitán. No se sorprenda, he conocido a bastantes capitanes, así que me di cuenta de que usted también es capitán a primera vista.", "Entre, señor. Soy el constructor naval. Un placer conocerle."));
-			Link.l1 = LinkRandPhrase("También me alegra conocerte. Mi nombre es " + GetFullName(pchar) + ", y soy nuevo en estos lugares. Así que decidí pasarme por aquí.", "Simplemente no podía pasar de largo, el olor a tablones recién cepillados... Yo soy " + GetFullName(pchar) + ", Capitán del barco '" + pchar.ship.name + "'.", "Permítame presentarme, " + GetFullName(pchar) + ", Capitán del barco '" + pchar.ship.name + "Encantado de conocerte. Entonces, estás construyendo y reparando barcos aquí, ¿verdad?");
+			Link.l1 = LinkRandPhrase("También me alegra conocerte. Mi nombre es " + GetFullName(pchar) + ", y soy nuevo en estos lugares. Así que decidí pasarme por aquí.", "Simplemente no podía pasar de largo, el olor a tablones recién cepillados... Yo soy " + GetFullName(pchar) + ", Capitán del barco '" + pchar.ship.name + "'.", "Permítame presentarme, " + GetFullName(pchar) + ", Capitán del barco '" + pchar.ship.name + "'. Encantado de conocerte. Entonces, estás construyendo y reparando barcos aquí, ¿verdad?");
 			Link.l1.go = "meeting";
 			NPChar.quest.meeting = "1";
 			if (startHeroType == 4 && NPChar.location == "SantaCatalina_shipyard")
@@ -185,7 +185,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("¡Oh! El terror de las aguas locales, Capitán " + GetFullName(pchar) + "¡Qué puedo hacer por ti?", "Vamos directo al grano, " + GetAddress_Form(NPChar) + ", No tengo tiempo para charlar. ¿Necesitas una reparación o solo quieres reemplazar tu bañera?", "¡Oh, no es eso " + GetFullName(pchar) + "¡ Qué pasa, " + GetAddress_Form(NPChar) + "¿Algo malo le pasó a tu bañera?"), LinkRandPhrase("¿Qué necesitas ahí, Capitán? Ni un solo minuto de paz, siempre todos estos bribones, qué día maldito...", "Hola, " + GetAddress_Form(NPChar) + ". Debo decir que tu visita espantó a todos mis clientes. ¿Espero que tu pedido cubra mis daños?", "¿De negocios conmigo, " + GetAddress_Form(NPChar) + "¿Bueno, sigue con ello y hazlo rápido?"), LinkRandPhrase("¿Qué te trae a mí, señor " + GetFullName(pchar) + "¿Puedo entender que tu barco pueda tener dificultades, considerando tu estilo de vida...?", "Me alegra saludar a un noble... oh, disculpe, " + GetAddress_Form(NPChar) + ", te confundí con otra persona. ¿Qué querías?", "No me gusta mucho tu tipo, Capitán, pero no te echaré, de todos modos. ¿Qué querías?")), LinkRandPhrase(LinkRandPhrase("Me alegra mucho verte, señor " + GetFullName(pchar) + "¡Entonces, cómo está funcionando? ¿Necesitas una reparación o careenado?", "Bienvenido, " + GetAddress_Form(NPChar) + "¡ Capitán " + GetFullName(pchar) + " ¡siempre es un huésped bienvenido en mi taller!", "Oh, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + "¡Me has visitado de nuevo! Espero que tu belleza esté bien, ¿no es así?"), LinkRandPhrase("" + GetAddress_Form(NPChar) + ", ¡Me alegra tanto verte de nuevo! ¿Cómo está tu hermoso barco? ¿Necesitas ayuda?", "Oh, " + GetAddress_Form(NPChar) + ", ¡saludos! ¿Cómo va todo? ¿Quizás los mástiles crujen o necesitas limpiar la sentina? ¡Mis muchachos harán lo mejor para ti!", "Buenas tardes, Capitán " + GetFullName(pchar) + "Me alegra que hayas venido de nuevo, y siempre estoy dispuesto a ayudarte."), LinkRandPhrase("¡Me alegra tenerte aquí, Capitán! Eres un cliente muy amable, " + GetAddress_Form(NPChar) + ", y deseo que sigas siendo así.", "Oh, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + "¡Estoy realmente feliz de tenerte aquí! ¿Qué puedo hacer por ti?", "Capitán, de nuevo has visitado " + XI_ConvertString("Colony" + npchar.City + "Acc") + "¡Créeme, estaremos encantados de ayudarte!")));
+			dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("¡Oh! El terror de las aguas locales, Capitán " + GetFullName(pchar) + "¡Qué puedo hacer por ti?", "Vamos directo al grano, " + GetAddress_Form(NPChar) + ", No tengo tiempo para charlar. ¿Necesitas una reparación o solo quieres reemplazar tu bañera?", "¡Oh, no es eso " + GetFullName(pchar) + "¡ Qué pasa, " + GetAddress_Form(NPChar) + "¿Algo malo le pasó a tu bañera?"), LinkRandPhrase("¿Qué necesitas ahí, Capitán? Ni un solo minuto de paz, siempre todos estos bribones, qué día maldito...", "Hola, " + GetAddress_Form(NPChar) + ". Debo decir que tu visita espantó a todos mis clientes. ¿Espero que tu pedido cubra mis daños?", "¿Quiere hacer algún negocio, " + GetAddress_Form(NPChar) + "? ¿Bueno, sigue con ello y hazlo rápido?"), LinkRandPhrase("¿Qué te trae a mí, señor " + GetFullName(pchar) + "¿Puedo entender que tu barco pueda tener dificultades, considerando tu estilo de vida...?", "Me alegra saludar a un noble... oh, disculpe, " + GetAddress_Form(NPChar) + ", te confundí con otra persona. ¿Qué querías?", "No me gusta mucho tu tipo, Capitán, pero no te echaré, de todos modos. ¿Qué querías?")), LinkRandPhrase(LinkRandPhrase("Me alegra mucho verte, señor " + GetFullName(pchar) + "¡Entonces, cómo está funcionando? ¿Necesitas una reparación o careenado?", "Bienvenido, " + GetAddress_Form(NPChar) + "¡ Capitán " + GetFullName(pchar) + " ¡siempre es un huésped bienvenido en mi taller!", "Oh, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + "¡Me has visitado de nuevo! Espero que tu belleza esté bien, ¿no es así?"), LinkRandPhrase("" + GetAddress_Form(NPChar) + ", ¡Me alegra tanto verte de nuevo! ¿Cómo está tu hermoso barco? ¿Necesitas ayuda?", "Oh, " + GetAddress_Form(NPChar) + ", ¡saludos! ¿Cómo va todo? ¿Quizás los mástiles crujen o necesitas limpiar la sentina? ¡Mis muchachos harán lo mejor para ti!", "Buenas tardes, Capitán " + GetFullName(pchar) + "Me alegra que hayas venido de nuevo, y siempre estoy dispuesto a ayudarte."), LinkRandPhrase("¡Me alegra tenerte aquí, Capitán! Eres un cliente muy amable, " + GetAddress_Form(NPChar) + ", y deseo que sigas siendo así.", "Oh, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + "¡Estoy realmente feliz de tenerte aquí! ¿Qué puedo hacer por ti?", "Capitán, de nuevo has visitado " + XI_ConvertString("Colony" + npchar.City + "Acc") + "¡Créeme, estaremos encantados de ayudarte!")));
 			Link.l1 = pcharrepphrase(RandPhraseSimple(RandPhraseSimple("Consigue tus instrumentos, maestro, y mantente en silencio, ¿de acuerdo? No estoy de humor.", "¡Deja de charlar, compañero! Necesito tu ayuda, y no tus tonterías."), RandPhraseSimple("Estoy pagando y tú estás trabajando. Silenciosamente. ¿Está claro?", "¡Eh, camarada, ahuyéntalos a todos, soy tu cliente preferido!")), RandPhraseSimple(RandPhraseSimple("También me alegra verte, maestro. Por desgracia, no tengo mucho tiempo, así que vayamos al grano.", "Y yo también estoy feliz de verte, camarada. ¿Quieres ayudar a tu cliente preferido?"), RandPhraseSimple("Buenas tardes, amigo. Vayamos al grano de inmediato. Prometo, la próxima vez nos sentaremos con una botella, seguro.", "Me alegra verte, maestro. Siempre es un placer verte, pero ahora mismo necesito tu ayuda.")));
 			Link.l1.go = "Shipyard";
 			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) != RELATION_ENEMY)
@@ -770,7 +770,7 @@ void ProcessDialogEvent()
 		{
 			if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 			{
-				shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)* 0.65);
+				shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)* 0.35);
 			}
 			else
 			{
@@ -804,7 +804,7 @@ void ProcessDialogEvent()
 		TuningAvailable();
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
-		notification("Вы узнали много нового о строении корабля!", "none");
+		notification("¡Has aprendido mucho sobre la estructura de este barco!", "none");
 		AddCharacterExpToSkill(pchar, SKILL_COMMERCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 
@@ -913,7 +913,7 @@ void ProcessDialogEvent()
 		{
 			if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 			{
-				shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate) * 0.65);
+				shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate) * 0.35);
 			}
 			else
 			{
@@ -944,7 +944,7 @@ void ProcessDialogEvent()
 		Link.l1.go = "Exit";
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
-		notification("Вы узнали много нового о строении корабля!", "none");
+		notification("¡Has aprendido mucho sobre la estructura de este barco!", "none");
 		AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 
@@ -1174,7 +1174,7 @@ void ProcessDialogEvent()
 
 		if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 		{
-			shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew) * 0.65);
+			shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew) * 0.35);
 		}
 		else
 		{
@@ -1194,7 +1194,7 @@ void ProcessDialogEvent()
 
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
-		notification("Вы узнали много нового о строении корабля!", "none");
+		notification("¡Has aprendido mucho sobre la estructura de este barco!", "none");
 		AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		AddCharacterExpToSkill(pchar, SKILL_GRAPPLING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
@@ -1302,7 +1302,7 @@ void ProcessDialogEvent()
 		// изменим
 		if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 		{
-			shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew) * 0.65);
+			shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew) * 0.35);
 		}
 		else
 		{
@@ -1324,7 +1324,7 @@ void ProcessDialogEvent()
 
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
-		notification("Вы узнали много нового о строении корабля!", "none");
+		notification("¡Has aprendido mucho sobre la estructura de este barco!", "none");
 		AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		AddCharacterExpToSkill(pchar, SKILL_GRAPPLING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
@@ -1434,7 +1434,7 @@ void ProcessDialogEvent()
 		{
 			if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 			{
-				shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.65);
+				shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.35);
 			}
 			else
 			{
@@ -1468,7 +1468,7 @@ void ProcessDialogEvent()
 
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
-		notification("Вы узнали много нового о строении корабля!", "none");
+		notification("¡Has aprendido mucho sobre la estructura de este barco!", "none");
 		AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		AddCharacterExpToSkill(pchar, SKILL_REPAIR, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
@@ -1602,7 +1602,7 @@ void ProcessDialogEvent()
 
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
-		notification("Вы узнали много нового о строении корабля!", "none");
+		notification("¡Has aprendido mucho sobre la estructura de este barco!", "none");
 		AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 
@@ -1760,7 +1760,7 @@ void ProcessDialogEvent()
 
 		AddQuestRecord("ShipTuning", "End");
 		CloseQuestHeader("ShipTuning");
-		notification("Вы узнали много нового о строении корабля!", "none");
+		notification("¡Has aprendido mucho sobre la estructura de este barco!", "none");
 		AddCharacterExpToSkill(pchar, SKILL_ACCURACY, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		AddCharacterExpToSkill(pchar, SKILL_CANNONS, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;

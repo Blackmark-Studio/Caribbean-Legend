@@ -81,6 +81,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Sharlie") && pchar.questTemp.Sharlie == "crew" && npchar.city == "FortFrance")
 			{
 				DelLandQuestMark(npchar);
+				FreeSitLocator("FortFrance_tavern", "sit7");
 				dialog.text = "Desiderava qualcosa, signore?";
 				Link.l1 = "Salve oste, ho bisogno di assumere un equipaggio per la mia nave. Puoi aiutarmi con questo?";
 				Link.l1.go = "Sharlie_crew";
@@ -1109,6 +1110,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_day":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "La stanza è a tua disposizione, capitano. Assolutamente gratis.";
+				link.l1 = "Grazie, amico.";
+				link.l1.go = "room_day_wait";
+				link.l3 = "Non adesso. Parliamo di qualcos'altro.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "Ti costerà 5 pezzi di otto.";
 			if (makeint(pchar.money) >= 5)
 			{
@@ -1125,6 +1135,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_day_next":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "La stanza è a tua disposizione, capitano. Assolutamente gratis.";
+				link.l1 = "Grazie, amico.";
+				link.l1.go = "room_day_wait_next";
+				link.l3 = "Non adesso. Parliamo di qualcos'altro.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "Ti costerà 10 pezzi di otto.";
 			if (makeint(pchar.money) >= 10)
 			{
@@ -1141,6 +1160,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_night":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "La stanza è a tua disposizione, capitano. Assolutamente gratis.";
+				link.l1 = "Grazie, amico.";
+				link.l1.go = "room_night_wait";
+				link.l3 = "Non adesso. Parliamo di qualcos'altro.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "Ti costerà 5 pezzi di otto.";
 			if (makeint(pchar.money) >= 5)
 			{

@@ -311,47 +311,6 @@ void ProcessDialogEvent()
 				}
 				// <-- девица в джунглях
 
-				// --> Sinistra Длинные тени старых грехов
-				if (CheckAttribute(pchar, "questTemp.Knippel.Soldiers_1"))
-				{
-					switch (0)
-					{
-					case 0:
-						dialog.text = "Escucha, Charlie, tenemos algunos reclutas nuevos en el fuerte. Verdes como la hierba... ¿Podrías pasar y enseñarles cómo apuntar?";
-						link.l1 = "Si el Capitán Fleetwood y yo no zarpamos en los próximos días, con gusto.";
-						link.l1.go = "Knippel_Soldiers_1";
-						break;
-					}
-					break;
-				}
-
-				if (CheckAttribute(pchar, "questTemp.Knippel.Soldiers_2"))
-				{
-					switch (0)
-					{
-					case 0:
-						dialog.text = "Charlie, mi turno casi termina, ¿te apetece una bebida?";
-						link.l1 = "Con gusto, compañero! Permíteme ver qué quiere el capitán.";
-						link.l1.go = "Knippel_Soldiers_2";
-						break;
-					}
-					break;
-				}
-
-				if (CheckAttribute(pchar, "questTemp.Knippel.Soldiers_3"))
-				{
-					switch (0)
-					{
-					case 0:
-						dialog.text = "¡Buena noche, Charlie! No pareces muy bien. ¿Todo está bien?";
-						link.l1 = "Me despertaron en medio de la noche, ¿qué te parece? No puedo pillar un respiro.";
-						link.l1.go = "Knippel_Soldiers_3";
-						break;
-					}
-					break;
-				}
-				// <-- Длинные тени старых грехов
-
 				// --> belamour ночной приключенец
 				if (CheckAttribute(pchar, "GenQuest.NightAdventureSolNum") && npchar.index == pchar.GenQuest.NightAdventureSolNum)
 				{
@@ -769,34 +728,6 @@ void ProcessDialogEvent()
 		link.l1.go = "exit";
 		break;
 	// <-- ночной приключенец
-
-	// --> Sinistra Длинные тени старых грехов
-	case "Knippel_Soldiers_1":
-		dialog.text = "¿Y tal vez enseñarles algunos de tus secretos también, para que no se los lleven a la tumba contigo?";
-		link.l1 = "Je-je, eh, no, compañero, mis secretos son solo míos, ¿y qué tipo de secretos serían entonces?";
-		link.l1.go = "exit";
-		DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_1");
-		pchar.questTemp.Knippel.Soldiers_2 = true;
-		LAi_CharacterDisableDialog(npchar);
-		break;
-
-	case "Knippel_Soldiers_2":
-		dialog.text = "Entendido, vas a abandonar nuevamente, como siempre.";
-		link.l1 = "Bueno, si el pez se escapa, es un mal pescador. Es igual con las balas de cañón, una buena nunca te falla, solo apunta bien...";
-		link.l1.go = "exit";
-		DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_2");
-		pchar.questTemp.Knippel.Soldiers_3 = true;
-		LAi_CharacterDisableDialog(npchar);
-		break;
-
-	case "Knippel_Soldiers_3":
-		dialog.text = "Al menos no te levantas todas las noches. Y pasas más tiempo en el barco que en tierra. ¿Con quién estás hablando?";
-		link.l1 = "¡Ah, qué sabes tú de las dificultades del servicio, compañero! ¡Cómo era en la Real Armada!.. No puedes ni imaginarlo.";
-		link.l1.go = "exit";
-		DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_3");
-		LAi_CharacterDisableDialog(npchar);
-		break;
-	// <-- Длинные тени старых грехов
 
 	// замечение по обнажённому оружию
 	case "SoldierNotBlade":

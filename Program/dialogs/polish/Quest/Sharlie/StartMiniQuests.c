@@ -234,7 +234,7 @@ void ProcessDialogEvent()
 		
 		case "Newstorehelper_regard":
 			dialog.text = "Cóż, rozumiem, że to tutaj teraz pracuję? Dziękuję, monsieur, za wybranie mnie. Oto twoje pięćset pesos i obiecany bonus.";
-			link.l1 = Nie ma za co... Pozwól, że przedstawię cię twojemu pracodawcy.";
+			link.l1 = "Nie ma za co... Pozwól, że przedstawię cię twojemu pracodawcy.";
 			link.l1.go = "Newstorehelper_regard_1";
 		break;
 		

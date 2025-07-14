@@ -284,6 +284,7 @@ string SelectSmugglingLocation()
 		CurIsland = GetIslandByIndex(n);
 		TargetLocation = GetIslandRandomShoreId(CurIsland.id);
     }
+	if(TargetLocation == "Shore9") TargetLocation = "None";
     Pchar.Quest.SelectedSmugglingLocation = TargetLocation;
     return TargetLocation;
 }

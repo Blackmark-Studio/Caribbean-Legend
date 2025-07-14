@@ -2283,7 +2283,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakePostcureer.ShipType = SelectCureerShipType();
 			pchar.GenQuest.TakePostcureer.ShipName = GenerateRandomNameToShip(sti(pchar.GenQuest.TakePostcureer.Nation));
 			pchar.GenQuest.TakePostcureer.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakePostcureer.ShipType));
-			pchar.GenQuest.TakePostcureer.Money = ((hrand(5)+hrand(6)+4)*2000)+(sti(pchar.rank)*500);
+			pchar.GenQuest.TakePostcureer.Money = ((hrand(5)+hrand(6, "1")+4)*2000)+(sti(pchar.rank)*500);
 			dialog.text = "Certo. Dovrai localizzare una nave corriere di "+NationNameGenitive(sti(pchar.GenQuest.TakePostcureer.Nation))+" con il nome di '"+pchar.GenQuest.TakePostcureer.ShipName+"', sali a bordo e portami i documenti, che dovresti essere in grado di trovare nella cabina del capitano. Questa nave passerà vicino "+XI_ConvertString("Colony"+pchar.GenQuest.TakePostcureer.City+"Gen")+" all'incirca in "+FindRussianDaysString(pchar.GenQuest.TakePostcureer.Terms)+".";
 			link.l1 = "Bene, accetto questa missione. E che tipo di documenti dovrei cercare?";
 		    link.l1.go = "TakePostcureer_agree";
@@ -2353,7 +2353,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakeArsenalship.ShipName = GenerateRandomNameToShip(sti(pchar.GenQuest.TakeArsenalship.Nation));
 			pchar.GenQuest.TakeArsenalship.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakeArsenalship.ShipType));
 			pchar.GenQuest.TakeArsenalship.CannonA = SelectLevelCannonParameter(sti(pchar.GenQuest.TakeArsenalship.ShipTypeA)); // Addon 2016-1 Jason пиратская линейка
-			pchar.GenQuest.TakeArsenalship.Money = ((hrand(5)+hrand(6)+4)*1800)+(sti(pchar.rank)*500);
+			pchar.GenQuest.TakeArsenalship.Money = ((hrand(5)+hrand(6, "1")+4)*1800)+(sti(pchar.rank)*500);
 			dialog.text = "Certo. Dovrai localizzare un trasporto militare di "+NationNameGenitive(sti(pchar.GenQuest.TakeArsenalship.Nation))+", with gunpowder and ammunition on board; the name of the vessel is '"+pchar.GenQuest.TakeArsenalship.ShipName+"', find and destroy it. We'll weaken our enemy by doing that\nThe transport will sail with an escort to the colony "+XI_ConvertString("Colony"+pchar.GenQuest.TakeArsenalship.City)+", and will be approximately in "+FindRussianDaysString(pchar.GenQuest.TakeArsenalship.Terms)+", so you should hurry.";
 			link.l1 = "Va bene, accetto. Devo affondare la nave dell'arsenale o dovrei tentare di catturarla?";
 		    link.l1.go = "TakeArsenalship_agree";
@@ -2400,7 +2400,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakePirateship.ShipName = GenerateRandomNameToShip(PIRATE);
 			pchar.GenQuest.TakePirateship.Name = GenerateRandomName(PIRATE, "man");
 			pchar.GenQuest.TakePirateship.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakePirateship.ShipType));
-			pchar.GenQuest.TakePirateship.Money = ((hrand(5)+hrand(6)+4)*2400)+(sti(pchar.rank)*500);
+			pchar.GenQuest.TakePirateship.Money = ((hrand(5)+hrand(6, "1")+4)*2400)+(sti(pchar.rank)*500);
 			dialog.text = "Certo. Sono davvero infastidito dalle attività di un capitano pirata, il cui nome è "+pchar.GenQuest.TakePirateship.Name+". Quel mascalzone ha preso l'abitudine di saccheggiare i nostri mercanti, cosa che danneggia enormemente il commercio tra le colonie. Ora è il momento perfetto per sbarazzarsi di quel bastardo, perché per caso so dove si nasconde al momento. Sei pronto a mandare questo figlio di puttana al Giudizio di Dio?";
 			link.l1 = "Sarebbe un onore! Dove posso trovare questo pirata?";
 		    link.l1.go = "TakePirateship_agree";
@@ -2463,7 +2463,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakePassenger.ShipName = GenerateRandomNameToShip(sti(pchar.GenQuest.TakePassenger.Nation));
 			pchar.GenQuest.TakePassenger.Name = GenerateRandomName(sti(pchar.GenQuest.TakePassenger.Nation), "man");
 			pchar.GenQuest.TakePassenger.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakePassenger.ShipType));
-			pchar.GenQuest.TakePassenger.Money = ((hrand(5)+hrand(6)+4)*2200)+(sti(pchar.rank)*500);
+			pchar.GenQuest.TakePassenger.Money = ((hrand(5)+hrand(6, "1")+4)*2200)+(sti(pchar.rank)*500);
 			string sText = SelectPassText();
 			dialog.text = "Certo. Sto parlando di un mascalzone di nome "+pchar.GenQuest.TakePassenger.Name+". "+sText+"Lo stavo cercando da molto tempo, e ora ho finalmente ottenuto informazioni affidabili, dove può essere trovato. Ho bisogno che tu mi porti quell'uomo, per tutti i mezzi vivo. Voglio impiccarlo in pubblico nella nostra piazza della città. Sei pronto a intraprendere questa missione?";
 			link.l1 = "Sono pronto, "+GetAddress_FormToNPC(NPChar)+". Dove posso trovare quel mascalzone?";
@@ -2506,7 +2506,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.CustomPatrol.ShipType = SelectCustomPatrolShipType(FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_UNIVERSAL);
 			pchar.GenQuest.CustomPatrol.ShipTypeA = SelectCustomPatrolShipType(FLAG_SHIP_TYPE_RAIDER);
 			pchar.GenQuest.CustomPatrol.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.CustomPatrol.ShipType));
-			pchar.GenQuest.CustomPatrol.Money = ((hrand(5)+hrand(6)+4)*1400)+(sti(pchar.rank)*300);
+			pchar.GenQuest.CustomPatrol.Money = ((hrand(5)+hrand(6, "1")+4)*1400)+(sti(pchar.rank)*300);
 			dialog.text = "Ho informazioni affidabili che un certo capitano ha organizzato una transazione con dei contrabbandieri per la vendita di alcuni schiavi. Come dovrebbe essere noto a te, tali transazioni da parte di privati nelle nostre colonie sono considerate come merci di contrabbando\nIl problema è che non conosco né l'orario esatto, né la data né il luogo, dove i contrabbandieri si incontreranno. Si sa solo che una transazione criminale sarà compiuta durante i prossimi cinque giorni sulla nostra isola. Per peggiorare le cose, tutte le mie navi di pattuglia sono o in riparazione o impegnate per altri compiti e non possono trovare questi furfanti\nTi suggerisco di occuparti di questo compito - rintracciare i contrabbandieri e occuparti di loro con i metodi più radicali, farne un esempio. Sei pronto ad affrontare questa missione?";
 			link.l1 = "Sono pronto, "+GetAddress_FormToNPC(NPChar)+". Dimmi, hai ulteriori informazioni? Come il nome del capitano, il nome o il tipo della sua nave?";
 		    link.l1.go = "CustomPatrol_agree";
@@ -2546,7 +2546,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.FindFugitive.City = SelectFugitiveCity();
 			pchar.GenQuest.FindFugitive.Chance = rand(2);
 			pchar.GenQuest.FindFugitive.Name = GenerateRandomName(sti(npchar.Nation), "man");
-			pchar.GenQuest.FindFugitive.Money = ((hrand(5)+hrand(6)+4)*2600)+(sti(pchar.rank)*600);
+			pchar.GenQuest.FindFugitive.Money = ((hrand(5)+hrand(6, "1")+4)*2600)+(sti(pchar.rank)*600);
 			sText = SelectFugitiveText();
 			log_testinfo(pchar.GenQuest.FindFugitive.City);
 			log_testinfo(FindRussianDaysString(sti(pchar.GenQuest.FindFugitive.Chance)));

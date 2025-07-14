@@ -779,20 +779,12 @@ void ProcessDialogEvent()
 				case SHIP_LADYBETH:
 					dialog.text = "And have you seen the priest? Well, you'll meet him. And you'd better stock up on double-shot pistol loads. If that doesn't help - try a wooden stake.";
 				break;
+				
+				case SHIP_MEMENTO:
+					dialog.text = "And have you seen the priest? Well, you'll meet him. And you'd better stock up on double-shot pistol loads. If that doesn't help - try a wooden stake.";
+				break;
 			}
 		break;
-		
-		/*case "joruba_p3_HolyMercy":
-			dialog.text = "And have you seen the priest?";
-			link.l1 = "What priest?";
-			link.l1.go = "joruba_p3_HolyMercy_2";
-		break;
-		
-		case "joruba_p3_HolyMercy_2":
-			dialog.text = "Well, you'll meet him. And you'd better stock up on double-shot pistol loads. If that doesn't help - try a wooden stake.";
-			link.l1 = "...";
-			link.l1.go = "joruba_p3_1";
-		break;*/
 		
 		case "joruba_p3_PinkOtkaz":
 			dialog.text = "Aye, this ship may have a history... but wasn't it too easy to obtain? No way! You still have a ton of unfinished work from the list. Once you've done that, we'll discuss this sacrifice again.";

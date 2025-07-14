@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsFirstJungle_3":
-			dialog.text = "Warum nimmst du meinen Wunsch so übel? Ich frage nicht nach verfluchten Perlen, nur nach einer Patrone. Ich habe sogar gewartet, bis wir im Dschungel waren, um dich nicht von den Geschäften in der Stadt abzulenken. Also, hast du eine Patrone?";
+			dialog.text = "Warum nimmst du meinen Wunsch so übel? Ich frage nicht nach verfluchten Perlen, nur nach einer Patrone. Ich hab sogar auf den richtigen Moment gewartet, um dich nicht von deinen Sachen abzulenken und dir nicht wie ein Irrer zwischen die Füße zu geraten, hehe. Also... hast du ’ne Patrone?";
 			if (CheckCharacterItem(PChar, "cartridge"))
 			{
 				link.l1 = "Ja, ich habe eine Runde. Hier, nimm sie. Mach nur keinen dummen Scherz mit dieser Kugel. Verstehst du, Tommy?";

@@ -247,12 +247,15 @@ void ProcessDialogEvent()
 
 		case "BetsiPrice_11":
 			dialog.text = "Here we are. You know, I didn't even ask what wind brought you to that house?";
-			link.l1 = "I wasn't there by chance. The tavern keeper seemed seriously upset by your disappearance and asked me to find out what happened. Well, did I have a choice to refuse? Abandoning a lady in distress is an act unworthy of a captain.";
-			link.l1.go = "BetsiPrice_12";
 			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulonOtdatBetsy") && pchar.questTemp.TBP_BuyKulonOtdatBetsy == true)
             {
 			link.l2 = "I wasn't there by chance. This pendant brought me there. Take it.​ The tavern keeper seemed seriously upset by your disappearance and asked me to find out what happened. Well, did I have a choice to refuse? Abandoning a lady in distress is an act unworthy of a captain.";
 			link.l2.go = "BetsiPrice_12_otdal_kulon";
+			}
+			else
+			{
+			link.l1 = "I wasn't there by chance. The tavern keeper seemed seriously upset by your disappearance and asked me to find out what happened. Well, did I have a choice to refuse? Abandoning a lady in distress is an act unworthy of a captain.";
+			link.l1.go = "BetsiPrice_12";
 			}
 		break;
 		

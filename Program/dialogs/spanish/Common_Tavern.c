@@ -81,6 +81,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Sharlie") && pchar.questTemp.Sharlie == "crew" && npchar.city == "FortFrance")
 			{
 				DelLandQuestMark(npchar);
+				FreeSitLocator("FortFrance_tavern", "sit7");
 				dialog.text = "¿Querías algo, señor?";
 				Link.l1 = "Hola tabernero, necesito contratar una tripulación para mi barco. ¿Puedes ayudarme con eso?";
 				Link.l1.go = "Sharlie_crew";
@@ -192,7 +193,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				// <-- Квестовый генератор священника. Квест №1.
-				dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("¡Oh, honorables invitados! Oye, hazte a un lado y haz espacio para un gallardo capitán! ¡Y date prisa, antes de que te eche, jaja!","¡Santo Dios misericordioso! Si no es "+GetFullName(pchar)+"¡Acabo de recibir un nuevo envío de los vinos más selectos, por favor entra!","¡Oh, "+GetAddress_Form(NPChar)+", ¿tienes problemas? ¿Me permites invitarte? Esta botella es por cuenta de la casa. Créeme, es el mejor vino de por aquí..."),LinkRandPhrase("¡Oh, es el Capitán "+GetFullName(pchar)+"¡Eh, tú! ¡Muestra algo de respeto al buen capitán! ¡Esto no es un establo! Disculpa, capi, claramente sus madres nunca les enseñaron modales.","Bien bien, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"¡Nos espera una larga noche, jaja! ¡Chicas, es mejor que llevéis vuestros mejores vestidos!","Buenas tardes, "+GetFullName(pchar)+", ¡Me alegra verte! Por favor señor, tengo una petición. Acabo de comprar mesas nuevas, así que por favor no peleen esta noche."),LinkRandPhrase("Hola, capitán. Siéntete como en casa, pero ten en cuenta que incluso el mismo Capitán Sharp se comporta con maneras en mi establecimiento.","¡O-ho-ho! ¿Mira quién está aquí? Es "+GetFullName(pchar)+" ¡él mismo! ¡Y justo empezábamos a aburrirnos en tu ausencia! ¿Qué tal si entretienes a los compañeros con una aventura mientras yo abro un nuevo barril de ron, capi?","¡O-ho-ho! Es "+GetFullName(pchar)+"¡Por Dios! Espero que no vayas a robar a mis clientes hacia los mares del norte de nuevo con las historias de tus grandiosas aventuras, ¿eh?")),LinkRandPhrase(LinkRandPhrase(""+GetFullName(pchar)+"¡Este viejo lobo de mar siempre está feliz de verte en su establecimiento! Por favor señor, tome asiento y las chicas se ocuparán de usted!","Por favor capitán, ¡póngase cómodo! Siempre contento de saludar a mi invitado favorito. ¿Cuál es tu veneno?","Encantado de verte de nuevo, "+GetFullName(pchar)+"¿Te gustaría una mesa para ti mismo? ¿O preferirías sentarte en la barra?"),LinkRandPhrase("Buenas tardes, capitán. Hay un frío en el aire, permíteme ofrecerte un excelente vino caliente que acabo de hacer, ¡por cuenta de la casa!","Hola, capitán "+GetFullName(pchar)+"¡Me alegra que hayas venido a visitar de nuevo. ¿Qué te gustaría?","Me alegra tenerte, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"¡Me alegro de que frecuentes mi humilde establecimiento! Hacemos todo lo posible para agradar."),LinkRandPhrase("¡Capitán! ¡Bienvenido, bienvenido! Tengo un magnífico d'Anjou digno del mismo Rey Luis y lo he guardado especialmente para ti!",""+GetFullName(pchar)+"¡Estoy tan contento de que hayas venido! ¿Debo echar a todas estas ratas de mar o prefieres que se queden? Créeme, con gusto despejaría toda la taberna para ti!","Por Dios, aquí está el Capitán "+GetFullName(pchar)+"¡Eh, coquetos, llevad el mejor mantel a la mesa del capitán!")));
+				dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("¡Oh, honorables invitados! Oye, hazte a un lado y haz espacio para un gallardo capitán! ¡Y date prisa, antes de que te eche, jaja!","¡Santo Dios misericordioso! Si no es "+GetFullName(pchar)+"¡Acabo de recibir un nuevo envío de los vinos más selectos, por favor entra!","¡Oh, "+GetAddress_Form(NPChar)+", ¿tienes problemas? ¿Me permites invitarte? Esta botella es por cuenta de la casa. Créeme, es el mejor vino de por aquí..."),LinkRandPhrase("¡Oh, es el Capitán "+GetFullName(pchar)+"¡Eh, tú! ¡Muestra algo de respeto al buen capitán! ¡Esto no es un establo! Disculpa, capi, claramente sus madres nunca les enseñaron modales.","Bien bien, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+" ¡Nos espera una larga noche, jaja! ¡Chicas, es mejor que llevéis vuestros mejores vestidos!","Buenas tardes, "+GetFullName(pchar)+", ¡Me alegra verte! Por favor señor, tengo una petición. Acabo de comprar mesas nuevas, así que por favor no peleen esta noche."),LinkRandPhrase("Hola, capitán. Siéntete como en casa, pero ten en cuenta que incluso el mismo Capitán Sharp se comporta con maneras en mi establecimiento.","¡O-ho-ho! ¿Mira quién está aquí? Es "+GetFullName(pchar)+" ¡él mismo! ¡Y justo empezábamos a aburrirnos en tu ausencia! ¿Qué tal si entretienes a los compañeros con una aventura mientras yo abro un nuevo barril de ron, capi?","¡O-ho-ho! Es "+GetFullName(pchar)+"¡Por Dios! Espero que no vayas a robar a mis clientes hacia los mares del norte de nuevo con las historias de tus grandiosas aventuras, ¿eh?")),LinkRandPhrase(LinkRandPhrase(""+GetFullName(pchar)+"¡Este viejo lobo de mar siempre está feliz de verte en su establecimiento! Por favor señor, tome asiento y las chicas se ocuparán de usted!","Por favor capitán, ¡póngase cómodo! Siempre contento de saludar a mi invitado favorito. ¿Cuál es tu veneno?","Encantado de verte de nuevo, "+GetFullName(pchar)+"¿Te gustaría una mesa para ti mismo? ¿O preferirías sentarte en la barra?"),LinkRandPhrase("Buenas tardes, capitán. Hay un frío en el aire, permíteme ofrecerte un excelente vino caliente que acabo de hacer, ¡por cuenta de la casa!","Hola, capitán "+GetFullName(pchar)+"¡Me alegra que hayas venido a visitar de nuevo. ¿Qué te gustaría?","Me alegra tenerte, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"¡Me alegro de que frecuentes mi humilde establecimiento! Hacemos todo lo posible para agradar."),LinkRandPhrase("¡Capitán! ¡Bienvenido, bienvenido! Tengo un magnífico d'Anjou digno del mismo Rey Luis y lo he guardado especialmente para ti!",""+GetFullName(pchar)+"¡Estoy tan contento de que hayas venido! ¿Debo echar a todas estas ratas de mar o prefieres que se queden? Créeme, con gusto despejaría toda la taberna para ti!","Por Dios, aquí está el Capitán "+GetFullName(pchar)+"¡Eh, coquetos, llevad el mejor mantel a la mesa del capitán!")));
 				Link.l1 = pcharrepphrase(RandPhraseSimple(RandPhraseSimple("Oh, veo que me recuerdan aquí... Avast, llena mi vaso amigo, mientras echo un vistazo alrededor...","Cálmate, amigo, hoy estoy de buen humor. Empecemos con ron, ¿no?..."),RandPhraseSimple("¡Oh... no estás muy contento de tenerme aquí? Espero haberte oído mal, ¡ja!","Ahoy. ¿Espero que tu vino sea mejor que tu saludo? De lo contrario, puedo enfadarme, ¿sabes?")),RandPhraseSimple(RandPhraseSimple("Siempre contento de visitarte, compadre. ¿Qué tienes para calentar a un perro salado?","¡Ahoy compañero, tu establecimiento mejora con cada día que pasa! Venir a visitar aquí siempre es un placer..."),RandPhraseSimple("¿No has olvidado a un viejo vagabundo? Estoy halagado, compañero.","Bueno ver a un viejo amigo de nuevo... ¿Todavía te queda algo de ron?")));
 				Link.l1.go = "step_node";
 			}
@@ -1109,6 +1110,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_day":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "La habitación está a su disposición, capitán. Totalmente gratis.";
+				link.l1 = "Gracias, amigo.";
+				link.l1.go = "room_day_wait";
+				link.l3 = "Ahora no. Hablemos de otra cosa.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "Eso te costará 5 piezas de ocho.";
 			if (makeint(pchar.money) >= 5)
 			{
@@ -1125,6 +1135,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_day_next":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "La habitación está a su disposición, capitán. Totalmente gratis.";
+				link.l1 = "Gracias, amigo.";
+				link.l1.go = "room_day_wait_next";
+				link.l3 = "Ahora no. Hablemos de otra cosa.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "Eso te costará 10 piezas de ocho.";
 			if (makeint(pchar.money) >= 10)
 			{
@@ -1141,6 +1160,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_night":
+			if (CheckAttribute(pchar, "questTemp.OS_Tavern_FreeBuhlo") && npchar.id == "PuertoPrincipe_tavernkeeper")
+			{
+				dialog.text = "La habitación está a su disposición, capitán. Totalmente gratis.";
+				link.l1 = "Gracias, amigo.";
+				link.l1.go = "room_night_wait";
+				link.l3 = "Ahora no. Hablemos de otra cosa.";
+				link.l3.go = "int_quests";
+				break;
+			}
 			dialog.text = "Eso te costará 5 piezas de ocho.";
 			if (makeint(pchar.money) >= 5)
 			{

@@ -455,7 +455,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "BM_FirstJungle") {
-		if(CheckAttribute(pchar,"questTemp.BlackMark.IronsBlock"))
+		if(CheckAttribute(pchar,"questTemp.BlockSpawnQuestNPC"))
 		{
 			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 1, false);
 			return true;
@@ -483,7 +483,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "BM_SecondJungle") {
-		if(CheckAttribute(pchar,"questTemp.BlackMark.IronsBlock"))
+		if(CheckAttribute(pchar,"questTemp.BlockSpawnQuestNPC"))
 		{
 			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 1, false);
 			return true;
@@ -512,7 +512,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "BM_ThirdJungle") {
-		if(CheckAttribute(pchar,"questTemp.BlackMark.IronsBlock"))
+		if(CheckAttribute(pchar,"questTemp.BlockSpawnQuestNPC"))
 		{
 			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 1, false);
 			return true;

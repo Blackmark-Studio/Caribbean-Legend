@@ -1222,6 +1222,15 @@ Die Holy Mercy hat eine erfahrene und loyale Besatzung, die von Alamida persönl
 Und es war nicht umsonst. Er hat schon so viel gefunden, dass er die Hälfte von Barbados kaufen könnte, aber ihm reicht das nicht. Wenn ihr ihm auf See begegnet - versucht gar nicht erst, ihn abzufangen.
 Zu gutes Schiff, und der Kapitän ist erfahren und vorsichtig. In letzter Zeit ist Blackwood oft auf den Kaimaninseln - gräbt dort Tag und Nacht, treibt die Leute bis zum Umfallen. Wenn ihr nachsehen wollt - nehmt mindestens 60 Mann und gute Schusswaffen... Vielleicht reicht selbst das nicht.
 Ich hoffe, ihr könnt schießen, denn mit ihm ist eine Kompanie ehemaliger Marineinfanteristen unter Colonel Fox desertiert. Profis, keine gewöhnlichen Halunken. Und greift ihn niemals in französischen Häfen an - dort hat er Schutz und Gönner, die an seinen Funden mitverdienen.
+#TEXT	3
+"Memento"
+***********************
+Die 'Memento' – eine wahre Piratenlegende. Eine schwarze Brigg unter dem Kommando von Kapitän Mortimer Grim.
+Grim jagt ausschließlich Sklavenhändler. Man sagt, er befreit Sklaven und rettet zum Tode Verurteilte, indem er sie mit hartem Gold freikauft. Eine edle Sache – wenn man den Rest nicht kennt.
+Wenn ihr keine menschliche Fracht transportiert, wird Grim euch nicht anrühren. Er ist sonderbar, aber er hat Prinzipien. Doch wenn ihr Sklaven im Laderaum habt... betet, dass ihr keine schwarzen Segel am Horizont seht.
+Die 'Memento' kreuzt zwischen Piratensiedlungen, legt jedoch fast nie an. Die Mannschaft lebt monatelang an Bord, als fürchte sie, festen Boden zu betreten. Man munkelt, das Schiff habe einst eine schreckliche Seuche überstanden – deshalb ist die Crew so schwer zu töten.
+Wenn ihr angreifen wollt – nehmt viele Kanonen mit. Die 'Memento' zu entern ist nahezu unmöglich – die Mannschaft kämpft wie von Dämonen besessen, als hätte sie keine Angst vor dem Tod. Der einzige Weg, sie zu besiegen, ist, das Schiff in Stücke zu schießen und ihnen so das Versteck zu nehmen. Splitter schrecken sie nicht, aber gezielte Kartätschentreffer – das ist etwas anderes.
+Viel Glück. Und denkt an den Tod.
 
 #QUEST StoriesTreasures
 Geschichten aus den Schatzkammern

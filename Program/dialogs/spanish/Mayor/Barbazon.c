@@ -267,7 +267,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "terrax":
-		dialog.text = "¿Qué?! ¡Te arrancaré tu...";
+		dialog.text = "¿Qué? ¡Te arrancaré tu...";
 		link.l1 = "No lo harás, Barbazon. ¡Veamos nuestras cartas! Trabajo para Jan Svenson. He revelado tu conspiración con Jackman. Sé todo, lo que planeabas y qué papel tenías también. Jackman y su hermano están muertos, el primero mató a Blaze Sharp y eso determinó su destino, el segundo no fue lo suficientemente hablador, me temo...";
 		link.l1.go = "terrax_1";
 		break;

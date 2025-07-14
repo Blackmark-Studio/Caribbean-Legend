@@ -755,14 +755,6 @@ void ProcessDialogEvent()
 		link.l1.go = "exit";
 		GiveItem2Character(pchar, pchar.questTemp.HWIC.Holl.LucasItem);
 		AddMoneyToCharacter(pchar, 50000);
-		pchar.quest.Merdok_prepare.win_condition.l1 = "Timer";
-		pchar.quest.Merdok_prepare.win_condition.l1.date.hour = sti(GetTime());
-		pchar.quest.Merdok_prepare.win_condition.l1.date.day = GetAddingDataDay(0, 0, 10);
-		pchar.quest.Merdok_prepare.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 10);
-		pchar.quest.Merdok_prepare.win_condition.l1.date.year = GetAddingDataYear(0, 0, 10);
-		pchar.quest.Merdok_prepare.win_condition.l2 = "location";
-		pchar.quest.Merdok_prepare.win_condition.l2.location = "Villemstad_town";
-		pchar.quest.Merdok_prepare.function = "GiveTaskMerdok";
 		pchar.questTemp.HWIC.Holl = "Merdok_wait";
 		AddQuestRecord("Holl_Gambit", "1-34");
 		DelMapQuestMarkCity("Villemstad");

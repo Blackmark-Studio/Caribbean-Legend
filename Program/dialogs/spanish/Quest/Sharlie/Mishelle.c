@@ -497,7 +497,7 @@ void ProcessDialogEvent()
 
 	case "trial_11":
 		dialog.text = "Soy específico, simplemente no sigues todavía. Bien. Primero, necesitas familiarizarte con el archipiélago y acostumbrarte a tu nueva vida como capitán de un barco. Tendrás que trabajar duro para asegurar tu bienestar y un salario para tu tripulación. Hay muchas maneras de ganar dinero.\nTomar cargas y pasajeros a bordo son las más simples. Los comerciantes en las tiendas pueden ofrecerte contratos de carga, y los pasajeros te abordarán en las calles ellos mismos. También deberías considerar revisar las oficinas del puerto, tener cualquier barco rápido te permitirá ganar buen dinero en un trabajo de mensajero.\nLos maestros de puerto te proporcionarán contratos de carga muy rentables una vez que consigas un barco más grande. Habla con la gente, no presumas de tu linaje, sé amable y las cosas irán bien. Visita a los gobernadores de las colonias, a menudo ofrecen trabajo bien pagado.\nPuedes intentar comerciar, pero en ese caso deberías contratar a un buen intendente. Ten cuidado en el mar, evita los escuadrones militares españoles y los barcos de guerra. Si encuentras a un solo comerciante español o un convoy desprotegido, puedes intentar capturarlos.";
-		link.l1 = "¿Qué?! Michel, ¿he perdido el oído? ¿Estás sugiriendo que me convierta en pirata? ¿Tú, el orgullo de la Sociedad, un siervo de Dios y la Trinidad, me propones semejante vida?";
+		link.l1 = "¿Qué? Michel, ¿he perdido el oído? ¿Estás sugiriendo que me convierta en pirata? ¿Tú, el orgullo de la Sociedad, un siervo de Dios y la Trinidad, me propones semejante vida?";
 		link.l1.go = "trial_12";
 		break;
 
@@ -1334,7 +1334,7 @@ void ProcessDialogEvent()
 
 	case "kukulkan_1":
 		dialog.text = "Estos nombres ya no tienen importancia, " + pchar.name + ". Todo está en el pasado, que muy pronto desaparecerá incluso de la misma historia. Ahora es el momento de la verdad, al que he estado acercándome poco a poco durante el largo cuarto de siglo desde que pisé tierra por primera vez...";
-		link.l1 = "¿Qué?!! ¡Esto... esto no puede ser!!!";
+		link.l1 = "¿Qué? ¡Esto... esto no puede ser!!!";
 		link.l1.go = "kukulkan_2";
 		break;
 

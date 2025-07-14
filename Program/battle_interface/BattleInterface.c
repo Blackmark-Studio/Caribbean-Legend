@@ -1126,6 +1126,10 @@ void BI_SetPossibleCommands()
             BattleInterface.Commands.Cabin.enable		= true;
         }
         BattleInterface.Commands.Boat.enable           = true;
+		if(IsSteamDeck())
+		{
+			BattleInterface.Commands.Charge.enable		   = CheckAttribute(GetCharacter(chIdx), "Ship.Cannons.Charge.Type"); // 1.2.4
+		}
 	}
 	// для спутников
 	else
@@ -1772,7 +1776,7 @@ int GetIconTextureIndexWithInserting(int idx, int startIdx)
 void InitShipsTextures(int startPos)
 {
 	ref refShip;
-	for (i = 0; i < SHIP_TYPES_QUANTITY; i++)
+	for (i = 0; i < GetArraySize(&ShipsTypes); i++)
 	{
 		makeref(refShip,ShipsTypes[i]);
 		if (CheckAttribute(refShip, "modname"))

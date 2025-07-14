@@ -737,7 +737,7 @@ void ProcessDialogEvent()
 
 	case "roof_girl_4":
 		dialog.text = "¡Ay! ¡Ay! ¡No disparen!";
-		link.l1 = "¿Qué?!";
+		link.l1 = "¿Qué?";
 		link.l1.go = "roof_girl_5";
 		break;
 

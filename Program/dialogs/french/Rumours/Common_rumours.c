@@ -179,8 +179,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			srum + posrep1,
 			srum + posrep2,
 			RandPhraseSimple("Malheureusement, je ne sais rien d’autre, permettez-moi de partir.", "Vous me fatiguez avec vos questions, pardonnez-moi, mais j’ai à faire."),
-			"block", 1, npchar, Dialog.CurrentNode
-		);
+			"block", 1, npchar, Dialog.CurrentNode);
 
 		link.l1 = HeroStringReactionRepeat(answ1, answ2, answ3, answ4, npchar, Dialog.CurrentNode);
 		link.l1.go = "new question";
@@ -356,8 +355,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			srum + posrep1,
 			srum + posrep2,
 			RandPhraseSimple("Hélas, je n’ai rien de plus à vous dire, laissez-moi passer.", "Assez de questions, excusez-moi, j’ai d’autres choses à faire."),
-			"block", 1, npchar, Dialog.CurrentNode
-		);
+			"block", 1, npchar, Dialog.CurrentNode);
 
 		link.l1 = HeroStringReactionRepeat(answ1, answ2, answ3, answ4, npchar, Dialog.CurrentNode);
 		link.l1.go = "new question";
@@ -400,8 +398,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			srum + posrep1,
 			srum + posrep2,
 			RandPhraseSimple("Hélas, je n’ai rien de plus à vous dire, laissez-moi passer.", "J’en ai assez de vos questions, excusez-moi, j’ai beaucoup d’autres choses à faire."),
-			"block", 1, npchar, Dialog.CurrentNode
-		);
+			"block", 1, npchar, Dialog.CurrentNode);
 
 		link.l1 = HeroStringReactionRepeat(answ1, answ2, answ3, answ4, npchar, Dialog.CurrentNode);
 		link.l1.go = "question";
@@ -469,8 +466,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			srum + posrep1,
 			srum + posrep2,
 			RandPhraseSimple("Je pense avoir été clair – j’en ai fini.", "J’en ai assez de vos questions, capitaine. Trouvez-vous quelque chose de mieux à faire !"),
-			"block", 1, npchar, Dialog.CurrentNode
-		);
+			"block", 1, npchar, Dialog.CurrentNode);
 
 		link.l1 = HeroStringReactionRepeat(answ1, answ2, answ3, answ4, npchar, Dialog.CurrentNode);
 		link.l1.go = "question";
@@ -538,8 +534,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			srum + posrep1,
 			srum + posrep2,
 			RandPhraseSimple("Je pense avoir été clair – j’en ai fini.", "J’en ai assez de vos questions, capitaine. Trouvez-vous quelque chose de mieux à faire !"),
-			"block", 1, npchar, Dialog.CurrentNode
-		);
+			"block", 1, npchar, Dialog.CurrentNode);
 
 		link.l1 = HeroStringReactionRepeat(answ1, answ2, answ3, answ4, npchar, Dialog.CurrentNode);
 		link.l1.go = "question";
@@ -601,8 +596,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			srum + posrep1,
 			srum + posrep2,
 			RandPhraseSimple("Malheureusement, je ne sais rien de plus, laissez-moi partir.", "Vous m’épuisez avec vos questions, excusez-moi, mais j’ai des choses à faire."),
-			"block", 1, npchar, Dialog.CurrentNode
-		);
+			"block", 1, npchar, Dialog.CurrentNode);
 
 		link.l1 = HeroStringReactionRepeat(answ1, answ2, answ3, answ4, npchar, Dialog.CurrentNode);
 		link.l1.go = "question";

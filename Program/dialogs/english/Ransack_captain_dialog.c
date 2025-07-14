@@ -645,7 +645,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_Prisoner_2":
 			dialog.text = "Adam? That bastard? It was all his plan! Now I see... Yes, I helped Katrine to escape three months ago. Such a poor girl, you have no idea how he was treating her...";
-			link.l1 = "She was his wife and I couldn't care less on what happened, it's none of my business. I made a mistake boarding your galleon but it is too late to talk about it. Adam has promised me to pay for my help.";
+			link.l1 = "She was his wife and I couldn't care less on what happened, it's none of my business. I made a mistake boarding your fluyt but it is too late to talk about it. Adam has promised me to pay for my help.";
 			link.l1.go = "FalseTrace_Prisoner_3";
 		break;
 		
@@ -674,7 +674,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_Prisoner_7":
-			dialog.text = "You will arrest Adam Rayner and put him in chains. Then you will take me and Katerine to "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+". Don't land in the city, after all, it was you who sank my galleon, drop all three of us at " + XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen") + "\nI would also ask you for a weapon. We will go to the city through the jungles and I'll make sure that the scum pays not only for his crimes but for yours too. He deserves it\nYou have my word that your name won't come up. In return, I will give you true information concerning a ship with gold of enemy state\nIt won't be a big challenge for you but it does have teeth, you will gain a fine booty. Much better than my ransom and 'so called' Squint-Eyed Solly's treasures. Do we have a deal?";
+			dialog.text = "You will arrest Adam Rayner and put him in chains. Then you will take me and Katerine to "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+". Don't land in the city, after all, it was you who sank my fluyt, drop all three of us at " + XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen") + "\nI would also ask you for a weapon. We will go to the city through the jungles and I'll make sure that the scum pays not only for his crimes but for yours too. He deserves it\nYou have my word that your name won't come up. In return, I will give you true information concerning a ship with gold of enemy state\nIt won't be a big challenge for you but it does have teeth, you will gain a fine booty. Much better than my ransom and 'so called' Squint-Eyed Solly's treasures. Do we have a deal?";
 			link.l1 = "I don't like your plan. I think, that local authorities will organize a hunt for me as soon as I leave the shores of " + XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen") + ". No, captain, I am not going to risk my head. Our conversation is over.";
 			link.l1.go = "FalseTrace_Prisoner_8";
 			link.l2 = "Well, it looks like Katerine was right. I like your proposal. Adam Rayner will be arrested. I'll make it done right now. You will be released after we arrest Adam. See you, captain!";

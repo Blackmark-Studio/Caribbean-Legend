@@ -625,7 +625,7 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_Prisoner_2":
 			dialog.text = "Adam? Ce salaud? C'était tout son plan! Maintenant je vois... Oui, j'ai aidé Katrine à s'échapper il y a trois mois. Une telle pauvre fille, tu n'as aucune idée de comment il la traitait...";
-			link.l1 = "Elle était sa femme et je me fichais de ce qui s'est passé, ce n'est pas mes affaires. J'ai fait une erreur en montant à bord de votre galion mais il est trop tard pour en parler. Adam m'a promis de me payer pour mon aide.";
+			link.l1 = "Elle était sa femme et je me fichais de ce qui s'est passé, ce n'est pas mes affaires. J'ai fait une erreur en montant à bord de votre flûte mais il est trop tard pour en parler. Adam m'a promis de me payer pour mon aide.";
 			link.l1.go = "FalseTrace_Prisoner_3";
 		break;
 		
@@ -654,7 +654,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_Prisoner_7":
-			dialog.text = "Vous allez arrêter Adam Rayner et le mettre en chaînes. Ensuite, vous nous emmènerez, Katerine et moi à "+XI_ConvertString("Colonie"+pchar.questTemp.FalseTrace.TargetCity)+". Ne débarquez pas dans la ville, après tout, c'était vous qui avez coulé mon galion, déposez-nous tous les trois à "+XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen")+"\nJe vous demanderais aussi une arme. Nous irons à la ville à travers les jungles et je m'assurerai que cette crapule paie non seulement pour ses crimes mais aussi pour les vôtres. Il le mérite\nVous avez ma parole que votre nom ne sera pas mentionné. En retour, je vous donnerai des informations véridiques concernant un navire avec de l'or d'un état ennemi\nCe ne sera pas un grand défi pour vous mais il a des dents, vous obtiendrez un beau butin. Bien mieux que ma rançon et les trésors du 'soi-disant' Solly aux yeux louches. Avons-nous un accord?";
+			dialog.text = "Vous allez arrêter Adam Rayner et le mettre en chaînes. Ensuite, vous nous emmènerez, Katerine et moi à "+XI_ConvertString("Colonie"+pchar.questTemp.FalseTrace.TargetCity)+". Ne débarquez pas dans la ville, après tout, c'était vous qui avez coulé mon flûte, déposez-nous tous les trois à "+XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gen")+"\nJe vous demanderais aussi une arme. Nous irons à la ville à travers les jungles et je m'assurerai que cette crapule paie non seulement pour ses crimes mais aussi pour les vôtres. Il le mérite\nVous avez ma parole que votre nom ne sera pas mentionné. En retour, je vous donnerai des informations véridiques concernant un navire avec de l'or d'un état ennemi\nCe ne sera pas un grand défi pour vous mais il a des dents, vous obtiendrez un beau butin. Bien mieux que ma rançon et les trésors du 'soi-disant' Solly aux yeux louches. Avons-nous un accord?";
 			link.l1 = "Je n'aime pas ton plan. Je pense que les autorités locales organiseront une chasse à l'homme dès que je quitterai les rivages de "+XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore+"Gén")+". Non, capitaine, je ne vais pas risquer ma tête. Notre conversation est terminée.";
 			link.l1.go = "FalseTrace_Prisoner_8";
 			link.l2 = "Eh bien, il semble que Katerine avait raison. J'aime votre proposition. Adam Rayner sera arrêté. Je vais le faire tout de suite. Vous serez libéré après l'arrestation d'Adam. À bientôt, capitaine!";

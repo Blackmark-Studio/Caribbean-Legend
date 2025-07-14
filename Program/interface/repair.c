@@ -65,7 +65,7 @@ void IDoExit(int exitCode)
 		if( cn > 0 )
         {
 			chr = GetCharacter(cn);
-			if(CheckAttribute(chr, "repair")) DeleteAttribute(chr, "repair");
+			DeleteAttribute(chr, "repair");
 			GetAllSailsDamagePercent(chr);
 		}	
 	}		
@@ -718,4 +718,3 @@ void RepairAllSquadron()
 		}
 	}	
 }
-

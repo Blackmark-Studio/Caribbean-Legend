@@ -244,7 +244,7 @@ void ProcessDialogEvent()
 
 	case "AxelHelper_2":
 		dialog.text = NPCStringReactionRepeat("Ya te he dicho todo. Ven aquí mañana.", "¡No me molestes, amigo.  Piérdete!", "¡No me hagas enojar, imbécil!", "¡Vete!!", "block", 1, npchar, Dialog.CurrentNode);
-		link.l1 = HeroStringReactionRepeat("Bien.", "Lo tengo, lo tengo.", "Cállate...", "¿Qué?!", npchar, Dialog.CurrentNode);
+		link.l1 = HeroStringReactionRepeat("Bien.", "Lo tengo, lo tengo.", "Cállate...", "¿Qué?", npchar, Dialog.CurrentNode);
 		link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);
 		break;
 
@@ -437,7 +437,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Woman_FackYou":
-		dialog.text = "¿Qué?! ¿Decidiste revisar mis cofres? ¡No te saldrás con la tuya!";
+		dialog.text = "¿Qué? ¿Decidiste revisar mis cofres? ¡No te saldrás con la tuya!";
 		link.l1 = "¡Chica tonta!";
 		link.l1.go = "exit_setOwner";
 		LAi_group_Attack(NPChar, Pchar);

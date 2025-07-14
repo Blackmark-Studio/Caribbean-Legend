@@ -108,7 +108,7 @@ void ProcessDialogEvent()
             PlaySound("Ambient\Tavern\glotok_001.wav");
             PlaySound("Types\" + LanguageGetLanguage() + "\warrior03.wav");
             SendMessage(NPChar, "lfffsfff", MSG_CHARACTER_VIEWSTRPOS, 0.0, 0.0, 0.1, XI_ConvertString("Rampage"), 255.0, 30.0, 30.0);
-            NPChar.Unpushable = "";
+            MakeUnpushable(NPChar, true);
 			LAi_SetCurHPMax(NPChar);
 			LAi_GetCharacterMaxEnergy(NPChar);
 			QuestAboardCabinDialogExitWithBattle(""); 

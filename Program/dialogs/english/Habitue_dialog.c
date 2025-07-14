@@ -821,7 +821,7 @@ void ProcessDialogEvent()
 				break;
 
 				case 5:
-					if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > rand(110) )
+					if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > rand(110) || CheckAttribute(pchar, "questTemp.Sharlie.Lock"))
 					{
 						dialog.text = "...And then I c-caught his saber by the b-blade...";
 						link.l1 = "...and then she said...";

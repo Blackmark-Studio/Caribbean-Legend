@@ -702,7 +702,7 @@ Questa bellissima carabina side-by-side è più comunemente vista dai nobili di 
 itmname_howdah {Howdah}
 itmdescr_howdah
 {
-Pistola a doppia canna di grosso calibro, la migliore amica del cacciatore nella savana africana e nella giungla indiana. Abbatte in modo affidabile cinghiali, tigri, leoni e indigeni aggressivi con un solo colpo! Utilizza il colpo a grappolo. Richiede palle di piombo e l'abilità Schermagliatore.
+Pistola a doppia canna di grosso calibro, la migliore amica del cacciatore nella savana africana e nella giungla indiana. Abbatte in modo affidabile cinghiali, tigri, leoni e indigeni aggressivi con un solo colpo! Spara pallettoni e chiodi tritati. Richiede palle di piombo e l'abilità Schermagliatore.
 } 
 
 ; ==================================================================================================================== ДОСПЕХИ
@@ -1504,7 +1504,7 @@ Disappears after 70 days of usage or by removal.
 itmname_amulet_3 {Amuleto 'Crucifix'}
 itmdescr_amulet_3
 {
-Riduce del 10% la possibilità di ricevere un colpo critico.
+Un crocifisso cattolico consacrato riduce del 15% i danni critici inflitti dai nemici con armi bianche.
 Gli attacchi pesanti infliggono il 10% di danni in meno.
 Può essere attivato una sola volta.
 Funziona per qualsiasi personaggio.
@@ -2647,7 +2647,7 @@ M.'
 }
 itmdescr_letter_adolf_1
 {
-'Marchello, avevamo concordato una somma due volte superiore di quella che mi hai consegnato. La carabina vale molto di più e lo sai. Se non mi paghi il resto, l'ammiraglio saprà immediatamente i tuoi rapporti con Kapper su 'Eva'.
+'Marcello, avevamo concordato una somma due volte superiore di quella che mi hai consegnato. La carabina vale molto di più e lo sai. Se non mi paghi il resto, l'ammiraglio saprà immediatamente i tuoi rapporti con Kapper su 'Eva'.
 Adolf.'
 }
 itmdescr_letter_aeva

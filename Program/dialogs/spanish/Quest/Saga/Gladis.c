@@ -194,7 +194,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Gladis_history_3":
-		dialog.text = "Yo sé que su padre era un pirata llamado 'Butcher' en la fragata 'Neptune'. Solo lo vi dos veces. Y su madre era una joven hermosa, pelo rojo, vestida con ropa de hombre. Eso es prácticamente todo lo que puedo decirte sobre ella, excepto que fue una mala madre.\nNunca dejaría a un bebé así en manos de extraños. Ambos murieron trágicamente. Y el mensajero prometido se ha mostrado veinte años después y resultó ser tú. ¿Te envió Butcher? ¿Está vivo?";
+		dialog.text = "Yo sé que su padre era un pirata llamado 'Butcher' en la fragata 'Neptuno'. Solo lo vi dos veces. Y su madre era una joven hermosa, pelo rojo, vestida con ropa de hombre. Eso es prácticamente todo lo que puedo decirte sobre ella, excepto que fue una mala madre.\nNunca dejaría a un bebé así en manos de extraños. Ambos murieron trágicamente. Y el mensajero prometido se ha mostrado veinte años después y resultó ser tú. ¿Te envió Butcher? ¿Está vivo?";
 		link.l1 = "¡Cálmate, señorita Gladys! No hay razones para sospechar que Butcher ha revivido, aunque usted es la segunda persona que ha tenido esta idea. Recientemente me encontré con un hombre que se suponía debía mostrarle este anillo...";
 		link.l1.go = "Gladis_history_4";
 		break;

@@ -628,7 +628,7 @@ void IDoExit(int exitCode, bool bCode)
 	}
 	else
 	{
-		MOD_EXP_RATE = makeint(5 + MOD_SKILL_ENEMY_RATE);  // 0т 5 до 15
+		MOD_EXP_RATE = makeint(5 + MOD_SKILL_ENEMY_RATE);  // 0т 7 до 15
 		interfaceResultCommand = exitCode;
 		EndCancelInterface(bCode);
 	}
@@ -668,7 +668,7 @@ void ShowInfo()
 		break;
 		
 		case "TABLE_SMALLSKILL":
-			if(CheckAttribute(GameInterface, "TABLE_SMALLSKILL." + CurRow + "." + CurCol + ".UserData.ID"))
+			if(CheckAttribute(&GameInterface, "TABLE_SMALLSKILL." + CurRow + "." + CurCol + ".UserData.ID"))
 			{
 				sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).(CurCol).UserData.ID);
 				sText1  = GetRPGText(GameInterface.(CurTable).(CurRow).(CurCol).UserData.ID);

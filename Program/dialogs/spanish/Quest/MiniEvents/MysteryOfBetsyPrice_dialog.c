@@ -248,12 +248,15 @@ void ProcessDialogEvent()
 
 		case "BetsiPrice_11":
 			dialog.text = "Ya hemos llegado. ¿Sabes? Ni siquiera te pregunté qué te llevó a esa casa.";
-			link.l1 = "No llegué allí por accidente. El tabernero parecía realmente preocupado por tu desaparición y me pidió que averiguara qué pasó. ¿Y cómo iba yo a negarme? Abandonar a una dama en apuros no es propio de un capitán.";
-			link.l1.go = "BetsiPrice_12";
 			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulonOtdatBetsy") && pchar.questTemp.TBP_BuyKulonOtdatBetsy == true)
             {
 			link.l2 = "No llegué allí por accidente. Este colgante me llevó allí. Tómalo.​ El tabernero parecía realmente preocupado por tu desaparición y me pidió que averiguara qué pasó. ¿Y cómo iba yo a negarme? Abandonar a una dama en apuros no es propio de un capitán.";
 			link.l2.go = "BetsiPrice_12_otdal_kulon";
+			}
+			else
+			{
+			link.l1 = "No llegué allí por accidente. El tabernero parecía realmente preocupado por tu desaparición y me pidió que averiguara qué pasó. ¿Y cómo iba yo a negarme? Abandonar a una dama en apuros no es propio de un capitán.";
+			link.l1.go = "BetsiPrice_12";
 			}
 		break;
 

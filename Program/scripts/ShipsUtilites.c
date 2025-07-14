@@ -64,39 +64,17 @@ int GenerateShip(int iBaseType, bool isLock)
 	    {  // чтоб не было баркаса с 16ф				
 		    switch(iCaliber)
 		    {
-				case 3:
-                    iCaliber = 0;
-				break;				
-				case 6:
-                    iCaliber = 1;
-				break;				
-				case 8:
-					iCaliber = 2;
-				break;				
-				case 12:
-					iCaliber = 3;
-				break;				
-				case 16:
-					iCaliber = 4;
-				break;
-				case 18:
-					iCaliber = 5;
-				break;
-				case 20:
-					iCaliber = 6;
-				break;				
-				case 24:
-					iCaliber = 7;
-				break;
-				case 32:
-					iCaliber = 8;
-				break;
-				case 36:
-					iCaliber = 9;
-				break;
-				case 42:
-					iCaliber = 10;
-				break;
+                case 3:  iCaliber = 0;  break;
+                case 6:  iCaliber = 1;  break;
+                case 8:  iCaliber = 2;  break;
+                case 12: iCaliber = 3;  break;
+                case 16: iCaliber = 4;  break;
+                case 18: iCaliber = 5;  break;
+                case 20: iCaliber = 6;  break;
+                case 24: iCaliber = 7;  break;
+                case 32: iCaliber = 8;  break;
+                case 36: iCaliber = 9;  break;
+                case 42: iCaliber = 10; break;
 		    }
 		    iCaliber = iCaliber - rand(1); // фикс перебора калибра орудий
 		    if (iCaliber < 0) iCaliber = 0;
@@ -110,39 +88,17 @@ int GenerateShip(int iBaseType, bool isLock)
 		    }
 		    switch(iCaliber)
 		    {			
-                case 0:
-					iCaliber = 3;
-				break;
-				case 1:
-					iCaliber = 6;
-				break;
-				case 2:
-					iCaliber = 8;
-				break;
-				case 3:
-					iCaliber = 12;
-				break;
-				case 4:
-					iCaliber = 16;
-				break;
-				case 5:
-					iCaliber = 18;
-				break;
-				case 6:
-					iCaliber = 20;
-				break;
-				case 7:
-					iCaliber = 24;
-				break;
-				case 8:
-					iCaliber = 32;
-				break;
-				case 9:
-					iCaliber = 36;
-				break;
-				case 10:
-					iCaliber = 42;
-				break;
+                case 0:  iCaliber = 3;  break;
+                case 1:  iCaliber = 6;  break;
+                case 2:  iCaliber = 8;  break;
+                case 3:  iCaliber = 12; break;
+                case 4:  iCaliber = 16; break;
+                case 5:  iCaliber = 18; break;
+                case 6:  iCaliber = 20; break;
+                case 7:  iCaliber = 24; break;
+                case 8:  iCaliber = 32; break;
+                case 9:  iCaliber = 36; break;
+                case 10: iCaliber = 42; break;
 		    }
 		    rRealShip.MaxCaliber = iCaliber;						
 	    }
@@ -237,42 +193,20 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 		{  // чтоб не было баркаса с 16ф
 			switch(iCaliber)
 			{
-				case 3:
-                    iCaliber = 0;
-				break;
-				case 6:
-                    iCaliber = 1;
-				break;
-				case 8:
-					iCaliber = 2;
-				break;
-				case 12:
-					iCaliber = 3;
-				break;
-				case 16:
-					iCaliber = 4;
-				break;
-				case 18:
-					iCaliber = 5;
-				break;
-				case 20:
-					iCaliber = 6;
-				break;
-				case 24:
-					iCaliber = 7;
-				break;
-				case 32:
-					iCaliber = 8;
-				break;
-				case 36:
-					iCaliber = 9;
-				break;
-				case 42:
-					iCaliber = 10;
-				break;
+                case 3:  iCaliber = 0;  break;
+                case 6:  iCaliber = 1;  break;
+                case 8:  iCaliber = 2;  break;
+                case 12: iCaliber = 3;  break;
+                case 16: iCaliber = 4;  break;
+                case 18: iCaliber = 5;  break;
+                case 20: iCaliber = 6;  break;
+                case 24: iCaliber = 7;  break;
+                case 32: iCaliber = 8;  break;
+                case 36: iCaliber = 9;  break;
+                case 42: iCaliber = 10; break;
 			}
 			//iCaliber = iCaliber + rand(2) - 1;
-			iCaliber = iCaliber-rand(1); //Jason: согласно новой системе орудий калибр должен быть постоянен, но пока поставим рандом на единицу меньше, а больше - нельзя по определению, на рез. тестов решим, фиксировать или рандомить
+			iCaliber = iCaliber - rand(1); //Jason: согласно новой системе орудий калибр должен быть постоянен, но пока поставим рандом на единицу меньше, а больше - нельзя по определению, на рез. тестов решим, фиксировать или рандомить
 			if (iCaliber < 0) iCaliber = 0;
 			if (sti(rRealShip.Class) == 1)
 			{			
@@ -284,39 +218,17 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 			}
 			switch(iCaliber)
 			{
-                case 0:
-					iCaliber = 3;
-				break;
-				case 1:
-					iCaliber = 6;
-				break;
-				case 2:
-					iCaliber = 8;
-				break;
-				case 3:
-					iCaliber = 12;
-				break;
-				case 4:
-					iCaliber = 16;
-				break;
-				case 5:
-					iCaliber = 18;
-				break;
-				case 6:
-					iCaliber = 20;
-				break;
-				case 7:
-					iCaliber = 24;
-				break;
-				case 8:
-					iCaliber = 32;
-				break;
-				case 9:
-					iCaliber = 36;
-				break;
-				case 10:
-					iCaliber = 42;
-				break;			
+                case 0:  iCaliber = 3;  break;
+                case 1:  iCaliber = 6;  break;
+                case 2:  iCaliber = 8;  break;
+                case 3:  iCaliber = 12; break;
+                case 4:  iCaliber = 16; break;
+                case 5:  iCaliber = 18; break;
+                case 6:  iCaliber = 20; break;
+                case 7:  iCaliber = 24; break;
+                case 8:  iCaliber = 32; break;
+                case 9:  iCaliber = 36; break;
+                case 10: iCaliber = 42; break;
 			}
 			rRealShip.MaxCaliber = iCaliber;
 		}
@@ -1557,15 +1469,17 @@ float GetBaseShipPower(int iBaseType)
 float GetRealShipPower(ref rChar)
 {
     ref   rShip  = GetRealShip(sti(rChar.Ship.Type));
-    float fPower = GetBaseShipPower(sti(rShip.BaseType));
+    float fMaxPower = GetBaseShipPower(sti(rShip.BaseType));
+	float fPower = fMaxPower;
     float kCrew  = MakeFloat(GetCrewQuantity(rChar)) / stf(rShip.MaxCrew); // ~!~ OptCrew
     if (kCrew > 1.0) kCrew = 1.0;
     float kHull  = stf(rChar.ship.HP) / stf(rShip.HP);
     float kSails = stf(rChar.ship.SP) / stf(rShip.SP);
-    float kCannons = MakeFloat(GetCannonsNum(rChar)) / stf(rShip.CannonsQuantity);
+    float kCannons = 1.0;
+    if(rShip.CannonsQuantity != "0") kCannons = MakeFloat(GetCannonsNum(rChar)) / stf(rShip.CannonsQuantity);
     fPower *= pow(kCrew, 2.25)*0.45 + pow(kSails, 2.25)*0.25 + pow(kHull, 2.25)*0.2 + pow(kCannons, 2.25)*0.1;
 	// belamour Шляпа Грима минус 30% штрафа
-	fPower = GetFloatByCondition(GetCharacterEquipByGroup(rChar, HAT_ITEM_TYPE) == "hat9", fPower, fClamp(fPower, 1.0, fPower + 0.3));
+	fPower = GetFloatByCondition(GetCharacterEquipByGroup(rChar, HAT_ITEM_TYPE) == "hat9", fPower, fPower + (fMaxPower - fPower) * 0.3);
     return fPower;
 }
 

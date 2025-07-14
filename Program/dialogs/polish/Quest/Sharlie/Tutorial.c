@@ -142,7 +142,7 @@ void ProcessDialogEvent()
 
 		case "StartSailor_13":
 			dialog.text = "Nie przejmuj się tak. Saint-Pierre to niewielkie miasteczko – nie Luwr, oczywiście, ale i nie dżungla. A w bandyckim Le François, nie daj Boże – porządny człowiek nie ma czego szukać.";
-			link.l1 = "Jeśli zajdzie potrzeba – odwiedzę i bandytów. Michelle zawsze ratował mnie z kłopotów. Teraz moja kolej.";
+			link.l1 = "Jeśli zajdzie potrzeba – odwiedzę i bandytów. Michel zawsze ratował mnie z kłopotów. Teraz moja kolej.";
 			link.l1.go = "StartSailor_14";
 		break;
 		
@@ -1249,7 +1249,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BallsGold_3":
-			dialog.text = "Ouf, j'ai cru un instant... Oui, Paul - c'est bien moi. Combien avez-vous là pour moi ?";
+			dialog.text = "Uff, przez chwilę myślałem... Tak, Paul – to naprawdę ja. Ile macie tam dla mnie?";
 			if (PCharDublonsTotal() >= 20)
 			{
 				link.l1 = "20 dublońców.";
@@ -1682,7 +1682,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_16_Proval_3":
-			dialog.text = "La battaglia non inizierà per un paio d'ore, quindi è il momento perfetto per chiudere i conti giornalieri. Avete il mio forziere di dobloni, de Maure. Cortesemente restituitelo.";
+			dialog.text = "Bitwa zacznie się dopiero za kilka godzin, więc to najlepszy moment, by zamknąć dzienny bilans. Masz mój kuferek z dublonami, de Maure. Uprzejmie proszę o jego zwrot.";
 			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
 			{
 				link.l1 = "Prendetelo. E non mostrate più la vostra faccia quaggiù.";
@@ -1802,7 +1802,7 @@ void ProcessDialogEvent()
 			link.l2.go = "EnemyPirate_3_Leadership";
 			if (IsCharacterPerkOn(pchar, "HT1"))
 			{
-				link.l3 = "(Pojedynkowicz) Tego mi brakowało.";
+				link.l3 = "(Pojedynkowicz) Jak bardzo mi tego brakowało.";
 				link.l3.go = "EnemyPirate_3_Duelyant";
 			}
 		break;

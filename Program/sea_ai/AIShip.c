@@ -4831,7 +4831,7 @@ void DropGoodsToSea()
 	ref rGood;
 	string sGood;
 
-	for (int i=GOOD_BALLS; i<GOOD_CULVERINE_36; i++)
+	for (int i=0; i<GetArraySize(&Goods); i++)
 	{
 		sGood = Goods[i].name;
 		if (CheckAttribute(&Goods[i], "DontDrop")) continue;

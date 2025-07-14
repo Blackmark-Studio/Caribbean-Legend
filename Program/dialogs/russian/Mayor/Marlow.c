@@ -547,7 +547,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marginpassenger_offer":
-			pchar.GenQuest.Marginpassenger.Goods = GOOD_EBONY + rand(makeint(GOOD_MAHOGANY - GOOD_EBONY));
+			pchar.GenQuest.Marginpassenger.Goods = GetRandomGood(FLAG_GOODS_TYPE_EXPORT, FLAG_GOODS_VALUABLE_WOOD);
 			pchar.GenQuest.Marginpassenger.GoodsQty = 200+rand(10)*10;
 			switch (hrand(1))
 			{

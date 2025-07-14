@@ -5418,7 +5418,7 @@ int GetStoragePriceExt(ref NPChar, ref chref)
 void SetStorageGoodsToShip(ref pStorage)
 {
 	int iStoreQ;
-	for (int i = 0; i< GOODS_QUANTITY; i++)
+	for (int i = 0; i< GetArraySize(&Goods); i++)
 	{
 		iStoreQ = GetStorageGoodsQuantity(pStorage, i); 
 		if (iStoreQ == 0) continue;

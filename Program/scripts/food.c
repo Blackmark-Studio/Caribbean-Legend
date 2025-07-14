@@ -135,7 +135,7 @@ void DailyRatsEatGoodsUpdate(ref chref)
 		ref rLongway = CharacterFromID("Longway");
 		if(IsCharacterPerkOn(rLongway, "RatsWolf")) return;
 	}
-    int iGoods = GOOD_FOOD + rand(GOOD_OIL - GOOD_FOOD);
+    int iGoods = GetRandomGood(FLAG_GOODS_TYPE_EXPORT + FLAG_GOODS_TYPE_IMPORT + FLAG_GOODS_TYPE_UNIQUE, FLAG_GOODS_NONE);
 	if(iGoods == GOOD_BRICK) return;
     int iQuantity = GetCargoGoods(chref, iGoods);
     int iSeaGoods = LanguageOpenFile("ShipEatGood.txt");

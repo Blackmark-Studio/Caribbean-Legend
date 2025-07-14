@@ -1349,34 +1349,25 @@ void Patria_HunterConvoyGenerate(string qName) // генерируем конв�
 	string sCapId = "PatriaHWICCap";
     string sGroup = "Sea_" + sCapId + "1";
 	int iGoodsType = rand(1);
-	if (iGoodsType > 0) iGoods = GOOD_COFFEE + rand(2);
-	else iGoods = GOOD_EBONY + rand(2);
-	switch (iGoods)
+	
+	int iGoodFlags = FLAG_GOODS_NONE;
+	if (iGoodsType > 0) iGoodFlags = FLAG_GOODS_EXPORT_PLANTS;
+	else iGoodFlags = FLAG_GOODS_VALUABLE_EXPORT;
+	
+	iGoods =  = GetRandomGood(FLAG_GOODS_TYPE_EXPORT, iGoodFlags);
+	
+	if (!and(sti(Goods[iGoods].Flag), FLAG_GOODS_VALUABLE_WOOD)) 
 	{
-		case 11:
-			iSpace = 1400+rand(100);
-		break;
-		
-		case 12:
-			iSpace = 1400+rand(100);
-		break;
-		
-		case 13:
-			iSpace = 1400+rand(100);
-		break;
-		
-		case 17:
-			iSpace = 550+rand(20);
-		break;
-		
-		case 18:
-			iSpace = 670+rand(30);
-		break;
-		
-		case 19:
-			iSpace = 1400+rand(100);
-		break;
+		iSpace = 1400+rand(100);
 	}
+	else
+	{
+		int cost = sti(Goods[iGoods].Cost);
+		int baseSize = 110000 / cost;
+		int variableSize = 5000 / cost;
+		iSpace = baseSize + rand(variableSize);
+	}
+
 	switch (iColony)
 	{
 		case 0:

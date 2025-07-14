@@ -140,7 +140,7 @@ int RecalculateCargoLoad(ref _refCharacter)
 	// ugeen --> учёт веса экипажа (1 тушка члена экипажа весит 1 ц.)
 	loadSpace = loadSpace + GetCrewQuantity(_refCharacter);
 	// <-- учёт веса экипажа
-	for(int i=0; i<GOODS_QUANTITY; i++)
+	for(int i=0; i<GetArraySize(&Goods); i++)
 	{
 		loadSpace = loadSpace + GetGoodWeightByType(i,GetCargoGoods(_refCharacter,i));
 	}
@@ -1696,7 +1696,7 @@ void NullCharacterGoods(ref rChar)
 	
 	rChar.Ship.Cargo.Load = 0;
 	
-	for(i=0; i<GOODS_QUANTITY; i++)
+	for(i=0; i<GetArraySize(&Goods); i++)
 	{
 		sGood = Goods[i].Name;
 		rChar.Ship.Cargo.Goods.(sGood) = 0;

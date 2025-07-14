@@ -1173,7 +1173,7 @@ void ShowColonyInfo(int iColony)
 			break;
 	}
 	
-	for(iType=0; iType<GOODS_QUANTITY; iType++)
+	for(iType=0; iType<GetArraySize(&Goods); iType++)
 	{
 		if(iType > 34 && iType < 51) continue;
 		

@@ -165,8 +165,9 @@ void InitGoods()
 	Goods[GOOD_COFFEE].type 				= T_TYPE_EXPORT;
 	Goods[GOOD_COFFEE].Norm          		= 2400; 
 	Goods[GOOD_COFFEE].MediumNorm			= 0.75;
-	Goods[GOOD_COFFEE].SmallNorm			= 0.5;		
-	
+	Goods[GOOD_COFFEE].SmallNorm			= 0.5;
+	Goods[GOOD_COFFEE].Flags			    = FLAG_GOODS_EXPORT_PLANTS;
+
 	Goods[GOOD_CHOCOLATE].Name				= "Chocolate";
 	Goods[GOOD_CHOCOLATE].Weight			= 2;
 	Goods[GOOD_CHOCOLATE].Cost				= 80;
@@ -178,6 +179,7 @@ void InitGoods()
 	Goods[GOOD_CHOCOLATE].Norm          	= 2400;  	
 	Goods[GOOD_CHOCOLATE].MediumNorm		= 0.75;
 	Goods[GOOD_CHOCOLATE].SmallNorm			= 0.5;		
+	Goods[GOOD_CHOCOLATE].Flags			    = FLAG_GOODS_EXPORT_PLANTS;
 
 	Goods[GOOD_TOBACCO].Name	    		= "Tobacco";
 	Goods[GOOD_TOBACCO].Weight	    		= 2;
@@ -189,7 +191,8 @@ void InitGoods()
 	Goods[GOOD_TOBACCO].type 				= T_TYPE_EXPORT;
 	Goods[GOOD_TOBACCO].Norm          		= 2400;  
 	Goods[GOOD_TOBACCO].MediumNorm			= 0.75;
-	Goods[GOOD_TOBACCO].SmallNorm			= 0.5;		
+	Goods[GOOD_TOBACCO].SmallNorm			= 0.5;	
+	Goods[GOOD_TOBACCO].Flags			    = FLAG_GOODS_EXPORT_PLANTS;	
 	
 	Goods[GOOD_SUGAR].Name		    		= "Sugar";
 	Goods[GOOD_SUGAR].Weight	    		= 2;
@@ -235,7 +238,8 @@ void InitGoods()
 	Goods[GOOD_EBONY].type 					= T_TYPE_EXPORT;    
 	Goods[GOOD_EBONY].Norm          		= 2400;  
 	Goods[GOOD_EBONY].MediumNorm			= 0.75;
-	Goods[GOOD_EBONY].SmallNorm			= 0.5;		
+	Goods[GOOD_EBONY].SmallNorm			    = 0.5;	
+	Goods[GOOD_EBONY].Flags			        = FLAG_GOODS_VALUABLE_EXPORT + FLAG_GOODS_VALUABLE_WOOD;	
 
 	Goods[GOOD_MAHOGANY].Name	    		= "Mahogany";
 	Goods[GOOD_MAHOGANY].Weight	    		= 4;
@@ -248,6 +252,7 @@ void InitGoods()
 	Goods[GOOD_MAHOGANY].Norm          		= 2400;  
 	Goods[GOOD_MAHOGANY].MediumNorm			= 0.75;
 	Goods[GOOD_MAHOGANY].SmallNorm			= 0.5;		
+	Goods[GOOD_MAHOGANY].Flags			    = FLAG_GOODS_VALUABLE_EXPORT + FLAG_GOODS_VALUABLE_WOOD;	
 
 	Goods[GOOD_CINNAMON].Name	    		= "Cinnamon";
 	Goods[GOOD_CINNAMON].Weight	    		= 2;
@@ -259,7 +264,8 @@ void InitGoods()
 	Goods[GOOD_CINNAMON].type 				= T_TYPE_EXPORT;
 	Goods[GOOD_CINNAMON].Norm          		= 2400;  
 	Goods[GOOD_CINNAMON].MediumNorm			= 0.75;
-	Goods[GOOD_CINNAMON].SmallNorm			= 0.5;		
+	Goods[GOOD_CINNAMON].SmallNorm			= 0.5;	
+	Goods[GOOD_CINNAMON].Flags			    = FLAG_GOODS_VALUABLE_EXPORT;		
 
 	Goods[GOOD_COPRA].Name		    		= "Copra";
 	Goods[GOOD_COPRA].Weight	    		= 2;
@@ -395,8 +401,9 @@ void InitGoods()
 	Goods[GOOD_SANDAL].AfraidWater 			= 1;
 	Goods[GOOD_SANDAL].type 				= T_TYPE_UNIQUE;
 	Goods[GOOD_SANDAL].Norm          		= 1200;  
-	Goods[GOOD_SANDAL].MediumNorm				= 0.5;
-	Goods[GOOD_SANDAL].SmallNorm				= 0.25;		
+	Goods[GOOD_SANDAL].MediumNorm			= 0.5;
+	Goods[GOOD_SANDAL].SmallNorm			= 0.25;		
+	Goods[GOOD_SANDAL].Flags			    = FLAG_GOODS_VALUABLE_WOOD;
 
 	Goods[GOOD_OIL].Name	        		= "Oil";
 	Goods[GOOD_OIL].Weight	        		= 1;
@@ -608,6 +615,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_36].Norm          	= 10; 
 	Goods[GOOD_CANNON_36].MediumNorm		= 1.0;
 	Goods[GOOD_CANNON_36].SmallNorm			= 1.0;
+	Goods[GOOD_CANNON_36].Flags			    = FLAG_GOODS_CROWN_CANNONS;
 	
 	Goods[GOOD_CANNON_42].Name				= "Cannon_42";
 	Goods[GOOD_CANNON_42].CannonIdx			= CANNON_TYPE_CANNON_LBS42;
@@ -624,6 +632,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_42].Norm          	= 10; 
 	Goods[GOOD_CANNON_42].MediumNorm		= 1.0;
 	Goods[GOOD_CANNON_42].SmallNorm			= 1.0;
+	Goods[GOOD_CANNON_42].Flags			    = FLAG_GOODS_CROWN_CANNONS;
 	
     Goods[GOOD_CULVERINE_8].Name			= "Culverine_8";
 	Goods[GOOD_CULVERINE_8].CannonIdx	 	= CANNON_TYPE_CULVERINE_LBS8;
@@ -672,9 +681,29 @@ void InitGoods()
 	Goods[GOOD_CULVERINE_36].Norm          	= 10; 
 	Goods[GOOD_CULVERINE_36].MediumNorm		= 1.0;
 	Goods[GOOD_CULVERINE_36].SmallNorm		= 1.0;
+	Goods[GOOD_CULVERINE_36].Flags			= FLAG_GOODS_CROWN_CANNONS;
+
+	Goods[GOOD_CANNON_48].Name				= "Cannon_48";
+	Goods[GOOD_CANNON_48].CannonIdx			= CANNON_TYPE_CANNON_LBS48;
+	Goods[GOOD_CANNON_48].Cost				= Cannon[CANNON_TYPE_CANNON_LBS48].Cost;
+	Goods[GOOD_CANNON_48].Weight			= Cannon[CANNON_TYPE_CANNON_LBS48].Weight;
+	Goods[GOOD_CANNON_48].Units				= 1;
+	Goods[GOOD_CANNON_48].AfraidWater		= 0;
+	Goods[GOOD_CANNON_48].type				= T_TYPE_CANNONS;
+	Goods[GOOD_CANNON_48].trade_type		= T_TYPE_CANNONS;
+	Goods[GOOD_CANNON_48].NotSale			= 1;
+	Goods[GOOD_CANNON_48].NotGenerate		= 1;
+	Goods[GOOD_CANNON_48].FireRange		    = Cannon[CANNON_TYPE_CANNON_LBS48].FireRange;
+	Goods[GOOD_CANNON_48].DamageMultiply	= Cannon[CANNON_TYPE_CANNON_LBS48].DamageMultiply;
+	Goods[GOOD_CANNON_48].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS48]));
+	Goods[GOOD_CANNON_48].Norm          	= 10; 
+	Goods[GOOD_CANNON_48].MediumNorm		= 1.0;
+	Goods[GOOD_CANNON_48].SmallNorm			= 1.0;
+	Goods[GOOD_CANNON_48].Flags			    = FLAG_GOODS_CROWN_CANNONS;
+	
 	
 	// boal 24/01/08 Норма товара в магазине (режим Экспорта), то есть максимум, ниже установлены исключения
-	for (i = 0; i< GOODS_QUANTITY; i++)
+	for (i = 0; i< GetArraySize(&Goods); i++)
 	{
 		if (!CheckAttribute(&Goods[i], "Norm"))
 		{

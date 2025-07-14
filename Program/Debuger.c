@@ -286,16 +286,16 @@ void TestGoodsLiquidity()
 	int i, j, idx;
 	float fMaxCost;
 	
-	for (i = 0; i< GOODS_QUANTITY; i++)
+	for (i = 0; i< GetArraySize(&Goods); i++)
 	{
 		SetCharacterGoods(pchar, i, sti(Goods[i].Units));
 	}
 	trace("======= TestGoodsLiquidity ======== start ");
-	for (j = 0; j< GOODS_QUANTITY; j++)
+	for (j = 0; j< GetArraySize(&Goods); j++)
 	{
 		fMaxCost = 0;
 		idx = -1; 
-		for (i = 0; i< GOODS_QUANTITY; i++)
+		for (i = 0; i< GetArraySize(&Goods); i++)
 		{
 			if (GetCargoGoods(pchar, i) > 0)
 			{

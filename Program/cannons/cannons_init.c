@@ -281,6 +281,7 @@ void InitCannons()
     makeref(rCannon,Cannon[CANNON_TYPE_CULVERINE_LBS36]);
 	rCannon.type = CANNON_NAME_CULVERINE;
 	rCannon.caliber = 42;
+	rCannon.RealCaliber = 36;
 	rCannon.name = "caliber36";
 	rCannon.picture = "cannons4";
 	rCannon.Sound = "cannon_fire_culverine_36";

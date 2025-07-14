@@ -265,67 +265,20 @@ void SetSpyGlassData()
 	{
 		string CannonTypeName = "";
 		
-		switch (sti(chref.Ship.Cannons.Type))
+		int cannonIdx = sti(chref.Ship.Cannons.Type);
+		int cannonGoodIdx = GetCannonGoodsIdxByType(cannonIdx);
+		
+		
+		if (cannonGoodIdx != -1)
 		{
-            case  CANNON_TYPE_CANNON_LBS3:
-			      CannonTypeName = XI_ConvertString("Cannon_3s");
-			      break;
-				
-            case  CANNON_TYPE_CANNON_LBS6:
-			      CannonTypeName = XI_ConvertString("Cannon_6s");
-			      break;
-				 
-			case  CANNON_TYPE_CANNON_LBS8:
-			      CannonTypeName = XI_ConvertString("Cannon_8s");
-			      break;
-			      
-			case  CANNON_TYPE_CANNON_LBS12:
-			      CannonTypeName = XI_ConvertString("Cannon_12s");
-			      break;
-			      
-			case  CANNON_TYPE_CANNON_LBS16:
-			      CannonTypeName = XI_ConvertString("Cannon_16s");
-			      break;
+			string cannonString = Goods[cannonGoodIdx].Name;
 			
-			case  CANNON_TYPE_CANNON_LBS18:
-			      CannonTypeName = XI_ConvertString("Cannon_18s");
-			      break;
+			if (sti(Cannon[cannonIdx].type) != CANNON_NAME_CULVERINE)
+			{
+				cannonString = cannonString + "s";
+			}
 			
-			case  CANNON_TYPE_CANNON_LBS20:
-			      CannonTypeName = XI_ConvertString("Cannon_20s");
-			      break;			
-				  
-			case  CANNON_TYPE_CANNON_LBS24:
-			      CannonTypeName = XI_ConvertString("Cannon_24s");
-			      break;
-			      
-			case  CANNON_TYPE_CANNON_LBS32:
-			      CannonTypeName = XI_ConvertString("Cannon_32s");
-			      break;
-			      
-			case  CANNON_TYPE_CANNON_LBS36:
-			      CannonTypeName = XI_ConvertString("Cannon_36s");
-			      break;	  
-				  
-		    case CANNON_TYPE_CANNON_LBS42:
-		         CannonTypeName = XI_ConvertString("Cannon_42s");
-			     break;
-			     
-			case CANNON_TYPE_CANNON_LBS48:
-		         CannonTypeName = XI_ConvertString("Cannon_48s");
-			     break;     
-			     
-			case CANNON_TYPE_CULVERINE_LBS8:
-			     CannonTypeName = XI_ConvertString("Culverine_8");
-			     break;			     
-			     
-			case CANNON_TYPE_CULVERINE_LBS18:
-			     CannonTypeName = XI_ConvertString("Culverine_18");
-			     break;			     
-			     
-		    case CANNON_TYPE_CULVERINE_LBS36:
-		         CannonTypeName = XI_ConvertString("Culverine_36");
-			     break;
+			CannonTypeName = XI_ConvertString(cannonString);
 		}
 	}	
 	

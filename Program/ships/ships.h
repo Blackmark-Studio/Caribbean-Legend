@@ -1,6 +1,5 @@
 #define SAILS_COLOR_QUANTITY				9
-#define SHIP_TYPES_QUANTITY					57
-#define SHIP_TYPES_QUANTITY_WITH_FORT		58	// must be (SHIP_TYPES_QUANTITY + 1) 
+#define SHIP_TYPES_QUANTITY_WITH_FORT		57
 
 // "Universal"
 #define SHIP_TARTANE			0   // баркас			- 7-ой класс 	(SEFH)

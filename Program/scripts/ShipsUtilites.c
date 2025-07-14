@@ -26,7 +26,7 @@ ref GetRealShip(int iType)
 	{
 		trace ("--- Wrong Ship Index. iType is " + iType);
 		Log_TestInfo("--- Wrong Ship Index. iType is " + iType);
-		return &ShipsTypes[SHIP_TYPES_QUANTITY + 1]; // для отлова
+		return &ShipsTypes[SHIP_BOAT]; // для отлова
 	}
 	return &RealShips[iType]; 
 }

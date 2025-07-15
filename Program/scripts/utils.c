@@ -2562,3 +2562,122 @@ aref ErrorAttr()
     makearef(aError, TEV.Error);
     return aError;
 }
+
+string GetItemName(ref refItem)
+{
+	if (!CheckAttribute(refItem, "name"))
+	{
+		return refItem.id;
+	}
+	if (CheckAttribute(refItem, "modname"))
+	{
+		return GetConvertStr(refItem.name, "mods\"+refItem.modname+"\ItemsDescribe.txt");
+	}
+	return GetConvertStr(refItem.name, "ItemsDescribe.txt");
+}
+
+string GetItemDescr(ref refItem)
+{
+	if (CheckAttribute(refItem, "modname"))
+	{
+		return GetConvertStr(refItem.describe, "mods\"+refItem.modname+"\ItemsDescribe.txt");
+	}
+	return GetConvertStr(refItem.describe, "ItemsDescribe.txt");
+}
+
+string GetItemNameBatch(ref refItem, ref files)
+{
+	if (!CheckAttribute(refItem, "name"))
+	{
+		return refItem.id;
+	}
+	
+	string filename = "ItemsDescribe.txt";
+	
+	if (CheckAttribute(refItem, "modname"))
+	{
+		filename = "mods\"+refItem.modname+"\ItemsDescribe.txt";
+	}
+	
+	
+	int    idLngFile = -1;
+	
+	if (CheckAttribute(files, filename))
+	{
+		idLngFile = sti(files.(filename));
+	}
+	else
+	{
+		idLngFile = LanguageOpenFile(filename);
+		files.(filename) = idLngFile;
+	}
+	return LanguageConvertString(idLngFile, refItem.name);
+}
+
+string GetItemDescrBatch(ref refItem, ref files)
+{
+	if (!CheckAttribute(refItem, "name"))
+	{
+		return refItem.id;
+	}
+	
+	string filename = "ItemsDescribe.txt";
+	
+	if (CheckAttribute(refItem, "modname"))
+	{
+		filename = "mods\"+refItem.modname+"\ItemsDescribe.txt";
+	}
+	
+	
+	int    idLngFile = -1;
+	
+	if (CheckAttribute(files, filename))
+	{
+		idLngFile = sti(files.(filename));
+	}
+	else
+	{
+		idLngFile = LanguageOpenFile(filename);
+		files.(filename) = idLngFile;
+	}
+	return LanguageConvertString(idLngFile, refItem.describe);
+}
+
+void CloseLanguageFilesBatch(ref files)
+{
+	int filesNum = GetAttributesNum(files);
+	for (int i = 0; i < filesNum; i++) 
+	{
+		aref file = GetAttributeN(files, i);
+		int idLngFile = sti(GetAttributeValue(file));
+		LanguageCloseFile(idLngFile);
+	}
+	DeleteAttribute(files, "");
+}
+
+string GetGoodName(ref refGood)
+{
+	if (CheckAttribute(refGood, "modname"))
+	{
+		return GetConvertStr(refGood.name, "mods\"+refGood.modname+"\GoodsDescribe.txt");
+	}
+	return GetConvertStr(refGood.name, "GoodsDescribe.txt");
+}
+
+string GetGoodDescr(ref refGood)
+{
+	if (CheckAttribute(refGood, "modname"))
+	{
+		return GetConvertStr(refGood.name + "_descr", "mods\"+refGood.modname+"\GoodsDescribe.txt");
+	}
+	return GetConvertStr(refGood.name + "_descr", "GoodsDescribe.txt");
+}
+
+string GetGoodImageGroup(ref refGood)
+{
+	if (CheckAttribute(refGood, "picTexture"))
+	{
+		return refGood.picTexture;
+	}
+	return "GOODS";
+}

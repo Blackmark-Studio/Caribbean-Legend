@@ -258,7 +258,6 @@ void DoPostExit()
 
 void ShowHelpHint()
 {
-	int    lngFileID;
 	string sCurrentNode = GetCurrentNode();
 	string sHeader;
 	string sText1, sText2, sText3, sPicture, sGroup, sGroupPicture;
@@ -270,11 +269,9 @@ void ShowHelpHint()
 	if(sCurrentNode == "ITEMS_SCROLL")
 	{
 		ref    arItm = ItemsFromID(sCurItem);
-		lngFileID = LanguageOpenFile("ItemsDescribe.txt");
-		sHeader = LanguageConvertString(lngFileID, arItm.name);
+		sHeader = GetItemName(arItm);
 		sText1 =  GetItemDescribe(sti(arItm.index));
 		CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,192,192,192), sText3, argb(255,255,255,255), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 64, 64);
-		LanguageCloseFile(lngFileID);
 	}
 	else
 	{
@@ -360,7 +357,7 @@ string SetItemsName()
 	string sAttr = "pic" + (nCurScrollNum + 1);
 	string itemId = GameInterface.ITEMS_SCROLL.(sAttr).itemId;	
 	ref rItem = ItemsFromID(itemId);	
-	string sItemName = GetConvertStr(rItem.name, "ItemsDescribe.txt");	
+	string sItemName = GetItemName(rItem);	
 	GameInterface.strings.ItemName = sItemName;
 	
 	return itemId;
@@ -420,7 +417,7 @@ void AddToTable(ref rItem)
 
 	makearef(rType, rItem.component);
 	iNum = GetAttributesNum(rType);
-	
+	object langFiles;
 	for(i = 0; i < iNum; i++) // кол-во компонентов и прочего
 	{	
 		sAttr 		= GetAttributeName(GetAttributeN(rType, i));
@@ -452,7 +449,7 @@ void AddToTable(ref rItem)
 		GameInterface.TABLE_LIST.(sList).td3.icon.width = 55;
 		GameInterface.TABLE_LIST.(sList).td3.icon.height = 55;
 		GameInterface.TABLE_LIST.(sList).td3.textoffset = "60, 0";
-		GameInterface.TABLE_LIST.(sList).td3.str = GetConvertStr(itm.name, "ItemsDescribe.txt");
+		GameInterface.TABLE_LIST.(sList).td3.str = GetItemNameBatch(itm, &langFiles);
 		GameInterface.TABLE_LIST.(sList).index = itm.index;
 		GameInterface.TABLE_LIST.(sList).td4.str = sItmReq;
 		GameInterface.TABLE_LIST.(sList).td5.str = iRightQty;
@@ -460,7 +457,7 @@ void AddToTable(ref rItem)
 		n++;			
 		iLinesCount++;
 	}
-
+	CloseLanguageFilesBatch(&langFiles);
 	Table_UpdateWindow("TABLE_LIST");
 	SetEventHandler("frame", "RefreshTableByFrameEvent", 0);
 }
@@ -796,8 +793,7 @@ void ShowGoodsInfo(int iGoodIndex)
 {
 	string GoodName = Items[iGoodIndex].name;
 	ref    arItm = &Items[iGoodIndex];
-	int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
-	string sHeader = LanguageConvertString(lngFileID, GoodName);
+	string sHeader = GetItemName(arItm);
 
 	string describeStr = "";
 
@@ -815,7 +811,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetNewGroupPicture("QTY_GOODS_PICTURE", Items[iGoodIndex].picTexture, "itm" + Items[iGoodIndex].picIndex);
 	SetFormatedText("QTY_CAPTION", sHeader);
 	SetFormatedText("QTY_GOODS_INFO", describeStr);
-	LanguageCloseFile(lngFileID);
 	// belamour
 	if(iCurrentTabMode == 1)iCharQty = GetCharacterFreeItem(refCharacter, Items[iGoodIndex].id);
 	else iCharQty = CheckItemMyBox("box"+sti(iCurrentTabMode-1), Items[iGoodIndex].id); 

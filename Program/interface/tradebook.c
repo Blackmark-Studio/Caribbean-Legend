@@ -826,7 +826,7 @@ void FillPriceList(string _tabName, string  attr1)
             GameInterface.(_tabName).(row).UserData.ID = Goods[i].name;
             GameInterface.(_tabName).(row).UserData.IDX = i;
             
-	        GameInterface.(_tabName).(row).td1.icon.group = "GOODS";
+	        GameInterface.(_tabName).(row).td1.icon.group = GetGoodImageGroup(&Goods[i]);
 			GameInterface.(_tabName).(row).td1.icon.image = Goods[i].name;
 			GameInterface.(_tabName).(row).td1.icon.offset = "1, 0";
 			GameInterface.(_tabName).(row).td1.icon.width = 32;
@@ -910,11 +910,11 @@ void ShowInfoWindow()
 	switch (sCurrentNode)
 	{
 		case "TABLE_GOODS":
-		    sGroup = "GOODS";
 		    sGroupPicture = GameInterface.(CurTable).(CurRow).UserData.ID;
 		    sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).UserData.ID);
 		    iItem = sti(GameInterface.(CurTable).(CurRow).UserData.IDX);
-		    sText1  = GetAssembledString(GetConvertStr(GameInterface.(CurTable).(CurRow).UserData.ID + "_descr", "GoodsDescribe.txt"), &Goods[iItem]);
+			sGroup = GetGoodImageGroup(&Goods[iItem]);
+		    sText1  = GetAssembledString(GetGoodDescr(&Goods[iItem]), &Goods[iItem]);
 			sText2 = "Цвета указателя типа товара :" + newStr() + 
 				 "- зелёный : колониальные товары" + newStr() + 
 				 "- синий : импортные товары" + newStr() + 

@@ -275,6 +275,27 @@ void LAi_CharacterPostLogin(ref location)
 		//обновить базу абордажников для нефритового черепа
 		CopyPassForAztecSkull();
 
+		// Мушкетеры игрока перестают стоять столбом
+		ReleasePlayersMusketers();
+	}
+}
+
+// Во многих местах используется MusketerDistance = 0 для "замораживания" мушкетера на месте
+// В случае с мушкетерами игрока это приводит к их отказу следовать за игроком
+void ReleasePlayersMusketers()
+{
+	for(int i=1; i < 4; i++)
+	{
+		int MusChr = GetOfficersIndex(&pchar, i);
+		if (MusChr < 0) continue;
+		ref chr = &characters[MusChr];
+
+		if (!MusketPriority(&chr) || !CheckAttribute(&chr,"MusketerDistance")) continue;
+		if (sti(chr.MusketerDistance) > 0) continue;
+
+		if (!CheckAttribute(&chr, "boarding.mDistance")) chr.MusketerDistance = 20;
+		else if (sti(chr.boarding.mdistance) > 0) chr.MusketerDistance = chr.boarding.mDistance;
+		else chr.MusketerDistance = 20;
 	}
 }
 

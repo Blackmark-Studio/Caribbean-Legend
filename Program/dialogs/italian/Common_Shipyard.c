@@ -1444,25 +1444,36 @@ void ProcessDialogEvent()
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
 					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.35);
+					shTo.BaseHP    = sti(shTo.BaseHP) + makeint(sti(shTo.BaseHP) * 0.35);
 				}
 				else
 				{
 					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
+					shTo.BaseHP    = sti(shTo.BaseHP) + makeint(sti(shTo.BaseHP)/5);
 				}
 			}
 			else
 			{
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
-					shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
+					if(sti(shTo.HP) > sti(shTo.Bonus_HP)) // иначе апгрейд будет умножать отрицательное значение
+					{
+						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
+					}
+					shTo.BaseHP    = makeint((sti(shTo.BaseHP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
 				}
 				else
 				{
-					shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
+					if(sti(shTo.HP) > sti(shTo.Bonus_HP)) // иначе апгрейд будет умножать отрицательное значение
+					{
+						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
+					}
+					shTo.BaseHP    = makeint((sti(shTo.BaseHP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
 				}
 			}
 	        shTo.Tuning.HP = true;
-			shTo.BaseHP = sti(shTo.HP);
+			//shTo.BaseHP = sti(shTo.HP); этого не должно существовать
+			ProcessHullRepair(pchar, 100.0); // у нпс при апгрейде есть, здесь тоже должно быть
 
 			if(!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo,"Tuning.MaxCrew") && CheckAttribute(shTo,"Tuning.HP")) 
 			{

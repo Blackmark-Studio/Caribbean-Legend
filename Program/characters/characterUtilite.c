@@ -1332,7 +1332,7 @@ int GetRemovableCompanionsNumber(ref _refCharacter)
 	for(int i=0; i<COMPANION_MAX; i++)
 	{
 		cn = GetCompanionIndex(_refCharacter,i);
-		if(cn > 0 && GetShipRemovable(&characters[cn]) == true)
+		if(cn > 0 && GetRemovable(&characters[cn]))
 		{
 			qn++;
 		}

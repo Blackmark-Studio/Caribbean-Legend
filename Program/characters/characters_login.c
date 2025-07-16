@@ -38,6 +38,11 @@ void LoginCharacter(aref chr, string locID)
 					Trace("Main character <" + chr.id + "> error teleportation by location: " + chr.location + "  on locator: " + chr.location.group + "::" + chr.location.locator);
 					Log_TestInfo("Player: Error teleportation on locator: <" + chr.location.group + "::" + chr.location.locator + ">");
 				}
+				else if (IsOfficer(&chr) && HasSubStr(chr.location.locator, "gate_"))
+				{
+					PlaceCharacter(&chr, "officers", "random_must_be_near");
+					Trace("Fallback teleport character <" + chr.id + "> , to: " + chr.location + " on locator: " + chr.location.group + "::" + chr.location.locator);
+				}
 				else
 				{
 					isNoCreated = true;

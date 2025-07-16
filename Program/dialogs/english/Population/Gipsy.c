@@ -57,6 +57,14 @@ void ProcessDialogEvent()
 				link.l3.go = "quests";//(перессылка в файл города)
 				npchar.quest.meeting = "1";
 			}
+			// --> Тёмные воды исцеления
+			if (CheckAttribute(pchar, "questTemp.DWH_Start") && !CheckAttribute(pchar, "questTemp.DWH_gipsy") && npchar.city == "SentJons")
+			{
+				link.l6 = "I'm looking for a gypsy woman who tends to the sick. Would that be thee?";
+				link.l6.go = "dwh_ne_ta";
+			}
+			// <-- Тёмные воды исцеления
+
 			if (!CheckAttribute(npchar, "quest.poison_price") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && rand(2) == 0)
 			{
 				link.l4 = "Hey, dark-eyes, do you have any poisons for rats? They're being a damn nuisance on my ship.";
@@ -110,7 +118,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ah, thank you, my handsome  young falcon! Now listen:"+sTemp+"";
 				link.l1 = LinkRandPhrase("Heh! That's very interesting. I'll consider that...","Really? I'll consider that...","Oh, really? Are you serious? Well, I'll remember that...","Hey, I feel better already!");
 				link.l1.go = "exit";
-				if (drand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
+				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 30+rand(10));//скрытность
 			}
 			else
@@ -130,7 +138,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				AddCharacterHealth(pchar, 1);
 				AddCharacterExpToSkill(pchar, "Leadership", 20);
-				if (drand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 50+rand(20));//везение
+				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 50+rand(20));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 50+rand(20));//скрытность
 			}
 			else
@@ -171,8 +179,8 @@ void ProcessDialogEvent()
 
 // --> продажа мышьяка
 		case "get_poison_1" :
-			npchar.quest.poison_price = (drand(3) + 1) * 10;
-			if(drand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
+			npchar.quest.poison_price = (hrand(3) + 1) * 10;
+			if(hrand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
 			{				
 				dialog.text = LinkRandPhrase("Oh, I am not sure, handsome! There was a fellow not long ago asking for help in killing rats and then someone poisoned the soldiers in the fort. It got pretty hot for my people on the island while the guards interrogated us for two weeks until they found the murderer. He was an enemy spy.",
 				                             "And how can I be sure of your purpose? Maybe you just want to poison a nobleman who you are too cowardly to fight in an honorable duel??",
@@ -233,7 +241,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_2":
 			// тут работает харизма
-			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+drand(25)+drand(30))
+			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
 			{
 				dialog.text = "Hm... I suppose that it's not too bad if I tell you a bit about it. You won't be able to do anything with this plant without special skills.";
 				link.l1 = "I am listening.";
@@ -350,6 +358,15 @@ void ProcessDialogEvent()
 			ChangeCharacterAddressGroup(sld, "Amelia_house", "barmen", "stay");
 		break;
 		
+		// --> Тёмные воды исцеления
+		case "dwh_ne_ta":
+			sld = CharacterFromID("DWH_gypsy");
+			dialog.text = "No, " + GetSexPhrase("dear", "beauty") + ", I'm not the one you need, it's " + sld.name + ". She's here in the city right now. I saw her recently.";
+			link.l1 = "Thank you.";
+			link.l1.go = "exit";
+		break;
+		// <-- Тёмные воды исцеления
+		
 		//замечание по обнажённому оружию от персонажей типа citizen
 		case "CitizenNotBlade":
 			dialog.text = NPCharSexPhrase(NPChar, "Listen to me brave falcon, I may be a gypsy but even we decry open violence. Please sheathe your sword.", "Listen to me brave falcon, as a citizen of this town I'm asking you to sheathe your blade.");
@@ -368,7 +385,7 @@ void ProcessDialogEvent()
 string GuessText()
 {
 	string sText;
-	switch (drand(19))
+	switch (hrand(19))
 	{
 		case 0: sText = "you will have luck, brave young falcon, tomorrow you'll be lucky with cards!" break;
 		case 1: sText = "the fortune will be kind with you in your mercantile business, captain!" break;

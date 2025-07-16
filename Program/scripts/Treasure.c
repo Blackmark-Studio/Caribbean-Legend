@@ -1,6 +1,5 @@
 
-// TO_DO: В следующем патче убираем Render и используем нормальные объекты
-// object TreasureTiers[15]
+object TreasureTiers[16]; // Пуллы (тиры); 0-ой это SingleTreasures + QuestSlot + Флаги проверок
 
 extern void InitTreasureTiers();
 extern void InitTreasureTiers_Additions(bool SandBoxMode);
@@ -128,8 +127,6 @@ void FillMapForTreasure(ref item)
 
 int GetTresuareTier(int iTier)
 {
-    ref LTR = &Render;
-
     aref Lottery;
     makearef(Lottery, LTR.TresuareMap);
     DeleteAttribute(Lottery, "");
@@ -155,23 +152,21 @@ int GetTresuareTier(int iTier)
 // Выбрать вещь и выбросить её из пулла
 string GetRandEnabledItem(aref aTier, string sType)
 {
-    ref TEV = &Render;
-
-    string sItem, sTemp;
+    string sItem;
     aref aType, aItem;
     makearef(aType, aTier.(sType));
     int i, num = GetAttributesNum(aType);
-    DeleteAttribute(&TEV, "RandItem"); //типа динамический массив
+    DeleteAttribute(&LTR, "RandItem"); //типа динамический массив
     for(i = 0; i < num; i++)
     {
         aItem = GetAttributeN(aType, i);
         if(GetAttributeValue(aItem) == "On")
         {
-            sTemp = i; //Safe moment
-            TEV.RandItem.(sTemp) = GetAttributeName(aItem);
+            sItem = i; //Safe moment
+            LTR.RandItem.(sItem) = GetAttributeName(aItem);
         }
     }
-    makearef(aItem, TEV.RandItem);
+    makearef(aItem, LTR.RandItem);
     int numItems = GetAttributesNum(aItem);
 
     // Ни одной вещи не нашлось, нужен ресет пулла
@@ -182,39 +177,38 @@ string GetRandEnabledItem(aref aTier, string sType)
             sItem = GetAttributeName(GetAttributeN(aType, i));
             for(int j = 1; j <= 15; j++)
             {
-                sTemp = "T" + j;
-                if(CheckAttribute(&Render, sTemp + "." + sType + "." + sItem))
-                    Render.(sTemp).(sType).(sItem) = "On";
+                if(CheckAttribute(&TreasureTiers[j], sType + "." + sItem))
+                    TreasureTiers[j].(sType).(sItem) = "On";
             }
         }
         // Ещё раз рандомим
         return GetRandEnabledItem(aTier, sType);
     }
 
-    // Рандомим и выкидываем из пулла
+    // Рандомим и отключаем в тирах
     sItem = GetAttributeValue(GetAttributeN(aItem, rand(numItems-1)));
-    if(!CheckAttribute(&Render, "SingleTreasure." + sItem))
+    if(!CheckAttribute(&TreasureTiers[0], sItem))
     {
         for(i = 1; i <= 15; i++)
         {
-            sTemp = "T" + i;
-            if(CheckAttribute(&Render, sTemp + "." + sType + "." + sItem))
-                Render.(sTemp).(sType).(sItem) = "Off";
+            if(CheckAttribute(&TreasureTiers[i], sType + "." + sItem))
+                TreasureTiers[i].(sType).(sItem) = "Off";
         }
     }
-    // Уникальные предметы, которые нужно генерировать
-    if(sType == "Equip")
+    else
     {
-        CheckTreasureDeletion(sItem, "Equip");
-        if(IsGenerableItem(sItem))
-            sItem = GetGeneratedItem(sItem);
+        for(i = 1; i <= 15; i++)
+        {
+            DeleteAttribute(&TreasureTiers[i], sType + "." + sItem);
+        }
+        DeleteAttribute(&TreasureTiers[0], sItem);
     }
+
     return sItem;
 }
 
 void FillBoxForTreasure(ref item)
 {
-    string sTemp;
     int iTier = 0;
     aref aTier;
 
@@ -230,9 +224,7 @@ void FillBoxForTreasure(ref item)
     iTier = GetTresuareTier(iTier + 1); // Среди соседей взять рандомом по весу
     item.TreasureTier = iTier;          // Сохраним для ачивки и опыта
     SetMapDescribe(item, iTier);
-
-    sTemp = "T" + iTier;
-    makearef(aTier, Render.(sTemp));
+    makearef(aTier, TreasureTiers[iTier]);
 
     // Заполняем
     int iBonus = 0;
@@ -247,6 +239,7 @@ void FillBoxForTreasure(ref item)
 void FillBoxForEquip(ref item, aref aTier, int iBonus, bool bOtherSlots)
 {
     string itmName = GetRandEnabledItem(aTier, "Equip");
+    if(IsGenerableItem(itmName)) itmName = GetGeneratedItem(itmName);
     item.BoxTreasure.(itmName) = 1; // Весь эквип выдаётся штучно
     if(bOtherSlots)
     {
@@ -271,7 +264,6 @@ void FillBoxForJewelry(ref item, aref aTier, int iBonus, bool bOtherSlots)
     {
         string itmName = GetRandEnabledItem(aTier, "Jewelry");
         item.BoxTreasure.(itmName) = sti(aTier.Jewelry.(itmName).min) + rand(sti(aTier.Jewelry.(itmName).dif));
-        CheckTreasureDeletion(itmName, "Jewelry");
     }
 }
 
@@ -293,7 +285,7 @@ void FillBoxForSpecial(ref item, aref aTier, int iBonus, bool bOtherSlots)
                 itmName = SelectAdmiralMaps();
                 if(itmName != "")
                 {
-                    Render.map_a.(itmName) = ""; // Чтобы не генерило одинаковые адмиралки в клад
+                    TreasureTiers[0].map_a.(itmName) = ""; // Чтобы не генерило одинаковые адмиралки в клад
                     item.BoxTreasure.(itmName) = 1;
                 }
                 else
@@ -313,12 +305,11 @@ void FillBoxForSpecial(ref item, aref aTier, int iBonus, bool bOtherSlots)
                     item.BoxTreasure.(itmName) = 1;
             }
         }
-        DeleteAttribute(&Render, "map_a");
+        DeleteAttribute(&TreasureTiers[0], "map_a");
     }
     else
     {
         item.BoxTreasure.(itmName) = sti(aTier.Special.(itmName).min) + rand(sti(aTier.Special.(itmName).dif));
-        CheckTreasureDeletion(itmName, "Special");
     }
 
     if(bOtherSlots)
@@ -343,24 +334,22 @@ void FillBoxForNotes(ref item)
     string sNumb = GetRandomAttrName(aTreasureStories);
     if(sNumb != "error")
     {
-        string box = item.MapBoxId;
-        ref loc = &Locations[FindLocation(item.MapLocId)];
-        loc.(box).treasure_note = sNumb; // Бокс запоминает номер
+        item.NoteNum = sNumb;
         item.BoxTreasure.treasure_note = 1;
-        DeleteAttribute(aTreasureStories, sNumb);
     }
+    else DeleteAttribute(item, "NoteNum");
 }
 
 // Вся логика выдачи у каждого квеста своя, это не общий пулл
-// В нужном квесте в нужный момент пишется Render.QuestSlot.(QuestName) = sFuncName
+// В нужном квесте в нужный момент пишется TreasureTiers[0].QuestSlot.attrName = sFuncName
 // Эта функция должна быть в скриптах квеста с параметрами int iTier, int iBonus, ref item
-// Не забыть по надобности (например, сразу же в той же функции или по завершению квеста) удалить QuestSlot.(QuestName) атрибут
+// Не забыть по надобности (например, сразу же в той же функции или по завершению квеста) удалить QuestSlot.attrName атрибут
 void FillBoxForQuest(ref item, int iTier, int iBonus)
 {
-    string func, itmName;
+    string func;
     aref aQuests;
-    makearef(aQuests, Render.QuestSlot);
-    int qty, num = GetAttributesNum(aQuests);
+    makearef(aQuests, TreasureTiers[0].QuestSlot);
+    int num = GetAttributesNum(aQuests);
     // Обязательно идём сверху вниз! Если в каком-то вызове удалится один из атрибутов, то верхние перенумеруются
     for(int i = num - 1; i >= 0; i--)
     {
@@ -381,15 +370,18 @@ void SetTreasureBoxFromMap()
     {
 		notification(XI_ConvertString("TreasuresNear"), "Icollection");
         PlaySound("interface\notebook.wav");
-        // ОЗК (Пещера)
+
+        Items_FindItem("map_full", &item);
+        int iTier = sti(item.TreasureTier);
+
+        // Охотники за кладом - ОЗК (Пещера)
         switch (sti(pchar.GenQuest.Treasure.Vario))
         {
             case 0: Treasure_SetCaribWarrior();  break;
             case 1: Treasure_SetBandosWarrior(); break;  
         }
-        // ДУ (Море)
-        if (rand(1) == 0) TraderHunterOnMap();
-		else CoolTraderHunterOnMap();
+        // Джентельмены удачи - ДУ (Море) 50%
+        if(rand(1)) TreasureHunterOnMap(rand(1), iTier);
         // ОЗК (Бухта)
         if( CheckAttribute(Pchar,"location.from_sea") )
         {
@@ -402,8 +394,6 @@ void SetTreasureBoxFromMap()
             }
         }
 
-        Items_FindItem("map_full", &item);
-
         box = item.MapBoxId;
 
         loc = &locations[FindLocation(item.MapLocId)];
@@ -414,7 +404,13 @@ void SetTreasureBoxFromMap()
         CopyAttributes(arToBox, arFromBox);
 
         loc.(box) = Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear());
-        loc.(box).Treasure = sti(item.TreasureTier); // признак сокровища в сундуке; запоминаем тир для ачивки и опыта
+        loc.(box).Treasure = iTier; // признак сокровища в сундуке; запоминаем тир для ачивки и опыта
+        if(CheckAttribute(item, "NoteNum"))
+        {
+            loc.(box).treasure_note = item.NoteNum; // Бокс запоминает номер
+            DeleteAttribute(PChar, "questTemp.Treasure_Stories." + item.NoteNum); // История ушла из пула
+            DeleteAttribute(item, "NoteNum");
+        }
 
         DeleteAttribute(item, "MapIslId");
         TakeNItems(Pchar, "map_full", -1);
@@ -427,20 +423,51 @@ void SetTreasureBoxFromMap()
 }
 
 // Обычные ДУ
-void  TraderHunterOnMap()
+void TraderHunterOnMap(bool bCool)
 {
-    // Немного веселой жизни
+    int Rank = sti(PChar.Rank);
+    int iShips[4];
+    int i, num, max, add = 5;
+    iShips[0] = 0; // Рейдер
+    iShips[1] = 0; // Универсал
+    iShips[2] = 0; // Рейдер
+    iShips[3] = 0; // Военник
+    if(bCool) add = 8;
+
+    if(Rank < 8)      {iShips[0] = 6; num = 1;}
+    else if(Rank < 15){iShips[0] = 5+rand(1); iShips[1] = 5+rand(1); num = 2;}
+    else if(Rank < 20){iShips[0] = 4+rand(1); iShips[1] = 4+rand(1); num = 2;}
+    else if(Rank < 25){iShips[0] = 3+rand(1); iShips[1] = 3+rand(1); iShips[2] = 3+rand(1); num = 3;}
+    else              {iShips[0] = 3+rand(1); iShips[1] = 3+rand(1); iShips[2] = 3+rand(1); iShips[3] = 2; num = 4;}
+
+    max = num;
+    i = GetCompanionQuantity(PChar);
+    if(i > num) max += rand(i-num);
+
     ref  sld;
-    int  i;
-
-    string sCapId = "Follower0";
+    string sCapId = "TraderHunter0";
     string sGroup = "Sea_" + sCapId + "1";
-
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
-    for (i = 1; i <= GetCompanionQuantity(pchar); i++)
+
+    for (i = 1; i <= max; i++)
     {
-        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.rank) + 5, PIRATE, 15, true, "hunter"));
+        if(i > num) Rank = iShips[rand(num-1)];
+        else Rank = iShips[i-1];
+        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.Rank) + add, PIRATE, 10, true, "hunter"));
+        sld.GenShip.Class = Rank;
+        if(i > num)
+        {   // Вероятности на спеки специально равные (рейдеру не больше остальных), если у игрока большая эскадра
+            if(num == 1) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
+            else if(num < 4) sld.GenShip.Spec = RandFromTwo(SHIP_SPEC_RAIDER, SHIP_SPEC_UNIVERSAL);
+            else sld.GenShip.Spec = RandFromThree(SHIP_SPEC_RAIDER, SHIP_SPEC_UNIVERSAL, SHIP_SPEC_WAR);
+        }
+        else
+        {
+            if(i == 1 || i == 3) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
+            else if(i == 2) sld.GenShip.Spec = SHIP_SPEC_UNIVERSAL;
+            else sld.GenShip.Spec = SHIP_SPEC_WAR;
+        }
         SetShipHunter(sld);
         SetFantomParamHunter(sld); //крутые парни
         SetCaptanModelByEncType(sld, "war");
@@ -450,28 +477,64 @@ void  TraderHunterOnMap()
         sld.mapEnc.Name = XI_ConvertString("GentlemenOfFortune");
 		sld.hunter = "pirate";
         Group_AddCharacter(sGroup, sCapId + i);
+        if(Rank < 3 && rand(1)) SetRandGeraldSail(sld, PIRATE);
     }
 
     Group_SetGroupCommander(sGroup, sCapId+ "1");
     Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
     Group_LockTask(sGroup);
-    Map_CreateWarrior("", sCapId + "1", 8);
+    if(bCool) Map_CreateCoolWarrior("", sCapId + "1", 8); // Быстрые
+    else Map_CreateWarrior("", sCapId + "1", 8);
 }
 
-// Jason. Быстрые ДУ
-void CoolTraderHunterOnMap()
+// ДУ - ОЗК
+void TreasureHunterOnMap(bool bCool, int iTier)
 {
+    if (iTier < 2) return;
+    int iShips[4];
+    int i, num, max, add = 5;
+    iShips[0] = 0; // Рейдер
+    iShips[1] = 0; // Рейдер
+    iShips[2] = 0; // Универсал
+    iShips[3] = 0; // Военник
+    if(bCool) add = 8;
+
+    if(iTier < 4)      {iShips[0] = 6; num = 1;}
+    else if(iTier < 6) {iShips[0] = 5+rand(1); num = 1;}
+    else if(iTier < 8) {iShips[0] = 5+rand(1); iShips[1] = 5; num = 2;}
+    else if(iTier < 10){iShips[0] = 4+rand(1); iShips[1] = 4+rand(1); num = 2;}
+    else if(iTier < 12){iShips[0] = 3+rand(1); iShips[1] = 3+rand(1); iShips[2] = 3; num = 3;}
+    else if(iTier < 14){iShips[0] = 2+rand(1); iShips[1] = 2+rand(1); iShips[2] = 2+rand(1); num = 3;}
+    else               {iShips[0] = 2+rand(1); iShips[1] = 2+rand(1); iShips[2] = 2+rand(1); iShips[3] = 2+rand(1); num = 4;}
+
+    max = num;
+    i = GetCompanionQuantity(PChar);
+    if(i > num) max += rand(i-num);
+
     ref  sld;
-    int  i;
-
-    string sCapId = "Follower0";
+    string sCapId = "TreasureHunter0";
     string sGroup = "Sea_" + sCapId + "1";
-
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
-    for (i = 1; i <= GetCompanionQuantity(pchar); i++)
+
+    for (i = 1; i <= max; i++)
     {
-        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.rank) + 8, PIRATE, 15, true, "hunter"));
+        if(i > num) iTier = iShips[rand(num-1)];
+        else iTier = iShips[i-1];
+        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.rank) + add, PIRATE, 10, true, "hunter"));
+        sld.GenShip.Class = iTier;
+        if(i > num)
+        {   // Вероятности на спеки специально равные (рейдеру не больше остальных), если у игрока большая эскадра
+            if(num < 3) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
+            else if(num == 3) sld.GenShip.Spec = RandFromTwo(SHIP_SPEC_RAIDER, SHIP_SPEC_UNIVERSAL);
+            else sld.GenShip.Spec = RandFromThree(SHIP_SPEC_RAIDER, SHIP_SPEC_UNIVERSAL, SHIP_SPEC_WAR);
+        }
+        else
+        {
+            if(i < 3) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
+            else if(i == 3) sld.GenShip.Spec = SHIP_SPEC_UNIVERSAL;
+            else sld.GenShip.Spec = SHIP_SPEC_WAR;
+        }
         SetShipHunter(sld);
         SetFantomParamHunter(sld); //крутые парни
         SetCaptanModelByEncType(sld, "war");
@@ -481,12 +544,14 @@ void CoolTraderHunterOnMap()
         sld.mapEnc.Name = XI_ConvertString("GentlemenOfFortune");
 		sld.hunter = "pirate";
         Group_AddCharacter(sGroup, sCapId + i);
+        if(iTier < 3 && rand(1)) SetRandGeraldSail(sld, PIRATE);
     }
 
     Group_SetGroupCommander(sGroup, sCapId+ "1");
     Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
     Group_LockTask(sGroup);
-    Map_CreateCoolWarrior("", sCapId + "1", 8);
+    if(bCool) Map_CreateCoolWarrior("", sCapId + "1", 8); // Быстрые
+    else Map_CreateWarrior("", sCapId + "1", 8);
 }
 
 void SetTreasureHunter(string temp)
@@ -644,7 +709,6 @@ string SelectUsualMaps(ref item, ref qMiss) // Выбор обычной неп�
 
 void SetMapDescribe(ref item, int iTier)
 {
-    ref TEV = &Render;
     iTier = 1 + ((iTier - 1) / 5); // 1 [1;5], 2 [6;10], 3 [11;15]
 
     // Описания для составных
@@ -656,7 +720,7 @@ void SetMapDescribe(ref item, int iTier)
     // Описания по тирам (shuffle bag)
     aref aDesc;
     string sTemp = "T" + iTier;
-    makearef(aDesc, TEV.TresuareMapDescribe.(sTemp));
+    makearef(aDesc, LTR.TresuareMapDescribe.(sTemp));
     if(GetAttributesNum(aDesc) == 0) // reload
     {
         aDesc.v1 = 1;
@@ -666,20 +730,6 @@ void SetMapDescribe(ref item, int iTier)
     sTemp = GetRandomAttrName(aDesc);
     item.MapTypeIdx = (iTier - 1) * 3 + sti(aDesc.(sTemp)); // 123, 456, 789
     DeleteAttribute(aDesc, sTemp);
-}
-
-void CheckTreasureDeletion(string sItem, string sType)
-{
-    if(CheckAttribute(&Render, "SingleTreasure." + sItem))
-    {
-        string sTemp;
-        for(int i = 1; i <= 15; i++)
-        {
-            sTemp = "T" + i;
-            DeleteAttribute(&Render, sTemp + "." + sType + "." + sItem);
-        }
-        DeleteAttribute(&Render, "SingleTreasure." + sItem);
-    }
 }
 
 // Открыли записку из клада
@@ -693,13 +743,20 @@ void Treasure_Stories(string attr)
 
 // Записка попала в инвентарь из клада
 // Добавим её в последовательность прочтения, уберём атрибут с сундука
-void TreasureNotesHandler(aref arItm)
+bool TreasureNotesHandler(ref _refCharacter, aref arItm)
 {
+    if(!IsMainCharacter(_refCharacter))   return false;
+    if(!CheckAttribute(arItm, "curNumb")) return false;
+
     string attr = arItm.curNumb;
     PChar.Treasure_Stories_Read.(attr) = attr;
     ref loc = &Locations[FindLocation(arItm.curLoc)];
     attr = arItm.curBox;
     DeleteAttribute(loc, attr + ".treasure_note");
+    DeleteAttribute(arItm, "curNumb");
+    DeleteAttribute(arItm, "curLoc");
+    DeleteAttribute(arItm, "curBox");
+    return true;
 }
 
 void Treasure_SetCaribWarrior()
@@ -776,7 +833,7 @@ void Treasure_SetOfficerWarrior(string qName)
     int iNation = PIRATE;
 	string sTemp = GetCityNameByIsland(Pchar.curIslandId);
     if(sTemp != "none")   iNation = sti(colonies[FindColony(sTemp)].nation);
-	if(iNation == PIRATE) iNation = drand(3);
+	if(iNation == PIRATE) iNation = hrand(NON_PIRATES, Pchar.curIslandId);
 
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	chrDisableReloadToLocation = true;//закрыть локацию

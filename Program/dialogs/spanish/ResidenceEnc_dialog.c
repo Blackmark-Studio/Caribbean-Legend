@@ -54,7 +54,7 @@ void ProcessDialogEvent()
 		}
 		break;
 	case "Woman_FackYou":
-		dialog.text = "¡Oh, qué fue eso?! ¡Soy un verdadero tonto! Caminando sin ver nada... ¡Guardias!!!";
+		dialog.text = "¡Oh!, ¿qué fue eso? ¡Soy un verdadero tonto! Caminando sin ver nada... ¡Guardias!";
 		link.l1 = "¡Cállate!";
 		link.l1.go = "exit_setOwner";
 		LAi_group_Attack(NPChar, Pchar);

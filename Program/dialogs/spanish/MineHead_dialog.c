@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 	case "First time":
 		if (LAi_grp_playeralarm > 0)
 		{
-			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("¿Te atreves a mostrar tu rostro aquí?! No sé si eres valiente o estúpido...", "¿Cómo dejaron estos holgazanes que un enemigo irrumpiera en mi residencia? Esto me supera...", "Ciertamente, mis guardias no valen un cobre, si tales bastardos, andan sueltos por aquí..."), LinkRandPhrase("¿Qué necesitas," + GetSexPhrase("granuja", "apestoso") + "¿¡? Mis soldados ya han sido enviados tras tus huellas, " + GetSexPhrase(", pirata asqueroso", "") + "¡", "¡Sucio asesino, deja mi residencia inmediatamente! ¡Guardias!", "No tengo miedo de ti, " + GetSexPhrase("rata", "zorra") + "¡Pronto serás colgado en nuestro fuerte, y no llegarás lejos después de eso..."));
+			dialog.text = NPCharRepPhrase(pchar, LinkRandPhrase("¿Te atreves a mostrar tu rostro aquí? No sé si eres valiente o estúpido...", "¿Cómo dejaron estos holgazanes que un enemigo irrumpiera en mi residencia? Esto me supera...", "Ciertamente, mis guardias no valen un cobre, si tales bastardos, andan sueltos por aquí..."), LinkRandPhrase("¿Qué necesitas," + GetSexPhrase("granuja", "apestosa") + "? ¡Mis soldados ya han sido enviados tras tus huellas, " + GetSexPhrase("pirata asqueroso", "sucia pirata") + "!", "¡Sucio asesino, deja mi residencia inmediatamente! ¡Guardias!", "No tengo miedo de ti, " + GetSexPhrase("rata", "zorra") + ". ¡Pronto serás colgado en nuestro fuerte, y no llegarás lejos después de eso..."));
 			link.l1 = NPCharRepPhrase(pchar, RandPhraseSimple("Estos soldados no valen ni un solo peso...", "Jamás me atraparán."), RandPhraseSimple("Cierra tu pico, " + GetWorkTypeOfMan(npchar, "") + ", o arrancaré esa lengua sucia tuya!", "Te sugeriría que te sientes tranquilamente, y quizás, salgas de esta vivo..."));
 			link.l1.go = "fight";
 			break;
@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "info":
-		dialog.text = "La mina de Los-Teques extrae oro para la Corona Española. Todo lo que extraemos pertenece a España. Aquí encontramos no solo oro, sino también pepitas de plata y valiosas piedras preciosas. No vendemos oro aquí, todo lo que extraemos se entrega al Viejo Mundo bajo un convoy reforzado\nPero tenemos dos excepciones para las pepitas de oro y plata. Primero, puedes comprar una cierta cantidad de ellas en nuestra tienda local de un intendente. A veces, el salario no llega a tiempo, por lo que tenemos que mantener algunos ahorros de monedas aquí para tales casos, por eso se permite el comercio local\nSegundo, constantemente experimentamos una necesidad de mano de obra, por lo que intercambiamos pepitas por esclavos. Por tanto, habla conmigo si tienes algo que ofrecer, haremos negocios\nCreo que las reglas de conducta de la mina son obvias: no robes, no distraigas a los convictos y no molestes a los soldados, de lo contrario, las consecuencias no te gustarán.";
+		dialog.text = "La mina de Los-Teques extrae oro para la Corona Española. Todo lo que extraemos pertenece a España. Aquí encontramos no solo oro, sino también pepitas de plata y valiosas piedras preciosas. No vendemos oro aquí, todo lo que extraemos se entrega al Viejo Mundo bajo un convoy reforzado\nPero tenemos dos excepciones para las pepitas de oro y plata. Primero, puedes comprar una cierta cantidad de ellas en nuestra tienda de un intendente. A veces, el salario no llega a tiempo, por lo que tenemos que mantener algunos ahorros de monedas aquí para tales casos, por eso se permite el comercio\nSegundo, constantemente experimentamos una necesidad de mano de obra, por lo que intercambiamos pepitas por esclavos. Por tanto, habla conmigo si tienes algo que ofrecer, haremos negocios\nCreo que las reglas de conducta de la mina son obvias: no robes, no distraigas a los convictos y no molestes a los soldados, de lo contrario, las consecuencias no te gustarán.";
 		link.l1 = "¡Bien, gracias!";
 		link.l1.go = "exit";
 		location.quest.info = "true";
@@ -113,28 +113,28 @@ void ProcessDialogEvent()
 		if (iTotalTemp < 1)
 		{
 			dialog.text = "Señor, no tengo tiempo para bromas estúpidas. Si estás de humor para bromear, ¡ve a la taberna!";
-			link.l1 = "¿Mmm...";
+			link.l1 = "Hmm...";
 			link.l1.go = "slaves_exit";
 			break;
 		}
 		if (iTotalTemp > GetSquadronGoods(pchar, GOOD_SLAVES))
 		{
 			dialog.text = "Señor, creo que necesita descansar. Quizás esté muy cansado o haya sufrido una insolación. Vaya a la taberna, descanse bien, y luego podemos continuar con nuestro regateo.";
-			link.l1 = "¿Hmm...";
+			link.l1 = "Hmm...";
 			link.l1.go = "slaves_exit";
 			break;
 		}
 		if (iTotalTemp > sti(location.quest.slaves.qty))
 		{
-			dialog.text = "Lamentablemente, señor, en este momento no necesitamos tantos esclavos. La mina actualmente requiere " + FindRussianQtyString(sti(location.quest.slaves.qty)) + "¿Vas a vender tantos?";
+			dialog.text = "Lamentablemente, señor, en este momento no necesitamos tantos esclavos. La mina actualmente requiere " + FindRussianQtyString(sti(location.quest.slaves.qty)) + ". ¿Vas a vender tantos?";
 			link.l1 = "¡Sí, por supuesto!";
 			link.l1.go = "slaves_max";
-			link.l2 = "Hmm... Supongo que, no lo soy.";
+			link.l2 = "Hmm... Supongo que no.";
 			link.l2.go = "slaves_exit";
 			break;
 		}
-		dialog.text = "" + FindRussianQtyString(iTotalTemp) + "¿Excelente. Por favor, ordene que los lleven a las puertas de la ciudad. Enviaré a mis hombres por ellos.";
-		link.l1 = "No te preocupes, señor. Tus esclavos te serán entregados a tiempo. Emitiré todas las órdenes relevantes de inmediato.";
+		dialog.text = "¿" + FindRussianQtyString(iTotalTemp) + "? Excelente. Ordena que los lleven a las puertas de la ciudad. Enviaré a mis hombres.";
+		link.l1 = "No se preocupe, señor. Sus esclavos serán entregados a tiempo. Emitiré todas las órdenes relevantes de inmediato.";
 		link.l1.go = "slaves_calk";
 		break;
 

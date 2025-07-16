@@ -1,0 +1,159 @@
+Tutorial_1
+{
+Girar el barco
+}
+
+Tutorial_2
+{
+Pulsa @<key1> y @<key2> para girar el barco
+}
+
+Tutorial_3
+{
+Control del tiempo
+}
+
+Tutorial_4
+{
+Activar aceleración del tiempo @<key>
+}
+
+Tutorial_5
+{
+Pulsa @<key> de nuevo para desactivar
+}
+
+Tutorial_6
+{
+Pulsa @<key> para acelerar hasta x6
+}
+
+Tutorial_7
+{
+Pulsa @<key1> para ralentizar, o @<key2>
+}
+
+Tutorial_8
+{
+Control de velas
+}
+
+Tutorial_9
+{
+Pon las velas en modo de combate @<key1>
+}
+
+Tutorial_10
+{
+Arriar velas completamente @<key1>
+}
+
+Tutorial_11
+{
+Fundamentos del combate naval
+}
+
+Tutorial_12
+{
+Usa @<key1> para una andanada rápida
+}
+
+Tutorial_13
+{
+Combate naval avanzado
+}
+
+Tutorial_14
+{
+@<key1> Entra en modo de apuntado
+}
+
+Tutorial_15
+{
+Pulsa @<key1> para una andanada apuntada
+}
+
+Tutorial_16
+{
+@<key1> Sal del modo de apuntado
+}
+
+Tutorial_17
+{
+Gana la batalla
+}
+
+Tutorial_18
+{
+Hundir los barcos piratas restantes
+}
+
+Tutorial_19
+{
+Ataca al enemigo
+}
+
+Tutorial_20
+{
+@<key1> Corte
+}
+
+Tutorial_21
+{
+@<key1> Estocada
+}
+
+Tutorial_22
+{
+@<key1> Ataque pesado
+}
+
+Tutorial_23
+{
+Defiéndete
+}
+
+Tutorial_24
+{
+@<key1> Bloquea los ataques
+}
+
+Tutorial_25
+{
+@<key1> Para los ataques
+}
+
+Tutorial_26
+{
+¡Derrota al pirata!
+}
+
+Tutorial_27
+{
+Misiones
+}
+
+Tutorial_28
+{
+Lee el documento @<key1>
+}
+
+Tutorial_29
+{
+Abre el cofre de doblones @<key1>
+}
+
+Tutorial_30
+{
+Saqueo
+}
+
+Tutorial_31
+{
+Saquea a los marineros
+}
+
+Tutorial_32
+{
+Dale a Alonso la poción misteriosa
+}

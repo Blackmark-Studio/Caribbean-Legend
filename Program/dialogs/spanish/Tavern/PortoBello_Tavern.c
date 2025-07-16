@@ -21,7 +21,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// Addon-2016 Jason ФМК-Гваделупа
 		if (CheckAttribute(pchar, "questTemp.FMQG") && pchar.questTemp.FMQG == "headhunter_portobello" && !CheckAttribute(npchar, "quest.FMQG"))
 		{
-			link.l1 = "Mira, estoy buscando a un hombre llamado Bertrand Pinette, ¿has oído hablar de él? Llegó a  no hace mucho. Un caballero imponente con una peluca rizada. Un comerciante. Puede que haya estado aquí...";
+			link.l1 = "Mira, estoy buscando a un hombre llamado Bertrand Pinette, ¿has oído hablar de él? Un caballero imponente con una peluca rizada. Un comerciante. Puede que haya estado aquí...";
 			link.l1.go = "FMQG";
 		}
 		break;
@@ -43,14 +43,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	// Addon-2016 Jason ФМК-Гваделупа
 	case "FMQG":
-		dialog.text = " Nunca he oído hablar de él, amigo.";
+		dialog.text = "Nunca he oído hablar de él, amigo.";
 		link.l1 = "Es un conocido de don Carlos de Milyar. ¿Seguro que nunca has oído hablar de él?";
 		link.l1.go = "FMQG_1";
 		break;
 
 	case "FMQG_1":
-		dialog.text = "Lo soy. Si es amigo de De Milyar, ve al gobernador y pregunta por el señor Carlos. Él te contará sobre ese comerciante tuyo.";
-		link.l1 = "Haré eso. ¡Gracias por el consejo!";
+		dialog.text = "Nunca. Si es amigo de De Milyar, ve al gobernador y pregunta por el señor Carlos. Él te contará sobre ese comerciante tuyo.";
+		link.l1 = "Eso haré. ¡Gracias por el consejo!";
 		link.l1.go = "FMQG_2";
 		break;
 

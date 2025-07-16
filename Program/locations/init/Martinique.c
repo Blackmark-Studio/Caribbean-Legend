@@ -1499,62 +1499,6 @@ int LocationInitMartinique(int n)
 	locations[n].reload.l2.label = "Sea";
     locations[n].locators_radius.reload.boat = 9.0;
 	n = n + 1;
-	
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Порт Ле Франсуа (удалён из игры, не используется нигде)
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "LeFransua_port";
-	locations[n].id.label = "LeFransua Port";
-	locations[n].image = "loading\outside\harbor3.tga";
-	locations[n].worldmap = "LeFransua_port";
-	//Town sack
-	locations[n].townsack = "LeFransua";
-	//Sound
-	locations[n].type = "seashore";
-	locations[n].fastreload = "LeFransua";
-    locations[n].islandId = "Martinique";
-	//Models
-	//Always
-	locations[n].filespath.models = "locations\Outside\Shores\Shore07";
-	Locations[n].models.always.shore07 = "shore07";
-	locations[n].models.always.shore07.sea_reflection = 1;
-	Locations[n].models.always.shore07seabed = "shore07_sb";
-	Locations[n].models.always.locators = "shore07_locators";
-		
-	Locations[n].models.always.grassPatch = "shore07_grass";
-	Locations[n].models.always.grassPatch.texture = "grass\grassshore.tga.tx";
-	
-	Locations[n].models.always.l1 = "plan1";
-	Locations[n].models.always.l1.level = 9;
-	Locations[n].models.always.l1.tech = "LocationModelBlend";
-	Locations[n].models.always.l2 = "plan2";
-	Locations[n].models.always.l2.level = 8;
-	Locations[n].models.always.l2.tech = "LocationModelBlend";
-	Locations[n].models.always.l3 = "plan3";
-	Locations[n].models.always.l3.level = 7;
-	Locations[n].models.always.l3.tech = "LocationModelBlend";	
-	//Day
-	locations[n].models.day.charactersPatch = "shore07_patch";
-	//Night
-	locations[n].models.night.charactersPatch = "shore07_patch";		
-	//Environment
-	locations[n].environment.weather = "true";
-	locations[n].environment.sea = "true";
-	//Reload map
-	locations[n].reload.l1.name = "reload1_back";
-	locations[n].reload.l1.go = "LeFransua_ExitTown";
-	locations[n].reload.l1.emerge = "reload2";
-	locations[n].reload.l1.autoreload = "1";
-	locations[n].reload.l1.label = "Jungle";
-	locations[n].locators_radius.reload.reload1_back = 2;
-
-	locations[n].reload.l2.name = "boat";
-	locations[n].reload.l2.go = "Martinique";
-	locations[n].reload.l2.emerge = "reload_3";
-	locations[n].reload.l2.autoreload = "0";
-	locations[n].reload.l2.label = "Sea";
-    locations[n].locators_radius.reload.boat = 9.0;
-	n = n + 1;
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Выход из города Ле Франсуа

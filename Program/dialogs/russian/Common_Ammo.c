@@ -366,6 +366,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Trial", "6");
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "trial_5":

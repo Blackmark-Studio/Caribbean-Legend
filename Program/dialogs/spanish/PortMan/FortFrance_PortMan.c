@@ -31,7 +31,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Sharlie_1":
-		dialog.text = "Ah, discúlpame, estoy demasiado ansioso. Su nombre es Prosper... Prosper Troubale. ¡Va a morir seguro! Y no puedo ayudarlo - no soy un soldado. Su hija ha desaparecido y él cree que los indios locales son responsables\n¡Imagínate eso, planea ir tras los salvajes por su cuenta! Lo harán pedazos... En este momento está comprando un mosquete y preparándose para salir a la selva.";
+		dialog.text = "Ah, discúlpame, estoy demasiado ansioso. Su nombre es Prosper... Prosper Troubale. ¡Va a morir seguro! Y no puedo ayudarlo, no soy un soldado. Su hija ha desaparecido y él cree que los indios locales son responsables\n¡Imagínate eso, planea ir tras los salvajes por su cuenta! Lo harán pedazos... En este momento está comprando un mosquete y preparándose para salir a la selva.";
 		link.l1 = "Eres un narrador miserable, señor. ¿Dónde puedo encontrar a tu amigo... cómo era su nombre... Prosper?";
 		link.l1.go = "Sharlie_2";
 		break;
@@ -52,7 +52,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	// Jason „олго и счастливо
 	case "LH_letter":
-		dialog.text = "Sí, tienes razón - hay un sobre. Aquí está, pero primero, necesitas pagar por la entrega - doce mil pesos de plata.";
+		dialog.text = "Sí, tienes razón, hay un sobre. Aquí está, pero primero, necesitas pagar por la entrega, doce mil pesos de plata.";
 		if (sti(pchar.money) >= 12000)
 		{
 			link.l1 = "Siempre sospeché que tu oficio era originalmente un negocio de ladrones, pero de alguna manera me perdí la noticia, hm. Por favor, aquí está tu dinero.";

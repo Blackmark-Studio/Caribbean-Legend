@@ -368,7 +368,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -651,8 +651,8 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			
 			NextDiag.TempNode = "tonzag_officer";
-			locations[FindLocation("Minentown_town")].locators_radius.reload.gate_back = 1.0;
-			DeleteAttribute(&locations[FindLocation("Minentown_town")], "locators_radius.reload.reload1_back");
+			locations[FindLocation("LosTeques_town")].locators_radius.reload.gate_back = 1.0;
+			DeleteAttribute(&locations[FindLocation("LosTeques_town")], "locators_radius.reload.reload1_back");
 			AddDialogExitQuestFunction("Tonzag_PrepareJournal");
 		break;
 		

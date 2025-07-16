@@ -1719,7 +1719,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("Patria", "65_1");
 			chrDisableReloadToLocation = false;
-			ChangeCharacterAddressGroup(npchar, "CommonDoubleflourHouse_1", "barmen", "Stay");
+			ChangeCharacterAddressGroup(npchar, "Charles_houseS3", "barmen", "Stay");
 			npchar.dialog.currentnode = "Tailor_20";
 			LAi_SetOwnerType(npchar);
 			pchar.questTemp.PatriaTailor = true;

@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 			else
 			{
 				link.l1 = "J'ai un "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype),"Nom")))+", son nom est "+pchar.ship.name+".";
-				if (5-sti(RealShips[sti(pchar.ship.type)].Class) < 0) link.l1.go = "lecrua_badship";
+				if (6-sti(RealShips[sti(pchar.ship.type)].Class) < 0) link.l1.go = "lecrua_badship";
 				else link.l1.go = "lecrua_2";
 			}
 		break;
@@ -70,6 +70,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("Trial", "sText", sTotalTemp);
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "lecrua_repeat":
@@ -190,6 +191,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Trial", "10");
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 			ChangeCharacterNationReputation(pchar, FRANCE, -3);
 		break;
 		
@@ -232,6 +234,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Trial", "11");
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "florian_deck_7":
@@ -329,6 +332,7 @@ void ProcessDialogEvent()
 			sld.lifeday = 0;
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "florian_failspy_5":
@@ -388,7 +392,7 @@ void ProcessDialogEvent()
 		
 		case "florian_13":
 			dialog.text = "Nom de Dieu ! C'est affreux... As-tu appris quelque chose sur le galion ?";
-			link.l1 = "Oui. Elle est en préparation pour embarquer depuis un moment déjà, mais le gouverneur de Portobello a l'intention de la maintenir au quai. Actuellement, il attend l'arrivée d'une barque nommée 'Puebla' en provenance de Carthagène avec une cargaison de poudre à canon pour l''Alcantara'. Selon un marin du galion, ils n'en ont pas assez et le gouverneur craint les pirates.";
+			link.l1 = "Oui. Elle est en préparation pour embarquer depuis un moment déjà, mais le gouverneur de Portobello a l'intention de la maintenir au quai. Actuellement, il attend l'arrivée d'une barquentin nommée 'Puebla' en provenance de Carthagène avec une cargaison de poudre à canon pour l''Alcantara'. Selon un marin du galion, ils n'en ont pas assez et le gouverneur craint les pirates.";
 			link.l1.go = "florian_14";
 		break;
 		
@@ -408,7 +412,7 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "gold_dublon", 250);
 			Log_Info("You've received 250 doubloons");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Tu lis dans mes pensées, "+GetFullName(pchar)+"! Oui, bon sang! Puisqu'Alacantara est à court de poudre à canon, je peux la laisser naviguer en haute mer et ensuite la forcer à s'engager dans un combat naval prolongé, dans lequel leur poudre s'épuisera avant la nôtre, haha!\nVous devez vous assurer que la barque de ravitaillement Puebla n'arrive jamais à Portobello. Je ne peux pas naviguer près de la côte, les patrouilles remarqueront facilement ma frégate et me chasseront avant que je puisse intercepter Alacantara.\nVous pouvez vous occuper de Puebla vous-même. Trouvez-la et débarrassez-vous d'elle. Coulez-la ou prenez-la comme prix, je m'en fiche. Empêchez-la simplement d'arriver ici!\nSi vous réussissez, allez à Guadeloupe et voyez Gerard LeCroix, je crois que vous le connaissez déjà, n'est-ce pas? Il vous paiera la somme que vous méritez.";
+			dialog.text = "Tu lis dans mes pensées, "+GetFullName(pchar)+"! Oui, bon sang! Puisqu'Alacantara est à court de poudre à canon, je peux la laisser naviguer en haute mer et ensuite la forcer à s'engager dans un combat naval prolongé, dans lequel leur poudre s'épuisera avant la nôtre, haha!\nVous devez vous assurer que la barquentin de ravitaillement Puebla n'arrive jamais à Portobello. Je ne peux pas naviguer près de la côte, les patrouilles remarqueront facilement ma frégate et me chasseront avant que je puisse intercepter Alacantara.\nVous pouvez vous occuper de Puebla vous-même. Trouvez-la et débarrassez-vous d'elle. Coulez-la ou prenez-la comme prix, je m'en fiche. Empêchez-la simplement d'arriver ici!\nSi vous réussissez, allez à Guadeloupe et voyez Gerard LeCroix, je crois que vous le connaissez déjà, n'est-ce pas? Il vous paiera la somme que vous méritez.";
 			link.l1 = "Marché conclu ! Je serai en route pour couper le Puebla !";
 			link.l1.go = "florian_19";
 			link.l2 = "Attendez un peu, Monsieur Choquet. Le fait est que je suis encore ... disons simplement, pas particulièrement habitué aux batailles navales. Et vous êtes le capitaine d'une frégate, vous avez évidemment plus d'une bataille navale derrière vous. Si cela ne vous dérange pas, vous pourriez... Comment devrais-je le dire...";
@@ -422,7 +426,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "florian_18":
-			dialog.text = "L'Alacantara est prête à prendre la mer, mais le capitaine du galion attend que la barque 'Puebla' arrive de Cartagena chargée de munitions. Apparemment, l'Alacantara n'a pas assez de poudre à canon, donc les Espagnols ne sont pas encore prêts à partir. Mais la patience du capitaine a ses limites et si la Puebla n'arrive pas dans trois jours, alors le galion quittera Portobello sans elle.\nL'Alacantara est à court de poudre à canon, je peux la laisser naviguer en haute mer et ensuite la forcer à s'engager dans un long combat naval, dans lequel leur poudre sera épuisée avant la nôtre. Votre objectif est d'intercepter la Puebla et de la détruire. Coulez-la ou prenez-la comme prise, cela m'est égal. Empêchez simplement cette barque de ravitaillement d'arriver ici !\nSi vous réussissez, allez à la Guadeloupe et voyez Gérard LeCroix, je crois que vous le connaissez déjà, n'est-ce pas ? Il vous paiera la monnaie que vous méritez.";
+			dialog.text = "L'Alacantara est prête à prendre la mer, mais le capitaine du galion attend que la barquentin 'Puebla' arrive de Cartagena chargée de munitions. Apparemment, l'Alacantara n'a pas assez de poudre à canon, donc les Espagnols ne sont pas encore prêts à partir. Mais la patience du capitaine a ses limites et si la Puebla n'arrive pas dans trois jours, alors le galion quittera Portobello sans elle.\nL'Alacantara est à court de poudre à canon, je peux la laisser naviguer en haute mer et ensuite la forcer à s'engager dans un long combat naval, dans lequel leur poudre sera épuisée avant la nôtre. Votre objectif est d'intercepter la Puebla et de la détruire. Coulez-la ou prenez-la comme prise, cela m'est égal. Empêchez simplement cette barquentin de ravitaillement d'arriver ici !\nSi vous réussissez, allez à la Guadeloupe et voyez Gérard LeCroix, je crois que vous le connaissez déjà, n'est-ce pas ? Il vous paiera la monnaie que vous méritez.";
 			link.l1 = "D'accord ! Je vais m'en aller couper la Puebla !";
 			link.l1.go = "florian_19";
 			link.l2 = "Attendez un peu, Monsieur Choquet. Le fait est que je suis encore... Disons simplement, pas particulièrement habitué aux batailles navales. Et vous êtes le capitaine d'une frégate, vous avez évidemment plus d'une bataille navale à votre actif. Si cela ne vous dérange pas, vous pourriez... Comment dire...";
@@ -444,7 +448,7 @@ void ProcessDialogEvent()
 		// belamour legendary edition дополнительное обучение -->
 		case "florian_guide_01":
 			dialog.text = "Vous aimeriez que je vous donne une leçon sur les tactiques de combat naval ? Avec plaisir, capitaine ! D'autant plus que c'est dans mon propre intérêt : je veux être sûr que vous intercepterez avec succès le 'Puebla'.";
-			link.l1 = "Non, je ne le pensais pas. Très bien, oublie ça : je suis sûr que je n'aurai aucun problème à intercepter une barque.";
+			link.l1 = "Non, je ne le pensais pas. Très bien, oublie ça : je suis sûr que je n'aurai aucun problème à intercepter une barquentin.";
 			link.l1.go = "florian_19";
 			link.l2 = "Oui, c'est exactement ce que je voulais dire. Je suis sûr que de nouvelles connaissances ne me feront pas de mal.";
 			link.l2.go = "florian_guide_02";

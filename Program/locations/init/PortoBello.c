@@ -1434,7 +1434,7 @@ int LocationInitPortoBello(int n)
 	locations[n].environment.sea = "true";
 	//Reload map
 	locations[n].reload.l1.name = "reload1_back";
-	locations[n].reload.l1.go = "Dunes";
+	locations[n].reload.l1.go = "PortoBello_Dunes";
 	locations[n].reload.l1.emerge = "reload1";
 	locations[n].reload.l1.autoreload = "1";
 	locations[n].reload.l1.label = "Jungle";
@@ -1451,7 +1451,7 @@ int LocationInitPortoBello(int n)
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////// дюны
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    locations[n].id = "Dunes";
+    locations[n].id = "PortoBello_Dunes";
 	locations[n].id.label = "Jungle";
 	locations[n].image = "loading\outside\jungle_" + rand(3) + ".tga";
 	locations[n].DisableEncounters = true;
@@ -1540,7 +1540,7 @@ int LocationInitPortoBello(int n)
 	locations[n].environment.sea = "false";
     //Reload map
 	locations[n].reload.l1.name = "reload1";
-	locations[n].reload.l1.go = "Dunes";
+	locations[n].reload.l1.go = "PortoBello_Dunes";
 	locations[n].reload.l1.emerge = "reload2";
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "";

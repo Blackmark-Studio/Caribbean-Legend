@@ -1,0 +1,38 @@
+﻿Ship_got_good 		{I %1 centenari di %2 sono stati presi a bordo}
+Ship_cant_got_good 	{Nessun posto per %1}
+
+seg_Balls 		{palle di cannone}
+seg_Grapes 		{mitraglia}
+seg_Knippels 		{scovolo}
+seg_Bombs 		{bombe}
+seg_Sailcloth 		{tela per vele}
+seg_Planks 		{assi}
+seg_Slaves 		{schiavi}
+seg_Wheat 		{grano}
+seg_Ebony 		{ebano}
+seg_Chocolate 		{cacao}
+seg_Suga 		{zucchero}
+seg_Wine 		{vino}
+seg_ShipSilk 		{seta}
+seg_Rum 		{rum}
+seg_Tobacco 		{tabacco}
+seg_Coffee 		{caffè}
+seg_Mahogany 		{mogano}
+seg_Cinnamon 		{vaniglia}
+seg_Copra 		{copra}
+seg_Paprika 		{paprica}
+seg_Fruits 		{frutta}
+seg_Ale 		{birra}
+seg_Ropes 		{corde}
+seg_Clothes 		{vestiti}
+seg_Cotton 		{cotone}
+seg_Sandal 		{ferrolegno}
+seg_Leather 		{pelle}
+seg_Oil 		{pece}
+seg_Food 		{cibo}
+seg_Weapon 		{armi}
+seg_Gold 		{oro}
+seg_Silver 		{argento}
+seg_Powder 		{polvere da sparo}
+seg_Brick 		{mattoni}
+seg_Medicament 	{medicinali}

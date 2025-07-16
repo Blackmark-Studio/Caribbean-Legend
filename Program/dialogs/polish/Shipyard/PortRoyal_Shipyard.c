@@ -4,7 +4,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś zadać mi pytanie jakiś czas temu...","Jeszcze nigdy nie spotkałem ludzi z taką ciekawością w mojej stoczni ani nigdzie indziej w tym mieście.","Co z tymi wszystkimi pytaniami? Moja praca to budowanie statków. Zajmijmy się tym.","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś zadać mi pytanie jakiś czas temu...","Jeszcze nigdy nie spotkałem ludzi z taką ciekawością w mojej stoczni ani nigdzie indziej w tym mieście.","Co z tymi wszystkimi pytaniami? Moja praca to budowanie statków. Zajmijmy się tym.","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniłem zdanie...","W tej chwili nie mam nic do omówienia."),"Ech, gdzież to moja pamięć się podziała...","Hm, cóż...","Śmiało...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			// Addon 2016-1 Jason пиратскаЯ линейка
@@ -79,7 +79,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			
 			iTemp = GetCharacterShipType(pchar);
 			sld = GetRealShip(iTemp);
-			iTemp = (6 - sti(sld.class)) * 1000;
+			iTemp = (7 - sti(sld.class)) * 1000;
 			RemoveDublonsFromPCharTotal(iTemp);
 		break;
 		
@@ -102,10 +102,10 @@ bool HelenCanUpgrade() {
 	}
 	
 	sld = GetRealShip(shipIndex);
-	if (sti(sld.class) == 6) {
+	if (sti(sld.class) == 7) {
 		return false;
 	}
 	
-	int cost = (6 - sti(sld.class)) * 1000;
+	int cost = (7 - sti(sld.class)) * 1000;
 	return (PCharDublonsTotal() >= cost);
 }

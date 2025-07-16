@@ -420,7 +420,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "HWIC_Boss";
 			npchar.quest.silk_info = "true";
 			npchar.quest.silk = "true";
-			AddQuestRecord("Unique_Goods", "3");
+			AddQuestRecordInfo("Unique_Goods", "3");
 		break;
 		
 		// торговля шелком
@@ -537,7 +537,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "HWIC_Boss";
 			RemoveDublonsFromPCharTotal(3000);
-			AddQuestRecord("Unique_Goods", "3_1");
+			AddQuestRecordInfo("Unique_Goods", "3_1");
 			pchar.questTemp.UpgradeSilk = true;
 			pchar.questTemp.GVIKSilkBlock = true;
 			DeleteAttribute(pchar, "questTemp.GVIKSilkPotom");

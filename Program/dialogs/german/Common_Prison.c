@@ -583,7 +583,7 @@ void ProcessDialogEvent()
 		break;
 		
         case "ForGoodMove_1":
-			pchar.questTemp.jailCanMove.money = 20+drand(3)*10;
+			pchar.questTemp.jailCanMove.money = 20+hrand(3)*10;
 			if (sti(colonies[FindColony(npchar.city)].jail))
 			{
 				dialog.text = "Nun, ich sehe keinen Grund abzulehnen. "+FindRussianDublonString(sti(pchar.questTemp.jailCanMove.money))+" - und bis du das Gefängnis verlässt, kannst du frei durch die Gänge gehen und sogar mit den Insassen sprechen.";
@@ -687,7 +687,7 @@ void ProcessDialogEvent()
 		break;
 		
         case "KnowAboutPrisoner_free":
-			pchar.questTemp.jailCanMove.ownerPrison.money = 50+drand(10)*10;
+			pchar.questTemp.jailCanMove.ownerPrison.money = 50+hrand(10)*10;
 			dialog.text = "In Ordnung, wir haben einen Deal. "+FindRussianDublonString(sti(pchar.questTemp.jailCanMove.ownerPrison.money))+" auf den Nagel, und Sie können ihn sofort mitnehmen.";
 			if (PCharDublonsTotal() >= sti(pchar.questTemp.jailCanMove.ownerPrison.money))
 			{
@@ -1097,8 +1097,8 @@ void ProcessDialogEvent()
 			link.l1.go = "PrisonerInPlace_3";
 			Log_Info("You have received your share of the treasure");
 			PlaySound("interface\important_item.wav");
-			TakeNItems(pchar, "icollection", 1+drand(1));
-			TakeNItems(pchar, "chest", 4+drand(4));
+			TakeNItems(pchar, "icollection", 1+hrand(1));
+			TakeNItems(pchar, "chest", 4+hrand(4));
 			TakeNItems(pchar, "jewelry1", 70+rand(15));
 			TakeNItems(pchar, "jewelry2", 50+rand(15));
 			TakeNItems(pchar, "jewelry3", 60+rand(15));
@@ -1319,7 +1319,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_5_WithoutMoney":
-			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > dRand(100) || sti(PChar.money) < 5000)
+			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > hrand(100) || sti(PChar.money) < 5000)
 			{
 				dialog.text = "In Ordnung, "+GetAddress_Form(NPChar)+", nimm diesen Schurken und geh, bevor ich es mir anders überlege.";
 				link.l1 = "Es ist großartig, den Triumph der Gerechtigkeit zu sehen, findest du nicht?";

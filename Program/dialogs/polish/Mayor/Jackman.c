@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 	{
 		// ----------------------------------- Диалог первый - первая встреча
 		case "First time":
-            dialog.text = NPCStringReactionRepeat(""+GetSexPhrase("Masz mi coś do powiedzenia? Nie? To wynoś się stąd!","Ha, "+pchar.name+"! Masz do mnie interes? Nie? To mnie nie zawracaj głowy.")+"","Mam nadzieję, że wyraziłem się dość jasno, przestań mnie irytować.","Chociaż jasno się wyraziłem, nadal mnie denerwujesz!","Dobrze, mam już dość tej bezczelności, wynoś się, dziwaku.","powtórz",3,npchar,Dialog.CurrentNode);
+            dialog.text = NPCStringReactionRepeat(""+GetSexPhrase("Masz mi coś do powiedzenia? Nie? To wynoś się stąd!","Ha, "+pchar.name+"! Masz do mnie interes? Nie? To mnie nie zawracaj głowy.")+"","Mam nadzieję, że wyraziłem się dość jasno, przestań mnie irytować.","Chociaż jasno się wyraziłem, nadal mnie denerwujesz!","Dobrze, mam już dość tej bezczelności, wynoś się, dziwaku.","repeat",3,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Już odchodzę.","Jasne, Jackman...","Przykro mi, Jackman...","Ała...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";

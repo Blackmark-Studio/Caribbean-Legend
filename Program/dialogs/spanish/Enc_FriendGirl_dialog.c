@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 
 		case "First time":
 			dialog.text = LinkRandPhrase("¡Oh mi Señor, estoy tan contento de haberte encontrado!","¡Finalmente alguien!","¡Oh Dios mío, estoy tan feliz de verte!");
-			Link.l1 = LinkRandPhrase("¿Qué pasa, cariño?","¿Algún problema, cariño?","No te alteres tanto - no es bueno para la salud de una jovencita. Ahora, solo dime - ¿qué sucedió?");
+			Link.l1 = LinkRandPhrase("¿Qué pasa, cariño?","¿Algún problema, cariño?","No te alteres tanto, no es bueno para la salud de una jovencita. Ahora, solo dime, ¿qué sucedió?");
 			Link.l1.go = "Step_1";
 		break;
 		case "Step_1":
@@ -28,7 +28,7 @@ void ProcessDialogEvent()
 			Link.l1.go = "Step_2";
 		break;
 		case "Step_2":
-			dialog.text = "¡Oh, ya sabes, ella teme absolutamente a todo! Escuchó que había una mazmorra llena de oro, así que bajó allí... ¡Pero yo no soy un tonto, ni siquiera lo pensaría!";
+			dialog.text = "¡Oh, ella teme absolutamente a todo! Escuchó que había una mazmorra llena de oro, así que bajó allí... ¡Pero yo no soy un tonto, ni siquiera lo pensaría!";
 			Link.l1 = "Es cierto, no hay nada para ti que hacer en tal lugar.";
 			Link.l1.go = "Step_3";
 		break;		
@@ -169,7 +169,7 @@ void ProcessDialogEvent()
 		break;
 		case "Underground1_again": 
             dialog.text = "¿Tú otra vez? Piérdete, no quiero verte más...";
-			Link.l1 = "¿Hmm...";
+			Link.l1 = "Hmm...";
 			Link.l1.go = "exit";
 			NextDiag.TempNode = "Underground1_again";
 		break;

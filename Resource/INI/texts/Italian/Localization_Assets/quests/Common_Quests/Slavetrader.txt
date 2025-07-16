@@ -1,0 +1,144 @@
+﻿Slavetrader_1
+{
+Modalità di esplorazione: timer esteso. Completa la missione!
+}
+
+Slavetrader_2
+{
+
+}
+Slavetrader_3
+{
+
+}
+
+Slavetrader_4
+{
+
+}
+Slavetrader_5
+{
+
+}
+
+Slavetrader_6
+{
+
+}
+Slavetrader_7
+{
+
+}
+
+Slavetrader_8
+{
+Nabukee
+}
+Slavetrader_9
+{
+Anaconda
+}
+
+Slavetrader_10
+{
+da Caracas
+}
+Slavetrader_11
+{
+da Cumana
+}
+
+Slavetrader_12
+{
+Fransua
+}
+Slavetrader_13
+{
+Gontier
+}
+
+Slavetrader_14
+{
+considered
+}
+Slavetrader_15
+{
+considered
+}
+
+Slavetrader_16
+{
+alle rive delle Barbados
+}
+Slavetrader_17
+{
+sulle rive di Guadeloupe
+}
+Slavetrader_18
+{
+non lontano da Santiago
+}
+Slavetrader_19
+{
+non lontano dall Havana
+}
+Slavetrader_20
+{
+sulle rive di Tortuga
+}
+Slavetrader_21
+{
+sulle rive di Trinidad
+}
+Slavetrader_22
+{
+sulle rive di St. Christopher
+}
+Slavetrader_23
+{
+non lontano da Santo Domingo
+}
+Slavetrader_24
+{
+non lontano da Port-au-Prince
+}
+Slavetrader_25
+{
+non lontano da Cartagena
+}
+
+Slavetrader_26
+{
+Tamango
+}
+Slavetrader_27
+{
+
+}
+
+Slavetrader_28
+{
+Sven
+}
+Slavetrader_29
+{
+Carlson
+}
+
+Slavetrader_30
+{
+Janna
+}
+Slavetrader_31
+{
+Mollery
+}
+
+Slavetrader_32
+{
+Izaura
+}
+Slavetrader_33
+{
+
+}

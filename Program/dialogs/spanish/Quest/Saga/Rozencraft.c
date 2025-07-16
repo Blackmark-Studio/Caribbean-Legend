@@ -31,13 +31,13 @@ void ProcessDialogEvent()
 		else
 		{
 			dialog.text = "¿Qué quieres, señor?";
-			link.l1 = "Tengo entendido que estás esperando comprar algo de madera de hierro?";
+			link.l1 = "¿Tengo entendido que estás esperando comprar algo de sándalo?";
 			link.l1.go = "rozencraft_no";
 		}
 		break;
 
 	case "rozencraft_no":
-		dialog.text = "¿Quién le dijo esa tontería, señor? No estoy esperando a nadie ni a nada. Mi nave está patrullando la zona local por orden del gobernador de Willemstad. Así que, ¿sería tan amable de dejar mi barco? Debe estar equivocado.";
+		dialog.text = "¿Quién le dijo esa tontería, señor? No estoy esperando a nadie ni a nada. Mi nave está patrullando la zona por orden del gobernador de Willemstad. Así que, ¿sería tan amable de dejar mi barco? Debe estar equivocado.";
 		link.l1 = "Hum... Ya veo. Lamento molestarte.";
 		link.l1.go = "rozencraft_no_1";
 		break;
@@ -57,19 +57,19 @@ void ProcessDialogEvent()
 
 	case "rozencraft_1":
 		dialog.text = "¿Y quién eres tú?";
-		link.l1 = "¿No te importa con quién comercias? He traído madera de hierro para vender. ¿Cuánto?";
+		link.l1 = "¿No te importa con quién comercias? He traído sándalo para vender. ¿Cuánto?";
 		link.l1.go = "rozencraft_2";
 		break;
 
 	case "rozencraft_2":
-		dialog.text = "Según el acuerdo - cuarenta doblones por pieza.";
+		dialog.text = "Según el acuerdo, cuarenta doblones por pieza.";
 		link.l1 = "Mm...";
 		link.l1.go = "rozencraft_3";
 		break;
 
 	case "rozencraft_3":
 		npchar.quest.bakaut = GetSquadronGoods(pchar, GOOD_SANDAL);
-		dialog.text = "Amigo, teníamos un trato con Molligan. Este es un buen precio, no encontrarás uno mejor. Así que no te comportes como un campesino en la tienda. ¿Cuánta madera de hierro tienes?";
+		dialog.text = "Amigo, teníamos un trato con Molligan. Este es un buen precio, no encontrarás uno mejor. Así que no te comportes como un campesino en la tienda. ¿Cuánto sándalo tienes?";
 		link.l1 = "" + FindRussianQtyString(sti(npchar.quest.bakaut)) + ".";
 		link.l1.go = "rozencraft_4";
 		break;
@@ -78,7 +78,7 @@ void ProcessDialogEvent()
 		iTemp = sti(npchar.quest.bakaut);
 		if (iTemp >= 90)
 		{
-			dialog.text = "Espléndido. Eso es más de lo que esperaba. Aquí, toma el oro. Si consigues más madera de hierro, ve a la taberna en San Martín y habla con... ya sabes quién. Él organizará una reunión para nosotros. Veo que eres un socio mucho mejor que ese idiota de Molligan.";
+			dialog.text = "Espléndido. Eso es más de lo que esperaba. Aquí, toma el oro. Si consigues más sándalo, ve a la taberna en San Martín y habla con... ya sabes quién. Él organizará una reunión para nosotros. Veo que eres un socio mucho mejor que ese idiota de Molligan.";
 			link.l1 = "Está bien. Es un trato.";
 			link.l1.go = "rozencraft_5";
 			pchar.GenQuest.Bakaut = "true"; // генератор сбыта бакаута
@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 		}
 		if (iTemp >= 70 && iTemp < 90)
 		{
-			dialog.text = "Bien. Aquí, toma el oro. Si consigues más madera de hierro, ve a la taberna en Philipsburg y habla con... ya sabes quién. Él se pondrá en contacto conmigo. Veo que podemos hacer negocios contigo no peor que con ese idiota de Molligan.";
+			dialog.text = "Bien. Aquí, toma el oro. Si consigues más sándalo, ve a la taberna en Philipsburg y habla con... ya sabes quién. Él se pondrá en contacto conmigo. Veo que podemos hacer negocios contigo no peor que con ese idiota de Molligan.";
 			link.l1 = "Está bien. Es un trato.";
 			link.l1.go = "rozencraft_5";
 			pchar.GenQuest.Bakaut = "true"; // генератор сбыта бакаута
@@ -94,7 +94,7 @@ void ProcessDialogEvent()
 		}
 		if (iTemp >= 40 && iTemp < 70)
 		{
-			dialog.text = " Hmm... Esperaba más. Está bien. Aquí, toma el oro. Y dile a Molligan que la próxima vez debe traer un lote no menor de cien piezas.";
+			dialog.text = "Hmm... Esperaba más. Está bien. Aquí, toma el oro. Y dile a Molligan que la próxima vez debe traer un lote no menor de cien piezas.";
 			link.l1 = "Está bien. Se lo diré.";
 			link.l1.go = "rozencraft_5";
 			break;
@@ -148,7 +148,7 @@ void ProcessDialogEvent()
 		dialog.text = "¿Cuánto tienes? Necesito un lote no menor que " + FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)) + ".";
 		if (GetSquadronGoods(pchar, GOOD_SANDAL) >= sti(pchar.GenQuest.Bakaut.Value))
 		{
-			link.l1 = "Lo sé. Tengo " + FindRussianQtyString(GetSquadronGoods(pchar, GOOD_SANDAL)) + "  de madera de hierro que estás tan ansioso por conseguir.";
+			link.l1 = "Lo sé. Tengo " + FindRussianQtyString(GetSquadronGoods(pchar, GOOD_SANDAL)) + "  de sándalo que estás tan ansioso por conseguir.";
 			link.l1.go = "bakaut_1";
 		}
 		else
@@ -227,7 +227,7 @@ void ProcessDialogEvent()
 	case "bakaut_2":
 		LAi_Fade("", "");
 		WaitDate("", 0, 0, 0, 1, 10);
-		dialog.text = "Un placer hacer negocios contigo. Vuelve a verme si quieres vender más madera de hierro.";
+		dialog.text = "Un placer hacer negocios contigo. Vuelve a verme si quieres vender más sándalo.";
 		link.l1 = "Nos vemos de nuevo, señor. Nuestra colaboración es muy lucrativa para mí. ¡Adiós!";
 		link.l1.go = "bakaut_3";
 		break;

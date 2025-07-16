@@ -25,15 +25,15 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			//Lai_SetPlayerType(pchar);
 			
-			dialog.text = GetFullName(PChar)+"! "+"Śledziliśmy cię już od dłuższego czasu, i w końcu jesteś nasz.";
-			Link.l1 = "Kim jesteś i czego ode mnie chcesz?";
+			dialog.text = GetFullName(PChar)+"! "+"Śledziliśmy cię już od dłuższego czasu, i w końcu cię dopadliśmy.";
+			Link.l1 = "Kim jesteście i czego ode mnie chcecie?";
 			Link.l1.go = "meeting"; 
 			
 			PChar.GenQuest.HunterStart = true;
 		break;
 
 		case "meeting":
-			dialog.text = XI_ConvertString(Nations[sti(NPChar.nation)].Name)+" postawił przyzwoitą nagrodę za twoją głowę, musimy cię dostarczyć do dowolnej z jego kolonii i dostaniemy zapłatę, bez względu na to, czy jesteś martwy, czy żywy.";
+			dialog.text = XI_ConvertString(Nations[sti(NPChar.nation)].Name)+" zaoferowała przyzwoitą nagrodę za Twoją głowę. Musimy Cię dostarczyć do jednej z należących do niej kolonii i dostaniemy zapłatę, bez względu na to, czy dotrzesz tam żywy lub martwy.";
 			Link.l1 = "Słuchaj, zapłacę ci, jeśli mnie zostawisz w spokoju.";
 			Link.l1.go = "Cost_Head"; 
             // boal 08.04.04 -->
@@ -41,27 +41,27 @@ void ProcessDialogEvent()
             {
     			TempChar = characterFromID("Bug Fixer");
     			SetRandomNameToCharacter(TempChar);
-    			Link.l2 = ""+GetSexPhrase("Przepraszam, ale chyba się pomyliłeś. Ja jestem "+GetFullName(TempChar)+" - dobrze znany kupiec na tych ziemiach.","Przepraszam, ale musisz się mylić. Jestem tylko prostą dziewczyną, a mój ojciec to "+GetFullName(TempChar)+" - dobrze znany kupiec na tych ziemiach.")+".";
+    			Link.l2 = ""+GetSexPhrase("Przepraszam, ale chyba się pomyliłeś. Ja jestem "+GetFullName(TempChar)+" - jestem dobrze znanym kupcem na tych ziemiach.","Przepraszam, ale mylisz się. Jestem tylko prostą dziewczyną, a mój ojciec to "+GetFullName(TempChar)+" - jest dobrze znanym kupcem na tych ziemiach.")+".";
     			Link.l2.go = "lier";
 			}
-            Link.l3 = "Dobrze, możesz spróbować swojego szczęścia, jeśli tak chcesz.";
+            Link.l3 = "Dobrze więc, spróbuj swojego szczęścia, jeśli tak chcesz.";
 			Link.l3.go = "battle";
 		break;
         
         case "lier":
             if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > rand(150) || bBettaTestMode)
             {
-                dialog.text = "Och! Naprawdę możemy się mylić. Proszę, wybacz nam, "+GetAddress_Form(NPChar)+".";
-                Link.l1 = "Dzieje się, nie martw się tym...";
+                dialog.text = "Och! Najwyraźniej się pomyliliśmy. Proszę, wybacz za zamieszanie, "+GetAddress_Form(NPChar)+".";
+                Link.l1 = "Nic się nie stało, nie martw się tym...";
                 Link.l1.go = "lier_2";
                 AddCharacterExpToSkill(pchar, SKILL_SNEAK, 100);
             }
             else
             {
-                dialog.text = "Myslę, że kłamiesz!";
+                dialog.text = "Myslę, że próbujesz nas oszukać!";
                 Link.l1 = "Słuchaj, zapłacę ci, jeśli zostawisz mnie w spokoju.";
 			    Link.l1.go = "Cost_Head";
-			    Link.l2 = "Dobrze, możesz spróbować swojego szczęścia, jeśli tak chcesz.";
+			    Link.l2 = "Dobrze więc, spróbuj swojego szczęścia, jeśli tak chcesz.";
 			    Link.l2.go = "battle";
 			    AddCharacterExpToSkill(pchar, SKILL_SNEAK, 50);
             }
@@ -90,49 +90,49 @@ void ProcessDialogEvent()
 			dialog.text = "Myslę, że "+PChar.HunterCost+" pesos będzie nam pasować.";
             if(makeint(Pchar.money) < sti(PChar.HunterCost))
             {
-                Link.l1 = "Ale ja nie mam takich pieniędzy.";
+                Link.l1 = "Ale ja nie mam tylu pieniędzy.";
                 Link.l1.go = "NoMoney";
             }else{
                 Link.l1 = "Oto twoje pieniądze, weź je i znikaj.";
                 Link.l1.go = "Cost_Head2";
-                Link.l2 = "Dając taką sumę łotrzykom jak wy... chyba wolałbym was wszystkich tu zaraz pociąć!";
+                Link.l2 = "Nie. Takie łachudry jak Wy niczego nie dostaną... Chyba wolę jednak posłać Was wszystkich do piachu!";
                 Link.l2.go = "battle";
             }
 		break;
 
         case "NoMoney":
-			dialog.text = "W takim razie nasza rozmowa jest zakończona!";
-			Link.l1 = "Nigdy mnie nie dostaniesz żywcem.";
+			dialog.text = "W takim razie nie mamy o czym rozmawiać!";
+			Link.l1 = "Żywcem mnie nie weźmiecie, psy.";
 			Link.l1.go = "battle"; 
 		break;
 		
 		case "TreasureHunter":
-			dialog.text = "Zaczekaj, "+GetSexPhrase("kumpel","dziewczyno")+"... Myślę, że masz coś interesującego przy sobie. Przyjaciele powinni dzielić się znalezionymi skarbami, nie sądzisz?";
-            Link.l1 = "Słuchaj, zapłacę ci, jeśli zostawisz mnie w spokoju.";
+			dialog.text = "Zaczekaj, "+GetSexPhrase("koleżko","panienko")+"... Myślę, że masz coś interesującego przy sobie. Przyjaciele powinni dzielić się znalezionymi skarbami, nie sądzisz?";
+            Link.l1 = "Słuchaj, zapłacę ci, ale zostawisz mnie w spokoju.";
 			Link.l1.go = "Cost_Head";
             // boal 08.04.04 -->
             if (GetSummonSkillFromNameToOld(PChar, SKILL_SNEAK) > 3)
             {
     			TempChar = characterFromID("Bug Fixer");
     			SetRandomNameToCharacter(TempChar);
-    			Link.l2 = ""+GetSexPhrase("Przepraszam, ale chyba się mylisz. Jestem "+GetFullName(TempChar)+"- dobrze znany mieszkaniec tych ziem, ale na pewno nie poszukiwacz skarbów.","Przepraszam, ale musisz się mylić. Jestem tylko prostą dziewczyną, a nie poszukiwaczką skarbów. A mój ojciec to "+GetFullName(TempChar)+" - dobrze znany obywatel na tych ziemiach")+"!";
+    			Link.l2 = ""+GetSexPhrase("Przepraszam, ale chyba się mylisz. Jestem "+GetFullName(TempChar)+"- jestem tylko tutejszym mieszkańcem, a na pewno nie poszukiwacz skarbów.","Przepraszam, ale pomyliliście się. Jestem tylko prostą dziewczyną, a na pewno nie poszukiwaczką skarbów. A mój ojciec to "+GetFullName(TempChar)+" - powszechnie znany mieszkaniec tych ziemiach")+"!";
     			Link.l2.go = "TreasureHunterLier";
 			}
-            Link.l3 = "Cóż, wygląda na to, że nadszedł czas, aby wasze głowy rozstały się z waszymi ciałami.";
+            Link.l3 = "Cóż, wygląda na to, że trzeba pozbawić was czerepów.";
 			Link.l3.go = "battle";
 		break;
 		
 		case "TreasureHunterLier":
             if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > rand(150))
             {
-                dialog.text = "Och! Naprawdę możemy się mylić, proszę nam wybaczyć, "+GetAddress_Form(NPChar)+".";
-                Link.l1 = "Dzieje się, nie martw się o to...";
+                dialog.text = "Och! Musiało dojść do pomyłki, proszę nam wybaczyć, "+GetAddress_Form(NPChar)+".";
+                Link.l1 = "Nic się nie stało, nie martw się...";
                 Link.l1.go = "lier_2";
                 AddCharacterExpToSkill(pchar, SKILL_SNEAK, 100);
             }
             else
             {
-                dialog.text = "Myslę, że kłamiesz!";
+                dialog.text = "Myslę, że próbujesz mnie oszukać!";
 			    Link.l1 = "Wtedy posłuchaj pieśni mojego ostrza.";
 			    Link.l1.go = "battle";
 			    AddCharacterExpToSkill(pchar, SKILL_SNEAK, 50);
@@ -140,8 +140,8 @@ void ProcessDialogEvent()
         break;
 		
 		case "TreasureCaptain":
-			dialog.text = LinkRandPhrase("Więc ty jesteś tym, który zabrał moją mapę skarbów! Myślę, kumplu, że nadszedł czas, aby oddać wszystko, co zabrałeś...","Och, rywal! Nie zajdziesz daleko, jesteś spowolniony ciężarem moich skarbów...","Hej, w końcu cię dogoniłem! Wszystkie skarby w tej jaskini należą do mnie, rozumiesz? Teraz, opróżnij swoje kieszenie, kumplu!");
-			Link.l1 = LinkRandPhrase("Czas, abyś spotkał się z moim ostrzem, kumplu!","Twoje skarby? Chciałeś powiedzieć, że były twoje, bo teraz są moje!","Wolałbym opróżnić twój żołądek moim ostrzem, kumplu.");
+			dialog.text = LinkRandPhrase("Masz moją mapę skarbów! Myślę, koleżko, że musisz oddać wszystko, co zabrałeś...","Och, oponent! Nie uciekniesz daleko! Jesteś spowolniony ciężarem moich skarbów...","Hej, w końcu cię złapałem! Wszystkie skarby w tej jaskini należą do mnie, rozumiesz? Teraz, opróżnij swoje kieszenie!");
+			Link.l1 = LinkRandPhrase("Czas, abyś spotkał się z moim ostrzem!","Twoje skarby? Chciałeś powiedzieć, że były twoje, bo teraz są moje!","Wolę wypruć Ci flaki moim ostrzem, kolego.","Pocałuj mnie w dupe, kanalio!");
 			Link.l1.go = "TreasureCaptain_fight"; 
 		break;
 		
@@ -161,8 +161,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TreasureOfficer":
-			dialog.text = LinkRandPhrase("Cóż, pułkownik miał rację, skarb był ukryty w tej jaskini... Opróżnij swoje kieszenie, marynarzu!","No więc wreszcie cię dopadliśmy, po całym tym śledzeniu przez te przeklęte dżungle, wśród cierni i bagien. Teraz, sukinsynu, oddasz nam wszystko...","Hej, żeglarzu! Skarby tego pirata należą do nas, więc zdejmij swoje brudne ręce od nich!");
-			Link.l1 = LinkRandPhrase("Na pewno, nie spodziewałem się tego od oficera armii! Ale dobrze, nauczę cię jednak lekcji...","Popatrz na niego, pirata w mundurze oficera...","Rzeczywiście, żołnierze i piraci nie różnią się od siebie aż tak bardzo w dzisiejszych czasach...");
+			dialog.text = LinkRandPhrase("Cóż, pułkownik miał rację, skarb był ukryty w tej jaskini... Opróżnij swoje kieszenie!","Wreszcie cię dopadliśmy, po całym tym przeprawianiu się przez te przeklęte dżungle, wśród cierni i bagien. Teraz, miernoto, oddasz nam wszystko...","Hej! Skarby tego pirata należą do nas, więc zabieraj swoje brudne ręce!");
+			Link.l1 = LinkRandPhrase("Zdecydowanie ciężko było się tego spodziewać po oficerze! Ale dobrze, dam Ci zasłużoną lekcję...","Popatrz na niego - brudny pirat w mundurze oficera...","Rzeczywiście żołnierze i piraci nie różnią się od siebie aż tak bardzo w dzisiejszych czasach...");
 			Link.l1.go = "TreasureOfficer_fight"; 
 		break;
 		
@@ -184,35 +184,35 @@ void ProcessDialogEvent()
 		// генератор "A reason to hurry"
 		case "ReasonToFast_THunter_1":
 			if(CheckAttribute(pchar,"GenQuest.CannotWait"))	DeleteAttribute(pchar, "GenQuest.CannotWait");
-			dialog.text = "I oto nadchodzi nasze złoto. Przynajmniej nasze czekanie nie było na próżno.";
-			link.l1 = RandPhraseSimple("O czym mówicie, panowie? Jestem przedstawicielem Holenderskiej Kompanii Zachodnioindyjskiej i jestem tu tylko przejazdem! Zatrzymałem się, aby podziwiać widok na wybrzeże!","Obawiam się, że pomyliłeś mnie z kimś innym. Jestem "+GetSexPhrase("Francua Marie Paganel, ","Maria-Teresa, ")+"naturalista. Zbieram próbki lokalnej flory. Chcesz zobaczyć moją kolekcję liści juki? Mam kilka bardzo interesujących!");
+			dialog.text = "I oto nadchodzi nasze złoto. Przynajmniej nie musieliśmy czekać na próżno.";
+			link.l1 = RandPhraseSimple("O czym mówicie, panowie? Jestem przedstawicielem Holenderskiej Kompanii Zachodnioindyjskiej i jestem tu tylko przejazdem! Zatrzymałem się tu, aby podziwiać widok na wybrzeże!","Obawiam się, że pomyliłeś mnie z kimś innym. Jestem "+GetSexPhrase("Francua Marie Paganel, ","Maria-Teresa, ")+" - botanik. Zbieram próbki lokalnej flory. Chcesz zobaczyć moją kolekcję liści juki? Mam tu kilka interesujących!");
 			link.l1.go = "ReasonToFast_THunter_2";
-			link.l2 = "Co chcesz?! Trzymaj się z dala od mnie!";
+			link.l2 = "Czego chcesz?! Trzymaj się ode mnie z daleka!";
 			link.l2.go = "ReasonToFast_THunter_2";
 		break;
 		
 		case "ReasonToFast_THunter_2":
 			ReasonToFast_ClearTreasureBox(pchar.questTemp.ReasonToFast.Treasure.Location);
-			dialog.text = "O nie, "+GetSexPhrase("mój drogi przyjacielu","moja ładna dziewczyna")+". To nie zadziała. Wiemy na pewno, że posiadałeś mapę "+GetName(pchar.questTemp.ReasonToFast.mapIdx,pchar.questTemp.ReasonToFast.map,NAME_GEN)+". A on był taki skąpy, że jego skrzynie pękały od środka pełne pieniędzy. Więc nie zamierzamy wyjść z pustymi rękami.";
-			link.l1 = "Masz rację. Skrzynie były rzeczywiście pełne. Ale ich nie dostaniesz. Możesz spróbować odwiedzić tamtą jaskinię, kilka przeszklonych wiader powinno tam jeszcze być.";
+			dialog.text = "O nie, "+GetSexPhrase("mój drogi przyjacielu","moja droga przyjaciółko")+". To nie zadziała. Wiemy, że posiadasz mapę "+GetName(pchar.questTemp.ReasonToFast.mapIdx,pchar.questTemp.ReasonToFast.map,NAME_GEN)+". A on był tak skąpy, że jego skrzynie z pewnością pękają od środka, pełne monet. Nie zamierzamy wyjść z pustymi rękami.";
+			link.l1 = "Masz rację. Skrzynie były rzeczywiście pełne. Ale ich nie dostaniesz. Możesz spróbować odwiedzić tamtą jaskinię, kilka worków powinno tam jeszcze być.";
 			link.l1.go = "ReasonToFast_THunter_3";
 			if(ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8)) >= sti(pchar.questTemp.ReasonToFast.p8) 
 				&& ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7)) >= sti(pchar.questTemp.ReasonToFast.p7))
 			{
-				link.l2 = "Masz rację. Możesz mieć swój skarb. Pamiętaj jednak, że nie przyniesie ci szczęścia, ponieważ jest poplamiony krwią.";
+				link.l2 = "Masz rację. Zatrzymaj swój skarb. Pamiętaj jednak, że nie przyniesie ci szczęścia, ponieważ jest splamiony krwią.";
 				link.l2.go = "ReasonToFast_THunter_4";
 			}	
 		break;
 		
 		case "ReasonToFast_THunter_3":
 			dialog.text = ""+GetSexPhrase("Heh, kapitanie, jesteś zbyt młody, aby umierać, czyż nie...","Heh, dziewczyno, jesteś zbyt młoda, aby umierać, czyż nie...")+"...";
-			link.l1 = "Właściwie, nie zamierzam umierać!";
+			link.l1 = "Właściwie, to nie zamierzam umierać!";
 			link.l1.go = "ReasonToFastTHunter_Fight";
 		break;
 		
 		case "ReasonToFast_THunter_4":
-			dialog.text = "Teraz to są słowa rozsądnej osoby!";
-			link.l1 = "Przeklęstwo na ciebie i na wszystkie te skarby...";
+			dialog.text = "W końcu brzmisz rozsądnie!";
+			link.l1 = "Idź do diabła - Ty i wszystkie te skarby...";
 			link.l1.go = "ReasonToFast_THunter_GoAway";
 		break;
 		
@@ -265,8 +265,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_HunterShore1":
-			dialog.text = "Hej,"+GetSexPhrase("kumpel","dziewczyno")+"! "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+" powiedział, że masz dla nas coś.";
-			link.l1 = "Co masz na myśli?";
+			dialog.text = "Hej,"+GetSexPhrase("kolego","panienko")+"! "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+" powiedział, że masz coś dla nas.";
+			link.l1 = "O czym ty mówisz?";
 			link.l1.go = "ReasonToFast_HunterShore11";
 			pchar.quest.ReasonToFast_SetHunterPort_1.over = "yes";
 			pchar.quest.ReasonToFast_SetHunterPort_2.over = "yes";
@@ -276,21 +276,21 @@ void ProcessDialogEvent()
 			if(pchar.questTemp.ReasonToFast == "GetMap") 
 			{
 				dialog.text = "Mapa "+GetName(pchar.questTemp.ReasonToFast.mapIdx,pchar.questTemp.ReasonToFast.map,NAME_GEN);
-				link.l1 = "Weź to i pozdrów "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+". Powiedz mu, że spotkamy się wkrótce...";
+				link.l1 = "Weź to i pozdrów "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+". Powiedz mu, że niedługo się spotkamy...";
 				link.l1.go = "ReasonToFast_HunterShore12_1";
-				link.l2 = GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+"jest ciężko w błędzie, jeśli myśli, że będę dla niego wyciągał kasztany z ognia.";
+				link.l2 = GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+"jest w błędzie, jeśli myśli, że będę dla niego nadstawiać karku.";
 				link.l2.go = "ReasonToFast_HunterShore23";
 			}
 			if(pchar.questTemp.ReasonToFast == "LakeyExitSuccess")
 			{
-				dialog.text = "Biżuteria, którą ukradłeś gubernatorowi.";
+				dialog.text = "Biżuteria skradziona gubernatorowi.";
 				if(ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8)) >= sti(pchar.questTemp.ReasonToFast.p8) 
 					&& ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7)) >= sti(pchar.questTemp.ReasonToFast.p7))
 				{
-					link.l1 = "Weź to i pozdrów "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+". Powiedz mu, że spotkamy się wkrótce...";
+					link.l1 = "Weź ją i pozdrów "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+". Powiedz mu, że niedługo się spotkamy...";
 					link.l1.go = "ReasonToFast_HunterShore12_2";
 				}	
-				link.l2 = GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+"jest poważnie w błędzie, jeśli myśli, że będę dla niego wyciągał kasztany z ognia.";
+				link.l2 = GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+"jest w błędzie, jeśli myśli, że będę dla niego nadstawiać karku.";
 				link.l2.go = "ReasonToFast_HunterShore23";				
 			}
 			pchar.quest.ReasonToFast_SetHunterPort_1.over = "yes";
@@ -335,17 +335,17 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_HunterShore2":
-			dialog.text = "Hej,"+GetSexPhrase("kumpel","dziewczyno")+"! "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_GEN)+" ma kilka pytań do ciebie.";
-			link.l1 = "A dlaczego sam nie zapytałby ich?";
+			dialog.text = "Hej,"+GetSexPhrase("kolego","panienko")+"! "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_GEN)+" ma kilka pytań do ciebie.";
+			link.l1 = "A dlaczego sam ich nie zada?";
 			link.l1.go = "ReasonToFast_HunterShore21";
 			chrDisableReloadToLocation = false;
 		break;
 		
 		case "ReasonToFast_HunterShore21":
 			dialog.text = "Nie według jego rangi. Zrujnowałeś naszą operację i straciliśmy "+sti(pchar.questTemp.ReasonToFast.p10)+" pesos przez ciebie. Więc teraz masz dług do spłacenia.";
-			link.l1 = "Weź to i przywitaj się z "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+". Powiedz mu, że spotkamy się wkrótce...";
+			link.l1 = "Weź to i przywitaj się z "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+". Powiedz mu, że niedługo się spotkamy...";
 			link.l1.go = "ReasonToFast_HunterShore22";
-			link.l2 = GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+" jest ciężko w błędzie, jeśli myśli, że będę dla niego wyjmował kasztany z ognia.";
+			link.l2 = GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+" jest w błędzie, jeśli myśli, że będę dla niego nadstawiać karku.";
 			link.l2.go = "ReasonToFast_HunterShore23";
 		break;
 		
@@ -361,8 +361,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Och, nie masz takich pieniędzy! Cóż, dokonałeś swojego wyboru...";
-				link.l1 = "Dawno temu...";
+				dialog.text = "Och, nie masz tylu pieniędzy!? Cóż, dokonałeś wyboru...";
+				link.l1 = "Od dawna...";
 				link.l1.go = "ReasonToFastTHunter_Fight";	
 				if(pchar.questTemp.ReasonToFast == "LakeyExitSuccess" || pchar.questTemp.ReasonToFast == "LakeyExitFail")
 				{
@@ -373,8 +373,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_HunterShore23":
-			dialog.text = "Cóż, dokonałeś swojego wyboru...";
-			link.l1 = "Dawno temu...";
+			dialog.text = "Cóż, dokonałeś wyboru...";
+			link.l1 = "Od dawna...";
 			link.l1.go = "ReasonToFastTHunter_Fight";
 			if(pchar.questTemp.ReasonToFast == "LakeyExitSuccess" || pchar.questTemp.ReasonToFast == "LakeyExitFail")
 			{

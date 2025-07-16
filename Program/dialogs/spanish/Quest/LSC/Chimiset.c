@@ -165,7 +165,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "prisoner_4":
-		dialog.text = "¿Chico blanco? Claro, lo conozco. Ese es el apodo de Olle Christiansen, nuestro idiota local. Ya es adulto y no parece un chico, aunque su mente sigue siendo infantil.";
+		dialog.text = "¿Chico blanco? Claro, lo conozco. Ese es el apodo de Olle Christiansen, nuestro idiota. Ya es adulto y no parece un chico, aunque su mente sigue siendo infantil.";
 		link.l1 = "¿Es así? Dime, ¿dónde puedo encontrarlo?";
 		link.l1.go = "prisoner_5";
 		break;
@@ -293,7 +293,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Friend_9":
-		dialog.text = "¿Chico blanco? Claro, lo conozco. Ese es el apodo de Olle Christiansen, nuestro idiota local. Ahora es un adulto y ya no parece un chico, aunque su mente sigue siendo infantil.";
+		dialog.text = "¿Chico blanco? Claro, lo conozco. Ese es el apodo de Olle Christiansen, nuestro idiota. Ahora es un adulto y ya no parece un chico, aunque su mente sigue siendo infantil.";
 		link.l1 = "¿Es así? Dime, ¿dónde puedo encontrarlo?";
 		link.l1.go = "Friend_10";
 		break;
@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 	case "Chimiset_wait": // стал другом
 		if (pchar.questTemp.LSC == "return" && !CheckAttribute(npchar, "quest.return_isl"))
 		{
-			dialog.text = "¡Oh! Mi amigo blanco " + pchar.name + "¡No te ahogaste? Los espíritus te salvaron, lo sé...";
+			dialog.text = "¡Oh! Mi amigo blanco " + pchar.name + ". ¡No te ahogaste! Los espíritus te salvaron, lo sé...";
 			link.l1 = "Estoy bien y vivo, Chimiset. ¿Espíritus? Tal vez tengas razón, todo ha sucedido por culpa de Kukulcán...";
 			link.l1.go = "exit";
 			npchar.quest.return_isl = "true";

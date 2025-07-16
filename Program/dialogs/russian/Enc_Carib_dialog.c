@@ -85,10 +85,10 @@ void ProcessDialogEvent()
 				link.l1 = RandPhraseSimple("Твой земля? А ну, прочь с дороги, краснорожая образина!","Ну надо же - обезьяна, а разговаривает! Пошёл прочь!");
 				link.l1.go = "war_indian_1";
 				link.l2 = RandPhraseSimple("Я приш"+GetSexPhrase("ёл","ла")+" с миром, краснокожий воин. Ни к чему нам развязывать бой не из-за чего.","Я не посягаю на твою землю, воин. Я приш"+GetSexPhrase("ёл","ла")+" с миром.");
-				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/3)) > drand(80)) link.l2.go = "war_indian_2_1";
+				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/3)) > hrand(80)) link.l2.go = "war_indian_2_1";
 				else link.l2.go = "war_indian_2_2";
 				link.l3 = RandPhraseSimple("Я приш"+GetSexPhrase("ёл","ла")+" сюда не воевать с вами, а торговать.","Я не воюю с индейцами. Я с ними торгую.");
-				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/6)+makeint(GetSummonSkillFromName(pchar, SKILL_FORTUNE)/6)) > drand(90)) link.l3.go = "war_indian_3_1";
+				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/6)+makeint(GetSummonSkillFromName(pchar, SKILL_FORTUNE)/6)) > hrand(90)) link.l3.go = "war_indian_3_1";
 				else link.l3.go = "war_indian_3_2";
 			}
 		break;
@@ -152,16 +152,16 @@ void ProcessDialogEvent()
 		
 		case "gun_1":
 			npchar.quest.gun = "pistol1";
-			if (drand(1) == 0)
+			if (hrand(1) == 0)
 			{
 				npchar.quest.item = "potion"+(rand(2)+2);
-				iTotalTemp = drand(1)+1;
+				iTotalTemp = hrand(1)+1;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" пузырек хороший целебный зелье";
 			}
 			else
 			{
-				npchar.quest.item = "jewelry"+(drand(9)+14);
-				iTotalTemp = drand(2)+1;
+				npchar.quest.item = "jewelry"+(hrand(9)+14);
+				iTotalTemp = hrand(2)+1;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" вот этот красивый камень";
 			}
 			dialog.text = "О-ей! Мы дать тебе за него "+sText+".";
@@ -173,16 +173,16 @@ void ProcessDialogEvent()
 		
 		case "gun_2":
 			npchar.quest.gun = "pistol2";
-			if (drand(3) < 2)
+			if (hrand(3) < 2)
 			{
 				npchar.quest.item = "potion"+(rand(2)+2);
-				iTotalTemp = drand(2)+2;
+				iTotalTemp = hrand(2)+2;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" пузырек хороший целебный зелье";
 			}
 			else
 			{
-				npchar.quest.item = "jewelry"+(drand(3)+1);
-				iTotalTemp = drand(2)+2;
+				npchar.quest.item = "jewelry"+(hrand(3)+1);
+				iTotalTemp = hrand(2)+2;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" вот этот красивый камень";
 			}
 			dialog.text = "О-ей! Хитрый оружие... Мы дать тебе за него "+sText+".";
@@ -194,17 +194,17 @@ void ProcessDialogEvent()
 		
 		case "gun_3":
 			npchar.quest.gun = "pistol3";
-			if (drand(5) < 3)
+			if (hrand(5) < 3)
 			{
 				qty = rand(1)+2;
 				npchar.quest.item = "jewelry5"+qty;
-				iTotalTemp = drand(6)+qty*15;
+				iTotalTemp = hrand(6)+qty*15;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" вот этот красивый жемчужина";
 			}
 			else
 			{
-				npchar.quest.item = "jewelry"+(drand(2)+2);
-				iTotalTemp = drand(2)+5;
+				npchar.quest.item = "jewelry"+(hrand(2)+2);
+				iTotalTemp = hrand(2)+5;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" вот этот красивый камень";
 			}
 			dialog.text = "О-ей! Это сильный оружие! Бить сразу много-много врагов! Мы дать тебе за него "+sText+".";
@@ -216,16 +216,16 @@ void ProcessDialogEvent()
 		
 		case "gun_4":
 			npchar.quest.gun = "pistol4";
-			if (drand(9) < 8)
+			if (hrand(9) < 8)
 			{
 				qty = rand(1)+1;
 				npchar.quest.item = "jewelry"+(qty+4);
-				iTotalTemp = drand(10)+qty*30;
+				iTotalTemp = hrand(10)+qty*30;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" кусок этот металл, который бледнолицый любить больше жизни";
 			}
 			else
 			{
-				npchar.quest.item = "obereg_"+(drand(10)+1);
+				npchar.quest.item = "obereg_"+(hrand(10)+1);
 				iTotalTemp = 1;
 				sText = "вот этот амулет";
 			}
@@ -238,27 +238,27 @@ void ProcessDialogEvent()
 		
 		case "gun_5":
 			npchar.quest.gun = "pistol5";
-			if (drand(7) < 7)
+			if (hrand(7) < 7)
 			{
-				if (drand(10) < 8)
+				if (hrand(10) < 8)
 				{
 					npchar.quest.item = "jewelry7";
-					iTotalTemp = 2+drand(1);
+					iTotalTemp = 2+hrand(1);
 				}
 				else
 				{
 					npchar.quest.item = "jewelry8";
-					iTotalTemp = drand(4)+10;
+					iTotalTemp = hrand(4)+10;
 				}
-				qty = drand(1)+1;
+				qty = hrand(1)+1;
 				npchar.quest.item = "jewelry"+(qty+6);
 				if (qty == 1) iTotalTemp = 2;
-				else iTotalTemp = drand(5)+qty*15;
+				else iTotalTemp = hrand(5)+qty*15;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" вот этот красивый и ценный каменный смола";
 			}
 			else
 			{
-				npchar.quest.item = "indian_"+(drand(10)+1);
+				npchar.quest.item = "indian_"+(hrand(10)+1);
 				iTotalTemp = 1;
 				sText = "вот этот амулет";
 			}
@@ -271,16 +271,16 @@ void ProcessDialogEvent()
 		
 		case "gun_6":
 			npchar.quest.gun = "pistol6";
-			if (drand(9) < 8)
+			if (hrand(9) < 8)
 			{
 				qty = rand(1)+1;
 				npchar.quest.item = "jewelry"+(qty+4);
-				iTotalTemp = drand(8)+qty*20;
+				iTotalTemp = hrand(8)+qty*20;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" кусок этот металл, который бледнолицый любить больше жизни";
 			}
 			else
 			{
-				npchar.quest.item = "amulet_"+(drand(10)+1);
+				npchar.quest.item = "amulet_"+(hrand(10)+1);
 				iTotalTemp = 1;
 				sText = "вот этот амулет";
 			}
@@ -299,7 +299,7 @@ void ProcessDialogEvent()
 			//Log_Info("Вы отдали "+XI_ConvertString(npchar.quest.gun)+"");
 			//Log_Info("Вы получили "+XI_ConvertString(npchar.quest.item)+" в количестве "+FindRussianQtyString(iTotalTemp)+"");
 			PlaySound("interface\important_item.wav");
-			if (sti(npchar.quest.count) > 3+drand(2));
+			if (sti(npchar.quest.count) > 3+hrand(2));
 			{
 				dialog.text = "Хорошо. Вот твой товар. Больше мы не менять. Приносить потом. Чем лучше огненный оружие - тем дороже мы его купить. Ступай!";
 				link.l1 = "Прощай, краснокожий воин.";

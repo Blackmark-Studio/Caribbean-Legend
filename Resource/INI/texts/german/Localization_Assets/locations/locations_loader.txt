@@ -1,0 +1,12 @@
+locations_loader_1
+{
+Erster Besuch ~
+}
+locations_loader_2
+{
+Alle Kolonien besucht!
+}
+locations_loader_3
+{
+Geheimnisvoller Ort besucht!
+}

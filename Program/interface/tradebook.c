@@ -342,7 +342,7 @@ void FillPriceListTownSorted(string _tabName)
 	AlphaColonies[z] = "Marigo";          z = z + 1;
     AlphaColonies[z] = "Pirates";         z = z + 1;
 	
-	AlphaColonies[z] = "Minentown";       z = z + 1;
+	AlphaColonies[z] = "LosTeques";       z = z + 1;
 	AlphaColonies[z] = "Terks";           z = z + 1;
     AlphaColonies[z] = "Dominica";        z = z + 1;
     AlphaColonies[z] = "Pearl";           z = z + 1;
@@ -706,7 +706,7 @@ void FillPriceListClockwiseSort(string _tabName)
     OurColonies[i] = "Caiman";          i = i + 1;
     
     OurColonies[i] = "Tenotchitlan";    i = i + 1;
-    OurColonies[i] = "Minentown";       i = i + 1;
+    OurColonies[i] = "LosTeques";       i = i + 1;
     OurColonies[i] = "LostShipsCity";   i = i + 1;
     OurColonies[i] = "KhaelRoa";        i = i + 1;
     OurColonies[i] = "Ksochitam";       i = i + 1;

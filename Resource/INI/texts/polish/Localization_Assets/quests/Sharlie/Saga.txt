@@ -23,12 +23,12 @@ Donovan
 
 Saga_6
 {
-Exploration mode: timer extended. Complete the quest!
+Tryb eksploracji: wydłużony czas. Ukończ zadanie!
 }
 
 Saga_7
 {
-Helen McArthur died of calenture!
+Helen McArthur zmarła na gorączke tropikalną
 }
 
 Saga_8
@@ -69,7 +69,7 @@ Saga_15
 
 Saga_16
 {
-Giant crab
+Wielki Krab
 }
 Saga_17
 {
@@ -87,57 +87,57 @@ Barbier
 
 Saga_20
 {
-There are rumors that the Admiral's jailer, Chad Capper, has disappeared without a trace. Maybe the Shark gave him a secret mission?
+Krążą plotki, że strażnik admirała, Chad Capper, zniknął bez śladu. Może Shark zlecił mu tajną misję?
 }
 
 Saga_21
 {
-There are rumors that the Admiral's jailer, Chad Capper, has disappeared without a trace. Maybe the Shark gave him a secret mission?
+Krążą plotki, że strażnik admirała, Chad Capper, zniknął bez śladu. Może Shark zlecił mu tajną misję?
 }
 
 Saga_22
 {
-Have you heard the news? The rivados sorcerer, old Chimiset, was hacked to death in prison in his cage. They say it was done by the Admiral's men. Black Eddie is just furious...
+Słyszałeś wieści? Czarodziej rivados, stary Chimiset, został zasztyletowany na śmierć w więzieniu w swojej klatce. Mówią, że zrobili to ludzie Admirała. Czarny Eddie jest po prostu wściekły...
 }
 
 Saga_23
 {
-The sorcerer Rivados, Chimiset, was killed. Oddly enough, they suspect not the narwhals, but the people of the Shark. The Rivados are very angry with the admiral ...
+Czarodziej Rivados, Chimiset, został zabity. Co dziwne, podejrzewają nie narwale, ale ludzi od Sharka. Rivados są bardzo źli na admirała...
 }
 
 Saga_24
 {
-The admiral's prison is turning into a murder scene: first Alan Milrow, now Chimiset. Yes, the admiral cracks down hard on his opponents.
+Więzienie admirała zamienia się w scenę morderstwa: najpierw Alan Milrow, teraz Chimiset. Tak, admirał ostro rozprawia się ze swoimi przeciwnikami.
 }
 
 Saga_25
 {
-Red Mary is in danger. You have only 100 seconds to find and help her!
+Czerwona Mary jest w niebezpieczeństwie. Masz tylko 100 sekund, aby ją znaleźć i pomóc!
 }
 
 Saga_26
 {
-Wait! I should talk to Mary before leaving the Island. She won't forgive me if I dissappear without warning her.
+Chwila! Powinienem porozmawiać z Mary, zanim opuszczę wyspę. Nie wybaczy mi, jeśli zniknę bez ostrzeżenia.
 }
 
 Saga_27
 {
-But I should talk to Mary before leaving the Island. She won't forgive me if I dissappear without warning her.
+Powinienem porozmawiać z Mary, zanim opuszczę Wyspę. Nie wybaczy mi, jeśli zniknę bez ostrzeżenia.
 }
 
 Saga_28
 {
-You can not pass through the Island's reefs without sailing directions!
+Nie można przepłynąć przez rafy wyspy bez wskazówek dotyczących żeglugi!
 }
 
 Saga_29
 {
-You can not come close to the Island - your ships are too big!
+Nie możesz zbliżyć się do wyspy - twoje statki są za duże!
 }
 
 Saga_30
 {
-An hour passed...@<NewStr()>Silk was loaded on your vessel
+Mineła godzina...@<NewStr()>Jedwab został załadowany na twój statek
 }
 
 Saga_31
@@ -151,12 +151,12 @@ Morelle
 
 Saga_33
 {
-You have discovered Morel's hidden stash
+Odkryłeś ukrytą skrytkę Morela
 }
 
 Saga_34
 {
-Goods were loaded on the ship
+Towary załadowano na statek
 }
 
 Saga_35
@@ -217,21 +217,21 @@ Saga_46
 
 Saga_47
 {
-Mine has been dropped!
+Mina została zrzucona!
 }
 Saga_48
 {
-You have only @<sti(fTemp)> to get away!
+Masz tylko @<sti(fTemp)> aby się oddalić!
 }
 
 Saga_49
 {
-You failed to avoid the explosion!
+Nie udało Ci się uniknąć eksplozji!
 }
 
 Saga_50
 {
-Yeah, we didn't go greedy on gunpowder there! Boomed so loud that they have probably heard it even at Tortuga. The frigate got her powder supplies detonated and her captain went to the bottom along with his ship in no time.
+Tak, nie byliśmy chciwi wobec prochu! Huknęło tak głośno, że prawdopodobnie słyszeli to nawet na Tortudze. Fregata zdetonowała swoje zapasy prochu, a jej kapitan poszedł na dno wraz ze swoim statkiem w mgnieniu oka.
 }
 
 Saga_51
@@ -241,32 +241,32 @@ Centurion
 
 Saga_52
 {
-Wait! It won't hurt to ask for Mary's advice, she did help with the bomb last time! Her bright head may produce some idea again...
+Chwila! Nie zaszkodzi poprosić o radę Mary, ostatnio pomogła z bombą! Jej pomysłowa głowa może znów podsunąć jakiś pomysł...
 }
 
 Saga_53
 {
-Eh, I wish Mary were here... She would have made something up for sure...
+Ech, szkoda, że ​​Mary tu nie ma... Na pewno by coś wymyśliła...
 }
 
 Saga_54
 {
-Wait! It won't hurt to ask for Helen's advice, she did help with the bomb last time! Her bright head may produce some idea again...
+Chwila! Nie zaszkodzi poprosić Helen o radę, ostatnio pomogła z bombą! Jej pomysłowa głowa może znów podsunąć jakiś pomysł...
 }
 
 Saga_55
 {
-Pirates recognized your true identity!
+Piraci rozpoznali twoją prawdziwą tożsamość!
 }
 
 Saga_56
 {
-Charges have been thrown!
+Ładunki zostały podłożone!
 }
 
 Saga_57
 {
-Charges will explode in @<sti(fTemp)> seconds!
+Ładunki wybuchną w ciągu @<sti(fTemp)> sekund!
 }
 
 Saga_58
@@ -308,27 +308,27 @@ Saga_65
 
 Saga_66
 {
-A critical hit of chain shots!
+Trafienie krytyczne kulami łańcuchowymi!
 }
 
 Saga_67
 {
-I have found a note with coordinates in Milligan's cabin. There is a mysterious buyer waiting. I can sail to him and, perhaps, make a good coin. Or I can deliver the cargo to Svensson.
+Znalazłem notatkę ze współrzędnymi w kabinie Milligana. Czeka tam tajemniczy kupiec. Mogę do niego popłynąć i, być może, zarobić dobrą monetę. Albo mogę dostarczyć ładunek Svenssonowi.
 }
 
 Saga_68
 {
-Time to return to Jan Svensson.
+Pora wracać do Jana Svenssona.
 }
 
 Saga_69
 {
-Boat
+Łódka
 }
 
 Saga_70
 {
-Pole Molligan is attacking you!
+Pole Molligan zaatakował cię!
 }
 
 Saga_71
@@ -356,7 +356,7 @@ Bald Maggy
 
 Saga_76
 {
-Raymond Baker is onboard
+Raymond Backer jest na pokładzie
 }
 
 Saga_77
@@ -388,12 +388,12 @@ Fackman
 
 Saga_83
 {
-Courier lugger from Caracas
+Lugier kurierski z Karakasu
 }
 
 Saga_84
 {
-Exploration mode: timer is disabled.
+Tryb eksploracji: licznik czasu jest wyłączony.
 }
 
 Saga_85
@@ -407,7 +407,7 @@ Dodson
 
 Saga_87
 {
-The Spanish Golden Convoy is on the horizon!
+Hiszpański Złoty Konwój już na horyzoncie!
 }
 
 Saga_88
@@ -422,32 +422,32 @@ San Raphael
 
 Saga_90
 {
-We managed to get away from the Spanish security squadron and leave them with their noses! It's alright, they will suffer: they still have a lot of wealth...
+Udało nam się uciec hiszpańskiej eskadrze bezpieczeństwa i zostawić ich z nosami! Wszystko w porządku, jeszcze będą cierpieć: wciąż mają dużo bogactwa...
 }
 
 Saga_91
 {
-We managed to get away from the Spanish security squadron and leave them with a nose! However, before that we beat them up, hehe. Never mind, tolerate: they still have a lot of wealth ...
+Udało nam się uciec hiszpańskiej eskadrze bezpieczeństwa i zostawić ich z nosem! Jednak przedtem ich pobiliśmy, hehe. Nieważne, tolerować: wciąż mają dużo bogactwa...
 }
 
 Saga_92
 {
-We sank the entire escort squadron! Let them think carefully before messing with us!
+Zatopiliśmy całą eskadrę eskortową! Niech się dobrze zastanowią, zanim zaczną z nami zadzierać!
 }
 
 Saga_93
 {
-Jose Dios made copies of excellent maps.
+Jose Dios wykonał kopie doskonałych map.
 }
 
 Saga_94
 {
-Jose Dios made a copy of the Excellent Map of the Archipelago.
+Jose Dios sporządził kopię Doskonałej mapy archipelagu.
 }
 
 Saga_95
 {
-One day passed...@<NewStr()>Silver was put in your hold
+Minął jeden dzień...@<NewStr()>Srebro zostało przeniesione do twojej ładowni
 }
 
 Saga_96
@@ -461,76 +461,76 @@ Saga_97
 
 Saga_98
 {
-@<iTemp> hours passed...
+Mineło @<iTemp> godzin...
 }
 
 Saga_99
 {
-They say that our admiral has killed Alan Milrow, a head of Narwals. They are very angry with the pirates now...
+Mówią, że nasz admirał zabił Alana Milrowa, szefa Narwalsów. Teraz są bardzo źli na piratów...
 }
 
 Saga_100
 {
-Red Mary completely gave up after the tragic death of her boyfriend Alan Milrow. She's sitting in her cabin of 'Ceres Smithy' and crying every night... Poor girl.
+Czerwona Mary całkowicie się załamała po tragicznej śmierci swojego chłopaka Alana Milrowa. Siedzi w swojej kabinie „Ceres Smithy” i płacze każdej nocy... Biedna dziewczyna.
 }
 
 Saga_101
 {
-They have murdered a head of Narwals right in the prison. Creepy act, I'll tell ya. To kill a helpless man just like that...
+Zamordowali głowę Narwalsów w więzieniu. Straszny czyn, mówię wam. Zabić bezbronnego człowieka tak po prostu...
 }
 
 Saga_102
 {
-Hear, hear! Alan got into the admiral's prison, spent a few months in a cage for and then was killed without any trial. And our eccentric Red Mary is completely lost in her cabin of 'Ceres Smithy'. Poor girl, crying every night. Used to be such a joyful bird!
+Słuchajcie, słuchajcie! Alan trafił do więzienia admirała, spędził kilka miesięcy w klatce, po czym został zabity bez żadnego procesu. A nasza ekscentryczna Czerwona Mary jest całkowicie zagubiona w swojej kajucie „Ceres Smithy”. Biedna dziewczyna, płacze co każdą noc z tego powodu. Kiedyś była takim radosnym ptaszkiem!
 }
 
 Saga_103
 {
-Использовано зелье команчей
+Użyto eliksiru Komanczów
 }
 Saga_104
 {
-Вы чувствуете себя полностью излеченным!
+Czujesz się całkowicie wyleczony!
 }
 
 Saga_105
 {
-They say that Adolf Barbier is lost. Yeah, easy money don't do good to the man...
+Mówią, że Adolf Barbier jest zaginął. Tak, łatwe pieniądze nie wychodzą mu na dobre...
 }
 
 Saga_106
 {
-Do you know where is Adolf Barbier? He had disappeared right after he got money and a new cabin...
+Czy wiesz gdzie jest Adolf Barbier? Zniknął zaraz po tym jak dostał pieniądze i nową kajute...
 }
 
 Saga_107
 {
-Odd things happen here. This madcap Red Mary had disappeared along with Chad Kapper. I am confident that it was Rivados' doing. They avenged their wizard...
+Tutaj dzieją się dziwne rzeczy. Ta szalona Red Mary zniknęła wraz z Chadem Kapperem. Jestem pewien, że to sprawka Rivadosa. Pomścili swojego czarodzieja...
 }
 
 Saga_108
 {
-Now it is Red May lost. Likely dead, that is what happens when you screw with Rivados. I am sure that they are responsible for Chad's and Mary's disappearance.
+Teraz zagineła Red Mary. Prawdopodobnie martwa, tak się dzieje, gdy zadziera się z Rivadosem. Jestem pewien, że to oni są odpowiedzialni za zniknięcie Chada i Mary.
 }
 
 Saga_109
 {
-They say that odd noises were coming from 'Caroline' last night, someone was fighting there and they heard a woman's pre-death cry. I believe that this explains the disappearance of May Casper. Poor girl! I am sure, that we shall never see her again...
+Mówią, że wczoraj wieczorem z „Caroline” dochodziły dziwne dźwięki, ktoś tam walczył i usłyszeli krzyk kobiety przed śmiercią. Wierzę, że to wyjaśnia zniknięcie Mary Casper. Biedna dziewczyna! Jestem pewien, że nigdy jej już nie zobaczymy...
 }
 
 Saga_110
 {
-Three hours passed...
+Mineły trzy godziny...
 }
 
 Saga_111
 {
-Next morning...
+Następnego ranka...
 }
 
 Saga_112
 {
-Giant crab
+Wielki Krab
 }
 Saga_113
 {
@@ -539,27 +539,27 @@ Saga_113
 
 Saga_114
 {
-You have found the right crate@<NewStr()>The captain's gold was discovered!
+Znalazłeś odpowiednią skrzynię@<NewStr()>Złoto kapitana zostało odkryte!
 }
 
 Saga_115
 {
-Jessica has taken away your ability to run!
+Jessica odebrała ci możliwość biegania!
 }
 
 Saga_116
 {
-Jessica has absorbed your strengths - all weapon skills were dropped by 30 points!
+Jessica wchłonęła twoją moc - wszystkie umiejętności władania bronią zostały obniżone o 30 punktów!
 }
 
 Saga_117
 {
-Jessica has absorbed your agility - the energy is now 20 points lower!
+Jessica wchłonęła Twoją zwinność - energia jest teraz o 20 punktów niższa!
 }
 
 Saga_118
 {
-You have spent hours praying...@<NewStr()>Candles died out...
+Spędziłeś długie godziny na modlitwie...@<NewStr()>Wszystkie świece wypaliły się...
 }
 
 Saga_119
@@ -573,5 +573,9 @@ Rose
 
 Saga_121
 {
-The trial went through!
+Proces się odbył!
+}
+Saga_122
+{
+Minęła godzina...@<NewStr()>Dotarłeś do wraku statku
 }

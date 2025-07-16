@@ -23,12 +23,12 @@ Rainbow
 
 HelenDrinking_6
 {
-Is that a dream? Where is everyone?
+Czy ja śnię? Gdzie się wszyscy podziali?
 }
 
 HelenDrinking_7
 {
-I should see Jan and apologize.
+Powinienem widzieć się z Janem i przeprosić.
 }
 
 HelenDrinking_8
@@ -60,7 +60,7 @@ HelenDrinking_13
 
 HelenDrinking_14
 {
-And how sickening it is to have two homes. Oh, Mary... After everything that happened, what should we do now, the three of us?
+I jak okropne jest mieć dwa domy. Och, Mary... Po wszystkim, co się wydarzyło, co powinniśmy teraz zrobić, my troje?
 }
 
 HelenDrinking_15
@@ -83,24 +83,24 @@ Small
 
 HelenDrinking_19
 {
-Helen approves
+Helen zgadza się
 }
 HelenDrinking_20
 {
-Helen disapproves
+Helen nie zgadza się
 }
 
 HelenDrinking_21
 {
-Ironwood delivered to your hold!
+Drewno twarde dostarczone do Twojej ładowni!
 }
 
 HelenDrinking_22
 {
-~ got +1 to ~
+~ zdobywa +1 do ~
 }
 
 HelenDrinking_23
 {
-~ got +1 to ~
+~ zdobywa +1 do ~
 }

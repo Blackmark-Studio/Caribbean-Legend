@@ -1,5 +1,5 @@
 #QUEST JusticeOnSale
-Zadanie poboczne: Sprawiedliwość na Sprzedaż
+Zadanie Poboczne: Przemytnik w Opałach
 
 #TEXT 1
 Zgodziłem się pomóc grupie przemytników uwolnić ich kapitana, który siedzi w więzieniu w @. Z pewnością byłoby lepiej, gdybym nie brudził sobie rąk tą sprawą, ale zaoferowali mi niezłą nagrodę. Powinienem porozmawiać z komendantem... albo może lepiej wydać tych rzezimieszków władzom?
@@ -23,7 +23,7 @@ Część przemytników zdołała uciec. Gubernator z pewnością nie będzie zad
 Wszyscy przemytnicy dostali to, na co zasłużyli. Teraz muszę zameldować gubernatorowi i sprawa będzie zamknięta.
 
 #QUEST AffairOfHonor
-Zadanie poboczne: Sprawa Honorowa
+Zadanie Poboczne: Sprawa Honorowa
 
 #TEXT 1
 Przez przypadek spotkałem bardzo nieuprzejmego oficera. Będę musiał nauczyć go dobrych manier i obronić honor dziewczyny. Spotkamy się za dwie godziny przy latarni morskiej.
@@ -101,43 +101,43 @@ Zasadzka! Powinienem się tego domyślić. Teraz plantator ma solidne argumenty 
 Ciekawe, czy mogę teraz liczyć na zniżki u lokalnych przemytników?
 
 #QUEST BurntShipQuest
-Side Job: Ship Replacement in @<cityName>
+Zadanie Poboczne: Statek Zamienny w @<cityName>
 #TEXT 1
-Harbor master @<portmanName> from @<cityName> asked me to find an extraordinary ship with a specific characteristic @<text>. He offered me a very decent reward. I have half a year at my disposal.
+Nadzorca portu @<portmanName> z @<cityName> poprosił mnie o znalezienie niezwykłego statku o określonej charakterystyce @<text>. Zaoferował mi bardzo przyzwoitą nagrodę. Mam do dyspozycji pół roku.
 #TEXT 2
-Well, it seems that harbor master @<portmanName> resolved all his issues by himself. I don't think he came off as a loser, anyway.
+Cóż, wygląda na to, że nadzorca portu @<portmanName> rozwiązał wszystkie swoje problemy sam. Nie sądzę, żeby wyszedł na przegranego.
 #TEXT 3
-The harbor master was not so simple and he gave the insurance money to the usurer. Well, I still have the ship. Let's see how this works out.
+Nadzorca portu nie był taki prosty i oddał pieniądze z ubezpieczenia lichwiarzowi. Cóż, nadal mam statek. Zobaczymy, jak to się potoczy.
 #TEXT 4
-I have received a reward for a unique ship - @<money> pesos. For such money, two similar ships can be bought. I must admit that the harbor master surely knows his business and can persuade the insurance office.
+Dostałem nagrodę za wyjątkowy statek - @<money> pesos. Za takie pieniądze można kupić dwa podobne statki. Muszę przyznać, że kapitan portu na pewno zna się na rzeczy i potrafi przekonać biuro ubezpieczeniowe.
 #TEXT 5
-I decided to keep the ship for myself. It seemed to me that @<money> pesos is just too small a price for such a gorgeous ship.
+Postanowiłem zatrzymać statek dla siebie. Wydawało mi się, że @<money> pesos to po prostu za mała cena za tak wspaniały statek.
 
 #QUEST GiveShipLetters
-Side Job: Lost and Found
+Zadanie Poboczne: Zguba i Znalazca
 #TEXT 1
-A curious find! Someone was either in a hurry or just too absentminded - either way, he lost a full set of a ship's documents. I am certain that their owner will soon announce his loss.
+Ciekawe znalezisko! Ktoś się spieszył lub był po prostu zbyt roztargniony - tak czy inaczej, zgubił komplet dokumentów statku. Jestem pewien, że ich właściciel wkrótce ogłosi swoją stratę.
 #TEXT 2
-Well, I did a favor for nice people, and it didn't cost me any effort.
+No cóż, zrobiłem przysługę miłym ludziom i nie kosztowało mnie to żadnego wysiłku.
 #TEXT 3
-Well, the world is not without good people. It's great that the owner will soon recover his loss!
+Cóż, świat nie jest pozbawiony dobrych ludzi. Wspaniale, że właściciel wkrótce odzyska swoją stratę!
 #TEXT 4
-Well, the world is not without good people. It was lucky that I dropped in at the shipyard.
+Cóż, świat nie jest pozbawiony dobrych ludzi. Miałem szczęście, że wpadłem do stoczni.
 #TEXT 5
-The reward was small, but I spent almost no effort, anyway.
+Nagroda była niewielka, ale i tak nie włożyłem w to prawie żadnego wysiłku.
 #TEXT 6
-Perhaps, it's for the best. I gained little, but at least I don't have to bother myself with these documents now.
+Może to i lepiej. Niewiele zyskałem, ale przynajmniej nie muszę się już przejmować tymi dokumentami.
 #TEXT 7
-It's great when the merchant and the merchandise find each other so fortunately!
+Świetnie, gdy kupiec i towar odnajdują się tak szczęśliwie!
 #TEXT 8
-It's great when your favor is rewarded accordingly!
+Świetnie, gdy Twoja przysługa zostaje odpowiednio wynagrodzona!
 #TEXT 9
-Unicuique secundum opera eius! The documents will soon return to their owner - and money has already slipped into my pocket.
+Unicuique secundum opera eius! Dokumenty wkrótce wrócą do właściciela - a pieniądze już wślizgnęły się do mojej kieszeni.
 #TEXT 10
-I should have delivered these documents earlier, that way their owner wouldn't have to obtain a new set of documents.
+Powinienem był dostarczyć te dokumenty wcześniej, dzięki czemu ich właściciel nie musiałby ubiegać się o nowy zestaw dokumentów.
 
 #QUEST ReasonToFast
-Zadanie poboczne: Powód do pośpiechu
+Zadanie Poboczne: Powód Do Pośpiechu
 
 #TEXT 1
 Śliczna dziewczyna wygadała się, że pewien oficer z garnizonu tak bardzo spieszył się do jakiejś zatoki, że nawet odciągnęło go to od jego zabaw. Może warto to sprawdzić?
@@ -218,7 +218,7 @@ Zatopiłem piracki statek, na którym koordynowano całą operację z udziałem 
 Udało mi się wyjść z tej afery z patrolowcem bez szwanku. Wątpię, by piraci ścigali mnie w nieskończoność – pewnie mają ważniejsze sprawy.
 
 #QUEST PiratesOnUninhabited
-Zadanie poboczne: Ocaleni z @<shoreName>
+Zadanie Poboczne: Ocaleni z @<shoreName>
 
 #TEXT 1
 Na @<shoreName> zabrałem na pokład @<count> marynarzy z rozbitego pirackiego @<shipTypeName>. Poprosili mnie o dostarczenie ich do jakiejkolwiek zamieszkanej zatoczki. Cóż, rozumiem ich – w końcu są na bakier z prawem...
@@ -268,9 +268,8 @@ Musiałem zatopić @<ship> i pozbyć się piratów. Myślę, że nikt się tym s
 #TEXT 16
 W ferworze walki zatopiłem @<ship>. Musiałem zrekompensować jej koszt piratom. W końcu nie mogłem zostawić ich bez żadnych środków do życia, prawda?
 
-
 #QUEST ShipWrecked
-Zadanie poboczne: Rozbitkowie
+Zadanie Poboczne: Rozbitkowie
 
 #TEXT 1
 Na @<shoreName> zabrałem na pokład @<count> marynarzy z rozbitego @<shipTypeName> '@<ShipName>'. Powinienem dostarczyć ich do dowolnej osady należącej do @<sNation>.
@@ -332,108 +331,108 @@ Zająłem @<ShipType> '@<ShipName>' i zgodnie z naszą umową zwróciłem go kap
 #TEXT 19
 W ferworze walki @<ShipType> '@<ShipName>' został zatopiony, a zawartość jego ładowni oczywiście przepadła. Bardzo mi szkoda kapitana @<sName>. Ale cóż, stało się...
 
-
 QUEST JungleGirl
-Zadanie poboczne: Dama w dżungli
+Zadanie Poboczne: Dama w Dżungli
 
-#TEKST 1
+#TEXT 1
 Obiecałem @<sName> z osady @<sCity>, że przyniosę jej @<sText1> dużych i @<sText2> małych pereł na naszyjnik dla jej pani. Mam tylko 10 dni – inaczej cały mój wysiłek pójdzie na marne.
 
-#TEKST 2
+#TEXT 2
 W zamian za perły @<sName> dała mi bardzo ładny amulet. Rzeczywiście, nigdy nie wiadomo, gdzie coś stracisz, a gdzie coś zyskasz.
 
-#TEKST 3
+#TEXT 3
 Nie udało mi się zebrać wystarczającej liczby pereł dla @<sName>. Szkoda mi tej dziewczyny, ale to w końcu jej wina – nie powinna była podejmować pracy u tak kapryśnej pani...
 
-#TEKST 4
+#TEXT 4
 @<sName> twierdzi, że zna miejsce, gdzie jej ojciec, słynny pirat @<sPirateName>, ukrył swój skarb. To @<sTreasureLoc>. Powinniśmy zejść na ląd w @<sShore>. Gdy znajdziemy skarb, będę musiał odwieźć ją do osady @<sCity>.
 
-#TEKST 5
+#TEXT 5
 @<sName> nie żyje, a ja nie znam miejsca, w którym ukryto skrzynie. Szkoda, ale tym razem nie miałem szczęścia.
 
-#TEKST 5_1
+#TEXT 5_1
 Zdecydowałem, że nie będę się trudzić poszukiwaniem skarbu ojca @<sName>. Może to zrobić sama, jeśli chce.
 
-#TEKST 6
+#TEXT 6
 Skarb @<sPirateName> był naprawdę ogromny. Otrzymałem swoją połowę. Teraz muszę odwieźć @<sName> z powrotem do osady @<sCity>.
 
-#TEKST 7
+#TEXT 7
 @<sName> zginęła. Szkoda dziewczyny, dopiero co stała się bogata... Co za głupia śmierć...
 
-#TEKST 8
+#TEXT 8
 Odwiozłem @<sName> do domu razem z jej skarbem. W ramach wdzięczności podarowała mi bardzo ładny prezent... Naprawdę miło jest uszczęśliwiać ludzi...
 
-#TEKST 9
+#TEXT 9
 Córka @<sText> z osady @<sCity> uciekła z domu. Twierdziła, że nienawidzi swojego narzeczonego, syna lichwiarza, i błagała mnie, bym zabrał ją do jej wybranka, @<sLover>. Co mam z nią zrobić? Nie chciałbym zrujnować jej życia, ale rozumiem też jej rodziców...
 
-#TEKST 10
+#TEXT 10
 @<sName> nie żyje... Tak to się kończy, gdy młodzi nie słuchają swoich rodziców...
 
-#TEKST 11
+#TEXT 11
 Przekazałem uciekinierkę straży. Niech oni zdecydują, co z nią zrobić...
 
-#TEKST 12
+#TEXT 12
 W osadzie @<sCity> dziewczyna również mi uciekła. Cóż, mogę tylko mieć nadzieję, że znajdzie swoje szczęście, dla którego jest gotowa poświęcić wszystko. Ach, ta młodość...
 
-#TEKST 13
+#TEXT 13
 Odwiozłem uciekinierkę do jej ojca i jestem pewien, że to była słuszna decyzja. Co może być gorszego niż rozpacz rodziców, którzy stracili swoje jedyne dziecko? Ojciec hojnie mnie wynagrodził.
 
-#TEKST 14
+#TEXT 14
 Zabrałem dziewczynę do jej ukochanego. Teraz mogą sobie radzić sami, nie jestem ich niańką.
 
-#TEKST 15
+#TEXT 15
 Podjąłem się dostarczenia zakochanej pary do miasta @<sCity>, do rodziców jej nowego narzeczonego. Myślę, że to właściwa decyzja.
 
-#TEKST 16
+#TEXT 16
 Dostarczyłem zakochanych tam, gdzie obiecałem. Teraz powinienem udać się do @<sText> i odebrać swoją nagrodę od ojca pana młodego. Ciekawe, jak bardzo ucieszy się na mój widok?
 
-#TEKST 17
+#TEXT 17
 Zdecydowałem, że nie będę niepokoić rodziców pana młodego, na pewno mają ważniejsze sprawy. Poza tym moje koszty w tej sprawie były niewielkie.
 
-#TEKST 18
+#TEXT 18
 Ojciec pana młodego podziękował mi i podarował bardzo przyzwoity prezent... Prawie zazdroszczę tej dwójce młodych zakochanych...
 
-#TEKST 19
+#TEXT 19
 Wydaje się, że zmarnowałem swój czas. Ojciec pana młodego okazał się prawdziwym skąpcem. Prawie współczuję tej młodej parze – żadne z nich nie miało szczęścia do rodziców... Ludzie w tej zapadłej dziurze są bezduszni i myślą tylko o złocie. Mimo wszystko cieszę się, że mogłem pomóc młodym. Zasługują na lepsze życie.
 
-#TEKST 20
+#TEXT 20
 Podjąłem się dostarczenia dziewczyny @<sName>, która uciekła z burdelu w @<sBrothelCity>, do jej rodziców w @<sCity>.
 
-#TEKST 21
+#TEXT 21
 Podjąłem się dostarczenia @<sName>, która uciekła z burdelu, jej tobołka. Muszę go poszukać w pokoju prywatnym. W środku powinny być jakieś pieniądze, dokumenty, porządna suknia i inne rzeczy należące do biednej dziewczyny.
 
-#TEKST 22
+#TEXT 22
 Byłem zbyt zajęty i musiałem zostawić dziewczynę w karczmie. Mam nadzieję, że jest wystarczająco sprytna, by poradzić sobie sama.
 
-#TEKST 23
+#TEXT 23
 Zrobiłem wszystko, co mogłem. Mogę tylko mieć nadzieję, że @<sName> bezpiecznie dotrze do domu.
 
-#TEKST 24
+#TEXT 24
 Dostarczyłem @<sName> do osady @<sCity>. Nie zabrałem jej do rodziców – na pewno mają ważniejsze sprawy...
 
-#TEKST 25
+#TEXT 25
 Odwiozłem @<sName> do domu. W nagrodę otrzymałem porządny rapier oraz satysfakcję moralną.
 
-#TEKST 26
+#TEXT 26
 Odwiozłem @<sName> do domu. W nagrodę otrzymałem wspaniałą muszkiet oraz satysfakcję moralną.
 
-#TEKST 27
+#TEXT 27
 Odwiozłem @<sName> do domu. Jej brat zaproponował mi udział we wspólnym rajdzie przeciwko piratom, ale musiałem odmówić.
 
 QUEST ShipEpidemy
 Wydarzenie: Epidemia
 
-#TEKST 1
+#TEXT 1
 Wygląda na to, że złapałem jakąś infekcję. Najwyraźniej kapitan '@<sShipName>' nie żartował w sprawie epidemii. Muszę ograniczyć kontakt z załogą i w przyszłości być bardziej ostrożny.
 
-#TEKST 2
+#TEXT 2
 Epidemia ustępuje. Odzyskałem apetyt, co oznacza, że wracam do zdrowia, dzięki Bogu.
 
-#TEKST 3
+#TEXT 3
 Na pokładzie wybuchła epidemia. Marynarze umierają z powodu choroby. Kapitan przechwyconego '@<sShipName>', niech sczeźnie w piekle, nie kłamał... Co teraz mamy zrobić? Niech Najświętsza Panienka ma nas w swojej opiece.
 
-#TEKST 4
+#TEXT 4
 Choroba ustępuje. Chwała Najświętszej Matce Bożej! W przyszłości zdecydowanie muszę być ostrożniejszy
+
 #QUEST ChurchGenQuest1
 Zadanie poboczne: @<sCity> i kapłańskie manuskrypty
 
@@ -444,16 +443,16 @@ Kapłan @<sName> zlecił mi zadanie: przynieść cenne rękopisy teozoficzne, kt
 Dorośli mężczyźni, słudzy Boży, a zachowują się jak dzieci! Cóż, najważniejsze, że mam rękopisy! Teraz trzeba je odwieźć do @<sColony>.
 
 #TEXT 3_1
-To niesamowite, jak ludzie usprawiedliwiają swoją nieodpowiedzialność wzniosłymi celami. Jak można było powierzyć tak cenne rzeczy przypadkowej osobie, nie mając żadnej gwarancji? Co za lekkomyślny kapłan... Teraz muszę ścigać tego @<sCapName>, kapitana „@<sShipName>” po całym archipelagu.
+To niesamowite, jak ludzie usprawiedliwiają swoją nieodpowiedzialność wzniosłymi celami. Jak można było powierzyć tak cenne rzeczy przypadkowej osobie, nie mając żadnej gwarancji? Co za lekkomyślny kapłan. . . Teraz muszę ścigać tego @<sCapName>, kapitana „@<sShipName>” po całym archipelagu.
 
 #TEXT 3_2
-Nie będzie łatwo odnaleźć statek, którego nazwy nawet nie znam. Muszę działać szybko, zanim ten bogobojny kapitan pozbędzie się tych cennych ksiąg… Ale najpierw trzeba się dowiedzieć, jakie to ŚWIĘTE imię wypisał @<sCapName> na rufie swojego starego statku.
+Nie będzie łatwo odnaleźć statek, którego nazwy nawet nie znam. Muszę działać szybko, zanim ten bogobojny kapitan pozbędzie się tych cennych ksiąg. . . Ale najpierw trzeba się dowiedzieć, jakie to ŚWIĘTE imię wypisał @<sCapName> na rufie swojego starego statku.
 
 #TEXT 4
 Dlaczego to ja mam ponosić konsekwencje czyichś religijnych impulsów?! Cholera! Mam nadzieję, że w pobliżu kolonii @<sColony> w końcu dopadnę tę starą krypę „@<sShipName>” i jej bogobojnego kapitana, a wtedy odbiorę od niego te dokumenty. Może Pan wybaczy mi przy tej okazji parę grzechów.
 
 #TEXT 5
-Znów pech. Ten @<sName> to naprawdę interesujący typ: kapłan powierzył mu niezwykle cenny ładunek, ale urzędnicy portowi drżą na samo wspomnienie jego imienia. Cóż, zobaczymy, jak się sprawy potoczą, gdy w końcu spotkamy się w @<sColony>…
+Znów pech. Ten @<sName> to naprawdę interesujący typ: kapłan powierzył mu niezwykle cenny ładunek, ale urzędnicy portowi drżą na samo wspomnienie jego imienia. Cóż, zobaczymy, jak się sprawy potoczą, gdy w końcu spotkamy się w @<sColony>. . .
 
 #TEXT 6
 Ten kapitan to naprawdę ciekawa postać. Czas spotkać się z nim twarzą w twarz, odebrać upragnione księgi i dostarczyć je do prawowitego właściciela w @<sColony>.
@@ -462,7 +461,7 @@ Ten kapitan to naprawdę ciekawa postać. Czas spotkać się z nim twarzą w twa
 Dziś przekazałem kapłanowi z @<sColony> jego cenne rękopisy i otrzymałem nagrodę – razem z przestrogą przed śmiertelnym grzechem chciwości.
 
 #TEXT 7_2
-Stary głupiec @<sCapName> zadłużył się w tawernie i zastawił u właściciela cenne księgi i rękopisy. Wydatki, wydatki i jeszcze raz wydatki… Wykupię te rękopisy i w końcu dostarczę je do @<sColony>.
+Stary głupiec @<sCapName> zadłużył się w tawernie i zastawił u właściciela cenne księgi i rękopisy. Wydatki, wydatki i jeszcze raz wydatki. . . Wykupię te rękopisy i w końcu dostarczę je do @<sColony>.
 
 #TEXT 8
 Kolejny wydatek w moim rejestrze: spłaciłem dług starego kaszalota @<sName> w tawernie. Rękopisy kapłana z kolonii @<sColony> zostały wykupione, teraz czas mu je zwrócić – i pokazać mu też mój rachunek!
@@ -474,10 +473,10 @@ Są jeszcze na świecie bezinteresowni właściciele tawern. Spieszę do @<sColo
 Nie przypuszczałem, że tak proste zadanie pochłonie tyle czasu i wysiłku. Cóż, przynajmniej bogobojny kapitan @<sCapName> nie sprawił mi problemów – oddał mi cenne rękopisy i kazał mi się wynosić, co z przyjemnością uczyniłem. Teraz z powrotem do @<sColony>.
 
 #QUEST ChurchGenQuest2
-Zadanie poboczne: Kościelny rabunek w @<sCity>
+Zadanie poboczne: Kościelny Rabunek w @<sCity>
 
 #TEXT 1
-Kradzież kościelnych pieniędzy! Co się dzieje z tym światem?! Podczas gdy ojciec @<sName> złorzeczy na głowy tych bezbożników, ja powinienem podjąć skuteczniejsze działania – jeśli Pan mnie za nie nie wynagrodzi, to przynajmniej zrobi to ksiądz… Złodzieje nie mogli uciec daleko.
+Kradzież kościelnych pieniędzy! Co się dzieje z tym światem?! Podczas gdy ojciec @<sName> złorzeczy na głowy tych bezbożników, ja powinienem podjąć skuteczniejsze działania – jeśli Pan mnie za nie nie wynagrodzi, to przynajmniej zrobi to ksiądz. . . Złodzieje nie mogli uciec daleko.
 
 #TEXT 2
 Ludzie w mieście mówią, że pieniądze skradli lokalni bandyci, którzy byli na tyle sprytni, by się ukryć. Może powinienem odwiedzić ich kryjówkę.
@@ -504,178 +503,178 @@ Złodzieje kościelnych pieniędzy okazali się sprytniejsi, niż myślałem, i 
 Przemytnicy okazali się łatwi do przekupienia. Pomogli złodziejom za pieniądze i zdradzili ich za pieniądze. Dobra, czas na @<sShore>.
 
 #TEXT 10_1
-To dopiero historia… Czy to możliwe, że ojciec @<sName> jest aż tak podstępny? Muszę najpierw z nim porozmawiać – może niesłusznie go podejrzewam…
+To dopiero historia. . . Czy to możliwe, że ojciec @<sName> jest aż tak podstępny? Muszę najpierw z nim porozmawiać – może niesłusznie go podejrzewam. . .
 #TEXT 10_2
-Now that's quite a story... Could Father @<sName> indeed be so treacherous? Well, since I have killed all those scoundrels, no one but the padre himself can now confirm or disprove their words...
+To dopiero historia. . . Czy Ojciec @<sName> rzeczywiście może być tak zdradziecki? Cóż, skoro zabiłem wszystkich tych łobuzów, nikt poza samym padre nie może potwierdzić ani obalić ich słów. . .
 #TEXT 11_1
-Finally, I have found the scoundrels. Surely, this was no Holy Grail, but still... Well, it's time to go back.
+W końcu znalazłem łobuzów. Oczywiście, to nie był Święty Graal, ale mimo wszystko. . . Cóż, czas wracać.
 #TEXT 11_2
-I hope that I did something good and when Doomsday comes, the Almighty will credit it on my account - I shared my belongings with the unfortunate in order to reveal to them the way of righteousness. By the way, I'll need to tell the Father that his church property was likely used for the same purpose as well...
+Mam nadzieję, że zrobiłem coś dobrego i kiedy nadejdzie Sąd Ostateczny, Wszechmogący przypisze to na moje konto - podzieliłem się moimi dobrami z nieszczęśnikami, aby objawić im drogę prawości. A tak przy okazji, będę musiał powiedzieć Ojcu, że jego własność kościelna prawdopodobnie została wykorzystana w tym samym celu. . .
 #TEXT 11_3
-Who could have thought that the church property could be so expensive... Well, at least I got something in exchange for the money. I'll bring the chalice to the padre - perhaps it will soothe his grief for the stolen cash...
+Kto by pomyślał, że majątek kościelny może być tak drogi. . . No cóż, przynajmniej dostałem coś w zamian za pieniądze. Kielich zaniosę księdzu - może ukoi jego żal za skradzioną gotówką. . .
 #TEXT 11_4
-Being poor is no sin... being a liar is! And God has rewarded such nobleness: the scoundrels who defied Him shall be put down, the church property will be saved, and I will receive my due reward!
+Bycie biednym nie jest grzechem. . . bycie kłamcą jest! I Bóg wynagrodził taką szlachetność: łotry, które Mu się sprzeciwiły, zostaną powalone, własność kościoła zostanie uratowana, a ja otrzymam należną mi nagrodę!
 #TEXT 12_1
 Chciałbym wierzyć, że skrucha kapłana z @<sCity> była szczera. Oczywiście, coś straciłem w sensie materialnym, ale moralna satysfakcja mi to wynagradza!
 #TEXT 12_2
-What a twist of events! It turns out that even the priests can fall victim to greed. But, as they say, all is well that ends well. Father @<sName> managed to cope with his temptation and even compensated my expenses.
+Cóż za zwrot akcji! Okazuje się, że nawet księża mogą paść ofiarą chciwości. Ale, jak mówią, wszystko dobre, co się dobrze kończy. Ojciec @<sName> poradził sobie z pokusą i nawet zrekompensował mi wydatki.
 #TEXT 12_3
-What a twist of events! It turns out that even the priests can fall victim to greed. But, as they say, all is well that ends well. Father @<sName> managed to cope with his temptation. But he forgot to compensate my expenses - perhaps he was too excited. I had to remind him about it.
+Cóż za zwrot akcji! Okazuje się, że nawet księża mogą paść ofiarą chciwości. Ale, jak mówią, wszystko dobre, co się dobrze kończy. Ojciec @<sName> poradził sobie ze swoją pokusą. Ale zapomniał zrekompensować mi wydatki - być może był zbyt podekscytowany. Musiałem mu o tym przypomnieć.
 #TEXT 12_4
-In these times driven by greed, the Devil can seduce even the clergy, not to mention the laymen. Well, it might seem stupid, but I didn't take the dirty money of that crook in the soutane.
+W tych czasach, napędzanych chciwością, Diabeł może uwieść nawet duchowieństwo, nie wspominając o świeckich. Cóż, może to wydawać się głupie, ale nie wziąłem brudnych pieniędzy tego oszusta w sutannie.
 #TEXT 12_5
-Nasz Pan jest naprawdę miłosierny, skoro pozwala takim grzesznikom jak ojciec @<sName> oszukiwać swoją łatwowierną trzódkę. Nie jestem aż tak pobłażliwy – chętnie wydałbym go władzom, ale niestety nie mam solidnych dowodów na jego winę… Cóż, dość już dobrych uczynków w imię Pana. Na szczęście udało mi się zmusić go do zwrotu moich wydatków.
+Nasz Pan jest naprawdę miłosierny, skoro pozwala takim grzesznikom jak ojciec @<sName> oszukiwać swoją łatwowierną trzódkę. Nie jestem aż tak pobłażliwy – chętnie wydałbym go władzom, ale niestety nie mam solidnych dowodów na jego winę. . . Cóż, dość już dobrych uczynków w imię Pana. Na szczęście udało mi się zmusić go do zwrotu moich wydatków.
 #TEXT 12_6
-Indeed, our Lord is merciful if He allows sinners like Father @<sName> to deceive their credulous congregation. I am not as good-natured, and I'd be happy to turn in that crook to the authorities - but, unfortunately, I have no solid evidence of his collusion... Well, that's enough good deeds in our Lord's name - all I am left with are expenses and disappointments.
+Rzeczywiście, nasz Pan jest miłosierny, jeśli pozwala grzesznikom takim jak Ojciec @<sName> oszukiwać ich łatwowierną kongregację. Nie jestem tak dobroduszny i chętnie wydałbym tego oszusta władzom - ale niestety nie mam żadnych solidnych dowodów na jego zmowę. . . Cóż, to już dość dobrych uczynków w imię naszego Pana - wszystko, co mi pozostało, to wydatki i rozczarowania.
 #TEXT 12_7
-I still could not cast off my suspicions regarding the priest of @<sCity>. Of course, the word of a priest weighs more than that of a bandit, but this entire story stinks. Well, that's enough good deeds in our Lord's name - all I am left with are expenses and disappointments.
+Nadal nie mogłem pozbyć się podejrzeń co do księdza z @<sCity>. Oczywiście, słowo księdza waży więcej niż słowo bandyty, ale cała ta historia śmierdzi. No cóż, dość dobrych uczynków w imię naszego Pana – pozostały mi tylko wydatki i rozczarowania.
 #TEXT 12_8
-Father accepted the news that all the church money was in the end wasted on booze for the bandits. Well, my expenses haven't paid up as well, if that can be a consolation for him.
+Ojciec przyjął wiadomość, że wszystkie kościelne pieniądze zostały ostatecznie zmarnowane na alkohol dla bandytów. Cóż, moje wydatki również nie pokryły się, jeśli to może być dla niego pocieszeniem.
 #TEXT 12_9
-That was not something a good Christian should have done, but the parish will not become poorer, and my expenses will be covered at least partially. The important thing is that the thieves didn't get a hold of the church coffers.
+To nie było coś, co dobry chrześcijanin powinien był zrobić, ale parafia nie stanie się biedniejsza, a moje wydatki zostaną przynajmniej częściowo pokryte. Ważne jest, że złodzieje nie dostali się do kościelnych kas.
 #TEXT 12_10
-To appropriate the church money and to receive a reward for it is surely not the most virtuous deed, but... If I don't change the rigging, any of the sailors may fall down to death, and this sin will be on my soul... As for the Father, I take a vow to donate to his church three times as much money as I have taken!
+Przywłaszczanie sobie kościelnych pieniędzy i otrzymywanie za to nagrody z pewnością nie jest najbardziej cnotliwym czynem, ale... Jeśli nie zmienię olinowania, którykolwiek z marynarzy może spaść na śmierć, a ten grzech spadnie na moją duszę... A co do Ojca, ślubuję, że przekażę jego kościołowi trzy razy więcej pieniędzy, niż wziąłem!
 #TEXT 12_11
-Will the Lord forgive me? He is the only one who might know why I deceived the openhearted priest? That alone was a sin, but it was even a greater sin to accept money, which he gave me in his limitless kindness to console me.
+Czy Pan mi wybaczy? Tylko On może wiedzieć, dlaczego oszukałem otwartego księdza? To samo w sobie było grzechem, ale jeszcze większym grzechem było przyjęcie pieniędzy, które dał mi w swojej nieograniczonej dobroci, aby mnie pocieszyć.
 #TEXT 12_12
-No money! No glory! All I was left with are filthy insinuations!!! I will never deal with these hypocrites again!
+Żadnych pieniędzy! Żadnej chwały! Wszystko co mi zostało to paskudne insynuacje!!! Nigdy więcej nie będę miał do czynienia z tymi hipokrytami!
 #TEXT 13
 Biblia mówi, że Bóg zsyła nam próby na miarę naszych sił. Cóż, wygląda na to, że moje siły się wyczerpały, a ten ciężar stał się dla mnie zbyt wielki. Mam nadzieję, że ojciec @<sName> zrozumie, gdy powiem mu, że nie podołałem jego misji.
 
-QUEST CaptainComission1
-Side Job: Ostatnia Wola
+#QUEST CaptainComission1
+Zadanie Poboczne: Ostatnia Wola
 
-TEXT 1
+#TEXT 1
 Kapitan @<sShipName>, @<sCapName>, zanim zginął, poprosił mnie, żebym powiedział @<sCharName> z @<sCity>, że nie zdążył wykonać swojej misji. Muszę odnaleźć tego człowieka. Ostatnia wola umierającego powinna zostać uszanowana...
 
-TEXT 2
+#TEXT 2
 Zdecydowałem, że nie będę tracił czasu na drobne sprawy. Z pewnością ten człowiek dawno zapomniał o swojej misji.
 
-TEXT 3
+#TEXT 3
 @<sCharName> zaproponował mi wykupienie swojego jeńca @<sCharType>. Nie zgodziłem się na to, tłumacząc się brakiem czasu.
 
-TEXT 4
+#TEXT 4
 @<sCharName> z @<sCity> poprosił mnie, żebym dostarczył 150 000 pesos do @<sPirateName> w @<sPirateCity>, aby uwolnić jego @<sFamilyType> @<sSlaveName>, trzymanego przez piratów w oczekiwaniu na okup. Kiedy wrócę, otrzymam 40 000 pesos za dobrze wykonaną pracę.
 
-TEXT 5
-Znalazłem się w trudnej sytuacji. Okazało się, że @<sCapName> dostarczał @<sPirateName> w @<sPirateCity> okup za jakiegoś jeńca @<sSlaveName> - 3 skrzynie złota. Ten typ, @<sCharName>, powiedział mi, że jego zadanie nadal obowiązuje. Jeśli nie dostarczę @<sSlaveName> do tawerny w @<sCity> w ciągu 30 dni, obiecał wysłać na mnie łowców nagród... Ale jak mogłem przeoczyć te skrzynie w kajucie zmarłego kapitana?!
+#TEXT 5
+Znalazłem się w trudnej sytuacji. Okazało się, że @<sCapName> dostarczał @<sPirateName> w @<sPirateCity> okup za jakiegoś jeńca @<sSlaveName> - 3 skrzynie złota. Ten typ, @<sCharName>, powiedział mi, że jego zadanie nadal obowiązuje. Jeśli nie dostarczę @<sSlaveName> do karczmy w @<sCity> w ciągu 30 dni, obiecał wysłać na mnie łowców nagród... Ale jak mogłem przeoczyć te skrzynie w kajucie zmarłego kapitana?!
 
-TEXT 6
+#TEXT 6
 Nie udało mi się wykonać zadania @<sCharName>, ale musi mi wybaczyć. W końcu mogłem zginąć tak jak kapitan @<sCapName>.
 
-TEXT 7
+#TEXT 7
 Czas na dostarczenie jeńca minął. Zobaczymy, co teraz zrobi ten groźny @<sCharName>.
 
-TEXT 8
+#TEXT 8
 Postanowiłem odrzucić misję @<sCharName>. Może poczuje się obrażony, ale oddałem mu pieniądze, w końcu.
 
-TEXT 9
+#TEXT 9
 Uwolniłem jeńca. Teraz muszę dostarczyć go do @<sCharName> w @<sCity>.
 
-TEXT 10
+#TEXT 10
 @<sName> znudziło się czekanie na okup i sprzedał swojego jeńca na plantację na Barbadosie. Cóż, chyba to lepsze - w końcu niewolnik nie kosztuje więcej niż zakładnik. Muszę szybko udać się na Barbados, by odwiedzić pułkownika Bishopa.
 
-TEXT 11
+#TEXT 11
 Zapłaciłem @<sName> @<sSum> pesos. Teraz muszę szybko udać się do @<sCity>, by spotkać się z @<sCharName>. Na pewno jest zmartwiony, biedak. A nagroda się przyda.
 
-TEXT 12
+#TEXT 12
 Pomylka z skrzyniami kosztowała mnie sporo. Zapłaciłem @<sName> sporą sumę @<sSum> pesos. Ale jeniec nie był taki prosty i zaoferował mi, że zabierze mnie do @<sCity> w zamian za bardzo cenne informacje. Zgodziłem się, ponieważ klient nie wydawał się skłonny zapłacić mi niczego.
 
-TEXT 13
+#TEXT 13
 Pomylka z skrzyniami kosztowała mnie sporo. Zapłaciłem @<sName> sporą sumę @<sSum> pesos. Okazuje się, że uwolniony facet nie chce wcale spotkać się z moim klientem, ale to nie moja sprawa. Nie potrzebuję więcej kłopotów przez tego łachmytka.
 
-TEXT 14
+#TEXT 14
 Dostarczyłem byłego zakładnika, a teraz wolnego obywatela @<sName> do jego krewnego i otrzymałem obiecaną nagrodę w wysokości 40 000 pesos w skrzyniach kredytowych.
 
-TEXT 15
-Dostarczyłem byłego zakładnika @<sName> do jego krewnego, ale odmówił pokrycia moich dodatkowych wydatków... Ludzie stają się naprawdę nieprzystępni, kiedy już niczego od ciebie nie potrzebują.
+#TEXT 15
+Dostarczyłem byłego zakładnika @<sName> do jego krewnego, ale odmówił pokrycia moich dodatkowych wydatków. . . Ludzie stają się naprawdę nieprzystępni, kiedy już niczego od ciebie nie potrzebują.
 
-TEXT 16
+#TEXT 16
 Dostarczyłem byłego jeńca klientowi. Okazało się, że był to specjalista od @<sSpeciality>, ścigany przez @<sNation>. Dostałem cenny prezent jako nagrodę w imieniu rządu.
 
-TEXT 17
+#TEXT 17
 Podczas próby ucieczki @<sName> zginął. Może nie powinienem go narażać. Co teraz mam powiedzieć klientowi?
 
-TEXT 17_1
+#TEXT 17_1
 @<sName> zginął w dżungli. Może nie powinienem go narażać. Co teraz mam powiedzieć klientowi?
 
-TEXT 18
+#TEXT 18
 Udało mi się zorganizować ucieczkę @<sName> z plantacji. Teraz muszę go tylko znaleźć i dostarczyć klientowi.
 
-TEXT 19
+#TEXT 19
 Ten jeniec nie był taki prosty i zaoferował mi, że zabierze mnie do @<sCity> w zamian za bardzo cenne informacje. Zgodziłem się, ponieważ klient nie wydawał się skłonny zapłacić mi niczego.
 
-TEXT 20
+#TEXT 20
 Okazuje się, że uwolniony facet wcale nie chce spotkać się z moim klientem, ale to nie moja sprawa. Nie potrzebuję więcej kłopotów przez tego łachmytka.
 
-TEXT 21
+#TEXT 21
 Ten inżynier jeniec był całkiem użyteczny. Informacje, które od niego uzyskałem, byłyby bezcenne nawet dla doświadczonego wojownika.
 
-TEXT 22
+#TEXT 22
 Poinformowałem @<sCharName> o śmierci @<sName>, jego krewnego. Zachowałem pieniądze za okup jako rekompensatę za moje wydatki.
 
-TEXT 23
+#TEXT 23
 Poinformowałem @<sCharName> o śmierci @<sName>, jego krewnego, i oddałem mu pieniądze za okup - 150 000 pesos. Oczywiście mógłbym domagać się zwrotu moich wydatków, ale chyba nie w tej sytuacji.
 
-TEXT 24
+#TEXT 24
 @<sName> zlecił mi zadanie zatopienia dwóch statków piratów - '@<sShipName1>' i '@<sShipName2>', które udały się do @<sShoreName> na @<sShoreType>. Muszę się wyrobić w ciągu 15 dni, zanim oczyścić skarb.
 
-TEXT 25
+#TEXT 25
 Zadanie @<sName> zostało wykonane, '@<sShipName1>' i '@<sShipName2>' zostały zniszczone. Teraz muszę się spieszyć do @<sCity>, zanim @<sNameNom> sprzeda jeńca handlarzom niewolników.
 
-TEXT 26
+#TEXT 26
 Nie udało mi się dogonić piratów. Pewnie już oczyścili skarb. Muszę wrócić do @<sName> z pustymi rękami.
 
-TEXT 27
+#TEXT 27
 Nie udało mi się dojść do porozumienia z @<sName>. Teraz nie wiem, czy powinienem wrócić do @<sCity>, by spotkać się z @<sCharName>. Co mu powiem?
 
-TEXT 28
+#TEXT 28
 Po mojej pomyłce z misją @<sName> zwiększył okup do 200 000 pesos. Nie zapłaciłem tego własnymi pieniędzmi. Teraz nie wiem, czy powinienem wrócić do @<sCity>, by spotkać się z @<sCharName>. Co mu powiem?
 
-TEXT 29
+#TEXT 29
 Po mojej pomyłce z misją @<sName> zwiększył okup do 200 000 pesos. Musiałem zapłacić to własnymi pieniędzmi. Teraz muszę się spieszyć do @<sCity>, by spotkać się z @<sCharName>. Może klient jednak zwróci moje dodatkowe wydatki?
 
-TEXT 30
-Nie zapłaciłem tej absurdalnej kwoty. Wykupienie zakładnika to jedno, ale kupowanie niewolnika z plantacji to zupełnie inna sprawa... Zastanawiam się, czy Bishop wzmocnił straż po incydencie, czy nadal oszczędza?
+#TEXT 30
+Nie zapłaciłem tej absurdalnej kwoty. Wykupienie zakładnika to jedno, ale kupowanie niewolnika z plantacji to zupełnie inna sprawa. . . Zastanawiam się, czy Bishop wzmocnił straż po incydencie, czy nadal oszczędza?
 
-TEXT 31
+#TEXT 31
 @<sName> nie chce rozstać się ze swoim jeńcem bez okupu. Cóż, będę musiał znaleźć pieniądze lub po prostu porzucić tę sprawę.
 
-TEXT 32
+#TEXT 32
 Poinformowałem @<sName> o śmierci jeńca. Wygląda na to, że teraz znalazł się w tej samej beznadziejnej sytuacji, w której mnie wcześniej postawił.
 
-TEXT 33
+#TEXT 33
 Nie udało mi się zniszczyć statków piratów @<sShipName1> i @<sShipName2>. Teraz będę musiał wrócić do @<sName> z pustymi rękami.
 
-TEXT 34
+#TEXT 34
 W końcu @<sName> jest na pokładzie mojego statku. Teraz muszę się spieszyć do @<sCity>, by spotkać się z @<sCharName>, zanim dostanie zawału serca.
 
-TEXT 35
-Eh... Nie powinienem był wybierać tej opcji. Nie było potrzeby kłócić się z @<sName>. Teraz naprawdę musimy rozwiązać te problemy...
+#TEXT 35
+Eh... Nie powinienem był wybierać tej opcji. Nie było potrzeby kłócić się z @<sName>. Teraz naprawdę musimy rozwiązać te problemy. . .
 
-TEXT 36
+#TEXT 36
 Eh... Nie powinienem był wybierać tej opcji. Nie było potrzeby porzucać misji @<sName>. Teraz jeńca trzeba było wykupić za 250 000 pesos.
 
 #QUEST CaptainComission2
-Side Job: Ostatnia Wola
+Zadanie Poboczne: Ostatnia Wola
 #TEXT 1
-Kapitan @<sName>, zanim umarł, poprosił mnie, żebym poinformował kapitana @<sShipType> '@<sShipName>', @<sCapName>, że zostanie aresztowany w @<sCity1>. Władze coś wykryły na jego temat... @<sShipTypeNom> wypływa z @<sCity2> i dotrze do portu w @<sCity1> za 10-15 dni. Muszę go dogonić. Ostatnią wolę umierającego człowieka należy uszanować.
+Kapitan @<sName>, zanim umarł, poprosił mnie, żebym poinformował kapitana @<sShipType> '@<sShipName>', @<sCapName>, że zostanie aresztowany w @<sCity1>. Władze coś wykryły na jego temat. . . @<sShipTypeNom> wypływa z @<sCity2> i dotrze do portu w @<sCity1> za 10-15 dni. Muszę go dogonić. Ostatnią wolę umierającego człowieka należy uszanować.
 #TEXT 2
 Byłem zbyt zajęty, żeby powiadomić @<sCapName> o nadchodzącym niebezpieczeństwie. Chyba da sobie radę, jeśli będzie wystarczająco mądry.
 #TEXT 3
 Wykonałem zadanie od @<sName>, ale nie pomogłem jego przyjacielowi, tłumacząc się, że jestem zajęty. To mądry facet i poradzi sobie sam.
 #TEXT 4
-Kapitan @<sName> poprosił mnie o pomoc w potajemnym wywiezieniu ładunku @<sGoods> z @<sShoreName>. Kiedy odmówiłem, po prostu zabrał moją łódź i zostawił mnie na bezludnym wybrzeżu. Teraz muszę zacząć od zera... Tak się dzieje z tymi, którzy chcą pomagać innym.
+Kapitan @<sName> poprosił mnie o pomoc w potajemnym wywiezieniu ładunku @<sGoods> z @<sShoreName>. Kiedy odmówiłem, po prostu zabrał moją łódź i zostawił mnie na bezludnym wybrzeżu. Teraz muszę zacząć od zera. . . Tak się dzieje z tymi, którzy chcą pomagać innym.
 #TEXT 5
 Kapitan @<sName> poprosił mnie o pomoc w potajemnym wywiezieniu ładunku @<sGoods> z @<sShoreName>. Kiedy odmówiłem, próbował zabrać moją łódź. Lepiej, żeby nie próbował, bo wysłałem go na rekiny. Niestety, nie wiem, gdzie jest ukryty ładunek.
 #TEXT 6
 Kapitan @<sName> poprosił mnie o pomoc w potajemnym wywiezieniu ładunku @<sGoods> z @<sShoreName>. Kiedy odmówiłem, próbował zabrać moją łódź. Musiałem uciekać ze wszystkimi żaglami na pełnym wietrze.
 #TEXT 7
-Kapitan @<sName> poprosił mnie o pomoc w potajemnym wywiezieniu ładunku @<sGoods> z @<sShoreName>. Otrzymam wszystko, co nie zmieści się w jego ładowni... Muszę zacumować w @<sShoreNameDat> tuż po północy.
+Kapitan @<sName> poprosił mnie o pomoc w potajemnym wywiezieniu ładunku @<sGoods> z @<sShoreName>. Otrzymam wszystko, co nie zmieści się w jego ładowni. . . Muszę zacumować w @<sShoreNameDat> tuż po północy.
 #TEXT 8
 Zmieniłem zdanie i nie będę zajmował się @<sName>. Niech sam stawi czoła konsekwencjom.
 #TEXT 9
-Wygląda na to, że zastawiono zasadzkę w @<sShoreName> - patrol pojawił się zbyt szybko. Kapitan @<sName> zginął w starciu. Żołnierze przeszukali zatokę, ale nie znaleźli ładunku. Może władze już go oczyściły...
+Wygląda na to, że zastawiono zasadzkę w @<sShoreName> - patrol pojawił się zbyt szybko. Kapitan @<sName> zginął w starciu. Żołnierze przeszukali zatokę, ale nie znaleźli ładunku. Może władze już go oczyściły. . .
 #TEXT 10
 Ładunek znajduje się w ładowniach. Moja część to @<sGoodsQuantity> sztuk @<sGoods>. Czas się rozstać. Musimy się pośpieszyć, zanim korona wyśle łowców na nasze głowy.
 #TEXT 11
@@ -683,7 +682,7 @@ Wygląda na to, że zastawiono zasadzkę w @<sShoreName> - patrol pojawił się 
 #TEXT 12
 Już na wyjściu z zatoki czekała na nas eskadra patrolowa. Musieliśmy stawić czoła bitwie. @<sShipType> '@<sShipName>' z pełną ładownią @<sGoods> zatonął, a kapitan @<sName> wraz z nim.
 #TEXT 13
-Stawiliśmy czoła bitwie, a @<sShipType> '@<sShipName>' z pełną ładownią @<sGoods> zatonął... Cóż, wygląda na to, że to była wola Boża... Odważny kapitan @<sName> nie miał czasu nacieszyć się nowo znalezionym bogactwem.
+Stawiliśmy czoła bitwie, a @<sShipType> '@<sShipName>' z pełną ładownią @<sGoods> zatonął. . . Cóż, wygląda na to, że to była wola Boża. . . Odważny kapitan @<sName> nie miał czasu nacieszyć się nowo znalezionym bogactwem.
 #TEXT 14
 Ja i kapitan @<sName> postanowiliśmy, że najlepiej będzie, jeśli pójdziemy osobnymi drogami, aby nie obciążać się wzajemnymi zobowiązaniami. On udał się do @<sShoreName>, a ja poszedłem w swoją stronę.
 #TEXT 15
@@ -703,13 +702,13 @@ Kapitan @<sName> zgodził się pokazać mi ukryty ładunek w zamian za połowę 
 #TEXT 22
 Kapitan @<sName> zginął - a moja nadzieja na znalezienie ładunku zginęła wraz z nim.
 #TEXT 23
-Całkowicie zawaliłem misję gubernatora... Co za wstyd...
+Całkowicie zawaliłem misję gubernatora. . . Co za wstyd. . .
 #TEXT 24
 Ukryty ładunek kapitana @<sName> znajduje się w @<sShoreName>. Muszę przygotować ładownię na przyjęcie @<sGoodsQuantity> sztuk @<sGoods>. Musimy się pośpieszyć, zanim ładunek zostanie znaleziony.
 #TEXT 25
 Byłem tak głupi, że pozwoliłem kapitanowi @<sName> umknąć! Mógłbym zarobić całkiem sporo.
 #TEXT 26
-Znaleźliśmy ukryty ładunek, @<sGoodsQuantity> jednostek @<sGoods> załadowanych do ładowni. @<sSum1> z nich należy do kapitana @<sName>. Za @<sDays> dni będę musiał dostarczyć je do @<sShoreName> na @<sShoreType>. Niech te gubernatorskie psy szukają kapitana @<sName> i jego cennego ładunku, a mnie dodadzą do swojej listy...
+Znaleźliśmy ukryty ładunek, @<sGoodsQuantity> jednostek @<sGoods> załadowanych do ładowni. @<sSum1> z nich należy do kapitana @<sName>. Za @<sDays> dni będę musiał dostarczyć je do @<sShoreName> na @<sShoreType>. Niech te gubernatorskie psy szukają kapitana @<sName> i jego cennego ładunku, a mnie dodadzą do swojej listy. . .
 #TEXT 27
 W końcu kapitan @<sName> ujawnil swój ukryty ładunek, ale uznałem, że nie będę dzielił się z nim. Próbował zakwestionować moją decyzję i zapłacił za to. A teraz @<sGoodsQuantity> jednostek @<sGoods> należy do mnie.
 #TEXT 28
@@ -760,13 +759,13 @@ Porzuciłem całą sprawę ze skrytką kapitana @<sName>. Niech wybaczy mi były
 Były kanonier z @<sShipType> '@<sShipName>', @<sName>, opowiedział mi całą historię śmierci @<sShipTypeQuest> '@<sShipNameQuest>'. Okazuje się, że skrytka faktycznie istnieje i zawiera cały ładunek z @<sShipTypeQuest> - @<sSum> sztuk @<sGoods> jest tam przechowywanych. Muszę przygotować ładownię i przyjść na @<sShoreName> po północy – @<sName> będzie na mnie czekać.
 
 #TEXT 44
-Głupio przegapiłem swoją szansę na zrabowanie skrytki kapitana @<sName>! Może @<sCharName> na mnie nie czekał, a może postanowił mnie oszukać. Tak czy inaczej, czas i pieniądze zostały zmarnowane...
+Głupio przegapiłem swoją szansę na zrabowanie skrytki kapitana @<sName>! Może @<sCharName> na mnie nie czekał, a może postanowił mnie oszukać. Tak czy inaczej, czas i pieniądze zostały zmarnowane. . .
 
 #TEXT 45
-Przemytnicy opróżnili skrytkę kapitana @<sName>. A może @<sCharName> postanowił mnie oszukać i działał na obu frontach. Tak czy inaczej, czas i pieniądze zostały zmarnowane...
+Przemytnicy opróżnili skrytkę kapitana @<sName>. A może @<sCharName> postanowił mnie oszukać i działał na obu frontach. Tak czy inaczej, czas i pieniądze zostały zmarnowane. . .
 
 #TEXT 46
-Przemytnicy znaleźli skrytkę kapitana @<sName> przede mną. Musiałem odzyskać ładunek siłą. Niestety, kanonier @<sCharName> zginął. Ironią jest to, że wszyscy członkowie załogi tego nieszczęsnego @<sShipType> '@<sShipName>' są martwi i nikt nie zdołał skorzystać z ich heroicznego przedsięwzięcia... Wziąłem cały towar, który zmieścił się w mojej ładowni – @<sSum> jednostek @<sGoods>.
+Przemytnicy znaleźli skrytkę kapitana @<sName> przede mną. Musiałem odzyskać ładunek siłą. Niestety, kanonier @<sCharName> zginął. Ironią jest to, że wszyscy członkowie załogi tego nieszczęsnego @<sShipType> '@<sShipName>' są martwi i nikt nie zdołał skorzystać z ich heroicznego przedsięwzięcia. . . Wziąłem cały towar, który zmieścił się w mojej ładowni – @<sSum> jednostek @<sGoods>.
 
 #TEXT 47
 Przemytnicy znaleźli skrytkę kapitana @<sName> przede mną. Musiałem odzyskać ładunek siłą. Wziąłem cały towar, który zmieścił się w mojej ładowni – @<sSum> jednostek @<sGoods>. Teraz muszę dostarczyć kanoniera @<sCharName> do osady @<sCity>.
@@ -781,10 +780,10 @@ Okazało się, że kapitan patrolu @<sShipType>, @<sName>, został aresztowany z
 Okazało się, że kapitan patrolu @<sShipType>, @<sName>, został aresztowany za bandytyzm morski, a teraz gubernator @<sCity> szuka jego skrytki. Podjąłem się pomóc mu w tej sprawie i uzyskałem pozwolenie, by odwiedzić więźnia.
 
 #TEXT 51
-Całkowicie zapomniałem o umowie z kapitanem i jego ładunkiem... A cholera z nim... Jakoś sobie poradzę. A kapitana zostawię w pierwszym mieście.
+Całkowicie zapomniałem o umowie z kapitanem i jego ładunkiem. . . A cholera z nim. . . Jakoś sobie poradzę. A kapitana zostawię w pierwszym mieście.
 
 #TEXT 52
-Myślę, że gubernator nie stanie się biedniejszy od tego, że go oszukałem. A kapitan... Jak to mówią: rąbią las – wióry lecą.
+Myślę, że gubernator nie stanie się biedniejszy od tego, że go oszukałem. A kapitan .. . Jak to mówią: rąbią las – wióry lecą.
 
 #TEXT 53
 Znaleźliśmy skrytkę, @<sGoodsQuantity> sztuk @<sGoods> załadowanych do ładowni. Z tego @<sSum1> należy do mojego partnera. Za @<sDays> dni, ładunek trzeba dostarczyć na @<sShoreName>, które znajduje się w pobliżu @<sShoreType>. Postanowiłem nie oddać kapitana władzom, lecz ukryć się z nim! Teraz niech gubernatorscy psy gończe mnie szukają... powodzenia im w tym!
@@ -796,7 +795,7 @@ Wygląda na to, że kapitan @<sName> nie mógł podzielić się łupem ze swoją
 Kapitan @<sName> przypadkowo zginął w drodze z więzienia na moją łódź. Szkoda. Teraz można zapomnieć o skrytce.
 
 #QUEST Convict
-Zadanie poboczne: Uciekinierzy
+Zadanie Poboczne: Uciekinierzy
 #TEXT 1
 W dżungli @<sIslandType> spotkałem @<sConvictNum> zbiegłych więźniów. Postanowiłem przyjąć ich do mojej załogi. Około północy będę musiał zacumować w @<sShoreName>.
 #TEXT 2
@@ -818,14 +817,14 @@ Odmówiłem zabrania więźniów na pokład, co spowodowało u nich niezdrową a
 #TEXT 10
 Więźniowie są na pokładzie. Teraz muszę uciekać, zanim pojawi się patrol.
 #TEXT 11
-Dostarczyłem więźniów do @<sMayak> i otrzymałem swoją nagrodę - @<sSum> pesos w sztabkach złota. Jak mówią, pieniądze nie mają zapachu...
+Dostarczyłem więźniów do @<sMayak> i otrzymałem swoją nagrodę - @<sSum> pesos w sztabkach złota. Jak mówią, pieniądze nie mają zapachu. . .
 #TEXT 12
 Dostarczyłem więźniów do @<sMayak>. Ale zamiast zapłacić mi, więźniowie podarowali mi bardzo porządny prezent. Jestem z tego zadowolony.
 #TEXT 13
 Dostarczyłem więźniów do @<sMayak>. Ale przeklęci więźniowie postanowili mnie oszukać. Musiałem wyjaśnić im, że należy dotrzymywać słowa. Szkoda, że ta lekcja już im się nie przyda.
 
 #QUEST HoldQuest
-Zadanie poboczne: Łup od ujętego kapitana
+Zadanie Poboczne: Łup Od Ujętego Kapitana
 #TEXT 1
 Ujęty kapitan @<sName> powiedział mi, że bogaty kupiec transportuje @<sGoods> z @<sCityFrom> do @<sCityTo>. Czasami wynajmuje eskortę. Można by spróbować przechwycić jego statek '@<sShipName>' w pobliżu jednego z tych portów. Jeśli kapitan mówił prawdę, łup będzie bardzo bogaty. Zresztą, ujęty kapitan został uwolniony.
 #TEXT 2
@@ -851,13 +850,13 @@ Ujęty kapitan @<sName> mnie nie oszukał. Jego towarzysz @<sNameChar> bez zbęd
 #TEXT 12
 Ujęty kapitan @<sName> powiedział mi, że w mieście @<sCity> mieszka @<sNameChar>, który jest gotów sprzedać mapę do skarbu @<sPirateName>. Nie wiem, czy to prawda, ale i tak musiałem uwolnić kapitana. Muszę odwiedzić tego @<sNameChar>, zanim on sam zdobędzie skarb.
 #TEXT 13
-Nie wiem, czy ujęty kapitan @<sName> mnie oszukał, czy to po prostu przypadek, ale nigdy nie znalazłem @<sNameChar>, właściciela mapy... I nie sądzę, żeby kiedykolwiek go znalazł...
+Nie wiem, czy ujęty kapitan @<sName> mnie oszukał, czy to po prostu przypadek, ale nigdy nie znalazłem @<sNameChar>, właściciela mapy. . . I nie sądzę, żeby kiedykolwiek go znalazł. . .
 #TEXT 14
 Głupio pozwoliłem @<sName> uciec!
 #TEXT 15
 Kupiłem mapę @<sPirateName> za @<sSum> pesos. Mogę tylko mieć nadzieję, że skarb wciąż tam jest.
 #TEXT 16
-Postanowiłem nie kupować mapy od @<sName>. @<sSum> - to po prostu za drogo, tym bardziej, że skarb może już tam nie być...
+Postanowiłem nie kupować mapy od @<sName>. @<sSum> - to po prostu za drogo, tym bardziej, że skarb może już tam nie być. . .
 #TEXT 17
 Nie było nic wartościowego w skrzyni. Może właściciel skarbu był przede mną - albo ten łajdak @<sName> wymyślił oryginalny sposób zarabiania na takich głupkach jak ja.
 #TEXT 18
@@ -872,7 +871,7 @@ Komendant twierdzy w Cumana poprosił mnie o dostarczenie mu partii beczek z pro
 #TEXT 2
 Ładunek dostarczony, a mimo złych wspomnień o komendancie twierdzy, udało mi się otrzymać należną nagrodę.
 #TEXT 3
-Kto by pomyślał, że komendant twierdzy to zwykły oszust! Wykorzystując swoją pozycję, zapłacił mi tylko połowę ustalonej sumy! Uznałem, że i tak lepiej niż nic, a był zbyt dobrze strzeżony, w każdym razie...
+Kto by pomyślał, że komendant twierdzy to zwykły oszust! Wykorzystując swoją pozycję, zapłacił mi tylko połowę ustalonej sumy! Uznałem, że i tak lepiej niż nic, a był zbyt dobrze strzeżony, w każdym razie. . .
 #TEXT 4
 Ten łajdak w mundurze próbował oszukać mnie i przywłaszczyć sobie połowę mojej nagrody! Takiej zdrady nie można wybaczyć! Musiałem zabrać swoje z jego zimnego martwego ciała.
 #TEXT 5
@@ -880,25 +879,174 @@ Ten naśladowca machinatora próbował zapłacić mi tylko połowę obiecanej kw
 #TEXT 6
 Postanowiłem zrezygnować z tej misji. 100 000 pesos to sporo pieniędzy, ale i tak cenię swoje życie wyżej niż to.
 #TEXT 7
-Na wyjściu z miasta podeszło do mnie kilku zbirów, którzy najwyraźniej czekali na mnie. Uprzejmie poprosili o przekazanie im wszystkich pieniędzy. Z pewnością zostali wynajęci przez tego śmierdzącego szczura. Cóż, musiałem rozczarować go jeszcze raz...
+Na wyjściu z miasta podeszło do mnie kilku zbirów, którzy najwyraźniej czekali na mnie. Uprzejmie poprosili o przekazanie im wszystkich pieniędzy. Z pewnością zostali wynajęci przez tego śmierdzącego szczura. Cóż, musiałem rozczarować go jeszcze raz. . .
 #TEXT 8
-Na wyjściu z twierdzy podeszło do mnie kilku zbirów, którzy najwyraźniej czekali na mnie. Uprzejmie poprosili o oddanie im wszystkich pieniędzy. Z pewnością zostali wynajęci przez tego śmierdzącego szczura. Postanowiłem nie wdawać się w walkę - byli bardzo dobrze uzbrojeni. Musiałem oddać wszystkie moje pieniądze...
+Na wyjściu z twierdzy podeszło do mnie kilku zbirów, którzy najwyraźniej czekali na mnie. Uprzejmie poprosili o oddanie im wszystkich pieniędzy. Z pewnością zostali wynajęci przez tego śmierdzącego szczura. Postanowiłem nie wdawać się w walkę - byli bardzo dobrze uzbrojeni. Musiałem oddać wszystkie moje pieniądze. . .
 
 #QUEST NoiseCemetery
 Na Cmentarzu Straszy
 #TEXT 1
-Strażnik cmentarny niedaleko miasta @<sCity> jest autentycznie przerażony i żyje w strachu. Jak sam tłumaczy, już od kilku nocy zdawało mu się słyszeć dziwne odgłosy, jakby ktoś lub coś pojękiwało, sam twierdzi, że może być to duch. Oczywiście, że ja nie wierzę w takie bajeczki o zmarłych, ale i tak zdecydowałem się pomóc starcowi w sprawdzeniu krypty i tego, co się tam dzieje. W najgorszym przypadku, albo oklepię kilku rzezimieszków, albo będę uciekał gdzie pieprz rośnie, jeśli to rzeczywiście będzie duch... Muszę tylko poczekać, aż się ściemni.
+Strażnik cmentarny niedaleko miasta @<sCity> jest autentycznie przerażony i żyje w strachu. Jak sam tłumaczy, już od kilku nocy zdawało mu się słyszeć dziwne odgłosy, jakby ktoś lub coś pojękiwało, sam twierdzi, że może być to duch. Oczywiście, że ja nie wierzę w takie bajeczki o zmarłych, ale i tak zdecydowałem się pomóc starcowi w sprawdzeniu krypty i tego, co się tam dzieje. W najgorszym przypadku, albo oklepię kilku rzezimieszków, albo będę uciekał gdzie pieprz rośnie, jeśli to rzeczywiście będzie duch. . . Muszę tylko poczekać, aż się ściemni.
 #TEXT 2
-Śmieszne to, a zarazem smutne. Wszystkie te dziwne dźwięki i pojękiwania wcale nie pochodziły od ducha, a w rzeczywistości były to dźwięki rozkoszy dwóch kochanków. Rodzice są przeciwni wobec ich spotkań, dlatego uznali, że cmentarz na obrzeżach miasta będzie idealną kryjówką, w której będą mogli się parzyć jak nigdy dotąd... Mogę w końcu uspokoić strażnika oraz zaspokoić jego paranoiczne myśli. Będąc w drodze, zastanowię się, co mu dokładnie powiedzieć.
+Śmieszne to, a zarazem smutne. Wszystkie te dziwne dźwięki i pojękiwania wcale nie pochodziły od ducha, a w rzeczywistości były to dźwięki rozkoszy dwóch kochanków. Rodzice są przeciwni wobec ich spotkań, dlatego uznali, że cmentarz na obrzeżach miasta będzie idealną kryjówką, w której będą mogli się parzyć jak nigdy dotąd. . . Mogę w końcu uspokoić strażnika oraz zaspokoić jego paranoiczne myśli. Będąc w drodze, zastanowię się, co mu dokładnie powiedzieć.
 #TEXT 3
-Postanowiłem nie zdradzać pechowej pary i nie powiedziałem o nich strażnikowi. Zamiast tego, zmyśliłem na szybko historyjkę o tym, jak pokonałem ducha, a następnie oczyściłem kryptę, którą na szczęście łyknął. Cóż tu dużo mówić?... Mam nadzieję, że młodym powiedzie się zarówno w życiu, jak i miłości.
+Postanowiłem nie zdradzać pechowej pary i nie powiedziałem o nich strażnikowi. Zamiast tego, zmyśliłem na szybko historyjkę o tym, jak pokonałem ducha, a następnie oczyściłem kryptę, którą na szczęście łyknął. Cóż tu dużo mówić?. . . Mam nadzieję, że młodym powiedzie się zarówno w życiu, jak i miłości.
 #TEXT 4
-Powiedziałem strażnikowi prawdę. Oczywiście, że na początku był wściekły, lecz po chwili uspokoił się. Prawda jest taka, że wszyscy grzeszymy, a wspomniana para nie miała swojego kącika, w którym mogliby się spotykać. Cóż tu dużo mówić?... Mam nadzieję, że młodym powiedzie się zarówno w życiu, jak i miłości.
+Powiedziałem strażnikowi prawdę. Oczywiście, że na początku był wściekły, lecz po chwili uspokoił się. Prawda jest taka, że wszyscy grzeszymy, a wspomniana para nie miała swojego kącika, w którym mogliby się spotykać. Cóż tu dużo mówić?. . . Mam nadzieję, że młodym powiedzie się zarówno w życiu, jak i miłości.
 #TEXT 5
 Stwierdziłem, że nie obchodzą mnie żadne dźwięki, czy straszne jęki wymyślone przez strażnika. Mój czas jest wart o wiele więcej.
 #QUEST SixCaptains
 Sześciu Kapitanów
 #TEXT	1
- Być może to pierwszy raz, gdy krótkie spotkanie z kimś, kto nie miał dla mnie ani pracy, ani interesu, skłoniło mnie do zapisania wpisu w tym dzienniku. Nie rozumiem, dlaczego ten ksiądz wywarł na mnie takie wrażenie. Nie znam jego imienia, a czasami gadał bzdury, ale zapadł mi w pamięć. Spotkaliśmy się już dwa razy i można by to uznać za zbieg okoliczności. Ale jeśli spotkamy się ponownie...
+Być może to pierwszy raz, gdy krótkie spotkanie z kimś, kto nie miał dla mnie ani pracy, ani interesu, skłoniło mnie do zapisania wpisu w tym dzienniku. Nie rozumiem, dlaczego ten ksiądz wywarł na mnie takie wrażenie. Nie znam jego imienia, a czasami gadał bzdury, ale zapadł mi w pamięć. Spotkaliśmy się już dwa razy i można by to uznać za zbieg okoliczności. Ale jeśli spotkamy się ponownie...
 Muszę przyznać, że jego zainteresowanie jest nieco pochlebne. To spojrzenie w jego oczach jest takie... oceniające. Jakby podziwiał moje osiągnięcia. A kto by nie podziwiał? Dwa legendarne statki, dwóch kapitanów, o których krążyły opowieści po całym Archipelagu – obaj polegli z mojej ręki.
 Ciekawe, co powie, gdy dowie się o moich przyszłych wyczynach? Archipelag jest ogromny, ale moja sława, jak się zdaje, rośnie szybciej, niż myślałem.
+#TEXT	2
+Diego de Landa - tak się nazywasz. Więc spotkamy się ponownie. Ciąg dalszy nastąpi.
+
+#QUEST SharlieTutorial
+Prolog
+#TEXT 0
+Mam już tego serdecznie dość! Pięć dni... i w końcu zejdę na ląd. Ostatnie dwa miesiące to był istny koszmar i naprawdę nie rozumiem, jak ktoś przy zdrowych zmysłach może wiązać swoje życie z morzem!
+A tymczasem... czeka mnie spotkanie z kapitanem. Ostatnio mi się nie podoba. Właściwie nic mi się tu nie podoba.
+#TEXT 0.1
+Wygląda na to, że dziś wieczór będzie interesujący. A tymczasem kapitan dał mi wolną rękę... oczywiście w granicach statku, ha-ha! Mogę wrócić do niego w każdej chwili i zakończyć ten męczący dzień.
+#TEXT 1
+Za 500 peso mogę sprzedać 3 butelki rumu marynarzowi Henriemu na górnym pokładzie. Zdaje się, że bosman w mesie handluje różnymi rzeczami. Może warto przeszukać statek i porozmawiać z innymi marynarzami.
+#TEXT 2
+Dobrze, że nie piję rumu i udało mi się zrobić niezły interes z Henrim. Wygląda na to, że załoga doceniła moje starania.
+#TEXT 3
+Marynarz Paul nadwyrężył plecy, nosząc kule armatnie, i poprosił mnie o pomoc. Kule powinny być w ładowni — pewnie w jednej z tych niezliczonych skrzyń.
+#TEXT 4
+Ledwo dotargałem te przeklęte kule do Paula. Ten marynarz zachowuje się dość podejrzanie, ale w nagrodę dostałem butelkę rumu. Cenny łup, biorąc pod uwagę lokalny popyt na tę truciznę.
+#TEXT 5
+Znalazłem klucz kapitana! Ciekawe, jakie skarby może otwierać...
+
+#QUEST DWH
+Ciemne wody uzdrowienia
+#TEXT	1
+W  St. John's szepta się, że miejscowa cyganka to ostatnia nadzieja dla ciężko chorej córki Thomasa Morrisona. Ale ona uparcie odmawia pomocy. Czy naprawdę nie ma w niej ani odrobiny współczucia dla biednej dziewczyny?
+#TEXT	2
+Cyganka poinformowała mnie, że jest całkiem chętna, by pomóc dziewczynce, ale Thomas stanowczo odmawia wpuszczenia jej do swojego domu. Chcę odwiedzić Thomasa i dowiedzieć się, dlaczego odrzuca ostatnią nadzieję na uratowanie dziewczynki. Jego dom znajduje się w północnej części miasta, przy murze, obok luksusowej rezydencji z kolumnami.
+#TEXT	3
+Miejscowy ksiądz zagroził Thomasowi Morrisonowi ekskomuniką, jeśli przyjmie pomoc cyganki, by uratować swoją ciężko chorą córkę. Teraz Thomas jest rozdarty między strachem przed popadnięciem w niełaskę kościoła a rozpaczą z powodu choroby córki. Spróbuję przekonać księdza, by przymknął oko na ten grzech dla wyższego dobra - ocalenia życia dziewczynki!
+#TEXT	4
+Trzeba będzie szukać innych dróg. Pastor to bez wątpienia uparty człowiek i w wielu sprawach ma rację. Ale mimo to nie mogę się z nim zgodzić. Jeśli istnieje szansa, by postawić dziewczynkę na nogi, trzeba z niej skorzystać.
+#TEXT	5
+Udało mi się przekonać pastora. Zgodził się przymknąć oko na udział cyganki w leczeniu, jeśli Thomas odkupi swoją winę przed Panem szczerym żalem i dobrymi uczynkami.
+ Teraz muszę znaleźć mangarosę - kluczowy składnik mikstury cyganki. Roślina ta wyróżnia się przyjemnym zapachem, wysoką łodygą i charakterystycznie powcinanymi liśćmi. Mangarosę znajdę w jaskini za miastem, wśród 'niezbyt przyjemnych osób' - czy to włóczęgów, czy zbójów. Cóż, tym lepiej. Może nawet nie będę musiał im płacić.
+#TEXT	6
+Udało mi się przekonać pastora. Zgodził się przymknąć oko na udział cyganki w leczeniu, jeśli Thomas odkupi swoją winę przed Panem szczerym żalem i dobrymi uczynkami. Teraz muszę znaleźć mangarosę - kluczowy składnik mikstury cyganki. Roślina ta wyróżnia się przyjemnym zapachem, wysoką łodygą i charakterystycznie powcinanymi liśćmi. Mangarosę znajdę w jaskini za miastem, wśród 'niezbyt przyjemnych osób' - czy to włóczęgów, czy zbójów. Cóż, tym lepiej. Może nawet nie będę musiał im płacić.
+#TEXT	7
+Cyganka jest gotowa pomóc dziewczynce potajemnie - aby Thomas nie ściągnął na siebie gniewu Kościoła. Teraz najważniejsze to przekonać go, by nam zaufał.
+#TEXT	8
+Thomas przekazał mi osobistą rzecz Esther - jadeitowy naszyjnik. Teraz muszę jeszcze znaleźć dwa łodygi cierniowej trawy, jedną łodygę ipekaquany, jedną werbeny - i mogę wracać do cyganki.
+#TEXT	9
+Dzięki wspólnym wysiłkom moim i cyganki choroba Esther została pokonana! To miłe uczucie wiedzieć, że cały trud nie poszedł na marne i dziewczynka jest teraz zdrowa.
+#TEXT	10
+Dzięki naszym staraniom z Cyganką choroba Esther została pokonana! To miłe uczucie wiedzieć, że wszystkie wysiłki nie poszły na marne, a dziewczynka jest teraz zdrowa. Od Cyganki z Saint John's mogę zawsze kupić mangarosę - trzy łodygi za trzysta pięćdziesiąt złotych dublonów.
+#TEXT 11
+Teraz cyganka ma wszystko, czego potrzebuje do przygotowania leczniczego eliksiru. Jutro rano będę musiał@<sSex> odebrać lekarstwo od niej i zanieść je do Thomasa.
+
+#QUEST TPZ
+Handel zgodnie z prawem
+#TEXT 1
+Mieszkańcy Bas-Ter skarżą się na brak alkoholu w tawernie. Karczmarz ciągle obiecuje to naprawić, ale bez skutku. Wygląda na to, że ma poważne kłopoty. A gdzie są problemy, tam jest też szansa na zarobek.​
+#TEXT 2
+Właściciel lokalu poinformował, że jego dostawca z Antiguy stracił destylarnię w wyniku ataku piratów i nie będzie w stanie wznowić dostaw wcześniej niż za dwa miesiące. Karczmarz jest gotów przyjąć każdą partię wina i rumu, jeśli kupiec cieszy się dobrą reputacją, bez sprawdzania dokumentów, ale tylko tym razem. W przyszłości będzie współpracować wyłącznie z uczciwymi i niezawodnymi negocjantami. Może warto poszukać towaru omijając oficjalne kanały... Jeśli dobrze to rozegram, może to przynieść niezły zysk.​
+#TEXT 3
+Przemytnicy mają teraz trudności z alkoholem. Jednak w pobliżu rezydencji gubernatora mieszka handlarz, który nielegalnie sprzedaje małe partie alkoholu. Może warto go odwiedzić.​
+#TEXT 4
+Udało mi się znaleźć nielegalnego handlarza alkoholem. Na początku wziął mnie za przedstawiciela władz, ale udało mi się go przekonać, że jest inaczej. Jeśli pomogę mu zalegalizować jego działalność, będę mógł w przyszłości kupować od niego wino i rum na bardzo korzystnych warunkach. Jednak teraz czas udać się do karczmarza – jest szansa, że na tej transakcji zarobię jeszcze kilka dublonów.​
+#TEXT 5
+Udało mi się zawrzeć umowę z karczmarzem na moich warunkach. Jest gotów kupować tę i kolejne partie po dwieście czterdzieści dublonów za sto butelek wina i sto butelek rumu. Teraz trzeba zalegalizować działalność Christiana.​
+#TEXT 6
+Udało mi się zawrzeć umowę z karczmarzem. Jest gotów kupować tę i kolejne partie po dwieście dublonów za sto butelek wina i sto butelek rumu. Teraz trzeba zalegalizować działalność Christiana.​
+#TEXT 7
+Karczmarz jest zadowolony – w tawernie znów leje się alkohol. Christian też może się cieszyć – zyskał świetnego klienta, a jego działalność stała się legalna. Teraz nadszedł czas, aby zadbać o własne korzyści z tej transakcji. Do Christiana!​
+#TEXT 8
+Wystąpiłem w roli pośrednika. Nietypowe uczucie. Wszyscy są zadowoleni: w tawernie znów panuje wesołość, Christian pewnie już liczy dublony, które spadły mu na głowę, a ja mam teraz niezawodnego dostawcę alkoholu na Karaibach. I przy tym wszystkim ani razu nie musiałem wyciągać szpady z pochwy. Niesamowite.​
+#TEXT 9
+Ledwo zdążyłem się ucieszyć, że tym razem udało się wszystko załatwić pokojowo, gdy w porcie zaatakował mnie statek piracki. Jak się okazało, przerwy w dostawach wcale nie były przypadkowe. To wszystko było częścią planu kapitana tego właśnie statku, który postanowił przejąć lukratywny kawałek – dostawy do tawerny w Bas-Ter. Tym razem mu się nie poszczęściło. Udzieliłem mu śmiertelnej lekcji.​
+#TEXT 10
+Na morzu zaatakował mnie statek piracki. Kim byli i czego chcieli – pozostaje nieznane. Ich łajba poszła na dno, zabierając ze sobą wszystkie odpowiedzi.​
+#TEXT 11
+Warunki handlu na wyspie okazały się dość proste: sto dublonów miesięcznie do miejskiej kasy jako podatek i terminowe raportowanie. Myślę, że takie wymagania nie będą zbyt uciążliwe dla Christiana. Teraz można ucieszyć spryciarza – wszystko poszło jak najlepiej.
+
+#QUEST GS
+Granice sprawiedliwości
+#TEXT	1
+Na szefa portu w Belize dokonano śmiałego zamachu. Napastnikowi udało się uciec i teraz sam stał się zwierzyną. Według plotek, urzędnik wyznaczył nagrodę za jego głowę. Wygląda na to, że to groźny przeciwnik – trzeba dobrze się zastanowić, czy warto go szukać.
+#TEXT	2
+Szef portu twierdzi, że nie ma pojęcia, kto go zaatakował ani dlaczego. Nazywa napastnika zwykłym szaleńcem, jakich na Karaibach nie brakuje. Może to nie brzmi zbyt przekonująco, ale mnie to nie obchodzi. Za głowę tego „wariata” wyznaczono nagrodę – dwieście dublonów. To się naprawdę liczy. Zacznę poszukiwania od pobliskich zatok i grot. Tam zbieg najpewniej spróbuje ukryć się przed sprawiedliwością.
+#TEXT	3
+Sprawa zakończona. Czas zgłosić się do szefa portu i odebrać zasłużoną nagrodę. A jednak, może warto było posłuchać słów najemnika? Mówił całkiem przekonująco. Z drugiej strony – kto na jego miejscu nie próbowałby ratować życia, chwytając się nawet najmniejszej nadziei? Najprawdopodobniej to była tylko sprytna zagrywka.
+#TEXT	4
+Szef portu zapłacił mi w całości, nawet hojniej, niż się umawialiśmy. Zaproponował stałą zniżkę na postój jednego statku – o pięćdziesiąt procent, bez ograniczeń czasowych. Ale ta hojność tylko wzmaga moje podejrzenia. A jeśli najemnik mówił prawdę? Jeśli naprawdę miał do czynienia z piratami – czemu nie wezwał straży? Dlaczego nic nie wspomniał, kiedy wysyłał mnie po „mordercę”? Ale to wszystko tylko domysły. Tego, co się stało, już nie zmienię – może tylko czas pokaże prawdę. Ja tymczasem ruszam dalej.
+#TEXT	5
+Szef portu to prawdziwa kanalia! Uśmiecha się, żegnając moich towarzyszy w rejs, a potem bez skrupułów sprzedaje piratom informacje o ich statkach. Tacy ludzie nie mogą pozostać bezkarni. Poczekam do nocy i z nim skończę. Jego nikczemne czyny poznają wszyscy. Notatki, które przekazał mi najemnik, zostaną w jego domu – na widoku. Niech cały port dowie się, kim był naprawdę. To ironiczne, że mieszka blisko więzienia - bo tak naprawdę powinien być jego lokatorem.
+#TEXT	6
+Drań nie żyje! Teraz trzeba tylko zostawić notatki i zniknąć, zanim cały garnizon zostanie postawiony w stan gotowości.
+#TEXT	7
+Z szefem portu koniec. Już nikogo nie sprzeda w ręce piratów. Świat stał się dziś odrobinę lepszy.
+
+#QUEST OS
+Stare porachunki
+#TEXT 1
+Właściciel tawerny w Puerto Principe przegapił całe beczułkę rzadkiego ginu, sprowadzonego prosto ze Starej Europy. Jeśli zaginiony ładunek się nie odnajdzie, biedak może mieć poważne kłopoty. Wszystko wskazuje na to, że trunek był przeznaczony dla jakiejś szychy – inaczej skąd ta cała panika?
+#TEXT 2
+Gin został ukradziony tuż spod nosa roztargnionego karczmarza. Teraz jego życie wisi na włosku – tajemniczy zleceniodawca raczej nie należy do osób, które łatwo wybaczają błędy. Karczmarz jest gotów zapłacić sto pięćdziesiąt dublońców każdemu, kto odzyska zaginioną beczułkę. Mam już pewne podejrzenia. Najpierw trzeba przepytać marynarzy – może ktoś coś widział.
+#TEXT 3
+Cała ta historia brzmi naprawdę podejrzanie. Ale mam już pewną teorię, co mogło się wydarzyć. Czas porozmawiać z kelnerką.
+#TEXT 4
+Pod presją kelnerka przyznała, że za całą inscenizacją stoi niejaki Jack Wales. Razem z kapitanem 'Sea Beast' odegrali teatrzyk, by odciągnąć uwagę właściciela tawerny i ukraść beczułkę. Tyle zachodu dla ginu! Wygląda na to, że nie są to zwykli pijacy, lecz prawdziwi koneserzy. Miejsce pobytu złodzieja? Tuż obok – naprzeciwko tawerny.
+#TEXT 5
+Odzyskałem beczułkę i oddał ją właścicielowi na czas, ratując mu skórę. Trzeba przyznać, że odwdzięczył się sowicie – oprócz dublońców dał mi prawo do dożywotniego darmowego noclegu i napitków w swojej tawernie. Kelnerka zachowała się rozsądnie i ulotniła się zawczasu – karczmarz bez trudu pojął, że była w to zamieszana.
+#TEXT 6
+Załoga 'Sea Beast' podążyła śladem swojego kapitana. Czy zasłużyli na taki los? Trudno powiedzieć... Ale jedno jest pewne – nie powinni byli ze mną zadzierać.
+
+#QUEST UV
+Skradzione wspomnienie
+#TEXT 1
+W Port-au-Prince mówi się, że Julie d’Armagnac, siostrzenica samego gubernatora, jest smutniejsza niż kiedykolwiek. Zwykle promienna i pełna życia, teraz chodzi ponura jak burzowa chmura. Nikt nie wie dokładnie, co mogło tak zmienić dziewczynę, ale wygląda na to, że wydarzyło się coś poważnego.
+#TEXT 2
+Julie znalazła się w trudnym położeniu. Skradziono jej naszyjnik, który był jej bardzo drogi. Nie może zgłosić tego straży – jej wuj, gubernator francuskiej części Hispanioli, surowo zabronił jej kontaktów z osobą, która podarowała jej ten klejnot. Julie podejrzewa, że złodziejką mogła być jedna z jej służących. Nie mogę zostawić jej samej z tym nieszczęściem i zdecydowałem się pomóc. Wypada zacząć od przepytania lokalnych handlarzy – złodziej zapewne chciał jak najszybciej spieniężyć łup.
+#TEXT 3
+Pewien Tristan Renier, kapitan 'Golden Seagull', niedawno nabył od kupca naszyjnik, który może należeć do Julie. Jego statek wciąż cumuje w porcie. Jeśli moje podejrzenia są słuszne, złodziejką może być sama Giselle – imię, które handlarz wypowiedział przypadkiem.
+#TEXT 4
+Tristana nie było na pokładzie. Trzeba poszukać go w mieście.
+#TEXT 5
+Udało mi się odzyskać naszyjnik Julie. Teraz pora go zwrócić właścicielce. A może... zajrzeć do gubernatora i opowiedzieć mu wszystko?
+#TEXT 6
+Naszyjnik wrócił do swojej uroczej właścicielki. Złodziejką okazała się jej pokojówka – ta sama Giselle. Teraz Julie wykorzystuje całą swoją przebiegłość, by wymierzyć karę sprytnej oszustce. Nie chciał bym być teraz na jej miejscu.
+
+#QUEST VPVL
+Uwięziony w Wielkim Połowie
+#TEXT 1
+Po Saint Pierre krążą opowieści o zaginięciu lokalnego rybaka Pierre'a Carno. Przez dwa pełne przypływy i odpływy jego statek nie powrócił do portu, podczas gdy jego żona Lea, nękana strachem, utrzymuje samotną wartę na nabrzeżu, wypatrując w wzburzonych wodach sylwetki męża. Tylko jego bezpieczny powrót mógłby ukoić jej zranionego ducha. Jednak bezlitosne morze strzeże swoich tajemnic, a z każdym uderzeniem dzwonu nadzieja staje się coraz słabsza, a jego szanse na oszukanie śmierci coraz mniejsze​.
+#TEXT 2
+Lea wyjawiła, że jej mąż obrał kurs na Zatokę Le Marin, położoną wzdłuż południowych wybrzeży wyspy. Minęły już pełne dwa dni od jego wypłynięcia, a jednak nie ma znaku jego powrotu. Udręka wypisana na obliczu tej biednej kobiety skłoniła mnie do zaoferowania pomocy. Najpierw zbadam wody Zatoki Le Marin—być może Pierre wciąż jest na morzu, opóźniony przez jakieś okoliczności. Jeśli wody okażą się puste, bez jego obecności, muszę przeszukać linię brzegową w poszukiwaniu jakichkolwiek śladów człowieka lub statku​.
+#TEXT 3
+Ci przemytnicy mieszkający na plaży wzięli mnie za jednego z ogarów gubernatora i próbowali wysłać mnie do wodnego grobu. Los jednak odwrócił się od nich—to ich własna krew plami teraz piasek zamiast mojej. Muszę teraz zbadać morską jaskinię, o której mówili. Być może to Pierre'a trzymają tam w kajdanach w tym wilgotnym więzieniu​.
+#TEXT 4
+Pierre oddycha teraz słodkim powietrzem wolności, a nadszedł czas, by zwrócić go w ramiona jego oddanej żony. Los rzeczywiście zadał mu okrutny cios—najpierw jego statek rozbił się o rafę, potem po dotarciu na brzeg, wpadł w szpony tych tępych przemytników, którzy wzięli go za człowieka gubernatora. Biedna dusza zniosła tortury i głodzenie, zmuszana do wyjawienia sekretów, których nigdy nie posiadała. Człowiek drży na myśl, jaki mroczny koniec mógłby go czekać, gdyby Opatrzność nie poprowadziła moich kroków do tej przeklętej jaskini, kiedy to uczyniła​.
+#TEXT 5
+Pierre został bezpiecznie zwrócony pod czułą opiekę swojej oddanej żony. Obiecał okazać wdzięczność, gdy odzyska siły i nalega na wspólny trunek w tawernie jutro po szóstym dzwonie. Jednak pytanie wciąż gryzie moje myśli jak szczur linę okrętową-na kogo naprawdę czekali ci nieszczęśni przemytnicy na brzegach Le Marin? Ich rozmowa wspominała o statku, który wkrótce miał przybić do brzegu. Ludzie gubernatora z pewnością sowicie by zapłacili za wcześniejsze ostrzeżenie o takim statku pełnym kontrabandy. A może...​.
+#TEXT 6
+Zgłosiłem gubernatorowi przemytników, którzy oczekiwali statku. Obiecał sprawdzić te informacje i poprosił, bym wrócił za trzy dni. Jeśli moje słowa okażą się prawdziwe, mogę liczyć na sowitą nagrodę​.
+
+#QUEST TBP
+Tajemnica Betsy Price
+#TEXT	1
+W Willemstadzie usłyszał ciekawą historię – w miejscowej tawernie niedawno pojawiła się kelnerka o niezwykłej urodzie, ale trzy dni temu nagle zniknęła. Karczmarz jest zaniepokojony i gotów zapłacić każdemu, kto ją odnajdzie.
+#TEXT	2
+Plotki nie kłamią, kelnerka rzeczywiście zniknęła. Karczmarz wyraźnie się niepokoi... czy to z powodu jej zniknięcia, czy może spadających dochodów – kto wie. Jest gotów zapłacić sto dublonów temu, kto ją sprowadzi z powrotem. Zgodził się pomóc w poszukiwaniach. Sto dublonów to dobra motywacja, ale jeszcze bardziej intryguje mnie sama Betsy. Co to za kobieta, że mężczyźni porzucali swoje sprawy, by godzinami siedzieć w tawernie i patrzeć tylko na nią? Na początek warto obejrzeć jej dom. Według karczmarza, znajduje się niedaleko tawerny, na wzgórzu—naprzeciwko okazałego domu z niebieskim balkonem.
+#TEXT	3
+Betsy jest najwyraźniej zamieszana w jakieś mroczne sprawy. Znaleziony list to bezpośrednie zagrożenie dla jej życia, co oznacza, że przyczyna jej zniknięcia jest znacznie poważniejsza niż zwykła ucieczka. Może udało jej się ukryć, ale nie można wykluczyć najgorszego. Trzeba ustalić, kto mógł zostawić tę wiadomość. Zacznę od barmana – może zauważył kogoś podejrzanego w jej otoczeniu.
+#TEXT	4
+Wisiorek kupiony od włóczęgi należy do Betsy. Znalazł go na rabatce przy domu z latarnią. Trzeba się tam dobrze rozejrzeć.
+#TEXT	5
+Co za kobieta, ta Betsy... A może jednak Miranda? Nie, Betsy brzmi lepiej – nie będę rozdrapywać jej przeszłości. Tak czy inaczej, została wyrwana z rąk łajdaków... Czas odebrać zasłużoną nagrodę.
+#TEXT	6
+Karczmarz uczciwie zapłacił mi za sprowadzenie jego cennej pracownicy. Przyznam, że myśli o Betsy wciąż mnie nie opuszczają... Może warto będzie ją kiedyś odwiedzić.
+

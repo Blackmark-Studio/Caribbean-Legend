@@ -68,7 +68,7 @@ void ProcessDialogEvent()
 				// заглушка на пирата
 				if (sti(pchar.nation) == PIRATE)
 				{
-    				dialog.text = RandPhraseSimple("Piraci w mieście?! Nie mogę w to uwierzyć... Zatrzymać "+GetSexPhrase("on","jej")+"!!","To pirat! Chwytaj "+GetSexPhrase("on","jej")+"!!!");
+    				dialog.text = RandPhraseSimple("Piraci w mieście?! Nie mogę w to uwierzyć... Zatrzymać "+GetSexPhrase("go","ją")+"!!","To pirat! Łapać "+GetSexPhrase("go","ją")+"!!!");
 					link.l1 = RandPhraseSimple("Jestem piratem i co z tego?","Heh, możesz spróbować...");
 					link.l1.go = "fight"; 
 					break;
@@ -78,13 +78,13 @@ void ProcessDialogEvent()
 					if (DeceptionChance > (10+rand(150)+rand(150)))
 					{
 						dialog.text = RandPhraseSimple("Kim jesteś i co tu robisz?","Stój tam! Kim jesteś i z jakiego prawa próbujesz wejść do miasta?");
-						link.l2 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(sti(npchar.nation))+". Czego nie rozumiesz? (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
+						link.l2 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(sti(npchar.nation))+". Jakiś problem? (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
 						link.l1.go = "NotPegYou";
 					}
 					else
 					{
-						dialog.text = RandPhraseSimple("Szpieg! Złóż broń i chodź za mną!","Wrogi agent! Chwytaj "+GetSexPhrase("on","jej")+"!");
-						link.l1 = RandPhraseSimple("Zamknij się, cieniasie!","Spierdalaj!");
+						dialog.text = RandPhraseSimple("Szpieg! Złóż broń i chodź za mną!","Wrogi agent! Łapać "+GetSexPhrase("go","ją")+"!");
+						link.l1 = RandPhraseSimple("A żeby cie jakieś choróbsko zabrało na tamten świat! Albo nie, sam cię tam wyśle!!","Kurwa mać! Musiałeś się akurat spojrzeć w moją strone?! Wiesz co to dla ciebie oznacza?!","Mogłeś mnie zignorować i przeżyłbyś. Teraz zginiesz, a za twój nędzny żołd nie będzie jak pogrzebu urządzić!","Eh, i tak już mi się znudziło skradanie. Czas się przejść przez legowisko w należyty sposób!");
 						link.l1.go = "fight"; 
 					}
 				}
@@ -97,14 +97,14 @@ void ProcessDialogEvent()
 					// грамота Винсенто
 					if(CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && npchar.city == "santiago")
 					{
-						dialog.text = RandPhraseSimple("Kim jesteś i co tutaj robisz?","Stój tam! Kim jesteś i z jakiego prawa próbujesz wejść do miasta?");
+						dialog.text = RandPhraseSimple("Kim jesteś i co tutaj robisz?","Stój! Kim jesteś i jakim prawem próbujesz wejść do miasta?");
 						link.l1 = "Spójrz na ten papier, żołnierzu. Jestem tutaj za zgodą inkwizytora, ojca Vincento.";
 						link.l1.go = "vincento"; 
 						break;
 					}
 					if(CheckAttribute(pchar, "questTemp.Guardoftruth.Trinidad") && CheckCharacterItem(pchar, "VerifyPaper") && npchar.city == "portspein")
 					{
-						dialog.text = RandPhraseSimple("Kim jesteś i co tutaj robisz?","Stój natychmiast! Kim jesteś i z jakim prawem próbujesz wejść do miasta?");
+						dialog.text = RandPhraseSimple("Kim jesteś i co tutaj robisz?","Stój! Kim jesteś i jakim prawem próbujesz wejść do miasta?");
 						link.l1 = "Spójrz na ten papier, żołnierzu. Jestem tutaj za zgodą inkwizytora, ojca Vincento.";
 						link.l1.go = "vincento"; 
 						break;
@@ -128,7 +128,7 @@ void ProcessDialogEvent()
 						}
 						else //если причалил не в городе
 						{
-							link.l2 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(sti(pchar.nation))+". Co nie rozumiesz? (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
+							link.l2 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(sti(pchar.nation))+". Jakiś problem? (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
 						}
 						if (DeceptionChance < (10+rand(50)+rand(50)))
 						{
@@ -156,7 +156,7 @@ void ProcessDialogEvent()
 						}
 						else //если причалил не в городе
 						{
-							link.l1 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(sti(pchar.nation))+". Czego nie rozumiesz? (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
+							link.l1 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(sti(pchar.nation))+". Jakiś problem? (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
 						}
 						if (DeceptionChance < (10+rand(50)+rand(50)))
 						{
@@ -258,17 +258,17 @@ void ProcessDialogEvent()
 							}
 							else
 							{
-							    /* dialog.text = LinkRandPhrase(RandPhraseSimple("Masz do mnie sprawę, kapitanie?","Tutaj załatwiam sprawy, jeśli czegoś potrzebujesz - pytaj, nie zwlekaj."),RandPhraseSimple("Kapitanie, jestem bardzo zajęty, więc szukaj innych rozmówców.","Czy coś jest nie tak, kapitanie? Jeśli nie ma pytań, pozwól mi przejść."),"Daj drogę, kapitanie, śpieszę się.");
-							link.l1 = LinkRandPhrase("Przepraszam, przyjacielu, ja "+GetSexPhrase("pomylił się","pomyliła się")+" ","Dobrze, zajmij się swoimi sprawami.","Nie, nic.");
+							    /* dialog.text = LinkRandPhrase(RandPhraseSimple("Masz do mnie sprawę, kapitanie?","Ja tu załatwiam sprawy, jeśli czegoś potrzebujesz - pytaj, nie zwlekaj."),RandPhraseSimple("Kapitanie, jestem bardzo zajęty, więc szukaj innych rozmówców.","Czy coś jest nie tak, kapitanie? Jeśli nie ma pytań, pozwól mi przejść."),"Przejdź, kapitanie, śpieszę się.");
+							link.l1 = LinkRandPhrase("Przepraszam, przyjacielu, "+GetSexPhrase("pomyliłem się","pomyliłam się")+" ","Dobrze, zajmij się swoimi sprawami.","Nie, nic.");
 							link.l1.go = "exit";
 							link.l2 = LinkRandPhrase(RandPhraseSimple("Mam do ciebie kilka pytań.","Mam do ciebie sprawę."),RandPhraseSimple("Widzę, że się spieszyłeś. Jedno pytanie i będziesz wolny.","Ja "+GetSexPhrase("chciał","chciała")+"zapytać o coś."),"Twoje sprawy poczekają. Chciałem zapytać o coś "+GetSexPhrase("chciał","chciała")+".");
 							    link.l2.go = "quests";//(перессылка в файл города) */
 								
 								//Экку Korsar - что-то они больно вежливые для пиратов были...
 								dialog.text = RandPhraseSimple("Co chcesz? Przejdź obok.","Przestań blokować drogę, cofnij się.");
-					            link.l1 = RandPhraseSimple("Wiesz co? Nie szczekaj!","Ogranicz swój zapał. Nie schłodzę tego szybko!");
+					            link.l1 = RandPhraseSimple("Wiesz co? Nie szczekaj!","Ogranicz swój zapał. Nie ochłone tak szybko!");
 					            link.l1.go = "exit";
-						    	/* link.l2 = LinkRandPhrase(RandPhraseSimple("Mam do ciebie kilka pytań.","Mam do ciebie sprawę."),RandPhraseSimple(" Widzę, że się spieszysz. Jedno pytanie i będziesz wolny.","Ja "+GetSexPhrase("chciał","chciała")+" zapytać o coś."),"Twoje sprawy poczekają. Chciałem zapytać o coś "+GetSexPhrase("chciał","chciała")+".");
+						    	/* link.l2 = LinkRandPhrase(RandPhraseSimple("Mam do ciebie kilka pytań.","Mam do ciebie sprawę."),RandPhraseSimple(" Widzę, że się spieszysz. Jedno pytanie i będziesz wolny.","Ja "+GetSexPhrase("chciałem","chciałam")+" zapytać o coś."),"Twoje sprawy poczekają. Chciałem zapytać o coś.");
 							link.l2.go = "quests";//(перессылка в файл города) */
 							}
 							break;
@@ -278,8 +278,8 @@ void ProcessDialogEvent()
 					{ //если негодяй, имеющий НЗГ к дружественной или нейтральной нации
 						if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -15)
 						{
-							dialog.text = RandPhraseSimple("Po prostu patrz  "+GetSexPhrase("na tego łajdaka! Odważył się pokazać swoją twarz","na tamtego łotra! Ona ośmieliła się pokazać swoją twarz")+" w "+XI_ConvertString("Kolonia"+npchar.city)+". Zdobyć "+GetSexPhrase("on","jej")+"!!!","Hej, rozpoznałem cię, "+GetSexPhrase("łotr","łotr")+"! Złapać "+GetSexPhrase("on","jej")+"!!!");
-							link.l1 = RandPhraseSimple("Argh!..","Cóż, sam o to prosiłeś...");
+							dialog.text = RandPhraseSimple("Spójrzcie  "+GetSexPhrase("na tego łajdaka! Odważył się pokazać swoją twarz","na tamtą szmate! Ośmieliła się pokazać swoją twarz")+" w "+XI_ConvertString("Colony"+npchar.city)+". Brać "+GetSexPhrase("go","ją")+"!!!","Hej, rozpoznaje cię, "+GetSexPhrase("łotrze","cwaniaro")+"! Łapać "+GetSexPhrase("go","ją")+"!!!");
+							link.l1 = RandPhraseSimple("Argh!..","Cóż, sam się o to prosiłeś...");
 							link.l1.go = "fight";
 							break;						
 						}
@@ -290,7 +290,7 @@ void ProcessDialogEvent()
 					{
 						if(sti(pchar.GenQuest.EncGirl.MeetSoldiers) == 1)	
 						{
-							dialog.text = "O, popatrz kto tam! Pani "+pchar.GenQuest.EncGirl.name+" sama zaszczyciła nas swoją obecnością! Zastanawiam się, jak miałaś odwagę? Szukaliśmy ciebie! Proszę iść do lochu - twoja cela jest gotowa i czeka na ciebie. ";
+							dialog.text = "O, popatrz! Pani "+pchar.GenQuest.EncGirl.name+" sama zaszczyciła nas swoją obecnością! Zastanawiam się, jak miałaś odwagę? Szukaliśmy ciebie! Proszę iść do lochu - twoja cela jest gotowa i czeka na ciebie. ";
 							link.l1 = "Jakie to kompletna bzdura, o czym ty mówisz!? Ja i mój "+GetSexPhrase("kawaler","towarzysz")+" spacerowaliśmy po dżungli, zbierając kwiaty. Zostaw mnie w spokoju! Gdzie są maniery tych despotów?! Jak tylko zobaczą atrakcyjną dziewczynę, zaczynają ją dręczyć! "+GetSexPhrase("Moja droga, powiedz tym durniom, żeby spadli i zostawili uczciwą kobietę w spokoju!","Kochanie, proszę powiedz tym durniom...")+"!";
 							link.l1.go = "GirlEnc_1";
 						}
@@ -303,47 +303,6 @@ void ProcessDialogEvent()
 						DeleteAttribute(pchar,"GenQuest.EncGirl.MeetSoldiers");
 					}
 					// <-- девица в джунглях
-					
-					// --> Sinistra Длинные тени старых грехов
-					if(CheckAttribute(pchar, "questTemp.Knippel.Soldiers_1"))
-					{
-						switch(0)
-						{
-							case 0: 
-							dialog.text = "Słuchaj, Charlie, mamy kilku nowych rekrutów w forcie. Zieloni jak trawa... Mógłbyś wpaść i pokazać im, jak celować?";
-							link.l1 = "Jeśli Kapitan Fleetwood i ja nie wypłyniemy w najbliższych dniach - z przyjemnością.";
-							link.l1.go = "Knippel_Soldiers_1";
-							break;
-						}
-						break;
-					}
-					
-					if(CheckAttribute(pchar, "questTemp.Knippel.Soldiers_2"))
-					{
-						switch(0)
-						{
-							case 0: 
-							dialog.text = "Charlie, mój dyżur się kończy, może napijesz się ze mną?";
-							link.l1 = "Z przyjemnością, kumplu! Pozwól mi tylko zobaczyć, czego kapitan chce.";
-							link.l1.go = "Knippel_Soldiers_2";
-							break;
-						}
-						break;
-					}
-					
-					if(CheckAttribute(pchar, "questTemp.Knippel.Soldiers_3"))
-					{
-						switch(0)
-						{
-							case 0: 
-							dialog.text = "Dobranoc, Charlie! Nie wyglądasz zbyt dobrze. Wszystko w porządku?";
-							link.l1 = "Obudzili mnie w środku nocy, co myślisz? Nie mogę złapać przerwy.";
-							link.l1.go = "Knippel_Soldiers_3";
-							break;
-						}
-						break;
-					}
-					// <-- Длинные тени старых грехов
 
 					// --> belamour ночной приключенец
 					if(CheckAttribute(pchar,"GenQuest.NightAdventureSolNum") && npchar.index == pchar.GenQuest.NightAdventureSolNum)
@@ -496,7 +455,7 @@ void ProcessDialogEvent()
 						break;
 
 						case 10:
-							dialog.text = "To cholerna gorąco... Chętnie oddałbym połowę mojego życia, aby wrócić do Europy.";
+							dialog.text = "Te cholerne gorąco... Chętnie oddałbym wszystko, aby wrócić do Europy.";
 							link.l1 = "Tak, widzę, że twoje zdrowie nie jest dostosowane do lokalnego klimatu.";
 							link.l1.go = "exit";
 						break;
@@ -510,8 +469,8 @@ void ProcessDialogEvent()
 		break;
 		//============================== ноды на разборки при распознавании =========================
 		case "PegYou":
-			dialog.text = RandPhraseSimple("Wydaje mi się, że to jakaś sztuczka. Porozmawiajmy z komendantem, "+GetSexPhrase("kumpel","droga")+", i wszystko sobie poukładaj...","Hmm... Coś mi mówi, że nie jesteś tym, za kogo się podajesz... Oddaj swoją broń "+GetAddress_Form(npchar)+", i podążaj za mną na dalsze śledztwo!");
-			link.l1 = RandPhraseSimple("Spieprzaj!","Gdy dwa niedziele przychodzą w jeden tydzień...");
+			dialog.text = RandPhraseSimple("Wydaje mi się, że to jakaś sztuczka. Porozmawiamy z komendantem, "+GetSexPhrase("przyjacielu","moja droga")+", i wszystko sobie wyjaśnimy...","Hmm... Coś mi mówi, że nie jesteś tym, za kogo się podajesz... Oddaj swoją broń "+GetAddress_Form(npchar)+", i podążaj za mną!");
+			link.l1 = RandPhraseSimple("Nigdzie nie ide! Spieprzaj!","Myślisz, że się poddam? Zaryzykuje drugą opcję...");
 			link.l1.go = "fight";
 			if (!CheckAttribute(pchar,"questTemp.stels.landSolder") || sti(pchar.questTemp.stels.landSolder) != GetDataDay())
 			{
@@ -521,7 +480,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NotPegYou":
-			dialog.text = RandPhraseSimple("Och, rozumiem... Wszystko wydaje się w porządku, możesz iść, "+GetAddress_Form(pchar)+".","Musiałem się trochę zmęczyć stojąc na straży... Wydaje się, że wszystko jest w porządku, "+GetAddress_Form(pchar)+", Przykro mi.");
+			dialog.text = RandPhraseSimple("Och, rozumiem... Wszystko wydaje się w porządku, możesz iść, "+GetAddress_Form(pchar)+".","Musiałem się trochę zmęczyć stojąc na straży... Wydaje się, że wszystko jest w porządku, "+GetAddress_Form(pchar)+", Przepraszam.");
 			link.l1 = "Nie ma problemu!";
 			link.l1.go = "exit";
 			if (!CheckAttribute(pchar,"questTemp.stels.landSolder") || sti(pchar.questTemp.stels.landSolder) != GetDataDay())
@@ -532,8 +491,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "vincento":
-			dialog.text = RandPhraseSimple("Ach, rozumiem... Wszystko wydaje się być w porządku, możesz iść, "+GetAddress_Form(pchar)+".","Zobaczmy teraz... Cóż, wszystko wydaje się być w porządku, "+GetAddress_Form(pchar)+", Przykro mi.");
-			link.l1 = "To cię nauczy!";
+			dialog.text = RandPhraseSimple("Ach, rozumiem... Wszystko wydaje się być w porządku, możesz iść, "+GetAddress_Form(pchar)+".","Zobaczmy... Cóż, wszystko wydaje się być w porządku, "+GetAddress_Form(pchar)+", Przepraszam.");
+			link.l1 = "Nie ma problemu!";
 			link.l1.go = "exit";
 		break;
 		
@@ -541,38 +500,38 @@ void ProcessDialogEvent()
 			iTemp = GetDaysContinueNationLicence(HOLLAND);
 			if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -12)
 			{
-				dialog.text = "Właśnie przyszło mi to do głowy! Taka bezczelność! Przybyć tu pod pozorem kupca! Twoje obrazy wiszą w każdej koszarach, ty sukinsynie! Tym razem ci się to nie uda! Chwytajcie go!";
-				link.l1 = RandPhraseSimple("Arrgh!..","No cóż, sam o to prosiłeś...");
+				dialog.text = "Właśnie przyszło mi to do głowy! Taka bezczelność! Przybyć tu pod pozorem kupca! Twoje portrety wiszą w każdych koszarach, ty sukinsynie! Tym razem ci się to nie uda! Łapcie go!";
+				link.l1 = RandPhraseSimple("Arrgh!..","No cóż, sam się o to prosiłeś...");
 				link.l1.go = "fight";	
 				TakeNationLicence(HOLLAND);
 				break;
 			}
-			if (pchar.location != "Minentown_town" && findsubstr(pchar.location.from_sea, "_town" , 0) == -1) //если причалил не в городе 300912
+			if (pchar.location != "LosTeques_town" && findsubstr(pchar.location.from_sea, "_town" , 0) == -1) //если причалил не в городе 300912
 			{
-				dialog.text = "Przybyłeś tutaj handlować? Mogę zapytać jak? Gdzie jest twój statek? Wiesz, to wszystko wygląda bardzo podejrzanie, i jestem zmuszony zatrzymać cię, dopóki nie wyjaśnimy tego wszystkiego. Oddaj swoją broń i idź za mną!";
-				link.l1 = RandPhraseSimple("Spierdalaj!","Gdy dwa niedziele przychodzą w jeden tydzień...");
+				dialog.text = "Przybyłeś tutaj handlować? Mogę zapytać jak? Gdzie jest twój statek? Wiesz, to wszystko wygląda bardzo podejrzanie, dlatego jestem zmuszony cię zatrzymać, dopóki nie wyjaśnimy tego wszystkiego. Oddaj swoją broń i idź za mną!";
+				link.l1 = RandPhraseSimple("Spierdalaj!","Myślisz, że się poddam? Zaryzykuje drugą opcję...");
 				link.l1.go = "fight";	
 				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == -1)
 			{
-				dialog.text = "Twoja licencja musi zostać unieważniona, ponieważ wygasła i z tego powodu jest nieważna. Oddaj swoją broń i podążaj za mną w celu dalszego śledztwa!";
-				link.l1 = RandPhraseSimple("Spadaj!","Gdy dwa niedziele przyjdą w jeden tydzień...");
+				dialog.text = "Twoja licencja musiała zostać unieważniona, ponieważ wygasła i z tego powodu jest nieważna. Oddaj swoją broń i podążaj za mną w celu dalszego śledztwa!";
+				link.l1 = RandPhraseSimple("Spadaj!","Myślisz, że się poddam? Zaryzykuje drugą opcję...");
 				link.l1.go = "fight";	
 				TakeNationLicence(HOLLAND);
 				break;
 			}
 			if (iTemp == 0)
 			{
-				dialog.text = "Hmm... Wszystko wygląda w porządku. Niemniej jednak muszę zauważyć, że twoja licencja wygasa dzisiaj. Tym razem cię przepuszczę, ale nadal będziesz musiał zdobyć nową licencję.";
-				link.l1 = "Dziękuję, kupię nowy, jak tylko będę miał okazję.";
+				dialog.text = "Hmm... Wszystko wygląda w porządku. Niemniej jednak muszę zauważyć, że twoja licencja wygasa dokładnie dzisiaj. Tym razem cię przepuszczę, ale nadal będziesz musiał zdobyć nową licencję.";
+				link.l1 = "Dziękuję, kupię nową, jak tylko będę miał okazję.";
 				link.l1.go = "exit";			
 			}
 			if (iTemp > 0 && iTemp <= 10)
 			{
 				dialog.text = "Hmm... Wszystko wygląda w porządku. Muszę jednak zauważyć, że twoja licencja wkrótce wygaśnie. Jest jeszcze ważna tylko przez "+FindRussianDaysString(iTemp)+". Miej to na uwadze, "+GetAddress_Form(npchar)+".";
-				link.l1 = "Dziękuję, kupię nowy jak najszybciej będzie mi to możliwe.";
+				link.l1 = "Dziękuję, kupię nową jak najszybciej, gdy będzie to możliwe.";
 				link.l1.go = "exit";			
 			}
 			if (iTemp > 10)
@@ -584,14 +543,14 @@ void ProcessDialogEvent()
 		break;
 		//============================== ноды маяка Порт Рояля =========================
 		case "PortRoyal_Mayak":
-			dialog.text = RandPhraseSimple("Hej, kumplu, niczego nie psuj w latarni morskiej.","Ten latarnia morska to bardzo ważny obiekt miasta. Bądź ostrożny!");
+			dialog.text = RandPhraseSimple("Hej, kolego, niczego nie psuj w latarni morskiej.","Ta latarnia morska to bardzo ważny obiekt miasta. Bądź ostrożny!");
 			link.l1 = RandPhraseSimple("W porządku, nie martw się.","Dobrze, nie martw się.");
 			link.l1.go = "exit";
 			NextDiag.TempNode = "PortRoyal_Mayak";
 		break;
 		case "PortRoyal_Gans":
 			dialog.text = LinkRandPhrase("Nie chodź blisko dział - to jest wojskowy obiekt!","Obcy nie mają dostępu do dział!","Jeśli zauważę, że kręcisz się w pobliżu dział, jesteś skończony!");
-			link.l1 = RandPhraseSimple("Mam to.","W porządku, rozumiem.");
+			link.l1 = RandPhraseSimple("Przyjąłem.","W porządku, rozumiem.");
 			link.l1.go = "exit";
 			NextDiag.TempNode = "PortRoyal_Gans";
 		break;
@@ -601,12 +560,12 @@ void ProcessDialogEvent()
 			dialog.text = "A kim jesteś, kapitanie? Czyżbyś przypadkiem nie był wspólnikiem najbardziej notorycznego złodzieja w tej osadzie?";
 			link.l1 = "Kogo ty właśnie nazwałeś wspólnikiem w przestępstwie?! Czy ty jesteś oślepiony słońcem, czy co?! Hej, zdejmij swoje łapy od dziewczyny!";
 			link.l1.go = "GirlEnc_11";
-			link.l2 = "Właściwie, ja..."+GetSexPhrase("poznałem ją","poznałem ją")+" niedawno...";
+			link.l2 = "Właściwie, to ja..."+GetSexPhrase("poznałem ją","poznałam ją")+" niedawno...";
 			link.l2.go = "GirlEnc_12";
 		break;
 
 		case "GirlEnc_11":
-			dialog.text = ""+GetSexPhrase("Panie","Panna")+", mamy rozkaz zatrzymać ją i zabrać do lochu. A jeśli myślisz, że możesz nas zatrzymać, mylisz się.";
+			dialog.text = ""+GetSexPhrase("Panie","Panno")+", mamy rozkaz zatrzymać ją i zabrać do lochu. A jeśli myślisz, że możesz nas zatrzymać, mylisz się.";
 			link.l1 = "Zobaczmy, więc...";
 			link.l1.go = "GirlEnc_11End";
 		break;
@@ -627,7 +586,7 @@ void ProcessDialogEvent()
 		
 		case "GirlEnc_12":
 			dialog.text = "Ach, naprawdę? W takim razie radziłbym ci sprawdzić swoje kieszenie. Ta dama jest profesjonalistką, wiesz";
-			link.l1 = "Dziękuję, zrobię to. Jak mogłem tak się ośmieszyć...";
+			link.l1 = "Dziękuję, zrobię to. Jak mogłem się tak ośmieszyć...";
 			link.l1.go = "GirlEnc_12End";		
 		break;		
 		
@@ -644,7 +603,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GirlEnc_2":
-			dialog.text = ""+GetSexPhrase("Panie","Panna")+", mamy rozkaz znaleźć tę damę i przyprowadzić ją do jej ojca.";
+			dialog.text = ""+GetSexPhrase("Panie","Panno")+", mamy rozkaz znaleźć tę damę i przyprowadzić ją do jej ojca.";
 			link.l1 = "No cóż, rozkaz to rozkaz - idź więc dalej.";
 			link.l1.go = "GirlEnc_2End";
 			link.l2 = "Za późno na to, bo już rozmawiam z jej ojcem.";
@@ -707,13 +666,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NightAdventure_CitizenHomieSolder_1":
-			dialog.text = "Czyli dał mi pod okiem, kiedy byłem na służbie, a teraz powinien być wypuszczony? Dlaczego miałoby do tego dojść?";
+			dialog.text = "Czyli dał mi w twarz, kiedy byłem na służbie, a teraz powinien być wypuszczony? Dlaczego miałoby do tego dojść?";
 			link.l1 = "Co powiesz na pięćset pesos jako przeprosiny za jego zachowanie?";
 			link.l1.go = "NightAdventure_CitizenHomieSolder_2";
 		break;
 		
 		case "NightAdventure_CitizenHomieSolder_2":
-			dialog.text = "Czy tak myślisz? Obraził moją honor, i myślisz, że to może być przebaczone za pięćset pesos? Czy myślisz, że mój honor można kupić?";
+			dialog.text = "Czy tak myślisz? Obraził mój honor, i myślisz, że to może być przebaczone za pięćset pesos? Czy myślisz, że mój honor można kupić?";
 			link.l1 = "...";
 			link.l1.go = "NightAdventure_CitizenHomieSolder_3";
 		break;
@@ -762,43 +721,15 @@ void ProcessDialogEvent()
 		break;
 		// <-- ночной приключенец
 		
-		// --> Sinistra Длинные тени старых грехов
-		case "Knippel_Soldiers_1":
-			dialog.text = "I może naucz ich paru swoich sekretów, żeby nie zabrać ich ze sobą do grobu?";
-			link.l1 = "Heh-heh, uh, nie, kumple, moje sekrety są tylko moje, i jakie to byłyby sekrety?";
-			link.l1.go = "exit";
-			DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_1");
-			pchar.questTemp.Knippel.Soldiers_2 = true;
-			LAi_CharacterDisableDialog(npchar);
-		break;
-		
-		case "Knippel_Soldiers_2":
-			dialog.text = "Rozumiem, znowu zrezygnujesz, jak zawsze.";
-			link.l1 = "No cóż, jeśli ryba ucieka - to zły rybak. To jak z kulkami armatnimi - dobra nigdy cię nie zawiedzie, wystarczy dobrze celować...";
-			link.l1.go = "exit";
-			DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_2");
-			pchar.questTemp.Knippel.Soldiers_3 = true;
-			LAi_CharacterDisableDialog(npchar);
-		break;
-		
-		case "Knippel_Soldiers_3":
-			dialog.text = "Przynajmniej nie wstajesz co noc. I spędzasz więcej czasu na statku niż na lądzie. Z kim rozmawiasz?";
-			link.l1 = "Ach, co ty wiesz o trudach służby, kumplu! Jak to było w Royal Navy!.. Nie możesz sobie nawet wyobrazić.";
-			link.l1.go = "exit";
-			DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_3");
-			LAi_CharacterDisableDialog(npchar);
-		break;
-		// <-- Длинные тени старых грехов
-		
 		//замечение по обнажённому оружию
 		case "SoldierNotBlade":
 			// belamour legendary edition если у герой офицер нации -->
 			if(IsOfficerFullEquip())
 			{
-			dialog.text = "Kapitanie, proszę schować swoje bronie: jest zabronione ich wyciąganie w naszym mieście.";
-			link.l1 = LinkRandPhrase("Dobrze, schowam to...","Już zrobione.","Jak mówisz...");
+			dialog.text = "Kapitanie, proszę schować swoją broń: chodzenie z wyciągniętą bronią jest zabronione naszym mieście.";
+			link.l1 = LinkRandPhrase("Dobrze, schowam to...","Już się robi.","Skoro tak mówisz...");
 			link.l1.go = "exit";
-			link.l2 = LinkRandPhrase("Jebać cię!","Chyba będę z tego korzystać!","Schowam to, kiedy nadejdzie odpowiedni czas.");
+			link.l2 = LinkRandPhrase("Jebać cię!","A co mi zrobisz?!","Schowam to, kiedy nadejdzie odpowiedni czas.");
 			link.l2.go = "fight";
 			npchar.greeting = "soldier_common";
 			NextDiag.TempNode = "First Time";
@@ -806,9 +737,9 @@ void ProcessDialogEvent()
 			}
 			// <-- legendary edition
 			dialog.text = LinkRandPhrase("Hej, co to za machanie bronią?! Schowaj to natychmiast!","Rozkazuję ci natychmiast schować broń!","Hej, "+GetAddress_Form(NPChar)+", przestań straszyć ludzi! Schowaj swoją broń.");
-			link.l1 = LinkRandPhrase("Dobrze, schowam to...","Już zrobione.","Jak mówisz...");
+			link.l1 = LinkRandPhrase("Dobrze, schowam to...","Już się robi.","Skoro tak mówisz...");
 			link.l1.go = "exit";
-			link.l2 = LinkRandPhrase("Spadaj!","Chyba zacznę z tego korzystać!","Schowam to, gdy nadejdzie odpowiedni czas.");
+			link.l2 = LinkRandPhrase("Spadaj!","A co mi zrobisz?!","Schowam to, gdy nadejdzie odpowiedni czas.");
 			link.l2.go = "fight";
 			npchar.greeting = "soldier_common";
 			NextDiag.TempNode = "First Time";

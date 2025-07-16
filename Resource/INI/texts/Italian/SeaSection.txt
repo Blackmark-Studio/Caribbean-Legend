@@ -1,0 +1,63 @@
+﻿Ship_critical		{Colpo critico!}
+Ship_critical_notif		{' - Colpo critico!}
+Ship_sunk			{%1 "%2" è affondato. +%3 esperienza acquisita.}
+Ship_sunk_other		{%1 "%2" è affondato.}
+Ship_got_good		{%1 centri di %2 vengono presi a bordo}
+Ship_cant_got_good	{Nessuno spazio per %1}
+
+Fort_destroy		{Forte %1 è distrutto. +%2 esperienza acquisita.}
+Fort_destroy_notif	{Artiglieria del Forte soppressa!}
+Fort_cannon			{Il cannone del forte è distrutto!}
+
+seg_Balls 			{palle}
+seg_Grapes 			{mitraglia}
+seg_Knippels 		{knippels}
+seg_Bombs 			{bombe}
+seg_Sailcloth 		{tela vele}
+seg_Planks 			{assi}
+seg_Slaves 			{schiavi}
+seg_Wheat 			{grano}
+seg_Ebony 			{ebano}
+seg_Chocolate 		{cacao}
+seg_Suga 			{zucchero}
+seg_Wine 			{vino}
+seg_ShipSilk 		{seta}
+seg_Rum 			{rum}
+seg_Tobacco 		{tabacco}
+seg_Coffee 			{caffè}
+seg_Mahogany 		{mogano}
+seg_Cinnamon 		{vaniglia}
+seg_Copra 			{copra}
+seg_Paprika 		{paprica}
+seg_Fruits 			{frutta}
+seg_Ale 			{birra}
+seg_Ropes 			{corde}
+seg_Clothes 		{vestiti}
+seg_Cotton 			{cotone}
+seg_Sandal 			{ferroLegno}
+seg_Leather 		{pelle}
+seg_Oil 			{resina}
+seg_Food 			{cibo}
+seg_Weapon 			{armi}
+seg_Gold 			{oro}
+seg_Silver 			{argento}
+seg_Powder 			{polvere da sparo}
+seg_Brick 			{mattoni}
+seg_Medicament 		{medicine}
+
+seg_Cannon_3		{3 lb. falconetti}
+seg_Cannon_6		{6 libbre}
+seg_Cannon_8		{8 libbre}
+seg_Cannon_12		{12-libbre}
+seg_Cannon_16		{16-libbre}
+seg_Cannon_18		{18-libbre}
+seg_Cannon_20		{20-libbre}
+seg_Cannon_24		{24-libbre}
+seg_Cannon_32		{32-libbre}
+seg_Cannon_36		{36-libbre}
+seg_Cannon_42		{42-libbre}
+seg_Culverine_8		{Semi-colubrina}
+seg_Culverine_18	{Colubrine}
+seg_Culverine_36	{Colubrine piene}
+
+sea_exp_add			{+%1 esperienza acquisita}

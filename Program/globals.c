@@ -2,7 +2,7 @@
 #include "storm-engine\messages.h"
 #include "sound.c"
 
-string savefile_info = "ver 1.4.0";
+string savefile_info = "ver 1.5.0";
 // --------- DLC globals ---------------------------------------------
 #define DLC_AVAILABLE	  1
 #define MAIN_APPID		  2230980
@@ -11,13 +11,13 @@ string savefile_info = "ver 1.4.0";
 #define DLC_APPID_3       3162620
 #define DLC_APPID_4       3398030
 #define DLC_APPID_5       3549890
-#define DLC_APPID_6       0
+#define DLC_APPID_6       3549900
 #define DLC_NAME_1        "Loyalty Pack"
 #define DLC_NAME_2        "Vile Liittle God"
 #define DLC_NAME_3        "Black Mark"
 #define DLC_NAME_4        "Ships Pack #1"
 #define DLC_NAME_5        "Ships Pack #2"
-#define DLC_NAME_6        ""
+#define DLC_NAME_6        "Ships Pack #3"
 #define DLC_DATE_1	      ""
 #define DLC_DATE_2        ""
 #define DLC_DATE_3        ""
@@ -66,9 +66,10 @@ string sgMusicName = "?";
 
 ref pchar;
 
-// TO_DO: В следующем патче убираем Render и используем нормальные объекты
-//object TEV; // Temporary events
-//object LTR; // Lottery
+object TEV; // Temporary events
+object LTR; // Lottery
+object HTBL;// Hash Table
+int GlobalSeed; // Суточное зерно
 
 //--------------------------------------------------------------------
 // Bool section
@@ -88,11 +89,13 @@ ref pchar;
 #define HOLLAND		3
 #define PIRATE		4
 
+#define NON_PIRATES 3
+
 object	Nations[MAX_NATIONS];
 int		NationsRelations[MAX_NATIONS_SQR];
 int		NationsRelations2MainCharacter[MAX_NATIONS];
 
-object	Render;
+object Render;
 object InterfaceBackScene;
 
 //--------------------------------------------------------------------
@@ -109,7 +112,7 @@ int     MAX_CHARACTERS   = 10;
 int storeArray[2];
 SetArraySize(&storeArray, MAX_LOCATIONS);*/
 
-int MAX_LOCATIONS = 1072; //1016 //1031
+int MAX_LOCATIONS = 1096;
 int MAX_ISLANDS = 38;
 int MAX_COLONIES = 43;
 
@@ -141,14 +144,14 @@ string 	sSpManGenNames[21], sSpWomenGenNames[9], sSpGenFamilies[54];
 // Типы имен
 #define NAMETYPE_ORIG "Orig"
 #define NAMETYPE_NICK "Nick"
-#define NAMETYPE_VIP "Vip"
+#define NAMETYPE_VIP  "Vip"
 #define NAMETYPE_MAIN "Main"
 
-Object Names;
+object  Names;
 
 object  NullCharacter;
 object	Characters[TOTAL_CHARACTERS];
-object	Locations[1072]; //1016 //1031
+object	Locations[1096];
 object	Islands[38];
 object	Colonies[43];
 
@@ -196,7 +199,7 @@ int GetMainCharacterIndex()
 	return nMainCharacterIndex;
 }
 
-int	GetCharacterIndex(string string_id) 
+int GetCharacterIndex(string string_id) 
 {
 	return NativeFindCharacter(&Characters, string_id);
 }
@@ -256,5 +259,13 @@ int EventReturn_isGrassLightsOn()
 	{
 	    return 1;
 	}
+	return 0;
+}
+
+#event_handler("Event_DevMode", "IsDevMode");
+int IsDevMode()
+{
+	if(MOD_BETTATESTMODE == "on")
+		return 1;
 	return 0;
 }

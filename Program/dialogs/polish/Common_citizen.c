@@ -63,7 +63,7 @@ void ProcessDialogEvent()
 			{
 				if (sti(rColony.HeroOwn) == true) // наш горожанин
 				{
-				    dialog.text = RandPhraseSimple("Mówią, że to ty rządzisz tym miastem, "+GetSexPhrase("panie","panna")+".","Jakie przyjemne spotkanie, szef miasta zwrócił się do mnie z pytaniem.");
+				    dialog.text = RandPhraseSimple("Mówią, że to ty rządzisz tym miastem, "+GetSexPhrase("panie","panno")+".","Jakie przyjemne spotkanie, szef miasta zwrócił się do mnie z pytaniem.");
 					link.l1 = RandPhraseSimple("Zmieniłem zdanie.","Po prostu zwiedzam to miasto. Do widzenia.");
 					link.l1.go = "exit";
 					link.l2 = RandPhraseSimple("Mam do ciebie pytanie.","Potrzebuję informacji.");

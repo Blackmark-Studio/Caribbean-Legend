@@ -17,7 +17,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				break;
 			}
 			//регата
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakiego rodzaju pytania?","Czego chcesz, "+GetAddress_Form(NPChar)+"?"),"Już próbowałeś zadać mi pytanie "+GetAddress_Form(NPChar)+"... ","Już trzeci raz dzisiaj rozmawiasz o tej sprawie...","Spójrz, jeśli nie masz nic do powiedzenia na temat spraw portowych, to nie zawracaj mi głowy swoimi pytaniami.","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakiego rodzaju pytania?","Czego chcesz, "+GetAddress_Form(NPChar)+"?"),"Już próbowałeś zadać mi pytanie "+GetAddress_Form(NPChar)+"... ","Już trzeci raz dzisiaj rozmawiasz o tej sprawie...","Spójrz, jeśli nie masz nic do powiedzenia na temat spraw portowych, to nie zawracaj mi głowy swoimi pytaniami.","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniłem zdanie.","Nie mam o czym rozmawiać."),"Nieważne.","Rzeczywiście, już trzeci raz...","Przykro mi, ale nie interesują mnie teraz sprawy portu.",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			//Голландский гамбит

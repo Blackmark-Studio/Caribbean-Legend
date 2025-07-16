@@ -55,6 +55,13 @@ void chrCharacterEntryToLocator()
 	case "reload":
 		if( !chrCheckReloadLocatorSkip(loc,locator) )
 		{
+			if(bGlobalTutor && loc.id == "Quest_Deck_Medium")
+			{
+				if(locator == "reload_deck")
+					ILogAndActions.ActiveActions.Reload.Text = XI_ConvertString("for_quick_action_Deck");
+				else
+					ILogAndActions.ActiveActions.Reload.Text = XI_ConvertString("for_quick_action_Reload");
+			}
 			chrWaitReloadIsNoLink = false;
 			if(sti(chr.index) != GetMainCharacterIndex()){ break; }
 			chrWaitReloadLocator = locator;
@@ -137,6 +144,10 @@ void chrCharacterEntryToLocator()
 			LAi_CheckKillCharacter(chr);
 			if(bDrawBars) SendMessage(chr, "lfff", MSG_CHARACTER_VIEWDAMAGE, (15+MOD_SKILL_ENEMY_RATE), MakeFloat(MakeInt(hp)), MakeFloat(MakeInt(chr.chr_ai.hp_max)));
 		}
+		break;
+		
+		case "event":
+			CheckEvent_OnEnterLocator(loc, locator);
 		break;
 	}
 	
@@ -295,6 +306,10 @@ void chrCharacterExitFromLocator()
 			ReleaseSound(0);
 			bMainCharacterInFire = false;
 		}
+		break;
+		case "event":
+			Log_SetActiveAction("Nothing");
+			BLI_RefreshCommandMenu();
 		break;
 	}
 

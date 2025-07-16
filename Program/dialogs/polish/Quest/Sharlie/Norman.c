@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 				link.l1.go = "tieyasal";
 				break;
 			}
-			switch (drand(5))
+			switch (hrand(5))
 			{
 				case 0:
 					dialog.text = "Stój! Jestem gubernatorem tej wyspy. Co, nie wierzysz mi?!";

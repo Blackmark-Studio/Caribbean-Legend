@@ -31,6 +31,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "I've got a meeting here with one person...";
                 link.l1.go = "baster_goldengirl";
 			}
+			//--> Торговля по закону
+			if (CheckAttribute(pchar, "questTemp.TPZ_guber_1"))
+			{
+				link.l1 = "Monsieur, I intend to pursue commercial activity within the town. Specifically, I'm interested in the steady, large-scale trade of spirits.";
+				link.l1.go = "TPZ_guber_1";
+			}
+			//<-- Торговля по закону
+
 		break;
 		//************************** Квестовые штрумы ************************
 		case "Cupture_after":
@@ -128,6 +136,46 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.questTemp.GoldenGirl = "baster1";
 			DoQuestReloadToLocation("CommonResidence_3", "reload", "reload1", "GoldenGirl_AngerranInResidence");
 		break;
+		
+		//--> Торговля по закону
+		case "TPZ_guber_1":
+			dialog.text = "Captain, you were wise to approach me. We are making every effort to combat illicit trade on this island, and I truly welcome upright captains who seek to establish business through legal channels.";
+			link.l1 = "So, what are the terms and steps required to commence trade?";
+			link.l1.go = "TPZ_guber_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "TPZ_guber_2":
+			dialog.text = "It is rather straightforward. To trade in spirits, you must pay a monthly tax of one hundred doubloons to the treasury, maintain proper records, and submit regular activity reports. Once the funds are deposited, you may begin trading in earnest.";
+			link.l1 = "Excellent. The terms are entirely reasonable. A local resident by the name of Christian Deluce shall act on my behalf. I trust that will not pose a problem?";
+			link.l1.go = "TPZ_guber_3";
+		break;
+
+		case "TPZ_guber_3":
+			dialog.text = "As you wish, Captain. But bear in mind – full responsibility for your protégé shall rest upon your shoulders. Should he transgress, you shall share in his consequences.";
+			link.l1 = "Of course. Thank you for the clarification, Governor. We shall make the arrangements, and Christian will see to the tax payment.";
+			link.l1.go = "TPZ_guber_4";
+		break;
+
+		case "TPZ_guber_4":
+			dialog.text = "Splendid. I am pleased to see such a diligent approach. I wish you success in your enterprise.";
+			link.l1 = "Much obliged. I trust our cooperation will benefit the city. Farewell.";
+			link.l1.go = "TPZ_guber_5";
+		break;
+
+		case "TPZ_guber_5":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.TPZ_guber_1");
+			AddQuestRecord("TPZ", "11");
+
+			sld = CharacterFromID("TPZ_Kristian");
+			sld.dialog.filename = "Quest\MiniEvents\TradingByLaw_dialog.c";
+			sld.dialog.currentnode = "Kristian_21";
+			ChangeCharacterAddressGroup(sld, "BasTer_houseF3", "barmen", "stay");
+			LAi_SetStayType(sld);
+			AddLandQuestMark(sld, "questmarkmain");
+		break;
+		//<-- Торговля по закону
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

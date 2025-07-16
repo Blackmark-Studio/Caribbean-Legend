@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 			dialog.text = "Es bueno verte, hijo mío. ¿Estás aquí para saldar tu deuda?";
 			if (PCharDublonsTotal() >= 100 && sti(pchar.money) >= 50000)
 			{
-				link.l1 = "Sí, padre. Lo soy.";
+				link.l1 = "Sí, padre.";
 				link.l1.go = "FastStart_7";
 			}
 			else
@@ -39,17 +39,17 @@ void ProcessDialogEvent()
 		dialog.text = "¿Hay algo que necesites, hijo mío?";
 		if (CheckAttribute(pchar, "questTemp.Sharlie.FastStart") && !CheckAttribute(npchar, "quest.FastStart") && !CheckAttribute(npchar, "quest.meet")) // ещё не виделись
 		{
-			link.l1 = "Sí, pater. Necesito tu ayuda. Mi nombre es " + GetFullName(pchar) + ". Michel de Monper me aconsejó hablar contigo.";
+			link.l1 = "Sí, padre. Necesito tu ayuda. Mi nombre es " + GetFullName(pchar) + ". Michel de Monper me aconsejó hablar contigo.";
 			link.l1.go = "FastStart";
 		}
 		if (CheckAttribute(npchar, "quest.help") && !CheckAttribute(npchar, "quest.meet")) // ещё не виделись
 		{
-			link.l1 = "Sí, padre. Necesito tu ayuda. Mi nombre es " + GetFullName(pchar) + "Me aconsejó hablar contigo mi hermano, Michel de Monper.";
+			link.l1 = "Sí, padre. Necesito tu ayuda. Mi nombre es " + GetFullName(pchar) + ". Me aconsejó hablar contigo mi hermano, Michel de Monper.";
 			link.l1.go = "meet";
 		}
 		if (CheckAttribute(pchar, "questTemp.Sharlie.FastStart") && !CheckAttribute(npchar, "quest.FastStart") && CheckAttribute(npchar, "quest.meet"))
 		{
-			link.l1 = "Sí, pater. Necesito un barco para ayudar a Michel, pero acabo de llegar al Caribe y mi cartera está vacía. Mi hermano me dijo que podrías prestarme algo de dinero...";
+			link.l1 = "Sí, padre. Necesito un barco para ayudar a Michel, pero acabo de llegar al Caribe y mi cartera está vacía. Mi hermano me dijo que podrías prestarme algo de dinero...";
 			link.l1.go = "FastStart_2";
 		}
 		if (CheckAttribute(npchar, "quest.help") && CheckAttribute(npchar, "quest.meet"))
@@ -62,7 +62,7 @@ void ProcessDialogEvent()
 		}
 		if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan") && PCharDublonsTotal() >= 100 && sti(pchar.money) >= 50000)
 		{
-			link.l2 = "Sí, pater. Lo soy.";
+			link.l2 = "Sí, padre. Estoy list"+GetSexPhrase("o","a")+" para pagar mi deuda.";
 			link.l2.go = "FastStart_7";
 		}
 		link.l9 = "No, nada, padre.";
@@ -130,18 +130,18 @@ void ProcessDialogEvent()
 
 	case "escape":
 		dialog.text = "Sí, Charles, soy consciente de eso. Pero debo decepcionarte. Michel no está aquí.";
-		link.l1 = "¿Qué quieres decir con que no está aquí? ¡Dijo que me estaría esperando en vuestra iglesia! Padre, ¿qué ha pasado? ¿Dónde está mi hermano?!";
+		link.l1 = "¿Qué quieres decir con que no está aquí? ¡Dijo que me estaría esperando en la iglesia! Padre, ¿qué ha pasado? ¿Dónde está mi hermano?!";
 		link.l1.go = "escape_1";
 		break;
 
 	case "escape_1":
-		dialog.text = "Hijo mío, tu hermano estuvo aquí y salió de mi modesto tabernáculo anoche tarde. A dónde fue, no lo sé. Pero te ha dejado esta carta.";
+		dialog.text = "Hijo mío, tu hermano estuvo aquí, y salió de mi modesto tabernáculo tarde por la noche. A dónde fue, no lo sé. Pero te ha dejado esta carta.";
 		link.l1 = "No puedo creerlo... ¡después de todo lo que hice por él! ¡Dame esa carta!";
 		link.l1.go = "escape_2";
 		break;
 
 	case "escape_2":
-		dialog.text = " No te enfurezcas tanto, Charles. Aquí está la carta. Léela y luego... luego me gustaría hablar contigo. Pero primero, lee el mensaje de tu hermano.";
+		dialog.text = "No te enfurezcas tanto, Charles. Aquí está la carta. Léela y luego... luego me gustaría hablar contigo. Pero primero, lee el mensaje de tu hermano.";
 		link.l1 = "¡Estoy ardiendo de impaciencia!";
 		link.l1.go = "escape_3";
 		break;
@@ -174,8 +174,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "escape_5":
-		dialog.text = "Las acciones de tu hermano también me sorprendieron, Charles. Aún siento momentos de perplejidad. Un leal servidor de la Orden y la Trinidad y se está comportando como un desertor.";
-		link.l1 = "¿Tienes alguna idea de cuáles podrían ser las razones de un comportamiento tan extraño?";
+		dialog.text = "Las acciones de tu hermano también me sorprendieron, Charles. Aún siento momentos de perplejidad. Un leal servidor de la Orden y la Trinidad, y se está comportando como un desertor.";
+		link.l1 = "¿Tienes alguna idea de cuáles podrían ser las razones de su comportamiento tan extraño?";
 		link.l1.go = "escape_6";
 		break;
 
@@ -187,7 +187,7 @@ void ProcessDialogEvent()
 
 	case "escape_7":
 		dialog.text = "Hijo mío, un sacerdote no ve con sus ojos, sino con su corazón. No puedo explicártelo con palabras, pero... tu hermano se ha propuesto hacer algo impuro, sucio. Nunca pensé que mi boca pudiera pronunciar esto. Sin embargo...";
-		link.l1 = "Bueno, no dudo que mi hermano haya planeado algo sucio. Incluso puedo imaginarme exactamente lo que está planeando hacer. Este 'algo' involucra algo amarillo y hace un agradable sonido de tintineo.";
+		link.l1 = "Bueno, no dudo que mi hermano haya planeado algo sucio. Incluso puedo imaginarme exactamente lo que está planeando hacer. Este 'algo' involucra algo amarillo, y hace un agradable sonido de tintineo.";
 		link.l1.go = "escape_8";
 		break;
 
@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "meet_1":
-		dialog.text = "¡A-ah, ya veo ahora. Conocí personalmente a Henri de Monper. Acércate a la luz, joven... ¡Correcto! Te pareces a él. ¡Mismo aspecto, mismo perfil noble! Me alegra ver a un hijo de Henri de Monper en nuestra parroquia.\nYa he oído que a Michel lo visitó un hombre que llegó de Europa, pero ni siquiera podía imaginarme que era su propio hermano. Espero que puedas ayudar a Michel, está pasando por un momento difícil. En cualquier caso, ¿en qué puedo servirte?";
+		dialog.text = "¡A-ah! Ya veo. Conocí personalmente a Henri de Monper. Acércate a la luz, joven... ¡Correcto! Te pareces a él. ¡Mismo aspecto, mismo perfil noble! Me alegra ver a un hijo de Henri de Monper en nuestra parroquia.\nYa he oído que a Michel lo visitó un hombre que llegó de Europa, pero ni siquiera podía imaginarme que era su propio hermano. Espero que puedas ayudar a Michel, está pasando por un momento difícil. En cualquier caso, ¿en qué puedo servirte?";
 		link.l1 = "Michel me dijo que podrías ayudarme si alguna vez tuviera problemas con las autoridades.";
 		link.l1.go = "help_info";
 		npchar.quest.meet = true;
@@ -269,14 +269,14 @@ void ProcessDialogEvent()
 	case "relation_spa": // patch-10
 		pchar.GenQuest.BenuaNation = SPAIN;
 		dialog.text = "Así que, los nobles señores están ansiosos por meterte en las mazmorras de La Habana...";
-		link.l1 = "Exactamente así, padre...";
+		link.l1 = "Exactamente, padre...";
 		link.l1.go = "relation";
 		break;
 
 	case "relation_hol":
 		pchar.GenQuest.BenuaNation = HOLLAND;
 		dialog.text = "Así que, los astutos mercaderes están ansiosos por meterte en las mazmorras de Willemstad...";
-		link.l1 = "Exactamente así, padre...";
+		link.l1 = "Exactamente, padre...";
 		link.l1.go = "relation";
 		break;
 
@@ -291,7 +291,7 @@ void ProcessDialogEvent()
 				link.l1.go = "agree";
 				iTotalTemp = 250;
 			}
-			link.l2 = "Entonces es el momento adecuado para que encuentre los doblones.";
+			link.l2 = "Entonces, es el momento adecuado para que encuentre los doblones.";
 			link.l2.go = "exit";
 		}
 		else
@@ -305,19 +305,19 @@ void ProcessDialogEvent()
 					link.l1.go = "agree";
 					iTotalTemp = 500;
 				}
-				link.l2 = "Entonces es el momento adecuado para encontrar los doblones.";
+				link.l2 = "Entonces, es el momento adecuado para encontrar los doblones.";
 				link.l2.go = "exit";
 			}
 			else
 			{
-				dialog.text = "Sí, hijo mío. Eres tan desesperado como tu hermano... Probablemente sea un rasgo de familia. No puedo corregir completamente la situación, pero, sin embargo, creo que puedo mitigar tu lamentable predicamento. Y más tarde podemos hacer más ofrendas si lo deseas. Necesito seiscientos doblones de oro por ahora y comenzaré a resolver tu dilema de inmediato.";
+				dialog.text = "Sí, hijo mío. Eres tan desesperado como tu hermano... Probablemente sea un rasgo de familia. No puedo corregir completamente la situación, pero, sin embargo, creo que puedo mitigar tu lamentable predicamento. Y más tarde podemos hacer más ofrendas si lo deseas. Necesito seiscientos doblones de oro por ahora, y comenzaré a resolver tu dilema de inmediato.";
 				if (PCharDublonsTotal() >= 600) // Sinistra legendary edition
 				{
 					link.l1 = "¡Estupendo! Aquí está el oro.";
 					link.l1.go = "agree";
 					iTotalTemp = 600;
 				}
-				link.l2 = "Entonces es el momento adecuado para que encuentre los doblones.";
+				link.l2 = "Entonces, es el momento adecuado para que encuentre los doblones.";
 				link.l2.go = "exit";
 			}
 		}
@@ -325,16 +325,18 @@ void ProcessDialogEvent()
 
 	case "agree":
 		RemoveDublonsFromPCharTotal(iTotalTemp); // Sinistra legendary edition
-		Log_Info("Has dado " + iTotalTemp + " doblones");
+		Log_Info("¡Has dado " + iTotalTemp + " doblones!");
 		PlaySound("interface\important_item.wav");
-		dialog.text = "Ahora tendrás que esperar al menos dos semanas. Creo que dentro de este tiempo podré conocer y hablar con las personas adecuadas.";
+		dialog.text = "Ahora tendrás que esperar al menos dos semanas. Creo que dentro de este tiempo podré reunirme y hablar con las personas adecuadas.";
 		link.l1 = "¡Gracias, padre! Estaré esperando...";
 		link.l1.go = "agree_1";
 		break;
 
 	case "agree_1":
 		DialogExit();
-		SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, 10 + rand(5), false);
+        rate = 10 + rand(5);
+        rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+        SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, rate, false);
 		pchar.GenQuest.BenuaNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.BenuaNation), 0));
 		npchar.quest.relation = "true";
 		break;
@@ -347,8 +349,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "FastStart_1":
-		dialog.text = "A-ah, veo. Conocí personalmente a Henri de Monper. Gira hacia la luz, joven. ¡Correcto! ¡Los mismos ojos, las mismas características nobles! Me complace ver a un hijo de Henri de Monper en mi iglesia. Espero que puedas ayudar a tu hermano. Ha tenido mucha mala suerte últimamente.";
-		link.l1 = "Sí, pater. Necesito un barco para ayudar a Michel, pero acabo de llegar al Caribe y mi bolsillo está vacío. Mi hermano me dijo que podrías prestarme algo de dinero...";
+		dialog.text = "A-ah, ya veo. Conocí personalmente a Henri de Monper. Acércate hacia la luz, joven. ¡Correcto! ¡Los mismos ojos, las mismas características nobles! Me complace ver a un hijo de Henri de Monper en mi iglesia. Espero que puedas ayudar a tu hermano. Ha tenido mucha mala suerte últimamente.";
+		link.l1 = "Sí, padre. Necesito un barco para ayudar a Michel, pero acabo de llegar al Caribe y mi bolsillo está vacío. Mi hermano me dijo que podrías prestarme algo de dinero...";
 		link.l1.go = "FastStart_2";
 		npchar.quest.meet = true;
 		break;
@@ -408,19 +410,19 @@ void ProcessDialogEvent()
 	// Jason Долго и счастливо
 	case "LH_abbat":
 		dialog.text = "¡Charles, no puedo creerlo! ¿Qué te trae por aquí?!";
-		link.l1 = "Bendígame, Santo Padre, porque vengo con buenas noticias - me voy a casar, y me gustaría verle como el sacerdote de mi boda.";
+		link.l1 = "Bendígame, Santo Padre, porque vengo con buenas noticias: ¡Me voy a casar! Y me gustaría verle como el sacerdote de mi boda.";
 		link.l1.go = "LH_abbat_1";
 		break;
 
 	case "LH_abbat_1":
 		dialog.text = "¡Hijo mío, esto es maravilloso! ¿Así que recibiste esa carta de tu padre y decidiste, como de costumbre, actuar según tu propio entendimiento? ¡Me alegra sinceramente por ti! Pero me temo que no puedo ayudarte a menos que decidas casarte en esta iglesia.";
-		link.l1 = "Entiendo que vuestra misión está en un impasse, Santo Padre. ¿Puedo ayudarle en algo? Dado que el matrimonio se celebrará en una capilla española, por supuesto, es una aventura que me gustaría emprender, pero estoy decidido a celebrar la ceremonia en Martinica. Moderadamente magnífica, y en presencia de testigos respetables e invitados honorables.";
+		link.l1 = "Entiendo que su misión está en un impasse, Santo Padre. ¿Puedo ayudarle en algo? Dado que el matrimonio se celebrará en una capilla española, por supuesto, es una aventura que me gustaría emprender, pero estoy decidido a celebrar la ceremonia en Martinica. Moderadamente magnífica, y en presencia de testigos respetables e invitados honorables.";
 		link.l1.go = "LH_abbat_2";
 		break;
 
 	case "LH_abbat_2":
 		dialog.text = "Lo siento, hijo mío, pero toda tu autoridad no vale nada contra la obstinación de los más altos jerarcas de la Iglesia Católica, especialmente en las colonias españolas. No nos pusimos de acuerdo en la cuestión de compartir la influencia de las misiones católicas entre nuestros países, y ahora estoy aquí, como un invitado de honor y un rehén de honor. Los españoles están esperando una mejor oferta de nuestra parte. Envié un mensaje a Europa, con suerte la respuesta llegará en dos meses y podremos reanudar las negociaciones. Si no llega en dos meses, definitivamente estará aquí en los próximos seis meses. \nY sí, aunque el Papa y Mazarino han llegado a un compromiso en las últimas semanas, es demasiado pronto para hablar de una relación realmente entrañable. Honestamente, no estoy seguro de que alguna vez lleguemos a algún acuerdo. Me parece que Palotti simplemente me mantiene como un argumento en sus propios juegos de poder político. Sin embargo, debo decir que el inquisidor tiene un excelente café.";
-		link.l1 = "¡No tengo ni seis meses ni dos meses! Debo cumplir el deseo de mi padre, o él me obligará a casarme sin mi consentimiento. Y su salud no es tan buena como solía ser, pero me gustaría tener tiempo para presentarle a mi elegida y la futura dama de Monper.";
+		link.l1 = "¡No tengo ni seis meses, ni dos meses! Debo cumplir el deseo de mi padre, o él me obligará a casarme sin mi consentimiento. Y su salud no es tan buena como solía ser, pero me gustaría tener tiempo para presentarle a mi elegida, y la futura dama de Monper.";
 		link.l1.go = "LH_abbat_3";
 		break;
 
@@ -432,7 +434,7 @@ void ProcessDialogEvent()
 
 	case "LH_abbat_4":
 		dialog.text = "Aceptaría con gusto tu ayuda. Sospecho que no fui elegido para esta misión por casualidad. En el peor de los casos, simplemente se olvidarán del padre Benoit. Y, aunque el Señor me mandó a soportar, estoy agobiado por mi conclusión, a pesar de todas sus... bendiciones. Pero, repito, es poco probable que el padre Palotti escuche tus peticiones.";
-		link.l1 = "Entonces me ahorraré algo de tiempo y no intentaré convencerlo. Simplemente saldremos de la iglesia tan pronto como termine el servicio y nos dirigiremos a mi barco. No dude, Santo Padre, vieron nuestra reunión y me reconocerán, y será mucho más difícil ayudarle si tengo que sacarlo de la mansión del gobernador.";
+		link.l1 = "Entonces me ahorraré algo de tiempo y no intentaré convencerlo. Simplemente saldremos de la iglesia tan pronto como termine el servicio, y nos dirigiremos a mi barco. No dude, Santo Padre, vieron nuestra reunión y me reconocerán, y será mucho más difícil ayudarle si tengo que sacarlo de la mansión del gobernador.";
 		link.l1.go = "LH_abbat_5";
 		break;
 
@@ -463,13 +465,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "LH_abbat_9":
-		dialog.text = "¡Por supuesto! Entonces vamos a ocuparnos del negocio placentero - Charles, ¿cómo van los preparativos para tu día más importante?";
+		dialog.text = "¡Por supuesto! Entonces vamos a ocuparnos del negocio placentero, Charles. ¿cómo van los preparativos para tu día más importante?";
 		link.l1 = "Está tomando forma lentamente. Conozco campañas militares que se prepararon más fácil y rápido, ¡pero vale la pena!";
 		link.l1.go = "LH_abbat_10";
 		break;
 
 	case "LH_abbat_10":
-		dialog.text = "¡Claro, hijo mío! Y, en esta ocasión, quiero aclarar algo - ¿cómo ves tu ceremonia de boda?";
+		dialog.text = "¡Claro, hijo mío! Y, en esta ocasión, quiero aclarar algo, ¿cómo ves tu ceremonia de boda?";
 		link.l1 = "¿Te refieres a qué tan pomposo?";
 		link.l1.go = "LH_abbat_11";
 		break;
@@ -487,7 +489,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "LH_abbat_13":
-		dialog.text = "Para el coro, servicio solemne y otros gastos - ciento cincuenta, no más. Además, la donación habitual de los recién casados, en total - doscientos doblones.";
+		dialog.text = "Para el coro, servicio solemne y otros gastos: ciento cincuenta, no más. Además, la donación habitual de los recién casados, en total: doscientos doblones.";
 		if (PCharDublonsTotal() >= 200) // Sinistra legendary edition
 		{
 			link.l1 = "Aquí tiene, Santo Padre.";
@@ -544,7 +546,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "LH_abbat_16":
-		dialog.text = "Bueno, ¿y quién testificará за el novio? Recuerda, debe ser un hombre de noble cuna y reputación digna.";
+		dialog.text = "Bueno, ¿y quién testificará por el novio? Recuerda, debe ser un hombre de noble cuna y reputación digna.";
 		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer"))
 		{
 			if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor"))
@@ -554,15 +556,15 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Caballero Philippe de Poincy, estoy seguro de que me hará el honor.";
+				link.l1 = "Chevalier Philippe de Poincy, estoy seguro de que me hará el honor.";
 				link.l1.go = "LH_abbat_17_2";
 			}
-			link.l2 = "Fadey - un respetable comerciante de Guadalupe. Solo necesito abastecerme de su licor favorito.";
+			link.l2 = "Fadey, un respetable comerciante de Guadalupe. Solo necesito abastecerme de su licor favorito.";
 			link.l2.go = "LH_abbat_17_3";
 		}
 		else
 		{
-			link.l1 = "Fadey - un comerciante respetable de Guadalupe. Solo necesito abastecerme de su licor favorito.";
+			link.l1 = "Fadey, un comerciante respetable de Guadalupe. Solo necesito abastecerme de su licor favorito.";
 			link.l1.go = "LH_abbat_17_3";
 		}
 		break;
@@ -607,7 +609,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "LH_abbat_20":
-		dialog.text = "Eso es común. Este es el día más importante de tu vida, y estoy sinceramente feliz por ti, como todos los que vinieron. Espero que al menos recuerdes las oraciones básicas - nunca has mimado mucho a la iglesia con tu atención, ¿verdad? Sin embargo, te ayudaré en cualquier caso.\nY una cosa más - por lo que entiendo, la novia no cambiará sus principios y no la veremos en un vestido, ¿verdad? Bueno, la alta sociedad está a punto de ver otra sorpresa de tu parte - estás lleno de ellas. De todos modos, ve hijo mío, ponte en forma adecuada y comenzaremos.";
+		dialog.text = "Eso es común. Este es el día más importante de tu vida, y estoy sinceramente feliz por ti, como todos los que vinieron. Espero que al menos recuerdes las oraciones básicas, nunca has mimado mucho a la iglesia con tu atención, ¿verdad? Sin embargo, te ayudaré en cualquier caso.\nY una cosa más: por lo que entiendo, la novia no cambiará sus principios y no la veremos en un vestido, ¿verdad? Bueno, la alta sociedad está a punto de ver otra sorpresa de tu parte, estás lleno de ellas. De todos modos, ve hijo mío, ponte en forma adecuada y comenzaremos.";
 		link.l1 = "Sí, Santo Padre. Hagámoslo.";
 		link.l1.go = "LH_abbat_21";
 		break;
@@ -624,15 +626,15 @@ void ProcessDialogEvent()
 		dialog.text = "Pater noster, qui es in caelis, sanctificetur nomen tuum, ad...";
 		link.l1 = "... venga tu reino";
 		link.l1.go = "LH_abbat_23_1";
-		link.l2 = "...requiem aeternam dona eis";
+		link.l2 = "...requiem aeternam dona eis.";
 		link.l2.go = "LH_abbat_23_2";
 		break;
 
 	case "LH_abbat_23_1":
-		dialog.text = "...hágase tu voluntad, así en la tierra como en el cielo. Danos hoy nuestro pan de cada día, y perdona nuestras deudas si...";
-		link.l1 = "...así como nosotros perdonamos a nuestros deudores";
+		dialog.text = "...hágase tu voluntad, así en la tierra como en el cielo. Danos hoy nuestro pan de cada día, y perdona nuestras deudas...";
+		link.l1 = "...así como nosotros perdonamos a nuestros deudores.";
 		link.l1.go = "LH_abbat_24_1";
-		link.l2 = "...sicut erat in principio, et nunc et semper, et in saecula saeculorum. Amen";
+		link.l2 = "...sicut erat in principio, et nunc et semper, et in saecula saeculorum. Amén.";
 		link.l2.go = "LH_abbat_24_2";
 		break;
 
@@ -651,7 +653,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "LH_abbat_24_1":
-		dialog.text = "et ne nos inducas in tentationem; sed libera nos a malo. Amen.";
+		dialog.text = "et ne nos inducas in tentationem; sed libera nos a malo. Amén.";
 		link.l1 = "Amén.";
 		link.l1.go = "LH_abbat_25";
 		break;
@@ -661,7 +663,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("Helena");
 		else
 			sld = characterFromId("Mary");
-		dialog.text = "Amados, estamos aquí reunidos ante la vista de Dios, y ante esta congregación, para unir a este hombre y mujer en santo Matrimonio. Amados " + sld.name + " y Charles, escuchaste la palabra de Dios, quien te recordó el significado del amor humano y el matrimonio. Ahora, en nombre de la santa Iglesia, deseo desafiar tus intenciones.\n" + sld.name + " y Charles, ¿tienes un deseo voluntario y sincero de unirte en el vínculo del matrimonio, ante nuestro Señor?";
+		dialog.text = "Amados, estamos aquí reunidos ante la vista de Dios, y ante esta congregación, para unir a este hombre y mujer en santo Matrimonio. Amados " + sld.name + " y Charles, escuchaste la palabra de Dios, quien te recordó el significado del amor humano y el matrimonio. Ahora, en nombre de la santa Iglesia, deseo desafiar tus intenciones.\n" + sld.name + " y Charles, ¿tienen el deseo voluntario y sincero de unirse en el vínculo del matrimonio, ante nuestro Señor?";
 		link.l1 = "Sí.";
 		link.l1.go = "LH_abbat_26";
 		break;
@@ -677,7 +679,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "LH_abbat_27":
-		dialog.text = "¿Tenéis intención de ser fieles el uno al otro en la salud y la enfermedad, en la felicidad y la desgracia, hasta el fin de vuestras vidas?";
+		dialog.text = "¿Tienen intención de ser fieles el uno al otro, en la salud y la enfermedad, en la felicidad y la desgracia, hasta que la muerte los separe?";
 		link.l1 = "Sí.";
 		link.l1.go = "LH_abbat_28";
 		break;
@@ -757,7 +759,7 @@ void ProcessDialogEvent()
 
 	case "LH_abbat_36":
 		DialogExit();
-		SetLaunchFrameFormParam("Some time has passed...", "", 0.1, 3.0);
+		SetLaunchFrameFormParam("Ha pasado algún tiempo...", "", 0.1, 3.0);
 		LaunchFrameForm();
 		WaitDate("", 0, 0, 0, 1, 0);
 		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer"))

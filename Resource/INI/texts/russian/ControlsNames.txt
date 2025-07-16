@@ -362,7 +362,7 @@ Ship_SailDown
 
 Ship_Fire
 {
-Произвести пушечный залп 
+Пушечный залп
 }
 
 Sea_CameraSwitch
@@ -372,7 +372,7 @@ Sea_CameraSwitch
 
 TelescopeMode
 {
-Включить/выключить подзорную трубу
+Подзорная труба
 }
 
 TelescopeZoomIn
@@ -867,10 +867,30 @@ CannonsRange
 
 ChangeShowInterface
 {
-Hide/show UI
+Показать/скрыть интерфейс
 }
 
 FreeCam
 {
-Free Camera
+Свободная камера
+}
+
+TimeScale
+{
+Ускорение/замедление времени
+}
+
+TimeScaleFasterBA
+{
+Ускорение времени
+}
+
+TimeScaleSlowerBA
+{
+Замедление времени
+}
+
+FireCamera_Set
+{
+Режим прицеливания
 }

@@ -567,8 +567,19 @@ void CreateCharacters()
 	NullCharacter.GenQuestFort.SanAndres.next0  = "SanAndres_town";
     NullCharacter.GenQuestFort.SanAndres.next1  = "SanAndres_townhall";
     NullCharacter.GenQuestFort.SanAndres.next2  = "SanAndres_ExitTown";
-
 	// зават городов <--
+
+    // Пресеты камеры (Tab)
+    locCamera.OffsetPreset.preset1.x = 0.5;
+    locCamera.OffsetPreset.preset1.y = 0.2;
+    locCamera.OffsetPreset.preset1.z = 0.3;
+    locCamera.OffsetPreset.preset2.x = 0.0;
+    locCamera.OffsetPreset.preset2.y = 0.2;
+    locCamera.OffsetPreset.preset2.z = -0.6;
+    locCamera.offsetX = 0.0;
+    locCamera.offsetY = 0.2;
+    locCamera.offsetZ = -0.6;
+    locCamera.OffsetPreset.CurPreset = 2;
 }
 
 void SetAllShipData()

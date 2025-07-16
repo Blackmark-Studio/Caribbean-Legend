@@ -9,7 +9,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		link.l1.go = "exit";
 		if (CheckAttribute(pchar, "questTemp.Slavetrader") && pchar.questTemp.Slavetrader == "FindRatHavana")
 		{
-			link.l1 = "¿Ha pasado por casualidad Francois Gontier por tu pueblo? Tiene una corbeta '" + pchar.questTemp.Slavetrader.ShipName + ", por si acaso... ";
+			link.l1 = "¿Ha pasado por casualidad Francois Gontier por tu pueblo? Tiene una corbeta, llamada '" + pchar.questTemp.Slavetrader.ShipName + ", por si acaso... ";
 			link.l1.go = "Havana_ratT_1";
 		}
 		if (CheckAttribute(npchar, "quest.batabano"))
@@ -26,8 +26,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Havana_ratT_1":
-		dialog.text = "Ajá, ¿ese tipo sombrío? Sí, se detuvo en mi lugar. Te diré algo: tenía una cita con Oregon-y-Haskon. Solicitó recibir una patente. Pero no le salió bien y se largó de allí.";
-		Link.l1 = "¿Y a dónde zarpó, lo sabes? Lo he estado persiguiendo desde Porto Bello y no puedo encontrarlo.";
+		dialog.text = "Ajá, ¿ese tipo sombrío? Sí, se detuvo en este lugar. Te diré algo: tenía una cita con Oregon-y-Haskon. Solicitó recibir una patente. Pero no le salió bien y se largó de allí.";
+		Link.l1 = "¿Y a dónde zarpó? ¿Lo sabes? Lo he estado persiguiendo desde Portobello y no puedo encontrarlo.";
 		Link.l1.go = "Havana_ratT_2";
 		break;
 
@@ -38,7 +38,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Havana_ratT_3":
-		dialog.text = "¿No necesita esconderse? ¡Ja-ja-ja! Justo un día antes de su partida de La Habana, una banda entera de matones intentó matarlo en la jungla... Por supuesto, él tenía a su propia gente y los convirtieron en carne picada en un segundo. Y aquí estás diciendo...";
+		dialog.text = "¿No necesita esconderse? ¡Ja-ja-ja! Justo un día antes de su partida de La Habana, una banda entera de matones intentó matarlo en la jungla... Por supuesto, él tenía a su propia gente, y los convirtieron en carne picada en un segundo. Y aquí estás diciendo...";
 		Link.l1 = "Oh, vamos. Probablemente solo fueron algunos bandidos locales tratando de quedarse con su billetera. Tú mismo sabes cuántos sinvergüenzas andan por la jungla. Entonces, ¿a dónde fue?";
 		Link.l1.go = "Havana_ratT_4";
 		break;
@@ -61,14 +61,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "guardoftruth_1":
-		dialog.text = "¡Ajá, así que trabajas para Su Reverencia, Padre Vincento? Esto cambia las cosas. Don Diego de Montoya partió hace dos días con su escuadrón, pero pronto regresó en su balandra de mensajería. Uno de sus barcos naufragó en los arrecifes al sur de Cuba, así que hoy mismo ha estado comprando material para reparaciones.\nRevisa la bahía al sur, allí encontrarás un barco y al mismísimo hombre. Dudo que ya hayan logrado reparar los agujeros.";
+		dialog.text = "¡Ajá!, ¿así que trabajas para Su Reverencia, Padre Vincento? Esto cambia las cosas. Don Diego de Montoya partió hace dos días con su escuadrón, pero pronto regresó en su balandra de mensajería. Uno de sus barcos naufragó en los arrecifes al sur de Cuba, así que hoy mismo ha estado comprando material para reparaciones.\nRevisa la bahía al sur, allí encontrarás un barco y al mismísimo hombre. Dudo que ya hayan logrado reparar los agujeros.";
 		link.l1 = "¡Gracias, compañero! ¡Has sido de gran ayuda!";
 		link.l1.go = "guardoftruth_2";
 		break;
 
 	case "guardoftruth_2":
 		dialog.text = "En absoluto, en cualquier momento. Siempre estoy feliz de ayudar a un hermano jesuita.";
-		link.l1 = "¡Aye, pax vobiscum y todo eso!";
+		link.l1 = "¡Pax vobiscum y todo eso!";
 		link.l1.go = "guardoftruth_3";
 		break;
 

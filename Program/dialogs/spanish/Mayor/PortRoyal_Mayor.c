@@ -108,7 +108,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if (GetSquadronGoods(pchar, GOOD_SLAVES) < 500)
 			{
 				dialog.text = "Eso es preciso. ¿Cuántos esclavos trajiste?";
-				link.l1 = " Todavía estoy trabajando en ello. Pronto regresaré con los resultados.";
+				link.l1 = "Todavía estoy trabajando en ello. Pronto regresaré con los resultados.";
 				link.l1.go = "patria_Sl_wait";
 				break;
 			}
@@ -124,7 +124,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "patria_Sl_1":
-			dialog.text = " Hmm, el Caballero prometió que no habría menos de 3000 esclavos";
+			dialog.text = "Hmm, el Caballero prometió que no habría menos de 3000 esclavos";
 			link.l1 = "Así es. Esto es mi culpa: algunos de los esclavos murieron bajo el fuego de cañones de un barco enemigo, algunos murieron en el camino. Corregiré mi error y regresaré a usted. Todo se hará de acuerdo con el contrato.";
 			link.l1.go = "patria_Sl_wait";
 		break;
@@ -191,7 +191,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "patria_Sl_9":
-			dialog.text = "Este es el plan: primero, con todas las fuerzas atacaremos el fuerte y lo destruiremos. Los holandeses esperarán un desembarco de tropas, pero no lo haremos, las mayores bajas suelen sufrirse al tomar un bastión desde el mar. En cambio, desembarcaremos equipos de asalto en dos puntos de la isla: en el Cabo Santa María y en la laguna de Blanca, y nos moveremos por tierra hasta la puerta de la ciudad de Willemstad. Ordené llevar artillería de campaña con nosotros a los barcos - no hay matorrales difíciles de alcanzar en Curazao, y podremos rodar los cañones sobre ruedas por el suelo sin dificultad.\nMientras los holandeses se preguntan qué está ocurriendo, tomaremos el pueblo bajo la mira desde la jungla y bloquearemos cualquier oportunidad de enviar refuerzos desde el fuerte por tierra. Después de eso, pondremos el pueblo bajo fuego de cañones. Seguramente la guarnición del fuerte intentará atacar, pero no podrán hacer nada contra los cañones de campaña y nuestros mosqueteros, y si sus cañones en el fuerte aún son funcionales, no podrán llevarlos a la jungla.\nAdemás, nuestros barcos simularán preparativos para desembarcar tropas desde el mar para infundir miedo a los enemigos y bajar su moral. Después de un tiempo, cuando los holandeses sean plenamente conscientes de su situación desesperada, llamaremos a los parlamentarios para negociar. ¿Qué opinas, capitán?";
+			dialog.text = "Este es el plan: primero, con todas las fuerzas atacaremos el fuerte y lo destruiremos. Los holandeses esperarán un desembarco de tropas, pero no lo haremos, las mayores bajas suelen sufrirse al tomar un bastión desde el mar. En cambio, desembarcaremos equipos de asalto en dos puntos de la isla: en el Cabo Santa María y en la laguna de Blanca, y nos moveremos por tierra hasta la puerta de la ciudad de Willemstad. Ordené llevar artillería de campaña con nosotros en los barcos, no hay vegetación densa antes de alcanzar Curazao, y podremos rodar los cañones sobre ruedas por el suelo sin dificultad.\nMientras los holandeses se preguntan qué está ocurriendo, tomaremos el pueblo bajo la mira desde la jungla y bloquearemos cualquier oportunidad de enviar refuerzos desde el fuerte por tierra. Después de eso, pondremos el pueblo bajo fuego de cañones. Seguramente la guarnición del fuerte intentará atacar, pero no podrán hacer nada contra los cañones de campaña y nuestros mosqueteros, y si sus cañones en el fuerte aún son funcionales, no podrán llevarlos a la jungla.\nAdemás, nuestros barcos simularán preparativos para desembarcar tropas desde el mar para infundir miedo a los enemigos y bajar su moral. Después de un tiempo, cuando los holandeses sean plenamente conscientes de su situación desesperada, llamaremos a los parlamentarios para negociar. ¿Qué opinas, capitán?";
 			link.l1 = "¡Plan brillante! Y lo mejor de todo es que no perderemos a ningún soldado junto a las murallas del fuerte.";
 			link.l1.go = "patria_Sl_10";
 		break;

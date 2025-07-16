@@ -97,6 +97,11 @@ void ProcessDialogEvent()
 		SetCompanionIndex(pchar, -1, iChar);
 		DelBakSkill(compref);
 		DeleteAttribute(chref, "ShipInStockMan");
+		if(CheckAttribute(chref, "DontNullShip"))
+		{
+			DeleteAttribute(chref, "DontNullShip");
+			DeleteAttribute(NPChar, "DontNullShipBeliz");
+		}
 		chref.id = "ShipInStockMan";//сбрасываем индекс к стандартному, чтобы этот номер массива в следующий раз можно было занять
 		DeleteAttribute(chref,"ship");//затираем данные корабля у сторожа
 		chref.ship = "";
@@ -745,7 +750,7 @@ void ProcessDialogEvent()
 			}
 			
 			// Warship 25.07.09 Генер "Сгоревшее судно"
-			if(dRand(4) == 2 && !CheckAttribute(NPChar, "Quest.BurntShip"))
+			if(hrand(4) == 2 && !CheckAttribute(NPChar, "Quest.BurntShip"))
 			{
 				dialog.text = "God! Captain " + GetFullName(PChar) + ", you're just in time! Such a misfortune happened, such a calamity... The ship burned down in the roadstead while in the care of the port authority! Due to security's carelessness, the ship has burned... burned to the waterline...\n" + "Lord, what did I do to deserve such a punishment? I've been a faithful servant for so many years...";
 				link.l1 = "So, what's the big deal? A ship burned down? And what are insurance contracts for? Or you decided not to insure it to save your money and now you're eating your heart out?";
@@ -880,16 +885,16 @@ void ProcessDialogEvent()
 		SaveCurrentNpcQuestDateParam(npchar, "work_date"); // mitrokosta безусловно сохраняем
 		int nTask = 0;
 		string tasks[10]; // mitrokosta сделал выбор задания расширяемым на тот случай если задания добавятся
-		if (stf(RealShips[sti(pchar.Ship.Type)].SpeedRate) >= 15) {
+		if (sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER) {
 			tasks[nTask] = "cureer";
 			nTask++;
 		}
-		if (GetCompanionQuantity(pchar) < 3 && sti(RealShips[sti(pchar.Ship.Type)].BaseType) >= SHIP_BRIG && sti(RealShips[sti(pchar.Ship.Type)].BaseType) != SHIP_GALEON_L && sti(RealShips[sti(pchar.Ship.Type)].BaseType) != SHIP_PINNACE) {
+		if (GetCompanionQuantity(pchar) < 3 && sti(RealShips[sti(pchar.Ship.Type)].Class) >= 4 && or(sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_WAR, sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)) {
 			tasks[nTask] = "escort";
 			nTask++;
 		}
-		if (nTask > 0 && drand(5) > 1) {
-			string sTask = tasks[drand(nTask - 1)];
+		if (nTask > 0 && hrand(5) > 1) {
+			string sTask = tasks[hrand(nTask - 1)];
 			switch (sTask) {
 				case "cureer":
 					if (pchar.questTemp.WPU.Postcureer == "begin" || pchar.questTemp.WPU.Postcureer == "late" || pchar.questTemp.WPU.Postcureer == "lost" || pchar.questTemp.WPU.Postcureer == "fail" || CheckAttribute(pchar, "questTemp.WPU.Postcureer.LevelUp")) { // если заняты
@@ -897,7 +902,7 @@ void ProcessDialogEvent()
 						link.l1 = "Alright, I'll do just that.";
 						link.l1.go = "exit";
 					} else { // если не заняты
-						if (sti(pchar.questTemp.WPU.Postcureer.count) > 3 && drand(1) == 1) { //если 2 уровень
+						if (sti(pchar.questTemp.WPU.Postcureer.count) > 3 && hrand(1) == 1) { //если 2 уровень
 							dialog.text = "So... You have already taken several jobs as a courier and were quite successful at them, to the best of my knowledge. You can probably handle the task I'm about to assign to you.";
 							link.l1 = "I am all ears, " + GetAddress_FormToNPC(NPChar) + ".";
 							link.l1.go = "Postcureer_LevelUp";
@@ -917,7 +922,7 @@ void ProcessDialogEvent()
 						link.l1 = "Alright, I'll do just that.";
 						link.l1.go = "exit";
 					} else { // если не заняты
-						if (sti(pchar.questTemp.WPU.Escort.count) > 3 && drand(1) == 1) { // 2 уровень
+						if (sti(pchar.questTemp.WPU.Escort.count) > 3 && hrand(1) == 1) { // 2 уровень
 							dialog.text = "You have already successfully escorted merchant vessels several times. I guess I have an assignment that would suit you.";
 							link.l1 = "I am all ears.";
 							link.l1.go = "Escort_LevelUp";
@@ -950,7 +955,7 @@ void ProcessDialogEvent()
 ///--> ------фрахт со свободным выбором пункта назначения, оплаты и вида груза из предложенного списка---------
 
 		case "Fraht_begin":
-			if (drand(4) < 4)
+			if (hrand(4) < 4)
 			{
 				if (pchar.questTemp.WPU.Fraht == "begin" || pchar.questTemp.WPU.Fraht == "late" || pchar.questTemp.WPU.Fraht == "lost" || CheckAttribute(pchar, "questTemp.WPU.Escort.Bonus"))//проверка на занятость
 				{
@@ -993,9 +998,9 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Fraht.City2 = findCurrentCity2(npchar);
 			pchar.questTemp.WPU.Fraht.City3 = findCurrentCity3(npchar);
 			//выбираем товары
-			iFrahtGoods1 = drand(GOOD_PAPRIKA);
-			iFrahtGoods2 = drand(GOOD_PAPRIKA-3);
-			iFrahtGoods3 = drand(GOOD_PAPRIKA-7);
+			iFrahtGoods1 = hrand(GOOD_PAPRIKA);
+			iFrahtGoods2 = hrand(GOOD_PAPRIKA-3);
+			iFrahtGoods3 = hrand(GOOD_PAPRIKA-7);
 			pchar.questTemp.WPU.Fraht.Goods1 = iFrahtGoods1;
 			pchar.questTemp.WPU.Fraht.Goods2 = iFrahtGoods2;
 			pchar.questTemp.WPU.Fraht.Goods3 = iFrahtGoods3;
@@ -1022,7 +1027,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Fraht.Money1 = (makeint((sti(iFrahtGoodsQty1) * sti(Goods[iFrahtGoods1].Weight) / sti(Goods[iFrahtGoods1].Units))))*(sti(daysQty1)*2)*sti(daysQty1)/sti(pchar.questTemp.WPU.Fraht.DaysQty1);
 			pchar.questTemp.WPU.Fraht.Money2 = (makeint((sti(iFrahtGoodsQty2) * sti(Goods[iFrahtGoods2].Weight) / sti(Goods[iFrahtGoods2].Units))))*(sti(daysQty2)*2)*sti(daysQty2)/sti(pchar.questTemp.WPU.Fraht.DaysQty2);
 			pchar.questTemp.WPU.Fraht.Money3 = (makeint((sti(iFrahtGoodsQty3) * sti(Goods[iFrahtGoods3].Weight) / sti(Goods[iFrahtGoods3].Units))))*(sti(daysQty3)*2)*sti(daysQty3)/sti(pchar.questTemp.WPU.Fraht.DaysQty3);
-			if (drand(5) < 4)//три варианта
+			if (hrand(5) < 4)//три варианта
 			{
 				dialog.text = "There are the following variants available:\n" +
 					"cargo " + GetGoodsNameAlt(iFrahtGoods1)+ " in amount of " + FindRussianQtyString(iFrahtGoodsQty1) + " to the town of " + XI_ConvertString("Colony" + pchar.questTemp.WPU.Fraht.City1) + ", in " +  FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty1) + ". Payment - " + FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money1)) + "\ncargo " + GetGoodsNameAlt(iFrahtGoods2)+ " in amount of " + FindRussianQtyString(iFrahtGoodsQty2) + " to the town of " + XI_ConvertString("Colony" + pchar.questTemp.WPU.Fraht.City2) + ", in " +  FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty2) + ". Payment - " + FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money2)) + "\ncargo " + GetGoodsNameAlt(iFrahtGoods3)+ " in amount of " + FindRussianQtyString(iFrahtGoodsQty3) + " to the town of " + XI_ConvertString("Colony" + pchar.questTemp.WPU.Fraht.City3) + ", in " +  FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty3) + ". Payment - " + FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money3)) + "\nWhat is your choice?";
@@ -1123,7 +1128,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Current.TargetIslandID = GetCharacterCurrentIslandId(sld);//ИД целевого ареала
 			pchar.questTemp.WPU.Fraht.TargetCity = FindTownOnIsland(pchar.questTemp.WPU.Current.TargetIslandID);
 			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
-			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Fraht.Chance == 2) FrahtHunterOnSea();//создание ДУ в акватории
 			DialogExit();
 		break;
@@ -1443,7 +1448,7 @@ void ProcessDialogEvent()
 			}
 			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "1");
@@ -1461,26 +1466,13 @@ void ProcessDialogEvent()
 			string sTemp;
 	        for (i=1; i<=2; i++)
 	        {
-				switch (rand(2))
-				{
-					case 0:  
-						ShipType = SHIP_FLEUT;     					
-						Rank = 10 + rand(5);
-					break; 		
-					case 1:  
-						ShipType = SHIP_GALEON_L;			
-						Rank = 15 + rand(5);
-					break; 
-					case 2: 
-						ShipType = SHIP_PINNACE; 				
-						Rank = 20 + rand(5);
-					break;
-				}
+				ShipType = GetRandomShipType(GetClassFlag(sti(RealShips[sti(pchar.Ship.Type)].Class)), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+				Rank = 5 * (6 - sti(RealShips[sti(pchar.Ship.Type)].Class)) + rand(5);
 				if (i == 1) sTemp = pchar.questTemp.WPU.Escort.ShipName1;
 				if (i == 2) sTemp = pchar.questTemp.WPU.Escort.ShipName2;
 				if (i == 2) ShipType = SHIP_FLEUT;//один всегда флейт
 	            sld = GetCharacter(NPC_GenerateCharacter("EscortCaptain_"+i, "trader_"+(rand(15)+1), "man", "man", Rank, iNation, iLifeday, true, "citizen"));
-				FantomMakeSmallSailor(sld, ShipType, sTemp, CANNON_TYPE_CANNON_LBS16, 10+rand(10), 10+rand(10), 10+rand(10), 10+rand(10), 10+rand(10));
+				FantomMakeSmallSailor(sld, ShipType, sTemp, -1, 10+rand(10), 10+rand(10), 10+rand(10), 10+rand(10), 10+rand(10));
 				DeleteAttribute(sld, "SaveItemsForDead");
 				DeleteAttribute(sld, "DontClearDead");
 				SetCharacterGoods(sld, GOOD_FOOD, 400+rand(200));
@@ -1506,7 +1498,7 @@ void ProcessDialogEvent()
 				pchar.quest.Escort_fail.function = "Escort_failed";
 	        }
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			DialogExit();
 		break;
@@ -1616,9 +1608,9 @@ void ProcessDialogEvent()
 		case "escort_bonus":
 			pchar.questTemp.WPU.Escort.ShipName1 = GenerateRandomNameToShip(sti(npchar.nation));//имена кораблей
 			pchar.questTemp.WPU.Escort.ShipName2 = GenerateRandomNameToShip(sti(npchar.nation));
-			pchar.questTemp.WPU.Escort.Goods = 	drand(GOOD_PAPRIKA);//для ГГ
-			pchar.questTemp.WPU.Escort.Goods1 = drand(GOOD_PAPRIKA-3);
-			pchar.questTemp.WPU.Escort.Goods2 = drand(GOOD_PAPRIKA-5);
+			pchar.questTemp.WPU.Escort.Goods = 	hrand(GOOD_PAPRIKA);//для ГГ
+			pchar.questTemp.WPU.Escort.Goods1 = hrand(GOOD_PAPRIKA-3);
+			pchar.questTemp.WPU.Escort.Goods2 = hrand(GOOD_PAPRIKA-5);
 			iGoods = pchar.questTemp.WPU.Escort.Goods;
 			iGoodsQty = makeint(GetCharacterFreeSpace(pchar, iGoods))-(50+rand(100));//количество груза
 			pchar.questTemp.WPU.Escort.GoodsQty = iGoodsQty;
@@ -1661,7 +1653,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
-			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap();//запуск ДУ на глобалке
+			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 3) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "6");
@@ -2011,7 +2003,7 @@ void ProcessDialogEvent()
 					pchar.quest.Postcureer_Hunter.win_condition.l1 = "Location";
 					pchar.quest.Postcureer_Hunter.win_condition.l1.location = pchar.questTemp.WPU.Postcureer.City + "_town";
 					pchar.quest.Postcureer_Hunter.function = "PostcureerGopHuntersOnLand";
-					TraderHunterOnMap();
+					TraderHunterOnMap(false);
 				break;
 		
 				case 1://создание скоростного перехватчика на глобалке
@@ -2019,7 +2011,7 @@ void ProcessDialogEvent()
 				break;
 		
 				case 2://запуск ДУ на глобалке и в порту прибытия
-					TraderHunterOnMap();
+					TraderHunterOnMap(false);
 					FrahtHunterOnSea();
 				break;
 		
@@ -2069,10 +2061,10 @@ void ProcessDialogEvent()
 		switch (rand(4))//для тестов
 		{
 			case 0:
-				pchar.questTemp.WPU.Fraht.Goods = GOOD_CHOCOLATE + drand(makeint(GOOD_TOBACCO - GOOD_CHOCOLATE));
+				pchar.questTemp.WPU.Fraht.Goods = GOOD_CHOCOLATE + hrand(makeint(GOOD_TOBACCO - GOOD_CHOCOLATE));
 				iGoods = pchar.questTemp.WPU.Fraht.Goods;
-				//iGoodsQty = 3000 + sti(pchar.rank)*30*(drand(9)+1);
-				iGoodsQty = 1000+sti(pchar.rank)*10*(drand(9)+1); // min 1100 max 5000
+				//iGoodsQty = 3000 + sti(pchar.rank)*30*(hrand(9)+1);
+				iGoodsQty = 1000+sti(pchar.rank)*10*(hrand(9)+1); // min 1100 max 5000
 				pchar.questTemp.WPU.Fraht.GoodsQty = iGoodsQty;
 				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iGoods].Cost)*2;//двойная цена единицы товара
 				pchar.questTemp.WPU.Fraht.Money = sti(Goods[iGoods].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty)*2;//двойная стоимость товара
@@ -2087,10 +2079,10 @@ void ProcessDialogEvent()
 			break;
 		
 			case 1:
-				pchar.questTemp.WPU.Fraht.Goods = GOOD_EBONY + drand(makeint(GOOD_CINNAMON - GOOD_EBONY));
+				pchar.questTemp.WPU.Fraht.Goods = GOOD_EBONY + hrand(makeint(GOOD_CINNAMON - GOOD_EBONY));
 				iGoods = pchar.questTemp.WPU.Fraht.Goods;
-				//iGoodsQty = 1500 + sti(pchar.rank)*20*(drand(9)+1);
-				iGoodsQty = 600+sti(pchar.rank)*5*(drand(6)+1); // min 630 max 2000
+				//iGoodsQty = 1500 + sti(pchar.rank)*20*(hrand(9)+1);
+				iGoodsQty = 600+sti(pchar.rank)*5*(hrand(6)+1); // min 630 max 2000
 				pchar.questTemp.WPU.Fraht.GoodsQty = iGoodsQty;
 				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iGoods].Cost)*2;//двойная цена единицы товара
 				pchar.questTemp.WPU.Fraht.Money = sti(Goods[iGoods].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty)*2;//двойная стоимость товара
@@ -2105,11 +2097,11 @@ void ProcessDialogEvent()
 			break;
 		
 			case 2:
-				//pchar.questTemp.WPU.Fraht.Goods = GOOD_BOMBS + drand(makeint(GOOD_POWDER - GOOD_BOMBS));
+				//pchar.questTemp.WPU.Fraht.Goods = GOOD_BOMBS + hrand(makeint(GOOD_POWDER - GOOD_BOMBS));
 				pchar.questTemp.WPU.Fraht.Goods = GOOD_BOMBS;
 				iGoods = pchar.questTemp.WPU.Fraht.Goods;
-				//iGoodsQty = 15000 + sti(pchar.rank)*300*(drand(9)+1);
-				iGoodsQty = 5000+sti(pchar.rank)*10*(drand(9)+1); // min 5100 max 9000
+				//iGoodsQty = 15000 + sti(pchar.rank)*300*(hrand(9)+1);
+				iGoodsQty = 5000+sti(pchar.rank)*10*(hrand(9)+1); // min 5100 max 9000
 				pchar.questTemp.WPU.Fraht.GoodsQty = iGoodsQty;
 				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iGoods].Cost)*3;//тройная цена единицы товара
 				pchar.questTemp.WPU.Fraht.Money = makeint((sti(Goods[iGoods].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty)*3)/20);//тройная стоимость товара
@@ -2126,7 +2118,7 @@ void ProcessDialogEvent()
 			case 3:
 				pchar.questTemp.WPU.Fraht.Goods = GOOD_MEDICAMENT;
 				iGoods = pchar.questTemp.WPU.Fraht.Goods;
-				iGoodsQty = 7000 + sti(pchar.rank)*300*(drand(9)+1);
+				iGoodsQty = 7000 + sti(pchar.rank)*300*(hrand(9)+1);
 				pchar.questTemp.WPU.Fraht.GoodsQty = iGoodsQty;
 				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iGoods].Cost)*3;//тройная цена единицы товара
 				pchar.questTemp.WPU.Fraht.Money = makeint((sti(Goods[iGoods].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty)*3)/30);//тройная стоимость товара
@@ -2143,7 +2135,7 @@ void ProcessDialogEvent()
 			case 4:
 				pchar.questTemp.WPU.Fraht.Goods = GOOD_FOOD;
 				iGoods = pchar.questTemp.WPU.Fraht.Goods;
-				iGoodsQty = 15000 + sti(pchar.rank)*300*(drand(9)+1);
+				iGoodsQty = 15000 + sti(pchar.rank)*300*(hrand(9)+1);
 				pchar.questTemp.WPU.Fraht.GoodsQty = iGoodsQty;
 				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iGoods].Cost)*2;//двойная цена единицы товара
 				pchar.questTemp.WPU.Fraht.Money = makeint((sti(Goods[iGoods].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty)*2)/10);//двойная стоимость товара
@@ -2243,7 +2235,7 @@ void ProcessDialogEvent()
 			i++;
 			if(i > 5) pchar.questTemp.WPU.Escort.EnemyNation = FindEnemyNation2NationWithoutPirates(sti(pchar.BaseNation));
 		}
-		switch (drand(2))
+		switch (hrand(2))
 		{
 			case 0://приключения на необитаемых островах
 				pchar.questTemp.WPU.Current.TargetIslandID = DesIsland();//выбор необитайки
@@ -2650,9 +2642,9 @@ void ProcessDialogEvent()
 		AddCharacterExpToSkill(pchar, "Grappling", iTemp*35);//абордаж
 		AddCharacterExpToSkill(pchar, "Leadership", iTemp*40);//авторитет
 		AddCharacterExpToSkill(pchar, "Fortune", iTemp*35);//везение
-		AddCharacterExpToSkill(pchar, "FencingLight", iTemp*35);//лёгкое оружие
-		AddCharacterExpToSkill(pchar, "Fencing", iTemp*35);//среднее оружие
-		AddCharacterExpToSkill(pchar, "FencingHeavy", iTemp*35);//тяжелое оружие
+		AddCharacterExpToSkill(pchar, "FencingL", iTemp*35);//лёгкое оружие
+		AddCharacterExpToSkill(pchar, "FencingS", iTemp*35);//среднее оружие
+		AddCharacterExpToSkill(pchar, "FencingH", iTemp*35);//тяжелое оружие
 		AddCharacterExpToSkill(pchar, "Pistol", iTemp*35); //пистоли
 		pchar.questTemp.WPU.Escort = "complete";
 		DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUp_2");
@@ -2993,7 +2985,7 @@ void ProcessDialogEvent()
 		
 		//--> миниквесты портмана
 		case "PortmanQuest":
-			if (cRand(5) == 2)
+			if (hRand(5) == 2)
 			{	//квест догнать и передать судовой журнал
 				dialog.text = "One of the captains forgot his logbook in my office. What a scatterbrain! I need you to catch up with him and return it to him.";
 				link.l1 = "Oh, that's gonna be easy... I'll take that!";
@@ -3387,8 +3379,15 @@ void ProcessDialogEvent()
 */		
 		case "ShipStock_2":
             chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-			if (MOD_SKILL_ENEMY_RATE >= 6) NPChar.MoneyForShip = 5*GetPortManPriceExt(NPChar, chref); // для высокой сложности - 5x цена
-			else NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref);
+			if (CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && npchar.id == "Beliz_portman" && !CheckAttribute(npchar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)	// В Белизе скидка 50%
+			{
+				NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref)/2;
+			}
+			else
+			{
+				if (MOD_SKILL_ENEMY_RATE >= 6) NPChar.MoneyForShip = MOD_SKILL_ENEMY_RATE/2*GetPortManPriceExt(NPChar, chref); // для высокой сложности - 5x цена
+				else NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref);
+			}
 			dialog.Text = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "', class " + RealShips[sti(chref.Ship.Type)].Class +
                      ", mooring cost is " + FindRussianMoneyString(sti(NPChar.MoneyForShip)) + " per month, payment for one month in advance.";
 			Link.l1 = "Yes, that suits me.";
@@ -3459,6 +3458,11 @@ void ProcessDialogEvent()
 			chref.location.locator = "";
 			NPChar.Portman	= sti(NPChar.Portman) + 1;
 			pchar.ShipInStock = sti(pchar.ShipInStock) + 1;
+			if(NPChar.id == "Beliz_portman" && CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && !CheckAttribute(NPChar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)
+			{
+				chref.DontNullShip = true;
+				NPChar.DontNullShipBeliz = true;
+			}
 
 			dialog.text = "Alright. You can take your ship back anytime you need.";
 			Link.l1 = "Thanks.";
@@ -3551,6 +3555,11 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(Pchar, -sti(NPChar.MoneyForShip));
 			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
 			DeleteAttribute(chref, "ShipInStockMan");
+			if(CheckAttribute(chref, "DontNullShip"))
+			{
+				DeleteAttribute(chref, "DontNullShip");
+				DeleteAttribute(NPChar, "DontNullShipBeliz");
+			}
 			SetCompanionIndex(pchar, -1, sti(NPChar.ShipToStoreIdx));
 
 			NPChar.Portman	= sti(NPChar.Portman) - 1;
@@ -3722,6 +3731,11 @@ void ProcessDialogEvent()
 				link.l2 = "Patrol Snow 'Lady Beth'.";
 				link.l2.go = "UniqueShips_LadyBeth";
 			}
+			if (GetDLCenabled(DLC_APPID_6) && !CheckAttribute(pchar, "questTemp.Memento_InfoPU") && CharacterIsAlive("Memento_cap"))
+			{
+				link.l3 = "Brig 'Memento'.";
+				link.l3.go = "UniqueShips_Memento";
+			}
 			link.l99 = "I think I know enough.";
 			link.l99.go = "node_2";
 		break;
@@ -3741,6 +3755,20 @@ void ProcessDialogEvent()
 			pchar.questTemp.LadyBeth_InfoPU = true;
 			dialog.text = "Lady Beth is a true beauty. A miracle of England's maritime genius, commanded by Albert Blackwood, former officer of the royal navy. Indeed, not everyone manages to desert so spectacularly! He left service, killed a brilliant career, and stole a warship - all for treasure hunting!\nAnd not in vain. He's already found enough to buy half of Barbados, but he still wants more. If you meet him at sea - don't even try to intercept him. Too good a ship, and the captain is experienced and cautious. Lately, Blackwood has been frequenting Cayman - digging day and night, working people to death. If you decide to check it out - take no less than sixty men and good firearms... Actually, even that might not be enough\nI hope you know how to shoot, since a company of former marine infantry of Colonel Fox deserted with him. Professionals, nothing like common cutthroats. And never attack him in French ports - he has protection and patrons there, receiving a share of his findings.";
 			link.l1 = "TThank you very much.";
+			link.l1.go = "node_2";
+		break;
+		
+		case "UniqueShips_Memento":
+			AddMoneyToCharacter(pchar, -25000);
+			AddQuestRecordInfo("LegendaryShips", "3");
+			pchar.questTemp.Memento_InfoPU = true;
+			dialog.text = "The 'Memento' — a true pirate legend. A black brig captained by Mortimer Grim.\n"+
+			"Grim preys exclusively on slavers. They say he frees the slaves and buys out the condemned with hard gold. A noble cause — if you don’t know the rest.\n"+
+			"If you’re not hauling human cargo, Grim won’t touch you. He’s odd, but he’s got his principles. But if you’ve got slaves in your hold... pray you don’t spot black sails on the horizon.\n"+
+			"The 'Memento' sails between pirate havens but rarely docks. The crew lives on board for months, as if afraid to set foot on solid ground. Rumor has it the ship once survived a monstrous epidemic — that’s why the crew is so hard to kill.\n"+
+			"If you plan to take them on, pack more cannons. Boarding the 'Memento' is near impossible — the crew fights like they’re possessed, like they don’t fear death. Only way to beat them is to blast the ship to splinters and take away their shelter. Splinters don’t scare them, but direct grapeshot hits — that’s another matter.\n"+
+			"Good luck. And remember death.";
+			link.l1 = "Thank you very much.";
 			link.l1.go = "node_2";
 		break;
 		
@@ -3859,7 +3887,7 @@ void BurntShipQuest_FillStartParams(ref _npchar)
 				shipAttribute = "capacity";
 			break;
 			
-			case SHIP_CARACCA:
+			case SHIP_BRIGANTINE:
 				if(rand(1) == 1)
 				{
 					shipAttribute = "speedrate";
@@ -4056,7 +4084,7 @@ void SetSeekShipCapParam(ref npchar)
 	int Rank = sti(pchar.rank) + 5;
 	if (Rank > 30) Rank = 30;
 	ref sld = GetCharacter(NPC_GenerateCharacter("SeekCap_" + npchar.index, "", "man", "man", Rank, PIRATE, -1, true, "soldier"));
-	SetShipToFantom(sld, "pirate", true);
+	SetSeekCapShip(sld);
 	sld.Ship.Mode = "pirate";
 	SetCaptanModelByEncType(sld, "pirate");
 	sld.dialog.filename = "Quest\ForAll_dialog.c";
@@ -4104,7 +4132,7 @@ void SetSeekShipCapParam(ref npchar)
 	npchar.quest.PortmansSeekShip.shipTapeName = RealShips[sti(sld.Ship.Type)].BaseName; //название украденного корабля
 	npchar.quest.PortmansSeekShip.shipTape = RealShips[sti(sld.Ship.Type)].basetype; //тип украденного корабля
 	//npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1) * 1000) + (sti(pchar.rank)*500); //вознаграждение
-	npchar.quest.chest = 7-sti(RealShips[sti(sld.Ship.Type)].Class); //в сундуках
+	npchar.quest.chest = 12-sti(RealShips[sti(sld.Ship.Type)].Class); //в сундуках
 	sld.quest = "InMap"; //личный флаг кэпа-вора
 	sld.city = SelectAnyColony(npchar.city); //определим колонию, откуда кэп-вор выйдет
 	sld.quest.targetCity = SelectAnyColony2(npchar.city, sld.city); //определим колонию, куда он придёт
@@ -4167,48 +4195,6 @@ string GenQuestPortman_GenerateGem() // камни
 	return itemID;
 }
 
-string findTraderCity_PU(ref NPChar)
-{
-	int n, nation;
-    int storeArray[2];
-	SetArraySize(&storeArray, MAX_COLONIES);
-    int howStore = 0;
-
-	for(n=0; n<MAX_COLONIES; n++)
-	{
-		nation = GetNationRelation(sti(npchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
-		{
-			storeArray[howStore] = n;
-			howStore++;
-		}
-	}
-	if (howStore == 0) return "none";
-	nation = storeArray[cRand(howStore-1)];
-	return colonies[nation].id;
-}
-
-string findPassangerCity_PU(ref NPChar)
-{
-	int n, nation;
-    int storeArray[2];
-	SetArraySize(&storeArray, MAX_COLONIES);
-    int howStore = 0;
-
-	for(n=0; n<MAX_COLONIES; n++)
-	{
-		nation = GetNationRelation(sti(npchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].nation != "none" && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
-		{
-			storeArray[howStore] = n;
-			howStore++;
-		}
-	}
-	if (howStore == 0) return "none";
-	nation = storeArray[cRand(howStore-1)];
-	return colonies[nation].id;
-}
-
 // --> Jason, новые мини-квесты
 string findCurrentCity1(ref NPChar)//выбираем целевой город 1
 {
@@ -4220,14 +4206,14 @@ string findCurrentCity1(ref NPChar)//выбираем целевой город 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
 		}
 	}
 	if (howStore == 0) return "none";
-	nation = storeArray[dRand(howStore-1)];
+	nation = storeArray[hrand(howStore-1)];
 	return colonies[nation].id;
 }
 
@@ -4241,14 +4227,14 @@ string findCurrentCity2(ref NPChar)//выбираем целевой город 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
 		}
 	}
 	if (howStore == 0) return "none";
-	nation = storeArray[abs(dRand(howStore-1)-3)];
+	nation = storeArray[abs(hrand(howStore-1)-3)];
 	return colonies[nation].id;
 }
 
@@ -4262,14 +4248,14 @@ string findCurrentCity3(ref NPChar)//выбираем целевой город 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
 		}
 	}
 	if (howStore == 0) return "none";
-	nation = storeArray[abs(dRand(howStore-1)-7)];
+	nation = storeArray[abs(hrand(howStore-1)-7)];
 	return colonies[nation].id;
 }
 
@@ -4284,7 +4270,6 @@ int Escort_ShipType()
 	}
 	return iShipType;
 }
-
 //<-- новые мини-квесты
 
 void DelBakSkill(ref _compref) // hasert
@@ -4298,4 +4283,51 @@ void DelBakSkill(ref _compref) // hasert
 	ClearCharacterExpRate(_compref);
 	RefreshCharacterSkillExpRate(_compref);
 	SetEnergyToCharacter(_compref);
+}
+
+void SetSeekCapShip(ref _chr)
+{
+	int iRank;
+	if (sti(pchar.rank) < 7) iRank = 0;
+	if (sti(pchar.rank) >= 7 && sti(pchar.rank) < 11) iRank = 1;
+	if (sti(pchar.rank) >= 11 && sti(pchar.rank) < 20) iRank = 2;
+	if (sti(pchar.rank) >= 20 && sti(pchar.rank) < 27) iRank = 3;
+	if (sti(pchar.rank) >= 27) iRank = 4;
+	
+	int iShip = SHIP_WAR_TARTANE;
+	switch (iRank)
+	{
+		case 0:
+			iShip = sti(RandPhraseSimple(its(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)), 
+										 its(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
+		break;
+		case 1:  
+			iShip = sti(LinkRandPhrase(its(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
+		break; 
+		case 2:  
+			iShip = sti(LinkRandPhrase(its(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
+		break;
+		case 3:  
+			iShip = sti(LinkRandPhrase(its(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+									   its(GetRandomShipType(FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
+		break;
+		case 4:  
+			iShip = sti(RandPhraseSimple(its(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
+										 its(GetRandomShipType(FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY))));
+		break;
+	}
+	
+	_chr.Ship.Type = GenerateShipExt(iShip, true, _chr);
+	SetRandomNameToShip(_chr);
+    SetBaseShipData(_chr);
+    SetCrewQuantityFull(_chr);
+    Fantom_SetCannons(_chr, "pirate");
+    Fantom_SetBalls(_chr, "pirate");
+	Fantom_SetUpgrade(_chr, "pirate");
+	Fantom_SetGoods(_chr, "pirate");
 }

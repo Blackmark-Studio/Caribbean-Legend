@@ -104,7 +104,7 @@ Fähigkeit, mit schweren Waffen wie Breitschwertern und Äxten umzugehen. Erford
 Pistol
 {
 Beherrschung aller Arten von Feuerwaffen.
-(R*0.5+S*0.5)
+(R*0.4+S*0.6)
 }
 
 Fortune
@@ -116,7 +116,7 @@ Based on(S).
 Leadership
 {
 Beeinflusst die Ergebnisse bestimmter Ereignisse und Dialoge. Auch die wichtigste Fähigkeit, wenn es darum geht, neue Besatzungsmitglieder anzuheuern.
-(A*0.9+T*0.1)
+(A*0.8+T*0.2)
 }
 
 Commerce
@@ -148,7 +148,8 @@ Klasse 2 Schiffe erfordern 80
 Klasse 3 Schiffe erfordern 65
 Klasse 4 Schiffe erfordern 45
 Klasse 5 Schiffe erfordern 25
-Klasse 6 Schiffe erfordern 1
+Klasse 6 Schiffe erfordern 05
+Unzureichende Navigation führt zu Abzügen bei allen Fähigkeiten und Eigenschaften des Helden. Je größer der Unterschied zwischen aktuellem und erforderlichem Navigationswert, desto stärker die Abzüge.
 }
 
 Repair

@@ -975,15 +975,15 @@ Tous les ennemis sont morts. Les Indiens m'ont entièrement payé avec les perle
 #QUEST FalseTrace
 Fausse Piste
 #TEXT 1
-J'ai fait une rencontre intéressante dans la taverne de @<sCity1>. Un homme appelé Adam Rayner m'a proposé un marché. Il m'a parlé d'un galion "@<sShip>" chargé d'argent. Il navigue de Carthagène à @<sCity2>. Il m'a demandé un dixième du butin. J'ai accepté ses conditions, considérant qu'il naviguerait avec moi, et il a même demandé à participer à I'abordage. Adam ne m'a pas donné de délai, mais je suppose que je n'ai que deux ou trois semaines.
+J'ai fait une rencontre intéressante dans la taverne de @<sCity1>. Un homme appelé Adam Rayner m'a proposé un marché. Il m'a parlé d'un flûte "@<sShip>" chargé d'argent. Il navigue de Carthagène à @<sCity2>. Il m'a demandé un dixième du butin. J'ai accepté ses conditions, considérant qu'il naviguerait avec moi, et il a même demandé à participer à I'abordage. Adam ne m'a pas donné de délai, mais je suppose que je n'ai que deux ou trois semaines.
 #TEXT 2
-Malgré mes efforts, je n'ai pas réussi à aborder le galion. Peu importe, au diable l'argent.
+Malgré mes efforts, je n'ai pas réussi à aborder le flûte. Peu importe, au diable l'argent.
 #TEXT 3
-J'ai coulé le galion avec tout son argent. Comment ai-je pu être aussi inattentif...
+J'ai coulé le flûte avec tout son argent. Comment ai-je pu être aussi inattentif...
 #TEXT 4
-Ce n'est pas banal ! Il n'y avait pas d'argent dans le galion. Le capitaine dit que ce n'est qu'un navire de transport censé livrer des provisions. Mais il y avait aussi une femme ; c'est manifestement la compagne du capitaine. Bon, je devrais appeler Adam dans ma cabine et lui parler. Voyons ce que ce salaud va me dire en guise d'excuse. Et il a intérêt à faire de gros efforts pour sauver son cou d'une corde...
+Ce n'est pas banal ! Il n'y avait pas d'argent dans le flûte. Le capitaine dit que ce n'est qu'un navire de transport censé livrer des provisions. Mais il y avait aussi une femme ; c'est manifestement la compagne du capitaine. Bon, je devrais appeler Adam dans ma cabine et lui parler. Voyons ce que ce salaud va me dire en guise d'excuse. Et il a intérêt à faire de gros efforts pour sauver son cou d'une corde...
 #TEXT 5
-Adam Rayner a admis que son plan était de capturer le galion avec mon aide et de récupérer sa femme, qui s'est enfuie. Elle s'appelle Katerine Rayner. Il me propose de me parler de l'or d'un certain Solly aux yeux bridés en récompense de mes "services". Mais je dois d'abord les livrer, lui et sa femme, à @<sCity>. Dois-je faire confiance à ce voyou ? Peut-être devrais-je d'abord parler à sa femme ; elle pourrait savoir quelque chose d'important...
+Adam Rayner a admis que son plan était de capturer le flûte avec mon aide et de récupérer sa femme, qui s'est enfuie. Elle s'appelle Katerine Rayner. Il me propose de me parler de l'or d'un certain Solly aux yeux bridés en récompense de mes "services". Mais je dois d'abord les livrer, lui et sa femme, à @<sCity>. Dois-je faire confiance à ce voyou ? Peut-être devrais-je d'abord parler à sa femme ; elle pourrait savoir quelque chose d'important...
 #TEXT 6
 Cela devient de plus en plus intéressant. Katerine déteste Adam comme un chat déteste un chien... C'est pour cela qu'elle l'a fui. Mais ce ne sont que leurs affaires de famille et leurs problèmes. Je n'ai pas aimé Katerine et sa proposition, alors je prendrais le risque de faire à nouveau confiance à Adam. À @<sCity> donc.
 #TEXT 7
@@ -1322,21 +1322,43 @@ L'amulette a été livrée. Je peux maintenant passer une autre commande.
 #TEXT 1
 Jan Svenson a 25 pièces de bois de fer à vendre tous les 14 et 28 du mois. 750 doublons pour un seul lot.
 #TEXT 1_1
-J’ai réussi à négocier avec Jan Svenson une augmentation de la livraison de bois de fer (bakaut). Désormais, chaque 14 et 28 du mois, je pourrai lui acheter 125 rondins de bois de fer pour 3150 doublons.
+J'ai réussi à négocier avec Jan Svenson pour augmenter l'approvisionnement en bois de fer. Désormais, le 14 et le 28 de chaque mois, je peux lui acheter 125 rondins de bois de fer pour 3 150 doublons.
 #TEXT 2
 Fadey le Moscovite me vendra 50 rouleaux de cordes chaque 20ème jour du mois. 500 doublons pour un seul lot.
 #TEXT 2_1
-J’ai réussi à négocier avec Fadey Moskovit une augmentation de la livraison de cordes en chanvre. Désormais, chaque 20 du mois, je pourrai acheter 250 rouleaux de corde auprès de lui pour 2125 doublons.
+J'ai réussi à négocier avec Fadey le Moscovite pour augmenter l'approvisionnement en cordes de chanvre. Désormais, le 20 de chaque mois, je peux acheter 250 rouleaux de corde à Fadey pour 2 125 doublons.
 #TEXT 3
 Désormais, je suis autorisé à acheter 30 pièces de soie de navire chaque premier et quinzième jour du mois auprès du nouveau vice-directeur de la Compagnie néerlandaise des Indes occidentales. Le prix d'un seul lot est de 600 doublons.
 #TEXT 3_1
-J’ai réussi à négocier avec le vice-directeur de la Compagnie commerciale hollandaise à Willemstad une augmentation de la livraison de soie. Désormais, chaque 1er et 15 du mois, je pourrai lui acheter 150 rouleaux de soie à 17 doublons l’unité, soit un total de 2550 doublons pour l’ensemble du lot.
+J'ai réussi à négocier avec le vice-directeur de la Compagnie néerlandaise des Indes occidentales à Willemstad pour augmenter l'approvisionnement en soie. Désormais, le 1er et le 15 de chaque mois, je peux lui acheter 150 pièces de soie à 17 doublons chacune, soit un total de 2 550 doublons pour l'ensemble du lot.
 #TEXT 4
-J'ai réussi à négocier avec Sergio Saldo pour augmenter l'approvisionnement en résine. Désormais, tous les 5 jours du mois, je peux acheter 300 barils de résine au phare de la Trinité pour 2550 doublons.
+Sergio Saldo m'a proposé d'acheter 60 barils de résine tous les cinquièmes jours du mois. Le prix d'un seul lot est de 600 doublons.
 #TEXT 4_1
-J’ai réussi à négocier avec Sergio Saldo une augmentation de la livraison de résine. Désormais, chaque 5 du mois, je pourrai acquérir 300 barils de résine au phare de Trinidad pour 2550 doublons.
+J'ai réussi à négocier avec Sergio Saldo pour augmenter l'approvisionnement en résine. Désormais, le 5 de chaque mois, je peux acheter 300 barils de résine au phare de la Trinité pour 2 550 doublons.
 #TEXT 5
-Un lot de 40 rondins de bois de fer tous les 15 du mois de la part de Rodrigo Jimenez, le directeur de mon exploitation. La fabrique peut stocker jusqu'à 6 lots au total avant d'arrêter tout le travail. Le paiement est effectué immédiatement pour tous les lots en stock. Le coût de chaque lot : 200 doublons, 5 bouteilles de rhum, 5 bouteilles de vin. Total : 5 doublons par bûche. Pas mal...
+Un lot de 20 rondins de bois de fer tous les 15 du mois de la part de Rodrigo Jimenez, le directeur de mon exploitation. La fabrique peut stocker jusqu'à 6 lots au total avant d'arrêter tout le travail. Le paiement est effectué immédiatement pour tous les lots en stock. Le coût de chaque lot : 200 doublons, 5 bouteilles de rhum, 5 bouteilles de vin. Total : 10 doublons par bûche. Pas mal...
+
+#QUEST Useful_Acquaintances
+Ficelles à Tirer
+#TEXT   1
+************************************************************
+Je peux toujours acheter de la mangarosa à la gitane de Saint John's - trois tiges pour trois cent cinquante doublons d’or.
+#TEXT   2
+************************************************************
+À la taverne de Willemstad, repos et plaisir m’attendent toujours. La charmante Betsy Price s’occupera de tout.
+#TEXT   3
+************************************************************
+Le chef du port de Belize m’a accordé une réduction de cinquante pour cent sur l’accostage d’un navire jusqu’à la deuxième classe incluse, pour toute durée. Le navire sera placé sous sa surveillance personnelle et ne subira aucun dommage en cas de siège de la ville.
+#TEXT   4
+************************************************************
+Je peux désormais acheter du vin et du rhum le 15 de chaque mois chez Christian Deluce, à Basse-Terre. Sa maison se trouve à droite de la résidence du gouverneur. Le prix est de 26 doublons pour un lot de 20 bouteilles de vin et autant de rhum.
+************************************************************
+#TEXT   4_1
+J’ai réussi à négocier une augmentation des livraisons avec Christian. Il mettra désormais de côté cent bouteilles de vin et de rhum pour moi chaque 15 du mois. Le prix reste inchangé — cent trente doublons pour tout le lot.
+#TEXT   6
+************************************************************
+À la taverne de Puerto Principe, j’ai droit à un logement gratuit, des boissons offertes par l’établissement, et l’aubergiste m’a promis que, grâce à lui, davantage de marins voudront servir sous mes ordres.
+
 
 #QUEST FMQ_Guadeloupe
 Prix de la Discrétion
@@ -1361,7 +1383,7 @@ Un barman m'a donné le beau conseil de m'adresser directement à Don Carlos de 
 #TEXT 10
 Donc, pas de trace de Pinette ici, mais j'ai réussi à trouver une trace du troisième passager - le déserteur français. C'est un Don espagnol maintenant, un commandant du "Sario". Sa récompense pour trahison, j'imagine. Je n'ai pas d'autre choix que de monter à bord de son rafiot et de capturer "Don Juan". Même s'il ne pourra pas m'indiquer où se trouve Bertrand, je pourrai l'utiliser pour apaiser la colère du gouverneur de la Guadeloupe.
 #TEXT 11
-Il semble que j'aie eu de la chance : une goélette de guerre "Sario" est amarrée à Portobello. L'aborder devant un fort ne serait pas ma meilleure idée. Je devrais attendre qu'elle quitte le port et prenne le large.
+Il semble que j'aie eu de la chance : une sloop "Sario" est amarrée à Portobello. L'aborder devant un fort ne serait pas ma meilleure idée. Je devrais attendre qu'elle quitte le port et prenne le large.
 #TEXT 12
 Le Sario est en pleine mer. Je dois le poursuivre !
 #TEXT 13
@@ -1387,7 +1409,7 @@ Bertrand Pinette est maintenant mon prisonnier. Je dois retourner à Basse-Terre
 #TEXT 23
 C'est fait. J'ai récupéré mon argent et ma réputation. Ces 150 doublons ne compenseront pas tous mes ennuis, mais c'est déjà ça. C'est le prix de mon indiscrétion.
 #TEXT 24
-Pinette m'a proposé une solution intéressante : une lettre compromettante pour le banquier de Basse-Terre. Don Juan avait raison sur les atouts dans la main de cet homme. Ce serait un plaisir de voir le visage de mon maître chanteur. Sans parler de la cachette de Bertrand qui m'attend dans une grotte de la Guadeloupe.
+Pinette m'a proposé une solution intéressante : une lettre compromettante pour le banquier de Basse-Terre. Don Juan avait raison sur les atouts dans la main de cet homme. Ce serait un plaisir de voir le visage de mon maître chanteur. Sans parler de la cache de Bertrand qui m'attend dans une grotte de la Guadeloupe.
 #TEXT 25
 La lettre de Pinette a fait forte impression sur le banquier. Il ne dira rien, c'est certain. Je devrais vérifier la cache de Bertrand maintenant, c'est trop risqué de la laisser là trop longtemps.
 #TEXT 26
@@ -1892,7 +1914,7 @@ J'ai engagé une bataille acharnée contre la flotte lourde espagnole et je l'ai
 #TEXT 11
 J'ai réussi à fuir la flotte espagnole. Je dois me dépêcher d'aller voir Tyrex dès que possible.
 #TEXT 12
-El Cazador, le puissant navire amiral, est éliminé. Nous pouvons maintenant essayer de fuir - tout ce dont nous avons besoin, c'est d'une distance de 1000 mètres.
+Le puissant navire amiral, est éliminé. Nous pouvons maintenant essayer de fuir - tout ce dont nous avons besoin, c'est d'une distance de 1000 mètres.
 
 #QUEST Roger_7
 Arborer le Jolly Roger : Trésors du Jarl

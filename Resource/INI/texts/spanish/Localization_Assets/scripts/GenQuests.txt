@@ -18,62 +18,6 @@ GenQuests_4
 Encontré el anillo de bodas de la joven de @<sCity>. Debo llevárselo.
 }
 
-GenQuests_5
-{
-Nao
-}
-
-GenQuests_6
-{
-Filibote
-}
-
-GenQuests_7
-{
-Galeón
-}
-
-GenQuests_8
-{
-Pinaza
-}
-
-GenQuests_9
-{
-Carraca
-}
-
-GenQuests_10
-{
-goleta
-}
-
-GenQuests_11
-{
-bergantín
-}
-
-GenQuests_12
-{
-bergantín
-}
-
-GenQuests_13
-{
-corbeta
-}
-
-GenQuests_14
-{
-fragata
-}
-
-GenQuests_15
-{
-navío de línea
-}
-
-
 GenQuests_16
 {
 ¡Los tesoros están cerca!
@@ -226,12 +170,12 @@ GenQuests_45
 
 GenQuests_46
 {
-¿Has oído, @<GetAddress_Form(pchar)>, que recientemente ahorcaron al capitán del @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. Dicen que robó a un comerciante. Después de todo, aquí no se puede confiar en nadie... Toda su tripulación fue ejecutada junto con él. Eso significa que hubo complicidad.
+¿Has oído, @<GetAddress_Form(pchar)>, que recientemente ahorcaron al capitán del @<sShipType> @<pchar.GenQuest.CaptainComission.Name>? Dicen que robó a un comerciante. Después de todo, aquí no se puede confiar en nadie... Toda su tripulación fue ejecutada junto con él. Eso significa que hubo complicidad.
 }
 
 GenQuests_47
 {
-¿Ya sabes,  @<GetAddress_Form(pchar)>, que el ex capitán del @<sShipType> @<pchar.GenQuest.CaptainComission.Name> fue ejecutado? Se rumorea que hundió un barco importante y escondió la mercancía. Y nadie de su tripulación confesó dónde estaba el escondite. Así que los ahorcaron a todos...
+¿Como puedes imaginar,  @<GetAddress_Form(pchar)>, que el ex capitán del @<sShipType> @<pchar.GenQuest.CaptainComission.Name> fue ejecutado? Se rumorea que hundió un barco importante y escondió la mercancía. Y nadie de su tripulación confesó dónde estaba el escondite. Así que los ahorcaron a todos...
 }
 
 GenQuests_48

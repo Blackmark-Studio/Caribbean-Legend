@@ -101,6 +101,24 @@ void ProcessDialogEvent()
 			}
 			// <-- Цена чахотки
 			
+			//--> Украденное воспоминание
+			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+			{
+				link.l4 = "Скажи, нет ли у тебя чего-нибудь действительно стоящего? Не безделушки всякие, а что-то по-настоящему изысканное - например, серьги красивые или элегантная подвеска. Мне нужен подарок для дамы благородного происхождения.";
+				link.l4.go = "UV_Lavochniki_1";
+			}
+            if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_2") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+            {
+				link.l4 = "Не найдётся ли у тебя что-то по-настоящему ценное? Мне нужно украшение, достойное даже самой избалованной дворянки - что-то редкое, элегантное, не для простого люда. Может, изящный кулон или утончённый браслет?";
+				link.l4.go = "UV_Lavochniki_2";
+			}
+			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_3") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+            {
+				link.l4 = "Послушай, ты часом не разбираешься в украшениях? Мне нужно что-то особенное на подарок, для одной знатной дамы. Сразу предупреждаю - дешёвые безделушки меня не интересуют. Мне нужно нечто изысканное: богато украшенная брошь или роскошное кольцо.";
+				link.l4.go = "UV_Lavochniki_3";
+			}
+			//<-- Украденное воспоминание
+			
 			//Jason --> генератор Неудачливый вор
 			if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_town" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
 			{
@@ -414,7 +432,7 @@ void ProcessDialogEvent()
 		// Мангароса
 		case "mangarosa":
 			// тут работает везение
-			if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+drand(30)+drand(40))
+			if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+hrand(30)+hrand(40, "1"))
 			{
 				dialog.text = "Покажите... Да, растение интересное. И, что главное - очень, очень редкое. Его называют мангароса. Для чего его используют - я не знаю, но с ним связан один любопытный факт...";
 				link.l1 = "Что ты имеешь в виду?";
@@ -447,6 +465,58 @@ void ProcessDialogEvent()
 			pchar.questTemp.Mangarosa = "gipsy";
 			AddQuestRecord("Mangarosa", "2");
 		break;
+		
+		//--> Украденное воспоминание
+		case "UV_Lavochniki_1":
+    		dialog.text = "Увы, "+GetAddress_Form(NPChar)+", дорогих вещей у меня давно не бывало. На них спрос, знаете ли, нынче невелик. Простому люду по карману лишь дешёвые поделки, а знать ко мне за покупками почти не заглядывает...";
+    		link.l1 = "Ладно...";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki");
+			pchar.questTemp.UV_Lavochniki_2 = true;
+			npchar.quest.UV_Vopros;
+ 		break;
+		
+		case "UV_Lavochniki_2":
+		
+    		dialog.text = "Увы, капитан, такими товарами я давно не торгую. Богатые клиенты ко мне заглядывают редко, а простолюдины покупают лишь то, что подешевле.";
+    		link.l1 = "Ладно...";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_2");
+			pchar.questTemp.UV_Lavochniki_3 = true;
+			npchar.quest.UV_Vopros;
+ 		break;
+		
+		case "UV_Lavochniki_3":
+			if (NPChar.sex == "woman")
+			{
+				dialog.text = "Капитан, боюсь, вы немного опоздали... Всего пару часов назад я продала великолепное ожерелье одному зажиточному капитану. У меня часто бывают вещички, способные покорить сердце любой, даже самой норовистой дамы\nЗагляните ко мне завтра, возможно, Жизель... то есть... мои поставщики... смогут раздобыть для вас украшение, которое пленит сердце любой дамы навсегда.";
+				link.l1 = "У меня нет времени. Украшение мне нужно прямо сейчас. Скажи, как звали того капитана, которому ты продала ожерелье?";
+			}
+			else
+			{
+				dialog.text = "Капитан, боюсь, вы немного опоздали... Всего пару часов назад я продал великолепное ожерелье одному зажиточному капитану. У меня часто бывают вещички, способные покорить сердце любой, даже самой норовистой дамы\nЗагляните ко мне завтра, возможно, Жизель... то есть... мои поставщики... смогут раздобыть для вас украшение, которое пленит сердце любой дамы навсегда.";
+				link.l1 = "У меня нет времени. Украшение мне нужно прямо сейчас. Скажи, как звали того капитана, которому ты продал ожерелье?";
+			}
+    		link.l1.go = "UV_Lavochniki_3_1";
+ 		break;
+		
+		case "UV_Lavochniki_3_1":
+    		dialog.text = "Тристан Ренье, капитан 'Золотой Чайки'. Его корабль всё ещё стоит в порту. Но, признаться, я сомневаюсь, что он захочет расстаться с этим ожерельем. Если же он откажет вам, загляните ко мне завтра. Клянусь, капитан, вы не пожалеете.";
+    		link.l1 = "...";
+    		link.l1.go = "UV_Lavochniki_exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_3");
+			AddDialogExitQuestFunction("UV_GoldSeagull");
+ 		break;
+		
+		case "UV_Lavochniki_exit":
+			DialogExit();
+			AddQuestRecord("UV", "3");			
+			AddQuestUserData("UV", "sSex", NPCharSexPhrase(NPChar,"ца","ки"));
+			AddQuestUserData("UV", "sSex1", NPCharSexPhrase(NPChar,"ец","ка"));
+			AddQuestUserData("UV", "sSex2", NPCharSexPhrase(NPChar,"","а"));
+		break;
+
+		//<-- Украденное воспоминание
 		
 // ======================== блок нод angry ===============>>>>>>>>>>>>>>>
 

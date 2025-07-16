@@ -212,11 +212,11 @@ Bestimmte Waren von der Star wurden schnell in unseren Laderaum gebracht.
 
 Longway_47
 {
-Абрахам
+Abraham
 }
 Longway_48
 {
-Норман
+Norman
 }
 
 Longway_49

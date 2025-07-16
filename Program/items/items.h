@@ -51,10 +51,10 @@
 
 // indexes for items` array
 //#define TOTAL_ITEMS				  1008 // Warship 08.05.09 - Новая система предметов
-int TOTAL_ITEMS = 1095;   //
-int ITEMS_QUANTITY = 567; // не забываем менять номер
+int TOTAL_ITEMS = 1113;   //
+int ITEMS_QUANTITY = 585; // не забываем менять номер
 #define MAX_BUTTONS               64
-#define RANDITEMS_QUANTITY    	  53
+#define RANDITEMS_QUANTITY    	  45
 #define BUTTON_ACTIVATION_TIME	  1000
 #define ITEMS_LAYER				  65549
 #define MAX_LOADED_RANDITEMS      10
@@ -90,5 +90,5 @@ int ITEMS_QUANTITY = 567; // не забываем менять номер
 #define FencingS_MaxAttack        80.0    // максимальная атака для средних клинков
 #define FencingH_MaxAttack        100.0   // максимальная атака для тяжёлых клинков
 
-object Items[1095];
+object Items[1113];
 object RandItems[RANDITEMS_QUANTITY];

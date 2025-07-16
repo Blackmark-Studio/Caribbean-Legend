@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 		case "First time":
 			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
 			{
-				dialog.text = " No quiero hablar contigo. Atacas a civiles pacíficos sin motivo y los provocas a pelear. ¡Piérdete!";
+				dialog.text = "No quiero hablar contigo. Atacas a civiles pacíficos sin motivo y los provocas a pelear. ¡Piérdete!";
 				link.l1 = "Mm...";
 				link.l1.go = "exit";
 				break;
@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 		
 		case "ansewer_3":
 			dialog.text = "Curanai quiere ir a casa. Pero ¿dónde está mi hogar? Curanai no sabe dónde está su aldea ni cómo llegar a ella.";
-			link.l1 = "Hum. ¿Qué puedo decir...";
+			link.l1 = "Hum. ¿Qué puedo decir...?";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_3 = "true";
 		break;
@@ -144,7 +144,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Woman_FackYou":
-			dialog.text = "¿Qué?! ¿Decidiste revisar mis cofres? ¡No te saldrás con la tuya!";
+			dialog.text = "¿Qué? ¿Decidiste revisar mis cofres? ¡No te saldrás con la tuya!";
 			link.l1 = "¡Chica tonta!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);

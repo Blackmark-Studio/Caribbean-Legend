@@ -1,0 +1,18 @@
+News {Patch 1.5.0}
+News_descr
+{
+************************   Ahoy!   ***********************
+Benvenuto nella versione 1.5.0!
+------------------------------------------------------------------------------------------------
+— È richiesta una nuova partita
+— Se vuoi continuare la tua partita, passa alla versione 1.4 o 1.3.5 su Steam
+— Disabilita qualsiasi modifica finché gli autori del Steam Workshop non aggiornano i loro lavori
+— Puoi trovare un elenco dettagliato delle modifiche nelle notizie usando il pulsante qui sotto
+— Grazie per aver giocato!
+}
+News_Attention
+{
+}
+
+[News]
+IsRead = false

@@ -54,7 +54,7 @@ void ProcessDialogEvent()
 		case "Step_3":
 			dialog.text = "Je peux partager des informations intéressantes avec vous. Je n'en ai pas besoin, je n'y arriverai pas à temps, grâce à notre ami commun, mais vous pourriez les trouver utiles. Pas gratuitement.";
 			link.l1 = "Combien?";
-			if (drand(2) == 0) link.l1.go = "Step_4";
+			if (hrand(2) == 0) link.l1.go = "Step_4";
 			else link.l1.go = "Step_4d";
 		break;
 		
@@ -71,7 +71,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_4d":
-			iTotalTemp = 250+drand(25)*10;
+			iTotalTemp = 250+hrand(25)*10;
 			dialog.text = ""+FindRussianDublonString(iTotalTemp)+". Pas une seule pièce de moins !";
 			if (GetCharacterItem(pchar, "gold_dublon") >= iTotalTemp)
 			{

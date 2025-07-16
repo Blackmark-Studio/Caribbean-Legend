@@ -122,6 +122,13 @@ bool LAi_type_stay_CanDialog(aref chr, aref by)
 //Начать диалог
 void LAi_type_stay_StartDialog(aref chr, aref by)
 {
+    // TO_DO: УДАЛИТЬ
+	if(bGlobalTutor && chr.id == "SharlieTutorial_Captain")
+	{
+		DeleteAttribute(chr, "actions.idle");
+		SetDialogStayIdle(chr);
+		EndChangeCharacterActionsBlend(chr);
+	}
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	LAi_CharacterSaveAy(chr); 
 	CharacterTurnByChr(chr, by);
@@ -131,6 +138,13 @@ void LAi_type_stay_StartDialog(aref chr, aref by)
 //Закончить диалог
 void LAi_type_stay_EndDialog(aref chr, aref by)
 {
+    // TO_DO: УДАЛИТЬ
+	if(bGlobalTutor && chr.id == "SharlieTutorial_Captain")
+	{
+		DeleteAttribute(chr, "actions.idle");
+		SetDefaultStayIdle(chr);
+		EndChangeCharacterActionsBlend(chr);
+	}
 	LAi_tmpl_stay_InitTemplate(chr);
 	LAi_CharacterRestoreAy(chr);
 }

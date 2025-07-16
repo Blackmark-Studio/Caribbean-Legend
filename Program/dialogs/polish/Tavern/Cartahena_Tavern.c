@@ -4,7 +4,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat("Wszystkie plotki o "+GetCityName(npchar.city)+" do usług. Czego chciałbyś się dowiedzieć?"," Właśnie o tym rozmawialiśmy. Musiałeś zapomnieć... ","To już trzeci raz, kiedy mnie niepokoisz...","Powtarzasz wszystko jak papuga...","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Wszystkie plotki o "+GetCityName(npchar.city)+" do usług. Czego chciałbyś się dowiedzieć?"," Właśnie o tym rozmawialiśmy. Musiałeś zapomnieć... ","To już trzeci raz, kiedy mnie niepokoisz...","Powtarzasz wszystko jak papuga...","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Wiesz, "+NPChar.name+"Może następnym razem.","Dobrze, z jakiegoś powodu zapomniałem...","Tak, to naprawdę jest trzeci raz...","Tak...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			if(CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "cartahena" && !CheckAttribute(npchar, "quest.gonsales"))

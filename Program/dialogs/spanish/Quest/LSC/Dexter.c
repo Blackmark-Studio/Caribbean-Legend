@@ -29,7 +29,7 @@ void ProcessDialogEvent()
 				link.l2 = "Layton, Shark me dijo que tienes un mapa de la Isla. ¿Lo estás vendiendo?";
 				link.l2.go = "map";
 			}
-			dialog.text = "A-ah, " + GetFullName(pchar) + "¡Tienes asuntos conmigo o solo quieres hablar de nuevo? Si es así, trae una botella de ron la próxima vez, ¡ja-ja!";
+			dialog.text = "A-ah, " + GetFullName(pchar) + ". ¿Tienes asuntos conmigo o solo quieres hablar de nuevo? Si es así, trae una botella de ron la próxima vez, ¡ja-ja!";
 			link.l1 = "No, no tengo ningún asunto particular para ti. Traeré ron la próxima vez, solo para ti.";
 			link.l1.go = "exit";
 		}
@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 
 	case "admiral_6":
 		GiveItem2Character(pchar, "LSC_navigation_map");
-		dialog.text = "  No olvides llenar tu bodega con provisiones. Te las venderé a buen precio. No le muestres este documento a nadie, nuestra base debe permanecer en secreto. Te estoy dando este documento solo porque el mismo Steven iba a dártelo, y eres amigo de Jan Svenson.";
+		dialog.text = "No olvides llenar tu bodega con provisiones. Te las venderé a buen precio. No le muestres este documento a nadie, nuestra base debe permanecer en secreto. Te estoy dando este documento solo porque el mismo Steven iba a dártelo, y eres amigo de Jan Svenson.";
 		link.l1 = "No te preocupes por eso. ¡Gracias de nuevo y nos vemos por ahí!";
 		link.l1.go = "exit";
 		NextDiag.TempNode = "Dexter_wait";
@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "plan":
-		PlaySound("Voice\English\LSC\Layton Dexter-07");
+		PlaySound("Voice\Spanish\LSC\Layton Dexter-07");
 		dialog.text = "Lo hago. Solo veo una manera de atraparlos a los Narvales. No es perfecto, pero no veo otra alternativa. Los atacaremos desde dos direcciones. Un grupo de valientes canallas en botes largos abordará el 'Ceres Smithy', mientras que un segundo grupo junto con los Rivados asaltará el 'Esmeralda'. Esto los eliminará por completo o los hará huir al 'San Gabriel'. El segundo escenario es el más probable, San Gabriel es una posición altamente fortificada y sitiarla lleva mucho tiempo. Pero de cualquier manera, ganaremos.";
 		link.l1 = "";
 		link.l1.go = "plan_1";
@@ -272,7 +272,7 @@ void ProcessDialogEvent()
 			link.l1.go = "trade_3";
 			break;
 		}
-		iMoney = (50 + drand(5)) * iTemp;
+		iMoney = (50 + hrand(5, "&Slayer")) * iTemp;
 		dialog.text = "" + FindRussianQtyString(iTemp) + "¿Está bien? Te pagaré " + FindRussianMoneyString(iMoney) + "¿Trato?";
 		link.l1 = "¡Claro! ¡Un placer hacer negocios contigo!";
 		link.l1.go = "trade_2";
@@ -282,7 +282,7 @@ void ProcessDialogEvent()
 		break;
 	case "trade_3": // лесник
 		iTemp = (15000 - sti(npchar.quest.foodqty))
-			iMoney = (50 + drand(5)) * iTemp;
+			iMoney = (50 + hrand(5, "&Slayer")) * iTemp;
 		dialog.text = "Trato. Te pagaré " + FindRussianMoneyString(iMoney) + " para las mercancías. ¿Es suficiente?";
 		link.l1 = "¡Claro! ¡Buen comercio!";
 		link.l1.go = "trade_4";
@@ -292,7 +292,7 @@ void ProcessDialogEvent()
 		break;
 	case "trade_4": // лесник
 		iTemp = (15000 - sti(npchar.quest.foodqty))
-			iMoney = (50 + drand(5)) * iTemp;
+			iMoney = (50 + hrand(5, "&Slayer")) * iTemp;
 		AddMoneyToCharacter(pchar, iMoney);
 		RemoveCharacterGoods(pchar, GOOD_FOOD, iTemp);
 		npchar.quest.foodqty = sti(npchar.quest.foodqty) + iTemp;
@@ -320,7 +320,7 @@ void ProcessDialogEvent()
 		break;
 	case "trade_2":
 		iTemp = dialogEditStrings[4];
-		iMoney = (50 + drand(5)) * iTemp;
+		iMoney = (50 + hrand(5, "&Slayer")) * iTemp;
 		AddMoneyToCharacter(pchar, iMoney);
 		RemoveCharacterGoods(pchar, GOOD_FOOD, iTemp);
 		npchar.quest.foodqty = sti(npchar.quest.foodqty) + iTemp;
@@ -354,7 +354,7 @@ void ProcessDialogEvent()
 			link.l1 = "¿Quieres comprar algunas provisiones de mí?";
 			link.l1.go = "trade";
 		}
-		link.l2 = " No es nada, solo quería saber cómo te iba.";
+		link.l2 = "No es nada, solo quería saber cómo te iba.";
 		link.l2.go = "exit";
 		NextDiag.TempNode = "head";
 		break;

@@ -29,8 +29,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FindHelena":
-			dialog.text = "Was möchten Sie, Herr?";
-			link.l1 = "Bist du Gladys McArthur?";
+			dialog.text = "Was möchten Sie, Mister?";
+			link.l1 = "Sind Sie Gladys McArthur?";
 			link.l1.go = "FindHelena_1";
 		break;
 		
@@ -41,13 +41,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FindHelena_2":
-			dialog.text = "Ach, ich bin absolut sicher! Schau, der Todestag meines verstorbenen Mannes war vor fünf Tagen. Helen liebte ihren Vater und sie würde dieses Datum nie verpassen. Sie war nur für ein paar Tage weg, um eine Ladung rotes Holz von den freundlichen Miskito-Leuten zu erhalten.\nDie Indianer respektieren und fürchten unseren Schirmherrn Jan Svenson, sie würden ihr nie Schaden zufügen. Herr Svenson hat bereits mit ihnen gesprochen. Das Holz wurde am selben Tag geladen. Niemand hat Helen seitdem gesehen.";
+			dialog.text = "Ach, ich bin absolut sicher! Schau, der Todestag meines verstorbenen Mannes war vor fünf Tagen. Helen liebte ihren Vater und sie würde dieses Datum nie verpassen. Sie war nur für ein paar Tage weg, um eine Ladung rotes Holz von den freundlichen Miskito-Leuten zu erhalten.\nDie Indianer respektieren und fürchten unseren Schirmherrn Jan Svenson, sie würden ihr nie Schaden zufügen. Mister Svenson hat bereits mit ihnen gesprochen. Das Holz wurde am selben Tag geladen. Niemand hat Helen seitdem gesehen.";
 			link.l1 = "Vielleicht haben die Piraten sie angegriffen?";
 			link.l1.go = "FindHelena_3";
 		break;
 		
 		case "FindHelena_3":
-			dialog.text = "Unsinn! Sie müssen bereits wissen, dass Herr Svenson einer der fünf Piratenbarone und Mitglied des Rates der Brüder der Küste ist. Keine Piraten dürfen hier ohne seine Erlaubnis jagen. Es könnte allerdings ein Neuling sein...";
+			dialog.text = "Unsinn! Sie müssen bereits wissen, dass Mister Svenson einer der fünf Piratenbarone und Mitglied des Rates der Brüder der Küste ist. Keine Piraten dürfen hier ohne seine Erlaubnis jagen. Es könnte allerdings ein Neuling sein...";
 			link.l1 = "Und was ist mit den Spaniern? Könnte sie auf eine spanische Patrouille gestoßen sein?";
 			link.l1.go = "FindHelena_4";
 		break;
@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FindHelena_6":
-			dialog.text = "Was? Ach, egal, ich bin am Boden zerstört. Was habe ich gesagt? Ach ja, der Brief. Nun, dieser Brief wurde von Jimmy Higgins geschrieben. Er ist einer von Jackmans Leuten und lebt in Maroon Town. Er besucht unsere Stadt ziemlich oft. Jackman ist auch ein Piratenbaron, aber Herr Svenson mag ihn nicht, ich weiß nicht warum.";
+			dialog.text = "Was? Ach, egal, ich bin am Boden zerstört. Was habe ich gesagt? Ach ja, der Brief. Nun, dieser Brief wurde von Jimmy Higgins geschrieben. Er ist einer von Jackmans Leuten und lebt in Maroon Town. Er besucht unsere Stadt ziemlich oft. Jackman ist auch ein Piratenbaron, aber Mister Svenson mag ihn nicht, ich weiß nicht warum.";
 			link.l1 = "Und Helen?";
 			link.l1.go = "FindHelena_7";
 		break;
@@ -78,7 +78,7 @@ void ProcessDialogEvent()
 		
 		case "FindHelena_8":
 			dialog.text = "Oh, wie sollte ich das wissen? Echte Herren sind hier seltene Gäste. Es tut mir leid, ich wollte Sie nicht beleidigen. Fragen Sie diesen Higgins. Er muss sich an seinen Namen erinnern. Jimmy versuchte, mit diesem Kapitän um Helen zu duellieren. Seine Kumpels haben es kaum geschafft, ihn davon abzuhalten. Aber beide haben Blueweld ein paar Tage bevor Helen absegelte, verlassen.";
-			link.l1 = "Nun, danke für deine Geschichte. Ich werde versuchen, deine Geliebte zu finden. Wenn ich etwas erfahre, werde ich es dir oder Herrn Svenson erzählen. Ich hoffe, deine Tochter lebend und in einem Stück zu finden.";
+			link.l1 = "Nun, danke für deine Geschichte. Ich werde versuchen, deine Geliebte zu finden. Wenn ich etwas erfahre, werde ich es dir oder Mister Svenson erzählen. Ich hoffe, deine Tochter lebend und in einem Stück zu finden.";
 			link.l1.go = "FindHelena_9";
 		break;
 		
@@ -97,7 +97,7 @@ void ProcessDialogEvent()
 			int iTime = 25-MOD_SKILL_ENEMY_RATE;
 			if(bImCasual)
 			{
-				NewGameTip("Exploration mode: quest duration doubled");
+				NewGameTip("Erkundungsmodus: Questdauer verdoppelt");
 				SetFunctionTimerCondition("Helena_AntiguaOver", 0, 0, iTime*2, false);
 			}
 			else SetFunctionTimerCondition("Helena_AntiguaOver", 0, 0, iTime, false);
@@ -111,7 +111,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Helena_die":
-			dialog.text = "Sie waren zu spät, Kapitän. Der Körper meiner armen Tochter wurde an den Ufern von Antigua gefunden. Herr, wie sie sie sogar vor ihrem Tod gefoltert haben! Ich habe es nicht geschafft, mein schönes Mädchen zu bewahren...";
+			dialog.text = "Sie waren zu spät, Kapitän. Der Körper meiner armen Tochter wurde an den Ufern von Antigua gefunden. Oh Herr, wie sie sie sogar vor ihrem Tod gefoltert haben! Ich habe es nicht geschafft, mein schönes Mädchen zu bewahren...";
 			link.l1 = "Es tut mir leid. Es gab nichts, was ich hätte tun können...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Gladis_exit";
@@ -192,8 +192,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Gladis_history_3":
-			dialog.text = "Ich weiß, dass ihr Vater ein Pirat namens 'Metzger' auf der Fregatte 'Neptun' war. Ich habe ihn nur zweimal gesehen. Und ihre Mutter war eine schöne junge Frau, rote Haare, gekleidet in Männerkleidung. Das ist ziemlich alles, was ich euch über sie erzählen kann, außer dass sie eine schlechte Mutter war.\nIch würde niemals so ein Baby in die Hände von Fremden geben. Beide sind tragisch gestorben. Und der versprochene Kurier hat sich zwanzig Jahre später gezeigt und es warst du. Hat der Metzger dich geschickt? Lebt er noch?";
-			link.l1 = "Beruhigen Sie sich, Fräulein Gladys! Es gibt keine Gründe zu vermuten, dass Metzger wiederbelebt hat, obwohl Sie die zweite Person sind, die diese Idee hatte. Ich habe kürzlich einen Mann getroffen, der Ihnen diesen Ring zeigen sollte...";
+			dialog.text = "Ich weiß, dass ihr Vater ein Pirat namens 'Butcher' auf der Fregatte 'Neptune' war. Ich habe ihn nur zweimal gesehen. Und ihre Mutter war eine schöne junge Frau, rote Haare, gekleidet in Männerkleidung. Das ist ziemlich alles, was ich euch über sie erzählen kann, außer dass sie eine schlechte Mutter war.\nIch würde niemals so ein Baby in die Hände von Fremden geben. Beide sind tragisch gestorben. Und der versprochene Kurier hat sich zwanzig Jahre später gezeigt und es warst du. Hat Butcher dich geschickt? Lebt er noch?";
+			link.l1 = "Beruhigen Sie sich, Fräulein Gladys! Es gibt keine Gründe zu vermuten, dass Butcher wiederbelebt ist, obwohl Sie die zweite Person sind, die diese Idee hatte. Ich habe kürzlich einen Mann getroffen, der Ihnen diesen Ring zeigen sollte...";
 			link.l1.go = "Gladis_history_4";
 		break;
 		
@@ -205,7 +205,7 @@ void ProcessDialogEvent()
 		
 		case "Gladis_history_5":
 			dialog.text = "Sie hinterließ mir ein seltsames Stück einer alten Karte. Scherzte, es sei ihr Erbe. Was kann dieses Stück Papier schon nützen? Ich glaube, es war nur ein schlechter Scherz. Sie war übererregt und ein wenig neben der Spur. Aber ich habe dieses 'Geschenk' aufbewahrt.\nWer weiß... Wenn du willst, kann ich es dir geben, wenn du versprichst, mir eines Tages die ganze Geschichte zu erzählen.";
-			link.l1 = "Absolut, Miss McArthur. Ich werde diesen Fetzen eine Weile mit mir herumtragen. Ich muss mit Herrn Svenson sprechen.";
+			link.l1 = "Absolut, Miss McArthur. Ich werde diesen Fetzen eine Weile mit mir herumtragen. Ich muss mit Mister Svenson sprechen.";
 			link.l1.go = "Gladis_history_6";
 		break;
 		
@@ -235,7 +235,7 @@ void ProcessDialogEvent()
 		
 		case "Gladis_history_8_1":
 			dialog.text = "Aber warum lehnst du ständig meine Geschenke ab? Du machst mich traurig...";
-			link.l1 = "Ich denke, dass ich Sie jetzt glücklich machen kann. Ich werde das Gold zurückgeben, das der Kurier Ihnen für die würdige Aufbewahrung der Tochter von Kapitän Schlächter liefern sollte. Sicher, diese Dublonen werden Ihre Liebe und Loyalität nicht vollständig zurückzahlen, aber sie gehören Ihnen sowieso. Sie können damit machen, was Sie wollen.";
+			link.l1 = "Ich denke, dass ich Sie jetzt glücklich machen kann. Ich werde das Gold zurückgeben, das der Kurier Ihnen für die würdige Aufbewahrung der Tochter von Kapitän Butcher liefern sollte. Sicher, diese Dublonen werden Ihre Liebe und Loyalität nicht vollständig zurückzahlen, aber sie gehören Ihnen sowieso. Sie können damit machen, was Sie wollen.";
 			link.l1.go = "Gladis_history_8";
 		break;
 		
@@ -261,8 +261,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Helena_hire":
-			dialog.text = "Bist du ernst? Was meinst du damit?";
-			link.l1 = "Gemäß der Forderung von Herr Svenson werde ich Helen als Offizierin auf meinem Schiff einstellen. Sie ist in großer Gefahr. Helen wird soliden Schutz benötigen, während Jan und ich diese Angelegenheit klären. Ich hoffe, dass ich einen solchen Schutz bieten kann.";
+			dialog.text = "Meinst du das Ernst? Was meinst du damit?";
+			link.l1 = "Gemäß der Forderung von Mister Svenson werde ich Helen als Offizierin auf meinem Schiff einstellen. Sie ist in großer Gefahr. Helen wird soliden Schutz benötigen, während Jan und ich diese Angelegenheit klären. Ich hoffe, dass ich einen solchen Schutz bieten kann.";
 			link.l1.go = "Helena_hire_1";
 		break;
 		

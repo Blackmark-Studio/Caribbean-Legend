@@ -178,7 +178,7 @@ void ProcessDialogEvent()
 			DelMapQuestMarkCity("Bridgetown");
 			DelMapQuestMarkCity("Villemstad");
 			DelMapQuestMarkCity("SentJons");
-			dialog.text = "День или два назад, из Виллемстада, что на Кюрасао, в Филипсбург, должен был выйти караван Голландской Вест-Индской торговой Компании, перевозящий большую партию серебра. В караване несколько кораблей - ост-индец с интересующим нас грузом, и один или два - корабли охранения. Перехватите этот караван, захватите ост-индец с грузом серебра и приведите на Антигуа. Эскорт можете утопить, книппель ему в печёнку!";
+			dialog.text = "День или два назад, из Виллемстада, что на Кюрасао, в Филипсбург, должен был выйти караван Голландской Вест-Индской торговой Компании, перевозящий большую партию серебра. В караване несколько кораблей - галеон с интересующим нас грузом, и один или два - корабли охранения. Перехватите этот караван, захватите галеон с грузом серебра и приведите на Антигуа. Эскорт можете утопить, книппель ему в печёнку!";
 			link.l1 = "Хорошо. Незамедлительно отправляюсь на розыск каравана!";
 			link.l1.go = "Knippel_task_1";
 			DelLandQuestMark(npchar);
@@ -210,7 +210,7 @@ void ProcessDialogEvent()
 				{
 					sld = GetCharacter(iTemp);
 					pchar.questTemp.HWIC.Eng.CompanionIndex = sld.Index;
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN) iHal++;
+					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_GALEON_L) iHal++;
 				}
 			}//признак наличия ТГ в компаньонах
 			if (iHal > 0)
@@ -653,7 +653,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	

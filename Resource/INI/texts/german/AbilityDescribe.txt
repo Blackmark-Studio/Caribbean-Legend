@@ -135,6 +135,11 @@ Dieser Charakter kann zwei Offiziersposten gleichzeitig belegen.
 Fähigkeit nur für Offiziere verfügbar	 
 }
 
+perkByWorkerShort
+{
+Dieser Charakter kann zwei Offiziersposten gleichzeitig belegen
+}
+
 ByWorker2	{Tausendsassa}
 perkByWorker2
 {
@@ -145,6 +150,11 @@ Dieser Charakter kann drei Offiziersposten gleichzeitig belegen.
 ~
 ~
 Fähigkeit nur für Offiziere verfügbar	
+}
+
+perkByWorker2Short
+{
+Dieser Charakter kann drei Offiziersposten gleichzeitig belegen
 }
 
 Trustworthy	{Vertrauenswürdig}
@@ -297,15 +307,16 @@ perkSailingProfessional
 Die Geschwindigkeit und Manövrierfähigkeit des Schiffes wird um 20% erhöht. 3/4 der normalen Schiffe auf der Weltkarte können umgangen werden.
 }
 
-SeaDogProfessional	{Geißel der Meere}
+SeaDogProfessional	{Schrecken der Meere}
 perkSeaDogProfessional
 {
-Selbst eingefleischte Abenteurer und Räuber werden es nicht wagen, ihr Glück zu versuchen, wenn sie die Flagge der Geißel der Meere sehen. Schützt vor Angriffen durch feindliche Geschwader. Funktioniert nicht auf Schiffen niedriger Klasse.
+Beim Anblick der Flagge des Schreckens der Meere wagen es selbst die kühnsten Abenteurer und Banditen nicht, ihr Glück herauszufordern. Erhöht die Flottenstärke um 30%.
 ~
 ~
 ~
-Fähigkeit nur für Spieler verfügbar
+Die Fähigkeit ist nur für den Spieler verfügbar und erfordert Stufe 25.
 }
+
 
 FlagPir	{Piratenflagge}
 perkFlagPir

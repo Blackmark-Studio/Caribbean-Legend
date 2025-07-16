@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 		link.l3.go = "Finish_2_3";
 		link.l4 = "¡Siempre he soñado con el atractivo romántico de ser un cazador de tesoros!";
 		link.l4.go = "Finish_2_4";
-		link.l5 = "Guarda tus consejos, Sandro. ¿Por qué limitarme? ¡Sé lo que quiero, y lo quiero todo!";
+		link.l5 = "Guarda tus consejos, Alonso. ¿Por qué limitarme? ¡Sé lo que quiero, y lo quiero todo!";
 		link.l5.go = "Finish_2_5";
 		break;
 
@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 
 	case "Finish_2_2":
 		pchar.questTemp.SanBoxTarget = 2;
-		dialog.text = "¿Pero sabes cómo terminó l'Olonnais? Bueno, no te juzgaré, Capitán. Derramar sangre inocente puede ser lucrativo, pero prepárate para las consecuencias. Necesitarás un barco formidable, quizás incluso un escuadrón, para conquistar el fuerte y establecer una base. Alternativamente, podrías tomar la ciudad por tierra - cuatrocientos hombres deberían ser suficientes, pero ten por seguro que una guarnición no suprimida te empujará de vuelta a la jungla rápidamente. Transmitiré tu decisión a la tripulación, Capitán. ¡Que la fortuna nos favorezca a todos!";
+		dialog.text = "¿Pero sabes cómo terminó l'Olonnais? Bueno, no te juzgaré, Capitán. Derramar sangre inocente puede ser lucrativo, pero prepárate para las consecuencias. Necesitarás un barco formidable, quizás incluso un escuadrón, para conquistar el fuerte y establecer una base. Alternativamente, podrías tomar la ciudad por tierra, cuatrocientos hombres deberían ser suficientes, pero ten por seguro que una guarnición no suprimida te empujará de vuelta a la jungla rápidamente. Transmitiré tu decisión a la tripulación, Capitán. ¡Que la fortuna nos favorezca a todos!";
 		link.l1 = "Empezar juego";
 		link.l1.go = "Finish_3";
 		break;
@@ -75,7 +75,7 @@ void ProcessDialogEvent()
 
 	case "Finish_2_4":
 		pchar.questTemp.SanBoxTarget = 4;
-		dialog.text = " No hay mucho romanticismo en ese oficio, Capitán. Es una búsqueda larga pero rentable, especialmente si la suerte está de tu lado. Busca mapas del tesoro en los vendedores de la taberna y mantén los ojos abiertos: te encontrarás con muchos cazadores rivales que quieren enriquecerse a tu costa. Además, los tesoros más valiosos a menudo requieren ensamblar la mitad de un mapa a partir de hallazgos más simples, ¡así que adelante! ¡Que la fortuna nos favorezca a todos!";
+		dialog.text = "No hay mucho romanticismo en ese oficio, Capitán. Es una búsqueda larga pero rentable, especialmente si la suerte está de tu lado. Busca mapas del tesoro en los vendedores de la taberna y mantén los ojos abiertos: te encontrarás con muchos cazadores rivales que quieren enriquecerse a tu costa. Además, los tesoros más valiosos a menudo requieren ensamblar la mitad de un mapa a partir de hallazgos más simples, ¡así que adelante! ¡Que la fortuna nos favorezca a todos!";
 		link.l1 = "Comenzar juego";
 		link.l1.go = "Finish_3";
 		break;
@@ -98,8 +98,8 @@ void ProcessDialogEvent()
 		DoReloadCharacterToLocation(Pchar.HeroParam.Location, Pchar.HeroParam.Group, Pchar.HeroParam.Locator);
 		SetFunctionTimerCondition("SanBoxStatusCityRemove", 0, 0, 30, false);
 		bGameMenuStart = false;
-		AddQuestRecordInfo("Guide_AtSea", "1");
-		AddQuestRecordInfo("Guide_OnLand", "1");
+		//AddQuestRecordInfo("Guide_AtSea", "1");
+		//AddQuestRecordInfo("Guide_OnLand", "1");
 		DoQuestFunctionDelay("Tutorial_CameraControlFP", 2.5);
 		// DoQuestFunctionDelay("Tutorial_Rest", 2.5);
 		break;
@@ -144,7 +144,7 @@ void ProcessDialogEvent()
 				link.l0 = "BetaTest - omitir y comenzar el juego";
 				link.l0.go = "Finish_2";
 			}
-			link.l1 = "¿Sandro? ¿Qué demonios ha pasado? ¿Y por qué tengo un dolor de cabeza tan terrible?";
+			link.l1 = "¿Alonso? ¿Qué demonios ha pasado? ¿Y por qué tengo un dolor de cabeza tan terrible?";
 			link.l1.go = "Node_1_Jess";
 		}
 		else
@@ -160,21 +160,22 @@ void ProcessDialogEvent()
 			link.l1 = "Mm... ¿y cómo era yo antes?";
 			link.l1.go = "Node_1";
 		}
+		locCameraFromToPos(-2.04, 4.95, 13.26, true, -0.82, 2.52, 7.87);
 		break;
 
 	case "PZ_Test_Start_1":
 		dialog.text = "¿Dónde empezamos?";
-		link.l0 = "Эпизод 0. PRÓLOGO. (desde el principio)";
+		link.l0 = "Episodio 0. PRÓLOGO. (desde el principio)";
 		link.l0.go = "PZ_Test_Start_S_samogo_nachala";
-		link.l1 = " Episodio 1. FIEL AL JURAMENTO.";
+		link.l1 = "Episodio 1. FIEL AL JURAMENTO.";
 		link.l1.go = "PZ_Test_Start_BasTer";
-		link.l2 = "Эпизод 2-3. СТРАНИЦЫ ИСТОРИИ.";
+		link.l2 = "Episodio 2-3. СТРАНИЦЫ ИСТОРИИ.";
 		link.l2.go = "PZ_Test_Start_Formosa";
-		link.l4 = "Еpisodio 4. ESTRELLA ENGAÑOSA.";
+		link.l4 = "Episodio 4. ESTRELLA ENGAÑOSA.";
 		link.l4.go = "PZ_Test_Start_Etap4";
-		link.l51 = "Эпизод 5-6. ESTRELLA FUGAZ. (CON Элен)";
+		link.l51 = "Episodio 5-6. ESTRELLA FUGAZ. (CON Helen)";
 		link.l51.go = "PZ_Test_Start_Etap5_Helena";
-		link.l52 = "Эпизод 5-6. ESTRELLA FUGAZ. (CON Mary)";
+		link.l52 = "Episodio 5-6. ESTRELLA FUGAZ. (CON Mary)";
 		link.l52.go = "PZ_Test_Start_Etap5_Mary";
 		break;
 
@@ -397,7 +398,7 @@ void ProcessDialogEvent()
 		// Baсker
 		sld = GetCharacter(NPC_GenerateCharacter("Baker", "Baker", "man", "man_B", 1, ENGLAND, -1, false, "quest"));
 		sld.name = "Raymond";
-		sld.lastname = "Baсker";
+		sld.lastname = "Backer";
 		sld.greeting = "baker";
 		sld.Dialog.Filename = "Quest\Saga\Baker.c";
 		sld.dialog.currentnode = "Baker_officer";
@@ -660,7 +661,7 @@ void ProcessDialogEvent()
 		// Baсker
 		sld = GetCharacter(NPC_GenerateCharacter("Baker", "Baker", "man", "man_B", 1, ENGLAND, -1, false, "quest"));
 		sld.name = "Raymond";
-		sld.lastname = "Baсker";
+		sld.lastname = "Backer";
 		sld.greeting = "baker";
 		sld.Dialog.Filename = "Quest\Saga\Baker.c";
 		sld.dialog.currentnode = "Baker_officer";
@@ -1308,7 +1309,7 @@ void ProcessDialogEvent()
 		bGameMenuStart = false;
 		StartBattleLandInterface();
 		dialog.text = "Como esos ateos de piel roja, incluso hablabas en su idioma.";
-		link.l1 = "¡Maldita sea! ¡Sandro, ¿de qué demonios estás hablando?!";
+		link.l1 = "¡Maldita sea! ¡Alonso, ¿de qué demonios estás hablando?!";
 		link.l1.go = "Node_2";
 		break;
 
@@ -1354,7 +1355,7 @@ void ProcessDialogEvent()
 		dialog.text = "...";
 		// link.l1 = "Mm... dame un minuto, necesito ordenar mis pensamientos.";
 		// link.l1.go  = "ChangePIRATES_Jess";
-		link.l2 = "Me siento bien ahora. Gracias por tu preocupación, Sandro.";
+		link.l2 = "Me siento bien ahora. Gracias por tu preocupación, Alonso.";
 		link.l2.go = "Node_5_Jess";
 		break;
 
@@ -1380,12 +1381,12 @@ void ProcessDialogEvent()
 			dialog.text = "Ahora estamos en el puerto " + XI_ConvertString("Colony" + pchar.HeroParam.ToCityId + "Gen") + "Necesitamos de alguna manera comenzar una nueva vida sin todas estas Máscaras y Beltropes, que se pudran todos en el infierno... Y no te defraudaremos, capitán. Nos quedaremos contigo hasta el final.";
 			link.l1 = "¡Pues, supongo que tengo suerte de estar vivo! No os defraudaré ni decepcionaré a ninguno de vosotros. Eso sería todo, necesito desembarcar.";
 			link.l1.go = "Finish_2";
-			link.l2 = "Un bastardo menos, un bastardo más, es lo que es, Sandro. ¿Me darás un par de consejos antes de que desembarque?";
+			link.l2 = "Un bastardo menos, un bastardo más, es lo que es, Alonso. ¿Me darás un par de consejos antes de que desembarque?";
 			link.l2.go = "Advice_1";
 		}
 		else
 		{
-			dialog.text = "Ahora estamos en el puerto del asentamiento " + XI_ConvertString("Colony" + pchar.HeroParam.ToCityId + "Gen") + ", ponte cómodo, pero vuelve. Ya perdimos el verdadero negocio - tuvimos que vender el viejo barco, pero no sacarás mucho con esto. Así que, fuimos interrumpidos por la anticipación de tu recuperación. Y los muchachos todavía creen en ti, de lo contrario ya habrían huido hace mucho tiempo...";
+			dialog.text = "Ahora estamos en el puerto del asentamiento " + XI_ConvertString("Colony" + pchar.HeroParam.ToCityId + "Gen") + ", ponte cómodo, pero vuelve. Ya perdimos el verdadero negocio, tuvimos que vender el viejo barco, pero no sacarás mucho con esto. Así que, fuimos interrumpidos por la anticipación de tu recuperación. Y los muchachos todavía creen en ti, de lo contrario ya habrían huido hace mucho tiempo...";
 			link.l1 = "Espléndido. Bien, voy a tierra... No te preocupes, no me perderé.";
 			link.l1.go = "Finish_2";
 			link.l2 = "¿Si crees que no estoy listo?";

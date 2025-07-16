@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "facio_wait";
 			pchar.questTemp.LSC.Drink = "begin";
-			pchar.questTemp.LSC.Drink.Chance = drand(100); // итог бухалова
+			pchar.questTemp.LSC.Drink.Chance = hrand(100); // итог бухалова
 			if (CheckAttribute(pchar, "questTemp.CanDrink")) pchar.questTemp.LSC.Drink.Chance = sti(pchar.questTemp.LSC.Drink.Chance)+50;
 			SetFunctionTimerCondition("LSC_DrinkOver", 0, 0, 3, false); // 3 дня
 			AddQuestRecord("LSC_Drink", "1");

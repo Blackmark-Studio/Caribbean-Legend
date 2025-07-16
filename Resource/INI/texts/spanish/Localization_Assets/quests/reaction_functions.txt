@@ -1,6 +1,6 @@
 reaction_functions_1
 {
-¡Sobredosis de poción de Mangarosa!
+¡Sobredosis de poción de Manga Rosa!
 }
 
 reaction_functions_2
@@ -10,12 +10,12 @@ Te envenenaron
 
 reaction_functions_3
 {
-¡Se utilizó una poción especial de Mangarosa!
+¡Se utilizó una poción especial de Manga Rosa!
 }
 
 reaction_functions_4
 {
-El efecto de la poción mangarosa ha terminado.
+El efecto de la poción Manga Rosa ha terminado.
 }
 
 reaction_functions_5

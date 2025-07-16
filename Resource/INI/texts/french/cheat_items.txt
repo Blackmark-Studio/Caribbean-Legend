@@ -4,54 +4,54 @@ new_string
 
 }
 
-Cheat_success {Cheat worked successfully!}
+Cheat_success {La triche a fonctionné avec succès !}
 
-Cheat_on {Cheat on}
+Cheat_on {Triche activée}
 
-Cheat_off {Cheat off}
+Cheat_off {Triche désactivée}
 
-Cheat_Comming_soon {Coming soon!}
+Cheat_Comming_soon {Bientôt disponible !}
 
-f1 {Unlock all crafting recipes}
+f1 {Déverrouiller toutes les recettes d'artisanat}
 
-f2 {Add crafting materials}
+f2 {Ajouter des matériaux d'artisanat}
 
-f3 {Add herbs}
+f3 {Ajouter des herbes}
 
-f4 {Add gems}
+f4 {Ajouter des gemmes}
 
-f5 {Adder stone +100}
+f5 {Oeuf de serpent +100}
 
-f6 {Ammo +50}
+f6 {Munitions +50}
 
-f7 {Get Blades}
+f7 {Obtenir des lames}
 
-f8 {Get Guns}
+f8 {Obtenir des pistolets}
 
-f9 {Get Muskets}
+f9 {Obtenir des mousquets}
 
-f10 {God mode on/off}
+f10 {Invincibilité activée/désactivée}
 
-f11 {Get Cuirasses}
+f11 {Obtenir des cuirasses}
 
-f12 {Get Talismans}
+f12 {Obtenir des talismans}
 
-f13 {Get Amulets}
+f13 {Obtenir des amulettes}
 
-f14 {Get Wards}
+f14 {Obtenir des protections}
 
-f15 {Get Potions}
+f15 {Obtenir des potions}
 
-f16 {Get Spyglasses}
+f16 {Obtenir des longues-vues}
 
-f17 {Get Lantern}
+f17 {Obtenir une lanterne}
 
-f18 {Get navigation devices}
+f18 {Obtenir des appareils de navigation}
 
-f19 {Get Tools}
+f19 {Obtenir des outils}
 
-f20 {Get ordinary maps}
+f20 {Obtenir des cartes ordinaires}
 
-f21 {Get admiral maps}
+f21 {Obtenir des cartes amiraux}
 
-descF21No {Unavailable at this stage of the game}
+descF21No {Indisponible à ce stade du jeu}

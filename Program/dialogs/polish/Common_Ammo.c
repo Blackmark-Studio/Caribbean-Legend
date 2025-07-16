@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 			}
 		
 			dialog.text = RandPhraseSimple("Jestem komendantem fortu. Czego tu potrzebujesz?","Na co cię stać? Dlaczego tu przyszedłeś?");
-			link.l1 = "O, nic, po prostu rozejrzyj się po mieście i jego okolicach. Trafiłem tutaj tylko przez szczęśliwy przypadek.";
+			link.l1 = "O, nic, po prostu rozglądam się po mieście i jego okolicach. Trafiłem tutaj tylko przez szczęśliwy przypadek.";
 			//belamour legendary edition диалоги, если герой имеет звания и заслуги перед отечеством -->
 			// Офицер с патентом
 			if(IsOfficerFullEquip())
@@ -91,7 +91,7 @@ void ProcessDialogEvent()
 			// Карибские нравы
 			if (CheckAttribute(pchar, "questTemp.Trial") && pchar.questTemp.Trial == "fraht" && NPChar.location == "portpax_ammo")
 			{
-				link.l11 = "Dzień dobry, oficerze. Przybywam z kolonii Basse-Terre, na polecenie pewnego mężczyzny o imieniu Gerard LeCroix. W moim ładowni znajduje się ładunek prochu strzelniczego i bomb dla ciebie...";
+				link.l11 = "Dzień dobry, oficerze. Przybywam z kolonii Basse-Terre, na polecenie pewnego mężczyzny o imieniu Gerard LeCroix. W mojej ładowni znajduje się ładunek prochu strzelniczego i bomb dla ciebie...";
 				link.l11.go = "trial";
 			}
 			// Опасный груз -->
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 
 		// --> Орудия для форта
 		case "GiveTaskGun":
-			dialog.Text = LinkRandPhrase("Widzisz, działa forteczne są dość zużyte. Skarbiec przyznał fundusze na ich wymianę, ale po prostu nie mam pojęcia, gdzie mogę zakupić nowe: po prostu nie ma sposobu znalezienia ich w naszej kolonii w wymaganej ilości. Więc pomyślałem, że działa z okrętów, które zdobyłeś, mogłyby nam tu być całkiem przydatne.","Muszę wymienić baterię dział w forcie. Fundusze już zostały przydzielone, ale, wiesz... Po prostu nie można kupić potrzebnej ilości w naszej kolonii.","Dostalem zadanie wymiany zuzytych dział fortu, ale nie mogę nigdzie znaleźć wystarczającej ilości.");
+			dialog.Text = LinkRandPhrase("Widzisz, działa fortowe są dość zużyte. Skarbiec przyznał fundusze na ich wymianę, ale po prostu nie mam pojęcia, gdzie mogę zakupić nowe: po prostu nie ma sposobu znalezienia ich w naszej kolonii w wymaganej ilości. Więc pomyślałem, że działa z okrętów, które zdobyłeś, mogłyby nam tu być całkiem przydatne.","Muszę wymienić baterię dział w forcie. Fundusze już zostały przydzielone, ale, wiesz... Po prostu nie można kupić potrzebnej ilości w naszej kolonii.","Dostalem zadanie wymiany zuzytych dział fortu, ale nie mogę nigdzie znaleźć wystarczającej ilości.");
 			Link.l1 = "Hmm... Czy mógłbyś podać trochę więcej szczegółów? Kaliber, ilość, cena?";
 			Link.l1.go = "GiveTaskGun_1";
 			pchar.questTemp.PrisonGun = true;
@@ -341,7 +341,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_3":
-			dialog.text = "So, our military ship 'Warlike' is cruising near the Spanish colony Porto Bello, in the southern part of the Spanish Main. This vessel is under the command of Florian Shoke, who is preparing an ambush of a Spanish heavy galleon set to leave Porto Bello in two weeks.\nThe problem is that our frigate's cannons are suffering from a casting defect, and we need to replace fifteen cannons to save the mission; otherwise, the galleon will outnumber 'Warlike' in both guns and men. \nWithout the replacement, Florian Shoke will be forced to sail away with no result. Such a sequence of events is highly undesirable. Your task is to save the mission by delivering fifteen cannons within fourteen days.";
+			dialog.text = "Więc nasz okręt wojenny „Warlike” pływa w pobliżu hiszpańskiej kolonii Portobelo, w południowej części hiszpańskiego kontynentu. Statek ten jest pod dowództwem Floriana Shoke, który przygotowuje zasadzkę na hiszpański ciężki galeon, który ma opuścić Porto Bello za dwa tygodnie.\nProblem polega na tym, że działa naszej fregaty cierpią z powodu wady odlewu i musimy wymienić piętnaście dział, aby uratować misję; w przeciwnym razie galeon przewyższy liczebnie „Warlike” zarówno pod względem dział, jak i ludzi. \nBez wymiany Florian Shoke będzie zmuszony odpłynąć bez rezultatu. Taka sekwencja zdarzeń jest wysoce niepożądana. Twoim zadaniem jest uratowanie misji poprzez dostarczenie piętnastu dział w ciągu czternastu dni.";
 			link.l1 = "Czyli, muszę wziąć na pokład piętnaście dział, udać się do Portobello, poszukać fregaty 'Militant' i przekazać działa kapitanowi Florianowi Shoke?";
 			link.l1.go = "trial_4";
 		break;
@@ -365,6 +365,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Trial", "6");
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "trial_5":
@@ -411,20 +412,20 @@ void ProcessDialogEvent()
 				link.l1.go = "zpq_prs2";
 				link.l2 = "Powiedziałbym nie, przypuszczam... gdybym dał ci słowo, musiałbym wykonywać pracę, która wydaje się dość kłopotliwa. Nie zrobię tego.";
 				link.l2.go = "zpq_fld";
-				notification("Reputation Check Passed", "None");
+				notification("Sukces!", "None");
 			}
 			else
 			{
 				dialog.text = "Twoja reputacja jest dla mnie nie do przyjęcia. Proszę cię, opuść ten pokój. Potrafimy sami rozwiązać nasze problemy.";
 				link.l1 = "Cokolwiek, rozwiąż je potem...";
 				link.l1.go = "exit";
-				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+				notification("Reputacja zbyt niska! ("+XI_ConvertString(GetReputationName(71))+")", "None");
 			}		
 		break;
 		
 		case "zpq_fld":
 			dialog.text = "Cóż, przynajmniej odrzuciłeś w uczciwy sposób... Nie zatrzymuję cię już dłużej.";
-			link.l1 = "Pożegnanie.";
+			link.l1 = "Do widzenia.";
 			link.l1.go = "exit";
 			pchar.questTemp.zpq = "failed";
 			DelLandQuestMark(npchar);

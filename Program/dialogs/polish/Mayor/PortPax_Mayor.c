@@ -4,7 +4,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Czego chcesz? Pytaj śmiało.","Słucham cię, o co chodzi?"),"To już drugi raz, gdy próbujesz zapytać...","To już trzeci raz, kiedy próbujesz zapytać...","Kiedy to się skończy?! Jestem zajętym człowiekiem, zajmuję się sprawami kolonii, a ty wciąż mi przeszkadzasz!","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Czego chcesz? Pytaj śmiało.","Słucham cię, o co chodzi?"),"To już drugi raz, gdy próbujesz zapytać...","To już trzeci raz, kiedy próbujesz zapytać...","Kiedy to się skończy?! Jestem zajętym człowiekiem, zajmuję się sprawami kolonii, a ty wciąż mi przeszkadzasz!","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniłem zdanie...","Nie teraz. Nieodpowiednie miejsce i czas."),"Prawda... Ale później, nie teraz...","Zapytam... Ale trochę później...","Przykro mi, "+GetAddress_FormToNPC(NPChar)+"...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			// Jason НСО
@@ -18,6 +18,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Wasza Lordowska Mość, chciałeś mnie widzieć?";
 				link.l1.go = "PZ1";
+			}
+			// Украденное воспоминание
+			if (CheckAttribute(pchar, "questTemp.UV_DialogMayor"))
+			{
+				link.l1 = "Monsieur, mam do pana sprawę o wyjątkowo delikatnym charakterze.";
+				link.l1.go = "UV_1";
 			}
 		break;
 
@@ -98,6 +104,45 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			SetMusic("music_teleport");
 			pchar.questTemp.lockedMusic = true;
 		break;
+		
+		//--> Украденное воспоминание
+		case "UV_1":
+			dialog.text = "Sprawa delikatna, powiadasz? Bardzo interesujące. Słucham uważnie.";
+			link.l1 = "Wie pan, pańska bratanica Julie zwróciła się do mnie z prośbą o pomoc w odnalezieniu pewnego naszyjnika.";
+			link.l1.go = "UV_2";
+			ChangeCharacterComplexReputation(pchar, "nobility", -5);
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "UV_2":
+			dialog.text = "Naszyjnik? Nie przypominam sobie, żeby go posiadała.";
+			link.l1 = "Zaraz wszystko wyjaśnię, panie gubernatorze, krok po kroku. Naszyjnik znalazł"+GetSexPhrase("em","am")+". Okazało się, że złodziejką jest służąca pańskiej bratanicy, Giselle. Po zachowaniu osoby, której przekazywała skradzione dobra, wnioskuję, że to nie jej pierwszy – i obawiam się, że nie ostatni – taki występek.";
+			link.l1.go = "UV_3";
+		break;
+		
+		case "UV_3":
+			dialog.text = "Proszę kontynuować.";
+			link.l1 = "Julie nie zwróciła się do pana po pomoc, ponieważ naszyjnik był prezentem od osoby, z którą zabronił jej pan się kontaktować. Ja natomiast, będąc przekonan"+GetSexPhrase("ym","ą")+", że pańska decyzja wynikała z jak najlepszych intencji, uznał"+GetSexPhrase("em","am")+", że moim obowiązkiem jest pana o tym poinformować i zwrócić naszyjnik.";
+			link.l1.go = "UV_4";
+			TakeItemFromCharacter(pchar, "SM_necklace_Julie");
+		break;
+		
+		case "UV_4":
+			dialog.text = "Postąpił"+GetSexPhrase("eś","aś")+" mądrze"+GetSexPhrase(", kapitanie","")+". Cieszy mnie, że postanowił"+GetSexPhrase("eś","aś")+" powiedzieć mi prawdę, zamiast dogadzać kaprysom Julie.";
+			link.l1 = "Życzę jej jak najlepiej i jestem przekonan"+GetSexPhrase("y","a")+", że pańskie zamiary są równie szlachetne.";
+			link.l1.go = "UV_5";
+		break;
+		
+		case "UV_5":
+			dialog.text = "Oczywiście, kapitanie, jako jej wuj życzę jej tylko dobra. Proszę przyjąć moją wdzięczność za pańską rozwagę. Oto sto pięćdziesiąt dublonów oraz coś jeszcze – kompas, który, mam nadzieję, okaże się przydatnym towarzyszem w pańskich podróżach.";
+			link.l1 = "Dziękuję, monsieur. To naprawdę nie było konieczne. Ale teraz muszę się pożegnać – obowiązki wzywają.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("UV_End");
+			AddItems(pchar, "gold_dublon", 150);
+			GiveItem2Character(PChar, "compass1");
+			ChangeCharacterNationReputation(pchar, FRANCE, 5);
+		break;
+		//<-- Украденное воспоминание
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

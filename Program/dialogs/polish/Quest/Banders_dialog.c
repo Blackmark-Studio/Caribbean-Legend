@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 
 		case "First time":
 			dialog.text = "Kim do diabła jesteś?";
-			link.l1 = "Spokój, uspokój się. Twój uwięziony towarzysz o imieniu "+pchar.questTemp.jailCanMove.Deliver.name+" wysłał mnie tutaj, znasz go?";
+			link.l1 = "Cicho bądź, uspokój się. Twój uwięziony towarzysz o imieniu "+pchar.questTemp.jailCanMove.Deliver.name+" wysłał mnie tutaj, znasz go?";
 			link.l1.go = "Step_1";			
 			NextDiag.TempNode = "Second time";
 		break;
@@ -46,7 +46,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_2":
-			dialog.text = "Zobaczmy... (czyta). Cholera! Zły moment, by dać się złapać... Kurwa, taki interes... Słuchaj, marynarzu, rozumiem, że jesteś "+GetSexPhrase("silny druh","zręczna dziewczyna")+" Chcesz zarobić trochę monet? Wszyscy skorzystamy na tym układzie.";
+			dialog.text = "Zobaczmy... (czyta). Cholera! Zły moment, by dać się złapać... Kurwa, taki interes... Słuchaj, marynarzu, rozumiem, żeś  "+GetSexPhrase("silny druh","zręczna dziewczyna")+" Chcesz zarobić trochę monet? Wszyscy skorzystamy na tym układzie.";
 			link.l1 = "Zawsze chcę. O co chodzi?";
 			link.l1.go = "Step_3";
 		break;
@@ -54,7 +54,7 @@ void ProcessDialogEvent()
 		case "Step_3":
 			dialog.text = "Mogę podzielić się z tobą ciekawymi informacjami. Nie potrzebuję tego, nie zdążę, dzięki naszemu wspólnemu przyjacielowi, ale może ci się to przyda. Nie za darmo.";
 			link.l1 = "Ile?";
-			if (drand(2) == 0) link.l1.go = "Step_4";
+			if (hrand(2) == 0) link.l1.go = "Step_4";
 			else link.l1.go = "Step_4d";
 		break;
 		
@@ -63,7 +63,7 @@ void ProcessDialogEvent()
 			dialog.text = "Piąćdziesiąt tysięcy pesos.";
 			if(makeint(Pchar.money) >= 50000)
 			{
-				link.l1 = "Hm, dość drogie. Ale powiem tak, jeśli interes jest tego wart. Wchodzę! Daj mi szczegóły.";
+				link.l1 = "Hm, dość drogie te informacje. Ale powiem tak, jeśli interes jest tego wart, to wchodzę! Daj mi szczegóły.";
 				link.l1.go = "Step_5";
 			}
 			link.l2 = "Nie jestem zainteresowany.";
@@ -71,11 +71,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_4d":
-			iTotalTemp = 250+drand(25)*10;
+			iTotalTemp = 250+hrand(25)*10;
 			dialog.text = ""+FindRussianDublonString(iTotalTemp)+"Nie mniej niż jedna moneta!";
 			if (GetCharacterItem(pchar, "gold_dublon") >= iTotalTemp)
 			{
-				link.l1 = "Hm,  całkiem drogo. Ale zgadzam się, jeśli interes jest tego wart. Wchodzę! Daj mi szczegóły.";
+				link.l1 = "Hm, całkiem drogo. Ale powiem tak, jeśli interes jest tego wart, to wchodzę! Daj mi szczegóły.";
 				link.l1.go = "Step_5";
 			}
 			link.l2 = "Nie jestem zainteresowany.";
@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 			switch (sti(pchar.questTemp.jailCanMove.Deliver.good))
 			{
 				case 0://попытка грабежа
-					dialog.text = "Cóż-cóż, cokolwiek, "+GetSexPhrase("zostałeś oszukany, ty idioto","zostałaś oszukana, głupia dziewczyno")+" Teraz płać, gotówką!";
+					dialog.text = "Prosze prosze, "+GetSexPhrase("zostałeś oszukany, ty idioto","zostałaś oszukana, głupia dziewczyno")+" Teraz płać, gotówką!";
 					link.l1 = "Idź się pierdol z kotwicą... Twój przyjaciel powiedział mi, że jego kumple są hojni!";
 					link.l1.go = "Step_fight";
 				break;
@@ -143,8 +143,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_takemoney":
-			dialog.text = "Dobra robota, "+GetSexPhrase("kamrat","dziewczyna")+" Nasz wspólny przyjaciel zwróci ci je, ha-ha... gdy już będzie martwy. Zmykaj. Cicho.";
-			link.l1 = "Przeklęty bądź!";
+			dialog.text = "Dobra robota, "+GetSexPhrase("kamracie","dziewczyno")+" Nasz wspólny przyjaciel zwróci ci je, ha-ha... gdy już będzie martwy. Zmykaj, tylko cichcem.";
+			link.l1 = "Bądź przeklęty!";
 			link.l1.go = "exit";
 			if (iTotalTemp == 0) AddMoneyToCharacter(pchar, -50000);
 			else RemoveItems(pchar, "gold_dublon", 300);
@@ -157,7 +157,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_lay":
-			dialog.text = "Pewnie... Cokolwiek, teraz odejdź, cicho.";
+			dialog.text = "Pewnie... teraz odejdź, cichaczem.";
 			link.l1 = "Żegnaj.";
 			link.l1.go = "exit";
 			AddQuestRecord("GivePrisonFree", "13");
@@ -175,7 +175,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_trader":
-			dialog.text = "Oczywiście... Cokolwiek, teraz odejdź, cicho.";
+			dialog.text = "Oczywiście... teraz odejdź, cichaczem.";
 			link.l1 = "Żegnaj.";
 			link.l1.go = "exit";
 			AddQuestRecord("GivePrisonFree", "13");
@@ -193,7 +193,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_cureer":
-			dialog.text = "Pewnie... Cokolwiek, teraz odejdź, cicho.";
+			dialog.text = "Pewnie... teraz odejdź, cichaczem.";
 			link.l1 = "Żegnaj.";
 			link.l1.go = "exit";
 			AddQuestRecord("GivePrisonFree", "14");
@@ -210,7 +210,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_no":
-			dialog.text = "Cokolwiek, zatem. Teraz idź, nie mamy z tobą o czym rozmawiać.";
+			dialog.text = "Nieważne, zatem. Teraz idź, nie mamy z tobą o czym rozmawiać.";
 			link.l1 = "Zgoda, żegnaj.";
 			link.l1.go = "exit";
 			AddQuestRecord("GivePrisonFree", "16");
@@ -223,15 +223,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "Second time":
-			dialog.text = "Czego jeszcze chcesz? Już ci powiedziałem, żebyś się zgubił.";
-			link.l1 = " Dobrze,   jestem w drodze... ";
+			dialog.text = "Czego jeszcze chcesz? Już ci powiedziałem, żebyś stąd spadał.";
+			link.l1 = " Dobrze, jestem w drodze... ";
 			link.l1.go = "exit";			
 			NextDiag.TempNode = "Second time";
 		break;
 		
 		case "Man_FackYou":
-			dialog.text = "Chcesz być dźgnięty, "+GetSexPhrase("fircyk","głupia dziewczyna")+"?!";
-			link.l1 = LinkRandPhrase("Diabeł!","Carramba!","Cholera!");
+			dialog.text = "Chcesz pare ran kłutych, "+GetSexPhrase("durniu","głupia dziewczyno")+"?!";
+			link.l1 = LinkRandPhrase("O kurwa!","Do kroćset!","Cholera!");
 			link.l1.go = "fight";
 		break;
 	}

@@ -1240,3 +1240,26 @@ QuestsUtilite_275
 {
 Benutzen Sie das Aktionsmenü (ENTER), um schnell nach Le Franсois zu reisen.
 }
+
+QuestsUtilite_276
+{
+Die Gewässer werden gefährlicher, die Piratenbedrohung ist gestiegen
+}
+
+QuestsUtilite_277
+{
+Chimera
+}
+
+QuestsUtilite_278
+{
+~ Wie sehr wir sie verärgert haben! Das Flaggschiff des Geschwaders ist ~
+}
+QuestsUtilite_279
+{
+Diego
+}
+QuestsUtilite_280
+{
+de Landa
+}

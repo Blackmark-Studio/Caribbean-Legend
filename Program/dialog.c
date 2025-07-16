@@ -82,7 +82,8 @@ bool DialogMain(ref Character)
 	Log_SetActiveAction("Nothing");	
 	bool groundSitPoorman = (mainChr.chr_ai.type == LAI_TYPE_GROUNDSIT);
 	bool groundSitActor = (mainChr.chr_ai.type == LAI_TYPE_ACTOR) && (mainChr.chr_ai.type.mode == "groundSit");
-	if (locCameraCurMode == LOCCAMERA_FOLLOW && !CheckAttribute(loadedLocation, "lockCamAngle") && mainChr.location.group != "sit" && !groundSitPoorman && !groundSitActor && !CheckAttribute(pchar, "GenQuest.BlockDialogCamera")) // для квестов
+    bool bLockCamAngle = CheckAttribute(loadedLocation, "lockCamAngle") && !Whr_CheckNewBoardingDeck();
+	if (locCameraCurMode == LOCCAMERA_FOLLOW && !bLockCamAngle && mainChr.location.group != "sit" && !groundSitPoorman && !groundSitActor && !CheckAttribute(pchar, "GenQuest.BlockDialogCamera")) // для квестов
 	{
 		SetCameraDialogMode(Character);  // boal
 	}
@@ -263,8 +264,7 @@ void DialogExit()
 // belamour удалить флаг выхода из диалога
 void DialogExitDelayEnd(string qName)
 {
-	if(CheckAttribute(pchar,"systeminfo.DialogExitDelay"))
-		DeleteAttribute(pchar,"systeminfo.DialogExitDelay");
+    DeleteAttribute(pchar,"systeminfo.DialogExitDelay");
 }
 
 //Это событие приходит от Player
@@ -395,7 +395,7 @@ bool CanStartDialog()
 bool DlgCameraSpecAng(ref chrRef)
 {
 	ref loc = loadedLocation;
-	if(CheckAttribute(loc,"type"))
+	if(CheckAttribute(loc,"type") && !CheckAttribute(pchar, "questTemp.CameraDialogMode"))
 	{
 		if(loc.type == "town") return true;
 		if(loc.type == "jungle") return true;

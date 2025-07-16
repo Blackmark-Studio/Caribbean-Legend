@@ -162,13 +162,12 @@ void AddRumourLogInfo(int rid)
         }
         if(CheckAttribute(CurrentRumour, "loginfo.end"))
         {
-            AddQuestRecord(CurrentRumour.loginfo.end, CurrentRumour.loginfo.textnum)
+            AddQuestRecord(CurrentRumour.loginfo.end, CurrentRumour.loginfo.textnum);
             
             CloseQuestHeader(CurrentRumour.loginfo.end);
         }
 
         DeleteAttribute(CurrentRumour, "loginfo");
-        
     }
 
 }
@@ -240,9 +239,9 @@ bool RumourCheker(ref rRumour, string key, aref arPrm)
       a = false;
     }
 
-//navy --> проверка по городам...
-    if (CheckAttribute(rRumour, "City"))  // homo 06/11/06 Теперь можно задавать отрицание "!город"
-	{                                    // т.е. слух ходит во всех городах кроме заданного
+    //navy проверка по городам
+    if (CheckAttribute(rRumour, "City")) // homo 06/11/06 Теперь можно задавать отрицание "!город"
+	{                                    // т.е. слух ходит во всех городах, кроме заданного
 
         if (CheckAttribute(arPrm, "City"))  // fix homo 15/03/07 (homo перенес из КВЛ 06/02/08)
         {
@@ -260,7 +259,6 @@ bool RumourCheker(ref rRumour, string key, aref arPrm)
         else a = false; // fix homo 15/03/07 (homo перенес из КВЛ 06/02/08)
 
 	}
-//navy <--
 	if ((CheckAttribute(rRumour, "onlynation")) && sti(rRumour.onlynation) != iNation ){ a = false;}
     bool taverncheat = (key == "tavern") && (rand(1)== 1);
 	bool b = (rRumour.rep == "none") || (PCharRepPhrase ("bad", "good") == rRumour.rep) || (taverncheat);// и по репутации
@@ -617,7 +615,7 @@ void  DeleteRumor(int del)  //    Удаляет   слух (по номеру) 
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-void  ReplaceRumorR(int rep, ref rum);
+void  ReplaceRumorR(int rep, ref rum)
 {
 	ref CurRumour;
 	if (rep != -1)
@@ -687,7 +685,7 @@ int AddSimpleRumour(string stext, int nation, int terms, int qty)
     tmp.actualtime = terms; //сроки
     tmp.event = "none";
     tmp.next = "none";
-    return AddRumorR(&tmp)
+    return AddRumorR(&tmp);
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 int AddSimpleRumourEx(string stext, int City, int terms, int qty, string sEvent, string AddString)
@@ -706,7 +704,7 @@ int AddSimpleRumourEx(string stext, int City, int terms, int qty, string sEvent,
     tmp.event = sEvent;
     tmp.next = "none";
 	tmp.addString = AddString; //строка с параметрами, дополнительно
-    return AddRumorR(&tmp)
+    return AddRumorR(&tmp);
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 int AddSimpleRumourCity(string stext, string City, int terms, int qty, string sEvent)
@@ -724,7 +722,7 @@ int AddSimpleRumourCity(string stext, string City, int terms, int qty, string sE
     tmp.actualtime = terms; //сроки
     tmp.next = "none";
 	tmp.event = sEvent;
-    return AddRumorR(&tmp)
+    return AddRumorR(&tmp);
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 int AddSimpleRumourCityTip(string stext, string City, int terms, int qty, string Tip, string sEvent)
@@ -743,7 +741,7 @@ int AddSimpleRumourCityTip(string stext, string City, int terms, int qty, string
     tmp.event = "none";
     tmp.next = "none";
 	tmp.event = sEvent;
-    return AddRumorR(&tmp)
+    return AddRumorR(&tmp);
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 int AddSimpleRumourTip(string stext, int terms, int qty, string Tip, string sEvent)
@@ -761,10 +759,10 @@ int AddSimpleRumourTip(string stext, int terms, int qty, string Tip, string sEve
     tmp.event = "none";
     tmp.next = "none";
 	tmp.event = sEvent;
-    return AddRumorR(&tmp)
+    return AddRumorR(&tmp);
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-int AddSimpleRumourAllNations(string stext, int terms, int qty)
+void AddSimpleRumourAllNations(string stext, int terms, int qty)
 {
 	for(int i=0; i<MAX_NATIONS; i++)
 	{
@@ -772,7 +770,7 @@ int AddSimpleRumourAllNations(string stext, int terms, int qty)
 	}
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-int AddSimpleRumourAllNationsWithException(string stext, int nation, int terms, int qty)
+void AddSimpleRumourAllNationsWithException(string stext, int nation, int terms, int qty)
 {
 	for(int i=0; i<MAX_NATIONS; i++)
 	{
@@ -788,4 +786,3 @@ bool RumourHasInformation(string RumText)
 	}   
     return true;
 }
-            

@@ -1516,7 +1516,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shadows_7":
-			dialog.text = "Tak! Towarzyszyła Rzeźnikowi we wszystkich jego podróżach, dopóki nie porzucił jej dla Beatrice. Jess nie mogła mu tego wybaczyć. Nazywali ją talizmanem Rzeźnika, bo zawsze miał szczęście, gdy ona była z nim\nWierz lub nie, ale gdy tylko pozbył się jej na Barbadosie, jego interesy zaczęły się psuć, łupy były marne, a 'Neptun' stał się częstym gościem w stoczni na Isla Tesoro. Choć można to wyjaśnić faktem, że Rzeźnik spędzał większość czasu z Beatrice w kabinie, a nie na pokładzie\nBeatrice nie była jak Jessica, nie była uzależniona od przygód i wojny, choć Nicolas nauczył ją szermierki i żeglarstwa. Tak, lubiła morską romantykę, ale brakowało jej twardości charakteru. 'Neptun' Rzeźnika nie był dla niej odpowiednim miejscem. W końcu, zabiła ją.";
+			dialog.text = "Tak! Towarzyszyła Rzeźnikowi we wszystkich jego podróżach, dopóki nie porzucił jej dla Beatrice. Jess nie mogła mu tego wybaczyć. Nazywali ją talizmanem Rzeźnika, bo zawsze miał szczęście, gdy ona była z nim\nWierz lub nie, ale gdy tylko pozbył się jej na Barbadosie, jego interesy zaczęły się psuć, łupy były marne, a 'Neptune' stał się częstym gościem w stoczni na Isla Tesoro. Choć można to wyjaśnić faktem, że Rzeźnik spędzał większość czasu z Beatrice w kabinie, a nie na pokładzie\nBeatrice nie była jak Jessica, nie była uzależniona od przygód i wojny, choć Nicolas nauczył ją szermierki i żeglarstwa. Tak, lubiła morską romantykę, ale brakowało jej twardości charakteru. 'Neptune' Rzeźnika nie był dla niej odpowiednim miejscem. W końcu, zabiła ją.";
 			link.l1 = "A co z Jessicą?";
 			link.l1.go = "shadows_8";
 		break;

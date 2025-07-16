@@ -1,6 +1,6 @@
 BlackMark_1
 {
-Smuggler
+Przemytnik
 }
 BlackMark_2
 {
@@ -68,17 +68,17 @@ BlackMark_15
 
 BlackMark_16
 {
-Done and done. Time to go before Gabe shows up
+Zrobione. Czas się zwinąć, zanim pojawi się Gabe
 }
 
 BlackMark_17
 {
-Two hours later...
+Dwie godziny później...
 }
 
 BlackMark_18
 {
-In the morning...
+Nad ranem...
 }
 
 BlackMark_19

@@ -22,7 +22,7 @@ City_Rum5 {Un hombre complicado, este don Fernando. Algunos dicen que es un salv
 
 City_Rum6 {¡Qué hombre tan guapo, este don Fernando! ¿Pero sabes qué es lo extraño? Es como si no se fijara en nadie. Todo deber y servicio. Oí que había una chica... pero después de reunirse con un sacerdote, rechazó por completo los placeres mundanos. Como si hubiera hecho un voto.}
 
-City_Rum7 {¡Maldito inspector! Mientras él está aquí - la ciudad está como muerta. Sin comercio, sin diversión. Incluso respirar, parece, debe ser más silencioso. ¿Y sabes lo que es más aterrador? Es lo mismo en todos los puertos. Como un reloj. ¡Su Majestad Real no pudo haber inventado deliberadamente esta tortura para todos nosotros!}
+City_Rum7 {¡Maldito inspector! Mientras él está aquí la ciudad está como muerta. Sin comercio, sin diversión. Incluso respirar, parece, debe ser más silencioso. ¿Y sabes lo que es más aterrador? Es lo mismo en todos los puertos. Como un reloj. ¡Su Majestad Real no pudo haber inventado deliberadamente esta tortura para todos nosotros!}
 
 City_Rum8 {Don Fernando visita de nuevo el orfanato. Dona generosamente, reza durante horas. ¡Un hombre tan digno debería servir de ejemplo a esos malditos malversadores!}
 
@@ -47,11 +47,11 @@ City_Rum12 {. Una vez más, todos inclinaremos la cabeza bajo el yugo del Escori
 
 City_Rum13 {Ha llegado un nuevo inspector a ~}
 
-City_Rum14 {~  - la Santa Misericordia yace anclada. Una vez más, Alamida hace la vida imposible a la gente corriente: ¡Nada de bebidas alegres ni burdeles! ¿Qué demonio nos ha traído esto?}
+City_Rum14 {~  la Santa Misericordia yace anclada. Una vez más, Alamida hace la vida imposible a la gente corriente: ¡Nada de bebidas alegres ni burdeles! ¿Qué demonio nos ha traído esto?}
 
 City_Rum15 {No se puede envidiar al gobernador de ~}
 
-City_Rum16 {~ - El Señor Alamida ha atracado en el puerto y ha comenzado su inspección. La última vez, dicen, ~}
+City_Rum16 {~ El Señor Alamida ha atracado en el puerto y ha comenzado su inspección. La última vez, dicen, ~}
 
 City_Rum17 {~ estuvo a punto de perder su título. Oh... Rezo para que la Santa Misericordia no se aventure aquí de nuevo pronto...}
 

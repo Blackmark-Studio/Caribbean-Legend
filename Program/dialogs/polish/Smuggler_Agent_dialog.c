@@ -67,6 +67,14 @@ void ProcessDialogEvent()
             else
             {
 	            AddQuestRecord("Gen_Contraband", "t1");
+				if (Pchar.quest.contraband.CurrentPlace == "shore30" || Pchar.quest.contraband.CurrentPlace == "shore31")
+				{
+					AddQuestUserData("Gen_Contraband", "sIsland", "Marie Galante");
+				}
+				if (Pchar.quest.contraband.CurrentPlace == "shore59")
+				{
+					AddQuestUserData("Gen_Contraband", "sIsland", "Tobago");
+				}
 				AddQuestUserData("Gen_Contraband", "sIsland", XI_ConvertString(GetIslandByCityName(npchar.city)));
 			}
 			AddQuestUserData("Gen_Contraband", "sLoc", GetConvertStr(Pchar.quest.contraband.CurrentPlace, "LocLables.txt"));
@@ -105,7 +113,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Consumption.Contra"))
             {
 				dialog.text = "Co chcesz, kapitanie?";
-				link.l1 = "Czy możemy trochę porozmawiać?";
+				link.l1 = "Czy możemy chwile porozmawiać?";
 				link.l1.go = "Consumption";
 				break;
 			}
@@ -114,7 +122,7 @@ void ProcessDialogEvent()
 			if(NPChar.quest.meeting == "0")
 			{
 				Dialog.Text = "Co chcesz, kapitanie? Nie znam twojego imienia i nie mogę ci powiedzieć swojego.";
-				Link.l1 = "Jestem kapitanem "+GetFullName(pchar)+".";
+				Link.l1 = "Jestem "+GetFullName(pchar)+".";
 				Link.l1.go = "meeting";
 				NPChar.quest.meeting = "1"; 
 			}
@@ -125,7 +133,7 @@ void ProcessDialogEvent()
 					if(!CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakContra"))
 					{
 						pchar.GenQuest.CaptainComission.SpeakContra = true;
-						dialog.text = "Brak interesów dzisiaj. Patrole są na każdej zatoce, nasz gubernator szuka ładunku, który skonfiskował jakiś kapitan od"+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Imię")+"Acc"))+" "+pchar.GenQuest.CaptainComission.Name+" i zostało przez niego gdzieś schowane.";
+						dialog.text = "Brak interesów dzisiaj. Patrole są na każdej zatoce, nasz gubernator szuka ładunku, który skonfiskował jakiś kapitan od"+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name")+"Acc"))+" "+pchar.GenQuest.CaptainComission.Name+" i zostało przez niego gdzieś schowane.";
 						link.l1 = "A gdzie jest ten kapitan"+pchar.GenQuest.CaptainComission.Name+"?";
 						link.l1.go = "CapComission_1";
 						break;
@@ -133,7 +141,7 @@ void ProcessDialogEvent()
 					else
 					{
 						dialog.text = "Brak interesów dzisiaj.";
-						link.l1 = "Widzę.";
+						link.l1 = "Rozumiem.";
 						link.l1.go = "exit";					
 						break;
 					}
@@ -142,7 +150,7 @@ void ProcessDialogEvent()
 				if(pchar.questTemp.Slavetrader == "FindMayak" && Islands[GetCharacterCurrentIsland(pchar)].id == pchar.questTemp.Slavetrader.EsIsland)
 				{
 					dialog.text = "Nie ma dzisiaj interesów.";
-					link.l1 = "Widzę.";
+					link.l1 = "Rozumiem.";
 					link.l1.go = "exit";
 					break;
 				}
@@ -150,7 +158,7 @@ void ProcessDialogEvent()
 				if(npchar.id == "Bridgetown_Smuggler" && CheckAttribute(pchar, "questTemp.BM_BlockSmuggler"))
 				{
 					dialog.text = "Nie ma dzisiaj interesów.";
-					link.l1 = "Widzę.";
+					link.l1 = "Rozumiem.";
 					link.l1.go = "exit";
 					break;
 				}
@@ -158,7 +166,7 @@ void ProcessDialogEvent()
 				Dialog.Text = "Co chcesz, kapitanie?";
 				if (LAi_group_GetPlayerAlarm() > 0)
 				{
-	       			Dialog.Text = RandPhraseSimple("Bądź szybki, "+GetSexPhrase("kumpel","dziewczyna")+", co chcesz? Gonią cię!","Mów swoją sprawę i rób to szybko! Żołnierze cię gonią i nie mamy dużo czasu...");
+	       			Dialog.Text = RandPhraseSimple("Bądź szybki, "+GetSexPhrase("kumplu","dziewczyno")+", co chcesz? Gonią cię!","Mów co chcesz i to szybko! Żołnierze cię gonią i nie mamy dużo czasu...");
 				}
 				// belamour legendary edition
 				bOk2 = MCGovernon || MCAdmiral;
@@ -189,6 +197,15 @@ void ProcessDialogEvent()
 					Link.l8.go = "Shadowtrader_smugglers";
 				}
 				// <-- мини-квест Бесчестный конкурент
+				
+				//--> Торговля по закону
+				if(CheckAttribute(PChar, "questTemp.TPZ_ContraInfo") && NPChar.location == "BasTer_tavern")
+				{
+					Link.l8 = "Słuchaj, przyjacielu, potrzebuję partii wina i rumu. Dużo i szybko.";
+					Link.l8.go = "TPZ_smugglers_1";
+				}
+				// <-- Торговля по закону
+
 				//Jason --> генератор сбыта бакаута
 				if(NPChar.location == "Marigo_tavern" && CheckAttribute(PChar, "GenQuest.Bakaut") && !CheckAttribute(PChar, "GenQuest.Bakaut.Info"))
 				{
@@ -200,13 +217,13 @@ void ProcessDialogEvent()
 				// Церковный генератор №2 -->
 				if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_1") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_tavern")
 				{
-					Link.l4 = "Muszę coś dowiedzieć się, kumplu.";
+					Link.l4 = "Muszę się czegoś dowiedzieć, kumplu.";
 					Link.l4.go = "Contra_GenQuest_Church_2_1";
 				}
 				
 				if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_2") && NPChar.location == PChar.GenQuest.ChurchQuest_2.Contra_Colony + "_tavern")
 				{
-					Link.l5 = "Kolega z twojego grona i mój dobry przyjaciel z  "+XI_ConvertString("Kolonia"+PChar.GenQuest.ChurchQuest_2.QuestTown+"Gen")+" powiedział, że jesteś świadomy pewnych interesów.";
+					Link.l5 = "Kolega z twojego grona i mój dobry przyjaciel z  "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_2.QuestTown+"Gen")+" powiedział, że jesteś świadomy pewnych interesów.";
 					Link.l5.go = "Contra_GenQuest_Church_2_Contra2_1";
 				}
 				// <-- Церковный генератор №2
@@ -220,7 +237,7 @@ void ProcessDialogEvent()
 			if(pchar.GenQuest.CaptainComission.variant == "A2")
 			{
 				dialog.text = "W piwnicy fortu, gdzie indziej? Ten kapitan może ujawnić skład władzom w dowolnym momencie i dla nas nic nie zostanie. Nie myśl o żadnym interesie, dopóki ten zamęt się nie skończy.";
-				link.l1 = "Słuchaj, znasz każdy kawałek tej wyspy. Naprawdę nie masz pojęcia, gdzie jest kapitan "+pchar.GenQuest.CaptainComission.Name+"schowek jest?";
+				link.l1 = "Słuchaj, znasz każdy skrawek tej wyspy. Naprawdę nie masz pojęcia, gdzie jest schowek kapitana "+pchar.GenQuest.CaptainComission.Name+"?";
 				link.l1.go = "CapComission_4";
 			}
 			if(pchar.GenQuest.CaptainComission.variant == "A3")
@@ -269,10 +286,10 @@ void ProcessDialogEvent()
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					dialog.text = "Dlaczego nie? Może znajdę zastosowanie dla twojego 'ładunku'. Weź "+sti(pchar.questTemp.different.GiveShipLetters.price2)+" monety i zapomnij o tym.";
+					dialog.text = "Dlaczego nie? Może znajdę zastosowanie dla twojego 'ładunku'. Weź te "+sti(pchar.questTemp.different.GiveShipLetters.price2)+" monety i zapomnij o tym.";
 					link.l1 = "Nie, dziękuję.";
 					link.l1.go = "SM_ShipLetters_2";	
-					link.l2 = "I zgadłeś to poprawnie, zaczynam o tym zapominać!";
+					link.l2 = "Jak najbardziej, zaczynam o tym zapominać!";
 					link.l2.go = "SM_ShipLetters_3";
 				}
 				else
@@ -298,7 +315,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SM_ShipLetters_2":
-			dialog.text = "Dobrze, dobrze, ale przestań tworzyć więcej wrogów.";
+			dialog.text = "Dobra, dobra, tylko nie rób sobie więcej wrogów.";
 			link.l1 = "Również ci życzę!";
 			link.l1.go = "exit";
 		break;
@@ -348,7 +365,7 @@ void ProcessDialogEvent()
 				if(!CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakContra"))
 				{
 					pchar.GenQuest.CaptainComission.SpeakContra = true;
-					dialog.text = "Nie ma dziś żadnych interesów. Patroluje każdą zatokę, nasz gubernator szuka ładunku, który został skonfiskowany przez pewnego kapitana."+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Imię")+"Acc"))+" "+pchar.GenQuest.CaptainComission.Name+" a schował to gdzieś.";
+					dialog.text = "Nie ma dziś żadnych interesów. Patroluje każdą zatokę, nasz gubernator szuka ładunku, który został skonfiskowany przez pewnego kapitana."+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name")+"Acc"))+" "+pchar.GenQuest.CaptainComission.Name+" a schował to gdzieś.";
 					link.l1 = "A gdzie jest ten kapitan"+pchar.GenQuest.CaptainComission.Name+"?";
 					link.l1.go = "CapComission_1";
 					break;
@@ -356,7 +373,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = "Nie ma dzisiaj interesów.";
-					link.l1 = "Widzę.";
+					link.l1 = "Rozumiem.";
 					link.l1.go = "exit";					
 					break;
 				}
@@ -365,7 +382,7 @@ void ProcessDialogEvent()
 			if(pchar.questTemp.Slavetrader == "FindMayak" && Islands[GetCharacterCurrentIsland(pchar)].id == pchar.questTemp.Slavetrader.EsIsland)
 			{
 				dialog.text = "Nie ma interesów dzisiaj.";
-				link.l1 = "Widzę.";
+				link.l1 = "Rozumiem.";
 				link.l1.go = "exit";
 				break;
 			}
@@ -373,7 +390,7 @@ void ProcessDialogEvent()
 			if(npchar.id == "Bridgetown_Smuggler" && CheckAttribute(pchar, "questTemp.BM_BlockSmuggler"))
 			{
 				dialog.text = "Brak interesu dzisiaj.";
-				link.l1 = "Widzę.";
+				link.l1 = "Rozumiem.";
 				link.l1.go = "exit";
 				break;
 			}
@@ -393,10 +410,19 @@ void ProcessDialogEvent()
 			//Jason --> мини-квест Бесчестный конкурент
 			if(CheckAttribute(PChar, "questTemp.Shadowtrader.seeksmugglers") && NPChar.location == pchar.questTemp.Shadowtrader.City + "_tavern")
 			{
-				Link.l8 = "Mam dla ciebie dość nietypowy interes.";
+				Link.l8 = "Mam do ciebie dość nietypowy interes.";
 				Link.l8.go = "Shadowtrader_smugglers";
 			}
 			// <-- мини-квест Бесчестный конкурент
+			
+			//--> Торговля по закону
+			if(CheckAttribute(PChar, "questTemp.TPZ_ContraInfo") && NPChar.location == "BasTer_tavern")
+			{
+				Link.l8 = "Słuchaj, przyjacielu, potrzebuję partii wina i rumu. Dużo i szybko.";
+				Link.l8.go = "TPZ_smugglers_1";
+			}
+			// <-- Торговля по закону
+
 			//Jason --> генератор сбыта бакаута
 			if(NPChar.location == "Marigo_tavern" && CheckAttribute(PChar, "GenQuest.Bakaut") && !CheckAttribute(PChar, "GenQuest.Bakaut.Info"))
 			{
@@ -408,13 +434,13 @@ void ProcessDialogEvent()
 			// Церковный генератор №2 -->
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_1") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_tavern")
 			{
-				Link.l3 = "Muszę coś dowiedzieć się, kumpel.";
+				Link.l3 = "Muszę się czegoś dowiedzieć, kumplu.";
 				Link.l3.go = "Contra_GenQuest_Church_2_1";
 			}
 			
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_2") && NPChar.location == PChar.GenQuest.ChurchQuest_2.Contra_Colony + "_tavern")
 			{
-				Link.l3 = "Kolega z twojej załogi i mój dobry przyjaciel z  "+XI_ConvertString("Colonia"+PChar.GenQuest.ChurchQuest_2.QuestTown+"Gen")+" powiedział, że wiesz o pewnym interesie.";
+				Link.l3 = "Kolega z twojej załogi i mój dobry przyjaciel z  "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_2.QuestTown+"Gen")+" powiedział, że wiesz o pewnym interesie.";
 				Link.l3.go = "Contra_GenQuest_Church_2_Contra2_1";
 			}
 			// <-- Церковный генератор №2
@@ -444,7 +470,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Ha, nie masz monety! Przyjdź, kiedy zdobędziesz trochę pieniędzy.";
+				dialog.text = "Ha, nie masz kasy! Przyjdź, kiedy zdobędziesz trochę pieniędzy.";
 				link.l1 = "Rzeczywiście, zajmę się tym.";
 				link.l1.go = "exit";
 			}
@@ -458,7 +484,7 @@ void ProcessDialogEvent()
 			
 		case "Contra_GenQuest_Church_2_4":
 			sColony = QuestGetColony(PChar.GenQuest.ChurchQuest_2.QuestTown);
-			dialog.text = "Rozumiem... Spotkałem kilku facetów, powiedzieli, że muszą uciec z wyspy i nie obchodziło ich dokąd. W takich przypadkach nie pytamy o powody, tylko o zapłatę. Mieliśmy rejs do "+XI_ConvertString("Colony"+sColony+"Acc")+" , "+XI_ConvertString(locations[FindLocation(sColony+"_Miasto")].IslandID+"To")+" . Możemy cię tam zawieźć, jeśli się zgodzimy co do pieniędzy.";
+			dialog.text = "Rozumiem... Spotkałem kilku facetów, powiedzieli, że muszą uciec z wyspy i nie obchodziło ich dokąd. W takich przypadkach nie pytamy o powody, tylko o zapłatę. Mieliśmy rejs do "+XI_ConvertString("Colony"+sColony+"Acc")+" , "+XI_ConvertString(locations[FindLocation(sColony+"_Town")].IslandID+"To")+" . Możemy cię tam zawieźć, jeśli się zgodzimy co do pieniędzy.";
 			link.l1 = "Dzięki, ale mam swój własny statek.";
 			link.l1.go = "exit";
 			sQuestTitle = PChar.GenQuest.ChurchQuest_2.QuestTown + "ChurchGenQuest2";
@@ -472,7 +498,7 @@ void ProcessDialogEvent()
 			
 		case "Contra_GenQuest_Church_2_Contra2_1":
 			dialog.text = "Nigdy nie prowadziłem z tobą interesów.";
-			link.l1 = "Możemy to naprawić. Przywiozłeś moich przyjaciół tu niedawno. Przegapiłem spotkanie z "+GetSexPhrase("ich","oni")+".";
+			link.l1 = "Możemy to naprawić. Niedawno przywiozłeś tu moich przyjaciół. Przegapiłem z "+GetSexPhrase("nimi","nimi")+" spotkanie.";
 			link.l1.go = "Contra_GenQuest_Church_2_Contra2_2";
 		break;
 			
@@ -480,7 +506,7 @@ void ProcessDialogEvent()
 			string sGenLocation = IslandGetLocationFromType(locations[FindLocation(PChar.GenQuest.ChurchQuest_2.Contra_Colony + "_Town")].IslandID, "Shore");
 			PChar.GenQuest.ChurchQuest_2.QuestGangShore = sGenLocation;
 			PChar.GenQuest.ChurchQuest_2.BanditsInShore = true;
-			dialog.text = "Hm, wysadziliśmy ich na brzeg przy "+XI_ConvertString(sGenLocation+"Gen")+"... Wiesz, lepiej, żeby byli twoimi przyjaciółmi, bo inaczej nie radzę ci ich przeszkadzać.";
+			dialog.text = "Hm, wysadziliśmy ich na brzeg przy "+XI_ConvertString(sGenLocation+"Gen")+"... Wiesz, lepiej, żeby byli twoimi przyjaciółmi, bo inaczej nie radzę ci im przeszkadzać.";
 			link.l1 = "Dzięki za troskę, ale jestem dobrze uzbrojony i bardzo uroczy.";
 			link.l1.go = "exit";
 			SetFunctionLocationCondition("Church_GenQuest2_GenerateBandits", sGenLocation, false);
@@ -494,7 +520,7 @@ void ProcessDialogEvent()
 		// <-- Церковный генератор №2
 
 		case "Meeting_1":
-			Dialog.Text = "Hm... a jak to mnie dotyczy? Chyba się zgubiłeś, kapitanie. Idź do sklepu i sprzedaj tam albo kup, co tylko chcesz.";
+			Dialog.Text = "Hm... i co mi do tego? Chyba się zgubiłeś, kapitanie. Idź do sklepu i tam sprzedaj albo kup, co tylko chcesz.";
 			Link.l1 = "Nie, potrzebuję cię.";
 			Link.l1.go = "Meeting_2";				
 			Link.l2 = "Dzięki za twoją radę. Miłego dnia.";
@@ -502,8 +528,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "Meeting_2":
-			Dialog.Text = "Za co?";
-			Link.l1 = "Być może zainteresują Cię jakieś specjalne towary? A może masz coś do zaoferowania mi w zamian?"Link.l1.go ="Spotkanie_3";				
+			Dialog.Text = "Do czego?";
+			Link.l1 = "Być może zainteresują Cię jakieś specjalne towary? A może masz mi coś do zaoferowania w zamian?"Link.l1.go ="Meeting_3";				
 		break;
 
 		case "Meeting_3":
@@ -523,7 +549,7 @@ void ProcessDialogEvent()
 			
 			if (iTmp)
 			{
-				dialog.text = NPCStringReactionRepeat("Dlaczego następnym razem nie weźmiesz królewskiego okrętu wojennego. Twój statek można łatwo dostrzec z fortu. Nie będziemy ryzykować naszych głów. Przyjdź następnym razem na jednym małym statku.","Czy powinienem powtarzać? Znajdź mniejszy statek, a potem porozmawiamy.","Czy naprawdę jesteś takim idiota? Znajdź sobie szkuner lub bryg. Tylko wtedy będziemy mieć interesy.","Och, taki idiota...","block",1,npchar,Dialog.CurrentNode);
+				dialog.text = NPCStringReactionRepeat("Dlaczego następnym razem nie weźmiesz królewskiego okrętu wojennego. Twój statek można łatwo dostrzec z fortu. Nie będziemy ryzykować naszych głów. Przyjdź następnym razem na jednym małym statku.","Czy powinienem powtarzać? Znajdź mniejszy statek, a potem porozmawiamy.","Czy naprawdę jesteś takim idiotą? Znajdź sobie szkuner lub bryg. Tylko wtedy będziemy robić interesy.","Och, co za idiota...","block",1,npchar,Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Dobrze, zrozumiałem cię.","Rozumiem, chciałem tylko coś doprecyzować.","Nie, nie idiota, tylko skąpiec. Myślałem, że coś się zmieniło. Wziąłbym jeszcze kilka pinnasów...","Spójrz w lustro...",npchar,Dialog.CurrentNode);
 				link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);	
 				break;
@@ -544,7 +570,7 @@ void ProcessDialogEvent()
 //navy --> PGG
 			if (CheckFreeServiceForNPC(NPChar, "Smugglers") != -1)
 			{
-				Dialog.Text = "Przepraszam, "+GetSexPhrase("kumpel","dziewczyna")+", jesteśmy już zajęci. Wróć za kilka dni.";
+				Dialog.Text = "Przepraszam, "+GetSexPhrase("kumplu","dziewczyno")+", jesteśmy już zajęci. Wróć za kilka dni.";
 				Link.l1 = "Szkoda...";
 				Link.l1.go = "Exit";		
 				break;
@@ -571,7 +597,7 @@ void ProcessDialogEvent()
                         {
                             if (ChangeContrabandRelation(pchar, 0) >= 70)
                             {
-                                Dialog.Text = "Wiem, że możemy z tobą handlować. Będziemy czekać na "+GetConvertStr(Pchar.quest.contraband.CurrentPlace,"LocLables.txt")+".";
+                                Dialog.Text = "Wiem, że możemy z tobą handlować. Będziemy czekać w "+GetConvertStr(Pchar.quest.contraband.CurrentPlace,"LocLables.txt")+".";
                             }
                             else
                             {
@@ -609,7 +635,7 @@ void ProcessDialogEvent()
 //navy --> PGG
 			if (CheckFreeServiceForNPC(NPChar, "Smugglers") != -1)
 			{
-				Dialog.Text = "Przepraszam, "+GetSexPhrase("kumpel","dziewczyna")+", jesteśmy już zajęci. Wróć za kilka dni.";
+				Dialog.Text = "Przepraszam, "+GetSexPhrase("kumplu","dziewczyno")+", jesteśmy już zajęci. Wróć za kilka dni.";
 				Link.l1 = "Szkoda.";
 				Link.l1.go = "Exit";		
 				break;
@@ -682,7 +708,7 @@ void ProcessDialogEvent()
 							SetNPCQuestDate(npchar, "Travel_Talk");
 							SaveCurrentQuestDateParam("contraTravel");
 
-							Dialog.Text = "No cóż, możemy cię dostać do "+GetConvertStr(locations[FindLocation(pchar.GenQuest.contraTravel.destination.loc)].id,"LocLables.txt")+" blisko "+XI_ConvertString("Kolonia"+pchar.GenQuest.contraTravel.destination+"Gen")+" za "+pchar.GenQuest.contraTravel.price+" złoto. Przynieś pieniądze "+FindRussianDaysString(nDay)+". Statek będzie na ciebie czekać przy "+GetConvertStr(locations[FindLocation(Pchar.GenQuest.contraTravel.CurrentPlace)].id,"LocLables.txt")+" dokładnie 24 godziny.";
+							Dialog.Text = "No cóż, możemy cię dostać do "+GetConvertStr(locations[FindLocation(pchar.GenQuest.contraTravel.destination.loc)].id,"LocLables.txt")+" blisko "+XI_ConvertString("Colony"+pchar.GenQuest.contraTravel.destination+"Gen")+" za "+pchar.GenQuest.contraTravel.price+" złoto. Przynieś pieniądze "+FindRussianDaysString(nDay)+". Statek będzie na ciebie czekać przy "+GetConvertStr(locations[FindLocation(Pchar.GenQuest.contraTravel.CurrentPlace)].id,"LocLables.txt")+" dokładnie 24 godziny.";
 
 							pchar.GenQuest.contraTravel.days = nDay;
 							Link.l1 = "Jestem za.";
@@ -793,14 +819,14 @@ void ProcessDialogEvent()
 			dialog.text = "Bardzo interesujące. Pokaż co masz.";
 			link.l1 = "Słyszałem, że istnieje podziemny sklep, gdzie można handlować bardzo 'specjalnymi' towarami po kuszącej cenie, a ty pomogłeś go rozpocząć. Chciałbym porozmawiać z jego właścicielem.";
 			link.l1.go = "Shadowtrader_fail";
-			link.l2 = "Słyszałem, że jest podziemny sklep, gdzie można handlować bardzo 'specjalnymi' towarami za kuszącą cenę. Muszę odpłynąć za kilka dni i nie mam wystarczająco dużo pieniędzy, aby kupić wszystko, czego potrzebuję w lokalnym sklepie, więc potrzebuję i chcę zaoszczędzić trochę monety... niektórzy ludzie mówili mi, że możesz mi w tym pomóc.";
+			link.l2 = "Słyszałem, że jest tu gdzieś jakiś podziemny sklep, gdzie można handlować bardzo 'specjalnymi' towarami za kuszącą cenę. Muszę odpłynąć za kilka dni i nie mam wystarczająco dużo pieniędzy, aby kupić wszystko, czego potrzebuję w lokalnym sklepie, więc potrzebuję i chcę zaoszczędzić trochę monety... niektórzy ludzie mówili mi, że możesz mi w tym pomóc.";
 			link.l2.go = "Shadowtrader_smugglers_1";
 			DeleteAttribute(pchar, "questTemp.Shadowtrader.seeksmugglers");
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "Shadowtrader_fail":
-			dialog.text = "O czym ty mówisz? Nie rozumiem cię. Nie zaczęliśmy tutaj sklepu, to nonsens, ha-ha! Jeśli chcesz handlować, przynieś nam towary, a my porozmawiamy w nasz zwykły sposób... Sklep, ha!";
+			dialog.text = "O czym ty mówisz? Nie rozumiem cię. Nie zaczęliśmy tutaj sklepu, to nonsens, ha-ha! Jeśli chcesz handlować, przynieś nam towary, a my porozmawiamy na nasz zwykły sposób... Sklep, ha!";
 			link.l1 = "Hm...";
 			link.l1.go = "exit";
 			pchar.questTemp.Shadowtrader = "true";
@@ -810,7 +836,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Shadowtrader_smugglers_1":
-			dialog.text = "Chcesz zniżki? Łatwo. Przyjdź do drzwi kapitana portu, gdy będzie ciemno. Nasz człowiek spotka się z tobą i zaprowadzi cię we właściwe miejsce. ";
+			dialog.text = "Chcesz zniżki? Łatwizna. Przyjdź pod drzwi portowej administracji, gdy będzie ciemno. Nasz człowiek spotka się z tobą i zaprowadzi cię we właściwe miejsce. ";
 			link.l1 = "Dobrze. Będę tam!";
 			link.l1.go = "Shadowtrader_smugglers_2";		
 		break;
@@ -843,7 +869,44 @@ void ProcessDialogEvent()
 			DialogExit();
 		break;
 		// <-- Бесчестный конкурент
+		//--> Торговля по закону
+		case "TPZ_smugglers_1":
+			dialog.text = "Ha, ten łajdak zza lady cię przysłał, co?";
+			link.l1 = "A co to za różnica? Dasz radę to załatwić, czy mam szukać kogoś innego?";
+			link.l1.go = "TPZ_smugglers_2";
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "TPZ_smugglers_2":
+			dialog.text = "Mogę zdobyć wszystko, kumasz? Byleby płacili porządnie. Ale ten przeklęty gubernator całkiem nas przycisnął. Z alkoholem już się nie bawimy – szkło brzęczy, słychać z daleka, zysk żaden, a ryzyko zawisnąć na szubienicy ogromne. Więc wybacz.";
+			link.l1 = "Tia... A mówisz, że możesz wszystko zdobyć.";
+			link.l1.go = "TPZ_smugglers_3";		
+		break;
+		
+		case "TPZ_smugglers_3":
+			dialog.text = "Bo mogę! Po prostu nie chcę. Jest tu jeden facet, mieszka tuż obok rezydencji, wyobrażasz sobie? Ha-ha. Co za głupek... Gdzie to ja? A, tak. On po cichu handluje jakimś alkoholem spod lady. Prosto pod nosem gubernatora, ha-ha. Zapytaj go, może coś ci podpowie. Ilości ma dziecięce, ale zawsze coś.";
+			link.l1 = "Niewiele pomogłeś, ale dzięki i za to.";
+			link.l1.go = "TPZ_smugglers_4";		
+		break;
+		
+		case "TPZ_smugglers_4":
+			DialogExit();
+			AddQuestRecord("TPZ", "3");
+			DeleteAttribute(pchar, "questTemp.TPZ_ContraInfo");
 			
+			// проведаем дом Кристиана
+			sld = GetCharacter(NPC_GenerateCharacter("TPZ_Kristian", "citiz_17", "man", "man", 1, FRANCE, -1, false, "quest"));
+			sld.name = "Christian";
+			sld.lastname = "Deluce";
+			LAi_SetOwnerType(sld);
+			sld.dialog.filename = "Quest\MiniEvents\TradingByLaw_dialog.c";
+			sld.dialog.currentnode = "Kristian";
+			ChangeCharacterAddressGroup(sld, "BasTer_houseF3", "barmen", "stay");
+			sld.City = "BasTer";
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			AddLandQuestMark(sld, "questmarkmain");
+		break;
+		//<-- Торговля по закону
 		//--> Цена чахотки
 		case "Consumption":
 			dialog.text = "Jest tu wielu biesiadników i jeśli nie masz tu żadnych spraw, panie, napij się lub porozmawiaj z nimi. To miejsce jest zatłoczone.";
@@ -868,14 +931,14 @@ void ProcessDialogEvent()
 		
 		case "Consumption_2":
 			AddMoneyToCharacter(pchar, -3002);
-			dialog.text = "Pamiętam to, choć nie rozumiem, dlaczego cię to interesuje. Ten dzieciak naprawdę oszalał za tymi kratami. Stał się pijakiem i zawsze gadał jakieś bzdury o spożyciu, które zabierało ludzi i nikt nie był przed nim bezpieczny. Mówił, że to spożycie ma imię i nawet nie śmiej go głośno wymawiać. Jeśli to zrobisz - przyjdzie i zabierze także ciebie.";
+			dialog.text = "Pamiętam to, choć nie rozumiem, dlaczego cię to interesuje. Ten dzieciak naprawdę oszalał za tymi kratami. Stał się pijakiem i zawsze gadał jakieś bzdury o gruźlicy, która zabierała ludzi i nikt nie był przed nim bezpieczny. Mówił, że ta gruźlica ma imię i nawet nie śmiej go głośno wymawiać. Jeśli to zrobisz - przyjdzie i zabierze także ciebie.";
 			link.l1 = "I co się z nim potem stało?";
 			link.l1.go = "Consumption_3";
 		break;
 		
 		case "Consumption_3":
-			dialog.text = "Historia ma dziwny koniec, seniorze. Początkowo miejscowi i marynarze lubili jego opowieść, ale w końcu mieli jej dość. Zawsze tak jest z każdą bajką. Więc sprowokowali go, by powiedział imię. Chłopak stawiał opór, ale nie mógł znieść drwin i dosłownie wykrzyczał je\nNikt niczego specjalnego nie poczuł, świece nie zgasły, ale biedna dusza została znaleziona martwa następnego ranka za karczmą z przeciętym gardłem.";
-			link.l1 = "Nie widzę tu żadnej magii. Powiedz mi imię.";
+			dialog.text = "Historia ma dziwny koniec, seniorze. Początkowo miejscowi i marynarze lubili jego opowieść, ale w końcu mieli jej dość. Zawsze tak jest z każdą bajką. Więc sprowokowali go, by powiedział to imię. Chłopak stawiał opór, ale nie mógł znieść drwin i dosłownie wykrzyczał je\nNikt niczego specjalnego nie poczuł, świece nie zgasły, ale biedna dusza została znaleziona martwa następnego ranka za karczmą z przeciętym gardłem.";
+			link.l1 = "Nie widzę tu żadnej magii. Powiedz mi to imię.";
 			link.l1.go = "Consumption_4";
 		break;
 		
@@ -886,7 +949,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Consumption_5":
-			dialog.text = "Oh, nie skończy się dobrze, señor, uwierz mi... (ściszając głos) Powiedział - Juan...";
+			dialog.text = "Oh, to nie skończy się dobrze, señor, uwierz mi... (ściszając głos) Powiedział - Juan...";
 			link.l1 = "Cholera, z tobą! Juan? To tylko zwyczajne imię i jest tutaj dość popularne. Dlaczego jest takie wyjątkowe?";
 			link.l1.go = "Consumption_6";
 		break;
@@ -908,7 +971,7 @@ void ProcessDialogEvent()
 		
 		//Jason --> генератор сбыта бакаута
 		case "bakaut":
-			dialog.text = "Czy tak? Dobrze. Mynheer Rosenkraft potrzebuje partii żelaznodrzewa, ale nie mniej niż "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+". Czy masz wystarczająco dużo ładunku?";
+			dialog.text = "Doprawdy? Dobrze. Mynheer Rosenkraft potrzebuje partii twardego drzewa, ale nie mniej niż "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+". Czy masz wystarczająco dużo ładunku?";
 			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= sti(pchar.GenQuest.Bakaut.Value))
 			{
 				link.l1 = "Tak. Gdzie mogę znaleźć pana Rosenkrafta?";
@@ -956,7 +1019,7 @@ void ProcessDialogEvent()
 		
 		//--> прибыла инспекция на Святом Милосердии
 		case "SantaMisericordia_1":
-			dialog.text = "A ja muszę dożyć do jutra. Przeklęta 'Łaska' jest w mieście. Wyjdź.";
+			dialog.text = "A ja muszę dożyć do jutra. Przeklęte 'Miłosierdzię' jest w mieście. Wyjdź.";
 			link.l1 = "Takie dramaty...";
 			link.l1.go = "exit";
 		break;

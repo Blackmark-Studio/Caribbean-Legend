@@ -60,6 +60,21 @@ void ProcessDialogEvent()
 	        Dialog.Text = "Jeśli czytasz tę linię, to błąd w kodzie";
 			Link.l1 = "Wyjście";
 			Link.l1.go = "exit";
+			
+			//--> Вступительный туториал на палубе корабля за Шарля
+		if (CheckAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1"))
+		{
+			dialog.text = "Ekscytujące, do diabła! Prawdziwa bitwa morska!\nSzkoda oczywiście, że samej walki stąd nie zobaczę... No cóż. Myślę, że już wystarczająco poznałem się na marynarce, by wiarygodnie wyobrazić sobie przebieg wydarzeń\nPewnie pięciu piratów... Jeden duży okręt, kilka średnich i drobnica. W sam raz na naszego pinasa. Historia będzie przednia — Lulu będzie zachwycona!";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1");
+			pchar.wind.speed = 18.0;
+			fWeatherSpeed = stf(18.0);
+			//AddDialogExitQuestFunction("SharlieTutorial_StartShip");
+			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_3");
+		}
+		//<-- Вступительный туториал на палубе корабля за Шарля
+
 			//--> Голландский гамбит
 			if (CheckAttribute(pchar, "questTemp.HWIC_FindIsland"))
     		{
@@ -576,7 +591,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;
@@ -605,7 +620,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetMusketBullets1_" + i;
 			}
 		break;
@@ -754,7 +769,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if (pchar.location == "Minentown_ExitTown")
+						if (pchar.location == "LosTeques_ExitTown")
 						{
 							Dialog.Text = "Nie ma sensu atakować tej kopalni bez wcześniejszego zebrania informacji o wydobywanym tam złocie i srebrze. W przeciwnym razie wyślę moich ludzi na daremną śmierć.";
 							Link.l1 = "...";
@@ -861,15 +876,19 @@ void ProcessDialogEvent()
 		break;
 
 		case "TalkSelf_SlavesToCrew_1":
-			// belamour legendary edition перк получил время работы, старый метод не подходит
-	        if (GetOfficersPerkUsing(pchar, "IronWill"))
-	        {
-	            AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 5.0))
-	        }
-	        else
-	        {
-	            AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 3.0))
-	        }
+			bOk = ShipBonus2Artefact(pchar, SHIP_MEMENTO) && CheckAttribute(&RealShips[sti(pchar.Ship.Type)], "DeadSailors.RecruitSlaveBonus");
+			if(!bOk)
+			{
+				// belamour legendary edition перк получил время работы, старый метод не подходит
+				if (GetOfficersPerkUsing(pchar, "IronWill"))
+				{
+					AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 5.0))
+				}
+				else
+				{
+					AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 3.0))
+				}
+			}
 			ChangeCharacterComplexReputation(pchar,"authority", -0.5);
 	        // падение опыта -->
 	        fTemp =  stf(GetCrewQuantity(pchar) + sti(pchar.GenQuest.SlavesToCrew));
@@ -1316,8 +1335,9 @@ void ProcessDialogEvent()
 	}
 }
 
-void  DialogExit_Self()
+void DialogExit_Self()
 {
+    SendMessage(PChar, "ls", MSG_CHARACTER_EX_MSG, "forceBlend");
     DialogExit();
 	locCameraSleep(false); //boal
 }

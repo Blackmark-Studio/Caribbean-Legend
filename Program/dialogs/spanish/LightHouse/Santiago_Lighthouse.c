@@ -30,28 +30,28 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "guardoftruth":
-		dialog.text = "Claro, Señor. Debes ser un hombre de gran renombre si el Padre Vincento hace negocios contigo.";
-		link.l1 = "Espléndido. Entonces eres nuestro mensajero. Ahora escucha, este hombre es de gran interés para el Padre Vincento. Ahora está bajo tu responsabilidad, debes trasladarlo a Santiago o encontrar a alguien que lo haga.";
+		dialog.text = "Claro, señor. Debes ser un hombre de gran renombre si el Padre Vincento hace negocios contigo.";
+		link.l1 = "Espléndido. Entonces eres nuestro mensajero. Ahora escucha, este hombre es de gran interés para el Padre Vincento. Ahora está bajo tu responsabilidad, debes trasladarlo a Santiago, o encontrar a alguien que lo haga.";
 		link.l1.go = "guardoftruth_1";
 		break;
 
 	case "guardoftruth_1":
 		dialog.text = "...";
-		link.l1 = "Usted es responsable del prisionero en nombre del Inquisidor. No le aconsejaría quitarle las cadenas, Gaius Marchais es un hombre fuerte. Entregue esta carta al padre Vincento y dígale que espero una respuesta de él en dos días. Esto debería ser suficiente, espero.";
+		link.l1 = "Usted es responsable del prisionero en nombre del Inquisidor. No le aconsejaría quitarle las cadenas, Gaius Marchais es un hombre fuerte. Entregue esta carta al padre Vincento, y dígale que espero una respuesta de él en dos días. Esto debería ser suficiente, espero.";
 		link.l1.go = "guardoftruth_2";
 		break;
 
 	case "guardoftruth_2":
-		Log_Info("Te libras de la carta");
+		Log_Info("¡Te libras de la carta!");
 		PlaySound("interface\important_item.wav");
-		dialog.text = "Entendido, Señor. Haré lo mejor que pueda. No es la primera vez que ayudo al santo padre.";
+		dialog.text = "Entendido, señor. Haré lo mejor que pueda. No es la primera vez que ayudo al Santo Padre.";
 		link.l1 = "Eso no es todo. El capitán de la carraca, San Gregorio, Carlos Guevarra debe haber estado aquí. Me trajo vainilla. ¿Te ha dado mi carta?";
 		link.l1.go = "guardoftruth_3";
 		break;
 
 	case "guardoftruth_3":
-		dialog.text = "Sí, su carga está bien y esperándole, Señor.";
-		link.l1 = "Bien, lo llevaré a mi barco entonces. Estaré aquí dos días esperando la respuesta del Padre Vincento. No es un adiós por ahora, " + npchar.name + "¡";
+		dialog.text = "Sí, su carga está bien y esperándole, señor.";
+		link.l1 = "Bien, lo llevaré a mi barco entonces. Estaré aquí dos días esperando la respuesta del Padre Vincento. ¡Sin despedidas, " + npchar.name + "!";
 		link.l1.go = "guardoftruth_4";
 		break;
 
@@ -69,7 +69,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "guardoftruth_5":
-		dialog.text = "Sí, Señor. Aquí hay una carta del Padre Vincento. Está muy complacido contigo, el resto lo sabrás por la carta.";
+		dialog.text = "Sí, señor. Aquí hay una carta del Padre Vincento. Está muy complacido contigo, el resto lo sabrás por la carta.";
 		link.l1 = "Espléndido. Hasta entonces, " + npchar.name + ". Y por ahora, adiós.";
 		link.l1.go = "guardoftruth_6";
 		break;
@@ -90,7 +90,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "guardoftruth_8":
 		dialog.text = "¡Pero señor! ¿Cómo puedo saber que no me está engañando?";
-		link.l1 = "Toma un vistazo: el incensario, el cáliz y la cruz con el lapislázuli... " + npchar.name + ", ¿quién crees que soy? ¿Realmente piensas que soy tan estúpido como para ir a la Inquisición sin ellos?";
+		link.l1 = "Toma un vistazo: el incensario, el cáliz y la cruz con lazurita... " + npchar.name + ", ¿quién crees que soy? ¿Realmente piensas que soy tan estúpido como para ir a la Inquisición sin ellos?";
 		link.l1.go = "guardoftruth_9";
 		break;
 
@@ -107,8 +107,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "guardoftruth_11":
-		dialog.text = "Su Gracia lo recibirá, Señor. No demore su visita. Aquí está el documento, muéstrelo a los guardias y lo dejarán entrar. Pero primero izad una bandera española o es probable que los soldados os arresten.";
-		link.l1 = "Entendido. Entonces español. ¡Gracias, camarada! ¡Estoy en camino!";
+		dialog.text = "Su Gracia lo recibirá, señor. No demore su visita. Aquí está el documento, muéstrelo a los guardias y lo dejarán entrar. Pero primero izad una bandera española o es probable que los soldados lo arresten.";
+		link.l1 = "Entendido. Entonces bandera española. ¡Gracias, camarada! ¡Estoy en camino!";
 		link.l1.go = "guardoftruth_12";
 		break;
 

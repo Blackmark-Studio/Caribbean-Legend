@@ -265,7 +265,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_7":
-			dialog.text = "Южнее Гваделупы есть маленький остров, с бухтой под названием мыс Недоступный. Высадите Лонгвэя там на берег и дайте ему оружие. На берегу Лонгвэй расскажет вам всё, что знает о Лукасе Роденбурге.";
+			dialog.text = "Южнее Гваделупы есть маленький остров Мари-Галант, с бухтой под названием мыс Недоступный. Высадите Лонгвэя там на берег и дайте ему оружие. На берегу Лонгвэй расскажет вам всё, что знает о Лукасе Роденбурге.";
 			link.l1 = "Гм... Тебе не кажется, что ты не в том положении, чтобы ставить мне условия?";
 			link.l1.go = "Longway_prisoner_8";			
 		break;
@@ -324,7 +324,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_0":
-			dialog.text = "Мы уже прибыли на Гваделупу, английский капитан?";
+			dialog.text = "Мы уже прибыли на Мари-Галант, английский капитан?";
 			link.l1 = "Нет ещё... Сиди смирно, скоро будем на месте.";
 			link.l1.go = "exit";
 			NextDiag.Tempnode = "Longway_prisoner_0";
@@ -569,7 +569,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -600,7 +600,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetMusketBullets1_" + i;
 			}
 		break;
@@ -722,7 +722,7 @@ void ProcessDialogEvent()
 string SelectJacobCity()
 {
 	string sTemp;
-	switch (drand(4))
+	switch (hrand(4))
 	{
 		case 0: sTemp = "Cumana" break;
 		case 1: sTemp = "Caracas" break;

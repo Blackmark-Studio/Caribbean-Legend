@@ -11,7 +11,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// --> Sinistra Длинные тени старых грехов
 		if (CheckAttribute(pchar, "questTemp.DTSG_depozit"))
 		{
-			link.l1 = "Dime, ¿el Coronel te visitó? Dijo que tienes una recompensa preparada para mí.";
+			link.l1 = "Dime, ¿el coronel te visitó? Dijo que tienes una recompensa preparada para mí.";
 			link.l1.go = "DTSG_depozit_1";
 		}
 		// <-- Длинные тени старых грехов
@@ -25,7 +25,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "DTSG_depozit_2":
-		dialog.text = "¡Habla en voz baja! Conozco al hombre. Sí, pasó por aquí. Tu recompensa te está esperando, Capitán.";
+		dialog.text = "¡Habla en voz baja! Conozco al hombre. Sí, pasó por aquí. Tu recompensa te está esperando, capitán.";
 		link.l1 = "¿Y cuánto hay?";
 		link.l1.go = "DTSG_depozit_3";
 		break;
@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		link.l1 = "Al menos no son treinta piezas de plata...";
 		link.l1.go = "DTSG_depozit_4";
 		AddItems(pchar, "chest", 70);
-		Log_Info("Has recibido 70 cofres");
+		Log_Info("¡Has recibido 70 cofres!");
 		PlaySound("interface\important_item.wav");
 		break;
 

@@ -126,3 +126,8 @@ Siege_26
 {
 ~ @<NationNamePeople(sti(aData.nation))> haben unsere Kolonie @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> angegriffen. Unseren tapferen Verteidigern bleiben nur @<sDays>, bevor ihnen der Proviant ausgeht.
 }
+
+Siege_27
+{
+~ belagerte ~
+}

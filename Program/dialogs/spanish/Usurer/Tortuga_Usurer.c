@@ -10,14 +10,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "tonzag_bail":
-		dialog.text = "Hola, Capitán. ¿Cómo puedo yo y mi firma ser de servicio para usted?";
+		dialog.text = "Hola, capitán. ¿Cómo puedo yo y mi firma ser de servicio para usted?";
 		link.l1 = "Me gustaría hacer una donación al fondo de pensiones de la ilustre guarnición de Tortuga.";
 		link.l1.go = "tonzag_bail_1";
 		break;
 
 	case "tonzag_bail_1":
 		dialog.text = "Entiendo. ¡Haciéndose bastante popular estos días! ¿Cuánto debe... quiero decir, desea donar?";
-		link.l1 = pchar.questTemp.TonzagQuest.Bail + "  doblones. Dime, ¿aceptas en pesos?";
+		link.l1 = pchar.questTemp.TonzagQuest.Bail + " doblones. Dime, ¿aceptas en pesos?";
 		link.l1.go = "tonzag_bail_2";
 		break;
 
@@ -36,7 +36,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "tonzag_bail_give":
-		dialog.text = "Maravilloso. ¡Informaremos a su contraparte de inmediato! Adiós, Capitán. Y... buena suerte, hemos estado esperando su actuación durante mucho tiempo.";
+		dialog.text = "Maravilloso. ¡Informaremos a su contraparte de inmediato! Adiós, capitán. Y... buena suerte, hemos estado esperando su actuación durante mucho tiempo.";
 		link.l1 = "Adiós.";
 		link.l1.go = "exit";
 
@@ -56,7 +56,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "tonzag_bail_loan":
-		dialog.text = "¡Tal oportunidad siempre está disponible para usted, Capitán! Digamos, ¿con la devolución de doscientos mil pesos en seis meses?";
+		dialog.text = "¡Tal oportunidad siempre está disponible para usted, capitán! Digamos, ¿con la devolución de doscientos mil pesos en seis meses?";
 		link.l1 = "No tengo elección. ¿Dónde firmo?";
 		link.l1.go = "tonzag_bail_give";
 

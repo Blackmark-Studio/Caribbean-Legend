@@ -80,14 +80,14 @@ void ProcessDialogEvent()
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
-       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("Got it. Please provide the text you would like translated."+GetSexPhrase("Mój synu","Moja córka")+"niestety, nie mogę dać ci schronienia. Uciekaj!","Straż miejska przeszukuje miasto, szukając cię, "+GetSexPhrase("mój synu","moja córka")+". Drzwi mojego kościoła są zawsze otwarte dla cierpiących, lecz nie mogę dać ci schronienia...","Здравствуйте, святой отец."+GetSexPhrase("Mój synu","Moja córka")+" , musisz uciekać! Nie zwlekaj, błagam cię!"),LinkRandPhrase("Co robisz w kościele, upadła duszo? Żądam, abyś natychmiast opuścił to miejsce, zanim żołnierze cię tu znajdą i dokonają masakry!","Opuszczaj świątynię natychmiast, szyderco! Nigdy nie będę chronił takiego łotra jak ty!","Opuść świątynię naszego Pana natychmiast! Nie potrzebujemy tu morderców!"));
-				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Oj, no dalej, padre...","Nie potrzebuję twojej pomocy i tak..."),LinkRandPhrase("Nie stawaj mi na drodze, Ojcze...","Odejdę, nie martw się...","Ojcze, przestań robić zamieszanie - naprawdę nie mam na to czasu"));
+       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase(""+GetSexPhrase("Mój synu","Moja córko")+"niestety, nie mogę dać ci schronienia. Uciekaj!","Straż miejska przeszukuje miasto, szukając cię, "+GetSexPhrase("mój synu","moja córko")+". Drzwi mojego kościoła są zawsze otwarte dla cierpiących, lecz nie mogę dać ci schronienia...","Здравствуйте, святой отец."+GetSexPhrase("Mój synu","Moja córko")+" , musisz uciekać! Nie zwlekaj, błagam cię!"),LinkRandPhrase("Co robisz w kościele, upadła duszo? Żądam, abyś natychmiast opuścił to miejsce, zanim żołnierze cię tu znajdą i dokonają masakry!","Opuść tą świątynię natychmiast, szyderco! Nigdy nie będę chronił takiego łotra jak ty!","Opuść świątynię naszego Pana natychmiast! Nie potrzebujemy tu morderców!"));
+				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Oj, no dalej, ojcze...","Nie potrzebuję twojej pomocy i tak..."),LinkRandPhrase("Nie stawaj mi na drodze, Ojcze...","Odejdę, nie martw się...","Ojcze, przestań robić zamieszanie - naprawdę nie mam na to czasu"));
 				link.l1.go = "fight";
 				break;
 			} 
             if (npchar.quest.BadMeeting != lastspeak_date)
 			{
-				if(!CheckAttribute(PChar, "GenQuest.ChurchQuest_2.StartQuest") && !CheckAttribute(PChar, "GenQuest.ChurchQuest_1.StartQuest") && NPChar.GenQuest.ChurchQuest_2.GiveQuestDateParam != iMonth && NPChar.GenQuest.ChurchQuest_2.GiveQuestDay != lastspeak_date && NPChar.location != "Panama_church" && NPChar.location != "Minentown_church" && rand(5) == 1 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock")) // 280313
+				if(!CheckAttribute(PChar, "GenQuest.ChurchQuest_2.StartQuest") && !CheckAttribute(PChar, "GenQuest.ChurchQuest_1.StartQuest") && NPChar.GenQuest.ChurchQuest_2.GiveQuestDateParam != iMonth && NPChar.GenQuest.ChurchQuest_2.GiveQuestDay != lastspeak_date && NPChar.location != "Panama_church" && NPChar.location != "LosTeques_church" && rand(5) == 1 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock")) // 280313
 				{
 					dialog.text = "...będą płonąć w ognistym piekle na wieki! Nigdy nie ujrzą...";
 					link.l1 = RandPhraseSimple("Ahem! Czy przeszkadzam, ojcze?","To jest przemowa!");
@@ -1345,7 +1345,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(PChar,"nobility", 5);
 			AddCharacterExpToSkill(PChar, "Leadership", 50); // Бонус в авторитет
 			AddCharacterExpToSkill(PChar, "Fortune", 50); // Бонус в удачу
-			TakeNItems(pchar, "chest", 3+drand(1));
+			TakeNItems(pchar, "chest", 3+hrand(1));
 			PlaySound("interface\important_item.wav");
 			sQuestTitle = NPChar.City + "ChurchGenQuest1";
 			characters[GetCharacterIndex("ChurchGenQuest1_Cap")].LifeDay = 0;

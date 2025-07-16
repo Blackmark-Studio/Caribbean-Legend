@@ -685,3 +685,159 @@ Ich beschloss, das Leben des unglücklichen Paares nicht zu verderben und erzäh
 Ich habe dem Wächter die Wahrheit gesagt. Natürlich war er zuerst wütend, aber er hat sich schließlich beruhigt. Wir haben alle gesündigt. Dieses Paar hatte einfach keinen anderen Ort, an dem es sich sehen konnte. Junge Liebe... Hoffentlich geht alles gut für sie aus.
 #TEXT	5
 Ich beschloss, mich nicht um die Geräusche und das schreckliche Stöhnen zu kümmern, die sich der Wächter einbildete. Meine Zeit ist viel wertvoller.
+
+#QUEST SixCaptains
+Sechs Kapitäne
+#TEXT	1
+Wahrscheinlich ist es das erste Mal, dass eine flüchtige Begegnung mit jemandem, der weder Arbeit noch ein besonderes Anliegen für mich hatte, mich dazu brachte, einen Eintrag in diesem Tagebuch zu machen. Ich verstehe nicht, warum dieser Priester solch einen Eindruck bei mir hinterlassen hat. Ich kenne nicht einmal seinen Namen, und manchmal sprach er reinen Unsinn, aber dennoch – er bleibt im Gedächtnis. Wir haben uns bereits zweimal getroffen, und das könnte man noch als Zufall abtun. Aber wenn wir uns noch ein drittes Mal begegnen...
+
+Ehrlich gesagt, schmeichelt mir sein Interesse ein wenig. Sein Blick war... abschätzend. Als würde er meine Erfolge bewundern. Und wer würde das nicht tun? Zwei legendäre Schiffe, zwei Kapitäne, von denen im ganzen Archipel die Rede war – beide sind durch meine Hand gefallen.
+Ich frage mich, was er sagen wird, wenn er von meinen weiteren Taten erfährt. Der Archipel ist groß, aber mein Ruhm scheint sich schneller zu verbreiten, als ich dachte.
+#TEXT	2
+Diego de Landa – so heißt du also. Dann sehen wir uns wieder. Fortsetzung folgt.
+
+#QUEST SharlieTutorial
+Prolog
+#TEXT 0
+Ich habe die Nase so voll! Fünf Tage... und endlich werde ich wieder festen Boden betreten. Die letzten zwei Monate waren die reinste Hölle, und ich verstehe beim besten Willen nicht, wie jemand bei Verstand sein Leben mit dem Meer verbinden kann!
+Aber vorerst — der Kapitän wartet auf mich. In letzter Zeit gefällt er mir gar nicht. Eigentlich gefällt mir hier überhaupt nichts.
+#TEXT 0.1
+Sieht ganz so aus, als ob mich heute Abend etwas Interessantes erwartet. Der Kapitän hat mir vorerst freie Hand gegeben... innerhalb der Grenzen des Schiffs, haha! Ich kann jederzeit zu ihm zurück und diesen ermüdenden Tag beenden.
+#TEXT 1
+Für 500 Pesos kann ich drei Flaschen Rum an den Matrosen Henri auf dem Oberdeck verkaufen. Es scheint, als würde der Bootsmann im Mannschaftsraum mit allerlei Kram handeln. Vielleicht sollte ich das Schiff gründlich durchsuchen und mit den anderen Matrosen sprechen.
+#TEXT 2
+Zum Glück trinke ich keinen Rum und konnte mit Henri einen ordentlichen Handel abschließen. Die Mannschaft scheint meine Bemühungen zu schätzen.
+#TEXT 3
+Matrose Paul hat sich beim Tragen von Kanonenkugeln den Rücken verrenkt und bat mich um Hilfe. Die Kugeln müssten sich im Laderaum befinden, wahrscheinlich in einer der unzähligen Kisten.
+#TEXT 4
+Ich habe diese verdammten Kugeln kaum zu Paul schleppen können. Der Matrose verhält sich ziemlich verdächtig, aber ich habe als Belohnung eine Flasche Rum bekommen. Ein wertvoller Preis, wenn man die Nachfrage nach diesem Gift hier bedenkt.
+#TEXT 5
+Ich habe den Schlüssel des Kapitäns gefunden! Ich frage mich, welche Schätze er wohl öffnet...
+
+#QUEST DWH
+Dunkle Wasser der Heilung
+#TEXT	1
+In  St. John's flüstert man, dass die örtliche Zigeunerin die letzte Hoffnung für Thomas Morrisons schwerkranke Tochter sei. Doch sie weigert sich hartnäckig zu helfen. Empfindet sie denn kein Mitleid mit dem armen Mädchen?
+#TEXT	2
+Die Zigeunerin hat mir mitgeteilt, dass sie durchaus bereit ist, dem Mädchen zu helfen, aber Thomas weigert sich entschieden, sie in sein Haus zu lassen. Ich möchte Thomas besuchen und herausfinden, warum er die letzte Hoffnung auf Rettung des Mädchens ablehnt. Sein Haus befindet sich im nördlichen Teil der Stadt, an der Mauer, neben einer luxuriösen Villa mit Säulen.
+#TEXT	3
+Der örtliche Kirchenpriester hat Thomas Morrison mit Exkommunikation gedroht, wenn er die Hilfe der Zigeunerin annimmt, um seine schwerkranke Tochter zu retten. Nun ist Thomas hin- und hergerissen zwischen seiner Angst, bei der Kirche in Ungnade zu fallen, und seiner Verzweiflung über die Krankheit seiner Tochter. Ich werde versuchen, den Priester zu überzeugen, bei dieser Sünde ein Auge zuzudrücken, um des höheren Wohls willen - um das Leben des Mädchens zu retten!
+#TEXT	4
+Wir werden andere Wege suchen müssen. Der Pastor ist zweifellos ein sturer Mann, und in vielem hat er recht. Doch dennoch kann ich ihm nicht zustimmen. Wenn es eine Chance gibt, das Mädchen wieder auf die Beine zu bringen, muss man sie nutzen.
+#TEXT	5
+Es ist mir gelungen, den Pastor zu überzeugen. Er hat zugestimmt, die Beteiligung der Zigeunerin an der Behandlung zu dulden, wenn Thomas seine Schuld vor dem Herrn durch aufrichtige Reue und gute Taten sühnt.
+ Nun muss ich die Mangarosa finden - die Schlüsselzutat im Trank der Zigeunerin. Diese Pflanze fällt durch ihren angenehmen Duft, ihren hohen Stängel und ihre charakteristisch eingeschnittenen Blätter auf. Ich kann die Mangarosa in einer Höhle außerhalb der Stadt finden, bei einigen 'nicht gerade angenehmen Gestalten' - entweder Landstreichern oder Räubern. Umso besser. Vielleicht muss ich ihnen gar nichts zahlen.
+#TEXT	6
+Ich habe alles in meiner Macht Stehende getan. Es bleibt nur noch, auf die Fähigkeiten der Zigeunerin zu hoffen. Ich bin so in die Rettung des kleinen Mädchens verwickelt worden, dass ich meine eigenen Angelegenheiten völlig vergessen habe. Ich werde Antigua in einem Monat besuchen. Bis dahin sollte Esther vollständig genesen sein.
+#TEXT	7
+Die Zigeunerin ist bereit, dem Mädchen heimlich zu helfen - damit Thomas nicht den Zorn der Kirche auf sich zieht. Jetzt gilt es vor allem, ihn davon zu überzeugen, uns zu vertrauen.
+#TEXT	8
+Thomas hat mir einen persönlichen Gegenstand von Esther gegeben - eine Jadekette. Jetzt muss ich nur noch zwei Stängel Dornkraut, einen Stängel Brechwurzel und einen Eisenkraut finden - dann kann ich zur Zigeunerin zurückkehren.
+#TEXT	9
+Durch die gemeinsamen Bemühungen der Zigeunerin und mir wurde Esthers Krankheit besiegt! Es ist ein gutes Gefühl zu wissen, dass all die Mühe nicht umsonst war und das Mädchen nun gesund ist.
+#TEXT	10
+Dank unserer Bemühungen mit der Zigeunerin ist Esthers Krankheit besiegt! Es ist ein gutes Gefühl zu wissen, dass all unsere Anstrengungen nicht umsonst waren und das Mädchen jetzt gesund ist. Bei der Zigeunerin in Saint John's kann ich immer Mangarosa kaufen - drei Stängel für dreihundertfünfzig goldene Dublonen.
+#TEXT 11
+Nun hat die Zigeunerin alles, was sie zur Herstellung des Heilmittels braucht. Morgen früh muss ich das Mittel bei ihr abholen und zu Thomas bringen.
+
+#QUEST TPZ
+Handel nach dem Gesetz
+#TEXT 1
+Die Bürger von Bass-Terre beklagen sich über den Mangel an Alkohol in der Taverne. Der Wirt macht ständig Versprechungen, die Situation zu verbessern, aber bisher ohne Ergebnis. Es scheint, dass er ernsthafte Probleme hat. Und wo es Probleme gibt, gibt es auch Möglichkeiten, Geld zu verdienen.​
+#TEXT 2
+Der Wirt teilte mit, dass sein Lieferant aus Antigua seine Brennerei durch einen Piratenüberfall verloren hat und frühestens in zwei Monaten wieder liefern kann. Der Wirt ist bereit, jede Lieferung von Wein und Rum anzunehmen, wenn der Händler einen guten Ruf hat, ohne Dokumentenprüfung – aber nur dieses eine Mal. In Zukunft wird er nur mit ehrlichen und zuverlässigen Kaufleuten zusammenarbeiten. Vielleicht sollte ich nach inoffiziellen Wegen suchen... Wenn ich es richtig anstelle, könnte das einen guten Gewinn bringen.​
+#TEXT 3
+Die Schmuggler haben derzeit Schwierigkeiten mit Alkohol. Doch in der Nähe der Residenz des Gouverneurs lebt ein Händler, der heimlich kleine Mengen Alkohol verkauft. Vielleicht sollte ich ihn besuchen.​
+#TEXT 4
+Ich habe einen illegalen Alkoholhändler gefunden. Zuerst hielt er mich für einen Vertreter der Behörden, aber ich konnte ihn vom Gegenteil überzeugen. Wenn ich ihm helfe, sein Geschäft zu legalisieren, kann ich in Zukunft Wein und Rum zu sehr günstigen Konditionen bei ihm kaufen. Jetzt ist es an der Zeit, zum Wirt zurückzukehren – vielleicht kann ich bei diesem Geschäft noch ein paar Dublonen verdienen.​
+#TEXT 5
+Es ist mir gelungen, einen Deal mit dem Wirt zu meinen Bedingungen abzuschließen. Er ist bereit, diese und zukünftige Lieferungen für zweihundertvierzig Dublonen pro hundert Flaschen Wein und hundert Flaschen Rum zu kaufen. Jetzt muss ich Christians Geschäft legalisieren.​
+#TEXT 6
+Ich habe einen Deal mit dem Wirt abgeschlossen. Er ist bereit, diese und zukünftige Lieferungen für zweihundert Dublonen pro hundert Flaschen Wein und hundert Flaschen Rum zu kaufen. Jetzt muss ich Christians Geschäft legalisieren.​
+#TEXT 7
+Der Wirt ist zufrieden – in der Taverne fließt der Alkohol wieder in Strömen. Christian kann sich ebenfalls freuen – er hat einen ausgezeichneten Kunden gewonnen, und sein Geschäft ist nun legal. Jetzt ist es an der Zeit, mich um meinen eigenen Vorteil in diesem Geschäft zu kümmern. Auf zu Christian!​
+#TEXT 8
+Ich habe als Vermittler fungiert. Ein ungewöhnliches Gefühl. Alle sind zufrieden: In der Taverne herrscht wieder Freude, Christian zählt wahrscheinlich schon die Dublonen, die ihm in den Schoß gefallen sind, und ich habe nun einen zuverlässigen Alkohollieferanten in der Karibik. Und bei alledem musste ich nicht einmal mein Schwert ziehen. Erstaunlich.​
+#TEXT 9
+Kaum hatte ich mich darüber gefreut, dass ich diesmal alles friedlich lösen konnte, wurde ich im Hafen von einem Piratenschiff angegriffen. Wie sich herausstellte, waren die Lieferengpässe keineswegs zufällig. Das Ganze war Teil eines Plans des Kapitäns jenes Schiffes, der die lukrativen Lieferungen an die Taverne von Bass-Terre übernehmen wollte. Diesmal hatte er kein Glück. Ich habe ihm eine tödliche Lektion erteilt.​
+#TEXT 10
+Auf See wurde ich von einem Piratenschiff angegriffen. Wer sie waren und was sie wollten, bleibt unbekannt. Ihr Kahn ging unter und nahm alle Antworten mit sich.​
+#TEXT 11
+Die Handelsbedingungen auf der Insel erwiesen sich als recht einfach: hundert Dublonen pro Monat in die Stadtkasse als Steuer und pünktliche Berichterstattung. Ich denke, solche Anforderungen werden für Christian nicht allzu belastend sein. Jetzt kann ich den Gauner erfreuen – alles lief bestens.
+
+#QUEST GS
+Grenzen der Gerechtigkeit
+#TEXT	1
+Ein kühner Anschlag wurde auf den Hafenmeister von Belize verübt. Dem Angreifer gelang die Flucht, und nun ist er selbst zur Beute geworden. Gerüchten zufolge hat der Beamte ein Kopfgeld auf ihn ausgesetzt. Offenbar handelt es sich um einen gefährlichen Gegner – man sollte gut überlegen, ob man sich wirklich auf die Suche nach ihm begeben will.
+#TEXT	2
+Der Hafenmeister behauptet, er wisse weder, wer ihn angegriffen habe, noch aus welchem Grund. Er bezeichnet den Angreifer als einen gewöhnlichen Irren, wie es sie in der Karibik zuhauf gibt. Vielleicht klingt das nicht besonders glaubwürdig, aber das ist mir egal. Auf den Kopf dieses „Irren“ sind zweihundert Dublonen ausgesetzt – das ist, was wirklich zählt. Ich beginne meine Suche in den nahegelegenen Buchten und Grotten. Dort wird der Flüchtige sich wohl am ehesten vor der Justiz verstecken wollen.
+#TEXT	3
+Die Sache ist erledigt. Es ist Zeit, dem Hafenmeister Bericht zu erstatten und die verdiente Belohnung abzuholen. Und doch frage ich mich, ob ich den Worten des Söldners hätte mehr Aufmerksamkeit schenken sollen? Er sprach ziemlich überzeugend. Andererseits – wer würde in seiner Lage nicht alles versuchen, um das eigene Leben zu retten, selbst wenn es nur ein Strohhalm ist? Wahrscheinlich war es nur ein Trick.
+#TEXT	4
+Der Hafenmeister hat mich vollständig bezahlt, sogar großzügiger als vereinbart. Er bot mir einen dauerhaften Rabatt von fünfzig Prozent auf die Liegegebühr eines Schiffs – für beliebige Dauer. Doch diese Großzügigkeit verstärkt nur meine Zweifel. Was, wenn der Söldner die Wahrheit sagte? Wenn er wirklich auf Piraten gestoßen ist – warum rief er dann nicht die Wache? Und warum erwähnte er das nicht, als er mich losschickte, den Mörder zu beseitigen? Doch das alles sind nur Vermutungen. Was geschehen ist, lässt sich nicht rückgängig machen – vielleicht wird nur die Zeit zeigen, wie es wirklich war. Ich muss weiterziehen.
+#TEXT	5
+Der Hafenmeister – ein wahrer Schuft! Lächelt, wenn er meine Kameraden zur See verabschiedet, und verkauft dann bereitwillig ihre Routen an Piraten. Solche Menschen dürfen nicht ungestraft davonkommen. Ich werde die Nacht abwarten und mit ihm abrechnen. Seine abscheulichen Taten sollen jedem bekannt werden. Die Notizen, die mir der Söldner gegeben hat, werde ich in seinem Haus zurücklassen – gut sichtbar. Ganz Belize soll wissen, wer er wirklich war. Es ist ironisch, dass er in der Nähe des Gefängnisses wohnt - denn eigentlich müsste er selbst einsitzen.
+#TEXT	6
+Der Schurke ist tot! Jetzt müssen nur noch die Notizen hinterlassen und der Ort verlassen werden, bevor die gesamte Garnison in Alarmbereitschaft versetzt wird.
+#TEXT	7
+Der Hafenmeister ist tot. Er wird niemanden mehr in die Hände von Piraten schicken. Heute ist die Welt ein kleines Stück besser geworden.
+
+#QUEST OS
+Alte Rechnungen
+#TEXT 1
+Der Wirt in Puerto Principe hat ein ganzes Fass seltener Gin verpasst, importiert aus dem alten Europa. Wenn das Fass nicht bald gefunden wird, steckt der arme Teufel in ernsthaften Schwierigkeiten. Offenbar war dieser Gin für einen einflussreichen Kunden bestimmt – sonst wäre das ganze Theater kaum zu erklären​.
+#TEXT 2
+Der Gin wurde direkt unter der Nase des Wirts gestohlen. Sein Leben hängt nun an einem seidenen Faden – der geheimnisvolle Auftraggeber ist offenbar kein Mann, der Fehler verzeiht. Der Wirt ist bereit, hundertfünfzig Dublonen als Belohnung zu zahlen. Ich habe da schon ein paar Ideen. Zunächst sollte ich mit den Seeleuten sprechen – vielleicht hat einer von ihnen etwas gesehen​.
+#TEXT 3
+Diese ganze Geschichte klingt äußerst seltsam. Aber ich glaube, ich habe bereits eine Theorie. Es ist Zeit, mit der Bedienung zu sprechen​.
+#TEXT 4
+Unter Druck hat die Bedienung schließlich zugegeben, dass hinter der Inszenierung ein gewisser Jack Wales steckt. Zusammen mit dem Kapitän der 'Sea Beast' organisierte er eine ausgeklügelte Ablenkung, um das Fass zu stehlen. Ganz schön viel Aufwand für Gin! Offenbar handelt es sich nicht bloß um Trinkfreunde, sondern wahre Kenner. Der Unterschlupf des Diebes liegt direkt gegenüber der Taverne​.
+#TEXT 5
+Ich habe dem Wirt das Fass rechtzeitig zurückgebracht und ihm damit wohl das Leben gerettet. Er erwies sich als dankbar – neben Dublonen erhielt ich lebenslangen Anspruch auf kostenlose Unterkunft und Getränke in seiner Taverne. Die Bedienung hat klugerweise das Weite gesucht, denn der Wirt hat schnell ihre Beteiligung erkannt​.
+#TEXT 6
+Die Mannschaft der 'Sea Beast' ist ihrem Kapitän in die Tiefe gefolgt. Haben sie ein solches Schicksal verdient? Wer weiß... Doch eines ist sicher – sie hätten besser zweimal nachgedacht, bevor sie mir die Stirn boten​.
+
+#QUEST UV
+Gestohlenes Andenken
+#TEXT 1
+In Port-au-Prince wird gemunkelt, dass Julie d’Armagnac, die Nichte des Gouverneurs höchstpersönlich, trauriger ist als je zuvor. Normalerweise strahlend und lebensfroh, geht sie nun umher wie eine dunkle Regenwolke. Niemand weiß genau, was das Mädchen so verändert haben könnte, aber allem Anschein nach ist etwas Ernstes passiert.
+#TEXT 2
+Julie befindet sich in einer schwierigen Lage. Eine Halskette, die ihr sehr am Herzen liegt, wurde gestohlen. Sie kann sich nicht an die Wache wenden, denn ihr Onkel, der Gouverneur des französischen Teils von Hispaniola, hat ihr strengstens verboten, Kontakt mit demjenigen zu halten, der ihr das Geschenk gemacht hat. Sie vermutet, dass ihre Dienerin die Diebin sein könnte. Ich kann sie nicht allein mit diesem Unglück lassen und habe fest entschlossen, ihr zu helfen. Ich sollte mit den örtlichen Händlern sprechen – der Dieb hat die Kostbarkeit bestimmt schnell verkaufen wollen.
+#TEXT 3
+Ein gewisser Tristan Renier, Kapitän der 'Golden Seagull', hat kürzlich bei einem Händler eine Halskette gekauft, die Julie gehören könnte. Sein Schiff liegt noch immer im Hafen. Wenn mein Verdacht stimmt, könnte die Diebin jene Giselle sein, deren Name dem Händler versehentlich herausgerutscht ist.
+#TEXT 4
+Tristan war nicht an Bord. Ich sollte in der Stadt nach ihm suchen.
+#TEXT 5
+Ich habe es geschafft, Julies Halskette zurückzuholen. Jetzt ist es an der Zeit, sie ihrer Besitzerin zurückzugeben. Oder... vielleicht sollte ich den Gouverneur aufsuchen und ihm alles erzählen?
+#TEXT 6
+Die Halskette wurde ihrer bezaubernden Besitzerin zurückgegeben. Die Diebin war tatsächlich ihre Dienerin - Giselle. Nun setzt Julie all ihre List ein, um die kleine Betrügerin zu bestrafen. Ich möchte<sSex> jetzt wirklich nicht an ihrer Stelle sein.
+
+#QUEST VPVL
+Gefangen im Großen Fang
+#TEXT 1
+Gerüchte verbreiten sich durch Saint Pierre über das Verschwinden des örtlichen Fischers Pierre Carno. Seit zwei vollen Gezeitenwechseln ist sein Schiff nicht in den Hafen zurückgekehrt, während seine Frau Lea, von Angst geplagt, ihre einsame Wache am Kai hält, die aufgewühlten Gewässer nach der Gestalt ihres Mannes absuchend. Nur seine sichere Rückkehr könnte ihren verwundeten Geist lindern. Doch das erbarmungslose Meer hütet seine Geheimnisse, und mit jeder verstreichenden Stunde schwindet die Hoffnung und seine Chancen, dem Tod zu entrinnen, werden immer geringer​.
+#TEXT 2
+Lea enthüllte, dass ihr Mann Kurs auf die Le Marin-Bucht genommen hatte, die entlang der südlichen Küsten der Insel liegt. Zwei volle Tage sind vergangen, seit er ablegte, doch kein Zeichen seiner Rückkehr. Die Qual, die sich auf dem Antlitz dieser armen Frau abzeichnete, bewegte mich dazu, meine Hilfe anzubieten. Ich werde zuerst die Gewässer der Le Marin-Bucht untersuchen—vielleicht ist Pierre noch auf See, aufgehalten durch irgendwelche Umstände. Sollten die Gewässer leer von seiner Anwesenheit sein, muss ich dann die Küste nach jeder Spur von Mann oder Schiff absuchen​.
+#TEXT 3
+Diese strandbewohnenden Schmuggler hielten mich für einen der Bluthunde des Gouverneurs und versuchten, mich in ein nasses Grab zu schicken. Das Schicksal wandte sich jedoch von ihnen ab—ihr eigenes Blut färbt nun den Sand anstatt des meinen. Ich muss nun die Meereshöhle untersuchen, von der sie sprachen. Vielleicht ist es Pierre, den sie in diesem feuchten Gefängnis angekettet halten​.
+#TEXT 4
+Pierre atmet nun die süße Luft der Freiheit, und es ist Zeit, ihn in die Arme seiner ergebenen Frau zurückzuführen. Das Schicksal hat ihm fürwahr eine grausame Hand ausgeteilt—erst zerschellte sein Schiff am Riff, dann geriet er bei Erreichen des Ufers in die Fänge jener schwachsinnigen Schmuggler, die ihn für den Mann des Gouverneurs hielten. Die arme Seele erduldete Folter und Hunger, gezwungen, Geheimnisse preiszugeben, die er nie besessen hatte. Man erschaudert bei dem Gedanken, welch dunkles Ende ihn erwartet hätte, wäre die Vorsehung nicht zur rechten Zeit meine Schritte zu jener verfluchten Höhle gelenkt​.
+#TEXT 5
+Pierre ist sicher in die zärtliche Obhut seiner ergebenen Frau zurückgekehrt. Er hat versprochen, seine Dankbarkeit zu zeigen, sobald seine Kraft zurückkehrt, und besteht darauf, morgen nach der sechsten Glocke einen Trunk in der Taverne zu teilen. Doch eine Frage nagt noch immer an meinen Gedanken wie eine Ratte am Schiffstau—wen erwarteten diese unglückseligen Schmuggler wirklich an den Ufern von Le Marin? Ihre Rede sprach von einem Schiff, das bald anlegen sollte. Die Männer des Gouverneurs würden sicherlich fürstlich für eine Vorwarnung vor solch einem mit Schmuggelware beladenen Schiff bezahlen. Oder vielleicht...​.
+#TEXT 6
+Ich habe dem Gouverneur von den Schmugglern berichtet, die auf ein Schiff warteten. Er versprach, die Sache zu untersuchen, und ich soll in drei Tagen wiederkommen. Falls sich meine Informationen als richtig erweisen, kann ich mit einer Belohnung rechnen​.
+
+#QUEST TBP
+Das Geheimnis von Betsy Price
+#TEXT	1
+In Willemstad hörte ich eine interessante Geschichte – in der örtlichen Taverne tauchte kürzlich eine außergewöhnlich schöne Kellnerin auf, doch vor drei Tagen verschwand sie plötzlich. Der Wirt ist besorgt und bereit, jedem eine Belohnung zu zahlen, der sie finden kann.
+#TEXT	2
+Die Gerüchte lügen nicht, die Kellnerin ist tatsächlich verschwunden. Der Wirt ist sichtlich beunruhigt... sei es über ihr Verschwinden oder den Rückgang seiner Einnahmen - wer weiß. Er ist bereit, hundert Dublonen dem zu geben, der sie zurückbringt. Ich habe zugestimm, ihm bei der Suche zu helfen. Hundert Dublonen sind ein gutes Argument, aber noch mehr fasziniert mich Betsy selbst. Was für eine Frau muss das sein, dass Männer bereit waren, alles stehen und liegen zu lassen, nur um sie in der Taverne stundenlang anzustarren? Zuerst sollten wir ihr Haus untersuchen. Laut dem Wirt ist es nicht weit von der Taverne entfernt, auf dem Hügel—gegenüber dem prächtigen Haus mit dem blauen Balkon.
+#TEXT	3
+Betsy scheint in dunkle Angelegenheiten verwickelt zu sein. Der gefundene Brief ist eine direkte Drohung gegen ihr Leben, was bedeutet, dass ihr Verschwinden weit ernster ist als eine einfache Flucht. Vielleicht konnte sie sich verstecken, aber man darf das Schlimmste nicht ausschließen. Ich muss herausfinden, wer diese Nachricht hinterlassen haben könnte. Ich beginne mit dem Wirt – vielleicht hat er verdächtige Personen in ihrer Nähe bemerkt.
+#TEXT	4
+Das Medaillon, das vom Landstreicher gekauft wurde, gehört Betsy. Er hat es im Blumenbeet bei dem Haus mit der Laterne gefunden. Wir müssen uns dort gründlich umsehen.
+#TEXT	5
+Was für eine Frau, diese Betsy... Oder vielleicht doch Miranda? Nein, Betsy ist besser – ich will nicht unnötig in ihrer Vergangenheit wühlen. Nun gut, sie wurde den Schurken entrissen... Jetzt ist es Zeit, meine wohlverdiente Belohnung einzufordern.
+#TEXT	6
+Der Wirt hat mich vollständig bezahlt für die Rückkehr seiner wertvollen Mitarbeiterin. Ich muss zugeben, Gedanken an Betsy lassen mich nicht los... Vielleicht sollte ich sie bald mal besuchen.

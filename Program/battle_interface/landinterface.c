@@ -101,6 +101,7 @@ void StartBattleLandInterface()
 	Event("evntBLI_Update");
 	Event("evntFindDialogChar");
 	SendMessage(&objLandInterface,"ll",MSG_BATTLE_LAND_SHOW_EQUIPMENT, bShowEquipment());
+    TW_Init();
 }
 
 ref BLI_CheckCommand()
@@ -159,6 +160,9 @@ ref BLI_CheckCommand()
 	break;
 	// boal
     case "BI_DeadBox":
+		g_intRetVal = 0;
+	break;
+	case "BI_PlayEvent":
 		g_intRetVal = 0;
 	break;
 	case "BI_TalkSelf":
@@ -285,6 +289,9 @@ void BLI_ExecuteCommand()
 	case "BI_UseBox":
 		OpenBoxProcedure();
 	break;
+	case "BI_PlayEvent":
+		PlayLocatorEvent();
+	break;
 	// boal
 	case "BI_DeadBox":
 		Dead_OpenBoxProcedure();
@@ -362,6 +369,7 @@ void EndBattleLandInterface()
 	DelEventHandler("Control Activation","LI_ProcessControlPress");
 
 	Log_SetActiveAction("Nothing");
+    TW_Close();
 }
 
 void BLI_SetObjectData()
@@ -502,6 +510,13 @@ void BLI_SetObjectData()
 	objLandInterface.Commands.DeadBox.texNum		= 0;
 	objLandInterface.Commands.DeadBox.event			= "BI_DeadBox";
 	objLandInterface.Commands.DeadBox.note			= LanguageConvertString(idLngFile, "land_ItemsDead");
+	
+	objLandInterface.Commands.PlayEvent.enable		= true;
+ 	objLandInterface.Commands.PlayEvent.picNum		= 16;
+	objLandInterface.Commands.PlayEvent.selPicNum	= 0;
+	objLandInterface.Commands.PlayEvent.texNum		= 0;
+	objLandInterface.Commands.PlayEvent.event		= "BI_PlayEvent";
+	objLandInterface.Commands.PlayEvent.note		= XI_ConvertString("for_quick_action_Use");//LanguageConvertString(idLngFile, "land_ItemsDead");
 	// диалог сам с собой -->
 	objLandInterface.Commands.TalkSelf.enable		= true;
  	objLandInterface.Commands.TalkSelf.picNum	 	= 18;
@@ -928,13 +943,14 @@ void BLI_SetObjectData()
 	arElement.group		= "CROSSHAIRS";
 	arElement.picture	= "crosf12";
 	BI_CrosshairSetSteadyParams(arElement, 40, 30, 0, 0, 40, 40, 40, 40);
-	
+
 /*
 	objLandInterface.ManSign.iconoffset1 = "70,70";
 	objLandInterface.ManSign.iconoffset2 = "70,180";
 	objLandInterface.ManSign.iconoffset3 = "70,290";
 	objLandInterface.ManSign.iconoffset4 = "70,400";
 */
+
 	int nLoc = FindLoadedLocation();
 	if(nLoc >= 0) {
 		int nFile = LanguageOpenFile("LocLables.txt");
@@ -975,6 +991,10 @@ void BLI_SetObjectData()
             if (!CheckAttribute(&locations[nLoc],"fastreload"))
 			{
 			    objLandInterface.textinfo.villagename.text = "";
+				if(bGlobalTutor)
+				{
+					objLandInterface.textinfo.villagename.text = LanguageConvertString(nFile, "Ulysse");
+				}
 			}
 			else
 			{
@@ -1027,7 +1047,7 @@ void BLI_SetObjectData()
 		objLandInterface.textinfo.(sAttrDes).font = "interface_normal";
 		objLandInterface.textinfo.(sAttrDes).scale = 1.3 * fHtRatio;
 		objLandInterface.textinfo.(sAttrDes).color = argb(255,255,255,255);
-		objLandInterface.textinfo.(sAttrDes).pos.x = sti(showWindow.right) - RecalculateHIcon(makeint(85 * fHtRatio));
+		objLandInterface.textinfo.(sAttrDes).pos.x = sti(showWindow.right) - RecalculateHIcon(makeint(95 * fHtRatio));
 		objLandInterface.textinfo.(sAttrDes).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(doff * fHtRatio));
 		objLandInterface.textinfo.(sAttrDes).align = "right";
 		objLandInterface.textinfo.(sAttrDes).text = "";
@@ -1317,7 +1337,10 @@ void BLI_SetPossibleCommands()
 		if (CheckAttribute(pchar,"dialogready")) i=sti(pchar.dialogready);
 		if (i>=0)
 		{
-			objLandInterface.Commands.DialogStart.enable	= true;
+            if(LAi_Character_CanDialog(PChar, &Characters[i]))
+            {
+                objLandInterface.Commands.DialogStart.enable = true;
+			}
 			if (isOfficerInShip(&Characters[i], true) || CheckAttribute(&Characters[i], "IsCompanionClone"))
 			{
 				objLandInterface.Commands.ItemsChange.enable = true;
@@ -1409,6 +1432,11 @@ void BLI_SetPossibleCommands()
         objLandInterface.Commands.DeadBox.enable	= true;
 		bUseCommand = true;
     }
+	if(g_ActiveActionName == "PlayEvent")
+	{
+		bUseCommand = true;
+		objLandInterface.Commands.PlayEvent.enable = true;
+	}
 	// boal dead can be searched 14.12.2003 <--
 	// boal 20.03.2004 -->
     if (isShipInside(pchar.location) && !chrDisableReloadToLocation)
@@ -1548,6 +1576,8 @@ void LI_Reload()
 
 bool SetUsedPotionIcons()
 {
+	if(GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "blade_SP_3") return false;
+	
 	aref arItm, ar, uiref;
 	int i, itmIdx, nq;
 
@@ -1756,7 +1786,7 @@ object objIconsNote;
 string GetNodeForIcon(int nTex, int nPic)
 {
 	string attrName = nTex+"x"+nPic;
-	if( CheckAttribute(objIconsNote,attrName) ) return objIconsNote.(attrName);
+	if( CheckAttribute(&objIconsNote,attrName) ) return objIconsNote.(attrName);
 	return "";
 }
 
@@ -1840,7 +1870,10 @@ void SetCharacterIconData(int chrindex, aref arData)
 			//objLandInterface.equipment.musprogress = LAi_GetGunChargeProgress(chref);
 			objLandInterface.equipment.musprogress = 0.0;
 		}
-		objLandInterface.equipment.potionprogress = LAi_GetPotionProgress(chref);
+		if(GetCharacterEquipByGroup(chref, BLADE_ITEM_TYPE) == "blade_SP_3")
+			objLandInterface.equipment.potionprogress = Bring2Range(0.0, 1.0, 0.0, 0.5, (LAi_GetCharacterRelHP(chref)) / 2.0);
+		else
+			objLandInterface.equipment.potionprogress = LAi_GetPotionProgress(chref);
 	}
 	//arData.charge = LAi_GetCharacterRelCharge(chref);
 	//arData.poison = LAi_IsPoison(chref);
@@ -1940,7 +1973,7 @@ void ControlsLandDesc()
 								if(CheckFastJump(loadedLocation.id, loadedLocation.fastreload+FTC[i]))
 								{
 									objLandInterface.textinfo.(sAttr).text = GetKeyCodeImg("Fast"+FTC[i]);
-									objLandInterface.textinfo.(sAttrDes).text = GetConvertStr("LI_Fast"+FTC[i],"ControlsNames.txt") + " - ";
+									objLandInterface.textinfo.(sAttrDes).text = GetConvertStr("LI_Fast"+FTC[i],"ControlsNames.txt");
 									objLandInterface.textinfo.(sAttrB).text = "1" ;
 									numLine --;
 									
@@ -1951,7 +1984,7 @@ void ControlsLandDesc()
 								if(CheckFastJump(loadedLocation.id, pchar.location.from_sea))
 								{
 									objLandInterface.textinfo.(sAttr).text = GetKeyCodeImg("Fast"+FTC[i]);
-									objLandInterface.textinfo.(sAttrDes).text = GetConvertStr("LI_Fast"+FTC[i],"ControlsNames.txt") + " - ";
+									objLandInterface.textinfo.(sAttrDes).text = GetConvertStr("LI_Fast"+FTC[i],"ControlsNames.txt");
 									objLandInterface.textinfo.(sAttrB).text = "1" ;
 								}
 							}
@@ -1975,7 +2008,7 @@ void ControlsLandDesc()
 			if(!bcompleted && FTC[i] != "")
 			{
 				objLandInterface.textinfo.(sAttr).text = GetKeyCodeImg(FTC[i]);
-				objLandInterface.textinfo.(sAttrDes).text = GetConvertStr(FTC[i],"ControlsNames.txt") + sTimerDur + " - ";
+				objLandInterface.textinfo.(sAttrDes).text = GetConvertStr(FTC[i],"ControlsNames.txt") + sTimerDur;
 				objLandInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -2111,18 +2144,26 @@ void EquipmentDesc()
 		
 	if(iControlsTips > 0 && !IsSteamDeck())
 	{
-		int ptQty = FindPotionTypesQty(pchar);
-		objLandInterface.textinfo.PotionCtrl.text = "";
-		if(ptQty - CheckAttribute(pchar,"GenQuest.Potion_choice") > 0)
+		if(GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "blade_SP_3")
 		{
-			if(!iMoreInfo && bInFight) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("PotionChanger");
-			if(iMoreInfo) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("PotionChanger");
+			objLandInterface.textinfo.PotionCtrl.text = "";
 		}
-		if(LAi_GetCharacterHP(pchar)<LAi_GetCharacterMaxHP(pchar) && ptQty > 0)
+		else
 		{
-			if(!iMoreInfo && bInFight) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("BOAL_UsePotion");
-			if(iMoreInfo) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("BOAL_UsePotion");
+			int ptQty = FindPotionTypesQty(pchar);
+			objLandInterface.textinfo.PotionCtrl.text = "";
+			if(ptQty - CheckAttribute(pchar,"GenQuest.Potion_choice") > 0)
+			{
+				if(!iMoreInfo && bInFight) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("PotionChanger");
+				if(iMoreInfo) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("PotionChanger");
+			}
+			if(LAi_GetCharacterHP(pchar)<LAi_GetCharacterMaxHP(pchar) && ptQty > 0)
+			{
+				if(!iMoreInfo && bInFight) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("BOAL_UsePotion");
+				if(iMoreInfo) objLandInterface.textinfo.PotionCtrl.text = GetKeyCodeImg("BOAL_UsePotion");
+			}
 		}
+		
 		objLandInterface.textinfo.GunCtrl.text = "";
 		if(bInFight && GetCharacterEquipByGroup(pchar, GUN_ITEM_TYPE) != "" && LAi_CharacterCanFrie(pchar))
 		{
@@ -2195,7 +2236,11 @@ string GetItemVis(string type)
 		break;
 		
 		case "Potion":
-			if(CheckAttribute(pchar,"GenQuest.Potion_choice"))
+			if(GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "blade_SP_3")
+			{
+				return "Yorick";
+			}
+			else if(CheckAttribute(pchar,"GenQuest.Potion_choice"))
 			{
 				Itm = &Items[FindItem(pchar.GenQuest.Potion_choice)];
 				return Itm.picTexture+"_"+Itm.picIndex;
@@ -2224,7 +2269,11 @@ string GetItemVis(string type)
 		break;
 		
 		case "PotionDesc":
-			if(CheckAttribute(pchar,"GenQuest.Potion_choice"))
+			if(GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "blade_SP_3")
+			{
+				objLandInterface.equipment.PotionQty = "";
+			}
+			else if(CheckAttribute(pchar,"GenQuest.Potion_choice"))
 			{
 				Itm = &Items[FindItem(pchar.GenQuest.Potion_choice)];
 				objLandInterface.equipment.PotionQty = GetCharacterFreeItem(pchar, Itm.id);
@@ -2247,6 +2296,8 @@ string GetItemVis(string type)
 
 bool bShowEquipment()
 {
+	if(TW_IsActive() && CheckAttribute(&TEV, "Tutor.BackControlsTips"))
+		return false;
 	if(!LAi_IsFightMode(pchar) && !iMoreInfo) return false;
 	return true;
 }
@@ -2399,4 +2450,3 @@ void BI_CrosshairRefresh(float fAimingTime, bool isFindedTarget, aref target)
 	makearef(arElement, objLandInterface.crosshair.elements.right);
 	BI_CrosshairUpdatePos(arElement, fSteady);
 }
-

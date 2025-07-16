@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 			link.l1.go = "zpq_sld2_2";
 		break;
 		case "zpq_sld2_2":
-			dialog.text = "No intentes engañarme. Solo dame el dinero - "+FindRussianMoneyString(sti(pchar.questTemp.zpq.sum))+"y podréis marcharos. O lo tomaremos por la fuerza.";
+			dialog.text = "No intentes engañarme. Solo dame el dinero, "+FindRussianMoneyString(sti(pchar.questTemp.zpq.sum))+"y podréis marcharos. O lo tomaremos por la fuerza.";
 			if (pchar.questTemp.zpq == "failed")
 			{
 				link.l1 = "¿No trabajas para esa rata del fuerte? Tengo buenas noticias para ti entonces, lo envié al infierno.";

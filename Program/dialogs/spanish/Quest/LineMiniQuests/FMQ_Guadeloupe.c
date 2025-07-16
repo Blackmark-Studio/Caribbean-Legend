@@ -67,13 +67,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "citizen_3":
-		dialog.text = "¡Ja, ja, ja! Buena broma, capitán. Por supuesto que no. Todo lo que tienes que hacer es llevarnos a la Bahía de los Mosquitos, que no está lejos de Portobelo. Nos las arreglaremos para llegar a Panamá por nuestra cuenta, no será nuestro primer recorrido por la jungla.";
+		dialog.text = "¡Ja, ja, ja! Buena broma, capitán. Por supuesto que no. Todo lo que tienes que hacer es llevarnos a la Bahía de los Mosquitos, que no está lejos de Portobello. Nos las arreglaremos para llegar a Panamá por nuestra cuenta, no será nuestro primer recorrido por la jungla.";
 		link.l1 = "¿Qué hay del pago?";
 		link.l1.go = "citizen_4";
 		break;
 
 	case "citizen_4":
-		dialog.text = " Dos cofres de doblones. Trescientas piezas. Recibirás uno por adelantado una vez que estemos a bordo. El segundo cofre será tuyo tan pronto como lleguemos a nuestro destino.";
+		dialog.text = "Dos cofres de doblones. Trescientas piezas. Recibirás uno por adelantado una vez que estemos a bordo. El segundo cofre será tuyo tan pronto como lleguemos a nuestro destino.";
 		link.l1 = "Una recompensa seria por un trabajo tan fácil. ¿Cuál es el truco, buen hombre?";
 		link.l1.go = "citizen_5";
 		break;
@@ -223,7 +223,7 @@ void ProcessDialogEvent()
 	case "citizen_15":
 		DelLandQuestMark(npchar);
 		DelMapQuestMarkCity("bridgetown");
-		dialog.text = "¡Oh! ¡Qué encuentro! " + TimeGreeting() + ", " + GetFullName(pchar) + "¡Pero cómo?";
+		dialog.text = "¡Oh! ¡Qué encuentro! " + TimeGreeting() + ", " + GetFullName(pchar) + "¡¿Pero cómo?!";
 		link.l1 = TimeGreeting() + ", monsieur Pinette. No fue fácil encontrarte.";
 		link.l1.go = "citizen_16";
 		break;
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "citizen_19":
-		dialog.text = " Oh, debo decepcionarte, Capitán. No tengo deseo de abordar tu hermoso barco. No lograrás nada por la fuerza aquí, el lugar está rodeado de guardias y gritaré por ayuda en caso de que muestres alguna intención violenta. Claro, puedes intentar apuñalarme, pero nuestro buen amigo no obtendrá ninguna moneda de un cadáver frío. Así que, la forma más inteligente para ti en este momento es dejarme en paz. Te permitiré irte ileso. ";
+		dialog.text = "Oh, debo decepcionarte, Capitán. No tengo deseo de abordar tu hermoso barco. No lograrás nada por la fuerza aquí, el lugar está rodeado de guardias y gritaré por ayuda en caso de que muestres alguna intención violenta. Claro, puedes intentar apuñalarme, pero nuestro buen amigo no obtendrá ninguna moneda de un cadáver frío. Así que, la forma más inteligente para ti en este momento es dejarme en paz. Te permitiré irte ileso. ";
 		link.l1 = "¿Realmente crees que me iré así nomás después de todo lo que ha pasado? ¡Me has arrastrado a este lío, maldito, es hora de pagar!";
 		link.l1.go = "citizen_20";
 		link.l2 = "Tienes razón, supongo. Me gusta la idea de apuñalarte, pero es inútil. Ni siquiera sueñes con que esto es el final. Me voy ahora a Basse-Terre, donde informaré a nuestro buen amigo sobre tu paradero. Y luego enviará hombres enmascarados tras de ti.";
@@ -465,7 +465,7 @@ void ProcessDialogEvent()
 		AddQuestRecord("FMQ_Guadeloupe", "17");
 		// Пинетта - в Бриджтаун
 		sld = characterFromId("FMQG_pass_1");
-		ChangeCharacterAddressGroup(sld, "Plantation_F2", "goto", "goto1");
+		ChangeCharacterAddressGroup(sld, "Bridgetown_Plantation_F2", "goto", "goto1");
 		sld.Dialog.currentnode = "citizen_15";
 		LAi_SetStayType(sld);
 		AddLandQuestMark(sld, "questmarkmain");

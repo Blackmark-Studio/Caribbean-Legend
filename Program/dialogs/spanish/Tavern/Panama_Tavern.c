@@ -9,7 +9,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		link.l1.go = "exit";
 		if (pchar.questTemp.Slavetrader == "FindRatPanama")
 		{
-			link.l1 = "Escuché que tienes un corsario llamado Francois Gontier en tu ciudad. ¿Sabrías dónde encontrarlo?";
+			link.l1 = "Escuché que tienes a un corsario llamado Francois Gontier en tu ciudad. ¿Sabrías dónde encontrarlo?";
 			link.l1.go = "Panama_rat_1";
 		}
 		// Addon-2016 Jason ”ЊЉ-ѓваделупа
@@ -23,12 +23,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	//-->работорговец
 	case "Panama_rat_1":
 		dialog.text = NPCStringReactionRepeat("Sí, hemos tenido a un tipo así en el pueblo. Estaba merodeando por lugares oscuros... Luego algunos de sus compañeros vinieron a visitarlo, parecían una banda de rufianes. Se fue del pueblo con ellos.", "Ya has preguntado sobre eso y te he respondido.", "Te dije, ya habías preguntado por ese Gontier.", "¡Escucha, aléjate y deja de molestarme! ¿Has perdido completamente la chaveta?", "block", 0, npchar, Dialog.CurrentNode);
-		link.l1 = HeroStringReactionRepeat("¿Y a dónde se fue, sabes?", "Mm, supongo que sí...", "Sí, correcto, he preguntado eso...", "Lo siento, " + npchar.name + "... ", npchar, Dialog.CurrentNode);
+		link.l1 = HeroStringReactionRepeat("¿Y sabes a dónde se fue?", "Mm, supongo que sí...", "Sí, correcto, he preguntado eso...", "Lo siento, " + npchar.name + "... ", npchar, Dialog.CurrentNode);
 		link.l1.go = "Panama_rat_2";
 		break;
 
 	case "Panama_rat_2":
-		dialog.text = "Bueno, solo hay una forma de salir de aquí a pie hacia Portobelo. Y se fue a pie. Así que búscalo allí.";
+		dialog.text = "Bueno, solo hay una forma de salir de aquí a pie hacia Portobello. Y se fue a pie. Así que búscalo allí.";
 		link.l1 = "¡Gracias, has sido de gran ayuda!";
 		link.l1.go = "exit";
 		pchar.questTemp.Slavetrader = "FindRatPortobello";
@@ -46,7 +46,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "FMQG_1":
-		dialog.text = "¿Señor de Milyar? Ese caballero visitó Panamá hace un año. En realidad, Don Carlos de Milyar vive en . Es un gran amigo del gobernador local.";
+		dialog.text = "¿Señor de Milyar? Ese caballero visitó Panamá hace un año. En realidad, Don Carlos de Milyar es un gran amigo del gobernador.";
 		link.l1 = "Ya veo. No había necesidad de perder tiempo y aliento en la jungla. Gracias, compañero.";
 		link.l1.go = "FMQG_2";
 		break;

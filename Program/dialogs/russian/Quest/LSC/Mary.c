@@ -1538,7 +1538,8 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple(""+pchar.name+", для меня нет большей радости, чем быть в твоих объятиях, да... Пойдём!",""+pchar.name+", если бы такое было возможно - я бы вообще не расставалась с тобой ни на минуту. Пойдём!");
 			link.l1 = RandPhraseSimple("Ты - самая лучшая на свете, моя девочка...","Ты - просто прелесть, моя красавица...");
 			link.l1.go = "exit";
-			AddDialogExitQuest("cabin_sex_go");
+			pchar.quest.sex_partner = Npchar.id;
+			AddDialogExitQuestFunction("LoveSex_Cabin_Go");
 		break;
 		
 		case "sex_after":
@@ -1567,6 +1568,7 @@ void ProcessDialogEvent()
 		
 		case "room_sex_go":
 			DialogExit();
+			pchar.quest.sex_partner = Npchar.id;
 			chrDisableReloadToLocation = true;//закрыть локацию
 			if (sti(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
 			if (npchar.chr_ai.type == "actor")
@@ -1577,10 +1579,10 @@ void ProcessDialogEvent()
 			if (findsubstr(locations[FindLocation(pchar.location)].id, "tavern_upstairs" , 0) == -1)
 			{
 			//DoQuestReloadToLocation(pchar.location+"_upstairs", "quest", "quest4", "");
-			DoFunctionReloadToLocation(pchar.location+"_upstairs", "quest", "quest4", "GiveKissInRoom");
+			DoFunctionReloadToLocation(pchar.location+"_upstairs", "quest", "quest4", "LoveSex_Room_Go");
 			ChangeCharacterAddressGroup(npchar, pchar.location+"_upstairs", "quest", "quest3");
 			} // patch-8
-			//DoQuestCheckDelay("Mary_LoveSex", 2.5); // mitrokosta fix
+			//DoQuestFunctionDelay("LoveSex_Classic", 2.5); // mitrokosta fix
 			NextDiag.CurrentNode = "sex_after";
 			npchar.greeting = "mary_hire";
 		break;
@@ -2008,7 +2010,7 @@ void ProcessDialogEvent()
 		case "LongHappy_3":
 			DialogExit();
 			chrDisableReloadToLocation = true;//закрыть локацию
-			DoQuestCheckDelay("Mary_LoveSex", 1.0);
+			DoQuestFunctionDelay("LoveSex_Classic", 1.0);
 			npchar.dialog.currentnode = "LongHappy_5";
 			LAi_SetStayType(npchar);
 		break;
@@ -2496,7 +2498,7 @@ void ProcessDialogEvent()
 		
 		case "LongHappy_60":
 			DialogExit();
-			DoQuestCheckDelay("Mary_LoveSex", 1.0);
+			DoQuestFunctionDelay("LoveSex_Classic", 1.0);
 			npchar.dialog.currentnode = "LongHappy_61";
 			LAi_SetStayType(npchar);
 		break;
@@ -2582,7 +2584,7 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
 			DoQuestFunctionDelay("IslaMona_ChurchReloadToRoom", 0.5);
 			ChangeCharacterAddressGroup(npchar, "IslaMona_TwoFloorRoom", "goto", "goto4");
-			DoQuestCheckDelay("Mary_LoveSex", 2.0);
+			DoQuestFunctionDelay("LoveSex_Classic", 2.0);
 			NextDiag.CurrentNode = "sex_after";
 			npchar.greeting = "mary_hire";
 			pchar.questTemp.IslaMona.Doorlock = "true";
@@ -2770,7 +2772,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	

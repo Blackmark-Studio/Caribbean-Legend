@@ -872,3 +872,23 @@ FreeCam
 {
 Swobodna kamera
 }
+
+TimeScale
+{
+Przyspieszenie/spowolnienie czasu
+}
+
+TimeScaleFasterBA
+{
+Przyspieszenie czasu
+}
+
+TimeScaleSlowerBA
+{
+Spowolnienie czasu
+}
+
+FireCamera_Set
+{
+Widok celowniczy
+}

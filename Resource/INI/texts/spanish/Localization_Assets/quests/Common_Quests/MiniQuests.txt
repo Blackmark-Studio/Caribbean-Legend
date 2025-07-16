@@ -105,5 +105,9 @@ Pasó una hora...
 
 MiniQuests_23
 {
-, which on ~
+, que en ~
+}
+MiniQuests_24
+{
+Alonso
 }

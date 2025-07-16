@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 
 	case "stage_1":
 		PlaySound("Voice\Spanish\saga\Jessica Rose-07.wav");
-		dialog.text = "¡Ja, ja, ja! ¡Soy imparable! ¡No puedes herirme!\n El aire, el agua, la tierra, el fuego - ¡os ordeno que me asistáis!\n ¡Que los muertos se levanten, que el fuego arda, que el agua custodie el puente y que el viento te lleve en sus alas y te arroje al suelo!\n ¡Diviértete!!!";
+		dialog.text = "¡Ja, ja, ja! ¡Soy imparable! ¡No puedes herirme!\n El aire, el agua, la tierra, el fuego, ¡os ordeno que me asistáis!\n ¡Que los muertos se levanten, que el fuego arda, que el agua custodie el puente y que el viento te lleve en sus alas y te arroje al suelo!\n ¡Diviértete!!!";
 		link.l1 = "...";
 		link.l1.go = "stage_1_exit";
 		break;
@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "exit_talk_1":
-		PlaySound("Voice\Spanish\saga\Jessica Rose-03.wav");
+		PlaySound("Voice\Spanish\saga\Jessica Rose-08.wav");
 		dialog.text = "Ayúdame... Ahora, llévame con él.";
 		link.l1 = "¿A Lawrence Beltrope? ¿Y cómo se supone que haga eso? Mi tripulación o huirá en cuanto te vean o te quemarán sin remordimientos. Por cierto, todavía eres capaz de masacrar a mis hombres y 'controlarlos'...";
 		link.l1.go = "exit_talk_2";
@@ -158,7 +158,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "exit_talk_3":
-		PlaySound("Voice\Spanish\saga\Jessica Rose-01.wav");
+		PlaySound("Voice\Spanish\saga\Jessica Rose-09.wav");
 		dialog.text = "Tengo lo que estás buscando, ¿porqué no me ayudas? Yo sé mucho. Más que los vivos. La vi... Necesitas un documento para ella y lo obtendrás. Obtendrás aún más, te daré algo adicional. Llévame a él...";
 		link.l1 = "Hum. No me gustan tus intenciones sedientas de sangre hacia Helen. Ni se te ocurra tocarla. Después de todo, ella no es responsable de las acciones de su madre.";
 		link.l1.go = "exit_talk_4";
@@ -178,7 +178,7 @@ void ProcessDialogEvent()
 
 	case "exit_talk_6":
 		dialog.text = "Después de mi encuentro con él.";
-		link.l1 = " Oh, no estará feliz. Puedo imaginarlo. Bien, resumamos: primero, prometes que nadie te verá, segundo, no harás daño a mi tripulación, tercero, ni siquiera pensarás en Helen, cuarto, me darás lo que estoy buscando, y quinto, me curarás de tus maldiciones. ¿Estoy en lo correcto?";
+		link.l1 = "Oh, no estará feliz. Puedo imaginarlo. Bien, resumamos: primero, prometes que nadie te verá, segundo, no harás daño a mi tripulación, tercero, ni siquiera pensarás en Helen, cuarto, me darás lo que estoy buscando, y quinto, me curarás de tus maldiciones. ¿Estoy en lo correcto?";
 		link.l1.go = "exit_talk_7";
 		break;
 
@@ -227,7 +227,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "shore":
-		dialog.text = "Has cumplido tu palabra - estamos en Jamaica. Ven aquí mañana por la noche y cumpliré mi promesa. Adiós.";
+		dialog.text = "Has cumplido tu palabra, estamos en Jamaica. Ven aquí mañana por la noche y cumpliré mi promesa. Adiós.";
 		link.l1 = "Adiós...";
 		link.l1.go = "shore_1";
 		break;
@@ -267,7 +267,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "shore_5":
-		dialog.text = " No has perdido nada de valor. Era un hombre muy malo. Ahora, deberíamos despedirnos, ya no hay nada más que pueda hacer aquí. Mi juramento se ha cumplido y la magia ha perdido su poder. Te he prometido un regalo. Aquí. Este es mi Flamberge. Ya no lo necesito. Esta espada es única, no encontrarás una mejor en ningún lugar del mundo.";
+		dialog.text = "No has perdido nada de valor. Era un hombre muy malo. Ahora, deberíamos despedirnos, ya no hay nada más que pueda hacer aquí. Mi juramento se ha cumplido y la magia ha perdido su poder. Te he prometido un regalo. Aquí. Este es mi Flamberge. Ya no lo necesito. Esta espada es única, no encontrarás una mejor en ningún lugar del mundo.";
 		link.l1 = "Gracias...";
 		link.l1.go = "shore_6";
 		break;
@@ -276,7 +276,7 @@ void ProcessDialogEvent()
 		RemoveAllCharacterItems(npchar, true);
 		GiveItem2Character(pchar, "blade_25");
 		PlaySound("interface\important_item.wav");
-		dialog.text = "Ahora, sobre ti. Ve a Bridgetown, a la iglesia local, para levantar mis maldiciones. Encontrarás a un sacerdote allí. Me conocía personalmente. Habla con él y te dirá qué hacer. Prepara veinte velas, las necesitarás.";
+		dialog.text = "Ahora, sobre ti. Ve a Bridgetown, a la iglesia, para levantar mis maldiciones. Encontrarás a un sacerdote allí. Me conocía personalmente. Habla con él y te dirá qué hacer. Prepara veinte velas, las necesitarás.";
 		link.l1 = "¿Estás seguro de que él me curará?";
 		link.l1.go = "shore_7";
 		break;
@@ -331,7 +331,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "soul_3":
-		dialog.text = "  A veces sucede, " + pchar.name + ". Dios te ha escuchado. Tus oraciones no solo te han sanado, sino que también han purificado mi alma. Muchas gracias, " + pchar.name + "¡Y quiero pedirte que me perdones por lo que ha pasado en el arrecife. Es... bueno, solo perdóname. No podía irme sin pedirte perdón.";
+		dialog.text = "A veces sucede, " + pchar.name + ". Dios te ha escuchado. Tus oraciones no solo te han sanado, sino que también han purificado mi alma. Muchas gracias, " + pchar.name + "¡Y quiero pedirte que me perdones por lo que ha pasado en el arrecife. Es... bueno, solo perdóname. No podía irme sin pedirte perdón.";
 		link.l1 = "Te perdono, Jessica. ¿Estoy realmente vivo?";
 		link.l1.go = "soul_4";
 		break;

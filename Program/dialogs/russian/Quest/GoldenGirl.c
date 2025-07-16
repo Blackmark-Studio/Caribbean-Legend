@@ -1864,7 +1864,6 @@ void ProcessDialogEvent()
 			LAi_ActorRunToLocation(npchar, "reload", "reload3", "none", "", "", "", 20.0);
 			LAi_RemoveCheckMinHP(npchar); 
             LAi_SetCurHPMax(npchar);
-            LAi_SetImmortal(npchar, false); // Captain Beltrop, снимаем проверку на жизнь и восстанавливаем её
 			GoldenGirl_DuelNext();
 		break;
 		

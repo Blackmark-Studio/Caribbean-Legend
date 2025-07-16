@@ -12,25 +12,25 @@ LadyBeth_Elizabeth_Name {Elizabeth}
 
 LadyBeth_Elizabeth_lastname {Bishop}
 
-LadyBeth_WorldMap {¡Capitán, veo a la 'Lady Beth'! ¡Qué belleza! Pero no podremos interceptarla - ¡su capitán es demasiado bueno!}
+LadyBeth_WorldMap {¡Capitán, veo a la 'Lady Beth'! ¡Qué belleza! Pero no podremos interceptarla, ¡su capitán es demasiado bueno!}
 
 LadyBeth_Rum1 {¿Has oído hablar del capitán Albert Blackwood? ¡Antiguo oficial de la Marina Real, y ahora el buscador de tesoros más exitoso de todo el archipiélago! Su goleta 'Lady Beth' es una verdadera obra de arte. Su tripulación vive como señores, y él mismo viste sedas. Las autoridades francesas se quitan el sombrero ante él, aunque sea inglés. Dicen que en el último año ha encontrado tanto oro que podría comprar un título y varias plantaciones en Barbados.}
 
-LadyBeth_Rum2 {¿Ya lo has oído? ¡Blackwood ya no está! Dicen que hubo una verdadera masacre - su campamento fue completamente destruido. Nadie sabe quién lo hizo, pero un pescador jura que vio una batalla en la orilla. Un profesional como Blackwood no es fácil de derrotar... ¿Qué pasará ahora con sus tesoros? El mar ha reclamado otra leyenda...}
+LadyBeth_Rum2 {¿Ya lo has oído? ¡Blackwood ya no está! Dicen que hubo una verdadera masacre, su campamento fue completamente destruido. Nadie sabe quién lo hizo, pero un pescador jura que vio una batalla en la orilla. Un profesional como Blackwood no es fácil de derrotar... ¿Qué pasará ahora con sus tesoros? El mar ha reclamado otra leyenda...}
 
 LadyBeth_Rum3 {¿Lo has visto? ¡El mismísimo Blackwood está en la ciudad! Aunque es extraño. Esta vez reunió tantos suministros como si fuera a la guerra. Sigue yendo a Caimán, excavando algo allí. Pensarías que con tanto dinero podría vivir y disfrutar de la vida, pero sigue cavando y cavando. Los marineros dicen que regresaron de allí con pérdidas la última vez. Eso es una novedad.}
 
-LadyBeth_Rum4 {¡Mira, el mismísimo capitán Blackwood ha llegado! ¿Sabes por qué ama tanto a los franceses? Dicen que tenía una prometida en Barbados, de familia adinerada. Su padre no dio su bendición - dijo que un oficial pobre no era pareja para su hija. ¡Y ahora! ¡Ahora podría comprar la plantación más rica de la isla! Pero es demasiado tarde... dicen que ella se casó con Bishop.}
+LadyBeth_Rum4 {¡Mira, el mismísimo capitán Blackwood ha llegado! ¿Sabes por qué ama tanto a los franceses? Dicen que tenía una prometida en Barbados, de familia adinerada. Su padre no dio su bendición, dijo que un oficial pobre no era pareja para su hija. ¡Y ahora! ¡Ahora podría comprar la plantación más rica de la isla! Pero es demasiado tarde... dicen que ella se casó con Bishop.}
 
-LadyBeth_Rum5 {¡El capitán Blackwood ha llegado al puerto! Sabes, antes servía en la Marina Real. Y no como un simple marinero - ¡como oficial! Tan capaz que le predecían un futuro de almirante. Y luego, de repente - desertó. Se llevó el barco y la mitad de la tripulación. Ahora los ingleses ofrecen una fortuna por su cabeza. ¿Pero a él qué le importa? Los supera en velocidad e incluso se ríe de ello.}
+LadyBeth_Rum5 {¡El capitán Blackwood ha llegado al puerto! Sabes, antes servía en la Marina Real. Y no como un simple marinero, ¡como oficial! Tan capaz que le predecían un futuro de almirante. Y luego, de repente, desertó. Se llevó el barco y la mitad de la tripulación. Ahora los ingleses ofrecen una fortuna por su cabeza. ¿Pero a él qué le importa? Los supera en velocidad e incluso se ríe de ello.}
 
-LadyBeth_Rum6 {¿Has oído? ¡Blackwood con su 'Lady Beth' ha anclado en nuestro puerto! Antes, para unirse a él necesitabas recomendaciones, experiencia y credenciales. ¿Y ahora? Toma a casi cualquiera sin seleccionar. Las expediciones recientes no han ido bien, ha perdido gente. Vi a sus marineros en la taberna - no beben como antes, han perdido su espíritu. Algo ha cambiado.}
+LadyBeth_Rum6 {¿Has oído? ¡Blackwood con su 'Lady Beth' ha anclado en nuestro puerto! Antes, para unirse a él necesitabas recomendaciones, experiencia y credenciales. ¿Y ahora? Toma a casi cualquiera sin seleccionar. Las expediciones recientes no han ido bien, ha perdido gente. Vi a sus marineros en la taberna, no beben como antes, han perdido su espíritu. Algo ha cambiado.}
 
 LadyBeth_Rum7 {¡Mira, el mismísimo Blackwood ha venido a la ciudad! ¿Sabes por qué no lo tocan aquí? ¡Paga bien a nuestros funcionarios! Todos reciben una parte de sus hallazgos. Por eso hacen la vista gorda a que sea un desertor inglés. ¡El dinero no huele! Incluso el gobernador viene personalmente a estrecharle la mano cuando entra al puerto.}
 
 LadyBeth_Rum8 {¿Has visto? ¡Blackwood y su 'Lady Beth' están en el puerto! No entiendo a este capitán. Rico como Creso, pero siempre quiere más. ¿Qué está buscando? ¿En qué piensa cuando mira al mar? Tiene todo lo que un marinero podría soñar. Pero creo que hay algún demonio en su cabeza susurrándole algo...}
 
-LadyBeth_Rum9 {¡Silencio! Blackwood está en la ciudad, y ese sacerdote está con él. ¿Lo has visto? Tipo extraño. No es local, eso es seguro. Cuando está cerca del capitán, este se vuelve como otra persona - tenso como una cuerda.}
+LadyBeth_Rum9 {¡Silencio! Blackwood está en la ciudad, y ese sacerdote está con él. ¿Lo has visto? Tipo extraño. No es de por aquí, eso es seguro. Cuando está cerca del capitán, este se vuelve como otra persona, tenso como una cuerda.}
 
 LadyBeth_Rum10 {¡El mismísimo Blackwood ha honrado nuestro puerto! Hombre asombroso. Lo tiene todo: dinero, éxito, respeto. Su tripulación lo seguiría a través del fuego y el agua. Pero sus ojos siguen hambrientos, buscando. Como si le faltara algo importante en esta vida. Si yo estuviera en su lugar, me habría calmado hace tiempo, habría comprado una finca y viviría feliz.}
 

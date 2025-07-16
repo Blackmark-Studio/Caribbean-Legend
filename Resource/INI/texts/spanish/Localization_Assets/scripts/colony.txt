@@ -35,17 +35,17 @@ Has recibido ~
 
 colony_8
 {
-Has recibido - Hacha
+Has recibido: Hacha
 }
 
 colony_9
 {
-Has recibido - Pluma
+Has recibido: Pluma
 }
 
 colony_10
 {
-Has recibido - Madonna
+Has recibido: Madonna
 }
 
 colony_11

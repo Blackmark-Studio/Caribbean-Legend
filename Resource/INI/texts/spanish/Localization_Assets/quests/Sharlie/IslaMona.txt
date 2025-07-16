@@ -9,7 +9,7 @@ Jiménez
 
 IslaMona_3
 {
-Next morning...
+La mañana siguiente...
 }
 
 IslaMona_4

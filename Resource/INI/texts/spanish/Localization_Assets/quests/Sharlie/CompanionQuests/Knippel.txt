@@ -90,3 +90,43 @@ Knippel_20
 {
 Algún tiempo después...@<NewStr()>En la Casa de Fleetwood
 }
+Knippel_21
+{
+Frederick
+}
+Knippel_22
+{
+Stokes
+}
+Knippel_23
+{
+Ralph
+}
+Knippel_24
+{
+Faggle
+}
+Knippel_25
+{
+2 hours later...@<NewStr()>Boarding the 'Sussex'
+}
+Knippel_26
+{
+Thomas
+}
+Knippel_27
+{
+Lynch
+}
+Knippel_28
+{
+Сhimera
+}
+Knippel_29
+{
+Present time
+}
+Knippel_30
+{
+August 17th, 1654@<NewStr()>, SE of Dominica"
+}

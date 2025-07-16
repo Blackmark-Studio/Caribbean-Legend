@@ -16,7 +16,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			if (CheckAttribute(pchar, "questTemp.Patria.GoodsSM"))
 			{
-				link.l2 = "Tienes mis bienes de Sint Maarten almacenados en tu almacén. El Barón Noel Forgue me los dejó.";
+				link.l2 = "Tienes mis bienes de Saint-Martin almacenados en tu almacén. El Barón Noel Forget me los dejó.";
                 link.l2.go = "patria_goods_3";
 			}
 		break;

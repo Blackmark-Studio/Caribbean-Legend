@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 				link.l1.go = "tieyasal";
 				break;
 			}
-			switch (drand(5))
+			switch (hrand(5))
 			{
 				case 0:
 					dialog.text = "Pas un geste ! Je suis le gouverneur de cette île. Quoi, tu ne me crois pas ?!";

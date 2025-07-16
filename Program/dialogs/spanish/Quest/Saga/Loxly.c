@@ -207,7 +207,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "La dama afirma ser dueña de toda la isla? Hm... Parece que no será un asunto fácil. Isla Tesoro ya es casi una colonia inglesa...";
+			dialog.text = "¿La dama afirma ser dueña de toda la isla? Hm... Parece que no será un asunto fácil. Isla Tesoro ya es casi una colonia inglesa...";
 			link.l1 = "Aún no. Según el testamento, el hombre o la mujer que muestre ambas partes del mapa se convertirá en el dueño de la Isla Tesoro. Tenemos ambas partes del mapa de Sharp, que es la principal prueba de herencia.";
 			link.l1.go = "saga_1";
 		}
@@ -232,7 +232,7 @@ void ProcessDialogEvent()
 		sTemp = "cuatrocientos cincuenta";
 		if (CheckAttribute(pchar, "questTemp.Mtraxx.Cartahena.Gold"))
 			sTemp = "mil";
-		dialog.text = "Señor, la suma final se formará durante el juicio. Todavía no sé qué tan problemático será. Pero estoy listo para estimar un adelanto - " + sTemp + " doblones. Esta cantidad de oro tendrá que ser pagada nuevamente una o dos veces, dependiendo de cómo vaya nuestro negocio.\nTráeme el dinero en una semana, necesito tiempo para revisar los archivos y prepararme. Luego haremos un arreglo. ¿Trato?";
+		dialog.text = "Señor, la suma final se formará durante el juicio. Todavía no sé qué tan problemático será. Pero estoy listo para estimar un adelanto, " + sTemp + " doblones. Esta cantidad de oro tendrá que ser pagada nuevamente una o dos veces, dependiendo de cómo vaya nuestro negocio.\nTráeme el dinero en una semana, necesito tiempo para revisar los archivos y prepararme. Luego haremos un arreglo. ¿Trato?";
 		link.l1 = "Te han recomendado como el mejor abogado del archipiélago, así que tenemos un trato. ¡Nos vemos en una semana!";
 		link.l1.go = "saga_4";
 		break;
@@ -307,7 +307,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "saga_12":
-		dialog.text = " Dame el mapa de Sharp y date prisa, habla con Baker, tal vez puedas encontrar algunos documentos con su ayuda. Incluso podrías encontrar pruebas de su nacimiento.";
+		dialog.text = "Dame el mapa de Sharp y date prisa, habla con Baker, tal vez puedas encontrar algunos documentos con su ayuda. Incluso podrías encontrar pruebas de su nacimiento.";
 		link.l1 = "Eh, ojalá pudiera. Está bien, nos vemos, señor Loxley.";
 		link.l1.go = "saga_13";
 		break;
@@ -365,7 +365,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "saga_19":
-		dialog.text = " Esta es una historia espeluznante, señor. Fue encontrado en su propio dormitorio con el rostro torcido. Es demasiado difícil imaginar qué pudo haber asustado tanto a este hombre intrépido. Dicen que estaba cubierto de escarcha. Su cuerpo estaba lleno de heridas desgarradas, de aspecto aterrador, ¡pero ni una sola gota de sangre en el suelo! ¡Imagínate! ¡Ni una sola gota!";
+		dialog.text = "Esta es una historia espeluznante, señor. Fue encontrado en su propio dormitorio con el rostro torcido. Es demasiado difícil imaginar qué pudo haber asustado tanto a este hombre intrépido. Dicen que estaba cubierto de escarcha. Su cuerpo estaba lleno de heridas desgarradas, de aspecto aterrador, ¡pero ni una sola gota de sangre en el suelo! ¡Imagínate! ¡Ni una sola gota!";
 		link.l1 = "Sí, eso parece sacado de una pesadilla. Parece que fue asesinado... Pero ¿quién podría haber hecho eso?";
 		link.l1.go = "saga_20";
 		break;
@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 		RemoveDublonsFromPCharTotal(450);
 		// Log_Info("Has entregado 450 doblones");
 		PlaySound("interface\important_item.wav");
-		dialog.text = "Excelente, señor. Un placer hacer negocios con usted. Ahora, aquí está el trato. Vuelva aquí mañana. Sí, sí, ha oído bien - ¡mañana! Después de todo, soy el mejor abogado del archipiélago y tengo conexiones.\nTraiga a su principal, el juicio no ocurrirá sin ella. No llegue tarde y no salga de la ciudad. Y lleve la última parte del pago si puede, estoy completamente seguro de nuestra victoria.";
+		dialog.text = "Excelente, señor. Un placer hacer negocios con usted. Ahora, aquí está el trato. Vuelva aquí mañana. Sí, sí, ha oído bien, ¡mañana! Después de todo, soy el mejor abogado del archipiélago y tengo conexiones.\nTraiga a su principal, el juicio no ocurrirá sin ella. No llegue tarde y no salga de la ciudad. Y lleve la última parte del pago si puede, estoy completamente seguro de nuestra victoria.";
 		link.l1 = "Bien. Estaremos en su oficina mañana, señor Loxley.";
 		link.l1.go = "saga_25";
 		break;
@@ -649,7 +649,7 @@ void ProcessDialogEvent()
 		if (iRate > 60 && iRate <= 90)
 			sTemp = "¿Y cómo lo ha hecho, señor? Tus problemas no son sólo graves, son realmente graves. Las autoridades están muy ansiosas por atraparte. Tendré que poner mucho empeño en solucionar tus desavenencias";
 		if (iRate > 90)
-			sTemp = "Bueno... La situación es catastrófica - se afirma que el enemigo más acérrimo. Será difícil, pero soy el mejor abogado en el Caribe después de todo, así que voy a resolver sus desacuerdos";
+			sTemp = "Bueno... La situación es catastrófica, se afirma que el enemigo más acérrimo. Será difícil, pero soy el mejor abogado en el Caribe después de todo, así que voy a resolver sus desacuerdos";
 		dialog.text = "" + sTemp + " con " + XI_ConvertString(Nations[sti(npchar.quest.relation)].Name + "Abl") + ". Te costará " + FindRussianMoneyString(iSumm) + ".";
 		if (sti(pchar.money) >= iSumm)
 		{
@@ -690,7 +690,7 @@ void ProcessDialogEvent()
 		dialog.Text = "Excelente, resolveré tu problema. Pronto querrán hacer negocios contigo nuevamente.";
 		Link.l1 = "¡Gracias!";
 		Link.l1.go = "exit";
-		ChangeContrabandRelation(pchar, 25);
+		ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
 		AddMoneyToCharacter(pchar, -sti(npchar.quest.contrasum));
 		break;
 

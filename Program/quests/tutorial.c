@@ -82,7 +82,7 @@ void Tutorial_Navigator2(string qName)
 		}
 	}
 	LaunchTutorial("Navigator", 1);
-	if(GetCharacterShipClass(pchar) < 5) 
+	if(GetCharacterShipClass(pchar) < 6) 
 	{
 		DeleteAttribute(pchar,"systeminfo.tutorial.navigator");
 		if(CheckAttribute(pchar,"systeminfo.tutorial.navigatorNoShow"))
@@ -103,11 +103,6 @@ void DelNavigatorNoShow(string qName)
 	{
 		DeleteAttribute(pchar,"systeminfo.tutorial.navigatorNoShow");
 	}
-}
-
-void Tutorial_Alchemy(string qName)
-{
-	LaunchTutorial("Alchemy", 1);
 }
 
 void Tutorial_Salary(string qName)
@@ -148,6 +143,54 @@ void Tutorial_Dubloons2(string qName)
 	}
 }
 
+void Tutorial_Prologue_Inventory(string qName)
+{
+	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
+	{
+		DoQuestFunctionDelay("Tutorial_Prologue_Inventory2", 1.0);
+	}
+	else
+	{
+		DoQuestFunctionDelay("Tutorial_Prologue_Inventory2", 2.0);
+	}
+}
+
+void Tutorial_Prologue_Inventory2(string qName)
+{
+	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
+	{
+		LaunchTutorial("Prologue_Inventory", 1);
+	}
+	else
+	{
+		DoQuestFunctionDelay("Tutorial_Prologue_Inventory", 1.0);
+	}
+}
+
+void Tutorial_Logbook(string qName)
+{
+	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
+	{
+		DoQuestFunctionDelay("Tutorial_Logbook2", 1.0);
+	}
+	else
+	{
+		DoQuestFunctionDelay("Tutorial_Logbook2", 2.0);
+	}
+}
+
+void Tutorial_Logbook2(string qName)
+{
+	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
+	{
+		LaunchTutorial("Prologue_Logbook", 1);
+	}
+	else
+	{
+		DoQuestFunctionDelay("Tutorial_Logbook", 1.0);
+	}
+}
+
 void Tutorial_Box(string qName)
 {
 	DoQuestFunctionDelay("Tutorial_Box2", 1.0);
@@ -180,6 +223,34 @@ void Tutorial_Amulet2(string qName)
 	else
 	{
 		DoQuestFunctionDelay("Tutorial_Amulet", 1.0);
+	}
+}
+
+void Tutorial_Prologue_Amulet(string qName)
+{
+	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
+	{
+		DoQuestFunctionDelay("Tutorial_Prologue_Amulet2", 1.0);
+	}
+	else
+	{
+		DoQuestFunctionDelay("Tutorial_Prologue_Amulet2", 2.0);
+	}
+}
+
+void Tutorial_Prologue_Amulet2(string qName)
+{
+	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
+	{
+		if(CheckAttribute(pchar, "systeminfo.tutorial.prologue_amulet"))
+		{
+			DeleteAttribute(pchar,"systeminfo.tutorial.prologue_amulet");
+			LaunchTutorial("Prologue_Amulet", 0);
+		}
+	}
+	else
+	{
+		DoQuestFunctionDelay("Tutorial_Prologue_Amulet", 1.0);
 	}
 }
 
@@ -258,7 +329,12 @@ void Tutorial_BoardingTactics(string qName)
 
 void Tutorial_CameraControl(string qName)
 {
-	LaunchTutorial("CameraControl", 1);
+	LaunchTutorial("Prologue_CameraControl", 1);
+}
+
+void Tutorial_TimeScale(string qName)
+{
+	LaunchTutorial("Prologue_TimeScale", 1);
 }
 
 void Tutorial_CameraControlFP(string qName)
@@ -284,4 +360,34 @@ void Ngt_FolkeRus(string qName)
 void Ngt_FolkeEng(string qName)
 {
 	NewGameTip("Welcome aboard your new officer! Press F4 to assign him as your Navigator.");
+}
+
+void Tutorial_Overload(string qName)
+{
+	LaunchTutorial("Prologue_Overload", 1);
+}
+
+void Tutorial_DeadSearch(string qName)
+{
+	LaunchTutorial("Prologue_DeadSearch", 1);
+	TW_InitLand_1_Loot();
+	TW_Open("land");
+	if(!CheckAttribute(&TEV, "Tutor.Loot.Pirate2"))
+		TW_IncreaseCounter("land", "Loot_search", 1);
+	if(!CheckAttribute(&TEV, "Tutor.Loot.Pirate3"))
+		TW_IncreaseCounter("land", "Loot_search", 1);
+	if(GetCharacterItem(pchar, "quest_potion") && CheckAttribute(&TEV, "Tutor.NeedPotion"))
+	{
+		TW_IncreaseCounter("land", "Loot_search", 1);
+		TW_AddBottomText("Loot_potion", StringFromKey("Tutorial_32"), "Default");
+		DeleteAttribute(&TEV, "Tutor.NeedPotion");
+		TW_RecalculateLayout();
+	}
+	if(TW_CheckCounter("land", "Loot_search"))
+		TW_ColorWeak(TW_GetTextARef("Loot_search"));
+}
+
+void Tutorial_Trading(string qName)
+{
+	LaunchTutorial("Prologue_Trading", 0);
 }

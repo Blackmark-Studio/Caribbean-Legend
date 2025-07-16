@@ -20,7 +20,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		{
 			if (pchar.questTemp.SharkGoldFleet == "toPBPortOffice" || pchar.questTemp.SharkGoldFleet == "KillCurier")
 			{
-				link.l1 = "Soy un mercader, vine de Caracas, y tu colega de la autoridad portuaria local me pidió que te entregara alguna correspondencia ...";
+				link.l1 = "Soy un mercader, vine de Caracas, y tu colega de la autoridad portuaria me pidió que te entregara alguna correspondencia ...";
 				link.l1.go = "SharkGoldFleet";
 			}
 			if (pchar.questTemp.SharkGoldFleet == "MoneySpeak")
@@ -53,7 +53,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "SharkGoldFleet_01":
 		dialog.text = "¡Esa es una manera de decirlo! Bueno, está bien, qué hacer. Nos encontraremos a tiempo... Estoy hablando de mí, no prestes atención. Escucha, ¿vas a volver por casualidad?";
-		link.l1 = "Bueno, en realidad, iba a vender mercancías aquí, y luego - sí, regresar a Caracas...";
+		link.l1 = "Bueno, en realidad, iba a vender mercancías aquí y luego regresar a Caracas...";
 		link.l1.go = "SharkGoldFleet_02";
 		break;
 
@@ -99,7 +99,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			SetFunctionTimerCondition("SharkGoldFleetToCPO10", 0, 0, 10, false);
 		else
 			NewGameTip("Modo exploración: el temporizador está desactivado.");
-		dialog.text = "¡Es muy importante! Dice... Entonces... " + n + " " + month + "... No, eso no es... 12, 50, 69, 55... Pero dónde está... ¡Ah, aquí está! La carta debe ser entregada por el Capitán " + pchar.questTemp.SharkGoldFleet.CurierName + " " + pchar.questTemp.SharkGoldFleet.Curierlastname + "Y dijiste que tu nombre es... " + GetFullName(pchar) + "?";
+		dialog.text = "¡Es muy importante! Dice... Entonces... " + n + " " + month + "... No, eso no es... 12, 50, 69, 55... Pero dónde está... ¡Ah, aquí está! La carta debe ser entregada por el Capitán " + pchar.questTemp.SharkGoldFleet.CurierName + " " + pchar.questTemp.SharkGoldFleet.Curierlastname + " ¿Y dijiste que tu nombre es... " + GetFullName(pchar) + "?";
 		link.l1 = "Debe haber habido algún error...";
 		link.l1.go = "SharkGoldFleet_06";
 		break;
@@ -194,7 +194,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "SharkGoldFleet_16":
-		dialog.text = "Argh, no tienes la culpa de la avaricia de los funcionarios de la Nueva España en Caracas. Pero simplemente no tengo esa cantidad de dinero conmigo ahora mismo. Y el presupuesto debería llegar solo mañana... Espera aquí, por favor, iré al prestamista ahora - y volveré enseguida.";
+		dialog.text = "Argh, no tienes la culpa de la avaricia de los funcionarios de la Nueva España en Caracas. Pero simplemente no tengo esa cantidad de dinero conmigo ahora mismo. Y el presupuesto debería llegar solo mañana... Espera aquí, por favor, iré al prestamista ahora y volveré enseguida.";
 		link.l1 = "...";
 		link.l1.go = "SharkGoldFleet_17";
 		break;

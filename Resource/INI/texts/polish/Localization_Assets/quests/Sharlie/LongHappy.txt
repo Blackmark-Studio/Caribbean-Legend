@@ -1,46 +1,46 @@
 LongHappy_1
 {
-To make a wedding decisions USE A THINKING OUT LOUD OPTION
+Aby podjąć decyzję dotyczącą ślubu, WYKORZYSTAJ OPCJĘ GŁOŚNEGO MYŚLENIA
 }
 
 LongHappy_2
 {
-Abbot Benoit has come ashore!
+Opat Benoit przybył na brzeg!
 }
 
 LongHappy_3
 {
-@<sti(pchar.questTemp.LongHappy.MarryRum)> barrels of rum and @<sti(pchar.questTemp.LongHappy.MarryMoney)> pesos.
+@<sti(pchar.questTemp.LongHappy.MarryRum)> beczek rumu, i @<sti(pchar.questTemp.LongHappy.MarryMoney)> pesos.
 }
 
 LongHappy_4
 {
-50 barrels of rum, 20 barrels of rum и 300 000 pesos.
+50 beczek rumu, 20 beczek rumu i 300 000 pesos.
 }
 
 LongHappy_5
 {
-100 barrels of rum, 50 barrels of rum и 500 000 pesos.
+100 beczek rumu, 50 beczek rumu i 500 000 pesos.
 }
 
 LongHappy_6
 {
-But before that, I have to organize a celebration at the tavern of Saint-Pierre. Hurry up!
+Ale przedtem muszę zorganizować przyjęcie w tawernie Saint-Pierre. Pospiesz się!
 }
 
 LongHappy_7
 {
-But before that, I have to organize a celebration on Isla Tesoro. Hurry up!
+Ale przedtem muszę zorganizować uroczystość na Isla Tesoro. Pospiesz się!
 }
 
 LongHappy_8
 {
-First, you have to arrange a celebration at the tavern of Saint-Pierre!
+Ale przedtem muszę zorganizować przyjęcie w tawernie Saint-Pierre!
 }
 
 LongHappy_9
 {
-First, you have to arrange a celebration on Isla Tesoro!
+Ale przedtem muszę zorganizować uroczystość na Isla Tesoro!
 }
 
 LongHappy_10
@@ -87,7 +87,7 @@ Dodson
 
 LongHappy_19
 {
-Some time has passed...@<NewStr()>The party is in full swing...
+Mineło troche czasu...@<NewStr()>Impreza jest już rozkręcona...
 }
 
 LongHappy_20
@@ -125,45 +125,45 @@ Black Dragon
 
 LongHappy_27
 {
-Jan Svensson escaped on a boat!
+Jan Svensson uciekł łodzią!
 }
 LongHappy_28
 {
-Steven Dodson escaped on a boat!
+Steven Dodson uciekł łodzią!
 }
 LongHappy_29
 {
-Marcus Tyrex escaped on a boat!
+Marcus Tyrex uciekł łodzią!
 }
 
 LongHappy_30
 {
-Bernard Vensan, an old comrade and associate of Marcus Tyrex, is dead, fell while clearing the town of the remnants of mercenaries rushing through the catacombs. He did not live to victory just a few hours... ~
+Bernard Vensan, stary towarzysz i współpracownik Marcusa Tyrexa, nie żyje, zginął podczas oczyszczania miasta z resztek najemników pędzących przez katakumby. Nie dożył zwycięstwa, które osiągneliśmy kilka godzin później... ~
 }
 
 LongHappy_31
 {
-And that's not all - Marcus Tyrex himself went missing when his ship was boarded. Jan Swenson organized the search, and I hope that the old baron was too tough for the gun balls and waves of the sea - this will be an irreparable loss for the entire Brethren of the Coast. ~
+I to nie wszystko - sam Marcus Tyrex zaginął, gdy jego statek został zaatakowany. Jan Swenson zorganizował poszukiwania i mam nadzieję, że ten stary baron był wystarczająco twardy na kule i fale morskie - to będzie niepowetowana strata dla wszystkich członków Bractwa Wybrzeża. ~
 }
 
 LongHappy_32
 {
-The losses did not pass me by either. It is always difficult when a war takes away peaceful lives. Gino Gvineili - a good friend and a brilliant scientist accidentally fell victim to this treacherous attack. I will return to Antigua to bury him as it should.
+Straty również mnie nie ominęły. Zawsze jest ciężko, gdy wojna odbiera życia niewinnym ludziom. Gino Gvineili - dobry przyjaciel i genialny naukowiec przypadkowo padł ofiarą tego zdradzieckiego ataku. Wrócę na Antigue, aby go pochować, jak należy.
 }
 
 LongHappy_33
 {
-The grave losses did not pass me by either. Tichingitu, my loyal comrade and officer, covered my wife and Dannielle Hawk from a bullet shot. The killer got what he deserved, but by what cost? And it's like not enough. Gino Gvineili - a good friend and a brilliant scientist accidentally fell victim to this treacherous attack. I will return to Antigua to bury them as it should.
+Ciężkie straty również mnie nie ominęły. Tichingitu, mój wierny towarzysz i oficer, osłaniał moją żonę i Dannielle Hawk przed postrzałem. Zabójca dostał to, na co zasłużył, ale jakim kosztem? I to jakby za mało. Gino Gvineili - dobry przyjaciel i genialny naukowiec przypadkowo padł ofiarą tego zdradzieckiego ataku. Wrócę do Antigui, aby ich pochować, jak należy.
 }
 
 LongHappy_34
 {
-But there is also a glimmer of hope - Tichingitu, my comrade in arms, was lost somewhere at the very beginning of the battle. I didn't even expect to see him alive, but Jan said that he was seen with the niece of the local bartender, leaving to the side of the Sabo-Matila Cove bay before the attack. I was ready to think anything - but a drunken escape with a young lady? Is that Tichingitu?! In any case, it is necessary to find them as soon as possible, until the enraged uncle picked up a heavy club.
+Ale jest też promyk nadziei - Tichingitu, mój towarzysz broni, zaginął gdzieś na samym początku bitwy. Nie spodziewałem się nawet, że zobaczę go żywego, ale Jan powiedział, że widziano go z siostrzenicą miejscowego barmana, odchodzącego na bok zatoki Sabo-Matila Cove przed atakiem. Byłem gotów pomyśleć o wszystkim - ale pijacka ucieczka z młodą damą? Czy to Tichingitu?! W każdym razie trzeba ich jak najszybciej znaleźć, dopóki wściekły wuj nie podniesie ciężkiej pałki.
 }
 
 LongHappy_35
 {
-Tichingitu has recovered and ready to begin his duties as an officer
+Tichingitu wyzdrowiał i jest gotowy do podjęcia obowiązków oficera
 }
 
 LongHappy_36
@@ -195,15 +195,15 @@ Vensan
 
 LongHappy_42
 {
-@<GetFullName(sld)> added to your team as an officer
+@<GetFullName(sld)> został dodany do twojego zespołu jako oficer
 }
 
 LongHappy_43
 {
-You can assign @<GetFullName(sld)> as boarding officer
+Możesz przydzielić @<GetFullName(sld)> jako gwardzistę
 }
 
 LongHappy_44
 {
-Next morning...
+Następnego ranka...
 }

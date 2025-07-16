@@ -143,6 +143,11 @@ This character can occupy two officer positions at once.
 Officers only.		 
 }
 
+perkByWorkerShort
+{
+This character can occupy two officer positions at once
+}
+
 ByWorker2	{Jack of All Trades}
 perkByWorker2
 {
@@ -153,6 +158,11 @@ This character can occupy three officer positions at once.
 ~
 ~
 Officers only.		
+}
+
+perkByWorker2Short
+{
+This character can occupy three officer positions at once
 }
 
 Trustworthy	{Trustworthy}
@@ -305,15 +315,16 @@ perkSailingProfessional
 The speed and maneuverability of the ship is increased by 20%. 3/4 of the ordinary ships on the world map can be bypassed.
 }
 
-SeaDogProfessional	{Scourge of the Seas}
+SeaDogProfessional	{Terror of the Seas}
 perkSeaDogProfessional
 {
-Even the inveterate adventurers and brigands will not dare to try their luck when they see the flag of the Scourge of the Seas. Protects from attacks by enemy squadrons. Doesn't work on small ships.
+Upon seeing the pennant of the Terror of the Seas, even the most daring adventurers and bandits do not risk tempting fate. Increases Fleet Power by 30%.
 ~
 ~
 ~
-Ability available only for player
+The skill is available only to the player, requires level 25 to acquire.
 }
+
 
 FlagPir	{Pirate Flag}
 perkFlagPir

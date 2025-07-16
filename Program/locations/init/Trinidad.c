@@ -1136,14 +1136,14 @@ int LocationInitTrinidad(int n)
 	n = n + 1;
 
 	//////////////////////////////////////////////////////////////////////////////////////////
-	//Бухта Скарборо
+	// Бухта Скарборо
 	//////////////////////////////////////////////////////////////////////////////////////////
 	locations[n].id = "Shore59";
 	locations[n].id.label = "Shore59";
 	locations[n].image = "loading\outside\harbor3.tga";
 	//Sound
 	locations[n].type = "seashore";
- 	locations[n].islandId = "Trinidad";
+ 	locations[n].islandId = "Tobago";
 	//Models
 	//Always
 	locations[n].filespath.models = "locations\Outside\Shores\Shore08";
@@ -1183,7 +1183,48 @@ int LocationInitTrinidad(int n)
 	locations[n].reload.l2.autoreload = "0";
 	locations[n].reload.l2.label = "Sea";
 	locations[n].locators_radius.reload.boat = 9.0;
-
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////////////////
+	// Джунгли Тобаго
+	//////////////////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "Tobago_Jungle_01";
+	locations[n].id.label = "Jungle";
+	locations[n].image = "loading\outside\jungle_" + rand(3) + ".tga";
+	locations[n].MustSetReloadBack = true;
+	//Sound
+	locations[n].type = "jungle";
+	locations[n].islandId = "Tobago";
+	//Models
+	//Always
+	locations[n].filespath.models = "locations\Outside\Jungles\Jungle3";
+	Locations[n].models.always.jungle = "jungle3";	
+	Locations[n].models.always.locators = "jungle3_lcommon";		
+	Locations[n].models.always.grassPatch = "jungle3_grass";
+	Locations[n].models.always.grassPatch.texture = "grass\grassshore.tga.tx";	
+	Locations[n].models.always.l1 = "plan1";
+	Locations[n].models.always.l1.level = 9;
+	Locations[n].models.always.l1.tech = "LocationModelBlend";
+	Locations[n].models.always.l2 = "plan2";
+	Locations[n].models.always.l2.level = 8;
+	Locations[n].models.always.l2.tech = "LocationModelBlend";
+	Locations[n].models.always.l3 = "plan3";
+	Locations[n].models.always.l3.level = 7;
+	Locations[n].models.always.l3.tech = "LocationModelBlend";	
+	//Day
+	locations[n].models.day.charactersPatch = "jungle3_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "jungle3_patch";	
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "Shore59";
+	locations[n].reload.l1.emerge = "reload1";
+	locations[n].reload.l1.autoreload = "1";
+	locations[n].reload.l1.label = "Beach";
+	locations[n].locators_radius.reload.reload1 = 2.0;
 	n = n + 1;
 
 	return n;

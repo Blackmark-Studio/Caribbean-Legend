@@ -1072,6 +1072,15 @@ Holy Mercy has an experienced and loyal crew, personally selected by Alamida. Ea
 Lady Beth is a true beauty. A miracle of England's maritime genius, commanded by Albert Blackwood, former officer of the royal navy. Indeed, not everyone manages to desert so spectacularly! He left service, killed a brilliant career, and stole a warship - all for treasure hunting!
 And not in vain. He's already found enough to buy half of Barbados, but he still wants more. If you meet him at sea - don't even try to intercept him. Too good a ship, and the captain is experienced and cautious. Lately, Blackwood has been frequenting Cayman - digging day and night, working people to death. If you decide to check it out - take no less than sixty men and good firearms... Actually, even that might not be enough.
 I hope you know how to shoot, since a company of former marine infantry of Colonel Fox deserted with him. Professionals, nothing like common cutthroats. And never attack him in French ports - he has protection and patrons there, receiving a share of his findings.
+#TEXT	3
+"Memento"
+***********************
+The 'Memento' — a true pirate legend. A black brig captained by Mortimer Grim.
+Grim preys exclusively on slavers. They say he frees the slaves and buys out the condemned with hard gold. A noble cause — if you don’t know the rest. 
+If you’re not hauling human cargo, Grim won’t touch you. He’s odd, but he’s got his principles. But if you’ve got slaves in your hold... pray you don’t spot black sails on the horizon. 
+The 'Memento' sails between pirate havens but rarely docks. The crew lives on board for months, as if afraid to set foot on solid ground. Rumor has it the ship once survived a monstrous epidemic — that’s why the crew is so hard to kill.
+If you plan to take them on, pack more cannons. Boarding the 'Memento' is near impossible — the crew fights like they’re possessed, like they don’t fear death. Only way to beat them is to blast the ship to splinters and take away their shelter. Splinters don’t scare them, but direct grapeshot hits — that’s another matter.
+Good luck. And remember death.
 
 #QUEST StoriesTreasures
 Treasure Tales
@@ -1193,9 +1202,9 @@ Roger, read carefully and follow these instructions to the letter.
 Some mad British treasure hunter has been sniffing around the Caribbean. If you spot red coats with shovels, run like the devil himself is at your heels - they show no mercy to rivals. Clear out all our stashes, gather everything of value, then make for Antigua where our man awaits - I've made the arrangements. We'll lose some gold in the washing, but the rest will come out clean as a whistle. Stick to British territories - this Blackwood character won't dare show his face there. You can operate without looking over your shoulder. No idea what grudge they hold against him, but his vessel only docks at French harbors.
 #TEXT	23
 ************************************************************
-Jan, if you're reading this, then know - my vengeance remains unfulfilled, even here in the Caribbean. Our quarry is not here. The memory of my father's sword grows dim in my mind, and our enemy's face fades to shadow.
+Hans, if you're reading this, then know - my vengeance remains unfulfilled, even here in the Caribbean. Our quarry is not here. The memory of my father's sword grows dim in my mind, and our enemy's face fades to shadow.
 We've weathered much together, old friend, yet my rage remains untamed. Had I foreseen the consequences, I would have sought peace with greater vigor. Perhaps fewer souls would have crossed the final threshold. Tell Teresa I love her still and kept my vows, though I'll never survive the journey home. This chest holds all I've earned through blood and steel, though the taste of idle comfort has long since turned to ash. Perhaps you can still savor it.
-I.
+H.
 #TEXT	24
 ************************************************************
 René, the Caribbean grows more treacherous by the day. Soon our kind will find no harbor here. You and I were among the first to catch wind of Cromwell's new squadron, led by their crown jewel - the Victory. They aim to tame these wild isles and put the Dutch in their place, but my gut tells me this ends badly for everyone involved.
@@ -1351,3 +1360,89 @@ Today I overheard sailors talking in the tavern. "Blackwood is now richer than a
 This expedition will probably be my last. From now on, I'll work according to the new charter - no more recruitment and wasting time in taverns. This island will become my fortress, and the space around it - my feeding ground. Funny - once I was proud of how I rose from the bottom of society. Now I know - you need to fall even lower to rise truly high.
 Just wait for me.
 
+#QUEST SharlieTutorial_Journal
+Captain Ulysse’s Journal
+#TEXT 1
+September 19, 1654  
+We entered the waters of Mare Caribaeum right on schedule. The wind is fair, and there are no incidents.
+
+September 20, 1654  
+An unexpected encounter at sea with a Castilian colleague: spotted the caravel "La Pícara" en route to San José via Dominica. You've strayed quite far, Lorenzo.
+
+September 21, 1654  
+The wind remains favorable. Sailor Paul Lourie managed to get into some dispute with his mates, so Alonso now assigns him the hardest tasks. I must remember to look into this matter.
+
+September 22, 1654  
+The courier lugger "Augustine", registered at the port of Capsterville, conducted a customs inspection of our ship. Our colonial authorities distrust each other so much that the governor-general doesn’t shy away from intercepting and searching major merchant vessels even before they reach their destination ports.
+
+Upon reviewing the passenger list, the lieutenant of the "Augustine" ordered us to drift and await further instructions. Given that we have only one passenger, it’s not hard to guess who brought all this trouble upon me.  
+Good thing they didn’t order us to follow them to Capsterville, but this foolishness will still cost me a tidy sum.  
+I should have a word with that fop and give him a good shake.
+
+#QUEST SharlieTutorial_ListOfSailors
+Note from the Purser
+#TEXT 1
+To be paid:  
+Senior Sailor Alonso Pimentel: 50 doubloons  
+Sailor Henry Chaussone: 35 doubloons  
+Sailor Paul Lourie: 25 doubloons (bloody idiot nearly ruined everything!)
+
+To be collected:  
+From Sailor Germain Chat: 7 pesos for paper ruined by Chantal’s cat  
+From Captain Devegni: 2000 pesos for medical instruments  
+From Passenger Charles de Maure: 30 pesos for a spoiled barrel of fresh water and 200 pesos for a damaged windlass rope
+
+#TEXT 2
+To be paid:  
+Senior Sailor Alonso Pimentel: 50 doubloons  
+Sailor Henry Chaussone: 35 doubloons  
+Sailor Paul Lourie: 25 doubloons (bloody idiot nearly ruined everything!)
+
+To be collected:  
+From Sailor Germain Chat: 7 pesos for paper ruined by Chantal’s cat  
+From Captain Devegni: 2000 pesos for medical instruments  
+From Passenger Charles de Maure: 30 pesos for a spoiled barrel of fresh water
+
+#QUEST GS_Letters
+Notes revealing the true face of a Belizean official
+#TEXT 1
+***************
+Flyut "Bat". Sailing forth on the 14th. Trading voyage Belize to Port Royal. Scant guardsmen aboard. Cargo of sugar cane. My fifth share to be delivered through the usual channels.
+***************
+Pinnace "Wavebreaker". Sets sail on the 26th. Trade passage Belize to Capsterville. Precious ebony aboard. The fools depart with powder spoilt by damp. Remember my portion, lest ye face my displeasure.
+***************
+Galleon "Silver Wind". To weigh anchor the 18th day. Commerce voyage Belize to Blueveld. Human cargo - slaves! Rich plunder this, so see my portion reaches me with haste. The fools sail unescorted.
+***************
+
+#QUEST Memento_Book
+Grim's Journal
+#TEXT 1
+A new assignment from the Admiralty. Transporting "special cargo" to a hostile colony. Captain Mortimer Grim agreed to provide his fine brig for a generous fee. A good man, an honest sailor. His crew is excellent—experienced, loyal people. It's a shame I have to deceive them about the cargo.
+
+And yes, I know how this looks. Secret agent of the English Crown Yorick Graves keeps a journal where he openly shares the secrets of his mission. I don't care! Otherwise, with this kind of work, you'd go mad. Courtney, if you're reading this—kiss my ass!
+
+Mortimer asks too many questions about the cargo. I had to lie—mumbled something about medicine for those suffering from fever in the Caribbean jungle. He believed me, of course. Grim lives in a world where a Royal Navy officer's word still means something.
+
+The cargo was brought aboard in sealed crates. The crew grumbles—the crates are heavy and the smell is odd. Mortimer joked it off with skill. Even made me laugh.
+
+Damn! It got out! The first cases of fever among the crew. Mortimer asks for permission to open the crates, check the medicine. I had to forbid it under threat of court-martial. I hate myself for this.
+
+God have mercy, what have I done... Plague. The captain died yesterday.
+
+Alone.
+
+I talk to Mortimer. Or rather, to what's left of him. He's not angry anymore. He understands. Says everyone gets a chance at redemption. But how do you redeem this? How do you bring these people back?
+
+Saved by natives off the coast of Dominica. The shaman said—let the dead teach the living. What could I possibly teach anyone?
+
+A great battle took place near the island. The survivors washed ashore, ready to continue the slaughter, but I stopped them. I don't know where this strength in me comes from. I don't know if I'm alive or if this is the afterlife. But the Memento won't sail without a crew. And without a ship, I can't atone for my sins.
+
+Yorick Graves is dead, and Mortimer Grim will be remembered as the savior of the doomed. That's how it should be. I hope you appreciate the idea. Now you're part of the Memento. Part of the ship.
+
+We rescued a dozen Indians from a slaver's hold. I gave most of the doubloons to my men, and I'll take the former captives to Dominica.
+
+The shaman tore off the skull and hid it somewhere! Feathered idiot! I would have cut him down with my new cutlass if it weren't for the missionary visiting the tribe.
+
+I told him everything. An incredible feeling. Now I know what to do! "Let the dead teach the living." Of course! It's not enough to save people from chains or the noose. You have to save them from death itself! And you can only do that by making another person go through what I did. Die and come back. Do I pity them? Of course. But I. was right. No one ever pitied me.
+
+I've already found a new skull—not everyone can pass the trial of death. It's even better this way. Let Mortimer's eye sockets stay on Dominica and not see what happens on his ship. He wouldn't understand.

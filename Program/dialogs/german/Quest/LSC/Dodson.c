@@ -1495,7 +1495,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shadows_4":
-			dialog.text = "Ich weiß, du verschwendest nie deine Zeit. Höre dann zu. Joshua Leadbeater war ein gewöhnlicher Kapitän der britischen Marine und er kommandierte die Fregatte 'Neptun', die später zur Legende wurde...";
+			dialog.text = "Ich weiß, du verschwendest nie deine Zeit. Höre dann zu. Joshua Leadbeater war ein gewöhnlicher Kapitän der britischen Marine und er kommandierte die Fregatte 'Neptune', die später zur Legende wurde...";
 			link.l1 = "..., Freund.";
 			link.l1.go = "shadows_5";
 		break;

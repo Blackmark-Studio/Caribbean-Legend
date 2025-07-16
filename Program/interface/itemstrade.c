@@ -134,7 +134,12 @@ void IDoExit(int exitCode)
 	{
 		LAi_SetPlayerType(pchar);
 	}
-
+	if(CheckAttribute(&TEV, "Tutor.PopUpTrading"))
+	{
+		DeleteAttribute(&TEV, "Tutor.PopUpTrading");
+		DoQuestFunctionDelay("Tutorial_Trading", 1.0);
+	}
+	
 	DelEventHandler("InterfaceBreak","ProcessBreakExit");
 	DelEventHandler("exitCancel","ProcessCancelExit");
 	DelEventHandler("ievnt_command","ProcCommand");
@@ -360,7 +365,7 @@ void AddToTable()
 			GameInterface.TABLE_LIST.(row).index = i;
 			ShowItemInfo();	
 			sList = "tr" + sti(GameInterface.TABLE_LIST.select);
-			if(CheckAttribute(GameInterface, "TABLE_LIST." + sList + ".index"))
+			if(CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
 			{
 				iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
 				ShowGoodsInfo(iCurGoodsIdx);
@@ -385,7 +390,7 @@ void AddToTable()
 			GameInterface.TABLE_LIST2.(row2).index = i;
 			ShowItemInfo();	
 			sList = "tr" + sti(GameInterface.TABLE_LIST2.select);
-			if(CheckAttribute(GameInterface, "TABLE_LIST2." + sList + ".index"))
+			if(CheckAttribute(&GameInterface, "TABLE_LIST2." + sList + ".index"))
 			{
 				iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList).index);
 				ShowGoodsInfo(iCurGoodsIdx);
@@ -456,7 +461,7 @@ void AddToTable()
 			}			
 			ShowItemInfo();	
 			sList = "tr" + sti(GameInterface.TABLE_LIST.select);
-			if(CheckAttribute(GameInterface, "TABLE_LIST." + sList + ".index"))
+			if(CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
 			{
 				iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
 				ShowGoodsInfo(iCurGoodsIdx);
@@ -489,7 +494,7 @@ void AddToTable()
 			}
 			ShowItemInfo();	
 			sList = "tr" + sti(GameInterface.TABLE_LIST2.select);
-			if(CheckAttribute(GameInterface, "TABLE_LIST2." + sList + ".index"))
+			if(CheckAttribute(&GameInterface, "TABLE_LIST2." + sList + ".index"))
 			{
 				iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList).index);
 				ShowGoodsInfo(iCurGoodsIdx);
@@ -950,9 +955,9 @@ bool ShowCorrectLastGood()
     {
 		stringRow = "tr" + (selectedRow + 1);
 		if (BuyOrSell == -1) {
-            if (!CheckAttribute(GameInterface, "TABLE_LIST." + stringRow + ".index")) isLastLine = true;
+            if (!CheckAttribute(&GameInterface, "TABLE_LIST." + stringRow + ".index")) isLastLine = true;
         } else {
-            if (!CheckAttribute(GameInterface, "TABLE_LIST2." + stringRow + ".index")) isLastLine = true;
+            if (!CheckAttribute(&GameInterface, "TABLE_LIST2." + stringRow + ".index")) isLastLine = true;
         }
         if (isLastLine)
         {
@@ -961,11 +966,11 @@ bool ShowCorrectLastGood()
             if (selectedRow >= 1)
             {
                 if (BuyOrSell == -1) {
-                    if (CheckAttribute(GameInterface, "TABLE_LIST." + stringRow + ".index")) {
+                    if (CheckAttribute(&GameInterface, "TABLE_LIST." + stringRow + ".index")) {
                         iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(stringRow).index);
                     }
                 } else {
-                    if (CheckAttribute(GameInterface, "TABLE_LIST2." + stringRow + ".index")) {
+                    if (CheckAttribute(&GameInterface, "TABLE_LIST2." + stringRow + ".index")) {
                         iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(stringRow).index);
                     }
                 }
@@ -975,14 +980,14 @@ bool ShowCorrectLastGood()
                 selectedRow = 1;
                 stringRow = "tr" + selectedRow;
                 if (BuyOrSell == -1) {
-                    if (CheckAttribute(GameInterface, "TABLE_LIST2." + stringRow + ".index"))
+                    if (CheckAttribute(&GameInterface, "TABLE_LIST2." + stringRow + ".index"))
                     {
                         iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(stringRow).index);
                         GameInterface.TABLE_LIST2.select = selectedRow;
                         valid = true;
                     }
                 } else {
-                    if (CheckAttribute(GameInterface, "TABLE_LIST." + stringRow + ".index"))
+                    if (CheckAttribute(&GameInterface, "TABLE_LIST." + stringRow + ".index"))
                     {
                         iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(stringRow).index);
                         GameInterface.TABLE_LIST.select = selectedRow;
@@ -1315,14 +1320,37 @@ int GetTradeItemPrice(int itmIdx, int tradeType, ref chr)
 				if(itmtype == ITEM_TRADE_ARTEFACT || sItemid == "potionrum") skillModify *= 30.0;
 				if(sItemid == "jewelry8") skillModify *= 10.0;
 			}	
-			if(chr.Merchant.type == "jeweller")
+			else if(chr.Merchant.type == "jeweller")
 			{
 				if(sItemid == "gold_dublon") 
 				{
 					FinalItmPrice = makeint(itmprice * 1.05);
 					return FinalItmPrice;
 				}	
-			}			
+			}
+			else if(bGlobalTutor)
+			{
+                if(chr.Merchant.type == "SharlieTurorial")
+                {
+                    switch(sItemid)
+                    {
+                        case "obereg_3":  itmprice = 114;  break; //150
+                        case "obereg_5":  itmprice = 114;  break; //150
+                        case "obereg_6":  itmprice = 61;   break; //80
+                        case "obereg_8":  itmprice = 76;   break; //100
+                        case "potionrum": itmprice = 151;  break; //200
+                        case "map_full":  itmprice = 4537; break; //6000
+                        //case "potion1": return 100; break;
+                    }
+                }
+                else if(chr.Merchant.type == "SharlieTurorialK")
+                {
+                    switch(sItemid)
+                    {
+                        case "gold_dublon": return sti(chr.questTemp.GoldPrice); break;
+                    }
+                }
+			}
 		}
 		if(CheckCharacterPerk(pchar,"HT2")) // belamour legendary edition скидка 15%
 		{

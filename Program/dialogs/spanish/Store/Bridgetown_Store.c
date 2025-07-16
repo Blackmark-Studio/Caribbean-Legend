@@ -22,8 +22,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "StoreDone":
-			dialog.text = "Bueno, señor, si el lote es realmente grande, entonces, por supuesto, podemos discutir un descuento razonable.";
-			link.l1 = "¡Maravilloso! Escuché que un nuevo fluyt debería salir a la venta en el astillero cualquier día de estos. Esperaré y compraré ese barco. ¡Aunque he despojado todos los cañones de mi bergantín, todavía no hay suficiente espacio en mi bodega para todas estas mercancías! ¡Pasaré más tarde!";
+			dialog.text = "Bueno, sir, si el lote es realmente grande, entonces, por supuesto, podemos discutir un descuento razonable.";
+			link.l1 = "¡Maravilloso! Escuché que un nuevo filibote debería salir a la venta en el astillero cualquier día de estos. Esperaré y compraré ese barco. ¡Aunque he despojado todos los cañones de mi bergantín, todavía no hay suficiente espacio en mi bodega para todas estas mercancías! ¡Pasaré más tarde!";
 			link.l1.go = "exit";	
 			npchar.quest.HWICTalked = "true";
 			pchar.questTemp.HWIC.Eng.BridgeCounter = sti(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
@@ -41,7 +41,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth":
-			dialog.text = "¡Ja! Recuerdo a ese tipo extraño. Confiaba en un chisme tonto de que Guadalupe necesitaría desesperadamente vainilla porque una gran caravana de comerciantes europeos haría una parada allí para comprar tantas especias como pudieran llevar. \nEscucho tales tonterías cada mes, pero Marchais se lo tomó muy en serio. Pasó una semana aquí, me dijo que reuniera suficiente vainilla para llenar sus bodegas de carga. \nParece que gastó cada moneda en esto. Me siento mal por ese hombre, pero no puedo detener a los hombres que quieren volverse locos si así lo desean.";
+			dialog.text = "¡Ja! Recuerdo a ese tipo extraño. Confiaba en un chisme tonto de que Guadalupe necesitaría desesperadamente vainilla porque una gran caravana de comerciantes europeos haría una parada allí para comprar tantas especias como pudieran llevar. \nEscucho tales tonterías cada mes, pero Marchais se lo tomó muy en serio. Pasó una semana aquí, me dijo que reuniera suficiente vainilla para llenar sus bodegas de carga.\nParece que gastó cada moneda en esto. Me siento mal por ese hombre, pero no puedo detener a los hombres que quieren volverse locos si así lo desean.";
 			link.l1 = "¿Entonces, podría estar en Guadalupe ahora mismo?";
 			link.l1.go = "guardoftruth_1";
 		break;

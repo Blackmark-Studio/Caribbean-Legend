@@ -4,7 +4,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Czego chcesz? Pytaj śmiało.","Słucham cię, o co chodzi?"),"To już drugi raz, kiedy próbujesz zapytać...","To już trzeci raz, kiedy znowu próbujesz zapytać...","Kiedy to się skończy?! Jestem zajętym człowiekiem, pracującym nad sprawami kolonii, a ty wciąż próbujesz o coś pytać!","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Czego chcesz? Pytaj śmiało.","Słucham cię, o co chodzi?"),"To już drugi raz, kiedy próbujesz zapytać...","To już trzeci raz, kiedy znowu próbujesz zapytać...","Kiedy to się skończy?! Jestem zajętym człowiekiem, pracującym nad sprawami kolonii, a ty wciąż próbujesz o coś pytać!","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniam zdanie...","Nie teraz. Nieodpowiednie miejsce i czas."),"Prawda... Ale później, nie teraz...","Zapytam... Ale trochę później...","Przykro mi, "+GetAddress_FormToNPC(NPChar)+"...",npchar,Dialog.CurrentNode);			  
 			link.l1.go = "exit";
 			/* //--> Бремя гасконца
@@ -48,6 +48,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "To było niefortunne, monsieur";
                 link.l1.go = "goldengirl_10";
 			}
+			// andre39966 ===> В плену великого улова.
+			if (CheckAttribute(pchar, "questTemp.VPVL_Magor_Dialogue"))
+			{
+				link.l1 = "Wasza Ekscelencjo, weszłpan"+GetSexPhrase("em","am")+" w posiadanie informacji dotyczących nielegalnego handlu, który wkrótce będzie miał miejsce na tych brzegach. Ośmielam się twierdzić, że ta sprawa może okazać się godna pańskiej uwagi.";
+				link.l1.go = "VPVL_Magor_1";
+				break;
+			}
+			if (CheckAttribute(pchar, "questTemp.VPVL_GovernorDialogueAvailable"))
+			{
+				link.l1 = "Wasza Ekscelencjo, przybywam, aby dowiedzieć się o losie tego przemytniczego statku, o którym rozmawialiśmy.";
+				link.l1.go = "VPVL_Magor_4";
+			}
+			//  <=== В плену великого улова.  
 		break;
 		
 		case "Sharlie_junglejew":
@@ -288,6 +301,51 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
 			pchar.questTemp.GoldenGirl = "find_girl";
 		break;
+		
+		// В плену великого улова, andre39966
+		case "VPVL_Magor_1":
+			dialog.text = "Przemyt, powiadasz? Hmm... niezwykle intrygujące. Proszę, oświeć mnie szczegółami swojego odkrycia.";
+			link.l1 = "Trzy dni temu statek załadowany kontrabandą miał zrzucić kotwicę w Zatoce Le Marin. Statek nie dotarł na spotkanie, ale mam solidne powody, by wierzyć, że wkrótce zawinie do portu. Być może pańscy ludzie mogliby przygotować odpowiednie powitanie dla tych opryszków, gdy przybędą, Wasza Ekscelencjo.";
+			link.l1.go = "VPVL_Magor_2";
+			pchar.questTemp.VPVL_DontSpawnSmugglersShip = true; 
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "VPVL_Magor_2":
+			dialog.text = "Bezimiennny statek przewożący nienazwany ładunek... I pan"+GetSexPhrase("","i")+" zakłada, że powinienem wysłać siły Jego Królewskiej Mości na podstawie tak mglistych informacji?";
+			link.l1 = "Wasza Ekscelencjo, przyznaję, że szczegóły są skąpe. Ale proszę pozwolić mi opowiedzieć, w jaki sposób te informacje weszły w moje posiadanie. (opowiada)";
+			link.l1.go = "VPVL_Magor_3";
+		break;
+		
+		case "VPVL_Magor_3":
+			dialog.text = "Dobrze, sprawdzimy pan"+GetSexPhrase("a","i")+" informacje. Jeśli statek z kontrabandą rzeczywiście zrzuci kotwicę u wybrzeży Le Marin, pan"+GetSexPhrase("","i")+", Kapitanie, zostanie sowicie nagrodzon"+GetSexPhrase("y","a")+" za swoją służbę dla Korony. Proszę wrócić do mnie za trzy dni. Do tego czasu mgła niepewności powinna się rozwiać.";
+			link.l1 = "Świetnie. Zatem do zobaczenia za trzy dni.";
+			link.l1.go = "VPVL_Delete_Spawn_Ship";
+			AddDialogExitQuest("VPVL_SetGovernorDialogueFlag");
+			AddQuestRecord("VPVL", "6");
+		break;
+		
+		case "VPVL_Magor_4":
+			dialog.text = "Ach, Kapitanie! Przyjemność znów pan"+GetSexPhrase("a","ią")+" gościć. pan"+GetSexPhrase("a","i")+" informacje okazały się niezwykle cenne. Moi ludzie przechwycili statek dokładnie tam, gdzie pan"+GetSexPhrase("","i")+" wskazał"+GetSexPhrase("","a")+". Oto—sto pięćdziesiąt hiszpańskich dublonów, świeżo wybitych i ciężkich w sakiewce. Proszę je przyjąć wraz z moją wdzięcznością.";
+			link.l1 = "Jestem bardzo wdzięczny/wdzięczna za pańskie względy, Wasza Ekscelencjo. To dobry los, że mój okruch informacji posłużył interesom Korony. Gdyby nadarzyła się ponownie okazja, proszę wiedzieć, że moje zbrojne ramię i bystrze oko pozostają do pańskiej dyspozycji.";
+			link.l1.go = "VPVL_Delete_Flag";
+			AddItems(PChar, "gold_dublon", 150);
+			ChangeCharacterNationReputation(pchar, FRANCE, 5);
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "VPVL_Delete_Flag":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.VPVL_GovernorDialogueAvailable");
+			DeleteAttribute(pchar, "questTemp.VPVL_DontSpawnSmugglersShip");
+		break;
+		
+		case "VPVL_Delete_Spawn_Ship":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.VPVL_Magor_Dialogue");
+			AddDialogExitQuest("VPVL_KillCapitanOfSmuggler");
+		break;
+		// <=== В плену великого улова
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

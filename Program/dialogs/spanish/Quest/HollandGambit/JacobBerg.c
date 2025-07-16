@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "HollJacob_inRoom_1":
-			dialog.text = "¡Argh... ¿Qué?! ¿Estás maldito... espera! ¡Eres un maldito perro inglés! ¡Al diablo con esto! Me han rastreado después de todo... ¡Es el final del camino para ti! ¡No voy a rendirme!";
+			dialog.text = "¡Argh... ¿Qué?! ¿Estás demente?... ¡Espera! ¡Eres un maldito perro inglés! ¡Al diablo con esto! Me han rastreado después de todo... ¡Es el final del camino para ti! ¡No voy a rendirme!";
 			link.l1 = "Bueno, no necesito que te rindas...";
 			link.l1.go = "HollJacob_inRoom_fight";			
 		break;

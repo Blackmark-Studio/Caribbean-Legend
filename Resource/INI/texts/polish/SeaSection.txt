@@ -45,17 +45,21 @@ seg_Powder 			{gunpowder}
 seg_Brick 			{bricks}
 seg_Medicament 		{medicine}
 
-seg_Cannon_3		{3p. falconets}
-seg_Cannon_6		{6-pounders}
-seg_Cannon_12		{12-pounders}
-seg_Cannon_16		{16-pounders}
-seg_Cannon_20		{20-pounders}
-seg_Cannon_24		{24-pounders}
-seg_Cannon_32		{32-pounders}
-seg_Cannon_36		{36-pounders}
-seg_Cannon_42		{42-pounders}
+seg_Cannon_3		{3-funtowe}
+seg_Cannon_6		{6-funtowe}
+seg_Cannon_8		{8-funtowe}
+seg_Cannon_12		{12-funtowe}
+seg_Cannon_16		{16-funtowe}
+seg_Cannon_18		{18-funtowe}
+seg_Cannon_20		{20-funtowe}
+seg_Cannon_24		{24-funtowe}
+seg_Cannon_32		{32-funtowe}
+seg_Cannon_36		{36-funtowe}
+seg_Cannon_42		{42-funtowe}
 seg_Culverine_8		{Semi-couleuvrines}
 seg_Culverine_18	{Couleuvrines}
 seg_Culverine_36	{Full couleuvrines}
 
 sea_exp_add			{+%1 experience obtained}
+
+

@@ -3,6 +3,7 @@ void ProcessDialogEvent()
 {
 	ref NPChar, sld;
 	aref Link, NextDiag;
+    string sTemp;
 	int rate;
 
 	DeleteAttribute(&Dialog,"Links");
@@ -332,7 +333,9 @@ void ProcessDialogEvent()
 		
 		case "agree_1":
 			DialogExit();
-			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, 10+rand(5), false);
+            rate = 10 + rand(5);
+            rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, rate, false);
 			pchar.GenQuest.BenuaNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.BenuaNation), 0));
 			npchar.quest.relation = "true";
 		break;
@@ -731,7 +734,6 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LH_abbat_35":
-			string sTemp;
 			if (sti(pchar.questTemp.LongHappy.Mistake) > 1) sTemp = "(шепчет) Шарль, "+GetSexPhrase("сын мой","дочь моя")+", просто открывай рот, умоляю - ни звука...";
 			else sTemp = "";
 			dialog.text = "Молодожёны, опуститесь на колени, и помолимся вместе. Oratio fidelium. "+sTemp+"";

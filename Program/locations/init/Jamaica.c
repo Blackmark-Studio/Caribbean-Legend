@@ -77,7 +77,7 @@ int LocationInitJamaica(int n)
 	locations[n].reload.l1.emerge = "reload_1";
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "Sea";
-	locations[n].locators_radius.reload.reload1_back = 1.8;
+	locations[n].locators_radius.reload.reload1_back = 3.0;
 
 	locations[n].reload.l2.name = "reload2_back";
 	locations[n].reload.l2.go = "Jamaica";

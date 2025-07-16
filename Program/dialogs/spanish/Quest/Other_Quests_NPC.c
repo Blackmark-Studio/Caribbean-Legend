@@ -128,7 +128,7 @@ void ProcessDialogEvent()
 
 	case "Rat_lover_2":
 		dialog.text = "¡No estoy mintiendo, lo juro! Dijo que desembarcó en una pequeña isla y llegó aquí en un bote... ¡Debe estar allí! ¡No me hagas daño!";
-		link.l1 = "Está bien, parece que dices la verdad. Quédate aquí y mantente callado. Y trata de hacer amigos de una forma más inteligente en el futuro. Pero, ya sabes, lo veo en tus ojos y me dicen que no tienes sesos.";
+		link.l1 = "Está bien, parece que dices la verdad. Quédate aquí y mantente callado. Y trata de hacer amigos de una forma más inteligente en el futuro. Pero, lo veo en tus ojos y me dicen que no tienes sesos.";
 		link.l1.go = "Rat_lover_3";
 		pchar.quest.Slavetrader_RatAttack.win_condition.l1 = "location";
 		pchar.quest.Slavetrader_RatAttack.win_condition.l1.location = "Tortuga"; // отправляем в локацию
@@ -173,7 +173,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Contraoffer_patrol_1":
-		if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > drand(120))
+		if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > hrand(120))
 		{
 			dialog.text = "¿No lo sabías, eh? Hmm... parece que no estás mintiendo. Pero, sin embargo, has violado la ley. No te arrestaré, pero debo hacer que pagues una multa. Y la carga... hablaremos de ella con el segundo participante del trato.";
 			link.l1 = "¿Y cuánto es esa multa?";
@@ -191,10 +191,10 @@ void ProcessDialogEvent()
 
 	case "Contraoffer_patrol_pay1":
 		iCGood = sti(pchar.GenQuest.Contraoffer.Trader.Goods);
-		if (GetSummonSkillFromName(pchar, SKILL_FORTUNE) > drand(120))
+		if (GetSummonSkillFromName(pchar, SKILL_FORTUNE) > hrand(120))
 		{
-			dialog.text = "Ahora estás hablando... Vamos a ver tus monedas... Creo que he oído un número bastante específico - " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ)) + ". Ya que ahora tenemos tres participantes, me gustaría obtener " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.PatrolSumm)) + ". Eso es de ti y lo mismo de tu amigo.";
-			link.l1 = "Claro, oficial. Aquí están mis monedas relucientes, o, lo siento, tus monedas relucientes - las acabas de dejar caer en la playa por accidente... Y no hay " + GetGoodsNameAlt(iCGood) + " aquí, ja-ja, como te he dicho.";
+			dialog.text = "Ahora estás hablando... Vamos a ver tus monedas... Creo que he oído un número bastante específico, " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ)) + ". Ya que ahora tenemos tres participantes, me gustaría obtener " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.PatrolSumm)) + ". Eso es de ti y lo mismo de tu amigo.";
+			link.l1 = "Claro, oficial. Aquí están mis monedas relucientes, o, lo siento, tus monedas relucientes. Las acabas de dejar caer en la playa por accidente... Y no hay " + GetGoodsNameAlt(iCGood) + " aquí, ja-ja, como te he dicho.";
 			link.l1.go = "Contraoffer_patrol_complete1";
 			link.l2 = "¡Caray! Eres demasiado codicioso, oficial. ¿No te enseñó tu madre que la avaricia no es buena? Supongo que me saldría más barato lidiar contigo con mi espada.";
 			link.l2.go = "Contraoffer_patrol_fight";
@@ -268,7 +268,7 @@ void ProcessDialogEvent()
 		// Jason --> ----------------------------------- Неудачливый вор --------------------------------------------
 	case "Device_poorman":
 		dialog.text = "Buen día. ¿Quieres algo?";
-		link.l1 = "Lo hago, amigo. Supongo que eres mi hombre. Fuiste tú quien ha robado " + pchar.GenQuest.Device.Shipyarder.Type + "  ¿del astillero local? Todo lleva a ti, así que no discutas.";
+		link.l1 = "Así es, amigo. Supongo que eres a quien busco. ¿Fuiste tú quien ha robado " + pchar.GenQuest.Device.Shipyarder.Type + " del astillero? Todo lleva a ti, así que no discutas.";
 		link.l1.go = "Device_poorman_1";
 		break;
 
@@ -278,8 +278,8 @@ void ProcessDialogEvent()
 		case 0: // выбросил
 			if (sti(pchar.GenQuest.Device.Shipyarder.Chance2) != 1)
 			{
-				dialog.text = "¡Le ruego, mi señor! Sí, he robado esta cosa extraña del astillero. Pero no pude venderla, nadie necesita tal objeto. Así que me deshice de ella. Perdóneme, buen señor, culpe a mi hambre, no a mí... ¡Nunca me atrevería a robar nada de otra manera!";
-				link.l1 = "Eso es un problema... Y tampoco te necesito. Necesito encontrar eso " + pchar.GenQuest.Device.Shipyarder.Type + ". Dime ¿dónde lo tiraste?";
+				dialog.text = "¡Le ruego, mi señor! Sí, he robado esa cosa extraña del astillero. Pero no pude venderla, nadie necesita tal objeto. Así que me deshice de ella. Perdóneme, buen señor, culpe a mi hambre, no a mí... ¡Nunca me atrevería a robar nada de otra manera!";
+				link.l1 = "Eso es un problema... Y tampoco te necesito. Necesito encontrar ese " + pchar.GenQuest.Device.Shipyarder.Type + ". Dime ¿dónde lo tiraste?";
 				link.l1.go = "Device_poorman_0_1";
 			}
 			else // просто отдаст
@@ -290,12 +290,12 @@ void ProcessDialogEvent()
 			}
 			break;
 		case 1: // упирается, хитрый или храбрый
-			dialog.text = "¿Qué quieres decir? ¿Qué es " + pchar.GenQuest.Device.Shipyarder.Type + "¿ No lo entiendo!";
+			dialog.text = "¿Qué quieres decir? ¿Qué es " + pchar.GenQuest.Device.Shipyarder.Type + "? ¡No lo entiendo!";
 			link.l1 = "¡Lo obtendré cuando te registre a ti o a tu cadáver! ¡Dámelo ahora!";
 			link.l1.go = "Device_poorman_1_1";
 			break;
 		case 2: // трусливый
-			dialog.text = "Oh... ¿Cuál es el " + pchar.GenQuest.Device.Shipyarder.Type + "¿Yo... y qué es eso?";
+			dialog.text = "Oh... ¿Qué es " + pchar.GenQuest.Device.Shipyarder.Type + "? Oye... ¡¡¿QUÉ ES ESO?!!";
 			link.l1 = "No intentes hacerte el tonto o escapar, te atraparé de todos modos. Déjame revisar tus bolsillos...";
 			link.l1.go = "Device_poorman_2_1";
 			break;
@@ -318,7 +318,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Device_poorman_0_2": // получили девайс
-		dialog.text = "  Aquí,  tómalo.  ¡Gracias,  buen  señor! ";
+		dialog.text = "Aquí, tómalo. ¡Gracias, buen señor!";
 		link.l1 = "Bueno, debe ser lo que estaba buscando... ¡ja! Ahora eres libre de irte. Muévete. Y ten cuidado la próxima vez.";
 		link.l1.go = "exit";
 		TakeNItems(pchar, "Tool", 1);
@@ -330,7 +330,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Device_poorman_1_1":
-		pchar.GenQuest.Device.Shipyarder.Poorsumm = 1000 + drand(1000);
+		pchar.GenQuest.Device.Shipyarder.Poorsumm = 1000 + hrand(1000);
 		dialog.text = "Escucha, ¿estás hablando de este instrumento? ¡Pertenece a mí y no lo he robado! Y no te lo voy a dar gratis. Si lo quieres, págame " + FindRussianMoneyString(sti(pchar.GenQuest.Device.Shipyarder.Poorsumm)) + ".";
 		if (sti(pchar.money) >= sti(pchar.GenQuest.Device.Shipyarder.Poorsumm))
 		{
@@ -390,7 +390,7 @@ void ProcessDialogEvent()
 		else // храбрый попался
 		{
 			dialog.text = "Bueno, ¡veamos quién apuñalará a quién, capitán!";
-			link.l1 = "¿Te atreves a amenazarme, escoria?¡";
+			link.l1 = "¿Te atreves a amenazarme, escoria?";
 			link.l1.go = "Device_poorman_fight";
 		}
 		break;
@@ -488,7 +488,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "PostProfHunters_1":
-		dialog.text = "Te conozco, capitán. Ahora directo al grano. Acabas de recibir " + pchar.questTemp.WPU.Current.Add + " en " + XI_ConvertString("Colony" + pchar.questTemp.WPU.Postcureer.City + "Gen") + ". No trates de negarlo, lo sabemos con certeza - después de todo, hemos estado buscando este documento durante unos días.";
+		dialog.text = "Te conozco, capitán. Ahora directo al grano. Acabas de recibir " + pchar.questTemp.WPU.Current.Add + " en " + XI_ConvertString("Colony" + pchar.questTemp.WPU.Postcureer.City + "Gen") + ". No trates de negarlo, lo sabemos con certeza. Después de todo, hemos estado buscando este documento durante unos días.";
 		link.l1 = "Ahora veo. ¿Y qué?";
 		link.l1.go = "PostProfHunters_2";
 		break;
@@ -511,7 +511,7 @@ void ProcessDialogEvent()
 		dialog.text = "Fue tu decisión...";
 		link.l1 = "...";
 		link.l1.go = "PostHunters_fight";
-		TraderHunterOnMap(); // если деремся - запускаем ДУ вдогонку
+		TraderHunterOnMap(false); // если деремся - запускаем ДУ вдогонку
 		break;
 
 	case "PostHunters_fight":
@@ -646,7 +646,7 @@ void ProcessDialogEvent()
 	case "PostAgent_inTavern_5":
 		NextDiag.currentnode = "PostAgent_inTavern_6";
 		RemoveItems(PChar, pchar.questTemp.WPU.Current.Item, 1);
-		pchar.questTemp.WPU.Postcureer.AgentChance = drand(4); // шанс, что раскроют обман - 20%
+		pchar.questTemp.WPU.Postcureer.AgentChance = hrand(4); // шанс, что раскроют обман - 20%
 		DialogExit();
 		AddDialogExitQuest("PostAgent_inTavern_Room_end");
 		break;
@@ -698,8 +698,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "DisasterCap_1":
-		dialog.text = "¡Oh! ¿Y cómo te enteraste del " + pchar.questTemp.WPU.Escort.ShipName + "¿Sí, soy su capitán. O lo era... El barco se hundió no muy lejos de aquí.";
-		link.l1 = "Ah, entonces te he encontrado... Permíteme presentarme - " + GetFullName(pchar) + ". Estoy aquí por el pedido del maestro del puerto de " + XI_ConvertString("Colony" + pchar.questTemp.WPU.Escort.StartCity + "Gen") + ".  Me habló brevemente sobre los problemas de tu caravana y me envió a buscar tu barco.";
+		dialog.text = "¡Oh! ¿Y cómo te enteraste del " + pchar.questTemp.WPU.Escort.ShipName + "? Sí, soy su capitán. O lo era... El barco se hundió no muy lejos de aquí.";
+		link.l1 = "Ah, entonces te he encontrado... Permíteme presentarme, " + GetFullName(pchar) + ". Estoy aquí por el pedido del maestro del puerto de " + XI_ConvertString("Colony" + pchar.questTemp.WPU.Escort.StartCity + "Gen") + ".  Me habló brevemente sobre los problemas de tu caravana y me envió a buscar tu barco.";
 		link.l1.go = "DisasterCap_2";
 		break;
 
@@ -763,7 +763,7 @@ void ProcessDialogEvent()
 
 	case "Badboy_1":
 		dialog.text = "Sí, lo soy. ¿Y cuál es tu negocio?";
-		link.l1 = "Es bastante simple. Hay alguien en este pueblo que está harto de tus trucos. Esta persona está cansada de ellos. Ahora te miro y veo por qué. No te vuelvas a presentar en el burdel local o tendrás problemas. ¿Entendido?";
+		link.l1 = "Es bastante simple. Hay alguien en este pueblo que está harto de tus trucos. Esta persona está cansada de ellos. Ahora te miro y veo por qué. No te vuelvas a presentar en el burdel o tendrás problemas. ¿Entendido?";
 		link.l1.go = "Badboy_2";
 		break;
 
@@ -932,7 +932,7 @@ void ProcessDialogEvent()
 	case "Sunplace_Store":
 		pchar.quest.SunplaceContinue_Over.over = "yes";
 		dialog.text = "Saludos. ¿Qué quieres?";
-		link.l1 = "¿No eres tú " + pchar.GenQuest.Sunplace.Trader.Enemyname + "¿ No me creerás, ja-ja. Quiero tu cabeza.";
+		link.l1 = "¿No eres tú " + pchar.GenQuest.Sunplace.Trader.Enemyname + "? No me creerás, ja-ja. Quiero tu cabeza...";
 		link.l1.go = "Sunplace_Store_1";
 		link.l2 = "Mm... No... No es nada. Parece que me equivoqué. Disculpa por molestarte.";
 		link.l2.go = "Sunplace_Store_exit";
@@ -940,7 +940,7 @@ void ProcessDialogEvent()
 
 	case "Sunplace_Store_1":
 		dialog.text = "¡Qué broma tan tonta, señor! Explíquese o yo...";
-		link.l1 = "¿Y qué vas a hacer, miserable arenque? Has hecho una mala pasada a un buen hombre y está realmente molesto. Así que reza ahora y hazlo rápido porque tengo prisa.";
+		link.l1 = "¿Y qué vas a hacer, miserable arenque? Le has hecho una mala jugada a un buen hombre y está realmente molesto. Así que reza ahora y hazlo rápido porque tengo prisa.";
 		link.l1.go = "Sunplace_Store_3";
 		break;
 

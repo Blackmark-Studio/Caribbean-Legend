@@ -14,7 +14,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			dialog.text = "Robak. Upewnij się, że poinformujesz deweloperów.";
+			dialog.text = "Błąd. Upewnij się, że poinformujesz deweloperów.";
 			link.l1 = "Dobrze";
 			link.l1.go = "exit";
 		break;
@@ -28,13 +28,13 @@ void ProcessDialogEvent()
 	
 		case "MarginCap_1":
 			dialog.text = "Czyżby? A co jeśli powiem nie?";
-			link.l1 = "W takim razie będę musiał zmusić cię do przemyślenia swojej decyzji kilkoma salwami z moich dział, które w tej chwili są skierowane w twoim kierunku. Nie wyzywaj swojego szczęścia, "+GetAddress_FormToNPC(NPChar)+".";
+			link.l1 = "W takim razie będę musiał zmusić cię do przemyślenia swojej decyzji kilkoma salwami z moich dział, które w tej chwili są skierowane w twoim kierunku. Nie próbuj swojego szczęścia, "+GetAddress_FormToNPC(NPChar)+".";
 			link.l1.go = "MarginCap_2";
 		break;
 		
 		case "MarginCap_2":
-			int MCparam = (6-sti(RealShips[sti(pchar.ship.type)].Class))*100+sti(pchar.ship.Crew.Morale)+sti(pchar.Ship.Crew.Exp.Sailors)+sti(pchar.Ship.Crew.Exp.Cannoners)+sti(pchar.Ship.Crew.Exp.Soldiers);
-			int NPCparam = (6-sti(RealShips[sti(npchar.ship.type)].Class))*100+sti(npchar.ship.Crew.Morale)+sti(npchar.Ship.Crew.Exp.Sailors)+sti(npchar.Ship.Crew.Exp.Cannoners)+sti(npchar.Ship.Crew.Exp.Soldiers);
+			int MCparam = (7-sti(RealShips[sti(pchar.ship.type)].Class))*100+sti(pchar.ship.Crew.Morale)+sti(pchar.Ship.Crew.Exp.Sailors)+sti(pchar.Ship.Crew.Exp.Cannoners)+sti(pchar.Ship.Crew.Exp.Soldiers);
+			int NPCparam = (7-sti(RealShips[sti(npchar.ship.type)].Class))*100+sti(npchar.ship.Crew.Morale)+sti(npchar.Ship.Crew.Exp.Sailors)+sti(npchar.Ship.Crew.Exp.Cannoners)+sti(npchar.Ship.Crew.Exp.Soldiers);
 			if (MCparam > NPCparam)//отдаст сам
 			{
 				dialog.text = "Nie mam więc wyboru. Los mojej załogi jest dla mnie cenniejszy niż los jednego człowieka. Ale nie ujdzie ci to na sucho! Nie zapomnę tego!";
@@ -44,7 +44,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Radziłbym ci opuścić mój statek, panie, póki jeszcze ci na to pozwalam. Nie próbuj mnie straszyć. I nie waż się atakować mojego statku, w przeciwnym razie zostaniesz natychmiast odparty. Wynoś się, póki jestem jeszcze w dobrym nastroju!";
-				link.l1 = "Ostrzegłem cię. Jestem w drodze. Do zobaczenia wkrótce, "+GetAddress_FormToNPC(NPChar)+"!";
+				link.l1 = "Zostałeś ostrzeżony. Jestem w drodze. Do zobaczenia wkrótce, "+GetAddress_FormToNPC(NPChar)+"!";
 				link.l1.go = "MarginCap_4";
 			}
 		break;
@@ -200,7 +200,7 @@ void ProcessDialogEvent()
 		}
 		if (iTemp > 0 && iTemp <= iSum)
 		{
-			if (drand(2) > 1) // Addon-2016 Jason уменьшаем раздачу дублонов
+			if (hrand(2) > 1) // Addon-2016 Jason уменьшаем раздачу дублонов
 			{
 				dialog.text = "Zgoda, zgadzam się. Posiadam wymaganą sumę. Gdzie jest "+pchar.GenQuest.Marginpassenger.q1Name+"?";
 				link.l1 = "Musisz być już na molo. Więc możesz iść i zabrać pasażera.";

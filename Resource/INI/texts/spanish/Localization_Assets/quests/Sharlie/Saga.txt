@@ -575,3 +575,7 @@ Saga_121
 {
 Se ha celebrado el juicio.
 }
+Saga_122
+{
+Ha pasado una hora...@<NewStr()>Has llegado al barco naufragado
+}

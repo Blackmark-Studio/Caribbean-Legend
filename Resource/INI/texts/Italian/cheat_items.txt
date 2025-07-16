@@ -1,0 +1,57 @@
+﻿
+new_string
+{
+
+}
+
+Cheat_success {Cheat ha funzionato con successo!}
+
+Cheat_on {Cheat attivo}
+
+Cheat_off {Cheat spento}
+
+Cheat_Comming_soon {Prossimamente!}
+
+f1 {Sbloccare tutte le ricette artigiano}
+
+f2 {Aggiungi materiali di artigiano}
+
+f3 {Aggiungi erbe}
+
+f4 {Aggiungi gemme}
+
+f5 {Aggiungi +100 pietra}
+
+f6 {Munizioni +50}
+
+f7 {Ottieni spada}
+
+f8 {Ottieni pistola}
+
+f9 {Ottieni moschetto}
+
+f10 {Modalità Dio ON/OFF}
+
+f11 {Ottieni Corazza}
+
+f12 {Ottieni Talismano}
+
+f13 {Ottieni Amuleto}
+
+f14 {Ottieni distretto}
+
+f15 {Ottieni Pozione}
+
+f16 {Ottieni cannocchiale}
+
+f17 {Ottieni Lanterna}
+
+f18 {Ottieni dispositivi di navigazione}
+
+f19 {Ottieni Utensili}
+
+f20 {Ottieni Mappe ordinarie}
+
+f21 {Ottieni Mappe ammiraglio}
+
+descF21No {Non disponibile in questa fase del gioco}

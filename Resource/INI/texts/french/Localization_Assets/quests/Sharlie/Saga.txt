@@ -575,3 +575,7 @@ Saga_121
 {
 The trial went through!
 }
+Saga_122
+{
+Une heure s’est écoulée...@<NewStr()>Vous êtes arrivé à l’épave
+}

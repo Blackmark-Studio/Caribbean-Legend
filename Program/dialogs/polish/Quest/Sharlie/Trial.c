@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 			else
 			{
 				link.l1 = "Mam "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype),"Imię")))+", jej imię to "+pchar.ship.name+".";
-				if (5-sti(RealShips[sti(pchar.ship.type)].Class) < 0) link.l1.go = "lecrua_badship";
+				if (6-sti(RealShips[sti(pchar.ship.type)].Class) < 0) link.l1.go = "lecrua_badship";
 				else link.l1.go = "lecrua_2";
 			}
 		break;
@@ -70,6 +70,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("Trial", "sText", sTotalTemp);
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "lecrua_repeat":
@@ -174,7 +175,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "florian_deck_fail":
-			dialog.text = "Ty cholerna idiotko! Jeśli nie potrafisz poradzić sobie z tym prostym zadaniem, na pewno zatoniesz w następnym sztormie. Wróć na swój statek, kapitanie, i zajmij się czymś, w czym jesteś lepszy, jak dostarczaniem kwiatów szlachetnym damom. A najlepiej, wróć do Europy i zostaw Nowy Świat prawdziwym mężczyznom. Dzień dobry, panie!";
+			dialog.text = "Ty cholerny idioto! Jeśli nie potrafisz poradzić sobie z tym prostym zadaniem, na pewno zatoniesz w następnym sztormie. Wróć na swój statek, kapitanie, i zajmij się czymś, w czym jesteś lepszy, jak dostarczaniem kwiatów szlachetnym damom. A najlepiej, wróć do Europy i zostaw Nowy Świat prawdziwym mężczyznom. Dzień dobry, panie!";
 			link.l1 = "Ale...";
 			link.l1.go = "florian_deck_fail_1";
 		break;
@@ -190,6 +191,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Trial", "10");
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 			ChangeCharacterNationReputation(pchar, FRANCE, -3);
 		break;
 		
@@ -232,6 +234,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Trial", "11");
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "florian_deck_7":
@@ -329,6 +332,7 @@ void ProcessDialogEvent()
 			sld.lifeday = 0;
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "florian_failspy_5":
@@ -388,7 +392,7 @@ void ProcessDialogEvent()
 		
 		case "florian_13":
 			dialog.text = "Do diabła! To straszne... Dowiedziałeś się czegoś o galeonie?";
-			link.l1 = "Tak.  Ona jest przygotowywana do wypłynięcia już od pewnego czasu, ale gubernator Portobello zamierza ją zatrzymać przy nabrzeżu. Teraz czeka na barkę o nazwie 'Puebla', która ma przybyć z Kartageny z ładunkiem prochu dla 'Alcantary'. Według marynarza z galeonu nie mają jej wystarczająco, a gubernator obawia się piratów.";
+			link.l1 = "Tak.  Ona jest przygotowywana do wypłynięcia już od pewnego czasu, ale gubernator Portobello zamierza ją zatrzymać przy nabrzeżu. Teraz czeka na barkentine o nazwie 'Puebla', która ma przybyć z Kartageny z ładunkiem prochu dla 'Alcantary'. Według marynarza z galeonu nie mają jej wystarczająco, a gubernator obawia się piratów.";
 			link.l1.go = "florian_14";
 		break;
 		
@@ -408,7 +412,7 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "gold_dublon", 250);
 			Log_Info("You've received 250 doubloons");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Czytasz w moich myślach, "+GetFullName(pchar)+"Tak, do diabła! Skoro Alacantara ma mało prochu, mogę pozwolić jej wypłynąć na otwarte morze, a potem zmusić ją do długotrwałej bitwy morskiej, w której ich proch skończy się przed naszym, haha!\nMusisz upewnić się, że bark zaopatrzeniowy Puebla nigdy nie dotrze do Portobello. Nie mogę żeglować blisko brzegu, patrole łatwo zauważą mój fregat i odpędzą mnie, zanim przechwycę Alacantarę\nMożesz zająć się Pueblą samodzielnie. Znajdź ją i pozbądź się jej. Zatop ją lub weź jako nagrodę, nie obchodzi mnie to. Po prostu powstrzymaj ją przed dotarciem tutaj!\nJeśli ci się uda, udaj się na Gwadelupę i zobacz się z Gerardem LeCroix, wierzę, że już go znasz, prawda? On zapłaci ci monety, na które zasługujesz.";
+			dialog.text = "Czytasz w moich myślach, "+GetFullName(pchar)+"Tak, do diabła! Skoro Alacantara ma mało prochu, mogę pozwolić jej wypłynąć na otwarte morze, a potem zmusić ją do długotrwałej bitwy morskiej, w której ich proch skończy się przed naszym, haha!\nMusisz upewnić się, że barkentini zaopatrzeniowy Puebla nigdy nie dotrze do Portobello. Nie mogę żeglować blisko brzegu, patrole łatwo zauważą mój fregat i odpędzą mnie, zanim przechwycę Alacantarę\nMożesz zająć się Pueblą samodzielnie. Znajdź ją i pozbądź się jej. Zatop ją lub weź jako nagrodę, nie obchodzi mnie to. Po prostu powstrzymaj ją przed dotarciem tutaj!\nJeśli ci się uda, udaj się na Gwadelupę i zobacz się z Gerardem LeCroix, wierzę, że już go znasz, prawda? On zapłaci ci monety, na które zasługujesz.";
 			link.l1 = "Umowa stoi! Wyruszam, by odciąć Pueblę!";
 			link.l1.go = "florian_19";
 			link.l2 = "Poczekaj chwilę, Monsieur Choquet. Rzecz w tym, że ja wciąż... Powiedzmy, że nie jestem szczególnie przyzwyczajony do morskich bitew. A ty jesteś kapitanem fregaty, masz za sobą z pewnością więcej niż jedną morską bitwę. Jeśli to nie problem, mógłbyś... Jakby to ująć...";
@@ -422,7 +426,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "florian_18":
-			dialog.text = "Alacantara jest gotowa do wypłynięcia, ale kapitan galeonu czeka na przybycie barki 'Puebla' z Kartageny załadowanej amunicją. Najwyraźniej Alacantara nie ma wystarczającej ilości prochu, więc Hiszpanie nie są jeszcze gotowi do wypłynięcia. Ale cierpliwość kapitana ma swoje granice i jeśli Puebla nie przybędzie w ciągu trzech dni, to galeon opuści Portobello bez niej\nAlacantara ma mało prochu, mogę pozwolić jej wypłynąć na otwarte morze, a następnie zmusić ją do długotrwałej walki morskiej, w której ich proch skończy się przed naszym. Twoim celem jest przechwycenie Puebli i jej zniszczenie. Zatop ją lub zdobądź jako łup, nie obchodzi mnie to. Po prostu uniemożliw tej barki zaopatrzeniowej dotarcie tutaj!\nJeśli ci się uda, udaj się na Guadeloupe i odwiedź Gerarda LeCroix, wierzę, że już go znasz, prawda? On zapłaci ci zasłużone monety.";
+			dialog.text = "Alacantara jest gotowa do wypłynięcia, ale kapitan galeonu czeka na przybycie barkentini 'Puebla' z Kartageny załadowanej amunicją. Najwyraźniej Alacantara nie ma wystarczającej ilości prochu, więc Hiszpanie nie są jeszcze gotowi do wypłynięcia. Ale cierpliwość kapitana ma swoje granice i jeśli Puebla nie przybędzie w ciągu trzech dni, to galeon opuści Portobello bez niej\nAlacantara ma mało prochu, mogę pozwolić jej wypłynąć na otwarte morze, a następnie zmusić ją do długotrwałej walki morskiej, w której ich proch skończy się przed naszym. Twoim celem jest przechwycenie Puebli i jej zniszczenie. Zatop ją lub zdobądź jako łup, nie obchodzi mnie to. Po prostu uniemożliw tej barkentini zaopatrzeniowej dotarcie tutaj!\nJeśli ci się uda, udaj się na Guadeloupe i odwiedź Gerarda LeCroix, wierzę, że już go znasz, prawda? On zapłaci ci zasłużone monety.";
 			link.l1 = "Umowa stoi! Wyruszam, by odciąć Pueblę!";
 			link.l1.go = "florian_19";
 			link.l2 = "Poczekaj chwilę, Monsieur Choquet. Rzecz w tym, że ja jeszcze... Powiedzmy, nie jestem szczególnie przyzwyczajony do morskich bitew. A ty jesteś kapitanem fregaty, masz za sobą oczywiście więcej niż jedną bitwę morską. Jeśli to nie sprawi ci trudności, mógłbyś... Jak by to ująć...";
@@ -444,7 +448,7 @@ void ProcessDialogEvent()
 		// belamour legendary edition дополнительное обучение -->
 		case "florian_guide_01":
 			dialog.text = "Chciałbyś, żebym dał ci lekcję taktyki walki morskiej? Z przyjemnością, kapitanie! Zwłaszcza, że leży to w moim własnym interesie: chcę mieć pewność, że skutecznie przechwycisz 'Pueblę'.";
-			link.l1 = "Nie, nie to miałem na myśli. Dobrze, zapomnij o tym: jestem pewien, że nie będę miał żadnych problemów z przechwyceniem barki.";
+			link.l1 = "Nie, nie to miałem na myśli. Dobrze, zapomnij o tym: jestem pewien, że nie będę miał żadnych problemów z przechwyceniem barkentini.";
 			link.l1.go = "florian_19";
 			link.l2 = "Tak, właśnie to miałem na myśli. Jestem pewien, że nowa wiedza mi nie zaszkodzi.";
 			link.l2.go = "florian_guide_02";

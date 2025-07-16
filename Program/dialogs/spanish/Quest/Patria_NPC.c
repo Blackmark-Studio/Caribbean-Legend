@@ -224,7 +224,7 @@ void ProcessDialogEvent()
 		
 		case "noel_32":
 			dialog.text = "Vicealmirante, parece ser un hombre de honor. Un oficial naval tan valiente debe ser así...";
-			link.l1 = " Hmm... No creo que te entienda completamente, monsieur... ";
+			link.l1 = "Hmm... No creo que te entienda completamente, monsieur... ";
 			link.l1.go = "noel_33";
 		break;
 		
@@ -298,7 +298,7 @@ void ProcessDialogEvent()
 		
 		case "noel_44":
 			dialog.text = "Creo que he oído algo sobre eso...";
-			link.l1 = "Unos pocos poderosos barcos corsarios que protegían la isla estaban constantemente atracados en el puerto de Tortuga. Levasseur traicionó a Francia, convirtiéndose en una especie de autoridad local. Y ahora, tras la destrucción del nido pirata en Tortuga junto con su amo, los piratas están terriblemente enfadados con los franceses...";
+			link.l1 = "Unos pocos poderosos barcos corsarios que protegían la isla estaban constantemente atracados en el puerto de Tortuga. Levasseur traicionó a Francia, convirtiéndose en una especie de autoridad. Y ahora, tras la destrucción del nido pirata en Tortuga junto con su amo, los piratas están terriblemente enfadados con los franceses...";
 			link.l1.go = "noel_45";
 		break;
 		
@@ -765,7 +765,7 @@ void ProcessDialogEvent()
 		
 		case "noel_114":
 			dialog.text = "Exactamente. Hasta donde sé, cuando entraste al servicio de Francia, se te dio la fragata ligera 'Gryffondor' a tu disposición. Este es un barco maravilloso sin duda, pero aún así es solo para un oficial, y no para un vicealmirante y ahora, un gobernador general. Eres la cara de Francia aquí. Y tu buque insignia debe ser adecuado. Así que hemos decidido que el barco que pasó por sus primeras batallas aquí en el Caribe se añada a tu escuadrón...";
-			link.l1 = "Monsieur Forget, ¿estás tratando de decir...";
+			link.l1 = "Monsieur Forget, ¿estás tratando de decir...?";
 			link.l1.go = "noel_115";
 		break;
 		
@@ -1085,7 +1085,7 @@ void ProcessDialogEvent()
 		
 		case "ecliaton_cap_19":
 			dialog.text = "Así es. Aunque soy un marqués, sigo siendo un marinero. Para mí, el archipiélago caribeño es nuevo, inexplorado y lleno de nuevas aventuras. La última vez que estuve aquí fue solo por unos meses, pero cuando regresé a Europa, comencé a extrañar este lugar. Me gustaría servir a nuestra Patria aquí. Y tú eres un capitán muy talentoso y experimentado, has logrado ganarte mi sincero respeto y mi amistad. Sería un honor servir bajo tu mando, ¡Vicealmirante!";
-			link.l1 = "Bueno, no puedo y ¡qué es más! - ¡No quiero negarle, Monsieur Dassier!";
+			link.l1 = "Bueno, no puedo y ¡qué es más!, ¡No quiero negarle, Monsieur Dassier!";
 			link.l1.go = "ecliaton_cap_20";
 		break;
 		
@@ -1120,7 +1120,7 @@ void ProcessDialogEvent()
 			if (GetCompanionQuantity(pchar) > 4)
 			{
 				
-				link.l1 = "  Aún no, Marqués. Espera órdenes.";
+				link.l1 = "Aún no, Marqués. Espera órdenes.";
 				link.l1.go = "ecliaton_cap_24_1";
 			}
 			else
@@ -1165,15 +1165,15 @@ void ProcessDialogEvent()
 		case "doily":
 			if (CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "end" && colonies[FindColony("Pirates")].nation == PIRATE)
 			{
-				PlaySound("Voice\English\LE\Doily\Edvard_Doily_01.wav");
+				PlaySound("Voice\Spanish\LE\Doily\Edvard_Doily_01.wav");
 				dialog.text = "¡Oh, qué encuentro! ¿No es el propio Capitán Charles de Maure?! He oído que ahora tienes un puesto en la armada francesa. Qué sorpresa, considerando para quién estabas, digamos, 'trabajando' anteriormente...";
 				link.l1 = "Saludos, señor. ¿Está hablando del asunto con Isla Tesoro? Oh, pero no fui yo quien escribió las leyes inglesas, según las cuales la isla fue heredada por el heredero del explorador que la encontró, según su testamento. Así que, no soy culpable de eso, solo ayudé a la señorita Sharp a obtener lo que era suyo por derecho.";
 				link.l1.go = "doily_1";
 			}
 			else
 			{
-				dialog.text = TimeGreeting()+", capitán. Supongo que el representante de la armada francesa ha llegado a Antigua con un objetivo importante en mente?";
-				link.l1 = "De hecho, señor. Fui enviado aquí por el Gobernador General de las colonias francesas, Philippe de Poincy. Saint-Christopher ha sido sitiada por los escuadrones navales españoles y holandeses. El Caballero pide ayuda de usted y del señor Jonathan Fox también. Aquí está su carta para usted, coronel.";
+				dialog.text = TimeGreeting()+", capitán. Supongo que el representante de la armada francesa ha llegado a Antigua con un objetivo importante en mente.";
+				link.l1 = "Así es, señor. Fui enviado aquí por el Gobernador General de las colonias francesas, Philippe de Poincy. Saint-Christopher ha sido sitiada por los escuadrones navales españoles y holandeses. El Caballero pide ayuda de usted y del señor Jonathan Fox también. Aquí está su carta para usted, coronel.";
 				link.l1.go = "doily_3";
 			}
 		break;
@@ -1199,7 +1199,7 @@ void ProcessDialogEvent()
 		
 		case "doily_3_1":
 			LAi_Fade("", "");
-			dialog.text = " Hmm... ¡muy intrigante! Capitán, vuestro comandante sabe cómo captar mi interés, no es tan raro que la gente lo llame un zorro astuto. Deberíamos haber hecho esto hace mucho tiempo, en lugar de intentar hacernos amigos de los holandeses. Ya sabemos muy bien lo que representan la Compañía Holandesa y su Director. Bien entonces, creo que en esta situación realmente no deberíamos negar nuestra ayuda a la sitiada Casterville, y tenemos más que suficientes tropas para permitirlo. \n¿Cuáles son los números y tipos de barcos en sus escuadrones, Capitán?";
+			dialog.text = "Hmm... ¡muy intrigante! Capitán, vuestro comandante sabe cómo captar mi interés, no es tan raro que la gente lo llame un zorro astuto. Deberíamos haber hecho esto hace mucho tiempo, en lugar de intentar hacernos amigos de los holandeses. Ya sabemos muy bien lo que representan la Compañía Holandesa y su Director. Bien entonces, creo que en esta situación realmente no deberíamos negar nuestra ayuda a la sitiada Casterville, y tenemos más que suficientes tropas para permitirlo. \n¿Cuáles son los números y tipos de barcos en sus escuadrones, Capitán?";
 			link.l1 = "He contado seis barcos: un navío de línea de ochenta cañones de tercer rango y cinco barcos de cuarto. También podrían tener fragatas y galeones.";
 			link.l1.go = "doily_4";
 		break;
@@ -1234,7 +1234,7 @@ void ProcessDialogEvent()
 			dialog.text = "Por supuesto, monsieur de Maure. Sea cual sea el caso, los relatos sobre tus talentos en la navegación se escuchan por todo el archipiélago. Tu buque insignia liderará el escuadrón.";
 			if (GetCompanionQuantity(pchar) > 1)
 			{
-				link.l1 = "  Pondré el resto de los barcos de mi escuadrón en espera, luego regresaré a ti, y nos apresuraremos a ayudar a los sitiados.";
+				link.l1 = "Pondré el resto de los barcos de mi escuadrón en espera, luego regresaré a ti, y nos apresuraremos a ayudar a los sitiados.";
 				link.l1.go = "doily_7_1";
 			}
 			else
@@ -1292,7 +1292,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "doily_12":
-			PlaySound("Voice\English\LE\Doily\Edvard_Doily_02.wav");
+			PlaySound("Voice\Spanish\LE\Doily\Edvard_Doily_02.wav");
 			dialog.text = "Consiga la carta para el Stuyvesant, señor. Si no está al tanto de quién soy, permítame presentarme: Coronel Edward Doily, gobernador de Port-Royal y comandante de esta expedición!\nPara decirle la verdad, tengo un gran deseo de arrasar el escondite de bandidos conocido como Willemstad. La organización más vil, hipócrita y despreciable del Caribe, conocida como la Compañía Holandesa de las Indias Occidentales que piensa que todo el comercio en el Archipiélago es exclusivamente su derecho, y que contrata a individuos como Jacob van Berg y otros piratas para capturar y hundir los barcos de los comerciantes ingleses...";
 			link.l1 = "...";
 			link.l1.go = "doily_13";
@@ -1359,7 +1359,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "doily_20":
-			dialog.text = "Bueno entonces, parece que nuestra misión ha terminado con bastante éxito. ¡Felicitaciones, Capitán! Oh, discúlpeme - ¡Vicealmirante! Regresemos a los barcos. Le diré a mis hombres que se mantengan en guardia - ese tonto Stuyvesant probablemente no se arriesgará a atacarnos mientras nos retiramos, pero no hará daño ser cuidadosos.";
+			dialog.text = "Bueno entonces, parece que nuestra misión ha terminado con bastante éxito. ¡Felicitaciones, Capitán! Oh, discúlpeme, ¡Vicealmirante! Regresemos a los barcos. Le diré a mis hombres que se mantengan en guardia - ese tonto Stuyvesant probablemente no se arriesgará a atacarnos mientras nos retiramos, pero no hará daño ser cuidadosos.";
 			link.l1 = "Estoy seguro de que los holandeses no se atreverán a romper un tratado que acaba de firmarse.";
 			link.l1.go = "doily_21";
 		break;
@@ -1620,7 +1620,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tailor_04":
-			dialog.text = "Bueno, ¿qué más puedo hacer ahora... Esperaré. ¡Pero sepa esto: no seré responsable de los pedidos incumplidos!";
+			dialog.text = "Bueno, ¿qué más puedo hacer ahora...? Esperaré. Pero sepa esto: ¡no seré responsable de los pedidos incumplidos!";
 			link.l1 = "Saludos. ¿Veo que tienes problemas?";
 			link.l1.go = "Tailor_05";
 			CharacterTurnByChr(npchar, characterFromId("Charles_PortMan"));
@@ -1669,13 +1669,13 @@ void ProcessDialogEvent()
 		
 		case "Tailor_11":
 			dialog.text = "Necesito encontrar gemelos y un cuello para el uniforme. Normalmente, los encargo directamente de los talleres parisinos. Aunque sean muy básicos, puedo alterarlos y darles un aspecto más presentable. Aunque en ese caso, necesitaré más de ellos...";
-			link.l1 = "Como no hay talleres parisinos en el Caribe, te encontraré un lote completo de ropa local con cuellos y puños desmontables. ¿Qué más?";
+			link.l1 = "Como no hay talleres parisinos en el Caribe, te encontraré un lote completo de ropa con cuellos y puños desmontables. ¿Qué más?";
 			link.l1.go = "Tailor_12";
 		break;
 		
 		case "Tailor_12":
 			dialog.text = "Para los toques finales, necesito telas de muy alta calidad. Tengo una hilandera que puede hacer tal tela incluso de fibra tosca. Pero para eso, necesito material, idealmente algodón. Un fardo será más que suficiente.";
-			link.l1 = " Eso también se puede obtener. ¿Qué sigue?";
+			link.l1 = "Eso también se puede obtener. ¿Qué sigue?";
 			link.l1.go = "Tailor_13";
 		break;
 		
@@ -1704,7 +1704,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tailor_17":
-			dialog.text = "Hay una cosa más... Mis herramientas de sastrería se han vuelto inservibles. Pedí nuevas de París, pero ay... Si pudieras encontrar todos los materiales necesarios y prestarme las herramientas, si las tienes - solo préstamelas, ¡conseguiré nuevas más tarde! - ¡comenzaría a coser de inmediato!";
+			dialog.text = "Hay una cosa más... Mis herramientas de sastrería se han vuelto inservibles. Pedí nuevas de París, pero ay... Si pudieras encontrar todos los materiales necesarios y prestarme las herramientas, si las tienes - solo préstamelas, ¡conseguiré nuevas más tarde!, ¡comenzaría a coser de inmediato!";
 			link.l1 = "Bueno, ¿qué puedo hacer? Te traeré todo lo que necesites. ¿Dónde puedo encontrarte? No me estarás esperando en la autoridad portuaria, ¿verdad?";
 			link.l1.go = "Tailor_18";
 		break;
@@ -1719,7 +1719,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("Patria", "65_1");
 			chrDisableReloadToLocation = false;
-			ChangeCharacterAddressGroup(npchar, "CommonDoubleflourHouse_1", "barmen", "Stay");
+			ChangeCharacterAddressGroup(npchar, "Charles_houseS3", "barmen", "Stay");
 			npchar.dialog.currentnode = "Tailor_20";
 			LAi_SetOwnerType(npchar);
 			pchar.questTemp.PatriaTailor = true;
@@ -1849,7 +1849,7 @@ void ProcessDialogEvent()
 				if(sItem != "" && rItem.groupID == BLADE_ITEM_TYPE) 
 				{
 					attrL = "l" + i;
-					Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt") + ": Attack - " + FloatToString(stf(rItem.attack),1) + ", balance - " + FloatToString(stf(rItem.Balance),1) + ", weight - " + FloatToString(stf(rItem.Weight),1);
+					Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt") + ": Ataque, " + FloatToString(stf(rItem.attack),1) + ", equilibrio, " + FloatToString(stf(rItem.Balance),1) + ", peso, " + FloatToString(stf(rItem.Weight),1);
 					Link.(attrL).go = "bladeindex_"+GetItemIndex(rItem.id);
 					i++;
 				}

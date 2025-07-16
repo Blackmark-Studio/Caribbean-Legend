@@ -5,8 +5,8 @@ new_string
 }
 
 Uninstalled_Mods_Founded {
-   Attention!
-   There are not enough installed mods to play on this save. You shouldn't play like that.
-   Install them or load an earlier save which was made before the mod was installed. Mods:
+   Attention !
+   Il n'y a pas assez de mods installés pour jouer sur cette sauvegarde. Vous ne devriez pas jouer ainsi.
+   Installez-les ou chargez une sauvegarde antérieure qui a été faite avant que le mod ne soit installé. Mods :
    ~
  }

@@ -153,7 +153,7 @@ void ProcessDialogEvent()
 					if (sti(pchar.nation) == PIRATE)
 					{
 						dialog.text = RandPhraseSimple("¿Piratas en la ciudad?! No puedo creerlo... ¡Capturadlo!", "¡Ese es un pirata! ¡Atrapadlo!");
-						link.l1 = RandPhraseSimple("Sí, soy un pirata - ¿y qué?", "Je, atrápame si puedes...");
+						link.l1 = RandPhraseSimple("Sí, soy un pirata, ¿y qué?", "Je, atrápame si puedes...");
 						link.l1.go = "fight";
 						break;
 					}
@@ -265,7 +265,7 @@ void ProcessDialogEvent()
 						}
 						else
 						{
-							/* dialog.text = LinkRandPhrase(RandPhraseSimple("¿Tiene algún asunto conmigo, capitán?","Me estoy moviendo por asuntos aquí, si necesitas algo - pregunta, no te demores."),RandPhraseSimple("Capitán, estoy muy ocupado, así que busque a otros interlocutores.","¿Algo anda mal, capitán? Si no hay preguntas, permíteme ir."),"Abra paso, capitán, tengo prisa.");
+							/* dialog.text = LinkRandPhrase(RandPhraseSimple("¿Tiene algún asunto conmigo, capitán?","Me estoy moviendo por asuntos aquí, si necesitas algo, pregunta, no te demores."),RandPhraseSimple("Capitán, estoy muy ocupado, así que busque a otros interlocutores.","¿Algo anda mal, capitán? Si no hay preguntas, permíteme ir."),"Abra paso, capitán, tengo prisa.");
 						link.l1 = LinkRandPhrase("Lo siento, amigo, yo "+GetSexPhrase("se perdió","Se perdió")+" ","Bueno, ocúpate de tus asuntos.","No, nada.");
 						link.l1.go = "exit";
 						link.l2 = LinkRandPhrase(RandPhraseSimple("Tengo un par de preguntas para ti.","Tengo un asunto contigo."),RandPhraseSimple("Veo que tienes prisa. Una pregunta y serás libre.","Yo "+GetSexPhrase("quería","quería")+" preguntar algo."),"Tus asuntos pueden esperar. Quería preguntarte algo "+GetSexPhrase("quería","quería")+".");
@@ -297,8 +297,8 @@ void ProcessDialogEvent()
 				{
 					if (sti(pchar.GenQuest.EncGirl.MeetSoldiers) == 1)
 					{
-						dialog.text = "¡Oh, mira quién está ahí! Señora " + pchar.GenQuest.EncGirl.name + " ¡ella misma nos honró con su presencia! ¿Me pregunto cómo te atreviste? ¡Te hemos estado buscando! Por favor, procede al calabozo - tu celda está lista y esperándote. ";
-						link.l1 = "¿Qué disparates estás hablando!? Yo y mi " + GetSexPhrase("caballero", "compañero") + " estaban dando un paseo por la jungla, recogiendo flores. ¡Déjame en paz! ¿Dónde están las maneras de estos martinets?! ¡En cuanto ven a una chica atractiva, empiezan a fastidiarla! " + GetSexPhrase("Mi querida, por favor dile a esos cabezas de madera que se pierdan y dejen a una mujer honesta en paz!", "Cariño, por favor dile a esos cabezas de chorlito...") + "¡";
+						dialog.text = "¡Oh, mira quién está ahí! ¡La mismísima " + pchar.GenQuest.EncGirl.name + " ha venido en persona! ¿Cómo te atreves? ¡Te hemos estado buscando! Por favor, procede al calabozo, tu celda está lista y esperándote. ";
+						link.l1 = "¿Qué disparates estás hablando? Te equivocas de persona. Mi " + GetSexPhrase("novio", "novia") + " y yo estábamos dando un paseo por la jungla, recogiendo flores. ¡Déjame en paz! ¿Dónde están los modales de estos tipos? ¡En cuanto ven a una chica atractiva, empiezan a fastidiarla! ¡" + GetSexPhrase("Mi querida, dile a esos idiotas que se pierdan y dejen en paz a una mujer honesta", "Cariño, por favor dile a esos idiotas...") + "!";
 						link.l1.go = "GirlEnc_1";
 					}
 					if (sti(pchar.GenQuest.EncGirl.MeetSoldiers) == 2)
@@ -311,51 +311,10 @@ void ProcessDialogEvent()
 				}
 				// <-- девица в джунглях
 
-				// --> Sinistra Длинные тени старых грехов
-				if (CheckAttribute(pchar, "questTemp.Knippel.Soldiers_1"))
-				{
-					switch (0)
-					{
-					case 0:
-						dialog.text = "Escucha, Charlie, tenemos algunos reclutas nuevos en el fuerte. Verdes como la hierba... ¿Podrías pasar y enseñarles cómo apuntar?";
-						link.l1 = "Si el Capitán Fleetwood y yo no zarpamos en los próximos días - con gusto.";
-						link.l1.go = "Knippel_Soldiers_1";
-						break;
-					}
-					break;
-				}
-
-				if (CheckAttribute(pchar, "questTemp.Knippel.Soldiers_2"))
-				{
-					switch (0)
-					{
-					case 0:
-						dialog.text = "Charlie, mi turno casi termina, ¿te apetece una bebida?";
-						link.l1 = "Con gusto, compañero! Permíteme ver qué quiere el capitán.";
-						link.l1.go = "Knippel_Soldiers_2";
-						break;
-					}
-					break;
-				}
-
-				if (CheckAttribute(pchar, "questTemp.Knippel.Soldiers_3"))
-				{
-					switch (0)
-					{
-					case 0:
-						dialog.text = "¡Buena noche, Charlie! No pareces muy bien. ¿Todo está bien?";
-						link.l1 = "Me despertaron en medio de la noche, ¿qué te parece? No puedo pillar un respiro.";
-						link.l1.go = "Knippel_Soldiers_3";
-						break;
-					}
-					break;
-				}
-				// <-- Длинные тени старых грехов
-
 				// --> belamour ночной приключенец
 				if (CheckAttribute(pchar, "GenQuest.NightAdventureSolNum") && npchar.index == pchar.GenQuest.NightAdventureSolNum)
 				{
-					dialog.text = "La vida de un soldado está programada - de guardia, patrullando ... ¿Qué quieres, " + GetAddress_Form(NPChar) + "?";
+					dialog.text = "La vida de un soldado está programada, de guardia, patrullando ... ¿Qué quieres, " + GetAddress_Form(NPChar) + "?";
 					link.l1 = "Escucha, ¿fue contigo que un borracho tuvo una pelea aquí recientemente? Bueno, aunque, aparentemente, sí, contigo...";
 					link.l1.go = "NightAdventure_CitizenHomieSolder";
 					break;
@@ -504,7 +463,7 @@ void ProcessDialogEvent()
 
 				case 10:
 					dialog.text = "Este maldito calor... Daría gustosamente la mitad de mi vida para volver a Europa.";
-					link.l1 = "Sí, puedo ver que tu salud no es adecuada para el clima local.";
+					link.l1 = "Sí, puedo ver que tu salud no es adecuada para este clima.";
 					link.l1.go = "exit";
 					break;
 				}
@@ -553,7 +512,7 @@ void ProcessDialogEvent()
 			TakeNationLicence(HOLLAND);
 			break;
 		}
-		if (pchar.location != "Minentown_town" && findsubstr(pchar.location.from_sea, "_town", 0) == -1) // если причалил не в городе 300912
+		if (pchar.location != "LosTeques_town" && findsubstr(pchar.location.from_sea, "_town", 0) == -1) // если причалил не в городе 300912
 		{
 			dialog.text = "¿Has venido a comerciar aquí? ¿Puedo preguntar cómo? ¿Dónde está tu barco? Sabes, todo parece muy sospechoso, y me veo obligado a detenerte hasta que lo resolvamos todo. ¡Entrega tu arma y sígueme!";
 			link.l1 = RandPhraseSimple("¡Que te jodan!", "Cuando dos domingos lleguen en una semana...");
@@ -633,8 +592,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "GirlEnc_12":
-		dialog.text = "¿Oh, en serio? En ese caso te aconsejaría que revises tus bolsillos. Esa mujer es una profesional, ya sabes";
-		link.l1 = "Gracias, lo haré. ¿Cómo pude hacerme el tonto de tal manera...";
+		dialog.text = "¿Oh, en serio? En ese caso te aconsejaría que revises tus bolsillos. Esa mujer es una profesional, ya sabes.";
+		link.l1 = "Gracias, lo haré. ¿Cómo pude hacerme el tonto de tal manera?";
 		link.l1.go = "GirlEnc_12End";
 		break;
 
@@ -652,7 +611,7 @@ void ProcessDialogEvent()
 
 	case "GirlEnc_2":
 		dialog.text = "" + GetSexPhrase("Señor", "Señorita") + ", tenemos una orden de encontrar a esa dama y llevarla a su padre.";
-		link.l1 = "Bueno, una orden es una orden - adelante, entonces.";
+		link.l1 = "Bueno, una orden es una orden, adelante, entonces.";
 		link.l1.go = "GirlEnc_2End";
 		link.l2 = "Demasiado tarde para eso, porque ya estoy hablando con su padre.";
 		link.l2.go = "GirlEnc_21";
@@ -684,7 +643,7 @@ void ProcessDialogEvent()
 		else
 		{
 			dialog.text = "Heh, " + GetSexPhrase("eres un hombre afortunado", "eres una chica afortunada") + ". Su padre prometió una generosa recompensa al que la traiga de vuelta a él.";
-			link.l1 = "No desesperes - aún te esperan muchas recompensas.";
+			link.l1 = "No desesperes, aún te esperan muchas recompensas.";
 			link.l1.go = "exit";
 		}
 		break;
@@ -710,7 +669,7 @@ void ProcessDialogEvent()
 	// --> belamour ночной приключенец
 	case "NightAdventure_CitizenHomieSolder":
 		dialog.text = "Sí, conmigo. Deja que se siente detrás de las rejas, que piense en su comportamiento. Y si has venido a amenazarme por él, entonces créeme: incluso puedo llegar al comandante del fuerte.";
-		link.l1 = "Sí, no vine a amenazar, sino a pedirte que retires tus reclamaciones contra él. Verás, es un viejo conocido mío, simplemente se emborrachó, pero para un borracho, ya sabes, el mar está hasta las rodillas ...";
+		link.l1 = "Sí, no vine a amenazar, sino a pedirte que retires tus reclamaciones contra él. Verás, es un viejo conocido mío, simplemente se emborrachó, pero para un borracho, el mar está hasta las rodillas ...";
 		link.l1.go = "NightAdventure_CitizenHomieSolder_1";
 		break;
 
@@ -770,34 +729,6 @@ void ProcessDialogEvent()
 		break;
 	// <-- ночной приключенец
 
-	// --> Sinistra Длинные тени старых грехов
-	case "Knippel_Soldiers_1":
-		dialog.text = "¿Y tal vez enseñarles algunos de tus secretos también, para que no se los lleven a la tumba contigo?";
-		link.l1 = "Je-je, eh, no, compañero, mis secretos son solo míos, ¿y qué tipo de secretos serían entonces?";
-		link.l1.go = "exit";
-		DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_1");
-		pchar.questTemp.Knippel.Soldiers_2 = true;
-		LAi_CharacterDisableDialog(npchar);
-		break;
-
-	case "Knippel_Soldiers_2":
-		dialog.text = "Entendido, vas a abandonar nuevamente, como siempre.";
-		link.l1 = "Bueno, si el pez se escapa, es un mal pescador. Es igual con las balas de cañón - una buena nunca te falla, solo apunta bien...";
-		link.l1.go = "exit";
-		DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_2");
-		pchar.questTemp.Knippel.Soldiers_3 = true;
-		LAi_CharacterDisableDialog(npchar);
-		break;
-
-	case "Knippel_Soldiers_3":
-		dialog.text = "Al menos no te levantas todas las noches. Y pasas más tiempo en el barco que en tierra. ¿Con quién estás hablando?";
-		link.l1 = "¡Ah, qué sabes tú de las dificultades del servicio, compañero! ¡Cómo era en la Real Armada!.. No puedes ni imaginarlo.";
-		link.l1.go = "exit";
-		DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_3");
-		LAi_CharacterDisableDialog(npchar);
-		break;
-	// <-- Длинные тени старых грехов
-
 	// замечение по обнажённому оружию
 	case "SoldierNotBlade":
 		// belamour legendary edition если у герой офицер нации -->
@@ -813,7 +744,7 @@ void ProcessDialogEvent()
 			break;
 		}
 		// <-- legendary edition
-		dialog.text = LinkRandPhrase("¡Eh, qué pasa con todo ese manejo de armas?! ¡Guárdala de inmediato!", "¡Te ordeno que guardes tu arma de inmediato!", "Oye, " + GetAddress_Form(NPChar) + ", ¡deja de asustar a la gente! Guarda tu arma.");
+		dialog.text = LinkRandPhrase("¡Eh, qué pasa con todo ese manejo de armas! ¡Guárdala de inmediato!", "¡Te ordeno que guardes tu arma de inmediato!", "Oye, " + GetAddress_Form(NPChar) + ", ¡deja de asustar a la gente! Guarda tu arma.");
 		link.l1 = LinkRandPhrase("Está bien, lo guardaré...", "Ya hecho.", "Como usted diga...");
 		link.l1.go = "exit";
 		link.l2 = LinkRandPhrase("¡Al diablo contigo!", "¡Supongo que voy a usarlo!", "Lo guardaré cuando llegue el momento adecuado.");

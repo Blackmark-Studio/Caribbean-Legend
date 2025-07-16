@@ -449,20 +449,25 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		PChar.quest.BM_FirstJungle.win_condition.l1 = "Location_Type";
 		PChar.quest.BM_FirstJungle.win_condition.l1.location_type = "jungle";
 		PChar.quest.BM_FirstJungle.win_condition = "BM_FirstJungle";
+		PChar.quest.BM_FirstTown.win_condition.l1 = "Location_Type";
+		PChar.quest.BM_FirstTown.win_condition.l1.location_type = "town";
+		PChar.quest.BM_FirstTown.win_condition = "BM_FirstJungle";
 	}
 	
 	else if (sQuestName == "BM_FirstJungle") {
-		if(CheckAttribute(pchar,"questTemp.BlackMark.IronsBlock"))
+		if(CheckAttribute(pchar,"questTemp.BlockSpawnQuestNPC"))
 		{
 			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 1, false);
 			return true;
 		}
 		chrDisableReloadToLocation = true;
+		DeleteQuestCondition("BM_FirstJungle");
+		DeleteQuestCondition("BM_FirstTown");
 		
 		sld = characterFromID("Irons");
 		sld.dialog.filename = "Quest\BlackMark.c";
 		sld.dialog.currentnode = "BM_IronsFirstJungle_1";
-		if (!CharacterIsHere("Irons")) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestFreeLocator2Pchar("reload"));
+		if (!CharacterIsHere("Irons")) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestLocator2Pchar("reload"));
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}
@@ -472,20 +477,25 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		PChar.quest.BM_SecondJungle.win_condition.l1 = "Location_Type";
 		PChar.quest.BM_SecondJungle.win_condition.l1.location_type = "jungle";
 		PChar.quest.BM_SecondJungle.win_condition = "BM_SecondJungle";
+		PChar.quest.BM_SecondTown.win_condition.l1 = "Location_Type";
+		PChar.quest.BM_SecondTown.win_condition.l1.location_type = "town";
+		PChar.quest.BM_SecondTown.win_condition = "BM_SecondJungle";
 	}
 	
 	else if (sQuestName == "BM_SecondJungle") {
-		if(CheckAttribute(pchar,"questTemp.BlackMark.IronsBlock"))
+		if(CheckAttribute(pchar,"questTemp.BlockSpawnQuestNPC"))
 		{
 			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 1, false);
 			return true;
 		}
 		chrDisableReloadToLocation = true;
+		DeleteQuestCondition("BM_SecondJungle");
+		DeleteQuestCondition("BM_SecondTown");
 		
 		sld = characterFromID("Irons");
 		sld.dialog.filename = "Quest\BlackMark.c";
 		sld.dialog.currentnode = "BM_IronsSecondJungle_1";
-		if (!CharacterIsHere("Irons")) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestFreeLocator2Pchar("reload"));
+		if (!CharacterIsHere("Irons")) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestLocator2Pchar("reload"));
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}
@@ -493,23 +503,28 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "BM_ThirdJungle_Time") {
 		if (!GetDLCenabled(DLC_APPID_3)) return;
 		bDisableLandEncounters = true;
-		PChar.quest.BM_SecondJungle.win_condition.l1 = "Location_Type";
-		PChar.quest.BM_SecondJungle.win_condition.l1.location_type = "jungle";
-		PChar.quest.BM_SecondJungle.win_condition = "BM_ThirdJungle";
+		PChar.quest.BM_ThirdJungle.win_condition.l1 = "Location_Type";
+		PChar.quest.BM_ThirdJungle.win_condition.l1.location_type = "jungle";
+		PChar.quest.BM_ThirdJungle.win_condition = "BM_ThirdJungle";
+		PChar.quest.BM_ThirdTown.win_condition.l1 = "Location_Type";
+		PChar.quest.BM_ThirdTown.win_condition.l1.location_type = "town";
+		PChar.quest.BM_ThirdTown.win_condition = "BM_ThirdJungle";
 	}
 	
 	else if (sQuestName == "BM_ThirdJungle") {
-		if(CheckAttribute(pchar,"questTemp.BlackMark.IronsBlock"))
+		if(CheckAttribute(pchar,"questTemp.BlockSpawnQuestNPC"))
 		{
 			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 1, false);
 			return true;
 		}
 		chrDisableReloadToLocation = true;
+		DeleteQuestCondition("BM_ThirdJungle");
+		DeleteQuestCondition("BM_ThirdTown");
 		
 		sld = characterFromID("Irons");
 		sld.dialog.filename = "Quest\BlackMark.c";
 		sld.dialog.currentnode = "BM_IronsThirdJungle_1";
-		if (!CharacterIsHere("Irons")) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestFreeLocator2Pchar("reload"));
+		if (!CharacterIsHere("Irons")) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestLocator2Pchar("reload"));
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}
@@ -530,48 +545,57 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "BM_SeaCheckBarque") {
 		if (!GetDLCenabled(DLC_APPID_3)) return;
-		if (BlackMark_CheckBarque())
+		if (GetCompanionQuantity(pchar) < 2)
 		{
-			if (pchar.nation == SPAIN || pchar.nation == HOLLAND)
+			if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_BARQUE || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_BARKENTINE)
 			{
-				Log_TestInfo("Проверка пройдена!");
-				bQuestDisableMapEnter = true; //закрываем карту
-				Island_SetReloadEnableGlobal("Jamaica", false);
-				sld = GetCharacter(NPC_GenerateCharacter("BM_GabeCallow", "off_eng_1", "man", "man", 10, ENGLAND, -1, false, "quest"));
-				sld.name = StringFromKey("BlackMark_11");
-				sld.lastname = StringFromKey("BlackMark_12");
-				FantomMakeCoolSailor(sld, SHIP_PINK, StringFromKey("BlackMark_13"), CANNON_TYPE_CANNON_LBS6, 50, 50, 50);
-				FantomMakeCoolFighter(sld, 50, 50, 50, "blade_14", "pistol14", "cartridge", 50);
-				GiveItem2Character(sld, "indian_2");
-				sld.DontRansackCaptain = true;
-				sld.AnalizeShips = true;
-				sld.DontClearDead = true;
-				sld.Ship.Mode = "war";
-				sld.AlwaysEnemy = true;
-				sld.Coastal_Captain = true;
-				sld.SaveItemsForDead = true;
-				AddItems(sld, "indian_2", 2);
-				EquipCharacterByItem(sld, "indian_2");
-				AddItems(sld, "purse2", 2);
-				AddItems(sld, "bullet", 20);
-				AddItems(sld, "GunPowder", 20);
-				
-				Group_FindOrCreateGroup("GabeCallowGroup");
-				Group_AddCharacter("GabeCallowGroup", "BM_GabeCallow");
-				Group_SetType("GabeCallowGroup", "war");
-				Group_SetGroupCommander("GabeCallowGroup", "BM_GabeCallow");
-				Group_SetAddress("GabeCallowGroup", "Jamaica", "", "");
-				Group_SetPursuitGroup("GabeCallowGroup", PLAYER_GROUP);
-				Group_SetTaskAttack("GabeCallowGroup", PLAYER_GROUP);
-				Group_LockTask("GabeCallowGroup");
-				
-				PChar.quest.BM_PinkZahvatil.win_condition.l1 = "Character_Capture";
-				PChar.quest.BM_PinkZahvatil.win_condition.l1.character = "BM_GabeCallow";
-				PChar.quest.BM_PinkZahvatil.win_condition = "BM_PinkZahvatil";
-				
-				PChar.quest.BM_PinkPotopil.win_condition.l1 = "Character_sink";
-				PChar.quest.BM_PinkPotopil.win_condition.l1.character = "BM_GabeCallow";
-				PChar.quest.BM_PinkPotopil.win_condition = "BM_PinkPotopil";
+				if (pchar.nation == SPAIN || pchar.nation == HOLLAND)
+				{
+					Log_TestInfo("Проверка пройдена!");
+					bQuestDisableMapEnter = true; //закрываем карту
+					Island_SetReloadEnableGlobal("Jamaica", false);
+					sld = GetCharacter(NPC_GenerateCharacter("BM_GabeCallow", "off_eng_1", "man", "man", 10, ENGLAND, -1, false, "quest"));
+					sld.name = StringFromKey("BlackMark_11");
+					sld.lastname = StringFromKey("BlackMark_12");
+					FantomMakeCoolSailor(sld, SHIP_PINK, StringFromKey("BlackMark_13"), CANNON_TYPE_CANNON_LBS6, 50, 50, 50);
+					FantomMakeCoolFighter(sld, 50, 50, 50, "blade_14", "pistol14", "cartridge", 50);
+					GiveItem2Character(sld, "indian_2");
+					sld.DontRansackCaptain = true;
+					sld.AnalizeShips = true;
+					sld.DontClearDead = true;
+					sld.Ship.Mode = "war";
+					sld.AlwaysEnemy = true;
+					sld.Coastal_Captain = true;
+					sld.SaveItemsForDead = true;
+					AddItems(sld, "indian_2", 2);
+					EquipCharacterByItem(sld, "indian_2");
+					AddItems(sld, "purse2", 2);
+					AddItems(sld, "bullet", 20);
+					AddItems(sld, "GunPowder", 20);
+					
+					Group_FindOrCreateGroup("GabeCallowGroup");
+					Group_AddCharacter("GabeCallowGroup", "BM_GabeCallow");
+					Group_SetType("GabeCallowGroup", "war");
+					Group_SetGroupCommander("GabeCallowGroup", "BM_GabeCallow");
+					Group_SetAddress("GabeCallowGroup", "Jamaica", "", "");
+					Group_SetPursuitGroup("GabeCallowGroup", PLAYER_GROUP);
+					Group_SetTaskAttack("GabeCallowGroup", PLAYER_GROUP);
+					Group_LockTask("GabeCallowGroup");
+					
+					PChar.quest.BM_PinkZahvatil.win_condition.l1 = "Character_Capture";
+					PChar.quest.BM_PinkZahvatil.win_condition.l1.character = "BM_GabeCallow";
+					PChar.quest.BM_PinkZahvatil.win_condition = "BM_PinkZahvatil";
+					
+					PChar.quest.BM_PinkPotopil.win_condition.l1 = "Character_sink";
+					PChar.quest.BM_PinkPotopil.win_condition.l1.character = "BM_GabeCallow";
+					PChar.quest.BM_PinkPotopil.win_condition = "BM_PinkPotopil";
+				}
+				else
+				{
+					Log_TestInfo("Проверка НЕ пройдена!");
+					pchar.quest.BM_RepeatBarqueCheck.win_condition.l1 = "MapEnter";
+					pchar.quest.BM_RepeatBarqueCheck.win_condition = "BM_RepeatBarqueCheck";
+				}
 			}
 			else
 			{
@@ -629,6 +653,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "BM_CabinDialog4") {
 		DoQuestCheckDelay("hide_weapon", 1.2);
 		sld = CharacterFromID("IronsClone");
+		sld.MusketerDistance = 5;
 		sld.dialog.filename = "Quest\BlackMark.c";
 		sld.dialog.currentnode = "BM_IronsClone8";
 		LAi_SetActorType(sld);

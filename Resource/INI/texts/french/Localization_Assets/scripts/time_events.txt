@@ -1,6 +1,6 @@
 time_events_1
 {
-Vous avez reçu une part des bénéfices de Poinsey
+Vous avez reçu une part des bénéfices de de Poincy
 }
 
 time_events_2
@@ -26,4 +26,9 @@ Jim
 time_events_6
 {
 Hopkins
+}
+
+time_events_7
+{
+Alonso
 }

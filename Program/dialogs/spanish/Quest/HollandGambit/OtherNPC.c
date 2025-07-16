@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		PlaySound("People Fight\Death_NPC_08.wav");
 		pchar.GenQuest.FrameLockEsc = true;
-		SetLaunchFrameFormParam("Te dejaron inconsciente por detrás", "", 0, 4);
+		SetLaunchFrameFormParam("Te han dejado inconsciente por la espalda", "", 0, 4);
 		LaunchFrameForm();
 		WaitDate("", 0, 0, 0, 15, 10); // крутим время
 		RecalculateJumpTable();
@@ -486,7 +486,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Drunkard_1":
-		dialog.text = "¡Oh! Sí, ese soy yo. ¿Quién más podría ser? ¿Por qué? ¿Qué haremos con un marinero borracho...";
+		dialog.text = "¡Oh! Sí, ese soy yo. ¿Quién más podría ser? ¿Por qué? ¿Qué haremos con un marinero borracho...?";
 		link.l1 = "¡Oh mi Señor, dame paciencia! ¿Qué marinero? Está escrito en tu cara que eres un simple terrícola... ¿Quieres ganar algo de dinero?";
 		link.l1.go = "Drunkard_2";
 		break;
@@ -550,7 +550,7 @@ void ProcessDialogEvent()
 		AddMoneyToCharacter(pchar, -5000);
 		RemoveItems(PChar, "MC_Letter", 1);
 		dialog.text = "¿Hmm... debería ir ahora, señor?";
-		link.l1 = " No, el jueves por la mañana... ¡Por supuesto, ahora mismo, cabeza de chorlito! ¡Ahora termina tu ron y vete!";
+		link.l1 = "No, el jueves por la mañana... ¡Por supuesto, ahora mismo, cabeza de chorlito! ¡Ahora termina tu ron y vete!";
 		link.l1.go = "Drunkard_8";
 		break;
 
@@ -722,7 +722,7 @@ void ProcessDialogEvent()
 
 	case "ArestLucas_9":
 		dialog.text = "¿Y por eso has decidido que Beck avisó a Fleetwood para que atacara el bergantín? ¡Qué tontería! Fleetwood es un pirata ordinario; sólo ataca barcos mercantes. ¿Por qué iba a necesitar los papeles, que, por cierto, sólo contenían información contable?";
-		link.l1 = " ";
+		link.l1 = "";
 		link.l1.go = "ArestLucas_10";
 		LAi_SetActorType(npchar);
 		LAi_ActorTurnToCharacter(npchar, characterFromID("Lucas"));
@@ -1131,7 +1131,7 @@ void ProcessDialogEvent()
 
 	case "Stivesant_22":
 		RemoveItems(pchar, "Reserve_item_01", 1);
-		dialog.text = " Hmmm... (leyendo). Una inspección del estado padre... Ahem... Vaya, bueno... eso es interesante, je-je... Por cierto, Capitán, ¿he oído que Francia está en guerra con España en el Caribe? El asedio y saqueo del fuerte de San José, la destrucción del escuadrón de guerra español frente a la costa oriental de Cuba...";
+		dialog.text = "Hmmm... (leyendo). Una inspección del estado padre... Ahem... Vaya, bueno... eso es interesante, je-je... Por cierto, Capitán, ¿he oído que Francia está en guerra con España en el Caribe? El asedio y saqueo del fuerte de San José, la destrucción del escuadrón de guerra español frente a la costa oriental de Cuba...";
 		link.l1 = "Fuera de la costa occidental de La Española, por Port-au-Prince, señor. Y el único objetivo del asedio de San José era obtener una compensación financiera de los españoles por su ataque a Saint-Pierre. Estamos en malos términos con España desde hace tiempo... ¿Cuándo debo regresar para recoger la respuesta?";
 		link.l1.go = "Stivesant_23";
 		break;
@@ -1422,7 +1422,7 @@ void ProcessDialogEvent()
 
 	case "Abihouselady":
 		dialog.text = "¿Estás buscando a alguien?";
-		link.l1 = "Sí, lo soy. ¿Dónde están Solomon y Abigail Shneur?";
+		link.l1 = "Así es. ¿Dónde están Solomon y Abigail Shneur?";
 		link.l1.go = "Abihouselady_1";
 		break;
 
@@ -1472,7 +1472,7 @@ void ProcessDialogEvent()
 				}
 			}
 		}
-		dialog.text = "Capitán, usted se apropió indebidamente de un barco de la Compañía Neerlandesa de las Indias Occidentales. Estoy autorizado a confiscarlo y a usar la fuerza en caso de resistencia. Esta es una orden de Peter Stuyvesant.";
+		dialog.text = "Capitán, usted se apropió indebidamente de un barco de la Compañía Holandesa de las Indias Occidentales. Estoy autorizado a confiscarlo y a usar la fuerza en caso de resistencia. Esta es una orden de Peter Stuyvesant.";
 		link.l1 = "Bueno, si es una orden del propio Peter Stuyvesant... No iré a la guerra con Holanda por un barco. Tómalo.";
 		link.l1.go = "TempOffGuard_1";
 		break;

@@ -14,45 +14,45 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 			dialog.text = "Brauchst du etwas?";
-			link.l1 = "Nein, es ist nichts.";
+			link.l1 = "Nein, nichts.";
 			link.l1.go = "exit";			
 			NextDiag.TempNode = "First time";
 		break;
 		
 		case "diffindoor":
 			PlaySound("Voice\English\saga\Nataniel Hawk-02.wav");
-			dialog.text = "Ach... wer bist du, verdammt?.. Khe... (schwerer Husten mit Heiserkeit) Verdammt Schwäche...";
-			link.l1 = "Grüße, Nathaniel. Du bist Nathaniel Hawk, nicht wahr?";
+			dialog.text = "Ah... wer bist du, verdammt?.. Khe... (schwerer Husten mit Heiserkeit) Verdammte Schwäche...";
+			link.l1 = "Grüße, Nathaniel. Du bist doch Nathaniel Hawk, nicht wahr?";
 			link.l1.go = "diffindoor_1";
 		break;
 		
 		case "diffindoor_1":
 			dialog.text = "Ja, das bin ich, wenn ich mich noch so nennen darf. Ich war einst Nathaniel Hawk, aber jetzt bin ich nur noch ein trauriger Haufen Scheiße. Verdammt sei diese Statue! Sie hat mir das ganze Leben ausgesaugt.";
-			link.l1 = "Ich kenne das Gefühl...";
+			link.l1 = "Ich kenne dieses Gefühl...";
 			link.l1.go = "diffindoor_2";
 		break;
 		
 		case "diffindoor_2":
-			dialog.text = "Wie könntest du, Junge, wenn du nicht einmal begreifst, wovon ich spreche? A-kha... Weißt du, wie es sich anfühlt, zu einem halbtoten, alten Mann zu werden, als ich vor einer Minute noch gesund und stark war?\nIch habe viel gesehen, ich dachte, dieser alte indische Tempel, den ich in meiner Jugend besuchte, hätte meine Fähigkeit, überrascht zu werden, getötet, aber das... warum habe ich es nicht kommen sehen! Diese verdammte Statue sah genauso aus wie das alte Idol, das die Tür zum Tempel öffnete!";
-			link.l1 = "Gut, Nathan, lass uns reden. Lass mich mich vorstellen, ich bin "+GetFullName(pchar)+". Zuerst, ich verstehe Sie sehr gut, weil ich auf die gleiche Weise hierher gekommen bin, wie Sie - mit dem Kukulcan-Portal.";
+			dialog.text = "Wie könntest du, Junge, wenn du nicht einmal begreifst, wovon ich spreche? A-kha... Weißt du, wie es sich anfühlt, zu einem halbtoten, alten Mann zu werden, obwohl ich noch eine Minute davor gesund und stark war?\nIch habe viel gesehen, ich dachte, dieser alte indische Tempel, den ich in meiner Jugend besuchte, hätte meine Fähigkeit überrascht zu werden getötet, aber das... warum habe ich es nicht kommen sehen! Diese verdammte Statue sah genauso aus wie das alte Idol, das die Tür zum Tempel öffnete!";
+			link.l1 = "Gut, Nathan, lass uns reden. Lass mich mich vorstellen, ich bin "+GetFullName(pchar)+". Zuerst, ich verstehe dich sehr gut, weil ich auf die gleiche Weise hierher gekommen bin, wie du - mit dem Kukulcan-Portal.";
 			link.l1.go = "diffindoor_3";
 		break;
 		
 		case "diffindoor_3":
 			dialog.text = "Wirklich?! Warum siehst du dann so gut aus? Oder hat dieser... Kukulcan nur mir geschadet?";
-			link.l1 = "Schlangenauge, der Miskito-Schamane, der dir geholfen hat zu entkommen, hat mir einen sehr starken Trank gegeben. Ich habe ihn getrunken, sobald ich in der San Augustine aufgewacht bin. Es hat mich vollständig geheilt. Ich bin mir sicher, dass Schlangenauge auch dir helfen kann. Wir müssen dich nur zu ihm bringen.";
+			link.l1 = "Snake Eye, der Miskito-Schamane, der dir geholfen hat zu entkommen, hat mir einen sehr starken Trank gegeben. Ich habe ihn getrunken, sobald ich in der San Augustine aufgewacht bin. Es hat mich vollständig geheilt. Ich bin mir sicher, dass Snake Eye auch dir helfen kann. Wir müssen dich nur zu ihm bringen.";
 			link.l1.go = "diffindoor_4";
 		break;
 		
 		case "diffindoor_4":
-			dialog.text = "Ach, dieser Indianer! Ein Trank? Und warum hat er mir nicht auch einen gegeben?";
-			link.l1 = "Er sagte, es gäbe keine Zeit. Ihr wurdet verfolgt und das Einzige, was er tun konnte, war euch den Weg zur Flucht zu zeigen - das Portal.";
+			dialog.text = "Ah, dieser Indianer! Ein Trank? Und warum hat er mir nicht auch einen gegeben?";
+			link.l1 = "Er sagte, es gäbe keine Zeit. Du wurdest verfolgt und das Einzige, was er tun konnte, war dir den Weg zur Flucht zu zeigen - das Portal.";
 			link.l1.go = "diffindoor_5";
 		break;
 		
 		case "diffindoor_5":
 			PlaySound("Voice\English\saga\Nataniel Hawk-01.wav");
-			dialog.text = "Flucht? Oh... Siehst du meinen aktuellen Zustand nicht? Ich kann nicht mal ein Säbel halten. Wie kannst du das eine Flucht nennen? Gott sei Dank, es gibt noch gute Menschen in dieser Welt. Ole, Gott segne ihn... Kennst du Ole?";
+			dialog.text = "Flucht? Oh... Siehst du meinen aktuellen Zustand nicht? Ich kann nicht mal ein Säbel halten. Wie kannst du das eine Flucht nennen? Gott sei Dank, gibt es noch gute Menschen in dieser Welt. Ole, Gott segne ihn... Kennst du Ole?";
 			link.l1 = "Ja. Tatsächlich hat er mir von dir erzählt, er hat mir erzählt, wie er dich mit Ratten gefüttert hat und wie du weiter trinkst, Flasche für Flasche...";
 			link.l1.go = "diffindoor_6";
 		break;
@@ -70,13 +70,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "diffindoor_8":
-			dialog.text = "Verdammt... der Waldteufel? Argh... Bist du hier, um mich zu erledigen? Tatsächlich nicht? Du redest zu viel für einen Attentäter. Bitte - quäle mich nicht. Wenn du beauftragt wurdest, etwas aus mir herauszubekommen - Ich werde dir alles selbst erzählen, ich habe nichts zu verbergen.";
+			dialog.text = "Verdammt... der Forest Devil? Argh... Bist du hier, um mich zu erledigen? Tatsächlich aber denke ich eher nicht? Du redest zu viel für einen Attentäter. Bitte - quäle mich nicht. Wenn du beauftragt wurdest, etwas aus mir herauszubekommen - Ich werde dir alles selbst erzählen, ich habe nichts zu verbergen.";
 			link.l1 = "Was meinst du? A-ah, ich verstehe. Du, genau wie Danielle, denkst, dass Svenson derjenige war, der diesen Hinterhalt auf dein Leben im Urwald arrangiert hat. Ich kann dir versichern, dass Jan es nicht getan hat. Im Gegenteil, er steht auf deiner Seite und macht sich große Sorgen um dein Verschwinden.";
 			link.l1.go = "diffindoor_9";
 		break;
 		
 		case "diffindoor_9":
-			dialog.text = "Wirklich? Das freut mich verdammt zu hören. Und ich habe schon gedacht... aber wer hat das getan? Mein Trupp wurde in Minuten zerstört. Sie haben auf uns gewartet. Sie hatten sogar Schiffskanonen! Sie haben die Hälfte meiner Männer mit Traubenschuss niedergemäht und uns dann mit ihren Musketen fertig gemacht...";
+			dialog.text = "Wirklich? Das freut mich verdammt zu hören. Und ich habe schon gedacht... aber wer hat das getan? Mein Trupp wurde in Minuten zerstört. Sie haben auf uns gewartet. Sie hatten sogar Schiffskanonen! Sie haben die Hälfte meiner Männer mit Kartätschenkugeln niedergemäht und uns dann mit ihren Musketen fertig gemacht...";
 			link.l1 = "Ehrlich gesagt, ich kenne die Einzelheiten nicht, aber ich bin sicher, dass Jackman hinter all dem steckt. Zu viele Zufälle, zuerst Blaze, dann du... Jackman will die Macht ergreifen und beseitigt jeden, der sich ihm in den Weg stellt. Er regiert jetzt Maroon Town an deiner Stelle.";
 			link.l1.go = "diffindoor_10";
 		break;
@@ -88,14 +88,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "diffindoor_11":
-			dialog.text = "Es gibt nichts Interessantes zu erzählen! Wie ich schon sagte, diese Banditen haben das Ganze geplant. Sie handelten ordentlich, sie waren koordiniert und folgten eindeutig jemandes Befehlen. Sie hätten mich hundertmal töten können, aber sie taten es nicht. Sie wollten mich lebendig. Sie brachten mich zu einer verlassenen Mine und sperrten mich in eine der Hütten. 'Bis der Boss kommt', sagten sie.\nIch dachte, dass Svenson der Boss war, aber es scheint, dass Jackman das Sagen hat. Ich weiß nicht, was er von mir hätte wollen können, aber ich bin sicher, ich hätte nicht lange gelebt, nachdem ich mit ihm gesprochen hatte.";
+			dialog.text = "Es gibt nichts Interessantes zu erzählen! Wie ich schon sagte, diese Banditen haben das Ganze geplant. Sie handelten ordentlich, sie waren koordiniert und folgten eindeutig jemandes Befehlen. Sie hätten mich hundertmal töten können, aber sie taten es nicht. Sie wollten mich lebendig. Sie brachten mich zu einer verlassenen Mine und sperrten mich in eine der Hütten. 'Bis der Boss kommt', sagten sie.\nIch dachte, dass Svenson der Boss war, aber es scheint, dass Jackman das Sagen hat. Ich weiß nicht, was er von mir hätte wollen können, aber ich bin sicher, ich hätte nicht lange gelebt, nachdem ich mit ihm gesprochen hätte.";
 			link.l1 = "Ich habe daran keinen Zweifel. Svenson ist sicher, dass Jackman Blaze Sharp getötet hat... Wie konntest du entkommen?";
 			link.l1.go = "diffindoor_12";
 		break;
 		
 		case "diffindoor_12":
-			dialog.text = "Dieser indische Schlangenauge hat es irgendwie geschafft, in die Mine zu schleichen. Soweit ich verstehe, mögen die Miskito keine Banditen. Wie auch immer, aus irgendeinem Grund hat Schlangenauge meine Flucht arrangiert. Er grub einen Tunnel zu mir, kam hinein, schnitt meine Seile durch und wir rannten in den Dschungel.\nEr wollte mich zu seinem Dorf bringen, zu den Miskito. Aber es sieht so aus, als ob Jackman mich wirklich wollte, da eine große Jagd organisiert wurde. Sie waren uns auf den Fersen. Schlangenauge tat sein Bestes, um sie zu täuschen, aber sie schafften es immer, unsere Spur zu finden. Sie hatten gute Pfadfinder, kein Zweifel.\nWir waren nahe an Schlangenauges Dorf, als sie uns endlich fanden. Zu diesem Zeitpunkt war mein Magen seit zwei Tagen leer und ich war völlig verschwendet, da ich auch mein Bein stark beschädigt hatte. Es war Mitternacht und ich erinnere mich noch, wie hell der Stern über der Statue war... Schlangenauge sagte, dass meine einzige Chance darin bestand, zum Idol zu gelangen und es zu berühren.\nIch dachte, der Mann sei verrückt, aber ihr wisst ja, was man über das Ergreifen von Strohhalmen sagt. Ich humpelte zur Statue, berührte sie... und dann begannen verrückte Dinge zu passieren!";
-			link.l1 = "Du musst nicht weitermachen, ich weiß, was danach passiert ist.";
+			dialog.text = "Dieser indische Snake Eye hat es irgendwie geschafft, in die Mine zu schleichen. Soweit ich verstehe, mögen die Miskito keine Banditen. Wie auch immer, aus irgendeinem Grund hat Snake Eye meine Flucht arrangiert. Er grub einen Tunnel zu mir, kam hinein, schnitt meine Seile durch und wir rannten in den Dschungel.\nEr wollte mich zu seinem Dorf bringen, zu den Miskito. Aber es sieht so aus, als ob Jackman mich wirklich wollte, da eine große Jagd organisiert wurde. Sie waren uns auf den Fersen. Snake Eye tat sein Bestes, um sie zu täuschen, aber sie schafften es immer, unsere Spur zu finden. Sie hatten gute Pfadfinder, kein Zweifel.\nWir waren nahe an Snake Eye's Dorf, als sie uns endlich fanden. Zu diesem Zeitpunkt war mein Magen seit zwei Tagen leer und ich war völlig verschwendet, da ich auch mein Bein stark verletzt hatte. Es war Mitternacht und ich erinnere mich noch, wie hell der Stern über der Statue war... Snake Eye sagte, dass meine einzige Chance darin bestand, zum Idol zu gelangen und es zu berühren.\nIch dachte, der Mann sei verrückt, aber du weißt ja, was man über das Ergreifen von Strohhalmen sagt. Ich humpelte zur Statue, berührte sie... und dann begannen verrückte Dinge zu passieren!";
+			link.l1 = "Du musst nicht weiter erzählen, ich weiß, was danach passiert ist.";
 			link.l1.go = "diffindoor_13";
 		break;
 		
@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "diffindoor_14":
-			dialog.text = "Maroon Stadt? Und wie genau stellen Sie sich das vor? Schauen Sie mich an, ich bin ein mit Rum getränktes Wrack! Wertlos... Nein, die Jahre meiner Autorität über Maroon Stadt sind für immer vorbei. Ich bin in diesem verfluchten Schiffsfriedhof gefangen. Wie lange werde ich durchhalten? Einen Monat, zwei, ein Jahr?\nUnd dann werde ich auf diesen verfaulten Planken liegen und Ole wird das, was von Nathaniel Hawk übrig ist, ins Meer werfen. Das Schlimmste ist, dass ich meine Dannie nie wieder sehen werde. Eh, es ist vorbei, Kumpel.";
+			dialog.text = "Maroon Town? Und wie genau stellst du dir das vor? Schau mich an, ich bin ein mit Rum getränktes Wrack! Wertlos... Nein, die Jahre meiner Autorität über Maroon Town sind für immer vorbei. Ich bin in diesem verfluchten Schiffsfriedhof gefangen. Wie lange werde ich durchhalten? Einen Monat, zwei, ein Jahr?\nUnd dann werde ich auf diesen verfaulten Planken liegen und Ole wird das, was von Nathaniel Hawk übrig ist, ins Meer werfen. Das Schlimmste ist, dass ich meine Dannie nie wieder sehen werde. Eh, es ist vorbei, Kumpel.";
 			link.l1 = "Sei nicht so pessimistisch. Ich werde dich hier rausbringen.";
 			link.l1.go = "diffindoor_15";
 		break;
@@ -118,7 +118,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "diffindoor_16":
-			dialog.text = "Was hast du gesagt? Haifisch Dodson? Ist Steve auch hier? So ein merkwürdiger Ort...";
+			dialog.text = "Was hast du gesagt? Shark Dodson? Ist Steve auch hier? So ein merkwürdiger Ort...";
 			link.l1 = "Ja, er ist hier. Er ist sozusagen der 'Gouverneur' dieser Insel. Ich habe ihn nach dir gefragt, aber er weiß nichts.";
 			link.l1.go = "diffindoor_17";
 		break;
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 		
 		case "diffindoor_18":
 			dialog.text = "Eh, meine liebe Dannie! Sie hat sich nicht verändert... so ungestüm wie in ihrer Jugend... Du kannst dir nicht vorstellen, wie sehr ich sie jetzt sehen und umarmen möchte! Ich habe viel nachgedacht, während ich hier lag. Siehst du, Kumpel, man beginnt die Dinge in einem anderen Licht zu sehen, wenn man dem Tod nahe ist. Ich habe so wenig Zeit mit meiner Frau verbracht!\nSeeräuber, offizielle Geschäfte der Brüder, die Herrschaft über Maroon Town. Und sie hat mich immer in allem unterstützt: war wochenlang allein, hatte Streitigkeiten mit anderen Piraten, während ich weg war, kommandierte unser Schiff... Meine Dannie ist die beste Frau der Welt! Und ich... ich hätte ihr öfter sagen sollen, dass ich sie liebe!\nIch erinnere mich an den Tag, an dem wir beschlossen, zusammen zu sein! Tatsächlich war das der Tag, an dem ich zum ersten Mal auf übernatürliche Dinge traf und kämpfte. Alles geschah wegen dieses verfluchten Idols, das genau wie die Statuen aussah. Du hast nichts dagegen, eine Geschichte zu hören? Sie ist ziemlich interessant.";
-			link.l1 = "Überhaupt nicht! Erzähl mir!";
+			link.l1 = "Überhaupt nicht! Erzähl es mir!";
 			link.l1.go = "story";
 			link.l2 = "Nathan, wir haben keine Zeit für angenehme Erinnerungen. Erzähl mir später davon, wenn wir im Miskito-Dorf mit einer Flasche Wein sitzen werden.";
 			link.l2.go = "diffindoor_19";
@@ -153,7 +153,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "story_2":
-			dialog.text = "Es war nicht umsonst. Schließlich betraten wir einen Thronsaal mit einer riesigen Vogelstatue am Ende. In der Nähe der Statue war ein mystisches Licht, es sah genau so aus wie das Licht über dem Idol um Mitternacht. Wir gingen näher und sahen eine wunderschöne fliegende Kugel. Ich schwöre, ich erzähle euch die reine Wahrheit!\nEs war real, aber gleichzeitig fühlte es sich so an, als ob es das nicht war. Während ich nachdachte, berührte Dannie - oh, dieser rücksichtslose Teufel, die Kugel. Sie begann noch heller zu leuchten und verwandelte sich schließlich in einen kleinen Gegenstand in ihren Händen...";
+			dialog.text = "Es war nicht umsonst. Schließlich betraten wir einen Thronsaal mit einer riesigen Vogelstatue am Ende. In der Nähe der Statue war ein mystisches Licht, es sah genau so aus wie das Licht über dem Idol um Mitternacht. Wir gingen näher und sahen eine wunderschöne fliegende Kugel. Ich schwöre, ich erzähle dir die reine Wahrheit!\nEs war echt, aber gleichzeitig fühlte es sich so an, als ob es das nicht war. Während ich nachdachte, berührte Dannie - oh, diese rücksichtslose Teufelin, die Kugel. Sie begann noch heller zu leuchten und verwandelte sich schließlich in einen kleinen Gegenstand in ihren Händen...";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			pchar.questTemp.LSC.Natanstory = "temple";
@@ -180,7 +180,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "story_6":
-			dialog.text = "Warte einen Moment. Die Geschichte ist noch nicht vorbei. Dannie hatte das Artefakt und sobald wir uns entschieden, zur Hütte zu gehen, um es zu studieren, wurde der Himmel dunkel und ein Schiff tauchte auf. Oh Gott! Es war...";
+			dialog.text = "Warte einen Moment. Die Geschichte ist noch nicht vorbei. Dannie hatte das Artefakt und sobald wir uns entschieden, in die Kabine zu gehen, um es zu studieren, wurde der Himmel dunkel und ein Schiff tauchte auf. Oh Gott! Es war...";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			pchar.questTemp.LSC.Natanstory = "blackpearl";
@@ -204,14 +204,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "story_8":
-			dialog.text = "Haben Sie noch nie vom Fliegenden Holländer gehört?";
+			dialog.text = "Hast du noch nie vom Fliegenden Holländer gehört?";
 			link.l1 = "Wer hat noch nicht vom Fliegenden Holländer gehört! Ich habe bereits einen Holländer getroffen und seinen Kapitän auf den Grund des Meeres geschickt. Er war nur ein gewöhnlicher Pirat, der sein Schiff mit Maskeradenmüll wie Algen und zerrissenen Segeln schmückte.";
 			link.l1.go = "story_9";
 		break;
 		
 		case "story_8_1":
 			dialog.text = "Ja, aber das war Van der Decken selbst, der Kapitän des Fliegenden Holländers!";
-			link.l1 = "Interessant. Bitte, fahren Sie fort. Wie haben Sie es geschafft durchzukommen?";
+			link.l1 = "Interessant. Bitte, fahre fort. Wie habt ihr es geschafft durchzukommen?";
 			link.l1.go = "story_11";
 		break;
 		
@@ -264,7 +264,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "story_16":
-			dialog.text = "Ja, das sind wir. Ich und Dannie haben geheiratet und ich habe es nie bereut. Du wirst keine bessere Ehefrau und Schwester in Waffen finden.";
+			dialog.text = "Ja, das sind wir. Ich und Dannie haben geheiratet und ich habe es nie bereut. Du wirst keine bessere Ehefrau und Waffenschwester finden.";
 			if (CheckAttribute(pchar, "questTemp.KhaelRoa"))
 			{
 				link.l1 = "So, jetzt weiß ich endlich, wer dieser geheimnisvolle Kapitän ist, der es geschafft hat, den 'Fliegenden Holländer' zu versenken... Du bist ein echter Held!";
@@ -272,14 +272,14 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Also, ihr zwei seid echte Helden, ja? Ihr habt es geschafft, das berühmte Geisterschiff zu versenken. Warte! Ihr habt gesagt, dass der 'Fliegende Holländer' noch fliegt... Wie kann das möglich sein, wenn er auf dem Meeresgrund liegt?";
+				link.l1 = "Also, ihr zwei seid echte Helden, was? Ihr habt es geschafft, das berühmte Geisterschiff zu versenken. Warte! Du hast gesagt, dass der 'Fliegende Holländer' noch fliegt... Wie kann das möglich sein, wenn er auf dem Meeresgrund liegt?";
 				link.l1.go = "story_17";
 			}
 		break;
 		
 		case "story_17":
 			dialog.text = "Eh, Kumpel, du weißt gar nichts... Du kannst Van der Decken versenken, aber du kannst ihn nicht töten. Der Fluch auf ihm und seiner Mannschaft ist zu stark, viel stärker als der Tod...";
-			link.l1 = "Hello, friend.";
+			link.l1 = "...";
 			link.l1.go = "exit";
 			pchar.questTemp.LSC.Natanstory = "VDDrepair";
 			AddDialogExitQuest("Video_story");
@@ -323,7 +323,7 @@ void ProcessDialogEvent()
 		
 		case "story_21":
 			dialog.text = "Oh, das empfehle ich nicht... Ich werde es sicherlich nicht noch einmal besuchen.";
-			link.l1 = "Ich möchte es trotzdem besuchen... Gut, danke für Ihre interessante Geschichte! Jetzt weiß ich mehr über Ihre Frau. Ihr beide seid lebende Legenden!";
+			link.l1 = "Ich möchte es trotzdem besuchen... Gut, danke für deine interessante Geschichte! Jetzt weiß ich auch mehr über deine Frau. Ihr beide seid lebende Legenden!";
 			link.l1.go = "diffindoor_19";
 			DeleteAttribute(pchar, "questTemp.LSC.Natanstory");
 			pchar.questTemp.NatanStory = "true";
@@ -336,8 +336,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "story_23":
-			dialog.text = "Sie sind in Khael Roa gewesen? Aber das kann einfach nicht sein! Erzählen Sie mir die Wahrheit?";
-			link.l1 = "Ich schwöre. Als du mir von dem Labyrinth und der Statue des Riesenvogels erzählt hast, wusste ich sofort, wo dieser Ort war. Der karibische Schamane Tuttuathapak hat mir von deinen Abenteuern erzählt. Er war es, der mich zu dieser Insel führte. Sie liegt östlich von St. Christopher. Sie ist sehr klein, ringförmig. Ringsherum sind Felsen und innen eine kleine Bucht. Und es gibt nur einen überwachsenen Weg, der zu einem Tempel führt, der in Form einer Pyramide gebaut ist.";
+			dialog.text = "Du bist in Khael Roa gewesen? Aber das kann einfach nicht sein! Erzählst du mir die Wahrheit?";
+			link.l1 = "Ich schwöre es. Als du mir von dem Labyrinth und der Statue des Riesenvogels erzählt hast, wusste ich sofort, wo dieser Ort war. Der karibische Schamane Tuttuathapak hat mir von deinen Abenteuern erzählt. Er war es, der mich zu dieser Insel führte. Sie liegt östlich von St. Christopher. Sie ist sehr klein, ringförmig. Ringsherum sind Felsen und innen eine kleine Bucht. Und es gibt nur einen überwachsenen Weg, der zu einem Tempel führt, der in Form einer Pyramide gebaut ist.";
 			link.l1.go = "story_24";
 		break;
 		
@@ -382,7 +382,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "diffindoor_wait":
-			dialog.text = "Ach, du bist es, "+pchar.name+". Hast du die Insel noch nicht verlassen?";
+			dialog.text = "Ah, du bist es, "+pchar.name+". Hast du die Insel noch nicht verlassen?";
 			link.l1 = "Mach dir keine Sorgen, Nathan, alles läuft nach Plan. Ruhe dich jetzt aus.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "diffindoor_wait";
@@ -410,7 +410,7 @@ void ProcessDialogEvent()
 		
 		case "danny_2":
 			dialog.text = "Danke dir, mein Freund. Danke für alles und vor allem für meine Dannie...";
-			link.l1 = "Du bist willkommen, Nathan.";
+			link.l1 = "Gern geschehen, Nathan.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "danny_2";
 		break;
@@ -418,19 +418,19 @@ void ProcessDialogEvent()
 		// в Марун-Тауне
 		case "marun_town":
 			dialog.text = "Schau mal, wer gerade hereingeschneit ist! Es ist "+GetFullName(pchar)+"  selbst! Komm rein, komm rein, Freund! Wie geht es dir?";
-			link.l1 = "Ich bin gut. Und du, Nathan? Ich sehe, dass keine Dunkelheit mehr übrig ist. Du siehst gut aus. Schlangenauge hat wirklich gute Arbeit geleistet!";
+			link.l1 = "Mir gehts gut. Und du, Nathan? Ich sehe, dass es keine Trübsal mehr gibt. Du siehst gut aus. Snake Eye hat wirklich gute Arbeit geleistet!";
 			link.l1.go = "marun_town_1";
 		break;
 		
 		case "marun_town_1":
 			ChangeCharacterComplexReputation(pchar, "fame", 3);
-			dialog.text = "Ja, dein Schamane ist ein Wunderheiler. Ich fühle mich sogar besser als vor dieser verdammt Teleportation! Ich fühle mich, als wäre ich zehn Jahre jünger! "+pchar.name+", Ich schulde dir viel. Und ich bin beeindruckt: du hast einem völligen Fremden geholfen, bist durch das verfluchte Portal gegangen, hast mich aus den Händen des Todes gerissen, mich zu meiner Frau zurückgebracht!\nUnd noch mehr! Du hast uns unser Schiff und Zuhause zurückgebracht. Du bist jetzt unser bester Freund. Für immer. Wenn du jemals etwas brauchst - du weißt, wen du fragen musst! Maroon Town wird dir immer Schutz, Unterstützung und ein Heiligtum bieten, falls du es brauchst.\nDas ganze Dorf wird für dich kämpfen, wenn du in Gefahr bist. In friedlichen Zeiten findest du hier Freundschaft, den besten Rum, ein weiches Bett und einen schönen Ort zum Ausruhen. Dannie und ich werden dafür sorgen.";
-			link.l1 = "Danke, Baron! Ich bin aufrichtig froh, Sie in guter Gesundheit zu sehen und... mit Dannie.";
+			dialog.text = "Ja, dein Schamane ist ein Wunderheiler. Ich fühle mich sogar besser als vor dieser verdammt Teleportation! Ich fühle mich, als wäre ich zehn Jahre jünger! "+pchar.name+", Ich schulde dir viel. Und ich bin beeindruckt: du hast einem völligen Fremden geholfen, bist durch das verfluchte Portal gegangen, hast mich aus den Händen des Todes gerissen, mich zu meiner Frau zurückgebracht!\nUnd noch mehr! Du hast uns unser Schiff und Zuhause zurückgebracht. Du bist jetzt unser bester Freund. Für immer. Wenn du jemals etwas brauchst - du weißt, wen du fragen musst! Maroon Town wird dir immer Schutz, Unterstützung und eine Zuflucht bieten, falls du es brauchst.\nDas ganze Dorf wird für dich kämpfen, wenn du in Gefahr bist. In friedlichen Zeiten findest du hier Freundschaft, den besten Rum, ein weiches Bett und einen schönen Ort zum Ausruhen. Dannie und ich werden dafür sorgen.";
+			link.l1 = "Danke, Baron! Ich bin aufrichtig froh, dich in guter Gesundheit zu sehen und... mit Dannie.";
 			link.l1.go = "marun_town_2";
 		break;
 		
 		case "marun_town_2":
-			dialog.text = "Ich habe Ihren Besuch erwartet, "+pchar.name+", und ich habe ein Geschenk vorbereitet - eine seltene und mächtige Waffe. Vielleicht musst du eines Tages zahlreiche Feinde mit einem Schuss niederstrecken und diese Handmörser wird dir dabei helfen. 'Sclopetta' feuert spezielle Granaten ab, also habe ich auch Anweisungen vorbereitet, wie man sie herstellt. Hier, nimm es.";
+			dialog.text = "Ich habe deinen Besuch erwartet, "+pchar.name+", und ich habe ein Geschenk vorbereitet - eine seltene und mächtige Waffe. Vielleicht musst du eines Tages zahlreiche Feinde mit einem Schuss niederstrecken und dieser Handmörser wird dir dabei helfen. 'Sclopetta' feuert spezielle Granaten ab, also habe ich auch Anweisungen vorbereitet, wie man sie herstellt. Hier, nimm es.";
 			link.l1 = "Was für eine ausgezeichnete Waffe! Danke!";
 			link.l1.go = "marun_town_3";
 		break;
@@ -438,17 +438,17 @@ void ProcessDialogEvent()
 		case "marun_town_3":
 			GiveItem2Character(pchar, "grape_mushket"); 
 			GiveItem2Character(pchar, "recipe_grenade"); 
-			Log_Info("You have received a hand mortar");
-			Log_Info("You have received a grenade instruction");
+			Log_Info("Du hast einen Handmörser erhalten");
+			Log_Info("Du hast eine Granatenanweisung erhalten");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Besuchen Sie uns öfter, "+pchar.name+"! Dannie und ich werden uns immer freuen, dich jederzeit zu sehen.";
-			link.l1 = "Es wird mir ein Vergnügen sein. Erwarten Sie mich bald!";
+			dialog.text = "Besuch uns öfter, "+pchar.name+"! Dannie und ich werden uns immer freuen, dich jederzeit zu sehen.";
+			link.l1 = "Es wird mir ein Vergnügen sein. Erwartet mich bald!";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "marun_town_4";
 		break;
 		
 		case "marun_town_4":
-			dialog.text = "Ach, mein Freund "+GetFullName(pchar)+"! Kommen Sie rein, kommen Sie rein, Kapitän! Wie geht es Ihnen? Brauchen Sie Hilfe?";
+			dialog.text = "Ah, mein Freund "+GetFullName(pchar)+"! Komm rein, komm rein, Kapitän! Wie geht es dir? Brauchst du Hilfe?";
 			// калеуче
 			if (CheckAttribute(pchar, "questTemp.Caleuche.NatanInfo"))
 			{
@@ -461,7 +461,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "caleuche":
-			dialog.text = "Natürlich, ich mache es.";
+			dialog.text = "Natürlich, tue ich es.";
 			link.l1 = "Ich muss unbedingt zu dieser Insel mit dem Tempel gelangen. Du sagtest, du hättest eine Karte davon. Kannst du mir die Koordinaten geben?";
 			link.l1.go = "caleuche_1";
 		break;
@@ -473,19 +473,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "caleuche_2":
-			dialog.text = "Ich werde es mir nie verzeihen, wenn du dort umkommst. "+pchar.name+", Ich bitte Sie: Verlassen Sie dieses Unternehmen! Außerdem ist es dort, wo der 'Fliegende Holländer' am häufigsten gesehen wird...";
+			dialog.text = "Ich werde es mir nie verzeihen, wenn du dort umkommst. "+pchar.name+", Ich bitte dich: Vergiss dieses Unternehmen! Außerdem ist es dort, wo der 'Fliegende Holländer' am häufigsten gesehen wird...";
 			link.l1 = "Ich bin ihm bereits begegnet und ich weiß, wie ich ihm entkommen kann. Nathan, bitte gib mir die Koordinaten von Khael Roa und erzähl mir alles, was du über diesen Tempel weißt, abgesehen davon, dass er von untoten Indianern bewohnt wird.";
 			link.l1.go = "caleuche_3";
 		break;
 		
 		case "caleuche_3":
-			dialog.text = "Oh, na gut... Ich kann dich nicht ablehnen, aber... du hast keine Ahnung, was ich und Dannie dort erlebt haben! Khael Roa liegt östlich von Antigua. Ich habe seine Karte genau gefunden, als ich nach Maroon Town zurückkam, sie befindet sich bei... (schaut nach) den Koordinaten: 19 Grad 32' Nord, 62 Grad 25' West.";
+			dialog.text = "Oh, na gut... Ich kann dich nicht abweisen, aber... du hast keine Ahnung, was ich und Dannie dort erlebt haben! Khael Roa liegt östlich von Antigua. Ich habe seine Karte genau gefunden, als ich nach Maroon Town zurückkam, sie befindet sich bei... (schaut nach) den Koordinaten: 19 Grad 32' Nord, 62 Grad 25' West.";
 			link.l1 = "Ich notiere seine Lage in meinem Tagebuch... Danke, Nathan!";
 			link.l1.go = "caleuche_4";
 		break;
 		
 		case "caleuche_4":
-			dialog.text = "You can thank me later. Now the details. The island of Khael Roa is a ring of rocks with a cove inside. Seek for the passage between the crags - it's fairly deep there. In the cove, you should cast anchor and disembark at the beach. Look for an old path heading deeper into the island - there's only one there. It will lead you to an Indian pyramid - this is the temple you seek.\nThe island itself is quiet, but the temple is crawling with abominations of all sorts. The entrance is located at the top of the pyramid. There will be three passages inside; you should take the middle one. Then you walk down the corridor and you will find a platform with four entrances or exits. This is where the temple creatures attacked me for the first time, so you should be careful.\nThen there is a labyrinth. It's very complex, and I, for the life of me, can't remember the right route. There is a multitude of foul creatures in the labyrinth. You must kill them all, then walk up to a hall with two entrances, six columns and a platform with nine stone slabs. This is the vestibule of the sanctuary. Its stone wall is closed, and I have no idea how you're going to open it.\nThere is some kind of mechanism, but I swear to God that I have no clue how it functions! I used an idol as a key. I inserted it into the central slab, and the door opened. But you don't have such an idol, so you'll have to figure out how this mechanism functions.";
+			dialog.text = "Du kannst mir später danken. Nun zu den Details. Die Insel Khael Roa ist ein Ring aus Felsen mit einer Bucht im Inneren. Suche den Durchgang zwischen den Felsen - dort ist es ziemlich tief. In der Bucht solltet ihr den Anker werfen und am Strand von Bord gehen. Halte Ausschau nach einem alten Pfad, der tiefer in die Insel hineinführt - dort gibt es nur einen. Er führt dich zu einer indianischen Pyramide - das ist der Tempel, den du suchst.\nDie Insel selbst ist ruhig, aber im Tempel wimmelt es von Abscheulichkeiten aller Art. Der Eingang befindet sich an der Spitze der Pyramide. Im Inneren gibt es drei Gänge; du solltet den mittleren nehmen. Dann gehst du den Korridor hinunter und findet eine Plattform mit vier Eingängen oder Ausgängen. Hier wurde ich zum ersten Mal von den Tempelwesen angegriffen, du solltest also vorsichtig sein.\nDann kommt ein Labyrinth. Es ist sehr komplex, und ich kann mich beim besten Willen nicht mehr an den richtigen Weg erinnern. In dem Labyrinth gibt es eine Vielzahl von üblen Kreaturen. Du musst sie alle töten und dann zu einer Halle mit zwei Eingängen, sechs Säulen und einer Plattform mit neun Steinplatten gehen. Dies ist die Vorhalle des Heiligtums. Die Steinwand ist verschlossen, und ich habe keine Ahnung, wie du sie öffnen kannst. Es gibt eine Art Mechanismus, aber ich schwöre bei Gott, ich habe keine Ahnung, wie er funktioniert! Ich habe ein Idol als Schlüssel benutzt. Ich steckte ihn in die zentrale Platte, und die Tür öffnete sich. Aber du hast kein solches Idol, also musst du herausfinden, wie dieser Mechanismus funktioniert.";
 			link.l1 = "In Ordnung, ich werde mein Bestes geben, um es herauszufinden. Was ist mit dem Heiligtum?";
 			link.l1.go = "caleuche_5";
 		break;

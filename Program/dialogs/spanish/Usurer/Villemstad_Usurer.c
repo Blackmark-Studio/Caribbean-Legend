@@ -5,7 +5,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	{
 	case "quests":
 		dialog.text = NPCStringReactionRepeat(RandPhraseSimple("¿Qué preguntas tienes?", "¿Cómo puedo ayudarte?"), "Intentaste hacerme esa pregunta no hace mucho...", "Sí, déjame adivinar... ¿Otra vez dando vueltas en círculos?", "Escucha, yo manejo las finanzas aquí, no respondo preguntas...", "block", 1, npchar, Dialog.CurrentNode);
-		link.l1 = HeroStringReactionRepeat(RandPhraseSimple("He cambiado de opinión...", "No tengo nada de qué hablar en este momento."), "Umph, ¿dónde se ha ido mi memoria...", "Lo has adivinado, lo siento...", "Entiendo...", npchar, Dialog.CurrentNode);
+		link.l1 = HeroStringReactionRepeat(RandPhraseSimple("He cambiado de opinión...", "No tengo nada de qué hablar en este momento."), "Umph, ¿dónde se ha ido mi memoria...?", "Lo has adivinado, lo siento...", "Entiendo...", npchar, Dialog.CurrentNode);
 		link.l1.go = "exit";
 		if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "utensil" && !CheckAttribute(npchar, "quest.utensil"))
 		{
@@ -30,14 +30,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		dialog.text = "Hum, ¿y por qué debería darte los nombres de mis clientes?";
 		if (CheckAttribute(pchar, "questTemp.HWIC.Detector") && pchar.questTemp.HWIC.Detector == "self_win")
 		{
-			link.l1 = "Tal vez, porque soy un buen amigo a los ojos del gobernador Matthias Beck y puedo pedirle una sanción correspondiente para ti?";
+			link.l1 = "¿Tal vez porque soy un buen amigo del gobernador Matthias Beck y puedo pedirle una sanción correspondiente para ti?";
 			link.l1.go = "guardoftruth_2_1";
 		}
 		else
 		{
 			if (CheckAttribute(pchar, "questTemp.HWIC.Detector") && pchar.questTemp.HWIC.Detector == "holl_win")
 			{
-				link.l1 = "¿Tal vez, porque tengo excelentes relaciones con la Compañía Neerlandesa de las Indias Occidentales y he prestado gran ayuda a muchos colonos neerlandeses en el archipiélago?";
+				link.l1 = "¿Tal vez, porque tengo excelentes relaciones con la Compañía Holandesa de las Indias Occidentales y he prestado gran ayuda a muchos colonos holandeses en el archipiélago?";
 				link.l1.go = "guardoftruth_2_2";
 			}
 			else
@@ -77,7 +77,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "guardoftruth_3":
 		RemoveItems(pchar, "chest", 1);
-		Log_Info("Has entregado un cofre de doblones");
+		Log_Info("¡Has entregado un cofre de doblones!");
 		PlaySound("interface\important_item.wav");
 		dialog.text = "Maravilloso. En ese caso, estoy dispuesto a compartir alguna información contigo.";
 		link.l1 = "Soy todo oídos.";
@@ -86,19 +86,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "guardoftruth_4":
-		dialog.text = "El incensario de oro fue comprado por un hombre llamado Rolande Moses, mejor conocido como Rollie el Gorra. Por qué este carnicero necesitaba un objeto precioso de iglesia, no puedo entenderlo, pero por alguna razón estaba indescriptiblemente feliz con él... Por cierto, dudo que te encuentres con el propio Rollie.";
-		link.l1 = "¿Por qué es eso?";
+		dialog.text = "El incensario de oro fue comprado por un hombre llamado Rolande Moses, mejor conocido como Rollie el Cap. Por qué este carnicero necesitaba un objeto precioso de iglesia, no puedo entenderlo, pero por alguna razón estaba indescriptiblemente feliz con él... Por cierto, dudo que te encuentres con el propio Rollie.";
+		link.l1 = "¿Y a qué se debe?";
 		link.l1.go = "guardoftruth_5";
 		break;
 
 	case "guardoftruth_5":
 		dialog.text = "Porque este ávido ladrón de solitarios comerciantes ingleses recientemente cayó con su goleta justo en las garras del Coronel Fox. ¿Sabes quién es?";
-		link.l1 = "¡Apuesto que sí! El comandante de los 'zorros marinos' en San Jones en Antigua...";
+		link.l1 = "¡Por supuesto que sí! El comandante de los 'Sea Foxes' de St. John's, en Antigua...";
 		link.l1.go = "guardoftruth_6";
 		break;
 
 	case "guardoftruth_6":
-		dialog.text = "Bueno, entonces entiendes por qué nunca volveremos a ver a nuestro pobre Rolande. El coronel se apoderó de su goleta con todos los sobrevivientes de su tripulación y los entregó a St. Jones, donde probablemente ya les hayan atado una soga al cuello.";
+		dialog.text = "Bueno, entonces entiendes por qué nunca volveremos a ver a nuestro pobre Rolande. El coronel se apoderó de su goleta con todos los sobrevivientes de su tripulación, y los entregó a St. John's, donde probablemente ya les hayan atado una soga al cuello.";
 		link.l1 = "Ya veo. ¿Y el ostensorio?";
 		link.l1.go = "guardoftruth_7";
 		break;
@@ -111,12 +111,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "guardoftruth_8":
 		dialog.text = "Definitivamente. Ella misma dijo que iría directamente a casa desde Willemstad.";
-		link.l1 = "Está bien. Gracias, " + npchar.name + "¡Has sido de gran ayuda!";
+		link.l1 = "Está bien. Gracias, " + npchar.name + ". Has sido de gran ayuda.";
 		link.l1.go = "guardoftruth_9";
 		break;
 
 	case "guardoftruth_9":
-		dialog.text = "¡En cualquier momento, señor! ¡Visítame de vez en cuando!";
+		dialog.text = "¡En cualquier momento, mynheer! ¡Visítame de vez en cuando!";
 		link.l1 = "Te deseo clientes ricos con carteras gordas y cerebros escasos... ¡Ja-ja!";
 		link.l1.go = "guardoftruth_10";
 		break;

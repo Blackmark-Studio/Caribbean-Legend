@@ -1,4 +1,4 @@
-#define GOODS_QUANTITY  	47
+#define GOODS_QUANTITY  	49
 // порядок не менять !!! порядок важен для AI фантомов ! <-- ugeen
 
 // боеприпасы
@@ -51,17 +51,19 @@
 //   орудия
 #define GOOD_CANNON_3    	35
 #define GOOD_CANNON_6    	36
-#define GOOD_CANNON_12   	37
-#define GOOD_CANNON_16   	38
-#define GOOD_CANNON_20   	39
-#define GOOD_CANNON_24   	40
-#define GOOD_CANNON_32   	41
-#define GOOD_CANNON_36   	42
-#define GOOD_CANNON_42   	43
+#define GOOD_CANNON_8    	37
+#define GOOD_CANNON_12   	38
+#define GOOD_CANNON_16   	39
+#define GOOD_CANNON_18   	40
+#define GOOD_CANNON_20   	41
+#define GOOD_CANNON_24   	42
+#define GOOD_CANNON_32   	43
+#define GOOD_CANNON_36   	44
+#define GOOD_CANNON_42   	45
 
-#define GOOD_CULVERINE_8  	44
-#define GOOD_CULVERINE_18 	45
-#define GOOD_CULVERINE_36 	46
+#define GOOD_CULVERINE_8  	46
+#define GOOD_CULVERINE_18 	47
+#define GOOD_CULVERINE_36 	48
 
 object  Goods[GOODS_QUANTITY];
 

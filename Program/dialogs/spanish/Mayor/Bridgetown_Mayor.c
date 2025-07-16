@@ -10,13 +10,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// Голландский гамбит
 		if (CheckAttribute(pchar, "questTemp.HWIC.Eng") && pchar.questTemp.HWIC.Eng == "GotoBridgetown" && !CheckAttribute(npchar, "quest.HWICTalked"))
 		{
-			link.l1 = "Tuve un negocio rentable en Martinica y ahora planeo navegar hacia Blueweld. Quiero comprar palo de rosa y café en tu colonia. Además, mi bergantín no puede transportar tanto cargamento como quiero comprar, así que necesito comprar una flauta aquí en tu astillero. ¿Podría contar con tu asistencia en estos asuntos?";
+			link.l1 = "Tuve un negocio rentable en Martinica y ahora planeo navegar hacia Blueweld. Quiero comprar palo de rosa y café en tu colonia. Además, mi bergantín no puede transportar tanto cargamento como quiero comprar, así que necesito comprar un filibote aquí en tu astillero. ¿Podría contar con tu asistencia en estos asuntos?";
 			link.l1.go = "MayorDone";
 		}
 		break;
 
 	case "MayorDone":
-		dialog.text = "¿Mi asistencia? Nuestro comerciante es un hombre muy honesto, así que dudo que intente engañarte. Habla con el maestro de barcos sobre la flauta, él te ayudará con este asunto. Y si de todos modos tienes problemas, entonces deberías venir a verme. Estoy interesado en avanzar las conexiones comerciales con nuestra colonia y te mostraré todo mi apoyo.\nAdemás, estoy organizando un banquete esta noche, asistirán las mentes más brillantes de Bridgetown. Deberías venir también, capitán.";
+		dialog.text = "¿Mi asistencia? Nuestro comerciante es un hombre muy honesto, así que dudo que intente engañarte. Habla con el maestro de barcos sobre el filibote, él te ayudará con este asunto. Y si de todos modos tienes problemas, entonces deberías venir a verme. Estoy interesado en avanzar las conexiones comerciales con nuestra colonia y te mostraré todo mi apoyo.\nAdemás, estoy organizando un banquete esta noche, asistirán las mentes más brillantes de Bridgetown. Deberías venir también, capitán.";
 		link.l1 = "Gracias por vuestra invitación, pero desafortunadamente estoy demasiado ocupado. ¡Adiós y gracias por vuestra gestión!";
 		link.l1.go = "exit";
 		npchar.quest.HWICTalked = "true";

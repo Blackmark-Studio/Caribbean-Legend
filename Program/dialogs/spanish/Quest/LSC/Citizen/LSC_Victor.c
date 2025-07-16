@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Ah, " + GetFullName(pchar) + "¡Qué quieres?";
+			dialog.text = "Ah, " + GetFullName(pchar) + ". ¿Qué quieres?";
 			link.l1 = LinkRandPhrase("¿Tienes algo interesante que decir?", "¿Ha ocurrido algo nuevo en la isla?", "¿Me contarás los últimos chismes?");
 			link.l1.go = "rumours_LSC";
 			link.l2 = "Quiero hacerte unas preguntas sobre la isla.";
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Woman_FackYou":
-		dialog.text = "¿Qué?! ¿Decidiste revisar mis cofres? ¡No te saldrás con la tuya!";
+		dialog.text = "¿Qué? ¿Decidiste revisar mis cofres? ¡No te saldrás con la tuya!";
 		link.l1 = "¡Chica tonta!";
 		link.l1.go = "exit_setOwner";
 		LAi_group_Attack(NPChar, Pchar);

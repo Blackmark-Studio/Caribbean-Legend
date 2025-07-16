@@ -1,0 +1,159 @@
+Tutorial_1
+{
+Obrót statku
+}
+
+Tutorial_2
+{
+Naciśnij @<key1> i @<key2>, aby obrócić statek
+}
+
+Tutorial_3
+{
+Kontrola czasu
+}
+
+Tutorial_4
+{
+Włącz przyspieszenie czasu @<key>
+}
+
+Tutorial_5
+{
+Naciśnij ponownie @<key>, aby wyłączyć
+}
+
+Tutorial_6
+{
+Naciśnij @<key>, aby przyspieszyć do x6
+}
+
+Tutorial_7
+{
+Naciśnij @<key1>, aby zwolnić, lub @<key2>
+}
+
+Tutorial_8
+{
+Sterowanie żaglami
+}
+
+Tutorial_9
+{
+Ustaw żagle w tryb bojowy @<key1>
+}
+
+Tutorial_10
+{
+Całkowicie zwiń żagle @<key1>
+}
+
+Tutorial_11
+{
+Podstawy walki morskiej
+}
+
+Tutorial_12
+{
+Użyj @<key1>, aby oddać szybką salwę
+}
+
+Tutorial_13
+{
+Zaawansowana walka morska
+}
+
+Tutorial_14
+{
+@<key1> Wejdź w tryb celowania
+}
+
+Tutorial_15
+{
+Naciśnij @<key1>, aby oddać celowaną salwę
+}
+
+Tutorial_16
+{
+@<key1> Wyjdź z trybu celowania
+}
+
+Tutorial_17
+{
+Zwycięż!
+}
+
+Tutorial_18
+{
+Zatop pozostałe statki piratów
+}
+
+Tutorial_19
+{
+Atakuj wroga
+}
+
+Tutorial_20
+{
+@<key1> Cięcie
+}
+
+Tutorial_21
+{
+@<key1> Wypad
+}
+
+Tutorial_22
+{
+@<key1> Przebijający atak
+}
+
+Tutorial_23
+{
+Broń się
+}
+
+Tutorial_24
+{
+@<key1> Blokuj ataki
+}
+
+Tutorial_25
+{
+@<key1> Paruj ataki
+}
+
+Tutorial_26
+{
+Pokonaj pirata!
+}
+
+Tutorial_27
+{
+Zadania
+}
+
+Tutorial_28
+{
+Przeczytaj dokument @<key1>
+}
+
+Tutorial_29
+{
+Otwórz skrzynię z dublonami @<key1>
+}
+
+Tutorial_30
+{
+Przeszukiwanie
+}
+
+Tutorial_31
+{
+Przeszukaj marynarzy
+}
+
+Tutorial_32
+{
+Daj Alonso tajemniczą miksturę
+}

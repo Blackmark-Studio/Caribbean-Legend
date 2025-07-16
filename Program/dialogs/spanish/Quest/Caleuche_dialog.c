@@ -169,7 +169,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Tuttuat_14":
-		dialog.text = "Sí. Cálmate y no grites. Dime - ¿todavía quieres recibir un gran poder de mí, que permanezca contigo para siempre?";
+		dialog.text = "Sí. Cálmate y no grites. Dime, ¿todavía quieres recibir un gran poder de mí, que permanezca contigo para siempre?";
 		link.l1 = "Pues, claro que sí. Pero ya no tengo el amuleto.";
 		link.l1.go = "Tuttuat_15";
 		break;
@@ -182,7 +182,7 @@ void ProcessDialogEvent()
 
 	case "Tuttuat_16":
 		dialog.text = "¿Estás listo para escucharme, capitán blanco?";
-		link.l1 = "Sí, lo soy, gran chamán.";
+		link.l1 = "Sí, lo estoy, gran chamán.";
 		link.l1.go = "Tuttuat_17";
 		break;
 
@@ -193,7 +193,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Tuttuat_18":
-		dialog.text = " El Caleuche aterroriza a los marineros. Ataca sin razón y anuncia una perdición segura. No es un invitado frecuente en el Caribe. Le gusta navegar por las costas de mi tierra natal. Me parece que quiere quitar la maldición. Pero nunca la levantará.";
+		dialog.text = "El Caleuche aterroriza a los marineros. Ataca sin razón y anuncia una perdición segura. No es un invitado frecuente en el Caribe. Le gusta navegar por las costas de mi tierra natal. Me parece que quiere quitar la maldición. Pero nunca la levantará.";
 		link.l1 = "¿Por qué? ¿Qué se necesita hacer para levantar la maldición?";
 		link.l1.go = "Tuttuat_19";
 		break;
@@ -214,7 +214,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "¿Un cráneo de jade con gemas verdes en las cuencas de los ojos? Joder... Yo... ¡Lo he tenido en mis propias manos! Y se lo he vendido a unos portugueses... Merriman, o algo así... Sí, eso es lo que dijo - ¡el cráneo de Yum Cimil! ¡Lo quería con desesperación! ¡Pagó medio millón de pesos por él!";
+				link.l1 = "¿Un cráneo de jade con gemas verdes en las cuencas de los ojos? Joder... Yo... ¡Lo he tenido en mis propias manos! Y se lo he vendido a unos portugueses... Merriman, o algo así... Sí, eso es lo que dijo, ¡el cráneo de Yum Cimil! ¡Lo quería con desesperación! ¡Pagó medio millón de pesos por él!";
 			}
 			link.l1.go = "Tuttuat_21_1";
 		}
@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 			RemoveItems(pchar, "kaleuche_amulet3", 1);
 		Log_Info("Has entregado el amuleto");
 		PlaySound("interface\important_item.wav");
-		dialog.text = " (mirando) Sí, es el indicado. El segundo amuleto de Chavins. Eres bueno. Necesitas encontrar aún otro amuleto.";
+		dialog.text = "(mirando) Sí, es el indicado. El segundo amuleto de Chavins. Eres bueno. Necesitas encontrar aún otro amuleto.";
 		link.l1 = "Lo recuerdo, chamán. Pronto lo tendrás.";
 		link.l1.go = "Tuttuat_34";
 		DelLandQuestMark(npchar);
@@ -431,7 +431,7 @@ void ProcessDialogEvent()
 
 	case "Tuttuat_41":
 		dialog.text = "Ve, hombre blanco. Encuentra el cráneo de jade de Yum Cimil.";
-		link.l1 = "Tengo miedo de que no podré hacerlo. He encontrado al brujo, pero en el último momento se escapó con la calavera. No tengo ni la más remota idea de dónde puede estar ahora.";
+		link.l1 = "Me temo que no podré hacerlo. He encontrado al brujo, pero en el último momento se escapó con la calavera. No tengo ni la más remota idea de dónde puede estar ahora.";
 		link.l1.go = "Tuttuat_42";
 		break;
 
@@ -458,7 +458,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Tuttuat_45":
-		dialog.text = " (mirando) Sí, es el mismo. Muy hermoso. Y muy aterrador.";
+		dialog.text = "(mirando) Sí, es el mismo. Muy hermoso. Y muy aterrador.";
 		link.l1 = "Claro... Pero lo que es más interesante - crucé todo el mar Caribe desde Cuba hasta Dominica, y el Caleuche nunca intentó atacarme, cuando tenía este cráneo, ni siquiera lo vi. Y cuando te llevaba amuletos, constantemente me perseguía tan pronto como zarpaba, me encontraba en pocas horas.";
 		link.l1.go = "Tuttuat_46a";
 		break;
@@ -477,7 +477,7 @@ void ProcessDialogEvent()
 
 	case "Tuttuat_46c":
 		dialog.text = "";
-		link.l1 = "...acerca de ese hechizo, por cierto - ¿a dónde debo llevar la calavera de jade?";
+		link.l1 = "...acerca de ese hechizo, por cierto, ¿a dónde debo llevar la calavera de jade?";
 		link.l1.go = "Tuttuat_46";
 		break;
 
@@ -734,7 +734,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Tuttuat_72":
-		dialog.text = "Llevas cinco tallos de Manga Rosa para la poción?";
+		dialog.text = "¿Llevas cinco tallos de Manga Rosa para la poción?";
 		if (GetCharacterItem(pchar, "cannabis7") >= 5)
 		{
 			link.l1 = "Sí. Aquí tienes cinco plantas que necesitas.";
@@ -802,7 +802,7 @@ void ProcessDialogEvent()
 				sTemp = "  Hace que tus movimientos sean más rápidos y que luches mejor con armas ligeras y finas.";
 			if (sti(pchar.questTemp.Caleuche.Mangarosa) == 2)
 				sTemp = "  Te hace más resistente en viajes largos, y luchas mejor con sables afilados.";
-			dialog.text = "  Poción lista, guerrero pálido. Tómala tú. " + sTemp + "";
+			dialog.text = "Poción lista, guerrero pálido. Tómala tú. " + sTemp + "";
 			link.l1 = "Gracias, gran chamán.";
 			link.l1.go = "Tuttuat_76";
 		}
@@ -1026,7 +1026,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "on_coast_1":
-		dialog.text = "Cuando entramos en la cabina del capitán, yacías en el suelo, sin un solo movimiento. Los muchachos te recogieron y te arrastraron a nuestro barco - y justo a tiempo, ya que los muertos que yacían en la cubierta comenzaron a levantarse de nuevo\n¡Santísima Virgen y todos los Santos! Cortamos rápidamente las amarras e intentamos zarpar, pero una andanada de su barco convirtió rápidamente nuestra vieja bañera en astillas y perdimos el control sobre ella. Luego izaron las velas y desaparecieron en un abrir y cerrar de ojos\nNuestro barco encalló, y todos los que lograron sobrevivir, llegaron a la orilla en un bote. Muchos buenos hombres murieron hoy... si tan solo nos hubiéramos quedado a bordo... Pero estábamos seguros de que la tormenta acabaría con el barco para siempre.";
+		dialog.text = "Cuando entramos en la cabina del capitán, yacías en el suelo, sin un solo movimiento. Los muchachos te recogieron y te arrastraron a nuestro barco y justo a tiempo, ya que los muertos que yacían en la cubierta comenzaron a levantarse de nuevo\n¡Santísima Virgen y todos los Santos! Cortamos rápidamente las amarras e intentamos zarpar, pero una andanada de su barco convirtió rápidamente nuestra vieja bañera en astillas y perdimos el control sobre ella. Luego izaron las velas y desaparecieron en un abrir y cerrar de ojos\nNuestro barco encalló, y todos los que lograron sobrevivir, llegaron a la orilla en un bote. Muchos buenos hombres murieron hoy... si tan solo nos hubiéramos quedado a bordo... Pero estábamos seguros de que la tormenta acabaría con el barco para siempre.";
 		link.l1 = "No es culpa vuestra, caballeros. Fue la decisión correcta. Gracias, lo recordaré.";
 		link.l1.go = "on_coast_2";
 		break;
@@ -1190,7 +1190,7 @@ void ProcessDialogEvent()
 	// главарь лесных бандосов
 	case "Beliz_forestbandos":
 		dialog.text = "¡Eh, viajero! Bienvenido, bienvenido... Cena, alojamiento - todo por tu dinero. Así que, prepárate para vaciar tus bolsillos.";
-		link.l1 = " No tan rápido, buen hombre. Tengo asuntos contigo.";
+		link.l1 = "No tan rápido, buen hombre. Tengo asuntos contigo.";
 		link.l1.go = "Beliz_forestbandos_1";
 		break;
 
@@ -1524,7 +1524,7 @@ void ProcessDialogEvent()
 	case "monk_caleuche_3":
 		sld = characterFromId("Villemstad_Priest");
 		dialog.text = "Hay una casa en la parte trasera del banco. Una dama que vivía allí estaba alquilando una habitación a un tipo muy sospechoso, no del lugar, y no era holandés. Y así, nuestro padre superior, el Padre " + sld.name + ", lo había reconocido\nEra Joachim Merriman, un portugués, acusado por la Inquisición de brujería y tratos con poderes impíos. Se escondió de la Inquisición en el Nuevo Mundo. Sabes, los españoles a menudo acusan de herejía y brujería a quienes caen en desgracia para quemarlos en la hoguera, pero... En este caso tenían razón. Merriman es un brujo\nAsí que, había estado viviendo en Willemstad por un tiempo, y luego desapareció tan repentinamente como había surgido. Y después de algún tiempo, una mujer, la que le alquiló la habitación, nunca fue vista saliendo de esa casa. ¡Nunca! Y nunca se la ha visto en ningún lugar desde entonces\nY por las noches los ciudadanos ocasionalmente pueden ver luces rojo-azules parpadeando en las ventanas del segundo piso y escuchar sonidos extraños, casi como si fueran gritos impíos. Padre " + sld.name + " apeló al comandante. Envió una patrulla de cuatro soldados, registraron la casa, pero no encontraron nada: ni a la casera misma, ni a nadie más, ni nada sospechoso en absoluto.\nPero estas cosas extrañas continúan sucediendo. La casera nunca ha aparecido, y esa luz infernal todavía se puede ver allí por las noches. Además, dos mendigos han desaparecido recientemente también. Los escuché hablando en el pórtico; sabían que no había dueños en la casa, así que decidieron alojarse allí. Nadie los ha visto desde entonces.";
-		link.l1 = "Supongo que quieres que entre en esa casa y averigüe qué ocurrió realmente?";
+		link.l1 = "Supongo que quieres que entre en esa casa y averigüe qué ocurrió realmente, ¿no?";
 		link.l1.go = "monk_caleuche_4";
 		break;
 
@@ -1587,7 +1587,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "cavehunter_2":
-		dialog.text = "Eres bienvenido. Mantente alejado de ese camino.";
+		dialog.text = "De nada. Mantente alejado de ese camino.";
 		link.l1 = "...";
 		link.l1.go = "cavehunter_3";
 		break;
@@ -1651,7 +1651,7 @@ void ProcessDialogEvent()
 
 		case 3:
 			dialog.text = "Vosotros no sois cobardes, veo. Pero realmente no tenéis idea de cuántas de esas cosas hay allí. En tal asunto, cada hombre cuenta. ¡Al diablo con esto, iré con vosotros y dispararé a esa inmundicia con mi mosquete!";
-			link.l1 = " Eres un alma valiente, amigo. No rechazaré tu ayuda. ¡Vámonos!";
+			link.l1 = "Eres un alma valiente, amigo. No rechazaré tu ayuda. ¡Vámonos!";
 			link.l1.go = "cavehunter_9";
 			break;
 		}
@@ -1846,7 +1846,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "question4_r":
-		dialog.text = " Años de prosperidad han pasado y se han desvanecido, como la llama de la lámpara, y la vida abandonó la isla. Solo el templo quedó aquí como un recordatorio del gran poder de los antiguos indios. El último chamán dejó en un pedestal una sagrada esfera solar, que daba poder a los valientes y castigaba a los malvados. Fue tomada por el hombre que estuvo aquí antes que tú.";
+		dialog.text = "Años de prosperidad han pasado y se han desvanecido, como la llama de la lámpara, y la vida abandonó la isla. Solo el templo quedó aquí como un recordatorio del gran poder de los antiguos indios. El último chamán dejó en un pedestal una sagrada esfera solar, que daba poder a los valientes y castigaba a los malvados. Fue tomada por el hombre que estuvo aquí antes que tú.";
 		link.l1 = "";
 		link.l1.go = "question5";
 		break;
@@ -1920,7 +1920,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		sld = ItemsFromID("SkullAztec");
 		sld.shown = "0";
-		sld.useLocation = "treasure_alcove";
+		sld.useLocation = "KhaelRoa_Treasure_Alcove";
 		sld.useLocator = "button01";
 		LAi_group_SetRelation(LAI_GROUP_MONSTERS, LAI_GROUP_PLAYER, LAI_GROUP_NEITRAL);
 		break;

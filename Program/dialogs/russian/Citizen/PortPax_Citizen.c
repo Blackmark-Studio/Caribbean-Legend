@@ -12,6 +12,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Скажите, "+GetAddress_FormToNPC(NPChar)+", в вашу колонию в последнее время не заходил галеон под названием 'Санта-Маргарита'? Быть может, в качестве каперского приза?";
                 link.l1.go = "guardoftruth";
 			}
+			if (CheckAttribute(pchar, "questTemp.UV_DialogCitizen"))
+			{
+				link.l1 = "Я ищу капитана Ренье. Вы случайно не встречали его?";
+                link.l1.go = "UV_DialogCitizen";
+			}
 		break;
 		
 		case "info":
@@ -38,6 +43,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = LinkRandPhrase("Ясно...","Больше вопросов не имею...","Понятно. Жаль...");
 			link.l1.go = "exit";
 			npchar.quest.Guardoftruth = "true";
+		break;
+		
+		case "UV_DialogCitizen":
+			dialog.text = "Никогда о таком не слышал"+NPCharSexPhrase(NPChar,"","а")+". Но, знаете, капитанов обычно за уши из таверны не вытащишь. Думаю, вам стоит начать поиски именно оттуда.";
+			link.l1 = "Спасибо!";
+			link.l1.go = "exit";
 		break;
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод

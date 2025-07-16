@@ -159,7 +159,7 @@ void ProcessDialogEvent()
 	case "Gladis_wait":
 		if (CheckAttribute(pchar, "questTemp.HelenDrinking.Dialogs.Gladys"))
 		{
-			dialog.text = "¡Capitán, siempre es bienvenido en nuestro hogar! ¿Ha venido por Helen? Me temo que se encerró en su habitación - debe estar agotada por los últimos días. No se preocupe, a veces le sucede.";
+			dialog.text = "¡Capitán, siempre es bienvenido en nuestro hogar! ¿Ha venido por Helen? Me temo que se encerró en su habitación, debe estar agotada por los últimos días. No se preocupe, a veces le sucede.";
 			link.l1 = "¿De verdad? ¿Estás seguro, ella está bien?";
 			link.l1.go = "after_drinking";
 
@@ -175,7 +175,7 @@ void ProcessDialogEvent()
 
 	case "Gladis_history":
 		dialog.text = "¡Ah, Monsieur de Maure! Siempre me alegra ver al salvador de mi hija en mi casa. ¿Quieres ver a Helen?";
-		link.l1 = " No. Quiero hacerte unas preguntas y realmente confío en tu sinceridad. La seguridad de Helen depende de ello. ¿Te resulta familiar este anillo?";
+		link.l1 = "No. Quiero hacerte unas preguntas y realmente confío en tu sinceridad. La seguridad de Helen depende de ello. ¿Te resulta familiar este anillo?";
 		link.l1.go = "Gladis_history_1";
 		break;
 

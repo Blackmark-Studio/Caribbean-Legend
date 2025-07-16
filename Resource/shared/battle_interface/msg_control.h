@@ -74,6 +74,7 @@
 #define MSG_BATTLE_LAND_SHOW_EQUIPMENT 46106 // "l" 
 
 #define MSG_BATTLE_LAND_CROSSHAIR_SHOW 46107 // "l"
+#define BI_MSG_TUTORIAL_SHOW 46108 // "la"
 
 // spyglass interface commands
 #define MSG_ISG_VISIBLE 46201      // "l" (set visible interface)

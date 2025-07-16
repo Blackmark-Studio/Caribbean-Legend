@@ -47,8 +47,10 @@ seg_Medicament 		{médicaments}
 
 seg_Cannon_3		{Fauconneau de 3 livres}
 seg_Cannon_6		{Canon de 6 livres}
+seg_Cannon_8		{Canon de 8 livres}
 seg_Cannon_12		{Canon de 12 livres}
 seg_Cannon_16		{Canon de 16 livres}
+seg_Cannon_18		{Canon de 18 livres}
 seg_Cannon_20		{Canon de 20 livres}
 seg_Cannon_24		{Canon de 24 livres}
 seg_Cannon_32		{Canon de 32 livres}

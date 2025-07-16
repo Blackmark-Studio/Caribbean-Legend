@@ -24,7 +24,7 @@ void ProcessDialogEvent()
 	// Жерар Лекруа
 	case "lecrua":
 		pchar.quest.Trial_LineOver.over = "yes"; // снять таймер
-		dialog.text = "Buenas tardes. Usted debe ser " + GetFullName(pchar) + "?";
+		dialog.text = "Buenas tardes. Usted debe ser " + GetFullName(pchar) + ".";
 		link.l1 = "Tienes razón, Monsieur LeCroix. Capitán " + GetFullName(pchar) + " a su servicio. Fadey el Moscovita me lo recomendó...";
 		link.l1.go = "lecrua_1";
 		DelLandQuestMark(npchar);
@@ -146,12 +146,12 @@ void ProcessDialogEvent()
 			DelMapQuestMarkCity("PortRoyal");
 		}
 		dialog.text = "¿En qué puedo ayudarle, señor?";
-		link.l1 = "Buenas tardes, capitán. Usted es Florian Shoke, supongo?";
+		link.l1 = "Buenas tardes, capitán. Usted es Florian Shoke, supongo.";
 		link.l1.go = "florian_deck_1";
 		break;
 
 	case "florian_deck_1":
-		dialog.text = "Lo soy. Y tú eres el paquebote de Port-au-Prince, si no me equivoco?";
+		dialog.text = "Lo soy. Y tú eres el paquebote de Port-au-Prince, si no me equivoco.";
 		link.l1 = "¡Aye, tengo quince cañones para ti! El plazo estuvo a punto de no cumplirse, apenas lo logré...";
 		link.l1.go = "florian_deck_2";
 		break;
@@ -214,7 +214,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "florian_deck_6":
-		dialog.text = "No voy a mentir, es peligroso. Como ya sabrás, estoy al acecho de un galeón español pesado con un valioso cargamento. El barco fue llevado a los muelles para una reparación. Según mis fuentes, se suponía que zarparía ayer, pero no sucedió. Además, mi agente en Portobelo no llegó al punto de encuentro para entregar las actualizaciones que he estado esperando. Sospecho que los españoles lo arrestaron. Te pagaré para que te infiltras en Portobelo y averigües dos cosas: por qué el galeón sigue allí y qué le pasó a mi agente. ¿Aceptas?";
+		dialog.text = "No voy a mentir, es peligroso. Como ya sabrás, estoy al acecho de un galeón español pesado con un valioso cargamento. El barco fue llevado a los muelles para una reparación. Según mis fuentes, se suponía que zarparía ayer, pero no sucedió. Además, mi agente en Portobello no llegó al punto de encuentro para entregar las actualizaciones que he estado esperando. Sospecho que los españoles lo arrestaron. Te pagaré para que te infiltras en Portobello y averigües dos cosas: por qué el galeón sigue allí y qué le pasó a mi agente. ¿Aceptas?";
 		link.l1 = "Me temo que carezco del entrenamiento adecuado para tal operación. Soy un caballero, no un espía. Podría meterme en problemas yo mismo y no podré ayudarte.";
 		link.l1.go = "florian_deck_bye";
 		link.l2 = "Suena peligroso, pero rentable. Me arriesgaré. ¿Cómo se llama tu hombre y cómo se llama el galeón?";
@@ -240,7 +240,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "florian_deck_7":
-		dialog.text = "¡Aye, escucha bien entonces! El nombre de mi hombre es Sylvan Laforet, pero en Portobelo se hace llamar Jaime Silicio, un comerciante. El galeón se llama 'Alacantara'. Te aconsejo que pases por las puertas de la ciudad de noche, a través de la selva. Los guardias de Portobelo son muy suspicaces en estos días, sin mencionar que la desaparición de Sylvan no augura nada bueno para que esté vivo y sano. Tienes dos días antes de que tenga que irme de aquí antes de que las patrullas españolas nos encuentren. ¡Buena suerte, monsieur!";
+		dialog.text = "¡Aye, escucha bien entonces! El nombre de mi hombre es Sylvan Laforet, pero en Portobello se hace llamar Jaime Silicio, un comerciante. El galeón se llama 'Alacantara'. Te aconsejo que pases por las puertas de la ciudad de noche, a través de la selva. Los guardias de Portobello son muy suspicaces en estos días, sin mencionar que la desaparición de Sylvan no augura nada bueno para que esté vivo y sano. Tienes dos días antes de que tenga que irme de aquí antes de que las patrullas españolas nos encuentren. ¡Buena suerte, monsieur!";
 		link.l1 = "Nos vemos pronto, Monsieur Shoke...";
 		link.l1.go = "florian_deck_8";
 		break;
@@ -335,6 +335,7 @@ void ProcessDialogEvent()
 		sld.lifeday = 0;
 		CloseQuestHeader("Trial");
 		DeleteAttribute(pchar, "questTemp.Trial");
+		pchar.questTemp.TrialEnd = true;
 		break;
 
 	case "florian_failspy_5":
@@ -394,7 +395,7 @@ void ProcessDialogEvent()
 
 	case "florian_13":
 		dialog.text = "¡Maldita sea! Eso es espantoso... ¿Descubriste algo sobre el galeón?";
-		link.l1 = "Sí. Ha estado preparándose para embarcarse por un tiempo, pero el gobernador de Portobelo tiene la intención de retenerla en el muelle. Ahora mismo está esperando que llegue una barca llamada 'Puebla' desde Cartagena con un cargamento de pólvora para el 'Alcántara'. Según un marinero del galeón, no tienen suficiente de ella y el gobernador teme a los piratas.";
+		link.l1 = "Sí. Ha estado preparándose para embarcarse por un tiempo, pero el gobernador de Portobello tiene la intención de retenerla en el muelle. Ahora mismo está esperando que llegue una barca llamada 'Puebla' desde Cartagena con un cargamento de pólvora para el 'Alcántara'. Según un marinero del galeón, no tienen suficiente de ella y el gobernador teme a los piratas.";
 		link.l1.go = "florian_14";
 		break;
 
@@ -414,10 +415,10 @@ void ProcessDialogEvent()
 		TakeNItems(pchar, "gold_dublon", 250);
 		Log_Info("Has recibido 250 doblones");
 		PlaySound("interface\important_item.wav");
-		dialog.text = "Estás leyendo mi mente, " + GetFullName(pchar) + "¡Sí, maldita sea! Como Alacantara tiene poca pólvora, puedo dejarla navegar en mar abierto y luego obligarla a entablar una prolongada pelea naval, en la que su pólvora se agotará antes que la nuestra, ¡ja ja!\nDebes asegurarte de que el barco de suministros Puebla nunca llegue a . No puedo navegar cerca de la costa, las patrullas notarán mi fragata fácilmente y me echarán antes de que pueda interceptar a Alacantara.\nPuedes encargarte de Puebla por tu cuenta. Encuéntrala y deshazte de ella. Hundela o tómala como premio, no me importa. ¡Solo impide que llegue aquí!\nSi tienes éxito, entonces ve a Guadalupe y busca a Gerard LeCroix. Creo que ya lo conoces, ¿no? Él te pagará la moneda que mereces.";
+		dialog.text = "Estás leyendo mi mente, " + GetFullName(pchar) + "¡Sí, maldita sea! Como Alacantara tiene poca pólvora, puedo dejarla navegar en mar abierto y luego obligarla a entablar una prolongada pelea naval, en la que su pólvora se agotará antes que la nuestra, ¡ja ja!\nDebes asegurarte de que el barca goleta de suministros Puebla nunca llegue a . No puedo navegar cerca de la costa, las patrullas notarán mi fragata fácilmente y me echarán antes de que pueda interceptar a Alacantara.\nPuedes encargarte de Puebla por tu cuenta. Encuéntrala y deshazte de ella. Hundela o tómala como premio, no me importa. ¡Solo impide que llegue aquí!\nSi tienes éxito, entonces ve a Guadalupe y busca a Gerard LeCroix. Creo que ya lo conoces, ¿no? Él te pagará la moneda que mereces.";
 		link.l1 = "¡Trato hecho! ¡Me pondré en camino para cortar el Puebla!";
 		link.l1.go = "florian_19";
-		link.l2 = "Espere un poco, Monsieur Choquet. La verdad es que todavía estoy... Digamos, no particularmente acostumbrado a las batallas navales. Y usted es el capitán de una fragata, obviamente tiene más de una batalla naval a sus espaldas. Si no le es difícil, podría usted... ¿Cómo debería decirlo...";
+		link.l2 = "Espere un poco, Monsieur Choquet. La verdad es que todavía estoy... Digamos, no particularmente acostumbrado a las batallas navales. Y usted es el capitán de una fragata, obviamente tiene más de una batalla naval a sus espaldas. Si no le es difícil, podría usted... ¿Cómo debería decirlo...?";
 		link.l2.go = "florian_guide_01";
 		break;
 
@@ -428,10 +429,10 @@ void ProcessDialogEvent()
 		break;
 
 	case "florian_18":
-		dialog.text = "El Alacantara está listo para zarpar, pero el capitán del galeón está esperando que el bergantín 'Puebla' llegue de Cartagena cargado con municiones. Aparentemente, el Alacantara no tiene suficiente pólvora, así que los españoles aún no están listos para zarpar. Pero la paciencia del capitán tiene sus límites y si Puebla no llega en tres días, entonces el galeón saldrá de Portobelo sin ella\nEl Alacantara tiene poca pólvora, puedo dejar que navegue hacia mar abierto y luego forzarla a participar en una prolongada batalla naval, en la cual su pólvora se acabará antes que la nuestra. Tu objetivo es interceptar la Puebla y destruirla. Hundirla o capturarla como premio, no me importa. ¡Solo evita que ese bergantín de reabastecimiento llegue aquí!\nSi tienes éxito, entonces ve a Guadalupe y busca a Gerard LeCroix, creo que ya lo conoces, ¿verdad? Él te pagará la moneda que mereces.";
+		dialog.text = "El Alacantara está listo para zarpar, pero el capitán del galeón está esperando que el bergantín 'Puebla' llegue de Cartagena cargado con municiones. Aparentemente, el Alacantara no tiene suficiente pólvora, así que los españoles aún no están listos para zarpar. Pero la paciencia del capitán tiene sus límites y si Puebla no llega en tres días, entonces el galeón saldrá de Portobello sin ella\nEl Alacantara tiene poca pólvora, puedo dejar que navegue hacia mar abierto y luego forzarla a participar en una prolongada batalla naval, en la cual su pólvora se acabará antes que la nuestra. Tu objetivo es interceptar la Puebla y destruirla. Hundirla o capturarla como premio, no me importa. ¡Solo evita que ese bergantín de reabastecimiento llegue aquí!\nSi tienes éxito, entonces ve a Guadalupe y busca a Gerard LeCroix, creo que ya lo conoces, ¿verdad? Él te pagará la moneda que mereces.";
 		link.l1 = "¡Trato hecho! ¡Me pondré en camino para interceptar al Puebla!";
 		link.l1.go = "florian_19";
-		link.l2 = "Espere un poco, Monsieur Choquet. El hecho es que todavía estoy... Digamos, no particularmente acostumbrado a las batallas navales. Y usted es el capitán de un fragata, obviamente tiene más de una batalla naval a sus espaldas. Si no le resulta difícil, podría... ¿Cómo debería decirlo...";
+		link.l2 = "Espere un poco, Monsieur Choquet. El hecho es que todavía estoy... Digamos, no particularmente acostumbrado a las batallas navales. Y usted es el capitán de un fragata, obviamente tiene más de una batalla naval a sus espaldas. Si no le resulta difícil, podría... ¿Cómo debería decirlo...?";
 		link.l2.go = "florian_guide_01";
 		break;
 
@@ -450,14 +451,14 @@ void ProcessDialogEvent()
 	// belamour legendary edition дополнительное обучение -->
 	case "florian_guide_01":
 		dialog.text = "¿Te gustaría que te diera una lección sobre las tácticas del combate naval? ¡Con mucho gusto, capitán! Especialmente porque es de mi propio interés: quiero asegurarme de que interceptes con éxito el 'Puebla'.";
-		link.l1 = "No, no lo dije en serio. Está bien, olvídalo: estoy seguro de que no tendré problemas para interceptar una barca.";
+		link.l1 = "No, no lo dije en serio. Está bien, olvídalo: estoy seguro de que no tendré problemas para interceptar una barca goleta.";
 		link.l1.go = "florian_19";
 		link.l2 = "Sí, eso es exactamente lo que quise decir. Estoy seguro de que el nuevo conocimiento no me hará daño.";
 		link.l2.go = "florian_guide_02";
 		break;
 
 	case "florian_guide_02":
-		dialog.text = "Así que lo primero que debes recordar es que la mitad de la batalla se gana o se pierde antes de que siquiera comience. Mucho depende de cuán preparados estén tú y tu barco para ello.";
+		dialog.text = "Así que lo primero que debes recordar es que la mitad de la batalla se gana o se pierde antes de que siquiera comience. Mucho depende de cuán preparados estén tú y tu barca goleta para ello.";
 		link.l1 = "...";
 		link.l1.go = "florian_guide_03";
 		break;
@@ -481,7 +482,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "florian_guide_06":
-		dialog.text = "Además de los cañones, también vigila la cantidad de municiones. Alcantara caerá ante mí por esto. Si tiene pocas reservas de pólvora, no podrá luchar una batalla larga - necesita entrar inmediatamente en combate cuerpo a cuerpo. Y jugaré con esto: mi fragata es más rápida, un galeón pesado no podrá escapar de ella. Pero tampoco necesito acercarme: imponeré un duelo de artillería a larga distancia y luego, cuando se acabe la pólvora en la Alcantara, cerraré, la barreré con metralla y la abordaré.";
+		dialog.text = "Además de los cañones, también vigila la cantidad de municiones. Alcantara caerá ante mí por esto. Si tiene pocas reservas de pólvora, no podrá luchar una batalla larga, necesita entrar inmediatamente en combate cuerpo a cuerpo. Y jugaré con esto: mi fragata es más rápida, un galeón pesado no podrá escapar de ella. Pero tampoco necesito acercarme: imponeré un duelo de artillería a larga distancia y luego, cuando se acabe la pólvora en la Alcantara, cerraré, la barreré con metralla y la abordaré.";
 		link.l1 = "Situación desesperada...";
 		link.l1.go = "florian_guide_07";
 		break;

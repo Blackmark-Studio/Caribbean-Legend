@@ -100,12 +100,12 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "Jurgen";
 			break;
 		}
-		dialog.text = "Ah, " + GetFullName(pchar) + "¡Qué quieres?";
+		dialog.text = "Ah, " + GetFullName(pchar) + ". ¿Qué quieres?";
 		if (CheckAttribute(npchar, "quest.narval_blade") && npchar.quest.narval_blade == "ferrum")
 		{
 			if (GetCharacterItem(pchar, "jewelry11") >= 3)
 			{
-				link.l4 = " He traído tus tres piezas del hierro especial como pediste. Echa un vistazo, ¿es esto lo que quieres?";
+				link.l4 = "He traído tus tres piezas del hierro especial como pediste. Echa un vistazo, ¿es esto lo que quieres?";
 				link.l4.go = "narval_7";
 			}
 			if (CheckCharacterItem(pchar, "meteorite"))
@@ -182,7 +182,7 @@ void ProcessDialogEvent()
 
 	case "blade_4":
 		dialog.text = "¿Entonces es tu elección final? ¿Estás seguro?";
-		link.l1 = "Sí, lo soy.";
+		link.l1 = "Sí, lo estoy.";
 		link.l1.go = "blade_3";
 		break;
 
@@ -218,7 +218,7 @@ void ProcessDialogEvent()
 		dialog.text = "¡Claro! ¿Qué tipo te gusta más? ¿Rapiers, sables o espadones?";
 		link.l1 = "Rapiers. Me gustan las armas elegantes y ligeras.";
 		link.l1.go = "rapier";
-		link.l2 = " Sables. Son óptimos en mi opinión.";
+		link.l2 = "Sables. Son óptimos en mi opinión.";
 		link.l2.go = "sabre";
 		link.l3 = "¡Espadones, sin duda! ¡Corta y raja!";
 		link.l3.go = "palash";

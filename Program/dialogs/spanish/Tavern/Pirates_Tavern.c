@@ -20,20 +20,20 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth":
-			dialog.text = "Ay, sí, tengo. Ese don español le vendió a Shark Dodson un barco notable, una fragata, cuando aún residía aquí. Ah, ese barco... Era un increíble...";
-			link.l1 = "Déjame adivinar: ¿tenía un casco moderno y elegante y era capaz de alcanzar dieciséis nudos? ¿Y su nombre era 'Santa Quitaria'?";
+			dialog.text = "Pues, la verdad sí. Ese don español le vendió a Shark Dodson un barco notable, una fragata, cuando aún residía aquí. Ah, ese barco... Era un increíble navío...";
+			link.l1 = "Déjame adivinar: ¿tenía un casco moderno y elegante, y era capaz de alcanzar dieciséis nudos? ¿Y su nombre era 'Santa Quitaria'?";
 			link.l1.go = "guardoftruth_1";
 		break;
 		
 		case "guardoftruth_1":
-			dialog.text = "En cuanto al armazón y la velocidad, tienes toda la razón, pero tenía otro nombre: 'San Martín'. Shark pagó una buena cantidad de oro a ese granuja por ese barco.";
+			dialog.text = "En cuanto al armazón y la velocidad, tienes toda la razón, pero tenía otro nombre: 'San Martín'. Shark pagó una buena cantidad de oro a ese bribón por ese barco.";
 			link.l1 = "¿Estás seguro de que era 'San Martín' y no 'Santa Quiteria'? ¿Cuándo lo compró? ¿Y por qué llamaste a Dichoso un bribón?";
 			link.l1.go = "guardoftruth_2";
 		break;
 		
 		case "guardoftruth_2":
-			dialog.text = "¡Malditos sean mis ojos, estoy absolutamente seguro de que era el 'San Martín', porque personalmente vi a los trabajadores de Alexus arrancar una placa con esas tonterías papistas de la popa. Shark Dodson la llamó 'Fortuna', un nombre mucho más adecuado para semejante belleza. (escupe) La había comprado en el invierno del '54, no mucho antes de que Blaze fuera asesinado\n¿Por qué llamé a Don Miguel un sinvergüenza? ¡Porque robó la maldita nave de la armada española en Providence! Dodson organizó una actuación con fuego y humo para el fuerte de San Juan y su guarnición, como siempre me contaba cuando estaba borracho. Shark sacrificó dos lanchas dañadas para hacer que la pelea con la fragata pareciera real\nCuando llegó la noche, navegó en secreto el 'San Martín' hasta Isla Tesoro. Shark consiguió el barco y Dichoso consiguió el dinero. El astuto bastardo luego le dijo a sus superiores que la fragata se hundió durante la pelea con la flota pirata, el comandante del fuerte de San Juan lo confirmó.";
-			link.l1 = "¡Oh, cómo esos don juanes españoles llenan sus bolsillos! ¡Qué embaucador! Dime, ¿estás seguro de que eso ocurrió en el invierno de 1654? ¿Podría haber sido durante la primavera? ¿Y no mostró ese fragata signos de desgaste por la tormenta?";
+			dialog.text = "¡Malditos sean mis ojos, estoy absolutamente seguro de que era el 'San Martín', porque personalmente vi a los trabajadores de Alexus arrancar una placa con esas tonterías papistas de la popa. Shark Dodson la llamó 'Fortuna', un nombre mucho más adecuado para semejante belleza. (escupe) La había comprado en el invierno del '54, no mucho antes de que Blaze fuera asesinado.\n¿Por qué llamé a Don Miguel un bribón? ¡Porque robó la maldita nave de la armada española en Providencia! Dodson organizó una actuación con fuego y humo para el fuerte de San Juan y su guarnición, como siempre me contaba cuando estaba borracho. Shark sacrificó dos barcas dañadas para hacer que la pelea con la fragata pareciera real.\nCuando llegó la noche, navegó en secreto el 'San Martín' hasta Isla Tesoro. Shark consiguió el barco y Dichoso consiguió el dinero. El astuto bastardo luego le dijo a sus superiores que la fragata se hundió durante la pelea con la flota pirata, el comandante del fuerte de San Juan lo confirmó.";
+			link.l1 = "¡Oh, cómo esos don juanes españoles llenan sus bolsillos! ¡Qué embaucador! Dime, ¿estás seguro de que eso ocurrió en el invierno de 1654? ¿Podría haber sido durante la primavera? ¿Y no mostró esa fragata signos de desgaste por la tormenta?";
 			link.l1.go = "guardoftruth_3";
 		break;
 		
@@ -44,25 +44,25 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth_4":
-			dialog.text = "Una historia oscura, es... Cuando Blaze fue asesinado, todos sospecharon de Shark porque su collar, un diente de tiburón, fue encontrado en el cadáver. Además, algunas personas vieron a Shark en la residencia de Blaze esa noche.\nShark escapó de Isla Tesoro antes de que le dieran la marca negra. Visitó al Pastor Oscuro e intercambió su fragata por un bergantín. No hay pista de dónde está el hombre ahora. Zachary vendió la fragata a William Paterson más tarde.";
+			dialog.text = "Una historia oscura, es... Cuando Blaze fue asesinado, todos sospecharon de Shark porque su collar, un diente de tiburón, fue encontrado en el cadáver. Además, algunas personas vieron a Shark en la residencia de Blaze esa noche.\nShark escapó de Isla Tesoro antes de que le dieran la marca negra. Visitó a Black Pastor e intercambió su fragata por un bergantín. No hay pista de dónde está el hombre ahora. Zachary vendió la fragata a William Paterson más tarde.";
 			link.l1 = "¿Quién es este Paterson?";
 			link.l1.go = "guardoftruth_5";
 		break;
 		
 		case "guardoftruth_5":
-			dialog.text = "¿Qué, nunca has oído hablar de Willie Paterson? Es un escocés, recién llegado al Caribe. ¡Se cree capitán de la flota real, el favorito del Coronel Fox él mismo! Por cierto, acaba de empezar a tramar algún negocio con Jackman también. El buque insignia de Patterson es la misma 'Fortuna'.";
+			dialog.text = "¿Qué, nunca has oído hablar de Willie Paterson? Es un escocés, recién llegado al Caribe. ¡Se cree que es Capitán de la flota real, y el favorito del Coronel Fox! Por cierto, acaba de empezar a tramar algún negocio con Jackman también. El buque insignia de Paterson es la misma 'Fortuna'.";
 			link.l1 = "Ya veo. ¿Sabes dónde está Dichoso ahora mismo?";
 			link.l1.go = "guardoftruth_6";
 		break;
 		
 		case "guardoftruth_6":
-			dialog.text = "No tengo ni idea. Después de esa triquiñuela con 'Fortune', no lo he visto en Isla Tesoro desde entonces y no he oído nada sobre él.";
-			link.l1 = "Está bien, "+npchar.name+"¡Gracias por la información detallada! ¡Eres un excelente tabernero! Ojalá hubiera más gente como tú... ¡Adiós!";
+			dialog.text = "No tengo ni idea. Después de esa triquiñuela con 'Fortune', no lo he visto en Isla Tesoro desde entonces, y no he oído nada sobre él.";
+			link.l1 = "Está bien, "+npchar.name+". ¡Gracias por la información detallada! ¡Eres un excelente tabernero! Ojalá hubiera más gente como tú... ¡Adiós!";
 			link.l1.go = "guardoftruth_7";
 		break;
 		
 		case "guardoftruth_7":
-			dialog.text = "Buena suerte, "+pchar.name+"¡";
+			dialog.text = "Buena suerte, "+pchar.name+".";
 			link.l1 = "...";
 			link.l1.go = "guardoftruth_8";
 		break;
@@ -77,7 +77,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "tieyasal":
-			dialog.text = "  Parece que ambos se persiguen mutuamente, camarada. Sí, Dichoso estuvo aquí justo donde estás parado. Y de la misma manera exacta, él estaba preguntando por ti la última vez que estuviste en Sharptown.";
+			dialog.text = "Parece que ambos se persiguen mutuamente, camarada. Sí, Dichoso estuvo aquí justo donde estás parado. Y de la misma manera exacta, él estaba preguntando por ti la última vez que estuviste en Sharptown.";
 			link.l1 = "¡Maldita sea! Esa es la noticia... ¿Y dónde está Miguel ahora mismo?";
 			link.l1.go = "tieyasal_1";
 		break;

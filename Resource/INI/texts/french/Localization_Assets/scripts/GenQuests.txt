@@ -1,142 +1,86 @@
 GenQuests_1
 {
-Smuggler
+Contrebandier
 }
 
 GenQuests_2
 {
-Officer
+Officier
 }
 
 GenQuests_3
 {
-Soldier
+Soldat
 }
 
 GenQuests_4
 {
-So I found the wedding ring of the girl from @<sCity>.. I need to take it to her.
+Alors j'ai trouvé la bague de mariage de la fille de @<sCity>.... Je dois la lui apporter.
 }
-
-GenQuests_5
-{
-Barque
-}
-
-GenQuests_6
-{
-Fleut
-}
-
-GenQuests_7
-{
-Galeon
-}
-
-GenQuests_8
-{
-Pinnace
-}
-
-GenQuests_9
-{
-Caracca
-}
-
-GenQuests_10
-{
-schooner
-}
-
-GenQuests_11
-{
-brig
-}
-
-GenQuests_12
-{
-brigantine
-}
-
-GenQuests_13
-{
-corvette
-}
-
-GenQuests_14
-{
-frigate
-}
-
-GenQuests_15
-{
-ship-of-the-line
-}
-
 
 GenQuests_16
 {
-Treasures are somewhere nearby!
+Un trésor se trouve quelque part tout près !
 }
 
 GenQuests_17
 {
-Time to search for the ship is up
+Le temps de recherche pour le navire est écoulé
 }
 
 GenQuests_18
 {
-Time to search for the ship is up, the captain went ashore
+Le temps de recherche pour le navire est écoulé, le capitaine est descendu à terre.
 }
 
 GenQuests_19
 {
-Captain went ashore
+Le capitaine est descendu à terre
 }
 
 GenQuests_20
 {
-Captain! We have an epidemic!
+Capitaine ! Nous avons une épidémie !
 }
 
 GenQuests_21
 {
-On board of ship @<chref.Ship.Name> @<crew> people are already dead
+A bord du navire @<chref.Ship.Name> @<crew> personnes sont déjà mortes
 }
 
 GenQuests_22
 {
-blew up
+a fait exploser
 }
 
 GenQuests_23
 {
-blew up
+a fait exploser
 }
 
 GenQuests_24
 {
-~ hook the camera.
+~ sa Sainte-barbe.
 }
 
 GenQuests_25
 {
-Ship empty
+Navire vide
 }
 
 GenQuests_26
 {
-Have you heard that the mistress kicked out a maid named @<pchar.GenQuest.EncGirl.name> just because she couldn't collect her scattered pearls in the jungle? The people completely lost their shame!.. and had no conscience never.
+Avez-vous entendu dire que la maîtresse a mis à la porte une servante nommée @<pchar.GenQuest.EncGirl.name> juste parce qu'elle ne pouvait pas récupérer ses perles éparpillées dans la jungle ? Les gens n'ont plus aucune honte !... et n'ont jamais eu de conscience.
 }
 
 GenQuests_27
 {
-Have you heard that some whore tried to get onto the ship without documents? She was caught and taken back to the brothel. They say she owes the owner a tidy sum.
+Avez-vous entendu qu'une pute a essayé de monter sur le bateau sans papiers ? Elle a été attrapée et ramenée au bordel. On dit qu'elle doit une belle somme au propriétaire.
 }
 
 GenQuests_28
 {
-Have you heard? Some whore without documents was caught in our port. They say she escaped from a brothel after cleaning out the chests of the owner there. This carrier of infection and theft should have been shut down long ago. After all, our children see all this, what can they learn?
+Vous êtes au courant ? Une pute sans papiers a été attrapée dans notre port. On dit qu'elle s'est échappée d'un bordel après avoir vidé les coffres de son propriétaire. Ce foyer d'infection et de vol aurait dû être fermé il y a longtemps. Après tout, nos enfants voient tout cela, que vont-ils en apprendre ?
 }
 
 GenQuests_29
@@ -171,130 +115,130 @@ Lincoln
 
 GenQuests_35
 {
-in shipbuilding
+en construction navale
 }
 
 GenQuests_36
 {
-in artillery
+en artillerie
 }
 
 GenQuests_37
 {
-in navigation
+en navigation
 }
 
 GenQuests_38
 {
-Captain, how's your trip on a pirate ship? Is it normal? Were you offended there? Ha ha ha!
+Capitaine, comment se passe votre voyage sur un navire pirate ? C'est normal ? Avez-vous été offensés ? Ha ha ha !
 }
 
 GenQuests_39
 {
-Oh-oh-oh, captain, I heard you had a lot of fun recently.... You, my friend, are now a poor man! Ha-ha-ha!!
+Oh-oh-oh, capitaine, j'ai entendu dire que vous vous étiez beaucoup amusé récemment.... Toi, mon ami, tu es maintenant un pauvre homme ! Ha-ha-ha !
 }
 
 GenQuests_40
 {
-You can moor in the bay.
+Vous pouvez mouiller dans la baie.
 }
 
 GenQuests_41
 {
-Have you heard, @<GetAddress_Form(pchar)>, that the patrol captain @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. was recently arrested. It turns out he was moonlighting as a smuggler. Just think, before What has the current governor brought to the colony! Those who are supposed to catch pirates are robbing us themselves!.. Rumor has it that in a week he will be executed. That serves him right.
+Avez-vous entendu dire, @<GetAddress_Form(pchar)>,que le capitaine de @<sShipType> @<pchar.GenQuest.CaptainComission.Name> a récemment été arrêté ? Il s'avère qu'il travaillait au noir comme contrebandier. Quand on pense à ce que l'actuel gouverneur a fait subir à la colonie ! Ceux qui sont censés attraper les pirates nous volent eux-mêmes !... La rumeur dit que dans une semaine, il sera exécuté. C'est bien fait pour lui.
 }
 
 GenQuests_42
 {
-Rumor has it that the patrol captain @<sShipType> @<pchar.GenQuest.CaptainComission.Name>  turned out to be the organizer of a gang of smugglers. He was caught and will soon be hanged. It looks like @<GetAddress_Form(pchar)>, our governor has taken the lead seriously order in the colony.
+La rumeur veut que le capitaine de @<sShipType> @<pchar.GenQuest.CaptainComission.Name> soit l'organisateur d'un gang de contrebandiers. Il a été arrêté et sera bientôt pendu. Il semble que @<GetAddress_Form(pchar)>, notre gouverneur ait sérieusement pris en main le retour de l'ordre dans la colonie.
 }
 
 GenQuests_43
 {
-Can you imagine? The commander of the fort exposed a secret organization of smugglers, which managed to recruit even naval officers into its ranks. One of them, whose name is @<pchar.GenQuest.CaptainComission.Name>, has already been caught and will soon be hanged. Oh, @<GetAddress_Form(pchar)>, I always said that our governor will sooner or later restore order in the settlement.
+Vous imaginez ? Le commandant du fort a démasqué une organisation secrète de contrebandiers, qui a réussi à recruter même des officiers de marine dans ses rangs. L'un d'entre eux, qui s'appelle @<pchar.GenQuest.CaptainComission.Name>, a déjà été arrêté et sera bientôt pendu. Oh, @<GetAddress_Form(pchar)>, j'ai toujours dit que notre gouverneur rétablirait tôt ou tard l'ordre dans la colonie.
 }
 
 GenQuests_44
 {
-Do you already know that the captain of the patrol @<sShipType> @<pchar.GenQuest.CaptainComission.Name> was arrested? The authorities learned that he hid a large consignment of goods, which he confiscated from ships passing in the waters. It seems that he will not be hanged avoid. But, I'll tell you, he was one of the best in the patrol squadron. Who would have thought...
+Vous savez déjà que le capitaine de @<sShipType> @<pchar.GenQuest.CaptainComission.Name> a été arrêté ? Les autorités ont appris qu'il cachait une importante cargaison de marchandises, qu'il confisquait aux navires passant dans les eaux. Il semble qu'il ne sera pas pendu pour autant. Mais, je vous le dis, c'était l'un des meilleurs de la flotte de patrouille. Qui l'aurait cru...
 }
 
 GenQuests_45
 {
-Damn! The prisoner escaped!
+Bon sang ! Le prisonnier s'est échappé !
 }
 
 GenQuests_46
 {
-Have you heard, @<GetAddress_Form(pchar)>, that a patrol captain was recently hanged @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. They say he robbed some merchant. Here after all, as it happens, you can't trust anyone... And the whole team with him was executed together. Collusion means...
+Avez-vous entendu dire, @<GetAddress_Form(pchar)>, qu'un capitaine de  @<sShipType> a récemment été pendu : @<pchar.GenQuest.CaptainComission.Name>. On dit qu'il a volé un marchand. Ici, après tout, on ne peut faire confiance à personne... Et tout l'équipage qui l'accompagnait a aussi été exécuté. Collusion oblige...
 }
 
 GenQuests_47
 {
-Do you already know, @<GetAddress_Form(pchar)>, that the former patrol captain @<sShipType> @<pchar.GenQuest.CaptainComission.Name> was executed? Rumor has it that he sank some important ship, and hid the goods. And none of the team admitted where the hiding place was. So they all were hanged...
+Savez-vous déjà, @<GetAddress_Form(pchar)>, que l'ancien capitaine de @<sShipType> @<pchar.GenQuest.CaptainComission.Name> a été exécuté ? La rumeur dit qu'il a coulé un navire important et qu'il a caché la marchandise. Et aucun membre de l'équipe n'a avoué où se trouvait la cachette. Ils ont donc tous été pendus...
 }
 
 GenQuests_48
 {
-Can you imagine, @<GetAddress_Form(pchar)>? One of the captains of the patrol squadron was engaged in sea robbery. So he was recently executed along with his entire crew. They say that they robbed and sank merchant ships.
+Pouvez-vous imaginer, @<GetAddress_Form(pchar)> ? L'un des capitaines de la flotte de patrouille s'est livré à des pillages en mer. Il a donc été exécuté récemment avec tout son équipage. On dit qu'ils ont volé et coulé des navires marchands.
 }
 
 GenQuests_49
 {
-They recently executed a former captain named @<pchar.GenQuest.CaptainComission.Name> along with the team of his patrol @<sShipType>.. Rumor has it that they hid a large consignment of goods that were confiscated from ships passing in the waters. But this was one of the best patrol crews. I think, @<GetAddress_Form(pchar)>, that they were deliberately slandered. After all, the goods were never found..
+Ils ont récemment exécuté un ancien capitaine nommé @<pchar.GenQuest.CaptainComission.Name> ainsi que l'équipage de son @<sShipType>. La rumeur veut qu'ils aient caché une grande quantité de marchandises confisquées aux navires croisant dans les eaux. Mais c'était l'un des meilleurs équipages de patrouille. Je pense, @<GetAddress_Form(pchar)>, qu'ils ont été délibérément calomniés. Après tout, les marchandises n'ont jamais été retrouvées.
 }
 
 GenQuests_50
 {
-All goods are loaded into the hold
+Toutes les marchandises sont chargées dans la cale
 }
 
 GenQuests_51
 {
-the three
+trois
 }
 GenQuests_52
 {
-the four
+quatre
 }
 GenQuests_53
 {
-the five
+cinq
 }
 GenQuests_54
 {
-the six
+six
 }
 GenQuests_55
 {
-the seven
+sept
 }
 GenQuests_56
 {
-the eight
+huit
 }
 GenQuests_57
 {
-the nine
+neuf
 }
 GenQuests_58
 {
-the ten
+dix
 }
 
 GenQuests_59
 {
-The shipwreckers were delivered to the settlement
+Les naufragés ont été conduits à la colonie
 }
 
 GenQuests_60
 {
-The smuggler was afraid to go to the fort's armory and ran away
+Le contrebandier a eu peur de se rendre à l'armurerie du fort et s'est enfui
 }
 
 GenQuests_61
 {
-You have arrived at the correct cave
+Vous êtes arrivé à la bonne grotte
 }
 
 GenQuests_62
@@ -327,12 +271,12 @@ GenQuests_67
 
 GenQuests_68
 {
-not gentlemanly
+pas courtois
 }
 
 GenQuests_69
 {
-unseemly
+inconvenant
 }
 
 GenQuests_70
@@ -346,20 +290,20 @@ GenQuests_71
 
 GenQuests_72
 {
-a gentleman's word
+une parole de gentilhomme
 }
 GenQuests_73
 {
-'to keep one's word'
+"respecter la parole donnée"
 }
 
 GenQuests_74
 {
-sank, and with it
+a coulé, et avec corps et biens
 }
 GenQuests_75
 {
-sank, and with it
+a coulé, et avec corps et biens
 }
 
 GenQuests_76
@@ -373,72 +317,72 @@ GenQuests_77
 
 GenQuests_78
 {
-Captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', whose name is @<GetFullName(sld)>, went to sea again. According to rumors, he moved to @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
+Le capitaine @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', dont le nom est @<GetFullName(sld)>, a repris la mer. Selon les rumeurs, il s'est déplacé vers @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
 }
 
 GenQuests_79
 {
-Do you know captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? So, he went to @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
+Connaissez-vous le capitaine @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' ? Donc, il est allé à @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
 }
 
 GenQuests_80
 {
-If you need captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', then you have to go to @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> went there.
+Si vous avez besoin du capitaine @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', alors vous devez aller à @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> y est allé.
 }
 
 GenQuests_81
 {
-Captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', whose name is @<GetFullName(sld)>, went to sea again. According to rumors, he moved to @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
+Le capitaine @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', dont le nom est @<GetFullName(sld)>, a repris la mer. Selon les rumeurs, il s'est déplacé vers @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
 }
 
 GenQuests_82
 {
-Do you know captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? So, he went to @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
+Connaissez-vous le capitaine @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' ? Donc, il est allé à @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
 }
 
 GenQuests_83
 {
-If you need captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', then you have to go to @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> went there.
+Si vous avez besoin du capitaine @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', alors vous devez aller à @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> y est allé.
 }
 
 GenQuests_84
 {
-Captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', whose name is @<GetFullName(sld)>, went to sea again. According to rumors, he moved to @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
+Le capitaine @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', dont le nom est @<GetFullName(sld)>, a repris la mer. Selon les rumeurs, il s'est déplacé vers @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
 }
 
 GenQuests_85
 {
-Do you know captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? So, he went to @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
+Connaissez-vous le capitaine @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' ? Donc, il est allé à @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
 }
 
 GenQuests_86
 {
-If you need captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', then you have to go to @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> went there.
+Si vous avez besoin du capitaine @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', alors vous devez aller à @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> y est allé.
 }
 
 GenQuests_87
 {
-Officer @<GetFullName(sld)> has run away with @<sld.ship.name>
+L'officier @<GetFullName(sld)> s'est enfui avec @<sld.ship.name>
 }
 
 GenQuests_88
 {
-Officer @<GetFullName(sld)> has run away from @<pchar.ship.name>
+L'officier @<GetFullName(sld)> s'est enfui de @<pchar.ship.name>
 }
 
 GenQuests_89
 {
-interceptors
+intercepteurs
 }
 
 GenQuests_90
 {
-Five days passed...
+Cinq jours se sont écoulés...
 }
 
 GenQuests_91
 {
-55 people has joined your crew
+55 personnes ont rejoint votre équipage
 }
 
 GenQuests_92
@@ -452,135 +396,135 @@ GenQuests_93
 
 GenQuests_94
 {
-Hear, hear, captain @<GetFullName(pchar)> had fight with a bandit called @<pchar.GenQuest.(Gun).name>. They tried to rob him, but he wasn't willing to pay. Brave man, this captain, he just slayed the scum.
+Écoutez, écoutez, le capitaine @<GetFullName(pchar)> s'est battu avec un bandit appelé @<pchar.GenQuest.(Gun).name>. Ils ont essayé de le voler, mais il n'était pas prêt à payer. Brave homme, ce capitaine, il vient de tuer la racaille.
 }
 
 GenQuests_95
 {
-There was a fight in the jungles not long ago - bandits attacked captain @<GetFullName(pchar)>, wanted to get the man's gold... A-ha, it was you who got rid of @<pchar.GenQuest.(Gun).name>! I say nicely done...
+Il y a eu un combat dans la jungle il n'y a pas longtemps - des bandits ont attaqué le capitaine @<GetFullName(pchar)>, ils voulaient s'emparer de l'or de l'homme... A-ha, c'est vous qui vous êtes débarrassé de @<pchar.GenQuest.(Gun).name> ! Bien joué...
 }
 
 GenQuests_96
 {
-Did you hear how local gang of @<pchar.GenQuest.(Gun).name> tried to rob captain named @<GetFullName(pchar)>? He refused to pay and slaughtered them all.
+Avez-vous entendu parler du gang local de @<pchar.GenQuest.(Gun).name> qui a essayé de voler le capitaine @<GetFullName(pchar)> ? Il a refusé de payer et les a tous massacrés.
 }
 
 GenQuests_97
 {
-Did you hear about a murder of @<pchar.GenQuest.EncGirl.name>? Poor girl, she was killed in the jungles recently. They should find the murderer and hang him!
+Avez-vous entendu parler du meurtre de @<pchar.GenQuest.EncGirl.name> ? La pauvre, elle a été tuée dans la jungle récemment. Ils devraient trouver le meurtrier et le pendre !
 }
 
 GenQuests_98
 {
-You know, captain @<GetFullName(pchar)>, someone murdered a poor girl named @<pchar.GenQuest.EncGirl.name>? Pity, she was a really nice girl...
+Vous savez, capitaine @<GetFullName(pchar)>, quelqu'un a assassiné une pauvre fille nommée @<pchar.GenQuest.EncGirl.name> ? Dommage, c'était une fille très gentille...
 }
 
 GenQuests_99
 {
-Her name was @<pchar.GenQuest.EncGirl.name>, and she died in the jungles. Nothing striking, I'll tell ya, it is not safe out there...
+Elle s'appelait @<pchar.GenQuest.EncGirl.name>, et elle est morte dans la jungle. Rien de bien frappant, je vous le dis, on n'est pas en sécurité là dehors...
 }
 
 GenQuests_100
 {
-Вы слышали, какой-то капитан спас девушку по имени @<pchar.GenQuest.EncGirl.name> от бандитов, буквально вытащил её из их лап! Какой прекрасный человек и настоящий мужчина!
+Avez-vous entendu dire qu'un capitaine a sauvé une fille nommée @<pchar.GenQuest.EncGirl.name> des mains de bandits, il l'a littéralement tirée de leurs griffes ! Quel bel et véritable homme !
 }
 
 GenQuests_101
 {
-Вы знаете, капитан @<GetFullName(pchar)> спас девушку по имени @<pchar.GenQuest.EncGirl.name> от насильников в джунглях... А-а, так это же вы!! Я вами восхищаюсь...
+Vous savez, le capitaine @<GetFullName(pchar)> a sauvé une fille nommée @<pchar.GenQuest.EncGirl.name> de violeurs dans la jungle... Oh, c'est vous ! Je vous admire...
 }
 
 GenQuests_102
 {
-Девушке по имени @<pchar.GenQuest.EncGirl.name> здорово повезло - недавно на неё напали бандиты в джунглях, хотели изнасиловать, видать. Но ничего у них не вышло, хе-хе, и благодарить она должна капитана @<GetMainCharacterNameGen()>!
+Une fille nommée @<pchar.GenQuest.EncGirl.name> est une fille chanceuse - récemment, elle a été attaquée par des bandits dans la jungle, ils voulaient la violer. Mais ils n'ont pas réussi, héhéhé, et elle doit remercier le capitaine @<GetMainCharacterNameGen()> !
 }
 
 GenQuests_103
 {
-Well, captain @<GetFullName(pchar)>, nobody could ever think that you would leave a helpless woman in the hands of bandits to be their plaything. Poor @<pchar.GenQuest.EncGirl.name>, if only I had words...
+Eh bien, capitaine @<GetFullName(pchar)>, personne n'aurait pu penser que vous laisseriez une femme sans défense aux mains de bandits pour qu'elle devienne leur jouet. Pauvre @<pchar.GenQuest.EncGirl.name>, si seulement j'avais les mots...
 }
 
 GenQuests_104
 {
-You know, captain, you are a real bastard. How could turn away from a helpless girl in the jungles? Do you have any idea what they did to her? Poor @<pchar.GenQuest.EncGirl.name>, no one is going to marry her ever...
+Vous savez, capitaine, vous êtes un vrai salaud. Comment avez-vous pu vous détourner d'une fille sans défense dans la jungle ? Avez-vous la moindre idée de ce qu'ils lui ont fait ? Pauvre @<pchar.GenQuest.EncGirl.name>, personne ne l'épousera jamais...
 }
 
 GenQuests_105
 {
-Did you hear about a murder of @<pchar.GenQuest.EncGirlF.name>? Poor girl, she was killed in the jungles recently. They should find the murderer and hang him!
+Avez-vous entendu parler du meurtre de @<pchar.GenQuest.EncGirlF.name> ? La pauvre, elle a été tuée dans la jungle récemment. Ils devraient trouver le meurtrier et le pendre !
 }
 
 GenQuests_106
 {
-You know, captain @<GetFullName(pchar)>, someone murdered a poor girl named @<pchar.GenQuest.EncGirlF.name>? Pity, she was a really nice girl...
+Vous savez, capitaine @<GetFullName(pchar)>, quelqu'un a assassiné une pauvre fille nommée @<pchar.GenQuest.EncGirlF.name> ? Dommage, c'était une fille très gentille...
 }
 
 GenQuests_107
 {
-Her name was @<pchar.GenQuest.EncGirlF.name>, and she died in the jungles. Nothing striking, I'll tell ya, it is not safe out there...
+Elle s'appelait @<pchar.GenQuest.EncGirlF.name>, et elle est morte dans la jungle. Rien de bien frappant, je vous le dis, on n'est pas en sécurité là dehors...
 }
 
 GenQuests_108
 {
-Recently they had found our officer and his whole unit dead. Who could kill them? And why?
+Récemment, notre officier et toute son unité ont été retrouvés morts. Qui a pu les tuer ? Et pourquoi ?
 }
 
 GenQuests_109
 {
-Our commandant regularly sends patrols in the jungles, but I have no clue what he is going to do now. Soldiers were found dead there not long ago...
+Notre commandant envoie régulièrement des patrouilles dans la jungle, mais je n'ai aucune idée de ce qu'il va faire maintenant. Des soldats y ont été retrouvés morts il n'y a pas longtemps...
 }
 
 GenQuests_110
 {
-Damn it, someone had slaughtered a whole unit of our soldiers  outside the city...
+Bon sang, quelqu'un a massacré une unité entière de nos soldats à l'extérieur de la ville...
 }
 
 GenQuests_111
 {
-They say that captain @<GetFullName(pchar)> run against soldiers of @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> in the jungles and eliminated all of them. Ha, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> are worthless fighters...
+On dit que le capitaine @<GetFullName(pchar)> a affronté des soldats de @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> dans la jungle et qu'il les a tous éliminés. Ha, les @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> sont des combattants qui ne valent rien...
 }
 
 GenQuests_112
 {
-I must had heard that some captain @<GetMainCharacterNameGen()> was inspected outside the city by a patrol...
+J'ai dû entendre dire qu'un certain capitaine @<GetMainCharacterNameGen()> avait été inspecté en dehors de la ville par une patrouille...
 }
 
 GenQuests_113
 {
-Hm, as far as I know, you had been inspected by our patrol outside the city. I don't know how effective it was...
+Hm, pour autant que je sache, vous avez été inspecté par notre patrouille à l'extérieur de la ville. Je ne sais pas si elle a été efficace...
 }
 
 GenQuests_114
 {
-Our commandant will enforce patrolling the jungles. You must know that already, you were inspected not long ago...
+Notre commandant veillera à ce que des patrouilles soient effectuées dans les jungles. Vous devez déjà le savoir, vous avez été inspecté il n'y a pas longtemps...
 }
 
 GenQuests_115
 {
-Вы знаете, губернатор @<sTemp> поручил некоему капитану @<GetMainCharacterNameDat()> уничтожить известного бандита по имени @<GetFullName(arAll)>. И, кажется, что капитан выполнил задание губернатора...
+Vous savez, le gouverneur @<sTemp> a chargé un certain capitaine @<GetMainCharacterNameDat()> d'éliminer un bandit connu nommé @<GetFullName(arAll)>. Et il semble que le capitaine ait rempli la mission du gouverneur....
 }
 
 GenQuests_116
 {
-Какой-то смелый капитан вызвался найти и уничтожить местного бандита по имени @<GetFullName(arAll)>. И, похоже, он сделал это!
+Un brave capitaine s'est porté volontaire pour trouver et éliminer un bandit local nommé @<GetFullName(arAll)>. Et il semble qu'il l'ait fait !
 }
 
 GenQuests_117
 {
-Ха, наконец-то наш губернатор взялся за наведение порядка в джунглях - он поручил капитану @<GetMainCharacterNameDat()> разыскать в джунглях и убить наиболее известного бандита. И вы знате, этот бандит, @<GetFullName(arAll)> - мёртв!
+Ah, notre gouverneur a enfin décidé de faire régner l'ordre dans la jungle. Il a chargé le capitaine @<GetMainCharacterNameDat()> de retrouver le bandit le plus célèbre de la jungle et de le tuer. Et vous savez, ce bandit, @<GetFullName(arAll)> : il est mort !
 }
 
 GenQuests_118
 {
-map
+carte
 }
 
 GenQuests_119
 {
-treasure
+trésor
 }
 
 GenQuests_120
 {
-money
+argent
 }

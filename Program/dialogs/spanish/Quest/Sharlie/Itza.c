@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 		
 		case "urakan_1":
 			dialog.text = "Sí, tú, noble guerrero, rostro pálido. Pero no resistirás a cientos de guerreros Tayasal Itza. Sin embargo, dices una palabra interesante. ¿Cómo sabes sobre el gran Kanek y Kukulcán?";
-			link.l1 = "Bueno, déjame adivinar... Ya que no eres Kanek, tu nombre debe ser Urakan y eres el hijo del sacerdote Kanek?";
+			link.l1 = "Bueno, déjame adivinar... Ya que no eres Kanek, ¿tu nombre debe ser Urakan y eres el hijo del sacerdote Kanek?";
 			link.l1.go = "urakan_2";
 		break;
 		
@@ -208,7 +208,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "treasure_1":
-			dialog.text = "Mi padre dice: 'Cualquier riqueza tiene dos caras. Sólo aquel que conoce estas dos caras entra a los tesoros de Tayasal.' Qué significa esto - no lo sé. ¿Quizá, Cavil lo adivine?";
+			dialog.text = "Mi padre dice: 'Cualquier riqueza tiene dos caras. Sólo aquel que conoce estas dos caras entra a los tesoros de Tayasal.' Qué significa esto, no lo sé. ¿Quizá, Cavil lo adivine?";
 			link.l1 = "También resolveremos esto...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "urakan_adv";
@@ -253,7 +253,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "kanek_3":
-			dialog.text = "¿Qué?! ¡Recapacita, hijo!";
+			dialog.text = "¿Qué? ¡Recapacita, hijo!";
 			link.l1 = "Este hombre es el hermano de Kukulcán y un gran guerrero. ¡Veo la encarnación del mismo Cavil en él! Nadie, aparte de él, soporta a un dios así. ¡No es un juego de niños en el duelo de dioses, padre! Y si traes ofrendas a Kukulcán, ¡mis guerreros darán su sangre a Cavil!";
 			link.l1.go = "kanek_4";
 		break;

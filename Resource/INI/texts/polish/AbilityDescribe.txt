@@ -32,7 +32,7 @@ perkSwordplayProfessional
 Gwarantowane 15% szans na zadanie trafienia krytycznego wobec wroga. Otrzymywane obrażenia zostają zredukowane o 30%.
 }
 
-Grus {Wóz Transportowy}
+Grus {Wół Transportowy}
 perkGrus
 {
 Maksymalne obciążenie zostaje zwiększone o 30 funtów.
@@ -88,6 +88,8 @@ perkGunProfessional
 Broń palna jest przeładowywana 25% szybciej. Celność zostaje zwiększona o 25%.
 ~
 Zdolność pozwala na korzystanie z broni wielolufowych i powtarzalnych.
+~
+Postać może strzelać z muszkietu przez sojuszników, nie trafiając ich. Cudownie!
 }
 
 IronWill {Żelazna Wola}
@@ -141,6 +143,11 @@ Ta postać może piastować dwa stanowiska oficerskie jednocześnie.
 Zdolność tylko dla oficerów.
 }
 
+perkByWorkerShort
+{
+Ta postać może piastować dwa stanowiska oficerskie jednocześnie
+}
+
 ByWorker2 {Niezwykłe Uzdolnienie}
 perkByWorker2
 {
@@ -151,6 +158,11 @@ Ta postać może piastować trzy stanowiska oficerskie jednocześnie.
 ~
 ~
 Zdolność tylko dla oficerów.
+}
+
+perkByWorker2Short
+{
+Ta postać może piastować trzy stanowiska oficerskie jednocześnie
 }
 
 Trustworthy {Godny Zaufania}
@@ -303,14 +315,14 @@ perkSailingProfessional
 Prędkość ogólna i obracania się statku jest większa o 20%. 3/4 zwykłych statków na mapie świata można ominąć.
 }
 
-SeaDogProfessional {Postrach Mórz}
+SeaDogProfessional	{Postrach Mórz}
 perkSeaDogProfessional
 {
-Nawet niedoświadczeni poszukiwacze przygód i bandyci pomyślą dwa razy, zanim zaatakują statek z flagą postrachu mórz. Chroni przed atakami ze strony eskadr wroga. Nie działa na małych okrętach.
+Na widok bandery Postrachu Mórz nawet najodważniejsi awanturnicy i bandyci nie ryzykują kuszenia losu. Zwiększa Siłę Floty o 30%.
 ~
 ~
 ~
-Zdolność dostępna tylko dla gracza.
+Umiejętność dostępna tylko dla gracza, wymaga poziomu 25.
 }
 
 FlagPir {Piracka Flaga}
@@ -373,7 +385,7 @@ Troopers {Taktyka Oblężnicza}
 perkTroopers
 {
 Zdolność pozwala zjednoczyć kilka oddziałów lądowych w jedną siłę podczas ataku na fort.
-Reduces the squad size needed for a land assault on the settlement.
+Zmniejsza wielkość oddziału, potrzebnego do przeprowadzenia ataku lądowego na osadę.
 }
 
 BasicCommerce {Łeb do Interesów}

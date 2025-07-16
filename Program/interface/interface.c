@@ -145,7 +145,7 @@ void LaunchDeath()	// Интерфейс смерти
 
 void LaunchTutorial(string tutorialName, bool bShowVideo)	// Интерфейс окна обучения
 {
-	if(CheckAttribute(&InterfaceStates, "ShowTutorial") && sti(InterfaceStates.ShowTutorial) == 0) return;
+	if(CheckAttribute(&InterfaceStates, "ShowTutorial") && sti(InterfaceStates.ShowTutorial) == 0 && !bGlobalTutor) return;
 	if(questMovieIsLockPlayerCtrl) return;
 	if(procInterfacePrepare(INTERFACE_TUTORIAL))
 	{
@@ -1564,7 +1564,8 @@ bool procInterfacePrepare(int interfaceCode)
 	if( LoadSegment(Interfaces[interfaceCode].SectionName) )
 	{
 		Telescope_Off();
-		SetCharacterForcedStop(pchar);	// evganat - останавливаем пробежки
+        if(interfaceCode == INTERFACE_ITEMSBOX)
+            SetCharacterForcedStop(pchar);
 		Event("Interface_Started");
 		InterfaceStates.Launched = true;
 		InterfaceStates.doUnFreeze = false;
@@ -2390,6 +2391,7 @@ bool AutoSave()		// Ручное автосохранение для квест�
 	aref arScrShoter;
 	if( !GetEntity(&arScrShoter,"scrshoter") ) 
 	{
+		LaunchQuickSaveMenu();
 		SetEventHandler("makescrshot","AutoSaveContinue",0);
 		CreateScreenShoter();
 		PostEvent("makescrshot",1);
@@ -2528,6 +2530,7 @@ string GetSaveDataString(string label)
 	data.rank = pchar.rank;
 	data.difficulty = MOD_SKILL_ENEMY_RATE;
 	data.money = pchar.money;
+	data.SaveVer = VERSION_NUM_PRE;
 	
 	return SerializeAttributes(&data);
 }
@@ -2669,6 +2672,17 @@ string GetConvertStr(string _param, string _file)
     return totalInfo;
 }
 
+int GetFileStringsQuantity(string _file)
+{
+	int idLngFile = -1;
+	int nStrings;
+	idLngFile = LanguageOpenFile(_file);
+	nStrings = LanguageGetFileStringsQuantity(idLngFile);
+	LanguageCloseFile(idLngFile);
+	
+	return nStrings;
+}
+
 void Picture_SetPicture(string sPictureControl, string sTexture)
 {
 	SendMessage(&GameInterface, "lslls", MSG_INTERFACE_MSG_TO_NODE, sPictureControl, 2, false, sTexture);
@@ -2778,9 +2792,5 @@ void SetInterfaceGlobalsVariables()
 	if(CheckAttribute(&InterfaceStates,"CompassPos")) 
 	{
 		iCompassPos = sti(InterfaceStates.CompassPos);
-	}
-	if(CheckAttribute(&InterfaceStates,"ArcadeSails")) 
-	{
-		iArcadeSails = sti(InterfaceStates.ArcadeSails);
 	}
 }

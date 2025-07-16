@@ -107,8 +107,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "store_9":
-		dialog.text = "   La estatua está en el fondo. Ole lo sabe. Pero no es profundo y el buen tío Henrik puede enviar al tío Nathan allí. El tío Henrik sabe cómo caminar bajo el agua. Pero hay muchos cangrejos aterradores. Ole les teme. Muerden dolorosamente.";
-		link.l1 = "Tío Henrik? ¿Quién es él?";
+		dialog.text = "La estatua está en el fondo. Ole lo sabe. Pero no es profundo y el buen tío Henrik puede enviar al tío Nathan allí. El tío Henrik sabe cómo caminar bajo el agua. Pero hay muchos cangrejos aterradores. Ole les teme. Muerden dolorosamente.";
+		link.l1 = "¿Tío Henrik? ¿Quién es él?";
 		link.l1.go = "store_10";
 		break;
 
@@ -358,8 +358,8 @@ void ProcessDialogEvent()
 		RemoveItems(pchar, "jewelry52", 1);
 		PlaySound("interface\important_item.wav");
 		AddCharacterExpToSkill(pchar, "Fortune", 50);
-		dialog.text = "¡Gracias!  Buen, buen tío " + pchar.name + "¡Ole tiene una cuenta más y no quedan muchas cuentas! Y me iré a la mamá...";
-		link.l1 = "Oh, ¿y por qué eres tan extraño...";
+		dialog.text = "¡Gracias! Buen, buen tío " + pchar.name + ". ¡Ole tiene una cuenta más y no quedan muchas cuentas! Y me iré a mamá...";
+		link.l1 = "Oh, ¿y por qué eres tan extraño...?";
 		link.l1.go = "givemepearl_yes_1";
 		break;
 
@@ -373,14 +373,14 @@ void ProcessDialogEvent()
 		break;
 
 	case "givemepearl_repeat":
-		dialog.text = "Gracias por una cuenta, buen tío " + pchar.name + "¡";
-		link.l1 = "Eres bienvenido...";
+		dialog.text = "¡Gracias por una cuenta, buen tío " + pchar.name + "!";
+		link.l1 = "De nada...";
 		link.l1.go = "exit";
 		NextDiag.TempNode = "givemepearl_repeat";
 		break;
 
 	case "givemepearl_no":
-		dialog.text = "¿No hay cuenta? Pero, ¿cómo es eso, tío " + pchar.name + "¡¿Solo quedan unas cuentas más... tengo que recogerlas. Aterrizaré en ese caso. Buscaré cuentas...!";
+		dialog.text = "¿No hay cuenta? Pero, ¿cómo es eso, tío " + pchar.name + "? Solo quedan unas cuentas más... tengo que recogerlas. Aterrizaré en ese caso. ¡Buscaré cuentas...!";
 		if (CheckCharacterItem(pchar, "jewelry52"))
 		{
 			link.l1 = "¿Y adónde vas a ir? ¿Qué harás solo? No, no quiero ser responsable de tu destino. Espera, voy a revisar mis bolsillos... ¡Aquí! Toma tu cuenta y quédate conmigo. ¿Satisfecho?";
@@ -419,8 +419,8 @@ void ProcessDialogEvent()
 	case "mother_1":
 		RemoveItems(pchar, "jewelry52", 1);
 		PlaySound("interface\important_item.wav");
-		dialog.text = "Gracias, gracias, buen tío " + pchar.name + "¡Ahora Ole tiene todas las cuentas. Sí, todas ellas! Ahora Ole puede llevarlas a mamá y ella no enviará a Ole lejos...";
-		link.l1 = "Escucha, ¿quién es esa madre de которой всегда hablas? Y explícame al fin por qué necesitas esas perlas... ¿cuentas blancas? ¿Y qué significa - que las tienes todas?";
+		dialog.text = "Gracias, gracias, buen tío " + pchar.name + ". ¡Ahora Ole tiene todas las cuentas. Sí, todas ellas! Ahora Ole puede llevarlas a mamá y ella no enviará a Ole lejos...";
+		link.l1 = "Escucha, ¿quién es esa madre de la que siempre hablas? Y explícame al fin por qué necesitas esas perlas... ¿cuentas blancas? ¿Y qué significa?... ¿Las tienes todas?";
 		link.l1.go = "mother_2";
 		break;
 
@@ -499,7 +499,7 @@ void ProcessDialogEvent()
 
 	case "home_2":
 		dialog.text = "Mamá, ¡te he traído cuentas blancas! ¡Las he recogido todas! Volverás a tener un collar. ¿Sigues enojada conmigo?";
-		link.l1 = "Dios...(llorando) ¡Ole! Hijo, ¿por qué? ¿Por qué te fuiste? ¡No me importan esas perlas!";
+		link.l1 = "Dios...(llora) ¡Ole! Hijo, ¿por qué? ¿Por qué te fuiste? ¡No me importan esas perlas!";
 		link.l1.go = "home_3";
 		break;
 
@@ -512,7 +512,7 @@ void ProcessDialogEvent()
 
 	case "home_4":
 		dialog.text = "Mamá, te extrañé... Quiero quedarme contigo. ¿Todavía estás enojada conmigo? ¿Por qué estás llorando?";
-		link.l1 = "(llorando) No, no... Lo siento mucho, por favor, ¡perdóname, hijo!...";
+		link.l1 = "(llora) No, no... Lo siento mucho, por favor, ¡perdóname, hijo!...";
 		link.l1.go = "home_5";
 		break;
 

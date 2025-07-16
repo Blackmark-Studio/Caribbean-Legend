@@ -182,7 +182,7 @@ void ProcessDialogEvent()
 						"Вы ещё здесь?", 
 						"Хм, простите, но вам не кажется, что вы уже засиделись у нас?",
 						"Я прошу вас не злоупотреблять нашим гостеприимством.", "block", 1, npchar, Dialog.CurrentNode);
-					link.l1 = HeroStringReactionRepeat( GetFullName(pchar) + " к вашим услугам. К вам заш"+ GetSexPhrase("ел","ла") +" без конкретного дела, познакомиться.", 
+					link.l1 = HeroStringReactionRepeat( GetFullName(pchar) + " к вашим услугам. К вам заш"+ GetSexPhrase("ёл","ла") +" без конкретного дела, познакомиться.", 
 						"Ещё здесь.",
 						"Ну, как сказать...", 
 						"Хорошо.", npchar, Dialog.CurrentNode);

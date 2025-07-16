@@ -33,8 +33,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MarginCap_2":
-			int MCparam = (6-sti(RealShips[sti(pchar.ship.type)].Class))*100+sti(pchar.ship.Crew.Morale)+sti(pchar.Ship.Crew.Exp.Sailors)+sti(pchar.Ship.Crew.Exp.Cannoners)+sti(pchar.Ship.Crew.Exp.Soldiers);
-			int NPCparam = (6-sti(RealShips[sti(npchar.ship.type)].Class))*100+sti(npchar.ship.Crew.Morale)+sti(npchar.Ship.Crew.Exp.Sailors)+sti(npchar.Ship.Crew.Exp.Cannoners)+sti(npchar.Ship.Crew.Exp.Soldiers);
+			int MCparam = (7-sti(RealShips[sti(pchar.ship.type)].Class))*100+sti(pchar.ship.Crew.Morale)+sti(pchar.Ship.Crew.Exp.Sailors)+sti(pchar.Ship.Crew.Exp.Cannoners)+sti(pchar.Ship.Crew.Exp.Soldiers);
+			int NPCparam = (7-sti(RealShips[sti(npchar.ship.type)].Class))*100+sti(npchar.ship.Crew.Morale)+sti(npchar.Ship.Crew.Exp.Sailors)+sti(npchar.Ship.Crew.Exp.Cannoners)+sti(npchar.Ship.Crew.Exp.Soldiers);
 			if (MCparam > NPCparam)//отдаст сам
 			{
 				dialog.text = "Je n'ai donc pas le choix. Le sort de mon équipage m'est plus précieux que celui d'un seul homme. Mais tu ne t'en tireras pas comme ça ! Je ne l'oublierai pas !";
@@ -200,7 +200,7 @@ void ProcessDialogEvent()
 		}
 		if (iTemp > 0 && iTemp <= iSum)
 		{
-			if (drand(2) > 1) // Addon-2016 Jason уменьшаем раздачу дублонов
+			if (hrand(2) > 1) // Addon-2016 Jason уменьшаем раздачу дублонов
 			{
 				dialog.text = "Bien, je suis d'accord. Je possede la somme requise. Où est "+pchar.GenQuest.Marginpassenger.q1Name+"?";
 				link.l1 = "Il doit être sur le quai maintenant. Donc tu peux aller chercher le passager.";

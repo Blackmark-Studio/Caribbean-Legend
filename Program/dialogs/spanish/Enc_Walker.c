@@ -34,7 +34,7 @@ void ProcessDialogEvent()
 				Link.l1.go = "exit";
                 break;
 			}
-			link.l10 = LinkRandPhrase("Dime, ¿cuáles son los chismes populares en la taberna local?","¿Preferirías decirme qué está pasando por aquí?","Oye, compañero, ¿me dirías cómo es la vida en tierra firme?");
+			link.l10 = LinkRandPhrase("Dime, ¿cuáles son los chismes populares en la taberna?","¿Preferirías decirme qué está pasando por aquí?","Oye, compañero, ¿me dirías cómo es la vida en tierra firme?");
 			link.l10.go = "rumours_citizen"; //повесил на горожанина, если нужны отедельные слухи, то пишем соответствующую реализацию
 			if (npchar.quest.Meeting != LastSpeakDate() || bBettaTestMode)
 		    {
@@ -974,7 +974,7 @@ void ProcessDialogEvent()
 				Link.l1.go = "exit";
                 break;
 			}
-			link.l10 = LinkRandPhrase("Dime, ¿cuáles son los chismes populares en la taberna local?","¿Preferirías decirme qué está pasando por aquí?","Oye, compañero, ¿me dirías cómo es la vida en tierra firme?");
+			link.l10 = LinkRandPhrase("Dime, ¿cuáles son los chismes populares en la taberna?","¿Preferirías decirme qué está pasando por aquí?","Oye, compañero, ¿me dirías cómo es la vida en tierra firme?");
 			link.l10.go = "rumours_citizen"; //повесил на горожанина, если нужны отедельные слухи, то пишем соответствующую реализацию
 			dialog.text = DLG_TEXT[210];
 			Link.l1 = DLG_TEXT[211];
@@ -1122,7 +1122,7 @@ void ProcessDialogEvent()
             dialog.text = NPCharRepPhrase(npchar,PCharRepPhrase(LinkRandPhrase("¡Oh sí, estoy alegre!"+NPCharSexPhrase(NPChar,"","")+" verte es casi como una copa de licor. Pregunta lo que quieras.","¿Te gusta hablar, capitán? Pues a mí también... Especialmente con una copa de ron.","Sí, "+PChar.name+"?"),LinkRandPhrase("¿Qué necesitas?","Ya veo, capitán "+PChar.name+", ¿eres bastante conversador?","Preguntas tediosas Capitán, sería mejor si me trataras con ron.")),PCharRepPhrase(LinkRandPhrase("¿Qué querías saber "+GetAddress_Form(NPChar)+"?","Te estoy escuchando, capitán.","Tengo que irme, así que por favor sea rápido, capitán."),LinkRandPhrase("Siempre contento de tener buena compañía, "+GetAddress_Form(NPChar)+" "+PChar.lastname+". Habla tu mente.","Sí, "+GetAddress_Form(NPChar)+"?","¿Te gusta charlar, capitán? Bueno, a mí también...")));
 
             // homo 25/06/06
-			link.l1 = LinkRandPhrase("¿Qué tipos de chismes son populares en la taberna local?","¿Qué está pasando en estas tierras?","¿Qué hay de nuevo en tierra por aquí?");
+			link.l1 = LinkRandPhrase("¿Qué tipos de chismes son populares en la taberna?","¿Qué está pasando en estas tierras?","¿Qué hay de nuevo en tierra por aquí?");
 			link.l1.go = "rumours_citizen";
 			link.l5 = PCharRepPhrase(RandPhraseSimple("No, estás oyendo cosas. Me voy ahora.","No, nada. Solo salí a dar un paseo."),RandPhraseSimple("¡No, nada. ¡Buena suerte para ti!","Solo dando un paseo. Adiós."));
 			link.l5.go = "exit";

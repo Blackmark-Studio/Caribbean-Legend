@@ -15,7 +15,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// Addon 2016-1 Jason пиратская линейка
 		if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "silk_4")
 		{
-			link.l1 = "Escucha, amigo, hay un barco de Port Royal que está comprando algo de seda para su astillero... una seda muy especial, seguramente has oído hablar de ella. Dicen que un vendedor de esa seda está residiendo en algún lugar de este asentamiento. ¿Tienes alguna pista sobre cómo encontrarlo? Tengo una propuesta de negocio para él.";
+			link.l1 = "Escucha, amigo, hay un barco de Port Royal que está comprando algo de seda para su astillero... una seda muy especial, seguramente has oído hablar de eso. Dicen que un vendedor de esa seda está residiendo en algún lugar de este asentamiento. ¿Tienes alguna pista sobre cómo encontrarlo? Tengo una propuesta de negocio para él.";
 			link.l1.go = "mtraxx";
 		}
 		if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "silk_5" && (PCharDublonsTotal() >= 50))
@@ -48,7 +48,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	// Addon 2016-1 Jason пиратская линейка
 	case "mtraxx":
 		dialog.text = "Vaya, si sospechas de nuestro comerciante, el que lleva la tienda, puedo decirte que no es él, no comercia con tela de vela de seda. Los contrabandistas tampoco vienen aquí, no tienen necesidad cuando no hay aduana. Y además, nadie más, excepto nuestro comerciante, comercia aquí de todas formas. Echa un vistazo, no somos de ese tipo de gente, ¡ja-ja!";
-		link.l1 = "Pero alguien está suministrando la seda a Port Royal - eso es irrefutable. ¿Tienes alguna pista de quién podría ser el proveedor?";
+		link.l1 = "Pero alguien está suministrando la seda a Port Royal, eso es irrefutable. ¿Tienes alguna pista de quién podría ser el proveedor?";
 		link.l1.go = "mtraxx_1";
 		break;
 

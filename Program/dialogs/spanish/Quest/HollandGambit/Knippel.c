@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 		if (CheckAttribute(pchar, "questTemp.HWIC.CanTake") && !CheckAttribute(pchar, "questTemp.HWIC.CanTake.Eng") && !CheckAttribute(npchar, "quest.HWICTake") && !CheckAttribute(pchar, "questTemp.HWIC.Holl") && !CheckAttribute(pchar, "questTemp.HWIC.Self"))
 		{
 			dialog.text = "¡Ahoy, camarada, cadena de disparo en mi trasero! ¿Qué te trae por aquí?";
-			link.l1 = "¡Disparo de cadena tu... qué? Oh no importa, solo quería decir hola.";
+			link.l1 = "¡Disparo de cadena tu...! ¿qué? Oh no importa, solo quería decir hola.";
 			link.l1.go = "exit";
 			link.l2 = "Saludos, Sr. Knippel. Ja, veo por qué te llaman Knippel. De todos modos, hay rumores de que solías servir en la Armada Inglesa. Tengo un buen barco y una tripulación hábil. Me gustaría ofrecerme a mí y a mi barco al servicio de la Corona Inglesa...eh...del Commonwealth. ¿Podrías darme algún consejo o recomendarme a alguien o, tal vez, ayudarme en ese asunto?";
 			link.l2.go = "Knippel_check";
@@ -141,7 +141,7 @@ void ProcessDialogEvent()
 		if (makeint(PChar.reputation.nobility) < 48) // низкая репа
 		{
 			// belamour legendary edition покажем критерии
-			notification("Reputation Too Low! (Adventurer)", "None");
+			notification("¡Reputación demasiado baja! (Aventurero)", "None");
 			PlaySound("Voice\Spanish\hambit\Charlie Knippel-04.wav");
 			dialog.text = "¡Me parece, capitán, que en la vida seguiremos rumbos diferentes! Y el tuyo, no me gusta demasiado.";
 			link.l1 = "¡Eh, eh, compañero, cuida tu tono o te la coseré!";
@@ -179,7 +179,7 @@ void ProcessDialogEvent()
 		DelMapQuestMarkCity("Bridgetown");
 		DelMapQuestMarkCity("Villemstad");
 		DelMapQuestMarkCity("SentJons");
-		dialog.text = "¡Ar har! ¡Veo que tu gallardete está izado, capitán! ¡Pronto seguirá el fuego centelleante! Ahora escucha con atención. La flota de plata de la Compañía Neerlandesa de las Indias Occidentales partió de Willemstad en Curazao hace uno o dos días. Está navegando hacia Philipsburg. Esta vez solo hay unos pocos barcos en la flota. Un único barco de la Compañía de las Indias Orientales con la plata en su bodega junto con dos escoltas. Intercepta la flota de plata, captura el barco de las Indias Orientales con la carga de plata y llévala a Antigua. Puedes hundir las escoltas, son prescindibles. ¡Despedaza sus hígados con disparos de cadena, yar!";
+		dialog.text = "¡Ar har! ¡Veo que tu gallardete está izado, capitán! ¡Pronto seguirá el fuego centelleante! Ahora escucha con atención. La flota de plata de la Compañía Holandesa de las Indias Occidentales partió de Willemstad en Curazao hace uno o dos días. Está navegando hacia Philipsburg. Esta vez solo hay unos pocos barcos en la flota. Un único barco de la Compañía de las Indias Orientales con la plata en su bodega junto con dos escoltas. Intercepta la flota de plata, captura el barco de las Indias Orientales con la carga de plata y llévala a Antigua. Puedes hundir las escoltas, son prescindibles. ¡Despedaza sus hígados con disparos de cadena, yar!";
 		link.l1 = "Sus días están contados.";
 		link.l1.go = "Knippel_task_1";
 		DelLandQuestMark(npchar);
@@ -187,7 +187,7 @@ void ProcessDialogEvent()
 
 	case "Knippel_task_1":
 		dialog.text = "Un consejo, capitán. La ruta comercial de Curazao a Sint Maarten no está lejos de las costas de San Cristóbal. Te aconsejaría preparar una emboscada allí. Prepárate bien tú y tu nave para este enfrentamiento. Enredarse con la Compañía de las Indias Occidentales no es un paseo en el parque con una chica bonita.";
-		link.l1 = "  Sé en lo que me estoy metiendo, pero agradezco tu franqueza, señor Knippel. Volveré con la plata holandesa.";
+		link.l1 = "Sé en lo que me estoy metiendo, pero agradezco tu franqueza, señor Knippel. Volveré con la plata holandesa.";
 		link.l1.go = "Knippel_task_2";
 		break;
 
@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 			{
 				sld = GetCharacter(iTemp);
 				pchar.questTemp.HWIC.Eng.CompanionIndex = sld.Index;
-				if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN)
+				if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_GALEON_L)
 					iHal++;
 			}
 		} // признак наличия ТГ в компаньонах
@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 			amount = sti(pchar.questTemp.HWIC.Eng.SlvQty) - GetSquadronGoods(pchar, GOOD_SILVER);
 			if (amount <= 0)
 			{
-				dialog.text = " No hace falta que me cuente lo que pasó, capitán. Me informaron de todo mientras el agente de aduanas inspeccionaba su barco... Lo ha hecho bastante bien, capitán. ¡Excelente! No sonaba fácil, ¡cadena de tiro mi trasero!";
+				dialog.text = "No hace falta que me cuente lo que pasó, capitán. Me informaron de todo mientras el agente de aduanas inspeccionaba su barco... Lo ha hecho bastante bien, capitán. ¡Excelente! No sonaba fácil, ¡cadena de tiro mi trasero!";
 				link.l1 = "Es agradable ser apreciado.";
 				link.l1.go = "HollConvoy_complete";
 			}

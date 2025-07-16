@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 	case "Storehelper_8":
 		DelLandQuestMark(npchar);
 		dialog.text = "¿Cómo puedo ayudarte?";
-		link.l1 = "Buenas tardes. Gralam Lavoie, supongo?";
+		link.l1 = "Buenas tardes. ¿Gralam Lavoie, supongo?";
 		link.l1.go = "Storehelper_9";
 		break;
 
@@ -103,7 +103,11 @@ void ProcessDialogEvent()
 		pchar.questTemp.Sharlie.Storehelper = "return";
 		LAi_CharacterDisableDialog(npchar);
 		pchar.quest.StorehelperOver.over = "yes"; // снять таймер
-		// Rebbebion, новые марки до места назначения
+		
+		pchar.quest.Sharlie_JungleBandos.win_condition.l1 = "location";
+		pchar.quest.Sharlie_JungleBandos.win_condition.l1.location = "Martinique_Jungle_01";
+		pchar.quest.Sharlie_JungleBandos.function = "SharlieJungleBandos";
+			
 		QuestPointerToLoc("lefransua_town", "reload", "gate_back");
 		QuestPointerToLoc("lefransua_exittown", "reload", "reload2_back");
 		QuestPointerToLoc("martinique_jungle_02", "reload", "reload1_back");
@@ -132,7 +136,7 @@ void ProcessDialogEvent()
 
 	case "Newstorehelper_3":
 		dialog.text = "Buena salud a usted, estimado señor. ¿Está ofreciendo una vacante de comerciante?";
-		link.l1 = "Sí, lo soy. ¿Qué puedes contarme sobre ti?";
+		link.l1 = "Así es. ¿Qué puedes contarme sobre ti?";
 		link.l1.go = "Newstorehelper_3_1";
 		break;
 
@@ -151,7 +155,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Newstorehelper_3_1":
-		dialog.text = "Era un empleado en uno de los almacenes portuarios de Glasgow. Vine al Caribe en busca de riqueza y logré ganar suficiente dinero para vivir mi vejez con dignidad. Pero me cansé de los viajes por mar y me gustaría vivir una vida tranquila en la costa\n(susurrando) Y si me eliges, te daré quinientos pesos más dos mil quinientos pesos adicionales como extra.";
+		dialog.text = "Era un empleado en uno de los almacenes portuarios de Glasgow. Vine al Caribe en busca de riqueza y logré ganar suficiente dinero para vivir mi vejez con dignidad. Pero me cansé de los viajes por mar y me gustaría vivir una vida tranquila en la costa.\n(Susurrando) Y si me eliges, te daré quinientos pesos más dos mil quinientos pesos adicionales como extra.";
 		link.l1 = "Ya veo. Lo pensaré.";
 		link.l1.go = "exit";
 		NextDiag.TempNode = "Newstorehelper_3_2";
@@ -168,7 +172,7 @@ void ProcessDialogEvent()
 
 	case "Newstorehelper_2_2":
 		dialog.text = "Espero que me elijas, monsieur. Y el ámbar también es una cosa bastante valiosa y útil...";
-		link.l1 = " He decidido a tu favor. Prepárate. Vamos a Saint-Pierre.";
+		link.l1 = "He decidido a tu favor. Prepárate. Vamos a Saint-Pierre.";
 		link.l1.go = "Newstorehelper_2_3";
 		link.l2 = "Aún no lo he decidido...";
 		link.l2.go = "exit";
@@ -206,34 +210,26 @@ void ProcessDialogEvent()
 		break;
 
 	case "Newstorehelper_exit":
-		DialogExit();
-		chrDisableReloadToLocation = false; // открыть локацию
-		pchar.questTemp.Sharlie.Storehelper.id = npchar.id;
-		DeleteAttribute(npchar, "LifeDay")
-			chrDisableReloadToLocation = true;
-		for (i = 1; i <= 3; i++)
-		{
-			sld = characterFromId("Newstorehelper_" + i);
-			LAi_SetActorType(sld);
-			LAi_ActorGoToLocation(sld, "reload", "reload1_back", "none", "", "", "OpenTheDoors", 10.0);
-		}
-		pchar.quest.storehelper2.win_condition.l1 = "location";
-		pchar.quest.storehelper2.win_condition.l1.location = "LeFransua_town";
-		pchar.quest.storehelper2.function = "NewstorehelperAdd";
-		AddQuestRecord("SharlieA", "4");
-		pchar.questTemp.Sharlie.Storehelper = "choise";
-		pchar.quest.storehelper.over = "yes"; // снять прерывание
-		pchar.quest.Sharlie_JungleBandos.win_condition.l1 = "location";
-		pchar.quest.Sharlie_JungleBandos.win_condition.l1.location = "Martinique_Jungle_01";
-		pchar.quest.Sharlie_JungleBandos.function = "SharlieJungleBandos";
-
-		QuestPointerToLoc("lefransua_town", "reload", "gate_back");
-		QuestPointerToLoc("lefransua_exittown", "reload", "reload2_back");
-		QuestPointerToLoc("martinique_jungle_02", "reload", "reload1_back");
-		QuestPointerToLoc("martinique_jungle_01", "reload", "reload2_back");
-		QuestPointerToLoc("fortfrance_exittown", "reload", "reload3");
-		QuestPointerToLoc("fortfrance_town", "reload", "reload6_back");
-		AddLandQuestMark(characterFromId("FortFrance_trader"), "questmarkmain");
+			DialogExit();
+			pchar.questTemp.Sharlie.Storehelper.id = npchar.id;
+			DeleteAttribute(npchar, "LifeDay")
+			for (i=1; i<=3; i++)
+			{
+				sld = characterFromId("Newstorehelper_"+i);
+				ChangeCharacterAddressGroup(sld, "none", "", "");
+			}
+			pchar.quest.storehelper4.win_condition.l1 = "location";
+			pchar.quest.storehelper4.win_condition.l1.location = "FortFrance_store";
+			pchar.quest.storehelper4.function = "NewstorehelperRegard";
+			AddQuestRecord("SharlieA", "4");
+			pchar.questTemp.Sharlie.Storehelper = "choise";
+			pchar.quest.storehelper.over = "yes"; //снять прерывание
+			
+			AddLandQuestMark(characterFromId("FortFrance_trader"), "questmarkmain");
+			
+			SetLaunchFrameFormParam("De vuelta a Saint-Pierre...", "Reload_To_Location", 0, 4.0);
+			SetLaunchFrameReloadLocationParam("FortFrance_store", "reload", "reload1", "");
+			LaunchFrameForm();
 		break;
 
 	case "Newstorehelper_regard":
@@ -280,7 +276,7 @@ void ProcessDialogEvent()
 		chrDisableReloadToLocation = false;	   // patch-4
 		dialog.text = "¿Y bien? ¿Quién eres, camarada?";
 		// link.l1.edit = 1;
-		link.l1 = "" + pchar.questTemp.Sharlie.Rum.Pass + "¡";
+		link.l1 = "" + pchar.questTemp.Sharlie.Rum.Pass + ".";
 		link.l1.go = "Rum_Cap_1";
 		break;
 
@@ -407,7 +403,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "GigoloMan_1":
-		dialog.text = "Permíteme presentarme - " + GetFullName(npchar) + " He llegado a este lugar espantoso desde Francia hace unos años. Pero eso no viene al caso. Tengo un asunto muy delicado para usted\nPor favor, entienda que si no estuviera seguro de que es un caballero, nunca le pediría tal favor.";
+		dialog.text = "Permíteme presentarme, " + GetFullName(npchar) + " He llegado a este lugar espantoso desde Francia hace unos años. Pero eso no viene al caso. Tengo un asunto muy delicado para usted\nPor favor, entienda que si no estuviera seguro de que es un caballero, nunca le pediría tal favor.";
 		link.l1 = "Por favor, indique su solicitud, monsieur. Si está dentro de mis capacidades, por supuesto intentaré ayudar.";
 		link.l1.go = "GigoloMan_2";
 		break;
@@ -665,7 +661,7 @@ void ProcessDialogEvent()
 
 	case "CaptiveSpain_4":
 		dialog.text = "¿Entonces qué estás haciendo? ¿Por qué mataste a los piratas? ¿Y dónde están tus soldados?";
-		link.l1 = "No hay soldados. Intenté engañar a los granujas, pero como puedes ver a nuestro alrededor, no funcionó. Estoy aquí solo, según la petición de tu viejo amigo. Su nombre es " + pchar.questTemp.Sharlie.Captive.Name + ", es un banquero en St. Pierre.";
+		link.l1 = "No hay soldados. Intenté engañar a los granujas, pero como puedes ver a nuestro alrededor, no funcionó. Estoy aquí solo, según la petición de tu viejo amigo. Su nombre es " + pchar.questTemp.Sharlie.Captive.Name + ", es un banquero en Saint-Pierre.";
 		link.l1.go = "CaptiveSpain_5";
 		break;
 
@@ -677,7 +673,7 @@ void ProcessDialogEvent()
 
 	case "CaptiveSpain_6":
 		dialog.text = "No tengo otra elección de todos modos... Este banquero tuyo no puede ser peor que los ingleses y su cocina atroz...";
-		link.l1 = "Por fin estás tomando una decisión sabia. Ya basta de hablar por ahora, nos dirigimos a St. Pierre. Mantente cerca de mí y no te desvíes. Si huyes, te atraparé y te golpearé casi hasta matarte otra vez.";
+		link.l1 = "Por fin estás tomando una decisión sabia. Ya basta de hablar por ahora, nos dirigimos a Saint-Pierre. Mantente cerca de mí y no te desvíes. Si huyes, te atraparé y te golpearé casi hasta matarte otra vez.";
 		link.l1.go = "CaptiveSpain_7";
 		break;
 
@@ -737,13 +733,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "Prosper_3":
-		dialog.text = "Sí, mi querida hija Celene ha estado desaparecida durante dos días. Fue a dar un paseo al fuerte no muy lejos de aquí. Pero no regresó, así que fui al fuerte yo mismo y los soldados me dijeron que nunca había estado allí.\nPero luego, al regresar, ¡fui atacado por dos indios salvajes! Saltaron sobre mí con garrotes y trataron de golpearme.\n¡Pero no soy un gatito!, así que le di un puñetazo a uno en la cara, me compré el tiempo suficiente para sacar mi pistola y disparar. Fallé, pero los asusté. Logré llegar a las puertas de la ciudad y le conté a los guardias sobre el ataque. Corrieron hacia la jungla, pero los salvajes ya se habían ido hace mucho.\nEstoy seguro de que son responsables de la desaparición de Celene. Además, encima de eso, ¡dos personas más han desaparecido la semana pasada - Cesar Blanchet y Gilbert Courcy! Uno se dirigía a la bahía y otro a Le Francois. Nunca regresaron.";
+		dialog.text = "Sí, mi querida hija Celene ha estado desaparecida durante dos días. Fue a dar un paseo al fuerte no muy lejos de aquí. Pero no regresó, así que fui al fuerte yo mismo y los soldados me dijeron que nunca había estado allí.\nPero luego, al regresar, ¡fui atacado por dos indios salvajes! Saltaron sobre mí con garrotes y trataron de golpearme.\n¡Pero no soy un gatito!, así que le di un puñetazo a uno en la cara, me compré el tiempo suficiente para sacar mi pistola y disparar. Fallé, pero los asusté. Logré llegar a las puertas de la ciudad y le conté a los guardias sobre el ataque. Corrieron hacia la jungla, pero los salvajes ya se habían ido hace mucho.\nEstoy seguro de que son responsables de la desaparición de Celene. Además, encima de eso, ¡dos personas más han desaparecido la semana pasada, Cesar Blanchet y Gilbert Courcy! Uno se dirigía a la bahía y otro a Le Francois. Nunca regresaron.";
 		link.l1 = "¿Así que los indios han estado atacando a la gente del pueblo justo en las puertas de la ciudad? Eso es increíblemente audaz...";
 		link.l1.go = "Prosper_4";
 		break;
 
 	case "Prosper_4":
-		dialog.text = "Mientras tanto, yo mismo fui a la selva a buscarla y encontré una cueva al norte de la ciudad. Encontré a los bastardos acampando allí. Vi a varios indios en la entrada, pero algunos de ellos deben estar dentro también\nEscuché a una chica gritar... Era mi Celene, estoy seguro de eso, ¡era su voz! Me tomó toda mi contención no entrar corriendo en ese mismo momento - las probabilidades no estaban a mi favor y me habrían destrozado. No le sirvo de nada muerto.";
+		dialog.text = "Mientras tanto, yo mismo fui a la selva a buscarla y encontré una cueva al norte de la ciudad. Encontré a los bastardos acampando allí. Vi a varios indios en la entrada, pero algunos de ellos deben estar dentro también\nEscuché a una chica gritar... Era mi Celene, estoy seguro de eso, ¡era su voz! Me tomó toda mi contención no entrar corriendo en ese mismo momento, las probabilidades no estaban a mi favor y me habrían destrozado. No le sirvo de nada muerto.";
 		link.l1 = "¿Pero por qué demonios están atacando y tomando a los habitantes del pueblo como prisioneros?";
 		link.l1.go = "Prosper_5";
 		break;
@@ -761,7 +757,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Prosper_7":
-		dialog.text = "Iré allí y mataré a cada uno de esos malditos rojos. Solo espero que Celene aún viva. Como puedes ver, compré un mosquete - y sé cómo dispararlo. Pagué mucho por él, pero me importa un bledo\nMi misión será mucho más fácil si me acompañas. Juntos podemos acabar con los salvajes sin mucho problema si puedes cubrirme mientras recargo. ¿Vendrás conmigo a salvar a mi hija?";
+		dialog.text = "Iré allí y mataré a cada uno de esos malditos rojos. Solo espero que Celene aún viva. Como puedes ver, compré un mosquete y sé cómo dispararlo. Pagué mucho por él, pero me importa un bledo\nMi misión será mucho más fácil si me acompañas. Juntos podemos acabar con los salvajes sin mucho problema si puedes cubrirme mientras recargo. ¿Vendrás conmigo a salvar a mi hija?";
 		link.l1 = "¡Por supuesto! ¡Es una cuestión de honor! No puedo permitir que una chica muera por el cuchillo de algún salvaje.";
 		link.l1.go = "Prosper_8";
 		if (FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE) == "")
@@ -803,7 +799,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Prosper_exit":
-		dialog.text = "¡Dios mío, estás huyendo? ¡No! ¡Lárgate al diablo de aquí! ¡Cobarde!";
+		dialog.text = "¡Dios mío!, ¿estás huyendo? ¡No! ¡Lárgate al diablo de aquí! ¡Cobarde!";
 		link.l1 = "¡Hey-hey, tranquilo, simpletón! Será mejor que salga a ver si algún noble en las calles de Saint-Pierre necesita ayuda.";
 		link.l1.go = "Prosper_exit_1";
 		pchar.questTemp.Sharlie.GigoloMan.SamPodbezhit = true;
@@ -1035,7 +1031,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Selina":
-		dialog.text = "¡Ah! ¡Dios ayúdame! (llorando) ¡Tú... tú ni siquiera puedes imaginar el horror que está sucediendo aquí! ¡Estos... estos indios nos han arrastrado aquí para matarnos y comernos! Cesar Blanchet estuvo aquí... Los salvajes lo llevaron... Realizaron algún espantoso ritual demoníaco y luego... ¡Señor, ni siquiera puedo hablar de ello! ¡Se suponía que yo iba a ser el siguiente! Iban a matarme... ¡mañana!";
+		dialog.text = "¡Ah! ¡Dios ayúdame! (llora) ¡Tú... tú ni siquiera puedes imaginar el horror que está sucediendo aquí! ¡Estos... estos indios nos han arrastrado aquí para matarnos y comernos! Cesar Blanchet estuvo aquí... Los salvajes lo llevaron... Realizaron algún espantoso ritual demoníaco y luego... ¡Señor, ni siquiera puedo hablar de ello! ¡Se suponía que yo iba a ser el siguiente! Iban a matarme... ¡mañana!";
 		link.l1 = "Tranquila, Celine. Todo ha terminado. Esos bastardos han obtenido lo que se merecían y ya no harán daño a nadie más.";
 		link.l1.go = "Selina_1";
 		break;
@@ -1065,13 +1061,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "Selina_4":
-		dialog.text = "Sí... (llorando) ¡Tú... tú ni siquiera puedes imaginar el horror que está pasando aquí! ¡Estos... estos indios nos han arrastrado aquí para matarnos y comernos! Cesar Blanchet estuvo aquí... Lo llevaron... Hicieron algún ritual diabólico y luego... ¡Señor, ni siquiera puedo hablar de ello! ¡Se supone que seré el siguiente! Iban a sacrificarme... ¡mañana!";
+		dialog.text = "Sí... (llora) ¡Tú... tú ni siquiera puedes imaginar el horror que está pasando aquí! ¡Estos... estos indios nos han arrastrado aquí para matarnos y comernos! Cesar Blanchet estuvo aquí... Lo llevaron... Hicieron algún ritual diabólico y luego... ¡Señor, ni siquiera puedo hablar de ello! ¡Se supone que seré el siguiente! Iban a sacrificarme... ¡mañana!";
 		link.l1 = "Tranquila, jovencita... Lo siento, pero te traigo malas noticias. Vine aquí con tu padre. Fue asesinado justo afuera por esos salvajes de piel roja mientras luchábamos por llegar a ti. Dio su vida para salvarte.";
 		link.l1.go = "Selina_5";
 		break;
 
 	case "Selina_5":
-		dialog.text = "¿Qué?! Mi padre... ¡Oh Dios! Yo... Yo... (sollozando)";
+		dialog.text = "¿Qué? Mi padre... ¡Oh Dios! Yo... Yo... (sollozando)";
 		link.l1 = "Mis condolencias, Celine. Hay otro aquí contigo, ¿verdad?";
 		link.l1.go = "Selina_6";
 		break;
@@ -1099,7 +1095,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Selina_9":
-		dialog.text = "(llorando) Por favor, monsieur, llévenos con usted a la ciudad. Tenemos que enviar por los soldados para que vengan a recoger el cuerpo de mi padre, para que tenga un entierro cristiano adecuado...";
+		dialog.text = "(llora) Por favor, monsieur, llévenos con usted a la ciudad. Tenemos que enviar por los soldados para que vengan a recoger el cuerpo de mi padre, para que tenga un entierro cristiano adecuado...";
 		link.l1 = "Por supuesto, Celine. ¡Sígueme!";
 		link.l1.go = "Selina_10";
 		break;
@@ -1148,7 +1144,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Jilberte":
-		PlaySound("Voice\Spanish\other\robinzons-01.wav");
+		PlaySound("Voice\Spanish\other\robinzons-09.wav");
 		dialog.text = "¡Oh Señor, ¿realmente todo ha quedado atrás? No puedo ni creerlo... Me has salvado tanto a mí, como a Celine. Si no fuera por ti, el mismo destino que le ocurrió al desdichado Cesar habría llamado a ella mañana y lo mismo estaría preparado para mí en unos días.";
 		link.l1 = "¿Estos indios, son realmente caníbales?!";
 		link.l1.go = "Jilberte_1";
@@ -1161,7 +1157,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Jilberte_2":
-		dialog.text = "Muchas cosas extrañas suceden en el Caribe, cosas de las que oíste susurros en el Viejo Mundo... Médicos indios, magia, chamanes y rituales secretos. Quédate aquí más tiempo y serás testigo de todo tipo de brujería. Pero discúlpame, no te he agradecido por salvarme - todavía estoy en shock. \nMe salvaste la vida y voy a expresar mi gratitud no solo con palabras, sino también con oro. Escolta a Celine y a mí a la ciudad. Allí podré agradecerte como te mereces, monsieur.";
+		dialog.text = "Muchas cosas extrañas suceden en el Caribe, cosas de las que oíste susurros en el Viejo Mundo... Médicos indios, magia, chamanes y rituales secretos. Quédate aquí más tiempo y serás testigo de todo tipo de brujería. Pero discúlpame, no te he agradecido por salvarme, todavía estoy en shock. \nMe salvaste la vida y voy a expresar mi gratitud no solo con palabras, sino también con oro. Escolta a Celine y a mí a la ciudad. Allí podré agradecerte como te mereces, monsieur.";
 		link.l1 = "Está bien. Salgamos afuera. Primero voy a echar un vistazo por aquí.";
 		link.l1.go = "Jilberte_3";
 		break;
@@ -1204,11 +1200,6 @@ void ProcessDialogEvent()
 		LAi_ActorGoToLocation(npchar, "reload", "reload4_back", "none", "", "", "", 10.0);
 		npchar.lifeday = 0;
 		DeleteAttribute(pchar, "questTemp.Sharlie.RescueDaughter");
-		if (CheckAttribute(pchar, "questTemp.Tutorial_Dubloons"))
-		{
-			DeleteAttribute(pchar, "questTemp.Tutorial_Dubloons");
-			Tutorial_Dubloons("");
-		}
 
 		// Подбегает дворянин с квестом "девочка по вызову"
 		sld = GetCharacter(NPC_GenerateCharacter("GigoloMan", "Guide_2", "man", "man", 25, FRANCE, 5, true, "soldier"));

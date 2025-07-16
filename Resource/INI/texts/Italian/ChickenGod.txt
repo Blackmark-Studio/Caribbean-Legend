@@ -1,0 +1,18 @@
+
+Bridgetown_Dat {Mirabelle}
+
+Charles_Dat {Merilin}
+
+FortFrance_Dat {Aurora}
+
+Marigo_Dat {Johanna}
+
+Panama_Dat {Dolores}
+
+PortRoyal_Dat {Ida}
+
+SantoDomingo_Dat {Lolita}
+
+Tortuga_Dat {Janetta}
+
+Villemstad_Dat {Florentina}

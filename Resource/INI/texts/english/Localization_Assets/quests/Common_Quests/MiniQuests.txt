@@ -107,3 +107,7 @@ MiniQuests_23
 {
 , which on ~
 }
+MiniQuests_24
+{
+Alonso
+}

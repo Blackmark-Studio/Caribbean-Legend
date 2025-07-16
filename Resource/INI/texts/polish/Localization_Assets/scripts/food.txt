@@ -1,6 +1,6 @@
 food_1
 {
-Szczury na pokładzie ~
+Szczury
 }
 
 food_2

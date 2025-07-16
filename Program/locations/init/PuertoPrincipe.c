@@ -166,7 +166,7 @@ int LocationInitPuertoPrincipe(int n)
 	locations[n].locators_radius.reload.reload1 = 1.8;
 
 	locations[n].reload.l2.name = "reload2";
-	locations[n].reload.l2.go = "CommonHut";
+	locations[n].reload.l2.go = "PuertoPrincipe_QuestHouse_1";
 	locations[n].reload.l2.emerge = "reload1";
 	locations[n].reload.l2.autoreload = "0";
 	locations[n].reload.l2.label = "House";
@@ -382,6 +382,47 @@ int LocationInitPuertoPrincipe(int n)
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "Street";
 	locations[n].locators_radius.item.item1 = 0.8;
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////
+	/////Квестовый дом
+	//////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "PuertoPrincipe_QuestHouse_1";
+	locations[n].filespath.models = "locations\inside\Hut";
+	locations[n].id.label = "House";
+	locations[n].image = "loading\inside\hut.tga";
+	//Town sack
+	locations[n].townsack = "PuertoPrincipe";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "PuertoPrincipe";
+	locations[n].islandId = "Cuba";
+	//Models
+	//Always
+	locations[n].models.always.locators = "Hut_locators";
+	locations[n].models.always.tavern = "Hut";
+	locations[n].models.always.tavern.level = 65538;
+	locations[n].models.always.window = "Hut_window";
+	locations[n].models.always.window.tech = "LocationWindows";
+	locations[n].models.always.window.level = 65539;
+
+	locations[n].models.always.back = "..\inside_back";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	locations[n].models.day.charactersPatch = "Hut_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "Hut_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "PuertoPrincipe_town";
+	locations[n].reload.l1.emerge = "reload2";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Street";
+	LAi_LocationFightDisable(&locations[n], true);
 	n = n + 1;
 
 	return n;

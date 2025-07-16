@@ -1,0 +1,4 @@
+LAi_fightparams_1
+{
+The dodge from the shot
+}

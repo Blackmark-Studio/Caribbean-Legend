@@ -32,7 +32,7 @@
 
 #define PLAYER_GROUP	"OurGroup"
 
-int	sCurrentSeaExecute = EXECUTE; 
+int	sCurrentSeaExecute = EXECUTE;
 int	sCurrentSeaRealize = REALIZE;
 
 int		iAITemplatesNum;
@@ -44,7 +44,7 @@ bool	bSeaReloadStarted = false;
 bool	bNotEnoughBalls;
 bool	bStorm, bTornado;
 bool	bSeaQuestGroupHere = false;
-bool 	bSeaCanGenerateShipSituation = true; 
+bool 	bSeaCanGenerateShipSituation = true;
 
 int		iStormLockSeconds = 0;
 
@@ -160,7 +160,7 @@ void DeleteSeaEnvironment()
 	// delete fantom and dead groups
 		Group_DeleteUnusedGroup();
 
-	// 
+	//
 		LanguageCloseFile(iSeaSectionLang); iSeaSectionLang = -1;
 
 	//
@@ -291,7 +291,7 @@ string Sea_FindNearColony()
 }
 // boal <--
 void Sea_LandLoad()
-{	
+{
 	pchar.shipx = pchar.ship.pos.x;
 	pchar.shipz = pchar.ship.pos.z;
 	ClearAllLogStrings();
@@ -508,14 +508,14 @@ string	sTaskList[2];
 
 void Sea_FreeTaskList()
 {
-	ref rMassive; 
+	ref rMassive;
 	makeref(rMassive, sTaskList);
 	SetArraySize(rMassive, 2);
 }
 
 void Sea_AddGroup2TaskList(string sGroupID)
 {
-	ref rMassive; 
+	ref rMassive;
 	makeref(rMassive, sTaskList);
 	int iSize = GetArraySize(rMassive);
 	SetArraySize(rMassive, iSize + 1);
@@ -537,7 +537,7 @@ void SeaLogin(ref Login)
 	float	x, y, z, ay;
 	ref		rCharacter, rGroup, rEncounter;
 	aref	rRawGroup;
-	aref	arQCGroups; 
+	aref	arQCGroups;
 	string	sGName;
 	int		iNumQCGroups;
 	ref 	rFantom;
@@ -563,12 +563,12 @@ void SeaLogin(ref Login)
 	Encounter_DeleteDeadQuestMapEncounters();
 
 	// weather parameters
-	WeatherParams.Tornado = false; 
-	WeatherParams.Storm = false; 
-	if (CheckAttribute(&Login,"Storm")) { WeatherParams.Storm = Login.Storm; } 
-	if (CheckAttribute(&Login,"Tornado")) { WeatherParams.Tornado = Login.Tornado; } 
+	WeatherParams.Tornado = false;
+	WeatherParams.Storm = false;
+	if (CheckAttribute(&Login,"Storm")) { WeatherParams.Storm = Login.Storm; }
+	if (CheckAttribute(&Login,"Tornado")) { WeatherParams.Tornado = Login.Tornado; }
 	bStorm = sti(WeatherParams.Storm);
-	bTornado = sti(WeatherParams.Tornado); 
+	bTornado = sti(WeatherParams.Tornado);
 	if (bStorm)
 	{
 		iStormLockSeconds = 60;
@@ -643,12 +643,12 @@ void SeaLogin(ref Login)
 	AISea.Island = sIslandID;
 
 	// clear some of group attributes
-	for (i=0; i<MAX_SHIP_GROUPS; i++) 
+	for (i=0; i<MAX_SHIP_GROUPS; i++)
 	{
 		rGroup = Group_GetGroupByIndex(i);
-		if (CheckAttribute(rGroup, "AlreadyLoaded")) 
-		{ 
-			DeleteAttribute(rGroup, "AlreadyLoaded"); 
+		if (CheckAttribute(rGroup, "AlreadyLoaded"))
+		{
+			DeleteAttribute(rGroup, "AlreadyLoaded");
 		}
 	}
 
@@ -681,9 +681,9 @@ void SeaLogin(ref Login)
 		for (i=1; i<COMPANION_MAX; i++)
 		{
 			iCompanionIndex = GetCompanionIndex(&Characters[nMainCharacterIndex],i);
-			if (iCompanionIndex == -1) 
-			{ 
-				continue; 
+			if (iCompanionIndex == -1)
+			{
+				continue;
 			}
 			DeleteAttribute(&Characters[iCompanionIndex], "SeaAI"); // сброс для кэпов офов из пленных
 			Characters[iCompanionIndex].SeaAI.Group.Name = PLAYER_GROUP;
@@ -702,7 +702,6 @@ void SeaLogin(ref Login)
 	SeaCameras_SetShipForSeaCamera(&pchar);
 
 	// login encounters
-	object oResult;
 	int iFantomIndex;
 
 	if (sIslandID != "")
@@ -716,12 +715,12 @@ void SeaLogin(ref Login)
 	ReloadProgressUpdate();
 	if (sIslandID != "")
 	{
-		for (i=0; i<MAX_SHIP_GROUPS; i++) 
+		for (i=0; i<MAX_SHIP_GROUPS; i++)
 		{
 			rGroup = Group_GetGroupByIndex(i);
-			if (!CheckAttribute(rGroup,"AlreadyLoaded")) 
-			{ 
-				DeleteAttribute(rGroup,"AlreadyLoaded");	
+			if (!CheckAttribute(rGroup,"AlreadyLoaded"))
+			{
+				DeleteAttribute(rGroup,"AlreadyLoaded");
 			}
 
 			if (!CheckAttribute(rGroup, "id")) { continue; }
@@ -732,7 +731,7 @@ void SeaLogin(ref Login)
 		}
 	}
 
-	// login quest groups to sea 
+	// login quest groups to sea
 	if (CheckAttribute(&Login, "QuestGroups"))
 	{
 		arQCGroups; makearef(arQCGroups, Login.QuestGroups);
@@ -755,13 +754,12 @@ void SeaLogin(ref Login)
 			Sea_LoginGroup(GetAttributeValue(GetAttributeN(arQCGroups, i)));
 		}
 	}
-	
+
 	ReloadProgressUpdate();
-		
 
 	//if (!bStorm) //убираем по требованию продюсеров
 	//{
-	// login fantom groups		
+	// login fantom groups
 	aref arEncounters;
 	makearef(arEncounters,Login.Encounters);
 	int iNumGroups = GetAttributesNum(arEncounters);
@@ -777,7 +775,7 @@ void SeaLogin(ref Login)
 		{
 			trace("Для случайки не указан RealEncounterType, игнорируем её");
 			continue;
-		}		
+		}
 		int iEncounterType = sti(rEncounter.RealEncounterType);
 		//trace ("RealEncounterType is " + iEncounterType);
 
@@ -789,23 +787,22 @@ void SeaLogin(ref Login)
 		
 		ReloadProgressUpdate();
 
-		int iCompanionsQ;
 		int cn;
 
 		if (iEncounterType == ENCOUNTER_TYPE_ALONE)
-		{		
+		{
 			iAloneCharIndex = GetCharacterIndex(rEncounter.CharacterID);
-			if (iAloneCharIndex < 0) 
-			{ 
-				continue; 
+			if (iAloneCharIndex < 0)
+			{
+				continue;
 			}
 			sGName = "Sea_" + rEncounter.CharacterID; //boal для удобства манипулирования в др методах "EncTypeAlone_" + iAloneCharIndex;
-			// можно задать группу их 10 кораблей или всего 4 компаньона - работает и так, и так. И даже задать и то, и то. Будут вместе.
-			
+			// можно задать группу из 10 кораблей или всего 4 компаньона - работает и так, и так. И даже задать и то, и то. Будут вместе.
+
 			Group_AddCharacter(sGName, rEncounter.CharacterID);
-			
-			iCompanionsQ = GetCompanionQuantity(&Characters[iAloneCharIndex]);
-			if(iCompanionsQ > 1)
+
+            // TO_DO: DEL
+			if(GetCompanionQuantity(&Characters[iAloneCharIndex]) > 1)
 			{
 				for(k = 1; k < COMPANION_MAX; k++)
 				{
@@ -826,7 +823,6 @@ void SeaLogin(ref Login)
 			}
 
 			rEncounter.qID = sGName; // перевел все в группу boal 23/06/06
-			
 		}
 		else
 		{
@@ -836,9 +832,14 @@ void SeaLogin(ref Login)
 		if (CheckAttribute(rEncounter, "qID"))
 		{
 			//Trace("SEA: Login quest encounter " + rEncounter.qID);
+            if(CheckAttribute(&Characters[iAloneCharIndex], "QuestHandler"))
+            {
+                sGName = Characters[iAloneCharIndex].QuestHandler;
+                call sGName(&Characters[iAloneCharIndex]);
+            }
 			Group_SetAddressNone(rEncounter.qID);
-			Group_SetXZ_AY(rEncounter.qID, x, z, ay);						
-			Sea_LoginGroup(rEncounter.qID);			
+			Group_SetXZ_AY(rEncounter.qID, x, z, ay);
+			Sea_LoginGroup(rEncounter.qID);
 			continue;
 		}
 
@@ -855,72 +856,43 @@ void SeaLogin(ref Login)
 		Group_DeleteAtEnd(sGName);
 
 		// copy task attributes from map encounter to fantom group
-		if (CheckAttribute(rEncounter, "Task"))							
-		{ 
-			rGroup.Task = rEncounter.Task; 
+		if (CheckAttribute(rEncounter, "Task"))
+		{
+			rGroup.Task = rEncounter.Task;
 		}
-		if (CheckAttribute(rEncounter, "Task.Target"))					
-		{ 
-			rGroup.Task.Target = rEncounter.Task.Target; 
+		if (CheckAttribute(rEncounter, "Task.Target"))
+		{
+			rGroup.Task.Target = rEncounter.Task.Target;
 		}
-		if (CheckAttribute(rEncounter, "Task.Pos")) 
+		if (CheckAttribute(rEncounter, "Task.Pos"))
 		{
 			rGroup.Task.Target.Pos.x = rEncounter.Task.Pos.x;
 			rGroup.Task.Target.Pos.z = rEncounter.Task.Pos.z;
 		}
-		if (CheckAttribute(rEncounter, "Lock") && sti(rEncounter.Lock)) { Group_LockTask(sGName); }
-        // перевел все в группу boal 23/06/06 -->
-		/*if (iEncounterType == ENCOUNTER_TYPE_ALONE)
-		{
-			//Group_SetGroupCommander(sGName, Characters[iAloneCharIndex].id);
-			Characters[iAloneCharIndex].SeaAI.Group.Name = sGName;
-			Ship_Add2Sea(iAloneCharIndex, 0, rEncounter.Type, true);
-
-			iCompanionsQ = GetCompanionQuantity(&Characters[iAloneCharIndex]);
-			if(iCompanionsQ > 1)
-			{
-				for(int l = 1; l < COMPANION_MAX; l++)
-				{
-					cn = GetCompanionIndex(&characters[iAloneCharIndex], l);
-					if (cn != -1)
-					{
-						Characters[cn].SeaAI.Group.Name = sGName;
-						Ship_Add2Sea(cn, 0, rEncounter.Type, true);
-					}
-				}
-			}
-			continue;
-		} */
-		// перевел все в группу boal 23/06/06   <--
+		if (CheckAttribute(rEncounter, "Lock") && sti(rEncounter.Lock)) Group_LockTask(sGName);
 
 		int iNumWarShips = 0;
 		int iNumMerchantShips = 0;
 		int iNation = PIRATE;
-		if(CheckAttribute(rEncounter, "NumWarShips"))
-		{
-			iNumWarShips = sti(rEncounter.NumWarShips);
-		}
+		if(CheckAttribute(rEncounter, "NumWarShips"))       iNumWarShips = sti(rEncounter.NumWarShips);
+		if(CheckAttribute(rEncounter, "NumMerchantShips"))  iNumMerchantShips = sti(rEncounter.NumMerchantShips);
+		if(CheckAttribute(rEncounter, "Nation"))            iNation = sti(rEncounter.Nation);
 
-		if(CheckAttribute(rEncounter, "NumMerchantShips"))
-		{
-			iNumMerchantShips = sti(rEncounter.NumMerchantShips);
-		}
+		int iNumFantomShips;
+        if(CheckAttribute(rEncounter, "FixedTypes"))
+            iNumFantomShips = Fantom_SetEncounterShips(rEncounter, sGName);
+        else // Special: ENCOUNTER_TYPE_BARREL, ENCOUNTER_TYPE_BOAT (TO_DO: DEL); Alone скипается по qID
+            iNumFantomShips = Fantom_GenerateEncounterExt(sGName, iEncounterType, iNumWarShips, iNumMerchantShips, iNation);
 
-		if(CheckAttribute(rEncounter, "Nation"))
-		{
-			iNation = sti(rEncounter.Nation);
-		}
-		
-		int iNumFantomShips = Fantom_GenerateEncounterExt(sGName, &oResult, iEncounterType, iNumWarShips, iNumMerchantShips, iNation);
-		
-		// Ugeen --> генерация параметров	для спецэнкаунтеров
+		// Ugeen --> генерация параметров для спецэнкаунтеров
 		if (iEncounterType == ENCOUNTER_TYPE_BARREL || iEncounterType == ENCOUNTER_TYPE_BOAT)
-		{	
+		{
+            // TO_DO: Не должны параметры сливаться при логине!
 			iFantomIndex = seaFantoms[seaFantomsNum - 1];
 			rFantom = &Characters[iFantomIndex];
 			rFantom.id = iFantomIndex;
 			rFantom.index = iFantomIndex;
-			rFantom.Nation = PIRATE;			
+			rFantom.Nation = PIRATE;
 			rFantom.EncType  = "pirate";
             rFantom.RealEncounterType = iEncounterType;//boal
 			rFantom.reputation = 5 + rand(84);
@@ -929,23 +901,24 @@ void SeaLogin(ref Login)
 			rFantom.location = sIslandID;
 			rGroup.EmptyFantom = true;
 			rFantom.sex = "man";
-			rFantom.model.animation = "man";			
+			rFantom.model.animation = "man";
 			SetCaptanModelByEncType(rFantom, rFantom.EncType);
 			SetRandomNameToCharacter(rFantom);
 			SetSeaFantomParam(rFantom, rEncounter.Type);
 			int iRank = sti(pchar.rank) - rand(5) + rand(5);
 			if (iRank < 1) iRank = 1;
-			SetFantomParamFromRank(rFantom, iRank, false); 
+			SetFantomParamFromRank(rFantom, iRank, false);
 			rFantom.SeaAI.Group.Name = sGName;
 			Group_AddCharacter(sGName, rFantom.id);
 			Log_TestInfo("Generate Special Encounter");
-			EmptyFantom_DropGoodsToSea(rFantom, iEncounterType);			
+			EmptyFantom_DropGoodsToSea(rFantom, iEncounterType);
 			continue;
 		}
 		// <-- Ugeen
-		
+
 		//Trace("Set group coords : " + sGName + ", x = " + x + ", z = " + z + ", ay = " + ay);		
 
+        // ~!~
         //navy --> 28.12.2009 изменение алгоритам загрузки кораблей случаек в море, чтобы ГГ мордой в центр экскадры не грузился.
         float b, x_mc, z_mc, ay_mc, ay_res, ay_e, z1;
         bool isMChrAttack = false;
@@ -954,16 +927,16 @@ void SeaLogin(ref Login)
         x_mc = 	stf(Login.PlayerGroup.x);
         z_mc = 	stf(Login.PlayerGroup.z);
         ay_mc = stf(Login.PlayerGroup.ay);
-		
+
 		if(ay_mc < 0) ay_mc = ay_mc + PIm2;
 		ay_e = ay;
 		if(ay < 0) ay_e = ay_e + PIm2;
-		
+
         //угол результирующего вектора между случайкой и ГГ на карте
         ay_res = atan(-((z_mc-z)/(x-x_mc)));
 
-		//Trace("ay_res = " + ay_res);		
-		
+		//Trace("ay_res = " + ay_res);
+
         //т.к. арктангенс даёт только острые углы, то считаем тупые
         if (ay_res < 0 && z > z_mc)
         {
@@ -977,10 +950,10 @@ void SeaLogin(ref Login)
 
 		//Trace("1. Set player group coords :  x = " + x_mc + ", z = " + z_mc + ", ay = " + ay_mc + ", ay_res = " + ay_res);		
 		//Trace("2. Set enemy group coords :  x = " + x + ", z = " + z +", ay = " + ay + ", ay_e = " + ay_e);		
-		
+
         //если угол между вектором ГГ и результирующим вектором острый,
         //то считаем, что атакует ГГ
-        if (cos(ay_res - ay_mc) > 0) 
+        if (cos(ay_res - ay_mc) > 0)
 		{
 			isMChrAttack = true;
 //			Log_TestInfo("ГГ атакует !");
@@ -991,7 +964,7 @@ void SeaLogin(ref Login)
             //определяем знак приращения координаты Х
             if (abs(ay) < PI) k = 1;
             else k = -1;
-				
+
             //уравнение прямой для случайки z = k * x + b
             b = z - ay_e * x;
 
@@ -1001,14 +974,13 @@ void SeaLogin(ref Login)
 			
 //            		Group_SetXZ_AY(sGName, x, z, ay);
 			//Trace("Set group new coords : " + sGName + ", x = " + x + ", z = " + z + ", ay_e = " + ay_e + ", b = " + b + ", k = " + k);		
-			
         }
-		
         //navy <--
 
 		// load ship to sea
-		if (iNumFantomShips) 
+		if (iNumFantomShips)
 		{
+            // TO_DO: Не должны параметры сливаться при логине!
 			for (j=0; j<iNumFantomShips; j++)
 			{
 				iFantomIndex = seaFantoms[seaFantomsNum - iNumFantomShips + j];
@@ -1023,46 +995,41 @@ void SeaLogin(ref Login)
 				rFantom.location = sIslandID;
 				// boal 26.02.2004 <--
 				// set commander to group
-				if (j==0) { Group_SetGroupCommander(sGName, Characters[iFantomIndex].id); }
-				
+				if (j==0) Group_SetGroupCommander(sGName, Characters[iFantomIndex].id);
+
 				// set random character and ship names, face id
 				rFantom.sex = "man";
 				rFantom.model.animation = "man";
-				rFantom.Nation = rEncounter.Nation; 
+				rFantom.Nation = rEncounter.Nation;
 				// boal разговор в море -->
                 rFantom.reputation = 5 + rand(84);
-                rFantom.EncType      = rEncounter.Type; // тип  war, trade pirate
-                rFantom.RealEncounterType = iEncounterType;//boal
+                rFantom.EncType      = rEncounter.Type; // тип  war, trade, pirate
+                rFantom.RealEncounterType = iEncounterType; //boal
                 rFantom.EncGroupName = sGName;
                 rFantom.MainCaptanId = Characters[seaFantoms[seaFantomsNum - iNumFantomShips]].id;
 				rFantom.WatchFort = true; //следить за фортом
 				rFantom.AnalizeShips = true; //анализить враждебные корабли сразу же с загрузки и далее
-
-				if (CheckAttribute(rFantom, "Ship.Mode"))
-                {
+                if (iEncounterType >= ENCOUNTER_TYPE_PATROL_SMALL && iEncounterType <= ENCOUNTER_TYPE_NAVAL_LARGE)
+                    SetCaptanModelByEncType(rFantom, "war"); // принудительно для военных корабли снабжения
+				else if (CheckAttribute(rFantom, "Ship.Mode"))
                 	SetCaptanModelByEncType(rFantom, rFantom.Ship.Mode);
-                }
                 else
-                {
                     SetCaptanModelByEncType(rFantom, rEncounter.Type);
-                }
                 // boal разговор в море <--
-				
+
 				SetRandomNameToCharacter(rFantom);
 				SetRandomNameToShip(rFantom);
-				
+
 				SetSeaFantomParam(rFantom, rEncounter.Type); // все там
-				
+
 				if(j == 0 && rFantom.EncType == "pirate")
 				{
 					rFantom.Flags.Pirate = rand(2);
 				}
-				
-				if(iEncounterType == ENCOUNTER_TYPE_WAR_PRIVATEER) {rFantom.DontRansackCaptain = true;} // не сдаемся
-				
+
 //				trace("rFantom.id = " + rFantom.id + " Ship.pos.x = " + rFantom.Ship.pos.x + " Ship.pos.z = " + rFantom.Ship.pos.z);
 //				trace("pchar.Ship.pos.x = " + pchar.Ship.pos.x + " pchar.Ship.pos.z = " + pchar.Ship.pos.z);
-								
+
 				//ugeen --> установка возможных ситуаций в каюте кэпа при абордаже - взрыв или эпидемия
 				if(j != 0 && bSeaCanGenerateShipSituation && iEncounterType != ENCOUNTER_TYPE_ALONE && sti(pchar.CanGenerateShipSituation) == 1)  // флагманы и одиночки исключаем
 				{
@@ -1070,11 +1037,11 @@ void SeaLogin(ref Login)
 					if (CheckAttribute(rFantom, "hunter")) // ОЗГ или ДУ
 					{
 						if(rFantom.hunter == "hunter") Fantom_SetQuestSitiation(rFantom, "hunter");
-						else Fantom_SetQuestSitiation(rFantom, "pirate");	
+						else Fantom_SetQuestSitiation(rFantom, "pirate");
 					}
 					else
-					{	
-						if(sti(rFantom.Nation) == PIRATE) Fantom_SetQuestSitiation(rFantom, "pirate");	
+					{
+						if(sti(rFantom.Nation) == PIRATE) Fantom_SetQuestSitiation(rFantom, "pirate");
 						else
 						{
 							if(rFantom.EncType == "trade") // военники в составе торговых караванов
@@ -1082,19 +1049,19 @@ void SeaLogin(ref Login)
 								if (CheckAttribute(rFantom, "Ship.Mode") && rFantom.Ship.Mode != "trade")
 								{
 									Fantom_SetQuestSitiation(rFantom, "war"); // торгаши отдельно
-								}	
+								}
 							}
 							else Fantom_SetQuestSitiation(rFantom, "war"); // военные корабли - патрули и пр.
 						}
 					}
-				}				
+				}
 				if(bSeaCanGenerateShipSituation && sti(pchar.CanGenerateShipSituation) == 1)
 				{
-					if (iEncounterType == ENCOUNTER_TYPE_MERCHANT_SMALL || iEncounterType == ENCOUNTER_TYPE_MERCHANT_MEDIUM) // а вот тут торгаши - устанавливаем для флотилии из одного-двух кораблей
+					if (iEncounterType == ENCOUNTER_TYPE_MERCHANT_SMALL || iEncounterType == ENCOUNTER_TYPE_MERCHANT_MEDIUM)
 					{
-						Fantom_SetQuestSitiation(rFantom, "trade");
-					}				
-				}	
+						if(rand(10) == 1) Fantom_SetQuestSitiation(rFantom, "trade"); //~!~
+					}
+				}
 				// <-- ugeen
 				Fantom_SetCannons(rFantom, rEncounter.Type);
 				Fantom_SetSails(rFantom, rEncounter.Type);
@@ -1102,10 +1069,10 @@ void SeaLogin(ref Login)
 				rFantom.SeaAI.Group.Name = sGName;
 				rFantom.Experience = 0;
 				rFantom.Skill.FreeSkill = 0;
-				
+
 				Fantom_SetDamage(rFantom, rEncounter.Type);
 
-				//rFantom.Features.GeraldSails = false;  // код от к3, весьмя страннй, тк при выгрузке в Ship_Add2Sea всем тупо пробивается труе :)
+				//rFantom.Features.GeraldSails = false;  // код от к3, весьмя страннй, тк при выгрузке в Ship_Add2Sea всем тупо пробивается true :)
 				//if (CheckAttribute(rEncounter, "GeraldSails")) { rFantom.Features.GeraldSails = sti(rEncounter.GeraldSails); }
 
 				// boal герб на флагман -->
@@ -1115,10 +1082,10 @@ void SeaLogin(ref Login)
 					SetRandGeraldSail(rFantom, sti(rFantom.Nation));
 				}
                 // boal герб на флагман <--
-                
+
 				// add fantom
 				Group_AddCharacter(sGName, rFantom.id);
-				
+
 				// add to sea
 				Ship_Add2Sea(iFantomIndex, 0, rEncounter.Type, true);
 			}
@@ -1135,7 +1102,7 @@ void SeaLogin(ref Login)
 
 		rGroup = Group_GetGroupByID(sGroupID);
 		
-		// set task 
+		// set task
 		switch (sti(rGroup.Task))
 		{
 			case AITASK_RUNAWAY:
@@ -1171,11 +1138,11 @@ void SeaLogin(ref Login)
 				if (iCharacterIndex < 0) { break; }
 				SetCharacterRelationBoth(iCharacterIndex, nMainCharacterIndex, iRelation);
 			}
-		}	
+		}
 		
-	}	
+	}
 
-	// update AISea 
+	// update AISea
 	AISea.DistanceBetweenGroupShips = 250.0;
 	AISea.isDone = "";
 	
@@ -1200,16 +1167,16 @@ void SeaLogin(ref Login)
 
 	pchar.space_press = "0";
 	DeleteAttribute(pchar, "SkipEshipIndex");// boal
-	
+
 	pchar.DirSailFail = ""; // mitrokosta удалить флаг фейла директсаила
-	
+
 	/*if (checkattribute(pchar, "sneak"))
 	{
 		string sgroup = pchar.sneak.group;
 		LAi_group_NotFightPlayerVSGroup(sgroup);
 		deleteAttribute(pchar, "sneak");
 	}*/
-	
+
 	PostEvent("Sea_FirstInit", 1);
 }
 
@@ -1223,7 +1190,7 @@ void Sea_LoginGroup(string sGroupID)
 		return;
 	}
 
-	ref rGroup = Group_GetGroupByID(sGroupID); 
+	ref rGroup = Group_GetGroupByID(sGroupID);
 	if (!CheckAttribute(rGroup, "Quest"))			{ Trace("Error: Sea_LoginGroup sGroupID = " + sGroupID + ", but group doesn't contain any quest ships!"); return; }
 	if (CheckAttribute(rGroup, "AlreadyLoaded"))	{ Trace("Error: Group sGroupID = " + sGroupID + ", already loaded... check for duplicate group login"); return; }
 	if (Group_GetGroupCommanderIndexR(rGroup) < 0)
@@ -1396,8 +1363,8 @@ void Sea_FirstInit()
 	CreateEntity(&Seafoam,"Seafoam");//				ReloadProgressUpdate();
 	LayerAddObject(SEA_EXECUTE, &Seafoam, -1);
 	LayerAddObject(SEA_REALIZE, &Seafoam, -1);
-	if (Whr_IsStorm()) { Seafoam.storm = "true"; }
-	
+	if(Whr_IsStorm()) Seafoam.storm = "true";
+
 	QuestsCheck(); // boal 26/05/06 тут ему место
 	//CheckMapQuestMarks();
 }
@@ -1761,21 +1728,21 @@ bool bSeaLoad = false;
 void Sea_Load()
 {
 	bSeaLoad = true;
-	
+
 	CreateSeaEnvironment();	
 	// login island if exist
 	Sea_LoadIsland(AISea.Island);	
-	
+
 	SendMessage(&AISea, "l", AI_MESSAGE_SEALOAD);		
 	SendMessage(&Telescope, "leee", MSG_TELESCOPE_INIT_ARRAYS, &Nations, &RealShips, &Goods);	
-		
+
 	PostEvent(SHIP_CHECK_RELOAD_ENABLE, 1);	
 	SetSchemeForSea();
 	PostEvent("Sea_FirstInit", 1);
 
 	DeleteAttribute(&oSeaSave, "");
 	bSeaLoad = false;
-	
+
 	InitBattleInterface();
 	StartBattleInterface();
 	RefreshBattleInterface();					
@@ -1869,11 +1836,22 @@ void Sea_LoginGroupCurrentSea(string sGroupID)
 	}
 	
 	trace("after find group position");
-	
 
-	float fAngle = frnd() * PIm2;	// угол
-	float d_ay = 500.0 + rand(300); // дистанция
-	
+    int   iDiff; // разброс
+    float baseDis; // дистанция
+	float fAngle = frnd() * PIm2; // угол
+
+    if(CheckAttribute(&TEV, "TempSeaLoginParam"))
+    {
+        iDiff   = sti(TEV.TempSeaLoginParam.diff);
+        baseDis = stf(TEV.TempSeaLoginParam.baseDis);
+	}
+    else
+    {
+        iDiff   = 300;
+        baseDis = 500.0;
+    }
+
 	ref mc = GetMainCharacter();		
 	if (CheckAttribute(mc, "Ship.pos.x"))	// отосительно позиции флагмана ГГ
 	{
@@ -1886,9 +1864,11 @@ void Sea_LoginGroupCurrentSea(string sGroupID)
 		x  = stf(NullCharacter.Login.PlayerGroup.x); 
 		z  = stf(NullCharacter.Login.PlayerGroup.z);
 		ay = stf(NullCharacter.Login.PlayerGroup.ay) + fAngle;		
-	}		
-	float d_cos	= 	d_ay * cos(fAngle);
-	float d_sin	= 	d_ay * sin(fAngle);
+	}
+
+    float d_ay  = baseDis + rand(iDiff);
+	float d_cos	= d_ay * cos(fAngle);
+	float d_sin	= d_ay * sin(fAngle);
 	
 	float signX		=	1.0;
 	float signZ		= 	1.0; 		
@@ -1914,10 +1894,10 @@ void Sea_LoginGroupCurrentSea(string sGroupID)
 	{
 		if(d_sin < 0) signZ = -1.0;
 	}
-					
-	x += signX * d_cos + d_x * (500 + rand(300));
-	z += signZ * d_sin + d_z * (500 + rand(300));
-	
+
+    x += signX * d_cos + d_x * (baseDis + rand(iDiff));
+    z += signZ * d_sin + d_z * (baseDis + rand(iDiff));
+
 	trace("Group_SetPursuitGroup x: " + NullCharacter.Login.PlayerGroup.x + " z:" + NullCharacter.Login.PlayerGroup.z + " ay:" + NullCharacter.Login.PlayerGroup.ay + " fAngle " + fAngle);
 	trace("ship(x,z, ay)= "+pchar.Ship.pos.x +", "+pchar.Ship.pos.z +", "+ pchar.Ship.Ang.y + ", "+ d_ay); 		
 
@@ -1949,12 +1929,10 @@ void Sea_LoginGroupCurrentSea(string sGroupID)
     		{
     			continue;
     		}
-    		int iCharacterIndex = sti(rCharacter.index);
 
-    		if(iCharacterIndex <= 0)
-    		{
-    			continue;
-    		}
+            // ~!~
+    		int iCharacterIndex = sti(rCharacter.index);
+    		if (iCharacterIndex <= 0) continue;
 
     		if (LAi_IsDead(rCharacter))
     		{
@@ -1990,3 +1968,11 @@ void Sea_LoginGroupCurrentSea(string sGroupID)
 	RefreshBattleInterface();
 }
 
+// Для совместимости с легаси кодом
+void Sea_LoginGroupCurrentSeaEx(string sGroupID, float baseDis, int diff)
+{
+    TEV.TempSeaLoginParam.baseDis = baseDis;
+    TEV.TempSeaLoginParam.diff = diff;
+    Sea_LoginGroupCurrentSea(sGroupID);
+    DeleteAttribute(&TEV, "TempSeaLoginParam");
+}

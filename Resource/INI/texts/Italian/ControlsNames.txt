@@ -1,0 +1,896 @@
+﻿newLine {
+
+
+}
+
+HelpChooser {Seleziona la guida}
+MainInterface {Controlli interfaccia}
+DialogControls {Dialoghi}
+WorldMapControls {Mappa del mondo}
+BattleInterfaceControls {interfaccia battaglia}
+Sailing1Pers {Mare in prima persona}
+Sailing3Pers {Mare in terza persona}
+FightModeControls {Modalità combattimento}
+PrimaryLand {Controlli a terra}
+
+
+
+ChrCamTurnV
+{
+Movimento verticale della telecamera seguendo il personaggio
+}
+
+ChrCamTurnH
+{
+Movimento orizzontale della telecamera seguendo il personaggio
+}
+
+ChrCamCameraSwitch
+{
+Modalità fotocamera
+}
+
+SwitchCameraOffset
+{
+Vista Camera
+}
+
+CharacterCamera_Forward
+{
+Camera zoom avanti
+}
+
+CharacterCamera_Backward
+{
+Camera zoom indietro
+}
+
+ChrAiming
+{
+Puntare (tenere premuto)
+}
+
+ChrAimingShot
+{
+Sparare durante la mira
+}
+
+ChrCamCameraRadius
+{
+Zoom della Camera
+}
+
+ChrCamNormalize
+{
+Camera centrale
+}
+
+ShipCamera_Turn_V
+{
+Movimento verticale della Camera che segue la nave
+}
+
+ShipCamera_Turn_H
+{
+Movimento orizzontale della Camera che segue la nave
+}
+
+ShipCamera_Forward
+{
+Ingrandire
+}
+
+ShipCamera_Backward
+{
+Rimpicciolisci
+}
+
+DeckCamera_Turn_V
+{
+Rotazione verticale della Camera (vista ponte)
+}
+
+DeckCamera_Turn_H
+{
+Rotazione orizzontale della Camera (vista ponte)
+}
+
+DeckCamera_Forward
+{
+Avanti (vista ponte)
+}
+
+DeckCamera_Backward
+{
+Indietro (vista ponte)
+}
+
+DeckCamera_Left
+{
+Mitraglia a sinistra (vista ponte)
+}
+
+DeckCamera_Right
+{
+Muoviti verso destra (vista ponte)
+}
+
+ChrTurnH
+{
+Rotazione dei personaggi
+}
+
+ChrTurnV
+{
+Movimento dei personaggi
+}
+
+ChrTurnHL
+{
+Ruota il personaggio a sinistra
+}
+
+ChrTurnHR
+{
+Ruota il personaggio a destra
+}
+
+ChrAction
+{
+Esegui l'azione
+}
+
+ChrForward
+{
+Andare avanti
+}
+
+ChrForward1
+{
+Andare avanti
+}
+
+ChrForward2
+{
+Andare avanti (alternativo)
+}
+
+ChrBackward
+{
+Muoversi indietro
+}
+
+ChrBackward1
+{
+Muoversi indietro
+}
+
+ChrSwitchWalk
+{
+Cammina/Corri
+}
+
+ChrSprint
+{
+Sprint
+}
+
+ChrRunStick
+{
+Cammina/Corri
+}
+
+ChrBlock
+{
+Ferma
+}
+
+ChrRecoil
+{
+Torna indietro
+}
+
+ChrParry
+{
+Parata (alternativa)
+}
+
+ChrAttackForce
+{
+Affondo
+}
+
+ChrAttackFast
+{
+Colpo duro
+}
+
+ChrAttackRound
+{
+Attacco di gruppo
+}
+
+ChrAttackBreak
+{
+Attacco pesante
+}
+
+ChrAttackFient
+{
+Finta (alternativa)
+}
+
+ChrAttackBreakBase
+{
+Attacco pesante/finta
+}
+
+ChrAttackRoundBase
+{
+Attacco di gruppo
+}
+
+ChrAttackChoseBase
+{
+Modalità scherma
+}
+
+ChrBlockBase
+{
+Bloccare
+}
+
+ChrAttackBase
+{
+Affondo/Parata
+}
+
+ChrAltAttackBase
+{
+Colpo/Attacco di gruppo
+}
+
+ChrFire
+{
+Fuoco
+}
+
+ChrFightMode
+{
+Attiva/disattiva la modalità combattimento
+}
+
+ChrSwitchFightMode
+{
+Cambiare modalità combattimento
+}
+
+BulletChanger
+{
+Cambia munizioni
+}
+
+PotionChanger
+{
+Cambia pozione
+}
+
+BOAL_UsePotion
+{
+Bevi un elisir di salute
+}
+
+BOAL_ActivateRush
+{
+Usa la tintura di Ometochtli 
+}
+
+BOAL_DeadSearch
+{
+Saccheggio del cadavere
+}
+
+UseAntidote
+{
+Bevi un antidoto
+}
+
+Alchemy
+{
+Alchimia
+}
+
+Inventory
+{
+Inventario
+}
+
+ShipState
+{
+Navi
+}
+
+QuestBook
+{
+Diario di bordo
+}
+
+MapView
+{
+Atlante
+}
+
+Abilities
+{
+Abilità
+}
+
+Nations
+{
+Nazioni
+}
+
+Dolly
+{
+Teletrasporto
+}
+
+Ultimate_potion
+{
+Bevi una pozione indiana
+}
+
+Ship_TurnLeft
+{
+Vira a sinistra
+}
+
+Ship_TurnRight
+{
+Vira a destra
+}
+
+Ship_SailUp
+{
+Issare le vele
+}
+
+Ship_SailDown
+{
+Ammainare le vele
+}
+
+Ship_Fire
+{
+Spara una salva
+}
+
+Sea_CameraSwitch
+{
+Attiva/disattiva la telecamera dietro/ponte
+}
+
+Telescope
+{
+Attiva/disattiva cannocchiale
+}
+
+TelescopeIn
+{
+Cannocchiale (ingrandisci)
+}
+
+TelescopeOut
+{
+Cannocchiale (riduci)
+}
+
+BI_MapEnter
+{
+Mappa globale
+}
+
+WMapTurnH
+{
+Ruota la telecamera attorno alla nave (in modalità mappa)
+}
+
+WMapTurnV
+{
+Altezza della telecamera (in modalità mappa)
+}
+
+WMapCameraRotate
+{
+Modalità di scorrimento/rotazione della fotocamera attivata
+}
+
+WMapForward
+{
+Ingrandisci zoom
+}
+
+WMapBackward
+{
+Diminuisci zoom
+}
+
+WMapCameraSwitch
+{
+Attiva/disattiva la modalità di visualizzazione
+}
+
+WMapShipSailUp
+{
+Naviga avanti
+}
+
+WMapShipSailDown
+{
+Naviga indietro
+}
+
+WMapShipTurnLeft
+{
+Vira a sinistra
+}
+
+WMapShipTurnRight
+{
+Vira a destra
+}
+
+WMapCancel
+{
+Esci dalla mappa,a mare
+}
+
+Interface
+{
+Menù personaggio
+}
+
+MainMenu
+{
+Menù principale
+}
+
+MainMenuDouble
+{
+Menu principale
+}
+
+Help
+{
+Guida
+}
+
+BICommandsActivate
+{
+Menù azioni
+}
+
+LICommandsActivate
+{
+Menù azioni 
+}
+
+BICommandsConfirm
+{
+Seleziona comando 
+}
+
+BICommandsCancel
+{
+Cancel command 
+}
+
+BICommandsUp
+{
+Action menu - navigate up
+}
+
+BICommandsDown
+{
+Action menu - navigate down
+}
+
+BICommandsLeft
+{
+Menu Azioni: vai a sinistra
+}
+
+BICommandsRight
+{
+Menu Azioni: vai a destra
+}
+
+MiniMapZoomIn
+{
+Ingrandisci la minimappa
+}
+
+MiniMapZoomOut
+{
+Rimpicciolisci la minimappa
+}
+
+BIFastCommand
+{
+Azione rapida
+}
+
+HelpChooser_Cancel
+{
+Esci dalla guida
+}
+
+HelpChooser_Action
+{
+Mostra la guida per l'elemento corrente
+}
+
+HelpChooser_Next
+{
+Elemento di aiuto successivo
+}
+
+HelpChooser_Prev
+{
+Elemento di aiuto precedente
+}
+
+HelpChooser_Left
+{
+Sinistra (in modalità guida)
+}
+
+HelpChooser_Right
+{
+Destra (in modalità guida)
+}
+
+HelpChooser_Up
+{
+Su (in modalità guida)
+}
+
+HelpChooser_Down
+{
+Giù (in modalità guida)
+}
+
+DlgAction
+{
+Rispondi in una finestra di dialogo
+}
+
+DlgAction1
+{
+Rispondi in una finestra di dialogo
+}
+
+DlgUp
+{
+Risposta precedente in una finestra di dialogo
+}
+
+DlgDown
+{
+Risposta successiva in una finestra di dialogo
+}
+
+DlgScrollUp
+{
+Scorri la finestra di dialogo verso il basso
+}
+
+DlgScrollDown
+{
+Scorri la finestra di dialogo verso l'alto
+}
+
+hk_charge1
+{
+Carica i cannoni con le palle
+}
+
+hk_charge2
+{
+Carica i cannoni con la mitraglia
+}
+
+hk_charge3
+{
+Carica i cannoni con colpi a catena
+}
+
+hk_charge4
+{
+Carica i cannoni con le bombe
+}
+
+hk_Cure
+{
+Usa una miscela curativa
+}
+
+hk_Rush
+{
+Usa l'abilità "Furia".
+}
+
+hk_ImmediateReload
+{
+Ricarica immediata
+}
+
+hk_LightRepair
+{
+Attiva la riparazione semplificata
+}
+
+hk_InstantRepair
+{
+Attiva la riparazione
+}
+
+hk_Turn180
+{
+Girati di 180
+}
+
+hk_SandbankManeuver
+{
+Attiva le manovre del banco di sabbia
+}
+
+ChrStrafeLeft
+{
+Passo a sinistra
+}
+
+ChrStrafeRight
+{
+Passo a destra
+}
+
+OfficersCharge
+{
+Ordine agli ufficiali: combattere a volontà
+}
+
+OfficersHold
+{
+Ordine agli ufficiali: mantenete la posizione
+}
+
+OfficersFollow
+{
+Ordine agli ufficiali: inseguiteli
+}
+
+FLT_LoadBalls
+{
+Comando della flotta: carica i cannoni con palle di cannone
+}
+
+FLT_LoadGrapes
+{
+Comando della flotta: carica i cannoni con la mitraglia
+}
+
+FLT_LoadChain
+{
+Comando della flotta: carica i cannoni con colpi a catena
+}
+
+FLT_LoadBombs
+{
+Comando della flotta: caricare i cannoni con le bombe
+}
+
+FLT_SailAway
+{
+Comando della flotta: salpare
+}
+
+FLT_LowerSails
+{
+Comando della flotta: ammainare le vele
+}
+
+FLT_ProtFlagship
+{
+Comando della flotta: proteggere l'ammiraglia
+}
+
+Fast_store
+{
+Viaggio veloce: mercato
+}
+
+Fast_shipyard
+{
+Fast Viaggio: Cantiere navale
+}
+
+Fast_tavern
+{
+Viaggio veloce: Taverna
+}
+
+Fast_townhall
+{
+Viaggio veloce: municipio
+}
+
+Fast_bank
+{
+Viaggio veloce: usuraio
+}
+
+Fast_church
+{
+Viaggio veloce: Chiesa
+}
+
+Fast_brothel
+{
+Viaggio veloce: bordello
+}
+
+Fast_portoffice
+{
+Viaggio veloce: Autorità Portuale
+}
+
+Fast_prison
+{
+Viaggio veloce: prigione
+}
+
+Fast_port
+{
+Viaggio veloce: porto
+}
+
+LI_Fast_store
+{
+Mercato
+}
+
+LI_Fast_shipyard
+{
+Cantiere navale
+}
+
+LI_Fast_tavern
+{
+Taverna
+}
+
+LI_Fast_townhall
+{
+Municipio
+}
+
+LI_Fast_bank
+{
+Banca
+}
+
+LI_Fast_church
+{
+Chiesa
+}
+
+LI_Fast_brothel
+{
+Bordello
+}
+
+LI_Fast_portoffice
+{
+Ufficio portuale
+}
+
+LI_Fast_prison
+{
+Prigione
+}
+
+LI_Fast_port
+{
+Porto
+}
+
+HK_Musket
+{
+Equipaggia il moschetto
+}
+
+HK_FencingL
+{
+Equipaggia un'arma leggera
+}
+
+HK_FencingS
+{
+Equipaggia un'arma media
+}
+
+HK_FencingH
+{
+Equipaggia un'arma pesante
+}
+
+HK_bullet
+{
+Caricare un'arma da fuoco con un proiettile (modificato)
+}
+
+HK_cartridge
+{
+Caricare un'arma con una cartuccia di carta (modificato)
+}
+
+HK_grapeshot
+{
+Caricare un'arma da fuoco con pallettoni (modificato)
+}
+
+HK_harpoon
+{
+Caricare un'arma da fuoco con una freccia (modificato)
+}
+
+HK_GunEchin
+{
+Caricare un'arma da fuoco con una carica di riccio (modificato)
+}
+
+HK_grenade
+{
+Caricare un'arma da fuoco con una granata (modificato)
+}
+
+hk_Cabin
+{
+Scendi in cabina
+}
+
+CannonsRange
+{
+Portata dei cannoni
+}
+
+ChangeShowInterface
+{
+Nascondi/mostra l'interfaccia utente
+}
+
+FreeCam
+{
+Free Camera
+}
+
+TimeScale
+{
+Time speed up/slow down
+}
+
+TimeScaleFasterBA
+{
+Time speed up
+}
+
+TimeScaleSlowerBA
+{
+Time slow down
+}
+
+FireCamera_Set
+{
+Vista di puntamento
+}

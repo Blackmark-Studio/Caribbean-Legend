@@ -28,7 +28,7 @@ Panama 			{Panamá}
 SantaCatalina 	{Tierra Firme}
 Terks			{Islas Turcas}
 Tortuga			{Tortuga}
-Trinidad		{Trinidad y Tobago}
+Trinidad		{Trinidad}
 Tenotchitlan 	{Lago Peten}
 Mein 			{Tierra Firme}
 KhaelRoa 		{Khael Roa}
@@ -74,7 +74,7 @@ FortOrange_town	{Maroon Town}
 Providence_town	{San Andrés}
 Estate 			{Propiedad de Oglethorpe, Inglaterra}
 DesMoines 		{Des Moines}
-Minentown_town 	{Mina Los-Teques}
+LosTeques_town 	{Mina Los-Teques}
 ExitMine 		{Pasadizo a la mina}
 Factoria 		{Factoría}						   
 
@@ -146,8 +146,8 @@ Shore65 {Costa de Rocky}
 Shore66 {Playa Shark}
 Shore66_1 {Costa maldita}
 Shore67 {Arrecife del Esqueleto}
-Shore67_1 {Arrecife del Esqueleto - Oeste}
-Shore67_2 {Arrecife del Esqueleto - Este}
+Shore67_1 {Arrecife del Esqueleto, Oeste}
+Shore67_2 {Arrecife del Esqueleto, Este}
 Shore68 {Costa Ingallado}
 Shore69 {Playa Santa María del Mar}
 Shore70 {Costa del Esclavo}
@@ -168,7 +168,7 @@ Shore_ship4	{Costa maldita}
 
 Shore_mask	{Gruta de los guardianes}
 
-Mayak1	{Faro de Trinidad y Tobago}
+Mayak1	{Faro de Trinidad}
 Mayak2	{Faro de Barbados}
 Mayak3	{Faro de Port Royal}
 Mayak4	{Faro de Guadalupe}
@@ -316,8 +316,8 @@ SanAndres Port	{Puerto de  San Andrés}
 IslaMona {Isla Mona}
 IslaMona Town {Isla Mona}
 
-Minentown		{Mina Los-Teques}
-Minentown Town	{Mina Los-Teques}
+LosTeques		{Mina Los-Teques}
+LosTeques Town	{Mina Los-Teques}
 
 Duel Field		{Campo de duelo}
 Boarding deck	{Cubierta de embarque} 
@@ -437,3 +437,5 @@ River {Orilla del río}
 Jungle Fort {Fuerte en la Jungla}
 Basement {Base}
 Ruins {Ruinas}
+
+Ulysse {Aboard the Ulysse}

@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 		
 		case "amelia_1":
 			dialog.text = "Interesujące! A któż ci o mnie powiedział, dzielny młodzieńcze?";
-			link.l1 = "Jedna z twoich ludzi. Powiedziała, że znasz sekrety tej rośliny i możesz nauczyć mnie, jak zrobić z niej specjalne mikstury...";
+			link.l1 = "Jedna z twoich. Powiedziała, że znasz sekrety tej rośliny i możesz nauczyć mnie, jak zrobić z niej specjalne mikstury...";
 			link.l1.go = "amelia_2";
 		break;
 		
@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "amelia_exit":
-			dialog.text = "A co miałeś mi pokazać? Nie masz Manga Rosa. Więc wynoś się, koleś, zanim się wkurzę. Ta rozmowa jest skończona.";
+			dialog.text = "A co miałeś mi pokazać? Nie masz Manga Rosa. Więc wynoś się, nieznajomy, zanim się wkurzę. Ta rozmowa jest skończona.";
 			link.l1 = "Ale...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "amelia_wait";

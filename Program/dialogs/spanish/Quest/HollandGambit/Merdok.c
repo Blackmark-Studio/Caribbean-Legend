@@ -63,7 +63,7 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.HWIC.Holl == "KillMerdok")
 			{
-				dialog.text = "Ahhh, aquí está el perro contratado por Rodenburg... Hercule, Longway - ¿podríais salir aquí?\n¡Matad a este hombre!";
+				dialog.text = "Ahhh, aquí está el perro contratado por Rodenburg... Hercule, Longway, ¿podríais salir aquí?\n¡Matad a este hombre!";
 				link.l1 = "¡Espera, tengo una receta!";
 				link.l1.go = "Merdok_fight";
 				break;
@@ -160,7 +160,7 @@ void ProcessDialogEvent()
 			{
 				DelLandQuestMark(npchar);
 				DelMapQuestMarkCity("SentJons");
-				dialog.text = "Bienvenido de nuevo, " + pchar.name + "¡Alguna buena noticia para mí?";
+				dialog.text = "Bienvenido de nuevo, " + pchar.name + ". ¿Alguna buena noticia para mí?";
 				link.l1 = "John, de ahora en adelante puedes dormir sin un cuchillo bajo la almohada. Lucas ya no será una amenaza para ti. Está arrestado y encerrado, y está a punto de ser enviado a Holanda en un futuro cercano, donde será juzgado por insurrección, intento de asesinato y otros delitos.";
 				link.l1.go = "Lucas_10";
 				break;
@@ -279,7 +279,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Merdok_talk_3":
-		PlaySound("Voice\Spanish\hambit\John Mardock-07.wav");
+		PlaySound("Voice\Spanish\hambit\John Mardock-08.wav");
 		dialog.text = "¡Respuesta incorrecta, morirás aquí y ahora! ¡Longway, gongji!";
 		link.l1 = "¡Oh, ho, el chino aparece de las sombras! No os preocupéis, os haré chop suey a ambos!";
 		link.l1.go = "Merdok_fightEng";
@@ -304,7 +304,7 @@ void ProcessDialogEvent()
 
 		//----------------------------------------против всех-------------------------------------------------------
 	case "MC_InHouse":
-		PlaySound("Voice\Spanish\hambit\John Mardock-02.wav");
+		PlaySound("Voice\Spanish\hambit\John Mardock-09.wav");
 		dialog.text = "Finalmente, estás de nuevo en pie. Temía que no fueras a despertar.";
 		link.l1 = "¿Qué...? ¿Quién eres tú? ¿Dónde diablos estoy? ¿Cómo llegué aquí?";
 		link.l1.go = "MC_InHouse_1";
@@ -450,8 +450,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "About_Fleetwood_13":
-		dialog.text = "Sabía que preguntarías eso. Está en un bergantín comisionado por la Mancomunidad-oh al diablo con eso, la 'Armada Real'. Su nombre es 'Zeekalf'.";
-		link.l1 = "'Zeekalf'? Ese es un nombre muy holandés para un barco inglés... ohhh ya entiendo.";
+		dialog.text = "Sabía que preguntarías eso. Está en un bergantín comisionado por la Mancomunidad, oh al diablo con eso, la 'Armada Real'. Su nombre es 'Zeekalf'.";
+		link.l1 = "¿'Zeekalf'? Ese es un nombre muy holandés para un barco inglés... ohhh ya entiendo.";
 		link.l1.go = "About_Fleetwood_14";
 		break;
 
@@ -505,7 +505,7 @@ void ProcessDialogEvent()
 
 	case "Abigile_2":
 		dialog.text = "¿Estás seguro? Podría ser que todo no sea tan simple como insinúas...";
-		link.l1 = "¡Oh sí, estoy absolutamente seguro! Por la carta, he deducido que el padre de Abigail estaba en contra de su matrimonio con Richard por dinero. Ya sabes, típico suegro judío. Así que Fleetwood decidió pagarle una dote a su padre - ¡200000 pesos! Dime ahora, ¿cuántas chicas en el mundo valen tanto dinero?";
+		link.l1 = "¡Oh sí, estoy absolutamente seguro! Por la carta, he deducido que el padre de Abigail estaba en contra de su matrimonio con Richard por dinero. Como puedes imaginar, típico suegro judío. Así que Fleetwood decidió pagarle una dote a su padre, ¡200000 pesos! Dime ahora, ¿cuántas chicas en el mundo valen tanto dinero?";
 		link.l1.go = "Abigile_3";
 		break;
 
@@ -678,7 +678,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "¡Una combinación excelente, una gran idea y una implementación magistral! Mis felicitaciones, " + pchar.name + "¡";
+			dialog.text = "¡Una combinación excelente, una gran idea y una implementación magistral! ¡Mis felicitaciones, " + pchar.name + "!";
 			link.l1 = "¡Gracias! ¿Y dónde está Hércules? Me gustaría verlo. La última vez que nos vimos, me dijo que podría encontrarlo con tu ayuda.";
 			link.l1.go = "Abigile_28";
 		}
@@ -903,13 +903,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "Final_5":
-		dialog.text = "Tengo que decir adiós ahora. Voy al sótano a empacar mis pertenencias. Mañana no estaré aquí - zarpo de Antigua. Estoy feliz de haberte conocido y estoy feliz de que estuvieras de mi lado y no con mis enemigos.";
+		dialog.text = "Tengo que decir adiós ahora. Voy al sótano a empacar mis pertenencias. Mañana no estaré aquí, zarpo de Antigua. Estoy feliz de haberte conocido y estoy feliz de que estuvieras de mi lado y no con mis enemigos.";
 		link.l1 = "También me alegra conocerte, John. Tal vez, nos volvamos a encontrar...";
 		link.l1.go = "Final_6";
 		break;
 
 	case "Final_6":
-		dialog.text = "No en esta vida, amigo mío. Me voy a empacar. Adiós, " + pchar.name + "¡";
+		dialog.text = "No en esta vida, amigo mío. Me voy a empacar. Adiós, " + pchar.name + ".";
 		link.l1 = "¡Adiós, John! ¡Buena suerte para ti!";
 		link.l1.go = "Final_7";
 		break;

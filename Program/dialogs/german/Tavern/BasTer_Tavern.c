@@ -19,6 +19,24 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Mein Freund und ich haben uns hier verabredet, aber ich sehe ihn nirgendwo. Weißt du, wo er hingegangen ist? Ist er noch in der Stadt, oder zumindest auf der Insel? Sein Name ist Longway - er ist Chinese.";
 				link.l1.go = "PZ_BasTerTavern_1";
 			}
+			//--> Торговля по закону
+			if (CheckAttribute(pchar, "questTemp.TPZ_Tavern_2"))
+			{
+				link.l1 = "Gute Nachrichten, "+npchar.name+". Ich habe genau das, was Ihre Situation retten kann. Hundert Flaschen erstklassigen Weins und hundert Flaschen Rum. Mit so einer Lieferung werden Ihre Gäste wieder in Strömen trinken. Sind Sie bereit, tief in die Tasche zu greifen?";
+				link.l1.go = "TPZ_Tavern2_1";
+			}
+
+			if (CheckAttribute(pchar, "questTemp.TPZ_Tavern_3"))
+			{
+				link.l1 = "Nun, "+npchar.name+", sind Sie bereit, die Bedingungen des Geschäfts zu besprechen?";
+				link.l1.go = "TPZ_Tavern2_11";
+			}
+			if (CheckAttribute(pchar, "questTemp.TPZ_Tavern_4"))
+			{
+				link.l1 = "Also, "+npchar.name+". Von meiner Seite ist alles geregelt und die Ware ist bereits auf dem Weg zur Taverne. Wollen wir zur Bezahlung übergehen?";
+				link.l1.go = "TPZ_Tavern3_1";
+			}
+			//<-- Торговля по закону
 		break;
 		
 		//суп из черепахи
@@ -92,6 +110,195 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		// <== Квест "Путеводная звезда" - Sinistra
+		
+		//--> Торговля по закону
+		case "TPZ_Tavern_1":
+			dialog.text = "Ach, "+GetAddress_Form(NPChar)+", es ist schlimmer als gedacht. Mein Lieferant aus Antigua hat seine Brennerei verloren – Piratenüberfall, alles bis auf die Grundmauern niedergebrannt. Er sagt, dass es mindestens zwei Monate dauern wird, bevor er wieder Rum oder Wein liefern kann.";
+			link.l1 = "Dann finden Sie einen neuen Lieferanten. Sie werden doch nicht zwei Monate lang Däumchen drehen?";
+			link.l1.go = "TPZ_Tavern_2";
+		break;
+		
+		case "TPZ_Tavern_2":
+			dialog.text = "Einen guten Lieferanten zu finden, ist nicht einfach. Ich habe versucht, mit kleinen Händlern zu verhandeln, aber sie sind unzuverlässig. Manchmal kommt die Ware, manchmal nicht. Ein großer Lieferant dagegen liefert regelmäßig und in guter Qualität.";
+			link.l1 = "Wenn es mit gewöhnlichen Lieferanten solche Probleme gibt, vielleicht lohnt sich ein Blick in den Schattenmarkt? Diese Leute liefern zuverlässig und haben immer Ware auf Lager.";
+			link.l1.go = "TPZ_Tavern_3";
+		break;
+		
+		case "TPZ_Tavern_3":
+			dialog.text = "Sie verstehen doch, "+GetAddress_Form(NPChar)+", die Taverne steht unter ständiger Beobachtung. Ich will keinen Ärger mit den Behörden. Wenn jemand mit gutem Ruf die Ware bringt, sehe ich gern über deren Herkunft hinweg.\nAm Ende zählt doch nur, dass es keine Zweifel von außen gibt. Langfristig arbeite ich aber nur mit ehrlichen und seriösen Händlern zusammen.";
+			link.l1 = "Verstehe. Nun gut, vielleicht komme ich später noch einmal vorbei. Jedes Problem lässt sich lösen, wenn man klug herangeht.";
+			link.l1.go = "TPZ_Tavern_4";
+		break;
+		
+		case "TPZ_Tavern_4":
+			DialogExit();
+			AddQuestRecord("TPZ", "2");
+			pchar.questTemp.TPZ_ContraInfo = true;
+			AddLandQuestMark(characterFromId("BasTer_Smuggler"), "questmarkmain");
+		break;
+		
+		case "TPZ_Tavern2_1":
+			dialog.text = "Kapitän, das ist einfach unglaublich! Wie haben Sie das geschafft? Egal. Sagen Sie mir lieber, was Sie für diese prächtige Lieferung Alkohol haben wollen. Und... sind die Papiere in Ordnung?";
+			if (sti(pchar.reputation.nobility) >= 40)
+			{
+				link.l1 = "Die Papiere? Natürlich ist alles in bester Ordnung. Sie werden sie doch wohl nicht überprüfen wollen?";
+				link.l1.go = "TPZ_Tavern2_2";
+				notification("Ehrenprüfung bestanden", "None");
+			}
+			else
+			{
+				link.l1 = "Die Papiere?";
+				link.l1.go = "TPZ_Tavern2_2_badrep";
+				notification("Ehre zu niedrig! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+			}
+			DeleteAttribute(pchar, "questTemp.TPZ_Tavern_2");
+			DelLandQuestMark(npchar);
+		break;
+
+		case "TPZ_Tavern2_2_badrep":
+			dialog.text = "Kapitän, verstehen Sie bitte – ich brauche diese Lieferung dringend. Aber meine Freiheit und mein Ruf sind mir nicht weniger wichtig. Der Gouverneur ist gnadenlos zu Schwarzmarktleuten, selbst zu den kleinsten. Wenn man besser über Sie spräche, könnte ich über fehlende Dokumente hinwegsehen, aber im Moment... Sie ziehen zu viel unerwünschte Aufmerksamkeit auf sich.";
+			link.l1 = "Scheint, es ist an der Zeit, ein paar gute Taten zu vollbringen. Warten Sie auf mich, ich komme bald zurück.";
+			link.l1.go = "exit";
+			pchar.questTemp.TPZ_Tavern_3 = true;
+		break;
+		
+		case "TPZ_Tavern2_2":
+			dialog.text = "Diesmal will ich Ihnen glauben. Also, wie viel verlangen Sie für diese Lieferung?";
+			link.l1 = "Ich möchte dreißig Dublonen für je zehn Flaschen Wein und fünf Dublonen für zehn Flaschen Rum. Insgesamt macht das für hundert Flaschen Rum und hundert Flaschen Wein dreihundertfünfzig Dublonen.";
+			link.l1.go = "TPZ_Tavern2_3";
+		break;
+		
+		case "TPZ_Tavern2_3":
+			dialog.text = "Bitte, Kapitän! Das ist ja blanker Raub! Ja, meine Lage ist wirklich verzweifelt, aber ich werde trotzdem nicht mit Verlust arbeiten!";
+			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 50)
+			{
+				link.l1 = "Vielleicht kann ich Ihnen einen Preisnachlass geben. Und noch etwas: ich möchte Ihr fester Lieferant werden. Ich garantiere pünktliche Lieferungen ohne Ausfälle. Ich werde ein Lagerhaus in Basse-Terre mieten, damit Sie Ihre Waren direkt dort abholen können – immer pünktlich und ausreichend bestückt. Der Preis mit Rabatt: zweihundertvierzig Dublonen. Was sagen Sie?";
+				link.l1.go = "TPZ_Tavern2_4";
+				notification("Prüfung bestanden", SKILL_COMMERCE);
+			}
+			else
+			{
+				link.l1 = "Na gut, ich kann den Preis auf zweihundertvierzig Dublonen pro Lieferung senken – ich bin an einer langfristigen Zusammenarbeit interessiert. Ich kann Ihre Bedürfnisse vollständig abdecken und stabile Lieferungen gewährleisten. Was sagen Sie?";
+				link.l1.go = "TPZ_Tavern2_7";
+				notification("Handelskunst zu niedrig (50)", SKILL_COMMERCE);
+			}
+		break;
+		
+		case "TPZ_Tavern2_4":
+			dialog.text = "Das ist immer noch mehr, als ich früher bezahlt habe. Aber ich habe meine Lektion gelernt – Stabilität hat ihren Preis. Ich bin einverstanden, aber wissen Sie: ein Fehler, und ich suche mir einen neuen Lieferanten. Ich will verstehen, wofür ich mehr zahle. Und wie wollen Sie das mit den Behörden regeln?";
+			link.l1 = "Darum werde ich mich sofort kümmern. Sobald alles geregelt ist, komme ich mit der Ware zurück.";
+			link.l1.go = "TPZ_Tavern2_5";
+		break;
+		
+		case "TPZ_Tavern2_5":
+			dialog.text = "Bitte beeilen Sie sich. Ich kann es kaum erwarten, die Krüge meiner Gäste wieder zu füllen.";
+			link.l1 = "Keine Sorge, ich lasse Sie nicht lange warten.";
+			link.l1.go = "TPZ_Tavern2_6";
+		break;
+		
+		case "TPZ_Tavern2_6":
+			DialogExit();
+			AddQuestRecord("TPZ", "5");
+			DeleteAttribute(pchar, "questTemp.TPZ_Tavern_3");
+			AddLandQuestMark(characterFromId("BasTer_Mayor"), "questmarkmain");
+			pchar.questTemp.TPZ_guber_1 = true;
+			pchar.questTemp.TPZ_Vino240 = true;
+			
+			AddCharacterExpToSkill(pchar, "Commerce", 200);
+		break;
+
+		case "TPZ_Tavern2_7":
+			dialog.text = "Das ist trotzdem zu teuer, Kapitän. Dieser Preis liegt über dem meines bisherigen Lieferanten. Selbst wenn ich jetzt zustimme, werde ich in ein paar Monaten wohl wieder zu ihm zurückkehren müssen, wenn die Produktion wieder läuft. Ich sehe keinen Grund, mehr zu zahlen.";
+			link.l1 = "Verstehe. Gut. Mein letztes Angebot: zweihundert Dublonen. Wenn das auch nicht akzeptabel ist, hat es keinen Sinn weiterzureden.";
+			link.l1.go = "TPZ_Tavern2_8";
+		break;
+		
+		case "TPZ_Tavern2_8":
+			dialog.text = "In Ordnung, abgemacht. Zweihundert ist akzeptabel. Aber sagen Sie mir: Wie wollen Sie die Sache mit den Inselbehörden regeln? Wie ich bereits sagte, der Gouverneur ist äußerst wachsam, wenn es um Schmuggel geht. Er lässt keine Geschäfte unter seiner Nase zu.";
+			link.l1 = "Ha-ha, darüber lässt sich streiten. Aber keine Sorge – ich werde alle bürokratischen Hürden so schnell wie möglich beseitigen.";
+			link.l1.go = "TPZ_Tavern2_9";
+		break;
+		
+		case "TPZ_Tavern2_9":
+			dialog.text = "Bitte zögern Sie nicht. Ich kann es kaum erwarten, die Krüge meiner Gäste wieder zu füllen.";
+			link.l1 = "Keine Sorge, ich lasse nicht lange auf mich warten.";
+			link.l1.go = "TPZ_Tavern2_10";
+		break;
+		
+		case "TPZ_Tavern2_10":
+			DialogExit();
+			AddQuestRecord("TPZ", "6");
+			DeleteAttribute(pchar, "questTemp.TPZ_Tavern_3");
+			AddLandQuestMark(characterFromId("BasTer_Mayor"), "questmarkmain");
+			pchar.questTemp.TPZ_guber_1 = true;
+			pchar.questTemp.TPZ_Vino200 = true;
+		break;
+		
+		case "TPZ_Tavern2_11":
+			if (sti(pchar.reputation.nobility) >= 40)
+			{
+				dialog.text = "Natürlich, Kapitän! Also, wie viel verlangen Sie für Ihre Lieferung?";
+				link.l1 = "Ich möchte dreißig Dublonen für je zehn Flaschen Wein und fünf Dublonen für zehn Flaschen Rum. Insgesamt macht das für hundert Flaschen Rum und hundert Flaschen Wein dreihundertfünfzig Dublonen.";
+				link.l1.go = "TPZ_Tavern2_3";
+				notification("Ehrenprüfung bestanden", "None");
+			}
+			else
+			{
+				dialog.text = "Es tut mir leid, Kapitän, aber Ihr Ruf lässt immer noch zu wünschen übrig.";
+				link.l1 = "Verdammt...";
+				link.l1.go = "exit";
+				notification("Ehrenstufe zu niedrig! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+			}
+		break;
+		
+		case "TPZ_Tavern3_1":
+			if (CheckAttribute(pchar, "questTemp.TPZ_Vino240"))
+			{
+				dialog.text = "Natürlich, Kapitän, natürlich! 240 Dublonen, wie vereinbart. Bitte sehr!";
+				link.l1 = "Es ist mir eine Freude, mit Ihnen Geschäfte zu machen! Jetzt wird es in der Taverne wieder reichlich Rum und Wein geben.";
+				link.l1.go = "TPZ_Tavern3_2";
+				AddItems(pchar, "gold_dublon", 240);
+			}
+			if (CheckAttribute(pchar, "questTemp.TPZ_Vino200"))
+			{
+				dialog.text = "Natürlich, Kapitän, natürlich! 200 Dublonen, wie vereinbart. Bitte sehr!";
+				link.l1 = "Es ist mir eine Freude, mit Ihnen Geschäfte zu machen! Jetzt wird es in der Taverne wieder reichlich Rum und Wein geben.";
+				link.l1.go = "TPZ_Tavern3_2";
+				AddItems(pchar, "gold_dublon", 200);
+			}
+			DelLandQuestMark(npchar);
+		break;
+
+				case "TPZ_Tavern3_2":
+			dialog.text = "Sie sind mein Retter, Kapitän! Ich werde solche Lieferungen alle zwei Wochen erwarten. Ich hoffe, Sie halten sich strikt an Ihre Verpflichtungen. Eine zweite Durststrecke wird meine Taverne nicht überleben...";
+			link.l1 = "Machen Sie sich keine Sorgen, "+npchar.name+". Mein Vertreter in der Stadt ist Christian Delouche. Er wird dafür sorgen, dass Ihre Taverne nie an Wein und Rum mangelt.";
+			link.l1.go = "TPZ_Tavern3_3";
+		break;
+		
+		case "TPZ_Tavern3_3":
+			dialog.text = "Christian? Ich kenne ihn, er ist ein zuverlässiger Mann, aber... Ach, egal. Wenn Sie alles mit den Behörden geregelt haben, denke ich, kann ich ihm vertrauen.";
+			link.l1 = "Wunderbar. Nun entschuldigen Sie mich, ich muss noch eine Angelegenheit in dieser Stadt erledigen.";
+			link.l1.go = "TPZ_Tavern3_4";
+		break;
+		
+		case "TPZ_Tavern3_4":
+			dialog.text = "Kommen Sie öfter bei uns vorbei!";
+			link.l1 = "Auf jeden Fall.";
+			link.l1.go = "TPZ_Tavern3_5";
+		break;
+		
+		case "TPZ_Tavern3_5":
+			DialogExit();
+			AddQuestRecord("TPZ", "7");
+			DeleteAttribute(pchar, "questTemp.TPZ_Tavern_4");
+			
+			sld = CharacterFromID("TPZ_Kristian");
+			LAi_CharacterEnableDialog(sld);
+			sld.dialog.filename = "Quest\MiniEvents\TradingByLaw_dialog.c";
+			sld.dialog.currentnode = "Kristian_31";
+			AddLandQuestMark(sld, "questmarkmain");
+		break;
+		//<-- Торговля по закону
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

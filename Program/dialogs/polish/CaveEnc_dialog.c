@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaveBanditosSit":
-			if (drand(2) == 1) 
+			if (hrand(2) == 1) 
 			{
 				dialog.text = NPCStringReactionRepeat("Whoa-ho, popatrz kto tu jest! No cóż, dzisiaj jest twój szczęśliwy dzień, kumplu. Jesteśmy dobrzy, widzisz, gotujemy jedzenie i tak dalej... Nie zapraszam cię na naszą kolację, ale powinieneś zniknąć póki jeszcze możesz.","Znikaj teraz i nas nie przeszkadzaj. Wróć jutro - i nie zapomnij przynieść ze sobą swojego portfela, ha-ha-ha!","Nie denerwuj mnie, marynarzu! Czy nadal pamiętasz, gdzie jest wejście do jaskini? Powinieneś tam teraz iść, bardzo, bardzo szybko...","No cóż, teraz przekroczyłeś granicę, kumplu! Chyba będę musiał oderwać się od moich spraw i zająć tobą, dupku!","block",1,npchar,Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Bardzo miło z twojej strony, kumplu...","Widzę, że jesteś całkiem żartownisiem...","Dobrze, nadal smaż swoje placki, wtedy...","Teraz rozmawiamy, ha-ha!",npchar,Dialog.CurrentNode); 
@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = LinkRandPhrase("O rety, na Boga! Nie ma potrzeby polować na zdobycz - ona już tu jest... Hej, chłopaki - potrząśnijmy tym fircykiem, co?","Nikt cię tu nie zaprosił, kumplu... Ale dobrze, że jednak jesteś. Zobaczmy teraz, jak ciężki jest twój sakiewka!","Nikt cię tutaj na siłę nie ciągnął, he-he... Ale skoro już tu jesteś, chyba trochę cię pożartujemy, żeby zobaczyć, co ci z kieszeni wypadnie...");
+				dialog.text = LinkRandPhrase("O rety, na Boga! Nie ma potrzeby polować na zdobycz - ona już tu jest... Hej, chłopaki - potrząśnijmy tym fircykiem, co?","Nikt cię tu nie zaprosił, kumplu... Ale dobrze, że jednak jesteś. Zobaczmy teraz, jak ciężka jest twoja sakiewka!","Nikt cię tutaj na siłę nie ciągnął, he-he... Ale skoro już tu jesteś, chyba trochę cię pożartujemy, żeby zobaczyć, co ci z kieszeni wypadnie...");
 				link.l1 = LinkRandPhrase("Teraz trochę skrócę twój język...","Mam nadzieję, że twoje umiejętności szermierki dorównują twojemu dowcipowi, gadatliwy!","Cóż, wygląda na to, że nadszedł czas, aby zrobić kilka dodatkowych dziur w twoim znikomym ciele...");
 				link.l1.go = "fight";
 			}
@@ -52,7 +52,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaveCaribSit":
-			if (drand(2) == 2) 
+			if (hrand(2) == 2) 
 			{
 				dialog.text = NPCStringReactionRepeat("Białotwarz, odejdź. On będzie szczęśliwy, że "+npchar.name+"  dobroduszny. Bogowie mają dla ciebie litość dzisiaj.","Wyjdź z mojej jaskini, zanim ja i moi bracia się nie rozzłościmy!","Wyjdź, blady pies!","Twój szczęście i życie skończyło się, biały pies!","blokada",1,npchar,Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Cóż, dziękuję ci, kumplu, bardzo miło z twojej strony...","Ta jaskinia nie jest twoja, a ja idę tam, gdzie chcę.","Złagodź to trochę, potwore z bagien.","Teraz zatłukę ci te słowa z powrotem do gardła, zwierzę...",npchar,Dialog.CurrentNode); 

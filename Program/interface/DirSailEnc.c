@@ -1,3 +1,4 @@
+
 #define DIR_SAIL_WAR_DIST 		4000000.0 // 2000 ^ 2
 #define DSENC_SECONDS_TIMEOUT 	8
 
@@ -133,6 +134,7 @@ void IProcessFrame()
         }
     }
 }
+
 //extern call from Islands_loader.c
 void evtDirSail(aref rRawG, aref encDataForS, int iNumMerchantS, int iNumWarS,
                 float playerShipX, float playerShipZ, float locx, float locay, float locz,
@@ -179,7 +181,7 @@ void assignByID(string eID)
 int doDescribe(int gNum)
 {
 	string loadScr = "";
-	
+    ref rChar;
     int mapEncSlot = FindFreeMapEncounterSlot();
     if(mapEncSlot < 0) return;
     rEncounter = GetMapEncounterRef(mapEncSlot);
@@ -194,7 +196,8 @@ int doDescribe(int gNum)
     grpTrans[gNum].grpIDTrn = rEncounter.GroupName;
     iEncounterType = sti(rEncounter.RealEncounterType);
     iRealEncounterType = iEncounterType;
-	
+	bool bPowerCompare = true;
+	string sOkBtn = XI_ConvertString("map_attack");
     //Get description
     if (isShipEncounterType > 1 && gNum > 0 && iRealEncounterType < ENCOUNTER_TYPE_BARREL)
     {
@@ -205,8 +208,9 @@ int doDescribe(int gNum)
         int nEncChar = GetCharacterIndex(rEncounter.CharacterID);
         if (nEncChar != -1)
         {
-            sQuestSeaCharId = characters[nEncChar].id;
-            if (CheckAttribute(&characters[nEncChar], "mapEnc.Name"))
+            rChar = &characters[nEncChar];
+            sQuestSeaCharId = rChar.id;
+            if (CheckAttribute(rChar, "mapEnc.Name"))
             {
                 totalInfo = totalInfo + characters[nEncChar].mapEnc.Name;
             }
@@ -218,70 +222,70 @@ int doDescribe(int gNum)
     }
     else
     {
-		if(iRealEncounterType <= ENCOUNTER_TYPE_MERCHANT_LARGE)
-		{
-			totalInfo = totalInfo + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("of traders");
-		}
-		
-		if(iRealEncounterType >= ENCOUNTER_TYPE_MERCHANT_GUARD_SMALL && iRealEncounterType <= ENCOUNTER_TYPE_MERCHANT_GUARD_LARGE)
-		{
-			totalInfo = totalInfo + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
-		}
-		
-		if(iRealEncounterType >= ENCOUNTER_TYPE_ESCORT_SMALL && iRealEncounterType <= ENCOUNTER_TYPE_ESCORT_LARGE)
-		{
-			totalInfo = totalInfo + XI_ConvertString("Trade caravan") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
-		}
-		
-		if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_CROWN)
-		{
-			totalInfo = totalInfo + XI_ConvertString("Crown caravan") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
-		}
-		
-		if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_EXPEDITION)
-		{
-			totalInfo = totalInfo + XI_ConvertString("Trade expedition") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
-		}
+        // Торговый караван 
+        if(iRealEncounterType <= ENCOUNTER_TYPE_MERCHANT_LARGE)
+        {
+            if(iNumWarShips == 0)
+                totalInfo = totalInfo + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("of traders");
+            else
+                totalInfo = totalInfo + XI_ConvertString("Trade caravan") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
+        }
 
-		if(iRealEncounterType >= ENCOUNTER_TYPE_PATROL_SMALL && iRealEncounterType <= ENCOUNTER_TYPE_PATROL_LARGE)
-		{
-			totalInfo = totalInfo + XI_ConvertString("Patrol") + GetTextOnShipsQuantity(iNumWarShips);
-		}
+        // Торговая экспедиция - Средняя
+        if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_CROWN)
+        {
+            totalInfo = totalInfo + XI_ConvertString("Crown caravan") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
+        }
 
-		if(iRealEncounterType >= ENCOUNTER_TYPE_PIRATE_SMALL && iRealEncounterType <= ENCOUNTER_TYPE_PIRATE_SCOUNDREL)
-		{
-			totalInfo = totalInfo + XI_ConvertString("Pirates") + GetTextOnShipsQuantity(iNumWarShips);
-		}
+        // Торговая экспедиция - Большая
+        if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_EXPEDITION)
+        {
+            totalInfo = totalInfo + XI_ConvertString("Trade expedition") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
+        }
 
-		if(iRealEncounterType >= ENCOUNTER_TYPE_SQUADRON && iRealEncounterType <= ENCOUNTER_TYPE_ARMADA)
-		{
-			totalInfo = totalInfo + XI_ConvertString("Naval squadron") + GetTextOnShipsQuantity(iNumWarShips);
-		}
+        // Работорговцы
+        if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_SLAVES)
+        {
+           totalInfo = totalInfo + XI_ConvertString("Slave traders") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
+        }
 
-		if(iRealEncounterType == ENCOUNTER_TYPE_CROWN_ARMADA)
-		{
-			totalInfo = totalInfo + XI_ConvertString("Crown Armada") + GetTextOnShipsQuantity(iNumWarShips);
-		}
-		
-		if(iRealEncounterType == ENCOUNTER_TYPE_PUNITIVE_SQUADRON)
-		{
-			totalInfo = totalInfo + XI_ConvertString("Punitive expedition") + GetTextOnShipsQuantity(iNumWarShips);
-		}
+        // Патруль
+        if(iRealEncounterType >= ENCOUNTER_TYPE_PATROL_SMALL && iRealEncounterType <= ENCOUNTER_TYPE_PATROL_MEDIUM)
+        {
+            totalInfo = totalInfo + XI_ConvertString("Patrol") + GetTextOnShipsQuantity(iNumWarShips + iNumMerchantShips);
+        }
 
-		if(iRealEncounterType == ENCOUNTER_TYPE_WAR_PRIVATEER)
-		{
-			totalInfo = totalInfo + XI_ConvertString("Privateer") + GetTextOnShipsQuantity(iNumWarShips);
-		}
-		
-		if(iRealEncounterType == ENCOUNTER_TYPE_BARREL)
-		{
-			totalInfo = totalInfo + XI_ConvertString("SailingItems");
-		}
-	
-		if(iRealEncounterType == ENCOUNTER_TYPE_BOAT)
-		{
-			totalInfo = totalInfo + XI_ConvertString("ShipWreck");
-		}				
+        // Военная эскадра
+        if(iRealEncounterType >= ENCOUNTER_TYPE_NAVAL_MEDIUM && iRealEncounterType <= ENCOUNTER_TYPE_NAVAL_LARGE)
+        {
+            totalInfo = totalInfo + XI_ConvertString("Naval squadron") + GetTextOnShipsQuantity(iNumWarShips + iNumMerchantShips);
+        }
+
+        // Контрабандисты
+        if(iRealEncounterType == ENCOUNTER_TYPE_SMUGGLERS)
+        {
+           // TO_DO
+        }
+
+        // Пираты
+        if(iRealEncounterType == ENCOUNTER_TYPE_PIRATE)
+        {
+            totalInfo = totalInfo + XI_ConvertString("Pirates") + GetTextOnShipsQuantity(iNumWarShips + iNumMerchantShips);
+        }
+
+        // Бочонок
+        if(iRealEncounterType == ENCOUNTER_TYPE_BARREL)
+        {
+            bPowerCompare = false;
+            totalInfo = totalInfo + XI_ConvertString("SailingItems");
+        }
+
+        // Кораблекрушенец
+        if(iRealEncounterType == ENCOUNTER_TYPE_BOAT)
+        {
+            bPowerCompare = false;
+            totalInfo = totalInfo + XI_ConvertString("ShipWreck");
+        }
     }
     if(sti(rEncounter.Nation) < 0)
     {
@@ -309,15 +313,15 @@ int doDescribe(int gNum)
 			break;
 		}
 	}	
-	
+
     if(GetNationRelation2MainCharacter(sti(rEncounter.Nation)) != RELATION_ENEMY)
     {
         isSkipable = true;
     }
-	
+
 	Log_TestInfo("isShipEncounterType :" + isShipEncounterType);
 	GetBearing();
-	
+
 	if (isShipEncounterType > 1)
 	{
 		switch (rand(1))
@@ -330,6 +334,7 @@ int doDescribe(int gNum)
 				loadScr = "interfaces\le\loading\sea_3.tga";
 			break;
 		}
+        bPowerCompare = false;
 		SetNewPicture("INFO_PICTURE", loadScr); 
 		totalInfo = XI_ConvertString("NavalSignal") + dirOff + XI_ConvertString("dir sail battle on course") + totalInfo;
 	}
@@ -359,11 +364,59 @@ int doDescribe(int gNum)
 					loadScr = "interfaces\le\loading\sea_3.tga";
 				break;
 			}
+			if(sQuestSeaCharId != "")
+			{
+				switch (sQuestSeaCharId)
+				{
+					case "SantaMisericordia_cap":
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_sm.tga");
+						totalInfo = GetConvertStr("SM_WorldMap", "SantaMisericordia.txt");
+						sOkBtn = XI_ConvertString("map_attack");
+					break;
 
-			SetNewPicture("INFO_PICTURE", loadScr); 
-			totalInfo = XI_ConvertString("NavalSignal") + dirOff + XI_ConvertString("dir sail someone sails") + totalInfo;
-		}	
-	}	
+					case "LadyBeth_cap":
+                        bPowerCompare = false;
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_lb.tga");
+						totalInfo = GetConvertStr("LadyBeth_WorldMap", "LadyBeth.txt");
+						sOkBtn = XI_ConvertString("map_ok");
+					break;
+					
+					case "Memento_cap":
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_mem.tga");
+						totalInfo = StringFromKey("Memento_4");
+						sOkBtn = XI_ConvertString("map_ok");
+					break;
+
+                    case "MaryCelesteCapitan":
+                        bPowerCompare = false;
+						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_cel.tga");
+                        totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+                    break;
+
+                    //default:
+                        SetNewPicture("INFO_PICTURE", loadScr); 
+                        if(CheckAttribute(rChar, "Brigadier"))
+                        {
+                            totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone follows") + totalInfo + 
+                                        StringFromKey("QuestsUtilite_278") + GetStrSmallRegister(XI_ConvertString(GetShipTypeName(rChar))) + 
+                                        " '" + rChar.Ship.Name + "'.";
+                        }
+                        else
+                            totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+                    //break;
+				}
+				//sQuestSeaCharId = ""; ~!~ WTF
+			}
+			else
+			{
+				SetNewPicture("INFO_PICTURE", loadScr); 
+				totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+			}
+		}
+
+        // Механика мощи
+        if(bPowerCompare) totalInfo += NewStr() + XI_ConvertString("Battle difficulty") + GetBattleDifficulty(rEncounter);
+	}
 
     return mapEncSlot;
 }
@@ -442,7 +495,6 @@ void locDirSail(int evtID)
     iEncounterType = sti(rEncounter.RealEncounterType);
     iRealEncounterType = iEncounterType;
 
-	object oResult;
 	int iFantomIndex;
     int iAloneCharIndex = -1;
 
@@ -528,7 +580,6 @@ void locDirSail(int evtID)
         Group_SetAddressNone(rEncounter.qID);
         Group_SetXZ_AY(rEncounter.qID, x, z, ay);
         Sea_LoginGroup(rEncounter.qID);
-
         return;
     }
 	Trace("Sea_AddGroup2TaskList  : " + sGName);
@@ -554,12 +605,15 @@ void locDirSail(int evtID)
         rGroup.Task.Target.Pos.x = rEncounter.Task.Pos.x;
         rGroup.Task.Target.Pos.z = rEncounter.Task.Pos.z;
     }
-    if (CheckAttribute(rEncounter, "Lock") && sti(rEncounter.Lock)) { Group_LockTask(sGName); }
+    if (CheckAttribute(rEncounter, "Lock") && sti(rEncounter.Lock)) Group_LockTask(sGName);
 
     int iNation = sti(rEncounter.Nation);
-    int iNumFantomShips = Fantom_GenerateEncounterExt(sGName, &oResult, iEncounterType, iNumWarShips, iNumMerchantShips, iNation);
-	
-	trace("Fantom_GenerateEncounterExt : sGName " + sGName + " iEncounterType " + iEncounterType + " iNumWarShips " + iNumWarShips + " iNumMerchantShips " + iNumMerchantShips + "  iNation " + iNation);
+
+    int iNumFantomShips;
+    if(CheckAttribute(rEncounter, "FixedTypes"))
+        iNumFantomShips = Fantom_SetEncounterShips(rEncounter, sGName);
+    else // Special: ENCOUNTER_TYPE_BARREL, ENCOUNTER_TYPE_BOAT; TO_DO: DEL
+        iNumFantomShips = Fantom_GenerateEncounterExt(sGName, iEncounterType, iNumWarShips, iNumMerchantShips, iNation);
 
     if (iNumFantomShips)
     {

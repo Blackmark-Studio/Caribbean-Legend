@@ -39,10 +39,15 @@ void ProcessDialogEvent()
                 "Очень поэтично.", 
 				"Я тоже рад"+ GetSexPhrase("","а") +" тебя видеть.", npchar, Dialog.CurrentNode);
 			link.l1.go = "IndPearlMan_1";
+			/*if (CheckAttribute(pchar, "questTemp.Memento_Dominica"))
+			{
+				link.l7 = "Диалог 25";
+				link.l7.go = "Memento_Dominika_Man_1";
+			}*/
 		break;
 		
 		case "IndPearlMan_1":
-			dialog.text = "Говори, зачем приш"+ GetSexPhrase("ел","ла") +".";
+			dialog.text = "Говори, зачем приш"+ GetSexPhrase("ёл","ла") +".";
 			link.l1 = "Да ничего особенного, послушать тебя хотел"+ GetSexPhrase("","а") +"...";
 			link.l1.go = "exit";
 		break;
@@ -58,6 +63,11 @@ void ProcessDialogEvent()
                 "Очень поэтично.", 
 				"Я тоже рад"+GetSexPhrase("","а")+" тебя видеть.", npchar, Dialog.CurrentNode);
 			link.l1.go = "IndianWoman_1";
+			/*if (CheckAttribute(pchar, "questTemp.Memento_Dominica"))
+			{
+				link.l7 = "Диалог 26";
+				link.l7.go = "Memento_Dominika_Woman_1";
+			}*/
 		break;
 		
 		case "IndianWoman_1":
@@ -666,6 +676,50 @@ void ProcessDialogEvent()
 			link.l1 = LinkRandPhrase("Хорошо.", "Ладно.", "Не переживай, уже убираю...");
 			link.l1.go = "exit";
 		break;  
+		
+		// Мементо, Доминика
+		/*case "Memento_Dominika_Man_1":
+			dialog.text = "Заглушка 1";
+			link.l1 = "Заглушка 1";
+			link.l1.go = "exit";
+		break;
+		
+		case "Memento_Dominika_Woman_1":
+			dialog.text = "Заглушка 2";
+			link.l1 = "Заглушка 2";
+			link.l1.go = "Memento_Dominika_Woman_2";
+		break;
+		
+		case "Memento_Dominika_Woman_2":
+			dialog.text = "Заглушка 3";
+			if (stf(pchar.questTemp.Indian.relation) >= 60.0)
+			{
+				link.l1 = "Заглушка 4";
+				link.l1.go = "Memento_Dominika_Woman_3";
+				notification("Индейцы вас уважают "+stf(pchar.questTemp.Indian.relation)+"/60", "None");
+			}
+			else
+			{
+				link.l1 = "Заглушка 5";
+				link.l1.go = "Memento_Dominika_Woman_4";
+				notification("Индейцы вас не уважают "+stf(pchar.questTemp.Indian.relation)+"/60", "None");
+			}
+		break;
+		
+		case "Memento_Dominika_Woman_3":
+			dialog.text = "В воде, в одной из бухт Доминики рандомно спавнится Череп-оберег";
+			link.l1 = "Понял";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Memento_Dominica_SpawnObereg");
+		break;
+		
+		case "Memento_Dominika_Woman_4":
+			dialog.text = "Заглушка 6";
+			link.l1 = "Заглушка 6";
+			link.l1.go = "exit";
+		break;*/
+		
+		
 
 	}
 }

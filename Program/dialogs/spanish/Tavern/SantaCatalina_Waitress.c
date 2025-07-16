@@ -22,7 +22,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "helendrinking_2":
-			dialog.text = "Lo siento, Capitán... Es un pecado, ¡pero no puedo resistir! No tengo mucha experiencia, ¡pero no rechaces a la chica, Capitán! ¡Eres tan apuesto! Quiero complacerte, tocarte...";
+			dialog.text = "Lo siento, capitán... Es un pecado, ¡pero no puedo resistir! No tengo mucha experiencia, ¡pero no rechaces a esta chica, capitán! ¡Eres tan apuesto! Quiero complacerte, tocarte...";
 			link.l1 = "En verdad, pleno confort... ¡También eres muy hermosa! Vamos, no seas tímida.";
 			link.l1.go = "helendrinking_sex";
 			link.l2 = "Es mejor no tocarme ahora, mademoiselle, apesto a ron. ¡Pero puedes complacerme, un desayuno sería muy bienvenido!";
@@ -37,7 +37,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			NextDiag.TempNode = "exit";
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-			notification("Helen disapproves", "Helena");
+			notification("¡Helen lo desaprueba!", "Helena");
 			AddDialogExitQuestFunction("HelenDrinking_WaitressSex");
 		break;
 
@@ -49,7 +49,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			NextDiag.TempNode = "exit";
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-			notification("Helen approves", "Helena");
+			notification("¡Helen lo aprueba!", "Helena");
 			AddDialogExitQuestFunction("HelenDrinking_WaitressNoSex");
 		break;
 	}

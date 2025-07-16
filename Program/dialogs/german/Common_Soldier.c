@@ -303,47 +303,6 @@ void ProcessDialogEvent()
 						DeleteAttribute(pchar,"GenQuest.EncGirl.MeetSoldiers");
 					}
 					// <-- девица в джунглях
-					
-					// --> Sinistra Длинные тени старых грехов
-					if(CheckAttribute(pchar, "questTemp.Knippel.Soldiers_1"))
-					{
-						switch(0)
-						{
-							case 0: 
-							dialog.text = "Hör zu, Charlie, wir haben einige neue Rekruten in der Festung. Grün wie Gras... Könntest du vorbeikommen und ihnen zeigen, wie man zielt?";
-							link.l1 = "Wenn Kapitän Fleetwood und ich nicht in den nächsten Tagen in See stechen - gerne.";
-							link.l1.go = "Knippel_Soldiers_1";
-							break;
-						}
-						break;
-					}
-					
-					if(CheckAttribute(pchar, "questTemp.Knippel.Soldiers_2"))
-					{
-						switch(0)
-						{
-							case 0: 
-							dialog.text = "Charlie, meine Schicht ist fast vorbei, hast du Lust auf ein Getränk?";
-							link.l1 = "Mit Vergnügen, Kamerad! Lassen Sie mich nur sehen, was der Kapitän will.";
-							link.l1.go = "Knippel_Soldiers_2";
-							break;
-						}
-						break;
-					}
-					
-					if(CheckAttribute(pchar, "questTemp.Knippel.Soldiers_3"))
-					{
-						switch(0)
-						{
-							case 0: 
-							dialog.text = "Gute Nacht, Charlie! Du siehst nicht so gut aus. Ist alles in Ordnung?";
-							link.l1 = "Sie haben mich mitten in der Nacht geweckt, was denkst du? Kann keine Pause machen.";
-							link.l1.go = "Knippel_Soldiers_3";
-							break;
-						}
-						break;
-					}
-					// <-- Длинные тени старых грехов
 
 					// --> belamour ночной приключенец
 					if(CheckAttribute(pchar,"GenQuest.NightAdventureSolNum") && npchar.index == pchar.GenQuest.NightAdventureSolNum)
@@ -547,7 +506,7 @@ void ProcessDialogEvent()
 				TakeNationLicence(HOLLAND);
 				break;
 			}
-			if (pchar.location != "Minentown_town" && findsubstr(pchar.location.from_sea, "_town" , 0) == -1) //если причалил не в городе 300912
+			if (pchar.location != "LosTeques_town" && findsubstr(pchar.location.from_sea, "_town" , 0) == -1) //если причалил не в городе 300912
 			{
 				dialog.text = "Sie sind gekommen, um hier zu handeln? Darf ich fragen, wie? Wo ist Ihr Schiff? Sie wissen, es sieht alles sehr verdächtig aus und ich bin gezwungen, Sie festzuhalten, bis wir alles herausgefunden haben. Übergeben Sie Ihre Waffe und folgen Sie mir!";
 				link.l1 = RandPhraseSimple("Fick dich!","Wenn zwei Sonntage in einer Woche kommen...");
@@ -761,34 +720,6 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 		break;
 		// <-- ночной приключенец
-		
-		// --> Sinistra Длинные тени старых грехов
-		case "Knippel_Soldiers_1":
-			dialog.text = "Und vielleicht lehrst du ihnen auch einige deiner Geheimnisse, damit sie nicht mit dir ins Grab gehen?";
-			link.l1 = "Heh-heh, äh, nein, Kumpel, meine Geheimnisse gehören nur mir allein, und was für Geheimnisse wären das dann?";
-			link.l1.go = "exit";
-			DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_1");
-			pchar.questTemp.Knippel.Soldiers_2 = true;
-			LAi_CharacterDisableDialog(npchar);
-		break;
-		
-		case "Knippel_Soldiers_2":
-			dialog.text = "Hab's kapiert, du wirst wieder abhauen, wie immer.";
-			link.l1 = "Nun, wenn der Fisch entkommt - ist das ein schlechter Fischer. Es ist wie mit Kanonenkugeln - eine gute versagt nie, zielt nur gut...";
-			link.l1.go = "exit";
-			DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_2");
-			pchar.questTemp.Knippel.Soldiers_3 = true;
-			LAi_CharacterDisableDialog(npchar);
-		break;
-		
-		case "Knippel_Soldiers_3":
-			dialog.text = "Zumindest stehst du nicht jede Nacht auf. Und du verbringst mehr Zeit auf dem Schiff als an Land. Mit wem redest du?";
-			link.l1 = "Ach, was weißt du schon über die Härten des Dienstes, Kumpel! Wie es in der königlichen Marine war!.. Du kannst es dir nicht einmal vorstellen.";
-			link.l1.go = "exit";
-			DeleteAttribute(pchar, "questTemp.Knippel.Soldiers_3");
-			LAi_CharacterDisableDialog(npchar);
-		break;
-		// <-- Длинные тени старых грехов
 		
 		//замечение по обнажённому оружию
 		case "SoldierNotBlade":

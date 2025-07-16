@@ -1,6 +1,6 @@
 food_1
 {
-Las ratas del ~
+Las ratas
 }
 
 food_2

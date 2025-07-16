@@ -1,0 +1,41 @@
+﻿FalseTrace_1
+{
+Adam
+}
+FalseTrace_2
+{
+Rayner
+}
+
+FalseTrace_3
+{
+fluita '@<pchar.questTemp.FalseTrace.ShipName>'
+}
+
+FalseTrace_4
+{
+Adam Rayner ha rubato una barca a remi ed è scappato con sua moglie!
+}
+
+FalseTrace_5
+{
+Cockeyed
+}
+FalseTrace_6
+{
+Solly
+}
+
+FalseTrace_7
+{
+fluita con minerali d'oro
+}
+
+FalseTrace_8
+{
+Katerine
+}
+FalseTrace_9
+{
+Rayner
+}

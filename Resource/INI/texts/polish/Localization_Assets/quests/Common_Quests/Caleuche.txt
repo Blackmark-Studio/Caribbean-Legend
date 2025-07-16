@@ -9,7 +9,7 @@ Caleuche_2
 
 Caleuche_3
 {
-captain-undead
+Nieumarły Kapitan
 }
 Caleuche_4
 {
@@ -18,7 +18,7 @@ Caleuche_4
 
 Caleuche_5
 {
-Ghost ship
+Statek widmo
 }
 
 Caleuche_6
@@ -32,7 +32,7 @@ Hooper
 
 Caleuche_8
 {
-You have escaped from the ghost ship!
+Uciekłeś od statku widmo!
 }
 
 Caleuche_9
@@ -51,12 +51,12 @@ Harpy
 
 Caleuche_12
 {
-xebec 'Harpy'
+szebeka 'Harpy'
 }
 
 Caleuche_13
 {
-dead hostess
+martwa gospodyni
 }
 Caleuche_14
 {
@@ -83,22 +83,22 @@ Salinas
 
 Caleuche_19
 {
-Amulets of Tuttuathapak have lost their power!
+Amulety Tuttuathapak utraciły swę moce!
 }
 
 Caleuche_20
 {
-Press 'T' to use
+Wciśnij 'T' aby użyć
 }
 
 Caleuche_21
 {
-The portal is blocked!
+Portal jest zablokowany!
 }
 
 Caleuche_22
 {
-Chieftain Chavinavy
+Wódz Chavinavy
 }
 Caleuche_23
 {
@@ -107,7 +107,7 @@ Caleuche_23
 
 Caleuche_24
 {
-temple undead
+świątynia nieumarłych
 }
 Caleuche_25
 {
@@ -116,7 +116,7 @@ Caleuche_25
 
 Caleuche_26
 {
-Ghost ship on the horizon!
+Statek widmo na horyzoncie!
 }
 
 Caleuche_27
@@ -130,46 +130,46 @@ de Cordes
 
 Caleuche_29
 {
-Flying Heart
+Latające Serce
 }
 
 Caleuche_30
 {
-You feel more dexterous
+Czujesz się bardziej zręczny
 }
 Caleuche_31
 {
-You feel more sturdy
+Czujesz się solidniejszy
 }
 Caleuche_32
 {
-You feel stronger
+Czujesz się silniejszy
 }
 Caleuche_33
 {
-Your perception intensifies
+Twoje postrzeganie się nasila
 }
 Caleuche_34
 {
-You feel more insightful
+Czujesz się bardziej wnikliwy
 }
 Caleuche_35
 {
-You feel more self-assured
+Czujesz się bardziej pewny siebie
 }
 Caleuche_36
 {
-You feel inspired
+Czujesz inspiracje
 }
 
 Caleuche_37
 {
-he ghost ship is on the horizon!
+Statek widmo jest na horyzoncie!
 }
 
 Caleuche_38
 {
-You have fainted of wounds...
+Zemdlałeś z powodu ran...
 }
 
 Caleuche_39

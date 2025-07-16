@@ -575,3 +575,7 @@ Saga_121
 {
 The trial went through!
 }
+Saga_122
+{
+An hour has passed...@<NewStr()>You’ve reached the wrecked ship
+}

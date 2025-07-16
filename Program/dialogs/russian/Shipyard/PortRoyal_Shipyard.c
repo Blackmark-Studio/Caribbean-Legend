@@ -81,7 +81,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			
 			iTemp = GetCharacterShipType(pchar);
 			sld = GetRealShip(iTemp);
-			iTemp = (6 - sti(sld.class)) * 1000;
+			iTemp = (7 - sti(sld.class)) * 1000;
 			RemoveDublonsFromPCharTotal(iTemp);
 		break;
 		
@@ -104,10 +104,10 @@ bool HelenCanUpgrade() {
 	}
 	
 	sld = GetRealShip(shipIndex);
-	if (sti(sld.class) == 6) {
+	if (sti(sld.class) == 7) {
 		return false;
 	}
 	
-	int cost = (6 - sti(sld.class)) * 1000;
+	int cost = (7 - sti(sld.class)) * 1000;
 	return (PCharDublonsTotal() >= cost);
 }

@@ -1,6 +1,6 @@
 Slavetrader_1
 {
-Exploration mode: timer extended. Complete the quest!
+Tryb eksploracji: wydłużony czas. Ukończ zadanie!
 }
 
 Slavetrader_2
@@ -41,11 +41,11 @@ Anaconda
 
 Slavetrader_10
 {
-from Caracas
+z Karakasu
 }
 Slavetrader_11
 {
-from Cumana
+z Kumany
 }
 
 Slavetrader_12
@@ -59,52 +59,52 @@ Gontier
 
 Slavetrader_14
 {
-considered
+uważany za
 }
 Slavetrader_15
 {
-considered
+uważany za
 }
 
 Slavetrader_16
 {
-at the shores of Barbados
+na wybrzeżach Barbadosu
 }
 Slavetrader_17
 {
-at the shores of Guadeloupe
+na wybrzeżach Gwadelupy
 }
 Slavetrader_18
 {
-not far from Santiago
+niedaleko Santiago
 }
 Slavetrader_19
 {
-not far from Havana
+niedaleko Hawany
 }
 Slavetrader_20
 {
-at the shores of Tortuga
+na wybrzeżach Tortugi
 }
 Slavetrader_21
 {
-at the shores of Trinidad
+na wybrzeżach Trynidadu
 }
 Slavetrader_22
 {
-at the shores of St. Christopher
+na wybrzeżach Wyspy Św. Krzysztofa
 }
 Slavetrader_23
 {
-not far from Santo Domingo
+niedaleko Santo Domingo
 }
 Slavetrader_24
 {
-not far from Port-au-Prince
+niedaleko Port-au-Prince
 }
 Slavetrader_25
 {
-not far from Cartagena
+niedaleko Kartageny
 }
 
 Slavetrader_26

@@ -1,0 +1,84 @@
+﻿GoldenGirl_1
+{
+Avete sentito parlare di quella costosa cortigiana delle Colonie del Nord che ora gestisce la casa della gioia a Saint-Pierre? Si dice che di tanto in tanto organizzi feste private a cui può partecipare solo il meglio dell'alta società. Il vino migliore, le donne più belle e il gioco d'azzardo illimitato, tutto ciò che è un vero valore nobiliare. Ottenere un invito lì vale una fortuna.
+}
+
+GoldenGirl_2
+{
+La stessa Marchesa Botot è ora ospite di St. Pierre. La donna più costosa della Nuova Francia. A volte organizza feste solo per la creme de la creme. Il vero nido per i vizi più graziosi. Si dice che un banchiere vi abbia giocato la sua stessa banca, pensate un po'. Ahimè, senza invito anche i più ricchi non sono benvenuti.
+}
+
+GoldenGirl_3
+{
+Il bordello di St. Pierre è ora gestito da una cortigiana d'élite. Il posto in sé non è cambiato molto, ma le feste private che organizza... La gente racconta storie. Che è come nella vecchia Parigi: il miglior vino, le migliori donne, la migliore compagnia. E gli ospiti più particolari, come ammiragli spagnoli e baroni pirati! Incredibile, vero?
+}
+
+GoldenGirl_4
+{
+Julianne
+}
+GoldenGirl_5
+{
+Botot
+}
+
+GoldenGirl_6
+{
+Angerran
+}
+GoldenGirl_7
+{
+de Chievous
+}
+
+GoldenGirl_8
+{
+William
+}
+GoldenGirl_9
+{
+Cortney
+}
+
+GoldenGirl_10
+{
+Bart
+}
+GoldenGirl_11
+{
+Portugal
+}
+
+GoldenGirl_12
+{
+Hernando
+}
+GoldenGirl_13
+{
+Vasces
+}
+
+GoldenGirl_14
+{
+Modalità di esplorazione: il timer non è disattivato. Rispetta la scadenza!
+}
+
+GoldenGirl_15
+{
+Nayade
+}
+
+GoldenGirl_16
+{
+Dicono che la signora Botot sia scomparsa e abbia lasciato la sua lussuosa casa al suo fidato gestore. Immagina tutto il dolore caduto sui giovani nobili!
+}
+
+GoldenGirl_17
+{
+Mattina dopo...
+}
+
+GoldenGirl_18
+{
+Pochi giorni sono passati....@<NewStr()>Tu e Baronet Courtney siete arrivati a Guadalupa
+}

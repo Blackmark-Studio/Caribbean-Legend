@@ -174,8 +174,7 @@ void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
 							//Нашли главного персонажа
 							if(stf(chr.chr_ai.type.dlgwas) <= 0.0)
 							{
-								LAi_type_guardian_TestControl(chr);
-								return;
+								if(LAi_type_guardian_TestControl(chr)) return;
 							}
 						}
 						else
@@ -190,6 +189,7 @@ void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
 				{
 					if(dist > 1.0)
 					{
+                        chr.ToPointForced = "";
 						LAi_tmpl_runto_InitTemplate(chr);
 						LAi_tmpl_runto_SetLocator(chr, chr.chr_ai.type.group, chr.chr_ai.type.locator, -1.0);
 					}else{
@@ -365,18 +365,19 @@ void LAi_type_guardian_Return_Event()
 	if(!TestRef(chr)) return;
 	chr.chr_ai.type.wait = "";	
 	chr.chr_ai.type.enemy = "";
+    chr.ToPointForced = "";
 	LAi_tmpl_runto_InitTemplate(chr);
 	LAi_tmpl_runto_SetLocator(chr, chr.chr_ai.type.group, chr.chr_ai.type.locator, -1.0);
 }
 
 //Проверить персонажа с заданной вероятностью
-void LAi_type_guardian_TestControl(aref chr)
+bool LAi_type_guardian_TestControl(aref chr)
 {
 	if (!CheckAttribute(chr, "protector.CheckAlways")) //флаг "опрашивать всегда" через паузу, не один раз.
 	{						
-		if (GetBaseHeroNation() == sti(chr.nation) && GetRelation2BaseNation(sti(chr.nation)) != RELATION_ENEMY && GetNationRelation2MainCharacter(sti(chr.nation)) != RELATION_ENEMY) return;
+		if (GetBaseHeroNation() == sti(chr.nation) && GetRelation2BaseNation(sti(chr.nation)) != RELATION_ENEMY && GetNationRelation2MainCharacter(sti(chr.nation)) != RELATION_ENEMY) return false;
 		if (!CheckAttribute(pchar, "CheckStateOk")) pchar.CheckStateOk = true; //флаг "уже проверили на входе"
-		else return;
+		else return false;
 	}
 	//Пытаемся начать диалог
 	LAi_SetFightMode(pchar, false);
@@ -393,5 +394,8 @@ void LAi_type_guardian_TestControl(aref chr)
 	{
 		if(CheckAttribute(pchar, "CheckStateOk")) 
 			DeleteAttribute(pchar, "CheckStateOk");
+        return false;
 	}
+
+    return true;
 }

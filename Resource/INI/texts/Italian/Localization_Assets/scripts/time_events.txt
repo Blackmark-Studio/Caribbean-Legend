@@ -1,0 +1,34 @@
+﻿time_events_1
+{
+Hai ricevuto parte dei profitti di Poinsey
+}
+
+time_events_2
+{
+Jean David ha preparato la tua parte del bottino a Le Francois
+}
+
+time_events_3
+{
+Sandro
+}
+
+time_events_4
+{
+Torn
+}
+
+time_events_5
+{
+Jim
+}
+
+time_events_6
+{
+Hopkins
+}
+
+time_events_7
+{
+Alonso
+}

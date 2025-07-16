@@ -1,0 +1,285 @@
+new_string {
+
+}
+
+special0 {Mercante}
+
+special0_desc 
+{
+Un barco mercante suele sacrificar calibre, velocidad y número de cañones en favor de una gran bodega. Solo un capitán muy hábil puede permitirse un viaje en solitario en un barco así.
+}
+
+special0_desc2 
+{
+Bono al Poder de la Flota: bajo
+}
+
+special1 {De guerra}
+
+special1_desc 
+{
+Los barcos de guerra están diseñados especialmente para batallas navales. Tienen el casco más fuerte y el mayor calibre, pero tal potencia de fuego limita la velocidad.
+}
+
+special1_desc2
+{
+Bono al Poder de la Flota: muy alto.
+}
+
+special2 {Corsario}
+
+special2_desc 
+{
+Los barcos corsarios son ideales para incursiones y piratería: ágiles, maniobrables y bien armados, representan una fuerza formidable, pero pagan por ello con una bodega pequeña y un casco modesto.
+}
+
+special2_desc2 
+{
+Bono al Poder de la Flota: alto.
+}
+
+special3 {Multipropósito}
+
+special3_desc 
+{
+Los barcos multipropósito son la elección de los capitanes que quieren hacerlo todo a la vez. Son igualmente aptos para el comercio, la piratería y la guerra, pero esa flexibilidad los hace comparativamente peores que cualquier barco especializado. Al menos hasta que caen en manos de un maestro constructor naval.
+}
+
+special3_desc2 
+{
+Bono al Poder de la Flota: medio
+Bono a la mejora de atributos: 15%
+}
+
+trait01 {Carta de corrientes}
+
+trait01_desc 
+{
+Instrumentos de navegación complejos hechos a medida por maestros europeos y un mapa preciso de las corrientes submarinas del archipiélago permiten ahorrar mucho tiempo en los viajes.
+}
+
+trait01_desc2 
+{
+Aumenta la velocidad de navegación en el mapa global en un 5%.
+Se acumula con todos los demás bonos.
+}
+
+trait02 {Embalaje de calidad}
+
+trait02_desc 
+{
+Una revisión completa de la bodega, el grosor de los mamparos y la estandarización del sistema de almacenamiento permiten llevar más carga y distribuirla mejor por el barco sin crear desequilibrios.
+}
+
+trait02_desc2 
+{
+Reduce la penalización de velocidad por carga de bodega: 15%.
+}
+
+trait03 {Sello de calidad}
+
+trait03_desc 
+{
+Un conjunto de glifos, sellos y patentes hace que la carga de este barco sea reconocible, y su llegada al puerto es una buena señal para los comerciantes locales. Los acuerdos comerciales exitosos mejoran las relaciones con la nación del puerto, y unas buenas relaciones hacen el comercio más rentable.
+}
+
+trait03_desc2 
+{
+Reduce la penalización de venta: 3% por nivel de relación.
+Umbral de beneficio para mejorar relaciones con la nación: 25000.
+}
+
+trait04 {Velas de emergencia}
+
+trait04_desc 
+{
+En caso de peligro crítico para el barco, los marineros instalan velas especiales de montaje rápido en las vergas y las izan, aumentando temporalmente la velocidad del barco.
+}
+
+trait04_desc2 
+{
+Umbral de integridad del casco para activación: 40%.
+Aumento de velocidad: 20%.
+Retraso del efecto al reparar por encima del umbral: 20 segundos.
+}
+
+trait05 {Documentos falsos}
+
+trait05_desc 
+{
+Un impresionante conjunto de patentes, documentos y placas permite a este barco entrar de incógnito en casi cualquier puerto, y el casco discreto reduce el riesgo de encontrarse con patrullas durante operaciones de contrabando.
+}
+
+trait05_desc2 
+{
+Aumenta la probabilidad de engaño: 15%.
+Reduce la probabilidad de encontrar una patrulla: 50%.
+}
+
+trait11 {Cureñas giratorias}
+
+trait11_desc
+{
+Las portas y cureñas de los cañones han sido especialmente reconstruidas, aumentando el sector de disparo de los cañones.
+}
+
+trait11_desc2
+{
+Aumenta el sector de disparo: 7 grados.
+}
+
+trait12 {Sistema de retroceso mejorado}
+
+trait12_desc
+{
+Un sistema mejorado de bloques y compensadores permite disparar rápidamente con el mismo costado, usando la inercia del retroceso para acelerar la recarga y el apuntado.
+}
+
+trait12_desc2
+{
+Aumenta el daño y la velocidad de recarga: 6% por andanada.
+Bono máximo: 35%.
+El bono desaparece al disparar con cualquier otro costado.
+}
+
+trait13 {Desembarco rápido}
+
+trait13_desc
+{
+Las características de diseño del barco y el sistema de cabrestantes permiten desembarcar tropas en movimiento, lo que permite comenzar el asalto mucho antes sin poner en peligro a la tripulación.
+}
+
+trait13_desc2
+{
+Reduce el umbral de cañones destruidos para el asalto a la fortaleza: 15%.
+}
+
+trait14 {Pintura de guerra}
+
+trait14_desc
+{
+Las marcas brillantes de incursiones exitosas en el casco y los sobornos regulares a las personas adecuadas facilitan mucho la extorsión, convirtiendo el barco en una leyenda temible. Los gobernadores están más dispuestos a compartir dinero y bienes, y las naciones ofrecen mayores recompensas por los capitanes.
+}
+
+trait14_desc2
+{
+Bono al valor del rescate: 35%.
+Bono al valor de los almacenes durante saqueos de colonias: 15%.
+}
+
+trait21 {Golpea y huye}
+
+trait21_desc
+{
+Un centro de gravedad desplazado, líneas de casco afiladas y una reconfiguración especial de las portas de los cañones aumentan la capacidad de navegar sobre las olas y la estabilidad del barco durante el retroceso, elevando los límites de velocidad permitidos durante la batalla.
+}
+
+trait21_desc2
+{
+Bono de velocidad del barco por costado descargado: 5%.
+El bono disminuye gradualmente al cargar.
+}
+
+trait22 {Saqueo}
+
+trait22_desc
+{
+En el barco rigen reglas especiales para la recuperación de materiales de barcos abordados. Hundir un barco por abordaje restaura la integridad del casco y las velas. La cantidad restaurada depende de la cantidad y calidad de los materiales, el grado de daño y la diferencia de clase.
+}
+
+trait22_desc2
+{
+Restauración del casco: 5–15%.
+Restauración de velas: 12% (los mástiles no se restauran).
+}
+
+trait23 {Rápido y mortal}
+
+trait23_desc
+{
+La tripulación recibe formación obligatoria en ocultar rastros y sigilo. Reduce el impacto de la piratería en las relaciones con las naciones, y la recuperación de la reputación se vuelve más efectiva.
+}
+
+trait23_desc2
+{
+Reduce las penalizaciones a las relaciones: 50%.
+Aumenta la eficacia de los abogados: 50%. 
+}
+
+trait24 {Balas incendiarias}
+
+trait24_desc
+{
+Los cañones de persecución y retirada están especialmente templados para soportar altas temperaturas, y sus portas están tratadas con un compuesto especial contra incendios.
+Esto permite el uso de mezclas incendiarias con cualquier munición universal, infligiendo daño periódico a los barcos enemigos.
+}
+
+trait24_desc2
+{
+Daño adicional al casco y las velas: 200%.
+Duración del efecto: 15 segundos.
+Aumenta la probabilidad de incendio: 200%
+}
+
+sp1 {Fanático}
+
+sp1_desc
+{
+Una capilla de cubierta equipada, junto con imágenes de la Virgen María, potencia misteriosamente los efectos y la duración de los amuletos de iglesia.
+}
+
+sp1_desc2
+{
+Potenciación de cada amuleto: individual.
+Aumento de duración: 15 días.
+}
+
+sp2 {Bienvenido invitado}
+
+sp2_desc
+{
+Este legendario barco es conocido en todos los rincones del archipiélago caribeño y es recibido en todas partes con respeto y admiración. La ubicación de Lady Beth se conoce de inmediato entre los vendedores de mapas, y los comerciantes locales intentan reunir todo el capital posible para comprar objetos de valor.
+}
+
+sp2_desc2
+{
+Bono a la probabilidad de aparición de un vendedor de mapas: 5–12%.
+Aumento de la reserva de pesos: 100%.
+Aumento de la reserva de doblones: ~30%.
+}
+
+sp3 {Crisol}
+
+sp3_desc
+{
+En este barco, la vida humana es solo una etapa breve antes de que se revele el verdadero poder. Pocos cruzan el Umbral y regresan, pero quienes lo logran ya no temen a la muerte.
+}
+
+sp3_desc2
+{
+Los marineros caídos aumentan la experiencia y la moral de la tripulación.
+}
+
+sp3_SailorsBoardingBonus_desc
+{
+Bonificación de experiencia en abordaje: #dSailorsBoardingBonus#%
+}
+
+sp3_SailorsBoardingBonus1_desc
+{
+~ (#dDeadSailors#/500 marineros caídos)
+}
+
+sp3_SurrenderChanceBonus_desc
+{
+Aumento de probabilidad de rendición: #dSurrenderChanceBonus#%
+}
+
+sp3_SurrenderChanceBonus1_desc
+{
+~ (#dDeadSailors#/2000 marineros caídos)
+}
+
+
+
+

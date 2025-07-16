@@ -132,7 +132,7 @@ void ProcessDialogEvent()
 					PChar.GenQuest.contraTravel.ship = true;
 					PChar.quest.Munity = ""; // признак выхода с палубы
 
-					SetLaunchFrameFormParam(".. " + sti(Pchar.GenQuest.contraTravel.destination.days) + " days passed." + NewStr() + "Smuggler's ship deck.",
+					SetLaunchFrameFormParam("Han pasado " + sti(Pchar.GenQuest.contraTravel.destination.days) + " días." + NewStr() + "Cubierta del barco de los contrabandistas.",
 											"Reload_To_Location", 0.1, 5.0);
 					bQuestCheckProcessFreeze = true;
 					WaitDate("", 0, 0, sti(Pchar.GenQuest.contraTravel.destination.days), rand(20), 0);
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 			// установим окружение -->
 			if (sti(Pchar.quest.Contraband.Counter) == 0) // не торговали ещё
 			{
-				if (drand(11) == 3)
+				if (hrand(11) == 3)
 				{
 					dialog.Text = "Ya veo.. Sabes, tomaremos tus bienes gratis. Dudo que puedas quejarte de todos modos.";
 					Link.l1 = "¡Inténtalo, escoria!";
@@ -390,7 +390,7 @@ void ProcessDialogEvent()
 
 	case "SmugglerZPQ_4":
 		AddMoneyToCharacter(pchar, -5000);
-		dialog.text = "¡Excelente, capitán! Eres un cliente asombroso, ya sabes. Así que escucha. Me susurraron al oído que en algunas de las ciudades españolas en Maine había un problema con la pólvora. Ya sea por las lluvias tropicales, o algo más - en general, en el fuerte que guarda la colonia, hay muy pocas reservas. Y el comandante de este fuerte está buscando a alguien que pueda ayudarlo en esta difícil situación.\nSolo hay dos problemas: primero, este es un asunto delicado, y el comandante no hablará de ello con cualquier pillo, y segundo, estamos hablando de un lote muy grande - no cada barco cabrá tanta pólvora, por lo que podrías necesitar una flota. Además, no todos los capitanes aceptarán convertir su buque en una bomba flotante que puede destruir fácilmente una isla entera si es alcanzada por una bala de cañón perdida.";
+		dialog.text = "¡Excelente, capitán! Eres un cliente asombroso, ya sabes. Así que escucha. Me susurraron al oído que en algunas de las ciudades españolas en Tierra Firme había un problema con la pólvora. Ya sea por las lluvias tropicales, o algo más, en general, en el fuerte que guarda la colonia, hay muy pocas reservas. Y el comandante de este fuerte está buscando a alguien que pueda ayudarlo en esta difícil situación.\nSolo hay dos problemas: primero, este es un asunto delicado, y el comandante no hablará de ello con cualquier pillo, y segundo, estamos hablando de un lote muy grande, no cada barco cabrá tanta pólvora, por lo que podrías necesitar una flota. Además, no todos los capitanes aceptarán convertir su buque en una bomba flotante que puede destruir fácilmente una isla entera si es alcanzada por una bala de cañón perdida.";
 		if (CheckAttribute(pchar, "questTemp.zpq"))
 		{
 			Link.l1 = "Lo siento, pero ya sé sobre este trato. De todos modos, el trato vale más que dinero, por lo que te mereces cinco mil.";
@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			Link.l1 = "Información valiosa, gracias. Si estoy en Maine, preguntaré a los comandantes locales de los fuertes sobre sus desgracias. Y de alguna manera espero lidiar con estos problemas o aprovecharme de ellos, je-je.";
+			Link.l1 = "Información valiosa, gracias. Si estoy en Tierra Firme, preguntaré a los comandantes locales de los fuertes sobre sus desgracias. Y de alguna manera espero lidiar con estos problemas o aprovecharme de ellos, je-je.";
 			Link.l1.go = "SmugglerZPQ_6";
 		}
 		break;

@@ -9,7 +9,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		link.l1.go = "exit";
 		if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "utensil" && !CheckAttribute(npchar, "quest.utensil"))
 		{
-			link.l1 = "Dime, ¿dónde puedo encontrar a la Señora Belinda de Ribero?";
+			link.l1 = "Dime, ¿dónde puedo encontrar a la señora Belinda de Ribero?";
 			link.l1.go = "guardoftruth";
 		}
 		break;

@@ -109,7 +109,7 @@ Travail Secondaire : Une raison de se Dépêcher
 #TEXT 1
 Une jolie fille a raconté qu'un officier de la garnison se dépêchait tellement de se rendre dans une crique que cela l'avait même distrait de ses loisirs. Peut-être cela vaut-il la peine d'enquêter ?
 #TEXT 2
-Il y a beaucoup d'imbéciles ici. Peut-être me suis-je fait des idées ?
+Il y a beaucoup de moulin à paroles. Peut-être me suis-je fait des idées ?
 #TEXT 3
 J'ai peut-être donné raison à la fille offensée. Je n'aurais pas dû penser à ce qui était manquant...
 #TEXT 4
@@ -686,8 +686,156 @@ J'ai dit la vérité au gardien. Bien sûr, il a d'abord été furieux, mais il 
 J'ai décidé que je ne me souciais pas des bruits et des gémissements terribles imaginés par le gardien. Mon temps est plus précieux.
 
 #QUEST SixCaptains
-Six Capitaines
+Six capitaines
 #TEXT	1
-C'est peut-être la première fois qu'une brève rencontre avec quelqu'un qui n'avait ni travail ni affaire pour moi m'a fait écrire une entrée dans ce journal. Je ne comprends pas pourquoi ce prêtre m'a fait une telle impression. Je ne connais pas son nom, et il parlait parfois de façon incohérente, mais il s'est rendu mémorable. Nous nous sommes rencontrés deux fois maintenant, et on pourrait considérer cela comme une coïncidence. Mais si nous nous rencontrons à nouveau...
-Je dois admettre que son intérêt est quelque peu flatteur. Ce regard dans ses yeux est si... évaluateur. Comme s'il admirait mes réussites. Et qui ne le ferait pas ? Deux navires légendaires, deux capitaines dont les histoires se sont répandues à travers tout l'Archipel - tous deux tombés par ma main.
-Je me demande ce qu'il dira quand il apprendra mes futurs exploits ? L'Archipel est vaste, mais ma renommée, semble-t-il, grandit plus vite que je ne le pensais.
+C'est peut-être la première fois qu'une brève rencontre avec quelqu'un qui n'a rien à voir avec moi me fait écrire dans ce journal. Je ne comprends pas pourquoi ce prêtre m'a fait une telle impression. Je ne connais pas son nom et il disait parfois des bêtises, mais il s'est rendu mémorable. Cela fait deux fois que nous nous rencontrons, et cela pourrait être considéré comme une coïncidence. Mais si nous nous rencontrons à nouveau...
+Je dois admettre que son intérêt est plutôt flatteur. Son regard est si... évaluateur. Comme s'il admirait mes réalisations. Et qui ne le serait pas ? Deux navires légendaires, deux capitaines dont les récits ont traversé tout l'Archipel, tous deux tombés de ma main.
+Je me demande ce qu'il dira lorsqu'il apprendra mes futurs exploits. L'Archipel est vaste, mais ma renommée, semble-t-il, grandit plus vite que je ne le pensais.
+#TEXT	2
+Diego de Landa - voilà comment tu t'appelles. Alors nous nous reverrons. À suivre.
+
+#QUEST SharlieTutorial
+Prologue
+#TEXT 0
+J’en ai vraiment marre ! Cinq jours... et enfin je vais pouvoir mettre pied à terre. Ces deux derniers mois ont été un vrai cauchemar, et je ne comprends absolument pas comment des gens sains d’esprit peuvent vouloir consacrer leur vie à la mer !
+En attendant — le capitaine m’attend. Je ne l’aime plus trop ces derniers temps. À vrai dire, je n’aime plus rien ici.
+#TEXT 0.1
+Apparemment, une soirée intéressante m’attend. Pour l’instant, le capitaine m’a donné quartier libre... dans les limites du navire, ha ha ! Je peux revenir le voir à tout moment pour clore cette journée fatigante.
+#TEXT 1
+Pour 500 pesos, je peux vendre trois bouteilles de rhum au marin Henri sur le pont supérieur. Il paraît que le bosco dans la salle commune fait un peu de commerce. Peut-être devrais-je fouiller le navire et discuter avec les autres marins.
+#TEXT 2
+Heureusement que je ne bois pas de rhum — j’ai pu conclure une bonne affaire avec Henri. L’équipage semble avoir apprécié mes efforts.
+#TEXT 3
+Le marin Paul s’est abîmé le dos en transportant des boulets, et m’a demandé de l’aider. Les boulets se trouvent sûrement dans la cale, dans l’un des innombrables caissons.
+#TEXT 4
+J’ai à peine réussi à traîner ces foutus boulets jusqu’à Paul. Ce marin agit de façon assez suspecte, mais en récompense, j’ai reçu une bouteille de rhum. Un prix précieux, vu la demande locale pour cette saloperie.
+#TEXT 5
+J’ai trouvé la clé du capitaine ! Je me demande quels trésors elle peut bien ouvrir...
+
+#QUEST DWH
+Eaux sombres de guérison
+#TEXT	1
+À St.  St. John's, on chuchote que la gitane locale est le dernier espoir pour la fille gravement malade de Thomas Morrison. Mais elle refuse obstinément d'aider. N'éprouve-t-elle donc aucune pitié pour la pauvre enfant ?
+#TEXT	2
+La gitane m'a informé qu'elle est tout à fait disposée à aider la fille, mais Thomas refuse catégoriquement de la laisser entrer dans sa maison. Je veux rendre visite à Thomas et découvrir pourquoi il rejette le dernier espoir de sauver la petite fille. Sa maison se trouve dans la partie nord de la ville, près du mur, à côté d’un manoir luxueux avec des colonnes.
+#TEXT	3
+Le prêtre de l'église locale a menacé Thomas Morrison d'excommunication s'il accepte l'aide de la gitane pour sauver sa fille gravement malade. Maintenant, Thomas est déchiré entre sa peur de tomber en disgrâce auprès de l'église et son désespoir face à la maladie de sa fille. Je vais essayer de convaincre le prêtre de fermer les yeux sur ce péché pour un bien supérieur - sauver la vie de la petite fille !
+#TEXT	4
+Il faudra trouver d'autres moyens. Le pasteur est sans aucun doute un homme obstiné, et en bien des points il a raison. Mais malgré tout, je ne peux pas être d'accord avec lui. S'il y a une chance de remettre la fillette sur pied, il faut la saisir.
+#TEXT	5
+J’ai réussi à convaincre le pasteur. Il a accepté de fermer les yeux sur la participation de la gitane au traitement si Thomas expie sa faute devant le Seigneur par un repentir sincère et de bonnes actions.
+ À présent, je dois trouver la mangarosa - l’ingrédient clé du remède de la gitane. Cette plante se distingue par son parfum agréable, sa tige haute et ses feuilles finement découpées. Je peux trouver la mangarosa dans une grotte en dehors de la ville, chez des 'personnes peu recommandables' - des vagabonds ou peut-être des brigands. Tant mieux. Peut-être que je n’aurai même pas à les payer.
+#TEXT	6
+J'ai fait tout ce qui était en mon pouvoir. Il ne reste plus qu'à espérer dans les capacités de la gitane. Je me suis tellement impliqué dans le sauvetage de la petite fille que j'ai complètement oublié mes propres affaires. Je visiterai Antigua dans un mois. D'ici là, Esther devrait être complètement rétablie.
+#TEXT	7
+La gitane est prête à aider la fillette en secret - afin que Thomas n'encoure pas la colère de l'Église. À présent, il faut surtout le convaincre de nous faire confiance.
+#TEXT	8
+Thomas m’a remis un objet personnel d’Esther - un collier de jade. Il ne me reste plus qu’à trouver deux tiges d’herbe-démon, une tige d’ipéca, une de verveine - et je pourrai retourner voir la gitane.
+#TEXT	9
+Grâce aux efforts conjoints de la gitane et moi, la maladie d’Esther a été vaincue ! C’est réconfortant de savoir que tous ces efforts n’ont pas été vains, et que la fillette est maintenant en bonne santé.
+#TEXT	10
+Grâce à nos efforts avec la gitane, la maladie d'Esther est vaincue ! Il est réconfortant de savoir que tous ces efforts n'ont pas été vains, et que la fillette est désormais en bonne santé. Chez la gitane de Saint John's, je peux toujours acheter de la mangarosa - trois tiges pour trois cent cinquante doublons d'or.
+#TEXT 11
+À présent, la gitane a tout ce qu’il faut pour préparer le remède. Demain matin, je devrai récupérer le médicament chez elle et l’apporter à Thomas.
+
+#QUEST TPZ
+Commerce légal
+#TEXT 1
+Les habitants de Bass-Terre se plaignent de l'absence d'alcool à la taverne. Le tavernier promet de résoudre le problème, mais rien ne change. Il semble avoir de sérieux ennuis. Et là où il y a des problèmes, il y a aussi des opportunités de gagner de l'argent.
+#TEXT 2
+Le propriétaire a expliqué que son fournisseur d'Antigua a perdu sa distillerie lors d'un raid de pirates et ne pourra pas reprendre les livraisons avant deux mois. Le tavernier est prêt à accepter n'importe quelle cargaison de vin et de rhum, à condition que le marchand ait une bonne réputation, sans vérification des documents, mais seulement cette fois. À l'avenir, il ne travaillera qu'avec des négociants honnêtes et fiables. Peut-être devrais-je chercher des marchandises en dehors des voies officielles... Si je joue bien mes cartes, cela pourrait être très rentable.
+#TEXT 3
+Les contrebandiers ont actuellement du mal à se procurer de l'alcool. Cependant, près de la résidence du gouverneur vit un commerçant qui vend illégalement de petites quantités d'alcool. Peut-être devrais-je lui rendre visite.
+#TEXT 4
+J'ai réussi à trouver un vendeur d'alcool clandestin. Au début, il m'a pris pour un représentant des autorités, mais j'ai pu le convaincre du contraire. Si je l'aide à légaliser son activité, je pourrai acheter du vin et du rhum à des conditions très avantageuses à l'avenir. Mais pour l'instant, il est temps de retourner voir le tavernier – il y a une chance que je puisse gagner encore quelques doublons sur cette affaire.
+#TEXT 5
+J'ai réussi à conclure un accord avec le tavernier, à mes conditions. Il est prêt à acheter cette cargaison et les suivantes pour deux cent quarante doublons pour cent bouteilles de vin et cent bouteilles de rhum. Maintenant, il faut légaliser l'affaire de Christian.
+#TEXT 6
+J'ai réussi à conclure un accord avec le tavernier. Il est prêt à acheter cette cargaison et les suivantes pour deux cents doublons pour cent bouteilles de vin et cent bouteilles de rhum. Maintenant, il faut légaliser l'affaire de Christian.
+#TEXT 7
+Le tavernier est satisfait – l'alcool coule à nouveau à flots dans la taverne. Christian peut aussi se réjouir – il a trouvé un excellent client, et son activité est devenue légale. Il est maintenant temps de penser à mon propre bénéfice dans cette affaire. En route vers Christian !
+#TEXT 8
+J'ai joué le rôle d'intermédiaire. Une sensation inhabituelle. Tout le monde est satisfait : la taverne est à nouveau animée, Christian compte probablement déjà les doublons qui lui tombent dessus, et j'ai maintenant un fournisseur d'alcool fiable dans les Caraïbes. Et tout cela sans avoir à dégainer mon épée une seule fois. Étonnant.
+#TEXT 9
+À peine avais-je eu le temps de me réjouir d'avoir enfin résolu quelque chose pacifiquement qu'un navire pirate m'a attaqué au port. Il s'est avéré que les interruptions de livraison n'étaient pas accidentelles. Tout cela faisait partie du plan du capitaine de ce navire, qui voulait s'emparer du lucratif marché des livraisons à la taverne de Bass-Terre. Cette fois, il n'a pas eu de chance. Je lui ai donné une leçon mortelle.
+#TEXT 10
+En mer, un navire pirate m'a attaqué. Qui étaient-ils et que voulaient-ils – cela reste inconnu. Leur rafiot a coulé, emportant toutes les réponses avec lui.
+#TEXT 11
+Les conditions commerciales sur l'île se sont révélées assez simples : cent doublons par mois au trésor de la ville en tant que taxe et des rapports réguliers. Je pense que ces exigences ne seront pas trop contraignantes pour Christian. Maintenant, je peux réjouir le filou – tout s'est passé à merveille.
+
+#QUEST GS
+Les Limites de la Justice
+#TEXT	1
+Un attentat audacieux a été commis contre le chef du port de Belize. L’agresseur a réussi à s’enfuir, et il est désormais devenu la proie. Si l’on en croit les rumeurs, le fonctionnaire a mis sa tête à prix. Eh bien, il semble que l’ennemi soit redoutable – il faut bien réfléchir avant de se lancer à sa poursuite.
+#TEXT	2
+Le chef du port affirme qu’il n’a aucune idée de qui l’a attaqué ni pourquoi. Il décrit l’assaillant comme un simple fou, comme il en existe tant dans les Caraïbes. Peut-être que cela manque de crédibilité, mais cela m’importe peu. Une récompense de deux cents doublons est offerte pour la tête de ce « fou ». Voilà ce qui compte réellement. Je commencerai mes recherches dans les criques et grottes avoisinantes. C’est là que ce fugitif cherchera probablement à échapper à la justice.
+#TEXT	3
+C’est fait. Il est temps de faire mon rapport au chef du port et de recevoir la récompense méritée. Et pourtant, peut-être aurais-je dû écouter les paroles du mercenaire ? Il parlait avec une certaine conviction. D’un autre côté, qui, à sa place, ne tenterait pas de sauver sa peau en s’accrochant au moindre espoir ? Il s’agissait très probablement d’une ruse.
+#TEXT	4
+Le chef du port m’a payé intégralement, même plus généreusement que prévu. Il m’a offert une réduction permanente de cinquante pour cent sur les frais de mouillage d’un navire, pour une durée illimitée. Mais cette générosité ne fait qu’accentuer mes soupçons. Et si le mercenaire disait la vérité ? S’il avait vraiment eu affaire à des pirates, pourquoi ne pas avoir alerté la garde ? Pourquoi ne rien avoir mentionné à ce sujet en m’envoyant éliminer l’assassin ? Mais tout cela n’est que spéculation. Ce qui est fait est fait, et seul le temps révélera peut-être la vérité. Il est temps pour moi de partir.
+#TEXT	5
+Le chef du port est un véritable salaud ! Il sourit en regardant partir mes camarades en mer, puis vend sans scrupules leurs itinéraires aux pirates. Des individus comme lui ne doivent pas rester impunis. J’attendrai la nuit et j’en finirai avec lui. Ses actes infâmes seront connus de tous. Les notes que m’a confiées le mercenaire resteront dans sa maison, bien en vue. Que toute la ville sache qui il était réellement. C’est ironique qu’il vive près de la prison - car, à juste titre, il devrait en être un pensionnaire.
+#TEXT	6
+Le misérable est mort ! Il ne reste plus qu’à laisser les notes et disparaître avant que toute la garnison ne soit mise en alerte.
+#TEXT	7
+Le chef du port est éliminé. Il ne pourra plus envoyer quiconque dans les griffes des pirates. Aujourd’hui, le monde est devenu un peu meilleur.
+
+#QUEST OS
+Vieilles rancunes
+#TEXT	1
+Le tavernier de Puerto Principe a laissé filer tout un tonnelet de gin rare, venu tout droit de la vieille Europe. S’il ne retrouve pas cette précieuse cargaison, il risque de graves ennuis. À en croire sa panique, ce gin était destiné à un gros bonnet.
+#TEXT	2
+Le gin a été volé sous le nez de cet étourdi d’aubergiste. Sa vie ne tient plus qu’à un fil – le mystérieux client ne semble pas du genre à pardonner les erreurs. Il offre cent cinquante doublons à quiconque ramènera le tonneau disparu. J’ai quelques pistes. Je devrais commencer par interroger les matelots. Peut-être que l’un d’eux a vu quelque chose.
+#TEXT	3
+Toute cette histoire semble vraiment louche. Mais j’ai ma petite idée. Il est temps d’avoir une conversation avec la serveuse.
+#TEXT	4
+Sous la pression, la serveuse a avoué que toute la mise en scène avait été orchestrée par un certain Jack Wales. Avec le capitaine du 'Sea Beast', ils ont monté une véritable pièce de théâtre pour s’emparer du tonnelet. Tout ça pour du gin ! Visiblement, ce ne sont pas de simples ivrognes, mais de vrais connaisseurs. La maison du voleur est juste en face de la taverne.
+#TEXT	5
+J’ai rendu le tonnelet à temps à l’aubergiste, sauvant ainsi sa peau d’ennuis certains. À sa manière, il a su me remercier : en plus des doublons, j’ai obtenu le droit à une consommation gratuite à vie, ainsi qu’un toit assuré dans sa taverne. Quant à la serveuse, elle a bien fait de s’éclipser – le tavernier a rapidement deviné son rôle dans toute cette affaire.
+#TEXT	6
+L’équipage du 'Sea Beast' a suivi son capitaine dans la tombe. Méritaient-ils un tel sort ? Allez savoir... Mais une chose est sûre – ils n’auraient jamais dû me défier.
+
+#QUEST UV
+Souvenir volé
+#TEXT 1
+À Port-au-Prince, on raconte que Julie d’Armagnac, la nièce du gouverneur en personne, est plus triste que jamais. D’ordinaire rayonnante et pleine de vie, elle est désormais aussi sombre qu’un ciel d’orage. Personne ne sait exactement ce qui a bien pu bouleverser la jeune femme, mais tout laisse penser qu’il s’est passé quelque chose de grave.
+#TEXT 2
+Julie se trouve dans une situation délicate. Un collier auquel elle tenait énormément a été volé. Elle ne peut s’adresser à la garde, car son oncle, le gouverneur de la partie française d’Hispaniola, lui a formellement interdit de revoir celui qui lui avait offert ce bijou. Elle soupçonne l’une de ses servantes. Je ne peux tout simplement pas la laisser seule avec ce malheur et j’ai fermement décidé d’aider. Il vaut mieux commencer les recherches en interrogeant les marchands locaux - le voleur aura sûrement tenté de revendre le bijou rapidement.
+#TEXT 3
+Un certain Tristan Renier, capitaine du 'Golden Seagull', a récemment acheté un collier chez un marchand — il pourrait bien s’agir de celui de Julie. Son navire est toujours au port. Si mon intuition est juste, la voleuse pourrait être cette fameuse Giselle, dont le nom a échappé au marchand par mégarde.
+#TEXT 4
+Tristan n’est pas à bord. Il faut le chercher en ville.
+#TEXT 5
+J’ai réussi à récupérer le collier de Julie. Il est temps de le lui rendre. Ou... peut-être devrais-je aller tout raconter au gouverneur ?
+#TEXT 6
+Le collier a été rendu à sa charmante propriétaire. La voleuse n’était autre que sa servante — Giselle. Julie déploie désormais toute sa ruse pour punir la petite friponne. Je ne voudrais pas être à sa place.
+
+#QUEST VPVL
+Pris dans la Grande Prise
+#TEXT 1
+Des récits circulent à travers Saint Pierre concernant la disparition du pêcheur local Pierre Carno. Pendant deux cycles complets de marée, son navire n'est pas revenu au port, tandis que sa femme Lea, rongée par l'angoisse, maintient sa veille solitaire sur le quai, ses yeux scrutant les eaux tumultueuses à la recherche de la silhouette de son mari. Seul son retour sain et sauf pourrait apaiser son esprit meurtri. Pourtant, la mer impitoyable garde ses secrets, et à chaque coup de cloche qui passe, l'espoir s'amenuise et ses chances d'échapper à la mort s'amoindrissent de plus en plus​.
+#TEXT 2
+Lea a révélé que son mari avait mis le cap sur la Baie Le Marin, nichée le long des rives méridionales de l'île. Deux jours entiers se sont écoulés depuis qu'il a largué les amarres, pourtant aucun signe de son retour. L'angoisse gravée sur le visage de cette pauvre femme m'a poussé à offrir mon aide. Je vais d'abord inspecter les eaux de la Baie Le Marin—peut-être que Pierre est toujours en mer, retardé par quelque circonstance. Si les eaux se révèlent vides de sa présence, je dois alors scruter le littoral à la recherche de toute trace de l'homme ou du navire​.
+#TEXT 3
+Ces contrebandiers habitants de la plage m'ont pris pour l'un des limiers du gouverneur et ont cherché à m'expédier dans une tombe aquatique. La fortune, cependant, leur a tourné le dos—c'est leur propre sang qui tache maintenant le sable au lieu du mien. Je dois maintenant explorer la grotte marine dont ils ont parlé. Peut-être est-ce Pierre qu'ils ont gardé enchaîné dans cette humide prison​.
+#TEXT 4
+Pierre respire maintenant le doux air de la liberté, et le moment est venu de le rendre aux bras de sa femme dévouée. La fortune lui a vraiment joué un tour cruel—d'abord son navire s'est brisé contre le récif, puis en atteignant le rivage, il est tombé entre les griffes de ces contrebandiers à l'esprit obtus qui l'ont pris pour l'homme du gouverneur. Le pauvre homme a enduré torture et famine, forcé de divulguer des secrets qu'il n'avait jamais possédés. On frémit à l'idée de la sombre fin qui l'aurait attendu si la Providence n'avait pas guidé mes pas vers cette grotte maudite à ce moment-là​.
+#TEXT 5
+Pierre a été ramené sain et sauf aux tendres soins de sa femme dévouée. Il a promis de montrer sa gratitude une fois ses forces revenues et insiste pour partager un verre à la taverne demain après la sixième cloche. Pourtant, une question ronge encore mes pensées comme un rat sur le cordage d'un navire—qui ces contrebandiers malchanceux attendaient-ils vraiment sur les rives de Le Marin ? Leurs propos évoquaient un navire qui devait bientôt accoster. Les hommes du gouverneur paieraient sûrement grassement pour être avertis à l'avance d'un tel navire chargé de contrebande. Ou peut-être...​.
+#TEXT 6
+J'ai informé le gouverneur des contrebandiers qui attendaient un navire. Il a promis de vérifier ces informations et m'a demandé de revenir dans trois jours. Si mes paroles s'avèrent fondées, une récompense pourrait bien m'être attribuée​.
+
+#QUEST TBP
+Le Mystère de Betsy Price
+#TEXT	1
+À Willemstad, j'ai entendu une histoire intrigante : une serveuse d'une beauté hors du commun est récemment apparue dans la taverne locale, mais il y a trois jours, elle a soudainement disparu. Le tavernier est inquiet et prêt à payer celui qui pourra la retrouver.
+#TEXT	2
+Les rumeurs ne mentent pas, la serveuse a vraiment disparu. Le tavernier est clairement préoccupé... par sa disparition ou par la baisse de ses revenus, qui sait. Il est prêt à offrir cent doublons à celui qui la ramènera. J'ai accept@<sSex> de l'aider dans ses recherches. Cent doublons, c'est une belle motivation, mais ce qui m'intrigue encore plus, c'est Betsy elle-même. Quelle femme pourrait à ce point faire tourner les têtes que les hommes délaissent tout juste pour la contempler des heures durant dans une taverne ? Pour commencer, il faudrait examiner sa maison. D'après l'aubergiste, elle n'est pas loin de la taverne, sur la colline—en face de la belle maison avec le balcon bleu.
+#TEXT	3
+Betsy est clairement impliquée dans des affaires obscures. La lettre trouvée constitue une menace directe contre sa vie, ce qui signifie que sa disparition est bien plus grave qu'une simple fuite. Peut-être a-t-elle réussi à se cacher, mais on ne peut exclure le pire. Il faut comprendre qui aurait pu laisser ce message. Je commencerai par le barman – il a peut-être remarqué des gens suspects près d'elle.
+#TEXT	4
+Le pendentif acheté au vagabond appartient à Betsy. Il l'a trouvé dans le parterre de fleurs près de la maison avec la lanterne. Il faut bien fouiller les lieux.
+#TEXT	5
+Quelle femme, cette Betsy... Ou plutôt Miranda ? Non, Betsy est plus approprié – inutile de raviver son passé. Enfin, elle a été tirée des griffes de ces salauds... Il est temps de réclamer ma récompense bien méritée.
+#TEXT	6
+Le tavernier m'a payé intégralement pour lui avoir ramené sa précieuse employée. Je dois avouer que je pense encore à Betsy... Peut-être devrais-je lui rendre visite un de ces jours.

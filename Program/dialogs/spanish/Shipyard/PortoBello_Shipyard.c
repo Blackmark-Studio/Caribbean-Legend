@@ -9,7 +9,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		link.l1.go = "exit";
 		if (pchar.questTemp.Slavetrader == "FindRatPortobello")
 		{
-			link.l1 = "Escucha, un corsario llamado François Gontier no ha pasado por aquí para hablar contigo por случай, ¿verdad? Ha estado en Porto Bello recientemente, eso lo sé.";
+			link.l1 = "Escucha, ¿por casualidad no ha pasado por aquí un corsario llamado François Gontier para hablar contigo? Ha estado en PortoBello recientemente, eso es lo que sé.";
 			link.l1.go = "Portobello_ratS_1";
 		}
 		break;

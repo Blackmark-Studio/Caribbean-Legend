@@ -65,40 +65,50 @@ Nationale Reputation gesunken!
 
 RPGUtilite_14
 {
-Kopfgeld ~
+Hass
 }
 
 RPGUtilite_15
 {
-Feindlich
+Feindselig
 }
 
 RPGUtilite_16
 {
-Neutral
+Abneigung
 }
 
 RPGUtilite_17
 {
-Gut
+Verärgerung
 }
 
 RPGUtilite_18
 {
-Hervorragend
+Neutral
 }
 
 RPGUtilite_19
 {
-Bewunderung
+Sympathie
 }
 
 RPGUtilite_20
 {
-Regenbogen
+Freundlich
 }
 
 RPGUtilite_21
 {
-Quecksilber
+Bewunderung
+}
+
+RPGUtilite_22
+{
+Rainbow
+}
+
+RPGUtilite_23
+{
+Quicksilver
 }

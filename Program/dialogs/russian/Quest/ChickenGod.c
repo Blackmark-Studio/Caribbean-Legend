@@ -496,7 +496,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ахой, капитан. С чем приш" + GetSexPhrase("ёл","ла") + "?";
 			
 			if (CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.p1") && !CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.p1.Completed") && PCharDublonsTotal() >= 2000) {
-				link.p1 = "Вот твои дублоны. А-ать, как же тяжело таскать это проклятый металл... но ещё тяжелее его отдавать!";
+				link.p1 = "Вот твои дублоны. А-ать, как же тяжело таскать этот проклятый металл... но ещё тяжелее его отдавать!";
 				link.p1.go = "joruba_p1";
 			}
 			
@@ -773,20 +773,12 @@ void ProcessDialogEvent()
 				case SHIP_LADYBETH:
 					dialog.text = "А попа ты видел"+GetSexPhrase("","а")+"? Ну, ещё познакомитесь. И лучше бы тебе заготовить побольше двойных зарядов к пистолю. Если не поможет - попробуй осиновый кол.";
 				break;
+				
+				case SHIP_MEMENTO:
+					dialog.text = "А попа ты видел"+GetSexPhrase("","а")+"? Ну, ещё познакомитесь. И лучше бы тебе заготовить побольше двойных зарядов к пистолю. Если не поможет - попробуй осиновый кол.";
+				break;
 			}
 		break;
-		
-		/*case "joruba_p3_HolyMercy":
-			dialog.text = "А попа ты видел"+GetSexPhrase("","а")+"?";
-			link.l1 = "Какого попа?";
-			link.l1.go = "joruba_p3_HolyMercy_2";
-		break;
-		
-		case "joruba_p3_HolyMercy_2":
-			dialog.text = "Ну, ещё познакомитесь. И лучше бы тебе заготовить побольше двойных зарядов к пистолю. Если не поможет - попробуй осиновый кол.";
-			link.l1 = "...";
-			link.l1.go = "joruba_p3_1";
-		break;*/
 		
 		case "joruba_p3_PinkOtkaz":
 			dialog.text = "Корабль этот хоть и правда с историей, но как-то слишком просто... Нет уж! У тебя еще целая куча несделанной работы по списку. Как сделаешь - обсудим еще раз.";
@@ -889,7 +881,7 @@ void ProcessDialogEvent()
 		case "joruba_p4_other":
 			dialog.text = "Да будет так. Назови имя?";
 			
-			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "FMQT_mercen");
+			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Duran");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Baker");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Folke");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Avendel");
@@ -901,14 +893,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_p4_off":
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
 			{
 				dialog.text = "Клод Дюран не офицер, а безжалостный наёмник, так что выбери другую жертву.";
 				link.l1 = "";
 				link.l1.go = "exit";
 				break;
 			}
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
 			{
 				Achievment_Set("ach_CL_116");
 			}
@@ -1097,7 +1089,7 @@ void ProcessDialogEvent()
 		case "joruba_o6_blood":
 			dialog.text = "Назови имя?";
 			
-			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "FMQT_mercen");
+			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Duran");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Baker");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Folke");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Avendel");
@@ -1129,14 +1121,14 @@ void ProcessDialogEvent()
 				AddDialogExitQuestFunction("ChickenGod_KickedFromTemple");
 				break;
 			}
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
 			{
 				dialog.text = "Клод Дюран не офицер, а безжалостный наёмник, так что выбери другую жертву.";
 				link.l1 = "";
 				link.l1.go = "exit";
 				break;
 			}
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
 			{
 				Achievment_Set("ach_CL_116");
 			}
@@ -1438,7 +1430,7 @@ bool ChickenGod_TalkedToAmelia() {
 bool ChickenGod_HaveOfficers() {
 	object fakelink;
 	
-	ChickenGod_AddOfficerLink(&fakelink, "", "FMQT_mercen");
+	ChickenGod_AddOfficerLink(&fakelink, "", "Duran");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Baker");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Folke");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Avendel");

@@ -1,0 +1,281 @@
+new_string {
+
+}
+
+special0 {Trader}
+
+special0_desc 
+{
+A merchant ship usually sacrifices caliber, speed, and the number of guns in favor of a large hold. Only a very skilled captain can afford to go on a solo voyage on such a ship.
+}
+
+special0_desc2 
+{
+Fleet Power bonus: low
+}
+
+special1 {Warrior}
+
+special1_desc 
+{
+Warships are specially designed for sea battles. They have the strongest hulls and the largest caliber guns, but such firepower imposes limitations on speed characteristics.
+}
+
+special1_desc2
+{
+Fleet Power bonus: very high.
+}
+
+special2 {Raider}
+
+special2_desc 
+{
+Raider ships are ideal for raids and piracy — nimble, maneuverable, and well-armed, they are a formidable force, but pay for it with a small hold and modest hull strength.
+}
+
+special2_desc2 
+{
+Fleet Power bonus: high.
+}
+
+special3 {Multipurpose}
+
+special3_desc 
+{
+Multipurpose ships are the choice of captains who want to do everything at once. They are equally suited for trade, piracy, and war, but such flexibility makes them comparatively worse than any specialized vessel. At least until these ships fall into the hands of a skilled shipbuilder.
+}
+
+special3_desc2 
+{
+Fleet Power bonus: medium
+Bonus to stat improvement: 15%
+}
+
+trait01 {Current Map}
+
+trait01_desc 
+{
+Complex navigation tools made to order by European craftsmen and an accurate map of the archipelago's underwater currents allow you to save significant travel time.
+}
+
+trait01_desc2 
+{
+Increases sailing speed on the global map by 5%.
+Stacks with all other bonuses.
+}
+
+trait02 {Quality Packaging}
+
+trait02_desc 
+{
+A thorough overhaul of the hold, bulkhead thickness, and standardization of the cargo storage system allow you to carry more cargo and distribute it more efficiently throughout the ship without causing imbalance.
+}
+
+trait02_desc2 
+{
+Reduces speed penalty from hold load: 15%.
+}
+
+trait03 {Mark of Quality}
+
+trait03_desc 
+{
+A set of glyphs, seals, and patents makes the cargo from this ship recognizable, and its arrival in port a good sign for local merchants. Successful trade deals improve relations with the port's nation, and good relations make trade more profitable.
+}
+
+trait03_desc2 
+{
+Reduces sales penalty: 3% per relationship level.
+Profit threshold for increasing relations with the nation: 25000.
+}
+
+trait04 {Emergency Studding Sails}
+
+trait04_desc 
+{
+In case of critical danger to the ship, sailors set up special quick-assembly studding sails on the yards and raise them, temporarily increasing the ship's speed.
+}
+
+trait04_desc2 
+{
+Hull strength threshold for activation: 40%.
+Speed increase: 20%.
+Effect delay when repairing above the threshold: 20 seconds.
+}
+
+trait05 {False Documents}
+
+trait05_desc 
+{
+An impressive set of patents, documents, and nameplates allows this ship to enter almost any port incognito, and the inconspicuous hull reduces the risk of encountering patrols during smuggling deals.
+}
+
+trait05_desc2 
+{
+Increases chance of deception: 15%.
+Reduces chance of encountering a patrol: 50%.
+}
+
+trait11 {Pivoting Carriages}
+
+trait11_desc
+{
+The gun ports and carriages have been specially reconstructed, increasing the firing sector of the guns.
+}
+
+trait11_desc2
+{
+Increases firing sector: 7 degrees.
+}
+
+trait12 {Improved Recoil System}
+
+trait12_desc
+{
+An improved system of blocks and compensators allows for rapid fire from the same broadside, using the recoil inertia to speed up reloading and aiming.
+}
+
+trait12_desc2
+{
+Increases damage and reload speed: 6% per salvo.
+Maximum bonus: 35%.
+The bonus disappears when firing from any other broadside.
+}
+
+trait13 {Rapid Landing}
+
+trait13_desc
+{
+The ship's design features and winch system make it possible to land troops on the move, allowing the assault to begin much earlier without endangering the crew.
+}
+
+trait13_desc2
+{
+Reduces the threshold of destroyed guns for fort assault: 15%.
+}
+
+trait14 {War Paint}
+
+trait14_desc
+{
+Bright marks of successful raids on the hull and regular bribes to the right people make extortion much easier, turning the ship into a terrifying legend. Governors are more willing to share money and goods, and nations set higher ransoms for captains.
+}
+
+trait14_desc2
+{
+Ransom value bonus: 35%.
+Warehouse value bonus during colony raids: 15%.
+}
+
+trait21 {Hit and Run}
+
+trait21_desc
+{
+A shifted center of gravity, sharp hull lines, and a special rearrangement of gun ports increase the ship's wave-passing ability and stability during gun recoil, raising the permissible speed limits during battle.
+}
+
+trait21_desc2
+{
+Ship speed bonus for an unloaded broadside: 5%.
+The bonus gradually decreases when loading.
+}
+
+trait22 {Pillaging}
+
+trait22_desc
+{
+The ship operates under special rules for extracting materials from boarded ships. Sinking a ship by boarding restores hull and sail strength. The amount restored depends on the quantity and quality of materials, the extent of damage, and the class difference.
+}
+
+trait22_desc2
+{
+Hull restoration: 5–15%.
+Sail restoration: 12% (masts are not restored).
+}
+
+trait23 {The Quick and the Dead}
+
+trait23_desc
+{
+The crew is required to undergo training in covering tracks and stealth. Reduces the impact of piracy on relations with nations, and reputation recovery becomes more effective.
+}
+
+trait23_desc2
+{
+Reduces penalties to relations: 50%.
+Increases lawyer effectiveness: 50%. 
+}
+
+trait24 {Brandskugel}
+
+trait24_desc
+{
+Chase and retreat guns are specially tempered to withstand high temperatures, and their ports are treated with a special compound against fires.
+This allows the use of incendiary mixtures with any universal ammunition, dealing periodic damage to enemy ships.
+}
+
+trait24_desc2
+{
+Additional damage to hull and sails: 200%.
+Effect duration: 15 seconds.
+Increases chance of fire: 200%
+}
+
+sp1 {Zealot}
+
+sp1_desc
+{
+An equipped deck chapel, together with icons of the Virgin Mary, mysteriously enhances the effects and duration of church amulets.
+}
+
+sp1_desc2
+{
+Each amulet's enhancement: individual.
+Duration increase: 15 days.
+}
+
+sp2 {Welcome guest}
+
+sp2_desc
+{
+This legendary ship is known in every corner of the Caribbean archipelago and is met everywhere with respect and admiration. The location of Lady Beth immediately becomes known to map sellers, and local merchants try to gather all possible capital to buy valuables.
+}
+
+sp2_desc2
+{
+Bonus to the chance of a map trader appearing: 5–12%.
+Peso reserve increase: 100%.
+Doubloon reserve increase: ~30%.
+}
+
+sp3 {Crucible}
+
+sp3_desc
+{
+On this ship, human life is seen as just a brief stage before true power is revealed. Few cross the Veil and return, but those who do no longer fear death.
+}
+
+sp3_desc2
+{
+Fallen sailors increase the crew’s experience and morale.
+}
+
+sp3_SailorsBoardingBonus_desc
+{
+Boarding experience bonus: #dSailorsBoardingBonus#%
+}
+
+sp3_SailorsBoardingBonus1_desc
+{
+~ (#dDeadSailors#/500 fallen sailors)
+}
+
+sp3_SurrenderChanceBonus_desc
+{
+Surrender chance increase: #dSurrenderChanceBonus#%
+}
+
+sp3_SurrenderChanceBonus1_desc
+{
+~ (#dDeadSailors#/2000 fallen sailors)
+}

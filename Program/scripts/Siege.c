@@ -188,7 +188,7 @@ float GetDistanceToColony(string sColony);
     else
     {
         int locnum = FindLocation(pchar.location);
-        if (locnum != -1 && CheckAttribute(locations[locnum], "townsack") )
+        if (locnum != -1 && CheckAttribute(&locations[locnum], "townsack") )
         {
             if (sColony == locations[locnum].townsack)
             return makefloat(0);
@@ -284,27 +284,30 @@ int SetSiegeShip(ref rChar)
 
     if (sti(aData.imanofwars) > 0)
     {
+		int iNationLineshipType = SHIP_LINESHIP;
 		switch (Nation)
 		{	
-			case PIRATE   :	SiegeShips = SHIP_LINESHIP; 													 break; 
-			case ENGLAND  : SiegeShips = RandFromThreeDight(SHIP_LINESHIP, SHIP_LSHIP_ENG,  SHIP_LINESHIP);  break; 
-			case FRANCE	  : SiegeShips = RandFromThreeDight(SHIP_LINESHIP, SHIP_LSHIP_FRA,  SHIP_LINESHIP);  break; 					
-			case SPAIN	  : SiegeShips = RandFromThreeDight(SHIP_LINESHIP, SHIP_LSHIP_SPA,  SHIP_LINESHIP);  break; 					
-			case HOLLAND  : SiegeShips = RandFromThreeDight(SHIP_LINESHIP, SHIP_LSHIP_HOL,  SHIP_LINESHIP);  break; 
+			case PIRATE   :	iNationLineshipType = SHIP_LINESHIP;   break; 
+			case ENGLAND  : iNationLineshipType = SHIP_LSHIP_ENG;  break; 
+			case FRANCE	  : iNationLineshipType = SHIP_LSHIP_FRA;  break; 					
+			case SPAIN	  : iNationLineshipType = SHIP_LSHIP_SPA;  break; 					
+			case HOLLAND  : iNationLineshipType = SHIP_LSHIP_HOL;  break; 
+		}
+		
+		if (rand(2) == 0)
+		{
+			SiegeShips = iNationLineshipType;
+		}
+		else
+		{
+			SiegeShips = GetRandomShipType(FLAG_SHIP_CLASS_1, FLAG_SHIP_TYPE_WAR, GetNationFlag(Nation));
 		}
         aData.imanofwars = sti(aData.imanofwars) - 1;
         rez = SiegeShips;
     }
     else
     {
-		switch (Nation)
-		{	
-			case PIRATE   :	SiegeShips = RandFromThreeDight(SHIP_CORVETTE, SHIP_GALEON_H, SHIP_FRIGATE); 	break; 
-			case ENGLAND  : SiegeShips = RandFromThreeDight(SHIP_CORVETTE, SHIP_FRIGATE,  SHIP_FRIGATE_H); 	break; 
-			case FRANCE	  : SiegeShips = RandFromThreeDight(SHIP_CORVETTE, SHIP_FRIGATE,  SHIP_FRIGATE_H); 	break; 					
-			case SPAIN	  : SiegeShips = RandFromThreeDight(SHIP_POLACRE,  SHIP_GALEON_H, SHIP_FRIGATE_H);  break; 					
-			case HOLLAND  : SiegeShips = RandFromThreeDight(SHIP_XebekVML, SHIP_FRIGATE,  SHIP_FRIGATE_H);  break; 
-		}		
+		SiegeShips = GetRandomShipType(FLAG_SHIP_CLASS_2 + FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_WAR, GetNationFlag(Nation));
         rez = SiegeShips;
     }
 
@@ -562,7 +565,7 @@ void BattleOfTheColony(string tmp)
 	}	
 	if(bShipAndDeposit)
 	{
-		pchar.systeminfo.message.siegestring = XI_ConvertString(Nations[sti(aData.nation)].Name)+" осадила "+GetCityName(aData.colony);
+		pchar.systeminfo.message.siegestring = XI_ConvertString(Nations[sti(aData.nation)].Name)+StringFromKey("Siege_27")+GetCityName(aData.colony);
 		DoQuestFunctionDelay("Message_siege", 1.0);
 		
 	}
@@ -745,7 +748,7 @@ void SiegeClear(string tmp)
 {
     aref aData;
     ref rColony;
-    if (CheckAttribute( NullCharacter, "Siege.Colony"))
+    if (CheckAttribute(&NullCharacter, "Siege.Colony"))
     {
         makearef(aData, NullCharacter.Siege);
         makeref(rColony, Colonies[FindColony(aData.Colony)]);

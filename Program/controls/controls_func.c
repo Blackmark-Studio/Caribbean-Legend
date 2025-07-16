@@ -26,6 +26,8 @@ void Process_Controls(string ControlName)
 	if (ControlName == "WhrUpdateWeather")	{ Whr_UpdateWeather(); }
 	
 	//if (ControlName == "Help") RunHelpChooser();
+
+    // TO_DO: Перенести в движок
 	if(XI_IsKeyPressed("alt") && !CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+ControlName)) return;
 	if(!XI_IsKeyPressed("alt") && CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+ControlName)) return;
 	
@@ -38,7 +40,15 @@ void Process_Controls(string ControlName)
 				ProcessInterfaceKey();
 			break;
 
-			case "Sea_CameraSwitch":  SeaCameras_Switch(); ControlsDesc(); break;
+			case "Sea_CameraSwitch":  
+				SeaCameras_Switch(); 
+				ControlsDesc(); 
+			break;
+			
+			case "FireCamera_Set":
+				SeaCameras_SetFireCamera();
+			break;
+			
 			case "Ship_Fire": Ship_DoFire(); break;
 
 			case "Tele": Sea_ReloadStart(); break;
@@ -104,7 +114,8 @@ void Process_Controls(string ControlName)
   	if (ControlName=="TimeScaleFaster" || ControlName == "TimeScaleSlower" ||
 		ControlName=="TimeScaleFasterBA" || ControlName=="TimeScaleSlowerBA" )
   	{
-        if (loadedLocation.type == "underwater") return; //запрет ускорения под водой.
+		//запрет ускорения под водой.
+        if (CheckAttribute(loadedLocation, "type") && loadedLocation.type == "underwater") return; 
 		if (CheckAttribute(pchar, "questTemp.NoFast")) return; //запрет ускорения
 		DeleteAttribute(pchar, "pause");
 		if (ControlName == "TimeScaleFaster" || ControlName=="TimeScaleFasterBA")
@@ -187,25 +198,31 @@ void Process_Controls(string ControlName)
         	SetTimeScale(newTimeScale);
 			TimeScale_Info("x" + newTimeScale);
      	}
+
+        // TUTOR-ВСТАВКА
+        if(TW_IsActive())
+        {
+            if(objTask.sea == "4_TimeScale" && TimeScaleCounter == 20)
+            {
+                objTask.sea = "5_TimeScale";
+                TW_ColorWeak(TW_GetTextARef("TimeScale_plus"));
+                itemID = StringFromKey("Tutorial_7", GKIC("TimeScaleSlowerBA", "Sailing3Pers"), GKIC("TimeScale", "Sailing3Pers"));
+                TW_AddBottomText("TimeScale_minus", itemID, "Default");
+				TW_RestartTimer();
+                TW_RecalculateLayout();
+            }
+            else if(objTask.sea == "5_TimeScale" && TimeScaleCounter == 0)
+            {
+                TW_ColorWeak(TW_GetTextARef("TimeScale_minus"));
+                TW_FinishSea_2_TimeScale();
+            }
+        }
 	}
 	// boal <--
 
 	switch(ControlName)
 	{
 		case "SwitchCameraOffset":
-			if(!CheckAttribute(locCamera,"OffsetPreset"))
-			{
-				// ПРЕСЕТ 1
-				locCamera.OffsetPreset.preset1.x = 0.5;
-				locCamera.OffsetPreset.preset1.y = 0.2;
-				locCamera.OffsetPreset.preset1.z = 0.3;
-				// ПРЕСЕТ 2
-				locCamera.OffsetPreset.preset2.x = 0.0;
-				locCamera.OffsetPreset.preset2.y = 0.2;
-				locCamera.OffsetPreset.preset2.z = -0.6;
-				// ДЕФОЛТНЫЙ ПРЕСЕТ
-				locCamera.OffsetPreset.CurPreset = 1;
-			}
 			int iPreset = sti(locCamera.OffsetPreset.CurPreset);
 			iPreset++;
 			if(iPreset > 2)
@@ -249,7 +266,7 @@ void Process_Controls(string ControlName)
         case "TimeScale":
             DeleteAttribute(pchar, "pause");
 			// if (loadedLocation.type == "Underwater") return; //запрет ускорения под водой.
-			if (CheckAttribute(pchar, "questTemp.NoFast")) return; //запрет ускорения
+			if(CheckAttribute(pchar, "questTemp.NoFast")) return; //запрет ускорения
 			if(TimeScaleCounter != 0)
 			{
 				SetTimeScale(1.0);
@@ -260,8 +277,34 @@ void Process_Controls(string ControlName)
 			{
 				SetTimeScale(GetSeaTimeScale());
 				TimeScaleCounter = 4;
-				TimeScale_Info("x2");		 
+				TimeScale_Info("x2");
 			}
+
+            // TUTOR-ВСТАВКА
+            if(TW_IsActive())
+            {
+                if(objTask.sea == "2_TimeScale" && TimeScaleCounter != 0)
+                {
+                    objTask.sea = "3_TimeScale";
+                    TW_ColorWeak(TW_GetTextARef("TimeScale_R_on"));
+                    itemID = StringFromKey("Tutorial_5", GKIC("TimeScale", "Sailing3Pers"));
+                    TW_AddBottomText("TimeScale_R_off", itemID, "Default");
+                    TW_RecalculateLayout();
+                }
+                else if(objTask.sea == "3_TimeScale" && TimeScaleCounter == 0)
+                {
+                    objTask.sea = "4_TimeScale";
+                    TW_ColorWeak(TW_GetTextARef("TimeScale_R_off"));
+                    itemID = StringFromKey("Tutorial_6", GKIC("TimeScaleFasterBA", "Sailing3Pers"));
+                    TW_AddBottomText("TimeScale_plus", itemID, "Default");
+                    TW_RecalculateLayout();
+                }
+                else if(objTask.sea == "5_TimeScale" && TimeScaleCounter == 0)
+                {
+                    TW_ColorWeak(TW_GetTextARef("TimeScale_minus"));
+                    TW_FinishSea_2_TimeScale();
+                }
+            }
 		break;
 	
 		case "ChangeShowInterface":
@@ -547,7 +590,7 @@ void Process_Controls(string ControlName)
 				}
 			}
 			}
-			if (CheckAttribute(location, "id") && location.id == "Treasure_Alcove") // калеуче
+			if (CheckAttribute(location, "id") && location.id == "KhaelRoa_Treasure_Alcove") // калеуче
 			{
 				bOk = (IsCharacterInLocator(pchar, "teleport", "teleport0")) || (IsCharacterInLocator(pchar, "teleport", "teleport1")) || (IsCharacterInLocator(pchar, "teleport", "teleport2")) || (IsCharacterInLocator(pchar, "teleport", "teleport3")) || (IsCharacterInLocator(pchar, "teleport", "teleport4")) || (IsCharacterInLocator(pchar, "teleport", "teleport5")) || (IsCharacterInLocator(pchar, "teleport", "teleport6"))
 				if (bOk)

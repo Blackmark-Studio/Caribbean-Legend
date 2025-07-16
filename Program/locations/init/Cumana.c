@@ -1075,10 +1075,13 @@ int LocationInitCumana(int n)
 	locations[n].id.label = "Shore20";
 	locations[n].image = "loading\outside\harbor3.tga";
 	locations[n].worldmap = "Shore20";
+	//Town sack
+	locations[n].townsack = "LosTeques";
 	//Sound
 	locations[n].type = "seashore";
+	locations[n].fastreload = "LosTeques";
 	locations[n].islandId = "Mein";
-	locations[n].islandIdAreal = "Cumana";
+	locations[n].islandIdAreal = "LosTeques";
 	locations[n].DisableEncounters = true;
 	locations[n].deadlocked = true;
 	//Models
@@ -1110,7 +1113,7 @@ int LocationInitCumana(int n)
 	locations[n].environment.sea = "true";
 	//Reload map
 	locations[n].reload.l1.name = "reload1";
-	locations[n].reload.l1.go = "Cumana_jungle_mine";
+	locations[n].reload.l1.go = "LosTeques_Jungle_01";
 	locations[n].reload.l1.emerge = "reload1";
 	locations[n].reload.l1.autoreload = "1";
 	locations[n].reload.l1.label = "Jungle";
@@ -1127,13 +1130,16 @@ int LocationInitCumana(int n)
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////проход к руднику
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "Cumana_jungle_mine";
+	locations[n].id = "LosTeques_Jungle_01";
 	locations[n].id.label = "Jungle";
 	locations[n].image = "loading\outside\jungle_" + rand(3) + ".tga";
+	//Town sack
+	locations[n].townsack = "LosTeques";
 	//Sound
 	locations[n].type = "jungle";
+	locations[n].fastreload = "LosTeques";
 	locations[n].islandId = "Mein";
-	locations[n].islandIdAreal = "Cumana";
+	locations[n].islandIdAreal = "LosTeques";
 	//Models
 	//Always
 	locations[n].filespath.models = "locations\Outside\Jungles\jungle8\";
@@ -1166,7 +1172,7 @@ int LocationInitCumana(int n)
 	locations[n].locators_radius.reload.reload1_back = 2.0;
 
 	locations[n].reload.l2.name = "reload2_back";
-	locations[n].reload.l2.go = "Minentown_ExitTown";
+	locations[n].reload.l2.go = "LosTeques_ExitTown";
 	locations[n].reload.l2.emerge = "reload2";
 	locations[n].reload.l2.autoreload = "1";
 	locations[n].reload.l2.label = "Jungle";
@@ -1176,15 +1182,16 @@ int LocationInitCumana(int n)
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////выход к руднику
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "Minentown_ExitTown";
+	locations[n].id = "LosTeques_ExitTown";
 	locations[n].id.label = "ExitMine";
 	locations[n].image = "loading\Gate" + rand(1) + ".tga";
 	//Town sack
-	locations[n].townsack = "Cumana";
+	locations[n].townsack = "LosTeques";
 	//Sound
 	locations[n].type = "jungle";
+	locations[n].fastreload = "LosTeques";
 	locations[n].islandId = "Mein";
-	locations[n].islandIdAreal = "Cumana";
+	locations[n].islandIdAreal = "LosTeques";
 	//Models
 	//Always
 	locations[n].filespath.models = "locations\Outside\Jungles\TownExitW";
@@ -1217,17 +1224,17 @@ int LocationInitCumana(int n)
 	//Reload map
 
 	locations[n].reload.l1.name = "reload2_back";
-	locations[n].reload.l1.go = "Cumana_jungle_mine";
+	locations[n].reload.l1.go = "LosTeques_Jungle_01";
 	locations[n].reload.l1.emerge = "reload2";
 	locations[n].reload.l1.autoreload = "1";
 	locations[n].reload.l1.label = "Jungle";
 	locations[n].locators_radius.reload.reload2_back = 2.0;
 
 	locations[n].reload.l2.name = "reload4";
-	locations[n].reload.l2.go = "Minentown_town";
+	locations[n].reload.l2.go = "LosTeques_town";
 	locations[n].reload.l2.emerge = "gate_back";
 	locations[n].reload.l2.autoreload = "0";
-	locations[n].reload.l2.label = "Minentown";
+	locations[n].reload.l2.label = "LosTeques";
 	
 	locations[n].reload.l3.name = "reload3_back";
 	locations[n].reload.l3.go = "Mangarosa_land";
@@ -1238,19 +1245,18 @@ int LocationInitCumana(int n)
 	n = n + 1;
 	
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////Рудник
+/////////////////Город-рудник Лос-Текес
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "Minentown_town";
+	locations[n].id = "LosTeques_town";
     locations[n].id.label = "Street";
 	locations[n].worldmap = "Cumana";
 	locations[n].islandId = "Mein";
-	locations[n].islandIdAreal = "Cumana";
+	locations[n].islandIdAreal = "LosTeques";
     Locations[n].image = "Loading\Mine.tga";
-	//Town sack
-	locations[n].townsack = "Cumana";
 	//Sound
 	locations[n].type = "town";
-	locations[n].fastreload = "Minentown";
+	locations[n].townsack = "LosTeques";
+	locations[n].fastreload = "LosTeques";
 	locations[n].citizens = true;
 	locations[n].soldiers = true;
 	LAi_LocationFantomsGen(&locations[n], true);
@@ -1272,38 +1278,38 @@ int LocationInitCumana(int n)
     //Reload map
 	// основные городские заведения, выход из города, шахта
 	locations[n].reload.l1.name = "gate_back";
-	locations[n].reload.l1.go = "Minentown_ExitTown";
+	locations[n].reload.l1.go = "LosTeques_ExitTown";
     locations[n].reload.l1.emerge = "reload4";  
     locations[n].reload.l1.autoreload = "0";
     locations[n].reload.l1.label = "ExitMine";
 
 	Locations[n].reload.l2.name = "reload1_back";
-    Locations[n].reload.l2.go = "Minentown_mine";
+    Locations[n].reload.l2.go = "LosTeques_mine";
     Locations[n].reload.l2.emerge = "reload1";
     Locations[n].reload.l2.autoreload = "1";
     Locations[n].reload.l2.label = "mines";
 	
 	Locations[n].reload.l3.name = "reload3_back";
-	Locations[n].reload.l3.go = "Minentown_townhall";
+	Locations[n].reload.l3.go = "LosTeques_townhall";
 	Locations[n].reload.l3.emerge = "reload1";
 	Locations[n].reload.l3.autoreload = "0";
 	Locations[n].reload.l3.label = "Townhall";
 	locations[n].reload.l11.close_for_night = 1;
 
 	Locations[n].reload.l4.name = "reload4_back";
-	Locations[n].reload.l4.go = "Minentown_tavern";
+	Locations[n].reload.l4.go = "LosTeques_tavern";
 	Locations[n].reload.l4.emerge = "reload1";
 	Locations[n].reload.l4.autoreload = "0";
 	Locations[n].reload.l4.label = "tavern";
 
 	Locations[n].reload.l5.name = "reload7_back";
-	Locations[n].reload.l5.go = "Minentown_church";
+	Locations[n].reload.l5.go = "LosTeques_church";
 	Locations[n].reload.l5.emerge = "reload1";
 	Locations[n].reload.l5.autoreload = "0";
 	Locations[n].reload.l5.label = "Church";
 
 	Locations[n].reload.l6.name = "reload6_back";
-	Locations[n].reload.l6.go = "Minentown_store";  
+	Locations[n].reload.l6.go = "LosTeques_store";  
 	Locations[n].reload.l6.emerge = "reload1";
 	Locations[n].reload.l6.autoreload = "0";
 	Locations[n].reload.l6.label = "Store";
@@ -1369,12 +1375,14 @@ int LocationInitCumana(int n)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	Шахта
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "Minentown_mine";
+	locations[n].id = "LosTeques_mine";
 	locations[n].id.label = "mines";
     locations[n].image = "loading\Mine.tga";
 	//Sound
 	locations[n].type = "mine";
-	locations[n].islandId = "Cumana";
+	locations[n].townsack = "LosTeques";
+	locations[n].fastreload = "LosTeques";
+	locations[n].islandId = "Mein";
 	//Models
 	//Always
 	locations[n].filespath.models = "locations\inside\DungeonDuffer2";
@@ -1399,7 +1407,7 @@ int LocationInitCumana(int n)
 	locations[n].environment.weather.rain = false;
 	//Reload map
 	locations[n].reload.l1.name = "reload1_back";
-	locations[n].reload.l1.go = "Minentown_town";
+	locations[n].reload.l1.go = "LosTeques_town";
 	locations[n].reload.l1.emerge = "reload1";
 	Locations[n].reload.l1.autoreload = "1";
 	locations[n].reload.l1.label = "Street";
@@ -1408,16 +1416,16 @@ int LocationInitCumana(int n)
 	//////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////// Резиденция
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "Minentown_townhall";
+	locations[n].id = "LosTeques_townhall";
 	locations[n].id.label = "Residence";
 	locations[n].image = "loading\inside\smallresidence.tga";
 	//Town sack
-	locations[n].townsack = "Minentown";
+	locations[n].townsack = "LosTeques";
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "residence";
-	locations[n].fastreload = "Minentown";
-	locations[n].islandId = "Cumana";
+	locations[n].fastreload = "LosTeques";
+	locations[n].islandId = "Mein";
 	//Models
 	//Always
 	locations[n].filespath.models = "locations\inside\SmallResidence";
@@ -1439,7 +1447,7 @@ int LocationInitCumana(int n)
 	locations[n].environment.sea = "false";
 	//Reload map
 	locations[n].reload.l1.name = "reload1";
-	locations[n].reload.l1.go = "Minentown_town";
+	locations[n].reload.l1.go = "LosTeques_town";
 	locations[n].reload.l1.emerge = "reload3_back";
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "Street";
@@ -1449,18 +1457,18 @@ int LocationInitCumana(int n)
 	//////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////// Таверна
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "Minentown_tavern";
+	locations[n].id = "LosTeques_tavern";
 	locations[n].id.label = "Tavern";
 	locations[n].filespath.models = "locations\inside\Tavern04\";
 	locations[n].image = "loading\inside\tavern.tga";
 	locations[n].habitues = 1;
 	//Town sack
-	locations[n].townsack = "Minentown";
+	locations[n].townsack = "LosTeques";
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "tavern";
-	locations[n].fastreload = "Minentown";
-	locations[n].islandId = "Cumana";
+	locations[n].fastreload = "LosTeques";
+	locations[n].islandId = "Mein";
 	//Models
 	//Always
 	locations[n].models.always.tavern = "Tavern04";
@@ -1478,13 +1486,13 @@ int LocationInitCumana(int n)
 	locations[n].environment.sea = "false";
 	//Reload map
 	locations[n].reload.l1.name = "reload1_back";
-	locations[n].reload.l1.go = "Minentown_town";
+	locations[n].reload.l1.go = "LosTeques_town";
 	locations[n].reload.l1.emerge = "reload4_back";
 	locations[n].reload.l1.autoreload = "0";
     locations[n].reload.l1.label = "Street";
 
 	locations[n].reload.l2.name = "reload2_back";
-	locations[n].reload.l2.go = "Minentown_tavern_upstairs";
+	locations[n].reload.l2.go = "LosTeques_tavern_upstairs";
 	locations[n].reload.l2.emerge = "reload1";
 	locations[n].reload.l2.autoreload = "0";
 	locations[n].reload.l2.label = "Tavern upstairs";
@@ -1495,17 +1503,17 @@ int LocationInitCumana(int n)
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////// Комната в таверне 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "Minentown_tavern_upstairs";
+	locations[n].id = "LosTeques_tavern_upstairs";
 	locations[n].filespath.models = "locations\inside\Tavern_room";
 	locations[n].id.label = "Tavern upstairs";
 	locations[n].image = "loading\inside\tavern.tga";
 	//Town sack
-	locations[n].townsack = "LeFransua";
+	locations[n].townsack = "LosTeques";
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "house";
-	locations[n].fastreload = "Minentown";
-	locations[n].islandId = "Cumana";
+	locations[n].fastreload = "LosTeques";
+	locations[n].islandId = "Mein";
 	//Models
 	//Always
 	locations[n].models.always.locators = "Tavern_room_locators";
@@ -1526,7 +1534,7 @@ int LocationInitCumana(int n)
 	locations[n].environment.sea = "false";
 	//Reload map
 	locations[n].reload.l1.name = "reload1_back";
-	locations[n].reload.l1.go = "Minentown_tavern";
+	locations[n].reload.l1.go = "LosTeques_tavern";
 	locations[n].reload.l1.emerge = "reload2";
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "Tavern";
@@ -1536,16 +1544,16 @@ int LocationInitCumana(int n)
 	//////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////// Магазин
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "Minentown_store";
+	locations[n].id = "LosTeques_store";
 	locations[n].id.label = "Store";
 	locations[n].image = "loading\inside\shop.tga";
 	//Town sack
-	locations[n].townsack = "Minentown";
+	locations[n].townsack = "LosTeques";
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "shop";
-	locations[n].fastreload = "Minentown";
-	locations[n].islandId = "Cumana";
+	locations[n].fastreload = "LosTeques";
+	locations[n].islandId = "Mein";
 	//Models
 	//Always
 	locations[n].filespath.models = "locations\inside\StoreSmall\";
@@ -1565,7 +1573,7 @@ int LocationInitCumana(int n)
 	locations[n].environment.sea = "false";
 	//Reload map
 	locations[n].reload.l1.name = "reload1";
-	locations[n].reload.l1.go = "Minentown_town";
+	locations[n].reload.l1.go = "LosTeques_town";
 	locations[n].reload.l1.emerge = "reload6_back"; 
 	locations[n].reload.l1.autoreload = "0";
     locations[n].reload.l1.label = "Street";
@@ -1575,16 +1583,16 @@ int LocationInitCumana(int n)
 	//////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////// Церковь
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	locations[n].id = "Minentown_church";
+	locations[n].id = "LosTeques_church";
 	locations[n].id.label = "church";
 	locations[n].image = "loading\inside\church.tga";
 	//Town sack
-	locations[n].townsack = "Minentown";
+	locations[n].townsack = "LosTeques";
 	locations[n].lockWeather = "Inside";
 	//Sound
 	locations[n].type = "church";
-	locations[n].fastreload = "Minentown";
-	locations[n].islandId = "Cumana";
+	locations[n].fastreload = "LosTeques";
+	locations[n].islandId = "Mein";
 	//Models
 	locations[n].filespath.models = "locations\inside\church_IM\";
 	//Always
@@ -1604,7 +1612,7 @@ int LocationInitCumana(int n)
 	locations[n].environment.sea = "false";
 	//Reload map
 	locations[n].reload.l1.name = "reload1";
-	locations[n].reload.l1.go = "Minentown_town";
+	locations[n].reload.l1.go = "LosTeques_town";
 	locations[n].reload.l1.emerge = "reload7_back"; 
 	locations[n].reload.l1.autoreload = "0";
     locations[n].reload.l1.label = "Street";

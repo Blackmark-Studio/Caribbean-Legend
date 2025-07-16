@@ -290,87 +290,104 @@ Eine Reihe von Medikamenten und Instrumenten für die Behandlung der häufigsten
 Medikamente an Bord tragen dazu bei, Verletzte zu retten, Verluste an Bord zu verringern und Kranke auf See zu heilen.
 }
 
-Cannon_3 {Falke}
+Cannon_3 {Falkonetten}
 Cannon_3_descr
 {
-Deckkanonen, die mit einer Ringlafette ausgestattet sind. Sie verfügen über eine hohe Mobilität, haben aber aufgrund des kleinen Kalibers eine geringere Schussweite und geringeren Schaden.
-Oft sind sie mit einem austauschbaren Verschluss ausgestattet, der ein noch schnelleres Nachladen ermöglicht.
-Schussreichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Deckgeschütze mit Lafette. Sie bieten die größte Beweglichkeit und haben aufgrund ihrer geringen Größe die geringste Feuerkraft und Reichweite.
+Oft sind sie mit einem austauschbaren Verschluss ausgestattet, der ein schnelles Nachladen ermöglicht.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
 
-Cannon_6 {Leichte Halbkanonen}
+Cannon_6 {6-Pfund-Halbkanonen}
 Cannon_6_descr
 {
-Kleine Kanonen sind wegen ihres geringen Gewichts und ihrer einfachen Wartung auf Kurier- und Handelsschiffen sehr beliebt.
-Schussreichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Kleine Geschütze, sehr beliebt auf Kurier- und Handelsschiffen wegen ihres geringen Gewichts, niedrigen Preises und ihrer Langlebigkeit. Sie sind pflegeleicht und erfordern keine erfahrene Besatzung.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
 
-Cannon_12 {Halbkanonen}
+Cannon_8 {8-Pfund-Halbkanonen}
+Cannon_8_descr
+{
+Einer der beliebtesten Kaliber auf kleinen Schiffen, zu finden sowohl auf Handels- als auch auf Patrouillenschiffen. Sie werden für ihre hervorragende Kombination aus Größe, Gewicht und Feuerkraft geschätzt.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+}
+
+Cannon_12 {12-Pfund-Halbkanonen}
 Cannon_12_descr
 {
-Hochzuverlässige Standardkanonen der meisten militärischen Flottillen, die in großen Höhenwinkeln feuern können, was die effektive Kampfentfernung deutlich erhöht.
-Schussreichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Ein weit verbreitetes Kaliber bei kleinen Kriegsschiffen. Für ihre Größe und ihr Gewicht bieten sie beeindruckende Feuerkraft, erfordern jedoch vollständige Geschützmannschaften, was die Besatzungszahl erhöht.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
 
-Cannon_16 {Marine Halbkanonen}
+Cannon_16 {16-Pfund-Halbkanonen}
 Cannon_16_descr
 {
-Moderne französische Kanonen. Dank der fortschrittlichen Konstruktion und des von Monsieur de Valliere entwickelten neuen Systems haben diese Kanonen eine größere Reichweite und richten mehr Schaden an als gewöhnliche Halbkanonen. Sie brauchen jedoch länger zum Laden, sind etwas weniger zuverlässig und schwerer.
-Schussreichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Moderne Geschütze französischen Typs. Dank ihrer fortschrittlichen Konstruktion bieten sie ausgezeichnete Reichweite, Zuverlässigkeit und Feuerkraft. Ein sehr verbreitetes Kaliber bei Patrouillen- und Aufklärungsschiffen.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
 
-Cannon_20 {Kleine Kanonen}
+Cannon_18 {18-Pfund-Halbkanonen}
+Cannon_18_descr
+{
+Leistungsstarke Universalgeschütze, die früher häufig auf Kriegsschiffen installiert wurden. Im Archipel recht verbreitet und für ihre Einfachheit und Zuverlässigkeit geschätzt, obwohl ihre veraltete Konstruktion die Reichweite etwas einschränkt.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+}
+
+Cannon_20 {20-Pfund-Kanonen}
 Cannon_20_descr
 {
-Kanonen des größten Kalibers feuern feilenharte Kanonenkugeln ab, die es erlauben, den Schaden am Feind zu erhöhen. Allerdings führt der längere Lauf zu einer deutlichen Erhöhung des Gewichts.
-Schussreichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Langrohrige Artilleriegeschütze, die auf Kreuzern und Hilfsschiffen von Militärkonvois eingesetzt werden. Für effektives Feuer ist eine koordinierte Arbeit der Geschützmannschaft erforderlich.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
 
-Cannon_24 {Schiffskanonen}
+Cannon_24 {24-Pfund-Kanonen}
 Cannon_24_descr
 {
-Die ausgewogensten Kanonen, wenn man ihre wichtigsten technischen Merkmale betrachtet. Sie sind aus gutem Grund auf Militär- und Expeditionsschiffen sehr beliebt.
-Schussreichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Das Hauptkaliber auf Kriegsschiffen, der Höhepunkt der Entwicklung der Schiffsartillerie. Sie bieten ein perfektes Gleichgewicht zwischen Reichweite und Feuerkraft, und ihre gelungene Konstruktion ermöglicht es, lange Seeschlachten ohne kritische Schäden zu überstehen.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
 
-Cannon_32 {Kanonen-Batterie}
+Cannon_32 {32-Pfund-Kanonen}
 Cannon_32_descr
 {
-Schwere Kanonen großen Kalibers, die in der Lage sind, Verteidigungsanlagen zu bombardieren. Verursacht großen Schaden am Schiffsrumpf.
-Schussreichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Großkalibrige schwere Geschütze, die enormen Schaden anrichten und sich zur Bombardierung von Festungen eignen. Aufgrund der Materialgrenzen wird eine reduzierte Pulverladung verwendet, was die Reichweite einschränkt.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
 
-Cannon_36 {Küstenkanonen}
+Cannon_36 {36-Pfund-Kanonen}
 Cannon_36_descr
 {
-Kanonen mit langem Lauf sind seltene Gäste auf dem Kanonendeck. Aber trotz ihrer langen Nachladezeit richten sie großen Schaden an und haben eine recht große Reichweite.
-Schussreichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Langrohrige Kanonen, selten auf dem Geschützdeck zu finden. Die langsame Nachladezeit und begrenzte Reichweite werden durch den verheerenden Schaden ausgeglichen, den die langsam fliegenden schweren Kugeln verursachen. Erfordern große Geschützmannschaften.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
 
-Cannon_42 {Belagerungskanonen}
+Cannon_42 {42-Pfund-Bombarden}
 Cannon_42_descr
 {
-Eine fast veraltete, aber immer noch leistungsstarke Kanone, die sich sehr gut für den Einsatz auf Linienschiffen eignet.
-Schussreichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Furchterregende Geschütze, der Höhepunkt der Schiffsfeuerkraft. Sie werden ausschließlich auf Linienschiffen, in Festungen und bei großen europäischen Schlachten eingesetzt. Erfordern eine große und gut ausgebildete Besatzung.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
 
-Culverine_8 {Halb-Kulverine}
+Culverine_8 {Halbkartaunen}
 Culverine_8_descr
 {
-Langläufige 8-Pfünder-Kanone auf einer festen Lafette. Hat eine größere Reichweite. Wird normalerweise für Sperrfeuer verwendet.
-Schussreichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Langrohrige 8-Pfund-Geschütze auf einem speziellen Gestell mit kräftigem Unterbau und Vollholzrädern.
+Sie bieten erhöhte Schussweite. Üblicherweise für Sperrfeuer verwendet.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
 
-Culverine_18 {Kulverine}
+Culverine_18 {Kartaunen}
 Culverine_18_descr
 {
-Diese 18 Pfund schwere mittlere Kanone mit großer Reichweite ist 12 Fuß lang. Trotz der erstaunlichen Reichweite ist sie sehr langsam und hat eine sehr lange Nachladezeit.
-Schussreichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Mittlere 18-Pfund-Geschütze mit erhöhter Reichweite, geeignet für den Einsatz auf relativ kleinen Schiffen.
+Trotz ihrer beeindruckenden Schussweite sind sie äußerst schwer und benötigen lange zum Laden.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
 
-Culverine_36 {Volle Kulverine}
+Culverine_36 {Vollkartaunen}
 Culverine_36_descr
 {
-Eine 36 Pfund schwere Festungskanone, die für das Sperrfeuer bestimmt ist. Kann auch in den Schiffsbatterien eingesetzt werden und dem Feind erheblichen Schaden zufügen, vorausgesetzt, der Kanonier ist erfahren, wendig und treffsicher.
-Schussreichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
-} 
+Festungsgeschütze mit 36 Pfund, ausgelegt für Breschfeuer: Derjenige, der zuerst schießt, gewinnt!
+Aufgrund ihrer großen Länge können sie nur in Häfen installiert werden, die für 42-Pfund-Kanonen ausgelegt sind.
+Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+}

@@ -1,0 +1,21 @@
+NoLootCorpse0 {Le tasche di questo ragazzo sono vuote come una nave fantasma.}
+NoLootCorpse1 {Sembra che non avesse nulla di valore.}
+NoLootCorpse2 {Le tasche di questo sono vuote.}
+NoLootCorpse3 {Mi sono perso qualcosa? No, decisamente vuoto.}
+NoLootCorpse4 {Un altro uomo morto senza un soldo.}
+NoLootCorpse5 {Sembra che abbia vissuto di rendita.}
+NoLootCorpse6 {Questo cadavere non può nemmeno pagare il traghettatore.}
+NoLootCorpse7 {Nessun colpo di riserva, nessuna polvere. Ho perso tempo.}
+NoLootCorpse8 {Non una moneta nelle tasche, né nella camicia.}
+NoLootCorpse9 {Era poverissimo, non aveva nemmeno una moneta.}
+NoLootCorpse10 {Perché mi sono preoccupato? Questo è vuoto.}
+NoLootCorpse11 {Le sue tasche sono un vuoto incolmabile.}
+NoLootCorpse12 {Qui non c'è nulla. Forse tasche nascoste?}
+NoLootCorpse13 {Niente soldi, niente chiavi, niente testamento.}
+NoLootCorpse14 {Partì per l'aldilà senza alcun valore.}
+NoLootCorpse15 {È chiaro che non era ricco: aveva le tasche vuote.}
+NoLootCorpse16 {Il povero diavolo è chiaramente andato in battaglia viaggiando leggero.}
+NoLootCorpse17 {Si armò con le sue ultime monete.}
+NoLootCorpse18 {Un cadavere è un cadavere. Non c'è niente qui.}
+NoLootCorpse19 {Deve aver lasciato tutti i suoi tesori in un forziere.}
+NoLootCorpse20 {Sembra che abbia perso tutti gli oggetti di valore durante la lotta.}

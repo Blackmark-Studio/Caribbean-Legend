@@ -391,11 +391,6 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("SetTichingituJail");
 			SetFunctionTimerCondition("FreeTichingituOver", 0, 0, 10, false);
 			pchar.questTemp.Sharlie = "takeknife";
-			if(CheckAttribute(pchar, "questTemp.Tutorial_Dubloons"))
-			{
-				DeleteAttribute(pchar, "questTemp.Tutorial_Dubloons");
-				Tutorial_Dubloons("");
-			}
 		break;
 		
 		case "Tichingitu":
@@ -1012,7 +1007,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "persian_5":
-			AddQuestRecord("Unique_Goods", "2");
+			AddQuestRecordInfo("Unique_Goods", "2");
 			dialog.text = "Da. Va chercher ton achat. Mais attends, attends, cher ami ! En plus de ce shamshir, que tu m'as rendu par véritable bienveillance, il y en avait deux autres. Je te prie, s'il te plaît, si tu les trouves, ramène-les-moi et je te paierai plus qu'un prix équitable pour leur retour.";
 			link.l1 = "D'accord, Fadey. Si je les trouve, je les ramènerai.";
 			link.l1.go = "exit";
@@ -1287,7 +1282,9 @@ void ProcessDialogEvent()
 		
 		case "agree_1":
 			DialogExit();
-			SetFunctionTimerCondition("ChangeNationRelationFromFadeyComplete", 0, 0, 10+rand(5), false);
+            rate = 10 + rand(5);
+            rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+			SetFunctionTimerCondition("ChangeNationRelationFromFadeyComplete", 0, 0, rate, false);
 			pchar.GenQuest.FadeyNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.FadeyNation), 0));
 			npchar.quest.relation = "true";
 		break;
@@ -1307,7 +1304,7 @@ void ProcessDialogEvent()
 			dialog.Text = "Bien, je vais arranger la querelle, ne t'inquiète pas. Ils feront à nouveau affaire avec toi, comme au bon vieux temps.";
 			Link.l1 = "Merci !";
 			Link.l1.go = "exit";
-			ChangeContrabandRelation(pchar, 25);
+			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
 			RemoveDublonsFromPCharTotal(700); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
 		break;
@@ -1355,7 +1352,7 @@ void ProcessDialogEvent()
 			link.l1 = "Parfait, Fadeï ! Il est étonnamment facile de faire des affaires avec vous. Je suis sûr"+GetSexPhrase("","e")+" que le succès nous attend. À bientôt !";
 			link.l1.go = "exit";
 			RemoveDublonsFromPCharTotal(3000);
-			AddQuestRecord("Unique_Goods", "2_1");
+			AddQuestRecordInfo("Unique_Goods", "2_1");
 			pchar.questTemp.UpgradeRopes = true;
 			pchar.questTemp.FadeyRopesBlock = true;
 			DeleteAttribute(pchar, "questTemp.FadeyRopesPotom");

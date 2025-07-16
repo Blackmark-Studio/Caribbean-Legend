@@ -32,14 +32,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "svenson":
-		dialog.text = RandPhraseSimple("Oh, nuestro Jan Svenson es una persona muy importante. En el pasado fue el pirata más audaz de Tierra Firme Occidental y aún ahora no ha comenzado a oxidarse, ¡ja! Pero esos días han pasado, ya no está activo como solía estar. Posee una mansión y vive allí con su joven esposa y siempre es un invitado bienvenido en la residencia del gobernador. Muchos invitados vienen a ver a Jan, piratas, la mayoría.", "¡Jan Svenson es una leyenda de Tierra Firme Occidental! Forest Devil, así lo llamaban los españoles cuando los expulsaba de aquí. Solía ser un corsario famoso, pero ahora es un ciudadano respetado de nuestra colonia. Aunque todavía hace algunos 'negocios' por el lado, pero ya no con sus propias manos. Rara vez deja su casa desde que se casó con una joven belleza.");
-		link.l1 = "Te lo agradezco";
+		dialog.text = RandPhraseSimple("Oh, nuestro Jan Svenson es una persona muy importante. En el pasado fue el pirata más audaz de Tierra Firme Occidental, y aún ahora no ha comenzado a oxidarse, ¡ja! Pero esos días han pasado, ya no está activo como solía estar. Posee una mansión y vive allí con su joven esposa, y siempre es un invitado bienvenido en la residencia del gobernador. Muchos invitados vienen a ver a Jan, piratas, la mayoría.", "¡Jan Svenson es una leyenda de Tierra Firme Occidental! 'Forest Devil', así lo llamaban los españoles cuando los expulsaba de aquí. Solía ser un corsario famoso, pero ahora es un ciudadano respetado de nuestra colonia. Aunque todavía hace algunos 'negocios', pero ya no con sus propias manos. Rara vez deja su casa desde que se casó con una joven belleza.");
+		link.l1 = "Te lo agradezco.";
 		link.l1.go = "exit";
 		break;
 
 	case "svenson_house":
-		dialog.text = RandPhraseSimple("Ve derecho desde el muelle hasta que veas la plaza, la casa a la derecha cerca de la fuente es la mansión de Svenson.", "Ve al muelle a través de la plaza desde la residencia del gobernador, la casa a la izquierda cerca de la fuente es la mansión de Svenson.");
-		link.l1 = "Te lo agradezco";
+		dialog.text = RandPhraseSimple("Ve derecho desde el muelle hasta que veas la plaza, la casa a la derecha cerca de la fuente es la casa de Svenson.", "Ve al muelle a través de la plaza desde la residencia del gobernador, la casa a la izquierda cerca de la fuente es la casa de Svenson.");
+		link.l1 = "Te lo agradezco.";
 		link.l1.go = "exit";
 		break;
 	}

@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_coffee":
-			i = drand(3)+1;
+			i = hrand(3)+1;
 			n = 5 - i;
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 11;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_cinnamon":
-			i = drand(3)+1;
+			i = hrand(3)+1;
 			n = 5 - i;
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 19;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 106;
@@ -317,7 +317,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_copra":
-			i = drand(3)+1;
+			i = hrand(3)+1;
 			n = 5 - i;
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 20;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;

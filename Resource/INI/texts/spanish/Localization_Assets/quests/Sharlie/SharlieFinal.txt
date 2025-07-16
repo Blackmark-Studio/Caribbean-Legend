@@ -245,7 +245,7 @@ SharlieFinal_54
 
 SharlieFinal_55
 {
-Enemigos en emboscada - @<n>
+Enemigos en emboscada: @<n>
 }
 
 SharlieFinal_56
@@ -383,4 +383,8 @@ Kirk
 SharlieFinal_84
 {
 El mundo ha cambiado y también tu héroe@<NewStr()> Pero esa es otra historia...
+}
+SharlieFinal_85
+{
+Alonso
 }

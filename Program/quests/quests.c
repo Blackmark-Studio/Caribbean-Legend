@@ -1,12 +1,4 @@
-
-#include "quests\quests_abordage.c"
-#include "quests\quests_check.c"
-#include "quests\quests_movie.c"
-#include "quests\characters_task.c"
-#include "quests\quests_scenes.c"
-#include "quests\tutorial.c"
-#include "quests\quests_reaction.c"
-#include "quests\reaction_functions.c"
+#include "quests\quests.h"
 
 #event_handler("LocationWaitNihgtEnd","WaitDatePostEventControl");
 #event_handler("evntQuestCameraRestore","QuestCameraRestore");
@@ -417,6 +409,13 @@ void AddQuestRecordEx(string idQuest,string idReferenceQuest,string idText)
 	// покраска новой СЖ
 	// SetQuestHeaderColor(idQuest, argb(255,255,128,255));
 	SetQuestHeaderColor(idQuest, argb(190,110,0,0));
+	
+	// evganat - пролог
+	if(idQuest == "SharlieTutorial" && CheckAttribute(&TEV, "Tutor.PopUpLogbook"))
+	{
+		DoQuestFunctionDelay("Tutorial_Logbook", 1.0);
+		DeleteAttribute(&TEV, "Tutor.PopUpLogbook");
+	}
 }
 
 // boal метод для инфы  -->
@@ -432,33 +431,46 @@ void SetQuestHeaderInfo(string idQuest)
 	}
 }
 
+// Со звуком
 void AddQuestRecordInfo(string idQuest, string idText)
+{
+    AddQuestRecordInfoEx(idQuest, idText, true);
+}
+
+// Без
+void AddQuestRecordInfo_Silent(string idQuest, string idText)
+{
+    AddQuestRecordInfoEx(idQuest, idText, false);
+}
+
+void AddQuestRecordInfoEx(string idQuest, string idText, bool bSound)
 {
     string idReferenceQuest = idQuest;
     
-	if(CheckAttribute(pchar,"QuestInfo."+idQuest)==false)
+	if(!CheckAttribute(pchar,"QuestInfo."+idQuest))
 	{
 		SetQuestHeaderInfo(idQuest);
 	}
 	string sTextLbl = "l0";
-	if( CheckAttribute(pchar,"QuestInfo."+idQuest+".Text") )
+	if(CheckAttribute(pchar,"QuestInfo."+idQuest+".Text"))
 	{
 		aref arTmp; makearef( arTmp, pchar.QuestInfo.(idQuest) );
 		makearef(arTmp,pchar.QuestInfo.(idQuest).Text);
 		sTextLbl = "l" + GetAttributesNum(arTmp);
 	}
-	if( sTextLbl != "" )
+	if(sTextLbl != "")
 	{
 		pchar.QuestInfo.(idQuest).Text.(sTextLbl) = "@"+idReferenceQuest+"@  @"+idText;
 		if(idQuest == "recipe") notification(XI_ConvertString("Recipe Update"), "Alchemy");
 		else notification(XI_ConvertString("Document Update"), "Document");
-		AddMsgToCharacter(pchar,MSGICON_LOGBOOK);
-                PlaySound("interface\notebook.wav");
+		AddMsgToCharacter(pchar, MSGICON_LOGBOOK);
+        if(bSound) PlaySound("interface\notebook.wav");
 	}
 	// покраска новой СЖ
-        // SetQuestHeaderColor(idQuest, argb(255, 60, 140, 255));
-        SetQuestHeaderColor(idQuest, argb(185,0,20,185));
+    // SetQuestHeaderColor(idQuest, argb(255, 60, 140, 255));
+    SetQuestHeaderColor(idQuest, argb(185,0,20,185));
 }
+
 // boal метод для инфы <--
 void AddQuestRecord(string idQuest,string idText)
 {
@@ -1188,10 +1200,18 @@ void DoReloadFromDeckToLocation(string idLocation, string idGroup, string idLoca
 void DeleteQuestCheck(string sQuestName)
 {
 	if(sQuestName=="") return;
-	if( CheckAttribute(pchar,"quest."+sQuestName+".win_condition") )	
+	if(CheckAttribute(pchar,"quest."+sQuestName+".win_condition"))	
 	{
 		pchar.quest.(sQuestName).over = "yes";
 	}
+}
+
+// belamour существует ли прерывание
+bool CheckQuestCondition(string sQuestName)
+{
+	if(sQuestName == "") return false;
+	
+	return CheckAttribute(pchar,"quest."+sQuestName+".win_condition") && !CheckAttribute(pchar,"quest."+sQuestName+".over");
 }
 
 // Получить полное имя персонажа
@@ -1455,11 +1475,17 @@ void QuestToSeaLogin_Add(string groupName)
 // запустить квестовую выгрузку в море
 void QuestToSeaLogin_Launch()
 {
+	string loadScr = "loading\sea_0" + rand(2) + ".tga";
+	if(CheckAttribute(pchar, "systeminfo.LockFader"))
+	{
+		loadScr = pchar.systeminfo.LockFader;
+		DeleteAttribute(pchar, "systeminfo.LockFader");
+	}
 	SetEventHandler("FaderEvent_EndFade", "QuestToSeaLoginFade", 0);
 	object fader;
 	CreateEntity(&fader, "fader");
 	SendMessage(&fader, "ls", FADER_PICTURE0, "loading\ImgBack.tga");
-	SendMessage(&fader, "ls",FADER_PICTURE,"loading\sea_0" + rand(2) + ".tga");
+	SendMessage(&fader, "ls",FADER_PICTURE, loadScr);
 	SendMessage(&fader, "lfl", FADER_OUT, 1.0, true);
 	int idxLoadLoc = FindLoadedLocation();
 	if( idxLoadLoc!=-1 )
@@ -2534,4 +2560,97 @@ bool CheckNewDocs()
 		if(CheckAttribute(pchar, "QuestInfo." + attributeName + ".InfoType") && CheckAttribute(pchar,"QuestInfo."+attributeName+ ".color")) return true;
 	}
 	return false;
+}
+
+// belamour работа с локаторами группы event
+void CheckEvent_OnEnterLocator(ref loc, string locator)
+{
+	string _event = FindEventInLocator(loc, locator);
+	if(_event == "") return;
+	
+	if(CheckAttribute(loc, "locatorEvent." + _event + ".location"))
+	{
+		if(loc.locatorEvent.(_event).location == loc.id && loc.locatorEvent.(_event).locator == locator)
+		{
+			Log_SetActiveAction("PlayEvent");
+			pchar.EventLocator = locator;
+		}
+	}
+}
+
+void SetLocatorEvent(string locID, string locator, string _event)
+{
+	ref loc;
+	int index = FindLocation(locID);
+	
+	if(index < 0) return;
+	
+	makeref(loc, locations[index]);
+	
+	loc.locatorEvent.(_event).location = locID;
+	loc.locatorEvent.(_event).locator = locator;
+	loc.locatorEvent.(_event).eventName = _event;
+	
+	QuestPointerToLoc(locID, "event", locator);
+}
+
+void DelLocatorEvent(string locID, string locator)
+{
+	ref loc;
+	int index = FindLocation(locID);
+	
+	if(index < 0) return;
+	
+	makeref(loc, locations[index]);
+	
+	string _event = FindEventInLocator(loc, locator);
+	if(_event == "") return;
+	
+	QuestPointerDelLoc(locID, "event", locator);
+	DeleteAttribute(loc, "locatorEvent." + _event);
+}
+
+void PlayLocatorEvent()
+{
+	ref loc;
+	int index = FindLoadedLocation();
+	string locator = pchar.EventLocator;
+	
+	if(index < 0) return;
+	
+	makeref(loc, locations[index]);
+	
+	string _event = FindEventInLocator(loc, locator);
+	if(_event == "") return;
+	
+	if(!CheckAttribute(loc, "locatorEvent." + _event)) return;
+	Log_SetActiveAction("Nothing");
+	BLI_RefreshCommandMenu();
+	QuestPointerDelLoc(loc.id, "event", locator);
+	
+	string sFunction = loc.locatorEvent.(_event).eventName;
+	DeleteAttribute(loc, "locatorEvent." + _event);
+	DeleteAttribute(pchar, "EventLocator");
+	call sFunction();
+}
+
+string FindEventInLocator(ref loc, string locator)
+{
+	if(CheckAttribute(loc, "locatorEvent"))
+	{
+		aref arQsts, arAttrQ;
+		string _event;
+		
+		makearef(arQsts, loc.locatorEvent);
+		int	qq = GetAttributesNum(arQsts);
+		for(int i = 0; i < qq; i++)
+		{
+			arAttrQ = GetAttributeN(arQsts, i);
+			_event = GetAttributeName(arAttrQ);
+			if(loc.locatorEvent.(_event).locator == locator)
+				return _event;
+		}
+	}
+	
+	return "";
 }

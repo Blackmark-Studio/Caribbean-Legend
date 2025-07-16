@@ -1,0 +1,25 @@
+Memento_1
+{
+Memento
+}
+
+Memento_2
+{
+Mortimer
+}
+
+Memento_3
+{
+Grim
+}
+
+Memento_4
+{
+Capitaine, c'est le fameux 'Memento' - le fléau des marchands d'esclaves ! 
+Il n'est pas notre ennemi, nous pouvons donc envoyer une chaloupe.
+}
+
+Memento_5
+{
+Damné	
+}

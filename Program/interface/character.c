@@ -371,7 +371,8 @@ void FillSkillTables()
 		GameInterface.TABLE_SPECIAL.(row).td1.str = XI_ConvertString(skillName + "T");
 		GameInterface.TABLE_SPECIAL.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillValue(xi_refCharacter, SPECIAL_TYPE, skillName);
-		GameInterface.TABLE_SPECIAL.(row).td4.str = skillVal;
+		//GameInterface.TABLE_SPECIAL.(row).td4.str = skillVal; // старый метод
+		GameInterface.TABLE_SPECIAL.(row).td4.str = GetCharacterSPECIAL(xi_refCharacter, skillName);
 		// рассчет драйна
 		diff = GetCharacterSPECIAL(xi_refCharacter, skillName) - skillVal;
 		if (diff == 0)
@@ -414,7 +415,8 @@ void FillSkillTables()
 
 		GameInterface.TABLE_SKILL_1.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillValue(xi_refCharacter, SKILL_TYPE, skillName);
-		GameInterface.TABLE_SKILL_1.(row).td5.str = skillVal;
+		//GameInterface.TABLE_SKILL_1.(row).td5.str = skillVal; // старый метод
+		GameInterface.TABLE_SKILL_1.(row).td5.str = GetSummonSkillFromName(xi_refCharacter, skillName);
 		// рассчет драйна
 		diff = GetSummonSkillFromName(xi_refCharacter, skillName) - skillVal;
 
@@ -467,7 +469,9 @@ void FillSkillTables()
 
 		GameInterface.TABLE_SKILL_2.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillValue(xi_refCharacter, SKILL_TYPE, skillName);
-		GameInterface.TABLE_SKILL_2.(row).td5.str = skillVal;
+		//GameInterface.TABLE_SKILL_2.(row).td5.str = skillVal; // старый метод
+		GameInterface.TABLE_SKILL_2.(row).td5.str = skillVal; // старый метод
+		
 		// рассчет драйна
 		diff = GetSummonSkillFromName(xi_refCharacter, skillName) - skillVal;
 
@@ -737,9 +741,9 @@ void NullSelectTable(string sControl)
 void SetOfficersSkills()
 {
 	string sCharacter = "pic"+(sti(GameInterface.PASSENGERSLIST.current)+1);
-	if (checkAttribute(GameInterface, "PASSENGERSLIST."+sCharacter))
+	if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter))
 	{
-		if (checkAttribute(GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
+		if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
 		{
 			sCharacter = GameInterface.PASSENGERSLIST.(sCharacter).character;
 			ref otherchr = &characters[sti(sCharacter)];
@@ -1074,7 +1078,14 @@ void ChoosePerk()
 	{
 	    showCondition = false;
 	}
-	// проверка на необходимык перки <--
+	// проверка на необходимые перки <--
+
+    // проверка ранга
+    if (CheckAttribute(&ChrPerksList, "list." + perkName + ".rank") && sti(xi_refCharacter.rank) < sti(ChrPerksList.list.(perkName).rank))
+	{
+        ok = false;
+    }
+
 	XI_WindowShow("PERK_WINDOW", true);
 	XI_WindowDisable("PERK_WINDOW", false);
 	// XI_WindowDisable("MAIN_WINDOW", true);

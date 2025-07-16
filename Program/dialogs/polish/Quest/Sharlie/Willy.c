@@ -22,7 +22,7 @@ void ProcessDialogEvent()
 		
 		case "catoche":
 			dialog.text = "Czołem, Monsieur. Cholera jasna, to ty jesteś tym, który wywołał tu całe to wojskowe zamieszanie?!";
-			link.l1 = TimeGreeting()+", panie. Tak, to był mój statek, który wylądował desant. O co w ogóle chodzi? Kim jesteś? Anglikiem, jak mniemam?";
+			link.l1 = TimeGreeting()+", panie. Tak, to był mój statek, który prowadził desant. O co w ogóle chodzi? Kim jesteś? Anglikiem, jak mniemam?";
 			link.l1.go = "catoche_1";
 		break;
 		
@@ -52,7 +52,7 @@ void ProcessDialogEvent()
 		
 		case "catoche_5":
 			dialog.text = "Żołnierze... Ach, po co nam jakieś tępe pałki!... Gdzie jest ciało Don Diego? Na nim mogły być ważne dokumenty!";
-			link.l1 = "Zostawiłem Don Diego na ziemi fortu zbrojnego. Jeśli tak bardzo go potrzebujesz, możesz go tam znaleźć. Nie sądzę, żeby mógł uciec.";
+			link.l1 = "Zostawiłem Don Diego na ziemi w zbrojowni. Jeśli tak bardzo go potrzebujesz, możesz go tam znaleźć. Nie sądzę, żeby mógł uciec.";
 			link.l1.go = "catoche_6";
 		break;
 		
@@ -82,12 +82,12 @@ void ProcessDialogEvent()
 		case "isladevieques":
 			PlaySound("Voice\English\sharlie\Willie Paterson.wav");
 			dialog.text = "Człowieku, plotki nie kłamią, że masz dziewięć żyć jak kot! "+TimeGreeting()+", Monsieur de Maure. Nie wyglądasz zbyt dobrze...";
-			link.l1 = TimeGreeting()+", Panie Paterson. Muszę powiedzieć, że ty i twój przyjaciel Archibald odegraliście swoje role i nieźle mnie oszukaliście, Do diabła z wami wszystkimi! Nawet się tego nie spodziewałem...";
+			link.l1 = TimeGreeting()+", Panie Paterson. Muszę powiedzieć, że ty i twój przyjaciel Archibald odegraliście swoje role i nieźle mnie oszukaliście, psia mać... Do diabła z wami wszystkimi! Nawet się tego nie spodziewałem...";
 			link.l1.go = "isladevieques_1";
 		break;
 		
 		case "isladevieques_1":
-			dialog.text = "Ej, nie przysięgaj przed bramami Ziemi Świętej. Nie spodziewałeś się tego? Jestem pochlebiony: udało mi się oszukać jednego z najsłynniejszych intrygantów archipelagu. Pomysł z dziennikiem był genialny, nie sądzisz?\nMusiałem cię zwabić w jakieś mroczne miejsce, zabicie cię na otwartym polu byłoby skandalem, jesteś bliskim przyjacielem Philippe'a de Poincy, prawda? Teraz znikniesz bez śladu i nikt nigdy nie dowie się jak.";
+			dialog.text = "Ej, nie przeklinaj przed bramami Ziemi Świętej. Nie spodziewałeś się tego? Jestem pochlebiony: udało mi się oszukać jednego z najsłynniejszych intrygantów archipelagu. Pomysł z dziennikiem był genialny, nie sądzisz?\nMusiałem cię zwabić w jakieś mroczne miejsce, zabicie cię na otwartym polu byłoby skandalem, jesteś bliskim przyjacielem Philippe'a de Poincy, prawda? Teraz znikniesz bez śladu i nikt nigdy nie dowie się jak.";
 			link.l1 = "Więc wszystko, co powiedział mi Calhoun... było kłamstwem?";
 			link.l1.go = "isladevieques_2";
 		break;
@@ -122,13 +122,13 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth.GirlKill"))
 			{
 				dialog.text = "Zmartwiony o swoją damę, kapitanie? Twoja kobieta leży tam w krzakach z dziurą w czole. Wytyczyła ci drogę i wkrótce do niej dołączysz. Powiem, była taką ładną dziewczyną! Mam nadzieję, że przeleciałeś ją więcej niż raz?";
-				link.l1 = "To skurwysyn! Zapłacisz za to, ty chuju?!";
+				link.l1 = "Ty... TY SKURWYSYNIE! Zabiłeś moją ukochaną?! Zapłacisz za to, ty chuju!";
 				link.l1.go = "isladevieques_6";
 			}
 			else
 			{
 				dialog.text = "Twoi oficerowie wytyczyli ci drogę, monsieur de Maure. Leżą tam w krzakach. Wkrótce dołączysz do nich.";
-				link.l1 = "Zobaczymy o tym!";
+				link.l1 = "Jeszcze się przekonamy!";
 				link.l1.go = "isladevieques_6";
 			}
 		break;

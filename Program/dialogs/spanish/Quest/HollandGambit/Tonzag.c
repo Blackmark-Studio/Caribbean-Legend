@@ -461,7 +461,7 @@ void ProcessDialogEvent()
 
 	case "tonzag_killed_hunters":
 		dialog.text = "¿Me perdí de algo, Capitán?";
-		link.l1 = " Oh, nada especial, solo otro día en el mar. ¡Mira, viejo diablo! Me has hecho un buen lío aquí.";
+		link.l1 = "Oh, nada especial, solo otro día en el mar. ¡Mira, viejo diablo! Me has hecho un buen lío aquí.";
 		link.l1.go = "tonzag_killed_hunters_1";
 		break;
 
@@ -510,7 +510,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "tonzag_drink_2":
-		dialog.text = "Las oportunidades de carrera después de tal camino militar eran pocas para mí: un bandido, un ahorcado o un guardia digno de la Compañía Neerlandesa de las Indias Occidentales. Elegí la última, como entenderás.";
+		dialog.text = "Las oportunidades de carrera después de tal camino militar eran pocas para mí: un bandido, un ahorcado o un guardia digno de la Compañía Holandesa de las Indias Occidentales. Elegí la última, como entenderás.";
 		link.l1 = "¿Desertaste de allí también?";
 		link.l1.go = "tonzag_drink_3";
 		break;
@@ -656,14 +656,14 @@ void ProcessDialogEvent()
 		link.l1.go = "exit";
 
 		NextDiag.TempNode = "tonzag_officer";
-		locations[FindLocation("Minentown_town")].locators_radius.reload.gate_back = 1.0;
-		DeleteAttribute(&locations[FindLocation("Minentown_town")], "locators_radius.reload.reload1_back");
+		locations[FindLocation("LosTeques_town")].locators_radius.reload.gate_back = 1.0;
+		DeleteAttribute(&locations[FindLocation("LosTeques_town")], "locators_radius.reload.reload1_back");
 		AddDialogExitQuestFunction("Tonzag_PrepareJournal");
 		break;
 
 	case "tonzag_in_hold":
 		dialog.text = "Buenas noticias, Capitán.";
-		link.l1 = " No veo nada bueno en nuestra situación, Hércules. Vamos, necesitamos hablar en privado.";
+		link.l1 = "No veo nada bueno en nuestra situación, Hércules. Vamos, necesitamos hablar en privado.";
 		link.l1.go = "tonzag_in_hold_1";
 		break;
 
@@ -690,12 +690,12 @@ void ProcessDialogEvent()
 
 	case "tonzag_drink_again_1":
 		dialog.text = "";
-		link.l1 = "Segundo, me mentiste, Hercule. Ningún desertor vale el esfuerzo que tus antiguos colegas están poniendo en eliminarte. ¿Qué gritaba nuestro prisionero en las minas? ¿Traidor? ¿Porto Bello? ¿Gruoh? Has hecho algo, Hercule, y esta vez quiero la verdad.";
+		link.l1 = "Segundo, me mentiste, Hercule. Ningún desertor vale el esfuerzo que tus antiguos colegas están poniendo en eliminarte. ¿Qué gritaba nuestro prisionero en las minas? ¿Traidor? ¿Portobello? ¿Gruoh? Has hecho algo, Hercule, y esta vez quiero la verdad.";
 		link.l1.go = "tonzag_drink_again_2";
 		break;
 
 	case "tonzag_drink_again_2":
-		dialog.text = "¿La verdad? La verdad es que deserté, junto con mi esposa Gruoh. Madame Tonzag no quería dejar la Liga; amaba esa vida, pero me amaba aún más a mí. Debíamos cuidar de un hidalgo español, pero él hizo una oferta mejor. Era nuestra oportunidad, y ambos aceptamos entrar a su servicio. Por supuesto, la Liga pensó que habíamos perecido en una misión y envió un segundo grupo a Porto Bello para terminar el trabajo y vengarse.";
+		dialog.text = "¿La verdad? La verdad es que deserté, junto con mi esposa Gruoh. Madame Tonzag no quería dejar la Liga; amaba esa vida, pero me amaba aún más a mí. Debíamos cuidar de un hidalgo español, pero él hizo una oferta mejor. Era nuestra oportunidad, y ambos aceptamos entrar a su servicio. Por supuesto, la Liga pensó que habíamos perecido en una misión y envió un segundo grupo a Portobello para terminar el trabajo y vengarse.";
 		link.l1 = "¿Y los mataste a todos?";
 		link.l1.go = "tonzag_drink_again_3";
 		break;
@@ -707,7 +707,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "tonzag_drink_again_4":
-		dialog.text = "Sí, deserté, rompí el contrato, maté a un par de docenas de miembros de la Liga. Pero he aprendido esa lección, Capitán. Y además, un hombre muerto no puede traicionar a nadie, y he estado muerto durante mucho tiempo, desde Porto Bello. Y quizás por eso ahora es tan difícil matarme.";
+		dialog.text = "Sí, deserté, rompí el contrato, maté a un par de docenas de miembros de la Liga. Pero he aprendido esa lección, Capitán. Y además, un hombre muerto no puede traicionar a nadie, y he estado muerto durante mucho tiempo, desde Portobello. Y quizás por eso ahora es tan difícil matarme.";
 		link.l1 = "Basta por hoy. Siento que todavía no me estás contando todo.";
 		link.l1.go = "tonzag_drink_again_5";
 		break;
@@ -764,12 +764,12 @@ void ProcessDialogEvent()
 
 	case "tonzag_after_hold":
 		dialog.text = "Una conversación interesante que tuvimos.";
-		link.l1 = "Me gustaría saber cuánto de eso es verdad... ¿Qué hay de la masacre en Porto Bello? Si no estaba mintiendo, significa que la última vez que tú y yo hablamos, nuevamente omitiste un par de hechos importantes de tu ilustre biografía.";
+		link.l1 = "Me gustaría saber cuánto de eso es verdad... ¿Qué hay de la masacre en Portobello? Si no estaba mintiendo, significa que la última vez que tú y yo hablamos, nuevamente omitiste un par de hechos importantes de tu ilustre biografía.";
 		link.l1.go = "tonzag_after_hold_1";
 		break;
 
 	case "tonzag_after_hold_1":
-		dialog.text = "Hacía calor en Porto Bello, Capitán. Luché por mi vida, por la vida del patrón, por la vida de mi esposa. No tuve tiempo de contar a los muertos ni de llorar a cada campesino que apareció en la calle en el momento equivocado.";
+		dialog.text = "Hacía calor en Portobello, Capitán. Luché por mi vida, por la vida del patrón, por la vida de mi esposa. No tuve tiempo de contar a los muertos ni de llorar a cada campesino que apareció en la calle en el momento equivocado.";
 		link.l1 = "¿En ese orden de prioridad?";
 		link.l1.go = "tonzag_after_hold_2";
 		break;
@@ -800,7 +800,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "tonzag_after_hold_5":
-		dialog.text = "El diario de un oficial... cifrado, pero es una cifra antigua, la conozco \nNada interesante, parece. Era el diario de nuestro prisionero. Ahora está claro por qué estaba tan dispuesto a hablar. ¡Mira aquí - indicaciones de un tesoro escondido! ¡El bribón claramente planeaba retirarse y estaba listo para escabullirse en cualquier momento!";
+		dialog.text = "El diario de un oficial... cifrado, pero es una cifra antigua, la conozco \nNada interesante, parece. Era el diario de nuestro prisionero. Ahora está claro por qué estaba tan dispuesto a hablar. ¡Mira aquí, indicaciones de un tesoro escondido! ¡El bribón claramente planeaba retirarse y estaba listo para escabullirse en cualquier momento!";
 		link.l1 = "¿Y dónde está este lugar escondido?";
 		link.l1.go = "tonzag_after_hold_6";
 		break;
@@ -857,7 +857,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "tonzag_after_drink_5":
-		dialog.text = "El diario de un oficial... encriptado, pero es un cifrado antiguo, lo conozco\nNada interesante, parece. Era el diario de nuestro prisionero. ¡Mira aquí - indicaciones de un tesoro escondido! ¡El canalla claramente planeaba retirarse y estaba listo para escabullirse en cualquier momento!";
+		dialog.text = "El diario de un oficial... encriptado, pero es un cifrado antiguo, lo conozco\nNada interesante, parece. Era el diario de nuestro prisionero. ¡Mira las indicaciones de un tesoro escondido! ¡El canalla claramente planeaba retirarse y estaba listo para escabullirse en cualquier momento!";
 		link.l1 = "¿Y dónde está este lugar escondido?";
 		link.l1.go = "tonzag_after_drink_6";
 		break;
@@ -883,13 +883,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "tonzag_church_1":
-		dialog.text = "No hay necesidad de que pagues por mis errores, Capitán. Tenías razón: dondequiera que voy, la gente muere y corre sangre inocente. Si entramos juntos a esa iglesia, será otro Porto Bello, y no quiero eso.";
+		dialog.text = "No hay necesidad de que pagues por mis errores, Capitán. Tenías razón: dondequiera que voy, la gente muere y corre sangre inocente. Si entramos juntos a esa iglesia, será otro Portobello, y no quiero eso.";
 		link.l1 = "¿Qué sucedió realmente allí?";
 		link.l1.go = "tonzag_church_2";
 		break;
 
 	case "tonzag_church_2":
-		dialog.text = "Una masacre. Quería retirarme, capitán. Quería tomar el oro, a mi esposa, y regresar a casa a Carcassonne. Sabía que la Liga enviaría más gente para terminar mi trabajo y tomé un generoso adelanto de mi nuevo patrón. Entonces todo lo que quedaba era enfrentar a la guardia de la ciudad contra mis antiguos cómplices y el nuevo empleador. En toda esa conmoción, debía desaparecer con el dinero, y quizás, si el tiempo lo permitía, robar a algunos gordos de Porto Bello.";
+		dialog.text = "Una masacre. Quería retirarme, capitán. Quería tomar el oro, a mi esposa, y regresar a casa a Carcassonne. Sabía que la Liga enviaría más gente para terminar mi trabajo y tomé un generoso adelanto de mi nuevo patrón. Entonces todo lo que quedaba era enfrentar a la guardia de la ciudad contra mis antiguos cómplices y el nuevo empleador. En toda esa conmoción, debía desaparecer con el dinero, y quizás, si el tiempo lo permitía, robar a algunos gordos de Portobello.";
 		link.l1 = "Buen plan, aunque yo lo habría hecho de otra manera. Demasiadas cosas podrían salir mal.";
 		link.l1.go = "tonzag_church_2a";
 		link.l2 = "Yo mismo no soy un ángel, pero tu enfoque hace que incluso yo me estremezca. Me sorprende que aún no me hayas traicionado, como hiciste con la Liga, el Hidalgo e incluso con tu propia esposa.";

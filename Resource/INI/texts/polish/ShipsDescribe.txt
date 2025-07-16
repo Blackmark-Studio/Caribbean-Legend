@@ -1,315 +1,322 @@
-﻿new_string	{
+﻿new_string        {
+
 
 }
 
 Tartane
 {
-A longboat isn't the preferred vessel for a captain accustomed to the high life. However, if fate has taken his favorite ship this humble boat will suffice for quick travel between islands. Just keep telling yourself that it's only a temporary measure!
+Łódź rybacka nie jest najlepszym statkiem dla kapitana błyszczącego w wyższych sferach. Ale jeśli los pozbawił cię ulubionego statku, ta ponura łódź nadaje się do szybkiej podróży między wyspami, choć warto pamiętać – to tylko na chwilę!
 }
 
 WarTartane
 {
-Initially tartanes like this were used for fishing and trading. They were equipped with light cannons to patrol coastal waters and chase off small-time pirates and Indian raids.
+Tartany to te same łodzie rybackie, pospiesznie przystosowane do pracy przybrzeżnej na niebezpiecznych wodach Karaibów. Skromne uzbrojenie i prowizoryczna konstrukcja nie budzą szacunku, ale są w stanie odstraszyć niedoświadczonego pirata lub biednego przemytnika. Tymczasowe rozwiązanie, gdy nie ma wielkiego wyboru.
 }
 
 Barque
 {
-A barque is ideally suited for long merchant voyages. Having a spacious hold and formidable firepower, the barque is considered one of the best vessels in its class. However, its hull shape doesn't allow it to accelerate or maneuver quickly, causing it to lag behind lighter ships when it comes to sailing performance.
+Barka idealnie nadaje się do długich rejsów. Posiada przestronną ładownię i dobre właściwości żeglugowe, przez co uważana jest za jeden z najbardziej zrównoważonych statków handlowych. Jednak jej imponujące rozmiary i stosunkowo słabe uzbrojenie czynią ją łatwym celem dla morskich rabusiów.
 }
 
 Schooner
 {
-Solid all-around performance together with low displacement and a spacious hold make the schooner one of the most attractive ships for merchants who cannot afford a fluyt.
+Dobre właściwości żeglugowe, przestronna ładownia, małe zanurzenie i przyzwoite uzbrojenie sprawiły, że szkuner stał się jednym z najpopularniejszych statków małych klas. Nadaje się zarówno do handlu, kabotażu, jak i walki.
 }
 
 Barkentine
 {
-The emergence of barkentine was caused by the need to make trading vessels easier to handle for smaller and inexperienced crews. This involved replacing square sails on the mainmast of a barque with triangular ones and using more block-and-tackle rigging. With a combination of square and latten sails, the barkentine sails confidently on any course.
+Pojawienie się barkentyny było podyktowane chęcią uproszczenia obsługi statku handlowego przez niedoświadczoną i nieliczną załogę. W tym celu żagle rejowe na grotmaszcie barki zastąpiono żaglami skośnymi, a kadłub nieco zmniejszono. Dzięki mieszanemu ożaglowaniu barkentyna pewnie płynie zarówno z wiatrem, jak i pod wiatr.
 }
 
 Shnyava
 {
-A snow is the predecessor of the brig. Having comparable speed and sturdiness to a military brig, snows are highly valued by wealthy merchants and smugglers. These vessels are so popular that you're very likely to see them in any lively port in Northern Europe or the Caribbean.
+Szniwa i brygantyna były poprzednikami brygu. Dzięki udanej konstrukcji kadłuba, dobrej prędkości i zdolności do przenoszenia ciężkich dział, statki te zyskały dużą popularność zarówno na Karaibach, jak i w Europie. Często są wykorzystywane do eskortowania konwojów handlowych małych klas.
 }
 
 Fleut
 {
-An extremly successful Dutch design originally designed to cheat Danish tolls, the fluyt (pronounced 'flute') is one of the best choices as a trading ship. When it comes to hold space and hull integrity, it is unrivaled in its class. However, it cannot carry many cannons as most of the ship space is devoted to cargo. Therefore, its usage for military purpose is limited to self-defense. 
+Fluita to unikalny etap w rozwoju statków handlowych. Jej charakterystycznie zwężony pokład pozwalał na zmniejszenie opłat celnych, które były naliczane na podstawie szerokości górnego pokładu. Przestronna ładownia, duża prędkość i dobre właściwości na wiatr szybko uczyniły fluitę jednym z najpopularniejszych statków handlowych.
 }
 
 Caravel
 {
-The distinctive rigging of a caravel makes it easily recognizable even afar. Its outdated design and mediocre sailing performance however does not allow caravels to compete with modern vessels, despite a large number of cannons.
+Charakterystyczne ożaglowanie karaweli pozwala łatwo rozpoznać ten statek z daleka. Przestarzała konstrukcja sprawia, że właściwości żeglugowe karaweli są dość przeciętne, co uniemożliwia jej równą walkę ze współczesnymi statkami, mimo wystarczającej liczby dział.
 }
 
 Pinnace
 {
-Like fluyts, pinnaces are widely used as a merchant vessel. It is large and sturdy, good for long journeys. The hold's capacity allows for the transportation of a large amount of cargo. Due to sharp contours of the bow a pinnace can develop decent speed even with heavy load.
-}
-
-Caracca
-{
-An obsolete design along with the caravel, the carrack's heavy tower-like superstructures on the forecastle and stern significantly worsen its sailing capabilities. A sturdy hull and a capacious hold are the only advantages of this old vessel.
+Wraz z fluitą pinasa zyskała dużą popularność jako statek handlowy. Jest wystarczająco duża i mocna do długich rejsów morskich, a jej ładownia pozwala przewozić dużą ilość towarów. Dzięki ostrym liniom dziobu nawet z ciężkim kadłubem pinasa osiąga przyzwoitą prędkość.
 }
 
 Navio
 {
-The navio is a Spanish-designed heavy galleon that only wealthy merchants can afford. A large and sturdy hull, capacious hold, and good rigging allow the navio to make the long voyages from Panama to the Phillipines and about three dozen cannons provide decent protection against any pirates and privateers who covet its cargo.
+Taki statek jest dostępny tylko dla naprawdę zamożnego kupca. Duży i mocny kadłub, przestronna ładownia i zaawansowane ożaglowanie pozwalają na najdłuższe rejsy, a nie mniej niż trzy tuziny ciężkich dział skutecznie chronią go przed piratami i korsarzami.
 }
 
 EastIndiaMan
 {
-East Indiamen are transoceanic merchant ships that embody the best properties of fluyts and pinnaces. They are mostly used for long voyages in guarded convoys, but some of them are so large and well-armed that they can sail alone. Trying to take down an East Indianman has led to many pirates becoming either very rich or very dead.
+Statki Kompanii Wschodnioindyjskiej połączyły najlepsze cechy pinas i pozbyły się ich wad, stając się niemal doskonałymi uniwersalnymi jednostkami. Dzięki ciężkim działom mogą konkurować z okrętami wojennymi o podobnych rozmiarach, a przestronna ładownia pozwala efektywnie wykorzystywać je do handlu.
 }
 
 LuggerQuest
 {
-A courier lugger was designed specifically for speedy mail delivery. Excellent sailing performance, a sturdy hull, and decent armament allow for the safe transport of urgent dispatches and small packages of important cargo.
+Lugier kurierski został zbudowany specjalnie na potrzeby służby posłańczej. Doskonałe właściwości żeglugowe, świetne osiągi na wiatr i dość silne uzbrojenie gwarantują niezawodne dostarczenie ważnych depesz i niewielkich cennych ładunków.
 }
 
 Lugger
 {
-A lugger is a small fast single decked ship, highly valued by merchants and smugglers for its speed and maneuverability. Despite its small size, a lugger has good seaworthiness and can perform long blue water voyages.
+Lugier to mały żaglowiec, który wielu marynarzy, zwłaszcza przemytników, ceni za zwrotność i uniwersalność. Lugry rekompensują brak prędkości przy pełnych żaglach doskonałymi kątami kursu na wiatr.
+Mimo niewielkich rozmiarów lugry mają dobrą dzielność morską i mogą odbywać długie rejsy.
 }
 
 Sloop
 {
-A sloop has good speed and maneuverability and carries decent armament for its size. It is a highly effective patrolling vessel, and is often used for scouting ahead of frigates and ships of the line in shallow waters where brigs cannot go. A sloop is often a young navy lieutenant's first independent command.
+Dobra prędkość i zwrotność oraz solidne uzbrojenie jak na swoje rozmiary sprawiają, że slup jest niezawodnym statkiem patrolowym, nadającym się również do rozpoznania.
 }
 
 Brigantine
 {
-A sailing craft with near-legendary sailing characteristics. Fast and maneuverable, the brigantine flies across the water like a swallow. It is especially valued by pirates, privateers, and adventurers of all sorts.
+Legendarny typ żaglowca. Szybka i zwrotna jak jaskółka, brygantyna jest szczególnie ceniona przez piratów i awanturników wszelkiej maści. Udana konstrukcja sprawia, że brygantyna doskonale nadaje się do każdego zadania – od walki po handel.
 }
 
 Brig
 {
-The brig is widely used by European navies for scouting and pirate hunting. Its high speed and maneuverability make it one of the most well-rounded vessels, although, being square-rigged, it is somewhat limited when sailing into the wind.
+Brygi są szeroko stosowane w marynarce wojennej do rozpoznania. Małe zanurzenie, ostre linie kadłuba i zaawansowane ożaglowanie czynią bryg jednym z najszybszych statków, a przyzwoity kaliber dział czyni go bardzo groźnym przeciwnikiem.
 }
 
 Schooner_W
 {
-The American colonists of New England were the first to appreciate the humble schooners and to begin using them for military purposes. A well-armed, fast, and agile war schooner is a serious threat for any trading vessel.
+Marynarze w Nowym Świecie pierwsi docenili szkunery i zaczęli wykorzystywać je do celów wojskowych. W tym celu trzeba było nieco zmodyfikować kadłub, zmniejszyć przestrzeń ładowni i dodać działa, ale efekt był tego wart. Dobrze uzbrojony, szybki i zwrotny szkuner wojenny stanowi poważne zagrożenie dla każdego statku handlowego.
 }
 
 Galeon_l
 {
-Emerging in the early 16th century, the Spanish-built galleon was initially modeled on the design of the carrack, intended as a military vessel from its inception. By the mid-17th century, the galleon had reached the pinnacle of its evolution before yielding to modern ships. Despite this, it hasn't yet fallen into obsolescence, remaining in faithful service to sailors of all nations.
+Galeon powstał na początku XVI wieku na bazie karaki i od początku był projektowany jako okręt wojenny. W połowie XVII wieku galeon osiągnął szczyt rozwoju i przekazał pałeczkę bardziej zaawansowanym jednostkom, ale jeszcze nie zszedł ze sceny i nadal wiernie służy marynarzom.
 }
 
 Galeon_sm
 {
-A symbol of Spanish might and ambition. Its decks gleam with golden ornaments, while the stern bears the image of the Virgin of Mercy, the ship's patron saint. To some, the 'Santa Misericordia' embodies divine order; to others, an unwelcome symbol of royal oppression. Some even see it as true divine providence.
-Enhances the power of Christian wards and amulets.
+Symbol hiszpańskiej potęgi i ambicji. Pokłady lśnią złotymi ozdobami, a na rufie wznosi się wizerunek Matki Miłosierdzia, patronki statku. Dla jednych 'Santa Misericordia' to uosobienie porządku, dla innych – znienawidzony symbol królewskiego ucisku. A niektórzy widzą w niej prawdziwą Opatrzność Bożą.
 }
 
 LadyBeth
 {
-Wspaniały przykład angielskiego budownictwa okrętowego, stworzony do samodzielnej służby patrolowej na niebezpiecznych wodach. Ta szniawa ma doskonałe właściwości żeglugowe i imponujące jak na swoje rozmiary uzbrojenie, pozwalające konkurować z jednostkami wyższych klas. Lata jej służby wojskowej są już dawno za nią, a sława poprzedniego właściciela przyciąga teraz raczej handlarzy antyków i map skarbów niż wilków morskich.
+Wspaniały przykład angielskiego szkutnictwa, stworzony do samodzielnej służby patrolowej na niebezpiecznych wodach. Ta szniwa ma doskonałe właściwości żeglugowe i imponujące uzbrojenie jak na swoje rozmiary, co pozwala jej konkurować z jednostkami wyższych klas.
+Lata jej służby wojskowej dawno minęły, a sława poprzedniego właściciela częściej przyciąga handlarzy antykami i mapami skarbów niż wilków morskich.
+}
+
+Memento
+{
+W tym statku trudno dostrzec stary design angielskiego briga, który rekompensuje swoje słabe właściwości żeglugowe imponującą siłą ognia i ciężkim, solidnym kadłubem. Ozdobiony plemiennymi amuletami i przesiąknięty śmiercią, przeraża nie tylko wrogów, ale także własną załogę.
 }
 
 Corvette
 {
-Corvettes are built for independent operations in littoral waters as well as scouting and important courier service. Possessing good speed and maneuverability, a corvette can catch up with lighter ships and successfully avoid combat with heavier ones. After commanding a sloop, the most common next step in a navy career is taking command of a corvette.
+Korwety są przeznaczone do rozpoznania, służby kurierskiej i operacji krążowniczych. Dobra prędkość i zwrotność pozwalają korwecie dogonić lżejsze jednostki i skutecznie unikać walki z cięższymi.
 }
 
 XebekVML
 {
-A xebec was designed and built for fighting in the contrary winds of the Mediterranean. Thanks to the narrow hull and large lateen sails, a xebec develops great speed into the wind, but demonstrates worse performance sailing with the wind. Valued for their speed and maneuverability, xebecs are highly favored by the fearsome Barbary Corsairs and their archrivals the Knights of Malta alike.
+Szebeka to najsłynniejszy typ statku śródziemnomorskiego. Wąski kadłub i duże żagle łacińskie na wszystkich masztach pozwalają jej płynąć pod ekstremalnymi kątami do wiatru, co czyni ją bardzo uciążliwym przeciwnikiem. Niestety, niska prędkość przy kursie z wiatrem ogranicza zastosowanie szebeki głównie do piractwa i przemytu.
 }
 
 Polacre
 {
-A polacre is a close relative to the xebec. Unlike the xebec, a poleacre carries square sails on the mainmast, which allows it to sail more confidently with the wind. This however comes at the expense of its maneuverability, worsens the sailing capabilities into the wind, and significantly raises the demands on the crew.
+Polakra to najbliższy krewny szebeki. W przeciwieństwie do niej, ma żagle rejowe na grotmaszcie, co pozwala jej pewnie trzymać kurs z wiatrem. Jednak takie ożaglowanie zmniejsza zwrotność, pogarsza osiągi na wiatr i znacznie zwiększa wymagania wobec umiejętności i zgrania załogi.
 }
 
 Galeon_h
 {
-A heavy galleon is a strong military ship, intended for escorting treasure convoys and transporting valuable cargo on its own. It has mediocre sailing capabilities but its large cannons, sturdy hull and large crew provide great protection.
+Ciężki galeon to potężny okręt wojenny przeznaczony do ochrony konwojów i samodzielnego transportu szczególnie cennych ładunków. Ustępuje nowoczesnym jednostkom pod względem prędkości i zwrotności, ale ciężkie działa, mocny kadłub i liczna załoga zapewniają niezawodną ochronę każdego ładunku. Flota ciężkich galeonów to siła, z którą trzeba się liczyć na Karaibach.
 }
 
 Elcasador
 {
-A formidable warship crafted specifically for special operations across the open seas, this galleon stands as a testament to maritime prowess. Commissioned by the Casa de Contratacion, its primary mission is to eradicate the most notorious pirates that jeopardize trade routes within the region and the vested interests of the Spanish Crown.
+Znakomity przykład okrętu wojennego przeznaczonego do operacji specjalnych na otwartym oceanie. Ten galeon został zbudowany na zamówienie Casa de Contratación w celu zniszczenia najgroźniejszych piratów, stanowiących realne zagrożenie dla handlu w regionie i interesów Korony Hiszpańskiej.
 }
 
 Frigate
 {
-Frigates are independent deep water cruisers that are larger than corvettes but smaller than ships of the line. Frigates have good sailing capabilities and heavy firepower, are intended for long-range scouting, trade interdiction, escorting transports, and screening line ships in combat. Many navy officers achieved great fame when commanding their first frigate.
+Fregaty mają doskonałe właściwości żeglugowe, dobrą siłę ognia i zostały stworzone specjalnie do dalekiego rozpoznania, eskorty transportowców i walki w składzie eskadry. Obecnie częściej spotyka się je jako samodzielne jednostki krążownicze na szlakach wroga – do przechwytywania lub niszczenia jego statków handlowych.
 }
 
 Frigate_h
 {
-Heavy frigates are designed specifically for guarding large convoys and independant operations. While being slightly inferior to 4th class ships of the line in terms of firepower and hull integrity, they outperform them in terms of sailing capabilities, which makes them a terrifying weapon when commanded by an experienced captain.
+Ciężkie fregaty stały się kompromisem dla tych kapitanów, którym brakowało siły ognia zwykłych fregat. Wzmocnione kadłuby i działa większego kalibru zbliżają je do okrętów liniowych 4. rangi – kosztem prędkości i zwrotności.
 }
 
 LineShip
 {
-The smallest type that can be designated by the English Navy as a 'ship of the line.' Lacks the firepower to match their larger counterparts, making them unsuitable for leading the line of battle. However, their their speed and maneuverability allows to screen the fleet, chase down damaged ships, or harass enemy trade lanes while in detached operations.
+Okręty liniowe 4. rangi nie mogą konkurować pod względem siły ognia ze starszymi braćmi, więc nie ma sensu ustawiać ich w linii bojowej. Najlepiej sprawdzają się jako ochrona konwojów, ponieważ dzięki prędkości i zwrotności najskuteczniej wykonują to zadanie.
 }
 
 Warship
 {
-Ships of this type were built back nearly thirty years ago in the times of Cardinal Richelieu. Now they are rather outdated in terms of construction. Despite this, they retain excellent sailing abilities and the capacity to carry the heaviest cannons, making them a significant threat.
+Statki tego typu budowano jeszcze za czasów kardynała Richelieu i dziś są konstrukcyjnie przestarzałe. Mają jednak dobre właściwości żeglugowe i mogą przenosić najcięższe działa, co czyni je groźną siłą.
 }
 
 Ecliaton
 {
-Ships of this type were built back nearly thirty years ago in the times of Cardinal Richelieu. Now they are rather outdated in terms of construction. Despite this, they retain excellent sailing abilities and the capacity to carry the heaviest cannons, making them a significant threat.
+Statki tego typu budowano jeszcze za czasów kardynała Richelieu i dziś są konstrukcyjnie przestarzałe. Mają jednak dobre właściwości żeglugowe i mogą przenosić najcięższe działa, co czyni je groźną siłą.
 }
 
 Pink
 {
-The Pink is a small ship designed for light goods transport and light escort. Though it has weak guns and runs with a small crew, this ship has optimal balance between trade and battle suitability, and many captains prize the Pink for its maneuverability and sailing characteristics. The small size of the Pink makes it a poor choice for traversing long distances across open water.
+Pink to mały statek przeznaczony do przewozu ładunków i ochrony małych konwojów. Choć jego uzbrojenie jest słabe, a załoga nieliczna, pink jest specjalnie zaprojektowany zarówno do handlu, jak i walki, a wielu kapitanów ceni go za prędkość i zwrotność. Małe rozmiary pinka nie pozwalają mu na długie rejsy morskie.
 }
 
 Battleship
 {
-A versatile warship able to fight in the line of battle, at the head of a flotilla, or independantly. Their firepower is substantial enough to rival even a 100-gun leviathan, while also excelling in maneuverability and speed compared to the latter.
+Okręty liniowe 3. rangi są bardzo liczne i najbardziej zrównoważone pod względem cech bojowych, przeznaczone do walki w linii. Mają wystarczającą siłę ognia, by rzucić wyzwanie nawet 100-działowym lewiatanom. Jednocześnie znacznie je przewyższają pod względem prędkości i zwrotności.
 }
 
 Manowar
 {
-The backbone of every national navy. Combined with frigates and corvettes, they make a fleet both powerful and flexible. Often serve as  flagships.
+Okręty liniowe 2. rangi są podstawą potęgi morskiej każdego państwa. Wraz z okrętami 3. rangi tworzą flotę łączącą siłę z manewrowością. A przy braku w eskadrze okrętów 1. rangi niektóre z nich pełnią rolę okrętów flagowych.
 }
 
 Manowar_e
 {
-The first-rate class ship of the line is a majestic floating fortress, commanding the seas with its awe-inspiring firepower, capable of vanquishing almost any adversary with a few thundering broadsides. These grand vessels, rare treasures among the great naval powers, carry position of flagships in great battles, symbolizing strength and supremacy in the waters.
+Okręt liniowy 1. rangi to prawdziwa pływająca twierdza. Dzięki przerażającej sile ognia może kilkoma celnymi salwami posłać na dno każdego przeciwnika. Nawet największe potęgi morskie nie mają wielu takich okrętów, a są one wykorzystywane jako okręty flagowe w wielkich bitwach morskich.
 }
 
 MayFang
 {
-This xebec has a lighter hull built to the detriment of its strength, but she is an unsurpassed sailor - only a few ships in the Caribbean can match her speed.
-And if you get caught, twenty medium cannons are a serious help in any naval confrontation.
+Ta szebeka ma odciążony kadłub kosztem wytrzymałości, ale to czyni ją niezrównanym żeglarzem – na całych Karaibach nie znajdziesz innego statku, który potrafi płynąć niemal pod wiatr!
+A dwadzieścia dział średniego kalibru to mocny argument w rywalizacji morskiej.
 }
 
 Mirage
 {
-Unlike bomb ketches, privateer ketches lack the massive mortars meant for the bombardment of land fortresses. These nimble English-designed craft boast streamlined hulls that significantly enhance their sailing capabilities. The speed of privateer ketches is so impressive that even princely yachts might envy their swiftness.
+W przeciwieństwie do bombowych keczy, korsarskie kecze nie mają gigantycznych moździerzy przeznaczonych do ostrzału fortec, ale mają lżejszy, opływowy kadłub, co pozytywnie wpływa na ich właściwości żeglugowe. Nawet jachty książąt mogłyby pozazdrościć prędkości tego korsarskiego kecza.
 }
 
 Himera
 {
-A ship specially designed for the needs of British Naval intelligence. Her characteristics are comparable to those of 3rd-rate warships, while retaining the ease of handling of 4th-rate smaller vessels.
+Statek-mistrzostwo, stworzony specjalnie na potrzeby brytyjskiego wywiadu morskiego. Pod względem parametrów porównywalny z okrętami wojennymi 3. klasy, zachowując łatwość obsługi 4. klasy.
 }
 
 Valciria
 {
-An excellent English brig. Exceptional speed, maneuverability, and excellent performance into the wind. With a complement of twenty cannons on deck, this vessel is the coveted dream of many sailors.
+Doskonały angielski bryg. Wysoka prędkość i zwrotność, dobre osiągi na wiatr i dwadzieścia dział na pokładzie czynią ten żaglowiec marzeniem.
 }
 
 CORVETTE_QUEST
 {
-A masterpiece crafted by French shipwrights, this frigate owes its exceptional speed to trapezoid bends that enhance stability and enable a larger sail area. As a result, only a few ships can match its speed, especially when running before the wind.
+Jednostkowy statek, arcydzieło francuskich szkutników. Głęboka modernizacja konstrukcji korwety poprawiła prawie wszystkie jej cechy bez utraty prędkości. Zwiększona powierzchnia żagli i kaliber dział wymagają bardziej doświadczonej i liczniejszej załogi, ale jeśli próby na Karaibach się powiodą, zastosowane tu technologie mogą być prawdziwym przełomem w szkutnictwie.
 }
 
 Polacre_q
 {
-A successful mix of a xebec and a frigate, this polacre showcases an unconventional hull-characterized by a low sea gauge yet high seaboard. Crafted by an ingenious shipbuilder. With three masts, a bowsprit, and numerous sails, she embodies speed and agility. Additionally she is armed with immensely powerful guns. This versatile and unique ship can play any role in the high seas: military, pirate, or trade.
+Mistrz, który umiejętnie połączył elementy szebeki i fregaty, stworzył polakrę o niezwykłym, mocnym i pojemnym kadłubie, wyróżniającym się wysokimi burtami, małym zanurzeniem i bardzo silnym uzbrojeniem. Trzy maszty i bukszpryt z żaglami różnych typów czynią ją szybką i bardzo zwrotną. Wszystkie te cechy są dobre osobno, a razem doskonałe – tylko właściciel zdecyduje: czy na morze wypłynie okręt wojenny, piracki czy handlowy.
 }
 
 ArabellaShip
 {
-Thanks to previous breakthroughs in the ship design, the speed of this frigate is slightly higher compared to those built several years before. Additionally, it features a sturdier yet lighter hull, representing further advancements in its construction.
+Ten wyjątkowy statek łączy w sobie najlepsze cechy fregat i okrętów liniowych. Niesamowite właściwości żeglugowe łączą się z baterią ciężkich dział, a wnętrza mogą pomieścić całą kompanię piechoty morskiej. W doświadczonych rękach Fortuna może samotnie stawić czoła znacznie silniejszemu przeciwnikowi.
 }
 
 Flyingdutchman
 {
-The Caleuche. The nightmare of all sailors...
+"Caleuche". Postrach wszystkich, którzy pływają pod żaglami...
 }
 
 Flyingdutchman_l
 {
-A Copy of the "Caleuche". 
+Kopia "Caleuche".
+}
+
+NewFlyingdutchman
+{
+To był kiedyś słynny "statek-widmo". Teraz został całkowicie przebudowany i jest potężnym galeonem wojennym, zdolnym walczyć na równi nawet z okrętami liniowymi. Przy imponującej prędkości jak na swoje rozmiary, dużej ładowni i potężnym uzbrojeniu jest w pełni samowystarczalnym statkiem, zdolnym zatapiać wrogie jednostki, abordować je, a nawet oblegać całe kolonie.
 }
 
 Santisima
 {
-This ship came off the stocks of the famous Spanish shipyard in Havana. Its hull is slightly lighter and weaker compared to other 1st class ships, but has been compensated for with improved sailing capabilities.
+Ten statek został zwodowany w słynnej stoczni w Hawanie. Jego kadłub jest nieco lżejszy i słabszy niż innych okrętów 1. rangi, ale rekompensują to znacznie lepsze właściwości żeglugowe.
 }
 
 NoneBoat
 {
-No ship. Our hero is currently a scurvy landlubber and may not call himself captain until he acquires a ship.
+Brak statku. Bohater stał się szczurem lądowym i nie może nazywać się kapitanem, dopóki nie zdobędzie statku.
 }
 
 Hull
 {
-Hull - shows the current and maximum damage that the ship's hull can withstand.
+Kadłub – pokazuje aktualną i maksymalną ilość uszkodzeń, które kadłub statku może wytrzymać.
 }
 
 Sails
 {
-Sails - shows the current and maximum damage that the ship's sails can withstand.
+Żagle – pokazują aktualne i maksymalne uszkodzenia, które mogą wytrzymać żagle statku.
 }
 
 Speed
 {
-Speed - shows the maximum speed of the ship under current conditions accounting for all relevant factors (cargo, captain's skills, ship's damage) and maximum achievable speed of the ship.
+Prędkość – pokazuje aktualną maksymalną prędkość statku, uwzględniając wszystkie czynniki (ładunek, umiejętności kapitana, uszkodzenia statku) oraz maksymalną osiągalną prędkość.
 }
 
 Maneuver
 {
-Maneuverability - shows the maximum maneuverability of the ship under current conditions accounting for all relevant factors (cargo, captain's skills, ship's damage) and maximum achievable maneuverability of the ship.
+Zwrotność – pokazuje zwrotność statku w danym momencie, uwzględniając wszystkie czynniki (ładunek, umiejętności kapitana, uszkodzenia statku) oraz maksymalną osiągalną zwrotność.
 }
 
 AgainstWind
 {
-The best angle of the ship in relation to the wind, allowing the vessel to achieve maximum speed, This value is represented in degrees.
-The second value indicates the desired difference between the current wind direction and the best course angle for this vessel.
+Najlepszy kurs statku względem wiatru, przy którym może osiągnąć maksymalną prędkość. Wartości podane są w stopniach.
+Druga wartość pokazuje różnicę między aktualnym kierunkiem wiatru a najlepszym kątem kursu dla tego statku.
 }
 
 Capacity
 {
-Deadweight - the current and maximum cargo capacity of the ship. The heavier the ship is loaded, that more clumsy and slow it becomes.
-The cannons installed on the ship are also accounted for when calculating deadweight. They can be taken off the ship, thus freeing up space for more cargo. To do this, on the "Ship" interface, choose the line with the current cannons in the ship's parameters list.
+Nośność – pokazuje aktualną i maksymalną pojemność statku. Im bardziej statek jest załadowany, tym staje się mniej zwrotny i wolniejszy.
+Działa zamontowane na statku również są brane pod uwagę przy obliczaniu nośności. Można je zdjąć, aby zwolnić dodatkowe miejsce na ładunek. W tym celu należy w interfejsie "Statek" wybrać aktualne działa w liście parametrów statku.
 }
 
 Crew
 {
-Crew - the current number of sailors as well as the minimum and maximum number of sailors needed to operate this ship.
+Załoga – pokazuje aktualną liczbę członków załogi, a także minimalną i maksymalną dla tego statku.
 }
 
 CannonType
 {
-Cannon type indicates the type of cannons (cannons or culverins), current caliber and the quantity of cannons installed on the ship
+Typ działa – pokazuje typ (działa lub kowerny), aktualny kaliber i liczbę zamontowanych dział
 }
 
 sCannons
 {
-Maximum caliber and maximum number of cannons on this ship are shown here.
+Pokazuje maksymalny dozwolony kaliber i maksymalną możliwą liczbę dział na statku.
 }
 
-Crew_Exp {Crew experience}
+Crew_Exp {Doświadczenie załogi}
 
 Crew_Exp_hint
 {
-Crew experience has three categories: naval - affects ship's management; gunnery - affects reloading speed and firing accuracy; and boarding - affects the effectiveness of the crew during boardings.
-An experienced crew can have fewer sailors and still be more effective than a large crew of lubbers.
-The experience in all three categories is acquired when the crew performs the corresponding action (maneuvering, shooting, boarding). The experience decays if a particular skill hasn't been practiced for an extended period of time.
+Doświadczenie załogi dzieli się na trzy kategorie: morskie (wpływa na sterowność statku), artyleryjskie (szybkość przeładowania i celność ognia) i abordażowe (skuteczność załogi w walce wręcz).
+Doświadczona załoga w mniejszej liczbie może być skuteczniejsza niż przeładowany nowicjuszami statek.
+Doświadczenie we wszystkich trzech kategoriach zdobywa się podczas wykonywania odpowiednich czynności (manewrowanie, strzelanie, abordaż), ale także traci, jeśli nabyte umiejętności nie są praktykowane przez dłuższy czas.
 }
 
 TakeAllGoods_hint
 {
-The button "reload all goods" reloads the goods to the player's ship based on their average specific value. It starts by reloading the most valuable goods and continues with less valuable ones until the hold reaches full capacity.
+Przycisk "Przenieś wszystkie towary" przenosi towary na statek postaci zgodnie z ich średnią wartością jednostkową. Najpierw przenoszone są najcenniejsze towary, potem mniej cenne i tak dalej, aż w ładowni zabraknie miejsca.
 }
 
 GoodsKeys_hint
 {
-The arrow keys "Left" and "Right" will move goods in the selected line by one unit at a time. Using the arrow keys while holding down the Shift key will move the entire cargo.
-Right-clicking on the arrows within the merchandise line will shift ten units of that specific merchandise at once.
+Klawisze strzałek "Lewo" i "Prawo" na klawiaturze przesuwają towary w wybranym wierszu tabeli o jedną paczkę. Jeśli przytrzymasz klawisz Shift – towary zostaną przeniesione w całości.
+Kliknięcie prawym przyciskiem myszy na strzałkach w wierszu z towarem w interfejsie przenosi dziesięć paczek towaru naraz.
 }
 
 Shipyard_hint
 {
-You can buy, repair and sell ships at the shipyard.
-You may not sell your ship if you have companions on board. Neither can you purchase a ship for you companions if you don't own a ship yourself.
-To change the ship or the companion while preserving the crew and the contents of the hold. Select in the squadron list (the left part of the interface) the ship to be substituted, and in the shipyard list (ships offered for sale at the shipyard in the right part of the interface) the desired ship, and then press the "Buy" button.
-In order to purchase a new ship or to assign a new companion, select an empty slot in the left list before purchasing.
+W stoczni można kupować, naprawiać lub sprzedawać statki.
+Bohater nie może sprzedać swojego statku, jeśli ma towarzyszy. Nie można też kupić statku dla towarzysza, jeśli bohater nie ma własnego statku.
+Aby zmienić statek bohatera lub towarzysza, zachowując całą zawartość ładowni i załogę, należy w liście statków eskadry bohatera (po lewej stronie interfejsu) wybrać statek, który ma zostać zastąpiony nowym, a w liście statków na sprzedaż w stoczni (po prawej stronie interfejsu) – wybrany, a następnie kliknąć przycisk "Kup".
+Aby kupić nowy statek (przydzielić nowego towarzysza), przed zakupem należy najpierw wybrać pusty slot na liście po lewej stronie.
 }
 
 NoneBoat2
 {
-No ship.
+Brak statku.
 }

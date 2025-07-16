@@ -9,17 +9,17 @@ Rayner
 
 FalseTrace_3
 {
-galleon '@<pchar.questTemp.FalseTrace.ShipName>'
+fluita '@<pchar.questTemp.FalseTrace.ShipName>'
 }
 
 FalseTrace_4
 {
-Adam Rayner has stolen a rowboat and escaped with his wife!
+Adam Rayner ukradł łódź wiosłową i uciekł razem z żoną!
 }
 
 FalseTrace_5
 {
-Cockeyed
+Zezowaty
 }
 FalseTrace_6
 {
@@ -28,7 +28,7 @@ Solly
 
 FalseTrace_7
 {
-galleon with gold ore
+fluita z rudą złota
 }
 
 FalseTrace_8

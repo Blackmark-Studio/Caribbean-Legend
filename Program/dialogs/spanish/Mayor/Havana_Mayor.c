@@ -33,7 +33,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Slavetrader_HavanaAttack_1":
-		dialog.text = "¡Oro, por supuesto! ¿En qué más podrían estar interesados, malditos, sino в oro?! Y no lo tenemos... Solo unas pocas medidas en la tienda.";
+		dialog.text = "¡Oro, por supuesto! ¿En qué más podrían estar interesados, malditos, sino en oro?! Y no lo tenemos... Solo unas pocas medidas en la tienda.";
 		link.l1 = "Ja, ja... No, no estamos interesados en el oro. Vinimos aquí por el marfil... el negro. ¿Me entiendes?";
 		link.l1.go = "Slavetrader_HavanaAttack_2";
 		break;
@@ -103,7 +103,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Mtraxx_1":
-		dialog.text = "Mm.. Bueno, supongo que, ya que has venido a mí, ya conoces esta... absurda historia?";
+		dialog.text = "Mm... Bueno, supongo que, ya que has venido a mí, ya conoces esta... absurda historia, ¿no?";
 		link.l1 = "Lo hago, su Excelencia.";
 		link.l1.go = "Mtraxx_2";
 		break;

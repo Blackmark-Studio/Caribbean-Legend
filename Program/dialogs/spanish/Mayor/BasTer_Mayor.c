@@ -29,6 +29,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "Tengo una reunión aquí con una persona...";
 			link.l1.go = "baster_goldengirl";
 		}
+		//--> Торговля по закону
+			if (CheckAttribute(pchar, "questTemp.TPZ_guber_1"))
+			{
+				link.l1 = "Señor, planeo emprender una actividad comercial en esta ciudad. En particular, me interesa el comercio de bebidas alcohólicas a gran escala y de forma regular.";
+				link.l1.go = "TPZ_guber_1";
+			}
+			//<-- Торговля по закону
+
 		break;
 	//************************** Квестовые штрумы ************************
 	case "Cupture_after":
@@ -51,7 +59,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "guardoftruth_2":
-		dialog.text = "¿Y desde cuándo te has convertido en un verdadero y sincero creyente, ja, " + pchar.name + "¿Los españoles no son nuestros amigos y no veo razón para presionar al santo padre en este asunto. La cruz fue un regalo y está bien. Nuestro sacerdote no tiene conexión con ese robo y asesinato, así que...";
+		dialog.text = "¿Y desde cuándo te has convertido en un verdadero y sincero creyente, " + pchar.name + "? Los españoles no son nuestros amigos y no veo razón para presionar al santo padre en este asunto. La cruz fue un regalo y está bien. Nuestro sacerdote no tiene conexión con ese robo y asesinato, así que...";
 		link.l1 = "Y no puedes ayudarme, ¿verdad?";
 		link.l1.go = "guardoftruth_3";
 		break;
@@ -126,6 +134,46 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		pchar.questTemp.GoldenGirl = "baster1";
 		DoQuestReloadToLocation("CommonResidence_3", "reload", "reload1", "GoldenGirl_AngerranInResidence");
 		break;
+		
+	//--> Торговля по закону
+	case "TPZ_guber_1":
+		dialog.text = "Capitán, hizo bien en acudir a mí. Estamos haciendo todo lo posible para combatir el comercio ilegal en la isla, y me alegra sinceramente cuando capitanes honestos vienen a mí para organizar todo legalmente.";
+		link.l1 = "Entonces, ¿cuáles son las condiciones y pasos necesarios para comenzar a comerciar?";
+		link.l1.go = "TPZ_guber_2";
+		DelLandQuestMark(npchar);
+	break;
+
+	case "TPZ_guber_2":
+		dialog.text = "Es bastante simple. Para comerciar con bebidas alcohólicas, deberá pagar un impuesto al tesoro de cien doblones al mes, además de llevar documentación y presentar informes regularmente sobre su actividad. Una vez que haya depositado el dinero en el tesoro, puede comenzar a comerciar con confianza.";
+		link.l1 = "Excelente. Las condiciones son bastante aceptables. En mi nombre, un residente local, Christian Delouche, se encargará de los asuntos aquí. ¿Espero que no haya problemas con eso?";
+		link.l1.go = "TPZ_guber_3";
+	break;
+
+	case "TPZ_guber_3":
+		dialog.text = "Como desee, capitán. Sin embargo, recuerde: toda la responsabilidad por su protegido recae sobre usted, y en caso de sus faltas, compartirá su destino.";
+		link.l1 = "Por supuesto. Gracias por las aclaraciones, señor gobernador. Prepararemos todo, y Christian pagará el impuesto.";
+		link.l1.go = "TPZ_guber_4";
+	break;
+
+	case "TPZ_guber_4":
+		dialog.text = "Excelente. Me complace ver un enfoque tan diligente. Le deseo éxito en su empresa.";
+		link.l1 = "Gracias. Estoy seguro de que nuestra cooperación beneficiará a la ciudad. Adiós.";
+		link.l1.go = "TPZ_guber_5";
+	break;
+
+	case "TPZ_guber_5":
+		DialogExit();
+		DeleteAttribute(pchar, "questTemp.TPZ_guber_1");
+		AddQuestRecord("TPZ", "11");
+
+		sld = CharacterFromID("TPZ_Kristian");
+		sld.dialog.filename = "Quest\MiniEvents\TradingByLaw_dialog.c";
+		sld.dialog.currentnode = "Kristian_21";
+		ChangeCharacterAddressGroup(sld, "BasTer_houseF3", "barmen", "stay");
+		LAi_SetStayType(sld);
+		AddLandQuestMark(sld, "questmarkmain");
+	break;
+	//<-- Торговля по закону
 	}
 	UnloadSegment(NPChar.FileDialog2); // если где-то выход внутри switch  по return не забыть сделать анлод
 }

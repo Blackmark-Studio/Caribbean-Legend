@@ -1,0 +1,70 @@
+﻿QUEST_MESSAGE1 {La colonia di El Caimano è occupata.}
+QUEST_MESSAGE2 {La colonia di El Caimano viene catturata.}
+QUEST_MESSAGE3 {Sei troppo vecchio per resistere alla maledizione dell'oro azteco..}
+QUEST_MESSAGE4 {Hai trovato un tesoro!}
+QUEST_MESSAGE5 {Nigel Blight ha attaccato la corvetta del contrabbandiere!}
+QUEST_MESSAGE6 {Nigel Blight è scomparso!}
+QUEST_MESSAGE7 {Capitano, la "Perla Nera" si vede all'orizzonte!}
+QUEST_MESSAGE8 {Ottimo lavoro. Hai ucciso il Maestro!}
+QUEST_MESSAGE9 {Ora sei faccia a faccia con questo mondo crudele!}
+QUEST_MESSAGE10 {Un pirata spietato}
+QUEST_MESSAGE11 {merita un premio speciale!}
+QUEST_MESSAGE12 {Sfortunatamente hai già assunto troppi ufficiali! Licenziane uno!}
+
+Address_Form_Spa {Senor}
+Address_Form_Fra {Monsieur}
+Address_Form_Eng {Sir}
+Address_Form_Por {Senor}
+Address_Form_Hol {Mynheer}
+
+Swear_1 {Mi è scoppiata la milza!}
+Swear_2 {Accidenti!}
+Swear_3 {Dio mio!}
+Swear_4 {Dannazione!}
+Swear_5 {Per mille diavoli!}
+Swear_6 {Ancora alla mia poppa!}
+Swear_7 {Oh cielo!}
+Swear_8 {Arrghhh!!!}
+Swear_9 {Per mille squali!}
+Swear_10 {Demonio!}
+
+TimeGreeting {Buon pomeriggio}
+
+Antigua {Antigua}
+Barbados {Barbados}
+Curacao {Curacao}
+Dominica {Dominica}
+Grenada {Grenada}
+Guadeloupe {Guadalupa}
+Hispaniola {Hispaniola}
+IslaMona {Isola Mona}
+Jamaica {Giamaica}
+MarieGalante {Marie Galante}
+Martinique {Martinica}
+Montserrat {Montserrat}
+Nevis {Nevis}
+PuertoRico {Porto Rico}
+StEustatius {Sant'Eustazio}
+StKitts {St. Kitts}
+StMartin {St. Martin}
+Tortuga {Tortuga}
+LaVega {La Vega}
+SantoDomingo {Santo Domingo}
+PetitGoave {Petit Goave}
+Bridgetown {Bridgetown}
+SanJuan {San Giovanni}
+SantiagoVega {Santiago Vega}
+
+
+OFFIC_TYPE_BOATSWAIN {nostromo}
+OFFIC_TYPE_CANNONEER {cannoniere}
+OFFIC_TYPE_QMASTER {timoniere}
+OFFIC_TYPE_NAVIGATOR {navigatore}
+OFFIC_TYPE_FIRSTMATE {primo ufficiale}
+
+Pirate	{Pirata}
+Spain	{spagnolo}
+France	{francese}
+Smuggler	{Contrabbandiere}
+Holland	{olandese}
+England	{inglese}

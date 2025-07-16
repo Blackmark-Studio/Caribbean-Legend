@@ -85,10 +85,10 @@ void ProcessDialogEvent()
 				link.l1 = RandPhraseSimple("Votre terre ? Perds-toi, espèce de racaille au visage rouge !","Regardez-le - un singe qui parle ! Va-t'en, maintenant !");
 				link.l1.go = "war_indian_1";
 				link.l2 = RandPhraseSimple("Je suis venu en paix, guerrier à la peau rouge. Nous ne devrions pas nous battre pour rien.","Je ne suis pas un ennemi pour toi et ta terre, guerrier. Je suis venu en paix.");
-				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/3)) > drand(80)) link.l2.go = "war_indian_2_1";
+				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/3)) > hrand(80)) link.l2.go = "war_indian_2_1";
 				else link.l2.go = "war_indian_2_2";
 				link.l3 = RandPhraseSimple("Je suis venu commercer avec vous, pas pour me battre.","Je ne me bats pas avec les Indiens. Je fais du commerce avec eux.");
-				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/6)+makeint(GetSummonSkillFromName(pchar, SKILL_FORTUNE)/6)) > drand(90)) link.l3.go = "war_indian_3_1";
+				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/6)+makeint(GetSummonSkillFromName(pchar, SKILL_FORTUNE)/6)) > hrand(90)) link.l3.go = "war_indian_3_1";
 				else link.l3.go = "war_indian_3_2";
 			}
 		break;
@@ -152,16 +152,16 @@ void ProcessDialogEvent()
 		
 		case "gun_1":
 			npchar.quest.gun = "pistol1";
-			if (drand(1) == 0)
+			if (hrand(1) == 0)
 			{
 				npchar.quest.item = "potion"+(rand(2)+2);
-				iTotalTemp = drand(1)+1;
+				iTotalTemp = hrand(1)+1;
 				sText = ""+FindRussianQtyString(iTotalTemp)+"  vial of good curative potion";
 			}
 			else
 			{
-				npchar.quest.item = "jewelry"+(drand(9)+14);
-				iTotalTemp = drand(2)+1;
+				npchar.quest.item = "jewelry"+(hrand(9)+14);
+				iTotalTemp = hrand(2)+1;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" this beautiful stone";
 			}
 			dialog.text = "Hey-ho ! Nous vous donnons pour cela "+sText+".";
@@ -173,16 +173,16 @@ void ProcessDialogEvent()
 		
 		case "gun_2":
 			npchar.quest.gun = "pistol2";
-			if (drand(3) < 2)
+			if (hrand(3) < 2)
 			{
 				npchar.quest.item = "potion"+(rand(2)+2);
-				iTotalTemp = drand(2)+2;
+				iTotalTemp = hrand(2)+2;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" vial of good curative potion";
 			}
 			else
 			{
-				npchar.quest.item = "jewelry"+(drand(3)+1);
-				iTotalTemp = drand(2)+2;
+				npchar.quest.item = "jewelry"+(hrand(3)+1);
+				iTotalTemp = hrand(2)+2;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" this beautiful stone";
 			}
 			dialog.text = "Hey-ho! Arme ruse... Nous vous la donnons pour cela "+sText+".";
@@ -194,17 +194,17 @@ void ProcessDialogEvent()
 		
 		case "gun_3":
 			npchar.quest.gun = "pistol3";
-			if (drand(5) < 3)
+			if (hrand(5) < 3)
 			{
 				qty = rand(1)+2;
 				npchar.quest.item = "jewelry5"+qty;
-				iTotalTemp = drand(6)+qty*15;
+				iTotalTemp = hrand(6)+qty*15;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" this beautiful pearl";
 			}
 			else
 			{
-				npchar.quest.item = "jewelry"+(drand(2)+2);
-				iTotalTemp = drand(2)+5;
+				npchar.quest.item = "jewelry"+(hrand(2)+2);
+				iTotalTemp = hrand(2)+5;
 				sText = ""+FindRussianQtyString(iTotalTemp)+"  this beautiful stone";
 			}
 			dialog.text = "Hé-ho ! Puissante arme ! Tuer beaucoup-beaucoup d'ennemis ! Nous vous la donnons en échange "+sText+".";
@@ -216,16 +216,16 @@ void ProcessDialogEvent()
 		
 		case "gun_4":
 			npchar.quest.gun = "pistol4";
-			if (drand(9) < 8)
+			if (hrand(9) < 8)
 			{
 				qty = rand(1)+1;
 				npchar.quest.item = "jewelry"+(qty+4);
-				iTotalTemp = drand(10)+qty*30;
+				iTotalTemp = hrand(10)+qty*30;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" piece of metal which paleface loves more than life";
 			}
 			else
 			{
-				npchar.quest.item = "obereg_"+(drand(10)+1);
+				npchar.quest.item = "obereg_"+(hrand(10)+1);
 				iTotalTemp = 1;
 				sText = "this amulet";
 			}
@@ -238,27 +238,27 @@ void ProcessDialogEvent()
 		
 		case "gun_5":
 			npchar.quest.gun = "pistol5";
-			if (drand(7) < 7)
+			if (hrand(7) < 7)
 			{
-				if (drand(10) < 8)
+				if (hrand(10) < 8)
 				{
 					npchar.quest.item = "jewelry7";
-					iTotalTemp = 2+drand(1);
+					iTotalTemp = 2+hrand(1);
 				}
 				else
 				{
 					npchar.quest.item = "jewelry8";
-					iTotalTemp = drand(4)+10;
+					iTotalTemp = hrand(4)+10;
 				}
-				qty = drand(1)+1;
+				qty = hrand(1)+1;
 				npchar.quest.item = "jewelry"+(qty+6);
 				if (qty == 1) iTotalTemp = 2;
-				else iTotalTemp = drand(5)+qty*15;
+				else iTotalTemp = hrand(5)+qty*15;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" this beautiful and precious petrified tar";
 			}
 			else
 			{
-				npchar.quest.item = "indian_"+(drand(10)+1);
+				npchar.quest.item = "indian_"+(hrand(10)+1);
 				iTotalTemp = 1;
 				sText = "this amulet";
 			}
@@ -271,16 +271,16 @@ void ProcessDialogEvent()
 		
 		case "gun_6":
 			npchar.quest.gun = "pistol6";
-			if (drand(9) < 8)
+			if (hrand(9) < 8)
 			{
 				qty = rand(1)+1;
 				npchar.quest.item = "jewelry"+(qty+4);
-				iTotalTemp = drand(8)+qty*20;
+				iTotalTemp = hrand(8)+qty*20;
 				sText = ""+FindRussianQtyString(iTotalTemp)+" piece of metal which paleface loves more than life";
 			}
 			else
 			{
-				npchar.quest.item = "amulet_"+(drand(10)+1);
+				npchar.quest.item = "amulet_"+(hrand(10)+1);
 				iTotalTemp = 1;
 				sText = "this amulet";
 			}
@@ -299,7 +299,7 @@ void ProcessDialogEvent()
 			Log_Info("You have given "+XI_ConvertString(npchar.quest.gun)+"");
 			Log_Info("You have received "+XI_ConvertString(npchar.quest.item)+" in amount of "+FindRussianQtyString(iTotalTemp)+"");
 			PlaySound("interface\important_item.wav");
-			if (sti(npchar.quest.count) > 3+drand(2));
+			if (sti(npchar.quest.count) > 3+hrand(2));
 			{
 				dialog.text = "Bien. Voici tes marchandises. Nous ne faisons plus de commerce. Reviens plus tard. Mieux vaut une arme enflammée, nous en donnerons plus pour ça. Maintenant pars!";
 				link.l1 = "Adieu, guerrier à la peau rouge.";

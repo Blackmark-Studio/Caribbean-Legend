@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 			link.l3.go  = "Finish_2_3";
 			link.l4     = "I've always dreamt of the romantic allure of being a treasure hunter!";
 			link.l4.go  = "Finish_2_4";
-			link.l5     = "Save your counsel, Sandro. Why limit myself? I know what I want, and I want it all!";
+			link.l5     = "Save your counsel, Alonso. Why limit myself? I know what I want, and I want it all!";
 			link.l5.go  = "Finish_2_5";
 		break;
 		
@@ -97,8 +97,8 @@ void ProcessDialogEvent()
 			DoReloadCharacterToLocation(Pchar.HeroParam.Location, Pchar.HeroParam.Group, Pchar.HeroParam.Locator);
 			SetFunctionTimerCondition("SanBoxStatusCityRemove", 0, 0, 30, false);
 			bGameMenuStart = false;
-			AddQuestRecordInfo("Guide_AtSea", "1");
-			AddQuestRecordInfo("Guide_OnLand", "1");
+			//AddQuestRecordInfo("Guide_AtSea", "1");
+			//AddQuestRecordInfo("Guide_OnLand", "1");
 			DoQuestFunctionDelay("Tutorial_CameraControlFP", 2.5);
 			//DoQuestFunctionDelay("Tutorial_Rest", 2.5);
 		break;
@@ -143,7 +143,7 @@ void ProcessDialogEvent()
 					link.l0 = "BetaTest - skip and start the game";
 					link.l0.go = "Finish_2";
 				}
-				link.l1 = "Sandro? What the hell has happened? And why do I have such a terrible headache?";
+				link.l1 = "Alonso? What the hell has happened? And why do I have such a terrible headache?";
 				link.l1.go = "Node_1_Jess";
 			}
 			else
@@ -159,7 +159,7 @@ void ProcessDialogEvent()
 				link.l1 = "Hm... and how was I before?";
 				link.l1.go = "Node_1";
 			}
-			locCameraFromToPos(-3.15, 2.80, 3.81, true, -2.05, 0.70, 1.69);
+			locCameraFromToPos(-2.04, 4.95, 13.26, true, -0.82, 2.52, 7.87);
 		break;
 		
 		case "PZ_Test_Start_1":
@@ -1308,7 +1308,7 @@ void ProcessDialogEvent()
 			bGameMenuStart = false;
 			StartBattleLandInterface();
 			dialog.text = "Like those red-skinned atheists, you were even speaking in their language.";
-			link.l1     = "Damn it! Sandro, what the hell are you talking about?!";
+			link.l1     = "Damn it! Alonso, what the hell are you talking about?!";
 			link.l1.go  = "Node_2";
 		break;
 		
@@ -1354,7 +1354,7 @@ void ProcessDialogEvent()
 			dialog.text = "...";
 			//link.l1     = "Hm... give me a minute, I need to collect my thoughts.";
 			//link.l1.go  = "ChangePIRATES_Jess";
-			link.l2     = "Feeling fine now. Thanks for your concerns, Sandro.";
+			link.l2     = "Feeling fine now. Thanks for your concerns, Alonso.";
 			link.l2.go  = "Node_5_Jess";
 		break;
 		
@@ -1380,7 +1380,7 @@ void ProcessDialogEvent()
 				dialog.text = "We are now in port " + XI_ConvertString("Colony" + pchar.HeroParam.ToCityId + "Gen") + ". We need to somehow start a new life without all these Masks and Beltropes, may they all rot in hell... And we will not let you down, captain. We will stay with you until the end.";
 				link.l1     = "Well, I guess I am lucky to be alive! I won't let you down nor will I disappoint any of you. That would be all, I need to land.";
 				link.l1.go  = "Finish_2";
-				link.l2     = "One bastard less, one bastard more, it is what it is, Sandro. Will you give me a couple of advices before I land?";
+				link.l2     = "One bastard less, one bastard more, it is what it is, Alonso. Will you give me a couple of advices before I land?";
 				link.l2.go  = "Advice_1";
 			}
 			else

@@ -297,16 +297,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_18":
-			dialog.text = "Cinq cents doublons d'avance ! Pour m'assurer que vous êtes sérieux et pas juste un bon à rien. Et une redevance mensuelle après cela. Je pense que nous pouvons conclure un marché.";
+			dialog.text = "Deux cent cinquante doublons d'avance ! Pour m'assurer que vous êtes sérieux et pas juste un bon à rien. Et une redevance mensuelle après cela. Je pense que nous pouvons conclure un marché.";
 			link.l1 = "Et tu ne...";
 			link.l1.go = "BM_Irons_19";
 		break;
 		
 		case "BM_Irons_19":
 			dialog.text = "... tu penses avoir le cran ? Heh, je ne vais même pas discuter avec toi - as-tu vu comment j'ai abattu ce cocu du phare ? Premier tir ! Pas de marchandage non plus, si c'est ce que tu penses. Tu dois montrer que tu peux te permettre un professionnel comme moi.";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
-				link.l1 = "Oui, je peux ! Cinq cents pieces d'or. Voici pour toi.";
+				link.l1 = "Oui, je peux ! Deux cent cinquante pieces d'or. Voici pour toi.";
 				link.l1.go = "BM_Irons_Hire1";
 			}
 			link.l2 = "Tu as eu de la chance avec ce tir. Et maintenant tu essaies de gonfler ta valeur avec des vantardises. Je peux me passer d'un professionnel comme toi. C'est trop d'honneur et trop d'argent.";
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_Hire1":
-			RemoveDublonsFromPCharTotal(500);
+			RemoveDublonsFromPCharTotal(250);
 			
 			dialog.text = "Tu n'es pas aussi mauvais que je le pensais ! Mais tu ferais mieux de t'assurer que je ne m'ennuie pas. Ce serait un gâchis de mon talent, n'est-ce pas ? Tommy et "+pchar.name+" ! Bousculons les Caraïbes !";
 			link.l1 = "Apprends à respecter la chaîne de commandement, Tommy. Et deuxièmement, je suis le capitaine pour toi. Compris ?";
@@ -372,8 +372,8 @@ void ProcessDialogEvent()
 				AddQuestRecord("BlackMark", "1");
 			}
 			
-			// Продолжение через месяц в джунглях
-			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 14, false);
+			// Продолжение через неделю в джунглях
+			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_Irons_NoHire1":
@@ -411,7 +411,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave2":
 			dialog.text = "Il est évident que vous ne vous êtes jamais caché dans des fosses pendant la saison des pluies en Irlande, "+GetSexPhrase("jeune freluquet","ma fille")+" ! Mais te suivre est mieux que de se cacher ici. Maintenant, à propos de cet or...";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
 				link.l1 = "Voici ton or.";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -421,7 +421,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_HireInCave1":
-			RemoveDublonsFromPCharTotal(500);
+			RemoveDublonsFromPCharTotal(250);
 			pchar.quest.BM_IronsTimeOver.over = "yes";
 			pchar.questTemp.BM_hireInGrot = true;
 			
@@ -446,7 +446,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave3":
 			dialog.text = "As-tu apporté l'or ?";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
 				link.l1 = "Voici ton or.";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsFirstJungle_3":
-			dialog.text = "Pourquoi prends-tu si mal ma demande ? Je ne demande pas des foutues perles, juste une cartouche. J'ai même attendu que nous soyons dans la jungle pour ne pas te distraire des affaires en ville. Alors, t'as une cartouche ?";
+			dialog.text = "Pourquoi prends-tu si mal ma demande ? Je ne demande pas des foutues perles, juste une cartouche. J’ai même attendu le bon moment pour ne pas te détourner de tes affaires et ne pas me fourrer dans les jambes comme un espèce de fou, héhé. Alors... t’as une cartouche ?";
 			if (CheckCharacterItem(PChar, "cartridge"))
 			{
 				link.l1 = "Ouais, j'ai un tour. Tiens. Ne me fais pas une mauvaise blague avec cette balle. Compris, Tommy ?";
@@ -532,7 +532,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
 			Return_IronsOfficer();
-			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 14, false);
+			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_IronsSecondJungle_1":
@@ -588,7 +588,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
 			Return_IronsOfficer();
-			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 14, false);
+			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_IronsThirdJungle_1":
@@ -800,8 +800,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_Sea3":
-			dialog.text = "Oui, cela pourrait fonctionner ! Mais encore une fois, rien de plus grand qu'une barque ! Gabe n'est pas seulement un lâche - il n'a jamais été assez avide pour que cela l'emporte sur sa prudence.";
-			link.l1 = "Espérons que ça marche, Tommy. Donc, une barque de cinquième ordre battant pavillon espagnol ou néerlandais. Prépare-toi à rencontrer ton ancien camarade de guerre !";
+			dialog.text = "Oui, cela pourrait fonctionner ! Mais encore une fois, rien de plus grand qu'une barque ou barkentin ! Gabe n'est pas seulement un lâche - il n'a jamais été assez avide pour que cela l'emporte sur sa prudence.";
+			link.l1 = "Espérons que ça marche, Tommy. Donc, une barque ou barkentin de cinquième ordre battant pavillon espagnol ou néerlandais. Prépare-toi à rencontrer ton ancien camarade de guerre !";
 			link.l1.go = "exit";
 			AddDialogExitQuest("BM_SeaVariant");
 		break;

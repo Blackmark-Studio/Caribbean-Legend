@@ -31,6 +31,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Мне назначена у вас встреча с одним человеком...";
                 link.l1.go = "baster_goldengirl";
 			}
+			//--> Торговля по закону
+			if (CheckAttribute(pchar, "questTemp.TPZ_guber_1"))
+			{
+				link.l1 = "Месье, я планирую заняться коммерческой деятельностью в городе. В частности, меня интересует торговля спиртным в крупных объемах, на постоянной основе.";
+				link.l1.go = "TPZ_guber_1";
+			}
+			//<-- Торговля по закону
 		break;
 		//************************** Квестовые штрумы ************************
 		case "Cupture_after":
@@ -128,6 +135,46 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.questTemp.GoldenGirl = "baster1";
 			DoQuestReloadToLocation("CommonResidence_3", "reload", "reload1", "GoldenGirl_AngerranInResidence");
 		break;
+		
+		//--> Торговля по закону
+		case "TPZ_guber_1":
+			dialog.text = "Капитан, вы правильно сделали, что обратились ко мне. Мы всеми силами боремся с незаконной торговлей на острове, и я искренне рад, когда ко мне приходят честные капитаны, чтобы всё организовать по закону.";
+			link.l1 = "Итак, какие условия и шаги необходимы для начала торговли?";
+			link.l1.go = "TPZ_guber_2";
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "TPZ_guber_2":
+			dialog.text = "Здесь всё просто. Для торговли спиртным вам нужно будет уплачивать налог в казну, который составляет сто дублонов в месяц, а также вести документацию и регулярно сдавать отчёты о своей деятельности. Как только вы внесёте деньги в казну, можете смело начинать торговлю.";
+			link.l1 = "Отлично. Условия вполне приемлемы. От моего имени здесь дела будет вести местный житель - Кристиан Делюш. Надеюсь, с этим не возникнет проблем?";
+			link.l1.go = "TPZ_guber_3";
+		break;
+		
+		case "TPZ_guber_3":
+			dialog.text = "Как пожелаете, капитан. Однако помните: вся ответственность за вашего протеже ложится на вас, и в случае его проступков вы разделите его участь.";
+			link.l1 = "Разумеется. Благодарю за разъяснения, месье губернатор. Мы всё подготовим, и Кристиан уплатит налог.";
+			link.l1.go = "TPZ_guber_4";
+		break;
+		
+		case "TPZ_guber_4":
+			dialog.text = "Превосходно. Рад видеть столь добросовестный подход. Удачи вам в вашем деле.";
+			link.l1 = "Благодарю. Уверен, наше сотрудничество принесёт пользу городу. До свидания.";
+			link.l1.go = "TPZ_guber_5";
+		break;
+		
+		case "TPZ_guber_5":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.TPZ_guber_1");
+			AddQuestRecord("TPZ", "11");
+			
+			sld = CharacterFromID("TPZ_Kristian");
+			sld.dialog.filename = "Quest\MiniEvents\TradingByLaw_dialog.c";
+			sld.dialog.currentnode = "Kristian_21";
+			ChangeCharacterAddressGroup(sld, "BasTer_houseF3", "barmen", "stay");
+			LAi_SetStayType(sld);
+			AddLandQuestMark(sld, "questmarkmain");
+		break;
+		//<-- Торговля по закону
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

@@ -5,12 +5,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	{
 		case "quests":
 			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("¿Qué preguntas tienes?","¿Cómo puedo ayudarte, "+GetAddress_Form(NPChar)+"?"),"Intentaste hacerme una pregunta hace no mucho tiempo, "+GetAddress_Form(NPChar)+"...","Durante todo este día, esta es la tercera vez que hablas de alguna pregunta...","¿Más preguntas, supongo?","block",1,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("He cambiado de opinión...","No tengo nada de qué hablar en este momento."),"Umph, ¿dónde se ha ido mi memoria...","Sí, realmente es la tercera vez...","No, ¿qué preguntas?...",npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("He cambiado de opinión...","No tengo nada de qué hablar en este momento."),"Umph, ¿dónde se ha ido mi memoria...?","Sí, realmente es la tercera vez...","No, ¿qué preguntas?...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			//Jason, Сага, Тени прошлого
 			if (CheckAttribute(PChar, "questTemp.Saga.Shadows") && pchar.questTemp.Saga.Shadows == "sentjons")
 			{
-				link.l1 = "Estoy buscando a Raymond Baker, un antiguo verdugo. ¿Sabes si está vivo y dónde puedo encontrarlo?";
+				link.l1 = "Estoy buscando a Raymond Baker, un antiguo verdugo. ¿Sabes si está vivo y dónde podría encontrarlo?";
 				link.l1.go = "baker";
 			}
 			//Jason, суп из черепахи
@@ -22,7 +22,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			// Страж Истины
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "merdok")
 			{
-				link.l1 = "Escucha, ¿ha llegado a esta ciudad un alquimista, un médico? Es italiano, tiene unos treinta años, se llama Gino Gvineili. ¿Has oído algo al respecto?";
+				link.l1 = "Escucha, ¿ha llegado a esta ciudad un alquimista, o un médico? Es italiano, tiene unos treinta años, se llama Gino Gvineili. ¿Has oído algo al respecto?";
 				link.l1.go = "guardoftruth";
 			}
 		break;
@@ -57,7 +57,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		//суп из черепахи
 		case "terrapin":
-			dialog.text = "¿Señor Jones? Me estás tomando el pelo, camarada. ¿Sabes cuántos malditos Jones hay en esta isla? Vas a necesitar ser más específico que eso.";
+			dialog.text = "¿Señor Jones? ¿Me estás tomando el pelo, camarada? ¿Sabes cuántos malditos Jones hay en esta isla? Vas a necesitar ser más específico que eso.";
 			link.l1 = "Tiene una hermana adulta, Molly. Dicen que es asombrosamente hermosa.";
 			link.l1.go = "terrapin_1";
 		break;
@@ -70,7 +70,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth":
-			dialog.text = "No, no lo he oído. Y solo tenemos un alquimista en el pueblo, el farmacéutico John Murdock. Tiene pociones extraordinarias - curan cualquier dolencia.";
+			dialog.text = "No, no lo he oído. Y solo tenemos un alquimista en el pueblo, el farmacéutico John Murdock. Tiene pociones extraordinarias, curan cualquier dolencia.";
 			link.l1 = "¿Crees que él mismo elabora estas pociones?";
 			link.l1.go = "guardoftruth_1";
 		break;

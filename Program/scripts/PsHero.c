@@ -1364,7 +1364,7 @@ bool PGG_IsQuestAvaible()
 	bool retVal = true;
 
 	sTown = GetCurrentTown();
-	if (sTown == "" || sTown == "Panama" || Colonies[FindColony(sTown)].from_sea == "" || CheckAttribute(Colonies[FindColony(sTown)], "HasNoFort")) retVal = false;
+	if (sTown == "" || sTown == "Panama" || Colonies[FindColony(sTown)].from_sea == "" || CheckAttribute(&Colonies[FindColony(sTown)], "HasNoFort")) retVal = false;
 	return retVal;
 }
 

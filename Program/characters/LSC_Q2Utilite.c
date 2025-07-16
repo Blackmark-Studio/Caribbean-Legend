@@ -3,29 +3,29 @@
 void SetRandSelfSkill(ref _ch, int _min, int _max)
 {
 	int iDelta = _max-_min;
-	_ch.skill.Leadership 	= _min + rand(iDelta);
-	_ch.skill.FencingL 		= _min + rand(iDelta);
-	_ch.skill.FencingS 		= _min + rand(iDelta);
-	_ch.skill.FencingH 		= _min + rand(iDelta);
-	_ch.skill.Pistol 		= _min + rand(iDelta);
-	_ch.skill.Fortune 		= _min + rand(iDelta);
-	_ch.skill.Sneak 		= _min + rand(iDelta);
+	_ch.skill.Leadership = _min + rand(iDelta);
+	_ch.skill.FencingL   = _min + rand(iDelta);
+	_ch.skill.FencingS   = _min + rand(iDelta);
+	_ch.skill.FencingH   = _min + rand(iDelta);
+	_ch.skill.Pistol     = _min + rand(iDelta);
+	_ch.skill.Fortune    = _min + rand(iDelta);
+	_ch.skill.Sneak      = _min + rand(iDelta);
 }
 
 void SetRandShipSkill(ref _ch, int _min, int _max)
 {
 	int iDelta = _max-_min;
-	_ch.skill.Sailing = _min + rand(iDelta);
-	_ch.skill.Commerce = _min + rand(iDelta);
-	_ch.skill.Accuracy = _min + rand(iDelta);
-	_ch.skill.Cannons = _min + rand(iDelta);
-	_ch.skill.Repair = _min + rand(iDelta);
+	_ch.skill.Sailing   = _min + rand(iDelta);
+	_ch.skill.Commerce  = _min + rand(iDelta);
+	_ch.skill.Accuracy  = _min + rand(iDelta);
+	_ch.skill.Cannons   = _min + rand(iDelta);
+	_ch.skill.Repair    = _min + rand(iDelta);
 	_ch.skill.Grappling = _min + rand(iDelta);
-	_ch.skill.Defence = _min + rand(iDelta);
+	_ch.skill.Defence   = _min + rand(iDelta);
 }
 
 // Установить персу все перки
-void SelAllPerksToChar(ref _ch, bool _isOfficer)
+void SetAllPerksToChar(ref _ch, bool _isOfficer)
 {
 	_ch.perks.list.BasicDefense = "1";
 	_ch.perks.list.AdvancedDefense = "1";
@@ -268,34 +268,7 @@ int RandShipFromShipClass(ref _ch)
 {
 	int iShipClass = sti(RealShips[sti(_ch.Ship.Type)].Class);
 	int iShipType;
-	switch(iShipClass)
-	{
-		case 1:
-			iShipType = SHIP_LINESHIP + rand(4);
-			break;
-			
-		case 2:
-			iShipType = SHIP_GALEON_H + rand(2);
-			break;
-		
-		case 3:
-			iShipType = SHIP_GALEON_L + rand(3);
-			break;
-			
-		case 4:
-			iShipType = SHIP_BRIGANTINE + rand(2);
-			break;
-			
-		case 5:
-			iShipType = SHIP_LUGGER + rand(1);
-			break;
-			
-		case 6:
-			iShipType = SHIP_WAR_TARTANE;
-			break;
-			
-	}
-	return iShipType;
+	return GetRandomShipType(iShipClass, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
 }
 
 // Проверка, есть ли у ГГ казначей
@@ -439,7 +412,7 @@ string GetColonyExpect2Colonies(string _city1, string _city2) // Исключа�
 	for(int n=0; n<MAX_COLONIES; n++)
 	{
 		makeref(rColony, colonies[n]);
-		if(!CheckAttribute(rColony, "HasNoFort") && rColony.nation != "none" && sti(rColony.nation) != PIRATE && GetRelation2BaseNation(sti(rColony.nation)) != RELATION_ENEMY && rColony.id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && rColony.id != _city1 && rColony.id != _city2)
+		if(!CheckAttribute(rColony, "HasNoFort") && rColony.nation != "none" && sti(rColony.nation) != PIRATE && GetRelation2BaseNation(sti(rColony.nation)) != RELATION_ENEMY && rColony.id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && rColony.id != _city1 && rColony.id != _city2)
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -471,7 +444,7 @@ void InitAlchemy()
 bool isMultiObjectKnown(string itemId)
 {
 	ref item;		
-	for(int n = 0; n < ITEMS_QUANTITY; n++)
+	for(int n = 0; n < TOTAL_ITEMS; n++)
 	{
 		item = &Items[n];
 		if( CheckAttribute(item,"multiobject") )
@@ -484,6 +457,14 @@ bool isMultiObjectKnown(string itemId)
 }
 
 void SetAlchemyRecipeKnown(string Recipe)
+{
+	pchar.alchemy.(Recipe).isKnown = true;
+	if(!CheckAttribute(pchar,"alchemy.known")) pchar.alchemy.known = 1;
+	notification(XI_ConvertString("Recipe Update"), "Alchemy");
+	PlaySound("interface\notebook.wav");
+}
+
+void SetAlchemyRecipeKnown_Silent(string Recipe)
 {
 	pchar.alchemy.(Recipe).isKnown = true;
 	if(!CheckAttribute(pchar,"alchemy.known")) pchar.alchemy.known = 1;
@@ -542,7 +523,7 @@ void initStartState2Character(ref ch)
     for(i = 1; i <= TREASURE_NOTES; i++)
     {
         sTemp = i; //Safe moment
-        ch.questTemp.Treasure_Stories.(sTemp) = i;
+        ch.questTemp.Treasure_Stories.(sTemp) = sTemp;
 	}
     // ==> Номер пиратского флага (берется из текстуры персональных флагов ГГ)
 	ch.Flags.Pirate = 3;
@@ -577,6 +558,8 @@ void initStartState2Character(ref ch)
 	SagaNpcInit();
 	//==> основные НПС LSC
 	LSC_NpcInit();
+	//==> Остальные ключевые персонажи
+	OtherNpcInit();
 	//--> Мини-квесты, инициализирующиеся по достижении ранга
 	pchar.quest.Red_Chieftain.win_condition.l1 = "Rank";
 	pchar.quest.Red_Chieftain.win_condition.l1.value = 8; // 280313
@@ -607,6 +590,8 @@ void initStartState2Character(ref ch)
 	// --> счетчики посещений таверн и верфей - ugeen 2016, нужно для ачивок
 	pchar.questTemp.TavernVisit.counter = 0;
 	pchar.questTemp.ShipyardVisit.counter = 0;
+	// счетчик посещенных колоний
+	pchar.questTemp.TownVisit.counter = 0;
 	// belamour нежелательный постоялец -->
 	pchar.GenQuest.Unwantedpostor = "start";
 	// belamour пьяный матрос -->
@@ -622,6 +607,19 @@ void initStartState2Character(ref ch)
 	pchar.quest.FishingBoat.function = "FishingBoat_NextQuest";
 	// belamour наводка от контриков по опасному грузу
 	pchar.GenQuest.Smugglerzpq = true;
+	// Старые счёты
+	pchar.quest.OS_ShipWolf.win_condition.l1 = "Rank";
+	pchar.quest.OS_ShipWolf.win_condition.l1.value = 1; 
+	pchar.quest.OS_ShipWolf.win_condition.l1.operation = ">=";
+	pchar.quest.OS_ShipWolf.function = "OS_ShipWolf";
+    // Атрибуты тутора
+    objTask.sea  = "";
+    objTask.land = "";
+    // Более быстрая, нежели CheckAttribute, проверка апдейтов WME
+    for(i = 0; i < 60; i++) EncProgress[i] = false;
+    // Механика мощи
+    PChar.Squadron.RawPower = 0.0;
+    PChar.Squadron.ModPower = 0.0;
 }
 
 //==> eddy. квестовая обработка 'ноль часов'.
@@ -658,8 +656,9 @@ void QuestActions()
 		}
 		if(CheckAttribute(pchar, "questTemp.ReasonToFast.PatrolLocation"))
 		{
-			if(CheckAttribute(Locations[FindLocation(pchar.questTemp.ReasonToFast.PatrolLocation)],"DisableEncounters"))
+			if(CheckAttribute(&Locations[FindLocation(pchar.questTemp.ReasonToFast.PatrolLocation)],"DisableEncounters"))
 			{
+				LAi_LocationDisableOfficersGen(pchar.questTemp.ReasonToFast.PatrolLocation, false);
 				DeleteAttribute(&Locations[FindLocation(pchar.questTemp.ReasonToFast.PatrolLocation)], "DisableEncounters");
 			}
 		}	
@@ -676,7 +675,7 @@ void QuestActions()
 	//************** поверка нпс-кэпов 5 и 20 числа каждого месяца *******************
 	if (GetDataDay() == 5 || GetDataDay() == 20)
 	{
-		if (CheckAttribute(NullCharacter, "capitainBase"))
+		if (CheckAttribute(&NullCharacter, "capitainBase"))
 		{
 			string sName;
 			int capIndex, a;
@@ -1090,10 +1089,26 @@ void PoormansInit()
 	LAi_SetHP(sld, 50.0, 50.0);
 	sld.greeting = "poorman_male";
 	LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+	//нищий в Виллемстаде, Кюрасао
+	sld = GetCharacter(NPC_GenerateCharacter("Villemstad_Poorman", "panhandler_"+(rand(5)+1), "man", "man", 5, HOLLAND, -1, false, "slave"));
+	sld.city = "Villemstad";
+	sld.location	= "Villemstad_town";
+	sld.location.group = "goto";
+	sld.location.locator = "goto16";
+	sld.forStay.locator = "goto16"; //где генеримся в случае стояния
+	sld.forSit.locator0 = "goto12";
+	sld.forSit.locator1 = "goto22"; //три локатора, где генеримся в случае сидения
+	sld.forSit.locator2 = "goto30";
+	LAi_SetLoginTime(sld, 9.0, 21.99);
+	sld.Dialog.Filename = "Common_poorman.c";
+	LAi_SetPoorType(sld);
+	LAi_SetHP(sld, 50.0, 50.0);
+	sld.greeting = "poorman_male";
+	LAi_group_MoveCharacter(sld, "HOLLAND_CITIZENS");
 }
 
 //ищем город определённой нации, проверять наличие ростовщика и тавернщика
-string GetQuestNationsCity(int _nation) 
+string GetQuestNationsCity(int _nation)
 {
 	int n, iRes;
     int storeArray[2];
@@ -1102,7 +1117,7 @@ string GetQuestNationsCity(int _nation)
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
-		if (colonies[n].nation != "none"  && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && sti(colonies[n].nation) == _nation && GiveArealByLocation(loadedLocation) != colonies[n].island) //не на свой остров
+		if (colonies[n].nation != "none"  && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && sti(colonies[n].nation) == _nation && GiveArealByLocation(loadedLocation) != colonies[n].island) //не на свой остров
 		{
 			if (GetCharacterIndex(colonies[n].id + "_tavernkeeper") > 0 && GetCharacterIndex(colonies[n].id + "_usurer") > 0)
 			{
@@ -1112,8 +1127,14 @@ string GetQuestNationsCity(int _nation)
 		}
 	}
 	if (howStore == 0) return "none";
-	iRes = storeArray[dRand(howStore-1)];
-	return colonies[iRes].id;
+    if (!CheckAttribute(&TEV, "TempTag"))
+        iRes = storeArray[hRand(howStore-1)]; // По умолчанию функция в диалогах, тэг не нужен
+    else
+    {
+        iRes = storeArray[hRand(howStore-1, TEV.TempTag)]; // Но исключения есть
+        DeleteAttribute(&TEV, "TempTag");
+    }
+    return colonies[iRes].id;
 }
 
 //ищем не вражескую колонию, куда можно доплыть
@@ -1127,36 +1148,36 @@ string SelectNotEnemyColony(ref NPChar)
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		nation = GetNationRelation(sti(npchar.nation), sti(colonies[n].nation));
-		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].id != "FortOrange" && colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //не на свой остров
+		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "FortOrange" && colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetIslandByCityName(npchar.city) != colonies[n].islandLable) //не на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
 		}
 	}
 	if (howStore == 0) return "none";
-	nation = storeArray[dRand(howStore-1)];
+	nation = storeArray[hRand(howStore-1, "&SNEC" + NPChar.id + NPChar.name)];
 	return colonies[nation].id;
 }
 
 //ищем любую национальную колонию, куда можно доплыть
 string SelectAnyColony(string _City)
 {
-	int n, nation;
+	int n, idx;
     int storeArray[2];
 	SetArraySize(&storeArray, MAX_COLONIES);
     int howStore = 0;
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
-		if (colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].id != "FortOrange" && colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetIslandByCityName(_City) != colonies[n].islandLable) //не на свой остров
+		if (colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "FortOrange" && colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetIslandByCityName(_City) != colonies[n].islandLable) //не на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
 		}
 	}
 	if (howStore == 0) return "none";
-	nation = storeArray[dRand(howStore-1)];
-	return colonies[nation].id;
+	idx = storeArray[hRand(howStore-1, _City)]; // TO_DO: нормальный тэг
+	return colonies[idx].id;
 }
 
 string SelectAnyColony2(string _City1, string _City2)
@@ -1168,14 +1189,14 @@ string SelectAnyColony2(string _City1, string _City2)
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
-		if (colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].id != "FortOrange" && colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetIslandByCityName(_City1) != colonies[n].islandLable && GetIslandByCityName(_City2) != colonies[n].islandLable) //не на свой остров
+		if (colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "FortOrange" && colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetIslandByCityName(_City1) != colonies[n].islandLable && GetIslandByCityName(_City2) != colonies[n].islandLable) //не на свой остров
 		{
 			storeArray[howStore] = n;
 			howStore++;
 		}
 	}
 	if (howStore == 0) return "none";
-	nation = storeArray[dRand(howStore-1)];
+	nation = storeArray[hRand(howStore-1, _City1 + _City2)]; // TO_DO: нормальный тэг
 	return colonies[nation].id;
 }
 
@@ -1468,13 +1489,12 @@ void MaryCelesteInit()
 	generableGoods[14] = GOOD_LEATHER;
 	
 	character = GetCharacter(NPC_GenerateCharacter(capID , "citiz_45", "man", "man", 50, ENGLAND, -1, true, "citizen"));
-	FantomMakeCoolSailor(character, SHIP_BRIGANTINE, StringFromKey("LSC_Q2Utilite_18"), CANNON_TYPE_CANNON_LBS16, 50, 50, 50);
+	FantomMakeCoolSailor(character, SHIP_BRIGANTINE, StringFromKey("LSC_Q2Utilite_18"), CANNON_TYPE_CANNON_LBS12, 50, 50, 50);
 	character.name = StringFromKey("LSC_Q2Utilite_19");
 	character.lastname = "";
 	character.mapEnc.type = "trade";
 	character.mapEnc.Name = StringFromKey("LSC_Q2Utilite_20");
 	LAi_SetImmortal(character, true);
-	SetCharacterGoods(character, GOOD_RUM, 700);
 	Character_SetAbordageEnable(character, false); // Низя абордировать
 	
 	SetCrewQuantityOverMax(character, 0); // Никого живого
@@ -1489,7 +1509,8 @@ void MaryCelesteInit()
 	realShip.capacity = 2820;
 	
 	NullCharacterGoods(character); // Нулим товары в трюме
-	
+
+    SetCharacterGoods(character, GOOD_RUM, 700);
 	AddCharacterGoodsSimple(character, GOOD_BALLS, 		200 + rand(50));
 	AddCharacterGoodsSimple(character, GOOD_GRAPES, 	200 + rand(50));
 	AddCharacterGoodsSimple(character, GOOD_KNIPPELS, 	200 + rand(50));
@@ -1537,7 +1558,7 @@ void TestShipInCurrentSea()
 	Group_SetType("Pirate_Attack", "war");
 	
 	sld = GetCharacter(NPC_GenerateCharacter("CaptainAttack_1", "mercen_"+(rand(14)+14), "man", "man", 10, PIRATE, 3, true, "quest"));
-	FantomMakeSmallSailor(sld, SHIP_VALCIRIA, "Валькирия", CANNON_TYPE_CANNON_LBS20, 60+rand(10), 55+rand(20), 55+rand(20), 50+rand(15), 55+rand(25));
+	FantomMakeSmallSailor(sld, SHIP_VALCIRIA, "Валькирия", CANNON_TYPE_CANNON_LBS16, 60+rand(10), 55+rand(20), 55+rand(20), 50+rand(15), 55+rand(25));
 	FantomMakeCoolFighter(sld, iRank, 60, 60, "blade_14", "pistol3", "grapeshot", 100);
 
 	Group_AddCharacter("Pirate_Attack", "CaptainAttack_1");

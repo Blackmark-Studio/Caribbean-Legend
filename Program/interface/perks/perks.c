@@ -112,6 +112,20 @@ void ActivateCharacterPerk(ref chref, string perkName)
 	Event("eSwitchPerks","l", GetMainCharacterIndex());
 }
 
+// evganat - на будущее
+int GetCharacterPerkCurDuration(ref chref, string perkName)	// определяем прошедшее время с момента активации перка
+{
+	if(!CheckAttribute(&ChrPerksList, "list." + perkName + ".TimeDuration"))
+		return -1;
+	if(!CheckCharacterPerk(chref, perkName))
+		return -1;
+	if(!IsCharacterPerkOn(chref, perkName))
+		return -1;
+	int maxDuration = sti(ChrPerksList.list.(perkName).TimeDuration);
+	int curActive = sti(chref.perks.list.(perkName).active);
+	return maxDuration - curActive;
+}
+
 bool GetCharacterPerkUsing(ref chref, string perkName)
 {   // можно ли пользовать умение (задержки нет)
 	if( !CheckAttribute(chref,"perks.list."+perkName) ) return false;
@@ -446,7 +460,7 @@ void PerkBerserkerReaction()
 	AddCharacterHealth(pchar, -2);
 	if(!ShowCharString()) Log_info(XI_ConvertString("TinctureUsed"));
 	PlaySound("Ambient\Tavern\glotok_001.wav");
-	PlaySound("Types\warrior03.wav");
+	PlaySound("Types\" + LanguageGetLanguage() + "\warrior03.wav");
 }
 
 // belamour legendary edition количество открытых перков у персонажа
@@ -562,5 +576,43 @@ bool bPerksMaxShip(ref chr)
 	if(СharacterPerksEnb(chr, "ship") >= GetMaxPerks(chr, "ship")) return true;
 	
 	return false;
+}
+
+bool HaveAllPerks(ref chr, string type) // any, self, ship
+{
+    bool bFreeSelf, bFreeShip;
+    bool bAny  = (type == "any");
+    if (bAny)
+    {
+        bFreeSelf = sti(chr.perks.FreePoints_self) > 0;
+        bFreeShip = sti(chr.perks.FreePoints_ship) > 0;
+        if(!bFreeSelf && !bFreeShip) return true; // Нечего прокачивать
+    }
+
+	string perkName, perkType;
+	aref arPerksRoot;
+	makearef(arPerksRoot, ChrPerksList.list);
+	int perksQ = GetAttributesNum(arPerksRoot);
+    bool bHero = (sti(chr.index) == GetMainCharacterIndex());
+
+	for(int i = 0; i < perksQ; i++)
+	{
+		perkName = GetAttributeName(GetAttributeN(arPerksRoot,i));
+        if(!CheckAttribute(arPerksRoot, perkName + ".BaseType")) continue;   // Предыстории
+        perkType = ChrPerksList.list.(perkName).BaseType;
+		if(!bAny && perkType != type) continue; // Не тот тип
+        if(bAny)
+        {
+            if(!bFreeSelf && perkType == "self") continue;
+            if(!bFreeShip && perkType == "ship") continue;
+        }
+        if(CheckAttribute(arPerksRoot, perkName + ".HeroType")) continue;    // Личные спецперки
+        if(!bHero && CheckAttribute(arPerksRoot, perkName + ".PlayerOnly")) continue; // Не ГГ
+        if(bHero && CheckAttribute(arPerksRoot, perkName + ".NPCOnly")) continue;     // Не НПЦ
+        if(CheckAttribute(arPerksRoot, perkName + ".Hiden")) continue;       // Скрытые
+
+		if(!CheckCharacterPerk(chr, perkName)) return false; // Перк доступен, но не прокачан
+	}
+    return true;
 }
 // <-- подсчёт перков для интерфейса

@@ -1,0 +1,25 @@
+Memento_1
+{
+Memento
+}
+
+Memento_2
+{
+Mortimer
+}
+
+Memento_3
+{
+Grim
+}
+
+Memento_4
+{
+Kapitanie, to jest ten sam 'Memento' - postrach handlarzy niewolników! 
+To nie nasz wróg, więc możemy wysłać łódź.
+}
+
+Memento_5
+{
+Opuszczony
+}

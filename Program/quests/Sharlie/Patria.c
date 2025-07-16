@@ -25,7 +25,7 @@ void Patria_SetEcliaton() // ставим Эклятон
 	itm.Weight = 0.1;
 	// Эклятон
 	sld = GetCharacter(NPC_GenerateCharacter("Ecliaton_Cap", "Off_Fra_Z", "man", "man", 40, FRANCE, -1, true, "officer"));
-	sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_FRA, 42, 9000, 700, 9900, 250000, 14.5, 32.5, 0.4);
+	sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_FRA, 42, 11250, 742, 9900, 250000, 12.85, 32.5, 0.4);
 	sld.Ship.name = StringFromKey("Patria_3");
 	SetBaseShipData(sld);
 	sld.Ship.Cannons.Type = CANNON_TYPE_CULVERINE_LBS36;
@@ -628,7 +628,7 @@ void Patria_PortPaxAttack(string qName) // ставим испанскую эс�
 				iRank = 18+MOD_SKILL_ENEMY_RATE*2;
 				iScl = 65;
 				iShip = SHIP_LINESHIP;
-				iCannon = CANNON_TYPE_CANNON_LBS32;
+				iCannon = CANNON_TYPE_CANNON_LBS36;
 			break;
 			
 			case 2:
@@ -649,7 +649,7 @@ void Patria_PortPaxAttack(string qName) // ставим испанскую эс�
 				iRank = 12+MOD_SKILL_ENEMY_RATE*2;
 				iScl = 45;
 				iShip = SHIP_XebekVML;
-				iCannon = CANNON_TYPE_CULVERINE_LBS18;
+				iCannon = CANNON_TYPE_CANNON_LBS16;
 			break;
 		}
 		sld = GetCharacter(NPC_GenerateCharacter("PatriaPP_Seacap_"+i, "off_spa_"+(6-i), "man", "man", iRank, SPAIN, -1, true, "quest"));
@@ -699,7 +699,7 @@ void Patria_PortPaxNextBattle(string qName) // добавочный ТГ
 {
 	PlaySound("interface\notebook.wav");
 	Log_Info(RandSwear()+StringFromKey("Patria_11"));
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	Group_FindOrCreateGroup("PatriaPPSeaGroup1");
 	sld = GetCharacter(NPC_GenerateCharacter("PatriaPP_Seacap_add", "off_spa_4", "man", "man", 20+MOD_SKILL_ENEMY_RATE*2, SPAIN, -1, true, "quest"));
 	FantomMakeCoolSailor(sld, SHIP_GALEON_H, "", CANNON_TYPE_CANNON_LBS24, 65, 65, 65);
@@ -762,7 +762,7 @@ void Patria_CureerBegin() // отсоединяем Эклятон, присое
 	DeleteAttribute(pchar, "questTemp.Patria.Ecliaton");
 	// флейт
 	sld = GetCharacter(NPC_GenerateCharacter("Patria_FlautCap", "mercen_13", "man", "man", 20, FRANCE, -1, false, "soldier"));
-	FantomMakeCoolSailor(sld, SHIP_FLEUT, "", CANNON_TYPE_CANNON_LBS16, 30, 30, 30);
+	FantomMakeCoolSailor(sld, SHIP_FLEUT, "", CANNON_TYPE_CANNON_LBS8, 30, 30, 30);
 	FantomMakeCoolFighter(sld, 20, 30, 30, "blade_11", "pistol1", "bullet", 50);
 	SetShipSkill(sld, 30, 40, 40, 45, 35, 35, 20, 30, 50);
 	sld.DontRansackCaptain = true;
@@ -809,7 +809,7 @@ void Patria_CureerBegin() // отсоединяем Эклятон, присое
 
 void Patria_CureerCreatePirates(string qName)//атака ДУ
 {
-	CoolTraderHunterOnMap();
+	TraderHunterOnMap(true);
 }
 
 void Patria_CureerTimeOver(string qName) // опоздание по времени
@@ -965,7 +965,7 @@ void Patria_SanMartinFortAttack()
 void Patria_SanMartinSetSquadron(string qName) // ставим эскадру голандцев
 {
 	AddQuestRecord("Patria", "27");
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	Group_FindOrCreateGroup("Patria_SanMartinSeaGroup");
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
 	if (iRank > 45) iRank = 45;
@@ -975,14 +975,14 @@ void Patria_SanMartinSetSquadron(string qName) // ставим эскадру г
 	{
 		case 2:
 			Ship1 = SHIP_BRIG;
-			Ship2 = SHIP_BARKENTINE;
+			Ship2 = SHIP_SHNYAVA;
 			Ship3 = SHIP_SLOOP;
 			Cannon1 = CANNON_TYPE_CANNON_LBS16;
 			Cannon2 = CANNON_TYPE_CULVERINE_LBS8;
 		break;
 		
 		case 4:
-			Ship1 = SHIP_BRIGANTINE;
+			Ship1 = SHIP_CARAVEL;
 			Ship2 = SHIP_SHNYAVA;
 			Ship3 = SHIP_SCHOONER_W;
 			Cannon1 = CANNON_TYPE_CANNON_LBS16;
@@ -1002,13 +1002,13 @@ void Patria_SanMartinSetSquadron(string qName) // ставим эскадру г
 			Ship2 = SHIP_GALEON_L;
 			Ship3 = SHIP_BRIG;
 			Cannon1 = CANNON_TYPE_CANNON_LBS24;
-			Cannon2 = CANNON_TYPE_CULVERINE_LBS18;
+			Cannon2 = CANNON_TYPE_CANNON_LBS16;
 		break;
 		
 		case 10:
 			Ship1 = SHIP_FRIGATE_H;
 			Ship2 = SHIP_CORVETTE;
-			Ship3 = SHIP_BRIGANTINE;
+			Ship3 = SHIP_CARAVEL;
 			Cannon1 = CANNON_TYPE_CANNON_LBS24;
 			Cannon2 = CANNON_TYPE_CULVERINE_LBS18;
 		break;
@@ -1183,7 +1183,7 @@ void Patria_DiplomatSeabattle(string qName) // вышли в море
 void Patria_DiplomatSeabattleGo(string qName) // ставим эскадру голандцев
 {
 	PlaySound("interface\notebook.wav");
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	Group_FindOrCreateGroup("Patria_DiplomatSeaGroup");
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
 	if (iRank > 45) iRank = 45;
@@ -1192,8 +1192,8 @@ void Patria_DiplomatSeabattleGo(string qName) // ставим эскадру г�
 	switch (MOD_SKILL_ENEMY_RATE)
 	{
 		case 2:
-			Ship1 = SHIP_BRIGANTINE;
-			Ship2 = SHIP_BRIG;
+			Ship1 = SHIP_BRIG;
+			Ship2 = SHIP_BRIGANTINE;
 			Ship3 = SHIP_SCHOONER_W;
 			Cannon1 = CANNON_TYPE_CANNON_LBS16;
 			Cannon2 = CANNON_TYPE_CANNON_LBS12;
@@ -1227,8 +1227,8 @@ void Patria_DiplomatSeabattleGo(string qName) // ставим эскадру г�
 			Ship1 = SHIP_LINESHIP;
 			Ship2 = SHIP_FRIGATE_H;
 			Ship3 = SHIP_FRIGATE;
-			Cannon1 = CANNON_TYPE_CANNON_LBS32;
-			Cannon2 = CANNON_TYPE_CANNON_LBS24;
+			Cannon1 = CANNON_TYPE_CANNON_LBS36;
+			Cannon2 = CANNON_TYPE_CANNON_LBS32;
 		break;
 	}
 	for (int i=1; i<=3; i++)
@@ -1412,16 +1412,16 @@ void Patria_HunterConvoyGenerate(string qName) // генерируем конв�
 	switch (MOD_SKILL_ENEMY_RATE)
 	{
 		case 2:
-			iShip1 = SHIP_CORVETTE+rand(2);
-			iShip2 = SHIP_BRIGANTINE+rand(2);
+			iShip1 = SHIP_BRIG;
+			iShip2 = SHIP_SHNYAVA;
 			iCannon1 = CANNON_TYPE_CANNON_LBS16;
 			iCannon2 = CANNON_TYPE_CANNON_LBS16;
 			iCannon3 = CANNON_TYPE_CANNON_LBS12;
 		break;
 		
 		case 4:
-			iShip1 = SHIP_CORVETTE+rand(2);
-			iShip2 = SHIP_CORVETTE+rand(2);
+			iShip1 = SHIP_CORVETTE;
+			iShip2 = SHIP_BRIG;
 			iCannon1 = CANNON_TYPE_CULVERINE_LBS18;
 			iCannon2 = CANNON_TYPE_CANNON_LBS16;
 			iCannon3 = CANNON_TYPE_CANNON_LBS16;
@@ -1429,7 +1429,7 @@ void Patria_HunterConvoyGenerate(string qName) // генерируем конв�
 		
 		case 6:
 			iShip1 = SHIP_FRIGATE;
-			iShip2 = SHIP_CORVETTE+rand(2);
+			iShip2 = SHIP_CORVETTE;
 			iCannon1 = CANNON_TYPE_CANNON_LBS24;
 			iCannon2 = CANNON_TYPE_CULVERINE_LBS18;
 			iCannon3 = CANNON_TYPE_CULVERINE_LBS18;
@@ -1609,7 +1609,7 @@ void Patria_SiegeCreateSquadron() // осада
 		sld = GetCharacter(NPC_GenerateCharacter("Patria_SiegeCap_"+i, "off_hol_"+(7-i), "man", "man", 35, HOLLAND, -1, true, "quest"));
 		if (i == 1) 
 		{
-			sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_HOL, 42, 9500, 760, 10500, 350000, 13.5, 29.5, 0.38);
+			sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_HOL, 42, 9500, 840, 11500, 350000, 12.5, 29.5, 0.38);
 			sld.Ship.name = StringFromKey("Patria_17");
 			SetBaseShipData(sld);
 			sld.Ship.Cannons.Type = CANNON_TYPE_CULVERINE_LBS36;
@@ -1683,8 +1683,8 @@ void Patria_SiegeCreateSquadron() // осада
 	for(i = 4; i <= 6; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Patria_SiegeCap_"+i, "off_spa_"+(8-i), "man", "man", 35, SPAIN, -1, true, "quest"));
-		if (i == 4) FantomMakeCoolSailor(sld, SHIP_LINESHIP, "", CANNON_TYPE_CANNON_LBS32, 70, 70, 70);
-		else FantomMakeCoolSailor(sld, SHIP_LINESHIP, "", CANNON_TYPE_CANNON_LBS24, 65, 65, 65);
+		if (i == 4) FantomMakeCoolSailor(sld, SHIP_LINESHIP, "", CANNON_TYPE_CANNON_LBS36, 70, 70, 70);
+		else FantomMakeCoolSailor(sld, SHIP_LINESHIP, "", CANNON_TYPE_CANNON_LBS32, 65, 65, 65);
 		FantomMakeCoolFighter(sld, 35, 80, 80, LinkRandPhrase("blade_18","blade_19","blade_20"), "pistol5", "bullet", 150);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
@@ -1819,7 +1819,7 @@ void Patria_SiegeEscape(string qName) // вышли в море, начинае�
 	pchar.questTemp.Patria.Escape_count = sti(pchar.questTemp.Patria.Escape_count)+1;
 	if (sti(pchar.questTemp.Patria.Escape_count) > 3) return;
 	PlaySound("interface\notebook.wav");
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	string sGroup = "Patria_EscapeSeaGroup_"+sti(pchar.questTemp.Patria.Escape_count);
 	Group_FindOrCreateGroup(sGroup);
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
@@ -1829,12 +1829,12 @@ void Patria_SiegeEscape(string qName) // вышли в море, начинае�
 	switch (MOD_SKILL_ENEMY_RATE)
 	{
 		case 2:
-			iShip = SHIP_CORVETTE + rand(2);
+			iShip = SHIP_CORVETTE;
 			iCannon = CANNON_TYPE_CANNON_LBS20;
 		break;
 		
 		case 4:
-			iShip = SHIP_CORVETTE + rand(2);
+			iShip = SHIP_CORVETTE;
 			iCannon = CANNON_TYPE_CULVERINE_LBS18;
 		break;
 		
@@ -1845,13 +1845,13 @@ void Patria_SiegeEscape(string qName) // вышли в море, начинае�
 		
 		case 8:
 			iShip = SHIP_GALEON_H + rand(2);
-			iCannon = CANNON_TYPE_CANNON_LBS24;
+			iCannon = CANNON_TYPE_CANNON_LBS32;
 		break;
 		
 		case 10:
 			iShip = SHIP_FRIGATE_H + rand(1);
-			if (iShip == SHIP_LINESHIP) iCannon = CANNON_TYPE_CANNON_LBS32;
-			else iCannon = CANNON_TYPE_CANNON_LBS24;
+			if (iShip == SHIP_LINESHIP) iCannon = CANNON_TYPE_CANNON_LBS36;
+			else iCannon = CANNON_TYPE_CANNON_LBS32;
 		break;
 	}
 	sld = GetCharacter(NPC_GenerateCharacter(sGroup+"_Cap", "off_hol_"+(rand(2)+1), "man", "man", iRank, HOLLAND, 2, true, "quest"));
@@ -1926,11 +1926,11 @@ void Patria_SiegeEscapeOnMap(string qName) //
 		{
 			case 2: 
 				iShip = SHIP_LINESHIP;
-				iCannon = CANNON_TYPE_CANNON_LBS32;	
+				iCannon = CANNON_TYPE_CANNON_LBS36;	
 			break;
 			case 3: 
 				iShip = SHIP_LINESHIP; 
-				iCannon = CANNON_TYPE_CANNON_LBS24;
+				iCannon = CANNON_TYPE_CANNON_LBS32;
 			break;
 			case 4: 
 				iShip = SHIP_FRIGATE_H; 
@@ -2278,7 +2278,7 @@ void Patria_BastionFrigateGlp() // присоединяем фрегат на Г
 void Patria_BastionFrigateMrt() // присоединяем фрегат на Мартинике
 {
 	sld = GetCharacter(NPC_GenerateCharacter("Patria_MrtCap", "off_fra_3", "man", "man", 33, FRANCE, -1, true, "quest"));
-	FantomMakeCoolSailor(sld, SHIP_FRIGATE_H, "", CANNON_TYPE_CANNON_LBS24, 65, 65, 65);
+	FantomMakeCoolSailor(sld, SHIP_FRIGATE_H, "", CANNON_TYPE_CULVERINE_LBS18, 65, 65, 65);
 	FantomMakeCoolFighter(sld, 33, 65, 65, LinkRandPhrase("blade_09","blade_12","blade_13"), "pistol5", "bullet", 150);
 	sld.Ship.Mode = "war";
 	sld.ship.Crew.Morale = 95;
@@ -2989,7 +2989,7 @@ void Patria_CuracaoDoilyReady(string qName) // д'Ойли готов к пох�
 		{
 			case 1: 
 				iShip = SHIP_LINESHIP;
-				iCannon = CANNON_TYPE_CANNON_LBS32;	
+				iCannon = CANNON_TYPE_CANNON_LBS36;	
 			break;
 			case 2: 
 				iShip = SHIP_LINESHIP; 
@@ -3160,12 +3160,12 @@ void Patria_CuracaoEnter(string qName) // пришли к Кюрасао
 		{
 			case 1: 
 				iShip = SHIP_XebekVML;
-				iCannon = CANNON_TYPE_CANNON_LBS20;	
+				iCannon = CANNON_TYPE_CANNON_LBS16;	
 				sModel = "off_hol_3";
 			break;
 			case 2: 
 				iShip = SHIP_BRIGANTINE; 
-				iCannon = CANNON_TYPE_CANNON_LBS16;
+				iCannon = CANNON_TYPE_CANNON_LBS12;
 				sModel = "off_hol_2";
 			break;
 			case 3: 

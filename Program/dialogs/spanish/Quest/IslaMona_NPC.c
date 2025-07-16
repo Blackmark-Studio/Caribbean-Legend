@@ -88,13 +88,13 @@ void ProcessDialogEvent()
 		
 		case "Himenes_7":
 			dialog.text = "No, ¡te lo juro! Nuestra comunidad se dedicó a la artesanía y el comercio en la gloriosa ciudad de Cádiz durante cincuenta años. Todo iba bien, incluso adquirimos un barco y una licencia para comerciar con las colonias de nuestro Imperio. Ahora entiendo que en ese entonces cruzamos alguna línea y estábamos completamente desprevenidos para nuestros nuevos competidores... y sus métodos.";
-			link.l1 = "No compartiste comercio con alguien en Europa y, como resultado, toda la comunidad quedó atrapada en una isla desierta en el Caribe? Y aquí pensé que tenía problemas de vida...";
+			link.l1 = "¿No compartiste comercio con alguien en Europa y, como resultado, toda la comunidad quedó atrapada en una isla desierta en el Caribe? Y pensé que yo tenía problemas de vida...";
 			link.l1.go = "Himenes_8";
 		break;
 		
 		case "Himenes_8":
 			dialog.text = "Lamentablemente, ese es el caso. Nuestra comunidad fue fundada por judíos que se convirtieron a la nueva fe y se les concedió la oportunidad de regresar a casa a España. Esta antigua historia fue suficiente para acusaciones y escrutinio oficial.";
-			link.l1 = "Y así corriste...";
+			link.l1 = "Y así escapaste...";
 			link.l1.go = "Himenes_9";
 		break;
 		
@@ -132,7 +132,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_14_1":
 			dialog.text = "¡Nuevo Mundo! En efecto, aquí estamos. En casa dicen que los piratas son verdaderos demonios y ni siquiera humanos. Comen niños, violan mujeres y despellejan a buenos católicos. ¿Es eso cierto?";
-			link.l1 = " Depende del día de la semana. Hablemos de esto en otro momento. Estoy buscando gente. Individuos trabajadores y capaces dispuestos a vivir lejos de la civilización durante varios años. ¿Te interesaría algo así?";
+			link.l1 = "Depende del día de la semana. Hablemos de esto en otro momento. Estoy buscando gente. Individuos trabajadores y capaces dispuestos a vivir lejos de la civilización durante varios años. ¿Te interesaría algo así?";
 			link.l1.go = "Himenes_15";
 		break;
 		
@@ -144,7 +144,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_15":
 			dialog.text = "No tenemos otra salida. Pero en realidad no es una mala opción. Lo aceptaremos si nos permites vivir y trabajar en paz. ¡Y promete enviarnos a casa algún día! Danos tu palabra, señor, y dinos tu nombre...";
-			link.l1 = "Yo, Capitán "+GetFullName(pchar)+", te doy mi palabra. ¿";
+			link.l1 = "Soy el capitán "+GetFullName(pchar)+", y te doy mi palabra.";
 			link.l1.go = "Himenes_16";
 		break;
 		
@@ -164,7 +164,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_18":
-			dialog.text = "Encantado de conocerte, señor Rodgar. Parece que tendremos que vivir y trabajar juntos durante mucho tiempo... ¡Dios mío, cómo soportas este calor?";
+			dialog.text = "Encantado de conocerte, señor Rodgar. Parece que tendremos que vivir y trabajar juntos durante mucho tiempo... ¡Dios mío!, ¿cómo soportas este calor?";
 			link.l1 = "";
 			link.l1.go = "Himenes_19";
 		break;
@@ -198,7 +198,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_23":
-			dialog.text = "Sí, Capitán?";
+			dialog.text = "¿Sí, Capitán?";
 			link.l1 = "¿Hymenese, alguna buena nueva para mí?";
 			link.l1.go = "Himenes_24";
 		break;
@@ -494,7 +494,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_62":
-			dialog.text = "cuarenta medidas cada mes. Y el oro es para el futuro. Un día nos sacarás de aquí, ¿recuerdas tu promesa? Cualquier trabajo debe ser pagado, y con tus doblones, pagaremos a cazadores y artesanos por su trabajo en el asentamiento. Así, tendremos comercio, y con él - ¡civilización!";
+			dialog.text = "cuarenta medidas cada mes. Y el oro es para el futuro. Un día nos sacarás de aquí, ¿recuerdas tu promesa? Cualquier trabajo debe ser pagado, y con tus doblones, pagaremos a cazadores y artesanos por su trabajo en el asentamiento. Así, tendremos comercio, y con él, ¡civilización!";
 			link.l1 = "¡Así se habla! ¡Muy bien! Por ahora, todo suena lo suficientemente convincente...";
 			link.l1.go = "Himenes_63";
 		break;
@@ -557,7 +557,7 @@ void ProcessDialogEvent()
 		case "Himenes_72": // нода Хименеса строителя и управляющего факторией
 			if (CheckAttribute(pchar, "questTemp.IslaMona.RecordPart")) // после защиты Исла Моны - нужно еще 10 рабов
 			{
-				dialog.text = "Señor Capitán, necesitamos 10 esclavos para trabajar en la fábrica - te lo dije, ¿no lo has olvidado?";
+				dialog.text = "Señor Capitán, necesitamos 10 esclavos para trabajar en la fábrica, ya te lo dije... ¿lo has olvidado?";
 				if (GetSquadronGoods(pchar, GOOD_SLAVES) >= 10)
 				{
 					link.l1 = "Ya están entregados. Descárgalos y comienza la producción.";
@@ -593,7 +593,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.IslaMona.Factory.Part") && sti(pchar.questTemp.IslaMona.Factory.Part) > 0)
 			{
-				link.l4 = "Rodrigo, he venido por mi madera de hierro.";
+				link.l4 = "Rodrigo, he venido por mi sándalo.";
 				link.l4.go = "Himenes_bacaut";
 			}
 			if (CheckAttribute(pchar, "questTemp.IslaMona.Harbour") && pchar.questTemp.IslaMona.Harbour == "done" && CheckAttribute(pchar, "questTemp.IslaMona.Tavern") && pchar.questTemp.IslaMona.Tavern == "done" && CheckAttribute(pchar, "questTemp.IslaMona.Factory") && !CheckAttribute(pchar, "questTemp.IslaMona.Church"))
@@ -619,12 +619,12 @@ void ProcessDialogEvent()
 			if (IslaMona_CheckHarbour())
 			{
 				dialog.text = "Los materiales están disponibles, todo está listo. La construcción tomará 4 meses.";
-				link.l1 = "¡No tienes prisa, ¿verdad?! Bueno, buena suerte, Rodrigo.";
+				link.l1 = "No tienes prisa, ¿verdad? Bueno, buena suerte, Rodrigo.";
 				link.l1.go = "Himenes_harbour_1";
 			}
 			else
 			{
-				dialog.text = "Tengo miedo de que no haya suficientes materiales en el almacén. Por favor, revisa la lista de nuevo.";
+				dialog.text = "Me temo que no hay suficientes materiales en el almacén. Por favor, revisa la lista de nuevo.";
 				link.l1 = "Me encargaré de ello.";
 				link.l1.go = "Himenes_73";
 			}
@@ -634,12 +634,12 @@ void ProcessDialogEvent()
 			if (IslaMona_CheckTavern())
 			{
 				dialog.text = "Los materiales están disponibles, todo está listo. La construcción tomará 3 meses.";
-				link.l1 = "¡No tienes prisa, ¿verdad?! Bueno, buena suerte, Rodrigo.";
+				link.l1 = "No tienes prisa, ¿verdad? Bueno, buena suerte, Rodrigo.";
 				link.l1.go = "Himenes_tavern_1";
 			}
 			else
 			{
-				dialog.text = "Tengo miedo de que no haya suficientes materiales en el almacén. Por favor, revisa la lista de nuevo.";
+				dialog.text = "Me temo que no hay suficientes materiales en el almacén. Por favor, revisa la lista de nuevo.";
 				link.l1 = "Me encargaré de ello.";
 				link.l1.go = "Himenes_73";
 			}
@@ -649,12 +649,12 @@ void ProcessDialogEvent()
 			if (IslaMona_CheckPlantation())
 			{
 				dialog.text = "Los materiales están disponibles, todo está listo. La construcción tomará 6 meses.";
-				link.l1 = "¡No tienes prisa, ¿verdad?! Buena suerte, Rodrigo.";
+				link.l1 = "No tienes prisa, ¿verdad? Buena suerte, Rodrigo.";
 				link.l1.go = "Himenes_plantation_1";
 			}
 			else
 			{
-				dialog.text = "Tengo miedo de que no haya suficientes materiales en el almacén. Por favor, revisa la lista de nuevo.";
+				dialog.text = "Me temo que no hay suficientes materiales en el almacén. Por favor, revisa la lista de nuevo.";
 				link.l1 = "Me encargaré de ello.";
 				link.l1.go = "Himenes_73";
 			}
@@ -702,7 +702,7 @@ void ProcessDialogEvent()
 			dialog.text = "Sí, Capitán. Debo decir, hay un cierto orgullo en ello. No dude en avisarme cómo le gustaría continuar con nuestro gran proyecto de construcción.";
 			if (CheckAttribute(pchar, "questTemp.IslaMona.Plantation") && pchar.questTemp.IslaMona.Plantation == "complete") // если пересеклось со сдачей фактории
 			{
-				link.l1 = " Hablando de construcción.  Mi fábrica también debería estar terminada para ahora.  ¿Verdad, Rodrigo?";
+				link.l1 = "Hablando de construcción.  Mi fábrica también debería estar terminada para ahora.  ¿Verdad, Rodrigo?";
 				link.l1.go = "Himenes_plantation_2";
 			}
 			else
@@ -821,7 +821,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			npchar.dialog.currentnode = "Himenes_72";
 			DeleteAttribute(pchar, "questTemp.IslaMona.Plantation.Slave");
-			AddQuestRecord("Unique_Goods", "5");
+			AddQuestRecordInfo("Unique_Goods", "5");
 			IslaMona_RemoveSlave();
 		break;
 		
@@ -1083,7 +1083,7 @@ void ProcessDialogEvent()
 				}
 				else 
 				{
-					link.l1 = "Bien, resolvamos este problema. El plan es este: los atraeré para un asalto abierto, y ahora mismo. No tiene sentido demorarse. Prepárense con perdigones y mosquetes, piratas en las puertas, el resto se queda en casa - y manténganse firmes.";
+					link.l1 = "Bien, resolvamos este problema. El plan es este: los atraeré para un asalto abierto, y ahora mismo. No tiene sentido demorarse. Prepárense con perdigones y mosquetes, piratas en las puertas, el resto se queda en casa y manténganse firmes.";
 					link.l1.go = "Himenes_church_18";
 				}
 			}
@@ -1091,7 +1091,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_church_17_1":
 			dialog.text = "Capitán, son todos soldados profesionales, con un comandante. Y nosotros ni siquiera tenemos armas adecuadas. Sí, por supuesto, podríamos haberlos superado en número, pero habríamos perdido al menos el doble de personas, y cada persona es valiosa y necesaria aquí.";
-			link.l1 = "Está bien, resolvamos este problema. El plan es el siguiente: los atraeré para un asalto abierto, y ahora mismo. No tiene sentido retrasarlo. Prepárense con perdigones y mosquetes, piratas en las puertas, el resto queda en casa - y manténganse firmes.";
+			link.l1 = "Está bien, resolvamos este problema. El plan es el siguiente: los atraeré para un asalto abierto, y ahora mismo. No tiene sentido retrasarlo. Prepárense con perdigones y mosquetes, piratas en las puertas, el resto queda en casa y manténganse firmes.";
 			link.l1.go = "Himenes_church_18";
 		break;
 		
@@ -1146,7 +1146,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_church_21":
-			dialog.text = " No quería ofender. Es solo que Rodgar dice esa palabra tan deliciosamente que yo también quería intentarlo. Muy... Pirata.";
+			dialog.text = "No quería ofender. Es solo que Rodgar dice esa palabra tan deliciosamente que yo también quería intentarlo. Muy... Pirata.";
 			link.l1 = "Sin problema, solo sorprendido. ¿Entonces qué pasó aquí?";
 			link.l1.go = "Himenes_church_22";
 		break;
@@ -1230,7 +1230,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_church_29":
-			dialog.text = "¡Todos están aquí! Señor, no sabemos qué quería usted inicialmente de este lugar y cómo lo ve para usted ahora. Para nosotros, primero fue un refugio forzado, y ahora se ha convertido en un verdadero hogar. Aquí viven sus marineros, piratas y herejes españoles fugitivos. En cualquier otro lugar del mundo, ya nos habríamos degollado unos a otros. Pero aquí somos amigos, trabajamos y disfrutamos de la vida. Isla Mona no es el punto final en el mapa de este mundo para ninguno de nosotros, pero quizás aquí pasaremos los años más felices y fructíferos de nuestras vidas. Y este es su mérito, su tierra y su gente. Muchas gracias, "+pchar.name+"¡";
+			dialog.text = "¡Todos están aquí! Señor, no sabemos qué quería usted inicialmente de este lugar y cómo lo ve para usted ahora. Para nosotros, primero fue un refugio forzado, y ahora se ha convertido en un verdadero hogar. Aquí viven sus marineros, piratas y herejes españoles fugitivos. En cualquier otro lugar del mundo, ya nos habríamos degollado unos a otros. Pero aquí somos amigos, trabajamos y disfrutamos de la vida. Isla Mona no es el punto final en el mapa de este mundo para ninguno de nosotros, pero quizás aquí pasaremos los años más felices y fructíferos de nuestras vidas. Y este es su mérito, su tierra y su gente. Muchas gracias, "+pchar.name+".";
 			link.l1 = "";
 			link.l1.go = "Himenes_church_30";
 			locCameraFromToPos(-4.11, 1.55, 1.09, true, -4.55, -0.20, 3.08);
@@ -1264,7 +1264,7 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "potion5", 10);
 			TakeNItems(pchar, "cannabis7", 1);
 			dialog.text = "¡Y ahora, de vuelta al trabajo!";
-			link.l1 = "No, ahora es - ¡a la taberna! ¡Rodrigo, vamos!";
+			link.l1 = "No, ahora es, ¡a la taberna! ¡Rodrigo, vamos!";
 			link.l1.go = "Himenes_church_33_1";
 			link.l2 = "Sí, saboreemos este maravilloso momento un poco más.";
 			link.l2.go = "Himenes_church_33_2";
@@ -1492,7 +1492,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_2":
-			dialog.text = "Encontramos un asentamiento en la isla - una guarida de bandidos bastante poblada para - solo escucha - piratas y españoles. ¡Increíble! Sabes, generalmente estos bastardos solo se cortan y cuelgan entre sí, pero aquí - he aquí: en el mismo centro del archipiélago, trabajan juntos como una familia para extraer madera de bucanero. ¿Has visto el muelle que se han construido? Los invitados no vienen a esta raza en botes de remos. Nuestra tarea es extremadamente clara: con tu ayuda, capturamos el asentamiento, tomamos la madera de bucanero y prisioneros, y tú te llevas a todos a Capsterburgo. Mientras tanto, las autoridades resolverán las cosas por sí mismas... Y mientras lo resuelven, nos ocuparemos de la madera de bucanero y celebraremos debidamente con otros oficiales de mi escuadrón en casa.";
+			dialog.text = "Encontramos un asentamiento en la isla - una guarida de bandidos bastante poblada para - solo escucha - piratas y españoles. ¡Increíble! Sabes, generalmente estos bastardos solo se cortan y cuelgan entre sí, pero aquí, he aquí: en el mismo centro del archipiélago, trabajan juntos como una familia para extraer madera de bucanero. ¿Has visto el muelle que se han construido? Los invitados no vienen a esta raza en botes de remos. Nuestra tarea es extremadamente clara: con tu ayuda, capturamos el asentamiento, tomamos la madera de bucanero y prisioneros, y tú te llevas a todos a Capsterburgo. Mientras tanto, las autoridades resolverán las cosas por sí mismas... Y mientras lo resuelven, nos ocuparemos de la madera de bucanero y celebraremos debidamente con otros oficiales de mi escuadrón en casa.";
 			link.l1 = "¿Qué te impidió tomar el asentamiento por tu cuenta hasta ahora?";
 			link.l1.go = "FraOfficer_3";
 		break;
@@ -1551,7 +1551,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_9":
-			dialog.text = "Encontramos un asentamiento en la isla - un verdadero nido de bandidos poblado por - escucha bien - piratas y españoles. ¡Increíble! Sabes, por lo general, esos bastardos solo se cortan y cuelgan entre ellos, pero aquí - he aquí: en el mismo centro del archipiélago, trabajan juntos como una familia para extraer madera de bucanero. ¿Has visto el muelle que han construido para sí mismos? Los visitantes no vienen a esta raza en botes de remos. Nuestra tarea es extremadamente clara: con tu ayuda, capturamos el asentamiento, tomamos la madera de bucanero y prisioneros, y tú los llevas a Capsterburgo. Mientras tanto, las autoridades se las arreglarán por sí mismas... Y mientras se las arreglan, incluso podría estar listo para darte la oportunidad de llevarte algo de madera valiosa para tus necesidades.";
+			dialog.text = "Encontramos un asentamiento en la isla - un verdadero nido de bandidos poblado por - escucha bien - piratas y españoles. ¡Increíble! Sabes, por lo general, esos bastardos solo se cortan y cuelgan entre ellos, pero aquí, he aquí: en el mismo centro del archipiélago, trabajan juntos como una familia para extraer madera de bucanero. ¿Has visto el muelle que han construido para sí mismos? Los visitantes no vienen a esta raza en botes de remos. Nuestra tarea es extremadamente clara: con tu ayuda, capturamos el asentamiento, tomamos la madera de bucanero y prisioneros, y tú los llevas a Capsterburgo. Mientras tanto, las autoridades se las arreglarán por sí mismas... Y mientras se las arreglan, incluso podría estar listo para darte la oportunidad de llevarte algo de madera valiosa para tus necesidades.";
 			link.l1 = "¿Qué te impidió tomar el asentamiento por tu cuenta hasta ahora?";
 			link.l1.go = "FraOfficer_3";
 		break;
@@ -1571,7 +1571,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "En mi opinión, podrías haberlos tomado justo después del reconocimiento del 'esclavo' por la fuerza. Su defensa es risible, solo un par de luchadores serios. No hay necesidad de pensar demasiado, podríamos haber estado bebiendo vino de trofeo sentados en una montaña de madera de hierro.";
+				link.l1 = "En mi opinión, podrías haberlos tomado justo después del reconocimiento del 'esclavo' por la fuerza. Su defensa es risible, solo un par de luchadores serios. No hay necesidad de pensar demasiado, podríamos haber estado bebiendo vino de trofeo sentados en una montaña de sándalo.";
 				link.l1.go = "FraOfficer_14";
 			}
 		break;
@@ -1762,7 +1762,7 @@ void ProcessDialogEvent()
 		// Алонсо
 		case "Alonso":
 			dialog.text = "Capitán, ¿cuáles son las órdenes? Hay una señal para prepararse y enviar el grupo de abordaje.";
-			link.l1 = " La orden se mantiene. ¡Chicos, síganme, necesitamos limpiar nuestro hogar de invitados no deseados! ¡El premio es mío, todos los trofeos son vuestros!";
+			link.l1 = "La orden se mantiene. ¡Chicos, síganme, necesitamos limpiar nuestro hogar de invitados no deseados! ¡El premio es mío, todos los trofeos son vuestros!";
 			link.l1.go = "Alonso_1";
 		break;
 		
@@ -1835,7 +1835,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SpaOfficer_4":
-			dialog.text = "Por cierto, Monsieur de Mor, el 'Guerrero' - ese pequeño barco te era familiar, ¿verdad? Tu audaz operación en Porto Bello no pasó desapercibida. Atrevida, incluso suicida. Necesitabas dinero desesperadamente, ¿me equivoco? ¡Ja!";
+			dialog.text = "Por cierto, Monsieur de Mor, el 'Guerrero' - ese pequeño barco te era familiar, ¿verdad? Tu audaz operación en Portobello no pasó desapercibida. Atrevida, incluso suicida. Necesitabas dinero desesperadamente, ¿me equivoco? ¡Ja!";
 			link.l1 = "Sabes mucho sobre mí, Grand. Pero pasemos a tu destino.";
 			link.l1.go = "SpaOfficer_5";
 		break;
@@ -1979,7 +1979,7 @@ void ProcessDialogEvent()
 		
 		// женское население
 		case "island_woman":
-			dialog.text = LinkRandPhrase("Seguridad y paz - ¡eso es lo que me gusta aquí!","¡Un paraíso maravilloso! Bueno, casi...","Estamos felices de encontrar un nuevo hogar aquí, después de tantas penurias.");
+			dialog.text = LinkRandPhrase("Seguridad y paz, ¡eso es lo que me gusta aquí!","¡Un paraíso maravilloso! Bueno, casi...","Estamos felices de encontrar un nuevo hogar aquí, después de tantas penurias.");
 			link.l1 = LinkRandPhrase("Me alegro por ti y por tu comunidad.","Sí, a mí también me gusta esta pequeña isla.","Es bueno saber que estás satisfecho.");
 			link.l1.go = "island_woman_1";
 			if(CheckAttribute(pchar,"questTemp.IslaMona.TownStage"))
@@ -2079,7 +2079,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "sailor_town":
-			dialog.text = RandPhraseSimple(RandPhraseSimple("Gracias por las vacaciones, Capitán.","Bonito lugar has creado aquí - tienes un don para mantener las cosas en orden, Capitán."),RandPhraseSimple("Comida fresca, licor, suelo firme bajo los pies. Es un sueño.","Me gustaría quedarme aquí un poco más."));
+			dialog.text = RandPhraseSimple(RandPhraseSimple("Gracias por las vacaciones, Capitán.","Bonito lugar has creado aquí, tienes un don para mantener las cosas en orden, Capitán."),RandPhraseSimple("Comida fresca, licor, suelo firme bajo los pies. Es un sueño.","Me gustaría quedarme aquí un poco más."));
 			link.l1 = "...";
 			link.l1.go = "sailor_town_1";
 		break;
@@ -2103,7 +2103,7 @@ void ProcessDialogEvent()
 		
 		// энкауниеры в домах
 		case "HouseMan":
-			dialog.text = LinkRandPhrase("¿Puedo ayudarle en algo, capitán?","Entra, prueba algo de paella local. ¡Solo, por el amor de Dios, no preguntes de qué está hecha!","Bienvenido, capitán. ¿Qué le parece este lugar?");
+			dialog.text = LinkRandPhrase("¿Puedo ayudarle en algo, capitán?","Entra, prueba algo de paella. ¡Solo, por el amor de Dios, no preguntes de qué está hecha!","Bienvenido, capitán. ¿Qué le parece este lugar?");
 			link.l1 = "...";
 			link.l1.go = "HouseMan_1";
 		break;

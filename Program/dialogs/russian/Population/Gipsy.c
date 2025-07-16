@@ -57,6 +57,13 @@ void ProcessDialogEvent()
 				link.l3.go = "quests";//(перессылка в файл города)
 				npchar.quest.meeting = "1";
 			}
+			// --> Тёмные воды исцеления
+			if (CheckAttribute(pchar, "questTemp.DWH_Start") && !CheckAttribute(pchar, "questTemp.DWH_gipsy") && npchar.city == "SentJons")
+			{
+				link.l6 = "Я ищу цыганку, которая лечит людей. Это ты?";
+				link.l6.go = "dwh_ne_ta";
+			}
+			// <-- Тёмные воды исцеления
 			if (!CheckAttribute(npchar, "quest.poison_price") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && rand(2) == 0)
 			{
 				link.l4 = "А что, чернобровая, не найдётся ли у тебя отравы какой для крыс? Совсем от них житья не стало!";
@@ -110,7 +117,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ай, спасибо, "+GetSexPhrase("соколик","голубушка")+"! Теперь слушай: "+sTemp+"";
 				link.l1 = LinkRandPhrase("Хех! Это очень занятно! Учту...","Вот как? Приму к сведению...","Да ну? Ты серьёзно? Ну что же, запомню...");
 				link.l1.go = "exit";
-				if (drand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
+				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 30+rand(10));//скрытность
 			}
 			else
@@ -130,7 +137,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				AddCharacterHealth(pchar, 1);
 				AddCharacterExpToSkill(pchar, "Leadership", 20);
-				if (drand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 50+rand(20));//везение
+				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 50+rand(20));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 50+rand(20));//скрытность
 			}
 			else
@@ -171,8 +178,8 @@ void ProcessDialogEvent()
 
 // --> продажа мышьяка
 		case "get_poison_1" :
-			npchar.quest.poison_price = (drand(3) + 1) * 10;
-			if(drand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
+			npchar.quest.poison_price = (hrand(3) + 1) * 10;
+			if(hrand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
 			{				
 				dialog.text = LinkRandPhrase("Ой не знаю, красав"+GetSexPhrase("ец","ица")+"! Давеча один вот тоже просил крыс примучить, а потом кто-то солдат в форте потравил. Нас две недели на допрос таскали. Чуть из города не погнали, пока не нашли того душегуба. Лазутчиком вражеским оказался.",
 				                             "А откуда мне знать, кого ты травить собрал"+GetSexPhrase("ся","ась")+"? Может знатного соперника, с которым боишься на клинках сойтись в честном поединке? ",
@@ -233,7 +240,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_2":
 			// тут работает харизма
-			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+drand(25)+drand(30))
+			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
 			{
 				dialog.text = "Хм... Ну, пожалуй, никакого страху не будет, если я тебе расскажу немного о ней. Всё равно без специальных знаний у тебя ничего путного не выйдет.";
 				link.l1 = "Я в"+GetSexPhrase("есь","ся")+" внимание!";
@@ -350,6 +357,15 @@ void ProcessDialogEvent()
 			ChangeCharacterAddressGroup(sld, "Amelia_house", "barmen", "stay");
 		break;
 		
+		// --> Тёмные воды исцеления
+		case "dwh_ne_ta":
+			sld = CharacterFromID("DWH_gypsy");
+			dialog.text = "Нет, "+GetSexPhrase("милок","красавица")+",  не я тебе нужна, а "+sld.name+". Она сейчас здесь, в городе. Я её недавно видела.";
+			link.l1 = "Спасибо.";
+			link.l1.go = "exit";
+		break;
+		// <-- Тёмные воды исцеления
+		
 		//замечание по обнажённому оружию от персонажей типа citizen
 		case "CitizenNotBlade":
 			dialog.text = NPCharSexPhrase(NPChar, "Послушайте, я, как гражданин этого города, прошу вас не ходить у нас с обнажённым клинком.", "Знаете, я, как гражданка этого города, прошу вас не ходить у нас с обнажённым клинком.");
@@ -368,7 +384,7 @@ void ProcessDialogEvent()
 string GuessText()
 {
 	string sText;
-	switch (drand(19))
+	switch (hrand(19))
 	{
 		case 0: sText = "повезёт тебе, "+GetSexPhrase("соколик","голубушка")+", завтра непременно в карты повезёт!" break;
 		case 1: sText = "в загаданном деле тебя ожидает удача, капитан!" break;

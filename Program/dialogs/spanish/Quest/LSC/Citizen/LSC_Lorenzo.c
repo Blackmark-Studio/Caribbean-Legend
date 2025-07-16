@@ -52,7 +52,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meeting_no":
-			dialog.text = "Pensé que lo habíamos dejado claro - ¡no hablo con los enemigos de España!";
+			dialog.text = "Pensé que lo habíamos dejado claro, ¡no hablo con los enemigos de España!";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "meeting_no";
@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Woman_FackYou":
-			dialog.text = "¿Qué?! ¿Decidiste revisar mis cofres? ¡No te saldrás con la tuya!";
+			dialog.text = "¿Qué? ¿Decidiste revisar mis cofres? ¡No te saldrás con la tuya!";
 			link.l1 = "¡Chica tonta!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);

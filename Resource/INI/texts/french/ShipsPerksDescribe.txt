@@ -1,0 +1,282 @@
+new_string {
+
+}
+
+special0 {Marchand}
+
+special0_desc 
+{
+Un navire marchand sacrifie généralement le calibre, la vitesse et le nombre de canons au profit d'une grande cale. Seul un capitaine très expérimenté peut se permettre un voyage en solitaire sur un tel navire.
+}
+
+special0_desc2 
+{
+Bonus à la Puissance de la Flotte : faible
+}
+
+special1 {Militaire}
+
+special1_desc 
+{
+Les navires de guerre sont spécialement conçus pour les batailles navales. Ils ont la coque la plus solide et le plus grand calibre, mais une telle puissance de feu limite la vitesse.
+}
+
+special1_desc2
+{
+Bonus à la Puissance de la Flotte : très élevé.
+}
+
+special2 {Corsaire}
+
+special2_desc 
+{
+Les navires corsaires sont idéaux pour les raids et la piraterie : agiles, maniables et bien armés, ils représentent une force redoutable, mais paient cela par une petite cale et une coque modeste.
+}
+
+special2_desc2 
+{
+Bonus à la Puissance de la Flotte : élevé.
+}
+
+special3 {Polyvalent}
+
+special3_desc 
+{
+Les navires polyvalents sont le choix des capitaines qui veulent tout faire à la fois. Ils sont également adaptés au commerce, à la piraterie et à la guerre, mais cette flexibilité les rend comparativement moins bons que tout navire spécialisé. Du moins jusqu'à ce qu'ils tombent entre les mains d'un maître charpentier.
+}
+
+special3_desc2 
+{
+Bonus à la Puissance de la Flotte : moyen
+Bonus à l'amélioration des attributs : 15%
+}
+
+trait01 {Carte des courants}
+
+trait01_desc 
+{
+Des instruments de navigation complexes fabriqués sur mesure par des maîtres européens et une carte précise des courants sous-marins de l'archipel permettent de gagner beaucoup de temps lors des voyages.
+}
+
+trait01_desc2 
+{
+Augmente la vitesse de navigation sur la carte globale de 5%.
+Cumulable avec tous les autres bonus.
+}
+
+trait02 {Emballage de qualité}
+
+trait02_desc 
+{
+Une refonte complète de la cale, de l'épaisseur des cloisons et la standardisation du système de stockage permettent de transporter plus de marchandises et de mieux les répartir dans le navire sans déséquilibre.
+}
+
+trait02_desc2 
+{
+Réduit la pénalité de vitesse due au chargement de la cale : 15%.
+}
+
+trait03 {Sceau de qualité}
+
+trait03_desc 
+{
+Un ensemble de glyphes, de sceaux et de brevets rend la cargaison de ce navire reconnaissable, et son arrivée au port est un bon signe pour les commerçants locaux. Les accords commerciaux réussis améliorent les relations avec la nation du port, et de bonnes relations rendent le commerce plus rentable.
+}
+
+trait03_desc2 
+{
+Réduit la pénalité de vente : 3% par niveau de relation.
+Seuil de profit pour améliorer les relations avec la nation : 25000.
+}
+
+trait04 {Voiles d'urgence}
+
+trait04_desc 
+{
+En cas de danger critique pour le navire, les marins installent des voiles spéciales à montage rapide sur les vergues et les hissent, augmentant temporairement la vitesse du navire.
+}
+
+trait04_desc2 
+{
+Seuil d'intégrité de la coque pour l'activation : 40%.
+Augmentation de la vitesse : 20%.
+Délai d'effet lors de la réparation au-dessus du seuil : 20 secondes.
+}
+
+trait05 {Faux documents}
+
+trait05_desc 
+{
+Un ensemble impressionnant de brevets, de documents et de plaques permet à ce navire d'entrer incognito dans presque tous les ports, et la coque discrète réduit le risque de rencontrer des patrouilles lors d'opérations de contrebande.
+}
+
+trait05_desc2 
+{
+Augmente la probabilité de tromperie : 15%.
+Réduit la probabilité de rencontrer une patrouille : 50%.
+}
+
+trait11 {Affûts pivotants}
+
+trait11_desc
+{
+Les sabords et affûts des canons ont été spécialement reconstruits, augmentant le secteur de tir des canons.
+}
+
+trait11_desc2
+{
+Augmente le secteur de tir : 7 degrés.
+}
+
+trait12 {Système de recul amélioré}
+
+trait12_desc
+{
+Un système amélioré de blocs et de compensateurs permet de tirer rapidement avec le même bord, en utilisant l'inertie du recul pour accélérer le rechargement et la visée.
+}
+
+trait12_desc2
+{
+Augmente les dégâts et la vitesse de rechargement : 6% par salve.
+Bonus maximal : 35%.
+Le bonus disparaît lors du tir avec un autre bord.
+}
+
+trait13 {Débarquement rapide}
+
+trait13_desc
+{
+Les caractéristiques de conception du navire et le système de treuils permettent de débarquer des troupes en mouvement, ce qui permet de commencer l'assaut beaucoup plus tôt sans mettre l'équipage en danger.
+}
+
+trait13_desc2
+{
+Réduit le seuil de canons détruits pour l'assaut de la forteresse : 15%.
+}
+
+trait14 {Peinture de guerre}
+
+trait14_desc
+{
+Les marques brillantes de raids réussis sur la coque et les pots-de-vin réguliers aux bonnes personnes facilitent grandement l'extorsion, transformant le navire en une légende redoutable. Les gouverneurs sont plus enclins à partager de l'argent et des biens, et les nations offrent des rançons plus élevées pour les capitaines.
+}
+
+trait14_desc2
+{
+Bonus à la valeur de la rançon : 35%.
+Bonus à la valeur des entrepôts lors des pillages de colonies : 15%.
+}
+
+trait21 {Frapper et fuir}
+
+trait21_desc
+{
+Un centre de gravité déplacé, des lignes de coque acérées et une reconfiguration spéciale des sabords augmentent la capacité du navire à franchir les vagues et sa stabilité lors du recul des canons, augmentant les limites de vitesse autorisées pendant la bataille.
+}
+
+trait21_desc2
+{
+Bonus de vitesse du navire pour un bord déchargé : 5%.
+Le bonus diminue progressivement lors du chargement.
+}
+
+trait22 {Pillage}
+
+trait22_desc
+{
+Des règles spéciales s'appliquent à la récupération des matériaux des navires abordés. Couler un navire par abordage restaure l'intégrité de la coque et des voiles. La quantité restaurée dépend de la quantité et de la qualité des matériaux, de l'étendue des dégâts et de la différence de classe.
+}
+
+trait22_desc2
+{
+Restauration de la coque : 5–15%.
+Restauration des voiles : 12% (les mâts ne sont pas restaurés).
+}
+
+trait23 {Rapide et mortel}
+
+trait23_desc
+{
+L'équipage suit une formation obligatoire pour effacer les traces et la discrétion. Réduit l'impact de la piraterie sur les relations avec les nations, et la récupération de la réputation devient plus efficace.
+}
+
+trait23_desc2
+{
+Réduit les pénalités aux relations : 50%.
+Augmente l'efficacité des avocats : 50%. 
+}
+
+trait24 {Projectiles incendiaires}
+
+trait24_desc
+{
+Les canons de chasse et de retraite sont spécialement trempés pour résister à des températures élevées, et leurs sabords sont traités avec un composé spécial contre les incendies.
+Cela permet l'utilisation de mélanges incendiaires avec n'importe quelle munition universelle, infligeant des dégâts périodiques aux navires ennemis.
+}
+
+trait24_desc2
+{
+Dégâts supplémentaires à la coque et aux voiles : 200%.
+Durée de l'effet : 15 secondes.
+Augmente la probabilité d'incendie : 200%
+}
+
+sp1 {Zélote}
+
+sp1_desc
+{
+Une chapelle de pont équipée, avec des icônes de la Vierge Marie, renforce mystérieusement les effets et la durée des amulettes d'église.
+}
+
+sp1_desc2
+{
+Renforcement de chaque amulette : individuel.
+Augmentation de la durée : 15 jours.
+}
+
+sp2 {Bienvenue, invité}
+
+sp2_desc
+{
+Ce navire légendaire est connu dans tous les coins de l'archipel des Caraïbes et est accueilli partout avec respect et admiration. L'emplacement de Lady Beth est immédiatement connu des vendeurs de cartes, et les commerçants locaux essaient de réunir tout le capital possible pour acheter des objets de valeur.
+}
+
+sp2_desc2
+{
+Bonus à la probabilité d'apparition d'un vendeur de cartes : 5–12%.
+Augmentation de la réserve de pesos : 100%.
+Augmentation de la réserve de doublons : ~30%.
+}
+
+sp3 {Creuset}
+
+sp3_desc
+{
+Sur ce navire, la vie humaine n’est qu’une courte étape avant la révélation du vrai pouvoir. Peu franchissent le Seuil et reviennent, mais ceux qui y parviennent ne craignent plus la mort.
+}
+
+sp3_desc2
+{
+Les marins tombés augmentent l’expérience et le moral de l’équipage.
+}
+
+sp3_SailorsBoardingBonus_desc
+{
+Bonus d’expérience à l’abordage : #dSailorsBoardingBonus#%
+}
+
+sp3_SailorsBoardingBonus1_desc
+{
+~ (#dDeadSailors#/500 marins tombés)
+}
+
+sp3_SurrenderChanceBonus_desc
+{
+Augmentation de la chance de reddition : #dSurrenderChanceBonus#%
+}
+
+sp3_SurrenderChanceBonus1_desc
+{
+~ (#dDeadSailors#/2000 marins tombés)
+}
+

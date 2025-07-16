@@ -994,15 +994,15 @@ Alle Feinde sind tot. Die Indianer haben mich mit den Perlen, die sie bekommen h
 #QUEST FalseTrace
 Falsche Fährte
 #TEXT   1
-Ich hatte ein interessantes Treffen im Hafen von @<sCity1>. Ein Mann namens Adam Rayner bot mir ein Geschäft an. Er erzählte mir von der Galeone '@<sShip>', die mit Silber beladen ist. Sie segelt von Cartagena nach @<sCity2>. Er verlangte ein Zehntel der Beute. Ich akzeptierte seine Bedingungen, da er mit mir segeln würde, und er bat sogar darum, beim Entern dabei zu sein. Adam hat mir keinen Zeitplan genannt, aber ich vermute, dass ich nur zwei oder drei Wochen Zeit habe.
+Ich hatte ein interessantes Treffen im Hafen von @<sCity1>. Ein Mann namens Adam Rayner bot mir ein Geschäft an. Er erzählte mir von der Fleute '@<sShip>', die mit Silber beladen ist. Sie segelt von Cartagena nach @<sCity2>. Er verlangte ein Zehntel der Beute. Ich akzeptierte seine Bedingungen, da er mit mir segeln würde, und er bat sogar darum, beim Entern dabei zu sein. Adam hat mir keinen Zeitplan genannt, aber ich vermute, dass ich nur zwei oder drei Wochen Zeit habe.
 #TEXT   2
-Trotz meiner Bemühungen gelang es mir nicht, die Galeone zu entern. Wie auch immer, zur Hölle mit dem Silber.
+Trotz meiner Bemühungen gelang es mir nicht, die Fleute zu entern. Wie auch immer, zur Hölle mit dem Silber.
 #TEXT   3
-Ich habe die Galeone mit all ihrem Silber versenkt. Wie konnte ich nur so unaufmerksam sein...
+Ich habe die Fleute mit all ihrem Silber versenkt. Wie konnte ich nur so unaufmerksam sein...
 #TEXT   4
-Unglaublich! In der Galeone befand sich kein Silber. Der Kapitän sagt, dass es nur ein Futterschiff ist, das Proviant liefern soll. Aber da war auch eine Frau, die offensichtlich die Geliebte des Kapitäns ist. Gut, ich sollte Adam in meiner Kabine aufsuchen und mit ihm reden. Mal sehen, was dieser Bastard mir als Entschuldigung sagen wird. Und er sollte sich verdammt anstrengen, um seinen Hals vor einem Strick zu retten...
+Unglaublich! In der Fleute befand sich kein Silber. Der Kapitän sagt, dass es nur ein Futterschiff ist, das Proviant liefern soll. Aber da war auch eine Frau, die offensichtlich die Geliebte des Kapitäns ist. Gut, ich sollte Adam in meiner Kabine aufsuchen und mit ihm reden. Mal sehen, was dieser Bastard mir als Entschuldigung sagen wird. Und er sollte sich verdammt anstrengen, um seinen Hals vor einem Strick zu retten...
 #TEXT   5
-Adam Rayner gab zu, dass sein Plan darin bestand, die Galeone mit meiner Hilfe zu kapern und seine Frau zu holen, die ihm davongelaufen ist. Ihr Name ist Katerine Rayner. Er bietet mir an, mir als Belohnung für meine 'Dienste' Gold von einem Squint-Eyed Solly zu geben. Aber zuerst muss ich ihn und seine Frau nach @<sCity> bringen. Soll ich diesem Schurken trauen? Vielleicht muss ich zuerst mit seiner Frau sprechen, sie könnte etwas Wichtiges wissen...
+Adam Rayner gab zu, dass sein Plan darin bestand, die Fleute mit meiner Hilfe zu kapern und seine Frau zu holen, die ihm davongelaufen ist. Ihr Name ist Katerine Rayner. Er bietet mir an, mir als Belohnung für meine 'Dienste' Gold von einem Squint-Eyed Solly zu geben. Aber zuerst muss ich ihn und seine Frau nach @<sCity> bringen. Soll ich diesem Schurken trauen? Vielleicht muss ich zuerst mit seiner Frau sprechen, sie könnte etwas Wichtiges wissen...
 #TEXT   6
 Es wird immer interessanter. Katerine hasst Adam, wie ein Hund eine Katze hasst... Deshalb ist sie auch vor ihm weggelaufen. Aber es geht nur um ihre Familienangelegenheiten und ihre Probleme. Ich mochte Katerine und ihren Vorschlag nicht, also würde ich es riskieren, Adam wieder zu vertrauen. Nun denn, zurück nach @<sCity>.
 #TEXT   7
@@ -1355,7 +1355,29 @@ Sergio Saldo hat mir angeboten, jeden fünften Tag des Monats 60 Fässer Harz zu
 #TEXT   4_1
 Es ist mir gelungen, mit Sergio Saldo zu verhandeln, um das Angebot an Harz zu erhöhen. Jetzt kann ich jeden 5. Tag im Monat am Leuchtturm von Trinidad 300 Fässer Harz für 2550 Dublonen kaufen.
 #TEXT   5
-An jedem 15. des Monats bekomme ich von Rodrigo Jimenez, dem Leiter meiner Fabrik, eine Charge von 40 Stämmen Eisenholz. Die Fabrik kann insgesamt bis zu 6 Chargen lagern, bevor sie die Arbeit einstellt. Die Bezahlung erfolgt sofort für alle auf Lager befindlichen Chargen. Die Kosten für jede Charge sind: 200 Dublonen, 5 Flaschen Rum, 5 Flaschen Wein. Insgesamt: 5 Dublonen pro Stamm. Nicht schlecht...
+An jedem 15. des Monats bekomme ich von Rodrigo Jimenez, dem Leiter meiner Fabrik, eine Charge von 20 Stämmen Eisenholz. Die Fabrik kann insgesamt bis zu 6 Chargen lagern, bevor sie die Arbeit einstellt. Die Bezahlung erfolgt sofort für alle auf Lager befindlichen Chargen. Die Kosten für jede Charge sind: 200 Dublonen, 5 Flaschen Rum, 5 Flaschen Wein. Insgesamt: 10 Dublonen pro Stamm. Nicht schlecht...
+
+#QUEST Useful_Acquaintances
+Fäden zum Ziehen
+#TEXT   1
+************************************************************
+Bei der Zigeunerin in Saint John's kann ich immer Mangarosa kaufen – drei Stängel für dreihundertfünfzig Golddublonen.
+#TEXT   2
+************************************************************
+In der Taverne von Willemstad erwarten mich stets Erholung und Vergnügen. Die bezaubernde Betsy Price kümmert sich darum.
+#TEXT   3
+************************************************************
+Der Hafenmeister in Belize hat mir einen Rabatt von fünfzig Prozent auf das Anlegen eines Schiffes bis einschließlich Klasse zwei gewährt, und das für jede beliebige Dauer. Das Schiff steht unter seiner persönlichen Aufsicht und wird im Falle einer Belagerung der Stadt nicht beschädigt.
+#TEXT   4
+************************************************************
+Ab sofort kann ich am 15. jeden Monats bei Christian Deluce in Basseterre Wein und Rum kaufen. Sein Haus befindet sich rechts von der Residenz des Gouverneurs. Der Preis beträgt 26 Dublonen für eine Partie von 20 Flaschen Wein und ebenso viel Rum.
+************************************************************
+#TEXT   4_1
+Es ist mir gelungen, mit Christian eine Erhöhung der Liefermenge zu vereinbaren. Ab sofort legt er für mich jeden 15. des Monats jeweils hundert Flaschen Wein und Rum zurück. Der Preis bleibt derselbe – hundertdreißig Dublonen für die gesamte Partie.
+#TEXT   6
+************************************************************
+In der Taverne von Puerto Principe erwarten mich kostenlose Unterkunft und Getränke auf Kosten des Hauses. Der Wirt hat zudem versprochen, dass dank seiner Bemühungen mehr Matrosen unter meinem Kommando dienen wollen.
+
 
 #QUEST FMQ_Guadeloupe
 Preis der Diskretion
@@ -1380,7 +1402,7 @@ Ein Barkeeper gab mir den schönen Rat, mich bezüglich Pinette direkt an Don Ca
 #TEXT   10
 Hier gibt es also keine Spur von Pinette, obwohl es mir gelungen ist, eine Spur des dritten Passagiers zu finden - des französischen Deserteurs. Er ist jetzt ein spanischer Don, ein Kommandant der Sario. Seine Belohnung für einen Verrat, nehme ich an. Mir bleibt nichts anderes übrig, als seinen Kahn zu entern und 'don Juan' gefangen zu nehmen. Auch wenn er mir nicht sagen kann, wo Bertrand sich aufhält, könnte ich ihn benutzen, um den Zorn des Gouverneurs von Guadeloupe zu besänftigen.
 #TEXT   11
-Wie es aussieht, habe ich Glück gehabt: In Portobello liegt der Kriegsschoner 'Sario'. Ihn vor einem Fort zu entern, wäre nicht die klügste Idee. Ich sollte warten, bis er den Hafen in Richtung offenes Meer verlässt.
+Wie es aussieht, habe ich Glück gehabt: In Portobello liegt der Schaluppe 'Sario'. Ihn vor einem Fort zu entern, wäre nicht die klügste Idee. Ich sollte warten, bis er den Hafen in Richtung offenes Meer verlässt.
 #TEXT   12
 Die Sario ist auf dem offenen Meer. Ich sollte sie jagen!
 #TEXT   13
@@ -1911,7 +1933,7 @@ Ich hatte mich auf einen harten Kampf gegen das spanische schwere Geschwader ein
 #TEXT	11
 Ich habe es geschafft, vor dem spanischen Geschwader zu fliehen. Ich sollte mich beeilen und so schnell wie möglich zu Tyrex gehen.
 #TEXT	12
-Die El Cazador, das Flaggschiff, ist ausgeschaltet. Jetzt können wir versuchen zu fliehen - alles was wir brauchen sind 1000 Yards Abstand von ihnen.
+Das Flaggschiff, ist ausgeschaltet. Jetzt können wir versuchen zu fliehen - alles was wir brauchen sind 1000 Yards Abstand von ihnen.
 
 #QUEST Roger_7
 Flying the Jolly Roger: Die Schätze des Jarl

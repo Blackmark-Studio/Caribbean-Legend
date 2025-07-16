@@ -1,0 +1,84 @@
+﻿food_1
+{
+Ratti
+}
+
+food_2
+{
+~ rovinato ~
+}
+
+food_3
+{
+~ danneggiato ~
+}
+
+food_4
+{
+~ distrutto ~
+}
+
+food_5
+{
+~ pezzi ~
+}
+
+food_6
+{
+Sulla nave @<rChar.Ship.Name> morto di malattie @<FindRussianSailorString(cn, "No")>
+}
+
+food_7
+{
+Sulla nave @<rChar.Ship.Name> ci sono poche medicine
+}
+
+food_8
+{
+Sulla nave @<rChar.Ship.Name> morto di malattie @<FindRussianSlavesString(cn, "No")>
+}
+
+food_9
+{
+Sulla @<rChar.Ship.Name> la gente desidera più rum.
+}
+
+food_10
+{
+Sulla nave @<rChar.Ship.Name> cibo lasciato su @<FindRussianDaysString(cn)>
+}
+
+food_11
+{
+Abbiamo urgentemente bisogno di ripulire!
+}
+
+food_12
+{
+Gli schiavi si ribellarono!
+}
+
+food_13
+{
+I marinai stanno morendo di fame sulla nave @<rChar.Ship.Name>. Il morale dell'equipaggio sta scendendo!
+}
+
+food_14
+{
+I marinai sono affamati
+}
+
+food_15
+{
+Gli schiavi stanno morendo di fame
+}
+
+food_16
+{
+Rivolta sulla nave @<rChar.Ship.Name>!!!! ~
+}
+
+food_17
+{
+La nave lascia lo schieramento
+}

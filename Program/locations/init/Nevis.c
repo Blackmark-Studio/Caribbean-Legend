@@ -143,13 +143,14 @@ int LocationInitNevis(int n)
 	locations[n].reload.l12.emerge = "reload1";
 	locations[n].reload.l12.autoreload = "0";
 	locations[n].reload.l12.label = "House";
-
-    // --> Комоны, загрушки. Номера с начинаются с 20.
+	
 	locations[n].reload.l20.name = "houseS3";
-	locations[n].reload.l20.go = "CommonDoubleflourHouse_1";
+	locations[n].reload.l20.go = "Charles_houseS3";
 	locations[n].reload.l20.emerge = "reload1";
 	locations[n].reload.l20.autoreload = "0";
 	locations[n].reload.l20.label = "House";
+
+    // --> Комоны, загрушки. Номера с начинаются с 20.
 
 	locations[n].reload.l21.name = "houseH2";
 	locations[n].reload.l21.go = "CommonRoom_MH4";
@@ -882,6 +883,57 @@ int LocationInitNevis(int n)
 	locations[n].reload.l1.label = "Street";
 	LAi_LocationFightDisable(&locations[n], true);
 	locations[n].box1.QuestClosed = true;
+	
+	n = n + 1;
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////
+	////// дом портного
+	///////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	locations[n].id = "Charles_houseS3";
+	locations[n].id.label = "House";
+	locations[n].image = "loading\inside\largehouse01.tga";
+	//Town sack
+	locations[n].townsack = "";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "";
+	//Models
+	//Always
+	locations[n].filespath.models = "locations\inside\largehouse01";
+	locations[n].models.always.largehouse01 = "largehouse01";
+	locations[n].models.always.largehouse01.level = 65538;
+	locations[n].models.day.locators = "largehouse01_locators";
+	locations[n].models.night.locators = "largehouse01_Nlocators";
+
+	Locations[n].models.always.largehouse01windows = "largehouse01_windows";
+	Locations[n].models.always.largehouse01windows.tech = "LocationWindows";
+	locations[n].models.always.largehouse01windows.level = 65539;
+
+	locations[n].models.always.back = "..\inside_back";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	Locations[n].models.day.largehouse01rand= "largehouse01_rand";
+	locations[n].models.day.charactersPatch = "largehouse01_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "largehouse01_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "Charles_town";
+	locations[n].reload.l1.emerge = "houseS3";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Street";
+	
+	locations[n].reload.l2.name = "reload2";
+	locations[n].reload.l2.go = "CommonDoubleflourRoom";
+	locations[n].reload.l2.emerge = "reload1";
+	locations[n].reload.l2.autoreload = "0";
+	locations[n].reload.l2.label = "Room";
+	LAi_LocationFightDisable(&locations[n], true);
 	
 	n = n + 1;
 	

@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 			link.l3.go  = "Finish_2_3";
 			link.l4     = "Всегда мечтал"+GetSexPhrase("","а")+" о славе охотника за кладами. Романтика!";
 			link.l4.go  = "Finish_2_4";
-			link.l5     = "Оставь свои советы, Сандро. Зачем себя ограничивать? Я знаю, что делать и хочу всё и сразу!";
+			link.l5     = "Оставь свои советы, Алонсо. Зачем себя ограничивать? Я знаю, что делать и хочу всё и сразу!";
 			link.l5.go  = "Finish_2_5";
 		break;
 		
@@ -97,8 +97,8 @@ void ProcessDialogEvent()
 			DoReloadCharacterToLocation(Pchar.HeroParam.Location, Pchar.HeroParam.Group, Pchar.HeroParam.Locator);
 			SetFunctionTimerCondition("SanBoxStatusCityRemove", 0, 0, 30, false);
 			bGameMenuStart = false;
-			AddQuestRecordInfo("Guide_AtSea", "1");
-			AddQuestRecordInfo("Guide_OnLand", "1");
+			//AddQuestRecordInfo("Guide_AtSea", "1");
+			//AddQuestRecordInfo("Guide_OnLand", "1");
 			DoQuestFunctionDelay("Tutorial_CameraControlFP", 2.5);
 			//DoQuestFunctionDelay("Tutorial_Rest", 2.5);
 		break;
@@ -122,7 +122,6 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Teach_battle_1":
-		    LAi_SetPlayerType(pchar);
 			NextDiag.CurrentNode = "Teach_6";
 			AddDialogExitQuestFunction("Tut_TeachBattle");
 			DialogExit();
@@ -143,7 +142,7 @@ void ProcessDialogEvent()
 					link.l0 = "BetaTest - пропустить и начать игру";
 					link.l0.go = "Finish_2";
 				}
-				link.l1 = "Сандро? Чёрт возьми, что произошло? И почему так адски болит голова?..";
+				link.l1 = "Алонсо? Чёрт возьми, что произошло? И почему так адски болит голова?..";
 				link.l1.go = "Node_1_Jess";
 			}
 			else
@@ -161,7 +160,7 @@ void ProcessDialogEvent()
 				link.l1 = "Хм... а раньше на кого был"+ GetSexPhrase("","а") +" похож"+ GetSexPhrase("","а") +"?";
 				link.l1.go = "Node_1";
 			}
-			locCameraFromToPos(-3.15, 2.80, 3.81, true, -2.05, 0.70, 1.69);
+			locCameraFromToPos(-2.04, 4.95, 13.26, true, -0.82, 2.52, 7.87);
 		break;
 		
 		case "LadyBeth_Test_Start_1":
@@ -332,7 +331,7 @@ void ProcessDialogEvent()
 			sld.Health.maxHP    = 60.0;
 			SetCharacterPerk(sld, "ShipEscape");
 			// Дюран
-			sld = GetCharacter(NPC_GenerateCharacter("FMQT_mercen", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Duran", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
 			sld.name = StringFromKey("FMQ_49");
 			sld.lastname = StringFromKey("FMQ_50");
 			sld.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -546,7 +545,7 @@ void ProcessDialogEvent()
 			sld.Health.maxHP    = 60.0;
 			SetCharacterPerk(sld, "ShipEscape");
 			// Дюран
-			sld = GetCharacter(NPC_GenerateCharacter("FMQT_mercen", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Duran", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
 			sld.name = StringFromKey("FMQ_49");
 			sld.lastname = StringFromKey("FMQ_50");
 			sld.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -760,7 +759,7 @@ void ProcessDialogEvent()
 			sld.Health.maxHP    = 60.0;
 			SetCharacterPerk(sld, "ShipEscape");
 			// Дюран
-			sld = GetCharacter(NPC_GenerateCharacter("FMQT_mercen", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Duran", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
 			sld.name = StringFromKey("FMQ_49");
 			sld.lastname = StringFromKey("FMQ_50");
 			sld.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -1963,7 +1962,7 @@ void ProcessDialogEvent()
 			bGameMenuStart = false;
 			StartBattleLandInterface();
 			dialog.text = "Да на безбожников этих краснорожих, даже на их языке говорили.";
-			link.l1     = "Дьявол! Сандро, что ты несёшь?!";
+			link.l1     = "Дьявол! Алонсо, что ты несёшь?!";
 			link.l1.go  = "Node_2";
 		break;
 		
@@ -2009,7 +2008,7 @@ void ProcessDialogEvent()
 			dialog.text = "Это наш долг, капитан! Мы с Хопкинсом перевезли вас на судно и, как могли, остановили кровь. Потом и доктора доставили - он вас наголо остричь хотел, но мы не позволили. Всё боялся, что мы его пристрелим, если вы Богу душу отдадите\nНо всё обошлось - вот вы уже и на ноги встали. Как себя чувствуете?";
 			//link.l1     = "Хм... дай минутку, соберусь с мыслями...(создание своего типа героя).";
 			//link.l1.go  = "ChangePIRATES_Jess";
-			link.l2     = "Да вроде уже ничего. Спасибо за заботу, Сандро.";
+			link.l2     = "Да вроде уже ничего. Спасибо за заботу, Алонсо.";
 			link.l2.go  = "Node_5_Jess";
 		break;
 		
@@ -2035,7 +2034,7 @@ void ProcessDialogEvent()
 				dialog.text = "Мы сейчас в порту " + XI_ConvertString("Colony" + pchar.HeroParam.ToCityId + "Gen") + ". Нужно как-то начинать новую жизнь без всех этих Масок и Белтропов, будь они неладны... То есть, пусть земля им будет пухом, я хотел сказать... А мы уж вас не подведём, капитан. Ваша команда останется с вами до конца.";
 				link.l1     = "Ну что ж, значит - к новой мечте! Я вас не подведу и не разочарую. Всё, я на берег.";
 				link.l1.go  = "Finish_2";
-				link.l2     = "На смену одним мерзавцам появятся другие - такова жизнь, Сандро. Дашь мне пару советов, перед тем как я сойду на берег?";
+				link.l2     = "На смену одним мерзавцам появятся другие - такова жизнь, Алонсо. Дашь мне пару советов, перед тем как я сойду на берег?";
 				link.l2.go  = "Advice_1";
 			}
 			else

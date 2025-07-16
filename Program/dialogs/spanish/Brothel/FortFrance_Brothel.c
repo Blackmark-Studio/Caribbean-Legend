@@ -5,7 +5,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("¿Qué tipo de preguntas, "+GetSexPhrase("joven","jovencita")+"?","¿Qué necesitas, "+GetSexPhrase("guapo","bonita")+"? Pregunta lo que quieras."),"¿Preguntas otra vez?","Tee-hee, otra vez lo mismo... preguntas...",
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("¿Qué tipo de preguntas, "+GetSexPhrase("joven","jovencita")+"?","¿Qué necesitas, "+GetSexPhrase("guapo","bonita")+"? Pregunta lo que quieras."),"¿Preguntas otra vez?","Vaya, otra vez lo mismo... preguntas...",
                           ""+GetSexPhrase("Mm, ¿por qué no eliges una belleza para ti? Estoy empezando a sospechar de ti...","Mm, ¿por qué no eliges una belleza para ti? No tenemos chicos aquí, me temo, jeje...")+"","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("He cambiado de opinión, discúlpame.","En realidad, olvídalo..."),"Yo... lo siento, no tengo preguntas, por ahora.",
                       "Tienes razón, es la tercera vez ya. Perdóname.","Tal vez la próxima vez, señora.",npchar,Dialog.CurrentNode);
@@ -14,7 +14,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if (CheckAttribute(pchar, "questTemp.Sharlie.Gigolo") && pchar.questTemp.Sharlie.Gigolo == "start")
 			{
 				DelLandQuestMark(npchar);
-				link.l1 = "Escucha, Aurora, necesito una chica para la noche. Y quiero llevármela a casa conmigo. ¿Puedes arreglar eso?";
+				link.l1 = "Escucha, Aurora, necesito una chica para esta noche. Y quiero llevármela a casa conmigo. ¿Puedes arreglar eso?";
                 link.l1.go = "Gigolo";
 			}	
 			//<-- Бремя гасконца */
@@ -22,7 +22,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		//--> Бремя гасконца
 		case "Gigolo":
-			dialog.text = "Por supuesto, querido. ¿Ya has encontrado una Doncella adecuada o debo hacerlo yo?";
+			dialog.text = "Por supuesto, querido. ¿Ya has encontrado una doncella adecuada o debo hacerlo yo?";
 			link.l1 = "De hecho, lo hice. Tengo mis ojos puestos en una chica llamada Lucille.";
 			link.l1.go = "Gigolo_1";
 		break;
@@ -45,7 +45,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if (sti(pchar.questTemp.Sharlie.Gigolo.Rand1) == 0)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 5000;
-				dialog.text = "¡Bueno, Monsieur, eso no es cierto! Ella es joven, bonita y experimentada, mis clientes la admiran sin excepción. Te costará mucho. Cinco mil pesos por una noche con ella, y ni un solo peso menos.";
+				dialog.text = "¡Bueno, monsieur, eso no es cierto! Ella es joven, bonita y experimentada, mis clientes la admiran sin excepción. Te costará mucho. Cinco mil pesos por una noche con ella, y ni un solo peso menos.";
 				if (sti(pchar.money) >= 5000)
 				{
 					link.l1 = "Caro, pero muy bien. Aquí tienes tus monedas.";
@@ -60,7 +60,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			else
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 2500;
-				dialog.text = "Bueno, tienes razón, Monsieur, es bonita y joven pero le falta experiencia. Mis clientes generalmente no la notan, por eso pregunté. Pero si realmente te gustan las chicas modestas, digo que es una buena elección. Te costará dos mil quinientos pesos.";
+				dialog.text = "Bueno, tienes razón, monsieur. Es bonita y joven, pero le falta experiencia. Mis clientes generalmente no la notan, por eso pregunté. Pero si realmente te gustan las chicas modestas, digo que es una buena elección. Te costará dos mil quinientos pesos.";
 				if (sti(pchar.money) >= 2500)
 				{
 					link.l1 = "Muy bien. Toma tus monedas.";
@@ -93,7 +93,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			else
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 3000;
-				dialog.text = "¿De veras, Monsieur? ¿Ya tienes nostalgia? Mis criollas y especialmente mis mulatas son más apasionadas que esta gata callejera parisina. Pero, hey, es tu elección. Te costará tres mil pesos.";
+				dialog.text = "¿De veras, monsieur? ¿Ya tienes nostalgia? Mis criollas, y especialmente mis mulatas son más apasionadas que esta gata callejera parisina. Pero, hey, es tu elección. Te costará tres mil pesos.";
 				if (sti(pchar.money) >= 3000)
 				{
 					link.l1 = "Caro, pero muy bien. Aquí tienes tus monedas.";
@@ -109,7 +109,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Gigolo_3":
 			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.Sharlie.Gigolo.Money));
-			dialog.text = "Como desees, querido. Lucille te estará esperando ansiosamente a las once de la noche. Si no llegas antes de la medianoche, atenderá a otro cliente, y entonces tendrás que esperar hasta la próxima noche para llevártela. Además, debe regresar antes de las siete de la mañana. Y no pienses en... hacerle daño de ninguna manera, o lo lamentarás. Una advertencia justa, querido.";
+			dialog.text = "Como desees, querido. Lucille te estará esperando ansiosamente a las once de la noche. Si no llegas antes de la medianoche, atenderá a otro cliente, y entonces tendrás que esperar hasta la próxima noche para llevártela. Además, debe regresar antes de las siete de la mañana. Y no pienses en... hacerle daño, de ninguna manera. O lo lamentarás. Una advertencia justa, querido.";
 			link.l1 = "No te preocupes, la trataré como a una amante, no como a un bruto. La recogeré a las once en punto. ¿Qué debería hacer hasta entonces?";
 			link.l1.go = "Gigolo_4a";
 		break;

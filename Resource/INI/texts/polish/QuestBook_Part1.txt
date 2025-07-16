@@ -1,33 +1,33 @@
 #QUEST JacobVanBerg_Journal
 Dziennik Jacoba van Berga
-#TEXT 1 1
+#TEXT 1
 ... Mam już dość tego zakazu rabowania angielskich kupców!
 To nie ma sensu! Zatapiać statki, które można splądrować!
 ... Mam już dość tego pomysłu z „Latającym Holendrem”. Na początku był zabawny i dochodowy, ale nadszedł czas, żeby z tym skończyć.
 ... Mam już dość tych idiotycznych misji mojego pracodawcy. Ostatnim poleceniem było przypomnienie sobie współrzędnych miejsca, w którym zatopiłem angielską fluite. Od tego czasu było już tak wiele fluitów! Jedyne co pamiętam to to, że płynąłem na 12 stopniu 48' szerokości geograficznej.
-... Ja też mam już dość czekania na tego żółtoskórego chińskiego posłańca. Minęły już tygodnie. Jeśli nie dotrze w ciągu dwóch dni, to wrócę do zatoki Boca De La Sierpe, wezmę swój statek i zostawię ten bałagan za sobą.
-#TEKST 2
-... trzeba złapać kolejną ofiarę - jakiegoś idiotę, który kupił „Walkirię” od tego półżywego Fleetwooda. Facet płynie teraz do Blueweld, a jego statek jest wypełniony niewolnikami...
+... Mam już dość czekania na tego żółtoskórego chińskiego posłańca. Minęły już tygodnie. Jeśli nie dotrze tu w ciągu dwóch dni, to wrócę do zatoki Boca De La Sierpe, wezmę swój statek i zostawię ten bałagan za sobą.
+#TEXT 2
+... trzeba złapać kolejną ofiarę - jakiegoś idiotę, który kupił „Valkyrie” od tego półżywego Fleetwooda. Facet płynie teraz do Blueweld, a jego statek jest wypełniony niewolnikami...
 ...to polowanie będzie moim ostatnim, mam już dość grania potworem, czas się pożegnać, bo moja ostatnia rozmowa z mistrzem była dość nieprzyjemna. Nadal żąda, żebym przypomniał sobie, gdzie zatopiłem tę brytyjską flet. To było wieki temu, pamiętam tylko, że szerokość geograficzna wynosiła 12 stopni i 48'. On nawet próbuje mnie nastraszyć tym żółtoskórym draniem. Nie, mam już dość tych gier-widm. Czas zrobić coś poważnego i uciekać stąd z powrotem do Europy...
-... Chyba powinienem zmienić flagę z „Mirage” na „Valkyrie”. Tak czy inaczej trafi w moje ręce. Nie obchodzi mnie, że kapitan chce ją dostarczyć do zatoki Esmeraldy. Ten szczur lądowy już ma „Meifenga”, pieprzyć go, nie dostanie też „Walkirii”!
+... Chyba powinienem zmienić flagę z „Mirage” na „Valkyrie”. Tak czy inaczej trafi w moje ręce. Nie obchodzi mnie, że kapitan chce ją dostarczyć do zatoki Esmeraldy. Ten szczur lądowy już ma „Meifenga”, pieprzyć go, nie dostanie też „Valkyrie”!
 
 #QUEST Fleetwood_Journal
 Dziennik Richarda Fleetwooda
 #TEXT 1
-...biedna Abi błaga mnie, abym znalazł wyspę, na której znalazłem ją i jej ojca. Kurde, chciałbym pamiętać, gdzie to wszystko się wydarzyło. Długość geograficzna 64 stopnie 41' - to wszystko, co pamiętam. Zobaczyłem tam „Latającego Holendra” i próbowałem ją gonić. Poniosłem porażkę, ale znalazłem tę wyspę z Abi i jej ojcem. Wygląda na to, że ten stary Żyd myśli, że to ja zatopiłem ich statek. Mam nadzieję, że kochana Abi nie myśli tak samo.
-...prawie zdobyliśmy dowód na związek Rodenburga z „Latającym Holendrem”. Dobry stary Charlie powiedział, że zmieniła swoją bazę na Castle Bruce Bay na Dominice. Mam nadzieję, że wkrótce zobaczymy koniec tej historii, zanim kanibale ich rozszarpią. To będzie niezła historia!
-...byłoby pomocne w ujawnieniu naszego szczura w Bridgetown. Mam nadzieję, że nie gubernator, ale kto jeszcze jest tak dobrze poinformowany o planowanych szlakach handlowych i patrolach?
+... biedna Abi błaga mnie, abym znalazł wyspę, na której znalazłem ją i jej ojca. Kurde, chciałbym pamiętać, gdzie to wszystko się wydarzyło. Długość geograficzna 64 stopnie 41' - to wszystko, co pamiętam. Zobaczyłem tam „Latającego Holendra” i próbowałem ją gonić. Poniosłem porażkę, ale znalazłem tę wyspę z Abi i jej ojcem. Wygląda na to, że ten stary Żyd myśli, że to ja zatopiłem ich statek. Mam nadzieję, że kochana Abi nie myśli tak samo.
+... prawie zdobyliśmy dowód na związek Rodenburga z „Latającym Holendrem”. Dobry stary Charlie powiedział, że zmieniła swoją bazę na Castle Bruce Bay na Dominice. Mam nadzieję, że wkrótce zobaczymy koniec tej historii, zanim kanibale ich rozszarpią. To będzie niezła historia!
+... byłoby pomocne w ujawnieniu naszego szczura w Bridgetown. Mam nadzieję, że nie gubernator, ale kto jeszcze jest tak dobrze poinformowany o planowanych szlakach handlowych i patrolach?
 
 #QUEST Merdok_Archive
 Ostatnie strony archiwum Johana van Merdena
 #TEXT 1
 ... tego się spodziewano. Znam Lucasa aż za dobrze. Nie zaznam spokoju po jego awansie...
-...pomysł „Latającego Holendra” jest dobrym przykładem sposobu, w jaki Rodenburg prowadzi interesy. Nie da mi spokoju. Zamykam aptekę, muszę przygotować się na oblężenie, czekając na statek, który zabierze mnie z Karaibów...
-...wygląda na to, że nowy agent Lucasa jest w porządku, nie chcę go zabijać, bo ten drań może go wysłać do St. John's. Choć to o wiele lepsze niż śmierć z rąk chłopaków Ostina. Lucas jest w stanie ich zatrudnić. Jest cały wypchany monetami...
+... pomysł „Latającego Holendra” jest dobrym przykładem sposobu, w jaki Rodenburg prowadzi interesy. Nie da mi spokoju. Zamykam aptekę, muszę przygotować się na oblężenie, czekając na statek, który zabierze mnie z Karaibów...
+... wygląda na to, że nowy agent Lucasa jest w porządku, nie chcę go zabijać, bo ten drań może go wysłać do St. John's. Choć to o wiele lepsze niż śmierć z rąk chłopaków Ostina. Lucas jest w stanie ich zatrudnić. Jest cały wypchany monetami...
 #TEXT 2
-...pomysł „Latającego Holendra” jest dobrym przykładem sposobu, w jaki Rodenburg prowadzi interesy. To poważnie sabotowało działalność angielskich kupców...
+... pomysł „Latającego Holendra” jest dobrym przykładem sposobu, w jaki Rodenburg prowadzi interesy. To poważnie sabotowało działalność angielskich kupców...
 ... Joachim Merriman wywiązał się ze swojej części umowy i dobrze zapłacił za nefrytową czaszkę. Pół miliona ósemek, całkiem spora suma...
-...potem Merriman poprosił wszystkich, aby go opuścili, chciał przygotować jakąś pułapkę na tych, którzy przyjdą tu nas szukać. Tonzag postanowił pójść i zobaczyć pułapkę. Godzinę później Portugalczyk wrócił sam, ponuro zażartował, że Tonzag nie powinien był go gonić, ale i tak bardzo mu pomógł...
+... potem Merriman poprosił wszystkich, aby go opuścili, chciał przygotować jakąś pułapkę na tych, którzy przyjdą tu nas szukać. Tonzag postanowił pójść i zobaczyć pułapkę. Godzinę później Portugalczyk wrócił sam, ponuro zażartował, że Tonzag nie powinien był go gonić, ale i tak bardzo mu pomógł...
 
 #QUEST LetterToAbi
 List Richarda Fleetwooda do Abigail
@@ -57,7 +57,7 @@ Richard Fleetwood
 List od Callowa Gastona
 #TEXT 1
 Jeśli to czytasz, to znaczy, że już nie żyję.
-Dobrze zrobiłeś, że mnie nabrałeś tym niewolniczym gadanie. Nikomu nie udało się oszukać Herkulesa Tonzaga. To jest moje prawdziwe imię. Albo tak było.
+Dobrze zrobiłeś, że mnie nabrałeś tym niewolniczym gadaniem. Nikomu nie udało się oszukać Herkulesa Tonzaga. To jest moje prawdziwe imię. Albo tak było.
 Człowiek, który mnie zabił, stanowi również dla ciebie duże zagrożenie. Dlatego pomogę ci przetrwać, a ty pomścisz go za moją śmierć. Szkoda, że za życia byliśmy wrogami. Mieliśmy wiele wspólnych cech i potrafiliśmy ze sobą współpracować.
 Nie ufaj nikomu, a zwłaszcza angielskiemu szpiegowi. Wysłał cię na śmierć, nawet nie powiedział, że całe Karaiby polują na kapitana „Walkirii”, a gubernator Curacao zapłaci ogromną sumę za jego głowę.
 Zbyt wielu Holendrów zostało wysłanych na pastwę rekinów przez twoich kolegów. Ma prawie tyle samo punktów, co ten drań Van Berg.
@@ -69,7 +69,7 @@ Znajdź chemika przed Lucasem. Jego prawdziwe imię to van Merden i najprawdopod
 Nazwisko to znaliśmy tylko ja i van Merden. Teraz i ty to wiesz.
 
 #QUEST LetterFromFleetwood
-Pożegnania z Richardem Fleetwoodem
+Pożegnanie od Richarda Fleetwooda
 #TEXT	1
 Żegnaj, mój zaufany przyjacielu!
 Musiałem cię oszukać i pozbawić mojej miłości do Abigail. Nie oceniaj mnie, ona jest jedyną osobą, która się dla mnie liczy. Nie mogłem ci zaufać w tak ważnej rozmowie z jej ojcem. Szczerze mówiąc, z moimi oczami nie jest aż tak źle. Znacznie łatwiej będzie mi powiedzieć Ci to w tym liście. Zaufaj mi, to będzie lepsze dla nas obojga.
@@ -84,7 +84,7 @@ Potwór, którego spotkałeś, nazywa się Chavinavi. Według miejscowych opowie
 List do Johana van Merdena od Lucasa Rodenburga
 #TEXT 1
 
-Johanie! Znasz mnie, i tak zdobędę twoje głupie archiwum. Pytanie tylko, czy przyniesiesz mi je ty, czy chłopaki z Ostin'. Nawet nie potrzebuję twojego szyfru, chociaż wiem, że ukrywasz go gdzieś w swoim dole. Chcę po prostu spalić te papiery.
+Johanie! Znasz mnie, i tak zdobędę twoje głupie archiwum. Pytanie tylko, czy przyniesiesz mi je ty, czy chłopaki Ostina. Nawet nie potrzebuję twojego szyfru, chociaż wiem, że ukrywasz go gdzieś w swoim dole. Chcę po prostu spalić te papiery.
 Nie opuścisz Antigui. Daję ci ostatnią szansę na przetrwanie naszej starej przyjaźni.
 Będę czekać na Ciebie w naszym starym miejscu. Longway przekaże wiadomość. Wiem, że z jakiegoś powodu chcesz go mieć przy sobie, i nie zdziwię się, jeśli nie wróci. On przekaże wiadomość, a ty ją przeczytasz. Dlatego tym razem Chińczycy powrócą sami. „Meifeng” ma teraz nowego kapitana.
 Nie potrzebuję twojego życia. Po prostu nie chcę żadnych niespodzianek z przeszłości. Możesz zatrzymać dla siebie złoto Żyda i pieniądze otrzymane od Portugalczyków za czaszkę Indianina.
@@ -164,27 +164,27 @@ Zasady i warunki regat
 Start i meta - Port Royal, Jamajka.
 Trasa, łącznie pięć rejsów:
 
-Port Royal (Jamajka) - Belize (West Spanish Main)
-Belize (zachodnia część Hiszpanii) - Port-au-Prince (Hiszpania)
+Port Royal (Jamajka) - Belize (Zachodni Kontynent)
+Belize (Zachodni Kontynent) - Port-au-Prince (Hispaniola)
 Port-au-Prince (Hispaniola) - St. John's (Antigua)
 St. John's (Antigua) - Bridgetown (Barbados)
 Bridgetown (Barbados) - Port Royal (Jamajka)
-Każdy uczestnik musi zgłosić się do kapitanatu portu w każdym mieście, aby zameldować się i zarejestrować swoje postępy. W przeciwnym razie uczestnik zostanie zdyskwalifikowany. W trakcie regat biura będą pracować całą dobę.
+Każdy uczestnik musi zgłosić się do portowej administracji w każdym mieście, aby zameldować się i zarejestrować swoje postępy. W przeciwnym razie uczestnik zostanie zdyskwalifikowany. W trakcie regat biura będą pracować całą dobę.
 Nie możesz:
 
-Płyń z eskadrą.
-Wymień swój oryginalny lugger.
+Pływać z eskadrą.
+Wymienić swojego oryginalnego lugiera.
 Musisz trzymać się wyznaczonej trasy.
 #QUEST Sharlie_Ojciec
 List od Henriego de Monpera
 #TEXT 1
 
-Pozdrowienia, Charles
+Witaj, Charles
 Prawie zapomniałem jak wyglądasz. Wiesz, że nie doceniam twojego zamiłowania do próżniaczego trybu życia. Zabroniłem ci pokazywać się w naszej posiadłości, dopóki nie opamiętasz się i nie pójdziesz za przykładem swego brata, wybierając zajęcie bardziej odpowiednie dla szlachcica niż malowanie płócien i prześcieradeł bogatych kurtyzan.
 Ale okoliczności zmuszają mnie do zwrócenia się do Ciebie o pomoc.
 Twój brat Michel zniknął. Minął prawie rok, odkąd otrzymałem od niego wiadomość. Ostatnim razem napisał do mnie, że chciałby wziąć udział w jakiejś wyprawie do Nowego Świata i być może nie będzie mógł pisać do mnie regularnie. Przepłynięcie Atlantyku zajmuje statkowi trzy miesiące. Łączność z naszymi koloniami jest dobra, a poczta dociera.
 Obawiam się, że mógł mieć kłopoty. Moje listy do naszego rodaka, Chevaliera de la Brignais, pozostają bez odpowiedzi, mimo to Michel nazywał tego człowieka swoim najbliższym przyjacielem i, o ile wiem, nie towarzyszył Michelowi w jego wyprawie.
-Proszę Cię, zostaw swoje malarstwo i kobiety, popłyń na Martynikę i staw czoła tej niepewności. To mnie zabija. Jestem byłym oficerem marynarki wojennej i wolę wiedzieć najgorsze, niż żyć w niepewności.
+Błagam cię, zostaw swoje malarstwo i kobiety, popłyń na Martynikę i staw czoła tej niepewności. To mnie zabija. Jestem byłym oficerem marynarki wojennej i wolę wiedzieć najgorsze, niż żyć w niepewności.
 Niestety, nie mogę dać ci żadnych pieniędzy na tę podróż. Nasz majątek podupada, a słabe zbiory mnie zrujnowały. Michel obiecał naprawić wszystko po powrocie, ale...
 Proszę cię, mój chłopcze, zapomnij o starych ranach i zrób to, o co cię proszę. Być może to ostatnia rzecz, o jaką cię proszę. Jesteś jedyną osobą, która może to dla mnie zrobić.
 Twój ojciec, Henri de Monper
@@ -194,7 +194,7 @@ Gaskonia, 6 kwietnia 1654
 List od Henriego de Monpera
 #TEXT 1
 
-Kochany Charlesie, mój ukochany synu, minęło sporo czasu, odkąd wyruszyłeś na wyprawę, aby odnaleźć brata, a jeszcze więcej czasu minęło od czasu, kiedy ja widziałam cię po raz ostatni. Jestem niezmiernie szczęśliwy, że posłuchałeś mojej rady i wybrałeś drogę godną człowieka o nazwisku de Monper. Podczas naszego ostatniego spotkania, wiele lat temu, nie śmiałem sobie wyobrazić, że zostaniesz oficerem marynarki wojennej i że awansujesz jeszcze wyżej - na stanowisko generalnego gubernatora Nowego Świata! Jestem z ciebie dumny, synu!
+Drogi Charlesie, mój ukochany synu, minęło sporo czasu, odkąd wyruszyłeś na wyprawę, aby odnaleźć brata, a jeszcze więcej czasu minęło, od kiedy widziałam cię po raz ostatni. Jestem niezmiernie szczęśliwy, że posłuchałeś mojej rady i wybrałeś drogę godną człowieka o nazwisku de Monper. Podczas naszego ostatniego spotkania, wiele lat temu, nie śmiałem sobie wyobrazić, że zostaniesz oficerem marynarki wojennej i że awansujesz jeszcze wyżej - na stanowisko generalnego gubernatora Nowego Świata! Jestem z ciebie dumny, synu!
 Ale co stało się z Michelem? Przez lata nie dowiadywałem się nic o jego losie! Niedawno naszą posiadłość odwiedził Chevalier la Brignais, ale udało mi się dowiedzieć jedynie, że Michel został oskarżony o coś bardzo poważnego. Mam nadzieję, że opowiesz mi o tym wszystkim, kiedy wrócisz do Francji.
 Charles, sytuacja naszego rodzinnego majątku jest teraz nieco lepsza, ale twoja pomoc byłaby dla nas bardzo pomocna. Mimo wszystko nie będę już na Ciebie wywierał żadnej presji, jak to robiłem do tej pory. Pamiętaj, że człowieka określają tylko jego czyny i uczynki. Niech Bóg Wszechmogący będzie z Tobą.
 Twój ojciec, Henri de Monper
@@ -208,7 +208,7 @@ Informację tę otrzymałem od moich zaufanych ludzi. Nie chciałem ranić twoje
 Ten list zostanie ci dostarczony przez mojego sługę, który spali go natychmiast po przeczytaniu. Ryzykuję swoją karierą i życiem, ale nie mogę stać z boku, gdy mój przyjaciel ma kłopoty. Kiedyś uratował mi życie na murach Barcelony.
 Być może uda ci się uratować brata i naprawić sytuację. Nie wierzę w jego winę. Jestem związany przysięgą złożoną Zakonowi, więc nie mogę udzielić więcej pomocy. Teraz wszystko jest w Twoich rękach.
 Liczę na twoją mądrość i szlachetność.
-Kawaler La Brignais
+Chevalier La Brignais
 Malta, 15 czerwca 1654 r.
 
 #QUEST Sharlie_Lover
@@ -219,20 +219,20 @@ Słodki Charlesie! Moje serce jest złamane, ale muszę Cię prosić, abyś ucie
 Nasz dzielny rogacz powinien zabrać swoich żołnierzy do Flandrii na Boże Narodzenie. Mój kuzyn mi to powiedział. Wygląda na to, że jej najnowszy dekolt w końcu doprowadził młodego Louisa do szaleństwa.
 A ty lepiej zniknij na jakiś czas w koloniach. To świetna okazja, żeby uspokoić swoje sumienie i odwiedzić swego biednego ojca.
 Ratuj się, kochanie, i pamiętaj, że będę na ciebie czekać. Mam nadzieję, że te drobiazgi choć trochę złagodzą smutek naszego rozstania.
-PS Uważajcie i nie zapomnijcie o swojej małej Lulu. Mówią, że dziewczyny na Karaibach stają się naprawdę namiętne pod południowym słońcem... O, spójrz na mnie, już jestem zazdrosny!
+PS Uważaj i nie zapomnij o swojej małej Lulu. Mówią, że dziewczyny na Karaibach stają się naprawdę namiętne w południowym słońcu... O, spójrz na mnie, już jestem zazdrosna!
 Paryż, 24 1654
 
 #QUEST Chad_Mary_letter
 List do Mary Casper od Chada Kappera
 #TEXT 1
 
-...mój plan zadziała, a Alan się zemści. Wszyscy skorzystamy na jego śmierci. Ty, ja, Narwale. Powinieneś wyeliminować Cyklopa, kiedy wykona zadanie. Zrób to, kiedy będziesz mu płacić. Nie ryzykuj, po prostu zastrzel go od tyłu. Jego czarne ciało i karabin zostawimy na terytoriach Rivadosa. Nikt nie ma wątpliwości, że to czarnuchy zabiły Dodsona. Narwale połączą się z ludźmi Rekina i zniszczymy tych czarnuchów. Ty i ja będziemy rządzić Wyspą - jako król i królowa.
+... mój plan zadziała, a Alan się zemści. Wszyscy skorzystamy na jego śmierci. Ty, ja, Narwale. Powinieneś wyeliminować Cyklopa, kiedy wykona zadanie. Zrób to, kiedy będziesz mu płacić. Nie ryzykuj, po prostu zastrzel go od tyłu. Jego czarne ciało i karabin zostawimy na terytoriach Rivadosa. Nikt nie ma wątpliwości, że to czarnuchy zabiły Dodsona. Narwale połączą się z ludźmi Rekina i zniszczymy tych czarnuchów. Ty i ja będziemy rządzić Wyspą - jako król i królowa.
 #TEXT 2
 
-...to ostatnie ostrzeżenie, głupia dziewczyno. Czy naprawdę myślisz, że zostawię cię samego, po tym jak opowiedziałem ci o szczegółach moich planów zabicia Rekina? Nie, kochanie, teraz jesteśmy połączeni, a ty zrobisz to, co musisz – zapłacisz za karabin, weźmiesz klucz i przygotujesz naszego drogiego Giuseppe...
+... to ostatnie ostrzeżenie, głupia dziewczyno. Czy naprawdę myślisz, że zostawię cię samego, po tym jak opowiedziałem ci o szczegółach moich planów zabicia Rekina? Nie, kochanie, teraz jesteśmy połączeni, a ty zrobisz to, co musisz – zapłacisz za karabin, weźmiesz klucz i przygotujesz naszego drogiego Giuseppe...
 ... żywisz do mnie urazę z powodu śmierci Alana, ale zrozum, piękna, plotki o „udziale” Rekina w śmierci Alana bardzo mi pomogły. Narwale teraz stają mu naprzeciw. Dlatego udało mi się zaprzyjaźnić z nimi i przygotować ten zamach. Nie było dla ciebie żadnej nadziei z tym Milrowem, i tak zgniłby w swojej klatce...
 ... Radzę ci pogodzić się z tym, że będziesz należeć tylko do mnie. Każdego z twoich chłopaków będę traktować tak samo, jak traktowałam Alana. Nie potrzebuję od ciebie żadnej wielkiej i szczerej miłości, głuptasie. Potrzebuję cię i dostanę to, czego chcę. Nie myśl, że jestem potworem, nie, kiedy Steven umrze, a ja zostanę admirałem, przysięgam, że dostaniesz wszystko, czego chcesz...
-...pomyśl o tym. Jeśli nie pojawisz się w „Tartarze” przed godziną jedenastą wieczorem, nie zobaczysz świtu. Mam lojalnych ludzi wśród Narwali, którzy w mgnieniu oka rozprują ci flaki w twojej kabinie. Nie licz nawet na to, że te inteligentne zamki albo twoja ładna buzia uchronią cię przed szablą. Zrozum to, Mary: albo zostaniesz ze mną i będziesz właścicielką tej wyspy, albo będziesz karmić kraby swoimi pięknościami...
+... pomyśl o tym. Jeśli nie pojawisz się w „Tartarze” przed godziną jedenastą wieczorem, nie zobaczysz świtu. Mam lojalnych ludzi wśród Narwali, którzy w mgnieniu oka rozprują ci flaki w twojej kabinie. Nie licz nawet na to, że te inteligentne zamki albo twoja ładna buzia uchronią cię przed szablą. Zrozum to, Mary: albo zostaniesz ze mną i będziesz właścicielką tej wyspy, albo będziesz karmić kraby swoimi pięknościami...
 Czad.
 
 #QUEST Letter_Facio
@@ -247,7 +247,7 @@ Wyjaśnienia Giuseppe’a
 List do Davida Fackmana, znanego również jako Knive
 #TEXT 1
 
-Dawidzie, czekaj na człowieka z Barbazonu i wyślij go do Marka z bajką o Turkach.
+Dawidzie, czekaj na człowieka od Barbazona i wyślij go do Marka z bajką o Turkach.
 Trzymaj się od tego z daleka, Tyrex może domyślić się, że posłaniec został wysłany, aby go oszukać. Niech człowiek z Barbazon podejmie ryzyko. Przepraszam, że kazałem ci czekać, ale potrzebujemy zaangażowania Jacques'a w wyeliminowanie jego konkurenta. To połączy go więzią krwi. Niech więc jego towarzysz zostanie zauważony w La Vega.
 Sprawdź pułapkę jeszcze raz. Tyrex bez wątpienia wkroczy do akcji, osobiście wsiądzie na pokład brygantyny. Zbadaj proch strzelniczy i strzelców na brzegu. Musi być gładka i przejrzysta.
 Ghoul i Prowler czekają na Ciebie w Północnej Zatoce. Będą wykonywać twoje polecenia. Znają bieguny bardzo dobrze. Prowler dostał ode mnie dodatkowe instrukcje, co zrobić, gdyby Tyrex przeżył.
@@ -264,7 +264,7 @@ kilka wierszy napisanych ręką Jessiki, wygląda na to, że naprawdę kochała 
 
 ... Widzę maszty Neptuna! Jest uszkodzona, ale mi działa. Już niedługo zobaczę tę małą dziwkę, która zabrała mi wszystko.
 
-... Jestem spokojny! Jestem zupełnie spokojny! Zemsta!
+... Jestem spokojna! Jestem zupełnie spokojna! Zemsta!
 
 12 kwietnia 1636, 78 stopni. 33' Zachód
 
@@ -273,9 +273,9 @@ List Beatrice Sharp do jej brata Blaze’a
 #TEXT 1
 
 Mój drogi bracie, przebacz mi!
-Uwielbiam Lawrence'a Beltropa i sam go wybrałem. Mój ukochany został zmuszony do bycia piratem i wyrzutkiem, do bycia kapitanem Rzeźnikiem. Zasługuje na więcej. Niesprawiedliwość go zatruła, ale nie zdołała zniszczyć tego, co w nim najlepsze. Mam nadzieję, że pewnego dnia wrócimy do Europy, a życie rodzinne go uleczy.
+Uwielbiam Lawrence'a Beltropa i sama go wybrałam. Mój ukochany został zmuszony do bycia piratem i wyrzutkiem, do bycia kapitanem Rzeźnikiem. Zasługuje na więcej. Niesprawiedliwość go zatruła, ale nie zdołała zniszczyć tego, co w nim najlepsze. Mam nadzieję, że pewnego dnia wrócimy do Europy, a życie rodzinne go uleczy.
 Jedna rzecz może przyspieszyć nasz powrót. Blaze, teraz jesteś wujkiem! Mamy córkę Helen. Być może uda jej się odbudować naszą rodzinę. Zaufaj mi, Lawrence nie miał pojęcia o zdradzie swojego ojca. Nie powinien odpowiadać za czyny swojego ojca. Co więcej, zawsze podziwiał naszego ojca i zawsze wiedział, że na Karaibach są jego przyjaciele. Nie niszcz naszej przyjaźni, posłuchaj swojego serca. Lawrence jest ojcem mojej córki, więc teraz jest twoim krewnym.
-PS Małej Helenki nie ma teraz ze mną. Zostawiliśmy ją w Belize z jej mamką Gladys Chandler. Wydaje się być miłą kobietą. Jeśli ja... cóż, nie róbmy tego. Wyślę Ci list najszybciej jak to możliwe.
+PS Małej Helen nie ma teraz ze mną. Zostawiliśmy ją w Belize z jej mamką Gladys Chandler. Wydaje się być miłą kobietą. Jeśli ja... cóż, nie róbmy tego. Wyślę Ci list najszybciej jak to możliwe.
 Twoja ukochana siostra Beatrice.
 
 #QUEST Letter_Mishelle
@@ -289,7 +289,7 @@ Nie próbuj mnie szukać. Wiem, że tak zrobisz, ale chcę, żebyś zdał sobie 
 Pożegnanie.
 
 #QUEST Letter_Vincento
-List od Padre Vincento
+List od Ojca Vincento
 #TEXT 1
 
 Witam, kapitanie Charles de Maure.
@@ -330,16 +330,16 @@ Dziennik Archibalda Calhouna – wybrane fragmenty
 ... Wiedziałem, że pozostanie na statku może być śmiertelnie niebezpieczne, więc wziąłem beczkę z wodą i kilka moich rzeczy osobistych, w tym kompas, który dostałem od Indianina. Być może ten artefakt mnie uratuje...
 ... Byłem cholernie szczęśliwy, gdy zobaczyłem brzeg. Ale to była tylko mała, niezamieszkana wyspa. Nigdy o tym nie słyszałem. Magiczny kompas znów mnie wkręca...
 ... Nie znalazłem tu żadnych ludzi. Gdy o tym pomyślę, może jednak będę miał szczęście, bo bycie zjedzonym przez dzikusów nie jest najlepszą opcją...
-...dzięki Bogu jest słodka woda, żółwie i kraby. Kraby pełzają po brzegu. Jest ich tak dużo, że postanowiłem nazwać to miejsce Wyspą Krabów... Jestem, można by rzec, odkrywcą...
+... dzięki Bogu jest słodka woda, żółwie i kraby. Kraby pełzają po brzegu. Jest ich tak dużo, że postanowiłem nazwać to miejsce Wyspą Krabów... Jestem, można by rzec, odkrywcą...
 ... Los znów okazał się łaskawy dla biednego Calhouna - na brzegu znalazł skrzynkę z narzędziami. Teraz mam porządną siekierę i piłę, więc mogę zacząć budować dom, jest szansa, że zostanę tutaj do końca życia...
-...minęły miesiące, a nie było ani jednego żagla. Rozpaliłem ognisko na szczycie wzgórza, żeby je rozpalić, gdy tylko zobaczę jakiś statek. A co jeśli byłby to statek hiszpański? W takim razie wpadnę w ręce Inkwizycji...
-...budowa domu trwa... Udało mi się zbudować przyzwoitą chatę. W każdym razie, ochroni mnie przed deszczem i słońcem w zupełności...
+... minęły miesiące, a nie było ani jednego żagla. Rozpaliłem ognisko na szczycie wzgórza, żeby je rozpalić, gdy tylko zobaczę jakiś statek. A co jeśli byłby to statek hiszpański? W takim razie wpadnę w ręce Inkwizycji...
+... budowa domu trwa... Udało mi się zbudować przyzwoitą chatę. W każdym razie, ochroni mnie przed deszczem i słońcem w zupełności...
 ... Każdego ranka łowię ryby. Czasem udaje mi się złowić duże okazy za pomocą harpuna. Dziś stoczyłem wielką walkę z rekinem. Niewiele brakowało, a zjadłbym pysznego Archiego, ale moje ręce czynią cuda, więc zamiast tego pyszny Archie zjadłby rekina. Mięso było dobre, ale oddałbym wszystkie pieniądze za wieprzowinę i piwo...
 ...mój dom jest gotowy. Przybiłem czaszkę rekina pod wejściem. Moje trofeum myśliwskie. Ech, całe złoto świata za beczkę whisky!..
 ... Półtora roku. Przyzwyczaiłem się do życia pustelniczego. Ale wciąż mam nadzieję na powrót do Świata Zewnętrznego...
 ... żagle! Dzięki Bogu - żagle! A statek wygląda na brytyjski. Oni nie są Hiszpanami! Moje ognisko jest gotowe, postaram się więc wytworzyć jak najwięcej dymu...
-...zauważyli mnie! Statek nadpływa. Widzę angielską flagę. Zostałem uratowany!
-...to niemożliwe... to jest Willy Paterson! Mój stary przyjaciel i rodak, Szkot Willy! Stary Calhoun nie może powstrzymać łez, po dwóch latach słyszy swój własny język!...
+... zauważyli mnie! Statek nadpływa. Widzę angielską flagę. Zostałem uratowany!
+... to niemożliwe... to jest Willy Paterson! Mój stary przyjaciel i rodak, Szkot Willy! Stary Calhoun nie może powstrzymać łez, po dwóch latach słyszy swój własny język!...
 ... Będę służyć pod dowództwem Willy'ego. Gdyby nie on, zostałbym tam na zawsze. Miałem już dość moich przygód, indiańskich amuletów, podejrzanych skarbów i Zakonu Jezusa. Zaczynam nowe życie. Zostawiłem kompas w chacie. Oby tam pozostał, ten bezwartościowy i niebezpieczny przedmiot...
 ... Opuszczam Wyspę Krabów. Zielone wzgórze niemal znikało za horyzontem. Na zawsze zapamiętam jego położenie - 16 stopni szerokości geograficznej północnej, 71 stopni szerokości geograficznej zachodniej. Wątpię, że moja noga jeszcze raz na nią nadepnie...
 
@@ -347,31 +347,31 @@ Dziennik Archibalda Calhouna – wybrane fragmenty
 Dziennik „Santa Quiteria”, ostatnie strony
 #TEXT 1
 
-...w końcu dotarliśmy do San Jose. Tutaj zdobędziemy jedzenie i wodę. Wygląda na to, że Miguel Dichoso nie rozumie, że płyniemy do Europy. Jego zachowanie jest dziwne: czeka na coś, jest gotowy i napięty. Baron ostrzegł mnie, że Dichoso jest niezwykle niebezpieczny – muszę być ostrożny...
+... w końcu dotarliśmy do San Jose. Tutaj zdobędziemy jedzenie i wodę. Wygląda na to, że Miguel Dichoso nie rozumie, że płyniemy do Europy. Jego zachowanie jest dziwne: czeka na coś, jest gotowy i napięty. Baron ostrzegł mnie, że Dichoso jest niezwykle niebezpieczny – muszę być ostrożny...
 ... Zdziwiło mnie, że Dichoso był jedynym konkwistadorem, który przeżył wyprawę na Tayasal. Niektórzy twierdzą, że jego nazwisko samo w sobie jest dowodem - "szczęściarz". Nie sądzę. Jego oczy są zdecydowanie zbyt surowe. Och, nie, oczywiście, że nie. Ani choroba, ani indiańska trucizna nie zabiły ocalałych, tylko ostrze i pistolet Dichoso...
-...płyniemy do Tobago. Pożegnamy tam Miguela. I znów będę mógł swobodnie oddychać. Wątpię, że łatwo będzie się go pozbyć. Ten człowiek zawsze dostaje to, czego chce. Jak on robi takie rzeczy? Sprzedać bliźniakowi „Santa Quiterii”, „San Martin”, heretykowi Dodsonowi, nie wzbudzając przy tym żadnych podejrzeń? Zabicie Blaze'a Sharpa, wejście w konflikt z Dodsonem i zmuszenie Braci do walki między sobą? Jak udało mu się odnaleźć Tayasal i opuścić je ze skarbami, podczas gdy inni dobrze wyszkoleni i idealnie przygotowani ekspedytorzy zostali wyeliminowani przez Itza?
+... płyniemy do Tobago. Pożegnamy tam Miguela. I znów będę mógł swobodnie oddychać. Wątpię, że łatwo będzie się go pozbyć. Ten człowiek zawsze dostaje to, czego chce. Jak on robi takie rzeczy? Sprzedać bliźniakowi „Santa Quiterii”, „San Martin”, heretykowi Dodsonowi, nie wzbudzając przy tym żadnych podejrzeń? Zabicie Blaze'a Sharpa, wejście w konflikt z Dodsonem i zmuszenie Braci do walki między sobą? Jak udało mu się odnaleźć Tayasal i opuścić je ze skarbami, podczas gdy inni dobrze wyszkoleni i idealnie przygotowani ekspedytorzy zostali wyeliminowani przez Itza?
 ...niedaleko Tobago. Dichoso wygląda na przygnębionego, napiętego, ale spokojnego. Blizna na jego twarzy stała się czerwona. Miguel czeka na coś, obserwując niebo i horyzont. Tak czy inaczej, wkrótce się go pozbędziemy.
-...to jest nadprzyrodzone... Nadciągnęła najsilniejsza burza i teraz zanosi nasz statek gdzieś na wschód. Fregata jest niesterowalna. Dichoso mnie zaskakuje. Na jego twarzy pojawia się uśmiech i wygląda, jakby burza wcale go nie przerażała...
+... to jest nadprzyrodzone... Nadciągnęła najsilniejsza burza i teraz zanosi nasz statek gdzieś na wschód. Fregata jest niesterowalna. Dichoso mnie zaskakuje. Na jego twarzy pojawia się uśmiech i wygląda, jakby burza wcale go nie przerażała...
 ... Trynidad jest za nami. Fale i wiatr niosą nas na północny zachód. Nic nie możemy zrobić...
 ... dobrą wiadomością jest to, że gigantyczna fala porwała Dichoso, gdy mijaliśmy Martynikę. Teraz jesteśmy wolni od tego strasznego człowieka. A może to dobry znak?
 ... cholera, w tej części Karaibów nigdy nie było żadnych wysp. Zostaliśmy rzuceni na bank. Nie wszyscy przeżyli, ale wielu z nas wciąż żyje. Nasz statek rozpadł się na dwie części, ale on nadal tu jest, utknął w piasku. Burza się nie kończy...
-...eksplorowaliśmy brzeg i zatokę. Wyspa jest nieznana i niezamieszkana. Ale to nie jest najgorsza część. To miejsce jest przerażające i ciągle panuje tu burza. Wygląda na to, że słońce nigdy nie oświetlało tego miejsca. Przeklęta wyspa...
+... eksplorowaliśmy brzeg i zatokę. Wyspa jest nieznana i niezamieszkana. Ale to nie jest najgorsza część. To miejsce jest przerażające i ciągle panuje tu burza. Wygląda na to, że słońce nigdy nie oświetlało tego miejsca. Przeklęta wyspa...
 ... Skarby Itzy zostały zmyte z naszego luku ładunkowego. Teraz są wszędzie, część z nich wyciągnęliśmy z wody. Zatokę otaczają groźne klify. Jedyna droga prowadzi do zalanej groty. Jest tam otwór prowadzący do podwodnej jaskini, jednak nikt nie był na tyle odważny, aby go zbadać...
 ...dwóch marynarzy nie powróciło do zatoki. Znaleźliśmy ich zwłoki w grocie. Obydwoje zostali zamordowani mieczem. Kto mógłby to zrobić? Pochowaliśmy ich tam i zaczęliśmy organizować nocną straż.
 ... wciąż dochodzi do tajemniczych morderstw. Trzech mężczyzn na trzy dni. Ofiary jakiegoś niewidzialnego rzeźnika z mieczem. Ludzie się boją. Z tego miejsca nie ma ucieczki. Boże, pomóż nam!..
-...to miejsce jest przeklęte! To była najstraszniejsza rzecz jaką widziałem w życiu. Byłem gotowy na wszystko, tylko nie na to! Zabici przez rzeźnika powrócili i atakują ocalałych. Teraz palimy ciała...
-...modlitwy nie zostały wysłuchane. Jestem w panice. Przeklęty Miguel Dichoso - to wszystko przez niego! Jestem pewien, że to nie przypadek!..
-...noc koszmarów. W końcu zobaczyliśmy nocnego mordercę. To ogromny szkielet z dużym mieczem. Zabija każdego jednym lub dwoma trafieniami, nasze ostrza i kule nie zadają żadnych obrażeń. On jest absolutnie niezwyciężony! Po bezskutecznych próbach walki, ja, nasz kwatermistrz i trzej marynarze postanowiliśmy wycofać się na morze i dostać się do wnętrza szczątków „Santa Quiterii”. Od kilku godzin słyszeliśmy przerażające krzyki mordowanych na brzegu mężczyzn...
+... to miejsce jest przeklęte! To była najstraszniejsza rzecz jaką widziałem w życiu. Byłem gotowy na wszystko, tylko nie na to! Zabici przez rzeźnika powrócili i atakują ocalałych. Teraz palimy ciała...
+... modlitwy nie zostały wysłuchane. Jestem w panice. Przeklęty Miguel Dichoso - to wszystko przez niego! Jestem pewien, że to nie przypadek!..
+... noc koszmarów. W końcu zobaczyliśmy nocnego mordercę. To ogromny szkielet z dużym mieczem. Zabija każdego jednym lub dwoma trafieniami, nasze ostrza i kule nie zadają żadnych obrażeń. On jest absolutnie niezwyciężony! Po bezskutecznych próbach walki, ja, nasz kwatermistrz i trzej marynarze postanowiliśmy wycofać się na morze i dostać się do wnętrza szczątków „Santa Quiterii”. Od kilku godzin słyszeliśmy przerażające krzyki mordowanych na brzegu mężczyzn...
 ... wybrzeże jest opanowane przez nieumarłych. Chodzą, wydają okropne dźwięki i wydzielają okropny zapach rozkładającego się ciała. Zamknęliśmy się w ładowni statku. Teraz słyszymy kroki gigantycznego potwora i pomruki żywych trupów...
 ... kwatermistrz zupełnie oszalał. Użył przedmiotów z Tayasalu, aby stworzyć coś w rodzaju pogańskiego ołtarza. Wpada w histerię, wzywa indyjskich bogów, demony... Nie rozumiem tego. Marynarze siedzą w kątach i słuchają jego szalonych krzyków...
-...ciężkie ciosy miecza niszczą drzwi. Rzeźnik nadchodzi. Żadna barykada nie może go zatrzymać. Rozumiem, że wkrótce umrzemy, ta rzecz jest nie do zatrzymania. Piszę to, słysząc szaleńca wzywającego pogańskie demony i krzyki żeglarzy, którzy zdają sobie sprawę, że są zgubieni. Jestem gotowy umrzeć. Jeżeli to czytasz – uciekaj z tego okropnego miejsca! Skarby Tayasalu... Rozdzielony... Rozdzielony... NIECH CIĘ KLĘSKA!..
+...ciężkie ciosy miecza niszczą drzwi. Rzeźnik nadchodzi. Żadna barykada nie może go zatrzymać. Rozumiem, że wkrótce umrzemy, ta rzecz jest nie do zatrzymania. Piszę to, słysząc szaleńca wzywającego pogańskie demony i krzyki żeglarzy, którzy zdają sobie sprawę, że są zgubieni. Jestem gotowy umrzeć. Jeżeli to czytasz – uciekaj z tego okropnego miejsca! Skarby Tayasalu... Dichoso... Dichoso... BĄDŹ PRZEKLĘTY!..
 
 #QUEST RingCapBook
 Notatki z dziennika „Santa Lucia”
 #TEXT 1
 
 ... Teraz płyniemy z Caracas wzdłuż wybrzeża do wioski indiańskiej. Oni osobiście przygotowywali dla mnie koprę. Kupię to omijając podatki i marże...
-...tego dnia miało miejsce jakieś uroczyste wydarzenie. Zaproszono wysokiego wodza z sąsiedniej wioski i jego krewnych. Dużo kashirie było pijanych. A potem ją zobaczyłem – była samym pięknem. Zrozumiałem, że to właśnie ona zostanie moją żoną...
+... tego dnia miało miejsce jakieś uroczyste wydarzenie. Zaproszono wysokiego wodza z sąsiedniej wioski i jego krewnych. Dużo kashirie było pijanych. A potem ją zobaczyłem – była samym pięknem. Zrozumiałem, że to właśnie ona zostanie moją żoną...
 ... jej imię brzmi Vavaya. Okazało się, że jest najmłodszą córką najwyższego wodza. Porozmawiałem z nią i wręczyłem jej prezenty. Wygląda na to, że moje zaloty zostały dobrze przyjęte...
 ... Zostanę tu jeszcze chwilę. Copra jest ładowana na mój statek, a ja cały czas poznaję młodego Vavayę. Zakochałem się w niej. Dzięki Bogu ona czuje to samo! Jestem najszczęśliwszym człowiekiem! Przygotowuję za nią okup, zgodnie z miejscową tradycją...
 ... jej ojciec odmówił! Nie przyjął moich hojnych darów i dosłownie wyrzucił mnie ze swojej chaty. Widziałem łzy na policzkach mojej ukochanej - ona też chce być ze mną! A więc wszystko ustalone! Nie pozwolę, aby jakikolwiek dzikus, nawet jej ojciec, zniszczył nasze szczęście...
@@ -379,18 +379,18 @@ Notatki z dziennika „Santa Lucia”
 ...biały człowiek nigdy nie byłby w stanie odnaleźć tego świętego miejsca. Mogłabym umrzeć tysiąc razy bez Valayi – pokazywała mi każdą pułapkę, pikę i zatrutą zawleczkę...
 ... to jest niesamowite! Nigdy nie widziałem tyle złota! Były nuggetsy wielkości jajka! Nawet połowa tych skarbów wystarczyłaby, aby stać się bogatym do końca życia. Vavaya protestowała, ale udało mi się ją przekonać... Nawet podwoiłem swoją ofiarę, żeby uspokoić moją ukochaną...
 ... zaledwie dwa tygodnie później ja, mój pierwszy oficer i kwatermistrz dostarczyliśmy indiańskie złoto na nasz statek w krytym powozie. Nikt inny tego jeszcze nie wie. Nie ufam żeglarzom. Poza tym załoga była zła, bo musiała spędzić dwa tygodnie na dzikim wybrzeżu, a ja musiałam to zrobić, żeby wymknąć się ojcu Vavayi...
-...zabraliśmy złoto w nocy i ukryliśmy je w jednym ze skrzynek z kopry. Na wierzch położyliśmy również trochę kopry, żeby ją przykryć. Nareszcie znów wypływamy. Jeszcze dwa tygodnie i dotrzemy do Nowej Hiszpanii. Vavaya i ja weźmiemy ślub kościelny. Zostaliśmy stworzeni dla siebie i będziemy razem aż do śmierci...
-...to już trzeci dzień całkowitego spokoju. Statek ledwo się porusza. Widzę te ponure spojrzenia nieświadomych marynarzy, patrzą na moją piękną Vavayę i uważają ją za zły znak...
-...jeden z marynarzy zgubił manierkę z arszenikiem, gdy walczył ze szczurami w ładowni. Nadal tego nie rozumiem. Pięćdziesiąt galonów wody jest zepsute. Martwy spokój nadal nas zabija. Moja ukochana modli się do swego boga o przebaczenie, naprawdę myśli, że cały ten bałagan jest naszą karą za skradzione złoto...
-...już dziesięciu mężczyzn umiera z powodu nagłej epidemii gorączki. Marynarze narzekają. Bosman ledwo utrzymuje porządek. Pierwszych zmarłych wrzucono do wody. Zapasy świeżej wody prawie się skończyły. Boże, ześlij nam wiatr!
-...w końcu świeży wiatr. Jedna trzecia mężczyzn jest chora. Wczoraj wieczorem kilku marynarzy ukradło skrzynkę z drogim rumem. Bosman ukarał ich batem. Załoga jest naprawdę zła na mnie, oficerów i mojego biednego Vavayę. Nie pozwalam jej wychodzić, boję się o jej życie. Nie mogę się doczekać, żeby zobaczyć Kubę. Mógłbym kupić wodę i zatrudnić nową załogę...
-...przeklęte dzikusy nagle pojawiły się znikąd. Ich szkuner nie stanowił żadnego zagrożenia dla mojego statku, uzbrojony w dwudziestofuntowe działa, ale moi ludzie byli osłabieni po gorączce, ledwo trzymali wanty. Pirackie kule armatnie zrobiły kilka dziur w naszym statku, jednak uszkodzenia nie były poważne. Zrobiliśmy, co mogliśmy, i dzięki Bogu piraci musieli się wycofać...
-...moja załoga żąda śmierci Vavayi. Uważają, że ta biedna Hinduska jest czarownicą odpowiedzialną za wszystkie nasze nieszczęścia. Ja i moi wierni oficerowie będziemy ją chronić do ostatniej kuli, jeśli zajdzie taka potrzeba. W powietrzu unosi się zapach buntu, a ja nie widzę wybrzeży Kuby – nie ma wątpliwości, że straciliśmy kurs po walce...
-...pokład jest pokryty krwią. Pierwszy oficer i bosman nie żyją, kwatermistrz jest ranny i nie wytrzyma długo z jednym muszkietem w starciu z wściekłymi marynarzami. Zamknąłem kabinę i na razie radzę sobie dobrze. Moja miłość stoi za mną i podaje mi opłaty. Jej słodka twarz jest przestraszona. Ale nie przez buntowników, nie. Ona patrzy mi w oczy i szepcze: „Zemsta Boga!”...
-...moje serce pęka! Kula pistoletowa przebiła drzwi i trafiła w piękną pierś mojego drogiego Vavayi. Próbuję zatamować krwawienie, ale nie jestem lekarzem... Już prawie skończyła mi się amunicja, mój muszkiet to jedyne, co powstrzymuje ich przed bezpośrednim atakiem...
-...biedny Vavaya nie żyje. Zmarła spokojnie, z uśmiechem na twarzy. W jej oczach nie było strachu, tylko miłość i smutek. Modliłem się za nią i teraz jestem gotowy dołączyć do niej - nie ma już powodu, dla którego miałbym żyć bez niej... Kolejna kula zraniła mnie w nogę. Ledwo się ruszam...
-...proch prawie się skończył. Mam tylko cztery ładunki w parze pistoletów dwulufowych. Siedzę za biurkiem i przygotowuję się na śmierć, by umrzeć z honorem jako biały człowiek i jako kapitan. Nadchodzi burza. To będzie naprawdę mocne...
-...wyważają drzwi. Już niedługo to się skończy i spotkam moją Vavayę w lepszym świecie. Myślę o niej. Być może miała rację. Wszystko to wygląda jak klątwa. „Zemsta Boga”! Skrzynia ze złotem... czy to w ogóle było...
+... zabraliśmy złoto w nocy i ukryliśmy je w jednym ze skrzynek z kopry. Na wierzch położyliśmy również trochę kopry, żeby ją przykryć. Nareszcie znów wypływamy. Jeszcze dwa tygodnie i dotrzemy do Nowej Hiszpanii. Vavaya i ja weźmiemy ślub kościelny. Zostaliśmy stworzeni dla siebie i będziemy razem aż do śmierci...
+... to już trzeci dzień całkowitego spokoju. Statek ledwo się porusza. Widzę te ponure spojrzenia nieświadomych marynarzy, patrzą na moją piękną Vavayę i uważają ją za zły znak...
+... jeden z marynarzy zgubił manierkę z arszenikiem, gdy walczył ze szczurami w ładowni. Nadal tego nie rozumiem. Pięćdziesiąt galonów wody jest zepsute. Martwy spokój nadal nas zabija. Moja ukochana modli się do swego boga o przebaczenie, naprawdę myśli, że cały ten bałagan jest naszą karą za skradzione złoto...
+... już dziesięciu mężczyzn umiera z powodu nagłej epidemii gorączki. Marynarze narzekają. Bosman ledwo utrzymuje porządek. Pierwszych zmarłych wrzucono do wody. Zapasy świeżej wody prawie się skończyły. Boże, ześlij nam wiatr!
+... w końcu świeży wiatr. Jedna trzecia mężczyzn jest chora. Wczoraj wieczorem kilku marynarzy ukradło skrzynkę z drogim rumem. Bosman ukarał ich batem. Załoga jest naprawdę zła na mnie, oficerów i mojego biednego Vavayę. Nie pozwalam jej wychodzić, boję się o jej życie. Nie mogę się doczekać, żeby zobaczyć Kubę. Mógłbym kupić wodę i zatrudnić nową załogę...
+... przeklęte dzikusy nagle pojawiły się znikąd. Ich szkuner nie stanowił żadnego zagrożenia dla mojego statku, uzbrojony w dwudziestofuntowe działa, ale moi ludzie byli osłabieni po gorączce, ledwo trzymali wanty. Pirackie kule armatnie zrobiły kilka dziur w naszym statku, jednak uszkodzenia nie były poważne. Zrobiliśmy, co mogliśmy, i dzięki Bogu piraci musieli się wycofać...
+... moja załoga żąda śmierci Vavayi. Uważają, że ta biedna Hinduska jest czarownicą odpowiedzialną za wszystkie nasze nieszczęścia. Ja i moi wierni oficerowie będziemy ją chronić do ostatniej kuli, jeśli zajdzie taka potrzeba. W powietrzu unosi się zapach buntu, a ja nie widzę wybrzeży Kuby – nie ma wątpliwości, że straciliśmy kurs po walce...
+... pokład jest pokryty krwią. Pierwszy oficer i bosman nie żyją, kwatermistrz jest ranny i nie wytrzyma długo z jednym muszkietem w starciu z wściekłymi marynarzami. Zamknąłem kabinę i na razie radzę sobie dobrze. Moja miłość stoi za mną i podaje mi opłaty. Jej słodka twarz jest przestraszona. Ale nie przez buntowników, nie. Ona patrzy mi w oczy i szepcze: „Zemsta Boga!”...
+... moje serce pęka! Kula pistoletowa przebiła drzwi i trafiła w piękną pierś mojego drogiego Vavayi. Próbuję zatamować krwawienie, ale nie jestem lekarzem... Już prawie skończyła mi się amunicja, mój muszkiet to jedyne, co powstrzymuje ich przed bezpośrednim atakiem...
+... biedny Vavaya nie żyje. Zmarła spokojnie, z uśmiechem na twarzy. W jej oczach nie było strachu, tylko miłość i smutek. Modliłem się za nią i teraz jestem gotowy dołączyć do niej - nie ma już powodu, dla którego miałbym żyć bez niej... Kolejna kula zraniła mnie w nogę. Ledwo się ruszam...
+... proch prawie się skończył. Mam tylko cztery ładunki w parze pistoletów dwulufowych. Siedzę za biurkiem i przygotowuję się na śmierć, by umrzeć z honorem jako biały człowiek i jako kapitan. Nadchodzi burza. To będzie naprawdę mocne...
+... wyważają drzwi. Już niedługo to się skończy i spotkam moją Vavayę w lepszym świecie. Myślę o niej. Być może miała rację. Wszystko to wygląda jak klątwa. „Zemsta Boga”! Skrzynia ze złotem... czy to w ogóle było...
 
 #QUEST Recipe
 Przepisy
@@ -398,10 +398,10 @@ Przepisy
 Złote dublony zwykle przechowuje się w kufrze, po 150 sztuk w każdym.
 
 #TEXT clock2
-Naładowany timer: nienaładowany timer + klepsydra
+Naładowany chronometr: nienaładowany chronometr + klepsydra
 
 #TEXT bussol
-Boussole: kompas + astrolabium
+Busola: kompas + astrolabium
 
 #TEXT cartridge
 Wkład papierowy
@@ -443,7 +443,7 @@ Składniki: Harpun
 Narzędzia: Narzędzie do obróbki metalu, Touchstone
 
 #TEXT shotgun_bullet
-Kule rewolwerowe
+Pocisk do rewolweru
 
 Nietypowe ołowiane pociski w kształcie walca ze stożkowym końcem. Bardzo precyzyjne, dobrze wyważone i zabójcze ze względu na swój kształt.
 
@@ -515,7 +515,7 @@ Narzędzia: Miedziany dzban, Drewniana łyżka, Lampa-ikona, Moździerz i tłucz
 Ilość wyprodukowanych sztuk: 3 sztuki
 
 #TEXT potion4
-Mieszanina
+Mikstura
 
 Ta mikstura, oparta na najlepszej recepturze aptecznej, nie tylko leczy zatrucia, ale także przywraca zdrowie.
 
@@ -816,9 +816,9 @@ Dziennik Wulfrica Johannsena - fragmenty
 2 lipca. Moja kubańska przygoda dobiegła końca. Hiszpanie zapamiętają tę lekcję. Teraz - do Przylądka San Antonio i potem do grodu.
 9 lipca. Miło jest być w miejscu, w którym jesteś bezpieczny.
 ************************************************************
-4 września. Płomienie! Hiszpański oddział bierze udział w nalocie w pobliżu Zatoki Mosquitos. Powinniśmy udać się do grodu, będziemy tam za dziesięć, jedenaście dni.
+4 września. Szlag by to! Hiszpański oddział bierze udział w nalocie w pobliżu Zatoki Mosquitos. Powinniśmy udać się do grodu, będziemy tam za dziesięć, jedenaście dni.
 ************************************************************
-20 listopada. Zapłacił Levasseurowi należne mu wynagrodzenie. Chciwy drań zgarnia tak wiele, nic nie robiąc. Tak czy inaczej za rok lub dwa opuszczę ten region i to życie. Powinienem już iść do grodu, bo ludzie pewnie się martwią.
+20 listopada. Zapłaciłem Levasseurowi należne mu wynagrodzenie. Chciwy drań zgarnia tak wiele, nic nie robiąc. Tak czy inaczej za rok lub dwa opuszczę ten region i to życie. Powinienem już iść do grodu, bo ludzie pewnie się martwią.
 26 listopada. Oto jesteśmy. Będę tu odpoczywać przez kilka tygodni.
 ************************************************************
 11 stycznia. W końcu kupiec powrócił do Basse-Terre. Ogromne zyski osiągnąłem dzięki temu biznesowi, warto było czekać na niego ponad tydzień. Powinienem kupić prowiant i udać się do grodu.
@@ -827,7 +827,7 @@ Dziennik Wulfrica Johannsena - fragmenty
 #QUEST Ignasio_Journal
 Dziennik Ignacio Marco – fragmenty
 #TEXT 1
-... Joker i ja ustaliliśmy sygnały - mam podnieść flagę Hiszpanii, jeśli eskadra będzie kierować się do Portoryko przez Santo Domingo. Jolly Roger dla Isla Tesoro i Turks. Barwy francuskie dla Tortugi i Turków.
+... Joker i ja ustaliliśmy sygnały - mam podnieść flagę Hiszpanii, jeśli eskadra będzie kierować się do Portoryki przez Santo Domingo. Jolly Roger dla Isla Tesoro i Turks. Barwy francuskie dla Tortugi i Turków.
 
 ...Hiszpanie zmienili swój harmonogram - punktem wyjścia z Karaibów będzie wyspa między Isla Tesoro a Turks. Udało mi się nawet obliczyć możliwy zakres współrzędnych ich położenia podczas @<sMonth> @<sDay> @<sYear> : 23°0' - 23°30' szerokości geograficznej północnej i 64°25' - 64°55' szerokości geograficznej zachodniej. Powinienem pomyśleć, jak poinformować o tym Jokera, żeby łatwiej było ich ścigać.
 
@@ -848,7 +848,7 @@ List od Bartolomeo Portugalczyka
 Panie de Maure,
 Przepraszam, że zostawiłem cię w ten sposób. Współpraca z Panem była wielką przyjemnością. Muszę przyznać, że jest Pan wyjątkowo oddanym człowiekiem. Zakładam, że Brytyjczycy opowiedzą ci o brakujących częściach historii. Nie będę przepraszał za skorzystanie z Twoich usług, bo sprawdziło się to u nas wszystkich.
 
-Minęło sporo czasu, odkąd ostatni raz pisałem eleganckie listy, ale nadszedł już czas, abym powrócił do prawdziwego mnie. Szkoda, że nie wypiliśmy wspólnie szklanki czy dwóch dobrego rumu. Może kiedyś, gdy nasze narody będą bliżej siebie? Podjęliśmy już pierwsze kroki w kierunku realizacji tego celu. Życzenia powodzenia!
+Minęło sporo czasu, odkąd ostatni raz pisałem eleganckie listy, ale nadszedł już czas, abym powrócił do prawdziwego mnie. Szkoda, że nie wypiliśmy wspólnie szklanki czy dwóch dobrego rumu. Może kiedyś, gdy nasze narody będą bliżej siebie? Podjęliśmy już pierwsze kroki w kierunku realizacji tego celu. Życze powodzenia!
 
 Z poważaniem,
 Senor Bartolomeo, baron de la Cueva
@@ -856,23 +856,23 @@ Senor Bartolomeo, baron de la Cueva
 #QUEST Letter_France
 List od Henry'ego de Monpera
 #TEXT 1
-Cześć, Charles.
-Nie wiem, czy ten list dotrze do Ciebie, ani czy dotarły wszystkie poprzednie, a nawet jeśli tak, czy będziesz pamiętał, kto napisał, ale spróbuję. Rozumiem, że pędzle i farby nie są łatwe do zmiany na miecz, ale nie spodziewałem się, że z piórem będzie to takie trudne. Od czasu, gdy na moją prośbę wyruszyłeś w poszukiwaniu swego brata, nie otrzymałem od ciebie ani od niego ani jednego słowa. Z czasem udało mi się pogodzić z faktem, że rodzina de Monperów jest skazana na rozpad, ale wyobraźcie sobie moje zdziwienie, gdy otrzymałem list od starego znajomego z naszych kolonii w Nowym Świecie. Nawet moja choroba odsunęła się o krok od takich wieści. Opłakiwałam los mojego biednego Michela, ale całym sercem cieszyłam się z twoich sukcesów. Tak, dla mnie jest to tyleż zaskakujące, co radosne widzieć Cię jako oficera marynarki, kapitana, który poprowadził swój los we właściwym kierunku. Ale obawiam się, że nie mam już zbyt wiele czasu na gratulacje i wyrzuty - starość może opóźnić życie, ale nie cofnie się i nie przeminie. Więc, mój synu, musimy rozwiązać jeszcze jedną, najważniejszą sprawę. Do tego listu, który wysyłam za pośrednictwem mojego starego przyjaciela Benoita, dołączam kopie dokumentów potwierdzających, że Ty, Charles de Maure, jesteś teraz Chevalier de Monper – moim spadkobiercą i kontynuatorem naszej wspaniałej rodziny... Muszę cię zapytać jeszcze raz - musisz wrócić do rodzinnej posiadłości. Wszystkie dokumenty są poświadczone notarialnie, a Twoja obecność nie jest wymagana, aby wejść w posiadanie spadku i otrzymać tytuł, ale aby udać się do Boga ze spokojną duszą, muszę wiedzieć, że moja rodzina nie zniknie po mnie. Nie wiem, czy pamiętacie rodzinę La Brigne, ale Yvonne, ich najmłodsza córka, rozkwitła i jest gotowa na małżeństwo. Jej ojciec i brat wyrazili wcześniej zgodę, ale musimy przeprowadzić wesele według wszystkich reguł. Jest to godne nazwisko, a Guillaume La Brigne jest gotowy zaoferować mu w posagu małą winnicę położoną zaledwie kilka mil od naszej posiadłości. Ty, Charles, powinieneś już zrozumieć, co oznacza obowiązek i odpowiedzialność; człowiek bez tej wiedzy nie może stać na mostku okrętu wojennego, a teraz masz odpowiedzialność za całą rodzinę de Monper. Od tej chwili jesteś moim ostatnim synem i spadkobiercą. Wróć, by wypełnić swój synowski obowiązek i przyjmij moje rodzicielskie błogosławieństwo przy ołtarzu, aby twój ojciec mógł odejść w spokoju.
+Witaj, Charles.
+Nie wiem, czy ten list do Ciebie dotrze, ani czy dotarły wszystkie poprzednie, a nawet jeśli tak, czy będziesz pamiętał, kto napisał, ale spróbuję. Rozumiem, że pędzle i farby nie są łatwe do zmiany na miecz, ale nie spodziewałem się, że z piórem będzie to takie trudne. Od czasu, gdy na moją prośbę wyruszyłeś w poszukiwaniu swego brata, nie otrzymałem od ciebie ani od niego ani jednego słowa. Z czasem udało mi się pogodzić z faktem, że rodzina de Monperów jest skazana na rozpad, ale wyobraź sobie moje zdziwienie, gdy otrzymałem list od starego znajomego z naszych kolonii w Nowym Świecie. Nawet moja choroba odsunęła się o krok od takich wieści. Opłakiwałam los mojego biednego Michela, ale całym sercem cieszyłem się z twoich sukcesów. Tak, dla mnie jest to tyleż zaskakujące, co radosne widzieć Cię jako oficera marynarki, kapitana, który poprowadził swój los we właściwym kierunku. Ale obawiam się, że nie mam już zbyt wiele czasu na gratulacje i wyrzuty - starość może opóźnić życie, ale nie cofnie się i nie przeminie. Więc, mój synu, musimy rozwiązać jeszcze jedną, najważniejszą sprawę. Do tego listu, który wysyłam za pośrednictwem mojego starego przyjaciela Benoita, dołączam kopie dokumentów potwierdzających, że Ty, Charles de Maure, jesteś teraz Chevalier de Monper – moim spadkobiercą i kontynuatorem naszej wspaniałej rodziny... Muszę cię zapytać raz jeszcze - musisz wrócić do rodzinnej posiadłości. Wszystkie dokumenty są poświadczone notarialnie, a Twoja obecność nie jest wymagana, aby wejść w posiadanie spadku i otrzymać tytuł, ale aby udać się do Boga ze spokojną duszą, muszę wiedzieć, że moja rodzina nie zniknie po mnie. Nie wiem, czy pamiętasz rodzinę La Brigne, ale Yvonne, ich najmłodsza córka, rozkwitła i jest gotowa na małżeństwo. Jej ojciec i brat wyrazili wcześniej zgodę, ale musimy przeprowadzić wesele według wszystkich reguł. Jest to godne nazwisko, a Guillaume La Brigne jest gotowy zaoferować jej w posagu małą winnicę położoną zaledwie kilka mil od naszej posiadłości. Ty, Charles, powinieneś już zrozumieć, co oznacza obowiązek i odpowiedzialność; człowiek bez tej wiedzy nie może stać na mostku okrętu wojennego, a teraz masz odpowiedzialność za całą rodzinę de Monper. Od tej chwili jesteś moim ostatnim synem i spadkobiercą. Wróć, by wypełnić swój obowiązek i przyjmij moje rodzicielskie błogosławieństwo przy ołtarzu, aby twój ojciec mógł odejść w spokoju.
 
-Pełen oczekiwań, twój ojciec. Henryk de Monper.
+Pełen oczekiwań, twój ojciec. Henry de Monper.
 Gaskonia.
 
 #QUEST Letter_Marquesa
 List Julianne Botot
 #TEXT 1
 Charles, mam powody, żeby być na ciebie zły, pamiętasz? I wciąż nie jestem gotowy, żeby szczerze cieszyć się z twojego szczęścia, więc pomińmy uprzejmości i przejdźmy od razu do sedna:
-Pomimo naszych różnic, nie życzę ci źle, ale są ludzie, którzy tego pragną. Rozumiem, że to dla Ciebie żadna nowość. Ale musisz wiedzieć, że są ludzie, którzy chcą ci zaszkodzić. Jak i kiedy uderzą, nie wiem. Ale uważaj – jeśli cię zabiję, nie przyniesie mi to szczęścia.
+Pomimo naszych różnic, nie życzę ci źle, ale są ludzie, którzy tego pragną. Rozumiem, że to dla Ciebie żadna nowość. Ale musisz wiedzieć, że są ludzie, którzy chcą ci zaszkodzić. Jak i kiedy uderzą, nie wiem. Ale uważaj – jeśli cię zabiją, nie przyniesie mi to szczęścia.
 
 DB
 
 #TEXT 2
 Charles, mam powody, żeby być na ciebie zły, pamiętasz? I wciąż nie jestem gotowy, żeby szczerze cieszyć się z twojego szczęścia, więc pomińmy uprzejmości i przejdźmy od razu do sedna:
-Pomimo naszych różnic, nie życzę ci źle, ale są ludzie, którzy tego pragną. Rozumiem, że to dla Ciebie żadna nowość. Ale musisz wiedzieć, że są ludzie, którzy chcą ci zaszkodzić. Jak i kiedy uderzą, nie wiem. Ale uważaj – jeśli cię zabiję, nie przyniesie mi to szczęścia.
+Pomimo naszych różnic, nie życzę ci źle, ale są ludzie, którzy tego pragną. Rozumiem, że to dla Ciebie żadna nowość. Ale musisz wiedzieć, że są ludzie, którzy chcą ci zaszkodzić. Jak i kiedy uderzą, nie wiem. Ale uważaj – jeśli cię zabiją, nie przyniesie mi to szczęścia.
 
 DB
 
@@ -898,7 +898,7 @@ Charles, mam powody, żeby być na ciebie zły, pamiętasz? I jeszcze nie jestem
 DB
 
 #TEXT 2-1
-Charles, mam powody, żeby być na ciebie zły, pamiętasz? I jeszcze nie jestem gotowy, żeby szczerze cieszyć się twoim szczęściem, ale spróbuję. Bądź szczęśliwy i bezpieczny. Wyjaśnię - jeśli cię zabiją, może nawet uronię łzę. Ale lepiej tego nie sprawdzać.
+Charles, mam powody, żeby być na ciebie zły, pamiętasz? I jeszcze nie jestem gotowy, żeby szczerze cieszyć się twoim szczęściem, ale spróbuję. Bądź szczęśliwy i bezpieczny.
 
 DB
 
@@ -936,7 +936,7 @@ Czas realizacji: 6 miesięcy.
 ************
 #TEXT	3
 Zbudować kościół, który przywróci harmonię na Isla Mona i sprawi radość nam, osadnikom.
-Potrzebne materiały: 300 desek, 100 cegieł, 10 beczek żywicy, 20 kawałków drewna żelaznego, 100 mahoniu.
+Potrzebne materiały: 300 desek, 100 cegieł, 10 beczek żywicy, 20 kawałków drewna twardego, 100 mahoniu.
 Dodatkowe przedmioty: 50 bryłek złota, 100 świec, 30 bursztynów, 1 niebieski bursztyn.
 Czas realizacji: 2 miesiące.
 
@@ -983,7 +983,7 @@ Strzały z broni typu „grape shot” są najlepszym wyborem, jeśli chcesz dok
 Wstrzymaj się z ostrzałem, jeśli nie jesteś pewien, czy możesz zadać wystarczające obrażenia. Każda salwa niesie za sobą koszt prochu i stanu armat. Czasami mogą eksplodować, zwłaszcza jeśli strzelasz zbyt często. Zawsze manewruj, staraj się zająć lepszą pozycję względem wiatru. Jeśli wróg jest zbyt niebezpieczny i nie możesz uciec, spróbuj sprowokować go do ciągłego strzelania do ciebie z dystansu, nie odnosząc przy tym obrażeń. Ta sztuczka prędzej czy później doprowadzi do wyczerpania zapasów prochu. Może to potrwać kilka dni, więc lepiej znajdź osłonę w postaci skał lub linii brzegowej. Oczywiście taka taktyka nie sprawdzi się na otwartym morzu.
 Kopalnie. Również dobry sposób, żeby ich wszystkich zatopić. Drażnij ich, żeby cię gonili i rozstawiali miny. Każda mina wymaga sporej ilości prochu, ale nawet jedna mina jest w stanie niemal zniszczyć luggera.
 ************************************************************
-Zdobądź lunetę i użyj jej, aby obserwować wroga oraz zwiększyć zasięg umiejętności szybkiej podróży „Płyń tam”. Dobra luneta zapewni Ci dokładny przegląd taktyczny dotyczący np. obecności jednostek muszkieterów na statku przeciwnika. Muszkieterowie wroga mogą zabić wielu twoich ludzi na pokładzie, więc pamiętaj, żeby przed wejściem na pokład dać im do spróbowania odrobinę wina winogronowego.
+Zdobądź lunetę i użyj jej, aby obserwować wroga oraz zwiększyć zasięg umiejętności szybkiej podróży „Płyń do”. Dobra luneta zapewni Ci dokładny przegląd taktyczny dotyczący np. obecności jednostek muszkieterów na statku przeciwnika. Muszkieterowie wroga mogą zabić wielu twoich ludzi na pokładzie, więc pamiętaj, żeby przed wejściem na pokład dać im do spróbowania odrobinę wina winogronowego.
 Powodzenia, Kapitanie!
 
 
@@ -1009,7 +1009,8 @@ Finty są trudne i ryzykowne. Oszukanie przeciwnika i natychmiastowe zadanie mu 
 Atak pchnięciem najlepiej wykonywać długimi, ciężkimi, prostymi rapierami lub mieczami o równowadze od 0 do 0,5. Długie, zakrzywione pałasze lub szable o równowadze od 1,5 do 2 doskonale nadają się do cięć i silnych ataków. Ciężki topór o wyważeniu 2,0 doskonale nadaje się do ciężkich ataków, ale używanie takiej broni będzie wymagało mnóstwa energii i umiejętności. Atak grupowy nie jest wart tego, by stanowić twój główny atak, jest raczej defensywny, ale zakrzywiony, lekki i długi pałasz o równowadze około 1,25 zdziała cuda przeciwko grupom wrogów wokół ciebie. Wreszcie, najlepszą bronią do zwodów jest sztylet. Zastanów się nad tym, aby ten ruch stał się twoją specjalnością. Waga broni decyduje o tym, ile energii będzie potrzeba do wykonania ataku, a także wpływa na obrażenia. Pamiętaj, że znalezienie idealnej broni może zająć trochę czasu, a praca nad doskonaleniem stylu walki zajmie jeszcze więcej czasu.
 Jednoczesna walka z kilkoma wrogami komplikuje sprawę. Dobry wojownik może pokonać kilku słabo wyszkolonych głupców na otwartej przestrzeni, ale jeśli naciera na ciebie kilkunastu łobuzów - unikaj za wszelką cenę otoczenia, uciekaj, znajdź sobie róg, schody, drzwi albo cokolwiek innego, zmuś ich, by walczyli z tobą pojedynczo lub dwóch na jednego. Jeśli popełnisz błąd, w sekundę cię pokroją, więc zmuś ich do gry na twoich warunkach, nie trać inicjatywy i obserwuj swoją energię. Słyszałem jednak o specjalnej indiańskiej miksturze, która pozwalała mistrzom miecza i topora zabić pięciu lub sześciu wrogów naraz za pomocą kilku grupowych ataków.
 Mieszanka Ometochtli, albo jakkolwiek to się nazywa. Starożytny indyjski przepis. Zapytaj sprzedawców, może kiedyś ktoś ci to sprzeda. Ale najpierw musisz nauczyć się alchemii, żeby móc wykorzystać przepis...
-**************************************************************** Skoro już mowa o miksturach - opowiem wam o leczeniu. Jeśli chcesz opatrzyć małą ranę, użyj esencji leczniczej. Poważne obrażenia można wyleczyć eliksirem leczniczym. Mikstury lecznicze, rum i wino również przywracają zdrowie. Jeśli dojdzie do zatrucia, wystarczy odtrutka i mikstura. Polecam również korzeń imbiru, który cudownie odświeża oddech. W przeciwieństwie do esencji i eliksirów, leczy bez skutków ubocznych.
+****************************************************************
+Skoro już mowa o miksturach - opowiem wam o leczeniu. Jeśli chcesz opatrzyć małą ranę, użyj esencji leczniczej. Poważne obrażenia można wyleczyć eliksirem leczniczym. Mikstury lecznicze, rum i wino również przywracają zdrowie. Jeśli dojdzie do zatrucia, wystarczy odtrutka i mikstura. Polecam również korzeń imbiru, który cudownie odświeża oddech. W przeciwieństwie do esencji i eliksirów, leczy bez skutków ubocznych.
 Esencje, eliksiry i mikstury szkodzą zdrowiu. Jak wspomniałem na początku naszej małej wycieczki, jest źle. Słaby stan zdrowia spowoduje spadek twoich umiejętności oraz zmniejszy całkowitą liczbę twoich punktów zdrowia i energii. Sen, seks i rzadka mikstura zwana „Łzami Ish-Chel” przywracają zdrowie, o ile nie zostało ono całkowicie zrujnowane. Jeśli jest za późno, udaj się do księdza. Pomoże ci za opłatą.
 Najłatwiej jest z bronią palną. Wyceluj i strzelaj! Użyj kartaczy, jeśli wrogów jest kilku. Na poważne starcia zaopatrz się w muszkiet lub karabin. Śmiertelne obrażenia i zawsze możesz trafić kogoś kolbą.
 Powodzenia, Kapitanie, i pamiętaj: zawsze jesteś sam, kiedy umierasz na lądzie.
@@ -1024,7 +1025,7 @@ Teraz Longway musi odejść. Gdy wypełni swój obowiązek, znajdzie cię i wró
 Dawno temu złożyłem obietnicę i ślubowanie – sobie i komuś bardzo ważnemu. Ważniejsze niż jakikolwiek inny obowiązek czy obietnica. Ważniejszy niż ktokolwiek inny - nawet Ty, Lordzie Kapitanie.
 Longway miał nadzieję, że zrozumiesz. Ale ponieważ tego nie robisz, jest zmuszony uciekać. Mimo wszystko, dziękuje Ci raz jeszcze za Twój szacunek.
 Do zobaczenia,
-Długa droga
+Longway
 
 #QUEST PZ_ArchiveOneMerden
 Archiwum Van Merdena - podsumowanie
@@ -1040,31 +1041,30 @@ Jednak Johan van Merden był w szoku, gdy Longway nie tylko przeżył, ale takż
 Pomimo zwycięstw, Longway nie zbliżył się ani do odnalezienia Gwiazdy Porannej, ani do ustalenia miejsca pobytu swojej siostry. Zdesperowany, zwrócił się ponownie do van Merdena, nazywając go swoim „pierwszym białym przyjacielem”. Johan, niemal śmiejąc się z ironii sytuacji, zamaskował swoje rozbawienie, twierdząc, że to po prostu starość sprawiła, że stał się sentymentalny.
 W zamian za obietnicę van Merdena dotyczącą pomocy w znalezieniu Fermentelosa, Longway zaczął dla niego pracować. To właśnie Johan nadał mu przydomek „Longway”, którego znak wywoławczy pochodził z angielskiego zwrotu „Long Way” – przydomek trafnie określający drogę, którą przebył Longway, a podróż, którą miał jeszcze przed sobą, teraz pod dowództwem Lucasa Rodenburga.
 #QUEST ChroniclesMadness
-Chronicles of Madness: Part 1
+Kroniki Szaleństwa: Część 1
 #TEXT	1
 ******
-Father, how I miss you. Your wise counsel, your calm voice. Every time I'm in Havana, I visit you. There, in your tomb, miles away from the city, I can sit for hours, thinking about my next step. Rest in peace, father. Your sacrifice will not be in vain - I will cleanse these waters of all criminal rats hiding in the dark corners of the Archipelago. Especially those responsible for your death. 
+Ojcze, jak bardzo za Tobą tęsknię. Twoja mądra rada, Twój spokojny głos. Za każdym razem, gdy jestem w Hawanie, odwiedzam Cię. Tam, w Twoim grobowcu, wiele mil od miasta, mogę siedzieć godzinami, myśląc o następnym kroku. Spoczywaj w pokoju, ojcze. Twoja ofiara nie pójdzie na marne - oczyszczę te wody ze wszystkich przestępczych szczurów ukrywających się w ciemnych zakamarkach Archipelagu. Zwłaszcza tych odpowiedzialnych za Twoją śmierć.
 ******
-Oh, how blind I was! Thought all evil came from ragamuffins and smugglers. No... As they say, a fish rots from the head. The King himself, God bless him, sees this - that's why he sent me with special powers. But the further I sail, the more I understand - the infection has spread too deep. Our governors, these "noble" people - are no better than court intriguers in Madrid! Not all, of course. You, father, were different. But the others... Bribes, intrigues, nepotism - all have bloomed like poisonous flowers. As if the court's disease has spread across the ocean to our colonies. I'm no longer sure that ordinary measures will suffice.
+O, jakże byłem ślepy! Myślałem, że całe zło pochodzi od obdartusów i przemytników. Nie... Jak mawiają, ryba psuje się od głowy. Sam król, niech go Bóg błogosławi, to widzi - dlatego wysłał mnie ze specjalnymi mocami. Ale im dalej żegluję, tym więcej rozumiem - infekcja rozprzestrzeniła się zbyt głęboko. Nasi gubernatorzy, ci "szlachetni" ludzie - nie są lepsi od intrygantów dworskich w Madrycie! Nie wszyscy, oczywiście. Ty, ojcze, byłeś inny. Ale inni... Łapówki, intrygi, nepotyzm - wszystko rozkwitło jak trujące kwiaty. Jakby choroba dworu rozprzestrzeniła się przez ocean do naszych kolonii. Nie jestem już pewien, czy zwykłe środki wystarczą.
 ******
-Today I had a long talk with the Illuminator. An extraordinary man - as if he sees right through me. Everything that troubled me, everything I was afraid to even think about - he put into words. Said that sometimes the Lord demands decisive action from his warriors. That mercy without strength is an empty sound. That true faith is known in struggle. After talking with him, much became clear to me.
+Dziś odbyłem długą rozmowę z Oświecicielem. Niezwykły człowiek - jakby przejrzał mnie na wylot. Wszystko, co mnie niepokoiło, wszystko, o czym bałem się nawet pomyśleć - ujął w słowa. Powiedział, że czasami Pan wymaga od swoich wojowników zdecydowanego działania. Że miłosierdzie bez siły jest pustym dźwiękiem. Że prawdziwą wiarę poznaje się w walce. Po rozmowie z nim wiele stało się dla mnie jasne.
 ******
-They're trying to stop me. At first I thought - enemies of the Empire. But no - our own people! Masked mercenaries, assassins from respectable houses. One of the captured confessed - he was sent by a governor whom I recently reprimanded. Is that how it is? Well, now I know - I was too soft. Time to act differently. "Sometimes you need to cut off a diseased limb to save the body."
+Próbują mnie powstrzymać. Na początku pomyślałem - wrogowie Imperium. Ale nie - nasi ludzie! Zamaskowani najemnicy, zabójcy z szanowanych domów. Jeden ze schwytanych przyznał się - został wysłany przez gubernatora, którego niedawno upomniałem. Czy tak jest? Cóż, teraz wiem - byłem zbyt miękki. Czas działać inaczej. "Czasami trzeba odciąć chorą kończynę, żeby uratować ciało".
 ******
-The Lord sends me signs. Every port, every city cries out for purification. I see it more clearly now. It's not enough to just collect taxes and catch smugglers. Something more is needed. Sacred fire must burn out the filth. For now, I try to act within the law, but I feel - it's not enough. "To become the Lord's punishing sword." It seems that hour is near.
+Pan wysyła mi znaki. Każdy port, każde miasto woła o oczyszczenie. Teraz widzę to wyraźniej. Nie wystarczy tylko zbierać podatki i łapać przemytników. Potrzeba czegoś więcej. Święty ogień musi spalić brud. Na razie staram się działać zgodnie z prawem, ale czuję, że to nie wystarczy. „Stać się karzącym mieczem Pana”. Wydaje się, że ta godzina jest bliska.
 ******
-Sometimes doubts torment me. In such moments, I reread HIS letters. Remember our conversations. Yes, I was weak. But now I see my path clearly. The Archipelago is mired in sin. Every city, every port must be purified. And if blood must be spilled for this - so be it. After all, weren't our sins washed away by Christ's blood?
-When I complete my great work, these waters will be cleansed. But for now... for now I will prepare. Gather strength. Wait for the sign. I will know when the time comes to act. And then no one will be able to stop me.
+Czasem dręczą mnie wątpliwości. W takich chwilach czytam na nowo JEGO listy. Przypominam sobie nasze rozmowy. Tak, byłem słaby. Ale teraz widzę wyraźnie swoją ścieżkę. Archipelag pogrążony jest w grzechu. Każde miasto, każdy port musi zostać oczyszczony. A jeśli za to musi zostać przelana krew – niech tak będzie. W końcu, czyż nasze grzechy nie zostały zmyte krwią Chrystusa? Kiedy ukończę moje wielkie dzieło, te wody zostaną oczyszczone. Ale na razie... na razie się przygotuję. Zbieram siły. Czekaj na znak. Będę wiedział, kiedy nadejdzie czas działania. I wtedy nikt nie będzie w stanie mnie powstrzymać.
 
 #QUEST LegendaryShips
-Information about legendary ships
+Informacje o Legendarnych Statkach
 #TEXT	1
-"Holy Mercy"
+"Święte Miłosierdzię"
 ***********************
-Holy Mercy was sent by the Escorial from Europe to oversee the Spanish colonies. Its captain, Don Alamida, is a renowned servant of the Spanish crown, a ruthless fighter against corruption and crime, and a zealot of the Catholic faith. 
-Holy Mercy cruises between colonies, starting and ending its journey in Havana, focusing solely on its mission. 
-In each port, Alamida spends several days, sometimes longer. They say during these times he can even be met on the street, but locals aren't particularly eager for such encounters - in Spaniards, the señor instills only fear and awe.
-Holy Mercy has an experienced and loyal crew, personally selected by Alamida. Each sailor is ready to defend their Homeland and captain with their life. They say Don Fernando has ordered that Holy Mercy must never be captured, and there are whispers that should the crew face insurmountable odds at boarding, they would sooner send the ship to the depths than see her boarded.
+Święte Miłosierdzię zostało wysłane przez Escorial z Europy, aby nadzorować hiszpańskie kolonie. Jego kapitan, Don Alamida, jest znanym sługą hiszpańskiej korony, bezwzględnym bojownikiem przeciwko korupcji i przestępczości oraz fanatykiem wiary katolickiej. 
+Święte Miłosierdzię pływa między koloniami, rozpoczynając i kończąc podróż w Hawanie, skupiając się wyłącznie na swojej misji. 
+W każdym porcie Alamida spędza kilka dni, czasami dłużej. Mówią, że w tym czasie można go nawet spotkać na ulicy, ale miejscowi nie są szczególnie chętni do takich spotkań - u Hiszpanów señor wzbudza tylko strach i podziw. 
+Święte Miłosierdzię ma doświadczoną i lojalną załogę, osobiście wybraną przez Alamidę. Każdy marynarz jest gotowy bronić swojej Ojczyzny i kapitana za cenę swojego życia. Mówią, że Don Fernando rozkazał, aby Święte Miłosierdzię nigdy nie zostało schwytane, a krążą pogłoski, że gdyby załoga stanęła w obliczu nieprzezwyciężalnych szans na abordaż, prędzej wyślą statek w głąb, niż zobaczą, jak ktoś go abordażuje.
 #TEXT	2
 "Lady Beth"
 ***********************
@@ -1072,9 +1072,18 @@ Holy Mercy has an experienced and loyal crew, personally selected by Alamida. Ea
 I słusznie. Już znalazł tyle, że mógłby kupić połowę Barbadosu, ale wciąż mu mało. Jeśli spotkasz go na morzu - nawet nie próbuj go przechwycić. Zbyt dobry statek, a kapitan doświadczony i ostrożny.
 Ostatnio Blackwood często bywa na Kajmanach - kopie tam dniami i nocami, wykańczając ludzi. Jeśli chcesz to sprawdzić - zabierz co najmniej 60 ludzi i dobrą broń palną... Choć może i to nie wystarczy. Mam nadzieję, że potrafisz strzelać, bo wraz z nim zdezerterowała kompania byłych marines pułkownika Foxa.
 Profesjonaliści, nie byle rzezimieszki. I nigdy nie atakuj go we francuskich portach - tam ma ochronę i protektorów, którzy czerpią z jego znalezisk zyski.
+#TEXT	3
+"Memento"
+***********************
+'Memento' – prawdziwa piracka legenda. Czarna brygantyna pod dowództwem kapitana Mortimera Grima.
+Grim poluje wyłącznie na handlarzy niewolników. Mówią, że uwalnia niewolników i ratuje skazanych na śmierć, wykupując ich za złoto. Szlachetna sprawa — jeśli nie zna się reszty.
+Jeśli nie handlujesz ludźmi, Grim cię nie tknie. Jest dziwny, ale ma swoje zasady. Ale jeśli masz niewolników w ładowni... módl się, by nie zobaczyć czarnych żagli na horyzoncie.
+'Memento' krąży między pirackimi osadami, ale prawie nigdy nie cumuje. Załoga żyje na statku miesiącami, jakby bała się postawić stopę na lądzie. Mówi się też, że statek przetrwał kiedyś potworną epidemię — dlatego tak trudno zabić załogę.
+Jeśli planujesz ich zaatakować - zabierz dużo dział. Zdobycie 'Memento' abordażem jest prawie niemożliwe — załoga walczy jak opętana, jakby nie bała się śmierci. Jedyny sposób, by ich pokonać, to rozstrzelać statek na kawałki, by pozbawić ich schronienia. Odłamki ich nie ruszają, ale bezpośrednie trafienia kartaczami — to już co innego.
+Powodzenia. I pamiętaj o śmierci.
 
 #QUEST StoriesTreasures
-Skarbowe opowieści
+Skarbowe Opowieści
 #TEXT	1
 ************************************************************
 Ten skarb należy do mnie, przyszłego kapitana barkentyny San Sebastián! Jeśli to ja czytam te słowa, pamiętaj: Miguel jest ci winien pieniądze i pewnie wciąż ich nie oddał.
@@ -1085,7 +1094,7 @@ Coraz bardziej podoba mi się praca dla Tyrexa. To już moja trzecia ukryta skry
 #TEXT	3
 ************************************************************
 Jeśli znalazłeś tę skrytkę, wiedz, że nie ukryłem jej przed piratami ani poborcami podatkowymi, lecz przed własną żoną. 
-Trzy lata temu zabroniła mi chodzić do tawerny. Dwa lata temu zrobiła awanturę, gdy kupiłem nowy kordelas. A rok temu wybiła mi dwa zęby. Jednak nigdy nie dotrze do mojego skarbu tutaj! Jest przekonana, że wszystko przegrałem w karty. 
+Trzy lata temu zabroniła mi chodzić do karczmy. Dwa lata temu zrobiła awanturę, gdy kupiłem nowy kordelas. A rok temu wybiła mi dwa zęby. Jednak nigdy nie dotrze do mojego skarbu tutaj! Jest przekonana, że wszystko przegrałem w karty. 
 Wypij za mnie, podczas gdy ja nadal przekonuję moją lisicę, że nigdy nie miałem tych pieniędzy.
 #TEXT	4
 ************************************************************
@@ -1165,7 +1174,7 @@ Przekazałem pierwszą partię amuletów. Zapłata otrzymana zgodnie z obietnic�
 Druga dostawa ukończona, pełna zapłata. Nie mam pojęcia o prawdziwym pochodzeniu Merrimana, ale jego kieszenie są głębokie, a ambicje jeszcze głębsze. Mamy się spotkać za 2 miesiące w ukrytym miejscu - akurat na cmentarzu w Hawanie. Brzmi ponuro, ale to lepsze niż ściganie dłużników przez dżunglę. Wszystkie przyszłe zyski z tego przedsięwzięcia będą ukryte właśnie tutaj.
 #TEXT	20
 ************************************************************
-Ed, trafiłem na złoto z tym! To, co widzisz w tej skrytce, to nawet nie jedna trzecia mojego łupu z pojedynczej podróży. Dzieląc się z tobą tą mapą skarbów, jesteśmy kwita.
+Ed, trafiłem na żyłe złota! To, co widzisz w tej skrytce, to nawet nie jedna trzecia mojego łupu z pojedynczej podróży. Dzieląc się z tobą tą mapą skarbów, jesteśmy kwita.
 Słuchaj uważnie - na północ od Kontynentu Hiszpańskiego, pomiędzy Kubą a Florydą, znajduje się niewiarygodna osada zbudowana na szczątkach niezliczonych wraków. Dziwne statki, niektóre na tyle stare, że mogły przewozić naszych dziadków. Każdy z nich osiadł na mieliźnie i połączył się jak koszmar szalonego cieśli. I Ed, ludzie tam ŻYJĄ, prawdziwe oddychające dusze! Miejsce pełne jest kosztowności, a oni wymieniają je jedynie za żywność. Zapytaj przemytników w Hawanie, jeśli mi nie wierzysz.
 Już zarobiłem na tym fortunę. Lepiej się pospiesz, zanim ktoś inny to zwęszy.
 #TEXT	21
@@ -1182,16 +1191,16 @@ Zaczynam podejrzewać, że ten statek-widmo cumuje gdzieś w pobliżu Curaçao. 
 12 Września.
 Wyłania się wzorzec. Ten statek pojawia się mniej więcej dwa razy do roku, nawiedza trójkąt między Trynidadem, Curaçao i Kontynentem przez kilka miesięcy, a następnie znika jak poranna mgła.
 8 Października.
-Statek-widmo już nie widoczny. Wygląda na to, że całkowicie opuścił karaibskie wody. Załoga zmęczona tym bezowocnym polowaniem, więc zmieniliśmy kurs na północ, w kierunku Małych Antyli. Być może znajdziemy tam godniejszą zdobycz z cięższymi sakiewkami.
+Statek-widmo już nie widywany. Wygląda na to, że całkowicie opuścił karaibskie wody. Załoga zmęczona tym bezowocnym polowaniem, więc zmieniliśmy kurs na północ, w kierunku Małych Antyli. Być może znajdziemy tam godniejszą zdobycz z cięższymi sakiewkami.
 #TEXT	22
 ************************************************************
 Roger, czytaj uważnie i postępuj zgodnie z tymi instrukcjami co do joty.
-Jakiś szalony brytyjski poszukiwacz skarbów kręci się po Karaibach. Jeśli zobaczysz czerwone mundury z łopatami, uciekaj, jakby sam diabeł deptał ci po piętach - nie okazują litości rywalom. Opróżnij wszystkie nasze skrytki, zbierz wszystko, co wartościowe, a następnie udaj się na Antiguę, gdzie czeka nasz człowiek - załatwiłem to. Stracimy trochę złota przy praniu, ale reszta wyjdzie czysta jak łza. Trzymaj się brytyjskich terytoriów - ten Blackwood nie odważy się tam pokazać twarzy. Możesz działać, nie oglądając się za siebie. Nie mam pojęcia, jaką urazę żywią do niego, ale jego statek cumuje tylko w portach francuskich.
+Jakiś szalony brytyjski poszukiwacz skarbów kręci się po Karaibach. Jeśli zobaczysz czerwone mundury z łopatami, uciekaj, jakby sam diabeł deptał ci po piętach - nie okazują litości rywalom. Opróżnij wszystkie nasze skrytki, zbierz wszystko, co wartościowe, a następnie udaj się na Antiguę, gdzie czeka nasz człowiek - załatwiłem to. Stracimy trochę złota przy praniu, ale reszta wyjdzie czysta jak łza. Trzymaj się brytyjskich terytoriów - ten Blackwood nie odważy się tam pokazać twarzy. Możesz działać, nie oglądając się za siebie. Nie mam pojęcia, jaką urazę do niego żywią, ale jego statek cumuje tylko w portach francuskich.
 #TEXT	23
 ************************************************************
-Jan, jeśli to czytasz, to wiedz - moja zemsta pozostaje niespełniona, nawet tutaj na Karaibach. Nasza zwierzyna nie jest tutaj. Wspomnienie miecza mojego ojca blednie w mojej pamięci, a twarz naszego wroga zanika w cieniu.
-Wiele przeszliśmy razem, stary przyjacielu, a jednak mój gniew pozostaje nieposkromiony. Gdybym przewidział konsekwencje, szukałbym pokoju z większą energią. Być może mniej dusz przekroczyłoby ostateczny próg. Powiedz Teresie, że wciąż ją kocham i dotrzymałem przysiąg, choć nigdy nie przeżyję podróży do domu. Ta skrzynia zawiera wszystko, co zarobiłem krwią i stalą, choć smak bezczynnego komfortu dawno zamienił się w popiół. Być może ty wciąż potrafisz go smakować.
-I.
+Hans, jeśli to czytasz, to wiedz - moja zemsta pozostaje niespełniona, nawet tutaj na Karaibach. Nasza zwierzyna nie jest tutaj. Wspomnienie miecza mojego ojca blednie w mojej pamięci, a twarz naszego wroga zanika w cieniu.
+Wiele razem przeszliśmy, stary przyjacielu, a jednak mój gniew pozostaje nieposkromiony. Gdybym przewidział konsekwencje, szukałbym pokoju z większą determinacją. Być może mniej dusz przekroczyłoby ostateczny próg. Powiedz Teresie, że wciąż ją kocham i dotrzymałem przysiąg, choć nigdy nie przeżyję podróży do domu. Ta skrzynia zawiera wszystko, co zarobiłem krwią i stalą, choć smak bezczynnego komfortu dawno zamienił się w popiół. Być może ty wciąż potrafisz go smakować.
+H.
 #TEXT	24
 ************************************************************
 René, Karaiby stają się z dnia na dzień bardziej zdradliwe. Wkrótce nasz rodzaj nie znajdzie tu przystani. Ty i ja byliśmy jednymi z pierwszych, którzy usłyszeli o nowej eskadrze Cromwella, prowadzonej przez ich klejnot koronny - Victory. Zamierzają ujarzmić te dzikie wyspy i postawić Holendrów do pionu, ale moje przeczucie mówi mi, że skończy się to źle dla wszystkich zaangażowanych.
@@ -1200,7 +1209,7 @@ Czas złożyć nasze karty, jak sądzę. Twój udział z naszego ostatniego prze
 Martin.
 #TEXT	25
 ************************************************************
-Reid, odkopałem całą historię o tym Alonso. Ten zimnokrwisty drań służył pod kapitanem Vane'em na pokładzie "Xenona", a wcześniej przez lata pełnił funkcję profesjonalnego kata. To wyjaśnia jego śmiercionośne umiejętności i to lodowate spojrzenie, które mrozi szpik w kościach. Mówiło się, że na dobre odwiesił swój kordelas, ale był okazjonalnie widywany w karaibskich portach, podążając za jakimś młodym zapalczywym kapitanem. Bądź czujny i strzeż swoich pleców.
+Reid, odkopałem całą historię o tym Alonso. Ten zimnokrwisty drań służył kapitanowi Vane'owi na pokładzie "Xenona", a wcześniej przez lata pełnił funkcję profesjonalnego kata. To wyjaśnia jego śmiercionośne umiejętności i to lodowate spojrzenie, które mrozi szpik w kościach. Mówiło się, że na dobre odwiesił swój kordelas, ale był okazjonalnie widywany w karaibskich portach, podążając za jakimś młodym zapalczywym kapitanem. Bądź czujny i strzeż swoich pleców.
 #TEXT	26
 ************************************************************
 Lucas, Artois i Mode, ta skrzynia zawiera waszą zaliczkę za najnowsze zlecenie pana Rodenburga. Nowy gracz ze starej Europy pojawił się na naszych brzegach, nazywa się Gascon. Mimo niedawnego przybycia, już zdążył wywołać niezłą burzę i podeptać interesy kilku wpływowych dżentelmenów.
@@ -1321,7 +1330,7 @@ Dziennik Blackwooda
 
 #TEXT 1
 ***************
-Wzorowy oficer, Blackwood. Taki porządek we wszystkim - od dokumentacji po formacje bojowe. Zajdziecie daleko", powiedział gubernator, gratulując mi udanej operacji przeciwko przemytnikom. Elizabeth była na przyjęciu - widziałem podziw w jej oczach. Wszystko wydaje się układać dokładnie tak, jak marzyłem, wspinając się po szczeblach marynarki.
+Wzorowy oficer, Blackwood. Taki porządek we wszystkim - od dokumentacji po formacje bojowe. "Zajdziesz daleko", powiedział gubernator, gratulując mi udanej operacji przeciwko przemytnikom. Elizabeth była na przyjęciu - widziałem podziw w jej oczach. Wszystko wydaje się układać dokładnie tak, jak marzyłem, wspinając się po szczeblach marynarki.
 ***************
 Znów obudziłem się z tego samego koszmaru. Brudne doki Bristolu, wiecznie pijany ojciec, pusty żołądek... Wydawało się, że patent oficerski i nienaganna służba powinny to wszystko wymazać. Ale nie. Gdy tylko usłyszałem odmowę starego plantatora - i oto znów się pojawiło. "Pan rozumie, Poruczniku... Środki..." Jakbym znów był tym głodnym chłopcem z doków.
 ***************
@@ -1329,8 +1338,8 @@ Decyzja została podjęta. "Beth" to piękny statek, a załoga jest mi wierna. D
 ***************
 Sukces! Nie tylko szczęście, ale potwierdzenie metody. Mapy, obliczenia, wypytywanie miejscowych - wszystko działa jak w zegarku. Załoga jest w dobrym nastroju, choć widzę, że niektórzy nie są przyzwyczajeni do takiej dokładności w organizowaniu poszukiwań. Zaczynam rozumieć - to nie wystarczy.
 ***************
-Drugi rok na "Beth". Wystarczająco dużo złota, by kupić tytuł. Marynarze kupili sobie modne kaftany, częstują wszystkich w tawernach, chwalą się drogimi błyskotkami. Cieszę się ich szczęściem - któż lepiej niż ja wie, jak to jest pracować za nędzne grosze.
-Co do mnie... nadal widzę te sny. Elizabeth pisze, że czeka. A jej ojciec wciąż nazywa mnie "tym marynarzem". Potrzebuję czegoś więcej. Czegoś prawdziwego. Aby się rozproszyć, napisałem nawet mały regulamin poszukiwania skarbów i wysłałem go na Barbados. Cóż można powiedzieć - wojskowi uwielbiają pisać regulaminy. A ja się cieszę, że mogę to robić.
+Drugi rok na "Beth". Wystarczająco dużo złota, by kupić tytuł. Marynarze kupili sobie modne kaftany, częstują wszystkich w karczmach, chwalą się drogimi błyskotkami. Cieszę się ich szczęściem - któż lepiej niż ja wie, jak to jest pracować za nędzne grosze.
+Co do mnie... nadal miewam te sny. Elizabeth pisze, że czeka. A jej ojciec wciąż nazywa mnie "tym marynarzem". Potrzebuję czegoś więcej. Czegoś prawdziwego. Aby się rozproszyć, napisałem nawet mały regulamin poszukiwania skarbów i wysłałem go na Barbados. Cóż można powiedzieć - wojskowi uwielbiają pisać regulaminy. A ja się cieszę, że mogę to robić.
 ***************
 Dziś wszystko się zmieniło. I. wydaje się czytać w moich myślach. "Szukacie w złym miejscu, Kapitanie. Te żałosne znaleziska to zaledwie okruchy i marnotrawstwo waszych talentów. Prawdziwe skarby nie tylko wzbogacają - pozwalają zmienić przeznaczenie." Myślałem, że jestem na dobrej drodze. Jakże się myliłem.
 ***************
@@ -1340,9 +1349,87 @@ Przekopałem całą wyspę. Znalazłem wiele cennych rzeczy, ale nie to, czego s
 ***************
 Badam szlaki handlowe. Każdy statek jest źródłem informacji... i darmowej siły roboczej. Ich kapitanowie wiedzą coś o skarbach Corteza, a załogi są przyzwyczajone do pracy i niskiej płacy. Czas działać bardziej zdecydowanie. Przysięgam na wszystkie sztormy, znajdę to przeklęte złoto!
 ***************
-Dziś podsłuchałem marynarzy rozmawiających w tawernie. "Blackwood jest teraz bogatszy niż jakikolwiek plantator", mówili. Ale ja wiem - to wszystko tylko blichtry. Prawdziwy skarb czeka na Kajmanach. I znajdę go. Nawet jeśli będę musiał wysłać tam tysiąc ludzi z łopatami i w łańcuchach.
+Dziś podsłuchałem marynarzy rozmawiających w karczmie. "Blackwood jest teraz bogatszy niż jakikolwiek plantator", mówili. Ale ja wiem - to wszystko tylko blichtry. Prawdziwy skarb czeka na Kajmanach. I znajdę go. Nawet jeśli będę musiał wysłać tam tysiąc ludzi z łopatami i w łańcuchach.
 ***************
-Ta ekspedycja prawdopodobnie będzie moją ostatnią. Od teraz będę pracował według nowego regulaminu - koniec z rekrutacją i marnowaniem czasu w tawernach. Ta wyspa stanie się moją twierdzą, a przestrzeń wokół niej - moją bazą żywieniową. Zabawne - kiedyś byłem dumny z tego, jak podniosłem się z dna społeczeństwa. Teraz wiem - trzeba upaść jeszcze niżej, aby wznieść się naprawdę wysoko.
+Ta ekspedycja prawdopodobnie będzie moją ostatnią. Od teraz będę pracował według nowego regulaminu - koniec z rekrutacją i marnowaniem czasu w karczmach. Ta wyspa stanie się moją twierdzą, a przestrzeń wokół niej - moją bazą żywieniową. Zabawne - kiedyś byłem dumny z tego, jak podniosłem się z dna społeczeństwa. Teraz wiem - trzeba upaść jeszcze niżej, aby wznieść się naprawdę wysoko.
 Tylko na mnie zaczekaj.
 
+#QUEST SharlieTutorial_Journal
+Dziennik kapitana "Ulysse"
+#TEXT 1
+19 września 1654 roku
+Wpłynęliśmy na wody Mare Caribaeum zgodnie z harmonogramem. Wiatr sprzyjający, bez incydentów.
+20 września 1654 roku
+Nieoczekiwane spotkanie na morzu z kastylijskim kolegą: zauważyłem karawelę "Złośnica", zmierzającą kursem do San Jose przez Dominikę. Nieźle się zapuściłeś, Lorenzo.
+21 września 1654 roku
+Wiatr sprzyjający. Marynarz Paul Lourie znów się z kimś pokłócił, więc Alonso daje mu teraz najcięższą robotę. Muszę pamiętać, by się tym zająć.
+22 września 1654 roku
+Kurierski lugier "Augustin", przypisany do portu w Capsterville, przeprowadził kontrolę celną statku. Nasze kolonialne władze tak bardzo sobie nie ufają, że gubernator generalny nie waha się przechwytywać i przeszukiwać ważnych statków handlowych, zanim dotrą do portów docelowych.
+Po zapoznaniu się z listą pasażerów, porucznik "Augustina" rozkazał mi zatrzymać się i czekać na dalsze instrukcje. Biorąc pod uwagę, że mamy tylko jednego pasażera – łatwo się domyślić, przez kogo spadły mi na głowę te kłopoty.
+Dobrze, że nie kazali nam płynąć za nimi do Capsterville, ale przez tę głupotę stracę sporo pieniędzy.
+Trzeba pogadać z tym fircykiem i porządnie go potrząsnąć.
 
+#QUEST SharlieTutorial_ListOfSailors
+Notatka od kwatermistrza
+#TEXT 1
+Wypłacić:
+Starszemu marynarzowi Alonso Pimentelowi: 50 dublonów
+Marynarzowi Henrykowi Chauchonowi: 35 dublonów
+Marynarzowi Paulowi Lourie: 25 dublonów (cholerny idiota, prawie wszystko zepsuł!)
+Ściągnąć:
+Od marynarza Germaina Chata: 7 pesos za zniszczony przez kotkę Chantal papier
+Od kapitana Deveugny’ego: 2000 pesos za narzędzia medyczne
+Od pasażera Charlesa de Maure’a: 30 pesos za zepsutą beczkę świeżej wody i 200 pesos za uszkodzony kabel kabestanu
+#TEXT 2
+Wypłacić:
+Starszemu marynarzowi Alonso Pimentelowi: 50 dublonów
+Marynarzowi Henrykowi Chauchonowi: 35 dublonów
+Marynarzowi Paulowi Lourie: 25 dublonów (cholerny idiota, prawie wszystko zepsuł!)
+Ściągnąć:
+Od marynarza Germaina Chata: 7 pesos za zniszczony przez kotkę Chantal papier
+Od kapitana Deveugny’ego: 2000 pesos za narzędzia medyczne
+Od pasażera Charlesa de Maure’a: 30 pesos za zepsutą beczkę świeżej wody
+
+#QUEST GS_Letters
+Notatki ujawniające prawdziwe oblicze urzędnika z Belize
+#TEXT 1
+***************
+Fluita "Bat". Wypływa 14-go. Szlak handlowy Belize-Port Royal. Minimalna ochrona. Przewożą cukier. Moje dwadzieścia procent przekażecie łącznikom.
+***************
+Pinasa "Wavebreaker". Wypływa 26-go. Szlak handlowy Belize-Capsterville. Heban. Wyruszyli w podróż z zawilgoconym prochem. Nie zapomnijcie o mojej części.
+***************
+Galeon "Silver Wind". Wypływa 18-go. Szlak handlowy Belize-Blueveld. Niewolnicy! Duża zdobycz, nie zwlekajcie z wysyłką mojej części. Eskorty nie będzie.
+***************
+
+#QUEST Memento_Book
+Dziennik Grima
+#TEXT 1
+Nowe zadanie od Admiralicji. Przewóz "specjalnego ładunku" do wrogiej kolonii. Kapitan Mortimer Grim zgodził się udostępnić swoją wspaniałą brygantynę za sowitą opłatą. Dobry człowiek, uczciwy marynarz. Ma świetną załogę—doświadczonych, oddanych ludzi. Szkoda, że muszę ich okłamywać co do ładunku.
+
+Tak, wiem jak to wygląda. Tajny agent Korony Brytyjskiej Yorick Graves prowadzi dziennik, w którym otwarcie dzieli się tajemnicami swojej misji. Mam to gdzieś! Przy takiej pracy można by zwariować. Courtney, jeśli to czytasz—możesz mnie pocałować w tyłek!
+
+Mortimer zadaje za dużo pytań o ładunek. Musiałem skłamać—mamrotałem coś o lekarstwach dla chorych na gorączkę w karaibskiej dżungli. Oczywiście uwierzył. Grim żyje w świecie, gdzie słowo oficera Jego Królewskiej Mości jeszcze coś znaczy.
+
+Ładunek wniesiono na pokład w zapieczętowanych skrzyniach. Załoga narzeka—skrzynie ciężkie, a zapach dziwny. Mortimer żartował z tego z wdziękiem. Nawet mnie rozbawił.
+
+Diabli nadali! Wydostało się! Pierwsze przypadki gorączki w załodze. Mortimer prosi o pozwolenie na otwarcie skrzyń, sprawdzenie leków. Musiałem zabronić pod groźbą sądu wojennego. Nienawidzę się za to.
+
+Boże miłosierny, co ja zrobiłem... Zaraza. Kapitan zmarł wczoraj.
+
+Sam.
+
+Rozmawiam z Mortimerem. A raczej z tym, co z niego zostało. Już się nie złości. Rozumie. Mówi, że każdy dostaje szansę na odkupienie. Ale jak odkupić coś takiego? Jak przywrócić życie tym ludziom?
+
+Ocalony przez tubylców u wybrzeży Dominiki. Szaman powiedział—niech martwy uczy żywego. Czego ja mógłbym kogokolwiek nauczyć?
+
+W pobliżu wyspy odbyła się wielka bitwa. Ocaleni zostali wyrzuceni na brzeg, gotowi dalej się mordować, ale ich powstrzymałem. Nie wiem, skąd we mnie ta siła. Nie wiem, czy żyję, czy to już zaświaty. Ale "Memento" nie wypłynie bez załogi. A bez statku nie zdołam odkupić swoich win.
+
+Yorick Graves nie żyje, a Mortimer Grim zostanie zapamiętany jako wybawca skazanych. Tak będzie sprawiedliwie. Mam nadzieję, że docenisz pomysł. Teraz jesteś częścią "Memento". Częścią statku.
+
+Uratowaliśmy tuzin Indian z ładowni handlarza niewolników. Większość dublonów rozdałem swoim ludziom, a byłych jeńców zawiozę na Dominikę.
+
+Szaman oderwał czaszkę i gdzieś ją schował! Głupi pióropusz! Rozciąłbym go moim nowym kordelasem, gdyby nie misjonarz goszczący u plemienia.
+
+Opowiedziałem mu wszystko. Niesamowite uczucie. Teraz wiem, co robić! "Niech martwy uczy żywego." Oczywiście! Mało uratować ludzi od kajdan czy stryczka. Trzeba ich uratować od samej śmierci! A można to zrobić tylko zmuszając kogoś, by przeszedł to, co ja. Umrzeć i wrócić. Żal mi ich? Oczywiście. Ale I. miał rację. Mnie nikt nigdy nie żałował.
+
+Nową czaszkę już znalazłem—nie każdy przechodzi próbę śmierci. Tak nawet lepiej. Niech oczodoły Mortimera zostaną na Dominice i nie widzą, co się dzieje na jego statku. I tak by nie zrozumiał.

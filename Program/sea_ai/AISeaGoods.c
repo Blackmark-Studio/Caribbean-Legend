@@ -176,6 +176,7 @@ bool AISeaGoods_ShipEatGood()
 				Achievment_SetStat(60, 1);
 				pchar.GenQuest.Survive_In_SeaPrisonerIdx = iGoodCharacterIndex;
 				DoQuestCheckDelay("Survive_In_SeaPrisoner", 1.0);
+				AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 5.0);
 			}	
 			return true;
 		break;
@@ -201,6 +202,7 @@ bool AISeaGoods_ShipEatGood()
 				Log_TestInfo("Подобрали бочку с неизвестным содержимым");
 				Achievment_SetStat(59, 1);
 				DoQuestCheckDelay("Get_TreasureBarrel", 1.0);
+				AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 5.0);
 				return true;
 			}
 			else

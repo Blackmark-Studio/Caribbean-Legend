@@ -52,5 +52,5 @@ de Alba
 
 IslaMona_12
 {
-Судя по звукам, ловушка удалась! Пора в посёлок!
+Judging by the sounds, the trap worked! Time to head back to the village!
 }

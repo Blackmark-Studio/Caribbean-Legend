@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 				link.l1.go = "patria_x29";
 				break;
 			}
-            dialog.text = NPCStringReactionRepeat(""+GetSexPhrase("Czy masz mi coś do powiedzenia? Nie? To zostaw mnie w spokoju!","Ha, "+pchar.name+"! Masz do mnie interes? Nie? To nie zawracaj mi głowy.")+"I'm ready to translate. Please provide the text you need translated.","Myślałem, że wyraziłem się jasno... Kazałem ci odejść, ale ty wciąż mnie irytujesz!","Racja, zaczynam mieć dość tej nieuprzejmości.","powtórz",3,npchar,Dialog.CurrentNode);
+            dialog.text = NPCStringReactionRepeat(""+GetSexPhrase("Czy masz mi coś do powiedzenia? Nie? To zostaw mnie w spokoju!","Ha, "+pchar.name+"! Masz do mnie interes? Nie? To nie zawracaj mi głowy.")+"","Myślałem, że wyraziłem się jasno... Kazałem ci odejść, ale ty wciąż mnie irytujesz!","Racja, zaczynam mieć dość tej nieuprzejmości.","repeat",3,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Już odchodzę.","Jasne, Marcus...","Przepraszam, Marcus...","Ojej...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
@@ -460,7 +460,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shadows_7":
-			dialog.text = "Jasne! Towarzyszyła Rzeźnikowi we wszystkich jego podróżach, dopóki nie porzucił jej dla Beatrycze. Jess nie mogła mu tego wybaczyć. Ludzie nazywali ją talizmanem Rzeźnika, bo zawsze miał szczęście, gdy była przy nim.\nWierzcie lub nie, ale jak tylko pozbył się jej na Barbadosie, jego interesy poszły źle, łupy stały się marne, a 'Neptun' stał się częstym gościem w stoczni Isla Tesoro. Ale można to wytłumaczyć tym, że Rzeźnik większość czasu spędzał z Beatrycze w kabinie, a nie na rufie.\nBeatrycze nie była jak Jessica, nie była uzależniona od przygód i wojny, chociaż Nicholas nauczył ją szermierki i żeglugi. Tak, uwielbiała morskie romanse, ale brakowało jej twardości. 'Neptun' Rzeźnika nie był dla niej odpowiednim miejscem. W końcu, to ją zabiło.";
+			dialog.text = "Jasne! Towarzyszyła Rzeźnikowi we wszystkich jego podróżach, dopóki nie porzucił jej dla Beatrycze. Jess nie mogła mu tego wybaczyć. Ludzie nazywali ją talizmanem Rzeźnika, bo zawsze miał szczęście, gdy była przy nim.\nWierzcie lub nie, ale jak tylko pozbył się jej na Barbadosie, jego interesy poszły źle, łupy stały się marne, a 'Neptune' stał się częstym gościem w stoczni Isla Tesoro. Ale można to wytłumaczyć tym, że Rzeźnik większość czasu spędzał z Beatrycze w kabinie, a nie na rufie.\nBeatrycze nie była jak Jessica, nie była uzależniona od przygód i wojny, chociaż Nicholas nauczył ją szermierki i żeglugi. Tak, uwielbiała morskie romanse, ale brakowało jej twardości. 'Neptune' Rzeźnika nie był dla niej odpowiednim miejscem. W końcu, to ją zabiło.";
 			link.l1 = "A co z Jessicą?";
 			link.l1.go = "shadows_8";
 		break;

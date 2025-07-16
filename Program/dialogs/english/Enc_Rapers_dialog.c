@@ -190,8 +190,8 @@ void ProcessDialogEvent()
 		
 		case "Node_7":
 			sGlobalTemp = "Saved_CangGirl";
-			if(pchar.GenQuest.EncGirl.city == "Panama") i = drand(2);
-			else	i = drand(3);
+			if(pchar.GenQuest.EncGirl.city == "Panama") i = hrand(2);
+			else	i = hrand(3);
 			switch (i)
 			{
 				case 0:
@@ -247,7 +247,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_9":
-			if(drand(1) == 0)
+			if(hrand(1) == 0)
 			{	
 				pchar.GenQuest.EncGirl.PirateName1 = "l" + rand(GetNamesCount(NAMETYPE_NICK) - 1);
 				pchar.GenQuest.EncGirl.PirateIdx = NAMETYPE_NICK;	
@@ -258,7 +258,7 @@ void ProcessDialogEvent()
 				pchar.GenQuest.EncGirl.PirateIdx = NAMETYPE_VIP;	
 			}	
 			pchar.GenQuest.EncGirl.PirateName2 = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
-			switch(drand(4))
+			switch(hrand(4))
 			{
 				case 0:
 					sTemp = "a leg";

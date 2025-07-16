@@ -1,6 +1,6 @@
 SharlieFinal_1
 {
-Cathrin
+Catherine
 }
 SharlieFinal_2
 {
@@ -9,11 +9,11 @@ Fox
 
 SharlieFinal_3
 {
-Exploration mode: timer extended. Complete the quest!"
+Tryb eksploracji: wydłużony czas. Ukończ zadanie!
 }
 SharlieFinal_4
 {
-Catherine Fox died of calenture!
+Catherine Fox zmarła na gorączke tropikalną
 }
 
 SharlieFinal_5
@@ -32,7 +32,7 @@ Griffondor
 
 SharlieFinal_8
 {
-Rober
+Robert
 }
 SharlieFinal_9
 {
@@ -46,7 +46,7 @@ Enphanta
 
 SharlieFinal_11
 {
-spain convoy
+konwój hiszpański
 }
 
 SharlieFinal_12
@@ -93,7 +93,7 @@ Apostle
 
 SharlieFinal_22
 {
-Cage has been opened!
+Cela została otwarta!
 }
 
 SharlieFinal_23
@@ -121,7 +121,7 @@ Delicious
 
 SharlieFinal_28
 {
-boatswain Serge
+bosman Serge
 }
 SharlieFinal_29
 {
@@ -153,7 +153,7 @@ Marshe
 
 SharlieFinal_35
 {
-A day passed...@<NewStr()>Vanilla was loaded on the carrack...
+Minął dzień...@<NewStr()>Wanilia została załadowana na karake...
 }
 
 SharlieFinal_36
@@ -167,7 +167,7 @@ Flayer
 
 SharlieFinal_38
 {
-Father Vincento
+Ojciec Vincento
 }
 SharlieFinal_39
 {
@@ -203,12 +203,12 @@ de Montoya
 
 SharlieFinal_46
 {
-Carrier lugger 'Shadow'
+Lugier kurierski 'Shadow'
 }
 
 SharlieFinal_47
 {
-Whole powder supply got exploded on 'Shadow'!
+Na pokładzie 'Shadow' eksplodował cały zapas prochu!
 }
 
 SharlieFinal_48
@@ -218,16 +218,16 @@ Fortune
 
 SharlieFinal_49
 {
-captain
+kapitan
 }
 SharlieFinal_50
 {
-of 'Santa Quiteria'
+z 'Santa Quiteria'
 }
 
 SharlieFinal_51
 {
-father Adrian
+ojciec Adrian
 }
 SharlieFinal_52
 {
@@ -236,7 +236,7 @@ SharlieFinal_52
 
 SharlieFinal_53
 {
-Stranger
+Nieznajomy
 }
 SharlieFinal_54
 {
@@ -245,12 +245,12 @@ SharlieFinal_54
 
 SharlieFinal_55
 {
-Enemies in ambush - @<n>
+Wrogowie w zasadzce - @<n>
 }
 
 SharlieFinal_56
 {
-I should get in my cabin
+Powinienem wejść do swojej kajuty
 }
 
 SharlieFinal_57
@@ -273,17 +273,17 @@ SharlieFinal_60
 
 SharlieFinal_61
 {
-Itzha's treasury has been opened
+Skarbiec Itzhy został otwarty
 }
 
 SharlieFinal_62
 {
-The Mask of Kukulcan is destroyed@<NewStr()>Portals are eliminated!
+Maska Kukulcana została zniszczona@<NewStr()>Portale zostały wyeliminowane!
 }
 
 SharlieFinal_63
 {
-Several days passed...@<NewStr()>The ship has arrived to the bay
+Minęło kilka dni...@<NewStr()>Statek dotarł do zatoki
 }
 
 SharlieFinal_64
@@ -297,12 +297,12 @@ Rosetty
 
 SharlieFinal_66
 {
-It took half an hour@<NewStr()>You have established the right course
+Zajęło to pół godziny@<NewStr()>Lecz w końcu obrałeś właściwy kurs
 }
 
 SharlieFinal_67
 {
-Guard of the Mask
+Strażnik maski
 }
 SharlieFinal_68
 {
@@ -311,22 +311,22 @@ SharlieFinal_68
 
 SharlieFinal_69
 {
-The Guardian has recovered completely!
+Strażnik całkowicie odnowił swe siły!
 }
 
 SharlieFinal_70
 {
-You are feeling stronger
+Czujesz się silniejszy
 }
 
 SharlieFinal_71
 {
-You are feeling more enduring
+Czujesz się bardziej wytrzymały
 }
 
 SharlieFinal_72
 {
-You are feeling more agile
+Czujesz się bardziej zwinny
 }
 
 SharlieFinal_73
@@ -340,7 +340,7 @@ SharlieFinal_74
 
 SharlieFinal_75
 {
-Boarding officer @<GetFullName(sld)> has used@<sTemp> a Comanche potion
+Członek gwardii @<GetFullName(sld)> użył@<sTemp> mikstury Komanczów
 }
 
 SharlieFinal_76
@@ -354,17 +354,17 @@ SharlieFinal_77
 
 SharlieFinal_78
 {
-Boarding officer @<GetFullName(sld)>  died@<sTemp> because of an absence of a Comanche potion
+Członek gwardii @<GetFullName(sld)>  zmarł@<sTemp> z powodu braku mikstury Komanczów
 }
 
 SharlieFinal_79
 {
-Kukulcan managed to get in the past@<NewStr()>You failed to stop him...
+Kukulcanowi udało się dostać do przeszłości@<NewStr()>Nie udało ci się go zatrzymać...
 }
 
 SharlieFinal_80
 {
-captain
+Kapitan
 }
 SharlieFinal_81
 {
@@ -373,7 +373,7 @@ Gobart
 
 SharlieFinal_82
 {
-colonel
+Pułkownik
 }
 SharlieFinal_83
 {
@@ -382,5 +382,9 @@ Kirk
 
 SharlieFinal_84
 {
-The world has changed and so did your hero@<NewStr()> But  that's another story...
+Świat się zmienił, a wraz z nim Twój bohater@<NewStr()>Ale to już inna historia...
+}
+SharlieFinal_85
+{
+Alonso
 }

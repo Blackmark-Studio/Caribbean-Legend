@@ -104,7 +104,7 @@ Skill of wielding heavy weapons such as broadswords and axes. Requires a lot of 
 Pistol
 {
 Skill of using all kinds of firearms.
-(R*0.5+S*0.5)
+(R*0.4+S*0.6)
 }
 
 Fortune
@@ -116,7 +116,7 @@ Based on(S).
 Leadership
 {
 Affects the results of certain events and dialogues. Also the main skill when it comes to hiring new crew members.
-(A*0.9+T*0.1)
+(A*0.8+T*0.2)
 }
 
 Commerce
@@ -139,16 +139,17 @@ Load the cannon quickly, roll it up and while the echo of the salvo is still roa
 
 Sailing
 {
-The ability to bring the ship safely to the port through storm and fog; the skill of using navigation equipment and controlling the fleet. The largest and most terrifying ship will fly like a bird, obeying the steady hand of an experienced Navigator. 
-(I*0.2+T*0.8)
+The ability to guide a ship through storms and thick fog. The skill to use navigation instruments and command fleets. Even the largest and most formidable ship will fly like a bird, easily obeying the steady hand of an experienced skipper.
+Depends on Perception and Learnability (I*0.2+T*0.8)
 ~
-Lack of navigation will impose penalties to every skill and stat.
-1-rate ships require 95
-2-rate require 80
-3-rate require 65
-4-rate require 45
-5-rate require 25
-6-rate require 1
+To command a ship of a certain rate, a corresponding minimum Navigation level is required:
+rate 1 requires 95
+rate 2 requires 80
+rate 3 requires 65
+rate 4 requires 45
+rate 5 requires 25
+rate 6 requires 05
+Insufficient Navigation leads to penalties to all skills and hero characteristics. The greater the difference between the current and required Navigation value, the stronger the penalties.
 }
 
 Repair
@@ -444,7 +445,7 @@ The shares for the crew members are as follows:
 - officer - 10 shares
 - companion - 30 shares
 - captain - 200-650 shares
-In addition, the captain, as the owner of the ships of his squadron, additionally receives 20-120 shares from each ship (depending on class of the vessel), and he also bears all costs associated with the maintenance and possible loss of ships.
+In addition, the captain, as the owner of the ships of his squadron, additionally receives 20-120 shares from each ship (depending on rate of the vessel), and he also bears all costs associated with the maintenance and possible loss of ships.
 If a captain has a patent, 10% of the loot is paid to the Nation's treasury.
 ~
 Delaying the payment for the current month will cause unrest in the crew until the end of the month, whereas payment in advance will increase their morale.

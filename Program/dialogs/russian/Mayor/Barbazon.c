@@ -518,7 +518,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CapComission3":
-			dialog.text = "Ну что, " + GetFullName(pchar) + ", пустил"+ GetSexPhrase("","а") +" на дно моего приятеля?.. хе-хе-хе...";
+			dialog.text = "Ну что, " + GetFullName(pchar) + ", пустил"+ GetSexPhrase("","а") +" на дно моего приятеля?.. Хе-хе-хе...";
 			if(pchar.GenQuest.CaptainComission.PirateShips == "goaway")
 			{
 				link.l1 = "Нет. Я не успел"+ GetSexPhrase("","а") +" их догнать. И на обратном пути они мне не попадались.";
@@ -696,7 +696,7 @@ void ProcessDialogEvent()
 		case "Marginpassenger_offer":
 			pchar.GenQuest.Marginpassenger.Goods = GOOD_EBONY + rand(makeint(GOOD_MAHOGANY - GOOD_EBONY));
 			pchar.GenQuest.Marginpassenger.GoodsQty = 200+rand(10)*10;
-			switch (drand(1))
+			switch (hrand(1))
 			{
 				case 0: //бухта на южном мейне
 					SelectSouthshore();
@@ -838,7 +838,7 @@ void SelectSouthshore()
 
 void SelectSouthcity()
 {
-	switch (drand(2))
+	switch (hrand(2))
 	{
 		case 0: 
 			pchar.GenQuest.Marginpassenger.Southcity = "Maracaibo";

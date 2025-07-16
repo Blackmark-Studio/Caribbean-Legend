@@ -21,7 +21,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			// Addon 2016-1 Jason пиратская линейка
 			if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "jewelry_3" && !CheckAttribute(npchar, "quest.Mtraxx"))
 			{
-				link.l1 = "Me interesa un barco llamado 'Cantavro'. Busco a su capitán - Esberdo Cabanas, por un asunto privado. ¿Podrías ayudarme?";
+				link.l1 = "Me interesa un barco llamado 'Cantavro'. Busco a su capitán, Esberdo Cabanas, por un asunto privado. ¿Podrías ayudarme?";
 				link.l1.go = "mtraxx";
 			}
 		break;

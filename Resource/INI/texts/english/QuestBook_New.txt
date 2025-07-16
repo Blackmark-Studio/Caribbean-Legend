@@ -691,3 +691,151 @@ Six Captains
 Perhaps this is the first time that a brief encounter with someone who had neither work nor business for me has made me record an entry in this journal. I don't understand why this priest made such an impression on me. I don't know his name, and he sometimes talked nonsense, but he made himself memorable. We've met twice now, and it could be dismissed as coincidence. But if we meet again...
 I must admit, his interest is somewhat flattering. That look in his eyes is so... appraising. As if he admires my accomplishments. And who wouldn't? Two legendary ships, two captains whose tales spread across the entire Archipelago-both fallen by my hand.
 I wonder what he'll say when he learns of my future exploits? The Archipelago is vast, but my fame, it seems, is growing faster than I thought.
+#TEXT	2
+Diego de Landa - that's what your name is. So we'll meet again. To be continued.
+
+#QUEST SharlieTutorial
+The Prologue
+#TEXT	0
+How sick I am of all this! Five days... and finally I'll set foot on dry land. These past two months have been a complete nightmare, and I simply cannot understand how any sane person would tie their life to the sea!
+For now - the captain awaits me. I don't like him much lately. I don't like anything here anymore.
+#TEXT	0.1
+By all appearances, an interesting evening awaits me. For now, the captain has given me free rein... within the confines of the ship, ha-ha! I can return to him at any moment and end this tiresome day.
+#TEXT	1
+For 500 pesos I can sell 3 bottles of rum to sailor Henry on the upper deck. It seems the boatswain in the wardroom trades in various goods. Perhaps I should thoroughly search the ship and speak with other sailors.
+#TEXT	2
+Good thing I don't drink rum and was able to make a decent deal with Henry. The crew seems to have appreciated my efforts.
+#TEXT	3
+Sailor Paul hurt his back carrying cannonballs and asked me to help. The balls can be found in the hold — surely lying in one of the endless crates.
+#TEXT	4
+I barely dragged the damned cannonballs to Paul. That sailor is acting a bit suspicious, but I got a bottle of rum as a reward. A valuable prize, considering the demand for this poison around here.
+#TEXT	5
+I found the captain's key! I wonder what treasures it opens...
+
+#QUEST DWH
+Dark waters of healing
+#TEXT	1
+In St. John's, they whisper that the local gypsy is the last hope for Thomas Morrison's gravely ill daughter. But she stubbornly refuses to help. Does she truly feel no pity for the poor girl?
+#TEXT	2
+The gypsy woman informed me that she is quite willing to help the girl, but Thomas flatly refuses to let her into his home. I want to visit Thomas and find out why he's rejecting the last hope for saving the girl. His house is in the northern part of the city, by the wall, next to a luxurious mansion with columns.
+#TEXT	3
+The local church priest threatened Thomas Morrison with excommunication if he accepts the gypsy's help to save his gravely ill daughter. Now Thomas is torn between his fear of falling out of the church's favor and his despair over his daughter's illness. I'll try to convince the priest to turn a blind eye to this sin for the greater good - saving the girl's life!
+#TEXT	4
+I'll have to find workarounds. The priest is undoubtedly stubborn, and in many ways he's right. But I still cannot agree with him. If there's a chance to get the girl back on her feet, it must be taken.
+#TEXT	5
+I managed to convince the priest. He agreed to turn a blind eye to the gypsy's involvement in the treatment if Thomas redeems himself before God through sincere repentance and good deeds.
+   Now I need to find mangarosa - the key ingredient for the gypsy's potion. This plant is distinguished by its pleasant aroma, tall stem, and distinctive jagged leaves. I can find mangarosa in a cave outside town, from some 'unsavory characters' - likely vagrants or bandits. Well, all the better. I might not have to pay them at all.
+#TEXT	6
+I've done everything in my power. All that remains is to hope in the gypsy's abilities. I've become so involved with saving the little girl that I've completely forgotten my own affairs. I'll visit Antigua in a month. By then, Esther should be fully recovered.
+#TEXT	7
+The gypsy is ready to help the girl secretly, so Thomas doesn't incur the church's wrath. Now, the main thing is to convince him to trust us.
+#TEXT	8
+Thomas gave me Esther's personal item - jade beads. Now I need to find two stems of datura, one stem of ipecac, one of verbena, and I can return to the gypsy.
+#TEXT	9
+Through the gypsy's and my efforts, Esther's illness has been defeated! It's nice to know that all the efforts were not in vain, and the girl is now healthy.
+#TEXT	10
+Our efforts with the gypsy have overcome Esther's illness! It's heartwarming to know that all the efforts were not in vain, and the girl is now healthy. From the gypsy woman in Saint John's, I can always buy mangarosa - three stalks for three hundred and fifty golden doubloons.
+#TEXT	11
+Now the gypsy has everything needed to prepare the healing potion. Tomorrow morning I'll need to get the medicine from her and take it to Thomas.
+
+#QUEST TPZ
+Trade by Law
+#TEXT 1
+The citizens of Bas-Ter are complaining about the lack of alcohol in the tavern. The innkeeper keeps making promises to fix the situation, but nothing has come of it so far. It looks like he’s in serious trouble. And where there’s trouble, there’s an opportunity to make some coin.
+#TEXT 2
+The innkeeper said that his supplier from Antigua lost his distillery during a pirate raid and won’t be able to deliver anything for at least two months. The innkeeper is willing to accept any batch of wine and rum, provided the trader has a good reputation. No document checks this time, but in the future he will only work with honest and reliable merchants. Maybe I should try sourcing the goods through unofficial channels... If I play it right, there’s money to be made.
+#TEXT 3
+Smugglers don’t have any alcohol to offer right now. However, there’s a dealer living near the governor’s residence who’s been quietly trading in small amounts of spirits. Might be worth paying him a visit.
+#TEXT 4
+I managed to find the underground alcohol dealer. At first, he thought I was an agent of the authorities, but I convinced him otherwise. If I help him legalize his business, I’ll be able to buy wine and rum from him in the future on very favorable terms. But right now, it’s time to see the innkeeper - I might be able to make a few more doubloons on this deal.
+#TEXT 5
+I struck a deal with the innkeeper, on my terms. He’s willing to pay 240 doubloons for 100 bottles of wine and 100 bottles of rum, now and for future batches. Time to legalize Christian’s business.
+#TEXT 6
+I struck a deal with the innkeeper. He’s willing to pay 200 doubloons for 100 bottles of wine and 100 bottles of rum, now and for future batches. Time to legalize Christian’s business.
+#TEXT 7
+The innkeeper is happy - the tavern is flowing with alcohol again. Christian is happy too - he got a great client and his business is now legal. Now it’s time to think about my own profits in this deal. To Christian!
+#TEXT 8
+I found myself playing the middleman. Strange feeling. Everyone’s satisfied: the tavern is lively again, Christian is probably counting the doubloons raining down on him, and I now have a reliable booze supplier in the Caribbean. And not once did I have to draw my sword. Incredible.
+#TEXT 9
+Just as I was enjoying how everything had gone smoothly for once, I was attacked by a pirate ship in the port. As it turns out, the supply issues weren’t a coincidence - it was all part of a scheme by the captain of that ship, trying to take over the Bas-Ter tavern supply line. This time, he failed. He learned a deadly lesson.
+#TEXT 10
+I was attacked at sea by a pirate ship. Who they were and what they wanted - I’ll never know. Their vessel went to the bottom, taking all the answers with it.
+#TEXT 11
+The trade regulations on the island turned out to be quite simple: a hundred doubloons per month to the city treasury as a tax and timely reporting. I think Christian will handle those requirements just fine. Now to give the rogue the good news - everything went perfectly.
+
+#QUEST GS
+Edges of Justice
+#TEXT	1
+A bold attempt was made on the Port Authority Chief in Belize. The attacker managed to escape, and now he’s become the hunted. Rumor has it the official has put a price on his head. Well, the enemy seems formidable - I’ll need to think twice before going after him.
+#TEXT	2
+The head of the port claims he has no idea who attacked him or why. He calls the assailant a common madman - the kind that’s a dime a dozen in the Caribbean. That may not sound convincing, but I don’t care. There’s a reward of two hundred doubloons for this “madman’s” head. That’s what truly matters. I’ll begin the search in nearby coves and grottos. That’s where the fugitive is most likely hiding from justice.
+#TEXT	3
+It’s done. Time to report back to the Port Chief and claim my well-earned reward. And yet, perhaps I should have listened to what the mercenary had to say. He sounded quite convincing. Then again, who wouldn’t try to bargain for their life, clinging even to the faintest hope? Most likely, it was just another trick.
+#TEXT	4
+The Port Chief paid me in full, even more generously than agreed. He offered a permanent fifty percent discount on docking one ship for any period. But that generosity only deepens my suspicions. What if the mercenary spoke the truth? If he really encountered pirates, why didn’t he call the guard? Why didn’t he mention it when sending me after the “killer”? Still, it’s all speculation. What’s done is done, and perhaps only time will reveal the truth. I must move on.
+#TEXT	5
+The Port Chief is a true scoundrel! Smiling as he waves my comrades off to sea, then casually sells their ship routes to pirates. People like him must not go unpunished. I'll wait for nightfall and deal with him. deal with him. His filthy deeds will be exposed. The notes given to me by the mercenary will remain in his house, in plain sight. Let the whole town see him for what he really is. It's ironic that he lives near the prison-by rights, he ought to be an inmate.
+#TEXT	6
+The bastard is dead! Now I just need to leave the notes and vanish before the entire garrison is put on high alert.
+#TEXT	7
+The Port Chief is no more. He won’t be sending anyone else into the hands of pirates. Today, the world is a little better.
+
+#QUEST OS
+Old Scores
+#TEXT 1
+The tavern keeper in Puerto Principe has somehow lost an entire barrel of rare gin imported from old Europe. If the missing goods aren’t found, the poor fellow could be in serious trouble. Judging by the panic, this shipment was meant for someone important - otherwise, why all the fuss?
+#TEXT 2
+The gin was stolen right from under the barkeep's nose. Now his life hangs by a thread – the mysterious client is clearly not someone who forgives mistakes. He’s offering one hundred and fifty doubloons to anyone who can retrieve the barrel. I have a few ideas. First step: question the sailors. Maybe one of them saw something.
+#TEXT 3
+This whole story truly sounds suspicious. But I think I’ve got a theory about what really happened. Time to speak with the waitress.
+#TEXT 4
+Under pressure, the waitress confessed that the whole scene was staged by someone named Jack Wales. Together with the captain of the 'Sea Beast', they put on quite a performance to steal the barrel. Such effort for gin! Looks like they’re not just drinkers, but true connoisseurs. The thief's house is just a few steps away – right across from the tavern.
+#TEXT 5
+I managed to return the barrel to the tavern keeper just in time, saving his skin from serious trouble. To be fair, he repaid me well: besides the doubloons, I was granted lifetime rights to free drinks and lodging at his tavern. As for the waitress, she wisely disappeared – the tavern keeper quickly figured out her involvement in the scheme.
+#TEXT 6
+The crew of the 'Sea Beast' followed their captain. Did they deserve such a fate? Who’s to say... But one thing is certain – they should’ve thought twice before challenging me.
+
+#QUEST UV
+Stolen Memory
+#TEXT 1
+Rumor has it that Julie d’Armagnac, the niece of the governor himself, is more sorrowful than ever in Port-au-Prince. Once radiant and cheerful, she now walks around gloomier than a storm cloud. No one knows exactly what could have changed the girl so much, but clearly something serious has happened.
+#TEXT 2
+Julie has found herself in a difficult position. A necklace dear to her heart has been stolen. She can’t turn to the guards—her uncle, the governor of the French part of Hispaniola, strictly forbade her from contacting the one who gave her the gift. She suspects her own servant may be the thief. I simply can’t leave her alone with this misfortune and have firmly decided to help. I suppose I should start by questioning the local merchants—the thief surely rushed to sell the jewel.
+#TEXT 3
+A certain Tristan Renier, captain of the 'Golden Seagull' recently purchased a necklace from a trader, which might belong to Julie. His ship is still anchored in the port. If my hunch is right, the thief might be none other than Giselle, whose name the merchant let slip by accident.
+#TEXT 4
+Tristan wasn’t on board. I should look for him in town.
+#TEXT 5
+I’ve managed to retrieve Julie’s necklace. Now it’s time to return it to its rightful owner. Or... perhaps pay a visit to the governor and tell him everything?
+#TEXT 6
+The necklace has been returned to its charming owner. The thief turned out to be her maid—Giselle herself. Julie is now unleashing all her cunning to punish the trickster. I wouldn’t want to be in her place.
+
+#QUEST VPVL
+Caught in the Great Catch
+#TEXT   1
+Tales circulate through Saint Pierre of local fisherman Pierre Carno's disappearance. For two full turns of the tide, his vessel has failed to return to harbor, while his wife Lea, harrowed by dread, maintains her lonely watch at the quayside, her eyes searching the churning waters for her husband's form. Only his safe return could balm her wounded spirit. Yet the merciless sea keeps its secrets, and with each passing bell, hope wanes thinner and his chances of cheating death grow ever more slight​.
+#TEXT   2
+Lea divulged that her husband had set his course for Le Marin Bay, tucked along the southern shores of the island. Two full days have passed since he cast off, yet no sign of his return. The anguish etched upon this poor woman's countenance moved me to offer my aid. I shall first survey the waters of Le Marin Bay—mayhap Pierre remains at sea, delayed by circumstance. Should the waters prove empty of his presence, I must then scour the shoreline for any trace of man or vessel​.
+#TEXT   3
+Those beach-dwelling smugglers mistook me for one of the governor's hounds and sought to dispatch me to a watery grave. Fortune, however, turned her face from them—their own blood now stains the sand instead of mine. I must now investigate the sea cave they spoke of. Mayhap 'tis Pierre they've been keeping chained in that damp prison​.
+#TEXT   4
+Pierre now breathes the sweet air of freedom, and the time has come to return him to his devoted wife's embrace. Fate dealt him a cruel hand—his skiff dashed upon the reef, then once ashore, he fell into the clutches of those addled smugglers who mistook him for a governor's agent. The poor soul endured torture and starvation, pressed to reveal secrets he never possessed. One shudders to think what grim end might have awaited had Providence not guided my steps to that accursed cave when it did​.
+#TEXT   5
+Pierre has been safely returned to his devoted wife's tender care. He has pledged to show his gratitude once his strength returns and insists upon sharing a drink at the tavern tomorrow after the sixth bell. Yet a question still gnaws at my thoughts like a rat on ship's rope—who were those ill-fated smugglers truly awaiting on Le Marin's shores? Their talk spoke of a vessel soon to make landfall. The governor's men would surely pay handsomely for advance warning of such a ship laden with contraband. Or perhaps...​.
+#TEXT   6
+I have reported to the governor about the smugglers who were expecting a ship. He has promised to investigate, and I am to visit him again in three days. Should my report prove accurate, a reward may well be mine​.
+
+#QUEST TBP
+Mystery of Betsy Price
+#TEXT	1
+In Willemstad, I heard an intriguing story – the local tavern recently acquired a waitress of extraordinary beauty, but three days ago she suddenly disappeared. The tavern keeper is worried and willing to pay whoever can find her.
+#TEXT	2
+The rumors aren't false; the waitress has indeed vanished. The tavern keeper is clearly concerned... whether about her disappearance or his falling profits, who knows. He's ready to pay a hundred doubloons to whoever brings her back. I've agreed to help him search. A hundred doubloons is good motivation, but what intrigues me more is Betsy herself. What kind of woman could so captivate men that they were willing to drop everything and sit for hours in the tavern just to look at her? To begin with, we should examine her house. According to the innkeeper, it's not far from the tavern, on the hill—across from the fancy house with the blue balcony.
+#TEXT	3
+Betsy is clearly involved in some dark affairs. The letter I found is a direct threat to her life, which means the reason for her disappearance is far more serious than simply running away. She may have managed to hide, but we can't rule out a worse outcome. I should find out who might have left this message. I'll start with the bartender – perhaps he noticed suspicious people around her.
+#TEXT	4
+The pendant bought from the vagabond belongs to Betsy. He found it in the flowerbed near the house with the lantern. We need to take a good look around there.
+#TEXT	5
+Well, what a woman this Betsy is... Or is it Miranda? No, let's stick with Betsy – no need to prod at her past. Anyway, she's been pulled from the clutches of those bastards... Time to claim the well-deserved reward.
+#TEXT	6
+The tavern keeper has paid me in full for returning his valuable waitress. To be honest, thoughts of Betsy still don't leave me... Perhaps I should visit her sometime.

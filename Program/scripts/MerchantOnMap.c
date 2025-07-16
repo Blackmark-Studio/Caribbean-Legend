@@ -57,7 +57,7 @@ string CreateMerchant(int ination)
     {
         iChar = NPC_GenerateCharacter(NationShortName(sti(MerPrm.nation))+"_QuestMerchantGuard_"+i, "off_spa_2", "man", "man", 5, sti(MerPrm.nation), 20, true, "hunter"));
         makeref(sld, Characters[iChar]);
-        SetShipHunter(sld);
+        SetGuardsShips(sld, sti(RealShips[sti(chref.ship.type)].Class));
         SetFantomParamHunter(sld); //крутые парни
         SetCaptanModelByEncType(sld, "war");
         sld.Ship.Mode = "war";
@@ -158,88 +158,51 @@ int SetShipTypeMerchant(ref Cap)
 {
     int iShip, hcrew, irank;
 
-    if(makeint(pchar.rank) > 10)
+    if(sti(pchar.rank) < 6)
     {
-        irank = rand(2) + 3;
-    }
-
-    if(makeint(pchar.rank) > 6 && makeint(pchar.rank) < 11)
-    {
-        irank = rand(2);
-    }
-
-    switch (sti(Cap.nation))
-    {
-        case ENGLAND:
-	        switch (irank)
-	        {
-	            case 0: iShip = SHIP_BARQUE;     		break;
-	            case 1: iShip = SHIP_SCHOONER;   		break;
-	            case 2: iShip = SHIP_BARKENTINE;    	break;
-	            case 3: iShip = SHIP_SHNYAVA; 			break;
-	            case 4: iShip = SHIP_FLEUT + rand(3);   break;
-	            case 5: iShip = SHIP_NAVIO + rand(2); 	break;
-
-	        }
-        break;
-
-        case FRANCE:
-	        switch (irank)
-	        {
-	            case 0: iShip = SHIP_BARQUE;     		break;
-	            case 1: iShip = SHIP_SCHOONER;  		break;
-	            case 2: iShip = SHIP_BARKENTINE;  		break;
-	            case 3: iShip = SHIP_SHNYAVA;   		break;
-	            case 4: iShip = SHIP_FLEUT + rand(3);   break;
-	            case 5: iShip = SHIP_NAVIO + rand(2);   break;
-
-	        }
-        break;
-
-        case SPAIN:
-	        switch (irank)
-	        {
-	            case 0: iShip = SHIP_BARQUE;     		break;
-	            case 1: iShip = SHIP_SCHOONER;        	break;
-	            case 2: iShip = SHIP_BARKENTINE;     	break;
-	            case 3: iShip = SHIP_SHNYAVA;    		break;
-	            case 4: iShip = SHIP_FLEUT + rand(3);   break;
-	            case 5: iShip = SHIP_NAVIO + rand(2);   break;
-	        }
-        break;
-
-        case HOLLAND:
-	        switch (irank)
-	        {
-	            case 0: iShip = SHIP_BARQUE;     		break;
-	            case 1: iShip = SHIP_SCHOONER;    		break;
-	            case 2: iShip = SHIP_BARKENTINE;   		break;
-	            case 3: iShip = SHIP_SHNYAVA; 			break;
-	            case 4: iShip = SHIP_FLEUT + rand(3);   break;
-	            case 5: iShip = SHIP_NAVIO + rand(2);   break;
-
-	        }
-        break;
-
-        case PIRATE:
-	        switch (irank)
-	        {
-	            case 0: iShip = SHIP_BRIGANTINE;    break;
-	            case 1: iShip = SHIP_BRIG;     		break;
-	            case 2: iShip = SHIP_SCHOONER_W;    break;
-	            case 3: iShip = SHIP_GALEON_L; 		break;
-	            case 4: iShip = SHIP_GALEON_H;  	break;
-	            case 5: iShip = SHIP_LINESHIP; 		break;
-	        }
-        break;
-    }
-
-    if(makeint(pchar.rank) < 7)
-    {
-        iShip = SHIP_BARQUE + rand(makeint(SHIP_CARAVEL - SHIP_BARQUE));
         irank = 0;
     }
+    if(sti(pchar.rank) >= 6 && sti(pchar.rank) < 12)
+    {
+        irank = 1;
+    }
+	if(sti(pchar.rank) >= 12 && sti(pchar.rank) < 21)
+    {
+        irank = 2;
+    }
+	if(sti(pchar.rank) >= 21)
+    {
+        irank = 3;
+    }
 
+	switch (irank)
+	{
+		case 0: 
+			iShip = GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+		break;
+		case 1: 
+			iShip = GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+		break;
+		case 2: 
+			iShip = GetRandomShipType(FLAG_SHIP_CLASS_5 + FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+		break;
+		case 3: 
+			iShip = GetRandomShipType(FLAG_SHIP_CLASS_3 + FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+		break;
+	}
+	if (sti(Cap.nation) == PIRATE)
+	{
+		switch (irank)
+		{
+			case 0: iShip = SHIP_SCHOONER_W;    break;
+			case 1: iShip = SHIP_BRIGANTINE;    break;
+			case 2: iShip = SHIP_BRIG;  		break;
+			case 3: iShip = SHIP_GALEON_L; 		break;
+			case 4: iShip = SHIP_FRIGATE_H;  	break;
+			case 5: iShip = SHIP_GALEON_H; 		break;
+		}
+	}
+	
     SetRandomNameToShip(Cap);
     Cap.Ship.Type = GenerateShipExt(iShip, 1, Cap);
     SetBaseShipData(Cap);
@@ -252,7 +215,7 @@ int SetShipTypeMerchant(ref Cap)
     DeleteAttribute(Cap,"ship.blots");
 	DeleteAttribute(Cap,"ship.hulls");
 	
-    if (sti(Cap.nation == PIRATE)) //navy fix -- приведение типов.
+    if (sti(Cap.nation) == PIRATE) //navy fix -- приведение типов.
     {
         Fantom_SetCannons(Cap, "pirate");
         Fantom_SetBalls(Cap, "pirate");
@@ -325,13 +288,13 @@ string All_GetColony();
     int locnum = FindLocation(pchar.location);
     if (locnum != -1 )
     {
-		if(CheckAttribute(locations[locnum],"townsack")) // если в городе <-- ugeen fix
+		if(CheckAttribute(&locations[locnum],"townsack")) // если в городе <-- ugeen fix
 		{
 			return locations[locnum].townsack;
 		}	
 		else // а если в джунглях или на побережье?
 		{
-			if(CheckAttribute(locations[locnum],"islandIdAreal")) // если на острове или Мэйне несколько городов 
+			if(CheckAttribute(&locations[locnum],"islandIdAreal")) // если на острове или Мэйне несколько городов 
 			{
 				return GetCityNameByIsland(locations[locnum].islandIdAreal);
 			}	
@@ -485,5 +448,40 @@ string AfteMerchantRumour()
     else
     {
 		return NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)];
+    }
+}
+
+void SetGuardsShips(ref Guard, int iClass)
+{
+    int ShipsGuard, hcrew;
+    iClass -= rand(1);
+	if(iClass < 2) iClass = 2;
+	if(iClass > 6) iClass = 6;
+	ShipsGuard = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY);
+	
+    SetRandomNameToCharacter(Guard);
+    SetRandomNameToShip(Guard);
+    Guard.Ship.Type = GenerateShipExt(ShipsGuard, 1, Guard);
+    SetBaseShipData(Guard);
+    hcrew = GetMaxCrewQuantity(Guard);
+    SetCrewQuantity(Guard, hcrew);
+    SetCrewQuantityFull(Guard); // to_do
+    
+    DeleteAttribute(Guard,"ship.sails");
+    DeleteAttribute(Guard,"ship.masts");
+    DeleteAttribute(Guard,"ship.blots");
+	DeleteAttribute(Guard,"ship.hulls");
+
+    if (Guard.nation == PIRATE)
+    {
+        Fantom_SetCannons(Guard, "pirate");
+        Fantom_SetBalls(Guard, "pirate");
+		Fantom_SetUpgrade(Guard, "pirate");
+    }
+    else
+    {
+        Fantom_SetCannons(Guard, "war");
+        Fantom_SetBalls(Guard, "war");
+		Fantom_SetUpgrade(Guard, "war");
     }
 }

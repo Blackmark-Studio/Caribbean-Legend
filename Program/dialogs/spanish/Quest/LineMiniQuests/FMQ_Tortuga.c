@@ -191,14 +191,14 @@ void ProcessDialogEvent()
 
 	case "wife_5":
 		pchar.questTemp.FMQT.Honour = "true"; // вар 1
-		dialog.text = "No esperaba esto de ti... El cofre... Déjalo para después, primero, debemos encontrar una llave duplicada que fue robada por un sucio pirata. Ahora mismo está de juerga en una taberna local, bebiendo como un cerdo. Date prisa y tráeme la llave duplicada. Estaré esperándote.";
+		dialog.text = "No esperaba esto de ti... El cofre... Déjalo para después, primero, debemos encontrar una llave duplicada que fue robada por un sucio pirata. Ahora mismo está de juerga en la taberna, bebiendo como un cerdo. Date prisa y tráeme la llave duplicada. Estaré esperándote.";
 		link.l1 = "¡No perdamos tiempo entonces!";
 		link.l1.go = "wife_7";
 		break;
 
 	case "wife_6":
 		pchar.questTemp.FMQT.Bed = "true"; // вар 2
-		dialog.text = "No te arrepentirás de esto, capitán. Primero, debemos encontrar una llave duplicada que fue robada por un sucio pirata. Ahora mismo está de parranda en una taberna local, bebiendo como un cerdo. Date prisa y tráeme la llave duplicada. Te estaré esperando.";
+		dialog.text = "No te arrepentirás de esto, capitán. Primero, debemos encontrar una llave duplicada que fue robada por un sucio pirata. Ahora mismo está de parranda en la taberna, bebiendo como un cerdo. Date prisa y tráeme la llave duplicada. Te estaré esperando.";
 		link.l1 = "¡No perdamos tiempo entonces!";
 		link.l1.go = "wife_7";
 		break;
@@ -255,14 +255,14 @@ void ProcessDialogEvent()
 
 	case "wife_13":
 		pchar.questTemp.FMQT.Honour = "true"; // вар 1
-		dialog.text = "Oh... Me gustas cada vez más... Primero, deberíamos devolver una llave duplicada que fue robada por un pirata inmundo. Él está de juerga en una guarida local, bebiendo como un cerdo. Apresúrate y tráeme el duplicado. Estaré esperando.";
+		dialog.text = "Oh... Me gustas cada vez más... Primero, deberíamos devolver una llave duplicada que fue robada por un pirata inmundo. Él está de juerga en su guarida, bebiendo como un cerdo. Apresúrate y tráeme el duplicado. Estaré esperando.";
 		link.l1 = "¡No perdamos el tiempo entonces!";
 		link.l1.go = "wife_7";
 		break;
 
 	case "wife_14":
 		pchar.questTemp.FMQT.Bed = "true"; // вар 2
-		dialog.text = "Mantén la calma, monsieur, habrá tiempo para eso más tarde. (risita) Primero, debemos devolver una llave duplicada que fue robada por un sucio pirata. Está de juerga en una guarida local, bebiendo como un cerdo. Date prisa y tráeme el duplicado. Estaré esperándote. ¿Seguro que puedes manejar eso?";
+		dialog.text = "Mantén la calma, monsieur, habrá tiempo para eso más tarde. (risita) Primero, debemos devolver una llave duplicada que fue robada por un sucio pirata. Está de juerga en su guarida, bebiendo como un cerdo. Date prisa y tráeme el duplicado. Estaré esperándote. ¿Seguro que puedes manejar eso?";
 		link.l1 = "No me dudes, ya estoy en camino.";
 		link.l1.go = "wife_7";
 		break;
@@ -432,7 +432,7 @@ void ProcessDialogEvent()
 
 	case "pirate":
 		DelLandQuestMark(npchar);
-		PlaySound("Voice\Spanish\tavern\Pyanici-03.wav");
+		PlaySound("Voice\Spanish\EvilPirates07.wav");
 		pchar.quest.FMQT_late2.over = "yes";
 		FreeSitLocator("Tortuga_tavern", "sit_base2");
 		dialog.text = "¿Quién eres tú? Ah, lo que sea. No confíes en las mujeres, amigo. Es como dice la Biblia... incluso la más tonta de las busconas puede arrastrarte al fondo del Infierno con sus mani-mani-ipulaciones. ¡Toma asiento, compañero, y tómate una copa!";
@@ -452,14 +452,14 @@ void ProcessDialogEvent()
 		break;
 
 	case "pirate_1":
-		PlaySound("Voice\Spanish\tavern\Pyanici-05.wav");
+		PlaySound("Voice\Spanish\EvilPirates08.wav");
 		dialog.text = "¿Qué estás mirando? ¡Sírveme ya!";
 		link.l1 = "¡Por ti!.. Oye amigo, no voy a perder el tiempo aquí. Necesito esa llave duplicada que tienes, sabes de qué hablo. Dámela y nos separaremos: tú seguirás bebiendo y yo seguiré ayudando a damiselas en apuros.";
 		link.l1.go = "pirate_2";
 		break;
 
 	case "pirate_2":
-		dialog.text = "¡Ahh, camarada! ¡No escuchaste nada de lo que acabo de decir! Debes parecer más listo de lo que realmente eres... trabajando para esa ramera. ¿Sabes quién es su esposo? Hace poco, el Gobernador Levasseur envió a su negro leal Kampacho a 'hablar' con un comerciante local y muy respetado. ¡El negro golpeó al pobre desgraciado hasta matarlo en su propia tienda! Este comerciante había mostrado algún tipo de falta de respeto menor a la esposa del gobernador durante un baile o algo así. Y esta misma perra me sedujo con su aspecto y sus doblones. \nLa llave duplicada existe. Solía ser un decente cerrajero en Francia, así que fue un juego de niños. Si no fuera por la hija del comandante de Lyons... nunca me habría hecho pirata. ¡Bah! ¡Al diablo con todo!";
+		dialog.text = "¡Ahh, camarada! ¡No escuchaste nada de lo que acabo de decir! Debes parecer más listo de lo que realmente eres... trabajando para esa ramera. ¿Sabes quién es su esposo? Hace poco, el Gobernador Levasseur envió a su negro leal Kampacho a 'hablar' con un comerciante muy respetado. ¡El negro golpeó al pobre desgraciado hasta matarlo en su propia tienda! Este comerciante había mostrado algún tipo de falta de respeto menor a la esposa del gobernador durante un baile o algo así. Y esta misma perra me sedujo con su aspecto y sus doblones. \nLa llave duplicada existe. Solía ser un decente cerrajero en Francia, así que fue un juego de niños. Si no fuera por la hija del comandante de Lyons... nunca me habría hecho pirata. ¡Bah! ¡Al diablo con todo!";
 		link.l1 = "Todo esto es muy triste, pero hablemos de negocios. ¿Dónde está la llave?";
 		link.l1.go = "pirate_3";
 		break;
@@ -468,7 +468,7 @@ void ProcessDialogEvent()
 		dialog.text = "¿Estás escuchando? ¡Estoy fuera del juego, camarada! ¡Fui lo suficientemente astuto para ver lo que se avecina! Me iré de este lugar para siempre tan pronto como mi barco esté listo para zarpar. Si quieres la llave, págala. No seas avaricioso aquí, creo que no necesitarás dinero muy pronto.";
 		link.l1 = "Sabes, tienes razón. No quiero ser el juguete de una mujer. ¡Gracias por el consejo y que estés a salvo en el mar!";
 		link.l1.go = "pirate_4";
-		link.l2 = "¿Pagar por ello? ¿A ti? Eres un ladrón patético y un cobarde. Deberías haberte quedado en ese agujero de mierda de Lyon. Quién sabe, tal vez el comandante local se hubiera compadecido de ti y dejado que un ladrón degenerado fuera su yerno. No voy a compadecerme de ti, eso es seguro. Puedes darme la llave por las buenas o por las malas, la elección es tuya.";
+		link.l2 = "¿Pagar por ello? ¿A ti? Eres un ladrón patético y un cobarde. Deberías haberte quedado en ese agujero de mierda de Lyon. Quién sabe, tal vez el comandante se hubiera compadecido de ti y dejado que un ladrón degenerado fuera su yerno. No voy a compadecerme de ti, eso es seguro. Puedes darme la llave por las buenas o por las malas, la elección es tuya.";
 		link.l2.go = "pirate_5";
 		link.l3 = "(suspiro) ¿Cuánto?";
 		link.l3.go = "pirate_6";
@@ -554,7 +554,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			link.l2 = " Todavía los estoy consiguiendo.";
+			link.l2 = "Todavía los estoy consiguiendo.";
 			link.l2.go = "exit";
 		}
 		break;

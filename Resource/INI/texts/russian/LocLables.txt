@@ -74,7 +74,7 @@ FortOrange_town {Марун-Таун}
 Providence_town {Сан-Андрес}
 Estate {Имение Оглторпа, Англия}
 DesMoines {Дес-Мойнес}
-Minentown_town {рудник Лос-Текес}
+LosTeques_town {рудник Лос-Текес}
 ExitMine {Выход к руднику}
 Factoria {Фактория}
 
@@ -316,8 +316,8 @@ SanAndres Port {порт Сан-Андреса}
 IslaMona {Исла Мона}
 IslaMona Town {Исла Мона}
 
-Minentown {рудник Лос-Текес}
-Minentown Town {рудник Лос-Текес}
+LosTeques {рудник Лос-Текес}
+LosTeques Town {рудник Лос-Текес}
 
 Duel Field	{дуэльное поле}
 
@@ -397,6 +397,7 @@ Svensons_house {дом Яна Свенсона}
 Gladis_house {дом Глэдис МакАртур}
 Gonsales_house {дом Энрике Гонсалеса}
 Loxly_house {контора Альберта Локсли}
+Kristian_house {дом Кристиана}
 
 LostShipsCity {Локо-Риферте}
 LostShipsCity Town {Локо-Риферте}
@@ -441,3 +442,5 @@ River {Берег реки}
 Jungle Fort {Форт в джунглях}
 Basement {Подвал}
 Ruins {Руины}
+
+Ulysse {Пинас 'Улисc'}

@@ -532,6 +532,9 @@ string GetPortByCityName(string city) // имена портов по город
 		case "Beliz":
             return "Beliz_town";
 		break;
+		case "LosTeques":
+            return "Shore20";
+		break;
 	}
 	return "";
 }
@@ -721,6 +724,9 @@ string GetIslandByCityName(string city) // имена острова по гор
 		case "Tenotchitlan":
             return "Mein";
 		break;
+		case "LosTeques":
+            return "Mein";
+		break;
 		case "IslaMona":
             return "IslaMona";
 		break;
@@ -821,6 +827,9 @@ string GetArealByCityName(string city) // ареал по городу по ат
 		break;
 		case "IslaMona":
             return "IslaMona";
+		break;
+		case "LosTeques":
+            return "LosTeques";
 		break;
 	}
 	return "";

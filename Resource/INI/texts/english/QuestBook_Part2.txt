@@ -975,15 +975,15 @@ All enemies are dead. The Indians paid me in full with the pearls they got and w
 #QUEST FalseTrace
 False Trace
 #TEXT 1
-I had an interesting meeting in the tavern of @<sCity1>. A man called Adam Rayner offered me a deal. He told me about a galleon '@<sShip>' loaded with silver. It is sailing from Cartagena to @<sCity2>. He demanded one-tenth of the booty. I accepted his terms, considering that he will sail with me, and he even asked to take part in the boarding party. Adam didn't tell me any timing, yet I suppose that I have only two or three weeks.
+I had an interesting meeting in the tavern of @<sCity1>. A man called Adam Rayner offered me a deal. He told me about a fleut '@<sShip>' loaded with silver. It is sailing from Cartagena to @<sCity2>. He demanded one-tenth of the booty. I accepted his terms, considering that he will sail with me, and he even asked to take part in the boarding party. Adam didn't tell me any timing, yet I suppose that I have only two or three weeks.
 #TEXT 2
-Despite my efforts, I failed to board the galleon. Whatever, hell with the silver.
+Despite my efforts, I failed to board the fleut. Whatever, hell with the silver.
 #TEXT 3
-I have sunk the galleon with all of its silver. How could I be that inattentive...
+I have sunk the fleut with all of its silver. How could I be that inattentive...
 #TEXT 4
-Isn't that something! There was no silver inside the galleon. The captain says that it's only a fodder ship supposed to deliver provision. But there was also a woman; she is obviously the captain's lover. Right, I should call Adam to my cabin and have a talk. Let's see what this bastard will tell me in excuse. And he'd better try damn hard to save his neck from a rope...
+Isn't that something! There was no silver inside the fleut. The captain says that it's only a fodder ship supposed to deliver provision. But there was also a woman; she is obviously the captain's lover. Right, I should call Adam to my cabin and have a talk. Let's see what this bastard will tell me in excuse. And he'd better try damn hard to save his neck from a rope...
 #TEXT 5
-Adam Rayner admitted that his plan was to capture the galleon with my help and to get his wife, who has run away from him. Her name is Katerine Rayner. He offers to tell me about the gold of some Squint-Eyed Solly as a reward for my 'services'. But, first, I have to deliver him and his wife to @<sCity>. Should I trust this rogue? Perhaps, I have to talk with his wife first; she might know something important...
+Adam Rayner admitted that his plan was to capture the fleut with my help and to get his wife, who has run away from him. Her name is Katerine Rayner. He offers to tell me about the gold of some Squint-Eyed Solly as a reward for my 'services'. But, first, I have to deliver him and his wife to @<sCity>. Should I trust this rogue? Perhaps, I have to talk with his wife first; she might know something important...
 #TEXT 6
 It is getting more interesting. Katerine hates Adam just like a dog hates a cat... That is why she ran away from him. But it is just their family matters and their problems. I didn't like Katerine and her proposal, so I'd risk trusting Adam again. To @<sCity> then.
 #TEXT 7
@@ -1336,7 +1336,29 @@ Sergio Saldo offered me to buy 60 barrels of resin every fifth day of the month.
 #TEXT 4_1
 I managed to negotiate with Sergio Saldo to increase the supply of resin. Now, on the 5th of each month, I can purchase 300 barrels of resin at the Trinidad lighthouse for 2,550 doubloons.
 #TEXT 5
-A batch of 40 logs of ironwood every 15th of the month from Rodrigo Jimenez, the manager of my factory. The factory can store up to 6 batches in total before stopping all the work. Payment is made immediately for all batches in stock. The cost of each: 200 doubloons, 5 bottles of rum, 5 bottles of wine. Total: 5 doubloons per log. Not bad...
+A batch of 20 logs of ironwood every 15th of the month from Rodrigo Jimenez, the manager of my factory. The factory can store up to 6 batches in total before stopping all the work. Payment is made immediately for all batches in stock. The cost of each: 200 doubloons, 5 bottles of rum, 5 bottles of wine. Total: 10 doubloons per log. Not bad...
+
+#QUEST Useful_Acquaintances
+Strings to Pull
+#TEXT   1
+************************************************************
+I can always buy mangarosa from the gypsy woman in Saint John's - three stalks for three hundred and fifty gold doubloons.
+#TEXT   2
+************************************************************
+In the tavern of Willemstad, rest and pleasure always await me. The charming Betsy Price will take care of everything.
+#TEXT   3
+************************************************************
+The port master in Belize has granted me a fifty percent discount on docking for one ship of up to second class, for any duration. The ship will be under his personal supervision and will not be harmed in the event of a city siege.
+#TEXT   4
+************************************************************
+Now I can buy wine and rum on the 15th from Christian Deluce in Basse-Terre. His house is located to the right of the governor’s residence. The price is 26 doubloons for a batch of 20 bottles of wine and the same amount of rum.
+************************************************************
+#TEXT   4_1
+I managed to negotiate increased deliveries with Christian. From now on, he’ll reserve one hundred bottles of wine and rum for me on the 15th of each month. The price remains the same — one hundred thirty doubloons for the entire batch.
+#TEXT   6
+************************************************************
+In the tavern of Puerto Principe, I’m entitled to free lodging and drinks, and the innkeeper promised that thanks to his efforts, more sailors will be eager to sail under my command.
+
 
 #QUEST FMQ_Guadeloupe
 Price of Discretion
@@ -1361,7 +1383,7 @@ A bartender gave me beautiful advice to directly address Don Carlos de Milyar re
 #TEXT 10
 So, no sign of Pinette here, although I managed to find a trail of the third passenger - the French deserter. He is a Spanish don now, a commander of the Sario. His reward for treason, I imagine. I have no other option rather than to board his tub and to capture 'Don Juan'. Even if he won't be able to point me to Bertrand's location, I could use him to ease the anger of the governor of Guadeloupe.
 #TEXT 11
-Looks like I was lucky: a war schooner 'Sario' is stationed in Portobello. Boarding it in front of a fort wouldn't be my brightest idea. I should wait for it to leave the harbor and head into the open sea.
+Looks like I was lucky: a sloop 'Sario' is stationed in Portobello. Boarding it in front of a fort wouldn't be my brightest idea. I should wait for it to leave the harbor and head into the open sea.
 #TEXT 12
 The Sario is in the open sea. I should chase her!
 #TEXT 13
@@ -1892,7 +1914,7 @@ I engaged in a tough battle against the Spanish heavy squadron and eliminated it
 #TEXT 11
 I've managed to flee from the Spanish squadron. I should hurry and see Tyrex as soon as possible.
 #TEXT 12
-El Cazador, the mighty flagship, is eliminated. Now we can try to flee - all we need is 1000 yards distance from them.
+The mighty flagship, is eliminated. Now we can try to flee - all we need is 1000 yards distance from them.
 
 #QUEST Roger_7
 Flying the Jolly Roger: Jarl's Treasures

@@ -68,7 +68,7 @@ void ProcessDialogEvent()
 			link.l3 = "Ve al contramaestre, dile que te dé un casillero. Puedes desembarcar en el próximo puerto.";
 			link.l3.go = "free_withoutFee_2";
 		}
-		link.l4 = "Supongo que te convertirás en un gran esclavo - fuerte y obediente.";
+		link.l4 = "Supongo que te convertirás en un gran esclavo, fuerte y obediente.";
 		link.l4.go = "Slave_1";
 		link.l5 = "Has ignorado una orden de arriar tus velas y has resistido con fuerza. Serás ahorcado por ello. El contramaestre ya ha recibido mis órdenes.";
 		link.l5.go = "PunishmentAction";
@@ -184,7 +184,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "offender":
-		dialog.text = "¿Criminal? ¿Estás bromeando conmigo," + GetAddress_Form(NPChar) + "¡!";
+		dialog.text = "¿Criminal? ¿Estás bromeando conmigo," + GetAddress_Form(NPChar) + "?";
 		link.l1 = "Sin bromas. Eres un pirata.";
 		link.l1.go = "exit";
 		break;
@@ -198,7 +198,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Para ser tu oficial, " + GetAddress_Form(NPChar) + "¿Estoy de acuerdo. Conozco mi trabajo y no tengo nada que perder.";
+			dialog.text = "¿Ser tu oficial, " + GetAddress_Form(NPChar) + "? Estoy de acuerdo. Conozco mi trabajo y no tengo nada que perder.";
 			link.l1 = "¡Trato hecho! Ve y haz tu trabajo.";
 			link.l1.go = "free_to_officer_Hire";
 			link.l2 = "Espera un poco, he cambiado de opinión.";
@@ -311,8 +311,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "free_withoutFee":
-		dialog.text = "Oh, " + GetAddress_Form(NPChar) + ", ¿realmente eres tan amable, y me estás liberando sin rescate?";
-		link.l1 = "Sí, lo soy. Eres libre ahora," + GetFullName(NPChar);
+		dialog.text = "Oh, " + GetAddress_Form(NPChar) + ", ¿realmente eres tan amable y me estás liberando sin rescate?";
+		link.l1 = "Sí. Eres libre ahora," + GetFullName(NPChar);
 		link.l1.go = "free_withoutFee_2";
 		link.l99 = "Hm... ¡Tienes un punto! Necesito más tiempo para decidir.";
 		link.l99.go = "exit";
@@ -472,7 +472,7 @@ void ProcessDialogEvent()
 			sTmp = "Una vez tuve la idea de robarle, pero nunca he tenido la oportunidad de hacerlo.";
 			break;
 		}
-		dialog.text = "Bien. Es suficiente para mí. Ahora directo al grano, en " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.City + "Voc") + " vive un rico comerciante " + NPChar.Hold_GenQuest.Name + ". " + "Hizo su fortuna en su barco '" + NPChar.Hold_GenQuest.ShipName + " vendiendo " + GetStrSmallRegister(XI_ConvertString(Goods[sti(NPChar.Hold_GenQuest.Goods)].Name + "Acc")) + " con ruta : " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.FromCity) + " - " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.ToCity) + ". " + "Cuando tiene demasiada carga, paga por una escolta." + sTmp + "Estoy seguro de que esta información es más valiosa para ti que la vida de un solo hombre.";
+		dialog.text = "Bien. Es suficiente para mí. Ahora directo al grano, en " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.City + "Voc") + " vive un rico comerciante " + NPChar.Hold_GenQuest.Name + ". " + "Hizo su fortuna en su barco '" + NPChar.Hold_GenQuest.ShipName + " vendiendo " + GetStrSmallRegister(XI_ConvertString(Goods[sti(NPChar.Hold_GenQuest.Goods)].Name + "Acc")) + " con ruta : " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.FromCity) + ", " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.ToCity) + ". " + "Cuando tiene demasiada carga, paga por una escolta." + sTmp + "Estoy seguro de que esta información es más valiosa para ti que la vida de un solo hombre.";
 		link.l1 = "Dudo que esta información pueda ser útil para mí. No voy a cazar a comerciantes pacíficos.";
 		link.l1.go = "free_tip_off_0";
 		link.l2 = "No estoy seguro de que esta información me sirva, pero te he dado mi palabra. El contramaestre te colocará con mi tripulación y te dejará ir en el puerto más cercano.";
@@ -565,7 +565,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "free_by_hoard4":
-		dialog.text = "Ja-ja, buen chiste... Ahora escucha. Hay un colega en " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.City + "Voc") + " llamado " + NPChar.Hold_GenQuest.Name + ", era un tipo realmente imprudente en su juventud. Tenía muchos 'tratos' en aquellos días..." + "Entonces una vez en la taberna me contó que era miembro de " + GetName(NAMETYPE_VIP, NPChar.Hold_GenQuest.PirateName, NAME_ACC) + " banda y él vio cómo esos piratas enterraban un tesoro." + " Cinco de sus amigos murieron por ese tesoro... Había rumores de que fue capturado y colgado, pero la verdad es que se retiró del negocio y comenzó una familia. Recordó la ubicación del tesoro, incluso dibujó un mapa. Me ofreció acompañarlo a encontrar el tesoro. Es un hombre supersticioso, el tesoro estaba cubierto de sangre, así que le teme ir solo allí. Lo admito, tampoco me aventuré por la misma razón. " + "Estaba dispuesto a vender el mapa, pero ¿por qué lo necesitaría si nunca voy a ir allí de todos modos... \nEsa es mi historia... Creo que un hombre tan valiente como tú lo encontrará útil, y el mapa es bastante barato por cierto.";
+		dialog.text = "Ja-ja, buen chiste... Ahora escucha. Hay un colega en " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.City + "Voc") + " llamado " + NPChar.Hold_GenQuest.Name + ", era un tipo realmente imprudente en su juventud. Tenía muchos 'tratos' en aquellos días..." + " Una vez en la taberna me contó que era miembro de " + GetName(NAMETYPE_VIP, NPChar.Hold_GenQuest.PirateName, NAME_ACC) + " banda y él vio cómo esos piratas enterraban un tesoro." + " Cinco de sus amigos murieron por ese tesoro... Había rumores de que fue capturado y colgado, pero la verdad es que se retiró del negocio y comenzó una familia. Recordó la ubicación del tesoro, incluso dibujó un mapa. Me ofreció acompañarlo a encontrar el tesoro. Es un hombre supersticioso y el tesoro está cubierto de sangre, así que le teme ir solo allí. Lo admito, tampoco me aventuré por la misma razón. " + "Estaba dispuesto a vender el mapa... ¿Por qué lo necesitaría si nunca voy a ir allí de todos modos...?\nEsa es mi historia... Creo que un hombre tan valiente como tú lo encontrará útil, y el mapa es bastante barato por cierto.";
 		link.l1 = "¿Y realmente me sugieres comprar eso? Tu historia no es real, así que rompo nuestro trato.";
 		link.l1.go = "free_tip_off_0";
 		link.l2 = "Historia interesante, aunque realmente no creo en ella. Pero tienes mi palabra, ve y dile al contramaestre que te dé un casillero. Eres libre.";
@@ -620,13 +620,13 @@ void ProcessDialogEvent()
 
 	case "FalseTrace_Prisoner_1":
 		dialog.text = "Estoy escuchando, capitán.";
-		link.l1 = "Abordé tu galeón porque Adam Rayner, el esposo de Katerin, me dijo que había mucho plata en tu barco. Este truco le permitió llevarse a una mujer que una vez le perteneció, y que escapó de él hacia ti.";
+		link.l1 = "Abordé tu flauta porque Adam Rayner, el esposo de Katerin, me dijo que había mucho plata en tu barco. Este truco le permitió llevarse a una mujer que una vez le perteneció, y que escapó de él hacia ti.";
 		link.l1.go = "FalseTrace_Prisoner_2";
 		break;
 
 	case "FalseTrace_Prisoner_2":
 		dialog.text = "¿Adam? ¿Ese bastardo? ¡Todo era su plan! Ahora veo... Sí, ayudé a Katrine a escapar hace tres meses. Una pobre chica, no tienes idea de cómo la trataba...";
-		link.l1 = "Ella era su esposa y no me importaba lo que sucediera, no es asunto mío. Cometí un error al abordar tu galeón pero ya es demasiado tarde para hablar de ello. Adam me ha prometido pagar por mi ayuda.";
+		link.l1 = "Ella era su esposa y no me importaba lo que sucediera, no es asunto mío. Cometí un error al abordar tu flauta pero ya es demasiado tarde para hablar de ello. Adam me ha prometido pagar por mi ayuda.";
 		link.l1.go = "FalseTrace_Prisoner_3";
 		break;
 
@@ -655,7 +655,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "FalseTrace_Prisoner_7":
-		dialog.text = "Arrestarás a Adam Rayner y lo pondrás en cadenas. Luego me llevarás a mí y a Katerine a " + XI_ConvertString("Colony" + pchar.questTemp.FalseTrace.TargetCity) + ". No desembarques en la ciudad, después de todo, fuiste tú quien hundió mi galeón, deja a los tres de nosotros en " + XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore + "Gen") + "\nTambién te pediría un arma. Iremos a la ciudad a través de las junglas y me aseguraré de que esa escoria pague no solo por sus crímenes, sino también por los tuyos. Se lo merece\nTienes mi palabra de que tu nombre no saldrá a la luz. A cambio, te daré información verídica sobre un barco con oro del estado enemigo\nNo será un gran desafío para ti, pero sí tiene dientes, obtendrás un buen botín. Mucho mejor que mi rescate y los tesoros del 'llamado' Solly Bizco. ¿Tenemos un trato?";
+		dialog.text = "Arrestarás a Adam Rayner y lo pondrás en cadenas. Luego me llevarás a mí y a Katerine a " + XI_ConvertString("Colony" + pchar.questTemp.FalseTrace.TargetCity) + ". No desembarques en la ciudad, después de todo, fuiste tú quien hundió mi flauta, deja a los tres de nosotros en " + XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore + "Gen") + "\nTambién te pediría un arma. Iremos a la ciudad a través de las junglas y me aseguraré de que esa escoria pague no solo por sus crímenes, sino también por los tuyos. Se lo merece\nTienes mi palabra de que tu nombre no saldrá a la luz. A cambio, te daré información verídica sobre un barco con oro del estado enemigo\nNo será un gran desafío para ti, pero sí tiene dientes, obtendrás un buen botín. Mucho mejor que mi rescate y los tesoros del 'llamado' Solly Bizco. ¿Tenemos un trato?";
 		link.l1 = "No me gusta tu plan. Creo que las autoridades locales organizarán una cacería para mí tan pronto como deje las costas de " + XI_ConvertString(pchar.questTemp.FalseTrace.TargetShore + "Gen") + ". No, capitán, no voy a arriesgar mi cabeza. Nuestra conversación ha terminado.";
 		link.l1.go = "FalseTrace_Prisoner_8";
 		link.l2 = "Bueno, parece que Katerine tenía razón. Me gusta tu propuesta. Adam Rayner será arrestado. Lo haré inmediatamente. Serás liberado después de que arrestemos a Adam. ¡Nos vemos, capitán!";
@@ -686,7 +686,7 @@ void ProcessDialogEvent()
 	// Addon-2016 Jason ФМК-Гваделупа
 	case "FMQG":
 		dialog.text = "¿Estás aquí para predicar o para hacer negocios?";
-		link.l1 = "Para hacer negocios. Necesito a tu compañero en el crimen - Bertrand Pinette. Estoy en un lío profundo por culpa de él. ¿Dónde puedo encontrarlo, eh?";
+		link.l1 = "Para hacer negocios. Necesito a tu compañero en el crimen, Bertrand Pinette. Estoy en un lío profundo por culpa de él. ¿Dónde puedo encontrarlo, eh?";
 		link.l1.go = "FMQG_1";
 		break;
 

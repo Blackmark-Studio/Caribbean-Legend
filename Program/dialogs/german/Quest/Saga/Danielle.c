@@ -25,8 +25,8 @@ void ProcessDialogEvent()
 	{
 		case "First time": //первая встреча - знакомство
 			PlaySound("Voice\English\saga\Denny Hawk-02.wav");
-			dialog.text = "Warte, Schönling! Ich denke, wir sollten reden.";
-			link.l1 = "Kenne ich Sie? Wie auch immer, ich habe immer ein paar extra Stunden für eine Dame.";
+			dialog.text = "Warte, Schönling! Ich denke wir sollten reden.";
+			link.l1 = "Kennen wir uns? Wie auch immer, ich habe immer ein paar extra Stunden für eine Dame übrig.";
 			link.l1.go = "meeting";			
 			NextDiag.TempNode = "First time";
 		break;
@@ -34,19 +34,19 @@ void ProcessDialogEvent()
 		case "meeting":
 			PlaySound("Voice\English\saga\Denny Hawk-01.wav");
 			dialog.text = "Macht noch keine Pläne, Kapitän. Such dir ein jüngeres, töricht aussehendes Mädchen für ein paar zusätzliche Stunden. Ich habe Geschäfte für dich. Ich bin tatsächlich verheiratet. Mein Ehemann heißt Nathaniel Hawk.";
-			link.l1 = "Ist das nicht etwas! Also müssen Sie dieses bisschen... äh, Dannie Hawk sein, Herr Svenson hat Sie erwähnt.";
+			link.l1 = "Das ist doch mal was! Also müssen Sie diese Schla... äh, Dannie Hawk sein, Herr Svenson hat Sie erwähnt.";
 			link.l1.go = "meeting_1";
 		break;
 		
 		case "meeting_1":
-			dialog.text = "In Fleisch und Blut. Ja, mir ist bewusst, dass der Waldteufel nicht viel von mir hält, das Gefühl ist gegenseitig, aber er musste dich warnen, dass ich meinen Säbel nicht nur trage, weil er hübsch ist. Also, komm zur Sache, Junge!\nIch habe Svenson und seine Besucher eine Weile beobachtet, weil er es war, der meinen Mann in den Dschungel schickte, um zu sterben. Ich dachte, er arbeitete mit Jackman zusammen, aber jetzt sehe ich, dass er das nicht tut. Ich versteckte mich unter dem Fenster während eures Gesprächs. Konnte nicht alles belauschen, aber habe viele nützliche Informationen gelernt.\nBist du wirklich bereit, meinen Mann zu finden und Jackman in den Arsch zu treten? Oder hast du nur billig geredet?";
+			dialog.text = "In Fleisch und Blut. Ja, mir ist bewusst, dass der Forest Devil nicht viel von mir hält, das Gefühl ist gegenseitig, aber er musste dich warnen, dass ich meinen Säbel nicht nur trage, weil er hübsch ist. Also kommen wir zur Sache, Junge!\nIch habe Svenson und seine Besucher eine Weile beobachtet, weil er es war, der meinen Mann in den Dschungel schickte, um zu sterben. Ich dachte, er arbeitete mit Jackman zusammen, aber jetzt sehe ich, dass er das nicht tut. Ich versteckte mich unter dem Fenster während eures Gesprächs. Konnte nicht alles belauschen, aber habe viele nützliche Informationen gelernt.\nBist du wirklich bereit, meinen Mann zu finden und Jackman in den Arsch zu treten? Oder hast du nur billig geredet?";
 			link.l1 = "Lauschen ist schlecht, Madame Hawk. Aber ich werde Ihnen vergeben, wenn Sie respektvoller mit mir sprechen. Ob ich nach Hawk suche oder nicht, das geht nur mich etwas an. Sprechen Sie, wenn Sie etwas Nützliches zu sagen haben, oder lassen Sie mich in Ruhe, wenn Sie es nicht tun. Ich werde nicht zweimal fragen.";
 			link.l1.go = "meeting_2";
 		break;
 		
 		case "meeting_2":
-			dialog.text = "A-ha, was für ein Hitzkopf! Komm schon, Kapitän... Mein Temperament macht dir sicherlich nicht wirklich bequem. Ich sehe, dass du kein Feigling bist und deinen Wert kennst. Also... lass uns bekannt machen. Ich verspreche dir, dass ich vorsichtig mit dem bin, was ich zu dir sage. Ich brauche dich und du brauchst mich. Wir teilen Ziele. Nimm mich in deine Crew und du wirst es nicht bereuen. Ich werde dir mit gutem Glauben und Treue dienen, bis wir Nathan finden, du hast mein Wort.";
-			link.l1 = "Betrachten Sie sich als angenommen... Dannie. Svenson hat mir erzählt, dass Sie bereits nach Ihrem Ehemann gesucht haben. Haben Sie etwas Interessantes gefunden?";
+			dialog.text = "A-ha, was für ein Hitzkopf! Komm schon, Kapitän... Mein Temperament macht es dir sicherlich nicht wirklich bequem. Ich sehe, dass du kein Feigling bist und deinen Wert kennst. Also... lass uns bekannt machen. Ich verspreche dir, dass ich vorsichtig mit dem bin, was ich zu dir sage. Ich brauche dich und du brauchst mich. Wir teilen Ziele. Nimm mich in deine Crew und du wirst es nicht bereuen. Ich werde dir mit gutem Glauben und Treue dienen, bis wir Nathan finden, du hast mein Wort.";
+			link.l1 = "Betrachten Sie sich als angenommen... Dannie. Svenson hat mir erzählt, dass Sie bereits nach Ihrem Ehemann gesucht haben. Haben Sie etwas Interessantes herausgefunden?";
 			link.l1.go = "meeting_3";
 		break;
 		
@@ -64,7 +64,7 @@ void ProcessDialogEvent()
 		
 		case "meeting_5":
 			dialog.text = "Sicher! Natürlich bin ich bereit. Ich bin die ganze Zeit gereist, seit ich Maroon Town verlassen habe. Außerdem möchte ich nicht nur ein weiterer Ihrer Passagiere sein.";
-			link.l1 = "Gut. Lassen wir zu meinem Schiff gehen.";
+			link.l1 = "Gut. Gehen wir zu meinem Schiff.";
 			link.l1.go = "meeting_6";
 		break;
 		
@@ -109,7 +109,7 @@ void ProcessDialogEvent()
 		
 		// у истукана в джунглях
 		case "Dolly":
-			dialog.text = ""+pchar.name+"! Los geht's! Ich zeige dir das Steinidol, von dem der indianische Schamane gesprochen hat. Nur eine gewöhnliche Steinsäule. Auf geht's!";
+			dialog.text = ""+pchar.name+"! Komm schon! Ich zeige dir den Steinidol, von dem der indianische Schamane gesprochen hat. Nur eine gewöhnliche Steinsäule. Auf geht's!";
 			link.l1 = "...";
 			link.l1.go = "Dolly_1";
 		break;
@@ -121,7 +121,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Dolly_2":
-			dialog.text = "He! Schau mal, es ist nur eine Steinstatue. Nichts Besonderes...";
+			dialog.text = "Hey! Schau mal, es ist nur eine Steinstatue. Nichts Besonderes...";
 			link.l1 = "Ich verstehe... Aber die Figur an der Spitze ist ein bisschen unheimlich, findest du nicht? ";
 			link.l1.go = "Dolly_3";
 		break;
@@ -142,14 +142,14 @@ void ProcessDialogEvent()
 		
 		// у мискито
 		case "SnakeEye":
-			dialog.text = "Also, was sagst du, "+pchar.name+"? Was hat dir dieser Rothäuter-Bauchredner erzählt? Hast du etwas aus seinen philosophischen Worten verstanden?";
+			dialog.text = "Also, was sagst du, "+pchar.name+"? Was hat dir dieser Rothäutiger Bauchredner erzählt? Hast du etwas aus seinen philosophischen Worten verstanden?";
 			link.l1 = "Hast du schon wieder gelauscht, Dannie?";
 			link.l1.go = "SnakeEye_1";
 		break;
 		
 		case "SnakeEye_1":
-			dialog.text = "Nun... ein bisschen. Sie wissen, wir Frauen sind eben so. Aber Sie müssen verstehen - ich mache mir nur Sorgen um meinen Mann. Ich liebe ihn tatsächlich. Was macht es schon aus, wenn ich belausche? Haben Sie übrigens etwas Nützliches herausgefunden?";
-			link.l1 = "Ich versuche nachzudenken... es war nicht einfach, Snake Eye zu verstehen. Es scheint jedoch, dass das Idol, das wir auf unserem Weg ins Dorf gesehen haben, eine Art magisches Portal ist, das Menschen teleportieren kann.";
+			dialog.text = "Nun... ein bisschen. Sie wissen, wir Frauen sind eben so. Aber Sie müssen verstehen - ich mache mir nur Sorgen um meinen Mann. Ich liebe ihn halt. Was macht es schon aus, wenn ich lausche? Haben Sie übrigens etwas Nützliches herausgefunden?";
+			link.l1 = "Ich versuche nachzudenken... es war nicht einfach, Snake Eye zu verstehen. Es scheint jedoch, dass das Idol, welches wir auf unserem Weg ins Dorf gesehen haben, eine Art magisches Portal ist, das Menschen teleportieren kann.";
 			link.l1.go = "SnakeEye_2";
 		break;
 		
@@ -160,8 +160,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SnakeEye_3":
-			dialog.text = "Bitte, entschuldigen Sie mich. Ich werde dich nicht mehr so ansehen. Mach weiter.";
-			link.l1 = "Er sagte, dass, als Nathan fast von seinen Verfolgern gefangen wurde, der Indianer ihm die Statue als Rettungsweg zeigte, sie Kukulcan nannte und sagte, sie habe Nathan lebendig gefressen und irgendwo ausgespuckt. Einfach ausgedrückt, scheint es, dass Nathan von der Statue teleportiert wurde.";
+			dialog.text = "Bitte, entschuldige mich. Ich werde dich nicht mehr so ansehen. Mach weiter.";
+			link.l1 = "Er sagte, dass, als Nathan fast von seinen Verfolgern gefangen wurde, der Indianer ihm die Statue als Rettungsweg zeigte, den sie Kukulcan nannten und sagte, es habe Nathan lebendig gefressen und irgendwo ausgespuckt. Einfach ausgedrückt, scheint es, dass Nathan von der Statue weg teleportiert wurde.";
 			link.l1.go = "SnakeEye_4";
 		break;
 		
@@ -172,37 +172,37 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SnakeEye_5":
-			dialog.text = "Ach, das ist nichts, "+pchar.name+", das spielt keine Rolle. Nur Erinnerungen an meine stürmische Jugend. Aber wie hat Nathan das gemacht? Ich meine zu teleportieren? Wir waren gerade in der Nähe dieses Idols, ich bin um es herum gelaufen und habe es berührt... es ist nur ein Stein!";
-			link.l1 = "Schlangenauge hat mir erzählt, dass das Idol um Mitternacht zum Leben erwacht. Nur dann beginnt es in einer goldenen Farbe zu leuchten, wenn der Geist von Kukulcan hineinkommt. Das ist die Zeit, in der man es nicht berühren sollte. Oder im Gegenteil sollte...";
+			dialog.text = "Ach nichts, "+pchar.name+", das spielt keine Rolle. Nur Erinnerungen an meine stürmische Jugend. Aber wie hat Nathan das gemacht? Ich meine sich zu teleportieren? Wir waren gerade in der Nähe dieses Idols, ich bin um es herum gelaufen und habe es berührt... es ist nur ein Stein!";
+			link.l1 = "Snake Eye hat mir erzählt, dass das Idol um Mitternacht zum Leben erwacht. Nur dann beginnt es in einer goldenen Farbe zu leuchten, wenn der Geist von Kukulcan hineinkommt. Das ist die Zeit, in der man es nicht berühren sollte. Oder im Gegenteil sollte...";
 			link.l1.go = "SnakeEye_6";
 		break;
 		
 		case "SnakeEye_6":
-			dialog.text = "Unheimlich... Und jetzt? Lassen wir bis Mitternacht warten und dann in den Dschungel gehen?";
+			dialog.text = "Unheimlich... Und jetzt? Warten wir bis Mitternacht und gehen dann in den Dschungel?";
 			link.l1 = "Nein. Der Schamane sagte, dass das Idol nicht nur Menschen teleportiert, sondern auch ihr Leben frisst. Soweit ich ihn verstanden habe, meinte er, dass es ihre Gesundheit aussaugt. Snake Eye ist dreimal durch diese Statuen hindurchgegangen und hat sich nach jeder Teleportation mit einem einzigartigen Trank geheilt.";
 			link.l1.go = "SnakeEye_7";
 		break;
 		
 		case "SnakeEye_7":
-			dialog.text = "Haben Sie ihn nach diesem Trank gefragt?";
+			dialog.text = "Hast du ihn nach diesem Trank gefragt?";
 			link.l1 = "Sicher. Aber erstens, es sind nur noch drei Flaschen übrig und zweitens, er verlangte drei Amulette im Austausch dafür.";
 			link.l1.go = "SnakeEye_8";
 		break;
 		
 		case "SnakeEye_8":
 			dialog.text = "Wie wäre es, dies ohne den Trank zu tun? Lass uns nachts zur Statue gehen und sie berühren...";
-			link.l1 = "Zu riskant. Ich gebe zu, dass der Indianer ein bisschen verrückt ist und uns reinlegt, aber er sieht nicht aus wie ein Psychopath, also glaube ich, dass er die Wahrheit sagt. Ich erinnere mich, dass du mir etwas über indische Magie erzählt hast... Zweifelst du an ihrer Existenz?";
+			link.l1 = "Zu riskant. Ich gebe zu, dass der Indianer ein bisschen verrückt ist, aber er sieht nicht aus wie ein Psychopath, also glaube ich, dass er die Wahrheit sagt. Ich erinnere mich, dass du mir etwas über indische Magie erzählt hast... Zweifelst du an ihrer Existenz?";
 			link.l1.go = "SnakeEye_9";
 		break;
 		
 		case "SnakeEye_9":
-			dialog.text = "Ja, das war ich. Ich bezweifle es nicht, weil ich es mit meinen eigenen Augen gesehen habe. Also, ich vermute, du hast recht, es hat keinen Sinn, es zu riskieren.";
+			dialog.text = "Ja, hatte ich. Ich bezweifle es nicht, weil ich es mit meinen eigenen Augen gesehen habe. Also, ich vermute, du hast recht, es hat keinen Sinn, es zu riskieren.";
 			link.l1 = "Genau. Deshalb werden wir zuerst die Amulette finden, dann diesen wunderbaren Trank vom Schamanen holen und zur Statue gehen. Ich werde gehen. Alleine.";
 			link.l1.go = "SnakeEye_10";
 		break;
 		
 		case "SnakeEye_10":
-			dialog.text = "Warum ist das so? Und was ist mit mir?";
+			dialog.text = "Warum denn so? Und was ist mit mir?";
 			link.l1 = "Du wirst auf meinem Schiff bleiben und die Führung übernehmen, während ich weg bin. Versuche nicht einmal zu argumentieren, Dannie. Es gibt nur drei Flaschen des Tranks. Es ist unbekannt, wohin das Portal führt, falls der Schamane recht hat und dieses Ding wirklich funktioniert. Vielleicht kann ich Nathan dort nicht einmal finden.";
 			link.l1.go = "SnakeEye_11";
 		break;
@@ -222,8 +222,8 @@ void ProcessDialogEvent()
 		
 		// перед походом к истукану
 		case "teleport":
-			dialog.text = "So was? Hast du die Tränke bekommen?";
-			link.l1 = "Ja. Ich habe die Tränke und einige Anweisungen. Das Einzige, was noch zu tun bleibt, ist, um Mitternacht zum Idol zu gehen und es zu berühren.";
+			dialog.text = "Also? Hast du die Tränke bekommen?";
+			link.l1 = "Ja. Ich habe die Tränke und einige Anweisungen. Das Einzige, was noch zu tun bleibt, ist um Mitternacht zum Idol zu gehen und es zu berühren.";
 			link.l1.go = "teleport_1";
 		break;
 		
@@ -241,25 +241,25 @@ void ProcessDialogEvent()
 		
 		case "teleport_3":
 			dialog.text = "Ich werde mit dir gehen.";
-			link.l1 = "Werdet ihr schon wieder streiten? Ich dachte, wir hätten eine Abmachung...";
+			link.l1 = "Willst du schon wieder streiten? Ich dachte, wir hätten eine Abmachung...";
 			link.l1.go = "teleport_4";
 		break;
 		
 		case "teleport_4":
 			dialog.text = "Du hast mich falsch verstanden. Ich werde nur in deiner Nähe bleiben. Ich muss sicherstellen, dass die Statue funktioniert... oder dass sie es nicht tut.";
-			link.l1 = "Ich habe keine Einwände. Aber denk nicht einmal daran, mir zu folgen, falls die Statue mich 'frisst'. Hörst du mich?";
+			link.l1 = "Dann habe ich habe keine Einwände. Aber denk nicht einmal daran, mir zu folgen, falls die Statue mich 'frisst'. Hörst du mich?";
 			link.l1.go = "teleport_5";
 		break;
 		
 		case "teleport_5":
-			dialog.text = "Ich verspreche, dass ich Ihnen nicht folgen werde... Kapitän.";
+			dialog.text = "Ich verspreche, dass ich dir nicht folgen werde... Kapitän.";
 			link.l1 = "Gut. Und, Dannie, es scheint, dass du nicht so eine Schlampe bist, wie sie sagen.";
 			link.l1.go = "teleport_6";
 		break;
 		
 		case "teleport_6":
 			dialog.text = "Du kennst mich nicht allzu gut, "+pchar.name+". Aber reden wir jetzt nicht darüber.";
-			link.l1 = "Lassen wir uns nicht ... Nun, wir sollten uns auf unseren nächtlichen Ausflug vorbereiten!";
+			link.l1 = "Ja lassen wir es besser ... Nun, wir sollten uns auf unseren nächtlichen Ausflug vorbereiten!";
 			link.l1.go = "Dolly_4";
 			npchar.quest.talk = "shadowstar";
 			pchar.quest.Saga_Dolly1.win_condition.l1 = "location";
@@ -279,7 +279,7 @@ void ProcessDialogEvent()
 		
 		// перед телепортацией
 		case "shadowstar":
-			dialog.text = "Schau, "+pchar.name+"! Ich schwöre bei allem, was heilig ist, es gibt ein seltsames Licht über der Statue!";
+			dialog.text = "Schau, "+pchar.name+"! Ich schwöre bei allem was heilig ist, dort ist tatsächlich ein seltsames Licht über der Statue!";
 			link.l1 = "Es scheint, dass der Schamane nicht gelogen hat. Und, wenn die Dunkelheit mich nicht täuscht, sieht die Spitze der Statue nicht mehr so steinig aus.";
 			link.l1.go = "shadowstar_1";
 			QuestPointerDelLoc("Pearl_Jungle_02", "reload", "reload1_back");
@@ -322,7 +322,7 @@ void ProcessDialogEvent()
 				LAi_SetCurHPMax(PChar);
 				AddCharacterHealth(pchar, 50);
 				DeleteAttribute(pchar, "chr_ai.poison");
-				notification("You are feeling that your health is restored!", "None");
+				notification("Du hast das Gefühl, dass deine Gesundheit wiederhergestellt ist!", "None");
 				//Log_Info("A Comanche potion is used");
 				//Log_Info("You are feeling that your health is restored!");
 				//PlaySound("Ambient\Tavern\glotok_001.wav");
@@ -345,7 +345,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "arrive_2":
-			dialog.text = "Verdammt, du Monster klingst wie... "+pchar.name+"Was?!";
+			dialog.text = "Verdammt, du Monster klingst wie... "+pchar.name+"?!";
 			link.l1 = "(leise) Oh-oh... Sag bloß!";
 			link.l1.go = "arrive_3";
 		break;
@@ -375,13 +375,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "arrive_7":
-			dialog.text = "Sag mir, was hätte ich sonst tun sollen? Nachdem die Statue dich gefressen hatte, konnte ich nur hoffen, dass sie dich eines Tages wieder ausspucken würde. Außerdem sagte Snake Eye, dass dies am wahrscheinlichsten passieren würde.\nIch lebte bei den Miskito und beobachtete jeden Tag das Idol. Warum sprechen wir überhaupt über solchen Unsinn? Sag mir! Was ist da draußen passiert? Wo warst du?";
+			dialog.text = "Sag mir, was hätte ich sonst tun sollen? Nachdem die Statue dich gefressen hatte, konnte ich nur hoffen, dass es dich eines Tages wieder ausspucken würde. Außerdem sagte Snake Eye, dass dies am wahrscheinlichsten passieren würde.\nIch lebte bei den Miskito und beobachtete jeden Tag das Idol. Warum sprechen wir überhaupt über solchen Unsinn? Sag mir! Was ist da draußen passiert? Wo warst du?";
 			link.l1 = "Dannie, diese Geschichte ist viel zu lang, ich habe so viel gesehen... Aber um es von deiner Brust zu bekommen, sage ich dir, dass ich Nathaniel gefunden habe!";
 			link.l1.go = "arrive_8";
 		break;
 		
 		case "arrive_8":
-			dialog.text = "Haben Sie Nathan gefunden? Wo ist er? Und wie geht es ihm?!";
+			dialog.text = "Du hast Nathan gefunden? Wo ist er? Und wie geht es ihm?!";
 			link.l1 = "Ich werde nicht lügen - er lebt, aber er fühlt sich wirklich schlecht. Er hatte keinen Trank der Comanche und das Idol hat ihm alle Kraft geraubt. Er liegt in einer Kabine eines alten und kaputten Schiffes auf der seltsamen Insel der Verlassenen Schiffe. Ich wurde auch dorthin teleportiert, also hatte Snake Eye recht!";
 			link.l1.go = "arrive_9";
 		break;
@@ -399,8 +399,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "arrive_11":
-			dialog.text = "Wissen Sie, wo diese Insel ist?";
-			link.l1 = "Sicher, das tue ich! Ich habe dort nicht nur Nathan, sondern auch Shark Dodson gefunden. Ich habe die ungefähren Koordinaten der Insel und Segelanweisungen, um die Riffe um sie herum zu umgehen. Und jetzt gehen wir zurück zu meinem Schiff und segeln nach Blueweld...";
+			dialog.text = "Du weißt wo diese Insel ist?";
+			link.l1 = "Sicher, das tue ich! Ich habe dort nicht nur Nathan, sondern auch Shark Dodson gefunden. Ich habe die ungefähren Koordinaten der Insel und Segelanweisungen, um die Riffe zu umgehen. Und jetzt gehen wir zurück zu meinem Schiff und segeln nach Blueweld...";
 			link.l1.go = "arrive_12";
 		break;
 		
@@ -424,7 +424,7 @@ void ProcessDialogEvent()
 		
 		case "arrive_15":
 			dialog.text = "(wischt eine Träne weg) Alter Narr! Er hat mir nie zugehört... "+pchar.name+", lass uns zu deinem Schiff gehen! Ich will so schnell wie möglich dorthin segeln!";
-			link.l1 = "Sicher, Dannie. Und ich werde dir von meinen Abenteuern erzählen. Los geht's!";
+			link.l1 = "Sicher, Dannie. Und ich werde dir von meinen Abenteuern erzählen. Gehen wir!";
 			link.l1.go = "Dolly_4";
 			AddQuestRecord("BaronReturn", "9");
 			LAi_LocationDisableOfficersGen("Pearl_jungle_03", false); // пускать офицеров в локу телепорта
@@ -444,14 +444,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "nathaniel_1":
-			dialog.text = "Aber jetzt kann ich es mit meinen eigenen Augen sehen. Sag mir trotzdem, wo ich Nathaniel finden kann?";
+			dialog.text = "Aber jetzt kann ich es mit meinen eigenen Augen sehen. Aber egal, sag mir wo ich Nathaniel finden kann?";
 			link.l1 = "Er ist in einem der Schiffe. Aber du musst dorthin schwimmen.";
 			link.l1.go = "nathaniel_2";
 		break;
 		
 		case "nathaniel_2":
 			dialog.text = "Es ist mir egal. Sag mir, wie ich zu diesem Schiff komme.";
-			link.l1 = "Dannie, beruhige dich. Du und Nathan habt schon lange gewartet, also habt noch ein wenig Geduld! Ich werde euch zu ihm führen, ihr werdet ihn nie selbst finden. Ich möchte nicht, dass ihr auf die Narwale oder Rivados trefft, ihr werdet mit ihnen anfangen zu streiten und das wird nicht gut enden.";
+			link.l1 = "Dannie, beruhige dich. Du und Nathan habt schon lange gewartet, also hab noch ein wenig Geduld! Ich werde dich zu ihm führen, du wirst ihn nie selbst finden. Außerdem möchte ich nicht, dass du auf die Narwale oder Rivados triffst, du wirst mit ihnen anfangen zu streiten und das wird nicht gut enden.";
 			link.l1.go = "nathaniel_3";
 		break;
 		
@@ -523,8 +523,8 @@ void ProcessDialogEvent()
 		
 		case "nathaniel_9":
 			sld = characterFromId("Blaze");
-			dialog.text = "Ich weiß das! Oh Gott, Liebling... was ist dir passiert! (durch Tränen) Alles ist in Ordnung, Liebling, alles wird gut... Ich bin hier. Wir werden dich zu den Miskito bringen, zu Snake Eye. "+sld.name+"  hat mir erzählt, dass der Schamane dich heilen kann. Wir haben ein Schiff... Alles wird gut!";
-			link.l1 = "Dannie, Liebste... meine Liebe! Deine Anwesenheit hat mich nur halb geheilt. Wir gehen wohin du sagst. Wenn es zu Snake Eye geht, dann zu ihm.";
+			dialog.text = "Ich weiß das! Oh Gott, Liebling... was ist dir passiert! (mit Tränen) Alles ist in Ordnung, Liebling, alles wird gut... Ich bin hier. Wir werden dich zu den Miskito bringen, zu Snake Eye. "+sld.name+"  hat mir erzählt, dass der Schamane dich heilen kann. Wir haben ein Schiff... Alles wird gut!";
+			link.l1 = "Dannie, Liebste... meine Liebe! Deine Anwesenheit hat mich schon zur hälfte geheilt. Wir gehen wohin du sagst. Wenn es zu Snake Eye geht, dann zu ihm.";
 			link.l1.go = "nathaniel_10";
 		break;
 		
@@ -560,7 +560,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "nathaniel_14":
-			dialog.text = "Danke, "+pchar.name+"! Ich schulde dir... Ich werde meinen Mann zum Schiff bringen. Mach dir keine Sorgen, ich werde es schaffen, ihn dorthin zu bringen, ich habe mir den Weg gemerkt. Ich werde ihn ins Bett legen und bei ihm bleiben. Wir werden zur Schlange Eye segeln, nachdem du hier alles erledigt hast, was du tun musst. Ich glaube an seine Fähigkeit, Nathan zu heilen.";
+			dialog.text = "Danke, "+pchar.name+"! Ich schulde dir... Ich werde meinen Mann zum Schiff bringen. Mach dir keine Sorgen, ich werde es schaffen, ihn dorthin zu bringen, ich habe mir den Weg gemerkt. Ich werde ihn ins Bett legen und bei ihm bleiben. Wir werden zur Snake Eye segeln, nachdem du hier alles erledigt hast, was du tun musst. Ich glaube an seine Fähigkeit, Nathan zu heilen.";
 			link.l1 = "Gut, Dannie. Wir werden sowieso nicht lange hier bleiben. Bist du sicher, dass du keine Hilfe brauchst?";
 			link.l1.go = "nathaniel_15";
 		break;
@@ -606,13 +606,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "treatment":
-			dialog.text = "So was? Wird er meinen Mann heilen? Sag mir, dass er ihn heilen wird!";
+			dialog.text = "Also? Wird er meinen Mann heilen? Sag mir, dass er ihn heilen wird!";
 			link.l1 = "Dannie, Nathan muss hier bleiben. Allein. Der Schamane bat darum, seine Rituale nicht zu stören. Das betrifft auch dich. Er hat versprochen, Nathaniel innerhalb eines Monats zu heilen.";
 			link.l1.go = "treatment_1";
 		break;
 		
 		case "treatment_1":
-			dialog.text = "Weißt du, "+pchar.name+", jetzt kann ich endlich wieder frei atmen. Ich glaube fest daran, dass der Schamane meinen Ehemann wieder in seinen normalen Zustand bringen wird. Ich werde Nathan hier unverzüglich lassen, denn wenn Snake Eye ihn nicht heilen kann - kann es niemand.";
+			dialog.text = "Weißt du, "+pchar.name+", jetzt kann ich endlich wieder frei atmen. Ich glaube fest daran, dass der Schamane meinen Ehemann wieder in seinen normalen Zustand bringen wird. Ich werde Nathan hier lassen, denn wenn Snake Eye ihn nicht heilen kann - kann es niemand.";
 			link.l1 = "Alles wird gut, Dannie. Snake Eye hat mich noch nie belogen. Ich vertraue ihm.";
 			link.l1.go = "treatment_2";
 		break;
@@ -627,7 +627,7 @@ void ProcessDialogEvent()
 			if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie")) sTemp = "Shark Dodson";
 			else sTemp = "Marcus Tyrex";
 			dialog.text = "Hast du irgendwelche Pläne, "+pchar.name+"?";
-			link.l1 = "Noch nicht. Ich muss zu Jan Svenson gehen und ihn um Rat fragen. Lass uns eins nach dem anderen machen, wir müssen vorankommen "+sTemp+" zuerst zum Anführer der Bruderschaft der Küste. Also, wir brauchen die Stimme von jedem Piratenbaron, um das zu tun.";
+			link.l1 = "Noch nicht. Ich muss zu Jan Svenson gehen und ihn um Rat fragen. Lass uns eins nach dem anderen machen, wir müssen "+sTemp+" zuerst zum Anführer der Bruderschaft der Küste ernennen. Also, wir brauchen die Stimme von jedem Piratenbaron, um das zu tun.";
 			link.l1.go = "treatment_4";
 		break;
 		
@@ -651,27 +651,27 @@ void ProcessDialogEvent()
 		break;
 		
 		case "islatesoro":
-			dialog.text = "Ja? Ich höre zu. Wie kann ich Ihnen helfen?";
+			dialog.text = "Ja? Ich höre zu. Wie kann ich dir helfen?";
 			link.l1 = "Hast du eine Ahnung, wo sich dieser Schurke Jackman verstecken könnte? Du kennst diesen Bastard besser als ich. Vielleicht hat er einen Ort, eine Basis...";
 			link.l1.go = "islatesoro_1";
 		break;
 		
 		case "islatesoro_1":
-			dialog.text = "Verdammtes Zeug, wenn ich es weiß! Jakob war immer sehr geheimnisvoll. Ich habe noch nie von einem Versteck von ihm gehört. Es ist wahrscheinlich besser, logisch zu denken... Lassen Sie uns den Brief noch einmal lesen, den Sie von Knive bekommen haben. Vielleicht finden wir einen Hinweis darin.";
+			dialog.text = "Verdammt wenn ich es bloß wüsste! Jakob war immer sehr geheimnisvoll. Ich habe noch nie von einem Versteck von ihm gehört. Es ist wahrscheinlich besser, logisch zu denken... Lass uns den Brief noch einmal lesen, den du von Knive bekommen hast. Vielleicht finden wir einen Hinweis darin.";
 			link.l1 = "Lass es uns versuchen...";
 			link.l1.go = "islatesoro_2";
 		break;
 		
 		case "islatesoro_2":
 			RemoveItems(pchar, "letter_chad", 1);
-			dialog.text = "Nun... es erwähnt Isla Tesoro und irgendein Testament... Sagt Ihnen das etwas?";
+			dialog.text = "Nun... es erwähnt Isla Tesoro und irgendein Testament... Sagt dir das etwas?";
 			link.l1 = "Ich und Jan denken, dass Blaze Sharp von Jackman auf Isla Tesoro getötet wurde und Shark dafür verantwortlich gemacht wurde. Und ein Testament... eine Hure... es muss um Helen gehen... Verdammt, wie konnte ich das vorher nicht verstehen! Dieser Bastard muss in der Nähe von Isla Tesoro segeln!";
 			link.l1.go = "islatesoro_3";
 		break;
 		
 		case "islatesoro_3":
 			dialog.text = "Lassen wir dann keine Zeit verschwenden, "+pchar.name+"";
-			link.l1 = "Ja. Lassen wir uns zur Isla Tesoro aufmachen. Der alte 'Marlin' wird uns bei diesem Überfall helfen.";
+			link.l1 = "Ja. Lass uns zur Isla Tesoro aufmachen. Der alte 'Marlin' wird uns bei diesem Überfall helfen.";
 			link.l1.go = "islatesoro_4";
 		break;
 		
@@ -693,13 +693,13 @@ void ProcessDialogEvent()
 		
 		case "after_boarding_1":
 			PlaySound("Voice\English\saga\Denny Hawk-03.wav");
-			dialog.text = "Sie können sich nicht vorstellen, wie froh ich bin. Nathaniel sprach oft von unserem Schiff, er wird froh sein zu erfahren, dass sie wieder unser ist.";
+			dialog.text = "Du kannst dir nicht vorstellen, wie froh ich bin. Nathaniel sprach oft von unserem Schiff, er wird froh sein zu erfahren, dass sie wieder unser ist.";
 			link.l1 = "Was wirst du jetzt tun, Dannie?";
 			link.l1.go = "after_boarding_2";
 		break;
 		
 		case "after_boarding_2":
-			dialog.text = "Ich? Ich werde das Schiff zur Scharfen Stadt nehmen, zumindest die Mindestbesatzung anheuern und nach Blauschweiß segeln. Ich werde Jan Svenson bitten, sich um den 'Centurion' zu kümmern, zu den Miskito-Leuten gehen und dort warten, bis Schlangenauge meinen Mann geheilt hat.";
+			dialog.text = "Ich? Ich werde das Schiff zur Sharp town nehmen, die Mindestbesatzung anheuern und nach Blueweld segeln. Ich werde Jan Svenson bitten, sich um den 'Centurion' zu kümmern, zu den Miskito-Leuten gehen und dort warten, bis Snake Eye meinen Mann geheilt hat.";
 			link.l1 = "Bist du wirklich dabei, Jan Svenson zu besuchen? Ich bin überrascht...";
 			link.l1.go = "after_boarding_3";
 		break;
@@ -717,19 +717,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "after_boarding_5":
-			dialog.text = "Gut. Ich muss sowieso Svenson zu meinem Freund machen... "+pchar.name+"! Ich möchte Ihnen danken für alles, was Sie für mich und Nathan getan haben. Sie haben meinen Ehemann gerettet und uns alles zurückgegeben, was wir verloren hatten. Ich bin Ihnen zu Dank verpflichtet.";
+			dialog.text = "Gut. Ich muss sowieso Svenson zu meinem Freund machen... "+pchar.name+"! Ich möchte dir danken für alles, was du für mich und Nathan getan hast. Du hast meinen Ehemann gerettet und uns alles zurückgegeben, was wir verloren hatten. Ich schulde dir was.";
 			link.l1 = "Komm schon, Dannie. Wir sind Freunde.";
 			link.l1.go = "after_boarding_6";
 		break;
 		
 		case "after_boarding_6":
-			dialog.text = "Ich möchte, dass Sie wissen, dass wir immer froh sein werden, Sie in Maroon Town zu sehen. Finden Sie uns dort, wenn Sie etwas Zeit haben. Nathaniel und ich werden einen Weg finden, Sie zu belohnen.";
-			link.l1 = "Ach du meine Güte, Dannie! Ich nehme deine Einladung mit Vergnügen an. Wir werden sitzen, trinken und darüber reden, wie du und Nathan Van der Decken versenkt haben...";
+			dialog.text = "Ich möchte, dass du weißt, dass wir immer froh sein werden, dich in Maroon Town zu sehen. Schau bei uns vorbei, wenn du etwas Zeit hast. Nathaniel und ich werden einen Weg finden, dich zu entlohnen für alles was du getan hast.";
+			link.l1 = "Ach du meine Güte, Dannie! Ich nehme deine Einladung mit Vergnügen an. Wir werden dann sitzen, trinken und darüber reden wie du und Nathan, Van der Decken versenkt habt...";
 			link.l1.go = "after_boarding_7";
 		break;
 		
 		case "after_boarding_7":
-			dialog.text = "Hat er es verraten? Oh, erinnere mich nicht daran...";
+			dialog.text = "Hat er es dir verraten? Oh, erinnere mich nicht daran...";
 			link.l1 = "Gut, Dannie. Du hast noch viel Arbeit vor dir und ich muss unsere geschworenen Freunde - Marcus und Barbazon - besuchen. Ich hoffe, du lässt mich diese Kajüte auf den Kopf stellen, ich bin sicher, in Jackmans Truhen gibt es viele interessante Dinge.";
 			link.l1.go = "after_boarding_8";
 		break;
@@ -761,8 +761,8 @@ void ProcessDialogEvent()
 		case "marun_town_1":
 			GiveItem2Character(pchar, "totem_12"); 
 			GiveItem2Character(pchar, "recipe_totem_12"); 
-			Log_Info("You have received a talisman");
-			Log_Info("You have received the recipe of the talisman");
+			Log_Info("Du hast einen Talisman erhalten");
+			Log_Info("Du hast das Rezept für den Talisman erhalten");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Das ist nicht alles. Ich habe hier auch zwei Kisten voll Gold gefunden. Sie gehörten zweifellos Jackman. Nimm sie als Zeichen meiner Dankbarkeit. Und wage es nicht abzulehnen! Ich weiß, wie viel Geld du verschwendet hast, um mir und Nathan zu helfen.";
 			link.l1 = "Gut, gut, Dannie, ich akzeptiere sie!";
@@ -771,9 +771,9 @@ void ProcessDialogEvent()
 		
 		case "marun_town_2":
 			TakeNItems(pchar, "chest", 2); 
-			Log_Info("You have received two chests with doubloons");
+			Log_Info("Du hast zwei Truhen mit Dublonen erhalten");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Ausgezeichnet! "+pchar.name+", Ich möchte, dass Sie wissen, dass Sie ab jetzt unser bester Freund sind. Nathan und ich werden uns immer freuen, Sie in Maroon Town zu sehen! Besuchen Sie uns öfter!";
+			dialog.text = "Ausgezeichnet! "+pchar.name+", Ich möchte, dass du weißt, dass du ab jetzt unser bester Freund bist. Nathan und ich werden uns immer freuen, dich in Maroon Town zu sehen! Besuch uns öfter!";
 			link.l1 = "Danke! Ich werde mich freuen, dich wiederzusehen, also erwarte mich!";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "marun_town_3";
@@ -782,8 +782,8 @@ void ProcessDialogEvent()
 		case "marun_town_3":
 			if (CheckAttribute(pchar, "GenQuest.MaruntownSex"))
 			{
-				dialog.text = "Was können wir für Sie tun, "+pchar.name+"?";
-				link.l1 = "Ach, ich gehe gerade... Auf Wiedersehen, Danny.";
+				dialog.text = "Was können wir für dich tun, "+pchar.name+"?";
+				link.l1 = "Ach, leider muss ich gehen... Auf Wiedersehen, Dannie.";
 				link.l1.go = "exit";
 				if (CheckAttribute(pchar, "GenQuest.MaruntownSex2"))
 				{
@@ -801,12 +801,12 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			if (bOk1 || bOk2)
 			{
-				link.l2 = "Das Mädchen? Sei leise, Danny! Du willst mich nicht in Stücke geschnitten und ordentlich gefaltet vor deiner Haustür finden, oder? Ha-ha. Meine treue Dame, die gerade vor der Tür steht, wird mir solche Späße nicht vergeben.";
+				link.l2 = "Ein Mädchen? Sei leise, Dannie! Du willst mich nicht in Stücke geschnitten und ordentlich gefaltet vor deiner Haustür finden, oder? Ha-ha. Meine treue Dame, die gerade vor der Tür steht, wird mir solche Späße nicht vergeben.";
 				link.l2.go = "marun_town_fuckgirl_Otkaz_1";
 			}
 			else
 			{
-				link.l2 = "Ein Mädchen? Das klingt interessant, Danny. Ich sehne mich nach... dem Herzschlag einer Frau... Ich denke, ich sollte einen Blick darauf werfen - du würdest doch nicht einfach irgendwen vorschlagen, oder?";
+				link.l2 = "Ein Mädchen? Das klingt interessant, Dannie. Ich sehne mich nach... dem Herzschlag einer Frau... Ich denke, ich sollte einen Blick darauf werfen - du würdest doch nicht einfach irgendwen vorschlagen, oder?";
 				link.l2.go = "marun_town_fuckgirl_1";
 			}
 			NextDiag.TempNode = "marun_town_3";
@@ -821,19 +821,19 @@ void ProcessDialogEvent()
 		
 		case "marun_town_fuckgirl_Otkaz_2":
 			dialog.text = "Das ist besser, ha-ha. Los, geh schon, deine Liebste wird wahrscheinlich nervös.";
-			link.l1 = "Auf Wiedersehen, Danny. Und danke für deine Sorge, ha-ha.";
+			link.l1 = "Auf Wiedersehen, Dannie. Und danke für deine Sorge, ha-ha.";
 			link.l1.go = "exit";
 		break;
 		
 		case "marun_town_fuckgirl_1":
-			dialog.text = "Ich versichere Ihnen, diese junge Schönheit weiß definitiv, wie man Ihnen eine unvergessliche Zeit beschert, "+pchar.name+". Viel Spaß! Sie wird auf dich in der Taverne warten.";
-			link.l1 = "Danke dir, Danny. Ich bin auf dem Weg. Ich will keine Minute verschwenden!";
+			dialog.text = "Ich versichere dir, diese junge Schönheit weiß definitiv, wie man dir eine unvergessliche Zeit beschert, "+pchar.name+". Viel Spaß! Sie wird auf dich in der Taverne warten.";
+			link.l1 = "Danke dir, Dannie. Ich bin auf dem Weg. Ich will keine Minute verschwenden!";
 			link.l1.go = "marun_town_fuckgirl_2";
 		break;
 		
 		case "marun_town_fuckgirl_3":
-			dialog.text = ""+pchar.name+", Sie sind immer willkommen in Maroon Town. Die besten Mädchen sind Ihre!";
-			link.l1 = "Oh, Danny. Ich schwöre, das ist mein zweites Zuhause.";
+			dialog.text = ""+pchar.name+", Du bist immer willkommen in Maroon Town. Die besten Mädchen sind deine!";
+			link.l1 = "Oh, Dannie. Ich schwöre, das ist mein zweites Zuhause.";
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "GenQuest.MaruntownSex2");
 			
@@ -910,7 +910,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "before_kiss":
-			dialog.text = "Oh, spiel nicht die Dumme, Liebling. Charles, dieser Liebeskäfer lief Tag und Nacht um das Idol herum und nervte den armen Schlangenauge mit Fragen. Und dann rannte sie nach Hause und brachte ihm etwas, nicht wahr?";
+			dialog.text = "Oh, spiel nicht die Dumme, Liebling. Charles, dieser Liebeskäfer lief Tag und Nacht um das Idol herum und nervte den armen Snake Eye mit Fragen. Und dann rannte sie nach Hause und brachte ihm etwas, nicht wahr?";
 			link.l1 = "";
 			link.l1.go = "exit";
 			
@@ -918,14 +918,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "after_kiss":
-			dialog.text = "Oh, danke für die Vorstellung, Charles. Die ganze Maroon Town wird darüber tratschen, ha-ha!";
+			dialog.text = "Oh, danke für die Vorstellung, Charles. Jeder in Maroon Town wird darüber tratschen, ha-ha!";
 			link.l1 = "Ich habe keinen Zweifel daran, dass es deine neue Priorität ist - sicherzustellen, dass es passiert.";
 			link.l1.go = "after_kiss_1";
 		break;
 		
 		case "after_kiss_1":
 			dialog.text = "Ganz unten auf meiner Liste, tatsächlich. Sei nicht böse auf das Mädchen - es ist ihr erstes Mal. Als Nathan und ich unsere Abenteuer hatten, hat das ganze Archipel auch über uns gelacht.";
-			link.l1 = "Lassen wir das Thema und die Stimmung wechseln. Ich bin fertig mit diesem Idol, lass uns gehen.";
+			link.l1 = "Lassen wir das Thema, und wechseln die Stimmung. Ich bin fertig mit diesem Idol, lass uns gehen.";
 			link.l1.go = "after_kiss_2";
 		break;
 		
@@ -939,7 +939,7 @@ void ProcessDialogEvent()
 		
 		//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Danielle_officer":
-			dialog.text = "Was wollen Sie, Kapitän?";
+			dialog.text = "Was willst du, Kapitän?";
 			if (CheckAttribute(pchar, "questTemp.Saga.BarbTemptation") && pchar.questTemp.Saga.BarbTemptation == "danielle")
 			{
 				Link.l3 = "Dannie, ich möchte dich um einen Rat bitten!";
@@ -947,7 +947,7 @@ void ProcessDialogEvent()
 			}
 			Link.l1 = "Hör auf meinen Befehl!";
             Link.l1.go = "stay_follow";
-			link.l2 = "Es ist nichts. Entlassen!";
+			link.l2 = "Es ist nichts. wegtreten!";
 			link.l2.go = "exit";
 			NextDiag.TempNode = "Danielle_officer";
 			sld = characterFromId("Danielle");
@@ -966,14 +966,14 @@ void ProcessDialogEvent()
 				rItm = ItemsFromID(sGun);
 				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
-					Link.l3 = "Wechseln Sie die Art der Munition für Ihre Feuerwaffen.";
+					Link.l3 = "Wechsel die Art der Munition für deine Feuerwaffen.";
 					Link.l3.go = "SetGunBullets";
 				}	
 			}		
 		break;
 		
 		case "SetGunBullets":
-			Dialog.Text = "Wählen Sie die Art der Munition:";
+			Dialog.Text = "Wähle die Art der Munition:";
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
@@ -983,7 +983,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -1007,7 +1007,7 @@ void ProcessDialogEvent()
             Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(Npchar.id);
             AddDialogExitQuestFunction("LandEnc_OfficerStay");
             dialog.Text = "Es gibt einen Wechsel der Veranlagung!";
-            Link.l1 = "Abgetreten.";
+            Link.l1 = "Wegtreten.";
             Link.l1.go = "Exit";
             Npchar.chr_ai.tmpl = LAI_TMPL_STAY;
         break;
@@ -1015,7 +1015,7 @@ void ProcessDialogEvent()
         case "Boal_Follow":
             SetCharacterTask_FollowCharacter(Npchar, PChar);
             dialog.Text = "Es gibt eine Änderung der Gemütsverfassung!";
-            Link.l1 = "Entlassen.";
+            Link.l1 = "Wegtreten.";
             Link.l1.go = "Exit";
         break;
 		//<-- ----------------------------------- офицерский блок ----------------------------------------

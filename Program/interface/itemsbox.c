@@ -18,7 +18,7 @@ string CurTable, CurRow;
 ref refCharacter;
 bool bBoxUsed = false; // Сундук-ли?
 aref refToChar, arChest, arDeadChar;
-String sCharactersArroy[INTERFACE_ITEMSBOX_CHAR_ARROYSIZE] = {"", "", "", "", "", "", "", "", "", ""};
+string sCharactersArroy[INTERFACE_ITEMSBOX_CHAR_ARROYSIZE] = {"", "", "", "", "", "", "", "", "", ""};
 
 int iTableAddAllBtnX = 570;
 int iTableAddAllBtnY = 357;
@@ -194,7 +194,7 @@ void InitInterface_RS(string iniName, ref itemsRef, string faceID)
 
 	SetFormatedText("STORECAPTION", XI_ConvertString(sGetInterfaceTypeStr("titleExchangeItems", "titleItemsBox", "titleDeadItems","titleBarrel")));
 	SetFormatedText("OTHER_TABLE_CAPTION", OtherTableCaption);
-	if(sInterfaceType == INTERFACETYPE_DEADMAN && CheckAttribute(GameInterface, "TABLE_LIST2.tr1.index"))	
+	if(sInterfaceType == INTERFACETYPE_DEADMAN && CheckAttribute(&GameInterface, "TABLE_LIST2.tr1.index"))	
 	{
 		iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.tr1.index);
 	}
@@ -513,6 +513,14 @@ void IDoExit(int exitCode)
 		{
 			if(pchar.location == Get_My_Cabin() && CheckItemMyCabin("gold_dublon") > 29999)
 				Achievment_Set("ach_CL_125");
+		}
+		if(CheckAttribute(pchar, "systeminfo.tutorial.OverLoad") && GetCharacterFreeItem(refToChar, "BoxOfBalls"))
+		{
+			if(GetItemsWeight(pchar) + sti(Items[GetItemIndex("BoxOfBalls")].weight) > GetMaxItemsWeight(pchar))
+			{
+				DeleteAttribute(pchar, "systeminfo.tutorial.OverLoad");
+				DoQuestFunctionDelay("Tutorial_Overload", 1.0);
+			}
 		}
 	}
 	
@@ -1227,7 +1235,7 @@ void AddToTable(ref rChar)
 				sList = "tr" + targetSelect;
 			}
 
-			if (CheckAttribute(GameInterface, "TABLE_LIST." + sList + ".index"))
+			if (CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
 			{
 				iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
 				ShowGoodsInfo(iCurGoodsIdx);
@@ -1266,7 +1274,7 @@ void AddToTable(ref rChar)
 				sList2 = "tr" + targetSelect;
 			}
 
-			if (CheckAttribute(GameInterface, "TABLE_LIST2." + sList2 + ".index"))
+			if (CheckAttribute(&GameInterface, "TABLE_LIST2." + sList2 + ".index"))
 			{
 				iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList2).index);
 				ShowGoodsInfo(iCurGoodsIdx);
@@ -1637,7 +1645,7 @@ void onGetAllBtnClick()
 // Нажали на табличной стрелочке "взять 1 ед. предмета одного типа"
 void onTableAddBtnClick()
 {
-	String item = Items[iCurGoodsIdx].id;
+	string item = Items[iCurGoodsIdx].id;
 	int iItemsQty = GetCharacterFreeItem(refToChar, item);
 	
 	// Учет перегруза
@@ -2061,7 +2069,7 @@ void OfficerReincarnation(ref rPassanger);
 // проверка на наличие последнего предмета
 bool CheckLastItemOnDead()
 {
-	if(CheckAttribute(GameInterface, "TABLE_LIST2.tr1.index"))
+	if(CheckAttribute(&GameInterface, "TABLE_LIST2.tr1.index"))
 		iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.tr1.index);
     if(iCurGoodsIdx < 1)
         return false;

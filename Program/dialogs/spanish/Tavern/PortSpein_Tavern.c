@@ -10,7 +10,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			//Цена чахотки
 			if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption") && pchar.questTemp.Consumption == "begin" && sti(pchar.money) >= 3000)
 			{
-				link.l1 = "He oído que el consumo está arrasando en tu fuerte. ¿Crees que la epidemia se va a extender al pueblo?";
+				link.l1 = "He oído que la enfermedad está arrasando en tu fuerte. ¿Crees que la epidemia se va a extender al pueblo?";
 				link.l1.go = "Consumption";
 			}
 			if (CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption.Commandant") && pchar.questTemp.Consumption == "begin")
@@ -20,7 +20,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			if (!CheckAttribute(npchar, "quest.Consumption_1") && CheckAttribute(pchar, "questTemp.Consumption.AskJuan"))
 			{
-				link.l1 = "  Dime, ¿el nombre 'Juan' te dice algo? ";
+				link.l1 = "Dime, ¿el nombre 'Juan' te dice algo?";
 				link.l1.go = "Consumption_12";
 			}
 			if (!CheckAttribute(npchar, "quest.Guardoftruth") && CheckAttribute(pchar, "questTemp.Guardoftruth.Trinidad") && pchar.questTemp.Guardoftruth.Trinidad == "begin")
@@ -45,7 +45,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Consumption_2":
 			AddMoneyToCharacter(pchar, -3000);
-			dialog.text = "Oh, eres persistente, señor. Sólo recuerda que esta conversación nunca ocurrió. (susurrando) He oído varias veces ya durante todo un año que la gente se consumía en nuestras prisiones, muriendo de tisis. Puedes culpar a las autoridades, puedes culpar a Dios, o al Diablo, pero la mayor parte se atribuye a la mala fortuna. Esta maldita enfermedad roba vidas tan rápido. A veces meten a un hombre perfectamente sano allí y en una o dos semanas se ha ido. Así de simple...";
+			dialog.text = "Oh, eres persistente, señor. Sólo recuerda que esta conversación nunca ocurrió. (susurrando) He oído varias veces ya durante todo un año, que la gente se consumía en nuestras prisiones, muriendo de tisis. Puedes culpar a las autoridades, puedes culpar a Dios, o al Diablo, pero la mayor parte se atribuye a la mala fortuna. Esta maldita enfermedad roba vidas muy rápido. A veces meten a un hombre perfectamente sano allí, y en una o dos semanas ha desaparecido. Así de simple...";
 			link.l1 = "Vaya... ¿Un año entero, dices? ¿Y qué, nadie se ha encargado de hacer algo al respecto?";
 			link.l1.go = "Consumption_3";
 		break;
@@ -57,13 +57,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Consumption_4":
-			dialog.text = "Me resulta difícil decírtelo, pero había un tipo aquí. Lo arrestaron por contrabando y lo encerraron como medio año hasta que sus compañeros lo sacaron. Bueno, ya sabes, midieron oro para quien lo necesitase, pesaron lo que les dijeron, y el tipo salió. Pero desde entonces ha estado bastante loco.";
+			dialog.text = "Me resulta difícil decírtelo, pero había un tipo aquí. Lo arrestaron por contrabando y lo encerraron como medio año hasta que sus compañeros lo sacaron. Bueno, midieron oro para quien lo necesitase, pesaron lo que les dijeron, y el tipo salió. Pero desde entonces ha estado bastante loco.";
 			link.l1 = "¿Más loco que una rata de sentina?";
 			link.l1.go = "Consumption_5";
 		break;
 		
 		case "Consumption_5":
-			dialog.text = "Supongo. Desde entonces fue inútil para sus compañeros, pasando todo el día aquí, bebiéndose hasta la muerte. Parecía que quería borrar algo de su cabeza. Cada vez que se emborrachaba, contaba historias sobre el consumo que se lleva a la gente en silencio\nEsas fueron sus palabras exactas. Según él, la 'consunción' es lo peor que le puede pasar a un hombre.";
+			dialog.text = "Supongo. Desde entonces fue inútil para sus compañeros, pasando todo el día aquí, bebiéndose hasta la muerte. Parecía que quería borrar algo de su cabeza. Cada vez que se emborrachaba, contaba historias sobre aquella enfermedad que se lleva a la gente en silencio.\nEsas fueron sus palabras exactas. Según él, la 'consunción' es lo peor que le puede pasar a un hombre.";
 			link.l1 = "Desvaríos de un borracho. ¿Y qué con eso?";
 			link.l1.go = "Consumption_6";
 		break;
@@ -91,20 +91,20 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Consumption_8":
-			dialog.text = "¿Qué se puede decir de él? Es un coronel, llegó de Europa hace un par de años tras recibir este lugar. Supuestamente fue degradado allí en el Viejo Mundo por algunos actos sucios en los que estaba involucrado. No sé si es cierto, pero al principio había rumores. Pero ¿quién no tiene rumores sobre ellos, verdad?";
+			dialog.text = "¿Qué se puede decir de él? Es un coronel, llegó de Europa hace un par de años tras recibir este lugar. Supuestamente fue degradado allí en el Viejo Mundo por algunos actos sucios en los que estaba involucrado. No sé si es cierto, pero al principio había rumores. Pero, quién no tiene rumores sobre ellos, ¿verdad?";
 			link.l1 = "Travesuras sucias, dices... Eso es interesante. ¿Algo más?";
 			link.l1.go = "Consumption_9";
 		break;
 		
 		case "Consumption_9":
-			dialog.text = "Bueno, ¿qué puedo decir...? El coronel parece un hombre que se preocupa profundamente por su propia seguridad. Claro, estos lugares no son seguros debido a los piratas, bandidos, indios y otra escoria, pero el Señor Comandante nunca sale de su casa sin varios guardaespaldas\nTiene su mansión en esta ciudad y la ha convertido en una pequeña fortaleza: sus sirvientes están bien armados y mantienen las ventanas cerradas con barrotes.";
+			dialog.text = "Bueno, ¿qué puedo decir...? El coronel parece un hombre que se preocupa profundamente por su propia seguridad. Claro, estos lugares no son seguros debido a los piratas, bandidos, indios y otra escoria, pero el Señor Comandante nunca sale de su casa sin varios guardaespaldas.\nTiene su mansión en esta ciudad y la ha convertido en una pequeña fortaleza: sus sirvientes están bien armados y mantienen las ventanas cerradas con barrotes.";
 			link.l1 = "Pero durante el día, ¿no sirve en la prisión?";
 			link.l1.go = "Consumption_10";
 		break;
 		
 		case "Consumption_10":
 			dialog.text = "Sí, pero esa mansión está básicamente esperando allí para una emboscada o una invasión. De todos modos, el Señor Comandante aparentemente no regresa allí a menudo, una verdadera fortaleza es más bien su fuerte, je-je.";
-			link.l1 = "Gracias, has sido de gran ayuda. Hasta luego, "+npchar.name+"¡";
+			link.l1 = "Gracias, has sido de gran ayuda. Hasta luego, "+npchar.name+".";
 			link.l1.go = "Consumption_11";
 		break;
 		
@@ -124,7 +124,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Consumption_13":
 			dialog.text = "¡Dios mío, estás hablando de eso otra vez! No, gracias a Dios, no he oído. ¡Lo juro! Y ahora cambiemos de tema. ¡Por favor!";
-			link.l1 = "Está bien, está bien, no te dé un ataque al corazón...";
+			link.l1 = "Está bien, está bien, que no te dé un ataque al corazón...";
 			link.l1.go = "exit";
 			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
 			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
@@ -138,7 +138,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		//<-- Цена чахотки
 		
 		case "guardoftruth":
-			dialog.text = "Lo recuerdo. A menudo pasaba por mi taberna, pero no hablaba mucho. Se tomaba unos tragos de ron, compartía un susurro con algunos clientes y se iba. Muy sombrío y serio como todos en ese bergantín. Mercenarios de aspecto peligroso que mantenían sus espadas listas\nHabía un rumor de que el bergantín estaba lleno de tesoros, pero no creo en tales cuentos. La carga valiosa nunca se transporta en un solo barco sin un convoy. Estuvieron aquí un día, luego se fueron. A Europa, escuché. Eso es todo lo que sé.";
+			dialog.text = "Lo recuerdo. A menudo pasaba por mi taberna, pero no hablaba mucho. Se tomaba unos tragos de ron, compartía un susurro con algunos clientes y se iba. Muy sombrío y serio como todos en ese bergantín. Mercenarios de aspecto peligroso que mantenían sus espadas listas.\nHabía un rumor de que el bergantín estaba lleno de tesoros, pero no creo en tales cuentos. La carga valiosa nunca se transporta en un solo barco sin un convoy. Estuvieron aquí un día, luego se fueron a Europa, escuché. Eso es todo lo que sé.";
 			link.l1 = "Ya veo. Bueno, al menos es algo...";
 			link.l1.go = "exit";
 			npchar.quest.guardoftruth = "true";

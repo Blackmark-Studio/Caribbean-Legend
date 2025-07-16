@@ -5,12 +5,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	{
 	case "quests":
 		dialog.text = NPCStringReactionRepeat(RandPhraseSimple("¿Qué preguntas tienes?", "¿Cómo puedo ayudarte?"), "Intentaste hacerme esa pregunta no hace mucho...", "Sí, déjame adivinar... ¿Otra vez dando vueltas en círculos?", "Escucha, yo manejo las finanzas aquí, no respondo preguntas...", "block", 1, npchar, Dialog.CurrentNode);
-		link.l1 = HeroStringReactionRepeat(RandPhraseSimple("He cambiado de opinión...", "No tengo nada de qué hablar en este momento."), "Uf, ¿dónde se ha ido mi memoria...", "Lo has adivinado, lo siento...", "Entiendo...", npchar, Dialog.CurrentNode);
+		link.l1 = HeroStringReactionRepeat(RandPhraseSimple("He cambiado de opinión...", "No tengo nada de qué hablar en este momento."), "Umph, ¿dónde se ha ido mi memoria...?", "Lo has adivinado, lo siento...", "Entiendo...", npchar, Dialog.CurrentNode);
 		link.l1.go = "exit";
 		// Голландский гамбит
 		if (CheckAttribute(pchar, "questTemp.HWIC.Eng") && pchar.questTemp.HWIC.Eng == "GotoBridgetown" && !CheckAttribute(npchar, "quest.HWICTalked"))
 		{
-			link.l1 = "Me dirijo a Blueweld con un cargamento de vino. Pero me enteré por un capitán que en Blueweld ha aumentado la demanda de café y no sé qué lo está causando. Estoy pensando en vender el vino y comprar café en su lugar, pero no tengo suficiente dinero para llenar mi bodega hasta arriba. ¿Podría pedirte dinero prestado con interés?";
+			link.l1 = "Me dirijo a Blueweld con un cargamento de vino. Pero me enteré por un capitán que en Blueweld ha aumentado la demanda de café, y no sé qué lo está causando. Estoy pensando en vender el vino y comprar café en su lugar, pero no tengo suficiente dinero para llenar mi bodega hasta arriba. ¿Podría pedirte dinero prestado con interés?";
 			link.l1.go = "UsurerDone";
 		}
 		break;

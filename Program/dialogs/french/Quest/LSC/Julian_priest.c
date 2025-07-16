@@ -170,7 +170,7 @@ void ProcessDialogEvent()
 		
 		case "amulet":
 			bool bOK = (!CheckAttribute(npchar, "amulet_date")) || (GetNpcQuestPastDayParam(npchar, "amulet_date") >= 3)
-			if (bOk && GetSummonSkillFromName(pchar, SKILL_FORTUNE) > (10+drand(110)))
+			if (bOk && GetSummonSkillFromName(pchar, SKILL_FORTUNE) > (10+hrand(110)))
 			{
 				npchar.quest.amulet = SelectLSCChurchAmulet();
 				dialog.text = "Oui, je peux vous donner quelques amulettes sacrées qui protègent les gens des blessures et des maladies. Le prix est le même pour toute amulette - dix doublons d'or. Je peux vous offrir "+XI_ConvertString(npchar.quest.amulet)+" aujourd'hui.";
@@ -325,7 +325,7 @@ void ProcessDialogEvent()
 string SelectLSCChurchAmulet();
 {
 	string sAmulet;
-	switch (drand(3))
+	switch (hrand(3))
 	{
 		case 0: sAmulet = "amulet_2"; break;
 		case 1: sAmulet = "amulet_3"; break;

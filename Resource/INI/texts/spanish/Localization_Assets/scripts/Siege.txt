@@ -81,22 +81,22 @@ He oído que nuestra escuadra no logró asediar la colonia @<NationNameSK(sti(aD
 
 Siege_17
 {
-británico
+británica
 }
 
 Siege_18
 {
-francés
+francesa
 }
 
 Siege_19
 {
-español
+española
 }
 
 Siege_20
 {
-holandés
+holandesa
 }
 
 Siege_21
@@ -125,4 +125,9 @@ Hay rumores de que nuestra imparable flota está asaltando la colonia @<NationNa
 Siege_26
 {
 ~ Los @<NationNamePeople(sti(aData.nation))> han atacado nuestra colonia @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")>. Nuestros valientes defensores solo tienen @<sDays> antes de que se queden sin provisiones.
+}
+
+Siege_27
+{
+~ asedió ~
 }

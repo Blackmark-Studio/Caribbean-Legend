@@ -16,13 +16,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "guardoftruth":
-		dialog.text = "Gaius Marchais? ¡Oh sí, por supuesto que lo recuerdo! Pero no compró nada. Ofreció su barco para carga. Justo necesitaba un barco con una bodega espaciosa - un gran lote de pieles crudas.";
+		dialog.text = "¿Gaius Marchais? ¡Oh sí, por supuesto que lo recuerdo! Pero no compró nada. Ofreció su barco para carga. Justo necesitaba un barco con una bodega espaciosa, un gran lote de pieles crudas.";
 		link.l1 = "¿Y cuál fue el punto de descarga?";
 		link.l1.go = "guardoftruth_1";
 		break;
 
 	case "guardoftruth_1":
-		dialog.text = "Philipsburg, Saint Maarten.";
+		dialog.text = "Philipsburg, Saint Martin.";
 		link.l1 = "Bien. ¡Gracias, me has ayudado mucho!";
 		link.l1.go = "guardoftruth_2";
 		break;

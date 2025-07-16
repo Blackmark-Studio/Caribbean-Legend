@@ -212,11 +212,11 @@ Certain goods from the Star were swiftly transferred into our hold
 
 Longway_47
 {
-Абрахам
+Abraham
 }
 Longway_48
 {
-Норман
+Norman
 }
 
 Longway_49

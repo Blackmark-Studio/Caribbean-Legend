@@ -1145,7 +1145,7 @@ void CalculateInfoDataF31()
 	
     //LAi_SetCharacterUseBullet(mc, "cartridge");
 
-    SelAllPerksToChar(mc, false);
+    SetAllPerksToChar(mc, false);
 	AddCharacterGoodsSimple(pchar, GOOD_FOOD, 3000);
 	AddCharacterGoodsSimple(pchar, GOOD_RUM, 300);
 	//SetHalfPerksToChar(mc, false);
@@ -1277,7 +1277,7 @@ void CalculateInfoDataF32()
     //LAi_SetCharacterUseBullet(mc, "cartridge");
 
         SetHalfPerksToChar(mc, false);
-    // SelAllPerksToChar(mc, false);
+    // SetAllPerksToChar(mc, false);
 
     ref realShip;
     int shipType = sti(mc.Ship.Type);
@@ -1358,7 +1358,7 @@ void CalculateInfoDataF33()
     AddItems(mc, "grapeshot", 20);
     LAi_SetCharacterUseBullet(mc, "cartridge");
     
-    SelAllPerksToChar(mc, false);*/
+    SetAllPerksToChar(mc, false);*/
     SetCharacterGoods(mc, GOOD_SHIPSILK, 1000);
     SetCharacterGoods(mc, GOOD_ROPES, 1000);
     SetCharacterGoods(mc, GOOD_SANDAL, 1000);

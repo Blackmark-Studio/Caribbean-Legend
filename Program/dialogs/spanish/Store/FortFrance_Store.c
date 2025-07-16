@@ -41,7 +41,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	case "Sharlie_storehelper":
 		if (FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE) == "")
 		{
-			dialog.text = "Disculpe, señor, pero ¿dónde está su espada? No es seguro salir de la ciudad sin un arma blanca. ¡Nunca se sabe lo que podría suceder en la jungla!";
+			dialog.text = "Disculpe, señor, pero ¿dónde está su espada? No es seguro salir de la ciudad sin un arma. ¡Nunca se sabe lo que podría suceder en la jungla!";
 			link.l1 = "¡Maldita sea, lo olvidé por completo! ¡Todo ha sido llevado!";
 			link.l1.go = "Store_noweapon";
 			break;
@@ -60,12 +60,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		AddTimeToCurrent(2, 0);
 		LocatorReloadEnterDisable("Fortfrance_town", "reload10_back", false); // пу откр
 		dialog.text = "Hola, monsieur. ¿Quién está buscando trabajo, tú o yo? Si no quieres, no te estoy obligando. Que tengas un buen día.";
-		link.l1 = "Hm... Creo que iré a ver a la autoridad portuaria; quizás allí ofrezcan algo más sustancial.";
+		link.l1 = "Hm... Creo que iré a ver a la autoridad portuaria. Quizás allí ofrezcan algo más sustancial.";
 		link.l1.go = "exit";
 		break;
 
 	case "Sharlie_storehelper_1":
-		dialog.text = "Se llama Gralam Lavois. ¿Su aspecto? Treinta y cinco años, barba y bigote, largo abrigo marrón, camisa blanca. Ah, y siempre lleva ese ridículo sombrero de tres picos, pretende ser un almirante con un ancla en el trasero.\nNo está en St. Pierre, he revisado toda la ciudad. Debe estar en las selvas o en Les Francois escondiéndose con los piratas que merodean por allí.\nPor otro lado, es probable que esté en el asentamiento pirata de Le Francois, que se encuentra en la parte oriental de nuestra isla. Tal vez esté charlando con los piratas allí, o pasando el rato en la taberna, o discutiendo con el comerciante local en la tienda.\n¿Cómo llegar a Le Francois? Salga por las puertas de la ciudad hacia la selva, en el cruce de caminos, tome el camino de la izquierda, luego siga la carretera hasta que gire a la derecha, y luego tome el pasaje de la izquierda entre las rocas, y encontrará Le Francois. No creo que se pierda.";
+		dialog.text = "Se llama Gralam Lavois. ¿Su aspecto? Treinta y cinco años, barba y bigote, largo abrigo marrón, camisa blanca. Ah, y siempre lleva ese ridículo sombrero de tres picos, pretende ser un almirante con un ancla en el trasero.\nNo está en Saint-Pierre, he revisado toda la ciudad. Debe estar en las selvas, o en Les Francois escondiéndose con los piratas que merodean por allí.\nPor otro lado, es probable que esté en el asentamiento pirata de Le Francois, que se encuentra en la parte oriental de nuestra isla. Tal vez esté charlando con los piratas allí, o pasando el rato en la taberna, o discutiendo con el comerciante en la tienda.\n¿Cómo llegar a Le Francois? Salga por las puertas de la ciudad hacia la selva, en el cruce de caminos, tome el camino de la izquierda, luego siga la carretera hasta que gire a la derecha, y luego tome el pasaje de la izquierda entre las rocas, y encontrará Le Francois. No creo que se pierda.";
 		link.l1 = "Bien. Me pondré a buscar. Tan pronto como surja algo, te informaré de inmediato.";
 		link.l1.go = "exit";
 		AddQuestRecord("SharlieA", "1");
@@ -101,8 +101,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Sharlie_storehelper_4":
-		dialog.text = "Una mala suerte, en verdad. ¿Y qué dijo ese holgazán?";
-		link.l1 = "Bueno, para empezar, obviamente no está perdiendo el tiempo, je-je. Dijo que nadie en todo Saint Pierre se alistaría para servirte porque... no pagas lo suficiente a tus trabajadores. Sí, por cierto, " + npchar.name + ", debes mil pesos como prometido.";
+		dialog.text = "Pura mala suerte, en verdad. ¿Y qué dijo ese holgazán?";
+		link.l1 = "Bueno, para empezar, obviamente no está perdiendo el tiempo, je-je. Dijo que nadie en todo Saint-Pierre se alistaría para servirte porque... no pagas lo suficiente a tus trabajadores. Sí, por cierto, " + npchar.name + ", debes mil pesos como prometido.";
 		link.l1.go = "Sharlie_storehelper_5";
 		break;
 
@@ -120,7 +120,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Sharlie_storehelper_7":
-		dialog.text = "Déjeme terminar, señor. Ha estado en Le Francois. Me gustaría que fuera allí de nuevo y tratara de encontrar un empleado para mí. Quizás, Gralam no arruinó completamente mi reputación en este nido de piratas.\nEl trabajo es sencillo: contar carga y vigilar a los trabajadores del puerto para evitar robos. A veces hacer mi trabajo aquí en lugar mío mientras estoy fuera, por una tarifa extra, por supuesto.\nDígales que ofrezco una habitación en la tienda para vivir y quinientas piezas de a ocho por semana. ¡Monsieur, iba a expandir mi negocio y las cosas finalmente van bien, necesito un asistente!\nPor cierto, es mejor buscar ayuda para encontrar un trabajador del tabernero local, Cesare Craig. Ese bribón seguramente le ayudará, aunque no gratis, a encontrar individuos que estarían interesados en trabajar para mí.";
+		dialog.text = "Déjeme terminar, monsieur. Ha estado en Le Francois. Me gustaría que fuera allí de nuevo y tratara de encontrar un empleado para mí. Quizás, Gralam no arruinó completamente mi reputación en este nido de piratas.\nEl trabajo es sencillo: contar carga y vigilar a los trabajadores del puerto para evitar robos. A veces hacer mi trabajo aquí en lugar mío mientras estoy fuera, por una tarifa extra, por supuesto.\nDígales que ofrezco una habitación en la tienda para vivir y quinientas piezas de a ocho por semana. ¡Monsieur, iba a expandir mi negocio y las cosas finalmente van bien, necesito un asistente!\nPor cierto, es mejor buscar ayuda para encontrar un trabajador del tabernero, Cesare Craig. Ese bribón seguramente le ayudará, aunque no gratis, a encontrar individuos que estarían interesados en trabajar para mí.";
 		link.l1 = "Mm. Puedo intentarlo, aunque no estoy seguro... ¿Cuánto me pagarás por el trabajo?";
 		link.l1.go = "Sharlie_storehelper_8";
 		break;
@@ -139,7 +139,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "Sharlie_storehelper_10":
 		DialogExit();
-		SetLaunchFrameFormParam("Volver a Le Francois...", "Reload_To_Location", 0, 3.0);
+		SetLaunchFrameFormParam("Vuelve a Le Francois...", "Reload_To_Location", 0, 3.0);
 		SetLaunchFrameReloadLocationParam("LeFransua_tavern", "reload", "reload1", "SharlieA_TeleportLF");
 		LaunchFrameForm();
 		break;
@@ -155,7 +155,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		chrDisableReloadToLocation = false; // открыть локацию
 		pchar.questTemp.Sharlie.Storehelper = "final";
 		DialogExit();
-		SetLaunchFrameFormParam("One hour passed...", "", 0, 5);
+		SetLaunchFrameFormParam("Una hora más tarde...", "", 0, 5);
 		LaunchFrameForm();
 		WaitDate("", 0, 0, 0, 1, 0); // крутим время
 		RecalculateJumpTable();
@@ -192,7 +192,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	case "Sharlie_storehelper_14a":
 		LocatorReloadEnterDisable("Fortfrance_town", "reload10_back", false); // пу откр
 		dialog.text = "Hmm... Hace poco vi al maestro del puerto, claramente molesto, dirigiéndose a la autoridad portuaria. Habla con él, quién sabe qué pudo haber pasado.";
-		link.l1 = "Haré justo eso. Gracias, Monsieur.";
+		link.l1 = "Haré justo eso. Gracias, monsieur.";
 		link.l1.go = "Sharlie_storehelper_14";
 		DelLandQuestMark(npchar);
 		break;
@@ -224,7 +224,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	case "Sharlie_junglejew_1":
 		DialogExit();
 		PlaySound("interface\important_item.wav");
-		Log_Info("Le has entregado los pendientes");
+		Log_Info("¡Le has entregado los pendientes!");
 		RemoveItems(pchar, "jewelry25", 1);
 		AddMoneyToCharacter(pchar, 4000);
 		AddQuestRecord("SharlieE", "4");

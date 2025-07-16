@@ -101,6 +101,24 @@ void ProcessDialogEvent()
 			}
 			// <-- Цена чахотки
 			
+			//--> Украденное воспоминание
+			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+			{
+				link.l4 = "Bon marchand, je cherche quelque chose d'une qualité exceptionnelle. Pas les babioles communes qui satisfont la majorité, mais une pièce de raffinement authentique—peut-être une paire de boucles d'oreilles finement travaillées ou un pendentif élégant digne du goût aristocratique. Il me faut un cadeau qui ravira une dame de noble lignée.";
+				link.l4.go = "UV_Lavochniki_1";
+			}
+            if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_2") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+            {
+				link.l4 = "Je me demande si, parmi vos marchandises, vous possédez quelque chose de véritablement précieux ? Je cherche une pièce qui satisferait même le goût le plus exigeant d'une noble dame—quelque chose de distinctif et raffiné, bien au-delà de ce qui pourrait séduire un simple citoyen. Peut-être un pendentif d'une rare élégance ou un bracelet d'un design sophistiqué ?";
+				link.l4.go = "UV_Lavochniki_2";
+			}
+			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_3") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+            {
+				link.l4 = "Dites-moi, êtes-vous versé dans l'art de la joaillerie ? Je cherche quelque chose d'extraordinaire à offrir à une dame de qualité. Soyons clairs—je n'ai aucun intérêt pour les colifichets ordinaires. Ce qu'il me faut, c'est une pièce d'une véritable magnificence : peut-être une broche ornée de pierres précieuses ou une bague d'un artisanat inégalé.";
+				link.l4.go = "UV_Lavochniki_3";
+			}
+			//<-- Украденное воспоминание
+			
 			//Jason --> генератор Неудачливый вор
 			if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_town" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
 			{
@@ -430,7 +448,7 @@ void ProcessDialogEvent()
 		// Мангароса
 		case "mangarosa":
 			// тут работает везение
-			if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+drand(30)+drand(40))
+			if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+hrand(30)+hrand(40, "1"))
 			{
 				dialog.text = "Montrez-le moi... Oui, c'est une plante intéressante. Et une très, très rare. Elle s'appelle Manga Rosa. Je ne sais pas à quoi elle sert, mais il y avait un fait intéressant lié à elle...";
 				link.l1 = "Que voulez-vous dire ?";
@@ -464,6 +482,48 @@ void ProcessDialogEvent()
 			AddQuestRecord("Mangarosa", "2");
 		break;
 		
+		//--> Украденное воспоминание
+		case "UV_Lavochniki_1":
+			dialog.text = "Hélas, "+GetAddress_Form(NPChar)+", je n'ai plus eu d'objets précieux depuis longtemps. La demande pour ce genre d'articles est, vous savez, bien faible de nos jours. Le peuple ne peut se permettre que des babioles bon marché, et les gens de qualité ne viennent presque jamais chez moi.";
+			link.l1 = "D'accord...";
+			link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki");
+			pchar.questTemp.UV_Lavochniki_2 = true;
+			npchar.quest.UV_Vopros;
+		break;
+
+		case "UV_Lavochniki_2":
+			dialog.text = "Hélas, capitaine, je ne vends plus ce genre de marchandises depuis longtemps. Les riches clients viennent rarement ici, et les simples gens n'achètent que ce qui est bon marché.";
+			link.l1 = "D'accord...";
+			link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_2");
+			pchar.questTemp.UV_Lavochniki_3 = true;
+			npchar.quest.UV_Vopros;
+		break;
+
+		case "UV_Lavochniki_3":
+			dialog.text = "Capitaine, vous arrivez un peu trop tard... Il y a seulement quelques heures, j'ai vendu un magnifique collier à un capitaine fortuné. Il m'arrive souvent d'avoir des objets capables de faire fondre le cœur même de la dame la plus exigeante\nRevenez demain, peut-être que Giselle... enfin... mes fournisseurs... pourront vous trouver un bijou qui conquérra le cœur de n'importe quelle dame à jamais.";
+			link.l1 = "Je n'ai pas le temps. Il me faut ce bijou immédiatement. Dis-moi, quel est le nom du capitaine à qui tu as vendu le collier ?";
+			link.l1.go = "UV_Lavochniki_3_1";
+		break;
+
+		case "UV_Lavochniki_3_1":
+			dialog.text = "Tristan Renier, capitaine de la 'Mouette d'Or'. Son navire est toujours au port. Mais je doute qu'il veuille se séparer de ce collier. S'il refuse, revenez demain. Je vous le promets, capitaine, vous ne le regretterez pas.";
+			link.l1 = "...";
+			link.l1.go = "UV_Lavochniki_exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_3");
+			AddDialogExitQuestFunction("UV_GoldSeagull");
+		break;
+		
+		case "UV_Lavochniki_exit":
+			DialogExit();
+			AddQuestRecord("UV", "3");
+			/*AddQuestUserData("UV", "sSex", NPCharSexPhrase(NPChar,"ца","ки"));
+			AddQuestUserData("UV", "sSex1", NPCharSexPhrase(NPChar,"ец","ка"));
+			AddQuestUserData("UV", "sSex2", NPCharSexPhrase(NPChar,"","а"));*/
+		break;
+		//<-- Украденное воспоминание
+
 // ======================== блок нод angry ===============>>>>>>>>>>>>>>>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

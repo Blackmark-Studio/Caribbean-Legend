@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 			dialog.text = "Brauchst du etwas?";
-			link.l1 = "Nein, es ist nichts.";
+			link.l1 = "Nein, nichts.";
 			link.l1.go = "exit";			
 			NextDiag.TempNode = "First time";
 		break;
@@ -30,14 +30,14 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Was wollen Sie, Herr?";
+				dialog.text = "Was wollen Sie, Mister?";
 				link.l1 = "Ich nehme an, dass Sie darauf warten, etwas Eisenholz zu kaufen?";
 				link.l1.go = "rozencraft_no";
 			}
 		break;
 		
 		case "rozencraft_no":
-			dialog.text = "Wer hat Ihnen diesen Unsinn erzählt, Herr? Ich warte auf niemanden und nichts. Mein Schiff patrouilliert auf Befehl des Gouverneurs von Willemstad in der näheren Umgebung. Also, würden Sie so freundlich sein, mein Schiff zu verlassen, Sie müssen sich irren.";
+			dialog.text = "Wer hat Ihnen diesen Unsinn erzählt, Mister? Ich warte auf niemanden und nichts. Mein Schiff patrouilliert auf Befehl des Gouverneurs von Willemstad in der näheren Umgebung. Also, würden Sie so freundlich sein, mein Schiff zu verlassen, Sie müssen sich irren.";
 			link.l1 = "Hm... Ich verstehe. Es tut mir leid, dass ich Sie belästigt habe.";
 			link.l1.go = "rozencraft_no_1";
 		break;
@@ -49,7 +49,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rozencraft_no_repeat":
-			dialog.text = "Haben wir dieses Gespräch nicht schon geführt, Herr?";
+			dialog.text = "Haben wir dieses Gespräch nicht schon geführt, Mister?";
 			link.l1 = "Ja, ja. Ich gehe schon und besteige mein Schiff.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "rozencraft_no_repeat";
@@ -57,7 +57,7 @@ void ProcessDialogEvent()
 		
 		case "rozencraft_1":
 			dialog.text = "Und wer bist du?";
-			link.l1 = "Sind Sie nicht daran interessiert, mit wem Sie handeln? Ich habe Eisenholz zum Verkauf gebracht. Wie viel?";
+			link.l1 = "Dich interessiert es doch nicht, mit wem du handelst? Ich habe Eisenholz zum Verkauf gebracht. Wie viel?";
 			link.l1.go = "rozencraft_2";
 		break;
 		
@@ -146,7 +146,7 @@ void ProcessDialogEvent()
 			dialog.text = "Wie viel hast du? Ich brauche eine Partie nicht kleiner als "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+".";
 			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= sti(pchar.GenQuest.Bakaut.Value))
 			{
-				link.l1 = "Ich weiß das. Ich habe "+FindRussianQtyString(GetSquadronGoods(pchar,GOOD_SANDAL))+"  aus Eisenholz, das du so begierig zu bekommen scheinst.";
+				link.l1 = "Ich weiß das. Ich habe "+FindRussianQtyString(GetSquadronGoods(pchar,GOOD_SANDAL))+"  Stück Eisenholz, das du so begierig zu bekommen scheinst.";
 				link.l1.go = "bakaut_1";
 			}
 			else
@@ -224,7 +224,7 @@ void ProcessDialogEvent()
 			LAi_Fade("", "");
 			WaitDate("",0,0,0,1,10);
 			dialog.text = "Freut mich, Geschäfte mit Ihnen zu machen. Kommen Sie wieder, wenn Sie mehr Eisenholz verkaufen möchten.";
-			link.l1 = "Auf Wiedersehen, Herr. Unsere Zusammenarbeit ist sehr profitabel für mich. Auf Wiedersehen!";
+			link.l1 = "Auf Wiedersehen, Mister. Unsere Zusammenarbeit ist sehr profitabel für mich. Auf Wiedersehen!";
 			link.l1.go = "bakaut_3";
 		break;
 		

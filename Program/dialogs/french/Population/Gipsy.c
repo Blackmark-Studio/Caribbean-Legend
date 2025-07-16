@@ -57,6 +57,13 @@ void ProcessDialogEvent()
 				link.l3.go = "quests";//(перессылка в файл города)
 				npchar.quest.meeting = "1";
 			}
+			// --> Тёмные воды исцеления
+			if (CheckAttribute(pchar, "questTemp.DWH_Start") && !CheckAttribute(pchar, "questTemp.DWH_gipsy") && npchar.city == "SentJons")
+			{
+				link.l6 = "Écoute, sourcils noirs, j'ai entendu dire que tu guéris les gens, même des maladies graves, est-ce vrai ?";
+				link.l6.go = "dwh_ne_ta";
+			}
+			// <-- Тёмные воды исцеления
 			if (!CheckAttribute(npchar, "quest.poison_price") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && rand(2) == 0)
 			{
 				link.l4 = "Hé, yeux noirs, as-tu des poisons pour les rats ? Ils sont un sacré fléau sur mon navire.";
@@ -110,7 +117,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ah, merci, mon beau jeune faucon ! Maintenant écoute :"+sTemp+"Bonjour, monami.";
 				link.l1 = LinkRandPhrase("Hé ! C'est très intéressant. Je vais y réfléchir...","Vraiment ? J'y réfléchirai...","Oh, vraiment ? Es-tu sérieux ? Eh bien, je m'en souviendrai...","Hé, je me sens déjà mieux !");
 				link.l1.go = "exit";
-				if (drand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
+				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 30+rand(10));//скрытность
 			}
 			else
@@ -130,7 +137,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				AddCharacterHealth(pchar, 1);
 				AddCharacterExpToSkill(pchar, "Leadership", 20);
-				if (drand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 50+rand(20));//везение
+				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 50+rand(20));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 50+rand(20));//скрытность
 			}
 			else
@@ -171,8 +178,8 @@ void ProcessDialogEvent()
 
 // --> продажа мышьяка
 		case "get_poison_1" :
-			npchar.quest.poison_price = (drand(3) + 1) * 10;
-			if(drand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
+			npchar.quest.poison_price = (hrand(3) + 1) * 10;
+			if(hrand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
 			{				
 				dialog.text = LinkRandPhrase("Oh, je ne suis pas sûr, beau gosse! Il y avait un type il n'y a pas longtemps qui demandait de l'aide pour tuer des rats, et puis quelqu'un a empoisonné les soldats dans le fort. Ça a chauffé pour mes gens sur l'île pendant que les gardes nous interrogeaient pendant deux semaines jusqu'à ce qu'ils trouvent le meurtrier. C'était un espion ennemi.","Et comment puis-je être sûr de vos intentions ? Peut-être voulez-vous seulement empoisonner un noble que vous êtes trop lâche pour affronter dans un duel honorable ??","On m'a dit que quelqu'un avait empoisonné un commerçant dans la taverne et avait volé toutes ses affaires. L'homme a souffert pendant longtemps avant de rendre l'âme. De l'écume sortait de sa bouche et il est devenu violet comme une aubergine... Es-tu responsable de cela, mon amour ?");
 				link.l1 = "Vous, les gitanes, aimez certainement partager vos opinions ! Ne t'inquiète pas ma fille, je ne vais pas empoisonner les gens. C'est une manière féminine de tuer, pas mon style. Pour les hommes, j'ai mon épée, mais je ne peux pas gérer ces maudits rats.";
@@ -231,7 +238,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_2":
 			// тут работает харизма
-			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+drand(25)+drand(30))
+			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
 			{
 				dialog.text = "Hm... Je suppose que ce n'est pas trop grave si je vous en parle un peu. Vous ne pourrez rien faire avec cette plante sans compétences particulières.";
 				link.l1 = "Je vous écoute.";
@@ -348,6 +355,15 @@ void ProcessDialogEvent()
 			ChangeCharacterAddressGroup(sld, "Amelia_house", "barmen", "stay");
 		break;
 		
+		// --> Тёмные воды исцеления
+		case "dwh_ne_ta":
+			sld = CharacterFromID("DWH_gypsy");
+			dialog.text = "Non, mon cher, ce n’est pas moi que tu cherches, c’est " + sld.name + ". Elle est en ville en ce moment. Je l’ai vue récemment.";
+			link.l1 = "Merci.";
+			link.l1.go = "exit";
+		break;
+		// <-- Тёмные воды исцеления
+		
 		//замечание по обнажённому оружию от персонажей типа citizen
 		case "CitizenNotBlade":
 			dialog.text = NPCharSexPhrase(NPChar,"Ecoute-moi, vaillant faucon, je suis peut-être un gitan, mais même nous dénonçons la violence ouverte. S'il te plaît, remets ton épée au fourreau.","Ecoute-moi, vaillant faucon, en tant que citoyen de cette ville, je te demande de rengainer ton épée.");
@@ -366,7 +382,7 @@ void ProcessDialogEvent()
 string GuessText()
 {
 	string sText;
-	switch (drand(19))
+	switch (hrand(19))
 	{
 		case 0: sText = "you will have luck, brave young falcon, tomorrow you'll be lucky with cards!" break;
 		case 1: sText = "the fortune will be kind with you in your mercantile business, captain!" break;

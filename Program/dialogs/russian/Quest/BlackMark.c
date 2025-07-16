@@ -297,16 +297,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_18":
-			dialog.text = "Пять сотен дублонов сразу! Чтобы я убедился, что ты из себя что-то и сам" + GetSexPhrase("","а") + " представляешь, а не только строишь из себя невесть кого. Дворовые собаки порой ничем не хуже породистых, знаешь ли. А ежемесячно... думаю, договоримся.";
+			dialog.text = "Двести пятьдесят дублонов сразу! Чтобы я убедился, что ты из себя что-то и сам" + GetSexPhrase("","а") + " представляешь, а не только строишь из себя невесть кого. Дворовые собаки порой ничем не хуже породистых, знаешь ли. А ежемесячно... думаю, договоримся.";
 			link.l1 = "А ты не...";
 			link.l1.go = "BM_Irons_19";
 		break;
 		
 		case "BM_Irons_19":
 			dialog.text = "... обнаглел ли? Хех, я даже спорить с тобой не буду - сам"+GetSexPhrase("","а")+" видел"+GetSexPhrase("","а")+", как я попал в того рогоносца с маяка. С первого же выстрела! И никакого торга, если твоё недовольство было его началом - этим ты покажешь, что тебе просто-напросто не по карману такой профессионал, как я!";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
-				link.l1 = "А вот и по карману! Пять сотен золотых. Держи.";
+				link.l1 = "А вот и по карману! Двести пятьдесят золотых. Держи.";
 				link.l1.go = "BM_Irons_Hire1";
 			}
 			link.l2 = "С тем выстрелом тебе просто повезло. И ты решил воспользоваться этим и набить себе цену своим бахвальством. Обойдусь без такого 'профессионала' - много чести... и денег.";
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_Hire1":
-			RemoveDublonsFromPCharTotal(500);
+			RemoveDublonsFromPCharTotal(250);
 			
 			dialog.text = "А ты не так плох" + GetSexPhrase("","а") + ", как я думал! Но ты уж постарайся, чтобы мне с тобой не было скучно! Да и талант ведь пропадёт так. Томми и " + pchar.name + "! Встряхнём этот Архипелаг!";
 			link.l1 = "Научись соблюдать субординацию, это во-первых, Томми. А во-вторых - для тебя я капитан. Понял меня?";
@@ -376,8 +376,8 @@ void ProcessDialogEvent()
 				AddQuestUserData("BlackMark", "sSex2", GetSexPhrase("был впечатлён","была впечатлена"));
 			}
 			
-			// Продолжение через месяц в джунглях
-			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 14, false);
+			// Продолжение через неделю в джунглях
+			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_Irons_NoHire1":
@@ -415,7 +415,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave2":
 			dialog.text = "Ты явно не прятал" + GetSexPhrase("ся","ась") + " и не устраивал" + GetSexPhrase("","а") + " засады за холмами и в ямах Ирландии во время сезона дождей, " + GetSexPhrase("юнец","девочка моя") + "! Но пойти с тобой всяко лучше, чем отсиживаться здесь. Впрочем, не обо мне сейчас - как там твои успехи с золотишком?";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
 				link.l1 = "Вполне неплохо, а ты как думал? Держи своё золото.";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_HireInCave1":
-			RemoveDublonsFromPCharTotal(500);
+			RemoveDublonsFromPCharTotal(250);
 			pchar.quest.BM_IronsTimeOver.over = "yes";
 			pchar.questTemp.BM_hireInGrot = true;
 			
@@ -450,7 +450,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave3":
 			dialog.text = "Как там твои успехи с золотишком?";
-			if (PCharDublonsTotal() >= 500)
+			if (PCharDublonsTotal() >= 250)
 			{
 				link.l1 = "Вполне неплохо, а ты как думал? Держи своё золото.";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -536,7 +536,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
 			Return_IronsOfficer();
-			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 14, false);
+			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_IronsSecondJungle_1":
@@ -592,7 +592,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
 			Return_IronsOfficer();
-			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 14, false);
+			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_IronsThirdJungle_1":
@@ -804,8 +804,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_Sea3":
-			dialog.text = "Да, это может сработать! Но, опять-таки, не крупнее барка! Гейб мало того, что трусоват, так ещё и никогда не был настолько жадным, чтобы иногда это перевешивало.";
-			link.l1 = "Будем надеяться, что сработает, Томми. Значит, барк под ложным флагом, испанским или голландским. Идём, начнём подготовку ко встрече старых сослуживцев!";
+			dialog.text = "Да, это может сработать! Но, опять-таки, не крупнее барка или баркентины! Гейб мало того, что трусоват, так ещё и никогда не был настолько жадным, чтобы иногда это перевешивало.";
+			link.l1 = "Будем надеяться, что сработает, Томми. Значит, барк или баркентина под ложным флагом, испанским или голландским. Идём, начнём подготовку ко встрече старых сослуживцев!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("BM_SeaVariant");
 		break;
@@ -1991,7 +1991,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetMusketBullets1_" + i;
 			}
 		break;

@@ -32,7 +32,7 @@ void LAi_type_owner_Init(aref chr)
 	chr.chr_ai.type.who = "-1";
 	chr.chr_ai.type.timewait = "0";
 	chr.chr_ai.type.locator = "stay";
-	chr.chr_ai.type.wait = stf(5.0 + frnd() * 5.0);;
+	chr.chr_ai.type.wait = stf(5.0 + frnd() * 5.0);
 	LAi_tmpl_stay_InitTemplate(chr);
 	//Установим анимацию персонажу
 	LAi_SetDefaultStayAnimation(chr);

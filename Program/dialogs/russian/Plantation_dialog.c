@@ -36,7 +36,7 @@ void ProcessDialogEvent()
 		
 		// рабы
 		case "plantation_slave":
-			dialog.text = RandPhraseSimple(RandPhraseSimple("Я так устал - просто с ног валюсь.", "Нет больше сил так жить!"), RandPhraseSimple("Эта работа слишком тяжелая для меня.", "Надсмотрщики уже не оставили живого места на моей шкуре!"));				
+			dialog.text = RandPhraseSimple(RandPhraseSimple("Я так устал - просто с ног валюсь.", "Нет больше сил так жить!"), RandPhraseSimple("Эта работа слишком тяжёлая для меня.", "Надсмотрщики уже не оставили живого места на моей шкуре!"));				
 			link.l1 = RandPhraseSimple("Сочувствую, приятель.", "Мне жаль тебя.");
 			link.l1.go = "exit";				
 		break;
@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_coffee":
-			i = drand(3)+1;
+			i = hrand(3)+1;
 			n = 5 - i;
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 11;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_cinnamon":
-			i = drand(3)+1;
+			i = hrand(3)+1;
 			n = 5 - i;
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 19;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 106;
@@ -317,7 +317,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_copra":
-			i = drand(3)+1;
+			i = hrand(3)+1;
 			n = 5 - i;
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 20;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
@@ -383,7 +383,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_PlantVykup_2":
-            dialog.text = "А вы хорошо ориентируетесь в актуальных ценах капитан! У вас явный талант к негоциации, пусть вы и выглядите, как новичок. Что ж, если вы и правда привезли первоклассный товар, то я и правда должен вам отгрузить чуть больше.";
+            dialog.text = "А вы хорошо ориентируетесь в актуальных ценах, капитан! У вас явный талант к негоциации, пусть вы и выглядите, как новичок. Что ж, если вы и правда привезли первоклассный товар, то я и правда должен вам отгрузить чуть больше.";
 			link.l1 = "Конечно, первоклассный, клянусь честью! Есть ещё кое-что, что я хотел бы у вас приобрести, сеньор.";
 			link.l1.go = "mtraxx_PlantVykup_3";
 		break;

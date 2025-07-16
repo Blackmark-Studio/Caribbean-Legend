@@ -396,9 +396,12 @@ void CreateVaskezsFrigate(string qName)//атака фрегата Васкез�
 	ChangeCharacterAddressGroup(sld, "My_Deck", "goto", "goto6");//Португальца в трюм
 	Group_FindOrCreateGroup("VaskezFrigate");
 	sld = GetCharacter(NPC_GenerateCharacter("Vaskezs_helper", "mercen_"+(rand(27)+1), "man", "man", 25+MOD_SKILL_ENEMY_RATE, PIRATE, -1, true, "quest"));
-	if(GetCompanionQuantity(pchar) < 2 && sti(RealShips[sti(pchar.ship.type)].Class) > 3)
-		FantomMakeCoolSailor(sld, SHIP_CORVETTE, StringFromKey("Portugal_10"), CANNON_TYPE_CANNON_LBS20, 90, 90, 90);
-	else FantomMakeCoolSailor(sld, SHIP_FRIGATE, StringFromKey("Portugal_10"), CANNON_TYPE_CANNON_LBS24, 90, 90, 90);
+	
+	int iClass = sti(RealShips[sti(pchar.ship.type)].Class);
+	if(iClass < 2) iClass = 2;
+	if(iClass > 4) iClass = 4;
+	
+	FantomMakeCoolSailor(sld, GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY), StringFromKey("Portugal_10"), -1, 90, 90, 90);
 	FantomMakeCoolFighter(sld, 25+MOD_SKILL_ENEMY_RATE, 70, 70, "blade_10", "pistol3", "grapeshot", 100);
 	sld.AlwaysEnemy = true;
 	sld.DontRansackCaptain = true;
@@ -524,7 +527,7 @@ void CreatePortugalHollShip(string qName)//голландский фрегат /
 	Island_SetReloadEnableGlobal("Terks", false);
 	Group_FindOrCreateGroup("PortHolFrigate");
 	sld = GetCharacter(NPC_GenerateCharacter("PortHolCap", "off_hol_5", "man", "man", sti(PChar.rank)+MOD_SKILL_ENEMY_RATE, HOLLAND, -1, true, "quest"));
-	FantomMakeCoolSailor(sld, SHIP_FRIGATE, "", CANNON_TYPE_CANNON_LBS24, 90, 90, 90);
+	FantomMakeCoolSailor(sld, SHIP_FRIGATE, "", CANNON_TYPE_CANNON_LBS32, 90, 90, 90);
 	FantomMakeCoolFighter(sld, sti(PChar.rank)+MOD_SKILL_ENEMY_RATE, 70, 70, "blade_21", "pistol3", "grapeshot", 100);
 	sld.AlwaysEnemy = true;
 	sld.DontRansackCaptain = true;
@@ -769,8 +772,8 @@ bool Portugal_QuestComplete(string sQuestName, string qname)
 		chrDisableReloadToLocation = false;
 		Log_Info(StringFromKey("Portugal_16"));
 		PlaySound("interface\important_item.wav");
-		TakeNItems(pchar, "jewelry2", 510+drand(30));
-		TakeNItems(pchar, "jewelry3", 530+drand(50));
+		TakeNItems(pchar, "jewelry2", 510+hrand(30));
+		TakeNItems(pchar, "jewelry3", 530+hrand(50));
 		AddQuestRecord("Portugal", "25");
 		pchar.quest.Portugal_Terks.win_condition.l1 = "location";
 		pchar.quest.Portugal_Terks.win_condition.l1.location = "Terks";

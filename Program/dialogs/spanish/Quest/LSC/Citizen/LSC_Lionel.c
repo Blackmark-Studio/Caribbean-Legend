@@ -25,8 +25,8 @@ void ProcessDialogEvent()
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "Saludo, "+GetAddress_Form(NPChar)+"¿Eres un recién llegado aquí?";
-				link.l1 = TimeGreeting()+". Mi nombre es "+GetFullName(pchar)+"Sí, lo soy.";
+				dialog.text = "Saludos, "+GetAddress_Form(NPChar)+". ¿Eres un recién llegado?";
+				link.l1 = TimeGreeting()+". Mi nombre es "+GetFullName(pchar)+". Sí, lo soy.";
 				link.l1.go = "meeting";
 				npchar.quest.meeting = "1";
 			}
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Woman_FackYou":
-			dialog.text = "¿Qué?! ¿Decidiste revisar mis cofres? ¡No te saldrás con la tuya!";
+			dialog.text = "¿Qué? ¿Decidiste revisar mis cofres? ¡No te saldrás con la tuya!";
 			link.l1 = "¡Chica insensata!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);

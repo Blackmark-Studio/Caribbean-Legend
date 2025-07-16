@@ -110,7 +110,7 @@ int GetSalaryForShip(ref chref)
 	float nCommerce   = GetSummonSkillFromNameToOld(mchref,SKILL_COMMERCE);
 
 	float shClass = GetCharacterShipClass(chref);
-	if (shClass   < 1) shClass   = 6;
+	if (shClass   < 1) shClass   = 7;
 	if (!GetRemovable(chref) && sti(chref.index) != GetMainCharacterIndex()) return 0; // считаем только своих, а то вских сопровождаемых кормить!!!
 		
 	// экипаж
@@ -181,12 +181,25 @@ int GetSalaryForShip(ref chref)
 
 int AddCrewMorale(ref chr, int add)
 {
+	string nameBefore, nameAfter;
+	int moraleBefore;
+	
     int morale = MORALE_NORMAL;
 	if (CheckAttribute(chr, "Ship.Crew.Morale")) morale = sti(chr.Ship.Crew.Morale);
+	nameBefore = GetExpName(morale);
+	moraleBefore = morale;
     morale += add;
 	if(morale < MORALE_MIN)	morale = MORALE_MIN;
 	if(morale > MORALE_MAX)	morale = MORALE_MAX;
+	nameAfter = GetExpName(morale);
 	chr.Ship.Crew.Morale = morale;
+	if(chr.id == pchar.id)
+	{
+		if(nameBefore != nameAfter && moraleBefore < morale)
+		{
+			AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 6.0);
+		}
+	}
 	
 	return morale;
 }
@@ -229,6 +242,19 @@ float ChangeCrewExp(ref chr, string sType, float fNewExp)
 float GetCrewExp(ref chr, string sType)
 {
 	if (!CheckAttribute(chr, "Ship.Crew.Exp." + sType)) chr.Ship.Crew.Exp.(sType) = 10;
+	
+	if(ShipBonus2Artefact(chr, SHIP_MEMENTO))
+	{
+		if(CheckAttribute(&RealShips[sti(chr.Ship.Type)], "DeadSailors.SailorsExpBonus"))
+		{
+			float exp = stf(chr.Ship.Crew.Exp.(sType));
+			exp = exp + stf(RealShips[sti(chr.Ship.Type)].DeadSailors.SailorsExpBonus);
+			if(exp > 100.0) exp = 100.0;
+			
+			return exp;
+		}
+	}
+	
 	return stf(chr.Ship.Crew.Exp.(sType));	
 }
 
@@ -243,7 +269,38 @@ int GetCharacterCrewMorale(ref chr)
 	{
 		chr.ship.crew.morale = MORALE_NORMAL;
 	}
-
+	
+	if(GetCharacterIndex(chr.id) == GetMainCharacterIndex())
+	{
+		int iShipBonus = 0;
+		int iCurCrewMorale = sti(chr.ship.crew.morale);
+		
+		if(ShipBonus2Artefact(chr, SHIP_MEMENTO))
+		{
+			if(CheckAttribute(&RealShips[sti(chr.Ship.Type)], "DeadSailors.SailorsMoraleBonus"))
+			{
+				iShipBonus = sti(RealShips[sti(chr.Ship.Type)].DeadSailors.SailorsMoraleBonus);
+			}
+		}
+		if(iShipBonus > 0)
+		{
+			chr.ship.crew.morale.mementoBonus = iShipBonus;
+		}
+		else 
+		{
+			if(CheckAttribute(chr, "ship.crew.morale.mementoBonus"))
+			{
+				iCurCrewMorale -= sti(chr.ship.crew.morale.mementoBonus);
+				if(iCurCrewMorale < 0) iCurCrewMorale = 0;
+				DeleteAttribute(chr, "ship.crew.morale.mementoBonus");
+				chr.ship.crew.morale = iCurCrewMorale;
+			}
+		}
+		iCurCrewMorale += iShipBonus;
+		if(iCurCrewMorale > 100) iCurCrewMorale = 100;
+		chr.ship.crew.morale = iCurCrewMorale;
+	}
+	
 	return sti(chr.ship.crew.morale);
 }
 
@@ -253,61 +310,54 @@ void UpdateCrewInColonies()
 	int nNeedCrew = GetCurCrewEscadr(); // всего матросов
 	//int ableCrew = GetMaxCrewAble();   // допустимое число
 	ref rTown;    
-	int nPastQ, nPastM;
+	int nPastQ, nPastM, iNation;
 	int eSailors, eCannoners, eSoldiers;
-	 
+    
+    int iRand = hrand(70);
+    float fKrank = 1.0 + (2.5 - 1.0) * (pow(stf(pchar.rank), 0.25) - 1.0) / (pow(40.0, 0.25) - 1.0);
+    float fKcharisma = 1.0 + (2.5 - 1.0) * (pow(stf(GetSummonSkillFromNameSimple(pchar, SKILL_LEADERSHIP)), 1.35) - 1.0) / (pow(100.0, 1.35) - 1.0);
+    float fKrep = GetReputationCoef(abs(COMPLEX_REPUTATION_NEUTRAL - sti(pchar.reputation.nobility)));
+
 	for(int i = 0; i < MAX_COLONIES; i++)
 	{
 		rTown = &colonies[i];
 	    if (rTown.nation == "none") continue;
 		if (rTown.id == "IslaMona") continue;
-	    
-		if(CheckAttribute(rTown, "AdditionalCrew")) DeleteAttribute(rTown, "AdditionalCrew");
-		// belamour legendary edition 
-		if(CheckAttribute(rTown, "AddCrewTalisman9")) DeleteAttribute(rTown, "AddCrewTalisman9");
-		
+
+        // belamour legendary edition 
+		DeleteAttribute(rTown, "AdditionalCrew");
+		DeleteAttribute(rTown, "AddCrewTalisman9");
+
 	    if (GetNpcQuestPastDayParam(rTown, "CrewDate") >= (2+rand(2)) || !CheckAttribute(rTown, "CrewDate.control_year"))
 	    {
-	    	//trace("UpdateCrewInColonies " + rTown.id);
 			SaveCurrentNpcQuestDateParam(rTown, "CrewDate");
 			nPastQ = 0;
-			//nPastM = MORALE_NORMAL;
 			if (CheckAttribute(rTown,"ship.crew.quantity"))	nPastQ = sti(rTown.ship.crew.quantity);
-			//if (CheckAttribute(rTown,"ship.crew.morale"))	nPastM = sti(rTown.ship.crew.morale);
 
-/*			
-			if (nNeedCrew >= ableCrew )
-		    {
-		        nNeedCrew = 1+rand(20);
-		    }
-		    else
-		    {
-		        nNeedCrew = ableCrew - nNeedCrew - rand(makeint((ableCrew - nNeedCrew)/2.0));
-				if (nNeedCrew < 1) nNeedCrew = 1+rand(20);
-		    }
-*/
-			nNeedCrew = makeint(abs(REPUTATION_NEUTRAL - sti(pchar.reputation.nobility))/MOD_SKILL_ENEMY_RATE + sti(pchar.rank)/MOD_SKILL_ENEMY_RATE + rand(sti(pchar.rank)/2) + drand(20 + MOD_SKILL_ENEMY_RATE));
+            iNation = sti(rTown.nation);
+			float fKrelation = GetNationRelationCoef(ChangeCharacterNationReputation(pchar, iNation, 0)); // TO_DO: вынести наверх
+			nNeedCrew = makeint(fKrank * fKrelation * fKcharisma * fKrep * (iRand + 65) / 100 * 12); // В идеале hrand(70, rTown.id), но будет тормозить на частых вызовах
+			
 			// belamour legendary edition: вызывающий доверие повышает количество матросов
 			if(CheckCharacterPerk(pchar, "Trustworthy")) nNeedCrew *= 1.1;
-			if(CheckAttribute(pchar, "questTemp.CharleePrince") && sti(rTown.nation) == PIRATE) nNeedCrew *= 1.5; // belamour legendary edition
-			if(MOD_SKILL_ENEMY_RATE == 2) nNeedCrew *= 3;
-			if(MOD_SKILL_ENEMY_RATE == 4) nNeedCrew *= 2;
-			
+			if(CheckAttribute(pchar, "questTemp.CharleePrince") && iNation == PIRATE) nNeedCrew *= 1.5; // belamour legendary edition
+			if(ShipBonus2Artefact(pchar, SHIP_MEMENTO) && CheckAttribute(&RealShips[sti(pchar.Ship.Type)], "DeadSailors.RecruitPiratesBonus"))
+			{
+				if(iNation == PIRATE)
+					nNeedCrew *= 1.0 + stf(RealShips[sti(pchar.Ship.Type)].DeadSailors.RecruitPiratesBonus);
+			}
 		
 			if (nPastQ > nNeedCrew)
-			{	
-				nPastM = MORALE_NORMAL/3 + rand(MORALE_MAX-MORALE_NORMAL/3);
-			}
+                nPastM = MORALE_NORMAL/3 + rand(MORALE_MAX-MORALE_NORMAL/3);
 			else
-			{	
-				nPastM = MORALE_NORMAL/5 + rand(makeint(MORALE_NORMAL*1.5));
-			}
-			rTown.Ship.crew.quantity = nNeedCrew;
-			if (CheckAttribute(pchar, "GenQuest.Shipshine")) rTown.Ship.crew.quantity = sti(rTown.Ship.crew.quantity)*2;//Jason
-			rTown.Ship.crew.morale   = nPastM;
-						
+                nPastM = MORALE_NORMAL/5 + rand(makeint(MORALE_NORMAL*1.5));
+
+			if (!CheckAttribute(pchar, "GenQuest.Shipshine")) rTown.Ship.crew.quantity = nNeedCrew;
+			else rTown.Ship.crew.quantity = nNeedCrew + (nNeedCrew / 4); //Jason
+			rTown.Ship.crew.morale = nPastM;
+
 			// пороги опыта от нации
-			switch (sti(rTown.nation))
+			switch (iNation)
 			{
 				case ENGLAND:	
 					eSailors   = 45; 
@@ -335,6 +385,7 @@ void UpdateCrewInColonies()
 					eSoldiers  = 5;
 				break;
 			}
+
 			rTown.Ship.Crew.Exp.Sailors   = eSailors   + rand(2*eSailors)   + rand(10);
 			rTown.Ship.Crew.Exp.Cannoners = eCannoners + rand(2*eCannoners) + rand(10);
 			rTown.Ship.Crew.Exp.Soldiers  = eSoldiers  + rand(2*eSoldiers)  + rand(10);
@@ -358,6 +409,22 @@ int GetCrewPriceForTavern(string sColony)
 	if (nCrewCost < 10) nCrewCost = 10; // не ниже!
 	if(rTown.id == "IslaMona") return 0; 
 	return nCrewCost;
+}
+
+float GetNationRelationCoef(int rel)
+{
+	if (rel < 0 )    return 0.85;
+    if (rel <= 20 )  return 1.0;
+    if (rel <= 50 )  return 1.2;
+    if (rel <= 80 )  return 1.5;
+    if (rel <= 100 ) return 1.85;
+	
+	return 0.85;
+}
+
+float GetReputationCoef(int rep)
+{
+	return Bring2Range(1.0, 1.35, 0.0, 50.0, makefloat(rep));
 }
 
 int GetMaxCrewAble()
@@ -440,7 +507,7 @@ void Partition_SetValue(string state) // state = "before" || "after" - для с
 				ret = ret + Partition_GetCargoValue(chref); // деньги на кармане и корабль
 				HowComp += 1; // ГГ тут же
 				HowCrew += GetCrewQuantity(chref);
-				part += Part_CompanionShipPerClass * (6 - GetCharacterShipClass(chref));
+				part += Part_CompanionShipPerClass * (7 - GetCharacterShipClass(chref));
 			}
 		}
 	}
@@ -699,7 +766,3 @@ state = "after"  - перед выходом на сушу или после г�
 
 	_refCharacter.Goods.(_goodsName).costCoeff = newPriceCoeff;
 }
-
-
-
-

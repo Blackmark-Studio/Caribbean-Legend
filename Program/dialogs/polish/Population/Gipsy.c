@@ -57,6 +57,13 @@ void ProcessDialogEvent()
 				link.l3.go = "quests";//(перессылка в файл города)
 				npchar.quest.meeting = "1";
 			}
+			// --> Тёмные воды исцеления
+			if (CheckAttribute(pchar, "questTemp.DWH_Start") && !CheckAttribute(pchar, "questTemp.DWH_gipsy") && npchar.city == "SentJons")
+			{
+				link.l6 = "Szukam Cyganki, która leczy ludzi. Czy to ty?";
+				link.l6.go = "dwh_ne_ta";
+			}
+			// <-- Тёмные воды исцеления
 			if (!CheckAttribute(npchar, "quest.poison_price") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && rand(2) == 0)
 			{
 				link.l4 = "Hej, czarnookie, masz jakieś trucizny na szczury? Są przeklętym utrapieniem na moim statku.";
@@ -110,7 +117,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ach, dziękuję, mój przystojny młody sokole! Teraz słuchaj:"+sTemp+"";
 				link.l1 = LinkRandPhrase("Heh! To bardzo interesujące. Wezmę to pod uwagę...","Naprawdę? Rozważę to...","O, naprawdę? Naprawdę? Cóż, zapamiętam to...","Hej, już czuję się lepiej!");
 				link.l1.go = "exit";
-				if (drand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
+				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 30+rand(10));//скрытность
 			}
 			else
@@ -130,7 +137,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				AddCharacterHealth(pchar, 1);
 				AddCharacterExpToSkill(pchar, "Leadership", 20);
-				if (drand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 50+rand(20));//везение
+				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 50+rand(20));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 50+rand(20));//скрытность
 			}
 			else
@@ -171,8 +178,8 @@ void ProcessDialogEvent()
 
 // --> продажа мышьяка
 		case "get_poison_1" :
-			npchar.quest.poison_price = (drand(3) + 1) * 10;
-			if(drand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
+			npchar.quest.poison_price = (hrand(3) + 1) * 10;
+			if(hrand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
 			{				
 				dialog.text = LinkRandPhrase("Och, nie jestem pewna, przystojniaku! Niedawno był tu facet, który prosił o pomoc w zabijaniu szczurów, a potem ktoś zatruł żołnierzy w forcie. Zrobiło się dość gorąco dla moich ludzi na wyspie, gdy strażnicy przesłuchiwali nas przez dwa tygodnie, aż znaleźli mordercę. Był to szpieg wroga.","A jak mogę być pewny twojego celu? Może po prostu chcesz otruć szlachcica, z którym jesteś zbyt tchórzliwy, by walczyć w honorowym pojedynku??","Słyszałem, że ktoś otruł jakiegoś handlarza w tawernie i ukradł wszystkie jego rzeczy. Człowiek ten cierpiał przez długi czas, zanim wyzionął ducha. Piana wychodziła mu z ust i zrobił się fioletowy jak bakłażan... Czy to ty za tym stoisz, moja miła?");
 				link.l1 = "Wy, cygańskie dziewki, z pewnością lubicie dzielić się swoimi opiniami! Nie martw się, dziewczyno, nie zamierzam truć ludzi. To kobiecy sposób zabijania, nie w moim stylu. Na mężczyzn mam swój miecz, ale nie radzę sobie z tymi przeklętymi szczurami.";
@@ -231,7 +238,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_2":
 			// тут работает харизма
-			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+drand(25)+drand(30))
+			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
 			{
 				dialog.text = "Hm... Przypuszczam, że nie jest zbyt źle, jeśli opowiem ci o tym trochę. Nie będziesz w stanie nic zrobić z tą rośliną bez specjalnych umiejętności.";
 				link.l1 = "Słucham.";
@@ -348,6 +355,15 @@ void ProcessDialogEvent()
 			ChangeCharacterAddressGroup(sld, "Amelia_house", "barmen", "stay");
 		break;
 		
+		// --> Тёмные воды исцеления
+		case "dwh_ne_ta":
+			sld = CharacterFromID("DWH_gypsy");
+			dialog.text = "Nie, " + GetSexPhrase("kochanie", "piękna") + ", to nie ja ci jestem potrzebna, tylko " + sld.name + ". Ona jest teraz w mieście. Widziałam ją niedawno.";
+			link.l1 = "Dziękuję.";
+			link.l1.go = "exit";
+		break;
+		// <-- Тёмные воды исцеления
+		
 		//замечание по обнажённому оружию от персонажей типа citizen
 		case "CitizenNotBlade":
 			dialog.text = NPCharSexPhrase(NPChar,"Słuchaj mnie, dzielny sokołku, może i jestem cyganem, ale nawet my odrzucamy otwartą przemoc. Proszę, schowaj swój miecz.","Słuchaj mnie, dzielny sokołku, jako obywatel tego miasta proszę cię, byś schował swój miecz.");
@@ -366,7 +382,7 @@ void ProcessDialogEvent()
 string GuessText()
 {
 	string sText;
-	switch (drand(19))
+	switch (hrand(19))
 	{
 		case 0: sText = "you will have luck, brave young falcon, tomorrow you'll be lucky with cards!" break;
 		case 1: sText = "the fortune will be kind with you in your mercantile business, captain!" break;

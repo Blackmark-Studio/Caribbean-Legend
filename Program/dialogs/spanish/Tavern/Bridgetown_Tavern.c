@@ -15,7 +15,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		}
 		if (CheckAttribute(pchar, "questTemp.HWIC.Eng") && pchar.questTemp.HWIC.Eng == "toBarbados")
 		{
-			link.l1 = "Escucha, ¿dónde está Callow Gaston?";
+			link.l1 = "Escucha, ¿dónde está Callow Gastón?";
 			link.l1.go = "Tonzag_Letter";
 		}
 		// Голландский гамбит /против всех/
@@ -32,7 +32,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// Страж Истины
 		if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "merdok" && !CheckAttribute(npchar, "quest.jino"))
 		{
-			link.l1 = "Escucha, ¿ha llegado aquí a esta ciudad un alquimista, un médico? Es italiano, tiene unos treinta años, su nombre es Gino Gvineili. ¿Has oído algo al respecto?";
+			link.l1 = "Escucha, ¿ha llegado aquí a esta ciudad un alquimista, o un médico? Es italiano, tiene unos treinta años, su nombre es Gino Gvineili. ¿Has oído algo al respecto?";
 			link.l1.go = "guardoftruth";
 		}
 		break;
@@ -40,7 +40,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	// Голландский гамбит /за Англию/
 	case "TavernDone":
 		dialog.text = "Aquí tienes tu bebida. ¡El mejor ron para nuestro nuevo invitado! ¿Es una ocasión especial o solo has pasado por aquí para mojar el gaznate?";
-		link.l1 = "¡Aye, puedes decir que es una ocasión especial! Estoy llevando algunos negros a Blueweld. He modificado recientemente la bodega de mi nuevo bergantín específicamente para este propósito. Acabo de pasar por una plantación y hablé con el capataz, quien me encargó un buen lote de 'marfil negro'. Así que espérame de vuelta en tu taberna pronto. Entregaré la mercancía a Blueweld y luego haré más negocios aquí en Barbados, ¡yo ho!";
+		link.l1 = "¡Ja, puedes decir que es una ocasión especial! Estoy llevando algunos negros a Blueweld. He modificado recientemente la bodega de mi nuevo bergantín específicamente para este propósito. Acabo de pasar por una plantación y hablé con el capataz, quien me encargó un buen lote de 'marfil negro'. Así que espérame de vuelta en tu taberna pronto. Entregaré la mercancía a Blueweld y luego haré más negocios aquí en Barbados, ¡yo-ho!";
 		link.l1.go = "TavernDone_1";
 		break;
 
@@ -64,7 +64,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Tonzag_Letter":
-		dialog.text = "Gastón se fue del pueblo dos días después de tu acto de 'comerciante'. ¡Montaste un espectáculo aquí, ja! Tu engaño fue descubierto rápidamente, este pueblo es pequeño y los chismes viajan rápido. Esto hizo que Gastón se marchara. Nadie lo ha visto aquí desde entonces. Sin embargo, ha dejado una carta para ti\nPidió entregártela personalmente en caso de que aparezcas aquí antes que él. De hecho, no eres el primer hombre que busca a Gastón. Hubo un hombre grande de ojos estrechos y un viejo, parecían españoles o portugueses, no puedo decirlo con certeza. Pero no puedo olvidar su rostro, había algo muy extraño en él...";
+		dialog.text = "Gastón se fue del pueblo dos días después de tu acto de 'comerciante'. ¡Montaste un espectáculo aquí, ja! Tu engaño fue descubierto rápidamente, este pueblo es pequeño y los chismes viajan rápido. Esto hizo que Gastón se marchara. Nadie lo ha visto aquí desde entonces. Sin embargo, ha dejado una carta para ti.\nPidió entregártela personalmente en caso de que aparezcas aquí antes que él. De hecho, no eres el primer hombre que busca a Gastón. Hubo un hombre grande de ojos estrechos y un viejo, parecían españoles o portugueses, no puedo decirlo con certeza. Pero no puedo olvidar su rostro, había algo muy extraño en él...";
 		link.l1 = "Dame esa carta... ¡Gracias!";
 		link.l1.go = "Tonzag_Letter_1";
 		DelLandQuestMark(npchar);
@@ -107,7 +107,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			notification("Skill Check Failed (35)", SKILL_PISTOL);
 			// <--
 			dialog.text = "Capitán, eres demasiado blando. Necesito a un luchador un poco más reputado que tú. Vuelve cuando aprendas a manejar ese acero que cuelga de tu cinturón. Y un poco de precisión al disparar tampoco vendría mal.";
-			link.l1 = "Veo. Entonces te haré una visita más tarde.";
+			link.l1 = "Ya veo. Entonces te haré una visita más tarde.";
 			link.l1.go = "exit";
 			break;
 		}
@@ -150,7 +150,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Tonzag_task_1":
-		dialog.text = "Tu recompensa será de 30,000 piezas de a ocho, buen dinero. Además, puedes tomar cada moneda que encuentres en su cuerpo. Ahora discutamos los detalles. Se llama Don Fernando Rodríguez, 35 años, alto, moreno, vestido como un oficial militar. Es un buen marinero y un espadachín experimentado\nNo puedo decirte dónde encontrarlo, todo lo que sé es que está en algún lugar del Caribe\nBusca en cada ciudad española hasta que lo atrapes. Tienes dos meses. Una última cosa: sé lo que lleva consigo, así que ni pienses en esconderme ningún objeto. ¿Preguntas?";
+		dialog.text = "Tu recompensa será de 30 000 piezas de a ocho, buen dinero. Además, puedes tomar cada moneda que encuentres en su cuerpo. Ahora discutamos los detalles. Se llama Don Fernando Rodríguez, 35 años, alto, moreno, vestido como un oficial militar. Es un buen marinero y un espadachín experimentado.\nNo puedo decirte dónde encontrarlo, todo lo que sé es que está en algún lugar del Caribe.\nBusca en cada ciudad española hasta que lo atrapes. Tienes dos meses. Una última cosa: sé lo que lleva consigo, así que ni pienses en esconderme ningún objeto. ¿Preguntas?";
 		link.l1 = "No tengo preguntas. ¡Estoy en camino!";
 		link.l1.go = "Tonzag_task_2";
 		break;
@@ -219,14 +219,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	case "Task_check_2":
 		if (CheckCharacterItem(pchar, "jewelry7") && CheckCharacterItem(pchar, "totem_05") && CheckCharacterItem(pchar, "amulet_1"))
 		{
-			dialog.text = "¡Ajá, eso es todo lo que necesito. ¡Bien hecho! Has hecho un buen trabajo. Estoy muy complacido contigo.";
+			dialog.text = "¡Ajá, eso es todo lo que necesito! ¡Bien hecho! Has hecho un buen trabajo. Estoy muy complacido contigo.";
 			link.l1 = "¡Gracias! Siempre es agradable recibir elogios por un trabajo bien hecho.";
 			link.l1.go = "Task_complete";
 		}
 		else
 		{
-			dialog.text = "Hm... Te advertí que sé lo que Rodriguez nunca haría sin ello. Y no veo lo que necesito aquí. ¿Te has guardado esas cosas? ¿Las has perdido? No importa de todos modos. No tengo deseo de involucrarme contigo más. Lárgate de aquí.";
-			link.l1 = "Oh, que te den...";
+			dialog.text = "Hm... Te advertí que sé lo que Rodriguez llevaba encima. Y no veo lo que necesito aquí. ¿Te has guardado esas cosas? ¿Las has perdido? No importa de todos modos. No tengo deseo de involucrarme contigo más. Lárgate de aquí.";
+			link.l1 = "Oh, ...";
 			link.l1.go = "exit";
 			pchar.questTemp.HWIC.Fail3 = "true";
 			if (!CheckAttribute(pchar, "questTemp.HWIC.Fail1"))
@@ -250,15 +250,15 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		RemoveItems(PChar, "totem_05", 1);
 		RemoveItems(PChar, "amulet_1", 1);
 		AddMoneyToCharacter(pchar, 30000);
-		dialog.text = "Aquí está tu recompensa como prometido, treinta mil. Y también tengo una misión adicional, de alta responsabilidad y alto riesgo, pero la paga aumentará en consecuencia, 40,000 pesos.";
-		link.l1 = "Estoy todo oídos. ¿Quién es el próximo cliente?";
+		dialog.text = "Aquí está tu recompensa como prometí, treinta mil. Y también tengo una misión adicional, de alta responsabilidad y alto riesgo, pero la paga aumentará en consecuencia, 40 000 pesos.";
+		link.l1 = "Soy todo oídos. ¿Quién es el próximo cliente?";
 		link.l1.go = "Fleetwood_house";
 		break;
 
 	// 2 задание
 	case "Fleetwood_house":
-		PlaySound("Voice\Spanish\hambit\Ercule Tongzag-05.wav");
-		dialog.text = "¡Te ves bastante amenazante! ¡Veamos cómo te va! Esta vez vas a cazar no a un hombre, sino un objeto. Debes colarte en la casa de Richard Fleetwood en Antigua y robar su bitácora. Él es un capitán inglés. El lugar está fuertemente custodiado y Richard rara vez visita su casa. \nEl plan es sencillo. El gobernador de St. Jones organizará una fiesta privada en diez días, a la que asistirá Fleetwood. Debes entrar en su casa por la noche entre la una y las tres en punto. Solo habrá un soldado adentro. \nDeshazte de él. Busca un diario dentro del apartamento de Richard. Toma esta llave.";
+		PlaySound("Voice\Spanish\hambit\Ercule Tongzag-10.wav");
+		dialog.text = "¡Te ves bastante amenazante! ¡Veamos cómo te va! Esta vez vas a cazar no a un hombre, sino un objeto. Debes colarte en la casa de Richard Fleetwood en Antigua y robar su bitácora. Él es un capitán inglés. El lugar está fuertemente custodiado, y Richard rara vez visita su casa. \nEl plan es sencillo. El gobernador de St. John's organizará una fiesta privada en diez días, a la que asistirá Fleetwood. Debes entrar en su casa por la noche entre la una y las tres en punto. Solo habrá un soldado adentro.\nDeshazte de él. Busca un diario dentro del apartamento de Richard. Toma esta llave.";
 		link.l1 = "Hum... Interesante. Entendí lo que necesito hacer. ¡Estoy listo para ponerme en marcha!";
 		link.l1.go = "Fleetwood_house_1";
 		break;
@@ -309,7 +309,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "guardoftruth":
-		dialog.text = LinkRandPhrase("No, no lo he hecho. Tenemos herbolarios y médicos, pero ninguno con ese nombre.", "Esta es la primera vez que oigo un nombre tan extraño. No, nunca hemos recibido una visita del hombre del que hablas.", "No tenemos ningún tipo de alquimistas en absoluto. Tenemos médicos, pero ninguno con un nombre tan extraño.");
+		dialog.text = LinkRandPhrase("No, no lo he hecho. Tenemos herbolarios y médicos, pero ninguno con ese nombre.", "Esta es la primera vez que oigo un nombre tan extraño. No, nunca hemos recibido una visita del hombre del que hablas.", "No tenemos ningún tipo de alquimista en absoluto. Tenemos médicos, pero ninguno con un nombre tan extraño.");
 		link.l1 = "Ya veo. Es una lástima. ¡Seguiré buscando!";
 		link.l1.go = "exit";
 		npchar.quest.jino = "true";
@@ -327,7 +327,7 @@ string FindSpainCity() // Jason выбрать радномный испанск
 
 	for (n = 0; n < MAX_COLONIES; n++)
 	{
-		if (colonies[n].nation == SPAIN && colonies[n].id != "Panama" && colonies[n].id != "Minentown" && colonies[n].id != "SanAndres" && colonies[n].nation != "none")
+		if (colonies[n].nation == SPAIN && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none")
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -335,6 +335,6 @@ string FindSpainCity() // Jason выбрать радномный испанск
 	}
 	if (howStore == 0)
 		return "none";
-	nation = storeArray[dRand(howStore - 1)];
+	nation = storeArray[hrand(howStore - 1)];
 	return colonies[nation].id;
 }

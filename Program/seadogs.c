@@ -40,6 +40,8 @@
 #include "controls\controls_func.c" // belamour процессирование контролок 
 #include "migrations.c"
 #include "achievements.c"
+#include "ships\ships_generator.c"
+
 
 extern void InitBaseCannons();
 extern void InitCharacters();
@@ -115,6 +117,11 @@ native bool ShowSteamVirtualKeyboard(int iVKMode, int iTextFieldX, int iTextFiel
 native int GetOverlaysInfo(ref paOutOverlaysInfo);
 native bool GameOverlayToWebPage(string url);
 //GameOverlayToWebPage("https://steamcommunity.com/app/2230980/workshop/");
+native bool IsInSafeMode();
+//if true then either
+//1: the game crashed and the user chose safe mode
+//OR
+//2: enabled in engine.ini mod_safe_mode = 1
 
 #libriary "script_libriary_test"
 #libriary "dx9render_script_libriary"
@@ -346,6 +353,7 @@ void Main_InitGame()
 		UnloadSegment("Interface\BaseInterface.c");
 	}
 }
+
 void Main_LogoVideo()
 {
 	int i = sti(InterfaceStates.videoIdx);
@@ -361,13 +369,13 @@ void Main_LogoVideo()
 		InterfaceStates.videoIdx = 2;
 		StartPostVideo("Valkyrie",1);
 	break;
-	
-	default:
+
+	//default:
 		DelEventHandler(EVENT_END_VIDEO,"Main_LogoVideo");
 		DeleteClass(&aviVideoObj);
 		Event("DoInfoShower","sl","game prepare",true);
 		SetEventHandler("frame","Main_Start",1);
-	break;
+	//break;
 	}
 }
 
@@ -415,7 +423,7 @@ void SaveGame()
 	{
 		//implemet interface
 		// LaunchQuickSaveMenu();
-		pchar.version_number = 104;
+		//pchar.version_number = 104;
 		SaveEngineState(saveName);
 		ISetSaveData(saveName,saveData);
 	}
@@ -724,7 +732,7 @@ void OnLoad()
 		pchar.chr_ai.hp = 1.0;
 	}
 
-	Nation_InitAfterLoading();
+	//Nation_InitAfterLoading();
 	ResetSound();
 
 	//CreateClass("dummy");
@@ -926,11 +934,11 @@ void NewGame_continue()
 			LoadMainCharacterInFirstLocationGroup(Pchar.HeroParam.Location, Pchar.HeroParam.Group, Pchar.HeroParam.Locator);
 			SetFunctionTimerCondition("SanBoxStatusCityRemove", 0, 0, 30, false);
 			bGameMenuStart = false;
-			AddQuestRecordInfo("Guide_AtSea", "1");
-			AddQuestRecordInfo("Guide_OnLand", "1");
+			//AddQuestRecordInfo("Guide_AtSea", "1");
+			//AddQuestRecordInfo("Guide_OnLand", "1");
 			DoQuestFunctionDelay("Tutorial_CameraControlFP", 2.5);
 		}
-		else LoadMainCharacterInFirstLocationGroup("Ship_deck_Low", "goto", "goto4");
+		else LoadMainCharacterInFirstLocationGroup("Ship_deck_Low", "goto", "goto7");
 	}
     	
 	UpdateCrewInColonies(); // пересчет наёмников в городах
@@ -1259,7 +1267,10 @@ bool CheckSaveGameEnabled()
 		TmpBool = false;
 	}
 	
-	if(loadedLocation.type == "underwater") TmpBool = false; // belamour запрет в подводной локации
+	if(CheckAttribute(loadedLocation, "type") && loadedLocation.type == "underwater") 
+	{
+		TmpBool = false; // belamour запрет в подводной локации
+	}
 	
 	if (bAbordageStarted) {TmpBool = false;}
 

@@ -360,7 +360,7 @@ bool ProcessCondition(aref condition, int n)
 			return false;
 		break;
 		
-		case "Mushket":
+		case "ItemGroup": // belamour прерывание на группу предмета
 			aref arItems;
 			makearef(arItems, refCharacter.items);
 			int iItemsNum = GetAttributesNum(arItems);
@@ -369,8 +369,7 @@ bool ProcessCondition(aref condition, int n)
 				string sItem = GetAttributeName(GetAttributeN(arItems, i));
 				ref rItem = ItemsFromID(sItem);
 				if(!CheckAttribute(rItem, "groupID")) continue;
-				if(rItem.groupID == MUSKET_ITEM_TYPE) return true;
-				//if(HasSubStr(rItem.id, "mushket")) return true;
+				if(rItem.groupID == condition.group) return true;
 			}
 			return false;
 		break;
@@ -397,12 +396,11 @@ void QuestsCheck()
 	int  n,m;
 	string sQuestName;
 	bool bQuestCompleted;
-	
-	
+
 	makearef(quests,pchar.quest);
-		
+
 	nQuestsNum = GetAttributesNum(quests);
-	
+
 //	trace("nQuestsNum : " + nQuestsNum);
 	for(n = 0; n < nQuestsNum; n++)
 	{
@@ -467,15 +465,13 @@ void QuestsCheck()
 		}
 	}
     nQuestsNum = GetAttributesNum(quests); // оптимизация fix boal
-	for(n = 0; n < nQuestsNum; n++)
+	for(n = nQuestsNum-1; n >= 0; n--)
 	{
-		quest = GetAttributeN(quests,n);
-		if(CheckAttribute(quest,"over") && quest.over=="yes")
+		quest = GetAttributeN(quests, n);
+		if(CheckAttribute(quest, "over") && quest.over == "yes")
 		{
 			// delete quests already completed or failed
-			DeleteAttribute(quests,GetAttributeName(quest));
-			n--;
-			nQuestsNum--;
+			DeleteAttribute(quests, GetAttributeName(quest));
 		}
 	}
 	bQuestCheckProcess = false;

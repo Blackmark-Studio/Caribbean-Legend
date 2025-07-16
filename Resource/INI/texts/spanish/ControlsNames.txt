@@ -47,7 +47,7 @@ Alejar cámara
 
 ChrAiming
 {
-Apuntando (mantener)
+Apuntar (mantener)
 }
 
 ChrAimingShot
@@ -77,12 +77,12 @@ Movimiento horizontal de la cámara que sigue al barco
 
 ShipCamera_Forward
 {
-Acercar
+Acercar cámara
 }
 
 ShipCamera_Backward
 {
-Alejar
+Alejar cámara
 }
 
 DeckCamera_Turn_V
@@ -97,22 +97,22 @@ Rotación horizontal de la cámara (vista de cubierta)
 
 DeckCamera_Forward
 {
-Adelante (vista de cubierta)
+Avanzar (vista de cubierta)
 }
 
 DeckCamera_Backward
 {
-Parte trasera (vista de la cubierta)
+Retroceder (vista de cubierta)
 }
 
 DeckCamera_Left
 {
-Avance por la izquierda (vista de cubierta)
+Desplazar a la izquierda (vista de cubierta)
 }
 
 DeckCamera_Right
 {
-Avance por la derecha (vista de cubierta)
+Desplazar a la derecha (vista de cubierta)
 }
 
 ChrTurnH
@@ -232,7 +232,7 @@ Golpe circular
 
 ChrAttackChoseBase
 {
-Control de combo
+Alternar tipo de ataque (mantener)
 }
 
 ChrBlockBase
@@ -257,7 +257,7 @@ Disparar
 
 ChrFightMode
 {
-Modo combate
+Sacar / Guardar arma
 }
 
 ChrSwitchFightMode
@@ -367,7 +367,7 @@ Disparar cañones
 
 Sea_CameraSwitch
 {
-Modo cámara naval
+Alternar cámara 'Detras del barco'/'En cubierta'
 }
 
 TelescopeMode
@@ -467,57 +467,57 @@ Ayuda
 
 BICommandsActivate
 {
-Comando del Menú
+Menú de acción
 }
 
 LICommandsActivate
 {
-Comando del Menú 
+Menú de acción 
 }
 
 BICommandsConfirm
 {
-Confirmar comando 
+Confirmar acción 
 }
 
 BICommandsCancel
 {
-Cancelar orden 
+Cancelar acción 
 }
 
 BICommandsUp
 {
-Menú Acción - navegar hacia arriba
+Menú de acción - arriba
 }
 
 BICommandsDown
 {
-Menú Acción - navegar hacia abajo
+Menú de acción - abajo
 }
 
 BICommandsLeft
 {
-Desplazar el menú hacia la izquierda
+Menú de acción - izquierda
 }
 
 BICommandsRight
 {
-Desplazar el menú hacia la derecha
+Menú de acción - derecha
 }
 
 MiniMapZoomIn
 {
-Acercar Mini mapa
+Acercar Minimapa
 }
 
 MiniMapZoomOut
 {
-Alejar Mini mapa
+Alejar Minimapa
 }
 
 BIFastCommand
 {
-Comando rápido
+Acción rápida
 }
 
 HelpChooser_Cancel
@@ -527,7 +527,7 @@ Salir del menú de ayuda
 
 HelpChooser_Action
 {
-Ayuda sobre ítem
+Ayuda sobre elemento actual
 }
 
 HelpChooser_Next
@@ -552,12 +552,12 @@ Derecha (Menú ayuda)
 
 HelpChooser_Up
 {
-Adelante (Menú ayuda)
+Arriba (Menú ayuda)
 }
 
 HelpChooser_Down
 {
-Atrás (Menú ayuda)
+Abajo (Menú ayuda)
 }
 
 DlgAction
@@ -572,12 +572,12 @@ Elegir respuesta
 
 DlgUp
 {
-Respuesta previa en un diálogo
+Respuesta anterior en un diálogo
 }
 
 DlgDown
 {
-Próxima opción de diálogo
+Respuesta siguiente en un diálogo
 }
 
 DlgScrollUp
@@ -587,7 +587,7 @@ Desplazar hacia abajo texto del diálogo
 
 DlgScrollDown
 {
-Desplazar hacia abajo texto del diálogo
+Desplazar hacia arriba texto del diálogo
 }
 
 hk_charge1
@@ -697,7 +697,7 @@ FLT_SailAway
 
 FLT_LowerSails
 {
-Órdenes a la flota: arriar velas
+Órdenes a la flota: velas para combate
 }
 
 FLT_ProtFlagship
@@ -842,12 +842,12 @@ Cargar arma de fuego con perdigones (modificador)
 
 HK_harpoon
 {
-Cargar punta de arpón (con modificador)
+Cargar punta de arpón (modificador)
 }
 
 HK_GunEchin
 {
-Cargar clavos (con modificador)
+Cargar clavos (modificador)
 }
 
 HK_grenade
@@ -873,4 +873,25 @@ Ocultar/mostrar IU
 FreeCam
 {
 Cámara libre
+}
+
+TimeScale
+{
+Acelerar/ralentizar el tiempo
+
+}
+
+TimeScaleFasterBA
+{
+Acelerar el tiempo
+}
+
+TimeScaleSlowerBA
+{
+Ralentizar el tiempo
+}
+
+FireCamera_Set
+{
+Vista de puntería
 }

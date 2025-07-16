@@ -229,7 +229,7 @@ Tortuga_Grot_box1		{eine Truhe am Strand}
 Tortuga_Cave			{in einem Kerker von Tortuga}
 Tortuga_Cave_box1		{eine Truhe hinter einer geschlossenen Tür}
 
-Trinidad_Grot			{in einer Höhle gegenüber dem Leuchtturm von Trinidad und Tobago}
+Trinidad_Grot			{in einer Höhle gegenüber dem Leuchtturm von Trinidad}
 Trinidad_Grot_box1		{eine Truhe am Strand}
 
 Martinique_Grot 		{in einer Höhle unweit des Strandes von Lamentin}

@@ -17,7 +17,7 @@ void ProcessDialogEvent()
 		case "First time":
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Dialogs.Svenson")) {
 				if (pchar.questTemp.HelenDrinking.Result == "won") {
-					dialog.text = "Ach, Charles. Danke, dass du vorbeikommst. Ich wollte dir nur für die Zeit danken, die du mit Helen verbracht hast. Das Mädchen musste ihre Wunden heilen, und ich habe gehört, du hattest auch eine gute Zeit, ha-ha! Verdammt, ich bin sogar eifersüchtig!";
+					dialog.text = "Ach, Charles. Danke, dass du vorbeikommst. Ich wollte dir für die Zeit danken, die du mit Helen verbracht hast. Das Mädchen musste ihre Wunden heilen, und ich habe gehört, du hattest auch eine gute Zeit, ha-ha! Verdammt, ich bin sogar eifersüchtig!";
 					link.l1 = "Du bist nicht verärgert? Wegen dem Fass und... allem anderen?";
 					link.l1.go = "after_drinking";
 				} else {
@@ -35,7 +35,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.Saga_Late")) // отсекание при провале по времени
 				{
 					dialog.text = "Oh, mein Freund "+pchar.name+"! Freut mich, dich zu sehen! Was kann ich für dich tun?";
-					link.l1 = "Nur vorbeischauen, um zu sehen, wie es dir geht.";
+					link.l1 = "Wollte nur vorbeischauen, um zu sehen, wie es dir geht.";
 					link.l1.go = "exit";
 					if(CheckAttribute(npchar, "quest.trade_bakaut")) // торговля бакаутом
 					{
@@ -49,15 +49,15 @@ void ProcessDialogEvent()
 				}
 				if(pchar.questTemp.Saga == "svenson")
 				{
-					dialog.text = "Wie kann ich Ihnen helfen, Herr?";
-					link.l1 = "Ich möchte um Ihre Hilfe bitten, Waldteufel.";
+					dialog.text = "Wie kann ich Ihnen helfen, Mister?";
+					link.l1 = "Ich möchte um Ihre Hilfe bitten, Forest Devil.";
 					link.l1.go = "saga";
 					break;
 				}
 				if(pchar.questTemp.Saga == "svenson1")
 				{
 					dialog.text = "Aha, mein Freund "+pchar.name+"! Was sind die Neuigkeiten?";
-					link.l1 = "Ich habe es geschafft, viele interessante Dinge vom Henker zu lernen.";
+					link.l1 = "Ich habe es geschafft, viele interessante Dinge von Hangman zu lernen.";
 					link.l1.go = "saga_11";
 					break;
 				}
@@ -97,7 +97,7 @@ void ProcessDialogEvent()
 					dialog.text = "Wie läuft's? Kann ich dir irgendwie helfen?";
 					if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt") && pchar.questTemp.Saga.SharkHunt == "after_marlow")
 					{
-						link.l3 = "Ich habe mit dem Schwarzen Pastor gesprochen. Leider hat das Ergebnis unseres Gesprächs mich direkt wieder zu Ihnen um Rat gebeten, ich stehe vor einem Rätsel.";
+						link.l3 = "Ich habe mit Black Pastor gesprochen. Leider hat das Ergebnis unseres Gesprächs mich direkt wieder zu dir um Rat gebeten, ich stehe vor einem Rätsel.";
 						link.l3.go = "shark_hunt_2";
 					}
 					if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt") && pchar.questTemp.Saga.SharkHunt == "LSC" && !CheckAttribute(pchar, "questTemp.Saga.BaronReturn"))
@@ -112,7 +112,7 @@ void ProcessDialogEvent()
 					}
 					if (CheckAttribute(pchar, "questTemp.Saga.BaronReturn") && pchar.questTemp.Saga.BaronReturn == "shamane" && !CheckAttribute(npchar, "quest.shamane"))
 					{
-						link.l3 = "Ich habe Nathaniel Hawk von der Insel der Gerechtigkeit abgeholt. Er ist gerade auf meinem Schiff.";
+						link.l3 = "Ich habe Nathaniel Hawk von Justice Island abgeholt. Er ist gerade auf meinem Schiff.";
 						link.l3.go = "nathaniel";
 					}
 					if (CheckAttribute(pchar, "questTemp.Saga.BaronReturn") && pchar.questTemp.Saga.BaronReturn == "treatment")
@@ -127,7 +127,7 @@ void ProcessDialogEvent()
 				if(pchar.questTemp.Saga == "fail_centurion") // провал - потоплен Центурион
 				{
 					dialog.text = "Wie sind die Neuigkeiten, "+pchar.name+"? Wie steht's?";
-					link.l1 = "Oh, es könnte nicht schlimmer sein. Ich habe so viel Arbeit geleistet... Ich habe Jackman aufgespürt, wir haben die Scheiden weggeworfen und ich habe ihn wie den größten Idioten ertränkt, zusammen mit allem, was in seiner Kabine hätte sein können. Jetzt habe ich nichts, um den Gestank von Sharks Namen zu nehmen und die Hitze auf Barbazon zu legen. Ich fürchte, es ist eine verlorene Sache, Jan.";
+					link.l1 = "Oh, es könnte nicht schlimmer sein. Ich habe so viel Arbeit geleistet... Ich habe Jackman aufgespürt, das Feuer eröffnet und ihn wie den größten Idioten ertränkt, zusammen mit allem, was in seiner Kabine hätte sein können. Jetzt habe ich nichts, um den Gestank von Sharks Namen zu nehmen und die Hitze auf Barbazon zu legen. Ich fürchte, es ist eine verlorene Sache, Jan.";
 					link.l1.go = "saga_f_1";
 					break;
 				}
@@ -136,12 +136,13 @@ void ProcessDialogEvent()
 					// вторая проверка времени. Отбираем Элен, со Свенсоном нейтральные отношения - ну не выщло и не вышло, хоть попытались. Данни и Натана - в Марун-Таун
 					if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 					{
-						dialog.text = "Ich habe von deinen heldenhaften Taten gehört! Dannie hat mir die Kurzversion gegeben. Übrigens, wir sind jetzt Freunde. Und Nathan hat sich völlig verändert! All seine Depressionen waren wie weggeblasen, als er seinen 'Centurion' sah.\nAber ich habe schlechte Nachrichten für dich, "+pchar.name+". Wir haben so viel Zeit verschwendet, dass die Erbrechte an Sharps Testament längst verloren gegangen sind und Isla Tesoro zu einer englischen Militärbasis geworden ist. Es gibt nichts mehr, was ich tun könnte, um Ihnen bei Levasseur zu helfen."link.l1 ="Ich bin absolut sprachlos... Wir haben so viele Schwierigkeiten durchgemacht, alles umsonst. Gibt es wirklich nichts, was wir tun können?";
+						dialog.text = "Ich habe von deinen heldenhaften Taten gehört! Dannie hat mir die Kurzversion gegeben. Übrigens, wir sind jetzt Freunde. Und Nathan hat sich völlig verändert! All seine Depressionen waren wie weggeblasen, als er seinen 'Centurion' sah.\nAber ich habe schlechte Nachrichten für dich, "+pchar.name+". Wir haben so viel Zeit verschwendet, dass die Erbrechte an Sharps Testament längst verloren gegangen sind und Isla Tesoro zu einer englischen Militärbasis geworden ist. Es gibt nichts mehr, was ich tun könnte, um dir bei Levasseur zu helfen.";
+						link.l1 = "Ich bin absolut sprachlos... Wir haben so viele Schwierigkeiten durchgemacht, alles umsonst. Gibt es wirklich nichts, was wir tun können?";
 						link.l1.go = "saga_l2";
 					}
 					else
 					{
-						dialog.text = "Ich habe alles über deine Heldentaten gehört! Dannie hat mir die Einzelheiten erzählt. Wir haben uns übrigens versöhnt. Nathan ist kaum wiederzuerkennen. Sobald er seinen 'Zenturio' sah, hat er sein Gemurre wie einen schlechten Traum hinter sich gelassen...";
+						dialog.text = "Ich habe alles über deine Heldentaten gehört! Dannie hat mir die Einzelheiten erzählt. Wir haben uns übrigens versöhnt. Nathan ist kaum wiederzuerkennen. Sobald er seinen 'Centurion' sah, hat er sein Gemurre wie einen schlechten Traum hinter sich gelassen...";
 						link.l1 = "Nathan ist wieder gesund? Das freut mich zu hören!";
 						link.l1.go = "saga_26";
 					}
@@ -170,7 +171,7 @@ void ProcessDialogEvent()
 				}
 				if(pchar.questTemp.Saga == "bakaut") // пришёл от адвоката за деньгами
 				{
-					dialog.text = "Grüße, "+pchar.name+"! Gute Neuigkeiten: Das Ratsmeeting wurde abgehalten und die Bruderschaft der Küste hat einen neuen Kopf gefunden.";
+					dialog.text = "Grüße, "+pchar.name+"! Gute Neuigkeiten: Das Ratsmeeting wurde abgehalten und die Bruderschaft der Küste hat einen neuen Oberhaupt gefunden.";
 					link.l1 = "Guten Nachmittag, Jan. Ich freue mich für dich.";
 					link.l1.go = "saga_44";
 					break;
@@ -191,8 +192,8 @@ void ProcessDialogEvent()
 				}
 				if(CheckAttribute(npchar, "quest.bakaut_sum")) // сам продал бакаут
 				{
-					dialog.text = "Nun, "+pchar.name+"Hast du Molligan eingeholt?";
-					link.l1 = "Ich habe. Er war derjenige, der dein Eisenholz gestohlen hat. Zufällig bin ich auch auf seinen Käufer gestoßen. Es war ein niederländischer Militärkommandant. Ich habe das Produkt an ihn verkauft.";
+					dialog.text = "Nun, "+pchar.name+ "Hast du Molligan eingeholt?";
+					link.l1 = "Habe ich. Er war derjenige, der dein Eisenholz gestohlen hat. Zufällig bin ich auch auf seinen Käufer gestoßen. Es war ein niederländischer Militärkommandant. Ich habe das Produkt an ihn verkauft.";
 					link.l1.go = "saga_59";
 					link.l2 = "Ich habe es getan. Ich habe versucht, ihn zu zwingen, mir seinen Frachtraum zu zeigen... wir gerieten in eine Auseinandersetzung und...jetzt gibt es keinen Molligan mehr. Aber im Laderaum gibt es nichts zu sehen außer Ebenholz und Mahagoni.";
 					link.l2.go = "saga_59_1";
@@ -212,8 +213,8 @@ void ProcessDialogEvent()
 					link.l1.go = "saga_82";
 					break;
 				}
-				if (pchar.questTemp.Saga == "end") sTemp = "Oh, my friend "+pchar.name+"! Pleased to see you! What brings you here?";
-				else sTemp = "Anything else, "+pchar.name+"?";
+				if (pchar.questTemp.Saga == "end") sTemp = "Oh, mein Freund "+pchar.name+"! Ich freue mich, dich zu sehen! Was führt dich hierher?";
+				else sTemp = "Sonst irgendwas, "+pchar.name+"?";
 				dialog.text = sTemp;
 				link.l1 = "Nein, Jan. Im Moment nichts.";
 				link.l1.go = "exit";
@@ -238,7 +239,7 @@ void ProcessDialogEvent()
 					NextDiag.TempNode = "First time";
 					break;
 				}
-				dialog.text = "Kann ich Ihnen bei etwas helfen?";
+				dialog.text = "Kann ich dir bei etwas helfen?";
 				link.l1 = "Nein, mir geht's gut.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "First time";
@@ -264,38 +265,38 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_3":
-			dialog.text = "Hm. Was ist das?";
+			dialog.text = "Hm. Was ist es?";
 			link.l1 = "Jackman sucht nach Gladys Chandler und ihrer Tochter. Nachdem ich mit Higgins gesprochen habe, habe ich angefangen zu denken, dass er nach Rumba sucht. Es scheint, dass Gladys nicht Helens leibliche Mutter ist und ihr Nachname Chandler war, bevor sie Sean McArthur heiratete.";
 			link.l1.go = "saga_4";
 		break;
 		
 		case "saga_4":
 			dialog.text = "Verflucht! Das sind schlechte Nachrichten. Jackman ist stärker als je zuvor. Und dazu habe ich das ungute Gefühl, dass er nicht alleine arbeitet. Er hat einen ziemlich unheimlichen Schatten hinter sich. Wenn er Helen wirklich braucht, dann braucht das Mädchen dringend einen Beschützer. Ich fürchte, ich bin ein wenig zu alt, um das selbst zu tun...";
-			link.l1 = "Das ist nicht alles. Jackman sucht auch nach jemandem namens Henry der Henker, ehemaliger Bootsmann der 'Neptun', aus der Crew von Kapitän Metzger.";
+			link.l1 = "Das ist nicht alles. Jackman sucht auch nach jemandem namens Henry Hangman, ehemaliger Bootsmann der 'Neptune', aus der Crew von Kapitän Butcher.";
 			link.l1.go = "saga_5";
 		break;
 		
 		case "saga_5":
-			dialog.text = "Verdammt! Meine schlimmsten Befürchtungen haben sich bestätigt! Dieser Metzger und sein 'Neptun' haben das ganze Archipel in Angst und Schrecken versetzt. Damals gab es keine Brüder, jeder war auf sich allein gestellt. Dieser Mann hat viele schlechte Dinge getan, eine mir nahestehende Person ist wegen ihm gestorben.\nIch hatte nie die Gelegenheit, ihn zu treffen. Der 'Neptun' wurde von einer englischen Fregatte versenkt und der Metzger wurde in St. John's hingerichtet. Gut so! Obwohl es viele Menschen gab, die sein Glück und seine rücksichtslose Tapferkeit bewunderten.\nJackman selbst war seine rechte Hand und erster Maat auf dem 'Neptun'. Überrascht? Die ehemaligen Verbrecher sind zu Helden der Nation geworden, alles dank Cromwell! Wo ist das gute alte England hin?\nWir müssen Henker Henry finden, bevor Jackmans Männer es tun. Vielleicht hält er den Schlüssel zu diesem Rätsel, wenn er noch lebt.";
+			dialog.text = "Verdammt! Meine schlimmsten Befürchtungen haben sich bestätigt! Dieser Butcher und sein 'Neptune' haben das ganze Archipel in Angst und Schrecken versetzt. Damals gab es keine Brüder, jeder war auf sich allein gestellt. Dieser Mann hat viele schlechte Dinge getan, eine mir nahestehende Person ist wegen ihm gestorben.\nIch hatte nie die Gelegenheit, ihn zu treffen. Der 'Neptune' wurde von einer englischen Fregatte versenkt und Butcher wurde in St. John's hingerichtet. Gut so! Obwohl es viele Menschen gab, die sein Glück und seine rücksichtslose Tapferkeit bewunderten.\nJackman selbst war seine rechte Hand und erster Maat auf dem 'Neptune'. Überrascht? Die ehemaligen Verbrecher sind zu Helden der Nation geworden, alles dank Cromwell! Wo ist das gute alte England hin?\nWir müssen Henry Hangman finden, bevor Jackmans Männer es tun. Vielleicht hält er den Schlüssel zu diesem Rätsel, wenn er noch lebt.";
 			link.l1 = "Ich wette, du hättest es einfacher, eine Nadel im Heuhaufen zu finden. Hast du zumindest irgendeinen Hinweis?";
 			link.l1.go = "saga_6";
 		break;
 		
 		case "saga_6":
-			dialog.text = "Ich kannte Henry, als er noch ein Kind war. Der Sohn einer Hure aus Cartagena, halb Spanier, obwohl er es immer geheim hielt. Seine Mutter war heiß! Kann nicht sagen, dass sie hübsch war, aber es gab sehr wenige Flamencotänzerinnen wie sie. Das ganze Bordell schaute sich Shows der nackten Chica Gonzales und ihrer Kastagnetten an.\nArmes Mädchen. Hatte eine schlimme Krankheit und starb wie eine Kerze. Das war, als ich Henry überredete, nach Providence zu gehen, wo er sich schnell einen Namen machte und sich der Crew von Thomas Beltrope anschloss, einem engen Freund von Nicolas Sharp. Diese beiden waren die letzten Hunde der Königin Elizabeth und arbeiteten immer zusammen. Gute Zeiten!\nThomas segelte zurück nach England, als sein Partner starb. Er nahm seine Crew mit, aber Henry blieb in der Karibik. Segelte unter verschiedenen Kapitänen, bis der Schlächter auftauchte. Übrigens, er bekam seinen Spitznamen wegen einer Entermesser, die er immer bei sich hatte.";
+			dialog.text = "Ich kannte Henry, als er noch ein Kind war. Der Sohn einer Hure aus Cartagena, halb Spanier, obwohl er es immer geheim hielt. Seine Mutter war heiß! Kann nicht sagen, dass sie hübsch war, aber es gab sehr wenige Flamencotänzerinnen wie sie. Das ganze Bordell schaute sich Shows der nackten Chica Gonzales und ihrer Kastagnetten an.\nArmes Mädchen. Hatte eine schlimme Krankheit und starb wie eine Kerze. Das war, als ich Henry überredete, nach Providence zu gehen, wo er sich schnell einen Namen machte und sich der Crew von Thomas Beltrope anschloss, einem engen Freund von Nicolas Sharp. Diese beiden waren die letzten Hunde der Königin Elizabeth und arbeiteten immer zusammen. Gute Zeiten!\nThomas segelte zurück nach England, als sein Partner starb. Er nahm seine Crew mit, aber Henry blieb in der Karibik. Segelte unter verschiedenen Kapitänen, bis Butcher auftauchte. Übrigens, er bekam seinen Spitznamen wegen einer Entermesser, die er immer bei sich hatte.";
 			link.l1 = "Und was sagt uns diese Information?";
 			link.l1.go = "saga_7";
 		break;
 		
 		case "saga_7":
-			dialog.text = "Wenn der Henker sich vor den Piraten versteckt hat, wäre der beste Ort für ihn in einer spanischen Stadt. Besonders in seinem Zuhause in Cartagena, wo er Freunde und Verwandte hat. Henry war ziemlich religiös. Daher ist es unwahrscheinlich, dass er zu einer anderen Heiligenkirche gehen würde. Er hat wahrscheinlich immer noch denselben Namen, den er seit seiner Kindheit hatte, Enrique.";
+			dialog.text = "Wenn Hangman sich vor den Piraten versteckt hat, wäre der beste Ort für ihn in einer spanischen Stadt. Besonders in seinem Zuhause in Cartagena, wo er Freunde und Verwandte hat. Henry war ziemlich religiös. Daher ist es unwahrscheinlich, dass er zu einer anderen Heiligenkirche gehen würde. Er hat wahrscheinlich immer noch denselben Namen, den er seit seiner Kindheit hatte, Enrique.";
 			link.l1 = "Ja... Die Auswahl ist dürftig, aber immerhin ist es besser als nichts.";
 			link.l1.go = "saga_8";
 		break;
 		
 		case "saga_8":
 			dialog.text = "Versuche ihn zu finden, Charles! Nur wenige wissen von Henrys spanischen Wurzeln, daher haben wir hier einen kleinen Vorteil. Ich werde darüber nachdenken, wie ich Rumba dazu überreden kann, deiner Crew beizutreten. Das Mädchen hat Mumm, hat nie unter jemandes Kommando gedient außer dem ihres Vaters.\nAber sie hat weder Schiff noch Crew und sie muss ihren Lebensunterhalt verdienen. Sicher, ich werde Gladys weiterhin helfen, wie ich es immer getan habe, aber ich werde Helen nicht lange in Blueweld halten können. Und einen solchen Offizier wirst du sehr nützlich finden. Sean hat ihr alles beigebracht, was er wusste, und hat sie wie einen Jungen aufgezogen.\nIch würde mich wohler fühlen, wenn sie unter dem Kommando eines solchen Kapitäns wie dir wäre.";
-			link.l1 = "Rumba hat sich als sehr würdig erwiesen. Ich brauche mehr Leute wie sie in meiner Crew. Also, wenn es Ihnen gelingt, sie zu überreden, werde ich sie zu einem Offizier machen. Aber zuerst möchte ich verstehen, wer sie wirklich ist und warum Jackman sie braucht. Ich befürchte, dass er, im Gegensatz zu Donovan, nicht an ihren Reizen interessiert ist. Also werde ich versuchen, Hangman zu finden, obwohl ich nichts versprechen kann.";
+			link.l1 = "Rumba hat sich als sehr würdig erwiesen. Ich brauche mehr Leute wie sie in meiner Crew. Also, wenn es dir gelingt, sie zu überreden, werde ich sie zu einem Offizier machen. Aber zuerst möchte ich verstehen, wer sie wirklich ist und warum Jackman sie braucht. Ich befürchte, dass er, im Gegensatz zu Donovan, nicht an ihren Reizen interessiert ist. Also werde ich versuchen, Hangman zu finden, obwohl ich nichts versprechen kann.";
 			link.l1.go = "saga_9";
 		break;
 		
@@ -332,7 +333,7 @@ void ProcessDialogEvent()
 		
 		case "saga_12":
 			dialog.text = "Bitte, erzähl!";
-			link.l1 = "Vor zwanzig Jahren sollte Henry im Auftrag von Kapitän Butcher eine Kiste Gold an die Pflegemutter seiner leiblichen Tochter übergeben. Es besteht absolut kein Zweifel, dass diese Pflegemutter Mrs. McArthur war. Damals trug sie den Nachnamen Chandler und lebte in Belize. Aber Umstände hielten den Henker einen ganzen zusätzlichen Monat in St. John's auf und als er endlich in Belize ankam, war es nach einem Überfall durch die Spanier in Trümmern, und Tante Gladys und Sean waren bereits unter deinem Schutz auf dem Weg.";
+			link.l1 = "Vor zwanzig Jahren sollte Henry im Auftrag von Kapitän Butcher eine Kiste Gold an die Pflegemutter seiner leiblichen Tochter übergeben. Es besteht absolut kein Zweifel, dass diese Pflegemutter Mrs. McArthur war. Damals trug sie den Nachnamen Chandler und lebte in Belize. Aber Umstände hielten Hangman einen ganzen zusätzlichen Monat in St. John's auf und als er endlich in Belize ankam, war es nach einem Überfall durch die Spanier in Trümmern, und Tante Gladys und Sean waren bereits unter deinem Schutz auf dem Weg.";
 			link.l1.go = "saga_13";
 		break;
 		
@@ -344,7 +345,7 @@ void ProcessDialogEvent()
 		
 		case "saga_14":
 			dialog.text = "Vielleicht führt er jemandes Befehle aus...";
-			link.l1 = "Bezweifle es. Wer könnte ihm Befehle erteilen? Metzger ist tot. Sein Tod wird durch offizielle Dokumente bestätigt. Dutzende, wenn nicht Hunderte von Menschen waren Zeugen seines Todes.";
+			link.l1 = "Bezweifle es. Wer könnte ihm Befehle erteilen? Butcher ist tot. Sein Tod wird durch offizielle Dokumente bestätigt. Dutzende, wenn nicht Hunderte von Menschen waren Zeugen seines Todes.";
 			link.l1.go = "saga_15";
 		break;
 		
@@ -370,7 +371,7 @@ void ProcessDialogEvent()
 		
 		case "saga_18":
 			dialog.text = "Erinnerst du dich, als ich dir sagte, dass ich eine Ahnung hatte, wer Helens wirkliche Mutter war? Jetzt bin ich mir sicher. Ihr Name war Beatrice Sharp. Sie war die biologische Tochter meines Lehrers und Freundes Nicholas Sharp, die erklärte Schwester des Gründers unserer Brüder, Blaze Sharp, und Teilhaberin von Isla Tesoro. Es ist dieses Kartenstück, hinter dem Jackman her ist.";
-			link.l1 = "Nun, wie wäre es damit! Aber warum würde er die Hälfte einer Inselkarte benötigen?";
+			link.l1 = "Nun, das ist doch mal was! Aber warum würde er die Hälfte einer Inselkarte benötigen?";
 			link.l1.go = "saga_19";
 		break;
 		
@@ -382,7 +383,7 @@ void ProcessDialogEvent()
 		
 		case "saga_20":
 			dialog.text = "Du hast recht. Es war keine gute Idee. Und ein schlauer Notar fügte hinzu, dass die Insel zur englischen Krone gehören wird, wenn niemand innerhalb eines Jahres nach dem Tod der Erben beide Teile der Karte vorlegt.\nNiemand hätte das damals erwartet. Und jetzt zahlen wir den Preis für unsere Dummheit. Beatrice starb vor zwanzig Jahren. All diese Jahre sind vergangen und wir haben immer noch keine Ahnung, wo ihr Grab zusammen mit ihrem Teil der Karte ist. Blaze Sharp wurde vor nicht allzu langer Zeit ermordet. Sein Teil ist auch verschwunden.\nWenn niemand innerhalb eines Jahres die ganze Karte von Isla Tesoro den Behörden vorlegt, dann wird Sharptown von England beansprucht. Sie werden einen Gouverneur mit einer Garnison dort schicken und die Bruderschaft wird erledigt sein.";
-			link.l1 = "Was schlagen Sie vor, sollten wir tun?";
+			link.l1 = "Was schlägst du vor, sollten wir tun?";
 			link.l1.go = "saga_21";
 		break;
 		
@@ -393,13 +394,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_22":
-			dialog.text = "Es ist schön, vernünftige Gedanken zu hören! Wir werden den richtigen Weg finden, Tortuga einzunehmen. Das verspreche ich dir. Also, lass uns gehen?";
-			link.l1 = "Auf geht's! Ich schaue später noch einmal vorbei. Überlegen Sie vorerst, wo Sie anfangen sollen, das Problem anzugehen.";
+			dialog.text = "Es ist schön, vernünftige Gedanken zu hören! Wir werden den richtigen Weg finden, Tortuga einzunehmen. Das verspreche ich dir. Also, legen wir los?";
+			link.l1 = "Ja! Ich schaue später noch einmal vorbei. Überlege dir vorerst, wo du anfangen sollst, das Problem anzugehen.";
 			link.l1.go = "saga_23";
 		break;
 		
 		case "saga_23":
-			dialog.text = "Kommen Sie in zwei oder drei Tagen wieder. Ich denke, bis dahin wird mein Plan zur Vollendung gekommen sein. Und vergessen Sie nicht, Helen auf Ihr Schiff mitzunehmen. Das arme Mädchen welkt einfach ohne das Meer. Sie wird eine treue Assistentin sein und Sie müssen nicht zweimal darüber nachdenken, sich auf sie zu verlassen.";
+			dialog.text = "Komm in zwei oder drei Tagen wieder. Ich denke, bis dahin wird mein Plan zur Vollendung gekommen sein. Und vergiss nicht, Helen auf dein Schiff mitzunehmen. Das arme Mädchen welkt einfach ohne das Meer. Sie wird eine treue Assistentin sein und du musst nicht zweimal darüber nachdenken, sich auf sie zu verlassen.";
 			link.l1 = "In Ordnung, Jan. Ich gehe sie jetzt sofort holen.";
 			link.l1.go = "saga_24";
 		break;
@@ -415,8 +416,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_25":
-			dialog.text = "Zuerst müssen Sie den Hai finden. Er wollte Levasseur selbst loswerden und ich versichere Ihnen, dass er einige helle Ideen hat. Natürlich könnten wir auch Marcus dazu überreden, die Führung zu übernehmen. Er ist schließlich der Hüter des Kodex. Aber ich bezweifle, dass er von irgendeinem Nutzen wäre, er hat absichtlich jeden Kontakt mit Levasseur und Tortuga eingeschränkt. Ein Mann der Prinzipien.\nIch habe keine Ahnung, wo Steven und seine Männer sich verstecken, aber seine Fregatte 'Fortune' wurde in Puerto Principe gesehen. Vielleicht kann Zachary Marlow, auch bekannt als der Schwarze Pastor, uns darauf hinweisen, wo wir nach dem Hai suchen sollten. Zweitens müssen wir die Unterstützung der anderen Barone gewinnen, um Dodson zu wählen. Und um das zu tun, müssen wir ihre indischen Splitter sammeln - die Stimmen. Der neue Führer muss alle fünf von ihnen haben. Das ist es, was uns der Kodex im Falle des Todes des vorherigen Anführers sagt.\nLächerlich! Es ist an der Zeit, die Gesetze zu ändern, aber nur der neue Anführer kann das tun. Wir haben bereits meine Stimme. Ich glaube, dass dem Schwarzen Pastor völlig egal ist, wessen Hintern in Sharptown sitzt. Ich hoffe, dass Jackman nicht zuerst mit ihm gesprochen hat. Wir müssen auch sowohl Tyrex als auch Jacques Barbazon überzeugen, die sich gegenseitig hassen. Aber das ist alles irrelevant, bis wir herausfinden, was mit dem Hai passiert ist. Drittens, eines Tages werden wir Jackman töten müssen und ihn durch jemand anderen ersetzen. Er wird nicht mit uns verhandeln.\nZu schade, dass Hawk tot ist! Die Leute vertrauten ihm und wir könnten sein Wort gebrauchen. Wir werden keinen besseren Baron für Maroon Town finden. Es ist möglich, dass Jackman etwas mit Blazes Mord zu tun hat, also ist er auch der Schlüssel zur Entdeckung des zweiten Teils der Karte. Jacob vertraut niemandem und behält wahrscheinlich den Teil der Karte in seiner Kabine auf der 'Centurion'.\nHawks Familie besaß die Fregatte, aber Jackman hat sie sich genauso wie Hawks Baronie angeeignet. Wenn wir den zweiten Teil der Karte in Jackmans Besitz finden, wäre das ein starkes Argument für Stevens Wahl. Besonders für Marcus Tyrex, den Hüter des Kodex, und seine übermäßige Gewissenhaftigkeit in Bezug auf die Ehre. Wir werden Helen ihre Rechte über Isla Tesoro zurückgeben, sobald wir beide Teile der Karte erworben haben.\nWir müssen jedoch vorsichtig sein, Jackman wird nicht untätig bleiben und einfach nur zusehen, wie Sie suchen.";
-			link.l1 = "Nun... Ich bin kurz davor, dem Schwarzen Pastor einen Besuch abzustatten. Erzähl mir von ihm.";
+			dialog.text = "Zuerst musst du Shark finden. Er wollte Levasseur selbst loswerden und ich versichere dir, dass er einige helle Ideen hat. Natürlich könnten wir auch Marcus dazu überreden, die Führung zu übernehmen. Er ist schließlich der Hüter des Kodex. Aber ich bezweifle, dass er von irgendeinem Nutzen wäre, er hat absichtlich jeden Kontakt mit Levasseur und Tortuga eingeschränkt. Ein Mann der Prinzipien.\nIch habe keine Ahnung, wo Steven und seine Männer sich verstecken, aber seine Fregatte 'Fortune' wurde in Puerto Principe gesehen. Vielleicht kann Zachary Marlow, auch bekannt als der Black Pastor, uns darauf hinweisen, wo wir nach Shark suchen sollten. Zweitens müssen wir die Unterstützung der anderen Barone gewinnen, um Dodson zu wählen. Und um das zu tun, müssen wir ihre indischen Splitter sammeln - die Stimmen. Der neue Führer muss alle fünf von ihnen haben. Das ist es, was uns der Kodex im Falle des Todes des vorherigen Anführers sagt.\nLächerlich! Es ist an der Zeit, die Gesetze zu ändern, aber nur der neue Anführer kann das tun. Wir haben bereits meine Stimme. Ich glaube, dass dem Black Pastor völlig egal ist, wessen Hintern in Sharptown sitzt. Ich hoffe, dass Jackman nicht zuerst mit ihm gesprochen hat. Wir müssen auch sowohl Tyrex als auch Jacques Barbazon überzeugen, die sich gegenseitig hassen. Aber das ist alles irrelevant, bis wir herausfinden, was mit Shark passiert ist. Drittens, eines Tages werden wir Jackman töten müssen und ihn durch jemand anderen ersetzen. Er wird nicht mit uns verhandeln.\nZu schade, dass Hawk tot ist! Die Leute vertrauten ihm und wir könnten sein Wort gebrauchen. Wir werden keinen besseren Baron für Maroon Town finden. Es ist möglich, dass Jackman etwas mit Blazes Mord zu tun hat, also ist er auch der Schlüssel zur Entdeckung des zweiten Teils der Karte. Jacob vertraut niemandem und behält wahrscheinlich den Teil der Karte in seiner Kabine auf der 'Centurion'.\nHawks Familie besaß die Fregatte, aber Jackman hat sie sich genauso wie Hawks Baronie angeeignet. Wenn wir den zweiten Teil der Karte in Jackmans Besitz finden, wäre das ein starkes Argument für Stevens Wahl. Besonders für Marcus Tyrex, den Hüter des Kodex, und seine übermäßige Gewissenhaftigkeit in Bezug auf die Ehre. Wir werden Helen ihre Rechte über Isla Tesoro zurückgeben, sobald wir beide Teile der Karte erworben haben.\nWir müssen jedoch vorsichtig sein, Jackman wird nicht untätig bleiben und einfach nur zusehen, wie wir suchen.";
+			link.l1 = "Nun... Ich bin kurz davor, dem Black Pastor einen Besuch abzustatten. Erzähl mir von ihm.";
 			link.l1.go = "shark_hunt";
 			pchar.questTemp.Saga = "baronsquests_1";
 		break;
@@ -447,20 +448,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shark_hunt_3":
-			dialog.text = "Das ist wirklich verdächtig. Mach weiter.";
-			link.l1 = "Einen Monat später kehrte Dodson nicht zurück und der Pastor nahm die Fregatte gemäß den Bedingungen der Vereinbarung für sich selbst und verkaufte sie für einen guten Preis an einen Kerl namens Paterson. Was unsere Angelegenheiten betrifft, erwähnte Zachary, dass Shark möglicherweise zur legendären Insel der Gerechtigkeit aufgebrochen ist, die angeblich irgendwo nicht weit nordwestlich von Kuba liegt.";
+			dialog.text = "Das ist wirklich verdächtig. Rede weiter.";
+			link.l1 = "Einen Monat später kehrte Dodson nicht zurück und der Pastor nahm die Fregatte gemäß den Bedingungen der Vereinbarung für sich selbst und verkaufte sie für einen guten Preis an einen Kerl namens Paterson. Was unsere Angelegenheiten betrifft, erwähnte Zachary, dass Shark möglicherweise zur legendären Insel Justice Island aufgebrochen ist, die angeblich irgendwo nicht weit nordwestlich von Kuba liegt.";
 			link.l1.go = "shark_hunt_4";
 		break;
 		
 		case "shark_hunt_4":
-			dialog.text = "Ich habe von der Insel der Gerechtigkeit gehört. Sie sagen, dass es eine Insel gibt, auf der Weiße und Schwarze friedlich zusammenleben, als Gleiche. Bullshit, verbreitet von allerlei Träumern. Aber es besteht die Möglichkeit, dass im Nordwesten eine Art Schmugglerbasis existiert. Ihre Barken wurden vor zehn Jahren regelmäßig auf hoher See gesehen. Sie brachten verschiedene Waren nach Kuba im Austausch für Lebensmittel.";
-			link.l1 = "Schätze für Essen? Der Pastor hat mir auch von den Rindfleischverschiffenden Freibeutern erzählt. Es ist ziemlich viel ein wandelnder Widerspruch.";
+			dialog.text = "Ich habe von Justice Island gehört. Sie sagen, dass es eine Insel gibt, auf der Weiße und Schwarze friedlich zusammenleben, als Gleiche. Bullshit, verbreitet von allerlei Träumern. Aber es besteht die Möglichkeit, dass im Nordwesten eine Art Schmugglerbasis existiert. Ihre Barken wurden vor zehn Jahren regelmäßig auf hoher See gesehen. Sie brachten verschiedene Waren nach Kuba im Austausch für Lebensmittel.";
+			link.l1 = "Schätze für Essen? Der Pastor hat mir auch von den Rindfleischverschiffenden Freibeutern erzählt. Es ist praktisch ein wandelnder Widerspruch.";
 			link.l1.go = "shark_hunt_5";
 		break;
 		
 		case "shark_hunt_5":
-			dialog.text = "Diese Gerüchte müssen eine Quelle haben, diese Schmuggler- oder Seeräuberschiffe segelten aus irgendeinem Grund in diese Region. Ich erinnere mich, dass der Hai mir Geschichten aus seiner Jugend erzählte, er war eine Art Sklave bei einer merkwürdigen Formation aus Schiffswracks mitten im Meer.\nVielleicht ist das unser Ort? Keine Ahnung. Jedenfalls hat der Pastor recht, irgendwas ist da draußen, entweder eine geheime Basis oder eine Insel, auf die der Hai hätte gehen können. Hör zu, segle nach Santo Domingo und finde einen Wissenschaftler namens Jose Dios.\nEr ist ein spanischer Kartograph. Ich habe ihn einmal vor dreckigem Gesindel gerettet, ich respektiere gebildete Leute. Er wird dir helfen, sag ihm einfach meinen Namen. Geh nach Hispaniola, finde Dios und sprich mit ihm.\nEr kennt unsere Region's Geographie perfekt und wenn er dir nicht helfen kann - kann es niemand.";
-			link.l1 = "In Ordnung, Jan. Klingt nach einem Plan. Los geht's!";
+			dialog.text = "Diese Gerüchte müssen eine Quelle haben, diese Schmuggler- oder Seeräuberschiffe segelten aus irgendeinem Grund in diese Region. Ich erinnere mich, dass Shark mir Geschichten aus seiner Jugend erzählte, er war eine Art Sklave bei einer merkwürdigen Formation aus Schiffswracks mitten im Meer.\nVielleicht ist das unser Ort? Keine Ahnung. Jedenfalls hat der Pastor recht, irgendwas ist da draußen, entweder eine geheime Basis oder eine Insel, auf die Shark hätte gehen können. Hör zu, segle nach Santo Domingo und finde einen Wissenschaftler namens Jose Dios.\nEr ist ein spanischer Kartograph. Ich habe ihn einmal vor dreckigem Gesindel gerettet, ich respektiere gebildete Leute. Er wird dir helfen, sag ihm einfach meinen Namen. Geh nach Hispaniola, finde Dios und sprich mit ihm.\nEr kennt unsere Region's Geographie perfekt und wenn er dir nicht helfen kann - kann es niemand.";
+			link.l1 = "In Ordnung, Jan. Klingt nach einem Plan. Ich mach mich auf den Weg!";
 			link.l1.go = "shark_hunt_6";
 		break;
 		
@@ -477,14 +478,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "baron_return":
-			dialog.text = "Niemand hat seinen Tod bezeugt, genauso wie niemand seinen Körper gesehen hat. Er ist einfach vor einigen Monaten verschwunden. Seitdem ist es genauso wie mit dem Hai, weder Fell noch Federn. Aber im Gegensatz zu Steven hatte Nathan keinen Grund, sich zu verstecken. Aus diesem Grund haben alle angenommen, dass er in der Selva gestorben ist. Wenn das nicht der Fall gewesen wäre, hätten sie nicht zugestimmt, Jackman an seiner Stelle zu wählen.";
+			dialog.text = "Niemand hat seinen Tod bezeugt, genauso wie niemand seinen Körper gesehen hat. Er ist einfach vor einigen Monaten verschwunden. Seitdem ist es genauso wie mit Shark. Aber im Gegensatz zu Steven hatte Nathan keinen Grund, sich zu verstecken. Aus diesem Grund haben alle angenommen, dass er in der Selva gestorben ist. Wenn das nicht der Fall gewesen wäre, hätten sie nicht zugestimmt, Jackman an seiner Stelle zu wählen.";
 			link.l1 = "Was zum Teufel hat Hawk im Dschungel gemacht?";
 			link.l1.go = "baron_return_1";
 		break;
 		
 		case "baron_return_1":
 			dialog.text = "Es war mein Fehler, ich bin ein alter Narr! Ich hatte ihn dazu überredet, sich um die neu angekommenen Banditen zu kümmern. Ich habe keine Ahnung, wer sie sind und wer ihr Boss ist. Normalerweise würde es mich nicht interessieren, aber sie begannen, freundliche Miskitos zu entführen. Ihr Kriegshäuptling Kumvana drohte, den Kriegspfad zu erklären und bat um meine Hilfe. Ich hatte keine andere Wahl, als einzugreifen.\nHawk landete mit einer kleinen Einheit an der Moskitoküste, geriet in einen hervorragend organisierten Hinterhalt und wurde dann besiegt. Es sah so aus, als ob er und seine Männer erwartet wurden, dort zu landen. Hawks Leiche wurde nicht unter den anderen im Dschungel gefunden.";
-			link.l1 = "Unter Ihrer Nase geschehen allerlei Schabernack! Hat keiner von Hawks Leuten versucht, die Banditen zu bewältigen?";
+			link.l1 = "Unter deiner Nase geschehen allerlei Schabernack! Hat keiner von Hawks Leuten versucht, die Banditen zu bewältigen?";
 			link.l1.go = "baron_return_2";
 		break;
 		
@@ -524,14 +525,14 @@ void ProcessDialogEvent()
 		
 		case "return_LSC":
 			dialog.text = "Nun, warum das lange Gesicht. Bist du müde? Vielleicht ein Glas Rum für dich?";
-			link.l1 = "Es würde mir nichts ausmachen...";
+			link.l1 = "Würde mir nichts ausmachen...";
 			link.l1.go = "return_LSC_1";
 		break;
 		
 		case "return_LSC_1":
 			LAi_AlcoholSetDrunk(pchar, 51, 5600);
 			dialog.text = "Hier, nimm ein Glas. Jetzt sprich.";
-			link.l1 = "(trinkend) Ah, das ist viel besser... Nun, Jan, du und der Schwarze Pastor hattet beide recht. Die Insel der Gerechtigkeit existiert. Ich war dort.";
+			link.l1 = "(trinkend) Ah, das ist viel besser... Nun, Jan, du und der Black Pastor hattet beide recht. Die Insel Justice Island existiert. Ich war dort.";
 			link.l1.go = "return_LSC_2";
 		break;
 		
@@ -543,7 +544,7 @@ void ProcessDialogEvent()
 		
 		case "return_LSC_3":
 			dialog.text = "Ich kann es nicht glauben! Jose Dios wird sich sicherlich sehr für deine Geschichte interessieren, da bin ich mir sicher. Besuch ihn übrigens eines Tages.";
-			link.l1 = "Ich werde ihn später besuchen. Jetzt ist nicht die beste Zeit dafür. Ich habe im Moment dringendere Angelegenheiten zu erledigen. Ich habe Nathaniel Hawk auf der Insel der Gerechtigkeit gefunden.";
+			link.l1 = "Ich werde ihn später besuchen. Jetzt ist nicht die beste Zeit dafür. Ich habe im Moment dringendere Angelegenheiten zu erledigen. Ich habe Nathaniel Hawk auf Justice Island gefunden.";
 			link.l1.go = "return_LSC_4";
 		break;
 		
@@ -561,7 +562,7 @@ void ProcessDialogEvent()
 		
 		case "return_LSC_6":
 			dialog.text = "Was, du hast ihn nicht hierher gebracht? Warum?";
-			link.l1 = "Weil es nichts gab, mit dem er ihn aufnehmen konnte. Ich habe mich ohne Schiff zur Insel durchgeschlagen.";
+			link.l1 = "Weil es nichts gab, mit dem ich ihn aufnehmen konnte. Ich habe mich ohne Schiff zur Insel durchgeschlagen.";
 			link.l1.go = "return_LSC_7";
 		break;
 		
@@ -591,7 +592,7 @@ void ProcessDialogEvent()
 		
 		case "return_LSC_11":
 			dialog.text = "Ich bin absolut verblüfft, "+pchar.name+"! Es ist genau so, wie die Engländer sagen. Du wurdest mit einem silbernen Löffel im Mund geboren. Du bist ein verdammt glücklicher Sohn einer Hündin! Gut, ich werde dir einfach glauben, obwohl es schwer fällt. Aber die Sache mit Nathan bleibt die gleiche, ihm muss geholfen werden.";
-			link.l1 = "Das ist es, was ich vorhabe. Ich bereite eine Expedition zur Insel der Gerechtigkeit vor. Jetzt habe ich alles, was ich brauche: die Koordinaten der Insel und die Segelanweisungen.";
+			link.l1 = "Das ist es, was ich vorhabe. Ich bereite eine Expedition zu Justice Island vor. Jetzt habe ich alles, was ich brauche: die Koordinaten der Insel und die Segelanweisungen.";
 			link.l1.go = "return_LSC_12";
 		break;
 		
@@ -602,7 +603,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "return_LSC_13":
-			dialog.text = "Also, er ist wirklich dorthin gegangen! Nun, "+pchar.name+", Sie haben hervorragende Arbeit geleistet. Wie geht es Dodson dort drüben? Sie haben natürlich mit ihm gesprochen, nicht wahr?";
+			dialog.text = "Also, er ist wirklich dorthin gegangen! Nun, "+pchar.name+", Du hast hervorragende Arbeit geleistet. Wie geht es Dodson dort drüben? Du hast natürlich mit ihm gesprochen, nicht wahr?";
 			if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie"))
 			{
 				link.l1 = "Ich habe nicht nur mit ihm geredet. Wir sind auch Freunde geworden. Er hat mir die Segelanweisungen gegeben, die ich brauche, um zur Insel zurückzukehren. Steven hat zugestimmt, die Kabine seines Kriegsschiffes gegen die Residenz von Sharptown zu tauschen.";
@@ -622,8 +623,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "return_LSC_15":
-			dialog.text = "Ich kann es kaum erwarten! Jetzt wird alles besser. Wir sind gerade mächtiger geworden, "+pchar.name+". Wann planen Sie, zur Insel zurückzukehren?";
-			link.l1 = "Gerade jetzt. Ich bin nur für eine Minute hierher gekommen, um dir von den Neuigkeiten zu erzählen, während Danielle die Vorbereitungen für die Expedition trifft. Sie stirbt vor Sehnsucht, ihren Nathan zu sehen. Und weißt du was, Jan, sie ist nicht so eine Hexe.";
+			dialog.text = "Ich kann es kaum erwarten! Jetzt wird alles besser. Wir sind gerade mächtiger geworden, "+pchar.name+". Wann planst du, zur Insel zurückzukehren?";
+			link.l1 = "Gerade jetzt. Ich bin nur für eine Minute hierher gekommen, um dir von den Neuigkeiten zu erzählen, während Danielle die Vorbereitungen für die Expedition trifft. Sie stirbt vor Sehnsucht, ihren Nathan zu sehen. Und weißt du was, Jan, sie ist nicht so eine Schlampe.";
 			link.l1.go = "return_LSC_16";
 		break;
 		
@@ -640,8 +641,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "return_LSC_18":
-			dialog.text = "Hah! Das ist zu schade... Was gibt es da zu überlegen? Wir müssen einfach Tyrex überzeugen, die Bruderschaft zu leiten. Außerdem ist Tyrex nach Blaze als Hüter des Kodex unsere respektabelste Figur. Aber zuerst müssen wir Hawk zurückbringen, um wenigstens ein Ass im Ärmel zu haben. Wann brecht ihr zur Insel der Gerechtigkeit auf?";
-			link.l1 = "Gerade jetzt. Ich bin nur kurz hierher gekommen, um dir von den Neuigkeiten zu erzählen, während Danielle die Vorbereitungen für die Expedition trifft. Sie kann es kaum erwarten, ihren Nathan zu sehen. Und weißt du was, Jan, sie ist nicht so eine Hexe.";
+			dialog.text = "Hah! Das ist zu schade... Was gibt es da zu überlegen? Wir müssen einfach Tyrex überzeugen, die Bruderschaft zu leiten. Außerdem ist Tyrex nach Blaze als Hüter des Kodex unsere respektabelste Figur. Aber zuerst müssen wir Hawk zurückbringen, um wenigstens ein Ass im Ärmel zu haben. Wann brichst du nach Justice Island auf?";
+			link.l1 = "Gerade jetzt. Ich bin nur kurz hierher gekommen, um dir von den Neuigkeiten zu erzählen, während Danielle die Vorbereitungen für die Expedition trifft. Sie kann es kaum erwarten, ihren Nathan zu sehen. Und weißt du was, Jan, sie ist nicht so eine Schlampe.";
 			link.l1.go = "return_LSC_16";
 		break;
 		
@@ -688,7 +689,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = "Das ist natürlich nett, aber warum ist Dodson noch nicht bei mir vorbeigekommen? Was, hast du ihn auf der Insel gelassen?";
-					link.l1 = "Hm... Ich war in Eile, Nathan zum Schlangenauge zu bringen...";
+					link.l1 = "Hm... Ich war in Eile, Nathan zu Snake Eye zu bringen...";
 					link.l1.go = "nathaniel_wait";
 				}
 			}
@@ -724,13 +725,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "barbazon":
-			dialog.text = "Der Schwarze Pastor war sehr deutlich, er interessiert sich nur für dieses theologische Buch. Ich habe meine Männer losgeschickt, um danach zu suchen, vielleicht wird jemand es finden. Marcus Tyrex ist kein Problem, wir werden keine Schwierigkeiten haben, ihn zu überzeugen. Jackman hat Maroon Town kurz nach deinem Besuch verlassen. Er segelte irgendwo auf der 'Centurion', der Fregatte der Falken.\nEs bleibt nur noch Barbazon - er ist auch bekannt als Jacques der Gütige. Wir müssen einen Weg finden, ihn zur Zusammenarbeit zu bewegen. Ich bin mir noch nicht sicher, wie das gehen soll. Aber eines ist offensichtlich - du solltest ihn besuchen.";
+			dialog.text = "Der Black Pastor war sehr deutlich, er interessiert sich nur für dieses theologische Buch. Ich habe meine Männer losgeschickt, um danach zu suchen, vielleicht wird jemand es finden. Marcus Tyrex ist kein Problem, wir werden keine Schwierigkeiten haben, ihn zu überzeugen. Jackman hat Maroon Town kurz nach deinem Besuch verlassen. Er segelte irgendwo auf der 'Centurion', der Fregatte von Hawk.\nEs bleibt nur noch Barbazon - er ist auch bekannt als Jacques Kindman. Wir müssen einen Weg finden, ihn zur Zusammenarbeit zu bewegen. Ich bin mir noch nicht sicher, wie das gehen soll. Aber eines ist offensichtlich - du solltest ihn besuchen.";
 			link.l1 = "Erzähl mir über Barbazon."; // Addon 2016-1 Jason пиратская линейка патч 17/1
 			link.l1.go = "barbazon_1";
 		break;
 		
 		case "barbazon_1":
-			dialog.text = "Heimlichtuer. Tut so, als wäre er arm, doch er ist möglicherweise der reichste Mann in der Karibik. Er kontrolliert alle Schmuggeloperationen des Ostens. Wäre Marcus nicht gegen ihn, würde er den gesamten Schmuggelverkehr auf den Inseln unter dem Winde beherrschen. Tyrex ist wie ein Knochen in seinem Hals.\nSie streiten sich immer im Rat, aber Barbazon hat nicht den Mumm, einen offenen Krieg zu erklären. Vielleicht war er wirklich einmal ein Pirat von Dünkirchen, wie er behauptet, aber jetzt erinnert er mich mehr an einen Wucherer.";
+			dialog.text = "Heimlichtuer. Tut so, als wäre er arm, doch er ist möglicherweise der reichste Mann in der Karibik. Er kontrolliert alle Schmuggeloperationen des Ostens. Wäre Marcus nicht gegen ihn, würde er den gesamten Schmuggelverkehr auf den Inseln unter dem Winde beherrschen. Tyrex ist wie ein Knochen in seinem Hals.\nSie streiten sich immer im Rat, aber Barbazon hat nicht den Mumm, einen offenen Krieg zu erklären. Vielleicht war er wirklich einmal ein Pirat von Dunkirk, wie er behauptet, aber jetzt erinnert er mich mehr an einen Wucherer.";
 			link.l1 = "Wie zur Hölle wurde er zum Baron gewählt?";
 			link.l1.go = "barbazon_2";
 		break;
@@ -750,7 +751,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "barbazon_3":
-			dialog.text = "Tun Sie einfach so, als wären Sie einer dieser Tölpel, die einen Tipp für einen fetten Job brauchen. Denken Sie nicht einmal daran, ihn bei seinem Anteil zu täuschen. Der gütige Barbazon vergibt nicht.";
+			dialog.text = "Tu einfach so, als wärst du einer dieser Tölpel, die einen Tipp für einen fetten Job brauchen. Denke nicht einmal daran, ihn bei seinem Anteil zu täuschen. Der gütige Barbazon vergibt nicht.";
 			link.l1 = "Das versteht sich von selbst. Ich mische mich nicht für meinen eigenen Gewinn mit ihm ein. Wie auch immer, es ist Zeit, ihn zu besuchen.";
 			link.l1.go = "barbazon_4";
 		break;
@@ -768,7 +769,7 @@ void ProcessDialogEvent()
 		
 		// Addon 2016-1 Jason пиратская линейка патч 17/1
 		case "barbazon_5":
-			dialog.text = "Wirklich? Schieß.";
+			dialog.text = "Wirklich? Was ist es?";
 			link.l1 = "Hast du jemals von Charlie Prince gehört?"; 
 			link.l1.go = "barbazon_6";
 		break;
@@ -781,7 +782,7 @@ void ProcessDialogEvent()
 		
 		case "barbazon_7":
 			dialog.text = "Verdammt nochmal! Du bist Charlie Prince? Was für eine Wendung! "+pchar.name+", ich bin beeindruckt! Jetzt sehe ich, woher dein Griff stammt... Aber was hat Barbazon damit zu tun?";
-			link.l1 = "Wie wäre es, wenn der Prinz Barbazon einen Besuch abstatten würde, Jan?.."; 
+			link.l1 = "Wie wäre es, wenn Charlie Prince Barbazon einen Besuch abstatten würde, Jan?.."; 
 			link.l1.go = "barbazon_8";
 		break;
 		
@@ -828,7 +829,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_27":
-			dialog.text = "Großartig, zeig mir das.\nWir hatten recht, Jacob war es, der Blaze getötet hat. Nun soll der Fleck auf Sharks Namen endgültig entfernt werden. Was den Beweis betrifft, so ist das eine heiklere Angelegenheit. Und sie muss erst nach sehr gründlicher Überlegung angegangen werden.";
+			dialog.text = "Großartig, zeig mir es.\nWir hatten recht, Jacob war es, der Blaze getötet hat. Nun soll der Fleck auf Sharks Namen endgültig entfernt werden. Was den Beweis betrifft, so ist das eine heiklere Angelegenheit. Und sie muss erst nach sehr gründlicher Überlegung angegangen werden.";
 			link.l1 = "Noch etwas, Jan. Schaue dir diesen Zettel an. Er war auch unter Jackmans Sachen.";
 			link.l1.go = "saga_28";
 		break;
@@ -847,10 +848,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_30":
-			dialog.text = "Wiederbelebung der Vergangenheit... Ich beabsichtige, eine Strafexpedition zu organisieren und jeden Banditen in den Minen auszulöschen. Jetzt haben wir Beweise, dass sie Jackmans Männer sind und ich bin verpflichtet, meine Territorien von diesem Abschaum zu säubern.\n"+pchar.name+", du hast hervorragende Arbeit geleistet. Es ist Zeit für mich, meinen Hintern in Bewegung zu setzen. Du sollst dich jetzt ausruhen. Geh und besuche die Falken. Komm in zehn Tagen zurück!";
-			link.l1 = "Gut, Jan.  Werde ich tun. Ich komme genau zu der Zeit zurück, die du gesagt hast!";
+			dialog.text = "Wiederbelebung der Vergangenheit... Ich beabsichtige, eine Strafexpedition zu organisieren und jeden Banditen in den Minen auszulöschen. Jetzt haben wir Beweise, dass sie Jackmans Männer sind und ich bin verpflichtet, meine Territorien von diesem Abschaum zu säubern.\n"+pchar.name+", du hast hervorragende Arbeit geleistet. Es ist Zeit für mich, meinen Hintern in Bewegung zu setzen. Du sollst dich jetzt ausruhen. Geh und besuche Hawk. Komm in zehn Tagen zurück!";
+			link.l1 = "Gut, Jan. Werde ich tun. Ich komme genau zu der Zeit zurück, die du gesagt hast!";
 			link.l1.go = "saga_31";
-			link.l2 = "Ha! Ich möchte auch an diesem Kreuzzug teilnehmen. Warum haben Sie sich entschieden, mich in die Erholungszeit zu stecken?";
+			link.l2 = "Ha! Ich möchte auch an diesem Kreuzzug teilnehmen. Warum hast du dich entschieden, mich in die Erholungszeit zu stecken?";
 			link.l2.go = "saga_31_1";
 		break;
 		
@@ -861,8 +862,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_31_2":
-			dialog.text = "Kommen Sie in drei Tagen mit Ihren Leuten zur Moskitoküste. Bis dahin werde ich meine Mannschaft versammelt haben und werde bereits auf Sie warten. Kommen Sie nicht zu spät!";
-			link.l1 = "In Ordnung, Waldteufel. Ich kann es kaum erwarten, mit dir Rücken an Rücken in die Schlacht zu ziehen! Bis bald!";
+			dialog.text = "Komm in drei Tagen mit deinen Leuten zur Moskitoküste. Bis dahin werde ich meine Mannschaft versammelt haben und werde bereits auf dich warten. Komm nicht zu spät!";
+			link.l1 = "In Ordnung, Forest Devil. Ich kann es kaum erwarten, mit dir Rücken an Rücken in die Schlacht zu ziehen! Bis bald!";
 			link.l1.go = "saga_31";
 			npchar.quest.mine_tw = "true";
 		break;
@@ -914,7 +915,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_33":
-			dialog.text = "Lass das eine Lektion für jeden sein, der denkt, dass der Waldteufel rostig ist. Ich habe in den letzten Jahren wirklich zu viel herumgelungert und was ist passiert? Jackman hat seinen bösen Plan direkt unter meiner Nase ausgebreitet!";
+			dialog.text = "Lass das eine Lektion für jeden sein, der denkt, dass der Forest Devil rostig ist. Ich habe in den letzten Jahren wirklich zu viel herumgelungert und was ist passiert? Jackman hat seinen bösen Plan direkt unter meiner Nase ausgebreitet!";
 			link.l1 = "Was hast du in dieser Mine gesehen? Erzähl mir davon!";
 			link.l1.go = "saga_34";
 		break;
@@ -932,7 +933,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_36":
-			dialog.text = "Noch eine Sache. Mir fällt etwas Seltsames ein. Blaze erwähnte einmal eine verlassene spanische Goldmine und dass er ihr Gold in Sharptown investieren wollte. Aber die Karte der Mine verschwand, nachdem seine Schwester mit Kapitän Metzger weggelaufen war. Vielleicht sprach er von unserer Mine? \nEgal, das war vor zu langer Zeit und ändert nicht viel ... Du und ich sollten uns um den Rat kümmern. Hast du alle fünf Splitter?";
+			dialog.text = "Noch eine Sache. Mir fällt etwas Seltsames ein. Blaze erwähnte einmal eine verlassene spanische Goldmine und dass er ihr Gold in Sharptown investieren wollte. Aber die Karte der Mine verschwand, nachdem seine Schwester mit Kapitän Butcher weggelaufen war. Vielleicht sprach er von unserer Mine? \nEgal, das war vor zu langer Zeit und ändert nicht viel ... Du und ich sollten uns um den Rat kümmern. Hast du alle fünf Splitter?";
 			link.l1 = "Ja. Diese vier: Nathaniel, Tyrex, Marlow und Barbazon. Alle haben ihr Ja gegeben.";
 			link.l1.go = "saga_37";
 		break;
@@ -968,7 +969,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_41":
-			dialog.text = "Ich denke nicht nur so, ich bin mir sicher. Haben Sie jemals Geschäfte mit Beamten machen müssen? Wissen Sie, dass, wenn sie etwas von Ihnen wollen, sie Ihnen die Seele herausreißen, Ihre Nase auf ein fehlplatziertes Komma richten, alles so interpretieren, wie sie es brauchen und Sie so nackt wie ein blindes Kätzchen hinterlassen.\nDeshalb wurden Anwälte geschaffen. Sie bekämpfen die Beamten mit ihren eigenen Waffen - dem Geschwätz, dem verschütteten Tintenfass und der Arglist. Daher sollten Sie Loxley einen Besuch abstatten und ihn engagieren, um unsere Interessen zu schützen, während ich mich um die Wahlen kümmere.";
+			dialog.text = "Ich denke nicht nur so, ich bin mir sicher. Hast du jemals Geschäfte mit Beamten machen müssen? Weißt du, dass wenn sie etwas von dir wollen, sie dir die Seele herausreißen, deine Nase auf ein fehlplatziertes Komma richten, alles so interpretieren, wie sie es brauchen und dich so nackt wie ein blindes Kätzchen hinterlassen.\nDeshalb wurden Anwälte geschaffen. Sie bekämpfen die Beamten mit ihren eigenen Waffen - dem Geschwätz, dem verschütteten Tintenfass und der Arglist. Daher solltest du Loxley einen Besuch abstatten und ihn engagieren, um unsere Interessen zu schützen, während ich mich um die Wahlen kümmere.";
 			link.l1 = "In Ordnung. Ich gehe nach Port Royal. Wie lange wird es dauern, bis der Rat sich trifft und eine Wahl abhält?";
 			link.l1.go = "saga_42";
 		break;
@@ -990,14 +991,14 @@ void ProcessDialogEvent()
 		case "saga_44":
 			sTemp = "Steven Dodson";
 			if (CheckAttribute(pchar, "questTemp.Saga.DodsonDie")) sTemp = "Marcus Tyrex";
-			dialog.text = ""+sTemp+" sendet seine herzlichsten Grüße. Er wird sich immer freuen, Sie in seiner Residenz auf Isla Tesoro zu sehen. Besuchen Sie ihn, wenn sich die Gelegenheit ergibt.";
-			link.l1 = "Sicherzustellen "+sTemp+" wird seine neue Residenz nicht verlassen, du und ich, Jan, wir haben noch ein bisschen Arbeit vor uns.";
+			dialog.text = ""+sTemp+" sendet seine herzlichsten Grüße. Er wird sich immer freuen, dich in seiner Residenz auf Isla Tesoro zu sehen. Besuch ihn, wenn sich die Gelegenheit ergibt.";
+			link.l1 = " Um sicherzustellen dass "+sTemp+" seine neue Residenz nicht verlassen wird, haben du und ich, Jan, noch ein bisschen Arbeit vor uns.";
 			link.l1.go = "saga_45";
 		break;
 		
 		case "saga_45":
-			sTemp = "four hundred and fifty";
-			if(CheckAttribute(pchar,"questTemp.Mtraxx.Cartahena.Gold")) sTemp = "one thousand";
+			sTemp = "Vierhundertfünfzig";
+			if(CheckAttribute(pchar,"questTemp.Mtraxx.Cartahena.Gold")) sTemp = "Eintausend";
 			dialog.text = "Ich nehme an, du hast Loxley bereits besucht...";
 			link.l1 = "Ja, habe ich. Er übernimmt unseren Fall, aber er verlangte einen Haufen Gold für seine Dienste. "+sTemp+" Dublonen im Voraus. Voraus! Und wir müssen ihm auch noch mehr bezahlen, je nachdem, wie gut Helens Nachweis der Rechte verläuft. Die Summe wird sich verdoppeln oder verdreifachen, wie er sagte.";
 			link.l1.go = "saga_46";
@@ -1016,13 +1017,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_48":
-			dialog.text = "Hör zu. Vielleicht wissen Sie bereits, dass unsere Siedlung nur halb legal ist. Die Engländer halten hier eine Garnison und wir liefern ihnen Mahagoni zu einem guten Preis. Aber es gibt eine sehr schwere und haltbare Art von Holz - Lignum Vitae, das Sie als Eisenholz kennen sollten.\nEs ist selten und schwer zu verarbeiten, selbst mit gehärtetem Stahl. Sie sagen, dass die Maya-Itza vor langer Zeit ihre schrecklichen Keulen daraus gemacht haben. Man kann Eisenholz nicht auf dem offenen Markt kaufen und geschmuggelt kostet es sein Gewicht in Silber.\nDoyle's Männer kommen gelegentlich und kaufen die gesamte Menge, die wir verarbeitet haben, für billig. Aber ich schaffe es immer, etwas für meinen eigenen Bedarf zu retten.";
+			dialog.text = "Hör zu. Vielleicht weißt du bereits, dass unsere Siedlung nur halb legal ist. Die Engländer halten hier eine Garnison und wir liefern ihnen Mahagoni zu einem guten Preis. Aber es gibt eine sehr schwere und haltbare Art von Holz - Lignum Vitae, das du als Eisenholz kennen sollten.\nEs ist selten und schwer zu verarbeiten, selbst mit gehärtetem Stahl. Sie sagen, dass die Maya-Itza vor langer Zeit ihre schrecklichen Keulen daraus gemacht haben. Man kann Eisenholz nicht auf dem offenen Markt kaufen und geschmuggelt kostet es sein Gewicht in Silber.\nDoyle's Männer kommen gelegentlich und kaufen die gesamte Menge, die wir verarbeitet haben, für billig. Aber ich schaffe es immer, etwas für meinen eigenen Bedarf zu retten.";
 			link.l1 = "Ich habe von diesem Baum gehört. Man sagt, dass Musketenkugeln in sein öliges Holz wie Teer versinken! Seine Robustheit ist gut genug, um Zahnräder für Stahlmechanismen daraus zu machen.";
 			link.l1.go = "saga_49";
 		break;
 		
 		case "saga_49":
-			dialog.text = "Sie lügen ein wenig über die Zahnräder, aber der Rest stimmt genau. Also, um die Kosten vorherzusagen, habe ich eine große Menge Eisenholz vorbereitet, aber irgendein Schuft hat mein Lagerhaus vor ein paar Tagen ausgeräumt. Es ist einer von uns, das weiß ich. Ich habe einen Verdacht, kann aber nichts Genaues sagen.";
+			dialog.text = "Du übertreibst ein wenig über die Zahnräder, aber der Rest stimmt genau. Also, um die Kosten vorherzusagen, habe ich eine große Menge Eisenholz vorbereitet, aber irgendein Schuft hat mein Lagerhaus vor ein paar Tagen ausgeräumt. Es ist einer von uns, das weiß ich. Ich habe einen Verdacht, kann aber nichts Genaues sagen.";
 			link.l1 = "Ratten sollen zertreten werden! Wen vermutest du?";
 			link.l1.go = "saga_50";
 		break;
@@ -1055,14 +1056,14 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.questTemp.Saga = "molligan"; // обновляем флаг
 			AddQuestRecord("Testament", "3");
-			if(bImCasual) NewGameTip("Exploration mode: timer is not disabled. Meet the deadline!");
+			if(bImCasual) NewGameTip("Erkundungsmodus: Der Timer ist nicht deaktiviert. Halte die Frist ein!");
 			Saga_CreateMolliganInWorld(); // ставим корабль Моллигана на карту
 		break;
 		
 		case "saga_55":
 			npchar.quest.bakaut = GetSquadronGoods(pchar, GOOD_SANDAL);
 			dialog.text = "Ich wusste es. Wie viel hatte er in seinen Laderäumen?";
-			link.l1 = "Ich habe gefunden "+FindRussianQtyString(sti(npchar.quest.bakaut))+" auf der 'Auster'.";
+			link.l1 = "Ich habe "+FindRussianQtyString(sti(npchar.quest.bakaut))+" Stück auf der 'Auster' gefunden.";
 			link.l1.go = "saga_56";
 		break;
 		
@@ -1077,7 +1078,7 @@ void ProcessDialogEvent()
 			}
 			if (iTemp >= 90 && iTemp < 101)
 			{
-				dialog.text = "Ja, ich habe gerade so viel gehabt. Kleiner Ratten! Danke, "+pchar.name+", du hast mich nie enttäuscht. Ich werde das Produkt sofort verkaufen, wir haben bereits einen Käufer. Morgen habe ich das Geld für dich.";
+				dialog.text = "Ja, ich habe gerade so viel gehabt. Kleine Ratte! Danke, "+pchar.name+", du hast mich nie enttäuscht. Ich werde das Produkt sofort verkaufen, wir haben bereits einen Käufer. Morgen habe ich das Geld für dich.";
 				link.l1 = "In Ordnung. Ich werde dich dann nicht weiter ablenken. Bis morgen.";
 				link.l1.go = "saga_oust";
 				break;
@@ -1165,7 +1166,7 @@ void ProcessDialogEvent()
 			if (iTemp > 1600)
 			{
 				idlt = makeint(iTemp-1500)/2; // доля Бонса :)
-				dialog.text = "Ich habe erhalten "+iTemp+" Münzen dafür. Tausendfünfhundert sind für den Anwalt, plus dein Anteil an Dublonen - "+idlt+". Hier, bitte.";
+				dialog.text = "Ich habe "+iTemp+" Münzen dafür erhalten. Tausendfünfhundert sind für den Anwalt, plus dein Anteil an Dublonen - "+idlt+". Hier, bitte.";
 				link.l1 = "Lobenswert! Jetzt kann ich leicht nach Loxley abheben.";
 				link.l1.go = "saga_58";
 				TakeNItems(pchar, "gold_dublon", 1500+idlt);
@@ -1179,7 +1180,7 @@ void ProcessDialogEvent()
 				TakeNItems(pchar, "gold_dublon", 1500);
 				break;
 			}
-			dialog.text = "Ich habe erhalten "+iTemp+" Dublonen dafür. Hier, nimm sie. Den Rest wirst du selbst ausgraben müssen.";
+			dialog.text = "Ich habe "+iTemp+" Dublonen dafür erhalten. Hier, nimm sie. Den Rest wirst du selbst ausgraben müssen.";
 			link.l1 = "Nun, wenn alleine dann alleine. Also gut, ich mache mich auf den Weg zu Loxley.";
 			link.l1.go = "saga_58";
 			TakeNItems(pchar, "gold_dublon", iTemp);
@@ -1199,7 +1200,7 @@ void ProcessDialogEvent()
 		
 		case "saga_60":
 			dialog.text = "Whoa! Meine Käufer zahlen weniger...";
-			link.l1 = "Insgesamt habe ich zweitausend Gold für Loxley und "+sti(npchar.quest.bakaut_sum)*2+" Dublonen obendrauf.";
+			link.l1 = "Insgesamt habe ich zweitausend Stück Gold für Loxley und "+sti(npchar.quest.bakaut_sum)*2+" Dublonen obendrauf.";
 			link.l1.go = "saga_61";
 		break;
 		
@@ -1244,17 +1245,17 @@ void ProcessDialogEvent()
 			else iTemp = sti(npchar.quest.bakaut_sum)-sti(npchar.quest.bakaut_pay);
 			npchar.quest.bakaut_sum = iTemp; // запоминаем остаток
 			RemoveItems(pchar, "gold_dublon", sti(npchar.quest.bakaut_pay));
-			Log_Info("You have given "+sti(npchar.quest.bakaut_pay)+" doubloons");
+			Log_Info("Du hast "+sti(npchar.quest.bakaut_pay)+" Dublonen gegeben");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)
 			{
-				dialog.text = "Gute Arbeit, "+pchar.name+"! Wieder einmal wird mir bewusst, dass du ein guter Mensch bist, mit dem man sich einlassen sollte.";
+				dialog.text = "Gute Arbeit, "+pchar.name+"! Wieder einmal wird mir bewusst, dass du ein guter Mensch bist, mit dem man sich einlassen kann.";
 				link.l1 = "Ich versuche es, Jan...";
 				link.l1.go = "bakaut_done";
 			}
 			else
 			{
-				dialog.text = "Großartig. Wirst du das Übrige bringen "+FindRussianQtyString(sti(npchar.quest.bakaut_sum))+" doubloons später?";
+				dialog.text = "Großartig. Wirst du die übrigen "+FindRussianQtyString(sti(npchar.quest.bakaut_sum))+" Dublonen später bringen?";
 				link.l1 = "Ja. Ich konnte einfach nicht so einen großen Haufen Gold auf einmal schleppen.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "bakaut_pay_wait";
@@ -1297,7 +1298,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_63":
-			dialog.text = "Hm. Hat der neue Kopf unserer Bruderschaft dir von ihr erzählt?";
+			dialog.text = "Hm. Hat der neue Anführer unserer Bruderschaft dir von ihr erzählt?";
 			link.l1 = "Er hat es auch getan. Aber ich habe von ihr durch Baker erfahren, der alte Henker von St. John's. Der gleiche Mann, der Kapitän Butcher hingerichtet hat.";
 			link.l1.go = "saga_64";
 		break;
@@ -1323,31 +1324,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_66a":
-			dialog.text = "Sie war etwas Besonderes... Es ist auch ziemlich wahrscheinlich, dass Jess Beatrice getötet hat. Nachdem der Metzger sie vom 'Neptun' geworfen hat, hat sie wahrscheinlich an nichts anderes gedacht, als ihre Rache an ihm und Beatrice zu stillen. Übrigens, wissen Sie, wie der Metzger Jessica losgeworden ist?";
+			dialog.text = "Sie war etwas Besonderes... Es ist auch ziemlich wahrscheinlich, dass Jess Beatrice getötet hat. Nachdem Butcher sie vom 'Neptune' geworfen hat, hat sie wahrscheinlich an nichts anderes gedacht, als ihre Rache an ihm und Beatrice zu stillen. Übrigens, weißt du, wie Butcher Jessica losgeworden ist?";
 			link.l1 = "Nein. Entweder er hat sie einfach auf Barbados abgesetzt oder sie zur Lösegeldforderung aufgestellt.";
 			link.l1.go = "saga_67";
 		break;
 		
 		case "saga_67":
-			dialog.text = "Der zweite. Er hat sie über alle Maßen erniedrigt. Er sperrte sie einfach in die Kabine, brachte sie nach Barbados, begann mit ihrem Vater Oliver Rose zu verhandeln und verkaufte sie tatsächlich für einen Haufen Dublonen... nach allem, was sie für ihn getan hatte.";
-			link.l1 = "Hm. Ich dachte, Schlächter verteidigte ihre Ehre, als Piraten den 'Neptun' von Joshua Leadbeater eroberten...";
+			dialog.text = "Das zweite. Er hat sie über alle Maßen erniedrigt. Er sperrte sie einfach in die Kabine, brachte sie nach Barbados, begann mit ihrem Vater Oliver Rose zu verhandeln und verkaufte sie tatsächlich für einen Haufen Dublonen... nach allem, was sie für ihn getan hatte.";
+			link.l1 = "Hm. Ich dachte, Butcher verteidigte ihre Ehre, als Piraten den 'Neptune' von Joshua Leadbeater eroberten...";
 			link.l1.go = "saga_68";
 		break;
 		
 		case "saga_68":
 			dialog.text = "Das ist auch wahr. Aber sie hat ihm auch teuer als Belohnung bezahlt. Jessica hat dieses Abschaums erbärmliches Leben mehrmals gerettet, indem sie ihn von dem Nagelbett hob, das er sich regelmäßig für sein prahlerisches und heftiges Temperament zurechtlegte. Tatsächlich verdankte er den Ruhm eines wohlhabenden Piraten nur ihr.";
-			link.l1 = "Ja, ja, sein 'roter Talisman'. Ich habe davon gehört. Sie sagen, dass sobald Metzger Jess abtrat, sein Glück das Gleiche mit ihm tat...";
+			link.l1 = "Ja, ja, sein 'roter Talisman'. Ich habe davon gehört. Sie sagen, dass sobald Butcher Jess abtrat, sein Glück das Gleiche mit ihm tat...";
 			link.l1.go = "saga_69";
 		break;
 		
 		case "saga_69":
-			dialog.text = "Aber natürlich. Ohne Jessica wurde er nur zu einem weiteren gewöhnlichen Seeräuber, wenn auch einem waghalsig mutigen. Aber Jessica war nicht für ihn da, sie war diejenige, die ihm half, all seine riskanten Operationen zu planen und er konnte sich immer auf ihre Klinge verlassen. \nSicher, Beatrice war auch kein braves Mädchen, aber sie konnte Jess nicht das Wasser reichen, Bea's Reize waren völlig anders... Sie machte den Fehler, sich mit dem Metzger anzulegen.";
+			dialog.text = "Aber natürlich. Ohne Jessica wurde er nur zu einem weiteren gewöhnlichen Seeräuber, wenn auch einem waghalsig mutigen. Aber Jessica war nicht für ihn da, sie war diejenige, die ihm half, all seine riskanten Operationen zu planen und er konnte sich immer auf ihre Klinge verlassen. \nSicher, Beatrice war auch kein braves Mädchen, aber sie konnte Jess nicht das Wasser reichen, Bea's Reize waren völlig anders... Sie machte den Fehler, sich mit Butcher anzulegen.";
 			link.l1 = "Ich habe das schon irgendwo gehört...";
 			link.l1.go = "saga_70";
 		break;
 		
 		case "saga_70":
-			dialog.text = "Alle Piraten dachten so, einschließlich Blaze Sharp, ihrem Bruder. Er konnte den Schlächter nicht ausstehen... Aber zurück zu Jessica. Ich wagte nicht einmal an sie zu denken, während sie auf der 'Neptun' war, sie würde ihren geliebten Kapitän nie verlassen. Aber als Schlächter sie auf so gemeine Weise loswurde...\nIch kam auf Barbados an und freundete mich mit ihr an. Es war nicht einfach für sie, sie liebte das Meer und gefährliche Abenteuer. Das stumpfe Kolonialleben tötete sie. Außerdem war sie während ihres Dienstes auf der 'Neptun' und in Bridgetown zu einer sehr berüchtigten Person in der Karibik geworden und die Leute von Bridgetown hatten Gründe, sie als Schlächters Komplizin zu betrachten...";
+			dialog.text = "Alle Piraten dachten so, einschließlich Blaze Sharp, ihrem Bruder. Er konnte Butcher nicht ausstehen... Aber zurück zu Jessica. Ich wagte nicht einmal an sie zu denken, während sie auf der 'Neptune' war, sie würde ihren geliebten Kapitän nie verlassen. Aber als Butcher sie auf so gemeine Weise loswurde...\nIch kam auf Barbados an und freundete mich mit ihr an. Es war nicht einfach für sie, sie liebte das Meer und gefährliche Abenteuer. Das stumpfe Kolonialleben tötete sie. Außerdem war sie während ihres Dienstes auf der 'Neptune' und in Bridgetown zu einer sehr berüchtigten Person in der Karibik geworden und die Leute von Bridgetown hatten Gründe, sie als Butchers Komplizin zu betrachten...";
 			link.l1 = "Aber sie konnten nichts beweisen...";
 			link.l1.go = "saga_71";
 		break;
@@ -1371,27 +1372,27 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_74":
-			dialog.text = "Ich erfuhr das viel später. Eine Woche nach der Ankunft der Maske nahm Jess ihre Sachen, verabschiedete sich von mir und segelte auf einer Militärfregatte in unbekannte Richtungen davon. Sie kehrte nie zurück... genau wie Beatrice nie nach Isla Tesoro zurückkehrte.\nKurz nachdem sie den Metzger in St. John's aufgehangen hatten, wurde er von der Maske selbst dorthin gebracht. Aber er überlebte den Metzger nur einen Tag.";
+			dialog.text = "Ich erfuhr das viel später. Eine Woche nach der Ankunft der Maske nahm Jess ihre Sachen, verabschiedete sich von mir und segelte auf einer Militärfregatte in unbekannte Richtungen davon. Sie kehrte nie zurück... genau wie Beatrice nie nach Isla Tesoro zurückkehrte.\nKurz nachdem sie Butcher in St. John's aufgehangen hatten, wurde er von der Maske selbst dorthin gebracht. Aber er überlebte Butcher nur einen Tag.";
 			link.l1 = "Ja... Unser Steven Dodson hat Klasse gezeigt...";
 			link.l1.go = "saga_75";
 		break;
 		
 		case "saga_75":
-			dialog.text = "Ja, das wurde mir gesagt. Er hat Beatrice gerächt... Und so endet Jessicas Geschichte, sie starb irgendwo auf einer unbewohnten Insel in einem Gefecht mit den Piraten des Schlächters. Niemand weiß, wo dieser Ort ist. Der Schlächter ist tot und ebenso Jackman und der Henker.";
-			link.l1 = "Da liegst du falsch, Jan. Der Metzger ist am Leben.";
+			dialog.text = "Ja, das wurde mir gesagt. Er hat Beatrice gerächt... Und so endet Jessicas Geschichte, sie starb irgendwo auf einer unbewohnten Insel in einem Gefecht mit den Piraten von Butcher. Niemand weiß, wo dieser Ort ist. Butcher ist tot und ebenso Jackman und Hangman.";
+			link.l1 = "Da liegst du falsch, Jan. Butcher ist am Leben.";
 			link.l1.go = "saga_76";
 		break;
 		
 		case "saga_76":
 			dialog.text = "Was!? Das kann nicht sein! Er wurde gehängt!";
-			link.l1 = "Lest Raymond Bakers Zeugenaussage. Sie ist besser als jede Geschichte.";
+			link.l1 = "Lies Raymond Bakers Zeugenaussage. Sie ist besser als jede Geschichte.";
 			link.l1.go = "saga_77";
 		break;
 		
 		case "saga_77":
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Zeig mir das...(liest) Hm. Unglaublich! Es stellt sich heraus, dass seine Hinrichtung inszeniert wurde!";
-			link.l1 = "Glatt, was? Das ist aber noch nicht alles. Du kennst Metzger. Du weißt nur nicht, wer er jetzt ist.";
+			link.l1 = "Glatt, was? Das ist aber noch nicht alles. Du kennst Butcher. Du weißt nur nicht, wer er jetzt ist.";
 			link.l1.go = "saga_78";
 		break;
 		
@@ -1402,7 +1403,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_79":
-			dialog.text = "Heilige Scheiße! Also stellt sich heraus, dass er derjenige ist, der das alles orchestriert hat? Nun, in Ordnung... Wir werden uns auch auf den Weg zum Schlächter machen. Ich werde darüber nachdenken, wie man diesen üblen Pfennig loswird. Obwohl es nicht einfach sein wird, steht er unter dem nachhaltigen Schutz der englischen Behörden.";
+			dialog.text = "Heilige Scheiße! Also stellt sich heraus, dass er derjenige ist, der das alles orchestriert hat? Nun, in Ordnung... Wir werden uns auch auf den Weg zu Butcher machen. Ich werde darüber nachdenken, wie man diesen üblen Pfennig loswird. Obwohl es nicht einfach sein wird, steht er unter dem nachhaltigen Schutz der englischen Behörden.";
 			link.l1 = "Seine Zeit wird kommen, Jan. Bald wird er seinen Bootsmann und Quartiermeister treffen. Gut, danke für die Geschichte. Es ist Zeit für mich zu gehen.";
 			link.l1.go = "saga_80";
 		break;
@@ -1429,7 +1430,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_82":
-			dialog.text = "Tolle Arbeit, "+pchar.name+". Sie haben das Unmögliche vollbracht. Wir alle Barone der Bruderschaft der Küste sind Ihnen zu Dank verpflichtet.";
+			dialog.text = "Tolle Arbeit, "+pchar.name+". Sie haben das Unmögliche vollbracht. Wir alle Barone der Bruderschaft der Küste sind dir zu Dank verpflichtet.";
 			link.l1 = "Ja, der Weg zum Sieg war schmal. Wenn ich nur vorher gewusst hätte, dass ich so viel aushalten muss...";
 			link.l1.go = "saga_83";
 		break;
@@ -1460,12 +1461,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_85":
-			dialog.text = "Wunderbar. Sie verdient es. Ich denke, der neue Kopf der Bruderschaft wird ihr helfen, ihre Angelegenheiten zu regeln. Sie ist ein talentiertes und kluges junges Mädchen, das schnell begreift und alles lernen kann. Danke, "+pchar.name+"! Helen ist wie eine Tochter für mich und ich bin überglücklich, dass sich für sie gerade eine so wunderbare Zukunft eröffnet hat.";
-			link.l1 = "Sei willkommen, Jan... Wie auch immer, ich möchte gerne zu unserem Gespräch über Tortuga und Levasseur zurückkehren.";
+			dialog.text = "Wunderbar. Sie verdient es. Ich denke, der neue Anführer der Bruderschaft wird ihr helfen, ihre Angelegenheiten zu regeln. Sie ist ein talentiertes und kluges junges Mädchen, das schnell begreift und alles lernen kann. Danke, "+pchar.name+"! Helen ist wie eine Tochter für mich und ich bin überglücklich, dass sich für sie gerade eine so wunderbare Zukunft eröffnet hat.";
+			link.l1 = "Gern geschehen, Jan... Wie auch immer, ich möchte gerne zu unserem Gespräch über Tortuga und Levasseur zurückkehren.";
 			link.l1.go = "saga_86";
 			if (CheckAttribute(pchar, "questTemp.PZ_DialogSvensonBlock"))
 			{
-				link.l1 = "Du bist willkommen, Jan.";
+				link.l1 = "Gern geschehen, Jan.";
 				link.l1.go = "saga_87";
 			}
 		break;
@@ -1473,7 +1474,7 @@ void ProcessDialogEvent()
 		case "saga_86":
 			sTemp = "Shark Dodson";
 			if (CheckAttribute(pchar, "questTemp.Saga.DodsonDie")) sTemp = "Marcus Tyrex";
-			dialog.text = "Während du weg warst, "+sTemp+" und ich haben bereits darüber gesprochen und eine gemeinsame Meinung zur Beseitigung von Levasseur. Segelt zur Isla Tesoro und sprecht mit unserem neuen Chef, er wird euch die Details unseres Plans mitteilen und euch alle Hilfe geben, die er euch geben kann.";
+			dialog.text = "Während du weg warst, haben "+sTemp+" und ich haben bereits darüber gesprochen, und eine gemeinsame Meinung zur Beseitigung von Levasseur. Segel zur Isla Tesoro und sprich mit unserem neuen Chef, er wird dich mit die Details unseres Plans vertraut machen und dir alle Hilfe geben, die er dir geben kann.";
 			link.l1 = "Ich rieche endlich den Duft von Schießpulver! Keine Zeit zu verlieren, ich mache mich auf den Weg zur Isla Tesoro!";
 			link.l1.go = "saga_87";
 		break;
@@ -1486,10 +1487,10 @@ void ProcessDialogEvent()
 		
 		case "saga_88":
 			GiveItem2Character(pchar, "talisman4");
-			Log_Info("You've received the 'Janissary' amulet.");
+			Log_Info("Du hast das Amulett 'Janitschar' erhalten.");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Das Zweite ist nur ein Andenken an vergangene Abenteuer. Ich habe den Rat überzeugt, diesen lächerlichen Überbleibsel der Verwendung von Steinfragmenten in den Wind zu werfen. Sie werden nicht mehr benötigt. Ich gebe sie dir. Vielleicht findest du irgendwie eine Verwendung für sie.";
-			link.l1 = "Einen Verwendungszweck für Fragmente? Hm. Ich weiß nicht ... aber als Souvenir bin ich sehr verpflichtet!";
+			link.l1 = "Einen Verwendungszweck für Fragmente? Hm. Ich weiß nicht... aber als Andenken bin ich sehr dankbar dafür!";
 			link.l1.go = "saga_89";
 		break;
 		
@@ -1499,7 +1500,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "splinter_mt"); 
 			GiveItem2Character(pchar, "splinter_zm"); 
 			GiveItem2Character(pchar, "splinter_jb"); 
-			Log_Info("You've received five ornamental pattern fragments");
+			Log_Info("Du hast fünf ornamentale Musterfragmente erhalten");
 			dialog.text = "Nun, vergiss nicht deinen Freund, "+pchar.name+". Komm vorbei, wenn du in Blueweld ankommst. Wir setzen uns hin und trinken etwas Rum. Ich freue mich immer dich zu sehen.";
 			link.l1 = "Sicherlich, Jan. Wir haben jetzt etwas, woran wir uns erinnern können, oder? Ha-ha! Wie auch immer, ich sollte gehen.";
 			link.l1.go = "saga_90";
@@ -1532,7 +1533,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_f_2":
-			dialog.text = "Ja, "+pchar.name+". Und ich würde Ihnen wirklich gerne helfen, Tortuga zu nehmen, das würde ich wirklich, aber jetzt weiß ich nicht einmal, wie. Wahrscheinlich kann ich nichts tun, um zu helfen. Es sieht so aus, als müssten Sie sich nur auf Ihre eigenen Stärken und Ihre Fähigkeit zu kämpfen verlassen.";
+			dialog.text = "Ja, "+pchar.name+". Und ich würde Ihnen wirklich gerne helfen, Tortuga zu nehmen, das würde ich wirklich, aber jetzt weiß ich nicht einmal, wie. Wahrscheinlich kann ich nichts tun, um zu helfen. Es sieht so aus, als müsstest du dich nur auf deine eigenen Stärken und Fähigkeiten zu kämpfen nun verlassen.";
 			link.l1 = "Es sieht so aus, als gäbe es keine andere Möglichkeit mehr... Also gut, Jan, ich werde nachdenken, was als nächstes zu tun ist. Bis später...";
 			link.l1.go = "saga_f_3";
 		break;
@@ -1659,7 +1660,7 @@ void ProcessDialogEvent()
 		
 		case "trade_bakaut_1":
 			RemoveDublonsFromPCharTotal(750);
-			Log_Info("You have given 750 doubloons");
+			Log_Info("Du hast 750 Dublonen gegeben");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Lobenswert. Ich werde meinen Leuten befehlen, das Eisenholz auf dein Schiff zu bringen.";
 			link.l1 = "Danke dir!";
@@ -1667,7 +1668,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trade_bakaut_2":
-			dialog.text = "Wenn Sie mehr kaufen möchten, kommen Sie in zwei Wochen zurück. Bis dahin werde ich eine weitere Charge zusammengestellt haben.";
+			dialog.text = "Wenn du mehr kaufen möchtest, komm in zwei Wochen zurück. Bis dahin werde ich eine weitere Charge zusammengestellt haben.";
 			link.l1 = "In Ordnung, Jan. Bis zum nächsten Mal!";
 			link.l1.go = "exit";
 			AddCharacterGoods(pchar, GOOD_SANDAL, 25);
@@ -1811,7 +1812,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mine_attack_5":
-			dialog.text = "Das ist korrekt. Wir werden das zu unserem Vorteil nutzen, aber lassen Sie mich Ihnen jetzt meinen gesamten Plan bis zum Ende mitteilen.";
+			dialog.text = "Das ist korrekt. Wir werden das zu unserem Vorteil nutzen, aber lass mich dir jetzt meinen gesamten Plan bis zum Ende mitteilen.";
 			link.l1 = "Sicher, Jan. Ich bin ganz Ohr.";
 			link.l1.go = "mine_attack_6";
 		break;
@@ -2026,13 +2027,13 @@ void ProcessDialogEvent()
 		
 		case "mine_attack_21":
 			dialog.text = "Verdammt! Das ist durchaus möglich. Was schlägst du vor, dass wir tun?";
-			link.l1 = "Hm... Ha! Ich habe eine Idee! Kanonen! Schau dich um. Hier gibt es nicht nur Traubenschrot, sondern auch Bomben! Jetzt sind diese Banditen erledigt! Warum bin ich nicht früher darauf gekommen?!";
+			link.l1 = "Hm... Ha! Ich habe eine Idee! Kanonen! Schau dich um. Hier gibt es nicht nur Kartätschenkugel, sondern auch Bomben! Jetzt sind diese Banditen erledigt! Warum bin ich nicht früher darauf gekommen?!";
 			link.l1.go = "mine_attack_22";
 		break;
 		
 		case "mine_attack_22":
 			dialog.text = "Was glaubst du, sollten wir tun?";
-			link.l1 = "Wir nehmen eine Kanone. Mit einer können wir uns viel schneller und effizienter bewegen. Wir rollen sie hinein, hinter die Tore, in die Mine und stellen sie in Position. Wenn sie selbst einen Angriff starten, gibt es eine große Explosion, und wenn sie sich zurückhalten, bombardieren wir einfach ihr Lager. Können Sie mir sagen, wo genau das Lager hinter den Toren liegt?";
+			link.l1 = "Wir nehmen eine Kanone. Mit einer können wir uns viel schneller und effizienter bewegen. Wir rollen sie hinein, hinter die Tore, in die Mine und stellen sie in Position. Wenn sie selbst einen Angriff starten, gibt es eine große Explosion, und wenn sie sich zurückhalten, bombardieren wir einfach ihr Lager. Kannst du mir sagen, wo genau das Lager hinter den Toren liegt?";
 			link.l1.go = "mine_attack_23";
 		break;
 		
@@ -2121,7 +2122,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mine_attack_32a":
-			dialog.text = "Wir haben die ganze Mine noch nicht durchsucht! Ich garantiere Ihnen, dass hier drinnen noch mehr von diesen Schurken versteckt sind!";
+			dialog.text = "Wir haben die ganze Mine noch nicht durchsucht! Ich garantiere dir, dass hier drinnen noch mehr von diesen Schurken versteckt sind!";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "mine_attack_32a";
@@ -2186,7 +2187,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mine_attack_39":
-			dialog.text = "Wir haben ungefähr vier tausend Einheiten. Wir teilen es in zwei Teile - die Hälfte für mich, die Hälfte für dich, genau wie wir es vereinbart haben.";
+			dialog.text = "Wir haben ungefähr vier tausend Stück. Wir teilen es in zwei Teile - die Hälfte für mich, die Hälfte für dich, genau wie wir es vereinbart haben.";
 			link.l1 = "Ausgezeichnet! Wir können eine ganze Menge Geld für diesen Kram bekommen!";
 			link.l1.go = "mine_attack_40";
 		break;
@@ -2211,7 +2212,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mine_attack_43":
-			dialog.text = "Gut. Nun bleibt der beste Teil übrig, ich werde das Silber zu den Schiffen transportieren. Die Miskitos werden uns dabei helfen. Wir stellen einen Wagen zusammen... In der Zwischenzeit, ruhen Sie sich einfach aus, "+pchar.name+". Du hast es mehr als jeder andere verdient!";
+			dialog.text = "Gut. Nun bleibt der beste Teil übrig, ich werde das Silber zu den Schiffen transportieren. Die Miskitos werden uns dabei helfen. Wir stellen einen Wagen zusammen... In der Zwischenzeit, ruhe dich einfach aus, "+pchar.name+". Du hast es mehr als jeder andere verdient!";
 			link.l1 = "Danke, Jan. Wir werden auf diesem Hügel ein Lager aufschlagen, der Geruch von Asche ist zu stark. Ja, und wir müssen die Feuer in diesen Hütten löschen, wer weiß, vielleicht werden sie uns in der Zukunft nützlich sein...";
 			link.l1.go = "mine_attack_44";
 		break;
@@ -2246,7 +2247,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mine_attack_48":
-			dialog.text = "Die Indianer haben das Silber an die Küste geliefert und laden es unter Aufsicht meiner Offiziere auf Ihr Schiff. Ihr könnt schon zurückkehren. Euer Wunsch nach Rum, einer Taverne und einem Bett wird bald in Erfüllung gehen. Und ich möchte, dass ihr in fünf Tagen in meinem Haus vorbeischaut, wir haben noch viel zu tun.";
+			dialog.text = "Die Indianer haben das Silber an die Küste geliefert und laden es unter Aufsicht meiner Offiziere auf dein Schiff. Du kannst schon zurückkehren. Dein Wunsch nach Rum, einer Taverne und einem Bett wird bald in Erfüllung gehen. Und ich möchte, dass du in fünf Tagen in meinem Haus vorbeischaut, wir haben noch viel zu tun.";
 			link.l1 = "Also gut, Jan. Wir sehen uns in fünf Tagen in Blueweld! Viel Glück!";
 			link.l1.go = "mine_attack_49";
 		break;

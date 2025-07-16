@@ -1,0 +1,631 @@
+﻿newline  {
+
+}
+
+Key Layout {Layout}
+Key Layout_descr
+{
+Il layout alternativo contiene una serie di modifiche ai controlli, aggiunge nuovi comandi e apre nuove possibilità:
+~
+- modificati i comandi per le azioni rapide e la ricerca dei cadaveri
+- modificato l'uso delle pozioni di potenziamento
+- le schede dei menu dei personaggi sono disponibili su tasti separati
+}
+
+OptKurs {Punto vela}
+OptKurs_descr
+{
+Le frecce nere sulla mini-mappa indicano la rotta alla quale la nave si muoverà alla massima velocità.
+~
+Alcuni tipi di navi sono in grado di navigare quasi controvento, il che è utile quando si deve raggiungere un mercante o fuggire da una nave da guerra.
+~
+Il vento cambia continuamente forza e direzione. Cercate di adattarvi e di regolare la vostra rotta, trovando un compromesso tra l'angolo di rotta ottimale e la direzione del vostro obiettivo.
+}
+
+SeaTimeScaleUp {Controllo tempo}
+SeaTimeScaleUp_descr
+{
+Utilizzate l'accelerazione: fa risparmiare tempo, soprattutto in mare.
+~
+Controlli: + e -
+}
+SeaTimeScaleUp_controlsimg1{TimeScaleFasterBA}
+SeaTimeScaleUp_controlsimg2{TimeScaleSlowerBA}
+
+SeaFastTravel {Viaggio veloce}
+SeaFastTravel_descr
+{
+Il menu di azione apre molte funzioni utili sia a terra che in mare.
+~
+La funzione 'Naviga verso' consente di viaggiare rapidamente vicino a una nave amica o a un punto geografico. La distanza del viaggio veloce può essere aumentata utilizzando cannocchiali più rari e costosi.
+~
+Usate il menu delle azioni per raggiungere istantaneamente il 'Fantasma' e poi inviate una barca lunga verso di lei.
+}
+
+SeaFastTravel_controlsimg1 {BICommandsActivate}
+
+LandTimeScaleDown {Controllo tempo in combattimento}
+LandTimeScaleDown_descr
+{
+A volte ha senso rallentare il tempo, soprattutto durante i combattimenti più difficili. Caribbean Legend è un gioco difficile da padroneggiare, quindi usate tutto ciò che potete per ottenere un vantaggio.
+~
+Controlli: + e -
+}
+LandTimeScaleDown_controlsimg1{TimeScaleFasterBA}
+LandTimeScaleDown_controlsimg2{TimeScaleSlowerBA}
+
+GuideFight {Combattimento terrestre}
+GuideFight_descr
+{
+Ci vorrà del tempo per padroneggiare i combattimenti terrestri del gioco. Se avete abilitato i suggerimenti di controllo, vedrete i tasti di scelta rapida nell'angolo in basso a destra dello schermo.
+~
+Cercate prima di tutto di padroneggiare la combinazione 'Parata - Colpo'. Se riuscite a parare un attacco avversario, lo stordite e gli fate perdere energia, dandovi la possibilità di attaccare in tutta sicurezza.
+~
+Utilizzate diversi tipi di attacchi per capire quale infligge più danni. Ogni arma del gioco ha il suo tipo di attacco preferito. Sperimentate!
+}
+
+GuideFight_controlsimg1 {ChrAttackChoseBase}
+GuideFight_controlsimg2 {ChrAttackBase}		
+
+OneToOneCave {Uso del terreno}
+OneToOneCave_descr
+{
+Se siete in minoranza, cercate di sfruttare l'ambiente per ottenere un vantaggio in battaglia.
+~
+È quasi sempre possibile trovare un luogo in cui costringere il nemico a combattere uno contro uno o due alla volta.
+}
+
+OneToOneBoarding {Uso del terreno}
+OneToOneBoarding_descr
+{
+Se siete in minoranza, cercate di sfruttare l'ambiente per ottenere un vantaggio in battaglia.
+~
+È quasi sempre possibile trovare un luogo in cui costringere il nemico a combattere uno contro uno o due alla volta.
+}
+
+Collision {Cambiare posizione}
+Collision_descr
+{
+A volte, durante una battaglia, diventa necessario cambiare posizione, sfondando la linea nemica o aggirando gli alleati.
+~
+Uscire dalla modalità di combattimento per permettere all'eroe di allontanare gli altri personaggi dalla propria strada. Dopo aver cambiato posizione, rientrare in modalità combattimento per continuare a combattere.
+}
+Collision_controlsimg1 {ChrFightMode}
+Collision_controlsimg2 {ChrSprint}
+
+
+
+WorldMap {Mappa globale}
+WorldMap_descr
+{
+La mappa globale consente di effettuare viaggi in mare attraverso i Caraibi. Non è necessario navigare esattamente verso ogni città o baia; è sufficiente uscire dalla mappa globale in prossimità dell'obiettivo e utilizzare la funzione 'Naviga verso'.
+~
+Un uso sapiente della funzione 'Naviga verso' può far risparmiare molto tempo. Ad esempio, si può uscire dalla mappa globale su un lato dell'isola, viaggiare velocemente per raggiungere un punto sull'altro lato e poi tornare alla mappa globale.
+~
+Utilizzare i tasti di scelta rapida per ingrandire la mappa e per visualizzare l'Atlante con le mappe.
+}
+
+WorldMap_controlsimg1 {WMapCameraSwitch}
+WorldMap_controlsimg2 {MapView}
+
+LandMap {Viaggiare a terra}
+LandMap_descr
+{
+Le mappe possono essere acquistate o trovate. Raccogliete tutte le mappe delle isole che incontrate per orientarvi nella terraferma. È particolarmente utile nelle missioni, nelle infiltrazioni nelle colonie e nella caccia al tesoro.
+Tutte le mappe raccolte si trovano nell'Atlante. 
+}
+
+LandMap_controlsimg1 {MapView}
+
+Navigator {Abilità navigazione}
+Navigator_descr
+{
+Assegnate un Navigatore con un'abilità di Navigazione sufficiente!
+~
+La navigazione determina principalmente le dimensioni delle navi che il personaggio può gestire.
+~
+Ad esempio, il quinto rango richiede 25 punti, mentre il quarto ne richiede 45. Il superamento di questo limite comporta penalità a tutte le statistiche e alle abilità del personaggio.
+~
+I requisiti per ogni grado di nave possono essere visualizzati cliccando con il tasto destro del mouse sull'icona dell'abilità Navigazione nella finestra del personaggio.
+~
+L'abilità Navigazione cresce lentamente, quindi assumete navigatori esperti nelle taverne alla prima occasione. Tuttavia, tenete presente che non riuscirete a trovare uno specialista con un livello di abilità superiore a 75.
+}
+
+Navigator_controlsimg1 {Abilities}
+
+Alchemy {Artigiano}
+Alchemy_descr
+{
+La produzione di oggetti, soprattutto talismani, pozioni e munizioni, può alleggerire notevolmente la vostra vita. Questo è particolarmente utile nelle battaglie contro i boss.
+~
+Per fabbricare un oggetto è necessario trovare o acquistare una ricetta. Gli ingredienti non devono necessariamente essere portati con sé; si possono tranquillamente acquistare varie cianfrusaglie dai mercanti di strada e conservarle in uno dei forzieri della cabina.
+~
+All'inizio del gioco, potete scegliere se prendere l'abilità Alchimia e iniziare subito a comprare ricette, oppure rimandare questa possibilità alla metà del gioco, quando avrete a disposizione dei kit di strumenti che sostituiranno la spesa di un prezioso punto abilità in Alchimia.
+}
+
+Alchemy_controlsimg1 {Alchimia}
+
+LandMapAtSea {}
+LandMapAtSea_descr
+{
+Dirigetevi verso il lato opposto dell'isola per completare la missione. Uscite dalla baia a destra e rimanete sulla costa!
+}
+
+Salary {Manutenzione nave}
+Salary_descr
+{
+I pagamenti mensili agli ufficiali e all'equipaggio possono complicare notevolmente la vita del capitano. L'importo totale dipende dalle abilità di commercio e leadership, dalle dimensioni della nave e dal livello di difficoltà.
+~
+Anche sulle navi piccole è consigliabile avere un commissario di bordo, mentre una grande nave da guerra può mandare in bancarotta anche un Paese. Se l'opzione di condivisione del bottino è attivata, l'importo del pagamento può essere ancora più alto.
+}
+
+Salary_controlsimg1 {Stato nave}
+
+Dubloons {Doubloons}
+Dubloons_descr
+{
+I dobloni d'oro sono la vera misura della ricchezza del personaggio e della sua capacità di risolvere i problemi con il denaro. Cercate sempre di guadagnare queste monete, poiché le persone più potenti dei Caraibi offrono i loro servizi solo in cambio di dobloni.
+~
+Buone fonti di dobloni sono la caccia al tesoro, i depositi bancari, il commercio di beni strategici e il cambio di valuta presso gli usurai. Non è necessario portare con sé l'oro; è possibile conservarlo in uno dei forzieri della cabina.
+
+}
+
+Box {Riponi oggetti}
+Box_descr
+{
+I forzieri della cabina possono contenere un numero illimitato di oggetti personali. Oltre all'equipaggiamento obbligatorio negli slot dell'equipaggiamento, è consigliabile portare con sé solo pozioni, amuleti e munizioni.
+~
+Vendete gli oggetti in eccesso, ma tenete sempre una riserva ragionevole di gioielli, armi, munizioni e ingredienti alchemici.
+~
+Anche gli altri capitani seguono questa pratica, quindi vale sempre la pena cercare nei forzieri della cabina di una nave catturata.
+
+}
+
+Health {Vitalità}
+Health_descr
+{
+La tua Vitalità è diminuita! Questa statistica descrive le condizioni generali del personaggio e influisce su tutte le sue abilità.
+~
+La vitalità diminuisce a causa dell'uso di metodi di guarigione primitivi, di eventi drammatici, di ubriachezza e di sovraccarico. 
+~
+Si ripristina con pozioni speciali, attività romantiche, riposo in una taverna e semplicemente con il tempo. Nei casi più gravi, i sacerdoti possono aiutare. Anche gli ufficiali unici perdono Vitalità se vengono feriti in combattimento, ma la recuperano con il tempo.
+
+}
+
+Amulet {Amuleti}
+Amulet_descr
+{
+Gli amuleti sono potenti potenziamenti del personaggio, suddivisi in offensivi, difensivi e ausiliari. Non è possibile equipaggiare contemporaneamente amuleti offensivi e difensivi, quindi scegliete con saggezza.
+~
+Oltre agli amuleti, ci sono i talismani e le protezioni. I talismani durano più a lungo e hanno effetti più estesi, mentre le protezioni sono immensamente potenti, agiscono a tempo indeterminato e hanno uno slot separato nell'inventario.
+~
+Tenete sempre diversi set di potenziamenti nell'inventario per affrontare le prove di abilità più difficili e le dure battaglie in mare e sulla terraferma.
+
+}
+
+Amulet_controlsimg1 {Inventario}
+
+Perk {Perk Points}
+Perk_descr
+{
+Hai appena ricevuto il tuo primo punto abilità (PP)! I PP sono fondamentali per lo sviluppo del personaggio e si dividono in Navali e Personali.
+~
+I Perk Navali vi rendono più pericolosi in mare, mentre i Perk Personali vi rendono più efficaci sulla terraferma e nelle interazioni con le persone.
+~
+Entrambi i tipi di PP si sviluppano indipendentemente dalla crescita delle abilità. In media, ogni 30 punti abilità in un gruppo si ottiene un PP.
+~
+Per guadagnare rapidamente PP navali, completate le missioni secondarie e i contratti in mare. I punti personali crescono più velocemente se si combatte con armi diverse e si trascorre del tempo nelle taverne. Ricordate che i PP personali sono più preziosi perché la maggior parte dei Perk navali possono essere coperti dai vostri ufficiali.
+
+}
+
+Perk_controlsimg1 {Abilità}
+
+Fighter {Armigeri}
+Fighter_descr
+{
+Il vostro primo Armigero si è unito all'equipaggio! Assegnateglielo tramite il menu dei personaggi.
+~
+Gli Armigeri sono gli ufficiali, le guardie del corpo e i combattenti più fidati. Vi seguiranno nel vivo della battaglia e passerete la maggior parte del tempo con loro.
+~
+Potete guidare fino a tre combattenti alla volta. Oltre a proteggervi a terra, gli Armigeri aumentano l'efficienza degli abbordaggi e aiutano a trasportare tesori pesanti.
+~
+Gli ufficiali unici delle missioni sono diversi dai normali marinai che si possono assumere nelle taverne. Anche se non tutti sono Armigeri effettivi, hanno un impatto significativo sulla trama del gioco e non possono morire nei normali combattimenti.
+~
+Equipaggiate sempre i vostri Armigeri con amuleti, oggetti curativi, armi e munizioni. È possibile scambiare gli oggetti attraverso il menu delle azioni o qualsiasi forziere.
+~
+È possibile ordinare agli Armigeri di mantenere la posizione, seguire il capitano o attaccare utilizzando i tasti di scelta rapida o attraverso il dialogo.
+
+}
+
+Fighter_controlsimg1 {Abilities}
+Fighter_controlsimg2 {OfficersFollow}
+Fighter_controlsimg3 {OfficersCharge}
+Fighter_controlsimg4 {OfficersHold}
+
+Rest {Opzione riposo}
+Rest_descr
+{
+L'opzione Riposo è ora disponibile nel menu Azione!
+~
+Tutto nel gioco segue un ciclo temporale: le guardie sono assenti al molo e alle porte della città di notte, si può assumere una ciurma nelle taverne solo durante il giorno e alcuni personaggi sono molto esigenti riguardo all'ora del giorno.
+~
+Utilizzare questa funzione in mare e in natura. Affittate una stanza in una taverna se vi trovate in città.
+
+}
+Rest_controlsimg1{BICommandsActivate}
+
+Navigation{Controllo navi}
+Navigation_descr
+{
+Usare i tasti di controllo della vela per cambiare la modalità di navigazione e i tasti di direzione per cambiare la rotta.
+~
+Esistono tre modalità di navigazione: Vele piene, Vele da battaglia e Vele avvolte.
+~
+La modalità a vele piene consente la massima velocità, ma le virate saranno più lente e le vele della nave saranno più vulnerabili in caso di battaglie e tempeste.
+~
+La modalità Vele da battaglia limita la velocità ma migliora la virata, la precisione dell'artiglieria e protegge meglio le vele dal fuoco nemico.
+~
+La modalità Vele spiegate rallenta gradualmente la nave fino all'arresto completo. Molto utile per gli abbordaggi o per raccogliere oggetti di valore dal mare.
+~
+La regola d'oro: in battaglia è preferibile la modalità Vele da battaglia; fuori dalla battaglia, la modalità Vele piene.
+
+}
+
+Navigation_controlsimg1 {Ship_SailUp}
+Navigation_controlsimg2 {Ship_SailDown}
+Navigation_controlsimg3 {MiniMapZoomIn}
+Navigation_controlsimg4 {MiniMapZoomOut}
+
+Stealth{Invisibile}
+Stealth_descr
+{
+Non siete i benvenuti nella maggior parte degli insediamenti caraibici. Ci sono due modi per infiltrarsi in una città: attraverso il porto o le porte.
+~
+L'attracco sicuro in un porto nemico richiede preparazione. Alzate la bandiera di un Paese non ostile e disponete di un alto livello di abilità Stealth prima di rischiare di apparire davanti ai cannoni dei forti.
+~
+È meglio entrare dalle porte della città di notte, quando non sono sorvegliate. Evitate i soldati e passate la notte in una taverna. Se date l'allarme, trovate una casa vuota e aspettate lì per un paio d'ore prima di riprovare.
+~
+Acquistare una licenza commerciale a Curacao è un'opzione sicura per viaggiare nella regione se la vostra abilità Furtività è bassa.
+}
+
+SeaBattle{Combattimento navale}
+SeaBattle_descr
+{
+L'essenza di ogni combattimento navale consiste nel mantenere l'angolo di rotta ottimale, preservare le proprie vele e danneggiare quelle del nemico.
+~
+Per quest'ultimo obiettivo, utilizzare i colpi rotondi e i colpi a catena. I colpi circolari hanno la gittata più lunga e infliggono danni moderati allo scafo e alle vele. Una raffica di colpi a catena a media distanza può distruggere le vele del nemico.
+~
+Per una maggiore precisione, utilizzare la modalità Prima Persona dopo essersi assicurati che la nave non sia troppo scossa dalle onde o da manovre recenti. Se danneggiate le vele del nemico e preservate le vostre, avete tre opzioni: abbordaggio, affondamento o fuga.
+~
+Superando una distanza di mille metri dalla nave nemica più vicina, si entra nella mappa globale e si fugge.
+~
+Affondare una nave nemica è più facile con le bombe a distanza ravvicinata. Il tiro efficace a lungo raggio con colpi circolari è riservato a capitani e cannonieri esperti. In genere, la necessità di affondare una nave nemica è rara: le battaglie si concentrano per lo più sull'abbordaggio o sulla fuga.
+
+}
+
+SeaBattle_controlsimg1 {hk_charge1}
+SeaBattle_controlsimg2 {hk_charge2}
+SeaBattle_controlsimg3 {hk_charge3}
+SeaBattle_controlsimg4 {hk_charge4}
+SeaBattle_controlsimg5 {Sea_CameraSwitch}
+SeaBattle_controlsimg6 {Ship_Fire}
+
+BoardingTactics{Abbordaggio}
+BoardingTactics_descr
+{
+Prima di procedere all'abbordaggio, sparate alcune raffiche di grapeshot per indebolire l'equipaggio nemico senza ricevere la stessa risposta. Una volta ottenuto il vantaggio, avvicinatevi alla nave nemica, eguagliate la sua velocità e attaccate!
+~
+Più alta è la vostra abilità di abbordaggio, più facile sarà riuscire ad agganciare la nave nemica. L'efficienza dell'abbordaggio dipende dalle dimensioni, dalle abilità e dal morale dell'equipaggio.
+~
+Avere un nostromo esperto, Armigeri, amuleti e abilità di combattimento personali sviluppate può compensare il vantaggio numerico del nemico.
+}
+
+Mushket{Moschetti}
+Mushket_descr
+{
+Le armi da fuoco a canna lunga sono estremamente pericolose in battaglia. Solo il personaggio principale con l'abilità Moschettiere e alcuni ufficiali unici possono usarle. 
+L'esempio più significativo è Tichingitu, che dovrebbe essere colui che ottiene il primo moschetto che trova.
+~
+A differenza delle armi da mischia, le armi da fuoco offrono una maggiore flessibilità. Sviluppando il proprio personaggio come tiratore, indossando determinati amuleti ed equipaggiamenti e utilizzando diversi tipi di munizioni, è possibile ribaltare le sorti di qualsiasi battaglia.
+
+Mushket_controlsimg1 {Inventory}
+
+
+CameraControlFP{Ahoy!}
+CameraControlFP_descr
+{
+Benvenuto ai Caraibi, capitano!
+~
+Caribbean Legend è un gioco impegnativo, ma facile da imparare. Se non hai ancora provato la modalità storia, ti consigliamo di dedicarci qualche ora per imparare le meccaniche di base.
+~
+I controlli sono tramite i tasti di movimento e il mouse. Il tuo personaggio può camminare e correre in tutte le direzioni, e usare lo scatto per accelerare.
+Il menu delle azioni è anche molto utile: lì troverai molte funzioni pratiche.
+~
+Puoi guardarti liberamente con il mouse: questo ti permette di trovare oggetti nascosti, controllare il combattimento o semplicemente ammirare il paesaggio.
+~
+Grazie per aver giocato, ci vediamo in mare!
+}
+
+Mushket_controlsimg1 {Inventario}
+
+CameraControlFP_controlsimg1 {ChrForward}
+CameraControlFP_controlsimg2 {ChrStrafeLeft}
+CameraControlFP_controlsimg3 {ChrBackward}
+CameraControlFP_controlsimg4 {ChrStrafeRight}
+CameraControlFP_controlsimg5 {ShipCamera_Turn_H}
+CameraControlFP_controlsimg6 {LICommandsActivate}
+
+
+MarksmanMode{Mira}
+MarksmanMode_descr
+{
+Con qualsiasi arma da fuoco puoi mirare per sparare con maggiore precisione. Tieni premuto il tasto di mira per entrare in questa modalità. Rilascia per uscire senza sparare.
+~
+I colpi mirati sono più precisi e letali, ma riducono la visuale e la velocità di movimento.
+~
+Più a lungo miri, più danni infliggi. Un colpo alla testa fa ancora più danni. Se subisci danni, la mira si azzera e il personaggio barcolla.
+}
+
+
+MarksmanMode_controlsimg1 {ChrAiming}
+
+
+Trading {Basi del commercio}
+
+
+Trading_descr
+{
+Il commercio è un sistema profondo e complesso in cui molti fattori influenzano il prezzo di acquisto e vendita.
+~
+Nel commercio terrestre, la Facoltà “Commercia” del personaggio e la sua storia sono le più importanti.
+~
+Nel commercio marittimo i fattori sono ancora di più: tipo di merce, origine, dimensione della colonia, rotte di esportazione e importazione e Facoltà del Tesoriere.
+~
+Prima o poi imparerai tutto, ma per ora procurati un buon amuleto da Commercia.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Prologue_Navigation{Controllo della nave}[a]
+Prologue_Navigation_descr
+{
+Benvenuto nel Mar dei Caraibi!
+~
+Gira la nave con i tasti di direzione. Le navi sono pesanti e hanno molta inerzia, quindi girano lentamente. Sentilo.
+~
+Controlla le vele e la velocità con i tasti del tipo di vele.
+~
+Ci sono tre tipi di vele: piene, da battaglia e ammainate. Con le vele piene la nave è più veloce, con quelle da battaglia gira meglio, e con le vele ammainate si ferma dolcemente.
+~
+In tempesta e sotto il fuoco nemico conviene ammainare le vele; per girare e mirare, usa la modalità da battaglia; per inseguire, niente è meglio delle vele piene.
+~
+Prova i diversi tipi di vele e le virate, senti l’inerzia della nave e goditi il tramonto!
+}
+
+
+Prologue_Navigation_controlsimg1 {Ship_SailUp}
+Prologue_Navigation_controlsimg2 {Ship_TurnLeft}
+Prologue_Navigation_controlsimg3 {Ship_SailDown}
+Prologue_Navigation_controlsimg4 {Ship_TurnRight}
+
+
+Prologue_TimeScale{Controllo del tempo}[b]
+Prologue_TimeScale_descr
+{
+Benvenuti nella modalità Storia! Prima di salpare, dovrete assicurarvi che la terra non vi sconfigga.
+~
+Caribbean Legend è impegnativo, ma non è difficile da giocare. Per aiutarvi ad ambientarvi nel Nuovo Mondo, abbiamo preparato un'avventura tutorial estesa sull'isola di Martinica. Completandola, imparerete tutte le abilità necessarie e comprenderete le meccaniche di gioco.
+~
+Il gioco si controlla con i tasti di movimento e l'uso attivo del mouse. Nella maggior parte dei casi, è sufficiente premere il tasto di movimento in avanti e sterzare usando la telecamera. È sempre possibile regolare la velocità della telecamera nelle impostazioni.
+~
+Alcuni giocatori ritengono che i controlli non siano abbastanza reattivi, e noi siamo d'accordo. Per questo motivo stiamo lavorando attivamente per migliorarli e speriamo che nel prossimo aggiornamento principale questo messaggio di esercitazione sarà diverso.
+~
+Grazie per aver giocato, ci vediamo in mare!
+}
+
+Prologue_CameraControl{Ahoy!}[c]
+Prologue_CameraControl_descr
+{
+Benvenuto a bordo dell'"Ulysses"! Abbiamo preparato per te una piccola avventura di avvio.
+~
+Il movimento a terra si controlla con i tasti direzionali e il mouse. Il tuo personaggio può camminare e correre in tutte le direzioni, e usare lo sprint per accelerare.
+~
+A bordo dell'"Ulysses" ci sono molte attività interessanti. Quando ti sentirai pronto per andare avanti, seleziona la battuta "Concludere affari" nel dialogo con il capitano.
+~
+Grazie per giocare, e a presto in mare!
+}
+
+Prologue_CameraControl_controlsimg1 {ChrForward}
+Prologue_CameraControl_controlsimg2 {ChrStrafeLeft}
+Prologue_CameraControl_controlsimg3 {ChrBackward}
+Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
+Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
+Prologue_CameraControl_controlsimg6 {LICommandsActivate}
+
+
+Prologue_Logbook {Diario di bordo e documenti}[d]
+
+
+Prologue_Logbook_descr
+{
+Ogni missione che accetti viene registrata nel “Diario”. È molto importante leggere attentamente i dialoghi e le voci del “Diario”: spesso ci sono dettagli e istruzioni chiave.
+~
+Consulta le voci del “Diario”. Tutti i piccoli incarichi presi a bordo dell’“Ulysse” saranno visibili lì.
+}
+
+
+Prologue_Logbook_controlsimg1 {QuestBook}[e]
+
+
+Prologue_Inventory {Missioni complesse, documenti e creazione}
+Prologue_Inventory_descr
+{
+Oltre alle missioni, il “Diario” contiene altre informazioni importanti.
+~
+Nella sezione “Documenti” puoi leggere tutte le note trovate.
+~
+Ora devi leggere una nota del Tesoriere e distribuire i dobloni all’equipaggio secondo la lista.
+~
+Per prendere i dobloni da un baule, aprilo usando la meccanica di creazione – Alchimia.
+All’inizio hai poche ricette, ma in futuro ne avrai di più.
+}
+Prologue_Inventory_controlsimg1 {QuestBook}
+Prologue_Inventory_controlsimg2 {Alchemy}
+
+
+
+
+Prologue_Amulet {Amuleti}[f]
+Prologue_Amulet_descr
+{
+Gli amuleti sono potenti potenziatori del personaggio e si dividono in offensivi, difensivi e di supporto. Non puoi equipaggiare contemporaneamente un amuleto offensivo e uno difensivo, quindi scegli i set con attenzione.
+~
+Oltre agli amuleti esistono altri due tipi di potenziatori: talismani e portafortuna.
+~
+I talismani durano più a lungo degli amuleti e hanno effetti più ampi, mentre i portafortuna sono molto potenti, durano all’infinito e hanno uno slot separato nell’inventario.
+~
+Tieni sempre diversi set nell’inventario per superare prove di abilità difficili e combattimenti duri in mare e a terra.
+~
+Attenzione: dopo l’attivazione, rimuovere un amuleto o un talismano lo distrugge – decidi con attenzione.
+}
+
+
+Prologue_Trading {Basi del commercio}[g]
+
+
+Prologue_Trading_descr
+{
+Il commercio è un sistema profondo e complesso in cui molti fattori influenzano il prezzo, soprattutto la tua Facoltà “Commercia”.
+~
+Nel commercio marittimo i fattori sono ancora di più: tipo di merce, origine, dimensione della colonia, rotte di esportazione e importazione e Facoltà del Tesoriere.
+~
+Prima o poi imparerai tutto, ma per ora procurati un buon amuleto.
+}
+
+
+Prologue_Overload {Sovraccarico}[h]
+
+
+Prologue_Overload_descr
+{
+Per la prima volta hai raggiunto il limite di peso trasportabile.
+Ogni personaggio ha un peso massimo, che dipende da forza, abilità e amuleti.
+~
+Cerca qualcosa che aumenti il peso massimo trasportabile dal tuo personaggio – magari dal nostromo nella sala dell’equipaggio.
+}
+
+
+Prologue_AutoFire {Battaglia navale}[i]
+Prologue_AutoFire_descr
+{
+La tua prima battaglia navale si svolge nell’immaginazione di Charles de Maure – quindi sperimenta senza paura.
+~
+Ogni nave ha tre caratteristiche principali: scafo, vele ed equipaggio. Se lo scafo arriva a zero, la nave affonda. Le vele danneggiate riducono la velocità e la perdita di equipaggio influisce su abbordaggio, ricarica e gestione delle vele.
+~
+Ogni tipo di munizione ha la sua funzione: mitraglia per l’equipaggio, catene per vele e alberi, bombe per lo scafo. Le palle di cannone sono universali e hanno la portata maggiore. Il danno dipende non solo dal tipo di munizione, ma anche dal cannone: più è grande, più danni fa.
+~
+Ci sono due modalità di fuoco principali. Il tiro rapido è disponibile se la nave nemica è nel settore di tiro. Non è molto preciso né efficace all’inizio, ma permette un combattimento dinamico.
+~
+Se la battaglia ti sembra troppo lenta, puoi accelerarla con i tasti di controllo del tempo.
+}
+
+
+Prologue_AimingFire {Tiro mirato}[j]
+Prologue_AimingFire_descr
+{
+Il tiro mirato permette di sparare con grande precisione dal fianco. Bisogna abituarsi, ma ne vale la pena.
+~
+I cerchi dei cannoni mostrano la posizione reale e la traiettoria dei cannoni di bordo. Hanno bisogno di tempo per allinearsi al punto che indichi al centro dello schermo.
+~
+Quando premi il tasto di fuoco, i cannoni sparano dove si trovano i loro cerchi in quel momento, quindi anticipa se necessario.
+~
+Mira a una nave nemica per selezionarla come bersaglio. Una volta catturata, puoi mirare a qualsiasi parte o anticipare il tiro.
+~
+Con l’aumentare delle abilità del capitano e del Cannoniere, la velocità di mira e la cadenza di fuoco aumentano.
+~
+Se muovi rapidamente il mirino, i cannonieri si confonderanno e mireranno più lentamente del solito.
+~
+Il tiro mirato dal fianco è ottimo per colpire parti critiche della nave a lunga distanza – soprattutto vele e alberi.
+}
+Prologue_AimingFire_controlsimg1 {ChrAimingShot}
+Prologue_AimingFire_controlsimg2 {FireCamera_Set}
+
+
+
+
+Prologue_FightAttack {Attacco}[k]
+Prologue_FightAttack_descr
+{
+I combattimenti in Caribbean Legend sono duri e veloci, ma ora sei al sicuro.
+~
+Ogni personaggio è armato e ha abilità di combattimento. Più la tua arma è buona e il tuo eroe esperto, più danni infliggi.
+~
+Hai a disposizione diversi attacchi e difese.
+~
+Iniziamo con i tre attacchi principali.
+~
+Colpo duro. Veloce, infligge meno danni e consuma energia media.
+~
+Affondo. Più lento del colpo duro, infligge danni medi e consuma poca energia.
+~
+Attacco pesante. Lento e potente, infligge molti danni e può rompere i blocchi.
+~
+Prova tutti questi attacchi sul pirata.
+}
+Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
+Prologue_FightAttack_controlsimg2 {ChrAttackBase}
+Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
+
+
+
+Prologue_FightDefence {Difesa in combattimento}[l]
+Prologue_FightDefence_descr
+{
+Benvenuto nel Nuovo Mondo, Capitano!
+~
+Caribbean Legend è un gioco impegnativo, ma non difficile da giocare. Se non avete ancora giocato alla modalità storia, vi consigliamo di dedicarle un paio d'ore per prendere confidenza e imparare le meccaniche di base del gioco.
+~
+Il gioco si controlla con i tasti di movimento e l'uso attivo del mouse. Nella maggior parte dei casi, è sufficiente premere il tasto di movimento in avanti e sterzare usando la telecamera. È sempre possibile regolare la velocità della telecamera nelle impostazioni.
+~
+Alcuni giocatori ritengono che i controlli non siano abbastanza reattivi, e noi siamo d'accordo. Per questo motivo stiamo lavorando attivamente per migliorarli e speriamo che nel prossimo aggiornamento principale questo messaggio di esercitazione sarà diverso.
+~
+Grazie per aver giocato, ci vediamo in mare!
+}
+Prologue_FightDefence_controlsimg1 {ChrBlock}
+Prologue_FightDefence_controlsimg2 {ChrParry}
+
+
+
+Prologue_Marksmanship {Tiro}[m]
+Prologue_Marksmanship_descr
+{
+È possibile mirare con qualsiasi arma da fuoco per sparare con maggiore precisione. Tenere premuto il pulsante di mira per accedere alla modalità tiratore. Rilasciare il pulsante per uscire senza sparare.  
+~  
+I tiri in modalità tiratore sono più precisi e letali, ma il compromesso è la riduzione della visibilità e della velocità di movimento.  
+~  
+Più lunga è la mira, più danni infliggerà il colpo. Un colpo alla testa infligge danni ancora maggiori. Se si subiscono danni, la mira si azzera e il personaggio barcolla. 
+}
+Prologue_Marksmanship_controlsimg1 {ChrAiming}
+Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
+
+
+
+Prologue_DeadSearch {Perquisizione}[n]
+
+
+Prologue_DeadSearch_descr
+{
+Dopo ogni combattimento, è ora di raccogliere il bottino.
+Puoi perquisire qualsiasi nemico caduto premendo il tasto di perquisizione.
+~
+Trova l’elisir curativo di cui Alonso ha bisogno!
+}

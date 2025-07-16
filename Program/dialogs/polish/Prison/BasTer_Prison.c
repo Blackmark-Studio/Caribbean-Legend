@@ -51,7 +51,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			DelLandQuestMark(npchar);
 			QuestPointerDelLoc("BasTer_town", "reload", "reload_jail");
 			dialog.text = "A-ah, Fadey opowiedział ci swoją historię? Nie mam powodu, by zabraniać ci go odwiedzić, monsieur. Nie jesteś pierwszym, kto przyszedł zobaczyć tego czerwonoskórego. Cóż, za dziesięć dni każdy obywatel będzie mógł go obejrzeć, kiedy powiesimy go na słońcu...";
-			link.l1 = "Czy mogę wejść do więzienia?";
+			link.l1 = "Czy mogę wejść głębiej do więzienia?";
 			link.l1.go = "Tichingitu_1";
 		break;
 		

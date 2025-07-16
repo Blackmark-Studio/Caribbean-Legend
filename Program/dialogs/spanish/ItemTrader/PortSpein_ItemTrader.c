@@ -17,7 +17,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	// Цена чахотки
 	case "Consumption":
-		dialog.text = "No, no es así... Ahora, por favor, no me molestes, estoy bastante ocupado... Qué pregunta tan idiota...";
+		dialog.text = "No, no es así... Ahora, por favor, no me molestes. Estoy bastante ocupado... Qué pregunta tan idiota...";
 		link.l1 = "Entiendo. Perdón por hacerte perder el tiempo...";
 		link.l1.go = "exit";
 		npchar.quest.Consumption = "true";

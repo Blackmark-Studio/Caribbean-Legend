@@ -70,6 +70,7 @@
 //#event_handler("NextDay", "wdmNextDayUpdate");
 
 #event_handler("EventTimeUpdate", "wdmTimeUpdate");
+#event_handler("EventAddNavyExp", "wdmAddNavyExp");
 
 
 //=========================================================================================
@@ -126,9 +127,17 @@ void wdmCreateWorldMap()
 	if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_FRIGATE_L) fSpeedBonus += 0.10;
 	if(CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.p3.Completed")) fSpeedBonus += 0.05;
     if(CheckAttribute(&RealShips[sti(pchar.ship.type)], "Tuning.All")) fSpeedBonus += 0.05;
+	if(HasShipTrait(pchar, "trait01")) fSpeedBonus += 0.05;
 	worldMap.kPlayerMaxSpeed = 1.0 + fSpeedBonus;
 	worldMap.shipSpeedOppositeWind = 0.55;
+	bool IsEquipGlassSP3 = GetCharacterEquipByGroup(pchar, SPYGLASS_ITEM_TYPE) == "itmname_spyglassSP3";
+	worldMap.enemyshipViewDistMin = GetFloatByCondition(IsEquipGlassSP3, 60.0, 69.0);
+	worldMap.enemyshipViewDistMax = GetFloatByCondition(IsEquipGlassSP3, 120.0, 138.0);
+	worldMap.stormViewDistMin = GetFloatByCondition(IsEquipGlassSP3, 90.0, 103.5);
+	worldMap.stormViewDistMax = GetFloatByCondition(IsEquipGlassSP3, 180.0, 207.0);
 	wdmLockReload = false;
+    // Механика мощи
+    UpdatePlayerSquadronPower();
 	//Уберём все сообщения для игрока
 	ClearAllLogStrings();
 	//
@@ -283,6 +292,7 @@ void wdmCreateWorldMap()
 	PostEvent("EventWorldMapInit", 830); //fix boal
 	ReloadProgressEnd();
 	PostEvent("EventTimeUpdate", 100);	
+	PostEvent("EventAddNavyExp", 100);	
 	PostEvent("EventCoordUpdate", 100);	
 	//Создаём накопившиеся квестовые энкаунтеры
 	worldMap.addQuestEncounters = "updateQuest";
@@ -407,5 +417,27 @@ void wdmMarkDeleteEncounters()
 		{
 			enc.needDelete = "Time delete";
 		}
+	}
+}
+
+void wdmAddNavyExp()
+{
+	if(!isEntity(&WorldMap)) return;
+	
+	float hour = GetHour();
+	
+	if(hour == 12.00 || hour == 0.00)
+	{
+		if(IsEquipCharacterByItem(pchar, "bussol") && IsCharacterEquippedArtefact(pchar, "clock2"))
+			AddCharacterExpToSkill(pchar, "Sailing", 2.0);
+		else
+			AddCharacterExpToSkill(pchar, "Sailing", 1.5);
+		// belamour пока на тесты раз в три дня
+		if(hour == 0.00 && GetDataDay() % 3 == 0) notification(StringFromKey("RPGUtilite_1"), "Sailing");
+			
+	}
+	if(GetSkillValue(pchar, SKILL_TYPE, "Sailing") < 100)
+	{
+		PostEvent("EventAddNavyExp", 1000);
 	}
 }

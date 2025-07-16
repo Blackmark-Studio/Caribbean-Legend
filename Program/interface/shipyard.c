@@ -52,7 +52,7 @@ void InitInterface_R(string iniName, ref _shipyarder)
 	
 	SendMessage(&GameInterface,"ls",MSG_INTERFACE_INIT,iniName);
 	CreateString(true,"ShipName","",FONT_NORMAL,COLOR_MONEY, 960,250,SCRIPT_ALIGN_CENTER,1.5);
-	CreateString(true,"ShipClass","",FONT_NORMAL,COLOR_NORMAL, 960,275,SCRIPT_ALIGN_CENTER,1.5);
+	// CreateString(true,"ShipClass","",FONT_NORMAL,COLOR_NORMAL, 960,275,SCRIPT_ALIGN_CENTER,1.5);
 
 	SetEventHandler("InterfaceBreak","ProcessExitCancel",0);
 	SetEventHandler("exitCancel","ProcessExitCancel",0);
@@ -337,6 +337,7 @@ void FillShipsScroll()
 				shipName = ShipsTypes[iShipType].Name;
 
 				GameInterface.SHIPS_SCROLL.(attributeName).character = cn;
+				GameInterface.SHIPS_SCROLL.(attributeName).str1 = "#"+" "+ShipsTypes[iShipType].Class;
 				GameInterface.SHIPS_SCROLL.(attributeName).img1 = "ship";
 				GameInterface.SHIPS_SCROLL.(attributeName).tex1 = FindFaceGroupNum("SHIPS_SCROLL.ImagesGroup","SHIPS_"+shipName+"_"+realShip.ship.upgrades.hull);
 				m++;
@@ -345,6 +346,7 @@ void FillShipsScroll()
 			{
 				attributeName = "pic" + (m+1);
 				GameInterface.SHIPS_SCROLL.(attributeName).character = cn;
+				GameInterface.SHIPS_SCROLL.(attributeName).str1 = "#";
 				GameInterface.SHIPS_SCROLL.(attributeName).img1 = "Not Used";
 				GameInterface.SHIPS_SCROLL.(attributeName).tex1 = "BLANK_SHIP";
 				m++;
@@ -469,34 +471,50 @@ void FillShipParam(ref _chr)
 		SetShipOTHERTable2("TABLE_OTHER", _chr);
 		string sShipName = refBaseShip.BaseName;
 		SetFormatedText("INFO_CAPTION", XI_ConvertString(sShipName));
+		string descr = GetShipDescr(refBaseShip);
+		SetFormatedText("INFO_TEXT", descr);
+		int nStrings = GetNumberOfStringsInFormatedText("INFO_TEXT", descr); // считаем сколько строк в форме
+		SetNodeUsing("SCROLL_TEXT",true);
+		SendMessage( &GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE,"INFO_TEXT", 13, 0 ); //1 - запрет, 0 - нет
+		if(nStrings <11)// Запрет на скроллинг
+		{
+			SetNodeUsing("SCROLL_TEXT",false);
+			SendMessage( &GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE,"INFO_TEXT", 13, 1 ); //1 - запрет, 0 - нет
+		}
 		if (bShipyardOnTop)
 		{
 			if (bEmptySlot)// проверка на пустой слот
 			{
 				iMoney = GetShipBuyPrice(sti(refNPCShipyard.Ship.Type), refNPCShipyard);
-				SetFormatedText("INFO_TEXT", GetConvertStr(sShipName, "ShipsDescribe.txt") + "\n\n" + XI_ConvertString("BuyCost") + " " + iMoney);
+				SetFormatedText("BUYSELL_PRICE", XI_ConvertString("BuyCost") + " " + iMoney);
 			} else {
 				iMoney = GetShipBuyPrice(sti(refNPCShipyard.Ship.Type), refNPCShipyard) - GetShipSellPrice(refCharacter, refNPCShipyard);
-				SetFormatedText("INFO_TEXT", GetConvertStr(sShipName, "ShipsDescribe.txt") + "\n\n" + XI_ConvertString("BuyCostTradeIn") + " " + iMoney);
+				SetFormatedText("BUYSELL_PRICE", XI_ConvertString("BuyCostTradeIn") + " " + iMoney);
 			}
 		} else {
-			SetFormatedText("INFO_TEXT", GetConvertStr(sShipName, "ShipsDescribe.txt") + "\n\n" + XI_ConvertString("SellCost") + " " + GetShipSellPrice(refCharacter, refNPCShipyard));
+			SetFormatedText("BUYSELL_PRICE", XI_ConvertString("SellCost") + " " + GetShipSellPrice(refCharacter, refNPCShipyard));
 		}
+		SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"BUYSELL_PRICE",5);
 		SetNodeUsing("TABLE_OTHER", true);
 		SetNodeUsing("SHIP_BIG_PICTURE", true);
+		SetNodeUsing("SHIP_PERK1", true);
+		SetNodeUsing("SHIP_PERK2", true);
 		ShowCannonsMenu();
+		SetShipPerks(_chr);
 	}
 	else
 	{
 		SetNewPicture("SHIP_BIG_PICTURE", "interfaces\le\ships\empty_ship.tga");
 		SetNodeUsing("SHIP_BIG_PICTURE", false);
+		SetNodeUsing("SHIP_PERK1", false);
+		SetNodeUsing("SHIP_PERK2", false);
 		SetFormatedText("INFO_CAPTION","");
 		SetFormatedText("INFO_TEXT","");
+		SetFormatedText("BUYSELL_PRICE","");
 		SetNodeUsing("TABLE_OTHER", false);
 		HideCannonsMenu();
 	}
 	Table_UpdateWindow("TABLE_OTHER");
-
 }
 
 void confirmShipChangeName()
@@ -521,6 +539,8 @@ void ShowInfoWindow()
 	string sCurrentNode = GetCurrentNode();
 	string sHeader, sText1, sText2, sText3, sPicture;
 	string sGroup, sGroupPicture;
+	int picW = 180;
+	int picH = 180;
 	int iItem;
 
 	sPicture = "-1";
@@ -560,13 +580,42 @@ void ShowInfoWindow()
 			}
 		break;
 
+		case "SHIP_PERK1":
+			string sPerkName1 = GetShipSpecDesc(rChr);
+			sGroup = "PERKS_SHIPS";
+			sGroupPicture = sPerkName1;
+			sHeader = GetConvertStr(sPerkName1, "ShipsPerksDescribe.txt");
+			sText1 = GetConvertStr(sPerkName1 + "_desc", "ShipsPerksDescribe.txt");
+			sText3 = GetConvertStr(sPerkName1 + "_desc2", "ShipsPerksDescribe.txt");
+		break;
+
+		case "SHIP_PERK2":
+			string sPerkName2 = GetShipTraitDesc(rChr);
+			sGroup = "PERKS_SHIPS";
+			sGroupPicture = sPerkName2;
+			sHeader = GetConvertStr(sPerkName2, "ShipsPerksDescribe.txt");
+			sText1 = GetConvertStr(sPerkName2 + "_desc", "ShipsPerksDescribe.txt");
+			sText3 = GetConvertStr(sPerkName2 + "_desc2", "ShipsPerksDescribe.txt");
+			iShip = sti(rChr.ship.type);
+			refBaseShip = GetRealShip(iShip);
+			if(CheckAttribute(refBaseShip, "DeadSailors"))
+			{
+				aref arShipBonus;
+				makearef(arShipBonus, refBaseShip.DeadSailors);
+				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
+									 + GetAssembledString(GetConvertStr("sp3_SailorsBoardingBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
+				sText3 += newStr() + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus_desc","ShipsPerksDescribe.txt"), arShipBonus)
+								   + GetAssembledString(GetConvertStr("sp3_SurrenderChanceBonus1_desc","ShipsPerksDescribe.txt"), refBaseShip);
+			}
+		break;
+
 		case "SHIPS_SCROLL":
 			if (shipIndex != -1)
 			{
 			    iShip = sti(refCharacter.ship.type);
 			    refBaseShip = GetRealShip(iShip);
 				sHeader = XI_ConvertString(refBaseShip.BaseName);
-				sText1 = GetConvertStr(refBaseShip.BaseName, "ShipsDescribe.txt");
+				sText1 = GetShipDescr(refBaseShip);
 			}
 			else
 			{
@@ -628,7 +677,7 @@ void ShowInfoWindow()
 		{
 			XI_WindowShow("SHIP_ZOOM_WINDOW", true);
 		} else {
-		CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 128, 128);
+		CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, picW, picH);
 		}
 	}
 }
@@ -863,8 +912,8 @@ void FillShipyardTable()
 		GameInterface.TABLE_SHIPYARD.(row).td1.icon.uv = "0,0,1,1";
 		GameInterface.TABLE_SHIPYARD.(row).td1.icon.width = 60;
     	GameInterface.TABLE_SHIPYARD.(row).td1.icon.height = 60;
-    	GameInterface.TABLE_SHIPYARD.(row).td1.icon.offset = "238, 0";
-    	GameInterface.TABLE_SHIPYARD.(row).td1.textoffset = "10,0";
+    	GameInterface.TABLE_SHIPYARD.(row).td1.icon.offset = "248, 0";
+    	GameInterface.TABLE_SHIPYARD.(row).td1.textoffset = "0,0";
 		GameInterface.TABLE_SHIPYARD.(row).td1.str = XI_Convertstring(sShip) + "\n"+refNPCShipyard.ship.name;
 		GameInterface.TABLE_SHIPYARD.(row).td1.align = "left";
 		GameInterface.TABLE_SHIPYARD.(row).td2.str = refBaseShip.Class;
@@ -1005,7 +1054,7 @@ void AcceptAddOfficer()
 	string  attributeName2 = "pic"+(nCurScrollOfficerNum+1);
     ref     sld;
 
-    if (checkAttribute(GameInterface, "PASSENGERSLIST."+attributeName2 + ".character"))
+    if (checkAttribute(&GameInterface, "PASSENGERSLIST."+attributeName2 + ".character"))
     {
 		int iChar = sti(GameInterface.PASSENGERSLIST.(attributeName2).character);
         // назначение нового кэпа, возможно, если там уже не наш, те или враг или снят
@@ -1031,9 +1080,9 @@ void AcceptAddOfficer()
 void SetOfficersSkills()
 {
 	string sCharacter = "pic"+(sti(GameInterface.PASSENGERSLIST.current)+1);
-	if (checkAttribute(GameInterface, "PASSENGERSLIST."+sCharacter))
+	if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter))
 	{
-		if (checkAttribute(GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
+		if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
 		{
 			sCharacter = GameInterface.PASSENGERSLIST.(sCharacter).character;
 			ref otherchr = &characters[sti(sCharacter)];
@@ -1489,16 +1538,16 @@ void RepairOk()
 	
 	if (RepairHull > 0)
 	{
-		timeHull = timeHull + RepairHull * (8-GetCharacterShipClass(refCharacter));
-	    AddCharacterExpToSkill(pchar, "Repair", (RepairHull * (7-GetCharacterShipClass(refCharacter)) / 10.0));
+		timeHull = timeHull + RepairHull * (9-GetCharacterShipClass(refCharacter));
+	    AddCharacterExpToSkill(pchar, "Repair", (RepairHull * (8-GetCharacterShipClass(refCharacter)) / 10.0));
 		AddMoneyToCharacter(pchar, -GetHullRepairCost(st, RepairHull, refNPCShipyard));
 
 		ret = ProcessHullRepair(refCharacter, stf(RepairHull));
 	}
 	if (RepairSail > 0)
 	{
-	  	timeRig = timeRig + RepairSail * (8-GetCharacterShipClass(refCharacter));
-	    AddCharacterExpToSkill(pchar, "Repair", (RepairSail * (7-GetCharacterShipClass(refCharacter)) / 14.0));
+	  	timeRig = timeRig + RepairSail * (9-GetCharacterShipClass(refCharacter));
+	    AddCharacterExpToSkill(pchar, "Repair", (RepairSail * (8-GetCharacterShipClass(refCharacter)) / 14.0));
 		AddMoneyToCharacter(pchar,-GetSailRepairCost(st, RepairSail, refNPCShipyard));
 
 		ret = ProcessSailRepair(refCharacter, stf(RepairSail));
@@ -1813,4 +1862,23 @@ bool bPassengersAccess() {
         }
     } 
     return false;
+}
+
+void SetShipPerks(ref chr)
+{
+	string pictureGroup = "PERKS_SHIPS";
+	string perkName1, perkName2;
+	SetNodeUsing("SHIP_PERK1",false);
+	SetNodeUsing("SHIP_PERK2",false);
+
+	int iShip = sti(chr.ship.type);
+	if(iShip != SHIP_NOTUSED) 
+	{
+		perkName1 = GetShipSpecDesc(chr);
+		perkName2 = GetShipTraitDesc(chr);
+		SetNewGroupPicture("SHIP_PERK1", pictureGroup, perkName1);
+		SetNewGroupPicture("SHIP_PERK2", pictureGroup, perkName2);
+		if(perkName1 != "") SetNodeUsing("SHIP_PERK1",true);
+		if(perkName2 != "") SetNodeUsing("SHIP_PERK2",true);
+	}
 }

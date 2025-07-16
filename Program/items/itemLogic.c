@@ -90,11 +90,11 @@ void Item_OnLoadLocation(string currentLocation)
 
 	for (int itemN=0; itemN<ITEMS_QUANTITY; itemN++)
 	{
-		if (!CheckAttribute(Items[itemN], "startLocator"))
+		if (!CheckAttribute(&Items[itemN], "startLocator"))
 			continue;
-		if (!CheckAttribute(Items[itemN], "startLocation"))
+		if (!CheckAttribute(&Items[itemN], "startLocation"))
 			continue;
-		if (!CheckAttribute(Items[itemN], "shown"))
+		if (!CheckAttribute(&Items[itemN], "shown"))
 			continue;
 		if (Items[itemN].shown == "1")
 		{
@@ -146,11 +146,11 @@ void Item_OnEnterLocator(aref _location, string _locator)
 	{ // use item
 		for (itemN=ItemsForLocators_start; itemN<ItemsForLocators_end; itemN++)
 		{
-			if (!CheckAttribute(Items[itemN], "useLocator"))
+			if (!CheckAttribute(&Items[itemN], "useLocator"))
 				continue;
-			if (!CheckAttribute(Items[itemN], "useLocation"))
+			if (!CheckAttribute(&Items[itemN], "useLocation"))
 				continue;
-			if (!CheckAttribute(Items[itemN], "shown"))
+			if (!CheckAttribute(&Items[itemN], "shown"))
 				continue;
 			if (Items[itemN].shown == "0")
 			{
@@ -179,11 +179,11 @@ void Item_OnEnterLocator(aref _location, string _locator)
 		} else {
 			for (itemN=ItemsForLocators_start; itemN<ItemsForLocators_end; itemN++)
 			{
-				if (!CheckAttribute(Items[itemN], "startLocator"))
+				if (!CheckAttribute(&Items[itemN], "startLocator"))
 					continue;
-				if (!CheckAttribute(Items[itemN], "startLocation"))
+				if (!CheckAttribute(&Items[itemN], "startLocation"))
 					continue;
-				if (!CheckAttribute(Items[itemN], "shown"))
+				if (!CheckAttribute(&Items[itemN], "shown"))
 					continue;
 				if (Items[itemN].startLocator == _locator)
 				{
@@ -250,6 +250,15 @@ void Item_OnPickItem()
 		string locator = chr.activeLocator;
 		//Trace("ItemLogic: picking item "+Items[activeItem].id);
 		QuestPointerDelLoc(activeLocation.id, "item", locator);
+		
+		if(HasSubStr(Items[activeItem].id, "cannabis"))
+		{
+			notification(LanguageConvertString(langFile, "flower_find"), "Alchemy");
+			if(Items[activeItem].id == "cannabis7")
+				AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 10.0);
+			else
+				AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 2.0);
+		}
 		
 		ref itemModel;
 		if (CheckAttribute(activeLocation, "itemShow." + locator + ".modelIndex")) {
@@ -356,7 +365,7 @@ void Item_OnUseFrame()
 
     		SendMessage(&buttonModels[i], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y)+deltaY, makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
 
-    		for (int j=0; j<ITEMS_QUANTITY; j++)
+    		for (int j=0; j<ITEMS_QUANTITY; j++) // TO_DO: ДИЧЬ
     		{
     			if (Items[j].useLocator == an.locator)
     			{
@@ -475,20 +484,9 @@ void Items_HideItem(int itemN)
 
 int Items_FindItem(string itemID, ref itemARef)
 {
-	aref curItem;
-	
-	for(int i = 0; i < TOTAL_ITEMS; i++)
-	{
-		makearef(curItem,Items[i]);
-		
-		if(CheckAttribute(curItem, "ID") && curItem.id == itemID)
-		{
-			itemARef = curItem;
-			return i;
-		}
-	}
-	
-	return -1;
+	int idx = FindItem(itemID);
+    if (idx >= 0) makearef(itemARef,Items[idx]);
+	return idx;
 }
 
 int Items_FindItemIdx(string itemID) // нужно для поиска только номера
@@ -657,7 +655,8 @@ void Box_EnterToLocator(aref loc, string locName)
 				{
 					loc.(locName).opened = true;
 					PlaySound("interface\key.wav");
-					if(!CheckCharacterItem(pchar, loc.(locName).key)) Log_Info(XI_ConvertString("BoxOpened"));
+					if(!bOk) notification(XI_ConvertString("BoxKeyOpened"), "Key");
+					if(!CheckCharacterItem(pchar, loc.(locName).key)) notification(XI_ConvertString("BoxOpened"), "Key");
 					
 					if(CheckAttribute(loc, locName+".key.delItem"))
 					{
@@ -665,34 +664,34 @@ void Box_EnterToLocator(aref loc, string locName)
 					}
 					//--> квестовые ситуации
 					if (pchar.location == "Tartarusprison" && CheckAttribute(pchar, "questTemp.Saga.BaronReturn") && pchar.questTemp.Saga.BaronReturn == "LSC" && loc.(locName).key == "crowbar")
-				{
-						DoQuestFunctionDelay("LSC_ChadGuardAttack", 7.0);
-					}
-					if (pchar.location == "CarolineBank" && loc.(locName).key == "key_facioQ")
 					{
-						DoQuestCheckDelay("LSC_DrinkInCarolina", 1.0);
+							DoQuestFunctionDelay("LSC_ChadGuardAttack", 7.0);
+						}
+						if (pchar.location == "CarolineBank" && loc.(locName).key == "key_facioQ")
+						{
+							DoQuestCheckDelay("LSC_DrinkInCarolina", 1.0);
+						}
+						if (pchar.location == "Tortuga_townhallRoom" && loc.(locName).key == "kaleuche_key" && CheckAttribute(pchar, "questTemp.FMQT") && pchar.questTemp.FMQT == "chest")
+						{ // Addon-2016 Jason, французские миниквесты (ФМК) Тортуга
+							chrDisableReloadToLocation = true;
+							DoQuestFunctionDelay("FMQT_MercenEnter", 7.0);
+							pchar.questTemp.FMQT.Open = "true";
+						}
+						//<-- квестовые ситуации
 					}
-					if (pchar.location == "Tortuga_townhallRoom" && loc.(locName).key == "kaleuche_key" && CheckAttribute(pchar, "questTemp.FMQT") && pchar.questTemp.FMQT == "chest")
-					{ // Addon-2016 Jason, французские миниквесты (ФМК) Тортуга
-						chrDisableReloadToLocation = true;
-						DoQuestFunctionDelay("FMQT_MercenEnter", 7.0);
-						pchar.questTemp.FMQT.Open = "true";
-					}
-					//<-- квестовые ситуации
+					else 
+					{
+						if (CheckCharacterItem(pchar, "keys_skel")) notification(XI_ConvertString("BoxClosed"), "none");
+						notification(XI_ConvertString("You have not need key"), "Key");
+						PlaySound("interface\box_locked.wav");
+						return;
 				}
-				else 
-				{
-					if (CheckCharacterItem(pchar, "keys_skel")) Log_Info(XI_ConvertString("BoxClosed"));
-					Log_SetStringToLog(XI_ConvertString("You have not need key"));
-					PlaySound("interface\box_locked.wav");
-					return;
-			}
 			}
 			else
 			{	
 				if(CheckAttribute(loc, locName+".closed")) //проверяем, не закрыт ли сундук
 				{
-					Log_SetStringToLog(XI_ConvertString("Box is closed"));
+					notification(XI_ConvertString("Box is closed"), "none");
 					PlaySound("interface\door_locked.wav");
 					return;
 			}
@@ -703,7 +702,7 @@ void Box_EnterToLocator(aref loc, string locName)
 	// Warship 15.08.09 Проверка на квестовую закрытость сундуков (не только приватов, вообще всех)
 	if(CheckAttribute(loc, locName + ".QuestClosed"))
 	{
-		Log_SetStringToLog(XI_ConvertString("Box is closed"));
+		notification(XI_ConvertString("Box is closed"), "none");
 		PlaySound("interface\door_locked.wav");
 		return;
 	}
@@ -904,7 +903,7 @@ void Box_OnLoadLocation(ref _location)
     			ref chr = GetMainCharacter();
     			spawnItemsCount = spawnItemsCount + spawnItemsCount * GetCharacterSkillToOld(chr, "Fortune") / 10.0;
 				// belamour legendary edition крафтовый инструментарий в сундук верфи -->
-				if(drand(99) <= makeint(1 + GetCharacterSPECIALSimple(chr, SPECIAL_L) - 4))
+				if(hrand(99, _location.id) <= makeint(1 + GetCharacterSPECIALSimple(chr, SPECIAL_L) - 4))
 				{
 					if(CheckAttribute(_location,"id.label") && _location.id.label == "Shipyard" && CheckAttribute(_location,"box1"))
 					{
@@ -1039,4 +1038,4 @@ void RemoveItemFromLocation(string location, string locator) {
 	DeleteAttribute(&locations[index], "itemShow." + locator);
 }
 
-object g_TmpModelVariable; // код от к3, в скриптах нет вообще, есть проверка в ядре
+object g_TmpModelVariable; // TO_DO: код от к3, в скриптах нет вообще, есть проверка в ядре

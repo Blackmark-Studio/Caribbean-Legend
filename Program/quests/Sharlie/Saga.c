@@ -75,10 +75,10 @@ void Saga_createDonovan(string qName)//ставим корвет Донован�
 	SetCharacterPerk(sld, "Doctor1");
 	Group_AddCharacter("DonovanGroup", "Donovan");
 	Group_SetGroupCommander("DonovanGroup", "Donovan");
-	if (sti(pchar.rank > 17) && MOD_SKILL_ENEMY_RATE > 4)
+	if (sti(pchar.rank > 17) && MOD_SKILL_ENEMY_RATE > 2)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("DonovanHelper", "off_eng_2", "man", "man", 25, ENGLAND, 2, true, "quest"));
-		FantomMakeSmallSailor(sld, SHIP_FRIGATE, "", CANNON_TYPE_CANNON_LBS24, 80, 65, 75, 80, 65);
+		FantomMakeSmallSailor(sld, SHIP_GALEON_H, "", CANNON_TYPE_CANNON_LBS36, 80, 65, 75, 80, 65);
 		FantomMakeCoolFighter(sld, 25, 70, 70, "blade_15", "pistol6", "bullet", 200);
 		sld.DontRansackCaptain = true;
 		sld.AnalizeShips = true;
@@ -260,8 +260,7 @@ void Saga_LightmanReturn(string qName)//вертаем назад смотрит
 	sld.location.locator = "bar2";
 	sld.model = "citiz_32";
 	sld.model.animation = "man";
-	sld.name = "Хуан";
-	sld.lastname = "Перес";
+	SetRandomNameToCharacter(sld);
 	sld.dialog.currentnode = "First time";
 }
 
@@ -416,7 +415,7 @@ void Dolly_TeleportContinue_4(string qName)
 		break;
 		
 		case "dolly2":
-			DoQuestReloadToLocation("Indian_town", "quest", "teleport1", "Dominica_TeleportArrive");
+			DoQuestReloadToLocation("Dominica_village", "quest", "teleport1", "Dominica_TeleportArrive");
 		break;
 		
 		case "dolly3": 
@@ -1804,7 +1803,7 @@ void LSC_RingStart(string qName) // готовы
 void LSC_RingEnter(string qName) // входим
 {
 	pchar.quest.LSC_Ring_Over.over = "yes"; //снять прерывание
-	SetLaunchFrameFormParam("Прошёл час..."+ NewStr() +"Вы добрались до разбитого корабля", "", 0, 6);//табличка
+	SetLaunchFrameFormParam(StringFromKey("Saga_122", NewStr()), "", 0, 6);//табличка
 	LaunchFrameForm();
 	WaitDate("", 0, 0, 0, 1, 10); //крутим время
 	RecalculateJumpTable();
@@ -1928,8 +1927,17 @@ void LSC_ReturnJackmanAttack(string qName) //наймиты Джекмана а�
     {
 		switch (sti(RealShips[sti(pchar.ship.type)].Class))
 		{
+			case 7:
+				iShip = SHIP_WAR_TARTANE;
+				iCannons = CANNON_TYPE_CANNON_LBS3;
+				if(i == 1)
+				{
+					iShip = SHIP_SLOOP;
+					iCannons = CANNON_TYPE_CANNON_LBS12;
+				}
+			break;
 			case 6:
-				iShip = SHIP_TARTANE;
+				iShip = SHIP_WAR_TARTANE;
 				iCannons = CANNON_TYPE_CANNON_LBS3;
 				if(i == 1)
 				{
@@ -1939,47 +1947,47 @@ void LSC_ReturnJackmanAttack(string qName) //наймиты Джекмана а�
 			break;
 			
 			case 5:
-				iShip = SHIP_SLOOP;
-				iCannons = CANNON_TYPE_CANNON_LBS12;
+				iShip = SHIP_LUGGER;
+				iCannons = CANNON_TYPE_CANNON_LBS16;
 				if(i == 1)
 				{
-					iShip = SHIP_BRIGANTINE;
-					iCannons = CANNON_TYPE_CANNON_LBS16;
+					iShip = SHIP_SLOOP;
+					iCannons = CANNON_TYPE_CANNON_LBS12;
 				}
 			break;
 			
 			case 4:
 				iShip = SHIP_BRIGANTINE;
-				iCannons = CANNON_TYPE_CANNON_LBS16;
+				iCannons = CANNON_TYPE_CANNON_LBS12;
 				if(i == 1)
 				{
-					iShip = SHIP_CORVETTE;
-					iCannons = CANNON_TYPE_CULVERINE_LBS18;
+					iShip = SHIP_XebekVML;
+					iCannons = CANNON_TYPE_CANNON_LBS16;
 				}
 			break;
 			
 			case 3:
-				iShip = SHIP_CORVETTE;
+				iShip = SHIP_POLACRE;
 				iCannons = CANNON_TYPE_CULVERINE_LBS18;
 				if(i == 1)
 				{
-					iShip = SHIP_FRIGATE_H;
-					iCannons = CANNON_TYPE_CANNON_LBS24;
+					iShip = SHIP_CORVETTE;
+					iCannons = CANNON_TYPE_CANNON_LBS20;
 				}
 			break;
 			
 			case 2:
-				iShip = SHIP_FRIGATE_H;
-				iCannons = CANNON_TYPE_CANNON_LBS24;
+				iShip = SHIP_CORVETTE;
+				iCannons = CANNON_TYPE_CANNON_LBS20;
 				if(i == 1)
 				{
-					iShip = SHIP_LINESHIP;
+					iShip = SHIP_FRIGATE;
 					iCannons = CANNON_TYPE_CANNON_LBS32;
 				}
 			break;
 			
 			case 1:
-				iShip = SHIP_LINESHIP;
+				iShip = SHIP_FRIGATE_H;
 				iCannons = CANNON_TYPE_CANNON_LBS32;
 			break;
 		}
@@ -3180,6 +3188,7 @@ void Saga_MineGunAttack(string qName) // устанавливаем орудие
 	bDisableCharacterMenu = true;//лоченые интерфейсы
 	InterfaceStates.Buttons.Save.enable = false;//запретить сохраняться
 	locCameraLockNearHero(-5.0, 2.0, -5.0, 1000, true);
+	Pchar.FuncCameraFly = "";
 	DoQuestCheckDelay("Saga_MineSetMusic", 0.8);
 	ChangeCharacterAddressGroup(pchar, "mine", "soldiers", "commander");
 	for (i=1; i<=8; i++)
@@ -3639,7 +3648,7 @@ void Saga_SetBaldMaggy(string qName) // ставим плешивую мэгги
 	sld.lastname = StringFromKey("Saga_74");
 	sld.Dialog.Filename = "Quest\Saga\OtherNPC.c";
 	sld.DeckDialogNode = "Benson";
-	FantomMakeCoolSailor(sld, SHIP_BARKENTINE, StringFromKey("Saga_75"), CANNON_TYPE_CANNON_LBS12, 40, 40, 40);
+	FantomMakeCoolSailor(sld, SHIP_BARKENTINE, StringFromKey("Saga_75"), CANNON_TYPE_CANNON_LBS3, 40, 40, 40);
 	FantomMakeCoolFighter(sld, 15, 40, 40, "blade_10", "pistol1", "bullet", 50);
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
@@ -4457,7 +4466,7 @@ void SGF_CreatGoldFleet(string qName)
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+7;
 	if (iRank > 45) iRank = 45;
 	log_info(StringFromKey("Saga_87"));
-	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");;
+	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	DeleteAttribute(pchar,"GenQuest.CannotWait");
 	Group_FindOrCreateGroup("SGF_GoldSeaGroup");
 	// тяжёлый галеон
@@ -4587,11 +4596,11 @@ void SGF_CreatBattleShips(string qName)
 	}
 	if(MOD_SKILL_ENEMY_RATE > 7)
 	{
-		Ship3 = SHIP_LINESHIP;
+		Ship3 = SHIP_GALEON_H;
 		Ship4 = SHIP_FRIGATE_H;
 		Ship5 = SHIP_FRIGATE_H;
 		Ship6 = SHIP_CORVETTE;
-		Cannon3 = CANNON_TYPE_CANNON_LBS32;
+		Cannon3 = CANNON_TYPE_CANNON_LBS36;
 		Cannon4 = CANNON_TYPE_CANNON_LBS32;
 		Cannon5 = CANNON_TYPE_CANNON_LBS24;
 		Cannon6 = CANNON_TYPE_CULVERINE_LBS18;
@@ -5305,7 +5314,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		RefreshLandTime();
 		RecalculateJumpTable();
 		Whr_UpdateWeather();
-		SetCharacterGoods(pchar, GOOD_SILVER, GetCargoGoods(pchar, GOOD_SILVER) + 2000 + drand(100)); // кладем серебро
+		SetCharacterGoods(pchar, GOOD_SILVER, GetCargoGoods(pchar, GOOD_SILVER) + 2000 + hrand(100)); // кладем серебро
 		LAi_SetPlayerType(pchar);
 		sld = characterFromId("Svenson");
 		sld.dialog.currentnode = "mine_attack_47";
@@ -5439,7 +5448,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		LAi_LocationFightDisable(&Locations[FindLocation("Dominica_jungle_02")], true); // запретить драться
 		chrDisableReloadToLocation = true; // закрыть локацию
 		pchar.GenQuest.CirassExchangeDisable = true; // чтобы не снял скафандр
-		LAi_LocationDisableOfficersGen("Indian_town", true); // не пускать офицеров в деревню
+		LAi_LocationDisableOfficersGen("Dominica_village", true); // не пускать офицеров в деревню
 		LAi_LocationDisableOfficersGen("Dominica_jungle_02", true); // не пускать офицеров в локу телепорта
 		for (i = 1; i <= 10; i++)
 		{
@@ -5533,9 +5542,9 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		LAi_ActorAnimation(pchar, "Ground_sitting", "LSC_TeleportArrive_1", 3.0);
 		LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true); // запретить драться
 		// снимаем старые запреты
-		LAi_LocationDisableOfficersGen("Indian_town", false); // пускать офицеров в деревню
+		LAi_LocationDisableOfficersGen("Dominica_village", false); // пускать офицеров в деревню
 		LAi_LocationDisableOfficersGen("Dominica_jungle_02", false); // пускать офицеров в локу телепорта
-		LAi_LocationFightDisable(&Locations[FindLocation("Indian_town")], false); // разрешить драться
+		LAi_LocationFightDisable(&Locations[FindLocation("Dominica_village")], false); // разрешить драться
 		LAi_LocationFightDisable(&Locations[FindLocation("Dominica_jungle_02")], false); // разрешить драться
 		// Даниэль бежит к нам
 		sld = characterFromId("Danielle");
@@ -7337,345 +7346,6 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 			pchar.quest.AlexClock_Find.win_condition.l1.item = "alexs_chest";
 			pchar.quest.AlexClock_Find.function = "AlexClock_FindChest";
 		}
-	}
-	// ------------------------------- отношения с девушками-героинями Саги ------------------------------
-	else if (sQuestName == "cabin_sex_go") // Sinistra катсцена с поцелуями
-	{
-		DialogExit();
-		chrDisableReloadToLocation = true; // закрыть локацию
-		if (Get_My_Cabin() == "My_Cabin_Huge")
-		{
-			StartQuestMovie(true, false, true);
-			LAi_SetActorType(pchar);
-			DeleteAllOfficersFromLocation();
-			LAi_FadeLong("HelenaMary_HugeCabin_LoveKiss", "");
-		}
-		if (Get_My_Cabin() == "My_Cabin" || Get_My_Cabin() == "My_CabineFDM")
-		{
-			StartQuestMovie(true, false, true);
-			LAi_SetActorType(pchar);
-			DeleteAllOfficersFromLocation();
-			LAi_FadeLong("HelenaMary_BigCabin_LoveKiss", "");
-		}
-		if (Get_My_Cabin() == "My_Cabin_Medium2")
-		{
-			StartQuestMovie(true, false, true);
-			LAi_SetActorType(pchar);
-			DeleteAllOfficersFromLocation();
-			LAi_FadeLong("HelenaMary_NormalCabin_LoveKiss", "");
-		}
-		if (Get_My_Cabin() == "My_Cabin_Medium")
-		{
-			StartQuestMovie(true, false, true);
-			LAi_SetActorType(pchar);
-			DeleteAllOfficersFromLocation();
-			LAi_FadeLong("HelenaMary_MediumCabin_LoveKiss", "");
-		}
-		if (Get_My_Cabin() == "My_Cabin_Small")
-		{
-			StartQuestMovie(true, false, true);
-			LAi_SetActorType(pchar);
-			DeleteAllOfficersFromLocation();
-			LAi_FadeLong("HelenaMary_SmallCabin_LoveKiss", "");
-		}
-	}
-	else if (sQuestName == "HelenaMary_HugeCabin_LoveKiss") // Огромная каюта
-	{
-		// if(CheckAttribute (pchar, "IsMushketer")) SetMainCharacterToMushketer("", false);
-		TeleportCharacterToPosAy(pchar, -0.40, 10.00, 4.60, -1.50);
-		LAi_SetActorType(pchar);
-		LAi_ActorAnimation(pchar, "kiss", "1", 16.5);
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-		{
-			sld = characterFromId("Mary");
-			DoQuestCheckDelay("Mary_LoveSex_New", 15.0);
-		}
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-		{
-			sld = characterFromId("Helena");
-			DoQuestCheckDelay("Helena_LoveSex_New", 15.0);
-		}
-		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-		TeleportCharacterToPosAy(sld, -1.00, 10.00, 4.60, 1.50);
-		LAi_SetActorType(sld);
-		LAi_ActorAnimation(sld, "kiss", "1", 16.5);
-		locCameraFromToPos(1.64, 11.53, 1.81, true, -0.92, 9.78, 5.16);
-		DoQuestCheckDelay("HelenaMary_HugeCabin_LoveKiss_2", 6.5);
-		DoQuestCheckDelay("HelenaMary_HugeCabin_LoveKiss_3", 12.0);
-	}
-	else if (sQuestName == "HelenaMary_HugeCabin_LoveKiss_2")
-	{
-		locCameraFromToPos(-1.99, 11.43, 5.86, true, 3.00, 9.78, 1.58);
-	}
-	else if (sQuestName == "HelenaMary_HugeCabin_LoveKiss_3")
-	{
-		locCameraFromToPos(-2.33, 11.08, 2.93, true, 1.14, 10.28, 5.84);
-	}
-	else if (sQuestName == "HelenaMary_BigCabin_LoveKiss") // Большая каюта
-	{
-		// if(CheckAttribute (pchar, "IsMushketer")) SetMainCharacterToMushketer("", false);
-		TeleportCharacterToPosAy(pchar, -1.30, 20.00, -1.10, 3.00);
-		LAi_SetActorType(pchar);
-		LAi_ActorAnimation(pchar, "kiss", "1", 9.5);
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-		{
-			sld = characterFromId("Mary");
-			DoQuestCheckDelay("Mary_LoveSex_New", 9.5);
-		}
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-		{
-			sld = characterFromId("Helena");
-			DoQuestCheckDelay("Helena_LoveSex_New", 9.5);
-		}
-		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-		TeleportCharacterToPosAy(sld, -1.30, 20.00, -1.70, 0.00);
-		LAi_SetActorType(sld);
-		LAi_ActorAnimation(sld, "kiss", "1", 9.5);
-		locCameraFromToPos(1.76, 21.32, -3.48, true, -3.14, 19.16, 0.27);
-		DoQuestCheckDelay("HelenaMary_BigCabin_LoveKiss_2", 6.5);
-	}
-	else if (sQuestName == "HelenaMary_BigCabin_LoveKiss_2")
-	{
-		locCameraFromToPos(-0.70, 21.85, -3.30, true, -1.57, 19.40, 1.43);
-	}
-	else if (sQuestName == "HelenaMary_NormalCabin_LoveKiss") // Нормальная каюта
-	{
-		// if(CheckAttribute (pchar, "IsMushketer")) SetMainCharacterToMushketer("", false);
-		TeleportCharacterToPosAy(pchar, 1.50, 2.14, -3.80, -1.50);
-		LAi_SetActorType(pchar);
-		LAi_ActorAnimation(pchar, "kiss", "1", 8.5);
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-		{
-			sld = characterFromId("Mary");
-			DoQuestCheckDelay("Mary_LoveSex_New", 8.5);
-		}
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-		{
-			sld = characterFromId("Helena");
-			DoQuestCheckDelay("Helena_LoveSex_New", 8.5);
-		}
-		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-		TeleportCharacterToPosAy(sld, 0.90, 2.14, -3.80, 1.50);
-		LAi_SetActorType(sld);
-		LAi_ActorAnimation(sld, "kiss", "1", 8.5);
-		locCameraFromToPos(-0.44, 3.57, -0.59, true, 1.76, 1.65, -5.05);
-		DoQuestCheckDelay("HelenaMary_NormalCabin_LoveKiss_2", 4.5);
-	}
-	else if (sQuestName == "HelenaMary_NormalCabin_LoveKiss_2")
-	{
-		locCameraFromToPos(0.07, 3.32, -2.69, true, 1.92, 2.10, -4.31);
-	}
-	else if (sQuestName == "HelenaMary_MediumCabin_LoveKiss") // Средняя каюта
-	{
-		// if(CheckAttribute (pchar, "IsMushketer")) SetMainCharacterToMushketer("", false);
-		TeleportCharacterToPosAy(pchar, -0.55, 6.06, 1.65, -1.50);
-		LAi_SetActorType(pchar);
-		LAi_ActorAnimation(pchar, "kiss", "1", 8.5);
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-		{
-			sld = characterFromId("Mary");
-			DoQuestCheckDelay("Mary_LoveSex_New", 8.5);
-		}
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-		{
-			sld = characterFromId("Helena");
-			DoQuestCheckDelay("Helena_LoveSex_New", 8.5);
-		}
-		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-		TeleportCharacterToPosAy(sld, -1.15, 6.06, 1.65, 1.50);
-		LAi_SetActorType(sld);
-		LAi_ActorAnimation(sld, "kiss", "1", 8.5);
-		locCameraFromToPos(-2.03, 7.59, -0.83, true, 0.01, 6.00, 3.28);
-		DoQuestCheckDelay("HelenaMary_MediumCabin_LoveKiss_2", 4.5);
-	}
-	else if (sQuestName == "HelenaMary_MediumCabin_LoveKiss_2")
-	{
-		locCameraFromToPos(-1.80, 7.03, 3.33, true, 0.85, 6.25, -0.85);
-	}
-	else if (sQuestName == "HelenaMary_SmallCabin_LoveKiss") // Маленькая каюта
-	{
-		// if(CheckAttribute (pchar, "IsMushketer")) SetMainCharacterToMushketer("", false);
-		TeleportCharacterToPosAy(pchar, 1.20, 3.00, -1.40, 3.00);
-		LAi_SetActorType(pchar);
-		LAi_ActorAnimation(pchar, "kiss", "1", 7.5);
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-		{
-			sld = characterFromId("Mary");
-			DoQuestCheckDelay("Mary_LoveSex_New", 7.5);
-		}
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-		{
-			sld = characterFromId("Helena");
-			DoQuestCheckDelay("Helena_LoveSex_New", 7.5);
-		}
-		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-		TeleportCharacterToPosAy(sld, 1.20, 3.00, -2.00, 0.00);
-		LAi_SetActorType(sld);
-		LAi_ActorAnimation(sld, "kiss", "1", 7.5);
-		locCameraFromToPos(-0.55, 4.42, -2.84, true, 2.06, 2.82, -2.00);
-	}
-	else if (sQuestName == "Helena_LoveSex_New") // секс с Элен
-	{
-		EndQuestMovie();
-		bDisableCharacterMenu = false;
-		LAi_SetPlayerType(pchar);
-		locCameraTarget(PChar);
-		locCameraFollow();
-		sld = CharacterFromID("Helena");
-		ChangeCharacterAddressGroup(pchar, PChar.location, "reload", "reload1");
-		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-		if (Get_My_Cabin() == "My_Cabin_Huge")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc1");
-			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc2");
-		}
-		if (Get_My_Cabin() == "My_Cabin" || Get_My_Cabin() == "My_CabineFDM")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc2");
-			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc5");
-		}
-		if (Get_My_Cabin() == "My_Cabin_Medium2")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "loc0");
-			ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto3");
-		}
-		if (Get_My_Cabin() == "My_Cabin_Medium")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc0");
-			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc2");
-		}
-		if (Get_My_Cabin() == "My_Cabin_Small")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "loc1");
-			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc0");
-		}
-		LAi_SetActorType(sld);
-		LAi_ActorTurnToCharacter(sld, pchar);
-		LAi_ActorFollow(sld, pchar, "", -1);
-		LAi_SetOfficerType(sld);
-		sld.Dialog.CurrentNode = "sex_after";
-		if (CheckAttribute(pchar, "questTemp.PZ_DevushkaSnovaOfficer")) sld.Dialog.CurrentNode = "PZ_DevushkaSnovaOfficer_Dialog1";
-		SetLaunchFrameFormParam("", "", 0, 15);
-		SetLaunchFrameFormPic("loading\inside\censored1.tga");
-		PlayStereoSound("sex\sex" + (rand(9) + 1) + ".wav");
-		LaunchFrameForm();
-		WaitDate("", 0, 0, 0, 3, 10);
-		RecalculateJumpTable();
-		if (IsEquipCharacterByArtefact(pchar, "totem_03"))     
-		{
-			AddCharacterHealth(pchar, 12);
-			AddCharacterMaxHealth(pchar, 2.0);
-		}
-		else 
-		{
-			AddCharacterHealth(pchar, 6);
-			AddCharacterMaxHealth(pchar, 1.0);
-		} 
-		LAi_SetCurHPMax(pchar);
-	}
-	else if (sQuestName == "Helena_LoveSex") // Классический вариант
-	{
-		SetLaunchFrameFormParam("", "", 0, 15);
-		SetLaunchFrameFormPic("loading\inside\censored1.tga");
-		PlayStereoSound("sex\sex" + (rand(9) + 1) + ".wav");
-		LaunchFrameForm();
-		WaitDate("", 0, 0, 0, 3, 10);
-		RecalculateJumpTable();
-		if (IsEquipCharacterByArtefact(pchar, "totem_03"))     
-		{
-			AddCharacterHealth(pchar, 12);
-			AddCharacterMaxHealth(pchar, 2.0);
-		}
-		else 
-		{
-			AddCharacterHealth(pchar, 6);
-			AddCharacterMaxHealth(pchar, 1.0);
-		} 
-		LAi_SetCurHPMax(pchar);
-	}
-	else if (sQuestName == "Mary_LoveSex_New") // секс с Мэри
-	{
-		EndQuestMovie();
-		bDisableCharacterMenu = false;
-		LAi_SetPlayerType(pchar);
-		locCameraTarget(PChar);
-		locCameraFollow();
-		sld = CharacterFromID("Mary");
-		ChangeCharacterAddressGroup(pchar, PChar.location, "reload", "reload1");
-		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-		if (Get_My_Cabin() == "My_Cabin_Huge")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc1");
-			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc2");
-		}
-		if (Get_My_Cabin() == "My_Cabin")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc2");
-			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc5");
-		}
-		if (Get_My_Cabin() == "My_Cabin_Medium2")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "loc0");
-			ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto3");
-		}
-		if (Get_My_Cabin() == "My_Cabin_Medium")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc0");
-			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc2");
-		}
-		if (Get_My_Cabin() == "My_Cabin_Small")
-		{
-			ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "loc1");
-			ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc0");
-		}
-		LAi_SetActorType(sld);
-		LAi_ActorTurnToCharacter(sld, pchar);
-		LAi_ActorFollow(sld, pchar, "", -1);
-		LAi_SetOfficerType(sld);
-		sld.Dialog.CurrentNode = "sex_after";
-		if (CheckAttribute(pchar, "questTemp.PZ_MaryRazgovorOBordeli")) sld.Dialog.CurrentNode = "PZ_MaryRazgovorOBordeli_Bad_17";
-		if (CheckAttribute(pchar, "questTemp.PZ_DevushkaSnovaOfficer")) sld.Dialog.CurrentNode = "PZ_DevushkaSnovaOfficer_Dialog1";
-		SetLaunchFrameFormParam("", "", 0,  15);
-		SetLaunchFrameFormPic("loading\inside\censored1.tga");
-		PlayStereoSound("sex\sex" + (rand(9) + 1) + ".wav");
-		LaunchFrameForm();
-		WaitDate("", 0, 0, 0, 3, 10);
-		RecalculateJumpTable();
-		if (IsEquipCharacterByArtefact(pchar, "totem_03"))     
-		{
-			AddCharacterHealth(pchar, 24);
-			AddCharacterMaxHealth(pchar, 2.0);
-		}
-		else 
-		{
-			AddCharacterHealth(pchar, 12);
-			AddCharacterMaxHealth(pchar, 1.0);
-		}
-		LAi_SetCurHPMax(pchar);
-		pchar.quest.Mary_giveme_sex.over = "yes"; // снять прерывание
-		pchar.quest.Mary_giveme_sex1.over = "yes"; // снять прерывание лесник.
-	}
-	else if (sQuestName == "Mary_LoveSex") // Классический вариант
-	{
-		SetLaunchFrameFormParam("", "", 0, 15);
-		SetLaunchFrameFormPic("loading\inside\censored1.tga");
-		PlayStereoSound("sex\sex" + (rand(9) + 1) + ".wav");
-		LaunchFrameForm();
-		WaitDate("", 0, 0, 0, 3, 10);
-		RecalculateJumpTable();
-		if (IsEquipCharacterByArtefact(pchar, "totem_03"))     
-		{
-			AddCharacterHealth(pchar, 24);
-			AddCharacterMaxHealth(pchar, 2.0);
-		}
-		else 
-		{
-			AddCharacterHealth(pchar, 12);
-			AddCharacterMaxHealth(pchar, 1.0);
-		}
-		LAi_SetCurHPMax(pchar);
-		pchar.quest.Mary_giveme_sex.over = "yes"; // снять прерывание
-		pchar.quest.Mary_giveme_sex1.over = "yes"; // снять прерывание лесник.
 	}
 	// belamour фортуна для додсона -->
 	else if (sQuestName == "SharkFrigateToTown")

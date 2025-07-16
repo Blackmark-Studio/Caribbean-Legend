@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 						link.l1 = "He encontrado la isla, aunque fue bastante difícil. También he encontrado tu cofre con el dinero y esta calavera. Supongo que esta es la calavera de tu abuelo-patriarca, lo que sea de lo que hablabas.";
 						link.l1.go = "SolomonBonanza_2";
 					}
-					link.l2 = " He encontrado la isla, aunque no fue tarea fácil. También he encontrado tu cofre con el dinero. Pero no había calaveras en ese cofre.";
+					link.l2 = "He encontrado la isla, aunque no fue tarea fácil. También he encontrado tu cofre con el dinero. Pero no había calaveras en ese cofre.";
 					link.l2.go = "SolomonBonanza_3";
 					link.l3 = "No, no tengo preguntas en este momento.";
 					link.l3.go = "exit";
@@ -256,7 +256,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Solomon_history_1":
-			dialog.text = "  Hmm... Bueno, no lo sé. ¡La cabeza de este pobre viejo judío está revuelta como una sartén de gefilte fish! ¿Y por qué preguntas, joven?";
+			dialog.text = "Hmm... Bueno, no lo sé. ¡La cabeza de este pobre viejo judío está revuelta como una sartén de gefilte fish! ¿Y por qué preguntas, joven?";
 			link.l1 = "Solo quiero ayudar a tu hija, Solomon. No puedo prometer nada, pero me gustaría intentarlo. Mi antiguo jefe la trató mal, y después de eso creo que estoy obligado a ayudarla a establecerse de alguna manera.";
 			link.l1.go = "Solomon_history_2";
 		break;
@@ -313,7 +313,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Solomon_poor":
-			dialog.text = "Oyyy... A veces es imposible empezar una nueva vida, joven. Vivir en la pobreza - ¿qué puede ser peor para un viejo tonto como yo?";
+			dialog.text = "Oyyy... A veces es imposible empezar una nueva vida, joven. Vivir en la pobreza, ¿qué puede ser peor para un viejo tonto como yo?";
 			link.l1 = "Lo siento, Salomón. Mantente firme y busca a Cristo.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Solomon_poor";

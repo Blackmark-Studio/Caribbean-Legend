@@ -2067,7 +2067,7 @@ void CalculateInfoDataF25()
 	string sEquipItem;
 	SetSelfSkill(mc, 70, 70, 100, 100, 100);
 	SetShipSkill(mc, 95, 70, 55, 65, 100, 55, 55, 45, 55);
-	//SelAllPerksToChar(mc, false);
+	//SetAllPerksToChar(mc, false);
 	SetCharacterPerk(mc, "HullDamageUp");
 	SetCharacterPerk(mc, "SailsDamageUp");
 	SetCharacterPerk(mc, "CrewDamageUp");
@@ -2489,7 +2489,7 @@ void CalculateInfoDataF31()
 	
 	LAi_SetCharacterUseBullet(mc, "cartridge");
 	
- 	SelAllPerksToChar(mc, false);
+ 	SetAllPerksToChar(mc, false);
 	 	
 	totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
 	
@@ -2615,7 +2615,7 @@ void CalculateInfoDataF32()
 	LAi_SetCharacterUseBullet(mc, "cartridge");
 	
 // 	SetHalfPerksToChar(mc, false);
-	SelAllPerksToChar(mc, false);
+	SetAllPerksToChar(mc, false);
 	
 	ref realShip;
 	int shipType = sti(mc.Ship.Type);
@@ -2696,7 +2696,7 @@ void CalculateInfoDataF33()
 	AddItems(mc, "grapeshot", 20);
 	LAi_SetCharacterUseBullet(mc, "cartridge");
 	
-	SelAllPerksToChar(mc, false);*/
+	SetAllPerksToChar(mc, false);*/
 	SetCharacterGoods(mc, GOOD_SHIPSILK, 1000);
 	SetCharacterGoods(mc, GOOD_ROPES, 1000);
 	SetCharacterGoods(mc, GOOD_SANDAL, 1000);

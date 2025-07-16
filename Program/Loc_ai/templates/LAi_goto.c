@@ -28,6 +28,7 @@ bool LAi_tmpl_goto_InitTemplate(aref chr)
 		chr.chr_ai.tmpl.wait = 0;
 		chr.chr_ai.tmpl.timeout = -1;
 		chr.chr_ai.tmpl.time = 0;
+        chr.chr_ai.tmpl.forced = CheckAttribute(chr, "ToPointForced");
 		if(LAi_IsInitedAI) SetCharacterTask_Stay(chr);
 	}else{
 		isNew = true;
@@ -54,9 +55,12 @@ bool LAi_tmpl_goto_InitTemplate(aref chr)
 		}
 		chr.chr_ai.tmpl.wait = "0";
 		if(!CheckAttribute(chr, "chr_ai.tmpl.timeout")) chr.chr_ai.tmpl.timeout = "-1";
-		if(!CheckAttribute(chr, "chr_ai.tmpl.time")) chr.chr_ai.tmpl.time = "0";
+		if(!CheckAttribute(chr, "chr_ai.tmpl.time"))    chr.chr_ai.tmpl.time = "0";
+        chr.chr_ai.tmpl.forced = CheckAttribute(chr, "ToPointForced");
 		LAi_tmpl_goto_Restart(chr);
 	}
+
+    DeleteAttribute(chr, "ToPointForced");
 	return true;
 }
 

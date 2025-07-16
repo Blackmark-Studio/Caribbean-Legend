@@ -57,6 +57,13 @@ void ProcessDialogEvent()
 			link.l3.go = "quests"; //(перессылка в файл города)
 			npchar.quest.meeting = "1";
 		}
+		// --> Тёмные воды исцеления
+			if (CheckAttribute(pchar, "questTemp.DWH_Start") && !CheckAttribute(pchar, "questTemp.DWH_gipsy") && npchar.city == "SentJons")
+			{
+				link.l6 = "Busco a la gitana que cura a los enfermos. ¿Eres tú?";
+				link.l6.go = "dwh_ne_ta";
+			}
+			// <-- Тёмные воды исцеления
 		if (!CheckAttribute(npchar, "quest.poison_price") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && rand(2) == 0)
 		{
 			link.l4 = "Hola, ojos oscuros, ¿tienes algún veneno para ratas? Están siendo un maldito fastidio en mi barco.";
@@ -110,7 +117,7 @@ void ProcessDialogEvent()
 			dialog.text = "¡Ah, gracias, mi apuesto joven halcón! Ahora escucha:" + sTemp + "";
 			link.l1 = LinkRandPhrase("¡Je! Eso es muy interesante. Lo consideraré...", "¿De veras? Lo consideraré...", "¿Oh, de veras? ¿Hablas en serio? Bueno, recordaré eso...", "¡Eh, ya me siento mejor!");
 			link.l1.go = "exit";
-			if (drand(1) == 0)
+			if (hrand(1) == 0)
 				AddCharacterExpToSkill(pchar, "Fortune", 30 + rand(10)); // везение
 			else
 				AddCharacterExpToSkill(pchar, "Sneak", 30 + rand(10)); // скрытность
@@ -132,7 +139,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			AddCharacterHealth(pchar, 1);
 			AddCharacterExpToSkill(pchar, "Leadership", 20);
-			if (drand(1) == 0)
+			if (hrand(1) == 0)
 				AddCharacterExpToSkill(pchar, "Fortune", 50 + rand(20)); // везение
 			else
 				AddCharacterExpToSkill(pchar, "Sneak", 50 + rand(20)); // скрытность
@@ -175,8 +182,8 @@ void ProcessDialogEvent()
 
 		// --> продажа мышьяка
 	case "get_poison_1":
-		npchar.quest.poison_price = (drand(3) + 1) * 10;
-		if (drand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
+		npchar.quest.poison_price = (hrand(3) + 1) * 10;
+		if (hrand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
 		{
 			dialog.text = LinkRandPhrase("¡Oh, no estoy segura, guapo! No hace mucho hubo un tipo pidiendo ayuda para matar ratas, y luego alguien envenenó a los soldados en el fuerte. Se puso bastante caliente para mi gente en la isla mientras los guardias nos interrogaban durante dos semanas hasta que encontraron al asesino. Era un espía enemigo.", "¿Y cómo puedo estar seguro de tu propósito? ¿Quizás solo quieres envenenar a un noble al que eres demasiado cobarde para enfrentar en un duelo honorable?", "Me han dicho que alguien envenenó a un comerciante en la taberna y robó todas sus pertenencias. El hombre sufrió mucho tiempo antes de expirar. Espuma salió de su boca y se puso morado como una berenjena... ¿Eres tú el responsable de eso, mi amor?");
 			link.l1 = "¡Vosotras, gitanas, ciertamente os gusta compartir vuestras opiniones! No te preocupes, muchacha, no voy a envenenar a la gente. Esa es una manera femenina de matar, no es mi estilo. Para los hombres tengo mi espada, pero no puedo manejar a esas malditas ratas.";
@@ -236,7 +243,7 @@ void ProcessDialogEvent()
 
 	case "mangarosa_2":
 		// тут работает харизма
-		if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10 + drand(25) + drand(30))
+		if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10 + hrand(25) + hrand(30, "1"))
 		{
 			dialog.text = "Hm... Supongo que no es tan malo si te cuento un poco al respecto. No podrás hacer nada con esta planta sin habilidades especiales.";
 			link.l1 = "Estoy escuchando.";
@@ -322,8 +329,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "mangarosa_7":
-		dialog.text = "Eres un marinero, valiente halcón, y yo no lo soy. Búscala donde te dije. Su casa está muy cerca de la costa del mar. Está cerca de una bahía justo al suroeste del Spanish Main - los marineros deben conocerla.";
-		link.l1 = "Está bien, intentaré encontrarlo...";
+		dialog.text = "Eres un marinero, valiente halcón, y yo no lo soy. Búscala donde te dije. Su casa está muy cerca de la costa del mar. Está cerca de una bahía en Tierra Firme, al suroeste, los marineros deben conocerla.";
+		link.l1 = "Está bien, intentaré encontrarla...";
 		link.l1.go = "mangarosa_8";
 		break;
 
@@ -352,6 +359,15 @@ void ProcessDialogEvent()
 		LAi_SetImmortal(sld, true);
 		ChangeCharacterAddressGroup(sld, "Amelia_house", "barmen", "stay");
 		break;
+		
+	// --> Тёмные воды исцеления
+	case "dwh_ne_ta":
+		sld = CharacterFromID("DWH_gypsy");
+		dialog.text = "No, " + GetSexPhrase("cariño", "guapa") + ", no soy yo la que necesitas, es " + sld.name + ". Ella está aquí en la ciudad ahora. La vi hace poco.";
+		link.l1 = "Gracias.";
+		link.l1.go = "exit";
+	break;
+	// <-- Тёмные воды исцеления
 
 	// замечание по обнажённому оружию от персонажей типа citizen
 	case "CitizenNotBlade":
@@ -371,7 +387,7 @@ void ProcessDialogEvent()
 string GuessText()
 {
 	string sText;
-	switch (drand(19))
+	switch (hrand(19))
 	{
 	case 0:
 		sText = "tendrás suerte, valiente joven halcón, ¡mañana tendrás suerte con las cartas!" break;

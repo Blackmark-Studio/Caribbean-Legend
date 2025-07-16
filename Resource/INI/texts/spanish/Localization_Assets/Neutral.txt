@@ -1,0 +1,119 @@
+Neutral_1
+{
+Bandido
+}
+
+Neutral_2
+{
+Dejasteis notas
+}
+
+Neutral_3
+{
+Jack
+}
+
+Neutral_4
+{
+Veils
+}
+
+Neutral_5
+{
+Sea Beast
+}
+
+Neutral_6
+{
+Julie
+}
+
+Neutral_7
+{
+d'Armagnac
+}
+
+Neutral_8
+{
+Golden Seagull
+}
+
+Neutral_9
+{
+Tristan
+}
+
+Neutral_10
+{
+Renier
+}
+
+Neutral_11
+{
+¡Un barco pirata en el horizonte! Vienen a interceptar nuestro rumbo.
+}
+
+Neutral_12
+{
+Una voz detrás de la puerta
+}
+
+Neutral_13
+{
+Betsy
+}
+
+Neutral_14
+{
+Price
+}
+
+Neutral_15
+{
+Objeto recibido: Documentos de Betsy Price
+}
+
+Neutral_16
+{
+Entregado: Documentos de Betsy Price
+}
+
+Neutral_17
+{
+Lea
+}
+
+Neutral_18
+{
+Carno
+}
+
+Neutral_19
+{
+Pierre
+}
+
+Neutral_20
+{
+¡Un barco pirata en el horizonte! Están cruzando nuestro rumbo.
+}
+
+Neutral_21
+{
+Cubierta
+}
+
+Neutral_22
+{
+La entrada de la cueva está cubierta de telarañas. Parece que hace mucho que no viene nadie por aquí.
+}
+
+Neutral_23
+{
+La casa está hecha un desastre. Parece que he llegado al lugar correcto.
+}
+
+Neutral_24
+{
+The Ghost
+}

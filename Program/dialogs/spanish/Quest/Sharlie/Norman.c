@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			break;
 		}
 		dialog.text = NPCStringReactionRepeat(LinkRandPhrase("¿Qué necesitas, camarada? Sigue tu camino, ocúpate de tus asuntos. Sólo déjame en paz.", "Eh, eh, camarada. ¿Vas a dar un paseo? Bueno, tú sigue caminando y deja al señor Abraham en paz. Él también va a dar un paseo. Está tomando un poco de aire fresco del mar.", "Hola, camarada. ¿Quieres charlar? Hay solo un problema: no estoy de humor para conversar. Así que ve a molestar a otro. Anda a relajarte en la taberna. Tómate un poco de ron..."), LinkRandPhrase("Hola, marinero. ¿Qué, eres cabezón o qué? Pensé que lo había dejado bastante claro.", "Amigo, ve a descansar un poco. Parece que estás un poco duro de oído.", "Eh compadre, ¿qué, eres tonto o qué? Ya te lo he dicho claramente."), "Compañero, no me hagas enfadar. He masacrado a tantos grumetes en mi tiempo, uno más o menos realmente no hace diferencia.", "Está bien, me has cabreado. Ahora saca tu espada oxidada o corre tan rápido como puedas. Recomiendo la segunda opción...", "block", 1, npchar, Dialog.CurrentNode);
-		link.l1 = HeroStringReactionRepeat("Está bien, amigo. No voy a molestarte.", "Está bien, está bien. Lo entiendo...", "¡Vaya, pareces ser el trueno de los mares! Muy bien, me largo de aquí.", "¿Qué?!", npchar, Dialog.CurrentNode);
+		link.l1 = HeroStringReactionRepeat("Está bien, amigo. No voy a molestarte.", "Está bien, está bien. Lo entiendo...", "¡Vaya, pareces ser el trueno de los mares! Muy bien, me largo de aquí.", "¿Qué?", npchar, Dialog.CurrentNode);
 		link.l1.go = DialogGoNodeRepeat("exit", "", "", "fight", npchar, Dialog.CurrentNode);
 		NextDiag.TempNode = "norman_us";
 		break;
@@ -43,18 +43,18 @@ void ProcessDialogEvent()
 			link.l1.go = "tieyasal";
 			break;
 		}
-		switch (drand(5))
+		switch (hrand(5))
 		{
 		case 0:
 			dialog.text = "¡Quieto! Soy el gobernador de esta isla. ¿Qué, no me crees?!";
-			link.l1 = "¡Por supuesto que sí! ¿Quién no conoce al gobernador de Isla Tesoro...";
+			link.l1 = "¡Por supuesto que sí! ¿Quién no conoce al gobernador de Isla Tesoro...?";
 			link.l1.go = "norman_fes0_fight";
 			link.l2 = "Ja, llámate almirante mientras estás en eso, ¡definitivamente me lo creo!";
 			link.l2.go = "norman_fes0_peace";
 			break;
 
 		case 1:
-			dialog.text = "¡Firmes! ¡Mirad - al almirante Barbarigo! ¿No reconoces mi famosa espada de caballería?";
+			dialog.text = "¡Firmes! ¡Mirad, al almirante Barbarigo! ¿No reconoces mi famosa espada de caballería?";
 			link.l1 = "¡Mis disculpas, señor Almirante! A partir de ahora, estaré más atento.";
 			link.l1.go = "norman_fes1_peace";
 			link.l2 = "Tu espada de caballería es bien conocida. Lástima que esté en manos de un necio.";
@@ -79,7 +79,7 @@ void ProcessDialogEvent()
 
 		case 4:
 			dialog.text = "Sh-sh... Soy Davy Jones. Dime, ¿tienes miedo a la muerte?";
-			link.l1 = "Por supuesto que lo soy, señor Jones. Especialmente después de una resaca.";
+			link.l1 = "Por supuesto que sí, señor Jones. Especialmente después de una resaca.";
 			link.l1.go = "norman_fes4_fight";
 			link.l2 = "Una muerte es una tragedia, mil muertes son solo una estadística.";
 			link.l2.go = "norman_fes4_peace";
@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 
 		case 5:
 			dialog.text = "Tengo prisa por terminar mi nueva obra. ¡Debes ayudarme a terminar la frase '¿Ser o no ser'?! ";
-			link.l1 = "¡Esa es la cuestión! ¿Deberemos soportar la ofensa y seguir adelante...";
+			link.l1 = "¡Esa es la cuestión! ¿Deberemos soportar la ofensa y seguir adelante...?";
 			link.l1.go = "norman_fes5_fight";
 			link.l2 = "Una bebida, seguro. ¡Pero no me sorprendería agarrarme una enfermedad en un burdel!";
 			link.l2.go = "norman_fes5_peace";
@@ -414,7 +414,7 @@ void ProcessDialogEvent()
 
 	case "tieyasal_8":
 		dialog.text = "¿No sabes español, chico? 'Dichoso' significa 'afortunado' en el idioma papista. Miguel el Afortunado, Miguel el Dichoso. Así se llama.";
-		link.l1 = "Miguel el Afortunado?... Hm. Eso me recuerda a algo. Hm. Esa frase me suena tan familiar...";
+		link.l1 = "¿Miguel el Afortunado?... Hm. Eso me recuerda a algo. Hm. Esa frase me suena tan familiar...";
 		link.l1.go = "tieyasal_9";
 		break;
 

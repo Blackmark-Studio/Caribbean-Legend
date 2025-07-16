@@ -62,14 +62,14 @@ void ProcessDialogEvent()
             NextDiag.TempNode = "First time";
 			if (LAi_grp_playeralarm > 0)
 			{
-       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("Ośmielasz się pokazać swoją twarz w biurze generała-gubernatora?! Naprawdę jesteś szalony...","Jak to się stało, że te leniwe skóry pozwoliły wrogowi wtargnąć do mojej rezydencji? To przekracza moje pojęcie...","Z pewnością, moi strażnicy nie są warci grosza, jeśli jakiś włóczęga biega po mojej rezydencji..."),LinkRandPhrase("Czego potrzebujesz, "+GetSexPhrase("łotr","smrodzie")+"?! Moi żołnierze już ruszyli na twój ślad, "+GetSexPhrase("brudny pirat","śmierdziel")+"!",""+GetSexPhrase("Brudny","Brudny")+" morderco, natychmiast opuść moją rezydencję! Strażnicy!","Nie boję się ciebie, "+GetSexPhrase("łajdak","łotr")+"! Niedługo zostaniesz powieszony w naszym forcie, daleko nie uciekniesz..."));
-				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Żołnierze nie są warci gówna...","Nigdy mnie nie dostaniesz."),RandPhraseSimple("Zamknij się, kumplu, albo wyrwę ten twój brudny język!","Mówię ci, kumplu: siedź cicho, albo odetnę ci głowę i wrzucę przez te drzwi do twoich stróżujących psów..."));
+       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("Ośmielasz się pokazywać swoją twarz w biurze generała-gubernatora?! Naprawdę jesteś szalony...","Jak to się stało, że te leniwe siermięgi pozwoliły wrogowi wtargnąć do mojej rezydencji? To przekracza ludzkie pojęcie...","Z pewnością, moi strażnicy nie są warci grosza, jeśli jakiś włóczęga biega po mojej rezydencji..."),LinkRandPhrase("Czego potrzebujesz, "+GetSexPhrase("łotrze","cwaniaro")+"?! Moi żołnierze już ruszyli za twoim śladem, "+GetSexPhrase("brudny piracie","gówniaro")+"!",""+GetSexPhrase("Brudny","Brudny")+" morderco, natychmiast opuść moją rezydencję! Strażnicy!","Nie boję się ciebie, "+GetSexPhrase("łajdaku","cwaniaro")+"! Niedługo będziesz wisieć w naszym forcie, daleko nie uciekniesz..."));
+				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Żołnierze nie są warci twojej plugawej kasy...","Nigdy mnie nie dostaniesz."),RandPhraseSimple("Zamknij się, kumplu, albo wyrwę ten twój brudny język!","Mówię ci, kumplu: siedź cicho, albo odetnę ci głowę i wrzucę przez te drzwi do twoich stróżujących psów..."));
 				link.l1.go = "fight";
 				break;
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "Słyszałem, że byłeś bardzo uparty w żądaniu audiencji. Nazywam się "+GetFullName(npchar)+". Jestem gubernatorem generalnym kolonii "+NationNameGenitive(sti(NPChar.nation))+", zastępca Korony "+NationKingsName(npchar)+" na tych wodach. Teraz, proszę, bądź tak miły i powiedz mi, jaki jest cel twojej wizyty, "+GetAddress_Form(NPChar)+".";
+				dialog.text = "Słyszałem, że byłeś bardzo natarczywy w żądaniu audiencji. Nazywam się "+GetFullName(npchar)+". Jestem gubernatorem generalnym kolonii "+NationNameGenitive(sti(NPChar.nation))+", zastępca Korony "+NationKingsName(npchar)+" na tych wodach. Teraz, proszę, bądź tak miły i powiedz mi, jaki jest cel twojej wizyty, "+GetAddress_Form(NPChar)+".";
 				link.l1 = "Mam na imię "+GetFullName(pchar)+".";
 				link.l1.go = "node_1";
 				npchar.quest.meeting = "1";

@@ -1,0 +1,234 @@
+
+Smuggler {Smuggler}
+
+;========== Antigua ==========
+
+Cristopher {Cristopher}
+Keynell {Keynell}
+
+Benjamin {Benjamin}
+Jones {Jones}
+
+;========== Barbados ==========
+
+Francis {Francis}
+lord Willoughby {lord Willoughby}
+
+Gaston {Gaston}
+Bald-pate {Bald-pate}
+
+Mirabelle {Mirabelle}
+
+;========== Beliz ==========
+
+Peter {Peter}
+Walles {Walles}
+
+;========== Bermudes ==========
+
+One-eyed {One-eyed}
+
+Pascal {Pascal}
+Voisier {Voisier}
+
+Master {Master}
+Alexis {Alexis}
+
+Abraham {Abraham}
+Norman {Norman}
+
+;========== Caracas ==========
+
+Diego Francisco {Diego Francisco}
+de Kero {de Kero}
+
+;========== Cartahena ==========
+
+Dionisio {Dionisio}
+Peres {Peres}
+
+Alvares {Alvares}
+Ortega {Ortega}
+
+;========== Cumana ==========
+
+Fernando {Fernando}
+de Vilyegas {de Vilyegas}
+
+Esteban {Esteban}
+Garcia {Garcia}
+
+Carlos {Carlos}
+Estrada {Estrada}
+
+Ignasio {Ignasio}
+Ortega {Ortega}
+
+;========== Curacao ==========
+
+Matthias {Matthias}
+Beck {Beck}
+
+Florentina {Florentina}
+
+;========== Guadeloupe ==========
+
+Claude Francois {Claude Francois}
+de Lyon {de Lyon}
+
+;========== Havana ==========
+
+Diego {Diego}
+de Toledo {de Toledo}
+
+Alexandro {Alexandro}
+Garcia {Garcia}
+
+Jacopo {Jacopo}
+Jeraldy {Jeraldy}
+
+;========== Jamaica ==========
+
+Edward {Edward}
+Doily {Doily}
+
+Oldjivly {Oldjivly}
+Moris {Moris}
+
+Mortimer {Mortimer}
+Hope {Hope}
+
+Ida {Ida}
+
+Jacob {Jacob}
+Jackman {Jackman}
+
+;========== LaVega ==========
+
+Marcus {Marcus}
+Tyrax {Tyrex}
+
+;========== Maracaibo ==========
+
+Andres {Andres}
+de Vera {de Vera}
+
+;========== Martinique ==========
+
+Jacques Dille {Jacques Dille}
+do Parquet {du Parquet}
+
+Jean Pierre {Jean Pierre}
+Morua {Morua}
+
+Aurora {Aurora}
+
+Jacques {Jacques}
+Barbazon {Barbazon}
+
+Cesare {Cesare}
+Craig {Craig}
+
+Ian {Ian}
+Snake {Snake}
+
+;========== Nevis ==========
+
+Timothy {Timothy}
+Vitrye {Vitrye}
+
+Simon {Simon}
+Morua {Morua}
+
+Merilin {Merilin}
+
+;========== Other ==========
+
+Sailor {Sailor}
+
+;========== Panama ==========
+
+Pedro Carrilia {Pedro Carrilia}
+de Gusman {de Gusman}
+
+Dolores {Dolores}
+
+;========== PortoBello ==========
+
+Luis {Luis}
+de Montanos {de Montanos}
+
+Ernesto {Ernesto}
+Jeraldy {Jeraldy}
+
+;========== PortPax ==========
+
+Jeremy Deshamp {Jeremy Deshamp}
+do Mussack {do Mussack}
+
+;========== Providence ==========
+
+Alexandro {Alexandro}
+de la Cruz {de la Cruz}
+
+;========== PuertoPrincipe ==========
+
+Zachary {Zachary}
+Marlow {Marlow}
+
+;========== PuertoRico ==========
+
+Diego {Diego}
+de Aguillera-Gamboa {de Aguillera-Gamboa}
+
+;========== SantaCatalina ==========
+
+Joseph {Joseph}
+Batler {Batler}
+
+;========== Santiago ==========
+
+Rodrigo {Rodrigo}
+de Flores-Aldana {de Flores-Aldana}
+
+;========== SantoDomingo ==========
+
+Juan {Juan}
+de Kuencka {de Kuencka}
+
+Lolita {Lolita}
+
+;========== SentMartin ==========
+
+Martin {Martin}
+Thomas {Thomas}
+
+Johanna {Johanna}
+
+;========== Tortuga ==========
+
+Francois {Francois}
+Levasseur {Levasseur}
+
+Janetta {Janetta}
+
+;========== Trinidad ==========
+
+Ruis {Ruis}
+de Aquerre {de Aquerre}
+
+;========== HWIC ==========
+
+Coris {Coris}
+Gerritz {Gerritz}
+
+;========== KhaelRoa ==========
+
+Chavinavi {Chavinavi}
+TempleSkeleton {temple skeleton}
+
+;========== Quest ==========
+
+Danielle {Danielle}
+Hawk {Hawk}
+

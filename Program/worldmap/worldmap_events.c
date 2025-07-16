@@ -69,7 +69,7 @@ void wdmEvent_AddQuestEncounters()
 	for(int i = 0; i < num; i++)
 	{
 		at = GetAttributeN(encs, i);
-		
+
 		if (CheckAttribute(at, "characterID")) // boal fix 14.09.06
 		{
 			if(at.type == "trader")
@@ -77,7 +77,7 @@ void wdmEvent_AddQuestEncounters()
 				if(!GenerateMapEncounter_Alone(at.characterID, &idx))
 				{
 					PostEvent("Map_TraderSucces", 100, "s", at.characterID);
-					return;
+					continue;
 				}
 				//Создаём в карте энкоунтера
 				encID = "";
@@ -86,7 +86,7 @@ void wdmEvent_AddQuestEncounters()
 					if(!wdmCreateMerchantShipXZByIndex(1.0, idx, &encID, stf(at.x1), stf(at.z1), stf(at.x2), stf(at.z2), sti(at.TimeOut)))
 					{
 						PostEvent("Map_TraderSucces", 100, "s", at.characterID);
-						return;
+						continue;
 					}
 				}
 				else
@@ -94,7 +94,7 @@ void wdmEvent_AddQuestEncounters()
 					if(!wdmCreateMerchantShipByIndex(1.0, idx, &encID, at.beginlocator, at.endLocator, sti(at.TimeOut)))
 					{
 						PostEvent("Map_TraderSucces", 100, "s", at.characterID);
-						return;
+						continue;
 					}
 				}
 				//Путь до энкоунтера
@@ -108,14 +108,14 @@ void wdmEvent_AddQuestEncounters()
 				if(!GenerateMapEncounter_Alone(at.characterID, &idx))
 				{
 					PostEvent("Map_TraderSucces", 100, "s", at.characterID);
-					return;
+					continue;
 				}
 				//Создаём в карте энкоунтера
 				encID = "";
 				if(!wdmCreateMerchantShipByIndex(stf(at.speed), idx, &encID, at.beginlocator, at.endLocator, sti(at.TimeOut)))
 				{
 					PostEvent("Map_TraderSucces", 100, "s", at.characterID);
-					return;
+					continue;
 				}
 				//Путь до энкоунтера
 				encPath = "encounters." + encID;
@@ -128,7 +128,7 @@ void wdmEvent_AddQuestEncounters()
 				if(!GenerateMapEncounter_Alone(at.characterID, &idx))
 				{
 					PostEvent("Map_WarriorEnd", 100, "s", at.characterID);
-					return;
+					continue;
 				}
 				//Создаём в карте энкоунтера
 				encID = "";
@@ -136,7 +136,7 @@ void wdmEvent_AddQuestEncounters()
 				if(!wdmCreateRealFollowShipByIndex(1.0, idx, &encID, sti(at.TimeOut)))
 				{
 					PostEvent("Map_WarriorEnd", 100, "s", at.characterID);
-					return;
+					continue;
 				}
 				//Путь до энкоунтера
 				encPath = "encounters." + encID;
@@ -145,11 +145,11 @@ void wdmEvent_AddQuestEncounters()
 				worldMap.(encPath).quest.chrID = at.characterID;
 			}
 			if(at.type == "coolwarrior")
-			{			
+			{
 				if(!GenerateMapEncounter_Alone(at.characterID, &idx))
 				{
 					PostEvent("Map_WarriorEnd", 100, "s", at.characterID);
-					return;
+					continue;
 				}
 				//Создаём в карте энкоунтера
 				encID = "";
@@ -157,7 +157,7 @@ void wdmEvent_AddQuestEncounters()
 				if(!wdmCreateRealFollowShipByIndex(1.7, idx, &encID, sti(at.TimeOut)))
 				{
 					PostEvent("Map_WarriorEnd", 100, "s", at.characterID);
-					return;
+					continue;
 				}
 				//Путь до энкоунтера
 				encPath = "encounters." + encID;
@@ -171,9 +171,9 @@ void wdmEvent_AddQuestEncounters()
 			}
 		}
 	}
+
 	DeleteAttribute(&worldMap, "addQuestEncounters");
 	worldMap.addQuestEncounters = "";
-	//Очищаем массив энкоунтеров
 	ReleaseMapEncounters();
 }
 
@@ -204,16 +204,16 @@ ref wdmEncounterDelete()
 
 	string encID = GetEventData();
 	string encPath = "encounters." + encID;
-	if(CheckAttribute(&worldMap, encPath) == 0)
+	if(!CheckAttribute(&worldMap, encPath))
 	{
 		return &BI_intRetValue;
 	}
-		
+
 	aref enc;
 	makearef(enc, worldMap.(encPath));
 	if(CheckAttribute(enc,"encdata.Task.Target") && enc.encdata.Task.Target == PLAYER_GROUP)
 	{
-		if(CheckAttribute(pchar, "worldmap.FollowCounter")) DeleteAttribute(pchar, "worldmap.FollowCounter");
+		DeleteAttribute(pchar, "worldmap.FollowCounter");
 		log_testinfo("worldmap преследователь Task Target "+enc.encdata.Task.Target+" удалён");
 	}
 	//Сохраняем событие
@@ -227,7 +227,6 @@ ref wdmEncounterDelete()
 		//Даже если его трет программист?
     	if(CheckAttribute(&enc, "Gotox") && CheckAttribute(&enc, "Gotoz"))
 		{
-
 			float fDeltaX = (stf(enc.x) - stf(enc.Gotox));
 			float fDeltaZ = (stf(enc.z) - stf(enc.Gotoz));
 			float fRadSqr = fDeltaX*fDeltaX + fDeltaZ*fDeltaZ;
@@ -244,18 +243,18 @@ ref wdmEncounterDelete()
 			needEvent = true;
 		}		
 	}
-	
+
 	//Отмечаем, что удалён
 	enc.needDelete = "wdmEncounterDelete";
 	//Удаляем квестовую пометку
 	DeleteAttribute(&enc, "quest");
-	
+
 	if (!IsEntity(&worldMap))
 	{
 	   //Трем сам энкаутер сразу homo 10/04/07
         DeleteAttribute(&worldMap, encPath);
     }
-	
+
 	//Отправляем квестовый эвент, если надо
 	if(needEvent)
 	{
@@ -343,8 +342,9 @@ string GetPlayerShipModel()
 {
 	if(GetCharacterShipType(pchar) != SHIP_NOTUSED)
 	{
+		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_GALEON_SM) return "galeon_sm_player";
 		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_LADYBETH) return "shnyava_sp2_player";
+		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_MEMENTO) return "memento_player";
 	}
 	return "Ship";
 }
-

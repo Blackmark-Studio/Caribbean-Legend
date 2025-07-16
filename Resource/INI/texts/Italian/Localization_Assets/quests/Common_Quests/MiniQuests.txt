@@ -1,0 +1,113 @@
+MiniQuests_1
+{
+
+}
+MiniQuests_2
+{
+
+}
+
+MiniQuests_3
+{
+
+}
+MiniQuests_4
+{
+
+}
+
+MiniQuests_5
+{
+
+}
+MiniQuests_6
+{
+
+}
+
+MiniQuests_7
+{
+
+}
+MiniQuests_8
+{
+
+}
+
+MiniQuests_9
+{
+Il commerciante ha alzato la bandiera nera e ci attacca!
+}
+
+MiniQuests_10
+{
+Boatswain
+}
+
+MiniQuests_11
+{
+Passeggero @<GetFullName(sld)> ha lasciato la tua nave!
+}
+
+MiniQuests_12
+{
+Cappellano @<GetFullName(sld)> ha lasciato la tua nave!
+}
+
+MiniQuests_13
+{
+barquentine '@<pchar.GenQuest.Marginpassenger.ShipName1>'
+}
+
+MiniQuests_14
+{
+convoglio commerciale
+}
+
+MiniQuests_15
+{
+
+}
+MiniQuests_16
+{
+
+}
+
+MiniQuests_17
+{
+La nave nemica è all'orizzonte!
+}
+
+MiniQuests_18
+{
+Il convoglio nemico è all'orizzonte!
+}
+
+MiniQuests_19
+{
+Nave pirata all'orizzonte!
+}
+
+MiniQuests_20
+{
+@<pchar.GenQuest.FindFugitive.Name> morto per calentura!
+}
+
+MiniQuests_21
+{
+@<sld.name> è preso in custodia sulla vostra nave
+}
+
+MiniQuests_22
+{
+Un'ora passata...
+}
+
+MiniQuests_23
+{
+, che il ~
+}
+MiniQuests_24
+{
+Alonso
+}

@@ -4,12 +4,12 @@
 bool Duran_QuestComplete(string sQuestName, string qname)
 {
 	ref sld;
-	
+	string sTemp;
 	bool condition = true;
 	
 	// Sinistra - Событие с Клодом Дюраном ==>
 	if (sQuestName == "SKD_DuranTavern") {
-		if (CharacterIsAlive("FMQT_mercen"))
+		if (CharacterIsAlive("Duran"))
 		{
 			PChar.quest.SKD_DuranTavern_podhodit.win_condition.l1 = "Location_Type";
 			PChar.quest.SKD_DuranTavern_podhodit.win_condition.l1.location_type = "tavern";
@@ -20,10 +20,10 @@ bool Duran_QuestComplete(string sQuestName, string qname)
 	}
 
 	else if (sQuestName == "SKD_DuranTavern_podhodit") {
-		if (CharacterIsAlive("FMQT_mercen"))
+		if (CharacterIsAlive("Duran"))
 		{
 			chrDisableReloadToLocation = true;
-			sld = CharacterFromID("FMQT_mercen");
+			sld = CharacterFromID("Duran");
 			ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto2");
 			sld.dialog.filename = "Quest\CompanionQuests\Duran.c";
 			sld.dialog.currentnode = "SKD_KlodDuran";
@@ -44,17 +44,18 @@ bool Duran_QuestComplete(string sQuestName, string qname)
 	}
 
 	else if (sQuestName == "SKD_DomAnri") {
-		if (CharacterIsAlive("FMQT_mercen"))
+		if (CharacterIsAlive("Duran"))
 		{
-			sld = CharacterFromID("FMQT_mercen");
+			sld = CharacterFromID("Duran");
 			ChangeCharacterAddressGroup(sld, "PortRoyal_houseSp1", "reload", "reload2");
 			TeleportCharacterToPosAy(sld, -2.64, 1.02, -1.51, 0.50);
 			
 			sld = GetCharacter(NPC_GenerateCharacter("SKD_Anri", "citiz_12", "man", "man", 25, FRANCE, -1, false, "quest"));
 			sld.name = StringFromKey("Duran_1");
 			sld.lastname = StringFromKey("Duran_2");
-			GiveItem2Character(sld, "blade_38");
-			EquipCharacterByItem(sld, "blade_38");
+            sTemp = GetGeneratedItem("blade_38");
+            GiveItem2Character(sld, sTemp);
+            EquipCharacterbyItem(sld, sTemp);
 			GiveItem2Character(sld, "pistol2");
 			EquipCharacterByItem(sld, "pistol2");
 			AddItems(sld, "cartridge", rand(10)+20);
@@ -89,7 +90,7 @@ bool Duran_QuestComplete(string sQuestName, string qname)
 	}
 
 	else if (sQuestName == "SKD_DomAnri_2") {
-		sld = CharacterFromID("FMQT_mercen");
+		sld = CharacterFromID("Duran");
 		LAi_SetActorType(sld);
 		LAi_ActorGoToLocator(sld, "goto", "goto3", "SKD_DomAnri_3", -1);
 		
@@ -98,7 +99,7 @@ bool Duran_QuestComplete(string sQuestName, string qname)
 	}
 
 	else if (sQuestName == "SKD_DomAnri_3") {
-		sld = CharacterFromID("FMQT_mercen");
+		sld = CharacterFromID("Duran");
 		LAi_SetActorType(sld);
 		LAi_ActorTurnToLocator(sld, "barmen", "stay");
 		
@@ -120,12 +121,12 @@ bool Duran_QuestComplete(string sQuestName, string qname)
 	}
 
 	else if (sQuestName == "SKD_DomAnri_6") {
-		sld = CharacterFromID("FMQT_mercen");
+		sld = CharacterFromID("Duran");
 		if (!LAi_IsDead(sld))
 		{
 			chrDisableReloadToLocation = true;
 			DoQuestCheckDelay("hide_weapon", 1.2);
-			sld = CharacterFromID("FMQT_mercen");
+			sld = CharacterFromID("Duran");
 			sld.dialog.filename = "Quest\CompanionQuests\Duran.c";
 			sld.dialog.currentnode = "SKD_DomAnri_12";
 			LAi_SetActorType(sld);
@@ -198,7 +199,7 @@ bool Duran_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "SKD_DomAnri_DuranDruzhba_8") {
 		chrDisableReloadToLocation = true;
 		LAi_SetPlayerType(pchar);
-		sld = CharacterFromID("FMQT_mercen");
+		sld = CharacterFromID("Duran");
 		ChangeCharacterAddressGroup(sld, "PortRoyal_town", "reload", "houseSp1");
 		sld.dialog.filename = "Quest\CompanionQuests\Duran.c";
 		sld.dialog.currentnode = "SKD_DomAnri_DuranDruzhba_3";

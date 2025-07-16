@@ -82,15 +82,15 @@ void ProcessDialogEvent()
 		else
 		{
 			dialog.text = LinkRandPhrase("¡Alto, cara pálida! ¿Con qué derecho caminas por mi tierra?", "¡Alto, hombre blanco! ¡Estás en la tierra de mis antepasados y mi tierra!", "¡Alto, cara pálida! No perteneces a mi tierra");
-			link.l1 = RandPhraseSimple("¿Tu tierra? ¡Pierdete, escoria de cara roja!", "¡Mira a eso - un mono parlante! ¡Lárgate, ahora!");
+			link.l1 = RandPhraseSimple("¿Tu tierra? ¡Pierdete, escoria de cara roja!", "¡Mira a eso, un mono parlante! ¡Lárgate, ahora!");
 			link.l1.go = "war_indian_1";
 			link.l2 = RandPhraseSimple("He venido en paz, guerrero de piel roja. No deberíamos luchar por nada.", "No soy un enemigo para ti y tu tierra, guerrero. He venido en paz.");
-			if (sti(pchar.questTemp.Indian.relation) + (makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) / 3)) > drand(80))
+			if (sti(pchar.questTemp.Indian.relation) + (makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) / 3)) > hrand(80))
 				link.l2.go = "war_indian_2_1";
 			else
 				link.l2.go = "war_indian_2_2";
 			link.l3 = RandPhraseSimple("He venido a comerciar contigo, no a luchar.", "No lucho con indios. Comercio con ellos.");
-			if (sti(pchar.questTemp.Indian.relation) + (makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) / 6) + makeint(GetSummonSkillFromName(pchar, SKILL_FORTUNE) / 6)) > drand(90))
+			if (sti(pchar.questTemp.Indian.relation) + (makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) / 6) + makeint(GetSummonSkillFromName(pchar, SKILL_FORTUNE) / 6)) > hrand(90))
 				link.l3.go = "war_indian_3_1";
 			else
 				link.l3.go = "war_indian_3_2";
@@ -156,16 +156,16 @@ void ProcessDialogEvent()
 
 	case "gun_1":
 		npchar.quest.gun = "pistol1";
-		if (drand(1) == 0)
+		if (hrand(1) == 0)
 		{
 			npchar.quest.item = "potion" + (rand(2) + 2);
-			iTotalTemp = drand(1) + 1;
+			iTotalTemp = hrand(1) + 1;
 			sText = "" + FindRussianQtyString(iTotalTemp) + "  vial de poción curativa buena";
 		}
 		else
 		{
-			npchar.quest.item = "jewelry" + (drand(9) + 14);
-			iTotalTemp = drand(2) + 1;
+			npchar.quest.item = "jewelry" + (hrand(9) + 14);
+			iTotalTemp = hrand(2) + 1;
 			sText = "" + FindRussianQtyString(iTotalTemp) + " esta hermosa piedra";
 		}
 		dialog.text = "¡Eh-ho! Te lo damos a cambio " + sText + ".";
@@ -177,16 +177,16 @@ void ProcessDialogEvent()
 
 	case "gun_2":
 		npchar.quest.gun = "pistol2";
-		if (drand(3) < 2)
+		if (hrand(3) < 2)
 		{
 			npchar.quest.item = "potion" + (rand(2) + 2);
-			iTotalTemp = drand(2) + 2;
+			iTotalTemp = hrand(2) + 2;
 			sText = "" + FindRussianQtyString(iTotalTemp) + " vial de poción curativa buena";
 		}
 		else
 		{
-			npchar.quest.item = "jewelry" + (drand(3) + 1);
-			iTotalTemp = drand(2) + 2;
+			npchar.quest.item = "jewelry" + (hrand(3) + 1);
+			iTotalTemp = hrand(2) + 2;
 			sText = "" + FindRussianQtyString(iTotalTemp) + " esta hermosa piedra";
 		}
 		dialog.text = "¡Eh-ho! Astuta arma... Te la damos a cambio " + sText + ".";
@@ -198,17 +198,17 @@ void ProcessDialogEvent()
 
 	case "gun_3":
 		npchar.quest.gun = "pistol3";
-		if (drand(5) < 3)
+		if (hrand(5) < 3)
 		{
 			qty = rand(1) + 2;
 			npchar.quest.item = "jewelry5" + qty;
-			iTotalTemp = drand(6) + qty * 15;
+			iTotalTemp = hrand(6) + qty * 15;
 			sText = "" + FindRussianQtyString(iTotalTemp) + " esta hermosa perla";
 		}
 		else
 		{
-			npchar.quest.item = "jewelry" + (drand(2) + 2);
-			iTotalTemp = drand(2) + 5;
+			npchar.quest.item = "jewelry" + (hrand(2) + 2);
+			iTotalTemp = hrand(2) + 5;
 			sText = "" + FindRussianQtyString(iTotalTemp) + "  esta hermosa piedra";
 		}
 		dialog.text = "¡Eh-ho! ¡Poderosa arma! ¡Matar muchos-muchos enemigos! Te lo damos a cambio " + sText + ".";
@@ -220,16 +220,16 @@ void ProcessDialogEvent()
 
 	case "gun_4":
 		npchar.quest.gun = "pistol4";
-		if (drand(9) < 8)
+		if (hrand(9) < 8)
 		{
 			qty = rand(1) + 1;
 			npchar.quest.item = "jewelry" + (qty + 4);
-			iTotalTemp = drand(10) + qty * 30;
+			iTotalTemp = hrand(10) + qty * 30;
 			sText = "" + FindRussianQtyString(iTotalTemp) + " pedazo de metal que rostro pálido ama más que la vida";
 		}
 		else
 		{
-			npchar.quest.item = "obereg_" + (drand(10) + 1);
+			npchar.quest.item = "obereg_" + (hrand(10) + 1);
 			iTotalTemp = 1;
 			sText = "este amuleto";
 		}
@@ -242,29 +242,29 @@ void ProcessDialogEvent()
 
 	case "gun_5":
 		npchar.quest.gun = "pistol5";
-		if (drand(7) < 7)
+		if (hrand(7) < 7)
 		{
-			if (drand(10) < 8)
+			if (hrand(10) < 8)
 			{
 				npchar.quest.item = "jewelry7";
-				iTotalTemp = 2 + drand(1);
+				iTotalTemp = 2 + hrand(1);
 			}
 			else
 			{
 				npchar.quest.item = "jewelry8";
-				iTotalTemp = drand(4) + 10;
+				iTotalTemp = hrand(4) + 10;
 			}
-			qty = drand(1) + 1;
+			qty = hrand(1) + 1;
 			npchar.quest.item = "jewelry" + (qty + 6);
 			if (qty == 1)
 				iTotalTemp = 2;
 			else
-				iTotalTemp = drand(5) + qty * 15;
+				iTotalTemp = hrand(5) + qty * 15;
 			sText = "" + FindRussianQtyString(iTotalTemp) + " este hermoso y precioso alquitrán petrificado";
 		}
 		else
 		{
-			npchar.quest.item = "indian_" + (drand(10) + 1);
+			npchar.quest.item = "indian_" + (hrand(10) + 1);
 			iTotalTemp = 1;
 			sText = "este amuleto";
 		}
@@ -277,16 +277,16 @@ void ProcessDialogEvent()
 
 	case "gun_6":
 		npchar.quest.gun = "pistol6";
-		if (drand(9) < 8)
+		if (hrand(9) < 8)
 		{
 			qty = rand(1) + 1;
 			npchar.quest.item = "jewelry" + (qty + 4);
-			iTotalTemp = drand(8) + qty * 20;
+			iTotalTemp = hrand(8) + qty * 20;
 			sText = "" + FindRussianQtyString(iTotalTemp) + " pedazo de metal que rostro pálido ama más que la vida";
 		}
 		else
 		{
-			npchar.quest.item = "amulet_" + (drand(10) + 1);
+			npchar.quest.item = "amulet_" + (hrand(10) + 1);
 			iTotalTemp = 1;
 			sText = "este amuleto";
 		}
@@ -305,7 +305,7 @@ void ProcessDialogEvent()
 		Log_Info("Has entregado " + XI_ConvertString(npchar.quest.gun) + "");
 		Log_Info("Has recibido " + XI_ConvertString(npchar.quest.item) + " por un importe de " + FindRussianQtyString(iTotalTemp) + "");
 		PlaySound("interface\important_item.wav");
-		if (sti(npchar.quest.count) > 3 + drand(2))
+		if (sti(npchar.quest.count) > 3 + hrand(2))
 			;
 		{
 			dialog.text = "Bien. Aquí tus bienes. No comerciamos más. Ven más tarde. Mejor arma ardiente más damos por ella. ¡Ahora vete!";

@@ -1,0 +1,119 @@
+Neutral_1
+{
+Bandit
+}
+
+Neutral_2
+{
+Ihr habt Notizen hinterlassen
+}
+
+Neutral_3
+{
+Jack
+}
+
+Neutral_4
+{
+Veils
+}
+
+Neutral_5
+{
+Sea Beast
+}
+
+Neutral_6
+{
+Julie
+}
+
+Neutral_7
+{
+d'Armagnac
+}
+
+Neutral_8
+{
+Golden Seagull
+}
+
+Neutral_9
+{
+Tristan
+}
+
+Neutral_10
+{
+Renier
+}
+
+Neutral_11
+{
+Ein Piratenschiff am Horizont! Sie steuern direkt, um unseren Kurs zu kreuzen.
+}
+
+Neutral_12
+{
+Eine Stimme hinter der Tür
+}
+
+Neutral_13
+{
+Betsy
+}
+
+Neutral_14
+{
+Price
+}
+
+Neutral_15
+{
+Gegenstand erhalten: Betsy Prices Dokumente
+}
+
+Neutral_16
+{
+Übergeben: Betsy Prices Dokumente
+}
+
+Neutral_17
+{
+Lea
+}
+
+Neutral_18
+{
+Carno
+}
+
+Neutral_19
+{
+Pierre
+}
+
+Neutral_20
+{
+Ein Piratenschiff am Horizont! Sie schneiden unseren Kurs.
+}
+
+Neutral_21
+{
+Deck
+}
+
+Neutral_22
+{
+Der Höhleneingang ist von Spinnweben überzogen. Offenbar war hier schon lange niemand mehr.
+}
+
+Neutral_23
+{
+Im Haus herrscht ein heilloses Durcheinander. Sieht so aus, als wäre ich hier richtig.
+}
+
+Neutral_24
+{
+The Ghost
+}

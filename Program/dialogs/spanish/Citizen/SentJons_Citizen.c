@@ -25,7 +25,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		else
 		{
 			dialog.text = LinkRandPhrase("¿Cuál Jones necesitas? Conozco al menos dos docenas de ellos...", "Tenemos demasiados Jones aquí. Necesitas ser más específico.", "Hay muchos Jones aquí, así como Johnsons o Jacksons. Necesitas ser más específico, ¿eh?");
-			link.l1 = "Tiene una hermana adulta llamada Molly. Me han dicho que es una belleza rara?";
+			link.l1 = "Tiene una hermana adulta llamada Molly. Me han dicho que es una rara belleza.";
 			link.l1.go = "terrapin_no";
 		}
 		npchar.quest.terrapin = "true";
@@ -40,7 +40,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "terrapin_yes":
 		dialog.text = "Sí, pero estaría mejor como su hermano. Esta moza probablemente no encontrará un pretendiente debido a su feo rostro.";
-		link.l1 = "Mis gracias.";
+		link.l1 = "Entiendo, gracias.";
 		link.l1.go = "terrapin_yes_1";
 		break;
 

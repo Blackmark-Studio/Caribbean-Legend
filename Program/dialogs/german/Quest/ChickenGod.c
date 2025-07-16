@@ -779,20 +779,12 @@ void ProcessDialogEvent()
 				case SHIP_LADYBETH:
 					dialog.text = "Und hast du den Priester gesehen? Nun, du wirst ihn treffen. Und du solltest dich besser mit Doppelschuss-Pistolenladungen eindecken. Wenn das nicht hilft - versuche es mit einem Holzpflock.";
 				break;
+				
+				case SHIP_MEMENTO:
+					dialog.text = "Und hast du den Priester gesehen? Nun, du wirst ihn treffen. Und du solltest dich besser mit Doppelschuss-Pistolenladungen eindecken. Wenn das nicht hilft - versuche es mit einem Holzpflock.";
+				break;
 			}
 		break;
-		
-		/*case "joruba_p3_HolyMercy":
-			dialog.text = "Und hast du den Priester gesehen?";
-			link.l1 = "Welcher Priester?";
-			link.l1.go = "joruba_p3_HolyMercy_2";
-		break;
-		
-		case "joruba_p3_HolyMercy_2":
-			dialog.text = "Nun, du wirst ihn treffen. Und du solltest dich besser mit Doppelschuss-Pistolenladungen eindecken. Wenn das nicht hilft - versuche es mit einem Holzpflock.";
-			link.l1 = "...";
-			link.l1.go = "joruba_p3_1";
-		break;*/
 		
 		case "joruba_p3_PinkOtkaz":
 			dialog.text = "Jawohl, dieses Schiff mag eine Geschichte haben... aber war es nicht zu einfach zu bekommen? Auf keinen Fall! Du hast noch einen Haufen unerledigter Arbeit auf der Liste. Wenn du das erledigt hast, werden wir dieses Opfer nochmal besprechen.";
@@ -895,7 +887,7 @@ void ProcessDialogEvent()
 		case "joruba_p4_other":
 			dialog.text = "So sei es. Nenne den Namen.";
 			
-			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "FMQT_mercen");
+			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Duran");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Baker");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Folke");
 			ChickenGod_AddOfficerLink(link, "joruba_p4_off_", "Avendel");
@@ -907,14 +899,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_p4_off":
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
 			{
 				dialog.text = "Claude Durand ist kein Offizier, sondern ein rücksichtsloser Söldner, also wähle ein anderes Opfer.";
 				link.l1 = "";
 				link.l1.go = "exit";
 				break;
 			}
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
 			{
 				Achievment_Set("ach_CL_116");
 			}
@@ -1103,7 +1095,7 @@ void ProcessDialogEvent()
 		case "joruba_o6_blood":
 			dialog.text = "Sag den Namen.";
 			
-			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "FMQT_mercen");
+			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Duran");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Baker");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Folke");
 			ChickenGod_AddOfficerLink(link, "joruba_o6_off_", "Avendel");
@@ -1135,14 +1127,14 @@ void ProcessDialogEvent()
 				AddDialogExitQuestFunction("ChickenGod_KickedFromTemple");
 				break;
 			}
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && !CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba"))
 			{
 				dialog.text = "Claude Durand ist kein Offizier, sondern ein rücksichtsloser Söldner, also wähle ein anderes Opfer.";
 				link.l1 = "";
 				link.l1.go = "exit";
 				break;
 			}
-			if (pchar.questTemp.ChickenGod.Sacrifice == "FMQT_mercen" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
+			if (pchar.questTemp.ChickenGod.Sacrifice == "Duran" && CheckAttribute(pchar, "questTemp.SKD_DuranDruzhba") && CheckAttribute(pchar, "questTemp.SKD_DevushkaUbita"))
 			{
 				Achievment_Set("ach_CL_116");
 			}
@@ -1444,7 +1436,7 @@ bool ChickenGod_TalkedToAmelia() {
 bool ChickenGod_HaveOfficers() {
 	object fakelink;
 	
-	ChickenGod_AddOfficerLink(&fakelink, "", "FMQT_mercen");
+	ChickenGod_AddOfficerLink(&fakelink, "", "Duran");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Baker");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Folke");
 	ChickenGod_AddOfficerLink(&fakelink, "", "Avendel");

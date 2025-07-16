@@ -60,6 +60,21 @@ void ProcessDialogEvent()
 	        Dialog.Text = "If you're reading this line, it's a bug in the code";
 			Link.l1 = "Exit";
 			Link.l1.go = "exit";
+			
+			//--> Вступительный туториал на палубе корабля за Шарля
+			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1"))
+			{
+				dialog.text = "Thrilling, damn it! A real naval battle!\nToo bad I won’t see the fight from here... Never mind. I think I’ve learned enough about seafaring to imagine how it goes\nProbably five pirates... One big ship, a couple of mediums, and some small fry. Just right for our pinnace. It'll make a great tale — Lulu will love it!";
+				link.l1 = "...";
+				link.l1.go = "exit";
+				DeleteAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1");
+				pchar.wind.speed = 18.0;
+				fWeatherSpeed = stf(18.0);
+				//AddDialogExitQuestFunction("SharlieTutorial_StartShip");
+				AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_3");
+			}
+			//<-- Вступительный туториал на палубе корабля за Шарля
+
 			//--> Голландский гамбит
 			if (CheckAttribute(pchar, "questTemp.HWIC_FindIsland"))
     		{
@@ -576,7 +591,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;
@@ -605,7 +620,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetMusketBullets1_" + i;
 			}
 		break;
@@ -754,7 +769,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if (pchar.location == "Minentown_ExitTown")
+						if (pchar.location == "LosTeques_ExitTown")
 						{
 							Dialog.Text = "There is no point in attacking this mine without first gathering information about the gold and silver mined there. Otherwise I'll be sending my men to die in vain.";
 							Link.l1 = "...";
@@ -861,15 +876,19 @@ void ProcessDialogEvent()
 		break;
 
 		case "TalkSelf_SlavesToCrew_1":
-			// belamour legendary edition перк получил время работы, старый метод не подходит
-	        if (GetOfficersPerkUsing(pchar, "IronWill"))
-	        {
-	            AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 5.0))
-	        }
-	        else
-	        {
-	            AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 3.0))
-	        }
+			bOk = ShipBonus2Artefact(pchar, SHIP_MEMENTO) && CheckAttribute(&RealShips[sti(pchar.Ship.Type)], "DeadSailors.RecruitSlaveBonus");
+			if(!bOk)
+			{
+				// belamour legendary edition перк получил время работы, старый метод не подходит
+				if (GetOfficersPerkUsing(pchar, "IronWill"))
+				{
+					AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 5.0))
+				}
+				else
+				{
+					AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 3.0))
+				}
+			}
 			ChangeCharacterComplexReputation(pchar,"authority", -0.5);
 	        // падение опыта -->
 	        fTemp =  stf(GetCrewQuantity(pchar) + sti(pchar.GenQuest.SlavesToCrew));
@@ -1316,8 +1335,9 @@ void ProcessDialogEvent()
 	}
 }
 
-void  DialogExit_Self()
+void DialogExit_Self()
 {
+    SendMessage(PChar, "ls", MSG_CHARACTER_EX_MSG, "forceBlend");
     DialogExit();
 	locCameraSleep(false); //boal
 }

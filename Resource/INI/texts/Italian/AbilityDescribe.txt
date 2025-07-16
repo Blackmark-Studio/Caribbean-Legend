@@ -1,0 +1,570 @@
+﻿newline  {
+
+}
+
+BasicDefense	{Abilità di difesa base}
+perkBasicDefense
+{
+Il danno subito dal personaggio è ridotto del 10%.
+}
+
+AdvancedDefense	{Abilità di difesa avanzata}
+perkAdvancedDefense
+{
+Il danno subito dal personaggio è ridotto del 20%.
+}
+
+CriticalHit	{Colpo critico}
+perkCriticalHit
+{
+Il personaggio ha una probabilità del 5% di mettere a segno un colpo critico sull'avversario.
+}
+
+Ciras	{Corazza}
+perkCiras
+{
+Questa abilità consente l'uso delle corazze.
+}
+
+SwordplayProfessional	{Schermidore professionista}
+perkSwordplayProfessional
+{
+Probabilità del 15% di infliggere un colpo critico ad un nemico. Il danno subito dal personaggio è ridotto del 30%.
+}
+
+Grus	{Mulo da soma}
+perkGrus
+{
+Questa capacità ti consente di trasportare ulteriori 30 libbre.
+}
+
+Rush	{La tintura di Ometochtli}
+perkRush
+{
+Tintura inebriante che contribuisce alla manifestazione istantanea di una forza e di una resistenza enormi, di un aumento significativo della destrezza e della rapidità di reazione, di un'aggressività intensa e dell'insensibilità al dolore. 
+Per 12 secondi, gli attacchi del personaggio diventano molto più potenti e i danni in arrivo vengono ridotti.
+~
+Questa abilità ha un tempo di recupero di 1 minuto.
+}
+
+Tireless	{Instancabile}
+perkTireless
+{
+In combattimento si ottiene il secondo vento, che aiuta a ridurre la fatica del combattimento. (+15% di recupero di energia).
+}
+
+HardHitter {Battitore forte}
+perkHardHitter
+{
+Un colpo pesante messo a segno ottiene un bonus del 30% sui danni.
+}
+
+BladeDancer	{Danza della lama}
+perkBladeDancer
+{
+Hai imparato correttamente l'attacco di gruppo. (+30% bonus danno attacco di gruppo).
+}
+
+Sliding	{Colpo irresistibile}
+perkSliding
+{
+I tuoi attacchi hanno una probabilità aggiuntiva del 20% di colpire la difesa del nemico.
+1% in più per ciascuno (S).
+}
+
+Gunman {Moschettiere}
+perkGunman
+{
+Il personaggio usa le pistole in modo più efficace: la ricarica è più veloce del 10% e la precisione è aumentata del 10%.
+~ 
+Puoi usare: archibugi, moschetti, mortai e altre grandi armi da fuoco a una canna.
+~
+Solo il personaggio e ufficiali specifici possono equipaggiare armi di questo tipo.
+}
+
+GunProfessional {Tiratore}
+perkGunProfessional
+{
+Ricarica delle armi personali più veloce del 25%. Aumento della precisione del 25%.
+~
+Ora è possibile utilizzare armi da fuoco a canna multipla e a ripetizione.
+~
+Il personaggio può sparare con un moschetto attraverso gli alleati senza colpirli. Occhio di bue!
+}
+
+IronWill	{Volontà di ferro}
+perkIronWill
+{
+Il personaggio può sopravvivere a un colpo mortale una volta ogni tre minuti.
+~
+Riduce la possibilità di ammutinamento.
+~
+Funziona per il protagonista, il suo Bosun e degli armigeri.
+}
+
+SharedExperience	{Scambio di esperienze}
+perkSharedExperience
+{
+Livellamento più rapido e acquisizione di punti abilità, equivalenti ad ottenere un ulteriore punto di talento (T).
+~
+L'esperienza acquisita nelle abilità dell'eroe viene condivisa con i passeggeri, gli ufficiali e i compagni con una quantità doppia, rispettivamente del 10%, 50% e 33%.
+}
+
+Medic	{Ottima salute}
+perkMedic
+{
+Questa abilità permette di ripristinare la salute più velocemente, se non si sono subite ferite gravi durante il giorno. Riduce la diminuzione della salute se il personaggio è ferito. Funziona anche durante la navigazione, ma più lentamente.
+~
+~
+Abilità disponibile solo per il giocatore
+}
+
+HPPlus	{Vita in crescita}
+perkHPPlus
+{
+Questa abilità aumenta i punti ferita massimi dell'eroe di un punto aggiuntivo per grado.
+}
+
+EnergyPlus	{Energia in crescita}
+perkEnergyPlus
+{
+Questa abilità aumenta i punti energetici massimi dell'eroe di un punto aggiuntivo per grado.
+}
+
+ByWorker	{Chiaro di Luna}
+perkByWorker
+{
+Questo personaggio può occupare due posizioni di ufficiale contemporaneamente.
+~
+~
+~
+~
+~
+Abilità disponibile solo per gli ufficiali	 
+}
+
+perkByWorkerShort
+{
+This character can occupy two officer positions at once
+}
+
+ByWorker2	{Jack of All Trades}
+perkByWorker2
+{
+Questo personaggio può occupare tre posizioni di ufficiale contemporaneamente.
+~
+~
+~
+~
+~
+Abilità disponibile solo per gli ufficiali		
+}
+
+perkByWorker2Short
+{
+This character can occupy three officer positions at once
+}
+
+Trustworthy	{Affidabilità}
+perkTrustworthy
+{
+La reputazione negativa dell'eroe non influisce più sulle assunzioni.
+~
+Maggiore capacità di ingannare le guardie.
+~
+Accesso a membri dell'equipaggio e ufficiali temporanei nelle taverne.
+~
+Sblocca opzioni uniche in alcune missioni.
+~
+Solo per il personaggio principale.
+}
+
+ShipEscape	{Salvataggio sulla scialuppa}
+perkShipEscape
+{
+Si può usare una barca di salvataggio per salvarsi da una nave che affonda.
+~
+Se un compagno ha questa capacità, fuggirà da una nave o da un 'brander' che affonda, tornando alla nave dell'eroe su una scialuppa di salvataggio.
+}
+
+Alchemy	{Alchimia}
+perkAlchemy
+{
+Permette di creare oggetti senza l'uso di strumenti speciali come il forziere dell'alchimista.
+~
+~
+~
+~
+Abilità disponibile solo per il giocatore
+}
+
+FastReload {Ricarica veloce}
+perkFastReload
+{
+La ricarica dei cannoni è accelerata del 10%.
+}
+
+ImmediateReload	{Ricarica preliminare}
+perkImmediateReload
+{
+Dopo aver utilizzato questa abilità, la ricarica successiva procederà il 30% più velocemente. Questa abilità ha un tempo di recupero di 5 minuti.
+}
+
+HullDamageUp	{Danni allo scafo}
+perkHullDamageUp
+{
+Il danno allo scafo di una nave nemica aumenta del 15%.
+}
+
+SailsDamageUp	{Danni alle vele}
+perkSailsDamageUp
+{
+Il danno alle vele di una nave nemica è aumentato del 15%.
+}
+
+CrewDamageUp {Danni equipaggio}
+perkCrewDamageUp
+{
+Il danno all'equipaggio di una nave nemica aumenta del 15%.
+}
+
+CriticalShoot	{Tiro critico}
+perkCriticalShoot
+{
+Il personaggio ha una probabilità del 5% di mettere a segno un colpo critico con una raffica sparata contro il nemico.
+}
+
+LongRangeShoot	{Gittata aumentata}
+perkLongRangeShoot
+{
+La portata di tiro dei cannoni è aumentata del 15%.
+}
+
+CannonProfessional	{Cannoniere professionista}
+perkCannonProfessional
+{
+Il danno a qualsiasi parte della nave nemica è aumentato del 30%. La possibilità di mettere a segno un colpo critico aumenta del 15%.
+}
+
+LongRangeGrappling	{Abbordaggio a lungo raggio}
+perkLongRangeGrappling
+{
+Il raggio d'abbordaggio è aumentato del 15%.
+}
+
+MusketsShoot {Salva di moschetto}
+perkMusketsShoot
+{
+Una salva di moschetto viene sparata subito prima dell'abbordaggio.
+~
+Le perdite del nemico dipendono dalle dimensioni della nave e dal numero di ufficiali d'abbordaggio in posizione.
+}
+
+GrapplingProfessional	{Abbordaggio professionale}
+perkGrapplingProfessional
+{
+La portata dell'abbordaggio è aumentata del 25%. Una nave può ora essere abbordata a qualsiasi angolo e a qualsiasi velocità.
+}
+
+BasicBattleState	{Difesa navale di base}
+perkBasicBattleState
+{
+Il danno generico inflitto alla nave è ridotto del 15%.
+}
+
+AdvancedBattleState	{Difesa della nave migliorata}
+perkAdvancedBattleState
+{
+Il danno generico inflitto alla nave è ridotto del 25%.
+}
+
+ShipDefenseProfessional	{Difesa navale professionale}
+perkShipDefenseProfessional
+{
+Il danno generico inflitto alla nave è ridotto del 25%. La possibilità di ricevere un colpo critico è ridotta del 70%.
+}
+
+
+ShipSpeedUp	{Maggiore velocità navigazione}
+perkShipSpeedUp
+{
+La velocità massima della nave è aumentata del 15%.
+}
+
+ShipTurnRateUp	{Maggiore manovrabilità della nave}
+perkShipTurnRateUp
+{
+La manovrabilità della nave è aumentata del 15%.
+}
+
+StormProfessional	{Navigare in tempesta}
+perkStormProfessional
+{
+I danni inflitti dalle tempeste sono ridotti del 30%.
+}
+
+Turn180	{Rapidità in rotazione}
+perkTurn180
+{
+Per 1 minuto, la velocità di rotazione è 4 volte superiore. Questa abilità ha un tempo di ricarica di 3 minuti.
+}
+
+SailingProfessional	{Abile marinaio}
+perkSailingProfessional
+{
+La velocità e la manovrabilità della nave sono aumentate del 20%. 3/4 delle navi ordinarie sulla mappa del mondo possono essere aggirate.
+}
+
+SeaDogProfessional	{Flagello dei mari}
+perkSeaDogProfessional
+{
+Persino gli avventurieri e i briganti incalliti non oseranno tentare la fortuna quando vedranno la bandiera del Flagello dei Mari. Protegge dagli attacchi degli squadroni nemici. Non funziona su navi di classe bassa.
+~
+~
+~
+Abilità disponibile solo per il giocatore
+}
+
+FlagPir	{Bandiera pirata}
+perkFlagPir
+{
+Dà l'opportunità di issare la bandiera Jolly Roger.
+~
+~
+~
+Abilità disponibile solo per il giocatore
+}
+
+FlagEng	{bandiera inglese}
+perkFlagEng
+{
+Offre l'opportunità di cambiare la tua bandiera con la bandiera dell'Inghilterra. La possibilità che il tuo travestimento non funzioni dipende dalla furtività, dal numero e dalle classi delle navi nello squadrone, dal numero di navi nemiche e dalle taglie.
+~
+~
+~
+Abilità disponibile solo per il giocatore
+}
+
+FlagFra	{bandiera francese}
+perkFlagFra
+{
+Offre l'opportunità di cambiare la tua bandiera con la bandiera della Francia. La possibilità che il tuo travestimento non funzioni dipende dalla furtività, dal numero e dalle classi delle navi nello squadrone, dal numero di navi nemiche e dalle taglie.
+~
+~
+~
+Abilità disponibile solo per il giocatore
+}
+
+FlagSpa	{Bandiera spagnola}
+perkFlagSpa
+{
+Dà l'opportunità di cambiare la tua bandiera con la bandiera della Spagna. La possibilità che il tuo travestimento non funzioni dipende dalla furtività, dal numero e dalle classi delle navi nello squadrone, dal numero di navi nemiche e dalle taglie.
+~
+~
+~
+Abilità disponibile solo per il giocatore
+}
+
+FlagHol	{Bandiera olandese}
+perkFlagHol
+{
+Dà l'opportunità di cambiare la tua bandiera con la bandiera dell'Olanda. La possibilità che il tuo travestimento non funzioni dipende dalla furtività, dal numero e dalle classi delle navi nello squadrone, dal numero di navi nemiche e dalle taglie.
+~
+~
+~
+Abilità disponibile solo per il giocatore
+}
+
+Brander	{Brander}
+perkBrander
+{
+Offre l'opportunità di inviare una nave alleata a esplodere vicino a una nave nemica, infliggendole ingenti danni.
+}
+
+Troopers	{Sbarcare truppe da navi alleate}
+perkTroopers
+{
+Offre l'opportunità di combinare gli equipaggi delle navi subordinate prima di assaltare un forte, per poterle inviare come una forza unita.
+Riduce le dimensioni della squadra necessaria per un assalto terrestre all'insediamento.
+}
+
+BasicCommerce	{Commercio base}
+perkBasicCommerce
+{
+Sconto del 10% nei negozi.
+}
+
+AdvancedCommerce	{Commercio avanzato}
+perkAdvancedCommerce
+{
++10% di bonus di vendita presso i negozi.
+}
+
+ProfessionalCommerce	{Commercio professionale}
+perkProfessionalCommerce
+{
+Questa abilità conferisce uno sconto del 15% e un bonus di vendita del 15% a tutti gli scambi.
+}
+
+Carpenter	{Riparazioni autonome}
+perkCarpenter
+{
+Questa abilità funziona durante le avventure a terra o sulla mappa globale. Sulla nave, se il capitano possiede questa abilità, lo scafo danneggiato o il sartiame degli alberi esistenti vengono lentamente ripristinati. Richiede assi per riparare lo scafo e tela da vela per riparare le vele.
+}
+
+InstantRepair	{Riparazione nei combattimenti}
+perkInstantRepair
+{
+Una riparazione rapida, che può essere effettuata anche nel pieno della battaglia. Servono assi per riparare lo scafo e tela da vela per riparare le vele. Gli alberi caduti non possono essere ripristinati.
+Ripristino massimo dello scafo della nave: fino al 65% delle risorse disponibili.
+90 secondi di ricarica.
+}
+
+LightRepair	{Riparazioni urgenti}
+perkLightRepair
+{
+Questa abilità permette di riparare lo scafo della nave senza risorse, ma la riparazione non supera il 10% degli HP disponibili. Senza questa abilità, la nave cade a pezzi se gli HP dello scafo sono inferiori al 10%.
+Funziona per 60 secondi una volta ogni 3 minuti.
+La riparazione autonoma è accelerata del 50%.
+}
+
+Builder	{Riparazioni professionali}
+perkBuilder
+{
+Il consumo di tavole e tela da vela durante una riparazione è ridotto del 25%. La riparazione autonoma è accelerata del 100%.
+}
+
+SelfRepair {Riparazione completa}
+perkSelfRepair
+{
+Questa abilità permette di riparare completamente la propria nave con gli sforzi del proprio equipaggio su qualsiasi riva conveniente. Dovete avere nella vostra stiva le assi per riparare lo scafo e le tele per riparare le vele. Permette di ripristinare completamente lo scafo, le vele e gli alberi.
+Le riparazioni possono essere effettuate solo sulla terraferma in una località costiera.
+}
+
+WindCatcher	{Dinamica aumentata}
+perkWindCatcher
+{
+È in grado di percepire il minimo cambiamento di direzione del vento e di sfruttarlo a proprio vantaggio. (+10% all'accelerazione della nave).
+}
+
+SailsMan	{Vele rapide}
+perkSailsMan
+{
+Siete riusciti a velocizzare del 10% tutte le operazioni relative alle vele.
+}
+
+Doctor1	{Dottore}
+perkDoctor1
+{
+Nei combattimenti navali, questa abilità riduce del 10% le perdite per ferite e colpi d'arma da fuoco.
+}
+
+Doctor2	{Salvavita}
+perkDoctor2
+{
+Nei combattimenti navali, questa abilità riduce del 20% le perdite per ferite e colpi d'arma da fuoco.
+}
+
+InstantBoarding {Imbarco immediato}
+FencingMaster {Maestro di scherma}
+perkFencingMaster
+{
+Se colpiti in combattimento non si esaurisce l'energia.
+~
+10% di probabilità di sferrare un colpo critico.
+~
+Un Attacco Rapido riuscito ottiene un bonus del 30% ai danni.
+~
+Disponibile solo per l'archetipo 'Duellante'
+}
+
+TannedLeather {Cuoio conciato}
+perkTannedLeather
+{
+La protezione dell'armatura leggera aumenta del 20%.
+~
+~
+~
+Disponibile solo per l'archetipo 'Duellante'
+}
+
+RatsWolf {Ratto Lupo}
+perkRatsWolf
+{
+È improbabile che la nave di questo personaggio venga danneggiata da ratti o altri parassiti.
+~
+~
+~
+Disponibile solo per l'archetipo 'Contabile'
+}
+
+Mimicry {Imitazione}
+perkMimicry
+{
+La probabilità di essere individuati da navi da guerra e forti è ridotta del 50%.
+~
+~
+~
+Disponibile solo per l'archetipo 'Contabile'
+}
+
+TreasureHunter {Cacciatore di tesori}
+perkTreasureHunter
+{
+L'eccellente fiuto permette di trovare tesori con un contenuto migliore
+~
+~
+~
+Disponibile solo per l'archetipo 'Contabile'
+}
+
+Dragoon {Cavaliere di bronzo}
+perkDragoon
+{
+La protezione delle armature e delle corazze francesi aumenta del 15%.
+~
+I fendenti e gli attacchi pesanti riusciti ottengono un bonus ai danni rispettivamente del 15% e del 30%.
+~
+~
+Disponibile solo per l'archetipo 'Atleta'
+}
+
+SecondWind {Respiro vitale}
+perkSecondWind
+{
+Il recupero di energia con il tempo è più veloce del 15%
+~
+~
+~
+Disponibile solo per l'archetipo 'Atleta'
+}
+
+Jager {Jager}
+perkJager
+{
+Ricaricare le armi da fuoco 40% più velocemente
+~
+~
+~
+Disponibile solo per l'archetipo 'Tiratore scelto'
+}
+
+Bombardier {Bombardiere}
+perkBombardier
+{
+Maggiore protezione contro l'usura dei cannoni navali
+~
+~
+~
+Disponibile solo per l'archetipo 'Tiratore scelto'
+}
+
+Sniper {Cecchino}
+perkSniper
+{
+Un colpo di arma da fuoco scuote la vittima, sottraendo energia preziosa
+~
+~
+~
+Disponibile solo per l'archetipo 'Tiratore scelto'
+}

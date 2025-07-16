@@ -447,7 +447,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jeffry_32":
-            PlaySound("VOICE\Russian\LE\Jeffry\Jeffry_gold.wav");
+            //PlaySound("VOICE\Russian\LE\Jeffry\Jeffry_gold.wav");
 			dialog.text = "Да, есть на что посмотреть! Целая куча золота! Было от чего Тесаку голову потерять... Нам здорово повезло, Принц! Как думаешь - сколько здесь?";
 			link.l1 = "Много. Точнее мы узнаем, когда сломаем решётку. Но для этого нужны инструменты и приспособления, а взять их можно только на корабле. Нужно возвращаться.";
 			link.l1.go = "Jeffry_33";
@@ -607,7 +607,7 @@ void ProcessDialogEvent()
 				if (iRank > 45) iRank = 45;
 				Group_FindOrCreateGroup("Mtr_Utreht");
 				sld = GetCharacter(NPC_GenerateCharacter("Cap_Utreht", "mercen_19", "man", "man", iRank, ENGLAND, -1, true, "quest"));
-				FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, "Утрехт", CANNON_TYPE_CULVERINE_LBS18, 50, 50, 50);
+				FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, "Утрехт", CANNON_TYPE_CULVERINE_LBS8, 50, 50, 50);
 				FantomMakeCoolFighter(sld, iRank, 50, 50, "blade_13", "pistol5", "bullet", 100);
 				sld.name = "Йоахим";
 				sld.lastname = "Гузен";
@@ -1352,8 +1352,8 @@ void ProcessDialogEvent()
             dialog.text = "Понимаю твоё негодование, ха-ха. Решение за тобой... адмирал. Рассказываю?";
 			link.l1 = "Чёрт побери... Ладно, рассказывай. Времени у нас мало - если ты или я их не пощипаем, это просто сделает кто-то другой.";
 			link.l1.go = "Pelly_52";
-			link.l2 = "Нет! Я французов лишний раз не трогаю. Точка! И обсуждать тут нечего.";
-			link.l2.go = "Pelly_51_1";
+			// link.l2 = "Нет! Я французов лишний раз не трогаю. Точка! И обсуждать тут нечего.";
+			// link.l2.go = "Pelly_51_1";
 		break;
 		
 		case "Pelly_51_1":
@@ -1369,7 +1369,6 @@ void ProcessDialogEvent()
 			AddQuestRecord("Roger_3", "28");
 			SetTimerCondition("Mtraxx_PlantCaravanGuadeloupe", 0, 0, 14, false);
 			SetTimerCondition("Mtraxx_PlantCaravanGuadeloupe_time", 0, 0, 45, false);
-			//DoQuestCheckDelay("Mtraxx_PlantCaravanGuadeloupe", 1.0);
 		break;
 		
 		case "Pelly_52":
@@ -1383,10 +1382,8 @@ void ProcessDialogEvent()
 			
 			LAi_SetActorType(npchar);
 			AddQuestRecord("Roger_3", "28");
-			//if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup")) AddQuestUserData("Roger_3", "sText", "Кто бы мог подумать, что среди капитанов Тиракса будет человек с если уж не талантом переговорщика, то предпринимательской жилкой - наверняка. Этим человеком оказался мой временный компаньон, Пол 'Тесак'. Понимая, что нам грозит в случае гнева Маркуса за провал его задания, Тесак предложил... официально выкупить Пикара у главы плантации. Пока я разведывал обстановку и говорил с Жаном, Тесак тоже даром времени не терял и выяснил, что владелец плантации регулярно торгует ценными пленниками, и средняя цена во время типичной подобной сделки там составляет 500 дублонов. Целое состояние, но Пол прав - лучше так, чем если Пикар погибнет от шальной пули или клинка. Теперь ещё остаётся загрузиться товарами, оборот которых обычно происходит на этой плантации - это может кофе, копра или ваниль - неважно, что, но обязательно большая партия.");
 			SetTimerCondition("Mtraxx_PlantCaravanGuadeloupe", 0, 0, 14, false);
 			SetTimerCondition("Mtraxx_PlantCaravanGuadeloupe_time", 0, 0, 45, false);
-			//DoQuestCheckDelay("Mtraxx_PlantCaravanGuadeloupe", 1.0);
 		break;
 		
 		case "Pelly_54": // провал выкупа Красавчика
@@ -1432,6 +1429,7 @@ void ProcessDialogEvent()
 		
 		case "Pelly_61":
             DialogExit();
+			DeleteAttribute(pchar,"questTemp.Mtraxx.MagicBox");
 			chrDisableReloadToLocation = true;
 			LocatorReloadEnterDisable("shore37", "boat", false);
 			bQuestDisableMapEnter = false;
@@ -1551,9 +1549,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Pelly_70":
-            dialog.text = "Да, проблема. Что делать будешь, адмирал?\nЯ тут о плантации разузнал всё. В том числе, и какие товары пользуются здесь спросом, ходят в обороте. Чтобы притвориться настоящим торгашом, тебе было бы неплохо ими загрузиться, а не прийти и вывалить золото на стол плантатору.";
-			link.l1 = "Резонно. И о каких товарах речь?";
-			link.l1.go = "Pelly_48";
+            dialog.text = "Да, проблема. Что делать будешь, адмирал?";
+			link.l1 = "Мне нужно этим где-то быстро закупиться. Или налететь на какой-нибудь караван в надежде, что там будет то, что мне нужно.";
+			link.l1.go = "Pelly_49";
 			DeleteAttribute(pchar, "questTemp.mtraxx_PlantInfoTovar");
 		break;
 		
@@ -4255,7 +4253,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_72":
             dialog.text = "У меня оберег есть особый, от Вульфрика остался. Хоть какая-то память о родной Дании. Может, пойдём все в кабак, кэп? Что-то подустали мы все за сегодня.";
-			link.l1 = "Да, было бы здорово. В карты перекинемся - сыграем на твой чудо оберег.";
+			link.l1 = "Да, было бы здорово. В карты перекинемся - сыграем на твой чудо-оберег.";
 			link.l1.go = "IslaMona_73";
 		break;
 		
@@ -4411,7 +4409,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_88":
             dialog.text = "Родриго, и вот я столкнулся прям в будуаре с нашим прелатом... А я тебе так скажу, лучшее заведение находится в Сантьяго...";
-			link.l1 = "Да уж, и если вам нравятся прелаты, то лучшего места и найти!";
+			link.l1 = "Да уж, и если вам нравятся прелаты, то лучшего места и не найти!";
 			link.l1.go = "IslaMona_89";
 		break
 		
@@ -4493,7 +4491,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win"))
 			{
 				dialog.text = "Пас! Ну-ну, больше с вами не играю! Уверен, вы мухлевали, кэп! А шулера просто так отпускать будет непорядок!";
-				link.l1 = "Я тебя очень, внимательно слушаю, Родгар.";
+				link.l1 = "Я тебя очень внимательно слушаю, Родгар.";
 			}
 			else
 			{
@@ -6493,7 +6491,7 @@ void ProcessDialogEvent()
 		
 		case "Nemezida_Knippel_13":
             dialog.text = "Хм. Я убеждал себя, что действую во благо Родины. А переживать из-за приказов - неблагодарная работа, делать-то всё равно придётся.";
-			link.l1 = "Родина... Что ж, у тебя были причины. А у меня её даже толком не было - брат сказал сблизиться с Тираксом. Но стоило ли этого всех жертв, помогло мне или Мишелю? Да-да, ни мы, ни вы донов не жалуете... Но все мы люди.";
+			link.l1 = "Родина... Что ж, у тебя были причины. А у меня её даже толком не было - брат сказал сблизиться с Тираксом. Но стоило ли это всех жертв, помогло ли мне или Мишелю? Да-да, ни мы, ни вы донов не жалуете... Но все мы люди.";
 			link.l1.go = "Nemezida_Knippel_14";
 		break;
 		

@@ -672,6 +672,11 @@ void SetSailorDeck_Ships(ref Chref)
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 		return;	
 	}
+	if(characterID == "Memento_cap")
+	{
+		Memento_OnUpdeck();
+		return;
+	}
 
 	if (characterID == "MQPirate" || characterID == "CapComission_1") // to_do заменить на флаг, чтоб было всем квестовым
 	{  // клон для квестов

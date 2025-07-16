@@ -49,7 +49,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 6-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && 6-sti(RealShips[sti(Pchar.Ship.Type)].Class) < 3)//монах-пассажир
+				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) < 3)//монах-пассажир
 				{
 					dialog.text = "Добрый день, "+GetSexPhrase("сын мой","дочь моя")+". Я бы хотел попросить тебя об одной услуге. На возмездной основе, конечно.";
 					link.l1 = "Слушаю вас, святой отец. О чём пойдёт речь?";
@@ -79,7 +79,7 @@ void ProcessDialogEvent()
 					link.l3 = "Святой отец, у меня на борту находятся люди. Это обращённые в рабство христиане и некрещёные. Я бы хотел"+GetSexPhrase("","а")+" попросить вас окрестить некрещёных, причастить крещёных, а я затем отпущу их на свободу во славу нашей церкви.";
 					link.l3.go = "slaves";
 				}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 6-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
 				{
 					link.l4 = "Святой отец, я бы хотел"+GetSexPhrase("","а")+" попросить вас освятить мой корабль. Сколько это будет мне стоить?";
 					link.l4.go = "shipshine";
@@ -101,7 +101,7 @@ void ProcessDialogEvent()
 						link.l3 = "Святой отец, у меня на борту находятся люди. Это обращённые в рабство христиане и некрещёные. Я бы хотел"+GetSexPhrase("","а")+" попросить вас окрестить некрещёных, причастить крещёных, а я затем отпущу их на свободу во славу нашей церкви.";
 						link.l3.go = "slaves";
 					}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 6-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
 				{
 					link.l4 = "Святой отец, я бы хотел"+GetSexPhrase("","а")+" попросить вас освятить мой корабль. Сколько это будет мне стоить?";
 					link.l4.go = "shipshine";
@@ -277,7 +277,7 @@ void ProcessDialogEvent()
 //----------------------------------------------освятить корабль------------------------------------------------
 		case "shipshine":
 			//поиск старшего класса
-			iTemp = 6;
+			iTemp = 7;
 			for (i=0; i<COMPANION_MAX; i++)
 			{
 				int iIdx = GetCompanionIndex(GetMainCharacter(), i);
@@ -291,23 +291,23 @@ void ProcessDialogEvent()
 			{
 				case 1: 
 					sTemp = "У меня в эскадре один корабль, "+iTemp+" класса.";
-					pchar.GenQuest.Shipshine.Money = 5000*(6-iTemp);
+					pchar.GenQuest.Shipshine.Money = 5000*(7-iTemp);
 				break;
 				case 2:
 					sTemp = "У меня в эскадре два корабля, наибольший - "+iTemp+" класса.";
-					pchar.GenQuest.Shipshine.Money = makeint(1.8*(5000*(6-iTemp)));
+					pchar.GenQuest.Shipshine.Money = makeint(1.8*(5000*(7-iTemp)));
 				break;
 				case 3:
 					sTemp = "У меня в эскадре три корабля, наибольший - "+iTemp+" класса.";
-					pchar.GenQuest.Shipshine.Money = makeint(2.6*(5000*(6-iTemp)));
+					pchar.GenQuest.Shipshine.Money = makeint(2.6*(5000*(7-iTemp)));
 				break;
 				case 4:
 					sTemp = "У меня в эскадре четыре корабля, наибольший - "+iTemp+" класса.";
-					pchar.GenQuest.Shipshine.Money = makeint(3.4*(5000*(6-iTemp)));
+					pchar.GenQuest.Shipshine.Money = makeint(3.4*(5000*(7-iTemp)));
 				break;
 				case 5:
 					sTemp = "У меня в эскадре пять кораблей, наибольший - "+iTemp+" класса.";
-					pchar.GenQuest.Shipshine.Money = makeint(4.2*(5000*(6-iTemp)));
+					pchar.GenQuest.Shipshine.Money = makeint(4.2*(5000*(7-iTemp)));
 				break;
 			}
 			dialog.text = "Это будет зависеть от того, сколько у тебя кораблей в эскадре, и насколько они велики.";
@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 	
 //--------------------------------------------монах-пассажир---------------------------------------------------
 		case "passenger":
-			if (drand(19) < 15) SetPassengerParameter("Monkpassenger", false);
+			if (hrand(19) < 15) SetPassengerParameter("Monkpassenger", false);
 			else SetPassengerParameter("Monkpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
 			{
@@ -604,7 +604,7 @@ void ProcessDialogEvent()
 string DonationType()
 {
 	string sText;
-	switch (drand(9))
+	switch (hrand(9))
 	{
 		case 0: sText = "Я собираю деньги на постройку "+LinkRandPhrase("часовни","богадельни","лазарета")+". Местные жители подают мало и неохотно, и я вынужден обращаться к состоятельным людям вроде вас." break;
 		case 1: sText = "Я собираю пожертвования для нашей церкви. Не у каждого моряка есть время посетить храм Божий, но каждый должен стараться спасти свою грешную душу." break;

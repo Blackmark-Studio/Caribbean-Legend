@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "select_trade": //индейская торговля
-			switch (drand(7))
+			switch (hrand(7))
 			{
 				case 0: // торговля через интерфейс
 					dialog.text = "Tu as de la chance, frère blanc. "+npchar.name+" a des choses à vendre. Regarde ici.";
@@ -54,8 +54,8 @@ void ProcessDialogEvent()
 				break;
 				
 				case 2: // жемчуг большой
-					npchar.quest.item.qty = 25+drand(25);
-					npchar.quest.item.price = 30+drand(10);
+					npchar.quest.item.qty = 25+hrand(25);
+					npchar.quest.item.price = 30+hrand(10);
 					dialog.text = ""+npchar.name+" a des larmes de dieux. De grosses, frère blanc. Dans la quantité de "+FindRussianQtyString(sti(npchar.quest.item.qty))+". Vous voulez les acheter? Je vends pour "+FindRussianMoneyString(sti(npchar.quest.item.price))+"pour un.";
 					link.l1 = "Non, je ne suis pas intéressé.";
 					link.l1.go = "exit";
@@ -72,8 +72,8 @@ void ProcessDialogEvent()
 				break;
 				
 				case 3: // жемчуг малый
-					npchar.quest.item.qty = 40+drand(40);
-					npchar.quest.item.price = 10+drand(5);
+					npchar.quest.item.qty = 40+hrand(40);
+					npchar.quest.item.price = 10+hrand(5);
 					dialog.text = ""+npchar.name+" a des larmes des dieux. Petits, frère blanc. Au nombre de "+FindRussianQtyString(sti(npchar.quest.item.qty))+". Vous voulez les acheter? Je vends pour "+FindRussianMoneyString(sti(npchar.quest.item.price))+"pour un.";
 					link.l1 = "Non, je ne suis pas intéressé.";
 					link.l1.go = "exit";
@@ -90,8 +90,8 @@ void ProcessDialogEvent()
 				break;
 				
 				case 4: //золотые самородки
-					npchar.quest.item.qty = 20+drand(20);
-					npchar.quest.item.price = 90+drand(20);
+					npchar.quest.item.qty = 20+hrand(20);
+					npchar.quest.item.price = 90+hrand(20);
 					dialog.text = ""+npchar.name+" a du métal jaune que vous les visages pâles aimez beaucoup. En la quantité de "+FindRussianQtyString(sti(npchar.quest.item.qty))+". Je vends juste pour "+FindRussianMoneyString(sti(npchar.quest.item.price))+"pour un.";
 					link.l1 = "Non, je ne suis pas intéressé.";
 					link.l1.go = "exit";
@@ -108,8 +108,8 @@ void ProcessDialogEvent()
 				break;
 				
 				case 5: // серебряные самородки
-					npchar.quest.item.qty = 40+drand(40);
-					npchar.quest.item.price = 40+drand(10);
+					npchar.quest.item.qty = 40+hrand(40);
+					npchar.quest.item.price = 40+hrand(10);
 					dialog.text = ""+npchar.name+" a du métal blanc que vous les visages pâles aimez beaucoup. En quantité de "+FindRussianQtyString(sti(npchar.quest.item.qty))+". Je vends juste pour "+FindRussianMoneyString(sti(npchar.quest.item.price))+" pour un.";
 					link.l1 = "Non, je ne suis pas intéressé.";
 					link.l1.go = "exit";
@@ -351,7 +351,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mangarosa_1":
-			npchar.quest.mangarosa = "indian_"+(drand(10)+1);
+			npchar.quest.mangarosa = "indian_"+(hrand(10)+1);
 			dialog.text = "Oui. C'est l'un de ses noms - Manga Rosa. Je te donne un amulette pour ça. Très bonne amulette, elle a un nom - "+XI_ConvertString(npchar.quest.mangarosa)+". Vous faites du commerce ?";
 			link.l1 = "Écoute, frère à la peau rouge, je voudrais en savoir plus sur cette plante. Pourrais-tu me dire pourquoi tu en as tant besoin?";
 			link.l1.go = "mangarosa_2";

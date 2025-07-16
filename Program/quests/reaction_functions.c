@@ -1,30 +1,3 @@
-#include "quests\Sharlie\HollandGambit.c"
-#include "quests\Sharlie\SharlieTrial.c"
-#include "quests\Sharlie\Saga.c"
-#include "quests\Sharlie\SharlieFinal.c"
-#include "quests\Sharlie\FMQ.c"
-#include "quests\Sharlie\Roger.c"
-#include "quests\Sharlie\Patria.c"
-#include "quests\Sharlie\GoldenGirl.c"
-#include "quests\Sharlie\LongHappy.c"
-#include "quests\Sharlie\IslaMona.c"
-#include "quests\Sharlie\HelenDrinking.c"
-#include "quests\Common_Quests\ChickenGod.c"
-#include "quests\Sharlie\CompanionQuests\Tonzag.c"
-#include "quests\Sharlie\CompanionQuests\Longway.c"
-#include "quests\Sharlie\CompanionQuests\Knippel.c"
-#include "quests\Sharlie\CompanionQuests\Duran.c"
-#include "quests\Common_Quests\BlackMark.c"
-#include "quests\Common_Quests\Slavetrader.c"
-#include "quests\Common_Quests\MiniQuests.c"
-#include "quests\Common_Quests\DangerousCargo.c"
-#include "quests\Common_Quests\RedChieftain.c"
-#include "quests\Common_Quests\FalseTrace.c"
-#include "quests\Common_Quests\Regatta.c"
-#include "quests\Common_Quests\Portugal.c"
-#include "quests\Common_Quests\Consumption.c"
-#include "quests\Common_Quests\Caleuche.c"
-#include "quests\Common_Quests\LadyBeth.c"
 
 ref		sld, rCharacter;
 int     iTemp, i; // нужно для вычислений любых целых (нации)
@@ -455,6 +428,11 @@ void HideInterface(string qName)
 	EndBattleLandInterface();
 }
 
+void ChangeInterface(string qName)
+{
+	ChangeShowIntarface();
+}
+
 void Return_MaryOfficer()
 {
 	sld = characterFromId("Mary");
@@ -534,7 +512,7 @@ void Return_FolkeOfficer()
 
 void Return_DurandOfficer()
 {
-	sld = CharacterFromID("FMQT_mercen");
+	sld = CharacterFromID("Duran");
 	sld.Dialog.Filename = "Enc_Officer_dialog.c";
 	sld.Dialog.CurrentNode = "hired";
 	LAi_SetActorType(sld);
@@ -825,4 +803,9 @@ void Find_PR_Letter(string qName)
 	PR_Letter_Reaction();
 	TakeItemFromCharacter(pchar, "PR_Letter");
 	chrDisableReloadToLocation = false;
+}
+
+void AutoSaveDelay(string qName)
+{
+	AutoSave();
 }

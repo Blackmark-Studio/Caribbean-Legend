@@ -858,7 +858,7 @@ Tengo el vino. El soldado mencionó que estaría esperando al día siguiente en 
 #TEXT   2
 La semana asignada para encontrar el vino ha pasado. El soldado ya debe haber salido al mar en el barco patrullero. Ya no debo preocuparme...
 #TEXT   3
-Por 1.000 monedas logré descubrir quién vende vino europeo en grandes cantidades en la ciudad. Es @<sName>, el dueño de la tienda local. Voy a verlo.
+Por 1.000 monedas logré descubrir quién vende vino europeo en grandes cantidades en la ciudad. Es @<sName>, el dueño de la tienda. Voy a verlo.
 #TEXT   4
 ¡Qué avaros son estos comerciantes! Ni siquiera quieren decir unas palabras gratis. No voy a pagarle a este sinvergüenza.
 #TEXT   5
@@ -1009,15 +1009,15 @@ Todos los enemigos están muertos. Los indios me pagaron con las perlas recolect
 #QUEST FalseTrace
 Falso rastro
 #TEXT   1
-Tuve un interesante encuentro en el puerto de @<sCity1> con un hombre llamado Adam Rayner por el que me ofreció un trato. Me habló sobre el galeón '@<sShip>' que está lleno de plata y navega desde Cartagena a @<sCity2>. Ha exigido una décima parte del botín, acepté sus términos, considerando que navegará conmigo e incluso pidió participar en el abordaje. Adam no me dijo ningún plazo, pero supongo que tengo dos o tres semanas.
+Tuve un interesante encuentro en el puerto de @<sCity1> con un hombre llamado Adam Rayner por el que me ofreció un trato. Me habló sobre el filibote '@<sShip>' que está lleno de plata y navega desde Cartagena a @<sCity2>. Ha exigido una décima parte del botín, acepté sus términos, considerando que navegará conmigo e incluso pidió participar en el abordaje. Adam no me dijo ningún plazo, pero supongo que tengo dos o tres semanas.
 #TEXT   2
-A pesar de mis esfuerzos, no pude abordar al galeón. Al diablo con la plata.
+A pesar de mis esfuerzos, no pude abordar al filibote. Al diablo con la plata.
 #TEXT   3
-He hundido el galeón con toda la plata. ¿Cómo soy tan distraído?
+He hundido el filibote con toda la plata. ¿Cómo soy tan distraído?
 #TEXT   4
-¿No hay nada? No había plata en el galeón, el capitán me dijo que llevaba una carga de provisiones y forraje para entregar. También había una mujer que obviamente, es la amante del capitán. Está bien, debería llamar a Adam a mi cabina para tener una charla, veamos que excusas me tiene que decir ese bastardo. Será mejor que intente con todas sus fuerzas salvar su cuello de una cuerda...
+¿No hay nada? No había plata en el filibote, el capitán me dijo que llevaba una carga de provisiones y forraje para entregar. También había una mujer que obviamente, es la amante del capitán. Está bien, debería llamar a Adam a mi cabina para tener una charla, veamos que excusas me tiene que decir ese bastardo. Será mejor que intente con todas sus fuerzas salvar su cuello de una cuerda...
 #TEXT   5
-Adam Rayner admitió que su plan era capturar el galeón con mi ayuda y poder atrapar a su esposa que se había fugado. Su nombre es Katerine Rayner, me ofrecerá información sobre el oro de 'Squint Eyed Solly' como recompensa por mis 'servicios'. Pero primero, tengo que dejar a los dos en @<sCity>. ¿Debo confiar en este pícaro? Quizás, pero primero hablaré con su esposa, podría saber algo importante...
+Adam Rayner admitió que su plan era capturar el filibote con mi ayuda y poder atrapar a su esposa que se había fugado. Su nombre es Katerine Rayner, me ofrecerá información sobre el oro de 'Squint Eyed Solly' como recompensa por mis 'servicios'. Pero primero, tengo que dejar a los dos en @<sCity>. ¿Debo confiar en este pícaro? Quizás, pero primero hablaré con su esposa, podría saber algo importante...
 #TEXT   6
 Esto se está poniendo más interesante, Katerine odia a Adam como los perros a los gatos... por eso se fugó. Como son asuntos familiares y no me agradó la respuesta de Katerine, me arriesgaré y volveré a confiar en Adam. Iremos a @<sCity>.
 #TEXT   7
@@ -1320,15 +1320,15 @@ Eso va mal, no le llevé suficiente sándalo y Michael se negó a comprar. Debo 
 He fallado a Rosenkraft por tercera vez y no volverá a trabajar conmigo. Qué lástima...
 
 #QUEST Mangarosa
-Mangarosa
+Manga Rosa
 #TEXT   1
 He encontrado una planta inusual. Es alta, tiene las hojas divididas, huele bien y embriaga. Nunca había visto algo como esto antes. Tengo la sensación de que esta planta es útil, la cogeré. Necesito encontrar a alguien que conozca la planta.
 #TEXT   2
-Esta planta se llama Mangarosa, la chica del comercio me dijo que los indios y los gitanos pagarán bien por ella.
+Esta planta se llama Manga Rosa, la chica del comercio me dijo que los indios y los gitanos pagarán bien por ella.
 #TEXT   3
-Los gitanos pagan cincuenta doblones por cada Mangarosa. No me podía imaginar que una planta pudiera costar tanto. Si encuentro más Mangarosa, puedo vendérsela a los gitanos, pero sólo una planta cada vez.
+Los gitanos pagan cincuenta doblones por cada Manga Rosa. No me podía imaginar que una planta pudiera costar tanto. Si encuentro más Manga Rosa, puedo vendérsela a los gitanos, pero sólo una planta cada vez.
 #TEXT   4
-Los gitanos usan la Mangarosa como aditivo del tabaco, mi interlocutor ha rechazado decirme los efectos que produce ese aditivo, pero me habló de una hechicera llamada Amelia que conoce los secretos de la planta. Vive en una casa en algún lugar al suroeste del continente.
+Los gitanos usan la Manga Rosa como aditivo del tabaco, mi interlocutor ha rechazado decirme los efectos que produce ese aditivo, pero me habló de una hechicera llamada Amelia que conoce los secretos de la planta. Vive en una casa en algún lugar al suroeste del continente.
  
 #QUEST Amulet_Mayak4_Lighthouseroom
 Amuletos del faro de Guadalupe
@@ -1356,7 +1356,7 @@ Evento: Bienes de valor estratégico
 #TEXT 1
 Jan Svensson tiene 25 piezas de sándalo que me puede vender los días 14 y 28 de cada mes por 750 doblones por lote.
 #TEXT 1_1
-Logré negociar con Jan Svenson un aumento en el suministro de madera de hierro (bakaut). Ahora, cada día 14 y 28 del mes, podré comprarle 125 troncos de madera de hierro por 3150 dublones.
+Logré negociar con Jan Svenson un aumento en el suministro de sándalo (bakaut). Ahora, cada día 14 y 28 del mes, podré comprarle 125 troncos de madera de hierro por 3150 dublones.
 #TEXT 2
 Fadey el Moscovita me venderá 50 bobinas de cuerda el día 20 de cada mes por 500 doblones por lote.
 #TEXT   2_1
@@ -1370,7 +1370,29 @@ Sergio Saldo me venderá 60 barriles de resina el quinto día de cada mes por 60
 #TEXT   4_1
 Conseguí negociar con Sergio Saldo para aumentar el suministro de resina. Ahora, cada día 5 del mes, podré comprar 300 barriles de resina en el Faro de Trinidad por 2550 doblones.
 #TEXT   5
-Produciré un lote de 40 troncos de sándalo el día 15 de cada mes gracias a Rodrigo Jiménez, el gerente de mi fábrica. La fábrica puede almacenar hasta 6 lotes en total antes de tener que paralizar la producción. El pago se realizará inmediatamente para todos los lotes en stock. El coste de cada uno será de: 200 doblones, 5 botellas de ron, 5 botellas de vino. Total: 5 doblones por tronco. No está mal...
+Produciré un lote de 20 troncos de sándalo el día 15 de cada mes gracias a Rodrigo Jiménez, el gerente de mi fábrica. La fábrica puede almacenar hasta 6 lotes en total antes de tener que paralizar la producción. El pago se realizará inmediatamente para todos los lotes en stock. El coste de cada uno será de: 200 doblones, 5 botellas de ron, 5 botellas de vino. Total: 10 doblones por tronco. No está mal...
+
+#QUEST Useful_Acquaintances
+Hilos que Mover
+#TEXT   1
+************************************************************
+Siempre podré comprar mangarosa a la gitana de Saint John's: tres tallos por trescientos cincuenta doblones de oro.
+#TEXT   2
+************************************************************
+En la taberna de Willemstad siempre me esperan descanso y placer. De ello se encarga la encantadora Betsy Price.
+#TEXT   3
+************************************************************
+El jefe del puerto en Belice me otorgó un descuento del cincuenta por ciento por el amarre de un barco de hasta segunda clase, sin límite de tiempo. El barco estará bajo su supervisión personal y no sufrirá daños en caso de asedio a la ciudad.
+#TEXT   4
+************************************************************
+Ahora puedo comprar vino y ron el día 15 de cada mes a Christian Delouce, en Basseterre. Su casa está a la derecha de la residencia del gobernador. El precio es de 26 doblones por un lote de 20 botellas de vino y 20 botellas de ron.
+************************************************************
+#TEXT   4_1
+He logrado acordar con Christian un aumento en los suministros. Ahora reservará para mí cien botellas de vino y ron cada día 15 del mes. El precio sigue siendo el mismo: ciento treinta doblones por todo el lote.
+#TEXT   6
+************************************************************
+En la taberna de Puerto Principe me esperan alojamiento gratuito, bebida por cuenta de la casa, y además, el tabernero prometió que aumentará el número de marineros dispuestos a servir bajo mi mando.
+
 
 #QUEST FMQ_Guadeloupe
 El precio de la discreción
@@ -1395,7 +1417,7 @@ El tabernero me dio un buen consejo, tengo que preguntarle directamente a don Ca
 #TEXT   10
 Por aquí no hay señales de Pinette, pero por lo menos logré encontrar el rastro del desertor francés. Ahora es un don español que comanda el 'Sario'. Me imagino que será su recompensa por la traición. No me queda otra opción que abordar esa bañera y capturar a ese 'don Juan'. Incluso si no puede señalarme la ubicación de Bertrand, podría usarlo para calmar la ira del gobernador de Guadalupe.
 #TEXT   11
-Parece que tuve suerte, la goleta de guerra 'Sario' está atracada en Portobello. Abordarlo delante del fuerte no es buena idea, debo esperar a que abandone el puerto a mar abierto.
+Parece que tuve suerte, la balandra 'Sario' está atracada en Portobello. Abordarlo delante del fuerte no es buena idea, debo esperar a que abandone el puerto a mar abierto.
 #TEXT   12
 El Sario ya está en mar abierto. ¡Debería perseguir la nave!
 #TEXT   13
@@ -1807,7 +1829,7 @@ He decidido no meterme con los esclavos, están definitivamente por encima de mi
 #TEXT	27
 Mi ingenuidad me jugó una broma cruel y no pude presentarme como traficante de esclavos. Siento haber estropeado las cosas tan estúpidamente y haber decepcionado a Marcus...
 #TEXT	28
-Me enfrento a una decisión difícil: para adquirir rápidamente la carga necesaria, Cutlass me dio una pista que había estado guardando para sí mismo - sobre una gran caravana que transportaba café y otras especias. En dos semanas, una escuadra comercial bajo bandera... 'francesa' pasará cerca de Guadalupe. Me pregunto si Cutlass realmente hizo esto para resolver nuestra misión rápida y exitosamente, o si es una prueba para ver si tengo las agallas para actuar como un verdadero pirata y atacar a mis propios compatriotas. En cualquier caso, lo tendré en cuenta, pero no me sentiré obligado: siempre hay otras caravanas que robar o incluso formas legales de adquirir las mercancías que necesito.
+Me enfrento a una decisión difícil: para adquirir rápidamente la carga necesaria, Cutlass me dio una pista que había estado guardando para sí mismo, sobre una gran caravana que transportaba café y otras especias. En dos semanas, una escuadra comercial bajo bandera... 'francesa' pasará cerca de Guadalupe. Me pregunto si Cutlass realmente hizo esto para resolver nuestra misión rápida y exitosamente, o si es una prueba para ver si tengo las agallas para actuar como un verdadero pirata y atacar a mis propios compatriotas. En cualquier caso, lo tendré en cuenta, pero no me sentiré obligado: siempre hay otras caravanas que robar o incluso formas legales de adquirir las mercancías que necesito.
 #TEXT	29
 ¡No puedo creer mi audacia y mi éxito! Después de reunir suficiente oro, entré abiertamente en la plantación y compré a Picard. El dueño de la plantación podría haber adivinado quién soy, ya que dejé muy claro que estaba interesado en Jean y no se dejó engañar por mi historia de que necesitaba una criada guapa para servir vino en las fiestas. Pero no me importa: lo importante es que Picard está libre, sin derramamiento de sangre ni riesgo para su vida. Podemos volver con Marcus Tirex.
 #TEXT	30
@@ -1978,7 +2000,7 @@ Marcus me ha ordenado que investigue la situación en Martinica. Dicen que han v
 #TEXT	2
 El 'Torero' está en una incursión en Le François acompañado de una fragata y una corbeta. Mi amigo estará por aquí, debería ir a Le François y evitar las preguntas sobre Marco y su equipo. Mi tarea es observar y solo observar.
 #TEXT	3
-Ignacio Marco ha pasado casi dos horas en la residencia de Jacques Barbason, el barón de Le François y luego se dirigió hacia el puerto junto con dos tipos duros que probablemente fueran los capitanes de los otros barcos. Debo darme prisa en llegar a St. Pierre para intentar perseguirlos.
+Ignacio Marco ha pasado casi dos horas en la residencia de Jacques Barbason, el barón de Le François y luego se dirigió hacia el puerto junto con dos tipos duros que probablemente fueran los capitanes de los otros barcos. Debo darme prisa en llegar a Saint-Pierre para intentar perseguirlos.
 #TEXT	4
 Ignacio Marco se fue a la mar cuando llegué a mi barco. Aun así, tengo una información valiosa que debería transmitir a Marcus.
 #TEXT	5
@@ -2092,11 +2114,11 @@ Yo, Charles de Maur, capitán y noble francés, juro ante mí mismo y mi concien
 ... Juro detener las acciones de cualquier villano que me encuentre en el camino
 ... Juro que entre la riqueza y el honor elegiré el honor
 ... Juro que en cualquier circunstancia y con cualquier gente seguiré siendo una persona digna.
-Tengo mucho que hacer para recuperar mi buen nombre. Pero definitivamente lo haré. Y ahora tengo que ir a St. Pierre, con Michel. La vida continúa.
+Tengo mucho que hacer para recuperar mi buen nombre. Pero definitivamente lo haré. Y ahora tengo que ir a Saint-Pierre, con Michel. La vida continúa.
 @<sText>
 #TEXT 18
 Conseguí escapar de las tinieblas de las oscuras mazmorras y del infierno hirviente. Verdaderamente un bautismo de fuego. Después de esto, de alguna manera no es muy apropiado ser el gruñón de Marcus. Dejo de trabajar para él y vuelvo con mi hermano. La vida sigue, ¡nuevos retos y cimas están por llegar! Sólo deja que el olor a azufre se disipe primero...
 #TEXT	19
 Cuando me abrí paso y regresé a la orilla, aún balanceándome entre la locura, el miedo, la incertidumbre y la esperanza. Mi fiel amigo y camarada, se reunió conmigo en la orilla. Gracias a Dios, él también sobrevivió a este día. En una larga conversación, me ayudó a entender muchas cosas para tomar la decisión correcta. Charlie Prince, el perro pirata de Tyrex, murió hoy para el mundo en medio de esos géiseres. Y Charles de Maure, el noble francés, no el miserable pirata seguirá viviendo. Y nadie, nunca más, le dirá qué hacer. Nadie se interpondrá entre él y su objetivo. Yo decidiré cuáles son mis metas y cómo alcanzarlas. Visitaré a mi hermano y le diré que nada bueno salió de su querido Tyrex. Que diga lo que quiera, encontraré otra manera.
 #TEXT	20
-En las catacumbas, me enfrenté a un teatro de la locura y a un torbellino de emociones. Me seguía la pista el famoso cazador de piratas español, Don Enrico de la Vega, conocido como el Zorro. Iba impecablemente vestido y llevaba una ligera pero robusta coraza bajo la ropa. Mi oficial y amigo, Hércules Tonzag, frustró el plan del noble. Al verle, este avezado cazarrecompensas casi tembló de miedo, lo cual fue sorprendente, pero también me devolvió la cordura. Al final, dimos caza al cazador. Don Enrico, acorralado, resultó ser un adversario hábil y peligroso, aunque deshonroso, si bien tenía cierta dignidad. Pero juntos, derrotamos a este zorro -aunque yo preferiría llamarlo serpiente. Incluso con la ayuda de Hércules, no fue fácil. Me condujo a través de un pasadizo secreto que descubrió, ya que por el que entré estaba bloqueado con rocas. Es hora de que vea a mi hermano -decidí cortar todos los lazos con Terrax, ya que no me acercaba más a la salvación de Michel, contrariamente a sus expectativas. Si alguna vez lo reanudo, será sólo en mis términos. Y sólo como Charles de Maure - un hombre orgulloso, noble y digno, no un peón de un Príncipe. Adiós, Charlie, seguiré sin ti.
+En las catacumbas, me enfrenté a un teatro de la locura y a un torbellino de emociones. Me seguía la pista el famoso cazador de piratas español, Don Enrico de la Vega, conocido como el Zorro. Iba impecablemente vestido y llevaba una ligera pero robusta coraza bajo la ropa. Mi oficial y amigo, Hércules Tonzag, frustró el plan del noble. Al verle, este avezado cazarrecompensas casi tembló de miedo, lo cual fue sorprendente, pero también me devolvió la cordura. Al final, dimos caza al cazador. Don Enrico, acorralado, resultó ser un adversario hábil y peligroso, aunque deshonroso, si bien tenía cierta dignidad. Pero juntos, derrotamos a este zorro -aunque yo preferiría llamarlo serpiente. Incluso con la ayuda de Hércules, no fue fácil. Me condujo a través de un pasadizo secreto que descubrió, ya que por el que entré estaba bloqueado con rocas. Es hora de que vea a mi hermano -decidí cortar todos los lazos con Terrax, ya que no me acercaba más a la salvación de Michel, contrariamente a sus expectativas. Si alguna vez lo reanudo, será sólo en mis términos. Y sólo como Charles de Maure, un hombre orgulloso, noble y digno, no un peón de un Príncipe. Adiós, Charlie, seguiré sin ti.

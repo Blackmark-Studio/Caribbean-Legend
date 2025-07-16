@@ -465,7 +465,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("FMQ_Guadeloupe", "17");
 			// Пинетта - в Бриджтаун
 			sld = characterFromId("FMQG_pass_1");
-			ChangeCharacterAddressGroup(sld, "Plantation_F2", "goto", "goto1");
+			ChangeCharacterAddressGroup(sld, "Bridgetown_Plantation_F2", "goto", "goto1");
 			sld.Dialog.currentnode = "citizen_15";
 			sld.greeting = "Pinett_vstrecha";
 			LAi_SetStayType(sld);

@@ -292,14 +292,21 @@ Cannon_3_descr
 {
 Działka pokładowe wyposażone w montaż pierścieniowy. Charakteryzują się wysoką mobilnością, ale mają ograniczony zasięg i mniejsze obrażenia ze względu na mały kaliber.
 Często są wyposażone w wymienny zamek, co pozwala na jeszcze szybsze przeładowanie.
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.}
+Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+}
 
 Cannon_6 {Lekkie półkartauny}  
 Cannon_6_descr  
 {  
 Małe działa, cieszące się dużą popularnością na statkach kurierskich i handlowych ze względu na niską wagę i łatwość konserwacji.  
 Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.  
-}  
+}
+Cannon_8 {8-funtowe półdziała}
+Cannon_8_descr
+{
+Jeden z najpopularniejszych kalibrów na małych statkach, spotykany zarówno na handlowych, jak i patrolowych. Cenione za doskonałe połączenie rozmiaru, wagi i siły ognia.
+Zasięg - #dFireRange#, obrażenia - x#f.1DamageMultiply#, przeładowanie - #dReloadTime# sek.
+}
 
 Cannon_12 {Półkartauny}  
 Cannon_12_descr  
@@ -313,7 +320,13 @@ Cannon_16_descr
 {  
 Nowoczesne francuskie działa. Dzięki zaawansowanej konstrukcji i nowemu systemowi opracowanemu przez monsieur de Vallière’a, te działa mają większy zasięg i zadają większe obrażenia niż zwykłe półkartauny. Jednak ich ładowanie trwa dłużej, są nieco mniej niezawodne i cięższe.  
 Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.  
-}  
+} 
+Cannon_18 {18-funtowe półdziała}
+Cannon_18_descr
+{
+Mocne uniwersalne działa, które dawniej często montowano na okrętach wojennych. Dość powszechne na archipelagu i cenione za prostotę i niezawodność, choć przestarzała konstrukcja nieco ogranicza ich zasięg.
+Zasięg - #dFireRange#, obrażenia - x#f.1DamageMultiply#, przeładowanie - #dReloadTime# sek.
+}
 
 Cannon_20 {Małe działa}  
 Cannon_20_descr  

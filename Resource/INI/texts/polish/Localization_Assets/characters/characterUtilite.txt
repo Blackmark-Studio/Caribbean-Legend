@@ -10,7 +10,7 @@ Wydano @<abs(_Money)> Pesos
 
 characterUtilite_3
 {
-Nowy Przedmiot: ~
+Otrzymano Przedmiot: ~
 }
 
 characterUtilite_4
@@ -20,7 +20,7 @@ Otrzymano @<n> Dublony
 
 characterUtilite_5
 {
-Oddano Przedmiot: ~
+Przekazano Przedmiot: ~
 }
 
 characterUtilite_6
@@ -45,17 +45,17 @@ Wydano @<_Dublons> Dublony
 
 characterUtilite_10
 {
-A landing party of @<officer.Ship.Name> has @<compCrew> soldiers in it
+Okręt @<officer.Ship.Name> wyładował @<compCrew> żołnierzy.
 }
 
 characterUtilite_11
 {
-Terms of your loan are expired
+Termin Twojej pożyczki wygasł
 }
 
 characterUtilite_12
 {
-Atlas Update: @<LanguageConvertString(idLngFile, arItem.name)>
+Zaktualizowano atlas: @<LanguageConvertString(idLngFile, arItem.name)>
 }
 
 characterUtilite_13

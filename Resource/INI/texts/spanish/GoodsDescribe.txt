@@ -290,90 +290,104 @@ Un conjunto típico de medicamentos, productos farmacéuticos e instrumentos des
 Tener un suministro de medicamentos a bordo del barco puede ayudar a salvar a los heridos (reduce las pérdidas en los abordajes) y a los enfermos durante la navegación.
 }
 
-Cannon_3 {Falconetes de 3 libras}
+Cannon_3 {Falconetes}
 Cannon_3_descr
 {
-Cañones de cubierta equipados en un pequeño trípode. Tienen la movilidad más alta y al ser los más pequeños, la menor distancia de tiro y daño.
-A menudo se equipan con mechas intercambiables, lo que permite una recarga más rápida.
-Rango - #dFireRange#. Daño - x#f.1DamageMultiply#. Recarga - #dReloadTime# seg.
+Cañones de cubierta equipados con torreta. Tienen la mayor movilidad y, debido a su pequeño tamaño, la menor potencia y alcance.
+A menudo están equipados con una recámara intercambiable, lo que permite una recarga rápida.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 
 Cannon_6 {Cañones de 6 libras}
 Cannon_6_descr
 {
-Son unos pequeños cañones, que son muy populares en los buques de mensajería y comercio debido a su bajo peso y simplicidad de mantenimiento.
-Rango - #dFireRange#. Daño - x#f.1DamageMultiply#. Recarga - #dReloadTime# seg.
+Cañones pequeños, muy populares en barcos de mensajería y mercantes por su bajo peso, bajo costo y durabilidad. Son fáciles de mantener y no requieren una tripulación experimentada.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}
+
+Cannon_8 {Cañones de 8 libras}
+Cannon_8_descr
+{
+Uno de los calibres más populares en barcos pequeños, que se encuentra tanto en mercantes como en patrulleros. Son valorados por su excelente combinación de tamaño, peso y potencia de fuego.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 
 Cannon_12 {Cañones de 12 libras}
 Cannon_12_descr
 {
-Son los cañones principales de una pequeña flota militar, capaces de disparar con grandes ángulos de elevación, lo que aumenta significativamente su distancia efectiva de combate. También son muy seguros.
-Rango - #dFireRange#. Daño - x#f.1DamageMultiply#. Recarga - #dReloadTime# seg.
+Un calibre común entre los buques de guerra pequeños. Para su tamaño y peso, tienen una potencia de fuego impresionante, pero requieren dotaciones completas, lo que aumenta el número de tripulantes en el barco.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 
 Cannon_16 {Cañones de 16 libras}
 Cannon_16_descr
 {
-Son unos cañones modernos de tipo francés. Gracias a su construcción avanzada tienen un mayor rango de disparo y hacen más daño en comparación con los cañones ordinarios. Sin embargo, se recargan más lentamente, son menos seguros y más pesados.
-Rango - #dFireRange#. Daño - x#f.1DamageMultiply#. Recarga - #dReloadTime# seg.
+Cañones modernos de tipo francés. Gracias a su diseño avanzado, tienen excelente alcance, fiabilidad y potencia de fuego. Un calibre muy común entre barcos de patrulla y reconocimiento.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}
+
+Cannon_18 {Cañones de 18 libras}
+Cannon_18_descr
+{
+Cañones universales potentes que antes se instalaban a menudo en buques de guerra. Bastante comunes en el archipiélago y valorados por su simplicidad y fiabilidad, aunque su diseño anticuado limita un poco su alcance.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 
 Cannon_20 {Cañones de 20 libras}
 Cannon_20_descr
 {
-Son unos cañones de mayor calibre capaces de realizar disparos más poderosos, lo que permite aumentar significativamente el daño infligido al enemigo. Sin embargo, el aumento de la longitud del cañón conlleva un aumento significativo del peso.
-Rango - #dFireRange#. Daño - x#f.1DamageMultiply#. Recarga - #dReloadTime# seg.
+Cañones de artillería de cañón largo utilizados en cruceros y barcos auxiliares de convoyes militares. Requieren un trabajo coordinado de la dotación para un fuego efectivo.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 
 Cannon_24 {Cañones de 24 libras}
 Cannon_24_descr
 {
-Son los cañones más equilibrados, considerando sus principales características técnicas. Son muy populares entre los buques militares y expedicionarios.
-Rango - #dFireRange#. Daño - x#f.1DamageMultiply#. Recarga - #dReloadTime# seg.
+El calibre principal en buques de guerra, la cima de la evolución de la artillería naval. Tienen un equilibrio perfecto entre alcance y potencia de fuego, y su exitoso diseño les permite soportar largas batallas navales sin daños críticos.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 
 Cannon_32 {Cañones de 32 libras}
 Cannon_32_descr
 {
-Son unos cañones pesados de gran calibre, capaces de bombardear estructuras defensivas. Causan un gran daño al casco.
-Rango - #dFireRange#. Daño - x#f.1DamageMultiply#. Recarga - #dReloadTime# seg.
+Cañones pesados de gran calibre que infligen un gran daño y son adecuados para bombardear fuertes. Debido a los límites de resistencia de los materiales, se utiliza una carga de pólvora reducida, lo que limita el alcance.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 
 Cannon_36 {Cañones de 36 libras}
 Cannon_36_descr
 {
-Estos cañones de cañón largo son escasos en las cubiertas de los barcos. Pero a pesar de su largo tiempo de recarga, causan mucho daño y tienen un largo alcance.
-Rango - #dFireRange#. Daño - x#f.1DamageMultiply#. Recarga - #dReloadTime# seg.
+Cañones de cañón largo, raros en la cubierta de artillería. Su recarga lenta y alcance limitado se compensan con el daño devastador que infligen sus pesadas balas. Requieren grandes dotaciones.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 
-Cannon_42 {Cañones de 42 libras}
+Cannon_42 {Bombardas de 42 libras}
 Cannon_42_descr
 {
-Son unas armas gigantes creadas para provocar un daño masivo. Se usan para hundir navíos militares y bombardear estructuras. Son muy difíciles de manejar.
-Rango - #dFireRange#. Daño - x#f.1DamageMultiply#. Recarga - #dReloadTime# seg.
+Cañones formidables, el pináculo de la potencia de fuego naval. Se utilizan exclusivamente en navíos de línea, fuertes y grandes batallas europeas. Requieren una dotación grande y bien entrenada.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 
-Culverine_8 {Culebrinas de 8 libras}
+Culverine_8 {Culverinas medias}
 Culverine_8_descr
 {
-Cañones largos de 8 libras montados en un soporte especial con un fuerte armazón y ruedas de madera maciza.
-Tienen un alcance de disparo aumentado. Por lo general, se utilizan para disparar fuego de supresión.
-Rango - #dFireRange#. Daño - x#f.1DamageMultiply#. Recarga - #dReloadTime# seg.
+Cañones de 8 libras de cañón largo en un soporte especial con base robusta y ruedas de madera maciza.
+Tienen mayor alcance de disparo. Comúnmente usados para fuego de barrera.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 
-Culverine_18 {Culebrinas de 18 libras}
+Culverine_18 {Culverinas}
 Culverine_18_descr
 {
-Cañones medianos de 18 libras con un alcance extendido, adecuados para su uso en embarcaciones relativamente pequeñas.
-A pesar de su impresionante alcance de disparo, se caracterizan por un peso increíble y un largo tiempo de carga.																																													  
-Rango - #dFireRange#. Daño - x#f.1DamageMultiply#. Recarga - #dReloadTime# seg.
+Cañones medianos de 18 libras con mayor alcance, adecuados para su uso en barcos relativamente pequeños.
+A pesar de su impresionante distancia de disparo, son extremadamente pesados y tardan mucho en recargarse.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 
-Culverine_36 {Culebrinas de 36 libras}
+Culverine_36 {Culverinas completas}
 Culverine_36_descr
 {
-Cañones de 36 libras para fortalezas: ¡el que dispara primero tiene razón!
-Debido a su gran longitud, solo pueden ser instalados en puertos destinados para cañones de 42 libras.																																												   
-Rango - #dFireRange#. Daño - x#f.1DamageMultiply#. Recarga - #dReloadTime# seg.
-} 
+Cañones de fortaleza de 36 libras diseñados para fuego de brecha: ¡gana el que dispara primero!
+Debido a su gran longitud, solo pueden instalarse en puertos diseñados para cañones de 42 libras.
+Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
+}

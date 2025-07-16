@@ -33,7 +33,7 @@ He cumplido con la tarea, padre e hijo pueden dormir bien... hasta la próxima. 
 #TEXT 4_1
 Bueno, me lo perdí. ¿Y qué? No era tan crucial.
 #TEXT 5
-¿Realmente las cosas están tan mal como para que las autoridades entreguen patentes de corso a borrachos y sinvergüenzas? Iré a la taberna, a ver quién está causando estragos en la población local.
+¿Realmente las cosas están tan mal como para que las autoridades entreguen patentes de corso a borrachos y sinvergüenzas? Iré a la taberna, a ver quién está causando estragos en la población.
 #TEXT 6
 Un malvado menos en este mundo, qué agradable es hacer buenas acciones. 
 #TEXT 6_1
@@ -702,3 +702,152 @@ Seis Capitanes
 Quizás sea la primera vez que un breve encuentro con alguien que no tenía ni trabajo ni asuntos para mí me ha hecho escribir una entrada en este diario. No entiendo por qué este sacerdote me causó tal impresión. No sé su nombre, y a veces hablaba tonterías, pero se hizo memorable. Nos hemos encontrado dos veces ahora, y podría descartarse como una coincidencia. Pero si nos encontramos de nuevo...
 Debo admitir que su interés es algo halagador. Esa mirada en sus ojos es tan... evaluadora. Como si admirara mis logros. ¿Y quién no lo haría? Dos barcos legendarios, dos capitanes cuyas historias se extendieron por todo el Archipiélago, ambos caídos por mi mano.
 Me pregunto qué dirá cuando se entere de mis futuras hazañas. El Archipiélago es vasto, pero mi fama, al parecer, está creciendo más rápido de lo que pensaba.
+#TEXT	2
+Diego de Landa - así te llamas. Entonces nos volveremos a encontrar. Continuará.
+
+#QUEST SharlieTutorial
+El Prólogo
+#TEXT	0
+¡Cuánto me ha hastiado todo esto! Cinco días... y finalmente pondré pie en tierra firme. Estos últimos dos meses han sido una completa pesadilla, ¡y simplemente no puedo entender cómo una persona cuerda puede vincular su vida al mar!
+Por ahora - el capitán me espera. No me gusta mucho últimamente. Ya no me gusta nada aquí.
+#TEXT	0.1
+Por lo que parece, me espera una velada interesante. Por ahora, el capitán me ha dado libertad en todas las direcciones... dentro de los límites del barco, ¡ja-ja! Puedo volver con él en cualquier momento y acabar con este día tedioso.
+#TEXT	1
+Por 500 pesos puedo vender 3 botellas de ron al marinero Enrique en la cubierta superior. Parece que el contramaestre en el camarote comercia con toda clase de cosas. Quizás debería registrar bien el barco y hablar con otros marineros.
+#TEXT	2
+Menos mal que no bebo ron y pude hacer un buen trato con Enrique. La tripulación parece haber apreciado mis esfuerzos.
+#TEXT	3
+El marinero Paul se lastimó la espalda cargando balas de cañón y me pidió ayuda. Seguramente están en la bodega, dentro de una de esas cajas interminables.
+#TEXT	4
+A duras penas llevé esas malditas balas hasta Paul. Ese marinero se comporta de manera un tanto sospechosa, pero al menos conseguí una botella de ron. Un premio valioso, considerando la demanda local por ese veneno.
+#TEXT	5
+¡He encontrado la llave del capitán! Me pregunto qué tesoros abrirá...
+
+#QUEST DWH
+Aguas oscuras de sanación
+#TEXT	1
+En  St. John's se susurra que la gitana local es la última esperanza para la hija gravemente enferma de Thomas Morrison. Pero se niega obstinadamente a ayudar. ¿Acaso no siente ni una pizca de compasión por la pobre niña?
+#TEXT	2
+La gitana me informó que está bastante dispuesta a ayudar a la niña, pero Thomas se niega rotundamente a dejarla entrar en su casa. Quiero visitar a Thomas y averiguar por qué está rechazando la última esperanza para salvar a la niña. Su casa está en la parte norte de la ciudad, junto al muro, al lado de una lujosa mansión con columnas.
+#TEXT	3
+El sacerdote de la iglesia local amenazó a Thomas Morrison con la excomunión si acepta la ayuda de la gitana para salvar a su hija gravemente enferma. Ahora Thomas está dividido entre su miedo a caer en desgracia ante la iglesia y su desesperación por la enfermedad de su hija. ¡Intentaré convencer al sacerdote de que haga la vista gorda ante este pecado por el bien mayor: salvar la vida de la niña!
+#TEXT	4
+Habrá que buscar caminos alternativos. El pastor es, sin duda, un hombre terco, y en muchos aspectos tiene razón. Pero aun así, no puedo estar de acuerdo con él. Si existe una posibilidad de que la niña se recupere, hay que aprovecharla.
+#TEXT	5
+Logré convencer al pastor. Aceptó hacer la vista gorda respecto a la participación de la gitana en el tratamiento si Thomas expía su culpa ante el Señor con sincero arrepentimiento y buenas acciones.
+ Ahora debo encontrar la mangarosa - el ingrediente clave del brebaje de la gitana. Esta planta destaca por su agradable aroma, tallo alto y hojas recortadas características. Puedo encontrarla en una cueva fuera del pueblo, entre unas 'personas poco agradables' - vagabundos o tal vez bandidos. Mejor aún. Tal vez ni siquiera tenga que pagarles.
+#TEXT	6
+He hecho todo lo que estaba en mi poder. Lo único que queda es confiar en las habilidades de la gitana. Me he involucrado tanto en salvar a la niña que he olvidado completamente mis propios asuntos. Visitaré Antigua en un mes. Para entonces, Esther debería estar completamente recuperada.
+#TEXT	7
+La gitana está dispuesta a ayudar a la niña en secreto - para que Thomas no atraiga la ira de la Iglesia. Ahora, lo principal es convencerlo de que confíe en nosotros.
+#TEXT	8
+Thomas me entregó una pertenencia personal de Esther - un collar de jade. Ahora solo me queda encontrar dos tallos de hierba espinosa, uno de ipecacuana y uno de verbena - y podré volver con la gitana.
+#TEXT	9
+¡Gracias a los esfuerzos míos y de la gitana, la enfermedad de Esther ha sido vencida! Es reconfortante saber que todos los esfuerzos no fueron en vano y que la niña ahora está sana.
+#TEXT	10
+¡Gracias a nuestros esfuerzos con la gitana, la enfermedad de Esther ha sido superada! Es reconfortante saber que todos los esfuerzos no fueron en vano y que la niña ahora está sana. De la gitana de Saint John's siempre puedo comprar mangarosa - tres tallos por trescientos cincuenta doblones de oro.
+#TEXT 11
+Ahora la gitana tiene todo lo necesario para preparar el brebaje curativo. Mañana por la mañana tendré que recoger la medicina de ella y llevársela a Thomas.
+
+#QUEST TPZ
+Comercio según la ley
+#TEXT 1
+Los habitantes de Bass-Terre se quejan por la falta de alcohol en la taberna. El tabernero sigue prometiendo solucionarlo, pero hasta ahora sin resultados. Parece que tiene serios problemas. Y donde hay problemas, hay oportunidades para ganar dinero.​
+#TEXT 2
+El dueño del establecimiento informó que su proveedor de Antigua perdió su destilería debido a un ataque pirata y no podrá reanudar los suministros antes de dos meses. El tabernero está dispuesto a aceptar cualquier lote de vino y ron si el comerciante tiene buena reputación, sin verificar documentos, pero solo esta vez. En adelante, trabajará exclusivamente con negociantes honestos y confiables. Tal vez debería buscar mercancía por vías no oficiales... Si juego bien mis cartas, esto podría generar una buena ganancia.​
+#TEXT 3
+Los contrabandistas tienen problemas con el alcohol en este momento. Sin embargo, cerca de la residencia del gobernador vive un comerciante que vende ilegalmente pequeñas cantidades de licor. Tal vez valga la pena visitarlo.​
+#TEXT 4
+Logré encontrar a un comerciante clandestino de alcohol. Al principio me tomó por un representante de las autoridades, pero logré convencerlo de lo contrario. Si lo ayudo a legalizar su negocio, podré comprarle vino y ron en condiciones muy favorables en el futuro. Sin embargo, ahora es momento de ir al tabernero; hay una posibilidad de ganar unos cuantos doblones más con este trato.​
+#TEXT 5
+Logré cerrar un trato con el tabernero, en mis términos. Está dispuesto a comprar este y los siguientes lotes por doscientos cuarenta doblones por cien botellas de vino y cien botellas de ron. Ahora necesito legalizar el negocio de Christian.​
+#TEXT 6
+Logré cerrar un trato con el tabernero. Está dispuesto a comprar este y los siguientes lotes por doscientos doblones por cien botellas de vino y cien botellas de ron. Ahora necesito legalizar el negocio de Christian.​
+#TEXT 7
+El tabernero está satisfecho: el alcohol vuelve a fluir en la taberna. Christian también puede alegrarse: ha conseguido un excelente cliente y su negocio se ha legalizado. Ahora es momento de cuidar de mi propio beneficio en este trato. ¡A Christian!​
+#TEXT 8
+Actué como intermediario. Una sensación inusual. Todos quedaron satisfechos: la taberna vuelve a estar animada, Christian probablemente ya está contando los doblones que le llueven, y ahora tengo un proveedor confiable de alcohol en el Caribe. Y en todo esto, ni una sola vez tuve que desenvainar mi espada. Increíble.​
+#TEXT 9
+Apenas me alegré de que, por una vez, todo se resolviera pacíficamente, cuando en el puerto me atacó un barco pirata. Resultó que las interrupciones en los suministros no fueron casuales. Todo esto era parte del plan del capitán de ese barco, que decidió apoderarse de un jugoso trozo: los suministros a la taberna de Bass-Terre. Esta vez no tuvo suerte. Le di una lección mortal.​
+#TEXT 10
+En el mar, fui atacado por un barco pirata. Quiénes eran y qué querían sigue siendo un misterio. Su barco se hundió, llevándose todas las respuestas con él.​
+#TEXT 11
+Las condiciones comerciales en la isla resultaron ser bastante simples: cien doblones al mes al tesoro de la ciudad como impuesto y reportes puntuales. Creo que tales requisitos no serán demasiado gravosos para Christian. Ahora puedo alegrar al pícaro: todo salió de la mejor manera.
+
+#QUEST GS
+Los Límites de la Justicia
+#TEXT	1
+Se ha cometido un audaz intento de asesinato contra el jefe del puerto de Belice. El atacante logró escapar y ahora él mismo se ha convertido en la presa. Según los rumores, el funcionario ha puesto precio a su cabeza. Al parecer, el enemigo es peligroso; hay que pensarlo bien antes de empezar a buscarlo.
+#TEXT	2
+El jefe del puerto afirma no tener idea de quién lo atacó ni por qué. Dice que fue un loco más, de los que abundan en el Caribe. Tal vez no suene muy convincente, pero eso no me importa. Han ofrecido una recompensa de doscientos doblones por la cabeza de ese “loco”. Eso es lo que realmente importa. Comenzaré la búsqueda por las calas y grutas cercanas. Es allí donde probablemente intente esconderse de la justicia.
+#TEXT	3
+El trabajo está hecho. Es hora de informar al jefe del puerto y reclamar la recompensa merecida. Aun así, ¿debería haber escuchado al mercenario? Hablaba con bastante convicción. Por otro lado, ¿quién no intentaría salvar su vida aferrándose incluso a una mínima esperanza? Probablemente, todo fue una estratagema.
+#TEXT	4
+El jefe del puerto me pagó en su totalidad, incluso con más generosidad de la acordada. Me ofreció un descuento permanente del cincuenta por ciento en el atraque de un barco, por el tiempo que quiera. Pero esa generosidad sólo aumenta mis sospechas. ¿Y si el mercenario decía la verdad? Si realmente se enfrentó a piratas, ¿por qué no llamó a la guardia? ¿Por qué no mencionó nada cuando me envió a eliminar al asesino? Aunque todo son suposiciones. No puedo cambiar lo que pasó, tal vez sólo el tiempo revele la verdad. Por ahora, debo seguir adelante.
+#TEXT	5
+¡El jefe del puerto es un verdadero canalla! Sonríe mientras despide a mis compañeros de viaje, y luego vende a los piratas información sobre sus barcos. Gente como él no debe quedar impune. Esperaré a la noche y acabaré con él. Sus viles actos serán conocidos por todos. Las notas que me entregó el mercenario quedarán en su casa, en un lugar visible. Que todo el puerto sepa quién era en realidad. Es irónico que viva cerca de la prisión - con justicia, debería ser uno de sus inquilinos.
+#TEXT	6
+¡El bastardo está muerto! Ahora debo dejar las notas y desaparecer antes de que todo el destacamento del fuerte se ponga en alerta.
+#TEXT	7
+Se acabó el jefe del puerto. Ya no podrá entregar a nadie más a los piratas. Hoy el mundo es un poco mejor.
+
+#QUEST OS
+Cuentas pendientes
+#TEXT 1
+¡Al tabernero de Puerto Príncipe le han birlado un barril entero de ginebra rara, traído directamente de la vieja Europa! Si no aparece pronto, va a tener serios problemas. A juzgar por el alboroto, la bebida estaba destinada a algún pez gordo. ¿De otro modo por qué tanto pánico?
+#TEXT 2
+Le robaron el ginebra justo delante de sus narices. Ahora su pellejo está en juego: el misterioso cliente no parece ser de los que perdonan errores. Está dispuesto a pagar ciento cincuenta doblones a quien recupere el barril. Tengo ya algunas ideas. Lo primero es hablar con los marineros. Tal vez alguno haya visto algo.
+#TEXT 3
+Esta historia suena realmente sospechosa. Pero ya tengo una teoría sobre lo que pasó. Es hora de hablar con la camarera.
+#TEXT 4
+Bajo presión, la camarera confesó que todo fue un montaje planeado por un tal Jack Wales. Junto con el capitán del 'Sea Beast' organizaron una verdadera farsa para robar el barril. ¡Cuánto esfuerzo por una ginebra! Está claro que no son simples borrachos, sino verdaderos aficionados. El ladrón vive justo enfrente de la taberna.
+#TEXT 5
+He devuelt el barril al tabernero justo a tiempo, salvando su preciado pellejo de un destino peor. Y para ser justos, supo recompensarme: además de los doblones, me concedió alojamiento y bebida gratis de por vida en su taberna. La camarera, por su parte, hizo bien en desaparecer, pues el tabernero no tardó en sospechar de su implicación.
+#TEXT 6
+La tripulación del 'Sea Beast' siguió a su capitán. ¿Se merecían tal destino? Quién sabe... Pero una cosa está clara: no deberían haberse metido conmigo.
+
+#QUEST UV
+Recuerdo robado
+#TEXT 1
+En Port-au-Prince se rumorea que Julie d’Armagnac, la sobrina del mismísimo gobernador, está más triste que nunca. Normalmente radiante y alegre, ahora camina más sombría que una nube de tormenta. Nadie sabe con certeza qué pudo haberla cambiado tanto, pero todo indica que ha ocurrido algo serio.
+#TEXT 2
+Julie se encuentra en una situación complicada. Le han robado un collar muy querido para ella. No puede acudir a la guardia, ya que su tío, el gobernador de la parte francesa de La Española, le prohibió terminantemente tener contacto con la persona que le hizo ese regalo. Sospecha que su criada podría ser la ladrona. No puedo dejarla sola con esta desgracia y he decidido firmemente ayudar. Tal vez lo mejor sea comenzar preguntando a los comerciantes locales — sin duda el ladrón se apresuró a vender la joya.
+#TEXT 3
+Un tal Tristan Renier, capitán del 'Golden Seagull', compró recientemente un collar a un comerciante que podría pertenecer a Julie. Su barco sigue atracado en el puerto. Si mis sospechas son correctas, la ladrona podría ser la propia Giselle, cuyo nombre el comerciante mencionó por accidente.
+#TEXT 4
+Tristan no está a bordo. Tendré que buscarlo en la ciudad.
+#TEXT 5
+He conseguido recuperar el collar de Julie. Ahora es el momento de devolvérselo a su dueña. ¿O... debería visitar al gobernador y contarle todo?
+#TEXT 6
+El collar ha sido devuelto a su encantadora dueña. La ladrona resultó ser su criada — la misma Giselle. Ahora Julie está utilizando toda su astucia para castigar a la pequeña bribona. No querría estar en su lugar.
+
+#QUEST VPVL
+Atrapado en la Gran Pesca
+#TEXT 1
+Historias circulan por Saint Pierre sobre la desaparición del pescador local Pierre Carno. Durante dos cambios completos de marea, su embarcación no ha regresado a puerto, mientras su esposa Lea, consumida por el temor, mantiene su solitaria vigilia en el muelle, escudriñando las agitadas aguas en busca de la silueta de su marido. Solo su regreso a salvo podría aliviar su espíritu herido. Sin embargo, el mar despiadado guarda sus secretos, y con cada toque de campana, la esperanza se desvanece y sus posibilidades de burlar a la muerte disminuyen​.
+#TEXT 2
+Lea reveló que su esposo había puesto rumbo a la Bahía Le Marin, ubicada a lo largo de las costas meridionales de la isla. Han pasado dos días completos desde que zarpó, sin embargo, no hay señal de su regreso. La angustia grabada en el semblante de esta pobre mujer me movió a ofrecer mi ayuda. Primero examinaré las aguas de la Bahía Le Marin—tal vez Pierre permanezca en el mar, retrasado por alguna circunstancia. Si las aguas resultan vacías de su presencia, entonces debo recorrer minuciosamente la costa en busca de cualquier rastro del hombre o la embarcación​.
+#TEXT 3
+Aquellos contrabandistas moradores de la playa me confundieron con uno de los sabuesos del gobernador y buscaron enviarme a una tumba acuática. La fortuna, sin embargo, les dio la espalda—su propia sangre ahora mancha la arena en lugar de la mía. Debo investigar ahora la cueva marina de la que hablaron. Quizás sea Pierre a quien han mantenido encadenado en esa húmeda prisión​.
+#TEXT 4
+Pierre respira ahora el dulce aire de la libertad, y ha llegado el momento de devolverlo a los brazos de su devota esposa. La fortuna le dio un cruel revés—primero su embarcación se hizo añicos contra el arrecife, luego al llegar a la orilla, cayó en las garras de aquellos contrabandistas torpes que lo tomaron por el hombre del gobernador. El pobre soportó tortura y hambre, presionado para revelar secretos que jamás poseyó. Uno tiembla al pensar qué destino oscuro podría haberle esperado si la providencia no hubiera guiado mis pasos a esa maldita cueva justo a tiempo​.
+#TEXT 5
+Pierre ha sido devuelto a salvo al tierno cuidado de su devota esposa. Ha prometido mostrar su gratitud una vez que recupere sus fuerzas e insiste en compartir una bebida en la taberna mañana después de la sexta campanada. Sin embargo, una pregunta sigue royendo mis pensamientos como una rata en la cuerda de un barco—¿a quién esperaban realmente esos desafortunados contrabandistas en las orillas de Le Marin? Sus palabras hablaban de un navío que pronto tocaría tierra. Los hombres del gobernador seguramente pagarían generosamente por un aviso anticipado de tal barco cargado de contrabando. O quizás...​
+#TEXT 6
+He entregado mi informe al gobernador respecto a los contrabandistas que esperaban una nave en Le Marin. Ha prometido investigar y me ha pedido regresar en tres días. Si mis palabras resultan ciertas, podría ganarme una recompensa de peso​.
+
+#QUEST TBP
+El misterio de Betsy Price
+#TEXT	1
+En Willemstad escuché una historia interesante: en la taberna local apareció recientemente una camarera de extraordinaria belleza, pero hace tres días desapareció repentinamente. El tabernero está preocupado y dispuesto a pagar a quien logre encontrarla.
+#TEXT	2
+Los rumores no mienten, la camarera realmente desapareció. El tabernero está claramente inquieto... ya sea por su desaparición o por la caída de sus ingresos, quién sabe. Está dispuesto a pagar cien doblones a quien la traiga de vuelta. Acepté ayudarlo en la búsqueda. Cien doblones son una buena motivación, pero lo que más me intriga es la propia Betsy. ¿Qué clase de mujer podría hechizar así a los hombres, que estarían dispuestos a dejar todo para sentarse durante horas en la taberna solo para mirarla? Para empezar, deberíamos revisar su casa. Según el tabernero, no está lejos de la taberna, en la colina—frente a la lujosa casa con el balcón azul.
+#TEXT	3
+Betsy claramente está envuelta en asuntos oscuros. La carta encontrada es una amenaza directa a su vida, lo que significa que la razón de su desaparición es mucho más seria que una simple fuga. Puede que haya logrado esconderse, pero no se puede descartar lo peor. Hay que averiguar quién pudo haber dejado ese mensaje. Empezaré con el tabernero, tal vez notó a alguien sospechoso cerca de ella.
+#TEXT	4
+El colgante comprado al vagabundo pertenece a Betsy. Lo encontró en el parterre de flores junto a la casa con el farol. Hay que examinar bien ese lugar.
+#TEXT	5
+Qué mujer, esa Betsy... ¿O quizá Miranda? No, Betsy suena más apropiado — no quiero hurgar en su pasado. En fin, ha sido arrancada de las garras de esos canallas... Es hora de cobrar la recompensa bien merecida.
+#TEXT	6
+El tabernero me pagó con creces por devolverle a su valiosa empleada. Debo admitir que los pensamientos sobre Betsy aún no me abandonan... Tal vez debería visitarla algún día.
+

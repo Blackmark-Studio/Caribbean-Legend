@@ -603,7 +603,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			SaveCurrentNpcQuestDateParam(npchar, "sex_date");
-			if (drand(4) == 0)// вероятность отказа 20%
+			if (hrand(4) == 0)// вероятность отказа 20%
 			{
 				dialog.text = RandPhraseSimple(" "+pchar.name+", je ne me sens pas bien aujourd'hui. Ne te sens pas coupable, s'il te plaît, ce n'est pas ta faute. Ne le faisons pas aujourd'hui...",""+pchar.name+", cher, je suis tellement fatiguée ces derniers jours. Pour être honnête, je veux seulement dormir. Pardonne-moi. Faisons cela une autre fois.");
 				link.l1 = RandPhraseSimple("D'accord...","C'est d'accord. Comme tu veux...");
@@ -614,7 +614,8 @@ void ProcessDialogEvent()
 				dialog.text = RandPhraseSimple("Bonjour, monami."+pchar.name+" , l'ambiance est parfaite, allons-y !",""+pchar.name+"Bien sûr, sans poser de questions! Allons-y!");
 				link.l1 = RandPhraseSimple("C'est ma fille...","Tu es si ravissante, Hélène...");
 				link.l1.go = "exit";
-				AddDialogExitQuest("cabin_sex_go");
+				pchar.quest.sex_partner = Npchar.id;
+				AddDialogExitQuestFunction("LoveSex_Cabin_Go");
 			}
 		break;
 		
@@ -641,7 +642,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			SaveCurrentNpcQuestDateParam(npchar, "sex_date");
-			if (drand(4) == 0) // вероятность отказа 20%
+			if (hrand(4) == 0) // вероятность отказа 20%
 			{
 				dialog.text = RandPhraseSimple(""+pchar.name+", je ne me sens pas bien aujourd'hui. Ne te vexe pas, s'il te plaît. Ne le faisons pas aujourd'hui..."," "+pchar.name+", cher, j'ai été si fatiguée ces derniers jours. Pour être honnête, je veux seulement dormir. Pardonne-moi. Faisons cela une autre fois.");
 				link.l1 = RandPhraseSimple("D'accord...","C'est d'accord. Comme tu veux...");
@@ -657,13 +658,14 @@ void ProcessDialogEvent()
 		
 		case "room_sex_go":
 			DialogExit();
+			pchar.quest.sex_partner = Npchar.id;
 			chrDisableReloadToLocation = true;
 			//npchar.quest.daily_sex_room = true; // для первого раза в таверне чтобы счетчик запустить . лесник
 			//npchar.quest.daily_sex_cabin = true;
 			if (sti(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
 			sld = CharacterFromID("Helena");
 			ChangeCharacterAddressGroup(sld, loadedLocation.fastreload + "_tavern_upstairs", "quest", "quest3");
-			DoFunctionReloadToLocation(loadedLocation.fastreload + "_tavern_upstairs", "quest", "quest4", "GiveKissInRoom");
+			DoFunctionReloadToLocation(loadedLocation.fastreload + "_tavern_upstairs", "quest", "quest4", "LoveSex_Room_Go");
 		break;
 		
 		//--> ----------------------------------- офицерский блок ------------------------------------------
@@ -860,7 +862,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -1337,7 +1339,7 @@ void ProcessDialogEvent()
 		case "LongHappy_3":
 			DialogExit();
 			chrDisableReloadToLocation = true;//закрыть локацию
-			DoQuestCheckDelay("Helena_LoveSex", 1.0);
+			DoQuestFunctionDelay("LoveSex_Classic", 1.0);
 			npchar.dialog.currentnode = "LongHappy_5";
 			LAi_SetStayType(npchar);
 		break;
@@ -1900,7 +1902,7 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
 			DoQuestFunctionDelay("IslaMona_ChurchReloadToRoom", 0.5);
 			ChangeCharacterAddressGroup(npchar, "IslaMona_TwoFloorRoom", "goto", "goto4");
-			DoQuestCheckDelay("Helena_LoveSex", 2.5);
+			DoQuestFunctionDelay("LoveSex_Classic", 2.5);
 			NextDiag.CurrentNode = "sex_after";
 			pchar.questTemp.IslaMona.Doorlock = "true";
 		break;

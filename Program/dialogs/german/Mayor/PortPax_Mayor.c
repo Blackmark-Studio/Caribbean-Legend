@@ -19,6 +19,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Eure Lordschaft, Ihr wolltet mich sehen?";
 				link.l1.go = "PZ1";
 			}
+			// Украденное воспоминание
+			if (CheckAttribute(pchar, "questTemp.UV_DialogMayor"))
+			{
+				link.l1 = "Exzellenz, ich bringe Euch eine Angelegenheit von äußerst delikater Natur vor.";
+				link.l1.go = "UV_1";
+			}
 		break;
 
 		case "Cupture_after":
@@ -98,6 +104,45 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			SetMusic("music_teleport");
 			pchar.questTemp.lockedMusic = true;
 		break;
+		
+		//--> Украденное воспоминание
+		case "UV_1":
+			dialog.text = "Eine delikate Angelegenheit, sagt Ihr? Das ist höchst interessant. Ich höre Euch aufmerksam zu.";
+			link.l1 = "Seht Ihr, Eure Nichte Julie hat mich gebeten, ihr bei der Wiederbeschaffung eines gewissen Halsbands zu helfen.";
+			link.l1.go = "UV_2";
+			ChangeCharacterComplexReputation(pchar, "nobility", -5);
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "UV_2":
+			dialog.text = "Ein Halsband? Ich kann mich nicht erinnern, dass sie eines besaß.";
+			link.l1 = "Ich erkläre es Euch, Herr Gouverneur, der Reihe nach. Ich habe das Halsband gefunden. Wie sich herausstellte, war die Diebin eine Bedienstete Eurer Nichte namens Giselle. Nach dem Verhalten dessen, dem sie das Gestohlene übergab, war es offenbar nicht ihr erster – und wohl auch nicht letzter – Diebstahl.";
+			link.l1.go = "UV_3";
+		break;
+		
+		case "UV_3":
+			dialog.text = "Fahrt fort.";
+			link.l1 = "Julie hat Euch nicht um Hilfe gebeten, weil das Halsband ein Geschenk von jemandem ist, mit dem Ihr ihr jeglichen Kontakt untersagt habt. Ich aber war mir sicher dass Ihr aus den edelsten Absichten gehandelt habt, und hielt es für meine Pflicht, Euch darüber zu informieren und Euch das Halsband zurückzugeben.";
+			link.l1.go = "UV_4";
+			TakeItemFromCharacter(pchar, "SM_necklace_Julie");
+		break;
+		
+		case "UV_4":
+			dialog.text = "Ihr habt weise gehandelt"+GetSexPhrase(", Kapitän","")+". Es erfreut mich zu sehen, dass Ihr Euch entschieden habt, mir die Wahrheit zu berichten, anstatt Julies Launen nachzugeben.";
+			link.l1 = "Ich wünsche ihr nur das Beste und bin überzeugt dass Eure Absichten ebenso gerecht sind.";
+			link.l1.go = "UV_5";
+		break;
+		
+		case "UV_5":
+			dialog.text = "Selbstverständlich, Kapitän. Als ihr Onkel liegt mir ihr Wohl am Herzen. Für Eure Umsicht schulde ich Euch Dank. Nehmt diese hundertfünfzig Dublonen und noch etwas – einen Kompass, von dem ich hoffe, dass er Euch ein nützlicher Begleiter auf Euren Reisen sein wird.";
+			link.l1 = "Ich danke Euch, Monsieur. Das wäre wirklich nicht nötig gewesen. Doch nun muss ich mich verabschieden – die Pflicht ruft.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("UV_End");
+			AddItems(pchar, "gold_dublon", 150);
+			GiveItem2Character(PChar, "compass1");
+			ChangeCharacterNationReputation(pchar, FRANCE, 5);
+		break;
+		//<-- Украденное воспоминание
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

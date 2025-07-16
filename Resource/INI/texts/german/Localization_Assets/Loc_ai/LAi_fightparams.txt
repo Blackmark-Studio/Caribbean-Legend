@@ -1,0 +1,4 @@
+LAi_fightparams_1
+{
+Das Ausweichen vor dem Schuss
+}

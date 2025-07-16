@@ -48,8 +48,8 @@ void ProcessDialogEvent()
             NextDiag.TempNode = "First time";
 			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
 			{
-				dialog.text = RandPhraseSimple("Szpieg! Złóż broń i idź za mną!","Wrogi agent! Chwytaj "+GetSexPhrase("on","jej")+"!");
-				link.l1 = RandPhraseSimple("Zamknij się, ciotko!","Spadaj!");
+				dialog.text = RandPhraseSimple("Szpieg! Złóż broń i idź za mną!","Wrogi agent! Łapać "+GetSexPhrase("go","ją")+"!");
+				link.l1 = RandPhraseSimple("Chyba cię coś boli!","Spadaj!");
 				link.l1.go = "fight"; 
 			}
 			else
@@ -77,11 +77,11 @@ void ProcessDialogEvent()
 						}
 						if (findsubstr(pchar.location.from_sea, "_town" , 0) != -1) //если причалил в городе
 						{
-							link.l1 = "Czy nie widzisz flagi "+NationNameGenitive(sti(pchar.nation))+" na maszcie mojego statku?!";
+							link.l1 = "Czy nie widzisz "+NationNameGenitive(sti(pchar.nation))+" flagi na maszcie mojego statku?!";
 						}
 						else //если причалил не в городе
 						{
-							link.l1 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą"+NationNameGenitive(sti(pchar.nation))+"! Czy potrzebujesz czegoś jeszcze?";
+							link.l1 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(sti(pchar.nation))+"! Jakiś problem?";
 						}
 						// belamour legendary edition вызываюий доверие даёт возможность обмануть стражу
 						if(sti(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))

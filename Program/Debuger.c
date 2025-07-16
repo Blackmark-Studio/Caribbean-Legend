@@ -95,6 +95,7 @@ void setclock()
 void ActiveF10Control()
 {
 	Log_Info("ЛОГЛОГ");
+	
 }
 
 void AdvanceTime() {
@@ -165,6 +166,7 @@ void ActiveF12Control()
     if (res != -1)
     {
         ref findCh = GetCharacter(res);
+        if(findCh.name == "") return;
         res = findCh.chr_ai.hp;
         Log_SetStringToLog("" + GetFullName(findCh) +
                            " "+XI_ConvertString("Rank")+" " + findCh.rank + " "+XI_ConvertString("Health")+" "+res + "/" + LAi_GetCharacterMaxHP(findCh));

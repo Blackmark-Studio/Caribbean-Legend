@@ -101,6 +101,24 @@ void ProcessDialogEvent()
 			}
 			// <-- Цена чахотки
 			
+			//--> Украденное воспоминание
+			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+			{
+				link.l4 = "Sagt mir, habt Ihr vielleicht etwas wirklich Besonderes? Keine billigen Kleinigkeiten, sondern etwas wahrhaft Raffiniertes—zum Beispiel elegante Ohrringe oder ein feines Medaillon. Ich suche ein Geschenk für eine Dame von edler Herkunft.";
+				link.l4.go = "UV_Lavochniki_1";
+			}
+            if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_2") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+            {
+				link.l4 = "Habt Ihr vielleicht etwas wirklich Wertvolles? Ich suche ein Schmuckstück, das selbst den Ansprüchen der anspruchsvollsten Aristokratin gerecht würde – etwas Seltenes, Elegantes, nicht für das gewöhnliche Volk. Vielleicht ein geschmackvoller Anhänger oder ein kunstvoll gearbeiteter Armreif?";
+				link.l4.go = "UV_Lavochniki_2";
+			}
+			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_3") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+            {
+				link.l4 = "Sagt mal, kennt Ihr Euch mit Schmuck aus? Ich suche etwas ganz Besonderes als Geschenk für eine edle Dame. Ich warne Euch gleich – billiger Tand interessiert mich nicht. Ich brauche etwas Raffiniertes: vielleicht eine kunstvoll verzierte Brosche oder einen prachtvollen Ring.";
+				link.l4.go = "UV_Lavochniki_3";
+			}
+			//<-- Украденное воспоминание
+			
 			//Jason --> генератор Неудачливый вор
 			if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_town" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
 			{
@@ -430,7 +448,7 @@ void ProcessDialogEvent()
 		// Мангароса
 		case "mangarosa":
 			// тут работает везение
-			if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+drand(30)+drand(40))
+			if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+hrand(30)+hrand(40, "1"))
 			{
 				dialog.text = "Zeig es mir... Ja, das ist eine interessante Pflanze. Und eine sehr, sehr seltene. Sie wird Manga Rosa genannt. Ich weiß nicht, wofür sie verwendet wird, aber es gab eine interessante Tatsache dazu...";
 				link.l1 = "Was meinst du?";
@@ -463,6 +481,48 @@ void ProcessDialogEvent()
 			pchar.questTemp.Mangarosa = "gipsy";
 			AddQuestRecord("Mangarosa", "2");
 		break;
+		
+		//--> Украденное воспоминание
+		case "UV_Lavochniki_1":
+    		dialog.text = "Leider, "+GetAddress_Form(NPChar)+", habe ich schon lange keine wertvollen Stücke mehr auf Lager gehabt. Wisst Ihr, die Nachfrage ist heutzutage gering. Einfaches Volk kauft nur billigen Tand, und die feine Gesellschaft verirrt sich kaum in mein Geschäft.";
+    		link.l1 = "Schon gut...";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki");
+			pchar.questTemp.UV_Lavochniki_2 = true;
+			npchar.quest.UV_Vopros;
+ 		break;
+		
+		case "UV_Lavochniki_2":
+    		dialog.text = "Tut mir leid, Kapitän, aber mit solcher Ware handle ich schon lange nicht mehr. Wohlhabende Kunden betreten meinen Laden nur selten, und das gewöhnliche Volk kauft nur das, was es sich leisten kann.";
+    		link.l1 = "Schon gut...";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_2");
+			pchar.questTemp.UV_Lavochniki_3 = true;
+			npchar.quest.UV_Vopros;
+ 		break;
+		
+		case "UV_Lavochniki_3":
+    		dialog.text = "Kapitän, leider kommen Sie ein wenig zu spät... Vor ein paar Stunden habe ich eine prächtige Halskette an einen wohlhabenden Kapitän verkauft. Ich bekomme manchmal Stücke, die selbst die widerspenstigste Dame bezaubern können\nKommen Sie morgen wieder vorbei, vielleicht kann Giselle... ähm... meine Lieferanten... etwas Passendes für Sie auftreiben, das das Herz jeder Dame erobern wird.";
+    		link.l1 = "Ich habe keine Zeit. Ich brauche dieses Schmuckstück sofort. Sagt mir den Namen des Kapitäns, an den Ihr die Halskette verkauft habt.";
+    		link.l1.go = "UV_Lavochniki_3_1";
+ 		break;
+		
+		case "UV_Lavochniki_3_1":
+    		dialog.text = "Tristan Renier, Kapitän der 'Golden Seagull'. Sein Schiff liegt noch im Hafen. Doch ich bezweifle, dass er sich freiwillig von dem Schmuckstück trennen wird. Falls er ablehnt, schauen Sie morgen wieder vorbei. Ich schwöre, Kapitän, Sie werden es nicht bereuen.";
+    		link.l1 = "...";
+    		link.l1.go = "UV_Lavochniki_exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_3");
+			AddDialogExitQuestFunction("UV_GoldSeagull");
+		break;
+		
+		case "UV_Lavochniki_exit":
+			DialogExit();
+			AddQuestRecord("UV", "3");
+			/*AddQuestUserData("UV", "sSex", NPCharSexPhrase(NPChar,"ца","ки"));
+			AddQuestUserData("UV", "sSex1", NPCharSexPhrase(NPChar,"ец","ка"));
+			AddQuestUserData("UV", "sSex2", NPCharSexPhrase(NPChar,"","а"));*/
+		break;
+		//<-- Украденное воспоминание
 		
 // ======================== блок нод angry ===============>>>>>>>>>>>>>>>
 

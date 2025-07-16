@@ -1240,3 +1240,26 @@ QuestsUtilite_275
 {
 Use the Action Menu (ENTER) to Fast Travel to Le Franсois.
 }
+
+QuestsUtilite_276
+{
+Les eaux deviennent plus dangereuses, la menace des pirates a augmenté
+}
+
+QuestsUtilite_277
+{
+Chimère
+}
+
+QuestsUtilite_278
+{
+~ Comme nous les avons mis en colère ! Le navire amiral de l’escadre est ~
+}
+QuestsUtilite_279
+{
+Diego
+}
+QuestsUtilite_280
+{
+de Landa
+}

@@ -127,6 +127,11 @@ int LocationInitBeliz(int n)
 	locations[n].reload.jail.label = "Prison";
 
     // --> Квестовые локации.
+	locations[n].reload.l11.name = "houseS5";
+	locations[n].reload.l11.go = "Beliz_houseS5";
+	locations[n].reload.l11.emerge = "reload1";
+	locations[n].reload.l11.autoreload = "0";
+	locations[n].reload.l11.label = "House";
 
     // --> Комоны, загрушки. Номера с начинаются с 20.
 	locations[n].reload.l20.name = "houseF2";
@@ -146,12 +151,6 @@ int LocationInitBeliz(int n)
 	locations[n].reload.l22.emerge = "reload1";
 	locations[n].reload.l22.autoreload = "0";
 	locations[n].reload.l22.label = "House";
-	
-	locations[n].reload.l23.name = "houseS5";
-	locations[n].reload.l23.go = "CommonFlamHouse";
-	locations[n].reload.l23.emerge = "reload1";
-	locations[n].reload.l23.autoreload = "0";
-	locations[n].reload.l23.label = "House";
 	
 	locations[n].reload.l24.name = "houseF1";
 	locations[n].reload.l24.go = "CommonRoom_MH2";
@@ -672,6 +671,148 @@ int LocationInitBeliz(int n)
 	
 	locations[n].locators_radius.box.box1 = 0.8;
 	locations[n].box1.QuestClosed = true;
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Квестовый дом
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "Beliz_houseS5";
+	locations[n].filespath.models = "locations\inside\FlamHouse";
+	locations[n].id.label = "House";
+	locations[n].image = "loading\inside\flamhouse.tga";
+	//Town sack
+	locations[n].townsack = "Beliz";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "Beliz";
+	locations[n].islandId = "Mein";
+	//Models
+	//Always
+	locations[n].models.always.tavern = "FlamHouse";
+	locations[n].models.always.tavern.level = 65538;
+	locations[n].models.always.window = "FlamHouse_window";
+	locations[n].models.always.window.tech = "LocationWindows";
+	locations[n].models.always.window.level = 65539;
+	locations[n].models.day.locators = "FlamHouse_locators";
+	locations[n].models.night.locators = "FlamHouse_Nlocators";
+
+	locations[n].models.always.back = "..\inside_back";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	locations[n].models.day.charactersPatch = "FlamHouse_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "FlamHouse_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "Beliz_town";
+	locations[n].reload.l1.emerge = "houseS5";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Street";
+
+	locations[n].reload.l2.name = "reload3";
+	locations[n].reload.l2.go = "Beliz_houseS5_Room2";
+	locations[n].reload.l2.emerge = "reload1";
+	locations[n].reload.l2.autoreload = "0";
+	locations[n].reload.l2.label = "Room";
+
+	locations[n].reload.l3.name = "reload4";
+	locations[n].reload.l3.go = "Beliz_houseS5_Room";
+	locations[n].reload.l3.emerge = "reload1";
+	locations[n].reload.l3.autoreload = "0";
+	locations[n].reload.l3.label = "Room";
+	LAi_LocationFightDisable(&locations[n], true);
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////
+	/////Комната в доме 1
+	//////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "Beliz_houseS5_Room";
+	locations[n].id.label = "Room";
+	locations[n].image = "loading\inside\mediumhouse10.tga";
+	//Town sack
+	locations[n].townsack = "Beliz";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "Beliz";
+	locations[n].islandId = "Mein";
+	//Models
+	//Always
+	locations[n].filespath.models = "locations\inside\mediumhouse03";
+	locations[n].models.always.mediumhouse03 = "mediumhouse03";
+	locations[n].models.always.mediumhouse03.level = 65538;
+	locations[n].models.day.locators = "mediumhouse03_locators";
+	locations[n].models.night.locators = "mediumhouse03_Nlocators";
+
+	Locations[n].models.always.mediumhouse03windows = "mediumhouse03_windows";
+	Locations[n].models.always.mediumhouse03windows.tech = "LocationWindows";
+	locations[n].models.always.mediumhouse03windows.level = 65539;
+
+	locations[n].models.always.back = "..\inside_back3";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	Locations[n].models.day.mediumhouse03rand= "mediumhouse03_rand";
+	locations[n].models.day.charactersPatch = "mediumhouse03_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "mediumhouse03_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "Beliz_houseS5";
+	locations[n].reload.l1.emerge = "reload4";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "room";
+	LAi_LocationFightDisable(&locations[n], true);
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////
+	/////Комната в доме 2
+	//////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "Beliz_houseS5_Room2";
+	locations[n].id.label = "Room";
+	locations[n].image = "loading\inside\mediumhouse10.tga";
+	//Town sack
+	locations[n].townsack = "Beliz";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "Beliz";
+	locations[n].islandId = "Mein";
+	//Models
+	//Always
+	locations[n].filespath.models = "locations\inside\mediumhouse04";
+	locations[n].models.always.mediumhouse04 = "mediumhouse04";
+	locations[n].models.always.mediumhouse04.level = 65538;
+	locations[n].models.day.locators = "mediumhouse04_locators";
+	locations[n].models.night.locators = "mediumhouse04_Nlocators";
+
+	Locations[n].models.always.mediumhouse04windows = "mediumhouse04_windows";
+	Locations[n].models.always.mediumhouse04windows.tech = "LocationWindows";
+	locations[n].models.always.mediumhouse04windows.level = 65539;
+
+	locations[n].models.always.back = "..\inside_back3";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	Locations[n].models.day.mediumhouse04rand= "mediumhouse04_rand";
+	locations[n].models.day.charactersPatch = "mediumhouse04_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "mediumhouse04_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "Beliz_houseS5";
+	locations[n].reload.l1.emerge = "reload3";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "room";
+	LAi_LocationFightDisable(&locations[n], true);
 	n = n + 1;
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

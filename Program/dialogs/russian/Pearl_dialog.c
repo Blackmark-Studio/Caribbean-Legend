@@ -82,7 +82,7 @@ void ProcessDialogEvent()
 			link.l1.go = "IndPearlMan_1";
 		break;
 		case "IndPearlMan_1":
-			dialog.text = "Говори, зачем приш"+ GetSexPhrase("ел","ла") +".";
+			dialog.text = "Говори, зачем приш"+ GetSexPhrase("ёл","ла") +".";
 			link.l1 = "Да ничего особенного, послушать тебя хотел"+ GetSexPhrase("","а") +"...";
 			link.l1.go = "exit";
 		break;

@@ -128,7 +128,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			DialogExit();
 			AddQuestRecord("Caleuche", "15");
 			pchar.questTemp.Caleuche.Bandos = "comendant";
-			pchar.questTemp.Caleuche.BelizChance = drand(3);
+			pchar.questTemp.Caleuche.BelizChance = hrand(3);
 			SetFunctionTimerCondition("Caleuche_BelizRegard", 0, 0, 3, false); // таймер
 		break;
 		

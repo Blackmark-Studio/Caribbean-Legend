@@ -10,7 +10,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// калеуче
 		if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "graveyard" && !CheckAttribute(npchar, "quest.caleuche"))
 		{
-			link.l1 = "Escucha - ¿ha estado aquí un hombre llamado Joachim Merriman? Es un señor portugués de mediana edad, con bigote, barba imperial y ojos penetrantes. ¿Quizás desembarcó en una cala o cerca del faro? ¿Has visto a alguien así?";
+			link.l1 = "Escucha, ¿ha estado aquí un hombre llamado Joachim Merriman? Es un señor portugués de mediana edad, con bigote, barba imperial y ojos penetrantes. ¿Quizás desembarcó en alguna playa o cerca del faro? ¿Has visto a alguien así?";
 			link.l1.go = "merriman";
 		}
 		break;

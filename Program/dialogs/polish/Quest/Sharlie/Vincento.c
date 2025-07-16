@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 		case "First time":
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "santiago")
 			{
-				dialog.text = "W końcu widzę słynnego francuskiego kapitana "+GetFullName(pchar)+" we własnej osobie. Słyszałem wiele o waszych wyczynach. Jesteś dzielnym żołnierzem i, mam nadzieję, lojalnym i wiernym synem naszej Matki, Świętego Kościoła Rzymskokatolickiego. Usiądź, mój synu. Nie trzeba stać z mojego powodu. Dominus vobiscum! ";
+				dialog.text = "W końcu widzę słynnego francuskiego kapitana "+GetFullName(pchar)+" we własnej osobie. Słyszałem wiele o twoich wyczynach. Jesteś dzielnym żołnierzem i, mam nadzieję, lojalnym i wiernym synem naszej Matki, Świętego Kościoła Rzymskokatolickiego. Usiądź, mój synu. Nie trzeba stać z mojego powodu. Dominus vobiscum! ";
 				link.l1 = "I z duchem twoim, Wasza Ekscelencjo. Moja droga tutaj była długa i trudna... Przez ciernie do gwiazd i wszystko...";
 				link.l1.go = "utensil";
 				break;
@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "utensil":
-			dialog.text = "'Enter by the narrow gate; for wide is the gate and broad is the way that leads to destruction, and there are many who go in by it. Because narrow is the gate and difficult is the way which leads to life, and there are few who find it.' The path of righteousness is always difficult, my son. But the aim that is achieved fully rewards a righteous man for his works.";
+			dialog.text = "'Wchodźcie przez ciasną bramę; bo szeroka jest brama i przestronna droga, która prowadzi do zagłady, a wielu jest takich, którzy przez nią wchodzą. Bo ciasna jest brama i wąska droga, która prowadzi do życia, a mało jest takich, którzy ją znajdują. Droga sprawiedliwości jest zawsze trudna, mój synu. Ale cel, który jest osiągnięty, w pełni wynagradza sprawiedliwego człowieka za jego uczynki.";
 			link.l1 = "Zgadzam się, Wasza Ekscelencjo. Wykonałem zadania, które mi powierzyłeś. Już masz tchórzliwego pirata, który ukradł cenne naczynia z Kościoła. Teraz zwracam wszystkie zabrane rzeczy: monstrancję, krzyż i kadzielnicę. Weź je dla parafii w Santiago.";
 			link.l1.go = "utensil_1";
 		break;
@@ -64,7 +64,7 @@ void ProcessDialogEvent()
 		
 		case "utensil_2":
 			GiveItem2Character(pchar, "chest");
-			Log_Info("You've received a chest of doubloons");
+			Log_Info("Otrzymałeś skrzynię dublonów");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Wierna służba Matce Kościołowi zawsze jest wiernie wynagrodzona, "+pchar.name+"Ze swej strony mam nadzieję, że pozostaniesz oddanym wojownikiem w obronie i ochronie chrześcijaństwa, gdyż grozi nam śmiertelne niebezpieczeństwo, wiszące nad nami niczym mityczny Miecz Damoklesa.";
 			link.l1 = "Co to może być, Wasza Ekscelencjo?";
@@ -90,7 +90,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "utensil_6":
-			if (CheckAttribute(pchar, "questTemp.Dolly")) sTemp = "Kukulcan?! Sancta Maria, Mater Dei, ora pro nobis! Kukulcan again, that old serpent...";
+			if (CheckAttribute(pchar, "questTemp.Dolly")) sTemp = "Kukulcan?! Sancta Maria, Mater Dei, ora pro nobis! Kukulcan again, ten stary wąż...";
 			else sTemp = "Hm...";
 			dialog.text = "Dokładnie. Ten przysłany przez diabła awanturnik odnalazł Tayasal wraz ze skarbami starożytnych Majów. Jednak radość Don Mendosy była krótkotrwała. Wszystkie te skarby zniknęły wraz z Dichoso w drodze powrotnej do Hiszpanii. Prawdopodobnie wraz ze wszystkimi sztabkami złota i ozdobami Miguel zabrał ze sobą starożytne źródło diabelstwa, przerażającą maskę starożytnego boga demona Majów o imieniu Kukulkan.";
 			link.l1 = sTemp+"Ale o jakim złu mówisz, Wasza Ekscelencjo? Skąd o tym wiesz?";
@@ -176,12 +176,12 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HWIC.Detector") && bOk)
 			{
 				pchar.questTemp.Guardoftruth = "jino";
-				AddQuestUserData("Guardoftruth", "sText", "I almost betrayed myself by a shout of surprise. Father Vincento ordered me to find and bring him his runaway secretary, a physician alchemist named Gino Gvineili. That same Gino who occupies the spare room on the second floor of my house in St. John's!");
+				AddQuestUserData("Guardoftruth", "sText", "Prawie zdradziłem się krzykiem zaskoczenia. Ojciec Vincento rozkazał mi znaleźć i przyprowadzić jego zbiegłego sekretarza, lekarza alchemika o imieniu Gino Gvineili. Tego samego Gino, który zajmuje pokój gościnny na drugim piętrze mojego domu w St. John's!");
 			}
 			else
 			{
 				pchar.questTemp.Guardoftruth = "merdok";
-				AddQuestUserData("Guardoftruth", "sText", "I must find a man named Gino Gvineili, hiding somewhere in the English Caribbean colonies. He is a physician and an alchemist. Where can a man like him hide?");
+				AddQuestUserData("Guardoftruth", "sText", "Muszę znaleźć mężczyznę o imieniu Gino Gvineili, ukrywającego się gdzieś w angielskich koloniach karaibskich. Jest lekarzem i alchemikiem. Gdzie może się ukryć taki człowiek?");
 			}
 		break;
 		
@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 		
 		case "guardoftruth_4":
 			RemoveItems(pchar, "Almanac", 1);
-			Log_Info("You've given the almanac");
+			Log_Info("Dałeś almanach");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "To almanach biednego Gino. Pisał tam notatki o wszystkich swoich eksploracjach. Daj mi go, synu, przestudiuję, co w nim zapisano. Może znajdziemy jakąś wskazówkę.\nChociaż nie przyprowadziłeś mi z powrotem Gino Gvineili, jestem zadowolony z twoich starań, synu. Teraz mam dla ciebie jakieś wieści.";
 			link.l1 = "Masz moją uwagę, Ojcze.";
@@ -226,13 +226,13 @@ void ProcessDialogEvent()
 		
 		case "guardoftruth_6":
 			dialog.text = "Pozwól mi zobaczyć twój list przepustowy. Dodam zezwolenie na odwiedzenie kolonii San Jose.";
-			link.l1 = "Tu.";
+			link.l1 = "Prosze.";
 			link.l1.go = "guardoftruth_6a";
 		break;
 		
 		case "guardoftruth_6a":
 			RemoveItems(pchar, "VerifyPaper", 1);
-			dialog.text = "Tam... to będzie wszystko. Nie zapomnij podnieść hiszpańskiej flagi na swoim statku. Podejdź i przyjmij błogosławieństwo Boże, mój synu!";
+			dialog.text = "Prosze... to będzie wszystko. Nie zapomnij podnieść hiszpańskiej flagi na swoim statku. Podejdź i przyjmij błogosławieństwo Boże, mój synu!";
 			link.l1 = "Chwila, Wasza Wysokość. Czy mógłbym zadać pytanie?";
 			link.l1.go = "guardoftruth_7";
 		break;
@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_14":
-			dialog.text = "Och, "+pchar.name+" . Wątpię, by człowiek przysięgły Don Mendozy zechciał dojść do porozumienia z tobą. Wydanie mu rozkazu przybycia do San Diego na przesłuchanie ze mną może być opcją, ale nie jestem pewien, czy Diego byłby wobec mnie całkowicie szczery.";
+			dialog.text = "Och, "+pchar.name+". Wątpię, by człowiek przysięgły Don Mendozy zechciał dojść do porozumienia z tobą. Wydanie mu rozkazu przybycia do San Diego na przesłuchanie ze mną może być opcją, ale nie jestem pewien, czy Diego byłby wobec mnie całkowicie szczery.";
 			link.l1 = "Jakie kroki powinniśmy teraz podjąć, Ojcze?";
 			link.l1.go = "guardoftruth_15";
 		break;
@@ -433,9 +433,9 @@ void ProcessDialogEvent()
 			sld = ItemsFromID(sTemp);
 			sld.Balance = 2.0;
 			sld.Weight = 4.5;
-			Log_Info("You've received the Tanath");
+			Log_Info("Otrzymałeś Tanath");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Niech cię Bóg błogosławi, "+GetFullName(pchar)+", in this coming battle. I embower you with the Holy Cross. Almighty God, in whose hand victory rests and who also gave David miraculous strength to crush Goliath: humbly we pray your mercy to bless these weapons by your life-giving mercy; and grant your servant "+GetFullName(pchar)+" who wills to bear them, that he may use them freely and victoriously for defending Holy Mother Church against the attacks of all enemies visible and invisible. Through Christ our Lord. Amen.";
+			dialog.text = "Niech cię Bóg błogosławi, "+GetFullName(pchar)+", w tej nadchodzącej bitwie. Przyozdabiam Cię Świętym Krzyżem. Wszechmogący Boże, w którego ręku spoczywa zwycięstwo i który dałeś Dawidowi cudowną siłę, by zmiażdżyć Goliata: pokornie prosimy Cię o Twoje miłosierdzie, abyś pobłogosławił tę broń swoim życiodajnym miłosierdziem; i udzielił Twojemu słudze "+GetFullName(pchar)+" kto chce je znieść, aby mógł ich swobodnie i zwycięsko użyć do obrony Świętej Matki Kościoła przed atakami wszystkich wrogów widzialnych i niewidzialnych. Przez Chrystusa, Pana naszego. Amen.";
 			link.l1 = "Amen!";
 			link.l1.go = "tieyasal_12";
 		break;

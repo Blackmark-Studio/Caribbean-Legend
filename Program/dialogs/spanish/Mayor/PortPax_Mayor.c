@@ -19,6 +19,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "Su Señoría, ¿quería verme?";
 			link.l1.go = "PZ1";
 		}
+		// Украденное воспоминание
+		if (CheckAttribute(pchar, "questTemp.UV_DialogMayor"))
+		{
+			link.l1 = "Monsieur, tengo un asunto de carácter bastante delicado que tratar con usted.";
+			link.l1.go = "UV_1";
+		}
 		break;
 
 	case "Cupture_after":
@@ -72,14 +78,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "PZ2":
-		dialog.text = "¿Qué casa, qué mensajero, qué insolencia es esta?!";
-		link.l1 = "¿Qué quieres decir, qué mensajero... Su nombre es Henri Thibaut, y...";
+		dialog.text = "¿Qué casa, qué mensajero, qué insolencia es esta?";
+		link.l1 = "¿Qué quieres decir, qué mensajero...? Su nombre es Henri Thibaut, y...";
 		link.l1.go = "PZ3";
 		break;
 
 	case "PZ3":
 		dialog.text = "¿QUÉ? ¿Sabéis siquiera quién es él? Aparentemente no. Pero no importa. ¿Qué hace el sobrino de Levasseur en mi ciudad?";
-		link.l1 = "¡Oh, Dios mío...";
+		link.l1 = "¡Oh, Dios mío...!";
 		link.l1.go = "PZ4";
 		break;
 
@@ -98,6 +104,45 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		SetMusic("music_teleport");
 		pchar.questTemp.lockedMusic = true;
 		break;
+		
+		//--> Украденное воспоминание
+		case "UV_1":
+			dialog.text = "¿De carácter delicado? Muy interesante. Le escucho atentamente.";
+			link.l1 = "Verá, su sobrina Julie me pidió ayuda para encontrar un collar que ha desaparecido.";
+			link.l1.go = "UV_2";
+			ChangeCharacterComplexReputation(pchar, "nobility", -5);
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "UV_2":
+			dialog.text = "¿Un collar? No recuerdo que ella tuviera uno.";
+			link.l1 = "Le explicaré todo, señor gobernador, paso a paso. Encontré el collar. Resultó que la ladrona es una criada de su sobrina, llamada Giselle. Por la forma en que actuaba el que recibió lo robado, me temo que no es su primer robo... y probablemente tampoco el último.";
+			link.l1.go = "UV_3";
+		break;
+		
+		case "UV_3":
+			dialog.text = "Continúe.";
+			link.l1 = "Julie no acudió a usted porque el collar era un regalo de alguien con quien usted le prohibió relacionarse. Yo, convencid"+GetSexPhrase("o","a")+" de que su decisión se basó en las mejores intenciones, consideré mi deber informarle y devolverle el collar.";
+			link.l1.go = "UV_4";
+			TakeItemFromCharacter(pchar, "SM_necklace_Julie");
+		break;
+		
+		case "UV_4":
+			dialog.text = "Actuó sabiamente"+GetSexPhrase(", capitán","")+". Me alegra ver que prefirió decirme la verdad en lugar de ceder a los caprichos de Julie.";
+			link.l1 = "Solo deseo lo mejor para ella y estoy segur"+GetSexPhrase("o","a")+" de que sus intenciones son igualmente nobles.";
+			link.l1.go = "UV_5";
+		break;
+		
+		case "UV_5":
+			dialog.text = "Por supuesto, capitán, como su tío, solo deseo su bienestar. Por su sensatez, acepte mi agradecimiento. Aquí tiene ciento cincuenta doblones y algo más: una brújula que, espero, le será útil en sus travesías.";
+			link.l1 = "Gracias, monsieur. No era necesario, de verdad. Pero debo despedirme"+GetSexPhrase("","a")+". Los asuntos me esperan.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("UV_End");
+			AddItems(pchar, "gold_dublon", 150);
+			GiveItem2Character(PChar, "compass1");
+			ChangeCharacterNationReputation(pchar, FRANCE, 5);
+		break;
+		//<-- Украденное воспоминание
 	}
 	UnloadSegment(NPChar.FileDialog2); // если где-то выход внутри switch  по return не забыть сделать анлод
 }

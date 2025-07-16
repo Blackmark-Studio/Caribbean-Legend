@@ -1,0 +1,390 @@
+﻿SharlieFinal_1
+{
+Cathrin
+}
+SharlieFinal_2
+{
+Fox
+}
+
+SharlieFinal_3
+{
+Modalità di esplorazione: timer esteso. Completa la missione!"
+}
+SharlieFinal_4
+{
+Catherine Fox è morta di calentura!
+}
+
+SharlieFinal_5
+{
+cavaliere Timoleon
+}
+SharlieFinal_6
+{
+de Fontene
+}
+
+SharlieFinal_7
+{
+Griffondor
+}
+
+SharlieFinal_8
+{
+Rober
+}
+SharlieFinal_9
+{
+Marten
+}
+
+SharlieFinal_10
+{
+Enphanta
+}
+
+SharlieFinal_11
+{
+spain convoy
+}
+
+SharlieFinal_12
+{
+Victory
+}
+SharlieFinal_13
+{
+Vindzor Castle
+}
+SharlieFinal_14
+{
+Royal Katherine
+}
+SharlieFinal_15
+{
+Loyal London
+}
+SharlieFinal_16
+{
+Haughty
+}
+
+SharlieFinal_17
+{
+San Felipe
+}
+SharlieFinal_18
+{
+San Isidro
+}
+SharlieFinal_19
+{
+Santa Magdalena
+}
+SharlieFinal_20
+{
+Santa Anna
+}
+SharlieFinal_21
+{
+Apostle
+}
+
+SharlieFinal_22
+{
+Cage è stato aperto!
+}
+
+SharlieFinal_23
+{
+Michel
+}
+SharlieFinal_24
+{
+de Monper
+}
+
+SharlieFinal_25
+{
+Anry
+}
+SharlieFinal_26
+{
+Duble
+}
+
+SharlieFinal_27
+{
+Delicious
+}
+
+SharlieFinal_28
+{
+boatswain Serge
+}
+SharlieFinal_29
+{
+Dega
+}
+
+SharlieFinal_30
+{
+San Gregorio
+}
+
+SharlieFinal_31
+{
+Carlos
+}
+SharlieFinal_32
+{
+Gevarra
+}
+
+SharlieFinal_33
+{
+Guy
+}
+SharlieFinal_34
+{
+Marshe
+}
+
+SharlieFinal_35
+{
+Un giorno passato...@<NewStr()>La vaniglia è caricata sul carrack...
+}
+
+SharlieFinal_36
+{
+Barty
+}
+SharlieFinal_37
+{
+Flayer
+}
+
+SharlieFinal_38
+{
+Father Vincento
+}
+SharlieFinal_39
+{
+
+}
+
+SharlieFinal_40
+{
+Pedro
+}
+SharlieFinal_41
+{
+Lopez
+}
+
+SharlieFinal_42
+{
+San Markos
+}
+
+SharlieFinal_43
+{
+Shadow
+}
+SharlieFinal_44
+{
+Diego
+}
+SharlieFinal_45
+{
+de Montoya
+}
+
+SharlieFinal_46
+{
+Carrier lugger 'Shadow'
+}
+
+SharlieFinal_47
+{
+L'intero rifornimento di polvere è esploso sullo 'Shadow'!
+}
+
+SharlieFinal_48
+{
+Fortuna
+}
+
+SharlieFinal_49
+{
+capitano
+}
+SharlieFinal_50
+{
+di 'Santa Quiteria'
+}
+
+SharlieFinal_51
+{
+father Adrian
+}
+SharlieFinal_52
+{
+
+}
+
+SharlieFinal_53
+{
+Stranger
+}
+SharlieFinal_54
+{
+
+}
+
+SharlieFinal_55
+{
+Nemici in agguato - @<n>
+}
+
+SharlieFinal_56
+{
+Dovrei entrare nella mia cabina
+}
+
+SharlieFinal_57
+{
+Urakan
+}
+SharlieFinal_58
+{
+
+}
+
+SharlieFinal_59
+{
+Kanek
+}
+SharlieFinal_60
+{
+
+}
+
+SharlieFinal_61
+{
+Il tesoro di Itzha è stato aperto
+}
+
+SharlieFinal_62
+{
+La maschera di Kukulcan è distrutta@<NewStr()>I portali vengono eliminati!
+}
+
+SharlieFinal_63
+{
+Diversi giorni sono passati...@<NewStr()>La nave è arrivata alla baia
+}
+
+SharlieFinal_64
+{
+Gaetano
+}
+SharlieFinal_65
+{
+Rosetty
+}
+
+SharlieFinal_66
+{
+C'è voluta mezz'ora@<NewStr()>Hai stabilito la giusta rotta
+}
+
+SharlieFinal_67
+{
+Guardia della Maschera
+}
+SharlieFinal_68
+{
+
+}
+
+SharlieFinal_69
+{
+Il Guardiano si è ripreso completamente!
+}
+
+SharlieFinal_70
+{
+Ti senti più forte
+}
+
+SharlieFinal_71
+{
+Vi sentite più resistenti
+}
+
+SharlieFinal_72
+{
+Ti senti più agile
+}
+
+SharlieFinal_73
+{
+
+}
+SharlieFinal_74
+{
+
+}
+
+SharlieFinal_75
+{
+Ufficiale di bordo @<GetFullName(sld)> ha usato@<sTemp> una pozione Comanche
+}
+
+SharlieFinal_76
+{
+
+}
+SharlieFinal_77
+{
+
+}
+
+SharlieFinal_78
+{
+Ufficiale di bordo @<GetFullName(sld)>  morto@<sTemp> a causa dell'assenza di una pozione Comanche
+}
+
+SharlieFinal_79
+{
+Kukulcan è riuscito a entrare in passato@<NewStr()>Non sei riuscito a fermarlo...
+}
+
+SharlieFinal_80
+{
+captain
+}
+SharlieFinal_81
+{
+Gobart
+}
+
+SharlieFinal_82
+{
+colonel
+}
+SharlieFinal_83
+{
+Kirk
+}
+
+SharlieFinal_84
+{
+Il mondo è cambiato e così ha fatto il tuo eroe@<NewStr()> Ma questa è un'altra storia...
+}
+SharlieFinal_85
+{
+Alonso
+}

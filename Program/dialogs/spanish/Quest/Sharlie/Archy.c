@@ -22,25 +22,25 @@ void ProcessDialogEvent()
 		
 		case "portroyal":
 			dialog.text = "¡Ja, Monsieur de Maure!  ¡Bienvenido a Port Royal!  ¿Todavía me recuerdas?";
-			link.l1 = "Hmm...Eres r. Calhoun, ¿no es así? ¿Henry Calhoun?";
+			link.l1 = "Hmm...Eres Calhoun, ¿no es así? ¿Henry Calhoun?";
 			link.l1.go = "portroyal_1";
 		break;
 		
 		case "portroyal_1":
 			dialog.text = "Casi... Archibald Calhoun.";
-			link.l1 = "Ah, perdonadme, Monsieur. Sí, os recuerdo. Nos encontramos en Cabo Catoche, en la bahía. Vuestro capitán estaba con vos también, William Patterson. Reconocí su escuadrón.";
+			link.l1 = "Ah, perdóname, monsieur. Sí, me acuerdo. Nos encontramos en Cabo Catoche, en la bahía. Tu capitán estaba contigo también, William Paterson. Reconocí su escuadrón.";
 			link.l1.go = "portroyal_2";
 		break;
 		
 		case "portroyal_2":
 			dialog.text = "¡Absolutamente correcto! Por favor, perdone a mi capitán. Siempre es grosero con las personas que no conoce. Lo has hecho excelente, asaltando el fuerte de Diego de Montoya, sobre el cual casualmente hemos afilado nuestras garras...";
-			link.l1 = "Es por el bien de la justicia, debo añadir, que sin los preparativos preliminares mostrados por su capitán, dudo mucho que hubiera podido siquiera acercarme a las ganancias mientras estaba bajo el fuego de los cañones españoles. ¿Encontró su comandante lo que buscaba?";
+			link.l1 = "Es por el bien de la justicia, debo añadir, que sin los preparativos preliminares mostrados por tu capitán, dudo mucho que hubiera podido siquiera acercarme a la entrada, mientras estaba bajo el fuego de los cañones españoles. ¿Encontró tu comandante lo que buscaba?";
 			link.l1.go = "portroyal_3";
 		break;
 		
 		case "portroyal_3":
-			dialog.text = "Sí. Se acurrucó bastante profundamente en las casamatas bajo el fuerte y encontró algún tipo de archivo. Estaba indescriptiblemente contento. Por cierto, si no te importa que pregunte, ¿qué te impulsó a atacar ese fuerte en la jungla?";
-			link.l1 = "Después de ser derrotado por mí en Saint-Pierre, Don Diego comenzó a tramar un plan y terminó organizando un ataque abierto a Cuba. Luego rompió el combate y escapó hacia las colinas hacia el continente. Bueno, decidí deshacerme de ese perro cobarde de una vez por todas, para que nunca más mancillara a los franceses.";
+			dialog.text = "Sí. Buscó profundamente en las casamatas bajo el fuerte, y encontró algún tipo de archivo. Estaba indescriptiblemente contento. Por cierto, si no te importa que pregunte, ¿qué te impulsó a atacar ese fuerte en la jungla?";
+			link.l1 = "Después de ser derrotado por mí en Saint-Pierre, Don Diego comenzó a tramar un plan, y terminó organizando un ataque abierto a Cuba. Luego rompió el combate y escapó a las colinas hacia el continente. Bueno, decidí deshacerme de ese perro cobarde de una vez por todas, para que nunca más mancillara a los franceses.";
 			link.l1.go = "portroyal_4";
 		break;
 		
@@ -51,13 +51,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "portroyal_5":
-			dialog.text = "Qué suerte la mía, es cierto. Aunque se ha convertido en un hombre tan importante estos días, un hombre de la alta sociedad, audiencias, bailes, desfiles y fiestas privadas... No se le puede sacar del palacio del gobernador cada vez que llegamos a Port Royal. De hecho, está allí de nuevo ahora mismo.\nCapitán Charles de Maure, ¿puedes hacerle un favor a un borracho escocés? ¡Únete a mi compañía y charlemos! Estoy harto de ver siempre las mismas caras y pareces ser una buena persona para conversar. Ven a mi casa, relajémonos y tomemos un barril de excelente whisky. ¡Yo invito!";
+			dialog.text = "Qué suerte la mía, es cierto. Aunque se ha convertido en un hombre tan importante estos días, un hombre de la alta sociedad, audiencias, bailes, desfiles y fiestas privadas... No se le puede sacar del palacio del gobernador cada vez que llegamos a Port Royal. De hecho, está allí de nuevo ahora mismo.\nCapitán Charles de Maure, ¿puedes hacerle un favor a un borracho escocés? ¡Únete a mi compañía y charlemos! Estoy harto de ver siempre las mismas caras, y pareces ser una buena persona para charlar. Ven a mi casa, relajémonos y tomemos un barril de excelente whisky. ¡Yo invito!";
 			link.l1 = "Hm... Tentador, pero...";
 			link.l1.go = "portroyal_6";
 		break;
 		
 		case "portroyal_6":
-			dialog.text = "¡Oh, detente, Capitán, tú también necesitas descansar de vez en cuando! Por cierto, tengo unos finos entremeses, directamente de la tienda del comerciante local. Estoy alquilando una habitación justo encima de la tienda. Cuando sientas ganas de comer algo o tomar un trago, simplemente baja las escaleras y está listo, ¡jaja! Conveniente, ¿no es así? ¡Vamos, vamos!";
+			dialog.text = "¡Oh, detente, Capitán, tú también necesitas descansar de vez en cuando! Por cierto, tengo unos finos entremeses, directamente de la tienda del comerciante. Estoy alquilando una habitación justo encima de la tienda. Cuando sientas ganas de comer algo o beber un trago, simplemente ve por las escaleras y listo, ¡ja-ja! Conveniente, ¿no es así? ¡Vamos, vamos!";
 			link.l1 = "¡Me has convencido!";
 			link.l1.go = "portroyal_7";
 		break;
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		case "portroyal_9":
 			LAi_SetSitType(Pchar);
 			dialog.text = "¿Ves qué agradable está aquí? Agradable y frío... ¡Aquí hay unos barriles de whisky! ¡Fondo blanco, Capitán!";
-			link.l1 = "¡Pues, brindemos por nuestro afortunado encuentro y una agradable amistad!";
+			link.l1 = "¡Pues, brindemos por nuestro afortunado encuentro, y una agradable amistad!";
 			link.l1.go = "portroyal_10";
 		break;
 		
@@ -91,31 +91,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "portroyal_11":
-			dialog.text = "Oh, conozco ese sentimiento... Aunque yo mismo llevo aquí mucho tiempo. Y cuando aterricé en esa maldita isla de la que William me salvó... Ohoo, seguramente se siente como si hubiera dicho adiós a la mitad de mi vida allí.";
+			dialog.text = "Oh, conozco ese sentimiento... Aunque yo mismo llevo aquí mucho tiempo. Y cuando desembarqué en esa maldita isla de la que William me salvó... Oh, sentí como si hubiera dicho adiós a la mitad de mi vida en ese lugar.";
 			link.l1 = "¡Interesante! ¿Qué isla era esa?";
 			link.l1.go = "portroyal_12";
 		break;
 		
 		case "portroyal_12":
-			dialog.text = "Willy es un viejo amigo mío, nos conocimos cuando aún respiraba el aire puro de Escocia... Buenos tiempos. Fui lo bastante tonto como para tener una disputa con unos malditos papistas y el mismo Inquisidor, así que organizó un ataque contra mí. En aquel entonces era comerciante, tenía mi propia flauta.\nEh, ese maldito día mi barco fue atacado por los españoles, vestidos de piratas. Luchamos valientemente, pero ¡lograron acorralarnos como ratas! Incluso entonces el viejo Colhaun no perdió la cabeza y saltó por la borda con un barril de agua y unas cuantas tablas.\nUsé la oscuridad y nadé lejos de mi barco, sin ser visto por los soldados. Las posibilidades de supervivencia no eran muy buenas, pero quedarse en el barco significaba no tener ninguna oportunidad. Dos días después llegué a la costa de alguna isla desierta.\nHabía estado viviendo en el Caribe por un tiempo para entonces, y sin embargo, ¡nunca había oído hablar de ella hasta ese momento! Es pequeña y completamente deshabitada... y pasé dos años allí, que parecieron una eternidad. Aún no sé cómo logré mantener mi mente intacta.";
+			dialog.text = "Willy es un viejo amigo mío, nos conocimos cuando aún respiraba el aire puro de Escocia... Buenos tiempos. Fui lo bastante tonto como para tener una disputa con unos malditos papistas, y el mismo Inquisidor, así que organizó un ataque contra mí. En aquel entonces era comerciante, tenía mi propio filibote.\nEh, ese maldito día mi barco fue atacado por los españoles, vestidos de piratas. Luchamos valientemente, pero ¡lograron acorralarnos como ratas! Incluso entonces, el viejo Calhoun no perdió la cabeza y saltó por la borda con un barril de agua y unas cuantas tablas.\nUsé la oscuridad y nadé lejos de mi barco, sin ser visto por los soldados. Las posibilidades de supervivencia no eran muy buenas, pero quedarse en el barco significaba no tener ninguna oportunidad. Dos días después, llegué a la costa de alguna isla desierta.\nHabía estado viviendo en el Caribe por un tiempo para entonces, y sin embargo, ¡nunca había oído hablar de ella hasta ese momento! Es pequeña y completamente deshabitada... y pasé dos años allí, que parecieron una eternidad. Aún no sé cómo logré mantener mi mente intacta.";
 			link.l1 = "¿Viviste dos años en una isla deshabitada?";
 			link.l1.go = "portroyal_13";
 		break;
 		
 		case "portroyal_13":
-			dialog.text = "¡Claro que sí, maldito lugar! Menos mal que había agua fresca. Me alimenté de cangrejos, percebes, peces y aves. Por eso la llamé Isla Cangrejo. No tenía ninguna arma, ¡así que dominé el arpón, la lanza y la flecha como un salvaje! ¡Ohhoo! Bebe, bebe, Capitán. No me importa mojar mi silbato también...";
+			dialog.text = "¡Claro que sí, maldito lugar! Menos mal que había agua fresca. Me alimenté de cangrejos, percebes, peces y aves. Por eso la llamé Isla Cangrejo. No tenía ninguna arma, ¡así que dominé el arpón, la lanza y la flecha como un salvaje! ¡Oh-hoo! Bebe, bebe, capitán. No me importa mojar mi silbato también...";
 			link.l1 = "Sí... No te envidio.";
 			link.l1.go = "portroyal_14";
 		break;
 		
 		case "portroyal_14":
-			dialog.text = "¡Ahí lo tienes! Eso es exactamente lo que dije cuando puse el pie en la playa de ese gran trozo de arena: 'Viejo Archy, tu situación no es envidiable, ¡pero tampoco es desesperada!' ¿Y sabes qué me mantuvo con vida, Capitán?";
+			dialog.text = "¡Ahí lo tienes! Eso es exactamente lo que dije cuando puse el pie en la playa de ese gran trozo de arena: 'Viejo Archy, tu situación no es envidiable, ¡pero tampoco es desesperada!' ¿Y sabes qué me mantuvo con vida, capitán?";
 			link.l1 = "¿Un barco pasando cerca de la isla?";
 			link.l1.go = "portroyal_15";
 		break;
 		
 		case "portroyal_15":
-			dialog.text = "¡No! ¡El trabajo me salvó! ¡Trabajo, fe y un deseo de vivir! Exploré toda la isla, cada rincón de ella y fui recompensado con un cofre, lleno de herramientas de carpintero, accesorios de escritura y otras cositas. ¿Sabes qué me dije en ese momento? ¡Sirve más, Capitán, solo sirve!\nDije: Archie, debes trabajar para mantener tu mente en su lugar y Dios te ha dado todo para empezar a hacerlo. ¿Ves ahora? Comencé a construir una casa cerca de una bahía y ¿sabes qué? ¡Me salvó de pensamientos oscuros y me dio una razón para vivir!";
+			dialog.text = "¡No! ¡El trabajo me salvó! ¡Trabajo, fe y un deseo de vivir! Exploré toda la isla, cada rincón de ella y fui recompensado con un cofre, lleno de herramientas de carpintero, accesorios de escritura y otras cositas. ¿Sabes qué me dije en ese momento? ¡Sirve más, capitán, sólo sirve!\nDije: Archie, debes trabajar para mantener tu mente en su lugar, y Dios te ha dado todo para empezar a hacerlo. ¿Ves ahora? Comencé a construir una casa cerca de una bahía y ¿sabes qué? ¡Me salvó de pensamientos oscuros y me dio una razón para vivir!";
 			link.l1 = "Eres una inspiración viviente, Sr. Calhoun. No todos los hombres serían capaces de hacer mucho, si es que algo, en una situación como esa...";
 			link.l1.go = "portroyal_16";
 		break;
@@ -133,8 +133,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "portroyal_18":
-			dialog.text = "Estoy harto de ser independiente. Willy es joven y exitoso, y también soy su amigo desde hace mucho tiempo. ¿Qué más necesito? No, estaré con Willy hasta el fin de mis días, o al menos hasta que me eche la próxima vez que me emborrache, ¡jaja! Hablando de emborracharse, ¡sírveme otra!";
-			link.l1 = "Akh... (bebiendo) Dígame, Sr. Calhoun. Escuché que usted, eh, solía ser un cazador de tesoros. ¿Es cierto o es solo un disparate?";
+			dialog.text = "Estoy harto de ser independiente. Willy es joven y exitoso, y también soy su amigo desde hace mucho tiempo. ¿Qué más necesito? No, estaré con Willy hasta el fin de mis días, o al menos hasta que me eche la próxima vez que me emborrache, ¡ja-ja! Hablando de emborracharse, ¡sírveme otra!";
+			link.l1 = "Agh... (bebiendo) Dime, Sr. Calhoun. Escuché que, eh, solías ser un cazador de tesoros. ¿Es cierto o es solo un disparate?";
 			link.l1.go = "portroyal_19";
 		break;
 		

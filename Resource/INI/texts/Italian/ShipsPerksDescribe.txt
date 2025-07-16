@@ -1,0 +1,282 @@
+new_string {
+
+}
+
+special0 {Mercantile}
+
+special0_desc 
+{
+Una nave mercantile di solito sacrifica calibro, velocità e numero di cannoni a favore di una grande stiva. Solo un capitano molto esperto può permettersi un viaggio in solitaria su una nave del genere.
+}
+
+special0_desc2 
+{
+Bonus alla Potenza della Flotta: basso
+}
+
+special1 {Militare}
+
+special1_desc 
+{
+Le navi militari sono progettate appositamente per le battaglie navali. Hanno lo scafo più resistente e il calibro più grande, ma tale potenza di fuoco limita la velocità.
+}
+
+special1_desc2
+{
+Bonus alla Potenza della Flotta: molto alto.
+}
+
+special2 {Corsara}
+
+special2_desc 
+{
+Le navi corsare sono ideali per incursioni e pirateria: agili, manovrabili e ben armate, rappresentano una forza temibile, ma pagano con una stiva piccola e uno scafo modesto.
+}
+
+special2_desc2 
+{
+Bonus alla Potenza della Flotta: alto.
+}
+
+special3 {Multiruolo}
+
+special3_desc 
+{
+Le navi multiruolo sono la scelta dei capitani che vogliono fare tutto insieme. Sono ugualmente adatte al commercio, alla pirateria e alla guerra, ma tale flessibilità le rende relativamente peggiori di qualsiasi nave specializzata. Almeno finché non finiscono nelle mani di un maestro costruttore navale.
+}
+
+special3_desc2 
+{
+Bonus alla Potenza della Flotta: medio
+Bonus al miglioramento delle statistiche: 15%
+}
+
+trait01 {Carta delle correnti}
+
+trait01_desc 
+{
+Strumenti di navigazione complessi realizzati su misura da maestri europei e una mappa precisa delle correnti sottomarine dell'arcipelago consentono di risparmiare molto tempo durante i viaggi.
+}
+
+trait01_desc2 
+{
+Aumenta la velocità di navigazione sulla mappa globale del 5%.
+Cumulabile con tutti gli altri bonus.
+}
+
+trait02 {Imballaggio di qualità}
+
+trait02_desc 
+{
+Una revisione completa della stiva, dello spessore delle paratie e la standardizzazione del sistema di stoccaggio consentono di trasportare più carico e distribuirlo meglio sulla nave senza creare squilibri.
+}
+
+trait02_desc2 
+{
+Riduce la penalità di velocità dovuta al carico della stiva: 15%.
+}
+
+trait03 {Marchio di qualità}
+
+trait03_desc 
+{
+Un insieme di glifi, sigilli e brevetti rende il carico di questa nave riconoscibile, e il suo arrivo in porto è un buon segno per i mercanti locali. Gli accordi commerciali di successo migliorano le relazioni con la nazione del porto, e buone relazioni rendono il commercio più redditizio.
+}
+
+trait03_desc2 
+{
+Riduce la penalità di vendita: 3% per livello di relazione.
+Soglia di profitto per migliorare le relazioni con la nazione: 25000.
+}
+
+trait04 {Vele di emergenza}
+
+trait04_desc 
+{
+In caso di pericolo critico per la nave, i marinai montano speciali vele a montaggio rapido sulle verghe e le issano, aumentando temporaneamente la velocità della nave.
+}
+
+trait04_desc2 
+{
+Soglia di integrità dello scafo per l'attivazione: 40%.
+Aumento della velocità: 20%.
+Ritardo dell'effetto durante la riparazione sopra la soglia: 20 secondi.
+}
+
+trait05 {Documenti falsi}
+
+trait05_desc 
+{
+Un impressionante insieme di brevetti, documenti e targhe consente a questa nave di entrare incognita in quasi tutti i porti, e lo scafo discreto riduce il rischio di incontrare pattuglie durante le operazioni di contrabbando.
+}
+
+trait05_desc2 
+{
+Aumenta la probabilità di inganno: 15%.
+Riduce la probabilità di incontrare una pattuglia: 50%.
+}
+
+trait11 {Affusti girevoli}
+
+trait11_desc
+{
+I portelli e gli affusti dei cannoni sono stati appositamente ricostruiti, aumentando il settore di tiro dei cannoni.
+}
+
+trait11_desc2
+{
+Aumenta il settore di tiro: 7 gradi.
+}
+
+trait12 {Sistema di rinculo migliorato}
+
+trait12_desc
+{
+Un sistema migliorato di blocchi e compensatori consente di sparare rapidamente dallo stesso lato, utilizzando l'inerzia del rinculo per accelerare il ricaricamento e la mira.
+}
+
+trait12_desc2
+{
+Aumenta i danni e la velocità di ricarica: 6% per salva.
+Bonus massimo: 35%.
+Il bonus scompare sparando con qualsiasi altro lato.
+}
+
+trait13 {Sbarco rapido}
+
+trait13_desc
+{
+Le caratteristiche di progettazione della nave e il sistema di verricelli consentono di sbarcare le truppe in movimento, permettendo di iniziare l'assalto molto prima senza mettere in pericolo l'equipaggio.
+}
+
+trait13_desc2
+{
+Riduce la soglia di cannoni distrutti per l'assalto alla fortezza: 15%.
+}
+
+trait14 {Verniciatura da guerra}
+
+trait14_desc
+{
+I segni brillanti delle incursioni riuscite sullo scafo e le regolari tangenti alle persone giuste rendono molto più facile l'estorsione, trasformando la nave in una leggenda temibile. I governatori sono più disposti a condividere denaro e beni, e le nazioni offrono riscatti più alti per i capitani.
+}
+
+trait14_desc2
+{
+Bonus al valore del riscatto: 35%.
+Bonus al valore dei magazzini durante i saccheggi delle colonie: 15%.
+}
+
+trait21 {Colpisci e fuggi}
+
+trait21_desc
+{
+Un centro di gravità spostato, linee dello scafo affilate e una speciale riconfigurazione dei portelli dei cannoni aumentano la capacità della nave di superare le onde e la stabilità durante il rinculo dei cannoni, aumentando i limiti di velocità consentiti durante la battaglia.
+}
+
+trait21_desc2
+{
+Bonus alla velocità della nave per lato scarico: 5%.
+Il bonus diminuisce gradualmente durante il caricamento.
+}
+
+trait22 {Saccheggio}
+
+trait22_desc
+{
+Sulla nave vigono regole speciali per il recupero dei materiali dalle navi abbordate. Affondare una nave tramite abbordaggio ripristina l'integrità dello scafo e delle vele. La quantità ripristinata dipende dalla quantità e qualità dei materiali, dal grado di danno e dalla differenza di classe.
+}
+
+trait22_desc2
+{
+Ripristino dello scafo: 5–15%.
+Ripristino delle vele: 12% (gli alberi non vengono ripristinati).
+}
+
+trait23 {Veloce e mortale}
+
+trait23_desc
+{
+L'equipaggio segue una formazione obbligatoria per cancellare le tracce e la furtività. Riduce l'impatto della pirateria sulle relazioni con le nazioni e il recupero della reputazione diventa più efficace.
+}
+
+trait23_desc2
+{
+Riduce le penalità alle relazioni: 50%.
+Aumenta l'efficacia degli avvocati: 50%. 
+}
+
+trait24 {Proiettili incendiari}
+
+trait24_desc
+{
+I cannoni di caccia e di ritirata sono appositamente temprati per resistere alle alte temperature, e i loro portelli sono trattati con una miscela speciale contro gli incendi.
+Ciò consente l'uso di miscele incendiarie con qualsiasi munizione universale, infliggendo danni periodici alle navi nemiche.
+}
+
+trait24_desc2
+{
+Danni aggiuntivi a scafo e vele: 200%.
+Durata dell'effetto: 15 secondi.
+Aumenta la probabilità di incendio: 200%
+}
+
+sp1 {Zelota}
+
+sp1_desc
+{
+Una cappella di coperta attrezzata, insieme a icone della Vergine Maria, rafforza misteriosamente gli effetti e la durata degli amuleti della chiesa.
+}
+
+sp1_desc2
+{
+Rafforzamento di ogni amuleto: individuale.
+Aumento della durata: 15 giorni.
+}
+
+sp2 {Benvenuto ospite}
+
+sp2_desc
+{
+Questa nave leggendaria è conosciuta in ogni angolo dell'arcipelago caraibico ed è accolta ovunque con rispetto e ammirazione. La posizione della Lady Beth è immediatamente nota ai venditori di mappe, e i mercanti locali cercano di raccogliere tutto il capitale possibile per acquistare oggetti di valore.
+}
+
+sp2_desc2
+{
+Bonus alla probabilità di apparizione di un venditore di mappe: 5–12%.
+Aumento della riserva di pesos: 100%.
+Aumento della riserva di dobloni: ~30%.
+}
+
+sp3 {Crogiolo}
+
+sp3_desc
+{
+Su questa nave, la vita umana è solo una breve tappa prima che si riveli il vero potere. Pochi attraversano la Soglia e tornano, ma chi ci riesce non teme più la morte.
+}
+
+sp3_desc2
+{
+I marinai caduti aumentano l’esperienza e il morale dell’equipaggio.
+}
+
+sp3_SailorsBoardingBonus_desc
+{
+Bonus esperienza all’abbordaggio: #dSailorsBoardingBonus#%
+}
+
+sp3_SailorsBoardingBonus1_desc
+{
+~ (#dDeadSailors#/500 marinai caduti)
+}
+
+sp3_SurrenderChanceBonus_desc
+{
+Aumento probabilità di resa: #dSurrenderChanceBonus#%
+}
+
+sp3_SurrenderChanceBonus1_desc
+{
+~ (#dDeadSailors#/2000 marinai caduti)
+}
+

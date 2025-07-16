@@ -1,302 +1,334 @@
 ﻿newline  {
 
+
 }
 
-Key Layout {Раскладка}
+
+Key Layout {Key Layout}
 Key Layout_descr
 {
-Альтернативная раскладка содержит ряд изменений в управлении, добавляет новые команды и открывает новые возможности:
+The alternative key layout changes some controls, adds new commands, and unlocks extra features:
 ~
-- изменены команды быстрых действий и обыск трупов
-- изменено использование усиляющих зелий
-- вкладки меню персонажа доступны на отдельные клавиши
+- quick action and loot commands are updated
+- potion use is now different
+- every character window has its own hotkey
 }
 
-OptKurs {Point of Sail}
+
+OptKurs {Off-bow Angle}
 OptKurs_descr
 {
-Black arrows on the mini-map show the course at which your ship will move at maximum speed.
+Black arrows on the mini-map show the course where your ship will reach top speed.
 ~
-Some types of ships are capable of sailing almost against the wind, which is useful when you need to catch up with a merchant or escape from a warship.
+Some ships can sail almost against the wind, which is handy for chasing traders or escaping warships.
 ~
-The wind constantly changes its strength and direction. Try to adapt and adjust your course, finding a compromise between the optimal course angle and the direction to your target.
+The wind is always shifting in strength and direction. Adjust your course to balance the best sailing angle with your destination.
 }
 
-SeaTimeScaleUp {Time Control}
+
+SeaTimeScaleUp {Time Acceleration}
 SeaTimeScaleUp_descr
 {
-Make the use of acceleration - it saves time, especially at sea.
+Use time acceleration to save time, especially at sea.
 ~
 Controls: + and -
 }
+SeaTimeScaleUp_controlsimg1{TimeScaleFasterBA}
+SeaTimeScaleUp_controlsimg2{TimeScaleSlowerBA}
 
 SeaFastTravel {Fast Travel}
 SeaFastTravel_descr
 {
-The action menu opens up many useful functions both on land and at sea.
+The action menu gives you access to many useful features both on land and at sea.
 ~
-The 'Sail To' function allows you to fast travel instantly next to a friendly ship or geographical point. The fast travel distance can be increased by using rarer and more expensive spyglasses.
+The 'Sail To' function lets you instantly move near a friendly ship or landmark. You can increase the range with rarer, more expensive spyglasses.
 ~
-Use the action menu to instantly reach the "Ghost" and then send a longboat to her.
+Use the action menu to quickly reach the 'Ghost' and send a boat to it.
 }
+SeaFastTravel_controlsimg1{BICommandsActivate}                                                        
 
-SeaFastTravel_controlsimg1 {BICommandsActivate}
 
-LandTimeScaleDown {Combat Time Control}
+LandTimeScaleDown {Time Slowdown}
 LandTimeScaleDown_descr
 {
-Sometimes it makes sense to slow down time - especially during tough fights. Caribbean Legend is a hard game to master, so use everything you can to gain an edge.
+In tough fights, slowing down time can really help. There's no shame in it—Caribbean Legend is a challenging game.
 ~
 Controls: + and -
 }
+LandTimeScaleDown_controlsimg1{TimeScaleFasterBA}
+LandTimeScaleDown_controlsimg2{TimeScaleSlowerBA}
+
 
 GuideFight {Land Combat}
 GuideFight_descr
 {
-It will take time to master the land combat in the game. If you have control hints enabled, you will see the hotkeys in the lower right corner of the screen.
+It takes time to master combat in this game. If hints are enabled, you'll see hotkeys in the bottom right corner.
 ~
-Try to master the 'Parry - Strike' combination first. Successfully parrying an opponent's attack will stun them and make them lose energy, giving you the opportunity to safely attack.
+Start by learning the 'Parry - Slash' combo. Parrying an enemy attack stuns them and drains their energy, giving you a safe opening to strike.
 ~
-Use different types of attacks to understand which deals the most damage. Each weapon in the game has its preferred type of attack. Experiment!
+Damage depends on your character's skills, weapon quality, amulets, and attack types.
 }
 
-GuideFight_controlsimg1 {ChrAttackChoseBase}
-GuideFight_controlsimg2 {ChrAttackBase}		
 
-OneToOneCave {Use of Terrain}
+GuideFight_controlsimg1{ChrAttackChoseBase}
+GuideFight_controlsimg2{ChrAttackBase}                                                           
+
+
+OneToOneCave {Using the Environment}
 OneToOneCave_descr
 {
-If you are outnumbered, try to use the environment to gain an advantage in battle.
+If you're outnumbered, use the terrain to your advantage.
 ~
-You can almost always find a place where you can force the enemy to fight you one-on-one or two at a time.
+You can almost always find a spot where enemies are forced to fight you one or two at a time.
 }
 
-OneToOneBoarding {Use of Terrain}
+
+OneToOneBoarding {Using the Environment}
 OneToOneBoarding_descr
 {
-If you are outnumbered, try to use the environment to gain an advantage in battle.
+If you're outnumbered, use the terrain to your advantage.
 ~
-You can almost always find a place where you can force the enemy to fight you one-on-one or two at a time.
+You can almost always find a spot where enemies are forced to fight you one or two at a time.
 }
 
-Collision {Position Change}
+
+Collision {Changing Position}
 Collision_descr
 {
-Sometimes during battle, there is a need to change position by breaking through the enemy's line or by maneuvering around allies.
+Sometimes in battle, you need to change position—break through enemy lines or get around allies.
 ~
-Your hero will automatically push aside allies, and to break through the enemy's formation, you need to use sprinting or dashes.
-In battle, sprinting consumes energy, so use it wisely.
+Your hero automatically pushes past allies, but must sprint or dodge to get through enemies.
+Sprinting in combat uses energy, so use it wisely.
 }
-Collision_controlsimg1 {ChrFightMode}
 
-WorldMap {Global Map}
+
+Collision_controlsimg1 {ChrFightMode}
+Collision_controlsimg2 {ChrSprint}
+
+
+
+WorldMap {World Map}
 WorldMap_descr
 {
-The global map allows you to make sea voyages across the Caribbean. It is not necessary to sail exactly to each city or bay; just exit the global map in the vicinity of your target and use the 'Sail To' function.
+The world map lets you travel by sea across the game world. You don't have to sail to every city or bay—just exit the world map near your target and use 'Sail To'.
 ~
-Skillful use of the 'Sail to' function can significantly save time. For example, you can exit the global map on one side of the island, fast travel to reach a point on the other side, and then return to the global map.
+Smart use of 'Sail To' can save a lot of real time. For example, you can exit the world map on one side of an island, fast travel to a bay on the other side, and then return to the world map from there.
 ~
-Use hotkeys to zoom out on the map and to display the Atlas with maps.
+Use hotkeys to zoom the map and open the atlas.
 }
 
-WorldMap_controlsimg1 {WMapCameraSwitch}
-WorldMap_controlsimg2 {MapView}
 
-LandMap {Traveling on Land}
+WorldMap_controlsimg1{WMapCameraSwitch}
+WorldMap_controlsimg2{MapView}
+
+
+LandMap {Land Navigation}
 LandMap_descr
 {
-Maps can be bought or found. Collect every island map you encounter to navigate around the landmass. This is especially useful in quests, colony infiltrations, and treasure hunting.
-All collected maps can be found in the Atlas. 
+Traveling on land is easier if you use the island map. This is especially helpful for quests, sneaking, and treasure hunting.
+All available maps are in the Atlas.
+You can buy or find maps.
 }
 
-LandMap_controlsimg1 {MapView}
 
-Navigator {Navigation Skill}
+LandMap_controlsimg1{MapView}
+
+
+Navigator {Navigation}
 Navigator_descr
 {
-Assign a Navigator with a sufficient Navigation skill!
+Assign a navigator with high Navigation skill!
 ~
-Navigation primarily determines the size of ships that the character can manage.
+Navigation mainly determines the size of ships a character can command.
 ~
-For example, the fifth rank requires 25 points, while the fourth requires 45. Exceeding this limit will result in penalties to all character stats and skills.
+For example, Rate 5 ships require 25 points, Rate 4 needs 45. Exceeding these limits gives penalties to all character stats.
 ~
-Requirements for each ship rank can be seen by right-clicking on the Navigation skill icon in the character window.
-~
-The Navigation skill grows slowly, so hire experienced navigators in taverns at your first opportunity. However, keep in mind that you won't be able to find a specialist with a skill level above 75.
+You can see the requirements for each Rate by right-clicking the skill icon in the character window.
 }
+
 
 Navigator_controlsimg1 {Abilities}
 
-Alchemy {Crafting}
+
+Alchemy {Alchemy}
 Alchemy_descr
 {
-Manufacturing items, primarily talismans, potions, and ammunition, can significantly ease your life. This is especially useful in boss fights.
+Crafting items—especially talismans, potions, and ammo—can make your life much easier, especially in boss fights.
 ~
-To manufacture an item, you need to find or buy a recipe. Ingredients do not necessarily have to be carried with you; you can confidently buy various junk from street merchants and store it in one of the chests in the cabin.
+To craft an item, you need to find or buy a recipe. You don't have to carry ingredients with you—just stash them in a chest in your cabin.
 ~
-At the beginning of the game, you have a choice: take the Alchemy skill and start buying recipes right away, or postpone this possibility until the mid-game, when you will have toolkits which will substitute for spending a valuable skill point on Alchemy.
+Early in the game, you can choose to take the Alchemy perk and start collecting recipes, or wait until mid-game when you have toolkits and don't need to spend a valuable perk point on Alchemy.
 }
 
-Alchemy_controlsimg1 {Alchemy}
+
+Alchemy_controlsimg1{Alchemy}
+
 
 LandMapAtSea {}
 LandMapAtSea_descr
 {
-Head to the opposite side of the island to complete your quest. Exit the bay to the right and stick to the shoreline!
+Your objective is on the other side of the island. Leave the bay to the right and follow the coast!
 }
+
 
 Salary {Ship Upkeep}
 Salary_descr
 {
-Monthly payments to officers and crew can significantly complicate the captain's life. The total amount depends on your Trading and Leadership skills, the ship's size, and the difficulty level.
+You pay your officers and crew every month, which can be a real challenge for a captain.
 ~
-Even on small ships, it's highly recommended to have a purser on board, while a large warship can bankrupt even a country. If the loot-sharing option is enabled, the payment amount can be even higher.
-
+The total depends on your Trading and Leadership skills, ship Rate, and difficulty level. Even small ships should have a Purser on board, and a big warship can bankrupt a country.
+~
+If loot sharing is enabled, payouts can be even higher.
 }
 
+
 Salary_controlsimg1 {ShipState}
+
 
 Dubloons {Doubloons}
 Dubloons_descr
 {
-Golden doubloons are the true measure of your character's wealth and ability to solve problems with money. Always strive to earn these coins, as the most powerful people in the Caribbean only offer their services for doubloons.
+Gold doubloons are the true measure of your wealth and your ability to solve problems with money. They're usually kept in small chests, which you can open from the crafting panel in the action menu. You can also fill these chests there if you have enough doubloons.
 ~
-Good sources of doubloons include treasure hunting, bank deposits, trading strategic goods, and exchanging currency at moneylenders. You don't need to carry gold with you; you can store it in one of the chests in your cabin.
-
+Always try to earn these gold coins—only the most powerful people in the Caribbean will help you for doubloons.
+~
+Good sources of doubloons include treasure, bank deposits, trading strategic goods, and moneylenders.
+~
+You don't have to carry gold with you—just keep it in a chest in your cabin.
 }
+
+
+Dubloons_controlsimg1 {LICommandsActivate}
+
+
 
 Box {Item Storage}
 Box_descr
 {
-The chests in your cabin can store an unlimited number of personal items. Besides mandatory equipment in your outfit slots, it's wise to carry only potions, amulets, and ammo with you.
+You can store unlimited personal items in the captain's cabin chests.
 ~
-Sell excess items, but always stash a reasonable reserve of jewelry, weapons, ammunition, and alchemy ingredients.
+Sell off extras, but always keep a stash of gems, weapons, ammo, and alchemy ingredients in your cabin.
 ~
-Other captains also follow this practice, so it's always worth searching the chests in the cabin of a captured ship.
-
+Besides your main gear, it's smart to carry just a set of potions, amulets, and bullets for your firearms.
+~
+Other captains do the same, so always loot the chests in any captured ship's cabin.
 }
 
-Health {Vitality}
+
+Health {Vitality Drop}
 Health_descr
 {
-Your Vitality has decreased! This stat describes your character's general condition and affects all their abilities.
+Your 'Vitality' has dropped! This stat shows your character's overall condition and affects all attributes.
 ~
-Vitality decreases from using primitive healing methods, dramatic story events, drunkenness, and overloading. 
+'Vitality' drops from using basic healing, story events, drinking, and overloading.
 ~
-It is restored by special potions, romantic activities, resting in a tavern, and simply over time. In severe cases, priests can help. Unique officers also lose Vitality if they are injured in combat, but they recover it over time.
-
+Restore it with special potions, romance, resting at the tavern, or just over time. In tough cases, priests can help.
+~
+Unique officers also lose 'Vitality' if badly wounded in battle. Luckily, they recover it on their own.
 }
+
 
 Amulet {Amulets}
 Amulet_descr
 {
-Amulets are powerful character boosters divided into offensive, defensive, and auxiliary. You cannot equip offensive and defensive amulets simultaneously, so choose wisely.
+Amulets are powerful boosters for your character and come in offensive, defensive, and support types. You can't equip an offensive and defensive amulet at the same time, so choose your sets wisely.
 ~
-In addition to amulets, there are talismans and wards. Talismans last longer and have more extensive effects, while wards are immensely powerful, act indefinitely, and have a separate inventory slot.
+There are also two other types of boosters: talismans and charms.
 ~
-Always keep several sets of boosters in your inventory for difficult skill checks and tough battles at sea and on land.
-
+Talismans last longer than amulets and have broader effects, while charms are extremely powerful, last forever, and have their own inventory slot.
+~
+Always keep a few sets in your inventory for tough skill checks and hard fights at sea and on land.
 }
 
+
 Amulet_controlsimg1 {Inventory}
+
 
 Perk {Perk Points}
 Perk_descr
 {
-You've just received your first perk point (PP)! PPs are crucial for character development and are divided into Naval and Personal.
+You've just earned your first Perk Point (PP)! They're the most important part of character progression and are split into sea and personal perks.
 ~
-Naval Perks make you more dangerous at sea, while Personal Perks make you more effective on land and in interactions with people.
+Sea perks make you stronger at sea, personal perks help on land and in conversations.
 ~
-Both types of PP develop independently as your skills grow. On average, every 30 skill points in one group give you one PP.
+Both types of PP level up separately as your personal and ship skills grow. On average, every 30 points in a skill group gives you one PP.
 ~
-To quickly gain Naval PP, complete sea side quests and contracts. Personal points grow faster if you fight with different weapons and spend quality time in taverns. Remember, personal PP is more valuable since most Naval Perks can be covered by your officers.
-
+To get sea PP quickly, do ship contracts and charters. Personal PP grow faster if you fight with different weapons and spend time in taverns.
+~
+Personal PP are much more valuable, since most sea perks can be covered by officers.
 }
+
 
 Perk_controlsimg1 {Abilities}
 
-Fighter {Vanguards}
+
+Fighter {Vanguard}
 Fighter_descr
 {
-Your first Vanguard has joined the crew! Assign him via the Character Menu.
+Vanguards are your most trusted officers, bodyguards, and front line. They'll follow you into the thick of it, and you'll spend a lot of time with them.
 ~
-Vanguards are your most trusted officers, bodyguards, and boarders. They will follow you into the thick of the fight, and you'll spend most of your time with them.
+You can have up to three fighters with you. Besides guarding the captain on land, the vanguard boosts boarding efficiency and helps haul heavy treasure.
 ~
-You can lead up to three fighters at a time. Besides protecting you on land, Vanguards increase boarding efficiency and help carry heavy treasures.
+Some unique officers can only be found in quests. Not all are great vanguards, but they all impact the story and can't die in normal combat.
 ~
-Unique quest officers are different from regular sailors you can hire in taverns. Though not all are effective Vanguards, they significantly impact the game's storyline and cannot die in regular combat.
+Don't forget to equip your people with amulets, healing, weapons, and ammo. You can swap items via the action menu or any chest.
 ~
-Always equip your Vanguards with amulets, healing items, weapons, and ammunition. You can exchange items through the action menu or any chest.
-~
-You can order the Vanguards to hold their position, follow the captain, or attack using hotkeys or through dialogue.
-
+You can order vanguards to hold position, follow, or attack using hotkeys or dialogue.
 }
+
 
 Fighter_controlsimg1 {Abilities}
 Fighter_controlsimg2 {OfficersFollow}
 Fighter_controlsimg3 {OfficersCharge}
 Fighter_controlsimg4 {OfficersHold}
 
-Rest {Rest Option}
+
+Rest {Time of Day}
 Rest_descr
 {
-The Rest option is now available in the Action Menu!
+You can change the time of day!
 ~
-Everything in the game follows a time cycle: guards are absent at the pier and city gates at night, you can only hire a crew in taverns during the day, and some characters are very particular about the time of day.
+Everything in the game follows time: at night, guards leave the docks and city gates, you can only hire crew in taverns during the day, and some characters are picky about the time, especially if you're working for them.
 ~
-Use this function at sea and in the wild. Rent a room in a tavern if you are in a city.
-
+Use this feature freely at sea and in the wild, but in cities, it's best to sleep at the tavern.
 }
+
+
 Rest_controlsimg1{BICommandsActivate}
 
-Navigation{Ship Control}
-Navigation_descr
-{
-Use the sail control keys to change the sail mode and the turn keys to change the course.
-~
-There are three sail modes: Full Sails, Battle Sails, and Furled Sails.
-~
-Full Sails mode allows maximum speed but you will turn slower and your ship's sail will be most vulnerable in battles and storms.
-~
-Battle Sails mode limits speed but improves turning, artillery accuracy, and gives your sails better protection from enemy fire.
-~
-Furled Sails mode gradually slows the ship to a complete stop. Very useful for boarding or collecting valuables from the sea.
-~
-The golden rule: in battle - Battle Sails mode is preferred; outside of battle - Full Sails Mode.
-
-}
-
-Navigation_controlsimg1 {Ship_SailUp}
-Navigation_controlsimg2 {Ship_SailDown}
-Navigation_controlsimg3 {MiniMapZoomIn}
-Navigation_controlsimg4 {MiniMapZoomOut}
 
 Stealth{Stealth}
 Stealth_descr
 {
-You are not welcome in most of the Caribbean settlements. There are two ways to infiltrate a city: through the port or the gates.
+You'll have to get used to being unwelcome in most Caribbean settlements.
 ~
-Safe docking in an enemy port requires preparation. Raise the flag of a non-hostile country and have a high Stealth skill level before you risk appearing before fort guns.
+There are two ways to sneak into a hostile city: through the port or the gates.
 ~
-Entering through the city gates is best done at night when they aren't guarded. Avoid soldiers and spend the night in a tavern. If you raise an alarm, find an empty house and wait there for a couple of hours before trying again.
+Docking safely in an enemy port takes serious prep. You'll need to fly a non-hostile flag and have a high enough Stealth skill.
 ~
-Buying a trading license in Curacao is a safe option to travel around the region if your Stealth skill is low.
+Going through the gates is best done at night when they're unguarded. Avoid soldiers and rest in a tavern. If there's an alarm, find a house and wait a few hours. The plus side is you don't have to spend a valuable perk point to unlock flags.
+~
+You can skip all these problems by buying a trading company license in Curaçao and spending a sea perk point on a neutral flag.
 }
 
-SeaBattle{Naval Combat}
+
+SeaBattle{Sea Battle}
 SeaBattle_descr
 {
-The gist of any naval combat is to maintain your optimal course angle, preserve your sails, and damage the enemy's.
+Welcome to sea battle, Captain!
+Your main goal: survive and sink enemy ships.
 ~
-Use round shot and chain shot for the latter. Round shots have the longest range and deal moderate damage to hull and sails. One successful volley of chain shots at medium range can destroy the enemy's sails.
+Every ship has three main stats: hull, sails, and crew. If the hull hits zero, the ship sinks. Damaged sails slow you down, and losing crew makes boarding easier and slows all ship actions.
 ~
-For higher accuracy, use First Person Mode after ensuring your ship isn't too rocked by waves or recent maneuvers. If you damage the enemy's sails and preserve yours, you have three options: boarding, sinking, or fleeing.
+Each stat has its own best ammo: grapeshot for crew, chain shot for sails and masts, bombs for the hull. Cannonballs are all-purpose with the longest range. Damage depends on both ammo type and the gun firing it—the bigger the gun, the more damage.
 ~
-Exceeding a distance of a thousand yards from the nearest enemy ship lets you enter the global map and flee.
+There are two main firing modes. Quick shot is available when the enemy is in your firing arc. It's not very accurate or effective early on, but lets you fight dynamically. Aimed shot is activated with the aim button and lets you fire very accurately from the side. It takes practice, but it's worth it.
 ~
-Sinking an enemy ship is easiest with bombs at close range. Effective long-range shooting with round shots is for experienced captains and cannoneers. Typically, a need to sink an enemy ship is rare, with battles mostly focused on boarding or fleeing.
-
+Avoid enemy fire and target sails and masts first—this makes enemies much less dangerous.
+~
+Each ship, depending on its rig, has an optimal course relative to the wind for max speed. This is shown by black arrows on the compass. Using your ship's strengths is the key to winning sea battles.
 }
+
 
 SeaBattle_controlsimg1 {hk_charge1}
 SeaBattle_controlsimg2 {hk_charge2}
@@ -305,82 +337,329 @@ SeaBattle_controlsimg4 {hk_charge4}
 SeaBattle_controlsimg5 {Sea_CameraSwitch}
 SeaBattle_controlsimg6 {Ship_Fire}
 
+
 BoardingTactics{Boarding}
 BoardingTactics_descr
 {
-Before going for boarding, fire a few volleys of grapeshot to weaken the enemy crew without receiving the same response. Once you have the advantage, approach the enemy ship, match its speed, and engage!
+Before boarding, fire a couple of grapeshot volleys to weaken the enemy crew—without taking return fire. Once you have the advantage, get as close as possible, match speed, and board!
 ~
-The higher your Boarding Skill, the easier it will be to successfully grapple with the enemy ship. Boarding efficiency depends on your crew's size, skills, and morale.
+The higher your 'Vanguard' sea skill, the easier it is to grapple enemy ships.
 ~
-Having an experienced boatswain, vanguards, amulets, and developed personal combat skills can offset the enemy's numerical advantage.
+Boarding success depends on your crew's numbers, skills, and morale. Having an experienced boatswain, vanguards, amulets, and strong combat skills can offset enemy numbers.
 }
+
 
 Mushket{Muskets}
 Mushket_descr
 {
-Long-barreled firearms are extremely dangerous in battle. Only the main character with the Musketeer Skill and some unique officers can use them. 
-The most notable example is Tichingitu, and he should be the one who gets the first musket you find.
+Long-barreled firearms are deadly in combat. Only the main character with the "Musketeer" perk, and some unique officers, can use them. The best example is Teachingitu—give him your first musket.
 ~
-Unlike melee weapons, firearms offer greater flexibility. By developing your character as a marksman, wearing certain amulets and equipment, and using different types of ammunition, you can turn the tide of any battle.
-
+Unlike melee weapons, all firearms are very flexible—develop your character as a shooter, equip certain amulets and gear, and use different ammo types to turn any fight around.
 }
+
 
 Mushket_controlsimg1 {Inventory}
 
-CameraControl{Ahoy!}
-CameraControl_descr
-{
-Welcome to Story Mode.
-Before you brave the open sea, you must survive the land. The New World suffers no fools - and offers no second chances.
-~
-To help you find your sea legs, we've prepared a tutorial adventure on the island of Martinique. There, you'll master the skills every captain must know - and earn your first command.
-~
-Move with your keys, look around with your mouse. You can walk, run, or sprint when needed. The action menu will also prove useful - especially for fast travel, which unlocks after the tutorial.
-~
-Your legend begins here.
-See you at sea.
-}
-
-CameraControl_controlsimg1 {ChrForward}
-CameraControl_controlsimg2 {ChrStrafeLeft}
-CameraControl_controlsimg3 {ChrBackward}
-CameraControl_controlsimg4 {ChrStrafeRight}
-CameraControl_controlsimg5 {ShipCamera_Turn_H}
-CameraControl_controlsimg6 {LICommandsActivate}
 
 CameraControlFP{Ahoy!}
 CameraControlFP_descr
 {
-Welcome to the New World!
+Welcome to the Caribbean, Captain!
 ~
-These waters are unforgiving - and fortune rarely favors the reckless. Start small: travel between friendly colonies, run errands, deliver goods and passengers, dabble in local trade.
+Caribbean Legend is a tough game, but it's easy to play. If you haven't tried story mode, we recommend spending a couple of hours to get used to the basics.
 ~
-Golden doubloons will buy you maps to buried treasures. Silver pesos will keep your ship afloat and allow you to hire officers - and without them, even a lone merchant can be the end of you.
+You control the game with movement keys and the mouse. Your character can walk and run in any direction, and sprint for extra speed.
+The action menu is also very useful—check it out for lots of handy features.
 ~
-Move with your keys, look around with your mouse. You can walk, run, or sprint when needed. The action menu will also prove useful - especially for fast travel and other advanced features.
+You can freely look around with the mouse—find hidden items, keep an eye on combat, or just enjoy the sights.
 ~
-Your legend begins here.
-See you at sea.
-
+Thanks for playing—see you at sea!
 }
 
-CameraControl_controlsimg1 {ChrForward}
-CameraControl_controlsimg2 {ChrStrafeLeft}
-CameraControl_controlsimg3 {ChrBackward}
-CameraControl_controlsimg4 {ChrStrafeRight}
-CameraControl_controlsimg5 {ShipCamera_Turn_H}
-CameraControl_controlsimg6 {LICommandsActivate}
+
+CameraControlFP_controlsimg1 {ChrForward}
+CameraControlFP_controlsimg2 {ChrStrafeLeft}
+CameraControlFP_controlsimg3 {ChrBackward}
+CameraControlFP_controlsimg4 {ChrStrafeRight}
+CameraControlFP_controlsimg5 {ShipCamera_Turn_H}
+CameraControlFP_controlsimg6 {LICommandsActivate}
+
 
 MarksmanMode{Aiming}
 MarksmanMode_descr
 {
-You can aim with any firearm to shoot more accurately. Hold the aim button to enter the marksman mode. Release the button to exit without firing.  
-~  
-Shooting from the marksman mode is more precise and deadly, but the trade-off is reduced visibility and movement speed.  
-~  
-The longer you aim, the more damage your shot will inflict. A headshot will deal even greater damage. If you take damage, your aim will be reset, and your character will stagger.  
+You can aim with any firearm for better accuracy. Hold the aim button to enter this mode. Release it to exit without firing.
+~
+Aimed shots are more accurate and deadly, but you lose some vision and move slower.
+~
+The longer you aim, the more damage you deal. Headshots do even more. If you take damage, your aim resets and your character staggers.
 }
+
 
 MarksmanMode_controlsimg1 {ChrAiming}
 
 
+Trading {Trading Basics}
+
+
+Trading_descr
+{
+Trading is a deep, complex system where many factors affect buying and selling prices.
+~
+On land, your character's Trading skill and background matter most.
+~
+At sea, there are more factors—goods type, origin, colony size, trade routes, and your Purser's skills.
+~
+You'll figure it all out eventually, but for now, pick up a useful Trading amulet.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Prologue_Navigation{Ship Control}[a]
+Prologue_Navigation_descr
+{
+Welcome to the Caribbean Sea!
+~
+Turn your ship with the steering keys. Ships are heavy and have a lot of inertia, so they turn slowly. Get a feel for it.
+~
+Control sails and speed with the sail mode keys.
+~
+There are three sail modes: full, battle, and down. Full sails are fastest, battle sails turn best, and down brings you to a smooth stop.
+~
+In storms and under fire, lower your sails. For turning and aiming, use battle mode. For chasing, nothing beats full sails.
+~
+Try out the different sail modes and turns, feel the ship's inertia, and enjoy the sunset!
+}
+
+
+Prologue_Navigation_controlsimg1 {Ship_SailUp}
+Prologue_Navigation_controlsimg2 {Ship_TurnLeft}
+Prologue_Navigation_controlsimg3 {Ship_SailDown}
+Prologue_Navigation_controlsimg4 {Ship_TurnRight}
+
+
+Prologue_TimeScale{Time Control}[b]
+Prologue_TimeScale_descr
+{
+A lot of things in the game happen slowly—like changing sail mode or reloading cannons.
+~
+You can speed up or slow down time at sea, on land, and on the world map.
+~
+Enjoy your power over time, then head to the ship's deck. Someone wants to talk to you.
+}
+Prologue_TimeScale_controlsimg1{TimeScaleFasterBA}
+Prologue_TimeScale_controlsimg2{TimeScaleSlowerBA}
+Prologue_TimeScale_controlsimg2{TimeScale}
+
+
+Prologue_CameraControl{Ahoy!}[c]
+Prologue_CameraControl_descr
+{
+Welcome aboard the "Ulysse"! We've prepared a short starting adventure for you.
+~
+There's plenty to do on the "Ulysse". When you're ready to move on, pick "Finish business" in the captain's dialogue.
+~
+Thanks for playing—see you at sea!
+}
+
+
+Prologue_CameraControl_controlsimg1 {ChrForward}
+Prologue_CameraControl_controlsimg2 {ChrStrafeLeft}
+Prologue_CameraControl_controlsimg3 {ChrBackward}
+Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
+Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
+Prologue_CameraControl_controlsimg6 {LICommandsActivate}
+
+
+Prologue_Logbook {Logbook & Documents}[d]
+
+
+Prologue_Logbook_descr
+{
+Every quest you take is recorded in the "Logbook". It's important to read dialogues and log entries carefully—there are often key details and instructions.
+~
+Check out the "Logbook" entries. All small tasks taken aboard the “Ulysse” will show up there.
+}
+
+
+Prologue_Logbook_controlsimg1 {QuestBook}[e]
+
+
+Prologue_Inventory {Complex Quests, Documents & Crafting}
+Prologue_Inventory_descr
+{
+Besides quests, the "Logbook" has other important info.
+~
+In the "Documents" section, you can read all found notes.
+~
+Now you need to read a note from the ship's Purser and hand out doubloons to the crew as listed.
+~
+To get doubloons from a chest, open it using the crafting—Alchemy—mechanic.
+You only have a few recipes now, but you'll get more later.
+}
+Prologue_Inventory_controlsimg1 {QuestBook}
+Prologue_Inventory_controlsimg2 {Alchemy}
+
+
+
+
+Prologue_Amulet {Amulets}[f]
+Prologue_Amulet_descr
+{
+Amulets are powerful boosters for your character and come in offensive, defensive, and support types. You can't equip an offensive and defensive amulet at the same time, so choose your sets wisely.
+~
+There are also two other types of boosters: talismans and charms.
+~
+Talismans last longer than amulets and have broader effects, while charms are extremely powerful, last forever, and have their own inventory slot.
+~
+Always keep a few sets in your inventory for tough skill checks and hard fights at sea and on land.
+~
+Caution: once activated, removing an amulet or talisman destroys it—choose carefully.
+}
+
+
+Prologue_Trading {Trading Basics}[g]
+
+
+Prologue_Trading_descr
+{
+Trading is a deep, complex system where many factors affect prices—mainly your 'Trading' skill.
+~
+At sea, there are even more factors—goods type, origin, colony size, trade routes, and your Purser's skills.
+~
+You'll figure it all out eventually, but for now, pick up a useful amulet.
+}
+
+
+Prologue_Overload {Overload}[h]
+
+
+Prologue_Overload_descr
+{
+You've hit your first carry weight limit.
+Every character has a max carry weight, based on strength, skills, and amulets.
+~
+Try to find something to boost your max carry weight—maybe from the boatswain in the crew quarters.
+}
+
+
+Prologue_AutoFire {Sea Battle}[i]
+Prologue_AutoFire_descr
+{
+Your first sea battle takes place in Charles de Maure's imagination—so don't worry, just experiment!
+~
+Every ship has three main stats: hull, sails, and crew. If the hull hits zero, the ship sinks. Damaged sails slow you down, and losing crew affects boarding, reloads, and sail handling.
+~
+Each ammo type has its use: grapeshot for crew, chain shot for sails and masts, bombs for the hull. Cannonballs are all-purpose with the longest range. Damage depends on both ammo type and the gun firing it—the bigger the gun, the more damage.
+~
+There are two main firing modes. Quick shot is available when the enemy is in your firing arc. It's not very accurate or effective early on, but lets you fight dynamically.
+~
+If the battle feels too slow, speed it up with the time control keys.
+}
+
+
+Prologue_AimingFire {Aimed Fire}[j]
+Prologue_AimingFire_descr
+{
+Aimed fire lets you shoot very accurately from the side. It takes practice, but it's worth it.
+~
+Gun circles show the real position and trajectory of your broadside cannons. They need time to line up with the spot you aim at in the center of the screen.
+~
+When you fire, the guns shoot where their circles are at that moment, so lead your target if needed.
+~
+Aim at an enemy ship to target it. Once captured, you can aim at any part or lead your shots.
+~
+As your captain and Cannoneer skills grow, gun aiming and fire rate improve.
+~
+If you move the aim quickly, the gunners get confused and aim slower than usual.
+~
+Aimed broadsides are great for hitting critical ship parts at long range—especially sails and masts.
+}
+Prologue_AimingFire_controlsimg1 {ChrAimingShot}
+Prologue_AimingFire_controlsimg2 {FireCamera_Set}
+
+
+
+
+Prologue_FightAttack {Attack}[k]
+Prologue_FightAttack_descr
+{
+Combat in Caribbean Legend is brutal and fast, but you're safe for now.
+~
+Every character is armed and has combat skills. The better your weapon and the more experienced your hero, the more damage you deal.
+~
+You have several attack and defense moves.
+~
+Let's start with the three main attacks.
+~
+Slash. Fast, deals less damage, uses moderate energy.
+~
+Thrust. Slower than a slash, deals medium damage, uses little energy.
+~
+Heavy attack. Slow and powerful, deals massive damage and can break blocks.
+~
+Try all these attacks on the pirate.
+}
+Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
+Prologue_FightAttack_controlsimg2 {ChrAttackBase}
+Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
+
+
+
+Prologue_FightDefence {Combat Defense}[l]
+Prologue_FightDefence_descr
+{
+Nice! Now for defense.
+~
+Block. Blocks any attack except heavy. You can move slowly while blocking, and it doesn't use energy. Strong enemies can break your block with normal attacks, so be ready.
+~
+Parry. Deflects any attack and makes the enemy lose balance and energy.
+~
+Dodge. Lets you change position or avoid a shot.
+~
+Try parrying and blocking the pirate's attacks.
+~
+Then—finish him.
+}
+Prologue_FightDefence_controlsimg1 {ChrBlock}
+Prologue_FightDefence_controlsimg2 {ChrParry}
+
+
+
+Prologue_Marksmanship {Marksmanship}[m]
+Prologue_Marksmanship_descr
+{
+Firearms are rarer than melee weapons, but getting shot in the Caribbean is still a real risk, so stay sharp.
+~
+There are two shooting modes on land, just like at sea: quick shot and aimed shot.
+~
+Quick shot is a simple button press. Fast, but not very effective.
+~
+Aimed shots can deal much more damage, but leave you exposed. The longer you aim, the more damage you deal. Headshots do even more.
+~
+Hold the aim button to enter this mode. Press attack to shoot. Release aim to exit without firing.
+}
+Prologue_Marksmanship_controlsimg1 {ChrAiming}
+Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
+
+
+
+Prologue_DeadSearch {Looting}[n]
+
+
+Prologue_DeadSearch_descr
+{
+After every fight, it's time to collect loot.
+You can search any fallen enemy by pressing the loot button.
+~
+Find the healing elixir Alonso needs!
+}

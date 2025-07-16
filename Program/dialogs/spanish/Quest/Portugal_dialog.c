@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 	case "Avendel_tavern":
 		pchar.quest.Portugal_BeginOver.over = "yes";
 		dialog.text = "¡Oh, otro valiente marinero! Conozco a los de tu calaña, ¡mi maldito ojo está afinado para ti, ja! ¿Pregúntame por qué?";
-		link.l1 = "Te preguntaré sobre un asunto diferente, se trata de la deuda que tienes con la dueña del local... eh, establecimiento. Ella me ha pedido que te recuerde sobre tu deuda, te sugiero que hagas algo al respecto, de lo contrario, tendrá que acudir a los guardias para hacer lo mismo mañana.";
+		link.l1 = "Te preguntaré sobre un asunto diferente, se trata de la deuda que tienes con la dueña del... eh, establecimiento. Ella me ha pedido que te recuerde sobre tu deuda, te sugiero que hagas algo al respecto, de lo contrario, tendrá que acudir a los guardias para hacer lo mismo mañana.";
 		link.l1.go = "Avendel_tavern_1";
 		DelLandQuestMark(npchar);
 		break;
@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Avendel_tavern_2":
-		dialog.text = "¡Espera! ¡Por favor, espera! Pareces un capitán experimentado. Seguro que tienes algunas monedas, estoy arruinado, solo el buen viejo cantinero llena mi copa a crédito por nuestra vieja amistad. ¡Escucha mi pro... propuesta! Tú pagas mi deuda y yo te doy una tajada. Hay un negocio... un negocio muy lucrativo, ¡maldita sea y que me lleve el diablo! Te juro por mi maldito ancla, solo confía en mí, capitán - ¡como quiera que te llames! Solo redime una pequeña deuda, diez mil pesos y tendrás la oportunidad de ganar suficientes monedas para comprar todos los burdeles del Nuevo-maldito-Mundo. ¿Qué dices? Tú me das, yo te doy, como hacen las personas honestas...";
+		dialog.text = "¡Espera! ¡Por favor, espera! Pareces un capitán experimentado. Seguro que tienes algunas monedas, estoy arruinado, solo el buen viejo cantinero llena mi copa a crédito por nuestra vieja amistad. ¡Escucha mi pro... propuesta! Tú pagas mi deuda y yo te doy una tajada. Hay un negocio... un negocio muy lucrativo, ¡maldita sea y que me lleve el diablo! Te juro por mi maldito ancla, solo confía en mí, capitán, ¡como quiera que te llames! Solo redime una pequeña deuda, diez mil pesos y tendrás la oportunidad de ganar suficientes monedas para comprar todos los burdeles del Nuevo-maldito-Mundo. ¿Qué dices? Tú me das, yo te doy, como hacen las personas honestas...";
 		link.l1 = "Un tipo andrajoso que promete tesoros. Líbrenme de esa mierda, no hago caridad para gente como tú. Encuentra el dinero o vivirás en las casamatas del fuerte muy pronto. ¡Adiós!";
 		link.l1.go = "Avendel_tavern_3";
 		link.l2 = "¿Una tajada? ¿Y por qué debería confiar en la palabra de un idiota borracho? ¿Por promesas imaginarias?";
@@ -108,7 +108,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Avendel_tavern_11":
-		dialog.text = "¡Ni siquiera iba a hacerlo, capitán! Sabes, el doctor local Peter Van Stal, un hombre muy amable, me ha dado una poción para curar mis dolores de cabeza. Así que, el doctor no estuvo en su casa por casi tres días y...";
+		dialog.text = "¡Ni siquiera iba a hacerlo, capitán! Sabes, el doctor Peter Van Stal, un hombre muy amable, me ha dado una poción para curar mis dolores de cabeza. Así que, el doctor no estuvo en su casa por casi tres días y...";
 		link.l1 = "¡Hugo, mi paciencia casi se ha agotado! Le he prometido a la dama que no te apuñalaré con mi espada, ¡pero mis puños servirán igual de bien! ¡Te juro que ninguna poción podrá curar tu cabeza mañana!";
 		link.l1.go = "Avendel_tavern_12";
 		break;
@@ -231,13 +231,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "Avendel_house_2":
-		dialog.text = "¡Lo soy, capitán, maldita sea, claro que lo soy! Pero recuerda que los hombres de Bartolomeo deben estar en algún lugar de la ciudad y tampoco queremos atraer la atención de la guarnición, ¡eso es seguro, maldita sea! Tenemos que decidir cómo llevar a los portugueses a tu barco y cómo hacerlo de manera desapercibida.";
+		dialog.text = "¡Lo estoy, capitán, maldita sea, claro que lo estoy! Pero recuerda que los hombres de Bartolomeo deben estar en algún lugar de la ciudad y tampoco queremos atraer la atención de la guarnición, ¡eso es seguro, maldita sea! Tenemos que decidir cómo llevar a los portugueses a tu barco y cómo hacerlo de manera desapercibida.";
 		link.l1 = "Bien... No quiero pelear con su fragata de camino a Willemstad. ¿Tienes alguna idea?";
 		link.l1.go = "Avendel_house_3";
 		break;
 
 	case "Avendel_house_3":
-		dialog.text = "Sí, tengo uno. Primero necesitamos encontrarle un traje más noble, luego lo arrastramos por la entrada trasera como un oficial borracho. ¡Nadie sospechará que es un maldito pirata, confía en mí!";
+		dialog.text = "Sí, tengo una. Primero necesitamos encontrarle un traje más noble, luego lo arrastramos por la entrada trasera como un oficial borracho. ¡Nadie sospechará que es un maldito pirata, confía en mí!";
 		link.l1 = "Hmm, no estoy seguro de esto, pero no tenemos un mejor plan todavía. Intentaré conseguir un bonito paño para nuestro pasajero. Quédate aquí y vigila a Bart y al doc.";
 		link.l1.go = "Avendel_house_4";
 		break;
@@ -514,7 +514,7 @@ void ProcessDialogEvent()
 
 	case "Avendel_seapatrol_2":
 		dialog.text = "¿Un barco? ¿Pirata? ¡Podría ser el Albatros! ¡O algún colega de nuestro viejo amigo Leo Cord!";
-		link.l1 = "O quizás es solo un barco pirata ordinario. No obstante, Hugo, si este navío está aquí por nuestras cabezas, entonces será mejor que la enfrente con la patrulla local a mi lado y por el oro del gobernador. Es mucho mejor que vigilar nuestras espaldas durante el resto del viaje. Si esta alarma es falsa, sin embargo, entonces simplemente me librará de sentar mi trasero en la taberna por unos días.";
+		link.l1 = "O quizás es solo un barco pirata ordinario. No obstante, Hugo, si este navío está aquí por nuestras cabezas, entonces será mejor que la enfrente con la patrulla a mi lado y por el oro del gobernador. Es mucho mejor que vigilar nuestras espaldas durante el resto del viaje. Si esta alarma es falsa, sin embargo, entonces simplemente me librará de sentar mi trasero en la taberna por unos días.";
 		link.l1.go = "Avendel_seapatrol_3";
 		break;
 
@@ -742,7 +742,7 @@ void ProcessDialogEvent()
 
 	case "Avendel_LeFransua_4":
 		dialog.text = "" + pchar.name + ", ¿no crees que es un poco injusto?";
-		link.l1 = " Causa y efecto, Hugo... Has tomado tu decisión, así que adiós. Saca una conclusión y no te lances a aventuras como esa, claramente no son para ti.";
+		link.l1 = "Causa y efecto, Hugo... Has tomado tu decisión, así que adiós. Saca una conclusión y no te lances a aventuras como esa, claramente no son para ti.";
 		link.l1.go = "Avendel_LeFransua_5";
 		break;
 
@@ -819,7 +819,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Portugal_treasure_2_2":
-		dialog.text = "Parece que aún se puede encontrar algo de honestidad en la gente hoy en día... Lástima que el dinero siempre interfiera - ¿eh, capitán?";
+		dialog.text = "Parece que aún se puede encontrar algo de honestidad en la gente hoy en día... Lástima que el dinero siempre interfiera, ¿eh, capitán?";
 		link.l1 = "Es extraño escuchar eso de un bucanero condenado, portugués. Te dejaré ir... no me preguntes por qué, solo vete al diablo en el primer puerto. Y recuerda que no seré tan amable si nos volvemos a encontrar.";
 		link.l1.go = "Portugal_treasure_4";
 		break;
@@ -832,7 +832,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Portugal_treasure_4":
-		dialog.text = "¿De veras? ¡Me gustaría eso, capitán! ¿No ordenará traer aquí un poco de ron? Ya sabe, solo para celebrar sus cualidades caballerescas, nuestra relación y el aplazamiento de mi sentencia?";
+		dialog.text = "¿De veras? ¡Me gustaría eso, capitán! ¿No ordenará traer aquí un poco de ron? Sabes, solo para celebrar sus cualidades caballerescas, nuestra relación y el aplazamiento de mi sentencia?";
 		link.l1 = "No hagas chistes malvados, sigues siendo mi prisionero hasta la primera costa. Adiós.";
 		link.l1.go = "Portugal_treasure_5";
 		break;
@@ -919,7 +919,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Avendel_Marigo_2":
-		dialog.text = "¡No, no, capitán, no son los portugueses! Y no es algún bastardo herido otra vez. ¡Es mucho mejor! ¡Es Hernando Vásquez... el mismísimo Don Sangriento! Ha sido huésped del gobernador local durante los últimos días.";
+		dialog.text = "¡No, no, capitán, no son los portugueses! Y no es algún bastardo herido otra vez. ¡Es mucho mejor! ¡Es Hernando Vásquez... el mismísimo Don Sangriento! Ha sido huésped del gobernador durante los últimos días.";
 		link.l1 = "¿Vasquez? ¿El invitado del gobernador? Ahora veo. Hugo, cuéntame más sobre eso, ¿qué demonios está pasando aquí?";
 		link.l1.go = "Avendel_Marigo_3";
 		break;
@@ -1042,12 +1042,12 @@ void ProcessDialogEvent()
 	case "Servant":
 		// pchar.quest.InMarigoResidenceOver.over = "yes"; //снять таймер
 		dialog.text = "Buen día, capitán. ¿Quieres algo?";
-		link.l1 = " No-no, solo estoy esperando, ¿cuándo estará libre el señor Thomas? Estoy esperando una audiencia... sí. Dime, ¿su Excelencia realmente considera amigo al famoso pirata Hernando Vasquez?";
+		link.l1 = "No, no, solo estoy esperando, ¿cuándo estará libre el señor Thomas? Estoy esperando una audiencia... sí. Dime, ¿su Excelencia realmente considera amigo al famoso pirata Hernando Vasquez?";
 		link.l1.go = "Servant_1";
 		break;
 
 	case "Servant_1":
-		dialog.text = " No os preocupéis, señor, debería ser liberado en cualquier momento ahora, ¡y por supuesto que no, señor! Este bandido se ha rendido a las autoridades, pero de alguna manera no fue ahorcado. Quizás compró su vida traicionando a sus antiguos compañeros de crimen... No estoy seguro. Ha estado encarcelado durante varios días aquí... ¡Eso fue una pesadilla, señor! ¡Esa bestia en forma humana estaba viviendo en nuestra mansión!";
+		dialog.text = "No os preocupéis, señor, debería ser liberado en cualquier momento ahora, ¡y por supuesto que no, señor! Este bandido se ha rendido a las autoridades, pero de alguna manera no fue ahorcado. Quizás compró su vida traicionando a sus antiguos compañeros de crimen... No estoy seguro. Ha estado encarcelado durante varios días aquí... ¡Eso fue una pesadilla, señor! ¡Esa bestia en forma humana estaba viviendo en nuestra mansión!";
 		link.l1 = "¡Una pesadilla es! ¿Qué podría decir esa bestia al señor Thomas para evitar la horca? ¡Ni siquiera puedo imaginarlo!";
 		link.l1.go = "Servant_2";
 		break;
@@ -1059,7 +1059,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Servant_3":
-		dialog.text = "Aún no. Hace unos días lo llevaron a un bergantín militar que zarpó hacia Willemstad. Verás, parece que el señor Thomas perdió interés en el sinvergüenza, parece que intentó engañarlo.\nTambién dicen que atraparon a su ex capitán - ¡Bartolomeo el Portugués! ¡Imagínate eso! Parece que la Compañía quiere colgarlos juntos. Los rumores dicen que el juicio será en un mes, pero ¿por qué esperar tanto tiempo?";
+		dialog.text = "Aún no. Hace unos días lo llevaron a un bergantín militar que zarpó hacia Willemstad. Verás, parece que el señor Thomas perdió interés en el sinvergüenza, parece que intentó engañarlo.\nTambién dicen que atraparon a su ex capitán, ¡Bartolomeo el Portugués! ¡Imagínate eso! Parece que la Compañía quiere colgarlos juntos. Los rumores dicen que el juicio será en un mes, pero ¿por qué esperar tanto tiempo?";
 		link.l1 = "¿Los portugueses?! Hm... gracias por hacerme compañía amigo... parece que el señor Thomas está libre ahora, me retiraré.";
 		link.l1.go = "Servant_4";
 		break;
@@ -1157,7 +1157,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Portugal_free_5":
-		dialog.text = "Sabes, capitán, este aire fresco... empiezas a valorarlo solo después de pasar unas semanas en un calabozo justo después de que el bote de tu barco fuera encontrado por la patrulla local. Supongo que todavía te debo por mi rescate.";
+		dialog.text = "Sabes, capitán, este aire fresco... empiezas a valorarlo solo después de pasar unas semanas en un calabozo justo después de que el bote de tu barco fuera encontrado por la patrulla. Supongo que todavía te debo por mi rescate.";
 		link.l1 = "No hay necesidad, portugués. No soy un caballero honorable, solo... Hago lo que creo que es correcto y debe hacerse.";
 		link.l1.go = "Portugal_free_6";
 		break;

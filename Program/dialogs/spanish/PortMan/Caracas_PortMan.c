@@ -13,21 +13,21 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		{
 			if (pchar.questTemp.SharkGoldFleet == "toCarPortOffice" || pchar.questTemp.SharkGoldFleet == "start" || pchar.questTemp.SharkGoldFleet == "afterGvik" || pchar.questTemp.SharkGoldFleet == "buyincar")
 			{
-				link.l1 = "El hecho es que voy a ir a Porto Bello cualquier día de estos con un cargamento de mercancías compradas a usted en la colonia. Pensé: tal vez tenga algún tipo de carga o negocio que pueda hacer en el camino... Por una tarifa, por supuesto.";
+				link.l1 = "El hecho es que voy a ir a Portobello cualquier día de estos con un cargamento de mercancías compradas a usted en la colonia. Pensé: tal vez tenga algún tipo de carga o negocio que pueda hacer en el camino... Por una tarifa, por supuesto.";
 				link.l1.go = "SharkGoldFleet";
 			}
 			if (pchar.questTemp.SharkGoldFleet == "LightVar")
 			{
 				if (!bImCasual)
 					pchar.quest.SharkGoldFleetToCPO10.over = "yes";
-				link.l1 = "Hola de nuevo. Entregué tu carta a Porto Bello. Allí me pidieron que te diera una respuesta.";
+				link.l1 = "Hola de nuevo. Entregué tu carta a Portobello. Allí me pidieron que te diera una respuesta.";
 				link.l1.go = "SharkGoldFleet_09";
 			}
 			if (pchar.questTemp.SharkGoldFleet == "DifficultVar")
 			{
 				if (!bImCasual)
 					pchar.quest.SharkGoldFleetToCPO10.over = "yes";
-				link.l1 = "Hola. He venido a usted desde Porto Bello. Su colega de la autoridad portuaria local me pidió que le entregara esta carta.";
+				link.l1 = "Hola. He venido a usted desde Portobello. Su colega de la autoridad portuaria me pidió que le entregara esta carta.";
 				link.l1.go = "SharkGoldFleet_13";
 			}
 		}
@@ -78,7 +78,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 						pchar.questTemp.SharkGoldFleet = "toCurierWait";
 						AddQuestRecord("SharkGoldFleet", "12");
 						SetFunctionTimerCondition("SGF_CreateCurierInWorld", 0, 0, 1 + rand(2), false);
-						dialog.text = "Tengo algo que hacer... Y tú tienes un buen barco. Solo que no parece un mercante. Y, por lo que puedo ver, no tienes una licencia a largo plazo de la Compañía Neerlandesa de las Indias Occidentales. No te ofendas, pero no pareces un mercante. No puedo correr ese riesgo.";
+						dialog.text = "Tengo algo que hacer... Y tú tienes un buen barco. Solo que no parece un mercante. Y, por lo que puedo ver, no tienes una licencia a largo plazo de la Compañía Holandesa de las Indias Occidentales. No te ofendas, pero no pareces un mercante. No puedo correr ese riesgo.";
 						link.l1 = "Entendido... Bueno, gracias por eso.";
 						link.l1.go = "exit";
 					}
@@ -89,13 +89,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 							pchar.questTemp.SharkGoldFleet = "toCurierWait";
 							AddQuestRecord("SharkGoldFleet", "13");
 							SetFunctionTimerCondition("SGF_CreateCurierInWorld", 0, 0, 1 + rand(2), false);
-							dialog.text = "Tengo algo que hacer... Y tienes un buen barco. Solo que ahora no entiendo con qué vas a comerciar... Dijiste que ibas a Porto Bello a vender las mercancías, pero, hasta donde yo sé, no las compraste de nosotros en la colonia. No te ofendas, pero no pareces un comerciante. No puedo correr ese riesgo.";
+							dialog.text = "Tengo algo que hacer... Y tienes un buen barco. Solo que ahora no entiendo con qué vas a comerciar... Dijiste que ibas a Portobello a vender las mercancías, pero, hasta donde yo sé, no las compraste de nosotros en la colonia. No te ofendas, pero no pareces un comerciante. No puedo correr ese riesgo.";
 							link.l1 = "Entendido... Pues, gracias por eso.";
 							link.l1.go = "exit";
 						}
 						else
 						{
-							dialog.text = "Tengo algo que hacer. Claro, no te conozco... Pero, a decir verdad, solo recuerdo a los mercaderes con escuadrones a su nombre. El resto - no. Sí, y tienes una licencia a largo plazo, se nota de inmediato que eres un mercader experimentado. Sin embargo, tu barco es interesante. ¿Por qué comerciarías en una fragata?";
+							dialog.text = "Tengo algo que hacer. Claro, no te conozco... Pero, a decir verdad, solo recuerdo a los mercaderes con escuadrones a su nombre. El resto no. Sí, y tienes una licencia a largo plazo, se nota de inmediato que eres un mercader experimentado. Sin embargo, tu barco es interesante. ¿Por qué comerciarías en una fragata?";
 							link.l1 = "¡Ja, este no es un bergantín ordinario! Puede alcanzar una velocidad muy alta incluso con la bodega llena. Siempre es más fácil escapar de los piratas que luchar contra ellos, ¿verdad? Aunque mi embarcación tiene una capacidad menor que las naves mercantes comunes, el riesgo es mucho menor.";
 							link.l1.go = "SharkGoldFleet_01";
 						}
@@ -106,7 +106,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "SharkGoldFleet_01":
-		dialog.text = "Hmm, ¡pero tienes razón! Los españoles saben construir barcos, ¿no es así? Sí, sí, inmediatamente vi que este hermoso había salido de los astilleros. Y sí, hoy me dijeron que compraste un lote de café y cacao de nuestro comerciante para revender en Porto Bello. Buen negocio, te digo. La gente no familiarizada con el comercio no sabe que estos productos son baratos aquí, gracias a las plantaciones, y en Porto Bello tienen gran demanda, ya que desde allí van a la metrópoli.";
+		dialog.text = "Hmm, ¡pero tienes razón! Los españoles saben construir barcos, ¿no es así? Sí, sí, inmediatamente vi que este hermoso había salido de los astilleros. Y sí, hoy me dijeron que compraste un lote de café y cacao de nuestro comerciante para revender en Portobello. Buen negocio, te digo. La gente no familiarizada con el comercio no sabe que estos productos son baratos aquí, gracias a las plantaciones, y en Portobello tienen gran demanda, ya que desde allí van a la metrópoli.";
 		link.l1 = "Bueno, de eso se trata todo, señor. Por unos pocos pesos, no llevaría mi barco tan lejos.";
 		link.l1.go = "SharkGoldFleet_02";
 		break;
@@ -118,20 +118,20 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "SharkGoldFleet_03":
-		dialog.text = "¡No, no! De hecho, mi tarea es lo más simple posible. Necesito que entregues una carta a la Autoridad Portuaria en Porto Bello. La carta está sellada y no puede ser abierta. Tampoco hay necesidad de hablar de ella, correspondencia... personal. Entrégala personalmente. El plazo es de diez días. Después será irrelevante.";
+		dialog.text = "¡No, no! De hecho, mi tarea es lo más simple posible. Necesito que entregues una carta a la Autoridad Portuaria en Portobello. La carta está sellada y no puede ser abierta. Tampoco hay necesidad de hablar de ella, correspondencia... personal. Entrégala personalmente. El plazo es de diez días. Después será irrelevante.";
 		link.l1 = "¿Tan simple? ¿Y cuánto recibiré por ello?";
 		link.l1.go = "SharkGoldFleet_04";
 		break;
 
 	case "SharkGoldFleet_04":
-		dialog.text = "Cinco mil pesos. Considéralo por no tener que enviar un lugre de mensajería a Porto Bello.";
+		dialog.text = "Cinco mil pesos. Considéralo por no tener que enviar un lugre de mensajería a Portobello.";
 		link.l1 = "¿Y cuáles eran tus preguntas sobre mí y mi barco?";
 		link.l1.go = "SharkGoldFleet_05";
 		break;
 
 	case "SharkGoldFleet_05":
 		dialog.text = "Olvídalo. Es solo que la correspondencia es lo suficientemente importante, y debo estar seguro de que llegará al destinatario. Y así, nada especial. Burocracia... Para una persona ordinaria, estos documentos no tienen interés.";
-		link.l1 = "Bueno, de acuerdo. Vamos a conseguir tus papeles aquí. Tan pronto como llegue a Porto Bello, se los llevaré a tu colega. Lo haré en diez días, no te preocupes.";
+		link.l1 = "Bueno, de acuerdo. Vamos a conseguir tus papeles aquí. Tan pronto como llegue a Portobello, se los llevaré a tu colega. Lo haré en diez días, no te preocupes.";
 		link.l1.go = "SharkGoldFleet_06";
 		break;
 
@@ -142,7 +142,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "SharkGoldFleet_07":
-		dialog.text = "Gracias. Entonces...  Estupendo. Recuerda que eres tú quien debe entregar este documento y directamente en las manos del destinatario. Aquí tienes. La recompensa te la dará el jefe de la Autoridad Portuaria en Porto Bello. ¡Buen viaje!";
+		dialog.text = "Gracias. Entonces...  Estupendo. Recuerda que eres tú quien debe entregar este documento y directamente en las manos del destinatario. Aquí tienes. La recompensa te la dará el jefe de la Autoridad Portuaria en Portobello. ¡Buen viaje!";
 		link.l1 = "¡Gracias! Ahora, discúlpeme.";
 		link.l1.go = "SharkGoldFleet_08";
 		break;
@@ -177,7 +177,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "SharkGoldFleet_11":
 		AddMoneyToCharacter(pchar, 6000);
-		dialog.text = "Y en segundo lugar, ¡este sinvergüenza parece haber olvidado cómo hace dos meses me cargó todos los gastos del mantenimiento de un barco mercante que fue de Caracas a Porto Bello, y de allí a La Habana! ¡Y acordamos que él pagaría por la segunda parte del viaje! ¡Y nunca devolvió la deuda, pero prometió que liquidaría todo el mes pasado! ¡Y todavía soy un avaro... Sí, yo mismo escribiré una queja contra él a La Habana!";
+		dialog.text = "Y en segundo lugar, ¡este sinvergüenza parece haber olvidado cómo hace dos meses me cargó todos los gastos del mantenimiento de un barco mercante que fue de Caracas a Portobello, y de allí a La Habana! ¡Y acordamos que él pagaría por la segunda parte del viaje! ¡Y nunca devolvió la deuda, pero prometió que liquidaría todo el mes pasado! ¡Y todavía soy un avaro... Sí, yo mismo escribiré una queja contra él a La Habana!";
 		link.l1 = "Bueno, tienes las pasiones del astillero de Madrid, por supuesto...";
 		link.l1.go = "SharkGoldFleet_12";
 		break;

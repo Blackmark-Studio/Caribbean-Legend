@@ -472,17 +472,15 @@ void GetTextureUVForShip(int nShipType, ref rLeft, ref rTop, ref rRight, ref rBo
 	
 //	Log_SetStringToLog("type " + nShipType);
 	
-	if( nShipType> -1 && nShipType<SHIP_TYPES_QUANTITY_WITH_FORT ) // <-- ugeen fix, для тартаны nShipType = 0 !!!!
+	if( nShipType> -1 && nShipType<GetArraySize(&ShipsTypes) ) // <-- ugeen fix, для тартаны nShipType = 0 !!!!
 	{
-		ref rBaseShip = &ShipsTypes[nShipType];
-		SetShipPictureDataByShipTypeName( rBaseShip.name );
+		SetShipPictureDataByShipType(nShipType);
 		int nV = BI_intNRetValue[0] / 16;
 		int nH = BI_intNRetValue[0] - nV * 16;
 		fLeft = stf(nH) * 0.0625;
 		fTop = stf(nV) * 0.0625;//0.25;
 		fRight = fLeft + 0.0625;
 		fBottom = fTop + 0.0625;//0.25;
-//		Log_SetStringToLog("name " + rBaseShip.name + " nV " + nV + " nH " + nH);
 	}
 
 	rLeft = fLeft;
@@ -528,7 +526,7 @@ void procTimerTimeOut()
 }
 void InitShipHulls() 
 {
-	for (int shipIndex = 0; shipIndex < SHIP_TYPES_QUANTITY_WITH_FORT; shipIndex++) {
+	for (int shipIndex = 0; shipIndex < GetArraySize(&ShipsTypes); shipIndex++) {
 		ref ship = &ShipsTypes[shipIndex];
 		if (!CheckAttribute(ship, "name")) {
 			continue;

@@ -35,7 +35,7 @@ void ProcessDialogEvent()
 	case "First time":
 		if (LAi_grp_playeralarm > 0)
 		{
-			dialog.text = PCharRepPhrase(LinkRandPhrase("Se ha dado la alarma en el pueblo. Aparentemente, es hora de que yo también tome las armas...", "¿No estarán los guardias de la ciudad corriendo detrás de ti, por casualidad?", "No encontrarás refugio aquí, ¡pero puedes encontrar varias pulgadas de acero frío bajo tu costilla!"), LinkRandPhrase("¿Qué necesitas, " + GetSexPhrase("granuja", "granuja") + "¿¡? ¡Los guardias te están rastreando, no llegarás lejos, " + GetSexPhrase("pirata sucio", "apestoso") + "¡", "" + GetSexPhrase("Sucio", "Sucio") + "¡Asesino! ¡Guardias!!!", "No te temo, " + GetSexPhrase("alimaña", "apestoso") + "¡Pronto serás colgado en nuestro fuerte, no llegarás lejos..."));
+			dialog.text = PCharRepPhrase(LinkRandPhrase("Se ha dado la alarma en el pueblo. Aparentemente, es hora de que yo también tome las armas...", "¿No estarán los guardias de la ciudad corriendo detrás de ti, por casualidad?", "No encontrarás refugio aquí, ¡pero puedes encontrar varias pulgadas de acero frío bajo tu costilla!"), LinkRandPhrase("¿Qué necesitas, " + GetSexPhrase("granuja", "granuja") + "? ¡Los guardias te están rastreando, no llegarás lejos, " + GetSexPhrase("sucio pirata", "apestosa") + "!", "" + GetSexPhrase("¡Sucio asesino", "¡Sucia asesina") + "! ¡Guardias!", "No te temo, " + GetSexPhrase("apestoso", "alimaña") + ". ¡Pronto serás colgado en nuestro fuerte, no llegarás lejos!"));
 			link.l1 = PCharRepPhrase(RandPhraseSimple("Veo que estás cansado de vivir...", "Así parece, no hay gente pacífica en " + XI_ConvertString("Colony" + npchar.city + "Gen") + "¡, todos quieren ser un héroe!"), RandPhraseSimple("¡Vete al infierno!", "Je, estos serán los últimos segundos de tu vida..."));
 			link.l1.go = PCharRepPhrase("exit_setOwner", "fight");
 			break;
@@ -44,7 +44,7 @@ void ProcessDialogEvent()
 		if (npchar.quest.meeting != "0" && CheckAttribute(npchar, "quest.trial_usurer"))
 		{
 			dialog.text = "¿Qué te trae a mí esta vez?";
-			link.l1 = "Creo que conoces a un caballero llamado Gerard LeCroix? Debería haber dejado una recompensa para mí...";
+			link.l1 = "Creo que conoces a un caballero llamado Gerard LeCroix, ¿cierto? Debería haber dejado una recompensa para mí...";
 			link.l1.go = "Trial";
 			DelLandQuestMark(npchar);
 			break;
@@ -52,7 +52,7 @@ void ProcessDialogEvent()
 		// <-- legendary edition
 		if (npchar.quest.meeting == "0")
 		{
-			dialog.text = RandPhraseSimple("¡Buenas tardes, marinero! Mi nombre es " + GetFullName(npchar) + ", y yo soy el guardián de este faro. ¿Qué viento te ha traído aquí?", "¡Hola! Ha pasado bastante tiempo desde la última vez que vi caras nuevas en mi faro... Permíteme presentarme - " + GetFullName(npchar) + ", y este faro es mi hogar y mi trabajo. ¿Qué puedo hacer por ti?");
+			dialog.text = RandPhraseSimple("¡Buenas tardes, marinero! Mi nombre es " + GetFullName(npchar) + ", y yo soy el guardián de este faro. ¿Qué viento te ha traído aquí?", "¡Hola! Ha pasado bastante tiempo desde la última vez que vi caras nuevas en mi faro... Permíteme presentarme, " + GetFullName(npchar) + ", y este faro es mi hogar y mi trabajo. ¿Qué puedo hacer por ti?");
 			link.l1 = "Hola, " + npchar.name + "¡ Mi nombre es " + GetFullName(pchar) + ", soy un capitán de barco. Estaba dando un paseo por esta maravillosa cala y decidí detenerme para ver quién vive allí.";
 			link.l1.go = "Lightman_meeting";
 			npchar.quest.meeting = "1";
@@ -94,7 +94,7 @@ void ProcessDialogEvent()
 			// калеуче
 			if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "amulet" && !CheckAttribute(npchar, "quest.Caleuche"))
 			{
-				link.l5 = "Escucha, " + npchar.name + ", sé que te dedicas a la entrega de amuletos por encargo. Así que, seguramente sabes mucho sobre ellos. Mira, por favor, esta pequeña cosa - ¿qué puedes decirme sobre ella?";
+				link.l5 = "Escucha, " + npchar.name + ", sé que te dedicas a la entrega de amuletos por encargo. Así que, seguramente sabes mucho sobre ellos. Mira, esta pequeña cosa, ¿qué puedes decirme sobre ella?";
 				link.l5.go = "Caleuche";
 			}
 			if (npchar.id == pchar.questTemp.Caleuche.Amuletmaster && CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "mayak")
@@ -111,22 +111,22 @@ void ProcessDialogEvent()
 		break;
 
 	case "trade_info":
-		dialog.text = "A veces voy a la orilla y recojo conchas, hay un lugar bastante bonito no muy lejos de aquí, así que siempre puedes comprarme perlas. Cada tormenta trae ámbar, también lo vendo, aunque te costará mucho.\nA veces las olas traen todo tipo de trinketes interesantes de barcos hundidos y mis viejos compañeros me traen artículos especiales. Estoy interesado en amuletos encantados, los hombres sabios pagan buena moneda por ellos.\nTambién ofrezco armas en ocasiones especiales, no me preguntes de dónde las obtengo. Un comerciante de la ciudad compra toda la mierda de mí, las cosas buenas las vendo yo mismo después de repararla y limpiarla.\nEstoy interesado en el ron. No estoy hablando de la meada que sirven en la taberna local por dos pesos la jarra. Estoy hablando de auténtico ron jamaicano embotellado. Sana y resucita a las personas. Pagaré diez veces más por cada botella que traigas. Piénsalo.";
+		dialog.text = "A veces voy a la orilla y recojo conchas, hay un lugar bastante bonito no muy lejos de aquí, así que siempre puedes comprarme perlas. Cada tormenta trae ámbar, también lo vendo, aunque te costará mucho.\nA veces las olas traen todo tipo de trinketes interesantes de barcos hundidos y mis viejos compañeros me traen artículos especiales. Estoy interesado en amuletos encantados, los hombres sabios pagan buena moneda por ellos.\nTambién ofrezco armas en ocasiones especiales, no me preguntes de dónde las obtengo. Un comerciante de la ciudad compra toda la mierda de mí, las cosas buenas las vendo yo mismo después de repararla y limpiarla.\nEstoy interesado en el ron. No estoy hablando de la meada que sirven en la taberna por dos pesos la jarra. Estoy hablando de auténtico ron jamaicano embotellado. Sana y resucita a las personas. Pagaré diez veces más por cada botella que traigas. Piénsalo.";
 		link.l1 = "Escucha, " + npchar.name + ", dijiste que tenías viejos amigos marineros, quienes te traen amuletos encantados. ¿Es posible encargar un amuleto específico de ti? Lo pagaré generosamente.";
 		link.l1.go = "Trade_artefact";
 		break;
 
 	case "Trade_lighthouse":
 		// иногда продает корабельные товары // Addon-2016 Jason
-		npchar.quest.goods = GOOD_COFFEE + drand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
-		npchar.quest.goodsqty = 50 + drand(100);
+		npchar.quest.goods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
+		npchar.quest.goodsqty = 50 + hrand(100);
 		if (sti(npchar.quest.goods) == GOOD_EBONY || sti(npchar.quest.goods) == GOOD_MAHOGANY)
-			npchar.quest.goodsqty = 25 + drand(50);
+			npchar.quest.goodsqty = 25 + hrand(50);
 		npchar.quest.goodsprice = makeint(sti(Goods[sti(npchar.quest.goods)].Cost) / 4);	// цена единицы товара
 		npchar.quest.goodscost = sti(npchar.quest.goodsprice) * sti(npchar.quest.goodsqty); // стоимость товара
-		ok = (!CheckAttribute(npchar, "goods_date")) || (GetNpcQuestPastDayParam(npchar, "goods_date") >= 10) if (drand(4) == 1 && makeint(GetCharacterFreeSpace(pchar, sti(npchar.quest.goods))) > sti(npchar.quest.goodsqty) && sti(pchar.money) >= sti(npchar.quest.goodscost) && ok)
+		ok = (!CheckAttribute(npchar, "goods_date")) || (GetNpcQuestPastDayParam(npchar, "goods_date") >= 10) if (hrand(4) == 1 && makeint(GetCharacterFreeSpace(pchar, sti(npchar.quest.goods))) > sti(npchar.quest.goodsqty) && sti(pchar.money) >= sti(npchar.quest.goodscost) && ok)
 		{
-			dialog.text = "Capitán, recientemente una cantidad de mercancías fue arrastrada a la orilla - " + GetGoodsNameAlt(sti(npchar.quest.goods)) + ". Algunas partes se echaron a perder por el agua salada, pero " + FindRussianQtyString(sti(npchar.quest.goodsqty)) + "Logré guardar en gran estado. ¿Quieres comprar algo? Los venderé barato, solo por " + FindRussianMoneyString(sti(npchar.quest.goodsprice)) + " por unidad.";
+			dialog.text = "Capitán, recientemente una cantidad de mercancías fue arrastrada a la orilla, " + GetGoodsNameAlt(sti(npchar.quest.goods)) + ". Algunas partes se echaron a perder por el agua salada, pero " + FindRussianQtyString(sti(npchar.quest.goodsqty)) + "Logré guardar en gran estado. ¿Quieres comprar algo? Los venderé barato, solo por " + FindRussianMoneyString(sti(npchar.quest.goodsprice)) + " por unidad.";
 			link.l1 = "Nah. Muéstrame tus recientes adquisiciones.";
 			link.l1.go = "Trade_lighthouse_double";
 			link.l2 = "Hm... Una oferta honesta, estoy de acuerdo. Supongo que podría revenderlo por algo de beneficio. Veamos... Eso ascenderá a " + FindRussianMoneyString(sti(npchar.quest.goodscost)) + ". ¿Es eso correcto?";
@@ -185,11 +185,11 @@ void ProcessDialogEvent()
 		if (CheckAttribute(npchar, "artefact"))
 			dialog.text = "Como desees. Ven a verme si cambias de opinión.";
 		else
-			dialog.text = "¿Le gustaría ver lo que tengo a la venta hoy, capitán? Si no encuentra nada digno, regrese pronto - podría tener algo más en venta.";
+			dialog.text = "¿Le gustaría ver lo que tengo a la venta hoy, capitán? Si no encuentra nada digno, regrese pronto, podría tener algo más en venta.";
 		// belamour legendary edition карибские нравы -->
 		if (CheckAttribute(npchar, "quest.trial_usurer"))
 		{
-			link.l1 = "Todo esto, por supuesto, es bueno, pero aquí está lo que quería preguntar: supongo que conoces a un caballero llamado Gerard Lecroix? Debería haber dejado una recompensa para mí...";
+			link.l1 = "Todo esto, por supuesto, es bueno, pero aquí está lo que quería preguntar: supongo que conoces a un caballero llamado Gerard Lecroix, ¿cierto? Debería haber dejado una recompensa para mí...";
 			link.l1.go = "Trial";
 			DelLandQuestMark(npchar);
 			break;
@@ -313,7 +313,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "amulet_2":
-		dialog.text = "Eucologio? Una buena oración incluso puede desviar una bala. Bueno...";
+		dialog.text = "¿Eucologio? Una buena oración incluso puede desviar una bala. Bueno...";
 		link.l1 = "¿Cuándo debería volver para recoger mi pedido?";
 		link.l1.go = "Trade_artefact_2";
 		npchar.quest.art = "amulet_2";
@@ -376,7 +376,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "amulet_11":
-		dialog.text = "Cimaruta? ¡Las balas de mosquete volarán sobre tu cabeza, sin causarte daño! ¡Bien...";
+		dialog.text = "¿Cimaruta? ¡Las balas de mosquete volarán sobre tu cabeza, sin causarte daño! ¡Bien...";
 		link.l1 = "¿Cuándo debería volver para recoger mi pedido?";
 		link.l1.go = "Trade_artefact_2";
 		npchar.quest.art = "amulet_11";
@@ -384,7 +384,7 @@ void ProcessDialogEvent()
 
 	// группа obereg
 	case "obereg_1":
-		dialog.text = "Teredo? Cada carpintero de barcos sueña con ese. Bueno...";
+		dialog.text = "¿Teredo? Cada carpintero de barcos sueña con ese. Bueno...";
 		link.l1 = "¿Cuándo debería volver para recoger mi pedido?";
 		link.l1.go = "Trade_artefact_2";
 		npchar.quest.art = "obereg_1";
@@ -419,7 +419,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "obereg_6":
-		dialog.text = "¿Un puño de mono? Como dicen - ¡haz que te respeten! Bueno...";
+		dialog.text = "¿Un puño de mono? Como dicen, ¡haz que te respeten! Bueno...";
 		link.l1 = "¿Cuándo debería regresar para recoger mi pedido?";
 		link.l1.go = "Trade_artefact_2";
 		npchar.quest.art = "obereg_6";
@@ -454,7 +454,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "obereg_11":
-		dialog.text = "Peregrino? El viento de frente se vuelve viento de cola. Bueno...";
+		dialog.text = "¿Peregrino? El viento de frente se vuelve viento de cola. Bueno...";
 		link.l1 = "¿Cuándo debería volver para recoger mi pedido?";
 		link.l1.go = "Trade_artefact_2";
 		npchar.quest.art = "obereg_11";
@@ -501,7 +501,7 @@ void ProcessDialogEvent()
 		RemoveItems(pchar, "gold_dublon", 100); // Addon-2016 Jason
 		Log_Info("Has entregado 100 dobloness");
 		dialog.text = "Todo parece estar bien. Aquí está tu amuleto. ¡Buena suerte con él!";
-		link.l1 = "Gracias, " + npchar.name + "¡";
+		link.l1 = "Gracias, " + npchar.name + ".";
 		link.l1.go = "Trade_artefact_5";
 		break;
 
@@ -546,7 +546,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "caleuche_2":
-		dialog.text = "Hay un pueblo caribe en Dominica, y el jefe local se llama Moknitekuvri. Tienen un chamán llamado Tuttuathapak, un indio muy respetado. No es uno de los caribes; es de ese lugar del que ya te he hablado. Él puede decirte más sobre este amuleto que yo. Pero ten cuidado, Tuttuathapak odia a los blancos. Realmente los odia. Después de todo, una vez lo esclavizaron y lo alejaron de su hogar...";
+		dialog.text = "Hay un pueblo caribe en Dominica, y el jefe se llama Moknitekuvri. Tienen un chamán llamado Tuttuathapak, un indio muy respetado. No es uno de los caribes; es de ese lugar del que ya te he hablado. Él puede decirte más sobre este amuleto que yo. Pero ten cuidado, Tuttuathapak odia a los blancos. Realmente los odia. Después de todo, una vez lo esclavizaron y lo alejaron de su hogar...";
 		link.l1 = "¿Supongo que llegó al Caribe de esa manera?";
 		link.l1.go = "caleuche_3";
 		break;
@@ -558,7 +558,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "caleuche_4":
-		dialog.text = "Eso es. Apuesto a que fue un hechizo de chamán el que calmó el mar como si fuera un muerto, e infectó a la tripulación con una enfermedad mortal. Este indio es muy astuto y muy peligroso. Si vas a él - compórtate cortésmente y cuida tu lengua - de lo contrario, habrá muchos problemas para ti. Además, ni siquiera te hablará sin una ofrenda para él.";
+		dialog.text = "Eso es. Apuesto a que fue un hechizo de chamán el que calmó el mar como si fuera un muerto, e infectó a la tripulación con una enfermedad mortal. Este indio es muy astuto y muy peligroso. Si vas con él, compórtate cortésmente y cuida tu lengua, de lo contrario, habrá muchos problemas para ti. Además, ni siquiera te hablará sin una ofrenda para él.";
 		link.l1 = "¿Y qué tipo de ofrenda podría él exigir?";
 		link.l1.go = "caleuche_5";
 		break;
@@ -570,7 +570,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "caleuche_6":
-		dialog.text = "Mi amigo era un marinero en el barco condenado. Afortunadamente, logró sobrevivir en ese infierno... Vi en él un amuleto como el tuyo, parece que el difunto capitán también agarró las pertenencias de los indios. Estoy seguro de que tu amuleto es de su colección - cuando el capitán se volvió loco y prendió fuego a su barco, sus marineros lo mataron y luego saquearon los cofres en la cabina.";
+		dialog.text = "Mi amigo era un marinero en el barco condenado. Afortunadamente, logró sobrevivir en ese infierno... Vi en él un amuleto como el tuyo, parece que el difunto capitán también agarró las pertenencias de los indios. Estoy seguro de que tu amuleto es de su colección, cuando el capitán se volvió loco y prendió fuego a su barco, sus marineros lo mataron y luego saquearon los cofres en la cabina.";
 		link.l1 = "Entendido. Entonces solo tengo que ir con un regalo a Dominica. ¡Gracias por tu ayuda y por la interesante historia!";
 		link.l1.go = "caleuche_7";
 		break;
@@ -595,7 +595,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "caleuche_10":
-		dialog.text = "Uno es mi amigo, el marinero de aquel barco que trajo a Tuttuathapak a las islas del Caribe. Desde aquel incidente, no ha pisado la cubierta de ningún barco. No lo he visto en un tiempo, pero sé dónde vive. Búscalo en el West Main, en Belice - ahora es cazador y deambula por las selvas. Su nombre es Fergus Hooper.";
+		dialog.text = "Uno es mi amigo, el marinero de aquel barco que trajo a Tuttuathapak a las islas del Caribe. Desde aquel incidente, no ha pisado la cubierta de ningún barco. No lo he visto en un tiempo, pero sé dónde vive. Búscalo al oeste en Tierra Firme, en Belice, ahora es cazador y deambula por las selvas. Su nombre es Fergus Hooper.";
 		link.l1 = "Bien. ¿Y el segundo?";
 		link.l1.go = "caleuche_11";
 		break;
@@ -608,12 +608,12 @@ void ProcessDialogEvent()
 
 	case "caleuche_12":
 		dialog.text = "No, que me golpee el trueno, no lo recuerdo. Oh, y cuando se presentó, mencionó que era de Barbados.";
-		link.l1 = "¡Eso es algo! Bien, intentaré encontrar a este amante de las mujeres emplumadas hasta que alguien más lo encuentre... Gracias, compañero, me has ayudado mucho!";
+		link.l1 = "¡Eso es algo! Bien, intentaré encontrar a este amante de las mujeres emplumadas hasta que alguien más lo encuentre... ¡Gracias, compañero, me has ayudado mucho!";
 		link.l1.go = "caleuche_13";
 		break;
 
 	case "caleuche_13":
-		dialog.text = "Eres bienvenido, capi, pasa a veces.";
+		dialog.text = "De nada, capitán. Vuelva pronto y charlemos.";
 		link.l1 = "¡Claro!";
 		link.l1.go = "caleuche_14";
 		break;
@@ -657,7 +657,7 @@ void ProcessDialogEvent()
 
 	// belamour legendary edition карибские нравы
 	case "Trial":
-			dialog.text = "¡Ah, así que tú eres ese capitán! Sí, te he estado esperando. Gerard también te esperaba, pero tuvo que ir urgentemente a alguna expedición, así que me pidió que te entregara el pago. Dijo que debes venir. Aquí hay cuatrocientos doblones, si te parece bien.");
+			dialog.text = "¡Ah, así que tú eres ese capitán! Sí, te he estado esperando. Gerard también te esperaba, pero tuvo que ir urgentemente a alguna expedición, así que me pidió que te entregara el pago. Dijo que vendrías. Aquí hay cuatrocientos doblones, si te parece bien.");
 			link.l1 = "¡Gracias! Es agradable tratar con personas honestas.";
 			link.l1.go = "Trial_1";
 			break;
@@ -672,6 +672,7 @@ void ProcessDialogEvent()
 		DeleteAttribute(npchar, "quest.trial_usurer");
 		pchar.questTemp.IslamonaSpaOfficer = true;
 		CloseQuestHeader("Trial");
+		pchar.questTemp.TrialEnd = true;
 		break;
 		// <-- legendary edition
 	}

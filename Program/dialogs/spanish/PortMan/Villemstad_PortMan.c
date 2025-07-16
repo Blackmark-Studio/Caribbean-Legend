@@ -30,7 +30,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "EscapeSlave_Villemstad_P2":
-		dialog.text = "Ya veo. Bueno, no puedo ayudarte. El bergantín '" + pchar.questTemp.Slavetrader.ShipName + "' se había ido por la mañana, nadie vio nada. Yo estaba en casa durmiendo. El vigilante del muelle también desapareció y no dejó rastro.\nEl gobernador envió un balandro para intentar rastrearlo mientras la pista estaba caliente, pero regresaron con las manos vacías. Ni rastro de los negros ni del '" + pchar.questTemp.Slavetrader.ShipName + "'. Para ser honesto, el balandro no los buscó muy de cerca, todos todavía estaban en pánico y pensaban que los infieles saldrían hirviendo de la jungla con horcas y machetes - hambrientos de sangre blanca.";
+		dialog.text = "Ya veo. Bueno, no puedo ayudarte. El bergantín '" + pchar.questTemp.Slavetrader.ShipName + "' se había ido por la mañana, nadie vio nada. Yo estaba en casa durmiendo. El vigilante del muelle también desapareció y no dejó rastro.\nEl gobernador envió un balandro para intentar rastrearlo mientras la pista estaba caliente, pero regresaron con las manos vacías. Ni rastro de los negros ni del '" + pchar.questTemp.Slavetrader.ShipName + "'. Para ser honesto, el balandro no los buscó muy de cerca, todos todavía estaban en pánico y pensaban que los infieles saldrían hirviendo de la jungla con horcas y machetes, hambrientos de sangre blanca.";
 		link.l1 = "Eso no fue muy útil, pero gracias de todos modos. Adiós.";
 		link.l1.go = "exit";
 		AddQuestRecord("Slavetrader", "22_3");

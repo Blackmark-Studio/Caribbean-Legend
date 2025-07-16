@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 		LAi_SetImmortal(npchar, false);
 		npchar.lifeday = 0;
 		DelLandQuestMark(npchar);
-		dialog.text = TimeGreeting() + ", capitán. Permítame presentarme - " + GetFullName(npchar) + " Aunque ya nos hemos encontrado hace poco, dudo que me recuerdes.";
+		dialog.text = TimeGreeting() + ", capitán. Permítame presentarme, " + GetFullName(npchar) + " Aunque ya nos hemos encontrado hace poco, dudo que me recuerdes.";
 		link.l1 = "Saludos, monsieur. ¿Y dónde podría haberte visto antes?";
 		link.l1.go = "carpenter_1";
 		break;
@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "officer":
-		PlaySound("Voice\Spanish\soldier_arest_4.wav");
+		PlaySound("Voice\Spanish\soldier_arest_1.wav");
 		dialog.text = "Bueno, bueno... ¡Contrabandistas frescos en mi red!";
 		link.l1 = "Eh...";
 		link.l1.go = "officer_1";
@@ -97,7 +97,7 @@ void ProcessDialogEvent()
 	case "officer_5":
 		PlaySound("Voice\Spanish\soldier\soldier arest-02.wav");
 		dialog.text = "Esta resina, mi querido maestro constructor naval, es un bien de valor estratégico que está bajo el control directo de nuestro gobernador. ¡Ya que afirmas que es toda tuya, que así sea! Estás bajo arresto, pasarás esta noche en nuestras cómodas mazmorras y mañana nos darás un informe detallado de cómo las conseguiste y con qué propósito. No te preocupes, eventualmente lo sabremos todo. Tú, capitán, eres libre de irte. Es tu día de suerte.";
-		link.l1 = " ";
+		link.l1 = "";
 		link.l1.go = "officer_6";
 		break;
 
@@ -137,7 +137,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "officer_11":
-		dialog.text = "Capitán, llévese toda la resina que tengo, salve su vida y lárguese de aquí. Puedo añadir a este trato mi promesa de no causarle problemas en St. Pierre. Esa es mi oferta final.";
+		dialog.text = "Capitán, llévese toda la resina que tengo, salve su vida y lárguese de aquí. Puedo añadir a este trato mi promesa de no causarle problemas en Saint-Pierre. Esa es mi oferta final.";
 		link.l1 = "¿Desde cuándo mi vida es parte del trato? ¡Ja!";
 		link.l1.go = "officer_12";
 		break;
@@ -225,7 +225,7 @@ void ProcessDialogEvent()
 
 	case "greguar_8":
 		dialog.text = "Entonces confiesa y alivia un poco tu alma. Podría estar en una posición para ayudarte.";
-		link.l1 = "Un constructor de barcos local me contrató para saquear una caravana española que zarpó de Trinidad. Tenía una gran necesidad de resina, ese era mi objetivo y prometió pagar quince doblones por barril. Rastreé la caravana, la saqué y traje las mercancías aquí. Pusieron mi nave en reparaciones y descargaron los barriles en el astillero. Estábamos a punto de cerrar nuestro trato cuando apareció ese oficial... Me pregunto cómo pudo enterarse.";
+		link.l1 = "Un constructor de barcos me contrató para saquear una caravana española que zarpó de Trinidad. Tenía una gran necesidad de resina, ese era mi objetivo y prometió pagar quince doblones por barril. Rastreé la caravana, la saqué y traje las mercancías aquí. Pusieron mi nave en reparaciones y descargaron los barriles en el astillero. Estábamos a punto de cerrar nuestro trato cuando apareció ese oficial... Me pregunto cómo pudo enterarse.";
 		link.l1.go = "greguar_9";
 		break;
 
@@ -286,7 +286,7 @@ void ProcessDialogEvent()
 
 	case "greguar_18":
 		PlaySound("Voice\Spanish\LE\Greguar\Greguar_03.wav");
-		dialog.text = "Capitán " + GetFullName(pchar) + "¡";
+		dialog.text = "¡Capitán " + GetFullName(pchar) + "!";
 		link.l1 = "¡Oh, monsieur Gregoire! ¡Usted otra vez!";
 		link.l1.go = "greguar_19";
 		break;
@@ -318,8 +318,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "pirate_2":
-		dialog.text = "¡Enterraremos tu traje elegante aquí!";
-		link.l1 = "¡Oh, qué amable de tu parte предложить un entierro, pero me temo que simplemente tendremos que dejarte aquí en la playa y dejar que las gaviotas se coman tus tripas!";
+		dialog.text = "¡Te enterraremos con ese elegante traje aquí mismo!";
+		link.l1 = "¡Qué amable de tu parte proponer un entierro, pero me temo que tendremos que dejarte aquí en la playa para que las gaviotas se coman tus tripas!";
 		link.l1.go = "exit";
 		AddDialogExitQuestFunction("FMQM_ShoreFight");
 		break;

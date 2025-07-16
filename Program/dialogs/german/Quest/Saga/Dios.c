@@ -45,14 +45,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "island_3":
-			dialog.text = "Hm... Du hast etwas angesprochen, das mich schon seit vielen Jahren beschäftigt. Dieser Ort, den du erwähnt hast, zieht schon lange die neugierigen Köpfe der Geographen an, aber niemand war jemals mutig genug, diese Region zu erforschen.";
+			dialog.text = "Hm... Sie haben etwas angesprochen, das mich schon seit vielen Jahren beschäftigt. Dieser Ort, den Sie erwähnt haben, zieht schon lange die neugierigen Köpfe der Geographen an, aber niemand war jemals mutig genug, diese Region zu erforschen.";
 			link.l1 = "Warum?";
 			link.l1.go = "island_4";
 		break;
 		
 		case "island_4":
 			dialog.text = "Die Sache ist, dass dieser Ort eine Art natürliche Anomalie ist. Die Wahrscheinlichkeit von Stürmen in dieser Region ist viel höher als irgendwo anders. Vielleicht liegt der Grund in der kalten Meeresströmung, aber das ist nur meine Hypothese. Viele Schiffe sind dort verschwunden und das war genug, um die Seeleute diesen Ort meiden zu lassen, alle Hauptseewege führen sowieso weit an dieser Region vorbei.";
-			link.l1 = "Ich nehme an, dass du auch die Wahrheit nicht kennst...";
+			link.l1 = "Ich nehme an, dass Sie auch die Wahrheit nicht kennen...";
 			link.l1.go = "island_5";
 		break;
 		
@@ -63,14 +63,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "island_6":
-			dialog.text = "Sicher. Das wichtigste Beweisstück ist das historische Dokument mit Auszügen aus dem Tagebuch von Kapitän Alvarado, der die Insel im Jahr 1620 besucht hat. Eine ziemlich interessante Geschichte, sage ich dir!";
+			dialog.text = "Sicher. Das wichtigste Beweisstück ist das historische Dokument mit Auszügen aus dem Tagebuch von Kapitän Alvarado, der die Insel im Jahr 1620 besucht hat. Eine ziemlich interessante Geschichte, sage ich Ihnen!";
 			link.l1 = "Kapitän Alvarado? Das ist das zweite Mal, dass ich diesen Namen höre...";
 			link.l1.go = "island_7";
 		break;
 		
 		case "island_7":
-			dialog.text = "Ich bin nicht überrascht. Die Geschichte von Kapitän Alvarado ist seit Jahren Teil der Folklore. Sie hat sich verändert, wurde mit Gerüchten, Lügen und Träumen gefüllt, und so ist sie entstanden - die Legende von der Insel der verlassenen Schiffe.\nKlatsch kann sich ändern, aber Papier und Tinte können es nicht, sie bleiben über Hunderte von Jahren intakt. Hier, lies diese Geschichte - vielleicht hilft sie dir, das zu enthüllen, was du suchst.";
-			link.l1 = "Danke! Hast du noch etwas?";
+			dialog.text = "Ich bin nicht überrascht. Die Geschichte von Kapitän Alvarado ist seit Jahren Teil der Folklore. Sie hat sich verändert, wurde mit Gerüchten, Lügen und Träumen gefüllt, und so ist sie entstanden - die Legende von der Insel der verlassenen Schiffe.\nKlatsch kann sich ändern, aber Papier und Tinte können es nicht, sie bleiben über Hunderte von Jahren intakt. Hier, lesen Sie diese Geschichte - vielleicht hilft sie Ihnen, das zu enthüllen, was Sie suchen.";
+			link.l1 = "Danke! Haben Sie noch etwas?";
 			link.l1.go = "island_8";
 		break;
 		
@@ -81,7 +81,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "island_9":
-			dialog.text = "Bitte sehr. Eigentlich habe ich dir gar nicht geholfen, du hast nicht die Koordinaten des Ortes und ich auch nicht. Ich kann nicht einmal beweisen, dass dort eine bewohnte Insel existiert. Aber soweit ich verstehe, beabsichtigst du, dieses Gebiet zu erkunden?\nWenn ja, dann sei dir bewusst, dass ich wirklich dankbar für jegliche Information wäre, besonders wenn sie mit materiellem Beweis versehen ist. Es scheint, dass du ein wohlhabender Mann bist, aber ich werde einen Weg finden, dich zu entschädigen.";
+			dialog.text = "Bitte sehr. Eigentlich habe ich Ihnen gar nicht geholfen, Sie haben nicht die Koordinaten des Ortes und ich auch nicht. Ich kann nicht einmal beweisen, dass dort eine bewohnte Insel existiert. Aber soweit ich verstehe, beabsichtigen Sie, dieses Gebiet zu erkunden?\nWenn ja, dann sei Ihnen bewusst, dass ich wirklich dankbar für jegliche Information wäre, besonders wenn sie mit materiellem Beweis versehen ist. Es scheint, dass Sie ein wohlhabender Mann sind, aber ich werde einen Weg finden, Sie zu entlohnen.";
 			link.l1 = "Gut. Dann haben wir einen Deal, Senor Dios. Vielleicht werden meine Notizen auch in der Zukunft von jemandem gelesen... Und vielleicht wird sogar jemand eine Legende schreiben...";
 			link.l1.go = "island_10";
 		break;
@@ -94,12 +94,12 @@ void ProcessDialogEvent()
 		
 		case "island_11":
 			dialog.text = "Sie wissen, dass ich Kartograph bin. Also, ich habe zwei Jahre lang Karten des karibischen Archipels gezeichnet, um den Admiralsatlas für den Vizekönigswettbewerb von Nueva Granada zu erstellen. Aber alle meine vierundzwanzig Karten wurden auf unverschämteste Weise aus meinem Haus gestohlen, während ich von Piraten gefangen genommen wurde, von denen senor Svenson mich gerettet hat.\nIch bin sicher, dass der Angriff von einem meiner Konkurrenten organisiert wurde, um meine Karten zu erwerben. Es ist schon lange her, aber ich habe keine einzige Karte aus meinem Set wieder gesehen.";
-			link.l1 = "Ich verstehe. Sie möchten, dass ich Ihre Karten zurückgebe.";
+			link.l1 = "Ich verstehe. Sie möchten, dass ich Ihre Karten suche.";
 			link.l1.go = "island_12";
 		break;
 		
 		case "island_12":
-			dialog.text = "Genau. Vielleicht wirst du sie auf deinen zukünftigen Abenteuern finden. Sie sind leicht zu erkennen - mein Zeichen ist auf jeder einzelnen von ihnen. Ich werde dich großzügig belohnen, wenn du es wie durch ein Wunder schaffst, alle vierundzwanzig Karten zu sammeln.";
+			dialog.text = "Genau. Vielleicht werden Sie sie auf Ihren zukünftigen Abenteuern finden. Sie sind leicht zu erkennen - mein Zeichen ist auf jeder einzelnen von ihnen. Ich werde Sie großzügig belohnen, wenn Sie es wie durch ein Wunder schaffen, alle vierundzwanzig Karten zu sammeln.";
 			link.l1 = "Gut. Ich werde ab jetzt jede Karte, die ich im Archipel finde, aufmerksam betrachten. Nun, ich muss jetzt gehen. Danke für das interessante Gespräch und für das Dokument.";
 			link.l1.go = "island_13";
 		break;
@@ -115,10 +115,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Dios":
-			dialog.text = "A-ah, es bist du, senor "+GetFullName(pchar)+"? Hast du etwas Interessantes zu erzählen?";
+			dialog.text = "A-ah, Sie sind es, Senor "+GetFullName(pchar)+"? Haben Sie etwas Interessantes zu erzählen?";
 			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 0 && CountAdmiralMapFromCharacter() < 24 && !CheckAttribute(npchar, "quest.mapinfo"))
 			{
-				link.l3 = TimeGreeting()+"! Señor Gott, bitte, schauen Sie sich diese Karte an, die ich gefunden habe. Es muss eine Ihrer Karten sein, laut dem Zeichen.";
+				link.l3 = TimeGreeting()+"! Senor Dios, bitte schauen Sie sich diese Karte an, die ich gefunden habe. Es muss eine Ihrer Karten sein, laut dem Zeichen.";
 				link.l3.go = "map_info";
 			}
 			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 23)
@@ -128,7 +128,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.Dios")) // был в LSC
 			{
-				link.l4 = TimeGreeting()+"! Ja, war ich. Ich war an diesem mystischen Ort, von dem wir gesprochen haben.";
+				link.l4 = TimeGreeting()+"! Ja, habe ich. Ich war an diesem mystischen Ort, von dem wir gesprochen haben.";
 				link.l4.go = "LSC";
 			}
 			link.l9 = "Bisher nichts, Senor. Wollte nur sehen, wie es Ihnen geht.";
@@ -137,7 +137,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "map_info":
-			dialog.text = "Zeig mir... (schaut hin) Natürlich! Das ist eine meiner Karten für den Admiralatlas! Kapitän, ich bitte Sie wirklich, alle zu finden! Ich verstehe, dass es fast unmöglich ist, aber trotzdem... Ich will die Hoffnung nicht verlieren.";
+			dialog.text = "Zeigen Sie es mir... (schaut hin) Natürlich! Das ist eine meiner Karten für den Admiralatlas! Kapitän, ich bitte Sie wirklich, alle zu finden! Ich verstehe, dass es fast unmöglich ist, aber trotzdem... Ich will die Hoffnung nicht verlieren.";
 			link.l1 = "Verlieren Sie nicht den Kopf, Senor. Ich habe diese Karte gefunden, also besteht die Chance, dass ich auch den Rest finde. Sie sind immer noch in der Karibik.";
 			link.l1.go = "map_info_1";
 		break;
@@ -152,7 +152,7 @@ void ProcessDialogEvent()
 		
 		case "amap":
 			Achievment_Set("ach_CL_110");
-			dialog.text = "Ich kann meinen Augen nicht trauen! Hast du sie wirklich gefunden? Alle von ihnen?";
+			dialog.text = "Ich kann meinen Augen nicht trauen! Haben Sie sie wirklich gefunden? Alle von ihnen?";
 			link.l1 = "Ja. Es war nicht einfach, aber ich hatte Glück bei dieser Suche. Nehmen Sie Ihre Karten. Sie sind so wunderbar, dass es mir Leid tut, mich von ihnen zu trennen.";
 			link.l1.go = "amap_1";
 		break;
@@ -163,31 +163,31 @@ void ProcessDialogEvent()
 				sTemp = IdentifyAdmiralMapLast();
 				if (sTemp != "") RemoveItems(pchar, sTemp, 1);
 			}
-			Log_Info("You have given the complete set of admiral's maps");
+			Log_Info("Sie haben den vollständigen Satz von Admiralskarten gegeben");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Unglaublich! Das ist einfach zu unglaublich! Um ehrlich zu sein, habe ich nie geglaubt, dass dieser Moment eintreten würde.";
-			link.l1 = "Während ich atme, hoffe ich, Senior Dios. Sie können sich nun Don Cordova stellen. Ich bin sicher, er wird Ihre Talente sehr schätzen.";
+			link.l1 = "Dum spiro spero, Senior Dios. Sie können sich nun Don Cordova stellen. Ich bin sicher, er wird Ihre Talente sehr schätzen.";
 			link.l1.go = "amap_2";
 		break;
 		
 		case "amap_2":
 			dialog.text = "Sie haben meinen Dank, Kapitän! Sie realisieren gar nicht, welch großen Dienst Sie mir erwiesen haben. Und wie versprochen - ich werde Sie belohnen. Ich habe auch ein Geschenk für Sie. Ich denke, als Seemann werden Sie es sehr nützlich finden.";
-			link.l1 = "Sie haben mich fasziniert, Senor!";
+			link.l1 = "Sie haben mich neugierig gemacht, Senor!";
 			link.l1.go = "amap_3";
 		break;
 		
 		case "amap_3":
 			GiveItem2Character(pchar, "spyglass5"); 
-			Log_Info("You have received a ship telescope");
+			Log_Info("Du hast ein Schiffsteleskop erhalten");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Hier! Dies ist ein Schiffsteleskop meiner Anfertigung. Es ist einzigartig und du wirst nirgendwo anders ein solches finden. Die Linsen wurden von dem geschicktesten Meister in Spanien in Europa angefertigt. Das Gehäuse wurde von einem befreundeten Büchsenmacher gemacht. Ein spezielles Stativ hilft dir, das Gerät trotz jeglichen Rollens zu richten. Du kannst alles sehen, was du brauchst, sei es ein Schiff oder eine Festung.";
+			dialog.text = "Hier! Dies ist ein Schiffsteleskop meiner Anfertigung. Es ist einzigartig und Sie werden nirgendwo anders ein solches finden. Die Linsen wurden von dem geschicktesten Meister in Spanien in Europa angefertigt. Das Gehäuse wurde von einem befreundeten Büchsenmacher gemacht. Ein spezielles Stativ hilft Ihnen, das Gerät trotz jeglichen Rollens zu richten. Sie können alles sehen, was Sie sehen wollen, sei es ein Schiff oder eine Festung.";
 			link.l1 = "Ein so wunderbares Geschenk! Danke, Senor Dios.";
 			link.l1.go = "amap_4";
 		break;
 		
 		case "amap_4":
-			dialog.text = "Benutzen Sie es, Senor Kapitän. Ich hoffe, dass mein Teleskop Ihnen gut dienen wird.";
-			link.l1 = "Kein Zweifel! Ich freue mich darauf, es auf dem Deck meines Schiffes zu pflanzen und hindurch zu schauen.";
+			dialog.text = "Nehmen Sie es, Senor Kapitän. Ich hoffe, dass mein Teleskop Ihnen gut dienen wird.";
+			link.l1 = "Kein Zweifel! Ich freue mich darauf, es auf dem Deck meines Schiffes zu platzieren und hindurch zu schauen.";
 			link.l1.go = "amap_5";
 		break;
 		
@@ -227,19 +227,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "amapcopy_02":
-			dialog.text = "Ausnahme?";
-			link.l1 = "Both you and I are honest people; we had the opportunity to convince each other of that. If you would make a copy of your maps for me, I would swear that no one would ever know about it. Understand: your maps are truly magnificent, and for me, as a sailor, this atlas is a real treasure. Moreover, I would generously pay you for your work.";
+			dialog.text = "Eine Ausnahme?";
+			link.l1 = "Wir beide sind ehrliche Menschen, wir hatten die Gelegenheit, uns gegenseitig davon zu überzeugen. Wenn Sie eine Kopie Ihrer Karten für mich anfertigen würden, würde ich schwören, dass niemand jemals davon erfahren würde. Verstehen Sie: Ihre Karten sind wirklich großartig, und für mich als Seemann ist dieser Atlas ein wahrer Schatz. Außerdem würde ich Sie für Ihre Arbeit großzügig entlohnen.";
 			link.l1.go = "amapcopy_03";
 		break;
 		
 		case "amapcopy_03":
-			dialog.text = "Herr "+pchar.lastname+", Ich zweifle keine Sekunde daran, dass Sie Ihr Wort halten würden. Und angesichts dessen, was Sie für mich getan haben, fällt es mir sehr schwer, Ihre Bitte abzulehnen. Darüber hinaus ist die Tatsache, dass Sie, ein hervorragender Seemann, meine Karten so hoch schätzen, bereits ein wertvolles Kompliment für mich als Kartograph.";
-			link.l1 = "Glaub mir, ich habe kein bisschen übertrieben. Was sagst du dazu?";
+			dialog.text = "Senor "+pchar.lastname+", Ich zweifle keine Sekunde daran, dass Sie Ihr Wort halten würden. Und angesichts dessen, was Sie für mich getan haben, fällt es mir sehr schwer, Ihre Bitte abzulehnen. Darüber hinaus ist die Tatsache, dass Sie, ein hervorragender Seemann, meine Karten so hoch schätzen, bereits ein wertvolles Kompliment für mich als Kartograph.";
+			link.l1 = "Glauben Sie mir, ich habe kein bisschen übertrieben. Was sagen Sie dazu?";
 			link.l1.go = "amapcopy_04";
 		break;
 		
 		case "amapcopy_04":
-			dialog.text = "Sehr gut, ich stimme zu, Ihnen eine Kopie dieses Atlas zu machen. Aber es gibt ein kleines Problem. Als mein kostbarer Atlas gestohlen wurde, haben die Diebe auch all meine Werkzeuge mitgenommen - vielleicht um sicherzustellen, dass ich nie mehr Karten erstellen kann oder um sie auch meinen Konkurrenten zu verpfänden. Und wenn ich weitere Karten von solcher Qualität erstellen soll, kann ich nicht einfach gewöhnliches Schreibwarenmaterial verwenden.\nIch habe versucht, Schreibwaren auf dem Markt zu kaufen, aber ich hatte kein Glück - es gibt nichts zu verkaufen. Wenn Sie mir die notwendigen Materialien besorgen können, werde ich Kopien dieser Karten für Sie anfertigen.";
+			dialog.text = "Also gut, ich stimme zu, Ihnen eine Kopie dieses Atlas zu machen. Aber es gibt ein kleines Problem. Als mein kostbarer Atlas gestohlen wurde, haben die Diebe auch all meine Werkzeuge mitgenommen - vielleicht um sicherzustellen, dass ich nie mehr Karten erstellen kann oder um sie auch meinen Konkurrenten zu verpfänden. Und wenn ich weitere Karten von solcher Qualität erstellen soll, kann ich nicht einfach gewöhnliches Schreibwarenmaterial verwenden.\nIch habe versucht, Schreibwaren auf dem Markt zu kaufen, aber ich hatte kein Glück - es gibt nichts zu verkaufen. Wenn Sie mir die notwendigen Materialien besorgen können, werde ich Kopien dieser Karten für Sie anfertigen.";
 			link.l1 = "Kein Problem, ich bringe Ihnen hochwertige Schreibwaren. Und was ist mit der Bezahlung?";
 			link.l1.go = "amapcopy_05";
 		break;
@@ -251,13 +251,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "amapcopy_06":
-			dialog.text = "Dann werde ich auf dich mit den benötigten Vorräten und der vereinbarten Bezahlung warten. Sobald du alles bringst, werde ich anfangen zu arbeiten.";
+			dialog.text = "Dann werde ich auf Sie mit den benötigten Vorräten und der vereinbarten Bezahlung warten. Sobald Sie alles bringen, werde ich anfangen zu arbeiten.";
 			if(GetCharacterItem(pchar,"chest") >= 3 && GetCharacterItem(pchar,"mineral21") > 0)
 			{
 				link.l1 = "Sie müssen nicht lange warten: wie es der Zufall will, habe ich alles, was Sie brauchen. Hier, bitte.";
 				link.l1.go = "amapcopy_07";
 			}
-			link.l2 = "Sie werden nicht lange warten müssen, senor!";
+			link.l2 = "Sie werden nicht lange warten müssen, Senor!";
 			link.l2.go = "amapcopy_exit";
 		break;
 		
@@ -270,7 +270,7 @@ void ProcessDialogEvent()
 		case "amapcopy_08":
 			TakeNItems(pchar,"chest", -3);
 			TakeNItems(pchar,"mineral21", -1);
-			Log_info("You handed over writing supplies and three chests with doubloons.");
+			Log_info("Du hast Schreibzeug und drei Truhen mit Dublonen übergeben.");
 			PlaySound("interface\important_item.wav");
 			SetTimerFunction("Amapcopy_comlete", 0, 0, 30);
 			pchar.questTemp.AdmiralMapCopy = "wait";
@@ -284,12 +284,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "amapcopy_waitchest":
-			dialog.text = "Grüße, senor "+pchar.lastname+"! Hast du das gebracht, was ich gefragt habe?";
-			link.l1 = "Noch nicht, senor Dios. Aber ich werde definitiv alles bringen!";
+			dialog.text = "Grüße, Senor "+pchar.lastname+"! Haben Sie das gebracht, was ich gefragt habe?";
+			link.l1 = "Noch nicht, Senor Dios. Aber ich werde definitiv alles bringen!";
 			link.l1.go = "amapcopy_exit";
 			if(GetCharacterItem(pchar,"chest") >= 3 && GetCharacterItem(pchar,"mineral21") > 0)
 			{
-				link.l2 = "Ja, senor Dios. Hier sind Ihre neuen Schreibmaterialien und die vereinbarte Zahlung.";
+				link.l2 = "Ja, Senor Dios. Hier sind Ihre neuen Schreibmaterialien und die vereinbarte Zahlung.";
 				link.l2.go = "amapcopy_07";
 			}
 		break;
@@ -297,7 +297,7 @@ void ProcessDialogEvent()
 		case "amapcopy_waitmonth":
 			if(CheckAttribute(pchar,"questTemp.AdmiralMapCopy") && pchar.questTemp.AdmiralMapCopy == "complete")
 			{
-				dialog.text = "Und hier bist du, mein lieber Freund! Ich hoffe, es macht dir nichts aus, wenn ich dich so nenne?";
+				dialog.text = "Und hier sind Sie, mein lieber Freund! Ich hoffe, es macht Ihnen nichts aus, wenn ich Sie so nenne?";
 				link.l1 = "Ganz und gar nicht, mein Freund. Ich bin wirklich froh, dass wir Freunde geworden sind.";
 				link.l1.go = "amapcopy_09";
 			}
@@ -315,14 +315,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "amapcopy_09":
-			dialog.text = "Ich habe wunderbare Neuigkeiten für dich! Ich habe endlich eine Kopie des Admiralsatlas fertiggestellt. Ich werde das Original für mich behalten, da ich immer noch vorhabe, mich am Dienst des Vizekönigs von Neu-Grenada zu beteiligen. Aber die Kopien sind eure! Ich hoffe, sie werden euch gut dienen.";
+			dialog.text = "Ich habe wunderbare Neuigkeiten für Sie! Ich habe endlich eine Kopie des Admiralsatlas fertiggestellt. Ich werde das Original für mich behalten, da ich immer noch vorhabe, mich am Dienst des Vizekönigs von Neu-Grenada zu beteiligen. Aber die Kopien sind eure! Ich hoffe, sie werden euch gut dienen.";
 			link.l1 = "Vielen Dank, Senor! Sie haben keine Ahnung, wie wertvoll Ihr Atlas für jemanden wie mich ist! Ich schwöre auf meine Ehre: Niemand wird jemals erfahren, dass Sie diese Kopie für mich gemacht haben!";
 			link.l1.go = "amapcopy_10";
 		break;
 		
 		case "amapcopy_10":
 			GiveAdmiralAtlasToCharacter(pchar);
-			Log_Info("You received a set of admiral's maps.");
+			Log_Info("Du hast einen Satz Admiralenkarten erhalten.");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Ich bin froh, dass Sie zufrieden sind. Da alles so gekommen ist, habe ich noch ein weiteres Angebot für Sie.";
 			link.l1 = "Was ist los? Ich höre sehr aufmerksam zu.";
@@ -330,22 +330,22 @@ void ProcessDialogEvent()
 		break;
 		
 		case "best_map":
-			dialog.text = "Während ich diese Karten für dich gezeichnet habe, kam mir der Gedanke, dass sie zwar gut für einen Entdecker sind, aber nicht alles bieten, was ein Seekapitän braucht. Sieh selbst: Alle Buchten, Kaps und Lagunen darauf sind sehr genau dargestellt, aber du kannst sie nicht benutzen, um einen Kurs zwischen den Inseln zu plotten.";
+			dialog.text = "Während ich diese Karten für Sie gezeichnet habe, kam mir der Gedanke, dass sie zwar gut für einen Entdecker sind, aber nicht alles bieten, was ein Seekapitän braucht. Sehen Sie selbst: Alle Buchten, Kaps und Lagunen darauf sind sehr genau dargestellt, aber du kannst sie nicht benutzen, um einen Kurs zwischen den Inseln zu plotten.";
 			link.l1 = "Das stimmt, man kann den Kurs nicht nach ihnen bestimmen. Aber ich wage es keineswegs zu klagen, senor Dios! Sie haben die Karten für mich gemacht, genau wie wir vereinbart haben, nichts weniger.";
 			link.l1.go = "best_map_01";
 		break;
 		
 		case "best_map_01":
-			dialog.text = "Aber ich kann auch eine Archipelkarte für dich erstellen! Und nicht die Art, die du von der Niederländischen Westindien-Kompanie kaufen kannst, sondern eine einzigartige, ausgezeichnete Karte.";
+			dialog.text = "Aber ich kann auch eine Archipelkarte für Sie erstellen! Und nicht die Art, welche Sie von der Niederländischen Westindien-Kompanie kaufen können, sondern eine einzigartige, ausgezeichnete Karte.";
 			link.l1 = "Danke, Senor Dios, aber ich brauche keine solche Karte. Trotzdem vielen Dank für das Angebot!";
 			link.l1.go = "best_map_02";
-			link.l2 = "Machst du Witze?! Senor Dios, wie könnte ich möglicherweise ablehnen? Sag mir einfach, was du brauchst - ich werde kein Geld oder Werkzeuge sparen!";
+			link.l2 = "Machen Sie Witze?! Senor Dios, wie könnte ich bloß so ein Angebot ablehnen? Sagen Sie mir einfach, was Sie brauchen - ich werde kein Geld oder Werkzeuge sparen!";
 			link.l2.go = "best_map_04";
 		break;
 		
 		case "best_map_02":
-			dialog.text = "Nun, ich musste es anbieten. Auf jeden Fall war es ein Vergnügen, Geschäfte mit Ihnen zu machen, senor "+pchar.lastname+"!";
-			link.l1 = "Ebenso! Viel Glück dir!";
+			dialog.text = "Nun, ich musste es anbieten. Auf jeden Fall war es ein Vergnügen, Geschäfte mit Ihnen zu machen, Senor "+pchar.lastname+"!";
+			link.l1 = "Ebenso! Viel Glück Ihnen!";
 			link.l1.go = "best_map_03";
 		break;
 		
@@ -356,8 +356,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "best_map_04":
-			dialog.text = "Du hast mir bereits die Werkzeuge gebracht, danke. Ich brauche eine reguläre Archipelkarte und bitte auch um einen Kompass und einen funktionierenden Chronometer: die Karte muss genau sein, sonst wird sie dir nur im Weg stehen. Und was die Bezahlung angeht - ich bitte um eine Kiste mit Dublonen.";
-			link.l1 = "Ein gewöhnlicher Archipelkarten, ein Kompass, ein funktionierender Chronometer und eine Kiste voller Dublonen... Warum brauchst du all das? Ich dachte, du würdest nur eine Kopie anfertigen, wie bei deinen Inselkarten...";
+			dialog.text = "Sie haben mir bereits die Werkzeuge gebracht, danke. Ich brauche eine reguläre Archipelkarte und bitte auch um einen Kompass und einen funktionierenden Chronometer: die Karte muss genau sein, sonst wird sie Ihnen nur im Weg stehen. Und was die Bezahlung angeht - ich bitte um eine Kiste mit Dublonen.";
+			link.l1 = "Eine gewöhnliche Archipelkarte, ein Kompass, ein funktionierender Chronometer und eine Kiste voller Dublonen... Warum brauchen Sie all das? Ich dachte, Sie würden nur eine Kopie anfertigen, wie bei deinen Inselkarten...";
 			link.l1.go = "best_map_05";
 		break;
 		
@@ -395,7 +395,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "best_map_07":
-		    Log_Info("You handed over a regular map of the archipelago, a boussole, a tariffed chronometer, and a chest with doubloons.");
+		    Log_Info("Du übergabst eine reguläre Karte des Archipels, eine Boussole, einen tarifierten Chronometer und eine Truhe mit Dublonen.");
 			TakeNItems(pchar,"chest", -1);
 			TakeNItems(pchar,"map_normal", -1);
 			TakeNItems(pchar,"bussol", -1);
@@ -415,14 +415,14 @@ void ProcessDialogEvent()
 		case "best_map_wait":
 			if(CheckAttribute(pchar,"questTemp.AdmiralAtlas") && pchar.questTemp.AdmiralAtlas == "complete")
 			{
-				dialog.text = "Ach, da bist du ja, Senor "+pchar.lastname+"! Ich freue mich, Ihnen mitteilen zu können, dass ich die Karte des Archipels fertiggestellt habe! Und ich kann Ihnen versichern, es ist genauso gut wie die erste Zeichnung, die ich für Don Juan de Cordova gemacht habe!";
+				dialog.text = "Ach, da sind Sie ja, Senor "+pchar.lastname+"! Ich freue mich, Ihnen mitteilen zu können, dass ich die Karte des Archipels fertiggestellt habe! Und ich kann Ihnen versichern, es ist genauso gut wie die erste Zeichnung, die ich für Don Juan de Cordova gemacht habe!";
 				link.l1 = "Mein Freund... Diese Karte ist erstaunlich! Sie ist nichts weniger als ein Meisterwerk! Wie kann ich dir für alles danken, was du für mich getan hast?";
 				link.l1.go = "best_map_09";
 			}
 			else
 			{
 				dialog.text = "Grüße, Senor! Ich muss mich entschuldigen, aber die Karte ist noch nicht fertig.";
-				link.l1 = "Ja, ich erinnere mich, dass du eine Woche gebraucht hast. Ich bin nur gekommen, um nach dir zu sehen.";
+				link.l1 = "Ja, ich erinnere mich, dass Sie eine Woche gebraucht haben. Ich bin nur gekommen, um nach Ihnen zu sehen.";
 				link.l1.go = "best_map_wait_01";
 			}
 		break;
@@ -441,7 +441,7 @@ void ProcessDialogEvent()
 		case "best_map_10":
 			TakeNItems(pchar,"Map_Best", 1);
 			TakeNItems(pchar,"map_normal", 1);
-			Log_Info("You received an excellent archipelago map!");
+			Log_Info("Du hast eine ausgezeichnete Archipelkarte erhalten!");
 			PlaySound("interface\important_item.wav");
 			NextDiag.CurrentNode = "Dios";
 			DialogExit();
@@ -454,7 +454,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LSC_1":
-			dialog.text = "Wovon redest du, Kapitän?";
+			dialog.text = "Wovon reden Sie, Kapitän?";
 			link.l1 = "Dort leben Menschen... und sie werden nicht glücklich sein, wenn jemand sich in ihr Leben einmischt. Ich glaube nicht, dass die mögliche Ankunft eines 'Forschungs' Geschwaders willkommen sein wird.";
 			link.l1.go = "LSC_1_1";
 		break;
@@ -467,13 +467,13 @@ void ProcessDialogEvent()
 		
 		case "LSC_2":
 			dialog.text = "Ich stimme zu, Kapitän. Ich gebe Ihnen das Wort eines Edelmanns, dass ich in den nächsten zehn Jahren niemandem weder den Standort der Insel noch Informationen, die ihren Bewohnern schaden könnten, verraten werde.";
-			link.l1 = "Hör dir meine Geschichte an. Schreib sie auf, wenn du willst. Also, die Insel besteht aus vielen gesunkenen Schiffen, deren Wracks auf einem weiten Riff liegen...";
+			link.l1 = "Hören Sie meine Geschichte an. Schreiben Sie sie auf, wenn Sie wollen. Also, die Insel besteht aus vielen gesunkenen Schiffen, deren Wracks auf einem weiten Riff liegen...";
 			link.l1.go = "LSC_3";
 		break;
 		
 		case "LSC_3":
 			DialogExit();
-			SetLaunchFrameFormParam("Two hours later...", "LSC_FinalDiosStory", 0, 5);
+			SetLaunchFrameFormParam("Zwei Stunden später...", "LSC_FinalDiosStory", 0, 5);
 			LaunchFrameForm();
 			WaitDate("", 0, 0, 0, 2, 10); //крутим время
 			RecalculateJumpTable();
@@ -481,7 +481,7 @@ void ProcessDialogEvent()
 		
 		case "LSC_4":
 			dialog.text = "Unglaublich! Sie haben mir sehr wertvolle Informationen erzählt, Kapitän! Die Nachkommen von Admiral de Betancourt leben auf der Insel! Jetzt wissen wir, was mit seiner Staffel passiert ist. Und es gibt jetzt eine weiße Stelle weniger auf der Karte des karibischen Archipels... Vielen Dank für Ihre Geschichte, "+pchar.name+"!";
-			link.l1 = "Siehst du jetzt, warum ich dich gebeten habe, bei der Wiedergabe meiner Informationen wirklich vorsichtig zu sein?";
+			link.l1 = "Sehen Sie jetzt, warum ich Sie gebeten habe, bei der Wiedergabe meiner Informationen wirklich vorsichtig zu sein?";
 			link.l1.go = "LSC_5";
 		break;
 		
@@ -489,7 +489,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ich verstehe. Sie können sicher sein, dass ich mein Wort halte. Sagen Sie mir... haben Sie irgendwelche materiellen Attribute von der Insel?";
 			if (CheckCharacterItem(pchar, "LSC_navigation_map"))
 			{
-				link.l1 = "Ich habe Segelanweisungen zur Insel der Verlassenen Schiffe. Hier, schau mal. Sie ermöglichen es dir, mit einem kleinen Schiff durch die Riffe und Trümmer zu segeln und sicher auf der Insel zu landen. Ohne diese Anweisungen ist es unmöglich, die Insel zu erreichen.";
+				link.l1 = "Ich habe Segelanweisungen zur Insel der Verlassenen Schiffe. Hier, schauen Sie mal. Sie ermöglichen es Ihnen, mit einem kleinen Schiff durch die Riffe und Trümmer zu segeln und sicher auf der Insel zu landen. Ohne diese Anweisungen ist es unmöglich, die Insel zu erreichen.";
 				link.l1.go = "LSC_6";
 			}
 			else
@@ -500,26 +500,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LSC_6":
-			Log_Info("You have given sailing directions");
+			Log_Info("Du hast die Segelanweisungen gegeben");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "(blickend) So ein ausgezeichnetes Dokument! Es wurde von einem Mann gezeichnet, der in der Kartographie bewandert ist. Selbst ich könnte es nicht besser machen. Unglaublich! Kapitän, warum geben Sie mir nicht diese Segelanweisungen? Eine Geschichte ist eine Geschichte, aber dieses Papier muss den berühmtesten Geographen der Alten Welt gezeigt werden!";
-			link.l1 = "Herrgott, leider brauche ich dieses Dokument für mich selbst. Wie ich schon gesagt habe, ist es unmöglich, ohne es durch die Riffe um die Insel zu kommen. Aber Sie können eine Kopie der Anweisungen machen, wenn Sie möchten, und ich wäre nur froh, wenn Sie sie auch in Ihrem Besitz haben.";
+			link.l1 = "Senor Dios, leider brauche ich dieses Dokument für mich selbst. Wie ich schon gesagt habe, ist es unmöglich, ohne es durch die Riffe um die Insel zu kommen. Aber Sie können eine Kopie der Anweisungen machen, wenn Sie möchten, und ich wäre nur froh, wenn Sie sie auch in Ihrem Besitz haben.";
 			link.l1.go = "LSC_10";
 			//link.l2 = "Herr Gott, leider brauche ich diesen Gegenstand für mich selbst. Wie ich schon sagte, ist es unmöglich, die Riffe um die Insel ohne ihn zu umgehen. Ich würde es im Namen der Wissenschaft opfern, aber... Ich bin sicher, dass Sie verstehen.";
 			//link.l2.go = "LSC_7";
 		break;
 		
 		case "LSC_7":
-			Log_Info("You received sailing directions");
+			Log_Info("Du hast die Segelanweisungen erhalten");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Absolut. Es ist Ihr Recht, obwohl es schade ist... Wie dem auch sei, danke für Ihre Geschichte! Sie haben einen großen Dienst für Geographen, Kartographen und andere neugierige Leute geleistet.";
-			link.l1 = "Sie sind willkommen, Senor. Nun, ich muss jetzt gehen. Lebewohl.";
+			link.l1 = "Gern geschehen, Senor. Nun, ich muss jetzt gehen. Lebewohl.";
 			link.l1.go = "LSC_8";
 		break;
 		
 		case "LSC_7_1":
 			dialog.text = "Wie schade... Trotzdem danke für Ihre Geschichte! Sie haben einen großen Dienst für Geographen, Kartographen und andere neugierige Menschen geleistet.";
-			link.l1 = "Sie sind willkommen, Senor. Nun, ich muss jetzt gehen. Auf Wiedersehen.";
+			link.l1 = "Gern geschehen, Senor. Nun, ich muss jetzt gehen. Auf Wiedersehen.";
 			link.l1.go = "LSC_8";
 		break;
 		
@@ -543,7 +543,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LSC_10":
-			Log_Info("You received sailing directions");
+			Log_Info("Du hast die Segelanweisungen erhalten");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Vielen Dank! Das ist sehr nett von Ihnen. Geben Sie mir etwas Zeit...";
 			link.l1 = "...";
@@ -552,7 +552,7 @@ void ProcessDialogEvent()
 		
 		case "LSC_11":
 			DialogExit();
-			SetLaunchFrameFormParam("Two hours later", "", 0.1, 3.0);
+			SetLaunchFrameFormParam("Zwei Stunden später", "", 0.1, 3.0);
 			LaunchFrameForm();
 			WaitDate("", 0, 0, 0, 2, 0);
 			npchar.dialog.currentnode = "LSC_12";
@@ -572,7 +572,7 @@ void ProcessDialogEvent()
 			sld.quest.sextant = "true"; // атрибут Алексу на хронометр
 			GiveItem2Character(pchar, "sextant1"); 
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Ich habe nicht nur eine Vorliebe für Kartographie und Geographie, sondern auch für Mathematik und Astronomie. Es hat mich ein Jahr des Versuchens gekostet, ein universelles Werkzeug zur Bestimmung von Breiten- und Längengraden zu erschaffen. Und ich habe Fortschritte gemacht. Schau mal:\nDas ist mein Sextant. Ich habe es selbst entworfen. Das Problem ist, es funktioniert nicht. Es erfordert einen äußerst genauen Chronometer. Selbst jene, die von den besten Handwerkern hergestellt wurden, geben mit der Zeit inakzeptable Fehler. Daher ist mein Werkzeug vorerst wertlos.\nAber da du viel reist, wirst du vielleicht einen Chronometer finden, der genau genug für den Sextant ist. Sobald du eine solche Uhr findest - du wirst keine Boussole, keinen Kompass, keinen Astrolabium, keine Sanduhren und andere miese Chronometer mehr brauchen - mein Werkzeug wird sie alle ersetzen.";
+			dialog.text = "Ich habe nicht nur eine Vorliebe für Kartographie und Geographie, sondern auch für Mathematik und Astronomie. Es hat mich ein Jahr des Versuchens gekostet, ein universelles Werkzeug zur Bestimmung von Breiten- und Längengraden zu erschaffen. Und ich habe Fortschritte gemacht. Schauen Sie mal:\nDas ist mein Sextant. Ich habe es selbst entworfen. Das Problem ist, es funktioniert nicht. Es erfordert einen äußerst genauen Chronometer. Selbst jene, die von den besten Handwerkern hergestellt wurden, geben mit der Zeit inakzeptable Fehler. Daher ist mein Werkzeug vorerst wertlos.\nAber da Sie viel reisen, werden Sie vielleicht einen Chronometer finden, der genau genug für den Sextant ist. Sobald Sie eine solche Uhr finden - werden Sie keine Boussole, keinen Kompass, keinen Astrolabium, keine Sanduhren und andere miese Chronometer mehr brauchen - mein Werkzeug wird sie alle ersetzen.";
 			link.l1 = "Danke, Senor Dios. Hoffen wir, dass ich einen Chronometer finde, der Ihre Erfindung zum Laufen bringt. Ich hätte gerne ein solches Gerät... in funktionierendem Zustand. Nun, ich muss jetzt gehen. Auf Wiedersehen.";
 			link.l1.go = "LSC_8";
 		break;

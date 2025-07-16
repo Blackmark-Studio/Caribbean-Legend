@@ -1,6 +1,7 @@
 #include "storm-engine\battle_interface\msg_control.h"
 #include "storm-engine\sea_ai\script_defines.h"
 #include "battle_interface\landinterface.c"
+#include "battle_interface\TaskWindow\TaskWindow.c"
 #include "battle_interface\ispyglass.c"
 #include "battle_interface\reload_tables.c"
 #include "battle_interface\utils.c"
@@ -9,6 +10,7 @@
 #include "battle_interface\WmInterface.c"
 
 #define BI_ICONS_SHIPS_TEXTURE_NAME "interfaces\le\battle_interface\icons.tga"
+#define BI_ICONS_TEXTURE_FIRST_MOD 6
 
 #define BI_ICONS_ST_NONE			0
 #define BI_ICONS_ST_MYSHIPS			1
@@ -96,7 +98,7 @@ void InitBattleInterface()
 	BattleInterface.freeDistance = MIN_ENEMY_DISTANCE_TO_DISABLE_MAP_ENTER;
 
 	SetParameterData();
-		
+
 	BattleInterface.blindSpeed = 0.003;
 	BattleInterface.MaxWind = 30.0;
 	BattleInterface.MaxShipSpeed = 20.0;
@@ -153,6 +155,12 @@ void InitBattleInterface()
 	Log_SetActiveAction("Nothing");
 	ResetTimeScale(); // boal
 	bEnableSailToNotif = !bSailToEnable();
+	
+	if(CheckAttribute(pchar, "systeminfo.BLIoff"))
+	{
+		ChangeShowIntarface();
+		DeleteAttribute(pchar, "systeminfo.BLIoff");
+	}
 }
 
 ref BI_GetFortRelation()
@@ -289,6 +297,16 @@ void BI_Frame()
 		Log_SetActiveAction("Reload");
 		return;
 	}
+	if(bGlobalTutor)
+	{
+		if(CheckAttribute(pchar, "TutorialToDeck_1") ||
+		   CheckAttribute(pchar, "TutorialToDeck_2") ||
+		   CheckAttribute(pchar, "TutorialToPort"))
+	   {
+		Log_SetActiveAction("Deck");
+		return;
+	   }
+	}
 	if(bCanEnterToLand)
 	{
 		Log_SetActiveAction("Moor");
@@ -325,6 +343,7 @@ void StartBattleInterface()
 	LayerAddObject(SEA_EXECUTE,&objShipPointer,222222);
 	LayerAddObject(SEA_REALIZE,&objShipPointer,-1);
 	CannonsRangeRefresh();
+    TW_Init();
 }
 
 void RefreshBattleInterface()
@@ -401,6 +420,7 @@ void DeleteBattleInterface()
 	DelEventHandler("DoSailHole","ProcessSailDamage");
 	DelEventHandler("evntBISelectShip","procBISelectShip");
 
+    TW_Close();
 	// был сброс времени, выше поднял
 
 	//DeleteClass(&BattleInterface);
@@ -452,7 +472,7 @@ ref BI_CommandEndChecking()
 		}
   		else
   		{
-			if(iIsland > 0 && CheckAttribute(Islands[iIsland],"EffectRadius"))
+			if(iIsland > 0 && CheckAttribute(&Islands[iIsland],"EffectRadius"))
 			{
 				BattleInterface.Commands.SailTo.EffectRadius = sti(Islands[iIsland].EffectRadius); 
 			}
@@ -1101,11 +1121,15 @@ void BI_SetPossibleCommands()
 		//BattleInterface.Commands.CCommand.enable		= GetCompanionQuantity(pchar)>1;
 		//BattleInterface.Commands.Ability.enable			= true;
 		//  проверка на 7 класс
-		if (sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE)
+		if (sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE) // pchar.Ship.Type != SHIP_NOTUSED
         {
             BattleInterface.Commands.Cabin.enable		= true;
         }
         BattleInterface.Commands.Boat.enable           = true;
+		if(IsSteamDeck())
+		{
+			BattleInterface.Commands.Charge.enable		   = CheckAttribute(GetCharacter(chIdx), "Ship.Cannons.Charge.Type"); // 1.2.4
+		}
 	}
 	// для спутников
 	else
@@ -1389,19 +1413,68 @@ ref GetCurrentCharge()
 	} 
 
 	float fState = Ship_GetSailState(pchar);
-	if( fState < 0.33 ) {
+	if(fState < 0.33)
+    {
 		if(iCompassPos) BI_intNRetValue[4] = 9;
 		else BI_intNRetValue[4] = 93;
-	} else {
-		if( fState < 0.66 ) {
+	}
+    else
+    {
+		if(fState < 0.66)
+        {
 			if(iCompassPos) BI_intNRetValue[4] = 8;
 			else BI_intNRetValue[4] = 94;
-		} else {
+		}
+        else
+        {
 			if(iCompassPos) BI_intNRetValue[4] = 7;
 			else BI_intNRetValue[4] = 95;
 		}
 	}
-	
+
+    // TUTOR-ВСТАВКА
+    if(TW_IsActive())
+    {
+        if(objTask.sea == "3_Sails" || objTask.sea == "4_Sails")
+        {
+			if(objTask.sea == "3_Sails")
+			{
+				if(fState < 0.33)
+					objTask.sea.texts.Battle_Sails.text = StringFromKey("Tutorial_9", GKIC("Ship_SailUp", "Sailing3Pers"));
+				else if(fState > 0.66)
+					objTask.sea.texts.Battle_Sails.text = StringFromKey("Tutorial_9", GKIC("Ship_SailDown", "Sailing3Pers"));
+			}
+            if(or(objTask.sea == "3_Sails" && fState > 0.33 && fState < 0.66, objTask.sea == "4_Sails" && fState < 0.33))
+            {
+                if(!CheckAttribute(&TEV, "Tutor.SailStateTimer"))
+                {
+                    TEV.Tutor.SailStateTimer = GetDeltaTime() * 0.001;
+                }
+                else
+                {
+                    TEV.Tutor.SailStateTimer = stf(TEV.Tutor.SailStateTimer) + GetDeltaTime() * 0.001;
+                    if(stf(TEV.Tutor.SailStateTimer) >= 9.0)
+                    {
+                        if(objTask.sea == "3_Sails")
+                        {
+                            objTask.sea = "4_Sails";
+                            TW_ColorWeak(TW_GetTextARef("Battle_Sails"));
+                            TW_AddBottomText("Lower_Sails", StringFromKey("Tutorial_10", GKIC("Ship_SailDown", "Sailing3Pers")), "Default");
+                            TW_RecalculateLayout();
+							DeleteAttribute(&TEV, "Tutor.SailStateTimer");
+                        }
+                        else
+                        {
+                            TW_ColorWeak(TW_GetTextARef("Lower_Sails"));
+							TW_FinishSea_3_Sails();
+                        }
+                    }
+                }
+            }
+            else DeleteAttribute(&TEV, "Tutor.SailStateTimer");
+        }
+    }
+
 	if(iCompassPos) BI_intNRetValue[5] = 60;
 	else BI_intNRetValue[5] = 92;
 	BI_intNRetValue[6] = 108;
@@ -1519,294 +1592,36 @@ void BI_SetSeaState()
 	// boal хрен вам убираем - нужное это делов в игре bReloadCanBe = 0;//убираем перегруз товара кроме как через меню.
 }
 
-void SetShipPictureDataByShipTypeName(string sType)
+void SetShipPictureDataByShipType(int idx)
 {
-	switch(sType)
+	if(idx < 0 || idx >= GetArraySize(&ShipsTypes))
 	{
-		case "tartane": 		// баркас
-			BI_intNRetValue[0] = 0+0*16;
-			BI_intNRetValue[1] = 0+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "WarTartane":  	// тартана
-			BI_intNRetValue[0] = 2+0*16;
-			BI_intNRetValue[1] = 2+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "barque":			// барк
-			BI_intNRetValue[0] = 4+0*16;
-			BI_intNRetValue[1] = 4+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "schooner":		// торговая шхуна
-			BI_intNRetValue[0] = 6+0*16;
-			BI_intNRetValue[1] = 6+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "barkentine":		// баркентина
-			BI_intNRetValue[0] = 8+0*16;
-			BI_intNRetValue[1] = 8+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "shnyava":			// шнява
-			BI_intNRetValue[0] = 10+0*16;
-			BI_intNRetValue[1] = 10+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "fleut":			// флейт
-			BI_intNRetValue[0] = 12+0*16;
-			BI_intNRetValue[1] = 12+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "caravel":			// каравелла
-			BI_intNRetValue[0] = 14+0*16;
-			BI_intNRetValue[1] = 14+0*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "pinnace":			// пинасс
-			BI_intNRetValue[0] = 0+1*16;
-			BI_intNRetValue[1] = 0+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "caracca":			// каракка
-			BI_intNRetValue[0] = 2+1*16;
-			BI_intNRetValue[1] = 2+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Navio":			// Навио
-			BI_intNRetValue[0] = 4+1*16;
-			BI_intNRetValue[1] = 4+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "EastIndiaMan":	// Ост-индец
-			BI_intNRetValue[0] = 6+1*16;
-			BI_intNRetValue[1] = 6+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-				
-		case "LuggerQuest":	// курьерский люггер
-			BI_intNRetValue[0] = 8+1*16;
-			BI_intNRetValue[1] = 8+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "lugger":			// люггер
-			BI_intNRetValue[0] = 10+1*16;
-			BI_intNRetValue[1] = 10+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "sloop":			// шлюп
-			BI_intNRetValue[0] = 12+1*16;
-			BI_intNRetValue[1] = 12+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "brigantine":		// бригантина
-			BI_intNRetValue[0] = 14+1*16;
-			BI_intNRetValue[1] = 14+1*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "brig":			// бриг
-			BI_intNRetValue[0] = 0+2*16;
-			BI_intNRetValue[1] = 0+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "schooner_w":		// военная шхуна
-			BI_intNRetValue[0] = 2+2*16;
-			BI_intNRetValue[1] = 2+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "galeon_l":		// галеон
-			BI_intNRetValue[0] = 4+2*16;
-			BI_intNRetValue[1] = 4+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "corvette":		// корвет
-			BI_intNRetValue[0] = 6+2*16;
-			BI_intNRetValue[1] = 6+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "XebekVML":		// шебека
-			BI_intNRetValue[0] = 8+2*16;
-			BI_intNRetValue[1] = 8+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Polacre":			// Полакр
-			BI_intNRetValue[0] = 10+2*16;
-			BI_intNRetValue[1] = 10+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-				
-		case "Galeon_h":		// Тяжелый галеон
-			BI_intNRetValue[0] = 12+2*16;
-			BI_intNRetValue[1] = 12+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "frigate":			// Фрегат
-			BI_intNRetValue[0] = 14+2*16;
-			BI_intNRetValue[1] = 14+2*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "frigate_h":		// Тяжелый Фрегат
-			BI_intNRetValue[0] = 0+3*16;
-			BI_intNRetValue[1] = 0+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "lineship":		// Военный корабль
-			BI_intNRetValue[0] = 2+3*16;
-			BI_intNRetValue[1] = 2+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "warship":			// Французский военный корабль
-			BI_intNRetValue[0] = 4+3*16;
-			BI_intNRetValue[1] = 4+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "battleship":		// Голландский военный корабль
-			BI_intNRetValue[0] = 6+3*16;
-			BI_intNRetValue[1] = 6+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "manowar":			// Испанский военный корабль
-			BI_intNRetValue[0] = 8+3*16;
-			BI_intNRetValue[1] = 8+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "manowar_e":		// Английский военный корабль
-			BI_intNRetValue[0] = 10+3*16;
-			BI_intNRetValue[1] = 10+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Mayfang":			// легкая шебека "Мэйфэнг"
-			BI_intNRetValue[0] = 12+3*16;
-			BI_intNRetValue[1] = 12+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Mirage":			// приватирский кеч "Мираж"
-			BI_intNRetValue[0] = 14+3*16;
-			BI_intNRetValue[1] = 14+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Valciria":		// патрульный бриг "Валькирия"
-			BI_intNRetValue[0] = 0+4*16;
-			BI_intNRetValue[1] = 0+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Corvette_quest":	// малый фрегат "Гриффондор"
-			BI_intNRetValue[0] = 2+4*16;
-			BI_intNRetValue[1] = 2+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Polacre_q":		// Полакр "Тореро" // Addon 2016-1 Jason пиратская линейка
-			BI_intNRetValue[0] = 4+4*16;
-			BI_intNRetValue[1] = 4+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "ArabellaShip":	// быстрый фрегат "Акула"
-			BI_intNRetValue[0] = 6+4*16;
-			BI_intNRetValue[1] = 6+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "Flyingdutchman":	// проклятый "Калеуче"
-			BI_intNRetValue[0] = 8+4*16;
-			BI_intNRetValue[1] = 8+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Flyingdutchman_l":// копия "Калеуче"
-			BI_intNRetValue[0] = 10+4*16;
-			BI_intNRetValue[1] = 10+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Elcasador":	// галеон Эль Касадор
-			BI_intNRetValue[0] = 12+4*16;
-			BI_intNRetValue[1] = 12+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Ecliaton":	// галеон Эклятон
-			BI_intNRetValue[0] = 14+4*16;
-			BI_intNRetValue[1] = 14+4*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-		
-		case "NewFlyingdutchman":	// Отреставрированный Калеуче
-			BI_intNRetValue[0] = 0+5*16;
-			BI_intNRetValue[1] = 0+5*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Himera":		// Химера
-			BI_intNRetValue[0] = 2+5*16;
-			BI_intNRetValue[1] = 2+5*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Pink":		// Пинк
-			BI_intNRetValue[0] = 4+5*16;
-			BI_intNRetValue[1] = 4+5*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "galeon_sm":	// галеон см
-			BI_intNRetValue[0] = 6+5*16;
-			BI_intNRetValue[1] = 6+5*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "LadyBeth":	// Леди Бет
-			BI_intNRetValue[0] = 8+5*16;
-			BI_intNRetValue[1] = 8+5*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
-
-		case "Santisima":	// Линейный корабль "Реус де Сан-Педро"
-			BI_intNRetValue[0] = 8+3*16;
-			BI_intNRetValue[1] = 8+3*16 + 1;
-			BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
-		break;
+		return;
 	}
-	BI_intNRetValue[3] = false;
-}
 
-void SetShipPictureDataByShipType(int st)
-{
-	if(st>=0 && st<SHIP_TYPES_QUANTITY)
+	ref refShip;
+	makeref(refShip,ShipsTypes[idx]);
+
+	BI_intNRetValue[3] = false;
+
+	if (CheckAttribute(refShip, "modname"))
 	{
-		SetShipPictureDataByShipTypeName( ShipsTypes[st].name );
+		BI_intNRetValue[2] = FindIconTextureIndexWithInserting(idx, BI_ICONS_TEXTURE_FIRST_MOD);
+	}
+	else
+	{
+		BI_intNRetValue[2] = BI_ICONS_TEXTURE_SHIP1;
+	}
+
+	if (CheckAttribute(refShip, "icons"))
+	{
+		BI_intNRetValue[0] = sti(refShip.icons.FirstIconPos);
+		BI_intNRetValue[1] = sti(refShip.icons.SecondIconPos);
+	}
+	else
+	{
+		BI_intNRetValue[0] = 0;
+		BI_intNRetValue[1] = 1;
 	}
 }
 
@@ -1884,6 +1699,107 @@ ref BI_GetData()
 	return &BI_intNRetValue;
 }
 
+int FindIconTextureIndexWithInserting(int idx, int startIdx)
+{
+	ref refShip;
+	makeref(refShip,ShipsTypes[idx]);
+	string modname = refShip.modname;
+
+	object mods;
+	int ret = startIdx;
+	for (int i = 0; i < idx; i++)
+	{
+		makeref(refShip,ShipsTypes[i]);
+
+		if (CheckAttribute(refShip, "modname"))
+		{
+			string curModname = refShip.modname;
+			if (!CheckAttribute(mods, curModname)) 
+			{
+				mods.(curModname) = 1;
+				ret++;
+			}
+		}
+	}
+
+	return ret;
+}
+
+
+int GetIconTextureIndexWithInserting(int idx, int startIdx)
+{
+	ref refShip;
+	makeref(refShip,ShipsTypes[idx]);
+
+	string modname = refShip.modname;
+
+
+	string smallFilePath = "interfaces\le\battle_interface\mods\"+modname+"\ship_icons1.tga.tx";
+	string largeFilePath = "interfaces\le\battle_interface\mods\"+modname+"\ship_icons2.tga.tx";
+
+	int i = startIdx;
+
+	aref smallTextureList;
+	makearef(smallTextureList,BattleInterface.CommandTextures.list);
+	aref largeTextureList;
+	makearef(largeTextureList,BattleInterface.IconTextures.list);
+	while (true)
+	{
+		string attName = "t"+i;
+		if (!CheckAttribute(smallTextureList, attName))
+		{
+			smallTextureList.(attName).name = smallFilePath;
+			smallTextureList.(attName).xsize = 16;
+			smallTextureList.(attName).ysize = 8;
+
+			largeTextureList.(attName).name = largeFilePath;
+			largeTextureList.(attName).xsize = 16;
+			largeTextureList.(attName).ysize = 8;
+			return i;
+		}
+
+		if (!CheckAttribute(largeTextureList, attName))
+		{
+			continue;
+		}
+
+		if (smallTextureList.(attName).name == smallFilePath && largeTextureList.(attName).name == largeFilePath)
+		{
+			return i;
+		}
+		i++;
+	}
+
+	return BI_ICONS_TEXTURE_SHIP1;
+}
+
+void InitShipsTextures(int startPos)
+{
+	ref refShip;
+	for (i = 0; i < GetArraySize(&ShipsTypes); i++)
+	{
+		makeref(refShip,ShipsTypes[i]);
+		if (CheckAttribute(refShip, "modname"))
+		{
+			GetIconTextureIndexWithInserting(i, startPos);
+		}
+	}
+}
+
+
+void FillEmptyLargeTextures(int firstIdx, int lastIdx)
+{
+	aref textureList;
+	makearef(textureList,BattleInterface.IconTextures.list);
+	for (int i = firstIdx; i < lastIdx; i++)
+	{
+		string attName = "t"+i;
+		textureList.(attName).name = "interfaces\le\battle_interface\ship_icons2.tga.tx";
+		textureList.(attName).xsize = 16;
+		textureList.(attName).ysize = 8;
+	}
+}
+
 void SetParameterData()
 {
     float fHtRatio = stf(Render.screen_y) / iHudScale;
@@ -1909,6 +1825,13 @@ void SetParameterData()
 	BattleInterface.CommandTextures.list.t4.name = "interfaces\le\battle_interface\LandCommands.tga.tx";
 	BattleInterface.CommandTextures.list.t4.xsize = 16;
 	BattleInterface.CommandTextures.list.t4.ysize = 2;
+	
+	BattleInterface.CommandTextures.list.t5.name = "interfaces\le\battle_interface\list_icons.tga.tx";
+	BattleInterface.CommandTextures.list.t5.xsize = 16;
+	BattleInterface.CommandTextures.list.t5.ysize = 8;
+
+	FillEmptyLargeTextures(0, BI_ICONS_TEXTURE_FIRST_MOD);
+	InitShipsTextures(BI_ICONS_TEXTURE_FIRST_MOD);
 
 	BattleInterface.charge.charge1.picNum = 19; // balls
 	BattleInterface.charge.charge1.selPicNum = 3;
@@ -2355,7 +2278,7 @@ void SetParameterData()
 		BattleInterface.textinfo.(sAttrDes).font = "interface_normal";
 		BattleInterface.textinfo.(sAttrDes).scale = 1.3 * fHtRatio;
 		BattleInterface.textinfo.(sAttrDes).color = argb(255,255,255,255);
-		BattleInterface.textinfo.(sAttrDes).pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(95 * fHtRatio));
+		BattleInterface.textinfo.(sAttrDes).pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(105 * fHtRatio));
 		BattleInterface.textinfo.(sAttrDes).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(doff * fHtRatio));
 		BattleInterface.textinfo.(sAttrDes).align = "left";
 		BattleInterface.textinfo.(sAttrDes).text = "";
@@ -3236,6 +3159,10 @@ float GetRigDamage(int shootIdx, int iBallType, ref damage_chr)
 	fDmgRig = fDmgRig * isEquippedArtefactUse(shoot_chr, "indian_8", 1.0, 1.05 ); // belamour фикс читерства амулета
 	fDmgRig = fDmgRig * isEquippedArtefactUse(damage_chr, "amulet_9", 1.0, 0.95 ); // belamour 
     fDmgRig = fDmgRig * isEquippedArtefactUse(damage_chr, "talisman7", 1.0, 0.95 ); // belamour legendary edition скарабей
+	if(IsCharacterEquippedArtefact(shoot_chr, "talisman19")) 
+	{
+		fDmgRig *= 1.0 + Bring2Range(0.0, 0.25, 0.0, 50.0, (100.0 - GetHullPercent(shoot_chr)) / 2.0);
+	}
 	// Addon 2016-1 Jason Пиратская линейка
 	if (CheckAttribute(damage_chr, "SeaBoss")) { fDmgRig *= 0.1; }
 
@@ -3318,6 +3245,7 @@ ref ProcessRandomSailDmg()
 	return &BI_g_fRetVal;
 }
 
+// ~!~
 void GetSailStatus(int chrIdx)
 {	
 	object objSail;
@@ -3327,7 +3255,7 @@ void GetSailStatus(int chrIdx)
 	}
 	if(chrIdx < 0) return;
 	ref chref = GetCharacter(chrIdx);
-	if(CheckAttribute(chref,"ship.sailstatus")) DeleteAttribute(chref,"ship.sailstatus"));
+	DeleteAttribute(chref,"ship.sailstatus"));
 	SendMessage(&objSail,"lsl", MSG_SAIL_SCRIPT_PROCESSING,"GetSailStatus", chrIdx);
 }	
 
@@ -3524,7 +3452,7 @@ void BI_ProcessControlPress()
 		break;
 		
 		case "hk_Cabin":
-			if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE && !bSeaReloadStarted)
+			if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE && !bSeaReloadStarted) // pchar.Ship.Type != SHIP_NOTUSED
 			{
 				Sea_CabinStartNow();
 			}
@@ -3871,28 +3799,81 @@ void ControlsDesc()
 			sAttrB = "Con"+numLine+"Back";
 			sAttr = "Con"+numLine;
 			sAttrDes = "Con"+numLine+"desc";
-			
+
 			BattleInterface.textinfo.(sAttrB).text = "" ;
 			BattleInterface.textinfo.(sAttr).text = "";
 			BattleInterface.textinfo.(sAttrDes).text = "" ;
-			
-			
+
 			BattleInterface.textinfo.(sAttr).color = colorbase;
 			BattleInterface.textinfo.(sAttrDes).color = colorbase;
 			
 		}
-		
+
 		numLine = 7;
 		sAttrB = "Con"+numLine+"Back";
 		sAttr = "Con"+numLine;
 		sAttrDes = "Con"+numLine+"desc";
+
+        // TUTOR-ВСТАВКА
+		if(TW_IsActive())
+		{
+			if(objTask.sea == "1_Turn")
+			{
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_TurnRight");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_TurnRight","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+				numLine --;
+				
+				sAttr = "Con"+numLine;
+				sAttrDes = "Con"+numLine+"desc";
+				sAttrB = "Con"+numLine+"Back";
+				
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_TurnLeft");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_TurnLeft","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+			}
+			else if(objTask.sea == "2_TimeScale" || objTask.sea == "3_TimeScale")
+			{
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScale");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScale","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+			}
+			else if(objTask.sea == "4_TimeScale")
+			{
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScaleFasterBA");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScaleFasterBA","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+			}
+			else if(objTask.sea == "5_TimeScale")
+			{
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScaleSlowerBA");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScaleSlowerBA","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+				numLine --;
+				
+				sAttr = "Con"+numLine;
+				sAttrDes = "Con"+numLine+"desc";
+				sAttrB = "Con"+numLine+"Back";
+				
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScale");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScale","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+			}
+			else if(objTask.sea == "3_Sails" || objTask.sea == "4_Sails")
+			{
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_SailDown");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_SailDown","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+			}
+			return;
+		}
 		
 		if(CheckAttribute(pchar,"Ship.POS.Mode") && pchar.Ship.POS.Mode != SHIP_WAR)
 		{
 			if(iControlsMode == 1)
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("BI_MapEnter");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("BI_MapEnter","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("BI_MapEnter","ControlsNames.txt");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -3902,7 +3883,7 @@ void ControlsDesc()
 			}
 
 			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("BICommandsActivate");
-			BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("BICommandsActivate","ControlsNames.txt");
+			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("BICommandsActivate","ControlsNames.txt");
 			BattleInterface.textinfo.(sAttrB).text = "1" ;
 			numLine --;
 			
@@ -3910,10 +3891,10 @@ void ControlsDesc()
 			sAttrDes = "Con"+numLine+"desc";
 			sAttrB = "Con"+numLine+"Back";
 			
-			if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE )
+			if(!bGlobalTutor && sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE) // pchar.Ship.Type != SHIP_NOTUSED
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_Cabin");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("hk_Cabin","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("hk_Cabin","ControlsNames.txt");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 			
@@ -3921,16 +3902,25 @@ void ControlsDesc()
 				sAttrDes = "Con"+numLine+"desc";
 				sAttrB = "Con"+numLine+"Back";
 			}
+
+			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FireCamera_Set");
+			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("FireCamera_Set","ControlsNames.txt");
+			BattleInterface.textinfo.(sAttrB).text = "1" ;
+			numLine --;
 			
-			if(GetCharacterEquipByGroup(pchar,SPYGLASS_ITEM_TYPE)!="" && SeaCameras.Camera=="SeaDeckCamera") 
+			sAttr = "Con"+numLine;
+			sAttrDes = "Con"+numLine+"desc";
+			sAttrB = "Con"+numLine+"Back";
+
+			if(GetCharacterEquipByGroup(pchar,SPYGLASS_ITEM_TYPE)!="" && or(SeaCameras.Camera == "SeaDeckCamera", SeaCameras.Camera == "SeaFireCamera"))
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TelescopeMode");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("TelescopeMode","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TelescopeMode","ControlsNames.txt");
 			}
 			else
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("ShipCamera_Forward");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("ChrCamCameraRadius","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ChrCamCameraRadius","ControlsNames.txt");
 			}
 			BattleInterface.textinfo.(sAttrB).text = "1" ;
 			numLine --;
@@ -3940,7 +3930,7 @@ void ControlsDesc()
 			sAttrB = "Con"+numLine+"Back";
 			
 			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_SailDown");
-			BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("Ship_SailDown","ControlsNames.txt");
+			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_SailDown","ControlsNames.txt");
 			BattleInterface.textinfo.(sAttrB).text = "1" ;
 			numLine --;
 			
@@ -3949,7 +3939,7 @@ void ControlsDesc()
 			sAttrB = "Con"+numLine+"Back";
 			
 			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_SailUp");
-			BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("Ship_SailUp","ControlsNames.txt");
+			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_SailUp","ControlsNames.txt");
 			BattleInterface.textinfo.(sAttrB).text = "1" ;
 		}
 		else
@@ -3957,7 +3947,7 @@ void ControlsDesc()
 			if(XI_IsKeyPressed("shift") && sti(GetCompanionQuantity(pchar) > 1))
 			{
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_ProtFlagship");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_7short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_7short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -3966,7 +3956,7 @@ void ControlsDesc()
 				sAttrB = "Con"+numLine+"Back";
 				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LowerSails");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_6short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_6short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -3975,7 +3965,7 @@ void ControlsDesc()
 				sAttrB = "Con"+numLine+"Back";
 				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_SailAway");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_5short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_5short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -3984,7 +3974,7 @@ void ControlsDesc()
 				sAttrB = "Con"+numLine+"Back";
 				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LoadBombs");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_4short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_4short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -3993,7 +3983,7 @@ void ControlsDesc()
 				sAttrB = "Con"+numLine+"Back";
 				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LoadChain");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_3short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_3short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -4002,7 +3992,7 @@ void ControlsDesc()
 				sAttrB = "Con"+numLine+"Back";
 				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LoadGrapes");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_2short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_2short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				numLine --;
 				
@@ -4011,7 +4001,7 @@ void ControlsDesc()
 				sAttrB = "Con"+numLine+"Back";
 				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FLT_LoadBalls");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("msg_AIShip_1short");
+				BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("msg_AIShip_1short");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 			}
 			else
@@ -4019,7 +4009,7 @@ void ControlsDesc()
 				if(sti(GetCompanionQuantity(pchar) > 1))
 				{
 					BattleInterface.textinfo.(sAttr).text = objControlsState.key_codes.VK_SHIFT.img;
-					BattleInterface.textinfo.(sAttrDes).text = " - " + XI_ConvertString("FLT_Commands");"ControlsNames.txt");
+					BattleInterface.textinfo.(sAttrDes).text = XI_ConvertString("FLT_Commands");
 					BattleInterface.textinfo.(sAttrB).text = "1" ;
 
 					numLine --;
@@ -4033,7 +4023,7 @@ void ControlsDesc()
 				{
 					BattleInterface.textinfo.(sAttrB).text = "1" ;
 					BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_Turn180");
-					BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("Turn180", "AbilityDescribe.txt");
+					BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Turn180", "AbilityDescribe.txt");
 					
 					if(!CheckOfficersPerk(pchar, "Turn180") && GetOfficersPerkUsing(pchar,"Turn180"))
 					{
@@ -4044,7 +4034,7 @@ void ControlsDesc()
 					{
 						if(AbilityTimeDuration("active", "Turn180") > 0)
 						{
-							BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("Turn180", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "Turn180");
+							BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Turn180", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "Turn180");
 							BattleInterface.textinfo.(sAttr).color = colorused;
 							BattleInterface.textinfo.(sAttrDes).color = colorused;
 							
@@ -4053,7 +4043,7 @@ void ControlsDesc()
 						{
 							if(AbilityTimeDuration("delay", "Turn180") > 0)
 							{
-								BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("Turn180", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "Turn180");
+								BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Turn180", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "Turn180");
 								BattleInterface.textinfo.(sAttr).color = colorcd; 
 								BattleInterface.textinfo.(sAttrDes).color = colorcd;
 								
@@ -4072,7 +4062,7 @@ void ControlsDesc()
 				{
 					BattleInterface.textinfo.(sAttrB).text = "1" ;
 					BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_InstantRepair");
-					BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("InstantRepair", "AbilityDescribe.txt");
+					BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("InstantRepair", "AbilityDescribe.txt");
 					BattleInterface.textinfo.(sAttr).color = colorempty;
 					BattleInterface.textinfo.(sAttrDes).color = colorempty;
 					
@@ -4085,7 +4075,7 @@ void ControlsDesc()
 					{
 						if(AbilityTimeDuration("active", "InstantRepair") > 0)
 						{
-							BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("InstantRepair", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "InstantRepair");
+							BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("InstantRepair", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "InstantRepair");
 							BattleInterface.textinfo.(sAttr).color = colorused; 
 							BattleInterface.textinfo.(sAttrDes).color = colorused;
 							
@@ -4094,7 +4084,7 @@ void ControlsDesc()
 						{
 							if(AbilityTimeDuration("delay", "InstantRepair") > 0)
 							{
-								BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("InstantRepair", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "InstantRepair");
+								BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("InstantRepair", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "InstantRepair");
 								BattleInterface.textinfo.(sAttr).color = colorcd; 
 								BattleInterface.textinfo.(sAttrDes).color = colorcd;
 								
@@ -4113,7 +4103,7 @@ void ControlsDesc()
 				{
 					BattleInterface.textinfo.(sAttrB).text = "1" ;
 					BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_ImmediateReload");
-					BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("ImmediateReload", "AbilityDescribe.txt");
+					BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ImmediateReload", "AbilityDescribe.txt");
 					
 					if(!CheckOfficersPerk(pchar, "ImmediateReload") && GetOfficersPerkUsing(pchar,"ImmediateReload"))
 					{
@@ -4124,7 +4114,7 @@ void ControlsDesc()
 					{
 						if(AbilityTimeDuration("active", "ImmediateReload") > 0)
 						{
-							BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("ImmediateReload", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "ImmediateReload");
+							BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ImmediateReload", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("active", "ImmediateReload");
 							BattleInterface.textinfo.(sAttr).color = colorused; 
 							BattleInterface.textinfo.(sAttrDes).color = colorused;
 							
@@ -4133,7 +4123,7 @@ void ControlsDesc()
 						{
 							if(AbilityTimeDuration("delay", "ImmediateReload") > 0)
 							{
-								BattleInterface.textinfo.(sAttrDes).text = " - " +GetConvertStr("ImmediateReload", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "ImmediateReload");
+								BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("ImmediateReload", "AbilityDescribe.txt")+ " : "+ AbilityTimeDuration("delay", "ImmediateReload");
 								BattleInterface.textinfo.(sAttr).color = colorcd; 
 								BattleInterface.textinfo.(sAttrDes).color = colorcd;
 								
@@ -4148,21 +4138,8 @@ void ControlsDesc()
 					
 				}
 				
-				if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) > SHIP_WAR_TARTANE )
-				{
-					BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("hk_Cabin");
-					BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("hk_Cabin","ControlsNames.txt");
-					BattleInterface.textinfo.(sAttrB).text = "1" ;
-					
-					numLine --;
-					
-					sAttr = "Con"+numLine;
-					sAttrDes = "Con"+numLine+"desc";
-					sAttrB = "Con"+numLine+"Back";
-				}
-				
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("CannonsRange");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("CannonsRange","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("CannonsRange","ControlsNames.txt");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 				
 				numLine --;
@@ -4170,9 +4147,18 @@ void ControlsDesc()
 				sAttr = "Con"+numLine;
 				sAttrDes = "Con"+numLine+"desc";
 				sAttrB = "Con"+numLine+"Back";
+
+				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("FireCamera_Set");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("FireCamera_Set","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrB).text = "1" ;
+				numLine --;
 				
+				sAttr = "Con"+numLine;
+				sAttrDes = "Con"+numLine+"desc";
+				sAttrB = "Con"+numLine+"Back";
+
 				BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_Fire");
-				BattleInterface.textinfo.(sAttrDes).text = " - " + GetConvertStr("Ship_Fire","ControlsNames.txt");
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_Fire","ControlsNames.txt");
 				BattleInterface.textinfo.(sAttrB).text = "1" ;
 			}
 		}
@@ -4206,7 +4192,9 @@ bool bSailToEnable()
 	float x = stf(pchar.Ship.Pos.x);
 	float z = stf(pchar.Ship.Pos.z);
 	
-	if(iIsland > 0 && !sti(Islands[iIsland].reload_enable))
+	if(iIsland < 0) return false;
+	
+	if(!sti(Islands[iIsland].reload_enable))
 	{
 		return false;
 	}
@@ -4216,7 +4204,7 @@ bool bSailToEnable()
 	}
 	else
 	{
-		if(iIsland > 0 && CheckAttribute(Islands[iIsland],"EffectRadius"))
+		if(CheckAttribute(&Islands[iIsland],"EffectRadius"))
 		{
 			EffectRadius = sti(Islands[iIsland].EffectRadius); 
 		}

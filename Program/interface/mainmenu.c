@@ -8,6 +8,7 @@ int	 DLCCount;
 int	 DLCAppID = 0; 
 bool bFire = false;
 int iChar;
+string title, descr;
 
 void InitInterface(string iniName)
 {
@@ -52,6 +53,8 @@ void InitInterface(string iniName)
 	
 	SetEventHandler("ConfirmExitClick","ConfirmExitClick",0);
 	SetEventHandler("ConfirmExitCancel","ConfirmExitCancel",0);
+	SetEventHandler("NewsCancel","NewsCancel",0);
+	SetEventHandler("AttentionCancel","AttentionCancel",0);
 
 	GameInterface.SavePath = "SAVE";
 
@@ -60,7 +63,11 @@ void InitInterface(string iniName)
 	string saveData;
 	if(saveName != "") SendMessage(&GameInterface,"lse",MSG_INTERFACE_GET_SAVE_DATA,saveName,&saveData);
 	if(saveName == "" || saveData == "") SetSelectable("RESUME_GAME", false); // нет сохранений
-	else SetSelectable("RESUME_GAME", true);
+	else 
+	{
+		if(!HasSubStr(saveData, "SaveVer="+VERSION_NUM_PRE)) SetSelectable("RESUME_GAME", false);
+		else SetSelectable("RESUME_GAME", true);
+	}
 	// <---
 	
 	// кнопка "новая игра" --->
@@ -93,6 +100,8 @@ void InitInterface(string iniName)
 		SetNodeUsing("A_UPDATES", false);
 	}
 	
+	if(!CheckNews()) ShowNews(); // есть новости
+
 	// belamour ачивка за установленный мод
 	int itemsInfo;
 	if(!GetAchievement("ach_CL_153") && GetOverlaysInfo(&itemsInfo) > 0) Achievment_Set("ach_CL_153");
@@ -136,6 +145,9 @@ void InitInterface(string iniName)
 		IDoExit( RC_INTERFACE_DO_CREDITS, false );
 		bMainMenu = true;
 	}
+	
+	// if("Условие") // условие на появление окна с предупреждением
+		// ShowAttention();
 }
 
 void ProcessCommandExecute()
@@ -191,7 +203,7 @@ void ProcessCommandExecute()
 				if(DLCAppID > 0 && bSteamAchievements && GetSteamEnabled()) 
 					SetCurrentNode("UPDATES");
 				else
-					SetCurrentNode("WORKSHOP");
+					SetCurrentNode("NEWS");
 			}			
 		break;
 
@@ -202,19 +214,78 @@ void ProcessCommandExecute()
 			}
 		break;
 
-		case "WORKSHOP":
+		case "NEWS":
 			if(comName == "click" || comName == "activate"){
-				if(GetSteamEnabled())
-					GameOverlayToWebPage("https://steamcommunity.com/app/2230980/workshop/");
+				ShowNews();
 			}
 			if(comName == "upstep"){
 				if(DLCAppID > 0 && bSteamAchievements && GetSteamEnabled()) 
 					SetCurrentNode("UPDATES");
 				else
 					SetCurrentNode("QUIT");
+			}			
+		break;
+
+		case "WORKSHOP":
+			if(comName == "click" || comName == "activate"){
+				if(GetSteamEnabled())
+					GameOverlayToWebPage("https://steamcommunity.com/app/2230980/workshop/");
+			}
+		break;
+
+		case "B_MORE":
+			if(comName == "click" || comName == "activate"){
+				if(GetSteamEnabled())
+					GameOverlayToWebPage("https://steamcommunity.com/app/2230980/allnews/");
 			}
 		break;
 	}
+}
+
+void ShowNews()
+{
+	XI_WindowDisable("MAIN_WINDOW",true);
+	XI_WindowShow("NEWS_WINDOW", true);
+	XI_WindowDisable("NEWS_WINDOW",false);
+	SetCurrentNode("NEWS_TEXT");
+	title = GetConvertStr("News", "News.txt");
+	descr = GetConvertStr("News" + "_descr", "News.txt");
+	SetFormatedText("NEWS_TITLE", title);
+	SetFormatedText("NEWS_TEXT", descr);
+	int nStrings = GetNumberOfStringsInFormatedText("NEWS_TEXT", descr); // считаем сколько строк в форме
+	// Log_TestInfo("Всего строк " + nStrings);
+	if(nStrings <18)// Запрет на скроллинг
+	{
+		SetNodeUsing("NEWS_SCROLL_TEXT",false);
+		SendMessage( &GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE,"NEWS_TEXT", 13, 1 ); //1 - запрет, 0 - нет
+	}
+	SendMessage(&GameInterface, "lssss", MSG_INTERFACE_SAVE_STRINGS_TO_FILE, "Resource\INI\texts\\" + LanguageGetLanguage() + "\News.txt", "News", "IsRead", "true");
+}
+
+void NewsCancel()
+{
+    XI_WindowDisable("NEWS_WINDOW",true);
+	XI_WindowShow("NEWS_WINDOW",false);
+	XI_WindowDisable("MAIN_WINDOW",false);
+	SetCurrentNode("NEWS");
+}
+
+void ShowAttention()
+{
+	XI_WindowDisable("MAIN_WINDOW",true);
+	XI_WindowShow("ATTENTION_WINDOW", true);
+	XI_WindowDisable("ATTENTION_WINDOW",false);
+	descr = GetConvertStr("News" + "_Attention", "News.txt");
+	SetFormatedText("ATTENTION_TEXT", descr);
+	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"ATTENTION_TEXT",5);
+	SetCurrentNode("ATTENTION_OK");
+}
+
+void AttentionCancel()
+{
+    XI_WindowDisable("ATTENTION_WINDOW",true);
+	XI_WindowShow("ATTENTION_WINDOW",false);
+	XI_WindowDisable("MAIN_WINDOW",false);
 }
 
 void LoadLastSave()
@@ -256,6 +327,8 @@ void IDoExit(int exitCode, bool bClear)
 	
 	DelEventHandler("ConfirmExitClick","ConfirmExitClick");
 	DelEventHandler("ConfirmExitCancel","ConfirmExitCancel");
+	DelEventHandler("NewsCancel","NewsCancel");
+	DelEventHandler("AttentionCancel","AttentionCancel");
 	
 	if(!CheckAttribute(&InterfaceStates, "MainMenu.DoNotClearCharacters"))
 	{
@@ -722,4 +795,19 @@ bool ModelExists(string path) {
     bool result = SendMessage(&testModel, "ls", MSG_MODEL_LOAD_GEO, path);
     DeleteClass(&testModel);
     return result;
+}
+
+/* belamour проверяем прочитана ли новость
+для апдейтов удаляем блок из txt файла
+[News]
+IsRead = true*/
+bool CheckNews()
+{
+	string value;
+	string fileName = "Resource\INI\texts\\" + LanguageGetLanguage() + "\News.txt";
+	
+	if(!SendMessage(&GameInterface, "lssse", MSG_INTERFACE_READ_STRINGS_FROM_FILE, fileName, "News", "IsRead", &value)) return false;
+	if(value == "true") return true;
+	
+	return false;
 }

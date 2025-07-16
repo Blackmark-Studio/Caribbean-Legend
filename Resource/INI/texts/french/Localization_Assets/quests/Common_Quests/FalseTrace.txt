@@ -9,7 +9,7 @@ Rayner
 
 FalseTrace_3
 {
-galleon '@<pchar.questTemp.FalseTrace.ShipName>'
+flûte '@<pchar.questTemp.FalseTrace.ShipName>'
 }
 
 FalseTrace_4
@@ -28,7 +28,7 @@ Solly
 
 FalseTrace_7
 {
-galleon with gold ore
+flûte with gold ore
 }
 
 FalseTrace_8

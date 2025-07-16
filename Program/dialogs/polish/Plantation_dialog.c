@@ -36,14 +36,14 @@ void ProcessDialogEvent()
 		
 		// рабы
 		case "plantation_slave":
-			dialog.text = RandPhraseSimple(RandPhraseSimple("Jestem tak zmęczony, już upadam...","Nie mogę tak dalej żyć!"),RandPhraseSimple("Ta praca mnie zabija.","Stróże chcą nas wszystkich zabić!"));				
+			dialog.text = RandPhraseSimple(RandPhraseSimple("Jestem tak zmęczony, padam na ryj...","Nie mogę tak dalej żyć!"),RandPhraseSimple("Ta praca mnie zabija.","Stróże chcą nas wszystkich zabić!"));				
 			link.l1 = RandPhraseSimple("Jaka szkoda.","Przykro mi.");
 			link.l1.go = "exit";				
 		break;
 		
 		// рабы-пираты по пиратской линейке
 		case "pirate_slave":
-			dialog.text = RandPhraseSimple(RandPhraseSimple("Słuchaj, odejdź!","Zgub się!"),RandPhraseSimple("Co chcesz?!","Zgredzie, wynoś się stąd!"));				
+			dialog.text = RandPhraseSimple(RandPhraseSimple("Słuchaj, odejdź!","Wywalaj stąd!"),RandPhraseSimple("Co chcesz?!","Zgredzie, wynoś się stąd!"));				
 			link.l1 = RandPhraseSimple("Hm...","No tak...");
 			link.l1.go = "exit";				
 		break;
@@ -62,13 +62,13 @@ void ProcessDialogEvent()
 				if (sti(pchar.nation) == PIRATE)
 				{
 					PlaySound("Voice\English\soldier_arest_1.wav");
-    				dialog.text = RandPhraseSimple("Pirat?! Chwytajcie go!","On jest piratem! Atakuj!");
+    				dialog.text = RandPhraseSimple("Pirat?! Chwytajcie go!","On jest piratem! Atakujcie!");
 					link.l1 = RandPhraseSimple("Pirat. I co z tego?","Heh, śmiało, spróbuj.");
 					link.l1.go = "fight"; 
 					break;
 				}
 				PlaySound("Voice\English\soldier_arest_2.wav");
-				dialog.text = RandPhraseSimple("Ha-ha, płyniesz pod flagą "+NationNameGenitive(sti(pchar.nation))+"! Myślę, że nasz komendant będzie zadowolony, aby porozmawiać z tobą!","Cóż-cóż, pachnie "+NationNameAblative(sti(pchar.nation))+" tutaj! Szpieg?! Czas, abyś porozmawiał z naszym komendantem.");
+				dialog.text = RandPhraseSimple("Haha, płyniesz pod flagą "+NationNameGenitive(sti(pchar.nation))+"! Myślę, że nasz komendant będzie zadowolony, aby porozmawiać z tobą!","Cóż-cóż, pachnie "+NationNameAblative(sti(pchar.nation))+" tutaj! Szpieg?! Czas, abyś porozmawiał z naszym komendantem.");
 				link.l1 = RandPhraseSimple("Najpierw wyślę cię do piekła!","Czas, abyś porozmawiał z moim ostrzem!");
 				link.l1.go = "fight"; 
 			}
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 					dialog.text = RandPhraseSimple("Kim jesteś i czego tu szukasz?","Stop! Jaki jest twój cel tutaj?");
 					if (CheckNationLicence(HOLLAND))
 					{
-						link.l1 = "Chcę zobaczyć szefa tego miejsca, aby omówić interesy. Mam licencję handlową.";
+						link.l1 = "Chcę zobaczyć kierownika tego przybytku, aby omówić interesy. Mam licencję handlową.";
 						link.l1.go = "Licence";
 					}
 					else
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 			if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -12)
 			{
 				PlaySound("Voice\English\soldier_arest_2.wav");
-				dialog.text = "Licencja? Poczekaj sekundę... Ha-ha, to jest zabawne! Wiem kim jesteś. Jesteś poszukiwany, kumpel! A nagroda za twoją głowę jest bardzo duża! Złapcie go!";
+				dialog.text = "Licencja? Poczekaj sekundę... Haha, zabawne! Wiem kim jesteś. Jesteś poszukiwany, ziomku! A nagroda za twoją głowę jest bardzooo duża! Złapcie go!";
 				link.l1 = RandPhraseSimple("No cóż, w takim razie musisz spotkać się z moim ostrzem!","Spieprzaj.");
 				link.l1.go = "fight";	
 				break;
@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_coffee":
-			i = drand(3)+1;
+			i = hrand(3)+1;
 			n = 5 - i;
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 11;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_cinnamon":
-			i = drand(3)+1;
+			i = hrand(3)+1;
 			n = 5 - i;
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 19;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 106;
@@ -317,7 +317,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_copra":
-			i = drand(3)+1;
+			i = hrand(3)+1;
 			n = 5 - i;
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 20;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
@@ -494,7 +494,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l2 = "Wciąż to zbieram - to ty ustawiłeś taką wysoką cenę, señor.";
+				link.l2 = "Wciąż na to zbieram - to ty ustawiłeś taką wysoką cenę, señor.";
 				link.l2.go = "mtraxx_PlantVykup_14";
 			}
 		break;

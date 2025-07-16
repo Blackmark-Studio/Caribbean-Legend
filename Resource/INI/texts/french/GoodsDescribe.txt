@@ -290,85 +290,101 @@ La présence de médicaments à bord permet de sauver les blessés, de réduire 
 Cannon_3 {Fauconneaux}
 Cannon_3_descr
 {
-Canons de pont équipés d'un anneau de montage. Ils ont une grande mobilité mais souffrent d'une distance de tir et de dégâts réduits en raison de leur petit calibre.
-Ils sont souvent équipés d'une culasse interchangeable, qui leur permet de se recharger encore plus rapidement.
-Distance de tir - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons de pont équipés d'une tourelle. Ils offrent la plus grande mobilité et, en raison de leur petite taille, la plus faible puissance et portée.
+Ils sont souvent équipés d'une culasse interchangeable, permettant un rechargement rapide.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
 
-Cannon_6 {Demi-canons légers}
+Cannon_6 {Demi-canons de 6 livres}
 Cannon_6_descr
 {
-Petits canons très populaires sur les navires de transport et de commerce en raison de leur faible poids et de leur simplicité d'entretien.
-Distance de tir - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Petits canons, très populaires sur les navires de messagerie et de commerce en raison de leur faible poids, de leur bas prix et de leur durabilité. Faciles à entretenir et ne nécessitent pas d'équipage expérimenté.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
 
-Cannon_12 {Demi-canons}
+Cannon_8 {Demi-canons de 8 livres}
+Cannon_8_descr
+{
+L'un des calibres les plus populaires sur les petits navires, que l'on trouve aussi bien sur les navires marchands que sur les patrouilleurs. Appréciés pour leur excellente combinaison de taille, de poids et de puissance de feu.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+}
+
+Cannon_12 {Demi-canons de 12 livres}
 Cannon_12_descr
 {
-Canons standard, très fiables, de la plupart des flottilles militaires, capables de tirer à des angles d'élévation élevés, ce qui augmente considérablement la distance de combat effective.
-Distance de tir - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Un calibre courant parmi les petits navires de guerre. Pour leur taille et leur poids, ils offrent une puissance de feu impressionnante, mais nécessitent des équipes complètes, ce qui augmente le nombre de membres d'équipage à bord.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
 
-Cannon_16 {Demi-canons navals}
+Cannon_16 {Demi-canons de 16 livres}
 Cannon_16_descr
 {
-Canons français modernes. Grâce à une construction avancée et au nouveau système développé par Monsieur de Vallière, ces canons ont une plus grande portée de tir et infligent plus de dégâts que les demi-canons ordinaires. Cependant, ils sont plus longs à charger, légèrement moins fiables et plus lourds.
-Distance de tir - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons modernes de type français. Grâce à leur conception avancée, ils offrent une excellente portée, fiabilité et puissance de feu. Un calibre très courant parmi les navires de patrouille et de reconnaissance.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
 
-Cannon_20 {Petits canons}
+Cannon_18 {Demi-canons de 18 livres}
+Cannon_18_descr
+{
+Canons universels puissants qui étaient autrefois souvent installés sur les navires de guerre. Assez courants dans l'archipel et appréciés pour leur simplicité et leur fiabilité, bien que leur conception obsolète limite quelque peu leur portée.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+}
+
+Cannon_20 {Canons de 20 livres}
 Cannon_20_descr
 {
-Canons du plus gros calibre pour tirer des boulets ronds très durs, ce qui permet d'augmenter les dégâts infligés à l'ennemi. Toutefois, l'allongement du canon entraîne une augmentation significative de leur poids.
-Distance de tir - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons d'artillerie à long canon utilisés sur les croiseurs et les navires auxiliaires des convois militaires. Nécessitent un travail d'équipe coordonné pour un tir efficace.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
 
-Cannon_24 {Canons de navire}
+Cannon_24 {Canons de 24 livres}
 Cannon_24_descr
 {
-Les canons les plus équilibrés, compte tenu de leurs principales caractéristiques techniques. Ils sont très populaires sur les navires militaires et d'expédition, et ce pour de bonnes raisons.
-Distance de tir - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Le calibre principal sur les navires de guerre, le sommet de l'évolution de l'artillerie navale. Ils offrent un équilibre parfait entre portée et puissance de feu, et leur conception réussie leur permet de résister à de longues batailles navales sans dommages critiques.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
 
-Cannon_32 {Canons de batterie}
+Cannon_32 {Canons de 32 livres}
 Cannon_32_descr
 {
-Canons lourds de gros calibre, capables de bombarder les structures défensives. Ils infligent d'importants dégâts à la coque.
-Distance de tir - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons lourds de gros calibre qui infligent d'énormes dégâts et conviennent au bombardement des forts. En raison des limites de résistance des matériaux, une charge de poudre réduite est utilisée, ce qui limite la portée.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
 
-Cannon_36 {Canons côtiers}
+Cannon_36 {Canons de 36 livres}
 Cannon_36_descr
 {
-Les canons longs sont des invités rares sur le pont du navire. Malgré leur long temps de rechargement, ils infligent d'importants dégâts et ont une portée de tir assez longue.
-Distance de tir - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons à long canon, rares sur le pont d'artillerie. Leur rechargement lent et leur portée limitée sont compensés par les dégâts dévastateurs infligés par leurs boulets lourds. Nécessitent de grandes équipes.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
 
-Cannon_42 {Canons de siège}
+Cannon_42 {Bombardes de 42 livres}
 Cannon_42_descr
 {
-Un canon presque obsolète, mais toujours puissant, très adapté à l'utilisation sur les navires de ligne.
-Distance de tir - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons redoutables, le summum de la puissance de feu navale. Utilisés exclusivement sur les navires de ligne, dans les forts et lors des grandes batailles européennes. Nécessitent une grande équipe bien entraînée.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
 
-Culverine_8 {Demi-couleuvrines}
+Culverine_8 {Demi-culverines}
 Culverine_8_descr
 {
-Canon long de 8 livres sur un affût fixe. A une portée de tir accrue. Il est généralement utilisé pour les tirs de barrage.
-Distance de tir - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons de 8 livres à long canon sur un support spécial avec une base solide et des roues en bois massif.
+Ils ont une portée de tir accrue. Couramment utilisés pour le tir de barrage.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
 
-Culverine_18 {Couleuvrines}
+Culverine_18 {Culverines}
 Culverine_18_descr
 {
-Ce canon moyen de 18 livres à long rayon d'action mesure 12 pieds de long. Malgré son incroyable portée, il est très lent et son temps de rechargement est très long.
-Distance de tir - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons moyens de 18 livres à portée accrue, adaptés à une utilisation sur des navires relativement petits.
+Malgré leur impressionnante distance de tir, ils sont extrêmement lourds et prennent beaucoup de temps à recharger.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
 
-Culverine_36 {Couleuvrines complètes}
+Culverine_36 {Culverines complètes}
 Culverine_36_descr
 {
-Canon de fort de 36 livres destiné aux tirs de brèche. Il peut également être utilisé dans les batteries du navire et infliger des dégâts importants à l'ennemi, à condition que le canonnier soit expérimenté, agile et précis.
-Ces canons nécessitent des sabords capables d'accueillir des canons de 42 livres en raison de leurs canons plus longs.
-Distance de tir - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
-} 
+Canons de forteresse de 36 livres conçus pour le tir de brèche : le gagnant est celui qui tire le premier !
+En raison de leur grande longueur, ils ne peuvent être installés que dans des ports conçus pour des canons de 42 livres.
+Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+}

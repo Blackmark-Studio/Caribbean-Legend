@@ -16,8 +16,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "ShipyardDone":
-			dialog.text = "Sí, adelante, véndelos. Siempre tengo suficientes cañones de seis libras, pero siempre tengo problemas con тяжелыми пушками, ya que todos las compran todo el tiempo y nadie quiere venderlas, a menos que estén completamente rotas, así que te pagaré un precio decente por ellas si, por supuesto, todavía están en condiciones de funcionamiento.";
-			link.l1 = "¡Vaya, genial! Voy a dar órdenes de inmediato.";
+			dialog.text = "Sí, por favor, véndelos. Siempre tengo suficientes cañones de seis libras, pero tengo problemas con los cañones pesados, ya que todos los compran todo el tiempo y nadie quiere venderlos. Así que te pagaré un precio decente por ellos, si todavía están en buenas condiciones, por supuesto.";
+			link.l1 = "¡Vaya, genial! Voy a dar las órdenes de inmediato.";
 			link.l1.go = "exit";	
 			npchar.quest.HWICTalked = "true";
 			pchar.questTemp.HWIC.Eng.BridgeCounter = sti(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;

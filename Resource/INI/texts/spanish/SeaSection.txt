@@ -1,5 +1,5 @@
 Ship_critical		{¡Impacto crítico!}
-Ship_critical_notif		{' - impacto crítico!}
+Ship_critical_notif		{' impacto crítico!}
 Ship_sunk			{%1 "%2" se ha hundido. +%3 experiencia obtenida.}
 Ship_sunk_other		{%1 "%2" se ha hundido.}
 Ship_got_good		{%1 unidades de %2 rescatadas}
@@ -47,15 +47,18 @@ seg_Medicament 		{Medicina}
 
 seg_Cannon_3		{Falconetes de 3 libras}
 seg_Cannon_6		{Cañones de 6 libras}
+seg_Cannon_8		{Cañones de 8 libras}
 seg_Cannon_12		{Cañones de 12 libras}
 seg_Cannon_16		{Cañones de 16 libras}
+seg_Cannon_18		{Cañones de 18 libras}
 seg_Cannon_20		{Cañones de 20 libras}
 seg_Cannon_24		{Cañones de 24 libras}
 seg_Cannon_32		{Cañones de 32 libras}
 seg_Cannon_36		{Cañones de 36 libras}
-seg_Cannon_42		{Cañones de 42 libras}
+seg_Cannon_42		{Bombardas de 42 libras}
 seg_Culverine_8		{Culebrinas de 8 libras}
 seg_Culverine_18	{Culebrinas de 18 libras}
 seg_Culverine_36	{Culebrinas de 36 libras}
+
 
 sea_exp_add			{+%1 de experiencia}

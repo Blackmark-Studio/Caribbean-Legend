@@ -4,8 +4,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś zadać mi to pytanie niedawno...","Tak, pozwól, że zgadnę... Znowu krążysz w kółko?","Słuchaj, ja tu zajmuję się finansami, nie odpowiadam na pytania...","blokada",1,npchar,Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniam zdanie...","Nie mam teraz o czym rozmawiać."),"Umph, gdzie podziała się moja pamięć...","Zgadłeś, przepraszam...","Rozumiem...",npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś zadać mi to pytanie niedawno...","Tak, pozwól, że zgadnę... Znowu krążysz w kółko?","Słuchaj, ja tu zajmuję się finansami, nie odpowiadam na pytania...","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniłem zdanie...","Nie mam teraz o czym rozmawiać."),"Umph, gdzie podziała się moja pamięć...","Zgadłeś, przepraszam...","Rozumiem...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 		break;
 		
@@ -24,7 +24,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "tonzag_bail_2":
 			dialog.text = "Oczywiście, jednakże będzie to dla ciebie nieco droższe. Pozwól, że dokładnie ci powiem... "+pchar.questTemp.TonzagQuest.Bail+"  дублони będą "+sti(pchar.questTemp.TonzagQuest.Bail)* 150+" pesos.";
 			if (PCharDublonsTotal() >= sti(pchar.questTemp.TonzagQuest.Bail) || sti(pchar.money) >= sti(pchar.questTemp.TonzagQuest.Bail) * 150) {
-				link.l1 = "Trochę drożej, mówicie? Proszę bardzo, oto pełna wymagana kwota.";
+				link.l1 = "Trochę drożej, powiadasz? Proszę bardzo, oto pełna wymagana kwota.";
 				link.l1.go = "tonzag_bail_give";
 			} else {
 				link.l1 = "„Trochę droższe, powiadasz? Niestety, w tej chwili nie mam takiej kwoty. Czy jest możliwe zaciągnięcie pożyczki na tę sprawę?”";

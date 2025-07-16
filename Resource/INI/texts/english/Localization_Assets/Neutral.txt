@@ -1,0 +1,119 @@
+Neutral_1
+{
+Bandit
+}
+
+Neutral_2
+{
+You left notes
+}
+
+Neutral_3
+{
+Jack
+}
+
+Neutral_4
+{
+Veils
+}
+
+Neutral_5
+{
+Sea Beast
+}
+
+Neutral_6
+{
+Julie
+}
+
+Neutral_7
+{
+d'Armagnac
+}
+
+Neutral_8
+{
+Golden Seagull
+}
+
+Neutral_9
+{
+Tristan
+}
+
+Neutral_10
+{
+Renier
+}
+
+Neutral_11
+{
+A pirate ship on the horizon! They're heading to cut off our course.
+}
+
+Neutral_12
+{
+A voice from behind the door
+}
+
+Neutral_13
+{
+Betsy
+}
+
+Neutral_14
+{
+Price
+}
+
+Neutral_15
+{
+Item received: Betsy Price's Documents
+}
+
+Neutral_16
+{
+Given: Betsy Price's Documents
+}
+
+Neutral_17
+{
+Lea
+}
+
+Neutral_18
+{
+Carno
+}
+
+Neutral_19
+{
+Pierre
+}
+
+Neutral_20
+{
+A pirate ship on the horizon! They're cutting across our course.
+}
+
+Neutral_21
+{
+Deck
+}
+
+Neutral_22
+{
+The cave entrance is covered in cobwebs. Looks like no one’s been here in a long time.
+}
+
+Neutral_23
+{
+The house is a complete mess. Looks like I've come to the right place.
+}
+
+Neutral_24
+{
+The Ghost
+}

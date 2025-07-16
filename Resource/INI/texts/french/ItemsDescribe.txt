@@ -1,4 +1,4 @@
-info
+﻿info
 {
 	Файл описания предметов в ККС
 	Версия 0.0.1 от 21.11.2010 (ред. Metazot), belamour ред. кирас и амулетов 29.09.2020
@@ -39,20 +39,22 @@ new_string	{
 
 Potion parameters{Quantité}
 health value{pv}
-weapon blade parameters{Attaque : #f.1Attack# Équilibre : #f.1Balance#}
+weapon blade parameters{Attaque : #f.1WeightAttack# Équilibre : #f.1Balance#}
 weapon blade type {Type : #sFencingTypeName#}
 weapon gun parameters{Dégâts : #ddmg_min#-#ddmg_max#}
 weapon gun parameters equipped{Dégâts : #ddmg_min#-#ddmg_max#, temps de recharge : #dchargespeed# s}
 mushket parameters{Dégâts : #ddmg_min#-#ddmg_max#}
 mushket parameters equipped{Dégâts : #ddmgmin#-#ddmgmax#, temps de recharge : #dchargespeed# s}
-weapon grape parameters{Dégâts: #dbasedmg#x#dshards#, Dispersion: #sarea#}
-weapon grape parameters equipped{Dégâts: #dbasedmg#x#dshards#, Dispersion: #sarea#, Temps de rechargement: #dchargespeed# s.}
+weapon grape parameters{Dégâts : #dbasedmg#x#dshards#, Dispersion : #sarea#}
+weapon grape parameters equipped{Dégâts : #dbasedmg#x#dshards#, Dispersion : #sarea#, temps de recharge : #dchargespeed# s}
 
 youve_got {Objet trouvé - }
 used_item {Objet utilisé - }
 
 youve_gotNotif {Nouvel objet : }
 used_itemNotif {Objet perdu : }
+
+flower_find {Découverte chanceuse !}
 
 
 ;====================================================================================================================================
@@ -244,14 +246,16 @@ Long fleuret de duel à lame légère et très étroite, fabriqué à Verdun. La
 itmname_blade_27	{Rapière à garde balayée}
 itmdescr_blade_27
 {
-Cette rapière est appelée "Plume de Saxe" en raison de son équilibre légendaire qui permet au manieur de porter des coups tranchants et perçants avec facilité. La lame obéit au moindre mouvement de la main. La garde complexe offre une bonne protection à la main.
+Cette rapière est appelée "Plume de Saxe" en raison de son équilibre légendaire qui permet au manieur de porter des coups tranchants et perçants avec facilité. La lame obéit au moindre mouvement de la main. 
+La garde complexe offre une bonne protection à la main.
 }
 
 itmname_blade_28	{Katana}
 itmdescr_blade_28
 {
 Une étrange épée provenant de l'île légendaire de Cipangu, dont la lame est faite d'un acier de haute qualité et dont la longue poignée permet de la manier à une ou deux mains.
-Cette épée pourrait raconter l'histoire de son voyage de l'Orient exotique aux Caraïbes... comment a-t-elle atterri ici ?
+Cette épée pourrait raconter l'histoire de son voyage de l'Orient exotique aux Caraïbes... 
+Comment a-t-elle atterri ici ?
 }
 
 itmname_blade_29	{Storta}
@@ -269,7 +273,8 @@ Un coutelas commandé par le capitaine de la Compagnie des Indes orientales. Le 
 itmname_blade_31	{Narwhal}
 itmdescr_blade_31
 {
-Une épée d'abordage de maître, avec une garde en forme de coquillage et une poignée en corne de narval. La lame est faite d'un acier de qualité supérieure et est parfaitement équilibrée.
+Une épée d'abordage de maître, avec une garde en forme de coquillage et une poignée en corne de narval. 
+La lame est faite d'un acier de qualité supérieure et est parfaitement équilibrée.
 }
 
 itmname_blade_32	{Thanatos}
@@ -489,6 +494,21 @@ Une épée richement ornée, malgré son aspect cérémoniel, possède d'excelle
 
 lacrima_patris_parameters{Augmentation de la portée des canons : #f.1RangeBonus#%}
 
+itmname_blade_SP_3low {Pendu}
+itmdescr_blade_SP_3low
+{
+Ce sabre combine des traits de sabres turcs et de fauchons européens ; sa lame élargie peut trancher même l’armure la plus solide. Avec le Pendu, tout abordage se termine vite et brutalement.
+}
+
+itmname_blade_SP_3 {Pendu}
+itmdescr_blade_SP_3
+{
+Le crâne de Yorick à la place de la garde pousse son porteur à ne plus craindre la mort et à regarder la Faucheuse en face pour libérer sa vraie puissance.
+~
+Empêche toute guérison.
+Chaque 2% de santé perdue augmente les dégâts et la régénération d’énergie de 1,5% et 1,75% respectivement.
+}
+
 ; ==================================================================================================================== ОГНЕСТРЕЛЬНОЕ ОРУЖИЕ
 
 
@@ -637,37 +657,37 @@ Crosse et canon d'un fusil à quatre coups démonté.
 itmname_mushket9 {Vieille arquebuse}
 itmdescr_mushket9
 {
-FR: Une arquebuse ancienne mais fiable. Si l'on en croit les récits, Cortés lui-même l'aurait utilisée pour couvrir la jungle de mitraille, semant la terreur parmi les indigènes.
+Arquebuse ancienne mais fiable. Si l'on en croit les récits, Cortés lui-même s'en servait pour arroser la jungle de mitraille, semant la terreur chez les indigènes.
 }
 
-UpgradeStageInfo_mushket9_1 {Elle est en piteux état pour le moment, mais un entretien adéquat et de bons outils peuvent la transformer.}
+UpgradeStageInfo_mushket9_1 {Actuellement, son aspect est assez médiocre, mais un entretien adéquat et de bons outils peuvent la transformer.}
 
-UpgradeStageInfo_mushket9_2 {After replacing the stock and a good cleaning, it no longer looks like a rusty piece of iron. Now you wouldn't be ashamed to walk down the street with such a weapon on your back.}
+UpgradeStageInfo_mushket9_2 {Après le remplacement de la crosse et un bon entretien, elle ne ressemble plus à un morceau de fer rouillé. Désormais, vous n'auriez pas honte de vous promener dans la rue avec une telle arme sur le dos.}
 
-UpgradeStageInfo_mushket9_3 {Avec la serrure remplacée, elle commence à ressembler à une arme moderne. Le métal, lubrifié à l'huile d'os, brille au soleil comme si l'arme venait d'être prise des mains du maître.}
+UpgradeStageInfo_mushket9_3 {Avec la platine remplacée, elle a commencé à ressembler à une arme moderne. Le métal, lubrifié avec de l'huile d'os, brille au soleil comme si l'arme venait d'être prise des mains de son maître artisant.}
 
-
-UpgradeStageInfo_mushket9_4 
+UpgradeStageInfo_mushket9_4
 {
-Entre vos mains, cette arme a atteint son apogée - il n'y a tout simplement plus de place pour son développement. La touche finale - un canon élargi - a simplifié et accéléré le chargement, augmentant considérablement l'efficacité. Vous pouvez être fier de vous.
+Entre vos mains, cette arme a atteint son apogée - il n'y a tout simplement pas moyen de l'améliorer davantage. La touche finale - un canon élargi - a simplifié et accéléré le rechargement, augmentant ainsi considérablement l'efficacité. Vous pouvez être fier de vous.  
+Vous avez toutes les raisons d'être fier.
 }
 
-itmname_FirearmStockPart_1 {Crosse et baguette'}
+itmname_FirearmStockPart_1 {Crosse et baguette}
 itmdescr_FirearmStockPart_1
 {
-Une crosse magnifiquement sculptée pour les fusils à l'ancienne et une baguette-écouvillon pour nettoyer le canon. Ils étaient enveloppés dans un tissu de toile et soigneusement placés dans un coin éloigné du reste du contenu du trésor, comme s'ils y avaient été mis sensiblement plus tard.
+Une crosse magnifiquement sculptée pour les armes à feu anciennes et une baguette-brosse pour nettoyer le canon. Elles étaient enveloppées dans une toile et soigneusement placées dans un coin, loin des autres objets du trésor, comme si elles avaient été placées là bien plus tard.
 }
 
 itmname_FirearmStockPart_2 {Platine et huile d'os}
 itmdescr_FirearmStockPart_2
 {
-Une platine à ressort moderne, des chiffons et un flacon d'huile d'os pour l'entretien des armes, étonnamment adaptés à l'arquebuse trouvée chez Blackwood. Ils étaient également placés dans le trésor séparément des autres objets de valeur.
+Une platine à ressort moderne, des chiffons et une fiole d'huile d'os pour l'entretien des armes, qui convient étrangement à l'arquebuse trouvée chez Blackwood. Ils ont été placés dans le trésor séparément des autres objets de valeur.
 }
 
 itmname_FirearmStockPart_3 {Canon et poire à poudre}
 itmdescr_FirearmStockPart_3
 {
-Cet ensemble d'objets accélérera grandement le chargement de toute arme à canon long, mais pour une raison quelconque, vous avez l'impression qu'ils sont mieux utilisés avec cette même arquebuse. Ils étaient emballés dans un petit paquet de papier, évidemment pour les protéger de l'humidité, contrairement à tous les autres objets du trésor.
+Cet ensemble d'objets accélère considérablement le rechargement de n'importe quelle arme à canon long, mais pour une raison que vous ignorez, vous pensez qu'il est préférable de l'utiliser avec cette arquebuse. Ils sont emballés dans un petit paquet de papier, manifestement pour les protéger de l'humidité, contrairement à tous les autres objets du trésor.
 }
 
 itmname_grape_mushket {Mortier portable}
@@ -685,7 +705,7 @@ Cette magnifique carabine à canons juxtaposés est, le plus souvent, utilisée 
 itmname_howdah {Howdah}
 itmdescr_howdah
 {
-Pistolet de gros calibre à double canon, le meilleur ami du chasseur dans la brousse africaine et la jungle indienne. Il permet d'abattre, avec fiabilité, sangliers, tigres, lions et indigènes agressifs d'un seul coup ! Utilise de la mitraille. Nécessite des balles de plomb pour tirer. Nécessite l'avantage Tirailleur.
+Pistolet de gros calibre à double canon, le meilleur ami du chasseur dans la brousse africaine et la jungle indienne. Il permet d'abattre, avec fiabilité, sangliers, tigres, lions et indigènes agressifs d'un seul coup ! Schießt mit Schrot und zerkleinerten Nägeln. Nécessite l'avantage Tirailleur.
 } 
 
 ; ==================================================================================================================== ДОСПЕХИ
@@ -863,71 +883,81 @@ itmname_lantern {Lanterne}
 itmdescr_lantern
 {
 Une petite lanterne est un compagnon indispensable dans l'obscurité. Attachez-la à votre ceinture pour éclairer votre chemin la nuit, ainsi que dans les grottes et les donjons. Elle s'active et se désactive facilement en appuyant sur la touche "L" du clavier.}
+
 ; ==================================================================================================================== ШЛЯПЫ
 
-itmname_hat1 {Chapeau de condottiere}
+itmname_hat1 {Chapeau de Condottiere}
 itmdescr_hat1
 {
-Étant le couvre-chef préféré des duellistes et des escrimeurs, ce chapeau motive à perfectionner constamment ses compétences avec les armes blanches afin de paraître approprié.
+Couvre-chef préféré des duellistes et des escrimeurs, ce chapeau incite à perfectionner constamment ses compétences en matière d'armes blanches afin d'avoir l'air à la hauteur.
 ~
-Augmente de 10% le gain d’expérience pour les armes de mêlée légères, moyennes et lourdes.
+Augmente de 10% le gain d'expérience avec les armes de mêlée légères, moyennes et lourdes.
 }
 
-itmname_hat2 {Chapeau de cavalier}
+itmname_hat2 {Chapeau de Cavalier}
 itmdescr_hat2
 {
-Un chapeau richement décoré et coloré, généralement porté par les nobles, a acquis une réputation notoire dans les Caraïbes. Ses porteurs ici ne sont pas des aristocrates européens dorlotés, mais des duellistes expérimentés et des aventuriers capables de se battre sans relâche avec n'importe quelle arme en main.
+Un chapeau richement décoré et coloré, typiquement porté par les nobles, a acquis une réputation notoire dans les Caraïbes. Ici, ses porteurs ne sont pas des aristocrates européens raffinés, mais des duellistes et des aventuriers expérimentés capables de se battre sans relâche avec n'importe quelle arme en main.
 ~
-Tuer un ennemi avec une arme de mêlée restaure 25% de l’énergie.
+Tuer un ennemi à l'aide d'une arme de mêlée permet de récupérer 25% d'énergie.
 }
 
-itmname_hat3 {Tricorne de marin}
+itmname_hat3 {Tricorne de Marin}
 itmdescr_hat3
 {
-Un tricorne plutôt ordinaire, très répandu parmi les marins. Selon une vieille tradition maritime, ce tricorne est offert à un membre d'équipage qui a passé trois épreuves sévères - naviguer dans une tempête, sa première bataille navale et rapiécer des trous par la suite.
+Un chapeau tricorne plutôt ordinaire, très répandu parmi les marins. Selon une vieille tradition maritime, ce tricorne est offert à un membre d'équipage qui a réussi trois épreuves difficiles : naviguer dans une tempête, participer à sa première bataille navale et réparer les trous par la suite.
 ~
-Augmente de 10% le gain d’expérience en Navigation, Précision et Réparation.
+Augmente de 10% le gain d'expérience en Navigation, Précision et Réparation.
 }
 
-itmname_hat4 {Tricorne d’officier de marine}
+itmname_hat4 {Tricorne d'Officier de Marine}
 itmdescr_hat4
 {
-Un tricorne populaire parmi les officiers de navire. En voyant un tel chapeau, les marins ordinaires commencent à accomplir leurs tâches particulièrement rapidement. Que ce soit par respect ou par peur de la punition est une question rhétorique.
+Un tricorne populaire parmi les officiers de navire. À la vue d'un tel chapeau, les marins ordinaires commencent à s'acquitter de leurs tâches particulièrement rapidement. La question de savoir si c'est par respect ou par peur de la punition est une question rhétorique.
 ~
-Augmente de 15% le gain d’expérience dans toutes les Compétences Navales.
+Augmente le gain d'expérience dans toutes les compétences navales de 15%.
 }
 
-itmname_hat5 {Chapeau d’amiral}
+itmname_hat5 {Chapeau d'Amiral}
 itmdescr_hat5
 {
-Un tel couvre-chef est rarement vu par un marin ordinaire même une fois dans sa vie ; il inspire et motive tous ceux qui l'entourent. Être dans le même escadron que le propriétaire de ce chapeau est un grand honneur, et chacun, du marin à l'officier, est prêt à le suivre jusqu'en enfer et à en revenir.
+Un tel couvre-chef est rarement vu par un marin ordinaire, ne serait-ce qu'une fois dans sa vie ; il inspire et motive tous ceux qui l'entourent. Être dans la même flotte que le propriétaire de ce chapeau est un grand honneur, et tout le monde, du matelot à l'officier, est prêt à le suivre jusqu'en enfer.
 ~
-Transmet vos Compétences Navales à tous les capitaines de votre flotte. Réduit de 15% la solde de tous les marins et officiers sur chaque navire, à l’exception du navire amiral.
-Met fin à l’hostilité des nations envers les navires de guerre correspondants et permet aux navires de guerre nationaux capturés d’entrer dans les ports de leurs anciens propriétaires.
+Donne vos compétences navales à tous les capitaines de votre flotte. Réduit de 15 % les salaires de l'équipage et des officiers de tous les navires, à l'exception du navire amiral.
+Met fin à l'hostilité des nations envers leurs navires de guerre respectifs et permet à ces derniers capturés d'entrer dans les ports de leurs anciens propriétaires.
 }
 
-itmname_hat6 {Chapeau hollandais}
+itmname_hat6 {Chapeau Hollandais}
 itmdescr_hat6
 {
-Un chapeau coûteux et exquis, très apprécié des marchands de niveau intermédiaire. Grâce à sa forme inhabituelle, il permet de repérer un négociant de loin et de se préparer à de féroces négociations commerciales.
+Ce chapeau coûteux et raffiné est très apprécié des marchands de rang moyen. Grâce à sa forme inhabituelle, il permet de repérer un marchand de loin et de se préparer à d'âpres négociations commerciales.
 ~
-Une fois tous les trois jours, vous réalisez automatiquement une petite opération commerciale en arrivant au port.
+Une fois tous les trois jours, vous concluez automatiquement un petit marché commercial lorsque vous arrivez dans un port.
 }
 
-itmname_hat7 {Chapeau porte-bonheur}
+itmname_hat7 {Chapeau Chanceux}
 itmdescr_hat7
 {
-On dit que ce chapeau audacieux porte chance. Usé et abîmé par le temps, il a néanmoins l'air noble. Si vous avez la chance d'en acquérir un, soyez assuré qu'au moment le plus difficile, vous pourrez glisser devant un garde, tirer la bonne carte du jeu et trouver une balle égarée au fond de votre poche.
+On dit que ce chapeau pimpant porte chance. Usé et abîmé par le temps, il n'en a pas moins une allure noble. Si vous vous procurez un tel chapeau, sachez que dans les moments les plus difficiles, vous saurez contourner un garde, piocher la bonne carte dans le jeu et trouver une balle perdue au fond de votre poche.
 ~
-Il y a 10% de chances de ne pas dépenser de munition en tirant, de déterrer un trésor plus précieux et d’éviter les problèmes avec des gardes hostiles.
+Il y a 10 % de chances de ne pas consommer de munitions en tirant, de déterrer un trésor plus précieux et d'éviter les ennuis avec les gardes hostiles.
 }
 
-itmname_hat8 {Tricorne de Charlie Prince}
+itmname_hat8 {Tricorne du Prince Charlie}
 itmdescr_hat8
 {
-Ce chapeau effraie les marchands, surtout les Espagnols, plus que le Jolly Roger. La renommée qui entoure son porteur ferait pâlir et frissonner même le loup de mer le plus endurci. Maudit soit le jour où Charlie Prince est venu au monde.
+Ce chapeau effraie les marchands, surtout les Espagnols, plus que le Jolly Roger. La renommée qui entoure son porteur ferait pâlir et trembler même le plus coriace des loups de mer. Maudit soit le jour où le Prince Charlie est venu au monde.
 ~
-Le rhum et le vin restaurent 50% de santé en plus. L’état d’ébriété devient plus bénéfique.
+Le rhum et le vin redonnent 50 % de santé en plus. L'ivresse a un effet plus positif.
+}
+
+itmname_hat9 {Chapeau de Grim}
+itmdescr_hat9
+{
+Ce chapeau est connu dans tous les coins des Caraïbes et partout on s’en souvient avec un frisson. Seul un fou oserait attaquer le navire de son propriétaire, et en le rencontrant, la peur vous fera oublier comment tenir une lame ou un pistolet. Souvenez-vous : mourir est facile. Revenir est difficile.
+~
+Réduit la pénalité de dégâts du navire de 30%.
+10% de chance d’éviter les dégâts de tir.
 }
 
 ; ==================================================================================================================== ОПТИКА
@@ -966,6 +996,15 @@ itmdescr_spyglass5
 Une lunette unique en son genre qui convient aussi bien à l'observation des lunes de Jupiter qu'à celle des navires en mer. Les lentilles parfaitement ajustées en cristal de roche pur et l'utilisation du trépied permettent de voir absolument tout ce qui se trouve au-dessus de l'horizon, y compris les types de canons utilisés sur un navire ou dans un fort. Vous pourriez compter les poils de nez du roi Louis à Versailles avec cette arme. Bonus de +1500 mètres à la distance de déplacement rapide.
 }
 
+itmname_spyglassSP3 {Longue-vue "Œil du Mort"}
+itmdescr_spyglassSP3
+{
+Cette longue-vue ornée d’os possède des lentilles étonnamment bonnes, permettant de voir : type de navire, nom, vitesse, nombre et calibre des canons, état du navire, mousquetaires sur le pont et la peur dans les yeux du capitaine ennemi.
+Bonus de portée de navigation : +850 yards.
+Augmente le rayon de vision sur la carte globale : +15%.
+}
+
+
 ; ==================================================================================================================== НАВИГАЦИЯ
 
 
@@ -993,10 +1032,11 @@ itmdescr_clock1
 Un chronomètre de bord. Cet appareil sert à déterminer la longitude, mais il doit être régulièrement étalonné à l'heure exacte par un sablier. Cette heure exacte sera plus tard connue sous le nom de temps moyen de Greenwich.
 }
 
-itmname_clock2 {Chronomètre en fonctionnement}
+itmname_clock2 {Chronomètre fonctionnel}
 itmdescr_clock2
 {
-Un chronomètre de bord réglé sur l'heure précise de l'île de Forro. Il permet de déterminer la longitude du navire sur une période de 30 jours avec une erreur minimale.
+Un chronomètre de navire calibré de l'île de Forro. Permet de déterminer la longitude du navire avec une erreur minimale pendant 30 jours.
+Augmente la progression de la compétence Navigation lorsqu'il est équipé.
 }
 
 itmname_sextant1 {Sextant}
@@ -1008,13 +1048,16 @@ Un appareil unique utilisé pour déterminer les coordonnées géographiques. Le
 itmname_sextant2 {Sextant fonctionnel}
 itmdescr_sextant2
 {
-Un appareil unique pour déterminer les coordonnées géographiques. Maintenant que vous avez le chronomètre d'Alexus, il peut déterminer la latitude et la longitude à tout moment.
+Un appareil unique pour déterminer les coordonnées géographiques. Maintenant que vous possédez un chronographe du futur, il peut déterminer en permanence la latitude et la longitude.
+Grâce à sa grande précision, vous pouvez obtenir une augmentation de 5% de la vitesse du navire.
+Augmente la progression de la compétence Navigation lorsqu'il est équipé.
 }
 
 itmname_bussol {Boussole}
 itmdescr_bussol
 {
-Appareil de bord qui combine un astrolabe et un compas de navire. Il permet notamment de déterminer la latitude.
+Un instrument de navire combinant un astrolabe et une boussole. Il permet, entre autres, de déterminer en permanence la latitude géographique.
+Augmente la progression de la compétence Navigation lorsqu'il est équipé.
 }
 
 itmname_clock3 {Chronomètre d'Alexus}
@@ -1141,12 +1184,12 @@ Peut être utilisée par un navigateur.
 Aucune pénalité, aucune limite d'activation.
 }
 
-itmname_talisman15	{Protection "Tache noire"}
+itmname_talisman15	{Talisman 'Marque Noire'}
 itmdescr_talisman15
 {
-La tache noire double mystérieusement tout changement d'honneur. Elle a été fabriquée à partir du foulard des Ironsides, la cavalerie de Cromwell.
+Le porteur de la Marque Noire est immédiatement entouré de superstitions, de légendes et de rumeurs, ce qui augmente la Puissance de la Flotte de 15%. Fabriqué à partir du foulard des Ironsides, la cavalerie de Cromwell.
 ~
-Aucune pénalité, aucune limite d'activation.
+N'a pas de pénalités, peut être activé plusieurs fois.
 }
 
 itmname_talisman16	{Protection "Couteau rituel en or"}
@@ -1161,9 +1204,9 @@ Aucune pénalité, aucune limite d'activation.
 itmname_talisman17	{Protection "Liber Misericordiae"}
 itmdescr_talisman17
 {
-Un exemplaire des Écritures Saintes, qui était très personnel pour son propriétaire, presque comme un journal. Beaucoup portent la Bible comme un phare et un guide, mais ce livre est un véritable code d'honneur. 
-Réduit les dégâts subis par l'équipage et le capitaine de 5 %, et à bord de la Sainte Miséricorde, augmente la compétence de défense de 10. 
-Pour révéler le potentiel de cette amulette, il faut emprunter le chemin du juste.
+Un exemplaire des Saintes Écritures, qui était très personnel pour son propriétaire, presque comme un journal intime. Nombreux sont ceux qui portent la Bible comme une balise et un guide, mais ce livre est un véritable code d'honneur. 
+Réduit les dégâts subis par l'équipage et le capitaine de 5 %, et à bord du Santa Misericordia, augmente la compétence de défense de 10 %. 
+Pour libérer le potentiel de cette protection, il faut suivre le chemin des vertueux.
 ~
 Aucune pénalité, aucune limite d'activation.
 }
@@ -1172,18 +1215,39 @@ talisman17_quests{Quêtes de l'Eglise : #dQBonus# / 5}
 
 talisman17_questsNoBonus{Quêtes de l'Eglise : 0 / 5}
 
-itmname_talisman18	{Talisman 'Charte de Blackwood'}
+
+itmname_talisman18	{Protection "Charte de Blackwood"}
 itmdescr_talisman18
 {
-Le charte personnel d'Albert Blackwood. Il décrit en détail le fonctionnement de la Lady Bet, le positionnement des tireurs et les tactiques des Renards de Mer. Une section séparée est dédiée à la chasse aux trésors et à la récompense des tireurs habiles avec les richesses retrouvées. 
-Chaque trésor trouvé renforce la puissance de la volée de mousquets de 1% de l'équipage et augmente les dégâts des fusils de chasse de 2%.
+La charte personnelle d'Albert Blackwood qui détaille la structure du Lady Beth, le positionnement des tireurs et les tactiques de combat des Sea Foxes. 
+Une section distincte est consacrée à la chasse aux trésors et à la récompense des tireurs d'élite avec les richesses trouvées. 
+Chaque trésor trouvé augmente la puissance de la volée de mousquet de l'équipage de 1 % et les dégâts des armes personnelles à mitrailles de 2%.
 ~
 Aucune pénalité, aucune limite d'activation.
 }
 
-talisman18_Bonus{Trésors Découverts : #dQBonus# / 10}
+talisman18_Bonus{Trésors trouvés : #dQBonus# / 10}
 
-talisman18_NoBonus{Trésors Découverts : 0 / 10}
+talisman18_NoBonus{Trésors trouvés : 0 / 10}
+
+itmname_talisman19	{Talisman "Crâne de Yorick"}
+itmdescr_talisman19
+{
+Le crâne du capitaine Mortimer Grim du « Memento », qui n’a jamais vraiment compris sa propre mort. Tu le connaissais, #sName#.
+Les morts enseignent aux vivants, et cet artefact s’adapte aux désirs de son propriétaire.
+Dans l’inventaire, il rend tous les officiers immortels.
+~
+Aucun malus, activation multiple possible.
+}
+
+talisman19_InSlot
+{
+Le navire existe des deux côtés du voile à la fois. Le bois était vivant et est devenu mort pour servir les vivants. Le crâne du capitaine « Memento » rappelle à tout navire que la mort n’existe pas et qu’il faut se battre jusqu’au bout.
+~
+Chaque 2% de coque perdue augmente la vitesse et les dégâts des canons de 0,75% et 0,5% respectivement.
+~
+Aucun malus, activation multiple possible.
+}
 
 ; ==================================================================================================================== ТАЛИСМАНЫ
 
@@ -1334,7 +1398,7 @@ Fonctionne pour n'importe quel personnage.
 Disparaît après 70 jours d'utilisation ou par retrait.
 }
 
-itmname_indian_3 {Amulette "Couteau rituel"}
+itmname_indian_3 {Amulette 'Couteau rituel'}
 itmdescr_indian_3
 {
 Augmente les chances de coup critique de 15%.
@@ -1344,7 +1408,7 @@ Fonctionne pour n'importe quel personnage.
 Disparaît après 70 jours d'utilisation ou par retrait.
 }
 
-itmname_indian_4 {Amulette "Hache d'armes"}
+itmname_indian_4 {Amulette 'Hache'}
 itmdescr_indian_4
 {
 Augmentation des dégâts de 25% pour les attaques lourdes.
@@ -1447,7 +1511,7 @@ Disparaît après 70 jours d'utilisation ou par retrait.
 itmname_amulet_3 {Amulette "Crucifix"}
 itmdescr_amulet_3
 {
-Diminue vos chances de recevoir un coup critique de 10%.
+Un crucifix catholique consacré réduit de 15 % les dégâts critiques infligés par les ennemis avec des armes blanches.
 Vos attaques lourdes infligent 10% de dégâts en moins.
 Ne peut être activé qu'une seule fois.
 Fonctionne pour n'importe quel personnage.
@@ -2374,10 +2438,10 @@ itmdescr_A_map_martiniqua
 Une carte extrêmement précise de l'île de la Martinique. Au verso, on trouve le nom du cartographe - Jose Dios.
 }
 
-itmname_A_map_trinidad	{Excellente carte de Trinité-et-Tobago}
+itmname_A_map_trinidad	{Excellente carte de Trinité}
 itmdescr_A_map_trinidad
 {
-Une carte extrêmement précise des îles de Trinité-et-Tobago. Au verso, on trouve le nom du cartographe - Jose Dios.
+Une carte extrêmement précise des îles de Trinité. Au verso, on trouve le nom du cartographe - Jose Dios.
 }
 
 itmname_A_map_nevis	{Excellente carte de Saint-Christophe}
@@ -2591,7 +2655,7 @@ M."
 }
 itmdescr_letter_adolf_1
 {
-"Marchello, nous avions convenu d'une somme deux fois supérieure à celle que tu me remets. La carabine vaut beaucoup plus, et vous le savez. Si tu ne me paies pas le reste, l'amiral saura immédiatement que tu as traité avec Kapper sur " Eva ".
+"Marcello, nous avions convenu d'une somme deux fois supérieure à celle que tu me remets. La carabine vaut beaucoup plus, et vous le savez. Si tu ne me paies pas le reste, l'amiral saura immédiatement que tu as traité avec Kapper sur " Eva ".
 Adolf."
 }
 itmdescr_letter_aeva
@@ -3009,7 +3073,8 @@ Le projectile universel des mousquets et des pistolets. Les dégâts infligés p
 itmname_grapeshot	{Mitraille}
 itmdescr_grapeshot
 {
-Petites billes de plomb, également appelées chevrotines. Peuvent être tirées à partir d'armes à feu à canon lisse à mitraille. Peut atteindre plusieurs cibles à la fois.
+Mitraille de plomb ou grosse chevrotine. Utilisée uniquement lors des tirs de mitraille. Elle inflige des dégâts à plusieurs cibles à la fois.
+La quantité de mitraille pouvant être placée dans le canon dépend de l'arme utilisée.
 }
 
 itmname_cartridge	{Cartouche de papier}
@@ -3072,16 +3137,18 @@ itmdescr_bullet_double
 Une double charge de poudre et une balle, accompagnées d'un doublon haché pour la chance. Un testeur de poudre est nécessaire pour éviter que la rupture du canon ne se produise.
 }
 
-itmname_grapeshot_double 	{Double charge de mitrailles}
+itmname_grapeshot_double 	{Double charge de mitraille}
 itmdescr_grapeshot_double
 {
-Une double charge de poudre et une balle, accompagnées d'un doublon haché pour la chance. Un testeur de poudre est nécessaire pour éviter que la rupture du canon ne se produise.
+Une charge de poudre et de mitraille plus importante avec un doublon broyé pour la chance. Son efficacité dépend de l'arme avec laquelle elle est utilisée.
+Sans testeur de poudre, le risque de rupture du canon augmente.
 }
 
-itmname_GunEchin	{Obus à clous}
+itmname_GunEchin	{Charge de clous}
 itmdescr_GunEchin
 {
-Des clous coupés pour tirer avec des canons à mitraille de gros calibre. Ceux-ci ont des effets très nocifs à la fois sur le corps humain qu'ils touchent et sur le canon qui les tire.
+Clous grossièrement broyés utilisés dans les fusils à mitraille de gros calibre. Ils ont un effet dévastateur sur les corps humains et les canons.
+En raison de leur forme, ils réduisent la portée de l'arme.
 }
 
 ;--------------------------------------------- добавил
@@ -3609,6 +3676,18 @@ itmdescr_cask_whisky
 Un coffret en bois contenant plusieurs bouteilles de whisky irlandais "Bushmills", distillé à Dublin.
 }
 
+itmname_cask_gin	{Tonneau de gin}
+itmdescr_cask_gin
+{
+Un tonneau de gin européen raffiné. Ici, dans les Caraïbes, une telle boisson est réservée à quelques privilégiés.
+}
+
+itmname_cask_gin	{Tonneau de gin}
+itmdescr_cask_gin
+{
+Un tonneau de gin européen raffiné. Ici, dans les Caraïbes, une telle boisson est réservée à quelques privilégiés.
+}
+
 itmname_buben	{Tambourin de chaman}
 itmdescr_buben
 {
@@ -3802,18 +3881,42 @@ itmdescr_alexs_chest
 {
 Boîte métallique du maître Alexus, solidement verrouillée.
 }
-itmname_treasure_note {Note du trésor}
+
+itmname_treasure_note	{Note de Trésor}
 itmdescr_treasure_note
 {
-Cette note a été trouvée dans un trésor. Il est fort probable que son auteur ait quitté ce monde depuis longtemps. Son contenu doit être recopié avec soin dans une section spéciale du journal de bord.
+Cette note a été trouvée à l'intérieur d'un trésor. Il est fort probable que son auteur ait depuis longtemps quitté ce monde mortel. Son contenu doit être soigneusement copié dans la section spéciale du journal de bord.
 }
 
-itmname_PR_Letter	{Une note laissée par quelqu’un}
+itmname_PR_Letter	{Note de quelqu'un laissée sur place}
 itmdescr_PR_Letter
 {
-Une note rédigée sur un papier vieux et usé. Son contenu n’est manifestement pas destiné à des regards indiscrets.
+Une note écrite sur un vieux papier usé. Son contenu n'est manifestement pas destiné aux regards indiscrets.
 }
 
+itmname_quest_potion	{Décoction d'herbes}
+itmdescr_quest_potion
+{
+Les véritables propriétés de cette décoction ne sont connues que de la main qui l'a préparée.
+}
+
+itmname_GS_letters	{Notes remises par le mercenaire}
+itmdescr_GS_letters
+{
+Des indications écrites de la main du chef de l'administration portuaire. Elles contiennent des informations sur les itinéraires et les heures de départ de ses clients, chacun ayant été attaqué par des pirates.
+}
+
+itmname_SM_necklace_Julie	{Le collier de Julie d’Armagnac}
+itmdescr_SM_necklace_Julie
+{
+Un bijou cher au cœur de Julie. Élégant et raffiné, il semble conserver ses souvenirs lui-même. S’il existe des objets capables de garder des secrets, ce collier en fait sans doute partie.
+}
+
+itmname_TBP_letter	{Lettre ouverte}
+itmdescr_TBP_letter
+{
+Tu pensais pouvoir me faire chanter et t’en tirer sans conséquences ? Tu t’es trompée. Très bientôt, tu regretteras ton audace. Ta mort sera lente et douloureuse, et personne ne viendra te sauver.
+}
 
 ;====================================== предметы для DLC ===============================
 
@@ -3914,19 +4017,19 @@ Multiplie par 10 les dégâts infligés par les armes à feu. L'effet dure jusqu
 itmname_key_candlestick_PortRoyal	{Clé}
 itmdescr_key_candlestick_PortRoyal
 {
-Une vieille clé usée. On ignore encore ce qu’elle peut ouvrir.
+Une vieille clé usée. Ce qu'elle déverrouille n'est pas encore clair.
 }
 
 itmname_key_candlestick_FortFrance	{Clé}
 itmdescr_key_candlestick_FortFrance
 {
-Une vieille clé usée. On ignore encore ce qu’elle peut ouvrir.
+Une vieille clé usée. Ce qu'elle déverrouille n'est pas encore clair.
 }
 
-itmname_key_candlestick_Villemstad	{Anneau de l’Ordre secret}
+itmname_key_candlestick_Villemstad	{Anneau de l'Ordre Secret}
 itmdescr_key_candlestick_Villemstad
 {
-Un anneau ancien et massif serti d’un rubis. Il semble qu’il doive me servir de clé.
+Un anneau antique massif avec un rubis. Il semble qu'il doive me servir de clé.
 }
 
 itmname_LadyBeth_Book	{Journal de Blackwood}
@@ -3941,7 +4044,29 @@ itmdescr_LadyBeth_Map
 Le chemin vers le trésor le plus précieux du plus grand chasseur de trésors.
 }
 
+itmname_BoxOfBalls	{Box of Cannonballs}
+itmdescr_BoxOfBalls
+{
+ This box contains nothing but straw and eight cannonballs.
+}
 
+itmname_Tutorial_key	{Key}
+itmdescr_Tutorial_key
+{
+An iron key.
+}
+
+itmname_Tutorial_journal	{Captain’s Log. Volume IV.}
+itmdescr_Tutorial_journal
+{
+The fourth volume of Captain Ulysse’s journal. Just started, so there are only a few entries.
+}
+
+itmname_Suspicious_Potion	{Suspicious Potion}
+itmdescr_Suspicious_Potion
+{
+Let’s hope it works.
+}
 
 ;====================================== предметы для пиратской линейки ===============================
 
@@ -4035,4 +4160,18 @@ itmname_islamona_toolbox	{Boîte à outils}
 itmdescr_islamona_toolbox
 {
 Outils de grande qualité pour la construction de bateaux et de maisons. Fabriqués en Europe.
+}
+
+;=============================== SP3 =======================================================
+
+itmname_Memento_Book	{Journal de Grim}
+itmdescr_Memento_Book
+{
+Une tragédie en trois actes
+}
+
+itmname_Memento_letter	{Письмо Мементо}
+itmdescr_Memento_letter
+{
+Письмо Мементо
 }

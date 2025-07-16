@@ -1,6 +1,6 @@
 food_1
 {
-Les rats sur le ~
+Les rats
 }
 
 food_2

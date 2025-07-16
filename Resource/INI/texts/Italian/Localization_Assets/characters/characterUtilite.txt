@@ -1,0 +1,69 @@
+characterUtilite_1
+{
+@<_Money> Pesos guadagnati
+}
+
+characterUtilite_2
+{
+@<abs(_Money)> Pesos spesi
+}
+
+characterUtilite_3
+{
+New Item: ~
+}
+
+characterUtilite_4
+{
+@<n> Dobloni guadagnati
+}
+
+characterUtilite_5
+{
+Articolo perso: ~
+}
+
+characterUtilite_6
+{
+~ notato che @<LanguageConvertString(idLngFile, arItem.name)> ha perso i suoi poteri
+}
+
+characterUtilite_7
+{
+Onore aumentato
+}
+
+characterUtilite_8
+{
+Onore diminuito
+}
+
+characterUtilite_9
+{
+@<_Dublons> Dobloni spesi
+}
+
+characterUtilite_10
+{
+Una squadra da sbarco di @<officer.Ship.Name> ha @<compCrew> soldati al suo interno
+}
+
+characterUtilite_11
+{
+I termini del prestito sono scaduti
+}
+
+characterUtilite_12
+{
+Aggiornamento Atlante: @<LanguageConvertString(idLngFile, arItem.name)>
+}
+
+characterUtilite_13
+{
+Gli indiani disapprovano (
+}
+
+characterUtilite_14
+{
+Gli indiani approvano (
+}

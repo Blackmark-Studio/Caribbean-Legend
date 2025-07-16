@@ -14,45 +14,54 @@
 //Blade parameters
 //--------------------------------------------------------------------------------
 
-//Расчитать повреждение для персонажа при ударе клинком
-float LAi_CalcDamageForBlade(aref attack, aref enemy, string attackType, bool isBlocked)
+//Расчитать повреждение для персонажа при ударе клинком или мушкетом
+float LAi_CalcMeleeDamage(aref attack, aref enemy, string attackType, bool isBlocked)
 {
 	ref rItm; // оружие атакующего
+	bool bMusket = CharUseMusket(attack);
+	if(bMusket)
+		rItm = ItemsFromID(GetCharacterEquipByGroup(attack, MUSKET_ITEM_TYPE));
+	else
+		rItm = ItemsFromID(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE));
 	
 	float aSkill = LAi_GetCharacterFightLevel(attack);
 	float eSkill = LAi_GetCharacterFightLevel(enemy);
 	
-	rItm = ItemsFromID(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE));
+	bool bDaga = (rItm.id == "knife_01");
+	bool bMonster = (CheckAttribute(enemy, "monster")) || (enemy.chr_ai.group == LAI_GROUP_MONSTERS) || (enemy.chr_ai.group == "KSOCHITAM_MONSTERS");
+	if(bDaga && bMonster)
+		aSkill = 1.0;
 	
-	float bladeDmg = 0.1 * stf(rItm.Attack) + 0.4 * stf(rItm.Attack) * aSkill + stf(rItm.Attack) * fRandSmall(aSkill); 
-
+	float fAttack = stf(rItm.Attack);
+	float fRandDmg = uniform(0.7, 1.3);
+	float fASkill = pow(aSkill, 0.55);
+	float dmg = fAttack * fRandDmg * fASkill;
+	
 	if(aSkill < eSkill)
-	{
-		bladeDmg = bladeDmg * (1.0 + 0.7 * (aSkill - eSkill));
-	}
+		dmg *= (1.0 + 0.55 * (aSkill - eSkill));
 	
 	// Warship 27.08.09 Для сильных противников
 	// Если долбить совсем сильных (хардкорные абордажи), то шансов взять шип будет меньше
 	if(sti(enemy.Rank) > 50)
-	{
-		bladeDmg = bladeDmg * 45 / sti(enemy.Rank);
-	}
+		dmg *= 45.0 / stf(enemy.Rank);
+
 	if(CheckAttribute(loadedLocation, "CabinType") && sti(enemy.index) == GetMainCharacterIndex())
 	{
-		bladeDmg = bladeDmg * (1.0 + stf(attack.rank)/100);
+		float fCabinRank = 1.0 + pow(stf(attack.rank) * 0.01, 1.5) * 1.5;
+		dmg *= fCabinRank;
 	}
+
 	//Коэфициент в зависимости от удара
 	float kAttackDmg = LAi_GetDamageAttackType(attack, enemy, attackType, rItm, isBlocked);
 		
 	if(kAttackDmg > 0)  // оптимизация boal
 	{
 		//Результирующий демедж
-		float dmg = bladeDmg * kAttackDmg;
+		dmg *= kAttackDmg;
 
 		if(MOD_SKILL_ENEMY_RATE < 5 && sti(enemy.index) == GetMainCharacterIndex())	
-		{
-			dmg = dmg * (4.0 + MOD_SKILL_ENEMY_RATE) / 10.0;
-		}				
+			dmg *= (4.0 + MOD_SKILL_ENEMY_RATE) / 10.0;
+					
 		return dmg;
 	}
 	
@@ -60,375 +69,186 @@ float LAi_CalcDamageForBlade(aref attack, aref enemy, string attackType, bool is
 }
 
 // Ugeen --> расчёт множителя повреждения при разных типах атаки
-float LAi_GetDamageAttackType(aref attack, aref enemy, string attackType, ref aBlade, bool isBlocked)
+float LAi_GetDamageAttackType(aref attack, aref enemy, string attackType, ref aWeapon, bool isBlocked)
 {
+	bool bMusket = CharUseMusket(attack);
+	
 	float kAttackDmg = 1.0;
-	float bWght  = stf(aBlade.Weight);  // вес
-	float bLngth = stf(aBlade.lenght);  // длина
-	float bCurv  = stf(aBlade.curve);   // кривизна
-	float bBlnce = stf(aBlade.Balance); // баланс
-	string sFencingType = aBlade.FencingType;
+	
+	float fWeight, fLength, fCurve, fBalance;
+	float kLengthCurve, kBalance, kWeight, kType, kAttack;
+	string sFencingType = "";
+	if(!bMusket)
+	{
+		fWeight = stf(aWeapon.Weight);
+		fLength = stf(aWeapon.lenght);
+		fCurve = stf(aWeapon.curve);
+		fBalance = stf(aWeapon.Balance);
+		kLengthCurve = 1.0;
+		kBalance = 1.0;
+		kWeight = 1.0;
+		kType = 1.0;
+		sFencingType = aWeapon.FencingType;
+	}
+	else
+		kAttack = 1.0;
+	
+	float kBonus = 1.0;
+	
+	// талисман "Упырь"
+	if(IsEquipCharacterByArtefact(attack, "totem_11") && !CheckCharacterPerk(enemy, "HT1"))
+	{
+		float fEnergyDrain = stf(enemy.chr_ai.energy) * 0.1;
+		Lai_CharacterChangeEnergy(enemy, -fEnergyDrain);
+		Lai_CharacterChangeEnergy(attack, fEnergyDrain);
+		if(attack.id == "Blaze")
+			Log_TestInfo("Украдено " + makeint(fEnergyDrain) + " ед. энергии");
+	}
+		
+	// крабы пробивают блок
+	if(isBlocked && !CheckAttribute(attack, "animal"))
+		return 0.0;
+	
+	// для клинков - профильный коэффициент, вес
+	if(!bMusket)
+	{
+		switch(sFencingType)
+		{
+			case "FencingL":
+				kWeight = 0.5 + 0.2 * fWeight;
+				switch(attackType)
+				{
+					case "fast":	kType = 0.65;	break;
+					case "force":	kType = 1.1;	break;
+					case "round":	kType = 0.75;	break;
+					case "break":	kType = 0.8;	break;
+					case "feint":	kType = 0.9;	break;
+				}
+			break;
+			case "FencingS":
+				kWeight = 0.25 + 0.25 * fWeight;
+				switch(attackType)
+				{
+					case "fast":	kType = 1.1;	break;
+					case "force":	kType = 0.75;	break;
+					case "round":	kType = 0.9;	break;
+					case "break":	kType = 0.85;	break;
+					case "feint":	kType = 0.65;	break;
+				}
+			break;
+			case "FencingH":
+				kWeight = 0.25 + 0.2 * fWeight;
+				switch(attackType)
+				{
+					case "fast":	kType = 0.9;	break;
+					case "force":	kType = 0.65;	break;
+					case "round":	kType = 0.8;	break;
+					case "break":	kType = 1.1;	break;
+					case "feint":	kType = 0.6;	break;
+				}
+				// ТО выбивает энергию
+				if(CheckAttribute(enemy, "chr_ai.energy") && !CheckCharacterPerk(enemy, "HT1"))
+					Lai_CharacterChangeEnergy(enemy, -0.1 * stf(enemy.chr_ai.energy));
+			break;
+		}
+	}
 
+	// для клинков - длина, кривизна, баланс, бонусы архетипов
+	// для мушкетов - тип атаки
+	// для всех - бонусы перков, амулетов
 	switch(attackType)
 	{
-		case "fast": 
-			if(isBlocked && !CheckAttribute(attack, "animal")) { kAttackDmg = 0.0; }
-			else
+		case "fast":
+			if(bMusket)
 			{
-				if(sFencingType == "FencingL")
-				{
-					kAttackDmg =  0.6 * bLngth * bCurv * (0.9 + ( bWght - 2.0)/5.0) * (0.85 + bBlnce/6.67);
-				}
-				if(sFencingType == "FencingS")
-				{
-					kAttackDmg =  bLngth * bCurv * (0.85 + (bWght - 2.4)/4.0) * (0.85 + bBlnce/6.67);
-					/* if(CheckCharacterPerk(attack, "HardHitter") && CheckAttribute(enemy, "chr_ai.energy") && !CheckCharacterPerk(enemy, "HT1"))  
-					{			
-						enemy.chr_ai.energy = (stf(enemy.chr_ai.energy) * 0.9); //belamour 08.04.2020 hardhitter FS		
-					}	 */	
-				}
-				if(sFencingType == "FencingH")
-				{
-					kAttackDmg = 0.9 * bLngth * bCurv * (0.85 + (bWght - 3.0)/5.0) * (0.85 + bBlnce/6.67); 
-					if(CheckAttribute(enemy, "chr_ai.energy") && !CheckCharacterPerk(enemy, "HT1"))  
-					{			
-						enemy.chr_ai.energy = (stf(enemy.chr_ai.energy) * 0.9); 
-					}
-				}
-				if(aBlade.id == "blade_41") kAttackDmg = 1.2;
-				if(CheckCharacterPerk(attack, "HT3")) 
-				{
-					kAttackDmg = kAttackDmg * 1.15;
-				}
+				kAttack = 0.65;
+				break;
 			}
+			// остальное только для клинков
+			kLengthCurve = fLength * fCurve;
+			kBalance = 0.88 + fBalance * 0.12;
+			//if(CheckCharacterPerk(attack, "HT3"))
+			if(CheckCharacterPerk(attack, "Dragoon"))
+				kBonus *= 1.15;
 		break;
-		
-		case "force": 
-			if(isBlocked && !CheckAttribute(attack, "animal")) { kAttackDmg = 0.0; }
-			else
+		case "force":
+			if(bMusket)
 			{
-				if(sFencingType == "FencingL")
-				{
-					kAttackDmg = bLngth/bCurv * (0.9 + (bWght - 2.0)/5.0) * (1.22 - bBlnce * 0.22);
-                    /* if(CheckCharacterPerk(attack, "HardHitter") && CheckAttribute(enemy, "chr_ai.energy") && !CheckCharacterPerk(enemy, "HT1")) 
-					{			
-						enemy.chr_ai.energy = (stf(enemy.chr_ai.energy) * 0.9); //belamour 08.04.2020 hardhitter FL
-					} */
-				}
-				if(sFencingType == "FencingS")
-				{
-					kAttackDmg = 0.6 * bLngth/bCurv * (0.85 + (bWght - 2.4)/4.0) * (1.22 - bBlnce * 0.22);
-				}
-				if(sFencingType == "FencingH")
-				{
-					kAttackDmg = 0.5 * bLngth/bCurv * (0.85 + (bWght - 3.0)/5.0) * (1.22 - bBlnce * 0.22);
-					if(CheckAttribute(enemy, "chr_ai.energy") && !CheckCharacterPerk(enemy, "HT1"))  
-					{			
-						enemy.chr_ai.energy = (stf(enemy.chr_ai.energy) * 0.9); 
-					}
-				}				
+				kAttack = 0.9;
+				break;
 			}
-			if(aBlade.id == "blade_41") kAttackDmg = 1.2;
+			// остальное только для клинков
+			kLengthCurve = fLength / fCurve;
+			kBalance = 1.12 - fBalance * 0.12;
 			if(CheckCharacterPerk(attack, "HT1"))
-			{
-				kAttackDmg = kAttackDmg * 1.3;
-			}
+				kBonus *= 1.3;
 		break;
-
-		case "round": 
-			if(isBlocked) { kAttackDmg = 0.0; }
-			else
-			{
-				if(sFencingType == "FencingL")
-				{
-					kAttackDmg =  0.6 * bLngth * bCurv * (0.9 + (bWght - 2.0)/5.0);
-				}
-				if(sFencingType == "FencingS")
-				{
-					kAttackDmg = 0.9 * bLngth * bCurv * (0.85 + (bWght - 2.4)/4.0);
-				}
-				if(sFencingType == "FencingH")
-				{
-					kAttackDmg = 0.7 * bLngth * bCurv * (0.85 + (bWght - 3.0)/5.0);
-					if(CheckAttribute(enemy, "chr_ai.energy") && !CheckCharacterPerk(enemy, "HT1"))  
-					{			
-						enemy.chr_ai.energy = (stf(enemy.chr_ai.energy) * 0.9); 
-					}
-				}				
-			}
-			if(aBlade.id == "blade_41") kAttackDmg = 1.2;
+		case "round":
 			if(CheckCharacterPerk(attack, "BladeDancer"))
+				kBonus *= 1.3;
+			if(bMusket)
 			{
-				kAttackDmg = kAttackDmg * 1.3;
+				kAttack = 0.6;
+				break;
 			}
+			// остальное только для клинков
+			kLengthCurve = fLength * fCurve;
+			kBalance = 1.0;
 		break;
-		
-		case "break": 
-			if(isBlocked && CheckAttribute(enemy, "cheats.NOsliding")) { kAttackDmg = 0.0; break}
-			if(isBlocked && !CheckAttribute(attack, "animal")) { kAttackDmg = 1.0; }
-			else
+		case "break":
+			if(CheckCharacterPerk(attack, "HardHitter"))
+				kBonus *= 1.3;
+			if(IsEquipCharacterByArtefact(attack, "indian_4"))
+				kBonus *= 1.25;
+			if(IsEquipCharacterByArtefact(enemy, "amulet_4"))
+				kBonus *= 0.85;
+			if(IsEquipCharacterByArtefact(attack, "amulet_3"))
 			{
-				if(sFencingType == "FencingL")
-				{
-					kAttackDmg = 0.7/bLngth * bCurv * (0.9 + (bWght - 2.0)/5.0) * (0.85 + bBlnce/6.67);
-					/* if(CheckCharacterPerk(attack, "HardHitter") && CheckAttribute(enemy, "chr_ai.energy") && !CheckCharacterPerk(enemy, "HT1"))  
-					{			
-						enemy.chr_ai.energy = (stf(enemy.chr_ai.energy) * 0.9); 
-					} */
-				}
-				if(sFencingType == "FencingS")
-				{
-					kAttackDmg = 0.8/bLngth * bCurv * (0.85 + (bWght - 2.4)/4.0) * (0.85 + bBlnce/6.67);
-					/* if(CheckCharacterPerk(attack, "HardHitter") && CheckAttribute(enemy, "chr_ai.energy") && !CheckCharacterPerk(enemy, "HT1"))  
-					{			
-						enemy.chr_ai.energy = (stf(enemy.chr_ai.energy) * 0.9); 
-					} */
-				}
-				if(sFencingType == "FencingH")
-				{
-					kAttackDmg = bCurv/bLngth * (0.85 + (bWght - 3.0)/5.0) * (0.85 + bBlnce/6.67);
-					if(CheckAttribute(enemy, "chr_ai.energy") && !CheckCharacterPerk(enemy, "HT1"))  
-					{			
-						enemy.chr_ai.energy = (stf(enemy.chr_ai.energy) * 0.9); 
-					}
-				}
-				if(aBlade.id == "blade_41") kAttackDmg = 1.2;
-				if(CheckCharacterPerk(attack, "HardHitter"))
-				{
-					kAttackDmg = kAttackDmg * 1.3;
-				}	
-				if(IsEquipCharacterByArtefact(attack, "indian_4"))
-				{
-					kAttackDmg = kAttackDmg * 1.25;
-				}
-				if(IsEquipCharacterByArtefact(enemy, "amulet_4"))
-				{
-					kAttackDmg = kAttackDmg * 0.85;
-				}
-				if(IsEquipCharacterByArtefact(attack, "amulet_3")) // belamour плата за защиту от критиклов 
-				{
-					if(ShipBonus2Artefact(attack, SHIP_GALEON_SM)) kAttackDmg = kAttackDmg * 0.95;
-					else kAttackDmg = kAttackDmg * 0.90;
-				}
-				if(IsEquipCharacterByArtefact(enemy, "indian_3")) // belamour а хочешь критов, получай по шапке 
-				{
-					kAttackDmg = kAttackDmg * 1.10;
-				}
-				if(CheckCharacterPerk(attack, "HT3")) 
-				{
-					kAttackDmg = kAttackDmg * 1.30;
-				}
+				if(ShipBonus2Artefact(attack, SHIP_GALEON_SM))
+					kBonus *= 0.95;
+				else
+					kBonus *= 0.9;
 			}
-		break;
-		
-		case "feintc":  // фикс после изучения ядра //Атакующие продолжение финта
-			if(isBlocked) { kAttackDmg = 0.0; }
-			else
+			if(IsEquipCharacterByArtefact(enemy, "indian_3"))
+				kBonus *= 1.1;
+			if(bMusket)
 			{
-				if(sFencingType == "FencingL")
-				{
-					kAttackDmg = 0.9/bLngth/bCurv * (0.9 + (bWght - 2.0)/5.0) * (1.22 - bBlnce * 0.22);
-				}
-				if(sFencingType == "FencingS")
-				{
-					kAttackDmg = 0.4/bLngth/bCurv * (0.85 + (bWght - 2.4)/4.0) * (1.22 - bBlnce * 0.22);
-				}
-				if(sFencingType == "FencingH")
-				{
-					kAttackDmg = 0.4/bLngth/bCurv * (0.85 + (bWght - 3.0)/5.0) * (1.22 - bBlnce * 0.22); 
-					if(CheckAttribute(enemy, "chr_ai.energy") && !CheckCharacterPerk(enemy, "HT1"))  
-					{	
-						enemy.chr_ai.energy = (stf(enemy.chr_ai.energy) * 0.9); 
-					}
-				}
-				if(aBlade.id == "blade_41") kAttackDmg = 1.2;				
+				kAttack = 1.2;
+				break;
 			}
+			// остальное только для клинков
+			kLengthCurve = fCurve / fLength;
+			kBalance = 0.88 + fBalance * 0.12;
+			//if(CheckCharacterPerk(attack, "HT3"))
+			if(CheckCharacterPerk(attack, "Dragoon"))
+				kBonus *= 1.3;
 		break;
+		case "feint":
+			if(bMusket)
+			{
+				kAttack = 0.7;
+				break;
+			}
+			// остальное только для клинков
+			kLengthCurve = 1.0 / (fLength * fCurve);
+			kBalance = 1.12 - fBalance * 0.12;
+		break;
+	}
 	
-		case "feint": 
-			if(isBlocked) { kAttackDmg = 0.0; }
-			else
-			{
-				if(sFencingType == "FencingL")
-				{
-					kAttackDmg = 0.9/bLngth/bCurv * (0.9 + (bWght - 2.0)/5.0) * (1.22 - bBlnce * 0.22);
-					if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "knife_02") kAttackDmg *= 2.0;
-				}
-				if(sFencingType == "FencingS")
-				{
-					kAttackDmg = 0.4/bLngth/bCurv * (0.85 + (bWght - 2.4)/4.0) * (1.22 - bBlnce * 0.22);
-				}
-				if(sFencingType == "FencingH")
-				{
-					kAttackDmg = 0.4/bLngth/bCurv * (0.85 + (bWght - 3.0)/5.0) * (1.22 - bBlnce * 0.22); 
-					if(CheckAttribute(enemy, "chr_ai.energy" ) && !CheckCharacterPerk(enemy, "HT1"))  
-					{			
-						enemy.chr_ai.energy = (stf(enemy.chr_ai.energy) * 0.9); 
-					}
-				}				
-			}
-			if(aBlade.id == "blade_41") kAttackDmg = 1.2;
-			if(CheckAttribute(enemy, "chr_ai.energy" ) && !CheckCharacterPerk(enemy, "HT1"))  
-			{			
-				enemy.chr_ai.energy = (stf(enemy.chr_ai.energy) * 0.9); 
-			}
-		break;
-	}	
-	if( !CheckCharacterPerk(enemy, "HT1"))
+	if(bMusket)
+		kAttackDmg *= kAttack;
+	else
 	{
-		enemy.chr_ai.energy = stf(enemy.chr_ai.energy) * isEquippedArtefactUse(attack, "totem_11", 1.0, 0.9); // крадем энергию
-		if(IsEquipCharacterByArtefact(attack, "totem_11")) // belamour legendary edition 
-		{
-			attack.chr_ai.energy = stf(attack.chr_ai.energy) + stf(enemy.chr_ai.energy)/9.0; // вот теперь точно крадем
-			if(attack.id == "Blaze") Log_TestInfo("Украдено " + makeint(stf(enemy.chr_ai.energy)/9.0)+" ед. энергии");
-		}
-	}	
+		if(aWeapon.id == "blade_41")	// Цзянь игнорирует коэффициенты, кроме бонусов
+			kAttackDmg *= 1.2;
+		else
+			kAttackDmg *= kType * kLengthCurve * kBalance * kWeight;
+	}
+	kAttackDmg *= kBonus;
+
 	return kAttackDmg;
 }
 // Ugeen <-- расчёт множителя повреждения при разных типах атаки
-
-//Расчитать повреждение для персонажа при атаке мушкетом (приклад или штык)
-float LAi_CalcDamageForMushket(aref attack, aref enemy, string attackType, bool isBlocked)
-{
-	float min = 10.0;
-	float max = 10.0;
-			
-	LAi_MushketSetDamageMaxMin(attack, ItemsFromID(GetCharacterEquipByGroup(attack, MUSKET_ITEM_TYPE)), attackType);
-		
-	if(CheckAttribute(attack, "chr_ai.dmgbldmin"))
-	{
-		min = stf(attack.chr_ai.dmgbldmin);
-	}
-	
-	if(CheckAttribute(attack, "chr_ai.dmgbldmax"))
-	{
-		max = stf(attack.chr_ai.dmgbldmax);
-	}
-	
-	float bladeDmg = min + (max - min)*frandSmall(LAi_GetCharacterFightLevel(attack));
-	//Коэфициент в зависимости от скилов
-	float aSkill = LAi_GetCharacterFightLevel(attack);
-	float eSkill = LAi_GetCharacterFightLevel(enemy);
-	
-    if(aSkill < eSkill)
-	{
-		bladeDmg = bladeDmg * (1.0 + 0.7 * (aSkill - eSkill));
-	}
-	
-	// Warship 27.08.09 Для сильных противников
-	// Если долбить совсем сильных (хардкорные абордажи), то шансов взять шип будет меньше
-	if(sti(enemy.Rank) > 50)
-	{
-		bladeDmg = bladeDmg * 45 / sti(enemy.Rank);
-	}
-	
-	if(CheckAttribute(loadedLocation, "CabinType") && sti(enemy.index) == GetMainCharacterIndex())
-	{
-		bladeDmg = bladeDmg * (1.0 + stf(attack.rank)/100);
-	}
-	
-	//Коэфициент в зависимости от удара
-	float kAttackDmg = 1.0;
-	
-	// TO_DO оптимизация на ветку параметров
-	switch(attackType)
-	{
-		case "fast": // для мушкетера  - приклад
-			if(isBlocked)
-			{
-				kAttackDmg = 0.0;
-			}
-			else
-			{
-				kAttackDmg = 0.7;
-			}
-			break;
-		case "force": // для мушкетера  - ствол
-			if(isBlocked)
-			{
-				kAttackDmg = 0.0;
-			}
-			else
-			{
-				kAttackDmg = 1.0;
-			}
-			break;
-		case "round": // для мушкетера  - приклад
-			if(isBlocked)
-			{
-				kAttackDmg = 0.0;
-			}
-			else
-			{
-				kAttackDmg = 0.6;
-			}
-			if(CheckCharacterPerk(attack, "BladeDancer"))
-			{
-				kAttackDmg = kAttackDmg * 1.3;
-			}
-			break;
-		case "break": // для мушкетера  - приклад
-			if(isBlocked)
-			{
-				kAttackDmg = 1.0;
-			}
-			else
-			{
-				kAttackDmg = 3.0 * isEquippedAmuletUse(attack, "indian_4", 1.0, 1.25);
-			}
-		break;
-		
-		case "feintc":  // фикс после изучения ядра //Атакующие продолжение финта
-			if(isBlocked)
-			{
-				kAttackDmg = 0.0;
-			}
-			else
-			{
-				kAttackDmg = 0.8;
-			}
-		break;
-		
-		case "feint": // для мушкетера  - приклад
-			if(isBlocked)
-			{
-				kAttackDmg = 0.0;
-			}
-			else
-			{
-				kAttackDmg = 0.5;
-			}
-		break;
-	}
-	
-	if(kAttackDmg > 0)  // оптимизация boal
-	{
-		//Результирующий демедж
-		float dmg = bladeDmg * kAttackDmg;
-		
-		/* if(CheckCharacterPerk(attack, "HardHitter") && !CheckCharacterPerk(enemy, "HT1"))  
-		{
-			if(CheckAttribute(enemy, "chr_ai.energy"))
-			{
-				enemy.chr_ai.energy = (stf(enemy.chr_ai.energy) * 0.9); //fix
-			}
-		} */
-		
-		if(!CheckCharacterPerk(enemy, "HT1"))
-		{
-			enemy.chr_ai.energy = stf(enemy.chr_ai.energy) * isEquippedArtefactUse(attack, "totem_11", 1.0, 0.9); // крадем энергию
-		}	
-		
-		if(MOD_SKILL_ENEMY_RATE < 5 && sti(enemy.index) == GetMainCharacterIndex())	
-		{
-			dmg = dmg * (4.0 + MOD_SKILL_ENEMY_RATE) / 10.0;
-		}				
-		return dmg;
-	}
-	
-	return 0.0;
-}
-
 
 //Расчитать полученный опыт при ударе саблей
 float LAi_CalcExperienceForBlade(aref attack, aref enemy, string attackType, bool isBlocked, float dmg)
@@ -503,21 +323,20 @@ float LAi_CalcUseEnergyForBlade(aref character, string actionType)
 	if(energy > 0)  // оптимизация
 	{
 		float fSkill = LAi_GetCharacterFightLevel(character);  
-		fSkill = (1.0 - (0.3 * fSkill));
-		if (CharUseMusket(character))
-		{	
-			ref rItm = ItemsFromID(GetCharacterEquipByGroup(character, MUSKET_ITEM_TYPE));		
-			LAi_MushketSetDamageMaxMin(character, rItm, actionType);	
-			if(CheckAttribute(rItm,"Weight"))
-			{
-				LAi_MushketEnergyType(character, GetEnergyMushketDrain(character, stf(rItm.Weight), LAi_GetMushketFencingType(character) ) );  
-			}	
-			energy = energy * fSkill * LAi_GetMushketEnergyType(character);  
+		fSkill = 1.0 - (0.3 * fSkill);
+		float fWeapon = 1.0;
+		if(CharUseMusket(character))
+		{
+			ref rItm = ItemsFromID(GetCharacterEquipByGroup(character, MUSKET_ITEM_TYPE));
+			if(IsCharacterPerkOn(character, "HT4"))
+				fWeapon = stf(rItm.weight) * 0.1;
+			else
+				fWeapon = stf(rItm.weight) * 0.1 + 0.4;
 		}
-		else
-		{			
-			energy = energy * fSkill * LAi_GetBladeEnergyType(character);  
-		}	
+		else	
+			fWeapon = LAi_GetBladeEnergyType(character);
+
+		energy = energy * fSkill * fWeapon;
 	}
 	
 	return energy;
@@ -543,6 +362,19 @@ float Lai_UpdateEnergyPerDltTime(aref chr, float curEnergy, float dltTime)
 	{
 		fMultiplier = fMultiplier * 1.15;
 	}
+	if(GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_SP_3")
+	{
+		fMultiplier *= 1.0 + Bring2Range(0.0, 0.875, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(chr)) / 2.0);
+	}
+
+	bool bPeace = true;
+	if(CheckAttribute(chr, "chr_ai.group") && chr.chr_ai.group == LAI_GROUP_PLAYER && LAi_group_IsActivePlayerAlarm())
+		bPeace = false;
+	else if(CheckAttribute(chr, "chr_ai.tmpl") && chr.chr_ai.tmpl == LAI_TMPL_FIGHT)
+		bPeace = false;
+	if(bPeace)
+		fMultiplier *= 3.0;
+
 	if(CheckAttribute(chr, "cheats.energyupdate")) fMultiplier = fMultiplier * 10.0;
 	float fEnergy;
 	fEnergy = curEnergy + dltTime * fMultiplier; 
@@ -603,7 +435,7 @@ float LAi_GunCalcProbability(aref attack, aref enemy, float kDist, string sType)
 }
 
 //Получить повреждение от пистолета
-float LAi_GunCalcDamage(aref attack, aref enemy, string sType)
+float LAi_GunCalcDamage(aref attack, aref enemy, string sType, int nShots)
 {
 	//Расчитываем повреждение
 	float min = 10.0;
@@ -650,7 +482,7 @@ float LAi_GunCalcDamage(aref attack, aref enemy, string sType)
 	if (IsCharacterPerkOn(attack, "Sniper") && enemy.chr_ai.group != LAI_GROUP_PLAYER) 
 	{
 		if(IsBulletGrape(sBullet))
-			Lai_CharacterChangeEnergy(enemy, -(rand(1) + 1));
+			Lai_CharacterChangeEnergy(enemy, -(rand(1) + 1) * nShots);
 		else
 			Lai_CharacterChangeEnergy(enemy, -(rand(20) + 20));
 	}	
@@ -663,8 +495,8 @@ float LAi_GunCalcDamage(aref attack, aref enemy, string sType)
 	// evganat - урон картечью
 	if(IsBulletGrape(sBullet))
 	{
-		dmg = stf(attack.chr_ai.(sType).basedmg);
-		dmg *= Bring2Range(0.75, 1.5, 0.0, 1.0, dmg);
+		dmg = stf(attack.chr_ai.(sType).basedmg) * nShots;
+		dmg *= Bring2Range(0.75, 1.5, 0.0, 1.0, aSkill);
 		if(IsEquipCharacterByArtefact(attack, "talisman18"))
 		{
 			dmg *= 1.0 + 2.0 * ArticlesBonus(attack); 
@@ -829,7 +661,7 @@ float LAi_GunReloadSpeed(aref chr, string sType)
 //Calculate total
 //--------------------------------------------------------------------------------
 
-//Начисление повреждений при атаке мечём
+//Начисление повреждений при атаке мечом
 void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, bool isBlocked)
 {
 	//Если неубиваемый, то нетрогаем его
@@ -841,19 +673,12 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 		}
 	}
 	//Вычисляем повреждение
-	float dmg;
-	if (CharUseMusket(attack))
-	{
-		dmg = LAi_CalcDamageForMushket(attack, enemy, attackType, isBlocked);
-	}
-	else
-	{
-		dmg = LAi_CalcDamageForBlade(attack, enemy, attackType, isBlocked);
-	}
+	float dmg = LAi_CalcMeleeDamage(attack, enemy, attackType, isBlocked);
+	
 	float critical 	= 0.0;
 	// belamour legendary edition
 	int chance 	= 0;
-	if(IsEquipCharacterByArtefact(attack, "indian_3")) chance += 15;
+	if(IsEquipCharacterByArtefact(attack, "indian_3")) chance += 10;
 	if(IsEquipCharacterByArtefact(attack, "amulet_4")) chance -= 10;
 	if(CheckCharacterPerk(attack, "HT1")) chance += 10;
 	if(IsCharacterPerkOn(attack, "CriticalHit")) chance += 5;
@@ -864,12 +689,23 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh2") chance += 3;
 	if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh3") chance += 2;
 	// belamour тут суммируем атакующие, защитные перенес в кирасы 
+	
+	// псевдорандом
+	if(!CheckAttribute(attack, "chr_ai.crit_counter"))
+		ResetCritChanceBonus(attack);
+	int iCritChanceBonus = sti(attack.chr_ai.crit_counter);
+	chance += chance * 0.1 * iCritChanceBonus;
+	
 	// плюс % за удачу
 	// ГПК 1.2.3
 	if(chance > 0 && rand(100) <= makeint(chance + GetCharacterSPECIAL(attack, SPECIAL_L)))
 	{
 		critical = 1.0;
+		iCritChanceBonus = 0;
 	}
+	else
+		iCritChanceBonus++;
+	attack.chr_ai.crit_counter = iCritChanceBonus;
 
 	float kDmg = 1.0;
 	if(IsCharacterPerkOn(attack, "Rush"))
@@ -922,6 +758,10 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 		if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh2") dmg *= 2.0;
 		if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh3") dmg *= 1.4;
 	}
+	if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "blade_SP_3")
+	{
+		dmg *= 1.0 + Bring2Range(0.0, 0.75, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(attack)) / 2.0);
+	}
 	//Аттака своей группы
 	bool noExp = false;
 	if(CheckAttribute(attack, "chr_ai.group") && CheckAttribute(enemy, "chr_ai.group"))
@@ -965,13 +805,6 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	}
     // belamour legendary edition -->
 	float fCritical = 1.0;
-	// бонус/штраф у амулетов 
-	if(IsEquipCharacterByArtefact(enemy,  "amulet_3"))
-	{
-		if(ShipBonus2Artefact(enemy, SHIP_GALEON_SM)) fCritical -= 0.20;
-		else fCritical -= 0.15;
-	}
-	if(IsEquipCharacterByArtefact(enemy,  "indian_4")) fCritical += 0.10;
 	
 	if(CheckAttribute(enemy, "cirassId"))
 	{   // защита у кирас
@@ -982,6 +815,17 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	
 	if(critical > 0.0)
 	{
+		// эффекты на крит. урон
+		if(IsEquipCharacterByArtefact(enemy,  "amulet_3"))
+		{
+			if(ShipBonus2Artefact(enemy, SHIP_GALEON_SM))
+				critical -= 0.4;
+			else
+				critical -= 0.3;
+		}
+		if(IsEquipCharacterByArtefact(enemy,  "indian_4"))
+			critical += 0.5;
+		
         AddCharacterExpToSkill(attack, SKILL_FORTUNE, 5);
 		if(ShowCharString())
 		{
@@ -1007,7 +851,8 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	{
 		dmg = dmg * (1.0 - stf(Items[sti(enemy.cirassId)].B_CirassLevel));
 		
-		if(CheckCharacterPerk(enemy, "HT3") && GetCharacterSuitType(enemy) == 2)
+		//if(CheckCharacterPerk(enemy, "HT3") && GetCharacterSuitType(enemy) == 2)
+		if(CheckCharacterPerk(enemy, "Dragoon") && GetCharacterSuitType(enemy) == 2)
 		{
 			dmg = dmg * 0.85;
 		}
@@ -1024,6 +869,12 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	// belamour legendary edtion атрибут уменьшенного урона
 	if(CheckAttribute(enemy,"ReducedDamage")) dmg = dmg * makefloat(enemy.ReducedDamage);
 	dmg *= fLiberMisBonus(enemy);
+	if(IsDummy(attack) || IsDummy(enemy))
+	{
+		if(bDrawBars)
+			SendMessage(enemy, "lfff", MSG_CHARACTER_VIEWDAMAGE, dmg, stf(enemy.chr_ai.hp), stf(enemy.chr_ai.hp_max));
+		dmg = 0.0;
+	}
 	if(dmg > 0.0)
 	{
 		if(!CheckAttribute(pchar,"Achievment.ExtraDamage"))
@@ -1052,7 +903,7 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	{
 		if(GetCharacterEquipByGroup(attack, HAT_ITEM_TYPE) == "hat2")
 		{
-			attack.chr_ai.energy = stf(attack.chr_ai.energy) + stf(attack.chr_ai.energy)*1.25;
+			attack.chr_ai.energy = stf(attack.chr_ai.energy) + stf(attack.chr_ai.energy)*0.25;
 			//Log_Chr(enemy, XI_ConvertString("Hat2 Hit"));
 			notification(XI_ConvertString("Hat2 Hit"), "EnergyPlus");
 		}
@@ -1067,15 +918,18 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	    {
 	       re = stf(enemy.rank);
 	    }
+		
+		float kExpKill = 0.8; // ИГРАЕМСЯ СКОРОСТЬЮ НАБОРА ОПЫТА ЗА УБИЙСТВО
+		
 		if (CharUseMusket(attack))
 		{
-			if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, LAi_GetMushketFencingType(attack), makefloat((10.0 + ((1 + re) / (1+ra))*6.5)/20));	
-			else AddCharacterExpToSkill(attack, LAi_GetMushketFencingType(attack), makefloat(10.0 + ((1 + re) / (1+ra))*6.5));			
+			if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, SKILL_PISTOL, makefloat((10.0 + ((1 + re) / (1+ra))*6.5)/20) * kExpKill);
+			else AddCharacterExpToSkill(attack, SKILL_PISTOL, makefloat(10.0 + ((1 + re) / (1+ra))*6.5) * kExpKill);
 		}
 		else
 		{
-			if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), makefloat((10.0 + ((1 + re) / (1+ra))*6.5)/20));
-			else AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), makefloat(10.0 + ((1 + re) / (1+ra))*6.5));	
+			if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), makefloat((10.0 + ((1 + re) / (1+ra))*6.5)/20) * kExpKill);
+			else AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), makefloat(10.0 + ((1 + re) / (1+ra))*6.5) * kExpKill);	
 			if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh1") ChickenGod_KhopeshKill(attack);
 		}	
         AddCharacterExpToSkill(attack, SKILL_DEFENCE, 1);
@@ -1095,10 +949,12 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	if (!noExp)
     {
         //AddCharacterExp(attack, MakeInt(exp*0.5 + 0.5));
+		float kExpAttack = 0.8;	// ИГРАЕМСЯ СКОРОСТЬЮ НАБОРА ОПЫТА ЗА УДАР
+		exp *= kExpAttack;
 		if (CharUseMusket(attack))
 		{
-			if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, LAi_GetMushketFencingType(attack), Makefloat(exp*0.02));
-			else AddCharacterExpToSkill(attack, LAi_GetMushketFencingType(attack), Makefloat(exp*0.2));
+			if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, SKILL_PISTOL, Makefloat(exp*0.02));
+			else AddCharacterExpToSkill(attack, SKILL_PISTOL, Makefloat(exp*0.2));
 		}
 		else
 		{
@@ -1171,7 +1027,7 @@ void LAi_SetResultOfDeath(ref attack, ref enemy, bool isSetBalde)
 // boal <--
 
 //Начисление повреждений при попадании
-void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fAimingTime, bool isHeadShot)
+void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fAimingTime, bool isHeadShot, int nShots)
 {
 	ref rItm;
 	
@@ -1196,13 +1052,19 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 			return;
 		}
 	}
+	// belamour шляпа Грима
+	if(rand(9) == 5 && GetCharacterEquipByGroup(enemy, HAT_ITEM_TYPE) == "hat9")
+	{
+		notification(StringFromKey("LAi_fightparams_1"), "Hat9");
+		return;
+	}
 	//Вероятность поподания
 	float p = LAi_GunCalcProbability(attack, enemy, kDist, sType);
 	//Если промахнулись, то выйдем
 	if(rand(10000) > p*10000) return;	  
 	// boal 23.05.2004 <--
 	//Начисляем повреждение
-	float damage = LAi_GunCalcDamage(attack, enemy, sType);
+	float damage = LAi_GunCalcDamage(attack, enemy, sType, nShots);
 	
 	// evganat - прицеливание
 	if(fAimingTime >= 0.0)
@@ -1258,7 +1120,8 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 	if(CheckAttribute(enemy, "cirassId"))
 	{
 		damage = damage * (1.0 - stf(Items[sti(enemy.cirassId)].G_CirassLevel));
-		if(CheckCharacterPerk(enemy, "HT3") && GetCharacterSuitType(enemy) == 2 )
+		//if(CheckCharacterPerk(enemy, "HT3") && GetCharacterSuitType(enemy) == 2 )
+		if(CheckCharacterPerk(enemy, "Dragoon") && GetCharacterSuitType(enemy) == 2 )
 		{
 			damage = damage * 0.85;
 		}
@@ -1275,6 +1138,8 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 	if(CheckAttribute(enemy,"ReducedDamage")) damage = damage * makefloat(enemy.ReducedDamage);
 	damage *= fLiberMisBonus(enemy);
 	
+	if(IsMainCharacter(enemy))
+		isHeadShot = false;
 	if(isHeadShot)
 	{
 		damage *= 2;
@@ -1637,6 +1502,14 @@ void LAi_ChrFightActionApply()
 	string attackType = GetEventData();
 	float needEnergy = LAi_CalcUseEnergyForBlade(attack, attackType);
 	Lai_CharacterChangeEnergy(attack, -needEnergy);
+	
+	// TUTOR-ВСТАВКА
+	if(TW_IsActive() && objTask.land_fight == "2_Defence" && attack.id == "SharlieTutorial_EnemyPirate_0" && attackType == "hit_parry")
+	{
+		TW_IncreaseCounter("land_fight", "FightDefence_parry", 1);
+		if(TW_CheckCounter("land_fight", "FightDefence_block") && TW_CheckCounter("land_fight", "FightDefence_parry"))
+			TW_FinishLand_Fight_2_Defence();
+	}
 }
 
 //Получить относительную затрачиваемую энергию
@@ -1768,4 +1641,9 @@ aref GetShotParams()
 	aref arShards;
 	makearef(arShards, chr.chr_ai.(stype));
 	return arShards;
+}
+
+void ResetCritChanceBonus(aref chr)
+{
+	chr.chr_ai.crit_counter = 0;
 }

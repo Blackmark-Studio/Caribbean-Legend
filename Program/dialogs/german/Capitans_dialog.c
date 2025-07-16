@@ -104,7 +104,8 @@ void ProcessDialogEvent()
 				
 				if(CheckAttribute(NPChar, "surrendered"))
 				{
-					Pchar.GenQuest.MoneyForCaptureShip = makeint(Group_GetLiveCharactersNum( GetGroupIDFromCharacter(NPChar)))*(7 - sti(RealShips[sti(NPChar.Ship.Type)].Class))*(1+rand(10))*500);
+					Pchar.GenQuest.MoneyForCaptureShip = makeint(Group_GetLiveCharactersNum( GetGroupIDFromCharacter(NPChar)))*(8 - sti(RealShips[sti(NPChar.Ship.Type)].Class))*(1+rand(10))*500);
+					if(HasShipTrait(pchar, "trait14")) Pchar.GenQuest.MoneyForCaptureShip = makeint(sti(Pchar.GenQuest.MoneyForCaptureShip) * 1.35);
 					dialog.text = "Halt ein, du könntest mich auf diese Weise töten. Was willst du von mir?";
 					//выкуп
 					link.l1 = "Lassen wir diese Angelegenheit friedlich klären. Lösegeld, denke ich, wird die beste Entscheidung sein. Eine Summe von "+Pchar.GenQuest.MoneyForCaptureShip+" Pesos werden mir gut passen, "+GetAddress_FormToNPC(NPChar)+". Und danach kannst du dich verlaufen!";
@@ -599,7 +600,8 @@ void ProcessDialogEvent()
                 }
                 else
                 {
-                    Pchar.GenQuest.MoneyForCaptureShip = makeint(100 + (Group_GetCharactersNum(NPChar.EncGroupName) - Group_GetDeadCharactersNum(NPChar.EncGroupName))*(7 - sti(RealShips[sti(NPChar.Ship.Type)].Class))*(1+rand(10))*500);
+                    Pchar.GenQuest.MoneyForCaptureShip = makeint(100 + (Group_GetCharactersNum(NPChar.EncGroupName) - Group_GetDeadCharactersNum(NPChar.EncGroupName))*(8 - sti(RealShips[sti(NPChar.Ship.Type)].Class))*(1+rand(10))*500);
+					if(HasShipTrait(pchar, "trait14")) Pchar.GenQuest.MoneyForCaptureShip = makeint(sti(Pchar.GenQuest.MoneyForCaptureShip) * 1.35);
                     Dialog.text = RandSwear()+"Ja, ich habe viel von deinen Empörungen gehört. So sei es, aber erinnere dich "+XI_ConvertString(NationShortName(sti(NPChar.nation))+"hunter")+" wird es nicht ungestraft lassen!";
                     link.l1 = "Ausgezeichnet. Eine Summe von "+Pchar.GenQuest.MoneyForCaptureShip+" Pesos werden mir gut passen, "+GetAddress_FormToNPC(NPChar)+".";
                     link.l1.go = "Capture";
@@ -624,7 +626,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(pchar,"nobility", -2); 		
 			ChangeCharacterComplexReputation(pchar,"authority", 1.0); 							
 			AddCharacterExpToSkill(pchar, "Leadership", 20);
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(NPChar.nation)) + "hunter", 7 + rand(10));
+			ChangeCharacterHunterScore(pchar, NationShortName(sti(NPChar.nation)) + "hunter", GetIntByCondition(HasShipTrait(pchar, "trait23"), 7 + rand(10), 3 + rand(5)));
 		break;
 		
 		case "surrender_goaway":
@@ -679,7 +681,7 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, sti(Pchar.GenQuest.MoneyForCaptureShip));
 			ChangeCharacterComplexReputation(pchar,"nobility", -5);			
 			AddCharacterExpToSkill(pchar, "Leadership", 20);
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(NPChar.nation)) + "hunter", 7 + rand(10));
+			ChangeCharacterHunterScore(pchar, NationShortName(sti(NPChar.nation)) + "hunter", GetIntByCondition(HasShipTrait(pchar, "trait23"), 7 + rand(10), 3 + rand(5)));
         break;
 
         case "Boarding":
@@ -1007,9 +1009,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WM_Captain_3":
-			pchar.questTemp.WPU.Escort.Planks = 300 + drand(5)*10;
-			pchar.questTemp.WPU.Escort.Sailcloth = 150 + drand(10)*10;
-			pchar.questTemp.WPU.Escort.Linen = 70 + drand(7)*10;
+			pchar.questTemp.WPU.Escort.Planks = 300 + hrand(5)*10;
+			pchar.questTemp.WPU.Escort.Sailcloth = 150 + hrand(10)*10;
+			pchar.questTemp.WPU.Escort.Linen = 70 + hrand(7)*10;
 			dialog.text = "Ich habe das alles schon herausgefunden. Angesichts dessen, was wir bereits haben, benötige ich "+FindRussianQtyString(sti(pchar.questTemp.WPU.Escort.Planks))+" Bretter, "+FindRussianQtyString(sti(pchar.questTemp.WPU.Escort.Sailcloth))+" Segeltuch und "+FindRussianQtyString(sti(pchar.questTemp.WPU.Escort.Linen))+" Baumwolle. Mit diesen Materialien könnten wir das Schiff in einer Woche reparieren und dann könnten wir in See stechen.";
 			link.l1 = "Gut. Ich werde dir alle Materialien bringen, die du brauchst. Warte auf mich - Ich komme spätestens in zehn Tagen zurück.";
 			link.l1.go = "WM_Captain_4";
@@ -1115,7 +1117,7 @@ void ProcessDialogEvent()
 		
 		case "WMShip_final_1":
 			AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Escort.LevelUp_1Money));
-			TakeNItems(pchar, "obereg_"+(drand(10)+1), 1);
+			TakeNItems(pchar, "obereg_"+(hrand(10)+1), 1);
 			dialog.text = "Und nun ist es Zeit, Lebewohl zu sagen, Kapitän. Vergessen Sie nicht, die Hafenbehörde zu besuchen - dort wird auf Sie gewartet. Auf Wiedersehen!";
 			link.l1 = "Hab einen schönen Tag, "+npchar.name+"!";
 			link.l1.go = "WMShip_final_2";
@@ -1342,8 +1344,8 @@ void ProcessDialogEvent()
 		case "FishingBoat_2":
 			if(GetDataDay() < 11) 
 			{
-				if(sti(RealShips[sti(npchar.ship.type)].basetype) == SHIP_TARTANE) iTemp = 100 + drand(100);
-				else iTemp = 200 + drand(100);
+				if(sti(RealShips[sti(npchar.ship.type)].basetype) == SHIP_TARTANE) iTemp = 100 + hrand(100);
+				else iTemp = 200 + hrand(100);
 				iMoney = sti(GetCurrentIslandGoodsPrice(GOOD_FOOD)*0.66);
 				pchar.GenQuest.FishingBoatITemp = iTemp;
 				pchar.GenQuest.FishingBoatIMoney = iMoney;
@@ -1472,7 +1474,7 @@ void ProcessDialogEvent()
 		
 		case "Гарпуны":
 				Diag.TempNode = "FishingBoat_1";
-				iTemp = 5+drand(5);
+				iTemp = 5+hrand(5);
 				pchar.GenQuest.FishingBoatITemp = iTemp;
 				dialog.text = "Wir haben "+iTemp+" Stücke. Wir können für hundert Pesos einen Harpunen verkaufen. Wie viel brauchst du?";
 				link.l1.edit = 3;
@@ -1584,7 +1586,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Особые товары":
-			if(drand(2) == 0)
+			if(hrand(2, "&SpeGoo") == 0)
 			{
 				Diag.TempNode = "First time";
 				Diag.CurrentNode = "First time";
@@ -1593,7 +1595,7 @@ void ProcessDialogEvent()
 				link.l1 = "Gut, ich verstehe.";
 				link.l1.go = "exit";
 			}
-			if(drand(2) == 1)
+			else if(hrand(2, "&SpeGoo") == 1)
 			{
 				if(ChangeContrabandRelation(pchar, 0) > 5)
 				{
@@ -1612,8 +1614,7 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 				}
 			}
-			
-			if(drand(2) == 2)
+			else
 			{
 				pchar.GenQuest.FishingBoatDialogEnb = "no special goods";
 				Diag.TempNode = "First time";

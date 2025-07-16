@@ -35,7 +35,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Storehelper_2":
-			dialog.text = "Ha, szuka mnie!? To dopiero bogactwo tego pieprzonego skąpca! Naprawdę myślał, że spędzę całe życie pracując za takie marne pieniądze? Jest najchciwszym dusigroszem na Karaibach! Harowałem dla niego przez pięć lat i nigdy nie zapłacił mi ani grosza więcej, niż absolutnie musiał! Bah, nawet nie wystarczyło na drinka!\nTeraz niech sam liczy swoje towary, rzucam to. Nikt w Saint-Pierre nie będzie pracował dla tego sknerusa, to pewne. Ma tylko jedno na uwadze - zarobić więcej dla siebie i płacić swoim ludziom mniej.";
+			dialog.text = "Ha, szuka mnie!? A to dobre! Nawet dla tego pieprzonego skąpca! Naprawdę myślał, że spędzę całe życie pracując za takie marne pieniądze? Jest najchciwszym dusigroszem na Karaibach! Harowałem dla niego przez pięć lat i nigdy nie zapłacił mi ani grosza więcej, niż absolutnie musiał! Bah, nawet nie wystarczyło na drinka!\nTeraz niech sam liczy swoje towary, rzucam to. Nikt w Saint-Pierre nie będzie pracował dla tego sknerusa, to pewne. Ma tylko jedno na uwadze - zarobić więcej dla siebie i płacić swoim ludziom mniej.";
 			link.l1 = "Zakładam, że nie zamierzasz znowu dla niego pracować?";
 			link.l1.go = "Storehelper_3";
 		break;
@@ -103,7 +103,11 @@ void ProcessDialogEvent()
 			pchar.questTemp.Sharlie.Storehelper = "return";
 			LAi_CharacterDisableDialog(npchar);
 			pchar.quest.StorehelperOver.over = "yes"; //снять таймер
-			// Rebbebion, новые марки до места назначения
+			
+			pchar.quest.Sharlie_JungleBandos.win_condition.l1 = "location";
+			pchar.quest.Sharlie_JungleBandos.win_condition.l1.location = "Martinique_Jungle_01";
+			pchar.quest.Sharlie_JungleBandos.function = "SharlieJungleBandos";
+			
 			QuestPointerToLoc("lefransua_town", "reload", "gate_back");
 			QuestPointerToLoc("lefransua_exittown", "reload", "reload2_back");
 			QuestPointerToLoc("martinique_jungle_02", "reload", "reload1_back");
@@ -159,7 +163,7 @@ void ProcessDialogEvent()
 		
 		case "Newstorehelper_1_2":
 			dialog.text = "Monsieur, dokonaj właściwego wyboru. I nie zapomnij o dublonach...";
-			link.l1 = "Zdecydowałem na twoją korzyść. Zbierz się do kupy. Jedziemy do Saint-Pierre.";
+			link.l1 = "Zdecydowałem na twoją korzyść. Zbieraj się. Idziemy do Saint-Pierre.";
 			link.l1.go = "Newstorehelper_1_3";
 			link.l2 = "Jeszcze się nie zdecydowałem...";
 			link.l2.go = "exit";
@@ -168,7 +172,7 @@ void ProcessDialogEvent()
 		
 		case "Newstorehelper_2_2":
 			dialog.text = "Mam nadzieję, że wybierzesz mnie, monsieur. A bursztyn to także całkiem cenne, przydatne coś...";
-			link.l1 = "Zdecydowałem na twoją korzyść. Zbierz się w sobie. Jedziemy do Saint-Pierre.";
+			link.l1 = "Zdecydowałem na twoją korzyść. Zbieraj się. Idziemy do Saint-Pierre.";
 			link.l1.go = "Newstorehelper_2_3";
 			link.l2 = "Jeszcze nie zdecydowałem...";
 			link.l2.go = "exit";
@@ -177,7 +181,7 @@ void ProcessDialogEvent()
 		
 		case "Newstorehelper_3_2":
 			dialog.text = "Handlarz nie będzie rozczarowany moją pracą. I nie zapomnij o swojej premii.";
-			link.l1 = "Zdecydowałem na twoją korzyść. Ogarnij się. Jedziemy do Saint-Pierre.";
+			link.l1 = "Zdecydowałem na twoją korzyść. Zbieraj się. Idziemy do Saint-Pierre.";
 			link.l1.go = "Newstorehelper_3_3";
 			link.l2 = "Jeszcze się nie zdecydowałem...";
 			link.l2.go = "exit";
@@ -185,21 +189,21 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Newstorehelper_1_3":
-			dialog.text = "Pozwól mi tylko zebrać moje rzeczy! Będę czekał na ciebie przy wejściu do tawerny.";
+			dialog.text = "Pozwól mi tylko zebrać moje rzeczy! Będę czekał na ciebie przy wejściu do karczmy.";
 			link.l1 = "... ";
 			link.l1.go = "Newstorehelper_exit";
 			pchar.questTemp.Sharlie.Storehelper.Quality = 0;
 		break;
 		
 		case "Newstorehelper_2_3":
-			dialog.text = "Zaraz tam będę, monsieur! Będę czekał na ciebie przy wejściu do tawerny.";
+			dialog.text = "Zaraz tam będę, monsieur! Będę czekał na ciebie przy wejściu do karczmy.";
 			link.l1 = "...";
 			link.l1.go = "Newstorehelper_exit";
 			pchar.questTemp.Sharlie.Storehelper.Quality = 1;
 		break;
 		
 		case "Newstorehelper_3_3":
-			dialog.text = "Przyniosę swoją starą walizę i będę czekać na was przy wejściu do tawerny, panie!";
+			dialog.text = "Przyniosę swoją starą walizę i będę czekać na ciebie przy wejściu do karczmy, panie!";
 			link.l1 = "...";
 			link.l1.go = "Newstorehelper_exit";
 			pchar.questTemp.Sharlie.Storehelper.Quality = 2;
@@ -207,38 +211,30 @@ void ProcessDialogEvent()
 		
 		case "Newstorehelper_exit":
 			DialogExit();
-			chrDisableReloadToLocation = false;//открыть локацию
 			pchar.questTemp.Sharlie.Storehelper.id = npchar.id;
 			DeleteAttribute(npchar, "LifeDay")
-			chrDisableReloadToLocation = true;
 			for (i=1; i<=3; i++)
 			{
 				sld = characterFromId("Newstorehelper_"+i);
-				LAi_SetActorType(sld);
-				LAi_ActorGoToLocation(sld, "reload", "reload1_back", "none", "", "", "OpenTheDoors", 10.0);
+				ChangeCharacterAddressGroup(sld, "none", "", "");
 			}
-			pchar.quest.storehelper2.win_condition.l1 = "location";
-			pchar.quest.storehelper2.win_condition.l1.location = "LeFransua_town";
-			pchar.quest.storehelper2.function = "NewstorehelperAdd";
+			pchar.quest.storehelper4.win_condition.l1 = "location";
+			pchar.quest.storehelper4.win_condition.l1.location = "FortFrance_store";
+			pchar.quest.storehelper4.function = "NewstorehelperRegard";
 			AddQuestRecord("SharlieA", "4");
 			pchar.questTemp.Sharlie.Storehelper = "choise";
 			pchar.quest.storehelper.over = "yes"; //снять прерывание
-			pchar.quest.Sharlie_JungleBandos.win_condition.l1 = "location";
-			pchar.quest.Sharlie_JungleBandos.win_condition.l1.location = "Martinique_Jungle_01";
-			pchar.quest.Sharlie_JungleBandos.function = "SharlieJungleBandos";
 			
-			QuestPointerToLoc("lefransua_town", "reload", "gate_back");
-			QuestPointerToLoc("lefransua_exittown", "reload", "reload2_back");
-			QuestPointerToLoc("martinique_jungle_02", "reload", "reload1_back");
-			QuestPointerToLoc("martinique_jungle_01", "reload", "reload2_back");
-			QuestPointerToLoc("fortfrance_exittown", "reload", "reload3");
-			QuestPointerToLoc("fortfrance_town", "reload", "reload6_back");
 			AddLandQuestMark(characterFromId("FortFrance_trader"), "questmarkmain");
+			
+			SetLaunchFrameFormParam("Z powrotem do Saint-Pierre...", "Reload_To_Location", 0, 4.0);
+			SetLaunchFrameReloadLocationParam("FortFrance_store", "reload", "reload1", "");
+			LaunchFrameForm();
 		break;
 		
 		case "Newstorehelper_regard":
-			dialog.text = "Cóż, rozumiem, że to tutaj teraz pracuję? Dziękuję, monsieur, za wybór mnie. Oto twoje pięćset pesos i obiecany bonus.";
-			link.l1 = "Moja wdzięczność... Pozwól, że przedstawię cię twojemu pracodawcy.";
+			dialog.text = "Cóż, rozumiem, że to tutaj teraz pracuję? Dziękuję, monsieur, za wybranie mnie. Oto twoje pięćset pesos i obiecany bonus.";
+			link.l1 = "Nie ma za co... Pozwól, że przedstawię cię twojemu pracodawcy.";
 			link.l1.go = "Newstorehelper_regard_1";
 		break;
 		
@@ -655,7 +651,7 @@ void ProcessDialogEvent()
 		
 		case "CaptiveSpain_3":
 			dialog.text = "Maldito... Wygrałeś. Poddaję się, przeklęty Francuzie. Jestem na twojej łasce.";
-			link.l1 = "Schowaj swój miecz i pozwól mi mówić, uparty Kastylijczyku! Nie chcę, żebyś umarł, i nie zamierzam cię też do więzienia wysłać!";
+			link.l1 = "Schowaj swój miecz i pozwól mi mówić, uparty Kastylijczyku! Nie chcę, żebyś umarł, i nie zamierzam cię też wrzucić do więzienia!";
 			link.l1.go = "CaptiveSpain_4";
 			RemoveCharacterEquip(npchar, BLADE_ITEM_TYPE);
 		break;
@@ -674,7 +670,7 @@ void ProcessDialogEvent()
 		
 		case "CaptiveSpain_6":
 			dialog.text = "Nie mam wyboru... Ten wasz bankier nie może być gorszy niż Anglicy i ich okropne gotowanie...";
-			link.l1 = "Ostatecznie podejmujesz mądrą decyzję. Na razie dość gadania, płyniemy do St. Pierre. Trzymaj się blisko mnie i nie oddalaj się. Jeśli uciekniesz, złapię cię i znowu zleję na kwaśne jabłko.";
+			link.l1 = "Ostatecznie podejmujesz mądrą decyzję. Na razie dość gadania, idziemy do St. Pierre. Trzymaj się blisko mnie i nie oddalaj się. Jeśli uciekniesz, złapię cię i znowu spiore na kwaśne jabłko.";
 			link.l1.go = "CaptiveSpain_7";
 		break;
 		
@@ -723,7 +719,7 @@ void ProcessDialogEvent()
 		
 		case "Prosper_1":
 			dialog.text = "Tak, to ja. Ale masz nade mną przewagę. Proszę, poinformuj mnie, kim jesteś i czego, do diabła, chcesz.";
-			link.l1 = "Nazywam się "+GetFullName(pchar)+" . Zostałem przysłany do ciebie przez "+GetFullName(characterFromId("Fortfrance_portman"))+",   mistrz portu. Powiedział, że potrzebujesz pilnej pomocy...";
+			link.l1 = "Nazywam się "+GetFullName(pchar)+". Zostałem przysłany do ciebie przez "+GetFullName(characterFromId("Fortfrance_portman"))+", nadzorce portu. Powiedział, że potrzebujesz pilnej pomocy...";
 			link.l1.go = "Prosper_2";
 		break;
 		
@@ -734,7 +730,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_3":
-			dialog.text = "Tak, moja droga córka Celene zaginęła na dwa dni. Poszła na spacer do fortu niedaleko stąd. Ale nie wróciła, więc sam poszedłem do fortu, a żołnierze powiedzieli mi, że nigdy tam nie była!\nAle potem, gdy wracałem, zostałem zaatakowany przez dwóch dzikich Indian! Rzucili się na mnie z pałkami i próbowali mnie pobić.\nAle nie jestem żadnym kotkiem, więc walnąłem jednego w twarz, co dało mi wystarczająco czasu, by wyciągnąć pistolet i strzelić. Chybiłem, ale ich przestraszyłem. Udało mi się dotrzeć do bram miasta i powiedziałem strażnikom o ataku. Pobiegli do dżungli, ale dzikusy już dawno zniknęły.\nJestem pewny, że to oni są odpowiedzialni za zniknięcie Celene. Poza tym, jeszcze dwie osoby zaginęły w zeszłym tygodniu - Cesar Blanchet i Gilbert Courcy! Jeden szedł do zatoki, a drugi do Le Francois. Nigdy nie wrócili.";
+			dialog.text = "Tak, moja droga córka Celene zaginęła dwa dni temu. Poszła na spacer do fortu niedaleko stąd. Ale nie wróciła, więc sam poszedłem do fortu, a żołnierze powiedzieli mi, że nigdy tam nie była!\nAle potem, gdy wracałem, zostałem zaatakowany przez dwóch dzikich Indian! Rzucili się na mnie z pałkami i próbowali mnie pobić.\nAle nie jestem żadnym kotkiem, więc walnąłem jednego w twarz, co dało mi wystarczająco czasu, by wyciągnąć pistolet i strzelić. Chybiłem, ale ich przestraszyłem. Udało mi się dotrzeć do bram miasta i powiedziałem strażnikom o ataku. Pobiegli do dżungli, ale dzikusy już dawno zniknęły.\nJestem pewny, że to oni są odpowiedzialni za zniknięcie Celene. Poza tym, jeszcze dwie osoby zaginęły w zeszłym tygodniu - Cesar Blanchet i Gilbert Courcy! Jeden szedł do zatoki, a drugi do Le Francois. Nigdy nie wrócili.";
 			link.l1 = "Więc Indianie atakują mieszczan tuż przy bramach miasta? To niewiarygodnie zuchwałe...";
 			link.l1.go = "Prosper_4";
 		break;
@@ -746,13 +742,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_5":
-			dialog.text = "Nie wiem... Może żeby sprzedać je piratom lub handlarzom niewolników? Może po prostu je zjedzą żywcem, w końcu to dzikusy.";
+			dialog.text = "Nie wiem... Może żeby sprzedać ich piratom lub handlarzom niewolników? Może po prostu jedzą ich żywcem, w końcu to dzikusy.";
 			link.l1 = "Na Boga w Niebie, czyżby to byli kanibale? Myślałem, że to tylko historie, by straszyć dzieci w Europie...";
 			link.l1.go = "Prosper_6";
 		break;
 		
 		case "Prosper_6":
-			dialog.text = "Historie? Cóż, kilku ludzi takich jak ty myślało to samo, dopóki Karibowie nie ugotowali ich na ogniu i nie zjedli... Więc natychmiast zwróciłem się do komendanta i poprosiłem o wyprawę karną, by ocalić moją Celene. Odmówił! Powiedział, że gdy znikają dziewczęta, prawdopodobnie uciekły z jakimś chłopcem, a nie Indianami. Zasugerował, bym szukał jej w lokalnych stodołach\nA jeśli chodzi o pozostałych dwóch zaginionych... powiedział, że jeden z nich był podejrzewany o przemyt, a drugi prawdopodobnie upija się na śmierć w tawernie Le Francois. Podsumowując, niczego nie osiągnąłem i postanowiłem działać na własną rękę.";
+			dialog.text = "Historie? Cóż, kilku ludzi takich jak ty myślało to samo, dopóki Karibowie nie ugotowali ich na ogniu i nie zjedli... Więc natychmiast zwróciłem się do komendanta i poprosiłem o wyprawę karną, by ocalić moją Celene. Odmówił! Powiedział, że gdy znikają dziewczęta, prawdopodobnie uciekły z jakimś chłopcem, a nie Indianami. Zasugerował, bym szukał jej w lokalnych stodołach\nA jeśli chodzi o pozostałych dwóch zaginionych... powiedział, że jeden z nich był podejrzewany o przemyt, a drugi prawdopodobnie upija się na śmierć w karczmie w Le Francois. Podsumowując, niczego nie osiągnąłem i postanowiłem działać na własną rękę.";
 			link.l1 = "Co zamierzasz zrobić?";
 			link.l1.go = "Prosper_7";
 		break;
@@ -783,13 +779,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_getweapon":
-			dialog.text = "Cóż, monsieur? Zdobyłeś sobie broń?";
+			dialog.text = "Cóż, monsieur? Zdobyłeś broń?";
 			if (FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE) == "") {
 				link.l1 = "Jeszcze nie, proszę poczekać trochę dłużej...";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "Prosper_getweapon";
 			} else {
-				link.l1 = "Zrozumiałem. Jestem gotów ci pomóc!";
+				link.l1 = "Zdobyłem. Jestem gotów ci pomóc!";
 				link.l1.go = "Prosper_8";
 				DeleteQuestCondition("RescueDaughter_Over");
 			}
@@ -868,20 +864,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_11":
-			dialog.text = "Jesteśmy prawie na miejscu, "+pchar.name+"Za tym zakrętem znajduje się wejście do jaskini. Podejdź bliżej, a opowiem ci o naszym planie.";
+			dialog.text = "Jesteśmy prawie na miejscu, "+pchar.name+". Za tym zakrętem znajduje się wejście do jaskini. Podejdź bliżej, a opowiem ci o naszym planie.";
 			link.l1 = "Zamieniam się w słuch, Prosperze.";
 			link.l1.go = "Prosper_12";
 		break;
 		
 		case "Prosper_12":
-			dialog.text = "Muszę ustabilizować cel z tym ciężkim muszkietem, ale jeśli dasz mi trochę czasu, nie chybię. Jeśli będę musiał walczyć wręcz, zapomnij o wsparciu ogniowym, będę mógł tylko odpierać ludzi beczką jak maczugą. Ta walka będzie zależała od twojej umiejętności szermierki.";
+			dialog.text = "Muszę ustabilizować cel z tym ciężkim muszkietem, ale jeśli dasz mi trochę czasu, nie chybię. Jeśli będę musiał walczyć wręcz, zapomnij o wsparciu ogniowym, będę mógł tylko odpierać ludzi lufą jak maczugą. Ta walka będzie zależała od twojej umiejętności szermierki.";
 			link.l1 = "Co próbujesz powiedzieć?";
 			link.l1.go = "Prosper_13";
 		break;
 		
 		case "Prosper_13":
-			dialog.text = "Wszystko, czego potrzebujesz, to odwrócić ich uwagę, aby pozwolić mi ich wszystkich zastrzelić. Nie mogę się poruszać i strzelać, więc zostanę w jednym miejscu. Trzech drani jest blisko wejścia do jaskini. Powinieneś ich zaatakować jak najszybciej z ostrzem w ręku\nUderz jednego z nich i spraw, by cię ścigali. Zwróć ich uwagę ode mnie. Jeśli wszyscy trzej skoncentrują się na tobie, mogę ich zestrzelić jak ptaki, gdy będziesz parował i unikał. Ale jeśli ci dzikusi rzucą się na mnie, jesteśmy zgubieni. Jesteś gotowy?";
-			link.l1 = "To nie pierwszy raz, gdy trzymam miecz, te dzikusy nie stanowią zagrożenia.";
+			dialog.text = "Wszystko, co musisz zrobić, to odwrócić ich uwagę, aby pozwolić mi ich wszystkich zastrzelić. Nie mogę się poruszać i strzelać, więc zostanę w jednym miejscu. Trzech drani jest blisko wejścia do jaskini. Powinieneś ich zaatakować jak najszybciej z ostrzem w ręku\nUderz jednego z nich i spraw, by cię ścigali. Zwróć ich uwagę ode mnie. Jeśli wszyscy trzej skoncentrują się na tobie, mogę ich zestrzelić jak ptaki, gdy będziesz parował i unikał. Ale jeśli ci dzikusi rzucą się na mnie, jesteśmy zgubieni. Jesteś gotowy?";
+			link.l1 = "To nie pierwszy raz, gdy trzymam miecz, te dzikusy nie stanowią zagrożenia!";
 			link.l1.go = "Prosper_14";
 			// belamour legendary edition -->
 			link.l2 = "Ha! Nie martw się o mnie. To jak polowanie w Le Mans! Tylko nie strzelaj mi przez pomyłkę w plecy!";
@@ -912,7 +908,7 @@ void ProcessDialogEvent()
 			LAi_ActorFollowEverywhere(npchar, "", -1);
 			LocatorReloadEnterDisable("Martinique_jungle_04", "reload2_back", false);
 			NextDiag.CurrentNode = "Prosper_16";
-			NewGameTip("A challenging fight awaits ahead. (F6) for quick save.");
+			NewGameTip("Czeka Cię trudna walka. (F6) – szybki zapis.");
 		break;
 		
 		case "Prosper_16":
@@ -934,7 +930,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_18":
-			dialog.text = "Moja córka żyje! Dzięki Bogu! Dotarliśmy tu na czas, "+pchar.name+"Jestem ci dłużny, sir. Jesteś odważnym człowiekiem i dobrym wojownikiem!";
+			dialog.text = "Moja córka żyje! Dzięki Bogu! Dotarliśmy tu na czas, "+pchar.name+". Jestem ci dłużny, sir. Jesteś odważnym człowiekiem i dobrym wojownikiem!";
 			link.l1 = "Cieszę się, że to szczęśliwe zakończenie, Prosper. To była naprawdę krwawa robota, wyeliminować wszystkich tych Indian.";
 			link.l1.go = "Prosper_19";
 		break;
@@ -954,7 +950,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_21":
-			dialog.text = "Jesteś prawdziwym chrześcijańskim rycerzem, "+pchar.name+"Nie ma co tu się kręcić. Wróćmy szybko do domu!";
+			dialog.text = "Jesteś prawdziwym chrześcijańskim rycerzem, "+pchar.name+". Nie ma co tu się kręcić. Wróćmy szybko do domu!";
 			link.l1 = "...";
 			link.l1.go = "Prosper_22";
 		break;
@@ -972,7 +968,7 @@ void ProcessDialogEvent()
 			LAi_SetActorType(sld);
 			LAi_ActorFollowEverywhere(sld, "", -1);
 			pchar.quest.Tutorial_Amulet.over = "yes";
-			SetLaunchFrameFormParam("Back to the town...", "Reload_To_Location", 0, 3.0);
+			SetLaunchFrameFormParam("Powrót do miasta...", "Reload_To_Location", 0, 3.0);
 			SetLaunchFrameReloadLocationParam("FortFrance_town", "reload", "gate_back", "");
 			LaunchFrameForm();
 		break;
@@ -991,8 +987,8 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, 5000);
 			TakeNItems(pchar, "gold_dublon", 15);
 			TakeNItems(pchar, pchar.questTemp.SMQ.Amulet, 1);
-			Log_Info("You've received 15 doubloons");
-			Log_Info("You've received an amulet");
+			Log_Info("Otrzymałeś 15 dublonów");
+			Log_Info("Otrzymałeś amulet");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Ach, mąż taki jak ty dobrze by jej zrobił. Cały czas gonią ją po mieście banda chudonogich, bezbrodych fircyków. Szkoda tylko, że wszyscy po kolei znikają gdzieś... i dobrze im tak. Powodzenia, Charles!";
 			link.l1 = "...";
@@ -1028,13 +1024,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Selina":
-			dialog.text = "Ach! Boże, ratuj mnie! (płacząc) Ty... ty nawet nie możesz sobie wyobrazić, jaki horror tu się dzieje! Ci... ci Indianie zaciągnęli nas tu, żeby nas zabić i zjeść! Cesar Blanchet był tutaj... Dzicy zabrali go... Przeprowadzili jakiś okropny diabelski rytuał, a potem... Panie, nawet nie mogę o tym mówić! Miałem być następny! Zamierzali mnie zarżnąć... jutro!";
+			dialog.text = "Ach! Boże, ratuj mnie! (płacząc) Ty... ty nawet nie możesz sobie wyobrazić, jaki horror tu się dzieje! Ci... ci Indianie zaciągnęli nas tu, żeby nas zabić i zjeść! Cesar Blanchet był tutaj... Dzicy zabrali go... Przeprowadzili jakiś okropny diabelski rytuał, a potem... Panie, nawet nie mogę o tym mówić! Miałam być następna! Zamierzali mnie zarżnąć... jutro!";
 			link.l1 = "Spokojnie, Celine. To już koniec. Te dranie dostali to, na co zasłużyli i już nikomu nie zrobią krzywdy.";
 			link.l1.go = "Selina_1";
 		break;
 		
 		case "Selina_1":
-			dialog.text = "Gilbert Coursie jest tu również. Tam... on, uh... on wciąż się jeszcze nie odzyskał. Porozmawiaj z nim... Potem pośpieszmy się i wyjdźmy stąd!";
+			dialog.text = "Gilbert Coursie jest tu również. Tam... on, uh... on wciąż leży nieprzytomny. Porozmawiaj z nim... Potem pośpieszmy się i wyjdźmy stąd!";
 			link.l1 = "Już dobrze, już dobrze. Wszystko w porządku, dziewczyno. Wystarczy płaczu. Wszystko jest dobrze. Masz wspaniałego ojca. Nie pozwoli nikomu cię skrzywdzić... Wyjdź na zewnątrz, pomogę...uh... Gilbertowi się stąd wydostać, a później cię dogonię.";
 			link.l1.go = "Selina_2";
 		break;
@@ -1092,7 +1088,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Selina_9":
-			dialog.text = "(płacząc) Proszę, monsieur, zabierzcie nas ze sobą do miasta. Musimy wysłać po żołnierzy, by przybyli po ciało mojego ojca, aby mógł mieć godny chrześcijański pochówek...";
+			dialog.text = "(płacząc) Proszę, monsieur, zabierz nas ze sobą do miasta. Musimy wysłać po żołnierzy, by przybyli po ciało mojego ojca, aby mógł mieć godny chrześcijański pochówek...";
 			link.l1 = "Oczywiście, Celine. Chodź za mną!";
 			link.l1.go = "Selina_10";
 		break;
@@ -1169,7 +1165,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jilberte_4":
-			dialog.text = "Pozwól, że raz jeszcze wyrażę moją głęboką wdzięczność za ocalenie mnie, monsieur! Jak obiecałem, dołączam do mojej werbalnej wdzięczności materialną wdzięczność w postaci srebrnych pesos i złotych doublonów.";
+			dialog.text = "Pozwól, że raz jeszcze wyrażę moją głęboką wdzięczność za ocalenie mnie, monsieur! Jak obiecałem, dołączam do mojej werbalnej wdzięczności materialną wdzięczność w postaci srebrnych pesos i złotych dublonów.";
 			link.l1 = "Cieszę się, że wszystko skończyło się szczęśliwie, Gilbercie.";
 			link.l1.go = "Jilberte_5";
 		break;
@@ -1177,7 +1173,7 @@ void ProcessDialogEvent()
 		case "Jilberte_5":
 			AddMoneyToCharacter(pchar, 3000);
 			TakeNItems(pchar, "gold_dublon", 20);
-			Log_Info("You've received 20 doubloons");
+			Log_Info("Otrzymałeś 20 dublonów");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Nie możesz sobie nawet wyobrazić, jak bardzo się z tego cieszę! Dziękuję raz jeszcze i pozwól mi odejść, monsieur.";
 			link.l1 = "Powodzenia, Gilbert! Przy okazji, czy wiesz może, czy ktoś jeszcze w Saint-Pierre potrzebuje pomocy?";
@@ -1197,11 +1193,6 @@ void ProcessDialogEvent()
 			LAi_ActorGoToLocation(npchar, "reload", "reload4_back", "none", "", "", "", 10.0);
 			npchar.lifeday = 0;
 			DeleteAttribute(pchar, "questTemp.Sharlie.RescueDaughter");
-			if(CheckAttribute(pchar, "questTemp.Tutorial_Dubloons"))
-			{
-				DeleteAttribute(pchar, "questTemp.Tutorial_Dubloons");
-				Tutorial_Dubloons("");
-			}
 			
 			//Подбегает дворянин с квестом "девочка по вызову"
 			sld = GetCharacter(NPC_GenerateCharacter("GigoloMan", "Guide_2", "man", "man", 25, FRANCE, 5, true, "soldier"));

@@ -1,0 +1,37 @@
+﻿Tonzag_1
+{
+cacciatori di taglie
+}
+
+Tonzag_2
+{
+Alonso
+}
+Tonzag_3
+{
+
+}
+
+Tonzag_4
+{
+6 ore sono passate...
+}
+
+Tonzag_5
+{
+Modalità di esplorazione: il timer è disabilitato.
+}
+
+Tonzag_6
+{
+Cavaliere di bronzo sbloccato
+}
+
+Tonzag_7
+{
+Alberto
+}
+Tonzag_8
+{
+Gaodio
+}

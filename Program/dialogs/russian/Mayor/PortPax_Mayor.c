@@ -21,6 +21,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Ваша Светлость, вы хотели меня видеть?";
 				link.l1.go = "PZ1";
 			}
+			// Украденное воспоминание
+			if (CheckAttribute(pchar, "questTemp.UV_DialogMayor"))
+			{
+				link.l1 = "Месье, у меня к вам дело весьма деликатного характера.";
+				link.l1.go = "UV_1";
+			}
 		break;
 
 		case "Cupture_after":
@@ -100,6 +106,46 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			SetMusic("music_teleport");
 			pchar.questTemp.lockedMusic = true;
 		break;
+		
+		//--> Украденное воспоминание
+		case "UV_1":
+			dialog.text = "Деликатного характера? Очень интересно. Внимательно вас слушаю.";
+			link.l1 = "Видите ли, ваша племянница, Жюли, обратилась ко мне с просьбой помочь ей в поиске некоего ожерелья.";
+			link.l1.go = "UV_2";
+			ChangeCharacterComplexReputation(pchar, "nobility", -5);
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "UV_2":
+			dialog.text = "Ожерелья? Не помню, чтобы у неё было ожерелье.";
+			link.l1 = "Я всё объясню, господин губернатор, по порядку. Ожерелье я наш"+GetSexPhrase("ёл","ла")+". Как оказалось, воровка - это прислуга вашей племянницы по имени Жизель. Судя по поведению того, кому она сбывала украденное, это явно не её первая и, боюсь, не последняя кража.";
+			link.l1.go = "UV_3";
+		break;
+		
+		case "UV_3":
+			dialog.text = "Продолжайте.";
+			link.l1 = "Жюли не обратилась к вам за помощью, потому что это ожерелье - подарок от человека, с которым вы запретили ей общаться. Я же, будучи уверенн"+GetSexPhrase("ым","ой")+", что вы поступили так исключительно из самых благородных побуждений, посчитал"+GetSexPhrase("","а")+" своим долгом сообщить вам об этом и вернуть ожерелье.";
+			link.l1.go = "UV_4";
+			TakeItemFromCharacter(pchar, "SM_necklace_Julie");
+		break;
+		
+		case "UV_4":
+			dialog.text = "Вы поступили мудро"+GetSexPhrase(", капитан","")+". Рад видеть, что вы предпочли сообщить мне правду, вместо того чтобы потакать девичьим капризам Жюли.";
+			link.l1 = "Я желаю ей только лучшего и уверен"+GetSexPhrase("","а")+", что ваши намерения столь же праведны.";
+			link.l1.go = "UV_5";
+		break;
+		
+		case "UV_5":
+			dialog.text = "Разумеется, капитан, я, как её дядя, желаю ей только добра. За вашу рассудительность примите мою благодарность. Вот сто пятьдесят дублонов и ещё кое-что - компас, который, надеюсь, станет для вас полезным спутником в ваших плаваниях.";
+			link.l1 = "Благодарю, месье. Это было совсем не обязательно. Но за сим вынужден"+GetSexPhrase("","а")+" откланяться - дела ждут.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("UV_End");
+			AddItems(pchar, "gold_dublon", 150);
+			GiveItem2Character(PChar, "compass1");
+			ChangeCharacterNationReputation(pchar, FRANCE, 5);
+		break;
+		
+		//<-- Украденное воспоминание
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

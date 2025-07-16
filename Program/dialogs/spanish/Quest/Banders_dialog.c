@@ -33,28 +33,28 @@ void ProcessDialogEvent()
 
 		case "First time":
 			dialog.text = "¿Quién diablos eres tú?";
-			link.l1 = "Silencio, cálmate. Tu compañero encarcelado llamado "+pchar.questTemp.jailCanMove.Deliver.name+" me ha enviado aquí, ¿lo conoces?";
+			link.l1 = "Silencio, cálmate. Tu compañero que está encarcelado de nombre "+pchar.questTemp.jailCanMove.Deliver.name+" me ha enviado. ¿Lo conoces?";
 			link.l1.go = "Step_1";			
 			NextDiag.TempNode = "Second time";
 		break;
 		
 		case "Step_1":
 			dialog.text = "¿Tienes alguna prueba de que no eres uno de los perros del gobernador?";
-			link.l1 = "Me ha pedido que entregue una nota. Aquí está.";
+			link.l1 = "Me ha pedido que te entregue esta nota.";
 			link.l1.go = "Step_2";
 			TakeItemFromCharacter(pchar, "Malyava");
 		break;
 		
 		case "Step_2":
-			dialog.text = "Veamos...(leyendo). ¡Maldita sea! Un mal momento para ser atrapado... Carajo, tal trato... Escucha, marinero, supongo que eres "+GetSexPhrase("fuerte camarada","chica hábil")+"¿Quieres ganar unas monedas? Todos nos beneficiaremos del trato.";
-			link.l1 = "Siempre quiero. ¿Cuál es el trato?";
+			dialog.text = "Veamos...(leyendo). ¡Maldita sea! Es un mal momento para ser atrapado... Carajo, un trato... Escucha marinero, supongo que eres "+GetSexPhrase("un confiable camarada.","una chica hábil.")+"¿Quieres ganar unas monedas? Todos nos beneficiaremos del trato.";
+			link.l1 = "Siempre estoy dispuesto. ¿Cuál es el trato?";
 			link.l1.go = "Step_3";
 		break;
 			
 		case "Step_3":
-			dialog.text = "Puedo compartir información interesante contigo. No la necesito, no llegaré a tiempo, gracias a nuestro amigo en común, pero podría serte útil. No gratis.";
-			link.l1 = "¿Cuánto?";
-			if (drand(2) == 0) link.l1.go = "Step_4";
+			dialog.text = "Puedo compartir cierta información de interés contigo. Yo no la necesito, no llegaré a tiempo gracias a nuestro amigo en común, pero podría serte útil. Aunque no será gratis.";
+			link.l1 = "¿Cuánto será?";
+			if (hrand(2) == 0) link.l1.go = "Step_4";
 			else link.l1.go = "Step_4d";
 		break;
 		
@@ -63,22 +63,22 @@ void ProcessDialogEvent()
 			dialog.text = "Cincuenta mil pesos.";
 			if(makeint(Pchar.money) >= 50000)
 			{
-				link.l1 = "Mm, bastante caro. Pero digo que sí, si el negocio lo vale. ¡Estoy dentro! Dame los detalles.";
+				link.l1 = "Mm, es bastante caro. Pero diré que sí, el negocio lo vale. ¡Estoy dentro! Dame los detalles.";
 				link.l1.go = "Step_5";
 			}
-			link.l2 = "No interesado.";
+			link.l2 = "No estoy interesado.";
 			link.l2.go = "Step_no";
 		break;
 		
 		case "Step_4d":
-			iTotalTemp = 250+drand(25)*10;
-			dialog.text = ""+FindRussianDublonString(iTotalTemp)+"¡Ni una sola moneda menos!";
+			iTotalTemp = 250+hrand(25)*10;
+			dialog.text = ""+FindRussianDublonString(iTotalTemp)+" ¡Ni una sola moneda menos!";
 			if (GetCharacterItem(pchar, "gold_dublon") >= iTotalTemp)
 			{
-				link.l1 = "Hm, bastante caro. Pero estoy de acuerdo si el negocio lo vale. ¡Estoy dentro! Dame los detalles.";
+				link.l1 = "Hm, es bastante caro. Pero estoy de acuerdo si el negocio lo vale. ¡Estoy dentro! Dame los detalles.";
 				link.l1.go = "Step_5";
 			}
-			link.l2 = "No interesado.";
+			link.l2 = "No estoy interesado.";
 			link.l2.go = "Step_no";
 		break;
 		
@@ -86,8 +86,8 @@ void ProcessDialogEvent()
 			switch (sti(pchar.questTemp.jailCanMove.Deliver.good))
 			{
 				case 0://попытка грабежа
-					dialog.text = "Bueno-bueno, lo que sea, "+GetSexPhrase("te engañaron, idiota","te han engañado, estúpida chica")+". Ahora paga, ¡en efectivo!";
-					link.l1 = "Vete a la mierda con un ancla... ¡Tu amigo me ha dicho que sus colegas son generosos!";
+					dialog.text = "Bueno-bueno, parece que "+GetSexPhrase("te engañaron, idiota","te han engañado, estúpida chica")+". ¡Ahora pagarás en efectivo!";
+					link.l1 = "Vete a la mierda como un ancla... ¡Tu amigo me ha dicho que sus colegas son generosos!";
 					link.l1.go = "Step_fight";
 				break;
 				
@@ -100,8 +100,8 @@ void ProcessDialogEvent()
 					pchar.questTemp.jailCanMove.Deliver.terms = 10+rand(2);
 					pchar.questTemp.jailCanMove.Deliver.ShipName1 = GenerateRandomNameToShip(sti(pchar.questTemp.jailCanMove.Deliver.Nation));
 					pchar.questTemp.jailCanMove.Deliver.ShipName2 = GenerateRandomNameToShip(sti(pchar.questTemp.jailCanMove.Deliver.Nation));
-					dialog.text = "Está bien, escucha. Me informaron que en "+FindRussianDaysString(sti(pchar.questTemp.jailCanMove.Deliver.terms))+" no lejos de "+pchar.questTemp.jailCanMove.Deliver.Island.Areal+"  habrá dos "+pchar.questTemp.jailCanMove.Deliver.add1+" barcos mercantes - los "+pchar.questTemp.jailCanMove.Deliver.ShipName1+" y el "+pchar.questTemp.jailCanMove.Deliver.ShipName2+" con sus bodegas llenas de "+pchar.questTemp.jailCanMove.Deliver.add+". Puedes intentar atraparlos.";
-					link.l1 = "¡Espléndido! Parece que hice bien al compartir monedas contigo.";
+					dialog.text = "Está bien, escucha. Me informaron que en "+FindRussianDaysString(sti(pchar.questTemp.jailCanMove.Deliver.terms))+" no lejos de "+pchar.questTemp.jailCanMove.Deliver.Island.Areal+"  habrá dos "+pchar.questTemp.jailCanMove.Deliver.add1+" barcos mercantes. Él "+pchar.questTemp.jailCanMove.Deliver.ShipName1+" y el "+pchar.questTemp.jailCanMove.Deliver.ShipName2+" con sus bodegas llenas de "+pchar.questTemp.jailCanMove.Deliver.add+". Puedes intentar atraparlos.";
+					link.l1 = "¡Espléndido! Parece que hice bien al invertir esas monedas contigo.";
 					link.l1.go = "Step_lay";
 				break;
 				
@@ -115,8 +115,8 @@ void ProcessDialogEvent()
 					pchar.questTemp.jailCanMove.Deliver.ShipName1 = GenerateRandomNameToShip(sti(pchar.questTemp.jailCanMove.Deliver.Nation));
 					pchar.questTemp.jailCanMove.Deliver.ShipName2 = GenerateRandomNameToShip(sti(pchar.questTemp.jailCanMove.Deliver.Nation));
 					
-					dialog.text = "Bueno, escucha. Me informaron que en "+FindRussianDaysString(sti(pchar.questTemp.jailCanMove.Deliver.terms))+" no lejos de "+pchar.questTemp.jailCanMove.Deliver.Island.Areal+" habrá dos "+pchar.questTemp.jailCanMove.Deliver.add1+" barcos mercantes - los "+pchar.questTemp.jailCanMove.Deliver.ShipName1+" y el "+pchar.questTemp.jailCanMove.Deliver.ShipName2+" con sus bodegas llenas de "+pchar.questTemp.jailCanMove.Deliver.add+". Puedes intentar atraparlos.";
-					link.l1 = "¡Espléndido! Parece que hice bien en compartir monedas contigo.";
+					dialog.text = "Bueno, escucha. Me informaron que en "+FindRussianDaysString(sti(pchar.questTemp.jailCanMove.Deliver.terms))+" no lejos de "+pchar.questTemp.jailCanMove.Deliver.Island.Areal+" hay dos "+pchar.questTemp.jailCanMove.Deliver.add1+" barcos mercantes. Él "+pchar.questTemp.jailCanMove.Deliver.ShipName1+" y el "+pchar.questTemp.jailCanMove.Deliver.ShipName2+" con sus bodegas llenas de "+pchar.questTemp.jailCanMove.Deliver.add+". Puedes intentar atraparlos.";
+					link.l1 = "¡Espléndido! Parece que hice bien en darte esas monedas.";
 					link.l1.go = "Step_trader";
 				break;
 				
@@ -127,23 +127,23 @@ void ProcessDialogEvent()
 					GetBandersTradeNation();
 					pchar.questTemp.jailCanMove.Deliver.ShipName = GenerateRandomNameToShip(sti(pchar.questTemp.jailCanMove.Deliver.Nation));
 					pchar.questTemp.jailCanMove.Deliver.terms = 5+rand(5);
-					dialog.text = "Bien, escucha. Me informaron que en "+FindRussianDaysString(sti(pchar.questTemp.jailCanMove.Deliver.terms))+" no lejos de "+pchar.questTemp.jailCanMove.Deliver.Island.Areal+" navegará en un cúter de mensajería "+pchar.questTemp.jailCanMove.Deliver.add2+" llamado "+pchar.questTemp.jailCanMove.Deliver.ShipName+". Hay muchas joyas en ella. Puedes intentar atraparla.";
-					link.l1 = "¡Espléndido! Parece que hice bien en compartir monedas contigo.";
+					dialog.text = "Bien, escucha. Me informaron que en "+FindRussianDaysString(sti(pchar.questTemp.jailCanMove.Deliver.terms))+" no lejos de "+pchar.questTemp.jailCanMove.Deliver.Island.Areal+" navegará un cúter de mensajería "+pchar.questTemp.jailCanMove.Deliver.add2+" llamado "+pchar.questTemp.jailCanMove.Deliver.ShipName+". Lleva muchas joyas, puedes intentar atraparlo.";
+					link.l1 = "¡Espléndido! Parece que hice bien en darte esas monedas.";
 					link.l1.go = "Step_cureer";
 				break;
 			}
 		break;
 			
 		case "Step_fight":
-			dialog.text = "Si no fuera tan tonto, estaría bebiendo su ron en una taberna ahora y no sentado en las casamatas. Así que todas las quejas van para él, ¡ja-ja! Ahora dame tu dinero o no saldrás de aquí con vida.";
+			dialog.text = "Si no fuera tan tonto, estaría bebiendo ron en una taberna y no aquí sentado en esta casamata. Así que todas las quejas van para él, ¡ja-ja! Ahora dame tu dinero o no saldrás de aquí con vida.";
 			link.l1 = "¿Estás tan seguro de eso, payaso?";
 			link.l1.go = "quest_fight";
-			link.l2 = "Está bien, toma tus monedas... Estoy superado en número...";
+			link.l2 = "Está bien, toma tus monedas... Me superan en número...";
 			link.l2.go = "Step_takemoney";
 		break;
 		
 		case "Step_takemoney":
-			dialog.text = "Bien hecho, "+GetSexPhrase("compañero","chica")+"Nuestro amigo común te los devolverá, ja-ja... una vez que esté muerto. Piérdete. Silenciosamente.";
+			dialog.text = "Bien hecho, "+GetSexPhrase("compañero","chica")+". Nuestro amigo común te los devolverá, ja-ja... una vez que esté muerto. Piérdete silenciosamente.";
 			link.l1 = "¡Maldito seas!";
 			link.l1.go = "exit";
 			if (iTotalTemp == 0) AddMoneyToCharacter(pchar, -50000);
@@ -157,7 +157,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_lay":
-			dialog.text = "Claro... Lo que sea, ahora vete, silenciosamente.";
+			dialog.text = "Claro... Lo que sea, ahora vete en silencio.";
 			link.l1 = "Adiós.";
 			link.l1.go = "exit";
 			AddQuestRecord("GivePrisonFree", "13");
@@ -175,7 +175,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_trader":
-			dialog.text = "Claro... Como sea, ahora vete, en silencio.";
+			dialog.text = "Claro... Como sea, ahora vete en silencio.";
 			link.l1 = "Adiós.";
 			link.l1.go = "exit";
 			AddQuestRecord("GivePrisonFree", "13");
@@ -193,7 +193,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_cureer":
-			dialog.text = "Seguro... Lo que sea, ahora vete, silenciosamente.";
+			dialog.text = "Seguro... Lo que sea, ahora vete en silencio.";
 			link.l1 = "Adiós.";
 			link.l1.go = "exit";
 			AddQuestRecord("GivePrisonFree", "14");
@@ -210,7 +210,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_no":
-			dialog.text = "Lo que sea entonces. Ahora vete, no tenemos nada de qué hablar contigo.";
+			dialog.text = "Como sea entonces. Ahora vete, no tenemos nada de qué hablar contigo.";
 			link.l1 = "Bien, adiós.";
 			link.l1.go = "exit";
 			AddQuestRecord("GivePrisonFree", "16");
@@ -230,7 +230,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Man_FackYou":
-			dialog.text = "¿Quieres que te apuñalen, "+GetSexPhrase("petimetre","chica estúpida")+"¿¡!?";
+			dialog.text = "¿¡Quieres que te apuñalen, "+GetSexPhrase("petimetre","chica estúpida")+"!?";
 			link.l1 = LinkRandPhrase("¡Diablo!","¡Caramba!","¡Maldita sea!");
 			link.l1.go = "fight";
 		break;
@@ -264,12 +264,12 @@ void GetBandersTradeGoods()//выберем товар для торгашей
 	{
 		case 0:
 			pchar.questTemp.jailCanMove.Deliver.Goods = GOOD_EBONY;
-			pchar.questTemp.jailCanMove.Deliver.add = "ebony";
+			pchar.questTemp.jailCanMove.Deliver.add = "ébano";
 		break;
 		
 		case 1:
 			pchar.questTemp.jailCanMove.Deliver.Goods = GOOD_MAHOGANY;
-			pchar.questTemp.jailCanMove.Deliver.add = "redwood";
+			pchar.questTemp.jailCanMove.Deliver.add = "caoba";
 		break;
 		
 		case 2:
@@ -279,22 +279,22 @@ void GetBandersTradeGoods()//выберем товар для торгашей
 		
 		case 3:
 			pchar.questTemp.jailCanMove.Deliver.Goods = GOOD_COFFEE;
-			pchar.questTemp.jailCanMove.Deliver.add = "coffee";
+			pchar.questTemp.jailCanMove.Deliver.add = "café";
 		break;
 		
 		case 4:
 			pchar.questTemp.jailCanMove.Deliver.Goods = GOOD_CINNAMON;
-			pchar.questTemp.jailCanMove.Deliver.add = "cinnamon";
+			pchar.questTemp.jailCanMove.Deliver.add = "canela";
 		break;
 		
 		case 5:
 			pchar.questTemp.jailCanMove.Deliver.Goods = GOOD_FOOD;
-			pchar.questTemp.jailCanMove.Deliver.add = "provisions";
+			pchar.questTemp.jailCanMove.Deliver.add = "provisiones";
 		break;
 		
 		case 6:
 			pchar.questTemp.jailCanMove.Deliver.Goods = GOOD_WEAPON;
-			pchar.questTemp.jailCanMove.Deliver.add = "weapons";
+			pchar.questTemp.jailCanMove.Deliver.add = "armas";
 		break;
 	}
 }
@@ -305,26 +305,26 @@ void GetBandersTradeNation()//выберем нацию торгаша и кур
 	{
 		case 0:
 			pchar.questTemp.jailCanMove.Deliver.Nation = SPAIN;
-			pchar.questTemp.jailCanMove.Deliver.add1 = "Spanish";
-			pchar.questTemp.jailCanMove.Deliver.add2 = "Spanish Treasury";
+			pchar.questTemp.jailCanMove.Deliver.add1 = "Español";
+			pchar.questTemp.jailCanMove.Deliver.add2 = "Tesoro español";
 		break;
 		
 		case 1:
 			pchar.questTemp.jailCanMove.Deliver.Nation = FRANCE;
-			pchar.questTemp.jailCanMove.Deliver.add1 = "French";
-			pchar.questTemp.jailCanMove.Deliver.add2 = "French Treasury";
+			pchar.questTemp.jailCanMove.Deliver.add1 = "Francés";
+			pchar.questTemp.jailCanMove.Deliver.add2 = "Tesoro francés";
 		break;
 		
 		case 2:
 			pchar.questTemp.jailCanMove.Deliver.Nation = HOLLAND;
-			pchar.questTemp.jailCanMove.Deliver.add1 = "Holland";
-			pchar.questTemp.jailCanMove.Deliver.add2 = "Dutch West India Company";
+			pchar.questTemp.jailCanMove.Deliver.add1 = "Holanda";
+			pchar.questTemp.jailCanMove.Deliver.add2 = "Compañía Holandesa de las Indias Occidentales";
 		break;
 		
 		case 3:
 			pchar.questTemp.jailCanMove.Deliver.Nation = ENGLAND;
-			pchar.questTemp.jailCanMove.Deliver.add1 = "English";
-			pchar.questTemp.jailCanMove.Deliver.add2 = "English Treasury";
+			pchar.questTemp.jailCanMove.Deliver.add1 = "Inglés";
+			pchar.questTemp.jailCanMove.Deliver.add2 = "Tesoro inglés";
 			break;
 	}
 }

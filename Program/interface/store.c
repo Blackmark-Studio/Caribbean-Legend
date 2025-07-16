@@ -34,11 +34,11 @@ void InitInterface_R(string iniName, ref pStore)
 	GameInterface.TABLE_LIST.hr.td1.str = XI_ConvertString("In the hold");
 	GameInterface.TABLE_LIST.hr.td1.line_space_modifier = 0.8;
 	GameInterface.TABLE_LIST.hr.td2.str = XI_ConvertString("WeightHold");
-	GameInterface.TABLE_LIST.hr.td3.str = XI_ConvertString("Price sell");
+	GameInterface.TABLE_LIST.hr.td3.str = XI_ConvertString("Price buy");
 	GameInterface.TABLE_LIST.hr.td3.line_space_modifier = 0.8;
 	GameInterface.TABLE_LIST.hr.td4.str = XI_ConvertString("Good name");
 	GameInterface.TABLE_LIST.hr.td4.line_space_modifier = 0.8;
-	GameInterface.TABLE_LIST.hr.td5.str = XI_ConvertString("Price buy");
+	GameInterface.TABLE_LIST.hr.td5.str = XI_ConvertString("Price sell");
 	GameInterface.TABLE_LIST.hr.td5.line_space_modifier = 0.8;
 	if(refStore.Colony == "none")
 	{
@@ -215,7 +215,7 @@ void CalculateInfoData()
 
 void AddToTable()
 {
-	int n, i;
+	int n, i, iPrice;
 	string row, sShipGroup;
 	ref rShip;
 	string sGood;
@@ -299,32 +299,27 @@ void AddToTable()
 		GameInterface.TABLE_LIST.(row).index = i;
 		GameInterface.TABLE_LIST.(row).td4.color = iColor;
 
+        // Продаёт магазин (PRICE_TYPE_BUY)
+		if ((tradeType == T_TYPE_AMMUNITION) && (refStore.Colony == "none"))
+		    GameInterface.TABLE_LIST.(row).td3.str = "-"; // нельзя купить в море
+		else
+			GameInterface.TABLE_LIST.(row).td3.str = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_BUY, pchar, 1);
+
+        // Продаёт игрок (PRICE_TYPE_SELL)
 		if (tradeType == T_TYPE_CONTRABAND)
-		{
-			if(bBettaTestMode)	GameInterface.TABLE_LIST.(row).td5.str = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_BUY, pchar, 1);		
-		    else
-			{
-				GameInterface.TABLE_LIST.(row).td5.str = "-";
-			}	
-		}
+			GameInterface.TABLE_LIST.(row).td5.str = "-";
 		else
 		{
-			GameInterface.TABLE_LIST.(row).td5.str = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_BUY, pchar, 1);
-			// в море
+            iPrice = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_SELL, pchar, 1);
+            // В море продавать невыгодно
 			if (refStore.Colony == "none")
 			{
-			    GameInterface.TABLE_LIST.(row).td5.str = makeint(sti(GameInterface.TABLE_LIST.(row).td5.str) / 2);
-			    if (sti(GameInterface.TABLE_LIST.(row).td5.str) < 1) GameInterface.TABLE_LIST.(row).td5.str = 1;
+			    iPrice /= 2;
+			    if (iPrice < 1) iPrice = 1;
 			}
+            GameInterface.TABLE_LIST.(row).td5.str = iPrice;
 		}
-		if ((tradeType == T_TYPE_AMMUNITION) && (refStore.Colony == "none"))
-		{
-		    GameInterface.TABLE_LIST.(row).td3.str = "-"; // нельзя купить в море
-		}
-		else
-		{
-			GameInterface.TABLE_LIST.(row).td3.str = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_SELL, pchar, 1);
-		}
+
 		n++;
 	}
 	NextFrameRefreshTable();
@@ -625,22 +620,26 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetFormatedText("QTY_INFO_STORE_QTY", its(iStoreQty));
 	SetFormatedText("QTY_INFO_SHIP_QTY", its(iShipQty));
 	BuyOrSell = 0;
+
+    // Продаёт игрок (PRICE_TYPE_SELL)
 	if (MakeInt(refStore.Goods.(GoodName).TradeType) == T_TYPE_CONTRABAND)
 	{
 	    iStorePrice = 0;
-	    SetFormatedText("QTY_INFO_STORE_PRICE",XI_ConvertString("Price sell") + NewStr() + "-");
+	    SetFormatedText("QTY_INFO_STORE_PRICE", XI_ConvertString("Price sell") + NewStr() + "-");
 	}
 	else
 	{
 		iStorePrice = GetStoreGoodsPrice(refStore, iGoodIndex, PRICE_TYPE_SELL, pchar, 1);
-		// для моря, чтоб было не выгодно
+		// В море продавать невыгодно
 	 	if(refStore.Colony == "none")
 		{
 		    iStorePrice /= 2;
 		    if (iStorePrice < 1) iStorePrice = 1;
 		}
-        SetFormatedText("QTY_INFO_STORE_PRICE",XI_ConvertString("Price sell") + NewStr() + its(iStorePrice));
+        SetFormatedText("QTY_INFO_STORE_PRICE", XI_ConvertString("Price sell") + NewStr() + its(iStorePrice));
 	}
+
+    // Продаёт магазин (PRICE_TYPE_BUY)
 	if ((MakeInt(refStore.Goods.(GoodName).TradeType) == T_TYPE_AMMUNITION) && (refStore.Colony == "none"))
 	{
 	    iShipPrice = 0;
@@ -651,6 +650,7 @@ void ShowGoodsInfo(int iGoodIndex)
 		iShipPrice = GetStoreGoodsPrice(refStore, iGoodIndex, PRICE_TYPE_BUY, pchar, 1);
 		SetFormatedText("QTY_INFO_SHIP_PRICE", XI_ConvertString("Price buy") + NewStr() + its(iShipPrice));
 	}
+
 	ShowFoodInfo();
 }
 
@@ -731,7 +731,12 @@ void TransactionOK()
 		if(refStore.Colony == "none" && CheckAttribute(refShipChar,"money"))
 		{			
 			refShipChar.money = sti(refShipChar.money) - moneyback;			
-		}	
+		}
+		else if(HasShipTrait(pchar, "trait03") && moneyback >= 25000)
+		{
+			ref rColony = GetColonyRefByID(refStore.Colony);
+			ChangeCharacterNationReputation(pchar, sti(rColony.nation), moneyback/25000);
+		}
 		Statistic_AddValue(Pchar, "Money_get", moneyback);
 		Achievment_SetStat(39, moneyback);
 		if(iCurGoodsIdx == GOOD_SLAVES) Achievment_SetStat(43, nTradeQuantity);

@@ -91,7 +91,7 @@ void ProcessDialogEvent()
 			} 
             if (npchar.quest.BadMeeting != lastspeak_date)
 			{
-				if(!CheckAttribute(PChar, "GenQuest.ChurchQuest_2.StartQuest") && !CheckAttribute(PChar, "GenQuest.ChurchQuest_1.StartQuest") && NPChar.GenQuest.ChurchQuest_2.GiveQuestDateParam != iMonth && NPChar.GenQuest.ChurchQuest_2.GiveQuestDay != lastspeak_date && NPChar.location != "Panama_church" && NPChar.location != "Minentown_church" && rand(5) == 1 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock")) // 280313
+				if(!CheckAttribute(PChar, "GenQuest.ChurchQuest_2.StartQuest") && !CheckAttribute(PChar, "GenQuest.ChurchQuest_1.StartQuest") && NPChar.GenQuest.ChurchQuest_2.GiveQuestDateParam != iMonth && NPChar.GenQuest.ChurchQuest_2.GiveQuestDay != lastspeak_date && NPChar.location != "Panama_church" && NPChar.location != "LosTeques_church" && rand(5) == 1 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock")) // 280313
 				{
 					dialog.text = "...they shall burn in the fiery hell forever! Never shall they see...";
 					link.l1 = RandPhraseSimple("Ahem! Am I disturbing, padre?", "That's the speech!");
@@ -1351,7 +1351,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(PChar,"nobility", 5);
 			AddCharacterExpToSkill(PChar, "Leadership", 50); // Бонус в авторитет
 			AddCharacterExpToSkill(PChar, "Fortune", 50); // Бонус в удачу
-			TakeNItems(pchar, "chest", 3+drand(1));
+			TakeNItems(pchar, "chest", 3+hrand(1));
 			PlaySound("interface\important_item.wav");
 			sQuestTitle = NPChar.City + "ChurchGenQuest1";
 			characters[GetCharacterIndex("ChurchGenQuest1_Cap")].LifeDay = 0;

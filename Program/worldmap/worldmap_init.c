@@ -56,6 +56,7 @@ void wdmInitWorldMap()
 	worldMap.labeltype.Shore.heightView = 200.0;
 	worldMap.labeltype.Shore.weight = 1;
 
+	worldMap.label_base_screen_height = 1080.0;
 
 	//=========================================================================
 	//Island BugFix
@@ -106,10 +107,10 @@ void wdmInitWorldMap()
 	worldMap.labels.Cuba1.locator = "Cuba1";
 	worldMap.labels.Cuba1.text = CheckingTranslate(idLngFile,"Cuba1");
 	
-	worldMap.labels.Cuba2.type = "Island";
+	/*worldMap.labels.Cuba2.type = "Island";
 	worldMap.labels.Cuba2.id = "Cuba2";
 	worldMap.labels.Cuba2.locator = "Cuba2";
-	worldMap.labels.Cuba2.text = CheckingTranslate(idLngFile,"Cuba2");
+	worldMap.labels.Cuba2.text = CheckingTranslate(idLngFile,"Cuba2");*/
 	
 	worldMap.labels.Caiman.type = "Island";
 	worldMap.labels.Caiman.id = "Caiman";
@@ -121,20 +122,20 @@ void wdmInitWorldMap()
 	worldMap.labels.Cumana.locator = "Cumana";
 	worldMap.labels.Cumana.text = CheckingTranslate(idLngFile,"Cumana");
 	
-	worldMap.labels.Caracas.type = "Island";
+	/*worldMap.labels.Caracas.type = "Island";
 	worldMap.labels.Caracas.id = "Caracas";
 	worldMap.labels.Caracas.locator = "Caracas";
-	worldMap.labels.Caracas.text = CheckingTranslate(idLngFile,"Caracas");
+	worldMap.labels.Caracas.text = CheckingTranslate(idLngFile,"Caracas");*/
 	
 	worldMap.labels.Curacao.type = "Island";
 	worldMap.labels.Curacao.id = "Curacao";
 	worldMap.labels.Curacao.locator = "Curacao";
 	worldMap.labels.Curacao.text = CheckingTranslate(idLngFile,"Curacao");
 	
-	worldMap.labels.Cartahena.type = "Island";
+	/*worldMap.labels.Cartahena.type = "Island";
 	worldMap.labels.Cartahena.id = "Cartahena";
 	worldMap.labels.Cartahena.locator = "Cartahena";
-	worldMap.labels.Cartahena.text = CheckingTranslate(idLngFile,"Cartahena");
+	worldMap.labels.Cartahena.text = CheckingTranslate(idLngFile,"Cartahena");*/
 	
 	worldMap.labels.Dominica.type = "Island";
 	worldMap.labels.Dominica.id = "Dominica";
@@ -163,10 +164,10 @@ void wdmInitWorldMap()
 	worldMap.labels.Jamaica.locator = "Jamaica";
 	worldMap.labels.Jamaica.text = CheckingTranslate(idLngFile,"Jamaica");
 	
-	worldMap.labels.Maracaibo.type = "Island";
+	/*worldMap.labels.Maracaibo.type = "Island";
 	worldMap.labels.Maracaibo.id = "Maracaibo";
 	worldMap.labels.Maracaibo.locator = "Maracaibo";
-	worldMap.labels.Maracaibo.text = CheckingTranslate(idLngFile,"Maracaibo");
+	worldMap.labels.Maracaibo.text = CheckingTranslate(idLngFile,"Maracaibo");*/
 	
 	worldMap.labels.Martinique.type = "Island";
 	worldMap.labels.Martinique.id = "Martinique";
@@ -188,17 +189,17 @@ void wdmInitWorldMap()
 	worldMap.labels.PuertoRico.locator = "PuertoRico";
 	worldMap.labels.PuertoRico.text = CheckingTranslate(idLngFile,"PuertoRico");
 	
-	worldMap.labels.PortoBello.type = "Island";
+	/*worldMap.labels.PortoBello.type = "Island";
 	worldMap.labels.PortoBello.id = "PortoBello";
 	worldMap.labels.PortoBello.locator = "PortoBello";
-	worldMap.labels.PortoBello.text = CheckingTranslate(idLngFile,"PortoBello");
+	worldMap.labels.PortoBello.text = CheckingTranslate(idLngFile,"PortoBello");*/
 	
 	worldMap.labels.Pearl.type = "Island";
 	worldMap.labels.Pearl.id = "Pearl";
 	worldMap.labels.Pearl.locator = "Pearl";
 	worldMap.labels.Pearl.text = CheckingTranslate(idLngFile,"Pearl");
 	
-	worldMap.labels.Panama.type = "Island";
+	/*worldMap.labels.Panama.type = "Island";
 	worldMap.labels.Panama.id = "Panama";
 	worldMap.labels.Panama.locator = "Panama";
 	worldMap.labels.Panama.text = CheckingTranslate(idLngFile,"Panama");
@@ -206,7 +207,7 @@ void wdmInitWorldMap()
 	worldMap.labels.SantaCatalina.type = "Island";
 	worldMap.labels.SantaCatalina.id = "SantaCatalina";
 	worldMap.labels.SantaCatalina.locator = "SantaCatalina";
-	worldMap.labels.SantaCatalina.text = CheckingTranslate(idLngFile,"SantaCatalina");
+	worldMap.labels.SantaCatalina.text = CheckingTranslate(idLngFile,"SantaCatalina");*/
 	
 	worldMap.labels.Terks.type = "Island";
 	worldMap.labels.Terks.id = "Terks";
@@ -223,7 +224,7 @@ void wdmInitWorldMap()
 	worldMap.labels.Trinidad.locator = "Trinidad";
 	worldMap.labels.Trinidad.text = CheckingTranslate(idLngFile,"Trinidad");
 	
-	/*worldMap.labels.Tobago.type = "Island";
+	worldMap.labels.Tobago.type = "Island";
 	worldMap.labels.Tobago.id = "Tobago";
 	worldMap.labels.Tobago.locator = "Tobago";
 	worldMap.labels.Tobago.text = CheckingTranslate(idLngFile,"Tobago");
@@ -231,7 +232,7 @@ void wdmInitWorldMap()
 	worldMap.labels.MarieGalante.type = "Island";
 	worldMap.labels.MarieGalante.id = "MarieGalante";
 	worldMap.labels.MarieGalante.locator = "MarieGalante";
-	worldMap.labels.MarieGalante.text = CheckingTranslate(idLngFile,"MarieGalante");*/
+	worldMap.labels.MarieGalante.text = CheckingTranslate(idLngFile,"MarieGalante");
 	
 	worldMap.labels.Tenotchitlan.type = "Island";
 	worldMap.labels.Tenotchitlan.id = "Tenotchitlan";
@@ -449,6 +450,12 @@ void wdmInitWorldMap()
 	worldMap.labels.Tortuga_town.locator = "Tortuga_town";
 	worldMap.labels.Tortuga_town.text = CheckingTranslate(idLngFile,"Tortuga_town");
 	worldMap.labels.Tortuga_town.icon = FRANCE;
+	
+	worldMap.labels.FortOrange_town.type = "Town";
+	worldMap.labels.FortOrange_town.id = "FortOrange_town";
+	worldMap.labels.FortOrange_town.locator = "FortOrange_town";
+	worldMap.labels.FortOrange_town.text = CheckingTranslate(idLngFile,"FortOrange_town");
+	worldMap.labels.FortOrange_town.icon = PIRATE;
 	
 	worldMap.labels.Tenotchitlan_town.type = "Town";
 	worldMap.labels.Tenotchitlan_town.id = "Tenotchitlan_town";

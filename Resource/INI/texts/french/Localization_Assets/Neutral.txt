@@ -1,0 +1,119 @@
+Neutral_1
+{
+Bandit
+}
+
+Neutral_2
+{
+Vous avez laissé des notes
+}
+
+Neutral_3
+{
+Jack
+}
+
+Neutral_4
+{
+Veils
+}
+
+Neutral_5
+{
+Sea Beast
+}
+
+Neutral_6
+{
+Julie
+}
+
+Neutral_7
+{
+d'Armagnac
+}
+
+Neutral_8
+{
+Golden Seagull
+}
+
+Neutral_9
+{
+Tristan
+}
+
+Neutral_10
+{
+Renier
+}
+
+Neutral_11
+{
+Un navire pirate à l’horizon ! Ils viennent nous couper la route.
+}
+
+Neutral_12
+{
+Une voix derrière la porte
+}
+
+Neutral_13
+{
+Betsy
+}
+
+Neutral_14
+{
+Price
+}
+
+Neutral_15
+{
+Objet reçu : Documents de Betsy Price
+}
+
+Neutral_16
+{
+Donné : Documents de Betsy Price
+}
+
+Neutral_17
+{
+Lea
+}
+
+Neutral_18
+{
+Carno
+}
+
+Neutral_19
+{
+Pierre
+}
+
+Neutral_20
+{
+Un navire pirate à l'horizon ! Ils croisent notre route.
+}
+
+Neutral_21
+{
+Pont
+}
+
+Neutral_22
+{
+L'entrée de la grotte est couverte de toiles d'araignée. On dirait que personne n'est venu ici depuis longtemps.
+}
+
+Neutral_23
+{
+La maison est sans dessus dessous. On dirait que je suis au bon endroit.
+}
+
+Neutral_24
+{
+The Ghost
+}

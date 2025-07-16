@@ -1,315 +1,323 @@
-﻿new_string	{
+﻿new_string        {
+
 
 }
 
 Tartane
 {
-A longboat isn't the preferred vessel for a captain accustomed to the high life. However, if fate has taken his favorite ship this humble boat will suffice for quick travel between islands. Just keep telling yourself that it's only a temporary measure!
+A fishing barque is not the best vessel for a captain shining in high society. But if ill fate has deprived you of your favorite ship, this dreary boat is quite suitable for a quick trip between islands, though you should remind yourself—this is only temporary!
 }
 
 WarTartane
 {
-Initially tartanes like this were used for fishing and trading. They were equipped with light cannons to patrol coastal waters and chase off small-time pirates and Indian raids.
+Tartanes are the same fishing barques hastily refitted for coastal work in the dangerous waters of the Caribbean. Their modest armament and makeshift construction do not inspire respect, but they are quite capable of scaring off an inexperienced pirate or a poor smuggler. A temporary solution when there is little choice.
 }
 
 Barque
 {
-A barque is ideally suited for long merchant voyages. Having a spacious hold and formidable firepower, the barque is considered one of the best vessels in its class. However, its hull shape doesn't allow it to accelerate or maneuver quickly, causing it to lag behind lighter ships when it comes to sailing performance.
+A barque is ideally suited for long voyages. With a spacious hold and good sailing qualities, the barque is considered one of the most balanced merchant ships. However, its impressive size and relatively weak armament make it an easy target for sea raiders.
 }
 
 Schooner
 {
-Solid all-around performance together with low displacement and a spacious hold make the schooner one of the most attractive ships for merchants who cannot afford a fluyt.
+Good sailing qualities, a spacious hold, shallow draft, and decent armament have made the schooner one of the most popular small-class ships. It is equally suitable for trade, coastal navigation, and combat.
 }
 
 Barkentine
 {
-The emergence of barkentine was caused by the need to make trading vessels easier to handle for smaller and inexperienced crews. This involved replacing square sails on the mainmast of a barque with triangular ones and using more block-and-tackle rigging. With a combination of square and latten sails, the barkentine sails confidently on any course.
+The appearance of the barkentine was driven by the desire to simplify the management of a merchant ship by an inexperienced and small crew. For this, the square sails on the mainmast of the barque were replaced with fore-and-aft sails, and the hull was made slightly smaller. Thanks to its mixed rigging, the barkentine sails confidently both with and against the wind.
 }
 
 Shnyava
 {
-A snow is the predecessor of the brig. Having comparable speed and sturdiness to a military brig, snows are highly valued by wealthy merchants and smugglers. These vessels are so popular that you're very likely to see them in any lively port in Northern Europe or the Caribbean.
+The shnyava and brigantine were the predecessors of the brig. Thanks to their successful hull design, good speed, and ability to carry heavy guns, these ships became very popular both in the Caribbean and in Europe. They are often used to escort small-class merchant convoys.
 }
 
 Fleut
 {
-An extremly successful Dutch design originally designed to cheat Danish tolls, the fluyt (pronounced 'flute') is one of the best choices as a trading ship. When it comes to hold space and hull integrity, it is unrivaled in its class. However, it cannot carry many cannons as most of the ship space is devoted to cargo. Therefore, its usage for military purpose is limited to self-defense. 
+The fluyt is a unique branch in the development of merchant ships. Its characteristically narrowed deck allowed for reduced customs duties, which were calculated based on the width of the upper deck. A spacious hold, high speed, and confident windward performance quickly made the fluyt one of the most popular merchant ships.
 }
 
 Caravel
 {
-The distinctive rigging of a caravel makes it easily recognizable even afar. Its outdated design and mediocre sailing performance however does not allow caravels to compete with modern vessels, despite a large number of cannons.
+The distinctive rigging of the caravel makes it easy to recognize this ship from a great distance. Its outdated design gives the caravel rather mediocre sailing qualities, which prevent it from competing equally with modern ships, despite having enough guns.
 }
 
 Pinnace
 {
-Like fluyts, pinnaces are widely used as a merchant vessel. It is large and sturdy, good for long journeys. The hold's capacity allows for the transportation of a large amount of cargo. Due to sharp contours of the bow a pinnace can develop decent speed even with heavy load.
-}
-
-Caracca
-{
-An obsolete design along with the caravel, the carrack's heavy tower-like superstructures on the forecastle and stern significantly worsen its sailing capabilities. A sturdy hull and a capacious hold are the only advantages of this old vessel.
+Along with the fluyt, the pinnace became widespread as a merchant ship. It is large and sturdy enough for long sea voyages, and its hold capacity allows it to carry a large amount of cargo. Thanks to the sharp lines of its bow, even with such a heavy hull, the pinnace achieves decent speed.
 }
 
 Navio
 {
-The navio is a Spanish-designed heavy galleon that only wealthy merchants can afford. A large and sturdy hull, capacious hold, and good rigging allow the navio to make the long voyages from Panama to the Phillipines and about three dozen cannons provide decent protection against any pirates and privateers who covet its cargo.
+Such a ship is affordable only for a truly wealthy merchant. A large and strong hull, a spacious hold, and advanced rigging allow for the longest voyages, and no less than three dozen heavy guns reliably protect it from pirates and privateers.
 }
 
 EastIndiaMan
 {
-East Indiamen are transoceanic merchant ships that embody the best properties of fluyts and pinnaces. They are mostly used for long voyages in guarded convoys, but some of them are so large and well-armed that they can sail alone. Trying to take down an East Indianman has led to many pirates becoming either very rich or very dead.
+East Indiamen embodied the best qualities of pinnaces and got rid of their shortcomings, becoming almost perfect universal ships. Carrying large-caliber guns, they can compete with warships of comparable size, and their spacious hold allows them to be used effectively for trade.
 }
 
 LuggerQuest
 {
-A courier lugger was designed specifically for speedy mail delivery. Excellent sailing performance, a sturdy hull, and decent armament allow for the safe transport of urgent dispatches and small packages of important cargo.
+The courier lugger was specially built for the needs of the messenger service. Excellent sailing qualities, great windward performance, and fairly strong armament guarantee the reliable delivery of important dispatches and small valuable cargoes.
 }
 
 Lugger
 {
-A lugger is a small fast single decked ship, highly valued by merchants and smugglers for its speed and maneuverability. Despite its small size, a lugger has good seaworthiness and can perform long blue water voyages.
+The lugger is a small sailing ship that many sailors, especially smugglers, value for its maneuverability and versatility. Luggers compensate for their lack of speed under full sail with excellent windward angles.
+Despite their small size, luggers have good seaworthiness and can make long voyages.
 }
 
 Sloop
 {
-A sloop has good speed and maneuverability and carries decent armament for its size. It is a highly effective patrolling vessel, and is often used for scouting ahead of frigates and ships of the line in shallow waters where brigs cannot go. A sloop is often a young navy lieutenant's first independent command.
+With good speed and maneuverability and carrying solid armament for its size, the sloop is a reliable patrol ship, also suitable for reconnaissance.
 }
 
 Brigantine
 {
-A sailing craft with near-legendary sailing characteristics. Fast and maneuverable, the brigantine flies across the water like a swallow. It is especially valued by pirates, privateers, and adventurers of all sorts.
+A legendary type of sailing ship. Fast and maneuverable like a swallow, the brigantine is especially valued by pirates and adventurers of all kinds. Its successful design makes the brigantine well-suited for any task—from combat to trade.
 }
 
 Brig
 {
-The brig is widely used by European navies for scouting and pirate hunting. Its high speed and maneuverability make it one of the most well-rounded vessels, although, being square-rigged, it is somewhat limited when sailing into the wind.
+Brigs are widely used in the navy for reconnaissance. Shallow draft, sharp hull lines, and advanced rigging make the brig one of the fastest ships, and its decent caliber guns make it a very dangerous opponent.
 }
 
 Schooner_W
 {
-The American colonists of New England were the first to appreciate the humble schooners and to begin using them for military purposes. A well-armed, fast, and agile war schooner is a serious threat for any trading vessel.
+Sailors in the New World were the first to appreciate schooners and began using them for military purposes. To do this, the hull had to be slightly modified, the useful hold space reduced, and guns added, but the result was worth it. Well-armed, fast, and maneuverable, the war schooner is a serious threat to any merchant ship.
 }
 
 Galeon_l
 {
-Emerging in the early 16th century, the Spanish-built galleon was initially modeled on the design of the carrack, intended as a military vessel from its inception. By the mid-17th century, the galleon had reached the pinnacle of its evolution before yielding to modern ships. Despite this, it hasn't yet fallen into obsolescence, remaining in faithful service to sailors of all nations.
+The galleon was created in the early 16th century based on the carrack and was designed from the start as a warship. By the mid-17th century, the galleon had reached the peak of its development and passed the baton to more advanced ships, but it has not yet left the stage and continues to serve sailors faithfully.
 }
 
 Galeon_sm
 {
-A symbol of Spanish might and ambition. Its decks gleam with golden ornaments, while the stern bears the image of the Virgin of Mercy, the ship's patron saint. To some, the 'Santa Misericordia' embodies divine order; to others, an unwelcome symbol of royal oppression. Some even see it as true divine providence.
-Enhances the power of Christian wards and amulets.
+A symbol of Spanish power and ambition. The decks shine with golden decorations, and the stern is crowned by the image of the Virgin of Mercy, the ship's patroness. For some, 'Santa Misericordia' is the embodiment of order, for others—a dreaded symbol of royal oppression. And some even see in it true Divine Providence.
 }
 
 LadyBeth
 {
-A magnificent example of English shipbuilding, created for independent patrol service in dangerous waters. This snow has excellent sailing qualities and impressive armament for its size, allowing it to compete with higher-class vessels. The years of her military service are far behind, and the former owner's fame now attracts antique dealers and treasure map merchants rather than sea wolves.
+A magnificent example of English shipbuilding, created for independent patrol service in dangerous waters. This shnyava has excellent sailing qualities and impressive armament for its size, allowing it to compete with higher-class ships.
+Her years of military service are long past, and the glory of her former owner now attracts antique dealers and treasure map traders more than sea wolves.
+}
+
+Memento
+{
+In this ship, one can hardly discern the outdated design of an English Brig, which compensates for its lack of sailing qualities with impressive firepower and a heavy, sturdy hull. 
+Hanging with native amulets and soaked in death, it frightens not only enemies but also its own crew.
 }
 
 Corvette
 {
-Corvettes are built for independent operations in littoral waters as well as scouting and important courier service. Possessing good speed and maneuverability, a corvette can catch up with lighter ships and successfully avoid combat with heavier ones. After commanding a sloop, the most common next step in a navy career is taking command of a corvette.
+Corvettes are designed for reconnaissance, courier service, and cruising operations. With good speed and maneuverability, a corvette can catch lighter ships and successfully avoid battle with heavier ones.
 }
 
 XebekVML
 {
-A xebec was designed and built for fighting in the contrary winds of the Mediterranean. Thanks to the narrow hull and large lateen sails, a xebec develops great speed into the wind, but demonstrates worse performance sailing with the wind. Valued for their speed and maneuverability, xebecs are highly favored by the fearsome Barbary Corsairs and their archrivals the Knights of Malta alike.
+The xebec is the most famous type of Mediterranean ship. Its narrow hull and large lateen sails on all masts allow it to sail at extreme wind angles, making it a very annoying opponent. Unfortunately, low speed when running before the wind limits the xebec mainly to piracy and smuggling.
 }
 
 Polacre
 {
-A polacre is a close relative to the xebec. Unlike the xebec, a poleacre carries square sails on the mainmast, which allows it to sail more confidently with the wind. This however comes at the expense of its maneuverability, worsens the sailing capabilities into the wind, and significantly raises the demands on the crew.
+The polacre is the closest relative of the xebec. Unlike the xebec, it carries square sails on the mainmast, which allows it to hold course confidently with a following wind. However, this rigging reduces maneuverability, worsens windward performance, and significantly increases the demands on the crew's skills and coordination.
 }
 
 Galeon_h
 {
-A heavy galleon is a strong military ship, intended for escorting treasure convoys and transporting valuable cargo on its own. It has mediocre sailing capabilities but its large cannons, sturdy hull and large crew provide great protection.
+The heavy galleon is a powerful warship designed to guard convoys and independently transport especially valuable cargoes. It is inferior to modern ships in speed and maneuverability, but its large-caliber guns, strong hull, and numerous crew provide reliable protection for any cargo. A fleet of heavy galleons is a force to be reckoned with in the Caribbean.
 }
 
 Elcasador
 {
-A formidable warship crafted specifically for special operations across the open seas, this galleon stands as a testament to maritime prowess. Commissioned by the Casa de Contratacion, its primary mission is to eradicate the most notorious pirates that jeopardize trade routes within the region and the vested interests of the Spanish Crown.
+A brilliant example of a warship designed for special operations in the open ocean. This galleon was built by order of the Casa de Contratación to destroy the most dangerous pirates who pose a real threat to trade in the region and the interests of the Spanish Crown.
 }
 
 Frigate
 {
-Frigates are independent deep water cruisers that are larger than corvettes but smaller than ships of the line. Frigates have good sailing capabilities and heavy firepower, are intended for long-range scouting, trade interdiction, escorting transports, and screening line ships in combat. Many navy officers achieved great fame when commanding their first frigate.
+Frigates have excellent sailing qualities, good firepower, and were created specifically for long-range reconnaissance, convoying transports, and combat as part of a squadron. Nowadays, they are more often found as independent cruising ships on enemy communications—for capturing or destroying enemy merchant ships.
 }
 
 Frigate_h
 {
-Heavy frigates are designed specifically for guarding large convoys and independant operations. While being slightly inferior to 4th class ships of the line in terms of firepower and hull integrity, they outperform them in terms of sailing capabilities, which makes them a terrifying weapon when commanded by an experienced captain.
+Heavy frigates became a compromise for those captains who lacked the firepower of regular frigates. Reinforced hulls and larger-caliber guns bring them closer to 4th-rate ships of the line—but at the cost of reduced speed and maneuverability.
 }
 
 LineShip
 {
-The smallest type that can be designated by the English Navy as a 'ship of the line.' Lacks the firepower to match their larger counterparts, making them unsuitable for leading the line of battle. However, their their speed and maneuverability allows to screen the fleet, chase down damaged ships, or harass enemy trade lanes while in detached operations.
+4th-rate ships of the line cannot compete in firepower with their older brothers, so it makes no sense to put them in the battle line. Their best use is convoy protection, as their speed and maneuverability make them most effective for this task.
 }
 
 Warship
 {
-Ships of this type were built back nearly thirty years ago in the times of Cardinal Richelieu. Now they are rather outdated in terms of construction. Despite this, they retain excellent sailing abilities and the capacity to carry the heaviest cannons, making them a significant threat.
+Ships of this type were built back in the days of Cardinal Richelieu and are now structurally outdated. But they have decent sailing qualities and can carry the heaviest guns, making them a formidable force.
 }
 
 Ecliaton
 {
-Ships of this type were built back nearly thirty years ago in the times of Cardinal Richelieu. Now they are rather outdated in terms of construction. Despite this, they retain excellent sailing abilities and the capacity to carry the heaviest cannons, making them a significant threat.
+Ships of this type were built back in the days of Cardinal Richelieu and are now structurally outdated. But they have decent sailing qualities and can carry the heaviest guns, making them a formidable force.
 }
 
 Pink
 {
-The Pink is a small ship designed for light goods transport and light escort. Though it has weak guns and runs with a small crew, this ship has optimal balance between trade and battle suitability, and many captains prize the Pink for its maneuverability and sailing characteristics. The small size of the Pink makes it a poor choice for traversing long distances across open water.
+The pink is a small ship designed for carrying cargo and guarding small convoys. Although its armament is weak and its crew small, the pink is specially designed for both trade and combat, and many captains value it for its speed and maneuverability. The small size of the pink does not allow it to make long sea voyages.
 }
 
 Battleship
 {
-A versatile warship able to fight in the line of battle, at the head of a flotilla, or independantly. Their firepower is substantial enough to rival even a 100-gun leviathan, while also excelling in maneuverability and speed compared to the latter.
+3rd-rate ships of the line are very numerous and the most balanced in combat qualities, designed for line battles. They have enough firepower to challenge even 100-gun leviathans. At the same time, they noticeably surpass them in speed and maneuverability.
 }
 
 Manowar
 {
-The backbone of every national navy. Combined with frigates and corvettes, they make a fleet both powerful and flexible. Often serve as  flagships.
+2nd-rate ships of the line are the backbone of any nation's naval power. Together with 3rd-rate ships, they form a fleet that combines strength with maneuver. And in the absence of 1st-rate ships in the squadron, some of them serve as flagships.
 }
 
 Manowar_e
 {
-The first-rate class ship of the line is a majestic floating fortress, commanding the seas with its awe-inspiring firepower, capable of vanquishing almost any adversary with a few thundering broadsides. These grand vessels, rare treasures among the great naval powers, carry position of flagships in great battles, symbolizing strength and supremacy in the waters.
+A 1st-rate ship of the line is a true floating fortress. Thanks to its terrifying firepower, it can send any opponent to the bottom with just a few accurate volleys. But even the greatest naval powers do not have many such ships, and they are used as flagships in major naval battles.
 }
 
 MayFang
 {
-This xebec has a lighter hull built to the detriment of its strength, but she is an unsurpassed sailor - only a few ships in the Caribbean can match her speed.
-And if you get caught, twenty medium cannons are a serious help in any naval confrontation.
+This xebec has a lightened hull at the expense of strength, but this made it an unrivaled sailor—there is no other ship in the Caribbean capable of sailing almost directly against the wind!
+And twenty medium-caliber guns are a strong argument in sea rivalry.
 }
 
 Mirage
 {
-Unlike bomb ketches, privateer ketches lack the massive mortars meant for the bombardment of land fortresses. These nimble English-designed craft boast streamlined hulls that significantly enhance their sailing capabilities. The speed of privateer ketches is so impressive that even princely yachts might envy their swiftness.
+Unlike bomb ketches, privateer ketches do not carry giant mortars designed for bombarding fortresses, but instead have a lighter, streamlined hull, which positively affects their sailing qualities. Even the yachts of princes might envy the speed of this privateer ketch.
 }
 
 Himera
 {
-A ship specially designed for the needs of British Naval intelligence. Her characteristics are comparable to those of 3rd-rate warships, while retaining the ease of handling of 4th-rate smaller vessels.
+A masterpiece ship, specially created for the needs of British naval intelligence. In its characteristics, it is comparable to 3rd-class warships, while retaining the ease of handling of 4th-class ships.
 }
 
 Valciria
 {
-An excellent English brig. Exceptional speed, maneuverability, and excellent performance into the wind. With a complement of twenty cannons on deck, this vessel is the coveted dream of many sailors.
+A fine English brig. High speed and maneuverability, good windward performance, and two dozen guns on deck make this sailing ship a dream.
 }
 
 CORVETTE_QUEST
 {
-A masterpiece crafted by French shipwrights, this frigate owes its exceptional speed to trapezoid bends that enhance stability and enable a larger sail area. As a result, only a few ships can match its speed, especially when running before the wind.
+A custom ship, a masterpiece of French shipbuilders. Deep modernization of the corvette's design has improved almost all its characteristics without sacrificing speed. The increased sail area and gun caliber require a more experienced and numerous crew, but if the trials in the Caribbean are successful, the technologies used here may become a real breakthrough in shipbuilding.
 }
 
 Polacre_q
 {
-A successful mix of a xebec and a frigate, this polacre showcases an unconventional hull-characterized by a low sea gauge yet high seaboard. Crafted by an ingenious shipbuilder. With three masts, a bowsprit, and numerous sails, she embodies speed and agility. Additionally she is armed with immensely powerful guns. This versatile and unique ship can play any role in the high seas: military, pirate, or trade.
+A master who successfully combined elements of the xebec and frigate created a polacre with an unusual hull, strong and spacious, distinguished by high sides, but shallow draft and very powerful armament. Three masts and a bowsprit with sails of different types make it fast and very maneuverable. All these characteristics are good individually, but together they are excellent—the owner alone will decide: will it be a warship, pirate ship, or merchant ship that sets sail.
 }
 
 ArabellaShip
 {
-Thanks to previous breakthroughs in the ship design, the speed of this frigate is slightly higher compared to those built several years before. Additionally, it features a sturdier yet lighter hull, representing further advancements in its construction.
+This unique ship combines the best features of frigates and ships of the line. Amazing sailing qualities are combined with a battery of large-caliber guns, and the interior can accommodate an entire company of marines. In skillful hands, Fortuna can single-handedly withstand a much stronger opponent.
 }
 
 Flyingdutchman
 {
-The Caleuche. The nightmare of all sailors...
+"Caleuche". The terror of all who sail...
 }
 
 Flyingdutchman_l
 {
-A Copy of the "Caleuche". 
+A copy of the "Caleuche".
+}
+
+NewFlyingdutchman
+{
+This was once the infamous "ghost ship". Now it has been completely rebuilt and is a powerful war galleon, capable of fighting on equal terms even with ships of the line. With impressive speed for its size, a large hold, and formidable armament, it is a fully self-sufficient ship, capable of sinking enemy ships, boarding them, and even besieging entire colonies.
 }
 
 Santisima
 {
-This ship came off the stocks of the famous Spanish shipyard in Havana. Its hull is slightly lighter and weaker compared to other 1st class ships, but has been compensated for with improved sailing capabilities.
+This ship was launched from the famous Havana shipyard. Its hull is slightly lighter and weaker than other 1st-rate ships, but this is more than compensated by improved sailing qualities.
 }
 
 NoneBoat
 {
-No ship. Our hero is currently a scurvy landlubber and may not call himself captain until he acquires a ship.
+No ship. The hero has become a land rat and cannot call himself a captain until he gets a ship.
 }
 
 Hull
 {
-Hull - shows the current and maximum damage that the ship's hull can withstand.
+Hull - shows the current and maximum amount of damage the ship's hull can withstand.
 }
 
 Sails
 {
-Sails - shows the current and maximum damage that the ship's sails can withstand.
+Sails - show the current and maximum amount of damage the ship's sails can withstand.
 }
 
 Speed
 {
-Speed - shows the maximum speed of the ship under current conditions accounting for all relevant factors (cargo, captain's skills, ship's damage) and maximum achievable speed of the ship.
+Speed - shows the ship's current maximum speed, taking into account all factors (cargo, captain's skills, ship damage), and the ship's maximum achievable speed.
 }
 
 Maneuver
 {
-Maneuverability - shows the maximum maneuverability of the ship under current conditions accounting for all relevant factors (cargo, captain's skills, ship's damage) and maximum achievable maneuverability of the ship.
+Maneuverability - shows the ship's maneuverability at the moment, taking into account all factors (cargo, captain's skills, ship damage), and the ship's maximum achievable maneuverability.
 }
 
 AgainstWind
 {
-The best angle of the ship in relation to the wind, allowing the vessel to achieve maximum speed, This value is represented in degrees.
-The second value indicates the desired difference between the current wind direction and the best course angle for this vessel.
+The best course of the ship relative to the wind, at which the ship can reach maximum speed. The values are given in degrees.
+The second value shows the difference between the current wind direction and the best course angle for this ship.
 }
 
 Capacity
 {
-Deadweight - the current and maximum cargo capacity of the ship. The heavier the ship is loaded, that more clumsy and slow it becomes.
-The cannons installed on the ship are also accounted for when calculating deadweight. They can be taken off the ship, thus freeing up space for more cargo. To do this, on the "Ship" interface, choose the line with the current cannons in the ship's parameters list.
+Deadweight - shows the current and maximum capacity of the ship. The more loaded the ship, the more sluggish and slow it becomes.
+The guns installed on the ship are also taken into account when calculating deadweight. They can be removed from the ship, freeing up additional space for cargo. To do this, select the current guns in the ship's parameter list in the "Ship" interface.
 }
 
 Crew
 {
-Crew - the current number of sailors as well as the minimum and maximum number of sailors needed to operate this ship.
+Crew - shows the current number of crew members, as well as the minimum and maximum for this ship.
 }
 
 CannonType
 {
-Cannon type indicates the type of cannons (cannons or culverins), current caliber and the quantity of cannons installed on the ship
+Gun type - shows the type (cannons or culverins), current caliber, and number of guns installed
 }
 
 sCannons
 {
-Maximum caliber and maximum number of cannons on this ship are shown here.
+Shows the maximum allowable caliber and the maximum possible number of guns on the ship.
 }
 
 Crew_Exp {Crew experience}
 
 Crew_Exp_hint
 {
-Crew experience has three categories: naval - affects ship's management; gunnery - affects reloading speed and firing accuracy; and boarding - affects the effectiveness of the crew during boardings.
-An experienced crew can have fewer sailors and still be more effective than a large crew of lubbers.
-The experience in all three categories is acquired when the crew performs the corresponding action (maneuvering, shooting, boarding). The experience decays if a particular skill hasn't been practiced for an extended period of time.
+Crew experience is divided into three categories: seamanship (affects ship handling), gunnery (reload speed and aiming accuracy), and boarding (crew effectiveness in melee combat).
+An experienced crew in smaller numbers can be more effective than an overloaded ship full of greenhands.
+Experience in all three categories is gained by the crew while performing the corresponding actions (maneuvering, shooting, boarding), but is also lost if the acquired skills are not practiced for a long time.
 }
 
 TakeAllGoods_hint
 {
-The button "reload all goods" reloads the goods to the player's ship based on their average specific value. It starts by reloading the most valuable goods and continues with less valuable ones until the hold reaches full capacity.
+The "Transfer all goods" button transfers goods to the character's ship according to their average specific value. The most valuable goods are transferred first, then less valuable ones, and so on until there is no more free space in the hold.
 }
 
 GoodsKeys_hint
 {
-The arrow keys "Left" and "Right" will move goods in the selected line by one unit at a time. Using the arrow keys while holding down the Shift key will move the entire cargo.
-Right-clicking on the arrows within the merchandise line will shift ten units of that specific merchandise at once.
+The "Left" and "Right" arrow keys on the keyboard move the goods in the selected row of the table by one batch. If you hold the Shift key while pressing the arrow keys, the goods will be moved in full.
+Right-clicking the arrows on the row with the goods in the interface transfers ten batches of goods at a time.
 }
 
 Shipyard_hint
 {
-You can buy, repair and sell ships at the shipyard.
-You may not sell your ship if you have companions on board. Neither can you purchase a ship for you companions if you don't own a ship yourself.
-To change the ship or the companion while preserving the crew and the contents of the hold. Select in the squadron list (the left part of the interface) the ship to be substituted, and in the shipyard list (ships offered for sale at the shipyard in the right part of the interface) the desired ship, and then press the "Buy" button.
-In order to purchase a new ship or to assign a new companion, select an empty slot in the left list before purchasing.
+At the shipyard, you can buy, repair, or sell ships.
+The hero cannot sell his ship if he has companions. You also cannot buy a ship for a companion if the hero does not have his own ship.
+To change the hero's or companion's ship while keeping all the contents of the hold and crew, select in the hero's squadron ship list (on the left side of the interface) the ship to be replaced with a new one, and in the list of ships for sale at the shipyard (on the right side of the interface) the desired one, then click the "Buy" button.
+To buy a new ship (assign a new companion), first select an empty slot in the list on the left before purchasing.
 }
 
 NoneBoat2
 {
-No ship.
+No ship. Too bad.
 }

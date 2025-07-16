@@ -1240,3 +1240,27 @@ QuestsUtilite_275
 {
 Use the Action Menu (ENTER) to Fast Travel to Le Franсois.
 }
+
+QuestsUtilite_276
+{
+The waters are becoming more dangerous, the pirate threat has increased
+}
+
+QuestsUtilite_277
+{
+Chimera
+}
+
+QuestsUtilite_278
+{
+~ We really made them mad! The squadron's flagship is ~
+}
+
+QuestsUtilite_279
+{
+Diego
+}
+QuestsUtilite_280
+{
+de Landa
+}

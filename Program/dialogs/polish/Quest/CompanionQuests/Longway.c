@@ -89,7 +89,7 @@ void ProcessDialogEvent()
 				npchar.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
 				npchar.Dialog.CurrentNode = "Tichingitu_officer";
 			}
-			if (npchar.id == "FMQT_mercen" || npchar.id == "Folke")
+			if (npchar.id == "Duran" || npchar.id == "Folke")
 			{
 				LAi_SetOfficerType(npchar);
 				npchar.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 			bDisableFastReload = false;
 			chrDisableReloadToLocation = false;
 			
-			SetTimerCondition("PZ_IshemLongway", 0, 0, 30, false);	// ВЕРНУТЬ 30 дней
+			SetTimerCondition("PZ_IshemLongway", 0, 0, 30, false);
 		break;
 		
 		case "PZ_SharliePlennik_BadFinal_1":
@@ -1359,7 +1359,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_2":
-			dialog.text = "Co? Ha! Masz niezłą wyobraźnię, Chińczyku! Antoon to tchórz, a van der Vink jest tam, by go chronić, gdyby ktoś zakłócił ich „prywatny czas”. /nJoep zawsze nosi ciężką zbroję - nieprzeniknioną dla większości zimnych broni. Dlatego potrzebujesz czegoś specjalnego. Weź tę szpadę. Jest długa, mocniejsza niż większość innych mieczy i waży jak porządne ostrze.";
+			dialog.text = "Co? Ha! Masz niezłą wyobraźnię, Chińczyku! Antoon to tchórz, a van der Vink jest tam, by go chronić, gdyby ktoś zakłócił ich 'prywatny czas\nJoep zawsze nosi ciężką zbroję - nieprzeniknioną dla większości zimnych broni. Dlatego potrzebujesz czegoś specjalnego. Weź tę szpadę. Jest długa, mocniejsza niż większość innych mieczy i waży jak porządne ostrze.";
 			link.l1 = "Szpada do walki z opancerzonymi wrogami...?";
 			link.l1.go = "PZ_OliverTrust_lubovnitsa_3";
 			//Log_Info("Вы получили асоледу");
@@ -2055,9 +2055,9 @@ void ProcessDialogEvent()
 			{
 				notification("All Skills +", "Longway");
 				AddCharacterExpToSkill(npchar, "Leadership", 50);
-				AddCharacterExpToSkill(npchar, "FencingLight", 50);
-				AddCharacterExpToSkill(npchar, "Fencing", 50);
-				AddCharacterExpToSkill(npchar, "FencingHeavy", 50);
+				AddCharacterExpToSkill(npchar, "FencingL", 50);
+				AddCharacterExpToSkill(npchar, "FencingS", 50);
+				AddCharacterExpToSkill(npchar, "FencingH", 50);
 				AddCharacterExpToSkill(npchar, "Pistol", 50);
 				AddCharacterExpToSkill(npchar, "Fortune", 50);
 				AddCharacterExpToSkill(npchar, "Sneak", 50);
@@ -4508,20 +4508,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_HelenaTortugaCabin_12":
-			dialog.text = "Burdel? Nie wiedziałem, że te miejsca oferują coś poza oczywistością. Ш: Muszę porozmawiać z właścicielem, to wszystko. I to nie jest byle jaki burdel. Pogłoski mówią - to bardzo drogi przybytek, tylko dla członków wysokiego społeczeństwa...";
-			link.l1 = "Obiecuję, że idę tam tylko w sprawie Longway'a. Jest całkiem możliwe, że właścicielka tego miejsca to jego siostra. Nie będę tam długo.";
+			dialog.text = "Burdel? Nie wiedziałam, że te miejsca oferują coś więcej niż to, co oczywiste.";
+			link.l1 = "Muszę tylko porozmawiać z właścicielką, to wszystko. I to nie jest zwykły burdel. Mówią, że to bardzo drogie miejsce, tylko dla członków wyższych sfer...";
 			link.l1.go = "PZ_HelenaTortugaCabin_13";
 		break;
-				
+
 		case "PZ_HelenaTortugaCabin_13":
-			dialog.text = "„Cóż, to w sam raz dla ciebie, kochanie. Och, żartuję. Mimo to, nie jestem zachwycona, że tam idziesz. Ale... Jak sobie życzysz. Nie jesteś zobowiązany informować mnie o takich rzeczach. Nigdy nie obiecałam ci, że nie będę spać z innym mężczyzną. A jednak tego nie robię. Bo to coś, co uważam za oczywiste.”";
-			link.l1 = "Pod innymi okolicznościami zabrałbym cię ze sobą, ale...";
+			dialog.text = "W takim razie to miejsce w sam raz dla ciebie, kochanie. Żartuję oczywiście. I tak nie podoba mi się, że tam idziesz. Ale...";
+			link.l1 = "Obiecuję, że to czysto służbowa sprawa Longwaya. Możliwe, że właścicielka to jego siostra. Nie zabawię tam długo.";
 			link.l1.go = "PZ_HelenaTortugaCabin_14";
 		break;
-		
+
 		case "PZ_HelenaTortugaCabin_14":
-			dialog.text = "Dzięki, ale nie, dzięki. Charles, nie martw się. Nie jestem jakąś głupią zazdrosną dziewczyną. No, może zazdrosną, ale nie głupią. I wierzę ci. Głupia ja!";
-			link.l1 = "Dzięki, Helen. Zaraz wracam.";
+			dialog.text = "Jak chcesz. Nie musisz mnie informować o takich sprawach. Nigdy ci nie obiecałam, że nie prześpię się z innym mężczyzną. A jednak tego nie robię. Bo dla mnie to oczywiste.";
+			link.l1 = "W innych okolicznościach zabrałbym cię ze sobą, ale...";
+			link.l1.go = "PZ_HelenaTortugaCabin_15";
+		break;
+
+		case "PZ_HelenaTortugaCabin_15":
+			dialog.text = "Dziękuję, ale nie. Charles, nie martw się. Nie jestem jakąś głupią zazdrosną dziewczyną. No dobrze, może zazdrosną, ale nie głupią. I wierzę ci. Głupia ja!";
+			link.l1 = "Dzięki, Helen. Zaraz wrócę.";
 			link.l1.go = "PZ_PredupredilNashuDevushku";
 		break;
 		
@@ -5006,7 +5012,8 @@ void ProcessDialogEvent()
 			dialog.text = "Właściwie to naprawdę łatwo dojść do prawdy, tak, co nie? Hee hee. Jeśli z nikim nie byłeś, to musisz być pełen energii teraz. To właśnie zamierzamy teraz sprawdzić, tak, co nie?";
 			link.l1 = "Mary, proszę...";
 			link.l1.go = "exit";
-			AddDialogExitQuest("cabin_sex_go");
+			pchar.quest.sex_partner = Npchar.id;
+			AddDialogExitQuestFunction("LoveSex_Cabin_Go");
 			pchar.questTemp.PZ_MaryRazgovorOBordeli = true;
 		break;
 		
@@ -5074,7 +5081,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_HelenaRazgovorOBordeli_Good_2":
-			dialog.text = "„I dlatego musiałeś iść do burdelu? Nie mogłeś się tego dowiedzieć w karczmie? Ш: W mieście naprawdę nie rozmawiają o tym miejscu. Dlaczego? To dobre pytanie. Możesz zapytać samą Belle Etoile - wyjechała na Espanolę.”";
+			dialog.text = "„I dlatego musiałeś iść do burdelu? Nie mogłeś się tego dowiedzieć w karczmie?”";
 			link.l1 = "Nie mówi się o tym miejscu w mieście. Dlaczego? To dobre pytanie. Możesz zapytać samą Belle Etoile - wyjechała na Hispaniolę.";
 			link.l1.go = "PZ_HelenaRazgovorOBordeli_Good_3";
 		break;
@@ -5632,14 +5639,15 @@ void ProcessDialogEvent()
 			link.l1.go = "PZ_RobertMartin_17";
 			LAi_SetActorType(npchar);
 			LAi_ActorAnimation(npchar, "beatmarten_idle_2", "", 0.3);
-			locCameraFromToPos(0.27, 14.52, -3.38, true, -1.80, 9.90, -1.76);
+			locCameraFromToPos(-2.80, 7.72, 6.77, true, 1.00, 5.13, 7.23);
 		break;
 		
 		case "PZ_RobertMartin_17":
 			dialog.text = "A czyja to wina?! Zabiłeś Edgardo Sottę! Po raz pierwszy w życiu Levasseur zapragnął dziewczyny, a nie dostał jej od razu! Pierwszy raz nasza załoga nie wykonała jego bezpośredniego rozkazu! Ten człowiek potrafi być tak przerażający jak sam diabeł...";
 			link.l1 = "Wtedy będę straszniejszy niż sam diabeł i zgotuję ci małe osobiste piekło, jeśli mi nie powiesz, czego chcę się dowiedzieć, słyszysz mnie?!";
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) link.l1.go = "PZ_RobertMartin_Mary_1";
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) link.l1.go = "PZ_RobertMartin_Helena_1";
+			else link.l1.go = "PZ_RobertMartin_Helena_1";
+			//if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) link.l1.go = "PZ_RobertMartin_Helena_1";
 		break;
 		
 		case "PZ_RobertMartin_Mary_1":
@@ -5669,7 +5677,7 @@ void ProcessDialogEvent()
 			LAi_SetActorType(npchar);
 			LAi_ActorAnimation(npchar, "beatmarten_idle_3", "", 0.3);
 			//locCameraFromToPos(-1.75, 14.14, -0.31, true, 1.26, 11.00, -4.00);
-			locCameraFromToPos(-2.47, 14.15, -0.01, true, 1.23, 10.92, -3.60);
+			locCameraFromToPos(-2.80, 7.72, 6.77, true, 0.66, 5.00, 8.26);
 		break;
 		
 		case "PZ_RobertMartin_20":
@@ -5686,7 +5694,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_RobertMartin_22":
 			dialog.text = "Więc wiesz o jego sekretnym miejscu, lochu? O tak, on jest prawdziwym władcą lochów, ha-ha-ha! Ale czy naprawdę możesz mu sprostać? Wątpię. Chcesz pokonać bestię? To sam stań się bestią. Zobacz, czy potrafisz złamać mnie tak, jak Francois łamie te dziewczyny. Jak wkrótce złamie twoją...";
-			if (!CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
+			/*if (!CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
 			{
 				link.l1 = "Alo-o-on-s-o-o!!!";
 				link.l1.go = "PZ_RobertMartin_23";
@@ -5695,7 +5703,9 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "...";
 				link.l1.go = "PZ_LongwayKaznDialog_1";
-			}
+			}*/
+			link.l1 = "Alo-o-on-s-o-o!!!";
+			link.l1.go = "PZ_RobertMartin_23";
 		break;
 		
 		case "PZ_RobertMartin_23":
@@ -5870,7 +5880,7 @@ void ProcessDialogEvent()
 			link.l1.go = "PZ_AlonsoKaznDialog_5";
 			LAi_SetActorType(npchar);
 			LAi_ActorTurnToCharacter(npchar, CharacterFromID("PZ_RobertMartinPlennik"));
-			LAi_ActorAnimation(npchar, "Barman_idle", "1", 5);
+			//LAi_ActorAnimation(npchar, "Barman_idle", "1", 5);
 		break;
 		
 		case "PZ_AlonsoKaznDialog_5":
@@ -8508,7 +8518,8 @@ void ProcessDialogEvent()
 				dialog.text = "„W porządku, Charles, naprawdę. Po prostu staram się o tym nie myśleć. A poza tym, uratowałeś mnie przed najgorszym. Więc przestańmy o tym rozmawiać i po prostu... nadrobić zaległości.”";
 				link.l1 = "To cholernie dobry pomysł, Helen.";
 				link.l1.go = "exit";
-				AddDialogExitQuest("cabin_sex_go");
+				pchar.quest.sex_partner = Npchar.id;
+				AddDialogExitQuestFunction("LoveSex_Cabin_Go");
 			}
 		break;
 		
@@ -8516,7 +8527,8 @@ void ProcessDialogEvent()
 				dialog.text = "„Charles, nie chcę tego, żądam tego, tak, co nie!”";
 				link.l1 = "Nie ośmieliłbym się ci odmówić...";
 				link.l1.go = "exit";
-				AddDialogExitQuest("cabin_sex_go");
+				pchar.quest.sex_partner = Npchar.id;
+				AddDialogExitQuestFunction("LoveSex_Cabin_Go");
 		break;
 		
 		case "PZ_DevushkaSnovaOfficer_Dialog1":

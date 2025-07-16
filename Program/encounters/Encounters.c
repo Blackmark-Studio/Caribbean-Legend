@@ -9,24 +9,6 @@ object MapEncounters[MAX_MAP_ENCOUNTERS];
 
 extern void InitEncounters();
 
-void Enc_ExcludeNation(ref rEnc, int iNation)
-{
-	string sNation = Nations[iNation].Name;
-	rEnc.Nation.Exclude.(sNation) = true;
-}
-
-void Enc_AddShips(ref rEnc, string sEType, int iShipsMin, int iShipsMax)
-{
-	rEnc.(sEType).ShipsMin = iShipsMin;		
-	rEnc.(sEType).ShipsMax = iShipsMax;
-}
-
-void Enc_AddClasses(ref rEnc, int iRank, int iMClassMin, int iMClassMax, int iWClassMin, int iWClassMax)
-{
-	string sRank = "Rank." + iRank;
-	rEnc.(sRank).0 = iMClassMin; rEnc.(sRank).1 = iMClassMax;
-	rEnc.(sRank).2 = iWClassMin; rEnc.(sRank).3 = iWClassMax;
-}
 void EncountersInit()
 {
 	if(LoadSegment("Encounters\Encounters_init.c"))
@@ -48,9 +30,9 @@ int FindEncounter(int type, int nat)
 
 	ref rCharacter = GetMainCharacter();
 	int iCharacterRank = sti(rCharacter.rank);
-	
+
 	int iChance = rand(250);
-	
+
 	for (i=0; i<MAX_ENCOUNTER_TYPES; i++)
 	{
 		if(sti(EncountersTypes[i].Type) == type)
@@ -58,9 +40,7 @@ int FindEncounter(int type, int nat)
 			if(sti(EncountersTypes[i].Skip) || !Encounter_CanNation(i, nat)) { continue; }
 			// check chance
 			if (iChance > sti(EncountersTypes[i].Chance)) { continue; }
-			// check MinRank / MaxRank
-			if(sti(EncountersTypes[i].MinRank) > iCharacterRank || sti(EncountersTypes[i].MaxRank) < iCharacterRank) { continue; }
-			
+
 			iTypes[iNumTypes] = i;
 			iNumTypes++;
 		}
@@ -91,12 +71,9 @@ int FindWarEncounter()
 			if (sti(EncountersTypes[i].Skip)) { continue; }
 			// check chance
 			if (iChance > sti(EncountersTypes[i].Chance)) { continue; }
-			// check MinRank / MaxRank
-			if (sti(EncountersTypes[i].MinRank) <= iCharacterRank && sti(EncountersTypes[i].MaxRank) >= iCharacterRank)
-			{
-				iTypes[iNumTypes] = i;
-				iNumTypes++;
-			}
+
+            iTypes[iNumTypes] = i;
+            iNumTypes++;
 		}
 	}
 	if (iNumTypes == 0) 
@@ -124,15 +101,12 @@ int FindMerchantEncounter()
             if (sti(EncountersTypes[i].Skip)) { continue; } // fix
 			// check chance
 			if (iChance > sti(EncountersTypes[i].Chance)) continue;
-			// check MinRank / MaxRank
-			if (sti(EncountersTypes[i].MinRank) <= iCharacterRank && sti(EncountersTypes[i].MaxRank) >= iCharacterRank)
-			{
-				iTypes[iNumTypes] = i;
-				iNumTypes++;
-			}
+
+            iTypes[iNumTypes] = i;
+            iNumTypes++;
 		}
 	}
-	if (iNumTypes == 0) 
+	if (iNumTypes == 0)
 	{
 		//Trace("FindMerchantEncounter: not find any merchant!");
 		return -1;
@@ -157,12 +131,9 @@ int FindSpecialEncounter()
             if (sti(EncountersTypes[i].Skip)) { continue; } // fix
 			// check chance
 			if (iChance > sti(EncountersTypes[i].Chance)) continue;
-			// check MinRank / MaxRank
-			if (sti(EncountersTypes[i].MinRank) <= iCharacterRank && sti(EncountersTypes[i].MaxRank) >= iCharacterRank)
-			{
-				iTypes[iNumTypes] = i;
-				iNumTypes++;
-			}		
+
+            iTypes[iNumTypes] = i;
+            iNumTypes++;	
 		}
 	}
 	if (iNumTypes == 0) 
@@ -211,7 +182,7 @@ bool Encounter_GetClassesFromRank(int iEncounter, int iRank, ref rMClassMin, ref
 					iLastRank = iCurRank;
 				}
 			}
-			if (iLastRank == -1) { return false; }
+			if (iLastRank == -1) return false;
 			sRank = "Rank." + iLastRank;
 		}
 		else
@@ -225,9 +196,9 @@ bool Encounter_GetClassesFromRank(int iEncounter, int iRank, ref rMClassMin, ref
 
 	rWClassMin = rEnc.(sRank).3;
 	rWClassMax = rEnc.(sRank).2;
-	
+
 	trace("rMClassMin " + rMClassMin + " rMClassMax " + rMClassMax + " rWClassMin " + rWClassMin + " rWClassMax " + rWClassMax);
-	
+
 	return true;
 }
 
@@ -238,4 +209,266 @@ int FindRealEncounterTypeFromId(string _id)
     aref rEnc;
     makearef(rEnc, worldMap.encounters.(_id).encdata);
     return sti(rEnc.RealEncounterType);
+}
+
+void Enc_ExcludeNation(ref rEnc, int iNation)
+{
+	string sNation = Nations[iNation].Name;
+	rEnc.Nation.Exclude.(sNation) = true;
+}
+
+// Энкаунтер, специализация, количество, классы
+// Бонусы определяются отдельно циклом по рангам при логине
+void Enc_AddShips(ref rEnc,
+                  string ShipSpec, string Type,
+                  int qMin, int qMax,
+                  int cMin, int cMax)
+{
+    aref arEShips;
+    makearef(arEShips, rEnc.Ships);
+    string attr = "S" + (GetAttributesNum(arEShips)+1);
+    while(CheckAttribute(arEShips, attr)) attr += "_a";
+
+    arEShips.(attr).qMin = qMin;
+    arEShips.(attr).qMax = qMax;
+    arEShips.(attr).cMin = cMin;
+    arEShips.(attr).cMax = cMax;
+    arEShips.(attr).Type = Type;         // War or Merchant
+    arEShips.(attr).ShipSpec = ShipSpec; // SHIP_SPEC_<>
+}
+
+void Enc_ConvertShipsCls(ref rEnc, string ShipSpec, int cMin, int cMax)
+{
+    aref arEShips, aShip;
+    makearef(arEShips, rEnc.Ships);
+    int qty = GetAttributesNum(arEShips);
+    for(int i = 0; i < qty; i++)
+    {
+        aShip = GetAttributeN(arEShips, i);
+        if(aShip.ShipSpec == ShipSpec || ShipSpec == "All")
+        {
+            aShip.cMin = cMin;
+            aShip.cMax = cMax;
+        }
+    }
+}
+
+void Enc_ConvertShipsQty(ref rEnc, string ShipSpec, int qMin, int qMax)
+{
+    aref arEShips, aShip;
+    makearef(arEShips, rEnc.Ships);
+    int qty = GetAttributesNum(arEShips);
+    for(int i = 0; i < qty; i++)
+    {
+        aShip = GetAttributeN(arEShips, i);
+        if(aShip.ShipSpec == ShipSpec || ShipSpec == "All")
+        {
+            aShip.qMin = qMin;
+            aShip.qMax = qMax;
+        }
+    }
+}
+
+void Enc_ConvertSpec(ref rEnc, string ShipSpec_from, string ShipSpec_to)
+{
+    aref arEShips, aShip;
+    makearef(arEShips, rEnc.Ships);
+    int qty = GetAttributesNum(arEShips);
+    for(int i = 0; i < qty; i++)
+    {
+        aShip = GetAttributeN(arEShips, i);
+        if(aShip.ShipSpec == ShipSpec_from)
+            aShip.ShipSpec = ShipSpec_to;
+    }
+}
+
+// Вернуть конкретный слот
+aref Enc_FindShip(ref rEnc,
+                  string ShipSpec, string Type,
+                  int qMin, int qMax,
+                  int cMin, int cMax)
+{
+    aref arEShips, aShip;
+    makearef(arEShips, rEnc.Ships);
+    int qty = GetAttributesNum(arEShips);
+    for(int i = 0; i < qty; i++)
+    {
+        aShip = GetAttributeN(arEShips, i);
+        if(aShip.ShipSpec  == ShipSpec && aShip.Type  == Type &&
+           sti(aShip.qMin) == qMin && sti(aShip.qMax) == qMax &&
+           sti(aShip.cMin) == cMin && sti(aShip.cMin) == cMax)
+           {
+                return aShip;
+           }
+    }
+    return ErrorAttr();
+}
+
+// Сюда все апдейты, чтобы не переусложнять генерацию
+// Через >= на случай читерских повышений
+bool EncProgress[60];
+#event_handler("PlayerLevelUp", "Encounter_Progress");
+void Encounter_Progress()
+{
+    ref rEnc;
+    aref aShip;
+    int Rank = sti(PChar.Rank);
+
+    if(Rank >= 8 && !EncProgress[8])
+    {
+        EncProgress[8] = true;
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_SMALL];
+        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 5, 6);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_MEDIUM];
+        Enc_AddShips(rEnc, SHIP_SPEC_WAR, "War", 1, 1, 3, 5);
+        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_UNIVERSAL, 3, 4);
+    }
+
+    if(Rank >= 9 && !EncProgress[9])
+    {
+        EncProgress[9] = true;
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PIRATE];
+        rEnc.Stage = 1;
+        Enc_ConvertShipsCls(rEnc, "All", 5, 6);
+        Enc_AddShips(rEnc, SHIP_SPEC_WAR, "War", 1, 1, 5, 6);
+		PChar.quest.Pirate_Notification.win_condition.l1 = "MapEnter";
+	    PChar.quest.Pirate_Notification.function         = "PirateNotificationUPD";
+    }
+
+    if(Rank >= 12 && !EncProgress[12])
+    {
+        EncProgress[12] = true;
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_LARGE];
+        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_RAIDER, 2, 4);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_CROWN];
+        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 4, 5);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_EXPEDITION];
+        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 2, 2);
+        Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT, "Merchant", 1, 1, 2, 2);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_SLAVES];
+        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 3, 4);
+        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 3, 4);
+        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_MERCHANT, 2, 2);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PATROL_SMALL];
+        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 5, 6);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PATROL_MEDIUM];
+        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 3, 4);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_NAVAL_MEDIUM];
+        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 4, 5);
+    }
+
+    if(Rank >= 13 && !EncProgress[13])
+    {
+        EncProgress[13] = true;
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_SMALL];
+        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War",        1, 1, 4, 4);
+        Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT, "Merchant", 1, 1, 5, 6);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_MEDIUM];
+        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 3, 5);
+        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_RAIDER, 3, 5);
+    }
+
+    if(Rank >= 17 && !EncProgress[17])
+    {
+        EncProgress[17] = true;
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PIRATE];
+        rEnc.Stage = 2;
+        rEnc.worldMapShip = "bark";
+        Enc_ConvertShipsCls(rEnc, "All", 4, 5);
+        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 4, 5);
+		PChar.quest.Pirate_Notification.win_condition.l1 = "MapEnter";
+	    PChar.quest.Pirate_Notification.function         = "PirateNotificationUPD";
+    }
+
+    if(Rank >= 20 && !EncProgress[20])
+    {
+        EncProgress[20] = true;
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_LARGE];
+        Enc_ConvertSpec(rEnc, SHIP_SPEC_UNIVERSAL, SHIP_SPEC_WAR);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PATROL_SMALL];
+        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 5, 6);
+        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 5, 6);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PATROL_MEDIUM];
+        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 2, 2);
+    }
+
+    if(Rank >= 21 && !EncProgress[21])
+    {
+        EncProgress[21] = true;
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_NAVAL_MEDIUM];
+        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_RAIDER, 3, 5);
+        Enc_AddShips(rEnc, SHIP_SPEC_WAR, "War",           1, 1, 3, 5);
+        Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT, "Merchant", 1, 1, 3, 5);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_NAVAL_LARGE];
+        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_RAIDER, 2, 4);
+    }
+
+    if(Rank >= 22 && !EncProgress[22])
+    {
+        EncProgress[22] = true;
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_CROWN];
+        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_RAIDER, 3, 5);
+        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_UNIVERSAL, 3, 5);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_EXPEDITION];
+        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_RAIDER, 2, 4);
+        aShip = Enc_FindShip(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 2, 2);
+        aShip.ShipSpec = SHIP_SPEC_WAR;
+    }
+
+    if(Rank >= 26 && !EncProgress[26])
+    {
+        EncProgress[26] = true;
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PIRATE];
+        rEnc.Stage = 3;
+        Enc_ConvertShipsCls(rEnc, "All", 3, 4);
+        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 3, 4);
+		PChar.quest.Pirate_Notification.win_condition.l1 = "MapEnter";
+	    PChar.quest.Pirate_Notification.function         = "PirateNotificationUPD";
+    }
+
+    if(Rank >= 31 && !EncProgress[31])
+    {
+        EncProgress[31] = true;
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_NAVAL_LARGE];
+        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_WAR, 1, 3);
+        Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT, "Merchant", 1, 1, 3, 3);
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PIRATE];
+        rEnc.Stage = 4;
+        rEnc.worldMapShip = "frigate";
+        Enc_ConvertShipsCls(rEnc, "All", 2, 3);
+		PChar.quest.Pirate_Notification.win_condition.l1 = "MapEnter";
+	    PChar.quest.Pirate_Notification.function         = "PirateNotificationUPD";
+
+        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_SLAVES];
+        Enc_AddShips(rEnc, SHIP_SPEC_WAR, "War", 1, 1, 2, 2);
+        Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT, "Merchant", 1, 1, 2, 2);
+    }
+}
+
+void PirateNotificationUPD(string qName)
+{
+    Notification(StringFromKey("QuestsUtilite_276"), "pirhunter");
 }

@@ -358,7 +358,7 @@ void ProcessDialogEvent()
 		dialog.Text = "Muy excelente, resolveré todo. Trabajarán contigo.";
 		Link.l99 = "Gracias.";
 		Link.l99.go = "exit";
-		ChangeContrabandRelation(pchar, 25);
+		ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
 		AddMoneyToCharacter(pchar, -sti(Pchar.questTemp.Relations.sum));
 		break;
 	// boal <--
@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 			{
 				sld = GetFortCommander(colonies[i].id);
 				attrLoc = "l" + i;
-				Link.(attrLoc) = GetCityName(colonies[i].id) + " - " + XI_ConvertString(GetNationNameByType(sti(sld.Default.nation)));
+				Link.(attrLoc) = GetCityName(colonies[i].id) + ", " + XI_ConvertString(GetNationNameByType(sti(sld.Default.nation)));
 				Link.(attrLoc).go = "CityPay_" + i;
 			}
 		}

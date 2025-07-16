@@ -265,7 +265,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_7":
-			dialog.text = "There is small island at the south of Guadeloupe. Cape Inaccessible. Land Longway there and give him weapon. Only then Longway tell you everything he knows about Lucas Rodenburg.";
+			dialog.text = "There is small island Marie Galante at the south of Guadeloupe. Cape Inaccessible. Land Longway there and give him weapon. Only then Longway tell you everything he knows about Lucas Rodenburg.";
 			link.l1 = "You are in no position to bargain with me, Chinaman.";
 			link.l1.go = "Longway_prisoner_8";			
 		break;
@@ -324,7 +324,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_0":
-			dialog.text = "Have we arrived at Guadeloupe, chuanzhang?";
+			dialog.text = "Have we arrived at Marie Galante, chuanzhang?";
 			link.l1 = "Cool your heels, we will be there soon.";
 			link.l1.go = "exit";
 			NextDiag.Tempnode = "Longway_prisoner_0";
@@ -571,7 +571,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -726,7 +726,7 @@ void ProcessDialogEvent()
 string SelectJacobCity()
 {
 	string sTemp;
-	switch (drand(4))
+	switch (hrand(4))
 	{
 		case 0: sTemp = "Cumana" break;
 		case 1: sTemp = "Caracas" break;

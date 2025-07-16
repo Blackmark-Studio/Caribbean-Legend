@@ -1,6 +1,6 @@
 Tonzag_1
 {
-bounty hunters
+łowcy nagród
 }
 
 Tonzag_2
@@ -14,17 +14,17 @@ Tonzag_3
 
 Tonzag_4
 {
-6 hours have passed...
+Mineło 6 godzin...
 }
 
 Tonzag_5
 {
-Exploration mode: timer is disabled.
+Tryb eksploracji: licznik czasu jest wyłączony.
 }
 
 Tonzag_6
 {
-Bronze Horseman Unlocked
+Odblokowano umiejętność - 'Zakuty Łeb'
 }
 
 Tonzag_7

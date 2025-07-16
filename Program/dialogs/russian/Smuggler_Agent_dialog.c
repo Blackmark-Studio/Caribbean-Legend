@@ -67,6 +67,14 @@ void ProcessDialogEvent()
             else
             {
 	            AddQuestRecord("Gen_Contraband", "t1");
+				if (Pchar.quest.contraband.CurrentPlace == "shore30" || Pchar.quest.contraband.CurrentPlace == "shore31")
+				{
+					AddQuestUserData("Gen_Contraband", "sIsland", "Мари-Галант");
+				}
+				if (Pchar.quest.contraband.CurrentPlace == "shore59")
+				{
+					AddQuestUserData("Gen_Contraband", "sIsland", "Тобаго");
+				}
 				AddQuestUserData("Gen_Contraband", "sIsland", XI_ConvertString(GetIslandByCityName(npchar.city)));
 			}
 			AddQuestUserData("Gen_Contraband", "sLoc", GetConvertStr(Pchar.quest.contraband.CurrentPlace, "LocLables.txt"));
@@ -189,6 +197,13 @@ void ProcessDialogEvent()
 					Link.l8.go = "Shadowtrader_smugglers";
 				}
 				// <-- мини-квест Бесчестный конкурент
+				//--> Торговля по закону
+				if(CheckAttribute(PChar, "questTemp.TPZ_ContraInfo") && NPChar.location == "BasTer_tavern")
+				{
+					Link.l8 = "Послушай, друг, мне нужна партия вина и рома. Побольше и побыстрее.";
+					Link.l8.go = "TPZ_smugglers_1";
+				}
+				// <-- Торговля по закону
 				//Jason --> генератор сбыта бакаута
 				if(NPChar.location == "Marigo_tavern" && CheckAttribute(PChar, "GenQuest.Bakaut") && !CheckAttribute(PChar, "GenQuest.Bakaut.Info"))
 				{
@@ -269,7 +284,7 @@ void ProcessDialogEvent()
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					dialog.text = "Как сказать? Может быть, и пригодится твой 'товар'. Бери " + sti(pchar.questTemp.different.GiveShipLetters.price2) + " золотых, и забудь об этом.";
+					dialog.text = "Как сказать? Может быть, и пригодится твой 'товар'. Бери " + sti(pchar.questTemp.different.GiveShipLetters.price2) + " песо, и забудь об этом.";
 					link.l1 = "Пожалуй, нет.";
 					link.l1.go = "SM_ShipLetters_2";	
 					link.l2 = "Да, ты угадал, уже начинаю забывать!";
@@ -279,7 +294,7 @@ void ProcessDialogEvent()
 				{
 					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 					{
-						dialog.text = "Точно! Мне уже не просто любопытно. Думаю, если заплачу тебе "+ sti(pchar.questTemp.different.GiveShipLetters.price3) +" золотых, то и тебе станет совсем не любопытно, что да как в этих бумагах.";
+						dialog.text = "Точно! Мне уже не просто любопытно. Думаю, если заплачу тебе "+ sti(pchar.questTemp.different.GiveShipLetters.price3) +" песо, то и тебе станет совсем не любопытно, что да как в этих бумагах.";
 						link.l1 = "Пожалуй, нет.";
 						link.l1.go = "SM_ShipLetters_2";
 						link.l2 = "Да, ты угадал, уже начинаю забывать!";
@@ -287,7 +302,7 @@ void ProcessDialogEvent()
 					}
 					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 					{
-						dialog.text = "Вот это шанс прищучить наглеца! Это очень, очень любопытно. Давай так: я плачу тебе " + sti(pchar.questTemp.different.GiveShipLetters.price4) + " золотом, а ты делаешь вид, что забыл"+ GetSexPhrase("","а") +" документы на столе?";
+						dialog.text = "Вот это шанс прищучить наглеца! Это очень, очень любопытно. Давай так: я плачу тебе " + sti(pchar.questTemp.different.GiveShipLetters.price4) + " песо, а ты делаешь вид, что забыл"+ GetSexPhrase("","а") +" документы на столе?";
 						link.l1 = "Пожалуй, нет.";
 						link.l1.go = "SM_ShipLetters_2";
 						link.l2 = "Да, ты угадал, уже начинаю забывать!";
@@ -397,6 +412,13 @@ void ProcessDialogEvent()
 				Link.l8.go = "Shadowtrader_smugglers";
 			}
 			// <-- мини-квест Бесчестный конкурент
+			//--> Торговля по закону
+			if(CheckAttribute(PChar, "questTemp.TPZ_ContraInfo") && NPChar.location == "BasTer_tavern")
+			{
+				Link.l8 = "Послушай, друг, мне нужна партия вина и рома. Побольше и побыстрее.";
+				Link.l8.go = "TPZ_smugglers_1";
+			}
+			// <-- Торговля по закону
 			//Jason --> генератор сбыта бакаута
 			if(NPChar.location == "Marigo_tavern" && CheckAttribute(PChar, "GenQuest.Bakaut") && !CheckAttribute(PChar, "GenQuest.Bakaut.Info"))
 			{
@@ -690,7 +712,7 @@ void ProcessDialogEvent()
 							SaveCurrentQuestDateParam("contraTravel");
 
 							Dialog.Text = "Что ж, можем доставить тебя до места " + GetConvertStr(locations[FindLocation(pchar.GenQuest.contraTravel.destination.loc)].id, "LocLables.txt") + " близ " +
-								XI_ConvertString("Colony" + pchar.GenQuest.contraTravel.destination + "Gen") + " за " + pchar.GenQuest.contraTravel.price + " золотых. Принесешь деньги через " +
+								XI_ConvertString("Colony" + pchar.GenQuest.contraTravel.destination + "Gen") + " за " + pchar.GenQuest.contraTravel.price + " песо. Принесешь деньги через " +
 								FindRussianDaysString(nDay) + ". Корабль будет ждать тебя в месте под названием " +
 								GetConvertStr(locations[FindLocation(Pchar.GenQuest.contraTravel.CurrentPlace)].id, "LocLables.txt") + " ровно сутки.";
 
@@ -855,6 +877,45 @@ void ProcessDialogEvent()
 			DialogExit();
 		break;
 		// <-- Бесчестный конкурент
+		
+		//--> Торговля по закону
+		case "TPZ_smugglers_1":
+			dialog.text = "Ха, тебя этот плут из-за стойки прислал, да?";
+			link.l1 = "А что, это важно? Ты сможешь достать, или мне искать другого человека?";
+			link.l1.go = "TPZ_smugglers_2";
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "TPZ_smugglers_2":
+			dialog.text = "Я могу достать всё что угодно, смекаешь? Лишь бы платили как следует. Но этот проклятый губернатор совсем уж нас прижал. С выпивкой теперь не связываемся - тара звонкая, за добрую версту слышно, барыши копеечные, а риск в петле болтаться огромен. Так что уж не обессудь.";
+			link.l1 = "Мда... А ещё говоришь, что можешь всё достать.";
+			link.l1.go = "TPZ_smugglers_3";		
+		break;
+		
+		case "TPZ_smugglers_3":
+			dialog.text = "Я и могу! Просто не хочу. Есть тут один парень, прям возле резиденции живёт, представляешь? Ха-ха. Вот же олух... О чём это я? А, так вот. Он потихоньку всякой выпивкой из-под полы приторговывает. Прям под париком губернатора, ха-ха. Спроси у него, может, он чего подскажет. Объёмы у него, конечно, детские, но хоть что-то.";
+			link.l1 = "Не особо ты и помог конечно, но и за то спасибо.";
+			link.l1.go = "TPZ_smugglers_4";		
+		break;
+		
+		case "TPZ_smugglers_4":
+			DialogExit();
+			AddQuestRecord("TPZ", "3");
+			DeleteAttribute(pchar, "questTemp.TPZ_ContraInfo");
+			
+			// проведаем дом Кристиана
+			sld = GetCharacter(NPC_GenerateCharacter("TPZ_Kristian", "citiz_17", "man", "man", 1, FRANCE, -1, false, "quest"));
+			sld.name = "Кристиан";
+			sld.lastname = "Делюш";
+			LAi_SetOwnerType(sld);
+			sld.dialog.filename = "Quest\MiniEvents\TradingByLaw_dialog.c";
+			sld.dialog.currentnode = "Kristian";
+			ChangeCharacterAddressGroup(sld, "BasTer_houseF3", "barmen", "stay");
+			sld.City = "BasTer";
+			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+			AddLandQuestMark(sld, "questmarkmain");
+		break;
+		//<-- Торговля по закону
 			
 		//--> Цена чахотки
 		case "Consumption":

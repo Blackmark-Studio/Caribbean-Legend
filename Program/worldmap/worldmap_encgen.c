@@ -66,10 +66,10 @@ void wdmStormGen(float dltTime, float playerShipX, float playerShipZ, float play
 void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float playerShipAY)
 {
 	int numShips = wdmGetNumberShipEncounters();
-	if( CheckAttribute(pchar,"worldmap.shipcounter") ) {
+	if(CheckAttribute(pchar,"worldmap.shipcounter")) {
 		numShips = numShips - sti(pchar.worldmap.shipcounter);
 	}
-	if( numShips < 0 )
+	if(numShips < 0)
 	{
 //		trace("Warning! World map ship quantity < 0 : numShips = " + numShips);
 //		trace("pchar.worldmap.shipcounter = " + pchar.worldmap.shipcounter);
@@ -78,10 +78,10 @@ void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float
 	if(numShips < 8)
 	{
 		//Вероятности появления
-		wdmTimeOfLastMerchant = wdmTimeOfLastMerchant + dltTime*WDM_MERCHANTS_RATE*1000.0*iEncountersRate;
-		wdmTimeOfLastWarring = wdmTimeOfLastWarring + dltTime*WDM_WARRING_RATE*1000.0*iEncountersRate;
-		wdmTimeOfLastFollow = wdmTimeOfLastFollow + dltTime*WDM_FOLLOW_RATE*1000.0*iEncountersRate;
-		wdmTimeOfLastSpecial = wdmTimeOfLastSpecial + dltTime*WDM_SPECIAL_RATE*1000.0*iEncountersRate;
+		wdmTimeOfLastMerchant = wdmTimeOfLastMerchant + dltTime * WDM_MERCHANTS_RATE * 1000.0 * iEncountersRate;
+		wdmTimeOfLastWarring  = wdmTimeOfLastWarring  + dltTime * WDM_WARRING_RATE   * 1000.0 * iEncountersRate;
+		wdmTimeOfLastFollow   = wdmTimeOfLastFollow   + dltTime * WDM_FOLLOW_RATE    * 1000.0 * iEncountersRate;
+		wdmTimeOfLastSpecial  = wdmTimeOfLastSpecial  + dltTime * WDM_SPECIAL_RATE   * 1000.0 * iEncountersRate;
 		//Вероятность от количества созданных
 		float nump = 1.0 - numShips*0.15;
 		//Выбираем
@@ -93,7 +93,7 @@ void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float
 		else
 		{
 			bool encoff = false;
-			if(CheckAttribute(pchar,"worldmapencountersoff") == 1)
+			if(CheckAttribute(pchar,"worldmapencountersoff"))
 			{
 				encoff = sti(pchar.worldmapencountersoff);
 			}
@@ -137,10 +137,10 @@ void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float
 	}
 }
 
-
+// to_do: Map_BattleEnd
 #event_handler("Map_TraderSucces", "Map_TraderSucces");
 #event_handler("Map_WarriorEnd", "Map_WarriorEnd");
-// to_do -->
+
 void Map_WarriorEnd()
 {
 	if(!CheckAttribute(pchar, "worldmap.shipcounter"))
@@ -152,7 +152,21 @@ void Map_WarriorEnd()
 	{
 		sti(pchar.worldmap.shipcounter) = 0;
 	}
+    string sChar = GetEventData();
+
+    Map_WarriorEnd_quest(sChar);
 }
+
+void Map_WarriorEnd_quest(string sChar)
+{
+    //int iChar = GetCharacterIndex(sChar);
+    //if (iChar != -1)
+    ref rChar = CharacterFromID(sChar);
+
+    if(FindSubStr(sChar, "Brigadier0", 0) != -1)
+        FireBrigadeRefresh(rChar, sti(rChar.Nation), 1);
+}
+
 void Map_TraderSucces()
 {
 	if(!CheckAttribute(pchar, "worldmap.shipcounter"))
@@ -175,16 +189,15 @@ void Map_TraderSucces()
         Group_DeleteGroup("Sea_"+sChar);
         CloseQuestHeader("MerchantOnMap");
 	}
-    // homo 07/10/06 GoldFleet
-    if (sChar == "Head_of_Gold_Squadron")
+    else if (sChar == "Head_of_Gold_Squadron") // homo 07/10/06 GoldFleet
 	{
         RouteGoldFleet();
 	}
-	
-	if (findsubstr(sChar, "SiegeCap_" , 0) != -1)
+	else if (findsubstr(sChar, "SiegeCap_" , 0) != -1)
 	{
         SiegeProgress();
 	}
+
 	/*if(GetCharacterIndex(sChar) != -1)  // типа пример
 	{
 		if(CheckAttribute(&characters[GetCharacterIndex(sChar)], "hovernor"))
@@ -245,11 +258,10 @@ void Map_TraderSucces_quest(string sChar)
 			Log_TestInfo("Бригантина Мэри Селест вышла из " + character.fromCity + " и направилась в " + character.toShore);
 		}
 	}
-	
-	// Warship Генер "Пираты на необитайке"
-	// В город не выходит, только по глобалке: город - это лишние телодвижения, которые погоды особо не сделают
-	if(sChar == "PiratesOnUninhabited_BadPirate")
+	else if(sChar == "PiratesOnUninhabited_BadPirate")
 	{
+        // Warship Генер "Пираты на необитайке"
+        // В город не выходит, только по глобалке: город - это лишние телодвижения, которые погоды особо не сделают
 		Map_ReleaseQuestEncounter("PiratesOnUninhabited_BadPirate");
 		
 		if(!CheckAttribute(PChar, "GenQuest.PiratesOnUninhabited.ClearShip"))
@@ -264,7 +276,7 @@ void Map_TraderSucces_quest(string sChar)
 			Log_TestInfo("Пираты на необитайке: кэп вышел из " + character.fromCity + " и направился в: " + character.toShore);
 		}
 	}
-	if(sChar == "ShipWreck_BadPirate") // лесник - добавил блок по генеру "потерпевшие кораблекрушение"
+	else if(sChar == "ShipWreck_BadPirate") // лесник - добавил блок по генеру "потерпевшие кораблекрушение"
 	{
 		Map_ReleaseQuestEncounter("ShipWreck_BadPirate");
 		
@@ -280,8 +292,7 @@ void Map_TraderSucces_quest(string sChar)
 			Log_TestInfo("Кораблекрушенцы: корабль вышел из " + character.fromCity + " и направился в: " + character.toCity);
 		}
 	}
-	// ugeen --> генератор "Повод для спешки"
-	if(sChar == "PirateCapt")
+	else if(sChar == "PirateCapt") // ugeen --> генератор "Повод для спешки"
 	{
 		Log_TestInfo("Пиратский корабль дошёл до места назначения.");
 		Map_ReleaseQuestEncounter(sChar);
@@ -289,51 +300,53 @@ void Map_TraderSucces_quest(string sChar)
 		CloseQuestHeader("ReasonToFast");
 		DeleteAttribute(pchar,"questTemp.ReasonToFast");
 	}
-	
-	//розыск и отдача кэпу судового журнала
-	if (findsubstr(sChar, "PortmansCap_" , 0) != -1 && characters[GetCharacterIndex(sChar)].quest == "InMap")
+	else if (findsubstr(sChar, "PortmansCap_" , 0) != -1 && characters[GetCharacterIndex(sChar)].quest == "InMap")
 	{
+        //розыск и отдача кэпу судового журнала
 		SetCapitainFromSeaToCity(sChar);
 		Log_TestInfo("Энканутер рассеянного кэпа " + sChar + " дошёл до места назначения.");
 	}
-	//поиски кэпа-вора
-	if (findsubstr(sChar, "SeekCap_" , 0) != -1 && characters[GetCharacterIndex(sChar)].quest == "InMap")
+	else if (findsubstr(sChar, "SeekCap_" , 0) != -1 && characters[GetCharacterIndex(sChar)].quest == "InMap")
 	{
+        //поиски кэпа-вора
 		SetRobberFromMapToSea(sChar);
 		Log_TestInfo("Энканутер кэпа-вора " + sChar + " дошёл до места назначения.");
 	}
-	//поиски кэпа, квест дают горожане
-	if (findsubstr(sChar, "SeekCitizCap_" , 0) != -1)
+	else if (findsubstr(sChar, "SeekCitizCap_" , 0) != -1) //поиски кэпа, квест дают горожане
 	{
 		if(character.quest == "InMap")
 		{
 			CitizCapFromMapToCity(sChar);
 			Log_TestInfo("Энканутер кэпа " + sChar + " дошёл до места назначения.");
 		}
-		
-		if(character.quest == "outMap")
+		else if(character.quest == "outMap")
 		{
 			string sTemp = "SCQ_" + character.index;
 			pchar.quest.(sTemp).over = "yes"; //снимаем прерывание смерть кэпа
 			character.lifeDay = 0;
 		}
 	}
-	// belamour legendary edition на пару с акулой
-	if(sChar == "SGFcurierCap")
+	else if(sChar == "SGFcurierCap") // belamour legendary edition на пару с акулой
 	{
 		Map_ReleaseQuestEncounter(sChar);
 		character.lifeDay = 0;
 		Group_DeleteGroup("Sea_SGFcurierCap1");
 		SGF_Curier_ReleaseInGlobal();
 	}
-	
-	if (sChar == "SantaMisericordia_cap" && characters[GetCharacterIndex(sChar)].quest == "InMap")
+	else if (sChar == "SantaMisericordia_cap" /* && characters[GetCharacterIndex(sChar)].quest == "InMap" */)
 	{
 		SantaMisericordia_ToCity(sChar);
 	}
-	
-	if (sChar == "LadyBeth_cap" && characters[GetCharacterIndex(sChar)].quest == "InMap")
+	else if (sChar == "LadyBeth_cap"/*  && characters[GetCharacterIndex(sChar)].quest == "InMap" */)
 	{
 		LadyBeth_ToCity(sChar);
 	}
+	else if (sChar == "Memento_cap")
+	{
+		Memento_ToCity(sChar);
+	}
+    else if(FindSubStr(sChar, "Brigadier0", 0) != -1)
+    {
+        FireBrigadeRefresh(character, sti(character.nation), 5 + rand(4));
+    }
 }

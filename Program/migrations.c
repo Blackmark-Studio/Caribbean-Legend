@@ -81,6 +81,50 @@ void ApplyModMigrations() {
 			continue;
 		}
 		ApplyMigrationsForFolder(MOD_MIGRATION_FOLDER, fileName);
+		
+		string loc = LanguageGetLanguage();
+		string modGrAliasPath = "Resource\INI\aliases\" + loc + "\mods\" + fileName;
+		string modStringCommonPath = "Resource\INI\texts\" + loc + "\mods\" + fileName;
+		string modPicturesPath = "Resource\INI\interfaces\mods\" + fileName;
+
+
+
+
+		object fileFinderRes;
+		aref fileResList;
+
+		fileFinderRes.dir = modGrAliasPath;
+		fileFinderRes.mask = "Greetings_alias.ini";
+		CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
+		DeleteClass(&fileFinderRes);
+		makearef(fileResList, fileFinderRes.filelist);
+		if (GetAttributesNum(fileResList) > 0)
+		{
+			SendMessage( &Sound, "ls", MSG_SOUND_ALIAS_ADD,  loc + "\mods\" + fileName + "\Greetings_alias.ini");
+		}
+		DeleteAttribute(&fileFinderRes, ""); 
+
+		fileFinderRes.dir = modStringCommonPath;
+		fileFinderRes.mask = "common.ini";
+		CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
+		DeleteClass(&fileFinderRes);
+		makearef(fileResList, fileFinderRes.filelist);
+		if (GetAttributesNum(fileResList) > 0)
+		{
+			SendMessage(&GameInterface, "ls", MSG_INTERFACE_LOAD_STRINGS_INI_FILE, "mods\" + fileName + "\common.ini");
+		}
+		DeleteAttribute(&fileFinderRes, ""); 
+
+		fileFinderRes.dir = modPicturesPath;
+		fileFinderRes.mask = "pictures.ini";
+		CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
+		DeleteClass(&fileFinderRes);
+		makearef(fileResList, fileFinderRes.filelist);
+		if (GetAttributesNum(fileResList) > 0)
+		{
+			SendMessage(&GameInterface, "ls", MSG_INTERFACE_LOAD_PICTURES_INI_FILE, "mods\" + fileName + "\pictures.ini");
+		}
+		DeleteAttribute(&fileFinderRes, ""); 
 	}
 }
 

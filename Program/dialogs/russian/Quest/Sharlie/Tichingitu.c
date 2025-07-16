@@ -146,6 +146,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_exit":
 			DialogExit();
+			chrDisableReloadToLocation = false;
 			AddQuestRecord("Tichingitu", "5");
 			CloseQuestHeader("Tichingitu");
 			LAi_SetActorType(npchar);
@@ -320,7 +321,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetMusketBullets1_" + i;
 			}
 		break;

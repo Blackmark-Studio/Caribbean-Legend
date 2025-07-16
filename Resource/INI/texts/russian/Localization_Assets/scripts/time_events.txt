@@ -27,3 +27,8 @@ time_events_6
 {
 Хопкинс
 }
+
+time_events_7
+{
+Алонсо
+}

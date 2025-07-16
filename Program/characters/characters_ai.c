@@ -47,7 +47,8 @@ bool SetCharacterTask_GotoPoint(ref character, string locatorGroup, string locat
 	y = MakeFloat(locator.y);
 	z = MakeFloat(locator.z);
 	//Set task
-	return SendMessage(character, "lsfff", MSG_NPCHARACTER_SETTASK, "Goto point", x, y, z);
+    bool isCheckBusyPos = !CheckAttribute(character, "chr_ai.tmpl.forced") || character.chr_ai.tmpl.forced == "0";
+	return SendMessage(character, "lslfff", MSG_NPCHARACTER_SETTASK, "Goto point", isCheckBusyPos, x, y, z);
 }
 
 bool SetCharacterTask_RuntoPoint(ref character, string locatorGroup, string locatorName)
@@ -73,7 +74,8 @@ bool SetCharacterTask_RuntoPoint(ref character, string locatorGroup, string loca
 	y = MakeFloat(locator.y);
 	z = MakeFloat(locator.z);
 	//Set task
-	return SendMessage(character, "lsfff", MSG_NPCHARACTER_SETTASK, "Runto point", x, y, z);
+    bool isCheckBusyPos = !CheckAttribute(character, "chr_ai.tmpl.forced") || character.chr_ai.tmpl.forced == "0";
+	return SendMessage(character, "lslfff", MSG_NPCHARACTER_SETTASK, "Runto point", isCheckBusyPos, x, y, z);
 }
 
 bool SetCharacterTask_FollowCharacter(ref character, ref followCharacter)
@@ -176,6 +178,3 @@ string CharacterGetTask(ref character)
 	if(SendMessage(character, "le", MSG_NPCHARACTER_GETTASK, &str) == 0) str = "";
 	return str;
 }
-
-
-

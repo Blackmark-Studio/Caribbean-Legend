@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 			else
 			{
 				link.l1 = "I have a "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name")))+", her name is "+pchar.ship.name+".";
-				if (5-sti(RealShips[sti(pchar.ship.type)].Class) < 0) link.l1.go = "lecrua_badship";
+				if (6-sti(RealShips[sti(pchar.ship.type)].Class) < 0) link.l1.go = "lecrua_badship";
 				else link.l1.go = "lecrua_2";
 			}
 		break;
@@ -70,6 +70,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("Trial", "sText", sTotalTemp);
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "lecrua_repeat":
@@ -190,6 +191,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Trial", "10");
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 			ChangeCharacterNationReputation(pchar, FRANCE, -3);
 		break;
 		
@@ -232,6 +234,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Trial", "11");
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "florian_deck_7":
@@ -329,6 +332,7 @@ void ProcessDialogEvent()
 			sld.lifeday = 0;
 			CloseQuestHeader("Trial");
 			DeleteAttribute(pchar, "questTemp.Trial");
+			pchar.questTemp.TrialEnd = true;
 		break;
 		
 		case "florian_failspy_5":
@@ -388,7 +392,7 @@ void ProcessDialogEvent()
 		
 		case "florian_13":
 			dialog.text = "God damn it! That's dreadful... Did you find out anything about the galleon?";
-			link.l1 = "Yes. She is being prepared to embark for a while now, but the governor of Portobello is intending on holding her at the dock. Right now he's waiting for a barque named the 'Puebla' to arrive from Cartagena with a cargo of gunpowder for the 'Alcantara'. According to a sailor from the galleon they don`t have enough of it and the governor fears pirates.";
+			link.l1 = "Yes. She is being prepared to embark for a while now, but the governor of Portobello is intending on holding her at the dock. Right now he's waiting for a barkentine named the 'Puebla' to arrive from Cartagena with a cargo of gunpowder for the 'Alcantara'. According to a sailor from the galleon they don`t have enough of it and the governor fears pirates.";
 			link.l1.go = "florian_14";
 		break;
 		
@@ -408,7 +412,7 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "gold_dublon", 250);
 			Log_Info("You've received 250 doubloons");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "You are reading my mind, "+GetFullName(pchar)+"! Yes, damn it! Since Alacantara is low on gunpowder I can let her sail into the open sea and then force her to engage in a protracted naval fight, in which their powder will run off before ours, haha!\nYou should make sure that supply barque Puebla never reaches Portobello. I can't sail close to the shore, patrols will notice my frigate easily and run me off before I can intercept Alacantara\nYou can deal with Puebla on your own. Find her and get rid of her. Sink her or take her as a prize, I don't care. Just prevent her from getting here!\nIf you succeed, than go to Guadeloupe and see Gerard LeCroix, I believe that you already know him, don't you? He will pay you the coin you deserve.";
+			dialog.text = "You are reading my mind, "+GetFullName(pchar)+"! Yes, damn it! Since Alacantara is low on gunpowder I can let her sail into the open sea and then force her to engage in a protracted naval fight, in which their powder will run off before ours, haha!\nYou should make sure that supply barkentine Puebla never reaches Portobello. I can't sail close to the shore, patrols will notice my frigate easily and run me off before I can intercept Alacantara\nYou can deal with Puebla on your own. Find her and get rid of her. Sink her or take her as a prize, I don't care. Just prevent her from getting here!\nIf you succeed, than go to Guadeloupe and see Gerard LeCroix, I believe that you already know him, don't you? He will pay you the coin you deserve.";
 			link.l1 = "Deal! I'll be on my way to cut off the Puebla!";
 			link.l1.go = "florian_19";
 			link.l2 = "Wait a little, Monsieur Choquet. The fact is that I'm still ... Let's just say, not particularly accustomed to naval battles. And you are the captain of a frigate, you obviously have more than one naval battle behind you. If it's not difficult for you, you could... How should I put it...";
@@ -422,7 +426,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "florian_18":
-			dialog.text = "The Alacantara is ready to set sail, but the galleon's captain is waiting for the barque 'Puebla' to arrive from Cartagena loaded with ammunition. Apparently the Alacantara doesn't have enough gunpowder, so the Spanish are not ready to set sail yet. But the captain's patience has its limits and if Puebla won't come in three days then the galleon will leave Portobello without her\nThe Alacantara is low on gunpowder, I can let her sail into the open sea and then force her to engage in a protracted naval fight, in which their powder will run off before ours. Your objective is to intercept the Puebla and to destroy her. Sink her or take her a prize, I don't care. Just prevent that resupply barque from getting here!\nIf you succeed than go to Guadeloupe and see Gerard LeCroix, I believe that you already know him, don't you? He will pay you the coin you deserve.";
+			dialog.text = "The Alacantara is ready to set sail, but the galleon's captain is waiting for the barkentine 'Puebla' to arrive from Cartagena loaded with ammunition. Apparently the Alacantara doesn't have enough gunpowder, so the Spanish are not ready to set sail yet. But the captain's patience has its limits and if Puebla won't come in three days then the galleon will leave Portobello without her\nThe Alacantara is low on gunpowder, I can let her sail into the open sea and then force her to engage in a protracted naval fight, in which their powder will run off before ours. Your objective is to intercept the Puebla and to destroy her. Sink her or take her a prize, I don't care. Just prevent that resupply barkentine from getting here!\nIf you succeed than go to Guadeloupe and see Gerard LeCroix, I believe that you already know him, don't you? He will pay you the coin you deserve.";
 			link.l1 = "Deal! I'll be on my way to cut off the Puebla!";
 			link.l1.go = "florian_19";
 			link.l2 = "Wait a little, Monsieur Choquet. The fact is that I'm still ... Let's just say, not particularly accustomed to naval battles. And you are the captain of a frigate, you obviously have more than one naval battle behind you. If it's not difficult for you, you could... How should I put it...";
@@ -444,7 +448,7 @@ void ProcessDialogEvent()
 		// belamour legendary edition дополнительное обучение -->
 		case "florian_guide_01":
 			dialog.text = "You would like me to you a lesson on the tactics of naval combat? With pleasure, captain! Especially since it's in my own interest: I want to be sure that you will successfully intercept the 'Puebla'.";
-			link.l1 = "No, I didn't mean it. Fine, forget it: I'm sure that I won't have any problems intercepting a barque.";
+			link.l1 = "No, I didn't mean it. Fine, forget it: I'm sure that I won't have any problems intercepting a barkentine.";
 			link.l1.go = "florian_19";
 			link.l2 = "Yes, that's exactly what I meant. I am sure that new knowledge will not hurt me.";
 			link.l2.go = "florian_guide_02";

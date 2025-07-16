@@ -81,7 +81,7 @@ void ProcessDialogEvent()
 					DeleteAttribute(npchar, "talker"); //снимаем говорилку
 					break;
 				}
-				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)//дворянин-пассажир
+				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && or(IsUniversalShipType(pchar), IsMerchantShipType(pchar)))//дворянин-пассажир
 				{
 					dialog.text = "Greetings, "+GetAddress_Form(NPChar)+". I see that you are a captain of a solid ship. I want to ask you to do something. You can take it or leave it.";
 					link.l1 = "I am listening, "+GetAddress_FormToNPC(NPChar)+". What do you mean?";
@@ -108,7 +108,7 @@ void ProcessDialogEvent()
 					npchar.quest.meeting = "1";
 					break;
 				}
-				if (CheckAttribute(npchar, "quest.slaves") && !CheckAttribute(Colonies[FindColony(npchar.city)], "questslaves"))//привезти рабов
+				if (CheckAttribute(npchar, "quest.slaves") && !CheckAttribute(&Colonies[FindColony(npchar.city)], "questslaves"))//привезти рабов
 				{
 					dialog.text = "Good day to you, captain! I am glad to see you because you look like a man who is able to solve problems.";
 					link.l1 = "Depends on the problem. I specialize in solving them with violence, is that what you're looking for, "+GetAddress_FormToNPC(NPChar)+"?";
@@ -124,7 +124,7 @@ void ProcessDialogEvent()
 				npchar.quest.meeting = "1";
 				
 				//==> прибыла инспекция на Святом Милосердии
-				if (pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
+				if (CheckAttribute(pchar, "questTemp.SantaMisericordia.ColonyZapret") && pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
 				{
 					dialog.Text = LinkRandPhrase(LinkRandPhrase("The whole city is on edge - don Fernando de Alamida, the royal inspector, has arrived. You know, I've seen a lot here, but this... It's not grief that changes people, but how they deal with it. They say he became a different man after his father's death. Now you won't find a more incorruptible and... merciless servant of the Crown in the entire Archipelago.", "Just look at the 'Holy Mercy'! They say the king himself ordered it built according to special designs. And notice - not a single scratch. As if the Virgin Mary herself protects it. Though I've heard rumors... maybe it's not the Virgin at all.", "You know how many times they've tried to kill don Fernando? Twelve attacks in open waters - and that's just in the last year! Well, with such a loyal and trained crew, and under the Lord's protection - he'll survive the thirteenth too!"), LinkRandPhrase("Have you heard? Don Fernando de Alamida has arrived in our city, and they say he's somewhere in the streets right now. Would love to see him with my own eyes...", "A complicated man, this don Fernando. Some say he's a savior, cleansing the Motherland of filth. Others whisper that something broke in him after his father's death and soon we'll all be weeping. But I'll tell you this: don't fear him. Fear those who made him what he is.", "Such a handsome man, this don Fernando! But you know what's strange? It's like he doesn't notice anyone. All duty and service. I heard there was a girl... but after meeting with some priest, he completely rejected worldly pleasures. As if he took a vow."), RandPhraseSimple(RandPhraseSimple("Damn inspector! While he's here - the city's like dead. No trade, no fun. Even breathing, it seems, must be quieter. And you know what's most frightening? It's the same in every port. Like clockwork. His Royal Majesty couldn't have deliberately invented this torture for all of us!", "Don Fernando visited the orphanage again. Donates generously, prays for hours. Such a worthy man should be held up as an example to those cursed embezzlers!"), RandPhraseSimple("Ha! 'Saint' Fernando closed all the brothels again. Well, never mind, he'll sail away soon and they'll open right back up.", "The insp... inspector has arrived, that's what! Don Fernando de Almeyda, or, what's his name, Alamida! So important that the governor himself tiptoes around him. They say he looks into your eyes and sees all your sins right away. Terrifying!")));
 					link.l1 = "...";
@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 				}
 				//<== прибыла инспекция на Святом Милосердии
 				//==> Леди Бет в порту города
-				if (pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
+				if (CheckAttribute(pchar, "questTemp.LadyBeth.CaptainInColony") && pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
 				{
 					dialog.Text = findLedyBethRumour(npchar);
 					link.l1 = "...";
@@ -166,7 +166,7 @@ void ProcessDialogEvent()
 
 //--------------------------------------------дворянин-пассажир---------------------------------------------------
 		case "passenger":
-			if (drand(19) > 9) SetPassengerParameter("Noblepassenger", false);
+			if (hrand(19) > 9) SetPassengerParameter("Noblepassenger", false);
 			else SetPassengerParameter("Noblepassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Noblepassenger.Enemycity"))
 			{
@@ -287,7 +287,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_1":
-			iTemp = drand(4)+1;
+			iTemp = hrand(4)+1;
 			pchar.GenQuest.Nobledonation.Money = iTemp*1000+rand(iTemp)*150;
 			dialog.text = "The sum is quite small, it's "+FindRussianMoneyString(sti(pchar.GenQuest.Nobledonation.Money))+". So what, can you help me?";
 			if (sti(pchar.money) >= sti(pchar.GenQuest.Nobledonation.Money))
@@ -359,10 +359,10 @@ void ProcessDialogEvent()
 			pchar.GenQuest.Noblelombard.Name = GetFullName(npchar);
 			pchar.GenQuest.Noblelombard.id = npchar.id;
 			pchar.GenQuest.Noblelombard.City = npchar.city;
-			pchar.GenQuest.Noblelombard.Money = 20000+drand(60)*500;
+			pchar.GenQuest.Noblelombard.Money = 20000+hrand(60)*500;
 			pchar.GenQuest.Noblelombard.Percent = makeint(sti(pchar.GenQuest.Noblelombard.Money)*0.3);
 			pchar.GenQuest.Noblelombard.Summ = sti(pchar.GenQuest.Noblelombard.Money)+sti(pchar.GenQuest.Noblelombard.Percent);
-			pchar.GenQuest.Noblelombard.Chance = drand(9);
+			pchar.GenQuest.Noblelombard.Chance = hrand(9);
 			chrDisableReloadToLocation = true;//закрыть локацию
 			LAi_SetActorType(npchar);
 			LAi_RemoveLoginTime(npchar);
@@ -447,8 +447,8 @@ void ProcessDialogEvent()
 
 //------------------------------------------привезти рабов под заказ--------------------------------------------
 		case "slaves":
-			npchar.quest.slaves.price = 3+drand(1);//цена на рабов в дублонах
-			npchar.quest.slaves.qty = 50+drand(5)*10;//количество
+			npchar.quest.slaves.price = 3+hrand(1);//цена на рабов в дублонах
+			npchar.quest.slaves.qty = 50+hrand(5)*10;//количество
 			npchar.quest.slaves.money = sti(npchar.quest.slaves.qty)*sti(npchar.quest.slaves.price);
 			dialog.text = "I own a "+LinkRandPhrase("factory","mine","plantation")+" and I always have a need for fresh slaves. The climate really does them in. Right now I need "+sti(npchar.quest.slaves.qty)+" heads. I am willing to order a batch of them. I will pay gold for each head, "+sti(npchar.quest.slaves.price)+" doubloons\nNo rush, I won't limit you in time if you get what I need. Well, within reason of course, don't prolong it for more than a half a year. So what do you say? Deal?";
 			link.l1 = "Deal! Slaving is dirty business, but it is worth the risk.";
@@ -592,7 +592,7 @@ void ProcessDialogEvent()
 string DonationText()
 {
 	string sText;
-	switch (drand(5))
+	switch (hrand(5))
 	{
 		case 0: sText = "I've lost all my money in gambling yesterday and I don't have enough sum to wipe away the debt. Can you help me?" break;
 		case 1: sText = "I had a nice time yesterday with a... certain lady of the evening, and now she is trying to blackmail me. I need to pay her first and then I will deal with her... Can you help me with some money?" break;
@@ -606,7 +606,7 @@ string DonationText()
 
 void LombardText()
 {
-	switch (drand(5))
+	switch (hrand(5))
 	{
 		case 0:
 			pchar.GenQuest.Noblelombard.Item = "my mother's diamond pendant made by a jeweler from Madrid";

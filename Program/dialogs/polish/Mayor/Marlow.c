@@ -36,7 +36,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-            dialog.text = NPCStringReactionRepeat("Masz do mnie jakiś interes? Jeśli nie, to wynoś się stąd!","Chyba wyraziłem się jasno.","Chociaż wyraziłem się jasno, dalej mnie wkurzasz!","Racja, zaczynam mieć dość tej nieuprzejmości.","powtórz",3,npchar,Dialog.CurrentNode);
+            dialog.text = NPCStringReactionRepeat("Masz do mnie jakiś interes? Jeśli nie, to wynoś się stąd!","Chyba wyraziłem się jasno.","Chociaż wyraziłem się jasno, dalej mnie wkurzasz!","Racja, zaczynam mieć dość tej nieuprzejmości.","repeat",3,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Już odchodzę.","Oczywiście, Pastorze.","Przepraszam, Pastorze.","Ojeju...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
@@ -536,7 +536,7 @@ void ProcessDialogEvent()
 		case "Marginpassenger_offer":
 			pchar.GenQuest.Marginpassenger.Goods = GOOD_EBONY + rand(makeint(GOOD_MAHOGANY - GOOD_EBONY));
 			pchar.GenQuest.Marginpassenger.GoodsQty = 200+rand(10)*10;
-			switch (drand(1))
+			switch (hrand(1))
 			{
 				case 0: //бухта на южном мейне
 					SelectSouthshore();
@@ -677,7 +677,7 @@ void SelectSouthshore()
 
 void SelectSouthcity()
 {
-	switch (drand(2))
+	switch (hrand(2))
 	{
 		case 0: 
 			pchar.GenQuest.Marginpassenger.Southcity = "Maracaibo";

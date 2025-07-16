@@ -83,13 +83,13 @@ void ProcessDialogEvent()
 		if (pchar.questTemp.ReasonToFast == "speakSuccess_chain_A")
 		{
 			// карты не было
-			dialog.text = "¡Capitán! ¡No os preocupéis así! Estaba claro que no había manera de huir en paz, así que hemos decidido visitar al banquero local para revisar sus cofres. Aquí está vuestra parte - " + sti(pchar.questTemp.ReasonToFast.p9) + " pesos...";
+			dialog.text = "¡Capitán! ¡No os preocupéis así! Estaba claro que no había manera de huir en paz, así que hemos decidido visitar al banquero para revisar sus cofres. Aquí está vuestra parte, " + sti(pchar.questTemp.ReasonToFast.p9) + " pesos...";
 		}
 		if (pchar.questTemp.ReasonToFast == "speakSuccess_chain_B")
 		{
 			// карту отобрали
 			GiveItem2Character(pchar, pchar.questTemp.ReasonToFast.p6);
-			dialog.text = "¡Capitán! ¡No se preocupe así! Estaba claro que no había manera de huir en paz, así que hemos decidido visitar al banquero local y revisar sus cofres. También había una buena espada en la caja de empeño. Aquí está su parte - " + sti(pchar.questTemp.ReasonToFast.p9) + " pesos y una espada...";
+			dialog.text = "¡Capitán! ¡No se preocupe así! Estaba claro que no había manera de huir en paz, así que hemos decidido visitar al banquero y revisar sus cofres. También había una buena espada en la caja de empeño. Aquí está su parte, " + sti(pchar.questTemp.ReasonToFast.p9) + " pesos y una espada...";
 		}
 		link.l1 = "¡Bien hecho, muchachos! ¡Bien hecho! Estoy orgulloso de vosotros.";
 		link.l1.go = "On_MyShip_Deck_End";
@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "CapComission_OnShipDeck2":
-		dialog.text = " No fue culpa nuestra, capitán. Se lanzó por la letrina al mar... Intentamos dispararle, pero estaba demasiado oscuro allí...";
+		dialog.text = "No fue culpa nuestra, capitán. Se lanzó por la letrina al mar... Intentamos dispararle, pero estaba demasiado oscuro allí...";
 		link.l1 = "¡Maldita sea! ¡Realmente se te ha ido de las manos! ¡Todos seréis desembarcados y enviados a trabajar con la caña de azúcar! ¡Perder a un pez gordo tan valioso! ¡Increíble!";
 		link.l1.go = "CapComission_OnShipDeck3";
 		break;
@@ -147,7 +147,7 @@ void ProcessDialogEvent()
 
 	// разговор с боцманом по ситуациям в трюме
 	case "Hold_GenQuest_OnShipDeck":
-		dialog.text = "Capitán, perdónanos, fue nuestra culpa - el prisionero se ha escapado.";
+		dialog.text = "Capitán, perdónanos, por nuestra culpa el prisionero se ha escapado.";
 		link.l1 = "¿Qué prisionero? ¿Quién se ha escapado?";
 		link.l1.go = "Hold_GenQuest_OnShipDeck1";
 		break;

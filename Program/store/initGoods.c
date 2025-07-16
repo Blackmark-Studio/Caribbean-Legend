@@ -9,8 +9,8 @@ void InitGoods()
 	Goods[GOOD_BALLS].Units					= 20;
 	Goods[GOOD_BALLS].SpeedV0				= 1.0;
 	Goods[GOOD_BALLS].DamageHull			= 8.0;
-	Goods[GOOD_BALLS].DamageRig				= 0.5;
-	Goods[GOOD_BALLS].DamageCrew			= 0.2;
+	Goods[GOOD_BALLS].DamageRig				= 0.8;
+	Goods[GOOD_BALLS].DamageCrew			= 0.3;
 	Goods[GOOD_BALLS].AfraidWater 			= 0;    // рудимент от к3
 	Goods[GOOD_BALLS].DontDrop				= 1;	
 	Goods[GOOD_BALLS].type					= T_TYPE_AMMUNITION;
@@ -24,7 +24,7 @@ void InitGoods()
 	Goods[GOOD_GRAPES].Weight				= 1;
 	Goods[GOOD_GRAPES].Units				= 20;
 	Goods[GOOD_GRAPES].SpeedV0				= 0.6; // boal
-	Goods[GOOD_GRAPES].DamageHull			= 1.0;
+	Goods[GOOD_GRAPES].DamageHull			= 1.3;
 	Goods[GOOD_GRAPES].DamageRig			= 2.0;
 	Goods[GOOD_GRAPES].DamageCrew			= 1.5;
 	Goods[GOOD_GRAPES].AfraidWater			= 0;
@@ -40,9 +40,9 @@ void InitGoods()
 	Goods[GOOD_KNIPPELS].Weight				= 2;
 	Goods[GOOD_KNIPPELS].Units				= 20;
 	Goods[GOOD_KNIPPELS].SpeedV0			= 0.9;
-	Goods[GOOD_KNIPPELS].DamageHull 		= 1.5;
+	Goods[GOOD_KNIPPELS].DamageHull 		= 1.8;
 	Goods[GOOD_KNIPPELS].DamageRig			= 9.0;
-	Goods[GOOD_KNIPPELS].DamageCrew 		= 0.3;
+	Goods[GOOD_KNIPPELS].DamageCrew 		= 0.4;
 	Goods[GOOD_KNIPPELS].AfraidWater 		= 0;
 	Goods[GOOD_KNIPPELS].DontDrop			= 1;	
 	Goods[GOOD_KNIPPELS].type				= T_TYPE_AMMUNITION;
@@ -58,7 +58,7 @@ void InitGoods()
 	Goods[GOOD_BOMBS].SpeedV0				= 0.8;
 	Goods[GOOD_BOMBS].DamageHull			= 15.0;
 	Goods[GOOD_BOMBS].DamageRig				= 1.0;
-	Goods[GOOD_BOMBS].DamageCrew			= 0.5;
+	Goods[GOOD_BOMBS].DamageCrew			= 0.6;
 	Goods[GOOD_BOMBS].AfraidWater 			= 0;
 	Goods[GOOD_BOMBS].DontDrop				= 1;	
 	Goods[GOOD_BOMBS].type					= T_TYPE_AMMUNITION;
@@ -481,6 +481,22 @@ void InitGoods()
 	Goods[GOOD_CANNON_6].MediumNorm			= 1.0;
 	Goods[GOOD_CANNON_6].SmallNorm			= 1.0;
 	
+	Goods[GOOD_CANNON_8].Name				= "Cannon_8";
+	Goods[GOOD_CANNON_8].CannonIdx			= CANNON_TYPE_CANNON_LBS8;
+	Goods[GOOD_CANNON_8].Cost				= Cannon[CANNON_TYPE_CANNON_LBS8].Cost;
+	Goods[GOOD_CANNON_8].Weight		    	= Cannon[CANNON_TYPE_CANNON_LBS8].Weight;
+	Goods[GOOD_CANNON_8].FireRange	    	= Cannon[CANNON_TYPE_CANNON_LBS8].FireRange;
+	Goods[GOOD_CANNON_8].DamageMultiply		= Cannon[CANNON_TYPE_CANNON_LBS8].DamageMultiply;
+	Goods[GOOD_CANNON_8].ReloadTime			= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS8]));
+	Goods[GOOD_CANNON_8].Units				= 1;
+	Goods[GOOD_CANNON_8].AfraidWater		= 0;
+	Goods[GOOD_CANNON_8].type				= T_TYPE_CANNONS;
+	Goods[GOOD_CANNON_8].trade_type			= T_TYPE_CANNONS;
+	Goods[GOOD_CANNON_8].NotSale			= 0;
+	Goods[GOOD_CANNON_8].Norm           	= 25; 
+	Goods[GOOD_CANNON_8].MediumNorm			= 1.0;
+	Goods[GOOD_CANNON_8].SmallNorm			= 1.0;
+	
 	Goods[GOOD_CANNON_12].Name				= "Cannon_12";
 	Goods[GOOD_CANNON_12].CannonIdx			= CANNON_TYPE_CANNON_LBS12;
 	Goods[GOOD_CANNON_12].Cost				= Cannon[CANNON_TYPE_CANNON_LBS12].Cost;
@@ -512,6 +528,22 @@ void InitGoods()
 	Goods[GOOD_CANNON_16].Norm          	= 20; 
 	Goods[GOOD_CANNON_16].MediumNorm		= 1.0;
 	Goods[GOOD_CANNON_16].SmallNorm			= 1.0;
+	
+	Goods[GOOD_CANNON_18].Name				= "Cannon_18";
+	Goods[GOOD_CANNON_18].CannonIdx			= CANNON_TYPE_CANNON_LBS18;
+	Goods[GOOD_CANNON_18].Cost				= Cannon[CANNON_TYPE_CANNON_LBS18].Cost;
+	Goods[GOOD_CANNON_18].Weight			= Cannon[CANNON_TYPE_CANNON_LBS18].Weight;
+	Goods[GOOD_CANNON_18].Units				= 1;
+	Goods[GOOD_CANNON_18].AfraidWater		= 0;
+	Goods[GOOD_CANNON_18].type				= T_TYPE_CANNONS;
+	Goods[GOOD_CANNON_18].trade_type		= T_TYPE_CANNONS;
+	Goods[GOOD_CANNON_18].NotSale			= 0;
+	Goods[GOOD_CANNON_18].FireRange		    = Cannon[CANNON_TYPE_CANNON_LBS18].FireRange;
+	Goods[GOOD_CANNON_18].DamageMultiply	= Cannon[CANNON_TYPE_CANNON_LBS18].DamageMultiply;
+	Goods[GOOD_CANNON_18].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS18]));
+	Goods[GOOD_CANNON_18].Norm          	= 20; 
+	Goods[GOOD_CANNON_18].MediumNorm		= 1.0;
+	Goods[GOOD_CANNON_18].SmallNorm			= 1.0;
 	
 	Goods[GOOD_CANNON_20].Name				= "Cannon_20";
 	Goods[GOOD_CANNON_20].CannonIdx			= CANNON_TYPE_CANNON_LBS20;

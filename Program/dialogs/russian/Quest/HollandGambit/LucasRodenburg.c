@@ -586,7 +586,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Fleetwood_complete_3":
-			dialog.text = "Друг мой, вы великолепный солдат, но в вопросах политики доверьтесь мне и моему опыту... Вы помните, что я вам сказал в нашей первой беседе про Флитвуда? Я смешаю имя этого выскочки с грязью навечно, и эти высокомерные шуты из Порт-Ройаля будут вынуждены не только проглотить горькую пилюлю, но ещё и подавиться своими же недавно сказанными словами\nМы представим Ричарда Флитвуда как капитана 'корабля-призрака', оборотня, который стравливал между собой две державы, уничтожая английские и голландские торговые корабли, беззастенчиво наживаясь на этом. Я уже подготовил соответствующие доказательства, и 'Мираж' послужит главной уликой.";
+			dialog.text = "Друг мой, вы великолепный солдат, но в вопросах политики доверьтесь мне и моему опыту... Вы помните, что я вам сказал в нашей первой беседе про Флитвуда? Я смешаю имя этого выскочки с грязью навечно, и эти высокомерные шуты из Порт-Ройяла будут вынуждены не только проглотить горькую пилюлю, но ещё и подавиться своими же недавно сказанными словами\nМы представим Ричарда Флитвуда как капитана 'корабля-призрака', оборотня, который стравливал между собой две державы, уничтожая английские и голландские торговые корабли, беззастенчиво наживаясь на этом. Я уже подготовил соответствующие доказательства, и 'Мираж' послужит главной уликой.";
 			link.l1 = "И вы ради этого плана пожертвуете великолепным кораблём?";
 			link.l1.go = "Fleetwood_complete_4";
 			AddDialogExitQuestFunction("Lucas_ExangeShip");
@@ -748,14 +748,6 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			GiveItem2Character(pchar, pchar.questTemp.HWIC.Holl.LucasItem);
 			AddMoneyToCharacter(pchar, 50000);
-			pchar.quest.Merdok_prepare.win_condition.l1 = "Timer";
-			pchar.quest.Merdok_prepare.win_condition.l1.date.hour = sti(GetTime());
-			pchar.quest.Merdok_prepare.win_condition.l1.date.day = GetAddingDataDay(0, 0, 10);
-			pchar.quest.Merdok_prepare.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 10);
-			pchar.quest.Merdok_prepare.win_condition.l1.date.year = GetAddingDataYear(0, 0, 10);
-			pchar.quest.Merdok_prepare.win_condition.l2 = "location";
-			pchar.quest.Merdok_prepare.win_condition.l2.location = "Villemstad_town";
-			pchar.quest.Merdok_prepare.function = "GiveTaskMerdok";
 			pchar.questTemp.HWIC.Holl = "Merdok_wait";
 			AddQuestRecord("Holl_Gambit", "1-34");
 			DelMapQuestMarkCity("Villemstad");

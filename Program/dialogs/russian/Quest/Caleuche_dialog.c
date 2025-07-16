@@ -1901,7 +1901,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			sld = ItemsFromID("SkullAztec");
 			sld.shown = "0";
-			sld.useLocation = "treasure_alcove";
+			sld.useLocation = "KhaelRoa_Treasure_Alcove";
 			sld.useLocator = "button01";
 			LAi_group_SetRelation(LAI_GROUP_MONSTERS, LAI_GROUP_PLAYER, LAI_GROUP_NEITRAL);
 		break;

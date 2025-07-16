@@ -49,7 +49,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		if (CheckAttribute(npchar, "quest.sextant") && CheckAttribute(pchar, "questTemp.AlexClock") && pchar.location == "Pirates_shipyard" && !CheckAttribute(npchar, "quest.clock"))
 		{
 			dialog.text = "Aha, capitán " + GetFullName(pchar) + "¡Qué bueno que has pasado por aquí!";
-			Link.l1 = "  Parece que me necesitas para algo, ¿verdad? Normalmente no eres tan cortés.";
+			Link.l1 = "Parece que me necesitas para algo, ¿verdad? Normalmente no eres tan cortés.";
 			Link.l1.go = "clock_begin";
 			break;
 		}
@@ -61,7 +61,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			break;
 		}
 		//<-- хронометр Алекса
-		dialog.text = " Oh, tú de nuevo, siempre hablando de tus problemas... (tosiendo)";
+		dialog.text = "Oh, tú de nuevo, siempre hablando de tus problemas... (tosiendo)";
 		link.l1 = pcharrepphrase("Tienes razón, soy yo de nuevo. Pero hablemos de negocios mientras todavía no le hayas entregado tu alma a Dios.", "Tu memoria te sirve bien, y ahora, si me permites, pasemos a algunas preguntas más específicas.");
 		link.l1.go = "node_3";
 		link.l2 = pcharrepphrase("Me he cansado de tus murmuraciones. Adiós.", "Es hora de que me vaya. Perdón por molestarte.");
@@ -101,7 +101,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "shipyard_dlg":
-		if ((shipBaseHP - shipCurHP > 0) && (shipClass < 6))
+		if ((shipBaseHP - shipCurHP > 0) && (shipClass < 7))
 		{
 			dialog.Text = "Puedo ofrecerte una reparación capital del marco de tu casco. La gente aquí no tiene ni idea de cómo construir barcos decentes, todos se deshacen con un solo disparo...";
 			Link.l1 = "¡Genial! Resulta que tengo un barco que necesita reparación. ¿Quizás puedas echar un vistazo a ver qué puedes hacer?";
@@ -148,7 +148,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "ship_repair_again":
-		if ((shipBaseHP - shipCurHP > 0) && (shipClass < 6))
+		if ((shipBaseHP - shipCurHP > 0) && (shipClass < 7))
 		{
 			dialog.Text = RandPhraseSimple("Ah... tú otra vez. ¿Quieres reparar tu navío de nuevo?", RandPhraseSimple("Saludos, a un capitán famoso. ¿Qué, necesitas otra reparación capital?", "Caray... Ni un minuto de paz y tranquilidad. No dejas que un viejo se concentre... ¿Otra reparación?"));
 			Link.l1 = "Sí. Tienes razón. ¿Echaremos un vistazo a lo que podemos hacer?";
@@ -221,12 +221,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				}
 				if (makefloat(shipCurHP) / makefloat(shipBaseHP) > 0.95)
 				{
-					dialog.Text = "¿Qué es todo este hocus pocus... Tu barco parece como nuevo... El armazón prácticamente brilla intensamente. No hay nada que reparar aquí.";
+					dialog.Text = "¿Qué es todo este hocus pocus...? Tu barco parece como nuevo... El armazón prácticamente brilla intensamente. No hay nada que reparar aquí.";
 					Link.l1 = "Bien... Bueno, vendré más tarde...";
 					Link.l1.go = "ship_tunning_not_now";
 					break;
 				}
-				s1 = "Bien, de acuerdo... ¿Qué tenemos aquí... Aha, " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + ".";
+				s1 = "Bien, de acuerdo... ¿Qué tenemos aquí...? Ajá, " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + ".";
 				if (sti(RealShips[sti(Pchar.Ship.Type)].Stolen) == true && !CheckAttribute(&RealShips[sti(Pchar.Ship.Type)], "Tuning"))
 				{
 					s1 = s1 + " ¡Bah! Este barco ha estado en demasiadas manos. Sí y hay un montón de rasguños. ¿Tiene patente de corsario? Sólo bromeaba... de todos modos, volviendo al asunto.";
@@ -248,7 +248,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		Matherial4 = GetMaterialQtyRepair(pchar, 4);
 
 		s1 = "Veamos lo que podemos hacer. En este momento, la estructura de la nave es " + shipCurHP + ". . El valor más alto posible es " + shipBaseHP;
-		s1 = s1 + ". Para hacer una reparación completa, necesito de sándalo: - " + Matherial1 + ", resina - " + Matherial2 + ", seda de barco - " + Matherial3 + " cuerdas - " + Matherial4 + ".";
+		s1 = s1 + ". Para hacer una reparación completa, necesito de sándalo:, " + Matherial1 + ", resina, " + Matherial2 + ", seda de barco, " + Matherial3 + " cuerdas, " + Matherial4 + ".";
 		s1 = s1 + " Por este trabajo cobraré: " + HPPrice + " doblones por el trabajo... Hace tiempo que mis nietos me llaman para que vuelva a Europa. No quiero volver con las manos vacías... Así que, eso será todo. Y sí, el dinero por adelantado.";
 		dialog.Text = s1;
 		Link.l1 = "Suena bien. Aceptaré las condiciones. Todo será entregado según lo acordado.";
@@ -298,12 +298,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 			ReOpenQuestHeader("ShipRepair");
 			AddQuestRecord("ShipRepair", "t1");
-			AddQuestUserData("ShipRepair", "sText", "Para las medidas de reparación de capital de  " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + " el capitán del barco necesita de sándalo - " + NPChar.Repair.Matherial1 + ", resina - " + NPChar.Repair.Matherial2 + ", seda de barco - " + NPChar.Repair.Matherial3 + " cuerdas - " + NPChar.Repair.Matherial4 + ". Como depósito entregamos " + NPChar.Repair.Money + " doblones... Dice que está a punto de despegar hacia Europa. Creo que ese viejo diablo miente.");
+			AddQuestUserData("ShipRepair", "sText", "Para las medidas de reparación de capital de  " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + " el capitán del barco necesita de sándalo, " + NPChar.Repair.Matherial1 + ", resina, " + NPChar.Repair.Matherial2 + ", seda de barco, " + NPChar.Repair.Matherial3 + " cuerdas, " + NPChar.Repair.Matherial4 + ". Como depósito entregamos " + NPChar.Repair.Money + " doblones... Dice que está a punto de despegar hacia Europa. Creo que ese viejo diablo miente.");
 		}
 		else
 		{
 			NextDiag.TempNode = "ship_tunning_not_now";
-			dialog.text = RandPhraseSimple("No veo el depósito...", "¿Qué es este hocus pocus...");
+			dialog.text = RandPhraseSimple("No veo el depósito...", "¿Qué es este hocus pocus...?");
 			link.l1 = "Regresaré más tarde.";
 			link.l1.go = "Exit";
 		}
@@ -335,7 +335,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		ReOpenQuestHeader("ShipRepair");
 		AddQuestRecord("ShipRepair", "t1");
-		AddQuestUserData("ShipRepair", "sText", "Para las medidas de reparación del " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + " el capitán del barco necesita: sándalo - " + NPChar.Repair.Matherial1 + ", resina - " + NPChar.Repair.Matherial2 + ", seda de barco - " + NPChar.Repair.Matherial3 + " cuerdas - " + NPChar.Repair.Matherial4 + ". Como depósito entregamos " + NPChar.Repair.Money + " doblones... Dice que está a punto de despegar hacia Europa. Creo que ese viejo diablo miente.");
+		AddQuestUserData("ShipRepair", "sText", "Para las medidas de reparación del " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + " el capitán del barco necesita: sándalo, " + NPChar.Repair.Matherial1 + ", resina, " + NPChar.Repair.Matherial2 + ", seda de barco, " + NPChar.Repair.Matherial3 + " cuerdas, " + NPChar.Repair.Matherial4 + ". Como depósito entregamos " + NPChar.Repair.Money + " doblones... Dice que está a punto de despegar hacia Europa. Creo que ese viejo diablo miente.");
 
 		break;
 
@@ -379,12 +379,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		else
 		{
 			NextDiag.TempNode = "ship_repair_HP_again";
-			dialog.Text = "Ahora lo que aún te queda por traerme es: " + sti(NPChar.Repair.Matherial1) + " de madera de hierro, " + sti(NPChar.Repair.Matherial2) + " resina, " + NPChar.Repair.Matherial3 + " de seda de barco, " + NPChar.Repair.Matherial4 + "cuerdas.";
+			dialog.Text = "Ahora lo que aún te queda por traerme es: " + sti(NPChar.Repair.Matherial1) + " de sándalo, " + sti(NPChar.Repair.Matherial2) + " resina, " + NPChar.Repair.Matherial3 + " de seda de barco, " + NPChar.Repair.Matherial4 + "cuerdas.";
 			link.l1 = "Está bien.";
 			link.l1.go = "Exit";
 
 			AddQuestRecord("ShipRepair", "t1");
-			AddQuestUserData("ShipRepair", "sText", "Materials left: ironwood - " + NPChar.Repair.Matherial1 + ", resin - " + NPChar.Repair.Matherial2 + ", ship silk - " + NPChar.Repair.Matherial3 + " ropes - " + NPChar.Repair.Matherial4 + ".");
+			AddQuestUserData("ShipRepair", "sText", "Materials left: ironwood, " + NPChar.Repair.Matherial1 + ", resin, " + NPChar.Repair.Matherial2 + ", ship silk, " + NPChar.Repair.Matherial3 + " ropes, " + NPChar.Repair.Matherial4 + ".");
 		}
 		break;
 
@@ -511,7 +511,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		sTotalTemp = "Steven Dodson";
 		if (pchar.questTemp.Alex.Clock == "terrax")
 			sTotalTemp = "Marcus Tyrex";
-		dialog.text = "Nuestro nuevo líder de la Cofradía de la Costa, " + sTotalTemp + ", ha encargado un nuevo barco, una fragata. También puso tareas bastante difíciles: casco protegido, alta velocidad y buena maniobrabilidad, además de cañones del mayor calibre posible\nEntiendo que el barco de un almirante, perdón, líder de los hermanos, debe ser algo especial, pero eso significa que necesito materiales especiales para construirlo. Debes haber oído hablar de ellos. Madera de hierro, resina, seda de barco y cuerdas...";
+		dialog.text = "Nuestro nuevo líder de la Cofradía de la Costa, " + sTotalTemp + ", ha encargado un nuevo barco, una fragata. También puso tareas bastante difíciles: casco protegido, alta velocidad y buena maniobrabilidad, además de cañones del mayor calibre posible\nEntiendo que el barco de un almirante, perdón, líder de los hermanos, debe ser algo especial, pero eso significa que necesito materiales especiales para construirlo. Debes haber oído hablar de ellos. sándalo, resina, seda de barco y cuerdas...";
 		link.l1 = "Entonces cuéntale esto al líder de los Hermanos. ¿O temes que " + sTotalTemp + " ¿te cortará la cabeza por eso?";
 		link.l1.go = "clock_begin_2";
 		break;
@@ -526,7 +526,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		dialog.text = "Bueno, sí. Eres un buen amigo de nuestro líder." + sTotalTemp + " dice que te debe mucho y que exige todo tipo de respeto por ti... Así que pensé: ya que eres su amigo, ¿tal vez no estarías en contra de ayudarlo? Y al mismo tiempo: ¿te das cuenta de la incómoda posición en la que estoy? Todos los materiales serán pagados, " + sTotalTemp + "no es avaro con su oro.";
 		link.l1 = "Lo siento mucho, maestro, pero no estoy menos ocupado que " + sTotalTemp + ". Me temo que recolectar materiales puede llevar una eternidad. Así que, mejor pregunta a alguien más.";
 		link.l1.go = "clock_exit";
-		link.l2 = "Bueno, si " + sTotalTemp + " ordené un barco de ti - entonces, por supuesto, intentaré ayudar. Realmente somos amigos, y los amigos deben ayudarse mutuamente. ¿Cuántos materiales necesitas?";
+		link.l2 = "Bueno, si " + sTotalTemp + " ordené un barco de ti, entonces, por supuesto, intentaré ayudar. Realmente somos amigos, y los amigos deben ayudarse mutuamente. ¿Cuántos materiales necesitas?";
 		link.l2.go = "clock_begin_4";
 		break;
 
@@ -538,13 +538,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "clock_begin_4":
-		dialog.text = "Me faltan 100 unidades de madera de hierro, 150 contenedores de resina, 110 rollos de seda para barcos y 90 bobinas de cuerdas de cáñamo. ¿Qué piensas? ¿Podrías encontrarme todo eso en el transcurso de cuatro meses? No creo que tenga más tiempo.";
+		dialog.text = "Me faltan 100 unidades de sándalo, 150 contenedores de resina, 110 rollos de seda para barcos y 90 bobinas de cuerdas de cáñamo. ¿Qué piensas? ¿Podrías encontrarme todo eso en el transcurso de cuatro meses? No creo que tenga más tiempo.";
 		link.l1 = "Puedo al menos intentarlo. ¿Y en cuanto al pago?";
 		link.l1.go = "clock_begin_5";
 		break;
 
 	case "clock_begin_5":
-		dialog.text = "Aquí están mis tarifas: madera de hierro a 4000 pesos por pieza, resinas a 1400 pesos por contenedor, seda a 2500 pesos por rollo y cuerdas a 1500 pesos por bobina. Y si me traes todo eso, recibirás un regalo muy bonito de mi parte.";
+		dialog.text = "Aquí están mis tarifas: sándalo a 4000 pesos por pieza, resinas a 1400 pesos por contenedor, seda a 2500 pesos por rollo y cuerdas a 1500 pesos por bobina. Y si me traes todo eso, recibirás un regalo muy bonito de mi parte.";
 		link.l1 = "¿Qué es, me pregunto?";
 		link.l1.go = "clock_begin_6";
 		break;
@@ -579,7 +579,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		if (GetSquadronGoods(pchar, GOOD_SANDAL) > 0 && !CheckAttribute(npchar, "quest.sandal"))
 		{
 			iSan = GetSquadronGoods(pchar, GOOD_SANDAL);
-			link.l1 = "Madera de hierro, en la cantidad de " + FindRussianQtyString(iSan) + ".";
+			link.l1 = "Sándalo, en la cantidad de " + FindRussianQtyString(iSan) + ".";
 			link.l1.go = "sandal";
 		}
 		if (GetSquadronGoods(pchar, GOOD_OIL) > 0 && !CheckAttribute(npchar, "quest.oil"))
@@ -591,7 +591,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		if (GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0 && !CheckAttribute(npchar, "quest.shipsilk"))
 		{
 			iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
-			link.l3 = " Seda del barco, en la cantidad de " + FindRussianQtyString(iSil) + ".";
+			link.l3 = "Seda del barco, en la cantidad de " + FindRussianQtyString(iSil) + ".";
 			link.l3.go = "shipsilk";
 		}
 		if (GetSquadronGoods(pchar, GOOD_ROPES) > 0 && !CheckAttribute(npchar, "quest.ropes"))
@@ -628,7 +628,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		if (iTemp > 0) // ещё не все привез
 		{
 			iSum = 4000 * iSan;
-			dialog.text = "Está bien, de acuerdo. También voy a necesitar " + FindRussianQtyString(amount) + " de madera de hierro. Me has traído " + FindRussianQtyString(iSan) + ". . Entonces, lo que te queda por traerme es " + FindRussianQtyString(iTemp) + ". De acuerdo, a razón de 4000 pesos por pieza, tu recompensa asciende a " + FindRussianMoneyString(iSum) + " Por favor, tómalo.";
+			dialog.text = "Está bien, de acuerdo. También voy a necesitar " + FindRussianQtyString(amount) + " de sándalo. Me has traído " + FindRussianQtyString(iSan) + ". Entonces, lo que te queda por traerme es " + FindRussianQtyString(iTemp) + ". De acuerdo, a razón de 4000 pesos por pieza, tu recompensa asciende a " + FindRussianMoneyString(iSum) + ". Por favor, tómalo.";
 			link.l1 = "¡Gracias! Tendrás el resto pronto.";
 			link.l1.go = "clock_1";
 			RemoveCharacterGoods(pchar, GOOD_SANDAL, iSan);
@@ -640,7 +640,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		else
 		{
 			iSum = 4000 * amount;
-			dialog.text = "Está bien, de acuerdo. También voy a necesitar " + FindRussianQtyString(amount) + "  de madera de hierro. Me has traído " + FindRussianQtyString(iSan) + "Entonces, ¡nos hemos encargado de la madera de hierro ahora! Muy bien, a razón de 4000 pesos por pieza, tu recompensa totaliza en " + FindRussianMoneyString(iSum) + " Por favor, tómalo.";
+			dialog.text = "Está bien, de acuerdo. También voy a necesitar " + FindRussianQtyString(amount) + " de sándalo. Me has traído " + FindRussianQtyString(iSan) + ". Entonces, ¡nos hemos encargado del sándalo ahora! Muy bien, a razón de 4000 pesos por pieza, tu recompensa totaliza " + FindRussianMoneyString(iSum) + ". Por favor, tómalo.";
 			link.l1 = "¡Gracias!";
 			link.l1.go = "clock_1";
 			RemoveCharacterGoods(pchar, GOOD_SANDAL, amount);
@@ -742,7 +742,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "clock_2":
-		dialog.text = "Sí, sí... sobre mi asunto, por supuesto. M-m-mmm... Hmmm... ¿dónde estaba yo... ahhh...";
+		dialog.text = "Sí, sí... sobre mi asunto, por supuesto. M-m-mmm... Hmmm... ¿dónde estaba yo...? Ahhh...";
 		link.l1 = "¿Qué sucede, maestro? Pareces bastante preocupado. ¿Hay algo malo? ¿Algún tipo de problema?";
 		link.l1.go = "clock_3";
 		break;
@@ -816,7 +816,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		Log_Info("Has recibido un temporizador mecánico automático");
 		SetAlchemyRecipeKnown("sextant2");
 		PlaySound("interface\important_item.wav");
-		dialog.text = "Eres bienvenido. Ahora siempre sabrás con certeza qué hora es. No me preguntes de dónde lo saqué. No te lo diré.";
+		dialog.text = "De nada. Ahora siempre sabrás con certeza qué hora es. No me preguntes de dónde lo saqué. No te lo diré.";
 		link.l1 = "Todos tienen sus secretos, ¿no es cierto, maestro? Bien... guarda tus secretos y yo no me meteré en tus asuntos. ¡Gracias por el regalo!";
 		link.l1.go = "clock_complete_4";
 		break;
@@ -852,7 +852,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "tieyasal_1":
-		dialog.text = " Oh, lo siento, joven. No prestes mucha atención a lo que digo... Nuestro curioso Michel satisfizo su curiosidad y desapareció. Hace solo tres días que tuvimos una charla.";
+		dialog.text = "Oh, lo siento, joven. No prestes mucha atención a lo que digo... Nuestro curioso Michel satisfizo su curiosidad y desapareció. Hace solo tres días que tuvimos una charla.";
 		link.l1 = "¿Dónde está Miguel ahora mismo, si no te importa que pregunte?";
 		link.l1.go = "tieyasal_2";
 		break;
@@ -979,7 +979,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "FDM_cabin_do":
 		DialogExit();
-		SetLaunchFrameFormParam("Five days later..." + NewStr() + "Master Alexus has done his job", "", 0, 5);
+		SetLaunchFrameFormParam("Cinco días después..." + NewStr() + "El Maestro Alexus ha hecho su trabajo", "", 0, 5);
 		WaitDate("", 0, 0, 5, 0, 10); // крутим время
 		LaunchFrameForm();
 		RefreshLandTime();
@@ -1013,7 +1013,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "FDM_sails_done":
 		DialogExit();
-		SetLaunchFrameFormParam("Two days later..." + NewStr() + "Master Alexus has done his job", "", 0, 5);
+		SetLaunchFrameFormParam("Dos días después..." + NewStr() + "El Maestro Alexus ha hecho su trabajo", "", 0, 5);
 		WaitDate("", 0, 0, 2, 0, 10); // крутим время
 		LaunchFrameForm();
 		RefreshLandTime();
@@ -1033,7 +1033,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "FDM_hull_01":
-		dialog.text = "Está bien, vamos a calcular... Para una renovación completa del casco del barco, necesitaré 150 unidades de madera de hierro, 130 bobinas de cuerdas, 170 rollos de seda naval y 200 barriles de resina. Cobraré 250 mil pesos por todo esto. ¡Y no me mires así, la mayor parte de ese dinero se irá en trabajo de todos modos! Después de todo, no estamos reconstruyendo una tartana.";
+		dialog.text = "Está bien, vamos a calcular... Para una renovación completa del casco del barco, necesitaré 150 unidades de sándalo, 130 bobinas de cuerdas, 170 rollos de seda naval y 200 barriles de resina. Cobraré 250 mil pesos por todo esto. ¡Y no me mires así, la mayor parte de ese dinero se irá en trabajo de todos modos! Después de todo, no estamos reconstruyendo una tartana.";
 		link.l1 = "Creo que no. No estoy dispuesto a transportar una cantidad tan enorme de materiales junto con pagar un cuarto de millón por el trabajo. Supongo que seguiré navegando en él tal como está.";
 		link.l1.go = "FDM_hull_thinking";
 		link.l2 = "Eh, qué no haremos por nuestro barco...Está bien, es un trato.";
@@ -1073,7 +1073,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		if (GetSquadronGoods(pchar, GOOD_SANDAL) > 0 && sti(npchar.quest.FDMsandal) < 150)
 		{
 			iSan = GetSquadronGoods(pchar, GOOD_SANDAL);
-			link.l1 = "Madera de hierro en la cantidad de " + FindRussianQtyString(iSan) + ".";
+			link.l1 = "Sándalo en la cantidad de " + FindRussianQtyString(iSan) + ".";
 			link.l1.go = "FDM_sandal";
 		}
 		if (GetSquadronGoods(pchar, GOOD_OIL) > 0 && sti(npchar.quest.FDMoil) < 200)
@@ -1085,7 +1085,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		if (GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0 && sti(npchar.quest.FDMshipsilk) < 170)
 		{
 			iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
-			link.l3 = " Envío de seda en la cantidad de " + FindRussianQtyString(iSil) + ".";
+			link.l3 = "Envío de seda en la cantidad de " + FindRussianQtyString(iSil) + ".";
 			link.l3.go = "FDM_shipsilk";
 		}
 		if (GetSquadronGoods(pchar, GOOD_ROPES) > 0 && sti(npchar.quest.FDMropes) < 130)
@@ -1121,7 +1121,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		iTemp = amount - iSan;
 		if (iTemp > 0)
 		{
-			dialog.text = "Veamos... Requiero " + FindRussianQtyString(amount) + " de madera de hierro. Trajiste " + FindRussianQtyString(iSan) + ". de madera de hierro. Por lo tanto, todavía necesitas traerme " + FindRussianQtyString(iTemp) + ".";
+			dialog.text = "Veamos... Requiero " + FindRussianQtyString(amount) + " de sándalo. Trajiste " + FindRussianQtyString(iSan) + ". Por lo tanto, todavía necesitas traerme " + FindRussianQtyString(iTemp) + ".";
 			link.l1 = "¡Gracias! Te traeré el resto pronto.";
 			link.l1.go = "FDM_hull_checkmaterials_1";
 			RemoveCharacterGoods(pchar, GOOD_SANDAL, iSan);
@@ -1132,7 +1132,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		}
 		else
 		{
-			dialog.text = "Veamos... Todavía necesito " + FindRussianQtyString(amount) + " de madera de hierro. Me trajiste " + FindRussianQtyString(iSan) + "Por lo tanto, ¡hemos terminado con la madera de hierro!";
+			dialog.text = "Veamos... Todavía necesito " + FindRussianQtyString(amount) + " de sándalo. Me trajiste " + FindRussianQtyString(iSan) + ". Por lo tanto, ¡hemos terminado con el sándalo!";
 			link.l1 = "¡Gracias!";
 			link.l1.go = "FDM_hull_checkmaterials_1";
 			RemoveCharacterGoods(pchar, GOOD_SANDAL, amount);
@@ -1319,10 +1319,10 @@ int GetMaterialQtyRepair(ref _chr, int MaterialNum)
 		HPPrice = HPPrice * 2;
 	}
 
-	int Matherial1 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (6 - shipClass) / 2) + rand(modifier);
-	int Matherial2 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (6 - shipClass) / 2) + rand(modifier);
-	int Matherial3 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (6 - shipClass) / 2) + rand(modifier);
-	int Matherial4 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (6 - shipClass) / 2) + rand(modifier);
+	int Matherial1 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
+	int Matherial2 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
+	int Matherial3 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
+	int Matherial4 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
 
 	if (MaterialNum == 0)
 		return HPPrice;

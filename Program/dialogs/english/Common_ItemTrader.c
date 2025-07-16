@@ -101,6 +101,24 @@ void ProcessDialogEvent()
 			}
 			// <-- Цена чахотки
 			
+			//--> Украденное воспоминание
+			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+			{
+				link.l4 = "Good merchant, I seek something of exceptional quality. Not the common baubles that satisfy most, but a piece of genuine refinement—perhaps a pair of finely crafted earrings or an elegant pendant worthy of aristocratic taste. I require a gift that would please a lady of distinguished lineage.";
+				link.l4.go = "UV_Lavochniki_1";
+			}
+			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_2") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+			{
+				link.l4 = "I wonder if among your inventory you might possess anything of significant value? I seek a piece that would satisfy even the most particular noblewoman's taste—something distinctive and refined, far beyond what would appeal to ordinary citizens. Perhaps a pendant of uncommon artistry or a bracelet of sophisticated design?";
+				link.l4.go = "UV_Lavochniki_2";
+			}
+			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_3") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
+			{
+				link.l4 = "Tell me, good merchant, are you knowledgeable in matters of fine jewelry? I seek something extraordinary to present to a lady of quality. Let me be frank I have no interest in commonplace trinkets. What I require is a piece of genuine magnificence: perhaps a brooch adorned with precious stones or a ring of unparalleled craftsmanship.";
+				link.l4.go = "UV_Lavochniki_3";
+			}
+			//<-- Украденное воспоминание
+			
 			//Jason --> генератор Неудачливый вор
 			if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_town" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
 			{
@@ -430,7 +448,7 @@ void ProcessDialogEvent()
 		// Мангароса
 		case "mangarosa":
 			// тут работает везение
-			if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+drand(30)+drand(40))
+			if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+hrand(30)+hrand(40, "1"))
 			{
 				dialog.text = "Show it to me... Yes, that's an interesting plant. And a very, very rare one. It is called Manga Rosa. I don't know what it is used for, but there was an interesting fact relevant to it...";
 				link.l1 = "What do you mean?";
@@ -463,6 +481,48 @@ void ProcessDialogEvent()
 			pchar.questTemp.Mangarosa = "gipsy";
 			AddQuestRecord("Mangarosa", "2");
 		break;
+		
+		//--> Украденное воспоминание
+		case "UV_Lavochniki_1":
+			dialog.text = "Regrettably, "+GetAddress_Form(NPChar)+", my establishment hasn't seen such fine merchandise in many months. The appetite for luxury has waned in these difficult times. The common folk who frequent my shop can afford only modest trinkets, while the gentry rarely deign to peruse my humble wares.";
+			link.l1 = "Very well...";
+			link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki");
+			pchar.questTemp.UV_Lavochniki_2 = true;
+			npchar.quest.UV_Vopros;
+		break;
+
+		case "UV_Lavochniki_2":
+			dialog.text = "Much to my regret, Captain, such exquisite pieces have not graced my establishment for quite some time. The affluent patrons of this port seldom favor my modest shop with their presence, and my regular customers seek only what their meager purses can afford.";
+			link.l1 = "Very well...";
+			link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_2");
+			pchar.questTemp.UV_Lavochniki_3 = true;
+			npchar.quest.UV_Vopros;
+		break;
+
+		case "UV_Lavochniki_3":
+			dialog.text = "Ah, Captain, your timing is most unfortunate... Mere hours ago, I parted with a truly magnificent necklace—purchased by another sea captain of considerable means. My establishment regularly acquires pieces capable of melting the heart of even the most discerning lady\nPerhaps you might return tomorrow? Giselle... that is to say... my suppliers... could likely procure a treasure that would forever endear you to the object of your admiration.";
+			link.l1 = "Time is a luxury I do not possess; I require such a piece without delay. Pray tell, what is the name of this fortunate captain who acquired the necklace you speak of?";
+			link.l1.go = "UV_Lavochniki_3_1";
+		break;
+
+		case "UV_Lavochniki_3_1":
+			dialog.text = "Tristan Renier, captain of the 'Golden Seagull'. His vessel remains anchored in our harbor. Though I must confess, I question whether he would relinquish such a prize. Should he prove unwilling, return to me on the morrow. On my honor, Captain, you shall find the arrangement most satisfactory.";
+			link.l1 = "...";
+			link.l1.go = "UV_Lavochniki_exit";
+			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_3");
+			AddDialogExitQuestFunction("UV_GoldSeagull");
+		break;
+		
+		case "UV_Lavochniki_exit":
+			DialogExit();
+			AddQuestRecord("UV", "3");
+			/*AddQuestUserData("UV", "sSex", NPCharSexPhrase(NPChar,"ца","ки"));
+			AddQuestUserData("UV", "sSex1", NPCharSexPhrase(NPChar,"ец","ка"));
+			AddQuestUserData("UV", "sSex2", NPCharSexPhrase(NPChar,"","а"));*/
+		break;
+		//<-- Украденное воспоминание
 		
 // ======================== блок нод angry ===============>>>>>>>>>>>>>>>
 

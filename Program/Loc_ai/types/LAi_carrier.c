@@ -13,8 +13,9 @@ void LAi_type_carrier_Init(aref chr)
 	string sTemp = chr.model;
 	sTemp =	strcut(sTemp, 0, strlen(sTemp)-2);
 	BeginChangeCharacterActions(chr);
-	chr.actions.idle.i1 = sTemp;
+	chr.actions.idle.i1 = sTemp; // TO_DO
 	chr.actions.nfhit	= sTemp; // TO_DO
+    chr.actions.swim	= sTemp; // TO_DO
 	chr.actions.forward_walk = sTemp;
 	chr.actions.forward_walk_stairs_up = "Stairs_" + sTemp;
 	chr.actions.forward_walk_stairs_down = "Stairs_" + sTemp;

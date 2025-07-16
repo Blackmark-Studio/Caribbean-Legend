@@ -134,7 +134,7 @@ void GenerateFishingBoat(string IslandID, int Nation)
 	sld.dialog.filename = "Capitans_dialog.c";
 	sld.DeckDialogNode = "First time";
 	sld.greeting = "fisher";
-	if(rand(1)==0)FantomMakeCoolSailor(sld, SHIP_TARTANE,"" ,"" , 10, 10, 10);
+	if(rand(1)==0)FantomMakeCoolSailor(sld, SHIP_TARTANE,"" ,-1 , 10, 10, 10);
 	else FantomMakeCoolSailor(sld, SHIP_LUGGER, "", CANNON_TYPE_CANNON_LBS3, 10, 10, 10);
 	sld.Ship.Crew.Quantity = sti(GetOptCrewQuantity(sld)/2);
 	NullCharacterGoods(sld); // удалить товары

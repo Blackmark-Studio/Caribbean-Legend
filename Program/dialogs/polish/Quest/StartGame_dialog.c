@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 			link.l3.go  = "Finish_2_3";
 			link.l4 = "Zawsze marzyłem o romantycznym uroku bycia poszukiwaczem skarbów!";
 			link.l4.go  = "Finish_2_4";
-			link.l5 = "Zachowaj swoje rady, Sandro. Czemu się ograniczać? Wiem, czego chcę, i chcę to wszystko!";
+			link.l5 = "Zachowaj swoje rady, Alonso. Czemu się ograniczać? Wiem, czego chcę, i chcę to wszystko!";
 			link.l5.go  = "Finish_2_5";
 		break;
 		
@@ -97,8 +97,8 @@ void ProcessDialogEvent()
 			DoReloadCharacterToLocation(Pchar.HeroParam.Location, Pchar.HeroParam.Group, Pchar.HeroParam.Locator);
 			SetFunctionTimerCondition("SanBoxStatusCityRemove", 0, 0, 30, false);
 			bGameMenuStart = false;
-			AddQuestRecordInfo("Guide_AtSea", "1");
-			AddQuestRecordInfo("Guide_OnLand", "1");
+			//AddQuestRecordInfo("Guide_AtSea", "1");
+			//AddQuestRecordInfo("Guide_OnLand", "1");
 			DoQuestFunctionDelay("Tutorial_CameraControlFP", 2.5);
 			//DoQuestFunctionDelay("Tutorial_Rest", 2.5);
 		break;
@@ -143,12 +143,12 @@ void ProcessDialogEvent()
 					link.l0 = "BetaTest - pomiń i rozpocznij grę";
 					link.l0.go = "Finish_2";
 				}
-				link.l1 = "Sandro? Co się, u diabła, stało? I dlaczego mam taki okropny ból głowy?";
+				link.l1 = "Alonso? Co się, u diabła, stało? I dlaczego mam taki okropny ból głowy?";
 				link.l1.go = "Node_1_Jess";
 			}
 			else
 			{
-				dialog.text = "Cóż, kapitanie, teraz wyglądasz jak ty sam. Jak się czujesz?";
+				dialog.text = "Cóż, kapitanie, teraz wyglądasz jak powinieneś. Jak się czujesz?";
 				//link.l2 = "BetaTest - Rozpocznij test zadania Longwaya";
 				//link.l2.go = "PZ_Test_Start_1";
 				if (bBettaTestMode)
@@ -159,6 +159,7 @@ void ProcessDialogEvent()
 				link.l1 = " Hm... a jak było ze mną wcześniej?";
 				link.l1.go = "Node_1";
 			}
+			locCameraFromToPos(-2.04, 4.95, 13.26, true, -0.82, 2.52, 7.87);
 		break;
 		
 		case "PZ_Test_Start_1":
@@ -1307,7 +1308,7 @@ void ProcessDialogEvent()
 			bGameMenuStart = false;
 			StartBattleLandInterface();
 			dialog.text = "Jak ci czerwonoskórzy ateiści, nawet mówiłeś w ich języku.";
-			link.l1 = "Do diabła! Sandro, co ty, u licha, wygadujesz?!";
+			link.l1 = "Do diabła! Alonso, co ty, u licha, wygadujesz?!";
 			link.l1.go  = "Node_2";
 		break;
 		
@@ -1318,7 +1319,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_2":
-			dialog.text = "Nie martw się, nie musisz się martwić. Wdychaj świeże powietrze i spójrz na morze, wtedy twoja głowa będzie w porządku. Doktor powiedział, że niczego nie będziesz pamiętać, gdy dojdziesz do siebie. Więc nie próbuj sobie przypominać, nie potrzebujesz tego.";
+			dialog.text = "Nie martw się, nie musisz się martwić. Wdychaj świeże powietrze i spójrz na morze, wtedy twoja głowa będzie w porządku. Lekarz powiedział, że niczego nie będziesz pamiętać, gdy dojdziesz do siebie. Więc nie próbuj sobie przypominać, nie potrzebujesz tego.";
 			link.l1 = "Jestem ciekaw mojej innej opcji.";
 			link.l1.go  = "Node_3";
 		break;
@@ -1331,7 +1332,7 @@ void ProcessDialogEvent()
 		
 		case "Node_3":
 			dialog.text = "Doktor powiedział, że to na pewno będzie azyl. Rozdwojenie jaźni, powiedział. A Hopkins i ja nie widzieliśmy tu żadnej innej osobowości oprócz ciebie ...";
-			link.l1 = " Bzdura!   Czy to naprawdę mi się przydarzyło?";
+			link.l1 = " Bzdura! Czy to naprawdę mi się przydarzyło?";
 			link.l1.go  = "Node_4";
 		break;
 		
@@ -1353,7 +1354,7 @@ void ProcessDialogEvent()
 			dialog.text = "...";
 			//link.l1 = "Hm... daj mi chwilę, muszę zebrać myśli.";
 			//link.l1.go  = "ChangePIRATES_Jess";
-			link.l2 = "Czuję się teraz dobrze. Dzięki za troskę, Sandro.";
+			link.l2 = "Czuję się teraz dobrze. Dzięki za troskę, Alonso.";
 			link.l2.go  = "Node_5_Jess";
 		break;
 		
@@ -1379,7 +1380,7 @@ void ProcessDialogEvent()
 				dialog.text = "Jesteśmy teraz w porcie "+XI_ConvertString("Colony"+pchar.HeroParam.ToCityId+"Gen")+". Musimy jakoś zacząć nowe życie bez tych wszystkich Masek i Beltropów, niech wszyscy zgniją w piekle... I nie zawiedziemy cię, kapitanie. Zostaniemy z tobą do końca.";
 				link.l1 = "No cóż, chyba mam szczęście, że żyję! Nie zawiodę cię ani was wszystkich. To wszystko, muszę wylądować.";
 				link.l1.go  = "Finish_2";
-				link.l2 = "Jeden drań mniej, jeden drań więcej, tak już jest, Sandro. Dasz mi parę rad przed lądowaniem?";
+				link.l2 = "Jeden drań mniej, jeden drań więcej, tak już jest, Alonso. Dasz mi parę rad przed lądowaniem?";
 				link.l2.go  = "Advice_1";
 			}
 			else

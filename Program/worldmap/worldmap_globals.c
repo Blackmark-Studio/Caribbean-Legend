@@ -8,7 +8,6 @@
 #define WDM_ETYPE_WARRING	2
 #define WDM_ETYPE_SPECIAL	3
 
-
 object worldMap;
 
 //=========================================================================================
@@ -124,45 +123,40 @@ void Map_CreateBattle(string characterID, int iEnemyNation, int TimeOut)
 }
 
 //Удалить квестового энкоунтера
+// ~!~ TO_DO: Почему тут другим методом, нежели в wdmFindOrCreateQuestEncounter?
 void Map_ReleaseQuestEncounter(string characterID)
 {
+    int i, num;
+    aref encs, enc;
+
 	//Просматриваем список создаваемых
-	aref encs, at;
-	string aname;
 	makearef(encs, worldMap.addQuestEncounters);
-	int num = GetAttributesNum(encs);
-	for(int cnt = 0; cnt < num; cnt++)
-	{
-		for(int i = 0; i < num; i++)
-		{
-			at = GetAttributeN(encs, i);
-			aname = GetAttributeName(at);
-			aname = "addQuestEncounters." + aname + ".characterID";
-			if(worldMap.(aname) == characterID)
-			{
-				DeleteAttribute(&worldMap, aname);
-				break;
-			}
-		}
-		if(i >= num)
-		{
-			break;
-		}
-	}
+	num = GetAttributesNum(encs);
+    for(i = 0; i < num; i++)
+    {
+        enc = GetAttributeN(encs, i);
+        if(enc.characterID == characterID)
+        {
+            DeleteAttribute(enc, "characterID");
+            //pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+            //break;
+        }
+    }
+
 	//Просматриваем список созданных
 	makearef(encs, worldMap.encounters);
 	num = GetAttributesNum(encs);
-	for(i = 0; i < num; i++)
+	for(i = num-1; i >= 0; i--)
 	{
-		aref enc = GetAttributeN(encs, i);
-		if(CheckAttribute(enc, "quest.chrID") == 0) continue;
+		enc = GetAttributeN(encs, i);
+		if(!CheckAttribute(enc, "quest.chrID")) continue;
 		if(enc.quest.chrID == characterID)
-		{
+        {
 			wdmDeleteLoginEncounter(GetAttributeName(enc));
-		}
-        num--; //fix
-        i--;
+            //pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+        }
 	}
+
 	worldMap.deleteUpdate = "";
 }
 
@@ -303,23 +297,23 @@ bool wdmCreateFollowShipByIndex(float kSpeed, int index, ref encID, int timeOutI
 	//Нация энкоунтера
 	string nationShipName = wdmEncounterModelName(index);
 	//проверим нацию
-	ref n = GetMapEncounterRef(index);
+	ref rEnc = GetMapEncounterRef(index);
 	int iNation = PIRATE;
-	if(CheckAttribute(n, "nation"))
+	if(CheckAttribute(rEnc, "nation"))
 	{
-		iNation = sti(n.Nation);
+		iNation = sti(rEnc.Nation);
 	}
 	//Создадим ссылку на атрибуты
 	ref mapEncSlotRef = GetMapEncounterRef(index);
 	//Время жизни в секундах
-	float daysPerSec = 24.0/stf(worldMap.date.hourPerSec); // Boal супер бага была - делили на 24. Математику в школе прогуливали?
+	float daysPerSec = 24.0/stf(worldMap.date.hourPerSec);
 	float timeOutInSec = daysPerSec*timeOutInDays;
 	//Создаём реального энкоунтера
 	bool res = false;
-	bool klas = (IsCharacterPerkOn(pchar,"SeaDogProfessional")) && (GetCharacterShipClass(pchar) < 5);
-	if (klas || (GetNationRelation2MainCharacter(iNation) != RELATION_ENEMY))
+	bool PowerCheck = (iNation == PIRATE) && wdmCompareEncPower(iNation); // Механика мощи
+	if (PowerCheck || (GetNationRelation2MainCharacter(iNation) != RELATION_ENEMY))
 	{
-		res = SendMessage(&worldMap, "lsssff", MSG_WORLDMAP_CREATEENC_MER, nationShipName, "", "", kSpeed, timeOutInSec); // boal new
+		res = SendMessage(&worldMap, "lsssff", MSG_WORLDMAP_CREATEENC_MER, nationShipName, "", "", kSpeed, timeOutInSec);
 	}
 	else
 	{   // boal - код этот полный абзац, я Вам, господа акеловцы, аплодирую - метод Следовать даёт убегание - и так весь код. плакаль
@@ -338,11 +332,11 @@ bool wdmCreateRealFollowShipByIndex(float kSpeed, int index, ref encID, int time
 	//Нация энкоунтера
 	string nationShipName = wdmEncounterModelName(index);
 	//проверим нацию
-	ref n = GetMapEncounterRef(index);
+	ref rEnc = GetMapEncounterRef(index);
 	int iNation = PIRATE;
-	if(CheckAttribute(n, "nation"))
+	if(CheckAttribute(rEnc, "nation"))
 	{
-		iNation = sti(n.Nation);
+		iNation = sti(rEnc.Nation);
 	}
 	//Создадим ссылку на атрибуты
 	ref mapEncSlotRef = GetMapEncounterRef(index);
@@ -435,10 +429,10 @@ void wdmCreateStorm()
 //Получить модельку кораблика по индексу нации
 string wdmEncounterModelName(int encIndex)
 {
-	ref n = GetMapEncounterRef(encIndex);
-	if(CheckAttribute(n, "worldMapShip") != 0)
+	ref rEnc = GetMapEncounterRef(encIndex);
+	if(CheckAttribute(rEnc, "worldMapShip") != 0)
 	{
-		return n.worldMapShip;
+		return rEnc.worldMapShip;
 	}
 	return "ship";
 }
@@ -456,61 +450,40 @@ void WdmCopyEncounterData(ref mapEncSlotRef, string encStringID)
 //Зарезервировать место для добавления нового энкоунтера
 aref wdmCreateNewQuestEncDescription()
 {
-	string gname, aname;
-	aref encs, at;
+	aref encs;
 	makearef(encs, worldMap.addQuestEncounters);
-	int num = GetAttributesNum(encs);
-	for(int cnt = 0; cnt < num + 10; cnt++)
-	{	
-		gname = "e" + cnt;
-		for(int i = 0; i < num; i++)
-		{
-			at = GetAttributeN(encs, i);
-			aname = GetAttributeName(at);
-			if(aname == gname)
-			{
-				break;
-			}
-		}
-		if(i >= num)
-		{
-			break;
-		}
-	}
-	aref retVal;
-	makearef(retVal, worldMap.addQuestEncounters.(gname));
-	return retVal;
+    string attr = "QEnc" + (GetAttributesNum(encs)+1);
+    while(CheckAttribute(encs, attr)) attr += "_a";
+	makearef(encs, worldMap.addQuestEncounters.(attr));
+	return encs;
 }
 
-//// boal & homosapienz
-void  wdmEmptyAllDeadQuestEncounter()
+// boal
+void wdmEmptyAllDeadQuestEncounter()
 {
-    aref encs;
-    string sdel,aname;
+    int  i, iChar, num;
+    aref encs, enc;
 	bool isWMap = IsEntity(&worldMap);
-	
-    makearef(encs, worldMap.encounters);
 
-    int num = GetAttributesNum(encs);
-    for(int i = 0; i < num; i++)
+    makearef(encs, worldMap.encounters);
+    num = GetAttributesNum(encs);
+    for(i = num-1; i >= 0; i--)
     {
-        aref enc = GetAttributeN(encs, i);
+        enc = GetAttributeN(encs, i);
         DeleteAttribute(enc, "dirSailEnc");
         if(CheckAttribute(enc, "quest.chrID"))
         {
-            int iChar = GetCharacterIndex(enc.quest.chrID)
-            sdel  = "encounters."+GetAttributeName(enc);
+            iChar = GetCharacterIndex(enc.quest.chrID)
             if (iChar == -1 || CharacterIsDead(&characters[iChar]))
             {
 	            if (!isWMap)
 				{
-					DeleteAttribute(&worldMap, sdel);
-	                num = GetAttributesNum(encs);
+					DeleteAttribute(encs, GetAttributeName(enc));
 	                pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
 	            }
 	            else
 	            {
-	            	 enc.livetime = 0;
+	            	enc.livetime = 0;
 	            }
 	        }
         }
@@ -518,58 +491,49 @@ void  wdmEmptyAllDeadQuestEncounter()
 
    	makearef(encs, worldMap.addQuestEncounters);
     num = GetAttributesNum(encs);
-	for(i = 0; i < num; i++)
+	for(i = num-1; i >= 0; i--)
 	{
-		aref at = GetAttributeN(encs, i);
-		sdel = GetAttributeName(at);
-		aname = "addQuestEncounters." + sdel + ".characterID";
-		if (CheckAttribute(&worldMap, aname))
+		enc = GetAttributeN(encs, i);
+		if (CheckAttribute(enc, "characterID"))
 		{
-	        iChar = GetCharacterIndex(worldMap.(aname));
+	        iChar = GetCharacterIndex(enc.characterID);
 	        if (iChar == -1 || CharacterIsDead(&characters[iChar]))
 	        {
-	            DeleteAttribute(&worldMap, "addQuestEncounters." + sdel);
-	            num = GetAttributesNum(encs);
+	            DeleteAttribute(encs, GetAttributeName(enc));
 	            pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
 	        }
         }
     }
 }
 
-// чистка энкоутеров на карте homosapienz
+// чистка энкоутеров на карте
 void  wdmEmptyAllOldEncounter()
 {
-    aref encs;
-    string sdel,aname;
-	bool isWMap = IsEntity(&worldMap);
+    int  i, num;
+    aref encs, enc;
+	bool isWMap = IsEntity(&worldMap); // ???
 
     makearef(encs, worldMap.encounters);
-
-    int num = GetAttributesNum(encs);
-    aref enc;
-    int  i;
-    
-    for (i = 0; i < num; i++)
+    num = GetAttributesNum(encs);
+    for(i = num-1; i >= 0; i--)
     {
         enc = GetAttributeN(encs, i);
-        if (CheckAttribute(enc, "needDelete") && enc.needDelete == "wdmEncounterDelete")
+        if(CheckAttribute(enc, "needDelete") && enc.needDelete == "wdmEncounterDelete")
         {
-			// Captain Beltrop, 07.05.21 - раньше проверка вызывалась на уже удалённый атрибут, из-за чего на глобалке могли случиться вылеты
-			if (CheckAttribute(enc, "quest")) pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
-	        sdel  = "encounters."+GetAttributeName(enc);
-			DeleteAttribute(&worldMap, sdel);
-	        num--; //fix
-	        i--;
+			if(CheckAttribute(enc, "quest")) // ???
+                pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+			DeleteAttribute(encs, GetAttributeName(enc));
         }
     }
 }
 // время жизни на карте для квестовых энкоутеров
 void  wdmUpdateAllEncounterLivetime()
 {
-    aref encs;
-    int ihours;
-    string sdel, sChar;
-    float b,k;
+    int ihours, i, num;
+    aref encs, enc;
+    string sChar, sEvent;
+    //float b,k;
+
     if(!actLoadFlag)
     {
 		ihours = GetQuestPastTimeParam("WordMapEncounters_DailyUpdate");
@@ -579,13 +543,10 @@ void  wdmUpdateAllEncounterLivetime()
             float timeOutInSec = ihours/stf(worldMap.date.hourPerSec);
 
             makearef(encs, worldMap.encounters);
-            int num = GetAttributesNum(encs);
-            aref enc;
-            int  i;
-
-            for (i = 0; i < num; i++)
+            num = GetAttributesNum(encs);
+            for (i = num-1; i >= 0; i--)
             {
-                enc = GetAttributeN(encs, i);          // только квестовые
+                enc = GetAttributeN(encs, i);
                 if (CheckAttribute(enc, "livetime") && CheckAttribute(enc, "quest"))
                 {
                     Log_TestInfo(enc.livetime+" - "+timeOutInSec+" : "+stf(stf(enc.livetime) - timeOutInSec));
@@ -594,18 +555,16 @@ void  wdmUpdateAllEncounterLivetime()
                     b = enc.z - k*enc.x
                     ...
                     */
-                    enc.livetime = stf(stf(enc.livetime) - timeOutInSec);
+                    enc.livetime = stf(enc.livetime) - timeOutInSec;
 
                     if (sti(enc.livetime)<=0)
                     {
-						if(CheckAttribute(enc, "quest.event")) DeleteAttribute(enc, "quest.event"); //  удаляем  event = Map_TraderSucces
-						sChar = enc.quest.chrID; // belamour запомним айди, иначе трется атрибут и квестовые кэпы дают вылет на глобусе
-               	        sdel  = "encounters."+GetAttributeName(enc);
-                        if(CheckAttribute(&worldMap, sdel)) DeleteAttribute(&worldMap, sdel);
+                        sEvent = enc.quest.event; // TO_DO: REF
+                        sChar  = enc.quest.chrID;
+                        DeleteAttribute(encs,  GetAttributeName(enc));
 						pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
-						num--;
-						i--;
-						Map_TraderSucces_quest(sChar); // belamour теперь запустим обрапотку нпс-кэпов
+						if(sEvent == "Map_TraderSucces")    Map_TraderSucces_quest(sChar); // belamour теперь запустим обработку нпс-кэпов
+                        else if(sEvent == "Map_WarriorEnd") Map_WarriorEnd_quest(sChar);
                     }
                 }
             }
@@ -614,54 +573,50 @@ void  wdmUpdateAllEncounterLivetime()
 }
 
 // найти сущ случайку для НПС
-
-aref  wdmFindOrCreateQuestEncounter(string _chrId)
+// ~!~ TO_DO: Почему тут другим методом, нежели в Map_ReleaseQuestEncounter?
+aref wdmFindOrCreateQuestEncounter(string _chrId)
 {
-    aref encs;
-    string sdel,aname;
+    int i, num, iChar;
+    aref encs, enc;
 	bool isWMap = IsEntity(&worldMap);
 
-    makearef(encs, worldMap.encounters);
-
-    int num = GetAttributesNum(encs);
-    for(int i = 0; i < num; i++)
-    {
-        aref enc = GetAttributeN(encs, i);
-        if (CheckAttribute(enc, "quest.chrID"))
-        {
-            int iChar = GetCharacterIndex(enc.quest.chrID)
-            sdel  = "encounters."+GetAttributeName(enc);
-            if (iChar == -1 || characters[iChar].id == _chrId)
-            {
-	            if (!isWMap)
-				{
-					DeleteAttribute(&worldMap, sdel);
-	                num = GetAttributesNum(encs);
-	                pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
-	            }
-	            else
-	            {
-	            	 enc.livetime = 0;
-	            }
+    //Просматриваем список создаваемых
+   	makearef(encs, worldMap.addQuestEncounters);
+    num = GetAttributesNum(encs);
+	for(i = num-1; i >= 0; i--)
+	{
+		enc = GetAttributeN(encs, i);
+		if(CheckAttribute(enc, "characterID"))
+		{
+	        iChar = GetCharacterIndex(enc.characterID);
+	        if(iChar == -1 || characters[iChar].id == _chrId)
+	        {
+	            DeleteAttribute(encs, GetAttributeName(enc));
+	            pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
 	        }
         }
     }
 
-   	makearef(encs, worldMap.addQuestEncounters);
+    //Просматриваем список созданных
+    makearef(encs, worldMap.encounters);
     num = GetAttributesNum(encs);
-	for(i = 0; i < num; i++)
-	{
-		aref at = GetAttributeN(encs, i);
-		sdel = GetAttributeName(at);
-		aname = "addQuestEncounters." + sdel + ".characterID";
-		if (CheckAttribute(&worldMap, aname))
-		{
-	        iChar = GetCharacterIndex(worldMap.(aname));
-	        if (iChar == -1 || characters[iChar].id == _chrId)
-	        {
-	            DeleteAttribute(&worldMap, "addQuestEncounters." + sdel);
-	            num = GetAttributesNum(encs);
-	            pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+    for(i = num-1; i >= 0; i--)
+    {
+        enc = GetAttributeN(encs, i);
+        if(CheckAttribute(enc, "quest.chrID"))
+        {
+            iChar = GetCharacterIndex(enc.quest.chrID)
+            if(iChar == -1 || characters[iChar].id == _chrId)
+            {
+	            if(!isWMap)
+				{
+					DeleteAttribute(encs, GetAttributeName(enc));
+	                pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+	            }
+	            else
+	            {
+	            	enc.livetime = 0;
+	            }
 	        }
         }
     }
@@ -672,4 +627,118 @@ aref  wdmFindOrCreateQuestEncounter(string _chrId)
 void wdmShowInterface(bool showUI)
 {
 	SendMessage(&worldMap, "ll", MSG_WORLDMAP_WIND_UI_SET_SHOW, showUI);
+}
+
+// Механика мощи
+bool wdmCompareEncPower(int iNation) //(ref rEnc)
+{
+    /*
+    if(!CheckAttribute(rEnc, "Power")) return false;
+    float encPow = stf(rEnc.Power);
+    float pchPow = stf(PChar.Squadron.ModPower);
+    return (pchPow > encPow);
+    */
+
+    return (stf(PChar.Squadron.ModPower) > wdmGetPowerThreshold(iNation));
+    
+}
+
+string GetBattleDifficulty(ref rEnc)
+{
+    float encPow = 0.0;
+    float pchPow = stf(PChar.Squadron.RawPower);
+    if(CheckAttribute(rEnc, "CharacterID"))
+    {
+        string sTemp;
+        ref chr = CharacterFromID(rEnc.CharacterID);
+        if(CheckAttribute(chr, "SeaAI.Group.Name"))
+            sTemp = chr.SeaAI.Group.Name;
+        else 
+            return XI_ConvertString("Unknown dif");
+
+        // ВАЖНО: МЫ НИГДЕ НЕ НАЗНАЧАЕМ КОМПАНЬОНОВ СЕЙЧАС
+        // ДЛЯ NPC ТОЛЬКО ГРУППЫ
+
+        int	iGroupIndex = Group_FindGroup(sTemp);
+        if (iGroupIndex < 0)
+        {
+            Log_TestInfo("НЕТ ГРУППЫ В GetBattleDifficulty");
+            trace("НЕТ ГРУППЫ В GetBattleDifficulty");
+            return XI_ConvertString("Unknown dif");
+        }
+
+        ref rGroup = Group_GetGroupByIndex(iGroupIndex);
+        if (!CheckAttribute(rGroup, "Quest")) return XI_ConvertString("Unknown dif");
+
+        aref aCompanions, aCharInfo;
+        makearef(aCompanions, rGroup.Quest);
+        int qty = GetAttributesNum(aCompanions);
+
+        ref rChar, rShip;
+        int iShipType, idx;
+        for(int i = 0; i < qty; i++)
+        {
+            aCharInfo = GetAttributeN(aCompanions, i);
+            idx = sti(aCharInfo.index);
+            if(idx == -1) continue;
+            rChar = GetCharacter(idx);
+    		if(!CheckAttribute(rChar, "index") || rChar.index == "none" || LAi_IsDead(rChar)) continue;
+            iShipType = sti(rChar.Ship.Type);
+            if(iShipType == SHIP_NOTUSED) continue;
+            rShip = GetRealShip(iShipType);
+            encPow += GetRealShipPower(rChar);
+        }
+
+        rEnc.CurPower = encPow;
+    }
+    else
+    {
+        if(!CheckAttribute(rEnc, "Power")) return XI_ConvertString("Unknown dif"); // TO_DO: DEL
+        encPow = stf(rEnc.Power);
+    }
+    if(pchPow == 0.0)
+    {
+        if(encPow == 0.0) return XI_ConvertString("Medium dif");
+        return XI_ConvertString("Fatal dif");
+    }
+
+    float fRatio = (encPow * 0.9) / pchPow;
+
+    if(fRatio >= 1.7)  return XI_ConvertString("Fatal dif");    // +70% и выше
+    if(fRatio > 1.35)  return XI_ConvertString("High dif");     // +36% до +69%
+    if(fRatio >= 0.65) return XI_ConvertString("Medium dif");   // -35% до +35%
+    if(fRatio >= 0.31) return XI_ConvertString("Low dif");      // -69% до -36%
+    return XI_ConvertString("Elementary dif");                  // -70% и ниже
+}
+
+int wdmGetNationThreat(int iNation)
+{
+	if(iNation == PIRATE)
+	{
+		int iRank = sti(pchar.rank);
+		if(iRank <= 8)       return 1;
+		else if(iRank <= 16) return 2;
+		else if(iRank <= 25) return 3;
+		else if(iRank <= 30) return 4;
+		else                 return 5;
+	}
+
+	int iRel = ChangeCharacterNationReputation(PChar, iNation, 0);
+	if (iRel > -10)     return 0;
+	else if(iRel > -15) return 1;
+	else if(iRel > -20) return 2;
+	else if(iRel > -30) return 3;
+	else if(iRel > -50) return 4;
+	else                return 5;
+}
+
+int wdmGetPowerThreshold(int iNation)
+{
+    int iThreat = wdmGetNationThreat(iNation);
+    if(iThreat == 0) return -1;
+    if(iThreat == 1) return 200;
+    if(iThreat == 2) return 325;
+    if(iThreat == 3) return 475;
+    if(iThreat == 4) return 675;
+    if(iThreat == 5) return 925;
 }

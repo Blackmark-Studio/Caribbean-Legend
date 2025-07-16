@@ -4,7 +4,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś zadać mi pytanie jakiś czas temu...","Nie spotkałem ludzi z taką ciekawością ani w mojej stoczni, ani gdziekolwiek indziej w tym mieście.","Co z tymi wszystkimi pytaniami? Moja praca to budowanie statków. Zajmijmy się tym.","zablokuj",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś zadać mi pytanie jakiś czas temu...","Nie spotkałem ludzi z taką ciekawością ani w mojej stoczni, ani gdziekolwiek indziej w tym mieście.","Co z tymi wszystkimi pytaniami? Moja praca to budowanie statków. Zajmijmy się tym.","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniłem zdanie...","Nie mam teraz o czym rozmawiać."),"Umph, gdzie się podziała moja pamięć...","Hm, cóż...","Śmiało...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			if (pchar.questTemp.Slavetrader == "FindRatPortobello")

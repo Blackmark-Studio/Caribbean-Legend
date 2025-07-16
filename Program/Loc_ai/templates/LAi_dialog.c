@@ -135,7 +135,7 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 		LAi_tmpl_dialog_StopNPC(chr);
 		return;
 	}
-	if (sti(chr.index) == nMainCharacterIndex) return;
+	if (sti(chr.index) == nMainCharacterIndex && !CheckAttribute(chr, "QuestDiag")) return;
 	//Если в диалоге, направляемся на персонажа
 	if(tmpl.state == "dialog")
 	{
@@ -171,7 +171,7 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 		if(time < 0.0)
 		{
 			if(!CheckAttribute(chr, "chr_ai.tmpl.noani"))
-			{					
+			{
 				if (CheckAttribute(chr, "chr_ai.tmpl.firstAnim"))
 				{
 					CharacterPlayAction(chr, "Gov_Dialog_" + chr.chr_ai.tmpl.firstAnim);
@@ -252,31 +252,40 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 		if(time < 0.0)
 		{
 			string sTemp;
-			if(!CheckAttribute(chr, "chr_ai.tmpl.noani"))
-			{
-				if(CheckAttribute(chr,"sex"))
-				{
-					if(chr.sex == "woman") 
-					{
-						if (characters[sti(chr.chr_ai.tmpl.dialog)].sex == "man" && !CheckAttribute(chr, "chr_ai.tmpl.poklon"))
-						{
-							sTemp = "knicksen";
-							chr.chr_ai.tmpl.poklon = true;
-						}						
-						else sTemp = "dialog_stay" + (rand(8)+1);
-					}
-					else 
-					{
-						if (characters[sti(chr.chr_ai.tmpl.dialog)].sex == "woman" && !CheckAttribute(chr, "chr_ai.tmpl.poklon"))
-						{
-							sTemp = "Poklon";
-							chr.chr_ai.tmpl.poklon = true;
-						}
-						else sTemp = "dialog_stay" + (rand(14)+1);
-					}
-				}				
-				CharacterPlayAction(chr, sTemp);
-			}
+            if(CheckAttribute(chr, "QuestDiag"))
+            {
+                sTemp = chr.QuestDiag;
+                sTemp = call sTemp(chr);
+                if(sTemp != "") CharacterPlayAction(chr, sTemp);
+            }
+            else
+            {
+                if(!CheckAttribute(chr, "chr_ai.tmpl.noani"))
+                {
+                    if(CheckAttribute(chr,"sex"))
+                    {
+                        if(chr.sex == "woman") 
+                        {
+                            if (characters[sti(chr.chr_ai.tmpl.dialog)].sex == "man" && !CheckAttribute(chr, "chr_ai.tmpl.poklon"))
+                            {
+                                sTemp = "knicksen";
+                                chr.chr_ai.tmpl.poklon = true;
+                            }						
+                            else sTemp = "dialog_stay" + (rand(8)+1);
+                        }
+                        else 
+                        {
+                            if (characters[sti(chr.chr_ai.tmpl.dialog)].sex == "woman" && !CheckAttribute(chr, "chr_ai.tmpl.poklon"))
+                            {
+                                sTemp = "Poklon";
+                                chr.chr_ai.tmpl.poklon = true;
+                            }
+                            else sTemp = "dialog_stay" + (rand(14)+1);
+                        }
+                    }				
+                    CharacterPlayAction(chr, sTemp);
+                }
+            }
 			if(stf(tmpl.dlgtime) >= 0.0)
 			{	
 //				string snd = "citizen_male";
@@ -287,7 +296,9 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 //				LAi_CharacterPlaySound(chr, snd);
 			}
 			chr.chr_ai.tmpl.phrasetime = 5 + rand(1);
-		}else{
+		}
+        else
+        {
 			chr.chr_ai.tmpl.phrasetime = time;
 		}
 	}

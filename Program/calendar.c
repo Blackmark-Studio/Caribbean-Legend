@@ -314,7 +314,8 @@ string AddDaysToDateString(int addDays)
 		{
 			mon = 1;
 			Year++;
-			sYear = " "+Year+" года";
+			sYear = " "+Year;
+			if(LanguageGetLanguage() == "russian") Year += " года";
 		}
 	}
 	month = XI_ConvertString("target_month_" + Mon);

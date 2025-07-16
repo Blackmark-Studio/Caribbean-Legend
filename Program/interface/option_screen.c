@@ -6,6 +6,7 @@ int g_nCurControlsMode = -1;
 int g_ControlsLngFile = -1;
 string sBtn1 = "";
 bool bControlsWin = false;
+bool bAdvancedChange = false;
 
 bool g_bToolTipStarted = false;
 
@@ -19,70 +20,6 @@ int		curDifficulty;
 int		curFoliageDrawDistance;
 int		curGrassDrawDistance;
 int		iEnabledShipMarks;
-
-object linkedControls;
-
-void InitLinkedControls() {
-	DeleteAttribute(&linkedControls, "");
-	
-	AddControlToLinkGroup("Forward", "PrimaryLand", "ChrForward");
-	AddControlToLinkGroup("Forward", "Sailing3Pers", "Ship_SailUp");
-	
-	AddControlToLinkGroup("Backward", "PrimaryLand", "ChrBackward");
-	AddControlToLinkGroup("Backward", "Sailing3Pers", "Ship_SailDown");
-	
-	AddControlToLinkGroup("Left", "PrimaryLand", "ChrStrafeLeft");
-	AddControlToLinkGroup("Left", "Sailing3Pers", "Ship_TurnLeft");
-	
-	AddControlToLinkGroup("Right", "PrimaryLand", "ChrStrafeRight");
-	AddControlToLinkGroup("Right", "Sailing3Pers", "Ship_TurnRight");
-}
-
-void AddControlToLinkGroup(string group, string controlGroup, string control) {
-	linkedControls.groups.(group).(control) = controlGroup;
-	linkedControls.controls.(control) = group;
-}
-
-string GetLinkedControlGroup(string control) {
-	if (!CheckAttribute(&linkedControls, "controls." + control)) {
-		return "";
-	}
-	
-	return linkedControls.controls.(control);
-}
-
-int GetControlsInLinkGroupCount(string group) {
-	aref linkGroup;
-	makearef(linkGroup, linkedControls.groups.(group));
-	return GetAttributesNum(linkGroup);
-}
-
-string GetControlInLinkGroup(string group, int n) {
-	aref linkGroup;
-	makearef(linkGroup, linkedControls.groups.(group));
-	return GetAttributeName(GetAttributeN(linkGroup, n));
-}
-
-string GetControlGroupInLinkGroup(string group, int n) {
-	aref linkGroup;
-	makearef(linkGroup, linkedControls.groups.(group));
-	return GetAttributeValue(GetAttributeN(linkGroup, n));
-}
-
-void SetControlForLinkGroup(string groupName, string sControl, int keyCode, int state) {
-	CI_CreateAndSetControls(groupName, sControl, keyCode, state, true);
-	string linkGroup = GetLinkedControlGroup(sControl);
-	if (linkGroup != "") {
-		int linkGroupControlCount = GetControlsInLinkGroupCount(linkGroup);
-		for (int i = 0; i < linkGroupControlCount; i++) {
-			string linkedControl = GetControlInLinkGroup(linkGroup, i);
-			if (linkedControl != sControl) {
-				string linkedControlGroup = GetControlGroupInLinkGroup(linkGroup, i);
-				CI_CreateAndSetControls(linkedControlGroup, linkedControl, keyCode, state, true);
-			}
-		}
-	}
-}
 
 #define BI_LOW_RATIO 	0.25
 #define BI_HI_RATIO 	4.0
@@ -111,7 +48,9 @@ void InitInterface_B(string iniName, bool isMainMenu)
 	{
 		SetTimeScale(1.0);
 		BLI_DisableShow();
-	} else {
+	}
+    else
+    {
 		SetTimeScale(0.0);
 	}
 	float glowEffect;
@@ -125,9 +64,12 @@ void InitInterface_B(string iniName, bool isMainMenu)
 	GameInterface.title = "titleOptions";
 	g_ControlsLngFile = LanguageOpenFile("ControlsNames.txt");
 
-	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true) {
+	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true)
+    {
 		LoadGameOptions();
-	} else {
+	}
+    else
+    {
 		DeleteAttribute(&PlayerProfile, "name");
 		LoadGameOptions();
 	}
@@ -156,7 +98,7 @@ void InitInterface_B(string iniName, bool isMainMenu)
 	SetEventHandler("evFaderFrame","FaderFrame",0);
 
 	aref ar; makearef(ar,objControlsState.key_codes);
-	SendMessage(&GameInterface,"lsla",MSG_INTERFACE_MSG_TO_NODE,"KEY_CHOOSER", 0,ar);
+	SendMessage(&GameInterface,"lsla",MSG_INTERFACE_MSG_TO_NODE,"KEY_CHOOSER", 0, ar);
 
 	// if(sti(Render.full_screen)==0)
 	// {
@@ -182,7 +124,7 @@ void InitInterface_B(string iniName, bool isMainMenu)
 		InterfaceStates.GlowEffect = 0;
 	}
 	
-	glowEffect = sti(InterfaceStates.GlowEffect) / 250.0; // Если делить на 250, то хер, т.к. целое, а если на 250.0 - все гуд
+	glowEffect = sti(InterfaceStates.GlowEffect) / 250.0;
 	
 	GameInterface.nodes.GLOW_SLIDE.value = glowEffect;
 	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "GLOW_SLIDE", 0, glowEffect);
@@ -226,20 +168,26 @@ void InitInterface_B(string iniName, bool isMainMenu)
 	curGrassDrawDistance = sti(InterfaceStates.GrassDrawDistance);
 	SetFormatedText("GRASS_DESCRIP_TEXT", sGrassDrawDistance);
 	// sith сложность игры
-	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true) {
+	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true)
+    {
 		curDifficulty = MOD_SKILL_ENEMY_RATE;
 		iDifficulty = MOD_SKILL_ENEMY_RATE;
 	}
 	SetFormatedText("DIFFICULTY_DESCRIP_TEXT", DifficultyDes(iDifficulty));
-	InitLinkedControls();
+	// продвинутые настройки контролок
+	if(CheckAttribute(&InterfaceStates,"AdvancedChange"))
+	{
+		bAdvancedChange = sti(InterfaceStates.AdvancedChange);
+	}
 }
 
 // TAB переключает вкладки таблицы
 void ProcessInterfaceControls() 
 {
     string controlName = GetEventData();
-	if (controlName == "InterfaceTabSwitch" && !bKeyChangeWin) {
-		currentTab = (currentTab + 1) % 4;
+	if (controlName == "InterfaceTabSwitch" && !bKeyChangeWin)
+    {
+		currentTab = (currentTab + 1) % 5;
 		SetControlsTabMode(currentTab + 1);
 	}
 }
@@ -266,13 +214,16 @@ void ProcessOkExit()
 		// Log_Info (XI_ConvertString("DifficultyChanged") + DifficultyDes(MOD_SKILL_ENEMY_RATE));
 	// }
 	// sith дальность прорисовки растительности на островах
-	if(CheckAttribute(&InterfaceStates,"FoliageDrawDistance") && sti(InterfaceStates.FoliageDrawDistance) != curFoliageDrawDistance){
+	if(CheckAttribute(&InterfaceStates,"FoliageDrawDistance") && sti(InterfaceStates.FoliageDrawDistance) != curFoliageDrawDistance)
+    {
 		if(bSeaActive && !bAbordageStarted) Sea_UpdateIslandGrass(AISea.Island);
 	}
 	// sith дальность прорисовки травы
-	if(CheckAttribute(&InterfaceStates,"GrassDrawDistance") && sti(InterfaceStates.GrassDrawDistance) != curGrassDrawDistance){
+	if(CheckAttribute(&InterfaceStates,"GrassDrawDistance") && sti(InterfaceStates.GrassDrawDistance) != curGrassDrawDistance)
+    {
 		int iLocation = FindLocation(pchar.location);
-		if(iLocation != -1){
+		if(iLocation != -1)
+        {
 			object objGrass;
 			GetEntity(&objGrass,"grass"));
 			float fMaxDist = stf(InterfaceStates.GrassDrawDistance);
@@ -290,13 +241,15 @@ void ProcessOkExit()
 
 void ProcessExit()
 {
-	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true) {
+	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true)
+    {
 		IDoExit(RC_INTERFACE_LAUNCH_GAMEMENU);
 		return;
 	}
 
 	IDoExit(RC_INTERFACE_OPTIONSCREEN_EXIT);
-	if(!CheckAttribute(&InterfaceStates,"InstantExit") || sti(InterfaceStates.InstantExit)==false) {
+	if(!CheckAttribute(&InterfaceStates,"InstantExit") || sti(InterfaceStates.InstantExit) == false)
+    {
 		ReturnToMainMenu();
 	}
 }
@@ -404,15 +357,17 @@ void IReadVariableAfterInit()
 	}
 	SetFormatedText("SHIPMARKS_DESCRIP_TEXT", EnabledShipMarksDes(iEnabledShipMarks));
 
-	if(CheckAttribute(&InterfaceStates,"ArcadeSails")) {
-		iArcadeSails = sti(InterfaceStates.ArcadeSails);
-	}
-	SetFormatedText("ARCADESAILS_DESCRIP_TEXT", ArcadeSailsDes(iArcadeSails));
 	int nClassicSoundScene = 0;
 	if(CheckAttribute(&InterfaceStates,"ClassicSoundScene")) {
 		nClassicSoundScene = sti(InterfaceStates.ClassicSoundScene);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CLASSIC_SOUNDSCENE_CHECKBOX", 2, 1, nClassicSoundScene);
+
+	int nAdvancedChange = 0;
+	if(CheckAttribute(&InterfaceStates,"AdvancedChange")) {
+		nAdvancedChange = sti(InterfaceStates.AdvancedChange);
+	}
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"ADVANCEDCHANGE_CHECKBOX", 2, 1, nAdvancedChange);
 	
 	int nShowBattleMode = 0;
 	if(CheckAttribute(&InterfaceStates,"ShowBattleMode")) {
@@ -478,13 +433,6 @@ void IReadVariableAfterInit()
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CREWONDECK_CHECKBOX", 2, 1, nEnabledCREWONDECK);
 	
-	int nEnabledCAMERASWING = 0;
-	if(CheckAttribute(&InterfaceStates,"CAMERASWING")) 
-	{
-		nEnabledCAMERASWING = sti(InterfaceStates.CAMERASWING);
-	}
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CAMERASWING_CHECKBOX", 2, 1, nEnabledCAMERASWING);
-	
 	int nEnabledENHANCEDSAILING = 0;
 	if(CheckAttribute(&InterfaceStates,"ENHANCEDSAILING")) 
 	{
@@ -505,7 +453,6 @@ void IReadVariableAfterInit()
 		nEnabledDYNAMICLIGHTS = sti(InterfaceStates.DYNAMICLIGHTS);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"DYNAMICLIGHTS_CHECKBOX", 2, 1, nEnabledDYNAMICLIGHTS);
-	
 	// <-- belamour
 }
 
@@ -522,38 +469,46 @@ void SetControlsTabMode(int nMode)
 	int nColor2 = nColor1;
 	int nColor3 = nColor1;
 	int nColor4 = nColor1;
+	int nColor5 = nColor1;
 
 	string sPic1 = "TabDeSelected";
 	string sPic2 = sPic1;
 	string sPic3 = sPic1;
 	string sPic4 = sPic1;
-	
 	string sPic5 = sPic1;
+	
 	string sPic6 = sPic1;
 	string sPic7 = sPic1;
 	string sPic8 = sPic1;
+	string sPic9 = sPic1;
+	string sPic10 = sPic1;
 
 	switch(nMode)
 	{
 	case 1: // режим путешествий на земле
 		sPic1 = "TabSelected";
-		sPic5 = "TabSelectedMark";
+		sPic6 = "TabSelectedMark";
 		nColor1 = argb(255,255,255,255);
 	break;
 	case 2: // режим боя на земле
 		sPic2 = "TabSelected";
-		sPic6 = "TabSelectedMark";		
+		sPic7 = "TabSelectedMark";		
 		nColor2 = argb(255,255,255,255);
 	break;
 	case 3: // море от 3-го лица
 		sPic3 = "TabSelected";
-		sPic7 = "TabSelectedMark";			
+		sPic8 = "TabSelectedMark";			
 		nColor3 = argb(255,255,255,255);
 	break;
 	case 4: // море от первого лица	
 		sPic4 = "TabSelected";
-		sPic8 = "TabSelectedMark";	
+		sPic9 = "TabSelectedMark";	
 		nColor4 = argb(255,255,255,255);
+	break;
+	case 5: // глобальная карта	
+		sPic5 = "TabSelected";
+		sPic10 = "TabSelectedMark";	
+		nColor5 = argb(255,255,255,255);
 	break;
 	}
 
@@ -561,14 +516,17 @@ void SetControlsTabMode(int nMode)
 	SetNewGroupPicture("TABBTN_FIGHT_MODE", "TABS3", sPic2);
 	SetNewGroupPicture("TABBTN_SAILING_3RD", "TABS3", sPic3);
 	SetNewGroupPicture("TABBTN_SAILING_1ST", "TABS3", sPic4);
-	SetNewGroupPicture("TABBTN_PRIMARY_LAND_MARK", "TABS3", sPic5);
-	SetNewGroupPicture("TABBTN_FIGHT_MODE_MARK", "TABS3", sPic6);
-	SetNewGroupPicture("TABBTN_SAILING_3RD_MARK", "TABS3", sPic7);
-	SetNewGroupPicture("TABBTN_SAILING_1ST_MARK", "TABS3", sPic8);
+	SetNewGroupPicture("TABBTN_WORLDMAP", "TABS3", sPic5);
+	SetNewGroupPicture("TABBTN_PRIMARY_LAND_MARK", "TABS3", sPic6);
+	SetNewGroupPicture("TABBTN_FIGHT_MODE_MARK", "TABS3", sPic7);
+	SetNewGroupPicture("TABBTN_SAILING_3RD_MARK", "TABS3", sPic8);
+	SetNewGroupPicture("TABBTN_SAILING_1ST_MARK", "TABS3", sPic9);
+	SetNewGroupPicture("TABBTN_WORLDMAP_MARK", "TABS3", sPic10);
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_PRIMARY_LAND", 8,0,nColor1);
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_FIGHT_MODE", 8,0,nColor2);
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_SAILING_3RD", 8,0,nColor3);
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_SAILING_1ST", 8,0,nColor4);
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_WORLDMAP", 8,0,nColor5);
 	
 	FillControlsList(nMode);
 }
@@ -593,6 +551,10 @@ void procTabChange()
 	}
 	if(sNodName == "TABBTN_SAILING_1ST") {
 		SetControlsTabModeManual(4);
+		return;
+	}
+	if(sNodName == "TABBTN_WORLDMAP") {
+		SetControlsTabModeManual(5);
 		return;
 	}	
 }
@@ -886,29 +848,6 @@ void procBtnAction()
 		}
 		return;
 	}
-	if(sNodName == "LEFTCHANGE_ARCADESAILS") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_LEFTSTEP ) 
-		{
-			if(iArcadeSails > 0) return;
-			iArcadeSails += 1;
-
-			SetFormatedText("ARCADESAILS_DESCRIP_TEXT", ArcadeSailsDes(iArcadeSails));
-			InterfaceStates.ArcadeSails = iArcadeSails;
-		}
-		return;
-	}	
-	if(sNodName == "RIGHTCHANGE_ARCADESAILS") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_RIGHTSTEP) 
-		{
-			if(iArcadeSails < 1) return;
-			iArcadeSails -= 1;
-			SetFormatedText("ARCADESAILS_DESCRIP_TEXT", ArcadeSailsDes(iArcadeSails));
-			InterfaceStates.ArcadeSails = iArcadeSails;
-		}
-		return;
-	}
 }
 
 void procCheckBoxChange()
@@ -921,6 +860,13 @@ void procCheckBoxChange()
 	{
 		{
 			SetAlwaysRun(bBtnState);
+		}
+	}
+	if(sNodName == "ADVANCEDCHANGE_CHECKBOX") 
+	{
+		{
+			InterfaceStates.AdvancedChange = bBtnState;
+			bAdvancedChange = bBtnState;
 		}
 	}
 	if(sNodName == "INVERT_MOUSE_CHECKBOX") 
@@ -996,13 +942,6 @@ void procCheckBoxChange()
 	{
 		{ 
 			InterfaceStates.CREWONDECK = bBtnState;
-		}
-	}
-	
-	if(sNodName == "CAMERASWING_CHECKBOX") 
-	{
-		{ 
-			InterfaceStates.CAMERASWING = bBtnState;
 		}
 	}
 	
@@ -1139,19 +1078,24 @@ void FillControlsList(int nMode)
 	GameInterface.controls_list.top = 0;
 
 	groupName = GetGroupNameByMode(nMode);
-	if(CheckAttribute(&objControlsState,"keygroups."+groupName)) {
+	if(CheckAttribute(&objControlsState,"keygroups."+groupName))
+    {
 		makearef(arGrp,objControlsState.keygroups.(groupName));
 		qC = GetAttributesNum(arGrp);
 		idx = 0;
-		for(n=0; n<qC; n++) {
+		for(n=0; n<qC; n++)
+        {
 			arC = GetAttributeN(arGrp,n);
-			if(false==CheckAttribute(arC,"invisible") || arC.invisible!="1") {
-				if(AddToControlsList(idx, GetAttributeName(arC), GetAttributeValue(arC), CheckAttribute(arC,"remapping") && arC.remapping=="1")) {
+			if(!CheckAttribute(arC,"invisible") || arC.invisible!="1")
+            {
+				if(AddToControlsList(idx, GetAttributeName(arC), GetAttributeValue(arC), CheckAttribute(arC,"remapping") && arC.remapping=="1"))
+                {
 					idx++;
 				}
 			}
 		}
 	}
+
 	SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "CONTROLS_LIST", 0);
 	SendMessage(&GameInterface, "lsf", MSG_INTERFACE_SET_SCROLLER, "SCROLL_CONTROLS", 0);
 }
@@ -1163,13 +1107,16 @@ bool AddToControlsList(int row, string sControl, string sKey, bool bRemapable)
 	GameInterface.controls_list.(rowname).userdata.control = sControl;
 	GameInterface.controls_list.(rowname).userdata.key = sKey;
 	GameInterface.controls_list.(rowname).td1.str = LanguageConvertString(g_ControlsLngFile,sControl);
-	if(GameInterface.controls_list.(rowname).td1.str == "") {
+	if(GameInterface.controls_list.(rowname).td1.str == "")
+    {
 		trace("Warning!!! " + sControl + " hav`t translate value");
 	}
-	if(!bRemapable) { // выделение контролок которые нельзя поменять
+	if(!bRemapable) // выделение контролок которые нельзя поменять
+    {
 		GameInterface.controls_list.(rowname).td1.color = argb(255,128,128,128);
 	}
-	if(CheckAttribute(&objControlsState,"key_codes."+sKey+".img")) {
+	if(CheckAttribute(&objControlsState,"key_codes."+sKey+".img"))
+    {
 		GameInterface.controls_list.(rowname).td2.fontidx = 0;
 		GameInterface.controls_list.(rowname).td2.textoffset = "78,-10";
 		GameInterface.controls_list.(rowname).td2.scale = 1.00;
@@ -1191,7 +1138,8 @@ bool AddToControlsList(int row, string sControl, string sKey, bool bRemapable)
 	return true;
 }
 
-void RefreshControlsList() {
+void RefreshControlsList()
+{
 	string groupName = GetGroupNameByMode(g_nCurControlsMode);
 	
 	aref rows;
@@ -1210,7 +1158,8 @@ void RefreshControlsList() {
 	SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "CONTROLS_LIST", 0);
 }
 
-void RefreshControlInList(string rowname, string sControl, string sKey, bool bRemapable) {
+void RefreshControlInList(string rowname, string sControl, string sKey, bool bRemapable)
+{
 	aref rowData;
 	makearef(rowData, GameInterface.controls_list.(rowname));
 	DeleteAttribute(rowData, "");
@@ -1222,7 +1171,8 @@ void RefreshControlInList(string rowname, string sControl, string sKey, bool bRe
 	if(GameInterface.controls_list.(rowname).td1.str == "") {
 		trace("Warning!!! " + sControl + " hav`t translate value");
 	}
-	if(!bRemapable) { // выделение контролок которые нельзя поменять
+	if(!bRemapable) // выделение контролок которые нельзя поменять
+    {
 		GameInterface.controls_list.(rowname).td1.color = argb(255,128,128,128);
 	}
 	if(CheckAttribute(&objControlsState,"key_codes."+sKey+".img")) {
@@ -1255,6 +1205,7 @@ string GetGroupNameByMode(int nMode)
 		case 2: return "FightModeControls"; break;
 		case 3: return "Sailing3Pers"; break;
 		case 4: return "Sailing1Pers"; break;
+		case 5: return "WorldMapControls"; break;
 	}
 	return "unknown";
 }
@@ -1450,17 +1401,6 @@ string EnabledShipMarksDes(int esm)
 	return sText;
 }
 
-string ArcadeSailsDes(int as)
-{
-	string sText = " "; 
-	switch (iArcadeSails)
-	{
-		case 0: sText =  XI_ConvertString("SailType_2"); break;
-		case 1: sText =  XI_ConvertString("SailType_1"); break;
-	}
-	return sText;
-}
-
 string DifficultyDes(int df)
 {
 	string sText = " "; 
@@ -1539,7 +1479,9 @@ ref procKeyChoose()
 
 	glob_retVal = false;
 
-	if (keyIdx == 7) {
+    // ~!~ DANGER ШИЗА
+    // 78 - НОМЕР АТРИБУТА VK_ESCAPE ИЗ ИНИТОВ
+	if (keyIdx == 78) {
 		ReturnFromReassign();
 		glob_retVal = true;
 		return &glob_retVal;
@@ -1584,16 +1526,19 @@ bool TestGroupForEmptyControls(string group) {
 }
 
 // проверка пустых клавиш во всех группах
-bool TestForEmptyControls() {
-	aref keyGroups;
-
+bool TestForEmptyControls()
+{
+    string keyGroupName;
+	aref keyGroups, keyGroup;
 	makearef(keyGroups, objControlsState.keygroups);
-	
+
 	int keyGroupsNum = GetAttributesNum(keyGroups);
-	for(int i = 0; i < keyGroupsNum; i++) {
-		aref keyGroup = GetAttributeN(keyGroups, i);
-		string keyGroupName = GetAttributeName(keyGroup);
-		if (TestGroupForEmptyControls(keyGroupName)) {
+	for(int i = 0; i < keyGroupsNum; i++)
+    {
+		keyGroup = GetAttributeN(keyGroups, i);
+		keyGroupName = GetAttributeName(keyGroup);
+		if (TestGroupForEmptyControls(keyGroupName))
+        {
 			trace("Group " + keyGroupName + " has empty key");
 			return true;
 		}
@@ -1602,74 +1547,7 @@ bool TestForEmptyControls() {
 	return false;
 }
 
-void SwapControls(string groupFrom, string controlFrom, string keyFrom, string groupTo, string controlTo, string keyTo) {
-	string linkGroupFrom = GetLinkedControlGroup(controlFrom);
-	string linkGroupTo = GetLinkedControlGroup(controlTo);
-	aref keyGroups;
-
-	makearef(keyGroups, objControlsState.keygroups);
-	
-	int stateFrom = 0;
-	if (CheckAttribute(keyGroups, groupFrom + "." + controlFrom + ".state")) {
-		stateFrom = sti(keyGroups.(groupFrom).(controlFrom).state);
-	}
-	
-	int stateTo = 0;
-	if (CheckAttribute(keyGroups, groupTo + "." + controlTo + ".state")) {
-		stateTo = sti(keyGroups.(groupTo).(controlTo).state);
-	}
-	
-	SetControlForLinkGroup(groupFrom, controlFrom, CI_GetKeyCode(keyTo), stateTo);
-	SetControlForLinkGroup(groupTo, controlTo, CI_GetKeyCode(keyFrom), stateFrom);
-
-	int keyGroupsNum = GetAttributesNum(keyGroups);
-	for(int i = 0; i < keyGroupsNum; i++) {
-		aref keyGroup = GetAttributeN(keyGroups, i);
-		string keyGroupName = GetAttributeName(keyGroup);
-		
-		if (keyGroupName == "AltPressedGroup") {
-			continue;
-		}
-		
-		int keyGroupControlsNum = GetAttributesNum(keyGroup);
-		for (int j = 0; j < keyGroupControlsNum; j++) {
-			aref keyGroupControl = GetAttributeN(keyGroup, j);
-			
-			string name = GetAttributeName(keyGroupControl);
-			string key = GetAttributeValue(keyGroupControl);
-			
-			if (name == controlFrom) {
-				//keyGroup.(name) = keyTo;
-				continue;
-			}
-			
-			if (name == controlTo) {
-				//keyGroup.(name) = keyFrom;
-				continue;
-			}
-			
-			if (linkGroupFrom != "" && GetLinkedControlGroup(name) == linkGroupFrom) {
-				continue;
-			}
-			  
-			if (linkGroupTo != "" && GetLinkedControlGroup(name) == linkGroupTo) {
-				continue;
-			}
-
-			if (key == keyFrom && CheckAttribute(keyGroup, controlTo) && CheckAttribute(keyGroups, "AltPressedGroup." + controlTo) == CheckAttribute(keyGroups, "AltPressedGroup." + name)) {
-				SetControlForLinkGroup(keyGroupName, name, -1, 0);
-				continue;
-			}
-			
-			if (key == keyTo && CheckAttribute(keyGroup, controlFrom) && CheckAttribute(keyGroups, "AltPressedGroup." + controlFrom) == CheckAttribute(keyGroups, "AltPressedGroup." + name)) {
-				SetControlForLinkGroup(keyGroupName, name, -1, 0);
-				continue;
-			}
- 		}
-	}
-}
-
-bool DoMapToOtherKey(int keyIdx,int stickUp)
+bool DoMapToOtherKey(int keyIdx, int stickUp)
 {
 	string srow = "tr" + GameInterface.controls_list.select;
 	string groupName = GetGroupNameByMode(g_nCurControlsMode);
@@ -1678,8 +1556,8 @@ bool DoMapToOtherKey(int keyIdx,int stickUp)
 	bool bAltPress = XI_IsKeyPressed("alt");
 
 	aref arControlGroup;
-	aref arKeyRoot,arKey;
-	string tmpstr;
+	aref arKeyRoot, arKey;
+	string sName;
 	int keyCode;
 
 	if(stickUp)
@@ -1688,78 +1566,103 @@ bool DoMapToOtherKey(int keyIdx,int stickUp)
 		return false;
 	}
 
-	makearef(arControlGroup,objControlsState.keygroups.(groupName));
-	makearef(arKeyRoot,objControlsState.key_codes);
-	arKey = GetAttributeN(arKeyRoot,keyIdx);
+	makearef(arControlGroup, objControlsState.keygroups.(groupName));
+	makearef(arKeyRoot, objControlsState.key_codes);
+	arKey = GetAttributeN(arKeyRoot, keyIdx);
 	keyCode = sti(GetAttributeValue(arKey));
-    // string sCon = GetAttributeValue(arKey);
-	// check for not allowed keys
-	if(keyCode==sti(objControlsState.key_codes.VK_F6) ||
-	// if(keyCode==sti(objControlsState.key_codes.VK_F1) ||
-		// keyCode==sti(objControlsState.key_codes.VK_F2) ||
-		// keyCode==sti(objControlsState.key_codes.VK_F3) ||
-		// keyCode==sti(objControlsState.key_codes.VK_F4) ||
-		// keyCode==sti(objControlsState.key_codes.VK_F5) ||
-		// keyCode==sti(objControlsState.key_codes.VK_F6) ||
-		keyCode==sti(objControlsState.key_codes.VK_F7) ||
-		keyCode==sti(objControlsState.key_codes.VK_F8) ||
-		keyCode==sti(objControlsState.key_codes.VK_F9) ||
-		keyCode==sti(objControlsState.key_codes.VK_F10) || // belamour все эти кнопки в исключение
-		keyCode==sti(objControlsState.key_codes.VK_F11) ||
-		keyCode==sti(objControlsState.key_codes.VK_F12) )
+
+	// Check for not allowed keys (belamour)
+	if (keyCode == sti(objControlsState.key_codes.VK_F6)  ||
+		keyCode == sti(objControlsState.key_codes.VK_F7)  ||
+		keyCode == sti(objControlsState.key_codes.VK_F8)  ||
+		keyCode == sti(objControlsState.key_codes.VK_F9)  ||
+		keyCode == sti(objControlsState.key_codes.VK_F10) ||
+		keyCode == sti(objControlsState.key_codes.VK_F11) ||
+		keyCode == sti(objControlsState.key_codes.VK_F12))
 	{
 		return false;
 	}
 	
 	if(CheckAttribute(arKey,"stick") && sti(arKey.stick)==true) return false;
 
-	string controlReplacement, controlReplacementGroup;
-	if(KeyAlreadyUsed(groupName, sControl, GetAttributeName(arKey), bAltPress, &controlReplacement, &controlReplacementGroup) && controlReplacement == "")
+	string controlReplacement = ""; // friends текущей клавиши сюда не кладутся
+	if(KeyAlreadyUsed(groupName, sControl, GetAttributeName(arKey), bAltPress, &controlReplacement) && controlReplacement == "")
 	{
+        // Есть на кнопке, которой запрещено переназначение
 		SetKeyChooseWarning(XI_ConvertString("KeyAlreadyUsed"));
 		return false;
 	}
 
 	if(controlReplacement != "" && sBtn1 != controlReplacement)
 	{
+        // Предупреждаем, что кнопка занята, и только на второе нажатие её зачистит
 		SetKeyChooseWarning(XI_ConvertString("KeyAlreadyUsed2"));
 		sBtn1 = controlReplacement;
 		return false;
 	}
 
-	tmpstr = arControlGroup.(sControl);
-	if(CheckAttribute(arKeyRoot,tmpstr+".stick") && sti(arKeyRoot.(tmpstr).stick)==true) return false;
+	sName = arControlGroup.(sControl);
+	if(CheckAttribute(arKeyRoot,sName+".stick") && sti(arKeyRoot.(sName).stick) == true) return false;
 
-	int state = 0;
-	if(CheckAttribute(arControlGroup,sControl+".state"))
-	{	state = sti(arControlGroup.(sControl).state);	}
+	if(bAltPress) MapControlToGroup(sControl, "AltPressedGroup");
+	else DeleteAttribute(&objControlsState, "keygroups.AltPressedGroup." + sControl);
 
+    // Обновим клавишу
+    GroupKeyUpdate(sControl, keyCode, groupName);
 
-	if(bAltPress) {
-		MapControlToGroup(sControl, "AltPressedGroup");
-	} else {
-		DeleteAttribute(&objControlsState, "keygroups.AltPressedGroup" + "." + sControl);
-	}
-
+    int num, i;
+    aref aFriend;
 	if (controlReplacement != "")
     {
-		//SwapControls(groupName, sControl, sKey, controlReplacementGroup, controlReplacement, GetAttributeName(arKey));
-        CI_CreateAndSetControls(groupName, sControl, CI_GetKeyCode(GetAttributeName(arKey)), 0, true);
-        CI_CreateAndSetControls(controlReplacementGroup, controlReplacement, -1, 0, true);
+        if(!bAdvancedChange || IsSyncLock(sControl))
+        {
+            // Затереть всех дублёров во всех группах, кроме friends
+            EraseCopiesInAllGroups(sControl);
+        }
+        else
+        {
+            // Если меняем внутри одной группы, достаточно проверить дублёра и его friends
+            GroupKeyUpdate(controlReplacement, -1, groupName);
+            if(CheckAttribute(&objControlsState, "map.controls." + controlReplacement + ".friends"))
+            {
+                makearef(aFriend, objControlsState.map.controls.(controlReplacement).friends);
+                num = GetAttributesNum(aFriend);
+                for(i = 0; i < num; i++)
+                {
+                    sName = GetAttributeName(GetAttributeN(aFriend, i));
+                    if(CheckAttribute(arControlGroup, sName) && arControlGroup.(sName) == arControlGroup.(sControl))
+                    {
+                        GroupKeyUpdate(sName, -1, groupName);
+                    }
+                }
+            }
+        }
 	}
-    else
+
+    if(CheckAttribute(&objControlsState, "map.controls." + sControl + ".friends"))
     {
-        //SetControlForLinkGroup(groupName, sControl, keyCode, state);
-        CI_CreateAndSetControls(groupName, sControl, keyCode, state, true);
-    }
-    if(CheckAttribute(&objControlsState, "keygroups." + groupName + "." + sControl + ".sync")) // TO_DO: DEL
-    {
-        controlReplacement = objControlsState.keygroups.(groupName).(sControl).sync;
-        CI_CreateAndSetControls(groupName, controlReplacement, keyCode, state, true);
+        makearef(aFriend, objControlsState.map.controls.(sControl).friends);
+        num = GetAttributesNum(aFriend);
+        for(i = 0; i < num; i++)
+        {
+            sName = GetAttributeName(GetAttributeN(aFriend, i));
+            if(CheckAttribute(arControlGroup, sName))
+            {
+                if(sti(aFriend.(sName)) == 1)
+                {
+                    // Если дружественная клавиша синхронизирована, обновим и её тоже
+                    // Здесь предполагается, что синхронизированные клавиши в тех же группах
+                    // Иначе при их апдейте может быть неучтённый дубль в другой группе, где есть
+                    // синхронизированная, но нет текущей обновляемой (sControl)
+                    GroupKeyUpdate(sName, keyCode, groupName); 
+                }
+                else if(sti(aFriend.(sName)) == 2) BI_CheckWASD(arControlGroup.(sName) == CI_GetKeyName(keyCode), groupName);
+                else if(sti(aFriend.(sName)) == 3) BI_CheckWASDSail(arControlGroup.(sName) == CI_GetKeyName(keyCode), groupName);
+            }   
+        }
     }
 
 	RefreshControlsList();
-	
 	return true;
 }
 
@@ -1873,14 +1776,14 @@ void ShowInfo()
 			sText1 = XI_ConvertString("More Info_descr");
 		break;
 
-		case "ARCADESAILS_DESCRIP_TEXT":
-			sHeader = XI_ConvertString("Sailing Mode");
-			sText1 = GetRPGText("ArcadeSailMode_desc");
-		break;
-
 		case "ALWAYS_RUN_CHECKBOX":
 			sHeader = XI_ConvertString("Always Run");
 			sText1 = XI_ConvertString("Always Run_descr");
+		break;
+
+		case "ADVANCEDCHANGE_CHECKBOX":
+			sHeader = XI_ConvertString("AdvancedChangeControls");
+			sText1 = XI_ConvertString("AdvancedChangeControls_descr");
 		break;
 
 		case "CONTROLS_MODE_DESCRIP_TEXT":
@@ -1968,12 +1871,7 @@ void ShowInfo()
 			sHeader = XI_ConvertString("DIRECTSAIL Mode");
 			sText1 = XI_ConvertString("DIRECTSAIL Mode_descr");
 		break;
-		
-		case "CAMERASWING_CHECKBOX":
-			sHeader = XI_ConvertString("CAMERASWING Mode");
-			sText1 = XI_ConvertString("CAMERASWING Mode_descr");
-		break;
-		
+
 		case "ENHANCEDSAILING_CHECKBOX":
 			sHeader = XI_ConvertString("ENHANCEDSAILING Mode");
 			sText1 = XI_ConvertString("ENHANCEDSAILING Mode_descr");
@@ -2020,128 +1918,71 @@ void HideInfo()
 	}
 }
 
-bool KeyAlreadyUsed(string sGrpName, string sControl, string sKey, bool bAltPress, ref controlReplacement, ref controlReplacementGroup)
+bool KeyAlreadyUsed(string sGrpName, string sControl, string sKey, bool bAltPress, ref controlReplacement)
 {
 	bool bAPgroup = false;
-	if(CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+sControl))
+	if(CheckAttribute(&objControlsState,"keygroups.AltPressedGroup." + sControl))
 	{
-		bAPgroup = objControlsState.keygroups.AltPressedGroup.(sControl) == sKey;
+		bAPgroup = (objControlsState.keygroups.AltPressedGroup.(sControl) == sKey);
 	}
-	if(!CheckAttribute(&objControlsState,"keygroups."+sGrpName+"."+sControl)) {return false;} 
-	// belamour legendary edition смотрим, если кей в текущем значении контролки, то даем добро и сворачиваем кейшузер
-	if(bAltPress)
-	{
-		if(bAPgroup && objControlsState.keygroups.(sGrpName).(sControl) == sKey) {return false;} 
-	}
-	else
-	{
-		if(!bAPgroup && objControlsState.keygroups.(sGrpName).(sControl) == sKey) {return false;} 
-	}
+	if(!CheckAttribute(&objControlsState,"keygroups." + sGrpName + "." + sControl)) return false;
+
+	// belamour legendary edition смотрим, если кей в текущем значении контролки, то даем добро и сворачиваем кейчузер
+	if(bAltPress == bAPgroup && objControlsState.keygroups.(sGrpName).(sControl) == sKey) return false;
+
 	// belamour контролки без группы не переназначаются
-	if(sKey == "KEY_N" || sKey == "VK_ADD" || sKey == "VK_SUBTRACT"
-	|| sKey == "KEY_R" || sKey == "VK_A_PLUS" || sKey == "VK_A_MINUS") return true; 
-	
-	bool bAlreadyUsed = false;
-	int n,q, i,grp;
-	aref arGrp,arCntrl, arGrpList;
-	
-	// проверка на совпадение в той же группе
-	makearef(arGrp,objControlsState.keygroups.(sGrpName));
-	q = GetAttributesNum(arGrp);
+	if(sKey == "VK_ADD" || sKey == "VK_SUBTRACT") return true; 
 
-    string SyncKey = ""; // TO_DO: DEL
-    if(CheckAttribute(&objControlsState, "keygroups." + sGrpName + "." + sControl + ".sync"))
-       SyncKey = objControlsState.keygroups.(sGrpName).(sControl).sync;
-    string DesyncKey = ""; // TO_DO: DEL
-    if(CheckAttribute(&objControlsState, "keygroups." + sGrpName + "." + sControl + ".desync"))
-       DesyncKey = objControlsState.keygroups.(sGrpName).(sControl).desync;
-
-	for(n=0; n<q; n++)
-	{
-		arCntrl = GetAttributeN(arGrp,n);
-		if(GetAttributeValue(arCntrl) == sKey)
+	int grp, i, q, n;
+	aref arGrp, arCntrl, arGrpList;
+    string sName;
+	
+    if(!bAdvancedChange || IsSyncLock(sControl))
+    {
+        // Проверка во всех группах, где есть клавиша
+        makearef(arGrpList, objControlsState.keygroups);
+        grp = GetAttributesNum(arGrpList);
+        for(n=0; n<grp; n++)
         {
-			if(!bAltPress)
-			{
-				//belamour legendary edition проверяем, есть ли контролка с таким же ключом в sGrpName и AltPressedGroup
-				if(CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+GetAttributeName(arCntrl))) continue;
-                if(SyncKey == GetAttributeName(arCntrl) || DesyncKey == GetAttributeName(arCntrl)) continue; // TO_DO: DEL
+            arGrp = GetAttributeN(arGrpList,n);
+            if(CheckAttribute(arGrp, sControl))
+            {
+                q = GetAttributesNum(arGrp);
+                for(i=0; i<q; i++)
+                {
+                    arCntrl = GetAttributeN(arGrp,i);
+                    if(GetAttributeValue(arCntrl) == sKey)
+                    {
+                        sName = GetAttributeName(arCntrl);
+                        if(CheckAttribute(&objControlsState, "map.controls." + sControl + ".friends." + sName))  continue;
+                        if(bAltPress != CheckAttribute(&objControlsState, "keygroups.AltPressedGroup." + sName)) continue;
+                        if(sti(arCntrl.remapping)) controlReplacement = sName;
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+    else
+    {
+        // Проверка на совпадение в той же группе
+        makearef(arGrp,objControlsState.keygroups.(sGrpName));
+        q = GetAttributesNum(arGrp);
+        for(i=0; i<q; i++)
+        {
+            arCntrl = GetAttributeN(arGrp,i);
+            if(GetAttributeValue(arCntrl) == sKey)
+            {
+                sName = GetAttributeName(arCntrl);
+                if(CheckAttribute(&objControlsState, "map.controls." + sControl + ".friends." + sName))  continue;
+                if(bAltPress != CheckAttribute(&objControlsState, "keygroups.AltPressedGroup." + sName)) continue;
+                if(sti(arCntrl.remapping)) controlReplacement = sName;
+                return true;
+            }
+        }
+    }
 
-				if (sti(arCntrl.remapping)) {
-					controlReplacement = GetAttributeName(arCntrl);
-					controlReplacementGroup = sGrpName;
-				}
-				bAlreadyUsed = true;
-				break;
-			}
-			else
-			{
-				//belamour legendary edition проверяем, есть ли контролка с таким же ключом за исключением AltPressedGroup
-				if(!CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+GetAttributeName(arCntrl))) continue;
-                if(SyncKey == GetAttributeName(arCntrl) || DesyncKey == GetAttributeName(arCntrl)) continue; // TO_DO: DEL
-
-				if (sti(arCntrl.remapping)) {
-					controlReplacement = GetAttributeName(arCntrl);
-					controlReplacementGroup = sGrpName;
-				}
-				bAlreadyUsed = true;
-				break;
-			}
-			/*if (sti(arCntrl.remapping)) {
-				controlReplacement = GetAttributeName(arCntrl);
-				controlReplacementGroup = sGrpName;
-			}
-			bAlreadyUsed = true;
-			break;*/
-		}
-	}
-
-	/*if(bAlreadyUsed) {return bAlreadyUsed;}
-
-	// найдем группу в которой эта контролка также отображается
-	makearef(arGrpList, objControlsState.keygroups);
-	grp = GetAttributesNum(arGrpList);
-	for(i=0; i<grp; i++)
-	{
-		arGrp = GetAttributeN(arGrpList,i);
-		if(!CheckAttribute(arGrp,sControl)) {continue;}
-		
-		q = GetAttributesNum(arGrp);
-		for(n=0; n<q; n++)
-		{
-			arCntrl = GetAttributeN(arGrp,n);
-			if(GetAttributeValue(arCntrl) == sKey) {
-				if(!bAltPress)
-				{
-					if(CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+GetAttributeName(arCntrl))) continue;
-					if (sti(arCntrl.remapping)) {
-						controlReplacement = GetAttributeName(arCntrl);
-						controlReplacementGroup = GetAttributeName(arGrp);
-					}
-					bAlreadyUsed = true;
-					break;
-				}
-				if(bAltPress)
-				{
-					if(!CheckAttribute(&objControlsState,"keygroups.AltPressedGroup"+"."+GetAttributeName(arCntrl))) continue;
-						if (sti(arCntrl.remapping)) {
-							controlReplacement = GetAttributeName(arCntrl);
-							controlReplacementGroup = GetAttributeName(arGrp);
-						}
-						bAlreadyUsed = true;
-						break;
-				}
-				if (sti(arCntrl.remapping)) {
-					controlReplacement = GetAttributeName(arCntrl);
-					controlReplacementGroup = GetAttributeName(arGrp);
-				}
-				bAlreadyUsed = true;
-				break;
-			}
-		}
-		if(bAlreadyUsed) {break;}
-	}*/
-	return bAlreadyUsed;
+	return false;
 }
 
 void SetKeyChooseWarning(string sWarningText)
@@ -2186,6 +2027,9 @@ void RestoreDefaultKeys()
 	iControlsMode = 0;
 	SetFormatedText("CONTROLS_MODE_DESCRIP_TEXT", ControlsModeDes(iControlsMode));
 	ControlSettings(iControlsMode);
+	InterfaceStates.AdvancedChange =  0;
+	bAdvancedChange = false;
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"ADVANCEDCHANGE_CHECKBOX", 2, 1, 0);
 }
 
 void RestoreDefaultSettings()
@@ -2211,6 +2055,10 @@ void RestoreDefaultSettings()
 	SetFormatedText("CONTROLS_MODE_DESCRIP_TEXT", ControlsModeDes(iControlsMode));
 	ControlSettings(iControlsMode);
 
+	InterfaceStates.AdvancedChange =  0;
+	bAdvancedChange = false;
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"ADVANCEDCHANGE_CHECKBOX", 2, 1, 0);
+
 	InterfaceStates.CompassPos = 0;
 	iCompassPos = 0;
 	SetFormatedText("COMPASS_POS_DESCRIP_TEXT", CompassPosDes(iCompassPos));
@@ -2218,10 +2066,6 @@ void RestoreDefaultSettings()
 	InterfaceStates.ControlsTips = 2;
 	iControlsTips = 2;
 	SetFormatedText("CONTROLS_TIPS_DESCRIP_TEXT", ControlsTipsDes(iControlsTips));
-
-	InterfaceStates.ArcadeSails = 1;
-	iArcadeSails = 1;
-	SetFormatedText("ARCADESAILS_DESCRIP_TEXT", ArcadeSailsDes(iArcadeSails));
 
 	InterfaceStates.ClassicSoundScene =  1;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CLASSIC_SOUNDSCENE_CHECKBOX", 2, 1, 1);
@@ -2284,9 +2128,6 @@ void RestoreDefaultSettings()
 	InterfaceStates.CREWONDECK = 1;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CREWONDECK_CHECKBOX", 2, 1, 1);
 	
-	InterfaceStates.CAMERASWING = 0;
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CAMERASWING_CHECKBOX", 2, 1, 0);
-	
 	InterfaceStates.ROTATESKY = 0;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"ROTATESKY_CHECKBOX", 2, 1, 0);
 	
@@ -2309,8 +2150,183 @@ void SetAlertMarksControls()
 	SetNodeUsing("A_FIGHT_MODE",false);
 	SetNodeUsing("A_SAILING_3RD",false);
 	SetNodeUsing("A_SAILING_1ST",false);
-	if(TestGroupForEmptyControls("PrimaryLand")) SetNodeUsing("A_PRIMARY_LAND",true);
+	SetNodeUsing("A_WORLDMAP",false);
+	if(TestGroupForEmptyControls("PrimaryLand"))       SetNodeUsing("A_PRIMARY_LAND",true);
 	if(TestGroupForEmptyControls("FightModeControls")) SetNodeUsing("A_FIGHT_MODE",true);
-	if(TestGroupForEmptyControls("Sailing3Pers")) SetNodeUsing("A_SAILING_3RD",true);
-	if(TestGroupForEmptyControls("Sailing1Pers")) SetNodeUsing("A_SAILING_1ST",true);
+	if(TestGroupForEmptyControls("Sailing3Pers"))      SetNodeUsing("A_SAILING_3RD",true);
+	if(TestGroupForEmptyControls("Sailing1Pers"))      SetNodeUsing("A_SAILING_1ST",true);
+	if(TestGroupForEmptyControls("WorldMapControls"))  SetNodeUsing("A_WORLDMAP",true);
+}
+
+void GroupKeyUpdate(string controlName, int keyCode, string sGroupName)
+{
+	int i, nGQ;
+	aref arKGRoot, arKG;
+    string sName;
+
+    // cntrlCode - индекс контролки; controlName - имя контролки;
+    // keyCode   - индекс бинда;     sKeyName    - имя бинда;
+
+    int cntrlCode = sti(objControlsState.map.controls.(controlName));
+    string sKeyName = CI_GetKeyName(keyCode);
+
+    makearef(arKGRoot, objControlsState.keygroups);
+    nGQ = GetAttributesNum(arKGRoot);
+
+    if(!bAdvancedChange || IsSyncLock(controlName))
+    {
+        for(i = 0; i < nGQ; i++)
+        {
+            arKG = GetAttributeN(arKGRoot,i);
+            if(CheckAttribute(arKG, controlName))
+            {
+                arKG.(controlName) = sKeyName;
+                sName = GetAttributeName(arKG);
+                if(sName != "AltPressedGroup")
+                    MapControl(cntrlCode, keyCode, GetGroupIDX(sName));
+            }
+        }
+    }
+    else
+    {
+        makearef(arKG, objControlsState.keygroups.(sGroupName));
+        if(!CheckAttribute(arKG, controlName)) return;
+        arKG.(controlName) = sKeyName;
+        if(sGroupName != "AltPressedGroup")
+            MapControl(cntrlCode, keyCode, GetGroupIDX(sGroupName));
+
+        // Пройдёмся по группам, не отображаемым в интерфейсе, где есть эта контролка
+        // Их бинды привязываются к первой валидной отображаемой группе
+        int j;
+        aref arKG2;
+        string sName2;
+        for(i=0; i<nGQ; i++)
+        {
+            arKG  = GetAttributeN(arKGRoot, i);
+            sName = GetAttributeName(arKG);
+            if(IsSettingsGroup(sName)) continue;
+            if(CheckAttribute(arKG, controlName))
+            {
+                for(j = 0; j < nGQ; j++)
+                {
+                    arKG2  = GetAttributeN(arKGRoot, j);
+                    sName2 = GetAttributeName(arKG2);
+                    if(!IsSettingsGroup(sName2)) continue;
+                    if(CheckAttribute(arKG2, controlName))
+                    {
+                        arKG.(controlName) = arKG2.(controlName);
+                        if(sName != "AltPressedGroup")
+                        {
+                            keyCode = CI_GetKeyCode(arKG.(controlName));
+                            MapControl(cntrlCode, keyCode, GetGroupIDX(sName));
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
+
+void EraseCopiesInAllGroups(string sControl)
+{
+    string sName, sGroupName;
+	int i, nGQ, j, num;
+	aref arKGRoot, arKG;
+
+    makearef(arKGRoot, objControlsState.keygroups);
+    nGQ = GetAttributesNum(arKGRoot);
+    for(i = 0; i < nGQ; i++)
+    {
+        arKG = GetAttributeN(arKGRoot, i);
+        if(CheckAttribute(arKG, sControl))
+        {
+            sGroupName = GetAttributeName(arKG);
+            num = GetAttributesNum(arKG);
+            for(j = 0; j < num; j++)
+            {
+                sName = GetAttributeName(GetAttributeN(arKG, j));
+                if(sName == sControl)
+                    continue;
+                if(CheckAttribute(&objControlsState, "map.controls." + sControl + ".friends." + sName))
+                    continue;
+                if(arKG.(sName) == arKG.(sControl))
+                {
+                    GroupKeyUpdate(sName, -1, sGroupName);
+                }
+            }
+        }
+    }
+}
+
+// Особые указания на случай дубля WASD и Стрелок
+void BI_CheckWASD(bool bSame, string sGroup)
+{
+    if(bAdvancedChange && sGroup != "FightModeControls") return;
+
+    aref arControlGroup;
+
+    if(bSame)
+    {
+        // Если появился дубль, то управление уходит из BI
+        makearef(arControlGroup, objControlsState.keygroups.BattleInterfaceControls);
+        DeleteAttribute(arControlGroup, "ChrForward");
+        DeleteAttribute(arControlGroup, "ChrBackward");
+        DeleteAttribute(arControlGroup, "ChrStrafeLeft");
+        DeleteAttribute(arControlGroup, "ChrStrafeRight");
+    }
+    else if(!CheckAttribute(&objControlsState, "keygroups.BattleInterfaceControls.ChrForward"))
+    {
+        // Если дубля нет, то проверим остальные, можем ли вернуть в BI
+        makearef(arControlGroup, objControlsState.keygroups.FightModeControls);
+        bSame = arControlGroup.ChrForward     == arControlGroup.BICommandsUp   ||
+                arControlGroup.ChrBackward    == arControlGroup.BICommandsDown ||
+                arControlGroup.ChrStrafeLeft  == arControlGroup.BICommandsLeft ||
+                arControlGroup.ChrStrafeRight == arControlGroup.BICommandsRight;
+        if(!bSame)
+        {
+            MapControlToGroup("ChrForward",     "BattleInterfaceControls");
+            MapControlToGroup("ChrBackward",    "BattleInterfaceControls");
+            MapControlToGroup("ChrStrafeLeft",  "BattleInterfaceControls");
+            MapControlToGroup("ChrStrafeRight", "BattleInterfaceControls");
+        }
+    }
+}
+
+void BI_CheckWASDSail(bool bSame, string sGroup)
+{
+    if(bAdvancedChange && sGroup != "Sailing3Pers") return;
+
+    aref arControlGroup;
+
+    if(bSame)
+    {
+        // Если появился дубль, то управление уходит из BI
+        makearef(arControlGroup, objControlsState.keygroups.BattleInterfaceControls);
+        DeleteAttribute(arControlGroup, "Ship_SailUp");
+        DeleteAttribute(arControlGroup, "Ship_SailDown");
+        DeleteAttribute(arControlGroup, "Ship_TurnLeft");
+        DeleteAttribute(arControlGroup, "Ship_TurnRight");
+    }
+    else if(!CheckAttribute(&objControlsState, "keygroups.BattleInterfaceControls.Ship_SailUp"))
+    {
+        // Если дубля нет, то проверим остальные, можем ли вернуть в BI
+        makearef(arControlGroup, objControlsState.keygroups.Sailing3Pers);
+        bSame = arControlGroup.Ship_SailUp    == arControlGroup.BICommandsUp   ||
+                arControlGroup.Ship_SailDown  == arControlGroup.BICommandsDown ||
+                arControlGroup.Ship_TurnLeft  == arControlGroup.BICommandsLeft ||
+                arControlGroup.Ship_TurnRight == arControlGroup.BICommandsRight;
+        if(!bSame)
+        {
+            MapControlToGroup("Ship_SailUp",    "BattleInterfaceControls");
+            MapControlToGroup("Ship_SailDown",  "BattleInterfaceControls");
+            MapControlToGroup("Ship_TurnLeft",  "BattleInterfaceControls");
+            MapControlToGroup("Ship_TurnRight", "BattleInterfaceControls");
+        }
+    }
+}
+
+bool IsSyncLock(string sControl)
+{
+    return CheckAttribute(&objControlsState, "map.controls." + sControl + ".SyncLock");
 }

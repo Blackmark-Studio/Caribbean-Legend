@@ -28,7 +28,7 @@ void ProcessDialogEvent()
 		
 		case "ksochitam_1":
 			dialog.text = "Mi nombre es Alonso de Maldonado. Eso tal vez no signifique nada para ti, pero Diego de Montoya podría sonarte. Era mi mejor amigo. Me salvó la vida y ahora su sangre está en tus manos.";
-			link.l1 = "Supongo que me has seguido hasta aquí para buscar venganza?";
+			link.l1 = "¿Supongo que me has seguido hasta aquí para buscar venganza?";
 			link.l1.go = "ksochitam_2";
 		break;
 		
@@ -46,7 +46,7 @@ void ProcessDialogEvent()
 		
 		case "ksochitam_4":
 			dialog.text = "Fui a Tayasal veinte años antes de que Dichoso llegara allí. Al mismo tiempo, ese hechicero loco Kanek usó ese despreciable ritual de sacrificio humano para esconder la máscara en esta isla.";
-			link.l1 = "¡No puedo creer lo que estoy oyendo! ¿Eres de la misma banda de conquistadores que fue llevada allí para ser sacrificada cuando se estaba creando el Guardián de la Verdad? ¡Todos estáis muertos!";
+			link.l1 = "¡No puedo creer lo que estoy oyendo! ¿Eres de la misma banda de conquistadores que fue llevada allí para ser sacrificada cuando se estaba creando el Guardián de la Verdad? ¡Todos deberían estar muertos!";
 			link.l1.go = "ksochitam_5";
 		break;
 		
@@ -58,13 +58,13 @@ void ProcessDialogEvent()
 		
 		case "ksochitam_6":
 			dialog.text = "No lo entenderías. Demonios, yo tampoco lo entendía. Nadie me perdonó. Lo recuerdo como si fuera ayer... Justo después de que ese salvaje tomara un puñal y desollara un trozo de piel de la espalda de Casco antes de darle muerte y empezar a aullar como un maníaco, creo que fui absorbido por el ídolo. Me desperté muy lejos de Tayasal veinte años después, en lo que pareció un mero momento.";
-			link.l1 = "Un embudo espacio-temporal... ¡Maldita sea, todo lo que dijo Ksatl Cha fue justo en el clavo! ¿Cómo te enteraste de la máscara? ¿Para qué la necesitas?";
+			link.l1 = "Un embudo espacio-temporal... ¡Maldita sea, todo lo que dijo Ksatl Cha tenía sentido! ¿Cómo te enteraste de la máscara? ¿Para qué la necesitas?";
 			link.l1.go = "ksochitam_7";
 		break;
 		
 		case "ksochitam_7":
 			dialog.text = "Debo detener a la prole del infierno, invocada por un hechicero indio loco. ¡Esta abominación pretende hacer una hoguera de nuestro mundo!";
-			link.l1 = "Hmm... ¿Has hablado con el padre Vincento, no? El Inquisidor está jugando a dos bandas. ¡Sorpresa, sorpresa! ¿Te ha enviado para rastrearme para una batalla campal? ¡Bien hecho! ¡Has completado tu misión, Don Alonso!";
+			link.l1 = "Hmm... ¿Has hablado con el padre Vincento, no? El Inquisidor está jugando a dos bandos. ¡Sorpresa, sorpresa! ¿Te ha enviado para rastrearme para una batalla campal? ¡Bien hecho! ¡Has completado tu misión, Don Alonso!";
 			link.l1.go = "ksochitam_8";
 		break;
 		

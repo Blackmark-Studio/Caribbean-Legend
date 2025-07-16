@@ -53,16 +53,16 @@ City_Rum15 {Nie można zazdrościć gubernatorowi ~}
 
 City_Rum16 {~ - Señor Alamida zacumował w porcie i rozpoczął inspekcję. Ostatnio, jak mówią, ~}
 
-City_Rum17 {~ nearly lost his title. Oh... I pray the Holy Mercy does not venture here again soon...}
+City_Rum17 {~ prawie stracił swój tytuł. Och... modlę się, aby Święte Miłosierdzie nie zapuszczało się tu wkrótce ponownie...}
 
-City_Rum18 {Have you heard that the crown's envoy is now personally roaming the archipelago? What foul deeds have the colonists committed before the Escorial? A mate of mine told me that the Holy Mercy is currently anchored in ~}
+City_Rum18 {Czy słyszałeś, że wysłannik korony teraz osobiście przemierza archipelag? Jakie podłe uczynki popełnili koloniści przed Escorialem? Mój kumpel powiedział mi, że Holy Mercy jest obecnie zakotwiczony w ~}
 
-City_Rum19 {. I wonder if there's truth to this?}
+City_Rum19 {. Zastanawiam się, czy jest w tym ziarnko prawdy?}
 
-City_Rum20 {It appears that a supervisor has fallen upon Spanish heads, sent from Europe to oversee! I had thought that the power of their king reigned supreme even in the Caribbean. I must inquire whether the governance in  ~}
+City_Rum20 {Wygląda na to, że nadzorca rzucił się na głowy Hiszpanów, wysłany z Europy, by nadzorować! Myślałem, że władza ich króla panuje niepodzielnie nawet na Karaibach. Muszę zapytać, czy rządy w  ~}
 
-City_Rum21 {~  might change in the coming months, for the Holy Mercy is currently docked there.}
+City_Rum21 {~  może ulec zmianie w nadchodzących miesiącach, ponieważ statek „Święte Miłosierdzie” jest obecnie tam zadokowany.}
 
-City_Rum22 {Curious tidings drift from the Spanish colonies. They say when Señor Alamide arrives in town, fear grips everyone, and they walk on tiptoes. I would be keen to hear from someone in ~}
+City_Rum22 {Z hiszpańskich kolonii dochodzą dziwne wieści. Mówią, że kiedy Señor Alamide przybywa do miasta, strach ogarnia wszystkich i chodzą na palcach. Chętnie posłuchałbym kogoś w ~}
 
-City_Rum23 {, for word has it that the Holy Mercy is currently there.}
+City_Rum23 {, bo krążą pogłoski, że Miłosierdzie Święte jest tam obecnie.}

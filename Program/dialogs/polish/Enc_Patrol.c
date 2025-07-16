@@ -64,11 +64,11 @@ void ProcessDialogEvent()
 			{
     			if (pchar.nation == npchar.nation)
 				{
-					dialog.text = RandPhraseSimple("O, patrz, wygląda na to, że ten łajdak podniósł alarm w "+XI_ConvertString("Kolonia"+npchar.city+"To")+"! Chwytaj h"+GetSexPhrase("jestem","er")+"!!","Heh, popatrz na to! Kilka "+NationNamePeople(sti(pchar.nation))+" udaje się być wrogami z "+NationNameAblative(sti(npchar.nation))+"! Chwytajcie łotra!!!");
+					dialog.text = RandPhraseSimple("O, patrz, wygląda na to, że ten łajdak podniósł alarm w "+XI_ConvertString("Colony"+npchar.city+"To")+"! Brać "+GetSexPhrase("go","ją")+"!!","Heh, popatrz na to! Kilku "+NationNamePeople(sti(pchar.nation))+" udaje się być wrogami z "+NationNameAblative(sti(npchar.nation))+"! Chwytajcie łotra!!!");
 				}
 				else
 				{
-					dialog.text = RandPhraseSimple("Wrogi agent w pobliżu "+XI_ConvertString("Kolonia"+npchar.city+"Gen")+"! Chwycić h"+GetSexPhrase("jestem","er")+"!!","Hej, popatrz, "+NationNamePeople(sti(pchar.nation))+" chodzą prawie w "+XI_ConvertString("Colonia"+npchar.city+"To")+"! Natychmiast go złapać!!!");
+					dialog.text = RandPhraseSimple("Wrogi agent w pobliżu "+XI_ConvertString("Colony"+npchar.city+"Gen")+"! Łapać"+GetSexPhrase("go","ją")+"!!","Hej, popatrzcie, "+NationNamePeople(sti(pchar.nation))+" kręcą się blisko "+XI_ConvertString("Colony"+npchar.city+"To")+"! Natychmiast go złapać!!!");
 				}
 				link.l1 = RandPhraseSimple("Cóż, możesz spróbować. Jesteśmy tu sami...","Heh, nikt ci tu nie poda pomocnej dłoni.");
 				link.l1.go = "exit_fight"; 				
@@ -80,8 +80,8 @@ void ProcessDialogEvent()
 				if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation)) sTemp1 = "Vice Admiral! ";
 				if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE) sTemp1 = "Your Excellency Governor General! ";
 				
-				dialog.text = LinkRandPhrase("Pozwól mi się przedstawić! Jestem patrolantem z "+XI_ConvertString("Kolonia"+npchar.city+"Gen")+", szukamy zbiegłego skazańca.","Witaj, jestem szefem tej patroli. Szukamy uciekiniera niewolnika z "+XI_ConvertString("Kolonia"+npchar.city+"Gen")+".","Pozdrowienia dla ciebie, "+GetAddress_Form(NPChar)+". Mój oddział patroluje teren w pobliżu "+XI_ConvertString("Colonia"+npchar.city+"Gen")+".");
-				Link.l1 = LinkRandPhrase("Bardzo dobrze. Jak mogę ci pomóc?","Bardzo dobrze. Czy mogę ci w czymś pomóc, "+GetAddress_FormToNPC(NPChar)+"?","Bardzo dobrze. Czy mogę coś dla ciebie zrobić?");
+				dialog.text = LinkRandPhrase("Pozwól mi się przedstawić! Jestem dowódcą patrolu z "+XI_ConvertString("Colony"+npchar.city+"Gen")+", szukamy zbiegłego skazańca.","Witaj, jestem szefem tego patrolu. Szukamy uciekiniera niewolnika z "+XI_ConvertString("Colony"+npchar.city+"Gen")+".","Pozdrowienia dla ciebie, "+GetAddress_Form(NPChar)+". Mój oddział patroluje teren w pobliżu "+XI_ConvertString("Colony"+npchar.city+"Gen")+".");
+				Link.l1 = LinkRandPhrase("Rozumiem. Jak mogę ci pomóc?","Rozumiem. Czy mogę ci w czymś pomóc, "+GetAddress_FormToNPC(NPChar)+"?","Rozumiem. Czy mogę coś dla ciebie zrobić?");
 				Link.l1.go = "Node_2";
 			}
 		break;
@@ -232,7 +232,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_16":
-			dialog.text = "Załatwiliśmy sumę z "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_ABL)+" z góry. Nie podoba mi się to ani trochę. Zabij h"+GetSexPhrase("jestem","er")+", chłopaki!";
+			dialog.text = "Załatwiliśmy sumę z "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_ABL)+" z góry. Nie podoba mi się to ani trochę. Zabijcie"+GetSexPhrase("go","ją")+", chłopaki!";
 			link.l1 = "Dobrze, możesz spróbować!";
 			link.l1.go = "Reason_To_Fast_ExitFight";
 			pchar.questTemp.ReasonToFast = "PatrolAfter";	
@@ -404,8 +404,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_AfterHunter3":
-			dialog.text = "Ty gnojku! Prawie uwierzyłem w to! Strażnicy! Chwytajcie go"+GetSexPhrase("jestem","er")+"...";
-			link.l1 = "Spróbujcie, bękartowie!";
+			dialog.text = "Ty gnojku! Prawie uwierzyłem w to! Strażnicy! Łapcie "+GetSexPhrase("go","ją")+"...";
+			link.l1 = "Spróbujcie, wy dranie!";
 			link.l1.go = "Reason_To_Fast_ExitFight";
 			pchar.questTemp.ReasonToFast = "PatrolAngry";	
 		break;

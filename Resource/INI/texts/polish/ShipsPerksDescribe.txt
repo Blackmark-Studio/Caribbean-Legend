@@ -1,0 +1,282 @@
+new_string {
+
+}
+
+special0 {Handlowy}
+
+special0_desc 
+{
+Statek handlowy zazwyczaj poświęca kaliber, prędkość i liczbę dział na rzecz dużej ładowni. Na samotny rejs takim statkiem może sobie pozwolić tylko bardzo doświadczony kapitan.
+}
+
+special0_desc2 
+{
+Premia do Siły Floty: niska
+}
+
+special1 {Wojenny}
+
+special1_desc 
+{
+Okręty wojenne zostały specjalnie zaprojektowane do walk morskich. Mają najsilniejszy kadłub i największy kaliber, ale taka siła ognia ogranicza prędkość.
+}
+
+special1_desc2
+{
+Premia do Siły Floty: bardzo wysoka.
+}
+
+special2 {Korsarski}
+
+special2_desc 
+{
+Statki korsarskie są idealne do rajdów i piractwa – zwinne, zwrotne i dobrze uzbrojone, stanowią poważną siłę, ale płacą za to małą ładownią i skromnym kadłubem.
+}
+
+special2_desc2 
+{
+Premia do Siły Floty: wysoka.
+}
+
+special3 {Wielozadaniowy}
+
+special3_desc 
+{
+Statki wielozadaniowe to wybór kapitanów, którzy chcą robić wszystko naraz. Nadają się zarówno do handlu, piractwa, jak i wojny, ale taka wszechstronność sprawia, że są relatywnie gorsze od wyspecjalizowanych jednostek. Przynajmniej dopóki nie trafią w ręce mistrza stoczniowego.
+}
+
+special3_desc2 
+{
+Premia do Siły Floty: średnia
+Premia do ulepszania cech: 15%
+}
+
+trait01 {Mapa prądów}
+
+trait01_desc 
+{
+Złożone przyrządy nawigacyjne wykonane na zamówienie przez europejskich mistrzów oraz dokładna mapa podwodnych prądów archipelagu pozwalają znacznie zaoszczędzić czas w podróży.
+}
+
+trait01_desc2 
+{
+Zwiększa prędkość żeglugi na mapie globalnej o 5%.
+Kumuluje się ze wszystkimi innymi premiami.
+}
+
+trait02 {Opakowanie wysokiej jakości}
+
+trait02_desc 
+{
+Gruntowna przebudowa ładowni, grubości grodzi i standaryzacja systemu przechowywania pozwalają zabrać więcej ładunku i lepiej go rozmieścić na statku bez zaburzania równowagi.
+}
+
+trait02_desc2 
+{
+Zmniejsza karę do prędkości za załadunek ładowni: 15%.
+}
+
+trait03 {Znak jakości}
+
+trait03_desc 
+{
+Zestaw glifów, pieczęci i patentów sprawia, że ładunek z tego statku jest rozpoznawalny, a jego przybycie do portu to dobry znak dla lokalnych kupców. Udane transakcje handlowe poprawiają relacje z narodem portu, a dobre relacje czynią handel bardziej opłacalnym.
+}
+
+trait03_desc2 
+{
+Zmniejsza karę do sprzedaży: 3% za poziom relacji.
+Próg zysku do poprawy relacji z narodem: 25000.
+}
+
+trait04 {Awaryjne żagle}
+
+trait04_desc 
+{
+W przypadku krytycznego zagrożenia dla statku marynarze stawiają na rejach specjalne szybkomontażowe żagle, tymczasowo zwiększając prędkość statku.
+}
+
+trait04_desc2 
+{
+Próg wytrzymałości kadłuba do aktywacji: 40%.
+Wzrost prędkości: 20%.
+Opóźnienie efektu przy naprawie powyżej progu: 20 sekund.
+}
+
+trait05 {Fałszywe dokumenty}
+
+trait05_desc 
+{
+Imponujący zestaw patentów, dokumentów i tabliczek pozwala temu statkowi wpłynąć incognito do niemal każdego portu, a niepozorny kadłub zmniejsza ryzyko spotkania z patrolem podczas transakcji przemytniczych.
+}
+
+trait05_desc2 
+{
+Zwiększa szansę oszustwa: 15%.
+Zmniejsza szansę spotkania z patrolem: 50%.
+}
+
+trait11 {Obrotowe lawety}
+
+trait11_desc
+{
+Sabordy i lawety dział zostały specjalnie przebudowane, co zwiększa sektor ostrzału dział.
+}
+
+trait11_desc2
+{
+Zwiększa sektor ostrzału: 7 stopni.
+}
+
+trait12 {Ulepszony system odrzutu}
+
+trait12_desc
+{
+Ulepszony system bloków i kompensatorów pozwala na szybki ogień z tej samej burty, wykorzystując bezwładność odrzutu do przyspieszenia przeładowania i celowania.
+}
+
+trait12_desc2
+{
+Zwiększa obrażenia i szybkość przeładowania: 6% za salwę.
+Premia maksymalna: 35%.
+Premia znika przy strzale z innej burty.
+}
+
+trait13 {Szybki desant}
+
+trait13_desc
+{
+Cechy konstrukcyjne statku i system wciągarek umożliwiają desantowanie oddziałów w ruchu, co pozwala rozpocząć szturm znacznie wcześniej bez narażania załogi.
+}
+
+trait13_desc2
+{
+Zmniejsza próg zniszczonych dział do szturmu fortu: 15%.
+}
+
+trait14 {Barwy wojenne}
+
+trait14_desc
+{
+Jaskrawe oznaczenia udanych rajdów na kadłubie i regularne łapówki odpowiednim osobom znacznie ułatwiają wymuszanie, zamieniając statek w przerażającą legendę. Gubernatorzy chętniej dzielą się pieniędzmi i towarami, a narody wyznaczają wyższe nagrody za kapitanów.
+}
+
+trait14_desc2
+{
+Premia do wartości okupu: 35%.
+Premia do wartości magazynów przy grabieży kolonii: 15%.
+}
+
+trait21 {Uderz i uciekaj}
+
+trait21_desc
+{
+Przesunięty środek ciężkości, ostre linie kadłuba i specjalna przebudowa sabordów zwiększają zdolność statku do pokonywania fal i stabilność podczas odrzutu dział, podnosząc dopuszczalne limity prędkości w walce.
+}
+
+trait21_desc2
+{
+Premia do prędkości statku za rozładowaną burtę: 5%.
+Premia stopniowo maleje przy ładowaniu.
+}
+
+trait22 {Grabież}
+
+trait22_desc
+{
+Na statku obowiązują specjalne zasady pozyskiwania materiałów z abordowanych jednostek. Zatopienie statku przez abordaż przywraca wytrzymałość kadłuba i żagli. Ilość przywrócona zależy od ilości i jakości materiałów, stopnia uszkodzeń i różnicy klas.
+}
+
+trait22_desc2
+{
+Odzyskanie kadłuba: 5–15%.
+Odzyskanie żagli: 12% (maszty nie są przywracane).
+}
+
+trait23 {Szybki i martwy}
+
+trait23_desc
+{
+Załoga przechodzi obowiązkowe szkolenie z zacierania śladów i skradania się. Zmniejsza wpływ piractwa na relacje z narodami, a odzyskiwanie reputacji staje się skuteczniejsze.
+}
+
+trait23_desc2
+{
+Zmniejsza kary do relacji: 50%.
+Zwiększa skuteczność adwokatów: 50%. 
+}
+
+trait24 {Pociski zapalające}
+
+trait24_desc
+{
+Działa pościgowe i wycofania są specjalnie hartowane, aby wytrzymać wysokie temperatury, a ich sabordy są pokryte specjalną mieszanką przeciwpożarową.
+Pozwala to na użycie mieszanek zapalających z dowolną uniwersalną amunicją, zadając okresowe obrażenia wrogim statkom.
+}
+
+trait24_desc2
+{
+Dodatkowe obrażenia kadłuba i żagli: 200%.
+Czas trwania efektu: 15 sekund.
+Zwiększa szansę pożaru: 200%
+}
+
+sp1 {Fanatyk}
+
+sp1_desc
+{
+Wyposażona kapliczka pokładowa wraz z ikonami Matki Boskiej w tajemniczy sposób wzmacnia efekty i czas działania kościelnych amuletów.
+}
+
+sp1_desc2
+{
+Wzmocnienie każdego amuletu: indywidualnie.
+Wydłużenie czasu działania: 15 dni.
+}
+
+sp2 {Witaj gościu}
+
+sp2_desc
+{
+Ten legendarny statek jest znany w każdym zakątku archipelagu karaibskiego i wszędzie witany z szacunkiem i podziwem. Miejsce postoju Lady Beth jest natychmiast znane sprzedawcom map, a lokalni kupcy starają się zebrać jak najwięcej kapitału na zakup wartościowych przedmiotów.
+}
+
+sp2_desc2
+{
+Premia do szansy pojawienia się sprzedawcy map: 5–12%.
+Zwiększenie zapasu peso: 100%.
+Zwiększenie zapasu dublonów: ~30%.
+}
+
+sp3 {Tygiel}
+
+sp3_desc
+{
+Na tym okręcie ludzkie życie to tylko krótki etap przed ujawnieniem prawdziwej potęgi. Niewielu przekracza Próg i wraca, ale ci, którym się to udaje, nie boją się już śmierci.
+}
+
+sp3_desc2
+{
+Polegli marynarze zwiększają doświadczenie i morale załogi.
+}
+
+sp3_SailorsBoardingBonus_desc
+{
+Premia do doświadczenia abordażowego: #dSailorsBoardingBonus#%
+}
+
+sp3_SailorsBoardingBonus1_desc
+{
+~ (#dDeadSailors#/500 poległych marynarzy)
+}
+
+sp3_SurrenderChanceBonus_desc
+{
+Zwiększenie szansy na kapitulację: #dSurrenderChanceBonus#%
+}
+
+sp3_SurrenderChanceBonus1_desc
+{
+~ (#dDeadSailors#/2000 poległych marynarzy)
+}
+

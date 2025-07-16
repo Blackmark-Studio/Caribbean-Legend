@@ -530,7 +530,7 @@ void ProcessDialogEvent()
 				pchar.quest.Saga_Trap.win_condition.l1 = "location";
 				pchar.quest.Saga_Trap.win_condition.l1.location = "Mayak11";
 				pchar.quest.Saga_Trap.function = "Saga_CreateTrapBandos";
-				CoolTraderHunterOnMap();
+				TraderHunterOnMap(true);
 			}
 			AddCharacterExpToSkill(pchar, "Sneak", 50);//скрытность
 			
@@ -939,7 +939,7 @@ void ProcessDialogEvent()
 		case "molligan_7":
 			DialogExit();
 			// ставим проверку скрытности
-			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > (10+drand(50)))
+			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > (10+hrand(50)))
 			{
 				pchar.questTemp.Saga.Molligan.friend = "true"; // будет шанс критического залпа картечью
 				sTemp = "The scoundrel is still not suspecting a thing. I should get closer and shoot at him with grapeshot. A sudden strike will always win in any battle. ";

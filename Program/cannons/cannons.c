@@ -25,78 +25,37 @@ int GetCannonByTypeAndCaliber(string sCannonType, int iCaliber)
 	{
 		case "cannon":
 			switch (iCaliber)
-			{									
-                case 3:
-					return CANNON_TYPE_CANNON_LBS3;
-				break;
-				case 6:
-					return CANNON_TYPE_CANNON_LBS6;
-				break;
-				case 8:
-					return CANNON_TYPE_CANNON_LBS6; 
-                break;				
-				case 12:
-					return CANNON_TYPE_CANNON_LBS12;
-				break;
-				case 16:
-					return CANNON_TYPE_CANNON_LBS16;
-				break;
-				case 18:
-					return CANNON_TYPE_CANNON_LBS16;
-				break;
-				case 20:
-					return CANNON_TYPE_CANNON_LBS20;
-				break;
-				case 24:
-					return CANNON_TYPE_CANNON_LBS24;
-				break;
-				case 32:
-					return CANNON_TYPE_CANNON_LBS32;
-				break;
-				case 36:
-					return CANNON_TYPE_CANNON_LBS36;
-				break;
-				case 42:
-					return CANNON_TYPE_CANNON_LBS42;
-				break;
-				case 48:
-					return CANNON_TYPE_CANNON_LBS48;
-				break;
+			{
+                case 3:  return CANNON_TYPE_CANNON_LBS3;  break;
+                case 6:  return CANNON_TYPE_CANNON_LBS6;  break;
+                case 8:  return CANNON_TYPE_CANNON_LBS8;  break;
+                case 12: return CANNON_TYPE_CANNON_LBS12; break;
+                case 16: return CANNON_TYPE_CANNON_LBS16; break;
+                case 18: return CANNON_TYPE_CANNON_LBS18; break;
+                case 20: return CANNON_TYPE_CANNON_LBS20; break;
+                case 24: return CANNON_TYPE_CANNON_LBS24; break;
+                case 32: return CANNON_TYPE_CANNON_LBS32; break;
+                case 36: return CANNON_TYPE_CANNON_LBS36; break;
+                case 42: return CANNON_TYPE_CANNON_LBS42; break;
+                case 48: return CANNON_TYPE_CANNON_LBS48; break;
 			}
 		break;
 		case "culverine":
 			switch (iCaliber)
 			{
-				case 3:
-					return CANNON_TYPE_CANNON_LBS3;
-				break;
-				case 6:
-					return CANNON_TYPE_CANNON_LBS6;
-				break;			
-                case 8:
-					return CANNON_TYPE_CULVERINE_LBS8;
-				break;
-				case 12:
-					return CANNON_TYPE_CULVERINE_LBS8;
-				break;
-				case 16:
-					return CANNON_TYPE_CULVERINE_LBS8;
-				break;
-				case 18:
-					return CANNON_TYPE_CULVERINE_LBS18;
-				break;
-				case 20:
-					return CANNON_TYPE_CULVERINE_LBS18;
-				break;
-				case 24:
-					return CANNON_TYPE_CULVERINE_LBS18;
-				break;
-				case 32:
-					return CANNON_TYPE_CULVERINE_LBS18;
-				break;
-				case 42:
-					return CANNON_TYPE_CULVERINE_LBS36;
-				break;
+                case 8:  return CANNON_TYPE_CULVERINE_LBS8;  break;
+                case 18: return CANNON_TYPE_CULVERINE_LBS18; break;
+                case 42: return CANNON_TYPE_CULVERINE_LBS36; break; // Именно 42
+                // ЗАГЛУШКИ
+                case 3:  return CANNON_TYPE_CANNON_LBS3;     break;
+                case 6:  return CANNON_TYPE_CANNON_LBS6;     break;			
+                case 12: return CANNON_TYPE_CANNON_LBS12;    break;
+                case 16: return CANNON_TYPE_CANNON_LBS16;    break;
+                case 20: return CANNON_TYPE_CANNON_LBS20;    break;
+                case 24: return CANNON_TYPE_CANNON_LBS24;    break;
+                case 32: return CANNON_TYPE_CANNON_LBS32;    break;
+                case 36: return CANNON_TYPE_CANNON_LBS36;    break;
+                case 48: return CANNON_TYPE_CANNON_LBS48;    break;
 			}
 		break;
 	}

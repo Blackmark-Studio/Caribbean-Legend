@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Saga_search_1":
-		dialog.text = "No hay nada que saber al respecto. Pocos lo recuerdan ahora, pero hace veinte años Henry era muy popular entre las putas desde Bridgetown hasta Tortuga. ¡Vaya que sí! ¡Un contramaestre del 'Neptune', bajo el mando del propio capitán Butcher! Debe ser muy viejo ahora, si es que aún está vivo, por supuesto.\nLas posibilidades son bajas, pero ya sabes, nada es imposible. Pagaré veinte mil pesos por cualquier información sobre él, el doble si lo traes aquí vivo.";
+		dialog.text = "No hay nada que saber al respecto. Pocos lo recuerdan ahora, pero hace veinte años Henry era muy popular entre las putas desde Bridgetown hasta Tortuga. ¡Vaya que sí! ¡Un contramaestre del 'Neptune', bajo el mando del propio capitán Butcher! Debe ser muy viejo ahora, si es que aún está vivo, por supuesto.\nLas posibilidades son bajas, pero nada es imposible. Pagaré veinte mil pesos por cualquier información sobre él, el doble si lo traes aquí vivo.";
 		link.l1 = "¿Cuánto pagarás por Gladys y su hija?";
 		link.l1.go = "Saga_search_2";
 		break;
@@ -178,14 +178,14 @@ void ProcessDialogEvent()
 
 	// абордаж, в каюте
 	case "Jackman_abordage":
-		dialog.text = "¡Ja! Nos encontramos de nuevo, capitán " + GetFullName(pchar) + " Admito que eres un oponente digno, a pesar de tus intentos de hacerte pasar por un simplón en Maroon-Town. He descubierto algo sobre ti, tus intrigas con la Compañía Holandesa de las Indias Occidentales fueron descubiertas... Ahora entiendo qué tipo de persona eres.";
+		dialog.text = "¡Ja! Nos encontramos de nuevo, capitán " + GetFullName(pchar) + ". Admito que eres un oponente digno, a pesar de tus intentos de hacerte pasar por un simplón en Maroon-Town. He descubierto algo sobre ti, tus intrigas con la Compañía Holandesa de las Indias Occidentales fueron descubiertas... Ahora entiendo qué tipo de persona eres.";
 		link.l1 = "Conozco tu tipo también, Jacob. Así que no nos hagamos ilusiones.";
 		link.l1.go = "Jackman_abordage_1";
 		break;
 
 	case "Jackman_abordage_1":
 		dialog.text = "¡Y cómo me has engañado con 'Marlin'! Supongo que mi pobre hermano está muerto...";
-		link.l1 = "Tengo entendido que quieres vengarte por él? Pero también tengo una larga cuenta pendiente contigo. Por el acorralado Nathaniel, su esposa, su fragata, el calumniado Shark, Blaze Sharp...";
+		link.l1 = "Tengo entendido que quieres vengarte por él. Pero también tengo una larga cuenta pendiente contigo. Por el acorralado Nathaniel, su esposa, su fragata, el calumniado Shark, Blaze Sharp...";
 		link.l1.go = "Jackman_abordage_2";
 		break;
 
@@ -196,7 +196,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Jackman_abordage_3":
-		dialog.text = "¡Qué necio tan vehemente... ¡Maldito seas! ¡Ahora más te vale aguantar! ¡Jacob Jackman nunca ha sido derrotado! ¡Carpacho, llegas justo a tiempo! ¡Ven aquí!";
+		dialog.text = "Qué necio tan vehemente... ¡Maldito seas! ¡Ahora más te vale aguantar! ¡Jacob Jackman nunca ha sido derrotado! ¡Carpacho, llegas justo a tiempo! ¡Ven aquí!";
 		link.l1 = "...";
 		link.l1.go = "Jackman_abordage_4";
 		break;
@@ -298,8 +298,8 @@ void ProcessDialogEvent()
 		pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
 		pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 		sLoc = XI_ConvertString(pchar.GenQuest.CaptainComission.Island + "Abl");
-		dialog.text = "Mm... Bueno, " + GetName(NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.UnknownPirateName, NAME_NOM) + " ha convencido a algunos piratas de que su parte del botín está guardada en nuestro escondite no lejos de " + XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore + "Gen") + ". Sus dos barcos '" + pchar.GenQuest.CaptainComission.ShipName1 + "'y'" + pchar.GenQuest.CaptainComission.ShipName2 + " izó las anclas hace poco y navegó hacia " + sLoc + "¿Ahora ves por qué no puedo confiar в своих hombres para hacer ese trabajo?";
-		link.l1 = "Lo sé. ¿Cuánto tiempo tengo?";
+		dialog.text = "Mm... Bueno, " + GetName(NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.UnknownPirateName, NAME_NOM) + " ha convencido a algunos piratas de que su parte del botín está guardada en nuestro escondite no lejos de " + XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore + "Gen") + ". Sus dos barcos '" + pchar.GenQuest.CaptainComission.ShipName1 + "' y '" + pchar.GenQuest.CaptainComission.ShipName2 + "' levantaron anclas hace poco y navegaron hacia " + sLoc + ". ¿Ahora ves por qué no puedo confiar en mis hombres para hacer ese trabajo?";
+		link.l1 = "Lo veo. ¿Cuánto tiempo tengo?";
 		link.l1.go = "CapComission2_2_3";
 		break;
 

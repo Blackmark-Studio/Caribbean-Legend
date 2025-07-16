@@ -697,7 +697,7 @@ void ProcessDialogEvent()
 		case "Marginpassenger_offer":
 			pchar.GenQuest.Marginpassenger.Goods = GOOD_EBONY + rand(makeint(GOOD_MAHOGANY - GOOD_EBONY));
 			pchar.GenQuest.Marginpassenger.GoodsQty = 200+rand(10)*10;
-			switch (drand(1))
+			switch (hrand(1))
 			{
 				case 0: //бухта на южном мейне
 					SelectSouthshore();
@@ -837,7 +837,7 @@ void SelectSouthshore()
 
 void SelectSouthcity()
 {
-	switch (drand(2))
+	switch (hrand(2))
 	{
 		case 0: 
 			pchar.GenQuest.Marginpassenger.Southcity = "Maracaibo";

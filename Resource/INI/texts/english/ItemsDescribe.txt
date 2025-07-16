@@ -39,7 +39,7 @@ new_string	{
 
 Potion parameters{Volume}
 health value{hp}
-weapon blade parameters{Attack: #f.1Attack# Balance: #f.1Balance#}
+weapon blade parameters{Attack: #f.1WeightAttack# Balance: #f.1Balance#}
 weapon blade type {Type: #sFencingTypeName#}
 weapon gun parameters{Damage: #ddmg_min#-#ddmg_max#}
 weapon gun parameters equipped{Damage: #ddmg_min#-#ddmg_max#, reload time: #dchargespeed# sec.}
@@ -53,6 +53,8 @@ used_item {Item used - }
 
 youve_gotNotif {New Item: }
 used_itemNotif {Item Lost: }
+
+flower_find {Lucky find!}
 
 
 ;====================================================================================================================================
@@ -489,6 +491,21 @@ A richly adorned sword, despite its ceremonial appearance, possesses excellent c
 
 lacrima_patris_parameters{Cannon fire range boost: #f.1RangeBonus#%}
 
+itmname_blade_SP_3low {Hangman}
+itmdescr_blade_SP_3low
+{
+This cutlass combines features of Turkish sabers and European falchions — its widened blade can cut through even the toughest armor. With the Hangman, any boarding fight ends quickly and brutally.
+}
+
+itmname_blade_SP_3 {Hangman}
+itmdescr_blade_SP_3
+{
+The Yorick skull in place of the guard urges the owner to cast aside fear of death and look the Reaper in the eye to unlock true martial power.
+~
+Prevents healing from any source.
+For every 2% of health lost, damage and energy recovery speed increase by 1.5% and 1.75% respectively.
+}
+
 ; ==================================================================================================================== ОГНЕСТРЕЛЬНОЕ ОРУЖИЕ
 
 
@@ -691,7 +708,7 @@ This beautiful side-by-side carbine is more commonly seen with high-class noblem
 itmname_howdah {Howdah}
 itmdescr_howdah
 {
-Double-barreled, large-caliber pistol, best friend to the hunter in the African bush and the Indian jungle. Reliably put down wild boars, tigers, lions, and aggressive natives in a single shot! Uses grapeshot. Requires lead balls to fire. Requires the Skirmisher perk.
+Double-barreled, large-caliber pistol, best friend to the hunter in the African bush and the Indian jungle. Reliably put down wild boars, tigers, lions, and aggressive natives in a single shot! It loads with buckshot and shredded nails. Requires the Skirmisher perk.
 } 
 
 ; ==================================================================================================================== ДОСПЕХИ
@@ -937,6 +954,15 @@ This hat frightens merchants, especially Spanish ones, more than the Jolly Roger
 Rum and wine restore 50% more health. Being drunk has a more positive effect.
 }
 
+itmname_hat9 {Grim’s Hat}
+itmdescr_hat9
+{
+This hat is known in every corner of the Caribbean, and everywhere it is remembered with a shudder. Only a madman would dare attack the ship of its owner, and meeting him in person, fear will make you forget how to hold a blade or pistol. And remember: it's not getting to the land of the dead that's the problem. It's getting back.
+~
+Reduces ship damage penalty by 30%.
+Gives a 10% chance to avoid gunshot damage.
+}
+
 ; ==================================================================================================================== ОПТИКА
 
 itmname_spyglass1	{Cheap Spyglass}
@@ -973,6 +999,14 @@ itmdescr_spyglass5
 A one-of-a-kind telescope equally suited to spotting Jupiter's moons or ships at sea. Perfectly adjusted lenses made of pure rock crystal together with the usage of the tripod allow you to see absolutely everything above the horizon, including the types of cannons used on a ship or in a fort. You could count King Louis' nose hairs back in Versailles with this. +1500 yards bonus to fast travel distance.
 }
 
+itmname_spyglassSP3 {Spyglass 'Dead Man’s Eye'}
+itmdescr_spyglassSP3
+{
+This bone-adorned spyglass has surprisingly good lenses, letting you see: ship type, name, speed, number and caliber of cannons, ship damage, musketeers on deck, and the fear in the enemy captain’s eyes.
+Fast travel range: +850 yards.
+World map vision radius: +15%.
+}
+
 ; ==================================================================================================================== НАВИГАЦИЯ
 
 
@@ -1000,10 +1034,11 @@ itmdescr_clock1
 A ship chronometer. This device is used to determine longitude, but it must be regularly calibrated to an exact time by an hourglass. This exact timing will later come to be known as Greenwich Mean Time.
 }
 
-itmname_clock2 {Working chronometer}
+itmname_clock2 {Working Chronometer}
 itmdescr_clock2
 {
-A ship chronometer set to the precise time of the island of Forro. It allows determining the longitude of the ship over a period of 30 days with minimal error.
+A time-rated Forro Island ship chronometer. Allows you to determine the ship's longitude with minimal error for 30 days.
+Increases Navigation skill growth when equipped.
 }
 
 itmname_sextant1 {Sextant}
@@ -1012,16 +1047,19 @@ itmdescr_sextant1
 A unique device used to determine geographic coordinates. The sextant's original owner has left his own time far behind, since the precise clock needed for this device to function has not been invented yet. Therefore this sextant is unusable as of now.
 }
 
-itmname_sextant2 {Working sextant}
+itmname_sextant2 {Working Sextant}
 itmdescr_sextant2
 {
-A unique device to determine geographic coordinates. Now that you have Alexus' chronometer, it can determine the latitude and longitude at all times.
+A unique device for determining geocoordinates. Now that you possess a chronograph from the future, it can constantly determine latitude and longitude.
+Thanks to its high accuracy, you can achieve a 5% increase in ship speed.
+Increases Navigation skill growth when equipped.
 }
 
-itmname_bussol {Boussole}
+itmname_bussol {Bussol}
 itmdescr_bussol
 {
-A ship device that combines an astrolabe and ship compass. Besides other things, it allows determining latitude.
+A ship's instrument combining an astrolabe and a ship's compass. Among other things, it allows you to constantly determine geographic latitude.
+Increases Navigation skill growth when equipped.
 }
 
 itmname_clock3 {Alexus' chronometer}
@@ -1148,12 +1186,12 @@ Can be used by a navigator.
 No penalties, no activation limits.
 }
 
-itmname_talisman15	{Ward 'Black Spot'}
+itmname_talisman15	{Talisman 'Black Mark'}
 itmdescr_talisman15
 {
-The black spot mysteriously doubles any change in honor. It's crafted from the neckerchief of the Ironsides, Cromwell's cavalry.
+The bearer of the Black Mark is immediately surrounded by superstitions, legends, and rumors, which increases the Fleet Power by 15%. Made from the neckerchief of the Ironsides, Cromwell's cavalry.
 ~
-No penalties, no activation limits.
+Has no penalties, can be activated multiple times.
 }
 
 itmname_talisman16	{Ward 'Gold ritual knife'}
@@ -1193,6 +1231,26 @@ No penalties, no activation limits.
 talisman18_Bonus{Treasures Found : #dQBonus# / 10}
 
 talisman18_NoBonus{Treasures Found : 0 / 10}
+
+itmname_talisman19	{Talisman 'Yorick’s Skull'}
+itmdescr_talisman19
+{
+The skull of Captain Mortimer Grim of the 'Memento', who never fully realized his own death. You knew him, #sName#.
+The dead teach the living, and this artifact adapts to its owner's desires.
+When in your inventory, it makes all officers immortal.
+~
+No penalties, can be activated multiple times.
+}
+
+talisman19_InSlot
+{
+A ship exists on both sides of the veil at once. The wood was alive and became dead to serve the living. The skull of Captain 'Memento' reminds any ship that death does not exist, and you must fight to the end.
+~
+For every 2% of hull lost, ship speed and cannon damage increase by 0.75% and 0.5% respectively.
+~
+No penalties, can be activated multiple times.
+}
+
 ; ==================================================================================================================== ТАЛИСМАНЫ
 
 itmname_totem_01 {Talisman 'Throat of cast iron'}
@@ -1342,24 +1400,24 @@ Works for any character.
 Disappears after 70 days of usage or by removal.
 }
 
-itmname_indian_3 {Amulet 'Ritual knife'}
+itmname_indian_3 {Amulet 'Ritual Knife'}
 itmdescr_indian_3
 {
-Increases a critical hit chance by 15%.
-Enemy heavy attacks deal 10% more damage.
-Can be activated only once.
-Works for any character.
-Disappears after 70 days of usage or by removal.
+An obsidian sacrificial knife adds 10% to the chance of a critical hit with melee weapons.
+~
+Damage from enemy heavy attacks will increase by 10%.
+Activates once, by any character.
+Disappears after 70 days or when removed.
 }
 
-itmname_indian_4 {Amulet 'Poleaxe'}
+itmname_indian_4 {Amulet 'Axe'}
 itmdescr_indian_4
 {
-25% damage increase for heavy attacks.
-Enemy critical hit chance increases by 10%.
-Can be activated only once.
-Works for any character.
-Disappears after 70 days of usage or by removal.
+A rune-covered pendant increases the power of piercing attacks by 25%.
+~
+Opponents will deal 25% more damage with critical hits.
+Activates once, by any character.
+Disappears after 70 days or when removed.
 }
 
 itmname_indian_5 {Amulet 'Tsantsa'}
@@ -1455,11 +1513,10 @@ Disappears after 70 days of usage or by removal.
 itmname_amulet_3 {Amulet 'Crucifix'}
 itmdescr_amulet_3
 {
-Lowers your chance to receive a critical hit by 10%.
-Your heavy attacks deal 10% less damage.
-Can be activated only once.
-Works for any character.
-Disappears after 70 days of usage or by removal.
+A consecrated Catholic cross reduces critical damage dealt by enemies with melee weapons by 15%.
+The character's heavy attack power is reduced by 10%.
+Activates once, by any character.
+Disappears after 70 days or when removed.
 }
 
 itmname_amulet_4 {Amulet 'El trozo'}
@@ -2210,10 +2267,10 @@ itmdescr_map_martiniqua
 An excellent map of the island of Martinique.
 }
 
-itmname_map_trinidad	{Map of Trinidad and Tobago}
+itmname_map_trinidad	{Map of Trinidad}
 itmdescr_map_trinidad
 {
-A map of the twin islands of Trinidad and Tobago.
+A map of the twin islands of Trinidad.
 }
 
 itmname_map_nevis	{Map of St. Christopher}
@@ -2380,10 +2437,10 @@ itmdescr_A_map_martiniqua
 An extremely precise map of the island of Martinique. On the reverse side, there's the name of the cartographer - Jose Dios.
 }
 
-itmname_A_map_trinidad	{Excellent map of Trinidad and Tobago}
+itmname_A_map_trinidad	{Excellent map of Trinidad}
 itmdescr_A_map_trinidad
 {
-An extremely precise map of the islands of Trinidad and Tobago. On the reverse side, there's the name of the cartographer - Jose Dios.
+An extremely precise map of the islands of Trinidad. On the reverse side, there's the name of the cartographer - Jose Dios.
 }
 
 itmname_A_map_nevis	{Excellent map of St. Christopher}
@@ -2463,9 +2520,8 @@ A full map of Isla del Tesoro, put together by uniting the two halves. The beare
 itmname_LSC_navigation_map	{Sailing directions to the City of Abandoned Ships}
 itmdescr_LSC_navigation_map
 {
-Without this document, it is impossible to reach the City of Abandoned Ships by sea.
-First one must sail to 24 deg 21 min North and 84 deg 50 min West.
-Then one must sail according to precise directions.
+It is impossible to reach the Justice Island without these charts.
+24`21 North and 84`50 West.
 }
 
 itmname_RingCapBook	{'Santa Lucia' ship's log}
@@ -2597,7 +2653,7 @@ M.'
 }
 itmdescr_letter_adolf_1
 {
-'Marchello, we had agreed on a sum twice as much as the one you have handed me. The carbine is worth a lot more, and you know it. If you don't pay me the rest, the admiral shall immediately know about your dealings with Kapper on 'Eva'.
+'Marcello, we had agreed on a sum twice as much as the one you have handed me. The carbine is worth a lot more, and you know it. If you don't pay me the rest, the admiral shall immediately know about your dealings with Kapper on 'Eva'.
 Adolf.'
 }
 itmdescr_letter_aeva
@@ -3618,6 +3674,12 @@ itmdescr_cask_whisky
 A wooden casket containing several bottles of fine 'Bushmills' Irish whiskey, distilled in Dublin Town.
 }
 
+itmname_cask_gin	{Cask of Gin}
+itmdescr_cask_gin
+{
+A cask of exquisite European gin. Here in the Caribbean, such a drink is available only to the privileged few.
+}
+
 itmname_buben	{Shaman's Tambourine}
 itmdescr_buben
 {
@@ -3824,6 +3886,30 @@ itmdescr_PR_Letter
 A note written on old, worn paper. Its contents are clearly not meant for prying eyes.
 }
 
+itmname_quest_potion	{Herbal decoction}
+itmdescr_quest_potion
+{
+The true properties of this brew are known only to the one whose hand prepared it.
+}
+
+itmname_GS_letters	{Notes delivered by the mercenary}
+itmdescr_GS_letters
+{
+Tips written by the hand of the port authority chief. They contain information about the routes and departure times of his clients, each of whom was attacked by pirates.
+}
+
+itmname_SM_necklace_Julie	{Julie d'Armagnac's Necklace}
+itmdescr_SM_necklace_Julie
+{
+A jewel close to Julie's heart. Elegant and refined, it seems to guard her memories itself. If there are objects capable of keeping secrets, this necklace surely ranks among them.
+}
+
+itmname_TBP_letter	{Opened Letter}
+itmdescr_TBP_letter
+{
+"You thought you could blackmail me and remain unpunished? You were wrong. Very soon you will regret your audacity. Your death will be long and painful, and no one will save you.​"
+}
+
 ;====================================== предметы для DLC ===============================
 
 itmname_kaleuche_amulet1 {Strange amulet}
@@ -3949,6 +4035,30 @@ itmdescr_LadyBeth_Map
 {
 The path to the most precious treasure of the greatest treasure hunter.
 }
+
+itmname_BoxOfBalls	{Box of Cannonballs}
+itmdescr_BoxOfBalls
+{
+ This box contains only straw and eight cannonballs.
+}
+
+itmname_Tutorial_key	{Key}
+itmdescr_Tutorial_key
+{
+Iron key.
+}
+
+itmname_Tutorial_journal	{Captain's Journal. Volume IV.}
+itmdescr_Tutorial_journal
+{
+The fourth volume of Captain "Ulysse's" journal. Just begun, so there are only a few entries.
+}
+
+itmname_Suspicious_Potion	{Suspicious Potion}
+itmdescr_Suspicious_Potion
+{
+It better work.
+}
 ;====================================== предметы для пиратской линейки ===============================
 
 itmname_wolfreeks_book	{Ship log}
@@ -4041,4 +4151,18 @@ itmname_islamona_toolbox	{Toolbox}
 itmdescr_islamona_toolbox
 {
 High class tools for building ships and houses. Made in Europe.
+}
+
+;=============================== SP3 =======================================================
+
+itmname_Memento_Book	{Grim's Journal}
+itmdescr_Memento_Book
+{
+A tragedy in three acts
+}
+
+itmname_Memento_letter	{Письмо Мементо}
+itmdescr_Memento_letter
+{
+Письмо Мементо
 }

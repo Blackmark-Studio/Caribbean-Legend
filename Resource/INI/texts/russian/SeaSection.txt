@@ -47,8 +47,10 @@ seg_Medicament	{Лекарства}
 
 seg_Cannon_3	{Пушек 3ф.}
 seg_Cannon_6	{Пушек 6ф.}
+seg_Cannon_8	{Пушек 8ф.}
 seg_Cannon_12	{Пушек 12ф.}
 seg_Cannon_16	{Пушек 16ф.}
+seg_Cannon_18	{Пушек 18ф.}
 seg_Cannon_20	{Пушек 20ф.}
 seg_Cannon_24	{Пушек 24ф.}
 seg_Cannon_32	{Пушек 32ф.}

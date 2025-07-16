@@ -1,0 +1,322 @@
+﻿new_string        {
+
+
+}
+
+Tartane
+{
+Una barca da pesca non è la migliore nave per un capitano che brilla nell'alta società. Ma se il destino ti ha privato della tua nave preferita, questa barca triste è abbastanza adatta per un viaggio veloce tra le isole, anche se dovresti ricordare a te stesso: è solo temporaneo!
+}
+
+WarTartane
+{
+Le tartane sono le stesse barche da pesca rapidamente adattate per lavori costieri nelle pericolose acque dei Caraibi. Il loro modesto armamento e la costruzione improvvisata non ispirano rispetto, ma sono in grado di spaventare un pirata inesperto o un povero contrabbandiere. Una soluzione temporanea quando non c'è molta scelta.
+}
+
+Barque
+{
+Una barca è ideale per lunghi viaggi. Con una stiva spaziosa e buone qualità di navigazione, la barca è considerata una delle navi mercantili più equilibrate. Tuttavia, le sue dimensioni impressionanti e l'armamento relativamente debole la rendono un bersaglio facile per i predoni del mare.
+}
+
+Schooner
+{
+Buone qualità di navigazione, una stiva spaziosa, pescaggio ridotto e un armamento decente hanno reso la goletta una delle navi più popolari delle piccole classi. È ugualmente adatta al commercio, alla navigazione costiera e al combattimento.
+}
+
+Barkentine
+{
+La comparsa della barkentina è stata motivata dal desiderio di semplificare la gestione di una nave mercantile da parte di un equipaggio inesperto e poco numeroso. Per questo, le vele quadre sull'albero maestro della barca sono state sostituite da vele auriche e lo scafo è stato leggermente ridotto. Grazie al suo armo misto, la barkentina naviga con sicurezza sia con il vento che controvento.
+}
+
+Shnyava
+{
+La shniava e la brigantina erano le predecessori della brig. Grazie al loro design di scafo riuscito, alla buona velocità e alla capacità di trasportare cannoni pesanti, queste navi sono diventate molto popolari sia nei Caraibi che in Europa. Sono spesso utilizzate per scortare convogli mercantili di piccole classi.
+}
+
+Fleut
+{
+Il fluyt è un ramo unico nello sviluppo delle navi mercantili. Il suo ponte caratteristicamente stretto permetteva di ridurre i dazi doganali, calcolati in base alla larghezza del ponte superiore. Una stiva spaziosa, grande velocità e buone prestazioni controvento hanno rapidamente reso il fluyt una delle navi mercantili più popolari.
+}
+
+Caravel
+{
+L'armo caratteristico della caravella permette di riconoscere facilmente questa nave da lontano. Il suo design obsoleto le conferisce qualità di navigazione piuttosto mediocri, che le impediscono di competere alla pari con le navi moderne, nonostante abbia abbastanza cannoni.
+}
+
+Pinnace
+{
+Insieme al fluyt, la pinaccia è diventata molto diffusa come nave mercantile. È abbastanza grande e robusta per lunghi viaggi in mare, e la sua capacità di stiva consente di trasportare una grande quantità di carico. Grazie alle linee affilate della prua, anche con uno scafo pesante, la pinaccia raggiunge una velocità decente.
+}
+
+Navio
+{
+Una nave del genere è accessibile solo a un commerciante veramente ricco. Uno scafo grande e robusto, una stiva spaziosa e un armo avanzato consentono i viaggi più lunghi, e non meno di tre dozzine di cannoni pesanti la proteggono da pirati e corsari.
+}
+
+EastIndiaMan
+{
+Le navi della Compagnia delle Indie Orientali hanno riunito le migliori qualità delle pinacce e si sono liberate dei loro difetti, diventando navi universali quasi perfette. Dotate di cannoni di grosso calibro, possono competere con navi da guerra di dimensioni comparabili, e la loro stiva spaziosa consente di utilizzarle efficacemente per il commercio.
+}
+
+LuggerQuest
+{
+Il lugro da corriere è stato costruito appositamente per le esigenze del servizio di corriere. Eccellenti qualità di navigazione, ottime prestazioni controvento e un armamento abbastanza forte garantiscono la consegna affidabile di dispacci importanti e piccoli carichi di valore.
+}
+
+Lugger
+{
+Il lugro è una piccola nave a vela che molti marinai, soprattutto contrabbandieri, apprezzano per la sua manovrabilità e versatilità. I lugri compensano la mancanza di velocità a vele spiegate con eccellenti angoli di bolina.
+Nonostante le piccole dimensioni, i lugri hanno una buona navigabilità e possono effettuare lunghi viaggi.
+}
+
+Sloop
+{
+Con buona velocità e manovrabilità e un armamento solido per le sue dimensioni, lo sloop è una nave pattuglia affidabile, adatta anche al riconoscimento.
+}
+
+Brigantine
+{
+Un tipo leggendario di nave a vela. Veloce e manovrabile come una rondine, la brigantina è particolarmente apprezzata da pirati e avventurieri di ogni tipo. Il suo design riuscito la rende adatta a qualsiasi compito, dal combattimento al commercio.
+}
+
+Brig
+{
+Le brig sono ampiamente utilizzate nella marina per il riconoscimento. Pescaggio ridotto, linee di scafo affilate e armo avanzato rendono la brig una delle navi più veloci, e i suoi cannoni di calibro decente la rendono un avversario molto pericoloso.
+}
+
+Schooner_W
+{
+I marinai del Nuovo Mondo sono stati i primi ad apprezzare le golette e hanno iniziato a usarle per scopi militari. Per questo è stato necessario modificare un po' lo scafo, ridurre lo spazio utile della stiva e aggiungere cannoni, ma il risultato ne è valsa la pena. Ben armata, veloce e manovrabile, la goletta da guerra è una seria minaccia per qualsiasi nave mercantile.
+}
+
+Galeon_l
+{
+Il galeone è stato creato all'inizio del XVI secolo sulla base della caracca ed è stato progettato fin dall'inizio come nave da guerra. A metà del XVII secolo, il galeone aveva raggiunto l'apice del suo sviluppo e ha passato il testimone a navi più avanzate, ma non è ancora scomparso e continua a servire fedelmente i marinai.
+}
+
+Galeon_sm
+{
+Un simbolo del potere e dell'ambizione spagnoli. I ponti brillano di ornamenti dorati e a poppa si erge l'immagine della Vergine della Misericordia, patrona della nave. Per alcuni, 'Santa Misericordia' è l'incarnazione dell'ordine, per altri, un temuto simbolo dell'oppressione reale. E alcuni vi vedono anche la vera Provvidenza Divina.
+}
+
+LadyBeth
+{
+Un magnifico esempio di costruzione navale inglese, creato per il servizio di pattuglia indipendente in acque pericolose. Questa shniava ha eccellenti qualità di navigazione e un armamento impressionante per le sue dimensioni, che le consente di competere con navi di classi superiori.
+I suoi anni di servizio militare sono ormai lontani, e la gloria del suo precedente proprietario attira ora più commercianti di antiquariato e mappe del tesoro che lupi di mare.
+}
+
+Memento
+{
+In questa nave è difficile riconoscere il vecchio design di un brigantino inglese, che compensa la sua scarsa manovrabilità con una potente artiglieria e uno scafo pesante e resistente. Ricoperto di amuleti nativi e impregnato di morte, spaventa non solo i nemici, ma anche il suo stesso equipaggio.
+}
+
+Corvette
+{
+Le corvette sono progettate per il riconoscimento, il servizio di corriere e le operazioni di crociera. Con buona velocità e manovrabilità, una corvetta può raggiungere navi più leggere ed evitare con successo il combattimento con navi più pesanti.
+}
+
+XebekVML
+{
+Lo xebec è il tipo di nave mediterranea più famoso. Il suo scafo stretto e le grandi vele latine su tutti gli alberi gli permettono di navigare con angoli estremi rispetto al vento, il che lo rende un avversario molto fastidioso. Sfortunatamente, la bassa velocità con vento in poppa limita l'uso dello xebec principalmente alla pirateria e al contrabbando.
+}
+
+Polacre
+{
+La polacca è il parente più stretto dello xebec. A differenza di quest'ultimo, porta vele quadre sull'albero maestro, il che le consente di mantenere la rotta con vento a favore. Tuttavia, questo armo riduce la manovrabilità, peggiora le prestazioni controvento e aumenta notevolmente le esigenze di abilità e coordinazione dell'equipaggio.
+}
+
+Galeon_h
+{
+Il galeone pesante è una potente nave da guerra progettata per proteggere i convogli e trasportare autonomamente carichi particolarmente preziosi. È inferiore alle navi moderne in velocità e manovrabilità, ma i suoi cannoni di grosso calibro, lo scafo robusto e l'equipaggio numeroso garantiscono una protezione affidabile per qualsiasi carico. Una flotta di galeoni pesanti è una forza con cui fare i conti nei Caraibi.
+}
+
+Elcasador
+{
+Un brillante esempio di nave da guerra progettata per operazioni speciali in mare aperto. Questo galeone è stato costruito su ordine della Casa de Contratación per distruggere i pirati più pericolosi che rappresentano una vera minaccia per il commercio nella regione e per gli interessi della Corona spagnola.
+}
+
+Frigate
+{
+Le fregate hanno eccellenti qualità di navigazione, buona potenza di fuoco e sono state create appositamente per il riconoscimento a lunga distanza, la scorta di trasporti e il combattimento come parte di uno squadrone. Oggi si trovano più spesso come navi da crociera indipendenti sulle rotte nemiche, per catturare o distruggere navi mercantili nemiche.
+}
+
+Frigate_h
+{
+Le fregate pesanti sono diventate un compromesso per quei capitani a cui mancava la potenza di fuoco delle fregate normali. Scafi rinforzati e cannoni di calibro maggiore le avvicinano alle navi di linea di quarta classe, ma a scapito di velocità e manovrabilità.
+}
+
+LineShip
+{
+Le navi di linea di quarta classe non possono competere in potenza di fuoco con le loro sorelle maggiori, quindi non ha senso metterle in linea di battaglia. Il loro miglior utilizzo è la protezione dei convogli, poiché la loro velocità e manovrabilità le rendono più efficaci per questo compito.
+}
+
+Warship
+{
+Le navi di questo tipo sono state costruite ai tempi del cardinale Richelieu e oggi sono strutturalmente obsolete. Ma hanno buone qualità di navigazione e possono trasportare i cannoni più pesanti, il che le rende una forza formidabile.
+}
+
+Ecliaton
+{
+Le navi di questo tipo sono state costruite ai tempi del cardinale Richelieu e oggi sono strutturalmente obsolete. Ma hanno buone qualità di navigazione e possono trasportare i cannoni più pesanti, il che le rende una forza formidabile.
+}
+
+Pink
+{
+Il pink è una piccola nave progettata per trasportare merci e proteggere piccoli convogli. Sebbene il suo armamento sia debole e l'equipaggio piccolo, il pink è appositamente progettato sia per il commercio che per il combattimento, e molti capitani lo apprezzano per la sua velocità e manovrabilità. Le piccole dimensioni del pink non gli consentono di effettuare lunghi viaggi in mare.
+}
+
+Battleship
+{
+Le navi di linea di terza classe sono molto numerose e le più equilibrate in termini di qualità di combattimento, progettate per la battaglia in linea. Hanno abbastanza potenza di fuoco per sfidare anche i leviatani da 100 cannoni. Allo stesso tempo, le superano notevolmente in velocità e manovrabilità.
+}
+
+Manowar
+{
+Le navi di linea di seconda classe sono la spina dorsale della potenza navale di qualsiasi nazione. Insieme alle navi di terza classe, formano una flotta che combina forza e manovrabilità. E in assenza di navi di prima classe nello squadrone, alcune di esse servono come ammiraglie.
+}
+
+Manowar_e
+{
+Una nave di linea di prima classe è una vera fortezza galleggiante. Grazie alla sua terrificante potenza di fuoco, può mandare a fondo qualsiasi avversario con pochi colpi precisi. Ma anche le più grandi potenze navali non hanno molte di queste navi, e vengono utilizzate come ammiraglie nelle grandi battaglie navali.
+}
+
+MayFang
+{
+Questo xebec ha uno scafo alleggerito a scapito della robustezza, ma ciò lo rende un navigatore impareggiabile: nei Caraibi non c'è altra nave in grado di navigare quasi controvento!
+E venti cannoni di medio calibro sono un argomento di peso nella competizione marittima.
+}
+
+Mirage
+{
+A differenza dei ketch bombardieri, i ketch corsari non trasportano mortai giganti progettati per bombardare le fortezze, ma hanno uno scafo più leggero e aerodinamico, il che migliora le loro qualità di navigazione. Anche gli yacht dei principi invidierebbero la velocità di questo ketch corsaro.
+}
+
+Himera
+{
+Una nave capolavoro, creata appositamente per le esigenze dell'intelligence navale britannica. Per le sue caratteristiche è paragonabile alle navi da guerra di terza classe, mantenendo la facilità di manovra della quarta classe.
+}
+
+Valciria
+{
+Un ottimo brigantino inglese. Grande velocità e manovrabilità, buone prestazioni controvento e due dozzine di cannoni sul ponte fanno di questa nave a vela un sogno.
+}
+
+CORVETTE_QUEST
+{
+Una nave unica, capolavoro dei costruttori navali francesi. L'ampia modernizzazione del design della corvetta ha migliorato quasi tutte le sue caratteristiche senza sacrificare la velocità. L'aumento della superficie velica e il calibro dei cannoni richiedono un equipaggio più esperto e numeroso, ma se le prove nei Caraibi avranno successo, le tecnologie applicate qui potrebbero rappresentare un vero progresso nella costruzione navale.
+}
+
+Polacre_q
+{
+Un maestro che ha saputo combinare con successo elementi dello xebec e della fregata ha creato una polacca con uno scafo insolito, robusto e spazioso, caratterizzato da alti bordi, pescaggio ridotto e un armamento molto potente. Tre alberi e un bompresso con vele di diversi tipi la rendono veloce e molto manovrabile. Tutte queste caratteristiche sono buone singolarmente, ma insieme sono eccellenti: solo il proprietario deciderà se sarà una nave da guerra, pirata o mercantile a salpare.
+}
+
+ArabellaShip
+{
+Questa nave unica combina le migliori caratteristiche delle fregate e delle navi di linea. Le sue straordinarie qualità di navigazione si combinano con una batteria di cannoni di grosso calibro, e gli interni possono ospitare un'intera compagnia di marines. In mani esperte, Fortuna può affrontare da sola un avversario molto più forte.
+}
+
+Flyingdutchman
+{
+"Caleuche". Il terrore di tutti coloro che navigano...
+}
+
+Flyingdutchman_l
+{
+Una copia del "Caleuche".
+}
+
+NewFlyingdutchman
+{
+Questa era una volta la famigerata "nave fantasma". Ora è stata completamente ricostruita ed è un potente galeone da guerra, in grado di combattere alla pari anche con le navi di linea. Con una velocità impressionante per le sue dimensioni, una grande stiva e un armamento formidabile, è una nave completamente autosufficiente, in grado di affondare navi nemiche, abbordarle e persino assediare intere colonie.
+}
+
+Santisima
+{
+Questa nave è stata varata nel famoso cantiere navale dell'Avana. Il suo scafo è un po' più leggero e debole rispetto ad altre navi di prima classe, ma questo è ampiamente compensato da migliori qualità di navigazione.
+}
+
+NoneBoat
+{
+Nessuna nave. L'eroe è diventato un topo di terra e non può chiamarsi capitano finché non avrà una nave.
+}
+
+Hull
+{
+Scafo: mostra la quantità attuale e massima di danni che lo scafo della nave può sopportare.
+}
+
+Sails
+{
+Vele: mostrano i danni attuali e massimi che le vele della nave possono sopportare.
+}
+
+Speed
+{
+Velocità: mostra la velocità massima attuale della nave, tenendo conto di tutti i fattori (carico, abilità del capitano, danni alla nave) e la velocità massima raggiungibile.
+}
+
+Maneuver
+{
+Manovrabilità: mostra la manovrabilità della nave in questo momento, tenendo conto di tutti i fattori (carico, abilità del capitano, danni alla nave) e la manovrabilità massima raggiungibile.
+}
+
+AgainstWind
+{
+La migliore rotta della nave rispetto al vento, alla quale può raggiungere la velocità massima. I valori sono espressi in gradi.
+Il secondo valore mostra la differenza tra la direzione attuale del vento e il miglior angolo di rotta per questa nave.
+}
+
+Capacity
+{
+Portata: mostra la capacità attuale e massima della nave. Più la nave è carica, più diventa lenta e poco manovrabile.
+I cannoni installati sulla nave sono anch'essi presi in considerazione nel calcolo della portata. Possono essere rimossi dalla nave per liberare spazio aggiuntivo per il carico. Per farlo, selezionare i cannoni attuali nell'elenco dei parametri della nave nell'interfaccia "Nave".
+}
+
+Crew
+{
+Equipaggio: mostra il numero attuale di membri dell'equipaggio, nonché il minimo e il massimo per questa nave.
+}
+
+CannonType
+{
+Tipo di cannone: mostra il tipo (cannoni o colubrine), il calibro attuale e il numero di cannoni installati
+}
+
+sCannons
+{
+Mostra il calibro massimo consentito e il numero massimo possibile di cannoni sulla nave.
+}
+
+Crew_Exp {Esperienza dell'equipaggio}
+
+Crew_Exp_hint
+{
+L'esperienza dell'equipaggio è suddivisa in tre categorie: marineria (influisce sulla manovrabilità della nave), artiglieria (velocità di ricarica e precisione di tiro) e abbordaggio (efficacia dell'equipaggio nel combattimento corpo a corpo).
+Un equipaggio esperto in numero ridotto può essere più efficace di una nave sovraccarica di novizi.
+L'esperienza in tutte e tre le categorie viene acquisita durante l'esecuzione delle azioni corrispondenti (manovra, tiro, abbordaggio), ma si perde anche se le abilità acquisite non vengono praticate per molto tempo.
+}
+
+TakeAllGoods_hint
+{
+Il pulsante "Trasferisci tutte le merci" trasferisce le merci sulla nave del personaggio in base al loro valore specifico medio. Prima vengono trasferite le merci più preziose, poi quelle meno preziose, e così via fino a quando non c'è più spazio nella stiva.
+}
+
+GoodsKeys_hint
+{
+I tasti freccia "Sinistra" e "Destra" sulla tastiera spostano le merci nella riga selezionata della tabella di una unità. Se si tiene premuto il tasto Maiusc, le merci verranno spostate completamente.
+Facendo clic con il tasto destro sulle frecce nella riga con la merce nell'interfaccia si trasferiscono dieci unità alla volta.
+}
+
+Shipyard_hint
+{
+Nel cantiere navale puoi acquistare, riparare o vendere navi.
+L'eroe non può vendere la propria nave se ha dei compagni. Non puoi nemmeno acquistare una nave per un compagno se l'eroe non ha la propria nave.
+Per cambiare la nave dell'eroe o del compagno mantenendo tutto il contenuto della stiva e l'equipaggio, seleziona nell'elenco delle navi della squadra dell'eroe (sul lato sinistro dell'interfaccia) la nave da sostituire con una nuova, e nell'elenco delle navi in vendita nel cantiere navale (sul lato destro dell'interfaccia) quella desiderata, quindi fai clic sul pulsante "Acquista".
+Per acquistare una nuova nave (assegnare un nuovo compagno), seleziona prima uno slot vuoto nell'elenco a sinistra prima dell'acquisto.
+}
+
+NoneBoat2
+{
+Nessuna nave.
+}

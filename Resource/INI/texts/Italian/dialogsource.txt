@@ -1,0 +1,1 @@
+SelectDeliveryTradeDialog0	 {il file è vuoto, per compatibilità con il kernel storm-2.5. È necessario lì per qualche motivo, ma non è negli script}

@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 		UnloadSegment(NPChar.FileDialog2);
 	}
     // вызов диалога по городам <--
-	crewWhoreCost = 50 + 7 * MOD_SKILL_ENEMY_RATE - drand(40);
+	crewWhoreCost = 50 + 7 * MOD_SKILL_ENEMY_RATE - hrand(40);
 	charWhoreCost = 2460 + sti(pchar.rank) * 40;
 	
 	switch(Dialog.CurrentNode)
@@ -103,6 +103,7 @@ void ProcessDialogEvent()
 					link.l8 = "Извини, но я сейчас занят"+GetSexPhrase("","а")+".";
 					link.l8.go = "exit";
 					npchar.quest.Portugal = "true";
+					DelLandQuestMark(npchar);
 					break;
 				}
 			}
@@ -872,7 +873,8 @@ void ProcessDialogEvent()
 			string TargetLocation = SelectQuestShoreLocation();
 			if(TargetLocation != "")
 			{ 
-				Locations[FindLocation(TargetLocation)].DisableEncounters = true; 
+				Locations[FindLocation(TargetLocation)].DisableEncounters = true;
+				LAi_LocationDisableOfficersGen(TargetLocation, true);
 				pchar.quest.ReasonToFast_MeetPatrol.win_condition.l1 = "location";
 				pchar.quest.ReasonToFast_MeetPatrol.win_condition.l1.location = TargetLocation;
 				pchar.quest.ReasonToFast_MeetPatrol.function = "ReasonToFast_MeetPatrolShore";

@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 		chrDisableReloadToLocation = false;
 		// Lai_SetPlayerType(pchar);
 
-		dialog.text = GetFullName(PChar) + "¡ " + "Hemos estado siguiéndote durante bastante tiempo, y finalmente eres nuestro.";
+		dialog.text = GetFullName(PChar) + "! " + " Hemos estado siguiéndote durante bastante tiempo, y finalmente eres nuestro.";
 		Link.l1 = "¿Quién eres y qué quieres de mí?";
 		Link.l1.go = "meeting";
 
@@ -41,7 +41,7 @@ void ProcessDialogEvent()
 		{
 			TempChar = characterFromID("Bug Fixer");
 			SetRandomNameToCharacter(TempChar);
-			Link.l2 = "" + GetSexPhrase("Disculpa, pero debes estar equivocado. Yo soy " + GetFullName(TempChar) + " un comerciante bien conocido en estas tierras.", "Disculpa, pero debes estar equivocado. Solo soy una chica sencilla, y mi padre es " + GetFullName(TempChar) + " un comerciante bien conocido en estas tierras.") + ".";
+			Link.l2 = "" + GetSexPhrase("Disculpa, pero debes estar equivocado. Yo soy " + GetFullName(TempChar) + ", un comerciante bien conocido en estas tierras.", "Disculpa, pero debes estar equivocado. Solo soy una chica sencilla, y mi padre es " + GetFullName(TempChar) + ", un comerciante bien conocido en estas tierras.") + ".";
 			Link.l2.go = "lier";
 		}
 		Link.l3 = "Está bien, puedes probar tu suerte, si así lo deseas.";
@@ -52,7 +52,7 @@ void ProcessDialogEvent()
 		if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > rand(150) || bBettaTestMode)
 		{
 			dialog.text = "¡Oh! De hecho, podríamos estar equivocados. Por favor, perdónanos, " + GetAddress_Form(NPChar) + ".";
-			Link.l1 = "Sucede, no te preocupes por eso...";
+			Link.l1 = "Estas cosas suceden, no te preocupes...";
 			Link.l1.go = "lier_2";
 			AddCharacterExpToSkill(pchar, SKILL_SNEAK, 100);
 		}
@@ -95,9 +95,9 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			Link.l1 = "Aquí está tu dinero, tómalo y pérdete.";
+			Link.l1 = "Aquí está tu dinero, tómalo y piérdete.";
 			Link.l1.go = "Cost_Head2";
-			Link.l2 = "Dar tal suma a canallas como vosotros... Supongo que preferiría desollaros a todos aquí mismo!";
+			Link.l2 = "Dar tal suma a canallas como ustedes... Supongo que preferiría despellajarlos a todos aquí mismo!";
 			Link.l2.go = "battle";
 		}
 		break;
@@ -109,7 +109,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "TreasureHunter":
-		dialog.text = "Espera, " + GetSexPhrase("compañero", "chica") + "... Creo que tienes algo interesante contigo. Los amigos deberían compartir los tesoros encontrados entre ellos, ¿no crees?";
+		dialog.text = "Espera, " + GetSexPhrase("compañero", "chica") + "... Creo que llevas algo interesante encima. Los amigos deberían compartir los tesoros encontrados entre ellos, ¿no crees?";
 		Link.l1 = "Escucha, te pagaré si me dejas en paz.";
 		Link.l1.go = "Cost_Head";
 		// boal 08.04.04 -->
@@ -117,7 +117,7 @@ void ProcessDialogEvent()
 		{
 			TempChar = characterFromID("Bug Fixer");
 			SetRandomNameToCharacter(TempChar);
-			Link.l2 = "" + GetSexPhrase("Discúlpeme, pero debe estar equivocado. Yo soy " + GetFullName(TempChar) + " un ciudadano bien conocido en estas tierras, pero ciertamente no un buscador de tesoros.", "Disculpe, pero debe estar equivocado. Solo soy una chica simple y no una buscadora de tesoros. Y mi padre es " + GetFullName(TempChar) + " un ciudadano bien conocido en estas tierras") + "¡!";
+			Link.l2 = "" + GetSexPhrase("¡Discúlpeme, pero debe estar equivocado. Yo soy " + GetFullName(TempChar) + ", un ciudadano bien conocido en estas tierras, y ciertamente no soy un buscador de tesoros.", "¡Disculpe, pero debe estar equivocado. Solo soy una chica simple, y no una buscadora de tesoros. Y mi padre es " + GetFullName(TempChar) + " un ciudadano bien conocido en estas tierras") + "!";
 			Link.l2.go = "TreasureHunterLier";
 		}
 		Link.l3 = "Bueno, parece que es hora de que vuestras cabezas se separen de vuestros cuerpos.";
@@ -128,7 +128,7 @@ void ProcessDialogEvent()
 		if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > rand(150))
 		{
 			dialog.text = "¡Oh! Podríamos estar equivocados, entonces. Por favor, perdónanos, " + GetAddress_Form(NPChar) + ".";
-			Link.l1 = "Sucede, no te preocupes por eso...";
+			Link.l1 = "Estas cosas pasan, no te preocupes por eso...";
 			Link.l1.go = "lier_2";
 			AddCharacterExpToSkill(pchar, SKILL_SNEAK, 100);
 		}
@@ -142,7 +142,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "TreasureCaptain":
-		dialog.text = LinkRandPhrase("¡Así que tú eres el que se llevó mi mapa del tesoro! Creo, compañero, que es hora de entregar todo lo que has tomado...", "¡Oh, un rival! No llegarás muy lejos, estás ralentizado por el peso de mis tesoros...", "¡Huh, finalmente te he alcanzado! Todos los tesoros en esta caverna me pertenecen, ¿lo entiendes? ¡Ahora, vacía tus bolsillos, amigo!");
+		dialog.text = LinkRandPhrase("¡Así que tú eres el que se llevó mi mapa del tesoro! Creo, compañero, que es hora de entregar todo lo que has tomado...", "¡Oh, un rival! No llegarás muy lejos, estás ralentizado por el peso de mis tesoros...", "¡Huh, finalmente te he alcanzado! Todos los tesoros en esta caverna me pertenecen, ¿lo entiendes? ¡Ahora vacía tus bolsillos, amigo!");
 		Link.l1 = LinkRandPhrase("¡Es hora de que conozcas mi espada, compañero!", "¿Tus tesoros? Quisiste decir que eran tuyos, ¡porque ahora son míos!", "Preferiría vaciar tu estómago con mi espada, amigo.");
 		Link.l1.go = "TreasureCaptain_fight";
 		break;
@@ -188,7 +188,7 @@ void ProcessDialogEvent()
 		if (CheckAttribute(pchar, "GenQuest.CannotWait"))
 			DeleteAttribute(pchar, "GenQuest.CannotWait");
 		dialog.text = "Y aquí llega nuestro oro. Al menos nuestra espera no fue en vano.";
-		link.l1 = RandPhraseSimple("¿De qué están hablando, señores? ¡Soy un representante de la Compañía Holandesa de las Indias Occidentales y solo estoy de paso por aquí! Me he detenido para admirar la vista de la costa.", "Temo que me has confundido con otra persona. Yo soy " + GetSexPhrase("Francua Marie Paganel, ", "Maria-Theresa, ") + "un naturalista. Estoy recolectando muestras de la flora local aquí. ¿Quieres echar un vistazo a mi colección de hojas de yuca? ¡Tengo varias muy interesantes!");
+		link.l1 = RandPhraseSimple("¿De qué están hablando, señores? ¡Soy un representante de la Compañía Holandesa de las Indias Occidentales y solo estoy de paso por aquí! Me he detenido para admirar la vista de la costa.", "Temo que me has confundido con otra persona. Yo soy " + GetSexPhrase("Francua Marie Paganel, ", "Maria-Theresa, ") + "un naturalista. Estoy recolectando muestras de la flora de la zona. ¿Quieres echar un vistazo a mi colección de hojas de yuca? ¡Tengo varias muy interesantes!");
 		link.l1.go = "ReasonToFast_THunter_2";
 		link.l2 = "¿Qué quieres?! ¡Mantente fuera de mi camino!";
 		link.l2.go = "ReasonToFast_THunter_2";
@@ -207,13 +207,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "ReasonToFast_THunter_3":
-		dialog.text = "" + GetSexPhrase("Je, capitán, eres demasiado joven para morir, ¿no es así...", "Je, muchacha, eres demasiado joven para morir, ¿no es así...") + "...";
+		dialog.text = "" + GetSexPhrase("Je, capitán, eres demasiado joven para morir, ¿no es así...", "Je, muchacha, eres demasiado joven para morir, ¿no es así...") + "?";
 		link.l1 = "¡De hecho, no voy a morir!";
 		link.l1.go = "ReasonToFastTHunter_Fight";
 		break;
 
 	case "ReasonToFast_THunter_4":
-		dialog.text = "¡Ahora estas son las palabras de una persona razonable!";
+		dialog.text = "¡Esas son palabras de una persona razonable!";
 		link.l1 = "Maldición a ti y a todos esos tesoros...";
 		link.l1.go = "ReasonToFast_THunter_GoAway";
 		break;

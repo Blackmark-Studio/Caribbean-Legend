@@ -1,302 +1,335 @@
 ﻿newline  {
 
+
 }
 
-Key Layout {Layout}
+
+Key Layout {Tastenbelegung}
 Key Layout_descr
 {
-Das alternative Layout enthält eine Reihe von Steuerungsänderungen, fügt neue Befehle hinzu und eröffnet neue Möglichkeiten:
+Das alternative Tastenlayout bringt einige Änderungen in der Steuerung, neue Befehle und zusätzliche Möglichkeiten:
 ~
-- Die Befehle für Schnellmaßnahmen und Körpersuche wurden geändert.
-- die Verwendung von Verstärkungstränken geändert
-- Die Registerkarten des Zeichenmenüs können über einzelne Tasten aufgerufen werden.
+- Schnellausführung und Plündern wurden angepasst
+- Die Nutzung von Tränken ist jetzt anders
+- Für jedes Charakterfenster gibt es eigene Hotkeys
 }
 
-OptKurs {Point of Sail}
+
+OptKurs {Off-bow-Winkel}
 OptKurs_descr
 {
-Schwarze Pfeile auf der Minikarte zeigen den Kurs an, auf dem sich Ihr Schiff mit maximaler Geschwindigkeit bewegt.
+Schwarze Pfeile auf der Minikarte zeigen den Kurs, auf dem dein Schiff die maximale Geschwindigkeit erreicht.
 ~
-Einige Schiffstypen sind in der Lage, fast gegen den Wind zu segeln, was nützlich ist, wenn man einen Händler einholen oder vor einem Kriegsschiff fliehen muss.
+Manche Schiffstypen können fast gegen den Wind segeln – praktisch, um Händler einzuholen oder Kriegsschiffen zu entkommen.
 ~
-Der Wind ändert ständig seine Stärke und Richtung. Versuchen Sie, Ihren Kurs anzupassen und einen Kompromiss zwischen dem optimalen Kurswinkel und der Richtung zu Ihrem Ziel zu finden.
+Der Wind ändert ständig Stärke und Richtung. Passe deinen Kurs an, um das beste Verhältnis zwischen optimalem Winkel und Zielrichtung zu finden.
 }
 
-SeaTimeScaleUp {Steuerung der Zeit}
+
+SeaTimeScaleUp {Zeitbeschleunigung}
 SeaTimeScaleUp_descr
 {
-Nutzen Sie die Beschleunigung - sie spart Zeit, besonders auf See.
+Nutze die Zeitbeschleunigung – das spart vor allem auf See viel Zeit.
 ~
-Steuerelemente: + und -
+Steuerung: + und -
 }
+SeaTimeScaleUp_controlsimg1{TimeScaleFasterBA}
+SeaTimeScaleUp_controlsimg2{TimeScaleSlowerBA}
+
 
 SeaFastTravel {Schnellreise}
 SeaFastTravel_descr
 {
-Über das Aktionsmenü lassen sich viele nützliche Funktionen sowohl an Land als auch auf See aufrufen.
+Das Aktionsmenü bietet viele nützliche Funktionen – an Land und auf See.
 ~
-Mit der Funktion 'Segeln nach' können Sie sofort in die Nähe eines befreundeten Schiffes oder eines geografischen Punktes reisen. Die Schnellreiseentfernung kann durch die Verwendung seltener und teurerer Ferngläser erhöht werden.
+Mit „Segeln nach“ kannst du sofort zu einem befreundeten Schiff oder einem Punkt auf der Karte springen. Die Reichweite lässt sich mit seltenen, teuren Fernrohren erhöhen.
 ~
-Benutzen Sie das Aktionsmenü, um den 'Geist' sofort zu erreichen und schicken Sie dann ein Langboot zu ihm.
+Nutze das Aktionsmenü, um schnell zum „Geist“ zu gelangen und ein Boot dorthin zu schicken.
 }
+SeaFastTravel_controlsimg1{BICommandsActivate}                                                        
 
-SeaFastTravel_controlsimg1 {BICommandsActivate}
 
-LandTimeScaleDown {Steuerung der Z im Kampfeit}
+LandTimeScaleDown {Zeitverlangsamung}
 LandTimeScaleDown_descr
 {
-Manchmal ist es sinnvoll, die Zeit zu verlangsamen - vor allem bei schwierigen Kämpfen. Caribbean Legend ist ein schwer zu meisterndes Spiel, also nutzen Sie alles, was Sie können, um sich einen Vorteil zu verschaffen.
+In schwierigen Kämpfen lohnt es sich, die Zeit zu verlangsamen. Das ist völlig legitim – Caribbean Legend ist ein anspruchsvolles Spiel.
 ~
-Steuerelemente: + und -
+Steuerung: + und -
 }
+LandTimeScaleDown_controlsimg1{TimeScaleFasterBA}
+LandTimeScaleDown_controlsimg2{TimeScaleSlowerBA}
 
-GuideFight {Kampf an Land}
+
+GuideFight {Kämpfe an Land}
 GuideFight_descr
 {
-Es wird einige Zeit dauern, bis Sie den Kampf zu Lande im Spiel beherrschen. Wenn Sie die Steuerungshinweise aktiviert haben, sehen Sie die Hotkeys in der unteren rechten Ecke des Bildschirms.
+Es braucht etwas Übung, um die Kämpfe im Spiel zu meistern. Wenn Tipps aktiviert sind, siehst du die Hotkeys unten rechts.
 ~
-Versuchen Sie zuerst, die Kombination 'Parieren - Schlagen' zu meistern. Wenn Sie den Angriff eines Gegners erfolgreich parieren, wird er betäubt und verliert Energie, was Ihnen die Möglichkeit gibt, sicher anzugreifen.
+Lerne zuerst die Kombination „Parieren – Hieb“. Parierst du einen Angriff, wird der Gegner betäubt und verliert Energie – so kannst du sicher angreifen.
 ~
-Verwenden Sie verschiedene Arten von Angriffen, um herauszufinden, welche den größten Schaden verursachen. Jede Waffe im Spiel hat ihre bevorzugte Angriffsart. Experimentieren Sie!
+Der Schaden hängt von den Fertigkeiten deines Charakters, der Waffenqualität, Amuletten und Angriffsarten ab.
 }
 
-GuideFight_controlsimg1 {ChrAttackChoseBase}
-GuideFight_controlsimg2 {ChrAttackBase}		
 
-OneToOneCave {Nutzung des Geländes}
+GuideFight_controlsimg1{ChrAttackChoseBase}
+GuideFight_controlsimg2{ChrAttackBase}                                                           
+
+
+OneToOneCave {Umgebung nutzen}
 OneToOneCave_descr
 {
-Wenn Sie in der Unterzahl sind, versuchen Sie, die Umgebung zu nutzen, um sich einen Vorteil im Kampf zu verschaffen.
+Bist du in der Unterzahl, nutze das Gelände zu deinem Vorteil.
 ~
-Sie können fast immer einen Ort finden, an dem Sie den Feind zwingen können, gegen Sie allein oder zu zweit zu kämpfen.
+Fast immer findest du einen Ort, an dem die Gegner dich nur einzeln oder zu zweit angreifen können.
 }
 
-OneToOneBoarding {Nutzung des Geländes}
+
+OneToOneBoarding {Umgebung nutzen}
 OneToOneBoarding_descr
 {
-Wenn Sie in der Unterzahl sind, versuchen Sie, die Umgebung zu nutzen, um sich einen Vorteil im Kampf zu verschaffen.
+Bist du in der Unterzahl, nutze das Gelände zu deinem Vorteil.
 ~
-Sie können fast immer einen Ort finden, an dem Sie den Feind zwingen können, gegen Sie allein oder zu zweit zu kämpfen.
+Fast immer findest du einen Ort, an dem die Gegner dich nur einzeln oder zu zweit angreifen können.
 }
+
 
 Collision {Positionswechsel}
 Collision_descr
 {
-Manchmal während eines Kampfes ist es notwendig, die Position zu wechseln, indem man die Linie des Feindes durchbricht oder um Verbündete herum manövriert.
+Manchmal musst du im Kampf die Position wechseln – durch die Reihen der Gegner brechen oder Verbündete umgehen.
 ~
-Ihr Held schubst automatisch die Verbündeten beiseite, und um die Formation des Feindes zu durchbrechen, müssen Sie Sprinten oder Ausweichmanöver nutzen.
-Im Kampf verbraucht Sprinten Energie, also nutzen Sie es mit Bedacht.
+Dein Held schiebt Verbündete automatisch beiseite, Gegner aber nur mit Sprint oder Ausweichmanövern.
+Sprinten im Kampf kostet Energie – setze es mit Bedacht ein.
 }
+
+
 Collision_controlsimg1 {ChrFightMode}
+Collision_controlsimg2 {ChrSprint}
+
+
 
 WorldMap {Weltkarte}
 WorldMap_descr
 {
-Die Weltkarte ermöglicht es Ihnen, Seereisen durch die Karibik zu unternehmen. Es ist nicht notwendig, jede Stadt oder Bucht genau anzusteuern. Verlassen Sie einfach die Weltkarte in der Nähe Ihres Ziels und verwenden Sie die Funktion 'Segeln nach'.
+Mit der Weltkarte reist du per Schiff durch die Spielwelt. Du musst nicht zu jedem Ort direkt segeln – verlasse die Weltkarte einfach in der Nähe deines Ziels und nutze „Segeln nach“.
 ~
-Der geschickte Einsatz der Funktion 'Segeln nach' kann viel Zeit sparen. Sie können zum Beispiel die Weltkarte auf einer Seite der Insel verlassen, schnell zu einem Punkt auf der anderen Seite reisen und dann zur Weltkarte zurückkehren.
+Geschickter Einsatz von „Segeln nach“ spart viel Zeit. Zum Beispiel kannst du die Weltkarte auf einer Inselseite verlassen, per Schnellreise in eine Bucht auf der anderen Seite springen und von dort zurück auf die Weltkarte.
 ~
-Verwenden Sie Hotkeys, um die Karte zu verkleinern und um den Atlas mit Karten anzuzeigen.
+Nutze Hotkeys zum Zoomen und um den Atlas zu öffnen.
 }
 
-WorldMap_controlsimg1 {WMapCameraSwitch}
-WorldMap_controlsimg2 {MapView}
 
-LandMap {Reisen an Land}
+WorldMap_controlsimg1{WMapCameraSwitch}
+WorldMap_controlsimg2{MapView}
+
+
+LandMap {Landnavigation}
 LandMap_descr
 {
-Karten können gekauft oder gefunden werden. Sammeln Sie jede Inselkarte, die Sie finden, um sich auf der Inselmasse zurechtzufinden. Dies ist besonders nützlich bei Quests, Kolonie-Infiltrationen und der Schatzsuche.
-Alle gesammelten Karten sind im Atlas zu finden. 
+Reisen an Land wird einfacher, wenn du die Inselkarte nutzt. Besonders hilfreich bei Quests, Schleichen und Schatzsuche.
+Alle verfügbaren Karten findest du im Atlas.
+Karten kann man kaufen oder finden.
 }
 
-LandMap_controlsimg1 {MapView}
 
-Navigator {Navigationsfähigkeit}
+LandMap_controlsimg1{MapView}
+
+
+Navigator {Navigation}
 Navigator_descr
 {
-Weisen Sie einen Navigator mit ausreichenden Navigationskenntnissen zu!
+Setze einen Steuermann mit hoher Navigations-Fertigkeit ein!
 ~
-Die Navigation bestimmt in erster Linie die Größe der Schiffe, die der Charakter steuern kann.
+Navigation bestimmt vor allem, wie große Schiffe ein Charakter führen kann.
 ~
-Für den fünften Rang sind zum Beispiel 25 Punkte erforderlich, für den vierten 45. Eine Überschreitung dieser Grenze führt zu Abzügen bei allen Charakterwerten und Fertigkeiten.
+Zum Beispiel: Für Rang 5 brauchst du 25 Punkte, für Rang 4 schon 45. Überschreitest du das Limit, gibt es Abzüge auf alle Werte.
 ~
-Die Anforderungen für jeden Schiffsrang können durch einen Rechtsklick auf das Navigationssymbol im Charakterfenster angezeigt werden.
-~
-Die Fertigkeit 'Navigation' wächst nur langsam, daher sollten Sie bei der ersten Gelegenheit erfahrene Navigatoren in Tavernen anheuern. Denken Sie jedoch daran, dass Sie keinen Spezialisten mit einer Fertigkeitsstufe über 75 finden werden.
+Die Anforderungen für jeden Rang siehst du, wenn du mit rechts auf das Fertigkeitssymbol im Charakterfenster klickst.
 }
+
 
 Navigator_controlsimg1 {Abilities}
 
-Alchemy {Herstellung}
+
+Alchemy {Alchemie}
 Alchemy_descr
 {
-Die Herstellung von Gegenständen, vor allem Talismanen, Tränken und Munition, kann Ihr Leben erheblich erleichtern. Dies ist besonders bei Bosskämpfen nützlich.
+Das Herstellen von Gegenständen – vor allem Talismane, Tränke und Munition – kann das Leben deutlich erleichtern, besonders bei Bosskämpfen.
 ~
-Um einen Gegenstand herzustellen, müssen Sie ein Rezept finden oder kaufen. Die Zutaten müssen nicht unbedingt mitgeführt werden, man kann auch getrost bei Straßenhändlern diversen Plunder kaufen und in einer der Truhen in der Hütte lagern.
+Um etwas herzustellen, brauchst du ein Rezept. Die Zutaten musst du nicht mit dir tragen – lagere sie einfach in einer Truhe in deiner Kajüte.
 ~
-Zu Beginn des Spiels haben Sie die Wahl: Nehmen Sie die Fertigkeit Alchemie und beginnen Sie sofort mit dem Kauf von Rezepten, oder verschieben Sie diese Möglichkeit auf die Mitte des Spiels, wenn Sie Werkzeugkits haben, die einen wertvollen Fertigkeitspunkt für Alchemie ersetzen werden.
+Zu Beginn kannst du den Alchemie-Perk wählen und Rezepte sammeln oder bis zur Mitte des Spiels warten, wenn du Werkzeuge hast und keinen wertvollen Perk-Punkt mehr dafür brauchst.
 }
 
-Alchemy_controlsimg1 {Alchemy}
+
+Alchemy_controlsimg1{Alchemy}
+
 
 LandMapAtSea {}
 LandMapAtSea_descr
 {
-Begeben Sie sich auf die gegenüberliegende Seite der Insel, um Ihre Aufgabe zu erfüllen. Verlassen Sie die Bucht nach rechts und halten Sie sich an der Küstenlinie!
+Dein Ziel liegt auf der anderen Inselseite. Verlasse die Bucht nach rechts und folge der Küste!
 }
 
-Salary {Unterhalt des Schiffes}
+
+Salary {Schiffsunterhalt}
 Salary_descr
 {
-Monatliche Zahlungen an Offiziere und Mannschaft können das Leben des Kapitäns erheblich erschweren. Der Gesamtbetrag hängt von Ihren Handels- und Führungsfähigkeiten, der Größe des Schiffes und dem Schwierigkeitsgrad ab.
+Offiziere und Mannschaft werden jeden Monat bezahlt – das kann für den Kapitän zur echten Herausforderung werden.
 ~
-Selbst auf kleinen Schiffen ist es sehr empfehlenswert, einen Zahlmeister an Bord zu haben, während ein großes Kriegsschiff sogar ein Land in den Bankrott treiben kann. Wenn die Option der Beuteteilung aktiviert ist, kann der Zahlungsbetrag sogar noch höher sein.
-
+Die Summe hängt von den Fertigkeiten „Handel“ und „Charisma“, dem Schiffs-Rang und dem Schwierigkeitsgrad ab. Selbst auf kleinen Schiffen ist ein Zahlmeister ratsam, und ein großes Kriegsschiff kann sogar ein Land ruinieren.
+~
+Ist die Beuteaufteilung aktiviert, steigen die Ausgaben noch weiter.
 }
 
+
 Salary_controlsimg1 {ShipState}
+
 
 Dubloons {Dublonen}
 Dubloons_descr
 {
-Goldene Dublonen sind das wahre Maß für den Reichtum Ihres Charakters und seine Fähigkeit, Probleme mit Geld zu lösen. Streben Sie immer danach, diese Münzen zu verdienen, da die mächtigsten Leute in der Karibik ihre Dienste nur für Dublonen anbieten.
+Goldene Dublonen sind der wahre Maßstab für deinen Reichtum und deine Fähigkeit, Probleme mit Geld zu lösen. Sie werden meist in kleinen Truhen aufbewahrt, die du über das Crafting-Menü im Aktionsmenü öffnen kannst. Dort kannst du sie auch auffüllen, wenn du genug Dublonen hast.
 ~
-Gute Quellen für Dublonen sind die Schatzsuche, Bankeinlagen, der Handel mit strategischen Gütern und der Umtausch von Geld bei Geldverleihern. Sie brauchen kein Gold mit sich zu führen, Sie können es in einer der Truhen in Ihrer Hütte aufbewahren.
-
+Strebe immer danach, diese Goldmünzen zu verdienen – die mächtigsten Leute der Karibik helfen dir nur gegen Dublonen.
+~
+Gute Quellen für Dublonen sind Schätze, Bankeinlagen, Handel mit strategischen Waren und Geldverleiher.
+~
+Du musst das Gold nicht bei dir tragen – lagere es einfach in einer Truhe in deiner Kajüte.
 }
+
+
+Dubloons_controlsimg1 {LICommandsActivate}
+
+
 
 Box {Gegenstände lagern}
 Box_descr
 {
-In den Truhen in Ihrer Hütte können Sie eine unbegrenzte Anzahl persönlicher Gegenstände aufbewahren. Neben den obligatorischen Ausrüstungsgegenständen in den Ausrüstungsfächern ist es ratsam, nur Tränke, Amulette und Munition mit sich zu führen.
+In den Truhen der Kapitänskajüte kannst du unbegrenzt persönliche Dinge lagern.
 ~
-Verkaufen Sie überschüssige Gegenstände, aber legen Sie immer einen angemessenen Vorrat an Schmuck, Waffen, Munition und Alchemiezutaten an.
+Verkaufe Überschüssiges, aber halte immer einen Vorrat an Juwelen, Waffen, Munition und Alchemie-Zutaten in der Kajüte.
 ~
-Auch andere Kapitäne folgen dieser Praxis, so dass es sich immer lohnt, die Truhen in der Kabine eines gekaperten Schiffes zu durchsuchen.
-
+Neben der Pflichtausrüstung solltest du nur ein Set Tränke, Amulette und Kugeln für Schusswaffen dabeihaben.
+~
+Auch andere Kapitäne machen das so – plündere also immer die Truhen in eroberten Schiffen.
 }
 
-Health {Lebensenergie}
+
+Health {Vitalitätsverlust}
 Health_descr
 {
-Ihre Lebensenergie hat abgenommen! Dieser Wert beschreibt den allgemeinen Zustand Ihres Charakters und beeinflusst alle seine Fähigkeiten.
+Deine „Vitalität“ ist gesunken! Dieser Wert beschreibt den Gesamtzustand deines Charakters und beeinflusst alle Attribute.
 ~
-Die Lebensenergie nimmt durch primitive Heilmethoden, dramatische Ereignisse, Trunkenheit und Überlastung ab. 
+„Vitalität“ sinkt durch einfache Heilmittel, Story-Ereignisse, Trinken und Überlastung.
 ~
-Sie wird durch spezielle Tränke, romantische Aktivitäten, das Ausruhen in einer Taverne oder einfach mit der Zeit wiederhergestellt. In schweren Fällen können Priester helfen. Einzigartige Offiziere verlieren auch Lebensenergie, wenn sie im Kampf verletzt werden, aber sie erholen sich mit der Zeit.
-
+Sie wird durch spezielle Tränke, Liebesabenteuer, Erholung in der Taverne oder einfach mit der Zeit wiederhergestellt. In schweren Fällen helfen Priester.
+~
+Einzigartige Offiziere verlieren ebenfalls „Vitalität“, wenn sie im Kampf schwer verletzt werden – zum Glück regenerieren sie sie selbst.
 }
+
 
 Amulet {Amulette}
 Amulet_descr
 {
-Amulette sind mächtige Charakterverstärker, die in Offensiv-, Defensiv- und Hilfsamulette unterteilt sind. Sie können nicht gleichzeitig offensive und defensive Amulette ausrüsten, also wählen Sie mit Bedacht.
+Amulette sind mächtige Verstärker für deinen Charakter und werden in Angriffs-, Verteidigungs- und Unterstützungstypen unterteilt. Du kannst nicht gleichzeitig ein Angriffs- und ein Verteidigungsamulett tragen – wähle deine Sets also mit Bedacht.
 ~
-Neben Amuletten gibt es auch Talismane und Schutzzauber. Talismane halten länger und haben umfangreichere Wirkungen, während Schutzzauber sehr mächtig sind, unbegrenzt wirken und einen eigenen Inventarplatz haben.
+Es gibt außerdem zwei weitere Verstärker: Talismane und Schutzamulette.
 ~
-Für schwierige Fertigkeitsprüfungen und harte Kämpfe auf See und an Land sollten Sie immer mehrere Sets von Verstärkern im Inventar haben.
-
+Talismane wirken länger als Amulette und haben umfassendere Effekte, Schutzamulette sind extrem stark, wirken unbegrenzt und haben einen eigenen Inventarplatz.
+~
+Halte immer mehrere Sets bereit – für besonders schwere Skill-Checks und harte Kämpfe auf See und an Land.
 }
+
 
 Amulet_controlsimg1 {Inventory}
 
-Perk {Perk-Punkte}
+
+Perk {Fertigkeitspunkte}
 Perk_descr
 {
-Sie haben gerade Ihren ersten Perk-Punkt (PP) erhalten! PPs sind entscheidend für die Charakterentwicklung und werden in Marine und Persönlich unterteilt.
+Du hast gerade deinen ersten Fertigkeitspunkt (FP) erhalten! Sie sind das wichtigste Element der Charakterentwicklung und werden in See- und persönliche Perks unterteilt.
 ~
-Marine Perks machen Sie auf See gefährlicher, während Persönliche Perks Sie an Land und in der Interaktion mit Menschen effektiver machen.
+See-Perks machen dich auf See gefährlicher, persönliche Perks helfen an Land und im Umgang mit Menschen.
 ~
-Beide Arten von PP entwickeln sich unabhängig voneinander, wenn Ihre Fähigkeiten wachsen. Im Durchschnitt erhalten Sie pro 30 Fertigkeitspunkte in einer Gruppe einen PP.
+Beide Arten von FP steigen unabhängig voneinander, je mehr deine persönlichen und Schiffs-Fertigkeiten wachsen. Im Schnitt gibt es pro 30 Punkte einer Gruppe einen FP.
 ~
-Um schnell PP für die Marine zu erhalten, erledigen Sie Nebenquests und Aufträge auf See. Persönliche Punkte wachsen schneller, wenn Sie mit verschiedenen Waffen kämpfen und viel Zeit in Tavernen verbringen. Denken Sie daran, dass persönliche PP wertvoller sind, da die meisten Marine-Perks von Ihren Offizieren übernommen werden können.
-
+Für schnelle See-FP erledige Schiffsverträge und Frachten. Persönliche FP bekommst du schneller, wenn du mit verschiedenen Waffen kämpfst und viel Zeit in Tavernen verbringst.
+~
+Persönliche FP sind viel wertvoller, da die meisten See-Perks auch von Offizieren abgedeckt werden können.
 }
+
 
 Perk_controlsimg1 {Abilities}
 
-Fighter {Vorhut}
+
+Fighter {Vanguard}
 Fighter_descr
 {
-Ihr erster Kämpfer der Vorhut hat sich der Mannschaft angeschlossen! Weisen Sie ihn über das Charaktermenü zu.
+Vanguard sind deine treuesten Offiziere, Leibwächter und die Speerspitze. Sie folgen dir überallhin, und du verbringst viel Zeit mit ihnen.
 ~
-Die Vorhut ist Ihr vertrautester Offizier, Leibwächter und Kostgänger. Sie werden Ihnen ins Kampfgetümmel folgen, und Sie werden die meiste Zeit mit ihnen verbringen.
+Du kannst bis zu drei Kämpfer mitnehmen. Neben dem Schutz des Kapitäns an Land erhöhen sie die Effizienz beim Entern und helfen, schwere Schätze zu transportieren.
 ~
-Sie können bis zu drei Kämpfer auf einmal anführen. Die Vorhut schützt Sie nicht nur an Land, sondern erhöht auch die Effizienz beim Entern und hilft beim Transport schwerer Schätze.
+Einige einzigartige Offiziere findest du nur in Quests. Nicht jeder ist ein guter Vanguard, aber alle beeinflussen die Story und können im normalen Kampf nicht sterben.
 ~
-Einzigartige Quest-Offiziere unterscheiden sich von normalen Matrosen, die man in Tavernen anheuern kann. Obwohl nicht alle von ihnen effektive Kämpfer sind, haben sie einen großen Einfluss auf die Handlung des Spiels und können in normalen Kämpfen nicht sterben.
+Vergiss nicht, deine Leute mit Amuletten, Heilmitteln, Waffen und Munition auszustatten. Tausche Gegenstände über das Aktionsmenü oder jede Truhe.
 ~
-Rüsten Sie Ihre Vorhut immer mit Amuletten, Heilgegenständen, Waffen und Munition aus. Sie können Gegenstände über das Aktionsmenü oder eine Truhe austauschen.
-~
-Sie können der Vorhut befehlen, ihre Position zu halten, dem Kapitän zu folgen oder über Hotkeys oder Dialoge anzugreifen.
-
+Vanguard kannst du per Hotkey oder Dialog befehlen, Position zu halten, zu folgen oder anzugreifen.
 }
+
 
 Fighter_controlsimg1 {Abilities}
 Fighter_controlsimg2 {OfficersFollow}
 Fighter_controlsimg3 {OfficersCharge}
 Fighter_controlsimg4 {OfficersHold}
 
-Rest {Rasten}
+
+Rest {Tageszeit wechseln}
 Rest_descr
 {
-Die Option Rasten ist jetzt im Aktionsmenü verfügbar!
+Du kannst die Tageszeit ändern!
 ~
-Alles im Spiel folgt einem Zeitzyklus: Nachts gibt es keine Wachen am Pier und an den Stadttoren, in den Tavernen kann man nur tagsüber eine Mannschaft anheuern, und einige Charaktere sind sehr wählerisch, was die Tageszeit angeht.
+Alles im Spiel richtet sich nach der Zeit: Nachts stehen keine Wachen am Pier oder an den Stadttoren, Mannschaften kannst du nur tagsüber in Tavernen anheuern, und manche Charaktere achten sehr auf die Tageszeit – besonders, wenn du für sie arbeitest.
 ~
-Verwenden Sie diese Funktion auf See und in der Wildnis. Mieten Sie ein Zimmer in einer Taverne, wenn Sie sich in einer Stadt befinden.
-
+Nutze diese Funktion auf See und in der Wildnis nach Belieben, aber in Städten solltest du in der Taverne übernachten.
 }
+
+
 Rest_controlsimg1{BICommandsActivate}
 
-Navigation{Schiffssteuerung}
-Navigation_descr
-{
-Verwenden Sie die Segelsteuerungstasten, um den Segelmodus zu ändern, und die Wendetasten, um den Kurs zu ändern.
-~
-Es gibt drei Segelmodi: Volle Segel, Kampfsegel und Eingeholte Segel.
-~
-Der Modus 'Volle Segel' ermöglicht maximale Geschwindigkeit, aber Sie drehen langsamer und die Segel Ihres Schiffes sind in Schlachten und Stürmen am anfälligsten.
-~
-Der Modus 'Kampfsegel' begrenzt die Geschwindigkeit, verbessert aber die Wendigkeit und die Treffsicherheit der Kanonen und schützt Ihre Segel besser vor feindlichem Feuer.
-~
-Im Modus 'Eingeholte Segel' wird das Schiff schrittweise bis zum völligen Stillstand abgebremst. Sehr nützlich, um zu entern oder Wertsachen aus dem Meer zu holen.
-~
-Die goldene Regel: Im Kampf ist der Kampfsegel-Modus zu bevorzugen, außerhalb des Kampfes der Volle Segel-Modus.
-
-}
-
-Navigation_controlsimg1 {Ship_SailUp}
-Navigation_controlsimg2 {Ship_SailDown}
-Navigation_controlsimg3 {MiniMapZoomIn}
-Navigation_controlsimg4 {MiniMapZoomOut}
 
 Stealth{Tarnung}
 Stealth_descr
 {
-In den meisten karibischen Siedlungen sind Sie nicht willkommen. Es gibt zwei Möglichkeiten, eine Stadt zu infiltrieren: durch den Hafen oder durch die Tore.
+Du musst dich daran gewöhnen, dass du in den meisten Siedlungen der Karibik nicht willkommen bist.
 ~
-Das sichere Andocken in einem feindlichen Hafen erfordert Vorbereitung. Hissen Sie die Flagge eines nicht feindlichen Landes und verfügen Sie über eine hohe Tarnfähigkeitsstufe, bevor Sie es riskieren, vor den Geschützen der Festung zu erscheinen.
+In feindliche Städte gelangst du auf zwei Wegen: über den Hafen oder das Stadttor.
 ~
-Die Stadttore sollten Sie am besten nachts durchqueren, wenn sie nicht bewacht werden. Meiden Sie Soldaten und verbringen Sie die Nacht in einer Taverne. Wenn Sie einen Alarm auslösen, suchen Sie ein leeres Haus und warten Sie dort ein paar Stunden, bevor Sie es erneut versuchen.
+Sicheres Anlegen in einem feindlichen Hafen erfordert gute Vorbereitung. Du brauchst die Flagge eines nicht-feindlichen Landes und ausreichend hohe Tarnung.
 ~
-Der Kauf einer Handelslizenz in Curacao ist eine sichere Option, um in der Region zu reisen, wenn Ihre Tarnfähigkeiten gering sind.
+Durch das Stadttor kommst du am besten nachts, wenn keine Wachen da sind. Meide Soldaten und übernachte in der Taverne. Bei Alarm suche ein Haus und warte dort ein paar Stunden. Vorteil: Du musst keinen wertvollen Fertigkeitspunkt für Flaggen ausgeben.
+~
+All das kannst du umgehen, wenn du auf Curaçao eine Handelslizenz kaufst und einen See-Perk für eine neutrale Flagge investierst.
 }
+
 
 SeaBattle{Seekampf}
 SeaBattle_descr
 {
-In jedem Seekampf geht es darum, den optimalen Kurs zu halten, die eigenen Segel zu schützen und die des Gegners zu beschädigen.
+Willkommen im Seekampf, Kapitän!
+Dein Hauptziel: Überleben und feindliche Schiffe versenken.
 ~
-Verwenden Sie für letzteres Kugeln und Kettengeschosse. Kugeln haben die größte Reichweite und verursachen mäßigen Schaden an Rumpf und Segeln. Eine erfolgreiche Salve von Kettengeschossen auf mittlere Entfernung kann die Segel des Gegners zerstören.
+Jedes Schiff hat drei Hauptwerte: Rumpf, Segel und Mannschaft. Sinkt der Rumpf auf null, geht das Schiff unter. Beschädigte Segel verlangsamen dich, weniger Mannschaft erleichtert das Entern und verlangsamt alle Abläufe an Bord.
 ~
-Für eine höhere Genauigkeit sollten Sie den First-Person-Modus verwenden, nachdem Sie sichergestellt haben, dass Ihr Schiff nicht zu sehr durch Wellen oder kürzliche Manöver durchgeschüttelt wird. Wenn Sie die Segel des Gegners beschädigen und Ihre eigenen bewahren, haben Sie drei Möglichkeiten: Entern, Versenken oder Fliehen.~
+Für jeden Wert gibt es die passende Munition: Kartätschen für die Mannschaft, Kettenkugeln für Segel und Masten, Bomben für den Rumpf. Kugeln sind Allrounder mit der größten Reichweite. Der Schaden hängt nicht nur vom Munitionstyp, sondern auch vom Geschütz ab – je größer, desto mehr Schaden.
 ~
-Wenn Sie sich mehr als tausend Meter vom nächsten feindlichen Schiff entfernen, können Sie die Weltkarte betreten und fliehen.
+Es gibt zwei Hauptfeuermodi. Der Schnellschuss ist verfügbar, wenn das Ziel im Schussfeld ist. Er ist anfangs nicht sehr präzise oder effektiv, ermöglicht aber dynamische Kämpfe. Der Zielschuss wird mit der Ziel-Taste aktiviert und erlaubt sehr präzises Feuern von der Seite. Das braucht Übung, lohnt sich aber.
 ~
-Das Versenken eines feindlichen Schiffes ist am einfachsten mit Bomben aus nächster Nähe. Effektives Schießen auf große Entfernungen mit Kanonenkugeln ist etwas für erfahrene Kapitäne und Kanoniere. Normalerweise ist es selten nötig, ein feindliches Schiff zu versenken, da sich die Kämpfe meist auf das Entern oder die Flucht konzentrieren.
-
+Weiche feindlichem Feuer aus und zerstöre zuerst Segel und Masten – so werden Gegner viel ungefährlicher.
+~
+Jedes Schiff hat je nach Takelage einen optimalen Kurs zum Wind für maximale Geschwindigkeit. Dieser wird durch schwarze Pfeile auf dem Kompass angezeigt. Nutze die Stärken deines Schiffs – das ist der Schlüssel zum Sieg im Seekampf.
 }
+
 
 SeaBattle_controlsimg1 {hk_charge1}
 SeaBattle_controlsimg2 {hk_charge2}
@@ -305,62 +338,45 @@ SeaBattle_controlsimg4 {hk_charge4}
 SeaBattle_controlsimg5 {Sea_CameraSwitch}
 SeaBattle_controlsimg6 {Ship_Fire}
 
+
 BoardingTactics{Entern}
 BoardingTactics_descr
 {
-Bevor Sie das Schiff entern, feuern Sie ein paar Salven mit der Kartätsche ab, um die gegnerische Besatzung zu schwächen, und verhindern Sie so, dass Ihnen das selbe geschieht. Sobald Sie den Vorteil haben, nähern Sie sich dem feindlichen Schiff, passen Sie sich seiner Geschwindigkeit an und greifen Sie an!
+Vor dem Entern solltest du ein paar Kartätschen-Salven abfeuern, um die gegnerische Mannschaft zu schwächen – ohne Gegenschlag. Hast du den Vorteil, fahre so nah wie möglich heran, gleiche die Geschwindigkeit an und stürme an Bord!
 ~
-Je höher Ihre Enterfertigkeit ist, desto einfacher ist es, das gegnerische Schiff erfolgreich zu entern. Die Effizienz des Enterns hängt von der Größe, den Fähigkeiten und der Moral der Mannschaft ab.
+Je höher dein See-Perk „Vanguard“, desto leichter kannst du feindliche Schiffe entern.
 ~
-Ein erfahrener Bootsmann, die Vorhut, Amulette und entwickelte persönliche Kampffähigkeiten können den zahlenmäßigen Vorteil des Feindes ausgleichen.
+Der Erfolg hängt von Anzahl, Fertigkeiten und Moral deiner Mannschaft ab. Ein erfahrener Bootsmann, Vanguard, Amulette und gute Kampffertigkeiten des Kapitäns können gegnerische Überzahl ausgleichen.
 }
 
-Mushket{Musketen}
+
+Mushket{Muskete}
 Mushket_descr
 {
-Langlaufwaffen sind im Kampf extrem gefährlich. Nur der Hauptcharakter mit der Musketier-Fähigkeit und einige einzigartige Offiziere können sie benutzen. 
-Das beste Beispiel ist Tichingitu, und er sollte derjenige sein, der die erste Muskete bekommt, die Sie finden.
+Langläufige Schusswaffen sind im Kampf extrem gefährlich. Nur der Hauptcharakter mit dem Perk „Musketier“ und einige einzigartige Offiziere können sie nutzen. Das beste Beispiel ist Teachingitu – gib ihm deine erste Muskete.
 ~
-Im Gegensatz zu Nahkampfwaffen bieten Feuerwaffen mehr Flexibilität. Durch die Entwicklung Ihres Charakters zum Scharfschützen, das Tragen bestimmter Amulette und Ausrüstungsgegenstände und die Verwendung verschiedener Munitionstypen können Sie das Blatt in jeder Schlacht wenden.
-
+Im Gegensatz zu Nahkampfwaffen sind Schusswaffen sehr flexibel – entwickle deinen Charakter als Schützen, rüste passende Amulette und Ausrüstung aus und nutze verschiedene Munitionstypen, um jeden Kampf zu drehen.
 }
+
 
 Mushket_controlsimg1 {Inventory}
 
-CameraControl{Ahoy!}
-CameraControl_descr
-{
-Willkommen im Story-Modus.  
-Bevor du dich dem offenen Meer stellst, musst du das Land überstehen. Die Neue Welt duldet keine Narren - und bietet keine zweite Chance.
-~  
-Um dir zu helfen, deine Seebeine zu finden, haben wir ein Tutorial-Abenteuer auf der Insel Martinique vorbereitet. Dort wirst du die Fähigkeiten meistern, die jeder Kapitän wissen muss - und dein erstes Kommando verdienen.
-~  
-Bewege dich mit deinen Tasten, schaue dich mit deiner Maus um. Du kannst gehen, rennen oder sprinten, wenn es nötig ist. Das Aktionsmenü wird ebenfalls nützlich sein - insbesondere für Schnellreisen, die nach dem Tutorial freigeschaltet werden.
-~  
-Deine Legende beginnt hier.  
-Bis bald auf See.
-}
 
-CameraControl_controlsimg1 {ChrForward}
-CameraControl_controlsimg2 {ChrStrafeLeft}
-CameraControl_controlsimg3 {ChrBackward}
-CameraControl_controlsimg4 {ChrStrafeRight}
-CameraControl_controlsimg5 {ShipCamera_Turn_H}
-CameraControl_controlsimg6 {LICommandsActivate}
-
-CameraControlFP{Ahoy!}
+CameraControlFP{Ahoi!}
 CameraControlFP_descr
 {
-Willkommen in der Neuen Welt!  
-Diese Gewässer verzeihen nichts - und das Glück begünstigt selten die Unbedachten. Fang klein an: reise zwischen freundlichen Kolonien, erledige Besorgungen, liefere Waren und Passagiere und beschäftige dich mit dem örtlichen Handel.
-~  
-Goldene Doubloons kaufen dir Karten zu vergrabenen Schätzen. Silber-Pesos halten dein Schiff über Wasser und ermöglichen dir das Anheuern von Offizieren - denn ohne sie kann selbst ein alleinstehender Händler das Ende für dich bedeuten.
-~  
-Bewege dich mit deinen Tasten, schaue dich mit deiner Maus um. Du kannst gehen, rennen oder sprinten, wenn nötig. Das Aktionsmenü wird ebenfalls nützlich sein - besonders für Schnellreisen und andere erweiterte Funktionen.
-~  
-Deine Legende beginnt hier.  
-Bis bald auf See.
+Willkommen in der Karibik, Kapitän!
+~
+Caribbean Legend ist ein anspruchsvolles Spiel, aber leicht zu erlernen. Wenn du den Story-Modus noch nicht gespielt hast, empfehlen wir, ein paar Stunden zu investieren, um die Grundlagen kennenzulernen.
+~
+Die Steuerung erfolgt mit Bewegungstasten und Maus. Dein Charakter kann in alle Richtungen gehen und laufen sowie sprinten.
+Das Aktionsmenü ist ebenfalls sehr nützlich – dort findest du viele praktische Funktionen.
+~
+Mit der Maus kannst du dich frei umsehen – so findest du versteckte Gegenstände, behältst Kämpfe im Blick oder genießt einfach die Aussicht.
+~
+Danke fürs Spielen – bis bald auf See!
 }
+
 
 CameraControlFP_controlsimg1 {ChrForward}
 CameraControlFP_controlsimg2 {ChrStrafeLeft}
@@ -369,16 +385,282 @@ CameraControlFP_controlsimg4 {ChrStrafeRight}
 CameraControlFP_controlsimg5 {ShipCamera_Turn_H}
 CameraControlFP_controlsimg6 {LICommandsActivate}
 
-MarksmanMode{Aiming}
+
+MarksmanMode{Zielen}
 MarksmanMode_descr
 {
-Du kannst mit jeder Feuerwaffe zielen, um genauer zu schießen. Halte die Zieltaste gedrückt, um in den Scharfschützenmodus zu gelangen. Lass die Taste los, um ohne zu schießen auszutreten.  
-~  
-Das Schießen im Scharfschützenmodus ist präziser und tödlicher, aber der Nachteil ist verringerte Sichtbarkeit und Bewegungsgeschwindigkeit.  
-~  
-Je länger du zielst, desto mehr Schaden wird dein Schuss anrichten. Ein Kopfschuss verursacht noch größeren Schaden. Wenn du Schaden nimmst, wird dein Ziel zurückgesetzt und dein Charakter wird taumeln.  
+Mit jeder Schusswaffe kannst du zielen, um präziser zu schießen. Halte die Ziel-Taste, um in diesen Modus zu wechseln. Lasse sie los, um ohne Schuss zurückzukehren.
+~
+Gezielte Schüsse sind präziser und tödlicher, aber du siehst weniger und bewegst dich langsamer.
+~
+Je länger du zielst, desto mehr Schaden verursachst du. Kopfschüsse richten noch mehr an. Wenn du getroffen wirst, verlierst du das Ziel und dein Charakter taumelt.
 }
+
 
 MarksmanMode_controlsimg1 {ChrAiming}
 
 
+Trading {Handelsgrundlagen}
+
+
+Trading_descr
+{
+Handel ist ein tiefes, komplexes System, bei dem viele Faktoren den Kauf- und Verkaufspreis beeinflussen.
+~
+An Land zählen vor allem die Handels-Fertigkeit und der Hintergrund deines Charakters.
+~
+Auf See gibt es noch mehr Faktoren – Warentyp, Herkunft, Koloniegröße, Handelswege und die Fertigkeiten deines Zahlmeisters.
+~
+Mit der Zeit wirst du alles verstehen – bis dahin lohnt sich ein nützliches Handelsamulett.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Prologue_Navigation{Schiffssteuerung}[a]
+Prologue_Navigation_descr
+{
+Willkommen in der Karibik!
+~
+Steuere das Schiff mit den Richtungstasten. Schiffe sind schwer und träge – spüre das Gewicht beim Drehen.
+~
+Segel und Geschwindigkeit steuerst du mit den Segelmodi-Tasten.
+~
+Es gibt drei Segelmodi: volle, Kampf- und eingeholte Segel. Volle Segel sind am schnellsten, im Kampfmodus drehst du besser, eingeholt stoppst du sanft.
+~
+Bei Sturm und unter Beschuss Segel einholen, beim Drehen und Zielen in den Kampfmodus schalten, beim Verfolgen volle Segel setzen.
+~
+Probiere verschiedene Segelmodi und Wendungen aus, spüre die Trägheit des Schiffs und genieße den Sonnenuntergang!
+}
+
+
+Prologue_Navigation_controlsimg1 {Ship_SailUp}
+Prologue_Navigation_controlsimg2 {Ship_TurnLeft}
+Prologue_Navigation_controlsimg3 {Ship_SailDown}
+Prologue_Navigation_controlsimg4 {Ship_TurnRight}
+
+
+Prologue_TimeScale{Zeitkontrolle}[b]
+Prologue_TimeScale_descr
+{
+Viele Dinge im Spiel laufen recht langsam ab – etwa das Wechseln des Segelmodus oder das Nachladen der Kanonen.
+~
+Du kannst die Zeit auf See, an Land und auf der Weltkarte beschleunigen oder verlangsamen.
+~
+Nutze deine Macht über die Zeit und geh dann aufs Deck – jemand möchte mit dir sprechen.
+}
+Prologue_TimeScale_controlsimg1{TimeScaleFasterBA}
+Prologue_TimeScale_controlsimg2{TimeScaleSlowerBA}
+Prologue_TimeScale_controlsimg2{TimeScale}
+
+
+Prologue_CameraControl{Ahoi!}[c]
+Prologue_CameraControl_descr
+{
+Willkommen an Bord der „Ulysse“! Wir haben ein kleines Einstiegsabenteuer für dich vorbereitet.
+~
+An Bord der „Ulysse“ gibt es viel zu tun. Wenn du bereit bist, wähle im Dialog mit dem Kapitän „Geschäfte abschließen“.
+~
+Danke fürs Spielen – bis bald auf See!
+}
+
+
+Prologue_CameraControl_controlsimg1 {ChrForward}
+Prologue_CameraControl_controlsimg2 {ChrStrafeLeft}
+Prologue_CameraControl_controlsimg3 {ChrBackward}
+Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
+Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
+Prologue_CameraControl_controlsimg6 {LICommandsActivate}
+
+
+Prologue_Logbook {Logbuch & Dokumente}[d]
+
+
+Prologue_Logbook_descr
+{
+Jede Quest, die du annimmst, wird im „Logbuch“ vermerkt. Lies Dialoge und Einträge aufmerksam – oft stehen dort wichtige Hinweise.
+~
+Sieh dir die Einträge im „Logbuch“ an. Alle kleinen Aufgaben, die du an Bord der „Ulysse“ bekommst, werden dort angezeigt.
+}
+
+
+Prologue_Logbook_controlsimg1 {QuestBook}[e]
+
+
+Prologue_Inventory {Komplexe Quests, Dokumente & Crafting}
+Prologue_Inventory_descr
+{
+Neben Quests enthält das „Logbuch“ weitere wichtige Infos.
+~
+Im Bereich „Dokumente“ kannst du alle gefundenen Notizen lesen.
+~
+Jetzt musst du eine Notiz vom Zahlmeister lesen und Dublonen an die Crew verteilen, wie angegeben.
+~
+Um Dublonen aus der Truhe zu holen, öffne sie über das Crafting – Alchemie.
+Anfangs hast du nur wenige Rezepte, aber später werden es mehr.
+}
+Prologue_Inventory_controlsimg1 {QuestBook}
+Prologue_Inventory_controlsimg2 {Alchemy}
+
+
+
+
+Prologue_Amulet {Amulette}[f]
+Prologue_Amulet_descr
+{
+Amulette sind mächtige Verstärker für deinen Charakter und werden in Angriffs-, Verteidigungs- und Unterstützungstypen unterteilt. Du kannst nicht gleichzeitig ein Angriffs- und ein Verteidigungsamulett tragen – wähle deine Sets also mit Bedacht.
+~
+Es gibt außerdem zwei weitere Verstärker: Talismane und Schutzamulette.
+~
+Talismane wirken länger als Amulette und haben umfassendere Effekte, Schutzamulette sind extrem stark, wirken unbegrenzt und haben einen eigenen Inventarplatz.
+~
+Halte immer mehrere Sets bereit – für besonders schwere Skill-Checks und harte Kämpfe auf See und an Land.
+~
+Achtung: Nach der Aktivierung wird ein Amulett oder Talisman beim Ablegen zerstört – entscheide mit Bedacht.
+}
+
+
+Prologue_Trading {Handelsgrundlagen}[g]
+
+
+Prologue_Trading_descr
+{
+Handel ist ein tiefes, komplexes System, bei dem viele Faktoren den Preis beeinflussen – vor allem deine „Handel“-Fertigkeit.
+~
+Auf See gibt es noch mehr Faktoren – Warentyp, Herkunft, Koloniegröße, Handelswege und die Fertigkeiten deines Zahlmeisters.
+~
+Mit der Zeit wirst du alles verstehen – bis dahin lohnt sich ein nützliches Amulett.
+}
+
+
+Prologue_Overload {Überlastung}[h]
+
+
+Prologue_Overload_descr
+{
+Du bist zum ersten Mal an die Traglastgrenze gestoßen.
+Jeder Charakter hat ein Maximalgewicht, das er tragen kann – abhängig von Stärke, Fertigkeiten und Amuletten.
+~
+Versuche, etwas zu finden, das dein Maximalgewicht erhöht – vielleicht beim Bootsmann in der Mannschaftsunterkunft.
+}
+
+
+Prologue_AutoFire {Seekampf}[i]
+Prologue_AutoFire_descr
+{
+Dein erster Seekampf findet in der Fantasie von Charles de Maure statt – du kannst also unbesorgt experimentieren.
+~
+Jedes Schiff hat drei Hauptwerte: Rumpf, Segel und Mannschaft. Sinkt der Rumpf auf null, geht das Schiff unter. Beschädigte Segel verlangsamen dich, weniger Mannschaft beeinflusst Entern, Nachladen und Segelsteuerung.
+~
+Jede Munition hat ihren Zweck: Kartätschen für die Mannschaft, Kettenkugeln für Segel und Masten, Bomben für den Rumpf. Kugeln sind Allrounder mit der größten Reichweite. Der Schaden hängt nicht nur vom Munitionstyp, sondern auch vom Geschütz ab – je größer, desto mehr Schaden.
+~
+Es gibt zwei Hauptfeuermodi. Der Schnellschuss ist verfügbar, wenn das Ziel im Schussfeld ist. Er ist anfangs nicht sehr präzise oder effektiv, ermöglicht aber dynamische Kämpfe.
+~
+Ist dir der Kampf zu langsam, beschleunige ihn mit den Zeitsteuerungstasten.
+}
+
+
+Prologue_AimingFire {Gezieltes Feuer}[j]
+Prologue_AimingFire_descr
+{
+Gezieltes Feuer erlaubt sehr präzises Schießen von der Seite. Das braucht Übung, lohnt sich aber.
+~
+Die Kanonenkreise zeigen die tatsächliche Position und Flugbahn der Breitseitenkanonen. Sie brauchen etwas Zeit, um sich auf den Zielpunkt in der Bildschirmmitte auszurichten.
+~
+Beim Schuss feuern die Kanonen dorthin, wo ihre Kreise gerade stehen – halte also ggf. vor.
+~
+Ziele auf ein feindliches Schiff, um es als Ziel zu markieren. Nach der Eroberung kannst du auf jeden Teil zielen oder vorhalten.
+~
+Mit steigenden Fertigkeiten des Kapitäns und Kanoniers werden Zielgeschwindigkeit und Feuerrate besser.
+~
+Bewegst du das Ziel schnell, werden die Kanoniere verwirrt und zielen langsamer als sonst.
+~
+Gezielte Breitseiten eignen sich hervorragend, um auf große Distanz kritische Schiffsteile – vor allem Segel und Masten – zu treffen.
+}
+Prologue_AimingFire_controlsimg1 {ChrAimingShot}
+Prologue_AimingFire_controlsimg2 {FireCamera_Set}
+
+
+
+
+Prologue_FightAttack {Angriff}[k]
+Prologue_FightAttack_descr
+{
+Kämpfe in Caribbean Legend sind hart und schnell – aber jetzt bist du in Sicherheit.
+~
+Jeder Charakter ist bewaffnet und hat Kampffertigkeiten. Je besser deine Waffe und je erfahrener dein Held, desto mehr Schaden richtest du an.
+~
+Dir stehen mehrere Angriffs- und Verteidigungsmanöver zur Verfügung.
+~
+Beginnen wir mit den drei Hauptangriffen.
+~
+Hieb. Schnell, verursacht wenig Schaden, verbraucht mittlere Energie.
+~
+Stich. Langsamer als der Hieb, mittlerer Schaden, wenig Energieverbrauch.
+~
+Durchschlagender Angriff. Langsam und kraftvoll, verursacht massiven Schaden und kann Blocks durchbrechen.
+~
+Probiere alle Angriffe am Piraten aus.
+}
+Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
+Prologue_FightAttack_controlsimg2 {ChrAttackBase}
+Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
+
+
+
+Prologue_FightDefence {Verteidigung im Kampf}[l]
+Prologue_FightDefence_descr
+{
+Sehr gut! Jetzt zur Verteidigung.
+~
+Blocken. Blockt jeden Angriff außer durchschlagende. Während des Blocks kannst du dich langsam bewegen, und es kostet keine Energie. Starke Gegner können deinen Block auch mit normalen Angriffen durchbrechen – sei vorbereitet.
+~
+Parieren. Lenkt jeden Angriff ab und bringt den Gegner aus dem Gleichgewicht, er verliert Energie.
+~
+Ausweichen. Ermöglicht Positionswechsel oder das Ausweichen vor Schüssen.
+~
+Pariere und blocke die Angriffe des Piraten.
+~
+Und dann – besiege ihn.
+}
+Prologue_FightDefence_controlsimg1 {ChrBlock}
+Prologue_FightDefence_controlsimg2 {ChrParry}
+
+
+
+Prologue_Marksmanship {Schusswaffen}[m]
+Prologue_Marksmanship_descr
+{
+Schusswaffen sind seltener als Nahkampfwaffen, aber die Gefahr, in der Karibik eine Kugel abzubekommen, ist trotzdem groß – bleib wachsam.
+~
+An Land gibt es wie auf See zwei Schussmodi: Schnellschuss und gezielter Schuss.
+~
+Schnellschuss: Einfach Taste drücken. Schnell, aber wenig effektiv.
+~
+Gezielter Schuss kann viel mehr Schaden verursachen, macht dich aber verwundbar. Je länger du zielst, desto mehr Schaden. Kopfschüsse richten noch mehr an.
+~
+Halte die Ziel-Taste, um in diesen Modus zu wechseln. Angriffstaste zum Schießen. Ziel-Taste loslassen, um ohne Schuss zurückzukehren.
+}
+Prologue_Marksmanship_controlsimg1 {ChrAiming}
+Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
+
+
+
+Prologue_DeadSearch {Plündern}[n]
+
+
+Prologue_DeadSearch_descr
+{
+Nach jedem Kampf ist Zeit für Beute.
+Jeden gefallenen Gegner kannst du mit der Plündern-Taste durchsuchen.
+~
+Finde das Heil-Elixier für Alonso!
+}

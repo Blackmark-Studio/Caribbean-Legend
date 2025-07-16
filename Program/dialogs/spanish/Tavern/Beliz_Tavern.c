@@ -10,19 +10,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			// Страж Истины
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "merdok" && !CheckAttribute(npchar, "quest.jino"))
 			{
-				link.l1 = "Escucha, ¿ha llegado aquí a este pueblo un alquimista, un médico? Es italiano, tiene unos treinta años, se llama Gino Gvineili?";
+				link.l1 = "Escucha, ¿ha llegado aquí a este pueblo un alquimista, o un médico? Es italiano, tiene unos treinta años, y se llama Gino Gvineili?";
 				link.l1.go = "guardoftruth";
 			}
 			// Калеуче
 			if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "hunting" && !CheckAttribute(npchar, "quest.Caleuche"))
 			{
-				link.l1 = "Escucha, necesito un cazador llamado Fergus Hooper. Me han dicho que vive aquí. ¿Dónde puedo encontrarlo?";
+				link.l1 = "Escucha, necesito a un cazador llamado Fergus Hooper. Me han dicho que vive aquí. ¿Dónde puedo encontrarlo?";
 				link.l1.go = "caleuche";
 			}
 		break;
 		
 		case "guardoftruth":
-			dialog.text = LinkRandPhrase("No, no lo he hecho. Tenemos herbolarios y médicos, pero ninguno con ese nombre.","Es la primera vez que oigo un nombre tan extraño. No, nunca hemos recibido la visita del hombre del que hablas.","No tenemos ningún tipo de alquimistas en absoluto. Tenemos médicos, pero ninguno con un nombre así.");
+			dialog.text = LinkRandPhrase("No, creo que no. Tenemos herbolarios y médicos, pero ninguno con ese nombre.","Es la primera vez que oigo un nombre tan extraño. No, nunca hemos recibido la visita del hombre del que hablas.","No tenemos ningún tipo de alquimista en absoluto. Tenemos médicos, pero ninguno con un nombre así.");
 			link.l1 = "Ya veo. Eso es una lástima. ¡Seguiré buscando!";
 			link.l1.go = "exit";
 			npchar.quest.jino = "true";
@@ -30,13 +30,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		// Калеуче
 		case "caleuche":
-			dialog.text = "¿Fergus? A menudo visita mi lugar. Pero ha estado en la selva desde ayer. No te preocupes, volverá en una semana, bebiendo ron y jactándose de sus aventuras marinas. Aunque, lo admito, es un maldito buen cazador. No conozco a nadie que atrape serpientes tan bien como él.";
+			dialog.text = "¿Fergus? A menudo visita este lugar. Pero ha estado en la selva desde ayer. No te preocupes, volverá en una semana, bebiendo ron y jactándose de sus aventuras marinas. Aunque, lo admito, es un maldito buen cazador. No conozco a nadie que atrape serpientes tan bien como él.";
 			link.l1 = "¿Serpientes? Hm. ¿Cuándo debería volver aquí para encontrarlo?";
 			link.l1.go = "caleuche_1";
 		break;
 		
 		case "caleuche_1":
-			dialog.text = "Al menos tres días. Tenga en cuenta que él siempre viene aquí no antes de las seis de la tarde y se va no más tarde de las diez.";
+			dialog.text = "Al menos tres días. Tenga en cuenta que él siempre viene aquí no antes de las seis de la tarde, y se va no más tarde de las diez.";
 			link.l1 = "¿Cómo luce? Nunca lo he visto antes.";
 			link.l1.go = "caleuche_2";
 		break;

@@ -91,16 +91,12 @@ void ProcessDialogEvent()
 		case "Startsailor_5a":
 			dialog.text = "Waiting eagerly. Hope you can make it yourself, monsieur? Head up, and hopefully, you won't get lost from there. Oh, and welcome to the Archipelago, heh-heh.";
 			link.l1 = "Yeah, thanks. The only comfort is that I won't be here for long.";
-			link.l1.go = "Startsailor_6";			
+			link.l1.go = "Startsailor_6";
 		break;
 		
 		case "Startsailor_6":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			i = FindLocation("Fortfrance_town");
-			setCharacterShipLocation(pchar, GetCityFrom_Sea(locations[i].fastreload));
-		    setWDMPointXZ(GetCityFrom_Sea(locations[i].fastreload));
-			DoQuestReloadToLocation("Fortfrance_town", "reload", "reload1", "Sharlie_onLand");
+			AddDialogExitQuestFunction("SharlieTutorial_StartGameInMartinique");
 		break;
 		// <-- матрос на корабле, прибытие в Сен-Пьер
 		
@@ -287,34 +283,36 @@ void ProcessDialogEvent()
 		// --> найм матросов
 		case "Sharlie_sailor":
 			DelLandQuestMark(npchar);
-			dialog.text = "Good health and Godspeed, Monsieur. Is there something you need?";
-			link.l1 = "Yes. I have a ship but no crew. The bartender advised me to speak with you about this. You and your lads have supposedly been dismissed from your last ship and you need gainful employment...";
+			dialog.text = "And then he leaned over the rail and poured out so much the Caribbean itself turned green! Ha-ha-ha!";
+			link.l1 = "Alonso?";
 			link.l1.go = "Sharlie_sailor_1";
 		break;
 		
 		case "Sharlie_sailor_1":
-			dialog.text = "Oui, that's correct. You want to hire me and my mates? What kind of ship do you have?";
-			link.l1 = "A regular ship, "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name")))+". Why do you even care?";
+			dialog.text = "Oh! Charles, I was just regaling the lads with our exploits!";
+			link.l1 = "I noticed. Listen, Alonso. I have... become a captain.";
 			link.l1.go = "Sharlie_sailor_2";
 		break;
 		
 		case "Sharlie_sailor_2":
-			dialog.text = "Well, Monsieur, no decent sailor wants to serve crammed onto a tartan or on a longboat, but "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name")))+" will do just fine. I must warn you, captain, you can hire only all of us at once. See, we are a team and come as a package.";
-			link.l1 = "How many men do you have?";
+			dialog.text = "Already? I thought you’d need a month at least, ha-ha!";
+			link.l1 = "I am quite serious!";
 			link.l1.go = "Sharlie_sailor_3";
 		break;
 		
 		case "Sharlie_sailor_3":
-			dialog.text = "Forty. We're experienced sailors, not a lubber in the bunch, and we know the smell of gunpowder too. We can handle the sails, rigging, roll out the cannons, and work up close with cutlass and axe if the need arises.";
-			link.l1 = "You all sound qualified. How much?";
+			dialog.text = "Were it only myself, I would sign on at once. But I have forty souls from the Ulysses with me. They have trusted me with their future; I must be sure you will not fail them\n"+
+			"What sort of vessel have you?";
+			link.l1 = "A ship is a ship, "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name")))+". Why, does it matter so much?";
 			link.l1.go = "Sharlie_sailor_4";
 		break;
 		
 		case "Sharlie_sailor_4":
-			dialog.text = "An initial advance of 120 pesos each and standard wages after that. We won't ask much, just enough for grog. Don't worry about that, cap'n.";
+			dialog.text = "You know, after the Ulysses we would rather not serve on some bark or tartane. We have seen your vessel already, and the lads approve\n"+
+			"Now, the money. We ask 4 800 pesos in advance. After that—shares as usual. Nothing unreasonable, I assure you. Can you manage it?";
 			if (sti(Pchar.money) >= 4800)
 			{
-				link.l1 = "Here is your money.";
+				link.l1 = "Very well, done! Here is your coin.";
 				link.l1.go = "Sharlie_sailor_5";
 			}
 			link.l2 = "Unfortunately, I don't have that much money on me right now.";
@@ -332,8 +330,8 @@ void ProcessDialogEvent()
 			else
 			{
 				AddMoneyToCharacter(pchar, -4800);
-				dialog.text = "That's more like it, cap'n. I'll get the boys together and we'll be off to your ship immediately.";
-				link.l1 = "Excellent. Prepare the ship for departure.";
+				dialog.text = "Bah! Congratulations... Captain! I shall gather the boys at once and we’ll head for your ship.";
+				link.l1 = "Glad to resume our adventure, Alonso. Ready the vessel for sea!";
 				link.l1.go = "Sharlie_sailor_6";
 			}
 		break;
@@ -493,9 +491,14 @@ void ProcessDialogEvent()
 		case "Folke_8":
 			if (bOk)
 			{
-				dialog.text = "Well, you've definitely stocked up on enough ammunition, captain. Plenty of powder and shot for our needs. Just don't forget to restock it as needed.";
+				dialog.text = "Well, we are well supplied with powder and shot, Captain. This will do for now; only remember to replenish in time.";
 				link.l1 = "Well, that goes without saying. Any other comments?";
 				link.l1.go = "Folke_10";
+				if (CheckCharacterItem(PChar, "BoxOfBalls"))
+				{
+					link.l2 = "Ah! Thank you for the reminder. I happen to have a whole crate of shot with me!";
+					link.l2.go = "Folke_8_1";
+				}
 			}
 			else
 			{
@@ -503,6 +506,27 @@ void ProcessDialogEvent()
 				link.l1 = "A worthy investment. I'm off to the merchant.";
 				link.l1.go = "Folke_9";
 			}
+		break;
+		
+		case "Folke_8_1":
+			dialog.text = "...And how long have you been lugging it about?";
+			link.l1 = "Nigh on a fortnight.";
+			link.l1.go = "Folke_8_2";
+			TakeItemFromCharacter(pchar, "BoxOfBalls");
+			//AddCharacterGoodsSimple(sld, GOOD_BALLS, 10);
+			Achievment_Set("ach_CL_164");
+		break;
+		
+		case "Folke_8_2":
+			dialog.text = "But why, Cap’n?!";
+			link.l1 = "I like collecting odds and ends. One never knows what may prove useful.";
+			link.l1.go = "Folke_8_3";
+		break;
+		
+		case "Folke_8_3":
+			dialog.text = "Well, too bad for you. This shot will never fit our toy guns. Actually, I have never seen shot so large. One of those would send the Adeline to the bottom.";
+			link.l1 = "...";
+			link.l1.go = "Folke_10";
 		break;
 		
 		case "Folke_9":
@@ -1471,6 +1495,7 @@ case "Europe":
 			link.l1.go = "ZsI_officer_2";
 			sld = CharacterFromID("ListKakao");
 			LAi_CharacterEnableDialog(sld);
+			EndBattleLandInterface();
 		break;
 		
 		case "ZsI_officer_2":
@@ -1527,6 +1552,7 @@ case "Europe":
 			link.l2.go = "ZsI_officer_Draka";
 			link.l3 = "You're right, Lieutenant, I'm not. Goodbye.";
 			link.l3.go = "ZsI_officerKIll";
+			StartBattleLandInterface();
 		break;
 		
 		case "ZsI_officer_Mir":
@@ -1538,6 +1564,7 @@ case "Europe":
 		case "ZsI_officer_Mir_2":
 			DialogExit();
 			
+			DeleteAttribute(pchar, "questTemp.CameraDialogMode");
 			sld = CharacterFromID("ZsI_Patrul_off");
 			LAi_SetActorType(sld);
 			sld.lifeday = 0;
@@ -1612,6 +1639,7 @@ case "Europe":
 		case "ZsI_officer_Draka":
 			DialogExit();
 			
+			DeleteAttribute(pchar, "questTemp.CameraDialogMode");
 			LAi_LocationFightDisable(&Locations[FindLocation("BasTer_ExitTown")], false);
 			LAi_SetFightMode(pchar, true);
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
@@ -1682,6 +1710,7 @@ case "Europe":
 		case "ZsI_officerKIll":
 			DialogExit();
 			
+			DeleteAttribute(pchar, "questTemp.CameraDialogMode");
 			sld = CharacterFromID("ZsI_Patrul_off");
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, CharacterFromID("ListKakao"));
@@ -1773,7 +1802,7 @@ case "Europe":
 			SetQuestHeader("MoneyOnTrees");
 			AddQuestRecord("MoneyOnTrees", "1");
 			
-			FantomMakeCoolSailor(npchar, SHIP_BARQUE, "Charles", CANNON_TYPE_CANNON_LBS6, 40, 33, 20);
+			FantomMakeCoolSailor(npchar, SHIP_BARKENTINE, "Charles", CANNON_TYPE_CANNON_LBS3, 40, 33, 20);
 			npchar.Ship.Mode = "trade";
 			SetCharacterRemovable(npchar, false);
 			SetCompanionIndex(pchar, -1, sti(npchar.index));
@@ -1945,14 +1974,8 @@ case "Europe":
 		//Миниквест "Делюк"
 		//Матрос Алонсо
 		case "Del_Alonso":
-			dialog.text = "Captain, we have a problem.";
-			link.l1 = "Excuse me? Who are you exactly?";
-			link.l1.go = "Del_Alonso_1";
-		break;
-		
-		case "Del_Alonso_1":
-			dialog.text = "I'm Sailor Alonso, Captain. I'm part of your crew. Don't worry too much, it must be tough to remember almost forty new faces on board in just a few days.";
-			link.l1 = "Report, Sailor Alonso. What's the issue?";
+			dialog.text = "Trouble, Cap’n.";
+			link.l1 = "Well?";
 			link.l1.go = "Del_Alonso_2";
 		break;
 		
@@ -1987,13 +2010,13 @@ case "Europe":
 		break;
 		
 		case "Del_Alonso_7":
-			dialog.text = "You've caught on quickly, Captain. The crew sees him as a decent officer who treats us with respect, but he's not worth the trouble. Just a few days ago, an entire crew from a sizable merchant vessel was dismissed. Maybe it's worth a visit to the tavern? That's what the crew is suggesting.";
-			link.l1 = "Thank you for the advice, Alonso. Now I will remember you. Return to the ship and lead the watch while I handle the situation.";
+			dialog.text = "You learn quickly, Cap’n. The crew says that while he is a capable officer and treats us fair, he is not worth the bother. A big merchantman just let its officers go—perhaps look in the tavern? The right fellow is bound to be there. And forget Deluc; that’s the word among the men.";
+			link.l1 = "Thanks for the counsel, Alonso. I knew I could rely on you. Get back to the ship and take the watch while I sort this out.";
 			link.l1.go = "Del_Alonso_8";
 		break;
 		
 		case "Del_Alonso_8":
-			dialog.text = "Aye, aye.";
+			dialog.text = "Aye-aye!";
 			link.l1 = "...";
 			link.l1.go = "Del_Alonso_9";
 		break;

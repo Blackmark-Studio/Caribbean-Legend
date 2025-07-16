@@ -21,6 +21,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                           "Look, if you have nothing to tell me about the port's matters then don't bother me with your questions.", "block", 1, npchar, Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I have changed my mind.", "I've got nothing to talk about."), "Nevermind.", "Indeed, the third time already...", "Sorry, but I'm not interested in the port's matters for now.", npchar, Dialog.CurrentNode);
 			link.l1.go = "exit";
+			//--> Грани справедливости
+			if (CheckAttribute(pchar, "questTemp.GS_Portman"))
+			{
+				link.l1 = "Word has it that someone made an attempt on your life, and you're trying to track down the culprit?";
+				link.l1.go = "GS_Portman_1";
+			}
+			if (CheckAttribute(pchar, "questTemp.GS_NaemnikMertv"))
+			{
+				link.l1 = "The man who attempted your life has fallen, Mr. "+npchar.lastname+". Nothing threatens you anymore.";
+				link.l1.go = "GS_Portman_6";
+			}
+			//<-- Грани справедливости
 		break;
 
 		//регата
@@ -143,6 +155,90 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.Regata_PU.function = "RegataPU_Open";//вход в ПУ ночью
 		break;
 		//регата
+		
+		//--> Грани справедливости
+		case "GS_Portman_1":
+			dialog.text = "The attempt on my life did happen, that much is true. As for the search... it's not quite that. I don't need a fugitive caught — I need his head. Only then will peace return to me.";
+			Link.l1 = "Do you have any idea who attacked you and why?";
+			Link.l1.go = "GS_Portman_2";
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "GS_Portman_2":
+			dialog.text = "I... I don't know who he is! I don't know where he came from or why he struck at me. But one thing is clear — he wanted me dead. And now... now I crave his death with just as much fury! Do you understand me?\nSo spare me your pointless questions. Your curiosity means nothing to me — only action can help now. Two hundred doubloons for his head, that's my price. Start the hunt, or stop wasting my time.";
+			Link.l1 = "I understand that fear and anger cloud your mind, and I’ll even forgive your tone. But get a grip on yourself. I don't see a line of volunteers to solve your problems, so temper your fire. Two hundred doubloons is acceptable, but before I take the job, I need to know everything.";
+			Link.l1.go = "GS_Portman_3";
+			Link.l2 = "Your words are just idle prattle, and there are no leads. Searching for someone unknown in the jungle is like looking for a needle in a haystack. I won't waste my time on a pointless hunt. Good luck. You'll surely need it.";
+			Link.l2.go = "GS_Portman_End";
+		break;
+		
+		case "GS_Portman_End":
+			DialogExit();
+			CloseQuestHeader("GS");
+			DeleteAttribute(pchar, "questTemp.GS_Portman");
+		break;
+		
+		case "GS_Portman_3":
+			dialog.text = "Argh... Forgive me, "+GetAddress_Form(NPChar)+", my nerves are frayed... What exactly do you want to know?";
+			Link.l1 = "Did you notice any features that could help identify him? Was he alone, or backed by someone more powerful? The more you tell me, the sooner you'll be able to sleep peacefully.";
+			Link.l1.go = "GS_Portman_4";
+		break;
+		
+		case "GS_Portman_4":
+			dialog.text = "What foe?! I have no enemies! Never have! I’ve done nothing to deserve death in the middle of the street in broad daylight\nThat villain... he’s just a bitter madman, the kind you find everywhere in these colonial towns\nAs for where to look... I think he’s hiding in the jungle. It's easy to disappear in those cursed woods, but I'm sure he'll head for the grottos or coves — easier to hide there\nAs for appearance, his face was covered with a scarf, a hat on his head, and he carried more weapons than His Majesty’s own guards. There was no time to notice anything else.";
+			Link.l1 = "Well, it's not much, but it's enough to begin the search. I'm heading out at once. Keep that gold close — I’ll be back soon.";
+			Link.l1.go = "GS_Portman_5";
+		break;
+		
+		case "GS_Portman_5":
+			DialogExit();
+			AddQuestRecord("GS", "2");
+			DeleteAttribute(pchar, "questTemp.GS_Portman");
+			
+			PChar.quest.GS_Peshera.win_condition.l1 = "location";
+			PChar.quest.GS_Peshera.win_condition.l1.location = "Beliz_Cave";
+			PChar.quest.GS_Peshera.function = "GS_Peshera";
+			locations[FindLocation("Beliz_Cave")].DisableEncounters = true;
+			
+			PChar.quest.GS_Peshera_pusto.win_condition.l1 = "location";
+			PChar.quest.GS_Peshera_pusto.win_condition.l1.location = "Beliz_Cave_2";
+			PChar.quest.GS_Peshera_pusto.function = "GS_Peshera_pusto";
+		break;
+		
+		case "GS_Portman_6":
+			dialog.text = "Magnificent, "+GetFullName(pchar)+"! Utterly magnificent! You have proven your prowess unmatched. Here lies your reward – two hundred doubloons. Please, take it!";
+			Link.l1 = "My thanks to you! But tell me, have you any reason to suspect that the killer was hired by one of your former clients?";
+			Link.l1.go = "GS_Portman_7";
+			AddItems(pchar, "gold_dublon", 200);
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "GS_Portman_7":
+			dialog.text = "Former clients?.. What nonsense!... I am an honest man, and my dealings have always been aboveboard! But since you've aided me, I shall share something. Not long ago, pirates came to me\nThey offered money for tips on merchant vessels. I refused, and they hurled threats and curses before storming out. I believe the assassin was their doing. They do not take 'no' kindly.";
+			Link.l1 = "In that case, take care of yourself. Who knows how many more hired blades these 'pirates' may send? With that, I must take my leave — business calls.";
+			Link.l1.go = "GS_Portman_8";
+		break;
+		
+		case "GS_Portman_8":
+			dialog.text = "Wait, Captain. I want to thank you once again. Beyond gold, you've earned my favor. As long as I'm Port Chief here, you may leave any of your ships moored here for any length of time at a fifty percent discount. How does that sound?";
+			Link.l1 = "A most generous offer! Thank you once again!";
+			Link.l1.go = "GS_Portman_9";
+		break;
+		
+		case "GS_Portman_9":
+			dialog.text = "And I thank you once more for your efforts. I'm certain that as long as you keep focused on what matters, your affairs will continue to prosper as they did today. Farewell, Captain.";
+			Link.l1 = "Goodbye.";
+			Link.l1.go = "GS_Portman_10";
+		break;
+		
+		case "GS_Portman_10":
+			DialogExit();
+			AddQuestRecord("GS", "4");
+			CloseQuestHeader("GS");
+			DeleteAttribute(pchar, "questTemp.GS_NaemnikMertv");
+			pchar.questTemp.GS_BelizSkidka = true;
+		break;
+		//<-- Грани справедливости
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

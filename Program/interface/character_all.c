@@ -549,7 +549,8 @@ void FillSkillTables()
 		GameInterface.TABLE_SPECIAL.(row).td1.str = XI_ConvertString(skillName + "T");
 		GameInterface.TABLE_SPECIAL.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillValue(xi_refCharacter, SPECIAL_TYPE, skillName);
-		GameInterface.TABLE_SPECIAL.(row).td4.str = skillVal;
+		//GameInterface.TABLE_SPECIAL.(row).td4.str = skillVal; // старый метод
+		GameInterface.TABLE_SPECIAL.(row).td4.str = GetCharacterSPECIAL(xi_refCharacter, skillName);
 		// рассчет драйна
 		diff = GetCharacterSPECIAL(xi_refCharacter, skillName) - skillVal;
 		if (diff == 0)
@@ -597,7 +598,9 @@ void FillSkillTables()
 
 		GameInterface.TABLE_SKILL_1.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillValue(xi_refCharacter, SKILL_TYPE, skillName);
-		GameInterface.TABLE_SKILL_1.(row).td5.str = skillVal;
+		//GameInterface.TABLE_SKILL_1.(row).td5.str = skillVal; // старый метод
+		GameInterface.TABLE_SKILL_1.(row).td5.str = GetSummonSkillFromName(xi_refCharacter, skillName);
+		
 		// рассчет драйна
 		diff = GetSummonSkillFromName(xi_refCharacter, skillName) - skillVal;
 		
@@ -653,7 +656,8 @@ void FillSkillTables()
 
 		GameInterface.TABLE_SKILL_2.(row).td2.str = XI_ConvertString(skillName);
 		skillVal = GetSkillValue(xi_refCharacter, SKILL_TYPE, skillName);
-		GameInterface.TABLE_SKILL_2.(row).td5.str = skillVal;
+		//GameInterface.TABLE_SKILL_2.(row).td5.str = skillVal; // старый метод
+		GameInterface.TABLE_SKILL_2.(row).td5.str = GetSummonSkillFromName(xi_refCharacter, skillName);
 		// рассчет драйна
 		diff = GetSummonSkillFromName(xi_refCharacter, skillName) - skillVal;
 
@@ -971,9 +975,9 @@ void FillControlsList(int nMode)
 void SetOfficersSkills()
 {
 	string sCharacter = "pic"+(sti(GameInterface.PASSENGERSLIST.current)+1);
-	if (checkAttribute(GameInterface, "PASSENGERSLIST."+sCharacter))
+	if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter))
 	{
-		if (checkAttribute(GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
+		if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
 		{
 			sCharacter = GameInterface.PASSENGERSLIST.(sCharacter).character;
 			ref otherchr = &characters[sti(sCharacter)];
@@ -1053,7 +1057,7 @@ void FillPassengerScroll()
                 {
                     howWork = 3;
                 }
-                ok = !CheckAttribute(&characters[_curCharIdx], "isfree") || sti(characters[_curCharIdx].isfree) < howWork;
+                ok = !CheckAttribute(&characters[_curCharIdx], "isbusy") || sti(characters[_curCharIdx].isbusy) < howWork;
                 PsgAttrName = GetOfficerTypeByNum(nCurScrollNum);
 				// совместители должностей <--
 				if (ok && !CheckAttribute(&characters[_curCharIdx], PsgAttrName))
@@ -1121,17 +1125,17 @@ void AcceptAddOfficer()
 	
 	string attributeName2 = "pic"+(nCurScrollOfficerNum+1);
 
-    if (checkAttribute(GameInterface, "PASSENGERSLIST."+attributeName2 + ".character"))
+    if (checkAttribute(&GameInterface, "PASSENGERSLIST."+attributeName2 + ".character"))
     {
 		int iChar = sti(GameInterface.PASSENGERSLIST.(attributeName2).character);
 
-		if (!CheckAttribute(&characters[iChar], "isfree"))
+		if (!CheckAttribute(&characters[iChar], "isbusy"))
 		{
-			characters[iChar].isfree = 1;
+			characters[iChar].isbusy = 1;
 		}
 		else
 		{
-		    characters[iChar].isfree = sti(characters[iChar].isfree) + 1; // совместители
+		    characters[iChar].isbusy = sti(characters[iChar].isbusy) + 1; // совместители
 		}
 		bOk = (Characters[iChar].location != pchar.location);  // ниже локация перебивается на ГГ
 		switch (nCurScrollNum)
@@ -1222,10 +1226,10 @@ void AcceptRemoveOfficer()
 
 	int iChar = sti(GameInterface.CHARACTERS_SCROLL.(attributeName2).character);
 
-    characters[iChar].isfree = sti(characters[iChar].isfree) - 1; // совместители
-	if (sti(characters[iChar].isfree) <= 0)
+    characters[iChar].isbusy = sti(characters[iChar].isbusy) - 1; // совместители
+	if (sti(characters[iChar].isbusy) <= 0)
 	{
-		DeleteAttribute(&characters[iChar], "isfree");
+		DeleteAttribute(&characters[iChar], "isbusy");
 	}
 
 	switch (nCurScrollNum)
@@ -1455,7 +1459,7 @@ void ChoosePerk()
 		SetFormatedText("PERK_TEXT_FREE", XI_ConvertString("Ship abilities") + ": " + xi_refCharacter.perks.FreePoints_ship);
 		if (sti(xi_refCharacter.perks.FreePoints_ship) <= 0) ok = false;
     }
-	// проверка на необходимы перки -->
+	// проверка на необходимые перки -->
 	if (CheckAttribute(&ChrPerksList, "list." + perkName + ".condition"))
 	{
         makearef(rootItems, ChrPerksList.list.(perkName).condition);
@@ -1493,7 +1497,14 @@ void ChoosePerk()
 	{
 	    showCondition = false;
 	}
-	// проверка на необходимы перки <--
+	// проверка на необходимые перки <--
+
+    // проверка ранга
+    if (CheckAttribute(&ChrPerksList, "list." + perkName + ".rank") && sti(xi_refCharacter.rank) < sti(ChrPerksList.list.(perkName).rank))
+	{
+        ok = false;
+    }
+
 	XI_WindowShow("PERK_WINDOW", true);
 	XI_WindowDisable("PERK_WINDOW", false);
 	XI_WindowDisable("MAIN_WINDOW", true);

@@ -179,7 +179,7 @@ void ProcessDialogEvent()
 			DelMapQuestMarkCity("Bridgetown");
 			DelMapQuestMarkCity("Villemstad");
 			DelMapQuestMarkCity("SentJons");
-			dialog.text = "Ar har! I see your cock is up, cap'n! Soon flashing fire will follow! Now listen closely. The Dutch West India Company's silver fleet left Willemstad on Curacao one or two days ago. It is sailing to Philipsburg. There are only a few ships in the fleet this time around. A single East Indiaman with the silver in her cargo hold along with two escorts. Intercept the silver fleet, capture the East Indiaman with the silver cargo and bring her to Antigua. You can sink the escorts though, they're expendable. Chain shot their livers, yar!";
+			dialog.text = "Ar har! I see your cock is up, cap'n! Soon flashing fire will follow! Now listen closely. The Dutch West India Company's silver fleet left Willemstad on Curacao one or two days ago. It is sailing to Philipsburg. There are only a few ships in the fleet this time around. A single Galleon with the silver in her cargo hold along with two escorts. Intercept the silver fleet, capture the East Galleon with the silver cargo and bring her to Antigua. You can sink the escorts though, they're expendable. Chain shot their livers, yar!";
 			link.l1 = "Their days are numbered.";
 			link.l1.go = "Knippel_task_1";
 			DelLandQuestMark(npchar);
@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 				{
 					sld = GetCharacter(iTemp);
 					pchar.questTemp.HWIC.Eng.CompanionIndex = sld.Index;
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN) iHal++;
+					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_GALEON_L) iHal++;
 				}
 			}//признак наличия ТГ в компаньонах
 			if (iHal > 0)
@@ -658,7 +658,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");;
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	

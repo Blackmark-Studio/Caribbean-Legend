@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 			// --> калеуче
-			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && drand(1) == 0 && sti(Pchar.money) >= 2000) 
+			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(1) == 0 && sti(Pchar.money) >= 2000) 
 			{
 				dialog.text = "Послушайте, господин, не желаете приобрести одну занятную вещицу? Недорого возьму, всего каких-то пару тысяч песо...";
 				link.l1 = "Хм. Небось, стащил эту 'вещицу', а теперь пытаешься мне сбагрить?";
@@ -31,12 +31,20 @@ void ProcessDialogEvent()
 					"Моё имя - " + GetFullName(npchar) + ", " + GetAddress_Form(NPChar) + ". Рад с вами познакомиться.");
 				link.l1 = RandPhraseSimple("Приветствую.", "Здравствуйте.");
 				link.l1.go = "First time";
-				// карибские нравы
+				// --> карибские нравы
 				if (CheckAttribute(pchar, "questTemp.Trial") && pchar.questTemp.Trial == "spy_drink" && pchar.location == "portobello_town")
 				{
 					link.l2 = "Послушай, не хочешь ли вместо жалкой милостыни заработать пару-тройку тысяч песо, а?";
 					link.l2.go = "trial";
 				}
+				// <-- карибские нравы
+				// --> Тайна Бетси Прайс
+				if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon3") && pchar.location == "Villemstad_town")
+				{
+					link.l2 = "Тот кулон с камеей... Где ты его нашёл?";
+					link.l2.go = "TBP_Kulon_1";
+				}
+				// <-- Тайна Бетси Прайс
 				npchar.quest.meeting = "1";
 			}			
 			else
@@ -53,13 +61,21 @@ void ProcessDialogEvent()
 				link.l1.go = DialogGoNodeRepeat("exit", "exit", "exit", "pester", npchar, Dialog.CurrentNode);
 				link.l2 = RandPhraseSimple("Что тебе нужно?", "Чего ты хочешь?");
 				link.l2.go = "Whants";
-				// карибские нравы
+				// --> карибские нравы
 				if (CheckAttribute(pchar, "questTemp.Trial") && pchar.questTemp.Trial == "spy_drink" && pchar.location == "portobello_town")
 				{
 					DelLandQuestMark(npchar);
 					link.l2 = "Послушай, не хочешь ли вместо жалкой милостыни заработать пару-тройку тысяч песо, а?";
 					link.l2.go = "trial";
 				}
+				// <-- карибские нравы
+				// --> Тайна Бетси Прайс
+				if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon3") && pchar.location == "Villemstad_town")
+				{
+					link.l2 = "Тот кулон с камеей... Где ты его нашёл?";
+					link.l2.go = "TBP_Kulon_1";
+				}
+				// <-- Тайна Бетси Прайс
 				link.l3 = LinkRandPhrase("Что-нибудь интересное мне расскажешь?", 
 					"Что нового в городе?", "Эх, с удовольствием "+ GetSexPhrase("послушал","послушала") +" бы последние сплетни...");
 				link.l3.go = "rumours_poor";
@@ -270,7 +286,7 @@ void ProcessDialogEvent()
 		
 		case "trial_8":
 			AddMoneyToCharacter(pchar, -5000);
-			dialog.text = "Дело обстоит так. 'Алькантара' к выходу в море уже давно готова, но её намеренно не ставят под погрузку, причём по приказу самого губернатора. Ну, это мне так сказали. А плотники сейчас делают всякую мелкую работу, которая на выход судна в море никак не влияет\nВсе ждут прихода какого-то барка из Картахены. Дело в том, что на 'Алькантаре' недостаточный, по мнению капитана, запас пороха. Вот и ждут, пока 'Пуэбла' привезет порох для 'Алькантары'\nНо всем это ожидание уже порядком надоело, так что если 'Пуэбла' не прибудет через три дня - 'Алькантара' отправится в путь и так...";
+			dialog.text = "Дело обстоит так. 'Алькантара' к выходу в море уже давно готова, но её намеренно не ставят под погрузку, причём по приказу самого губернатора. Ну, это мне так сказали. А плотники сейчас делают всякую мелкую работу, которая на выход судна в море никак не влияет\nВсе ждут прихода какой-то баркентины из Картахены. Дело в том, что на 'Алькантаре' недостаточный, по мнению капитана, запас пороха. Вот и ждут, пока 'Пуэбла' привезет порох для 'Алькантары'\nНо всем это ожидание уже порядком надоело, так что если 'Пуэбла' не прибудет через три дня - 'Алькантара' отправится в путь и так...";
 			link.l1 = "Да ну? И кто же тебе такое сказал? Имя?";
 			link.l1.go = "trial_9";
 		break;
@@ -301,7 +317,7 @@ void ProcessDialogEvent()
 			npchar.SaveItemsForDead  = true; 
 			LAi_SetActorType(pchar);
 			// если не надет пистоль или мушкет, то выдадим строевой 
-			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE) || !CheckAttribute(pchar,"equip."+MUSKET_ITEM_TYPE))
+			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
 			{
 				GiveItem2Character(pchar, "pistol1");
 				EquipCharacterbyItem(pchar, "pistol1");
@@ -351,5 +367,35 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "kaleuche_amulet1"); 
 		break;
 		// <-- калеуче
+		
+		// --> Тайна Бетси Прайс
+		case "TBP_Kulon_1":
+			dialog.text = "Эх, "+GetAddress_Form(NPChar)+", вам-то что за дело до старой побрякушки?";
+			link.l1 = "Вот как приложу сейчас сапогом по твоей тупой башке - сразу поймёшь, какое мне до этого дело.";
+			link.l1.go = "TBP_Kulon_TO";
+			if (CheckAttribute(pchar, "questTemp.TBP_BuyKulon2"))
+			{
+				link.l2 = "Этот кулон принадлежал Бетси Прайс. Так где ты его нашёл?";
+				link.l2.go = "TBP_Kulon_leadership";
+			}
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon3");
+		break;
+		
+		case "TBP_Kulon_TO":
+			dialog.text = "Он лежал на клумбе у дома с фонарём, "+GetAddress_Form(NPChar)+". Втоптанный в грязь грубым мужским сапогом. Но в том доме уж давно никто не живёт, поэтому я решил, что он бесхозный...";
+			link.l1 = "Хм...";
+			link.l1.go = "exit";
+			AddCharacterExpToSkill(pchar, "FencingH", 100);
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon2");
+		break;
+		
+		case "TBP_Kulon_leadership":
+			dialog.text = "Он лежал на клумбе у дома с фонарём, "+GetAddress_Form(NPChar)+". Втоптанный в грязь грубым мужским сапогом. Но в том доме уж давно никто не живёт, поэтому, я решил, что он бесхозный...";
+			link.l1 = "Хм...";
+			link.l1.go = "exit";
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			DeleteAttribute(pchar, "questTemp.TBP_BuyKulon2");
+		break;
+		// <-- Тайна Бетси Прайс
 	}
 }

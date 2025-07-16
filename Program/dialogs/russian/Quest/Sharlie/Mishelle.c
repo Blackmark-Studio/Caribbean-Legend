@@ -635,16 +635,19 @@ void ProcessDialogEvent()
 			PChar.quest.Del_Alonso.win_condition.l1 = "location";
 			PChar.quest.Del_Alonso.win_condition.l1.location = "FortFrance_town";
 			PChar.quest.Del_Alonso.win_condition = "Del_Alonso";
-			// Rebbebion, теперь на гамбит только ранг, без трёх месяцев
-			pchar.quest.Sharlie_GambitReady.win_condition.l1 = "Rank";
-			pchar.quest.Sharlie_GambitReady.win_condition.l1.value = 12;
-			pchar.quest.Sharlie_GambitReady.win_condition.l1.operation = ">=";
-			pchar.quest.Sharlie_GambitReady.function = "Sharlie_GambitStage";
+			// при достижении уровня даём флаг на квест "Голландский Гамбит"
+			pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1 = "Rank";
+			pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1.value = 9;
+			pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1.operation = ">=";
+			pchar.quest.Sharlie_GambitStage_level_9.function = "Sharlie_GambitStage_level_9";
+			pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1 = "Rank";
+			pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1.value = 12;
+			pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1.operation = ">=";
+			pchar.quest.Sharlie_GambitStage_level_12.function = "Sharlie_GambitStage_level_12";
 			//маркер на контрабандиста по квесту "Деньги на деревьях"
 			AddLandQuestMark(characterFromId("FortFrance_Smuggler"), "questmarkmain");
 			PChar.quest.MOT_UbratMarku.win_condition.l1 = "MapEnter";
 			PChar.quest.MOT_UbratMarku.win_condition = "MOT_UbratMarku";
-			DoQuestFunctionDelay("Tutorial_Alchemy", 2.0);
 			// Sinistra - Старт квеста "Травля крысы"
 			pchar.questTemp.TK_TravlyaKrys = true;
 			AddLandQuestMark(characterFromId("FortFrance_Mayor"), "questmarkmain");
@@ -672,6 +675,8 @@ void ProcessDialogEvent()
 				link.l1.go = "gambit_1";
 			}
 			DelLandQuestMark(npchar);
+			DeleteQuestCondition("Sharlie_GambitStage_level_9");
+			DeleteQuestCondition("Sharlie_GambitStage_level_12");
 			// уберем маркеры, если ФМК не стали проходить
 			DelMapQuestMarkCity("Baster");
 			DelMapQuestMarkCity("Fortfrance");

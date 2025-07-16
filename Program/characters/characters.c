@@ -172,10 +172,12 @@ bool CreateCharacter(ref character)
 	float fgtlevel = LAi_GetCharacterFightLevel(character); // boal fix
 
 	//Rosarak - Коллизии
-	if(CheckAttribute(character, "BonusPush"))
+	if(CheckAttribute(character, "col_modif.BonusPush"))
 		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetBonusPush", true);
-    if(CheckAttribute(character, "Unpushable"))
+    if(CheckAttribute(character, "col_modif.Unpushable"))
 		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "MakeUnpushable", true);
+    if(CheckAttribute(character, "col_modif.IgnoreCollision"))
+		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "IgnoreCollision", true);
 
 	SendMessage(character, "lf", MSG_CHARACTER_SETFTGLEVEL, fgtlevel);
 	//Set character sex
@@ -309,6 +311,24 @@ void SetDefaultStayIdle(ref character)
 	character.actions.idle.i10 = "idle_10";
 	character.actions.idle.i11 = "idle_11";
 	character.actions.HitNoFight = "HitNoFight";
+
+    // TO_DO: УДАЛИТЬ
+	if(CheckAttribute(character, "watchglass"))
+	{
+		character.actions.idle.i1 = "tutorial_1";
+		character.actions.idle.i4 = "tutorial_1";
+		character.actions.idle.i6 = "tutorial_1";
+		character.actions.idle.i8 = "tutorial_1";
+		SendMessage(character, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("Spyglass_1"), "Spyglass_1", "Saber_hand", 1);
+	}
+	if(CheckAttribute(character, "SpyglassWithSkull"))
+	{
+		character.actions.idle.i1 = "tutorial_1";
+		character.actions.idle.i4 = "tutorial_1";
+		character.actions.idle.i6 = "tutorial_1";
+		character.actions.idle.i8 = "tutorial_1";
+		SendMessage(character, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("Spyglass_1"), "Spyglass_SP3", "Saber_hand", 1);
+	}
 }
 
 //Character is sit where play idle animation
@@ -583,6 +603,7 @@ void SetDefaultNormWalk(ref character)
 	character.actions.turnLeft = "turn left";
 	character.actions.turnRight = "turn right";
 	character.actions.swim = "swim" + tagMus;
+	character.actions.swim_sprint = "swim sprint" + tagMus;
 	character.actions.fall = "fall" + tagMus;
 	character.actions.fall_land = "fall_land" + tagMus;
 	character.actions.fall_water = "fall_water" + tagMus;
@@ -639,10 +660,27 @@ void SetDefaultFight(ref character)
 	character.actions.hit_shot  = "hit_fire" + tag;
 	//Block--------------------------------------------------------------------
 	character.actions.block = "block" + tag;
+	character.actions.block_forward = "block forward walk" + tag;
+	character.actions.block_back = "block back walk" + tag;
+	character.actions.block_right = "block right walk" + tag;
+	character.actions.block_left = "block left walk" + tag;
+	character.actions.block_forward_right = "block forward-right walk" + tag;
+	character.actions.block_forward_left = "block forward-left walk" + tag;
+	character.actions.block_back_right = "block back-right walk" + tag;
+	character.actions.block_back_left = "block back-left walk" + tag;
 	character.actions.blockhit = "block_hit" + tag;
 	character.actions.blockbreak = "block_break" + tag;
 
-	character.actions.blockaxe = "block_axe";
+	character.actions.block_axe = "block_axe";
+	character.actions.block_axe_forward = "block_axe forward walk" + tag;
+	character.actions.block_axe_back = "block_axe back walk" + tag;
+	character.actions.block_axe_right = "block_axe right walk" + tag;
+	character.actions.block_axe_left = "block_axe left walk" + tag;
+	character.actions.block_axe_forward_right = "block_axe forward-right walk" + tag;
+	character.actions.block_axe_forward_left = "block_axe forward-left walk" + tag;
+	character.actions.block_axe_back_right = "block_axe back-right walk" + tag;
+	character.actions.block_axe_back_left = "block_axe back-left walk" + tag;
+	character.actions.blockhit = "block_hit" + tag;
 	character.actions.blockaxehit = "block_axe_hit";
 	//Parry--------------------------------------------------------------------
 	character.actions.parry.p1 = "parry_1" + tag;
@@ -923,4 +961,26 @@ string StrConCheck(string str1, string str2)
 	if(str1 != "" && str2 != "")
 		return str1 + str2;
 	return "";
+}
+
+// Модификаторы коллизий (to_do: мб это на битмаску посадить?)
+void SetBonusPush(ref chr, bool bSet)
+{
+    if(bSet) chr.col_modif.BonusPush = "";
+    else DeleteAttribute(chr, "col_modif.BonusPush");
+    SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "SetBonusPush", bSet);
+}
+
+void MakeUnpushable(ref chr, bool bSet)
+{
+    if(bSet) chr.col_modif.Unpushable = "";
+    else DeleteAttribute(chr, "col_modif.Unpushable");
+    SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "MakeUnpushable", bSet);
+}
+
+void IgnoreCollision(ref chr, bool bSet)
+{
+    if(bSet) chr.col_modif.IgnoreCollision = "";
+    else DeleteAttribute(chr, "col_modif.IgnoreCollision");
+    SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "IgnoreCollision", bSet);
 }

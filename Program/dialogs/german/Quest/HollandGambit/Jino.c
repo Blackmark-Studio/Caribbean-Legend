@@ -1220,7 +1220,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "adversary";
 			LAi_SetActorType(npchar);
-			LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "My_Campus", "rld", "aloc0", "Ksochitam_JinoStay", 10.0);
+			LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "My_Campus", "quest", "quest1", "Ksochitam_JinoStay", 10.0);
 			AddQuestRecord("Ksochitam", "6");
 		break;
 		

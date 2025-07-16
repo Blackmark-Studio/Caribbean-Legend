@@ -260,7 +260,7 @@ void IslaMona_AdvanceStageToFourth() {
 void IslaMona_SelectShipyard() // выбрать рандомную верфь из столиц
 {
 	string sTemp;
-	int i = drand(3);
+	int i = hrand(3);
 	switch (i)
 	{
 		case 0: sTemp = "PortRoyal"; break;
@@ -1067,7 +1067,7 @@ void IslaMona_DefKillCapral(string qName) //
 	LAi_LocationFightDisable(&Locations[FindLocation("Shore75")], false);
 	LAi_LocationFightDisable(&Locations[FindLocation("IslaMona_Jungle_01")], false);
 	// если не надет пистоль или мушкет, то выдадим строевой -->
-	if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE) || !CheckAttribute(pchar,"equip."+MUSKET_ITEM_TYPE))
+	if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
 	{
 		GiveItem2Character(pchar, "pistol1");
 		EquipCharacterbyItem(pchar, "pistol1");
@@ -1361,7 +1361,7 @@ void IslaMona_DefAttackCommonArmy(string qName) // абордажная рота
 	chrDisableReloadToLocation = true;
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	int iScl = 20 + 2*sti(pchar.rank);
-	sld = GetCharacter(NPC_GenerateCharacter("Alonso", "citiz_36", "man", "man", 35, FRANCE, -1, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 35, FRANCE, -1, false, "soldier"));
 	FantomMakeCoolFighter(sld, 35, 90, 90, "blade_10", "pistol5", "bullet", 250);
 	sld.name = StringFromKey("IslaMona_8");
 	sld.lastname = StringFromKey("IslaMona_9");
@@ -1672,7 +1672,7 @@ void IslaMona_KillSpanish(string qName) // решил убить испанца
 {
 	LAi_LocationFightDisable(&Locations[FindLocation("IslaMona_factoria")], false);
 	// если не надет пистоль или мушкет, то выдадим строевой -->
-	if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE) || !CheckAttribute(pchar,"equip."+MUSKET_ITEM_TYPE))
+	if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
 	{
 		GiveItem2Character(pchar, "pistol1");
 		EquipCharacterbyItem(pchar, "pistol1");

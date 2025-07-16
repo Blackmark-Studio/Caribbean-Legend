@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 				if (pchar.questTemp.HWIC.Holl == "AbbyInHouse")
 				{
 					dialog.text = "Buen día, señor. ¿Qué os trae a nuestro hogar?";
-					link.l1 = "Buen día, Abigail. Mi nombre es "+GetFullName(pchar)+"Soy un capitán que trabaja por el bien de la República y la Compañía Neerlandesa de las Indias Occidentales.";
+					link.l1 = "Buen día, Abigail. Mi nombre es "+GetFullName(pchar)+". Soy un capitán que trabaja por el bien de la República y la Compañía Holandesa de las Indias Occidentales.";
 					link.l1.go = "AbbyAndLucas";
 					DelLandQuestMark(npchar);
 					break;
@@ -360,7 +360,7 @@ void ProcessDialogEvent()
 		case "Abigile_kidnapping_13":
 			DelLandQuestMark(npchar);
 			dialog.text = "¡Oh Charlie, he visto a Richard solo unas pocas veces y no me contó mucho sobre lo que hace!";
-			link.l1 = "Me sorprende bastante que él ocultara un secreto tan grande a la mujer que ama... Señorita, Richard no es solo un capitán ordinario. También es un agente especial del Consejo Privado inglés. Un hombre muy importante que se ocupa de tareas delicadas ordenadas directamente por el mismo Lord Protector. En este momento, su deber se centra en destruir el poder comercial de la Compañía Neerlandesa de las Indias Occidentales en el Caribe.";
+			link.l1 = "Me sorprende bastante que él ocultara un secreto tan grande a la mujer que ama... Señorita, Richard no es solo un capitán ordinario. También es un agente especial del Consejo Privado inglés. Un hombre muy importante que se ocupa de tareas delicadas ordenadas directamente por el mismo Lord Protector. En este momento, su deber se centra en destruir el poder comercial de la Compañía Holandesa de las Indias Occidentales en el Caribe.";
 			link.l1.go = "Abigile_kidnapping_14"
 		break;
 		
@@ -395,7 +395,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Abigile_kidnapping_19":
-			dialog.text = "Bueno... John es una compañía muy interesante. Puede hablar de sus polvos, mezclas y varias... enfermedades durante horas. También es un hombre educado y cortés. Además, voy regularmente a la iglesia, el sacerdote local es bastante amable... pero, por supuesto, realmente extraño a Richard.";
+			dialog.text = "Bueno... John es una compañía muy interesante. Puede hablar de sus polvos, mezclas y varias... enfermedades durante horas. También es un hombre educado y cortés. Además, voy regularmente a la iglesia, el sacerdote es bastante amable... pero, por supuesto, realmente extraño a Richard.";
 			link.l1 = "Creo que volverá pronto. Charlie el Knippel está a tu servicio en caso de que necesites algo.";
 			link.l1.go = "Abigile_kidnapping_20";
 		break;
@@ -409,7 +409,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Abigile_return":
-			dialog.text = "  Escuché rumores sobre Richard... que ha desaparecido. ¿Sabes algo al respecto, Charlie?";
+			dialog.text = "Escuché rumores sobre Richard... que ha desaparecido. ¿Sabes algo al respecto, Charlie?";
 			link.l1 = "Lo hago, Abigail. Lo siento... Richard Fleetwood se ha ido a Inglaterra y no volverá. Obtuvo un ascenso o traslado, algo así... de todos modos, después de lo que te ha hecho, no quiero saber nada de él.";
 			link.l1.go = "Abigile_return_1";
 		break;
@@ -553,7 +553,7 @@ void ProcessDialogEvent()
 		
 		case "Abigile_Poor":
 			dialog.text = "Que Dios te bendiga, Charles. Nada ha cambiado para nosotros... Mendigo por sobras afuera de la iglesia.";
-			link.l1 = " Mantente fuerte, señorita. Que Dios esté contigo.";
+			link.l1 = "Mantente fuerte, señorita. Que Dios esté contigo.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Abigile_Poor";
 		break;

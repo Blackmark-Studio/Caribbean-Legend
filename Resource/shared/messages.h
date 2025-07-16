@@ -234,6 +234,8 @@
 
 #define MSG_CAMERA_SPECIALMODE	30531	// "ll" evganat - спецрежим камеры вкл/выкл
 
+#define MSG_CAMERA_GET_AY 30532 // "le"
+
 // Blots on the ship
 #define MSG_BLOTS_SETMODEL 30600 // "li" set the model, model_id
 #define MSG_BLOTS_HIT 30601      // "lffffff" set point x, y, z, nx, ny, nz
@@ -393,6 +395,9 @@
 // Camera on ship
 //============================================================================================
 #define MSG_DECK_CAMERA_SET_VIEWPOINT 41800 //"fff"        point.x, point.y, point.z
+#define MSG_SHIP_CAMERA_GET_AY 41900		// "e"
+#define MSG_SHIP_CAMERA_SET_AY 41901		// "f"
+#define MSG_DECK_CAMERA_GET_AY 41910		// "e"
 //============================================================================================
 
 #endif

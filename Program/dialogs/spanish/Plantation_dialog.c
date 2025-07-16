@@ -43,8 +43,8 @@ void ProcessDialogEvent()
 		
 		// рабы-пираты по пиратской линейке
 		case "pirate_slave":
-			dialog.text = RandPhraseSimple(RandPhraseSimple("¡Escucha, lárgate!","¡Pierdeos!"),RandPhraseSimple("¿¡Qué quieres?!","¡Lárgate de aquí!"));				
-			link.l1 = RandPhraseSimple("¿Mm...","Bueno...");
+			dialog.text = RandPhraseSimple(RandPhraseSimple("¡Escucha, lárgate!","¡Lárgate!"),RandPhraseSimple("¿¡Qué quieres?!","¡Lárgate de aquí!"));				
+			link.l1 = RandPhraseSimple("Mmm...","Bueno...");
 			link.l1.go = "exit";				
 		break;
 		
@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_coffee":
-			i = drand(3)+1;
+			i = hrand(3)+1;
 			n = 5 - i;
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 11;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_cinnamon":
-			i = drand(3)+1;
+			i = hrand(3)+1;
 			n = 5 - i;
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 19;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 106;
@@ -317,7 +317,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_copra":
-			i = drand(3)+1;
+			i = hrand(3)+1;
 			n = 5 - i;
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 20;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
@@ -410,7 +410,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Ah, lo entiendo. Pero me temo que debo rechazar - Jean Picard no está en venta. Lo siento, señor.";
+				dialog.text = "Ah, lo entiendo. Pero me temo que debo rechazar, Jean Picard no está en venta. Lo siento, señor.";
 				link.l1 = "¿Oh? ¿Por qué es eso? Estoy dispuesto a pagar generosamente. Solo nombra tu precio.";
 				link.l1.go = "mtraxx_PlantVykup_6";
 				notification("Skill Check Failed (70)", SKILL_COMMERCE);
@@ -453,7 +453,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l2 = "Un precio bastante alto que has fijado, señor. Pero estoy muy interesado en este esclavo. Espera aquí. Si Pattornson aparece, dile que Picard ya ha sido vendido - ja-ja-ja!";
+				link.l2 = "Un precio bastante alto que has fijado, señor. Pero estoy muy interesado en este esclavo. Espera aquí. Si Pattornson aparece, dile que Picard ya ha sido vendido, ja-ja-ja!";
 				link.l2.go = "mtraxx_PlantVykup_13";
 			}
 		break;
@@ -494,7 +494,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l2 = "Todavía recogiendo - usted es el que puso un precio tan alto, señor.";
+				link.l2 = "Todavía recogiendo, usted es el que puso un precio tan alto, señor.";
 				link.l2.go = "mtraxx_PlantVykup_14";
 			}
 		break;

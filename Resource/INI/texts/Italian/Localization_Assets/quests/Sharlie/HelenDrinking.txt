@@ -1,0 +1,106 @@
+﻿HelenDrinking_1
+{
+Francois
+}
+HelenDrinking_2
+{
+de Tavann
+}
+
+HelenDrinking_3
+{
+Vit
+}
+HelenDrinking_4
+{
+Needles
+}
+
+HelenDrinking_5
+{
+Rainbow
+}
+
+HelenDrinking_6
+{
+E' un sogno? Dove sono tutti?
+}
+
+HelenDrinking_7
+{
+Dovrei vedere Jan e scusarmi.
+}
+
+HelenDrinking_8
+{
+Amelia
+}
+HelenDrinking_9
+{
+
+}
+
+HelenDrinking_10
+{
+Dane
+}
+HelenDrinking_11
+{
+
+}
+
+HelenDrinking_12
+{
+Fortunato
+}
+HelenDrinking_13
+{
+
+}
+
+HelenDrinking_14
+{
+E quanto sia disgustoso avere due case. Oh, Mary... Dopo tutto quello che è successo, cosa dovremmo fare ora, noi tre?
+}
+
+HelenDrinking_15
+{
+Alonso
+}
+HelenDrinking_16
+{
+
+}
+
+HelenDrinking_17
+{
+Richard
+}
+HelenDrinking_18
+{
+Piccolo
+}
+
+HelenDrinking_19
+{
+Helen approves
+}
+HelenDrinking_20
+{
+Helen disapproves
+}
+
+HelenDrinking_21
+{
+LegnoFerro è stato consegnato nella tua stiva!
+}
+
+HelenDrinking_22
+{
+~ ottenuto +1 a ~
+}
+
+HelenDrinking_23
+{
+~ ottenuto +1 a ~
+}

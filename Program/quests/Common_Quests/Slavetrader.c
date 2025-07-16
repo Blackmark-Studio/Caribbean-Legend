@@ -83,13 +83,13 @@ void Slavetrader_CreateSlaveShips(string qName)//создание корабле
 		switch (iShipRank)
 		{
 			case 0:  
-				ShipType = SHIP_BRIG;     					
+				ShipType = SHIP_SLOOP;     					
 				Rank = 12 + rand(5);
                 Blade = "blade_11";
-				iCannonType = CANNON_TYPE_CANNON_LBS16;
+				iCannonType = CANNON_TYPE_CANNON_LBS12;
 			break; 		
 			case 1:  
-				ShipType = SHIP_BRIGANTINE;			
+				ShipType = SHIP_SHNYAVA;			
 				Rank = 15 + rand(5);
                 Blade = "blade_12";
 				iCannonType = CANNON_TYPE_CANNON_LBS16;
@@ -104,13 +104,13 @@ void Slavetrader_CreateSlaveShips(string qName)//создание корабле
 				ShipType = SHIP_FRIGATE;         			
 				Rank = 25 + rand(5);
                 Blade = "blade_15";
-				iCannonType = CANNON_TYPE_CANNON_LBS24;
+				iCannonType = CANNON_TYPE_CANNON_LBS32;
 			break; 
 			case 4: 
-				ShipType = SHIP_LINESHIP; 						
+				ShipType = SHIP_GALEON_H; 						
 				Rank = 30 + rand(5);
                 Blade = "blade_20";
-				iCannonType = CANNON_TYPE_CANNON_LBS32;
+				iCannonType = CANNON_TYPE_CANNON_LBS36;
 			break;  				
 		}
 		sld = GetCharacter(NPC_GenerateCharacter("CaptainSlaveAttack_"+i, "mercen_"+(rand(14)+14), "man", "man", Rank, PIRATE, 3, true, "quest"));//создание кэпа
@@ -193,7 +193,7 @@ void Slavetrader_CreateShoreShips(string qName)//создание пинаса �
 	Group_SetType("Shore_Attack", "war");
 	sld = GetCharacter(NPC_GenerateCharacter("Slaveshorecap", "trader_"+(rand(13)+1), "man", "man", 25, iNation, 3, true, "quest"));
 	sld.DontRansackCaptain = true; 
-	FantomMakeCoolSailor(sld, SHIP_PINNACE, sTemp, CANNON_TYPE_CANNON_LBS20, 100, 70, 70);
+	FantomMakeCoolSailor(sld, SHIP_PINNACE, sTemp, CANNON_TYPE_CANNON_LBS16, 100, 70, 70);
 	sld.Ship.Mode = "trade";
 	FantomMakeCoolFighter(sld, 30, 70, 70, "blade_21", "pistol5", "bullet", 250);
 	Group_AddCharacter("Shore_Attack", "Slaveshorecap");
@@ -285,7 +285,7 @@ void Slavetrader_CreateBrig(string qName)//создание бригантины
 	Group_SetType("Brig_Attack", "war");
 	sTemp = pchar.questTemp.Slavetraderbrig.ShipName;
 	sld = GetCharacter(NPC_GenerateCharacter("CapBrigAttack", "off_" + NationShortName(iNation) + "_" + (rand(1) + 1), "man", "man", 35, iNation, 3, true, "quest"));
-	FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, sTemp, CANNON_TYPE_CANNON_LBS16, 100, 70, 70);
+	FantomMakeCoolSailor(sld, SHIP_BRIGANTINE, sTemp, CANNON_TYPE_CANNON_LBS12, 100, 70, 70);
 	FantomMakeCoolFighter(sld, 35, 90, 90, "blade_16", "pistol3", "grapeshot", 100);
 	Group_AddCharacter("Brig_Attack", "CapBrigAttack");
 	sld.AlwaysEnemy = true;
@@ -664,7 +664,7 @@ void Slavetrader_CreateLineShips(string qName)//создание линейны�
 	for (i=1; i<=2; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("HavanaAttack_"+i, "off_spa_"+i, "man", "man", 35, SPAIN, -1, true, "quest"));
-		FantomMakeCoolSailor(sld, SHIP_LINESHIP, "", CANNON_TYPE_CANNON_LBS32, 100, 100, 100);
+		FantomMakeCoolSailor(sld, SHIP_LINESHIP, "", CANNON_TYPE_CANNON_LBS36, 100, 100, 100);
 		FantomMakeCoolFighter(sld, 45, 100, 100, "blade_21", "pistol5", "bullet", 100);
 		Group_AddCharacter("Havana_Attack", "HavanaAttack_"+i);
 		sld.AlwaysEnemy = true;

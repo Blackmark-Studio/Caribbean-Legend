@@ -98,7 +98,7 @@ void ProcessDialogEvent()
             ok = CheckFreeSitFront(npchar);
             
             dialog.text = "Не загораживай мне свет, мух в кружке не видно!";
-            link.l1 = "Уже отош"+ GetSexPhrase("ел","ла") +"...";
+            link.l1 = "Уже отош"+ GetSexPhrase("ёл","ла") +"...";
 		    link.l1.go = "exit";
 		    if (!chrDisableReloadToLocation)
 		    {
@@ -821,7 +821,7 @@ void ProcessDialogEvent()
 				break;
 
 				case 5:
-					if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > rand(110) )
+					if (GetSummonSkillFromName(pchar, SKILL_SNEAK) > rand(110) || CheckAttribute(pchar, "questTemp.Sharlie.Lock"))
 					{
 						dialog.text = "...И тогда я схв-схватил его шпагу за л-лезвие и...";
 						link.l1 = "... а она мне и говорит...";

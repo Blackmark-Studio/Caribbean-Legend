@@ -9,58 +9,58 @@ newline {
 
 Strength
 {
-Silni piraci sa zazwyczaj swietnymi gwardzistami i kanonierami.
-Wplywa na umiejetnosci wymagajace sily fizycznej, w szczegolnosci na „Bron wywazona”, „Bron ciezka” i „Armaty”.
+Silni piraci sa zazwyczaj świetnymi gwardzistami i kanonierami.
+Wpływa na umiejętnosci wymagające siły fizycznej, w szczególności na „Broń wyważona”, „Broń ciężka” i „Armaty”.
 ~
-Okresla ilosc HP na poziom i maksymalna pojemnosc ekwipunku.
+Określa ilość HP na poziom i maksymalną pojemność ekwipunku.
 }
 
 Perception
 {
-Spostrzegawczy piraci moga byc strzelcami, tajnymi agentami i kanonierami.
+Spostrzegawczy piraci mogą być strzelcami, tajnymi agentami i kanonierami.
 ~
-Wpływa na umiejetnosci „Celowanie” i „Skradanie sie”.
+Wpływa na umiejetnosci „Celowanie” i „Skradanie się”.
 }
 
 Agility
 {
-Zwinni piraci czesto sa najlepszymi kandydatami do roli gwardzisty lub bosmana, a abordaz jest ich mocna strona.
-Wplywa na „Bron lekka”, „Bron wywazona”, „Przyciaganie” i „Bron palna”.
+Zwinni piraci często są najlepszymi kandydatami do roli gwardzisty lub bosmana, a abordaż jest ich mocną stroną.
+Wpływa na „Broń lekka”, „Broń wyważona”, „Przyciąganie” i „Broń palna”.
 ~
-Okresla maksymalna ilosc energii.
+Określa maksymalną ilość energii.
 }
 
 Charisma
 {
-Charyzmatyczni piraci to urodzeni przywodcy, negocjatorzy i kwatermistrzowie. 
-Naturalny przywodca nie potrzebuje uciekac sie do przemocy, aby odebrac handlarzowi towar, gdyz dadza mu wszystko bez walki. Podaza za nim najlepsi zeglarze, a najpiekniejsze kobiety beda czekac na jego przybycie w kazdym porcie.
+Charyzmatyczni piraci to urodzeni przywódcy, negocjatorzy i kwatermistrzowie. 
+Naturalny przywódca nie potrzebuje uciekać się do przemocy, aby odebrać handlarzowi towar, gdyż dadzą mu wszystko bez walki. Podążają za nim najlepsi żeglarze, a najpiękniejsze kobiety będą czekać na jego przybycie w każdym porcie.
 ~
-Wplywa na „Dowodzenie” i „Handel”.
-Okresla ilu oficerow mozesz zatrudnic (Im wyzsza charyzma, tym wiecej).
+Wpływa na „Dowodzenie” i „Handel”.
+Określa ilu oficerów możesz zatrudnić (Im wyższa charyzma, tym więcej).
 }
 
 Intellect
 {
-Inteligentni piraci szybko sie ucza i maja szeroki wybor opcji kariery: chirurdzy, kanonierzy i nawigatorzy.
+Inteligentni piraci szybko sie uczą i mają szeroki wybór opcji kariery: chirurdzy, kanonierzy i nawigatorzy.
 ~
-Wplywa na „Handel”, „Armaty” i „Nawigacja”
-Okresla szybkosc zdobywania poziomow i zdolnosci.
+Wpływa na „Handel”, „Armaty” i „Nawigacja”
+Określa szybkość zdobywania poziomów i zdolności.
 }
 
 Endurance
 {
-Niezlomni piraci blyszcza jako stolarze i chirurdzy.
+Niezłomni piraci błyszczą jako stolarze i chirurdzy.
 ~
-Wplywa na „Naprawa” i „Obrona”.
-Podobnie jak w przypadku sily, okresla maksymalne PZ i maksymalna pojemnosc ekwipunku.
+Wpływa na „Naprawa” i „Obrona”.
+Podobnie jak w przypadku siły, określa maksymalne PŻ i maksymalną pojemność ekwipunku.
 }
 
 Luck
 {
-Piraci z duza doza szczescia sa idealnymi strzelcami, hazardzistami i poszukiwaczami przygod.
+Piraci z dużą dozą szczęścia są idealnymi strzelcami, hazardzistami i poszukiwaczami przygód.
 ~
-"Bron palna", "Oportunizm" i "Skradanie sie" wymagaja tej statystyki.
-Okresla wynik niektorych wydarzen w grze i ma ogromny wplyw na trafienia krytyczne.
+"Broń palna", "Oportunizm" i "Skradanie się" wymagają tej statystyki.
+Określa wynik niektórych wydarzeń w grze i ma ogromny wpływ na trafienia krytyczne.
 }
 
 Crit
@@ -104,7 +104,7 @@ Umiejętność posługiwania się ciężkimi broniami, takimi jak miecze dwuręc
 Pistol
 {
 Umiejętność posługiwania się wszystkimi rodzajami broni palnej.
-(R*0.5+S*0.5)
+(R*0.4+S*0.6)
 }
 
 Fortune
@@ -116,7 +116,7 @@ Based on(S).
 Leadership
 {
 Wplywa na wyniki niektórych wydarzeń i dialogów. Jest również główną umiejętnością przy rekrutacji nowych członków załogi.
-(A*0.9+T*0.1)
+(A*0.8+T*0.2)
 }
 
 Commerce
@@ -140,7 +140,7 @@ Załaduj szybko działa, obróć je, a podczas gdy echo salwy wciąż dudni mię
 Sailing
 {
 Umiejętność bezpiecznego doprowadzenia statku do portu przez burzę i mgłę; zdolność posługiwania się sprzętem nawigacyjnym i kontrolowania floty. Największy i najgroźniejszy statek popłynie niczym ptak, słuchając pewnej ręki doświadczonego Nawigatora.
-(I0.2+T0.8)
+(I*0.2+T*0.8)
 ~
 Brak nawigacji nałoży kary na każdą umiejętność i statystykę.
 Statki 1. klasa wymagana 95
@@ -149,6 +149,7 @@ Statki 3. klasa wymagana 65
 Statki 4. klasa wymagana 45
 Statki 5. klasa wymagana 25
 Statki 6. klasa wymagana 1
+Brak Nawigacji prowadzi do kar we wszystkich umiejętnościach i cechach bohatera. Im większa różnica między aktualną a wymaganą wartością Nawigacji, tym większe kary.
 }
 
 Repair
@@ -246,7 +247,7 @@ Energia to kluczowy parametr określający wytrzymałość bohatera podczas walk
 
 Money
 {
-Pieniądze rządzą światem. Piastry, talary, gwinee… Jaka to różnica, jeśli wszystko to płynna gotówka!
+Pieniądze rządzą światem. Piastry, talary, gwinee... Jaka to różnica, jeśli wszystko to płynna gotówka!
 }
 
 Honor

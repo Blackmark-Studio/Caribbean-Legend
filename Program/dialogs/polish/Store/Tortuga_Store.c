@@ -5,7 +5,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś zadać mi jakieś pytanie niedawno...","Nikt nie zadawał takich pytań w sklepie na Tortudze od dłuższego czasu...","Pytania, pytania i jeszcze więcej pytań...","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Jakie masz pytania?","Jak mogę ci pomóc?"),"Próbowałeś zadać mi jakieś pytanie niedawno...","Nikt nie zadawał takich pytań w sklepie na Tortudze od dłuższego czasu...","Pytania, pytania i jeszcze więcej pytań...","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Zmieniam zdanie...","Nie mam teraz nic do omówienia."),"Umph, gdzież się podziała moja pamięć...","Dobrze, minęło już dużo czasu.","Yeeeeszcze pytania, tak...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "tortuga2")

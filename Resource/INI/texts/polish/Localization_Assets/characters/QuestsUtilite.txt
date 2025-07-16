@@ -1,51 +1,51 @@
 QuestsUtilite_1
 {
-Wheel of Fortune
+Koło Fortuny
 }
 
 QuestsUtilite_2
 {
-I don't want to discuss same things over and over again.
+Nie chcę ciągle omawiać tego samego... już mnie to nudzi.
 }
 
 QuestsUtilite_3
 {
-We have already had this discussion.
+Już rozmawialiśmy na ten temat.
 }
 
 QuestsUtilite_4
 {
-We talked this through already.
+Już o tym rozmawialiśmy.
 }
 
 QuestsUtilite_5
 {
-I repeat, I do not want to talk about same topic over and over again.
+Powtarzam, nie chcę ciągle omawiać tego samego tematu.
 }
 
 QuestsUtilite_6
 {
-I said, there is nothing more to discuss!
+Powiedziałem, że nie ma już o czym rozmawiać!
 }
 
 QuestsUtilite_7
 {
-I am telling you that we talked this through already. Memory problems?
+Mówię ci, że już to omawialiśmy. Czyżby problemy z pamięcią?
 }
 
 QuestsUtilite_8
 {
-I don't want to talk to you again.
+Nie chcę już z tobą rozmawiać.
 }
 
 QuestsUtilite_9
 {
-I will not speak to you ever again!
+Nigdy więcej się do ciebie nie odezwę!
 }
 
 QuestsUtilite_10
 {
-Now I am angry as hell
+Teraz jestem wściekły jak diabli!
 }
 
 QuestsUtilite_11
@@ -60,22 +60,22 @@ QuestsUtilite_12
 
 QuestsUtilite_13
 {
-, get lost.
+, spływaj.
 }
 
 QuestsUtilite_14
 {
-Fine, pal.
+Dobra, koleżko.
 }
 
 QuestsUtilite_15
 {
-Whatever you say.
+Niech ci będzie.
 }
 
 QuestsUtilite_16
 {
-Sorry
+Aj, przepraszam.
 }
 
 QuestsUtilite_17
@@ -90,37 +90,37 @@ QuestsUtilite_18
 
 QuestsUtilite_19
 {
-, my bad...
+, mój błąd...
 }
 
 QuestsUtilite_20
 {
-Fine, fine. Calm down.
+Dobrze, dobrze. Tylko spokojnie.
 }
 
 QuestsUtilite_21
 {
-As you say, just stop roaring at me.
+Niech ci będzie, już nie wrzeszcz na mnie...
 }
 
 QuestsUtilite_22
 {
-Pardon me, suffering from terrible headache...
+Przepraszam, łeb mnie dziś boli jak cholera...
 }
 
 QuestsUtilite_23
 {
-Whatever.
+Jak tam wolisz.
 }
 
 QuestsUtilite_24
 {
-Pity...
+Szkoda...
 }
 
 QuestsUtilite_25
 {
-What a shame.
+Wielka szkoda.
 }
 
 QuestsUtilite_26
@@ -711,7 +711,7 @@ Booshell
 
 QuestsUtilite_156
 {
-It appears that this is a treasure you were looking for
+Wygląda na to, że to skarb, którego szukałeś.
 }
 
 QuestsUtilite_157
@@ -744,7 +744,7 @@ QuestsUtilite_162
 
 QuestsUtilite_163
 {
-Gone are the long days...
+Minęły długie dni...
 }
 
 QuestsUtilite_164
@@ -870,11 +870,11 @@ concord
 
 QuestsUtilite_194
 {
-A Comanche potion is used
+Użyto mikstury Komanczów
 }
 QuestsUtilite_195
 {
-You are feeling that your health is restored!
+Czujesz, że Twoje zdrowie powróciło!
 }
 
 QuestsUtilite_196
@@ -884,331 +884,331 @@ Marlin
 
 QuestsUtilite_197
 {
-interceptors
+przechwytywacze
 }
 
 QuestsUtilite_198
 {
-Aurora Bardot, 1612-1637, Servant
+Aurora Bardot, 1612-1637, Latawica
 }
 QuestsUtilite_199
 {
-You puke the whole table, you bloody pirate!
+Cały stół orzygałeś, ty cholerny piracie!
 }
 
 QuestsUtilite_200
 {
-Jules Couvier, 1591-1640, roofer
+Jules Couvier, 1591-1640, Dekarz
 }
 QuestsUtilite_201
 {
-There seems to be a strong wind coming up...
+Wygląda na to, że nadchodzi silny wiatr...
 }
 
 QuestsUtilite_202
 {
-Gerard Lesbro, 1555-1596, alchemist
+Gerard Lesbro, 1555-1596, Alchemik
 }
 QuestsUtilite_203
 {
-And now let's slightly heat this liquid...
+A teraz lekko podgrzejmy tą ciecz...
 }
 
 QuestsUtilite_204
 {
-Judith Boson, 1589-1618, governess
+Judith Boson, 1589-1618, Guwernantka
 }
 QuestsUtilite_205
 {
-What a fool his Lordship's wife is!
+Żona Jego Lordowskiej Mości jest taka głupia!
 }
 
 QuestsUtilite_206
 {
-Auguste Poitier, 1567-1624, gunsmith
+Auguste Poitier, 1567-1624, Rusznikarz
 }
 QuestsUtilite_207
 {
-Well, well, this gun is defective. Let's take a closer look...
+No cóż, ta broń jest uszkodzona. Przyjrzyjmy się jej bliżej...
 }
 
 QuestsUtilite_208
 {
-Marc Romari, 1544-1599, usurer
+Marc Romari, 1544-1599, Lichwiarz
 }
 QuestsUtilite_209
 {
-Monsieur, I swear I really got robbed!
+Panie, przysięgam, że naprawdę mnie okradziono!
 }
 
 QuestsUtilite_210
 {
-Marcel d'Aubet, 1611-1650, porter
+Marcel d'Aubet, 1611-1650, Porter
 }
 QuestsUtilite_211
 {
-It looks like these ropes are really rotten...
+Wygląda na to, że te liny są naprawdę zgniłe...
 }
 
 QuestsUtilite_212
 {
-Rose Duplan, 1621-1649, maid
+Rose Duplan, 1621-1649, Pokojówka
 }
 QuestsUtilite_213
 {
-And what does the owner keep in this box? Now let's see, while he's gone...
+A co właściciel trzyma w tym pudełku? Zobaczmy, póki go nie ma...
 }
 
 QuestsUtilite_214
 {
-Victor Marion, 1577-1608, watchman
+Victor Marion, 1577-1608, Stróż
 }
 QuestsUtilite_215
 {
-Hey, who's there?
+Hej, kto tam?
 }
 
 QuestsUtilite_216
 {
-Alvaro Lopez, 1587-1633, pearl diver
+Alvaro Lopez, 1587-1633, Poławiacz pereł
 }
 QuestsUtilite_217
 {
-Sharks have never swum in this lagoon!
+W tej lagunie nigdy nie pływały rekiny!
 }
 
 QuestsUtilite_218
 {
-Gaspar Ibanez, 1599-1640, carpenter
+Gaspar Ibanez, 1599-1640, Cieśla
 }
 QuestsUtilite_219
 {
-Juan, throw me that big ax!
+Juan, rzuć mi tę wielką siekierę!
 }
 
 QuestsUtilite_220
 {
-Lorenzo Perdoso, 1581-1630, artilleryman
+Lorenzo Perdoso, 1581-1630, Altylerzysta
 }
 QuestsUtilite_221
 {
-Rash more gunpowder in the mouth! Even more! Like this...
+Wsypcie więcej prochu! Jeszcze więcej! Właśnie tak...
 }
 
 QuestsUtilite_222
 {
-Simon Zorrita, 1602-1645, detective
+Simon Zorrita, 1602-1645, Detektyw
 }
 QuestsUtilite_223
 {
-Commandant, I solved the crime. You are the killer!
+Komendancie, rozwiązałem zbrodnię. Ty jesteś zabójcą!
 }
 
 QuestsUtilite_224
 {
-Lolita Cheka, 1610-1639, dressmaker
+Lolita Cheka, 1610-1639, Krawcowa
 }
 QuestsUtilite_225
 {
-Don't worry, dear, my husband won't be back from swimming soon...
+Nie martw się, kochanie, mój mąż nieprędko wróci z pływania...
 }
 
 QuestsUtilite_226
 {
-Ricardo Cazares, 1590-1633, hunter
+Ricardo Cazares, 1590-1633, Myśliwy
 }
 QuestsUtilite_227
 {
-I know this snake. It's completely harmless!
+Znam tego węża. Jest zupełnie niegroźny!
 }
 
 QuestsUtilite_228
 {
-Isidro Davilla, 1588-1624, miller
+Isidro Davilla, 1588-1624, Młynarz
 }
 QuestsUtilite_229
 {
-Tomorrow morning I'm changing the cracked steps on this staircase...
+Jutro rano wymienię popękane stopnie na tych schodach...
 }
 
 QuestsUtilite_230
 {
-Teodoro Bello, 1599-1646, adjutant
+Teodoro Bello, 1599-1646, Adiutant
 }
 QuestsUtilite_231
 {
-You scoundrel, sir! If you please, expose your stupid rusty piece of iron!
+Ty szelmo, Panie! Proszę cię, wyciągaj swój głupi, zardzewiały kawałek żelaza!
 }
 
 QuestsUtilite_232
 {
-Gelvira Cheka, 1605-1648, merchant
+Gelvira Cheka, 1605-1648, Kupiec
 }
 QuestsUtilite_233
 {
-My items are non-returnable and non-refundable!
+Moje przedmioty nie podlegają ani zwrotowi, ani wymianie!
 }
 
 QuestsUtilite_234
 {
-Jacob Black, 1608-1631, fisherman
+Jacob Black, 1608-1631, Rybak
 }
 QuestsUtilite_235
 {
-Father's longboat has seen a lot of storms. It will survive this time too...
+Łódź ojca przetrwała wiele sztormów. Przetrwa i tym razem...
 }
 
 QuestsUtilite_236
 {
-Ralph Chaplin, 1602-1649, lumberjack
+Ralph Chaplin, 1602-1649, Drwal
 }
 QuestsUtilite_237
 {
-John, did you securely fasten the ax to the handle?
+John, czy dobrze przymocowałeś głowe siekiery do trzonka?
 }
 
 QuestsUtilite_238
 {
-Kermit Filler, 1615-1653, bartender
+Kermit Filler, 1615-1653, Szynkarz
 }
 QuestsUtilite_239
 {
-Morgan, the rum was undiluted, I swear on my mother!
+Morgan, rum był nierozcieńczony, przysięgam na moją matkę!
 }
 
 QuestsUtilite_240
 {
-Laura Hart, 1605-1627, whore
+Laura Hart, 1605-1627, Dziwka
 }
 QuestsUtilite_241
 {
-How dare you! I check with the healer every week!
+Jak śmiesz! Chodze do uzdrowiciela co tydzień!
 }
 
 QuestsUtilite_242
 {
-Simon Luther, 1598-1639, physician
+Simon Luther, 1598-1639, Medyk
 }
 QuestsUtilite_243
 {
-White powder, odorless...tastes bitter...
+Biały proszek, bezwonny... o gorzkim smaku...
 }
 
 QuestsUtilite_244
 {
-Oscar Marker, 1611-1642, thief
+Oscar Marker, 1611-1642, Złodziej
 }
 QuestsUtilite_245
 {
-So, but the dog's chain doesn't reach here...
+Cóż, łańcuch psa tu nie sięga...
 }
 
 QuestsUtilite_246
 {
-Macolm Camley, 1545-1587, actor
+Macolm Camley, 1545-1587, Aktor
 }
 QuestsUtilite_247
 {
-In this red-nosed mask, I'm just the spitting image of a fort commander!
+W tej masce z czerwonym nosem jestem dokładnym odbiciem w lustrze, naszego dowódcy fortu!
 }
 
 QuestsUtilite_248
 {
-Tobias Filler, 1567-1599, trapper
+Tobias Filler, 1567-1599, Traper
 }
 QuestsUtilite_249
 {
-John, this jaguar seems quite tame to me, open the cage...
+John, ten jaguar wydaje mi się dość oswojony, otwórz klatkę...
 }
 
 QuestsUtilite_250
 {
-Camille Rutter, 1571-1596, peasant woman
+Camille Rutter, 1571-1596, Chłopka
 }
 QuestsUtilite_251
 {
-Something our goby is restless today...
+Nasza babka jest dziś czymś niespokojna...
 }
 
 QuestsUtilite_252
 {
-Fritz Loots, 1587-1631, cook
+Fritz Loots, 1587-1631, Kucharz
 }
 QuestsUtilite_253
 {
-Pickles are for officers, and the sailor girl will eat what they give!
+Ogórki kiszone są dla oficerów, a dziewczyna marynarz zje to, co jej dadzą!
 }
 
 QuestsUtilite_254
 {
-Rupert Hofmeyr, 1601-1649, clerk
+Rupert Hofmeyr, 1601-1649, Urzędnik
 }
 QuestsUtilite_255
 {
-For the tenth time, you dumbass! Minheer Gerritz won't see you today!
+Mówie po raz dziesiąty, ty głupcze! Minheer Gerritz nie przyjmuje dziś petentów!
 }
 
 QuestsUtilite_256
 {
-Paul Wlecke, 1577-1622, pilot
+Paul Wlecke, 1577-1622, Nawigator
 }
 QuestsUtilite_257
 {
-Don't worry, cap: I know how to get through these reefs like the back of my hand!
+Nie martw się, Kapitanie: wiem, jak poruszać się po tych rafach, znam je na własną kieszeń!
 }
 
 QuestsUtilite_258
 {
-Yedam Uustgen, 1589-1635, blacksmith
+Yedam Uustgen, 1589-1635, Kowal
 }
 QuestsUtilite_259
 {
-You don't need a better saber, but you should trim your hands on the anvil!
+Nie potrzebujesz lepszej szabli, ale powinieneś przyciąć sobie dłonie na kowadle!
 }
 
 QuestsUtilite_260
 {
-Katrina Erb, 1610-1644, washerwoman
+Katrina Erb, 1610-1644, Praczka
 }
 QuestsUtilite_261
 {
-Lisbeth, where did you run? These are peaceful Indians, they don't touch whites...
+Lisbeth, dokąd uciekłaś? To pokojowi Indianie, nie dotykają białych...
 }
 
 QuestsUtilite_262
 {
-Peter Konnink, 1561-1615, Musketeer
+Peter Konnink, 1561-1615, Muszkieter
 }
 QuestsUtilite_263
 {
-I'll drive the charge into the muzzle tightly...
+Wbiję ładunek prosto w lufę...
 }
 
 QuestsUtilite_264
 {
-Tanna Graaff, 1588-1607, maid
+Tanna Graaff, 1588-1607, Pokojówka
 }
 QuestsUtilite_265
 {
-Looks like someone is walking downstairs. And who did you bring in in the middle of the night? I'll go and have a look...
+Wygląda na to, że ktoś schodzi po schodach. A kogo przyprowadziłeś w środku nocy? Pójdę i sprawdzę...
 }
 
 QuestsUtilite_266
 {
-Krelis van Eck, 1572-1611, boatswain
+Krelis van Eck, 1572-1611, Bosman
 }
 QuestsUtilite_267
 {
-Pour in twenty lashes! No - thirty! Each one!
+Wlej im dwadzieścia batów! Nie - trzydzieści! Każdemu!
 }
 
 QuestsUtilite_268
 {
-Jacob de Haez, 1611-1651, traveler
+Jacob de Haez, 1611-1651, Podróżnik
 }
 QuestsUtilite_269
 {
-Caimans don't attack people. Only when they are very hungry. This one is obviously full...
+Kajmany nie atakują ludzi. Tylko wtedy, gdy są bardzo głodne. Ten jest ewidentnie pełny...
 }
 ; названия согласно атрибутам -->
 QuestsUtilite_270
@@ -1224,19 +1224,43 @@ Trafalgar
 
 QuestsUtilite_272
 {
-The poison didn't work!
+Trucizna nie zadziałała!
 }
 
 QuestsUtilite_273
 {
-Poisoned by taino poison!
+Otrucie trucizną taino!
 }
 QuestsUtilite_274
 {
-@<GetFullName(chref)> poisoned by taino poison
+@<GetFullName(chref)> otruty trucizną taino
 }
 
 QuestsUtilite_275
 {
-Use the Action Menu (ENTER) to Fast Travel to Le Franсois.
+Użyj menu akcji (ENTER), aby użyć szybkiej podróży do Le Franсois.
+}
+
+QuestsUtilite_276
+{
+Wody stają się bardziej niebezpieczne, zagrożenie ze strony piratów wzrosło
+}
+
+QuestsUtilite_277
+{
+Chimera
+}
+
+QuestsUtilite_278
+{
+~ Ale ich rozjuszyliśmy! Okręt flagowy eskadry to ~
+}
+
+QuestsUtilite_279
+{
+Diego
+}
+QuestsUtilite_280
+{
+de Landa
 }

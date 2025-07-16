@@ -12,6 +12,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Dis-moi, un galion du nom de 'Santa Margarita' s'est-il arrêté récemment à ta colonie ? Peut-être comme prise d'un corsaire ?";
                 link.l1.go = "guardoftruth";
 			}
+			//--> Украденное воспоминание
+			if (CheckAttribute(pchar, "questTemp.UV_DialogCitizen"))
+			{
+				link.l1 = "Tristan Renier est-il passé par ici récemment ?";
+				link.l1.go = "UV_DialogTavern";
+			}
+			//<-- Украденное воспоминание
 		break;
 		
 		case "guardoftruth":
@@ -21,6 +28,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddQuestRecord("Guardoftruth", "7");
 			pchar.questTemp.Guardoftruth = "tortuga";
 		break;
+		
+		//--> Украденное воспоминание
+		case "UV_DialogTavern":
+			dialog.text = "Tristan ? Oui, non seulement il est venu ici, mais l'homme n'est pas parti. Il a pris une chambre.";
+			link.l1 = "La fortune me sourit ! Mon affaire avec le bon capitaine ne souffre aucun délai—sa vie privée doit céder à la nécessité.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("UV_GoldSeagull_RoomInTavern");
+			DelLandQuestMark(npchar);
+		break;
+		//<-- Украденное воспоминание
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

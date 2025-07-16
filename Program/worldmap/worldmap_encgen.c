@@ -10,7 +10,7 @@
 #define WDM_MERCHANTS_RATE		0.08
 //Частота воюищих кораблей в секунду
 #define WDM_WARRING_RATE		0.012
-//Частота нападающих кораблей в секунду
+//Частота нападающих кораблей в секунду // belamour по факту это любой военный
 #define WDM_FOLLOW_RATE  		0.015
 //Частота специальных событий  (бочка или шлюпка) в секунду
 #define WDM_SPECIAL_RATE  		0.0015
@@ -109,14 +109,9 @@ void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float
 					if(rand(1001) + 1 < wdmTimeOfLastFollow)
 					{
 						wdmTimeOfLastFollow = 0.0;
-						if(!IsStopMapFollowEncounters() && !CheckAttribute(pchar, "worldmap.FollowCounter"))
+						if(!IsStopMapFollowEncounters())
 						{
-							if(wdmCreateFollowShip(0.8 + rand(10)*0.05))
-							{
-								// belamour cle не генерим, если есть преследователь
-								if(sti(pchar.rank) < 15 && rand(sti(pchar.rank)) < 4)
-									pchar.worldmap.FollowCounter = true;
-							}
+							wdmCreateFollowShip(0.8 + rand(10)*0.05);
 						}						
 					}
 				}

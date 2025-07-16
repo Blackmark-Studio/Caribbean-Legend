@@ -725,6 +725,7 @@ void ProcessDialogEvent()
 	case "Morelle_2":
 		DialogExit();
 		LAi_CharacterDisableDialog(npchar);
+		npchar.lifeday = 0;
 		// тайник - модель
 		// int m = Findlocation("Shore40");
 		// locations[m].models.always.Roll = "Roll_of_rolls";

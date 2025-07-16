@@ -6462,8 +6462,8 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 			PChar.quest.PZ_Etap5_Start.win_condition = "PZ_Etap5_Start";
 			AddMapQuestMarkCity("Pirates", false);
 		}
-		// Запуск квеста Дороже золота
-		SetFunctionTimerCondition("GoldenGirl_Start", 0, 0, 1, false);
+		// Выполнено требование для Дороже золота
+		pchar.questTemp.GoldenGirl_Ready = true;
 	}
 	else if (sQuestName == "LSC_SetDodsonPassenger") // Акулу - в пассажиры
 	{

@@ -311,7 +311,7 @@ bool wdmCreateFollowShipByIndex(float kSpeed, int index, ref encID, int timeOutI
 	//Создаём реального энкоунтера
 	bool res = false;
 	bool PowerCheck = (iNation == PIRATE) && wdmCompareEncPower(iNation); // Механика мощи
-	if (PowerCheck || (GetNationRelation2MainCharacter(iNation) != RELATION_ENEMY))
+	if (PowerCheck || (GetNationRelation2MainCharacter(iNation) != RELATION_ENEMY) || CheckAttribute(pchar, "worldmap.FollowCounter"))
 	{
 		res = SendMessage(&worldMap, "lsssff", MSG_WORLDMAP_CREATEENC_MER, nationShipName, "", "", kSpeed, timeOutInSec);
 	}
@@ -319,6 +319,10 @@ bool wdmCreateFollowShipByIndex(float kSpeed, int index, ref encID, int timeOutI
 	{   // boal - код этот полный абзац, я Вам, господа акеловцы, аплодирую - метод Следовать даёт убегание - и так весь код. плакаль
 		// погано, что метод имеет право быть, но название должно быть иным, нужно чтоб мирные не доставали патрулями.
 		res = SendMessage(&worldMap, "lsff", MSG_WORLDMAP_CREATEENC_FLW, nationShipName, kSpeed, timeOutInSec);
+		
+		// belamour cle не генерим, если есть преследователь
+		if(sti(pchar.rank) < 15 && rand(sti(pchar.rank)) < 4)
+			pchar.worldmap.FollowCounter = true;
 	}
 	//Копируем данные
 	WdmCopyEncounterData(mapEncSlotRef, worldMap.EncounterID1);

@@ -1933,7 +1933,7 @@ void Trial_CreatePueblaBarqueInWorld()//запускаем барк 'Пуэбл�
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
 	UpgradeShipParameter(sld, "Capacity");
-	AddCharacterGoods(sld,GOOD_POWDER, GetCharacterFreeSpace(sld, GOOD_POWDER));
+	SetCharacterGoods(sld,GOOD_POWDER, 5000);
 	sld.AlwaysEnemy = true;
 	sld.DontRansackCaptain = true;
 	sld.Ship.Mode = "war";

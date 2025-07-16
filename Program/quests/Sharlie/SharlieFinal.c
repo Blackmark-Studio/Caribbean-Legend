@@ -1003,6 +1003,7 @@ void DefendSP_TownBattle(string qName) // городская боевка
 	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
 	LAi_group_SetCheck("EnemyFight", "DefendSP_SpaTownDie");
 	
+	//--> квестовые НПС
 	if (CheckAttribute(pchar, "questTemp.Del_DeluckSiditTurma"))	//Фулька убили в тюрьме
 	{
 		sld = CharacterFromID("Folke");
@@ -1011,6 +1012,13 @@ void DefendSP_TownBattle(string qName) // городская боевка
 		sld.lifeday = 14;
 		SaveCurrentNpcQuestDateParam(sld, "LifeTimeCreate");
 	}
+	if (CharacterIsAlive("VPVL_Pier_carno"))	//Пьер Карно пропал без вести
+	{
+		sld = CharacterFromID("VPVL_Pier_carno");
+		sld.lifeday = 0;
+		ChangeCharacterAddressGroup(sld, "none", "", "");
+	}
+	//<-- квестовые НПС
 }
 
 void DefendSP_GotoMatieBase(string qName) // телепорт в базу
@@ -4834,12 +4842,14 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		DoQuestReloadToLocation("Shore38", "reload", "sea", "DefendSP_SetInJungle");
 		setCharacterShipLocation(pchar, "Shore38");
 		setWDMPointXZ("Shore38"); // корабль в бухту Ламантен
+		pchar.GenQuest.Hunter2Pause = true; // ОЗГи на паузу
 	}
 	else if (sQuestName == "DefendSP_SetInJungle") // ставим ГГ и его солдат в бухту
 	{
 		LocatorReloadEnterDisable("Shore38", "boat", true); // закрыть выход в море
 		pchar.GenQuest.Hunter2Pause = true; // ОЗГи на паузу
 		pchar.GenQuest.CannotWait = true;//запрет ожидания
+		pchar.questTemp.GoldenGirl_Block = true;// Запрещаем квест Дороже Золота
 		// устанавливаем солдат ГГ, 12 рыл+офицер
 		iRank = 25+MOD_SKILL_ENEMY_RATE*2;
 		iScl = 60;

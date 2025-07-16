@@ -541,8 +541,8 @@ void ProcessDialogEvent()
 			pchar.quest.Helen_GiveSex.win_condition.l2.location_type = "town";
 			pchar.quest.Helen_GiveSex.function = "Helen_GiveSex";
 			
-			// Запуск квеста Дороже золота
-			SetFunctionTimerCondition("GoldenGirl_Start", 0, 0, 1, false);
+			// Выполнено требование для Дороже золота
+			pchar.questTemp.GoldenGirl_Ready = true;
 		break;
 		
 	// -------------------------------------------- провалы саги ------------------------------------

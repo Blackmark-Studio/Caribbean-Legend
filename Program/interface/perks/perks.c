@@ -341,7 +341,7 @@ void PerkLoad()
 
 	for(i=0; i<MAX_CHARACTERS; i++)
 	{
-		if(Characters[i].location == locName)
+		if(Characters[i].location == locName || isOfficerInShip(&Characters[i], false))
 		{
 			makearef(arPerksRoot,Characters[i].perks.list);
 			n = GetAttributesNum(arPerksRoot);

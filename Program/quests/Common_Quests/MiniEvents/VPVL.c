@@ -150,6 +150,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		sld.lastname = StringFromKey("Neutral_18");
 		sld.dialog.FileName = "Quest\MiniEvents\VPVL_dialog.c";
 		sld.dialog.currentnode = "PierFirstTalk";
+		sld.City = "FortFrance";
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetGroundSitType(sld);
 		LAi_group_MoveCharacter(sld, "PLAYER_GROUP");

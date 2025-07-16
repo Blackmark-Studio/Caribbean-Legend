@@ -175,7 +175,7 @@ void SantaMisericordia_ToCity(string sChar)
 	//DeleteQuestCondition("SantaMisericordia_ToMap");
 	
 	//таймер через сколько опять выйти на карту
-	int Qty = 14; //через сколько дней выйдем на карту
+	int Qty = 7; //через сколько дней выйдем на карту
 	PChar.quest.SantaMisericordia_toMap.win_condition.l1            = "Timer";
     PChar.quest.SantaMisericordia_toMap.win_condition.l1.date.day   = GetAddingDataDay(0, 0, Qty);
     PChar.quest.SantaMisericordia_toMap.win_condition.l1.date.month = GetAddingDataMonth(0, 0, Qty);
@@ -275,16 +275,16 @@ void SantaMisericordia_ToCity(string sChar)
     
 	} */
 	
-	AddSimpleRumourCity(rumour1, pchar.questTemp.SantaMisericordia.colony, 7, 1, "");
-	AddSimpleRumourCity(rumour2, pchar.questTemp.SantaMisericordia.colony, 7, 1, "");
-	AddSimpleRumourCity(rumour3, pchar.questTemp.SantaMisericordia.colony, 7, 1, "");
-	AddSimpleRumourCity(rumour4, pchar.questTemp.SantaMisericordia.colony, 7, 1, "");
-	AddSimpleRumourCity(rumour5, pchar.questTemp.SantaMisericordia.colony, 7, 1, "");
-	AddSimpleRumourCity(rumour6, pchar.questTemp.SantaMisericordia.colony, 7, 1, "");
-	AddSimpleRumourCity(rumour7, pchar.questTemp.SantaMisericordia.colony, 7, 1, "");
-	AddSimpleRumourCity(rumour8, pchar.questTemp.SantaMisericordia.colony, 7, 1, "");
-	AddSimpleRumourCity(rumour9, pchar.questTemp.SantaMisericordia.colony, 7, 1, "");
-	AddSimpleRumourCity(rumour10, pchar.questTemp.SantaMisericordia.colony, 7, 1, "");
+	AddSimpleRumourCity(rumour1, pchar.questTemp.SantaMisericordia.colony, 5, 1, "");
+	AddSimpleRumourCity(rumour2, pchar.questTemp.SantaMisericordia.colony, 5, 1, "");
+	AddSimpleRumourCity(rumour3, pchar.questTemp.SantaMisericordia.colony, 5, 1, "");
+	AddSimpleRumourCity(rumour4, pchar.questTemp.SantaMisericordia.colony, 5, 1, "");
+	AddSimpleRumourCity(rumour5, pchar.questTemp.SantaMisericordia.colony, 5, 1, "");
+	AddSimpleRumourCity(rumour6, pchar.questTemp.SantaMisericordia.colony, 5, 1, "");
+	AddSimpleRumourCity(rumour7, pchar.questTemp.SantaMisericordia.colony, 5, 1, "");
+	AddSimpleRumourCity(rumour8, pchar.questTemp.SantaMisericordia.colony, 5, 1, "");
+	AddSimpleRumourCity(rumour9, pchar.questTemp.SantaMisericordia.colony, 5, 1, "");
+	AddSimpleRumourCity(rumour10, pchar.questTemp.SantaMisericordia.colony, 5, 1, "");
 }
 
 void SantaMisericordia_ToMap(string sQuest)
@@ -773,6 +773,7 @@ void SantaMisericordia_Pobeda(string sQuest)
 		DeleteAttribute(sld, "quest.SantaMisericordia");
 		LAi_CharacterEnableDialog(sld);
 	}
+	DeleteAttribute(pchar, "questTemp.SantaMisericordia.ColonyZapret");
 }
 
 bool ach139condition()

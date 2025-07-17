@@ -503,6 +503,123 @@ void LoveSex_Classic(string qName)
 		pchar.quest.Mary_giveme_sex1.over = "yes";
 	}
 }
+// --> штучки с Мэри
+void LSC_MaryLove() // провести ночь с Мэри в LSC
+{
+	pchar.GenQuest.FrameLockEsc = true;
+	LSC_MaryLoveWaitTime();
+	SetMusic("music_romantic");
+	SetLaunchFrameFormParam("", "", 0, 28);
+	SetLaunchFrameFormPic("loading\inside\censored1.tga");
+	PlayStereoSound("sex\sex"+(rand(9)+1)+".wav");
+    LaunchFrameForm();
+	int addHealthQuantity = 12;
+	float addMaxHealthQuantity = 1;
+	if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
+	{
+		addHealthQuantity *= 2;
+		addMaxHealthQuantity *= 2;
+	}
+	LAi_SetCurHPMax(pchar);
+	DoQuestFunctionDelay("LSC_MaryLoveMorning", 28.0);
+}
+
+void LSC_MaryEveneng() // Sinistra катсцена с поцелуями. Проводим вечер+ночь с Мэри в LSC
+{
+	//if(CheckAttribute (pchar, "IsMushketer")) SetMainCharacterToMushketer("", false);
+	StartQuestMovie(true, false, true);
+	locCameraFromToPos(46.77, 4.10, 99.07, true, 46.30, 2.45, 96.16);
+	pchar.GenQuest.FrameLockEsc = true;
+	SetMusic("music_romantic");
+	sld = characterFromId("Mary");
+	ChangeCharacterAddressGroup(sld, "CeresSmithy", "sit", "sit3");
+	LAi_SetSitType(sld);
+	ChangeCharacterAddressGroup(pchar, "CeresSmithy", "sit", "sit4");
+	LAi_SetSitType(pchar);
+	DoQuestFunctionDelay("LSC_MaryLoveVstaem", 4.5);
+}
+
+void LSC_MaryLoveVstaem(string qName)
+{
+	LAi_Fade("", "");
+	DoQuestFunctionDelay("LSC_MaryLoveKiss", 0.5);
+}
+
+void LSC_MaryLoveKiss(string qName)
+{
+	locCameraFromToPos(44.41, 4.28, 95.70, true, 44.39, 2.25, 92.55);
+	sld = characterFromId("Mary");
+	ChangeCharacterAddressGroup(sld, "CeresSmithy", "goto", "goto11");
+	TeleportCharacterToPosAy(sld, 44.90, 2.75, 93.00, -1.50);
+	LAi_SetActorType(sld);
+	LAi_ActorAnimation(sld, "kiss", "1", 7.5);
+	ChangeCharacterAddressGroup(pchar, "CeresSmithy", "goto", "goto10");
+	TeleportCharacterToPosAy(pchar, 44.30, 2.75, 93.00, 1.50);
+	LAi_SetActorType(pchar);
+	LAi_ActorAnimation(pchar, "kiss", "1", 7.5);
 	
-	
-	
+	DoQuestFunctionDelay("LSC_MaryLoveKiss_2", 3.0);
+	DoQuestFunctionDelay("LSC_MaryLoveStart", 7.5);
+}
+
+void LSC_MaryLoveKiss_2(string qName)
+{
+	locCameraFromToPos(45.30, 4.43, 93.62, true, 43.61, 2.65, 92.50);
+}
+
+void LSC_MaryLoveStart(string qName) // к функции выше
+{
+	sld = characterFromId("Mary");
+	LAi_SetOwnerType(sld);
+	LAi_SetPlayerType(pchar);
+	ChangeCharacterAddressGroup(sld, "CeresSmithy", "goto", "goto11");
+	ChangeCharacterAddressGroup(pchar, "CeresSmithy", "goto", "goto10"); // на обрыв эскейпом
+	LSC_MaryLoveWaitTime();
+	SetLaunchFrameFormParam("", "", 0, 14);
+	SetLaunchFrameFormPic("loading\inside\censored1.tga");
+	PlayStereoSound("sex\sex"+(rand(9)+1)+".wav");
+    LaunchFrameForm();
+	int addHealthQuantity = 12;
+	float addMaxHealthQuantity = 1;
+	if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
+	{
+		addHealthQuantity *= 2;
+		addMaxHealthQuantity *= 2;
+	}
+	LAi_SetCurHPMax(pchar);
+	DoQuestFunctionDelay("LSC_MaryLoveMorning", 14.0);
+}
+
+void LSC_MaryTavern(string qName) // посидеть в таверне с Мэри в LSC
+{
+	SetMusic("spa_music_tavern");
+	AddMoneyToCharacter(pchar, -500);
+	DoQuestCheckDelay("LSC_MaryTavernReturn", 32.5);
+}
+
+void LSC_MaryLoveWaitTime() // перемотка времени
+{
+	int iTime, iAddTime;
+	iTime = sti(environment.time);
+	if (iTime >= 21) iAddTime = 24 - iTime + 7;
+	if (iTime < 7) iAddTime = 7 - iTime;
+	if (iTime >= 7 && iTime < 21) iAddTime = 24  + 7 - iTime;
+	StoreDayUpdate();
+	WaitDate("",0,0,0,iAddtime,5);
+	RecalculateJumpTable();
+	RefreshWeather();
+	RefreshLandTime();
+}
+
+void LSC_MaryLoveMorning(string qName) // завершение функций выше
+{
+	EndQuestMovie();
+	locCameraFromToPos(44.40, 4.63, 98.15, true, 43.11, 2.82, 99.44);
+	sld = characterFromId("Mary");
+	sld.dialog.currentnode = "LSC_love_morning";
+	ChangeCharacterAddressGroup(sld, "CeresSmithy", "goto", "goto11");
+	ChangeCharacterAddressGroup(pchar, "CeresSmithy", "goto", "goto10");
+	LAi_SetActorType(sld);
+	LAi_ActorDialog(sld, pchar, "", -1, 0);
+}
+// <-- штучки с Мэри	

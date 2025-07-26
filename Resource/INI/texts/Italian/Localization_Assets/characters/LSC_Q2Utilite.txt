@@ -1,4 +1,4 @@
-﻿LSC_Q2Utilite_1
+LSC_Q2Utilite_1
 {
 
 }

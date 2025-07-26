@@ -1,4 +1,4 @@
-﻿Tonzag_1
+Tonzag_1
 {
 cacciatori di taglie
 }

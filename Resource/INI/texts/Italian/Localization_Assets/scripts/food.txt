@@ -1,4 +1,4 @@
-﻿food_1
+food_1
 {
 Ratti
 }

@@ -1,4 +1,4 @@
-﻿QuestsUtilite_1
+QuestsUtilite_1
 {
 Ruota della Fortuna
 }

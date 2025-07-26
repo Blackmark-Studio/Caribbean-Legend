@@ -18,77 +18,77 @@ void ProcessDialogEvent()
 		case "First time":
 			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
 			{
-				dialog.text = "I don't want to talk with you. You attack peaceful civilians with no reasons and provoke them to fight. Get lost!";
+				dialog.text = "Go away, señor. You attack ordinary people trying to go about their business.";
 				link.l1 = "Hm...";
 				link.l1.go = "exit";
 				break;
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "Hello, hello! Newbie? Or were you hiding in cargo holds, since it is the first time I see your face around?";
-				link.l1 = TimeGreeting()+". Hiding in cargo holds is not my type. I prefer the captain's place... Yes, I am a newcomer here.";
+				dialog.text = "Well, well! You're either new here or you've been hiding in one of the cargo holds, since this is the first time I've seen your face around.";
+				link.l1 = TimeGreeting()+". Hiding in cargo holds is not my style. I prefer the captain's cabin... But yes, I am new here.";
 				link.l1.go = "meeting";
 				npchar.quest.meeting = "1";
 			}
 			else
 			{
-				dialog.text = "Ah, "+pchar.name+"! "+TimeGreeting()+"! I am glad to see you! What say you";
-				link.l1 = LinkRandPhrase("Got anything interesting to say?", "Has anything new happened on the island?", "Will you tell me the last gossips?");
+				dialog.text = "Ah, "+pchar.name+"! "+TimeGreeting()+"! I am glad to see you! What say you?";
+				link.l1 = LinkRandPhrase("Dear Ramona! How are things on the island?", "Has anything new happened on the island?", "Will you tell me the latest gossip?");
 				link.l1.go = "rumours_LSC";
 				link.l2 = "I want to ask you a few questions about the island.";
 				link.l2.go = "int_quests"; //информационный блок
-				link.l5 = "Just wanted to know how you're doing. See you!";
+				link.l5 = "Just wanted to see your beautiful face. 'Til next time, Ramona!";
 				link.l5.go = "exit";
 			}
 			NextDiag.TempNode = "First time";
 		break;
 		
 		case "meeting": // первая встреча
-			dialog.text = "Well, let's get to know each other then... captain. I am Ramona Lozano, but don't even try to call me senora Lozano, I hate it. What is your name?";
-			link.l1 = ""+GetFullName(pchar)+". Pleasure to meet you, Ramona.";
+			dialog.text = "Let's get to know each other then... Captain. I am Ramona Lozano - and don't even try to call me 'Señora' Lozano. I hate it. What is your name?";
+			link.l1 = ""+GetFullName(pchar)+". Delighted to meet you, Ramona.";
 			link.l1.go = "meeting_1";
 		break;
 		
 		case "meeting_1":
-			dialog.text = "Are you really pleased or just being polite, "+GetFullName(pchar)+"? Tell me, are you really a captain or were you joking?";
-			link.l1 = "Oho, so many questions at once! May I answer them in order? First, I am pleased for real, I don't meet pretty girls every day, second, I am a captain, it is true. But my ship is near the shores of Western Main now...";
+			dialog.text = "Are you truly delighted or just being polite, "+GetFullName(pchar)+"? Tell me, are you really a captain or were you joking?";
+			link.l1 = "O-ho, so many questions! May I answer them in order? First, I am truly delighted; I don't meet such pretty girls every day. Second, I am indeed a captain, but my ship is anchored on the coast of the Spanish Main right now.";
 			link.l1.go = "meeting_2";
 		break;
 		
 		case "meeting_2":
-			dialog.text = "Funny! And how is that, captain? You are here, but your ship is near the shores of Main. Aren't you afraid that your crew will scatter around and your vessel will be taken from you?";
-			link.l1 = "I have sailed here on a barque for... exploration, but all went wrong and I have found myself at your Island. Then we have bumped at some debris in the darkness, overturned and voila! Here I am. My ship will be waiting for me as long as I want. Dannie Hawk will be able to control my men.";
+			dialog.text = "Funny! And how is it, captain, that you are here, but your ship is on the coast of the Main? Aren't you afraid that your crew will scatter and your vessel will be taken from you?";
+			link.l1 = "I sailed here on a barque to... to explore this part of the sea. I didn't want to risk my ship - she is my pride and joy. But at night, the barque struck some reef or wreck in the darkness, overturned, et voilà! Here I am.\nMy ship will wait for me as long as she must. Dannie Hawk will keep the lads together.";
 			link.l1.go = "meeting_3";
 		break;
 		
 		case "meeting_3":
-			dialog.text = "Dannie Hawk? The Danielle Hawk? Do you wanna say that you float with her?";
-			link.l1 = "Shit floats, Dannie serves me as my officer. She was left to command while I am missing... How do you know her?";
+			dialog.text = "Dannie Hawk? As in... Danielle Hawk? Do you mean to tell me you sail with her?";
+			link.l1 = "My hand to God, Ramona, I tell no lie; Dannie serves as my officer. I left her in command while I set out in my barque... How do you know her?";
 			link.l1.go = "meeting_4";
 		break;
 		
 		case "meeting_4":
-			dialog.text = "Ha! Everyone in Spanish colonies knows pirate Danielle Hawk and her husband, Nathaniel. Yes, you, senor "+GetFullName(pchar)+", must be a tough guy... Are you a pirate then? Don't worry, I go along just fine with your kind. I like tough guys.";
-			link.l1 = "Well, I am not really a pirate... I am just working at the moment with Jan Svenson and looking for Dannie's husband, Nathaniel.";
+			dialog.text = "Ha! Everyone in the Spanish colonies knows the pirate Danielle Hawk and her husband, Nathaniel. Yes, you, señor "+GetFullName(pchar)+", must be a tough man... Are you a pirate then? Don't worry, I get along just fine with your kind. I like tough men.";
+			link.l1 = "Well, I'm not really a pirate... at the moment I'm working for Jan Svenson - trying to help Dannie find her missing husband.";
 			link.l1.go = "meeting_5";
 		break;
 		
 		case "meeting_5":
-			dialog.text = "And are you going to tell me now that you aren't a pirate? Working for the Forest Devil, your first mate is Dannie Hawk and you are looking for Nathan Hawk... and I am sure that you have come here for admiral. Right?";
-			link.l1 = "Ramona, you can call me pirate if you want, I am fine with that. You even may call me an anchor just don't throw me in water...";
+			dialog.text = "And you say you're not a pirate? You work for the Forest Devil, your first mate is Danielle Hawk, and you're searching for Nathaniel... and I am sure that you have come here for the Admiral. Right?";
+			link.l1 = "Ramona, you may call me a pirate if you want. You may even call me an anchor - so long as you don't use me as one!";
 			link.l1.go = "meeting_6";
 		break;
 		
 		case "meeting_6":
-			dialog.text = "It seems that you are one of the really serious guys, "+pchar.name+". Fine, I have to go. See you! I have a feeling that we might be friends... a very close friends.";
-			link.l1 = "Why not? Good luck!";
+			dialog.text = "It seems you are indeed one of those really tough men, "+pchar.name+". Well, I have to go. I hope I see you around the island, I have a feeling that we might be friends... close friends.";
+			link.l1 = "Why not? Good day!";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 		break;
 		
 //--------------------------------------- блок вопросов и ответов ---------------------------------------------
 		case "int_quests":
-			dialog.text = "Oh, really? Well, ask, I will answer if I can...";
+			dialog.text = "Oh, really? Well, ask. I will answer if I can...";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
 			{
 				link.l1 = "How did you get here?";
@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "quest.answer_2"))
 			{
-				link.l2 = "Surely, you haven't ever tried to get away from here...";
+				link.l2 = "Surely you've tried to leave the island?";
 				link.l2.go = "ansewer_2";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_3"))
@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "quest.answer_4"))
 			{
-				link.l4 = "What do you do here? I take it that the food is not for free, right?";
+				link.l4 = "What do you do here? I take it that food is not free, right?";
 				link.l4.go = "ansewer_4";
 			}
 			link.l10 = "No questions. Pardon...";
@@ -114,36 +114,36 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_1":
-			dialog.text = "That's a long story... My stepfather is the one to be blamed. Four years ago I lived in Havana and I couldn't even imagine how things would turn out for me. My mother died and I was a heir at law. We were not rich, but we had plenty of money, more than enough for a decent living. My stepfather didn't like it and he decided to get rid of me\nOf course, I found it out only after two hired thugs attacked me right behind the city gates. Those fools told me themselves who hired them to kill me and why. Fortunately, they were not professionals, I would lay in the bushes with my throat cut if that was the case. The idiots decided to have some fun first\nThe fate has saved me that day, a captain like you was passing by to the gates. He saw the show and killed the scum immediately. They didn't stand a chance. I told him what happened to me and why. Cried a bit... He knew that I had nowhere to go, so he took me on his ship to live. First temporarily, and then\nI believe I would have stayed with him, but two months later he fought a patrol, lost a mast, was caught by a strong gale and found peace at the bottom of the outer ring. I survived despite everything and joined the community of the Island.";
-			link.l1 = "Sad story, I have nothing to say...";
+			dialog.text = "That's a long story... My stepfather is the one to blame.\nFour years ago I was living happily in Havana. My mother died and I was the sole heir to her fortune. We were not rich, but we had money - more than enough to live comfortably.\nMy stepfather didn't like that and decided to get rid of me. Of course, I only found out after two hired thugs attacked me by the city gates. Those fools told me themselves who hired them to kill me and why.\nFortunately, they were not professionals, otherwise I'd be lying in the bushes with my throat cut. The idiots decided to have some fun first.\nFate saved me: a captain like yourself happened to be passing by. He saw what was happening and killed the scum immediately - they never stood a chance. I told him about my situation, cried a bit... He knew that I had nowhere to go, so he took me aboard his ship to save me from my stepfather - first temporarily, but then...\nI believe I would have stayed with him, but two months later he ran into a patrol, lost a mast, got caught by a strong gale, and found peace at the bottom of the outer ring. I survived despite everything and joined the community of Justice Island.";
+			link.l1 = "Sad story, I have no words.";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_1 = "true";
 		break;
 		
 		case "ansewer_2":
-			dialog.text = "Of course not. Because it's impossible. I saw a man who tried to leave this place on a longboat... he returned two days later. Tied to a wreck of a mast to save himself from drowning. He was blue and absolutely dead\nSo tell me, "+pchar.name+", what am I supposed to do as soon as I get away from here? Havana is too dangerous for me, the stepfather will try to kill me again. I have no house, no money. Where should I go? To the brothel?";
-			link.l1 = "Still, do you want to get back to the archipelago?";
+			dialog.text = "Of course not, because it's impossible. I saw a man who tried to leave this place on a longboat... he returned two days later. He'd tied himself to a wrecked mast to save himself from drowning, but he was blue and stone dead.\nAnd tell me, "+pchar.name+", what am I supposed to do even if I manage to escape? Havana is too dangerous for me - my stepfather will surely try to kill me again. I have no house, no money. Where would I go? A brothel?";
+			link.l1 = "Still, do you want to get back to the Caribbean?";
 			link.l1.go = "ansewer_2_1";
 		break;
 		
 		case "ansewer_2_1":
-			dialog.text = "And how do you think? Sure, I want. But it is impossible and I've just told you why. Eh, if only someone could deal with my stepfather... with the sharp steel or bullet, then there would be some chance for me to get back to the normal life. But who would dare to do that if my stepfather is the best friend of Havana's alcalde? And why are we talking about that? There is no way out from here...";
-			link.l1 = "We'll see. The time will come...";
+			dialog.text = "What do you think? Sure, I do. But it is impossible and I've just told you why. If someone could deal with my stepfather - either with cold steel or a bullet - then there would be some hope that I could go back to my old life. But who would dare do that, knowing my stepfather is a dear friend of Havana's governor? So what are we talking about? There is no way out of here...";
+			link.l1 = "We'll see. Maybe the time will come...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_2 = "true";
 			// сюда направление на квест
 		break;
 		
 		case "ansewer_3":
-			dialog.text = "I live somehow. There is no other option. My friends are mostly the men because two of our marriageable beauties - Gillian and Tanneke don't like me because of my character and I feel sick of their decency for show. Natalie was a fine girl until she has started to spend a lot of time with these retards, stupidity is contagious.";
+			dialog.text = "I simply live. There is no other option. My friends are mostly men because our two marriageable beauties - Gillian and Tanneke - don't like me. Natalie was a nice girl until she has started to spend a lot of time with those two idiots. Stupidity is contagious.";
 			link.l1 = "I see...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_3 = "true";
 		break;
 		
 		case "ansewer_4":
-			dialog.text = "I work like other girls. Our primary goal is helping the men. There are a lot of work for women on the Island so I am quite busy. And I often get gifts it's a usual thing here. But don't think wrong about me, I am a not some wench. I was well educated in the proper family. I just don't play saint like someone does.";
-			link.l1 = "I didn't think anything wrong about you...";
+			dialog.text = "I work like the other girls, mostly helping the men. There's a lot of work for women on the island so I keep busy. And I often get gifts - it's a usual thing here. But don't think I am some wench; I was well educated and come from a good family. I just don't play the saint... like some women...";
+			link.l1 = "I wasn't thinking ill of you at all...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
 		break;
@@ -152,14 +152,14 @@ void ProcessDialogEvent()
 //----------------------------------------- специальные реакции -----------------------------------------------
 		//обнаружение ГГ в сундуках
 		case "Man_FackYou":
-			dialog.text = LinkRandPhrase("What are you doing there, ah? Thief!", "Just look at that! As soon as I was lost in contemplation, you decided to check my chest!", "Decided to check my chests? You won't get away with it!");
+			dialog.text = LinkRandPhrase("What are you doing - ah! Thief!", "Just look at that! As soon as I turn my back, you decide to ransack my chest!", "Ransacking my chests?! You won't get away with it!");
 			link.l1 = "Damn it!";
 			link.l1.go = "fight";
 		break;
 		
 		case "Woman_FackYou":
-			dialog.text = "What?! Decided to check my chests? You won't get away with it!";
-			link.l1 = "Foolish girl!";
+			dialog.text = "¡Hijo de puta! Breaking into my chest when my back is turned?!";
+			link.l1 = "Be quiet!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
 		break;
@@ -180,7 +180,7 @@ void ProcessDialogEvent()
 		
 		//замечание по обнажённому оружию
 		case "LSCNotBlade":
-			dialog.text = LinkRandPhrase("Listen, you'd better take your weapon away. It makes me nervous.", "You know, running with blade is not tolerated here. Take it away.", "Listen, don't play a medieval knight running with a sword around. Take it away, it doesn't suit you...");
+			dialog.text = LinkRandPhrase("Señor, put your weapon away. It makes me nervous.", "We don't like it when idiots run around with their swords out. Put it away.", "You look like an idiot running around with your sword out. Put it away...");
 			link.l1 = LinkRandPhrase("Fine.", "Sure.", "As you say...");
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
@@ -189,13 +189,13 @@ void ProcessDialogEvent()
 		case "CitizenNotBlade":
 			if (loadedLocation.type == "town")
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Listen, I am the citizen of the city and I'd ask you to hold down your blade.", "Listen, I am the citizen of the city and I'd ask you to hold down your blade.");
+				dialog.text = NPCharSexPhrase(NPChar, "Listen, put away your blade. You're upsetting people.", "We don't like it when idiots run around with their swords out. Put it away.");
 				link.l1 = LinkRandPhrase("Fine.", "Sure.", "As you say...");
 			}
 			else
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Be careful, pal, while running with a weapon. I can get nervous...", "I don't like when men are walking in front of me with their weapon ready. It scares me...");
-				link.l1 = RandPhraseSimple("Got it.", "I am taking it away.");
+				dialog.text = NPCharSexPhrase(NPChar, "Señor, put your weapon away. It makes me nervous.", "You look like an idiot running around with your sword out. Put it away...");
+				link.l1 = RandPhraseSimple("Sorry.", "I am putting it away.");
 			}
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";

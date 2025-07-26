@@ -143,7 +143,9 @@ void InitInterface(string iniName)
 	if(SHOW_BOUNDARIES == 1)
 	{
 		if(LanguageGetLanguage() != "Russian"){
-			SetNewPicture("BOUNDARIES", "interfaces\maps\english\" + "map_good_boundaries.tga");
+			if(LanguageGetLanguage() == "Chinese")
+				SetNewPicture("BOUNDARIES", "interfaces\maps\chinese\" + "map_good_boundaries.tga");
+			else SetNewPicture("BOUNDARIES", "interfaces\maps\english\" + "map_good_boundaries.tga");
 		} else {
 			SetNewPicture("BOUNDARIES", "interfaces\maps\russian\" + "map_good_boundaries.tga");
 		}
@@ -383,7 +385,9 @@ void SetNewMapPicture()
 			if (itmRef.id != "Map_Best")
 			{
 				if(LanguageGetLanguage() != "Russian"){
-					SetNewPicture("MAPS", "interfaces\Maps\english\" + itmRef.imageTga + ".tga");
+					if(LanguageGetLanguage() == "Chinese")
+						SetNewPicture("MAPS", "interfaces\Maps\chinese\" + itmRef.imageTga + ".tga");
+					else SetNewPicture("MAPS", "interfaces\Maps\english\" + itmRef.imageTga + ".tga");
 				} else {
 					SetNewPicture("MAPS", "interfaces\Maps\russian\" + itmRef.imageTga + ".tga");
 				}
@@ -394,7 +398,9 @@ void SetNewMapPicture()
 				SetNewPicture("MAPS", "");
 				XI_WindowShow("MAINBESTMAP_WINDOW", true);
 				if(LanguageGetLanguage() != "Russian"){
-					SetNewPicture("MAIN_MAP", "interfaces\Maps\english\" + "map_good.tga");
+					if(LanguageGetLanguage() == "Chinese")
+						SetNewPicture("MAIN_MAP", "interfaces\Maps\chinese\" + "map_good.tga");
+					else SetNewPicture("MAIN_MAP", "interfaces\Maps\english\" + "map_good.tga");
 				} else {
 					SetNewPicture("MAIN_MAP", "interfaces\Maps\russian\" + "map_good.tga");
 				}

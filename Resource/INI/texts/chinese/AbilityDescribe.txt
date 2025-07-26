@@ -1,0 +1,571 @@
+newline  {
+
+}
+
+BasicDefense	{基础防御}
+perkBasicDefense
+{
+角色受到的伤害降低10%. 
+}
+
+AdvancedDefense	{高级防御}
+perkAdvancedDefense
+{
+角色受到的伤害降低20%. 
+}
+
+CriticalHit	{暴击}
+perkCriticalHit
+{
+角色对敌人有5%的几率造成暴击。 
+}
+
+Ciras	{胸甲}
+perkCiras
+{
+此技能允许使用胸甲。 
+}
+
+SwordplayProfessional	{职业剑士}
+perkSwordplayProfessional
+{
+对敌人造成暴击的几率为15%. 角色受到的伤害降低30%. 
+}
+
+Grus	{驮骡}
+perkGrus
+{
+此能力允许多携带30磅物品。 
+}
+
+Rush	{奥美托奇利酊剂}
+perkRush
+{
+致幻酊剂, 促使瞬间展现巨大力量和耐力, 显著提高敏捷度和反应速度, 同时产生强烈攻击性和疼痛麻木感。 
+在12秒内, 角色的攻击变得更强大, 受到的伤害降低。 
+~
+此能力有1分钟冷却时间。 
+}
+
+Tireless	{不知疲倦}
+perkTireless
+{
+在战斗中获得二次呼吸, 帮助减少战斗疲劳。 能量恢复+15%。 
+}
+
+HardHitter {强力打击者}
+perkHardHitter
+{
+成功的重击攻击获得30%伤害加成。 
+}
+
+BladeDancer	{刃之舞者}
+perkBladeDancer
+{
+成功的群体攻击获得30%伤害加成。 
+}
+
+Sliding	{破防打击}
+perkSliding
+{
+穿透敌人格挡的几率额外增加20%。  
+每点(S)额外增加1%. 
+}
+
+Gunman {火枪手}
+perkGunman
+{
+角色更有效地使用手枪: 装填速度加快10%, 精准度提高10%。 
+~ 
+可以使用火绳枪、 滑膛枪、 迫击炮和其他重型单管武器。  
+~
+只有主角和特定先锋队员可以装备 此类枪支。 
+}
+
+GunProfessional {散兵}
+perkGunProfessional
+{
+火器装填速度加快25%. 精准度提高25%。 
+~
+可以使用多管和连发火器。 
+~
+角色可以穿过盟友射击滑膛枪而不 击中他们。 正中靶心! 
+}
+
+IronWill	{钢铁意志}
+perkIronWill
+{
+角色每三分钟可承受一次致命打击。 
+~
+降低哗变几率。 
+~
+对主角、 其水手长和先锋队员有效。 
+}
+
+SharedExperience	{快速学习}
+perkSharedExperience
+{
+升级和获取技能点更快, 相当于额外获得一点天赋(T). 
+~
+主角技能获得的经验与乘客、 副官和同伴共享, 分别为10%. 50%和33%, 且数量翻倍。 
+}
+
+Medic	{极佳健康}
+perkMedic
+{
+如果一天内未受重伤, 健康恢复更快。 减少角色受伤时的健康下降幅度。 在航行时同样生效, 但速度较慢。 
+~
+~
+仅玩家可用
+}
+
+HPPlus	{生命增长}
+perkHPPlus
+{
+此能力使英雄的最大生命值每升一 级额外增加一点。 追溯生效。 
+}
+
+EnergyPlus	{能量增长}
+perkEnergyPlus
+{
+使英雄的最大能量值每升一级增加 一点。 追溯生效。 
+}
+
+ByWorker	{兼职}
+perkByWorker
+{
+此角色可同时担任两个高级船员职 位。 
+~
+~
+~
+~
+~
+仅限高级船员.		 
+}
+
+perkByWorkerShort
+{
+此角色可同时担任两个高级船员职 位
+}
+
+ByWorker2	{多面手}
+perkByWorker2
+{
+此角色可同时担任三个高级船员职 位。 
+~
+~
+~
+~
+~
+仅限高级船员.		
+}
+
+perkByWorker2Short
+{
+此角色可同时担任三个高级船员职 位
+}
+
+Trustworthy	{值得信赖}
+perkTrustworthy
+{
+负面荣誉不再妨碍任务机会。 
+~
+增强欺骗守卫的能力。 
+~
+在酒馆中获得更多可雇佣的船员和 高级船员。 
+~
+在特定任务中解锁独特选项。 
+~
+仅限主角。 
+}
+
+ShipEscape	{紧急救援}
+perkShipEscape
+{
+可以使用救生艇从沉没的船只中自 救。 
+~
+如果同伴拥有此能力, 他或她将从沉没的船只或燃烧船中 逃脱, 乘坐救生艇回到你身边。 
+}
+
+Alchemy	{炼金术}
+perkAlchemy
+{
+允许无需使用炼金术士的箱子等特 殊工具制作物品。 
+~
+~
+~
+~
+仅玩家可用	
+}
+
+FastReload {快速装填}
+perkFastReload
+{
+加农炮装填速度加快10%。 
+}
+
+ImmediateReload	{准备装填}
+perkImmediateReload
+{
+使用此能力后, 下一次装填将加快30%。 此能力有5分钟冷却时间。 
+}
+
+HullDamageUp	{船体伤害增加}
+perkHullDamageUp
+{
+对敌人船只船体的伤害增加15%。 
+}
+
+SailsDamageUp	{船帆伤害增加}
+perkSailsDamageUp
+{
+对敌人船只船帆的伤害增加15%。 
+}
+
+CrewDamageUp {船员伤害增加}
+perkCrewDamageUp
+{
+对敌人船只船员的伤害增加15%。 
+}
+
+CriticalShoot	{关键射击}
+perkCriticalShoot
+{
+角色对敌人齐射有5%的几率造成暴击。 
+}
+
+LongRangeShoot	{增加射程}
+perkLongRangeShoot
+{
+加农炮射程增加15%。 
+}
+
+CannonProfessional	{专业炮手}
+perkCannonProfessional
+{
+对敌人船只任何部位的伤害增加30%。 造成暴击的几率增加15%。 
+}
+
+LongRangeGrappling	{有效登船}
+perkLongRangeGrappling
+{
+登船范围增加15%。 
+}
+
+MusketsShoot {滑膛枪齐射}
+perkMusketsShoot
+{
+登船前会进行滑膛枪齐射。 
+~
+敌人的伤亡取决于船只大小和活跃 先锋队员数量。 
+}
+
+GrapplingProfessional	{专业登船}
+perkGrapplingProfessional
+{
+登船范围增加25%。 现在可以在任何角度和船速下登船。 
+}
+
+BasicBattleState	{基础船只防御}
+perkBasicBattleState
+{
+船只受到的一般伤害降低15%。 
+}
+
+AdvancedBattleState	{改进船只防御}
+perkAdvancedBattleState
+{
+船只受到的一般伤害降低25%。 
+}
+
+ShipDefenseProfessional	{专业船只防御}
+perkShipDefenseProfessional
+{
+船只受到的一般伤害降低25%。 受到暴击的几率降低70%。 
+}
+
+
+ShipSpeedUp	{速度增加}
+perkShipSpeedUp
+{
+船只最大速度增加15%。 
+}
+
+ShipTurnRateUp	{机动性增加}
+perkShipTurnRateUp
+{
+船只机动性增加15%。 
+}
+
+StormProfessional	{风暴生存}
+perkStormProfessional
+{
+风暴造成的伤害降低30%。 
+}
+
+Turn180	{快速转向}
+perkTurn180
+{
+在1分钟内, 转向速度加快4倍。 此能力有3分钟冷却时间。 
+}
+
+SailingProfessional	{熟练海员}
+perkSailingProfessional
+{
+船只速度和机动性增加20%。 世界地图上3/4的普通船只可以被绕过。 
+}
+
+SeaDogProfessional	{海洋之犬}
+perkSeaDogProfessional
+{
+看到海洋之犬的旗帜, 即使是最大胆的冒险家和强盗也不 敢挑战命运。 舰队力量增加30%。 
+~
+~
+~
+此技能仅玩家可用, 需要25级才能获得。 
+}
+
+
+FlagPir	{海盗旗}
+perkFlagPir
+{
+有机会将旗帜改为海盗旗。 
+~
+~
+~
+仅玩家可用	
+}
+
+FlagEng	{英国旗}
+perkFlagEng
+{
+有机会将旗帜改为英国国旗。 伪装失败的几率取决于潜行、 舰队中船只数量和等级, 以及敌船数量和悬赏。 
+~
+~
+~
+仅玩家可用	
+}
+
+FlagFra	{法国旗}
+perkFlagFra
+{
+有机会将旗帜改为法国国旗。 伪装失败的几率取决于潜行、 舰队中船只数量和等级, 以及敌船数量和悬赏。 
+~
+~
+~
+仅玩家可用
+}
+
+FlagSpa	{西班牙旗}
+perkFlagSpa
+{
+有机会将旗帜改为西班牙国旗。 伪装失效的概率取决于潜行、 舰队中船只数量和等级, 以及敌船数量和悬赏。 
+~
+~
+~
+仅玩家可用
+}
+
+FlagHol	{荷兰旗}
+perkFlagHol
+{
+有机会将旗帜改为荷兰国旗。 伪装失败的几率取决于潜行、 舰队中船只数量和等级, 以及敌船数量和悬赏。 
+~
+~
+~
+仅玩家可用
+}
+
+Brander	{燃烧船}
+perkBrander
+{
+解锁派遣盟友船只在敌船附近引爆 的战术, 造成巨大伤害。 
+}
+
+Troopers	{围攻战术}
+perkTroopers
+{
+有机会使用舰队中所有船只的船员 攻击堡垒, 作为联合部队派遣。 
+减少对定居点进行陆地攻击所需的 小队规模。 
+}
+
+BasicCommerce	{基础贸易}
+perkBasicCommerce
+{
+所有贸易操作额外享受10%折扣。 
+}
+
+AdvancedCommerce	{高级贸易}
+perkAdvancedCommerce
+{
+所有贸易操作额外获得10%出售加成。 
+}
+
+ProfessionalCommerce	{专业贸易}
+perkProfessionalCommerce
+{
+所有贸易操作额外享受15%折扣和15%出售加成。 
+}
+
+Carpenter	{自主维修}
+perkCarpenter
+{
+此技能在陆地冒险或世界地图上生 效。 在船上, 如果船长拥有此能力, 受损的船体或现有桅杆上的索具会 缓慢修复。 需要木板修复船体, 帆布修复船帆。 
+}
+
+InstantRepair	{战斗维修}
+perkInstantRepair
+{
+即使在激烈战斗中也能快速修复, 但需要大量木板和帆布。 无法修复倒下的桅杆。 
+船只船体最大修复80%。 这取决于维修技能。 装备物品和维修技能
+90秒冷却。 
+}
+
+LightRepair	{紧急维修}
+perkLightRepair
+{
+此技能允许在战斗中快速修补船体 - 最大可达可用船体生命值的10%。 如果船体生命值低于10%, 还能防止船只开始下沉。 
+每3分钟生效60秒。 
+自主维修速度加快50%。 
+}
+
+Builder	{专业维修}
+perkBuilder
+{
+任何维修所需木板和帆布减少25%。 自主维修速度加快100%。 
+}
+
+SelfRepair {完全维修}
+perkSelfRepair
+{
+允许在任何方便的海岸依靠船员努 力完全修复船只。 需要木板和帆布。 允许完全修复船体。 船帆和桅杆。 
+只能在陆地沿海地点进行维修。 
+}
+
+WindCatcher	{增强动力}
+perkWindCatcher
+{
+可以感知风向的细微变化并加以利 用。 船只加速快10%。 
+}
+
+SailsMan	{快速船帆}
+perkSailsMan
+{
+成功将所有船帆操作速度提高10%。 
+}
+
+Doctor1	{医师}
+perkDoctor1
+{
+海战中因伤口和霰弹造成的伤亡减 少10%。 
+}
+
+Doctor2	{医生}
+perkDoctor2
+{
+海战中因伤口和霰弹造成的伤亡减 少20%。 
+}
+
+InstantBoarding {立即登船}
+FencingMaster {决斗者}
+perkFencingMaster
+{
+战斗中被击中不消耗能量。 
+~
+10%几率造成暴击。 
+~
+成功的快速攻击获得30%伤害加成。 
+~
+仅限决斗者背景。 
+}
+
+TannedLeather {厚皮}
+perkTannedLeather
+{
+轻型盔甲和衣物保护效果提高20%。 
+~
+~
+~
+仅限决斗者背景。 
+}
+
+RatsWolf {鼠狼}
+perkRatsWolf
+{
+你的船只不太可能受到老鼠或其他 害虫的伤害。 
+~
+~
+~
+仅限会计背景。 
+}
+
+Mimicry {天生伪装者}
+perkMimicry
+{
+被军舰和堡垒发现的概率降低50%。 
+~
+~
+~
+仅限会计背景。 
+}
+
+TreasureHunter {宝藏猎人}
+perkTreasureHunter
+{
+出色的洞察力使你能找到内容更好 的宝藏。 
+~
+~
+~
+仅限会计背景。 
+}
+
+Dragoon {青铜骑士}
+perkDragoon
+{
+胸甲保护效果提高15%。 
+~
+成功的劈砍和重击攻击分别获得15%和30%伤害加成。 
+~
+~
+仅限运动员背景。 
+}
+
+SecondWind {生命呼吸}
+perkSecondWind
+{
+能量恢复速度加快15%。 
+~
+~
+~
+仅限运动员背景。 
+}
+
+Jager {猎兵}
+perkJager
+{
+火器装填速度加快40%。 
+~
+~
+~
+仅限神射手背景。 
+}
+
+Bombardier {投弹手}
+perkBombardier
+{
+加农炮在战斗中更耐用。 
+~
+~
+~
+仅限神射手背景。 
+}
+
+Sniper {狙击手}
+perkSniper
+{
+使用个人火器射击会对目标造成冲 击并迫使其失去能量。 
+~
+~
+~
+仅限神射手背景。 
+}

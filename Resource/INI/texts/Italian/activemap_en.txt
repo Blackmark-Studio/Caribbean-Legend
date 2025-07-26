@@ -1,4 +1,4 @@
-﻿CONTRABAND {Contrabbando}
+CONTRABAND {Contrabbando}
 AGGRESSIVE {Forte richiesta}
 EXPORT {Esporta}
 IMPORT {Importa}

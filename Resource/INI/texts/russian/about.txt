@@ -2,7 +2,7 @@ newline  {
 
 }
 
-headers { 17 }
+headers { 18 }
 
 header_1_text {  }
 header_1_color { yellow }
@@ -90,109 +90,113 @@ header_16_text { Видеоматериалы }
 header_16_lines { 2 }
 header_16_line_1 { Теса (Tesa) Кровичене }
 header_16_line_2 { Михаил (d'Artagnan) Мельник }
-header_17_text { Студия выражает благодарность }
-header_17_lines { 104 }
-header_17_line_1 { Александру (Reefership) Мосяжу }
-header_17_line_2 { Андрею (Hawcker) Амарфию }
-header_17_line_3 { Одноглазый }
-header_17_line_4 { Елене (makarena) Макаровой }
-header_17_line_5 { Валерию (валера) Мошатину }
-header_17_line_6 { Дмитрию (dim10) Трубецкому }
-header_17_line_7 { Шоте (Ван дер Декен) Губелидзе }
-header_17_line_8 { Игорю (delfin_) Чернею }
-header_17_line_9 { Максиму (Shomaan) Шиманскому }
-header_17_line_10 { Матвею (Mett) Топчилко }
-header_17_line_11 { Алексею (q4a) Комарову }
-header_17_line_12 { Сергею (Serginio) Капцану }
-header_17_line_13 { Виталию (Альмейде) Нечхаеву }
-header_17_line_14 { Александру (Lexanni) Волчкову }
-header_17_line_15 { Александру (Шурик) Шпехту }
-header_17_line_16 { Александру (Captain Flint) Кожушко }
-header_17_line_17 { Дмитрию (Джафару) Стреляеву }
-header_17_line_18 { Юрию (Ursus) Рогачу }
-header_17_line_19 { Алексею (AlexusB) Бобровникову }
-header_17_line_20 { Алексею (Soni) Рябову }
-header_17_line_21 { Montbrain }
-header_17_line_22 { pirat1 }
-header_17_line_23 { Zagolsky }
-header_17_line_24 { Ивану (kb31) Кондакову }
-header_17_line_25 { Артему Кононенко }
-header_17_line_26 { Sam Hambrouck  }
-header_17_line_27 { Ивану Якимчаку }
-header_17_line_28 { Andrea Mangione  }
-header_17_line_29 { Константину Облаухову }
-header_17_line_30 { Артему Воротникову }
-header_17_line_31 { Вадиму Грудеву }
-header_17_line_32 { Andrei Shtabel  }
-header_17_line_33 { Szymon J.  }
-header_17_line_34 { Anthony Lapenok  }
-header_17_line_35 { Станиславу Жукову }
-header_17_line_36 { Asapin  }
-header_17_line_37 { Евгению Шалыгину }
-header_17_line_38 { kk-se  }
-header_17_line_39 { Егору Олефиренко }
-header_17_line_40 { TotalCaesar659  }
-header_17_line_41 { CaptainBeltrop  }
-header_17_line_42 { Николаю Пригодичу }
-header_17_line_43 { wildam }
-header_17_line_44 { EvgAnat }
-header_17_line_45 { Nikk }
-header_17_line_46 { Johnny88 }
-header_17_line_47 { Xenon }
-header_17_line_48 { Павлу Ловцову }
-header_17_line_49 { Алексею Уткину }
-header_17_line_50 { Сергею Арифулину }
-header_17_line_51 { Георгию Неприенко }
-header_17_line_52 { Александру Кузнецову }
-header_17_line_53 { Владиславу Масенко }
-header_17_line_54 { Роману Ковалеву }
-header_17_line_55 { Артему Толстоброву }
-header_17_line_56 { Максиму Хохрину }
-header_17_line_57 { Сардиону Млхоеву }
-header_17_line_58 { Тимуру Буачидзе }
-header_17_line_59 { Сергею Попову }
-header_17_line_60 { Алексею Коновалову }
-header_17_line_61 { Максиму Вандушеву }
-header_17_line_62 { Дмитрию Миропольскому }
-header_17_line_63 { Сергею Порывкину }
-header_17_line_64 { Дмитрию Лапину }
-header_17_line_65 { Федору Гончарову }
-header_17_line_66 { Михаилу Еремееву }
-header_17_line_67 { Вячеславу Никитину }
-header_17_line_68 { Антону Пантелееву }
-header_17_line_69 { Александру Заливако }
-header_17_line_70 { Герману Горшкову }
-header_17_line_71 { Jason Rhodes }
-header_17_line_72 { Eric Smith }
-header_17_line_73 { Владиславу Гольцу }
-header_17_line_74 { Damien Pittet }
-header_17_line_75 { Maik Pfarrherr }
-header_17_line_76 { Alessio Casarin }
-header_17_line_77 { Kyle J. S. }
-header_17_line_78 { Александру Меркушину }
-header_17_line_79 { Sam Muench }
-header_17_line_80 { Michael Perkins }
-header_17_line_81 { Bud Buddy }
-header_17_line_82 { Lartan }
-header_17_line_83 { Xenon Casper }
-header_17_line_84 { Анастасии Авериной }
-header_17_line_85 { Артему Вентцелю }
-header_17_line_86 { Alessio Casarin }
-header_17_line_87 { Sam Muench }
-header_17_line_88 { Franciszek Jureczka }
-header_17_line_89 { William Nelson }
-header_17_line_90 { Dmytro Kekukh }
-header_17_line_91 { Maris Jurgenbergs }
-header_17_line_92 { Daniel Helmenstein }
-header_17_line_93 { Sami Vahtera }
-header_17_line_94 { Vova Bezruchuk }
-header_17_line_95 { Jakub R. K. Szczygiel }
-header_17_line_96 { Sergiy Bezruchuk }
-header_17_line_97 { Peter Mitchell }
-header_17_line_98 { Bartlomiej Borkowski }
-header_17_line_99 { Igor Juhas }
-header_17_line_100 { Mark Brooks }
-header_17_line_101 { Jonas Kaufmann }
-header_17_line_102 { ScreamPassion }
-header_17_line_103 { Дмитрию (Капитан Фадей) Кидуну }
-header_17_line_104 { Денису (John Prelone) Худякову }
+header_17_text { Перевод на китайский }
+header_17_lines { 2 }
+header_17_line_1 { Qian Li Gong Chan Juan (sht8694) }
+header_17_line_2 { Wa Dong De Hou Zi (MONKEY HOLE) }
+header_18_text { Студия выражает благодарность }
+header_18_lines { 104 }
+header_18_line_1 { Александру (Reefership) Мосяжу }
+header_18_line_2 { Андрею (Hawcker) Амарфию }
+header_18_line_3 { Одноглазый }
+header_18_line_4 { Елене (makarena) Макаровой }
+header_18_line_5 { Валерию (валера) Мошатину }
+header_18_line_6 { Дмитрию (dim10) Трубецкому }
+header_18_line_7 { Шоте (Ван дер Декен) Губелидзе }
+header_18_line_8 { Игорю (delfin_) Чернею }
+header_18_line_9 { Максиму (Shomaan) Шиманскому }
+header_18_line_10 { Матвею (Mett) Топчилко }
+header_18_line_11 { Алексею (q4a) Комарову }
+header_18_line_12 { Сергею (Serginio) Капцану }
+header_18_line_13 { Виталию (Альмейде) Нечхаеву }
+header_18_line_14 { Александру (Lexanni) Волчкову }
+header_18_line_15 { Александру (Шурик) Шпехту }
+header_18_line_16 { Александру (Captain Flint) Кожушко }
+header_18_line_17 { Дмитрию (Джафару) Стреляеву }
+header_18_line_18 { Юрию (Ursus) Рогачу }
+header_18_line_19 { Алексею (AlexusB) Бобровникову }
+header_18_line_20 { Алексею (Soni) Рябову }
+header_18_line_21 { Montbrain }
+header_18_line_22 { pirat1 }
+header_18_line_23 { Zagolsky }
+header_18_line_24 { Ивану (kb31) Кондакову }
+header_18_line_25 { Артему Кононенко }
+header_18_line_26 { Sam Hambrouck  }
+header_18_line_27 { Ивану Якимчаку }
+header_18_line_28 { Andrea Mangione  }
+header_18_line_29 { Константину Облаухову }
+header_18_line_30 { Артему Воротникову }
+header_18_line_31 { Вадиму Грудеву }
+header_18_line_32 { Andrei Shtabel  }
+header_18_line_33 { Szymon J.  }
+header_18_line_34 { Anthony Lapenok  }
+header_18_line_35 { Станиславу Жукову }
+header_18_line_36 { Asapin  }
+header_18_line_37 { Евгению Шалыгину }
+header_18_line_38 { kk-se  }
+header_18_line_39 { Егору Олефиренко }
+header_18_line_40 { TotalCaesar659  }
+header_18_line_41 { CaptainBeltrop  }
+header_18_line_42 { Николаю Пригодичу }
+header_18_line_43 { wildam }
+header_18_line_44 { EvgAnat }
+header_18_line_45 { Nikk }
+header_18_line_46 { Johnny88 }
+header_18_line_47 { Xenon }
+header_18_line_48 { Павлу Ловцову }
+header_18_line_49 { Алексею Уткину }
+header_18_line_50 { Сергею Арифулину }
+header_18_line_51 { Георгию Неприенко }
+header_18_line_52 { Александру Кузнецову }
+header_18_line_53 { Владиславу Масенко }
+header_18_line_54 { Роману Ковалеву }
+header_18_line_55 { Артему Толстоброву }
+header_18_line_56 { Максиму Хохрину }
+header_18_line_57 { Сардиону Млхоеву }
+header_18_line_58 { Тимуру Буачидзе }
+header_18_line_59 { Сергею Попову }
+header_18_line_60 { Алексею Коновалову }
+header_18_line_61 { Максиму Вандушеву }
+header_18_line_62 { Дмитрию Миропольскому }
+header_18_line_63 { Сергею Порывкину }
+header_18_line_64 { Дмитрию Лапину }
+header_18_line_65 { Федору Гончарову }
+header_18_line_66 { Михаилу Еремееву }
+header_18_line_67 { Вячеславу Никитину }
+header_18_line_68 { Антону Пантелееву }
+header_18_line_69 { Александру Заливако }
+header_18_line_70 { Герману Горшкову }
+header_18_line_71 { Jason Rhodes }
+header_18_line_72 { Eric Smith }
+header_18_line_73 { Владиславу Гольцу }
+header_18_line_74 { Damien Pittet }
+header_18_line_75 { Maik Pfarrherr }
+header_18_line_76 { Alessio Casarin }
+header_18_line_77 { Kyle J. S. }
+header_18_line_78 { Александру Меркушину }
+header_18_line_79 { Sam Muench }
+header_18_line_80 { Michael Perkins }
+header_18_line_81 { Bud Buddy }
+header_18_line_82 { Lartan }
+header_18_line_83 { Xenon Casper }
+header_18_line_84 { Анастасии Авериной }
+header_18_line_85 { Артему Вентцелю }
+header_18_line_86 { Alessio Casarin }
+header_18_line_87 { Sam Muench }
+header_18_line_88 { Franciszek Jureczka }
+header_18_line_89 { William Nelson }
+header_18_line_90 { Dmytro Kekukh }
+header_18_line_91 { Maris Jurgenbergs }
+header_18_line_92 { Daniel Helmenstein }
+header_18_line_93 { Sami Vahtera }
+header_18_line_94 { Vova Bezruchuk }
+header_18_line_95 { Jakub R. K. Szczygiel }
+header_18_line_96 { Sergiy Bezruchuk }
+header_18_line_97 { Peter Mitchell }
+header_18_line_98 { Bartlomiej Borkowski }
+header_18_line_99 { Igor Juhas }
+header_18_line_100 { Mark Brooks }
+header_18_line_101 { Jonas Kaufmann }
+header_18_line_102 { ScreamPassion }
+header_18_line_103 { Дмитрию (Капитан Фадей) Кидуну }
+header_18_line_104 { Денису (John Prelone) Худякову }

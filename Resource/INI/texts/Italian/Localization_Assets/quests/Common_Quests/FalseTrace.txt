@@ -1,4 +1,4 @@
-﻿FalseTrace_1
+FalseTrace_1
 {
 Adam
 }

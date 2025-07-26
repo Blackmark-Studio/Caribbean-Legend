@@ -1,0 +1,17 @@
+Net_ShipDieFromPlayer 			{%1 <%2> 击沉了 %3 <%4>。 }
+Net_ShipDieFromCollisionLiveShip 	{%1 <%2> 撞击了 %3 <%4>。 }
+Net_ShipDieFromCollisionDeadShip 	{%1 <%2> 喂鲨鱼去了! 这样的领航员真倒霉! }
+Net_ShipDieFromCollisionIsland 		{%1 <%2> 触礁撞毁了! 这样的领航员真丢脸! }
+Net_ShipDieFromLighting 		{上帝对 %1 <%2> 发怒并惩戒了他! }
+Net_ShipDieFromCriticalHit 		{%1 <%2> 把 %3 <%4> 炸成了碎片! }
+Net_CriticalHit 			{%1 <%2> 击中了 %3 <%4> 甲板上的火药桶! }
+Net_MastFallFromHit 			{%1 <%2> 击落了 %3 <%4> 的桅杆。 }
+Net_MastFallFromCollision 		{%1 <%2> 因碰撞失去了桅杆。 }
+Net_FireActivation 			{%1 <%2> 点燃了 %3 <%4> }
+NetFG_ServerIsFull 			{服务器已满, 无法加入其他玩家。 }
+NetFG_NeedUserPassword 			{输入的密码与服务器存储的密码不 匹配, 请重试。 }
+NetFG_NeedServerPassword 		{您输入的服务器连接密码无效, 请重试。 }
+NetFG_RejectedUnknown 			{连接服务器因未知原因失败。 }
+NetFG_Banned 				{您被禁止访问此服务器。 }
+NetEG_DeathMatch 			{战斗结束。 \n \n%1 获胜! }
+NetEG_Team 				{战斗结束。 \n \n"%1" 队伍获胜! }

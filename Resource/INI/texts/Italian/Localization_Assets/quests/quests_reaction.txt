@@ -1,4 +1,4 @@
-﻿quests_reaction_1
+quests_reaction_1
 {
 Uffiaciale @<GetFullName(npchar)> è a bordo.
 }

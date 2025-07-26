@@ -120,7 +120,7 @@ void XI_SetQuestData()
 	else
 	{
 		SetNodeUsing("QUEST_TITLE", true);
-		if(nQuestsNum < maxQuestsNum)
+		if(nQuestsNum <= maxQuestsNum)
 			SetNodeUsing("QUESTSCROLL_TITLE", false);
 		else
 			SetNodeUsing("QUESTSCROLL_TITLE", true);
@@ -197,7 +197,7 @@ void QuestTopChange()
 		makearef(arefTmp,pchar.TmpQuestInfo);
 		int nQuestsNum = GetAttributesNum(arefTmp);
 		int maxVal = nQuestsNum - maxQuestsNum;
-		if(iCurQuest > nQuestsNum)
+		if(curQuestTop >= maxVal)
 			return;
 		
 		int newTop = curQuestTop + iAdd;

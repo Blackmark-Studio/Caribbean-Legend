@@ -1,0 +1,44 @@
+sea_minimap
+{
+  导航小地图。
+
+}
+ship_commands
+{
+  控制您的船只和同伴船只的命令。
+
+}
+fast_commands
+{
+  快速访问中的当前命令。
+
+}
+sea_aim
+{
+  船只加农炮的瞄准器。
+
+}
+alarm_indicator
+{
+  警报指示器。
+
+}
+land_commands
+{
+  陆地行动命令。
+
+}
+WorldMap_Date_Clock
+{
+  地图上的日期和时间指示器。
+
+}
+WorldMap_Compas
+{
+  地图上的指南针。 
+
+}
+Dialog_window
+{
+  对话窗口。
+}

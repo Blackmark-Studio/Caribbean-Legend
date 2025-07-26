@@ -18,53 +18,53 @@ void ProcessDialogEvent()
 		case "First time":
 			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
 			{
-				dialog.text = "I don't want to talk with you. You attack peaceful civilians with no reasons and provoke them to fight. Get lost!";
-				link.l1 = "Hm...";
+				dialog.text = "Paleface dog hurt white brothers and sisters. I not talk with you. Go.";
+				link.l1 = "Oh...";
 				link.l1.go = "exit";
 				break;
 			}
 			if (npchar.quest.meeting == "0")
 			{
 				dialog.text = "What white brother want?";
-				link.l1 = TimeGreeting()+". White brother? Tell me, why you, Indians, call us either white brothers or paleface dogs, huh?";
+				link.l1 = TimeGreeting()+". 'White brother'? Tell me, why do you Indians, call us either white brothers or paleface dogs, hmm?";
 				link.l1.go = "meeting";
 				npchar.quest.meeting = "1";
 			}
 			else
 			{
-				dialog.text = "Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+"! Want something?";
-				link.l1 = LinkRandPhrase("Got anything interesting to say?", "Has anything new happened on the island?", "Will you tell me the last gossips?");
+				dialog.text = ""+GetFullName(pchar)+"! "+TimeGreeting()+"! Want something?";
+				link.l1 = LinkRandPhrase("Hail, Curanai. What has been happening on the island lately?", "Has anything new happened on the island?", "Will you tell me the latest gossip?");
 				link.l1.go = "rumours_LSC";
 				link.l2 = "I want to ask you a few questions about the island.";
 				link.l2.go = "int_quests"; //информационный блок
 				if (CheckAttribute(npchar, "quest.answer_2"))
 				{
-					link.l3 = "Show what you were able to find. Perhaps, I would buy something...";
+					link.l3 = "Show me what you were able to find, I might buy something...";
 					link.l3.go = "trade";
 				}
-				link.l5 = "Just wanted to know how you're doing. See you!";
+				link.l5 = "Just wanted to see how you're doing. Goodbye!";
 				link.l5.go = "exit";
 			}
 			NextDiag.TempNode = "First time";
 		break;
 		
 		case "meeting": // первая встреча
-			dialog.text = "We all live in peace here, white brother. Curanai not call white brother the paleface dog. Not all paleface - dogs. I can call a lot Indians the redskin dog.";
-			link.l1 = "Hm. I take it that you are a philosopher...";
+			dialog.text = "We all live in peace here, white brother. I not call white brother paleface dog. Not all paleface are dogs, I call a lot Indians 'redskin dog.'";
+			link.l1 = "You sound like a philosopher.";
 			link.l1.go = "meeting_1";
 		break;
 		
 		case "meeting_1":
-			dialog.text = "Curanai don't understand you, white brother. What means philosopher?";
-			link.l1 = "It doesn't matter, redskin brother. I just like the way you think. You say your name is Curanai? My name is "+GetFullName(pchar)+". Glad to meet you.";
+			dialog.text = "I not understand you, white brother. What means 'philosopher'?";
+			link.l1 = "It doesn't matter, redskin brother. I just like the way you think. My name is "+GetFullName(pchar)+". What's yours?";
 			link.l1.go = "meeting_2";
 		break;
 		
 		case "meeting_2":
-			dialog.text = "Curanai glad to know white brother's name.";
-			link.l1 = "Fine. See you around!";
+			dialog.text = "Curanai be my name. I glad to know white brother's name.";
+			link.l1 = "Curanai... Well, see you around!";
 			link.l1.go = "exit";
-			link.l3 = "I want to ask you a few questions about the island.";
+			link.l3 = "I want to ask you a few questions about the island, Curanai.";
 			link.l3.go = "int_quests"; //информационный блок
 			NextDiag.TempNode = "First time";
 		break;
@@ -81,7 +81,7 @@ void ProcessDialogEvent()
 		
 //--------------------------------------- блок вопросов и ответов ---------------------------------------------
 		case "int_quests":
-			dialog.text = "Ask, paleface brother, Curanai answer.";
+			dialog.text = "Ask, white brother. I answer.";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
 			{
 				link.l1 = "How did you get here?";
@@ -89,17 +89,17 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "quest.answer_2"))
 			{
-				link.l2 = "What do you do on the Island?";
+				link.l2 = "What do you do on the island?";
 				link.l2.go = "ansewer_2";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_3"))
 			{
-				link.l3 = "Do you want to get home?";
+				link.l3 = "Do you want to go home?";
 				link.l3.go = "ansewer_3";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_4"))
 			{
-				link.l4 = "Do you live peacefully on the Island? Do fights or quarrels happen here?";
+				link.l4 = "Do you live peacefully on the island? Do fights or quarrels happen here?";
 				link.l4.go = "ansewer_4";
 			}
 			link.l10 = "No questions. Pardon...";
@@ -107,28 +107,28 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_1":
-			dialog.text = "I and several warriors of my tribe decide to sail to little isle close to our land, visible in clear day. We made a raft of bamboo and sail. But storm took us suddenly and moved us in the open sea. We not realize how fast our land and isle disappeared\nWe sailed the sea many-many nights and days. All my brothers died from thirst and hunger. I left alone - spirits took pity on Curanai and brought a raft to this island. I survived.";
-			link.l1 = "Yeah... Sad story.";
+			dialog.text = "I and seven warriors of my tribe decide to sail to little island not far from our island, visible in clear day. We make a raft of bamboo and sail. But storm take us suddenly and carry us into open sea. We not realize how fast our land and island disappeared.\nWe sail the sea many, many nights and days. All my brothers die from thirst and hunger. I alone am left - spirits take pity on I and bring raft to this island.";
+			link.l1 = "I see... sad story.";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_1 = "true";
 		break;
 		
 		case "ansewer_2":
-			dialog.text = "Curanai fishing. Curanai hit fish with harpoon. Rarely-rarely hit big crab. Then Curanai happy - crab is tasty, very tasty. One nipper enough for few days. And Curanai also dive bottom to one place. No big crabs there. Curanai pick yellow stone, blue stone, black stone and pearl. Big and small. Then Curanai sell them to paleface.";
+			dialog.text = "I fish; hit fish with harpoon. Rarely, rarely hit big crab. Then I happy; crab is tasty, very tasty. One crab enough for few days. And I also dive to bottom in one place, where no big crabs are. Pick yellow stone, blue stone, black stone, and pearl. Big and small. Then I sell them to white brother, white sister.";
 			link.l1 = "I see...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_2 = "true";
 		break;
 		
 		case "ansewer_3":
-			dialog.text = "Curanai want go home. But where is my home? Curanai doesn't know where his village and how to get it.";
-			link.l1 = "Hm. What can I say...";
+			dialog.text = "I want to go home. But where is home? I don't know where village is or how to sail there.";
+			link.l1 = "Hmm, I'm so sorry...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_3 = "true";
 		break;
 		
 		case "ansewer_4":
-			dialog.text = "Narwhal and Rivados fight often one versus another. We live in peace and don't hurt anyone. Sometimes palefaces drink fire water and swearing but no killing. There are two officer-warriors, one hates another. One day one kill another. Curanai know.";
+			dialog.text = "Narwhal and Rivados tribes fight often, one against another. There are two chieftains; one hates the other. Someday, one kill the other. I see this. Rest of us live in peace and don't hurt anyone. Sometimes white brothers drink fire water and swear... but no killing. ";
 			link.l1 = "I see...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
@@ -138,13 +138,13 @@ void ProcessDialogEvent()
 //----------------------------------------- специальные реакции -----------------------------------------------
 		//обнаружение ГГ в сундуках
 		case "Man_FackYou":
-			dialog.text = LinkRandPhrase("What are you doing there, ah? Thief!", "Just look at that! As soon as I was lost in contemplation, you decided to check my chest!", "Decided to check my chests? You won't get away with it!");
+			dialog.text = LinkRandPhrase("Stop, paleface dog! No take what you not own!", "Paleface dog take when I not look?! No!", "That mine, paleface dog! I not let you take what isn't yours!");
 			link.l1 = "Shit!";
 			link.l1.go = "fight";
 		break;
 		
 		case "Woman_FackYou":
-			dialog.text = "What?! Decided to check my chests? You won't get away with it!";
+			dialog.text = "What?! Decided to ransack my chests? You won't get away with it!";
 			link.l1 = "Foolish girl!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
@@ -166,8 +166,8 @@ void ProcessDialogEvent()
 		
 		//замечание по обнажённому оружию
 		case "LSCNotBlade":
-			dialog.text = LinkRandPhrase("Listen, you'd better take your weapon away. It makes me nervous.", "You know, running with blade is not tolerated here. Take it away.", "Listen, don't play a medieval knight running with a sword around. Take it away, it doesn't suit you...");
-			link.l1 = LinkRandPhrase("Fine.", "Sure.", "As you say...");
+			dialog.text = LinkRandPhrase("I not like seeing white brother's naked steel. Put back.", "White brothers and sisters not like seeing you run with steel. Stop, brother.", "Don't play hero, white brother. Put steel away.");
+			link.l1 = LinkRandPhrase("Fine.", "Sure.", "Sorry...");
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;	
@@ -175,12 +175,12 @@ void ProcessDialogEvent()
 		case "CitizenNotBlade":
 			if (loadedLocation.type == "town")
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Listen, I am the citizen of the city and I'd ask you to hold down your blade.", "Listen, I am the citizen of the city and I'd ask you to hold down your blade.");
+				dialog.text = NPCharSexPhrase(NPChar, "I live here in peace. It wrong to go with steel in hand.", "Hold, white brother. Put steel away, it frighten I.");
 				link.l1 = LinkRandPhrase("Fine.", "Whatever then.", "As you say...");
 			}
 			else
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Be careful, pal, while running with a weapon. I can get nervous...", "I don't like when men are walking in front of me with their weapon ready. It scares me...");
+				dialog.text = NPCharSexPhrase(NPChar, "White brother, put steel away. It make me nervous...", "White man only hold steel if plan to use. Put away...");
 				link.l1 = RandPhraseSimple("Got it.", "I am taking it away.");
 			}
 			link.l1.go = "exit";

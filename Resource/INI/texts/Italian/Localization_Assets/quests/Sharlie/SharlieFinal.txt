@@ -1,4 +1,4 @@
-﻿SharlieFinal_1
+SharlieFinal_1
 {
 Cathrin
 }

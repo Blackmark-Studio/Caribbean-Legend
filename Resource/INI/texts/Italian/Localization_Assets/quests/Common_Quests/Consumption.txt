@@ -1,4 +1,4 @@
-﻿Consumption_1
+Consumption_1
 {
 
 }

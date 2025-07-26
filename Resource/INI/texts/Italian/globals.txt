@@ -1,4 +1,4 @@
-﻿QUEST_MESSAGE1 {La colonia di El Caimano è occupata.}
+QUEST_MESSAGE1 {La colonia di El Caimano è occupata.}
 QUEST_MESSAGE2 {La colonia di El Caimano viene catturata.}
 QUEST_MESSAGE3 {Sei troppo vecchio per resistere alla maledizione dell'oro azteco..}
 QUEST_MESSAGE4 {Hai trovato un tesoro!}

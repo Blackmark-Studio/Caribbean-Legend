@@ -1,0 +1,25 @@
+Memento_1
+{
+Memento
+}
+
+Memento_2
+{
+Mortimer
+}
+
+Memento_3
+{
+Grim
+}
+
+Memento_4
+{
+船长, 那正是‘纪念品号’-- 奴隶贩子的克星! 
+他不是我们的敌人, 所以我们可以派一艘小船。 
+}
+
+Memento_5
+{
+Forsaken
+}

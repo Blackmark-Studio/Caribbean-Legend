@@ -2368,7 +2368,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Kapstervil_GrotSoldiers_1_1":
-			dialog.text = "（在普通话中）我听到脚步声...";
+			dialog.text = "(在普通话中) 我听到脚步声...";
 			link.l1 = "(en Mandarín) Hay alguien más aquí...";
 			link.l1.go = "PZ_Kapstervil_GrotSoldiers_2";
 		break;

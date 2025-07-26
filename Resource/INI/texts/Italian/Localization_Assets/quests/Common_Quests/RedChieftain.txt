@@ -1,4 +1,4 @@
-﻿RedChieftain_1
+RedChieftain_1
 {
 chieftain
 }

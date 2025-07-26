@@ -1,0 +1,442 @@
+
+Antigua			{安提瓜}
+Barbados		{巴巴多斯}
+Bermudes		{宝藏岛}
+Beliz			{尤卡坦}
+Cuba   			{古巴}
+Cuba1   		{古巴}
+Cuba2   		{古巴}
+Caiman 			{开曼}
+Cumana 			{主城区}
+Caracas 		{主城区}
+Curacao			{库拉索}
+Cartahena 		{主城区}
+Dominica		{多米尼加}
+Guadeloupe		{瓜德罗普}
+Hispaniola 		{伊斯帕尼奥拉}
+Hispaniola1		{伊斯帕尼奥拉}
+Hispaniola2 	{伊斯帕尼奥拉}
+Jamaica			{牙买加}
+Maracaibo 		{主城区}
+Martinique		{马提尼克}
+SentMartin		{圣马丁}
+Nevis			{圣克里斯托弗}
+PuertoRico		{波多黎各}
+PortoBello 		{主城区}
+Pearl 			{珍珠滩}
+Panama 			{巴拿马}
+SantaCatalina 	{主城区}
+Terks			{特克斯}
+Tortuga			{托尔图加}
+Trinidad		{特立尼达}
+Tenotchitlan 	{佩滕湖}
+Mein 			{主城区}
+KhaelRoa 		{凯尔罗阿}
+Ksochitam 		{克索奇特姆}
+RockIsland 		{北部礁群}
+Providence 		{普罗维登斯}
+SantaQuiteria 	{圣基特里亚}
+IslaDeVieques 	{别克斯岛}
+IslaMona 		{莫纳岛}
+IslaDeCoche 	{科切岛}
+Tobago 			{多巴哥}
+MarieGalante 	{玛丽加朗特}
+
+SentJons_town 	{圣约翰}
+Pirates_town	{夏普敦}
+Bridge_town		{布里奇敦}
+Beliz_town		{伯利兹}
+Santiago_town	{圣地亚哥}
+PuertoPrincipe_town	{王子港}
+Havana_town		{哈瓦那}
+Cumana_town		{库马纳}
+Caracas_town	{加拉加斯}
+Villemstad_town	{威廉斯塔德}
+Cartahena_town	{卡塔赫纳}
+BasTer_town		{巴斯特尔}
+SantoDomingo_town	{圣多明各}
+LaVega_town		{拉维加}
+PortPax_town	{太子港}
+PortRoyal_town	{皇家港}
+Maracaibo_town	{马拉开波}
+FortFrance_town	{圣皮埃尔}
+LeFransua_town	{勒弗朗索瓦}
+Marigo_town		{菲利普斯堡}
+Charles_town	{卡普斯特维尔}
+SanJuan_town	{圣胡安}
+PortoBello_town	{贝洛港}
+Panama_town		{巴拿马}
+SantaCatalina_town	{布鲁维尔德}
+Tortuga_town	{托尔图加}
+PortSpein_town	{圣何塞}
+Tenotchitlan_town	{塔亚萨尔}
+FortOrange_town	{马龙镇}
+Providence_town	{圣安德烈斯}
+Estate 			{奥格尔索普庄园, 英格兰}
+DesMoines 		{得梅因}
+LosTeques_town 	{洛斯泰克斯矿场}
+ExitMine 		{通往矿场的通道}
+Factoria 		{工厂}						   
+
+Shore1	{布恩角}
+Shore2	{法尔茅斯峡}
+Shore3	{贝努雷斯峡}
+Shore4	{哈里森角}
+Shore5	{拉格角}
+Shore6	{卡托切角}
+Shore7	{科苏梅尔湾}
+Shore8	{切图马尔峡}
+Shore9	{阿马蒂克峡}
+Shore10	{卡拉塔斯卡泻湖}
+Shore11	{卡马圭角}
+Shore12	{安娜玛丽亚湾}
+Shore13	{巴塔巴诺湾}
+Shore14	{胡文图德峡}
+Shore15	{圣安东尼奥角}
+Shore16	{荒漠海岸}
+Shore17	{埃斯梅拉达湾}
+Shore18	{蛇口海岸}
+Shore19	{卡鲁帕诺峡}
+Shore20	{洛斯泰克斯海滩}
+Shore21	{阿鲁巴角}
+Shore22	{范哈托海岸}
+Shore23	{圣玛丽亚角}
+Shore24	{布兰卡泻湖}
+Shore25	{科维尼亚斯峡}
+Shore26	{布鲁斯城堡海滩}
+Shore27	{斯科特角}
+Shore28	{莫尔内阿洛湾}
+Shore29	{卡普斯特海滩}
+Shore30	{格朗堡峡}
+Shore31	{不可接近角}
+Shore32	{伊莎贝拉角}
+Shore33	{萨马纳峡}
+Shore34	{戈纳夫湾}
+Shore35	{内格里尔角}
+Shore36	{波特兰峡}
+Shore37	{瓜希拉峡}
+Shore38	{拉芒坦湾}
+Shore39	{勒马林峡}
+Shore40	{格兰德凯斯海滩}
+Shore41	{辛普森湾}
+Shore42	{桑迪湾}
+Shore43	{半月湾}
+Shore44	{阿瓜迪亚峡}
+Shore45	{法哈多海滩}
+Shore46	{奇里基泻湖}
+Shore47	{蚊子湾}
+Shore48	{达连湾}
+Shore49	{帕帕加约湾}
+Shore50	{尼科亚湾}
+Shore51	{科罗纳多湾}
+Shore52	{杜尔塞湾}
+Shore53	{蚊子海岸}
+Shore54	{佩拉斯角}
+Shore55	{圣胡安德诺特湾}
+Shore56	{北部湾}
+Shore57	{南部湾}
+Shore58	{鱼眼海滩}
+Shore59	{斯卡伯勒峡}
+Shore60	{加莱拉角}
+Shore61	{特佩亚卡克}
+Shore62	{伊斯塔帕拉帕}
+Shore63	{圣米格尔湾}
+Shore64 {礁峡}
+Shore65 {岩石湾}
+Shore66 {鲨鱼海滩}
+Shore66_1 {诅咒湾}
+Shore67 {骷髅礁}
+Shore67_1 {骷髅礁 - 西部}
+Shore67_2 {骷髅礁 - 东部}
+Shore68 {因加拉多湾}
+Shore69 {圣玛丽亚德尔马尔海滩}
+Shore70 {奴隶峡}
+Shore71 {轻蔑角}
+Shore72 {东方峡}
+Shore73 {马切特角}
+Shore74 {螃蟹海滩}
+Shore75 {总督峡}
+Shore76 {溺亡者角}
+Shore77 {别克斯峡}
+Shore78 {海盗湾}
+Shore79 {卡沃罗霍角}
+
+Shore_ship1	{萨博-马蒂拉峡}
+Shore_ship2	{危险湾}
+Shore_ship3	{虚幻希望角}
+Shore_ship4	{诅咒湾}
+
+Shore_mask	{守护者洞穴}
+
+Mayak1	{特立尼达灯塔}
+Mayak2	{巴巴多斯灯塔}
+Mayak3	{皇家港灯塔}
+Mayak4	{瓜德罗普灯塔}
+Mayak5	{圣克里斯托弗灯塔}
+Mayak6	{托尔图加灯塔}
+Mayak7	{太子港灯塔}
+Mayak8	{圣多明各灯塔}
+Mayak9	{圣地亚哥灯塔}
+Mayak10	{哈瓦那灯塔}
+Mayak11	{卡塔赫纳灯塔}
+
+Bridgetown		{布里奇敦}
+Bridgetown Town	{布里奇敦}
+Bridgetown Fort	{布里奇敦堡垒}
+Bridgetown Port	{布里奇敦港口}
+
+SanJuan			{圣胡安}
+SanJuan Town	{圣胡安}
+SanJuan Fort	{圣胡安堡垒}
+SanJuan Port	{圣胡安港口}
+
+Santiago		{圣地亚哥}
+Santiago Town	{圣地亚哥}
+Santiago Fort	{圣地亚哥堡垒}
+Santiago Port	{圣地亚哥港口}
+
+PuertoPrincipe	{王子港}
+PuertoPrincipe Town	{王子港}
+PuertoPrincipe Fort	{王子港堡垒}
+PuertoPrincipe Port	{王子港港口}
+
+SentJons		{圣约翰}
+SentJons Town	{圣约翰}
+SentJons Fort	{圣约翰堡垒}
+SentJons Port	{圣约翰港口}
+
+PortRoyal		{皇家港}
+PortRoyal Town	{皇家港}
+PortRoyal Fort	{皇家港堡垒}
+PortRoyal Port	{皇家港港口}
+
+FortOrange		{马龙镇}
+FortOrange Town	{马龙镇}
+
+Villemstad		{威廉斯塔德}
+Villemstad Town	{威廉斯塔德}
+Villemstad Fort	{威廉斯塔德堡垒}
+Villemstad Port	{威廉斯塔德港口}
+
+BasTer			{巴斯特尔}
+BasTer Town		{巴斯特尔}
+BasTer Fort		{巴斯特尔堡垒}
+BasTer Port		{巴斯特尔港口}
+
+LaVega			{拉维加}
+LaVega Town		{拉维加}
+LaVega Fort		{拉维加堡垒}
+LaVega Port		{拉维加港口}
+
+SantoDomingo	{圣多明各}
+SantoDomingo Town	{圣多明各}
+SantoDomingo Fort	{圣多明各堡垒}
+SantoDomingo Port	{圣多明各港口}
+
+PortPax			{太子港}
+PortPax Town	{太子港}
+PortPax Fort	{太子港堡垒}
+PortPax Port	{太子港港口}
+
+Pirates			{夏普敦}
+Pirates Town	{夏普敦}
+Pirates Port	{夏普敦港口}
+
+FortFrance		{圣皮埃尔}
+FortFrance Town	{圣皮埃尔}
+FortFrance Fort	{圣皮埃尔堡垒}
+FortFrance Port	{圣皮埃尔港口}
+
+LeFransua		{勒弗朗索瓦}
+LeFransua Town	{勒弗朗索瓦}
+LeFransua Port	{勒弗朗索瓦港口}
+
+Havana			{哈瓦那}
+Havana Town		{哈瓦那}
+Havana Fort		{哈瓦那堡垒}
+Havana Port		{哈瓦那港口}
+
+Charles			{卡普斯特维尔}
+Charles Town	{卡普斯特维尔}
+Charles Fort	{卡普斯特维尔堡垒}
+Charles Port	{卡普斯特维尔港口}
+
+PortoBello Town	{贝洛港}
+PortoBello Fort	{贝洛港堡垒}
+PortoBello Port	{贝洛港港口}
+
+PortSpein		{圣何塞}
+PortSpein Town	{圣何塞}
+PortSpein Fort	{圣何塞堡垒}
+PortSpein Port	{圣何塞港口}
+
+Tortuga			{托尔图加}
+Tortuga Town	{托尔图加}
+Tortuga Fort	{托尔图加堡垒}
+Tortuga Port	{托尔图加港口}
+
+Marigo			{菲利普斯堡}
+Marigo Town		{菲利普斯堡}
+Marigo Fort		{菲利普斯堡堡垒}
+Marigo Port		{菲利普斯堡港口}
+
+Panama Town		{巴拿马}
+Panama Fort		{巴拿马堡垒}
+Panama Port		{巴拿马港口}
+
+Cartahena Town	{卡塔赫纳}
+Cartahena Fort	{卡塔赫纳堡垒}
+Cartahena Port	{卡塔赫纳港口}
+
+Maracaibo Town	{马拉开波}
+Maracaibo Fort	{马拉开波堡垒}
+Maracaibo Port	{马拉开波港口}
+
+Caracas Town	{加拉加斯}
+Caracas Fort	{加拉加斯堡垒}
+Caracas Port	{加拉加斯港口}
+
+Cumana Town		{库马纳}
+Cumana Fort		{库马纳堡垒}
+Cumana Port		{库马纳港口}
+
+SantaCatalina Town	{布鲁维尔德}
+SantaCatalina Fort	{布鲁维尔德堡垒}
+SantaCatalina Port	{布鲁维尔德港口}
+
+Beliz Town		{伯利兹}
+Beliz Fort		{伯利兹堡垒}
+Beliz Port		{伯利兹港口}
+
+SanAndres		{圣安德烈斯}
+SanAndres Town	{圣安德烈斯}
+SanAndres Fort	{圣安德烈斯堡垒}
+SanAndres Port	{圣安德烈斯港口}
+
+IslaMona {莫纳岛}
+IslaMona Town {莫纳岛}
+
+LosTeques		{洛斯泰克斯矿场}
+LosTeques Town	{洛斯泰克斯矿场}
+
+Duel Field		{决斗场}
+Boarding deck	{登船甲板} 
+Orlop deck		{底舱甲板} 
+Fort inside		{堡垒内部}
+Sea				{海洋}
+Jungle			{丛林}
+Street			{街道}
+ExitTown		{通往丛林的通道}
+Graveyard		{墓地}
+Port			{港口}
+Tavern			{酒馆}
+Tavern upstairs {酒馆楼上}
+Store			{商店}
+Shipyard		{造船厂}
+PackHouse		{仓库}
+Townhall		{总督官邸}
+TownhallRoom	{官邸房间}
+Residence		{住宅}
+PortOffice		{港口办公室}
+Church			{教堂}
+Incquisitio		{宗教裁判所}
+Maltese Order	{马耳他骑士团}
+Incas Temple	{印加神庙}
+Usurer House	{银行}
+House			{房屋}
+ammo			{军械库}
+shack			{棚屋}
+Room			{房间}
+Cabinet			{书房}
+Bedroom			{卧室}
+Сhapel			{小礼拜堂}
+Crypt			{地窖}
+Exit			{退出}
+The cavern		{洞穴}
+?????			{?????}
+Passage			{桥梁}
+Beach			{海滩}
+Cave			{洞穴}
+Cave			{洞穴}
+Cave entrance	{洞穴入口}
+FloodedCave		{淹没洞穴}
+Grot			{石窟}
+Prison			{监狱}
+Lighthouse Inside	{灯塔内部}
+Mines			{矿场}
+Dungeon			{地牢}
+Gate			{城镇大门}
+Brothel			{妓院}
+Brothel Room	{私密房间}
+Village			{村庄}
+Plantation		{种植园}
+UnderWater		{水下}
+Grotto			{洞穴}
+Dunes house		{沙丘房屋}
+Torture room	{刑讯室}
+Wine Cellar 	{酒窖}
+
+cabine			{船舱}
+My_Campus		{军官会议室}
+My_Deck_Medium	{加农炮甲板}
+My_Deck			{货舱}
+My_Ship			{船只}
+Drugstore		{药店}
+HWIC_flat		{HWIC总部}
+Comendant's House	{哈瓦那指挥官宅邸}
+Tibo House		{亨利.蒂博宅邸}
+Gaspard_Gold House	{加斯帕尔.金牙宅邸}
+Ascold House	{法迪宅邸}
+Abby_House		{阿比盖尔.施努尔宅邸}
+Knippel_House	{查理.克尼佩尔宅邸}
+Fleetwood_House	{理查德.弗利特伍德宅邸}
+Comendant_House	{圣何塞指挥官宅邸}
+Svensons_house	{扬.斯文松宅邸}
+Gladis_house	{格拉迪斯.麦卡瑟宅邸}
+Gonsales_house	{恩里克.冈萨雷斯宅邸}
+Loxly_house		{阿尔伯特.洛克斯利办公室}
+
+LostShipsCity	{洛科-里费特}
+LostShipsCity Town	{洛科-里费特}
+LSC South		{沉船岛 - 南部}
+LSC North		{沉船岛 - 北部}
+LSC Town		{洛科-里费特街道}
+
+Ava Cabin		{盖伦帆船'夏娃号'}
+Caroline cabin	{护卫舰'卡罗莱纳号'}
+CeresSmithy cabin	{快速帆船'刻瑞斯铁匠号'}
+EsmeraldaStoreBig cabin	{盖伦帆船'埃斯梅拉达号'}
+FenixPlatform cabin	{'凤凰号'平台}
+FernandaDiffIndoor cabin	{快速帆船'费尔南达号'}
+FleuronTavern cabin	{卡拉维尔帆船'弗莱龙号'}
+FurieShipInside2 cabin	{小艇'狂怒号'}
+GloriaChurch cabin		{盖伦帆船'荣耀号'}
+PlutoStoreSmall cabin	{快速帆船'冥王星号'}
+ProtectorFisher cabin	{轻巡洋舰'守护者号'}
+SanAugustineResidence cabin	{战船'圣奥古斯丁号'}
+SanGabrielMechanic cabin	{三桅帆船'圣盖博号'}
+SantaFlorentinaShipInside4 cabin	{双桅船'圣弗洛伦蒂娜号'}
+TartarusPrison cabin	{战列舰'塔耳塔罗斯号'}
+VelascoShipInside1 cabin	{盖伦帆船'贝拉斯科号'}
+
+Tenochtitlan	{塔亚萨尔}
+Temple_1		{托希尔神庙}
+Temple_2		{考伊尔神庙}
+Temple_3		{查克神庙}
+Temple_4		{基尼奇.阿豪神庙}
+Temple_5		{伊察姆纳神庙}
+Temple_6		{埃克.丘亚神庙}
+TempleTreasure	{宝库}
+TempleGreatInside	{大神庙}
+TempleRoundInside	{库库尔坎神庙}
+TempleUnderwater	{水下迷宫}
+
+Maze			{查文神庙}
+Alcove			{圣所}
+Merrimancave	{梅里曼巢穴}
+River {河岸}
+Jungle Fort {丛林堡垒}
+Basement {地下室}
+Ruins {废墟}
+
+Ulysse {'尤利西斯'号上}

@@ -1,4 +1,4 @@
-﻿Portugal_1
+Portugal_1
 {
 Bartolomeo
 }

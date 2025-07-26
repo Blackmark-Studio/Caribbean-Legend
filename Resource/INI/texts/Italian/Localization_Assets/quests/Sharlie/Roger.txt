@@ -1,4 +1,4 @@
-﻿Roger_1
+Roger_1
 {
 Hai dato via la bandiera spagnola
 }

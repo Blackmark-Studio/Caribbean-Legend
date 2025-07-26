@@ -1,0 +1,159 @@
+Tutorial_1
+{
+船只转向
+}
+
+Tutorial_2
+{
+按 @<key1> 键和 @<key2> 键转向船只
+}
+
+Tutorial_3
+{
+时间控制
+}
+
+Tutorial_4
+{
+按 @<key> 键启用时间加速
+}
+
+Tutorial_5
+{
+再次按 @<key> 键取消加速
+}
+
+Tutorial_6
+{
+按 @<key> 键加速至6倍速
+}
+
+Tutorial_7
+{
+按 @<key1> 键减速, 或按 @<key2> 键
+}
+
+Tutorial_8
+{
+帆具控制
+}
+
+Tutorial_9
+{
+按 @<key1> 键将帆设为战斗模式
+}
+
+Tutorial_10
+{
+按 @<key1> 键完全降下帆
+}
+
+Tutorial_11
+{
+船只战斗基础
+}
+
+Tutorial_12
+{
+使用 @<key1> 键快速齐射
+}
+
+Tutorial_13
+{
+高级船只战斗
+}
+
+Tutorial_14
+{
+ @<key1> 键进入瞄准模式
+}
+
+Tutorial_15
+{
+按 @<key1> 键进行瞄准齐射
+}
+
+Tutorial_16
+{
+ @<key1> 键退出瞄准模式
+}
+
+Tutorial_17
+{
+宣告胜利
+}
+
+Tutorial_18
+{
+击沉剩余海盗船
+}
+
+Tutorial_19
+{
+攻击敌人
+}
+
+Tutorial_20
+{
+ @<key1> 键劈砍
+}
+
+Tutorial_21
+{
+ @<key1> 键刺击
+}
+
+Tutorial_22
+{
+ @<key1> 键重击
+}
+
+Tutorial_23
+{
+自我防御
+}
+
+Tutorial_24
+{
+ @<key1> 键格挡攻击
+}
+
+Tutorial_25
+{
+ @<key1> 键招架攻击
+}
+
+Tutorial_26
+{
+击败海盗! 
+}
+
+Tutorial_27
+{
+任务系统
+}
+
+Tutorial_28
+{
+按 @<key1> 键阅读文件
+}
+
+Tutorial_29
+{
+按 @<key1> 键打开金币箱
+}
+
+Tutorial_30
+{
+战利品获取
+}
+
+Tutorial_31
+{
+搜刮水手物品
+}
+
+Tutorial_32
+{
+将神秘药水交给阿隆索
+}

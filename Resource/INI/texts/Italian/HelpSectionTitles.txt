@@ -1,4 +1,4 @@
-﻿sea_minimap
+sea_minimap
 {
   Minimappa di navigazione.
 

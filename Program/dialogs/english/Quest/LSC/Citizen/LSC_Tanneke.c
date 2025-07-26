@@ -18,71 +18,71 @@ void ProcessDialogEvent()
 		case "First time":
 			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
 			{
-				dialog.text = "I don't want to talk with you. You attack peaceful civilians with no reasons and provoke them to fight. Get lost!";
+				dialog.text = "Leave me alone, mynheer. I don't want to talk to a man who assaults peaceful people!";
 				link.l1 = "Hm...";
 				link.l1.go = "exit";
 				break;
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "Good day! Do I know you? I haven't seen you before, that's for sure...";
-				link.l1 = TimeGreeting()+". It is true, I am a new... visitor here. My name is "+GetFullName(pchar)+" and I am a captain.";
+				dialog.text = "Good day! Do I know you? I don't think I've seen you before...";
+				link.l1 = TimeGreeting()+". I am new, it's true. My name is Captain "+GetFullName(pchar)+"";
 				link.l1.go = "meeting";
 				npchar.quest.meeting = "1";
 			}
 			else
 			{
 				dialog.text = "Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+"! Want something?";
-				link.l1 = LinkRandPhrase("Got anything interesting to say?", "Has anything new happened on the island?", "Will you tell me the last gossips?");
+				link.l1 = LinkRandPhrase("Hello, Tanneke. What's new on the island?", "Has anything new happened on the island?", "Will you tell me the latest gossip?");
 				link.l1.go = "rumours_LSC";
 				link.l2 = "I want to ask you a few questions about the island.";
 				link.l2.go = "int_quests"; //информационный блок
-				link.l5 = "Just wanted to know how you're doing. See you!";
+				link.l5 = "Just wanted to see how you're doing. Good day!";
 				link.l5.go = "exit";
 			}
 			NextDiag.TempNode = "First time";
 		break;
 		
 		case "meeting": // первая встреча
-			dialog.text = "Have you been a captain?";
-			link.l1 = "Why have I been? I am still a captain...a-ah, I got it! You think that my ship is sunk or destroyed by the reefs. No. She is near the shores of Western Main. And I have reached this place on a barque, it ended bad though, the barque got a hole in her hull and sunk.";
+			dialog.text = "Former captain. (chuckle)";
+			link.l1 = "What do you...? A-ha, I understand. No, I'm still a captain; my ship is moored off the shores of the Spanish Main. I reached this place on a barque - or, almost reached it; the barque was hold and sunk two miles offshore.";
 			link.l1.go = "meeting_1";
 		break;
 		
 		case "meeting_1":
-			dialog.text = "Have you come here on a barque? And how did you manage to survive the storm?";
-			link.l1 = "What storm? I don't remember any storm...";
+			dialog.text = "And how did you manage to survive the storms?";
+			link.l1 = "What storms? I don't remember any storms...";
 			link.l1.go = "meeting_2";
 		break;
 		
 		case "meeting_2":
-			dialog.text = "But how is that? There is always a storm around the Island. All people say that.";
-			link.l1 = "Well, it is not or I was lucky enough to bypass it. The sea was absolutely calm... excuse me, may I know a name of such a pretty lady?";
+			dialog.text = "How can you not? There are always storms around the island. Everybody says so.";
+			link.l1 = "Well... I suppose I was lucky enough to bypass it. The sea was absolutely calm... excuse me, may I know the name of such a pretty lady?";
 			link.l1.go = "meeting_3";
 		break;
 		
 		case "meeting_3":
-			dialog.text = "Oh! I am sorry, I forgot to introduce myself... My name is Tanneke. Nice to meet you.";
-			link.l1 = "Nice to meet you too, Tanneke... It's my pleasure.";
+			dialog.text = "Oh! I'm sorry, I forgot to introduce myself... My name is Tanneke. Nice to meet you.";
+			link.l1 = "Nice to meet you too, Tanneke... Charmed, truly.";
 			link.l1.go = "meeting_4";
 		break;
 		
 		case "meeting_4":
-			dialog.text = "And why have you decided to reach our Island on a barque? A-ah, I get it - you were driven by the current right to it. No one knows about the Island and people always get here by chance.";
-			link.l1 = "It's not correct. There are quite true gossips about the Island including its location. So I have decided to see it with my own eyes...";
+			dialog.text = "And why did you trade your ship for a barque?";
+			link.l1 = "I heard rumours about the Island of Justice, and decided to see it with my own eyes. I was unwilling to risk my ship, so I moored her in Blueweld and purchased a barque to explore this region...";
 			link.l1.go = "meeting_5";
 		break;
 		
 		case "meeting_5":
-			dialog.text = "Now I see. You are just like Adolf Barbier, read too much of captain Alvarado and decided to search for admiral de Betancourt's gold. Alas, captain, if such a cunning rogue as Barbier has failed to find it, then I doubt that you will succeed either\nAnd I really think that there is no admiral's gold, Antonio must have just thought it up to show us what an important man his granddad was... Well, you will stay with us then. Getting here was easy, but leaving must be impossible. Leaving here in one piece, I mean.";
-			link.l1 = "It's nothing. I think that I will be able to deal with that, I don't mean the gold of Betancourt you have mentioned - it's the first time I hear about it, I mean leaving the Island. Alive. It was my pleasure to talk with you, Tanneke. See you!";
+			dialog.text = "Now I see. You are just like Adolf Barbier: read too much of Captain Alvarado and decided to look for Admiral de Betancourt's gold. Alas, captain, if such a cunning rogue as Barbier can't find it, I doubt you will.\nAnd I don't even think that there is any admiral's gold. I think Antonio made it up to make his grandfather seem important.\nWell, you'll stay with us then! Getting here was easy, but leaving is impossible - in one piece, I mean.";
+			link.l1 = "Gold? Admiral de Betancourt? This is the first I'm hearing of it... Anyway, I do plan to leave the island - in one piece. It was a pleasure talking with you, Tanneke. Goodbye!";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 		break;
 		
 //--------------------------------------- блок вопросов и ответов ---------------------------------------------
 		case "int_quests":
-			dialog.text = "Ask away, captain...";
+			dialog.text = "Ask away, Captain...";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
 			{
 				link.l1 = "How did you get here?";
@@ -90,17 +90,17 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "quest.answer_2"))
 			{
-				link.l2 = "Have you ever tried to leave the Island?";
+				link.l2 = "Have you ever tried to leave the island?";
 				link.l2.go = "ansewer_2";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_3"))
 			{
-				link.l3 = "How do you live here?";
+				link.l3 = "How is your life here?";
 				link.l3.go = "ansewer_3";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_4"))
 			{
-				link.l4 = "Do girls need to buy food from admiral and do they get it for free?";
+				link.l4 = "Do er... ladies need to buy food from the Admiral, or do they get it for free?";
 				link.l4.go = "ansewer_4";
 			}
 			link.l10 = "No questions. Pardon...";
@@ -108,35 +108,35 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_1":
-			dialog.text = "I am Dutch, but we had been living in Santiago. My parents sent me to work as a servant girl for the family of banker Geraldi. Have you heard of them? Three years ago one of them sailed to New Spain on a courier lugger. I was told to accompany him. On the second day of our voyage, we were caught by a brigantine under the Spanish flag\nTheir officer came aboard out ship and had a talk with our captain, the captain got mad and drove the officer away. We were attacked as soon as the guest reached his ship. We tried to flee, but they managed to board us. As far as I understood, they needed my master Geraldi, because they rushed inside a cabin, captured and took him away. Me and sailors were taken to the hold and left there.\n I though that they will sink us but they just sailed away. Sailors managed to leave the hold but our captain was killed in combat and no one of the survivors knew how to navigate a right course. We were sailing somewhere for sometime until the strong gale took us\n Few hours later our lugger was thrown at the outer ring. It is still there. I was lucky enough to survive the mess, after the dawn me and a few other 'lucky' people have reached the Island.";
-			link.l1 = "I see...";
+			dialog.text = "I am Dutch by birth, but I lived in Santiago. My parents sent me to work there as a servant girl for the Geraldi banking family. Have you heard of them? Three years ago one of them sailed to New Spain on a courier lugger. I was told to accompany him.\nOn the second day of our voyage, we were caught by a brigantine under the Spanish flag. Their officer came aboard our ship and had a talk with our captain - about what, I don't know. The captain became enraged and drove the officer off the lugger. As the officer returned to his ship, they fired upon us.\nWe tried to flee, but they managed to board us. I think they were after my master, Geraldi, because they rushed into his cabin, clapped him in irons, and took him away. Me and the crew were taken to the hold and locked in.\nI thought they planned to sink us, but they just sailed away. The sailors managed to escape the hold. We found the captain dead on the deck. None of us knew how to navigate properly.\nWe sailed blindly until a strong gale took us. A few hours later our lugger was thrown onto the outer ring. It's still there. At dawn, me and the few other survivors climbed into the lugger's longboat and rowed to the island.";
+			link.l1 = "What a story!";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_1 = "true";
 		break;
 		
 		case "ansewer_2":
-			dialog.text = "No. And how do you imagine that? There are no ships ready to sail here and using a longboat is as good as signing a death sentence yourself. As I said, storms are often here. I remember only the one try to leave this place - five citizens had built a decent longboat with sails and oars\nThey fought the current for several hours and then finally reached the open sea. Few days later one of them returned to the outer ring... tied to a wreck of a mast and dead. This killed other's wishes to do such brave things.";
-			link.l1 = "Got it...";
+			dialog.text = "No. How would I? There are no seaworthy ships, and trying to get out on a longboat is suicide. As I said, the island is surrounded by storms.\nFive locals once tried to escape in this very manner. They built a decent longboat with strong timbers and good sails salvaged from a wrecked Indiaman. They fought the current for nine hours and finally broke into open water. A few days later, one of them returned to the outer ring, tied to the wreck of their mast... stone dead.\nNot many people were eager to leave after that.";
+			link.l1 = "Horrifying...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_2 = "true";
 		break;
 		
 		case "ansewer_3":
-			dialog.text = "It's alright. It's not worse than to be a servant of that arrogant usurer's family. You just need to get used to this place and after that you may even love it. By the way, I am not the only one who think like that. And clans... they don't bother me.";
+			dialog.text = "It's all right. It's no worse than being a servant of that puffed-up usurer's family. You just need to get used to this place, and once you do, you may even love it. Many feel that way. And the clans, they don't bother me.";
 			link.l1 = "Interesting...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_3 = "true";
 		break;
 		
 		case "ansewer_4":
-			dialog.text = "Of course we buy. Oh, captain, there is enough work for a girl: cleaning, cooking, helping others... we don't sit idle but no one break backs here. Pirates sell food cheap for the common citizens, as opposed to the clans. So we don't starve\nI help Gillian and Natalie and they help me if I need. We are friends. There is another girl on the Island, the Spanish. Her name is Ramona but she is mostly on her own and we are not really eager to be friends with her.";
+			dialog.text = "Of course we buy. There is enough work for a girl: cleaning, cooking, helping others... we're not idle but neither do we break our backs. Pirates sell food cheaply to the common citizens, as opposed to the clans, whom they gouge remorselessly. So we don't starve.\nI help Gillian and Natalie and they help me, if I need. We are friends. There is another girl on the island, a Spaniard: Ramona. But she mostly keeps to herself and we are not really eager to be friends with her.";
 			link.l1 = "And why is that?";
 			link.l1.go = "ansewer_4_1";
 		break;
 		
 		case "ansewer_4_1":
-			dialog.text = "Well... let's say that we have got different points of view on the life. Talk to her and you'll understand.";
-			link.l1 = "Interesting...";
+			dialog.text = "Well... let's say that we've got different points of view on life. Talk to her and you'll understand.";
+			link.l1 = "All right...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
 		break;
@@ -145,13 +145,13 @@ void ProcessDialogEvent()
 //----------------------------------------- специальные реакции -----------------------------------------------
 		//обнаружение ГГ в сундуках
 		case "Man_FackYou":
-			dialog.text = LinkRandPhrase("What are you doing there, ah? Thief!", "Just look at that! As soon as I was lost in contemplation, you decided to check my chest!", "Decided to check my chests? You won't get away with it!");
+			dialog.text = LinkRandPhrase("Who is... oh my God, thief! Help!", "Turn my back for one minute and you try to rob me?! Help!", "Decided to ransack my chests? You won't get away with this!");
 			link.l1 = "Crap!";
 			link.l1.go = "fight";
 		break;
 		
 		case "Woman_FackYou":
-			dialog.text = "What?! Decided to check my chests? You won't get away with it!";
+			dialog.text = "How dare you touch my things! Somebody, help!";
 			link.l1 = "Foolish girl!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
@@ -173,7 +173,7 @@ void ProcessDialogEvent()
 		
 		//замечание по обнажённому оружию
 		case "LSCNotBlade":
-			dialog.text = LinkRandPhrase("Listen, you'd better take your weapon away. It makes me nervous.", "You know, running with blade is not tolerated here. Take it away.", "Listen, don't play a medieval knight running with a sword around. Take it away it doesn't suit you...");
+			dialog.text = LinkRandPhrase("Please put your weapon away, mynheer. You're making me nervous.", "You know, running around with a blade is not tolerated here. Put it away.", "Mynheer, I know you are gallant. You need not prove it by waving a sword...");
 			link.l1 = LinkRandPhrase("Fine.", "As you wish...", "As you say...");
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
@@ -182,12 +182,12 @@ void ProcessDialogEvent()
 		case "CitizenNotBlade":
 			if (loadedLocation.type == "town")
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Listen, I am the citizen of the city and I'd ask you to hold down your blade.", "Listen, I am the citizen of the city and I'd ask you to hold down your blade.");
+				dialog.text = NPCharSexPhrase(NPChar, "Please put your weapon away, mynheer. You're making me nervous.", "You know, running around with a blade is not tolerated here. Put it away.");
 				link.l1 = LinkRandPhrase("Fine.", "As you wish...", "As you say...");
 			}
 			else
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Be careful, pal, while running with a weapon. I can get nervous...", "I don't like when men are walking in front of me with their weapon ready. It scares me...");
+				dialog.text = NPCharSexPhrase(NPChar, "Please put your weapon away, mynheer. You're making me nervous.", "Mynheer, I know you are gallant. You need not prove it by waving a sword...");
 				link.l1 = RandPhraseSimple("Got it.", "I am taking it away.");
 			}
 			link.l1.go = "exit";

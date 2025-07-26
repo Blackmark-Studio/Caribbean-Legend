@@ -1,4 +1,4 @@
-﻿Ship_critical		{Colpo critico!}
+Ship_critical		{Colpo critico!}
 Ship_critical_notif		{' - Colpo critico!}
 Ship_sunk			{%1 "%2" è affondato. +%3 esperienza acquisita.}
 Ship_sunk_other		{%1 "%2" è affondato.}

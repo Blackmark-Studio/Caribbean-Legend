@@ -1,0 +1,24 @@
+reaction_functions_1
+{
+曼加罗萨药水过量! 
+}
+
+reaction_functions_2
+{
+你中毒了
+}
+
+reaction_functions_3
+{
+已使用特殊曼加罗萨药水! 
+}
+
+reaction_functions_4
+{
+曼加罗萨药水的效果已结束
+}
+
+reaction_functions_5
+{
+今天适合做交易, 货舱里装满了货物! +
+}

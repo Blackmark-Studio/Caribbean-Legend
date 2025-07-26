@@ -1,0 +1,99 @@
+LSC_Q2Utilite_1
+{
+
+}
+
+LSC_Q2Utilite_2
+{
+
+}
+
+LSC_Q2Utilite_3
+{
+ @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>'@<sld.Ship.name>'的船长 @<GetFullName(sld)> 在城里。 他肯定在港口办公室。 
+}
+
+LSC_Q2Utilite_4
+{
+ @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>'@<sld.Ship.name>'的船长在城里。 他肯定在港口办公室。 
+}
+
+LSC_Q2Utilite_5
+{
+ @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>'@<sld.Ship.name>'的船长 @<GetFullName(sld)> 在城里。 他肯定在港口办公室。 
+}
+
+LSC_Q2Utilite_6
+{
+, 在~
+}
+
+LSC_Q2Utilite_7
+{
+ @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>'@<sld.Ship.name>'的船长 @<GetFullName(sld)> 在港口的船上。 我得说, 这家伙很古怪, 从不上岸。 
+}
+
+LSC_Q2Utilite_8
+{
+ @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))>'@<sld.Ship.name>'的船长在港口的船上。 我得说, 这家伙很古怪, 从不上岸。 
+}
+
+LSC_Q2Utilite_9
+{
+ @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>'@<sld.Ship.name>'的船长 @<GetFullName(sld)> 在港口的船上。 我得说, 这家伙很古怪, 从不上岸。 
+}
+
+LSC_Q2Utilite_10
+{
+, 在~
+}
+
+LSC_Q2Utilite_11
+{
+ @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>'@<sld.Ship.name>'的船长在城里。 我想他的名字叫 @<GetFullName(sld)>。 
+}
+
+LSC_Q2Utilite_12
+{
+ @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>'@<sld.Ship.name>'的船长在城里。 
+}
+
+LSC_Q2Utilite_13
+{
+ @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>'@<sld.Ship.name>'的船长在城里。 我想他的名字叫 @<GetFullName(sld)>。 
+}
+
+LSC_Q2Utilite_14
+{
+ @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>'@<sld.Ship.name>'的船长在港口的船上。 我想他的名字叫 @<GetFullName(sld)>。 
+}
+
+LSC_Q2Utilite_15
+{
+ @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>'@<sld.Ship.name>'的船长在港口的船上。 
+}
+
+LSC_Q2Utilite_16
+{
+ @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))>'@<sld.Ship.name>'的船长在港口的船上。 我想他的名字叫 @<GetFullName(sld)>。 
+}
+
+LSC_Q2Utilite_17
+{
+, 在~
+}
+
+LSC_Q2Utilite_18
+{
+玛丽.赛勒斯特
+}
+
+LSC_Q2Utilite_19
+{
+船是空的
+}
+
+LSC_Q2Utilite_20
+{
+双桅纵帆船'玛丽.赛勒斯特'
+}

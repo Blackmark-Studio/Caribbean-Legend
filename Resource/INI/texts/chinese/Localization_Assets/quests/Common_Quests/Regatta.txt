@@ -9,7 +9,7 @@ Stivenson
 
 Regatta_3
 {
-你参加帆船赛太晚了。 
+你赶不上帆船赛了。 
 }
 
 Regatta_4

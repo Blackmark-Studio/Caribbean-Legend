@@ -20,7 +20,7 @@ void ProcessDialogEvent()
 		break;
         
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////---------------------------------------—— 奴隶商人 -----------------------------------------------------
+/////--------------------------------------- —奴隶商人 -----------------------------------------------------
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//--> 皮纳斯
 		case "TakeShoreCap":
@@ -156,9 +156,9 @@ void ProcessDialogEvent()
 	//<--奴隶商人
 			
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////---------------------------------------—— 生成器 -----------------------------------------------------
+/////--------------------------------------- —生成器 -----------------------------------------------------
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//--> 杰森 ----------------------—— 可疑的提议 -------------------------------------------	
+	//--> 杰森 ---------------------- —可疑的提议 -------------------------------------------	
 		int iCGood;
 		case "Contraoffer_patrol":
 			chrDisableReloadToLocation = false;
@@ -262,9 +262,9 @@ void ProcessDialogEvent()
 			CloseQuestHeader("Contraoffer");
 			pchar.GenQuest.Contraoffer.Jail = "true";
 		break;
-	//<—— 可疑的提议	
+	//< —可疑的提议	
 		
-	//杰森 --> ---------------------------------—— 不幸的小偷 --------------------------------------------
+	//杰森 --> --------------------------------- —不幸的小偷 --------------------------------------------
 		case "Device_poorman":
 			dialog.text = "日安。 你想要什么? ";
 			link.l1 = "我想要, 伙计。 我想你就是我要找的人。 是你从当地造船厂偷了" + pchar.GenQuest.Device.Shipyarder.Type + "? 一切都指向你, 所以别争辩了。 ";
@@ -456,7 +456,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Device", "8");
 			AddComplexSelfExpToScill(30, 30, 30, 50);
 		break;
-	//<—— 不幸的小偷
+	//< —不幸的小偷
 //-------------------------------------------二级邮政生成器------------------------------------	
 		case "PostGopHunters":
 			dialog.text = "站住, 伙计! 我们需要你携带的东西。 把它给我们, 然后走你的路。 ";
@@ -687,9 +687,9 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("MainHeroFightModeOn");
 			AddQuestRecord("Postcureer", "16");
 		break;
-	//<—— 二级邮政生成器
+	//< —二级邮政生成器
 		
-	// --> -------------------------------—— 二级护送 --------------------------------------------------
+	// --> ------------------------------- —二级护送 --------------------------------------------------
 		case "DisasterCap":
 			dialog.text = "问候! 哦, 真高兴见到你! ";
 			link.l1 = "日安。 嗯, 告诉我, 你不是" + pchar.questTemp.WPU.Escort.ShipName + "的指挥官吗? ";
@@ -751,9 +751,9 @@ void ProcessDialogEvent()
 			AddQuestUserData("Escort", "sSName", pchar.questTemp.WPU.Escort.ShipName);
 			AddQuestUserData("Escort", "sShore", XI_ConvertString(pchar.questTemp.WPU.Current.TargetIslandID.Shore));
 		break;
-	// <—— 二级护送
+	// < —二级护送
 		
-	//杰森 --> ------------------------—— 讨厌的贵族 ------------------------------------------------
+	//杰森 --> ------------------------ —讨厌的贵族 ------------------------------------------------
 		case "Badboy":
 			dialog.text = "嗝... 你想从我这里得到什么? 滚开, 我不想和你说话。 ";
 			link.l1 = "你是" + pchar.GenQuest.Badboy.Brothel.Name + "吗? ";
@@ -852,7 +852,7 @@ void ProcessDialogEvent()
 				GiveItem2Character(pchar, "pistol1");
 				EquipCharacterbyItem(pchar, "pistol1");
 			}
-			// <—— legendary edition
+			// < —legendary edition
 		LAi_ActorAnimation(pchar, "shot", "Badboy_killed_end", 2.2);
 		break;
 		
@@ -925,9 +925,9 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("MainHeroFightModeOn");
 			DeleteAttribute(pchar, "GenQuest.Badboy");
 		break;
-	//杰森 <—— 讨厌的贵族
+	//杰森 < —讨厌的贵族
 		
-	//杰森 --> -----------------------------—— 阳光之地 ----------------------------------------------
+	//杰森 --> ----------------------------- —阳光之地 ----------------------------------------------
 		case "Sunplace_Store":
 			pchar.quest.SunplaceContinue_Over.over = "yes";
 			dialog.text = "问候。 你想要什么? ";
@@ -979,9 +979,9 @@ void ProcessDialogEvent()
 			pchar.quest.Kill_SunplaceTrader.win_condition.l1.location = pchar.location;
 			pchar.quest.Kill_SunplaceTrader.function = "Kill_SunplaceTrader";
 		break;
-	// <—— 阳光之地
+	// < —阳光之地
 		
-	//-----------------------------------—— 联盟杀手 -------------------------------------------------------
+	//----------------------------------- —联盟杀手 -------------------------------------------------------
 		case "LigaHunters":
 			dialog.text = "";
 			link.l1 = "啊? ! 什么? 你们在这里干什么, 该死的? 谁让你们进来的? ";
@@ -1008,7 +1008,7 @@ void ProcessDialogEvent()
             LAi_group_SetCheck("EnemyFight", "LigaHunters_Dead");
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
-	// <—— 联盟杀手
+	// < —联盟杀手
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

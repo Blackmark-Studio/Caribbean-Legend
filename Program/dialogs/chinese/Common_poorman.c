@@ -15,7 +15,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			// --> 卡勒幽船
+			// --> 卡莱乌切
 			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(1) == 0 && sti(Pchar.money) >= 2000) 
 			{
 				dialog.text = "看, 先生, 你不想买一件有趣的小东西吗? 不贵, 只要几千比索... ";
@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 				link.l1.go = "caleuche";
 				break;
 			}
-			// <—— 卡勒幽船
+			// < —卡莱乌切
 			if (npchar.quest.meeting == "0")
 			{
 				dialog.text = LinkRandPhrase("你好。 我叫" + GetFullName(npchar) + "。 我想你见到我并不高兴, 但也许你至少会记住我的名字... ", 
@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 					link.l2 = "那个带浮雕的吊坠... 你从哪里找到的? ";
 					link.l2.go = "TBP_Kulon_1";
 				}
-				// <—— 贝齐.普莱斯的秘密
+				// < —贝齐.普莱斯的秘密
 				npchar.quest.meeting = "1";
 			}			
 			else
@@ -73,7 +73,7 @@ void ProcessDialogEvent()
 					link.l2 = "那个带宝石的吊坠... 你从哪里找到的? ";
 					link.l2.go = "TBP_Kulon_1";
 				}
-				// <—— 贝齐.普莱斯的秘密
+				// < —贝齐.普莱斯的秘密
 				link.l3 = LinkRandPhrase("你能告诉我一些有趣的事吗? ", 
 					"镇上有什么新鲜事? ", "哦, 我想听听最新的八卦... ");
 				link.l3.go = "rumours_poor";
@@ -326,7 +326,7 @@ void ProcessDialogEvent()
 		case "trial_11":
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 			AddCharacterExpToSkill(pchar, "Sneak", 50);
-			// <—— 传奇版
+			// < —传奇版
 			chrDisableReloadToLocation = true;//关闭地点
 			DialogExit();
 			LAi_SetActorType(npchar);
@@ -338,7 +338,7 @@ void ProcessDialogEvent()
 			AddLandQuestMark(sld, "questmarkmain");
 		break;
 		
-		// --> 卡勒幽船
+		// --> 卡莱乌切
 		case "Caleuche":
 			dialog.text = "对不起, 好先生... 我在和一个陌生人玩骰子时赢了它, 我以为这是一个有魔力的治疗护身符, 但我错了... 它不能治病, 市场商人也对它不感兴趣。 而你来了 - 一个水手, 船长, 一个有学问的人。 看看它, 你可能会觉得有用。 \n对你来说这几千比索是小数目, 但对我来说是一个月的面包和一口朗姆酒。 看, 先生... ";
 			link.l1 = "好吧, 给我看看... ";
@@ -364,7 +364,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			GiveItem2Character(pchar, "kaleuche_amulet1"); 
 		break;
-		// <—— 卡勒幽船
+		// < —卡莱乌切
 		
 		// --> 贝齐.普莱斯的秘密
 		case "TBP_Kulon_1":

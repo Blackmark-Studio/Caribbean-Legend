@@ -8,7 +8,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1 = HeroStringReactionRepeat(RandPhraseSimple("我改变主意了, 抱歉。 ", "没什么事, 打扰了。 "), "请原谅我, 没什么要紧的。 ",
                       "您说得对, 已经第三次了。 请宽恕我... ", "抱歉。 ", npchar, Dialog.CurrentNode);        
             link.l1.go = "exit";
-            // 卡勒幽船
+            // 卡莱乌切
             if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "graveyard" && !CheckAttribute(npchar, "quest.caleuche"))
             {
                 link.l1 = "听着, 您在哈瓦那或附近见过一个叫约阿希姆.梅里曼的人吗? 他是个中年绅士, 葡萄牙人, 留着小胡子。 帝王式胡须和锐利的眼睛。 也许在海湾或丛林里? 我在找他。 ";
@@ -16,10 +16,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             }
         break;
         
-        // 卡勒幽船
+        // 卡莱乌切
         case "caleuche":
             dialog.text = "不-不, 水手, 当-当然没有。 您知道, 我这儿很少有访客, 呃... 而我... 我结-结巴是从孩-孩童时期就有的... ";
-            link.l1 = "真的吗? 那您为什么口吃还不敢看我? 别骗我了, 您知道真相。 最好再告诉我一遍 --您见过那个人吗? ";
+            link.l1 = "真的吗? 那您为什么口吃还不敢看我? 别骗我了, 您知道真相。 最好再告诉我一遍 —您见过那个人吗? ";
             link.l1.go = "caleuche_1";
         break;
         
@@ -37,7 +37,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "caleuche_3":
             dialog.text = "... ";
-            link.l1 = "... 最近我清理了附近的僵尸洞穴, 我知道是谁干的! 当然, 除了墓地, 梅里曼还能去哪儿呢? 您知道他在哪儿。 但随您便, 我不会碰您一根手指, 但我会去圣地亚哥拜访裁判官。 文森特神父会很感兴趣 --约阿希姆.梅里曼正和他的同伙, 也就是当地的看守, 藏在哈瓦那的墓地里... ";
+            link.l1 = "... 最近我清理了附近的僵尸洞穴, 我知道是谁干的! 当然, 除了墓地, 梅里曼还能去哪儿呢? 您知道他在哪儿。 但随您便, 我不会碰您一根手指, 但我会去圣地亚哥拜访裁判官。 文森特神父会很感兴趣 —约阿希姆.梅里曼正和他的同伙, 也就是当地的看守, 藏在哈瓦那的墓地里... ";
             link.l1.go = "caleuche_4";
         break;
         
@@ -61,7 +61,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "caleuche_7":
             dialog.text = "嗯, 我从镇上给他带食物和治疗药水... 还有他要的其他东西。 他每月离开一两次... 在满月的时候。 他会在门口留张纸条, 写下需要的东西... 我送去放在门口, 他回来后会拿走。 ";
-            link.l1 = "我明白了。 通往他巢穴的那扇门 --上锁了吗? ";
+            link.l1 = "我明白了。 通往他巢穴的那扇门 —上锁了吗? ";
             link.l1.go = "caleuche_8";
         break;
         
@@ -92,7 +92,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "caleuche_12":
-            dialog.text = "但请小心, 先生。 他的洞穴里传出过可怕的声音, 我甚至不敢想里面住着什么。 但梅里曼不是一个人 --这一点可以肯定。 ";
+            dialog.text = "但请小心, 先生。 他的洞穴里传出过可怕的声音, 我甚至不敢想里面住着什么。 但梅里曼不是一个人 —这一点可以肯定。 ";
             link.l1 = "我会尽可能做好准备。 再见。 ";
             link.l1.go = "caleuche_13";
         break;

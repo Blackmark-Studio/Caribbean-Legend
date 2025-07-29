@@ -80,7 +80,7 @@ MiniQuests_17
 
 MiniQuests_18
 {
-敌方船队出现在地平线上! 
+敌方舰队出现在地平线上! 
 }
 
 MiniQuests_19
@@ -90,7 +90,7 @@ MiniQuests_19
 
 MiniQuests_20
 {
- @<pchar.GenQuest.FindFugitive.Name> 死于中暑! 
+ @<pchar.GenQuest.FindFugitive.Name> 死于热病! 
 }
 
 MiniQuests_21
@@ -105,7 +105,7 @@ MiniQuests_22
 
 MiniQuests_23
 {
-, 其中在~
+, 在~
 }
 MiniQuests_24
 {

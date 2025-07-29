@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 				link.l1.go = "facio";
 				break;
 			}
-			// <—— 喝到见底
+			// < —喝到见底
 			if (npchar.quest.meeting == "0")
 			{
 				dialog.text = "啊-a... 嗝! 你好啊, 伙计... ";
@@ -287,9 +287,9 @@ void ProcessDialogEvent()
 			pchar.quest.LSC_Drink4.function = "LSC_DrinkDelete";
 			AddQuestRecord("LSC_Drink", "4");
 		break;
-		// <—— 喝到见底
+		// < —喝到见底
 		
-//-------------------------------------—— 问答块 ---------------------------------------------
+//------------------------------------- —问答块 ---------------------------------------------
 		case "int_quests":
 			dialog.text = "真的吗? ... 嗝! 我在听... ";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
@@ -344,9 +344,9 @@ void ProcessDialogEvent()
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
 		break;
-// <—— 问答块
+// < —问答块
 		
-//---------------------------------------—— 特殊反应 -----------------------------------------------
+//--------------------------------------- —特殊反应 -----------------------------------------------
 		// 发现主角在箱子里
 		case "Man_FackYou":
 			dialog.text = LinkRandPhrase("你在那里干什么, 啊? 小偷! ", "看看这个! 我一不留神, 你就决定检查我的箱子了! ", "决定检查我的箱子了? 你逃不掉的! ");
@@ -397,7 +397,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;
-// <—— 特殊反应
+// < —特殊反应
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

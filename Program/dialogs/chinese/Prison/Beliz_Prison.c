@@ -7,7 +7,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             dialog.text = "说吧, 我在听";
             link.l1 = "我搞错了。 再见。 ";
             link.l1.go = "Exit";
-            // 卡勒幽船
+            // 卡莱乌切
             if (CheckAttribute(pchar, "questTemp.Caleuche.Bandos") && pchar.questTemp.Caleuche.Bandos == "start")
             {
                 link.l1 = "我听说在伯利兹附近和镇上有一伙盗贼和强盗活动。 ";
@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         // 导航之星 ==>
         case "PZ_Beliz_Komendant_1":
-            dialog.text = "乐意效劳! 这可不是一般的海盗 --这是那个恶棍, 马修.勒特尔。 ";
+            dialog.text = "乐意效劳! 这可不是一般的海盗 —这是那个恶棍, 马修.勒特尔。 ";
             link.l1 = "每个人的运气总有耗尽的时候。 ";
             link.l1.go = "PZ_Beliz_Komendant_2";
             DelLandQuestMark(npchar);
@@ -68,13 +68,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "PZ_Beliz_Komendant_5":
             dialog.text = "哈! 不, 当勒特尔靠近时, 他近距离发射了一轮葡萄弹, 然后亲自登上了海盗船! 当他发现勒特尔是谁时, 就把他交给了我们。 真是个英雄, 一个有荣誉感的人! ";
-            link.l1 = "驱使他的不只是荣誉 --抓住这个吹牛大王肯定有赏。 ";
+            link.l1 = "驱使他的不只是荣誉 —抓住这个吹牛大王肯定有赏。 ";
             link.l1.go = "PZ_Beliz_Komendant_6";
         break;
         
         case "PZ_Beliz_Komendant_6":
             dialog.text = "有时候利益与善意是一致的。 但没错, 他得到了丰厚的奖赏。 在他起航前, 大人送了他许多昂贵的货物, 以表达我们城市的感激之情。 ";
-            link.l1 = "真希望我能见到他 --我想和他握握手。 告诉我... ";
+            link.l1 = "真希望我能见到他 —我想和他握握手。 告诉我... ";
             link.l1.go = "PZ_Beliz_Komendant_7";
         break;
         
@@ -83,10 +83,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         // <== 导航之星
         
-        // 卡勒幽船
+        // 卡莱乌切
         case "caleuche":
             dialog.text = "你的消息来源说的是真的。 这些土匪已经成了我们的一大麻烦。 你有关于他们的什么消息要告诉我们吗? ";
-            link.l1 = "除了他们从我这里偷走了一件重要的东西 --没什么别的了。 我原以为你能告诉我一些关于他们的事情。 也许他们中的一个被抓住了, 现在准备作证... ";
+            link.l1 = "除了他们从我这里偷走了一件重要的东西 —没什么别的了。 我原以为你能告诉我一些关于他们的事情。 也许他们中的一个被抓住了, 现在准备作证... ";
             link.l1.go = "caleuche_1";
         break;
         

@@ -71,7 +71,7 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 					break;
 				}
-				//<—— 奴隶贩子
+				//< —奴隶贩子
 			
        			dialog.text = NPCharRepPhrase(pchar, 
 					LinkRandPhrase("全镇都处于警戒状态, 他们到处都在搜捕你! 如果我是你, 我不会在这里久留。 ", "所有卫兵都在找你。 我又不傻, 不会冒着风险和你说话! ", "快跑, " + GetSexPhrase("伙计", "姑娘") + ", 趁士兵们还没把你打成筛子..."), 
@@ -114,7 +114,7 @@ void ProcessDialogEvent()
 				}
 				break;
 			}			
-		//<—— 加斯科涅人的负担
+		//< —加斯科涅人的负担
 			
 			//--> 奴隶贩子
 			if (pchar.questTemp.Slavetrader == "canTakeQuest" && pchar.questTemp.Slavetrader.UsurerId == npchar.id)
@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 				link.l1.go = "Usurer_Escape";
 				break;
 			}
-			//<—— 奴隶贩子
+			//< —奴隶贩子
 			// FMK-瓜德罗普岛
 			if(CheckAttribute(pchar, "questTemp.FMQG") && pchar.questTemp.FMQG == "killers" && npchar.location == "BasTer_bank")
 			{
@@ -184,7 +184,7 @@ void ProcessDialogEvent()
 			// 贝丝夫人 -->
 			if (pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_Bank" && !CheckAttribute(pchar, "questTemp.LadyBeth_Usurer")) // 布莱克伍德在城里
 			{
-				dialog.Text = "哦, 船长! 请看我今天得到了什么。 有些物品是我从布莱克伍德的手下那里得到的。 他们需要钱进行新的探险, 而对我们来说—— 是利润, 对吧? ";
+				dialog.Text = "哦, 船长! 请看我今天得到了什么。 有些物品是我从布莱克伍德的手下那里得到的。 他们需要钱进行新的探险, 而对我们来说 —是利润, 对吧? ";
 				link.l1 = "布莱克伍德知道他的手下在卖他们的发现吗? ";
 				link.l1.go = "LadyBeth_Usurer_1";
 				break;
@@ -274,7 +274,7 @@ void ProcessDialogEvent()
 				link.l11 = "我们三个月前见过面, 谈过一个人的遗物。 他的名字是" + pchar.GenQuest.Noblelombard.Name + "。 还记得吗? 他必须以我的名义开一个存款账户。 金额是" + FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Regard)) + "...";
 				link.l11.go = "Noblelombard_5";			
 			}
-			//<—— 家族遗物
+			//< —家族遗物
 			
 			//-->奴隶贩子
 			if (pchar.questTemp.Slavetrader == "Seek_slaves" && pchar.questTemp.Slavetrader.UsurerId == npchar.id) 
@@ -458,7 +458,7 @@ void ProcessDialogEvent()
 				link.l11 = "我们三个月前见过面, 谈过一个人的遗物。 他的名字是" + pchar.GenQuest.Noblelombard.Name + "。 还记得吗? 他必须以我的名义开一个存款账户。 金额是" + FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Regard)) + "...";
 				link.l11.go = "Noblelombard_5";			
 			}
-			//<—— 家族遗物
+			//< —家族遗物
 			
 			//-->奴隶贩子
 			if (pchar.questTemp.Slavetrader == "Seek_slaves" && pchar.questTemp.Slavetrader.UsurerId == npchar.id) 
@@ -1146,7 +1146,7 @@ void ProcessDialogEvent()
 			addMoneyToCharacter(Pchar, iTemp);
 			DeleteAttribute(Pchar, "quest.Deposits." + (sDepositType1));
 		break;
-		//<—— 部分取款		
+		//< —部分取款		
 		
 		case "Deposit_return_1":
 			addMoneyToCharacter(Pchar, makeint(Pchar.Quest.Deposits.(sDepositType1).Result));
@@ -1329,7 +1329,7 @@ void ProcessDialogEvent()
 			TakeNItems(pchar,"gold_dublon", iTemp);
 			DeleteAttribute(Pchar, "quest.Deposits." + (sDepositType2));
 		break;
-		//<—— 部分取款		
+		//< —部分取款		
 		
 		case "Deposit_return_dub_1":
 			TakeNItems(pchar,"gold_dublon", sti(Pchar.Quest.Deposits.(sDepositType2).Result));
@@ -1600,7 +1600,7 @@ void ProcessDialogEvent()
 			iSlaveMoney = makeint(sTemp)*200;
 			if (amount < 0)
 			{
-				dialog.text = "我没看错你—— " + GetSexPhrase("你是个潇洒的暴徒", "你是个凶猛的少女") + "! 我需要像你这样的人。 你以最出色的方式完成了任务—— 你带来了一千五百多个奴隶! 不幸的是, 我只能支付你一千六百个奴隶的钱。 我没有足够的硬币支付剩下的, 所以你得自己卖掉它们。 你的奖励是32万比索。 ";
+				dialog.text = "我没看错你 —" + GetSexPhrase("你是个潇洒的暴徒", "你是个凶猛的少女") + "! 我需要像你这样的人。 你以最出色的方式完成了任务 —你带来了一千五百多个奴隶! 不幸的是, 我只能支付你一千六百个奴隶的钱。 我没有足够的硬币支付剩下的, 所以你得自己卖掉它们。 你的奖励是32万比索。 ";
 				link.l1 = "感谢。 和你做生意很愉快, " + npchar.name+ "! ";
 				link.l1.go = "Takeslaves_6_win";
 				AddMoneyToCharacter(pchar, 320000);
@@ -1613,7 +1613,7 @@ void ProcessDialogEvent()
 			}
 			if (amount >= 0 && amount < 200)
 			{
-				dialog.text = "我没看错你—— " + GetSexPhrase("你是个潇洒的暴徒", "你是个凶猛的少女") + "! 我需要像你这样的人。 你以最出色的方式完成了任务—— 你给我带来了" + sTemp + "个奴隶。 你的奖励是" + FindRussianMoneyString(iSlaveMoney) + "。 ";
+				dialog.text = "我没看错你 —" + GetSexPhrase("你是个潇洒的暴徒", "你是个凶猛的少女") + "! 我需要像你这样的人。 你以最出色的方式完成了任务 —你给我带来了" + sTemp + "个奴隶。 你的奖励是" + FindRussianMoneyString(iSlaveMoney) + "。 ";
 				link.l1 = "感谢。 和你做生意很愉快, " + npchar.name+ "! ";
 				link.l1.go = "Takeslaves_6_win";
 				AddMoneyToCharacter(pchar, makeint(iSlaveMoney));
@@ -1652,7 +1652,7 @@ void ProcessDialogEvent()
 			}
 			if (amount >= 1100 && amount < 1600)
 			{
-				dialog.text = "听起来不错, 但是... 嗯。 看起来我看错你了。 你带来了什么? " + sTemp + "个奴隶? 剩下的呢? 别告诉我你把它们沉了。 我肯定你把它们卖给走私者了, 或者更糟—— 卖给那个混蛋拉瓦锡了。 滚出去, 我不想再和你有任何生意往来了! ";
+				dialog.text = "听起来不错, 但是... 嗯。 看起来我看错你了。 你带来了什么? " + sTemp + "个奴隶? 剩下的呢? 别告诉我你把它们沉了。 我肯定你把它们卖给走私者了, 或者更糟 —卖给那个混蛋拉瓦锡了。 滚出去, 我不想再和你有任何生意往来了! ";
 				link.l1 = "如你所愿, 再见。 ";
 				link.l1.go = "node_hanter_1";
 				break;
@@ -1663,7 +1663,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "node_hanter_1":
-			dialog.text = "这还没完。 没人敢愚弄我! 你会为你的尝试付出代价—— 我会确保你遇到麻烦。 现在从这里出去! ";
+			dialog.text = "这还没完。 没人敢愚弄我! 你会为你的尝试付出代价 —我会确保你遇到麻烦。 现在从这里出去! ";
 			link.l1 = "去你的和你的奴隶贸易! 我应该在你站的地方砍了你, 但我比你好得多。 ";
 			link.l1.go = "exit";
 			AddQuestRecord("Slavetrader", "9");
@@ -1772,7 +1772,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "EscapeSlave_3":
-			dialog.text = "但他们不只是逃跑了, 不知怎么的, 他们设法离开了岛屿! 没有留下任何痕迹。 马蒂亚斯.贝克很愤怒。 但这不是重点... 重点是, 我请你航行到库拉索岛, 了解那里发生了什么, 找到难民并抓住他们\n当然, 把他们从荷兰司法的手中救出来, 荷兰司法对他们会很无情。 我会按每人300比索支付—— 我听说他们是非常好的奴隶。 ";
+			dialog.text = "但他们不只是逃跑了, 不知怎么的, 他们设法离开了岛屿! 没有留下任何痕迹。 马蒂亚斯.贝克很愤怒。 但这不是重点... 重点是, 我请你航行到库拉索岛, 了解那里发生了什么, 找到难民并抓住他们\n当然, 把他们从荷兰司法的手中救出来, 荷兰司法对他们会很无情。 我会按每人300比索支付 —我听说他们是非常好的奴隶。 ";
 			link.l1 = "明白了。 我要去库拉索岛。 等我的好消息。 ";
 			link.l1.go = "EscapeSlave_yes";
 			link.l2 = "你知道, 我不会接受这个任务。 我不会剥夺人们的自由。 他们冒着生命危险去争取自由。 他们应得的。 ";
@@ -1808,7 +1808,7 @@ void ProcessDialogEvent()
 			iSlaveMoneyH = makeint(sNum)*100;
 			if (amount < 0)
 			{
-				dialog.text = "哈! 你不仅成功完成了艰巨的任务, 还带来了比我要求更多的奴隶—— " + sTemp + "个奴隶。 但是" + sNum + "个奴隶不是从库拉索岛逃出来的。 我按每人100比索支付你。 我想这对你来说行得通。 你的奖励是33万比索和" + FindRussianMoneyString(iSlaveMoneyH) + "的额外费用, 哈哈。 ";
+				dialog.text = "哈! 你不仅成功完成了艰巨的任务, 还带来了比我要求更多的奴隶 —" + sTemp + "个奴隶。 但是" + sNum + "个奴隶不是从库拉索岛逃出来的。 我按每人100比索支付你。 我想这对你来说行得通。 你的奖励是33万比索和" + FindRussianMoneyString(iSlaveMoneyH) + "的额外费用, 哈哈。 ";
 				link.l1 = "哈! 你绝对骗不了。 我同意, 不管你说什么, " + npchar.name+ "! ";
 				link.l1.go = "Escape_slaves_win_1";
 				AddMoneyToCharacter(pchar, 330000);
@@ -1849,12 +1849,12 @@ void ProcessDialogEvent()
 			}
 			if (amount >= 600 && amount < 1100)
 			{
-				dialog.text = "你找到他们了? 嗯... 你给我带来了什么? " + sTemp + "个奴隶? 剩下的货物呢? 甚至不要试图告诉我你把它沉了。 你一定是把它卖给走私者了, 或者更糟—— 卖给伊斯拉-特索罗的那个混蛋拉瓦锡了。 离开这里, 我不想再和你合作了。 ";
+				dialog.text = "你找到他们了? 嗯... 你给我带来了什么? " + sTemp + "个奴隶? 剩下的货物呢? 甚至不要试图告诉我你把它沉了。 你一定是把它卖给走私者了, 或者更糟 —卖给伊斯拉-特索罗的那个混蛋拉瓦锡了。 离开这里, 我不想再和你合作了。 ";
 				link.l1 = "再见。 ";
 				link.l1.go = "node_hanter_1";
 				break;
 			}
-			dialog.text = "找到他们了? 那奴隶呢? 我们的货物在哪里? 甚至不要试图告诉我你把它沉了。 你一定是把它卖给走私者了, 或者更糟—— 卖给伊斯拉-特索罗的那个混蛋拉瓦锡了。 离开这里, 我不想再和你合作了。 ";
+			dialog.text = "找到他们了? 那奴隶呢? 我们的货物在哪里? 甚至不要试图告诉我你把它沉了。 你一定是把它卖给走私者了, 或者更糟 —卖给伊斯拉-特索罗的那个混蛋拉瓦锡了。 离开这里, 我不想再和你合作了。 ";
 			link.l1 = "再见。 ";
 			link.l1.go = "node_hanter_1";
 		break;
@@ -1898,7 +1898,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "Slaveshore_3_yes":
-			dialog.text = "你为什么感到惊讶? 因为我不在乎硬币的国籍? 我向你保证, 我确实不在乎。 说实话, 爱国主义对一个专业的银行家来说是不好的, 除非他想有一天破产\n但哲学讲得够多了。 我们直奔主题吧—— 这艘船会在这里停留到午夜, 所以你没有多少时间了。 你准备好继续了吗? ";
+			dialog.text = "你为什么感到惊讶? 因为我不在乎硬币的国籍? 我向你保证, 我确实不在乎。 说实话, 爱国主义对一个专业的银行家来说是不好的, 除非他想有一天破产\n但哲学讲得够多了。 我们直奔主题吧 —这艘船会在这里停留到午夜, 所以你没有多少时间了。 你准备好继续了吗? ";
 			link.l1 = "是的, " + npchar.name+ ", 我这就去。 ";
 			link.l1.go = "Slaveshore_4";
 		break;
@@ -1930,7 +1930,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "Slaveshore_6":
-			dialog.text = "伏击不是当地当局组织的, 否则我会知道... " +pchar.name+ ", 现在不是争吵的时候。 我们俩都有危险, 我的一个前承包商陷害了我们\n我设法查明, 所有收集到的证据—— 一包裹文件—— 正在被运往我们的总督那里。 如果他拿到了, 我们就完了! 顺便说一下, 你将遭受最大的损失。 ";
+			dialog.text = "伏击不是当地当局组织的, 否则我会知道... " +pchar.name+ ", 现在不是争吵的时候。 我们俩都有危险, 我的一个前承包商陷害了我们\n我设法查明, 所有收集到的证据 —一包裹文件 —正在被运往我们的总督那里。 如果他拿到了, 我们就完了! 顺便说一下, 你将遭受最大的损失。 ";
 			link.l1 = "现在我明白那个混蛋船长是什么意思了! ";
 			link.l1.go = "Slaveshore_7";
 		break;
@@ -1975,7 +1975,7 @@ void ProcessDialogEvent()
 			break;
 			
 		case "Brig_lose":
-			dialog.text = "该死... 我本来指望你, " +pchar.name+ "。 那好吧。 但我们再也不会有任何生意往来了。 如果我不能贿赂调查员, 我就得逃跑。 我不建议你留在这里—— 士兵随时可能来这里。 再见。 ";
+			dialog.text = "该死... 我本来指望你, " +pchar.name+ "。 那好吧。 但我们再也不会有任何生意往来了。 如果我不能贿赂调查员, 我就得逃跑。 我不建议你留在这里 —士兵随时可能来这里。 再见。 ";
 			link.l1 = "再见, " + npchar.name+ "。 ";
 			link.l1.go = "exit";
 			pchar.questTemp.Slavetrader = "End_quest";
@@ -2003,7 +2003,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "Brig_win_2":
-			dialog.text = "当然, " +pchar.name+ "。 甚至更多, 我欠你很多。 我真的希望继续我们的生意。 但我请你理解我—— 我花了一大笔钱—— 总督和指挥官的忠诚花费了很多。 而且我还得处理我银行里整个巡逻队被谋杀的事情... ";
+			dialog.text = "当然, " +pchar.name+ "。 甚至更多, 我欠你很多。 我真的希望继续我们的生意。 但我请你理解我 —我花了一大笔钱 —总督和指挥官的忠诚花费了很多。 而且我还得处理我银行里整个巡逻队被谋杀的事情... ";
 			link.l1 = "你的意思是你不会补偿我的费用? ! ";
 			link.l1.go = "Brig_win_3";
 		break;
@@ -2065,7 +2065,7 @@ void ProcessDialogEvent()
 			Slavetrader_GetHispanShore();
 			sTemp = pchar.questTemp.SlavetraderAreal.add; 
 			pchar.questTemp.Slavetrader.ShipName = GenerateRandomNameToShip(SPAIN);
-			dialog.text = "很快从加拉加斯将驶出一艘重型大帆船。 它叫'" + pchar.questTemp.Slavetrader.ShipName + " 。 它载有大量奴隶—— 大约3000人—— 奥里诺科河的印第安人, 根据分配制度政策捕获的。 这艘大帆船正驶往圣地亚哥, 古巴的甘蔗种植园需要大量工人。 你必须捕获这艘大帆船和她的货物。 如果我是你, 我会至少带两艘船, 他们说这艘大帆船是同类中最好的。 工资率保持不变—— 每人200比索。 ";
+			dialog.text = "很快从加拉加斯将驶出一艘重型大帆船。 它叫'" + pchar.questTemp.Slavetrader.ShipName + " 。 它载有大量奴隶 —大约3000人 —奥里诺科河的印第安人, 根据分配制度政策捕获的。 这艘大帆船正驶往圣地亚哥, 古巴的甘蔗种植园需要大量工人。 你必须捕获这艘大帆船和她的货物。 如果我是你, 我会至少带两艘船, 他们说这艘大帆船是同类中最好的。 工资率保持不变 —每人200比索。 ";
 			link.l1 = "嘿! 听起来不错。 我同意。 ";
 			link.l1.go = "SlaveGalleon_5";
 			link.l2 = "你知道我不喜欢你的分配制度。 这太愤世嫉俗了。 我不打算这么做。 ";
@@ -2088,7 +2088,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "Lostgalleon":
-			dialog.text = "那么, " +pchar.name+ ", 这是我最后的希望了... 这就是为什么我把这份工作给了你。 除了你, 没有人能做到... 我看你也做不到。 那么我们说再见吧。 在最后一次失败和所有那些流言蜚语之后, 我所有的客户都走了。 我几乎破产了, 也许我得离开这个城镇。 我不怪你—— 这份工作太难了。 唉... 再见, " +pchar.name+ "。 ";
+			dialog.text = "那么, " +pchar.name+ ", 这是我最后的希望了... 这就是为什么我把这份工作给了你。 除了你, 没有人能做到... 我看你也做不到。 那么我们说再见吧。 在最后一次失败和所有那些流言蜚语之后, 我所有的客户都走了。 我几乎破产了, 也许我得离开这个城镇。 我不怪你 —这份工作太难了。 唉... 再见, " +pchar.name+ "。 ";
 			link.l1 = "我很抱歉, " + npchar.name+ ", 事情发展得太过分了。 我真的很抱歉。 也许一切都会解决的。 再见。 ";
 			link.l1.go = "exit";
 			CloseQuestHeader("Slavetrader");
@@ -2103,7 +2103,7 @@ void ProcessDialogEvent()
 			if(amount < 1) 
 			{
 				dialog.text = "呼, 我现在感觉好多了... 我信任你是对的... 这种讽刺是从哪里来的? 怎么了? ";
-				link.l1 = "亲爱的先生, 那不是一艘大帆船... 或者是一艘非常大的大帆船... 该死! 那是一艘战列舰! 你甚至没有警告我! 但我设法登上了她。 我有" + sTemp + "个奴隶, 我准备把它们转移给你。 根据我们的协议, 你欠我—— " + FindRussianMoneyString(iSlaveMoney) + "。 如果你能为你的错误信息提供一些补偿, 那就太好了。 ";
+				link.l1 = "亲爱的先生, 那不是一艘大帆船... 或者是一艘非常大的大帆船... 该死! 那是一艘战列舰! 你甚至没有警告我! 但我设法登上了她。 我有" + sTemp + "个奴隶, 我准备把它们转移给你。 根据我们的协议, 你欠我 —" + FindRussianMoneyString(iSlaveMoney) + "。 如果你能为你的错误信息提供一些补偿, 那就太好了。 ";
 				link.l1.go = "Wingalleon_1";
 			}
 			else
@@ -2290,7 +2290,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "FindRat_6":
-			dialog.text = "这件事与你也参与的最近事件有关... 所以, 如你所知, 我做的是相当非法的生意—— 奴隶贸易。 你可能也知道, 我雇佣像你这样的私掠者来完成各种任务\n我的一个人不久前出于未知原因背叛了我。 他收集了证据, 并向当局做了报告。 你有幸亲眼看到了后果。 一艘载有士兵的船来到了这里... 你知道剩下的\n我花了相当大的努力才解决了这个局面。 如你可能理解的, 我不能让这种背叛得不到回应。 此外, 我不能在知道那只老鼠还活着的情况下和平地生活和工作。 我派了赏金猎人, 但至今没有结果\n我请你亲自处理这件事。 更重要的是, 他的行为也影响了你。 ";
+			dialog.text = "这件事与你也参与的最近事件有关... 所以, 如你所知, 我做的是相当非法的生意 —奴隶贸易。 你可能也知道, 我雇佣像你这样的私掠者来完成各种任务\n我的一个人不久前出于未知原因背叛了我。 他收集了证据, 并向当局做了报告。 你有幸亲眼看到了后果。 一艘载有士兵的船来到了这里... 你知道剩下的\n我花了相当大的努力才解决了这个局面。 如你可能理解的, 我不能让这种背叛得不到回应。 此外, 我不能在知道那只老鼠还活着的情况下和平地生活和工作。 我派了赏金猎人, 但至今没有结果\n我请你亲自处理这件事。 更重要的是, 他的行为也影响了你。 ";
 			link.l1 = "嗯... 这个混蛋必须被吊死在桅杆上! 告诉我更多关于他的事情, 当然还有我做这项工作的报酬。 ";
 			link.l1.go = "FindRat_7";
 		break;
@@ -2478,7 +2478,7 @@ void ProcessDialogEvent()
 		
 		case "Havana_Fort_yes_3":
 			dialog.text = "现在明白了... " +pchar.name+ ", 你是我最好的代理人, 我指望将来再和你做生意。 ";
-			link.l1 = "好的, " + npchar.name+ "。 但你也必须理解我—— 一百万比索是一大笔钱。 ";
+			link.l1 = "好的, " + npchar.name+ "。 但你也必须理解我 —一百万比索是一大笔钱。 ";
 			link.l1.go = "Havana_Fort_yes_4";
 		break;
 		
@@ -2550,10 +2550,10 @@ void ProcessDialogEvent()
 
 	//--> 家族遗物
 		case "Noblelombard":
-			dialog.text = "哦, 真的吗? 看来他不想亲自和我谈... 好吧, 我们和你讨论这件事。 "+pchar.GenQuest.Noblelombard.Name+"欠我"+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Summ))+": "+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Money))+", 还有我的利息—— 三个月的"+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Percent))+"。 如果我最近几天看不到钱, 那么我就会卖掉他的遗物, 我不在乎它对他有什么价值。 生意就是生意。 ";
+			dialog.text = "哦, 真的吗? 看来他不想亲自和我谈... 好吧, 我们和你讨论这件事。 "+pchar.GenQuest.Noblelombard.Name+"欠我"+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Summ))+": "+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Money))+", 还有我的利息 —三个月的"+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Percent))+"。 如果我最近几天看不到钱, 那么我就会卖掉他的遗物, 我不在乎它对他有什么价值。 生意就是生意。 ";
 			if(sti(pchar.money) >= sti(pchar.GenQuest.Noblelombard.Summ))
 			{
-				link.l1 = "太好了! 既然如此, 我现在就把全部款项连同所有利息一起付给你—— "+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Summ))+"。 他会自己拿走他的遗物。 这是你的钱。 ";
+				link.l1 = "太好了! 既然如此, 我现在就把全部款项连同所有利息一起付给你 —"+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Summ))+"。 他会自己拿走他的遗物。 这是你的钱。 ";
 				link.l1.go = "Noblelombard_1";
 			}
 			if(sti(pchar.money) >= sti(pchar.GenQuest.Noblelombard.Percent)*2)
@@ -2635,7 +2635,7 @@ void ProcessDialogEvent()
 		case "Noblelombard_5":
 			if(sti(pchar.GenQuest.Noblelombard.Chance) == 9)
 			{
-				dialog.text = "你不说我也知道! "+pchar.GenQuest.Noblelombard.Name+"没有为你的名字开设存款。 他甚至不在我们的殖民地—— 航行到欧洲去了。 我告诉你, 我从未见过如此不诚实的人。 他想骗我, 但失败了—— 我有自己的一些技巧... ";
+				dialog.text = "你不说我也知道! "+pchar.GenQuest.Noblelombard.Name+"没有为你的名字开设存款。 他甚至不在我们的殖民地 —航行到欧洲去了。 我告诉你, 我从未见过如此不诚实的人。 他想骗我, 但失败了 —我有自己的一些技巧... ";
 				link.l1 = "混蛋! 他向我保证过... ";
 				link.l1.go = "Noblelombard_6";
 			}
@@ -2673,7 +2673,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(Pchar, "GenQuest.Noblelombard");
 			DeleteAttribute(Pchar, "quest.noblelombard");// 从NPC到玩家的樵夫  樵夫
 		break;
-//<—— 家族遗物
+//< —家族遗物
 
 		// 加斯科涅人的负担
 		case "sharlie_credit":
@@ -2688,7 +2688,7 @@ void ProcessDialogEvent()
 		case "FMQG_x":
 			DelLandQuestMark(npchar);
 			dialog.text = "什-什么... 你是什么意思? ";
-			link.l1 = "你是个该死的叛徒! 现在仔细听我说: 我没那么蠢。 皮内特写了两封信。 我给了你一封, 第二封在我信任的代理人手里。 如果我有什么不测—— 我的人会把它直接送到总督手里... ";
+			link.l1 = "你是个该死的叛徒! 现在仔细听我说: 我没那么蠢。 皮内特写了两封信。 我给了你一封, 第二封在我信任的代理人手里。 如果我有什么不测 —我的人会把它直接送到总督手里... ";
 			link.l1.go = "FMQG_x1";
 		break;
 		
@@ -2727,7 +2727,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_Usurer_2":
-			dialog.text = "他们说船员的条件越来越差。 布莱克伍德先生甚至开始容忍定期的损失—— 这是以前从未发生过的。 但那不是我的事。 我只是卖货。 那么你对什么感兴趣? ";
+			dialog.text = "他们说船员的条件越来越差。 布莱克伍德先生甚至开始容忍定期的损失 —这是以前从未发生过的。 但那不是我的事。 我只是卖货。 那么你对什么感兴趣? ";
 			link.l1 = "我们言归正传吧。 ";
 			link.l1.go = "next";
 			npchar.quest.item_date = "LadyBeth";

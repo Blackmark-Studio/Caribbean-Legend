@@ -214,7 +214,7 @@ void ProcessDialogEvent()
 			dialog.text = "Tichingitu听你吩咐, "+pchar.name+"船长! ";
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
-				Link.l4 = "Tichingitu, 我马上要前往一个叫Tayasal的印第安老村庄。老实说, 这趟旅程极其危险, 也非常离奇——要通过一个传送神像。你……你愿意和我一起去吗? ";
+				Link.l4 = "Tichingitu, 我马上要前往一个叫Tayasal的印第安老村庄。老实说, 这趟旅程极其危险, 也非常离奇—要通过一个传送神像。你……你愿意和我一起去吗? ";
 				Link.l4.go = "tieyasal";
 			}
 			

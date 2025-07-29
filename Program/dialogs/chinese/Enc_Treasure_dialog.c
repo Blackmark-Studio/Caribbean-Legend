@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 			Link.l1 = "算了... ";
 			Link.l1.go = "exit";
 			Link.l2 = "你卖给我的是假货! 我要揍扁你... ";
-			Link.l2.go = "outraged"; //海军 —— 决斗!!!
+			Link.l2.go = "outraged"; //海军  —决斗!!!
 			Diag.TempNode = "let_s_duel";
 			npchar.LifeDay = 1; // 以免退出时消失
 			SaveCurrentNpcQuestDateParam(npchar, "LifeTimeCreate");

@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "RedChieftain":
-			dialog.text = "你好, 白人。 我看到你是大独木舟的船长。 我是卡纳里。 我是开曼 --强大的阿拉瓦克部落的酋长。 我想和你谈谈。 ";
+			dialog.text = "你好, 白人。 我看到你是大独木舟的船长。 我是卡纳里。 我是开曼 —强大的阿拉瓦克部落的酋长。 我想和你谈谈。 ";
 			link.l1 = "我在听, 酋长。 是什么麻烦让你来找我? ";
 			link.l1.go = "RedChieftain_0";
 			link.l2 = "你想从我这里得到什么, 你这个肮脏的红皮肤猿猴? 回到你的丛林里去, 不要用你的请求来打扰我。 ";
@@ -75,7 +75,7 @@ void ProcessDialogEvent()
 		
 		case "RedChieftain_4":
 			dialog.text = "不要走上战争之路。 解放印第安人。 我的人民。 我们会把独木舟上所有的神之泪都给你。 杀死邪恶的白人, 帮助印第安人, 获得神之泪, 把它们卖掉换很多很多贝壳串珠。 很多贝壳串珠";
-			link.l1 = "啊, 我现在明白了。 不, 卡纳里, 我不能帮助你。 我现在不能这样做 --我的船需要修理, 没有补给了... ";
+			link.l1 = "啊, 我现在明白了。 不, 卡纳里, 我不能帮助你。 我现在不能这样做 —我的船需要修理, 没有补给了... ";
 			link.l1.go = "RedChieftain_wait";
 			link.l2 = "既然如此, 我很乐意。 让我们讨论一下细节。 你的人民在哪里? 你说你已经找到他们了... ";
 			link.l2.go = "RedChieftain_5";
@@ -151,7 +151,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "RedChieftain_6":
-			dialog.text = "是的, 两艘载有火枪和大刀的白人独木舟。 岸上的营地也有守卫 --印第安人无法逃脱。 ";
+			dialog.text = "是的, 两艘载有火枪和大刀的白人独木舟。 岸上的营地也有守卫 —印第安人无法逃脱。 ";
 			link.l1 = "什么样的船? 你能描述一下吗? 它们有多大? 什么样的帆? ";
 			link.l1.go = "RedChieftain_7";
 		break;
@@ -229,7 +229,7 @@ void ProcessDialogEvent()
 		// belamour legendary edition -->
 			if(sti(pchar.questTemp.RedChieftain.Tartane) > 5)
 			{
-				dialog.text = "卡纳里再次感谢你, 白人兄弟! 你拯救了所有载有印第安人的独木舟! 对卡纳里来说, 拯救所有独木舟非常重要, 因为你还拯救了卡纳里的孙子, 他被邪恶的白人奴役。 小时候, 我的孙子非常喜欢游泳, 卡纳里给了他这个有魔力的护身符, 这样孙子就不会溺水。 现在孙子不再想游泳了, 把护身符给了我, 让我把它送给你, 白人兄弟。 我希望神之泪和这件礼物能充分回报你对阿拉瓦克生命的拯救。 现在我们说再见 --我们该回到我们的.native village了。 ";
+				dialog.text = "卡纳里再次感谢你, 白人兄弟! 你拯救了所有载有印第安人的独木舟! 对卡纳里来说, 拯救所有独木舟非常重要, 因为你还拯救了卡纳里的孙子, 他被邪恶的白人奴役。 小时候, 我的孙子非常喜欢游泳, 卡纳里给了他这个有魔力的护身符, 这样孙子就不会溺水。 现在孙子不再想游泳了, 把护身符给了我, 让我把它送给你, 白人兄弟。 我希望神之泪和这件礼物能充分回报你对阿拉瓦克生命的拯救。 现在我们说再见 —我们该回到我们的.native village了。 ";
 				link.l1 = "祝你好运, 库纳里! 很高兴你的孙子幸存下来! 我祈祷这种邪恶再也不会降临到你身上! ";
 				link.l1.go = "RedChieftain_final_1Obereg";
 			}
@@ -274,7 +274,7 @@ void ProcessDialogEvent()
 			CloseQuestHeader("RedChieftain");
 			DeleteAttribute(pchar, "questTemp.RedChieftain");
 		break;
-		// <—— legendary edition
+		// < —legendary edition
 		
 		case "RedChieftain_final_1":
 			DialogExit();

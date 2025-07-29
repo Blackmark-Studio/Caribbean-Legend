@@ -65,7 +65,7 @@ MerchantOnMap_13
 
 MerchantOnMap_14
 {
-~ "商人"船, 船舱里满载着全副武装的 @<NationNameSK(sti(MerPrm.ination))> 士兵。 但 @<pchar.name> 并未慌乱 ~
+~ "商"船上, 船舱里满载着全副武装的 @<NationNameSK(sti(MerPrm.ination))> 士兵。 但 @<pchar.name> 并未慌乱 ~
 }
 
 MerchantOnMap_15

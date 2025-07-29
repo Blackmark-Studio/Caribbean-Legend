@@ -90,7 +90,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_5":
-			dialog.text = "El nombre del filibote es el "+pchar.questTemp.FalseTrace.ShipName+", ella parte de Cartagena y navega "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+". No tenemos mucho tiempo, sin embargo. Dos semanas, tres como máximo. Si no la encontramos en tres semanas, se acabó.";
+			dialog.text = "El nombre del filibote es el "+pchar.questTemp.FalseTrace.ShipName+", partirá de Cartagena y navegará hasta "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+". No tenemos mucho tiempo, dos semanas, tres como máximo. Si no lo encontramos en tres semanas, se acabó.";
 			link.l1 = "¡No perdamos el tiempo, entonces! ¡La aventura nos llama!";
 			link.l1.go = "FalseTrace_6";
 		break;
@@ -172,8 +172,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_13":
-			link.l1 = "Tu historia suena bastante parecida a tu anterior fábula sobre un filibote cargado de plata. Ya me has engañado una vez. ¿Cómo puedes garantizar que no estás mintiendo esta vez?";
 			dialog.text = "Porque, aún no tengo esta información. Déjame explicarte en detalle. Un caballero de fortuna llamado Solly el Bizco, ¿alguna vez has oído hablar de él? - va a saquear unas minas de oro no lejos de Blueweld\nDebido a ciertos eventos, tendrá que dejar todo su oro en algún lugar escondido y poner algunos guardias para protegerlo. El mismo hombre irá a pie a Belice o a Blueweld para conseguir un barco\nTengo un agente entre la tripulación de Solly, él me estará esperando en "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.QuestCity)+"Una vez que echemos el ancla allí, él me dirá dónde esconde Solly sus tesoros.\nIrás allí, eliminarás a los guardias y te llevarás todo el oro. Iba a hacerlo yo mismo, pero considerando la situación actual, te lo dejaré todo a ti. Sin cargo.";
+			link.l1 = "Tu historia suena bastante parecida a tu anterior fábula sobre un filibote cargado de plata. Ya me has engañado una vez. ¿Cómo puedes garantizar que no estás mintiendo esta vez?";
 			link.l1.go = "FalseTrace_14";
 		break;
 		

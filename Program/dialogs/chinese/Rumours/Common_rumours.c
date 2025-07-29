@@ -38,13 +38,13 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 治愈的黑暗之水
+		//< —治愈的黑暗之水
 		//--> 正义的边界
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "两天前, 有人厚颜无耻地企图刺杀港口长官! 刺客在他的办公室门口埋伏, 但长官设法呼救。 一名火枪手迅速赶到并击伤了恶棍, 不过那家伙还是逃出了城门。 \n听说港口长官为这个无赖的脑袋开出了丰厚的赏金! 到目前为止, 还没有勇敢的人站出来。 告诉你吧, 就算给一千达布隆 --我也不会拿脖子去冒险... ";
+			dialog.text = "两天前, 有人厚颜无耻地企图刺杀港口长官! 刺客在他的办公室门口埋伏, 但长官设法呼救。 一名火枪手迅速赶到并击伤了恶棍, 不过那家伙还是逃出了城门。 \n听说港口长官为这个无赖的脑袋开出了丰厚的赏金! 到目前为止, 还没有勇敢的人站出来。 告诉你吧, 就算给一千达布隆 —我也不会拿脖子去冒险... ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
 			
@@ -57,13 +57,13 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 正义的边界
+		//< —正义的边界
 		//--> 依法贸易
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "听到消息了吗? ! 这简直是血腥的暴行! 酒馆里一滴朗姆酒或葡萄酒都没有了 --在这该死的炎热天气里, 人们该如何解渴? 客栈老板一周来一直用空洞的承诺敷衍我们, 说酒很快就会再来, 但一直什么都没有! 难道要我们渴到审判日吗? ";
+			dialog.text = "听到消息了吗? ! 这简直是血腥的暴行! 酒馆里一滴朗姆酒或葡萄酒都没有了 —在这该死的炎热天气里, 人们该如何解渴? 客栈老板一周来一直用空洞的承诺敷衍我们, 说酒很快就会再来, 但一直什么都没有! 难道要我们渴到审判日吗? ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
 			
@@ -75,7 +75,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 依法贸易
+		//< —依法贸易
 		//--> 被盗的记忆
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
@@ -104,7 +104,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 被盗的记忆
+		//< —被盗的记忆
 		//--> 伟大捕获的俘虏 andre39966
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
@@ -122,7 +122,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 伟大捕获的俘虏
+		//< —伟大捕获的俘虏
 		//--> 贝齐.普莱斯的秘密
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
@@ -141,7 +141,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 贝齐.普莱斯的秘密
+		//< —贝齐.普莱斯的秘密
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2 )
         srum = SelectRumourEx("towngirl", NPChar);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // 修复
@@ -208,13 +208,13 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-//<—— 治愈的黑暗之水
+//< —治愈的黑暗之水
 //--> 正义的边界
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "两天前, 有人厚颜无耻地企图刺杀港口长官! 刺客在他的办公室门口埋伏, 但长官设法呼救。 一名火枪手迅速赶到并击伤了恶棍, 不过那家伙还是逃出了城门。 \n听说港口长官为这个无赖的脑袋开出了丰厚的赏金! 到目前为止, 还没有勇敢的人站出来。 请注意, 即使给一千达布隆 --我也不会拿脖子去冒险... ";
+			dialog.text = "两天前, 有人厚颜无耻地企图刺杀港口长官! 刺客在他的办公室门口埋伏, 但长官设法呼救。 一名火枪手迅速赶到并击伤了恶棍, 不过那家伙还是逃出了城门。 \n听说港口长官为这个无赖的脑袋开出了丰厚的赏金! 到目前为止, 还没有勇敢的人站出来。 请注意, 即使给一千达布隆 —我也不会拿脖子去冒险... ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
 			
@@ -227,14 +227,14 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 正义的边界
+		//< —正义的边界
 		
 		//--> 依法贸易
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "听到消息了吗? ! 这简直是血腥的暴行! 酒馆里一滴朗姆酒或葡萄酒都没有了 --在这该死的炎热天气里, 人们该如何解渴? 客栈老板一周来一直用空洞的承诺敷衍我们, 说酒很快就会再来, 但一直什么都没有! 难道要我们渴到审判日吗? ";
+			dialog.text = "听到消息了吗? ! 这简直是血腥的暴行! 酒馆里一滴朗姆酒或葡萄酒都没有了 —在这该死的炎热天气里, 人们该如何解渴? 客栈老板一周来一直用空洞的承诺敷衍我们, 说酒很快就会再来, 但一直什么都没有! 难道要我们渴到审判日吗? ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
 			
@@ -246,7 +246,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 依法贸易
+		//< —依法贸易
 		
 		//--> 被盗的记忆
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
@@ -276,7 +276,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 被盗的记忆
+		//< —被盗的记忆
 		
 		//--> 伟大捕获的俘虏 andre39966
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
@@ -295,7 +295,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 伟大捕获的俘虏 
+		//< —伟大捕获的俘虏 
 		//--> 贝齐.普莱斯的秘密
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
@@ -314,7 +314,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 贝齐.普莱斯的秘密
+		//< —贝齐.普莱斯的秘密
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2 )
         srum = SelectRumourEx("townman", NPChar);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // 修复
@@ -422,7 +422,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-//<—— 被盗的记忆
+//< —被盗的记忆
         if (RumourHasInformation(srum))
         {
             posrep1 = RandPhraseSimple(" 就是这样... ", " 你可能会觉得有趣。 ");
@@ -445,7 +445,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		Dialog.Text = NPCStringReactionRepeat(srum,
             srum+posrep1,
             srum+posrep2,
-            RandPhraseSimple("我相信我已经表达清楚了 --我说完了。 ", "我受够了你的问题, 船长。 去找点更有意思的事做吧! "), "block", 1, npchar, Dialog.CurrentNode);
+            RandPhraseSimple("我相信我已经表达清楚了 —我说完了。 ", "我受够了你的问题, 船长。 去找点更有意思的事做吧! "), "block", 1, npchar, Dialog.CurrentNode);
         link.l1 = HeroStringReactionRepeat(answ1,
             answ2,
             answ3,
@@ -487,7 +487,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 被盗的记忆
+		//< —被盗的记忆
         if (RumourHasInformation(srum))
         {
             posrep1 = RandPhraseSimple(" 就是这样... ", " 你可能会觉得有趣。 ");
@@ -510,7 +510,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		Dialog.Text = NPCStringReactionRepeat(srum,
             srum+posrep1,
             srum+posrep2,
-            RandPhraseSimple("我相信我已经表达清楚了 --我说完了。 ", "我受够了你的问题, 船长。 去找点更有意思的事做吧! "), "block", 1, npchar, Dialog.CurrentNode);
+            RandPhraseSimple("我相信我已经表达清楚了 —我说完了。 ", "我受够了你的问题, 船长。 去找点更有意思的事做吧! "), "block", 1, npchar, Dialog.CurrentNode);
         link.l1 = HeroStringReactionRepeat(answ1,
             answ2,
             answ3,
@@ -530,7 +530,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "两天前, 有人厚颜无耻地企图刺杀港口长官! 刺客在他的办公室门口埋伏, 但长官设法呼救。 一名火枪手迅速赶到并击伤了恶棍, 不过那家伙还是逃出了城门。 \n听说港口长官为这个无赖的脑袋开出了丰厚的赏金! 到目前为止, 还没有勇敢的人站出来。 你知道吗, 即使他出一千达布隆 --我也不会接受... ";
+			dialog.text = "两天前, 有人厚颜无耻地企图刺杀港口长官! 刺客在他的办公室门口埋伏, 但长官设法呼救。 一名火枪手迅速赶到并击伤了恶棍, 不过那家伙还是逃出了城门。 \n听说港口长官为这个无赖的脑袋开出了丰厚的赏金! 到目前为止, 还没有勇敢的人站出来。 你知道吗, 即使他出一千达布隆 —我也不会接受... ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
 			
@@ -543,7 +543,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 正义的边界
+		//< —正义的边界
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2) srum = SelectRumourEx("sailor", NPChar);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // 修复
         if (RumourHasInformation(srum))
@@ -595,7 +595,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
             link.l1.go = "EscapeSlave_Villemstad_H1";
 			break;
         }
-		//<—— 奴隶商人
+		//< —奴隶商人
 				
 		//荷兰 Gambit, 对抗所有人
 		if (CheckAttribute(pchar, "questTemp.HWIC.Self") && pchar.questTemp.HWIC.Self == "LetterToLucasSent" && npchar.location == "Villemstad_tavern")
@@ -615,12 +615,12 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
             link.l1.go = "FindFugitiveHb";
 			break;
         }
-//<—— 寻找逃兵
+//< —寻找逃兵
 		
 //--> 加勒比习俗
 		if (CheckAttribute(pchar, "questTemp.Trial") && pchar.questTemp.Trial == "spy" && npchar.location == "Portobello_tavern")
 		{
-			dialog.text = "消息? 哈! 你还没听说吗? 我们的士兵抓获了一名法国间谍。 该死的冒牌货, 想装成商人, 但*嗝* --我们的指挥官是个硬汉! ";
+			dialog.text = "消息? 哈! 你还没听说吗? 我们的士兵抓获了一名法国间谍。 该死的冒牌货, 想装成商人, 但*嗝* —我们的指挥官是个硬汉! ";
             link.l1 = "真的吗! 那个法国佬想打探什么? ";
             link.l1.go = "trial_spy";
 			break;
@@ -632,7 +632,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l1.go = "Alcogol_GenQuest_Church_2_1";
 			break;
 		}
-		//<—— 加勒比习俗
+		//< —加勒比习俗
 		
 		//--> Sinistra 旧罪的漫长阴影
 		if (CheckAttribute(pchar, "questTemp.DTSG_NightIskat") && npchar.city == "SentJons")
@@ -642,7 +642,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
             link.l1.go = "DTSG_NightIskat";
 			break;
         }
-		//<—— 旧罪的漫长阴影
+		//< —旧罪的漫长阴影
 		
 		//--> Rebbebion, 任务'导航星'
 		if (CheckAttribute(pchar, "questTemp.Beliz.AskForLatterAndSotta") && !CheckAttribute(npchar, "questTemp.Sotta") && !CheckAttribute(npchar, "questTemp.Lutter") && npchar.city == "Beliz")
@@ -660,7 +660,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l1.go = "Sepp1";
 			break;
 		}
-		//<—— 任务'导航星'
+		//< —任务'导航星'
 		
 		//--> 治愈的黑暗之水
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
@@ -691,13 +691,13 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 		break;
 		}
-		//<—— 治愈的黑暗之水
+		//< —治愈的黑暗之水
 		//--> 正义的边界
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "两天前, 有人厚颜无耻地企图刺杀港口长官! 刺客在他的办公室门口埋伏, 但长官设法呼救。 一名火枪手迅速赶到并击伤了恶棍, 不过那家伙还是逃出了城门。 \n听说港口长官为这个无赖的脑袋开出了丰厚的赏金! 到目前为止, 还没有勇敢的人站出来。 请注意, 即使给一千达布隆 --我也不会拿脖子去冒险... ";
+			dialog.text = "两天前, 有人厚颜无耻地企图刺杀港口长官! 刺客在他的办公室门口埋伏, 但长官设法呼救。 一名火枪手迅速赶到并击伤了恶棍, 不过那家伙还是逃出了城门。 \n听说港口长官为这个无赖的脑袋开出了丰厚的赏金! 到目前为止, 还没有勇敢的人站出来。 请注意, 即使给一千达布隆 —我也不会拿脖子去冒险... ";
 			link.l1 = RandPhraseSimple(RandSwear() + "这值得再喝一杯... ",
                                  "好吧, 我们再喝一次。 ");
 			link.l1.go = "sit_3";
@@ -714,13 +714,13 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 正义的边界
+		//< —正义的边界
 		//--> 依法贸易
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "听到消息了吗? ! 这简直是血腥的暴行! 酒馆里一滴朗姆酒或葡萄酒都没有了 --在这该死的炎热天气里, 人们该如何解渴? 客栈老板一周来一直用空洞的承诺敷衍我们, 说酒很快就会再来, 但一直什么都没有! 难道要我们渴到审判日吗? ";
+			dialog.text = "听到消息了吗? ! 这简直是血腥的暴行! 酒馆里一滴朗姆酒或葡萄酒都没有了 —在这该死的炎热天气里, 人们该如何解渴? 客栈老板一周来一直用空洞的承诺敷衍我们, 说酒很快就会再来, 但一直什么都没有! 难道要我们渴到审判日吗? ";
 			link.l1 = RandPhraseSimple(RandSwear() + "这值得再喝一杯... ",
                                  "好吧, 我们再喝一次。 ");
 			link.l1.go = "sit_3";
@@ -736,13 +736,13 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 依法贸易
+		//< —依法贸易
 		//--> 旧账
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "码头周围传言说我们的酒吧老板有麻烦了! 有人偷了他的杜松子酒! 请注意, 不只是一瓶, 而是一整桶 --这种酒在这些岛上别处找不到! 据说都是从欧洲运来的。 老狐狸不肯说他是为谁保管的, 但有一点可以肯定: 如果那桶酒不尽快找到, 这个可怜的家伙就要倒霉了! ";
+			dialog.text = "码头周围传言说我们的酒吧老板有麻烦了! 有人偷了他的杜松子酒! 请注意, 不只是一瓶, 而是一整桶 —这种酒在这些岛上别处找不到! 据说都是从欧洲运来的。 老狐狸不肯说他是为谁保管的, 但有一点可以肯定: 如果那桶酒不尽快找到, 这个可怜的家伙就要倒霉了! ";
 			link.l1 = RandPhraseSimple(RandSwear() + "这值得再喝一杯... ",
                                  "好吧, 我们再喝一次。 ");
 			link.l1.go = "sit_3";
@@ -759,7 +759,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 旧账
+		//< —旧账
 		//--> 被盗的记忆
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
@@ -792,7 +792,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-//<—— 被盗的记忆
+//< —被盗的记忆
 //--> 在伟大捕获的囚禁中 andre39966
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
@@ -814,13 +814,13 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 在伟大捕获的囚禁中
+		//< —在伟大捕获的囚禁中
 		//--> 贝茜.普莱斯的秘密
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
 		if (bOk1 || bOk2)
         {
-			dialog.text = "船长, 你听说了吗? 我们酒馆新来了个女招待, 据说长得非常漂亮, 四面八方的男人都赶来一睹她的芳容。 但三天前她没来上班, 这让酒馆老板很恼火 --自从她来后老板赚了不少钱。 听说他甚至愿意付钱给找到这个女孩的人。 ";
+			dialog.text = "船长, 你听说了吗? 我们酒馆新来了个女招待, 据说长得非常漂亮, 四面八方的男人都赶来一睹她的芳容。 但三天前她没来上班, 这让酒馆老板很恼火 —自从她来后老板赚了不少钱。 听说他甚至愿意付钱给找到这个女孩的人。 ";
 			link.l1 = RandPhraseSimple(RandSwear() + "这值得再喝一杯... ",
                                  "好吧, 我们再喝一次。 ");
 			link.l1.go = "sit_3";
@@ -837,7 +837,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
 			break;
         }
-		//<—— 贝茜.普莱斯的秘密
+		//< —贝茜.普莱斯的秘密
 		
 		Dialog.Text = LinkRandPhrase("嗯... 嗝! ", "啊, 好朗姆酒! ", "嗯... ") + SelectRumourEx("habitue", NPChar);
 		link.l1 = RandPhraseSimple(RandSwear() + "这值得再喝一杯... ",
@@ -889,9 +889,9 @@ pcharrepphrase(RandSwear() + "还有一件事, 说完我就走。 ", "你说得�
 		case "rumours_tavern":  // homo 03/08/06
 				if(startHeroType == 4)
 				{
-					Dialog.Text = NPCStringReactionRepeat(LinkRandPhrase("你知道规矩, 信息就像房间。 食物或饮料一样 --是要花钱的, 一千比索。 ",
-					"你知道规矩, 信息就像房间。 食物或饮料一样 --是要花钱的, 一千比索。 ",
-					"你知道规矩, 信息就像房间。 食物或饮料一样 --是要花钱的, 一千比索。 "),
+					Dialog.Text = NPCStringReactionRepeat(LinkRandPhrase("你知道规矩, 信息就像房间。 食物或饮料一样 —是要花钱的, 一千比索。 ",
+					"你知道规矩, 信息就像房间。 食物或饮料一样 —是要花钱的, 一千比索。 ",
+					"你知道规矩, 信息就像房间。 食物或饮料一样 —是要花钱的, 一千比索。 "),
 					"没别的可说了, 现在失陪, 我该走了。 ",
 					"", "", "block", 1, npchar, Dialog.CurrentNode);
 				 
@@ -982,7 +982,7 @@ pcharrepphrase(RandSwear() + "还有一件事, 说完我就走。 ", "你说得�
 			if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "jewelry_3" && npchar.location == "Havana_tavern")
 			{
 				AddMoneyToCharacter(pchar, -1000);
-				Dialog.Text =  "前几天整个镇子像马蜂窝一样被搅乱了。 一艘军用纵帆船的军官在我的酒馆里喝得酩酊大醉, 差点强奸了一位已婚妇女, 接着又殴打了试图保护妻子的丈夫, 甚至用剑威胁他。 想想看, 这一切都发生在城镇卫兵面前! 正如人们所说, 强权即公理。 当这个混蛋施暴时, 士兵们只是转过身去。 \n但这个恶棍被一群商船水手缴了械 --谁能想到呢。 他们差点把他捆起来, 尽管这个混蛋还是逃了, 躲到了自己的船上。 指挥官和市长试图掩盖此事, 但愤怒的丈夫是一位受人尊敬的市民, 他向迭戈.德.托莱多阁下求助, 并在当地贵族中引起了骚动。 \n他们签发了逮捕该军官的 warrant。 有传言说, 有人建议他的船长带他离开港口, 把这个恶棍转移到其他地方。 然而, 纵帆船船长埃斯贝多.卡巴纳斯是个重名誉的人。 他一得知自己的军官所作所为, 就立即将其逮捕并送回岸上。 这个混蛋在可预见的未来将在监狱里腐烂 --要我说, 他活该。 也许之后他会被降为普通士兵并遭受鞭刑, 以儆效尤。 ";
+				Dialog.Text =  "前几天整个镇子像马蜂窝一样被搅乱了。 一艘军用纵帆船的军官在我的酒馆里喝得酩酊大醉, 差点强奸了一位已婚妇女, 接着又殴打了试图保护妻子的丈夫, 甚至用剑威胁他。 想想看, 这一切都发生在城镇卫兵面前! 正如人们所说, 强权即公理。 当这个混蛋施暴时, 士兵们只是转过身去。 \n但这个恶棍被一群商船水手缴了械 —谁能想到呢。 他们差点把他捆起来, 尽管这个混蛋还是逃了, 躲到了自己的船上。 指挥官和市长试图掩盖此事, 但愤怒的丈夫是一位受人尊敬的市民, 他向迭戈.德.托莱多阁下求助, 并在当地贵族中引起了骚动。 \n他们签发了逮捕该军官的 warrant。 有传言说, 有人建议他的船长带他离开港口, 把这个恶棍转移到其他地方。 然而, 纵帆船船长埃斯贝多.卡巴纳斯是个重名誉的人。 他一得知自己的军官所作所为, 就立即将其逮捕并送回岸上。 这个混蛋在可预见的未来将在监狱里腐烂 —要我说, 他活该。 也许之后他会被降为普通士兵并遭受鞭刑, 以儆效尤。 ";
 				link.l1 = "等等, 你是说埃斯贝多.卡巴纳斯船长? 嗯... 这故事确实够刺激! 好吧, 钱是你应得的, 给你。 还有别的能告诉我吗? ";
 				link.l1.go = "rumours_tavern";
 				Mtraxx_CreateOfficer(); // 放置劣迹军官
@@ -998,7 +998,7 @@ pcharrepphrase(RandSwear() + "还有一件事, 说完我就走。 ", "你说得�
 			{
 				AddMoneyToCharacter(pchar, -1000);
 				Dialog.Text =  "据说有些罪犯被遗弃在某个无人居住的岛屿上! 据推测, 他们是如此残忍的怪物, 以至于刽子手和神父都不敢处理他们! 但为什么他们总是把这些人送到这里来? ! ";
-				link.l1 = "嗯... 真有意思! 也许我该追踪他们并招募他们 --我总是需要孤注一掷的人... 你为什么脸色发白, 伙计? 我开玩笑的, 开玩笑的... 钱是你应得的 --给你。 你还听说其他值得注意的事吗? ";
+				link.l1 = "嗯... 真有意思! 也许我该追踪他们并招募他们 —我总是需要孤注一掷的人... 你为什么脸色发白, 伙计? 我开玩笑的, 开玩笑的... 钱是你应得的 —给你。 你还听说其他值得注意的事吗? ";
 				link.l1.go = "rumours_tavern";
 				IslaMona_TerksCreateHimenes();
 				break;
@@ -1332,7 +1332,7 @@ pcharrepphrase(RandSwear() + "还有一件事, 说完我就走。 ", "你说得�
 			DialogExit();
 			AddQuestRecord("Device", "9");
 		break;
-		//<—— 倒霉小偷生成器
+		//< —倒霉小偷生成器
 		
 		// Addon-2016 Jason FMK-圣克里斯托弗
 		case "FMQN_r":
@@ -1538,7 +1538,7 @@ string sRumourAboutOwners_Init(string sOwnerType, int iRumourNum) // 居民传�
 	STR_SHIPYARDER[0] = "建造船只。 我不知道。 他很安静, 很平和。 我想他是个好人。 ";
 	STR_SHIPYARDER[1] = "建造船只。 我不知道。 他很安静, 很平和。 我想他是个好人。 ";
 	STR_SHIPYARDER[2] = "一个好人, 但据说他太苛刻了。 经常责骂所有员工。 因此, 他们经常离职。 尽管如此, 他仍是一位出色的造船师。 ";
-	STR_SHIPYARDER[3] = "他是个很有学问的人。 我听说他在英国学过造船, 然后在荷兰学过。 最后, 他来到了这里 --远离大都市, 在这个省群岛上\n人们说他与宗教裁判所有麻烦, 不得不逃到殖民地。 ";
+	STR_SHIPYARDER[3] = "他是个很有学问的人。 我听说他在英国学过造船, 然后在荷兰学过。 最后, 他来到了这里 —远离大都市, 在这个省群岛上\n人们说他与宗教裁判所有麻烦, 不得不逃到殖民地。 ";
 	STR_SHIPYARDER[4] = "这位老人早就该退休了, 把机会让给一些新人。 他总是梦想着过去的时光, 当有人向他订购除了卡拉维尔帆船或大帆船之外的东西时, 他就会抱怨。 ";
 	STR_SHIPYARDER[5] = "很棒的小伙子。 总是乐于助人。 我得说, 在这样一个糟糕的地方, 他建造的船只质量很好。 ";
 	STR_SHIPYARDER[6] = "他曾是一名囚犯, 从欧洲流放到我们的殖民地, 直到人们发现他有造船的天赋。 在我们殖民地的造船厂, 在他的领导下建造了两艘 magnificent 双桅船之后, 他的罪行被赦免了, 现在他是我们社会的正式成员。 ";

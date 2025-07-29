@@ -27,23 +27,23 @@ void ProcessDialogEvent()
 			LAi_SetImmortal(npchar, false);
 			npchar.lifeday = 0;
 			DelLandQuestMark(npchar);
-			dialog.text = TimeGreeting()+", kapitanie. Pozwólcie, że się przedstawię - "+GetFullName(npchar)+"Chociaż spotkaliśmy się już niedawno, wątpię, czy mnie zapamiętałeś.";
+			dialog.text = TimeGreeting()+", kapitanie. Pozwól, że się przedstawię - "+GetFullName(npchar)+". Chociaż spotkaliśmy się już niedawno, wątpię, czy mnie zapamiętałeś.";
 			link.l1 = "Witam, monsieur. A gdzież to mogłem cię wcześniej widzieć?";
 			link.l1.go = "carpenter_1";
 		break;
 		
 		case "carpenter_1":
-			sTemp = "lugger 'Adeline'";
+			sTemp = "lugier 'Adeline'";
 			if (pchar.questTemp.Sharlie.Ship == "sloop") sTemp = "sloop 'Black Dog'";
-			dialog.text = "Nasza stocznia. Zakupiłeś "+sTemp+"  Pamiętasz teraz? Jestem tam cieślą.";
-			link.l1 = "Tak, naprawdę kupiłem ten statek. Więc czego chcesz, monsieur "+GetFullName(npchar)+"?";
+			dialog.text = "W naszej stoczni. Zakupiłeś "+sTemp+"  Pamiętasz teraz? Jestem tam cieślą.";
+			link.l1 = "Tak, rzeczywiście kupiłem tam statek. Więc czego chcesz, monsieur "+GetFullName(npchar)+"?";
 			link.l1.go = "carpenter_2";
 		break;
 		
 		case "carpenter_2":
 			sld = characterFromId("FortFrance_shipyarder");
 			AddLandQuestMark(sld, "questmarkmain");
-			dialog.text = "Nasz szkutnik "+GetFullName(sld)+"chce z tobą porozmawiać. Wierzę, że ma jakiś interes do zaproponowania. Zobaczył twój statek w naszym porcie i wysłał mnie, bym cię odnalazł. Czy uprzejmie przyjmiesz zaproszenie?";
+			dialog.text = "Nasz szkutnik - "+GetFullName(sld)+", chce z tobą porozmawiać. Wierzę, że ma jakiś interes do zaproponowania. Zobaczył twój statek w naszym porcie i wysłał mnie, bym cię odnalazł. Czy uprzejmie przyjmiesz zaproszenie?";
 			link.l1 = "Dobrze. Odwiedzę twojego szefa, gdy tylko skończę moje sprawy w mieście.";
 			link.l1.go = "carpenter_3";
 		break;
@@ -61,13 +61,13 @@ void ProcessDialogEvent()
 		case "officer":
 			PlaySound("Voice\English\soldier_arest_4.wav");
 			dialog.text = "Ha, ha... Świeży przemytnicy w mojej sieci!";
-			link.l1 = "Eh...";
+			link.l1 = "Przepraszam co? To chyba jakaś pomyłka...";
 			link.l1.go = "officer_1";
 		break;
 		
 		case "officer_1":
-			dialog.text = "Przestań pieprzyć! W tej stoczni jest kilka beczek żywicy. Kapitanie, dostarczyłeś je swojemu wspólnikowi w zbrodni. Oboje jesteście aresztowani, a ja konfiskuję ładunek w imię prawa!";
-			link.l1 = "... ";
+			dialog.text = "Przestań pieprzyć! W tej stoczni jest kilka beczek żywicy. Kapitanie, dostarczyłeś je swojemu wspólnikowi w zbrodni. Oboje jesteście aresztowani, dodatkowo konfiskuję ładunek w imię prawa!";
+			link.l1 = "Niemożliwe...";
 			link.l1.go = "officer_2";
 		break;
 		
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "officer_3":
-			dialog.text = "Nie udawaj głupiego, panie! Jakie beczki? Wiesz, że mówię o tych samych beczkach, które niedawno wyładowałeś z tego żeglarza statku! Obaj zgnijecie w lochach! Ruszajcie się, łajdaki...";
+			dialog.text = "Nie udawaj głupiego, panie! Jakie beczki? Wiesz, że mówię o tych samych beczkach, które niedawno wyładowałeś ze statku tego żeglarza! Obaj zgnijecie w lochach! Ruszajcie się, łajdaki...";
 			link.l1 = "";
 			link.l1.go = "officer_4";
 		break;
@@ -112,14 +112,14 @@ void ProcessDialogEvent()
 		case "officer_7":
 			PlaySound("Voice\English\soldier_arest_2.wav");
 			dialog.text = "Wiedziałem, że coś jest nie tak z tym statkiem... Wygląda na to, że cię nie doceniłem, kapitanie.";
-			link.l1 = "Dokładnie, poruczniku. Nie jestem aż tak głupi. Twoja wesoła współpraca ze stoczniowcem jest teraz zagrożona.";
+			link.l1 = "Dokładnie, poruczniku. Nie jestem aż tak głupi. Twoja owocna współpraca ze szkutnikiem jest teraz zagrożona.";
 			link.l1.go = "officer_8";
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "officer_8":
 			dialog.text = "Rozumiem. Gratulacje, musisz być utalentowany, skoro udało ci się mnie wytropić i zaskoczyć. Teraz powiedz mi, czego chcesz.";
-			link.l1 = "Czy to nie jest jasne? Potrzebuję z powrotem mojej żywicy. Tej żywicy, którą ty i twój kumpel ukradliście mi.";
+			link.l1 = "Czy to nie jest jasne? Potrzebuję z powrotem mojej żywicy. Tej żywicy, którą ty i twój kumpel mi ukradliście.";
 			link.l1.go = "officer_9";
 		break;
 		
@@ -131,21 +131,21 @@ void ProcessDialogEvent()
 		
 		case "officer_10":
 			dialog.text = "Nie ma mowy. Zwróć się do naszego wspólnego przyjaciela po drugą połowę.";
-			link.l1 = "Chyba sobie kurwa żartujesz? Naprawdę w to wierzysz, że "+GetFullName(characterFromId("FortFrance_stoczniowiec"))+" odda mi moje beczki? To absurd.";
+			link.l1 = "Chyba sobie kurwa żartujesz? Naprawdę w to wierzysz, że "+GetFullName(characterFromId("FortFrance_shipyarder"))+" odda mi moje beczki? To absurd.";
 			link.l1.go = "officer_11";
 		break;
 		
 		case "officer_11":
 			dialog.text = "Kapitanie, weź całą żywicę, którą mam, zachowaj swoje życie i wynoś się stąd. Mogę dodać do tej umowy moją obietnicę, że nie sprawię ci kłopotów w St. Pierre. To moja ostateczna oferta.";
-			link.l1 = "Odkąd to moje życie jest częścią umowy? Ha!";
+			link.l1 = "Od kiedy to moje życie jest częścią umowy? Ha!";
 			link.l1.go = "officer_12";
 		break;
 		
 		case "officer_12":
-			dialog.text = "Wygląda na to, że wciąż czujesz się niezwyciężony po walce, kapitanie. Pozwól, że ci to wyjaśnię: to byli nowicjusze, niewyszkoleni i bez motywacji, nie masz szans przeciwko mojej drużynie. Mógłbym cię zabić tutaj bez żadnych negocjacji, ale cenię życie moich ludzi. Ktoś z nich mógłby zostać ranny lub nawet zabity podczas zabijania ciebie. Więc albo zaakceptujesz moją hojność, albo zostaniesz tutaj na zawsze. Czas na wybór.";
+			dialog.text = "Wygląda na to, że wciąż czujesz się niezwyciężony po walce, kapitanie. Pozwól, że ci to wyjaśnię: to byli nowicjusze, niewyszkoleni i bez motywacji, nie masz szans przeciwko mojej drużynie. Mógłbym cię tu teraz zabić bez żadnych negocjacji, ale cenię sobie życie moich ludzi. Ktoś z nich mógłby zostać ranny lub nawet zabity podczas zabijania ciebie. Więc albo zaakceptujesz moją hojność, albo zostaniesz tutaj na zawsze. Czas na wybór.";
 			link.l1 = "Do diabła z tobą, poruczniku, ale jestem zmuszony przyjąć twoje warunki. Jestem tu znacznie słabszy.";
 			link.l1.go = "officer_13";
-			link.l2 = "Zbyt pewny siebie, poruczniku? Sądzę, że powinienem nauczyć ciebie i twoich najemników lekcji. Ty pieprzony smolny psie!";
+			link.l2 = "Zbyt pewny siebie, poruczniku? Sądzę, że powinienem nauczyć ciebie i twoich najemników lekcji. Ty pieprzony żywiczny psie!";
 			link.l2.go = "officer_15";
 		break;
 		
@@ -170,25 +170,25 @@ void ProcessDialogEvent()
 		case "greguar":
 			PlaySound("Voice\English\LE\Greguar\Greguar_02.wav");
 			dialog.text = "O! Co za spotkanie! Witam, monsieur! Czyżby wspaniała noc?";
-			link.l1 = "Dobranoc... ach, to ty! Pamiętam cię, spotkaliśmy się w sam pierwszy dzień mojego przybycia na Karaiby. Monseniour Gregoire Valinnie.";
+			link.l1 = "Dobry wieczór... ach, to ty! Pamiętam cię, spotkaliśmy się w sam pierwszy dzień mojego przybycia na Karaiby. Monseniour Gregoire Valinnie.";
 			link.l1.go = "greguar_1";
 		break;
 		
 		case "greguar_1":
-			dialog.text = "Cieszę się, że wciąż pamiętasz. Widzę, że teraz jesteś kapitanem. Kapitanie "+GetFullName(pchar)+"Gratulacje.";
+			dialog.text = "Cieszę się, że wciąż pamiętasz. Widzę, że teraz jesteś kapitanem, panie "+GetFullName(pchar)+". Gratulacje.";
 			link.l1 = "Dzięki...";
 			link.l1.go = "greguar_2";
 		break;
 		
 		case "greguar_2":
 			dialog.text = "Wyglądasz na zmartwionego, kapitanie. Co tu się stało? Coś nie tak?";
-			link.l1 = "Coś jest nie tak...";
+			link.l1 = "Coś jest bardzo nie tak...";
 			link.l1.go = "greguar_3";
 		break;
 		
 		case "greguar_3":
-			dialog.text = "Panie, zamiast stać na środku ulicy, chodźmy do tawerny. Przydałby ci się kufel albo dwa. Tam możemy porozmawiać. Chodź!";
-			link.l1 = "... ";
+			dialog.text = "Panie, zamiast stać na środku ulicy, chodźmy do karczmy. Przydałby ci się kufel albo dwa. Tam możemy porozmawiać. Chodź!";
+			link.l1 = "Dobrze więc...";
 			link.l1.go = "greguar_4";
 		break;
 		
@@ -203,7 +203,7 @@ void ProcessDialogEvent()
 		case "greguar_5":
 			LAi_SetSitType(Pchar);
 			dialog.text = "Nalej, kapitanie...";
-			link.l1 = "Spróbuj tego..";
+			link.l1 = "No to spróbujmy...";
 			link.l1.go = "greguar_6";
 		break;
 		
@@ -218,13 +218,13 @@ void ProcessDialogEvent()
 		
 		case "greguar_7":
 			dialog.text = "Kapitanie, możesz mi powierzyć wszystko. Nie zamierzam cię wydać gubernatorowi ani komendantowi, możesz mi na tym zaufać. Czy mi nie ufasz?";
-			link.l1 = "Ufom ci, monseniour.";
+			link.l1 = "Ufam ci, monseniour.";
 			link.l1.go = "greguar_8";
 		break;
 		
 		case "greguar_8":
 			dialog.text = "W takim razie wyznaj swe grzechy i ulżyj duszy. Może będę w stanie ci pomóc.";
-			link.l1 = "Lokalski budowniczy statków wynajął mnie, bym splądrował hiszpańską karawanę, która wyruszyła z Trinidadu. Miał pilną potrzebę żywicy, to był mój cel i obiecał zapłacić piętnaście dublonów za beczkę. Śledziłem karawanę, splądrowałem ją i przywiozłem towary tutaj. Oddali mój statek do naprawy i rozładowali beczki do stoczni. Mieliśmy już kończyć nasz interes, gdy pojawił się ten oficer... Zastanawiam się, jak mógł się o tym dowiedzieć?";
+			link.l1 = "Lokalny budowniczy statków wynajął mnie, bym splądrował hiszpańską karawanę, która wyruszyła z Trynidadu. Miał pilną potrzebę żywicy, to był mój cel i obiecał zapłacić piętnaście dublonów za beczkę. Śledziłem karawanę, splądrowałem ją i przywiozłem towary tutaj. Oddali mój statek do naprawy i rozładowali beczki do stoczni. Mieliśmy już kończyć nasz interes, gdy pojawił się ten oficer... Zastanawiam się, jak mógł się o tym dowiedzieć?";
 			link.l1.go = "greguar_9";
 		break;
 		
@@ -235,31 +235,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "greguar_10":
-			dialog.text = "Więc, budowniczy statków jest aresztowany?";
+			dialog.text = "Więc, budowniczy statków został aresztowany?";
 			link.l1 = "Cóż, tak. Został zabrany do więzienia przez tego samego oficera, o którym mówiłem. Powinieneś ich był zobaczyć.";
 			link.l1.go = "greguar_11";
 		break;
 		
 		case "greguar_11":
 			dialog.text = "Tak, widziałem ich oboje, chociaż nie miałem pojęcia, że porucznik Felicien Gronier mógłby aresztować swego starego przyjaciela.";
-			link.l1 = "Co... co właśnie powiedziałeś?";
+			link.l1 = "Co... co ty właśnie powiedziałeś?";
 			link.l1.go = "greguar_12";
 		break;
 		
 		case "greguar_12":
-			dialog.text = "Słyszałeś dobrze. Porucznik Felicien Gronier i stoczniowiec "+GetFullName(characterFromId("FortFrance_shipyarder"))+" są starymi przyjaciółmi. Kiedyś razem służyli w armii w Europie. Gronier pozostał w wojsku i "+GetFullName(characterFromId("FortFrance_stoczniowiec"))+"zdołał rozpocząć własny interes.";
-			link.l1 = "Więc się znają... Teraz rozumiem...";
+			dialog.text = "Dobrze słyszałeś. Porucznik Felicien Gronier i stoczniowiec "+GetFullName(characterFromId("FortFrance_shipyarder"))+" są starymi przyjaciółmi. Kiedyś razem służyli w armii w Europie. Gronier pozostał w wojsku a "+GetFullName(characterFromId("FortFrance_shipyarder"))+" zdołał rozpocząć własny interes.";
+			link.l1 = "Czyli się znają... Teraz rozumiem...";
 			link.l1.go = "greguar_13";
 		break;
 		
 		case "greguar_13":
-			dialog.text = "Mój drogi "+pchar.name+", wygląda na to, że został pan oszukany. Nadal jest pan nowicjuszem tutaj i oni to wykorzystali. Założę się o sto dublonów, że monsieur "+GetFullName(characterFromId("FortFrance_shipyarder"))+" będzie znowu krążył po swojej stoczni za trzy dni lub mniej.";
-			link.l1 = "Wydaje się, że masz rację, monsieur. Oszukali mnie. Nie ma szans, by ten oficer wiedział o żywicy. Idealne wyczucie czasu też.";
+			dialog.text = "Mój drogi panie "+pchar.name+", wygląda na to, że został pan oszukany. Nadal jest pan tu nowicjuszem i oni to wykorzystali. Założę się o sto dublonów, że monsieur "+GetFullName(characterFromId("FortFrance_shipyarder"))+" będzie znowu krążył po swojej stoczni za trzy dni lub mniej.";
+			link.l1 = "Wydaje się, że masz rację, monsieur. Oszukali mnie. Nie ma szans, by ten oficer wiedział o żywicy. Nie wspomne już o idealnym wyczuciu czasu.";
 			link.l1.go = "greguar_14";
 		break;
 		
 		case "greguar_14":
-			dialog.text = "To są Karaiby, monseniour "+pchar.name+"Przyzwyczaj się do tego. Zapomnij o wyglądzie, najgorsza hołota tutaj zawsze wygląda jak szlachetny dostojnik.";
+			dialog.text = "To są Karaiby, monseniour "+pchar.name+". Przyzwyczaj się do tego. Zapomnij o wyglądzie, najgorsza hołota tutaj zawsze wygląda jak szlachetny dostojnik.";
 			link.l1 = "Słyszałem już tę kwestię gdzieś wcześniej... Co powinienem z nimi zrobić? Powinienem zwrócić się do gubernatora?";
 			link.l1.go = "greguar_15";
 		break;
@@ -271,7 +271,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "greguar_16":
-			dialog.text = "Proszę, uspokój się "+pchar.name+"To gniew i rum mówią, nie ty. Prześpij się, a potem przemyśl to jeszcze raz. Może najlepiej będzie, jeśli to odpuścisz. Porucznik Felicien Gronier i "+GetFullName(characterFromId("FortFrance_shipyarder"))+" są tu potężnymi ludźmi, są daleko poza twoją ligą. Nie rób nic głupiego.";
+			dialog.text = "Proszę, uspokój się "+pchar.name+". Gniew i rum za ciebie przemawiają w tym momencie. Prześpij się, a potem przemyśl to jeszcze raz. Może najlepiej będzie, jeśli to odpuścisz. Porucznik Felicien Gronier i "+GetFullName(characterFromId("FortFrance_shipyarder"))+" są tu potężnymi ludźmi, są daleko poza twoją ligą. Nie rób nic głupiego.";
 			link.l1 = "Zobaczymy. Dziękuję za oświecenie mnie. Dobrze, że cię spotkałem.";
 			link.l1.go = "greguar_17";
 		break;
@@ -291,13 +291,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "greguar_19":
-			dialog.text = "Tak. Po naszej rozmowie w tawernie zrobiłem rozeznanie w sprawie porucznika Feliciena Groniera. Okazało się, że niedawno poprosił o dziesięciodniowy urlop. Jego prośba została zatwierdzona. Widziałem go dzisiaj, wsiadł do łodzi i popłynął do tartany, która wkrótce odpłynęła na Gwadelupę. Nazywa się Topaz.\nPowiedziałem ci wszystko, teraz to twoja decyzja. Jestem pewien, że dostrzegasz schemat nagłego wezwania Groniera do wzięcia urlopu i odpłynięcia z wyspy na świeżo zbudowanej tartańczy.";
-			link.l1 = "Cholera, to teraz dla mnie jasne jak słońce, to na pewno! Ta tartana ma moją żywicę w ładowni! Monseniour Gregoire, dziękuję, naprawdę się spisałeś! Czy jest coś, co mógłbym dla ciebie zrobić w zamian?";
+			dialog.text = "Tak. Po naszej rozmowie w karczmie zrobiłem rozeznanie w sprawie porucznika Feliciena Groniera. Okazało się, że niedawno poprosił o dziesięciodniowy urlop. Jego prośba została zatwierdzona. Widziałem go dzisiaj, wsiadł do łodzi i popłynął do tartany, która wkrótce odpłynęła na Gwadelupę. Nazywa się 'Topaz'.\nPowiedziałem ci wszystko, teraz to twoja decyzja. Jestem pewien, że dostrzegasz schemat nagłego wezwania Groniera do wzięcia urlopu i odpłynięcia z wyspy na świeżo zbudowanej tartanie.";
+			link.l1 = "Cholera, teraz to dla mnie jasne jak słońce, to na pewno! Ta tartana ma moją żywicę w ładowni! Monseniour Gregoire, dziękuję, naprawdę się spisałeś! Czy jest coś, co mógłbym dla ciebie zrobić w zamian?";
 			link.l1.go = "greguar_20";
 		break;
 		
 		case "greguar_20":
-			dialog.text = "Och, no chodź, przyjacielu. Jesteśmy szlachcicami, powinniśmy sobie pomagać. Tak to się żyje. Wierzę, że zrobiłbyś to samo, gdybym był na twoim miejscu. Nie trać ani minuty, żegluj na północ i znajdź oficera. Nie angażuj się w walkę, po prostu go śledź i dowiedz się, co planuje. Pospiesz się, kapitanie!";
+			dialog.text = "Och, no weź, przyjacielu. Jesteśmy szlachcicami, powinniśmy sobie pomagać. Tak to się żyje. Wierzę, że zrobiłbyś to samo, gdybym był na twoim miejscu. Nie trać ani minuty, żegluj na północ i znajdź oficera. Nie angażuj się w walkę, po prostu go śledź i dowiedz się, co planuje. Pospiesz się, kapitanie!";
 			link.l1 = "Dziękuję raz jeszcze!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("FMQM_HurryToSea");
@@ -305,7 +305,7 @@ void ProcessDialogEvent()
 		
 		case "pirate":
 			dialog.text = "Na co się gapisz? Czego tu szukasz?";
-			link.l1 = "Hej, kumplu, szukam swoich fantów. Widzisz te beczki tam? To moja żywica, za którą nie zapłacili mi ani grosza.";
+			link.l1 = "Hej, kolego, szukam swoich fantów. Widzisz te beczki tam? To moja żywica, za którą nie zapłacili mi ani grosza.";
 			link.l1.go = "pirate_1";
 			DelLandQuestMark(characterFromId("FMQM_Enemy_crew_2"));
 		break;

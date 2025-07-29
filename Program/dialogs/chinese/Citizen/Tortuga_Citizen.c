@@ -42,13 +42,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "PZ2":
-            dialog.text = "再说一遍, 我们并不认识, 所以我几乎一无所知。 但他在镇上有个密友, 他们经常一起出现。 去找他吧 --他会决定是否告诉你更多信息。 他朋友的名字是罗伯.马滕。 ";
+            dialog.text = "再说一遍, 我们并不认识, 所以我几乎一无所知。 但他在镇上有个密友, 他们经常一起出现。 去找他吧 —他会决定是否告诉你更多信息。 他朋友的名字是罗伯.马滕。 ";
             link.l1 = "你说罗伯.马滕... 他是谁? 我在哪里可以找到他? ";
             link.l1.go = "PZ3";
         break;
         
         case "PZ3":
-            dialog.text = "各个地方都有可能, 但现在他在我们的灯塔那里 --在一场可怕的风暴后修理他的大帆船。 那艘船叫'伏尔泰格'号。 ";
+            dialog.text = "各个地方都有可能, 但现在他在我们的灯塔那里 —在一场可怕的风暴后修理他的大帆船。 那艘船叫'伏尔泰格'号。 ";
             link.l1 = "非常感谢你! 你都不知道你帮了我多大的忙。 ";
             link.l1.go = "Exit";
             AddDialogExitQuest("PZ_CreateRobertMartin");

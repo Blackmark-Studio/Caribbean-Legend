@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "isladevieques_1":
-			dialog.text = "嘿, 别在圣地门前口出狂言。你没料到吧? 受宠若惊啊——连群岛上最有名的阴谋家都被我耍了。日记的主意是不是很妙? \n我得把你引到这种没人注意的地方, 要是当众杀了你可就闹大了, 毕竟你可是Philippe de Poincy的密友, 对吧? 现在你就要悄无声息地消失了, 没人会知道发生了什么。";
+			dialog.text = "嘿, 别在圣地门前口出狂言。你没料到吧? 受宠若惊啊—连群岛上最有名的阴谋家都被我耍了。日记的主意是不是很妙? \n我得把你引到这种没人注意的地方, 要是当众杀了你可就闹大了, 毕竟你可是Philippe de Poincy的密友, 对吧? 现在你就要悄无声息地消失了, 没人会知道发生了什么。";
 			link.l1 = "所以, Calhoun跟我说的那些……全都是谎言? ";
 			link.l1.go = "isladevieques_2";
 		break;
@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 		
 		case "isladevieques_3":
 			dialog.text = "这问题真蠢。老子当然知道。老子还知道你身上带着酋长之爪。很快你就得把那些不属于你的东西还回来。";
-			link.l1 = "很高兴你不像Don Diego那样婆婆妈妈。我欣赏坦率和直接。据我所知, 指路之箭——那个罗盘就在你手上? ";
+			link.l1 = "很高兴你不像Don Diego那样婆婆妈妈。我欣赏坦率和直接。据我所知, 指路之箭—那个罗盘就在你手上? ";
 			link.l1.go = "isladevieques_4";
 		break;
 		

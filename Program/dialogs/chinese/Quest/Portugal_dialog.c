@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Avendel_tavern_2":
-			dialog.text = "等等! 请等等! 你看起来像个经验丰富的船长。 你肯定有一些硬币, 我破产了, 只有好心的老酒保看在我们老交情的份上让我赊账喝酒。 听听我的提议... 建议! 你帮我还债务, 我会给你分一杯羹\n有一笔生意... 非常赚钱的生意, 去他的我和我的屁股! 我对着该死的锚发誓, 相信我, 船长 --不管你叫什么名字! \n只要偿还一小笔债务, 一万比索, 你就有机会赚到足够的硬币买下整个新该死的世界的妓院! 你觉得怎么样? 你给我, 我给你, 像诚实的人那样... ";
+			dialog.text = "等等! 请等等! 你看起来像个经验丰富的船长。 你肯定有一些硬币, 我破产了, 只有好心的老酒保看在我们老交情的份上让我赊账喝酒。 听听我的提议... 建议! 你帮我还债务, 我会给你分一杯羹\n有一笔生意... 非常赚钱的生意, 去他的我和我的屁股! 我对着该死的锚发誓, 相信我, 船长 —不管你叫什么名字! \n只要偿还一小笔债务, 一万比索, 你就有机会赚到足够的硬币买下整个新该死的世界的妓院! 你觉得怎么样? 你给我, 我给你, 像诚实的人那样... ";
 			link.l1 = "一个承诺宝藏的破烂家伙。 饶了我吧, 我不为你这样的人做慈善。 找到钱, 否则你很快就要住在堡垒的禁闭室里了。 再见! ";
 			link.l1.go = "Avendel_tavern_3";
 			link.l2 = "一杯羹? 我为什么要相信一个醉鬼的话? 就因为想象中的承诺? ";
@@ -75,7 +75,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Avendel_repeat":
-			dialog.text = "船长, 尽快回来 --这生意可能会跑掉。 ";
+			dialog.text = "船长, 尽快回来 —这生意可能会跑掉。 ";
 			link.l1 = "是是, 我很快就会还清你的债务。 ";
 			link.l1.go = "exit";
 			Nextdiag.TempNode = "Avendel_repeat";
@@ -281,7 +281,7 @@ void ProcessDialogEvent()
 		
 		case "Portugal_doctor_6":
 			dialog.text = "... 是的, 我想你是对的。 但要知道这个海盗的生命力非常顽强, 我见过一些人只被印第安人的武器划了个小伤口, 不到三天就都死了。 据他的‘朋友’说, 他已经这种状态一个星期了! 尽管如此, 我敢肯定他在公海的船上只能存活很短的时间。 三天, 不能再长了! \n我们只有这么多时间。 ";
-			link.l1 = "即使是鸟也无法在三天内到达库拉索。 但我想我知道该怎么做! 我有个... 朋友, 他住在安提瓜的圣约翰。 他知道如何治愈致命伤口。 他是现在唯一能帮助我们的人。 我们的目标很简单 --在葡萄牙人死前到达那里。 收拾东西, 医生, 我们立即起航, 接下来转移你的病人! ";
+			link.l1 = "即使是鸟也无法在三天内到达库拉索。 但我想我知道该怎么做! 我有个... 朋友, 他住在安提瓜的圣约翰。 他知道如何治愈致命伤口。 他是现在唯一能帮助我们的人。 我们的目标很简单 —在葡萄牙人死前到达那里。 收拾东西, 医生, 我们立即起航, 接下来转移你的病人! ";
 			link.l1.go = "Portugal_doctor_7";
 		break;
 		
@@ -350,7 +350,7 @@ void ProcessDialogEvent()
 			pchar.quest.Portugal_Ill.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 7);
 			pchar.quest.Portugal_Ill.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 7);
 			pchar.quest.Portugal_Ill.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);
-			pchar.quest.Portugal_Ill.function = "Portugal_ToAntiguaOver";//7天后不到达 --葡萄牙人死亡
+			pchar.quest.Portugal_Ill.function = "Portugal_ToAntiguaOver";//7天后不到达 —葡萄牙人死亡
 		break;
 		
 		case "Avendel_Room":
@@ -384,7 +384,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Portugal_hunter":
-			dialog.text = "船长, 我们等这次会面等得太久了! 你旁边的是谁? 葡萄牙人巴托洛梅奥, 哈, 看来‘大胆的皮埃尔’是对的 --就是他! 离远点, 船长, 我们要带走他, 没人会受伤。 ";
+			dialog.text = "船长, 我们等这次会面等得太久了! 你旁边的是谁? 葡萄牙人巴托洛梅奥, 哈, 看来‘大胆的皮埃尔’是对的 —就是他! 离远点, 船长, 我们要带走他, 没人会受伤。 ";
 			link.l1 = "抱歉, 先生, 但你他妈的是谁? 让开, 否则你们谁也见不到明天! ";
 			link.l1.go = "Portugal_hunter_1";
 		break;
@@ -533,7 +533,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Avendel_seapatrol_5":
-			dialog.text = "你终于回来了, 船长! 恐怕我有坏消息 --葡萄牙人和医生都不见了! ";
+			dialog.text = "你终于回来了, 船长! 恐怕我有坏消息 —葡萄牙人和医生都不见了! ";
 			link.l1 = "怎么会? ! 那你当时在干什么, 笨蛋? ! ";
 			link.l1.go = "Avendel_seapatrol_6";
 		break;
@@ -567,7 +567,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Avendel_seapatrol_9":
-			dialog.text = "你听到了吗, 船长, 他在说‘独眼狗’, 我最近告诉过你。 那个口齿不清的卡斯蒂利亚人是埃尔南多.巴斯克斯, 该死的唐 --维拉克鲁斯的屠夫, 我没看见他! ";
+			dialog.text = "你听到了吗, 船长, 他在说‘独眼狗’, 我最近告诉过你。 那个口齿不清的卡斯蒂利亚人是埃尔南多.巴斯克斯, 该死的唐 —维拉克鲁斯的屠夫, 我没看见他! ";
 			link.l1 = "放松, 雨果。 我肯定巴托洛梅奥还在岛上, 他可能好点了, 但仍然很虚弱。 我想我知道去哪里找他! 我们会抓到他们的, 我不会放弃我的奖励。 如果你不是懦夫就跟着我, 还没结束。 ";
 			link.l1.go = "Avendel_seapatrol_10";
 		break;
@@ -581,7 +581,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LeFransua_pirate":
-			dialog.text = "你问太多问题了, 船长... 等等, 你不是菲利普斯堡那个狡猾的家伙吗? 你躲着我们跑了太久, 现在看 --你在这里... ";
+			dialog.text = "你问太多问题了, 船长... 等等, 你不是菲利普斯堡那个狡猾的家伙吗? 你躲着我们跑了太久, 现在看 —你在这里... ";
 			link.l1 = "你们真倒霉, 人渣! ";
 			link.l1.go = "LeFransua_pirate_1";
 		break;
@@ -792,13 +792,13 @@ void ProcessDialogEvent()
 			bQuestDisableMapEnter = false;
 			if (CheckAttribute(pchar, "questTemp.Portugal.Condition1") && CheckAttribute(pchar, "questTemp.Portugal.Condition2"))
 			{
-				dialog.text = "你来了, 我勇敢的朋友, 我们终于可以好好谈谈了! 恭喜你, 船长 --杀死独眼狗和摧毁‘信天翁’号可不是容易的事! 实际上, 你为救我的命做了这么多... 也许, 我甚至应该感谢你? ";
+				dialog.text = "你来了, 我勇敢的朋友, 我们终于可以好好谈谈了! 恭喜你, 船长 —杀死独眼狗和摧毁‘信天翁’号可不是容易的事! 实际上, 你为救我的命做了这么多... 也许, 我甚至应该感谢你? ";
 				link.l1 = "等你在绞刑架上跳舞或者威廉斯塔德为你准备的任何地方时再感谢我吧。 ";
 				link.l1.go = "Portugal_treasure_6";
 			}
 			else
 			{
-				dialog.text = "你来了, 我勇敢的朋友, 我们终于可以谈谈了! 恭喜你, 船长 --杀死独眼狗值得一首荣誉之歌! 实际上, 你为救我的命做了这么多... 也许, 我甚至应该感谢你? ";
+				dialog.text = "你来了, 我勇敢的朋友, 我们终于可以谈谈了! 恭喜你, 船长 —杀死独眼狗值得一首荣誉之歌! 实际上, 你为救我的命做了这么多... 也许, 我甚至应该感谢你? ";
 				link.l1 = "等你在绞刑架上跳舞或者威廉斯塔德为你准备的任何地方时再感谢我吧。 ";
 				link.l1.go = "Portugal_treasure_1";
 			}
@@ -806,7 +806,7 @@ void ProcessDialogEvent()
 		
 		case "Portugal_treasure_1":
 			dialog.text = "难以置信! 你在过去两周里一直在救我的命, 把我带到你家, 在战斗中保护我... 现在你要送我去死? 我很难相信... 实际上, 我现在几乎把你当成朋友了, 哈哈。 ";
-			link.l1 = "一个乞求荣誉的海盗? 葡萄牙人, 你在开玩笑吗? 我救你只有一个目的 --让这个凶手和恶棍面对法庭的审判! ";
+			link.l1 = "一个乞求荣誉的海盗? 葡萄牙人, 你在开玩笑吗? 我救你只有一个目的 —让这个凶手和恶棍面对法庭的审判! ";
 			link.l1.go = "Portugal_treasure_2_1";
 			link.l2 = "我的朋友... 听起来像嘲讽。 但不管怎样你是对的。 我这么做很奇怪, 葡萄牙人... ";
 			link.l2.go = "Portugal_treasure_2_2";
@@ -819,7 +819,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Portugal_treasure_2_2":
-			dialog.text = "看来如今人们身上仍能找到一些诚实... 可惜金钱总是干扰 --嗯, 船长? ";
+			dialog.text = "看来如今人们身上仍能找到一些诚实... 可惜金钱总是干扰 —嗯, 船长? ";
 			link.l1 = "从绞刑架上的海盗嘴里听到这话真奇怪, 葡萄牙人。 我会放你走... 别问我为什么, 就在第一个港口滚蛋。 记住, 如果我们再见面, 我不会那么仁慈。 ";
 			link.l1.go = "Portugal_treasure_4";
 		break;
@@ -870,12 +870,12 @@ void ProcessDialogEvent()
 		
 		case "Portugal_treasure_9":
 			dialog.text = "一切都出问题了! 该死的岛原来是一群当地食人族的家园。 我一回到岸边, 他们就袭击了我们。 我们不得不尽快起航, 就在那时我被击中了。 我以为只是擦伤。 \n几天后, 我躺在那里半死, 发着高烧, 显然说了些关于宝石的话。 弗朗茨和巴斯克斯意识到我在岛上藏了东西, 但他们不知道确切位置。 他们不喜欢在那里徘徊, 不断被印第安人射击。 所以这些混蛋把我拖到最近的港口, 因为我们的医生在与荷兰人的战斗中被杀了, 他们需要一个新的。 \n我就是这样到了医生那里, 他们想让我恢复意识足够长的时间来折磨我, 找出宝石的位置。 我相信, 之后他们会把我切成块, 用我多汁的肉喂螃蟹。 ";
-			link.l1 = "我不能说我评判他们 --你试图欺骗你的人。 所以我再问一次, 你为什么要告诉我这些? ";
+			link.l1 = "我不能说我评判他们 —你试图欺骗你的人。 所以我再问一次, 你为什么要告诉我这些? ";
 			link.l1.go = "Portugal_treasure_10";
 		break;
 		
 		case "Portugal_treasure_10":
-			dialog.text = "相信我, 这些狗不是人, 他们现在都在应得的地方 --地狱, 哈哈哈! 作为我自由和生命的代价, 我可以告诉你荷兰宝藏的确切位置。 ";
+			dialog.text = "相信我, 这些狗不是人, 他们现在都在应得的地方 —地狱, 哈哈哈! 作为我自由和生命的代价, 我可以告诉你荷兰宝藏的确切位置。 ";
 			link.l1 = "不, 巴特, 你的背叛完全让我相信了你的卑鄙。 威廉斯塔德和合法的报复在等着你。 没交易。 ";
 			link.l1.go = "Portugal_treasure_2_1";
 			link.l2 = "我应该相信那些宝石存在吗? 不管怎样, 我反正不会损失什么... 交易是这个故事的开始, 也将是它的结束。 我接受你的条件, 葡萄牙人。 ";
@@ -934,7 +934,7 @@ void ProcessDialogEvent()
 			link.l2 = "不知怎么的, 我并不惊讶。 给, 拿10000比索, 你最好希望你的信息值这么多钱! ";
 			link.l2.go = "Avendel_Marigo_4_2";
 			}
-			link.l3 = "我给你一个更好的提议。 加入我的船员怎么样? 我觉得你有创造和发现有利可图交易的天赋, 所以如果你厌倦了假装是个勇敢的战士 --非常欢迎你担任我的财务官。 ";
+			link.l3 = "我给你一个更好的提议。 加入我的船员怎么样? 我觉得你有创造和发现有利可图交易的天赋, 所以如果你厌倦了假装是个勇敢的战士 —非常欢迎你担任我的财务官。 ";
 			link.l3.go = "Avendel_Marigo_4_3";
 		break;
 		
@@ -1059,7 +1059,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Servant_3":
-			dialog.text = "不完全是。 然而, 几天前他被带到一艘驶往威廉斯塔德的军事 brig 上。 看来托马斯先生对这个恶棍失去了兴趣, 他似乎试图欺骗他\n还有人说, 他的前船长被抓住了 --葡萄牙人巴托洛梅奥! 想想看! 看来公司想把他们一起绞死。 传言审判将在一个月后, 但为什么要等那么久? ";
+			dialog.text = "不完全是。 然而, 几天前他被带到一艘驶往威廉斯塔德的军事 brig 上。 看来托马斯先生对这个恶棍失去了兴趣, 他似乎试图欺骗他\n还有人说, 他的前船长被抓住了 —葡萄牙人巴托洛梅奥! 想想看! 看来公司想把他们一起绞死。 传言审判将在一个月后, 但为什么要等那么久? ";
 			link.l1 = "葡萄牙人? ! 嗯... 谢谢你的陪伴, 朋友... 看来托马斯先生现在有空了, 我该告辞了。 ";
 			link.l1.go = "Servant_4";
 		break;
@@ -1107,7 +1107,7 @@ void ProcessDialogEvent()
 				// belamour legendary edition -->
 				link.l2 = "嗯, 我很无聊! 所以我来这里拜访你。 你在这里舒服吗, 朋友! ";
 				link.l2.go = "Portugal_free_1a";
-				// <—— legendary edition
+				// < —legendary edition
 			}
 			else
 			{
@@ -1129,7 +1129,7 @@ void ProcessDialogEvent()
 		
 		case "Portugal_free_1":
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
-		// <—— legendary edition
+		// < —legendary edition
 			dialog.text = "所以高贵有时不受硬币影响, 嗯? 哈... 小心, 就在你后面! ";
 			link.l1 = "啊, 又来这一套! ";
 			link.l1.go = "exit";

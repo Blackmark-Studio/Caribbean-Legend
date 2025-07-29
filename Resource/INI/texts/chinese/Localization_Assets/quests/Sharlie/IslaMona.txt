@@ -14,7 +14,7 @@ IslaMona_3
 
 IslaMona_4
 {
-罗德里戈.希门尼斯在莫纳岛准备了又一批铁 木
+Rodrigo Jimenez 在莫纳岛准备了又一批铁木
 }
 
 IslaMona_5
@@ -29,7 +29,7 @@ IslaMona_6
 
 IslaMona_7
 {
-向你的仓库添加了 @<sti(pchar.questTemp.IslaMona.Factory.Goods)> 单位的铁木
+向你的仓库添加了 @<sti(pchar.questTemp.IslaMona.Factory.Goods)> 份铁木
 }
 
 IslaMona_8

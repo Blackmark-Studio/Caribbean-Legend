@@ -7,30 +7,30 @@ Cuba   			{古巴}
 Cuba1   		{古巴}
 Cuba2   		{古巴}
 Caiman 			{开曼}
-Cumana 			{主城区}
-Caracas 		{主城区}
+Cumana 			{大陆}
+Caracas 		{大陆}
 Curacao			{库拉索}
-Cartahena 		{主城区}
+Cartahena 		{大陆}
 Dominica		{多米尼加}
 Guadeloupe		{瓜德罗普}
 Hispaniola 		{伊斯帕尼奥拉}
 Hispaniola1		{伊斯帕尼奥拉}
 Hispaniola2 	{伊斯帕尼奥拉}
 Jamaica			{牙买加}
-Maracaibo 		{主城区}
+Maracaibo 		{大陆}
 Martinique		{马提尼克}
 SentMartin		{圣马丁}
 Nevis			{圣克里斯托弗}
 PuertoRico		{波多黎各}
-PortoBello 		{主城区}
+PortoBello 		{大陆}
 Pearl 			{珍珠滩}
 Panama 			{巴拿马}
-SantaCatalina 	{主城区}
+SantaCatalina 	{大陆}
 Terks			{特克斯}
 Tortuga			{托尔图加}
 Trinidad		{特立尼达}
 Tenotchitlan 	{佩滕湖}
-Mein 			{主城区}
+Mein 			{大陆}
 KhaelRoa 		{凯尔罗阿}
 Ksochitam 		{克索奇特姆}
 RockIsland 		{北部礁群}
@@ -384,17 +384,17 @@ My_Ship			{船只}
 Drugstore		{药店}
 HWIC_flat		{HWIC总部}
 Comendant's House	{哈瓦那指挥官宅邸}
-Tibo House		{亨利.蒂博宅邸}
-Gaspard_Gold House	{加斯帕尔.金牙宅邸}
-Ascold House	{法迪宅邸}
-Abby_House		{阿比盖尔.施努尔宅邸}
-Knippel_House	{查理.克尼佩尔宅邸}
-Fleetwood_House	{理查德.弗利特伍德宅邸}
+Tibo House		{Henri Thibaut宅邸}
+Gaspard_Gold House	{Gaspard Goldenteeth宅邸}
+Ascold House	{Fadey宅邸}
+Abby_House		{Abigail Shneur宅邸}
+Knippel_House	{Charley Knippel宅邸}
+Fleetwood_House	{Richard Fleetwood宅邸}
 Comendant_House	{圣何塞指挥官宅邸}
-Svensons_house	{扬.斯文松宅邸}
-Gladis_house	{格拉迪斯.麦卡瑟宅邸}
-Gonsales_house	{恩里克.冈萨雷斯宅邸}
-Loxly_house		{阿尔伯特.洛克斯利办公室}
+Svensons_house	{Jan Svenson宅邸}
+Gladis_house	{Gladys McArthur宅邸}
+Gonsales_house	{Enrique Gonzales宅邸}
+Loxly_house		{Albert Locksley办公室}
 
 LostShipsCity	{洛科-里费特}
 LostShipsCity Town	{洛科-里费特}
@@ -423,9 +423,9 @@ Tenochtitlan	{塔亚萨尔}
 Temple_1		{托希尔神庙}
 Temple_2		{考伊尔神庙}
 Temple_3		{查克神庙}
-Temple_4		{基尼奇.阿豪神庙}
+Temple_4		{基尼奇·阿豪神庙}
 Temple_5		{伊察姆纳神庙}
-Temple_6		{埃克.丘亚神庙}
+Temple_6		{埃克·丘亚神庙}
 TempleTreasure	{宝库}
 TempleGreatInside	{大神庙}
 TempleRoundInside	{库库尔坎神庙}

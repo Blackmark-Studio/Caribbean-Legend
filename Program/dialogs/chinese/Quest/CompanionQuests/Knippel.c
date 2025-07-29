@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 		// Квeст "Длинныe тeни старых грeхов"
 		case "DTSG_Knippel_1":
 			dialog.text = "哦, 今天真是热啊。 你不妨在腿上绑上链弹跳进海里, 也好摆脱这闷热! ";
-			link.l1 = "哈哈, 查理! ... 要我说, 这可真是极端的办法。 但我不介意喝上一杯解解渴 --今天确实太热了。 一起吗? ";
+			link.l1 = "哈哈, 查理! ... 要我说, 这可真是极端的办法。 但我不介意喝上一杯解解渴 —今天确实太热了。 一起吗? ";
 			link.l1.go = "DTSG_Knippel_2";
 			DelLandQuestMark(npchar);
 		break;
@@ -168,14 +168,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Knippel_21":
-			dialog.text = "我不知道你怎么想, 先生, 但我很惊讶这里有这么多钱 --他看起来像个普通人, 不是商人也不是贵族。 ";
+			dialog.text = "我不知道你怎么想, 先生, 但我很惊讶这里有这么多钱 —他看起来像个普通人, 不是商人也不是贵族。 ";
 			link.l1 = "其实不算多, 但你说得对。 让我惊讶的是这封奇怪的烧焦的信。 ";
 			link.l1.go = "DTSG_Knippel_22";
 		break;
 		
 		case "DTSG_Knippel_22":
-			dialog.text = "是啊, 他可不聪明 --就像用链弹打坚固的船体。 他应该把信彻底毁掉。 ";
-			link.l1 = "没错。 但这对我们没帮助 --我们不知道他是谁, 也不知道他在和谁通信。 我们走吧, 查理, 这里没什么可做的了。 ";
+			dialog.text = "是啊, 他可不聪明 —就像用链弹打坚固的船体。 他应该把信彻底毁掉。 ";
+			link.l1 = "没错。 但这对我们没帮助 —我们不知道他是谁, 也不知道他在和谁通信。 我们走吧, 查理, 这里没什么可做的了。 ";
 			link.l1.go = "DTSG_Knippel_23";
 		break;
 		
@@ -196,7 +196,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Ohotnik_11":
-			dialog.text = "炮手? ! 所以正如我所说, 哈哈哈哈! 别瞪我 --你早该知道招进船员的是什么人。 ";
+			dialog.text = "炮手? ! 所以正如我所说, 哈哈哈哈! 别瞪我 —你早该知道招进船员的是什么人。 ";
 			link.l1 = "你早该知道自己在惹谁。 ";
 			link.l1.go = "DTSG_Ohotnik_Agressia_1";
 			link.l2 = "你还活着只是因为你公平获胜, 所以管好你那张臭嘴, 滚出去。 ";
@@ -370,7 +370,7 @@ void ProcessDialogEvent()
 			dialog.text = "我们到了! 请进。 ";
 			if (CheckAttribute(pchar, "questTemp.DTSG_Nastoroje1"))
 			{
-				link.l1 = "谢谢。 我能和简谈谈吗? 问问她是怎么发生的 --我需要所有细节。 ";
+				link.l1 = "谢谢。 我能和简谈谈吗? 问问她是怎么发生的 —我需要所有细节。 ";
 				link.l1.go = "DTSG_PiterAdamsRyadomSDomom_2";
 			}
 			link.l2 = "我深表歉意, 但经过再三考虑, 我必须拒绝。 我得准备即将到来的决斗。 顺便问一下, 决斗定在何时何地? ";
@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_JeinAdams_1":
-			dialog.text = "欢迎! 亲爱的, 你没告诉我要带客人来 --我该好好准备一下。 ";
+			dialog.text = "欢迎! 亲爱的, 你没告诉我要带客人来 —我该好好准备一下。 ";
 			link.l1 = "谢谢你, 夫人, 我们不会久留。 查尔斯.德莫尔, 为你效劳。 我答应和你丈夫一起听听你的故事。 告诉我是怎么发生的。 ";
 			link.l1.go = "DTSG_JeinAdams_2";
 		break;
@@ -467,7 +467,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_JeinAdams_8a":
-			dialog.text = "生活总有很多可能... 海难。 或者某人的诽谤, 有时甚至会迫使如此诚实的人屈辱地躲藏起来\n如果你如此多疑 --可以和邻居谈谈。 我相信他们会证实每一句话。 但老查理不会背后议论别人的苦难! ";
+			dialog.text = "生活总有很多可能... 海难。 或者某人的诽谤, 有时甚至会迫使如此诚实的人屈辱地躲藏起来\n如果你如此多疑 —可以和邻居谈谈。 我相信他们会证实每一句话。 但老查理不会背后议论别人的苦难! ";
 			link.l1 = "你没听到吗? 我说我会帮助这些人。 ";
 			link.l1.go = "DTSG_JeinAdams_9";
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
@@ -475,7 +475,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_JeinAdams_8b":
-			dialog.text = "生活总有很多可能... 海难。 或者某人的诽谤, 有时甚至会迫使如此诚实的人屈辱地躲藏起来\n如果你如此多疑 --可以和邻居谈谈。 我相信他们会证实每一句话。 但老查理不会背后议论别人的苦难! ";
+			dialog.text = "生活总有很多可能... 海难。 或者某人的诽谤, 有时甚至会迫使如此诚实的人屈辱地躲藏起来\n如果你如此多疑 —可以和邻居谈谈。 我相信他们会证实每一句话。 但老查理不会背后议论别人的苦难! ";
 			link.l1 = "你没听到吗? 我说我会帮助这些人。 ";
 			link.l1.go = "DTSG_JeinAdams_9";
 			ChangeCharacterComplexReputation(pchar, "nobility", 2);
@@ -515,7 +515,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Knippel_32":
-			dialog.text = "嗯, 好吧, 船长。 抱歉我失态了 --我关心那些在皇家海军服役的人的命运。 我们很多人都是正派的人, 应该得到比大多数人更好的命运。 ";
+			dialog.text = "嗯, 好吧, 船长。 抱歉我失态了 —我关心那些在皇家海军服役的人的命运。 我们很多人都是正派的人, 应该得到比大多数人更好的命运。 ";
 			link.l1 = "我理解你, 查理。 现在记住需要做什么。 我要你派一些船员到城门口。 随着决斗时间临近, 让他们悄悄集合, 准备好我的信号。 ";
 			link.l1.go = "DTSG_Knippel_33";
 		break;
@@ -556,13 +556,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_RalfFaggl_3":
-			dialog.text = "现在才意识到有点晚了, 朋友。 我们无论如何都会打一架 --我是拉尔夫.法格尔, 为你效劳。 ";
+			dialog.text = "现在才意识到有点晚了, 朋友。 我们无论如何都会打一架 —我是拉尔夫.法格尔, 为你效劳。 ";
 			link.l1 = "实际上, 我早就怀疑了, 所以决定和邻居谈谈。 顺便问一下, 亚当斯也参与了吗? 简呢? 她会不会... ";
 			link.l1.go = "DTSG_RalfFaggl_4";
 		break;
 		
 		case "DTSG_RalfFaggl_4":
-			dialog.text = "好奇心害死猫, 没听说过吗? 有人告诉你来决斗, 不是来打探的。 你本来有机会活下来\n当然。 激怒那个老军人, 迫使他的指挥官决斗 --我想这是我和彼得想出的完美计划。 简也做得很好。 ";
+			dialog.text = "好奇心害死猫, 没听说过吗? 有人告诉你来决斗, 不是来打探的。 你本来有机会活下来\n当然。 激怒那个老军人, 迫使他的指挥官决斗 —我想这是我和彼得想出的完美计划。 简也做得很好。 ";
 			link.l1 = "告诉我, 谁想除掉查理? ";
 			link.l1.go = "DTSG_RalfFaggl_5";
 		break;
@@ -963,7 +963,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Knippel_70":
-			dialog.text = "看来这个女人也消失了... 也许他们准备在‘决斗’后立刻逃离城市? 而且很匆忙 --这里有这么多金子! ";
+			dialog.text = "看来这个女人也消失了... 也许他们准备在‘决斗’后立刻逃离城市? 而且很匆忙 —这里有这么多金子! ";
 			link.l1 = "你说得对, 因为他们留下的不止是金子。 还有另一封信。 他们走得太急, 忘了烧掉。 看看吧, 你会喜欢里面的内容。 ";
 			link.l1.go = "DTSG_Knippel_71";
 		break;
@@ -1064,19 +1064,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_AntiguaArest_2":
-			dialog.text = "别否认了, 先生 --这个殖民地的每个人都认识查理。 ";
+			dialog.text = "别否认了, 先生 —这个殖民地的每个人都认识查理。 ";
 			link.l1 = "那何必问呢? 我能帮什么忙? ";
 			link.l1.go = "DTSG_AntiguaArest_3";
 		break;
 		
 		case "DTSG_AntiguaArest_3":
-			dialog.text = "你帮不了。 请不要反抗 --查理在这里被通缉。 我们必须逮捕他。 ";
+			dialog.text = "你帮不了。 请不要反抗 —查理在这里被通缉。 我们必须逮捕他。 ";
 			link.l1 = "能告诉我指控我的人什么罪名吗? 是因为他的债务吗? 我可以替他偿还。 我们现在就去银行家那里, 你可以在场。 ";
 			link.l1.go = "DTSG_AntiguaArest_4";
 		break;
 		
 		case "DTSG_AntiguaArest_4":
-			dialog.text = "债务? 我第一次听说。 我不清楚细节, 但请不要把事情复杂化 --我只是在执行命令。 ";
+			dialog.text = "债务? 我第一次听说。 我不清楚细节, 但请不要把事情复杂化 —我只是在执行命令。 ";
 			link.l1 = "哦, 太好了... ";
 			link.l1.go = "DTSG_AntiguaArest_5";
 		break;
@@ -1237,7 +1237,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_KnippelDaySpasen_2":
-			dialog.text = "不, 先生。 感谢您救了我。 说实话, 我很惊讶您会来, 考虑到您那么轻易地让他们抓走了我。 也惊讶您如此轻易地解决了守卫 --他是‘海狐’。 一名海军陆战队员。 ";
+			dialog.text = "不, 先生。 感谢您救了我。 说实话, 我很惊讶您会来, 考虑到您那么轻易地让他们抓走了我。 也惊讶您如此轻易地解决了守卫 —他是‘海狐’。 一名海军陆战队员。 ";
 			link.l1 = "我告诉过你我会救你出来, 你不该怀疑。 现在趁整个驻军还没到, 快离开这个牢房。 ";
 			link.l1.go = "DTSG_KnippelDaySpasen_3";
 		break;
@@ -1308,7 +1308,7 @@ void ProcessDialogEvent()
 			dialog.text = "我相信您会想出办法的, 船长, 毕竟您打败了可怕的卢卡斯.罗登伯格! ";
 			link.l2 = "好吧, 我会处理。 不过, 如果你知道放债人的房子在哪里, 那就更好了! ";
 			link.l2.go = "DTSG_AntiguaIskat_1";
-			link.l1 = "我确实打败了他。 但早晨比晚上更明智, 查理。 我们旅途劳累, 先休息一下, 白天再去 --毕竟我们不是来谋杀那个人的。 ";
+			link.l1 = "我确实打败了他。 但早晨比晚上更明智, 查理。 我们旅途劳累, 先休息一下, 白天再去 —毕竟我们不是来谋杀那个人的。 ";
 			link.l1.go = "DTSG_AntiguaSpat_1";
 		break;
 		
@@ -1324,7 +1324,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_AntiguaIskat_1":
-			dialog.text = "我不知道的事 --就是不知道, 抱歉, 先生。 ";
+			dialog.text = "我不知道的事 —就是不知道, 抱歉, 先生。 ";
 			link.l1 = "啊, 没关系, 我们去找他。 ";
 			link.l1.go = "DTSG_AntiguaIskat_2";
 		break;
@@ -1394,7 +1394,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_NightRostovshik_2":
 			dialog.text = "嗯嗯... ";
-			link.l1 = "很好。 冷静点 --我来这里不是为了抢劫。 绑架或伤害你。 ";
+			link.l1 = "很好。 冷静点 —我来这里不是为了抢劫。 绑架或伤害你。 ";
 			link.l1.go = "DTSG_NightRostovshik_3";
 		break;
 		
@@ -1455,7 +1455,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_NightKiller_3":
-			dialog.text = "真有趣。 还有时间开玩笑。 看来关于你的传闻是真的\n我们想要什么? 查理的人头就够了。 但考虑到你给我们添了这么多麻烦, 这次也涉及你了 --你总是管闲事。 ";
+			dialog.text = "真有趣。 还有时间开玩笑。 看来关于你的传闻是真的\n我们想要什么? 查理的人头就够了。 但考虑到你给我们添了这么多麻烦, 这次也涉及你了 —你总是管闲事。 ";
 			link.l1 = "我想我们是被捕了? ";
 			link.l1.go = "DTSG_NightKiller_4";
 		break;
@@ -1615,19 +1615,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Fleetwood_3":
-			dialog.text = "你这么觉得啊。 你看起来也不太好 --毕竟是晚上了。 但恐怕你今晚睡不成了, 我的朋友 --我们有项紧急且机密的任务。 ";
+			dialog.text = "你这么觉得啊。 你看起来也不太好 —毕竟是晚上了。 但恐怕你今晚睡不成了, 我的朋友 —我们有项紧急且机密的任务。 ";
 			link.l1 = "那任务是什么, 船长? ";
 			link.l1.go = "DTSG_Fleetwood_4";
 		break;
 		
 		case "DTSG_Fleetwood_4":
-			dialog.text = "铲除一个叛徒。 我们自己人里的。 很快, 一艘来自旧大陆的外交船会出现在多米尼加海岸 --护卫舰‘苏塞克斯’号。 官方说法是, 他们要和荷兰人谈笔好交易。 但实际上... ";
+			dialog.text = "铲除一个叛徒。 我们自己人里的。 很快, 一艘来自旧大陆的外交船会出现在多米尼加海岸 —护卫舰‘苏塞克斯’号。 官方说法是, 他们要和荷兰人谈笔好交易。 但实际上... ";
 			link.l1 = "... 他们要给我们的敌人传递情报吗, 先生? ";
 			link.l1.go = "DTSG_Fleetwood_5";
 		break;
 		
 		case "DTSG_Fleetwood_5":
-			dialog.text = "更糟。 彻底叛逃到对方那边。 虽然穿越大西洋后他们会很疲惫, 但说到底, 那是艘不错的护卫舰, 如果我们用重型船攻击, 它肯定会试图逃跑\n所以我们得迅速果断行动。 只能靠‘瓦尔基里’号了 --只有她能胜任这任务。 ";
+			dialog.text = "更糟。 彻底叛逃到对方那边。 虽然穿越大西洋后他们会很疲惫, 但说到底, 那是艘不错的护卫舰, 如果我们用重型船攻击, 它肯定会试图逃跑\n所以我们得迅速果断行动。 只能靠‘瓦尔基里’号了 —只有她能胜任这任务。 ";
 			link.l1 = "老‘瓦尔基里’能对付护卫舰吗? ..";
 			link.l1.go = "DTSG_Fleetwood_6";
 		break;
@@ -1639,13 +1639,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Fleetwood_7":
-			dialog.text = "我确定。 还有一件事。 这个叛徒在议会里地位很高, 明白吗? 他可能到处都有眼线 --不只是在国内, 这里, 在加勒比也有。 所以别在镇上提苏塞克斯号或我们任务的任何细节。 ";
+			dialog.text = "我确定。 还有一件事。 这个叛徒在议会里地位很高, 明白吗? 他可能到处都有眼线 —不只是在国内, 这里, 在加勒比也有。 所以别在镇上提苏塞克斯号或我们任务的任何细节。 ";
 			link.l1 = "您不必告诉我, 先生。 老查理永远靠得住。 ";
 			link.l1.go = "DTSG_Fleetwood_8";
 		break;
 		
 		case "DTSG_Fleetwood_8":
-			dialog.text = "我知道。 只是这次的风险比以往都高。 收拾东西准备好 --我们黎明起航。 ";
+			dialog.text = "我知道。 只是这次的风险比以往都高。 收拾东西准备好 —我们黎明起航。 ";
 			link.l1 = "是, 先生。 晚安, 先生。 ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("DTSG_Fleetwood_9");
@@ -1666,7 +1666,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Fleetwood_11":
-			dialog.text = "很好。 我指望你和你的链弹。 尽量尽快撕碎他们的船帆, 或者更好, 打掉一根桅杆。 进行一场冒险的战斗去击沉他们没意义, 所以我会尝试登船\n另外, 我们得确保叛徒已死 --如果我们击沉他们, 还是得靠近并确保没人幸存。 ";
+			dialog.text = "很好。 我指望你和你的链弹。 尽量尽快撕碎他们的船帆, 或者更好, 打掉一根桅杆。 进行一场冒险的战斗去击沉他们没意义, 所以我会尝试登船\n另外, 我们得确保叛徒已死 —如果我们击沉他们, 还是得靠近并确保没人幸存。 ";
 			link.l1 = "为了一个叛徒杀这么多同胞... ";
 			link.l1.go = "DTSG_Fleetwood_12";
 		break;
@@ -1808,13 +1808,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Graf_Sheffild_23":
-			dialog.text = "听我说, 我的朋友。 仔细听。 我们的服务在各方面都极其危险和困难。 任何事情都可能发生 --一个可悲的错误, 一个荒谬的巧合, 或者一次背信弃义的背叛\n为国家服务不只是给大炮装炮弹, 查理。 对当权者来说, 这是做出艰难决定。 而对我们这样的士兵来说 --是执行这些决定。 ";
+			dialog.text = "听我说, 我的朋友。 仔细听。 我们的服务在各方面都极其危险和困难。 任何事情都可能发生 —一个可悲的错误, 一个荒谬的巧合, 或者一次背信弃义的背叛\n为国家服务不只是给大炮装炮弹, 查理。 对当权者来说, 这是做出艰难决定。 而对我们这样的士兵来说 —是执行这些决定。 ";
 			link.l1 = "但如果有一天我们流了无辜者的血呢, 船长? 那将落在我们手上, 我们的良心上。 ";
 			link.l1.go = "DTSG_Graf_Sheffild_24";
 		break;
 		
 		case "DTSG_Graf_Sheffild_24":
-			dialog.text = "那么血将同样落在他们手上, 甚至更多。 让这安慰你吧。 关键是我们的意图是纯洁的 --铲除祖国的敌人\n现在帮我一把, 查理, 我们还需要让它看起来像荷兰人的攻击。 ";
+			dialog.text = "那么血将同样落在他们手上, 甚至更多。 让这安慰你吧。 关键是我们的意图是纯洁的 —铲除祖国的敌人\n现在帮我一把, 查理, 我们还需要让它看起来像荷兰人的攻击。 ";
 			link.l1 = "是, 先生... ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("DTSG_Graf_Sheffild_25");
@@ -1935,8 +1935,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Alonso_3":
-			dialog.text = "我确定, 船长 --加勒比没有其他船像她一样, 您知道的。 ";
-			link.l1 = "的确。 我自己去看看 --让我们看看这艘‘幻影’是否是真的。 ";
+			dialog.text = "我确定, 船长 —加勒比没有其他船像她一样, 您知道的。 ";
+			link.l1 = "的确。 我自己去看看 —让我们看看这艘‘幻影’是否是真的。 ";
 			link.l1.go = "DTSG_GotovimsyKBitve";
 		break;
 		
@@ -2018,7 +2018,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_1":
 			dialog.text = "查尔斯.德莫尔。 没想到你走到了这一步。 可惜。 我本希望在这艘船上趁你不备抓住你。 ";
-			link.l1 = "你知道我是谁? 那么, 是你在背后搞鬼 --你看起来像一只被迫离开舒适巢穴。 亲自出马而不是再派一只秃鹫的高空飞鸟。 ";
+			link.l1 = "你知道我是谁? 那么, 是你在背后搞鬼 —你看起来像一只被迫离开舒适巢穴。 亲自出马而不是再派一只秃鹫的高空飞鸟。 ";
 			link.l1.go = "DTSG_Kortni_2";
 			
 			Island_SetReloadEnableGlobal("Antigua", true);
@@ -2051,7 +2051,7 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_4":
 			if (CheckAttribute(pchar, "questTemp.DTSG_Nastoroje2"))
 			{
-				dialog.text = "阿比盖尔? 啊, 那个年轻的犹太女人, 他的未婚妻。 再一次, 你证明了自己是个相当有洞察力的人。 她还活着, 很好 --我们答应了并为此交换了弗利特伍德的合作。 ";
+				dialog.text = "阿比盖尔? 啊, 那个年轻的犹太女人, 他的未婚妻。 再一次, 你证明了自己是个相当有洞察力的人。 她还活着, 很好 —我们答应了并为此交换了弗利特伍德的合作。 ";
 				link.l1 = "相当的合作, 我得说。 但你为什么要这么做? 你是伯爵的支持者吗? ";
 			}
 			else
@@ -2080,7 +2080,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.DTSG_Nastoroje2"))
 			{
 				dialog.text = "我不会回答这个挑衅, 先生。 ";
-				link.l1 = "那么回答这个 --你怎么得到这艘船的? 是... ‘幻影’号吗? ";
+				link.l1 = "那么回答这个 —你怎么得到这艘船的? 是... ‘幻影’号吗? ";
 			}
 			else
 			{
@@ -2110,7 +2110,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_10":
 			dialog.text = "好问题。 在我看来, 你不仅仅是个像我研究中所说的好色之徒和决斗者。 我为这次会议的所有结果都采取了措施。 甚至包括我死于你的刀刃。 子弹或流弹的情况。 如果我今天死了, 你和查理会后悔没有加入弗利特伍德。 ";
-			link.l1 = "更多的赏金猎人? 拜托。 这很不愉快和乏味, 但不是致命的。 我们当时击退了他们 --我们会再次击退他们。 ";
+			link.l1 = "更多的赏金猎人? 拜托。 这很不愉快和乏味, 但不是致命的。 我们当时击退了他们 —我们会再次击退他们。 ";
 			link.l1.go = "DTSG_Kortni_11";
 		break;
 		
@@ -2127,8 +2127,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_13":
-			dialog.text = "又对了。 这不仅仅是你所说的几个金币, 而是整座山 --10,000杜布隆。 如果我们达成协议, 定金将在皇家港的银行等你\n但我提供的最重要的东西是你的生命, 德莫尔船长。 你听到了。 如果我们现在都放下武器, 你把查理交给我们, 我们将停止所有追捕\n你听说过‘人与社会’的说法吗? 就你而言, 如果拒绝, 将是‘人与国家’。 决定吧, 查尔斯。 此时此地。 ";
-			link.l1 = "你可以轻易地用你的头衔和影响力恐吓一两个傻瓜。 但我不是傻瓜。 我一英里外就能感觉到绝望。 出去。 并且庆幸我没有杀你 --你罪有应得。 ";
+			dialog.text = "又对了。 这不仅仅是你所说的几个金币, 而是整座山 —10,000杜布隆。 如果我们达成协议, 定金将在皇家港的银行等你\n但我提供的最重要的东西是你的生命, 德莫尔船长。 你听到了。 如果我们现在都放下武器, 你把查理交给我们, 我们将停止所有追捕\n你听说过‘人与社会’的说法吗? 就你而言, 如果拒绝, 将是‘人与国家’。 决定吧, 查尔斯。 此时此地。 ";
+			link.l1 = "你可以轻易地用你的头衔和影响力恐吓一两个傻瓜。 但我不是傻瓜。 我一英里外就能感觉到绝望。 出去。 并且庆幸我没有杀你 —你罪有应得。 ";
 			link.l1.go = "DTSG_Kortni_PkCh_1";
 			link.l2 = "你并不真的需要查理, 上校。 你需要他的沉默。 ";
 			link.l2.go = "DTSG_Kortni_LT_1";
@@ -2137,7 +2137,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_PkCh_1":
-			dialog.text = "你做出了一生中最糟糕的决定之一, 德莫尔船长。 我不羡慕你。 说真的。 你只能怪自己 --不会再有人给你类似的提议了。 尤其是我。 再见。 ";
+			dialog.text = "你做出了一生中最糟糕的决定之一, 德莫尔船长。 我不羡慕你。 说真的。 你只能怪自己 —不会再有人给你类似的提议了。 尤其是我。 再见。 ";
 			link.l1 = "等等, 上校。 ";
 			link.l1.go = "DTSG_Kortni_PkCh_2";
 		break;
@@ -2150,19 +2150,19 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_PkCh_3":
 			dialog.text = "你什么意思? 解释一下。 ";
-			link.l1 = "你的话只会坚定我对抗你的决心。 别那样看着我 --我不会杀你。 而且正如我所说, 我甚至会放你走。 但我想你不需要船也能应付。 ";
+			link.l1 = "你的话只会坚定我对抗你的决心。 别那样看着我 —我不会杀你。 而且正如我所说, 我甚至会放你走。 但我想你不需要船也能应付。 ";
 			link.l1.go = "DTSG_Kortni_PkCh_4";
 		break;
 		
 		case "DTSG_Kortni_PkCh_4":
 			dialog.text = "我不需要, 因为我有船。 ";
-			link.l1 = "你说得对。 但只是关于不需要船。 你可能是个有影响力的人。 但你缺乏分寸感。 还有策略。 我会做你习惯做的事 --掌控局面。 ";
+			link.l1 = "你说得对。 但只是关于不需要船。 你可能是个有影响力的人。 但你缺乏分寸感。 还有策略。 我会做你习惯做的事 —掌控局面。 ";
 			link.l1.go = "DTSG_Kortni_PkCh_5";
 		break;
 		
 		case "DTSG_Kortni_PkCh_5":
 			dialog.text = "你没有, 德莫尔船长。 别自欺欺人了。 ";
-			link.l1 = "完全掌控? 也许没有。 但你也没有 --你的生命现在在我手中, 上校。 以后我会怎么样不重要 --现在我可以为所欲为。 而我... 要这艘船。 你自由了。 海岸不远了。 ";
+			link.l1 = "完全掌控? 也许没有。 但你也没有 —你的生命现在在我手中, 上校。 以后我会怎么样不重要 —现在我可以为所欲为。 而我... 要这艘船。 你自由了。 海岸不远了。 ";
 			link.l1.go = "DTSG_Kortni_PkCh_6";
 		break;
 		
@@ -2183,7 +2183,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_PkCh_8":
-			dialog.text = "我从没想过会看到他这样 --受辱, 从窗户跳出去, 四肢并用地游向岸边。 ";
+			dialog.text = "我从没想过会看到他这样 —受辱, 从窗户跳出去, 四肢并用地游向岸边。 ";
 			link.l1 = "看到了? 满意了? 太好了。 下一个就是你。 ";
 			link.l1.go = "DTSG_Kortni_PkCh_9";
 		break;
@@ -2232,7 +2232,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_PkCh_14":
-			dialog.text = "上校? .. 我从没想过会看到这种事, 先生。 有人敢把这样头衔的人像普通水手一样扔到海里! 理查德绝不会这么做 --尊重军衔是他的核心原则。 ";
+			dialog.text = "上校? .. 我从没想过会看到这种事, 先生。 有人敢把这样头衔的人像普通水手一样扔到海里! 理查德绝不会这么做 —尊重军衔是他的核心原则。 ";
 			link.l1 = "这是多年训练灌输给他的。 他是军人, 有相应的思维模式。 我不是, 我思考更广泛, 没有那样的... 限制。 ";
 			link.l1.go = "DTSG_Kortni_PkCh_15";
 		break;
@@ -2245,7 +2245,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_PkCh_16":
 			dialog.text = "你知道吗, 船长, 从今天起, 我更尊重你了。 我从不后悔没有和迪克一起乘‘瓦尔基里’号离开, 而是决定加入你。 ";
-			link.l1 = "谢谢你, 我的朋友! 准备好 --风暴正在聚集。 但你知道吗? 有预感我们会再次胜利。 走吧, 该回到甲板了。 ";
+			link.l1 = "谢谢你, 我的朋友! 准备好 —风暴正在聚集。 但你知道吗? 有预感我们会再次胜利。 走吧, 该回到甲板了。 ";
 			link.l1.go = "DTSG_Kortni_PkCh_17";
 		break;
 		
@@ -2287,7 +2287,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_LT_3":
 			dialog.text = "当然, 你说得对。 但在这种情况下, 这关乎我的信任, 不是别人的。 而你作为担保人不适合我\n我最后一次告诉你。 把查理给我。 当然, 如果你不想重蹈弗利特伍德的覆辙。 ";
-			link.l1 = "你可以轻易地用你的头衔和影响力恐吓一两个傻瓜。 但我不是傻瓜。 我一英里外就能感觉到绝望。 出去。 并且庆幸我没有杀你 --你罪有应得。 ";
+			link.l1 = "你可以轻易地用你的头衔和影响力恐吓一两个傻瓜。 但我不是傻瓜。 我一英里外就能感觉到绝望。 出去。 并且庆幸我没有杀你 —你罪有应得。 ";
 			link.l1.go = "DTSG_Kortni_PkCh_1";
 		break;
 		
@@ -2306,14 +2306,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_LT_5":
-			dialog.text = "没有银币 --没有交易。 你以为我会仁慈吗? 先生, 我看起来像圣人吗? ";
+			dialog.text = "没有银币 —没有交易。 你以为我会仁慈吗? 先生, 我看起来像圣人吗? ";
 			link.l1 = "但也许你可以等一下? 你方便在哪里。 什么时候再见面? 我可以从放债人那里借杜布隆。 ";
 			link.l1.go = "DTSG_Kortni_LT_6";
 		break;
 		
 		case "DTSG_Kortni_LT_6":
 			dialog.text = "那你觉得我比想象中还要天真\n我不是乡下姑娘, 不会永远等待那个曾经与她有过关系的人\n没钱? 反正我也没要。 我只想要查理。 尽管你惹了这么多麻烦, 你对我没用。 ";
-			link.l1 = "你可以轻易地用你的头衔和影响力恐吓一两个傻瓜。 但我不是傻瓜。 我一英里外就能感觉到绝望。 出去。 并且庆幸我没有杀你 --你罪有应得。 ";
+			link.l1 = "你可以轻易地用你的头衔和影响力恐吓一两个傻瓜。 但我不是傻瓜。 我一英里外就能感觉到绝望。 出去。 并且庆幸我没有杀你 —你罪有应得。 ";
 			link.l1.go = "DTSG_Kortni_PkCh_1";
 		break;
 		
@@ -2368,7 +2368,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_LT_14":
-			dialog.text = "我得说你见得太多了 --就像已故的弗利特伍德。 我刚才就在你面前收了贿赂。 ";
+			dialog.text = "我得说你见得太多了 —就像已故的弗利特伍德。 我刚才就在你面前收了贿赂。 ";
 			link.l1 = "... ";
 			link.l1.go = "DTSG_Kortni_LT_15";
 			CharacterTurnToLoc(npchar, "rld", "aloc0");
@@ -2443,7 +2443,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_LT_24":
-			dialog.text = "现在没什么可谢我的。 他们可能不信我, 到时候追捕会重新开始, 这总是有风险的。 现在再见, 德莫尔船长。 我要乘我的船离开了。 这里没有异议 --我已经帮了你和查理一个大忙。 ";
+			dialog.text = "现在没什么可谢我的。 他们可能不信我, 到时候追捕会重新开始, 这总是有风险的。 现在再见, 德莫尔船长。 我要乘我的船离开了。 这里没有异议 —我已经帮了你和查理一个大忙。 ";
 			link.l1 = "好吧, 再见。 ";
 			link.l1.go = "DTSG_Kortni_LT_25";
 			
@@ -2470,7 +2470,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_LT_26":
 			dialog.text = "你知道你在和谁说话吗, 船长? 一位上校! 是他策划了这一切吗? ";
-			link.l1 = "我知道, 他做了自我介绍。 你说得对 --是他。 ";
+			link.l1 = "我知道, 他做了自我介绍。 你说得对 —是他。 ";
 			link.l1.go = "DTSG_Kortni_LT_27";
 		break;
 		
@@ -2494,13 +2494,13 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_LT_30":
 			dialog.text = "我... 不敢相信, 先生。 只是... 谢谢你。 我认为如果换作弗利特伍德, 他不会这么做。 ";
-			link.l1 = "在他逃跑后你对他太有偏见了。 理查德只是想和阿比盖尔过平静的生活。 很遗憾他没能如愿。 另外, 他信守诺言, 还清了你的债务。 呵, 我, 弗利特伍德 --你肯定和船长们很有缘, 嗯, 查理? ";
+			link.l1 = "在他逃跑后你对他太有偏见了。 理查德只是想和阿比盖尔过平静的生活。 很遗憾他没能如愿。 另外, 他信守诺言, 还清了你的债务。 呵, 我, 弗利特伍德 —你肯定和船长们很有缘, 嗯, 查理? ";
 			link.l1.go = "DTSG_Kortni_LT_31";
 		break;
 		
 		case "DTSG_Kortni_LT_31":
 			dialog.text = "可不是嘛, 船长。 那么, 现在一切都结束了? ";
-			link.l1 = "是的, 我那昂贵的朋友。 至少现在是。 战斗结束了 --你可以告诉弟兄们收起武器。 让他们准备升帆。 ";
+			link.l1 = "是的, 我那昂贵的朋友。 至少现在是。 战斗结束了 —你可以告诉弟兄们收起武器。 让他们准备升帆。 ";
 			link.l1.go = "DTSG_Kortni_LT_32";
 		break;
 		
@@ -2524,7 +2524,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_Sdat":
-			dialog.text = "我不在乎你为什么同意 --无论是出于贪婪。 恐惧还是对部下的责任。 关键是你同意了。 我会派我的人去皇家港给银行家下达指示。 ";
+			dialog.text = "我不在乎你为什么同意 —无论是出于贪婪。 恐惧还是对部下的责任。 关键是你同意了。 我会派我的人去皇家港给银行家下达指示。 ";
 			link.l1 = "好吧。 真不敢相信这终于结束了。 ";
 			link.l1.go = "DTSG_Kortni_Dengi_1";
 			link.l2 = "你知道吗, 去他的钱。 钱总能再赚。 我想从你这里换查理, 上校, 还有别的东西。 ";
@@ -2533,7 +2533,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_Kech_1":
 			dialog.text = "哦? 我得承认, 你让我惊讶, 德莫尔船长。 在你看来, 如果一堆金子不适合你, 什么能等价于老炮手的秃头? ";
-			link.l1 = "你自己说的 --一艘宏伟的船, 设计缺陷已修正。 我渴望亲自试试她。 你还有蓝图。 但查理只有一个。 另外, 让我满意符合你的利益。 ";
+			link.l1 = "你自己说的 —一艘宏伟的船, 设计缺陷已修正。 我渴望亲自试试她。 你还有蓝图。 但查理只有一个。 另外, 让我满意符合你的利益。 ";
 			link.l1.go = "DTSG_Kortni_Kech_2";
 		break;
 		
@@ -2558,7 +2558,7 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_Kech_3":
 			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
 			{
-				dialog.text = "我看你知道自己想要什么, 并在生活中追求目标\n好吧。 双桅船是你的了。 但别想那笔钱 --放债人会告诉你他什么都不知道。 ";
+				dialog.text = "我看你知道自己想要什么, 并在生活中追求目标\n好吧。 双桅船是你的了。 但别想那笔钱 —放债人会告诉你他什么都不知道。 ";
 				link.l1 = "这适合我。 ";
 				link.l1.go = "DTSG_Kortni_Kech_4";
 				pchar.questTemp.DTSG_Kech = true;
@@ -2579,7 +2579,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_Dengi_1":
-			dialog.text = "我也不能。 我开始相信, 这不仅关乎一个人是谁, 还关乎他周围的人 --抓一个老炮手的简单工作, 因为他的船长, 也就是你, 查尔斯, 变成了头疼的事\n把查理叫来。 这堆烂摊子将彻底结束 --我们起锚, 我们的船将分开。 ";
+			dialog.text = "我也不能。 我开始相信, 这不仅关乎一个人是谁, 还关乎他周围的人 —抓一个老炮手的简单工作, 因为他的船长, 也就是你, 查尔斯, 变成了头疼的事\n把查理叫来。 这堆烂摊子将彻底结束 —我们起锚, 我们的船将分开。 ";
 			link.l1 = "分开, 你说? ";
 			link.l1.go = "DTSG_Kortni_Dengi_2";
 		break;
@@ -2606,7 +2606,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_VizyvaemKnippel_2":
 			dialog.text = "你没事吧, 先生? 那是... 上校吗? ";
-			link.l1 = "是的, 查理, 是上校。 你来得正是时候 --我正要自己去叫你。 ";
+			link.l1 = "是的, 查理, 是上校。 你来得正是时候 —我正要自己去叫你。 ";
 			link.l1.go = "DTSG_Kortni_VizyvaemKnippel_3";
 		break;
 		
@@ -2624,7 +2624,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_VizyvaemKnippel_5":
 			dialog.text = "什么? .. 但为什么? .. 我们赢了! ";
-			link.l1 = "你不明白吗? 我们不能一直赢下去 --他们不拿到你的脑袋不会罢休。 ";
+			link.l1 = "你不明白吗? 我们不能一直赢下去 —他们不拿到你的脑袋不会罢休。 ";
 			link.l1.go = "DTSG_Kortni_VizyvaemKnippel_6";
 		break;
 		
@@ -2683,13 +2683,13 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_VizyvaemKnippel_12":
 			if (CheckAttribute(pchar, "questTemp.DTSG_Kech"))
 			{
-				dialog.text = "我不隐瞒 --这感觉就像从心里撕掉她。 我得花钱买新的, 但也许值得 --查理可能泄密的想法困扰我太久了\n如果你不谈论或对英国犯下严重罪行, 就认为我们不再是敌人。 享受新船吧; 她确实很美。 再见, 查尔斯。 布莱恩 --给我们准备一艘船。 查理 --跟我来, 你对此没有发言权。 ";
+				dialog.text = "我不隐瞒 —这感觉就像从心里撕掉她。 我得花钱买新的, 但也许值得 —查理可能泄密的想法困扰我太久了\n如果你不谈论或对英国犯下严重罪行, 就认为我们不再是敌人。 享受新船吧; 她确实很美。 再见, 查尔斯。 布莱恩 —给我们准备一艘船。 查理 —跟我来, 你对此没有发言权。 ";
 				link.l1 = "再见。 你们所有人。 ";
 				link.l1.go = "DTSG_Kortni_VizyvaemKnippel_13";
 			}
 			else
 			{
-				dialog.text = "可惜, 我们总是需要有能力的人, 不管他们的国籍如何。 但当然, 你仍然应得奖励。 你可以安全地去皇家港 --我会乘这艘双桅船比任何其他船先到那里。 ";
+				dialog.text = "可惜, 我们总是需要有能力的人, 不管他们的国籍如何。 但当然, 你仍然应得奖励。 你可以安全地去皇家港 —我会乘这艘双桅船比任何其他船先到那里。 ";
 				link.l1 = "希望如此。 我希望在皇家港不会有武装护卫等着我。 ";
 				link.l1.go = "DTSG_Kortni_VizyvaemKnippel_14";
 			}

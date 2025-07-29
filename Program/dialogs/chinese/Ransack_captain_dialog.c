@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 			link.l1.go = "FalseTrace_Prisoner";
 			break;	
 		}
-		//<—— 虚假线索
+		//< —虚假线索
 		
 		// Addon-2016 Jason FMK-瓜德罗普
 		if (CheckAttribute(pchar, "questTemp.FMQG") && pchar.questTemp.FMQG != "fail" && CheckAttribute(pchar, "questTemp.FMQG.Prisoner") && GetFullName(npchar) == pchar.questTemp.FMQG.Prisoner)
@@ -700,7 +700,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.FalseTrace.PrisonerID = npchar.id;
 			Pchar.questTemp.FalseTrace.PrisonerIDX = GetCharacterIndex(npchar.id);
 		break;
-		//<—— 虚假线索
+		//< —虚假线索
 		
 		// Addon-2016 Jason FMK-瓜德罗普
 		case "FMQG":

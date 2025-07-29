@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "First time";
 		break;
 		
-//-------------------------------------—— 问答块 ---------------------------------------------
+//------------------------------------- —问答块 ---------------------------------------------
 		case "int_quests":
 			dialog.text = "哦, 真的吗? 好吧, 问吧, 我会尽力回答... ";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_3":
-			dialog.text = "我就这么活着。 没有其他选择。 我的朋友大多是男人, 因为我们适婚的两个美女 --吉莉安和坦妮克不喜欢我的性格, 而她们装出来的端庄也让我恶心。 娜塔莉本来是个好女孩, 直到她开始花很多时间和这些傻瓜在一起, 愚蠢是会传染的。 ";
+			dialog.text = "我就这么活着。 没有其他选择。 我的朋友大多是男人, 因为我们适婚的两个美女 —吉莉安和坦妮克不喜欢我的性格, 而她们装出来的端庄也让我恶心。 娜塔莉本来是个好女孩, 直到她开始花很多时间和这些傻瓜在一起, 愚蠢是会传染的。 ";
 			link.l1 = "我明白了... ";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_3 = "true";
@@ -147,9 +147,9 @@ void ProcessDialogEvent()
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
 		break;
-// <—— 问答块
+// < —问答块
 		
-//---------------------------------------—— 特殊反应 -----------------------------------------------
+//--------------------------------------- —特殊反应 -----------------------------------------------
 		// 发现主角在箱子里
 		case "Man_FackYou":
 			dialog.text = LinkRandPhrase("你在那里干什么, 啊? 小偷! ", "看看这个! 我一不留神, 你就决定检查我的箱子了! ", "决定检查我的箱子了? 你逃不掉的! ");
@@ -200,7 +200,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;
-// <—— 特殊反应
+// < —特殊反应
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

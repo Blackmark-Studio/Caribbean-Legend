@@ -72,7 +72,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "guardoftruth":
-            dialog.text = "不, 我没听说过。 我们镇上只有一个炼金术士, 药剂师约翰.默多克。 他有神奇的药水 --能治愈任何疾病。 ";
+            dialog.text = "不, 我没听说过。 我们镇上只有一个炼金术士, 药剂师约翰.默多克。 他有神奇的药水 —能治愈任何疾病。 ";
             link.l1 = "你觉得这些药水是他自己配制的吗? ";
             link.l1.go = "guardoftruth_1";
         break;

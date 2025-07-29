@@ -1594,7 +1594,7 @@ void ProcessDialogEvent()
 				NPChar.DeckDialogNode = "CompanionTravel_ToSquadron_2";
 			}
 		break;
-		// <—— 同伴独自航行
+		// < —同伴独自航行
 		
 		case "tonzag_after_boarding":
 			dialog.text = "船长, 情况糟透了! 敌人紧紧抓住我们, 恐怕他们不会放手, 直到我们死! 我们的人现在真的有麻烦了, 大多数炮手都被击倒了! ";

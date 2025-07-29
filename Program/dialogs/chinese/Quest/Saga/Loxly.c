@@ -576,7 +576,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Saga = "late_l3"; // 用于斯文森
 		break;
 		
-	//------------------------------------—— 律师服务 ------------------------------------------------
+	//------------------------------------ —律师服务 ------------------------------------------------
 		case "Loxly":
 			dialog.text = TimeGreeting()+", 先生。 很高兴见到你。 你需要我的服务吗? ";
 			link.l1 = "是的。 这就是我来这里的原因。 ";
@@ -658,7 +658,7 @@ void ProcessDialogEvent()
 			Pchar.GenQuest.(attrLoc).loyer = "true";
 			NextDiag.TempNode = "Loxly";
 		break;
-		// <—— 移除国家敌对状态
+		// < —移除国家敌对状态
 		
 		case "contraband":
 			npchar.quest.contrasum = makeint(0.3*stf(Pchar.rank)/stf(Pchar.reputation.nobility)*60000);

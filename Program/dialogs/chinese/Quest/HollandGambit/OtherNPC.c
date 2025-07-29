@@ -95,7 +95,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Baltazar_6":
-			dialog.text = "此外, 我一有机会就会给罗登堡先生写信 --对你的行为给予最高评价。 我现在得走了。 ";
+			dialog.text = "此外, 我一有机会就会给罗登堡先生写信 —对你的行为给予最高评价。 我现在得走了。 ";
 			link.l1 = "好吧, 再见, 巴尔塔扎尔。 ";
 			link.l1.go = "Baltazar_7";			
 		break;
@@ -135,13 +135,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Santiago_Trip_2":
-			dialog.text = "抱歉, 朋友 --我不得不轻轻打你一下, 这样你就不会惹麻烦了。 我知道你可能头疼, 但不管怎样, 你会活下来的。 如果有时间的话... ";
+			dialog.text = "抱歉, 朋友 —我不得不轻轻打你一下, 这样你就不会惹麻烦了。 我知道你可能头疼, 但不管怎样, 你会活下来的。 如果有时间的话... ";
 			link.l1 = "你到底是谁, 该死的, 这里发生了什么? ";
 			link.l1.go = "Santiago_Trip_3";
 		break;
 		
 		case "Santiago_Trip_3":
-			dialog.text = "放松, 放松, 朋友 --否则我不得不再次让你冷静下来。 我们不想让这些拘泥于形式的人闯进来, 挥舞着他们生锈的剑, 对吧? 我们需要安静地谈谈。 ";
+			dialog.text = "放松, 放松, 朋友 —否则我不得不再次让你冷静下来。 我们不想让这些拘泥于形式的人闯进来, 挥舞着他们生锈的剑, 对吧? 我们需要安静地谈谈。 ";
 			link.l1 = "把我的剑还给我, 混蛋, 我们会好好谈谈, 我发誓! ";
 			link.l1.go = "Santiago_Trip_4";
 		break;
@@ -168,18 +168,18 @@ void ProcessDialogEvent()
 		
 		case "Santiago_Trip_7":
 			dialog.text = "你是个勇敢的家伙... 还有幽默感。 杀了你会很可惜。 加斯顿会喜欢你的。 虽然... 暂时待在这里。 我得去检查点东西, 我不在的时候米格尔会看着你。 ";
-			link.l1 = "我发誓, ‘我的朋友’ --你会后悔的! ";
+			link.l1 = "我发誓, ‘我的朋友’ —你会后悔的! ";
 			link.l1.go = "Santiago_Trip_9";
 		break;
 		
 		case "Santiago_Trip_8":
 			dialog.text = "傲慢消失了... 当情况严峻时, 我们勇敢的船长展现出了理智。 你本可以早点这样做, 节省我们的时间和麻烦。 好吧, 我得去检查点东西, 但之后我会回来, 我们再谈, 如果还有必要的话。 暂时待在这里。 我不在的时候米格尔会看着你。 ";
-			link.l1 = "我发誓, ‘我的朋友’ --你会后悔的! ";
+			link.l1 = "我发誓, ‘我的朋友’ —你会后悔的! ";
 			link.l1.go = "Santiago_Trip_11";
 		break;
 		
 		case "Santiago_Trip_9":
-			dialog.text = "当然。 保持安静, ‘英雄’ --也许一切都会好起来的。 ";
+			dialog.text = "当然。 保持安静, ‘英雄’ —也许一切都会好起来的。 ";
 			link.l1 = "... ";
 			link.l1.go = "Santiago_Trip_11";
 		break;
@@ -217,7 +217,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Santiago_Trip_14":
-			dialog.text = "真是一团糟! 我一直在想这噪音是怎么回事。 恭喜你 --你是个聪明人! ";
+			dialog.text = "真是一团糟! 我一直在想这噪音是怎么回事。 恭喜你 —你是个聪明人! ";
 			link.l1 = "比你想象的更聪明... 现在看看你能对一个武装对手做什么! ";
 			link.l1.go = "Santiago_Trip_15";
 		break;
@@ -403,7 +403,7 @@ void ProcessDialogEvent()
 			AddCharacterExpToSkill(pchar, "FencingS", 30);
 			AddCharacterExpToSkill(pchar, "FencingH", 30);
 			AddCharacterExpToSkill(pchar, "Pistol", 30);
-			// <—— legendary edition
+			// < —legendary edition
 			dialog.text = "是, 船长! ";
 			link.l1 = "... ";
 			link.l1.go = "Sailor_deck_4";			
@@ -516,7 +516,7 @@ void ProcessDialogEvent()
 			if (makeint(Pchar.money) >= 5000)
 			{
 				dialog.text = "5000比索? 哦... 。 只送一封信? ";
-				link.l1 = "不, 你还会收到另一封信。 你要带着它来酒馆, 坐在这里。 我会从你那里拿走。 别做蠢事, 别害怕 --我会看着你, 离你很近。 拿这笔钱作为预付款, 让你安心点。 ";
+				link.l1 = "不, 你还会收到另一封信。 你要带着它来酒馆, 坐在这里。 我会从你那里拿走。 别做蠢事, 别害怕 —我会看着你, 离你很近。 拿这笔钱作为预付款, 让你安心点。 ";
 				link.l1.go = "Drunkard_7";	
 			}
 			else
@@ -569,7 +569,7 @@ void ProcessDialogEvent()
 		case "Drunkard_9":
 			DelLandQuestMark(npchar);
 			dialog.text = "啊, 你来了, 先生... 我真不该这么做。 理查德读完后勃然大怒, 我以为他会杀了我。 ";
-			link.l1 = "但你在这里! 别担心 --他不敢这么做 --那一刻你对他来说非常有价值, 哈哈哈! 你甚至无法想象有多么... ";
+			link.l1 = "但你在这里! 别担心 —他不敢这么做 —那一刻你对他来说非常有价值, 哈哈哈! 你甚至无法想象有多么... ";
 			link.l1.go = "Drunkard_10";			
 		break;
 		
@@ -584,7 +584,7 @@ void ProcessDialogEvent()
 			ChangeItemDescribe("MC_Letter", "itmdescr_MC_Letter1");
 			AddQuestRecordInfo("FleetwoodAnswer", "1");
 			dialog.text = "接下来几天我说话会很困难... 再见... 希望再也不要见到你。 ";
-			link.l1 = "放轻松, 老醉鬼, 哈哈哈! 我-们-该-拿-一-个-醉-酒-的-水-手-怎-么-办... 喝一杯, 放松一下 --现在一切都结束了! ";
+			link.l1 = "放轻松, 老醉鬼, 哈哈哈! 我-们-该-拿-一-个-醉-酒-的-水-手-怎-么-办... 喝一杯, 放松一下 —现在一切都结束了! ";
 			link.l1.go = "Drunkard_12";			
 		break;
 		
@@ -600,14 +600,14 @@ void ProcessDialogEvent()
 		
 		//邮船的船长
 		case "Cureer_abordage":
-			dialog.text = "你到底为什么攻击我的船? 我既没有贵重物品也没有钱 --只有文件, 反正对你也没用! ";
+			dialog.text = "你到底为什么攻击我的船? 我既没有贵重物品也没有钱 —只有文件, 反正对你也没用! ";
 			link.l1 = "闭嘴。 你输了, 现在听我说。 我既不需要你的船, 也不需要你的文件。 我需要你把这个口信带给你的老板, 那个卑鄙的老鼠卢卡斯.罗登堡。 告诉他弗利特伍德船长向他问好。 ";
 			link.l1.go = "Cureer_abordage_1";			
 		break;
 		
 		case "Cureer_abordage_1":
 			dialog.text = "弗利特伍德船长? 但是... ";
-			link.l1 = "你会把这封信交给你的老板 --还是我该刺穿你? 我也可以找其他送信的人选。 你知道, 由于无聊, 我每个周末都会抢劫你们公司的船。 ";
+			link.l1 = "你会把这封信交给你的老板 —还是我该刺穿你? 我也可以找其他送信的人选。 你知道, 由于无聊, 我每个周末都会抢劫你们公司的船。 ";
 			link.l1.go = "Cureer_abordage_2";			
 		break;
 		
@@ -641,7 +641,7 @@ void ProcessDialogEvent()
 		
 		//监狱里的马蒂亚斯.贝克
 		case "MatiasBek"://以防玩家想聊天
-			dialog.text = "我是被非法逮捕的! 我和英国人没有任何联系! 这些都是罗登堡的阴谋。 没关系。 彼得.施托伊弗桑特很快就会到达 --他会把一切都弄清楚的! ";
+			dialog.text = "我是被非法逮捕的! 我和英国人没有任何联系! 这些都是罗登堡的阴谋。 没关系。 彼得.施托伊弗桑特很快就会到达 —他会把一切都弄清楚的! ";
 			link.l1 = "... ";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "MatiasBek";
@@ -730,7 +730,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ArestLucas_11":
-			dialog.text = "先生, 邮船还运送了其他重要的公司文件 --不只是通常的报告。 现在它们都在英国人手里。 这就是为什么我决定逮捕贝克。 ";
+			dialog.text = "先生, 邮船还运送了其他重要的公司文件 —不只是通常的报告。 现在它们都在英国人手里。 这就是为什么我决定逮捕贝克。 ";
 			link.l1 = "";
 			link.l1.go = "ArestLucas_12";
 			LAi_SetActorType(npchar);
@@ -779,7 +779,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ArestLucas_19":
-			dialog.text = "好吧, 我不介意。 我们三个人 --好的。 谈谈吧。 ";
+			dialog.text = "好吧, 我不介意。 我们三个人 —好的。 谈谈吧。 ";
 			link.l1 = "";
 			link.l1.go = "ArestLucas_20";
 			LAi_SetActorType(npchar);
@@ -953,7 +953,7 @@ void ProcessDialogEvent()
 				}
 			}
 		}
-			dialog.text = "请明天到我的住所来—— 你将代表自由省共和国, 因其最符合国家利益的行为而获得奖励。 我恳请你不要离开城镇。 ";
+			dialog.text = "请明天到我的住所来 —你将代表自由省共和国, 因其最符合国家利益的行为而获得奖励。 我恳请你不要离开城镇。 ";
 			link.l1 = "好的, 先生。 我明天会来。 ";
 			link.l1.go = "Stivesant_13";			
 		break;
@@ -1031,7 +1031,7 @@ void ProcessDialogEvent()
 		
 		case "Bek_5":
 			GiveItem2Character(pchar, "bussol");
-			dialog.text = "我想让你知道: 你现在是我的朋友, 这意义重大。 你在我的住所永远是受欢迎的客人。 随时因任何原因过来—— 我很乐意提供你可能需要的任何帮助。 ";
+			dialog.text = "我想让你知道: 你现在是我的朋友, 这意义重大。 你在我的住所永远是受欢迎的客人。 随时因任何原因过来 —我很乐意提供你可能需要的任何帮助。 ";
 			link.l1 = "听到这个我很高兴, 先生! ";
 			link.l1.go = "Bek_6";			
 		break;
@@ -1181,7 +1181,7 @@ void ProcessDialogEvent()
 			if (pchar.questTemp.Patria == "epizode_6" && IsUniformEquip())
 			{
 				dialog.text = "你又带着菲利普.德.波因西总督的口信来了, 不是吗? ";
-				link.l1 = "是的, 司徒维桑特先生。 在圣马丁岛海岸发生了一个不愉快的误会—— 一艘载有来自巴黎的检查员诺埃尔.福盖男爵的船只被菲利普斯堡堡垒炮击了, 并且... ";
+				link.l1 = "是的, 司徒维桑特先生。 在圣马丁岛海岸发生了一个不愉快的误会 —一艘载有来自巴黎的检查员诺埃尔.福盖男爵的船只被菲利普斯堡堡垒炮击了, 并且... ";
 				link.l1.go = "Stivesant_28";
 			}
 			else
@@ -1200,7 +1200,7 @@ void ProcessDialogEvent()
 		case "Stivesant_28":
 			if (pchar.questTemp.HWIC.Detector == "holl_win" || pchar.questTemp.HWIC.Detector == "self_win")
 			{
-				dialog.text = "这就是你来这里的原因, 船长。 我不会进行外交讨论: 告诉骑士, 他不再负责圣马丁岛了。 他做得够多了。 关于宗主国的检查—— 让他想办法吧, 德.波因西把一切颠倒过来从来都不难。 ";
+				dialog.text = "这就是你来这里的原因, 船长。 我不会进行外交讨论: 告诉骑士, 他不再负责圣马丁岛了。 他做得够多了。 关于宗主国的检查 —让他想办法吧, 德.波因西把一切颠倒过来从来都不难。 ";
 				link.l1 = "这就是我应该告诉他的吗? ";
 				link.l1.go = "Stivesant_29";
 			}
@@ -1242,7 +1242,7 @@ void ProcessDialogEvent()
 		
 		case "Stivesant_34":
 			dialog.text = "那么, 你能给我一个机会阅读你准备的协议吗? 据我了解, 它包含信中的内容? ";
-			link.l1 = "正是如此, 先生, 只是以正式形式。 法国方面—— 恢复关系至中立, 放弃对圣马丁岛的任何主张。 英国方面—— 结束贸易战。 细节都在这里描述... 当然, 还有因你方发起的军事行动而给我们造成损失的经济补偿。 ";
+			link.l1 = "正是如此, 先生, 只是以正式形式。 法国方面 —恢复关系至中立, 放弃对圣马丁岛的任何主张。 英国方面 —结束贸易战。 细节都在这里描述... 当然, 还有因你方发起的军事行动而给我们造成损失的经济补偿。 ";
 			link.l1.go = "Stivesant_35";
 		break;
 		
@@ -1290,7 +1290,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Stivesant_42":
-			dialog.text = "那么, 你是诺埃尔.福盖男爵吗? 嗯, 你一定是查尔斯.德.莫尔先生本人! 问候你, 舰队副司令! 你被称为群岛上最狡猾的策划者是有原因的—— 人们可能永远不知道你目前站在谁的一边... ";
+			dialog.text = "那么, 你是诺埃尔.福盖男爵吗? 嗯, 你一定是查尔斯.德.莫尔先生本人! 问候你, 舰队副司令! 你被称为群岛上最狡猾的策划者是有原因的 —人们可能永远不知道你目前站在谁的一边... ";
 			link.l1 = "目前, 舰队副司令 站在国王和您真诚的, 他的授权代表一边。 ";
 			link.l1.go = "Stivesant_43";
 		break;
@@ -1397,7 +1397,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "vanberg_sold":
-			dialog.text = "哈哈哈! 看看这个! 雅各布一如既往是对的—— 这只狐狸来岛上是有充分理由的。 看来箱子里有相当多的金子。 你一个人来这里太粗心了, 伙计。 但话说回来, 这让我们的工作变得更容易了! ";
+			dialog.text = "哈哈哈! 看看这个! 雅各布一如既往是对的 —这只狐狸来岛上是有充分理由的。 看来箱子里有相当多的金子。 你一个人来这里太粗心了, 伙计。 但话说回来, 这让我们的工作变得更容易了! ";
 			link.l1 = "这些人渣跟踪我到了这里! 我没料到... 但我不会轻易成为猎物! ";
 			link.l1.go = "vanberg_sold_1";			
 		break;

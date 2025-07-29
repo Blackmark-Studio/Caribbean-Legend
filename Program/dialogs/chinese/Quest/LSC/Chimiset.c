@@ -379,7 +379,7 @@ void ProcessDialogEvent()
 			npchar.quest.crab = "true";
 			NextDiag.TempNode = "Chimiset_wait";
 		break;
-		//<—— 信息块
+		//< —信息块
 		
 		case "":
 			dialog.text = "";

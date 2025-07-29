@@ -21,7 +21,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "特里斯坦.雷尼尔最近来过这里吗? ";
                 link.l1.go = "UV_DialogTavern";
             }
-            //<—— 被窃的记忆
+            //< —被窃的记忆
         break;
         
         case "guardoftruth":
@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         //--> 被窃的记忆
         case "UV_DialogTavern":
             dialog.text = "雷尼尔? 是的, 他不仅来过这里, 而且还没离开。 他租了个房间。 ";
-            link.l1 = "幸运之神眷顾我! 我和这位好船长的事刻不容缓 --他的隐私必须为急事让路。 我能在哪个房间找到他? ";
+            link.l1 = "幸运之神眷顾我! 我和这位好船长的事刻不容缓 —他的隐私必须为急事让路。 我能在哪个房间找到他? ";
             link.l1.go = "exit";
             AddDialogExitQuestFunction("UV_GoldSeagull_RoomInTavern");
             DelLandQuestMark(npchar);

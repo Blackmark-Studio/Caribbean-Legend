@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_tavern":
-			dialog.text = "酒馆——港口的中心地带。能找床位、喝朗姆酒、打听八卦, 还能雇水手或军官。你可以打牌、接活儿, 或者和走私贩、藏宝图商人打交道。";
+			dialog.text = "酒馆—港口的中心地带。能找床位、喝朗姆酒、打听八卦, 还能雇水手或军官。你可以打牌、接活儿, 或者和走私贩、藏宝图商人打交道。";
 			link.l1 = "";
 			link.l1.go = "guide_market";
 			locCameraFromToPos(-2.08, 5.32, 68.88, true, -15.00, 0.90, 55.00);
@@ -87,14 +87,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_prison":
-			dialog.text = "监狱。 里面没多少真正的恶棍 --大多是流浪者。 想从他们那里接工作? 和指挥官谈谈; 给点小费就能打开牢房。 ";
+			dialog.text = "监狱。 里面没多少真正的恶棍 —大多是流浪者。 想从他们那里接工作? 和指挥官谈谈; 给点小费就能打开牢房。 ";
 			link.l1 = "";
 			link.l1.go = "guide_townhall";
 			locCameraFromToPos(-50.52, 5.79, 38.60, true, -47.65, 3.95, 33.52);
 		break;
 		
 		case "guide_townhall":
-			dialog.text = "总督府。商人和船长们都来这里谈正经生意。务必与总督保持友好——他的一句话就能决定这个国家如何对待你。";
+			dialog.text = "总督府。商人和船长们都来这里谈正经生意。务必与总督保持友好—他的一句话就能决定这个国家如何对待你。";
 			link.l1 = "";
 			link.l1.go = "guide_12";
 			locCameraFromToPos(3.14, 7.39, 37.55, true, 1.06, 8.45, 14.14);
@@ -102,7 +102,7 @@ void ProcessDialogEvent()
 		
 		case "guide_12":
 			dialog.text = "我耽误你时间了吗, 朋友? ";
-			link.l1 = "先生, 我是来找我哥哥的。听说他在圣皮埃尔, 是个有头有脸的人物——总督肯定认识他……";
+			link.l1 = "先生, 我是来找我哥哥的。听说他在圣皮埃尔, 是个有头有脸的人物—总督肯定认识他……";
 			link.l1.go = "guide_13";
 			SetCameraDialogMode(npchar);
 		break;
@@ -114,13 +114,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_14":
-			dialog.text = "如果你哥哥在Martinique很有名, 去问问镇上的人——总有人知道。他叫什么名字? ";
+			dialog.text = "如果你哥哥在Martinique很有名, 去问问镇上的人—总有人知道。他叫什么名字? ";
 			link.l1 = "Michel de Monper.";
 			link.l1.go = "guide_15";
 		break;
 		
 		case "guide_15":
-			dialog.text = "我听说过这个名字, 虽然咱们没见过。你可以打听一下——或者直接去找总督。祝你好运, 先生。咱们以后再聊! ";
+			dialog.text = "我听说过这个名字, 虽然咱们没见过。你可以打听一下—或者直接去找总督。祝你好运, 先生。咱们以后再聊! ";
 			link.l1 = "谢谢你, "+GetFullName(npchar)+"! ";
 			link.l1.go = "guide_16";
 		break;
@@ -143,19 +143,19 @@ void ProcessDialogEvent()
 		
 		case "guide_22":
 			dialog.text = "请原谅, 不过我听不出你这回答里有多少喜悦……";
-			link.l1 = "没错。我本来希望能搭下艘船回家, 可命运偏偏捉弄我。现在被困在这儿——谁知道要多久——更糟的是, 还得学着当个水手。";
+			link.l1 = "没错。我本来希望能搭下艘船回家, 可命运偏偏捉弄我。现在被困在这儿—谁知道要多久—更糟的是, 还得学着当个水手。";
 			link.l1.go = "guide_23";
 		break;
 		
 		case "guide_23":
-			dialog.text = "我并不意外。你乘坐Ulysses号的消息已经传开了。别灰心——拥有一艘船和船长的头衔可不是小事。你打算买艘船, 对吧? ";
-			link.l1 = "是啊——该死——老子得去。但老子连船坞在哪儿都不知道, 更别说怎么开船、怎么弄钱了。啥都不懂! ";
+			dialog.text = "我并不意外。你乘坐Ulysses号的消息已经传开了。别灰心—拥有一艘船和船长的头衔可不是小事。你打算买艘船, 对吧? ";
+			link.l1 = "是啊—该死—老子得去。但老子连船坞在哪儿都不知道, 更别说怎么开船、怎么弄钱了。啥都不懂! ";
 			link.l1.go = "guide_24";
 		break;
 		
 		case "guide_24":
 			dialog.text = "钱是没有, 不过其他方面我都乐意效劳。我们要继续参观吗? ";
-			link.l1 = "你说得对——知识就是力量。";
+			link.l1 = "你说得对—知识就是力量。";
 			link.l1.go = "guide_25";
 			link.l2 = "谢谢您, 先生, 接下来我自己可以应付。";
 			link.l2.go = "guide_exit_11";
@@ -175,7 +175,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_25":
-			dialog.text = "那就跟我来! 首先——得说说船的事。";
+			dialog.text = "那就跟我来! 首先—得说说船的事。";
 			link.l1 = "";
 			link.l1.go = "guide_shipyard";
 		break;
@@ -188,14 +188,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_port":
-			dialog.text = "码头——通往大海的大门。等你有了自己的船, 船就会在这里等你。现在嘛, 先雇个领航员、管账的和炮手吧——有了他们, 出海的日子会轻松不少。";
+			dialog.text = "码头—通往大海的大门。等你有了自己的船, 船就会在这里等你。现在嘛, 先雇个领航员、管账的和炮手吧—有了他们, 出海的日子会轻松不少。";
 			link.l1 = "";
 			link.l1.go = "guide_portoffice";
 			locCameraFromToPos(-8.55, 4.06, 91.31, true, 40.00, -8.00, 0.00);
 		break;
 		
 		case "guide_portoffice":
-			dialog.text = "港口事务所。把你的船停在这儿, 或者接点正经活——运货、护航、送信。活儿干得越多, 报酬越高。";
+			dialog.text = "港口事务所。把你的船停在这儿, 或者接点正经活—运货、护航、送信。活儿干得越多, 报酬越高。";
 			link.l1 = "";
 			link.l1.go = "guide_store";
 			locCameraFromToPos(48.38, 9.48, 43.95, true, 43.69, 5.47, 48.13);
@@ -217,7 +217,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_45":
-			dialog.text = "不是每个殖民地都欢迎陌生人。如果你不想等到天黑, 就在海上换面旗子, 然后靠潜行混进去——或者花钱买个贸易许可证。";
+			dialog.text = "不是每个殖民地都欢迎陌生人。如果你不想等到天黑, 就在海上换面旗子, 然后靠潜行混进去—或者花钱买个贸易许可证。";
 			link.l1 = "";
 			link.l1.go = "guide_46";
 		break;
@@ -238,7 +238,7 @@ void ProcessDialogEvent()
 		
 		case "guide_49":
 			dialog.text = "朋友, 看你这身手, 想必不是头一次玩剑吧? ";
-			link.l1 = "哈! 老子都经历过一次登船战了, 甚至还——";
+			link.l1 = "哈! 老子都经历过一次登船战了, 甚至还—";
 			link.l1.go = "guide_50";
 			if (FindCharacterItemByGroupWithout_knife_03(pchar, BLADE_ITEM_TYPE) == "")
 			{
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_60": // побили второй раз
-			dialog.text = "我又赢了, "+pchar.name+"! 别丢了你的主动权。接住我的攻击, 虚晃一下。如果看到我要狠劈了——赶紧闪开或者格挡, 别光顾着防守。再来! ";
+			dialog.text = "我又赢了, "+pchar.name+"! 别丢了你的主动权。接住我的攻击, 虚晃一下。如果看到我要狠劈了—赶紧闪开或者格挡, 别光顾着防守。再来! ";
 			link.l1 = "来吧, 先生, 这次我一定要好好教训你! ";
 			link.l1.go = "guide_56";
 			link.l2 = "不行, 老子受够了。咱们把这课上完吧。接下来干啥? ";
@@ -324,7 +324,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_62":
-			dialog.text = "现在该说再见了, 先生。能为您效劳是我的荣幸。希望我的讲解和训练对您有所帮助, 将来能派上用场。或许有一天我们还能再见。\n至于您需要的钱——去和咱们城里的重要人物聊聊吧。把我今天带您去过的所有地方都走一遍, 和那里的主人谈谈。多打听打听。去丛林和要塞转转。找份正经差事, 或者……唔, 我可不是神父也不是法官, 您也可以去别人家里看看, 瞧瞧那些没锁的箱子里有什么小玩意儿。只要趁他们不注意的时候动手, 否则巡逻的卫兵可不会放过您。\n祝您好运, "+pchar.name+", 我有种强烈的预感, 您体内蕴藏着真正伟大的火花。尽力把它燃成熊熊烈焰吧! ";
+			dialog.text = "现在该说再见了, 先生。能为您效劳是我的荣幸。希望我的讲解和训练对您有所帮助, 将来能派上用场。或许有一天我们还能再见。\n至于您需要的钱—去和咱们城里的重要人物聊聊吧。把我今天带您去过的所有地方都走一遍, 和那里的主人谈谈。多打听打听。去丛林和要塞转转。找份正经差事, 或者……唔, 我可不是神父也不是法官, 您也可以去别人家里看看, 瞧瞧那些没锁的箱子里有什么小玩意儿。只要趁他们不注意的时候动手, 否则巡逻的卫兵可不会放过您。\n祝您好运, "+pchar.name+", 我有种强烈的预感, 您体内蕴藏着真正伟大的火花。尽力把它燃成熊熊烈焰吧! ";
 			link.l1 = "多谢, 先生。荣幸之至。愿上帝保佑您一路顺风! ";
 			link.l1.go = "guide_63";
 		break;

@@ -68,7 +68,7 @@ BlackMark_15
 
 BlackMark_16
 {
-完成了。 在盖比出现之前该走了
+搞定了，搞定了。得在 Gabe 出现之前走了。
 }
 
 BlackMark_17

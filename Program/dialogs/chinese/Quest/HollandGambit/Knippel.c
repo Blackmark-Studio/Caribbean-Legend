@@ -519,7 +519,7 @@ void ProcessDialogEvent()
 			pchar.quest.RemoveKnippelOver.over = "yes";//取消计时器
 		break;
 		
-		//--> ---------------------------------—— 军官模块 ------------------------------------------
+		//--> --------------------------------- —军官模块 ------------------------------------------
 		case "Knippel_officer":
 			dialog.text = "啊哈船长, 链弹打我屁股! ";
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
@@ -693,7 +693,7 @@ void ProcessDialogEvent()
 			Link.l1 = "解散。 ";
             Link.l1.go = "Exit";
         break;
-	//<—— ---------------------------------—— 军官模块 ----------------------------------------
+	//< —--------------------------------- —军官模块 ----------------------------------------
 	
 	// 前往泰亚萨尔
 		case "tieyasal":

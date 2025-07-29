@@ -14,7 +14,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "最近, 城里的一名士兵逮捕并关押了查理.克尼佩尔。 他还在这里吗? "; 
                 link.l1.go = "DTSG_AntiguaZalog_2";
             }
-            // <—— 旧罪的漫长阴影
+            // < —旧罪的漫长阴影
         break;
         
         // --> Sinistra 旧罪的漫长阴影
@@ -91,7 +91,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "DTSG_AntiguaTrevoga_3":
-            dialog.text = "他不是要求 --而是命令。 总督阁下不喜欢被人命令任何事情。 因此, 那个高利贷者被赶了出去。 ";
+            dialog.text = "他不是要求 —而是命令。 总督阁下不喜欢被人命令任何事情。 因此, 那个高利贷者被赶了出去。 ";
             link.l1 = "真有趣。 现在... "; 
             link.l1.go = "DTSG_AntiguaTrevoga_4";
         break;
@@ -118,7 +118,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "DTSG_AntiguaTrevoga_H3":
-            dialog.text = "正是。 现在不要考验我的耐心 --在我下令把你扔进牢房, 因为你杀了一名英国士兵之前。 ";
+            dialog.text = "正是。 现在不要考验我的耐心 —在我下令把你扔进牢房, 因为你杀了一名英国士兵之前。 ";
             link.l1 = "考虑到没有多少人能从你的牢房里出来, 我可不想死在那里。 我就不祝你今天愉快了。 "; 
             link.l1.go = "DTSG_AntiguaTrevoga_5";
         break;
@@ -131,7 +131,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "DTSG_AntiguaTrevoga_Ch2":
-            dialog.text = "判决已经执行。 我不能给你任何细节。 我希望你不要坚持 --这可能会给你带来不好的结果。 不仅仅是进牢房。 我说清楚了吗, 德莫尔船长? ";
+            dialog.text = "判决已经执行。 我不能给你任何细节。 我希望你不要坚持 —这可能会给你带来不好的结果。 不仅仅是进牢房。 我说清楚了吗, 德莫尔船长? ";
             link.l1 = "非常清楚。 再见。 "; 
             link.l1.go = "DTSG_AntiguaTrevoga_5";
         break;

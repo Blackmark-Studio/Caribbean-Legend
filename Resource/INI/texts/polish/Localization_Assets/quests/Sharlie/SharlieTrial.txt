@@ -14,7 +14,7 @@ Lavua
 
 SharlieTrial_4
 {
-Boat
+Łódź
 }
 
 SharlieTrial_5
@@ -24,7 +24,7 @@ Twój statek jest gotowy! Udaj się na molo i wypłyń w morze!
 
 SharlieTrial_6
 {
-Ghost
+Duch
 }
 
 SharlieTrial_7

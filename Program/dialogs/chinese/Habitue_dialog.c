@@ -484,7 +484,7 @@ void ProcessDialogEvent()
 			sQuestTitle = PChar.GenQuest.ChurchQuest_2.QuestTown + "ChurchGenQuest2";
 			AddQuestRecordEx(sQuestTitle, "ChurchGenQuest2", "2");
 			break;
-		// <—— 教堂生成器。 任务#2
+		// < —教堂生成器。 任务#2
 		//--> 奴隶商人
 			case "Jamaica_ratH_1":
 				dialog.text = "哦弗朗索瓦! 当然, 我记得那个人... 不, 我不知道。 但是, 你知道, 你可以问我们的女服务员关于他的事。 只要他住在这里, 她每晚都和他在一起。 她肯定是个婊子。 也许他对她说了什么。 ";
@@ -631,7 +631,7 @@ void ProcessDialogEvent()
 			LAi_SetLoginTime(sld, 4.0, 6.0);
 			ChangeCharacterAddressGroup(sld, pchar.GenQuest.FindFugitive.Shore, "goto", "goto1");
 		break;
-		//<—— 寻找逃兵
+		//< —寻找逃兵
 		
 		// 加勒比风俗
 		case "trial_spy":
@@ -688,7 +688,7 @@ void ProcessDialogEvent()
 			ChangeCharacterAddressGroup(sld, "Portobello_town", "goto", "goto15");
 			AddLandQuestMark(sld, "questmarkmain");
 			DelLandQuestMark(characterFromId("portobello_tavernkeeper"));
-			// <—— 传奇版
+			// < —传奇版
 			AddQuestRecord("Trial", "14");
 		break;
 		
@@ -708,7 +708,7 @@ void ProcessDialogEvent()
 			{
 				if(CheckAttribute(pchar, "questTemp.Rum")) DeleteAttribute(pchar, "questTemp.Rum");
 			}				
-			//<—— navy
+			//< —navy
 			if(!CheckAttribute(pchar, "questTemp.TimeLock")) WaitDate("",0,0,0, 0, 30);
 			
 			if (CheckAttribute(pchar, "questTemp.Rum"))
@@ -981,7 +981,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 			if(rand(1) == 0)
 			{
-				dialog.text = LinkRandPhrase("来吧, 小混混们! 你们马上就要吃不了兜着走了! ", RandSwear() + "现在我要好好收拾你们! ","哈! 来吧, 水手 --让我看看你在陆地上有什么本事! ");
+				dialog.text = LinkRandPhrase("来吧, 小混混们! 你们马上就要吃不了兜着走了! ", RandSwear() + "现在我要好好收拾你们! ","哈! 来吧, 水手 —让我看看你在陆地上有什么本事! ");
 				link.l1 = RandPhraseSimple(RandPhraseSimple("我发誓你会为此后悔的! ","我要割断你那该死的舌头! "), RandPhraseSimple("我要像杀猪一样剖开你, 从你的屁股一直剖到你那被称作嘴的臭洞! ","我发誓我会让你闭嘴的! "));
 				link.l1.go = "fight_right_now";
 			}
@@ -1013,7 +1013,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_NightIskat_4":
-			dialog.text = "你说得对。 当你到了那里, 朋友 --告诉他, 他太得意忘形了。 ";
+			dialog.text = "你说得对。 当你到了那里, 朋友 —告诉他, 他太得意忘形了。 ";
             link.l1 = "嘿嘿, 我一定会的。 再见。 ";
             link.l1.go = "DTSG_NightIskat_5";
 		break;
@@ -1032,7 +1032,7 @@ void ProcessDialogEvent()
 			LAi_SetActorType(sld);
 			LAi_ActorDialog(sld, pchar, "", -1, 0);
 		break;
-		//<—— 旧罪的漫长阴影
+		//< —旧罪的漫长阴影
 		
 		//--> 引路之星
 		case "PZ_BasTerAlkash_1":
@@ -1043,12 +1043,12 @@ void ProcessDialogEvent()
 		
 		case "PZ_BasTerAlkash_2":
 			dialog.text = "啊, 我明白你的意思了! 是的, 我见过他。 即使清醒之后, 我也无法停止想起他... 我忘不了! ";
-			link.l1 = "这很有趣。 继续说。 再喝一杯 --你现在可能在喝酒是为了忘记这一切。 在你喝之前, 告诉我你看到了什么。 ";
+			link.l1 = "这很有趣。 继续说。 再喝一杯 —你现在可能在喝酒是为了忘记这一切。 在你喝之前, 告诉我你看到了什么。 ";
 			link.l1.go = "PZ_BasTerAlkash_3";
 		break;
 		
 		case "PZ_BasTerAlkash_3":
-			dialog.text = "什么巡回马戏团, 见鬼去吧! 他跳着。 旋转着, 挥舞着那把军刀 --我从未见过有人如此熟练。 如此可怕地使用武器。 ";
+			dialog.text = "什么巡回马戏团, 见鬼去吧! 他跳着。 旋转着, 挥舞着那把军刀 —我从未见过有人如此熟练。 如此可怕地使用武器。 ";
 			link.l1 = "听起来像他。 他在和谁打架? 你还记得吗? ";
 			link.l1.go = "PZ_BasTerAlkash_4";
 		break;
@@ -1067,7 +1067,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_BasTerAlkash_6":
 			dialog.text = "哈, 别做梦了! 他们抓不到他。 他在城里砍倒了卫兵, 逃进了丛林。 他们派了好几队人去追他, 但没有一个回来。 你能想象吗? 他把那个洞穴变成了一个真正的堡垒! ";
-			link.l1 = "真了不起。 休息一下, 试着忘记吧。 我想我现在该走了 --我的头在打转。 ";
+			link.l1 = "真了不起。 休息一下, 试着忘记吧。 我想我现在该走了 —我的头在打转。 ";
 			link.l1.go = "PZ_BasTerAlkash_7";
 		break;
 		
@@ -1095,7 +1095,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sotta1":
-			dialog.text = "我自己没见过他 --他一直在总督办公室附近晃悠, 嗯! 但他的船员在这里举行了一场盛大的派对。 ";
+			dialog.text = "我自己没见过他 —他一直在总督办公室附近晃悠, 嗯! 但他的船员在这里举行了一场盛大的派对。 ";
 			link.l1 = "是这样吗? ";
 			link.l1.go = "Sotta2";
 		break;
@@ -1139,7 +1139,7 @@ void ProcessDialogEvent()
 			link.l1 = "我不喝了。 反正我在这里没得到我想要的东西。 ";
 			link.l1.go = "exit_sit";
 		break;
-		//<—— 引路之星
+		//< —引路之星
 		
 	}
 }

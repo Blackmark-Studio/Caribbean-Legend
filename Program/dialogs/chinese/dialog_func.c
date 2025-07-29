@@ -1214,7 +1214,7 @@ String ChangeNameCase(String _nameType, String _name, String _toCase)
 	
 	return "";
 }
-// <—— Warship 07.08.09
+// < —Warship 07.08.09
 string GetIndianName(int Sex) //Jason имeна индeйцeв
 {
 	string nameid;

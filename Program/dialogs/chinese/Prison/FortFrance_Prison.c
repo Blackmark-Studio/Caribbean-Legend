@@ -18,7 +18,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "军官先生, 我又来打听囚犯福尔克.德吕克的事了。 我已经买下了他的债务权, 希望能释放他并把他交给我。 这是他的债务文件, 请看一下。 ";
                 link.l1.go = "Sharlie_3";
             }    
-            //<—— 加斯科涅人的负担 */
+            //< —加斯科涅人的负担 */
             
             //--> 迷你任务"德吕克" (德吕克再次入狱) 
             if (CheckAttribute(pchar, "questTemp.Del_Deluck"))
@@ -31,7 +31,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "这是文件, 现在释放我的人。 ";
                 link.l1.go = "Del_DeluckSvoboda";
             }
-            //<—— 迷你任务"德吕克"
+            //< —迷你任务"德吕克"
         break;
         
         //--> 加斯科涅人的负担
@@ -120,7 +120,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             StartQuestMovie(true, false, true);
             DoQuestCheckDelay("Del_Turma", 0.1);
         break;
-        //<—— 加斯科涅人的负担
+        //< —加斯科涅人的负担
         
         //--> 迷你任务"德吕克" (德吕克再次入狱) 
         case "Del_Deluck":
@@ -172,7 +172,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             StartQuestMovie(true, false, true);
             DoQuestCheckDelay("Del_Turma", 0.1);
         break;
-        //<—— 迷你任务"德吕克"
+        //< —迷你任务"德吕克"
     }
     UnloadSegment(NPChar.FileDialog2);  // 如果switch内部某处通过return退出, 别忘了进行卸载
 }

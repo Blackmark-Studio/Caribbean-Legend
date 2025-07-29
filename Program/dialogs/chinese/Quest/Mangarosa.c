@@ -121,7 +121,7 @@ void ProcessDialogEvent()
 		case "amelia_next":
 			if (!CheckAttribute(npchar, "quest.ChickenGod") && CheckCharacterItem(pchar, "talisman11")) {
 				if (CheckAttribute(npchar, "quest.recipe_power") || CheckAttribute(npchar, "quest.recipe_fast") || CheckAttribute(npchar, "quest.recipe_total")) {
-					link.chickengod = "阿梅利亚, 你似乎对这种东西很有诀窍。 你能告诉我你的族人中是否需要这种石头吗? 我到处都能找到 --好像每个人都对它们着迷! ";
+					link.chickengod = "阿梅利亚, 你似乎对这种东西很有诀窍。 你能告诉我你的族人中是否需要这种石头吗? 我到处都能找到 —好像每个人都对它们着迷! ";
 					link.chickengod.go = "chickengod";
 				}
 			}

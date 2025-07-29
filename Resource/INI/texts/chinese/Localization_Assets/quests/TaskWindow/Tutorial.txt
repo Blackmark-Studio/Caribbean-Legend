@@ -5,7 +5,7 @@ Tutorial_1
 
 Tutorial_2
 {
-按 @<key1> 键和 @<key2> 键转向船只
+按 @<key1> 和 @<key2> 转向船只
 }
 
 Tutorial_3
@@ -15,37 +15,37 @@ Tutorial_3
 
 Tutorial_4
 {
-按 @<key> 键启用时间加速
+按 @<key> 启用时间加速
 }
 
 Tutorial_5
 {
-再次按 @<key> 键取消加速
+再次按 @<key> 取消加速
 }
 
 Tutorial_6
 {
-按 @<key> 键加速至6倍速
+按 @<key> 加速至6倍速
 }
 
 Tutorial_7
 {
-按 @<key1> 键减速, 或按 @<key2> 键
+按 @<key1> 减速, 或按 @<key2> 
 }
 
 Tutorial_8
 {
-帆具控制
+船帆控制
 }
 
 Tutorial_9
 {
-按 @<key1> 键将帆设为战斗模式
+按 @<key1> 将船帆设为战斗模式
 }
 
 Tutorial_10
 {
-按 @<key1> 键完全降下帆
+按 @<key1> 完全降下船帆
 }
 
 Tutorial_11
@@ -55,7 +55,7 @@ Tutorial_11
 
 Tutorial_12
 {
-使用 @<key1> 键快速齐射
+使用 @<key1> 快速齐射
 }
 
 Tutorial_13
@@ -65,17 +65,17 @@ Tutorial_13
 
 Tutorial_14
 {
- @<key1> 键进入瞄准模式
+ @<key1> 进入瞄准模式
 }
 
 Tutorial_15
 {
-按 @<key1> 键进行瞄准齐射
+按 @<key1> 进行瞄准齐射
 }
 
 Tutorial_16
 {
- @<key1> 键退出瞄准模式
+ @<key1> 退出瞄准模式
 }
 
 Tutorial_17
@@ -95,32 +95,32 @@ Tutorial_19
 
 Tutorial_20
 {
- @<key1> 键劈砍
+ @<key1> 劈砍
 }
 
 Tutorial_21
 {
- @<key1> 键刺击
+ @<key1> 刺击
 }
 
 Tutorial_22
 {
- @<key1> 键重击
+ @<key1> 重击
 }
 
 Tutorial_23
 {
-自我防御
+防御自我
 }
 
 Tutorial_24
 {
- @<key1> 键格挡攻击
+ @<key1> 格挡攻击
 }
 
 Tutorial_25
 {
- @<key1> 键招架攻击
+ @<key1> 拨挡攻击
 }
 
 Tutorial_26
@@ -135,12 +135,12 @@ Tutorial_27
 
 Tutorial_28
 {
-按 @<key1> 键阅读文件
+按 @<key1> 阅读文件
 }
 
 Tutorial_29
 {
-按 @<key1> 键打开金币箱
+按 @<key1> 打开金币箱
 }
 
 Tutorial_30
@@ -155,5 +155,5 @@ Tutorial_31
 
 Tutorial_32
 {
-将神秘药水交给阿隆索
+将神秘药水交给 Alonso
 }

@@ -1,7 +1,7 @@
 Ship_got_good 		{%1 公担的%2 已装载上船}
 Ship_cant_got_good 	{没有空间装载%1}
 
-seg_Balls 		{圆炮弹}
+seg_Balls 		{实心弹}
 seg_Grapes 		{葡萄弹}
 seg_Knippels 		{链弹}
 seg_Bombs 		{炸弹}

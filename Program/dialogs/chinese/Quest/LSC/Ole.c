@@ -535,7 +535,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "final";
 		break;
 		
-//---------------------------------------—— 特殊反应 -----------------------------------------------
+//--------------------------------------- —特殊反应 -----------------------------------------------
 		// 注意到露出的武器
 		case "LSCNotBlade":
 			dialog.text = LinkRandPhrase("听着, 你最好把武器收起来。 它让我紧张。 ", "你知道, 在这里挥舞武器是不被容忍的。 收起来。 ", "听着, 别扮演中世纪骑士到处挥剑。 收起来, 这不适合你... ");
@@ -558,7 +558,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;
-// <—— 特殊反应
+// < —特殊反应
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

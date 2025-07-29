@@ -24,7 +24,7 @@ void ProcessDialogEvent()
 	
 	switch(Dialog.CurrentNode)
 	{
-		// ---------------------------------—— 第一个对话 - 第一次见面
+		// --------------------------------- —第一个对话 - 第一次见面
 		
 		case "First time":
 			if (NPChar.sex != "man")

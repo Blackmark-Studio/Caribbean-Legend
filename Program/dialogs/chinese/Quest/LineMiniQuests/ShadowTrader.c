@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 		break;
 	
 	case "ShadowTrader_3":
-		dialog.text = "好吧, 好吧, 长官, 把我所有的都拿走 --10,000比索。 我发誓这是我所有的了! ";
+		dialog.text = "好吧, 好吧, 长官, 把我所有的都拿走 —10,000比索。 我发誓这是我所有的了! ";
 		link.l1 = "嗯... 如果我逮捕你, 你所有的钱都会被没收... 很好! 这个走私点关闭, 所有货物没收... 把钱给我, 然后滚蛋。 别再在这里露面了! ";
 		link.l1.go = "ShadowTrader_4";
 		break;
@@ -142,7 +142,7 @@ void ProcessDialogEvent()
 	
 		case "ShadowTrader_7":
 			dialog.text = "我... 我会把我所有的钱和财物都给你! 让我走吧! 我今天就离开这个岛, 你不会再在这里见到我了! ";
-			link.l1 = "很好。 把你身上所有的东西都给我, 然后滚蛋。 再也不要在这里做生意了 --下次我不会饶了你这条可怜的命, 你这个强盗。 ";
+			link.l1 = "很好。 把你身上所有的东西都给我, 然后滚蛋。 再也不要在这里做生意了 —下次我不会饶了你这条可怜的命, 你这个强盗。 ";
 			link.l1.go = "ShadowTrader_free";
 			link.l2 = "没门, 混蛋, 你收买不了我。 对付你这种人的唯一办法就是冷钢和热铅! ";
 			link.l2.go = "ShadowTrader_killed";
@@ -179,7 +179,7 @@ void ProcessDialogEvent()
 				GiveItem2Character(pchar, "pistol1");
 				EquipCharacterbyItem(pchar, "pistol1");
 			}
-			// <—— 
+			// < —
 			LAi_ActorAnimation(pchar, "Shot", "ShadowTrader_killed_end", 1.3);
 		break;
 		

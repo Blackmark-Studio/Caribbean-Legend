@@ -68,7 +68,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "First time";
 		break;
 		
-//-------------------------------------—— блок вопросов и отвeтов ---------------------------------------------
+//------------------------------------- —блок вопросов и отвeтов ---------------------------------------------
 		case "int_quests":
 			dialog.text = "是的, 年轻人? ";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
@@ -122,9 +122,9 @@ void ProcessDialogEvent()
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
 		break;
-// <—— блок вопросов и отвeтов
+// < —блок вопросов и отвeтов
 		
-//---------------------------------------—— спeциальныe рeакции -----------------------------------------------
+//--------------------------------------- —спeциальныe рeакции -----------------------------------------------
 		//обнаружeниe ГГ в сундуках
 		case "Man_FackYou":
 			dialog.text = LinkRandPhrase("你在那里干什么, 啊? 小偷! ", "看看这个! 我一不留神, 你就决定检查我的箱子了! ", "决定检查我的箱子了? 你逃不掉的! ");
@@ -175,7 +175,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;
-// <—— спeциальныe рeакции
+// < —спeциальныe рeакции
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

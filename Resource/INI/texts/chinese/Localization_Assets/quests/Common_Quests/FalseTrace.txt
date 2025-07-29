@@ -14,7 +14,7 @@ FalseTrace_3
 
 FalseTrace_4
 {
-亚当.雷纳偷了一艘划艇, 和他的妻子一起逃走了! 
+Adam Rayner 偷了一艘划艇, 和他的妻子一起逃走了! 
 }
 
 FalseTrace_5

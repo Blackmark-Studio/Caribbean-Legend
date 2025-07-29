@@ -20,7 +20,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "我已经完成了你的任务。 装朗姆酒的长艇已经送到勒弗朗索瓦湾, 并交给你的人了。 ";
                 link.l1.go = "Sharlie_rum_5";
             }    
-            //<—— 加斯科涅人的负担 */
+            //< —加斯科涅人的负担 */
             
             // Jason, 葡萄牙人
             if (CheckAttribute(PChar, "questTemp.Portugal") && pchar.questTemp.Portugal == "ToMartinique" && !CheckAttribute(npchar, "quest.Portugal"))
@@ -80,7 +80,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "Sharlie_rum_2":
-            dialog.text = "很好。 你自己再重复几遍, 或者最好写在什么地方。 你向小帆船船长提到密码后, 装着朗姆酒瓶的板条箱就会被装上长艇, 然后你需要把长艇开到海盗定居点勒弗朗索瓦湾 --在那里会有人迎接你。 这就是整个任务。 你可以从勒弗朗索瓦湾步行到圣皮埃尔 --长艇会留在海湾。 任务完成后我会付你五千比索。 ";
+            dialog.text = "很好。 你自己再重复几遍, 或者最好写在什么地方。 你向小帆船船长提到密码后, 装着朗姆酒瓶的板条箱就会被装上长艇, 然后你需要把长艇开到海盗定居点勒弗朗索瓦湾 —在那里会有人迎接你。 这就是整个任务。 你可以从勒弗朗索瓦湾步行到圣皮埃尔 —长艇会留在海湾。 任务完成后我会付你五千比索。 ";
             link.l1 = "走私听起来既刺激又赚钱。 我会按你说的做。 长艇在哪儿? ";
             link.l1.go = "Sharlie_rum_3";
             link.l2 = "所以, 你建议我从事走私活动? 嗯... 你知道, 我不能拿我的名声冒险。 请原谅, 我们就当我什么都没听到。 ";
@@ -97,7 +97,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "Sharlie_rum_3":
-            dialog.text = "长艇将在晚上七点到达码头。 长艇上的船员技术娴熟, 所以你应该能很快到达小帆船。 整个任务不应该超过四个小时 --我相信你晚上十一点前就能回到圣皮埃尔。 拿着这个望远镜, 虽然是个垃圾, 但总比没有好。 拉芒坦海滩位于岛的北部, 所以离开港口后, 保持正北航向。 祝你好运! ";
+            dialog.text = "长艇将在晚上七点到达码头。 长艇上的船员技术娴熟, 所以你应该能很快到达小帆船。 整个任务不应该超过四个小时 —我相信你晚上十一点前就能回到圣皮埃尔。 拿着这个望远镜, 虽然是个垃圾, 但总比没有好。 拉芒坦海滩位于岛的北部, 所以离开港口后, 保持正北航向。 祝你好运! ";
             link.l1 = "好的, 知道了。 很快见, " + npchar.name+ "! ";
             link.l1.go = "Sharlie_rum_4";
         break;
@@ -171,7 +171,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 pchar.quest.Sharlie_CreatShipyardMarker.function = "Sharlie_CreatShipyardMarker";
             }
         break;
-        //<—— 加斯科涅人的负担
+        //< —加斯科涅人的负担
 		
         // 葡萄牙人
 		case "Portugal":
@@ -208,7 +208,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "Portugal_2":
-            dialog.text = "先生, 我不能说他是自己起身离开房间的。 昨天有人来过这里。 其中一个是独眼高瘦的男人 --从外表看显然是个强盗, 还有一个说话口齿不清的男人, 看起来像卡斯蒂利亚人。 我当时只是惊讶, 但那个口齿不清的人看了我一眼... 就像要拍打虱子前的眼神。 于是他们问起你朋友的事... 我就告诉他们了。 我还能怎么办? ";
+            dialog.text = "先生, 我不能说他是自己起身离开房间的。 昨天有人来过这里。 其中一个是独眼高瘦的男人 —从外表看显然是个强盗, 还有一个说话口齿不清的男人, 看起来像卡斯蒂利亚人。 我当时只是惊讶, 但那个口齿不清的人看了我一眼... 就像要拍打虱子前的眼神。 于是他们问起你朋友的事... 我就告诉他们了。 我还能怎么办? ";
             link.l1 = "我知道, " + npchar.name+ ", 你不是英雄, 没错。 你还看到了什么? 他们去哪儿了? ";
             link.l1.go = "Portugal_3";
         break;
@@ -249,16 +249,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         // 杰森.长长久久与幸福
         case "LH_tavern_SP":
             npchar.quest.LongHappy = "true";
-            dialog.text = "是的, 你助手来过, 但我跟她说过也得跟你重复 --我见惯了喝醉的水手扎堆, 但你们的派对我可知道。 最后这儿估计跟西班牙方阵洗劫过的安特卫普一样惨。 要是墙没倒我都谢天谢地了。 所以你要是想让大家撒欢儿闹, 除了已经带来的东西, 还得交笔不退的押金。 以防万一嘛。 ";
-            link.l1 = "你这老狐狸! 我跟海员喝酒这么多年, 什么场子没见过... 我带的钱够把你这酒馆拆了重建! 想趁机敲竹杠是吧? 行, 我要办婚礼, 没心情跟你扯这些 --你要多少? ";
+            dialog.text = "是的, 你助手来过, 但我跟她说过也得跟你重复 —我见惯了喝醉的水手扎堆, 但你们的派对我可知道。 最后这儿估计跟西班牙方阵洗劫过的安特卫普一样惨。 要是墙没倒我都谢天谢地了。 所以你要是想让大家撒欢儿闹, 除了已经带来的东西, 还得交笔不退的押金。 以防万一嘛。 ";
+            link.l1 = "你这老狐狸! 我跟海员喝酒这么多年, 什么场子没见过... 我带的钱够把你这酒馆拆了重建! 想趁机敲竹杠是吧? 行, 我要办婚礼, 没心情跟你扯这些 —你要多少? ";
             link.l1.go = "LH_tavern_SP_1";
         break;
         
         case "LH_tavern_SP_1":
-            dialog.text = "再加10万八里亚尔应该够了, 放心 --我肯定办得漂漂亮亮。 你的人能记这派对一辈子, 我打包票! ";
+            dialog.text = "再加10万八里亚尔应该够了, 放心 —我肯定办得漂漂亮亮。 你的人能记这派对一辈子, 我打包票! ";
             if (sti(Pchar.money) >= 100000 + sti(pchar.questTemp.LongHappy.MarryMoney))
             {
-                link.l1 = "你可得用心办 --这可是特殊场合。 还有, 庆祝完了就算酒馆烧了也别来找我抱怨。 ";
+                link.l1 = "你可得用心办 —这可是特殊场合。 还有, 庆祝完了就算酒馆烧了也别来找我抱怨。 ";
                 link.l1.go = "LH_tavern_SP_4";
             }
             else
@@ -275,7 +275,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "LH_tavern_SP_3":
             dialog.text = "你的人肯定能记这派对一辈子, 我打包票! ";
-            link.l1 = "你可得用心办 --这可是特殊场合。 我手下要是不小心把你酒馆烧了, 别来找我哭丧。 ";
+            link.l1 = "你可得用心办 —这可是特殊场合。 我手下要是不小心把你酒馆烧了, 别来找我哭丧。 ";
             link.l1.go = "LH_tavern_SP_4";
         break;
         

@@ -53,7 +53,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "First time";
 		break;
 		
-//-------------------------------------—— 问答区块 ---------------------------------------------
+//------------------------------------- —问答区块 ---------------------------------------------
 		case "int_quests":
 			dialog.text = "我在听。 ";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
@@ -81,7 +81,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_1":
-			dialog.text = "只有正面的评价, " + GetAddress_Form(NPChar) + "。 桑乔总是有很多种酒 --从陈年葡萄酒到普通麦芽酒和朗姆酒。 几年前他发现了一大批陈年葡萄酒。 桑乔花了两个月把装酒瓶的箱子搬到他的储藏室\n现在我们有充足的葡萄酒, 在群岛上只有总督才能喝到那么多。 朗姆酒也不成问题。 桑乔不仅能提供饮品, 还能提供最新消息。 好的建议和一张温暖的床过夜。 ";
+			dialog.text = "只有正面的评价, " + GetAddress_Form(NPChar) + "。 桑乔总是有很多种酒 —从陈年葡萄酒到普通麦芽酒和朗姆酒。 几年前他发现了一大批陈年葡萄酒。 桑乔花了两个月把装酒瓶的箱子搬到他的储藏室\n现在我们有充足的葡萄酒, 在群岛上只有总督才能喝到那么多。 朗姆酒也不成问题。 桑乔不仅能提供饮品, 还能提供最新消息。 好的建议和一张温暖的床过夜。 ";
 			link.l1 = "我明白了... ";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_1 = "true";
@@ -107,9 +107,9 @@ void ProcessDialogEvent()
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
 		break;
-// <—— 问答区块
+// < —问答区块
 		
-//---------------------------------------—— 特殊反应 -----------------------------------------------
+//--------------------------------------- —特殊反应 -----------------------------------------------
 		// 发现玩家在箱子里
 		case "Man_FackYou":
 			dialog.text = LinkRandPhrase("你在那里做什么, 嗯? 小偷! ", "看看那个! 我一沉思, 你就决定检查我的箱子! ", "决定检查我的箱子? 你不会得逞的! ");
@@ -160,7 +160,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;
-// <—— 特殊反应
+// < —特殊反应
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

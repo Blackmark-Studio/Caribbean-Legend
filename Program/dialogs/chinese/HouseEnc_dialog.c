@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 			DialogExit();
 		break;
 
-		//-------------------------------—— 农夫 ---------------------------------
+		//------------------------------- —农夫 ---------------------------------
 		case "HouseMan":
 			NextDiag.TempNode = "HouseMan";
 			if (LAi_grp_playeralarm > 0)
@@ -142,11 +142,11 @@ void ProcessDialogEvent()
 			link.l1.go = "exit_setOwner";
 		break;
 		case "Man_FackYou":
-			dialog.text = LinkRandPhrase("你是" + GetSexPhrase("小偷, 我看见了! 卫兵, 抓住他", "小偷, 我看见了! 卫兵, 抓住她") + "!!! ", "真不敢相信! 我一转身 --你就翻我的东西! 抓小偷!!! ", "卫兵! 抢劫! 抓小偷!!! ");
+			dialog.text = LinkRandPhrase("你是" + GetSexPhrase("小偷, 我看见了! 卫兵, 抓住他", "小偷, 我看见了! 卫兵, 抓住她") + "!!! ", "真不敢相信! 我一转身 —你就翻我的东西! 抓小偷!!! ", "卫兵! 抢劫! 抓小偷!!! ");
 			link.l1 = "啊啊啊, 魔鬼!!! ";
 			link.l1.go = "fight";
 		break;
-		// -------------------------------—— 农妇 ---------------------------------
+		// ------------------------------- —农妇 ---------------------------------
 		case "HouseWoman":
 			NextDiag.TempNode = "HouseWoman";
 			if (LAi_grp_playeralarm > 0)
@@ -221,7 +221,7 @@ void ProcessDialogEvent()
 			LAi_group_Attack(NPChar, Pchar);
 			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
 		break; 
-		//-------------------------------—— 仓库管理员 ---------------------------------		
+		//------------------------------- —仓库管理员 ---------------------------------		
 		case "SkladMan":
 			NextDiag.TempNode = "SkladMan1";
 			if (LAi_grp_playeralarm > 0)
@@ -302,11 +302,11 @@ void ProcessDialogEvent()
 						}						
 					}
 				}		
-			// <—— ugeen
+			// < —ugeen
 			}		
 		break;
 		
-		//-------------------------------—— 仓库租赁 ---------------------------------
+		//------------------------------- —仓库租赁 ---------------------------------
 		case "storage_rent":
 			NPChar.Storage.Speak = true;
 			dialog.text = "我们有一个适合作为仓库的地方。 你想以合理的价格租用吗? 想想看, 你将有自己的仓库来存放贵重货物... ";
@@ -484,7 +484,7 @@ void ProcessDialogEvent()
 			DialogExit();
 		break;		
 
-		//-------------------------------—— 仓库租赁 ---------------------------------
+		//------------------------------- —仓库租赁 ---------------------------------
 		
 		case "ShipyardsMap_1":
 			dialog.text = "呵! 好吧, 我们谈谈。 ";

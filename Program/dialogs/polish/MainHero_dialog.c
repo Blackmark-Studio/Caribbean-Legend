@@ -64,7 +64,7 @@ void ProcessDialogEvent()
 			//--> Вступительный туториал на палубе корабля за Шарля
 		if (CheckAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1"))
 		{
-			dialog.text = "Ekscytujące, do diabła! Prawdziwa bitwa morska!\nSzkoda oczywiście, że samej walki stąd nie zobaczę... No cóż. Myślę, że już wystarczająco poznałem się na marynarce, by wiarygodnie wyobrazić sobie przebieg wydarzeń\nPewnie pięciu piratów... Jeden duży okręt, kilka średnich i drobnica. W sam raz na naszego pinasa. Historia będzie przednia — Lulu będzie zachwycona!";
+			dialog.text = "Ekscytujące, do diabła! Prawdziwa bitwa morska!\nSzkoda oczywiście, że samej walki stąd nie zobaczę... No cóż. Myślę, że już wystarczająco poznałem się na marynarce, by wiarygodnie wyobrazić sobie przebieg wydarzeń\nPewnie pięciu piratów... Jeden duży okręt, kilka średnich i drobnica. W sam raz na naszą pinase. Historia będzie przednia — Lulu będzie zachwycona!";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1");
@@ -127,16 +127,16 @@ void ProcessDialogEvent()
             //--> приколы со стуком в дверь Диффиндура, LSC
 			if (CheckAttribute(pchar, "questTemp.LSC.DiffIndoor"))
     		{
-    		    dialog.text = "To jest drzwi prowadzące do wewnętrznych pomieszczeń statku. Są zamknięte... Hawk musi być tu. Co znowu wspominał Ole? Powinienem użyć sekretnego pukania.";
+    		    dialog.text = "To są drzwi prowadzące do wewnętrznych pomieszczeń statku. Są zamknięte... Hawk musi tu być. Jak to wtedy wspominał Ole? Powinienem użyć sekretnego pukania.";
     			link.l1 = "Puknij dwa razy.";
     			link.l1.go = "knock_2";
-				link.l2 = "Pukaj trzy razy.";
+				link.l2 = "Zapukaj trzy razy.";
     			link.l2.go = "knock_3";
-				link.l3 = "Puknij raz, przerwa, puknij trzy razy.";
+				link.l3 = "Puknij raz, przerwa, potem trzy razy.";
     			link.l3.go = "knock_1_3";
-				link.l4 = "Pukaj dwa razy, zrób przerwę, pukaj dwa razy.";
+				link.l4 = "Zapukaj dwa razy, przerwa, potem dwa razy.";
     			link.l4.go = "knock_2_2";
-				link.l5 = "Pukaj trzy razy, zrób przerwę, pukaj raz.";
+				link.l5 = "Zapukaj trzy razy, przerwa, potem raz.";
     			link.l5.go = "knock_3_1";
     		}
 			//<-- приколы со стуком в дверь Диффиндура, LSC
@@ -158,19 +158,19 @@ void ProcessDialogEvent()
     		}
 			if (CheckAttribute(pchar, "questTemp.Terrapin") && pchar.questTemp.Terrapin == "roof")
     		{
-    		    dialog.text = "To jest zrobione. Levasseur nie żyje. Okazało się to być o wiele łatwiejsze, niż przypuszczałem... Ale coś nie pasuje. Thibaut nawet nie rozmawiał z Martene! To oznacza, że albo Robert mnie zdradził, albo zdarzył się jakiś wypadek. Ale gdzie mógł uciec ten drań Thibaut? Musi polować na Catherine. Muszę działać szybko, jeśli chcę zabrać dziewczynę spod jego nosa...";
+    		    dialog.text = "Zrobione. Levasseur nie żyje. Okazało się to być o wiele łatwiejsze, niż przypuszczałem... Ale coś nie pasuje. Thibaut nawet nie rozmawiał z Martene! To oznacza, że albo Robert mnie zdradził, albo zdarzył się jakiś wypadek. Ale gdzie mógł uciec ten drań Thibaut? Musi polować na Catherine. Muszę działać szybko, jeśli chcę zabrać dziewczynę spod jego nosa...";
     			link.l1 = "";
     			link.l1.go = "terrapin";
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "think")
     		{
-    		    dialog.text = "Skrzynie pełne skarbów, starożytnego miasta Indian... nie wierzę w takie zbiegi okoliczności... założę się, że mój brat miał coś wspólnego ze zniknięciem fregaty Dichoso. Pewnie upewnił się, że Dichoso nigdy nie otworzy znów swoich ust\nAlbo może pracował z nim, Hiszpanie musieli mieć powody, aby sądzić, że Dichoso jest gdzieś tutaj. To nie ma sensu. Ale jestem pewien, że złoto Indian, które Michel dostarczał de Poincy, jak i złoto Miguela Dichoso to to samo złoto. Historia więźnia zgadza się z tym, co oficer powiedział mi o przygodach mojego brata\nŚmieszne, Michel nie dostarczył złota, podobnie jak Miguel! Więc gdzie teraz są te skarby? Może to była przyczyna, dla której mój brat tak się spieszył\nErgo, znalezienie złota będzie jak zabicie dwóch much jednym uderzeniem: spojrzę znowu w bezczelne oczy mojego brata i... tak, złoto zawsze jest dobre. Ale jak do diabła je znajdę? Wygląda na to, że czas nawiązać bliższe stosunki z Hiszpanami\nDon Ramon Mendoza nie wchodzi w grę, wątpię, że dam sobie z nim radę, ale święty ojciec Vincento, najgorszy wróg barona... on się nada. Jego rodzaj nie jest skrupulatny, ale kocha pieniądze i podstępne środki\nDichoso, Dichoso... słyszałem to nazwisko wcześniej... czy nie? Cokolwiek, do diabła z tym. Powinienem iść do oficera i zgłosić się po hiszpańskiego więźnia. Potem mogę udać się do Santiago w dowolnym momencie.";
+    		    dialog.text = "Skrzynie pełne skarbów, starożytnego miasta Indian... nie wierzę w takie zbiegi okoliczności... założę się, że mój brat miał coś wspólnego ze zniknięciem fregaty Dichoso. Pewnie upewnił się, że Dichoso nigdy nie otworzy znów swoich ust\nAlbo może pracował z nim, Hiszpanie musieli mieć powody, aby sądzić, że Dichoso jest gdzieś tutaj. To nie ma sensu. Ale jestem pewien, że złoto Indian, które Michel dostarczał de Poincy, jak i złoto Miguela Dichoso to to samo złoto. Historia więźnia zgadza się z tym, co oficer powiedział mi o przygodach mojego brata\nŚmieszne, Michel nie dostarczył złota, podobnie jak Miguel! Więc gdzie teraz są te skarby? Może to była przyczyna, dla której mój brat tak się spieszył\nErgo, znalezienie złota będzie jak zabicie dwóch much jednym uderzeniem: spojrzę znowu w bezczelne oczy mojego brata i... tak, złoto zawsze jest dobre. Ale jak do diabła je znajdę? Wygląda na to, że czas nawiązać bliższe stosunki z Hiszpanami\nDon Ramon Mendoza nie wchodzi w grę, wątpię, że dam sobie z nim radę, ale święty ojciec Vincento, najgorszy wróg barona... on się nada. Jego rodzaj nie jest skrupulatny, ale kocha pieniądze i podstępne środki\nDichoso, Dichoso... słyszałem to nazwisko wcześniej... czy nie? Nieważne, do diabła z tym. Powinienem iść do oficera i zgłosić się po hiszpańskiego więźnia. Potem mogę udać się do Santiago w dowolnym momencie.";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "shore")
     		{
-    		    dialog.text = "Wanilia została załadowana na karawelę, a jej żagle dawno zniknęły za horyzontem - a to przeklęte galeony wróciły do portu zamiast wypłynąć na otwarte morze. Nie mogę pokazać się ze swoim statkiem w porcie - lepiej, jeśli myślą, że opuściłem Gwadelupę... Chyba przejdę do miasta przez dżunglę i dowiem się coś o moim drogim Marchais...";
+    		    dialog.text = "Wanilia została załadowana na karawelę, a jej żagle dawno zniknęły za horyzontem - a te przeklęte galeony wróciły do portu zamiast wypłynąć na otwarte morze. Nie mogę pokazać się ze swoim statkiem w porcie - lepiej, jeśli myślą, że opuściłem Gwadelupę... Chyba przejdę do miasta przez dżunglę i dowiem się coś o moim drogim Marchais...";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}
@@ -190,7 +190,7 @@ void ProcessDialogEvent()
 			// Поиски Ксочитэма
 			if (CheckAttribute(pchar, "questTemp.Ksochitam_Dolly") && pchar.questTemp.Ksochitam_Dolly == "half_pearl")
     		{
-    		    dialog.text = "W końcu! Znalazłem miejsce wskazane przez 'manifestację': to indyjski idol. Kiedy jestem blisko, 'Strzała Drogi' przestaje oscylować i wskazuje w jednym kierunku. Cóż, wydaje się logiczne - indyjska magia i indyjski idol. Teraz powinienem zaznaczyć na mapie miejsce wskazane przez 'Strzałę Drogi', a potem udam się na Dominikę.";
+    		    dialog.text = "W końcu! Znalazłem miejsce wskazane przez 'manifestację': to indiański idol. Kiedy jestem blisko, 'Strzała Drogi' przestaje oscylować i wskazuje w jednym kierunku. Cóż, wydaje się logiczne - indiańska magia i indiański idol. Teraz powinienem zaznaczyć na mapie miejsce wskazane przez 'Strzałę Drogi', a potem udam się na Dominikę.";
     			link.l1 = "";
     			link.l1.go = "exit";
 				AddDialogExitQuest("Ksochitam_FindFirstWay");
@@ -204,7 +204,7 @@ void ProcessDialogEvent()
     		}
 			if (CheckAttribute(pchar, "questTemp.Ksochitam_Dolly") && pchar.questTemp.Ksochitam_Dolly == "full")
     		{
-    		    dialog.text = "Oba przejawy zostały znalezione! Teraz muszę zaznaczyć drugi kierunek na mapie. Przecięcie tych dwóch kierunków pokaże mi lokalizację wyspy Ksocheatem.";
+    		    dialog.text = "Obie manifestacje zostały znalezione! Teraz muszę zaznaczyć drugi kierunek na mapie. Przecięcie tych dwóch kierunków pokaże mi lokalizację wyspy Ksocheatem.";
     			link.l1 = "";
     			link.l1.go = "exit";
 				AddDialogExitQuest("Ksochitam_FindFullWay");

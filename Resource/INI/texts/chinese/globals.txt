@@ -24,7 +24,7 @@ Swear_4 {该死的! }
 Swear_5 {一千个恶魔! }
 Swear_6 {做我船尾的锚! }
 Swear_7 {哦, 天堂! }
-Swear_8 {啊——! !! }
+Swear_8 {啊—! !! }
 Swear_9 {一千条鲨鱼! }
 Swear_10 {魔鬼! }
 

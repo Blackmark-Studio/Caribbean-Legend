@@ -288,7 +288,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("BarbTemptation", "21");
 			DeleteAttribute(npchar, "quest.fugas");
 		break;
-		//<—— 海战咨询结束
+		//< —海战咨询结束
 		
 	// --> 传奇结局对话
 		case "result":
@@ -545,7 +545,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.GoldenGirl_Ready = true;
 		break;
 		
-	// ------------------------------------------—— 传奇失败 ------------------------------------
+	// ------------------------------------------ —传奇失败 ------------------------------------
 		case "failcenturion":
 			dialog.text = "船长! 杰克曼死了... 我的家人终于安全了吗? ";
 			link.l1 = "是的, 海伦, 你们都安全了。 但'百夫长'号沉没了, 所有能帮助我们找到你母亲坟墓并证明你对宝藏岛权利的文件也沉没了... 唉... 现在我只能独自突袭托尔图加... ";
@@ -592,7 +592,7 @@ void ProcessDialogEvent()
 			link.l1 = "我浪费了太多时间, 宝藏岛现在是英国殖民地。 你失去了继承权, 所以我只能独自突袭托尔图加... 唉, 我们输了。 ";
 			link.l1.go = "failcenturion_1";
 		break;
-	// <—— 传奇失败
+	// < —传奇失败
 		
 		// 性 - 埃伦不总是同意 (头疼, 你还想怎样? :)) 并且自己不要求性
 		case "cabin_sex":
@@ -668,7 +668,7 @@ void ProcessDialogEvent()
 			DoFunctionReloadToLocation(loadedLocation.fastreload + "_tavern_upstairs", "quest", "quest4", "LoveSex_Room_Go");
 		break;
 		
-		//--> ---------------------------------—— 军官模块 ------------------------------------------
+		//--> --------------------------------- —军官模块 ------------------------------------------
 		case "Helena_officer":
 			ref rLoc = &Locations[FindLocation(pchar.location)];
 			dialog.text = LinkRandPhrase("是的, " +pchar.name+ "? ", "是的, 我的船长? ", "我在听, " +pchar.name+ "... ");
@@ -897,7 +897,7 @@ void ProcessDialogEvent()
             Link.l1 = "... ";
             Link.l1.go = "Exit";
         break;
-		//<—— ---------------------------------—— 军官模块 ----------------------------------------
+		//< —--------------------------------- —军官模块 ----------------------------------------
 		
 		// --> 龟汤
 		case "terrapin_grot":
@@ -919,7 +919,7 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
 			Terrapin_GotoShip();
 		break;
-		// <—— 龟汤
+		// < —龟汤
 		
 		// --> 幽灵船
 		case "on_coast":
@@ -978,7 +978,7 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
 			AddQuestRecord("Caleuche", "5");
 		break;
-		// <—— 幽灵船
+		// < —幽灵船
 		
 		// 在泰亚萨尔
 		case "tieyasal":
@@ -3396,7 +3396,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "give_sex_1":
-			dialog.text = LinkRandPhrase("你的女士想你了, 需要关注。 我可以请求为她安排一个房间并花些时间陪她吗", "报告: 当地酒馆的床上需要你。 只需要你五分钟, 但船员希望你待得更久! ", "船上发生哗变, 我的船长! 我被派去在私人场合给你一个黑标记。 立即跟我来! ");
+			dialog.text = LinkRandPhrase("你的女士想你了, 需要关注。 我可以请求为她安排一个房间并花些时间陪她吗", "报告: 当地酒馆的床上需要你。 只需要你五分钟, 但船员希望你待得更久! ", "船上发生哗变, 我的船长! 我被派去在私人场合给你一个黑色印记。 立即跟我来! ");
 			link.l1 = "嘿嘿, 咳咳! Sharp军官, 你的请求被批准了! ";
 			link.l1.go = "give_sex_1_yes";
 			link.l2 = "今天不行, 亲爱的。 现在发生的事情太多了。 ";

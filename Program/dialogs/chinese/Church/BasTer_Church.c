@@ -11,7 +11,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1.go = "exit";        
             if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "utensil" && !CheckAttribute(npchar, "quest.utensil"))
             {
-                link.l1 = "神父, 我来向您请教一件不寻常的事。 不久前, 一个名叫盖伊.马沙的私掠船船长向您的教区捐赠了 一 件非常珍贵的物品 --一枚镶嵌天青石的黄金胸饰十字架。 这是真的吗? ";
+                link.l1 = "神父, 我来向您请教一件不寻常的事。 不久前, 一个名叫盖伊.马沙的私掠船船长向您的教区捐赠了 一 件非常珍贵的物品 —一枚镶嵌天青石的黄金胸饰十字架。 这是真的吗? ";
                 link.l1.go = "guardoftruth";
             }
         break;

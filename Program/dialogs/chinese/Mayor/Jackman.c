@@ -37,7 +37,7 @@ void ProcessDialogEvent()
 
     switch(Dialog.CurrentNode)
     {
-        // ---------------------------------—— 首次对话 - 初次见面
+        // --------------------------------- —首次对话 - 初次见面
         case "First time":
             dialog.text = NPCStringReactionRepeat(""+ GetSexPhrase("你有什么要告诉我的吗? 没有? 那就滚开! ","哈, " +pchar.name+ "! 你找我有事吗? 没有? 那就别烦我。 ") +"",
                          "我想我已经说得够清楚了, 别再烦我。 ", "尽管我已经说得很清楚, 你还是在烦我! ",
@@ -68,7 +68,7 @@ void ProcessDialogEvent()
                 link.l1 = "又是我, 杰克曼。 他们说你在找一些失踪的人... ";
                 link.l1.go = "Saga_search";
             }    
-            //<—— 传奇任务
+            //< —传奇任务
 
             //船长委托 - 赎金
             if (CheckAttribute(pchar, "GenQuest.CaptainComission") && NPChar.city == pchar.GenQuest.CaptainComission.PiratesCity)

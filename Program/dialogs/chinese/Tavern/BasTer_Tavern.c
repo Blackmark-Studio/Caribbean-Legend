@@ -18,7 +18,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             //Sinistra 导航星
             if (CheckAttribute(pchar, "questTemp.PZ_BasTerTavern"))
             {
-                link.l1 = "我和朋友约好在这儿见面, 但我哪儿都找不到他。 你知道他去哪儿了吗? 他还在镇上, 或者至少在岛上? 他叫朗威 --是中国人。 ";
+                link.l1 = "我和朋友约好在这儿见面, 但我哪儿都找不到他。 你知道他去哪儿了吗? 他还在镇上, 或者至少在岛上? 他叫朗威 —是中国人。 ";
                 link.l1.go = "PZ_BasTerTavern_1";
             }
             //--> 合法贸易
@@ -37,7 +37,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "那么, " + npchar.name+ "。 我这边一切都已安排好, 货物已经在运往酒馆的路上了。 我们可以进行付款了吗? ";
                 link.l1.go = "TPZ_Tavern3_1";
             }
-            //<—— 合法贸易
+            //< —合法贸易
         break;
         
         //海龟汤
@@ -114,13 +114,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         //--> 合法贸易
         case "TPZ_Tavern_1":
-            dialog.text = "哦, " + GetAddress_Form(NPChar) + ", 情况比那更糟。 我从安提瓜来的供应商失去了他的酿酒厂 --海盗袭击了那里, 一切都被烧毁了。 现在他说我们至少两个月都别想拿到任何朗姆酒或葡萄酒了。 ";
+            dialog.text = "哦, " + GetAddress_Form(NPChar) + ", 情况比那更糟。 我从安提瓜来的供应商失去了他的酿酒厂 —海盗袭击了那里, 一切都被烧毁了。 现在他说我们至少两个月都别想拿到任何朗姆酒或葡萄酒了。 ";
             link.l1 = "那就找个新供应商。 你不会打算就这么干等两个月吧? ";
             link.l1.go = "TPZ_Tavern_2";
         break;
         
         case "TPZ_Tavern_2":
-            dialog.text = "找到一个可靠的供应商并不容易。 我尝试过和小商人打交道, 但他们不可靠。 有时货物会到, 有时不会。 和大供应商合作, 一切都像 clockwork 一样 --稳定的交货和高质量。 ";
+            dialog.text = "找到一个可靠的供应商并不容易。 我尝试过和小商人打交道, 但他们不可靠。 有时货物会到, 有时不会。 和大供应商合作, 一切都像 clockwork 一样 —稳定的交货和高质量。 ";
             link.l1 = "那么, 如果正规供应商有问题, 也许你应该在暗处找找? 他们很少让你失望, 而且货物总是有库存。 ";
             link.l1.go = "TPZ_Tavern_3";
         break;
@@ -165,7 +165,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "TPZ_Tavern2_2":
             dialog.text = "这次, 我想我会相信你的话。 那么, 这批货你想要多少钱? ";
-            link.l1 = "每十瓶葡萄酒我要三十杜布隆, 每十瓶朗姆酒要五杜布隆。 整批货 --各一百瓶 --将花费你三百五十杜布隆。 ";
+            link.l1 = "每十瓶葡萄酒我要三十杜布隆, 每十瓶朗姆酒要五杜布隆。 整批货 —各一百瓶 —将花费你三百五十杜布隆。 ";
             link.l1.go = "TPZ_Tavern2_3";
         break;
         
@@ -179,14 +179,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             }
             else
             {
-                link.l1 = "好吧, 我愿意把价格降到每批二百四十杜布隆 --我的目标是长期合作。 将来, 我可以满足你所有的需求, 并确保可靠的供应。 你觉得怎么样? ";
+                link.l1 = "好吧, 我愿意把价格降到每批二百四十杜布隆 —我的目标是长期合作。 将来, 我可以满足你所有的需求, 并确保可靠的供应。 你觉得怎么样? ";
                 link.l1.go = "TPZ_Tavern2_7";
                 notification("技能太低(50)", SKILL_COMMERCE);
             }
         break;
         
         case "TPZ_Tavern2_4":
-            dialog.text = "这仍然比我过去付的多。 但我已经吸取了教训 --稳定性是值得这个价格的。 我同意你的条件, 但要知道: 一旦出了差错, 我就会找另一个供应商。 我需要了解我多付的钱是为了什么。 还有一件事 --你打算如何处理当局? ";
+            dialog.text = "这仍然比我过去付的多。 但我已经吸取了教训 —稳定性是值得这个价格的。 我同意你的条件, 但要知道: 一旦出了差错, 我就会找另一个供应商。 我需要了解我多付的钱是为了什么。 还有一件事 —你打算如何处理当局? ";
             link.l1 = "我现在就去处理。 一旦一切都解决了, 我会带着货物回来。 ";
             link.l1.go = "TPZ_Tavern2_5";
         break;
@@ -210,13 +210,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 	    case "TPZ_Tavern2_7":
 			dialog.text = "还是太贵了, 船长。 这个价格比我之前付给供应商的还要高。 即使我现在同意, 几个月后一旦生产恢复, 我还是得回到他那里。 我看不出有什么理由多付钱。 ";
-			link.l1 = "我明白了。 好吧。 我的最终报价 --两百杜布隆。 如果这都不能接受, 那我们就没必要再谈下去了。 ";
+			link.l1 = "我明白了。 好吧。 我的最终报价 —两百杜布隆。 如果这都不能接受, 那我们就没必要再谈下去了。 ";
 			link.l1.go = "TPZ_Tavern2_8";
 		break;
 		
 		case "TPZ_Tavern2_8":
 			dialog.text = "好吧, 成交。 两百可以接受。 但告诉我, 你打算如何应对岛上的当局? 正如我之前所说, 总督严格监视岛上的走私活动。 他不会容忍在他眼皮底下进行交易。 ";
-			link.l1 = "哈哈, 嗯, 我对此有不同看法。 但请放心 --我打算迅速处理所有官僚障碍。 ";
+			link.l1 = "哈哈, 嗯, 我对此有不同看法。 但请放心 —我打算迅速处理所有官僚障碍。 ";
 			link.l1.go = "TPZ_Tavern2_9";
 		break;
 		
@@ -239,7 +239,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if (sti(pchar.reputation.nobility) >= 40)
 			{
 				dialog.text = "当然, 船长! 那么, 你的这批货想要多少钱? ";
-				link.l1 = "每十瓶葡萄酒我要三十杜布隆, 每十瓶朗姆酒要五杜布隆。 整批货 --各一百瓶 --将花费你三百五十杜布隆。 ";
+				link.l1 = "每十瓶葡萄酒我要三十杜布隆, 每十瓶朗姆酒要五杜布隆。 整批货 —各一百瓶 —将花费你三百五十杜布隆。 ";
 				link.l1.go = "TPZ_Tavern2_3";
 				notification("荣誉检查通过", "None");
 			}

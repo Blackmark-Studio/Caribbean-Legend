@@ -35,7 +35,7 @@ void ProcessDialogEvent()
         ProcessCommonDialog(NPChar, Link, NextDiag);
 		UnloadSegment(NPChar.FileDialog2);
 	}
-    // 按城市调用对话 <—— */
+    // 按城市调用对话 < —*/
     int iTest, iTemp;
     string sTemp;
     iTest = FindColony(NPChar.City); // 城市
@@ -146,7 +146,7 @@ void ProcessDialogEvent()
 						if (sti(pchar.nation) == PIRATE)
 						{
     						dialog.text = RandPhraseSimple("镇上有海盗? ! 真不敢相信... 抓住他! ", "那是个海盗! 抓住他! ");
-							link.l1 = RandPhraseSimple("是的, 我是海盗—— 现在怎样? ", "呵, 有本事就来抓我... ");
+							link.l1 = RandPhraseSimple("是的, 我是海盗 —现在怎样? ", "呵, 有本事就来抓我... ");
 							link.l1.go = "fight"; 
 							break;
 						}
@@ -168,7 +168,7 @@ void ProcessDialogEvent()
 						}
 					}
 				}
-				// <—— eddy。 检查是否是敌人。 
+				// < —eddy。 检查是否是敌人。 
 				else
 				{
 					if (sti(NPChar.nation) == PIRATE)
@@ -258,7 +258,7 @@ void ProcessDialogEvent()
 							}
 							else
 							{
-							    /* dialog.text = LinkRandPhrase(RandPhraseSimple("你找我有事吗, 船长? ", "我在这里闲逛, 如果有什么需要—— 问吧, 别拖着。 "), RandPhraseSimple("船长, 我很忙, 所以找别人聊天吧。 ", "有什么不对劲吗, 船长? 如果没有问题, 那就让我过去。 "), "让开, 船长, 我赶时间。 ");
+							    /* dialog.text = LinkRandPhrase(RandPhraseSimple("你找我有事吗, 船长? ", "我在这里闲逛, 如果有什么需要 —问吧, 别拖着。 "), RandPhraseSimple("船长, 我很忙, 所以找别人聊天吧。 ", "有什么不对劲吗, 船长? 如果没有问题, 那就让我过去。 "), "让开, 船长, 我赶时间。 ");
 							link.l1 = LinkRandPhrase("对不起, 朋友, 我" + GetSexPhrase("介绍了","介绍了") + " ", "好吧, 忙你的事吧。 ", "不, 没什么。 ");
 							link.l1.go = "exit";
 							link.l2 = LinkRandPhrase(RandPhraseSimple("我有几个问题要问你。 ", "我找你有事。 "), RandPhraseSimple("我看你很匆忙。 一个问题, 你就自由了。 ", "我" + GetSexPhrase("想","想") + "问点事。 "), "你的事可以等。 我就是想问" + GetSexPhrase("想","想") + "。 ");
@@ -290,7 +290,7 @@ void ProcessDialogEvent()
 					{
 						if(sti(pchar.GenQuest.EncGirl.MeetSoldiers) == 1)	
 						{
-							dialog.text = "哦, 看看谁在那里! " + pchar.GenQuest.EncGirl.name + "小姐亲自光临! 我想知道你怎么敢? 我们一直在找你! 请前往地牢—— 你的牢房已经准备好了, 在等着你。 ";
+							dialog.text = "哦, 看看谁在那里! " + pchar.GenQuest.EncGirl.name + "小姐亲自光临! 我想知道你怎么敢? 我们一直在找你! 请前往地牢 —你的牢房已经准备好了, 在等着你。 ";
 							link.l1 = "你在说什么胡话! 我和我的" + GetSexPhrase("骑士","同伴") + "在丛林中散步, 采花。 别烦我! 这些严格的人礼貌在哪里? ! 他们一看到迷人的女孩, 就开始对她唠叨! " + GetSexPhrase("亲爱的, 请告诉那些笨蛋滚开, 让一个诚实的女人独处! ","亲爱的, 请告诉那些笨蛋... ") + "! ";
 							link.l1.go = "GirlEnc_1";
 						}
@@ -302,17 +302,17 @@ void ProcessDialogEvent()
 						}
 						DeleteAttribute(pchar,"GenQuest.EncGirl.MeetSoldiers");
 					}
-					// <—— 丛林中的少女
+					// < —丛林中的少女
 
 					// --> belamour 夜间冒险者
 					if(CheckAttribute(pchar,"GenQuest.NightAdventureSolNum") && npchar.index == pchar.GenQuest.NightAdventureSolNum)
 					{
-						dialog.text = "士兵的生活是有计划的—— 站岗, 巡逻... 你想要什么, " + GetAddress_Form(NPChar) + "? ";
+						dialog.text = "士兵的生活是有计划的 —站岗, 巡逻... 你想要什么, " + GetAddress_Form(NPChar) + "? ";
 						link.l1 = "听着, 最近是不是和你在这里有个醉汉打架了? 嗯, 不过, 显然是的, 和你... ";
 						link.l1.go = "NightAdventure_CitizenHomieSolder";
 						break;
 					}
-					// <—— 夜间冒险者
+					// < —夜间冒险者
 					
 					//belamour legendary edition 对话, 如果英雄有军衔和对国家的贡献 -->
 					
@@ -329,7 +329,7 @@ void ProcessDialogEvent()
 
 							case 1:
 								dialog.text = "这对我来说是一种荣誉, 总督将军先生! 我能为您做什么? ";
-								link.l1 = "认真履行你的职责—— 我不需要你做更多。 ";
+								link.l1 = "认真履行你的职责 —我不需要你做更多。 ";
 								link.l1.go = "exit";
 							break;
 
@@ -366,7 +366,7 @@ void ProcessDialogEvent()
 						}
 						break;
 					}
-					// 有专利的军官
+					// 有许可证的军官
 					if(IsOfficerFullEquip() && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
 					{
 						switch(rand(2))
@@ -391,7 +391,7 @@ void ProcessDialogEvent()
 						}
 						break;
 					}
-					// <—— legendary edition
+					// < —legendary edition
 					switch (rand(10))
 					{
 						case 0: ////////////////////////////////////////
@@ -414,7 +414,7 @@ void ProcessDialogEvent()
 
 						case 3:
 							dialog.text = "天气这么好, 我却不得不站在这里。 在镇上, 至少有女孩, 而我们这里有什么? 周围只有老鼠。 ";
-							link.l1 = "" + GetSexPhrase("我很同情, 但我帮不了你—— 毕竟这是你的职责。 ","嘿! 我怎么了? 我不是女孩吗? ") + "";
+							link.l1 = "" + GetSexPhrase("我很同情, 但我帮不了你 —毕竟这是你的职责。 ","嘿! 我怎么了? 我不是女孩吗? ") + "";
 							link.l1.go = "exit";
 						break;
 
@@ -549,7 +549,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "PortRoyal_Mayak";
 		break;
 		case "PortRoyal_Gans":
-			dialog.text = LinkRandPhrase("不要靠近大炮—— 这是军事设施! ", "陌生人不得靠近大炮! ", "如果我注意到你在大炮附近闲逛, 你就完了! ");
+			dialog.text = LinkRandPhrase("不要靠近大炮 —这是军事设施! ", "陌生人不得靠近大炮! ", "如果我注意到你在大炮附近闲逛, 你就完了! ");
 			link.l1 = RandPhraseSimple("我知道了。 ", "好的, 我知道了。 ");
 			link.l1.go = "exit";
 			NextDiag.TempNode = "PortRoyal_Gans";
@@ -604,7 +604,7 @@ void ProcessDialogEvent()
 		
 		case "GirlEnc_2":
 			dialog.text = "" + GetSexPhrase("先生","小姐") + ", 我们有命令找到那位女士并把她带给她的父亲。 ";
-			link.l1 = "好吧, 命令就是命令—— 那就去吧。 ";
+			link.l1 = "好吧, 命令就是命令 —那就去吧。 ";
 			link.l1.go = "GirlEnc_2End";
 			link.l2 = "太晚了, 因为我已经在带她去见她父亲了。 ";
 			link.l2.go = "GirlEnc_21";
@@ -636,7 +636,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "呵, " + GetSexPhrase("你是个幸运的男人","你是个幸运的少女") + "。 她的父亲答应给把她带回给他的人一笔丰厚的奖励。 ";
-				link.l1 = "不要绝望—— 你前面还有很多奖励。 ";
+				link.l1 = "不要绝望 —你前面还有很多奖励。 ";
 				link.l1.go = "exit";			 
 			}
 		break;
@@ -657,7 +657,7 @@ void ProcessDialogEvent()
 			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");				
 		break;
-		// <—— 生成器 "丛林中的少女"
+		// < —生成器 "丛林中的少女"
 		// --> belamour 夜间冒险者
 		case "NightAdventure_CitizenHomieSolder":
 			dialog.text = "是的, 和我。 让他坐在牢里, 想想他的行为。 如果你是来为他威胁我的, 那么相信我: 我甚至可以联系到堡垒的指挥官。 ";
@@ -719,7 +719,7 @@ void ProcessDialogEvent()
 			link.l1 = "工作顺利。 ";
 			link.l1.go = "exit";
 		break;
-		// <—— 夜间冒险者
+		// < —夜间冒险者
 		
 		//关于暴露武器的注释
 		case "SoldierNotBlade":
@@ -735,7 +735,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "First Time";
 		break;
 			}
-			// <—— legendary edition
+			// < —legendary edition
 			dialog.text = LinkRandPhrase("嘿, 挥舞所有武器是怎么回事? ! 马上把它收起来! ", "我命令你立即收起你的武器! ", "嘿, " + GetAddress_Form(NPChar) + ", 别吓唬人! 收起你的武器。 ");
 			link.l1 = LinkRandPhrase("好的, 我会收起它... ", "已经完成。 ", "如你所说... ");
 			link.l1.go = "exit";

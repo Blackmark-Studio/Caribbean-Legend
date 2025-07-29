@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "小姐, 关于你的美丽和优雅的传闻早已传入我耳, 我必须说 --传闻远不及本人。 人们还说太子港没有你的微笑就会失去魅力, 可惜今天似乎就是这样的日子。 告诉我是哪个恶棍敢让你心情黯淡, 我发誓会向他挑战决斗, 让你重拾美丽的笑容。 ";
+				link.l1 = "小姐, 关于你的美丽和优雅的传闻早已传入我耳, 我必须说 —传闻远不及本人。 人们还说太子港没有你的微笑就会失去魅力, 可惜今天似乎就是这样的日子。 告诉我是哪个恶棍敢让你心情黯淡, 我发誓会向他挑战决斗, 让你重拾美丽的笑容。 ";
 			}
 			link.l1.go = "Juli_2";
 			DelLandQuestMark(npchar);
@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 			if (pchar.sex == "woman")
 			{
 				dialog.text = "啊, 小姐, 你的关心太让人感动了... 我必须承认, 你的担忧让我很感动。 但唉, 我悲伤的原因不是几句交谈就能驱散的。 这不是任何人的错, 而是我担心连最坚定的人也无法克服的 circumstances。 ";
-				link.l1 = " circumstances? 我向你保证, 小姐, 对"+GetFullName(pchar)+"来说没有不可逾越的障碍。 告诉我发生了什么 --也许我能帮忙。 ";
+				link.l1 = " circumstances? 我向你保证, 小姐, 对"+GetFullName(pchar)+"来说没有不可逾越的障碍。 告诉我发生了什么 —也许我能帮忙。 ";
 			}
 			else
 			{
@@ -98,7 +98,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Juli_5":
-			dialog.text = "你说得对, "+GetAddress_Form(NPChar)+"。 那么真相是: 这条项链来自我叔叔 --这个岛上法国领土的总督 --极其憎恨的一个人。 他禁止一切接触, 甚至提到这个人的名字。 如果我叔叔发现这件礼物的来源, 后果将是灾难性的, 不仅对我, 而且对... ";
+			dialog.text = "你说得对, "+GetAddress_Form(NPChar)+"。 那么真相是: 这条项链来自我叔叔 —这个岛上法国领土的总督 —极其憎恨的一个人。 他禁止一切接触, 甚至提到这个人的名字。 如果我叔叔发现这件礼物的来源, 后果将是灾难性的, 不仅对我, 而且对... ";
 			link.l1 = "别说了, 小姐。 我完全理解。 请放心, 我会极其谨慎地找回你的项链, 像龙守护宝藏一样珍惜你的秘密。 ";
 			link.l1.go = "Juli_6";
 		break;
@@ -107,7 +107,7 @@ void ProcessDialogEvent()
 			dialog.text = "我对你感激不尽, "+GetSexPhrase(pchar.lastname+"先生",pchar.name+"")+"。 在这些困难时期, 你的英勇和理解温暖了我的心。 我完全相信我的秘密在你手中是安全的。 愿幸运之风在这个微妙的冒险中为你扬帆。 ";
 			if (pchar.sex == "woman")
 			{
-				link.l1 = "幸运眷顾敢于行动的人, 小姐。 请放心 --我会找回你的项链, 就像潮水一定会回到岸边一样确定。 ";
+				link.l1 = "幸运眷顾敢于行动的人, 小姐。 请放心 —我会找回你的项链, 就像潮水一定会回到岸边一样确定。 ";
 			}
 			else
 			{
@@ -130,14 +130,14 @@ void ProcessDialogEvent()
 			if (CheckCharacterItem(PChar, "SM_necklace_Julie"))
 			{
 				dialog.text = "啊, 船长, 你回来了! 有什么消息吗? 我祈祷你找回了我的项链。 请告诉我是这样。 ";
-				link.l1 = "你的麻烦结束了, 朱莉。 项链已经找回, 我非常高兴能把它归还给它应在的地方 --你纤细的手中。 ";
+				link.l1 = "你的麻烦结束了, 朱莉。 项链已经找回, 我非常高兴能把它归还给它应在的地方 —你纤细的手中。 ";
 				link.l1.go = "Juli_22";
 				DelLandQuestMark(npchar);
 			}
 			else
 			{
 				dialog.text = "啊, 船长, 你回来了! 有什么消息吗? 我祈祷你找回了我的项链。 请告诉我是这样。 ";
-				link.l1 = "很遗憾让你失望了, 朱莉。 搜索还在继续。 但请振作起来 --在你珍贵的项链归还给你之前, 我不会放过任何一个角落。 ";
+				link.l1 = "很遗憾让你失望了, 朱莉。 搜索还在继续。 但请振作起来 —在你珍贵的项链归还给你之前, 我不会放过任何一个角落。 ";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "Juli_7_again";
 				DelLandQuestMark(npchar);
@@ -148,7 +148,7 @@ void ProcessDialogEvent()
 			dialog.text = "问候你, 先生。 什么风把你吹到我们船上来了? ";
 			link.l1 = "我找特里斯坦.雷尼尔船长; 我来提一个能让他赚大钱的建议。 ";
 			link.l1.go = "Starpom_2_sneak";
-			link.l2 = "我必须和特里斯坦.雷尼尔船长谈一件微妙的事情 --你明白的, 私事。 ";
+			link.l2 = "我必须和特里斯坦.雷尼尔船长谈一件微妙的事情 —你明白的, 私事。 ";
 			link.l2.go = "Starpom_2_fortune";
 			DelLandQuestMark(npchar);
 		break;
@@ -214,7 +214,7 @@ void ProcessDialogEvent()
 			}
 			if (sti(pchar.Money) >= 5000)
 			{
-				link.l1 = "我准备出五千比索买这件东西。 这是一笔可观的数目, 足够你买一件同样好的饰品, 也许甚至更华丽。 同时, 这条项链将归还给一个比任何金钱都更珍视它的人 --远超过它的货币价值。 ";
+				link.l1 = "我准备出五千比索买这件东西。 这是一笔可观的数目, 足够你买一件同样好的饰品, 也许甚至更华丽。 同时, 这条项链将归还给一个比任何金钱都更珍视它的人 —远超过它的货币价值。 ";
 				link.l1.go = "Captain_4_commerce";
 			}
 			link.l2 = "让我直说了吧, 先生。 你的选择已经大大减少了: 自愿交出项链, 活下去继续航行; 或者反抗, 让我从你冰冷的尸体上取回它。 决定在你, 但我建议你快点做决定。 ";
@@ -287,28 +287,28 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Juli_24_nobility":
-			dialog.text = "我完全忘了问 --你知道是谁偷了项链吗? ";
+			dialog.text = "我完全忘了问 —你知道是谁偷了项链吗? ";
 			link.l1 = "我只知道, 小姐, 一个商人从一个叫吉赛尔的人那里收到了它。 从情况来看, 这可能不是她计划出售的最后一件珠宝。 ";
 			link.l1.go = "Juli_25";
 			ChangeCharacterComplexReputation(pchar, "nobility", 3);
 		break;
 
 		case "Juli_24_chest":
-			dialog.text = "我完全忘了问 --你知道是谁偷了项链吗? ";
+			dialog.text = "我完全忘了问 —你知道是谁偷了项链吗? ";
 			link.l1 = "我只知道, 小姐, 一个商人从一个叫吉赛尔的人那里收到了它。 从情况来看, 这可能不是她计划出售的最后一件珠宝。 ";
 			link.l1.go = "Juli_25";
 			GiveItem2Character(PChar, "chest");
 		break;
 
 		case "Juli_25":
-			dialog.text = "吉赛尔? 但她是我的女仆! 我有过怀疑... 但我不愿相信。 最糟糕的是, 我甚至不能适当地惩罚她。 她可能会暴露我的秘密 --这是我不能允许的。 ";
+			dialog.text = "吉赛尔? 但她是我的女仆! 我有过怀疑... 但我不愿相信。 最糟糕的是, 我甚至不能适当地惩罚她。 她可能会暴露我的秘密 —这是我不能允许的。 ";
 			link.l1 = "那你会怎么做? 让她逃脱惩罚, 继续偷你的东西? ";
 			link.l1.go = "Juli_26";
 		break;
 
 		case "Juli_26":
 			dialog.text = "哦不, 当然不会。 首先, 我要确保她不再靠近我。 然后我会想办法惩罚她, 让它看起来惩罚来自其他地方。 ";
-			link.l1 = "女人的狡猾是一种危险的武器, 尤其是在像你这样优雅和敏锐的人手中。 我敢肯定你的女仆甚至没有意识到游戏已经输了 --而且不是对她有利。 ";
+			link.l1 = "女人的狡猾是一种危险的武器, 尤其是在像你这样优雅和敏锐的人手中。 我敢肯定你的女仆甚至没有意识到游戏已经输了 —而且不是对她有利。 ";
 			link.l1.go = "Juli_27";
 		break;
 
@@ -332,7 +332,7 @@ void ProcessDialogEvent()
 				{
 					case 0:
 						dialog.text = ""+ PChar.name+"! 真是惊喜! 还在征服海洋吗? ";
-						link.l1 = "很高兴见到你, 小姐。 尽我所能地征服, 尽管大海仍然变幻莫测。 你呢 --是否享受着宁静? ";
+						link.l1 = "很高兴见到你, 小姐。 尽我所能地征服, 尽管大海仍然变幻莫测。 你呢 —是否享受着宁静? ";
 						link.l1.go = "Juli_32";
 					break;
 
@@ -366,7 +366,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Juli_32":	
-			dialog.text = "最近一切都很平静 --没有什么打扰安宁。 请多访问我们的港口, 船长。 我相信你会在这里找到你想要的一切, 无论是在我们的商店还是其他地方。 ";
+			dialog.text = "最近一切都很平静 —没有什么打扰安宁。 请多访问我们的港口, 船长。 我相信你会在这里找到你想要的一切, 无论是在我们的商店还是其他地方。 ";
 			link.l1 = "谢谢你, 小姐。 我会尽量多来。 我相信你的小镇仍然有许多令人愉快的惊喜。 ";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Juli_repeat_residence_1";

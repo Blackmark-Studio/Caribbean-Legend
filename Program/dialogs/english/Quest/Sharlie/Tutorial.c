@@ -919,17 +919,6 @@ void ProcessDialogEvent()
 			npchar.SharlieTutorial_KaznacheyQuest_Anri = true;
 		break;
 		
-		case "RumGold_DatDeneg_gold42":
-			dialog.text = "Thank you, monsieur "+pchar.lastname+". Give my regards to the treasurer.";
-			link.l1 = "...";
-			link.l1.go = "RumGold_DatDeneg_3";
-			DelLandQuestMark(npchar);
-			RemoveDublonsFromPCharTotal(42);
-			pchar.questTemp.SharlieTutorial_KaznacheyQuest = sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
-			ChangeCharacterComplexReputation(pchar, "nobility", 1);
-			npchar.SharlieTutorial_KaznacheyQuest_Anri = true;
-		break;
-		
 		case "RumGold_DatDeneg_3":
 			DialogExit();
 			NextDiag.CurrentNode = "SailorWantRum_PrinestiRum";

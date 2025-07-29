@@ -1,11 +1,11 @@
 time_events_1
 {
-你收到了来自波因西的利润分成
+你收到了来 Poinsey 的利润分成
 }
 
 time_events_2
 {
-让.大卫在勒弗朗索瓦为你准备了战利 品分成
+Jean David 在勒弗朗索瓦为你准备了战利品分 成
 }
 
 time_events_3

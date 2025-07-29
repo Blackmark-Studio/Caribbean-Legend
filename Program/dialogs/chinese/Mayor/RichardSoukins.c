@@ -13,7 +13,7 @@ void ProcessDialogEvent()
 
 	switch(Dialog.CurrentNode)
 	{
-		// ---------------------------------—— 首次对话 - 初次见面
+		// --------------------------------- —首次对话 - 初次见面
 		case "First time":
             dialog.text = "你找我有事吗? 没有的话就滚出去! ";
 			link.l1 = "我这就走。 ";
@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 						{
 							if(pchar.questTemp.pirateStartQuest == "3" && !CheckAttribute(PChar, "questTemp.pirateStartQuest.many"))
 							{
-								link.l2 = "我找到了线索, 但需要一些钱 --3万比索来把那只老鼠从洞里引出来。 ";
+								link.l2 = "我找到了线索, 但需要一些钱 —3万比索来把那只老鼠从洞里引出来。 ";
 								link.l2.go = "pirateStartQuest_many";	
 							}
 							if(pchar.questTemp.pirateStartQuest == "3" && GetCharacterItem(pchar, "letter_open") > 0)

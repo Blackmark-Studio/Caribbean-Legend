@@ -696,6 +696,7 @@ void SantaMisericordia_HavanaCrypt_5_2(string sQuest)
 	PlaySound("interface\important_item.wav");
 	GiveItem2Character(PChar, "Talisman17");
 	notification(GetConvertStr("Took_LiberMisericordiae", LangFile), "BoxPlus");
+	Achievment_Set("ach_CL_138");
 }
 
 void SantaMisericordia_HavanaCrypt_6(string sQuest)
@@ -826,29 +827,6 @@ bool Santa_Misericordia_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "SantaMisericordia_CanLeaveCauta") {
 		LAi_EnableReload();
 		Log_SetActiveAction("Reload");
-	}
-	
-	else if (sQuestName == "SantaMisericordia_Final") {
-		PlaySound("ambient\jail\jail_door2.wav");
-		LAi_FadeLong("SantaMisericordia_Final2", "");
-	}
-	
-	else if (sQuestName == "SantaMisericordia_Final2") {
-		Achievment_Set("ach_CL_138");
-		chrDisableReloadToLocation = false;
-		EndQuestMovie();
-		locCameraSleep(false);
-		locCameraToPos(-2.09, 5.61, -4.92, true);
-		locCameraTarget(PChar);
-		locCameraFollow();
-		LAi_SetPlayerType(pchar);
-		if (sti(pchar.questTemp.ISawDiegoDeLanda) == 2)
-		{
-			SetQuestHeader("SixCaptains");
-			AddQuestRecord("SixCaptains", "1");
-			AddQuestUserData("SixCaptains", "sSex", GetSexPhrase("","а")); 
-			CloseQuestHeader("SixCaptains");
-		}
 	}
 	
 	else if (sQuestName == "SantaMisericordia_Sluhi") {

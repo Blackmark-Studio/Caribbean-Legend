@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 					link.l5 = "嘿, 黑眼睛的, 我有东西给你... 这是曼加罗莎。 想买点吗? ";
 					link.l5.go = "mangarosa_trade1";
 				}
-				// <—— 曼加罗莎
+				// < —曼加罗莎
 				link.l2 = "你能为我算命吗? ";
 				link.l2.go = "guess";
 				link.l3 = RandPhraseSimple("我有个问题要问你。 ", "我需要些信息。 ");
@@ -63,7 +63,7 @@ void ProcessDialogEvent()
 				link.l6 = "我在找一位照顾病人的吉普赛女人。 是你吗? ";
 				link.l6.go = "dwh_ne_ta";
 			}
-			// <—— 黑暗之水治疗
+			// < —黑暗之水治疗
 
 			if (!CheckAttribute(npchar, "quest.poison_price") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && rand(2) == 0)
 			{
@@ -175,7 +175,7 @@ void ProcessDialogEvent()
 			AddCharacterHealth(pchar, -10);
 			LAi_CharacterDisableDialog(npchar);
 		break;
-//<—— 算命
+//< —算命
 
 // --> 出售鼠药
 		case "get_poison_1" :
@@ -224,7 +224,7 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "rat_poison", 1);
 			DialogExit();
 		break;
-// <—— 出售鼠药
+// < —出售鼠药
 
 	// --> 曼加罗莎
 		case "mangarosa":
@@ -365,7 +365,7 @@ void ProcessDialogEvent()
 			link.l1 = "谢谢你。 ";
 			link.l1.go = "exit";
 		break;
-		// <—— 黑暗之水治疗
+		// < —黑暗之水治疗
 		
 		// 市民类型角色对露出武器的评论
 		case "CitizenNotBlade":

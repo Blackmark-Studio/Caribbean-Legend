@@ -20,7 +20,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "神父, 托马斯让我转告您, 他接受忏悔之路, 将致力于行善, 并将不惜一切代价为教区提供一口新钟。 ";
                 link.l1.go = "dwh_pastor_VD_5";
             }
-            // <—— 治愈的 dark waters (黑暗之水) 
+            // < —治愈的 dark waters (黑暗之水) 
         break;
 
         // --> 治愈的 dark waters (黑暗之水) 
@@ -60,7 +60,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
 
         case "dwh_pastor_VD_3":
-            dialog.text = "也许你是对的, 船长。 我愿意给托马斯这个机会。 但要知道 --如果他偏离正义之路并失去信仰, 你也将承担责任! 至于捐赠 --教会不需要财富, 我们拥有所需要的。 除了... 那口钟在西班牙人的袭击中损坏了... ";
+            dialog.text = "也许你是对的, 船长。 我愿意给托马斯这个机会。 但要知道 —如果他偏离正义之路并失去信仰, 你也将承担责任! 至于捐赠 —教会不需要财富, 我们拥有所需要的。 除了... 那口钟在西班牙人的袭击中损坏了... ";
             link.l1 = "我会把您的话转告托马斯。 感谢您的时间, 神父。 愿主保佑您。 ";
             link.l1.go = "dwh_pastor_VD_4";
         break;
@@ -89,7 +89,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
 
         case "dwh_pastor_bez_VD_3":
-            dialog.text = "你所说的救赎很可能导致毁灭。 我是从经验中说的。 有一次, 违背我的意愿, 一个像她一样的治疗者治疗了我的侄女。 一个小女孩, 她在痛苦中死去。 只有主知道她的灵魂是否被那些仪式定罪。 不要试图说服我 --这是徒劳的。 ";
+            dialog.text = "你所说的救赎很可能导致毁灭。 我是从经验中说的。 有一次, 违背我的意愿, 一个像她一样的治疗者治疗了我的侄女。 一个小女孩, 她在痛苦中死去。 只有主知道她的灵魂是否被那些仪式定罪。 不要试图说服我 —这是徒劳的。 ";
             link.l1 = "很好。 如果这是您的最终决定, 我不会争辩。 愿主保佑您。 ";
             link.l1.go = "dwh_pastor_bez_VD_4";
         break;
@@ -111,7 +111,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
 
         case "dwh_pastor_VD_5":
-            dialog.text = "太好了, 我的孩子。 一口新钟将是他对主和教会奉献的象征。 让他做需要做的事, 但提醒他 --全能者的眼睛注视着每一个行为, 没有什么能逃脱祂的意志。 ";
+            dialog.text = "太好了, 我的孩子。 一口新钟将是他对主和教会奉献的象征。 让他做需要做的事, 但提醒他 —全能者的眼睛注视着每一个行为, 没有什么能逃脱祂的意志。 ";
             link.l1 = "就这样吧, 神父。 再会。 ";
             link.l1.go = "dwh_pastor_VD_6";
             DelLandQuestMark(npchar);

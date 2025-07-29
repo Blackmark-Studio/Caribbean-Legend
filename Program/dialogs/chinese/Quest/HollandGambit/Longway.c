@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 			dialog.text = "船长。 我叫龙威。 龙威将他的船交给你指挥。 龙威也归你指挥。 这是罗登堡先生的命令。 ";
 			link.l1 = "你好, 龙威。 查尔斯.德.莫尔, 为你效劳。 你对铲除雅各布.范.贝格的行动有什么线索吗? ";
 			link.l1.go = "Longway_friend";
-			link.l2 = "很高兴见到你, 龙威。 我叫查尔斯.德.莫尔。 没时间浪费了 --罗登堡先生欣赏快速高质量的工作。 雅各布.范.贝格现在藏在哪里? ";
+			link.l2 = "很高兴见到你, 龙威。 我叫查尔斯.德.莫尔。 没时间浪费了 —罗登堡先生欣赏快速高质量的工作。 雅各布.范.贝格现在藏在哪里? ";
 			link.l2.go = "Longway_neutral";
 			link.l3 = "嗯, 我是查尔斯.德.莫尔! 希望我们能合作愉快! 那么, 龙威先生, 请告诉我, 我们该去哪里找雅各布.范.贝格? ";
 			link.l3.go = "Longway_enemy";
@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 			PlaySound("Voice\English\hambit\Longway-02.wav");
 			if (pchar.questTemp.HWIC.Holl == "MirageFail")
 			{
-				dialog.text = "你这个愚蠢的蒙古人, 船长! 我们的任务很简单 --在不损失'美凤'号的情况下捕获'幻影'号。 没有船长的情况下, 她是个容易的目标, 但你却没能完成任务\n龙威既不会为你服务, 也不会再见到你。 龙威相信罗登堡先生会赞成他的决定。 ";
+				dialog.text = "你这个愚蠢的蒙古人, 船长! 我们的任务很简单 —在不损失'美凤'号的情况下捕获'幻影'号。 没有船长的情况下, 她是个容易的目标, 但你却没能完成任务\n龙威既不会为你服务, 也不会再见到你。 龙威相信罗登堡先生会赞成他的决定。 ";
 				link.l1 = "去你的和你的主人! ";
 				link.l1.go = "exit";
 				AddQuestRecord("Holl_Gambit", "1-10");
@@ -272,10 +272,10 @@ void ProcessDialogEvent()
 		
 		case "Longway_prisoner_8":
 			dialog.text = "如果你是龙威, 你也会这样做, 船长。 即使有酷刑, 你的人也不容易从龙威这里得到话。 龙威不是软弱的白人。 ";
-			link.l1 = "好吧。 成交。 但我警告你 --不要试图耍我, 否则我会亲自把你切成碎片。 一千片, 慢慢地... 就像你们的皇帝那样。 阿隆索! ";
+			link.l1 = "好吧。 成交。 但我警告你 —不要试图耍我, 否则我会亲自把你切成碎片。 一千片, 慢慢地... 就像你们的皇帝那样。 阿隆索! ";
 			link.l1.go = "Longway_prisoner_9";
 			// belamour legendary edition -->
-			link.l2 = "你说得对。 但请记住 --我已经走了太远, 你不能把这件事搞砸。 如果你试图阻止我, 我会像踩死一只昆虫一样结束你的生命。 ";
+			link.l2 = "你说得对。 但请记住 —我已经走了太远, 你不能把这件事搞砸。 如果你试图阻止我, 我会像踩死一只昆虫一样结束你的生命。 ";
 			link.l2.go = "Longway_prisoner_9a";
 		break;
 		
@@ -305,7 +305,7 @@ void ProcessDialogEvent()
 			AddCharacterExpToSkill(pchar, "FencingS", 30);
 			AddCharacterExpToSkill(pchar, "FencingH", 30);
 			AddCharacterExpToSkill(pchar, "Pistol", 30);
-			// <—— legendary edition
+			// < —legendary edition
 			DialogExit();
 			NextDiag.Currentnode = "Longway_prisoner_0";
 			npchar.greeting = "longway";
@@ -423,12 +423,12 @@ void ProcessDialogEvent()
 			AddMapQuestMarkIsland("Nevis", true);
 		break;
 		
-		//--> ---------------------------------—— офицерский блок ------------------------------------------
+		//--> --------------------------------- —офицерский блок ------------------------------------------
 		case "Longway_officer":
 			dialog.text = "龙威在听, 船长。 ";
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
-				Link.l4 = "龙威, 我要去一座古老的印第安城市泰亚萨尔。 我直说吧, 这将是一次非常危险的旅行, 也是一次神秘的旅行 --我们将通过传送偶像到达那里。 你会... 加入我吗? ";
+				Link.l4 = "龙威, 我要去一座古老的印第安城市泰亚萨尔。 我直说吧, 这将是一次非常危险的旅行, 也是一次神秘的旅行 —我们将通过传送偶像到达那里。 你会... 加入我吗? ";
 				Link.l4.go = "tieyasal";
 			}
 			
@@ -683,7 +683,7 @@ void ProcessDialogEvent()
 			}
 			if (iTemp > 20)
 			{
-				dialog.text = "太远了, 船长阁下。 你可能会击中人群, 但瞄准单个目标 --没机会。 ";
+				dialog.text = "太远了, 船长阁下。 你可能会击中人群, 但瞄准单个目标 —没机会。 ";
 				link.l1 = "值得一试, 但好吧。 ";
 				link.l1.go = "exit";
 				npchar.MusketerDistance = 20.0;
@@ -694,8 +694,8 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			npchar.MusketerDistance = iTemp;
 		break;
-		//<—— задать дистанцию стрельбы
-	//<—— ---------------------------------—— офицерский блок ----------------------------------------
+		//< —задать дистанцию стрельбы
+	//< —--------------------------------- —офицерский блок ----------------------------------------
 	
 	// на Тайясаль
 		case "tieyasal":

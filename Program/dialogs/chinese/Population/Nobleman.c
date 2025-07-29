@@ -94,7 +94,7 @@ void ProcessDialogEvent()
                 }
                 if (CheckAttribute(npchar, "quest.donation"))//请求捐款
                 {
-                    dialog.text = "啊哈, 很高兴在我们小镇见到一位绅士! 我相信你刚从欧洲来。 听着, 我想请你帮个忙 --作为绅士之间的帮助。 我希望你能正确理解我的意思。 ";
+                    dialog.text = "啊哈, 很高兴在我们小镇见到一位绅士! 我相信你刚从欧洲来。 听着, 我想请你帮个忙 —作为绅士之间的帮助。 我希望你能正确理解我的意思。 ";
                     link.l1 = "日安, 先生。 我在听。 ";
                     link.l1.go = "donation";
                     npchar.quest.meeting = "1";
@@ -126,7 +126,7 @@ void ProcessDialogEvent()
                 //==> 圣慈悲号上的检查官来了
                 if (CheckAttribute(pchar, "questTemp.SantaMisericordia.ColonyZapret") && pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
                 {
-                    dialog.Text = LinkRandPhrase(LinkRandPhrase("整个城市都人心惶惶 --皇家检查官费尔南多.德.阿拉米达来了。 你知道吗, 我在这里见过很多, 但这次... 改变人的不是悲伤, 而是他们应对悲伤的方式。 据说他父亲去世后他完全变了一个人。 现在在整个群岛上, 你找不到比他更廉洁... 和无情的王室仆人了。 ", "看看那艘'圣慈悲号'! 据说那是国王亲自下令按照特殊设计建造的。 注意看 --连一道划痕都没有。 好像圣母玛利亚亲自保护它一样。 不过我听说了一些传言... 也许保护它的不是圣母。 ", "你知道有多少次有人试图暗杀费尔南多先生吗? 公海上十二次袭击 --这还只是去年的统计! 嗯, 有这么忠诚和训练有素的船员, 再加上上帝的保护 --他也能挺过第十三次。 "), LinkRandPhrase("你听说了吗? 费尔南多.德.阿拉米达来到我们城市了, 据说他现在就在街上的某个地方。 真希望亲眼见见他... ", "一个复杂的人, 这个费尔南多先生。 有人说他是救世主, 在净化祖国的污垢。 另一些人则小声说, 他父亲去世后他的某些东西破碎了, 很快我们都会哭泣。 但我告诉你: 别害怕他。 害怕那些把他变成这样的人。 ", "费尔南多先生真是个英俊的男人! 但你知道什么奇怪的吗? 他好像谁都看不见。 全是职责和服务。 我听说曾经有个女孩... 但在和某个牧师会面后, 他完全拒绝了世俗的享乐。 好像他发了誓一样。 "), RandPhraseSimple(RandPhraseSimple("该死的检查官! 他在这里的时候 --整个城市就像死了一样。 没有贸易, 没有乐趣。 就连呼吸, 似乎也得小声点。 你知道最可怕的是什么吗? 每个港口都是这样。 像时钟一样准时。 国王陛下是不是故意发明了这种折磨来对付我们所有人! ", "费尔南多先生又去孤儿院了。 慷慨捐赠, 祈祷数小时。 这样一个值得尊敬的人应该被树立为那些被诅咒的贪污者的榜样! "), RandPhraseSimple("哈!'圣'费尔南多又关闭了所有妓院。 好吧, 没关系, 他很快就会起航离开, 它们马上又会重新开业。 ", "检查... 检查官来了, 就是这样! 费尔南多.德.阿尔梅达, 或者, 他叫什么来着, 阿拉米达! 太重要了, 连总督自己都对他小心翼翼。 据说他看着你的眼睛就能看到你所有的罪过。 太可怕了! ")));
+                    dialog.Text = LinkRandPhrase(LinkRandPhrase("整个城市都人心惶惶 —皇家检查官费尔南多.德.阿拉米达来了。 你知道吗, 我在这里见过很多, 但这次... 改变人的不是悲伤, 而是他们应对悲伤的方式。 据说他父亲去世后他完全变了一个人。 现在在整个群岛上, 你找不到比他更廉洁... 和无情的王室仆人了。 ", "看看那艘'圣慈悲号'! 据说那是国王亲自下令按照特殊设计建造的。 注意看 —连一道划痕都没有。 好像圣母玛利亚亲自保护它一样。 不过我听说了一些传言... 也许保护它的不是圣母。 ", "你知道有多少次有人试图暗杀费尔南多先生吗? 公海上十二次袭击 —这还只是去年的统计! 嗯, 有这么忠诚和训练有素的船员, 再加上上帝的保护 —他也能挺过第十三次。 "), LinkRandPhrase("你听说了吗? 费尔南多.德.阿拉米达来到我们城市了, 据说他现在就在街上的某个地方。 真希望亲眼见见他... ", "一个复杂的人, 这个费尔南多先生。 有人说他是救世主, 在净化祖国的污垢。 另一些人则小声说, 他父亲去世后他的某些东西破碎了, 很快我们都会哭泣。 但我告诉你: 别害怕他。 害怕那些把他变成这样的人。 ", "费尔南多先生真是个英俊的男人! 但你知道什么奇怪的吗? 他好像谁都看不见。 全是职责和服务。 我听说曾经有个女孩... 但在和某个牧师会面后, 他完全拒绝了世俗的享乐。 好像他发了誓一样。 "), RandPhraseSimple(RandPhraseSimple("该死的检查官! 他在这里的时候 —整个城市就像死了一样。 没有贸易, 没有乐趣。 就连呼吸, 似乎也得小声点。 你知道最可怕的是什么吗? 每个港口都是这样。 像时钟一样准时。 国王陛下是不是故意发明了这种折磨来对付我们所有人! ", "费尔南多先生又去孤儿院了。 慷慨捐赠, 祈祷数小时。 这样一个值得尊敬的人应该被树立为那些被诅咒的贪污者的榜样! "), RandPhraseSimple("哈!'圣'费尔南多又关闭了所有妓院。 好吧, 没关系, 他很快就会起航离开, 它们马上又会重新开业。 ", "检查... 检查官来了, 就是这样! 费尔南多.德.阿尔梅达, 或者, 他叫什么来着, 阿拉米达! 太重要了, 连总督自己都对他小心翼翼。 据说他看着你的眼睛就能看到你所有的罪过。 太可怕了! ")));
                     link.l1 = "... ";
                     link.l1.go = "exit";
                     DeleteAttribute(link, "l2");
@@ -174,7 +174,7 @@ void ProcessDialogEvent()
             }
             else
             {
-                dialog.text = "你好, "+GetSexPhrase("先生","女士")+"! 我需要去"+XI_ConvertString("Colony"+pchar.GenQuest.Noblepassenger.City+"Acc")+"! 顺便说一下, 它在"+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City)+"Voc")+"上。 是的, 是的, 我知道 --那些混蛋正等着我们出现在那里。 但我在那里有一个非常紧急和重要的会议! 我不是一个吝啬的人 --虽然我不喜欢付钱, 但我总是会付钱。 放下你手头的一切, 我们一到那里, 我就会给你"+FindRussianDublonString(sti(pchar.GenQuest.Noblepassenger.Money))+"。 ";
+                dialog.text = "你好, "+GetSexPhrase("先生","女士")+"! 我需要去"+XI_ConvertString("Colony"+pchar.GenQuest.Noblepassenger.City+"Acc")+"! 顺便说一下, 它在"+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City)+"Voc")+"上。 是的, 是的, 我知道 —那些混蛋正等着我们出现在那里。 但我在那里有一个非常紧急和重要的会议! 我不是一个吝啬的人 —虽然我不喜欢付钱, 但我总是会付钱。 放下你手头的一切, 我们一到那里, 我就会给你"+FindRussianDublonString(sti(pchar.GenQuest.Noblepassenger.Money))+"。 ";
             }
             link.l1 = "嗯。 我也正往那个方向走, 所以我愿意以这些条件载你上船。 ";
             link.l1.go = "passenger_1";
@@ -276,7 +276,7 @@ void ProcessDialogEvent()
             CloseQuestHeader(sTitle);
             DeleteAttribute(Pchar, "GenQuest.Noblepassenger");
         break;
-//<—— 贵族乘客
+//< —贵族乘客
 
 //-------------------------------------------------金钱援助------------------------------------------------
         case "donation":
@@ -295,7 +295,7 @@ void ProcessDialogEvent()
                 link.l1 = "是的, 当然。 拿去吧。 ";
                 link.l1.go = "donation_2";
             }
-            link.l2 = "我很想帮忙, 但我的口袋也空了 --连一个多余的比索都没有。 ";
+            link.l2 = "我很想帮忙, 但我的口袋也空了 —连一个多余的比索都没有。 ";
             link.l2.go = "donation_exit";
         break;
         
@@ -322,7 +322,7 @@ void ProcessDialogEvent()
             npchar.lifeday = 0;
             DeleteAttribute(pchar, "GenQuest.Nobledonation");
         break;
-//<—— 金钱援助
+//< —金钱援助
 
 //-------------------------------------------------家族遗物---------------------------------------------
         case "lombard":
@@ -443,7 +443,7 @@ void ProcessDialogEvent()
             AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
             SetFunctionTimerCondition("Noblelombard_Regard", 0, 0, 90, false); //计时器
         break;
-//<—— 家族遗物
+//< —家族遗物
 
 //------------------------------------------运送奴隶--------------------------------------------
         case "slaves":
@@ -561,7 +561,7 @@ void ProcessDialogEvent()
             AddQuestRecordEx(sTitle, "Nobleslaves", "3");
             CloseQuestHeader(sTitle);
         break;
-//<—— 运送奴隶
+//< —运送奴隶
 
         //公民角色对露出武器的评论
         case "CitizenNotBlade":
@@ -612,7 +612,7 @@ void LombardText()
             pchar.GenQuest.Noblelombard.Item = "我母亲的钻石吊坠, 由马德里的一位珠宝商制作";
             pchar.GenQuest.Noblelombard.Text = RandPhraseSimple("我将得到我的遗产","我的船将从非洲满载奴隶归来");
         break;
-        case 1: pchar.GenQuest.Noblelombard.Item = "我姐姐的祖母绿项链, 由巴黎的一位珠宝商制作";
+        case 1: pchar.GenQuest.Noblelombard.Item = "我姐姐的翡翠项链, 由巴黎的一位珠宝商制作";
                 pchar.GenQuest.Noblelombard.Text = RandPhraseSimple("我将继承欧洲的一个郡","我的船将从印度满载香料和丝绸归来");
         break;
         case 2:

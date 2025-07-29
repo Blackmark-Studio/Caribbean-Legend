@@ -71,12 +71,12 @@ void ProcessDialogEvent()
 		
 		case "StartSailor_3":
 			dialog.text = "一眼就能看出您是个陆地佬, 大人。 ";
-			link.l1 = "注意你的言辞! 对一个有荣誉的人, 我会扔下手套要求决斗。 但对像你这样的农民 --我会直接割下你的耳朵。 ";
+			link.l1 = "注意你的言辞! 对一个有荣誉的人, 我会扔下手套要求决斗。 但对像你这样的农民 —我会直接割下你的耳朵。 ";
 			link.l1.go = "StartSailor_4";
 		break;
 		
 		case "StartSailor_4":
-			dialog.text = "在巴黎或许可以。 但在这里, 那样的话会被喂鱼。 我劝您别挥舞那把剑, 大人 --别让船长后悔让您带剑上甲板。 上一个惹麻烦的人被关进了货舱, 只给发霉的硬饼干和连老鼠都不愿碰的舱底水。 知道吗? 那可怜的混蛋到港后还得额外付钱。 ";
+			dialog.text = "在巴黎或许可以。 但在这里, 那样的话会被喂鱼。 我劝您别挥舞那把剑, 大人 —别让船长后悔让您带剑上甲板。 上一个惹麻烦的人被关进了货舱, 只给发霉的硬饼干和连老鼠都不愿碰的舱底水。 知道吗? 那可怜的混蛋到港后还得额外付钱。 ";
 			link.l1 = "你能指望什么... 好吧, 忘了这场误会。 我得不断提醒自己这破船离卢浮宫远着呢。 ";
 			link.l1.go = "StartSailor_5";
 		break;
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_6":
-			dialog.text = "啊... 那是妓院吧。 我们这儿多的是。 不能说专为少数人 --付了钱就是你的。 ";
+			dialog.text = "啊... 那是妓院吧。 我们这儿多的是。 不能说专为少数人 —付了钱就是你的。 ";
 			link.l1 = "哈! 你说得不算太错, 水手。 ";
 			link.l1.go = "StartSailor_7";
 		break;
@@ -103,7 +103,7 @@ void ProcessDialogEvent()
 			dialog.text = "为什么不派个可靠的人, 非要自己忍受海上的艰辛? ";
 			link.l1 = "家庭优先。 我不能把家族的命运托付给随便一个人。 ";
 			link.l1.go = "StartSailor_9_nobilityplus";
-			link.l2 = "我本来想 --但父亲坚持必须是我。 不知道为什么。 ";
+			link.l2 = "我本来想 —但父亲坚持必须是我。 不知道为什么。 ";
 			link.l2.go = "StartSailor_9_nobilityminus";
 		break;
 		
@@ -128,7 +128,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_11":
-			dialog.text = "没什么可羞愧的。 您会适应的 --在新世界, 每个人都有故事。 比如我... ";
+			dialog.text = "没什么可羞愧的。 您会适应的 —在新世界, 每个人都有故事。 比如我... ";
 			link.l1 = "我没什么可羞愧的! 告诉我马提尼克的情况。 是大城市吗? 像图卢兹那样? ";
 			link.l1.go = "StartSailor_12";
 		break;
@@ -140,7 +140,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_13":
-			dialog.text = "别担心。 圣皮埃尔是个小镇 --当然不像卢浮宫, 但也不是丛林。 至于勒弗朗索瓦, 上帝保佑 --正派人不该去那里。 ";
+			dialog.text = "别担心。 圣皮埃尔是个小镇 —当然不像卢浮宫, 但也不是丛林。 至于勒弗朗索瓦, 上帝保佑 —正派人不该去那里。 ";
 			link.l1 = "如果必须去, 我就去找强盗。 米歇尔总是帮我摆脱麻烦。 现在该我了。 ";
 			link.l1.go = "StartSailor_14";
 		break;
@@ -158,20 +158,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_16":
-			dialog.text = "至少五天。 如果遇到海盗 --可能根本到不了。 小安的列斯群岛水域很危险, 即使没有贵重货物。 ";
+			dialog.text = "至少五天。 如果遇到海盗 —可能根本到不了。 小安的列斯群岛水域很危险, 即使没有贵重货物。 ";
 			link.l1 = "除了乘客之外! ";
 			link.l1.go = "StartSailor_17";
 		break;
 		
 		case "StartSailor_17":
-			dialog.text = "哈哈哈! 别担心。 最坏的情况, 我会亲自把您藏到货舱里 --没有海盗会想到在朗姆酒桶里找加斯科尼贵族! 毕竟我们不傻 --把活的加斯科尼人和朗姆酒放在一起。 那比火药爆炸还厉害, 哈哈哈! ";
+			dialog.text = "哈哈哈! 别担心。 最坏的情况, 我会亲自把您藏到货舱里 —没有海盗会想到在朗姆酒桶里找加斯科尼贵族! 毕竟我们不傻 —把活的加斯科尼人和朗姆酒放在一起。 那比火药爆炸还厉害, 哈哈哈! ";
 			link.l1 = "哈! 幸好一个月前朗姆酒就喝完了! ";
 			link.l1.go = "StartSailor_18";
 		break;
 		
 		case "StartSailor_18":
 			dialog.text = "呃... 最好别大声说这种话。 人们可能会认为是您把朗姆酒喝光的。 ";
-			link.l1 = "好吧, 阿隆索, 我不会的。 反正我也不喝那玩意儿。 至于你那在战斗前把我藏到货舱的‘好’计划 --不可能。 ";
+			link.l1 = "好吧, 阿隆索, 我不会的。 反正我也不喝那玩意儿。 至于你那在战斗前把我藏到货舱的‘好’计划 —不可能。 ";
 			link.l1.go = "StartSailor_20";
 		break;
 		
@@ -179,7 +179,7 @@ void ProcessDialogEvent()
 			dialog.text = "为什么不? ";
 			link.l1 = "我是贵族, 剑术不错, 不会藏到货舱里。 ";
 			link.l1.go = "StartSailor_21_fencing";
-			link.l2 = "如果有必要 --我会和其他人一起保卫船只。 还能怎样? ";
+			link.l2 = "如果有必要 —我会和其他人一起保卫船只。 还能怎样? ";
 			link.l2.go = "StartSailor_21_leadership";
 			link.l3 = "我会自己决定何时战斗何时逃跑。 走着瞧。 ";
 			link.l3.go = "StartSailor_21_fortune";
@@ -187,7 +187,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_21_fencing":
-			dialog.text = "哈。 也许你还有点本事。 但小心 --加勒比喜欢打脸那些趾高气扬的人。 您连海盗先头部队的第一次遭遇都活不下来。 该死, 圣皮埃尔城外某个衣衫褴褛的暴徒会在您反应过来前捅死您。 ";
+			dialog.text = "哈。 也许你还有点本事。 但小心 —加勒比喜欢打脸那些趾高气扬的人。 您连海盗先头部队的第一次遭遇都活不下来。 该死, 圣皮埃尔城外某个衣衫褴褛的暴徒会在您反应过来前捅死您。 ";
 			link.l1 = "你根本不了解我。 ";
 			link.l1.go = "StartSailor_22";
 			AddCharacterSkillPoints(pchar, "FencingL", 1);
@@ -197,51 +197,51 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_21_leadership":
-			dialog.text = "哈。 也许你还有点本事。 但小心 --加勒比喜欢打脸那些趾高气扬的人。 您连海盗先头部队的第一次遭遇都活不下来。 该死, 圣皮埃尔城外某个衣衫褴褛的暴徒会在您反应过来前捅死您。 ";
+			dialog.text = "哈。 也许你还有点本事。 但小心 —加勒比喜欢打脸那些趾高气扬的人。 您连海盗先头部队的第一次遭遇都活不下来。 该死, 圣皮埃尔城外某个衣衫褴褛的暴徒会在您反应过来前捅死您。 ";
 			link.l1 = "你根本不了解我。 ";
 			link.l1.go = "StartSailor_22";
 			AddCharacterSkillPoints(pchar, "Leadership", 1);
 		break;
 		
 		case "StartSailor_21_fortune":
-			dialog.text = "哈。 也许你还有点本事。 但小心 --加勒比喜欢打脸那些趾高气扬的人。 您连海盗先头部队的第一次遭遇都活不下来。 该死, 圣皮埃尔城外某个衣衫褴褛的暴徒会在您反应过来前捅死您。 ";
+			dialog.text = "哈。 也许你还有点本事。 但小心 —加勒比喜欢打脸那些趾高气扬的人。 您连海盗先头部队的第一次遭遇都活不下来。 该死, 圣皮埃尔城外某个衣衫褴褛的暴徒会在您反应过来前捅死您。 ";
 			link.l1 = "你根本不了解我。 ";
 			link.l1.go = "StartSailor_22";
 			AddCharacterSkillPoints(pchar, "Fortune", 1);
 		break;
 		
 		case "StartSailor_22":
-			dialog.text = "但我了解新世界和这里的人。 如果您不打算在账本后面枯萎或在总督府任职 --您需要从头学起。 ";
+			dialog.text = "但我了解新世界和这里的人。 如果您不打算在账本后面枯萎或在总督府任职 —您需要从头学起。 ";
 			link.l1 = "幸好我不打算久留。 ";
 			link.l1.go = "StartSailor_23";
 		break;
 		
 		case "StartSailor_23":
-			dialog.text = "您这么认为。 我们不常带乘客回欧洲。 有些人死了 --死于热病。 绞刑或子弹。 另一些人留下了 --永远。 我见过虚弱的贵族成为船长, 残忍的强盗成为受尊敬的种植园主。 还有杰出的军官 --变成身无分文的流浪汉。 ";
+			dialog.text = "您这么认为。 我们不常带乘客回欧洲。 有些人死了 —死于热病。 绞刑或子弹。 另一些人留下了 —永远。 我见过虚弱的贵族成为船长, 残忍的强盗成为受尊敬的种植园主。 还有杰出的军官 —变成身无分文的流浪汉。 ";
 			link.l1 = "听起来很诱人, 但我会回法国。 有人在等我。 ";
 			link.l1.go = "StartSailor_24";
 		break;
 		
 		case "StartSailor_24":
 			dialog.text = "啊对, 没错。 生病的父亲? ";
-			link.l1 = "这么说吧... 有位女士的丈夫真的不想让我在巴黎出现。 但几个月后 --激情会冷却。 ";
+			link.l1 = "这么说吧... 有位女士的丈夫真的不想让我在巴黎出现。 但几个月后 —激情会冷却。 ";
 			link.l1.go = "StartSailor_25";
 		break;
 		
 		case "StartSailor_25":
-			dialog.text = "哈哈哈! 那您来对地方了。 加勒比是躲避嫉妒丈夫的天堂。 时间过得很快。 过段时间 --您可能会成为水手! ";
+			dialog.text = "哈哈哈! 那您来对地方了。 加勒比是躲避嫉妒丈夫的天堂。 时间过得很快。 过段时间 —您可能会成为水手! ";
 			link.l1 = "更可能成为船长。 我恐怕不适合当普通水手, 体力劳动不是我的强项。 ";
 			link.l1.go = "StartSailor_26";
 		break;
 		
 		case "StartSailor_26":
-			dialog.text = "在法国, 人们靠出身统治。 但在船上 --船长是国王。 法官和上帝。 没人知道他经历了什么才戴上那顶帽子。 在这里, 每个人得到应得的。 就像我们在甲板上说的 --各得其所。 ";
-			link.l1 = "胡说八道。 说到船长 --我需要和他谈谈, 特别是他一直在找我。 再见, 阿隆索。 ";
+			dialog.text = "在法国, 人们靠出身统治。 但在船上 —船长是国王。 法官和上帝。 没人知道他经历了什么才戴上那顶帽子。 在这里, 每个人得到应得的。 就像我们在甲板上说的 —各得其所。 ";
+			link.l1 = "胡说八道。 说到船长 —我需要和他谈谈, 特别是他一直在找我。 再见, 阿隆索。 ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_StartKino_6");
 		break;
 		
-		// <—— 夏尔在船头, 阿隆索走近对话
+		// < —夏尔在船头, 阿隆索走近对话
 		
 		// --> 随时可以和阿隆索对话
 		case "AlonsoWait":
@@ -262,13 +262,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AlonsoGold_3":
-			dialog.text = "见过他的眼镜吗? 没错! 但别误会 --船员们尊重平雄先生。 船上总是需要好医生。 他也是个体面的事务长。 ";
+			dialog.text = "见过他的眼镜吗? 没错! 但别误会 —船员们尊重平雄先生。 船上总是需要好医生。 他也是个体面的事务长。 ";
 			link.l1 = "你和他有什么业务? ";
 			link.l1.go = "AlonsoGold_4";
 		break;
 		
 		case "AlonsoGold_4":
-			dialog.text = "呃... 抱歉, 但那是我们自己的事。 不过别担心 --我们没违反任何船上的规定。 ";
+			dialog.text = "呃... 抱歉, 但那是我们自己的事。 不过别担心 —我们没违反任何船上的规定。 ";
 			link.l1 = "那普通法律呢? ";
 			link.l1.go = "AlonsoGold_5";
 		break;
@@ -331,7 +331,7 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = "AlonsoWait";
 		break;
 		
-		// <—— 随时可以和阿隆索对话
+		// < —随时可以和阿隆索对话
 		
 		// --> 从欧洲来的船上的船长
 		case "Captain":
@@ -340,7 +340,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Captain_2_fencing";
 			link.l2 = "抱歉, 船长, 我被耽搁了。 ";
 			link.l2.go = "Captain_2_leadership";
-			link.l3 = "已经很清楚了, 你的船 --你的规则。 ";
+			link.l3 = "已经很清楚了, 你的船 —你的规则。 ";
 			link.l3.go = "Captain_2_sailing";
 			if (bBettaTestMode)
 			{
@@ -368,7 +368,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Captain_2_sailing":
-			dialog.text = "很高兴看到你在这次航行中学到了东西。 船长的话就是法律 --有时甚至在岸上, 远离船只时也是如此。 ";
+			dialog.text = "很高兴看到你在这次航行中学到了东西。 船长的话就是法律 —有时甚至在岸上, 远离船只时也是如此。 ";
 			link.l1 = "你在说什么? ";
 			link.l1.go = "Captain_3";
 			AddCharacterSkillPoints(pchar, "Sailing", 1);
@@ -393,7 +393,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Captain_6":
-			dialog.text = "卡普斯特维尔。 听着, "+pchar.name+": 我们需要认真谈谈。 我邀请你到我的舱室用餐。 钟声很快会敲响 --那时我们将有时间像文明人一样交谈, 喝完船上最后一瓶酒。 ";
+			dialog.text = "卡普斯特维尔。 听着, "+pchar.name+": 我们需要认真谈谈。 我邀请你到我的舱室用餐。 钟声很快会敲响 —那时我们将有时间像文明人一样交谈, 喝完船上最后一瓶酒。 ";
 			link.l1 = "感谢您的邀请。 我很荣幸, 船长。 ";
 			link.l1.go = "Captain_7";
 		break;
@@ -401,14 +401,14 @@ void ProcessDialogEvent()
 		case "Captain_7":
 			if (!CheckAttribute(npchar, "SharlieTutorial_question_0"))
 			{
-				dialog.text = "准备好后告诉我。 我们还有时间, 所以你可以在船上走走 --只是不要打扰我的船员工作。 ";
+				dialog.text = "准备好后告诉我。 我们还有时间, 所以你可以在船上走走 —只是不要打扰我的船员工作。 ";
 				npchar.SharlieTutorial_question_0 = true;
 				// 现在可以从炮门射击
 				sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
 				SetLocatorEvent(sld.id, "event3", "SharlieTutorial_cannon_1");
 			}
 			else dialog.text = "还有其他问题吗? ";
-			link.l1 = "(结束谈话) 我准备好了, 船长。 和您一起 --我甚至会喝勃艮第! ";
+			link.l1 = "(结束谈话) 我准备好了, 船长。 和您一起 —我甚至会喝勃艮第! ";
 			link.l1.go = "Captain_8";
 			if (!CheckAttribute(npchar, "SharlieTutorial_question_1"))
 			{
@@ -446,19 +446,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Captain_7_question_1_2":
-			dialog.text = "或者西班牙人。 我们悬挂法国国旗却没有护航, 小安的列斯群岛是真正的十字路口 --也是雅克.巴尔巴宗的地盘。 ";
+			dialog.text = "或者西班牙人。 我们悬挂法国国旗却没有护航, 小安的列斯群岛是真正的十字路口 —也是雅克.巴尔巴宗的地盘。 ";
 			link.l1 = "那是谁? 总督? ";
 			link.l1.go = "Captain_7_question_1_3";
 		break;
 		
 		case "Captain_7_question_1_3":
-			dialog.text = "更糟 --海盗男爵之一。 这些绞刑犯组成了类似组织, 自称海岸兄弟会。 他们把加勒比分成六部分, 每部分派一个男爵, 这样就不会自相残杀。 ";
+			dialog.text = "更糟 —海盗男爵之一。 这些绞刑犯组成了类似组织, 自称海岸兄弟会。 他们把加勒比分成六部分, 每部分派一个男爵, 这样就不会自相残杀。 ";
 			link.l1 = "当局为什么不采取行动? ";
 			link.l1.go = "Captain_7_question_1_4";
 		break;
 		
 		case "Captain_7_question_1_4":
-			dialog.text = "你太天真了, "+pchar.name+"。 海盗存在只是因为地方当局允许他们在选定的港口维修和补给, 以换取一部分赃物。 我不想承认, 但实际上唯一在对付这黑死病的是西班牙人。 如果不是他们, 我们就得给船装备昂贵的大炮 --还要雇佣护航队。 ";
+			dialog.text = "你太天真了, "+pchar.name+"。 海盗存在只是因为地方当局允许他们在选定的港口维修和补给, 以换取一部分赃物。 我不想承认, 但实际上唯一在对付这黑死病的是西班牙人。 如果不是他们, 我们就得给船装备昂贵的大炮 —还要雇佣护航队。 ";
 			link.l1 = "... ";
 			link.l1.go = "Captain_7";
 			npchar.SharlieTutorial_question_1 = true;
@@ -471,26 +471,26 @@ void ProcessDialogEvent()
 		break;
 		
 				case "Captain_7_question_2_2":
-			dialog.text = "一点也不。 你认为为船员找到这样有经验的人容易吗? 至少需要 一 年和 一 个优秀的水手长才能把 一 群酒馆醉汉训练得像个船员。 此外, 阿隆索也是船员的代言人。 船长不必费心和下层船员交谈, 但忘记普通水手也有利益是愚蠢的 --甚至致命的。 必要时阿隆索代表他们。 ";
+			dialog.text = "一点也不。 你认为为船员找到这样有经验的人容易吗? 至少需要 一 年和 一 个优秀的水手长才能把 一 群酒馆醉汉训练得像个船员。 此外, 阿隆索也是船员的代言人。 船长不必费心和下层船员交谈, 但忘记普通水手也有利益是愚蠢的 —甚至致命的。 必要时阿隆索代表他们。 ";
 			link.l1 = "如果船员不满意会怎样? ";
 			link.l1.go = "Captain_7_question_2_3";
 		break;
 		
 		case "Captain_7_question_2_3":
-			dialog.text = "他们会绞死我, 而你只会被刺伤。 别这么苍白。 只要船员得到报酬。 食物。 酒和治疗 --船长和船员之间的合同就履行了。 我不拿他们的生命冒险, 不随意惩罚, 分享战利品, 有时用免费的酒和岸上假期宠他们。 这就是我们维持脆弱平衡的方式 --也是船总能到达目的地的原因。 ";
+			dialog.text = "他们会绞死我, 而你只会被刺伤。 别这么苍白。 只要船员得到报酬。 食物。 酒和治疗 —船长和船员之间的合同就履行了。 我不拿他们的生命冒险, 不随意惩罚, 分享战利品, 有时用免费的酒和岸上假期宠他们。 这就是我们维持脆弱平衡的方式 —也是船总能到达目的地的原因。 ";
 			link.l1 = "... ";
 			link.l1.go = "Captain_7";
 			npchar.SharlieTutorial_question_2 = true;
 		break;
 		
 		case "Captain_7_question_3_1":
-			dialog.text = "你触动了我的神经, "+pchar.name+"! 我可以永远谈论我的宝贝。 三流, 二十门炮, 速度极快 --别被‘商船’这个词骗了! ";
+			dialog.text = "你触动了我的神经, "+pchar.name+"! 我可以永远谈论我的宝贝。 三流, 二十门炮, 速度极快 —别被‘商船’这个词骗了! ";
 			link.l1 = "我明白炮和速度的部分。 但‘等级’? ‘商船’? ";
 			link.l1.go = "Captain_7_question_3_2";
 		break;
 		
 		case "Captain_7_question_3_2":
-			dialog.text = "等级是按加农炮数量进行的松散分类。 七等几乎是条船, 而一等几乎是座堡垒。 但别在欧洲重复这个 --尤其是在海军军官面前。 ";
+			dialog.text = "等级是按加农炮数量进行的松散分类。 七等几乎是条船, 而一等几乎是座堡垒。 但别在欧洲重复这个 —尤其是在海军军官面前。 ";
 			link.l1 = "为什么不? 这是水手的笑话吗? ";
 			link.l1.go = "Captain_7_question_3_3";
 		break;
@@ -502,7 +502,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Captain_7_question_3_4":
-			dialog.text = "另一个松散的术语。 战舰 --更坚固, 射击更好。 袭击船 --抢劫就跑。 商船 --可以运载大量货物。 人员或加农炮, 但必须妥协, 否则速度会变得可笑。 还有多用途船, 但除了它们适应船主的需求外, 没什么好说的。 ";
+			dialog.text = "另一个松散的术语。 战舰 —更坚固, 射击更好。 袭击船 —抢劫就跑。 商船 —可以运载大量货物。 人员或加农炮, 但必须妥协, 否则速度会变得可笑。 还有多用途船, 但除了它们适应船主的需求外, 没什么好说的。 ";
 			link.l1 = "你兴奋了, 船长。 ";
 			link.l1.go = "Captain_7_question_3_5";
 		break;
@@ -517,10 +517,10 @@ void ProcessDialogEvent()
 		case "Captain_8":
 			if (IsEquipCharacterByItem(pchar, "hat3"))
 			{
-				dialog.text = "嗯, 你运气好 --我只剩勃艮第了... 等等, "+pchar.name+"。 你从哪弄到我旧帽子的? ! \n等等。 嘿, 在桅杆顶! 上面怎么了? ";
+				dialog.text = "嗯, 你运气好 —我只剩勃艮第了... 等等, "+pchar.name+"。 你从哪弄到我旧帽子的? ! \n等等。 嘿, 在桅杆顶! 上面怎么了? ";
 				ChangeCharacterComplexReputation(pchar, "nobility", -1);
 			}
-			else dialog.text = "嗯, 你运气好 --我只剩勃艮第了\n等等。 嘿, 在桅杆顶! 上面怎么了? ";
+			else dialog.text = "嗯, 你运气好 —我只剩勃艮第了\n等等。 嘿, 在桅杆顶! 上面怎么了? ";
 			link.l1 = "... ";
 			link.l1.go = "Captain_9";
 		break;
@@ -536,7 +536,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("SharlieTutorial_StartGameInMartinique");
 		break;
 		
-		// <—— 从欧洲来的船上的船长
+		// < —从欧洲来的船上的船长
 		
 		// --> 船舱守卫对话
 		case "OhrannikCabin":
@@ -618,7 +618,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OhrannikCabin_again":
-			dialog.text = "还有事吗, 先生? 我不能让您进去 --船长担心他的贵重物品。 ";
+			dialog.text = "还有事吗, 先生? 我不能让您进去 —船长担心他的贵重物品。 ";
 			link.l1 = "你是在暗示盗窃吗, 水手? 说话小心。 这纯粹是含沙射影! ";
 			if (CheckAttribute(npchar, "SharlieTutorial_OhrannikFail")) link.l1.go = "OhrannikCabin_3";
 			else link.l1.go = "OhrannikCabin_1";
@@ -627,18 +627,18 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "OhrannikCabin_again";
 		break;
 		
-		// <—— 船舱守卫对话
+		// < —船舱守卫对话
 		
 		// --> 水手斥责激活绞盘的主角
 		case "SailorWithWindlass_1":
-			dialog.text = "嘿, 你这个贵族蠢货! 你在干什么, 想把魔鬼塞进绞盘里吗? ! \n你用高贵的脚踢了止动器! 打算把我们都送进海底吗? ! \n行行好 --除非是法国鼻涕, 否则别碰任何东西! ";
+			dialog.text = "嘿, 你这个贵族蠢货! 你在干什么, 想把魔鬼塞进绞盘里吗? ! \n你用高贵的脚踢了止动器! 打算把我们都送进海底吗? ! \n行行好 —除非是法国鼻涕, 否则别碰任何东西! ";
 			link.l1 = "这到底是什么? ";
 			link.l1.go = "SailorWithWindlass_2";
 		break;
 		
 		case "SailorWithWindlass_2":
-			dialog.text = "这是绞盘, 你这个笨蛋。 用来起锚的。 如果不锁好 --它会把船撕成碎片, 或者把人卷得像桶里的鲱鱼! ";
-			link.l1 = "哈... 如果向另一边转 --就是放下锚, 对吗? ";
+			dialog.text = "这是绞盘, 你这个笨蛋。 用来起锚的。 如果不锁好 —它会把船撕成碎片, 或者把人卷得像桶里的鲱鱼! ";
+			link.l1 = "哈... 如果向另一边转 —就是放下锚, 对吗? ";
 			link.l1.go = "SailorWithWindlass_3";
 		break;
 		
@@ -650,7 +650,7 @@ void ProcessDialogEvent()
 			AddCharacterSkillPoints(pchar, "Sailing", 1);
 		break;
 		
-		// <—— 水手斥责激活绞盘的主角
+		// < —水手斥责激活绞盘的主角
 		
 		// --> 水手斥责激活加农炮的主角
 		case "SailorWithCannon_1":
@@ -666,25 +666,25 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWithCannon_3":
-			dialog.text = "近距离 --我们能炸掉任何东西。 一百码内我们有把握。 再远 —— mostly 是噪音和火焰, 但总比没有好。 ";
-			link.l1 = "一百码 --敌人也能这么做。 ";
+			dialog.text = "近距离 —我们能炸掉任何东西。 一百码内我们有把握。 再远  —mostly 是噪音和火焰, 但总比没有好。 ";
+			link.l1 = "一百码 —敌人也能这么做。 ";
 			link.l1.go = "SailorWithCannon_4";
 		break;
 
 		case "SailorWithCannon_4":
-			dialog.text = "没错。 但这取决于船员的配合和炮手的技术。 可惜我们的炮手睡着了 --他会给你上一整节课, 然后把你自己塞进炮里, 哈! ";
+			dialog.text = "没错。 但这取决于船员的配合和炮手的技术。 可惜我们的炮手睡着了 —他会给你上一整节课, 然后把你自己塞进炮里, 哈! ";
 			link.l1 = "炮手是军官, 对吗? ";
 			link.l1.go = "SailorWithCannon_5";
 		break;
 
 		case "SailorWithCannon_5":
-			dialog.text = "通常是。 没有至少一个半 competent 的炮手, 最好避免战斗 --不如把大炮扔海里跑掉。 \n商船船长很少携带比六磅炮更大的 --他们指望护航或运气。 \n这很公平: 没有重炮和弹药, 船航行更好, 有更多空间装货卖钱。 \n如果我们船长没在这些宝贝上挥霍, 我们可能还有些朗姆酒。 唉。 ";
+			dialog.text = "通常是。 没有至少一个半 competent 的炮手, 最好避免战斗 —不如把大炮扔海里跑掉。 \n商船船长很少携带比六磅炮更大的 —他们指望护航或运气。 \n这很公平: 没有重炮和弹药, 船航行更好, 有更多空间装货卖钱。 \n如果我们船长没在这些宝贝上挥霍, 我们可能还有些朗姆酒。 唉。 ";
 			link.l1 = "船长不亲自指挥炮击吗? ";
 			link.l1.go = "SailorWithCannon_6";
 		break;
 
 		case "SailorWithCannon_6":
-			dialog.text = "有好的炮手和船员, 他不需要。 但告诉你: 当船长亲自瞄准而不是在后甲板喊‘开火! ’时 --敌船会有更多洞。 ";
+			dialog.text = "有好的炮手和船员, 他不需要。 但告诉你: 当船长亲自瞄准而不是在后甲板喊‘开火! ’时 —敌船会有更多洞。 ";
 			link.l1 = "我能开一炮吗? ";
 			link.l1.go = "SailorWithCannon_7";
 			link.l2 = "谢谢你的精彩讲座, 阿隆索。 你真是海军智慧的宝库。 ";
@@ -699,7 +699,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWithCannon_7":
-			dialog.text = "开炮? 不太可能。 要开炮 --你需要船长的允许。 我现在就问他! ";
+			dialog.text = "开炮? 不太可能。 要开炮 —你需要船长的允许。 我现在就问他! ";
 			link.l1 = "不必了! ";
 			link.l1.go = "SailorWithCannon_8";
 		break;
@@ -723,7 +723,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CaptainWithCannon_3":
-			dialog.text = "查尔斯先生建议开炮 --严格用于训练目的。 ";
+			dialog.text = "查尔斯先生建议开炮 —严格用于训练目的。 ";
 			link.l1 = "... ";
 			link.l1.go = "CaptainWithCannon_4";
 			CharacterTurnByChr(npchar, CharacterFromID("SharlieTutorial_Captain_clone"));
@@ -775,7 +775,7 @@ void ProcessDialogEvent()
 			CharacterTurnByChr(CharacterFromID("SharlieTutorial_Sailor_10"), pchar);
 		break;
 		
-		// <—— 水手斥责激活加农炮的主角
+		// < —水手斥责激活加农炮的主角
 		
 		// --> 想喝朗姆酒的水手对话
 		case "SailorWantRum":
@@ -815,13 +815,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWantRum_6":
-			dialog.text = "您肯定知道船上朗姆酒的不幸情况。 但我相信某处还有几瓶。 瓶装朗姆酒和桶装劣酒不同。 味道好, 防止中毒, 增强臂力和健康 --真正的宝藏。 尤其是在航行结束时, 当地平线开始让你发疯时。 ";
+			dialog.text = "您肯定知道船上朗姆酒的不幸情况。 但我相信某处还有几瓶。 瓶装朗姆酒和桶装劣酒不同。 味道好, 防止中毒, 增强臂力和健康 —真正的宝藏。 尤其是在航行结束时, 当地平线开始让你发疯时。 ";
 			link.l1 = "你会用它做什么? 为什么不自己找? ";
 			link.l1.go = "SailorWantRum_7";
 		break;
 
 		case "SailorWantRum_7":
-			dialog.text = "我什么时候有时间? 我们人手不足, 我一人干三人的活。 至于朗姆酒, 我会转卖 --我会找到买家。 ";
+			dialog.text = "我什么时候有时间? 我们人手不足, 我一人干三人的活。 至于朗姆酒, 我会转卖 —我会找到买家。 ";
 			link.l1 = "好吧, 我尊重诚实的人。 ";
 			link.l1.go = "SailorWantRum_8";
 		break;
@@ -995,7 +995,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWantRum_PrinestiRum_10":
-			dialog.text = "幸运的是, 您不必精通所有事情。 您总可以雇佣一位优秀的领航员来弥补您的不足。 只要确保他们得到报酬并忠于您。 在超出您技术水平的船上失去领航员 --可不好玩。 ";
+			dialog.text = "幸运的是, 您不必精通所有事情。 您总可以雇佣一位优秀的领航员来弥补您的不足。 只要确保他们得到报酬并忠于您。 在超出您技术水平的船上失去领航员 —可不好玩。 ";
 			link.l1 = "谢谢你的讲座, 亨利。 不确定是否用得上, 但我想知识总是多多益善。 ";
 			link.l1.go = "SailorWantRum_PrinestiRum_11";
 			AddCharacterSkillPoints(pchar, "Sailing", 3);
@@ -1008,7 +1008,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("SharlieTutorial_PrinestiRumFinal");
 		break;
 		
-		// <—— 与想喝朗姆酒的水手的对话
+		// < —与想喝朗姆酒的水手的对话
 		
 		// --> 与货舱老水手的对话
 		case "OldSailor":
@@ -1019,8 +1019,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OldSailor_1":
-			dialog.text = "现在我就像米歇尔夫人 --在找猫。 只是我不喊 --她不喜欢大喊大叫。 ";
-			link.l1 = "我今早看到她了 --又在抓我的靴子。 ";
+			dialog.text = "现在我就像米歇尔夫人 —在找猫。 只是我不喊 —她不喜欢大喊大叫。 ";
+			link.l1 = "我今早看到她了 —又在抓我的靴子。 ";
 			link.l1.go = "OldSailor_2";
 		break;
 
@@ -1047,13 +1047,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "OldSailor_5":
-			dialog.text = "没错。 所以我们依赖砒霜。 只是在加勒比很难找到。 所以我们损失货物 --老鼠污染朗姆酒, 毁坏硬饼干, 啃食其他所有东西\n而我们的财务官说: ‘放宽心, 就像交易税’\n但我们知道真相: 他只是懒惰。 如果不是我们亲爱的尚塔尔, 船长早就让他住在货舱里自己抓老鼠了, 哈哈哈! ";
+			dialog.text = "没错。 所以我们依赖砒霜。 只是在加勒比很难找到。 所以我们损失货物 —老鼠污染朗姆酒, 毁坏硬饼干, 啃食其他所有东西\n而我们的财务官说: ‘放宽心, 就像交易税’\n但我们知道真相: 他只是懒惰。 如果不是我们亲爱的尚塔尔, 船长早就让他住在货舱里自己抓老鼠了, 哈哈哈! ";
 			link.l1 = "祝你找到猫好运。 我得走了。 ";
 			link.l1.go = "OldSailor_6";
 		break;
 
 		case "OldSailor_6":
-			dialog.text = "等等, 先生。 普通水手通常只在甲板上看到贵族乘客, 但您却来到了这里 --一直下到货舱! ";
+			dialog.text = "等等, 先生。 普通水手通常只在甲板上看到贵族乘客, 但您却来到了这里 —一直下到货舱! ";
 			link.l1 = "好奇心害死猫, 哈哈哈! ";
 			link.l1.go = "OldSailor_7";
 		break;
@@ -1080,21 +1080,21 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "我不想撒谎 --我不知道。 ";
+				link.l1 = "我不想撒谎 —我不知道。 ";
 				link.l1.go = "OldSailor_9_1";
 				notification("技能等级不足 (6)", SKILL_Sailing);
 			}
 		break;
 
 		case "OldSailor_9_1":
-			dialog.text = "别沮丧, 先生。 和船员谈谈, 探索一下船。 如果您找到答案 --我会和您分享一些真正有趣的事情。 就像对待自己人一样。 ";
+			dialog.text = "别沮丧, 先生。 和船员谈谈, 探索一下船。 如果您找到答案 —我会和您分享一些真正有趣的事情。 就像对待自己人一样。 ";
 			link.l1 = "我会记住的。 再见! ";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "OldSailor_again";
 		break;
 
 		case "OldSailor_10":
-			dialog.text = "正确! 现在有个更难的问题: 横帆还是纵帆 --哪个更好? ";
+			dialog.text = "正确! 现在有个更难的问题: 横帆还是纵帆 —哪个更好? ";
 			link.l1 = "很难说, 但我感觉有陷阱。 我会说各有优点。 ";
 			link.l1.go = "OldSailor_11";
 		break;
@@ -1106,19 +1106,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OldSailor_12":
-			dialog.text = "哦, 我不知道, "+pchar.name+"先生。 您或许是贵族 --但您对我们很体面。 我们很看重这一点。 船长在搞什么鬼。 一只黑猫从您面前穿过了。 ";
+			dialog.text = "哦, 我不知道, "+pchar.name+"先生。 您或许是贵族 —但您对我们很体面。 我们很看重这一点。 船长在搞什么鬼。 一只黑猫从您面前穿过了。 ";
 			link.l1 = "胡说八道。 你在说什么, 水手? ";
 			link.l1.go = "OldSailor_13";
 		break;
 
 		case "OldSailor_13":
-			dialog.text = "有消息说, 他几天前刚随一艘过路船给卡普斯特维尔寄了封信\n然后就开始漂流 --就在航行即将结束时, 当每个人都在渴望靠岸的时候。 ";
+			dialog.text = "有消息说, 他几天前刚随一艘过路船给卡普斯特维尔寄了封信\n然后就开始漂流 —就在航行即将结束时, 当每个人都在渴望靠岸的时候。 ";
 			link.l1 = "我不在乎谣言。 何必呢? 我可以直接问他。 他不会拒绝一个贵族的直接提问。 ";
 			link.l1.go = "OldSailor_14";
 		break;
 
 		case "OldSailor_14":
-			dialog.text = "您不了解他, "+pchar.name+"先生。 他会拒绝 --而且会巧妙地拒绝。 现在他很生气 --丢了钥匙。 ";
+			dialog.text = "您不了解他, "+pchar.name+"先生。 他会拒绝 —而且会巧妙地拒绝。 现在他很生气 —丢了钥匙。 ";
 			link.l1 = "钥匙? ";
 			link.l1.go = "OldSailor_15";
 		break;
@@ -1181,7 +1181,7 @@ void ProcessDialogEvent()
 			}
 		break;
 		
-		// <—— 与货舱老水手的对话
+		// < —与货舱老水手的对话
 		
 		// --> 与需要炮弹箱的水手的对话 (保罗) 
 		case "SailorNeedBox":
@@ -1197,18 +1197,18 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorNeedBox_2":
-			dialog.text = "需要帮忙, 小伙子。 接到命令要在加农炮旁堆放炮弹 --以防在这危险水域遇到麻烦。 花了半个值班时间把这些铁疙瘩从货舱拖上来, 最后一箱把我的背累垮了。 ";
+			dialog.text = "需要帮忙, 小伙子。 接到命令要在加农炮旁堆放炮弹 —以防在这危险水域遇到麻烦。 花了半个值班时间把这些铁疙瘩从货舱拖上来, 最后一箱把我的背累垮了。 ";
 			link.l1 = "为什么不直接找你的伙伴? 我以为你们水手会互相帮助。 ";
 			link.l1.go = "SailorNeedBox_3";
 		break;
 
 		case "SailorNeedBox_3":
-			dialog.text = "我们兄弟会最讨厌的就是无故搬运重物。 今天抽中了下下签 --从货舱拖炮弹箱。 糟糕的工作, 有失我这种水平水手的身份。 但能怎么办? ";
+			dialog.text = "我们兄弟会最讨厌的就是无故搬运重物。 今天抽中了下下签 —从货舱拖炮弹箱。 糟糕的工作, 有失我这种水平水手的身份。 但能怎么办? ";
 			link.l1 = "别抱怨了。 我来帮你。 至少我能看看这个大家一直威胁我的货舱。 ";
 			link.l1.go = "SailorNeedBox_4";
 			if (IsCharacterPerkOn(pchar, "HT3"))
 			{
-				link.l2 = "(运动员) 看到我腰上这把阔剑了吗? 它比你还重。 我去拿你的炮弹 --一点都不麻烦。 ";
+				link.l2 = "(运动员) 看到我腰上这把阔剑了吗? 它比你还重。 我去拿你的炮弹 —一点都不麻烦。 ";
 				link.l2.go = "SailorNeedBox_4";
 			}
 			link.l3 = "我不做体力劳动, 水手。 自己拖你的箱子。 ";
@@ -1258,7 +1258,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BallsGold_3":
-			dialog.text = "呼, 刚才我还以为... 是的, 保罗 --是我。 你给我带了多少钱? ";
+			dialog.text = "呼, 刚才我还以为... 是的, 保罗 —是我。 你给我带了多少钱? ";
 			if (PCharDublonsTotal() >= 20)
 			{
 				link.l1 = "20枚达布隆。 ";
@@ -1316,20 +1316,20 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWantRum_PrinestiBalls_2":
-			dialog.text = "再大的话就成送给敌人的礼物了! 如果击中船体 --嗯, 也许只能溅起些木屑。 但如果击中船尾, 它会像球一样在甲板上弹得到处都是! ";
+			dialog.text = "再大的话就成送给敌人的礼物了! 如果击中船体 —嗯, 也许只能溅起些木屑。 但如果击中船尾, 它会像球一样在甲板上弹得到处都是! ";
 			link.l1 = "以前见过这种情况吗? ";
 			link.l1.go = "SailorWantRum_PrinestiBalls_3";
 			TakeItemFromCharacter(pchar, "BoxOfBalls");
 		break;
 		
 		case "SailorWantRum_PrinestiBalls_3":
-			dialog.text = "亲眼见过, 小伙子。 人类真是擅长发明杀人机器。 比如葡萄弹 --射程短, 打不穿船体, 但能把十几个人直接送上下一个世界。 还有链弹 --击中帆, 把它们撕成碎片! 至于炸弹 --我什么都不说, 从没见过, 感谢上帝! 魔鬼的工具, 而且还很贵。 ";
-			link.l1 = "我已经见识过炮弹的杀伤力了 --问问你可怜的背就知道。 ";
+			dialog.text = "亲眼见过, 小伙子。 人类真是擅长发明杀人机器。 比如葡萄弹 —射程短, 打不穿船体, 但能把十几个人直接送上下一个世界。 还有链弹 —击中帆, 把它们撕成碎片! 至于炸弹 —我什么都不说, 从没见过, 感谢上帝! 魔鬼的工具, 而且还很贵。 ";
+			link.l1 = "我已经见识过炮弹的杀伤力了 —问问你可怜的背就知道。 ";
 			link.l1.go = "SailorWantRum_PrinestiBalls_4";
 		break;
 
 		case "SailorWantRum_PrinestiBalls_4":
-			dialog.text = "好吧, 你帮了我一个大忙。 我会回报你的。 给 --几乎满瓶的上等朗姆酒, 哈哈哈! ";
+			dialog.text = "好吧, 你帮了我一个大忙。 我会回报你的。 给 —几乎满瓶的上等朗姆酒, 哈哈哈! ";
 			link.l1 = "你从哪弄来的? 我一直听说朗姆酒早就喝完了。 有这种好东西, 你本可以让任何人不仅拖一箱, 而是把货舱里所有箱子都拖上来。 ";
 			link.l1.go = "SailorWantRum_PrinestiBalls_5";
 			GiveItem2Character(PChar, "potionrum");
@@ -1343,12 +1343,12 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("SharlieTutorial_SailorNeedBoxOfBallsFinal");
 		break;
 		
-		// <—— 与需要炮弹箱的水手的对话
+		// < —与需要炮弹箱的水手的对话
 		
 		// --> 与从事各类交易的军官对话
 		case "OfficerTorgovets":
-			dialog.text = "啊, "+pchar.lastname+"先生。 如果您打算睡觉 --那您运气不好。 我们的炮手已经占了您的床。 如您所知, 叫醒他相当棘手。 ";
-			link.l1 = "我得说, 当他需要的时候 --听得可清楚了! ";
+			dialog.text = "啊, "+pchar.lastname+"先生。 如果您打算睡觉 —那您运气不好。 我们的炮手已经占了您的床。 如您所知, 叫醒他相当棘手。 ";
+			link.l1 = "我得说, 当他需要的时候 —听得可清楚了! ";
 			link.l1.go = "OfficerTorgovets_1";
 			/*link.l2 = "不。 ";
 			link.l2.go = "exit";
@@ -1362,13 +1362,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerTorgovets_2":
-			dialog.text = "这是有原因的! 我们很快就要上岸了 --是时候把剩下的货物换成叮当作响的比索了。 圣皮埃尔的妓院总是很高兴见到这些, 哈哈哈! ";
+			dialog.text = "这是有原因的! 我们很快就要上岸了 —是时候把剩下的货物换成叮当作响的比索了。 圣皮埃尔的妓院总是很高兴见到这些, 哈哈哈! ";
 			link.l1 = "奇怪的是, 在船上做小生意的是你, 而不是财务官。 ";
 			link.l1.go = "OfficerTorgovets_3";
 		break;
 
 		case "OfficerTorgovets_3":
-			dialog.text = "财务官不会和人打交道! 这就是水手长的作用 --能说会道又能干, 哈哈哈! 财务官当然有自己的计划 --但我不打算趟那浑水。 ";
+			dialog.text = "财务官不会和人打交道! 这就是水手长的作用 —能说会道又能干, 哈哈哈! 财务官当然有自己的计划 —但我不打算趟那浑水。 ";
 			link.l1 = "今天有什么货? ";
 			link.l1.go = "OfficerTorgovets_4";
 		break;
@@ -1410,31 +1410,31 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerTorgovets_6_question_1_1":
-			dialog.text = "啊, 眼光锐利, 先生。 是的, ‘珊瑚头’ --好东西。 对我尤其有用。 如果我必须带领登船队 --它能帮我团结众人。 ";
+			dialog.text = "啊, 眼光锐利, 先生。 是的, ‘珊瑚头’ —好东西。 对我尤其有用。 如果我必须带领登船队 —它能帮我团结众人。 ";
 			link.l1 = "你真的相信这个? ";
 			link.l1.go = "OfficerTorgovets_6_question_1_2";
 		break;
 
 		case "OfficerTorgovets_6_question_1_2":
-			dialog.text = "我不必相信。 加勒比就是这样, 水手的命运也是如此。 护身符是有用的东西。 所以如果您要和我们一起干, 我建议您带几个 --应对不同场合。 ";
+			dialog.text = "我不必相信。 加勒比就是这样, 水手的命运也是如此。 护身符是有用的东西。 所以如果您要和我们一起干, 我建议您带几个 —应对不同场合。 ";
 			link.l1 = "... ";
 			link.l1.go = "OfficerTorgovets_4";
 			npchar.SharlieTutorial_question_1 = true;
 		break;
 
 		case "OfficerTorgovets_6_question_2_1":
-			dialog.text = "哦是的。 在加勒比并不罕见。 有些人很幸运 --大赚一笔。 然后他们要么交税, 安静长寿地生活... 要么把金子藏在山洞里。 剩下的就是坟墓。 宝藏... 和一张纸片。 ";
+			dialog.text = "哦是的。 在加勒比并不罕见。 有些人很幸运 —大赚一笔。 然后他们要么交税, 安静长寿地生活... 要么把金子藏在山洞里。 剩下的就是坟墓。 宝藏... 和一张纸片。 ";
 			link.l1 = "就这样? ";
 			link.l1.go = "OfficerTorgovets_6_question_2_2";
 		break;
 
 		case "OfficerTorgovets_6_question_2_2":
-			dialog.text = "不完全是。 地图很贵, 而且会吸引像您这样的其他寻宝者。 有时战利品几乎不够弥补麻烦。 就连伟大的阿尔伯特.布莱克伍德一开始也很艰难。 把寻宝作为您的职业 --找到的越多, 回报就越大。 如果您有幸运符 --那就更好了! ";
+			dialog.text = "不完全是。 地图很贵, 而且会吸引像您这样的其他寻宝者。 有时战利品几乎不够弥补麻烦。 就连伟大的阿尔伯特.布莱克伍德一开始也很艰难。 把寻宝作为您的职业 —找到的越多, 回报就越大。 如果您有幸运符 —那就更好了! ";
 			link.l1 = "... ";
 			link.l1.go = "OfficerTorgovets_4";
 			npchar.SharlieTutorial_question_2 = true;
 		break;
-		// <—— 与从事各类交易的军官对话
+		// < —与从事各类交易的军官对话
 		
 		// --> 与财务官军官的对话
 		case "OfficerKaznachey":
@@ -1450,13 +1450,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerKaznachey_3":
-			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_ActivateWindlass")) sStr = "还有二百比索 --赔偿损坏的绞盘。 锚缆断了。 ";
-			dialog.text = "您还欠船国库三十比索 --赔偿您弄坏的雨水桶。 如果没有再次下雨, 您那洗衬衫的搞笑尝试会让您赔得更多。 "+sStr+"";
+			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_ActivateWindlass")) sStr = "还有二百比索 —赔偿损坏的绞盘。 锚缆断了。 ";
+			dialog.text = "您还欠船国库三十比索 —赔偿您弄坏的雨水桶。 如果没有再次下雨, 您那洗衬衫的搞笑尝试会让您赔得更多。 "+sStr+"";
 			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_ActivateWindlass"))
 			{
 				if (sti(pchar.Money) >= 230)
 				{
-					link.l1 = "这正是我需要的 --下船就欠债。 给你。 ";
+					link.l1 = "这正是我需要的 —下船就欠债。 给你。 ";
 					link.l1.go = "OfficerKaznachey_4";
 				}
 			}
@@ -1464,16 +1464,16 @@ void ProcessDialogEvent()
 			{
 				if (sti(pchar.Money) >= 30)
 				{
-					link.l1 = "这正是我需要的 --下船就欠债。 给你。 ";
+					link.l1 = "这正是我需要的 —下船就欠债。 给你。 ";
 					link.l1.go = "OfficerKaznachey_4";
 				}
 			}
-			link.l2 = "就这样? 这又不是赌债。 我有点忙 --您得等到我们靠港。 ";
+			link.l2 = "就这样? 这又不是赌债。 我有点忙 —您得等到我们靠港。 ";
 			link.l2.go = "OfficerKaznachey_3_1";
 		break;
 
 		case "OfficerKaznachey_3_1":
-			dialog.text = "可惜。 那么 --谈正事。 我有个任务给您。 ";
+			dialog.text = "可惜。 那么 —谈正事。 我有个任务给您。 ";
 			link.l1 = "您不太擅长与人打交道, 是吗? ";
 			link.l1.go = "OfficerKaznachey_6";
 		break;
@@ -1487,13 +1487,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_5":
-			dialog.text = "恭喜。 船国库暂时没有您的问题了。 言归正传 --我有个任务给您。 ";
+			dialog.text = "恭喜。 船国库暂时没有您的问题了。 言归正传 —我有个任务给您。 ";
 			link.l1 = "您不太擅长与人打交道, 是吗? ";
 			link.l1.go = "OfficerKaznachey_6";
 		break;
 
 		case "OfficerKaznachey_6":
-			dialog.text = "与人打交道? 不太擅长。 但我擅长数字。 \n您呢, "+pchar.lastname+"先生 --您会数数吗? ";
+			dialog.text = "与人打交道? 不太擅长。 但我擅长数字。 \n您呢, "+pchar.lastname+"先生 —您会数数吗? ";
 			if (IsCharacterPerkOn(pchar, "HT2"))
 			{
 				link.l1 = "(会计) 我对账本或汇票并不陌生。 我甚至知道零是什么意思。 ";
@@ -1507,31 +1507,31 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerKaznachey_7":
-			dialog.text = "哦哦! 真遗憾您没早点告诉我 --这次航行本可以更有趣。 ";
+			dialog.text = "哦哦! 真遗憾您没早点告诉我 —这次航行本可以更有趣。 ";
 			link.l1 = "您提到了任务? ";
 			link.l1.go = "OfficerKaznachey_9";
 		break;
 
 		case "OfficerKaznachey_8":
-			dialog.text = "为了您自己好, 我希望您永远不要成为船主。 您会让自己破产 --还有船上的所有人。 ";
+			dialog.text = "为了您自己好, 我希望您永远不要成为船主。 您会让自己破产 —还有船上的所有人。 ";
 			link.l1 = "您提到了任务? ";
 			link.l1.go = "OfficerKaznachey_9";
 		break;
 		
 		case "OfficerKaznachey_9":
-			dialog.text = "是的。 不确定您是否知道, 财务官和医生 --地位仅次于船长。 \n" +
+			dialog.text = "是的。 不确定您是否知道, 财务官和医生 —地位仅次于船长。 \n" +
 			"没有他们就起航是在拿您的钱冒险。 没有钱, 船只是一块非常昂贵的木头。 \n" +
-			"即使是小帆船, 没有财务官也会让船长破产。 没有医生的第一场战斗可能会消灭整个船员 --触发雇佣和训练替代人员的漫长而昂贵的过程。 \n" +
+			"即使是小帆船, 没有财务官也会让船长破产。 没有医生的第一场战斗可能会消灭整个船员 —触发雇佣和训练替代人员的漫长而昂贵的过程。 \n" +
 			"对我们俩来说幸运的是, 我身兼二职。 这使我能够进行个人贸易, 并向船员请求轻微服务。 \n" +
-			"当然, 我会慷慨支付 --现在正是时候。 \n" +
-			"我希望您拿着这份名单, 这个达布隆箱子 --给船员发工资。 \n" +
+			"当然, 我会慷慨支付 —现在正是时候。 \n" +
+			"我希望您拿着这份名单, 这个达布隆箱子 —给船员发工资。 \n" +
 			"严格按名单来! 这就是我问您是否会数数的原因。 ";
-			link.l1 = "为什么您自己不做? 如果他们期待发工资 --让他们来找您。 ";
+			link.l1 = "为什么您自己不做? 如果他们期待发工资 —让他们来找您。 ";
 			link.l1.go = "OfficerKaznachey_10";
 		break;
 		
 		case "OfficerKaznachey_10":
-			dialog.text = "现在要做的事太多了。 航行只剩下几天 --很快就会有一百个水手排队要求发工资。 ";
+			dialog.text = "现在要做的事太多了。 航行只剩下几天 —很快就会有一百个水手排队要求发工资。 ";
 			link.l1 = "您提到了达布隆... ";
 			link.l1.go = "OfficerKaznachey_11";
 		break;
@@ -1545,7 +1545,7 @@ void ProcessDialogEvent()
 		case "OfficerKaznachey_12":
 			if (IsCharacterPerkOn(pchar, "HT2"))
 			{
-				dialog.text = "(会计) 150比索, 再加5枚额外达布隆 --因为您几乎是我的同事。 而且您会得到比索和达布隆之间的公平汇率。 ";
+				dialog.text = "(会计) 150比索, 再加5枚额外达布隆 —因为您几乎是我的同事。 而且您会得到比索和达布隆之间的公平汇率。 ";
 			}
 			else
 			{
@@ -1568,11 +1568,11 @@ void ProcessDialogEvent()
 		case "OfficerKaznachey_11_agree":
 			if(GetItemsWeight(pchar) + sti(Items[GetItemIndex("Chest")].weight) > GetMaxItemsWeight(pchar))
 			{
-				dialog.text = "给您。 看在上帝的份上 --别忘了从箱子里拿达布隆, 严格按名单来, 别私藏任何额外的。 我也希望您把空箱子还给我。 \n别把自己累坏了, 先生。 为什么带这么多垃圾? 我建议把一些东西藏在箱子里。 ";
+				dialog.text = "给您。 看在上帝的份上 —别忘了从箱子里拿达布隆, 严格按名单来, 别私藏任何额外的。 我也希望您把空箱子还给我。 \n别把自己累坏了, 先生。 为什么带这么多垃圾? 我建议把一些东西藏在箱子里。 ";
 			}
 			else
 			{
-				dialog.text = "给您。 看在上帝的份上 --别忘了从箱子里拿达布隆, 严格按名单来, 别私藏任何额外的。 我也希望您把空箱子还给我。 ";
+				dialog.text = "给您。 看在上帝的份上 —别忘了从箱子里拿达布隆, 严格按名单来, 别私藏任何额外的。 我也希望您把空箱子还给我。 ";
 			}
 			link.l1 = "如您所愿。 很快见, 平雄先生。 ";
 			link.l1.go = "exit";
@@ -1609,13 +1609,13 @@ void ProcessDialogEvent()
 			addGold = GetCharacterItem(pchar, "gold_dublon");
 			if (addGold >= 18 && addGold <= 39)
 			{
-				dialog.text = "您还说会数数。 您返回的达布隆比预期少。 这意味着我要做更多工作, 而不是更少 --这意味着您没有报酬。 ";
+				dialog.text = "您还说会数数。 您返回的达布隆比预期少。 这意味着我要做更多工作, 而不是更少 —这意味着您没有报酬。 ";
 				link.l1 = "但您仍然会兑换达布隆吗? ";
 				link.l1.go = "OfficerKaznachey_15_gold_115";
 			}
 			if (addGold >= 41)
 			{
-				dialog.text = "您还说会数数。 您带回的比应该的多。 这意味着我要做更多工作, 而不是更少 --这意味着您没有报酬。 ";
+				dialog.text = "您还说会数数。 您带回的比应该的多。 这意味着我要做更多工作, 而不是更少 —这意味着您没有报酬。 ";
 				link.l1 = "兑换呢? ";
 				link.l1.go = "OfficerKaznachey_15_gold_115";
 			}
@@ -1623,7 +1623,7 @@ void ProcessDialogEvent()
 			{
 				if (IsCharacterPerkOn(pchar, "HT2"))
 				{
-					dialog.text = "全部正确。 很高兴看到年轻一代仍然会数数。 谢谢您, "+pchar.lastname+"先生。 这是您的报酬 --还有一点奖金, 从一个专业人士到另一个。 ";
+					dialog.text = "全部正确。 很高兴看到年轻一代仍然会数数。 谢谢您, "+pchar.lastname+"先生。 这是您的报酬 —还有一点奖金, 从一个专业人士到另一个。 ";
 					link.l1 = "兑换呢? ";
 					link.l1.go = "OfficerKaznachey_15_gold_100";
 					AddItems(pchar, "gold_dublon", 5);
@@ -1664,7 +1664,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerKaznachey_15_gold_100":
-			dialog.text = "当然! 100比索换1达布隆 --公平汇率。 加勒比的银行会收您更多。 \n让我给您一些建议: 如果命运让您负责一艘船, 首先雇佣财务官。 即使是一个糟糕的财务官也会为您节省一大笔钱。 ";
+			dialog.text = "当然! 100比索换1达布隆 —公平汇率。 加勒比的银行会收您更多。 \n让我给您一些建议: 如果命运让您负责一艘船, 首先雇佣财务官。 即使是一个糟糕的财务官也会为您节省一大笔钱。 ";
 			link.l1 = "谢谢您, 平雄先生。 ";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "TreasurerTrade";
@@ -1699,7 +1699,7 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_16_Proval_4":
 			addGold = GetCharacterItem(pchar, "gold_dublon");
-			dialog.text = "我可没这个打算。 我不是旱鸭子 --货舱不是我的地方。 再见。 ";
+			dialog.text = "我可没这个打算。 我不是旱鸭子 —货舱不是我的地方。 再见。 ";
 			link.l1 = "... ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
@@ -1733,7 +1733,7 @@ void ProcessDialogEvent()
 			LaunchItemsTrade(NPChar, 0);
 			NextDiag.CurrentNode = "TreasurerTrade";
 		break;
-		// <—— 与财务官军官的对话
+		// < —与财务官军官的对话
 		
 		// --> 水手报告逼近的船只
 		case "Sailor_Trevoga":
@@ -1785,7 +1785,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("SharlieTutorial_Trevoga_7");
 			AddCharacterSkillPoints(pchar, "Fortune", 1);
 		break;
-				// <—— 水手报告逼近的船只
+				// < —水手报告逼近的船只
 				
 				// --> 与货舱海盗的对话
 		case "EnemyPirate_1":
@@ -1843,7 +1843,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("SharlieTutorial_TrumBitva_2");
 		break;
 		
-		// <—— 与货舱海盗的对话
+		// < —与货舱海盗的对话
 		
 		// --> 与幸存水手的对话
 		case "SailorAlive_1":
@@ -1888,7 +1888,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorAlive_12":
-			dialog.text = "相当不错, 哈哈哈! 谢谢, "+pchar.name+"。 那三个 --你解决得很好。 既然你是真正的贵族, 就来指挥吧。 我们一起可以守住这个甲板。 如果楼上的兄弟们也能做到 --这一天就是我们的了! ";
+			dialog.text = "相当不错, 哈哈哈! 谢谢, "+pchar.name+"。 那三个 —你解决得很好。 既然你是真正的贵族, 就来指挥吧。 我们一起可以守住这个甲板。 如果楼上的兄弟们也能做到 —这一天就是我们的了! ";
 			link.l1 = "... ";
 			//link.l1.go = "exit";
 			link.l1.go = "SailorAlive_13";
@@ -1929,7 +1929,7 @@ void ProcessDialogEvent()
 			LAi_CharacterDisableDialog(npchar);
 			AddDialogExitQuestFunction("SharlieTutorial_TrumBitva_8");
 		break;
-		// <—— 与幸存水手的对话
+		// < —与幸存水手的对话
 		
 		// --> 战斗后与阿隆索的对话
 		case "AfterBattle_Alonso_1":
@@ -1965,15 +1965,15 @@ void ProcessDialogEvent()
 
 		case "AfterBattle_Alonso_4":
 			dialog.text = "有什么好说的? 我们的十六磅炮没能把我们从一艘海盗双桅船上救出来。 \n" +
-			"它一下子就冲到我们面前, 在我们转向时用葡萄弹击中了我们, 并立即登船。 你应该看看甲板 --医生都没什么可做的了。 \n" +
-			"与海盗战斗最糟糕的部分 --没有利润。 只有穷光蛋。 我们甚至无法夺取他们的双桅船。 ";
+			"它一下子就冲到我们面前, 在我们转向时用葡萄弹击中了我们, 并立即登船。 你应该看看甲板 —医生都没什么可做的了。 \n" +
+			"与海盗战斗最糟糕的部分 —没有利润。 只有穷光蛋。 我们甚至无法夺取他们的双桅船。 ";
 			link.l1 = "那么接下来会发生什么? ";
 			link.l1.go = "AfterBattle_Alonso_5";
 		break;
 
 		case "AfterBattle_Alonso_5":
-			dialog.text = "船还在漂浮, 我们剩下的船员足以按计划把你送到圣皮埃尔, 在那里我会寻找新船长, 你会找到你哥哥并告诉他你所有的冒险经历。 接下来会发生什么 --只有上帝知道。 \n" +
-			"但有一件事是肯定的 --你会和我们相处得很好。 对于一个陆地老鼠来说, 不错了, "+pchar.name+"。 ";
+			dialog.text = "船还在漂浮, 我们剩下的船员足以按计划把你送到圣皮埃尔, 在那里我会寻找新船长, 你会找到你哥哥并告诉他你所有的冒险经历。 接下来会发生什么 —只有上帝知道。 \n" +
+			"但有一件事是肯定的 —你会和我们相处得很好。 对于一个陆地老鼠来说, 不错了, "+pchar.name+"。 ";
 			link.l1 = "... ";
 			link.l1.go = "AfterBattle_Alonso_6";
 		break;
@@ -1985,7 +1985,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("SharlieTutorial_SeaNearMartinique");
 		break;
 		
-		// <—— 战斗后与阿隆索的对话
+		// < —战斗后与阿隆索的对话
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

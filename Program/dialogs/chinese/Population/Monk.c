@@ -272,7 +272,7 @@ void ProcessDialogEvent()
             WaitDate("", 0, 0, 0, 2, 10); //转动时间
             RecalculateJumpTable();
         break;
-//<—— 释放奴隶
+//< —释放奴隶
 
 //----------------------------------------------祝福船只------------------------------------------------
         case "shipshine":
@@ -345,7 +345,7 @@ void ProcessDialogEvent()
             DialogExit();
             DeleteAttribute(Pchar, "GenQuest.Shipshine");
         break;
-//<—— 祝福船只
+//< —祝福船只
 
 //------------------------------------------船载牧师-----------------------------------------------
         case "capellan":
@@ -421,7 +421,7 @@ void ProcessDialogEvent()
             link.l1.go = "exit";
             NextDiag.TempNode = "capellan_7";
         break;
-//<—— 船载牧师
+//< —船载牧师
 
 //--------------------------------------------修士乘客---------------------------------------------------
         case "passenger":
@@ -535,7 +535,7 @@ void ProcessDialogEvent()
             CloseQuestHeader(sTitle);
             DeleteAttribute(Pchar, "GenQuest.Monkpassenger");
         break;
-//<—— 修士乘客
+//< —修士乘客
 
 //---------------------------------------------教会急件-------------------------------------------------
         case "exit_monkletter":
@@ -560,7 +560,7 @@ void ProcessDialogEvent()
             SetFunctionTimerCondition("Monkletter_Over", 0, 0, 15, false);
             OfficersReaction("good");
         break;
-//<—— 教会急件
+//< —教会急件
 
 //-------------------------------------------运送祈祷书---------------------------------------------
         case "exit_churchbooks":
@@ -592,7 +592,7 @@ void ProcessDialogEvent()
             }
             OfficersReaction("good");
         break;
-//<—— 运送祈祷书
+//< —运送祈祷书
         
         case "Exit":
             NextDiag.CurrentNode = NextDiag.TempNode;

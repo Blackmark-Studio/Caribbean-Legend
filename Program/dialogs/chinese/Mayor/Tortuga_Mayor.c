@@ -24,7 +24,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "FMQT":
-            dialog.text = "什 --么? 又来? 那个贱人! 她会为此后悔的, 我发誓! 坎帕乔会让她尖叫的。 你还在这里干什么? 给我滚出去! ";
+            dialog.text = "什 —么? 又来? 那个贱人! 她会为此后悔的, 我发誓! 坎帕乔会让她尖叫的。 你还在这里干什么? 给我滚出去! ";
             link.l1 = "我以为... ";
             if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 25) link.l1.go = "FMQT_2";
             else link.l1.go = "FMQT_1";

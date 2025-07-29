@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SolomonBonanza_2"://归还所有物品
-			dialog.text = "哦, 上帝存在, 你是个真正的好人! 你不仅带回了我的金子, 还挽回了施努尔家族的名誉! 你避免了多大的耻辱啊! 罗登堡先生可以自豪地拥有你这样的船长。 我会把这个头骨交给罗登堡先生, 他答应为此支付一大笔钱。 我想亲自感谢你, 你是个善良的外邦人 --请接受这个护身符, 作为这个犹太人的一点心意。 ";
+			dialog.text = "哦, 上帝存在, 你是个真正的好人! 你不仅带回了我的金子, 还挽回了施努尔家族的名誉! 你避免了多大的耻辱啊! 罗登堡先生可以自豪地拥有你这样的船长。 我会把这个头骨交给罗登堡先生, 他答应为此支付一大笔钱。 我想亲自感谢你, 你是个善良的外邦人 —请接受这个护身符, 作为这个犹太人的一点心意。 ";
 			link.l1 = "呃, 我想谢谢你。 ";
 			link.l1.go = "SolomonBonanza_4";
 			RemoveItems(PChar, "SkullAztec", 1);
@@ -134,14 +134,14 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "amulet_7"); 
 			AddDialogExitQuestFunction("DeleteJoakimFromRoom");
 			ChangeCharacterComplexReputation(pchar, "nobility", 5);
-			SetFunctionTimerCondition("Caleuche_StartTotal", 0, 0, 180, false); // 卡勒幽船的计时器
+			SetFunctionTimerCondition("Caleuche_StartTotal", 0, 0, 180, false); // 卡莱乌切的计时器
 			DelLandQuestMark(npchar);
 			DelLandQuestMark(characterFromId("Joakim"));
 			pchar.questTemp.Caleuche.SolomonSkul = true;
 		break;
 		
 		case "SolomonBonanza_3":
-			dialog.text = "哦, 上帝存在, 你是个真正的好人! 你不仅带回了我的金子, 还挽回了施努尔家族的名誉! 你避免了多大的耻辱啊! 至于头骨 --哦, 好吧, 没关系, 他本来就是个疯疯癫癫的混蛋! 罗登堡先生可以自豪地拥有你这样的船长。 我想亲自感谢你, 你是个善良的外邦人 --请接受这个护身符作为纪念。 ";
+			dialog.text = "哦, 上帝存在, 你是个真正的好人! 你不仅带回了我的金子, 还挽回了施努尔家族的名誉! 你避免了多大的耻辱啊! 至于头骨 —哦, 好吧, 没关系, 他本来就是个疯疯癫癫的混蛋! 罗登堡先生可以自豪地拥有你这样的船长。 我想亲自感谢你, 你是个善良的外邦人 —请接受这个护身符作为纪念。 ";
 			link.l1 = "呃, 我想谢谢你。 ";
 			link.l1.go = "SolomonBonanza_4";
 			AddMoneyToCharacter(pchar, -200000);
@@ -167,7 +167,7 @@ void ProcessDialogEvent()
 		case "SolomonBonanza_6":
 			AddMoneyToCharacter(pchar, -200000);
 			GiveItem2Character(pchar, "amulet_7"); 
-			dialog.text = "哦, 钱啊钱啊钱, 美妙的钱... 嗯, 这看起来不像我的钱, 不过... 闻起来也不像我可爱的财富。 但话说回来 --钱都是一样的, 年轻人, 不是吗? 我不会抱怨的。 就像我们常说的, ‘不要对送上门的外邦人吹毛求疵’! 非常感谢你把我的积蓄还回来。 我也想感谢你, 请接受这个护身符。 现在去告诉阿比这个好消息吧。 我需要数一数这些钱。 ";
+			dialog.text = "哦, 钱啊钱啊钱, 美妙的钱... 嗯, 这看起来不像我的钱, 不过... 闻起来也不像我可爱的财富。 但话说回来 —钱都是一样的, 年轻人, 不是吗? 我不会抱怨的。 就像我们常说的, ‘不要对送上门的外邦人吹毛求疵’! 非常感谢你把我的积蓄还回来。 我也想感谢你, 请接受这个护身符。 现在去告诉阿比这个好消息吧。 我需要数一数这些钱。 ";
 			link.l1 = "愿你多福, 所罗门。 ";
 			link.l1.go = "SolomonBonanza_4";
 			pchar.questTemp.HWIC.Holl.LucasMoney = "true";//给卢卡斯的标志
@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 		
 		case "Solomon_thanks_1":
 			dialog.text = "年轻的好人! 我想感谢你为我和我女儿所做的一切。 你救了我们。 很抱歉我们第一次见面时给你一个难堪的欢迎, 也抱歉我怀疑你帮助我们的真诚愿望。 请原谅这个老犹太人。 你真是外邦人中的有福之人。 现在告诉我, 除了我的钱, 你在洞穴里没找到别的东西吗? ";
-			link.l1 = "没有, 所罗门。 除了钱什么都没有。 我不得不和范伯格的暴徒战斗 --几个月前正是他击沉了你的船。 可能他们已经偷了什么东西... 那里应该还有什么? ";
+			link.l1 = "没有, 所罗门。 除了钱什么都没有。 我不得不和范伯格的暴徒战斗 —几个月前正是他击沉了你的船。 可能他们已经偷了什么东西... 那里应该还有什么? ";
 			link.l1.go = "Solomon_thanks_2";
 		break;
 		
@@ -313,7 +313,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Solomon_poor":
-			dialog.text = "唉... 年轻人, 有时候开始新生活是不可能的。 生活在贫困中 --对我这样的老傻瓜来说, 还有什么比这更糟糕的呢? ";
+			dialog.text = "唉... 年轻人, 有时候开始新生活是不可能的。 生活在贫困中 —对我这样的老傻瓜来说, 还有什么比这更糟糕的呢? ";
 			link.l1 = "对不起, 所罗门。 坚持下去, 寻求基督。 ";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Solomon_poor";

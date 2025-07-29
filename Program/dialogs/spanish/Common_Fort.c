@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 						}
 						if (findsubstr(pchar.location.from_sea, "_town" , 0) != -1) //если причалил в городе
 						{
-							link.l1 = "¿No ves la bandera de "+NationNameGenitive(sti(pchar.nation))+"¿en el mástil de mi barco?!";
+							link.l1 = "¿No ves la bandera de "+NationNameGenitive(sti(pchar.nation))+" en el mástil de mi barco?!";
 						}
 						else //если причалил не в городе
 						{

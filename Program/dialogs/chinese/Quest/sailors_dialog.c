@@ -58,7 +58,7 @@ void ProcessDialogEvent()
 				Link.l1 = "太糟了... ";
 				Link.l1.go = "exit";
 			}
-			//<—— eddy。 市长任务, 关闭甲板出口
+			//< —eddy。 市长任务, 关闭甲板出口
 		break;
 /*		
 		case "ChurchQuest1_Node1":
@@ -143,7 +143,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddDialogExitQuest("CanEnterToMap");
 		break;
-		// <—— ugeen
+		// < —ugeen
 		
 		// 与水手长对话关于地牢情况
 		case "Hold_GenQuest_OnShipDeck":
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
 			Link.l1 = "别脸色苍白, 我开玩笑的... 去船上的小艇。 我想你毕竟是对的, 也许猫真的有灵魂... ";
 			Link.l1.go = "exit";
 		break;
-		// <—— 玛丽.塞莱斯特号甲板上与我们水手的集市
+		// < —玛丽.塞莱斯特号甲板上与我们水手的集市
 		
 		// 堡垒上 <--
         case "On_Fort":

@@ -15,7 +15,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "我想见德.庞西骑士。 是关于我兄弟们的债务问题。 ";
                 link.l1.go = "puancie";
             }
-            //<—— 加斯科涅人的负担
+            //< —加斯科涅人的负担
         break;
         
         case "puancie":

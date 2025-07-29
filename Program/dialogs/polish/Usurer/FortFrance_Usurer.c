@@ -20,7 +20,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}	
 			if (CheckAttribute(pchar, "questTemp.Sharlie") && pchar.questTemp.Sharlie == "bankskipermoney")
 			{
-				link.l1 = "Przychodzę w sprawie długu Folke Deluca.";
+				link.l1 = "Przychodzę w sprawie długu Folke Deluca... znowu.";
                 link.l1.go = "Sharlie_repeat";
 			}
 			if (CheckAttribute(pchar, "questTemp.Sharlie") && pchar.questTemp.Sharlie == "bankskipercaptive")
@@ -38,7 +38,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			if (CheckAttribute(pchar, "questTemp.Del_Rostovshik_repeat"))
 			{
-				dialog.text = "Czy przyniosłeś 100 doublonów?";
+				dialog.text = "Czy przyniosłeś 100 dublonów?";
 				if (PCharDublonsTotal() >= 100)
 				{
 					link.l1 = "Oto twoje pieniądze za mojego oficera...";
@@ -77,14 +77,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_3":
 			AddMoneyToCharacter(pchar, -10450);
-			dialog.text = "Tak, wydaje się, że naprawdę potrzebujesz tego żeglarza, skoro jesteś gotów wyłożyć taką sumę pieniędzy za niego. W każdym razie, to nie moja sprawa, prawda, monsieur? Oto jego weksel, teraz masz prawo do jego długu i masz prawo żądać od niego pieniędzy. No i oczywiście, wystąpić o jego zwolnienie z więzienia.";
+			dialog.text = "Tak, wydaje się, że naprawdę potrzebujesz tego żeglarza, skoro jesteś za niego gotów wyłożyć taką sumę pieniędzy. W każdym razie, to nie moja sprawa, prawda, monsieur? Oto jego weksel, teraz masz prawo do jego długu i masz prawo żądać od niego pieniędzy. No i oczywiście, wystąpić o jego zwolnienie z więzienia.";
 			link.l1 = "Dokładnie tego chciałem. Do widzenia, "+npchar.name+"!";
 			link.l1.go = "Sharlie_4";
 		break;
 		
 		case "Sharlie_4":
 			DialogExit();
-			Log_Info("You have received a bill of debt");
+			Log_Info("Otrzymałeś rachunek za dług");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "letter_open");
 			ChangeItemDescribe("letter_open", "itmdescr_letter_open_usurer");
@@ -101,7 +101,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_5":
 			dialog.text = "Przysługa? Hm... Wiesz, monsieur, wczoraj odpowiedziałbym przecząco, ale teraz... tak, mam coś, czym trzeba się zająć, ale ostrzegam, że jest to dość niebezpieczne.";
-			link.l1 = "Niebezpieczne dla czego?";
+			link.l1 = "Niebezpieczne?";
 			link.l1.go = "Sharlie_6";
 		break;
 		
@@ -112,7 +112,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Sharlie_7":
-			dialog.text = "Zgoda. Posłuchaj więc. Dziś wieczorem kilku piratów i więzień opuszczą piracką kryjówkę Le Francois i udadzą się do zatoki Le Marin. Więzień jest hiszpańskim oficerem i wielkim ekspertem w dziedzinie inżynierii fortyfikacyjnej. Brytyjczycy zamierzają wykorzystać go do swoich celów, więc wyślą okręt wojenny, by zabrać go z zatoki.\nOficer jest moim starym przyjacielem i nie chcę, by skończył jako angielski jeniec. Nie mogę prosić lokalnych władz o pomoc, ponieważ jesteśmy w stanie wojny z Hiszpanią. Gdybym miał więcej czasu, zatrudniłbym ludzi zdolnych do odbicia Hiszpana... przepraszam, do odbicia mojego przyjaciela, ale niestety!\nJesteś jedynym człowiekiem, któremu mogę powierzyć to zadanie. Musisz udać się do zatoki Le Marin i... przekonać piratów, by oddali ci więźnia. Wątpię, by okazali wiele współpracy, więc to zależy od ciebie.";
+			dialog.text = "Zgoda. Posłuchaj więc. Dziś wieczorem kilku piratów wraz z więźniem opuszczą piracką kryjówkę Le Francois i udadzą się do zatoki Le Marin. Więzień jest hiszpańskim oficerem i wielkim ekspertem w dziedzinie inżynierii fortyfikacyjnej. Brytyjczycy zamierzają wykorzystać go do swoich celów, więc wyślą okręt wojenny, by zabrać go z zatoki.\nOficer jest moim starym przyjacielem i nie chcę, by skończył jako angielski jeniec. Nie mogę prosić lokalnych władz o pomoc, ponieważ jesteśmy w stanie wojny z Hiszpanią. Gdybym miał więcej czasu, zatrudniłbym ludzi zdolnych do odbicia Hiszpana... przepraszam, do odbicia mojego przyjaciela, ale niestety!\nJesteś jedynym człowiekiem, któremu mogę powierzyć to zadanie. Musisz udać się do zatoki Le Marin i... przekonać piratów, by oddali ci więźnia. Wątpię, by okazali wiele współpracy, więc to zależy od ciebie.";
 			link.l1 = "Ilu piratów będzie w konwoju?";
 			link.l1.go = "Sharlie_8";
 		break;
@@ -133,7 +133,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Sharlie_10":
-			dialog.text = "Bardzo dobrze. Miło to słyszeć. W takim razie powinieneś udać się do zatoki Le Marin, piraci będą tam od siódmej wieczorem do czwartej rano. Nie przegap ich! I nawet nie myśl o używaniu statku! Takie działania ich spłoszą, idź tam przez dżunglę!\nPrzyprowadź mi więźnia, gdy go znajdziesz, zostawię drzwi otwarte. Polecam poczekać do pierwszej w nocy, zanim wrócisz do miasta, ponieważ musisz unikać uwagi strażników. Bądź ostrożny i powodzenia!";
+			dialog.text = "Bardzo dobrze. Miło to słyszeć. W takim razie powinieneś udać się do zatoki Le Marin, piraci będą tam od siódmej wieczorem do czwartej rano. Nie przegap ich! I nawet nie myśl o używaniu statku! Takie działania ich spłoszą, idź tam przez dżunglę!\nPrzyprowadź mi więźnia, gdy go znajdziesz, zostawię drzwi otwarte. Polecam poczekać do pierwszej w nocy, zanim wrócisz do miasta, ponieważ będziesz musiał unikać uwagi strażników. Bądź ostrożny i powodzenia!";
 			link.l1 = "Dziękuję! Z pewnością będę potrzebować trochę szczęścia...";
 			if (CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE)) link.l1.go = "Sharlie_13";
 			else link.l1.go = "Sharlie_11";
@@ -146,7 +146,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Sharlie_12":
-			Log_Info("You have received a combat pistol");
+			Log_Info("Otrzymałeś pistolet");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "pistol1");
 			TakeNItems(pchar, "bullet", 20);
@@ -233,7 +233,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "Sharlie_junglejew_1":
 			DialogExit();
 			PlaySound("interface\important_item.wav");
-			Log_Info("You've given the earrings");
+			Log_Info("Przekazałeś kolczyki");
 			RemoveItems(pchar, "jewelry25", 1);
 			TakeNItems(pchar, "gold_dublon", 35);
 			AddQuestRecord("SharlieE", "3");
@@ -248,14 +248,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		//--> Миниквест "Делюк"
 		case "Del_Deluck":
 			DeleteAttribute(pchar, "questTemp.Del_Rostovshik");
-			dialog.text = "Znam, znam, kapitanie. Wygląda na to, że twój nawigator zaciągnął długi niemal w każdej francuskiej kolonii. Prawdę mówiąc, wiedziałem o tym od dawna. Skonsultowałem się z moimi kolegami, standardowa procedura, wiesz...";
+			dialog.text = "Wiem, wiem, kapitanie. Wygląda na to, że twój nawigator zaciągnął długi niemal w każdej francuskiej kolonii. Prawdę mówiąc, wiedziałem o tym od dawna. Skonsultowałem się z moimi kolegami, standardowa procedura, wiesz...";
 			link.l1 = "A nie uważałeś, że to wystarczająco ważne, by poinformować mnie podczas naszej poprzedniej umowy?";
 			link.l1.go = "Del_Deluck_2";
 		break;
 		
 		case "Del_Deluck_2":
 			dialog.text = "Dlaczego? W tamtym czasie głównie interesował mnie dług Deluca wobec mnie, który, nawiasem mówiąc, był największy. Gdy go uregulowałeś, natychmiast powiadomiłem moich kolegów... Mamy ogromną flotę profesjonalnych kurierów, więc nie minęło dużo czasu, zanim zgromadziłem stos rachunków Deluca na swoim biurku.";
-			link.l1 = "Widzę... Kupiłeś ich, wiedząc, że mam żywotny interes w nim i środki na zapłatę... To jest wymuszenie, Monseniorze.";
+			link.l1 = "Widzę... Kupiłeś je, wiedząc, że mam żywotny interes w nim i środki na zapłatę... To jest wymuszenie, Monseniorze.";
 			link.l1.go = "Del_Deluck_3";
 		break;
 		
@@ -285,7 +285,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1.go = "exit";
 			RemoveItems(pchar, "gold_dublon", 100);
 			DeleteAttribute(pchar, "questTemp.Del_Rostovshik_repeat");
-			Log_Info("You have received a bill of debt");
+			Log_Info("Otrzymałeś rachunek za dług");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "letter_open");
 			ChangeItemDescribe("letter_open", "itmdescr_letter_open_usurer");

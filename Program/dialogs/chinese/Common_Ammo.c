@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple("我是堡垒的指挥官。 你在这里需要什么? ", "你需要什么? 为什么来这里? ");
 			link.l1 = "哦, 没什么, 只是看看城镇和附近地区。 我只是碰巧来到这里。 ";
 			//belamour传奇版对话, 如果英雄有军衔和国家功勋 -->
-			// 有专利的军官
+			// 有许可证的军官
 			if(IsOfficerFullEquip())
 			{
 				dialog.text = "欢迎来到堡垒, 船长。 你需要什么吗? ";
@@ -79,7 +79,7 @@ void ProcessDialogEvent()
 				dialog.text = "总督将军, 大人! 堡垒内一切井然有序。 有什么命令吗? ";
 				link.l1 = "很高兴你一切安好, 军官。 没有命令, 我只是顺便来检查一下堡垒。 ";
 			}
-			// <—— legendary edition
+			// < —legendary edition
 			link.l1.go = "exit";
 			//Jason --> 迷你任务 短缺商品
 			if (CheckAttribute(pchar, "questTemp.Wine.bottle") && NPChar.location == pchar.questTemp.Wine.City + "_ammo" && GetQuestPastDayParam("questTemp.Wine_bottle") < 5)
@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 				link.l11 = "我有个有趣的消息告诉你, 军官。 你的一个士兵, " + pchar.questTemp.Wine.SName + " 让我通过我的中介在镇上购买葡萄酒。 考虑到你的命令... ";
 				link.l11.go = "Wine_prison";
 			}
-			// <—— 迷你任务 短缺商品
+			// < —迷你任务 短缺商品
 			// 加勒比习俗
 			if (CheckAttribute(pchar, "questTemp.Trial") && pchar.questTemp.Trial == "fraht" && NPChar.location == "portpax_ammo")
 			{
@@ -113,7 +113,7 @@ void ProcessDialogEvent()
 					link.l4.go = "zpq_fld2";
 				}
 			}
-			// <—— 危险货物
+			// < —危险货物
 			NextDiag.TempNode = "First time";
 		break;
 
@@ -269,7 +269,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.PrisonGun");
 			NextDiag.TempNode = "First time";
 		break;
-		// <—— 堡垒用加农炮
+		// < —堡垒用加农炮
 
 		//Jason --> 迷你任务 短缺商品
 		case "Wine_prison":
@@ -287,7 +287,7 @@ void ProcessDialogEvent()
 			CloseQuestHeader("Wine");
 			NextDiag.TempNode = "First time";
 		break;
-		// <—— 迷你任务 短缺商品
+		// < —迷你任务 短缺商品
 		
 		// 加勒比习俗
 		case "trial":
@@ -598,7 +598,7 @@ void ProcessDialogEvent()
 			LAi_group_SetCheck(slai_group, "OpenTheDoors");
 			AddSimpleRumour("这里发生了可怕的事情! 据说某个囚犯从炮台逃了出来! 他屠杀了所有卫兵, 偷了国库, 然后就走了! 哇! ", SPAIN, 5, 1);
 		break;
-		// <—— 危险货物
+		// < —危险货物
 	}
 }
 

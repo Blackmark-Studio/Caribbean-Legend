@@ -1,6 +1,6 @@
 SharlieTrial_1
 {
-你从本诺特神父那里的贷款已到期! 
+你从 Benoit 神父那里的贷款已到期! 
 }
 
 SharlieTrial_2
@@ -49,7 +49,7 @@ SharlieTrial_10
 
 SharlieTrial_11
 {
-使用动作菜单返回你的船 (进入)。 
+使用动作菜单返回你的船 (enter)。 
 }
 SharlieTrial_12
 {
@@ -215,7 +215,7 @@ SharlieTrial_46
 
 SharlieTrial_47
 {
-蒂钦吉图改变了主意。 
+Tichingitu 改变了主意。 
 }
 
 SharlieTrial_48
@@ -234,7 +234,7 @@ Henry
 
 SharlieTrial_51
 {
-三桅帆船'Henry'
+三桅帆船'Henry (亨利号)'
 }
 
 SharlieTrial_52

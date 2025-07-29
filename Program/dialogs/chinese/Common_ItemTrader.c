@@ -83,7 +83,7 @@ void ProcessDialogEvent()
    				link.l4 = "又是我。 这到底是什么意思, 嗯? ";
 				link.l4.go = "Wine_Repeat1";
 			}
-			// <—— 迷你任务 短缺商品
+			// < —迷你任务 短缺商品
 			
 			//Sinistra --> 迷你任务 "结识印第安人"
 			if (CheckAttribute(pchar, "questTemp.ZsI_PokupaemPistolety") && npchar.Merchant.type == "armourer")
@@ -91,7 +91,7 @@ void ProcessDialogEvent()
    				link.l4 = "我需要两把手枪, 以及二十发子弹和火药。 ";
 				link.l4.go = "ZsI_PokupaemPistolety";
 			}
-			// <—— 迷你任务 "结识印第安人"
+			// < —迷你任务 "结识印第安人"
 			
 			// --> 查科酒的价格
 			if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption.AskJuan"))
@@ -99,17 +99,17 @@ void ProcessDialogEvent()
 				link.l4 = "听着,'胡安'这个名字您有印象吗? ";
 				link.l4.go = "Consumption";
 			}
-			// <—— 查科酒的价格
+			// < —查科酒的价格
 			
 			//--> 被盗的记忆
 			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
 			{
-				link.l4 = "好商人, 我在寻找一件品质非凡的物品。 不是满足大多数人的普通饰品, 而是真正精致的物件 --或许是一对工艺精湛的耳环或一件值得贵族品味的优雅吊坠。 我需要一件能取悦出身高贵女士的礼物。 ";
+				link.l4 = "好商人, 我在寻找一件品质非凡的物品。 不是满足大多数人的普通饰品, 而是真正精致的物件 —或许是一对工艺精湛的耳环或一件值得贵族品味的优雅吊坠。 我需要一件能取悦出身高贵女士的礼物。 ";
 				link.l4.go = "UV_Lavochniki_1";
 			}
 			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_2") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
 			{
-				link.l4 = "我想知道在您的库存中是否有什么贵重物品? 我寻找的是能满足最挑剔贵族女性品味的东西 --独特而精致, 远非普通市民所喜爱的。 或许是一件工艺非凡的吊坠或设计精美的手镯? ";
+				link.l4 = "我想知道在您的库存中是否有什么贵重物品? 我寻找的是能满足最挑剔贵族女性品味的东西 —独特而精致, 远非普通市民所喜爱的。 或许是一件工艺非凡的吊坠或设计精美的手镯? ";
 				link.l4.go = "UV_Lavochniki_2";
 			}
 			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_3") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
@@ -117,7 +117,7 @@ void ProcessDialogEvent()
 				link.l4 = "告诉我, 好商人, 您对精美珠宝有研究吗? 我想找一件非凡的礼物送给一位有身份的女士。 坦率地说, 我对普通饰品不感兴趣。 我需要的是真正华丽的东西: 也许是一枚镶嵌宝石的胸针或一枚工艺无与伦比的戒指。 ";
 				link.l4.go = "UV_Lavochniki_3";
 			}
-			//<—— 被盗的记忆
+			//< —被盗的记忆
 			
 			//Jason --> 生成器 不幸的小偷
 			if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_town" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
@@ -125,7 +125,7 @@ void ProcessDialogEvent()
    				link.l5 = "听着, 您在买卖各种商品... 昨天或今天 - 有没有人主动向您出售" + pchar.GenQuest.Device.Shipyarder.Type + "? ";
 				link.l5.go = "Device_ItemTrader";
 			}
-			//<—— 生成器 不幸的小偷
+			//< —生成器 不幸的小偷
 
 			link.l9 = "谢谢, 不感兴趣。 ";
 			link.l9.go = "exit";
@@ -315,7 +315,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Wine", "7");
 			DelLandQuestMark(npchar);
 		break;
-		// <—— 迷你任务 短缺商品
+		// < —迷你任务 短缺商品
 		
 		//Sinistra --> 迷你任务 "结识印第安人"
 		case "ZsI_PokupaemPistolety":
@@ -411,7 +411,7 @@ void ProcessDialogEvent()
 			Log_info("您已获得可可叶所需的手枪");
 			PlaySound("Interface\important_item.wav");
 		break;
-		// <—— 迷你任务 "结识印第安人"
+		// < —迷你任务 "结识印第安人"
 		
 		// --> 查科酒的价格
 		case "Consumption":
@@ -420,7 +420,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			npchar.quest.Consumption = "true";
 		break;
-		// <—— 查科酒的价格
+		// < —查科酒的价格
 		//Jason --> 生成器 不幸的小偷
 		case "Device_ItemTrader":
 			dialog.text = "嗯, " + pchar.GenQuest.Device.Shipyarder.Type + "? 以前从没听说过... 那到底是什么? 我这辈子都没听说过这种东西" + NPCharSexPhrase(npchar, "","") + "。 ";
@@ -443,7 +443,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 			}
 		break;
-		// <—— 生成器 不幸的小偷
+		// < —生成器 不幸的小偷
 		
 		// 曼加罗萨
 		case "mangarosa":
@@ -522,7 +522,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("UV", "sSex1", NPCharSexPhrase(NPChar,"eц","ка"));
 			AddQuestUserData("UV", "sSex2", NPCharSexPhrase(NPChar,"","а"));*/
 		break;
-		//<—— 被盗的记忆
+		//< —被盗的记忆
 		
 // ======================== 愤怒节点模块 ===============>>>>>>>>>>>>>>>
 

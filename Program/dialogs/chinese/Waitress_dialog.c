@@ -38,7 +38,7 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
-			//<—— 查科特金的价格
+			//< —查科特金的价格
 			
 			// Addon-2016 Jason, 法国迷你任务 ("ЊЉ) 佐尔特 佐伦斯
 			if (npchar.location == "PortPax_tavern" && CheckAttribute(pchar, "questTemp.FMQP") && pchar.questTemp.FMQP == "begin")
@@ -99,7 +99,7 @@ void ProcessDialogEvent()
 				link.l9.go = "quests";
 				break;
 			}
-			//<—— 贝琪.普莱斯的秘密
+			//< —贝琪.普莱斯的秘密
             NextDiag.TempNode = "First time";
 			if (CheckAttribute(pchar, "questTemp.different.FackWaitress"))
 			{
@@ -328,7 +328,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Consumption = "begin";
 			AddQuestRecord("Consumption", "1");
 		break;
-		//<—— 查科特金的价格
+		//< —查科特金的价格
 		
 		// Addon-2016 Jason, 法国迷你任务 ("ЊЉ) 佐尔特 佐伦斯
 		case "FMQP":

@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 						if (!isLocationFreeForQuests(pchar.GenQuest.MarchCap.Island) || !isLocationFreeForQuests(pchar.GenQuest.MarchCap.Island.Shore)) pchar.GenQuest.MarchCap.Island.Shore = "";
 					}
 					pchar.GenQuest.MarchCap.DaysQty = GetMaxDaysFromIsland2Island(pchar.GenQuest.MarchCap.Startisland, pchar.GenQuest.MarchCap.Island)+3;
-					dialog.text = "我发现"+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+"后, 一支挂着"+NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation))+"旗帜的小型贸易护航队 --两艘商船和一艘护卫船, 将在"+XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Gen")+"附近航行, 离"+XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Gen")+"不远。 商人的货舱里有很多"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"。 船长, 不利用这个信息就太愚蠢了\n您和我可以轻松解决护卫队, 把货物据为己有。 那么, 您加入吗? ";
+					dialog.text = "我发现"+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+"后, 一支挂着"+NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation))+"旗帜的小型贸易护航队 —两艘商船和一艘护卫船, 将在"+XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Gen")+"附近航行, 离"+XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Gen")+"不远。 商人的货舱里有很多"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"。 船长, 不利用这个信息就太愚蠢了\n您和我可以轻松解决护卫队, 把货物据为己有。 那么, 您加入吗? ";
 					link.l1 = "听起来很诱人。 我同意! ";
 					link.l1.go = "MarchCap_1_1";
 					link.l2 = "一些"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"不足以让我破坏与"+NationNameAblative(sti(pchar.GenQuest.MarchCap.Nation))+"的关系。 不, 我不打算这么做! 再会, 先生, 别试图阻止我! ";
@@ -56,7 +56,7 @@ void ProcessDialogEvent()
 					pchar.GenQuest.MarchCap.Startcity = SelectAnyColony(pchar.GenQuest.MarchCap.basecity);
 					pchar.GenQuest.MarchCap.Finishcity = SelectAnyColony2(pchar.GenQuest.MarchCap.basecity, pchar.GenQuest.MarchCap.Startcity);
 					pchar.GenQuest.MarchCap.DaysQty = 5+hrand(5);
-					dialog.text = "我发现"+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+"后, 一支挂着"+NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation))+"旗帜的小型贸易护航队 --两艘商船和一艘护卫船, 将从"+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Startcity+"Gen")+"航行到"+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Finishcity+"Acc")+"。 商人的货舱里有很多"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"。 船长, 不利用这个信息就太愚蠢了\n您和我可以轻松解决护卫队, 把货物据为己有。 最难的部分是在这两个殖民地之间的公海上找到他们。 那么, 您加入吗? ";
+					dialog.text = "我发现"+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+"后, 一支挂着"+NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation))+"旗帜的小型贸易护航队 —两艘商船和一艘护卫船, 将从"+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Startcity+"Gen")+"航行到"+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Finishcity+"Acc")+"。 商人的货舱里有很多"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"。 船长, 不利用这个信息就太愚蠢了\n您和我可以轻松解决护卫队, 把货物据为己有。 最难的部分是在这两个殖民地之间的公海上找到他们。 那么, 您加入吗? ";
 					link.l1 = "听起来很诱人。 我同意! ";
 					link.l1.go = "MarchCap_2_1";
 					link.l2 = "一些"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"不足以让我破坏与"+NationNameAblative(sti(pchar.GenQuest.MarchCap.Nation))+"的关系。 不, 我不打算这么做! 再会, 先生, 别试图阻止我! ";

@@ -37,7 +37,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "看看这对耳环, 先生。 我在丛林里被杀的土匪身上找到的。 这显然是能工巧匠的作品, 肯定不是本地的。 你对这耳环有什么了解吗? ";
                 link.l1.go = "Sharlie_junglejew";
 			}
-			//<—— 加斯科涅人的负担 */
+			//< —加斯科涅人的负担 */
 		break;
 		
 		//--> 加斯科涅人的负担

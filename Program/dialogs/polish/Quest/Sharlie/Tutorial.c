@@ -135,14 +135,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "StartSailor_12":
-			dialog.text = "Miasto? Ha! Martynika to cała wyspa. Jedna z największych francuskich posiadłości na Karaibach. Uprawiają tam ognista kawę, wydobywają piekielną siarkę i rodzą najpiękniejsze kobiety świata. Świetna mieszanka, jak dla mnie.";
+			dialog.text = "Miasto? Ha! Martynika to cała wyspa. Jedna z największych francuskich posiadłości na Karaibach. Uprawiają tam ognistą kawę, wydobywają piekielną siarkę i rodzą najpiękniejsze kobiety świata. Świetna mieszanka, jak dla mnie.";
 			link.l1 = "Kawa i siarka mnie nie interesują. Ale zaraz... wyspa? Jak ja znajdę brata na całej wyspie?";
 			link.l1.go = "StartSailor_13";
 		break;
 
 		case "StartSailor_13":
 			dialog.text = "Nie przejmuj się tak. Saint-Pierre to niewielkie miasteczko – nie Luwr, oczywiście, ale i nie dżungla. A w bandyckim Le François, nie daj Boże – porządny człowiek nie ma czego szukać.";
-			link.l1 = "Jeśli zajdzie potrzeba – odwiedzę i bandytów. Michel zawsze ratował mnie z kłopotów. Teraz moja kolej.";
+			link.l1 = "Jeśli zajdzie potrzeba – odwiedzę i bandytów. Michelle zawsze ratował mnie z kłopotów. Teraz moja kolej.";
 			link.l1.go = "StartSailor_14";
 		break;
 		
@@ -362,7 +362,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Captain_2_leadership":
-			dialog.text = "Przeprosiny przyjęte. Ciesz się chwilą. Rzadko będzie panu dane podziwiać taki zachód słońca.";
+			dialog.text = "Przeprosiny przyjęte. Radze cieszyć się chwilą. Rzadko będzie panu dane podziwiać taki zachód słońca.";
 			link.l1 = "O czym pan mówi?";
 			link.l1.go = "Captain_3";
 			AddCharacterSkillPoints(pchar, "Leadership", 1);
@@ -382,14 +382,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "Captain_4":
-			dialog.text = "Chciałem tylko powiedzieć, że opuściliśmy żagle i dryfujemy. Niestety, pańskie przybycie na Martynikę opóźni się o kilka dni.";
+			dialog.text = "Chciałem tylko powiedzieć, że zwineliśmy żagle i dryfujemy. Niestety, pańskie przybycie na Martynikę opóźni się o kilka dni.";
 			link.l1 = "Dlaczego, kapitanie?";
 			link.l1.go = "Captain_5";
 		break;
 
 		case "Captain_5":
 			dialog.text = "Bo tak postanowiłem.";
-			link.l1 = "Czy to ma coś wspólnego z naszą wczorajszą wizytą w karawanie handlowej, która płynęła do... no, jak to się nazywało...";
+			link.l1 = "Czy to ma coś wspólnego z naszą wczorajszą wizytą z karawaną handlową, która płynęła do... no, jak to się nazywało...";
 			link.l1.go = "Captain_6";
 		break;
 
@@ -418,7 +418,7 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "SharlieTutorial_question_2"))
 			{
-				link.l3 = "Kapitanie, miałem przyjemność porozmawiać z Alonso. Jaką pełni funkcję na statku?";
+				link.l3 = "Kapitanie, miałem przyjemność porozmawiać z Alonso. Jaką on pełni funkcję na statku?";
 				link.l3.go = "Captain_7_question_2_1";
 			}
 			if (!CheckAttribute(npchar, "SharlieTutorial_question_3"))
@@ -442,7 +442,7 @@ void ProcessDialogEvent()
 		
 		case "Captain_7_question_1_1":
 			dialog.text = "Nic konkretnego, po prostu obserwuję horyzont. Statek dryfuje – jesteśmy łatwym łupem.";
-			link.l1 = "Szukasz piratów?";
+			link.l1 = "Wypatrujesz piratów?";
 			link.l1.go = "Captain_7_question_1_2";
 		break;
 
@@ -633,7 +633,7 @@ void ProcessDialogEvent()
 		
 		// --> матрос ругается на ГГ, который активировал брашпиль
 		case "SailorWithWindlass_1":
-			dialog.text = "Hej, szlachetny idioto! Co ty wyczyniasz z kabestanem?!\nSwoją szlachecką nóżką zerwałeś blokadę! Chciałeś nas wszystkich posłać na dno, co?!\nZrób nam przysługę i niczego nie dotykaj, chyba że to francuski katar!";
+			dialog.text = "Hej, szlachetny idioto! Co ty wyczyniasz z kabestanem?!\nSwoją szlachecką nóżką zrzuciłeś blokadę! Chciałeś nas wszystkich posłać na dno, co?!\nZrób nam przysługę i niczego nie dotykaj, chyba że to francuski katar!";
 			link.l1 = "A co to właściwie jest?";
 			link.l1.go = "SailorWithWindlass_2";
 		break;
@@ -645,7 +645,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWithWindlass_3":
-			dialog.text = "Nie, mądraliński, wtedy cofa czas. Tylko żeś się już urodził — i masz pecha!";
+			dialog.text = "Nie, mądraliński, wtedy cofa czas. Tylko żeś się już urodził — mamy więc pecha!";
 			link.l1 = "No cóż, nikt nie ucierpiał — prawda? Statek to zadziwiająco skomplikowana rzecz. Będę ostrożniejszy.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_windlass_8");
@@ -769,7 +769,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CaptainWithCannon_10":
-			dialog.text = "Bawcie się dobrze, "+pchar.name+". Pobudzimy załogę... na wasz koszt, ha-ha!";
+			dialog.text = "Baw się dobrze, "+pchar.name+". Pobudzimy załogę... na pana koszt, ha-ha!";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_cannon_5");
@@ -1038,7 +1038,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OldSailor_5":
-			dialog.text = "To prawda. Dlatego pozostaje tylko arszenik. Tylko spróbuj go znaleźć na Karaibach. Tracimy towar — szczury sikają do rumu, psują suchary i gryzą, co popadnie\nA nasz kwatermistrz mówi: «Nie przejmujcie się, to jak podatek handlowy»\nAle my wiemy swoje: po prostu mu się nie chce. Gdyby nie nasza droga Chantal — kapitan już dawno kazałby mu mieszkać w ładowni i osobiście łapać szczury, ha-ha!";
+			dialog.text = "To prawda. Dlatego pozostaje tylko arszenik. Tylko spróbuj go znaleźć na Karaibach. Tracimy towar — szczury sikają do rumu, psują suchary i gryzą, co popadnie\nA nasz kwatermistrz mówi: «Nie przejmujcie się, to jak podatek handlowy»\nAle my wiemy swoje: po prostu mu się nie chce. Gdyby nie nasza droga Chantal — kapitan już dawno kazałby mu zamieszkać w ładowni i osobiście łapać szczury, ha-ha!";
 			link.l1 = "Powodzenia z kotem. Muszę już iść.";
 			link.l1.go = "OldSailor_6";
 		break;
@@ -1249,20 +1249,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BallsGold_3":
-			dialog.text = "Uff, przez chwilę myślałem... Tak, Paul – to naprawdę ja. Ile macie tam dla mnie?";
+			dialog.text = "Uff, przez chwilę myślałem... Tak, Paul – to naprawdę ja. Ile masz tam dla mnie?";
 			if (PCharDublonsTotal() >= 20)
 			{
-				link.l1 = "20 dublońców.";
+				link.l1 = "20 dublonów.";
 				link.l1.go = "BallsGold_DatDeneg_gold20";
 			}
 			if (PCharDublonsTotal() >= 25)
 			{
-				link.l2 = "25 dublońców.";
+				link.l2 = "25 dublonów.";
 				link.l2.go = "BallsGold_DatDeneg_gold25";
 			}
 			if (PCharDublonsTotal() >= 30)
 			{
-				link.l3 = "30 dublońców.";
+				link.l3 = "30 dublonów.";
 				link.l3.go = "BallsGold_DatDeneg_gold30";
 			}
 			// link.l4 = "Muszę wszystko sprawdzić. Wrócę później.";
@@ -1435,7 +1435,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerKaznachey_2":
-			dialog.text = "A czym pan wtedy potajemnie coś zapisuje w swoim kajecie? Wodą święconą? Atramentu nie było w wykazie rzeczy pasażera. Zresztą, teraz ma pan poważniejsze problemy.";
+			dialog.text = "A czym pan wtedy potajemnie coś zapisywał w swoim kajecie? Wodą święconą? Atramentu nie było w wykazie rzeczy pasażera. Zresztą, teraz ma pan poważniejsze problemy.";
 			link.l1 = "...";
 			link.l1.go = "OfficerKaznachey_3";
 		break;
@@ -1685,12 +1685,12 @@ void ProcessDialogEvent()
 			dialog.text = "Bitwa zacznie się dopiero za kilka godzin, więc to najlepszy moment, by zamknąć dzienny bilans. Masz mój kuferek z dublonami, de Maure. Uprzejmie proszę o jego zwrot.";
 			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
 			{
-				link.l1 = "Prendetelo. E non mostrate più la vostra faccia quaggiù.";
+				link.l1 = "Weź to. I nie pokazuj się tu więcej.";
 				link.l1.go = "OfficerKaznachey_16_Proval_4";
 			}
 			else
 			{
-				link.l1 = "Ho lasciato la vostra roba da qualche altra parte.";
+				link.l1 = "Zostawiłem twoje rzeczy gdzie indziej.";
 				link.l1.go = "OfficerKaznachey_16_Proval_5";
 			}
 		break;
@@ -1710,7 +1710,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_16_Proval_5":
-			dialog.text = "Da qualche altra parte... Ne discuteremo dopo la battaglia - in presenza del capitano. Arrivederci.";
+			dialog.text = "Gdzie indziej... Omówimy to po bitwie - w obecności kapitana. Żegnaj.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
@@ -1844,7 +1844,7 @@ void ProcessDialogEvent()
 		
 		// --> Диалог с выжившим матросом
 		case "SailorAlive_1":
-			dialog.text = "Dobrze, że żyjesz... A ja już po wszystkim. Skwaśniałem. Dostałem nieźle po rumpelu...";
+			dialog.text = "Monsieur?... Dobrze, że żyjesz... A ja już po fakcie. Skwaśniałem. Dostałem nieźle po rumpelu...";
 			link.l1 = "Co się stało?!";
 			link.l1.go = "SailorAlive_2";
 			DelLandQuestMark(npchar);
@@ -1910,7 +1910,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				NextDiag.TempNode = "SailorAlive_13";
 			}*/
-			dialog.text = "Tak lepiej. Załadowaliście kartaczownicę?";
+			dialog.text = "Tak lepiej. Załadowałeś kartaczownicę?";
 			link.l1 = "Właśnie się tym zajmuję... A czemu nagle tak ucichło?";
 			link.l1.go = "SailorAlive_14";
 			SetMusic("");

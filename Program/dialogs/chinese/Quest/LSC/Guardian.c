@@ -20,7 +20,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "First time";
 		break;
 		
-//-----------------------------------—— 独角鲸帮守卫的对话 --------------------------------------------
+//----------------------------------- —独角鲸帮守卫的对话 --------------------------------------------
 		// 独角鲸帮在圣盖博入口的岗哨
 		case "Narval_warning":
 			if (CheckAttribute(pchar, "GenQuest.NarvalConflict"))
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Narval_warning_yes":
-			dialog.text = "那就去那边告诉那个硬汉。 别想骗他, 我们拿着滑膛枪的兄弟知道该怎么做。 所以如果你打算耍什么花招 --你最好现在转身离开。 我警告过你。 ";
+			dialog.text = "那就去那边告诉那个硬汉。 别想骗他, 我们拿着滑膛枪的兄弟知道该怎么做。 所以如果你打算耍什么花招 —你最好现在转身离开。 我警告过你。 ";
 			link.l1 = "好的, 朋友。 我知道了。 ";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Narval_warning_repeat";
@@ -273,7 +273,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "negotiations_2";
 		break;
 		
-//-----------------------------------—— 里瓦多斯守卫的对话 --------------------------------------------
+//----------------------------------- —里瓦多斯守卫的对话 --------------------------------------------
 		// 里瓦多斯在愤怒号和贝拉斯科号入口的岗哨
 		case "Rivados_warning":
 			if (CheckAttribute(pchar, "GenQuest.RivadosConflict"))
@@ -509,7 +509,7 @@ void ProcessDialogEvent()
 			}
 			NextDiag.TempNode = "Rivados_soldier";
 		break;
-//-----------------------------------—— 海盗守卫的对话 --------------------------------------------	
+//----------------------------------- —海盗守卫的对话 --------------------------------------------	
 		// 在仓库
 		case "Shark_storage":
 			if (CheckAttribute(pchar, "GenQuest.SharkConflict"))

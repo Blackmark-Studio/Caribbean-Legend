@@ -268,7 +268,7 @@ void ProcessDialogEvent()
 		
 		case "noel_39":
 			dialog.text = "";
-			link.l1 = "我理解你, 弗尔热先生。 对于不熟悉当地思维方式的人来说, 德.潘西的行为确实可能显得奇怪。 当我第一次来到群岛时, 这里发生的事情让我震惊。 我还记得我听到的第一句话: ‘如果你遇到没有防护的西班牙船, 可以尝试登船。 ’背叛。 阴谋。 欺骗 --这里步步皆是。 海盗。 掠夺。 抢劫... ";
+			link.l1 = "我理解你, 弗尔热先生。 对于不熟悉当地思维方式的人来说, 德.潘西的行为确实可能显得奇怪。 当我第一次来到群岛时, 这里发生的事情让我震惊。 我还记得我听到的第一句话: ‘如果你遇到没有防护的西班牙船, 可以尝试登船。 ’背叛。 阴谋。 欺骗 —这里步步皆是。 海盗。 掠夺。 抢劫... ";
 			link.l1.go = "noel_40";
 		break;
 		
@@ -345,7 +345,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_52":
-			dialog.text = "两周后我会回到圣克里斯托弗, 从那里回家。 德.潘西先生给了我一艘好船 --一艘名为‘法沃里’的双桅船和一位出色的船长。 这艘船很快, 船长也很有经验, 但当然, 和你在一起我更安全。 我记得我们在群岛的旅行, 副舰队司令, 那真是一段美妙的经历。 ";
+			dialog.text = "两周后我会回到圣克里斯托弗, 从那里回家。 德.潘西先生给了我一艘好船 —一艘名为‘法沃里’的双桅船和一位出色的船长。 这艘船很快, 船长也很有经验, 但当然, 和你在一起我更安全。 我记得我们在群岛的旅行, 副舰队司令, 那真是一段美妙的经历。 ";
 			link.l1 = "谢谢你的美言, 男爵。 好吧, 我想我们该分手了... ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Patria_CondotierToPirates");
@@ -871,7 +871,7 @@ void ProcessDialogEvent()
 			ChangeCharacterAddressGroup(npchar, "none", "", "");
 			DoQuestReloadToLocation("Charles_Town", "reload", "reload3", "OpenTheDoors");
 		break;
-		// <—— 传奇版本
+		// < —传奇版本
 		
 		case "noel_final":
 			dialog.text = "请允许我向你表达最诚挚的感谢, 副舰队司令! 你把我从那些该死的海盗手中救了出来, 救了我的命。 我感谢你, 也感谢菲利普.德.潘西。 我必须承认, 我对他的评价完全错误, 请原谅我的误解。 你和骑士是对的: 法国贸易公司在这里会有很多麻烦, 看来我们只会在这里赔钱\n只有像潘西这样有经验的人, 和像你这样勇敢的士兵, 才能抵御每个岛上的这些豺狼。 我需要去宫殿, 之后会尽快离开欧洲, 忘记这场噩梦。 ";
@@ -890,7 +890,7 @@ void ProcessDialogEvent()
 		// "埃克利亚顿"号船长
 		case "ecliaton_cap":
 			dialog.text = TimeGreeting()+", 先生。 什么风把你吹到‘埃克利亚顿’号的甲板上了? ";
-			link.l1 = TimeGreeting()+", 先生。 请允许我自我介绍 --查尔斯.德.莫尔船长, 我来自群岛法属殖民地总督, 德.潘西骑士。 我奉命将你的船编入我的中队并由我指挥。 这是命令书... ";
+			link.l1 = TimeGreeting()+", 先生。 请允许我自我介绍 —查尔斯.德.莫尔船长, 我来自群岛法属殖民地总督, 德.潘西骑士。 我奉命将你的船编入我的中队并由我指挥。 这是命令书... ";
 			// 传奇版本修复检查带步枪的制服
 			if(IsUniformEquip()) link.l1.go = "ecliaton_cap_1";
 			else link.l1.go = "ecliaton_cap_no";
@@ -974,7 +974,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ecliaton_cap_5_1":
-			dialog.text = "但是, 德.莫尔船长, 首先你得缩小你的中队规模 --我的船不能加入, 否则中队就太大了。 ";
+			dialog.text = "但是, 德.莫尔船长, 首先你得缩小你的中队规模 —我的船不能加入, 否则中队就太大了。 ";
 			link.l1 = "哈。 你说得对。 我会留一艘船在港口。 ";
 			link.l1.go = "ecliaton_cap_5_2";
 		break;
@@ -1090,13 +1090,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ecliaton_cap_20":
-			dialog.text = "我也明白‘埃克利亚顿’号现在是你的旗舰, 所以如果你决定亲自指挥它, 我完全理解。 在这种情况下, 你可以让我做你的军官, 给我另一艘船, 或者干脆解除我的职务 --弗尔热先生好心地答应我, 那时他会在法属西印度公司的舰队里给我找一个合适的职位。 ";
+			dialog.text = "我也明白‘埃克利亚顿’号现在是你的旗舰, 所以如果你决定亲自指挥它, 我完全理解。 在这种情况下, 你可以让我做你的军官, 给我另一艘船, 或者干脆解除我的职务 —弗尔热先生好心地答应我, 那时他会在法属西印度公司的舰队里给我找一个合适的职位。 ";
 			link.l1 = "我可以向你保证, 我的朋友, 不会到那一步的。 你是我见过的最好的船长之一, 有你在我身边, 我们将不可阻挡。 ";
 			link.l1.go = "ecliaton_cap_21";
 		break;
 		
 		case "ecliaton_cap_21":
-			dialog.text = "谢谢你对我能力的如此高的评价。 还有一件事, 副舰队司令。 我现在不知道你的中队规模, 所以以防万一, 我会在卡普斯特维尔码头的‘埃克利亚顿’号船长桥上等你。 一旦你决定让这艘船归你指挥 --只要告诉我一声。 ";
+			dialog.text = "谢谢你对我能力的如此高的评价。 还有一件事, 副舰队司令。 我现在不知道你的中队规模, 所以以防万一, 我会在卡普斯特维尔码头的‘埃克利亚顿’号船长桥上等你。 一旦你决定让这艘船归你指挥 —只要告诉我一声。 ";
 			link.l1 = "很好, 达西埃先生。 ";
 			link.l1.go = "ecliaton_cap_22";
 		break;
@@ -1159,7 +1159,7 @@ void ProcessDialogEvent()
 			pchar.quest.Patria_EcliatonDelGroup.win_condition.l1 = "ExitFromSea";
 			pchar.quest.Patria_EcliatonDelGroup.function = "Patria_EcliatonDelGroup";
 		break;
-		// <—— legendary edition
+		// < —legendary edition
 		
 		// 多伊利在安提瓜
 		case "doily":
@@ -1185,7 +1185,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "doily_2":
-			dialog.text = "这可能是真的, 船长, 但是... 不管怎样。 我想你来到安提瓜有重要的目标吧? 也许是因为两个前盟友 --法国和荷兰的关系已经大大恶化? ";
+			dialog.text = "这可能是真的, 船长, 但是... 不管怎样。 我想你来到安提瓜有重要的目标吧? 也许是因为两个前盟友 —法国和荷兰的关系已经大大恶化? ";
 			link.l1 = "完全正确。 我是由法属殖民地总督菲利普.德.潘西派来的。 圣克里斯托弗已被西班牙和荷兰海军围困。 骑士请求你的帮助。 这是他给你的信, 上校。 ";
 			link.l1.go = "doily_3";
 		break;
@@ -1331,7 +1331,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "doily_17":
-			dialog.text = "我想那个卑鄙的斯特伊弗桑特会来这里的。 如果不来 --他只能怪自己! ";
+			dialog.text = "我想那个卑鄙的斯特伊弗桑特会来这里的。 如果不来 —他只能怪自己! ";
 			link.l1 = "... ";
 			link.l1.go = "doily_17_1";
 		break;
@@ -1359,7 +1359,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "doily_20":
-			dialog.text = "那么, 看来我们的任务完成得相当成功。 恭喜你, 船长! 哦, 抱歉 --副舰队司令! 我们回船上吧。 我会让我的人站岗 --那个傻瓜斯特伊弗桑特可能不会冒险在我们撤退时攻击我们, 但小心点也无妨。 ";
+			dialog.text = "那么, 看来我们的任务完成得相当成功。 恭喜你, 船长! 哦, 抱歉 —副舰队司令! 我们回船上吧。 我会让我的人站岗 —那个傻瓜斯特伊弗桑特可能不会冒险在我们撤退时攻击我们, 但小心点也无妨。 ";
 			link.l1 = "我相信荷兰人不敢打破刚刚签署的条约。 ";
 			link.l1.go = "doily_21";
 		break;
@@ -1428,7 +1428,7 @@ void ProcessDialogEvent()
 		// 特立尼达灯塔上的西班牙军官
 		case "SanJoseSpanish":
 			dialog.text = "那么, 船长, 你召集休战使者是因为你想 dictate 你的要求? ";
-			link.l1 = "你说得完全正确, 先生。 让我简要解释一下我来到特立尼达的原因 --这是我们对你们最近袭击圣皮埃尔的回应。 你们对城市造成了相当大的破坏, 现在你们将被迫赔偿。 赔偿金额是三十万比索。 考虑到你们的士兵在马提尼克所做的 vile 行为, 这并不多。 ";
+			link.l1 = "你说得完全正确, 先生。 让我简要解释一下我来到特立尼达的原因 —这是我们对你们最近袭击圣皮埃尔的回应。 你们对城市造成了相当大的破坏, 现在你们将被迫赔偿。 赔偿金额是三十万比索。 考虑到你们的士兵在马提尼克所做的 vile 行为, 这并不多。 ";
 			link.l1.go = "SanJoseSpanish_1";
 		break;
 		
@@ -1453,7 +1453,7 @@ void ProcessDialogEvent()
 		case "SanJoseSpanish_4":
 			AddMoneyToCharacter(pchar, 300000);
 			dialog.text = "拿上你的三十万, 离开我们的殖民地。 ";
-			link.l1 = "太好了, 先生们。 我向你们保证 --这是最好的方式。 我希望这能阻止唐.德.门多萨和其他人袭击我们的殖民地。 别忘了把信息送到普罗维登斯和他本人那里。 祝你们好, 先生们。 ";
+			link.l1 = "太好了, 先生们。 我向你们保证 —这是最好的方式。 我希望这能阻止唐.德.门多萨和其他人袭击我们的殖民地。 别忘了把信息送到普罗维登斯和他本人那里。 祝你们好, 先生们。 ";
 			link.l1.go = "SanJoseSpanish_5";
 		break;
 		
@@ -1504,7 +1504,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "engofficer_2":
-			dialog.text = "如果你自己不去 --我们就只好强行拖你了! 交出你的武器! ";
+			dialog.text = "如果你自己不去 —我们就只好强行拖你了! 交出你的武器! ";
 			link.l1 = "没门... ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Patria_CondotierBeachFight");
@@ -1519,7 +1519,7 @@ void ProcessDialogEvent()
 		
 		case "miner_1":
 			dialog.text = "是的, 先生。 这封信必须亲自交给彼得.斯特伊弗桑特先生或马蒂亚斯.贝克。 ";
-			link.l1 = "我相信你找从威廉斯塔德到卡塔赫纳的船不会有麻烦。 我们给了你所有必要的资金来支付旅行和住宿费用。 如果需要的话 --你会在半年后在法国委员会面前确认你的报告吗? ";
+			link.l1 = "我相信你找从威廉斯塔德到卡塔赫纳的船不会有麻烦。 我们给了你所有必要的资金来支付旅行和住宿费用。 如果需要的话 —你会在半年后在法国委员会面前确认你的报告吗? ";
 			link.l1.go = "miner_2";
 		break;
 		
@@ -1604,7 +1604,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tailor_02":
-			dialog.text = "他们是如何确定第一艘船和第二艘船该运什么的? ! 我不只是某个乡下的裁缝 --我甚至有总督德.潘西骑士大人的订单! ";
+			dialog.text = "他们是如何确定第一艘船和第二艘船该运什么的? ! 我不只是某个乡下的裁缝 —我甚至有总督德.潘西骑士大人的订单! ";
 			link.l1 = "... ";
 			link.l1.go = "Tailor_03";
 			CharacterTurnByChr(npchar, characterFromId("Charles_PortMan"));
@@ -1674,7 +1674,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tailor_12":
-			dialog.text = "对于最后的修饰, 我需要非常高质量的面料。 我确实有一个 spinner 可以用粗糙的纤维甚至做出这样的面料。 但为此, 我需要材料 --最好是棉花。 一包就足够了。 ";
+			dialog.text = "对于最后的修饰, 我需要非常高质量的面料。 我确实有一个 spinner 可以用粗糙的纤维甚至做出这样的面料。 但为此, 我需要材料 —最好是棉花。 一包就足够了。 ";
 			link.l1 = "那也可以弄到。 接下来是什么? ";
 			link.l1.go = "Tailor_13";
 		break;
@@ -1704,13 +1704,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tailor_17":
-			dialog.text = "还有一件事... 我的缝纫工具已经没法用了。 我从巴黎订购了新工具, 但可惜... 如果你能找到所有必要的材料并把工具借给我 --只是借, 我以后会买新的! --我会立刻开始缝制。 ";
+			dialog.text = "还有一件事... 我的缝纫工具已经没法用了。 我从巴黎订购了新工具, 但可惜... 如果你能找到所有必要的材料并把工具借给我 —只是借, 我以后会买新的! —我会立刻开始缝制。 ";
 			link.l1 = "好吧, 我能怎么办呢? 我会把你需要的东西都带来。 在哪里能找到你? 你不会在港务局等我吧? ";
 			link.l1.go = "Tailor_18";
 		break;
 		
 		case "Tailor_18":
-			dialog.text = "我的工作室就在码头边的那栋楼里 --你上岸时, 它就在你的右手边。 ";
+			dialog.text = "我的工作室就在码头边的那栋楼里 —你上岸时, 它就在你的右手边。 ";
 			link.l1 = "成交。 我会把材料拿来。 ";
 			link.l1.go = "Tailor_19";
 		break;

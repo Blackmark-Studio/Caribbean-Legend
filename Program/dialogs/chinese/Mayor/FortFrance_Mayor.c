@@ -15,7 +15,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "先生, 我在丛林里发现了一具强盗的尸体。 他被印第安人杀了。 他身上有耳环, 看起来像是从欧洲带到这里的。 也许它们属于你镇上的某个贵族? ";
                 link.l1.go = "Sharlie_junglejew";
 			}
-			//<—— 加斯科涅的负担 */
+			//< —加斯科涅的负担 */
 			//--> Sinistra, 灭鼠行动
 			if (CheckAttribute(pchar, "questTemp.TK_Potopil"))
 			{
@@ -27,7 +27,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "大人, 任务完成了! 囚犯在我的 brig 里等待他的命运。 ";
                 link.l1.go = "TK_Plen";
 			}
-			//<—— 灭鼠行动
+			//< —灭鼠行动
 			// Jason 国家海军
 			if (CheckAttribute(pchar, "questTemp.Patria") && pchar.questTemp.Patria == "epizode_9_continue" && !CheckAttribute(npchar, "quest.frigate"))
 			{
@@ -151,7 +151,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 			ChangeCharacterNationReputation(pchar, FRANCE, 2);
 		break;
-		//<—— 灭鼠行动
+		//< —灭鼠行动
 		
 		// Jason 国家海军
 		case "patria":
@@ -270,14 +270,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "goldengirl_11":
-			dialog.text = "我知道这是个不愉快的转折, 但相信我 --这样的结果相当令人满意。 你并不急需船只和人手, 而德.列维.万塔杜尔会支付一大笔钱来掩盖最近一场决斗的真相。 或者他会记住我们免费为他隐瞒真相, 这也很有价值。 奇沃斯做了两次不诚实的事, 但他现在已经远走高飞了, 而我们仍然有对付他的好牌。 ";
+			dialog.text = "我知道这是个不愉快的转折, 但相信我 —这样的结果相当令人满意。 你并不急需船只和人手, 而德.列维.万塔杜尔会支付一大笔钱来掩盖最近一场决斗的真相。 或者他会记住我们免费为他隐瞒真相, 这也很有价值。 奇沃斯做了两次不诚实的事, 但他现在已经远走高飞了, 而我们仍然有对付他的好牌。 ";
 			link.l1 = "三次, 大人。 安格兰在我们玩牌时承认作弊。 但他不会用钱来收买我, 如果您是这个意思的话。 他越界了。 今天早上那艘船上有个人... 她对我非常重要! 我不会让那个混蛋伤害她! 你听到了吗, 雅克, 我不会! ";
 			link.l1.go = "goldengirl_12";
 		break;
 		
 		case "goldengirl_12":
-			dialog.text = "我想我知道你在说谁 --我记得见过你和某个... 女孩在一起, 她穿着男装, 像海盗一样全副武装。 查尔斯, 别当傻瓜! 你很幸运, 避开了巨大的麻烦, 怎么, 你又想把自己拖进去? 放手吧。 谢天谢地, 奇沃斯在逃跑! 至于你的‘战友女友’ --听你朋友的建议 --去见朱莉安娜, 把这一切都忘了。 ";
-			link.l1 = "不可能, 大人。 有些事情你就是无法理解, 好吗? 现在告诉我你知道的关于那个混蛋的一切。 他从圣皮埃尔可能去哪里? 别再试图劝阻我了 --我和荷兰公司。 海盗男爵。 总督, 甚至和宗教裁判所都闹过! 我不是一个容易被吓倒的人。 无论如何我都要把她救回来! ";
+			dialog.text = "我想我知道你在说谁 —我记得见过你和某个... 女孩在一起, 她穿着男装, 像海盗一样全副武装。 查尔斯, 别当傻瓜! 你很幸运, 避开了巨大的麻烦, 怎么, 你又想把自己拖进去? 放手吧。 谢天谢地, 奇沃斯在逃跑! 至于你的‘战友女友’ —听你朋友的建议 —去见朱莉安娜, 把这一切都忘了。 ";
+			link.l1 = "不可能, 大人。 有些事情你就是无法理解, 好吗? 现在告诉我你知道的关于那个混蛋的一切。 他从圣皮埃尔可能去哪里? 别再试图劝阻我了 —我和荷兰公司。 海盗男爵。 总督, 甚至和宗教裁判所都闹过! 我不是一个容易被吓倒的人。 无论如何我都要把她救回来! ";
 			link.l1.go = "goldengirl_13";
 		break;
 		
@@ -328,7 +328,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "VPVL_Magor_4":
-			dialog.text = "啊, 船长! 很高兴再次见到你。 你的情报确实非常有价值。 我的人恰好在你指出的地方拦截了那艘船。 给你 --一百五十枚西班牙达布隆, 刚铸造的, 钱包里沉甸甸的。 带着我的感激收下吧。 ";
+			dialog.text = "啊, 船长! 很高兴再次见到你。 你的情报确实非常有价值。 我的人恰好在你指出的地方拦截了那艘船。 给你 —一百五十枚西班牙达布隆, 刚铸造的, 钱包里沉甸甸的。 带着我的感激收下吧。 ";
 			link.l1 = "大人, 我谦卑的感谢。 我的一点情报能为王室利益服务, 真是幸运。 如果再有机会, 请知道我的剑和敏锐的眼睛仍然为您所用。 ";
 			link.l1.go = "VPVL_Delete_Flag";
 			AddItems(PChar, "gold_dublon", 150);

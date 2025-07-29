@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 		
 		case "SQC_skeletcap_1":
 			PlaySound("Types\skel.wav");
-			dialog.text = "On jest olbrzymi... jest niewrażliwy... zabija... zabije cię. Muszę cię zabić... jeśli cię zabiję, nie staniesz się taki jak my... nie rozumiesz... zginiesz od jego miecza... zamienisz się w to, czym my jesteśmy... jak wszyscy na Santa Quiteria...";
+			dialog.text = "On jest olbrzymi... jest niewrażliwy... zabija... zabije cię. Muszę cię zabić... jeśli cię zabiję, nie staniesz się taki jak my... nie rozumiesz... zginiesz od jego miecza... zamienisz się w to, czym my jesteśmy... jak wszyscy na 'Santa Quiteria'...";
 			link.l1 = "Nie ma mowy!";
 			link.l1.go = "SQC_skeletcap_2";
 		break;
@@ -95,14 +95,14 @@ void ProcessDialogEvent()
 		
 		case "guardmask_4":
 			PlaySound("Voice\English\sharlie\Hranitel Maski Kukulkana.wav");
-			dialog.text = "Zatrzymaj się...";
-			link.l1 = "A dlaczego miałbym to robić, co? Brak ci tchu, kościotrupie?";
+			dialog.text = "Czekaj...";
+			link.l1 = "A dlaczego miałbym to zrobić, co? Brak ci tchu, kościotrupie?";
 			link.l1.go = "guardmask_5";
 		break;
 		
 		case "guardmask_5":
-			dialog.text = "Nie. Nigdy nie będziesz w stanie mnie zabić. Nawet tą magiczną sztyletą. Nasz pojedynek może trwać bardzo, bardzo długo, aż całkowicie opadniesz z sił i umrzesz.";
-			link.l1 = "Czyżby? A dlaczego to nie możesz mnie uderzyć?";
+			dialog.text = "Nie. Nigdy nie będziesz w stanie mnie zabić. Nawet tym magicznym sztyletem. Nasz pojedynek może trwać bardzo, bardzo długo, aż całkowicie opadniesz z sił i umrzesz.";
+			link.l1 = "Czyżby? A dlaczego nie możesz mnie uderzyć?";
 			link.l1.go = "guardmask_6";
 		break;
 		
@@ -113,8 +113,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardmask_7":
-			dialog.text = "Nazywano mnie Alberto Casco. Byłem żołnierzem w oddziale Alonso de Maldonado. Znaleźliśmy starożytne Tayasal, ale zostaliśmy schwytani i złożeni w ofierze. Z powodu mojego wzrostu i siły pogański Kanek uczynił mnie Strażnikiem Ksocheatem, stróżem maski Kukulkana. Każdy, kto kiedykolwiek stanął na Ksocheatem, został przeze mnie odnaleziony i zmasakrowany moją ręką, a następnie przemieniony w nieumarłego.\nSztylet Szpona Wodza posłużył do wycięcia mapy tego miejsca z mojego ciała. Będę strzegł bezpieczeństwa maski na zawsze i nie zaznam spokoju, dopóki nie będę trzymał tego sztyletu w moich rękach.";
-			link.l1 = "Czy potrzebujesz Pazura Naczelnika?";
+			dialog.text = "Nazywano mnie Alberto Casco. Byłem żołnierzem w oddziale Alonso de Maldonado. Znaleźliśmy starożytne Tayasal, ale zostaliśmy schwytani i złożeni w ofierze. Z powodu mojego wzrostu i siły pogański kapłan - Kanek, uczynił mnie Strażnikiem Ksocheatem, stróżem maski Kukulkana. Każdy, kto kiedykolwiek stanął na Ksocheatem, został przeze mnie odnaleziony i zmasakrowany moją ręką, a następnie przemieniony w nieumarłego.\nSztylet Szpona Wodza posłużył do wycięcia mapy tego miejsca z mojego ciała. Będę strzegł bezpieczeństwa maski na zawsze i nie zaznam spokoju, dopóki nie będę trzymał tego sztyletu w moich rękach.";
+			link.l1 = "Potrzebujesz Pazura Wodza?";
 			link.l1.go = "guardmask_8";
 		break;
 		
@@ -125,7 +125,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardmask_9":
-			dialog.text = "Tak jest. To potężny artefakt samego K'uk'ulkana, latającego węża. Po zakończeniu naszej rozmowy możesz podejść tam i go wziąć.";
+			dialog.text = "Tak jest. To potężny artefakt samego Kukulkana, latającego węża. Po zakończeniu naszej rozmowy możesz podejść tam i ją wziąć.";
 			link.l1 = "Cóż, mam nadzieję, że dotrzymasz słowa, Strażniku...";
 			link.l1.go = "guardmask_10";
 		break;
@@ -139,7 +139,7 @@ void ProcessDialogEvent()
 		case "guardmask_11":
 			RemoveItems(pchar, "knife_01", 1);
 			PlaySound("interface\important_item.wav");
-			Log_Info("You've given the Chief's Claw");
+			Log_Info("Przekazałeś Szpon Wodza");
 			RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE);
 			dialog.text = "O, jak długo czekałem na ten moment! Teraz mogę wreszcie odejść... Ale na pożegnanie chciałbym przekazać ci cząstkę mojej mocy. To będzie ostatni prezent, jaki kiedykolwiek da Alberto Casco.";
 			link.l1 = "... ";
@@ -165,7 +165,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardmask_15":
-			dialog.text = "Naszym dowódcą był Alonso de Maldonado. Po prostu podążaliśmy za nim przez dżunglę. Pamiętam tylko, że wysiedliśmy w zatoce Mosquito, na północ od Przylądka Perlas, i ruszyliśmy w głąb selwy na Zachód.";
+			dialog.text = "Naszym dowódcą był Alonso de Maldonado. Po prostu podążaliśmy za nim przez dżunglę. Pamiętam tylko, że wysiedliśmy w zatoce Amatique, na północ od Przylądka Pereł, i ruszyliśmy w głąb selwy na Zachód.";
 			link.l1 = "Co jest godnego uwagi w Tayasal?";
 			link.l1.go = "guardmask_16";
 		break;
@@ -190,7 +190,7 @@ void ProcessDialogEvent()
 		
 		case "guardmask_19":
 			dialog.text = "Żegnaj, żołnierzu. Mam nadzieję, że użyjesz mocy maski w słusznym celu.";
-			link.l1 = "...";
+			link.l1 = "Żegnaj, Alberto. Z Bogiem.";
 			link.l1.go = "exit";
 			AddDialogExitQuest("Ksochitam_GuardMaskGoAway");
 		break;

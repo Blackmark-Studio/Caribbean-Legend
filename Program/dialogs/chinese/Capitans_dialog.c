@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 					link.l1.go = "VSP_Captain";
 					break;
 				}
-				//<—— 护航 2 级别
+				//< —护航 2 级别
 				
 				if(CheckAttribute(NPChar, "surrendered"))
 				{
@@ -165,7 +165,7 @@ void ProcessDialogEvent()
 						break;
 					}
 				}
-				// <—— 渔船
+				// < —渔船
 				
 				//belamour legendary edition 对话, 如果英雄拥有军衔和国家功勋 -->
 				// 总督将军
@@ -188,7 +188,7 @@ void ProcessDialogEvent()
 					link.l2.go = "exit";
 					break;
 				}
-				// 有专利的军官
+				// 有许可证的军官
 				if(IsOfficerFullEquip() && sti(Items[sti(pchar.EquipedPatentId)].Nation) == npchar.nation)
 				{
 					Dialog.text = "很高兴见到同事, 船长! 我能帮什么忙? ";
@@ -198,7 +198,7 @@ void ProcessDialogEvent()
 					link.l2.go = "exit";
 					break;
 				}			
-				// <—— legendary edition
+				// < —legendary edition
                 if (CheckAttribute(NPChar, "EncType")  && NPChar.EncType == "war")
                 {
     			    Dialog.text = TimeGreeting() + ", " + GetAddress_Form(NPChar) + "! 我是" + GetFullName(NPChar) + " - 属于" + NationKingsName(NPChar) + "舰队的船长。 是什么风把您吹到我的船上的? ";
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
-			// <—— 渔船
+			// < —渔船
             if (!CheckAttribute(NPChar, "MainCaptanId")  || NPChar.MainCaptanId == pchar.GenQuest.CaptainId)
             {
                 Dialog.text = "我正专心听您说, " + GetAddress_Form(NPChar) + "。 ";
@@ -282,7 +282,7 @@ void ProcessDialogEvent()
 	    			link.l6 = "我在寻找一艘在这些水域活动的海盗船。 你见过什么可疑的吗? ";
 	    			link.l6.go = "MQ_step_1";
 				}
-				//<—— 市长任务, 寻找海盗
+				//< —市长任务, 寻找海盗
     			link.l5 = "想放松一下吗? ";
 			    link.l5.go = "Play_Game";
                 link.l9 = "我想我该走了。 ";
@@ -973,7 +973,7 @@ void ProcessDialogEvent()
             if (CheckAttribute(PChar, "quest.LeaveTown")) Pchar.quest.LeaveTown.over = "yes";
             //--> 传闻
             SiegeRumour("我听说你在攻击" + NationNameSK(sti(aData.conation)) + "殖民地 - " + GetConvertStr(aData.Colony + " Town", "LocLables.txt") + "时帮助了我们的中队! 我们非常感谢你, " + GetAddress_Form(NPChar) + "。 ", "", sti(aData.nation), -1, 30, 3);
-            //<—— 传闻
+            //< —传闻
 		break;
 
         case "no_return_02":
@@ -1736,7 +1736,7 @@ void ProcessDialogEvent()
 			SetCharacterGoods(pchar, iTemp, GetCargoGoods(pchar,iTemp)+iQty);
 			AddMoneyToCharacter(pchar, -iMoney*iQty);
 		break;
-		// <—— 渔船
+		// < —渔船
 	}
 }
 

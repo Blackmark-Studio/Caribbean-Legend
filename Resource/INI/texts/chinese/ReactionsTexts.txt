@@ -13,7 +13,7 @@ NoLootCorpse11 {他的口袋空空如也。 }
 NoLootCorpse12 {这里什么都没有。 也许有隐藏的口袋? }
 NoLootCorpse13 {没有钱, 没有钥匙, 没有遗嘱。 }
 NoLootCorpse14 {他什么值钱的东西都没带就去了另 一个世界。 }
-NoLootCorpse15 {他显然不富有—— 口袋是空的。 }
+NoLootCorpse15 {他显然不富有 —口袋是空的。 }
 NoLootCorpse16 {可怜的家伙显然是轻装上阵参加战 斗的。 }
 NoLootCorpse17 {他把最后一枚硬币都用来武装自己 了。 }
 NoLootCorpse18 {尸体就是尸体。 这里什么都没有。 }

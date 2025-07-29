@@ -17,7 +17,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
    				link.l1 = "听着, 我需要一些华丽的衣服。 要贵的, 我想打扮得像个真正的贵族。 你有类似的东西吗? ";
 				link.l1.go = "Portugal_cloves";
 			}
-			//<—— 葡萄牙人
+			//< —葡萄牙人
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "maarten")
 			{
 				link.l1 = "最近有艘名为‘令人钦佩’的大帆船给你运来了一批兽皮货物。 你还记得吗? ";
@@ -59,7 +59,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			QuestPointerDelLoc("marigo_town", "reload", "reload6_back");
 			QuestPointerToLoc("marigo_town", "reload", "houseF1");
 		break;
-		//<—— 葡萄牙人
+		//< —葡萄牙人
 		case "guardoftruth":
 			dialog.text = "记得。 他准时到达, 卸下货物, 我按约定付了款。 你为什么问这个? ";
 			link.l1 = "那艘船的船长是盖乌斯.马沙, 我的老熟人。 所以我在试着找他。 你能告诉我他之后做了什么吗? 也许你给了他额外的货运任务, 或者他提到过要去哪里? ";

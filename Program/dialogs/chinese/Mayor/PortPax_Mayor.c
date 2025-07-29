@@ -109,7 +109,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		//--> 失窃的记忆
 		case "UV_1":
-			dialog.text = "你说一件敏感的事? 这引起了我的兴趣, 船长。 请继续 --我全神贯注听你说。 ";
+			dialog.text = "你说一件敏感的事? 这引起了我的兴趣, 船长。 请继续 —我全神贯注听你说。 ";
 			link.l1 = "这件事与您的侄女朱莉有关。 她雇我帮她找回一条从她那里偷走的项链。 ";
 			link.l1.go = "UV_2";
 			ChangeCharacterComplexReputation(pchar, "nobility", -5);
@@ -136,8 +136,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "UV_5":
-			dialog.text = "确实如此, 船长。 作为她的叔叔和监护人, 她的福祉是我最关心的。 请接受这一百五十枚达布隆作为我对您谨慎态度的感谢。 我还赠您这枚导航罗盘 --愿它指引您安全穿越危险水域。 ";
-			link.l1 = "承蒙您的慷慨, 大人, 尽管这种奖励是不必要的。 遗憾的是, 我现在必须向您告别 --潮水不等人, 我的船需要我去照料。 ";
+			dialog.text = "确实如此, 船长。 作为她的叔叔和监护人, 她的福祉是我最关心的。 请接受这一百五十枚达布隆作为我对您谨慎态度的感谢。 我还赠您这枚导航罗盘 —愿它指引您安全穿越危险水域。 ";
+			link.l1 = "承蒙您的慷慨, 大人, 尽管这种奖励是不必要的。 遗憾的是, 我现在必须向您告别 —潮水不等人, 我的船需要我去照料。 ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("UV_End");
 			AddItems(pchar, "gold_dublon", 150);

@@ -32,7 +32,7 @@ Hooper
 
 Caleuche_8
 {
-You have escaped from the ghost ship!
+你已经从幽灵船上逃脱了！
 }
 
 Caleuche_9
@@ -51,7 +51,7 @@ Harpy
 
 Caleuche_12
 {
-"Harpy"号三桅小帆船
+"Harpy (哈耳庇厄号)" 号三桅小帆船
 }
 
 Caleuche_13
@@ -83,7 +83,7 @@ Salinas
 
 Caleuche_19
 {
-图图阿萨帕克的护身符已失去力量! 
+Tuttuathapak 的护身符已失去力量! 
 }
 
 Caleuche_20

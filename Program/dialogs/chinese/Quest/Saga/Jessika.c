@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 		
 		case "stage_1":
 			PlaySound("Voice\English\saga\Jessica Rose-07.wav");
-			dialog.text = "哈! 你伤不了我! \n元素听令 --风。 水。 土。 火助我! \n让死者崛起, 让火焰燃烧, 让流水守护桥梁, 让狂风将你卷起摔在地上! \n好好享受吧! ";
+			dialog.text = "哈! 你伤不了我! \n元素听令 —风。 水。 土。 火助我! \n让死者崛起, 让火焰燃烧, 让流水守护桥梁, 让狂风将你卷起摔在地上! \n好好享受吧! ";
 			link.l1 = "... ";
 			link.l1.go = "stage_1_exit";
 		break;
@@ -227,7 +227,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shore":
-			dialog.text = "你遵守了诺言 --我们到牙买加了。 明天晚上来这里, 我会履行我的承诺。 再见。 ";
+			dialog.text = "你遵守了诺言 —我们到牙买加了。 明天晚上来这里, 我会履行我的承诺。 再见。 ";
 			link.l1 = "再见... ";
 			link.l1.go = "shore_1";
 		break;

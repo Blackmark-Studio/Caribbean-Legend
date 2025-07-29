@@ -51,7 +51,7 @@ void ProcessDialogEvent()
 				DelLandQuestMark(npchar);
 				break;
 			}
-			// <—— legendary edition
+			// < —legendary edition
 			if (npchar.quest.meeting == "0")
 			{
 				dialog.text = RandPhraseSimple("下午好, 水手! 我叫" + GetFullName(npchar) + ", 是这座灯塔的看守。 什么风把你吹到这儿来的? ", "你好! 距离上次在我灯塔见到新面孔已经很久了... 请允许我自我介绍 - " + GetFullName(npchar) + ", 这座灯塔是我的家和工作场所。 有什么能为你效劳的? ");
@@ -93,7 +93,7 @@ void ProcessDialogEvent()
 					link.l3 = "" + npchar.name+ ", 我想向你订购一个护身符。 ";
 					link.l3.go = "Trade_artefact_1";
 				}
-				// 卡勒幽船
+				// 卡莱乌切
 				if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "amulet" && !CheckAttribute(npchar, "quest.Caleuche"))
 				{
 					link.l5 = "听着, " + npchar.name+ ", 我知道你从事按订单运送护身符的生意。 所以你肯定对它们很了解。 请看一下这个小东西 - 你能告诉我什么? ";
@@ -194,7 +194,7 @@ void ProcessDialogEvent()
 				DelLandQuestMark(npchar);
 				break;
 			}
-			// <—— legendary edition
+			// < —legendary edition
 			link.l1 = "给我看看你的物品。 ";
 			link.l1.go = "Trade_lighthouse";
 			link.l2 = "只是告诉我, 你的殖民地最近发生了什么有趣的事? ";
@@ -484,7 +484,7 @@ void ProcessDialogEvent()
 					link.l1 = "哦, 我把钱忘在船上了! 我很快带来。 ";
 					link.l1.go = "exit";
 				}
-				// <—— legendary edition
+				// < —legendary edition
 			}
 			else
 			{
@@ -513,7 +513,7 @@ void ProcessDialogEvent()
 			CloseQuestHeader(sTemp);
 		break;
 		
-		// --> 卡勒幽船
+		// --> 卡莱乌切
 		case "caleuche":
 			PlaySound("interface\important_item.wav");
 			dialog.text = "给我看看你那里的东西。 ";

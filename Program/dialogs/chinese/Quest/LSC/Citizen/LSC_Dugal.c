@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "日安, 先生。 容我自我介绍 --道格尔.埃博特。 很高兴在这里见到一位贵族。 我受够了当地的农民。 我从没想过这辈子要和普通人一起生活。 ";
+				dialog.text = "日安, 先生。 容我自我介绍 —道格尔.埃博特。 很高兴在这里见到一位贵族。 我受够了当地的农民。 我从没想过这辈子要和普通人一起生活。 ";
 				link.l1 = TimeGreeting() + "。 我叫" +GetFullName(pchar)+ "。 很高兴认识你。 你为什么不喜欢当地人? ";
 				link.l1.go = "meeting";
 				npchar.quest.meeting = "1";
@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meeting_1":
-			dialog.text = "是的, 这种情况经常发生 --船只沉没, 只有少数幸存者乘救生艇来到这里。 有时人们在这里住了好几个月, 你却从未见过他们。 ";
+			dialog.text = "是的, 这种情况经常发生 —船只沉没, 只有少数幸存者乘救生艇来到这里。 有时人们在这里住了好几个月, 你却从未见过他们。 ";
 			link.l1 = "我明白了。 很高兴认识你, 埃博特先生。 再见! ";
 			link.l1.go = "exit";
 			link.l2 = LinkRandPhrase("有什么有趣的事要说吗? ", "岛上有什么新鲜事吗? ", "能告诉我最新的八卦吗? ");
@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "First time";
 		break;
 		
-//-------------------------------------—— 问答区块 ---------------------------------------------
+//------------------------------------- —问答区块 ---------------------------------------------
 		case "int_quests":
 			dialog.text = "我在听。 ";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
@@ -95,7 +95,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_2":
-			dialog.text = "都是些败类。 全都是。 各种底层人物。 理查德.香邦是个罪犯, 一看脸就知道。 卡塞尔? 对他来说杀人就像呼吸一样自然。 贾斯珀.普拉特是个 convict。 马斯基特是个酒鬼。 需要我继续说吗? \n约瑟夫.洛德代尔是这里唯一正派的人, 除了你, 他是英国海军的退役军人。 这里有两个贵族 --安东尼奥.贝坦科特和洛伦佐.索德拉, 该死的西班牙败类, 我甚至不会和他坐在同一张桌子旁。 ";
+			dialog.text = "都是些败类。 全都是。 各种底层人物。 理查德.香邦是个罪犯, 一看脸就知道。 卡塞尔? 对他来说杀人就像呼吸一样自然。 贾斯珀.普拉特是个 convict。 马斯基特是个酒鬼。 需要我继续说吗? \n约瑟夫.洛德代尔是这里唯一正派的人, 除了你, 他是英国海军的退役军人。 这里有两个贵族 —安东尼奥.贝坦科特和洛伦佐.索德拉, 该死的西班牙败类, 我甚至不会和他坐在同一张桌子旁。 ";
 			link.l1 = "我明白了... ";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_2 = "true";
@@ -114,9 +114,9 @@ void ProcessDialogEvent()
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
 		break;
-// <—— 问答区块
+// < —问答区块
 		
-//---------------------------------------—— 特殊反应 -----------------------------------------------
+//--------------------------------------- —特殊反应 -----------------------------------------------
 		// 发现玩家在箱子里
 		case "Man_FackYou":
 			dialog.text = LinkRandPhrase("你在那里做什么, 啊? 小偷! ", "看看那个! 我一沉思, 你就决定检查我的箱子! ", "决定检查我的箱子? 你不会得逞的! ");
@@ -167,7 +167,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;
-// <—— 特殊反应
+// < —特殊反应
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

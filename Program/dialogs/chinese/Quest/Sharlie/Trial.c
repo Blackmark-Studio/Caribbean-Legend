@@ -262,7 +262,7 @@ void ProcessDialogEvent()
 				pchar.quest.trial_spy_over.function = "Trial_SpyTimeOver";
 			}
 			else NewGameTip("探索模式: 计时器已禁用。 ");
-			// <—— legendary edition
+			// < —legendary edition
 			//Log_Info("你获得了护身符'吉普赛人的扇子'");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "obereg_4");
@@ -513,7 +513,7 @@ void ProcessDialogEvent()
 			link.l1 = "我相信这会有帮助。 我们出发去拦截'普埃布拉'! ";
 			link.l1.go = "florian_19";
 		break;
-		// <—— legendary edition 额外训练
+		// < —legendary edition 额外训练
 
 		// 酒馆里的西班牙军官
 		case "tavern_officer":

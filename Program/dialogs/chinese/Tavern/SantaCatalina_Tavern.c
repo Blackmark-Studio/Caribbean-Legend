@@ -7,7 +7,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             if(startHeroType == 4)
             {
                 dialog.text = NPCStringReactionRepeat("当然了, 海伦。 什么事? ", "啊, 终于想起你想问什么了? ", "你确定没事吗? 你开始让我担心了。 也许该去看医生? ",
-                              "好吧, 海伦。 睡一觉, 呼吸点新鲜空气 --总之休息一下, 然后再来。 嗯? ", "block", 1, npchar, Dialog.CurrentNode);
+                              "好吧, 海伦。 睡一觉, 呼吸点新鲜空气 —总之休息一下, 然后再来。 嗯? ", "block", 1, npchar, Dialog.CurrentNode);
                 link.l1 = HeroStringReactionRepeat("不, 没什么事。 ", "不, 不, 抱歉打扰你了。 ",
                           "你或许说得对... ", "是的, 你或许说得对。 这是最好的办法。 ", npchar, Dialog.CurrentNode);
                 link.l1.go = "exit";
@@ -25,7 +25,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "听着, " + npchar.name+ ", 谁是扬.斯文森, 我怎么才能找到他? ";
                 link.l1.go = "Svenson";
             }    
-            //<—— 加斯科涅人的负担
+            //< —加斯科涅人的负担
             // 真理守卫
             if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "merdok" && !CheckAttribute(npchar, "quest.jino"))
             {

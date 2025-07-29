@@ -30,7 +30,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "我完成了你的任务, 先生。 这是你的... 西班牙朋友。 ";
                 link.l1.go = "Sharlie_14";
 			}
-			//<—— 加斯科涅人的负担 */
+			//< —加斯科涅人的负担 */
 			
 			//--> 迷你任务"德吕克" (德吕克再次入狱) 
 			if (CheckAttribute(pchar, "questTemp.Del_Rostovshik"))
@@ -49,7 +49,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l2 = "没, 我还在考虑。 ";
 				link.l2.go = "exit";
 			}
-			//<—— 迷你任务"德吕克"
+			//< —迷你任务"德吕克"
 		break;
 		
 		case "Sharlie":
@@ -60,7 +60,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Sharlie_1":
-			dialog.text = "啊, 这就不一样了。 我也希望我的钱能还回来... 这个福尔克.德吕克是个奇怪的家伙。 他借了一笔相对小额的钱 --五千比索。 他只是不想还, 开始躲藏。 最后, 利息累积到了原始债务的数额, 他发现自己进了监狱。 ";
+			dialog.text = "啊, 这就不一样了。 我也希望我的钱能还回来... 这个福尔克.德吕克是个奇怪的家伙。 他借了一笔相对小额的钱 —五千比索。 他只是不想还, 开始躲藏。 最后, 利息累积到了原始债务的数额, 他发现自己进了监狱。 ";
 			link.l1 = "也就是说, 他的债务目前累积到了一万? ";
 			link.l1.go = "Sharlie_2";
 		break;
@@ -282,7 +282,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Del_Deluck_5":
-			dialog.text = "太好了! 你知道接下来该怎么做 --和上次一样。 这是文件 --把它们交给监狱长。 和你做生意很愉快, 船长。 ";
+			dialog.text = "太好了! 你知道接下来该怎么做 —和上次一样。 这是文件 —把它们交给监狱长。 和你做生意很愉快, 船长。 ";
 			link.l1 = "这种情况没什么愉快的。 再见。 ";
 			link.l1.go = "exit";
 			RemoveItems(pchar, "gold_dublon", 100);
@@ -295,7 +295,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddLandQuestMark(characterFromId("FortFranceJailOff"), "questmarkmain");
 			DelLandQuestMark(npchar);
 		break;
-		//<—— 迷你任务"德吕克"
+		//< —迷你任务"德吕克"
 	}
 	UnloadSegment(NPChar.FileDialog2);  // 如果在switch内部的某个地方通过return退出, 不要忘记卸载
 }

@@ -85,7 +85,7 @@ LSC_Q2Utilite_17
 
 LSC_Q2Utilite_18
 {
-玛丽.赛勒斯特
+Mary Celeste
 }
 
 LSC_Q2Utilite_19
@@ -95,5 +95,5 @@ LSC_Q2Utilite_19
 
 LSC_Q2Utilite_20
 {
-双桅纵帆船'玛丽.赛勒斯特'
+双桅纵帆船'Mary Celeste (玛丽·赛勒斯特号)'
 }

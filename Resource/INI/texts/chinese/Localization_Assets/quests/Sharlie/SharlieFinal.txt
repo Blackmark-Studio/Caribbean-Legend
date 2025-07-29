@@ -13,12 +13,12 @@ SharlieFinal_3
 }
 SharlieFinal_4
 {
-凯瑟琳.福克斯死于中暑! 
+Catherine Fox 死于热病! 
 }
 
 SharlieFinal_5
 {
-蒂莫莱翁骑士
+Timoleon骑士
 }
 SharlieFinal_6
 {
@@ -130,25 +130,25 @@ Dega
 
 SharlieFinal_30
 {
-圣格雷戈里奥
+San Gregorio
 }
 
 SharlieFinal_31
 {
-卡洛斯
+Carlos
 }
 SharlieFinal_32
 {
-赫瓦拉
+Gevarra
 }
 
 SharlieFinal_33
 {
-盖伊
+Guy
 }
 SharlieFinal_34
 {
-马什
+Marshe
 }
 
 SharlieFinal_35
@@ -203,12 +203,12 @@ de Montoya
 
 SharlieFinal_46
 {
-"阴影号"舰载小帆船
+"Shadow (阴影号)"舰载小帆船
 }
 
 SharlieFinal_47
 {
-"阴影号"上的全部火药储备爆炸了! 
+"Shadow"号上的全部火药储备爆炸了! 
 }
 
 SharlieFinal_48
@@ -222,7 +222,7 @@ SharlieFinal_49
 }
 SharlieFinal_50
 {
-"圣基特里亚号"的
+"Santa Quiteria (圣基特里亚号)"
 }
 
 SharlieFinal_51
@@ -273,7 +273,7 @@ SharlieFinal_60
 
 SharlieFinal_61
 {
-伊察的宝库已打开
+Itzha 的宝库已打开
 }
 
 SharlieFinal_62

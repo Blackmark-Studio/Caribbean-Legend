@@ -13,7 +13,7 @@ RedChieftain_3
 }
 RedChieftain_4
 {
-开曼部落
+凯门鳄部落
 }
 
 RedChieftain_5
@@ -27,5 +27,5 @@ RedChieftain_6
 }
 RedChieftain_7
 {
-开曼部落
+凯门鳄部落
 }

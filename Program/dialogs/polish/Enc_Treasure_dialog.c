@@ -38,14 +38,14 @@ void ProcessDialogEvent()
 
         case "Map_NotBuy":
             dialog.Text = "Zapewniam cię, że się wzbogacisz. Opakuję to dla ciebie w płótno i w chustkę, jeśli chcesz.";
-			Link.l1 = "Zostań tam, zaraz wracam!";
+			Link.l1 = "Zostań tu, zaraz wracam!";
 			Link.l1.go = "exit";
 		break;
 		
 		case "First time":
 			Diag.TempNode = "First time";
 
-			dialog.Text = "Pssst... Słuchaj tutaj... Mam dla ciebie coś interesującego...";
+			dialog.Text = "Pssst... Słuchaj... Mam dla ciebie coś interesującego...";
 			Link.l1 = "O czym ty mówisz?";
 			Link.l1.go = "map_treasure_1";
 		break;
@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "map_treasure_buy":
-            dialog.Text = "Proszę bardzo. Teraz stajesz się bogaty!";
+            dialog.Text = "Proszę bardzo. Teraz będziesz bogaty!";
 			Link.l1 = "Dzięki!";
 			Link.l1.go = "exit";
 			RemoveDublonsFromPCharTotal(sti(Pchar.GenQuest.TreasureMoney));// Addon-2016 Jason

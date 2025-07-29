@@ -46,7 +46,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "guardoftruth_4":
-            dialog.text = "这是个黑暗的故事... Blaze被谋杀时, 每个人都怀疑沙克, 因为在尸体上发现了他的项链 --一颗鲨鱼牙。 另外, 有人看到沙克那晚在Blaze的住所。 沙克在被打上黑标记之前逃离了宝藏岛。 他拜访了黑暗牧师, 用他的护卫舰换了一艘双桅船。 现在没人知道他在哪里。 扎卡里后来把护卫舰卖给了威廉.帕特森。 ";
+            dialog.text = "这是个黑暗的故事... Blaze被谋杀时, 每个人都怀疑沙克, 因为在尸体上发现了他的项链 —一颗鲨鱼牙。 另外, 有人看到沙克那晚在Blaze的住所。 沙克在被打上黑色印记之前逃离了宝藏岛。 他拜访了黑暗牧师, 用他的护卫舰换了一艘双桅船。 现在没人知道他在哪里。 扎卡里后来把护卫舰卖给了威廉.帕特森。 ";
             link.l1 = "这个帕特森是谁? ";
             link.l1.go = "guardoftruth_5";
         break;

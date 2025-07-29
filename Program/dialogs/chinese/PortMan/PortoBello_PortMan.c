@@ -31,7 +31,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 					link.l1.go = "SharkGoldFleet_11";
 				}
 			}
-			//<—— 与阿库拉联动任务
+			//< —与阿库拉联动任务
 		break;
 
 		case "Portobello_ratP_1":
@@ -54,7 +54,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "SharkGoldFleet_01":
 			dialog.text = "你这么说也算一种方式! 好吧, 算了, 能怎么办呢。 我们会及时和你会合... 我是说我的时间, 别在意。 听着, 你有可能回去吗? ";
-			link.l1 = "嗯, 其实我本来打算在这里卖货, 然后 --是的, 回加拉加斯... ";
+			link.l1 = "嗯, 其实我本来打算在这里卖货, 然后 —是的, 回加拉加斯... ";
 			link.l1.go = "SharkGoldFleet_02";
 		break;
 		

@@ -85,7 +85,7 @@ colony_17
 
 colony_18
 {
-乔纳森.福克斯
+Jonathan Fox
 }
 
 colony_19

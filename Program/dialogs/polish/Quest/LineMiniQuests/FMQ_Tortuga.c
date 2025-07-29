@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "girl_exit":
-			dialog.text = "Co za szkoda. Będę musiał znaleźć kogoś innego, kto dotrzyma towarzystwa mnie i moim przyjaciółkom... Pożegnanie.";
+			dialog.text = "Co za szkoda. Będę musiała znaleźć kogoś innego, kto dotrzyma towarzystwa mnie i moim przyjaciółkom... Żegnam.";
 			link.l1 = "Żegnaj.";
 			link.l1.go = "girl_exit_1";
 		break;
@@ -90,7 +90,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "girl_6":
-			dialog.text = "(chichot) Och tak, panie, jestem pewna, że możemy w tym pomóc! Tortuga zawsze ma coś do zaoferowania. Jak i ja... Dlaczego, jestem skłonna zrobić niemal *wszystko* po usłyszeniu dobrej morskiej opowieści. Tak bardzo je kocham! Pewien kapitan raz opowiedział mi niezwykłą historię o tym, jak udało mu się uniknąć pozostawienia na bezludnej wyspie, budując tratwę z żółwi morskich. Co za dzielny człowiek! Czy ty byś mógł?";
+			dialog.text = "(chichot) Och tak, panie, jestem pewna, że możemy w tym pomóc! Tortuga zawsze ma coś do zaoferowania. Jak i ja... dlatego, jestem skłonna zrobić niemal *wszystko* po usłyszeniu dobrej morskiej opowieści. Tak bardzo je kocham! Pewien kapitan raz opowiedział mi niezwykłą historię o tym, jak udało mu się uniknąć pozostawienia na bezludnej wyspie, budując tratwę z żółwi morskich. Co za dzielny człowiek! Czy ty byś mógł?";
 			link.l1 = "Co mógłbym zrobić?";
 			link.l1.go = "girl_7";
 		break;
@@ -102,16 +102,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "girl_8":
-			dialog.text = "Może później. Pracuję jako służący w pałacu naszego gubernatora. Przyjdź tam dziś wieczorem o szóstej i znajdź mnie i mojego przyjaciela w altanie. Wtedy opowiesz nam o swoich przygodach...";
+			dialog.text = "Może później. Pracuję jako służąca w pałacu naszego gubernatora. Przyjdź tam dziś wieczorem o szóstej i znajdź mnie i mojego przyjaciela w altanie. Wtedy opowiesz nam o swoich przygodach...";
 			link.l1 = "Brzmi jak zaproszenie do pokazu, którego nie mogę odmówić. Do zobaczenia o szóstej wieczorem.";
 			link.l1.go = "girl_9";
-			link.l2 = "Wkradanie się do pałacu gubernatora? To brzmi trochę zbyt ryzykownie dla mnie. Odpuszczę sobie, kochana. Znajdziesz mnie w tawernie, jeśli chcesz towarzystwa prawdziwego mężczyzny. Jo ho ho!";
+			link.l2 = "Wkradanie się do pałacu gubernatora? To brzmi trochę zbyt ryzykownie dla mnie. Odpuszczę sobie, kochana. Znajdziesz mnie w karczmie, jeśli chcesz towarzystwa prawdziwego mężczyzny. Jo ho ho!";
 			link.l2.go = "girl_exit_2";
 		break;
 		
 		case "girl_exit_2":
 			dialog.text = "Phi. Nieważne, znajdę sobie lepszego i większego mężczyznę niż ty. Twoja sakwa wygląda na zbyt małą. Niech cię piekło pochłonie.";
-			link.l1 = "Nawet pancernik wyglądałby mały, gdyby płynął przez twoją Przejście Windward.";
+			link.l1 = "Nawet pancernik wyglądałby mały, gdyby płynął przez twoję przejście.";
 			link.l1.go = "girl_exit_1";
 		break;
 		
@@ -140,7 +140,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "wife_1":
-			dialog.text = "Och, są niedysponowani i nie mogą przybyć. Ale nie myśl o nich, napijmy się wina i porozmawiajmy... Ach, gdybyś tylko wiedział, jak nudno i samotnie się tu czuję! Tortuga to plugawy nora pełna szumowin, łotrów i piratów! Piraci! I wreszcie, godny dżentelmen w moim domu! Chciałabym, żeby mój mąż robił więcej interesów z ludźmi twojej klasy i talentów! Ale nie, nic tylko piraci, piraci wszędzie! Czy słyszałeś o tej nowej modzie, która staje się popularna w Paryżu na dworze królewskim Jego Królewskiej Mości? Jaka jest twoja opinia na ten temat?";
+			dialog.text = "Och, są niedysponowani i nie mogą przybyć. Ale nie myśl o nich, napijmy się wina i porozmawiajmy... Ach, gdybyś tylko wiedział, jak nudno i samotnie się tu czuję! Tortuga to plugawa nora pełna szumowin, łotrów i piratów! Piraci! I wreszcie, godny dżentelmen w moim domu! Chciałabym, żeby mój mąż robił więcej interesów z ludźmi twojej klasy i talentów! Ale nie, nic tylko piraci, piraci wszędzie! Czy słyszałeś o tej nowej modzie, która staje się popularna w Paryżu na dworze królewskim Jego Królewskiej Mości? Jaka jest twoja opinia na ten temat?";
 			link.l1 = "Przykro mi, moja opinia na temat czego dokładnie? Piratów? Czy mody?";
 			link.l1.go = "wife_2";
 		break;
@@ -191,14 +191,14 @@ void ProcessDialogEvent()
 		
 		case "wife_5":
 			pchar.questTemp.FMQT.Honour = "true"; // вар 1
-			dialog.text = "Nie spodziewałem się tego po tobie... Skrzynia... Zostaw to na później, najpierw musimy znaleźć duplikat klucza, który został skradziony przez brudnego pirata. Teraz baluje w lokalnej spelunce, pijąc jak świnia. Spiesz się i przynieś mi ten duplikat klucza. Będę na ciebie czekać.";
+			dialog.text = "Nie spodziewałam się tego po tobie... Skrzynia... Zostawmy to na później, najpierw musimy znaleźć duplikat klucza, który został skradziony przez brudnego pirata. Teraz baluje w lokalnej spelunce, pijąc jak świnia. Spiesz się i przynieś mi ten duplikat klucza. Będę na ciebie czekać.";
 			link.l1 = "Nie traćmy czasu wtedy!";
 			link.l1.go = "wife_7";
 		break;
 		
 		case "wife_6":
 			pchar.questTemp.FMQT.Bed = "true"; // вар 2 
-			dialog.text = "Nie pożałujesz tego, kapitanie. Najpierw musimy znaleźć duplikat klucza, który został skradziony przez plugawą piratę. On teraz biesiaduje w miejscowej spelunce, pijąc jak świnia. Spiesz się i przynieś mi ten duplikat klucza. Będę na ciebie czekał.";
+			dialog.text = "Nie pożałujesz tego, kapitanie. Najpierw musimy znaleźć duplikat klucza, który został skradziony przez plugawego pirata. Teraz biesiaduje w miejscowej spelunce, pijąc jak świnia. Spiesz się i przynieś mi ten duplikat klucza. Będę na ciebie czekała.";
 			link.l1 = "Nie traćmy czasu!";
 			link.l1.go = "wife_7";
 		break;
@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 		case "wife_8":
 			DelLandQuestMark(npchar);
 			PlaySound("Voice\English\LE\Marselina\Marselina_Levasser_01.wav");
-			dialog.text = "Kapitan "+GetFullName(pchar)+"! Mój mój! Co za mężczyzna w moich prywatnych komnatach! Jesteś zaskoczony? Jesteś jedynym gościem tutaj tej nocy. (chichot)";
+			dialog.text = "Kapitan "+GetFullName(pchar)+"! Prosze prosze! Co za mężczyzna w moich prywatnych komnatach! Jesteś zaskoczony? Jesteś jedynym gościem tej nocy. (chichot)";
 			link.l1 = "Jestem zaskoczony, madame. Ale wcale mi to nie przeszkadza. Czy chodzi o interesy czy o przyjemność?";
 			link.l1.go = "wife_9";
 		break;
@@ -233,7 +233,7 @@ void ProcessDialogEvent()
 		
 		case "wife_10":
 			dialog.text = "Ach... Mój mąż ma skrzynię pełną pieniędzy i biżuterii. Nienawidzę go i chcę większego zasiłku za moje cierpienia.";
-			link.l1 = "Madame, wyglądacie uroczo. Nie potrzebujecie więcej klejnotów ani paryskich strojów, to już jest oczywiste dla każdego mężczyzny na Hispanioli.";
+			link.l1 = "Madame, wyglądasz uroczo. Nie potrzebujesz więcej klejnotów ani paryskich strojów, to już jest oczywiste dla każdego mężczyzny na Hispanioli.";
 			link.l1.go = "wife_11";
 		break;
 		
@@ -247,7 +247,7 @@ void ProcessDialogEvent()
 			dialog.text = "Uważaj, monsieur kapitanie, bo stracę głowę! (kokieteryjny chichot) Mój mąż ostatnio nie daje mi ani grosza. Ten brutal sprowadza do naszego domu pospolite ladacznice i w ogóle mnie nie zauważa!\nWiem, gdzie ukrywa część swojego nielegalnie zdobytego skarbu, jest w skrzyni w jego biurze. To są moje pieniądze jako żony i kobiety. Pomóż mi odzyskać to, co mi się należy, a zostaniesz nagrodzony... Złotem i... innymi rozkosznymi rzeczami.";
 			link.l1 = "Dobrze. Zrobię to. Gdzie jest ta skrzynia i jak ją otworzyć?";
 			link.l1.go = "wife_13";
-			link.l2 = "Ha! Nie ma pytań, mogę to zrobić dla takiej kobiety jak ty. Nie pożałujesz tego, moja droga. Zdobędziemy pieniądze i spędzimy razem bardzo przyjemny czas. Gdzie jest ta skrzynia i jak ją otworzyć?";
+			link.l2 = "Ha! Nie mam pytań, mogę to zrobić dla takiej kobiety jak ty. Nie pożałujesz tego, moja droga. Zdobędziemy pieniądze i spędzimy razem bardzo przyjemny czas. Gdzie jest ta skrzynia i jak ją otworzyć?";
 			link.l2.go = "wife_14";
 			link.l3 = "Nie ja, madame. Nie jestem takim dżentelmenem, by w jedną noc przyprawić rogi i okraść człowieka. W każdym razie nie w ten sposób. Znajdź sobie innego aktora do tej sztuki.";
 			link.l3.go = "wife_exit_2";
@@ -255,20 +255,20 @@ void ProcessDialogEvent()
 		
 		case "wife_13":
 			pchar.questTemp.FMQT.Honour = "true"; // вар 1
-			dialog.text = "Och... Coraz bardziej mnie intrygujesz... Najpierw powinniśmy zwrócić duplikat klucza, który został skradziony przez plugawca pirata. Teraz biesiaduje w miejscowej spelunce, pijąc jak świnia. Pośpiesz się i przynieś mi duplikat. Będę czekał.";
+			dialog.text = "Och... Coraz bardziej mnie intrygujesz... Najpierw powinniśmy odzystać duplikat klucza, który został skradziony przez plugawego pirata. Teraz biesiaduje w miejscowej spelunce, pijąc jak świnia. Pośpiesz się i przynieś mi duplikat. Będę czekała.";
 			link.l1 = "Nie traćmy więc czasu!";
 			link.l1.go = "wife_7";
 		break;
 		
 		case "wife_14":
 			pchar.questTemp.FMQT.Bed = "true"; // вар 2 
-			dialog.text = "Zachowaj spokój, monsieur, na to jeszcze przyjdzie czas. (chichot) Najpierw powinniśmy zwrócić duplikat klucza, który został skradziony przez parszywego pirata. Bawi się w lokalnej spelunce, pijąc jak świnia. Pośpiesz się i przynieś mi duplikat. Będę na ciebie czekać. Jesteś pewny, że dasz sobie z tym radę?";
+			dialog.text = "Zachowaj spokój, monsieur, na to jeszcze przyjdzie czas. (chichot) Najpierw powinniśmy odzystać duplikat klucza, który został skradziony przez parszywego pirata. Bawi się w lokalnej spelunce, pijąc jak świnia. Pośpiesz się i przynieś mi duplikat. Będę na ciebie czekać. Jesteś pewny, że dasz sobie z tym radę?";
 			link.l1 = "Nie wątp we mnie, już jestem w drodze.";
 			link.l1.go = "wife_7";
 		break;
 		
 		case "wife_exit_2":
-			dialog.text = "Purytański drań! Znikaj mi z oczu! I nawet nie myśl mówić o tym mojemu mężowi, bo pożałujesz!";
+			dialog.text = "Purytański draniu! Znikaj mi z oczu! I nawet nie myśl mówić o tym mojemu mężowi, bo pożałujesz!";
 			link.l1 = "Żegnaj, kochanie.";
 			link.l1.go = "wife_exit_1";
 		break;
@@ -292,7 +292,7 @@ void ProcessDialogEvent()
 		case "wife_17":
 			RemoveItems(pchar, "kaleuche_key", 1);
 			ChangeItemDescribe("kaleuche_key", "itmdescr_kaleuche_key");
-			dialog.text = "Przyjdź do mnie przed szóstą, mój dzielny sir rycerzu...";
+			dialog.text = "Przyjdź do mnie przed szóstą, mój dzielny rycerzu...";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("FMQT_Deceive");
@@ -307,7 +307,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "wife_19":
-			dialog.text = "Lwie serce!... Idź do gabinetu mojego męża, znajdziesz tam skrzynię. Użyj duplikatu klucza. O tej porze nocy nikogo tam nie ma, więc się nie spiesz. W tej skrzyni są... diamenty. Duża ich ilość. Weź je wszystkie i wróć do mnie. Będę czekać. Nie zdradź mojego zaufania...proszę.";
+			dialog.text = "Lwie serce!... Idź do gabinetu mojego męża, znajdziesz tam skrzynię. Użyj duplikatu klucza. O tej porze nocą nikogo tam nie ma, więc się nie spiesz. W tej skrzyni są... diamenty. Duża ich ilość. Weź je wszystkie i wróć do mnie. Będę czekać. Nie zdradź mojego zaufania... proszę.";
 			link.l1 = "Wkrótce wrócę.";
 			link.l1.go = "wife_20";
 		break;
@@ -325,7 +325,7 @@ void ProcessDialogEvent()
 			DelLandQuestMark(npchar);
 			pchar.quest.FMQT_GemsTimeOver.over = "yes";
 			PlaySound("Voice\English\LE\Marselina\Marselina_Levasser_02.wav");
-			dialog.text = "O, kapitanie! Ja... Ty... Czy to zrobione? Och, a kto to jest?! A-ah!";
+			dialog.text = "O, kapitanie! Ja... Ty... Udało się? Och, a kto to jest?! A-ah!";
 			link.l1 = "... ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("FMQT_MercenAttackRoom");
@@ -341,13 +341,13 @@ void ProcessDialogEvent()
 			DelLandQuestMark(npchar);
 			pchar.quest.FMQT_GemsTimeOver.over = "yes";
 			PlaySound("Voice\English\LE\Marselina\Marselina_Levasser_02.wav");
-			dialog.text = "O kapitanie! Ja... Ty... Czy to zrobione?";
-			link.l1 = "Była drobna komplikacja, ale teraz jest załatwiona. Dlaczego jesteś blada, madame? Wszystko w porządku? Mam klejnoty, to powinno cię rozweselić, prawda?";
+			dialog.text = "O kapitanie! Ja... Ty... Udało się?";
+			link.l1 = "Była drobna komplikacja, ale teraz jest załatwione. Dlaczego jesteś blada, madame? Wszystko w porządku? Mam klejnoty, to powinno cię rozweselić, prawda?";
 			link.l1.go = "wife_23";
 		break;
 		
 		case "wife_23":
-			dialog.text = "Dzięki Bogu! Jestem pomszczony! Mój rycerzu! Ile tam było diamentów?";
+			dialog.text = "Dzięki Bogu! Jestem pomszczona! Mój rycerzu! Ile tam było diamentów?";
 			if (GetCharacterItem(pchar, "jewelry2") >= 100)
 			{
 				link.l1 = "Twój rycerz wrócił z przygody z pełnym workiem łupów. Zostawi połowę dla swojej damy, żeby mogła kupić najlepsze stroje z Paryża. Dotrzymałem ci obietnicy.";
@@ -371,7 +371,7 @@ void ProcessDialogEvent()
 		
 		case "wife_25":
 			RemoveItems(pchar, "jewelry2", 100);
-			Log_Info("You have given diamonds");
+			Log_Info("Przekazałeś diamenty");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Nie jesteś jak... reszta z nich. Osiągasz, co chcesz. Przed tobą świetlana przyszłość. Wiem, że jesteś zajętym człowiekiem, ale... Czy zostaniesz ze mną na chwilę? Nikt nam nie przeszkodzi, obiecuję.";
 			link.l1 = "Zawsze mam czas dla pięknej kobiety takiej jak ty. Czy otworzyć butelkę wina twojego męża?";
@@ -391,7 +391,7 @@ void ProcessDialogEvent()
 		
 		case "wife_26":
 			RemoveItems(pchar, "jewelry2", 100);
-			Log_Info("You have given diamonds");
+			Log_Info("Przekazałeś diamenty");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Myślę, że mogę się bez nich obejść. Jest tu wiele sposobów, by wydać pieniądze. Tak wielu przystojnych i godnych mężczyzn na Tortudze... Dziękuję za wszystko, kapitanie. A propos, proszę zachowaj tę sprawę w tajemnicy, bo mój mąż każe cię powiesić na szubienicy. On nie jest dobrym człowiekiem. Żegnaj.";
 			link.l1 = "Tak po prostu? To było pouczające doświadczenie. Żegnam, madame, również sugeruję, byś milczała o tym, ja też nie jestem dobrym człowiekiem. Ale już o tym wiesz, prawda?";
@@ -411,13 +411,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "wife_28":
-			dialog.text = "Jaki układ, monsieur? Jestem zamężną kobietą, nie robię interesów z innymi mężczyznami! Opuśćcie moje komnaty natychmiast albo zawołam mojego męża i jego strażników!";
+			dialog.text = "Jaki układ, monsieur? Jestem zamężną kobietą, nie robię interesów z innymi mężczyznami! Opuść moje komnaty natychmiast albo zawołam mojego męża i jego strażników!";
 			link.l1 = "Tak po prostu, co? Bardzo dobrze, wierzę, że w takim razie oświecę twego dobrego męża!";
 			link.l1.go = "wife_29";
 		break;
 		
 		case "wife_29":
-			dialog.text = "Wyjdź teraz, ty bezczelny łotrze, albo moi ludzie wrzucą cię do lochu Fortu La Roche! Nie obchodzi mnie twoje groźby! Wynoś się!";
+			dialog.text = "Wyjdź teraz, ty bezczelny łotrze, albo moi ludzie wrzucą cię do lochu Fortu La Roche! Nie obchodzą mnie twoje groźby! Wynoś się!";
 			link.l1 = "...";
 			link.l1.go = "wife_30";
 		break;
@@ -451,19 +451,19 @@ void ProcessDialogEvent()
 		
 		case "pirate_1":
 			PlaySound("Voice\English\tavern\Pyanici-05.wav");
-			dialog.text = "Na co się gapisz? Nalej to!!";
+			dialog.text = "Na co się gapisz? Polewaj!!";
 			link.l1 = "Za twe zdrowie!.. Hej przyjacielu, nie zamierzam tu tracić czasu. Potrzebuję tego klucza, który masz na zbyciu, wiesz o czym mówię. Daj mi go, a nasze drogi się rozejdą: ty będziesz dalej popijał, a ja będę ratował damy w opałach.";
 			link.l1.go = "pirate_2";
 		break;
 		
 		case "pirate_2":
-			dialog.text = "Aww kamracie! Nie słuchałeś niczego, co właśnie powiedziałem! Musisz wyglądać mądrzej, niż naprawdę jesteś... pracując dla tej dziwki. Wiesz, kim jest jej mąż? Niedawno gubernator Levasseur wysłał swojego lojalnego murzyna Kampacho, żeby 'porozmawiał' z miejscowym, wysoko szanowanym kupcem. Czarny zatłukł biedaka na śmierć w jego własnym sklepie! Ten kupiec okazał pewien drobny brak szacunku dla żony gubernatora podczas balu czy coś. A ta sama suka uwiodła mnie swoim wyglądem i jego dublonami\nIstnieje duplikat klucza. Byłem kiedyś przyzwoitym włamywaczem we Francji, więc to była bułka z masłem. Gdyby nie córka komendanta Lyonu... nigdy nie zostałbym piratem. Bah! Pierdol to!";
+			dialog.text = "Aww kamracie! Nie słyszałeś, co właśnie powiedziałem! Musisz wyglądać mądrzej, niż naprawdę jesteś... pracując dla tej dziwki. Wiesz, kim jest jej mąż? Niedawno gubernator Levasseur wysłał swojego lojalnego murzyna Kampacho, żeby 'porozmawiał' z miejscowym, wysoko szanowanym kupcem. Czarny zatłukł biedaka na śmierć w jego własnym sklepie! Ten kupiec okazał pewien drobny brak szacunku dla żony gubernatora podczas balu czy coś. A ta sama suka uwiodła mnie swoim wyglądem i jego dublonami\nIstnieje duplikat klucza. Byłem kiedyś przyzwoitym włamywaczem we Francji, więc to była bułka z masłem. Gdyby nie córka komendanta Lyonu... nigdy nie zostałbym piratem. Bah! Pierdol to!";
 			link.l1 = "To wszystko bardzo smutne, ale porozmawiajmy o interesach. Gdzie jest klucz?";
 			link.l1.go = "pirate_3";
 		break;
 		
 		case "pirate_3":
-			dialog.text = "Słuchasz? Jestem poza grą, kumplu! Byłem na tyle sprytny, by zobaczyć, co nadchodzi! Opuszczam to miejsce na zawsze, jak tylko mój statek będzie gotowy do wypłynięcia. Chcesz klucz, zapłać za niego. Nie bądź skąpy, myślę, że niedługo nie będziesz potrzebować żadnych pieniędzy.";
+			dialog.text = "Słucham? Jestem poza grą, kumplu! Byłem na tyle sprytny, by zobaczyć, co nadchodzi! Opuszczam to miejsce na zawsze, jak tylko mój statek będzie gotowy do wypłynięcia. Chcesz klucz, zapłać za niego. Nie bądź skąpy, myślę, że niedługo nie będziesz potrzebować żadnych pieniędzy.";
 			link.l1 = "Wiesz, masz rację. Nie chcę być zabawką kobiety. Dziękuję za radę i bądź bezpieczny na morzu!";
 			link.l1.go = "pirate_4";
 			link.l2 = "Płacić za to? Tobie? Jesteś żałosnym złodziejem i tchórzem. Powinieneś był zostać w tej dziurze w Lyonie. Kto wie, może miejscowy komendant ulitowałby się nad tobą i pozwolił zdegenerowanemu złodziejowi zostać swoim zięciem. Ja na pewno się nad tobą nie ulituję. Możesz oddać mi klucz po dobroci albo po złości, wybór należy do ciebie.";
@@ -495,7 +495,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pirate_5":
-			dialog.text = "Obrażasz mnie! Do broni, ty łajdaku!";
+			dialog.text = "Obrażasz mnie!? Do broni, ty łajdaku!";
 			link.l1 = "Zobaczymy, jak dobrze potrafisz otwierać sejfy bez rąk!";
 			link.l1.go = "pirate_duel";
 		break;
@@ -541,8 +541,8 @@ void ProcessDialogEvent()
 		
 		case "pirate_dublon":
 			NextDiag.TempNode = "pirate_dublon"; // mitrokosta правка явного бага
-			dialog.text = "Przyniosłeś pięćdziesiąt dubloonów?";
-			link.l1 = "Wiesz, myślę, że możesz się bez nich obejść. Klucz. Na stole.";
+			dialog.text = "Przyniosłeś pięćdziesiąt dublonów?";
+			link.l1 = "Wiesz, myślę, że możesz się bez nich obejść. Klucz. Na stół.";
 			link.l1.go = "pirate_7";
 			if (PCharDublonsTotal() >= 50)
 			{
@@ -565,9 +565,9 @@ void ProcessDialogEvent()
 		case "pirate_8":
 			DelLandQuestMark(npchar);
 			RemoveDublonsFromPCharTotal(50);
-			Log_Info("You have given 50 doubloons");
+			Log_Info("Przekazałeś 50 dublonów");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Dobrze. Użyj swojego rozumu, a może wyjdziesz z tego z kilkoma sztukami ośmiu i głową na karku. Weź klucz i posłuchaj mojej rady. Gratis. Kobieta Levasseura jest głupia jak ryba, ale wierzy, że jest przebiegła. Nie ufaj jej. Trzymaj ptaka w spodniach i pilnuj swoich kieszeni. Nie jest z niej wielki przeciwnik, po prostu bądź ostrożny i unikaj wciągania jej męża do tego\nJeszcze jedna rzecz - w jej buduarze jest skrzynia, gdzie trzyma swoje błyskotki, łatwo ją otworzyć wytrychem. Tam położy swoją działkę. Słyszałeś mnie. Bądź bezpieczny na morzu, bracie. Pamiętaj, bracia przed dziewkami.";
+			dialog.text = "Dobrze. Użyj swojego rozumu, a może wyjdziesz z tego z kilkoma pesos i głową na karku. Weź klucz i posłuchaj mojej rady. Gratis. Kobieta Levasseura jest głupia jak ryba, ale wierzy, że jest przebiegła. Nie ufaj jej. Trzymaj ptaka w spodniach i pilnuj swoich kieszeni. Nie jest z niej wielki przeciwnik, po prostu bądź ostrożny i unikaj wciągania jej męża do tego\nJeszcze jedna rzecz - w jej buduarze jest skrzynia, gdzie trzyma swoje błyskotki, łatwo ją otworzyć wytrychem. Tam położy swoją działkę. Słyszałeś mnie. Bądź bezpieczny na morzu, bracie. Pamiętaj, bracia przed dziewkami.";
 			link.l1 = "Pomóż Bóg, kamracie...";
 			link.l1.go = "pirate_9";
 		break;
@@ -596,14 +596,14 @@ void ProcessDialogEvent()
 		case "mercen":
 			PlaySound("Voice\English\EvilPirates10.wav");
 			dialog.text = "Cholera! Nie spodziewałem się... do diabła z tą kobietą! Mój mistrz kazał mi unikać takich jak ona. Ale praca to praca. I tak cię dorwę.";
-			link.l1 = "Cóż cóż, kumplu... Wygląda na to, że chciała oszukać nas oboje, nie mogę powiedzieć, że jestem zaskoczony. Dlaczego mielibyśmy dalej walczyć? Chcesz roboty? Mam jedną. Masz umiejętności, potrzebuję ludzi takich jak ty w mojej załodze. Jedzenie, koja, regularna płaca, rum i sprawiedliwy udział w łupach. Dam ci na to moje słowo. Co powiesz?";
+			link.l1 = "Prosze prosze, kolego... Wygląda na to, że chciała oszukać nas obu, nie mogę powiedzieć, że jestem zaskoczony. Dlaczego mielibyśmy dalej walczyć? Chcesz roboty? Mam jedną. Masz umiejętności, potrzebuję ludzi takich jak ty w mojej załodze. Jedzenie, koja, regularna płaca, rum i sprawiedliwy udział w łupach. Dam ci na to moje słowo. Co powiesz?";
 			//if(CheckCharacterPerk(pchar, "IronWill") || CheckCharacterPerk(pchar, "HT2") || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 34 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 20) link.l1.go = "mercen_1";
 			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 34) link.l1.go = "mercen_1";
 			else link.l1.go = "mercen_4";
 		break;
 		
 		case "mercen_1":
-			//if(CheckCharacterPerk(pchar, "IronWill")) notification("Iron Will", "IronWill");
+			//if(CheckCharacterPerk(pchar, "IronWill")) notification("Masz żelazną wolę", "IronWill");
 			//if(CheckCharacterPerk(pchar, "HT2")) notification("Mimicry", "Mimicry");
 			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 34) notification("Skill Check Passed", SKILL_LEADERSHIP);
 			//if(GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 20) notification("Skill Check Passed", SKILL_FORTUNE);
@@ -627,11 +627,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mercen_4":
-			//if(!CheckCharacterPerk(pchar, "IronWill")) notification("Perk check failed", "IronWill");
-			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 35) notification("Skill Check Failed (35)", SKILL_LEADERSHIP);
-			//if(GetSummonSkillFromName(pchar, SKILL_FORTUNE) < 21) notification("Skill Check Failed (21)", SKILL_FORTUNE);
+			//if(!CheckCharacterPerk(pchar, "IronWill")) notification("Nie posiadasz zdolności", "IronWill");
+			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 35) notification("Zbyt niska umiejętność (35)", SKILL_LEADERSHIP);
+			//if(GetSummonSkillFromName(pchar, SKILL_FORTUNE) < 21) notification("Zbyt niska umiejętność (21)", SKILL_FORTUNE);
 			dialog.text = "Pięknie gadasz. Ale nie wystarczająco pięknie, jeśli chcesz, by prawdziwi profesjonaliści dołączyli do twoich szeregów. Pamiętaj o tym na przyszłość. Jeśli ją masz.";
-			link.l1 = "Spróbuj. Bądź szybki, mam spotkanie z damą.";
+			link.l1 = "No dalej. Bądź szybki, mam spotkanie z damą.";
 			link.l1.go = "mercen_5";
 			link.l2 = "Nie będzie dziś drugiej szansy. Jestem zajętym człowiekiem, więc nie psujmy dywanu. Nie płacą ci wystarczająco, by umrzeć za jakąś małomiasteczkową putain. Jeśli w ogóle ci zapłacili.";
 			link.l2.go = "mercen_6";

@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 					LinkRandPhrase("你在教堂里做什么, 堕落的灵魂? 我要求你立刻离开, 在士兵在这里找到你并制造屠杀之前! ", "立刻离开圣殿, 你这个嘲笑者! 我永远不会保护像你这样的恶棍! ", "立刻离开我们主的圣殿! 我们这里不需要杀人犯! "));
 				link.l1 = NPCharRepPhrase(pchar,
 					RandPhraseSimple("哦, 来吧, 神父... ", "反正我也不需要你的帮助... "), 
-					LinkRandPhrase("别挡我的路, 神父... ", "我会离开的, 别担心... ", "神父, 别大惊小怪了 --我真的没时间应付这个"));
+					LinkRandPhrase("别挡我的路, 神父... ", "我会离开的, 别担心... ", "神父, 别大惊小怪了 —我真的没时间应付这个"));
 				link.l1.go = "fight";
 				break;
 			} 
@@ -109,7 +109,7 @@ void ProcessDialogEvent()
 				if(CheckAttribute(PChar, "GenQuest.ChurchQuest_1.QuestTown") && PChar.GenQuest.ChurchQuest_1.QuestTown == NPChar.city && CheckAttribute(PChar, "GenQuest.ChurchQuest_1.Complete"))
 				{
 					Dialog.Text = ""+ GetSexPhrase("我的孩子","我的女儿") +"! 很高兴看到你身体健康。 精神饱满。 主一定在我们的事情上帮助了我们, 对吗? ";
-					link.l1 = "是的, "+ RandPhraseSimple("神父", "神父") +", 尽管并非总是一帆风顺, 尽管我花费了更多的时间。 精力和金钱 --你的任务完成了。 ";
+					link.l1 = "是的, "+ RandPhraseSimple("神父", "神父") +", 尽管并非总是一帆风顺, 尽管我花费了更多的时间。 精力和金钱 —你的任务完成了。 ";
 					link.l1.go = "GenQuest_Church_1_Complete_1";
 					break;
 				}
@@ -198,7 +198,7 @@ void ProcessDialogEvent()
 				link.l4 = "我准备好祈祷了, 神父。 ";
 				link.l4.go = "prayer";
 			}
-			//<—— 传奇
+			//< —传奇
 			
 			// 战舰, 30.05.11。 来自荣誉事务"神圣审判"的迷你任务。 
 			if(CheckAttribute(Pchar, "QuestTemp.AffairOfHonor.GodJudgement.CanSpeakPriest") && AffairOfHonor_GetCurQuest() == "GodJudgement" &&
@@ -224,7 +224,7 @@ void ProcessDialogEvent()
 		//--> 奇卡.贡萨莱斯
 		case "saga" :
 			dialog.text = "我将以1000比索谦卑地执行你的意愿。 ";
-			Link.l1 = "给你, 神父 --请收下这些硬币。 ";
+			Link.l1 = "给你, 神父 —请收下这些硬币。 ";
 			Link.l1.go = "saga_1";
 		break;
 		
@@ -284,7 +284,7 @@ void ProcessDialogEvent()
 			Link.l1 = "也许吧。 愿上帝的旨意成就。 ";
 			Link.l1.go = "saga_4";
 		break;
-		// <—— 奇卡.贡萨莱斯
+		// < —奇卡.贡萨莱斯
 		
 		// --> 解除诅咒的治疗
 		case "treatment":
@@ -478,7 +478,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.Saga.JessSeekTreatment"); // 如果有的话
 			DeleteAttribute(pchar, "questTemp.Saga.JessFindTreatment"); // 如果有的话
 		break;
-		//<—— 传奇
+		//< —传奇
 		
 		// 教堂 GenQuest_2 -->	
 		case "GenQuest_Church_2_Start_1":
@@ -983,7 +983,7 @@ void ProcessDialogEvent()
 			NPChar.GenQuest.ChurchQuest_2.GiveQuestDateParam = iMonth;
 			addLiberMisBonus();
 		break;
-		// <—— 教堂任务
+		// < —教堂任务
 
 		case "donation":
 			dialog.Text = "当然, " + GetSexPhrase("我的孩子", "我的女儿") + "。 你想向神圣的教会捐赠多少? ";
@@ -1010,7 +1010,7 @@ void ProcessDialogEvent()
 				Link.l5 = "神父, 我想以他人名义进行捐赠。 我是按要求这么做的。 ";
 				Link.l5.go = "HostessChurch";
 			}
-			//<<—— 妓院老板娘捐赠任务
+			//<< —妓院老板娘捐赠任务
 		break;
 
 		case "No donation":
@@ -1128,7 +1128,7 @@ void ProcessDialogEvent()
 	            link.l10 = "神父, 我从" + XI_ConvertString("Colony" + pchar.GenQuest.Monkletter.StartCity) + "镇的一位修士那里给你带来了文件。 ";
 	            link.l10.go = "Monkletter";
             }
-			//<—— 教堂公文
+			//< —教堂公文
 			//--> Jason 运送祈祷书
 			if (CheckAttribute(pchar, "GenQuest.Churchbooks") && pchar.GenQuest.Churchbooks == "go" && sti(npchar.nation) == sti(pchar.GenQuest.Churchbooks.Nation) && npchar.city != pchar.GenQuest.Churchbooks.StartCity)
 			{
@@ -1140,7 +1140,7 @@ void ProcessDialogEvent()
 	            link.l11 = "父亲, 我为你的教区带来了祈祷书。 ";
 	            link.l11.go = "Churchbooks_2";
             }
-			//<—— 运送祈祷书
+			//< —运送祈祷书
 			link.l99 = "我改变主意了, 我有很多事要做。 ";
 			link.l99.go = "exit";
 		break;
@@ -1236,7 +1236,7 @@ void ProcessDialogEvent()
 			items[FindItem("Bible")].Name = "itmname_ChurchGenQuest1Bible";	// 更改名称。 之后要改回来! 
 			ChangeItemDescribe("Bible", "itmdescr_ChurchGenQuest1Bible"); // 更改描述。 之后要改回来! 
 			items[FindItem("Bible")].City = XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Gen"); // 变量。 之后删除! 
-			// <—— 物品"手稿"
+			// < —物品"手稿"
 		break;
 			
 		case "GenQuest_Church_1_Dialog_1_2":	// 场景2б-а和2б-б
@@ -1261,7 +1261,7 @@ void ProcessDialogEvent()
 			PChar.GenQuest.ChurchQuest_1.CapShipName = sld.Ship.Name;
 			PChar.GenQuest.ChurchQuest_1.NoCapColony = NPChar.city;
 			PChar.GenQuest.ChurchQuest_1.CapColony = GetColonyExpect2Colonies(NPChar.city, PChar.GenQuest.ChurchQuest_1.QuestTown);
-			// <—— 生成船长
+			// < —生成船长
 			
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_1.2BA_Scene")) // 场景2б-а
 			{
@@ -1366,7 +1366,7 @@ void ProcessDialogEvent()
 			NPChar.GenQuest.ChurchQuest_1.GiveQuestDateParam = iMonth;
 			addLiberMisBonus();
 			break;
-		// <—— 教堂通用任务_1
+		// < —教堂通用任务_1
 
         case "healthAdd_1":
             if (stf(pchar.Health.maxHP) == 60.0) // 极好
@@ -1594,7 +1594,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "GenQuest.Monkletter");
 			addLiberMisBonus();
 		break;
-		//<—— 教堂公文
+		//< —教堂公文
 		
 		//--> Jason 运送祈祷书
 		case "Churchbooks":

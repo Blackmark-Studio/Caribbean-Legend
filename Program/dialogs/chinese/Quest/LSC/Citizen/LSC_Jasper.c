@@ -66,7 +66,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "First time";
 		break;
 		
-//-------------------------------------—— 问答区块 ---------------------------------------------
+//------------------------------------- —问答区块 ---------------------------------------------
 		case "int_quests":
 			dialog.text = "当然可以。 如果我能回答, 我会回答你。 问吧。 ";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
@@ -120,9 +120,9 @@ void ProcessDialogEvent()
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
 		break;
-// <—— 问答区块
+// < —问答区块
 		
-//---------------------------------------—— 特殊反应 -----------------------------------------------
+//--------------------------------------- —特殊反应 -----------------------------------------------
 		// 发现玩家在箱子里
 		case "Man_FackYou":
 			dialog.text = LinkRandPhrase("你在那里做什么, 啊? 小偷! ", "看看那个! 我一沉思, 你就决定检查我的箱子! ", "决定检查我的箱子? 你不会得逞的! ");
@@ -173,7 +173,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;
-// <—— 特殊反应
+// < —特殊反应
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

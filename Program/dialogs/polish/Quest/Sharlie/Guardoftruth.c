@@ -1013,7 +1013,7 @@ void ProcessDialogEvent()
 			LAi_CharacterDisableDialog(npchar);
 			npchar.lifeday = 3;
 			GiveItem2Character(pchar, "jewelry33");
-			Log_Info("You've received a gold ostensory");
+			Log_Info("Otrzymałeś złoty stenogram");
 			PlaySound("interface\important_item.wav");
 			if (CheckAttribute(npchar, "quest.nomoney"))
 			{
@@ -1041,7 +1041,7 @@ void ProcessDialogEvent()
 		
 		case "bandos_mush_1":
 			dialog.text = "Czy przyniosłeś pieniądze?";
-			link.l1 = "Co za głupie pytanie. Nie, przyszedłem tutaj, żeby zbierać Manga Rosas... Dlaczego myślisz, że w ogóle bym tu przyszedł?";
+			link.l1 = "Co za głupie pytanie. Nie, przyszedłem tutaj, żeby zbierać Manga Rose... Dlaczego myślisz, że w ogóle bym tu przyszedł?";
 			link.l1.go = "bandos_mush_2";
 		break;
 		
@@ -1166,7 +1166,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "barty_14":
-			dialog.text = "Tu. Ten turkusowy pierścień tutaj. Sama mi go dała.";
+			dialog.text = "Prosze. Ten turkusowy pierścień tutaj. Sama mi go dała.";
 			link.l1 = "Doskonale. Daj to tutaj i znikaj z mojego pola widzenia!";
 			link.l1.go = "barty_15";
 			// belamour legendary edition -->
@@ -1177,7 +1177,7 @@ void ProcessDialogEvent()
 		case "barty_15a":
 			DialogExit();
 			GiveItem2Character(pchar, "jewelry29");
-			Log_Info("You received a turquoise ring");
+			Log_Info("Otrzymałeś pierścionek z turkusem");
 			PlaySound("interface\important_item.wav");
 			LAi_SetActorType(pchar);
 			// если не надет пистоль или мушкет, то выдадим строевой -->
@@ -1194,7 +1194,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(pchar, "nobility", 5);
 			// <-- legendary edition
 			GiveItem2Character(pchar, "jewelry29");
-			Log_Info("You received a turquoise ring");
+			Log_Info("Otrzymałeś pierścionek z turkusem");
 			PlaySound("interface\important_item.wav");
 			chrDisableReloadToLocation = false;//открыть локацию
 			LAi_LocationDisableOfficersGen("Cumana_CaveEntrance", false);//офицеров пускать
@@ -1226,7 +1226,7 @@ void ProcessDialogEvent()
 		
 		case "spa_hunter_2":
 			dialog.text = "Jesteś prawdziwym błaznem, prawda, żabko? No to zobaczmy, jak twoja krew wygląda na ziemi!";
-			link.l1 = "Będzie wyglądać tak samo jak twój, idioto. Pozwól, że zafunduję ci lekcję anatomii!";
+			link.l1 = "Będzie wyglądać tak samo jak twoja, idioto. Pozwól, że zafunduję ci lekcję anatomii!";
 			link.l1.go = "spa_hunter_3";
 		break;
 		

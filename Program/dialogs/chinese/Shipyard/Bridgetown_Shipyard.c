@@ -12,7 +12,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			// 荷兰 Gambit (荷兰策略) 
 			if (CheckAttribute(pchar, "questTemp.HWIC.Eng") && pchar.questTemp.HWIC.Eng == "GotoBridgetown" && !CheckAttribute(npchar, "quest.HWICTalked"))
             {
-                link.l1 = "我正载着一批咖啡前往布鲁维尔德, 想再多买些货物, 但问题是: 我从一个退伍军人那里买的这艘双桅横帆船, 装了24门重炮, 数量多到吓人。 你知道, 我又不是去参战。 我想把这些炮全卖给你, 然后买12门六磅炮 --吓唬海盗足够用了。 剩下的空间我要装货物。 ";
+                link.l1 = "我正载着一批咖啡前往布鲁维尔德, 想再多买些货物, 但问题是: 我从一个退伍军人那里买的这艘双桅横帆船, 装了24门重炮, 数量多到吓人。 你知道, 我又不是去参战。 我想把这些炮全卖给你, 然后买12门六磅炮 —吓唬海盗足够用了。 剩下的空间我要装货物。 ";
                 link.l1.go = "ShipyardDone";
 			}
 		break;

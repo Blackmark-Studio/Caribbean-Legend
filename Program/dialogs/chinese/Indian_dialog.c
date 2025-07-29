@@ -591,7 +591,7 @@ link.l1.go = "hayamee_1_1";
 		
 		case "hayamee_10":
 			dialog.text = "不是玉。 它是闪亮的, 白人很看重它。 ";
-			link.l1 = "祖母绿? 祖母绿珠子? ";
+			link.l1 = "翡翠? 翡翠珠子? ";
 			link.l1.go = "hayamee_11";
 		break;
 		

@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         //--> 肺结核的代价
         case "Consumption":
             dialog.text = "司令官说没有危险。 那些太好奇的人最后都被锁在地牢里了。 抱歉, 我不是那种人。 ";
-            link.l1 = "是这样吗? 一个酒馆老板竟然不想听谣言 --这可真新鲜! 也许 pesos 的叮当声能让你重新产生好奇心? ";
+            link.l1 = "是这样吗? 一个酒馆老板竟然不想听谣言 —这可真新鲜! 也许 pesos 的叮当声能让你重新产生好奇心? ";
             link.l1.go = "Consumption_1";
         break;
         
@@ -53,13 +53,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "Consumption_3":
-            dialog.text = "谁在乎呢, 先生? 谁在乎囚犯? 社会的败类 --那些穿丝绸的大人物是这么说的。 曾经有一位医生在地牢里工作, 试图治愈那些可怜的灵魂。 但他没坚持多久, 似乎也被疾病除掉了。 现在司令官不让人进去, 我们的当局也不关注这类事情, 尤其是当他们可以少付监狱口粮的时候。 ";
+            dialog.text = "谁在乎呢, 先生? 谁在乎囚犯? 社会的败类 —那些穿丝绸的大人物是这么说的。 曾经有一位医生在地牢里工作, 试图治愈那些可怜的灵魂。 但他没坚持多久, 似乎也被疾病除掉了。 现在司令官不让人进去, 我们的当局也不关注这类事情, 尤其是当他们可以少付监狱口粮的时候。 ";
             link.l1 = "有意思, 但这种疾病到底有什么可怕的, 让我们被锁在坚固的围墙里, 像忏悔室里的修女一样低语? ";
             link.l1.go = "Consumption_4";
         break;
         
         case "Consumption_4":
-            dialog.text = "我很难告诉你, 但这里有过一个家伙。 他因走私被抓, 关了大约半年, 直到他的伙伴把他赎出来。 嗯, 你知道的 --他们给需要的人量金子, 按要求等了那么久, 那家伙就出来了。 但从那以后他就疯了。 ";
+            dialog.text = "我很难告诉你, 但这里有过一个家伙。 他因走私被抓, 关了大约半年, 直到他的伙伴把他赎出来。 嗯, 你知道的 —他们给需要的人量金子, 按要求等了那么久, 那家伙就出来了。 但从那以后他就疯了。 ";
             link.l1 = "比舱底的老鼠还疯? ";
             link.l1.go = "Consumption_5";
         break;
@@ -99,7 +99,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "Consumption_9":
-            dialog.text = "嗯, 我能说什么... 上校看起来是一个非常关心自己安全的人。 当然, 由于海盗。 土匪。 印第安人和其他败类, 这些地方并不安全, 但司令官先生出门从不离开几个保镖。 他在这个城市有一座豪宅, 他把它变成了一个小堡垒 --他的仆人装备精良, 窗户都上了闩。 ";
+            dialog.text = "嗯, 我能说什么... 上校看起来是一个非常关心自己安全的人。 当然, 由于海盗。 土匪。 印第安人和其他败类, 这些地方并不安全, 但司令官先生出门从不离开几个保镖。 他在这个城市有一座豪宅, 他把它变成了一个小堡垒 —他的仆人装备精良, 窗户都上了闩。 ";
             link.l1 = "但白天他在监狱里服役, 不是吗? ";
             link.l1.go = "Consumption_10";
         break;
@@ -137,7 +137,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             }
             npchar.quest.Consumption_1 = "true";
         break;
-        //<—— 肺结核的代价
+        //< —肺结核的代价
         
         case "guardoftruth":
             dialog.text = "我记得他。 经常来我的酒馆, 但不多说话。 喝几杯朗姆酒, 和一些顾客低语几句就走了。 像那艘护卫舰上的每个人一样, 非常阴郁和严肃。 看起来很危险的雇佣兵, 随时准备好刀刃。 有传言说那艘护卫舰装满了宝藏, 但我不相信这样的故事。 贵重货物从来不会在没有护航的情况下用单艘船运输。 他们在这里待了一天, 然后离开了。 我听说去了欧洲。 这就是我所知道的。 ";

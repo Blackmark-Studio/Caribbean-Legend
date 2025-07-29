@@ -19,8 +19,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "First time":
-			dialog.text = "Czego chcecie?";
-			link.l1 = "Nic.";
+			dialog.text = "Czego chcesz?";
+			link.l1 = "Niczego.";
 			link.l1.go = "exit";
 		break;
 
@@ -58,13 +58,13 @@ void ProcessDialogEvent()
 		case "DiegoDeLanda_Meeting_2":
 			if (CheckAttribute(pchar, "questTemp.DiegoDeLanda_SantaMisericordia"))
 			{
-				dialog.text = "Wiecie, co jest wyjątkowego w tym grobowcu? Spoczywają tu dwie dusze, związane... więzami krwi. Ojciec i syn de Alameda. Jeden padł z rąk grzeszników, drugi... Hm, odnalazł swoją drogę do Pana.";
+				dialog.text = "Wiesz, co jest wyjątkowego w tym grobowcu? Spoczywają tu dwie dusze, związane... więzami krwi. Ojciec i syn de Alamida. Jeden padł z rąk grzeszników, drugi... Hm, odnalazł swoją drogę do Pana.";
 				link.l1 = "Dziennik dona Fernando zaprowadził mnie tutaj.";
 				link.l1.go = "DiegoDeLanda_SantaMisericordia_2";
 			}
 			if (CheckAttribute(pchar, "questTemp.DiegoDeLanda_LadyBeth"))
 			{
-				dialog.text = "Widzieliście panią Bishop? Smutny los, prawda? Ale obawiam się, że zasłużony.";
+				dialog.text = "Widziałeś panią Bishop? Smutny los, prawda? Ale obawiam się, że zasłużony.";
 				link.l1 = "Zna pan Elizabeth?";
 				link.l1.go = "DiegoDeLanda_LadyBeth_2";
 			}
@@ -77,14 +77,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "DiegoDeLanda_Meeting_Third_2":
-			dialog.text = "\nJeszcze trzy. Przy sześciu wszystko się wyjaśni.";
-			link.l1 = "Jeśli nie odpowiecie mi jasno teraz, to ja...";
+			dialog.text = "\nJeszcze dwóch. Przy pięciu wszystko się wyjaśni.";
+			link.l1 = "Jeśli mi zaraz nie odpowiedz na moje pytanie, to cie...";
 			link.l1.go = "DiegoDeLanda_Meeting_Third_3";
 		break;
 
 		case "DiegoDeLanda_Meeting_Third_3":
-			dialog.text = "\nDobrze wam idzie, kapitanie. Zasłużyliście, by poznać moje imię. Nazywam się Diego de Landa.";
-			link.l1 = "Naprawdę jesteście księdzem?";
+			dialog.text = "\nDobrze ci idzie, kapitanie. Zasłużyłeś, by poznać moje imię. Nazywam się Diego de Landa.";
+			link.l1 = "Naprawdę jesteś księdzem?";
 			link.l1.go = "DiegoDeLanda_Meeting_Third_4";
 		break;
 
@@ -98,7 +98,7 @@ void ProcessDialogEvent()
 		//--> Святое Милосердие
 		case "DiegoDeLanda_SantaMisericordia_2":
 			dialog.text = "Ach... Dziennik. Niezwykła rzecz – słowo pisane. Jest niczym... ścieżka w ciemności. Prowadzi tam, gdzie czeka... objawienie. Naszą parafię często odwiedzał don Fernando. Zwłaszcza w ostatnim roku.";
-			link.l1 = "Służycie w miejscowej parafii? Znał pan dona Fernando?";
+			link.l1 = "Służysz w miejscowej parafii? Znał pan dona Fernando?";
 			link.l1.go = "DiegoDeLanda_SantaMisericordia_3";
 		break;
 
@@ -109,13 +109,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "DiegoDeLanda_SantaMisericordia_4":
-			dialog.text = "Obserwowałem jego drogę. A ta księga, którą zabraliście. Wiecie, co czyni ją wyjątkową?";
+			dialog.text = "Obserwowałem jego drogę. A ta księga, którą zabrałeś. Wiesz, co czyni ją wyjątkową?";
 			link.l1 = "Wygląda na starą.";
 			link.l1.go = "DiegoDeLanda_SantaMisericordia_5";
 		break;
 
 		case "DiegoDeLanda_SantaMisericordia_5":
-			dialog.text = "Starą? O nie. Ona jest... oświecona. Biblia don de Alamidy-starszego. Każde jej słowo jest jak latarnia w ciemności. Weźcie ją. Pomagajcie braciom w Chrystusie, a być może... i was zaprowadzi do czegoś... większego.";
+			dialog.text = "Starą? O nie. Ona jest... oświecona. Biblia don de Alamidy-starszego. Każde jej słowo jest jak latarnia w ciemności. Weź ją. Pomagaj braciom w Chrystusie, a być może... i ciebie zaprowadzi do czegoś... większego.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_leaving";
 		break;
@@ -123,20 +123,20 @@ void ProcessDialogEvent()
 
 		//--> Леди Бет
 		case "DiegoDeLanda_LadyBeth_2":
-			dialog.text = "Och, tak. Biedna kobieta. Jej mąż... nie jest zbyt dobrym człowiekiem. Mówią, że jego plantacje są najbardziej dochodowe na Barbadosie. I najbardziej okrutne. Wiecie, ilu niewolników umiera u niego co miesiąc? Niedawno zatłukł na śmierć prawdziwego lekarza z Anglii – człowieka wielkiej wiedzy i talentu. Ale jej los nie jest wiele lepszy, uwierzcie mi.";
-			link.l1 = "Wygląda na to, że jesteście dobrze poinformowani.";
+			dialog.text = "Och, tak. Biedna kobieta. Jej mąż... nie jest zbyt dobrym człowiekiem. Mówią, że jego plantacje są najbardziej dochodowe na Barbadosie. I najbardziej okrutne. Wiesz, ilu niewolników umiera u niego co miesiąc? Niedawno zatłukł na śmierć prawdziwego lekarza z Anglii – człowieka wielkiej wiedzy i talentu. Ale jej los nie jest wiele lepszy, uwierz mi.";
+			link.l1 = "Wygląda na to, że jesteś dobrze poinformowany.";
 			link.l1.go = "DiegoDeLanda_LadyBeth_3";
 		break;
 
 		case "DiegoDeLanda_LadyBeth_3":
 			dialog.text = "Ludzie przychodzą do mnie na spowiedź, kapitanie. Słyszę to, czego boją się wyznać nawet najbliższym. Ich lęki, ich grzechy... ich ból.";
-			link.l1 = "Nie boicie się prześladowań? Katolickiemu księdzu niełatwo na angielskich terytoriach.";
+			link.l1 = "Nie boisz się prześladowań? Katolickiemu księdzu jest raczej niełatwo na angielskich terytoriach.";
 			link.l1.go = "DiegoDeLanda_LadyBeth_4";
 		break;
 
 		case "DiegoDeLanda_LadyBeth_4":
-			dialog.text = "Moje lęki są niczym w porównaniu z tym, co właśnie zostawiliście za drzwiami tego domu. A ta książeczka, którą zabraliście tej nieszczęsnej kobiecie... Gdyby strach miał formę, wyglądałby właśnie tak\n"+
-			"Dzień dobry, kapitanie.";
+			dialog.text = "Moje lęki są niczym w porównaniu z tym, co właśnie zostawiłeś za drzwiami tego domu. A ta książeczka, którą zabrałeś tej nieszczęsnej kobiecie... Gdyby strach miał formę, wyglądałby właśnie tak\n"+
+			"Miłego dnia, kapitanie.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_leaving";
 		break;
@@ -148,7 +148,7 @@ void ProcessDialogEvent()
 			dialog.text = "Tygrysie, Tygrysie, płonący strachu\n"+
 			"Płoniesz w nocnych lasach\n"+
 			"Czyj nieśmiertelny wzrok, z miłością, stworzył ciebie – tak strasznego?\n"+
-			"Oczywiście, że go znałem, kapitanie. Ale czy znał go pan?";
+			"Oczywiście, że go znałem, kapitanie. Ale czy pan go znał?";
 			link.l1 = "Nigdy nie spotkałem człowieka o bardziej tragicznej historii.";
 			link.l1.go = "DiegoDeLanda_Memento_3";
 		break;
@@ -162,7 +162,7 @@ void ProcessDialogEvent()
 
 		case "DiegoDeLanda_Memento_4":
 			dialog.text = "To nie po chrześcijańsku tak obchodzić się ze zmarłym. Proszę, oto mała instrukcja post mortem. Mój prezent dla pana\n"+
-			"Dzień dobry, kapitanie.";
+			"Miłego dnia, kapitanie.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_leaving";
 			SetAlchemyRecipeKnown("blade_SP_3low");	// рецепты от Катласа
@@ -180,20 +180,20 @@ void ProcessDialogEvent()
 		case "DiegoDeLanda_Leaving_1":
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 1)
 			{
-				dialog.text = "Powiedzcie mi... Po co? To było niebezpieczne i głupie. Co jest waszym ogniem, kapitanie? Co was napędza?";
-				link.l1 = "To nie wasza sprawa.";
+				dialog.text = "Powiedz mi... Po co? To było niebezpieczne i głupie. Co jest twoim ogniem, kapitanie? Co cię napędza?";
+				link.l1 = "To nie twoja sprawa.";
 				link.l1.go = "DiegoDeLanda_leaving_First_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 2)
 			{
 				dialog.text = "Drugi.";
-				link.l1 = "Ostatnim razem mówiliście zagadkami. Teraz też zamierzacie?";
+				link.l1 = "Ostatnim razem mówiłeś zagadkami. Teraz też zamierzasz?";
 				link.l1.go = "DiegoDeLanda_leaving_Second_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 3)
 			{
 				dialog.text = "...";
-				link.l1 = "Poczekajcie, de Landa. Nie mogę pozwolić wam po prostu odejść.";
+				link.l1 = "Poczekaj, de Landa. Nie mogę tak po prostu pozwolić ci odejść.";
 				link.l1.go = "DiegoDeLanda_Leaving_Third_2";
 			}
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
@@ -207,14 +207,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DiegoDeLanda_Leaving_First_2": // Первое прощание
-			dialog.text = "Nie mogę zrozumieć. Innych – tak. Ale was – jeszcze nie.";
+			dialog.text = "Nie mogę zrozumieć. Innych – tak. Ale ciebie – jeszcze nie.";
 			link.l1 = "Innych?";
 			link.l1.go = "DiegoDeLanda_Leaving_First_3";
 		break;
 
 		case "DiegoDeLanda_Leaving_First_3":
 			dialog.text = "Jeden, na przykład, dąży do sprawiedliwości. Albo był też inny... opętany mrocznymi wodami śmierci. Ludzie tak łatwo zatracają się w swoich pragnieniach. Prawda?";
-			link.l1 = "Jesteście dziwnym księdzem, ojcze.";
+			link.l1 = "Jesteś dziwnym księdzem, ojcze.";
 			link.l1.go = "DiegoDeLanda_Leaving_First_4";
 		break;
 
@@ -225,20 +225,20 @@ void ProcessDialogEvent()
 		break;
 
 		case "DiegoDeLanda_Leaving_First_5":
-			dialog.text = "Oczywiście. Wasza praca dopiero się zaczyna, kapitanie.";
+			dialog.text = "Oczywiście. Twoja praca dopiero się zaczyna, kapitanie.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_Leaving_End";
 		break;
 
 		case "DiegoDeLanda_leaving_Second_2": // Второе прощание
-			dialog.text = "\nPrawdziwa zagadka stoi teraz przede mną. Zebraliście już dwie... relikwie. Lubicie zbierać takie rzeczy? Jesteście kolekcjonerem?";
-			link.l1 = "Skąd wiecie?";
+			dialog.text = "\nPrawdziwa zagadka stoi teraz przede mną. Zebrałeś już dwie... relikwie. Lubisz zbierać takie rzeczy? Jesteś kolekcjonerem?";
+			link.l1 = "Skąd to wiesz?";
 			link.l1.go = "DiegoDeLanda_leaving_Second_3";
 		break;
 
 		case "DiegoDeLanda_leaving_Second_3":
 			dialog.text = "Łowca trofeów?";
-			link.l1 = "Powtarzam pytanie: skąd wiecie?";
+			link.l1 = "Powtarzam pytanie: skąd to wiesz?";
 			link.l1.go = "DiegoDeLanda_leaving_Second_4";
 		break;
 
@@ -249,33 +249,33 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DiegoDeLanda_leaving_Second_5":
-			dialog.text = "\nAch. No tak. Oczywiście. Cóż, kapitanie, nie będę was zatrzymywał.";
-			link.l1 = "Chwileczkę, ojcze. Nadal nie odpowiedzieliście na moje pytanie.";
+			dialog.text = "\nAch. No tak. Oczywiście. Cóż, kapitanie, nie będę cie zatrzymywał.";
+			link.l1 = "Chwileczkę, ojcze. Nadal nie odpowiedziałeś na moje pytanie.";
 			link.l1.go = "DiegoDeLanda_leaving_Second_6";
 		break;
 
 		case "DiegoDeLanda_leaving_Second_6":
-			dialog.text = "Och, kapitanie. Nie mogę. Czasami odpowiedzi bolą bardziej niż ignorancja. Idźcie w pokoju. I pilnujcie swojej kolekcji... trofeów. Mogą się przydać w podróży, która was czeka.";
+			dialog.text = "Och, kapitanie. Nie mogę. Czasami odpowiedzi bolą bardziej niż ignorancja. Idź w pokoju. I pilnuj swojej kolekcji... trofeów. Mogą się przydać w podróży, która cię czeka.";
 			link.l1 = "...";
 			link.l1.go = "DiegoDeLanda_Leaving_End";
 		break;
 
 		case "DiegoDeLanda_Leaving_Third_2": // Третье прощание
-			dialog.text = "No dalej, kapitanie. Czy to was nie ciekawi? Czy to nie zabawne? Czy już wystarczy wam trofeów?\n"+
-			"To jest wasz ogień, kapitanie. Chcecie wiedzieć, co będzie dalej. Kochacie piękne statki i ciekawe rzeczy\n"+
-			"Po prostu nie możecie nie zebrać ich wszystkich.\n"+
+			dialog.text = "No dalej, kapitanie. Czy to cię nie ciekawi? Czy to nie zabawne? Czy już wystarczy cię trofeów?\n"+
+			"To jest twój ogień, kapitanie. Chcesz wiedzieć, co będzie dalej. Kochasz piękne statki i ciekawe rzeczy\n"+
+			"Po prostu nie możesz nie zebrać ich wszystkich.\n"+
 			"\n"+
-			"Możecie mnie teraz zastrzelić.";
+			"Możesz mnie teraz zastrzelić.";
 			link.l1 = "Co?!";
 			link.l1.go = "DiegoDeLanda_Leaving_Third_3";
 		break;
 
 		case "DiegoDeLanda_Leaving_Third_3":
-			dialog.text = "Proszę bardzo. Ale wtedy nie poznacie wszystkiego i nie zdobędziecie pełnego zestawu trofeów. Statki, swoją drogą, dostaniecie wszystkie\n"+
+			dialog.text = "Proszę bardzo. Ale wtedy nie poznasz wszystkiego i nie zdobędziesz pełnego zestawu trofeów. Statki, swoją drogą, dostaniesz wszystkie\n"+
 			"Miłego dnia, kapitanie.";
-			link.l1 = "(Puścić)";
+			link.l1 = "(Daj mu odejść)";
 			link.l1.go = "DiegoDeLanda_Leaving_End";
-			link.l2 = "(Zastrzelić)";
+			link.l2 = "(Zastrzel go)";
 			link.l2.go = "DiegoDeLanda_Leaving_Shoot";
 		break;
 		

@@ -15,7 +15,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "我想和你谈谈你的一个债务人。 ";
 				link.l1.go = "DTSG_KnippelDolg";
 			}
-			// <—— 旧日罪孽的漫长阴影
+			// < —旧日罪孽的漫长阴影
 		break;
 		
 		// --> Sinistra 旧日罪孽的漫长阴影	
@@ -59,7 +59,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "DTSG_KnippelDolg_VD_6":
-			dialog.text = "如果你需要资金保释, 随时再来找我 --我会给你优惠条件。 ";
+			dialog.text = "如果你需要资金保释, 随时再来找我 —我会给你优惠条件。 ";
 			link.l1 = "哈哈, 你是认真的吗? 放债人终究是放债人。 我自己付得起保释金。 再见。 ";
 			link.l1.go = "DTSG_KnippelDolg_VD_7";
 		break;

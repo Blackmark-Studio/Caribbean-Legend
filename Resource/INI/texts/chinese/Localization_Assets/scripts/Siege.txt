@@ -1,7 +1,7 @@
 
 Siege_1
 {
-据说当地渔民在这片区域看到了一 支强大的 @<NationNameSK(sti(aData.nation))> 舰队。 
+据说当地渔民在这片区域看到了一支强大的 @<NationNameSK(sti(aData.nation))> 舰队。 
 }
 
 Siege_2
@@ -21,7 +21,7 @@ Siege_4
 
 Siege_5
 {
-今天是 @<NationNameGenitive(sti(aData.nation))> 的伟大日子—— 我们成功攻占了像 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> 这样重要的殖民地! 所有 @<NationNameSK(sti(aData.conation))> 驻军被歼灭, 堡垒已被我们的军队占领并重新加 固! 
+今天是 @<NationNameGenitive(sti(aData.nation))> 的伟大日子 —我们成功攻占了像 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> 这样重要的殖民地! 所有 @<NationNameSK(sti(aData.conation))> 驻军被歼灭, 堡垒已被我们的军队占领并重新加 固! 
 }
 
 Siege_6
@@ -41,12 +41,12 @@ Siege_8
 
 Siege_9
 {
-对 @<NationNameGenitive(sti(aData.conation))> 来说是悲伤的一天—— 我们未能保护好殖民地。 堡垒被 @<NationNameSK(sti(aData.nation))> 的船只摧毁, 城市遭到掠夺。 
+对 @<NationNameGenitive(sti(aData.conation))> 来说是悲伤的一天 —我们未能保护好殖民地。 堡垒被 @<NationNameSK(sti(aData.nation))> 的船只摧毁, 城市遭到掠夺。 
 }
 
 Siege_10
 {
-有传言称 @<NationNameSK(sti(aData.nation))> 攻占了 @<NationNameSK(sti(aData.conation))> 的 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> 殖民地。 @<NationNameSK(sti(aData.nation))> 人掠夺了城市后扬帆离去。 
+有传言称 @<NationNameSK(sti(aData.nation))> 攻占了 @<NationNameSK(sti(aData.conation))> 的 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> 殖民地。 @<NationNameSK(sti(aData.nation))> 掠夺了城市后扬帆离去。 
 }
 
 Siege_11
@@ -56,7 +56,7 @@ Siege_11
 
 Siege_12
 {
-听到消息了吗? 我们的军事舰队成功围困了 @<NationNameSK(sti(aData.conation))> 名为 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> 的城市。 驻军的抵抗被瓦解, 但我们的军队当然必须撤离。 不过战利品... 
+听到消息了吗? 我们的军事舰队成功围困了 @<NationNameSK(sti(aData.conation))> 名为 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> 的城市。 驻军的抵抗被粉碎了, 但毫无疑问, 我们的部队不得不撤离。 不过, 那战利品...
 }
 
 Siege_13
@@ -81,22 +81,22 @@ Siege_16
 
 Siege_17
 {
-英国的
+英国
 }
 
 Siege_18
 {
-法国的
+法国
 }
 
 Siege_19
 {
-西班牙的
+西班牙
 }
 
 Siege_20
 {
-荷兰的
+荷兰
 }
 
 Siege_21
@@ -119,12 +119,12 @@ Siege_24
 
 Siege_25
 {
-有传言称我们势不可挡的舰队正在 猛攻 @<NationNameSK(sti(aData.conation))> 的 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> 殖民地。 敌人在顽强抵抗, 但很可能 @<sDays> 天后就能见分晓。 
+有传言称我们势不可挡的舰队正在 猛攻 @<NationNameSK(sti(aData.conation))> 的 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> 殖民地。 敌人在顽强抵抗, 但很可能 @<sDays> 后就能见分晓。 
 }
 
 Siege_26
 {
-~ @<NationNamePeople(sti(aData.nation))> 袭击了我们的 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> 殖民地。 我们勇敢的守军只剩下 @<sDays> 天的粮食储备了。 
+~ @<NationNamePeople(sti(aData.nation))> 袭击了我们的 @<GetConvertStr(aData.Colony+" Town", "LocLables.txt")> 殖民地。 我们勇敢的守军只剩下 @<sDays> 的粮食储备了。 
 }
 
 Siege_27

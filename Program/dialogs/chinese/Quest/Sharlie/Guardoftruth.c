@@ -1192,7 +1192,7 @@ void ProcessDialogEvent()
 		case "barty_15":
 			DialogExit();
 			ChangeCharacterComplexReputation(pchar, "nobility", 5);
-			// <—— legendary edition
+			// < —legendary edition
 			GiveItem2Character(pchar, "jewelry29");
 			Log_Info("你收到了一枚绿松石戒指");
 			PlaySound("interface\important_item.wav");

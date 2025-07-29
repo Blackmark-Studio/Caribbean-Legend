@@ -210,7 +210,7 @@ trait24 {Balas incendiarias}
 
 trait24_desc
 {
-Los cañones de persecución y retirada están especialmente templados para soportar altas temperaturas, y sus portas están tratadas con un compuesto especial contra incendios.
+Los cañones de proa y popa están especialmente templados para soportar altas temperaturas, y sus portas están tratadas con un compuesto especial contra incendios.
 Esto permite el uso de mezclas incendiarias con cualquier munición universal, infligiendo daño periódico a los barcos enemigos.
 }
 

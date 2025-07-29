@@ -20,7 +20,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "告诉我, 伙计, 我在哪里可以找到唐.迭戈.德.蒙托亚? 我来晚了吗? 他已经出发去大陆了吗? ";
                 link.l1.go = "guardoftruth";
             }
-            // 卡勒幽船
+            // 卡莱乌切
             if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "graveyard" && !CheckAttribute(npchar, "quest.caleuche"))
             {
                 link.l1 = "听着, 有没有一个叫约阿希姆.梅里曼的人来过这里? 一个中年医生, 葡萄牙人, 留着小胡子。 帝王须和锐利的眼睛? 也许他想租个房间? ";
@@ -29,7 +29,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
 
         case "Havana_ratT_1":
-            dialog.text = "啊哈, 那个阴沉的家伙? 是的, 他来过我这里。 我告诉你: 他和俄勒冈-哈斯科恩有个约会。 他申请获得专利, 但没成功, 然后就离开了。 ";
+            dialog.text = "啊哈, 那个阴沉的家伙? 是的, 他来过我这里。 我告诉你: 他和俄勒冈-哈斯科恩有个约会。 他申请获得许可证, 但没成功, 然后就离开了。 ";
             Link.l1 = "你知道他航去哪里了吗? 我从贝略港就开始追他, 一直找不到他。 ";
             Link.l1.go = "Havana_ratT_2";
         break;
@@ -84,7 +84,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             pchar.quest.GuardOT_Batabano.function = "GuardOT_SanAntonioPrepare";
         break;
         
-        // 卡勒幽船
+        // 卡莱乌切
         case "caleuche":
             dialog.text = "天知道, 伙计。 他可能来过, 但我不知道。 抱歉。 ";
             link.l1 = "明白了。 真遗憾。 我会继续寻找... ";

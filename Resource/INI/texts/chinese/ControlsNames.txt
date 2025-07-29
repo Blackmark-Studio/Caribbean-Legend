@@ -192,7 +192,7 @@ ChrRecoil
 
 ChrParry
 {
-躲避 (备选)
+拨挡 (备选)
 }
 
 ChrAttackForce
@@ -242,7 +242,7 @@ ChrBlockBase
 
 ChrAttackBase
 {
-快速攻击/躲避
+快速攻击/拨挡
 }
 
 ChrAltAttackBase

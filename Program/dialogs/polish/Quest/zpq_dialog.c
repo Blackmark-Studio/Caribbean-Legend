@@ -23,17 +23,17 @@ void ProcessDialogEvent()
 		break;
 
 		case "zpq_sld2":
-			dialog.text = "Chwileczkę, señor, czy ty "+GetFullName(pchar)+"?";
+			dialog.text = "Chwileczkę, señor, ty jesteś "+GetFullName(pchar)+"?";
 			link.l1 = "Tak... Jak mogę ci pomóc??";
 			link.l1.go = "zpq_sld2_1";
 		break;
 		case "zpq_sld2_1":
 			dialog.text = "Potrzebujemy cię. A mówiąc konkretniej, twoich pieniędzy. I nie próbuj być uparty, bo nie jestem dziś w dobrym nastroju, mogę się rozgniewać.";
-			link.l1 = "Och, proszę, o jakich pieniądzach mówisz? Czy naprawdę myślisz, że będę nosić skarb przy sobie?";
+			link.l1 = "Och, proszę, o jakich pieniądzach mówisz? Czy naprawdę myślisz, że będę przy sobie nosił caluśki skarbiec?";
 			link.l1.go = "zpq_sld2_2";
 		break;
 		case "zpq_sld2_2":
-			dialog.text = "Nie próbuj mnie oszukać. Po prostu daj mi pieniądze - "+FindRussianMoneyString(sti(pchar.questTemp.zpq.sum))+" i możesz odejść swoją drogą. Albo weźmiemy to siłą.";
+			dialog.text = "Nie próbuj mnie oszukać. Po prostu daj mi pieniądze - "+FindRussianMoneyString(sti(pchar.questTemp.zpq.sum))+" i możesz odejść swoją drogą. Albo weźmiemy je siłą.";
 			if (pchar.questTemp.zpq == "failed")
 			{
 				link.l1 = "Nie pracujesz dla tego szczura z fortu? Mam dla ciebie dobrą wiadomość, wysłałem go do piekła.";
@@ -62,7 +62,7 @@ void ProcessDialogEvent()
 		break;
 		case "zpq_sld2_3_1":
 			dialog.text = "Ha-ha, twój los to umrzeć z powodu twojej chciwości. To nam pasuje, nie chcemy się dzielić.";
-			link.l1 = "To twoja chciwość cię zgubi...";
+			link.l1 = "Ta twoja chciwość cię zgubi...";
 			link.l1.go = "zpq_sld2_4";
 		break;
 		case "zpq_sld2_4":

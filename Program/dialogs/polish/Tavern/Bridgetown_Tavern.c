@@ -40,7 +40,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		//Голландский гамбит /за Англию/
 		case "TavernDone":
 			dialog.text = "Oto twój napitek. Najlepszy rum dla naszego nowego gościa! Czy to jakaś specjalna okazja, czy po prostu wpadłeś, by zwilżyć gardło?";
-			link.l1 = "„Aye, można rzec, że to wyjątkowa okazja. Zabieram kilku Murzynów do Blueweld. Niedawno zmodyfikowałem ładownię mojego nowego brygu specjalnie do tego celu. Zatrzymałem się na plantacji i rozmawiałem z nadzorcą, zamówił u mnie ładny transport 'czarnej kości słoniowej'. Czekaj więc na mnie z powrotem w swojej tawernie. Dostarczę towar do Blueweld, a potem zajmę się kolejnymi interesami tutaj na Barbadosie, yo ho!”";
+			link.l1 = "„Aye, można rzec, że to wyjątkowa okazja. Zabieram kilku Murzynów do Blueweld. Niedawno zmodyfikowałem ładownię mojego nowego brygu specjalnie do tego celu. Zatrzymałem się na plantacji i rozmawiałem z nadzorcą, zamówił u mnie ładny transport 'czarnej kości słoniowej'. Czekaj więc na mnie z powrotem w swojej karczmie. Dostarczę towar do Blueweld, a potem zajmę się kolejnymi interesami tutaj na Barbadosie, yo ho!”";
 			link.l1.go = "TavernDone_1";
 		break;
 		
@@ -90,9 +90,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(sti(pchar.reputation.nobility) > 48)//высокая репа
 			{
 				// belamour legendary edition покажем критерии
-				notification("Reputation Too Low! (Rogue)", "None");
+				notification("Wymagana negatywna reputacja!", "None");
 				PlaySound("Voice\English\hambit\Ercule Tongzag-03.wav");
-				dialog.text = "Nie potrzebuję usług łajdaka. Nie mam żadnego zadania, które mógłbym ci zaoferować.";
+				dialog.text = "Nie potrzebuję usług lizusa. Nie mam żadnego zadania, które mógłbym ci zaoferować.";
 				link.l1 = "Hej, hej. Uważaj na język, kumplu!";
 				link.l1.go = "exit";
 				break;
@@ -101,10 +101,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(!bOk)//слабое фехтование
 			{
 				// belamour legendary edition покажем критерии -->
-				notification("Skill Check Failed (35)", SKILL_F_LIGHT);
-				notification("Skill Check Failed (35)", SKILL_FENCING);
-				notification("Skill Check Failed (35)", SKILL_F_HEAVY);
-				notification("Skill Check Failed (35)", SKILL_PISTOL);
+				notification("Zbyt niska umiejętność (35)", SKILL_F_LIGHT);
+				notification("Zbyt niska umiejętność (35)", SKILL_FENCING);
+				notification("Zbyt niska umiejętność (35)", SKILL_F_HEAVY);
+				notification("Zbyt niska umiejętność (35)", SKILL_PISTOL);
 				// <--
 				dialog.text = "Kapitanie, jesteś zbyt miękki. Potrzebuję wojownika o nieco lepszej reputacji niż ty. Wróć, gdy nauczysz się obsługiwać tę stal wiszącą przy pasie. Odrobina celności w strzelaniu też by nie zaszkodziła.";
 				link.l1 = "Rozumiem. W takim razie odwiedzę cię później.";
@@ -286,7 +286,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.GenQuestBox.SentJons_houseSP3_room.box1.items.FleetwoodJournal = 1;//положим в комод СЖ
 			pchar.GenQuestBox.SentJons_houseSP3_room.box1.items.sand_clock = 1;//и песочные часы
 			AddDialogExitQuestFunction("CreateFleetwoodSoldiers");//4 солдат в доме
-			if(bImCasual) NewGameTip("Exploration mode: timer is not disabled. Meet the deadline!");
+			if(bImCasual) NewGameTip("Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!");
 			SetFunctionTimerCondition("FleetwoodJournalOver", 0, 0, 11, false);//таймер
 			pchar.quest.Fleetwood_Journal.win_condition.l1 = "Timer";
 			pchar.quest.Fleetwood_Journal.win_condition.l1.date.hour  = sti(GetTime());

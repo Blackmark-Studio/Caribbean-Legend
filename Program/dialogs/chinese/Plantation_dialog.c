@@ -234,7 +234,7 @@ void ProcessDialogEvent()
 			Mtraxx_PlantPellyClear();
 			Mtraxx_TerraxReset(3);
 		break;
-		// <—— 传奇版
+		// < —传奇版
 		case "mtraxx_1":
 			DelMapQuestMarkCity("baster");
 			DelLandQuestMark(characterFromId("Fadey"));
@@ -293,7 +293,7 @@ void ProcessDialogEvent()
 			link.l1.go = "mtraxx_6";
 			if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup"))
 			{
-				link.l1 = "(值得信赖)尊敬的先生, 请允许我提出异议! 我给你带来了最高质量的商品。 我知道我提供的每一件商品的价值, 也知道你提供的每一件商品的价值。 我应该从你这边得到更多的货物, 而且这笔交易对你来说仍然是有利可图的 --你很清楚这一点。 ";
+				link.l1 = "(值得信赖)尊敬的先生, 请允许我提出异议! 我给你带来了最高质量的商品。 我知道我提供的每一件商品的价值, 也知道你提供的每一件商品的价值。 我应该从你这边得到更多的货物, 而且这笔交易对你来说仍然是有利可图的 —你很清楚这一点。 ";
 				link.l1.go = "mtraxx_PlantVykup_2";
 				notification("Trustworthy", "Trustworthy");
 			}
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 			link.l1.go = "mtraxx_6";
 			if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup"))
 			{
-				link.l1 = "(值得信赖)尊敬的先生, 请允许我提出异议! 我给你带来了最高质量的商品。 我知道我提供的每一件商品的价值, 也知道你提供的每一件商品的价值。 我应该从你这边得到更多的货物, 而且这笔交易对你来说仍然是有利可图的 --你很清楚这一点。 ";
+				link.l1 = "(值得信赖)尊敬的先生, 请允许我提出异议! 我给你带来了最高质量的商品。 我知道我提供的每一件商品的价值, 也知道你提供的每一件商品的价值。 我应该从你这边得到更多的货物, 而且这笔交易对你来说仍然是有利可图的 —你很清楚这一点。 ";
 				link.l1.go = "mtraxx_PlantVykup_2";
 				notification("Trustworthy", "Trustworthy");
 			}
@@ -327,7 +327,7 @@ void ProcessDialogEvent()
 			link.l1.go = "mtraxx_6";
 			if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup"))
 			{
-				link.l1 = "(值得信赖)尊敬的先生, 请允许我提出异议! 我给你带来了最高质量的商品。 我知道我提供的每一件商品的价值, 也知道你提供的每一件商品的价值。 我应该从你这边得到更多的货物, 而且这笔交易对你来说仍然是有利可图的 --你很清楚这一点。 ";
+				link.l1 = "(值得信赖)尊敬的先生, 请允许我提出异议! 我给你带来了最高质量的商品。 我知道我提供的每一件商品的价值, 也知道你提供的每一件商品的价值。 我应该从你这边得到更多的货物, 而且这笔交易对你来说仍然是有利可图的 —你很清楚这一点。 ";
 				link.l1.go = "mtraxx_PlantVykup_2";
 				notification("Trustworthy", "Trustworthy");
 			}
@@ -359,7 +359,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_9":
 			dialog.text = "就是这样, 先生。 如果你以后需要糖或可可, 请随时来找我。 随时欢迎! ";
-			link.l1 = "如果这笔交易证明是有利可图的 --我们会再见面的。 我现在该走了, 先生。 ";
+			link.l1 = "如果这笔交易证明是有利可图的 —我们会再见面的。 我现在该走了, 先生。 ";
 			link.l1.go = "mtraxx_10";
 		break;
 		
@@ -396,21 +396,21 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_PlantVykup_4":
 			dialog.text = "没问题。 我们会给你找个合适的。 ";
-			link.l1 = "我对一个特定的奴隶感兴趣。 那个面容迷人的 --一个你不会羞于带到正式场合或让他为客人斟酒的人。 他自我介绍说叫让.皮卡德。 我们已经很投缘了。 ";
+			link.l1 = "我对一个特定的奴隶感兴趣。 那个面容迷人的 —一个你不会羞于带到正式场合或让他为客人斟酒的人。 他自我介绍说叫让.皮卡德。 我们已经很投缘了。 ";
 			link.l1.go = "mtraxx_PlantVykup_5";
 		break;
 		
 		case "mtraxx_PlantVykup_5":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 70)
 			{
-				dialog.text = "是的, 让.皮卡德很抢手 --不只是为了斟酒。 一位有影响力的英国人已经联系过我。 一个叫... 帕托姆森的人? 他给我送了封信。 ";
-				link.l1 = "但帕托姆森和他的客户都还没出现。 我准备现在就从你这里买下让。 开个价吧 --女士们还在等着呢! ";
+				dialog.text = "是的, 让.皮卡德很抢手 —不只是为了斟酒。 一位有影响力的英国人已经联系过我。 一个叫... 帕托姆森的人? 他给我送了封信。 ";
+				link.l1 = "但帕托姆森和他的客户都还没出现。 我准备现在就从你这里买下让。 开个价吧 —女士们还在等着呢! ";
 				link.l1.go = "mtraxx_PlantVykup_10";
 				notification("Skill Check Passed", SKILL_COMMERCE);
 			}
 			else
 			{
-				dialog.text = "啊, 投缘。 我明白。 但恐怕我必须拒绝 --让.皮卡德不出售。 对不起, 先生。 ";
+				dialog.text = "啊, 投缘。 我明白。 但恐怕我必须拒绝 —让.皮卡德不出售。 对不起, 先生。 ";
 				link.l1 = "哦? 为什么? 我愿意出高价。 开个价吧。 ";
 				link.l1.go = "mtraxx_PlantVykup_6";
 				notification("Skill Check Failed (70)", SKILL_COMMERCE);
@@ -448,12 +448,12 @@ void ProcessDialogEvent()
 			dialog.text = "如你所愿, 先生。 但要明白, 价格不菲: 五百枚杜布隆。 ";
 			if (PCharDublonsTotal() >= 500)
 			{
-				link.l1 = "没问题 --给你。 一个好的私人仆人比普通奴隶更值钱, 你很清楚这一点。 ";
+				link.l1 = "没问题 —给你。 一个好的私人仆人比普通奴隶更值钱, 你很清楚这一点。 ";
 				link.l1.go = "mtraxx_PlantVykup_11";
 			}
 			else
 			{
-				link.l2 = "你开的价可不低, 先生。 但我对这个奴隶很感兴趣。 等我一下。 如果帕托姆森来了, 告诉他皮卡德已经卖了 --哈哈! ";
+				link.l2 = "你开的价可不低, 先生。 但我对这个奴隶很感兴趣。 等我一下。 如果帕托姆森来了, 告诉他皮卡德已经卖了 —哈哈! ";
 				link.l2.go = "mtraxx_PlantVykup_13";
 			}
 		break;
@@ -494,7 +494,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l2 = "还在筹集 --是你定了这么高的价格, 先生。 ";
+				link.l2 = "还在筹集 —是你定了这么高的价格, 先生。 ";
 				link.l2.go = "mtraxx_PlantVykup_14";
 			}
 		break;

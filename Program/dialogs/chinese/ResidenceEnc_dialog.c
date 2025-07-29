@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
-		//-------------------------------—— 官邸中的夫人 ---------------------------------
+		//------------------------------- —官邸中的夫人 ---------------------------------
 		case "ResWoman":
 			NextDiag.TempNode = "ResWoman";
 			if (LAi_grp_playeralarm <= 0 && CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.o2") && !CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.o2.Done") && !CheckAttribute(npchar, "quest.chickengod") && sti(npchar.nation) == SPAIN) {
@@ -58,7 +58,7 @@ void ProcessDialogEvent()
 			LAi_group_Attack(NPChar, Pchar);
 			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
 		break;
-		//-------------------------------—— 官邸中的仆人 ---------------------------------
+		//------------------------------- —官邸中的仆人 ---------------------------------
 		case "ResMan":
 			NextDiag.TempNode = "ResMan";
 			if (isBadReputation(pchar, 30))
@@ -81,7 +81,7 @@ void ProcessDialogEvent()
 			LAi_group_Attack(NPChar, Pchar);
 			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
 		break;
-		//-------------------------------—— 官邸中的士兵 ---------------------------------
+		//------------------------------- —官邸中的士兵 ---------------------------------
 		case "ResGuard":
 			NextDiag.TempNode = "ResGuard";
 			if (isBadReputation(pchar, 30))

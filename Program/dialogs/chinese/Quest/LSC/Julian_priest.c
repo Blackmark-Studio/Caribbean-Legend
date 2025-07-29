@@ -173,7 +173,7 @@ void ProcessDialogEvent()
 			if (bOk && GetSummonSkillFromName(pchar, SKILL_FORTUNE) > (10+hrand(110)))
 			{
 				npchar.quest.amulet = SelectLSCChurchAmulet();
-				dialog.text = "是的, 我可以给你一些圣护身符, 它们能保护人们免受伤害和疾病。 任何护身符的价格都是一样的 --十个金杜布隆。 今天我可以给你"+XI_ConvertString(npchar.quest.amulet)+"。 ";
+				dialog.text = "是的, 我可以给你一些圣护身符, 它们能保护人们免受伤害和疾病。 任何护身符的价格都是一样的 —十个金杜布隆。 今天我可以给你"+XI_ConvertString(npchar.quest.amulet)+"。 ";
 				if (PCharDublonsTotal() >= 10)
 				{
 					link.l1 = "是的, 我想买这个护身符。 这是你的金子。 ";
@@ -206,7 +206,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 		break;
 		
-//-------------------------------------—— 问答块 ---------------------------------------------
+//------------------------------------- —问答块 ---------------------------------------------
 		case "int_quests":
 			dialog.text = "我在听。 ";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
@@ -255,14 +255,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_4":
-			dialog.text = "一切都在我们主的手中, 我的孩子。 我们相信祂, 我们信任祂。 严重的麻烦总是远离我们的岛屿 --风暴经常在岛外发生, 但这里总是很安静。 ";
+			dialog.text = "一切都在我们主的手中, 我的孩子。 我们相信祂, 我们信任祂。 严重的麻烦总是远离我们的岛屿 —风暴经常在岛外发生, 但这里总是很安静。 ";
 			link.l1 = "谢谢。 你让我放心了。 ";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
 		break;
-// <—— 问答块
+// < —问答块
 		
-//---------------------------------------—— 特殊反应 -----------------------------------------------
+//--------------------------------------- —特殊反应 -----------------------------------------------
 		// 发现玩家在箱子里
 		case "Man_FackYou":
 			dialog.text = LinkRandPhrase("你在那里做什么, 嗯? 小偷! ", "看看那个! 我一陷入沉思, 你就决定检查我的箱子! ", "决定检查我的箱子? 你不会逃脱的! ");
@@ -313,7 +313,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;
-// <—— 特殊反应
+// < —特殊反应
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

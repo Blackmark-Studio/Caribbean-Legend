@@ -40,7 +40,7 @@ void ProcessDialogEvent()
 			DialogExit();
 		break;
 
-		//-------------------------—— 女服务员任务 --------------------------------
+		//------------------------- —女服务员任务 --------------------------------
 		//抢劫者
 		case "WaitressBerglar":
 			dialog.text = "来吧, 伙计, 让我看看你的口袋。 ";
@@ -84,7 +84,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("WaitressFack_fack");
 		break;
 		
-		//-------------------------—— 追赶丢失航海日志的船长 --------------------------------
+		//------------------------- —追赶丢失航海日志的船长 --------------------------------
 		//在城镇遇见
 		case "PortmansCap":
 			dialog.text = "日安。 我叫" + GetFullName(npchar) + "。 我是" + GetStrSmallRegister(XI_ConvertString(RealShips[sti(npchar.Ship.Type)].BaseName + "Acc")) + "‘" + npchar.Ship.name + "’的船长。 "; 
@@ -176,7 +176,7 @@ void ProcessDialogEvent()
 		case "PortmansCap_inDeck":
 			if (isBadReputation(pchar, 20))
 			{
-				dialog.text = "在我的船甲板上向你致意。 说实话, 你把我吓得屁滚尿流 --我以为独眼神驹猎人在追捕我... ";
+				dialog.text = "在我的船甲板上向你致意。 说实话, 你把我吓得屁滚尿流 —我以为独眼神驹猎人在追捕我... ";
 				link.l1 = "不, 船长, 我今天心情不错。 我是来帮你的。 ";
 			}
 			else
@@ -271,7 +271,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "PortmansCap_inDeck_over";
 		break;
-		//-------------------------—— 寻找被盗船只 --------------------------------
+		//------------------------- —寻找被盗船只 --------------------------------
 		case "SeekCap_inDeck":
 			dialog.text = "问候。 你想要什么?";
 			link.l1 = "没什么, 只是想听听消息。 有什么可卖的吗?";
@@ -381,7 +381,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SCQ_NM_battle": //方案A
-			dialog.text = "不完全是。 找到他, 但不需要把他带到这里来。 杀了他就够了。 把他和他肮脏的船一起沉了, 开枪打死他, 用你的刀刺死他 --我真的不在乎, 只要让这个混蛋停止用他的存在污染这个世界。 报酬会很丰厚。 ";
+			dialog.text = "不完全是。 找到他, 但不需要把他带到这里来。 杀了他就够了。 把他和他肮脏的船一起沉了, 开枪打死他, 用你的刀刺死他 —我真的不在乎, 只要让这个混蛋停止用他的存在污染这个世界。 报酬会很丰厚。 ";
 			link.l1 = "哈! 太简单了。 告诉我他的名字和船名。 ";
 			link.l1.go = "SCQ_NM_battle_1";
 		break;
@@ -895,7 +895,7 @@ void ProcessDialogEvent()
 			AddCharacterExpToSkill(pchar, "Leadership", 200);//领导力
 			AddCharacterExpToSkill(pchar, "Fortune", 50);//运气
 		break;
-//<—— 贵族搜索任务
+//< —贵族搜索任务
 
 		//========= 男性任务 ===========
 		case "SCQ_man":
@@ -1105,7 +1105,7 @@ void ProcessDialogEvent()
 			AddQuestUserData(sTitle, "sSex1", GetSexPhrase("",""));
 		break;
 
-		// -—— 男性任务结果 ---
+		// - —男性任务结果 ---
 		case "SCQ_manResult":
 			dialog.text = "日安, 船长。 已经有结果了吗? ";
 			link.l1 = "提醒我你的问题... ";
@@ -1398,7 +1398,7 @@ void ProcessDialogEvent()
 			AddQuestUserData(sTitle, "sSex", GetSexPhrase("",""));
 			AddQuestUserData(sTitle, "sSex1", GetSexPhrase("",""));
 		break;
-		// -—— 女性任务结果 ---
+		// - —女性任务结果 ---
 		case "SCQ_womanResult":
 			dialog.text = "哦, 船长, 见到你真高兴! 现在告诉我, 关于我的任务你有什么要告诉我? ";
 			link.l1 = "嗯, 提醒我, " + GetAddress_FormToNPC(NPChar) + ", 你说的是什么任务? ";
@@ -3007,7 +3007,7 @@ void ProcessDialogEvent()
 			
 			DialogExit();
 		break;
-		// <—— 决斗前对话。 
+		// < —决斗前对话。 
 		
 		// 决斗后对话 -->
 		case "AffairOfHonor_AfterFight_1":
@@ -3072,9 +3072,9 @@ void ProcessDialogEvent()
 			
 			DialogExit();
 		break;
-		// <—— 决斗后对话。 
+		// < —决斗后对话。 
 		//=====================================================================================================================================
-		// <—— "荣誉之事"系列迷你任务。 
+		// < —"荣誉之事"系列迷你任务。 
 		//=====================================================================================================================================
 	}
 }

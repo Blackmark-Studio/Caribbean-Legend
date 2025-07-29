@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 		
 		// охрана - солдаты
 		case "plantation_soldier":
-            dialog.text = RandPhraseSimple(RandPhraseSimple("Idź zawracaj głowę szefowi plantacji","Nie rozpraszaj niewolników, kumplu."),RandPhraseSimple("Moim zadaniem jest zmotywować tych leniwych bękartów.","Cholera, znowu za gorąco, jak zawsze..."));
+            dialog.text = RandPhraseSimple(RandPhraseSimple("Idź zawracaj głowy szefowi plantacji","Nie rozpraszaj niewolników, kumplu."),RandPhraseSimple("Moim zadaniem jest zmotywować tych leniwych bękartów.","Cholera, znowu za gorąco, jak zawsze..."));
 			link.l1 = RandPhraseSimple("Widzę...","Rzeczywiście...");
 			link.l1.go = "exit";
 		break;
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 			if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -12)
 			{
 				PlaySound("Voice\English\soldier_arest_2.wav");
-				dialog.text = "Licencja? Poczekaj sekundę... Haha, zabawne! Wiem kim jesteś. Jesteś poszukiwany, ziomku! A nagroda za twoją głowę jest bardzooo duża! Złapcie go!";
+				dialog.text = "Licencja? Poczekaj sekundę... Haha, zabawne! Wiem kim jesteś. Jesteś poszukiwany, kolego! A nagroda za twoją głowę jest bardzooo duża! Złapcie go!";
 				link.l1 = RandPhraseSimple("No cóż, w takim razie musisz spotkać się z moim ostrzem!","Spieprzaj.");
 				link.l1.go = "fight";	
 				break;
@@ -128,7 +128,7 @@ void ProcessDialogEvent()
 			{
 				PlaySound("Voice\English\soldier_arest_1.wav");
 				dialog.text = "Zobaczmy... ha! Twoja licencja jest przeterminowana. Idź za mną, zaprowadzę cię do komendanta...";
-				link.l1 = RandPhraseSimple("Gówno! Chyba nadszedł czas, abyś poznał moją szablę, kumplu.","Nie sądzę...");
+				link.l1 = RandPhraseSimple("Cholera! Chyba nadszedł czas, abyś poznał moją szablę, kumplu.","Nie sądzę...");
 				link.l1.go = "fight";	
 				TakeNationLicence(HOLLAND);
 				break;

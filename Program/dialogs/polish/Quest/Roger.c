@@ -447,7 +447,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jeffry_32":
-            //PlaySound("Voice\English\LE\Jeffry\Jeffry_gold.wav");
+            PlaySound("Voice\English\LE\Jeffry\Jeffry_gold.wav");
 			dialog.text = "Co za spektakl! To ogromna kupa złota! Teraz rozumiem, dlaczego Cutlass oszalał. Mamy wielkie szczęście, książę! Jak myślisz, ile złota tu znajdziemy?";
 			link.l1 = "Wiele. Dowiemy się na pewno, gdy uporamy się z tymi kratami.";
 			link.l1.go = "Jeffry_33";

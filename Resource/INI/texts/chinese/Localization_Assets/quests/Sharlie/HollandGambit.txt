@@ -39,7 +39,7 @@ Valkyrie
 
 HollandGambit_9
 {
-瓦尔基里号出现在地平线上! 
+"Valkyrie (瓦尔基里号)" 出现在地平线上! 
 }
 
 HollandGambit_10
@@ -114,22 +114,22 @@ HollandGambit_24
 
 HollandGambit_25
 {
-阿比盖尔死于中暑! 
+Abigail 死于热病! 
 }
 
 HollandGambit_26
 {
-查理.克尼佩尔因伤死亡! 
+Charlie Knippel 因伤死亡! 
 }
 
 HollandGambit_27
 {
-朗韦死于中暑! 
+Longway 死于热病! 
 }
 
 HollandGambit_28
 {
-朗韦因伤死亡! 
+Longway 因伤死亡! 
 }
 
 HollandGambit_29
@@ -148,7 +148,7 @@ Harrison
 
 HollandGambit_32
 {
-双桅帆船'Hoop'
+双桅帆船'Hoop (霍普号)'
 }
 
 HollandGambit_33
@@ -195,12 +195,12 @@ Keller
 
 HollandGambit_42
 {
-你因伤昏厥... 
+你因受伤而昏厥... 
 }
 
 HollandGambit_43
 {
-你未将钱还给阿比盖尔, 使她沦为乞丐
+你未将钱还给 Abigail, 使她沦为乞丐
 }
 
 HollandGambit_44

@@ -358,7 +358,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_1":
 			npchar.quest.mangarosa = "indian_"+(hrand(10)+1);
-			dialog.text = "是的。 这是它的一个名字 --曼加罗萨。 我用它换给你一个护身符。 非常好的护身符, 它的名字是 --" + XI_ConvertString(npchar.quest.mangarosa) + "。 你交易吗? ";
+			dialog.text = "是的。 这是它的一个名字 —曼加罗萨。 我用它换给你一个护身符。 非常好的护身符, 它的名字是 --" + XI_ConvertString(npchar.quest.mangarosa) + "。 你交易吗? ";
 			link.l1 = "听着, 红皮肤的兄弟, 我想多了解一下这种植物。 你能告诉我为什么你这么需要它吗? ";
 			link.l1.go = "mangarosa_2";
 		break;

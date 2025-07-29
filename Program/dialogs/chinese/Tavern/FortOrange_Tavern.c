@@ -50,7 +50,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         // 2016-1扩展包 Jason海盗线
         case "mtraxx":
             dialog.text = "哼, 如果你怀疑我们的商人, 那个开商店的, 我可以告诉你不是他, 他不做丝绸船帆生意。 走私者也不来这里, 没有海关, 他们没必要来。 再说了, 除了我们的商人, 这里也没有其他人做生意。 你四处看看, 我们可不是那种人, 哈哈! ";
-            link.l1 = "但有人在给皇家港供应丝绸 --这是无可辩驳的。 你有什么线索能知道谁可能是供应商吗? ";
+            link.l1 = "但有人在给皇家港供应丝绸 —这是无可辩驳的。 你有什么线索能知道谁可能是供应商吗? ";
             link.l1.go = "mtraxx_1";
         break;
         

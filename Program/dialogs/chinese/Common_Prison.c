@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 			LAi_CharacterDisableDialog(npchar);
 			DialogExit();
 		break;
-		//--------------—— 监狱长 ------------------
+		//-------------- —监狱长 ------------------
 		case "First_officer":
 			dialog.text = RandPhraseSimple("我是监狱长。 你在这里需要什么? ", "你需要什么? 为什么来监狱? ");
 			NextDiag.TempNode = "First_officer";
@@ -70,7 +70,7 @@ void ProcessDialogEvent()
 				link.l1.go = "DTSG_AntiguaTrevoga_2";
 				break;
 			}
-			// <—— 旧罪的长影
+			// < —旧罪的长影
 			
 			//--> 加斯科涅的枷锁
 			if (CheckAttribute(pchar, "questTemp.Sharlie") && pchar.questTemp.Sharlie == "jailskiper")
@@ -85,10 +85,10 @@ void ProcessDialogEvent()
                 link.l1.go = "Sharlie_3";
 				break;
 			}	
-			//<—— 加斯科涅的枷锁
+			//< —加斯科涅的枷锁
 			
 			//belamour legendary edition 对话, 如果英雄有军衔和国家功勋 -->
-			// 有专利的军官
+			// 有许可证的军官
 			if(IsOfficerFullEquip())
 			{
 				dialog.text = "问候你, 船长。 什么风把你吹到这里? ";
@@ -103,7 +103,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "大人, 总督将军! 你有什么命令吗? ";
 			}
-			// <—— legendary edition
+			// < —legendary edition
 			link.l1 = "哦, 没什么特别的, 你知道, 只是在城里看看, 所以顺便逛到这里。 ";
 			link.l1.go = "exit";
 			link.l2 = "我想谈点生意。 ";
@@ -194,7 +194,7 @@ void ProcessDialogEvent()
 				link.l14 = "警官, 我和哨兵谈过, 他撤回了指控。 这是他的凭证。 "; 
 				link.l14.go = "NightAdventure_HomieToPrisoner";
 			}
-			// <—— 冒险者
+			// < —冒险者
 			NextDiag.TempNode = "First_officer";
 		break;
 		
@@ -249,7 +249,7 @@ void ProcessDialogEvent()
 				Group_DeleteGroup("Sea_MarginCap1");
 			}
 		break;
-		//<—— 绑架者
+		//< —绑架者
 
 		case "EncGirl_1":
 			dialog.text = "我洗耳恭听。 ";
@@ -270,7 +270,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("EncGirl_ToLoverParentsExit");
 		break;
 		
-		// -----------------------—— 匆忙的理由 -----------------------------
+		// ----------------------- —匆忙的理由 -----------------------------
 		case "ReasonToFast_Prison1":
 			pchar.questTemp.ReasonToFast.SpeakOther = true;
 			dialog.text = "我洗耳恭听, 船长。 ";
@@ -390,9 +390,9 @@ void ProcessDialogEvent()
 			pchar.TownEscape = true;
 			Flag_PIRATE();
 		break;
-		// -----------------------—— 匆忙的理由 -----------------------------
+		// ----------------------- —匆忙的理由 -----------------------------
 		
-		// ------------------------—— 操作'大帆船'----------------------------
+		// ------------------------ —操作'大帆船'----------------------------
 		case "CapComission_PrisonBad1":
 			dialog.text = "你和他有什么事? ";
 			link.l1 = "我有几件私事要讨论。 ";
@@ -453,7 +453,7 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = NextDiag.TempNode; 
 			AddDialogExitQuest("OpenTheDoors");
 		break;
-		// ------------------------—— 操作'大帆船'----------------------------
+		// ------------------------ —操作'大帆船'----------------------------
 		
 		case "F_ShipLetters_1":
 			dialog.text = "现在说, 我在听。 ";
@@ -567,7 +567,7 @@ void ProcessDialogEvent()
 				pchar.questTemp.jailCanMove = true;
 				break;
 			}
-			// 有专利的军官
+			// 有许可证的军官
 			if(IsOfficerFullEquip() && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
 			{
 				dialog.text = "嗯, 我认为没有理由拒绝你 - 毕竟, 你是为 " + NationNameGenitive(sti(npchar.nation)) + "服务的船只的船长。 进来吧。 "; 
@@ -576,7 +576,7 @@ void ProcessDialogEvent()
 				pchar.questTemp.jailCanMove = true;
 				break;
 			}
-			// <—— legendary edition
+			// < —legendary edition
 			dialog.text = NPCStringReactionRepeat("但你为什么需要它? 相信我, 除了小偷和强盗, 没有什么值得感兴趣的。 ", "我们已经讨论过你的那个愿望了。 ", 
 				"又来? 我们已经谈过两次了! ", "嗯, 又来... ", "block", 1, npchar, Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("尽管如此, 我还是想加入你的地牢之旅。 我非常感兴趣! ", "是的, 正是。 但我想谈谈这个。 ", 
@@ -754,8 +754,8 @@ void ProcessDialogEvent()
 			LAi_CharacterEnableDialog(sld);
 			sld.dialog.currentnode = "ToPrisonHead_canMove";
 		break;
-		// <—— legendary edition
-		//--------------—— 守护者 ------------------
+		// < —legendary edition
+		//-------------- —守护者 ------------------
         case "First_protector":
 			// 总督将军
 			if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE)
@@ -790,14 +790,14 @@ void ProcessDialogEvent()
 			}
 			NextDiag.TempNode = "First_protector";
 		break;
-		//--------------—— 士兵 ------------------
+		//-------------- —士兵 ------------------
         case "First_soldier":
             dialog.text = RandPhraseSimple("我在值班, 别打扰我。 ", "走开, 我不允许和你说话。 ");
 			link.l1 = "好的, 士兵。 ";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First_soldier";
 		break;
-		//--------------—— 囚犯 ------------------
+		//-------------- —囚犯 ------------------
         case "First_prisoner": 
 			if (GetNationRelation2MainCharacter(sti(npchar.nation)) == RELATION_ENEMY)
 			{
@@ -831,7 +831,7 @@ void ProcessDialogEvent()
 				}
 			}
 		break;
-		// ------------------—— 释放囚犯 --------------------
+		// ------------------ —释放囚犯 --------------------
         case "Prisoner_1":
             dialog.text = "听我说, 伙计。 别以为我看起来不好什么的。 我只是需要离开这里... ";
 			link.l1 = "什么? ! ";
@@ -1026,7 +1026,7 @@ void ProcessDialogEvent()
             dialog.text = "但我是被诽谤的! 哦, 魔鬼! 现在我该怎么办? 我会在这里活活腐烂! ";
 			link.l1 = "对不起, 伙计, 但我帮不了你。 ";
 			link.l1.go = "ToPrisonHead_notFree_2";
-			link.l2 = "只剩下一个机会了 --用武力释放你。 我现在就打破你的锁让你出来, 我们突围。 你准备好了吗? ";
+			link.l2 = "只剩下一个机会了 —用武力释放你。 我现在就打破你的锁让你出来, 我们突围。 你准备好了吗? ";
 			link.l2.go = "Prisoner_agree_1";
 			pchar.quest.GivePrisonFree_Over.over = "yes";
 		break;
@@ -1072,7 +1072,7 @@ void ProcessDialogEvent()
 				break;
 				case 3:
 					dialog.text = "船长, 对不起, 但是... 没有宝藏。 ";
-					link.l1 = "什么? ! 你骗了我, 你这个恶棍! 我把你带到那个岛上 --为了什么? 你不会就这样逃脱的! ";
+					link.l1 = "什么? ! 你骗了我, 你这个恶棍! 我把你带到那个岛上 —为了什么? 你不会就这样逃脱的! ";
 					link.l1.go = "Node_3";
 				break;
 				case 4:
@@ -1173,7 +1173,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "PrisonerInPlace_1":
-			dialog.text = "很简单, " + GetSexPhrase("伙计", "姑娘") + "。 生活中什么事都可能发生。 \n嗯, 你在这里 --如果你想的话: 留下, 再找找看。 嗯, 我得走了! \n再见, " + GetSexPhrase("我的朋友", "姑娘") + ", 谢谢你救了我的命。 我会永远记住你! ";
+			dialog.text = "很简单, " + GetSexPhrase("伙计", "姑娘") + "。 生活中什么事都可能发生。 \n嗯, 你在这里 —如果你想的话: 留下, 再找找看。 嗯, 我得走了! \n再见, " + GetSexPhrase("我的朋友", "姑娘") + ", 谢谢你救了我的命。 我会永远记住你! ";
 			link.l1 = "无赖! 你以为我会让你就这么走掉吗? ! 嘿! 站住, 胆小鬼! ";
 			link.l1.go = "PrisonerInPlace_2";
 			AddQuestRecord("GivePrisonFree", "4");
@@ -1222,8 +1222,8 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.jailCanMove.Item2");
 		break;
         
-		// ------------------—— 释放囚犯 --------------------
-		// ----------------------—— 传递密信 --------------------------
+		// ------------------ —释放囚犯 --------------------
+		// ---------------------- —传递密信 --------------------------
         case "Deliver_1":
 			dialog.text = "我叫 " + GetFullName(npchar) + "。 我有个请求, 嘿嘿... ";
 			link.l1 = "怎么了? ";
@@ -1309,7 +1309,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_4":
-			dialog.text = "我们既没有证人也没有货物, 但这并不改变什么, " +GetFullName(pchar)+ "船长! 那个人肯定有罪 --也许不止是非法交易。 不管怎样 --你为什么关心这个囚犯? ";
+			dialog.text = "我们既没有证人也没有货物, 但这并不改变什么, " +GetFullName(pchar)+ "船长! 那个人肯定有罪 —也许不止是非法交易。 不管怎样 —你为什么关心这个囚犯? ";
 			link.l1 = "也许, 我的话可以作为那个不幸囚犯的保释? ";
 			link.l1.go = "JusticeOnSale_5_WithoutMoney";
 			
@@ -1368,7 +1368,7 @@ void ProcessDialogEvent()
 		break;
 		// --> belamour 夜间冒险
 		case "NightAdventure_CitizenHomie":
-			dialog.text = "是的, 有过这样一个粗暴的人。 他对哨兵无礼, 然后打了一架。 没什么大不了的: 他会在牢里待几天 --他会清醒过来的。 你为什么关心他? 你好像是个船长, 而这个醉汉看起来不像水手。 ";
+			dialog.text = "是的, 有过这样一个粗暴的人。 他对哨兵无礼, 然后打了一架。 没什么大不了的: 他会在牢里待几天 —他会清醒过来的。 你为什么关心他? 你好像是个船长, 而这个醉汉看起来不像水手。 ";
 			link.l1 = "是的, 没错, 我是船长。 问题是, 这个醉汉是我的老熟人。 请不要告诉任何人。 如果我没理解错的话, 他甚至没有拿武器。 也许你这次能应我的请求释放他? ";
 			link.l1.go = "NightAdventure_CitizenHomie_1";
 		break;
@@ -1376,7 +1376,7 @@ void ProcessDialogEvent()
 		case "NightAdventure_CitizenHomie_1":
 			if(pchar.GenQuest.NightAdventureVar == "NightAdventure_CitizenHomie") // 凭诚信释放
 			{
-				dialog.text = "是的, 我的好朋友。 别担心, 我不会告诉任何人。 事实上, 他甚至打不准, 只是尝试了一下 --所以他们才把他关进监狱。 既然你请求, 出于对你的尊重, 我会释放他。 只是警告他下次要控制自己。 或者更好的是, 让他少喝点。 ";
+				dialog.text = "是的, 我的好朋友。 别担心, 我不会告诉任何人。 事实上, 他甚至打不准, 只是尝试了一下 —所以他们才把他关进监狱。 既然你请求, 出于对你的尊重, 我会释放他。 只是警告他下次要控制自己。 或者更好的是, 让他少喝点。 ";
 				link.l1 = "谢谢你, 警官。 ";
 				link.l1.go = "NightAdventure_CitizenHomieOK";
 			}
@@ -1460,7 +1460,7 @@ void ProcessDialogEvent()
 			link.l1 = "谢谢你, 警官。 ";
 			link.l1.go = "exit";
 		break;
-		// <—— 夜间冒险
+		// < —夜间冒险
 		
 		// --> Sinistra 导航星
 		case "PZ_BasTer_ComendantDialog":
@@ -1473,14 +1473,14 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "你自愿来找我们真是太好了。 我们最近受够了吵闹的人。 ";
-				link.l1 = "嗯, 如你所见, 我不是暴力分子。 但是... 我为什么在这里, 警官? 我已经问过你的人了, 但没有得到答案 --是因为我在镇上寻找某个中国人吗? ";
+				link.l1 = "嗯, 如你所见, 我不是暴力分子。 但是... 我为什么在这里, 警官? 我已经问过你的人了, 但没有得到答案 —是因为我在镇上寻找某个中国人吗? ";
 				link.l1.go = "PZ_BasTer_ComendantDialog_1";
 			}
 			DeleteQuestCondition("PZ_BasTerPeshera");
 			npchar.Dialog.Filename = "Common_Prison.c";
 			npchar.Dialog.CurrentNode = "First_officer";
 		break;
-		// <—— 导航星
+		// < —导航星
 		case "Helen_meeting":
 			dialog.text = "哦, 当然不! 请进。 我们的地牢总是欢迎你。 呃, 当然, 我是从好的方面说的。 那么, 你在这里需要什么? ";
 			link.l1 = "哦, 没什么特别的, 你知道, 只是在城里四处看看, 所以偶尔逛到这里。 ";

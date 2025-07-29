@@ -13,7 +13,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "日安。 我想了解一艘名为‘" + pchar.questTemp.Slavetrader.ShipName + "’。 由弗朗索瓦.贡捷指挥的护卫舰的情况。 ";
                 link.l1.go = "Havana_ratP_1";
 			}
-			// 卡勒幽船
+			// 卡莱乌切
 			if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "graveyard" && !CheckAttribute(npchar, "quest.caleuche"))
 			{
 				link.l1 = "打扰一下, 请问有个叫约阿希姆.梅里曼的人到你们港口了吗? 一位中年先生, 葡萄牙人, 留着小胡子。 帝王须, 还有一双锐利的眼睛? ";
@@ -22,7 +22,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			// Addon 2016-1 Jason 海盗系列
 			if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "jewelry_3" && !CheckAttribute(npchar, "quest.Mtraxx"))
 			{
-				link.l1 = "我对一艘名为‘Cantavro’的船很感兴趣。 我在找它的船长 --埃斯贝尔多.卡巴纳斯, 有私事要找他。 你能帮我吗? ";
+				link.l1 = "我对一艘名为‘Cantavro’的船很感兴趣。 我在找它的船长 —埃斯贝尔多.卡巴纳斯, 有私事要找他。 你能帮我吗? ";
 				link.l1.go = "mtraxx";
 			}
 		break;
@@ -33,7 +33,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1.go = "exit";
 		break;
 		
-		// 卡勒幽船
+		// 卡莱乌切
 		case "caleuche":
 			dialog.text = "我对他一无所知。 就算他来了, 也从没在任何地方登记过。 ";
 			link.l1 = "我知道了。 真遗憾... 好吧, 我会继续寻找... ";

@@ -182,7 +182,7 @@ void ProcessDialogEvent()
 					sItemName = "红宝石";
 				break;
 				case 4:
-					sItemName = "祖母绿";
+					sItemName = "翡翠";
 				break;
 			}
 			pchar.questTemp.ReasonToFast.jewType = sItemName;

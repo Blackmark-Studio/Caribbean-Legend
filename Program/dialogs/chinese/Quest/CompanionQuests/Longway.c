@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Alonso_3":
-			dialog.text = "当您外出时 --无论是在镇上还是在铺位上休息, 我们偶尔会打扫您的住所。 您从未注意到? 还是忘了? ";
+			dialog.text = "当您外出时 —无论是在镇上还是在铺位上休息, 我们偶尔会打扫您的住所。 您从未注意到? 还是忘了? ";
 			link.l1 = "哦, 对了。 好吧, 你现在可以走了。 ";
 			link.l1.go = "PZ_OsmatrivaemKautu";
 		break;
@@ -70,13 +70,13 @@ void ProcessDialogEvent()
 		
 		case "PZ_Folke_1":
 			dialog.text = "船长, 我今天注意到有人翻了您的储物柜。 您没注意到吗? ";
-			link.l1 = "什么? 我不是一直在检查储物柜, 福尔克, 而且我也不总是在船舱里。 老实告诉我 --是你吗? 上次我们在岸上时, 你又搞砸了并借了更多的银行贷款? ";
+			link.l1 = "什么? 我不是一直在检查储物柜, 福尔克, 而且我也不总是在船舱里。 老实告诉我 —是你吗? 上次我们在岸上时, 你又搞砸了并借了更多的银行贷款? ";
 			link.l1.go = "PZ_Folke_2";
 		break;
 		
 		case "PZ_Folke_2":
 			dialog.text = "完全不是, 船长。 我口袋里和储物柜里没有您的任何东西。 而且永远不会有。 ";
-			link.l1 = "我当然希望不是。 你可以走了 --我会检查丢了什么。 ";
+			link.l1 = "我当然希望不是。 你可以走了 —我会检查丢了什么。 ";
 			link.l1.go = "PZ_OsmatrivaemKautu";
 		break;
 		
@@ -114,7 +114,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_LigaInJungle_3":
-			dialog.text = "我们不是 amateurs, 德莫尔先生。 即使我们告诉你, 也帮不了你 --我们的雇主已经离开群岛了。 你无法伤害他们或道歉。 我们已经拿到报酬, 现在是时候履行我们的约定了。 ";
+			dialog.text = "我们不是 amateurs, 德莫尔先生。 即使我们告诉你, 也帮不了你 —我们的雇主已经离开群岛了。 你无法伤害他们或道歉。 我们已经拿到报酬, 现在是时候履行我们的约定了。 ";
 			link.l1 = "如果你已经拿到报酬, 为什么还要流血? ";
 			link.l1.go = "PZ_LigaInJungle_4";
 		break;
@@ -166,7 +166,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_3":
-			dialog.text = "这是罗登堡大人的手段 --除掉那些帮助过他但知道太多的人。 ";
+			dialog.text = "这是罗登堡大人的手段 —除掉那些帮助过他但知道太多的人。 ";
 			link.l1 = "真的... 那个蒙面人确实说他的雇主最近离开了群岛。 这正是卢卡斯的计划! 你认为我们应该期待更多袭击吗? ";
 			link.l1.go = "PZ_Longway_4";
 		break;
@@ -222,18 +222,18 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_14":
-			dialog.text = "没错, 船长阁下。 但朗威既不是劳工也不是仆人。 他是自愿来帮忙的, 也可以以同样的方式离开。 这不会是永远的 --有一件重要的事情要处理。 朗威希望事情完成后回来。 ";
-			link.l1 = "这是什么事? 告诉我 --如果不是作为你的船长, 那就作为与你经历过很多的人。 ";
+			dialog.text = "没错, 船长阁下。 但朗威既不是劳工也不是仆人。 他是自愿来帮忙的, 也可以以同样的方式离开。 这不会是永远的 —有一件重要的事情要处理。 朗威希望事情完成后回来。 ";
+			link.l1 = "这是什么事? 告诉我 —如果不是作为你的船长, 那就作为与你经历过很多的人。 ";
 			link.l1.go = "PZ_Longway_15";
 		break;
 		
 		case "PZ_Longway_15":
-			dialog.text = "朗威只能说他发过誓 --很久以前。 履行誓言的时候到了。 否则... 朗威的生命就没有意义了。 ";
-			link.l1 = "你说得对, 朗威 --你不是囚犯, 我也不是狱卒。 你可以自由离开。 祝你好运。 ";
+			dialog.text = "朗威只能说他发过誓 —很久以前。 履行誓言的时候到了。 否则... 朗威的生命就没有意义了。 ";
+			link.l1 = "你说得对, 朗威 —你不是囚犯, 我也不是狱卒。 你可以自由离开。 祝你好运。 ";
 			link.l1.go = "PZ_Longway_Otpustit_1";
 			link.l2 = "你可以走, 但至少告诉我你要去哪里。 我可以帮忙, 不会问太多问题。 ";
 			link.l2.go = "PZ_Longway_Pomoch_1";
-			link.l3 = "我也有一项重要任务 --拯救我的兄弟。 为此, 我需要每个人, 包括你, 朗威。 没有你我们做不到。 ";
+			link.l3 = "我也有一项重要任务 —拯救我的兄弟。 为此, 我需要每个人, 包括你, 朗威。 没有你我们做不到。 ";
 			link.l3.go = "PZ_Longway_NeOtpuskaem_1";
 		break;
 		
@@ -245,9 +245,9 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_NeOtpuskaem_2":
 			dialog.text = "朗威不能。 只是... 不能。 这是一个巨大的秘密, 甚至不是我该分享的。 ";
-			link.l1 = "太遗憾了。 我以为我们之间有信任。 你不能离开船 --我现在有所有军官支持我。 ";
+			link.l1 = "太遗憾了。 我以为我们之间有信任。 你不能离开船 —我现在有所有军官支持我。 ";
 			link.l1.go = "PZ_Longway_NeOtpuskaem_3";
-			link.l2 = "你说得对, 朗威 --你不是囚犯, 我也不是狱卒。 你可以自由离开。 祝你好运。 ";
+			link.l2 = "你说得对, 朗威 —你不是囚犯, 我也不是狱卒。 你可以自由离开。 祝你好运。 ";
 			link.l2.go = "PZ_Longway_Otpustit_1";
 		break;
 		
@@ -275,7 +275,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_Otpustit_1":
 			dialog.text = "我没想到你会这么轻易让我走。 谢谢你, 船长阁下。 ";
-			link.l1 = "啊, 没什么。 但告诉我 --你的事情完成后, 我在哪里可以找到你? ";
+			link.l1 = "啊, 没什么。 但告诉我 —你的事情完成后, 我在哪里可以找到你? ";
 			link.l1.go = "PZ_Longway_GdeIskat_1";
 		break;
 		
@@ -322,19 +322,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_SharliePlennik_BadFinal_3":
-			dialog.text = "更像是在另一个世界 --他不跟我们任何人说话, 直接投入了战斗。 ";
+			dialog.text = "更像是在另一个世界 —他不跟我们任何人说话, 直接投入了战斗。 ";
 			link.l1 = "该死! 你本可以抓住他的。 ";
 			link.l1.go = "PZ_SharliePlennik_BadFinal_4";
 		break;
 		
 		case "PZ_SharliePlennik_BadFinal_4":
-			dialog.text = "有些人杀了比抓住容易得多, 你不知道吗? 你应该高兴我们没有对你怀恨在心 --你的中国人又造成了一场屠杀, 我们需要更多配备神射手的部队来对付他。 ";
+			dialog.text = "有些人杀了比抓住容易得多, 你不知道吗? 你应该高兴我们没有对你怀恨在心 —你的中国人又造成了一场屠杀, 我们需要更多配备神射手的部队来对付他。 ";
 			link.l1 = "是的, 确实。 谢谢你。 ";
 			link.l1.go = "PZ_SharliePlennik_BadFinal_5";
 		break;
 		
 		case "PZ_SharliePlennik_BadFinal_5":
-			dialog.text = "说到这个, 既然他是你的朋友, 我们在他身上发现了一些文件。 我们不明白是什么 --你可能更清楚。 没被血覆盖的部分写着一些胡言乱语。 ";
+			dialog.text = "说到这个, 既然他是你的朋友, 我们在他身上发现了一些文件。 我们不明白是什么 —你可能更清楚。 没被血覆盖的部分写着一些胡言乱语。 ";
 			link.l1 = "那是... 该死。 谢谢你把它们还给我。 再见, 军官。 ";
 			link.l1.go = "PZ_SharliePlennik_BadFinal_6";
 		break;
@@ -374,11 +374,11 @@ void ProcessDialogEvent()
 			dialog.text = "有什么想法吗? 这个黄皮肤的人极其危险。 我们不是第一支被派来的小队。 命令就是命令, 但我不想愚蠢地在没有可靠计划的情况下进去送死。 ";
 			if (CheckAttribute(pchar, "questTemp.PZ_OhotnikOtryad"))
 			{
-				link.l1 = "他一个人在里面, 我和你们一起。 我来对付他 --你们专注于掩护我。 我们会成功的。 ";
+				link.l1 = "他一个人在里面, 我和你们一起。 我来对付他 —你们专注于掩护我。 我们会成功的。 ";
 				link.l1.go = "PZ_BasTer_OtryadPeshera_2";
 				if (pchar.location.from_sea != "BasTer_Town")
 				{
-					link.l2 = "我有一个。 你们都要死 --就在这里。 ";
+					link.l2 = "我有一个。 你们都要死 —就在这里。 ";
 					link.l2.go = "PZ_BasTer_OtryadPeshera_Kill_1";
 				}
 			}
@@ -399,7 +399,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.PZ_OhotnikOtryad"))
 			{
 				dialog.text = "所以你不是赏金猎人... 但即使你是, 你也是那个该死的中国人的朋友! ";
-				link.l1 = "没错。 我反正得摆脱你们 --没必要拖延不可避免的事。 ";
+				link.l1 = "没错。 我反正得摆脱你们 —没必要拖延不可避免的事。 ";
 				link.l1.go = "PZ_BasTer_OtryadPeshera_Kill_2";
 			}
 			if (CheckAttribute(pchar, "questTemp.PZ_DrugOtryad"))
@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.PZ_DrugOtryad"))
 			{
 				dialog.text = "干得好, 船长! 他放下了武器。 很高兴有你和我们在一起。 现在把他带到指挥官那里。 ";
-				link.l1 = "我为什么要那样做? 我为朗威的行为支付了黄金罚款 --一笔慷慨的罚款。 你们的军官是证人 --他们会证实的。 指挥官授权我带我的人回船。 ";
+				link.l1 = "我为什么要那样做? 我为朗威的行为支付了黄金罚款 —一笔慷慨的罚款。 你们的军官是证人 —他们会证实的。 指挥官授权我带我的人回船。 ";
 				link.l1.go = "PZ_BasTer_SOtryadomDrug_1";
 			}
 		break;
@@ -613,7 +613,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_BasTer_SOtryadom_DialogLongway_Bad_1":
-			dialog.text = "如果你只是想谈谈, 就不会让我解除武装。 但老虎即使收起爪子, 仍然是老虎。 你一定早就决定背叛朗威了 --没必要撒谎。 自卫吧, 船长! ";
+			dialog.text = "如果你只是想谈谈, 就不会让我解除武装。 但老虎即使收起爪子, 仍然是老虎。 你一定早就决定背叛朗威了 —没必要撒谎。 自卫吧, 船长! ";
 			link.l1 = "该死! ";
 			link.l1.go = "PZ_BasTer_SOtryadom_DialogLongway_Bad_2";
 		break;
@@ -657,7 +657,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.PZ_DrugOtryad"))
 			{
-				dialog.text = "即使有你在场也没用 --他还是袭击了我们。 该死的野蛮人... ";
+				dialog.text = "即使有你在场也没用 —他还是袭击了我们。 该死的野蛮人... ";
 				link.l1 = "你不应该那样谈论他。 他攻击我们是因为他心烦意乱, 以为我和你们在一起。 ";
 				link.l1.go = "PZ_BasTer_SOtryadom_UbiliLongway_2";
 			}
@@ -672,7 +672,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.PZ_DrugOtryad"))
 			{
-				dialog.text = "好吧, 不管心烦意乱还是不心烦意乱, 野蛮还是不野蛮, 都改变不了什么 --他之前杀了我们很多人, 先流了血。 ";
+				dialog.text = "好吧, 不管心烦意乱还是不心烦意乱, 野蛮还是不野蛮, 都改变不了什么 —他之前杀了我们很多人, 先流了血。 ";
 				link.l1 = "一定有什么驱使他到了那种状态。 但我们不要纠结于此。 我要走了, 你们可以在方便的时候回到指挥官那里。 再见。 ";
 				link.l1.go = "PZ_BasTer_SOtryadom_UbiliLongway_3";
 			}
@@ -749,7 +749,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_IshemLongway_SorraKomendant_Dialog_4":
 			dialog.text = "更多人来了! ";
-			link.l1 = "他们真固执 --我得承认。 我们在这里太暴露了。 我们去洞穴 --更容易自卫。 ";
+			link.l1 = "他们真固执 —我得承认。 我们在这里太暴露了。 我们去洞穴 —更容易自卫。 ";
 			link.l1.go = "PZ_IshemLongway_SorraKomendant_Dialog_5";
 		break;
 		
@@ -776,7 +776,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_IshemLongway_SorraKomendant_Dialog_7":
 			dialog.text = "船长阁下, 朗威... ";
-			link.l1 = "但你说得对 --我们不能待在这里。 在另一支小队出现之前, 我们开始行动。 我们起航后在船上谈。 ";
+			link.l1 = "但你说得对 —我们不能待在这里。 在另一支小队出现之前, 我们开始行动。 我们起航后在船上谈。 ";
 			link.l1.go = "PZ_IshemLongway_SorraKomendant_Dialog_8";
 		break;
 		
@@ -786,13 +786,13 @@ void ProcessDialogEvent()
 		
 		case "PZ_IshemLongway_Zastupaemsya_1":
 			dialog.text = "白人的狡猾和恶意是无止境的。 ";
-			link.l1 = "嘿, 我也是白人! 此外, 你杀了他们的朋友和战友 --他们有权生气。 ";
+			link.l1 = "嘿, 我也是白人! 此外, 你杀了他们的朋友和战友 —他们有权生气。 ";
 			link.l1.go = "PZ_IshemLongway_Zastupaemsya_2";
 		break;
 		
 		case "PZ_IshemLongway_Zastupaemsya_2":
 			dialog.text = "你原谅他们了吗, 船长阁下? ";
-			link.l1 = "我原谅你, 朗威。 我敦促你不要以肤色评判人。 你最应该理解这一点。 我们被打断了 --我们刚才说到... ? ";
+			link.l1 = "我原谅你, 朗威。 我敦促你不要以肤色评判人。 你最应该理解这一点。 我们被打断了 —我们刚才说到... ? ";
 			link.l1.go = "PZ_IshemLongway_Zastupaemsya_3";
 		break;
 		
@@ -830,7 +830,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_IshemLongway_Zastupaemsya_6":
 			dialog.text = "安全了, 船长阁下。 ";
-			link.l1 = "很好, 但我们不要在这里逗留。 你和我有很多事情要谈。 跟我来 --我们回船。 ";
+			link.l1 = "很好, 但我们不要在这里逗留。 你和我有很多事情要谈。 跟我来 —我们回船。 ";
 			link.l1.go = "PZ_IshemLongway_Zastupaemsya_7";
 		break;
 		
@@ -890,13 +890,13 @@ void ProcessDialogEvent()
 		
 		case "PZ_IshemLongway_SrazuNashli_4":
 			dialog.text = "朗威会检查士兵是否还在来。 ";
-			link.l1 = "我们一起去 --我们无法抵抗整个驻军。 ";
+			link.l1 = "我们一起去 —我们无法抵抗整个驻军。 ";
 			link.l1.go = "PZ_IshemLongway_SrazuNashli_5";
 		break;
 		
 		case "PZ_IshemLongway_SrazuNashli_5":
 			dialog.text = "是, 船长阁下? ";
-			link.l1 = "我们有很多事情要谈。 现在跟我来 --我们需要立即起锚。 ";
+			link.l1 = "我们有很多事情要谈。 现在跟我来 —我们需要立即起锚。 ";
 			link.l1.go = "PZ_IshemLongway_SrazuNashli_6";
 		break;
 		
@@ -907,13 +907,13 @@ void ProcessDialogEvent()
 		// 阶段2, 历史篇章
 		case "PZ_LongwayRazgovorOProshlom":
 			dialog.text = "再次感谢您的帮助, 船长阁下。 我相信您有很多问题。 ";
-			link.l1 = "可以这么说。 你为什么杀那些士兵? 你不会为了取乐而杀人 --我知道。 ";
+			link.l1 = "可以这么说。 你为什么杀那些士兵? 你不会为了取乐而杀人 —我知道。 ";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_2";
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_2":
-			dialog.text = "不, 朗威不会。 士兵们试图阻止朗威, 而监狱不是选择。 他们不会听一个中国人的 --只有白人才能得到那种礼遇。 ";
+			dialog.text = "不, 朗威不会。 士兵们试图阻止朗威, 而监狱不是选择。 他们不会听一个中国人的 —只有白人才能得到那种礼遇。 ";
 			link.l1 = "他们也不总是听其他白人的, 但我明白你的意思。 尽管如此, 像屠宰牲畜一样在城里屠杀他们? 你在巴斯特尔做什么? ";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_3";
 		break;
@@ -926,7 +926,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_LongwayRazgovorOProshlom_4":
 			dialog.text = "请, 船长阁下, 理解朗威。 他发誓要独自完成这件事。 不要逼他。 你欠朗威这么多。 ";
-			link.l1 = "我真的很感激, 但那时我自己就能处理范.默登。 然而, 我们从一开始就扯平了 --你说我挽回了你的面子, 你救了我的命。 现在我又救了你一次。 ";
+			link.l1 = "我真的很感激, 但那时我自己就能处理范.默登。 然而, 我们从一开始就扯平了 —你说我挽回了你的面子, 你救了我的命。 现在我又救了你一次。 ";
 			if (CheckAttribute(pchar, "questTemp.PZ_NashliArhiv")) link.l1.go = "PZ_LongwayRazgovorOProshlom_5";
 			else link.l1.go = "PZ_LongwayRazgovorOProshlom_Grubim_1";
 		break;
@@ -955,15 +955,15 @@ void ProcessDialogEvent()
 		
 		case "PZ_LongwayRazgovorOProshlom_Grubim_1":
 			dialog.text = "朗威明白。 他是认真的。 ";
-			link.l1 = "希望如此。 现在告诉我你是如何走到这一步的 --你许了什么诺言, 何时, 对谁。 ";
+			link.l1 = "希望如此。 现在告诉我你是如何走到这一步的 —你许了什么诺言, 何时, 对谁。 ";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_Grubim_2";
 			if (CheckAttribute(pchar, "questTemp.PZ_NashliArhiv")) AddComplexSelfExpToScill(100, 100, 100, 100);
 			notification("朗威不赞成", "Longway");
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_Grubim_2":
-			dialog.text = "是, 船长阁下\n朗威在寻找对他来说最重要的在世之人 --常兴。 ";
-			link.l1 = "常兴 --是你最好的朋友吗? ";
+			dialog.text = "是, 船长阁下\n朗威在寻找对他来说最重要的在世之人 —常兴。 ";
+			link.l1 = "常兴 —是你最好的朋友吗? ";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_7";
 		break;
 		
@@ -983,8 +983,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_Proshaem_3":
-			dialog.text = "当然, 船长阁下, 朗威很高兴与您分担重担。 \n朗威在寻找对他来说最重要的在世之人 --常兴。 ";
-			link.l1 = "常兴 --是你最好的朋友吗? ";
+			dialog.text = "当然, 船长阁下, 朗威很高兴与您分担重担。 \n朗威在寻找对他来说最重要的在世之人 —常兴。 ";
+			link.l1 = "常兴 —是你最好的朋友吗? ";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_7";
 		break;
 		
@@ -1001,7 +1001,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_9":
-			dialog.text = "他帮助我寻找非常坏的人 --即使以白人的标准来看。 奥利维罗.费门特洛斯。 安东.范.迪门和乔普.范德温克。 ";
+			dialog.text = "他帮助我寻找非常坏的人 —即使以白人的标准来看。 奥利维罗.费门特洛斯。 安东.范.迪门和乔普.范德温克。 ";
 			link.l1 = "从名字判断, 一个是葡萄牙人, 另外两个是荷兰人。 ";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_10";
 		break;
@@ -1032,14 +1032,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Formosa_Tavern_1":
-			dialog.text = "中国人不准进来。 这是一家体面的场所, 为体面的人服务 --不是为你这种人。 ";
+			dialog.text = "中国人不准进来。 这是一家体面的场所, 为体面的人服务 —不是为你这种人。 ";
 			link.l1 = "我只有一个问题。 让我问完就走。 ";
 			link.l1.go = "PZ_Formosa_Tavern_2";
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "PZ_Formosa_Tavern_2":
-			dialog.text = "先学会好好说话! 我告诉过你 --不欢迎你这种人。 ";
+			dialog.text = "先学会好好说话! 我告诉过你 —不欢迎你这种人。 ";
 			link.l1 = "我在哪里可以找到奥利维罗.费门特洛斯? 告诉我, 我就走。 ";
 			link.l1.go = "PZ_Formosa_Tavern_3";
 		break;
@@ -1068,7 +1068,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Formosa_smuggler_1":
-			dialog.text = "我听说了你的大麻烦, 我的小朋友。 你不该那么大声 --错误的名字, 错误的地方。 ";
+			dialog.text = "我听说了你的大麻烦, 我的小朋友。 你不该那么大声 —错误的名字, 错误的地方。 ";
 			link.l1 = "你知道这个人的事? ! 告诉我! ";
 			link.l1.go = "PZ_Formosa_smuggler_2";
 			DelLandQuestMark(npchar);
@@ -1120,7 +1120,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Formosa_smuggler_14":
-			dialog.text = "别这么急躁! 如果我什么都没查到, 我还敢再接近你吗? 我要介绍一个知道的人给你。 你很幸运, 他喜欢你这样的亚洲人。 他甚至有相配的仆人 --见鬼, 甚至有女仆。 还在学你们的脏话。 名叫约翰.范.默登。 他会在官邸附近的一栋两层楼的房子里等你。 ";
+			dialog.text = "别这么急躁! 如果我什么都没查到, 我还敢再接近你吗? 我要介绍一个知道的人给你。 你很幸运, 他喜欢你这样的亚洲人。 他甚至有相配的仆人 —见鬼, 甚至有女仆。 还在学你们的脏话。 名叫约翰.范.默登。 他会在官邸附近的一栋两层楼的房子里等你。 ";
 			link.l1 = "谢谢。 ";
 			link.l1.go = "PZ_Formosa_smuggler_15";
 		break;
@@ -1147,7 +1147,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Formosa_JohanVanMerden_2":
 			dialog.text = "是吗? 抱歉。 那个马塞洛和他的玩笑... 真遗憾, 很少有人对你们的文化感兴趣。 就因为不同的语言和眼睛的形状。 但你很聪明。 不像那些黑人, 呵呵。 ";
-			link.l1 = "(用普通话) 所以走私者没撒谎 --你确实是个有文化的人。 你真的说我们的语言? ";
+			link.l1 = "(用普通话) 所以走私者没撒谎 —你确实是个有文化的人。 你真的说我们的语言? ";
 			link.l1.go = "PZ_Formosa_JohanVanMerden_2a";
 			link.l2 = "感谢你对我文化的赞美之词。 你一定是约翰.范.默登? ";
 			link.l2.go = "PZ_Formosa_JohanVanMerden_3";
@@ -1160,8 +1160,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Formosa_JohanVanMerden_3":
-			dialog.text = "是的, 张图, 是我。 我听说你在找奥利维罗.费门特洛斯。 我确实知道在哪里能找到他, 但首先告诉我 --你为什么找他? 你的答案将决定我的回答。 ";
-			link.l1 = "他... 绑架了我最后也是最亲爱的家人 --我的妹妹, 常兴。 ";
+			dialog.text = "是的, 张图, 是我。 我听说你在找奥利维罗.费门特洛斯。 我确实知道在哪里能找到他, 但首先告诉我 —你为什么找他? 你的答案将决定我的回答。 ";
+			link.l1 = "他... 绑架了我最后也是最亲爱的家人 —我的妹妹, 常兴。 ";
 			link.l1.go = "PZ_Formosa_JohanVanMerden_4";
 		break;
 		
@@ -1172,7 +1172,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Formosa_JohanVanMerden_5":
-			dialog.text = "我... 很抱歉。 如果是这样的话, 常兴 --对吗? --可能还活着。 我们这样办: 给我一些时间, 确切查明奥利维罗现在在哪里。 比如说一周。 然后我们再见面。 在城门外见 --谁知道有什么眼睛在跟踪你到这里。 我不想比习惯的更卷入其中, 希望你理解。 ";
+			dialog.text = "我... 很抱歉。 如果是这样的话, 常兴 —对吗? —可能还活着。 我们这样办: 给我一些时间, 确切查明奥利维罗现在在哪里。 比如说一周。 然后我们再见面。 在城门外见 —谁知道有什么眼睛在跟踪你到这里。 我不想比习惯的更卷入其中, 希望你理解。 ";
 			link.l1 = "我... 我非常感激您, 范.默登先生。 期待我们下次见面。 ";
 			link.l1.go = "PZ_Formosa_JohanVanMerden_6";
 		break;
@@ -1207,7 +1207,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Formosa_JohanVanMerden_14":
-			dialog.text = "简单说声'谢谢'就够了。 如果你在城里找不到奥利维罗, 就找晨星号。 你总能通过他的船追踪到他。 祝你好运, 我的朋友 --你和你妹妹会需要的。 ";
+			dialog.text = "简单说声'谢谢'就够了。 如果你在城里找不到奥利维罗, 就找晨星号。 你总能通过他的船追踪到他。 祝你好运, 我的朋友 —你和你妹妹会需要的。 ";
 			link.l1 = "我从心底感谢您, 范.默登先生。 ";
 			link.l1.go = "PZ_Formosa_JohanVanMerden_15";
 		break;
@@ -1264,7 +1264,7 @@ void ProcessDialogEvent()
 			dialog.text = "我认为每个人都应该有激情, 有爱好。 至于我, 我收集稀有昂贵的武器。 有时它们有历史, 有时没有, 但总是致命的。 我的收藏可能对你的 crusade 有用。 那么, 告诉我, 你计划在哪里伏击范.迪门? ";
 			link.l1 = "(官邸) 既然你有这么多好武器, 我要拿最好的 blade。 有了它, 张图在白人中将无人能敌。 ";
 			link.l1.go = "PZ_OliverTrust_resedinsia_1";
-			link.l2 = "(种植园) 我会在种植园的路上伏击他们 --他们无处可逃。 ";
+			link.l2 = "(种植园) 我会在种植园的路上伏击他们 —他们无处可逃。 ";
 			link.l2.go = "PZ_OliverTrust_Plantation1";
 			link.l3 = "(情妇处) 情妇那里人不会多, 所以卫兵不会及时反应。 ";
 			link.l3.go = "PZ_OliverTrust_lubovnitsa_1";
@@ -1280,7 +1280,7 @@ void ProcessDialogEvent()
 			dialog.text = "好选择! 我印象深刻。 为了充分利用, 你需要一把好火器。 告诉我, 张图, 你能瞄准多远? ";
 			link.l1 = "说实话... 不太远, 我必须确保不失误。 "
 			link.l1.go = "PZ_OliverTrust_Plantation_MediumDistance1";
-			link.l2 = "我会从远处攻击 --我的敌人甚至不会意识到我从哪里击中他。 ";
+			link.l2 = "我会从远处攻击 —我的敌人甚至不会意识到我从哪里击中他。 ";
 			link.l2.go = "PZ_OliverTrust_Plantation_FarDistance1";
 			notification("神射手解锁", "Longway");
 			SetCharacterPerk(pchar, "Jager");
@@ -1314,7 +1314,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_Plantation_MediumDistance3":
-			dialog.text = "记住, 可互换机制已经生锈了。 没有油能修复 --它彻底坏了。 装填很困难, 所以现在就做。 仔细看 --用点力, 像这样。 但不要太用力, 否则会弄坏它。 ";
+			dialog.text = "记住, 可互换机制已经生锈了。 没有油能修复 —它彻底坏了。 装填很困难, 所以现在就做。 仔细看 —用点力, 像这样。 但不要太用力, 否则会弄坏它。 ";
 			link.l1 = "像这样? ";
 			link.l1.go = "PZ_OliverTrust_Plantation_MediumDistance4";
 		break;
@@ -1360,7 +1360,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_2":
-			dialog.text = "什么? 哈! 你想象力真丰富, 中国人! 安东是个懦夫, 范德温克在那里是为了保护他, 以防有人打扰他们的'私人时间'\n乔普总是穿着厚重的战壕装甲 --大多数冷兵器都无法穿透。 这就是为什么你也需要特别的东西。 拿这把细剑。 它很长, 比大多数其他 swords 更坚固, 重量像一把好 blade。 ";
+			dialog.text = "什么? 哈! 你想象力真丰富, 中国人! 安东是个懦夫, 范德温克在那里是为了保护他, 以防有人打扰他们的'私人时间'\n乔普总是穿着厚重的战壕装甲 —大多数冷兵器都无法穿透。 这就是为什么你也需要特别的东西。 拿这把细剑。 它很长, 比大多数其他 swords 更坚固, 重量像一把好 blade。 ";
 			link.l1 = "用于对抗装甲敌人的细剑... ? ";
 			link.l1.go = "PZ_OliverTrust_lubovnitsa_3";
 			//Log_Info("您获得了细剑");
@@ -1370,7 +1370,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_3":
-			dialog.text = "不要瞄准装甲本身 --这不是 estoc。 攻击缝隙和弱点, 如腹股沟。 腋窝和喉咙。 消耗他, 掌握节奏。 乔普还挥舞着一把重斧, 所以不要试图格挡他的打击 --躲开。 \n万一你找不到破绽, 拿这把 blunderbuss。 它通常装的是散弹, 但我为你准备了一套钢箭。 ";
+			dialog.text = "不要瞄准装甲本身 —这不是 estoc。 攻击缝隙和弱点, 如腹股沟。 腋窝和喉咙。 消耗他, 掌握节奏。 乔普还挥舞着一把重斧, 所以不要试图格挡他的打击 —躲开。 \n万一你找不到破绽, 拿这把 blunderbuss。 它通常装的是散弹, 但我为你准备了一套钢箭。 ";
 			link.l1 = "火枪用的箭... ? ";
 			link.l1.go = "PZ_OliverTrust_lubovnitsa_4";
 			//Log_Info("您获得了滑膛枪");
@@ -1383,7 +1383,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_lubovnitsa_4":
-			dialog.text = "不寻常, 对吧? 新旧结合。 设计为单手射击, 但如果太重, 就用双手。 很多人都这样做。 \n还有这个, 试试这件柳条装甲。 它比乔普的胸甲轻, 但仍提供不错的保护。 不要让他的斧头直接命中 --即使是米兰装甲也无法承受那样的武器。 你明白吗? ";
+			dialog.text = "不寻常, 对吧? 新旧结合。 设计为单手射击, 但如果太重, 就用双手。 很多人都这样做。 \n还有这个, 试试这件柳条装甲。 它比乔普的胸甲轻, 但仍提供不错的保护。 不要让他的斧头直接命中 —即使是米兰装甲也无法承受那样的武器。 你明白吗? ";
 			link.l1 = "是的, 我明白。 谢谢您, 特鲁斯特先生! ";
 			link.l1.go = "PZ_OliverTrust_13";
 			//Log_Info("您获得了皮制胸甲");
@@ -1403,7 +1403,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_OliverTrust_resedinsia_2":
-			dialog.text = "你以前用过吗? 很好。 你时间不多, 有很多敌人要面对。 这里, 也拿这个 --一把三管手枪, 镶嵌精美。 现在在我面前装填; 以后你没有时间了。 穿上这件决斗背心。 它很轻, 会给你所需的速度, 还有一些保护。 ";
+			dialog.text = "你以前用过吗? 很好。 你时间不多, 有很多敌人要面对。 这里, 也拿这个 —一把三管手枪, 镶嵌精美。 现在在我面前装填; 以后你没有时间了。 穿上这件决斗背心。 它很轻, 会给你所需的速度, 还有一些保护。 ";
 			link.l1 = "谢谢您, 特鲁斯特先生! ";
 			link.l1.go = "PZ_OliverTrust_13";
 			//Log_Info("您获得了克利旺刀");
@@ -1531,7 +1531,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Batavia_BitvaResidensia_AntoniOneDimen_5":
 			dialog.text = "你没有时间在我身上施加那么多刀伤, 你这个蠢货! ";
-			link.l1 = "这是一种比喻。 刽子手一刀一刀地砍。 或者切掉身体的部分。 我们尽可能多地做 --除非你开始说话。 ";
+			link.l1 = "这是一种比喻。 刽子手一刀一刀地砍。 或者切掉身体的部分。 我们尽可能多地做 —除非你开始说话。 ";
 			link.l1.go = "PZ_Batavia_BitvaResidensia_AntoniOneDimen_6";
 		break;
 		
@@ -1618,7 +1618,7 @@ void ProcessDialogEvent()
 			dialog.text = "(用普通话) 那么, 让我们找个好的伏击点。 ";
 			if (CheckCharacterItem(pchar, "mushket6"))
 			{
-				link.l1 = "(用普通话) 用这个生锈的东西, 我需要靠近。 快速齐射 --锋利而无情。 恐惧和恐慌会完成剩下的。 ";
+				link.l1 = "(用普通话) 用这个生锈的东西, 我需要靠近。 快速齐射 —锋利而无情。 恐惧和恐慌会完成剩下的。 ";
 				link.l1.go = "Exit";
 			}
 			else
@@ -1634,7 +1634,7 @@ void ProcessDialogEvent()
 			if (!CharacterIsAlive("PZ_SoldPlantation_1") && !CharacterIsAlive("PZ_SoldPlantation_2") &&  !CharacterIsAlive("PZ_SoldPlantation_3") && !CharacterIsAlive("PZ_SoldPlantation_4") && !CharacterIsAlive("PZ_SoldPlantation_5") && !CharacterIsAlive("PZ_SoldPlantation_6"))
 			{
 				dialog.text = "讨厌的畜生... 逃奴, 是吗? 你怎么得到这样的武器? 有人雇你... ? ";
-				link.l1 = "没时间了! 告诉我奥利维罗.费门特洛斯在哪里 --现在! ";
+				link.l1 = "没时间了! 告诉我奥利维罗.费门特洛斯在哪里 —现在! ";
 				link.l1.go = "PZ_Batavia_PlantationDimen2";
 			}
 			else
@@ -1647,7 +1647,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Batavia_PlantationDimen2":
-			dialog.text = "呵呵, 有趣... 没时间了 --血从我的肚子里涌出来。 在地狱里燃烧吧, 异教徒... ";
+			dialog.text = "呵呵, 有趣... 没时间了 —血从我的肚子里涌出来。 在地狱里燃烧吧, 异教徒... ";
 			link.l1 = "(用普通话) 不!!! ";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_Batavia_PlantationDimenDead1");
@@ -1655,7 +1655,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Batavia_Plantation_DimenDeadSelfDialog":
 			dialog.text = "(用普通话) 为什么, 为什么, 为什么? ! 我现在怎么找费门特洛斯? ! ";
-			link.l1 = "但首先, 我需要隐藏 --一定有人已经报告了这场屠杀... ";
+			link.l1 = "但首先, 我需要隐藏 —一定有人已经报告了这场屠杀... ";
 			link.l1.go = "PZ_Batavia_BitvaResidensia_AntoniOneDimen_final";
 		break;
 		
@@ -1932,7 +1932,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Formosa_bandit_3":
-			dialog.text = "够了, 别说了 --天晚了, 我开始犯困了。 ";
+			dialog.text = "够了, 别说了 —天晚了, 我开始犯困了。 ";
 			link.l1 = "很快你就会永远睡去。 ";
 			link.l1.go = "PZ_Formosa_bandit_4";
 		break;
@@ -2011,7 +2011,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Formosa_JohanVanMerden_30":
-			dialog.text = "嗯? 哦, 抱歉, 张图。 我老了, 随着年龄增长变得多愁善感。 这是真诚的微笑 --我无法隐藏。 我很高兴你把我当作朋友。 既然我们是朋友, 我也希望你时不时帮我一下。 作为回报, 我肯定会帮你找费门特洛斯。 别担心 --你不会落入陷阱。 ";
+			dialog.text = "嗯? 哦, 抱歉, 张图。 我老了, 随着年龄增长变得多愁善感。 这是真诚的微笑 —我无法隐藏。 我很高兴你把我当作朋友。 既然我们是朋友, 我也希望你时不时帮我一下。 作为回报, 我肯定会帮你找费门特洛斯。 别担心 —你不会落入陷阱。 ";
 			link.l1 = "嗯, 怎么帮你? ";
 			link.l1.go = "PZ_Formosa_JohanVanMerden_31";
 		break;
@@ -2050,7 +2050,7 @@ void ProcessDialogEvent()
 		
 		// 阶段3, 追踪星星
 		case "PZ_Longway_PosleRasskaza":
-			dialog.text = "说到档案, 船长阁下, 你带在身上吗? 这是我需要的全部 --我熟记密码。 ";
+			dialog.text = "说到档案, 船长阁下, 你带在身上吗? 这是我需要的全部 —我熟记密码。 ";
 			if (CheckCharacterItem(pchar, "MerdokArchive"))
 			{
 				notification("所有技能+", "Longway");
@@ -2111,7 +2111,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_PosleRasskaza_Shifr_5":
-			dialog.text = "范.迪门只和他完全信任的人合作 --他的得力助手乔普.范德温克, 以及那个该死的奥利维罗.费门特洛斯。 还有... 还有... ";
+			dialog.text = "范.迪门只和他完全信任的人合作 —他的得力助手乔普.范德温克, 以及那个该死的奥利维罗.费门特洛斯。 还有... 还有... ";
 			link.l1 = "怎么了? 你脸色苍白, 朗威。 ";
 			link.l1.go = "PZ_Longway_PosleRasskaza_Shifr_6";
 		break;
@@ -2135,7 +2135,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_PosleRasskaza_Shifr_9":
-			dialog.text = "是的。 他们这样做了将近十年。 这么多女性失去了家庭。 荣誉和希望... 但后来费门特洛斯停止了与范.默登的合作。 这是他帮助我的唯一原因 --他只想摆脱前合伙人。 ";
+			dialog.text = "是的。 他们这样做了将近十年。 这么多女性失去了家庭。 荣誉和希望... 但后来费门特洛斯停止了与范.默登的合作。 这是他帮助我的唯一原因 —他只想摆脱前合伙人。 ";
 			link.l1 = "这里还记录了他们肮脏勾当之余的其他细节吗? ";
 			link.l1.go = "PZ_Longway_PosleRasskaza_Shifr_10";
 		break;
@@ -2165,7 +2165,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_PosleRasskaza_Shifr_14":
-			dialog.text = "是的, 没错。 不仅是他 --还有范.伯格。 范.默登告诉我是他建议罗登堡放过我。 但一段时间后, 朗威从一个不可靠的来源得知, 实际上是约翰派葡萄牙人追杀我。 我当时不信... 但现在我意识到可能是真的... ";
+			dialog.text = "是的, 没错。 不仅是他 —还有范.伯格。 范.默登告诉我是他建议罗登堡放过我。 但一段时间后, 朗威从一个不可靠的来源得知, 实际上是约翰派葡萄牙人追杀我。 我当时不信... 但现在我意识到可能是真的... ";
 			link.l1 = "恶心。 ";
 			link.l1.go = "PZ_Longway_PosleRasskaza_Shifr_15";
 		break;
@@ -2177,7 +2177,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_PosleRasskaza_Shifr_16":
-			dialog.text = "看来是这样, 船长阁下。 现在我明白了。 范.默登告诉我是他的朋友。 但实际上, 朗威对他来说不过是另一个劳工 --只是比大多数更有用。 \n就这样。 其他页面涉及账目, 以及范.伯格和罗登堡之间的业务细节。 ";
+			dialog.text = "看来是这样, 船长阁下。 现在我明白了。 范.默登告诉我是他的朋友。 但实际上, 朗威对他来说不过是另一个劳工 —只是比大多数更有用。 \n就这样。 其他页面涉及账目, 以及范.伯格和罗登堡之间的业务细节。 ";
 			link.l1 = "我明白了。 现在你该告诉我你在瓜德罗普做了什么。 ";
 			link.l1.go = "PZ_Longway_PosleRasskaza_3";
 		break;
@@ -2241,7 +2241,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Zhorzh_5":
-			dialog.text = "通常, 需要从奉献箱拿钱来让我的线人开口。 但我们最近被抢劫了! 当然, 神父会宣布新的捐款收集, 但我们仍然需要修理屋顶 --它在漏水! 需要很多捐款来修理。 ";
+			dialog.text = "通常, 需要从奉献箱拿钱来让我的线人开口。 但我们最近被抢劫了! 当然, 神父会宣布新的捐款收集, 但我们仍然需要修理屋顶 —它在漏水! 需要很多捐款来修理。 ";
 			link.l1 = "两天。 我不能永远待在这里。 我没有那种时间。 朗威不以耐心著称。 范.默登先生更不。 或者我该提醒你, 格拉维尔? ";
 			link.l1.go = "PZ_Zhorzh_6";
 		break;
@@ -2393,7 +2393,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Kapstervil_GrotSoldiers_3":
-			dialog.text = "我们到底在这里做什么? 已经没人了 --我们确保所有强盗都走了。 ";
+			dialog.text = "我们到底在这里做什么? 已经没人了 —我们确保所有强盗都走了。 ";
 			link.l1 = "";
 			link.l1.go = "exit";
 			LAi_ActorTurnToCharacter(npchar, CharacterFromID("PZ_Kapstervil_GrotSoldier_2"));
@@ -2457,7 +2457,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Zhorzh_13":
-			dialog.text = "哦, 对。 我的错。 无论如何, 我发现他对帆船进行了大量改装, 试图将其伪装成商船, 配备小口径 cannons 和更少的船员。 但他扩大了货舱, 装满了货物 --重得几乎无法航行。 ";
+			dialog.text = "哦, 对。 我的错。 无论如何, 我发现他对帆船进行了大量改装, 试图将其伪装成商船, 配备小口径 cannons 和更少的船员。 但他扩大了货舱, 装满了货物 —重得几乎无法航行。 ";
 			link.l1 = "所以他决定开始新生活。 很好。 现在, 我在哪里可以找到他? ";
 			link.l1.go = "PZ_Zhorzh_14";
 		break;
@@ -2470,7 +2470,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Zhorzh_15":
 			dialog.text = "那是你的事, 朗威先生。 我自己的问题已经够多了... 比如修理那个该死的屋顶。 ";
-			link.l1 = "说到关心的事, 我找到了那些教堂抢劫者。 这是你的捐款。 修理屋顶 --你的上帝没有屋顶可不好。 ";
+			link.l1 = "说到关心的事, 我找到了那些教堂抢劫者。 这是你的捐款。 修理屋顶 —你的上帝没有屋顶可不好。 ";
 			link.l1.go = "PZ_Zhorzh_16";
 		break;
 		
@@ -2579,7 +2579,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Terunyi4":
-			dialog.text = "你终究还是出现了, 中国佬。 我以为你不会来 --没人会自愿给你这种人真钱。 ";
+			dialog.text = "你终究还是出现了, 中国佬。 我以为你不会来 —没人会自愿给你这种人真钱。 ";
 			link.l1 = "五千比索, 正如你要求的。 你准备好启航了吗? ";
 			link.l1.go = "PZ_Terunyi5";
 		break;
@@ -2720,7 +2720,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Helena_8":
 			dialog.text = "好主意。 查尔斯, 你想让我和你一起去灯塔吗? ";
-			link.l1 = "我在移船时会考虑的 --你已经够累了。 ";
+			link.l1 = "我在移船时会考虑的 —你已经够累了。 ";
 			link.l1.go = "PZ_BasTerMayak";
 		break;
 		
@@ -2731,7 +2731,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Alonso_16":
-			dialog.text = "那艘双桅船还在岛外 --准确地说在灯塔那里。 船尾的名字是班滕号。 他们有几个船员上岸了。 ";
+			dialog.text = "那艘双桅船还在岛外 —准确地说在灯塔那里。 船尾的名字是班滕号。 他们有几个船员上岸了。 ";
 			link.l1 = "干得好, 阿隆索。 让船员立即准备起锚。 ";
 			link.l1.go = "PZ_Alonso_17";
 		break;
@@ -2809,7 +2809,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_MayakPodslushivanie_Dialog_1":
-			dialog.text = "想想我说的话。 好好想想。 钱不是问题 --当然在一定限度内。 但即使是那个限度, 对你来说也会像一座金山 --那个中国人必须死! 我以前派人追过他, 但都没用。 不过这次, 如果他们和你的人合作... ";
+			dialog.text = "想想我说的话。 好好想想。 钱不是问题 —当然在一定限度内。 但即使是那个限度, 对你来说也会像一座金山 —那个中国人必须死! 我以前派人追过他, 但都没用。 不过这次, 如果他们和你的人合作... ";
 			link.l1 = "";
 			link.l1.go = "PZ_MayakPodslushivanie_Dialog_1_1";
 			CharacterTurnByChr(npchar, CharacterFromID("PZ_BasTerJailOff_Clone"));
@@ -2860,7 +2860,7 @@ void ProcessDialogEvent()
 			if (!CharacterIsAlive("PZ_Neznakomets_Bandit_1") && !CharacterIsAlive("PZ_Neznakomets_Bandit_2") && !CharacterIsAlive("PZ_Neznakomets_Bandit_3")&& !CharacterIsAlive("PZ_Neznakomets_Bandit_4"))
 			{
 				dialog.text = "该死的, 肮脏的亚洲人... 因为你, 我受了这么多苦。 而现在, 为此, 我就要死了... ";
-				link.l1 = "我们会带你去见我们的医生, 指挥官阁下。 只要告诉我们你在和谁说话 --这很重要。 ";
+				link.l1 = "我们会带你去见我们的医生, 指挥官阁下。 只要告诉我们你在和谁说话 —这很重要。 ";
 				link.l1.go = "PZ_Mayak_KomendantSidit_2";
 				LAi_group_Delete("EnemyFight");
 			}
@@ -2906,13 +2906,13 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_28":
 			dialog.text = "这可能是结束... ";
-			link.l1 = "不, 朗威。 听我说。 如果他们计划留在群岛, 我们迟早会遇到他们 --世界很小, 加勒比海尤其如此。 一旦我们再次找到他们的踪迹, 我会放下一切去追他们。 我向你保证。 听到了吗? ";
+			link.l1 = "不, 朗威。 听我说。 如果他们计划留在群岛, 我们迟早会遇到他们 —世界很小, 加勒比海尤其如此。 一旦我们再次找到他们的踪迹, 我会放下一切去追他们。 我向你保证。 听到了吗? ";
 			link.l1.go = "PZ_Longway_29";
 		break;
 		
 		case "PZ_Longway_29":
 			dialog.text = "是的, 船长阁下。 谢谢你。 ";
-			link.l1 = "振作起来, 朗威。 我们得赶紧回船 --指挥官的死很快就会成为大新闻。 ";
+			link.l1 = "振作起来, 朗威。 我们得赶紧回船 —指挥官的死很快就会成为大新闻。 ";
 			link.l1.go = "PZ_Longway_30";
 		break;
 		
@@ -2939,7 +2939,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_PoterpKrushenie_2":
-			dialog.text = "嗯, 这周围除了山和茂密的丛林什么都没有 --没有通往城市的路。 然而, 你在这里。 你不只是观光, 对吧? ";
+			dialog.text = "嗯, 这周围除了山和茂密的丛林什么都没有 —没有通往城市的路。 然而, 你在这里。 你不只是观光, 对吧? ";
 			link.l1 = "观察力不错。 但你还没告诉我你想要什么。 ";
 			link.l1.go = "PZ_PoterpKrushenie_3";
 		break;
@@ -3074,7 +3074,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_BelizZhitelNovosti_2":
 			dialog.text = "马修.卢特, 就是那个‘风袋’! ";
-			link.l1 = "我不熟悉 --他做了什么? ";
+			link.l1 = "我不熟悉 —他做了什么? ";
 			link.l1.go = "PZ_BelizZhitelNovosti_3";
 		break;
 		
@@ -3085,13 +3085,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_BelizZhitelNovosti_4":
-			dialog.text = "确实。 海岸警卫队一直抓不到他, 但最终, 他贪多嚼不烂 --输给了某艘奇怪的商船, 如果你能相信的话。 ";
+			dialog.text = "确实。 海岸警卫队一直抓不到他, 但最终, 他贪多嚼不烂 —输给了某艘奇怪的商船, 如果你能相信的话。 ";
 			link.l1 = "真有趣。 那艘商船有什么奇怪的? ";
 			link.l1.go = "PZ_BelizZhitelNovosti_5";
 		break;
 		
 		case "PZ_BelizZhitelNovosti_5":
-			dialog.text = "嗯, 那只是一艘巨大。 笨拙的帆船, 没有护航! 但多亏了她那个疯子船长, 卢特今天要唱最后一首歌了 --他就要被绞死了。 你应该来看看! ";
+			dialog.text = "嗯, 那只是一艘巨大。 笨拙的帆船, 没有护航! 但多亏了她那个疯子船长, 卢特今天要唱最后一首歌了 —他就要被绞死了。 你应该来看看! ";
 			link.l1 = "我可能会, 但现在我有其他事要处理。 ";
 			link.l1.go = "PZ_BelizZhitelNovosti_6";
 		break;
@@ -3122,7 +3122,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_32":
 			dialog.text = "晨星号... ";
-			link.l1 = "很可能 --整个群岛没有其他商船船长像他那样。 ";
+			link.l1 = "很可能 —整个群岛没有其他商船船长像他那样。 ";
 			link.l1.go = "PZ_Longway_33";
 		break;
 		
@@ -3155,7 +3155,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Beliz_Komendant_10":
-			dialog.text = "什么? 哦, 是的。 他还活着 --处决还没发生。 你可以去和他谈谈 --他比以往任何时候都更健谈。 但最近, 他一直在胡言乱语,  mostly talking to himself。 ‘风袋’疯了... 我等不及要绞死他了, 免得我们都被他的喋喋不休逼疯。 ";
+			dialog.text = "什么? 哦, 是的。 他还活着 —处决还没发生。 你可以去和他谈谈 —他比以往任何时候都更健谈。 但最近, 他一直在胡言乱语,  mostly talking to himself。 ‘风袋’疯了... 我等不及要绞死他了, 免得我们都被他的喋喋不休逼疯。 ";
 			link.l1 = "";
 			link.l1.go = "PZ_Beliz_Komendant_11";
 		break;
@@ -3201,7 +3201,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_MatthewLutter2":
 			dialog.text = "我的宝藏现在和他绑在一起了, 你知道的, 是‘他’! 我们什么也做不了! 你想要什么? ! 你想从我们这里拿走更多东西吗? 已经什么都没有了! 她会死的! 或者更糟! ";
-			link.l1 = "谁会死? 什么宝藏? 没关系, 这是你自己的错 --你攻击了那艘帆船, 而不是相反。 ";
+			link.l1 = "谁会死? 什么宝藏? 没关系, 这是你自己的错 —你攻击了那艘帆船, 而不是相反。 ";
 			link.l1.go = "PZ_MatthewLutter3";
 		break;
 		
@@ -3285,7 +3285,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.PZ_OhotaNaZvezdu_Yamaika"))
 			{
-				link.l1 = "我认为波特兰峡很合适 --足够近且相对安全。 你觉得呢? ";
+				link.l1 = "我认为波特兰峡很合适 —足够近且相对安全。 你觉得呢? ";
 			}
 			link.l1.go = "PZ_Longway_44";
 		break;
@@ -3359,7 +3359,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Zvezda_DialogWithCapitan_4":
-			dialog.text = "我们摆脱了他。 他只是我们必须清理的另一个问题 --就像站在你旁边的那个一样。 ";
+			dialog.text = "我们摆脱了他。 他只是我们必须清理的另一个问题 —就像站在你旁边的那个一样。 ";
 			link.l1 = "好吧, 既然你不是费门特洛斯, 也许你仍然可以回答我们的问题。 我们在找一个他从我朋友那里带走的人。 ";
 			link.l1.go = "PZ_Zvezda_DialogWithCapitan_5";
 		break;
@@ -3393,7 +3393,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_AnabelleLutter4":
 			dialog.text = "我没有。 仔细看看我。 我可怜的母亲是海盗的黑皮肤女奴。 没人知道我父亲是谁, 所以他们懒得给我一个合适的名字。 ";
-			link.l1 = "那为什么没人碰你? 别误会 --我很高兴没发生那样的事。 但仍然, 这很... 不寻常。 ";
+			link.l1 = "那为什么没人碰你? 别误会 —我很高兴没发生那样的事。 但仍然, 这很... 不寻常。 ";
 			link.l1.go = "PZ_AnabelleLutter5";
 		break;
 		
@@ -3448,7 +3448,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_AnabelleLutter10":
-			dialog.text = "后者你说对了。 但可惜, 前者不是。 他不需要奴隶。 勒瓦瑟疯了 --以他自己的方式, 不像我的马特。 弗朗索瓦想完全拥有一个女人, 身体和灵魂。 当然, 这与爱无关。 他需要自由的女人来摧毁她们的意志。 他喜欢看着她们的外表。 行为和说话方式随着时间的推移而改变... ";
+			dialog.text = "后者你说对了。 但可惜, 前者不是。 他不需要奴隶。 勒瓦瑟疯了 —以他自己的方式, 不像我的马特。 弗朗索瓦想完全拥有一个女人, 身体和灵魂。 当然, 这与爱无关。 他需要自由的女人来摧毁她们的意志。 他喜欢看着她们的外表。 行为和说话方式随着时间的推移而改变... ";
 			link.l1 = "恶心... ";
 			link.l1.go = "PZ_AnabelleLutter11";
 		break;
@@ -3462,7 +3462,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_AnabelleLutterWant1":
-			dialog.text = "但你从未听说过这样的事。 我希望你永远不会看到。 她被带到他面前时仍然骄傲而不屈, 尽管正如马特告诉我的, 勒瓦瑟的人在接管她丈夫在坎佩切附近的种植园后, 一路强奸她到托尔图加 --那些怪物朝他双膝开枪后, 他死于内出血... ";
+			dialog.text = "但你从未听说过这样的事。 我希望你永远不会看到。 她被带到他面前时仍然骄傲而不屈, 尽管正如马特告诉我的, 勒瓦瑟的人在接管她丈夫在坎佩切附近的种植园后, 一路强奸她到托尔图加 —那些怪物朝他双膝开枪后, 他死于内出血... ";
 			link.l1 = "一个坚强的女人... 但你说勒瓦瑟通常不碰他自己想要的女人。 ";
 			link.l1.go = "PZ_AnabelleLutterWant2";
 		break;
@@ -3504,7 +3504,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_AnabelleLutter12":
-			dialog.text = "勒瓦瑟特别鄙视奴隶和黑皮肤女性 --他说她们没有什么可摧毁的。 她们在他手下活不了多久, 印第安人也是如此 --除了少数特别固执的。 但野性和反抗也不是答案 --他会杀死那些太快试图取悦他的人, 以及那些反抗太久的人。 ";
+			dialog.text = "勒瓦瑟特别鄙视奴隶和黑皮肤女性 —他说她们没有什么可摧毁的。 她们在他手下活不了多久, 印第安人也是如此 —除了少数特别固执的。 但野性和反抗也不是答案 —他会杀死那些太快试图取悦他的人, 以及那些反抗太久的人。 ";
 			link.l1 = "太可怕了... 告诉我, 勒瓦瑟有没有抓过亚洲女性? ";
 			link.l1.go = "PZ_AnabelleLutter13";
 		break;
@@ -3538,7 +3538,7 @@ void ProcessDialogEvent()
 			}
 			if (PCharDublonsTotal() >= 100)
 			{
-				link.l3 = "你需要的不仅仅是一点钱。 不是每个人都愿意帮助一个黑皮肤的女孩, 即使是混血儿。 给你, 拿一百杜布隆 --找艘船躲起来。 ";
+				link.l3 = "你需要的不仅仅是一点钱。 不是每个人都愿意帮助一个黑皮肤的女孩, 即使是混血儿。 给你, 拿一百杜布隆 —找艘船躲起来。 ";
 				link.l3.go = "PZ_AnabelleLutter17_Dublon";
 			}
 		break;
@@ -3571,14 +3571,14 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_47":
 			dialog.text = "那个人... 不, 他不再是个人了。 他是野兽。 一个怪物。 那样折磨女人... ";
-			link.l1 = "我知道你在想什么, 朗威。 但你听到了 --他从未有过黄皮肤的女人。 ";
+			link.l1 = "我知道你在想什么, 朗威。 但你听到了 —他从未有过黄皮肤的女人。 ";
 			link.l1.go = "PZ_Longway_48";
 			SetCameraDialogMode(npchar);
 		break;
 		
 		case "PZ_Longway_48":
 			dialog.text = "但他认识整个团伙! 范德温克。 费门特洛斯。 索塔... 我们刚在他的日志里读到过。 如果那个特定的‘她’是... 她呢? ";
-			link.l1 = "谁知道呢... 一个一心报复费门特洛斯的女人 --很容易理解你为什么会这么想。 但可能是任何被奥利维罗毁掉生活的女人。 不一定是你妹妹。 甚至不一定是黄皮肤女人。 ";
+			link.l1 = "谁知道呢... 一个一心报复费门特洛斯的女人 —很容易理解你为什么会这么想。 但可能是任何被奥利维罗毁掉生活的女人。 不一定是你妹妹。 甚至不一定是黄皮肤女人。 ";
 			link.l1.go = "PZ_Longway_49";
 		break;
 		
@@ -3665,7 +3665,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Helena_Sharptown3":
-			dialog.text = "查尔斯, 我从你声音里能听出来 --你最近情绪低落。 ";
+			dialog.text = "查尔斯, 我从你声音里能听出来 —你最近情绪低落。 ";
 			link.l1 = "我肩上担子很重, 尤其是朗威的事。 我只是累了。 但现在放弃太晚了, 特别是因为我向他和我父亲许了诺。 ";
 			link.l1.go = "PZ_Helena_Sharptown4";
 		break;
@@ -3738,12 +3738,12 @@ void ProcessDialogEvent()
 		case "PZ_Etap5_NaverhuTavernBandits_4":
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
 			{
-				dialog.text = "不像你, 我不怕女人。 说到这个 --伙计们, 把她安全带走, 否则胡格诺会把我们变成女人! ";
+				dialog.text = "不像你, 我不怕女人。 说到这个 —伙计们, 把她安全带走, 否则胡格诺会把我们变成女人! ";
 				link.l1 = "胡... 谁? ";
 			}
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
 			{
-				dialog.text = "至少我看起来像个男人。 伙计们, 活捉金发的 --胡格诺在等她。 ";
+				dialog.text = "至少我看起来像个男人。 伙计们, 活捉金发的 —胡格诺在等她。 ";
 				link.l1 = "胡... 谁? ";
 			}
 			link.l1.go = "PZ_Etap5_NaverhuTavernBandits_5";
@@ -3890,7 +3890,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_70_7":
-			dialog.text = "‘美凤号’。 她可能成为决定性因素 --群岛没有比她更快的船。 而且她是... 曾是我的, 所以我了解她。 你会把她借给我吗, 船长阁下? ";
+			dialog.text = "‘美凤号’。 她可能成为决定性因素 —群岛没有比她更快的船。 而且她是... 曾是我的, 所以我了解她。 你会把她借给我吗, 船长阁下? ";
 			if (PCharDublonsTotal() >= 2500)
 			{
 				link.l1 = "给你。 两千五百杜布隆。 只要你把范德温克的头放在纯金盘子上带给我, 哈哈哈哈! ";
@@ -3898,7 +3898,7 @@ void ProcessDialogEvent()
 			}
 			if (sti(pchar.Money) >= 300000)
 			{
-				link.l2 = "我没带那么多杜布隆, 朗威。 而且我怀疑船上也不会有 --你说的是一堆金子。 但比索, 当然。 三十万正好是你需要的。 ";
+				link.l2 = "我没带那么多杜布隆, 朗威。 而且我怀疑船上也不会有 —你说的是一堆金子。 但比索, 当然。 三十万正好是你需要的。 ";
 				link.l2.go = "PZ_Longway_Peso_1";
 			}
 			link.l3 = "你知道吗, 朗威... 你真的建议我支付足够装备一支围攻舰队的钱, 就为了让你去打一个普通暴徒? ! ";
@@ -4014,13 +4014,13 @@ void ProcessDialogEvent()
 		
 		
 		case "PZ_Longway_NoMayfang1":
-			dialog.text = "时间不多了, 船长阁下。 我们不应该浪费 --长兴可能需要我们的帮助... ";
+			dialog.text = "时间不多了, 船长阁下。 我们不应该浪费 —长兴可能需要我们的帮助... ";
 			link.l1 = "我知道, 朗威。 但我们到底有多少时间抓范德温克? ";
 			link.l1.go = "PZ_Longway_NoMayfang2";
 		break;
 		
 		case "PZ_Longway_NoMayfang2":
-			dialog.text = "几个月 --他按固定路线航行大约这么久, 然后消失一段时间。 正如格拉韦尔在信中告诉我的。 ";
+			dialog.text = "几个月 —他按固定路线航行大约这么久, 然后消失一段时间。 正如格拉韦尔在信中告诉我的。 ";
 			link.l1 = "好吧。 那我们去船上... ";
 			link.l1.go = "PZ_Longway_NoMayfang3";
 		break;
@@ -4382,14 +4382,14 @@ void ProcessDialogEvent()
 		case "PZ_Longway_WaitForShip2":
 			NextDiag.TempNode = "PZ_Longway_WaitForShip1";
 			
-			dialog.text = "感谢你的关心, 船长阁下, 但请快点 --我们时间不多了。 ";
+			dialog.text = "感谢你的关心, 船长阁下, 但请快点 —我们时间不多了。 ";
 			link.l1 = "我知道。 但你不想徒劳无功, 对吧? 好吧, 我会给你找艘合适的船。 ";
 			link.l1.go = "Exit";
 		break;
 		
 		case "PZ_HelenaTortugaCabin_1":
 			dialog.text = "我们快到了, 查尔斯。 你决定从哪里开始了吗? 也许我们在街上问人... ";
-			link.l1 = "也许吧。 但不是我们 --是我。 你留在船上, 海伦。 ";
+			link.l1 = "也许吧。 但不是我们 —是我。 你留在船上, 海伦。 ";
 			link.l1.go = "PZ_HelenaTortugaCabin_2";
 		break;
 		
@@ -4452,7 +4452,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_RobertMartin4":
 			dialog.text = "别这么想。 我不是怕你。 但为什么要自找麻烦甚至制造麻烦呢? 我不像你听说的那样和乔普很熟。 你在找他吗? ";
-			link.l1 = "是的, 算是吧。 我知道他已经离开托尔图加了, 但多了解他一些也无妨 --他去过哪里, 和谁谈过话。 你能帮忙吗? ";
+			link.l1 = "是的, 算是吧。 我知道他已经离开托尔图加了, 但多了解他一些也无妨 —他去过哪里, 和谁谈过话。 你能帮忙吗? ";
 			link.l1.go = "PZ_RobertMartin5";
 		break;
 		
@@ -4463,21 +4463,21 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_RobertMartin6":
-			dialog.text = "嗯, 不是新的, 但知道的人不多。 而且只有少数人能负担得起。 我猜你的时候到了。 但要注意 --只收杜布隆。 给银币, 你会被踢屁股。 ";
+			dialog.text = "嗯, 不是新的, 但知道的人不多。 而且只有少数人能负担得起。 我猜你的时候到了。 但要注意 —只收杜布隆。 给银币, 你会被踢屁股。 ";
 			link.l1 = "我猜也是。 你说这家妓院在哪里? ";
 			link.l1.go = "PZ_RobertMartin7";
 		break;
 		
 		case "PZ_RobertMartin7":
 			dialog.text = "你知道那栋有圆柱的建筑吗? 就是那家。 他们有个多么棒的女主人啊! 黄皮肤, 太漂亮了! 哈, 我看你已经流口水了, 嗯? ";
-			link.l1 = "呵呵, 算是吧。 谢谢, 罗伯特。 今天你没惹麻烦 --你帮了我大忙。 ";
+			link.l1 = "呵呵, 算是吧。 谢谢, 罗伯特。 今天你没惹麻烦 —你帮了我大忙。 ";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_LighthouseMartinGo");
 		break;
 		
 		case "PZ_MaryTortugaCabin_11":
 			dialog.text = "你终于回来了, 查尔斯! 我简直坐立不安, 知道吗! ";
-			link.l1 = "我不会久留, 玛丽。 我有点事要处理... 我就不跟你卖关子了 --是朗威的事。 我需要去当地一家妓院。 ";
+			link.l1 = "我不会久留, 玛丽。 我有点事要处理... 我就不跟你卖关子了 —是朗威的事。 我需要去当地一家妓院。 ";
 			link.l1.go = "PZ_MaryTortugaCabin_12";
 			DelLandQuestMark(npchar);
 		break;
@@ -5235,7 +5235,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sStr = "玛丽";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sStr = "海伦";
 			dialog.text = "有一场猛烈的风暴。 船在嘎吱作响, 裂开发出声响; 摇晃得很厉害。 ";
-			link.l1 = "是的, 我注意到了, 蒂钦吉图, 我的朋友。 我和" + sStr + "要上岸。 你负责留守。 立即开始 repairs --在风暴平息前, 去造船厂没用。 此外, 我们不会在这里久留。 ";
+			link.l1 = "是的, 我注意到了, 蒂钦吉图, 我的朋友。 我和" + sStr + "要上岸。 你负责留守。 立即开始 repairs —在风暴平息前, 去造船厂没用。 此外, 我们不会在这里久留。 ";
 			link.l1.go = "PZ_Tichingitu_13";
 		break;
 		
@@ -5260,8 +5260,8 @@ void ProcessDialogEvent()
 		case "PZ_Matros_2":
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sStr = "玛丽";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sStr = "海伦";
-			dialog.text = "即使我们没有沉没, 阿隆索也会告诉您情况很糟糕。 您提到了 repairs --我们要开始吗? ";
-			link.l1 = "是的, 做你能做的。 但不要计划全面长期的工作 --我在镇上办完事后, 我们很快就会起锚。 我和" + sStr + "不会在那里, 所以如果发生任何事, 你自己做决定。 一切听从阿隆索的。 ";
+			dialog.text = "即使我们没有沉没, 阿隆索也会告诉您情况很糟糕。 您提到了 repairs —我们要开始吗? ";
+			link.l1 = "是的, 做你能做的。 但不要计划全面长期的工作 —我在镇上办完事后, 我们很快就会起锚。 我和" + sStr + "不会在那里, 所以如果发生任何事, 你自己做决定。 一切听从阿隆索的。 ";
 			link.l1.go = "PZ_Matros_3";
 		break;
 		
@@ -5346,7 +5346,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_MaryPortPax3":
-			dialog.text = "求你了? 如果有什么事, 我会在房间里设置防御 --就像... 以前那样, 好吗。 你比任何人都了解我, 查尔斯, 所以你知道我能应付。 ";
+			dialog.text = "求你了? 如果有什么事, 我会在房间里设置防御 —就像... 以前那样, 好吗。 你比任何人都了解我, 查尔斯, 所以你知道我能应付。 ";
 			link.l1 = "好吧, 好吧。 希望这不会像以前那样。 ";
 			link.l1.go = "PZ_AnriTibo_6";
 		break;
@@ -5372,7 +5372,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_AnriTibo_9":
-			dialog.text = "先生, 总督在等您。 他请您尽快去见他 --他想私下和您谈谈。 ";
+			dialog.text = "先生, 总督在等您。 他请您尽快去见他 —他想私下和您谈谈。 ";
 			link.l1 = "他已经知道了吗? ";
 			link.l1.go = "PZ_AnriTibo_10";
 		break;
@@ -5421,8 +5421,8 @@ void ProcessDialogEvent()
 		case "PZ_Longway_73":
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sStr = "玛丽";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sStr = "海伦";
-			dialog.text = "不! 在城里, 朗威从远处看到了她。 没时间追上了 --她正在登上一艘刚刚起航的大帆船! ";
-			link.l1 = "我们会追上那艘大帆船! 但告诉我 --你在任何地方见过" + sStr + "吗? ";
+			dialog.text = "不! 在城里, 朗威从远处看到了她。 没时间追上了 —她正在登上一艘刚刚起航的大帆船! ";
+			link.l1 = "我们会追上那艘大帆船! 但告诉我 —你在任何地方见过" + sStr + "吗? ";
 			link.l1.go = "PZ_Longway_74";
 		break;
 		
@@ -5638,7 +5638,7 @@ void ProcessDialogEvent()
 			dialog.text = "所以你知道他的秘密地方, 地牢? 哦, 是的, 他是真正的地牢大师, 哈哈哈! 但你真的能挑战他吗? 我怀疑。 你想打败野兽? 那就自己成为野兽。 看看你是否能像弗朗索瓦对待那些女孩一样打败我。 就像他很快会对待你的... ";
 			/*if (!CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
 			{
-				link.l1 = "阿罗 --奥 --松 --!!! ";
+				link.l1 = "阿罗 —奥 —松 --!!! ";
 				link.l1.go = "PZ_RobertMartin_23";
 			}
 			else
@@ -5646,7 +5646,7 @@ void ProcessDialogEvent()
 				link.l1 = "... ";
 				link.l1.go = "PZ_LongwayKaznDialog_1";
 			}*/
-			link.l1 = "阿罗 --奥 --松 --!!! ";
+			link.l1 = "阿罗 —奥 —松 --!!! ";
 			link.l1.go = "PZ_RobertMartin_23";
 		break;
 		
@@ -5850,7 +5850,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_AlonsoKaznDialog_8":
 			dialog.text = "谁知道这个蠢货会这么虚弱! 他也弄脏了内裤, 肮脏的人渣! 我真该死, 火是不必要的... ";
-			link.l1 = "你... 好吧。 把他扔到海里喂鱼。 设定航向托尔图加。 如果需要, 我会把它一块砖一块砖地拆开 --首先是拉罗什, 然后... 如果我没有发现她活着, 上帝保佑我... ";
+			link.l1 = "你... 好吧。 把他扔到海里喂鱼。 设定航向托尔图加。 如果需要, 我会把它一块砖一块砖地拆开 —首先是拉罗什, 然后... 如果我没有发现她活着, 上帝保佑我... ";
 			link.l1.go = "PZ_AlonsoKaznDialog_9";
 		break;
 		
@@ -5986,14 +5986,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_HelenaIslaTesoroGood1":
-			dialog.text = "他出去了, 但恐怕他要离开很长时间 --确切地说是出海了。 ";
+			dialog.text = "他出去了, 但恐怕他要离开很长时间 —确切地说是出海了。 ";
 			link.l1 = "该死。 发生什么事了吗? 他说什么时候回来吗? ";
 			link.l1.go = "PZ_HelenaIslaTesoroGood2";
 		break;
 		
 		case "PZ_HelenaIslaTesoroGood2":
-			dialog.text = "他没说, 但没什么严重的 --像往常一样, 他有了好线索。 他通常一个月回来, 最多两个月。 我知道这是怎么回事, 有时我自己也想念船甲板... ";
-			link.l1 = "你总是可以去海上。 有时一起去会很好 --你在'彩虹号'上, 我在... ";
+			dialog.text = "他没说, 但没什么严重的 —像往常一样, 他有了好线索。 他通常一个月回来, 最多两个月。 我知道这是怎么回事, 有时我自己也想念船甲板... ";
+			link.l1 = "你总是可以去海上。 有时一起去会很好 —你在'彩虹号'上, 我在... ";
 			link.l1.go = "PZ_HelenaIslaTesoroGood3";
 		break;
 		
@@ -6058,7 +6058,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.DodsonDie")) sTemp = "马库斯";
 			else sTemp = "鲨鱼";
 			
-			dialog.text = "但是查尔斯, 如果他不在岛上, 他就去掠夺西班牙人了。 现在, 如果你不介意, 我有很多事情要做。 时不时来看看 --通常, " + sTemp + "大约一个月后回来, 有时会晚一点。 ";
+			dialog.text = "但是查尔斯, 如果他不在岛上, 他就去掠夺西班牙人了。 现在, 如果你不介意, 我有很多事情要做。 时不时来看看 —通常, " + sTemp + "大约一个月后回来, 有时会晚一点。 ";
 			link.l1 = "好吧, 海伦, 谢谢你。 我们会忙起来的。 ";
 			link.l1.go = "Exit";
 		break;
@@ -8074,7 +8074,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "朗韦还是不敢相信我妹妹会变成... 这样。 为什么... 为什么? 要是那天我在家就好了... ";
-				link.l1 = "别为假设的事情自责。 此外, 这些年来你也没有闲着 --你一直在努力弥补。 ";
+				link.l1 = "别为假设的事情自责。 此外, 这些年来你也没有闲着 —你一直在努力弥补。 ";
 				link.l1.go = "PZ_Longway_ToShore1";
 			}
 		break;
@@ -8088,7 +8088,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Longway_ToGirl2":
-			dialog.text = "是。 我们得快点 --因为我已经耽误太久了。 ";
+			dialog.text = "是。 我们得快点 —因为我已经耽误太久了。 ";
 			link.l1 = "这不是你的错, 朗韦。 我们快点! ";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_LeaveEliteBrothel");
@@ -8096,31 +8096,31 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_ToShore1":
 			dialog.text = "对。 谢谢你的支持, 尊敬的船长。 ";
-			link.l1 = "别客气。 她根本不值得你奉献 --即使她本可以, 她也没有主动找过你。 你的星星早已熄灭, 她很久以前就不再是你的家人了。 现在我们是你的家人, 朗韦。 ";
+			link.l1 = "别客气。 她根本不值得你奉献 —即使她本可以, 她也没有主动找过你。 你的星星早已熄灭, 她很久以前就不再是你的家人了。 现在我们是你的家人, 朗韦。 ";
 			link.l1.go = "PZ_Longway_ToShore2";
 		break;
 		
 		case "PZ_Longway_ToShore2":
 			dialog.text = "是的... 确实如此。 而我一直太盲目, 直到现在才明白。 ";
-			link.l1 = "迟到总比不到好。 现在让我们回家 --我们的船在等着我们。 ";
+			link.l1 = "迟到总比不到好。 现在让我们回家 —我们的船在等着我们。 ";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_LeaveEliteBrothel");
 		break;
 		
 		case "PZ_Mary_91":
 			dialog.text = "好吧。 你根本不知道我有多期待这一刻。 ";
-			link.l1 = "我相信我知道。 你感觉如何, 玛丽? 我之所以想避免流血冲突, 是因为我不确定你是否能像往常一样稳稳地握剑 --当我忙着对付另一个人时, 他们中的一个可能会占上风。 ";
+			link.l1 = "我相信我知道。 你感觉如何, 玛丽? 我之所以想避免流血冲突, 是因为我不确定你是否能像往常一样稳稳地握剑 —当我忙着对付另一个人时, 他们中的一个可能会占上风。 ";
 			link.l1.go = "PZ_Mary_92";
 		break;
 		
 		case "PZ_Mary_92":
-			dialog.text = "你低估我了。 此外, 愤怒是一剂良药。 我毫不怀疑你会来救我 --就像你总是做的那样, 好吧。 你知道吗, 查尔斯... 尽管你称我为你的红色护身符, 但如果你也是我的护身符呢? 当我们在一起时, 总会发生一些奇妙的事情。 ";
+			dialog.text = "你低估我了。 此外, 愤怒是一剂良药。 我毫不怀疑你会来救我 —就像你总是做的那样, 好吧。 你知道吗, 查尔斯... 尽管你称我为你的红色护身符, 但如果你也是我的护身符呢? 当我们在一起时, 总会发生一些奇妙的事情。 ";
 			link.l1 = "我是你的护身符? 为什么, 我喜欢这个想法。 ";
 			link.l1.go = "PZ_Mary_93";
 		break;
 		
 		case "PZ_Mary_93":
-			dialog.text = "看吧, 你已经在笑了! 现在让我们离开这个恶心的地方 --快点, 快点, 好吧。 ";
+			dialog.text = "看吧, 你已经在笑了! 现在让我们离开这个恶心的地方 —快点, 快点, 好吧。 ";
 			link.l1 = "呃呵, 这场混乱让我深受打击。 我希望它能以任何其他方式结束。 ";
 			link.l1.go = "PZ_Mary_94";
 		break;
@@ -8142,14 +8142,14 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "哦, 是你, 先生。 你知道女主人什么时候下来吗? ";
-				link.l1 = "不会很快。 如果我是你, 我会远离那扇门。 永远不要和她谈论今晚的事 --她不会分享任何事情, 好奇的猫会一次性丢掉性命。 看来你们的老板娘不喜欢任何人窥探她的秘密。 ";
+				link.l1 = "不会很快。 如果我是你, 我会远离那扇门。 永远不要和她谈论今晚的事 —她不会分享任何事情, 好奇的猫会一次性丢掉性命。 看来你们的老板娘不喜欢任何人窥探她的秘密。 ";
 				link.l1.go = "PZ_ElitaShluha_Final3";
 			}
 		break;
 		
 		case "PZ_ElitaShluha_Final2":
 			dialog.text = "是你杀了她? ! ";
-			link.l1 = "是的。 如果你们逗留或试图叫卫兵来抓我, 那将是你们最大的错误。 她从来不是你们的守护神 --无论她给了你们多少丝绸和教育, 你们都被囚禁在这里, 被迫委身于她所指的任何乌合之众。 我祝你们一切顺利, 希望你们能顺利离开这里。 再见, 女士们。 ";
+			link.l1 = "是的。 如果你们逗留或试图叫卫兵来抓我, 那将是你们最大的错误。 她从来不是你们的守护神 —无论她给了你们多少丝绸和教育, 你们都被囚禁在这里, 被迫委身于她所指的任何乌合之众。 我祝你们一切顺利, 希望你们能顺利离开这里。 再见, 女士们。 ";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_ToTortugaStreets");
 		break;
@@ -8334,13 +8334,13 @@ void ProcessDialogEvent()
 				}
 				if (CheckAttribute(pchar, "questTemp.PZ_DevushkaRanena_Sredne"))
 				{
-					dialog.text = "玛丽被打得很惨, 船长。 有瘀伤。 割伤... 当然还有震惊 --尽管她试图不表现出来。 ";
+					dialog.text = "玛丽被打得很惨, 船长。 有瘀伤。 割伤... 当然还有震惊 —尽管她试图不表现出来。 ";
 					link.l1 = "她一如既往地坚强。 但我想她意识到现在最好卧床休息。 不过要多久? ";
 					link.l1.go = "PZ_Baker_3";
 				}
 				if (CheckAttribute(pchar, "questTemp.PZ_DevushkaRanena_Tyazhelo"))
 				{
-					dialog.text = "即使是职业士兵也很难在她经历的事情中幸存下来, 船长。 扭伤。 拉伤。 瘀伤 --我们很幸运那些混蛋没有打断她的骨头。 不过, 她的肌腱受损了, 所以至少一个月内她无法挥剑。 ";
+					dialog.text = "即使是职业士兵也很难在她经历的事情中幸存下来, 船长。 扭伤。 拉伤。 瘀伤 —我们很幸运那些混蛋没有打断她的骨头。 不过, 她的肌腱受损了, 所以至少一个月内她无法挥剑。 ";
 					link.l1 = "去他的剑。 她什么时候能站起来? ";
 					link.l1.go = "PZ_Baker_3";
 				}
@@ -8420,7 +8420,7 @@ void ProcessDialogEvent()
 		case "PZ_DevushkaVstalaSKrovati_Dialog2":
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
 			{
-				dialog.text = "我宁愿烧了这该死的床也不愿再躺上去 --至少在我从船头走到船尾再回来之前! ";
+				dialog.text = "我宁愿烧了这该死的床也不愿再躺上去 —至少在我从船头走到船尾再回来之前! ";
 				link.l1 = "这是一张舒适的好床。 船也不错。 所以我不打算阻止你。 但我会在那里确保你不做傻事。 ";
 			}
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)

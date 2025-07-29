@@ -46,7 +46,7 @@ Albatross
 
 Portugal_11
 {
-葡萄牙人巴特已离开你的船! 
+葡萄牙人 Bart 已离开你的船! 
 }
 
 Portugal_12
@@ -60,7 +60,7 @@ Vaskez
 
 Portugal_14
 {
-一小时过去了... @<NewStr()> 葡萄牙人被抬进了房子
+一小时过去了... 葡萄牙人 @<NewStr()> 被抬进了房子
 }
 
 Portugal_15
@@ -70,5 +70,5 @@ Portugal_15
 
 Portugal_16
 {
-你发现了葡萄牙人巴特的宝藏! 
+你发现了葡萄牙人 Bart 的宝藏! 
 }

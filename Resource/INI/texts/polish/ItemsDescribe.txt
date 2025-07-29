@@ -709,7 +709,7 @@ Ten piękny karabinek typu side-by-side jest częściej spotykany wśród wysoki
 itmname_howdah {Howdah}
 itmdescr_howdah
 {
-Dwulufowy pistolet dużego kalibru, najlepszy przyjaciel myśliwego w afrykańskim buszu i indyjskiej dżungli. Niezawodnie usypia dziki, tygrysy, lwy oraz agresywnych tubylców jednym strzałem! Załadowana śrutem i pokruszonymi gwoździami. Wymaga dużego doświadczenia w zakresie broni palnej.
+Dwulufowy pistolet dużego kalibru, najlepszy przyjaciel myśliwego w afrykańskim buszu i indyjskiej dżungli. Niezawodnie usypia dziki, tygrysy, lwy oraz agresywnych tubylców jednym strzałem! Używa śrutu, bądź ołowianych kul do strzelania. Wymaga dużego doświadczenia w zakresie broni palnej.
 }
 
 ; ==================================================================================================================== ZBROJA
@@ -1516,7 +1516,7 @@ Efekt znika po 70 dniach użytkowania lub wcześniej w momencie zdjęcia.
 itmname_amulet_3 {Amulet 'Krucyfiks'}
 itmdescr_amulet_3
 {
-Poświęcony katolicki krzyżyk zmniejsza o 15% obrażenia krytyczne zadawane przez wrogów przy użyciu broni białej.
+Poświęcony katolicki krzyżyk zmniejsza o 15% obrażenia krytyczne zadawane przez wrogów.
 Siła silnego ataku postaci zmniejsza się o 10%.
 Aktywuje się raz, przez dowolną postać.
 Znika po 70 dniach lub po usunięciu.
@@ -2663,7 +2663,7 @@ M.'
 
 itmdescr_letter_adolf_1
 {
-'Marcello, uzgodniliśmy sumę dwa razy wyższą niż ta, którą mi podałeś. Karabin jest wart znacznie więcej, a ty o tym wiesz. Jeśli nie zapłacisz mi reszty, admirał natychmiast dowie się o twoich powiązaniach z Kaperem na "Eva".
+'Marchello, uzgodniliśmy sumę dwa razy wyższą niż ta, którą mi podałeś. Karabin jest wart znacznie więcej, a ty o tym wiesz. Jeśli nie zapłacisz mi reszty, admirał natychmiast dowie się o twoich powiązaniach z Kaperem na "Eva".
 Adolf.'
 }
 

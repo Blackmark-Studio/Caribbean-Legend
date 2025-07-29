@@ -37,7 +37,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "先生, 我打算在镇上开展商业活动。 具体来说, 我对稳定的大规模酒类贸易感兴趣。 ";
 				link.l1.go = "TPZ_guber_1";
 			}
-			//<—— 合法贸易
+			//< —合法贸易
 
 		break;
 		//************************** 任务分支 ************************
@@ -152,7 +152,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "TPZ_guber_3":
-			dialog.text = "如你所愿, 船长。 但请记住 --你要对你的代理人负全部责任。 如果他违规, 你将承担同样的后果。 ";
+			dialog.text = "如你所愿, 船长。 但请记住 —你要对你的代理人负全部责任。 如果他违规, 你将承担同样的后果。 ";
 			link.l1 = "当然。 感谢您的说明, 总督。 我们会做好安排, 克里斯蒂安会处理纳税事宜。 ";
 			link.l1.go = "TPZ_guber_4";
 		break;

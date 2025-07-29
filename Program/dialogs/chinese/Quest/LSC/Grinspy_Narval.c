@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 		
 		case "shark_2":
 			dialog.text = "我只能向你保证, 我和我的人与此事无关。 ";
-			link.l1 = "你将不得不向舰队司令保证这一点, 而且这并不容易。 袭击发生后, 多德森对所有独角鲸帮非常愤怒。 他打算向你们宣战 --他将停止向你们提供物资, 并在任何机会下射杀你们的人。 这不是说说而已。 ";
+			link.l1 = "你将不得不向舰队司令保证这一点, 而且这并不容易。 袭击发生后, 多德森对所有独角鲸帮非常愤怒。 他打算向你们宣战 —他将停止向你们提供物资, 并在任何机会下射杀你们的人。 这不是说说而已。 ";
 			link.l1.go = "shark_3";
 		break;
 		
@@ -292,7 +292,7 @@ void ProcessDialogEvent()
 		
 		case "negotiations_12":
 			dialog.text = "";
-			link.l1 = "但我的投票还不够 --你应该正式向舰队司令保证, 这次企图没有得到你的批准, 你的帮派也没有计划杀死多德森。 ";
+			link.l1 = "但我的投票还不够 —你应该正式向舰队司令保证, 这次企图没有得到你的批准, 你的帮派也没有计划杀死多德森。 ";
 			link.l1.go = "negotiations_13";
 		break;
 		
@@ -333,7 +333,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "negotiations_19":
-			dialog.text = "你通过阻止一场无意义的屠杀, 也许甚至是我族人的彻底灭绝, 为独角鲸帮派做出了巨大的贡献。 我授予你这把塔楼滑膛枪 --你不会找到另一把这样的武器。 你也被允许无限制地访问我们的船只。 ";
+			dialog.text = "你通过阻止一场无意义的屠杀, 也许甚至是我族人的彻底灭绝, 为独角鲸帮派做出了巨大的贡献。 我授予你这把塔楼滑膛枪 —你不会找到另一把这样的武器。 你也被允许无限制地访问我们的船只。 ";
 			if (pchar.questTemp.LSC.Mary == "alive") 
 			{
 				link.l1 = "谢谢。 一件非常有价值的礼物。 是的, 唐纳德, 还有一件事: 与红玛丽和解。 她脾气暴躁, 但她也真诚诚实。 与你的争吵使她离开了帮派, 这几乎要了她的命。 ";
@@ -390,9 +390,9 @@ void ProcessDialogEvent()
 			AddSimpleRumourCityTip("他们说你现在是独角鲸帮的人。 或者你在舰队司令的指挥下服务? 我不明白... ", "LostShipsCity", 5, 2, "LSC", "");
 			AddSimpleRumourCityTip("我听说你在舰队司令和独角鲸帮之间实现了和平。 嗯, 里瓦多斯一定对此很疯狂... ", "LostShipsCity", 5, 2, "LSC", "");
 			AddSimpleRumourCityTip("所以查德.卡珀是艾伦.米尔罗的凶手! 真令人惊讶! ", "LostShipsCity", 5, 2, "LSC", "");
-			AddSimpleRumourCityTip("照顾好红玛丽, 因为你很幸运和她在一起 --她太鲁莽了! 她总是惹上麻烦... ", "LostShipsCity", 20, 5, "LSC", "");
+			AddSimpleRumourCityTip("照顾好红玛丽, 因为你很幸运和她在一起 —她太鲁莽了! 她总是惹上麻烦... ", "LostShipsCity", 20, 5, "LSC", "");
 		break;
-//---------------------------------------—— 特殊反应 -----------------------------------------------
+//--------------------------------------- —特殊反应 -----------------------------------------------
 		// 发现玩家在箱子里
 		case "Man_FackYou":
 			dialog.text = LinkRandPhrase("你在那里做什么, 啊? 小偷! ", "看看那个! 我一陷入沉思, 你就决定检查我的箱子! ", "决定检查我的箱子? 你不会逃脱的! ");
@@ -443,7 +443,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;
-// <—— 特殊反应
+// < —特殊反应
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

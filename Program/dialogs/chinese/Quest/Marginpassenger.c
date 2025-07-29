@@ -28,7 +28,7 @@ void ProcessDialogEvent()
 	
 		case "MarginCap_1":
 			dialog.text = "是这样吗? 如果我说不呢? ";
-			link.l1 = "那我就不得不让你重新考虑你的决定了 --用我的几轮炮火, 它们此刻正瞄准着你的方向。 别挑战你的运气, " + GetAddress_FormToNPC(NPChar) + "。 ";
+			link.l1 = "那我就不得不让你重新考虑你的决定了 —用我的几轮炮火, 它们此刻正瞄准着你的方向。 别挑战你的运气, " + GetAddress_FormToNPC(NPChar) + "。 ";
 			link.l1.go = "MarginCap_2";
 		break;
 		
@@ -297,7 +297,7 @@ void ProcessDialogEvent()
 			{
 				AddQuestUserData("Marginpassenger", "sBaron", "到勒弗朗索瓦, 找好心的雅克");
 			}
-			// <—— belamour gen
+			// < —belamour gen
 			pchar.GenQuest.Marginpassenger = "cabin";
 		break;
 		

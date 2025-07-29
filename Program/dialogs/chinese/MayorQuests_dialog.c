@@ -17,7 +17,7 @@ void ProcessDialogEvent()
 			Diag.CurrentNode = Diag.TempNode;
 			DialogExit();			
 		break;
-		//---------------—— 摧毁帮派 ----------------------
+		//--------------- —摧毁帮派 ----------------------
 		case "DestroyGang_begin":
 			chrDisableReloadToLocation = false;
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false); // 允许战斗

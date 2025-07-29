@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 		
 		case "AlonsoNaPalube_Vpered":
 			dialog.text = "一艘雪帆船。 他们说那是艘真正的美人儿, 脾气也很烈。 我不担心她。 很可能全体船员都在岸上苦干, 而船安全地藏在海岸线的褶皱里。 如果我们赢了, 之后可以从岸上把她当作战利品。 ";
-			link.l1 = "召集人手。 今天是个好日子 --幸运会站在我们这边。 ";
+			link.l1 = "召集人手。 今天是个好日子 —幸运会站在我们这边。 ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_AlonsoNaPalube_Vpered");
 		break;
@@ -251,7 +251,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_DialogInCity_First_Helena_3":
-			dialog.text = "我个人印象深刻。 不过我必须承认, 我的许多以前的同事觉得这相当恼人。 但要成为船长, 需要的不仅仅是高贵的出身或王室专利, 不是吗? ";
+			dialog.text = "我个人印象深刻。 不过我必须承认, 我的许多以前的同事觉得这相当恼人。 但要成为船长, 需要的不仅仅是高贵的出身或王室许可证, 不是吗? ";
 			link.l1 = "没错。 需要知识。 经验和不断准备证明自己的能力。 尤其是在我这种情况下。 ";
 			link.l1.go = "LadyBeth_DialogInCity_First_Helena_4";
 		break;
@@ -307,7 +307,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "爱? 是的... 也许你是对的。 我... 我曾在巴巴多斯订过婚。 我们彼此相爱, 但... 她父亲认为我配不上。 哈! 不够富有。 这就是我在这里的原因 --寻找宝藏来证明他们都错了。 也许这是徒劳的? ";
+				dialog.text = "爱? 是的... 也许你是对的。 我... 我曾在巴巴多斯订过婚。 我们彼此相爱, 但... 她父亲认为我配不上。 哈! 不够富有。 这就是我在这里的原因 —寻找宝藏来证明他们都错了。 也许这是徒劳的? ";
 				link.l1 = "也许你应该直接和她谈谈? 去他的种植园主。 ";
 				link.l1.go = "LadyBeth_DialogInCity_Second_3_love_2";
 			}
@@ -334,7 +334,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_DialogInCity_Second_3_sokrovisha":
 			dialog.text = "多么平庸的答案。 但很难反驳。 确实, 当你在布里斯托尔的贫民窟长大, 当你不得不为残羹冷炙而奋斗... 你就会开始理解金钱的真正价值。 不是奢侈, 而是自由。 是永远不必再回到你艰难爬出的那个泥潭的能力。 ";
-			link.l1 = "我同意。 金钱解决大多数问题。 如果解决不了 --说明钱还不够。 ";
+			link.l1 = "我同意。 金钱解决大多数问题。 如果解决不了 —说明钱还不够。 ";
 			link.l1.go = "LadyBeth_DialogInCity_Second_3_sokrovisha_2";
 			AddCharacterExpToSkill(pchar, "Commerce", 200);
 		break;
@@ -382,7 +382,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_DialogInCity_Third_2": // 第三次对话
-			dialog.text = "啊, "+pchar.name+"! 很高兴见到你。 我有个好消息 --我终于找到解决问题的办法了。 很快我就要出发探险, 这次我会带着真正的宝藏回来! 顺便说一句, 友好建议 --远离开曼岛。 现在它是我的地盘了。 ";
+			dialog.text = "啊, "+pchar.name+"! 很高兴见到你。 我有个好消息 —我终于找到解决问题的办法了。 很快我就要出发探险, 这次我会带着真正的宝藏回来! 顺便说一句, 友好建议 —远离开曼岛。 现在它是我的地盘了。 ";
 			link.l1 = "开曼岛不属于你, 阿尔伯特。 你没有王室对它的权利。 这是海盗行为。 ";
 			link.l1.go = "LadyBeth_DialogInCity_Third_3_harizma";
 			link.l2 = "你在威胁我吗, 布莱克伍德? ";
@@ -479,14 +479,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_BlackWood_Boss_harizma_1":
-			dialog.text = "我想过。 想了很多。 并意识到 --这是我唯一的机会。 要么我找到科尔特斯的黄金, 要么... 一无所有。 明白吗? 一无所有! 我不会回到以前的生活! 不会回到肮脏和贫穷! 宁愿死在这里! ";
+			dialog.text = "我想过。 想了很多。 并意识到 —这是我唯一的机会。 要么我找到科尔特斯的黄金, 要么... 一无所有。 明白吗? 一无所有! 我不会回到以前的生活! 不会回到肮脏和贫穷! 宁愿死在这里! ";
 			link.l1 = "... ";
 			link.l1.go = "LadyBeth_BlackWood_Boss_2";
 			AddCharacterExpToSkill(pchar, "Leadership", 200);
 		break;
 		
 		case "LadyBeth_BlackWood_Boss_2":
-			dialog.text = "战斗吧! 布洛克, 弗雷泽 --如果他们靠近就开火! 霍普金斯, 冲锋! ";
+			dialog.text = "战斗吧! 布洛克, 弗雷泽 —如果他们靠近就开火! 霍普金斯, 冲锋! ";
 			link.l1 = "... ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_CaimanKino_11");
@@ -627,7 +627,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_Irons_4":
-			dialog.text = "不, 还有别的。 这个人对他们有影响力。 真正的影响力。 我还听说他和巴巴多斯某个富家女订了婚。 奇怪的是, 他找到所有这些宝藏后却没娶她。 典型的军人 --不知道何时结束战争。 ";
+			dialog.text = "不, 还有别的。 这个人对他们有影响力。 真正的影响力。 我还听说他和巴巴多斯某个富家女订了婚。 奇怪的是, 他找到所有这些宝藏后却没娶她。 典型的军人 —不知道何时结束战争。 ";
 			link.l1 = "谢谢你, 汤米。 你真是个思想家。 ";
 			link.l1.go = "LadyBeth_Irons_5";
 		break;
@@ -679,7 +679,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_Knippel_6":
-			dialog.text = "是, 船长。 等这结束 --我要喝到下一次结束。 ";
+			dialog.text = "是, 船长。 等这结束 —我要喝到下一次结束。 ";
 			link.l1 = "... ";
 			link.l1.go = "LadyBeth_Knippel_7";
 		break;
@@ -704,13 +704,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_Alonso_3":
-			dialog.text = "有一天我会告诉你那个故事, 船长 --如果我们活得足够长, 当然。 ";
+			dialog.text = "有一天我会告诉你那个故事, 船长 —如果我们活得足够长, 当然。 ";
 			link.l1 = "还有其他有价值的建议吗? ";
 			link.l1.go = "LadyBeth_Alonso_4";
 		break;
 		
 		case "LadyBeth_Alonso_4":
-			dialog.text = "如果这里有宝藏 --他们早就找到了。 但我们还是应该搜索岛屿, 找到幸存者, 然后决定怎么处理他们。 而且我们不应该忘记布莱克伍德的船: 我只听说过那艘雪帆船的好话。 错过这样的战利品太可惜了, 船长。 当然, 我只是在传达船员在这个问题上的立场。 ";
+			dialog.text = "如果这里有宝藏 —他们早就找到了。 但我们还是应该搜索岛屿, 找到幸存者, 然后决定怎么处理他们。 而且我们不应该忘记布莱克伍德的船: 我只听说过那艘雪帆船的好话。 错过这样的战利品太可惜了, 船长。 当然, 我只是在传达船员在这个问题上的立场。 ";
 			link.l1 = "当然。 我们走。 战利品在等着! ";
 			link.l1.go = "LadyBeth_Alonso_5";
 		break;
@@ -745,7 +745,7 @@ void ProcessDialogEvent()
 			dialog.text = "你不明白。 布莱克伍德是个伟大的人。 我见过的最好的船长。 但最近几个月... 他变了。 变得痴迷。 残忍。 让我们日夜工作, 寻找可能根本不存在的东西。 ";
 			link.l1 = "我要把你们编入我的船员。 我们需要有经验的水手。 ";
 			link.l1.go = "LadyBeth_MatrosyInGrot_PlusKomanda";
-			link.l2 = "战败者活该, 伙计们。 现在你们该待在我的船舱里。 如果幸运 --你们能活到巴巴多斯的某个种植园。 ";
+			link.l2 = "战败者活该, 伙计们。 现在你们该待在我的船舱里。 如果幸运 —你们能活到巴巴多斯的某个种植园。 ";
 			link.l2.go = "LadyBeth_MatrosyInGrot_PlusRaby";
 		break;
 		
@@ -833,7 +833,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_EnemyMatros_Irons_1":
-			dialog.text = "好吧, 水手小子们! 选择很简单 --要么活着, 要么作为囚犯待在船舱里, 要么加入我们的船员, 有好的口粮和定期薪水, 要么... (用手指划过喉咙) 如果是我, 我会选择第一个! ";
+			dialog.text = "好吧, 水手小子们! 选择很简单 —要么活着, 要么作为囚犯待在船舱里, 要么加入我们的船员, 有好的口粮和定期薪水, 要么... (用手指划过喉咙) 如果是我, 我会选择第一个! ";
 			link.l1 = "... ";
 			link.l1.go = "LadyBeth_EnemyMatros_10";
 			CharacterTurnByChr(npchar, CharacterFromID("LadyBeth_CrewOfShip_7"));
@@ -847,7 +847,7 @@ void ProcessDialogEvent()
 			dialog.text = "... ";
 			link.l1 = "你们将成为我船员的一部分。 ";
 			link.l1.go = "LadyBeth_EnemyMatros_7";
-			link.l2 = "战败者活该, 伙计们。 现在你们该待在我的船舱里。 如果幸运 --你们能活到巴巴多斯的某个种植园。 ";
+			link.l2 = "战败者活该, 伙计们。 现在你们该待在我的船舱里。 如果幸运 —你们能活到巴巴多斯的某个种植园。 ";
 			link.l2.go = "LadyBeth_EnemyMatros_9";
 		break;
 		

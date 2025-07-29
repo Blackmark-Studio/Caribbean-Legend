@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Benua_meeting_2":
-			dialog.text = "啊——啊, 我明白了。我以前可是亲自认识Henri de Monper的。小伙子, 把脸转向光亮处。对! 你和他长得一模一样。相貌、气质都如出一辙! 很高兴在我们教区见到Henri de Monper的儿子。\n至于你的问题, 我可以告诉你, Michel是马耳他骑士团的高级军官, 但他现在……遇到麻烦了。幸运的是, 骑士团里有一位骑士正好在拜访我。我想他也许愿意陪你一起去见你那倒霉的兄长, 愿主怜悯他的命运……";
+			dialog.text = "啊—啊, 我明白了。我以前可是亲自认识Henri de Monper的。小伙子, 把脸转向光亮处。对! 你和他长得一模一样。相貌、气质都如出一辙! 很高兴在我们教区见到Henri de Monper的儿子。\n至于你的问题, 我可以告诉你, Michel是马耳他骑士团的高级军官, 但他现在……遇到麻烦了。幸运的是, 骑士团里有一位骑士正好在拜访我。我想他也许愿意陪你一起去见你那倒霉的兄长, 愿主怜悯他的命运……";
 			link.l1 = "这人是谁, 神父? ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Sharlie_enterMaltie");
@@ -230,14 +230,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meet_1":
-			dialog.text = "啊——啊, 我明白了。我曾经与Henri de Monper先生有过私交。年轻人, 把脸转向光亮处……对! 你果然像他。长相一样, 侧脸也有那股贵族气派! 很高兴在我们的教区见到Henri de Monper的儿子。\n我已经听说Michel最近有位从欧洲来的男子拜访过, 但我怎么也没想到那竟然是他的亲弟弟。希望你能帮到Michel, 他现在正经历一段艰难的时光。那么, 我能为你做些什么? ";
+			dialog.text = "啊—啊, 我明白了。我曾经与Henri de Monper先生有过私交。年轻人, 把脸转向光亮处……对! 你果然像他。长相一样, 侧脸也有那股贵族气派! 很高兴在我们的教区见到Henri de Monper的儿子。\n我已经听说Michel最近有位从欧洲来的男子拜访过, 但我怎么也没想到那竟然是他的亲弟弟。希望你能帮到Michel, 他现在正经历一段艰难的时光。那么, 我能为你做些什么? ";
 			link.l1 = "Michel跟我说过, 如果我哪天跟当局闹了麻烦, 你一定能帮上忙。";
 			link.l1.go = "help_info";	
 			npchar.quest.meet = true;
 		break;
 		
 		case "help_info":
-			dialog.text = "这是Michel告诉你的吗? 明白了。那么, 这种事情我或许能帮上忙。我在神圣罗马教会和荷兰殖民地中有些影响力, 因此也许可以在你与西班牙及荷兰当局之间斡旋。当然, 如果你的不当行为太过分, 我也无能为力——那种情况下只能帮你稍微减轻一些惩罚。\n要想彻底和解, 需要多次斡旋。此外, 无论如何, 你都得为慈善和航海开销向我提供一些金币。此外, 我一次只能帮你解决一个国家的问题。如果你能接受这些条件, 随时可以来找我, 我们再看看能做些什么。";
+			dialog.text = "这是Michel告诉你的吗? 明白了。那么, 这种事情我或许能帮上忙。我在神圣罗马教会和荷兰殖民地中有些影响力, 因此也许可以在你与西班牙及荷兰当局之间斡旋。当然, 如果你的不当行为太过分, 我也无能为力—那种情况下只能帮你稍微减轻一些惩罚。\n要想彻底和解, 需要多次斡旋。此外, 无论如何, 你都得为慈善和航海开销向我提供一些金币。此外, 我一次只能帮你解决一个国家的问题。如果你能接受这些条件, 随时可以来找我, 我们再看看能做些什么。";
 			link.l1 = "谢谢! 我会记住的。";
 			link.l1.go = "exit";
 			npchar.quest.relation_info = "true";
@@ -348,7 +348,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FastStart_1":
-			dialog.text = "啊——我明白了。我和Henri de Monper是旧识。小伙子, 转过身来, 让我看看光线下的你。没错! 一模一样的眼睛, 同样高贵的面容! 很高兴在我的教堂见到Henri de Monper的儿子。希望你能帮帮你的兄弟, 他最近可真是时运不济啊。";
+			dialog.text = "啊—我明白了。我和Henri de Monper是旧识。小伙子, 转过身来, 让我看看光线下的你。没错! 一模一样的眼睛, 同样高贵的面容! 很高兴在我的教堂见到Henri de Monper的儿子。希望你能帮帮你的兄弟, 他最近可真是时运不济啊。";
 			link.l1 = "是的, 神父。我需要一艘船去帮Michel, 可我刚到加勒比, 口袋里一分钱都没有。我哥哥说您或许能借我点钱……";
 			link.l1.go = "FastStart_2";	
 			npchar.quest.meet = true;
@@ -409,7 +409,7 @@ void ProcessDialogEvent()
 		// Jason Долго и счастливо
 		case "LH_abbat":
 			dialog.text = "Charles, 真不敢相信是你! 你怎么会到这儿来? ! ";
-			link.l1 = "仁慈的天父, 请赐我祝福, 因为我带来了好消息——我要结婚了, 我希望您能作为我的婚礼神父。";
+			link.l1 = "仁慈的天父, 请赐我祝福, 因为我带来了好消息—我要结婚了, 我希望您能作为我的婚礼神父。";
 			link.l1.go = "LH_abbat_1";
 		break;
 		
@@ -432,8 +432,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LH_abbat_4":
-			dialog.text = "我非常乐意接受你的帮助。我怀疑自己被选中执行这个任务并非偶然。最坏的情况也不过是他们把Benoit神父忘了。虽然主让我学会忍耐, 可我的结论依然让我感到沉重, 哪怕其中有些……恩赐。但我还是要重复一遍——Palotti神父大概率不会听你的请求。";
-			link.l1 = "那我就省点力气, 不再劝他了。等弥撒一结束, 我们就直接离开教堂, 上我的船。别犹豫了, 神父——他们已经看见我们见面了, 也认得我。如果等我去总督府救你, 那可就难多了。";
+			dialog.text = "我非常乐意接受你的帮助。我怀疑自己被选中执行这个任务并非偶然。最坏的情况也不过是他们把Benoit神父忘了。虽然主让我学会忍耐, 可我的结论依然让我感到沉重, 哪怕其中有些……恩赐。但我还是要重复一遍—Palotti神父大概率不会听你的请求。";
+			link.l1 = "那我就省点力气, 不再劝他了。等弥撒一结束, 我们就直接离开教堂, 上我的船。别犹豫了, 神父—他们已经看见我们见面了, 也认得我。如果等我去总督府救你, 那可就难多了。";
 			link.l1.go = "LH_abbat_5";
 		break;
 		
@@ -464,13 +464,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LH_abbat_9":
-			dialog.text = "当然! 那咱们说点开心的事吧——Charles, 你人生最重要的日子准备得怎么样了? ";
+			dialog.text = "当然! 那咱们说点开心的事吧—Charles, 你人生最重要的日子准备得怎么样了? ";
 			link.l1 = "慢慢有点雏形了。我见过筹备得更快更轻松的军事行动, 但这值得! ";
 			link.l1.go = "LH_abbat_10";
 		break;
 		
 		case "LH_abbat_10":
-			dialog.text = "当然可以, 我的孩子! 这次我还想问清楚一件事——你对你的婚礼仪式有什么想法? ";
+			dialog.text = "当然可以, 我的孩子! 这次我还想问清楚一件事—你对你的婚礼仪式有什么想法? ";
 			link.l1 = "你是说, 有多自大? ";
 			link.l1.go = "LH_abbat_11";
 		break;
@@ -488,7 +488,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LH_abbat_13":
-			dialog.text = "唱诗班、庄严仪式和其他开销——一百五十, 不多不少。再加上新人的惯例捐赠, 总共——两百达布隆。";
+			dialog.text = "唱诗班、庄严仪式和其他开销—一百五十, 不多不少。再加上新人的惯例捐赠, 总共—两百达布隆。";
 			if (PCharDublonsTotal() >= 200) // Sinistra legendary edition
 			{
 				link.l1 = "给您, 神父大人。";
@@ -522,7 +522,7 @@ void ProcessDialogEvent()
 		
 		case "LH_abbat_15":
 			RemoveDublonsFromPCharTotal(200); // Sinistra legendary edition
-			dialog.text = "还有一个问题需要解决——谁会代表新娘, 将她交给新郎, 并为她作证婚人? ";
+			dialog.text = "还有一个问题需要解决—谁会代表新娘, 将她交给新郎, 并为她作证婚人? ";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer"))
 			{
 				pchar.questTemp.LongHappy.Pater1 = "Svenson";
@@ -558,12 +558,12 @@ void ProcessDialogEvent()
 					link.l1 = "菲利普·德·Poincy骑士阁下, 我相信他一定会赏脸接见我。";
 					link.l1.go = "LH_abbat_17_2";
 				}
-				link.l2 = "Fadey——瓜德罗普的体面商人。我只需要备好他最喜欢的酒就行。";
+				link.l2 = "Fadey—瓜德罗普的体面商人。我只需要备好他最喜欢的酒就行。";
 				link.l2.go = "LH_abbat_17_3";
 			}
 			else
 			{
-				link.l1 = "Fadey——瓜德罗普的体面商人。俺只需要给他备上他最爱的酒就行。";
+				link.l1 = "Fadey—瓜德罗普的体面商人。俺只需要给他备上他最爱的酒就行。";
 				link.l1.go = "LH_abbat_17_3";
 			}
 		break;
@@ -602,13 +602,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LH_abbat_19":
-			dialog.text = "所以, 这一天终于来了, 我的儿子! 一切都准备妥当——再过几个小时我们就能开始了。你看起来脸色苍白! ";
+			dialog.text = "所以, 这一天终于来了, 我的儿子! 一切都准备妥当—再过几个小时我们就能开始了。你看起来脸色苍白! ";
 			link.l1 = "我有点紧张, 神父。";
 			link.l1.go = "LH_abbat_20";
 		break;
 		
 		case "LH_abbat_20":
-			dialog.text = "这很常见。今天是你人生中最重要的一天, 我真心为你高兴, 就像在场的每一个人一样。希望你至少还记得基本的祷词——你可从来没怎么关心过教会, 对吧? 不过, 无论如何, 我都会帮你的。\n还有一件事——据我所知, 新娘还是不会改变她的原则, 我们也见不到她穿裙子? 唉, 上流社会又要被你们俩惊到一次了——你总是能带来惊喜。好了, 孩子, 去整理一下自己, 我们就要开始了。";
+			dialog.text = "这很常见。今天是你人生中最重要的一天, 我真心为你高兴, 就像在场的每一个人一样。希望你至少还记得基本的祷词—你可从来没怎么关心过教会, 对吧? 不过, 无论如何, 我都会帮你的。\n还有一件事—据我所知, 新娘还是不会改变她的原则, 我们也见不到她穿裙子? 唉, 上流社会又要被你们俩惊到一次了—你总是能带来惊喜。好了, 孩子, 去整理一下自己, 我们就要开始了。";
 			link.l1 = "是的, 神父。我们开始吧。";
 			link.l1.go = "LH_abbat_21";
 		break;

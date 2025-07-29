@@ -27,8 +27,8 @@ void ProcessDialogEvent()
 			DelLandQuestMark(npchar);
 			LAi_RemoveLoginTime(npchar);
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_01.wav");
-			dialog.text = TimeGreeting()+", kapitanie. (salutuje) Pozwól, że się przedstawię - Porucznik "+GetFullName(npchar)+", Antigua Regiment Piechoty Morskiej, załogowany w St. Johns. Mam prośbę.";
-			link.l1 = "Witaj, poruczniku Gretton. Nazywam się "+GetFullName(pchar)+" Jaka przysługa?";
+			dialog.text = TimeGreeting()+", kapitanie. (salutuje) Pozwól, że się przedstawię - Porucznik "+GetFullName(npchar)+", Antigua Regiment Piechoty Morskiej, stacjonujący w St. Johns. Mam prośbę.";
+			link.l1 = "Witaj, poruczniku Gretton. Nazywam się "+GetFullName(pchar)+". Jaka przysługa?";
 			link.l1.go = "seafox_1";
 		break;
 		
@@ -62,7 +62,7 @@ void ProcessDialogEvent()
 		
 		case "seafox_3":
 			GiveItem2Character(pchar, "purse2"); 
-			Log_Info("You have received a purse of doubloons");
+			Log_Info("Otrzymałeś sakiewkę dublonów");
 			dialog.text = "Dziesięć tysięcy sztuk srebra. Oto zaliczka.";
 			link.l1 = "Dobrze. Zabierz swoich ludzi na pokład, nie traćmy czasu.";
 			link.l1.go = "seafox_4";
@@ -113,7 +113,7 @@ void ProcessDialogEvent()
 		
 		case "seafox_6":
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_02.wav");
-			dialog.text = "Dziękuję za spokojną podróż, kapitanie! Bardzo mi przykro, ale nie mogę ci zapłacić w tej chwili... w tej okolicy miał być nasz szalupa, ale jej tu nie ma. Jak możesz wyraźnie zobaczyć. Muszę prosić cię o pomoc jeszcze raz. Czy mógłbyś poczekać w tej zatoce przez dwa lub trzy dni? Musimy iść i rozejrzeć się. Kiedy wrócimy, zabierz nas do Antigui. Pułkownik Fox hojnie cię wynagrodzi.";
+			dialog.text = "Dziękuję za spokojną podróż, kapitanie! Bardzo mi przykro, ale nie mogę ci zapłacić w tej chwili... w tej okolicy miała być nasza szalupa, ale jej tu nie ma. Jak możesz wyraźnie zobaczyć. Muszę prosić cię o pomoc jeszcze raz. Czy mógłbyś poczekać w tej zatoce przez dwa lub trzy dni? Musimy iść i rozejrzeć się. Kiedy wrócimy, zabierz nas do Antigui. Pułkownik Fox hojnie cię wynagrodzi.";
 			link.l1 = "Oczywiście, że tak będzie. A ja się spodziewałem, że wszystko pójdzie gładko.";
 			link.l1.go = "seafox_7";
 		break;
@@ -134,14 +134,14 @@ void ProcessDialogEvent()
 		case "seafox_9":
 			DelLandQuestMark(npchar);
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_02.wav");
-			dialog.text = "Co za przypadkowe spotkanie! Myślałem, że będziesz na nas czekał na plaży Grand Case, kapitanie de Maure!";
+			dialog.text = "Coż za przypadkowe spotkanie! Myślałem, że będziesz na nas czekał na plaży Grand Case, kapitanie de Maure!";
 			link.l1 = "Witaj poruczniku, zaskoczenie jest obopólne. Nie spodziewałem się zobaczyć cię ubranego jak holenderski żołnierz.";
 			link.l1.go = "seafox_10";
 		break;
 		
 		case "seafox_10":
-			dialog.text = "To nasze przebranie... Dlaczego jesteś tutaj, panie?";
-			link.l1 = "To niebezpieczne przebranie, kumplu. Szpiedzy mogą być natychmiast straceni bez procesu. A skoro mowa o egzekucji, jeśli chcesz uniknąć swojej, lepiej posłuchaj.";
+			dialog.text = "To nasze przebranie... Dlaczego tu jesteś, panie?";
+			link.l1 = "To niebezpieczne przebranie, żołnierzu. Szpiedzy mogą być natychmiast straceni bez procesu. A skoro mowa o egzekucji, jeśli chcesz uniknąć swojej, lepiej posłuchaj.";
 			link.l1.go = "seafox_11";
 		break;
 		
@@ -158,7 +158,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "seafox_13":
-			dialog.text = RandSwear()+"Ten niehonorowy łotr! Dowiem się, kim jest ten zdrajca, i ujawnię go przed Parlamentem!";
+			dialog.text = RandSwear()+". Ten niehonorowy łotr! Dowiem się, kim jest ten zdrajca, i ujawnię go przed Parlamentem!";
 			link.l1 = "To będzie musiało poczekać, panie Gretton. Wróć na plażę Grand Case tej nocy i wracaj na mój statek, zanim cię złapią.";
 			link.l1.go = "seafox_14";
 		break;
@@ -170,13 +170,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "seafox_15":
-			dialog.text = "Nie sądź, że pozwolą ci tak po prostu wypłynąć stąd, kapitanie de Maure. Oboje jesteśmy w tym po uszy.";
-			link.l1 = "Cholera, pewnie masz rację. Ten korwet runie na nas w chwili, gdy podniesiemy kotwicę...";
+			dialog.text = "Nie sądź, że pozwolą ci tak po prostu stąd wypłynąć, kapitanie de Maure. Oboje jesteśmy w tym po uszy.";
+			link.l1 = "Cholera, pewnie masz rację. Ta korweta runie na nas w chwili, gdy podniesiemy kotwicę...";
 			link.l1.go = "seafox_16";
 		break;
 		
 		case "seafox_16":
-			dialog.text = "Holendrzy mogą wiedzieć, że nadchodzimy, ale nie wiedzą *jak* nadchodzimy. Już zajęliśmy się przebieranką - spójrz na ten mundur. Piękny, prawda? Gdyby nasz plan nie został zdradzony, po prostu poszlibyśmy do lokalnego więzienia, zaskoczyli ich i zabili wszystkich w środku. Ale z pewnością tam czają się w zasadzce. Więc improwizujemy\nKapitanie, idź do kościoła w Philipsburgu i znajdź tam kaznodzieję o imieniu Filippe Jacobsen. Powinien tam być od szóstej do dziesiątej rano. Filippe jest jednym z naszych ludzi wewnątrz\nPowiedz mu to hasło: 'Jak dawno temu wyznali winy uwięzieni marynarze?'. Następnie opowiedz mu o sytuacji i zażądaj jego pomocy w imieniu pułkownika Foxa. Potem przekaż mi jego odpowiedź. Proste i bez ryzyka dla ciebie.";
+			dialog.text = "Holendrzy mogą wiedzieć, że nadchodzimy, ale nie wiedzą *jak* nadchodzimy. Już zajęliśmy się przebieranką - spójrz na ten mundur. Piękny, prawda? Gdyby nasz plan nie został zdradzony, po prostu poszlibyśmy do lokalnego więzienia, zaskoczyli ich i zabili wszystkich w środku. Ale z pewnością tam czają się w zasadzce. Więc improwizujemy\nKapitanie, idź do kościoła w Philipsburgu i znajdź tam kaznodzieję o imieniu Filippe Jacobsen. Powinien tam być od szóstej do dziesiątej rano. Filippe jest jednym z naszych ludzi wewnątrz\nPowiedz mu to hasło: 'Jak dawno temu uwięzieni marynarze wyznali winy?'. Następnie opowiedz mu o sytuacji i zażądaj jego pomocy w imieniu pułkownika Foxa. Potem przekaż mi jego odpowiedź. Proste i bez ryzyka dla ciebie.";
 			link.l1 = "Brzmi cholernie ryzykownie pytać o spowiedź w holenderskim kościele kalwińskim, poruczniku. Pastor spróbuje mnie powiesić za to, że jestem papistą. Dobrze, opowiedz mi o tych mundurach... czy zabrałeś je z holenderskiego patrolu?";
 			link.l1.go = "seafox_17";
 		break;
@@ -189,7 +189,7 @@ void ProcessDialogEvent()
 		
 		case "seafox_18":
 			dialog.text = "Trzymani jako zakładnicy w zaroślach niedaleko tej jaskini.";
-			link.l1 = "Zrozumiano. Trzymaj ich w bezpiecznym miejscu, ja ruszam do miasta. Czekaj tu na mnie i nie wychylaj się - Holendrzy przeczesują dżunglę i morza, szukając ciebie.";
+			link.l1 = "Zrozumiano. Trzymaj ich w bezpiecznym miejscu, ja ruszam do miasta. Czekaj tu na mnie i nie wychylaj się - Holendrzy przeczesują dżunglę i morze, szukając ciebie.";
 			link.l1.go = "seafox_19";
 		break;
 		
@@ -204,7 +204,7 @@ void ProcessDialogEvent()
 			PlaySound("Voice\English\soldier_common_4.wav");
 			DelLandQuestMark(npchar);
 			dialog.text = "Jesteś z powrotem? Kapitanie, co ty tutaj robisz? Idź do miasta, przyciągasz uwagę do naszej kryjówki!";
-			link.l1 = "Wracam z miasta. W jakie gry wy, Anglicy, gracie?";
+			link.l1 = "Wróciłem z miasta. W jakie gry wy, Anglicy, gracie?";
 			link.l1.go = "seafox_21";
 		break;
 		
@@ -236,7 +236,7 @@ void ProcessDialogEvent()
 		
 		case "seafox_25":
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_04.wav");
-			dialog.text = "Na Boga, ktoś jest na zewnątrz! Ty! Sprowadziłeś tu z powrotem tych Holendrów, łotrze! Zdrajco!";
+			dialog.text = "Na Boga, ktoś jest na zewnątrz! Ty! Sprowadziłeś tu z powrotem tych Holendrów, łotrze! Zdrajca!";
 			link.l1 = ""+RandSwear()+"!!!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("FMQN_HollandBattleFight");
@@ -247,7 +247,7 @@ void ProcessDialogEvent()
 			pchar.quest.FMQN_fail1.over = "yes";
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_02.wav");
 			dialog.text = "Miło cię widzieć, panie, jakie nowiny?";
-			link.l1 = "Spotkałem twojego człowieka. Dziś wieczorem dostarczy on do garnizonu więzienia trochę 'zaprawionego' wina. Dostał od cyganki miksturę, nieśmiertelną, ale będą spać jak zabici. Musisz się tam dostać tej nocy i wyciągnąć swoich pojmanych dżentelmenów. A tak przy okazji, ta dostawa wina kosztowała mnie dwadzieścia pięć dublonów. Upewnij się, że wspomnisz o tym w raporcie.";
+			link.l1 = "Spotkałem twojego człowieka. Dziś wieczorem dostarczy on do garnizonu więzienia trochę 'zaprawionego' wina. Dostał od cyganki miksturę, która nie zabija, ale spawi że będą spać jak zabici. Musisz się tam dostać tej nocy i wyciągnąć swoich pojmanych dżentelmenów. A tak przy okazji, ta dostawa wina kosztowała mnie dwadzieścia pięć dublonów. Upewnij się, że wspomnisz o tym w raporcie.";
 			link.l1.go = "seafox_27";
 		break;
 		
@@ -261,7 +261,7 @@ void ProcessDialogEvent()
 			dialog.text = "Z całą pewnością, kapitanie. Nie pożałujesz, że nam pomogłeś. Czy twój statek jest na plaży Grand Case?";
 			if (pchar.location.from_sea == "Shore40")
 			{
-				link.l1 = "Aj.";
+				link.l1 = "Tak.";
 				link.l1.go = "seafox_29";
 			}
 			else
@@ -278,7 +278,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "seafox_29x":
-			dialog.text = "Upewnij się, że ją tam przeniesiesz, bo musimy wyprowadzić naszych ludzi przez dżunglę. Wypłynięcie z portu lub Simpson Bay jest niemożliwe z powodu fortu. Przygotuj wszystko i spotkaj się z nami przy bramach miasta o jedenastej wieczorem.";
+			dialog.text = "Upewnij się, że go tam przeniesiesz, bo musimy wyprowadzić naszych ludzi przez dżunglę. Wypłynięcie z portu lub Zatoki Simpsona jest niemożliwe z powodu fortu. Przygotuj wszystko i spotkaj się z nami przy bramach miasta o jedenastej wieczorem.";
 			link.l1 = "Do zobaczenia tam.";
 			link.l1.go = "seafox_30";
 		break;
@@ -319,7 +319,7 @@ void ProcessDialogEvent()
 		
 		case "seafox_35":
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_05.wav");
-			dialog.text = "Kapitanie de Maure...sir, dziękuję za pomoc! Błagam, nie opuszczajcie portu natychmiast, lecz zostańcie tu jeszcze jeden dzień, podczas gdy ja zdam raport pułkownikowi Foxowi. Odwiedźcie go jutro, jego biuro jest w pałacu gubernatora.";
+			dialog.text = "Kapitanie de Maure...sir, dziękuję za pomoc! Błagam, nie opuszczaj natychmiast portu, lecz zostań tu jeszcze jeden dzień, podczas gdy ja zdam raport pułkownikowi Foxowi. Odwiedź go jutro, jego biuro jest w pałacu gubernatora.";
 			link.l1 = "Bardzo dobrze, poruczniku Gretton. Proszę, aby to było warte mojej fatygi. Naprawa mojej reputacji u Holendrów zajmie dużo czasu z powodu waszej eskapady.";
 			link.l1.go = "seafox_36";
 		break;
@@ -380,7 +380,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "hol_officer_1":
-			dialog.text = "Przewódź, idziemy za tobą!";
+			dialog.text = "Prowadź, idziemy za tobą!";
 			link.l1 = "... ";
 			link.l1.go = "exit";
 			AddDialogExitQuest("FMQN_HollandBattleMarch");
@@ -435,12 +435,12 @@ void ProcessDialogEvent()
 			}
 			pchar.questTemp.FMQN = "way_eng_2";
 			dialog.text = "Co mogę dla ciebie zrobić, synu?";
-			link.l1 = "Witaj, pastorze, tak z ciekawości, jak dawno temu żeglarze niewolnicy się spowiadali?";
+			link.l1 = "Witaj, pastorze, tak z ciekawości, jak dawno temu uwięzieni marynarze wyznali swe winy?";
 			link.l1.go = "monk_1";
 		break;
 		
 		case "monk_1":
-			dialog.text = "Wczoraj wieczorem, mój syn... (szeptem) Zakładam, że wiesz, iż plan został zdradzony?";
+			dialog.text = "Wczoraj wieczorem, mój synu... (szeptem) Zakładam, że wiesz, iż plan został zdradzony?";
 			link.l1 = "Nie stałbym tutaj w przeciwnym razie. Porucznik Casper Gratton i jego ludzie są obecnie w dżungli. Wszyscy są ubrani jak holenderscy żołnierze, ale potrzebujemy dodatkowej pomocy, ponieważ strażnicy więzienni na nich czekają.";
 			link.l1.go = "monk_2";
 		break;
@@ -479,7 +479,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Wkrótce to zdobędę...";
+				link.l1 = "Wkrótce ją zdobędę...";
 				link.l1.go = "monk_wait";
 			}
 		break;
@@ -514,7 +514,7 @@ void ProcessDialogEvent()
 			DelLandQuestMark(npchar);
 			pchar.quest.FMQN_fail.over = "yes";
 			dialog.text = "Witaj, mój synu.";
-			link.l1 = "To samo do ciebie, pastorze. Jakieś nowiny?";
+			link.l1 = "Witaj, pastorze. Jakieś nowiny?";
 			link.l1.go = "monk_6x";
 		break;
 		

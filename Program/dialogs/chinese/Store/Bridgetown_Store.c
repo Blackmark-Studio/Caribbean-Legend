@@ -26,7 +26,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "StoreDone":
 			dialog.text = "好吧, 先生, 如果批量确实很大, 那我们当然可以商量一个合理的折扣。 ";
-			link.l1 = "太好了! 我听说造船厂很快就会有新的弗鲁伊特帆船出售。 我会等着买那艘船。 尽管我已经把双桅横帆船上的所有加农炮都拆了, 但货舱还是装不下所有这些货物! 我稍后再来! ";
+			link.l1 = "太好了! 我听说造船厂很快就会有新的福禄特船出售。 我会等着买那艘船。 尽管我已经把双桅横帆船上的所有加农炮都拆了, 但货舱还是装不下所有这些货物! 我稍后再来! ";
 			link.l1.go = "exit";	
 			npchar.quest.HWICTalked = "true";
 			pchar.questTemp.HWIC.Eng.BridgeCounter = sti(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;

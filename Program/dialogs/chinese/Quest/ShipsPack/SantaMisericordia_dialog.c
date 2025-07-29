@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Alamida_church_3":
-			dialog.text = "你错了。 这不是辩解 --这是理解。 当我刚开始服役时, 每一次死亡都... 很艰难。 但后来... 我开阔了眼界。 ‘残酷是至高之爱的体现。 ’";
+			dialog.text = "你错了。 这不是辩解 —这是理解。 当我刚开始服役时, 每一次死亡都... 很艰难。 但后来... 我开阔了眼界。 ‘残酷是至高之爱的体现。 ’";
 			link.l1 = "我不打扰您祈祷了。 ";
 			link.l1.go = "Alamida_church_5";
 		break;
@@ -117,7 +117,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Alamida_city_3":
-			dialog.text = "有趣。 我也曾这么想。 直到我明白 --恐惧能净化。 当一个人害怕时, 他们会变得更诚实。 更接近他们的本性。 更接近上帝。 ";
+			dialog.text = "有趣。 我也曾这么想。 直到我明白 —恐惧能净化。 当一个人害怕时, 他们会变得更诚实。 更接近他们的本性。 更接近上帝。 ";
 			link.l1 = "有意思的想法。 我得走了。 日安, 费尔南多先生。 ";
 			link.l1.go = "Alamida_city_5";
 		break;
@@ -164,7 +164,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "你怎么敢? ! 攻击‘神圣慈悲号’? ! 一艘承载着国王意志和... 好吧。 既然你在这里, 告诉我 --为什么? 为什么选择这种疯狂行为? ";
+				dialog.text = "你怎么敢? ! 攻击‘神圣慈悲号’? ! 一艘承载着国王意志和... 好吧。 既然你在这里, 告诉我 —为什么? 为什么选择这种疯狂行为? ";
 				link.l1 = "我是海盗。 而你的大帆船肯定装满了宝藏。 ";
 				link.l1.go = "Alamida_abordage_Gold";
 				link.l2 = "多么美丽的船... 我必须拥有它。 ";
@@ -357,7 +357,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Alamida_Helena_2":
-			dialog.text = "不, 没有。 不过我觉得我们有几次处于边缘 --无论是在登船前还是登船时。 你呢, 你还好吗? ";
+			dialog.text = "不, 没有。 不过我觉得我们有几次处于边缘 —无论是在登船前还是登船时。 你呢, 你还好吗? ";
 			link.l1 = "我很好, 再次感谢。 去船舱休息吧, 我很快就来。 ";
 			link.l1.go = "Alamida_BitvaEnd";
 		break;
@@ -371,7 +371,7 @@ void ProcessDialogEvent()
 		
 		case "Alamida_Mary_2":
 			dialog.text = "我很高兴! 但是... 听着, 查尔斯? 我们为什么要攻击这些人? 主不会原谅我们的, 不会。 这艘船... 像一座伟大的圣殿。 当我看到它时, 我的心颤抖了, 就像我第一次看到真正的教堂, 而不仅仅是在书中。 现在它在流血! ";
-			link.l1 = "玛丽... 你知道外表可能具有欺骗性。 在虔诚的面具后面, 是那些从普通信徒那里拿钱的人 --就像你一样。 明白吗? ";
+			link.l1 = "玛丽... 你知道外表可能具有欺骗性。 在虔诚的面具后面, 是那些从普通信徒那里拿钱的人 —就像你一样。 明白吗? ";
 			link.l1.go = "Alamida_Mary_3";
 		break;
 		
@@ -426,7 +426,7 @@ void ProcessDialogEvent()
 			if (startHeroType == 4)
 			{
 				dialog.text = "麦克阿瑟船长, 你没事吧? ";
-				link.l1 = "是的, 提钦吉图, 我很好, 谢谢你的关心。 别再怀疑你的船长了 --我自己处理得很好。 ";
+				link.l1 = "是的, 提钦吉图, 我很好, 谢谢你的关心。 别再怀疑你的船长了 —我自己处理得很好。 ";
 			}
 			link.l1.go = "Alamida_Tichingitu_2";
 		break;
@@ -471,7 +471,7 @@ void ProcessDialogEvent()
 			if (startHeroType == 3)
 			{
 				dialog.text = "这艘船看起来像教堂。 你讨厌教堂和白人的神吗? ";
-				link.l1 = "一点也不。 但这只是装饰, 你看? 这是一艘国库船。 不过你不会明白 --我听说你们的人甚至不知道什么是税收。 幸运的家伙。 ";
+				link.l1 = "一点也不。 但这只是装饰, 你看? 这是一艘国库船。 不过你不会明白 —我听说你们的人甚至不知道什么是税收。 幸运的家伙。 ";
 				link.l1.go = "Alamida_Tichingitu_4";
 			}
 			if (startHeroType == 4)
@@ -505,7 +505,7 @@ void ProcessDialogEvent()
 		
 		case "Alamida_Tichingitu_5":
 			dialog.text = "妨碍你, 蒙托亚先生? ";
-			link.l1 = "正是。 这个群岛对我们俩来说太小了。 而且我在这里对我们的国家更有用。 记得可可叶 --他对他的兄弟们造成的伤害比好处多。 这里也是一样。 ";
+			link.l1 = "正是。 这个群岛对我们俩来说太小了。 而且我在这里对我们的国家更有用。 记得可可叶 —他对他的兄弟们造成的伤害比好处多。 这里也是一样。 ";
 			link.l1.go = "Alamida_Tichingitu_6";
 		break;
 		

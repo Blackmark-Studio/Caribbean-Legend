@@ -9,7 +9,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1 = HeroStringReactionRepeat(RandPhraseSimple("我改主意了…", "现在先不问了, 神父…"), "没什么想说的了, 抱歉。 ",
                       "我回头再问吧, 神父, 还请原谅。 ", "恕罪, 神父…", npchar, Dialog.CurrentNode);
             link.l1.go = "exit";
-            // 卡勒幽船 (幽灵船) 
+            // 卡莱乌切 (幽灵船) 
             if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "priest")
             {
                 link.l1 = "打扰了, 神父, 您教区的一位神职人员让我调查约阿希姆.梅里曼曾租住的那栋房子…";
@@ -17,7 +17,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             }
         break;
         
-        // 卡勒幽船 (幽灵船) 
+        // 卡莱乌切 (幽灵船) 
         case "caleuche":
             dialog.text = "那么? 你去过那里了吗, 我的孩子? ";
             link.l1 = "去过了。 但说实话, 我宁愿没去过。 在上层房间里, 我遭到一个拿着巨大斧头的骷髅袭击。 尽管过程绝非易事, 但我最终还是胜利了。 ";
@@ -68,7 +68,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             GiveItem2Character(pchar, "amulet_8"); 
             GiveItem2Character(pchar, "amulet_10"); 
             ref sld = characterFromId("Havana_Priest");
-            dialog.text = "但我们的麻烦还没结束, 我的孩子。 最近我收到了 "+sld.name+" 的信, 他是哈瓦那教会的主教。 他带来了可怕的消息: 在古巴丛林的一个洞穴里, 猎人看到了可怕的怪物 --行走的死人。 更令人不安的是, 最近有人进入丛林后失踪了。 ";
+            dialog.text = "但我们的麻烦还没结束, 我的孩子。 最近我收到了 "+sld.name+" 的信, 他是哈瓦那教会的主教。 他带来了可怕的消息: 在古巴丛林的一个洞穴里, 猎人看到了可怕的怪物 —行走的死人。 更令人不安的是, 最近有人进入丛林后失踪了。 ";
             link.l1 = "嗯... 您是说这也是梅里曼的所作所为吗? ";
             if (CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 30) link.l1.go = "caleuche_8_1";
             else link.l1.go = "caleuche_8";
@@ -76,7 +76,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "caleuche_8":
             sld = characterFromId("Havana_Priest");
-            dialog.text = "我不知道该怎么想, 我的孩子。 但如果那个黑巫师变得如此强大, 群岛上的所有居民都处于极大的危险之中。 只有上帝知道这个恶魔的仆人心里在想什么\n我希望 "+sld.name+" 神父是错的, 但无论如何 --请去哈瓦那和他谈谈。 我为你准备了一张有效期一个月的贸易许可证, 有了它, 你可以毫无困难地进入哈瓦那港口。 ";
+            dialog.text = "我不知道该怎么想, 我的孩子。 但如果那个黑巫师变得如此强大, 群岛上的所有居民都处于极大的危险之中。 只有上帝知道这个恶魔的仆人心里在想什么\n我希望 "+sld.name+" 神父是错的, 但无论如何 —请去哈瓦那和他谈谈。 我为你准备了一张有效期一个月的贸易许可证, 有了它, 你可以毫无困难地进入哈瓦那港口。 ";
             link.l1 = "好的, 神父。 我会前往哈瓦那。 ";
             link.l1.go = "caleuche_9";
             npchar.quest.givelicence = true;
@@ -84,7 +84,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "caleuche_8_1":
             sld = characterFromId("Havana_Priest");
-            dialog.text = "我不知道该怎么想, 我的孩子。 但如果那个黑巫师变得如此强大, 群岛上的所有居民都处于极大的危险之中。 只有上帝知道这个恶魔的仆人心里在想什么\n我希望 "+sld.name+" 神父是错的, 但无论如何 --我请你前往哈瓦那和他谈谈。 ";
+            dialog.text = "我不知道该怎么想, 我的孩子。 但如果那个黑巫师变得如此强大, 群岛上的所有居民都处于极大的危险之中。 只有上帝知道这个恶魔的仆人心里在想什么\n我希望 "+sld.name+" 神父是错的, 但无论如何 —我请你前往哈瓦那和他谈谈。 ";
             link.l1 = "当然, 神父。 我马上就去哈瓦那。 ";
             link.l1.go = "caleuche_9";
         break;

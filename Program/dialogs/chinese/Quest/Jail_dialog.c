@@ -34,7 +34,7 @@ void ProcessDialogEvent()
 			NextDiag.currentnode = "Jail_officer_free";
 			break;
 		}
-		//<—— 可疑的提议
+		//< —可疑的提议
 			dialog.text = "你因犯罪被拘留, 将在监狱里关押" + FindRussianDaysString(sti(pchar.questTemp.JailTemp2)) + "。 此外, 你将被罚款" + FindRussianMoneyString(sti(pchar.questTemp.JailTemp1)) + "。 祝你愉快, 船长! ";
 			link.l1 = "";
 			link.l1.go = "Jail_officer_take_1";

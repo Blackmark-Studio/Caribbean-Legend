@@ -174,7 +174,7 @@ Cambié de barco y el trato se canceló.
 #QUEST	DELIVERY_TRADE_QUEST
 Entrega de mercancías
 #TEXT	1
-Tengo que entregar @<sGoodQty> de @<sGoodGen> de la tienda de @<sBaseColony> a @<sTargetColony>, @<island>. Tengo que hacerlo en @<sTermsDelivery> y mi pago será de @<sMoney>.
+Tengo que entregar @<sGoodQty> de @<sGoodGen> de la tienda de @<sBaseColony> a @<sTargetColony>@<island>. Tengo que hacerlo en  @<sTermsDelivery> y mi pago será de @<sMoney>.
 #TEXT	2
 La entrega de la mercancía a la tienda de @<sTargetColony> se realizó dentro del plazo acordado.
 #TEXT   3
@@ -1385,7 +1385,7 @@ En la taberna de Willemstad siempre me esperan descanso y placer. De ello se enc
 El jefe del puerto en Belice me otorgó un descuento del cincuenta por ciento por el amarre de un barco de hasta segunda clase, sin límite de tiempo. El barco estará bajo su supervisión personal y no sufrirá daños en caso de asedio a la ciudad.
 #TEXT   4
 ************************************************************
-Ahora puedo comprar vino y ron el día 15 de cada mes a Christian Delouce, en Basseterre. Su casa está a la derecha de la residencia del gobernador. El precio es de 26 doblones por un lote de 20 botellas de vino y 20 botellas de ron.
+Ahora puedo comprar vino y ron el día 15 de cada mes a Christian Delouce, en Basse-terre. Su casa está a la derecha de la residencia del gobernador. El precio es de 26 doblones por un lote de 20 botellas de vino y 20 botellas de ron.
 ************************************************************
 #TEXT   4_1
 He logrado acordar con Christian un aumento en los suministros. Ahora reservará para mí cien botellas de vino y ron cada día 15 del mes. El precio sigue siendo el mismo: ciento treinta doblones por todo el lote.

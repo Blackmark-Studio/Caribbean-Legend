@@ -45,10 +45,10 @@ void ProcessDialogEvent()
 						if (!isLocationFreeForQuests(pchar.GenQuest.MarchCap.Island) || !isLocationFreeForQuests(pchar.GenQuest.MarchCap.Island.Shore)) pchar.GenQuest.MarchCap.Island.Shore = "";
 					}
 					pchar.GenQuest.MarchCap.DaysQty = GetMaxDaysFromIsland2Island(pchar.GenQuest.MarchCap.Startisland, pchar.GenQuest.MarchCap.Island)+3;
-					dialog.text = "Udało mi się dowiedzieć, że w "+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+" mały konwój handlowy pod banderą "+NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation))+", dwie handlowe fregaty i jeden statek strażniczy, będą żeglować blisko "+XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Kapitan")+", to nie jest daleko od "+XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Generał")+"  Kupcy mają dużo  "+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+" w ich ładowniach. Byłoby głupotą nie wykorzystać tej informacji, kapitanie\nTy i ja możemy łatwo poradzić sobie ze strażnikami i zabrać ładunek dla siebie. A więc, wchodzisz w to?";
+					dialog.text = "Udało mi się dowiedzieć, że w "+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+" mały konwój handlowy pod banderą "+NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation))+", dwie handlowe fregaty i jeden statek strażniczy, będą żeglować blisko "+XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Captain")+", to nie jest daleko od "+XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Gen")+"  Kupcy mają dużo  "+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+" w ich ładowniach. Byłoby głupotą nie wykorzystać tej informacji, kapitanie\nTy i ja możemy łatwo poradzić sobie ze strażnikami i zabrać ładunek dla siebie. A więc, wchodzisz w to?";
 					link.l1 = "Brzmi kusząco. Powiedziałbym tak!";
 					link.l1.go = "MarchCap_1_1";
-					link.l2 = "Trochę"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"  to dla mnie za mało, by psuć moje relacje z "+NationNameAblative(sti(pchar.GenQuest.MarchCap.Nation))+" Nie, nie zamierzam tego robić! Żegnaj, panie, i nawet nie próbuj mnie zatrzymać!";
+					link.l2 = "Trochę "+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"  to dla mnie za mało, by psuć moje relacje z "+NationNameAblative(sti(pchar.GenQuest.MarchCap.Nation))+" Nie, nie zamierzam tego robić! Żegnaj, panie, i nawet nie próbuj mnie zatrzymać!";
 					link.l2.go = "MarchCap_exit";
 				break;
 				
@@ -56,7 +56,7 @@ void ProcessDialogEvent()
 					pchar.GenQuest.MarchCap.Startcity = SelectAnyColony(pchar.GenQuest.MarchCap.basecity);
 					pchar.GenQuest.MarchCap.Finishcity = SelectAnyColony2(pchar.GenQuest.MarchCap.basecity, pchar.GenQuest.MarchCap.Startcity);
 					pchar.GenQuest.MarchCap.DaysQty = 5+hrand(5);
-					dialog.text = "Udało mi się dowiedzieć, że w "+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+" mały konwój handlowy pod banderą "+NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation))+", dwa statki handlowe i jeden statek strażniczy, wypłyną z "+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Startcity+"Gen")+" do "+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Finishcity+"Zatwierdź")+"  Kupcy mają dużo "+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+" w ich ładowniach. Byłoby głupotą nie wykorzystać tej informacji, kapitanie.\nTy i ja możemy łatwo poradzić sobie ze strażnikami i zabrać ładunek dla siebie. Najtrudniejsza część to znaleźć ich na otwartym morzu pomiędzy tymi dwiema koloniami. Więc, jesteś zainteresowany?";
+					dialog.text = "Udało mi się dowiedzieć, że w "+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+" mały konwój handlowy pod banderą "+NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation))+", dwa statki handlowe i jeden statek strażniczy, wypłyną z "+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Startcity+"Gen")+" do "+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Finishcity+"Acc")+"  Kupcy mają dużo "+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+" w ich ładowniach. Byłoby głupotą nie wykorzystać tej informacji, kapitanie.\nTy i ja możemy łatwo poradzić sobie ze strażnikami i zabrać ładunek dla siebie. Najtrudniejsza część to znaleźć ich na otwartym morzu pomiędzy tymi dwiema koloniami. Więc, jesteś zainteresowany?";
 					link.l1 = "Brzmi kusząco. Powiedziałbym tak!";
 					link.l1.go = "MarchCap_2_1";
 					link.l2 = "Nieco "+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+" to za mało, bym psuł swoje relacje z "+NationNameAblative(sti(pchar.GenQuest.MarchCap.Nation))+" Nie, nie zamierzam tego robić! Żegnaj, panie, i nawet nie próbuj mnie zatrzymywać!";
@@ -83,7 +83,7 @@ void ProcessDialogEvent()
 					pchar.GenQuest.MarchCap.PirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);//пират
 					pchar.GenQuest.MarchCap.ShipType = SelectPirateShipType();
 					pchar.GenQuest.MarchCap.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.MarchCap.ShipType));
-					dialog.text = "Zostałem poinformowany o jednym piracie imieniem "+GetName(NAMETYPE_ORIG,pchar.GenQuest.MarchCap.PirateName,NAME_NOM)+" Ten bandyta niedawno ukradł "+RandPhraseSimple(RandPhraseSimple("Angielski","Francuski"),RandPhraseSimple("Hiszpański","Holenderski"))+" i załadował jego ładownię "+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+". Ale, co za szkoda, jego statek "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.MarchCap.ShipType),"Nazwa")+"Acc"))+" został poważnie uszkodzony, więc musiał poświęcić czas na jej naprawę.\nObecnie jest w "+XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Gen")+" z "+XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Gen")+"  Myślę, że to zajmie około "+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+" aby naprawił maszty i dziury w kadłubie. Możemy tam dotrzeć na czas, jeśli się pospieszymy i wszyscy "+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+" będzie nasza\nNie będę w stanie poradzić sobie z tym piratem samemu, jest bardzo dobrym żeglarzem i wojownikiem, ale we dwóch możemy stawić mu czoła pomimo jego doświadczenia. Więc, jesteś z nami czy nie?";
+					dialog.text = "Zostałem poinformowany o jednym piracie imieniem "+GetName(NAMETYPE_ORIG,pchar.GenQuest.MarchCap.PirateName,NAME_NOM)+" Ten bandyta niedawno ukradł "+RandPhraseSimple(RandPhraseSimple("Angielski","Francuski"),RandPhraseSimple("Hiszpański","Holenderski"))+" statek i załadował jego ładownię "+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+". Ale, co za szkoda, jego statek "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.MarchCap.ShipType),"Name")+"Acc"))+" został poważnie uszkodzony, więc musiał poświęcić czas na jej naprawę.\nObecnie jest w "+XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Gen")+" z "+XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Gen")+"  Myślę, że to zajmie około "+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+" aby naprawił maszty i dziury w kadłubie. Możemy tam dotrzeć na czas, jeśli się pospieszymy i wszyscy "+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+" będzie nasza\nNie będę w stanie poradzić sobie z tym piratem samemu, jest bardzo dobrym żeglarzem i wojownikiem, ale we dwóch możemy stawić mu czoła pomimo jego doświadczenia. Więc, jesteś z nami czy nie?";
 					link.l1 = "Kusi mnie to. Powiedziałbym tak!";
 					link.l1.go = "MarchCap_3_1";
 					link.l2 = "Hm. Wygląda na to, że ta zdobycz jest nieosiągalna nie tylko dla ciebie, ale i dla nas obu. Nie, nie zamierzam tego robić, żegnaj, panie, i nawet nie próbuj mnie zatrzymać!";
@@ -94,7 +94,7 @@ void ProcessDialogEvent()
 		
 		case "MarchCap_1_1":
 			dialog.text = "Wiedziałem, że mogę na ciebie liczyć! Nie traćmy ani chwili. Idź na swój statek i obejmij dowodzenie, ja będę podążał za tobą. Czas wyruszyć w rejs!";
-			link.l1 = "Rozkaz podnieść kotwicę, kapitanie!";
+			link.l1 = "Rozkaż podnieść kotwicę, kapitanie!";
 			link.l1.go = "MarchCap_1_2";
 		break;
 		
@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MarchCap_TimeOver":
-			dialog.text = "A dlaczego zaangażowałem się z tobą, kapitanie? Straciliśmy przez ciebie tak cenną zdobycz! Lepiej popłynę następnym razem sam...";
+			dialog.text = "Dlaczego zaangażowałem się z tobą, kapitanie? Straciliśmy przez ciebie tak cenną zdobycz! Lepiej popłynę następnym razem sam...";
 			link.l1 = "Twoja wina, nie moja. Do widzenia.";
 			link.l1.go = "MarchCap_Talk_exit";
 			pchar.GenQuest.MarchCap = "late";
@@ -196,14 +196,14 @@ void ProcessDialogEvent()
 			}
 			if (iTemp > 500 && iTemp < 1500)
 			{
-				dialog.text = "Dobra robota, kapitanie! Jak mówiłem - łatwo było opróżnić ładownie tych kupców, ha-ha... Nagroda to "+FindRussianQtyString(iQty)+" kawałki. Mój udział to "+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+".";
-				link.l1 = "To prawda, "+npchar.name+"  Nie mam żadnych zastrzeżeń. Łodzie są właśnie ładowane. Może w przyszłości zrobimy kolejny napad razem? Wyglądasz na odpowiedniego towarzysza dla mnie.";
+				dialog.text = "Dobra robota, kapitanie! Jak mówiłem - łatwo było opróżnić ładownie tych kupców, ha-ha... Nagroda to "+FindRussianQtyString(iQty)+". Mój udział to "+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+".";
+				link.l1 = "To prawda, "+npchar.name+". Nie mam żadnych zastrzeżeń. Łodzie są właśnie ładowane. Może w przyszłości zrobimy kolejny napad razem? Wyglądasz na odpowiedniego towarzysza dla mnie.";
 				link.l1.go = "MarchCap_Talk_exit";
 				pchar.GenQuest.MarchCap = "good";
 				break;
 			}
-			dialog.text = "Doskonale, kapitanie! Jak mówiłem - opróżnienie ładowni tych kupców było stosunkowo łatwe, ha-ha... Nagroda jest ogromna, znacznie większa, niż się spodziewałem. To jest "+FindRussianQtyString(iQty)+" sztuki. Mój udział to "+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+".";
-			link.l1 = "To prawda, "+npchar.name+" . Nie mam żadnych zastrzeżeń. Szkuty są właśnie ładowane. Być może, w przyszłości dokonamy kolejnego najazdu razem? Wyglądasz na odpowiedniego towarzysza dla mnie.";
+			dialog.text = "Doskonale, kapitanie! Jak mówiłem - opróżnienie ładowni tych kupców było stosunkowo łatwe, ha-ha... Nagroda jest ogromna, znacznie większa, niż się spodziewałem. To jest "+FindRussianQtyString(iQty)+". Mój udział to "+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+".";
+			link.l1 = "To prawda, "+npchar.name+". Nie mam żadnych zastrzeżeń. Szkuty są właśnie ładowane. Być może, w przyszłości dokonamy kolejnego najazdu razem? Wyglądasz na odpowiedniego towarzysza dla mnie.";
 			link.l1.go = "MarchCap_Deck_continue";
 			pchar.GenQuest.MarchCap = "exellent";
 		break;
@@ -217,7 +217,7 @@ void ProcessDialogEvent()
 		
 		case "MarchCap_2_1":
 			dialog.text = "  Wiedziałem, że mogę na tobie polegać! Nie traćmy ani minuty. Idź na swój statek i przejmij dowodzenie, ja podążę za tobą.   Czas wyruszać w rejs! ";
-			link.l1 = "Rozkaz podniesienia kotwicy, kapitanie.";
+			link.l1 = "Rozkaż podniesienia kotwicy, kapitanie.";
 			link.l1.go = "MarchCap_2_2";
 		break;
 		
@@ -251,7 +251,7 @@ void ProcessDialogEvent()
 		
 		case "MarchCap_3_1":
 			dialog.text = "Wiedziałem, że mogę na ciebie liczyć! Nie traćmy ani minuty. Idź na swój statek i prowadź mnie. Czas wyruszać w morze!";
-			link.l1 = "Rozkaz podnieść kotwicę, kapitanie.";
+			link.l1 = "Rozkaż podnieść kotwicę, kapitanie.";
 			link.l1.go = "MarchCap_3_2";
 		break;
 		
@@ -289,7 +289,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MarchCap_DieHard_1":
-			dialog.text = "A dlaczego ja się z tobą związałem, kapitanie? Powinienem był znaleźć człowieka, który nie bał się abordażowych szabel!";
+			dialog.text = "Dlaczego ja się z tobą związałem, kapitanie? Powinienem był znaleźć człowieka, który nie bał się abordażowych szabel!";
 			link.l1 = " Teraz proszę cię, byś opuścił mój statek - muszę go naprawić.";
 			link.l1.go = "MarchCap_Talk_exit";
 		break;
@@ -309,21 +309,21 @@ void ProcessDialogEvent()
 			if (iTemp > 10 && iTemp < 100)
 			{
 				dialog.text = "Cóż, ten najazd nie był tak udany, jak się spodziewałem, nasza zdobycz jest naprawdę skromna... Nieważne, kapitanie, podzielmy się tymi ochłapami i pożegnajmy się.";
-				link.l1 = "Gdybyś mi pomagał zamiast liczyć ptaki na niebie, najazd byłby udany... Weź swoją działkę - "+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+" i zgiń!";
+				link.l1 = "Gdybyś mi pomagał zamiast liczyć ptaki na niebie, najazd byłby udany... Weź swoją działkę - "+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+" i spadaj!";
 				link.l1.go = "MarchCap_Talk_exit";
 				pchar.GenQuest.MarchCap = "poor";
 				break;
 			}
 			if (iTemp > 100 && iTemp < 500)
 			{
-				dialog.text = "Dobra robota, kapitanie! Nagroda to "+FindRussianQtyString(iQty)+" kawałki. Mój udział to "+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+".";
-				link.l1 = "To prawda, "+npchar.name+"Nie mam żadnych zastrzeżeń. Szalupy są właśnie ładowane. Być może spotkamy się ponownie...";
+				dialog.text = "Dobra robota, kapitanie! Nagroda to "+FindRussianQtyString(iQty)+". Mój udział to "+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+".";
+				link.l1 = "To prawda, "+npchar.name+". Nie mam żadnych zastrzeżeń. Szalupy są właśnie ładowane. Być może spotkamy się ponownie...";
 				link.l1.go = "MarchCap_Talk_exit";
 				pchar.GenQuest.MarchCap = "good";
 				break;
 			}
-			dialog.text = "Wspaniale, kapitanie! Jak mówiłem - to było dość łatwe, ha-ha... Nagroda jest ogromna, znacznie większa, niż się spodziewałem. To jest "+FindRussianQtyString(iQty)+" sztuki. Mój udział to "+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+".";
-			link.l1 = "To prawda, "+npchar.name+"Nie mam żadnych zastrzeżeń. Szalupy są właśnie ładowane. Może w przyszłości przeprowadzimy kolejny rajd razem? Wyglądasz na odpowiedniego towarzysza dla mnie.";
+			dialog.text = "Wspaniale, kapitanie! Jak mówiłem - to było dość łatwe, ha-ha... Nagroda jest ogromna, znacznie większa, niż się spodziewałem. To jest "+FindRussianQtyString(iQty)+". Mój udział to "+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+".";
+			link.l1 = "To prawda, "+npchar.name+". Nie mam żadnych zastrzeżeń. Szalupy są właśnie ładowane. Może w przyszłości przeprowadzimy kolejny rajd razem? Wyglądasz na odpowiedniego towarzysza dla mnie.";
 			link.l1.go = "MarchCap_Deck_continue";
 			pchar.GenQuest.MarchCap = "exellent";
 		break;

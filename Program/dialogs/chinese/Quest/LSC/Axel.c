@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 			if (pchar.questTemp.LSC == "return" && !CheckAttribute(npchar, "quest.return_isl"))
 			{
 				dialog.text = "你看看这是谁... "+GetFullName(pchar)+"! 你从阴间回来了? 这怎么可能? ";
-				link.l1 = "人可不会从阴间回来, 阿克塞尔。 很简单 --我根本没死, 哈哈! ";
+				link.l1 = "人可不会从阴间回来, 阿克塞尔。 很简单 —我根本没死, 哈哈! ";
 				link.l1.go = "exit";
 				npchar.quest.return_isl = "true";
 				break;
@@ -108,7 +108,7 @@ void ProcessDialogEvent()
 		
 		case "adolf_2":
 			dialog.text = "玛丽.卡斯帕和马塞洛, 也被称为独眼龙。 我不知道这个女孩为什么需要步枪, 但我们的红玛丽是出了名的狂人。 一年前, 她买了大量火药来制造地雷, 她说要用来击晕螃蟹\n谢天谢地, 她没被允许这么做\n而马塞洛想买一支步枪来猎鸟, 他吃咸牛肉吃腻了。 我把他们都介绍给了阿道夫, 不知道他们有没有从他那里买步枪\n还有, 那个狡猾的家伙朱塞佩.法奇奥最近也打听过阿道夫。 也许, 他也想买这支施图岑猎枪。 ";
-			link.l1 = "呵, 我的竞争对手还真不少。 好吧, 我去找阿道夫 --希望他还没把枪卖掉。 ";
+			link.l1 = "呵, 我的竞争对手还真不少。 好吧, 我去找阿道夫 —希望他还没把枪卖掉。 ";
 			link.l1.go = "adolf_3";
 		break;
 		
@@ -130,7 +130,7 @@ void ProcessDialogEvent()
 		
 		// 给鲨鱼的威士忌
 		case "whiskey":
-			dialog.text = "是的, 伙计, 他确实问过。 但如果你也想买一桶布什米尔威士忌, 我会让你失望的。 我只有一桶, 查德买走了。 我可以给你苏格兰威士忌 --和爱尔兰威士忌一样好, 实际上, 我更喜欢它的味道。 ";
+			dialog.text = "是的, 伙计, 他确实问过。 但如果你也想买一桶布什米尔威士忌, 我会让你失望的。 我只有一桶, 查德买走了。 我可以给你苏格兰威士忌 —和爱尔兰威士忌一样好, 实际上, 我更喜欢它的味道。 ";
 			link.l1 = "也许以后吧。 查德还从你这里买了别的东西吗? ";
 			link.l1.go = "whiskey_1";
 		break;

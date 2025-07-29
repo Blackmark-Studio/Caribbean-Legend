@@ -102,7 +102,7 @@ void ProcessDialogEvent()
 			//--> смотрим Deck
     		makearef(arAll, pchar.GenQuest.ConvoyPassenger);
 			if (GetAttributesNum(arAll) == 0) pchar.quest.ConvoyMapPassenger.over = "yes";
-			//<—— смотрим Deck
+			//< —смотрим Deck
 			AddMoneyToCharacter(pchar, makeint(npchar.GenQuest.GetPassenger_Money));
 			ChangeCharacterComplexReputation(pchar, "nobility",1);
 			ChangeCharacterComplexReputation(pchar, "fame",1);

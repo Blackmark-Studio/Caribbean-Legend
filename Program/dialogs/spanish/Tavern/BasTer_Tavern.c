@@ -176,7 +176,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "¡Permítame, capitán! ¡Eso es un robo en toda regla! Sí, mi situación es realmente desesperada, pero aún así no trabajaré con pérdidas.";
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 50)
 			{
-				link.l1 = "Quizás pueda ofrecerle un descuento. Pero eso no es todo. Quiero convertirme en su proveedor permanente. Le garantizo que no habrá problemas con las entregas. Alquilaré un almacén en Bass-Terre, y usted recibirá la mercancía directamente desde allí, sin demoras. Siempre habrá suficiente licor para anticiparse a cualquier tipo de interrupciones. En cuanto a la suma, con el descuento será de doscientos cuarenta doblones. ¿Qué dice?";
+				link.l1 = "Quizás pueda ofrecerme un descuento. Además, quiero convertirme en su proveedor permanente. Le garantizo que no habrá problemas con las entregas. Alquilaré un almacén en Basse-Terre para recibir la mercancía directamente, sin demoras. Siempre habrá suficiente licor para anticiparse a cualquier tipo de interrupciones. En cuanto a la suma, con el descuento será de doscientos cuarenta doblones. ¿Qué me dice?";
 				link.l1.go = "TPZ_Tavern2_4";
 				notification("Prueba superada", SKILL_COMMERCE);
 			}

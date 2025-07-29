@@ -35,10 +35,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             }
             if (CheckAttribute(pchar, "questTemp.TBP_Tavern3"))
             {
-                link.l1 = "好了, " + npchar.name+ ", 告诉你个好消息 --你那位宝贝女服务员安然无恙。 你得重新备足朗姆酒了, 很快客人们就会回来的。 ";
+                link.l1 = "好了, " + npchar.name+ ", 告诉你个好消息 —你那位宝贝女服务员安然无恙。 你得重新备足朗姆酒了, 很快客人们就会回来的。 ";
                 link.l1.go = "TBP_Tavern3_21";
             }
-            //<—— 贝琪.普莱斯之谜
+            //< —贝琪.普莱斯之谜
         break;
 
         // 奴隶贸易商
@@ -49,7 +49,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "EscapeSlaveVillemstad_T2":
-            dialog.text = "塔曼戈和伊索拉 --布伦海姆种植园的奴隶, 第一座被烧毁的种植园。 这两个黑人彼此相爱。 但种植园主的儿子莱昂西奥从欧洲来了, 他看中了那个女人。 他想让伊索拉做他的私人小妾。 黑人大汉塔曼戈不接受这个主意, 伊索拉也不愿意, 她真的爱着那个黑鬼。 那个塔曼戈在非洲好像是个酋长什么的... 一个巨人般的壮汉 --比罪恶还黑, 用斧头杀人很厉害, 其他黑人都怕他。 尊敬他。 于是这个黑人带领其他奴隶起义了。 他们在夜里袭击了守卫, 把大房子外面的每个白人都杀了, 混血儿也没放过。 然后伊索拉打开了种植园的大门, 那些野蛮的'猿猴'把里面的人全杀了。 布伦堡被烧成了平地。 然后奴隶们逃进丛林消失了... ";
+            dialog.text = "塔曼戈和伊索拉 —布伦海姆种植园的奴隶, 第一座被烧毁的种植园。 这两个黑人彼此相爱。 但种植园主的儿子莱昂西奥从欧洲来了, 他看中了那个女人。 他想让伊索拉做他的私人小妾。 黑人大汉塔曼戈不接受这个主意, 伊索拉也不愿意, 她真的爱着那个黑鬼。 那个塔曼戈在非洲好像是个酋长什么的... 一个巨人般的壮汉 —比罪恶还黑, 用斧头杀人很厉害, 其他黑人都怕他。 尊敬他。 于是这个黑人带领其他奴隶起义了。 他们在夜里袭击了守卫, 把大房子外面的每个白人都杀了, 混血儿也没放过。 然后伊索拉打开了种植园的大门, 那些野蛮的'猿猴'把里面的人全杀了。 布伦堡被烧成了平地。 然后奴隶们逃进丛林消失了... ";
             link.l1 = "嗯, 这故事怎么样, 听起来像小说的情节! 一场真正的奴隶起义, 就像古罗马一样。 顺便问一下, 你是怎么知道这些的? ";
             link.l1.go = "EscapeSlaveVillemstad_T3";
         break;
@@ -180,7 +180,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
 
         case "TBP_Tavern3_22_leadership":
-            dialog.text = "嗯, 最重要的是她会回来工作。 你已经赢得了你的奖励, 船长。 给, 拿着 --一百达布隆, 如约而至。 还有, 拿着这张地图。 有个顾客把它留在这里, 再也没回来。 看起来它通向宝藏。 ";
+            dialog.text = "嗯, 最重要的是她会回来工作。 你已经赢得了你的奖励, 船长。 给, 拿着 —一百达布隆, 如约而至。 还有, 拿着这张地图。 有个顾客把它留在这里, 再也没回来。 看起来它通向宝藏。 ";
             link.l1 = "好吧, 我会去看看的。 谢谢。 ";
             link.l1.go = "exit";
             AddDialogExitQuestFunction("TBP_BetsiBackToWork");
@@ -190,7 +190,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
 
         case "TBP_Tavern3_22_fortune":
-            dialog.text = "嗯, 最重要的是她会回来工作。 你已经赢得了你的奖励, 船长。 给, 拿着 --一百达布隆, 如约而至。 还有, 拿着这张地图。 有个顾客把它留在这里, 再也没回来。 看起来它通向宝藏。 ";
+            dialog.text = "嗯, 最重要的是她会回来工作。 你已经赢得了你的奖励, 船长。 给, 拿着 —一百达布隆, 如约而至。 还有, 拿着这张地图。 有个顾客把它留在这里, 再也没回来。 看起来它通向宝藏。 ";
             link.l1 = "好吧, 我会去看看的。 谢谢。 ";
             link.l1.go = "exit";
             AddDialogExitQuestFunction("TBP_BetsiBackToWork");

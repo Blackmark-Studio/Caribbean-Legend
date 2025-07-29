@@ -31,7 +31,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "Panama_rat_2":
-            dialog.text = "好吧, 从这里步行出去只有一条路 --贝洛港。 他步行走了。 所以去那里找他吧。 ";
+            dialog.text = "好吧, 从这里步行出去只有一条路 —贝洛港。 他步行走了。 所以去那里找他吧。 ";
             link.l1 = "谢谢, 你帮了大忙! ";
             link.l1.go = "exit";
             pchar.questTemp.Slavetrader = "FindRatPortobello";

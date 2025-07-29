@@ -23,7 +23,7 @@ Adams
 
 Knippel_6
 {
-查理前来救援! 
+Charlie 前来救援! 
 }
 
 Knippel_7
@@ -60,7 +60,7 @@ Lynch
 
 Knippel_14
 {
-"苏塞克斯"号出现在地平线上! 
+"Sussex (苏塞克斯)" 出现在地平线上! 
 }
 
 Knippel_15
@@ -88,7 +88,7 @@ Knippel_19
 
 Knippel_20
 {
-一段时间后... @<NewStr()> 在弗利特伍德府
+一段时间后... @<NewStr()> 在 Fleetwood 宅邸
 }
 Knippel_21
 {
@@ -108,7 +108,7 @@ Faggle
 }
 Knippel_25
 {
-2小时后... @<NewStr()> 登船"苏塞克斯"号
+2小时后... @<NewStr()> 登船"Sussex"号
 }
 Knippel_26
 {

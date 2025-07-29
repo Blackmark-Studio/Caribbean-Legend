@@ -1279,10 +1279,10 @@ void ProcessDialogEvent()
 		// <-- приключенец
 
 	case "chicken_god":
-		dialog.text = "¿Para usted y m'lord Agueybana? Claro que sí. Eso serán diez mil, capitán.";
+		dialog.text = "¿Para usted y el caballero Agueybana? Claro que sí. Eso serán diez mil, capitán.";
 		if (sti(pchar.money) >= 10000)
 		{
-			link.l1 = "¡Espera, no así!.. ¡Maldición! No importa, aquí está el pago.";
+			link.l1 = "¡Espera, no era así! ¡Maldición! No importa, aquí está el pago.";
 			link.l1.go = "chicken_god_pay";
 		}
 		else

@@ -136,7 +136,7 @@ void ProcessDialogEvent()
 			if(NPChar.id == "PirateOnUninhabited_0")
 			{
 				dialog.text = RandPhraseSimple("¡Salve a ti! ¡Finalmente, el Señor ha escuchado nuestras plegarias y ha enviado a un gallardo capitán a esta costa abandonada!","¡Gracias a la Providencia! ¡Ahora los carroñeros locales no se alimentarán de nuestros huesos podridos!");
-				link.l1 = "Hola, buen hombre, soy el capitán "+GetFullName(PChar)+"Veo que estás bastante en un lío aquí.";
+				link.l1 = "Hola, buen hombre, soy el capitán "+GetFullName(PChar)+". Veo que tienes serios problemas por aquí.";
 				link.l1.go = "PiratesOnUninhabited_3";
 				link.l2 = "Hombre bueno, tengo mis propios asuntos que atender y no tengo tiempo que perder en tus problemas.";
 				link.l2.go = "PiratesOnUninhabited_1";
@@ -145,9 +145,9 @@ void ProcessDialogEvent()
 			if(NPChar.id == "ShipWreck_0")
 			{
 				dialog.text = RandPhraseSimple("¡Oh, capitán! ¡Es una buena fortuna que Dios te haya enviado un viento favorable y te haya guiado a este lugar desierto!","¡Capitán! ¡Gracias a la Providencia que decidió echar el ancla en esta costa desierta!");
-				link.l1 = "Hola, buen hombre, soy el capitán "+GetFullName(pchar)+"Veo que estás en serios problemas aquí.";	
+				link.l1 = "Hola buen hombre, soy el capitán "+GetFullName(pchar)+". Veo que tienes serios problemas por aquí.";	
 				link.l1.go = "ShipWreck_2";
-				link.l2 = "Hombre bueno, tengo mis propios asuntos que atender y no tengo tiempo que perder en tus problemas.";
+				link.l2 = "Hombre, tengo mis propios asuntos que atender y no tengo tiempo que perder en tus problemas.";
 				link.l2.go = "ShipWreck_1";
 			}
 			

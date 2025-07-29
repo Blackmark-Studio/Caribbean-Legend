@@ -25,7 +25,7 @@ food_5
 
 food_6
 {
-在 @<rChar.Ship.Name> 号船上, @<FindRussianSailorString(cn, "No")> 因病死亡
+ @<FindRussianSailorString(cn, "No")> 因病死在 @<rChar.Ship.Name> 号上
 }
 
 food_7
@@ -35,17 +35,17 @@ food_7
 
 food_8
 {
-在 @<rChar.Ship.Name> 号船上, @<FindRussianSlavesString(cn, "No")> 因病死亡
+ @<FindRussianSlavesString(cn, "No")> 因病死在 @<rChar.Ship.Name> 号上
 }
 
 food_9
 {
-在 @<rChar.Ship.Name> 号船上, 人们渴望得到朗姆酒。 
+在 @<rChar.Ship.Name> 号上, 人们渴望得到朗姆酒。 
 }
 
 food_10
 {
- @<rChar.Ship.Name> 号船上的食物还能维持 @<FindRussianDaysString(cn)> 
+ @<rChar.Ship.Name> 号上的食物还能维持 @<FindRussianDaysString(cn)> 
 }
 
 food_11
@@ -60,7 +60,7 @@ food_12
 
 food_13
 {
- @<rChar.Ship.Name> 号船上的水手们正在挨饿。 船员的士气正在下降! 
+ @<rChar.Ship.Name> 号上的水手们正在挨饿。 船员的士气正在下降! 
 }
 
 food_14
@@ -75,7 +75,7 @@ food_15
 
 food_16
 {
- @<rChar.Ship.Name> 号船上发生暴动!! ! ~
+ @<rChar.Ship.Name> 号上发生暴动!!! ~
 }
 
 food_17

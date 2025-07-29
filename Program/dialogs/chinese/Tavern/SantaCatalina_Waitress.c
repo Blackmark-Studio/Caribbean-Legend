@@ -27,7 +27,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             dialog.text = "抱歉, 船长... 这是罪过, 但我忍不住! 我不太有经验, 但别拒绝这个女孩, 船长! 您太英俊了! 我想取悦您, 想触摸... ";
             link.l1 = "确实要完全舒适... 你也很美! 来吧, 别害羞。 ";
             link.l1.go = "helendrinking_sex";
-            link.l2 = "小姐, 现在最好别碰我 --我浑身都是朗姆酒味。 但你可以取悦我 --要是有早餐就太好了! ";
+            link.l2 = "小姐, 现在最好别碰我 —我浑身都是朗姆酒味。 但你可以取悦我 —要是有早餐就太好了! ";
             link.l2.go = "helendrinking_nosex";
         break;
         

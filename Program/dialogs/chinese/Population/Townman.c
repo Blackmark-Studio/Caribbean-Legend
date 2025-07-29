@@ -133,7 +133,7 @@ void ProcessDialogEvent()
                 //==> 圣慈悲号上的检查团抵达
                 if (CheckAttribute(pchar, "questTemp.SantaMisericordia.ColonyZapret") && pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
                 {
-                    dialog.Text = LinkRandPhrase(LinkRandPhrase("整个城市都紧张不安 --皇家监察官费尔南多.德.阿拉米达来了。 你知道, 我在这里见过很多, 但这... 改变人的不是悲伤, 而是他们如何应对悲伤。 据说他父亲去世后, 他变成了另一个人。 现在整个群岛再也找不到比他更廉洁。 更... 无情的王室仆人了。 ", "看看‘圣慈悲号’! 据说国王亲自下令按特殊设计建造。 注意看 --没有一丝划痕。 就像圣母玛利亚亲自保护它一样。 不过我听到传言... 也许保护它的根本不是圣母。 ", "你知道他们试图杀死费尔南多先生多少次吗? 仅去年一年, 在公海上就有十二次袭击! 嗯, 有这样忠诚训练有素的船员, 在主的保佑下 --他也会挺过第十三次的! "), LinkRandPhrase("你听说了吗? 费尔南多.德.阿拉米达先生已经抵达我们的城市, 据说他现在就在街上的某个地方。 真想亲眼见见他... ", "这个费尔南多先生是个复杂的人。 有人说他是救世主, 为祖国清除污垢。 也有人私下说, 他父亲死后, 他内心崩溃了, 很快我们都会哭泣。 但我告诉你: 不要怕他。 怕那些把他变成这样的人。 ", "这个费尔南多先生真英俊! 但你知道奇怪的是什么吗? 好像他谁都不在意。 满是职责和服务。 我听说有个女孩... 但在和某个牧师见面后, 他完全拒绝了世俗的享乐。 好像他发了誓一样。 "), RandPhraseSimple(RandPhraseSimple("该死的监察官! 他在这里的时候, 城市就像死了一样。 没有贸易, 没有乐趣。 甚至呼吸似乎都得更轻。 你知道最可怕的是什么吗? 每个港口都是这样。 就像时钟一样。 陛下不可能是故意为我们所有人发明这种折磨的! ", "费尔南多先生又去了孤儿院。 慷慨捐赠, 祈祷数小时。 这样的好人应该成为那些该死的贪污者的榜样! "), RandPhraseSimple("哈! ‘圣’费尔南多又关闭了所有妓院。 好吧, 没关系, 他很快就会启航, 它们又会重新开张。 ", "监... 监察官来了, 就是这样! 费尔南多.德.阿尔梅达, 或者, 他叫什么来着, 阿拉米达! 重要到连总督本人都对他蹑手蹑脚。 据说他看着你的眼睛, 就能立刻看到你所有的罪孽。 太可怕了! ")));
+                    dialog.Text = LinkRandPhrase(LinkRandPhrase("整个城市都紧张不安 —皇家监察官费尔南多.德.阿拉米达来了。 你知道, 我在这里见过很多, 但这... 改变人的不是悲伤, 而是他们如何应对悲伤。 据说他父亲去世后, 他变成了另一个人。 现在整个群岛再也找不到比他更廉洁。 更... 无情的王室仆人了。 ", "看看‘圣慈悲号’! 据说国王亲自下令按特殊设计建造。 注意看 —没有一丝划痕。 就像圣母玛利亚亲自保护它一样。 不过我听到传言... 也许保护它的根本不是圣母。 ", "你知道他们试图杀死费尔南多先生多少次吗? 仅去年一年, 在公海上就有十二次袭击! 嗯, 有这样忠诚训练有素的船员, 在主的保佑下 —他也会挺过第十三次的! "), LinkRandPhrase("你听说了吗? 费尔南多.德.阿拉米达先生已经抵达我们的城市, 据说他现在就在街上的某个地方。 真想亲眼见见他... ", "这个费尔南多先生是个复杂的人。 有人说他是救世主, 为祖国清除污垢。 也有人私下说, 他父亲死后, 他内心崩溃了, 很快我们都会哭泣。 但我告诉你: 不要怕他。 怕那些把他变成这样的人。 ", "这个费尔南多先生真英俊! 但你知道奇怪的是什么吗? 好像他谁都不在意。 满是职责和服务。 我听说有个女孩... 但在和某个牧师见面后, 他完全拒绝了世俗的享乐。 好像他发了誓一样。 "), RandPhraseSimple(RandPhraseSimple("该死的监察官! 他在这里的时候, 城市就像死了一样。 没有贸易, 没有乐趣。 甚至呼吸似乎都得更轻。 你知道最可怕的是什么吗? 每个港口都是这样。 就像时钟一样。 陛下不可能是故意为我们所有人发明这种折磨的! ", "费尔南多先生又去了孤儿院。 慷慨捐赠, 祈祷数小时。 这样的好人应该成为那些该死的贪污者的榜样! "), RandPhraseSimple("哈! ‘圣’费尔南多又关闭了所有妓院。 好吧, 没关系, 他很快就会启航, 它们又会重新开张。 ", "监... 监察官来了, 就是这样! 费尔南多.德.阿尔梅达, 或者, 他叫什么来着, 阿拉米达! 重要到连总督本人都对他蹑手蹑脚。 据说他看着你的眼睛, 就能立刻看到你所有的罪孽。 太可怕了! ")));
                     link.l1 = "... ";
                     link.l1.go = "exit";
                 }
@@ -182,7 +182,7 @@ void ProcessDialogEvent()
                     link.l16 = "听着, 我希望你能帮我。 我想买一个" + pchar.GenQuest.Device.Shipyarder.Type + ", 有人告诉我这东西在你的镇上卖过。 嗯, 有人在街上卖过。 你知道什么吗? ";
                     link.l16.go = "Device_Citizen";
                 }
-                // <—— 倒霉小偷生成器
+                // < —倒霉小偷生成器
                 
                 // 牧师任务生成器。 任务2。 战船 -->
                 if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
@@ -190,7 +190,7 @@ void ProcessDialogEvent()
                     link.l5 = LinkRandPhrase("你知道", "你是否知道", "你听说过") + "当地教堂最近被抢劫了吗? ";
                     link.l5.go = "Citiz_GenQuest_Church_2_1";
                 }
-                // <—— 牧师任务生成器。 任务2.
+                // < —牧师任务生成器。 任务2.
 				
                 dialog.Text = NPCharRepPhrase(npchar,
                         PCharRepPhrase(LinkRandPhrase("啊, 是你" + GetFullName(Pchar)
@@ -272,7 +272,7 @@ void ProcessDialogEvent()
    				link.l16 = "听着, 希望你能帮我。 我想买一个" + pchar.GenQuest.Device.Shipyarder.Type + ", 有人说这东西在你们镇上卖过。 嗯, 有人在街上兜售过。 你知道相关情况吗? ";
 				link.l16.go = "Device_Citizen";
 			}
-			// <—— 倒霉小偷生成器
+			// < —倒霉小偷生成器
 			
 			// 牧师任务生成器。 任务2。 战船 -->
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
@@ -280,7 +280,7 @@ void ProcessDialogEvent()
 				link.l5 = LinkRandPhrase("你知道", "你是否了解", "你听说过") + "当地教堂最近被抢劫的事吗? ";
 				link.l5.go = "Citiz_GenQuest_Church_2_1";
 			}
-			// <—— 牧师任务生成器。 任务2.
+			// < —牧师任务生成器。 任务2.
 			
 			Link.l6 = PCharRepPhrase(RandPhraseSimple("你听错了。 我得走了。 ", "没什么, 我正要去酒馆。 "),
                                         RandPhraseSimple("好吧, 没什么。 祝你好运! ", "只是在城里走走。 再见。 "));

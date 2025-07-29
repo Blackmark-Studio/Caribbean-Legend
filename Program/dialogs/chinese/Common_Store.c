@@ -89,12 +89,12 @@ void ProcessDialogEvent()
 				//Jason --> 短缺商品迷你任务
 				if (CheckAttribute(pchar, "questTemp.Wine.Trader") && NPChar.location == pchar.questTemp.Wine.City + "_store" && !CheckAttribute(pchar, "questTemp.Wine.fail"))
 				{
-					link.l13 = "我想从你这里购买一批欧洲葡萄酒 --五六十瓶。 听说你库存很充足。 "; 
+					link.l13 = "我想从你这里购买一批欧洲葡萄酒 —五六十瓶。 听说你库存很充足。 "; 
 					link.l13.go = "Wine_Trader";
 				}
 				if (CheckAttribute(pchar, "questTemp.Wine.Repeat2") && NPChar.location == pchar.questTemp.Wine.City + "_store" && CheckCharacterItem(pchar, "letter_1") && !CheckAttribute(pchar, "questTemp.Wine.fail"))
 				{
-					link.l13 = "又见面了。 请看看这封信 --也许你会重新考虑把葡萄酒卖给我的立场? "; 
+					link.l13 = "又见面了。 请看看这封信 —也许你会重新考虑把葡萄酒卖给我的立场? "; 
 					link.l13.go = "Wine_Repeat2";
 				}
 				if (CheckAttribute(pchar, "questTemp.Wine.wait") && NPChar.location == pchar.questTemp.Wine.City + "_store" && !CheckAttribute(pchar, "questTemp.Wine.fail"))
@@ -102,9 +102,9 @@ void ProcessDialogEvent()
 					link.l13 = "又是我。 我们能继续中断的葡萄酒交易吗? 我筹到了足够的钱。 "; 
 					link.l13.go = "Wine_Price";
 				}
-				// <—— 短缺商品迷你任务
+				// < —短缺商品迷你任务
 				dialog.text = "先生, 您想买点什么吗? ";
-				Link.l1 = "当然 --商店不就是干这个的吗? 给我看看你的商品。 ";
+				Link.l1 = "当然 —商店不就是干这个的吗? 给我看看你的商品。 ";
 				Link.l1.go = "trade_1";
 				Link.l2 = "我来是有特定的生意目的... ";
 				Link.l2.go = "quests";
@@ -141,7 +141,7 @@ void ProcessDialogEvent()
 				}
 				break;
 			}			
-			//<—— 加斯科涅的重担
+			//< —加斯科涅的重担
 			
 			// Warship, 29.05.11。 荣誉之事 - 懦弱的击剑手。 
 			if(CheckAttribute(PChar, "QuestTemp.AffairOfHonor.CowardFencer.CanTraderTalk"))
@@ -156,12 +156,12 @@ void ProcessDialogEvent()
 			if(CheckAttribute(npchar, "quest.trial_usurer"))
 			{
 				dialog.text = "怎么了, 船长? 你丢东西了吗? 为什么在我店里这样跑来跑去? ";
-				Link.l1 = "嗯, 你猜怎么着 --我确实丢了! 那个该死的热拉尔.勒克鲁瓦在哪? 我完成了弗洛里安.肖克交给我的所有任务, 让鲨鱼吞了我吧, 我费了好大劲! 现在我来拿报酬, 结果这只鸟飞走了! ";
+				Link.l1 = "嗯, 你猜怎么着 —我确实丢了! 那个该死的热拉尔.勒克鲁瓦在哪? 我完成了弗洛里安.肖克交给我的所有任务, 让鲨鱼吞了我吧, 我费了好大劲! 现在我来拿报酬, 结果这只鸟飞走了! ";
 				Link.l1.go = "trial";
 				// belamour 传奇版 -->
 				Link.l2 = "怎么说呢... 丢了。 你见过我的客户吗? 他叫热拉尔.勒克鲁瓦。 ";
 				Link.l2.go = "trialA";
-				//<—— 传奇版
+				//< —传奇版
 				DelLandQuestMark(npchar);
 				break;
 			}
@@ -173,8 +173,8 @@ void ProcessDialogEvent()
 				link.l1.go = "Shadowtrader_begin";
 				break;
 			}
-			// <—— 传奇版			
-            dialog.Text = GetNatPhrase(npchar, LinkRandPhrase("很高兴见到你, 先生! 你是新来的吗? ","欢迎, 船长! 我的商店为你服务, 先生。 ","先生, 请进! 我很高兴为你提供这个群岛能买到的最好商品。 "), LinkRandPhrase("哦, 船长先生! 所有法国殖民地最好的商品 --就在这里, 现在, 专门为你! ","多好的见面啊, 先生! 提供最好法国商品的最好商店 --为你服务! ","我们以前见过吗, 船长先生? 你知道, 我的商店和母国最好的商店一样好! "), LinkRandPhrase("哦! 船长先生! 很高兴在我的店里见到你! ","我很高兴在所有西班牙殖民地最好的商店里迎接如此出色的绅士! ","哦, 高贵的idalgo! 命运把你带到了我简陋的商店! 在这里你会找到你想要的任何东西! "),LinkRandPhrase("下午好, 船长先生。 这是你第一次来吗? ","你好, 先生。 你是第一次来吗? 我向你保证, 我们荷兰商品的质量会让你惊喜! ","请进, 船长先生! 最好的商品, 最低的价格 --这就是荷兰的商业方式! "));
+			// < —传奇版			
+            dialog.Text = GetNatPhrase(npchar, LinkRandPhrase("很高兴见到你, 先生! 你是新来的吗? ","欢迎, 船长! 我的商店为你服务, 先生。 ","先生, 请进! 我很高兴为你提供这个群岛能买到的最好商品。 "), LinkRandPhrase("哦, 船长先生! 所有法国殖民地最好的商品 —就在这里, 现在, 专门为你! ","多好的见面啊, 先生! 提供最好法国商品的最好商店 —为你服务! ","我们以前见过吗, 船长先生? 你知道, 我的商店和母国最好的商店一样好! "), LinkRandPhrase("哦! 船长先生! 很高兴在我的店里见到你! ","我很高兴在所有西班牙殖民地最好的商店里迎接如此出色的绅士! ","哦, 高贵的idalgo! 命运把你带到了我简陋的商店! 在这里你会找到你想要的任何东西! "),LinkRandPhrase("下午好, 船长先生。 这是你第一次来吗? ","你好, 先生。 你是第一次来吗? 我向你保证, 我们荷兰商品的质量会让你惊喜! ","请进, 船长先生! 最好的商品, 最低的价格 —这就是荷兰的商业方式! "));
 			Link.l1 = LinkRandPhrase("我也很高兴见到你。 我叫" +GetFullName(pchar)+ ", 我刚来这里。 那么, 给我看看群岛的财富吧! ","我也很高兴见到你。 我是" +GetFullName(pchar)+ "。 " +pchar.ship.name+ "号船长。 那么, 有什么热门交易? ","" +GetFullName(pchar)+ ", " +pchar.ship.name+ "号船长, 很高兴见到你。 那么, 你能给我提供什么? ");
 			link.l1.go = "node_1";
 			
@@ -208,7 +208,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			//<—— 可疑的提议
+			//< —可疑的提议
             
 			// Warship, 29.05.11。 荣誉之事 - 懦弱的击剑手。 
 			if(CheckAttribute(PChar, "QuestTemp.AffairOfHonor.CowardFencer.CanTraderTalk"))
@@ -223,12 +223,12 @@ void ProcessDialogEvent()
 			if(CheckAttribute(npchar, "quest.trial_usurer"))
 			{
 				dialog.text = "怎么了, 船长? 你丢东西了吗? 为什么在我店里这样跑来跑去? ";
-				Link.l1 = "嗯, 你猜怎么着 --我确实丢了! 那个该死的热拉尔.勒克鲁瓦在哪? 我完成了弗洛里安.肖克交给我的所有任务, 让鲨鱼吞了我吧, 我费了好大劲! 现在我来拿报酬, 结果这只鸟飞走了! ";
+				Link.l1 = "嗯, 你猜怎么着 —我确实丢了! 那个该死的热拉尔.勒克鲁瓦在哪? 我完成了弗洛里安.肖克交给我的所有任务, 让鲨鱼吞了我吧, 我费了好大劲! 现在我来拿报酬, 结果这只鸟飞走了! ";
 				Link.l1.go = "trial";
 				// belamour 传奇版 -->
 				Link.l2 = "怎么说呢... 丢了。 你见过我的客户吗? 他叫热拉尔.勒克鲁瓦。 ";
 				Link.l2.go = "trialA";
-				//<—— 传奇版
+				//< —传奇版
 				DelLandQuestMark(npchar);
 				break;
 			}
@@ -240,8 +240,8 @@ void ProcessDialogEvent()
 				link.l1.go = "Shadowtrader_begin";
 				break;
 			}
-			// <—— 传奇版           
-			dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("哦, 看看谁在那儿! 嗯, 俗话说, 金钱无臭, 所以进来吧, 船长, 我们交易... ","我不能说很高兴见到你, " +GetFullName(pchar)+ "... 但我仍然可以和你交易。 ","嘿嘿... 好吧, 我不会邀请你到我家, 船长 --但我的商店仍然为你服务。 "),LinkRandPhrase("哦, 看看谁在那儿! 那不是" +GetFullName(pchar)+ "吗! 想交易还是免费拿东西? 嘿, 开玩笑的... ","不能说很高兴在这里见到你, " +GetAddress_Form(NPChar)+ "。 但如果你有钱花 --进来, 进来... ","想交易吗, " +GetFullName(pchar)+ "船长? 如果是, 请快点? 其他顾客都避开你, 这对我的生意不好, "),LinkRandPhrase("想交易吗, 先生? 稍等, 我要结账 --你知道, 周围有可疑的人... 当然, 我不是说你, 船长! ","如果我在公海上看到你, " +GetAddress_Form(NPChar)+ ", 我可能会下令升帆... 但在这里, 在我的店里, 我可以提议和你交易。 ","船长, 我马上警告你: 如果布料沾了血, 咖啡有火药味, 我不会要的。 否则看看, 挑一挑。 ")),LinkRandPhrase(LinkRandPhrase("我也很高兴再次问候你, " +GetAddress_Form(NPChar)+ "! 买或卖 --我总是很高兴帮助你。 ","我求你, " +GetAddress_Form(NPChar)+ ", 进来! 我总是很高兴在这里见到我最喜欢的顾客。 这次要买还是卖? ","哦, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "! 很高兴再次见到你! 这次要买还是卖? "),LinkRandPhrase("你喜欢我们的商品吗, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "? 我随时为你服务 --看看, 挑一挑。 ","你好, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "。 很高兴再次见到你! 想看看我们的商品 assortment 吗? ","很高兴见到你, 船长! 我就知道你会喜欢我们的优质商品。 想看看有什么新货吗? "),LinkRandPhrase("哦, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "! 请进! 所有商品都为你准备 --这次还有大折扣! ","" +GetFullName(pchar)+ "船长, 你再次光临让我很高兴! 请挑, 喜欢什么就拿什么! ","这次你想要什么, 船长? 很高兴你还记得怎么找到我。 我们有你需要的所有商品 --最好的质量! ")));
+			// < —传奇版           
+			dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("哦, 看看谁在那儿! 嗯, 俗话说, 金钱无臭, 所以进来吧, 船长, 我们交易... ","我不能说很高兴见到你, " +GetFullName(pchar)+ "... 但我仍然可以和你交易。 ","嘿嘿... 好吧, 我不会邀请你到我家, 船长 —但我的商店仍然为你服务。 "),LinkRandPhrase("哦, 看看谁在那儿! 那不是" +GetFullName(pchar)+ "吗! 想交易还是免费拿东西? 嘿, 开玩笑的... ","不能说很高兴在这里见到你, " +GetAddress_Form(NPChar)+ "。 但如果你有钱花 —进来, 进来... ","想交易吗, " +GetFullName(pchar)+ "船长? 如果是, 请快点? 其他顾客都避开你, 这对我的生意不好, "),LinkRandPhrase("想交易吗, 先生? 稍等, 我要结账 —你知道, 周围有可疑的人... 当然, 我不是说你, 船长! ","如果我在公海上看到你, " +GetAddress_Form(NPChar)+ ", 我可能会下令升帆... 但在这里, 在我的店里, 我可以提议和你交易。 ","船长, 我马上警告你: 如果布料沾了血, 咖啡有火药味, 我不会要的。 否则看看, 挑一挑。 ")),LinkRandPhrase(LinkRandPhrase("我也很高兴再次问候你, " +GetAddress_Form(NPChar)+ "! 买或卖 —我总是很高兴帮助你。 ","我求你, " +GetAddress_Form(NPChar)+ ", 进来! 我总是很高兴在这里见到我最喜欢的顾客。 这次要买还是卖? ","哦, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "! 很高兴再次见到你! 这次要买还是卖? "),LinkRandPhrase("你喜欢我们的商品吗, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "? 我随时为你服务 —看看, 挑一挑。 ","你好, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "。 很高兴再次见到你! 想看看我们的商品 assortment 吗? ","很高兴见到你, 船长! 我就知道你会喜欢我们的优质商品。 想看看有什么新货吗? "),LinkRandPhrase("哦, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "! 请进! 所有商品都为你准备 —这次还有大折扣! ","" +GetFullName(pchar)+ "船长, 你再次光临让我很高兴! 请挑, 喜欢什么就拿什么! ","这次你想要什么, 船长? 很高兴你还记得怎么找到我。 我们有你需要的所有商品 —最好的质量! ")));
 			Link.l1 = pcharrepphrase(RandPhraseSimple(RandPhraseSimple("这就是你欢迎我的方式, 伙计? 好吧, 如果我们在海上相遇, 我会记住的... 别发抖, 我只是开玩笑。 给我看看你有什么。 ","好吧, 伙计。 我可能需要你的商品, 但不需要你的舌头。 你能忍住还是需要帮忙? 闭嘴, 给我看看你的商品。 "),RandPhraseSimple("我们言归正传吧, 小贩。 我没时间和你讨论道德问题, 所以我们就像体面人一样交易吧。 ","别着急, 伙计。 开玩笑没关系, 但记住我会生气... 所以别惹我, 给我看看你的商品。 ")),RandPhraseSimple(RandPhraseSimple("总是很高兴拜访你, 伙计。 你有什么值得我注意的库存? ","总是很高兴见到你, 伙计。 那么, 有什么新东西给在海上漂泊数月的流浪者? "),RandPhraseSimple("又一次来到" +XI_ConvertString("Colony"+npchar.City+"Acc")+"! 很高兴我没有忘记。 但你的仓库里还有我的东西吗? 都整理好了吗? ","你怎么能不来? 你总是比那更让我高兴。 那么, 你有什么? ")));
 			link.l1.go = "node_1";
 			NextDiag.TempNode = "Second time";
@@ -249,7 +249,7 @@ void ProcessDialogEvent()
 
 		case "node_1":
 			dialog.text = NPCStringReactionRepeat(NPCharRepPhrase(npchar,
-			                                         pcharrepphrase(RandPhraseSimple("全体船员注意! ","进行检查! ") +LinkRandPhrase("一位" + GetSexPhrase("绅士","绅士, 哦, 请原谅 --一位女士") + " of fortune 在我的店里需要什么, 嘿嘿? ",
+			                                         pcharrepphrase(RandPhraseSimple("全体船员注意! ","进行检查! ") +LinkRandPhrase("一位" + GetSexPhrase("绅士","绅士, 哦, 请原谅 —一位女士") + " of fortune 在我的店里需要什么, 嘿嘿? ",
 													                                 "对一个可怜的老店主来说真是惊喜! 嘿嘿! ", "那么, 什么好风把你吹到我的店里? "),
             														LinkRandPhrase("打开港口! ","钩子到一边! ","直航! ")+RandPhraseSimple(" 这里你会找到"," 我的商店有")
 																	+LinkRandPhrase(" 全岛最好的价格。 "," 出色的商品 assortment。 "," 可获得的最好质量的商品。 ")
@@ -260,7 +260,7 @@ void ProcessDialogEvent()
 																	+RandPhraseSimple("? 我为你服务! ","? 我的商店为你服务! ")
 																	+RandPhraseSimple(" 很高兴见到你"," 请自便") +", 船长! ")),
 				                                  NPCharRepPhrase(npchar,
-												  	 pcharrepphrase("如果你想听我的建议, 船长 --不要在葡萄弹上省钱。 你知道, 死人更容易搜查! ",
+												  	 pcharrepphrase("如果你想听我的建议, 船长 —不要在葡萄弹上省钱。 你知道, 死人更容易搜查! ",
 													                "我一眼就看出你是个" + GetSexPhrase("机灵的伙计","机灵的姑娘") + "。 " +RandPhraseSimple("但现在我可以看出你是个真正的" + GetSexPhrase("英雄","胆大的人") + "。 ", "你很年轻, 但"
 																	+RandPhraseSimple("你很有头脑。 ", "你肯定不容易被骗。 "))),
 													 pcharrepphrase("我愿意从你这里购买所有缴获的货物。 用银或金买? 那东西总是很贵。 ",
@@ -285,19 +285,19 @@ void ProcessDialogEvent()
 			{
 				if(pchar.questTemp.SharkGoldFleet == "start" || pchar.questTemp.SharkGoldFleet == "afterGvik")
 				{
-					dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("哦, 看看谁在那儿! 嗯, 俗话说, 金钱无臭, 所以进来吧, 船长, 我们交易... ","我不能说很高兴见到你, " +GetFullName(pchar)+ "... 但我仍然可以和你交易。 ","嘿嘿... 好吧, 我不会邀请你到我家, 船长 --但我的商店仍然为你服务。 "),LinkRandPhrase("哦, 看看谁在那儿! 那不是" +GetFullName(pchar)+ "吗! 想交易还是免费拿东西? 嘿, 开玩笑的... ","不能说很高兴在这里见到你, " +GetAddress_Form(NPChar)+ "。 但如果你有钱花 --进来, 进来... ","想交易吗, " +GetFullName(pchar)+ "船长? 如果是, 请快点? 其他顾客都避开你, 这对我的生意不好, "),LinkRandPhrase("想交易吗, 先生? 稍等, 我要结账 --你知道, 周围有可疑的人... 当然, 我不是说你, 船长! ","如果我在公海上看到你, " +GetAddress_Form(NPChar)+ ", 我可能会下令升帆... 但在这里, 在我的店里, 我可以提议和你交易。 ","船长, 我马上警告你: 如果布料沾了血, 咖啡有火药味, 我不会要的。 否则看看, 挑一挑。 ")),LinkRandPhrase(LinkRandPhrase("我也很高兴再次问候你, " +GetAddress_Form(NPChar)+ "! 买或卖 --我总是很高兴帮助你。 ","我求你, " +GetAddress_Form(NPChar)+ ", 进来! 我总是很高兴在这里见到我最喜欢的顾客。 这次要买还是卖? ","哦, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "! 很高兴再次见到你! 这次要买还是卖? "),LinkRandPhrase("你喜欢我们的商品吗, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "? 我随时为你服务 --看看, 挑一挑。 ","你好, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "。 很高兴再次见到你! 想看看我们的商品 assortment 吗? ","很高兴见到你, 船长! 我就知道你会喜欢我们的优质商品。 想看看有什么新货吗? "),LinkRandPhrase("哦, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "! 请进! 所有商品都为你准备 --这次还有大折扣! ","" +GetFullName(pchar)+ "船长, 你再次光临让我很高兴! 请挑, 喜欢什么就拿什么! ","这次你想要什么, 船长? 很高兴你还记得怎么找到我。 我们有你需要的所有商品 --最好的质量! ")));
+					dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("哦, 看看谁在那儿! 嗯, 俗话说, 金钱无臭, 所以进来吧, 船长, 我们交易... ","我不能说很高兴见到你, " +GetFullName(pchar)+ "... 但我仍然可以和你交易。 ","嘿嘿... 好吧, 我不会邀请你到我家, 船长 —但我的商店仍然为你服务。 "),LinkRandPhrase("哦, 看看谁在那儿! 那不是" +GetFullName(pchar)+ "吗! 想交易还是免费拿东西? 嘿, 开玩笑的... ","不能说很高兴在这里见到你, " +GetAddress_Form(NPChar)+ "。 但如果你有钱花 —进来, 进来... ","想交易吗, " +GetFullName(pchar)+ "船长? 如果是, 请快点? 其他顾客都避开你, 这对我的生意不好, "),LinkRandPhrase("想交易吗, 先生? 稍等, 我要结账 —你知道, 周围有可疑的人... 当然, 我不是说你, 船长! ","如果我在公海上看到你, " +GetAddress_Form(NPChar)+ ", 我可能会下令升帆... 但在这里, 在我的店里, 我可以提议和你交易。 ","船长, 我马上警告你: 如果布料沾了血, 咖啡有火药味, 我不会要的。 否则看看, 挑一挑。 ")),LinkRandPhrase(LinkRandPhrase("我也很高兴再次问候你, " +GetAddress_Form(NPChar)+ "! 买或卖 —我总是很高兴帮助你。 ","我求你, " +GetAddress_Form(NPChar)+ ", 进来! 我总是很高兴在这里见到我最喜欢的顾客。 这次要买还是卖? ","哦, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "! 很高兴再次见到你! 这次要买还是卖? "),LinkRandPhrase("你喜欢我们的商品吗, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "? 我随时为你服务 —看看, 挑一挑。 ","你好, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "。 很高兴再次见到你! 想看看我们的商品 assortment 吗? ","很高兴见到你, 船长! 我就知道你会喜欢我们的优质商品。 想看看有什么新货吗? "),LinkRandPhrase("哦, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "! 请进! 所有商品都为你准备 —这次还有大折扣! ","" +GetFullName(pchar)+ "船长, 你再次光临让我很高兴! 请挑, 喜欢什么就拿什么! ","这次你想要什么, 船长? 很高兴你还记得怎么找到我。 我们有你需要的所有商品 —最好的质量! ")));
 					link.l14 = "听着, 我现在要去贝洛港, 想从你这里买一批咖啡和可可。 各三百单位。 "; 
 					link.l14.go = "SharkGoldFleet";
 				}
 			}
 			if(CheckAttribute(pchar,"questTemp.SharkGoldFleet") && npchar.location == "caracas_store" && pchar.questTemp.SharkGoldFleet == "buyincar")
 			{
-				dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("哦, 看看谁在那儿! 嗯, 俗话说, 金钱无臭, 所以进来吧, 船长, 我们交易... ","我不能说很高兴见到你, " +GetFullName(pchar)+ "... 但我仍然可以和你交易。 ","嘿嘿... 好吧, 我不会邀请你到我家, 船长 --但我的商店仍然为你服务。 "),LinkRandPhrase("哦, 看看谁在那儿! 那不是" +GetFullName(pchar)+ "吗! 想交易还是免费拿东西? 嘿, 开玩笑的... ","不能说很高兴在这里见到你, " +GetAddress_Form(NPChar)+ "。 但如果你有钱花 --进来, 进来... ","想交易吗, " +GetFullName(pchar)+ "船长? 如果是, 请快点? 其他顾客都避开你, 这对我的生意不好, "),LinkRandPhrase("想交易吗, 先生? 稍等, 我要结账 --你知道, 周围有可疑的人... 当然, 我不是说你, 船长! ","如果我在公海上看到你, " +GetAddress_Form(NPChar)+ ", 我可能会下令升帆... 但在这里, 在我的店里, 我可以提议和你交易。 ","船长, 我马上警告你: 如果布料沾了血, 咖啡有火药味, 我不会要的。 否则看看, 挑一挑。 ")),LinkRandPhrase(LinkRandPhrase("我也很高兴再次问候你, " +GetAddress_Form(NPChar)+ "! 买或卖 --我总是很高兴帮助你。 ","我求你, " +GetAddress_Form(NPChar)+ ", 进来! 我总是很高兴在这里见到我最喜欢的顾客。 这次要买还是卖? ","哦, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "! 很高兴再次见到你! 这次要买还是卖? "),LinkRandPhrase("你喜欢我们的商品吗, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "? 我随时为你服务 --看看, 挑一挑。 ","你好, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "。 很高兴再次见到你! 想看看我们的商品 assortment 吗? ","很高兴见到你, 船长! 我就知道你会喜欢我们的优质商品。 想看看有什么新货吗? "),LinkRandPhrase("哦, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "! 请进! 所有商品都为你准备 --这次还有大折扣! ","" +GetFullName(pchar)+ "船长, 你再次光临让我很高兴! 请挑, 喜欢什么就拿什么! ","这次你想要什么, 船长? 很高兴你还记得怎么找到我。 我们有你需要的所有商品 --最好的质量! ")));
+				dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("哦, 看看谁在那儿! 嗯, 俗话说, 金钱无臭, 所以进来吧, 船长, 我们交易... ","我不能说很高兴见到你, " +GetFullName(pchar)+ "... 但我仍然可以和你交易。 ","嘿嘿... 好吧, 我不会邀请你到我家, 船长 —但我的商店仍然为你服务。 "),LinkRandPhrase("哦, 看看谁在那儿! 那不是" +GetFullName(pchar)+ "吗! 想交易还是免费拿东西? 嘿, 开玩笑的... ","不能说很高兴在这里见到你, " +GetAddress_Form(NPChar)+ "。 但如果你有钱花 —进来, 进来... ","想交易吗, " +GetFullName(pchar)+ "船长? 如果是, 请快点? 其他顾客都避开你, 这对我的生意不好, "),LinkRandPhrase("想交易吗, 先生? 稍等, 我要结账 —你知道, 周围有可疑的人... 当然, 我不是说你, 船长! ","如果我在公海上看到你, " +GetAddress_Form(NPChar)+ ", 我可能会下令升帆... 但在这里, 在我的店里, 我可以提议和你交易。 ","船长, 我马上警告你: 如果布料沾了血, 咖啡有火药味, 我不会要的。 否则看看, 挑一挑。 ")),LinkRandPhrase(LinkRandPhrase("我也很高兴再次问候你, " +GetAddress_Form(NPChar)+ "! 买或卖 —我总是很高兴帮助你。 ","我求你, " +GetAddress_Form(NPChar)+ ", 进来! 我总是很高兴在这里见到我最喜欢的顾客。 这次要买还是卖? ","哦, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "! 很高兴再次见到你! 这次要买还是卖? "),LinkRandPhrase("你喜欢我们的商品吗, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "? 我随时为你服务 —看看, 挑一挑。 ","你好, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "。 很高兴再次见到你! 想看看我们的商品 assortment 吗? ","很高兴见到你, 船长! 我就知道你会喜欢我们的优质商品。 想看看有什么新货吗? "),LinkRandPhrase("哦, " +GetAddress_Form(NPChar)+ " " +GetFullName(pchar)+ "! 请进! 所有商品都为你准备 —这次还有大折扣! ","" +GetFullName(pchar)+ "船长, 你再次光临让我很高兴! 请挑, 喜欢什么就拿什么! ","这次你想要什么, 船长? 很高兴你还记得怎么找到我。 我们有你需要的所有商品 —最好的质量! ")));
 				link.l14 = "我来买咖啡和可可。 "; 
 				link.l14.go = "SharkGoldFleet_again";
 			}
 										
-			// <—— 和阿库拉一起
+			// < —和阿库拉一起
 			link.l1 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,
 			                                        pcharrepphrase("给我看看你有什么, 老海盗! ",
 													               "我只是想看看你的商品, 好心人。 "),
@@ -375,12 +375,12 @@ void ProcessDialogEvent()
 			//Jason --> 短缺商品迷你任务
 			if (CheckAttribute(pchar, "questTemp.Wine.Trader") && NPChar.location == pchar.questTemp.Wine.City + "_store" && !CheckAttribute(pchar, "questTemp.Wine.fail"))
 			{
-				link.l13 = "我想从你这里购买一批欧洲葡萄酒 --五六十瓶。 听说你库存很充足。 "; 
+				link.l13 = "我想从你这里购买一批欧洲葡萄酒 —五六十瓶。 听说你库存很充足。 "; 
 				link.l13.go = "Wine_Trader";
 			}
 			if (CheckAttribute(pchar, "questTemp.Wine.Repeat2") && NPChar.location == pchar.questTemp.Wine.City + "_store" && CheckCharacterItem(pchar, "letter_1") && !CheckAttribute(pchar, "questTemp.Wine.fail"))
 			{
-				link.l13 = "又见面了。 请看看这封信 --也许你会重新考虑把葡萄酒卖给我的立场? "; 
+				link.l13 = "又见面了。 请看看这封信 —也许你会重新考虑把葡萄酒卖给我的立场? "; 
 				link.l13.go = "Wine_Repeat2";
 			}
 			if (CheckAttribute(pchar, "questTemp.Wine.wait") && NPChar.location == pchar.questTemp.Wine.City + "_store" && !CheckAttribute(pchar, "questTemp.Wine.fail"))
@@ -388,7 +388,7 @@ void ProcessDialogEvent()
 				link.l13 = "又是我。 我们能继续中断的葡萄酒交易吗? 我筹到了足够的钱。 "; 
 				link.l13.go = "Wine_Price";
 			}
-			// <—— 短缺商品迷你任务
+			// < —短缺商品迷你任务
 			
 			// 马提尼克教程
 			if(CheckAttribute(pchar, "questTemp.Sharlie.Lock") && NPChar.City == "FortFrance")
@@ -623,7 +623,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_6":
-			dialog.text = "感谢? 什么感谢? ! 那个笨蛋已经失业半年了 --看看他, 他有足够的时间谈恋爱! 我像他这么大的时候, 已经在经营自己的生意了! 呸! 总督有个待嫁的女儿 --而那个傻瓜带了个没有亲友的荡妇到我家, 还敢要求我祝福! ";
+			dialog.text = "感谢? 什么感谢? ! 那个笨蛋已经失业半年了 —看看他, 他有足够的时间谈恋爱! 我像他这么大的时候, 已经在经营自己的生意了! 呸! 总督有个待嫁的女儿 —而那个傻瓜带了个没有亲友的荡妇到我家, 还敢要求我祝福! ";
 			link.l1 = "嗯... 显然你不相信真挚的感情? ";
 			link.l1.go = "EncGirl_6_1";		
 		break;
@@ -758,7 +758,7 @@ void ProcessDialogEvent()
 				link.l2.go = "exit";
 			}
 			break;
-		// <—— 自动购买商品
+		// < —自动购买商品
 
 		case "trade_1":
             ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
@@ -811,7 +811,7 @@ void ProcessDialogEvent()
 				
 case "storage_01":
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar); 
-			dialog.text = "是的, 我在港口有个仓库 --能容纳50000公担货物。 每月" + FindRussianMoneyString(sti(NPChar.MoneyForStorage)) + ", 我可以为你保管货物。 " +
+			dialog.text = "是的, 我在港口有个仓库 —能容纳50000公担货物。 每月" + FindRussianMoneyString(sti(NPChar.MoneyForStorage)) + ", 我可以为你保管货物。 " +
 				"这包括看守。 防潮和灭鼠。 你觉得怎么样? 另外... 我需要提前一个月付款。 ";	
 			link.l1 = "合适。 我能看看吗? 那里老鼠多吗? ";
 			link.l1.go = "storage_1";
@@ -824,7 +824,7 @@ case "storage_01":
 			dialog.text = "正如我所说, 我需要提前一个月付款。 而且没有老鼠! ";
 			if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
 			{
-				link.l1 = "你是... 相当重商主义, 我得说。 这是你的钱 --我要租这个棚子。 ";
+				link.l1 = "你是... 相当重商主义, 我得说。 这是你的钱 —我要租这个棚子。 ";
 				link.l1.go = "storage_11";
 			}
 			else
@@ -862,8 +862,8 @@ case "storage_01":
 		break;		
 
 		case "storage_04":
-			dialog.text = "已经要走了? 真遗憾 --这地方条件真的很好。 我向你保证, 在加勒比海其他地方你找不到这样的交易。 ";
-			link.l1 = "我说 --解除。 或者你是建议我为空气存储付费? 找别的租户吧。 ";
+			dialog.text = "已经要走了? 真遗憾 —这地方条件真的很好。 我向你保证, 在加勒比海其他地方你找不到这样的交易。 ";
+			link.l1 = "我说 —解除。 或者你是建议我为空气存储付费? 找别的租户吧。 ";
 			link.l1.go = "storage_4";
 			link.l2 = "你说加勒比海 nowhere? 好吧, 那我先搁置一下。 ";
 			link.l2.go = "exit";
@@ -940,15 +940,15 @@ case "storage_01":
 				link.l5 = "我把奴隶给你带来了。 "; 
 				link.l5.go = "Contraoffer_slaves_check";
 			}*/
-			// <—— гeнeратор Сомнитeльноe прeдложeниe
+			// < —гeнeратор Сомнитeльноe прeдложeниe
 	
 			//Jason --> гeнeратор Нeудачливый вор
 			if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_store" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
 			{
-   				link.l16 = "听着, 你在做各种货物的生意... 昨天或今天 --有人向你报价买" +pchar.GenQuest.Device.Shipyarder.Type+"吗? ";
+   				link.l16 = "听着, 你在做各种货物的生意... 昨天或今天 —有人向你报价买" +pchar.GenQuest.Device.Shipyarder.Type+"吗? ";
 				link.l16.go = "Device_Trader";
 			}
-			// <—— гeнeратор Нeудачливый вор
+			// < —гeнeратор Нeудачливый вор
 			
 			//Jason --> гeнeратор Мeсто под солнцeм
 			// belamour legendary edition встрeчаeтся чащe
@@ -975,7 +975,7 @@ case "storage_01":
 				link.l1.go = "Sunplace_complete_murder";
 				break;
 			}
-			// <—— гeнeратор Мeсто под солнцeм
+			// < —гeнeратор Мeсто под солнцeм
 			
 //navy -->
 			//занят ПГГ
@@ -1069,16 +1069,16 @@ case "storage_01":
 						}	
 					}
 				}				
-				// <—— ugeen
+				// < —ugeen
 				// Jason --> квeст губeра на поиск дeзeртира
 				if(CheckAttribute(pchar, "GenQuest.FindFugitive") && sti(NPChar.nation) == PIRATE)
 				{
 					link.l8 = "你看, 我在找我的同伴, 他叫"+pchar.GenQuest.FindFugitive.Name+"。 在皇家港, 酒馆里的人告诉我他正前往你的定居点。 你碰巧见过他吗? ";
 					link.l8.go = "FindFugitiveSt";
 				}
-				//<—— поиск дeзeртира
+				//< —поиск дeзeртира
 				
-				// <—— homo
+				// < —homo
 				link.l99 = "但现在没时间谈了。 ";
     			link.l99.go = "no_quests";
 			}
@@ -1111,7 +1111,7 @@ case "storage_01":
 					link.l8 = "你看, 我在找我的同伴, 他叫"+pchar.GenQuest.FindFugitive.Name+"。 在皇家港, 酒馆里的人告诉我他正前往你的定居点。 你碰巧见过他吗? ";
 					link.l8.go = "FindFugitiveSt";
 				}
-				//<—— поиск дeзeртира
+				//< —поиск дeзeртира
 			}
 		break;
 		
@@ -1489,7 +1489,7 @@ case "storage_01":
 			DelLandQuestMark(npchar);
 			DialogExit();
 		break;
-		// <—— мини-квeст Дeфицитный товар
+		// < —мини-квeст Дeфицитный товар
 		
 // Jason --> -------------------------гeнeратор Сомнитeльноe прeдложeниe----------------------------------------
 		int iCGood, amount;
@@ -1655,7 +1655,7 @@ case "storage_01":
 			ChangeCharacterComplexReputation(pchar,"nobility", -3);
 			DeleteAttribute(pchar, "GenQuest.Contraoffer.Slaves.Yes");
 		break;
-		// <—— 可疑提议生成器
+		// < —可疑提议生成器
 		
 		//Jason --> 倒霉小偷生成器
 		case "Device_Trader":
@@ -1679,7 +1679,7 @@ case "storage_01":
 				link.l1.go = "exit";
 			}
 		break;
-		// <—— 倒霉小偷生成器
+		// < —倒霉小偷生成器
 
 		//Jason --> 阳光之地生成器
 		case "Sunplace_begin":
@@ -1811,7 +1811,7 @@ case "storage_01":
 			FreeSitLocator(pchar.GenQuest.FindFugitive.City + "_tavern", "sit_front1");
 			ChangeCharacterAddressGroup(sld, pchar.GenQuest.FindFugitive.City+"_tavern", "sit", "sit_front1");
 		break;
-		//<—— 寻找逃兵
+		//< —寻找逃兵
 		
 		// --> 加勒比习俗 - 暂时结束
 		// belamour legendary edition -->
@@ -1879,7 +1879,7 @@ case "storage_01":
 			sld.quest.trial_usurer = true;
 			AddLandQuestMark(sld, "questmarkmain");
 		break;
-		// <—— legendary edition
+		// < —legendary edition
 		/*case "trial":
 			dialog.text = "上帝啊, 你为什么这么大声, 年轻人! 冷静下来, 在谈论受人尊敬的人时注意你的言辞! 杰拉德.勒克勒克带着一支探险队离开了瓜德罗普岛前往大陆, 但他给你留了个口信\n你冷静下来了吗, 先生? 准备好听我说了吗? ";
 			link.l1 = "嗯... 请原谅我, 先生。 我有点激动了。 我在听。 ";
@@ -1973,7 +1973,7 @@ case "storage_01":
 				link.l1.go = "SharkGoldFleet_02";
 			}
 		break;
-		//<—— 和阿库拉一起
+		//< —和阿库拉一起
 		case "no_quests":
 			dialog.text = "目前我不需要你的服务。 ";
 			link.l1 = "可惜。 我们换个话题吧。 ";

@@ -98,7 +98,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddDialogExitQuestFunction("SharlieTutorial_StartGameInMartinique");
 		break;
-		// <—— 船上的水手, 抵达圣皮埃尔
+		// < —船上的水手, 抵达圣皮埃尔
 		
 		// 知道米歇尔的市民
 		case "Benuatalker":
@@ -277,7 +277,7 @@ void ProcessDialogEvent()
 			Pchar.quest.Sharlie_Maltie.win_condition = "Maltie_GoBasement";
 			QuestPointerDelLoc("FortFrance_prison", "reload", "reload1");
 		break;
-		//<—— cle
+		//< —cle
 		// 马耳他向导
 		
 		// --> 招募水手
@@ -647,7 +647,7 @@ void ProcessDialogEvent()
 		case "Folke_13":
 			Npchar.loyality = makeint(Npchar.loyality) + 5;
 			AddCharacterExpToSkill(pchar, "Leadership", 150);
-			// <—— legendary edition
+			// < —legendary edition
 			dialog.text = "那么把我设为领航员, 我会去甲板上我的位置。 ";
 			link.l1 = "... ";
 			link.l1.go = "Folke_14";
@@ -1217,7 +1217,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Dichoso_crypt_agent_6":
-			dialog.text = "哈哈! 我喜欢你的机智! 和米格尔一样! 随便你怎么说, 你们是一路货色... 我会按他的命令行事 --尽快。 无痛地送你下地狱。 动手吧, 伙计们! ";
+			dialog.text = "哈哈! 我喜欢你的机智! 和米格尔一样! 随便你怎么说, 你们是一路货色... 我会按他的命令行事 —尽快。 无痛地送你下地狱。 动手吧, 伙计们! ";
 			link.l1 = "比你强的人都试过了。 替我向魔鬼问好, 无赖! ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Tieyasal_StartCryptBattle");
@@ -1338,7 +1338,7 @@ case "Europe":
 		break;
 		
 		case "ZsI_ListKakao_3_2":
-			dialog.text = "为了战斗。 但要公平战斗。 白皮有火器, 印第安人没有, 这不公平。 印第安人有火器 --是保护自己, 免受白皮的不公对待。 羞辱或侮辱。 ";
+			dialog.text = "为了战斗。 但要公平战斗。 白皮有火器, 印第安人没有, 这不公平。 印第安人有火器 —是保护自己, 免受白皮的不公对待。 羞辱或侮辱。 ";
 			link.l1 = "";
 			link.l1.go = "ZsI_ListKakao_4";
 		break;

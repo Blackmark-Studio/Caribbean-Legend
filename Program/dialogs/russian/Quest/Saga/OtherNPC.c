@@ -1199,6 +1199,7 @@ void ProcessDialogEvent()
 		
 		case "mine_attack_2":
 			DialogExit();
+			locCameraFollowEx(true);
 			NextDiag.CurrentNode = "mine_attack_3";
 			LAi_SetActorType(pchar);
 			LAi_ActorFollow(pchar, npchar, "ActorDialog_Any2Pchar", -1);
@@ -1220,37 +1221,7 @@ void ProcessDialogEvent()
 		
 		case "mine_attack_5":
 			DialogExit();
-			LAi_SetPlayerType(pchar);
-			for (i=1; i<=6; i++)
-			{
-				sld = characterFromId("Mine_bandit_"+i);
-				LAi_RemoveCheckMinHP(sld);
-			}
-			if (pchar.questTemp.Saga.MineAttack == "soldiers")
-			{
-				sld = characterFromId("Svensons_sold_12");
-				LAi_SetActorType(sld);
-				LAi_ActorTurnToLocator(sld, "soldiers", "soldier1");
-				LAi_ActorAnimation(sld, "shot", "Saga_MineBanditDie", 1.0);
-			}
-			else
-			{
-				for (i=1; i<=6; i++)
-				{
-					sld = characterFromId("Mine_bandit_"+i);
-					LAi_SetWarriorType(sld);
-					LAi_group_MoveCharacter(sld, "EnemyFight");
-				}
-				LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-				LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-				LAi_group_SetCheck("EnemyFight", "Saga_BanditsDestroyed");
-				AddDialogExitQuest("MainHeroFightModeOn");	
-			}
-			pchar.quest.Saga_MineAttack_07.win_condition.l1 = "NPC_Death";
-			pchar.quest.Saga_MineAttack_07.win_condition.l1.character = "Mine_bandit_1";
-			pchar.quest.Saga_MineAttack_07.win_condition.l2 = "NPC_Death";
-			pchar.quest.Saga_MineAttack_07.win_condition.l2.character = "Mine_bandit_2";
-			pchar.quest.Saga_MineAttack_07.function = "Saga_SvensonMineexitAttack";
+			AddDialogExitQuestFunction("Saga_MineAttack");
 		break;
 		
 	// ----------------------------- диалоги НПС при штурме бандитского рудника -------------------------------

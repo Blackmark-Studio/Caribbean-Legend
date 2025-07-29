@@ -16,7 +16,7 @@ Grim
 Memento_4
 {
 Kapitanie, to jest ten sam 'Memento' - postrach handlarzy niewolników! 
-To nie nasz wróg, więc możemy wysłać łódź.
+To nie jest nasz wróg, więc możemy wysłać łódź.
 }
 
 Memento_5

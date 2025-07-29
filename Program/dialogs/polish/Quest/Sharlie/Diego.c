@@ -21,7 +21,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patrol":
-			dialog.text = TimeGreeting()+", "+GetFullName(npchar)+", Szef patrolu San Jose. Otrzymaliśmy wiadomość dotyczącą podejrzanego zachowania na obrzeżach miasta. Czy byłbyś tak uprzejmy i wyjaśnił nam, kim jesteś i co planujesz?";
+			dialog.text = TimeGreeting()+", "+GetFullName(npchar)+", jestem szefem patrolu San Jose. Otrzymaliśmy wiadomość dotyczącą podejrzanego zachowania na obrzeżach miasta. Czy byłbyś tak uprzejmy i wyjaśnił nam, kim jesteś i co planujesz?";
 			link.l1 = "Kapitan "+GetFullName(pchar)+", señor oficerze. Jestem tutaj na mocy autorytetu i bezpośrednich instrukcji Ojca Inkwizytora Vincento. Oto dokument potwierdzający moje uprawnienia.";
 			link.l1.go = "patrol_1";
 		break;
@@ -84,7 +84,7 @@ void ProcessDialogEvent()
 		
 		case "shore_2":
 			dialog.text = "No cóż, jest jak jest. Ale dam ci szansę wyjść stąd żywym, jeśli oddasz mi swój sztylet.";
-			link.l1 = "Czy twoja pasja do zbierania rzadkości naprawdę zaprowadziła cię tak daleko, caballero, że musiałeś przygotować tak przemyślaną pułapkę na mnie?  Och, nie sądzę.  Strażnik Prawdy cię prowadzi, czy jestem od tej prawdy daleko?";
+			link.l1 = "Czy twoja pasja do zbierania rzadkości naprawdę zaprowadziła cię tak daleko, caballero, że musiałeś przygotować tak przemyślaną pułapkę na mnie?  Och, nie sądzę.  Sam Strażnik Prawdy cię prowadzi, czy może jestem od tej prawdy daleko?";
 			link.l1.go = "shore_3";
 		break;
 		
@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 		
 		case "shore_4":
 			dialog.text = "A co jeśli dam ci moje słowo?";
-			link.l1 = "Słowo na 'żabojada'? Hm...";
+			link.l1 = "Słowo kastylijczyka? Hm...";
 			link.l1.go = "shore_5";
 		break;
 		

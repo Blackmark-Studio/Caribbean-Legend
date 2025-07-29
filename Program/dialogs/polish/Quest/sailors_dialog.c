@@ -44,7 +44,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					dialog.text = "Jeśli szukasz naszego kapitana. Niedawno wylądował.";
+					dialog.text = "Jeśli szukasz naszego kapitana. Niedawno zszedł na brzeg.";
 					Link.l1 = "Dobrze";
 					Link.l1.go = "exit";
 				}
@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 				
 		// ugeen --> разговор с боцманом по генератору "Повод для спешки"
 		case "On_MyShip_Deck":
-			dialog.text = "Cóż, to było poważne zamieszanie, kapitanie! Byliśmy w tawernie, pijąc jak zwykle, gdy usłyszeliśmy krzyki. Wybiegliśmy z tawerny i zobaczyliśmy, że próbują cię aresztować. Do diabła z nimi! Więc zdecydowaliśmy się opuścić ten nieprzyjazny port.";
+			dialog.text = "Cóż, to było poważne zamieszanie, kapitanie! Byliśmy w karczmie, pijąc jak zwykle, gdy usłyszeliśmy krzyki. Wybiegliśmy z karczmy i zobaczyliśmy, że próbują cię aresztować. Do diabła z nimi! Więc zdecydowaliśmy się opuścić ten nieprzyjazny port.";
 			link.l1 = "Tak, z pewnością niektórzy ludzie mają nieco dziwne postrzeganie sprawiedliwości.";
 			link.l1.go = "On_MyShip_Deck_1";
 		break;
@@ -117,14 +117,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CapComission_OnShipDeck1":
-			dialog.text = "Cóż, przyjaciela, którego uwolniłeś z lochów.";
+			dialog.text = "Cóż, przyjaciel, którego uwolniłeś z lochów.";
 			link.l1 = "Jak do licha udało ci się go zgubić?!";
 			link.l1.go = "CapComission_OnShipDeck2";
 		break;
 		
 		case "CapComission_OnShipDeck2":
 			dialog.text = "To nie była nasza wina, kapitanie. Skoczył przez latrynę do morza... Próbowaliśmy do niego strzelać, ale było tam za ciemno...";
-			link.l1 = "Do diabła! Naprawdę wymknęliście się spod kontroli! Wszyscy zostaniecie wyładowani i wysłani do pracy przy trzcinie cukrowej! Stracić takiego cennego szychę! Niewiarygodne!";
+			link.l1 = "Do diabła! Naprawdę wymknęliście się spod kontroli! Wszyscy zostaniecie wyładowani i wysłani do pracy przy trzcinie cukrowej! Stracić tak cennego faceta! Niewiarygodne!";
 			link.l1.go = "CapComission_OnShipDeck3";
 		break;
 		
@@ -154,13 +154,13 @@ void ProcessDialogEvent()
 				
 		case "Hold_GenQuest_OnShipDeck1":
 			dialog.text = "Cóż, och, zapomniałem jego imienia, "+pchar.GenQuest.Hold_GenQuest.CapName+", prawda?";
-			link.l1 = "Cholera! Gdzie patrzyłeś?";
+			link.l1 = "Cholera! Jak to się stało?";
 			link.l1.go = "Hold_GenQuest_OnShipDeck2";
 		break;
 		
 		case "Hold_GenQuest_OnShipDeck2":
 			dialog.text = "Zszedł z ładowni i skoczył z burty. Nie zastrzeliliśmy go, by uniknąć hałasu, a gdy przygotowywaliśmy szalupę, został uratowany przez cholernych rybaków.";
-			link.l1 = "I dlaczego ci płacę! Wychłostać głowę straży i pozbawić go rumu na tydzień. Do dzieła! Podnosimy kotwicę...";
+			link.l1 = "Za co ja wam płace!? Wychłostać głowę straży i pozbawić go rumu na tydzień. Do dzieła! Podnosimy kotwicę...";
 			link.l1.go = "Hold_GenQuest_OnShipDeck3";
 		break;
 		
@@ -185,19 +185,19 @@ void ProcessDialogEvent()
 		
 		case "Hold_GenQuest_OnShipDeck5":
 			dialog.text = "Czy on jest naprawdę wolny? Mamy go dostarczyć na łodzi wiosłowej?";
-			link.l1 = "Nie, na cholernej żółwiu... Myślałem, że byłem wystarczająco jasny. I pospiesz się! Musimy podnieść kotwicę na początku odpływu.";
+			link.l1 = "Nie, na cholernym żółwiu... Myślałem, że byłem wystarczająco jasny. I pospiesz się! Musimy podnieść kotwicę na początku odpływu.";
 			link.l1.go = "Hold_GenQuest_OnShipDeck3";
 		break;
 		
 		// Warship 09.07.09 Базар с нашим матросом на палубе Мэри Селест -->
 		case "On_MaryCeleste_Deck":
-			Dialog.text = "Kapitanie, na statku nie ma w ogóle ludzi! Coś jest tu bardzo nie tak... Tommy powiedział, że widział kota w kokpicie i to była jedyna żywa dusza...";
+			Dialog.text = "Kapitanie, na statku nie ma w ogóle ludzi! Coś jest tu bardzo nie tak... Tommy powiedział, że jedyne co widział, to kota, i to była jedyna żywa dusza...";
 			Link.l1 = "Idioto, koty nie mają dusz. Wygląda na to, że dawno nie odwiedzał kościoła albo nigdy tam nie był. Byłeś w kajucie kapitana? Potrzebuję dziennika pokładowego.";
 			Link.l1.go = "On_MaryCeleste_Deck_1";
 		break;
 		
 		case "On_MaryCeleste_Deck_1":
-			Dialog.text = "Nie, oni mają dusze. Nie było dziennika pokładowego ani jednego instrumentu nawigacyjnego. Nawet jednej łodzi.";
+			Dialog.text = "Nie, one mają dusze. Nie było dziennika pokładowego ani jednego instrumentu nawigacyjnego. Nawet jednej łodzi.";
 			Link.l1 = "Nie. Czy to zostało zerwane przez burzę?";
 			Link.l1.go = "On_MaryCeleste_Deck_2";
 		break;
@@ -232,7 +232,7 @@ void ProcessDialogEvent()
 				break;
 				
 				case 1:
-					Dialog.text = "Kapitánie, nie zostanę na tym dziwnym statku, jeśli zamierzasz zabrać go do portu. Lepiej sam wskoczę do morza.";
+					Dialog.text = "Kapitanie, nie zostanę na tym dziwnym statku, jeśli zamierzasz zabrać go do portu. Lepiej sam wskoczę do morza.";
 					Link.l1 = "Nie jestem skłonny tego zrobić... Trochę się boję...";
 					Link.l1.go = "exit";
 				break;

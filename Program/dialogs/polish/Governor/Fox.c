@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Terrapin_KathyReward"))
 			{
 				dialog.text = " Czego chcesz, panie?  Och... mój... poczekaj!  Jesteś tym francuskim kapitanem, który uratował moją córkę z brudnych rąk sług Levasseura! ";
-				link.l1 = "Widzę, że Katarzyna już ci o mnie opowiedziała...";
+				link.l1 = "Widzę, że Catherine już ci o mnie opowiedziała...";
 				link.l1.go = "terrapin";
 				break;
 			}
@@ -54,13 +54,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_2":
-			dialog.text = "Nie, przeszukaliśmy go i ten łotr nie miał żadnych rzeczy, poza tym, wszystkie z них na pewno zostały zabrane uczciwym handlarzom! A co do twojej troski... hmm nie, nie znaleźliśmy tego. I co kadzielnica mogłaby robić na pirackim statku? Naprawdę myślisz, że był wśród nich ksiądz?";
-			link.l1 = "Nie, nie mam. Rollie Kapitan kupił go od lichwiarza w Willemstad, który kupił go od innego pirata. Kadzielnica jest piękna i droga, a ja próbuję zwrócić ją jej prawowitym właścicielom. Przypuszczam, że Rollie patrzył na nią jak sroka.";
+			dialog.text = "Nie, przeszukaliśmy go i ten łotr nie miał żadnych rzeczy, poza tym, wszystkie z nich na pewno zostały zabrane uczciwym handlarzom! A co do twojej troski... hmm nie, nie znaleźliśmy tego. I co kadzielnica mogłaby robić na pirackim statku? Naprawdę myślisz, że był wśród nich ksiądz?";
+			link.l1 = "Nie, nie sądze. Rollie Kapitan kupił go od lichwiarza w Willemstad, który kupił go od innego pirata. Kadzielnica jest piękna i droga, a ja próbuję zwrócić ją jej prawowitym właścicielom. Przypuszczam, że Rollie patrzył na nią jak sroka.";
 			link.l1.go = "guardoftruth_3";
 		break;
 		
 		case "guardoftruth_3":
-			dialog.text = "W rzeczywistości Rollie miał puste ładownie i kilka skrzyń z dubloonami, gdy abordażowaliśmy i przejęliśmy jego statek. Nic poza śmieciami. Żadnych kosztowności, żadnego złotego trybularza. Zapamiętałbym taki nieodpowiedni przedmiot dla pirata.\nPodejrzewam, że ten cholerny pirat ukrył swoje oszczędności na Dominice. Nawet się tam wylądowaliśmy i przeszukaliśmy teren, ale nic nie znaleźliśmy. Ale nie zostaliśmy na wyspie ani nie zbadaliśmy jej głębi z powodu dużej liczby dzikusów tam.";
+			dialog.text = "W rzeczywistości Rollie miał puste ładownie i kilka skrzyń z dublonami, gdy abordażowaliśmy i przejęliśmy jego statek. Nic poza śmieciami. Żadnych kosztowności, żadnego złotego trybularza. Zapamiętałbym taki nieodpowiedni przedmiot dla pirata.\nPodejrzewam, że ten cholerny pirat ukrył swoje oszczędności na Dominice. Nawet tam wylądowaliśmy i przeszukaliśmy teren, ale nic nie znaleźliśmy. Ale nie zostaliśmy na wyspie ani nie zbadaliśmy jej głębi z powodu dużej liczby tamtejszych dzikusów.";
 			link.l1 = "Hm... Pirat mógł ukryć kadzielnicę wraz z resztą swoich skradzionych rzeczy gdzieś na Dominice... Szkoda. Czy przesłuchałeś pirata przed egzekucją?";
 			link.l1.go = "guardoftruth_4";
 		break;
@@ -114,11 +114,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "terrapin_3":
-			Log_Info("You have received a blunderbuss");
-			Log_Info("You have received 10 arrows");
-			Log_Info("You have received 10 charges of nails");
-			Log_Info("You have received instructions for creating the harpoon arrows");
-			Log_Info("You have received instructions for creating the charge of nails");
+			Log_Info("Otrzymałeś garłacz");
+			Log_Info("Otrzymałeś 10 strzałek");
+			Log_Info("Otrzymałeś 10 ładunków gwoździowych");
+			Log_Info("Otrzymałeś instrukcje dotyczące tworzenia strzał harpunowych");
+			Log_Info("Otrzymałeś instrukcje dotyczące tworzenia ładunku gwoździ");
 			GiveItem2Character(pchar, "pistol8");
 			TakeNItems(pchar, "harpoon", 10);
 			TakeNItems(pchar, "GunEchin", 10);
@@ -149,7 +149,7 @@ void ProcessDialogEvent()
 		// Addon-2016 Jason, французские миниквесты (ФМК) Сент-Кристофер
 		case "FMQN":
 			DelLandQuestMark(npchar);
-			dialog.text = "Przeczytałem raport. Twoje działania są wysoko oceniane, dlatego musisz zostać nagrodzony. Trzydzieści tysięcy pesos za usługi ekspedycyjne i broń za bohaterstwo w żołnierstwie. Przyjmij ten miecz i tę arkebuzę. Teraz są one wszystkie twoje!";
+			dialog.text = "Przeczytałem raport. Twoje działania są wysoko oceniane, dlatego musisz zostać nagrodzony. Trzydzieści tysięcy pesos za usługi ekspedycyjne i broń za bohaterstwo w żołnierstwie. Przyjmij ten miecz i ten arkebuz. Teraz są twoje!";
 			link.l1 = "Dziękuję, sir.";
 			link.l1.go = "FMQN_1";
 		break;

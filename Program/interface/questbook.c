@@ -123,7 +123,10 @@ void XI_SetQuestData()
 		if(nQuestsNum <= maxQuestsNum)
 			SetNodeUsing("QUESTSCROLL_TITLE", false);
 		else
+		{
 			SetNodeUsing("QUESTSCROLL_TITLE", true);
+			XI_SetScroller("QUEST_TITLE", 0.0);
+		}
 		SetNodeUsing("QUEST_TEXT", false);
 		SetNodeUsing("QUESTSCROLL_TEXT", false);
 	}
@@ -188,35 +191,25 @@ void ProcessCancelExit()
 
 void QuestTopChange()
 {
-	if( GetSelectable("QUEST_TITLE") )
+	int iAdd = GetEventData();
+	int iCurOnPage = GetEventData();
+	aref arefTmp;
+	makearef(arefTmp,pchar.TmpQuestInfo);
+	int nQuestsNum = GetAttributesNum(arefTmp);
+	int maxVal = nQuestsNum - maxQuestsNum;
+	if(iAdd > 0 && curQuestTop >= maxVal)
+		return;
+	int newTop = curQuestTop + iAdd;
+	if(newTop >= nQuestsNum)
+		newTop = nQuestsNum - 1;
+	if(newTop < 0)
+		newTop = 0;
+	if(newTop != curQuestTop)
 	{
-		int iAdd = GetEventData();
-		int iCurOnPage = GetEventData();
-		int iCurQuest = curQuestTop + iCurOnPage + 2;
-		aref arefTmp;
-		makearef(arefTmp,pchar.TmpQuestInfo);
-		int nQuestsNum = GetAttributesNum(arefTmp);
-		int maxVal = nQuestsNum - maxQuestsNum;
-		if(curQuestTop >= maxVal)
-			return;
-		
-		int newTop = curQuestTop + iAdd;
-		if(newTop>=nQuestsNum)
-		{
-			newTop=nQuestsNum-1;
-		}
-		if(newTop<0)
-		{
-			newTop=0;
-		}
-
-		if(newTop!=curQuestTop)
-		{
-			curQuestTop=newTop;
-			XI_SetQuestTitles("QUEST_TITLE",arefTmp,curQuestTop);
-			XI_SetScroller("QUEST_TITLE", MakeFloat(newTop) / MakeFloat(maxVal));
-		}
-	}
+		curQuestTop = newTop;
+		XI_SetQuestTitles("QUEST_TITLE", arefTmp, curQuestTop);
+		XI_SetScroller("QUEST_TITLE", MakeFloat(newTop) / MakeFloat(maxVal));
+	}	
 }
 
 void SetQTextShow(aref pA,int qnum)

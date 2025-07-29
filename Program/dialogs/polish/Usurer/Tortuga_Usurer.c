@@ -17,17 +17,17 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "tonzag_bail_1":
 			dialog.text = "Rozumiem. Ostatnio to staje się dość popularne! Ile jesteś winien... to znaczy, chcesz ofiarować?";
-			link.l1 = pchar.questTemp.TonzagQuest.Bail+"  дублонów. Powiedz mi, czy przyjmujesz w pesos?";
+			link.l1 = pchar.questTemp.TonzagQuest.Bail+" dublony. Powiedz mi, czy przyjmujesz w pesos?";
 			link.l1.go = "tonzag_bail_2";
 		break;
 		
 		case "tonzag_bail_2":
-			dialog.text = "Oczywiście, jednakże będzie to dla ciebie nieco droższe. Pozwól, że dokładnie ci powiem... "+pchar.questTemp.TonzagQuest.Bail+"  дублони będą "+sti(pchar.questTemp.TonzagQuest.Bail)* 150+" pesos.";
+			dialog.text = "Oczywiście, jednakże będzie to dla ciebie nieco droższe. Pozwól, że dokładnie ci powiem... "+pchar.questTemp.TonzagQuest.Bail+" dublony to będzie "+sti(pchar.questTemp.TonzagQuest.Bail)* 150+" pesos.";
 			if (PCharDublonsTotal() >= sti(pchar.questTemp.TonzagQuest.Bail) || sti(pchar.money) >= sti(pchar.questTemp.TonzagQuest.Bail) * 150) {
-				link.l1 = "Trochę drożej, powiadasz? Proszę bardzo, oto pełna wymagana kwota.";
+				link.l1 = "Nieco droższe, powiadasz? Proszę bardzo, oto pełna wymagana kwota.";
 				link.l1.go = "tonzag_bail_give";
 			} else {
-				link.l1 = "„Trochę droższe, powiadasz? Niestety, w tej chwili nie mam takiej kwoty. Czy jest możliwe zaciągnięcie pożyczki na tę sprawę?”";
+				link.l1 = "„Nieco droższe, powiadasz? Niestety, w tej chwili nie mam takiej kwoty. Czy jest możliwe zaciągnięcie pożyczki na tę sprawę?”";
 				link.l1.go = "tonzag_bail_loan";
 			}
 		break;

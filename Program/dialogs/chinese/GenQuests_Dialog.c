@@ -715,7 +715,7 @@ void ProcessDialogEvent()
 				{
 					AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty + "名水手");
 				}
-				// <—— belamour
+				// < —belamour
 				AddQuestUserData("ShipWrecked", "sBadName", pchar.GenQuest.ShipWreck.BadName);
 				AddQuestUserData("ShipWrecked", "sNation", NationNameGenitive(sti(pchar.GenQuest.ShipWreck.Nation)));
 			}
@@ -732,7 +732,7 @@ void ProcessDialogEvent()
 				{
 					AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty + "名水手");
 				}
-				// <—— belamour
+				// < —belamour
 				AddQuestUserData("ShipWrecked", "ShipType", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name + "Gen"))); // belamour 生成
 				AddQuestUserData("ShipWrecked", "ShipName", pchar.GenQuest.ShipWreck.ShipTypeName);
 				AddQuestUserData("ShipWrecked", "sNation", NationNameGenitive(sti(pchar.GenQuest.ShipWreck.Nation)));
@@ -745,7 +745,7 @@ void ProcessDialogEvent()
 				{
 					AddQuestUserData("ShipWrecked", "sText", "失事");
 				}
-				// <—— belamour
+				// < —belamour
 			}
 			
 		break;							
@@ -772,7 +772,7 @@ void ProcessDialogEvent()
 				{
 					AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty + "名水手");
 				}
-				// <—— belamour
+				// < —belamour
 			}
 			else
 			{
@@ -787,7 +787,7 @@ void ProcessDialogEvent()
 				{
 					AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty + "名水手");
 				}
-				// <—— belamour
+				// < —belamour
 				AddQuestUserData("ShipWrecked", "ShipType", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name + "Gen"))); // belamour 生成
 				AddQuestUserData("ShipWrecked", "ShipName", pchar.GenQuest.ShipWreck.ShipTypeName);
 				// --> belamour: 需要分开, 否则会得到遭遇海难的双桅帆船 
@@ -799,7 +799,7 @@ void ProcessDialogEvent()
 				{
 					AddQuestUserData("ShipWrecked", "sText", "失事");
 				}
-				// <—— belamour
+				// < —belamour
 			}			
 		break;							
 				
@@ -838,7 +838,7 @@ void ProcessDialogEvent()
 			{
 				AddQuestUserData("ShipWrecked", "sText", "失事");
 			}
-			// <—— belamour
+			// < —belamour
 		break;							
 
 		case "ShipWreck_13": // 把他们当乘客
@@ -922,7 +922,7 @@ void ProcessDialogEvent()
 			if(sti(pchar.GenQuest.ShipWreck.Qty) >= 5) sText = "";	
 			else sText = "";
 			Log_Info("你的队伍增加了" + pchar.GenQuest.ShipWreck.Qty + "人" + sText + "。 ");
-			// <—— belamour gen 
+			// < —belamour gen 
 			Achievment_SetStat(29, sti(pchar.GenQuest.ShipWreck.Qty));
 			pchar.quest.ShipWreck_LocExit.over = "yes"; // 移除离开地点的中断			
 			DeleteAttribute(pchar, "GenQuest.ShipWreck");			
@@ -962,7 +962,7 @@ void ProcessDialogEvent()
 			{
 				AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty + "名他的水手");
 			}
-			// <—— belamour
+			// < —belamour
 			AddQuestUserData("ShipWrecked", "sBadName", pchar.GenQuest.ShipWreck.BadName);
 			AddQuestUserData("ShipWrecked", "ShipName", pchar.GenQuest.ShipWreck.ShipTypeName);	
 		break;
@@ -1846,7 +1846,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddDialogExitQuest("OpenTheDoors");
 		break;		
-		// <—— 生成器 "State convicts"
+		// < —生成器 "State convicts"
 		
 		// 生成器 "A reason to hurry" -->
 		// 在岸边与OZG相遇
@@ -2426,7 +2426,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_6_31":
-			dialog.text = "这不重要\n筹集赎金的人不会在意。 他们只需要结果, 活着且完好无损—— " + pchar.GenQuest.CaptainComission.SlaveName + "。 所以别浪费时间。 ";
+			dialog.text = "这不重要\n筹集赎金的人不会在意。 他们只需要结果, 活着且完好无损 —" + pchar.GenQuest.CaptainComission.SlaveName + "。 所以别浪费时间。 ";
 			link.l1 = "如果我拒绝呢? ";
 			link.l1.go = "CaptainComission_6_32";
 		break;
@@ -2519,7 +2519,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_30":
-			dialog.text = "谢谢你, 船长, 你帮了我们家一个大忙。 这是你的奖励...有三个箱子—— 正好相当于40000比索。 请原谅, 我现在必须见他。 ";
+			dialog.text = "谢谢你, 船长, 你帮了我们家一个大忙。 这是你的奖励...有三个箱子 —正好相当于40000比索。 请原谅, 我现在必须见他。 ";
 			link.l1 = "当然, 祝你俩见面愉快, 好运。 ";
 			link.l1.go = "CaptainComission_30_1";
 			if(CheckAttribute(pchar, "GenQuest.CaptainComission.SlaveAddMoney"))
@@ -2685,7 +2685,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					dialog.text = "哦, 那个懒汉。 我连一个铜板都不会给他。 自从他被带到这里, 他从未做过任何实际工作。 我不知道上校为什么要在这些国家罪犯身上浪费钱。 现在黑人就不同了。 他们是伟大的工人, 这是他们的天性, 既强壮又顺从。 相信我, 他们可以做任何工作。 收割甘蔗或担任管家—— 他们会以最好的方式完成, 只要给他们一点‘说服’...";
+					dialog.text = "哦, 那个懒汉。 我连一个铜板都不会给他。 自从他被带到这里, 他从未做过任何实际工作。 我不知道上校为什么要在这些国家罪犯身上浪费钱。 现在黑人就不同了。 他们是伟大的工人, 这是他们的天性, 既强壮又顺从。 相信我, 他们可以做任何工作。 收割甘蔗或担任管家 —他们会以最好的方式完成, 只要给他们一点‘说服’...";
 					link.l1 = "我的朋友, 我一点也不在乎你的黑人。 我只对那个你说的懒汉感兴趣, 他反正活不了多久, 我需要他当炮灰, 我会为他多付钱。 ";
 					link.l1.go = "CaptainComission_13";
 				}
@@ -2716,7 +2716,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_12_1":
-			dialog.text = "为什么, 你当然可以。 上校给他定了价—— 根据价目表, 200000比索。 ";
+			dialog.text = "为什么, 你当然可以。 上校给他定了价 —根据价目表, 200000比索。 ";
 			if(sti(pchar.money) >= 200000)
 			{
 				link.l1 = "哇! 好吧, 那上校一定知道那个奴隶是什么样的人...";
@@ -4574,7 +4574,7 @@ void ProcessDialogEvent()
 			ContraMeetManQuest_ContersGoQut();
 			DeleteAttribute(PChar, "GenQuest.ContraMeetMan");
 			break;
-		// <—— 任务 "meeting in the cove"
+		// < —任务 "meeting in the cove"
 			
 		// 给走私者送信件的任务 -->
 		case "ContraDeliverQuest_Sold1":
@@ -4699,7 +4699,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(PChar,"GenQuest.ContraDeliver"); // 任务完成 - 属性将被删除
 			LAi_ActorGoToLocation(NPChar, "reload", "reload1_back", "none", "", "", "", 3.0);
 			break;
-		// <—— 给走私者送信的任务
+		// < —给走私者送信的任务
 			
 		// 教会生成器。 任务1。 我们要找的船长对话 -->
 		case "ChurchGenQuest_1_DeckDialog_1":
@@ -4871,7 +4871,7 @@ void ProcessDialogEvent()
 			SetFunctionTimerCondition("Church_GenQuest1_DeleteCapitan", 0, 0, 1, false); // 三天后删除船长
 			break;
 			
-		// <—— 教会生成器。 任务1。 我们要找的船长对话
+		// < —教会生成器。 任务1。 我们要找的船长对话
 			
 		case "Left_Time_Case":
 			dialog.text = RandPhraseSimple("滚开...", "别打扰我! ");
@@ -5292,7 +5292,7 @@ void ProcessDialogEvent()
 					{
 						AddQuestUserData(sTitle, "sText", "wrecked pirate");
 					}
-					// <—— belamour gen
+					// < —belamour gen
 				}
 				else
 				{
@@ -5313,7 +5313,7 @@ void ProcessDialogEvent()
 				{
 					AddQuestUserData(sTitle, "sText", "wrecked pirate");
 				}
-				// <—— belamour gen
+				// < —belamour gen
 			}
 			
 			AddQuestUserDataForTitle(sTitle, "shoreName", sTemp);
@@ -5808,7 +5808,7 @@ void ProcessDialogEvent()
 			{
 				AddQuestUserData(sTitle, "count", PChar.GenQuest.PiratesOnUninhabited.PiratesCount + "名水手");
 			}
-			// <—— belamour
+			// < —belamour
 			AddQuestUserData(sTitle, "badCapName", ChangeNameCase(NAMETYPE_ORIG, PChar.GenQuest.PiratesOnUninhabited.BadPirateName, NAME_ABL));
 			AddQuestUserData(sTitle, "ship", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name + "Voc")) + "'" + PChar.GenQuest.PiratesOnUninhabited.StartShipName + "'"); // belamour gen
 			
@@ -6021,7 +6021,7 @@ void ProcessDialogEvent()
 			PChar.GenQuest.JusticeOnSale.ShipName = GenerateRandomNameToShip(PIRATE);
 			PChar.GenQuest.JusticeOnSale.ShipType = PiratesOnUninhabited_GenerateShipType();
 			PChar.GenQuest.JusticeOnSale.RewardType = 0; // 小饰品。 
-			dialog.text = "谢谢您, 船长。 除了您的报酬, 我们还会补偿您保释金。 我想您应该和指挥官谈谈我们的船长。 也许您能说服他。 一旦您把他救出来, 就到" + XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId + "Dat") + "来, 我们的船就停泊在那里—— " + LowerFirst(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.JusticeOnSale.ShipType)].name)) + "‘" + PChar.GenQuest.JusticeOnSale.ShipName + "’。 我们会在岸边等您。 "; // belamour gen
+			dialog.text = "谢谢您, 船长。 除了您的报酬, 我们还会补偿您保释金。 我想您应该和指挥官谈谈我们的船长。 也许您能说服他。 一旦您把他救出来, 就到" + XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId + "Dat") + "来, 我们的船就停泊在那里 —" + LowerFirst(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.JusticeOnSale.ShipType)].name)) + "‘" + PChar.GenQuest.JusticeOnSale.ShipName + "’。 我们会在岸边等您。 "; // belamour gen
 			link.l1 = "... ";
 			link.l1.go = "JusticeOnSale_8";
 		break;
@@ -6031,7 +6031,7 @@ void ProcessDialogEvent()
 			PChar.GenQuest.JusticeOnSale.ShipType = PiratesOnUninhabited_GenerateShipType();
 			PChar.GenQuest.JusticeOnSale.RewardType = 1; // 金钱。 
 			
-			dialog.text = "谢谢您, 船长。 除了您的报酬, 我们还会补偿您保释金。 我想您应该和指挥官谈谈我们的船长。 也许您能说服他。 一旦您把他救出来, 就到" + XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId + "Dat") + "来, 我们的船就停泊在那里—— " + LowerFirst(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.JusticeOnSale.ShipType)].name)) + "‘" + PChar.GenQuest.JusticeOnSale.ShipName + "’。 我们会在岸边等您。 "; // belamour gen
+			dialog.text = "谢谢您, 船长。 除了您的报酬, 我们还会补偿您保释金。 我想您应该和指挥官谈谈我们的船长。 也许您能说服他。 一旦您把他救出来, 就到" + XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId + "Dat") + "来, 我们的船就停泊在那里 —" + LowerFirst(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.JusticeOnSale.ShipType)].name)) + "‘" + PChar.GenQuest.JusticeOnSale.ShipName + "’。 我们会在岸边等您。 "; // belamour gen
 			link.l1 = "... ";
 			link.l1.go = "JusticeOnSale_8";
 		break;
@@ -6214,7 +6214,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar,"GenQuest.Unwantedpostor")) pchar.GenQuest.Unwantedpostor = "Lose"; // 如果午夜战斗失败
 			DoQuestReloadToLocation(Locations[FindLocation(pchar.location)].fastreload+"_tavern", "reload", "reload2_back", "");	
 		break;
-		// <—— belamour постоялeц
+		// < —belamour постоялeц
 		
 		// belamour 醉酒水手 -->
 		case "GuiltySailor":
@@ -6253,7 +6253,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "GuiltySailor_Again";
 		break;
-		// <—— 醉酒水手
+		// < —醉酒水手
 		
 		// belamour 优秀专家 -->
 		case "ExpertSailor":
@@ -6367,7 +6367,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "ExpertSailor_Again";
 		break;
-		// <—— 优秀专家
+		// < —优秀专家
 		
 		//belamour 夜间冒险家 -->
 		// 水手 -->
@@ -6939,7 +6939,7 @@ void ProcessDialogEvent()
 			LAi_ActorFollowEverywhere(npchar, "", -1);
 			LAi_Actor2WaitDialog(npchar, pchar);
 		break;
-		// <—— 水手
+		// < —水手
 		// 市民 -->
 		case "NightAdventure_Citizen":
 			LAi_RemoveLoginTime(npchar);
@@ -7612,7 +7612,7 @@ void ProcessDialogEvent()
 			LAi_ActorFollowEverywhere(npchar, "", -1);
 			LAi_Actor2WaitDialog(npchar, pchar);
 		break;
-		// <—— 夜间冒险者
+		// < —夜间冒险者
 		
 		// belamour 任务获取氙气灯 -->
 		case "CemeteryMan":
@@ -7659,14 +7659,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CemeteryMan_7":
-			dialog.text = "我们不迷信! 即使可怕—— 我们有什么选择? 在城里, 父母马上就会发现。 但在这里没人会告发我们。 所以, 目前这是最好的选择。 ";
-			link.l1 = "我真的很抱歉, 但你能找个别的地方吗? 别误会, 我理解一切—— 青春之类的—— 但你们的约会把墓地看守吓死了, 每天晚上从墓穴里传来的噪音和呻吟。 ";
+			dialog.text = "我们不迷信! 即使可怕 —我们有什么选择? 在城里, 父母马上就会发现。 但在这里没人会告发我们。 所以, 目前这是最好的选择。 ";
+			link.l1 = "我真的很抱歉, 但你能找个别的地方吗? 别误会, 我理解一切 —青春之类的 —但你们的约会把墓地看守吓死了, 每天晚上从墓穴里传来的噪音和呻吟。 ";
 			link.l1.go = "CemeteryMan_8";
 		break;
 		
 		case "CemeteryMan_8":
 			dialog.text = "嗯...吓到看守不是我们计划的一部分。 但我们还能在哪里见面呢? 或者你建议我们在露天约会? ";
-			link.l1 = "爱无边界。 找个肯定不会打扰任何人的地方。 那样就没人会打扰你们了。 大概。 最好和你们的父母解决问题—— 你们不打算永远躲着吧? ";
+			link.l1 = "爱无边界。 找个肯定不会打扰任何人的地方。 那样就没人会打扰你们了。 大概。 最好和你们的父母解决问题 —你们不打算永远躲着吧? ";
 			link.l1.go = "CemeteryMan_9";
 		break;
 		
@@ -7704,7 +7704,7 @@ void ProcessDialogEvent()
 			LAi_SetActorType(sld);
 			LAi_ActorDialogDelay(sld, pchar, "", 1.3);
 		break;
-		// <—— 获取灯任务 
+		// < —获取灯任务 
 
 		// 关于公民类型角色对暴露武器的注释 // 林务员插入到常规任务中, 避免对话为空 .
 		case "CitizenNotBlade":

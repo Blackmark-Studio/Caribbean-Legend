@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 		case "InTerksShore_2":
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 			AddCharacterExpToSkill(pchar, "Leadership", 120);
-			// <—— legendary edition
+			// < —legendary edition
 			dialog.text = "我明白, 但我也不是傻瓜。 在我见到阿比盖尔之前不谈钱。 那么? 我在等。 ";
 			link.l1 = "好的。 现在是时候摊牌了, 弗利特伍德船长。 我在这里组织我们的会面不是因为钱。 好吧, 当然, 我想拿走它, 但我首先需要你。 ";
 			link.l1.go = "InTerksShore_3";

@@ -18,7 +18,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth":
-			dialog.text = "盖乌斯.马沙? 哦, 是的, 我当然记得他! 但他什么也没买。 他提出用他的船来运货。 我刚好需要一艘货舱宽敞的船 --一大批生皮。 ";
+			dialog.text = "盖乌斯.马沙? 哦, 是的, 我当然记得他! 但他什么也没买。 他提出用他的船来运货。 我刚好需要一艘货舱宽敞的船 —一大批生皮。 ";
 			link.l1 = "卸货点在哪里? ";
 			link.l1.go = "guardoftruth_1";
 		break;

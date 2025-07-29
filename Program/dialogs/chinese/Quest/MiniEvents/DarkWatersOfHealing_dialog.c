@@ -54,7 +54,7 @@ void ProcessDialogEvent()
 			dialog.text = "他甚至不让我靠近房子。 听着, "+GetSexPhrase("亲爱的","美人")+", 既然你关心一个可怜女孩的命运, 也许你可以试着弄清楚怎么回事? 和托马斯谈谈, 帮我把孩子从苦难中救出来。 ";
 			link.l1 = "我当然会帮忙。 我在哪里能找到托马斯? ";
 			link.l1.go = "dwh_gypsy_4";
-			link.l2 = "不, 黑眉毛的。 不管怎样, 我相信她父亲拒绝你的帮助有他的理由。 我不会卷入其中。 让他决定吧 --她是他的女儿。 ";
+			link.l2 = "不, 黑眉毛的。 不管怎样, 我相信她父亲拒绝你的帮助有他的理由。 我不会卷入其中。 让他决定吧 —她是他的女儿。 ";
 			link.l2.go = "dwh_gypsy_otkaz";
 		break;
 		
@@ -114,13 +114,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "Tomas_2":
-			dialog.text = "你看, 我们家族一直很虔诚。 我妻子奥利维亚死后, 我全靠信仰支撑。 当吉普赛人提出帮助时, 我同意了 --任何能救我女儿的方法都行。 但是... 我们的牧师知道了这件事。 ";
+			dialog.text = "你看, 我们家族一直很虔诚。 我妻子奥利维亚死后, 我全靠信仰支撑。 当吉普赛人提出帮助时, 我同意了 —任何能救我女儿的方法都行。 但是... 我们的牧师知道了这件事。 ";
 			link.l1 = "让我猜猜: 他反对这种帮助? ";
 			link.l1.go = "Tomas_3";
 		break;
 
 		case "Tomas_3":
-			dialog.text = "正是如此。 他说服我只有祈祷和主的意志才能治愈我女儿。 如果我偏离这条道路 --通过使用‘女巫’的帮助 --他威胁要将我逐出教会。 你明白吗? 逐出教会! ";
+			dialog.text = "正是如此。 他说服我只有祈祷和主的意志才能治愈我女儿。 如果我偏离这条道路 —通过使用‘女巫’的帮助 —他威胁要将我逐出教会。 你明白吗? 逐出教会! ";
 			link.l1 = "所以埃丝特的健康完全取决于牧师的话? ";
 			link.l1.go = "Tomas_4";
 		break;
@@ -169,7 +169,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Tomas_13":
-			dialog.text = "哦, 船长... 一口钟要花不少钱。 我可能得卖掉亡妻的一些珠宝了。 但为了埃丝特, 我愿意付出所有 --甚至更多。 当然, 我会祈求主的宽恕。 我会去找铁匠, 下订单, 然后找到吉普赛人。 \n请告诉牧师钟很快就会准备好。 就算要我到地下去找, 我也会弄到的。 ";
+			dialog.text = "哦, 船长... 一口钟要花不少钱。 我可能得卖掉亡妻的一些珠宝了。 但为了埃丝特, 我愿意付出所有 —甚至更多。 当然, 我会祈求主的宽恕。 我会去找铁匠, 下订单, 然后找到吉普赛人。 \n请告诉牧师钟很快就会准备好。 就算要我到地下去找, 我也会弄到的。 ";
 			link.l1 = "很好, 托马斯。 ";
 			link.l1.go = "Tomas_14";
 		break;
@@ -214,7 +214,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gypsy_1":
-			dialog.text = "要制备恢复女孩健康的药物, 我需要曼加罗萨 --一种生长在人迹罕至地方的稀有植物。 我知道城外有个洞穴, 经常有... 地痞流氓出没。 他们烧曼加罗萨来抽烟, 却不知道它的功效。 帮帮我, "+GetSexPhrase("小猎鹰","小鸽子")+", 帮我弄些曼加罗萨, 没有它什么都做不了。 ";
+			dialog.text = "要制备恢复女孩健康的药物, 我需要曼加罗萨 —一种生长在人迹罕至地方的稀有植物。 我知道城外有个洞穴, 经常有... 地痞流氓出没。 他们烧曼加罗萨来抽烟, 却不知道它的功效。 帮帮我, "+GetSexPhrase("小猎鹰","小鸽子")+", 帮我弄些曼加罗萨, 没有它什么都做不了。 ";
 			if (CheckAttribute(pchar, "questTemp.Mangarosa"))
 			{
 				link.l1 = "曼加罗萨? 我熟悉那种植物。 ";
@@ -672,7 +672,7 @@ void ProcessDialogEvent()
 
 		case "Tomas_42":
 			dialog.text = "收下这三百枚达布隆。 不幸的是, 我只能拿出这么多了, 因为我不得不负债才凑齐这笔钱。 但要知道, 任何言语和黄金都无法表达我对您的感激之情, 船长。 您不仅把我从失去她的恐惧中解放出来, 还给予了我们家庭未来的希望。 我将永远欠您的情! ";
-			link.l1 = "谢谢你! 三百枚达布隆非常慷慨了, 请放心 --你已经感谢得足够多了! ";
+			link.l1 = "谢谢你! 三百枚达布隆非常慷慨了, 请放心 —你已经感谢得足够多了! ";
 			link.l1.go = "Tomas_43";
 			link.l2 = "我不会拿你的钱, 托马斯。 别想坚持! 最好给年轻的埃丝特买件漂亮的裙子, 她值得拥有。 ";
 			link.l2.go = "Tomas_46";
@@ -680,7 +680,7 @@ void ProcessDialogEvent()
 
 		case "Tomas_43":
 			dialog.text = ""+pchar.name+", 随时来拜访我们。 你在我们家永远受欢迎。 还有, 和那个吉普赛女人谈谈, 她想见你。 ";
-			link.l1 = "我将视之为荣幸! 现在我必须告辞了 --潮水不等人。 ";
+			link.l1 = "我将视之为荣幸! 现在我必须告辞了 —潮水不等人。 ";
 			link.l1.go = "Tomas_44";
 			AddItems(pchar, "gold_dublon", 300);
 			AddCharacterExpToSkill(pchar, "Commerce", 200);
@@ -713,7 +713,7 @@ void ProcessDialogEvent()
 		
 		case "Tomas_46":
 			dialog.text = "你是个非常高尚的人, "+GetFullName(pchar)+"! 愿圣母玛利亚与你同在! 来拜访我们, 你在我们家永远是受欢迎的客人。 还有, "+pchar.name+", 和吉普赛人谈谈, 她想见你。 ";
-			link.l1 = "当然! 现在我必须走了 --大海在召唤。 ";
+			link.l1 = "当然! 现在我必须走了 —大海在召唤。 ";
 			link.l1.go = "Tomas_47";
 			ChangeCharacterComplexReputation(pchar, "nobility", 5);
 		break;
@@ -746,13 +746,13 @@ void ProcessDialogEvent()
 		
 		case "gypsy_41":
 			dialog.text = "你来了, "+GetSexPhrase("小猎鹰","小鸽子")+"! 我就知道你会回来。 多亏了你的努力, 女孩康复了, 现在像鸽子一样四处走动。 整个小镇都在惊奇地谈论她。 ";
-			link.l1 = "好了, 黑眉毛的, 这不仅仅是我的功劳 --别给我太多赞誉。 是你的药水恢复了她的健康, 所以别贬低你在这件事中的作用。 ";
+			link.l1 = "好了, 黑眉毛的, 这不仅仅是我的功劳 —别给我太多赞誉。 是你的药水恢复了她的健康, 所以别贬低你在这件事中的作用。 ";
 			link.l1.go = "gypsy_42";
 			DelLandQuestMark(npchar);
 		break;
 
 		case "gypsy_42":
-			dialog.text = "你有一颗善良的心, "+GetSexPhrase("小猎鹰","小鸽子")+", 还有敏锐的头脑! 你注定要成就伟大 --这是我的预言。 ";
+			dialog.text = "你有一颗善良的心, "+GetSexPhrase("小猎鹰","小鸽子")+", 还有敏锐的头脑! 你注定要成就伟大 —这是我的预言。 ";
 			link.l1 = "呵... 好吧, 谢谢你, "+npchar.name+"。 ";
 			link.l1.go = "gypsy_43";
 		break;
@@ -774,7 +774,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "gypsy_45":
-			dialog.text = "你有一颗善良的心, "+GetSexPhrase("小猎鹰","小鸽子")+", 还有高尚的灵魂。 我有一份礼物给你 --任何船长都会欣赏的礼物。 给你。 现在你船上的老鼠将既没有快乐也没有安宁! ";
+			dialog.text = "你有一颗善良的心, "+GetSexPhrase("小猎鹰","小鸽子")+", 还有高尚的灵魂。 我有一份礼物给你 —任何船长都会欣赏的礼物。 给你。 现在你船上的老鼠将既没有快乐也没有安宁! ";
 			link.l1 = "给我的礼物? 老天, 太意外了! ";
 			link.l1.go = "gypsy_46";
 			GiveItem2Character(PChar, "rat_poison");
@@ -783,11 +783,11 @@ void ProcessDialogEvent()
 		case "gypsy_46":
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				dialog.text = "我看你灵魂纯净, 不会为了一时之快而燃烧曼加罗萨。 如果急需, 就来找我, "+GetSexPhrase("小猎鹰","小鸽子")+"。 三枝要三百五十枚达布隆\n这草药很 capricious, 不是每个人都能找到。 所以别催我 --每月不要问超过一次, 反正我也弄不到。 ";
+				dialog.text = "我看你灵魂纯净, 不会为了一时之快而燃烧曼加罗萨。 如果急需, 就来找我, "+GetSexPhrase("小猎鹰","小鸽子")+"。 三枝要三百五十枚达布隆\n这草药很 capricious, 不是每个人都能找到。 所以别催我 —每月不要问超过一次, 反正我也弄不到。 ";
 			}
 			else
 			{
-				dialog.text = "我看你灵魂明亮, 不傻, 懂草药不亚于某些治疗师。 你能找到很多东西, 尽管运气不会总是眷顾。 有一种稀有植物不是每个人都能找到。 它叫曼加罗萨。 如果你需要, 就来找我, "+GetSexPhrase("小猎鹰","小鸽子")+"。 我会弄三枝, 但不会免费给 --我要三百五十枚达布隆\n但这草药很任性, 所以别催我。 每月不要问超过一次 --即使你摆出所有命运的牌, 我也无法更快弄到。 ";
+				dialog.text = "我看你灵魂明亮, 不傻, 懂草药不亚于某些治疗师。 你能找到很多东西, 尽管运气不会总是眷顾。 有一种稀有植物不是每个人都能找到。 它叫曼加罗萨。 如果你需要, 就来找我, "+GetSexPhrase("小猎鹰","小鸽子")+"。 我会弄三枝, 但不会免费给 —我要三百五十枚达布隆\n但这草药很任性, 所以别催我。 每月不要问超过一次 —即使你摆出所有命运的牌, 我也无法更快弄到。 ";
 			}
 			link.l1 = "好吧, 谢谢你, "+npchar.name+"。 ";
 			link.l1.go = "gypsy_47";
@@ -806,7 +806,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tomas_51":
-			dialog.text = "船长, 我一直在想 --一定是主自己在正确的时间指引你来到这里! 你救了我女儿, 我永远不会忘记。 ";
+			dialog.text = "船长, 我一直在想 —一定是主自己在正确的时间指引你来到这里! 你救了我女儿, 我永远不会忘记。 ";
 			link.l1 = "也许吧, 托马斯。 主的道路是不可测的。 ";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Tomas_52";
@@ -832,7 +832,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gypsy_Mangarosa_1":
-			dialog.text = "除了我还有谁, "+GetSexPhrase("亲爱的","美人")+"能给你这种稀有之物? 三百五十枚达布隆 --就是你的了, 三枝, 不多不少。 ";
+			dialog.text = "除了我还有谁, "+GetSexPhrase("亲爱的","美人")+"能给你这种稀有之物? 三百五十枚达布隆 —就是你的了, 三枝, 不多不少。 ";
 			if (PCharDublonsTotal() >= 350)
 			{
 				link.l1 = "你的价格很公道。 黄金是你的了。 ";
@@ -844,7 +844,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "gypsy_Mangarosa_2":
-			dialog.text = "这就对了。 拿着。 注意别无谓地浪费, 你知道 --曼加罗萨不是普通的草药, 其中隐藏着不是每个人都能驾驭的力量。 ";
+			dialog.text = "这就对了。 拿着。 注意别无谓地浪费, 你知道 —曼加罗萨不是普通的草药, 其中隐藏着不是每个人都能驾驭的力量。 ";
 			link.l1 = "别担心, 黑眉毛的, 我会为它的力量找到 worthy 的用途。 ";
 			link.l1.go = "gypsy_Mangarosa_3";
 			AddItems(pchar, "cannabis7", 3);

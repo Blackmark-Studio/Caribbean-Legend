@@ -54,7 +54,7 @@ void ProcessDialogEvent()
 				break;
 				
 				case 1:
-					dialog.text = "立正! 看 --巴巴里戈上将! 你不认识我这把著名的骑兵剑吗? ";
+					dialog.text = "立正! 看 —巴巴里戈上将! 你不认识我这把著名的骑兵剑吗? ";
 					link.l1 = "抱歉, 上将先生! 从现在起, 我会更留心的。 ";
 					link.l1.go = "norman_fes1_peace";
 					link.l2 = "你的骑兵剑确实有名。 可惜握在一个傻瓜手里。 ";

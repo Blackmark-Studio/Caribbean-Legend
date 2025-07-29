@@ -8,7 +8,7 @@ End_GoldFleet_t0 {西班牙运金船队已成功抵达古巴。 现在所有收�
 End_GoldFleet_t1 {西班牙运金船队的所有船只都已成 功抵达哈瓦那。 秘鲁和墨西哥的所有金银很快将被 运往欧洲。 }
 End_GoldFleet_t2 {一支西班牙船队已抵达哈瓦那。 金银货物安全无恙, 很快将运往西班牙。 }
 
-Defeat_GoldFleet_t0 {据说从贝洛港驶往哈瓦那的西班 牙运金船队始终未能抵达目的地。 只有上帝知道它遭遇了什么, 也许是可怕的风暴, 也许是海盗, 不过我怀疑是否有如此大胆—— 或者说疯狂—— 的海盗存在。 }
+Defeat_GoldFleet_t0 {据说从贝洛港驶往哈瓦那的西班 牙运金船队始终未能抵达目的地。 只有上帝知道它遭遇了什么, 也许是可怕的风暴, 也许是海盗, 不过我怀疑是否有如此大胆 —或者说疯狂 —的海盗存在。 }
 Defeat_GoldFleet_t1 {载着从贝洛港运来的金银货物的 西班牙运金船队, 消失得无影无踪。 没人确切知道发生了什么, 但据说它成了海盗的猎物! }
 Defeat_GoldFleet_t2 {一支从贝洛港运送财宝的运金船 队一直未能抵达哈瓦那, 尽管它早就应该到了。 它可能遭遇了什么? ... 谁知道呢, 每年这个时候这一带会有猛烈的风 暴。 }
 
@@ -43,10 +43,10 @@ WaitInTavern_t2 {酒馆里的水手们说, #sPsHero_Name#最近运气糟透了�
 
 WorkOnMayor_t0 {今天我看到#sPsHero_Name#和我们的总督在一起。 看来总督阁下又给了他一个"有趣"的任务。 }
 WorkOnMayor_t1 {据说我们的总督有了一个新的门徒。 #sPsHero_Name#船长经常出入官邸, 为他执行微妙的任务, 而且显然和总督阁下的女儿有恋情。 }
-WorkOnMayor_t2 {厨师告诉我, 她从总督阁下的女仆那里听说, #sPsHero_Name#是他的好朋友。 今天一大早他就匆匆赶往官邸—— 肯定有重要的事情。 }
+WorkOnMayor_t2 {厨师告诉我, 她从总督阁下的女仆那里听说, #sPsHero_Name#是他的好朋友。 今天一大早他就匆匆赶往官邸 —肯定有重要的事情。 }
 
 SailToIsland_t0 {#sPsHero_Name#说他要去#sTo# #sTown_Name#。 也许那里有什么可买的。 }
-SailToIsland_t1 {#sPsHero_Name#正乘船#sTo# #sTown_Name#做生意—— 这是我在酒馆里从他的一名水手那 里听到的。 }
+SailToIsland_t1 {#sPsHero_Name#正乘船#sTo# #sTown_Name#做生意 —这是我在酒馆里从他的一名水手那 里听到的。 }
 SailToIsland_t2 {昨天#sPsHero_Name#在当地酒馆里喝得酩酊大醉, 他大声叫嚷着说他要去#sTo# #sTown_Name#, 他在那里有生意。 }
 
 WorkOnStore_t0 {酒馆里的一名水手提到, #sPsHero_Name#答应将#sGood#货物运送到#sTown_Name#。 }
@@ -54,7 +54,7 @@ WorkOnStore_t1 {我们商人的助手告诉我, #sPsHero_Name#答应将他老板
 WorkOnStore_t2 {我们的酒保说, #sPsHero_Name#正在酒馆里招募水手, 要载着当地商店的#sGood#货物驶往#sTown_Name#。 }
 
 WorkWithContra_t0 {我看到#sPsHero_Name#和一个形迹可疑的人谈话。 据说那个人是个走私犯。 }
-WorkWithContra_t1 {据说#sPsHero_Name#运来了一整舱走私货物。 他可能已经把货物卖掉了—— 也可能还没... }
+WorkWithContra_t1 {据说#sPsHero_Name#运来了一整舱走私货物。 他可能已经把货物卖掉了 —也可能还没... }
 WorkWithContra_t2 {我无意中听到#sPsHero_Name#和我们的走私犯谈话。 他们约定在一个叫#sContraPlace#的地方见面。 }
 
 DuelCoward_t0 {真丢脸! #sName#没有来参加决斗。 现在大家都说他是个懦夫! }

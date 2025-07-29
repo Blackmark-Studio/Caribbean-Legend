@@ -23,7 +23,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "又是我, 指挥官。 俄国人法代写了这份释放印第安人的请愿书, 给你。 ";
                 link.l1.go = "Tichingitu_6";
             }
-			// <—— 蒂钦吉图
+			// < —蒂钦吉图
 			//Jason --> 不正当竞争
 			if (CheckAttribute(pchar, "questTemp.Shadowtrader.Fort") && NPChar.location == pchar.questTemp.Shadowtrader.City + "_prison")
 			{
@@ -36,14 +36,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "又是我。 我有充分证据证明" + pchar.questTemp.Shadowtrader.Tradername + "是对的。 ";
 				link.l1.go = "Shadowtrader_prison2";
 			}
-			//Jason <—— 不正当竞争
+			//Jason < —不正当竞争
 			//Sinistra --> 导航之星
 			if (CheckAttribute(pchar, "questTemp.PZ_BasTerTurma"))
             {
                 link.l1 = "我在找一个叫朗威的人。 听说你也在找他, 警官先生。 你找到他了吗, 或者有什么线索吗? ";
                 link.l1.go = "PZ_IshemLongway_1";
             }
-			//Sinistra <—— 导航之星
+			//Sinistra < —导航之星
 		break;
 		
 		// --> 蒂钦吉图
@@ -105,7 +105,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			sld.dialog.currentnode = "Tichingitu_6";
 			AddLandQuestMark(sld, "questmarkmain");
 		break;
-		// <—— 蒂钦吉图
+		// < —蒂钦吉图
 		
 		//Jason --> 迷你任务 不正当竞争
 		case "Shadowtrader_prison":
@@ -124,7 +124,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Shadowtrader_prison_2":
-			dialog.text = "没错 --最好逐字逐句地说。 他会明白我的意思。 我不会浪费纸张给这个烦人的家伙写回信。 ";
+			dialog.text = "没错 —最好逐字逐句地说。 他会明白我的意思。 我不会浪费纸张给这个烦人的家伙写回信。 ";
 			link.l1 = "我明白了。 那么, 再见。 ";
 			link.l1.go = "exit";
 			pchar.questTemp.Shadowtrader.Trouble = "true";
@@ -157,7 +157,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddCharacterExpToSkill(pchar, "Sneak", 100);//隐蔽
 			NextDiag.TempNode = "First_officer";
 		break;
-		// <—— 迷你任务 不正当竞争
+		// < —迷你任务 不正当竞争
 		
 		// Sinistra - 任务 "导航之星" ==>
 		case "PZ_IshemLongway_1":
@@ -171,7 +171,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "PZ_IshemLongway_2":
 			dialog.text = "好吧, 好吧。 你为什么要找你的这个朗威呢, 先生? ";
-			link.l1 = "他是我的朋友。 我已经听说发生了什么事 --这是一个可悲的误会, 我向你保证。 ";
+			link.l1 = "他是我的朋友。 我已经听说发生了什么事 —这是一个可悲的误会, 我向你保证。 ";
 			link.l1.go = "PZ_IshemLongway_Zashita_1";
 			if (pchar.location.from_sea != "BasTer_Town")
 			{
@@ -187,7 +187,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_IshemLongway_Zashita_2":
-			dialog.text = "在正常情况下, 我可能会同意你。 但你看, 那些被杀的人中有一个是军官 --一个有前途的年轻中尉, 是总督阁下的宠儿。 全镇都在哀悼。 这是无法视而不见或弥补的。 你明白吗? ";
+			dialog.text = "在正常情况下, 我可能会同意你。 但你看, 那些被杀的人中有一个是军官 —一个有前途的年轻中尉, 是总督阁下的宠儿。 全镇都在哀悼。 这是无法视而不见或弥补的。 你明白吗? ";
 			link.l1 = "我完全理解。 我为我朋友的行为道歉。 我不会再打扰你了。 ";
 			link.l1.go = "PZ_IshemLongway_Uiti_1";
 			link.l2 = "你知道, 天晓得丛林里发生了什么。 任何人都可能杀了那些人。 ";
@@ -205,20 +205,20 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			else
 			{
 				notification("Perk check failed", "Trustworthy");
-				link.l1 = "但我怎么知道呢? 可能是任何人 --强盗。 海盗。 间谍... ";
+				link.l1 = "但我怎么知道呢? 可能是任何人 —强盗。 海盗。 间谍... ";
 				link.l1.go = "PZ_IshemLongway_Blef_netVD_1";
 			}
 		break;
 		
 		case "PZ_IshemLongway_Blef_2":
-			dialog.text = "呵, 这不奇怪 --考虑到你的体型, 船长。 是的, 如今岛上有这样的恶棍... ";
+			dialog.text = "呵, 这不奇怪 —考虑到你的体型, 船长。 是的, 如今岛上有这样的恶棍... ";
 			link.l1 = "正是! 所以, 他们可能屠杀了巡逻队和那个可怜的年轻中尉。 ";
 			link.l1.go = "PZ_IshemLongway_Blef_3";
 		break;
 		
 		case "PZ_IshemLongway_Blef_3":
 			dialog.text = "不幸的是, 这完全有可能。 ";
-			link.l1 = "正是如此。 所以我再次请求你让我加入下一支搜索队 --朗威会听我的, 这样我们就可以避免更多的死亡。 ";
+			link.l1 = "正是如此。 所以我再次请求你让我加入下一支搜索队 —朗威会听我的, 这样我们就可以避免更多的死亡。 ";
 			link.l1.go = "PZ_IshemLongway_Blef_4";
 		break;
 		
@@ -238,7 +238,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "三百达布隆。 这笔钱将归入市政财政, 而不是进集市上那些投机者的腰包。 ";
 			if (PCharDublonsTotal() >= 300)
 			{
-				link.l1 = "当然。 三百达布隆 --给你。 ";
+				link.l1 = "当然。 三百达布隆 —给你。 ";
 				link.l1.go = "PZ_IshemLongway_Blef_7";
 			}
 			link.l2 = "我这次进城没带达布隆。 但如果你让我去取... ";
@@ -254,7 +254,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_IshemLongway_NetDublonov_1":
-			dialog.text = "我可不是昨天才出生的。 我知道你打算逃跑 --不是为了达布隆, 而是为了你亲爱的中国佬。 ";
+			dialog.text = "我可不是昨天才出生的。 我知道你打算逃跑 —不是为了达布隆, 而是为了你亲爱的中国佬。 ";
 			link.l1 = "我向你保证, 我不会和朗威一起离开镇子。 ";
 			link.l1.go = "PZ_IshemLongway_NetDublonov_2";
 		break;
@@ -268,7 +268,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_IshemLongway_Blef_netVD_1":
-			dialog.text = "那你就是不知道了。 我会坚持目前的判断 --不管怎样, 必须抓住那个中国人。 ";
+			dialog.text = "那你就是不知道了。 我会坚持目前的判断 —不管怎样, 必须抓住那个中国人。 ";
 			link.l1 = "你目前的判断? 但你没有证据证明朗威在丛林里杀了所有人。 ";
 			link.l1.go = "PZ_IshemLongway_Blef_netVD_2";
 		break;
@@ -313,7 +313,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_IshemLongway_Pobeg_1":
-			dialog.text = "明白吗, 我个人对你没有任何意见。 你说得对 --你没有犯任何罪。 但我们需要确保你的黄皮肤朋友无法逃脱法律的制裁。 ";
+			dialog.text = "明白吗, 我个人对你没有任何意见。 你说得对 —你没有犯任何罪。 但我们需要确保你的黄皮肤朋友无法逃脱法律的制裁。 ";
 			link.l1 = "那你也要明白, 我不会允许自己以这种虚假的方式被拘留。 ";
 			link.l1.go = "PZ_IshemLongway_Pobeg_2";
 		break;
@@ -371,7 +371,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_IshemLongway_OhotnikOtryad_2":
-			dialog.text = "该死的无赖! 我们这么办: 我会再召集一支小队, 你和他们一起去。 这次他无处可逃, 有了你的帮助, 我们成功的机会更大。 不过别指望我给你奖励 --你是赏金猎人, 所以你的报酬会来自雇佣你的人。 你应该感激我让你和我合作。 ";
+			dialog.text = "该死的无赖! 我们这么办: 我会再召集一支小队, 你和他们一起去。 这次他无处可逃, 有了你的帮助, 我们成功的机会更大。 不过别指望我给你奖励 —你是赏金猎人, 所以你的报酬会来自雇佣你的人。 你应该感激我让你和我合作。 ";
 			link.l1 = "说得对。 回头见, 警官。 如果你的人在和我们这位中国朋友的另一次交锋中有幸存者, 我会告诉你进展如何。 ";
 			link.l1.go = "PZ_IshemLongway_BeryomOtryad";
 			pchar.questTemp.PZ_OhotnikOtryad = true;
@@ -404,7 +404,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_BasTer_ComendantDialog_Opozdal_1":
-			dialog.text = "没错。 如果你这么想要他, 你对他来说是谁? 这不重要 --重要的是你进城的目的。 ";
+			dialog.text = "没错。 如果你这么想要他, 你对他来说是谁? 这不重要 —重要的是你进城的目的。 ";
 			link.l1 = "没有任何非法行为, 先生。 但你说‘这已经不重要了’是什么意思? 他是不是... ";
 			link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_2";
 		break;
@@ -416,25 +416,25 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_BasTer_ComendantDialog_Opozdal_3":
-			dialog.text = "很简单 --他来到城里, 不停地四处窥探。 我们试图和他谈谈, 想知道他在这里做什么, 但他杀了几个人, 逃进了丛林。 我派了好几支搜索队去追他, 一支接一支, 但他把他们都消灭了! 我们不得不把他困在一个山洞里, 然后神枪手解决了剩下的事。 ";
-			link.l1 = "那你不知道他在找什么吗? 你看, 他以前从未做过这种事 --他曾是我船上的导航员。 但后来他偷了我的东西跑了。 ";
+			dialog.text = "很简单 —他来到城里, 不停地四处窥探。 我们试图和他谈谈, 想知道他在这里做什么, 但他杀了几个人, 逃进了丛林。 我派了好几支搜索队去追他, 一支接一支, 但他把他们都消灭了! 我们不得不把他困在一个山洞里, 然后神枪手解决了剩下的事。 ";
+			link.l1 = "那你不知道他在找什么吗? 你看, 他以前从未做过这种事 —他曾是我船上的导航员。 但后来他偷了我的东西跑了。 ";
 			link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_4";
 		break;
 		
 		case "PZ_BasTer_ComendantDialog_Opozdal_4":
-			dialog.text = "哦, 我刚想起来, 是的。 这么说, 你也遭受了他的行为带来的损失? 这会给你一个教训, 船长。 你会明白, 不要雇佣你不信任的人。 永远不要相信黄皮肤的人 --记住我的话! ";
+			dialog.text = "哦, 我刚想起来, 是的。 这么说, 你也遭受了他的行为带来的损失? 这会给你一个教训, 船长。 你会明白, 不要雇佣你不信任的人。 永远不要相信黄皮肤的人 —记住我的话! ";
 			link.l1 = "是的, 我会记住的。 你在他身上找到什么东西了吗? ";
 			link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_5";
 		break;
 		
 		case "PZ_BasTer_ComendantDialog_Opozdal_5":
-			dialog.text = "哦, 你想追回被偷的货物? 他口袋里有一些银子, 所以如果他偷了你的东西, 他已经把钱花光了。 还有一些其他文件... 来自你船上的日志? 反正我们也看不懂 --也许是什么密码? 所有东西都沾满了血, 所以我们无法辨认未损坏的部分。 ";
+			dialog.text = "哦, 你想追回被偷的货物? 他口袋里有一些银子, 所以如果他偷了你的东西, 他已经把钱花光了。 还有一些其他文件... 来自你船上的日志? 反正我们也看不懂 —也许是什么密码? 所有东西都沾满了血, 所以我们无法辨认未损坏的部分。 ";
 			link.l1 = "呃, 是的。 谢谢你。 我一直担心如果我的日志和日记被别人捡到会发生什么... ";
 			link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_6";
 		break;
 		
 		case "PZ_BasTer_ComendantDialog_Opozdal_6":
-			dialog.text = "为此不得不编造一个复杂的密码? 你不心疼自己的时间和精力吗? 给你。 至于银子 --别生气, 但我们把它还给市政了。 那天那个中国人让我很多手下命丧黄泉。 ";
+			dialog.text = "为此不得不编造一个复杂的密码? 你不心疼自己的时间和精力吗? 给你。 至于银子 —别生气, 但我们把它还给市政了。 那天那个中国人让我很多手下命丧黄泉。 ";
 			link.l1 = "那我就不敢坚持了。 再见。 ";
 			link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_7";
 		break;

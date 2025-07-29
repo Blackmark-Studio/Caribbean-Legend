@@ -7,28 +7,28 @@ type_full_1
 {
 这张地图显然很新, 纸张尚未泛黄。 #sMapIslName#的标记似乎画得很匆忙, 但如果我们相信这些标记, 宝藏就藏在#sMaplocName#。 
 }
-type_full_1_isl {岛屿}
+type_full_1_isl {岛}
 type_full_1_mein {大陆}
 
 type_full_2
 {
 这张地图绘制得相当随意, #sMapIslName#几乎难以辨认。 从标记来看, 宝藏藏在#sMaplocName#, 但只有亲自前往才能确定。 
 }
-type_full_2_isl {岛屿}
+type_full_2_isl {岛}
 type_full_2_mein {大陆}
 
 type_full_3
 {
-这张地图对其主人而言似乎并不珍 贵—— #sMapIslName#的轮廓被水渍污损。 宝藏的位置似乎是#sMaplocName#。 
+这张地图对其主人而言似乎并不珍 贵 —#sMapIslName#的轮廓被水渍污损。 宝藏的位置似乎是#sMaplocName#。 
 }
-type_full_3_isl {岛屿}
+type_full_3_isl {岛}
 type_full_3_mein {大陆}
 
 type_full_4
 {
-地图描绘了#sMapIslName#。 宝藏的存放地点是#sMaplocName#。 作者用努力弥补了技巧的不足—— 边缘装饰着仿佛孩童笔触的奇异动 物图案。 
+地图描绘了#sMapIslName#。 宝藏的存放地点是#sMaplocName#。 作者用努力弥补了技巧的不足 —边缘装饰着仿佛孩童笔触的奇异动 物图案。 
 }
-type_full_4_isl {岛屿}
+type_full_4_isl {岛}
 type_full_4_mein {大陆}
 
 type_full_5
@@ -36,7 +36,7 @@ type_full_5
 地图准确反映了#sMapIslName#的轮廓。 宝藏的位置是#sMaplocName#。 找到它并不难, 因为作者留下了相当精确的指引。 
 }
 
-type_full_5_isl {岛屿}
+type_full_5_isl {岛}
 type_full_5_mein {大陆}
 
 
@@ -44,60 +44,60 @@ type_full_6
 {
 这张地图绘制在高质量的格纹纸上。 #sMapIslName#的轮廓清晰可辨。 根据背面的注释, 宝藏的位置是#sMaplocName#。 
 }
-type_full_6_isl {岛屿}
+type_full_6_isl {岛}
 type_full_6_mein {大陆}
 
 type_full_7
 {
-这是#sMapIslName#。 地图标明了隐藏宝藏的位置—— #sMaplocName#。 一位臭名昭著的海盗将宝藏藏在了 那里。 
+这是#sMapIslName#。 地图标明了隐藏宝藏的位置 —#sMaplocName#。 一位臭名昭著的海盗将宝藏藏在了 那里。 
 地图上褐色的血迹斑斑证明了其真 实性, 也暗示了这份文件曾多次易主的血 腥历史。 
 }
-type_full_7_isl {岛屿}
+type_full_7_isl {岛}
 type_full_7_mein {大陆}
 
 type_full_8
 {
-这张地图显然经过许多人之手—— 纸张有几处烧灼痕迹, #sMapIslName#的轮廓被多次折叠的痕迹交叉覆盖。 宝藏的位置是#sMaplocName#。 显然, 那里藏着真正有价值的东西。 
+这张地图显然经过许多人之手 —纸张有几处烧灼痕迹, #sMapIslName#的轮廓被多次折叠的痕迹交叉覆盖。 宝藏的位置是#sMaplocName#。 显然, 那里藏着真正有价值的东西。 
 }
-type_full_8_isl {岛屿}
+type_full_8_isl {岛}
 type_full_8_mein {大陆}
 
 type_full_9
 {
 #sMapIslName#在这张地图上描绘得相当准确, 周围环绕着涡卷装饰和海怪图画。 无论地图的作者是谁, 他显然精通此道, 在宝藏中藏了非常贵重的东西。 剩下的就是到达#sMaplocName#这个位置。 
 }
-type_full_9_isl {岛屿}
+type_full_9_isl {岛}
 type_full_9_mein {大陆}
 
 type_full_10
 {
 这张地图的两半无法拼合, 尽管笔迹。 墨水颜色和纸张状况清楚地表明出 自同一作者。 #sMapIslName#的轮廓模糊且被墨水污损, 宝藏似乎位于#sMaplocName#。 
 }
-type_full_10_isl {岛屿}
+type_full_10_isl {岛}
 type_full_10_mein {大陆}
 
 type_full_11
 {
-这张地图被沿对角线仔细分割, 仅靠一半无法辨认#sMapIslName#。 笔记用整齐的笔迹书写, 很容易理解宝藏的位置—— 在#sMaplocName#。 从纸张的状况来看, 宝藏已经在那里存放了数十年。 
+这张地图被沿对角线仔细分割, 仅靠一半无法辨认#sMapIslName#。 笔记用整齐的笔迹书写, 很容易理解宝藏的位置 —在#sMaplocName#。 从纸张的状况来看, 宝藏已经在那里存放了数十年。 
 }
-type_full_11_isl {岛屿}
+type_full_11_isl {岛}
 type_full_11_mein {大陆}
 
 type_full_12
 {
 这张由两部分组成的地图看起来极 其古老。 #sMapIslName#的轮廓已经过时了几十年。 描述和线索用老式语言书写, 并且富含拉丁语。 很难估量藏在#sMaplocName#的宝藏价值几何。 
 }
-type_full_12_isl {岛屿}
+type_full_12_isl {岛}
 type_full_12_mein {大陆}
 
 
 
 type_quest_0
 {
-这是#sMapIslName#。 这里标记了隐藏的宝藏—— #sMaplocName#。 据说#sMapOwner#将他的财富藏在了这个地方。 
+这是#sMapIslName#。 这里标记了隐藏的宝藏 —#sMaplocName#。 据说#sMapOwner#将他的财富藏在了这个地方。 
 地图上的褐色血迹证实了它的真实 性, 并暗示了一段血腥的拥有历史。 
 }
-type_quest_0_isl {岛屿}
+type_quest_0_isl {岛}
 type_quest_0_mein {大陆}
 
 type_part
@@ -131,8 +131,8 @@ Beliz_Cave_2             {在伯利兹出口对面的洞穴中}
 Beliz_Cave_2_box1        {死胡同的木板下}
 
 Bermudes_Dungeon         {在夏普敦造船厂下方的地牢里}
-Bermudes_Dungeon_box1    {一扇紧闭门后的箱子}
-Bermudes_Dungeon_box2    {一扇敞开 door后的箱子}
+Bermudes_Dungeon_box1    {一扇紧闭的门后的箱子}
+Bermudes_Dungeon_box2    {一扇敞开的门后的箱子}
 Bermudes_Dungeon_box3    {死胡同里的箱子}
 Bermudes_Dungeon_box4    {木桶后面的箱子}
 
@@ -201,7 +201,7 @@ PortoBello_Cave_box1     {死胡同的木板下}
 SanJuan_Cave             {在圣胡安附近的洞穴中}
 SanJuan_Cave_box1        {石桥附近的箱子}
 SanJuan_Cave_box2        {一块大石头上的箱子}
-SanJuan_Cave_box3        {靠近从天花板垂下绳索的箱子}
+SanJuan_Cave_box3        {靠近从天花板垂下绳索旁的箱子}
 
 SantaCatalina_Cave       {在佩拉斯角右侧的洞穴中}
 SantaCatalina_Cave_box1  {火炬下方的箱子}

@@ -33,7 +33,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "有一艘名为‘Admirable’的大帆船在菲利普斯堡装载货物, 由盖乌斯.马沙伊斯指挥。 他本该运送一批辣椒粉到这里。 你能帮我找到这位船长吗? ";
                 link.l1.go = "guardoftruth";
             }
-            // 卡勒幽船
+            // 卡莱乌切
             if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "hunting" && !CheckAttribute(npchar, "quest.garpiya"))
             {
                 if (CheckAttribute(npchar, "questTemp.caleuche"))
@@ -216,7 +216,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             pchar.questTemp.Guardoftruth = "barbados1";
         break;
         
-        // 卡勒幽船
+        // 卡莱乌切
         case "caleuche":
             dialog.text = "先生, 我需要船的确切名字。 我们港口有很多叫杰克和杰克逊的人。 那么, 船名是什么? ";
             link.l1 = "";

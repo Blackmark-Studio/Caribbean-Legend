@@ -18,7 +18,7 @@ info
 		2.2 宝石。 金属
 		2.3 珠宝饰品
 	3. 纸张
-		3.1 专利
+		3.1 许可证
 		3.2 许可证
 		3.3 地图
 		3.4 信件
@@ -144,7 +144,7 @@ itmdescr_blade_09
 itmname_blade_10	{绞刑者}
 itmdescr_blade_10
 {
-一种海军短弯刀, 因护手上用于攀爬时固定武器的钩 子而被称为"绞刑者"。 携带绞刑者剑与成为绞刑者—— 这是大多数海盗的命运。 
+一种海军短弯刀, 因护手上用于攀爬时固定武器的钩 子而被称为"绞刑者"。 携带绞刑者剑与成为绞刑者 —这是大多数海盗的命运。 
 }
 
 itmname_blade_11	{悬挂剑}
@@ -486,7 +486,7 @@ itmdescr_shamshir
 itmname_lacrima_patris {祖国之泪}
 itmdescr_lacrima_patris
 {
-一把装饰华丽的剑, 尽管外观礼仪性, 却拥有出色的战斗品质。 在虔诚的船长手中, 用正义对抗恶徒和异教徒时, 它会变得更加锋利, 迫使 "Holy Mercy" 号的加农炮射程更远。 
+一把装饰华丽的剑, 尽管外观礼仪性, 却拥有出色的战斗品质。 在虔诚的船长手中, 用正义对抗恶徒和异教徒时, 它会变得更加锋利, 迫使 "Holy Mercy(圣慈悲号)" 的加农炮射程更远。 
 }
 
 lacrima_patris_parameters{加农炮射程提升: #f.1RangeBonus#%}
@@ -494,7 +494,7 @@ lacrima_patris_parameters{加农炮射程提升: #f.1RangeBonus#%}
 itmname_blade_SP_3low {绞刑者}
 itmdescr_blade_SP_3low
 {
-这把短弯刀结合了土耳其军刀和欧 洲弯刀的特点—— 加宽的刀刃甚至可以砍穿最坚固的 盔甲。 有了绞刑者剑, 任何登船战斗都能快速而残酷地结 束。 
+这把短弯刀结合了土耳其军刀和欧 洲弯刀的特点 —加宽的刀刃甚至可以砍穿最坚固的 盔甲。 有了绞刑者剑, 任何登船战斗都能快速而残酷地结 束。 
 }
 
 itmname_blade_SP_3 {绞刑者}
@@ -518,19 +518,19 @@ itmdescr_pistol1
 itmname_pistol2 {霰弹左轮}
 itmdescr_pistol2
 {
-这种早期左轮手枪是三管火器。 一种非常难以生产、 稀有且昂贵的武器。 使用霰弹射击。 需要散兵特质。 
+这种早期左轮手枪是三管火器。 一种非常难以生产、 稀有且昂贵的武器。 使用葡萄弹射击。 需要散兵特质。 
 }
 
 itmname_pistol3 {长号手枪}
 itmdescr_pistol3
 {
-一种短而重的滑膛手枪, 对敏捷的单个敌人或重甲敌人不太 有用, 但对一群乌合之众的射击肯定会令 人印象深刻。 使用霰弹射击。 
+一种短而重的滑膛手枪, 对敏捷的单个敌人或重甲敌人不太 有用, 但对一群乌合之众的射击肯定会令 人印象深刻。 使用葡萄弹射击。 
 }
 
 itmname_pistol4 {四管手枪}
 itmdescr_pistol4
 {
-独特构造—— 四把枪合为一体! 装填时间长, 但结果值得。 需要散兵特质。 
+独特构造 —四把枪合为一体! 装填时间长, 但结果值得。 需要散兵特质。 
 }
 
 itmname_pistol5 {决斗手枪}
@@ -542,20 +542,20 @@ itmdescr_pistol5
 itmname_pistol6 {双管手枪}
 itmdescr_pistol6
 {
-双管手枪—— 对于喜欢用第二枪提供安全感的人 来说非常好。 
+双管手枪 —对于喜欢用第二枪提供安全感的人 来说非常好。 
 }
 
 itmname_pistol7 {柯尔特左轮}
 itmdescr_pistol7
 {
-一种奇怪的手枪, 带有六个可依次装填和发射的旋转 弹筒。 枪管上标有"专利柯尔特武器公司, 新泽西州帕特森, 1841". 
+一种奇怪的手枪, 带有六个可依次装填和发射的旋转 弹筒。 枪管上标有"柯尔特武器公司专利, 新泽西州帕特森, 1841". 
 想象一下当你拿出这个坏小子时敌 人的表情。 需要散兵特质。 
 }
 
 itmname_pistol8 {滑膛手枪}
 itmdescr_pistol8
 {
-可单手射击的海军滑膛手枪。 使用箭弹, 轻松穿透任何盔甲, 需要霰弹或弹片。 
+可单手射击的海军滑膛手枪。 使用箭弹, 轻松穿透任何盔甲, 需要葡萄弹或弹片。 
 }
 
 itmname_pistol9 {叠加双装手枪}
@@ -593,7 +593,7 @@ itmdescr_pistol13
 itmname_pistol14 {双管决斗手枪}
 itmdescr_pistol14
 {
-致命设计的杰作—— 昂贵、 致命且完全不实用。 建议使用火药测试器。 9%基础暴击几率。 
+致命设计的杰作 —昂贵、 致命且完全不实用。 建议使用火药测试器。 9%基础暴击几率。 
 需要散兵特质。 
 }
 
@@ -618,7 +618,7 @@ itmdescr_mushket2
 itmname_mushket3 {火绳枪}
 itmdescr_mushket3
 {
-带有短重枪管的滑膛火绳枪。 火绳机已经过时二十多年, 但这种古董仍能将敌人打成碎片。 需要霰弹射击。 3%基础暴击几率。 需要火枪手特质。 
+带有短重枪管的滑膛火绳枪。 火绳机已经过时二十多年, 但这种古董仍能将敌人打成碎片。 需要葡萄弹射击。 3%基础暴击几率。 需要火枪手特质。 
 }
 
 itmname_mushket5 {瞄准步枪}
@@ -630,7 +630,7 @@ itmdescr_mushket5
 itmname_mushket6 {鼓式霰弹枪}
 itmdescr_mushket6
 {
-一种罕见的葡萄牙火绳滑膛枪, 拥有创新的旋转式转塔, 包含五个弹膛和一个发射枪管。 使用霰弹或弹片。 需要散兵特质。 
+一种罕见的葡萄牙火绳滑膛枪, 拥有创新的旋转式转塔, 包含五个弹膛和一个发射枪管。 使用葡萄弹或弹片。 需要散兵特质。 
 }
 
 itmname_mushket7 {优质滑膛枪}
@@ -660,7 +660,7 @@ itmdescr_m8_barrel
 itmname_mushket9 {古老火绳枪}
 itmdescr_mushket9
 {
-古老但可靠的火绳枪。 如果故事可信, Cortes 本人曾用它向丛林中发射 霰弹, 让当地人感到恐惧。 
+古老但可靠的火绳枪。 如果故事可信, Cortes 本人曾用它向丛林中发射 葡萄弹, 让当地人感到恐惧。 
 }
 
 UpgradeStageInfo_mushket9_1 {目前它看起来相当糟糕, 但适当的保养和良好的工具可以改 变它。 }
@@ -671,7 +671,7 @@ UpgradeStageInfo_mushket9_3 {更换锁后, 它开始类似于现代武器。 用
 
 UpgradeStageInfo_mushket9_4
 {
-在你手中, 这件武器已达到巅峰—— 根本无处进一步发展。 最后的点缀—— 扩大的枪管—— 简化并加速了装填, 大大提高了效率。 你可以为自己感到骄傲。 
+在你手中, 这件武器已达到巅峰 —根本无处进一步发展。 最后的点缀 —扩大的枪管 —简化并加速了装填, 大大提高了效率。 你可以为自己感到骄傲。 
 你完全有理由感到骄傲。 
 }
 
@@ -752,7 +752,7 @@ itmdescr_cirass3
 itmname_cirass4 {米兰胸甲}
 itmdescr_cirass4
 {
-一件稀有的顶级铠甲, 由意大利盔甲师匠心—— 堪称真正的艺术品。 它极其轻便, 能有效防御子弹和刀剑的攻击。 
+一件稀有的顶级铠甲, 由意大利盔甲师匠心 —堪称真正的艺术品。 它极其轻便, 能有效防御子弹和刀剑的攻击。 
 ~
 所有受到的伤害减少30%. 
 100%几率防止暴击。 
@@ -834,7 +834,7 @@ itmdescr_suit1
 itmname_suit2 {英国制服}
 itmdescr_suit2
 {
-黑卫队的军官制服—— 这是一支为英国王室服务的苏格兰 高地精英军团。 
+黑卫队的军官制服 —这是一支为英国王室服务的苏格兰 高地精英军团。 
 (-1 反应, -15 潜行, +15 领导力)
 }
 
@@ -862,7 +862,7 @@ itmdescr_suit4
 itmname_suit5 {舰队司令制服}
 itmdescr_suit5
 {
-法国皇家海军高级军官的制服—— 堪称杰作。 
+法国皇家海军高级军官的制服 —堪称杰作。 
 ~
 任何近战武器造成的伤害减少10%. 
 30%的时间防止暴击伤害。 
@@ -908,7 +908,7 @@ itmdescr_hat2
 itmname_hat3 {水手三角帽}
 itmdescr_hat3
 {
-水手中广泛使用的相当普通的三角 帽。 根据古老的海事传统, 这顶三角帽授予通过三次严峻考验 的船员—— 在风暴中航行、 第一次海战和之后修补漏洞。 
+水手中广泛使用的相当普通的三角 帽。 根据古老的海事传统, 这顶三角帽授予通过三次严峻考验 的船员 —在风暴中航行、 第一次海战和之后修补漏洞。 
 ~
 航海、 精准度和维修的经验获得增加10%. 
 }
@@ -969,28 +969,28 @@ itmname_spyglass1	{廉价望远镜}
 itmdescr_spyglass1
 {
 通过这架旧望远镜看东西就像试图 透过廉价旅馆的脏窗户窥视。 没有自尊的船长会带着这样的垃圾 死去。 
-允许看到船只的类型。 名称。 速度和加农炮数量。 快速旅行距离+250码。 
+允你许看到船只的类型、 名称、 速度和加农炮数量。 快速旅行距离+250码。 
 }
 
 itmname_spyglass2	{普通望远镜}
 itmdescr_spyglass2
 {
 通过这架旧望远镜看东西就像试图 透过廉价旅馆的脏窗户窥视。 没有自尊的船长会带着这样的垃圾 死去。 
-允许你看到船只的类型。 名称。 速度和加农炮数量。 快速旅行距离+250码。 
+允许你看到船只的类型、 名称、 速度和加农炮数量。 快速旅行距离+250码。 
 }
 
 itmname_spyglass3	{优质望远镜}
 itmdescr_spyglass3
 {
 带有抛光镜片的望远镜。 
-这种合乎标准的光学仪器允许你看 到船只的类型。 名称。 速度。 加农炮数量和口径。 船帆损坏情况, 以及炮台上是否有火枪手。 快速旅行距离+750码。 
+这种合乎标准的光学仪器允许你看 到船只的类型、 名称、 速度、 加农炮数量和口径。 船帆损坏情况, 以及炮台上是否有火枪手。 快速旅行距离+750码。 
 }
 
 itmname_spyglass4	{优秀望远镜}
 itmdescr_spyglass4
 {
 带有抛光"绿柱石"镜片的望远镜。 只有定制光学仪器可能更好。 
-允许你看到船只的类型。 名称。 速度。 加农炮数量。 口径和弹药类型。 船只损坏情况。 船员数量, 以及敌兵中火枪手的数量。 快速旅行距离+1000码。 
+允许你看到船只的类型、 名称、 速度、 加农炮数量、 口径和弹药类型。 船只损坏情况、 船员数量, 以及敌兵中火枪手的数量。 快速旅行距离+1000码。 
 }
 
 itmname_spyglass5	{航海望远镜}
@@ -1186,10 +1186,10 @@ itmdescr_talisman14
 无惩罚, 无激活限制。 
 }
 
-itmname_talisman15	{守护符"黑标记"}
+itmname_talisman15	{守护符"黑色印记"}
 itmdescr_talisman15
 {
-黑标记的携带者立即被迷信。 传说和谣言包围, 这使舰队力量增加15%. 由"铁侧"克伦威尔的骑兵头巾制成。 
+黑色印记的携带者立即被迷信、 传说和谣言包围, 这使舰队力量增加15%. 由"铁骑军" Cromwell 的骑兵的领巾制成。 
 ~
 无惩罚, 可多次激活。 
 }
@@ -1206,8 +1206,8 @@ itmdescr_talisman16
 itmname_talisman17	{守护符"慈悲经"}
 itmdescr_talisman17
 {
-一本圣经实例, 对其主人非常个人化, 几乎像一本日记。 许多人将圣经作为灯塔和指南携带 , 但这本书是字面意义上的荣誉准则。 
-减少船员和船长5%的伤害, 在"神圣慈悲号"上, 它将防御技能增加10. 
+一段圣经经文, 这对它的主人而言极具个人意义, 几乎像一本日记。 许多人将圣经作为灯塔和指南携带, 但这本书是字面意义上的荣誉准则。 
+减少船员和船长5%的伤害, 在"Holy Mercy (圣慈悲号)"上, 它将防御技能增加10. 
 要解锁此守护符的潜力, 必须走正义之路。 
 ~
 无惩罚, 无激活限制。 
@@ -1218,11 +1218,11 @@ talisman17_quests{教堂任务: #dQBonus# / 5}
 talisman17_questsNoBonus{教堂任务: 0 / 5}
 
 
-itmname_talisman18	{守护符"布莱克伍德的宪章"}
+itmname_talisman18	{守护符"布莱克伍德的章程"}
 itmdescr_talisman18
 {
-阿尔伯特.布莱克伍德的个人宪章, 详细说明了"贝丝女士号"的结构。 射手位置和"海狐"的战斗战术。 
-有一个单独的部分专门讨论寻宝和 用找到的财富奖励熟练射手。 
+Albert Blackwood的个人章程, 详细说明了"Lady Beth (贝丝夫人号)"的结、 射手位置和"海狐"的作战战术。 
+另有一个章节专门讲述寻宝相关以 及用找到的财富奖励熟练射手。 
 每找到一个宝藏, 船员的滑膛枪齐射威力增强1%, 霰弹枪伤害增加2%. 
 ~
 无惩罚, 无激活限制。 
@@ -1235,7 +1235,7 @@ talisman18_NoBonus{找到的宝藏: 0 / 10}
 itmname_talisman19	{守护符"尤里克的头骨"}
 itmdescr_talisman19
 {
-"纪念品号"船长莫蒂默.格林的头骨, 他从未完全意识到自己的死亡。 你认识他, #sName#。 
+"Memento (纪念品号)"船长 Mortimer Grim 的头骨, 他从未完全意识到自己的死亡。 你认识他, #sName#。 
 死者教导生者, 这件神器会适应主人的欲望。 
 在你的物品栏中时, 它使所有军官不朽。 
 ~
@@ -1244,7 +1244,7 @@ itmdescr_talisman19
 
 talisman19_InSlot
 {
-一艘船同时存在于面纱的两侧。 木材曾是活的, 然后变成死的来为活人服务。 "纪念品号"船长的头骨提醒任何船只死亡不存 在, 你必须战斗到底。 
+一艘船同时存在于帷幕的两侧。 木材曾是活物, 然后变成死物来为活人服务。 "Memento (纪念品号)"船长的头骨提醒任何船只死亡不存 在, 你必须战斗到底。 
 ~
 每损失2%船体, 船只速度和加农炮伤害分别增加0.75%和0.5%. 
 ~
@@ -1253,7 +1253,7 @@ talisman19_InSlot
 
 ; ==================================================================================================================== 护身符
 
-itmname_totem_01 {驱邪符"铸铁喉咙"}
+itmname_totem_01 {幸运符"铸铁之咙"}
 itmdescr_totem_01
 {
 一个被附魔的杯子, 防止醉酒时昏厥。 治疗药水不会损害活力。 
@@ -1263,7 +1263,7 @@ itmdescr_totem_01
 使用30天后或移除时消失。 
 }
 
-itmname_totem_02 {驱邪符"脊柱杀手"}
+itmname_totem_02 {幸运符"脊柱穿刺者"}
 itmdescr_totem_02
 {
 降低哗变几率。 
@@ -1273,7 +1273,7 @@ itmdescr_totem_02
 使用90天后或移除时消失。 
 }
 
-itmname_totem_03 {驱邪符"丘比特的香膏"}
+itmname_totem_03 {幸运符"丘比特香膏"}
 itmdescr_totem_03
 {
 使调情的积极效果翻倍。 
@@ -1283,16 +1283,16 @@ itmdescr_totem_03
 使用30天后或移除时消失。 
 }
 
-itmname_totem_04 {驱邪符"密耳弥冬"}
+itmname_totem_04 {幸运符"密耳弥冬"}
 itmdescr_totem_04
 {
-固定当前军官的忠诚度水平并防止 其变化。 
+锁定当前军官的忠诚度等级并防止 其变化。 
 ~
 无惩罚, 只能激活一次。 
 仅对玩家有效。 
 使用90天后或移除时消失。 
 }
-itmname_totem_05 {驱邪符"铁腹"}
+itmname_totem_05 {幸运符"铁腹"}
 itmdescr_totem_05
 {
 使佩戴者在战斗中不可阻挡, 并防止你的攻击被打断。 
@@ -1300,7 +1300,7 @@ itmdescr_totem_05
 无惩罚, 只能激活一次。 
 使用360天后或移除时消失。 }
 
-itmname_totem_06 {驱邪符"大力士"}
+itmname_totem_06 {幸运符"大力士"}
 itmdescr_totem_06
 {
 允许携带超重物品而无任何负面影 响。 物品栏容量增加10%. 
@@ -1309,17 +1309,17 @@ itmdescr_totem_06
 使用120天后或移除时消失。 
 }
 
-itmname_totem_07 {驱邪符"吟游诗人"}
+itmname_totem_07 {幸运符"吟游诗人"}
 itmdescr_totem_07
 {
-使志愿者以更低价格加入你的船员 , 无论你可能有任何未清债务。 
+即便你存在未清偿的债务，志愿者也会以更低的代价加入你的 船员队伍。
 ~
 无惩罚, 只能激活一次。 
 仅对玩家有效。 
 使用45天后或移除时消失。 
 }
 
-itmname_totem_08 {驱邪符"火焰之主"}
+itmname_totem_08 {幸运符"火焰之主"}
 itmdescr_totem_08
 {
 使炮手的训练速度翻倍。 
@@ -1329,7 +1329,7 @@ itmdescr_totem_08
 使用45天后或移除时消失。 
 }
 
-itmname_totem_09 {驱邪符"阿古津"}
+itmname_totem_09 {幸运符"阿古津"}
 itmdescr_totem_09
 {
 使水手的训练速度翻倍。 
@@ -1339,7 +1339,7 @@ itmdescr_totem_09
 使用45天后或移除时消失。 
 }
 
-itmname_totem_10 {驱邪符"寡妇制造者"}
+itmname_totem_10 {幸运符"寡妇制造者"}
 itmdescr_totem_10
 {
 使登船队的训练速度翻倍。 
@@ -1349,7 +1349,7 @@ itmdescr_totem_10
 使用45天后或移除时消失。 
 }
 
-itmname_totem_11 {驱邪符"食尸鬼"}
+itmname_totem_11 {幸运符"食尸鬼"}
 itmdescr_totem_11
 {
 每次直接命中时窃取对手的能量。 
@@ -1358,7 +1358,7 @@ itmdescr_totem_11
 使用45天后或移除时消失。 
 }
 
-itmname_totem_12 {驱邪符"美洲虎之子"}
+itmname_totem_12 {幸运符"美洲虎之子"}
 itmdescr_totem_12
 {
 夜间你和你船上火器的精准度翻倍。 
@@ -1368,7 +1368,7 @@ itmdescr_totem_12
 使用90天后或移除时消失。 
 }
 
-itmname_totem_13 {驱邪符"小丑"}
+itmname_totem_13 {幸运符"小丑"}
 itmdescr_totem_13
 {
 增加赌博获胜的几率。 
@@ -1426,7 +1426,7 @@ itmdescr_indian_5
 将被登船的风险降低10%. 
 增加10%维修时间。 
 只能激活一次。 
-对船长。 同伴和水手长有效。 
+对船长、 同伴和水手长有效。 
 使用70天后或移除时消失。 
 }
 
@@ -1436,7 +1436,7 @@ itmdescr_indian_6
 登船前敌人将因滑膛枪齐射多承受 10%伤害。 
 增加10%维修时间。 
 只能激活一次。 
-对船长。 同伴和水手长有效。 
+对船长、 同伴和水手长有效。 
 使用70天后或移除时消失。 
 }
 
@@ -1456,7 +1456,7 @@ itmdescr_indian_8
 船只加农炮造成5%更多伤害。 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和炮手有效。 
+对船长、 同伴和炮手有效。 
 使用50天后或移除时消失。 
 }
 
@@ -1466,7 +1466,7 @@ itmdescr_indian_9
 船只加农炮获得10%精准度加成。 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和炮手有效。 
+对船长、 同伴和炮手有效。 
 使用50天后或移除时消失。 
 }
 
@@ -1483,7 +1483,7 @@ itmdescr_indian_10
 itmname_indian_11 {护身符"恩戈姆博面具"}
 itmdescr_indian_11
 {
-增加海上欺骗的几率15%. 
+海上欺骗的几率增加15%. 
 ~
 无惩罚, 只能激活一次。 
 对任何角色有效。 
@@ -1519,7 +1519,7 @@ itmdescr_amulet_3
 70天后或移除时消失。 
 }
 
-itmname_amulet_4 {护身符"埃尔.特罗佐"}
+itmname_amulet_4 {护身符"埃·特罗佐"}
 itmdescr_amulet_4
 {
 敌人重击造成的伤害减少15%. 
@@ -1535,14 +1535,14 @@ itmdescr_amulet_5
 加农炮装填速度加快15%. 
 船只机动性降低10%. 
 只能激活一次。 
-对船长。 同伴和炮手有效。 
+对船长、 同伴和炮手有效。 
 使用70天后或移除时消失。 
 }
 
 itmname_amulet_6 {护身符"麦当娜"}
 itmdescr_amulet_6
 {
-加速治疗过程15%, 显著减少健康下降。 
+治疗过程加速15%, 显著减少健康下降。 
 角色潜行减少一半。 
 只能激活一次。 
 对任何角色有效。 
@@ -1565,7 +1565,7 @@ itmdescr_amulet_8
 船体伤害减少5%. 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和木匠有效。 
+对船长、 同伴和木匠有效。 
 使用50天后或移除时消失。 
 }
 
@@ -1575,7 +1575,7 @@ itmdescr_amulet_9
 船帆伤害减少5%. 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和木匠有效。 
+对船长、 同伴和木匠有效。 
 使用50天后或移除时消失。 
 }
 
@@ -1585,7 +1585,7 @@ itmdescr_amulet_10
 船员伤害减少5%. 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和医师有效。 
+对船长、 同伴和医师有效。 
 使用50天后或移除时消失。 
 }
 
@@ -1595,7 +1595,7 @@ itmdescr_amulet_11
 船员因滑膛枪齐射受到的伤害减少 5%. 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和水手长有效。 
+对船长、 同伴和水手长有效。 
 使用50天后或移除时消失。 
 }
 
@@ -1605,7 +1605,7 @@ itmdescr_obereg_1
 +10维修。 更有效地使用木板。 允许在公海修理船只。 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和木匠有效。 
+对船长、 同伴和木匠有效。 
 使用45天后或移除时消失。 
 }
 
@@ -1615,7 +1615,7 @@ itmdescr_obereg_2
 +10维修。 更有效地使用帆布。 允许在公海修理船只。 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和木匠有效。 
+对船长、 同伴和木匠有效。 
 使用45天后或移除时消失。 
 }
 
@@ -1664,7 +1664,7 @@ itmdescr_obereg_7
 +10航海。 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和导航员有效。 
+对船长、 同伴和领航员有效。 
 使用30天后或移除时消失。 
 }
 
@@ -1674,7 +1674,7 @@ itmdescr_obereg_8
 角色交易技能增加15%. 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和事务长有效。 
+对船长、 同伴和事务长有效。 
 使用30天后或移除时消失。 
 }
 
@@ -1684,7 +1684,7 @@ itmdescr_obereg_9
 船只速度增加10%. 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和导航员有效。 
+对船长、 同伴和领航员有效。 
 使用30天后或移除时消失。 
 }
 
@@ -1694,17 +1694,17 @@ itmdescr_obereg_10
 船只机动性增加15%. 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和导航员有效。 
+对船长、 同伴和领航员有效。 
 使用45天后或移除时消失。 
 }
 
 itmname_obereg_11 {护身符"朝圣者"}
 itmdescr_obereg_11
 {
-改变船只航向角5%, 允许你更靠近风向航行
+改变船只航向角5%, 能让你更贴近风向航行
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和导航员有效。 
+对船长、 同伴和领航员有效。 
 使用30天后或移除时消失。 
 }
 
@@ -1714,7 +1714,7 @@ itmdescr_rat_poison
 暂时阻止老鼠破坏你的货物。 
 ~
 无惩罚, 只能激活一次。 
-对船长。 同伴和事务长有效。 
+对船长、 同伴和事务长有效。 
 使用60天后或移除时消失。 
 }
 
@@ -1728,13 +1728,13 @@ itmdescr_rat_poison
 itmname_gold	{比索}
 itmdescr_gold
 {
-西班牙银元, 由新世界的银矿铸造, 是第一种世界货币, 到处都被接受—— 但在新世界尤其如此。 从历史上看, 比索可以分成八个雷亚尔, 因此它们的俗称是: "八片"。 
+西班牙银元, 由新世界的银矿铸造, 是第一种世界货币, 到处都被接受 —但在新世界尤其如此。 从历史上看, 比索可以分成八个雷亚尔, 因此它们的俗称是: "八片"。 
 }
 
 itmname_gold_dublon	{金达布隆}
 itmdescr_gold_dublon
 {
-西班牙双埃斯库多硬币, 由新世界开采的纯金铸造。 "双币"或"达布隆"在欧洲通常价值100比索, 但在世界边缘的这里不一定。 在加勒比海, 达布隆被认为是稀有和珍贵的商品。 一个装满达布隆的箱子是每个海盗 的梦想。 
+西班牙双埃斯库多金币, 由新世界开采的纯金铸造, 俗称"双币"或"达布隆", 在欧洲通常价值100比索, 但在世界边缘的这里不一定。 在加勒比海, 达布隆被认为是稀有和珍贵的商品。 一个装满达布隆的箱子是每个海盗 的梦想。 
 }
 
 itmname_chest	{箱子}
@@ -1752,25 +1752,25 @@ itmdescr_chest_open
 itmname_icollection	{宝藏}
 itmdescr_icollection
 {
-一套多样的昂贵黄金物品, 带有宝石, 对任何人都很珍贵。 
+一套多样的昂贵金器, 镶嵌着宝石, 对任何人来说都很珍贵。 
 }
 
-itmname_purse1	{钱包}
+itmname_purse1	{钱袋}
 itmdescr_purse1
 {
 一个里面有几枚金币的钱包。 
 }
 
-itmname_purse2	{沉重的钱包}
+itmname_purse2	{沉重的钱袋}
 itmdescr_purse2
 {
 里面有大量达布隆的布钱包。 
 }
 
-itmname_purse3	{塞得满满的钱包}
+itmname_purse3	{塞得满满的钱袋}
 itmdescr_purse3
 {
-一个慷慨的皮钱包, 装满了金币。 
+一个厚实的皮钱包, 装满了金币。 
 }
 
 ; ==================================================================================================================== 宝石。 金属
@@ -1779,13 +1779,13 @@ itmdescr_purse3
 itmname_jewelry1	{紫水晶}
 itmdescr_jewelry1
 {
-来自累西腓矿山的宝石。 老水手说它能保护人免受酗酒之苦 , 但如果他已经喝了一杯—— 也能免受宿醉之苦。 
+来自累西腓矿区的宝石。 老水手们说, 它能让人免于酗酒, 即便已经喝得酩酊大醉, 也能让人不宿醉。
 }
 
 itmname_jewelry2	{钻石}
 itmdescr_jewelry2
 {
-来自南美葡萄牙海岸矿山的钻石将 帮助一个正派的人从商, 但对小偷。 凶手和流氓来说只会带来灾难。 
+来自南美葡萄牙海岸矿山的钻石将 帮助一个正派的人从商, 但对小偷、 凶手和流氓来说只会带来灾难。 
 }
 
 itmname_jewelry3	{红宝石}
@@ -1794,10 +1794,10 @@ itmdescr_jewelry3
 在加勒比海是罕见的发现。 唯一在稀有性和硬度上能与钻石竞 争的宝石。 
 }
 
-itmname_jewelry4	{祖母绿}
+itmname_jewelry4	{翡翠}
 itmdescr_jewelry4
 {
-来自著名的哥伦比亚矿山的祖母绿。 没有欧洲或非洲的宝石能在纯度上 与它竞争。 
+来自著名的哥伦比亚矿山的翡翠。 没有欧洲或非洲的宝石能在纯度上 与它竞争。 
 }
 
 itmname_jewelry5	{金块}
@@ -1827,19 +1827,19 @@ itmdescr_jewelry8
 itmname_jewelry9	{烟水晶}
 itmdescr_jewelry9
 {
-炼金术士在寻找贤者之石的过程中 经常使用它。 这种哀悼石建立与另一个世界的联 系, 并显著强调角色的特质—— 无论是好是坏。 
+炼金术士在寻找贤者之石的过程中 经常使用它。 这种哀悼石建立与另一个世界的联 系, 并显著强调角色的特质 —无论是好是坏。 
 }
 
 itmname_jewelry10	{铂锭}
 itmdescr_jewelry10
 {
-一块纯秘鲁铂锭。 西班牙人低估了这种价值连城的金 属, 因为它的熔点高, 而且通常作为他们开采的黄金中的 "杂质"被发现, 因此得名—— "小银"。 
+一块纯秘鲁铂锭。 西班牙人低估了这种价值连城的金 属, 因为它的熔点高, 而且通常作为他们开采的黄金中的 "杂质"被发现, 因此得名 —"小银"。 
 }
 
 itmname_jewelry11	{陨石}
 itmdescr_jewelry11
 {
-罕见的幸运一击! 一位来自外太空的客人, 设法在地球的稠密大气层中幸存下 来。 
+罕见的幸运一击! 一位来自外太空的客人, 设法在地球的稠密大气层中幸存了 下来。 
 }
 
 itmname_jewelry12	{铜锭}
@@ -1851,7 +1851,7 @@ itmdescr_jewelry12
 itmname_jewelry13	{铁锭}
 itmdescr_jewelry13
 {
-一块铁锭。 刀或马蹄铁的常见开端。 
+一块铁锭。 是打造一把刀或一个马蹄铁的常见 原材料。
 }
 
 itmname_jewelry14	{火蛋白石}
@@ -1863,7 +1863,7 @@ itmdescr_jewelry14
 itmname_jewelry15	{海蓝宝石}
 itmdescr_jewelry15
 {
-水手们相信这种海水颜色的宝石可 以平息风暴并在海战中带来胜利。 它在金镶嵌中也看起来非常漂亮。 
+水手们相信这种海水颜色的宝石可 以平息风暴并在海战中带来胜利。 将其镶嵌在黄金上, 看起来也非常漂亮。 
 }
 	
 itmname_jewelry16	{蛋白石}
@@ -1875,7 +1875,7 @@ itmdescr_jewelry16
 itmname_jewelry17	{风信子石}
 itmdescr_jewelry17
 {
-血红色的锆石是不幸心碎爱情的石 头。 老妇人声称这块石头也帮助其主人 发展表演天赋。 
+一颗血红色的锆石, 是象征着令人心碎的不幸爱情的宝 石。 老妇人声称, 这颗宝石还能帮助它的主人培养表 演天赋。
 }
 	
 itmname_jewelry18	{金绿玉}
@@ -1905,7 +1905,7 @@ itmdescr_jewelry21
 itmname_jewelry22	{玉}
 itmdescr_jewelry22
 {
-玉是高贵战士的石头。 在欧洲人到来之前, 阿兹特克和玛雅人认为玉是财富的 真正象征—— 不是银或金。 
+玉是高贵战士的石头。 在欧洲人到来之前, 阿兹特克和玛雅人认为玉是财富的 真正象征 —而不是白银或黄金。 
 }
 
 itmname_jewelry23	{金绿宝石}
@@ -1919,19 +1919,19 @@ itmdescr_jewelry23
 itmname_jewelry24	{带浮雕的吊坠}
 itmdescr_jewelry24
 {
-一个极其美丽的带浮雕。 珍珠和钻石的吊坠。 作品的复杂性导致人们认为这是由 一位著名的欧洲珠宝商制作的。 加勒比海这里还没有如此高级的大 师。 
+一个极其美丽的带浮雕、 珍珠和钻石的吊坠。 作品的复杂性导致人们认为这是由 一位著名的欧洲珠宝商制作的。 加勒比海这里还没有如此高级的大 师。 
 }
 
 itmname_jewelry25	{带浮雕的耳环}
 itmdescr_jewelry25
 {
-带浮雕。 珍珠和钻石的美丽耳环。 作品的复杂性导致人们认为这是由 一位著名的欧洲珠宝商制作的。 加勒比海这里还没有如此高级的大 师。 
+带浮雕、 珍珠和钻石的美丽耳环。 作品的复杂性导致人们认为这是由 一位著名的欧洲珠宝商制作的。 加勒比海这里还没有如此高级的大 师。 
 }
 
 itmname_jewelry26	{带浮雕的手镯}
 itmdescr_jewelry26
 {
-一个极其美丽的带浮雕。 珍珠和钻石的手镯。 作品的复杂性导致人们认为这是由 一位著名的欧洲珠宝商制作的。 加勒比海这里还没有如此高级的大 师。 
+一个极其美丽的带浮雕、 珍珠和钻石的手镯。 作品的复杂性导致人们认为这是由 一位著名的欧洲珠宝商制作的。 加勒比海这里还没有如此高级的大 师。 
 }
 
 itmname_jewelry27	{红宝石戒指}
@@ -1955,7 +1955,7 @@ itmdescr_jewelry29
 itmname_jewelry30	{黄金仪式刀}
 itmdescr_jewelry30
 {
-一把偶然逃脱被西班牙人熔化的阿 兹特克黄金仪式刀。 也许发现它的征服者和你一样, 对这位古代大师的令人钦佩的作品 着迷。 
+一把幸运地避免被西班牙人熔化的 阿兹特克黄金仪式刀。 也许发现它的征服者和你一样, 对这位古代大师的令人钦佩的作品 着迷。 
 }
 
 itmname_jewelry31	{黄金丧葬面具}
@@ -1985,7 +1985,7 @@ itmdescr_jewelry34
 itmname_jewelry35	{黄金香炉}
 itmdescr_jewelry35
 {
-一个由纯金制成的沉重香炉。 在殖民地教区, 这样美丽的容器会显得很不合适。 
+一个由纯金制成的沉重香炉。 在殖民地教区, 这样美丽的容器会显得格格不入。 
 }
 
 itmname_jewelry36	{珍贵戒指}
@@ -2003,7 +2003,7 @@ itmdescr_jewelry37
 itmname_jewelry38	{珍贵指环}
 itmdescr_jewelry38
 {
-一枚镶嵌着大钻石和祖母绿的金戒 指。 这件独特的珠宝一定价值不菲。 它将成为适合皇室的礼物。 
+一枚镶嵌着大钻石和翡翠的金戒 指。 这件独特的珠宝一定价值不菲。 它将成为适合皇室的礼物。 
 }
 
 itmname_jewelry39	{珍贵吊坠}
@@ -2012,10 +2012,10 @@ itmdescr_jewelry39
 一个用钻石和珐琅上的古董主题绘 画装饰的金吊坠。 这件独特的珠宝一定价值不菲。 它将成为适合皇室的礼物。 
 }
 
-itmname_jewelry40	{祖母绿戒指}
+itmname_jewelry40	{翡翠戒指}
 itmdescr_jewelry40
 {
-一枚镶嵌着大颗未加工祖母绿的巨 大金戒指。 一件有些粗糙但仍然昂贵的产品。 当地珠宝商可能把它作为对重要帮 助的丰厚报酬制作。 
+一枚镶嵌着大颗未加工翡翠的巨 大金戒指。 一件有些粗糙但仍然昂贵的产品。 当地珠宝商可能把它作为对重要帮 助的丰厚报酬制作。 
 }
 
 itmname_jewelry41	{红宝石指环}
@@ -2024,13 +2024,13 @@ itmdescr_jewelry41
 一枚镶嵌着红宝石的美丽金戒指可 以让一个品味朴素的女孩非常开心。 
 }
 
-itmname_jewelry42	{祖母绿珠子}
+itmname_jewelry42	{翡翠珠串}
 itmdescr_jewelry42
 {
-由未通过运往西班牙质量检查的凸 圆形宝石制成的珠子, 甚至可以装饰富有的女士的胸部。 
+由那些因未通过质量检测而未能运 往西班牙的弧面宝石制成的珠子, 即便佩戴在富有的女士胸前, 也同样相得益彰。
 }
 
-itmname_jewelry43	{镶宝石的吊坠}
+itmname_jewelry43	{宝石吊坠}
 itmdescr_jewelry43
 {
 一个用大颗未切割宝石装饰的金吊 坠, 对于一个没有品味或珠宝工艺知识 的粗俗男人来说可能看起来像一件 杰作。 
@@ -2066,7 +2066,7 @@ itmdescr_jewelry48
 一枚带有花卉图案的简单银戒指。 总比没有好。 
 }
 
-itmname_jewelry49	{玉珠}
+itmname_jewelry49	{玉珠串}
 itmdescr_jewelry49
 {
 玉珠是印第安娘们的梦想, 她们很少得到部落男性想要的关注。 
@@ -2081,7 +2081,7 @@ itmdescr_jewelry50
 itmname_jewelry51	{比索耳环}
 itmdescr_jewelry51
 {
-用穿孔的银比索制成的即兴耳环。 给佩戴者带来海盗的气质。 另外, 你可以用它在酒馆付账! 
+用穿孔的银比索即兴制成的耳环。 给佩戴者带来海盗的气质。 另外, 你可以用它在酒馆付账! 
 }
 
 itmname_jewelry52	{大珍珠}
@@ -2099,7 +2099,7 @@ itmdescr_jewelry53
 itmname_meteorite	{大陨石碎片}
 itmdescr_meteorite
 {
-罕见的幸运一击! 一位来自太空的客人, 设法在地球的稠密大气层中幸存下 来。 它很大而且很重... 
+罕见的幸运一击! 一位来自太空的客人, 设法在地球的稠密大气层中幸存了 下来。 它很大而且很重... 
 }
 
 ; ====================================================================================================================================
@@ -2107,29 +2107,29 @@ itmdescr_meteorite
 ; ====================================================================================================================================
 
 
-; ========================================================================================================================== 专利
+; ========================================================================================================================== 许可证
 
-itmname_patent_england	{英国专利}
+itmname_patent_england	{英国私掠许可证}
 itmdescr_patent_england
 {
-由护国公殖民办公室颁发的专利, 确认你为英国服务。 这使你承担与保护国家利益和按规 定维护船只相关的某些义务。 
+由护国公殖民办公室颁发的私掠许 可证, 确认你为英国服务。 这使你承担与保护国家利益和按规 定维护船只相关的某些义务。 
 }
 
-itmname_patent_holland	{荷兰专利}
+itmname_patent_holland	{荷兰私掠许可证}
 itmdescr_patent_holland
 {
-由荷兰西印度公司董事会颁发的专 利, 确认你为荷兰联合省服务。 这使你承担与保护国家利益和按规 定维护船只相关的某些义务。 
+由荷兰西印度公司董事会颁发的私掠 许可证, 确认你为荷兰联合省服务。 这使你承担与保护国家利益和按规 定维护船只相关的某些义务。 
 }
 
-itmname_patent_france	{法国专利}
+itmname_patent_france	{法国私掠许可证}
 itmdescr_patent_france
 {
-由路易十四陛下殖民办公室颁发的 专利, 确认你为法国服务。 这使你承担与保护国家利益和按规 定维护船只相关的某些义务。 
+由路易十四陛下殖民办公室颁发的 私掠许可证, 确认你为法国服务。 这使你承担与保护国家利益和按规 定维护船只相关的某些义务。 
 }
-itmname_patent_spain	{西班牙专利}
+itmname_patent_spain	{西班牙私掠许可证}
 itmdescr_patent_spain
 {
-由菲利普四世陛下殖民办公室颁发 的专利, 确认你为西班牙服务。 这使你承担与保护国家利益和按规 定维护船只相关的某些义务。 
+由菲利普四世陛下殖民办公室颁发 的私掠许可证, 确认你为西班牙服务。 这使你承担与保护国家利益和按规 定维护船只相关的某些义务。 
 }
 
 itmname_map_bad	{廉价地图}
@@ -2175,19 +2175,19 @@ itmdescr_MapsAtlas
 itmname_Map_Best	{精良地图}
 itmdescr_Map_Best
 {
-传奇英国冒险家弗朗西斯.德雷克爵士的一份极其精确的地图 复制品。 上面几乎包含了老水手可能需要的 所有信息。 
+传奇英国冒险家 Francis Drake 爵士的一份极其精确的地图 复制品。 上面几乎包含了老水手可能需要的 所有信息。 
 }
 
 itmname_map_normal	{普通地图}
 itmdescr_map_normal
 {
-此地图由一群商人拼凑而成。 主要城市名称和岛屿精确坐标, 是普通船长在加勒比海进行贸易所 需的全部信息。 
+此地图由一群商人拼凑而成。 标注了主要城市名称和岛屿精确坐 标, 是普通船长在加勒比海进行贸易所 需的全部信息。 
 }
 
-itmname_map_beliz	{贝利兹地图}
+itmname_map_beliz	{伯利兹地图}
 itmdescr_map_beliz
 {
-一幅描绘贝利兹镇及周边地区的地 图。 
+一幅描绘伯利兹镇及周边地区的地 图。 
 }
 
 itmname_map_santa	{布鲁维尔德地图}
@@ -2235,7 +2235,7 @@ itmdescr_map_barbados
 itmname_map_cayman	{开曼地图}
 itmdescr_map_cayman
 {
-一幅无人居住的开曼群岛地图。 
+一幅无人居住的开曼群岛的地图。 
 }
 
 itmname_map_Curacao	{库拉索地图}
@@ -2337,165 +2337,165 @@ itmdescr_map_full
 itmname_map_part1	{藏宝图碎片}
 itmdescr_map_part1
 {
-藏宝图的一部分。 要弄清楚它指向哪里, 必须找到地图的其余碎片。 
+藏宝图的一部分。 要弄清楚它指向哪里, 必须找到其余的地图碎片。 
 }
 
 itmname_map_part2	{藏宝图碎片}
 itmdescr_map_part2
 {
-藏宝图的一部分。 要弄清楚它指向哪里, 必须找到地图的其余碎片。 
+藏宝图的一部分。 要弄清楚它指向哪里, 必须找到其余的地图碎片。 
 }
 
-itmname_map_LSC	{废弃船之城地图}
+itmname_map_LSC	{弃船之城地图}
 itmdescr_map_LSC
 {
-任何初到废弃船之城的人没有这样 一幅地图都会彻底迷路。 
+任何初到弃船之城的人没有这样 一幅地图都会彻底迷路。 
 }
 
 ;============================================ 舰队司令maps ============================================
 
-itmname_A_map_beliz	{贝利兹精良地图}
+itmname_A_map_beliz	{伯利兹精良地图}
 itmdescr_A_map_beliz
 {
-一幅极其精确的贝利兹周边地区地 图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的伯利兹周边地区地 图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_santa	{布鲁维尔德精良地图}
 itmdescr_A_map_santa
 {
-一幅极其精确的布鲁维尔德周边地区地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的布鲁维尔德周边地区地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_bermudas	{宝藏岛精良地图}
 itmdescr_A_map_bermudas
 {
-一幅极其精确的宝藏岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的宝藏岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_jam	{牙买加精良地图}
 itmdescr_A_map_jam
 {
-一幅极其精确的牙买加岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的牙买加岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_cuba	{古巴精良地图}
 itmdescr_A_map_cuba
 {
-一幅极其精确的古巴岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的古巴岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_hisp	{伊斯帕尼奥拉精良地图}
 itmdescr_A_map_hisp
 {
-一幅极其精确的伊斯帕尼奥拉岛地 图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的伊斯帕尼奥拉岛地 图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_antigua	{安提瓜精良地图}
 itmdescr_A_map_antigua
 {
-一幅极其精确的安提瓜岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的安提瓜岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_barbados	{巴巴多斯精良地图}
 itmdescr_A_map_barbados
 {
-一幅极其精确的巴巴多斯岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的巴巴多斯岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_cayman	{开曼精良地图}
 itmdescr_A_map_cayman
 {
-一幅极其精确的开曼岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的开曼岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_Curacao	{库拉索精良地图}
 itmdescr_A_map_Curacao
 {
-一幅极其精确的库拉索岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的库拉索岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_guad	{瓜德罗普精良地图}
 itmdescr_A_map_guad
 {
-一幅极其精确的瓜德罗普岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的瓜德罗普岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_TORTUGA	{托尔图加精良地图}
 itmdescr_A_map_TORTUGA
 {
-一幅极其精确的托尔图加岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的托尔图加岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_dominica	{多米尼加精良地图}
 itmdescr_A_map_dominica
 {
-一幅极其精确的多米尼加岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的多米尼加岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_martiniqua	{马提尼克精良地图}
 itmdescr_A_map_martiniqua
 {
-一幅极其精确的马提尼克岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的马提尼克岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_trinidad	{特立尼达精良地图}
 itmdescr_A_map_trinidad
 {
-一幅极其精确的特立尼达岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的特立尼达岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_nevis	{圣克里斯托弗精良地图}
 itmdescr_A_map_nevis
 {
-一幅极其精确的圣克里斯托弗岛地 图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的圣克里斯托弗岛地 图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_sm	{圣马丁精良地图}
 itmdescr_A_map_sm
 {
-一幅极其精确的圣马丁岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的圣马丁岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_terks	{特克斯精良地图}
 itmdescr_A_map_terks
 {
-一幅极其精确的特克斯岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的特克斯岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_maine_1	{新格拉纳达中部精良地图}
 itmdescr_A_map_maine_1
 {
-一幅极其精确的新格拉纳达中部地 图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的新格拉纳达中部地 图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_maine_2	{加拉加斯精良地图}
 itmdescr_A_map_maine_2
 {
-一幅极其精确的加拉加斯周边地区 地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的加拉加斯周边地区 地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_panama	{新格拉纳达西部精良地图}
 itmdescr_A_map_panama
 {
-一幅极其精确的巴拿马地峡地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的巴拿马地峡地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_cumana	{库马纳精良地图}
 itmdescr_A_map_cumana
 {
-一幅极其精确的库马纳周边地区地 图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的库马纳周边地区地 图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_puerto	{波多黎各精良地图}
 itmdescr_A_map_puerto
 {
-一幅极其精确的波多黎各岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的波多黎各岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 itmname_A_map_perl	{普罗维登斯精良地图}
 itmdescr_A_map_perl
 {
-一幅极其精确的普罗维登斯岛地图。 背面有制图师的名字 - 何塞.迪奥斯。 
+一幅极其精确的普罗维登斯岛地图。 背面有制图师的名字 - Jose Dios。 
 }
 
 ;=============================================任务地图================================================
@@ -2503,7 +2503,7 @@ itmdescr_A_map_perl
 itmname_map_half_beatriss	{Sharp的地图上半部分}
 itmdescr_map_half_beatriss
 {
-曾属于海伦.麦卡瑟母亲Beatrice的传奇地图的上半部分。 
+曾属于 Helen McArthur 母亲 Beatrice 的传奇地图的上半部分。 
 }
 
 itmname_map_half_blaze	{Sharp的地图下半部分}
@@ -2518,7 +2518,7 @@ itmdescr_map_sharp_full
 通过合并两半部分组成的完整宝藏 岛地图。 持有者拥有该岛的所有权证明。 
 }
 
-itmname_LSC_navigation_map	{弃船之城航行指南}
+itmname_LSC_navigation_map	{弃船之城航路指南}
 itmdescr_LSC_navigation_map
 {
 没有这些海图就不可能抵达正义岛。 
@@ -2528,14 +2528,14 @@ itmdescr_LSC_navigation_map
 itmname_RingCapBook	{'圣卢西亚'号航海日志}
 itmdescr_RingCapBook
 {
-'圣卢西亚'号轻帆船的航海日志。 
+'Santa Lucia (圣卢西亚号) '轻帆船的航海日志。 
 值得一读 - 日志记录一直持续到船只沉没之时。 
 }
 
 itmname_leather_bag	{旅行皮包}
 itmdescr_leather_bag
 {
-一个从妓院逃跑的女孩的手提箱。 里面装有一些钱。 文件。 一件体面的连衣裙和其他一些个人 物品。 可悲的是, 手提箱本身比里面的东西还重。 
+一个从妓院逃跑的女孩的手提箱。 里面装有一些钱、 文件、 一件体面的连衣裙和其他一些个人 物品。 可悲的是, 手提箱本身比里面的东西还重。 
 }
 
 ; ========================================================================================================================== 信件
@@ -2543,34 +2543,34 @@ itmdescr_leather_bag
 itmname_sicretLetter	{秘密急件}
 itmdescr_sicretLetter
 {
-给#sCity#总督的一包文件。 #sMayor#正尽快等待收取。 
+给#sCity#总督的一包文件。 #sMayor# 正焦急等待这份文件。 
 }
 
 itmname_letter_1	{密封信件}
 itmdescr_letter_1
 {
-信件已密封。 要了解其内容必须阅读, 但首先得拆封。 
+信件已密封。 要了解其内容就得阅读它, 但首先得拆封才行。 
 }
 
 itmdescr_letter_1_Fadey
 {
-莫斯科人法迪请求赦免印第安罪犯 蒂金吉图的请愿书。 
+莫斯科人 Fadey 请求赦免印第安罪犯 Tichingitu 的请愿书。 
 }
 
 itmdescr_letter_SharkGoldFleet_1
 {
-来自加拉加斯港务局局长的密封信 函。 必须亲自送达贝洛港港务局局长。 
+来自加拉加斯港务局局长的密封信 函。 必须亲自送达贝洛港港务局局长手 中。 
 }
 
 itmname_letter_2	{密封信件}
 itmdescr_letter_2
 {
-信件已密封。 要了解其内容必须阅读, 但首先得拆封。 
+信件已密封。 要了解其内容就得阅读它, 但首先得拆封才行。 
 }
 
 itmdescr_letter_SharkGoldFleet_2
 {
-密封回复 - 来自贝洛港港务局局长的确认函。 必须亲自送达加拉加斯港务局局长。 
+密封回复 - 来自贝洛港港务局局长的确认函。 必须亲自送达加拉加斯港务局局长 手中。 
 }
 
 itmdescr_letter_2_PortmanLevelUp1
@@ -2596,7 +2596,7 @@ itmdescr_letter_open
 
 itmdescr_letter_open_usurer
 {
-给福尔克.德鲁克的必须信件。 
+给 Folke Deluc 的必须信件。 
 }
 
 itmname_Malyava	{狱中来信}
@@ -2614,20 +2614,20 @@ itmdescr_PostLetters
 itmname_letter_consumption	{给圣何塞指挥官的信}
 itmdescr_letter_consumption
 {
-庄稼大部分已收割 - 这是我们协议的第二部分。 第三部分将按惯例最后处理。 与您做生意很愉快 - 希望不是最后一次。 
+庄稼大部分已收割 - 这是我们协议的第二部分。 第三部分将按惯例最后处理。 与您做生意很愉快 - 希望这不是最后一次。 
 J.
 }
 
 itmname_letter_church	{密封教会信件}
 itmdescr_letter_church
 {
-一封教会急件。 这封信应尽快送达收信人。 
+一封教会急件。 这封信应尽快送达收信人手中。 
 }
 
 itmname_prayer_book	{祈祷书}
 itmdescr_prayer_book
 {
-一堆祈祷书。 它们应尽快送达收信人。 
+一堆祈祷书。 它们应尽快送达收信人手中。 
 }
 
 itmname_ContraPostLetters	{邮政通信}
@@ -2636,10 +2636,10 @@ itmdescr_ContraPostLetters
 密封信件和其他文件。 它们需要尽快送达大人阁下。 
 }
 
-itmname_letter_svenson	{扬.斯文森的信}
+itmname_letter_svenson	{Jan Svenson 的信}
 itmdescr_letter_svenson
 {
-一封扬.斯文森给史蒂夫.多德森-沙克的密封信件。 
+一封 Jan Svenson 给 Steve Dodson-Shark 的密封信件。 
 }
 
 itmname_letter_chad	{已拆封信件}
@@ -2654,37 +2654,37 @@ M.'
 }
 itmdescr_letter_adolf_1
 {
-'马塞洛, 我们约定的金额是你给我的两倍。 这把卡宾枪更值钱, 你知道的。 如果你不把剩下的钱付给我, 舰队司令马上就会知道你在'夏娃号'上与卡珀的交易。 
+'Marchello, 我们约定的金额是你给我的两倍。 这把卡宾枪更值钱, 你知道的。 如果你不把剩下的钱付给我, 舰队司令马上就会知道你在'Eva (夏娃号) '上与 Kapper 的交易。 
 阿道夫.'
 }
 itmdescr_letter_aeva
 {
-没有比'夏娃号'更好的地方了。 最近塞西尔总是和另一个老家伙奥 雷莉待在一起, 或者在酒馆里, 所以货舱是空的。 万一有人突然出现, 喝点酒也没什么不对, 不是吗? 
+没有比'Eva (夏娃号) '更好的地方了。 最近 Cecille 总是和另一个老家伙 Orelie 待在一起, 要么就是泡在酒馆里, 所以货舱是空的。 万一有人突然出现, 喝点酒也没什么不妥, 不是吗? 
 马塞洛。 
 }
 itmdescr_letter_valet
 {
-一封写给大卫.法克曼, 又名'无赖'的有趣信件。 
+一封写给 David Fackman —外号'无赖'的有趣信件。 
 }
 
 itmname_letter_chad_1	{已拆封信件}
 itmdescr_letter_chad_1
 {
-查德.卡珀写给玛丽.卡斯帕的信。 
+Chad Kapper 写给 Mary Casper 的信。 
 }
 itmdescr_letter_facio
 {
-朱塞佩.法西奥的解释信。 
+Giuseppe Fazio 的解释信。 
 }
 itmdescr_letter_axel
 {
-查德, 我按你要求查看了我的库存。 我只找到一桶爱尔兰威士忌。 是一种叫'布什米尔'的陈酿麦芽威士忌。 如果你觉得100杜布隆的价格合适, 就过来拿吧。 
-阿克塞尔。 
+Chad, 我按你要求查看了我的库存。 我只找到一桶爱尔兰威士忌。 是一种叫'布什米尔'的陈酿麦芽威士忌。 如果你觉得100杜布隆的价格合适, 就过来拿吧。 
+Axel。 
 }
 itmdescr_letter_vargant
 {
-如果计划不奏效, 我会在萨博-马蒂拉峡的'百夫长'号上等你和大卫。 你要为我弟弟的事负责。 像听我说话一样听他的话。 甚至别想挑战泰雷克斯本人 - 他会立刻把你们俩砍成碎片。 
-杰克曼。 
+如果计划失败, 我会在萨博-马蒂拉峡的'Centurion (百夫长号)'上等你和 David。 你们要用自己的人头为我弟弟担保。 像听我的话一样听他的话。 千万别想挑战 Tyrex 斯本人 - 他会立刻把你们俩砍成碎片。 
+Jackman。 
 }
 
 itmname_letter_parol	{便条}
@@ -2694,48 +2694,48 @@ itmdescr_letter_parol
 }
 itmdescr_letter_ouster
 {
-老地方不再安全了。 英国人发现了一些事情。 我会在北纬12度1分。 西经60度11分的地方带着货物等你一周。 这次别让我失望! 
+老地方不再安全了。 英国人发现了一些事情。 我会在北纬12度1分, 西经60度11分的地方带着货物等你一周。 这次别让我失望! 
 M.R.
 }
 itmdescr_letter_parol_FMQP
 {
-乌戈给唐.多明戈.阿尔瓦拉特的一封未完成的信。 
+Ugo 给 Don Domingo Albalate 的一封未完成的信。 
 }
 
 itmname_letter_mine	{矿场文件}
 itmdescr_letter_mine
 {
-文件表明, 来自皇家港的某个名叫'劳伦斯.贝尔特罗普爵士'的人正式拥有这座废弃矿场。 
+文件表明, 来自皇家港的某个名叫'Lawrence Beltro 爵士'的人正式拥有这座废弃矿场。 
 }
 
 itmname_letter_jess	{撕页}
 itmdescr_letter_jess
 {
-杰西卡.罗斯日记中的一页。 
+Jessica Rose 日记中的一页。 
 }
 
 itmname_letter_beatriss	{旧信}
 itmdescr_letter_beatriss
 {
-Beatrice Sharp写给她哥哥Blaze的一封信。 
+Beatrice Sharp 写给她哥哥 Blaze 的一封信。 
 }
 
 itmname_letter_baker	{书面证词}
 itmdescr_letter_baker
 {
-前圣琼斯刽子手雷蒙德.贝克的书面证词。 
+前圣琼斯刽子手 Raymond Baker 的书面证词。 
 }
 itmdescr_letter_pinett
 {
 贝特朗.皮内特关于巴斯特尔银行家非法操 作的证词。 
 }
 
-itmname_Cromvel_depeshe	{克伦威尔的急件}
+itmname_Cromvel_depeshe	{Cromwell 的急件}
 itmdescr_Cromvel_depeshe
 {
 ... 命令与护航队会合, 加强护航并将其护送至新尼德兰海 岸。 
 穿木鞋的荷兰人将亲自见识英国海 军的威力。 
-中队应在#sDay#.#sMonth#.#sYear#前抵达北纬18度40分。 西经72度10分
+中队应在 #sDay#.#sMonth#.#sYear# 前抵达北纬18度40分, 西经72度10分
 }
 
 itmname_specialletter	{信件}
@@ -2745,15 +2745,15 @@ itmdescr_specialletter
 }
 itmdescr_specialletter_mishelle
 {
-米歇尔.德.蒙佩尔写给查尔斯.德.莫尔的信。 
+Michel de Monper 写给 Charles de Maure 的信。 
 }
 itmdescr_specialletter_vinsento
 {
-圣地亚哥宗教裁判官文森托神父写 给查尔斯.德.莫尔的信。 
+圣地亚哥宗教裁判官 Vincento 神父写 给 Charles de Maure 的信。 
 }
 itmdescr_specialletter_dichoso
 {
-米格尔.迪乔索写给阿图罗.洛佩斯的信。 
+Miguel Dichoso 写给 Arturo Lopez 的信。 
 }
 
 
@@ -2807,82 +2807,82 @@ itmdescr_recipe_berserker_potion
 包含制备奥美托奇利酊剂所需的所 有信息的配方。 
 }
 
-itmname_recipe_totem_01	{驱邪符配方}
+itmname_recipe_totem_01	{幸运符配方}
 itmdescr_recipe_totem_01
 {
-包含制作驱邪符'铸铁之喉'所需的所有信息的配方。 
+包含制作幸运符'铸铁之咙'所需的所有信息的配方。 
 }
 
-itmname_recipe_totem_02	{驱邪符配方}
+itmname_recipe_totem_02	{幸运符配方}
 itmdescr_recipe_totem_02
 {
-包含制作驱邪符'脊柱穿刺者'所需的所有信息的配方。 
+包含制作幸运符'脊柱穿刺者'所需的所有信息的配方。 
 }
 
-itmname_recipe_totem_03	{驱邪符配方}
+itmname_recipe_totem_03	{幸运符配方}
 itmdescr_recipe_totem_03
 {
-包含制作驱邪符'丘比特之膏'所需的所有信息的配方。 
+包含制作幸运符'丘比特香膏'所需的所有信息的配方。 
 }
 
-itmname_recipe_totem_04	{驱邪符配方}
+itmname_recipe_totem_04	{幸运符配方}
 itmdescr_recipe_totem_04
 {
-包含制作驱邪符'密耳弥冬'所需的所有信息的配方。 
+包含制作幸运符'密耳弥冬'所需的所有信息的配方。 
 }
 
-itmname_recipe_totem_05	{驱邪符配方}
+itmname_recipe_totem_05	{幸运符配方}
 itmdescr_recipe_totem_05
 {
-包含制作驱邪符'铁脐'所需的所有信息的配方。 
+包含制作幸运符'铁腹'所需的所有信息的配方。 
 }
 
-itmname_recipe_totem_06	{驱邪符配方}
+itmname_recipe_totem_06	{幸运符配方}
 itmdescr_recipe_totem_06
 {
-包含制作驱邪符'坚守者'所需的所有信息的配方。 
+包含制作幸运符'大力士'所需的所有信息的配方。 
 }
 
-itmname_recipe_totem_07	{驱邪符配方}
+itmname_recipe_totem_07	{幸运符配方}
 itmdescr_recipe_totem_07
 {
-包含制作驱邪符'吟游诗人'所需的所有信息的配方。 
+包含制作幸运符'吟游诗人'所需的所有信息的配方。 
 }
 
-itmname_recipe_totem_08	{驱邪符配方}
+itmname_recipe_totem_08	{幸运符配方}
 itmdescr_recipe_totem_08
 {
-包含制作驱邪符'火焰之主'所需的所有信息的配方。 
+包含制作幸运符'火焰之主'所需的所有信息的配方。 
 }
 
-itmname_recipe_totem_09	{驱邪符配方}
+itmname_recipe_totem_09	{幸运符配方}
 itmdescr_recipe_totem_09
 {
-包含制作驱邪符'阿古津'所需的所有信息的配方。 
+包含制作幸运符'阿古津'所需的所有信息的配方。 
 }
 
-itmname_recipe_totem_10	{驱邪符配方}
+itmname_recipe_totem_10	{幸运符配方}
 itmdescr_recipe_totem_10
 {
-包含制作驱邪符'寡妇制造者'所需的所有信息的配方。 
+包含制作幸运符'寡妇制造者'所需的所有信息的配方。 
 }
 
-itmname_recipe_totem_11	{驱邪符配方}
+itmname_recipe_totem_11	{幸运符配方}
 itmdescr_recipe_totem_11
 {
-包含制作驱邪符'食尸鬼'所需的所有信息的配方。 
+包含制作幸运符'食尸鬼'所需的所有信息的配方。 
 }
 
-itmname_recipe_totem_12	{驱邪符配方}
+itmname_recipe_totem_12	{幸运符配方}
 itmdescr_recipe_totem_12
 {
-包含制作驱邪符'美洲豹之子'所需的所有信息的配方。 
+包含制作幸运符'美洲豹之子'所需的所有信息的配方。 
 }
 
-itmname_recipe_totem_13	{驱邪符配方}
+itmname_recipe_totem_13	{幸运符配方}
 itmdescr_recipe_totem_13
 {
-包含制作驱邪符'小丑'所需的所有信息的配方。 
+包含制作幸运符'小丑'所需的所有信息的配方。 
 }
 
 ; ====================================================================================================================================
@@ -2894,7 +2894,7 @@ itmdescr_recipe_totem_13
 itmname_alchemy_tool	{炼金术士的箱子}
 itmdescr_alchemy_tool
 {
-一个装满奇怪装置。 小瓶和试剂的箱子。 对初学者炼金术士来说是无价之宝。 
+一个装满奇怪装置、 小瓶和试剂的箱子。 对炼金术士初学者来说是无价之宝。 
 }
 
 itmname_Tool	{木匠工具箱}
@@ -2907,7 +2907,7 @@ itmname_Tailor_Tool	{裁缝工具}
 itmdescr_Tailor_Tool
 {
 经验丰富的流浪者用于独自克服所 有困难的旅行缝纫工具包。 
-在熟练的手中, 剪刀。 针。 钩子和顶针可以创造真正的奇迹! 
+在熟练的手中, 剪刀、 针、 钩子和顶针可以创造真正的奇迹! 
 }
 
 itmname_Mechanic_Tool {工作台与工具箱}
@@ -2948,7 +2948,7 @@ itmdescr_potion4
 这种混合剂是治疗药水和解毒剂的 组合, 可在治愈毒药的同时治疗伤口。 
 }
 
-itmname_potionrum	{朗姆酒瓶}
+itmname_potionrum	{朗姆酒}
 itmdescr_potionrum
 {
 没有哪个水手能缺少一瓶可靠的朗 姆酒。 对于制作格罗格酒和创造美好回忆 必不可少。 如果受伤, 酒精有助于减轻疼痛并促进愈合。 
@@ -2969,7 +2969,7 @@ itmdescr_potion5
 itmname_potion6	{印加药水}
 itmdescr_potion6
 {
-这种药水由印加神庙战士发明, 用于在战斗中集中攻击性。 防止在战斗中被击晕。 会损害您的健康。 
+这种药水由印加神庙战士发明, 用于在战斗中集中注意力。 防止在战斗中被击晕, 但会损害您的健康。 
 }
 
 itmname_potion7	{伊克谢尔之泪}
@@ -2981,7 +2981,7 @@ itmdescr_potion7
 itmname_Ultimate_potion	{科曼奇药水}
 itmdescr_Ultimate_potion
 {
-一种神奇的药水, 能够治愈即使是最严重的疾病或解 除最致命的毒药。 
+一种神奇的药水, 即使最严重的疾病或最致命的毒药 也能治愈或解除。 
 }
 
 itmname_berserker_potion	{奥美托奇利酊剂}
@@ -2994,22 +2994,22 @@ itmdescr_berserker_potion
 itmname_mangarosapower	{潮汐波药水}
 itmdescr_mangarosapower
 {
-根据阿梅莉的吉普赛秘密配方制备 的曼加罗萨药水。 
+根据 Amelie 的吉普赛秘方制备的曼加罗萨药水。 
 暂时增加力量和耐力, 以及使用中型和重型武器的技能。 
 }
 
 itmname_mangarosafast	{暴风药水}
 itmdescr_mangarosafast
 {
-根据阿梅莉的吉普赛秘密配方制备 的曼加罗萨药水。 
+根据 Amelie 的吉普赛秘方制备的曼加罗萨药水。 
 暂时增加反应和感知, 以及使用轻型武器和射击的技能。 
 }
 
 itmname_mangarosatotal	{海之拥抱药水}
 itmdescr_mangarosatotal
 {
-根据阿梅莉的吉普赛秘密配方制备 的曼加罗萨药水。 
-暂时增加力量。 耐力。 反应。 感知。 领导力和运气, 以及使用近战武器和射击的技能。 
+根据 Amelie 的吉普赛秘方制备的曼加罗萨药水。 
+暂时增加力量、 耐力、 反应、 感知、 领导力和运气, 以及使用近战武器和射击的技能。 
 }
 
 itmname_cannabis1	{曼陀罗}
@@ -3060,7 +3060,7 @@ itmdescr_cannabis7
 itmname_GunPowder	{火药}
 itmdescr_GunPowder
 {
-硫。 木炭和硝石 (硝酸钾) 的混合物。 任何火器运作都需要的物质。 火药消耗量因武器类型而异。 
+硫、 木炭和硝石 (硝酸钾) 的混合物。 任何火器运作都需要的物质。 火药消耗量因武器类型而异。 
 }
 
 itmname_bullet	{铅弹}
@@ -3072,26 +3072,26 @@ itmdescr_bullet
 itmname_grapeshot	{葡萄弹}
 itmdescr_grapeshot
 {
-铅制葡萄弹或大型鹿弹。 仅在使用葡萄弹枪射击时使用。 可同时对多个目标造成伤害。 
+铅制葡萄弹或大型鹿弹。 仅在使用霰弹枪射击时使用。 可同时对多个目标造成伤害。 
 枪管能装填的葡萄弹数量取决于所 使用的武器。 
 }
 
 itmname_cartridge	{纸质弹药筒}
 itmdescr_cartridge
 {
-将火药装药。 铅弹和弹塞结合在一起的纸质弹药 筒。 17世纪的先进技术。 使用这些能显著加快装填速度。 
+将火药装药、 铅弹和弹塞结合在一起的纸质弹药 筒。 17世纪的先进技术。 使用这些能显著加快装填速度。 
 }
 
 itmname_powder_pellet	{火药弹}
 itmdescr_powder_pellet
 {
-可从手迫击炮发射的火药弹。 爆炸时产生强光, 可同时眩晕多个目标。 可能造成友军伤害。 
+可从手持迫击炮发射的火药弹。 爆炸时产生强光, 可同时眩晕多个目标。 可能造成友军伤害。 
 }
 
 itmname_grenade	{手榴弹}
 itmdescr_grenade
 {
-可从手迫击炮发射的手榴弹。 可同时对多个目标造成大量伤害。 可能造成友军伤害。 
+可从手持迫击炮发射的手榴弹。 可同时对多个目标造成大量伤害。 可能造成友军伤害。 
 }
 
 itmname_harpoon	{鱼叉箭}
@@ -3112,10 +3112,10 @@ itmdescr_shotgun_bullet
 用于装填左轮手枪弹药筒的子弹。 用子弹模具制作。 
 }
 
-itmname_shotgun_cartridge	{左轮手枪弹药筒}
+itmname_shotgun_cartridge	{左轮手枪子弹}
 itmdescr_shotgun_cartridge
 {
-防水黄铜外壳中的火药装药和子弹。 
+防水黄铜弹壳内装有一定量的火药和一颗弹头。
 }
 
 itmname_OxyHydSilver	{雷酸银}
@@ -3127,26 +3127,26 @@ itmdescr_OxyHydSilver
 itmname_GunCap_colt	{火帽}
 itmdescr_GunCap_colt
 {
-用雷酸银制作的铜制火帽。 柯尔特左轮手枪发射弹药筒所需。 
+用雷酸银制作的铜制火帽。 柯尔特左轮手枪发射子弹所需。 
 }
 
-itmname_bullet_double 	{双子弹装药}
+itmname_bullet_double 	{双倍子弹装填}
 itmdescr_bullet_double
 {
-双倍火药装药和子弹, 伴随一枚切碎的杜布隆币以求好运。 需要火药测试仪来防止枪管破裂风 险上升。 
+双倍装填的火药和子弹配有一枚切 碎的杜布隆币以求好运。 需要火药测试仪来防止枪管破裂的 风险增加。 
 }
 
-itmname_grapeshot_double 	{双葡萄弹装药}
+itmname_grapeshot_double 	{双倍葡萄弹装填}
 itmdescr_grapeshot_double
 {
-增加的火药装药和葡萄弹, 伴随一枚切碎的杜布隆币以求好运。 其效果取决于使用的武器。 
+增量的火药装药和葡萄弹, 配有一枚切碎的杜布隆币以求好运。 其效果取决于使用的武器。 
 没有火药测试仪时, 枪管破裂的风险会增加。 
 }
 
 itmname_GunEchin	{钉子弹片}
 itmdescr_GunEchin
 {
-用于大口径葡萄弹枪的粗切钉子。 它们对人体和枪管都有毁灭性效果。 
+用于大口径霰弹枪的粗切钉子。 它们对人体和枪管都有毁灭性效果。 
 由于其形状, 它们会减少武器的散布。 
 }
 
@@ -3154,7 +3154,7 @@ itmdescr_GunEchin
 itmname_argbullet{银弹}
 itmdescr_argbullet
 {
-根据当地双刀专家的说法, 银弹对怪物。 岳母以及被恶魔伏都教魔法复活的 死者非常有效。 
+根据当地双刀专家的说法, 银弹对怪物、 岳母以及被恶魔伏都教魔法复活的 死者非常有效。 
 }
 
 ; =============================================================================================================================================== 普通物品
@@ -3241,7 +3241,7 @@ itmdescr_Mineral13
 itmname_Mineral14	{吸血蝙蝠翼}
 itmdescr_Mineral14
 {
-当地吸血的圆叶吸血蝠, 通常被称为吸血蝙蝠的干燥翅膀。 人们私下说女巫和印第安萨满在他 们的邪恶仪式中使用它们。 
+当地吸血的圆叶吸血蝠 —通常被称为吸血蝙蝠的干燥翅膀。 人们私下说女巫和印第安萨满在他 们的邪恶仪式中使用它们。 
  (机会主义-10) 
 }
 
@@ -3260,13 +3260,13 @@ itmdescr_Mineral16
 itmname_Mineral17	{空瓶}
 itmdescr_Mineral17
 {
-一个空的玻璃小瓶。 
+一个空的小玻璃瓶。 
 }
 
 itmname_Mineral18	{烟草}
 itmdescr_Mineral18
 {
-一盒经过晾晒的烟斗烟草。 这是新世界殖民者从印第安人那里 学来的时髦习惯。 16世纪西班牙医生尼古拉斯.莫纳德斯写道, 烟草可以缓解便秘, 起到肌肉松弛剂的作用, 并打开身体的毛孔。 
+一盒经过晾晒的烟斗烟草。 这是新世界殖民者从印第安人那里 学来的时髦习惯。 16世纪西班牙医生 Nicolas Monardes 写道, 烟草可以缓解便秘, 起到肌肉松弛剂的作用, 并打开身体的毛孔。 
 }
 
 itmname_Mineral19	{银勺}
@@ -3284,7 +3284,7 @@ itmdescr_Mineral20
 itmname_Mineral21	{书写工具}
 itmdescr_Mineral21
 {
-一支鹅毛笔和一个墨水瓶是受过良 好教育的人的显著标志。 
+一支鹅毛笔和一个墨水瓶是受过良 好教育之人的显著标志。 
 }
 
 itmname_Mineral22	{绳子}
@@ -3296,7 +3296,7 @@ itmdescr_Mineral22
 itmname_Mineral23	{钉子}
 itmdescr_Mineral23
 {
-一根铁钉。 可用于修理任何东西: 鞋子。 屋顶或船只。 
+一根铁钉。 可用于修理任何东西: 鞋子、 屋顶或船只。 
 }
 
 itmname_Mineral24	{腰带}
@@ -3338,7 +3338,7 @@ itmdescr_Mineral29
 itmname_Mineral30	{奴隶手铐}
 itmdescr_Mineral30
 {
-奴隶贩子用来防止他们的'财产'逃跑的手铐。 
+奴隶贩子用来防止他们的'财产' 逃跑的手铐。 
  (魅力-10) 
 }
 
@@ -3401,7 +3401,7 @@ itmdescr_ShipyardsMap_PortmanLevelUp4
 itmname_MayorsRing	{结婚戒指}
 itmdescr_MayorsRing
 {
-#sCityName# 总督的结婚戒指。 他会想要收回这个。 
+#sCityName# 总督的结婚戒指。 他会想要回这个。 
 }
 
 itmname_UsurersJew	{宝石}
@@ -3410,10 +3410,10 @@ itmdescr_UsurersJew
 #sCityName# 高利贷者的奇妙 #sJevelType#。 
 }
 
-itmname_Key1	{普通钥匙}
+itmname_Key1	{简单钥匙}
 itmdescr_Key1
 {
-一把开普通锁的钥匙。 
+一把开简单锁的钥匙。 
 }
 
 itmname_Key2	{普通钥匙}
@@ -3431,13 +3431,13 @@ itmdescr_Key3
 itmname_key_capper	{'塔耳塔罗斯'钥匙}
 itmdescr_key_capper
 {
-打开'塔耳塔罗斯'号船上的门和箱子的钥匙。 
+打开'Tartarus (塔耳塔罗斯号) '船上的门和箱子的钥匙。 
 }
 
 itmname_key_gun	{青铜钥匙}
 itmdescr_key_gun
 {
-在阿道夫.巴比尔尸体上找到的钥匙。 但它能打开什么? 
+在 Adolf Barbier 尸体上找到的钥匙。 但它能打开什么? 
 }
 
 itmname_keys_skel	{开锁工具套装}
@@ -3458,26 +3458,26 @@ itmdescr_key_betancur
 一把失去光泽的黄铜钥匙。 不清楚它能打开什么。 不过, 从找到这把钥匙的地方判断, 它可能能打开非常有价值的东西。 
 }
 
-itmname_key_mary	{玛丽.卡斯帕的钥匙}
+itmname_key_mary	{Mary Casper 的钥匙}
 itmdescr_key_mary
 {
-打开弗鲁伊特'刻瑞斯铁匠号'号上玛丽舱室的钥匙。 
+打开福禄特'Ceres Smithy (刻瑞斯铁匠号) '上 Mary 的舱室的钥匙。 
 }
 
 itmname_key_facio	{黄铜钥匙}
 itmdescr_key_facio
 {
-朱塞佩.法西奥的钥匙。 
+iuseppe Fazio 的钥匙。 
 }
 itmdescr_key_facioQ
 {
-打开'卡罗莱纳'号船上的门和朱塞佩.法西奥舱室里一个箱子的钥匙。 
+打开'Carolina (卡罗莱纳号) '船上的门和 Giuseppe Fazio 的舱室里一个箱子的钥匙。 
 }
 
-itmname_key_levasser	{勒瓦瑟的钥匙}
+itmname_key_levasser	{Levasseur 的钥匙}
 itmdescr_key_levasser
 {
-从弗朗索瓦.勒瓦瑟尸体上取下的钥匙。 现在让我们找到它能打开的箱子。 
+从 Francois Levasseur 尸体上取下的钥匙。 现在让我们找到它能打开的箱子。 
 }
 
 itmname_PortmansBook	{航海日志}
@@ -3501,19 +3501,19 @@ itmdescr_bible
 itmname_ChurchGenQuest1Bible	{教会手稿}
 itmdescr_ChurchGenQuest1Bible
 {
-需要送达#sCity#神父的重要教会手稿。 
+需要送达 #sCity# 神父手中的重要教会手稿。 
 }
 
 itmname_ChurchGenQuest2Cup	{圣餐杯}
 itmdescr_ChurchGenQuest2Cup
 {
-需要送达#sCity#神父的圣餐杯。 教会认为所有祝圣过的圣餐杯必须 由金或银制成, 以盛放圣体。 因此, 这个杯子相当重。 
+需要送达 #sCity# 神父手中的圣餐杯。 教会认为所有祝圣过的圣餐杯必须 由金或银制成, 以盛放圣体。 因此, 这个杯子相当重。 
 }
 
-itmname_MerdokArchive	{约翰.默多克的档案}
+itmname_MerdokArchive	{John Murdock 的档案}
 itmdescr_MerdokArchive
 {
-范.默登的日记, 用密码抄录。 看起来像是一堆无法理解的不连贯 字母和数字。 你得找到密码才能阅读这个。 
+Van Merden 的日记, 用密码抄录。 看起来像是一堆无法理解的不连贯 字母和数字。 你得找到密码才能阅读这个。 
 }
 
 itmname_MineArchive	{加密文件}
@@ -3525,31 +3525,31 @@ itmdescr_MineArchive
 itmname_Cipher	{档案密码本}
 itmdescr_Cipher
 {
-有了这个密码本可以阅读约翰.默多克的档案。 
+有了这个密码本可以阅读 John Murdock 的档案。 
 }
 
-itmname_JacobJournal	{雅各布.范.伯格的航海日志}
+itmname_JacobJournal	{Jacob van Berg 的航海日志}
 itmdescr_JacobJournal
 {
-'幻影'号船长雅各布.范.伯格的航海日志。 
+'Mirage (幻影号) '船长 Jacob van Berg 的航海日志。 
 }
 
-itmname_FleetwoodJournal{理查德.弗利特伍德的航海日志}
+itmname_FleetwoodJournal{Richard Fleetwood 的航海日志}
 itmdescr_FleetwoodJournal
 {
-'瓦尔基里'号船长理查德.弗利特伍德的航海日志。 
+'Valkyrie (瓦尔基里号) '船长 Richard Fleetwood 的航海日志。 
 }
 
-itmname_ClementLebrunJournal	{克莱门特.勒布伦的航海日志}
+itmname_ClementLebrunJournal	{Clement Lebran 的航海日志}
 itmdescr_ClementLebrunJournal
 {
 来自托尔图加的那个大胆家伙的航 海日志。 所有页面都被撕掉了。 
 }
 
-itmname_FernandoDeAlavidaJournal	{费尔南多.德.阿拉维达航海日志}
+itmname_FernandoDeAlavidaJournal	{Fernando de Alavida 的航海日志}
 itmdescr_FernandoDeAlavidaJournal
 {
-费尔南多.德.阿拉维达的航海日志。 
+Fernando de Alavida 的航海日志。 
 }
 
 itmname_FernandoDeAlavidaPismo	{揉皱的信}
@@ -3562,48 +3562,48 @@ itmdescr_FernandoDeAlavidaPismo
 itmname_MC_Letter	{密封信}
 itmdescr_MC_Letter
 {
-给理查德.弗利特伍德的信, 内容是阿比盖尔的赎金条款。 
+给 Richard Fleetwood 的信, 内容是 Abigail 的赎金条款。 
 }
 
 itmdescr_MC_Letter1
 {
-理查德.弗利特伍德的回复。 
+Richard Fleetwood 的回复。 
 }
 
 itmdescr_MC_Letter2
 {
-弗利特伍德给卢卡斯.罗登堡的信。 
+Fleetwood 给 Lucas Rodenburg 的信。 
 }
 
 itmdescr_MC_Letter3
 {
-卢卡斯.罗登堡给范.默登的信。 
+Lucas Rodenburg 给 van Merden的信。 
 }
 
 itmname_NPC_Letter	{密封信}
 itmdescr_NPC_Letter
 {
-理查德.弗利特伍德给阿比盖尔的信。 
+Richard Fleetwood 给 Abigail的信。 
 }
 
 itmdescr_NPC_Letter1
 {
-理查德.弗利特伍德的公文。 
+Richard Fleetwood 的公文。 
 }
 
 itmdescr_NPC_Letter2
 {
-赫拉克勒.通扎格的告别信。 
+Hercule Tonzag 的告别信。 
 }
 
 itmdescr_NPC_Letter3
 {
-一个信封, 里面有一张某个岛屿的地图, 有一个'X'标记着某个地方—— 看起来像是一个洞穴。 
+一个信封, 里面有一张某个岛屿的地图, 有一个'X'标记着某个地方 —看起来像是一个洞穴。 
 }
 
 itmdescr_NPC_Letter4
 {
-卢卡斯.罗登堡给圣地亚哥银行家的信。 
+Lucas Rodenburg 给圣地亚哥银行家的信。 
 }
 
 itmname_DTSG_letter1	{半烧焦的信碎片}
@@ -3614,13 +3614,13 @@ itmdescr_DTSG_letter1
 
 itmdescr_DTSG_letter2
 {
-详细描述查理.克尼佩尔外貌的信。 
+详细描述 Charlie Knippel 外貌的信。 
 }
 
 itmname_Drugstore_keys	{药店钥匙}
 itmdescr_Drugstore_keys
 {
-这些钥匙可以打开约翰.默多克房子里的所有门。 
+这些钥匙可以打开 John Murdock 房子里的所有门。 
 }
 
 itmname_MaltieBase_keys	{地牢钥匙}
@@ -3632,17 +3632,17 @@ itmdescr_MaltieBase_keys
 itmname_Finger	{断指}
 itmdescr_Finger
 {
-一根带戒指的手指。 费尔南多死亡的证明。 
+一根带戒指的手指。 Fernando 死亡的证明。 
 }
 itmdescr_finger_rober
 {
-一根带环的手指。 罗伯特.马滕死亡的证明。 
+一根带环的手指。 Robert Martene 死亡的证明。 
 }
 
 itmname_GastonHead	{人头}
 itmdescr_GastonHead
 {
-一个被砍下的人头。 令人毛骨悚然的同伴。 
+一个被砍下的人头。 一个令人毛骨悚然的同伴。 
 }
 
 itmname_SkullAztec	{玉骷髅}
@@ -3654,19 +3654,19 @@ itmdescr_SkullAztec
 itmname_suit_1	{昂贵服装}
 itmdescr_suit_1
 {
-足够好可以穿着去参加总督本人举 办的正式聚会的服装。 
+好到可以穿着去参加总督本人举办 的正式聚会的服装。 
 }
 
 itmname_crowbar	{金属撬棍}
 itmdescr_crowbar
 {
-一根小撬棍, 可用于撬开板条箱。 头颅或螃蟹。 这个上面标有'G.F.'
+一根小撬棍, 可用于撬开板条箱、 头颅或螃蟹。 这个上面标有'G.F.'
 }
 
 itmname_bucher_ring	{巨大戒指}
 itmdescr_bucher_ring
 {
-布彻船长的戒指。 
+Butcher 船长的戒指。 
 }
 
 itmname_cask_whisky	{爱尔兰威士忌酒箱}
@@ -3696,7 +3696,7 @@ itmdescr_smoking_tube
 itmname_chemistry	{拉瓦锡的化学入门}
 itmdescr_chemistry
 {
-一本印刷书, 书名是'Traite Elementaire de Chimie', 包含外行人无法理解的笔记和定义。 这本书由一位'拉瓦锡先生'所著, 扉页上写着'1789年巴黎印刷'. 这一定是印刷错误。 
+一本印刷书, 书名是'化学基础论', 包含外行人无法理解的笔记和定义。 这本书由一位'Lavoisier 先生'所著, 扉页上写着'1789年巴黎印刷'. 这一定是印刷错误。 
 }
 
 itmname_shark_teeth	{鲨鱼牙}
@@ -3708,7 +3708,7 @@ itmdescr_shark_teeth
 itmname_witches_hammer	{'女巫之锤'}
 itmdescr_witches_hammer
 {
-一本关于巫术的论文, 英文名为'Hammer of Witches', 由中世纪晚期的德国神职人员海因 里希.克莱默和雅各布.施普伦格所著。 尽管被天主教会谴责为极其不准确 , 但在俗人和世俗法庭中非常受欢迎。 
+一本关于巫术的论文, 英文名为'Hammer of Witches', 由中世纪晚期的德国神职人员 Heinrich Kramer 和 Jacob Sprenger 所著。 尽管被天主教会谴责为极其不准确 , 但在俗人和世俗法庭中非常受欢迎。 
 }
 
 itmname_calendar_maya	{玛雅历法}
@@ -3720,31 +3720,31 @@ itmdescr_calendar_maya
 itmname_splinter_js	{装饰碎片}
 itmdescr_splinter_js
 {
-一块带有美丽印第安装饰的石片, 属于扬.斯文森。 
+一块带有美丽印第安装饰的石片, 属于 Jan Svenson。 
 }
 
 itmname_splinter_nh	{装饰碎片}
 itmdescr_splinter_nh
 {
-一块带有美丽印第安装饰的石片, 属于纳撒尼尔.霍克。 
+一块带有美丽印第安装饰的石片, 属于 Nathaniel Hawk。 
 }
 
 itmname_splinter_mt	{装饰碎片}
 itmdescr_splinter_mt
 {
-一块带有美丽印第安装饰的石片, 属于马库斯.泰雷克斯。 
+一块带有美丽印第安装饰的石片, 属于 Marcus Tyrex。 
 }
 
 itmname_splinter_zm	{装饰碎片}
 itmdescr_splinter_zm
 {
-一块带有美丽印第安装饰的石片, 属于扎卡里.马洛。 
+一块带有美丽印第安装饰的石片, 属于 Marcus Tyrex。 
 }
 
 itmname_splinter_jb	{装饰碎片}
 itmdescr_splinter_jb
 {
-一块带有美丽印第安装饰的石片, 属于雅克.巴巴西翁。 
+一块带有美丽印第安装饰的石片, 属于 Jacques Barbazon。 
 }
 
 itmname_Almanac	{年鉴}
@@ -3754,11 +3754,11 @@ itmdescr_Almanac
 }
 itmdescr_jinobook
 {
-吉诺.吉内利的年鉴。 
+Gino Guineily 的年鉴。 
 }
 itmdescr_Almanac_FMQP
 {
-路易斯.奥尔蒂斯的账本。 
+Luis Ortiz 的账本。 
 }
 
 itmname_VerifyPaper
@@ -3768,11 +3768,11 @@ itmdescr_VerifyPaper	{国书}
 }
 itmdescr_VincentoPaper
 {
-允许持有者自由访问西班牙殖民地 圣地亚哥。 由宗教裁判官文森托神父亲自签署。 
+允许持有者自由访问西班牙殖民地 圣地亚哥。 由宗教裁判官 Vincento 神父亲自签署。 
 }
 itmdescr_VincentoPaper_A
 {
-允许持有者自由访问西班牙殖民地 圣地亚哥和圣何塞。 由宗教裁判官文森托神父亲自签署。 
+允许持有者自由访问西班牙殖民地 圣地亚哥和圣何塞。 由宗教裁判官 Vincento 神父亲自签署。 
 }
 
 itmname_skinmap	{'双显'地图}
@@ -3790,23 +3790,23 @@ itmdescr_arrowway
 itmname_ArchyBook	{日记}
 itmdescr_ArchyBook
 {
-阿奇博尔德.科尔霍恩的日记。 应该很有趣。 
+Archibald Colhoun 的日记。 应该很有趣。 
 }
 
 itmname_key_archy	{铁钥匙}
 itmdescr_key_archy
 {
-阿奇博尔德.科尔霍恩的钥匙。 显然, 它能打开一个箱子。 
+Archibald Colhoun 的钥匙。 显然, 它能打开一个箱子。 
 }
 itmdescr_key_mask
 {
-在'圣基特里亚'号船长骨架上找到的钥匙。 显然, 它能打开一个箱子。 
+在'Santa Quiteria (圣基特里亚号)' 船长骨架上找到的钥匙。 显然, 它能打开一个箱子。 
 }
 
 itmname_SQCapBook	{航海日志}
 itmdescr_SQCapBook
 {
-'圣基特里亚'号船长的航海日志。 应该很有趣。 
+'Santa Quiteria (圣基特里亚号)' 号船长的航海日志。 应该很有趣。 
 }
 
 itmname_mark_map	{带笔记的地图}
@@ -3830,7 +3830,7 @@ itmdescr_mask_true
 itmname_stonekey	{石钥匙}
 itmdescr_stonekey
 {
-伊察祭司卡内克的钥匙。 
+伊察祭司 Kanek 的钥匙。 
 }
 
 itmname_Tablet_1	{古代石碑}
@@ -3872,7 +3872,7 @@ itmdescr_Tablet_6
 itmname_alexs_chest	{钢箱}
 itmdescr_alexs_chest
 {
-大师亚历克苏斯的金属箱, 锁得很牢固。 
+Alexus 大师的金属箱, 锁得很牢固。 
 }
 
 itmname_treasure_note {宝藏便条}
@@ -3890,7 +3890,7 @@ itmdescr_PR_Letter
 itmname_quest_potion	{草药煎剂}
 itmdescr_quest_potion
 {
-这种 brew 的真正特性只有准备它的人知道。 
+这种饮品的真正特性, 只有亲手调制它的人才知晓。
 }
 
 itmname_GS_letters	{雇佣兵送来的笔记}
@@ -3899,16 +3899,16 @@ itmdescr_GS_letters
 由港务局局长亲手写的提示。 其中包含他的客户的路线和出发时 间信息, 每个客户都被海盗袭击了。 
 }
 
-itmname_SM_necklace_Julie	{朱莉.德.阿尔马尼亚克的项链}
+itmname_SM_necklace_Julie	{Julie d'Armagnac 的项链}
 itmdescr_SM_necklace_Julie
 {
-朱莉心爱的珠宝。 优雅精致, 似乎本身就守护着她的记忆。 如果有能保守秘密的物品, 这条项链肯定属于其中之一。 
+Julie 心爱的珠宝。 优雅精致, 似乎自身就守护着她的记忆。 如果有能保守秘密的物品, 这条项链肯定属于其中之一。 
 }
 
 itmname_TBP_letter	{已拆封信}
 itmdescr_TBP_letter
 {
-'你以为你可以敲诈我而不受惩罚? 你错了。 很快你就会后悔你的大胆。 你的死亡将漫长而痛苦, 没有人会救你.'
+'你以为你可以敲诈我而不受惩罚? 你错了。 很快你就会后悔你的大胆。 你的死亡将漫长而痛苦, 没有人会救你。'
 }
 
 ;====================================== DLC 物品 ===============================
@@ -3919,10 +3919,10 @@ itmdescr_kaleuche_amulet1
 由光滑鹅卵石制成并涂有鲜艳颜色 的印第安护身符。 
 }
 
-itmname_kaleuche_amulet1_potion	{图塔萨帕克的药水}
+itmname_kaleuche_amulet1_potion	{Tuttuathapak 的药水}
 itmdescr_kaleuche_amulet1_potion
 {
-由加勒比印第安人萨满图塔萨帕克 用曼加罗萨酿造的药水。 永久增加反应速度并提高轻型武器 技能。 
+由加勒比印第安人萨满 Tuttuathapak 用曼加罗萨酿造的药水。 永久增加反应速度并提高轻型武器 技能。 
 }
 
 itmname_kaleuche_amulet2 {印第安护身符}
@@ -3935,10 +3935,10 @@ itmdescr_kaleuche_amulet2_sword
 由加勒比印第安人萨满图塔萨帕克 附魔的护身符。 使查维纳维神庙对你的武器脆弱并 保护你免受他们的攻击。 所有武器技能增加25%. 
 }
 
-itmname_kaleuche_amulet2_potion	{图塔萨帕克的药水}
+itmname_kaleuche_amulet2_potion	{Tuttuathapak 的药水}
 itmdescr_kaleuche_amulet2_potion
 {
-由加勒比印第安人萨满图塔萨帕克 用曼加罗萨酿造的药水。 永久增加耐力并提高中型武器技能。 
+由加勒比印第安人萨满 Tuttuathapak 用曼加罗萨酿造的药水。 永久增加耐力并提高中型武器技能。 
 }
 
 itmname_kaleuche_amulet3 {印第安护身符}
@@ -3948,42 +3948,42 @@ itmdescr_kaleuche_amulet3
 }
 itmdescr_kaleuche_amulet3_shield
 {
-由加勒比印第安人萨满图塔萨帕克 附魔的护身符。 使查维纳维神庙对你的武器脆弱并 保护你免受他们的攻击。 减少所有即将到来的伤害25%并防止中毒。 
+由加勒比印第安人萨满 Tuttuathapak 附魔的护身符。 使查维纳维神庙对你的武器脆弱并 保护你免受他们的攻击。 减少所有即将到来的伤害25%并防止中毒。 
 }
 
-itmname_kaleuche_amulet3_potion	{图塔萨帕克的药水}
+itmname_kaleuche_amulet3_potion	{Tuttuathapak 的药水}
 itmdescr_kaleuche_amulet31_potion
 {
-由加勒比印第安人萨满图塔萨帕克 用曼加罗萨酿造的药水。 永久增加力量并提高重型武器技能。 
+由加勒比印第安人萨满 Tuttuathapak 用曼加罗萨酿造的药水。 永久增加力量并提高重型武器技能。 
 }
 itmdescr_kaleuche_amulet32_potion
 {
-由加勒比印第安人萨满图塔萨帕克 用曼加罗萨酿造的药水。 永久增加感知并提高手枪和滑膛枪 技能。 
+由加勒比印第安人萨满 Tuttuathapak 用曼加罗萨酿造的药水。 永久增加感知并提高手枪和滑膛枪 技能。 
 }
 itmdescr_kaleuche_amulet33_potion
 {
-由加勒比印第安人萨满图塔萨帕克 用曼加罗萨酿造的药水。 永久增加智力并提高潜行技能。 
+由加勒比印第安人萨满 Tuttuathapak 用曼加罗萨酿造的药水。 永久增加智力并提高潜行技能。 
 }
 itmdescr_kaleuche_amulet34_potion
 {
-由加勒比印第安人萨满图塔萨帕克 用曼加罗萨酿造的药水。 永久增加领导力并增加魅力。 
+由加勒比印第安人萨满 Tuttuathapak 用曼加罗萨酿造的药水。 永久增加领导力并增加魅力。 
 }
 itmdescr_kaleuche_amulet35_potion
 {
-由加勒比印第安人萨满图塔萨帕克 用曼加罗萨酿造的药水。 永久增加财富并增加运气。 
+由加勒比印第安人萨满 Tuttuathapak 用曼加罗萨酿造的药水。 永久增加财富并增加运气。 
 }
 
 itmname_kaleuche_letter	{卷起的便条}
 itmdescr_kaleuche_letter
 {
 在午夜沿着从城门进入丛林的路径 寻找收件人。 
-... 三天后船将抵达切图马尔峡。 货物将在夜间装上两艘救生艇。 第二艘船将在卸载后仅一天到达... 
+... 三天后船将抵达切图马尔峡。 货物将在夜间装上两艘救生艇。 第二艘船将在卸载后仅一天抵达... 
 }
 
 itmname_kaleuche_key	{钢钥匙}
 itmdescr_kaleuche_key
 {
-雷金纳德.杰克逊用于巴巴多斯灯塔箱子的钥 匙。 
+Reginald Jackson 用于巴巴多斯灯塔箱子的钥匙。 
 }
 itmdescr_kaleuche_key_crypt
 {
@@ -3991,13 +3991,13 @@ itmdescr_kaleuche_key_crypt
 }
 itmdescr_kaleuche_key_FMQT
 {
-勒瓦瑟箱子的备用钥匙。 
+Levasseur 的箱子的备用钥匙。 
 }
 
 itmname_MerrimanBook	{金属箱}
 itmdescr_MerrimanBook
 {
-约阿希姆.梅里曼巢穴中的金属箱。 
+Joachim Merriman 巢穴中的金属箱。 
 }
 
 itmname_KhaelRoa_item	{美洲豹皮}
@@ -4022,7 +4022,7 @@ itmdescr_key_candlestick_FortFrance
 itmname_key_candlestick_Villemstad	{秘密教团戒指}
 itmdescr_key_candlestick_Villemstad
 {
-一枚带有红宝石的巨大古董戒指。 看来它应该对我起钥匙作用。 
+一枚带有红宝石的巨大古董戒指。 看来它应该能充当我的钥匙。
 }
 
 itmname_LadyBeth_Book	{布莱克伍德的日记}
@@ -4031,7 +4031,7 @@ itmdescr_LadyBeth_Book
 一个可怜人的想法。 
 }
 
-itmname_LadyBeth_Map	{布莱克伍德的地图}
+itmname_LadyBeth_Map	{Blackwood 的地图}
 itmdescr_LadyBeth_Map
 {
 通往最伟大的宝藏猎人最珍贵宝藏 的路径。 
@@ -4052,7 +4052,7 @@ itmdescr_Tutorial_key
 itmname_Tutorial_journal	{船长日记。 第四卷。 }
 itmdescr_Tutorial_journal
 {
-'尤利西斯'船长日记的第四卷。 刚刚开始, 所以只有几篇日记。 
+'Ulysse (尤利西斯号)' 船长日记的第四卷。 刚刚开始, 所以只有几篇日记。 
 }
 
 itmname_Suspicious_Potion	{可疑药水}
@@ -4065,11 +4065,11 @@ itmdescr_Suspicious_Potion
 itmname_wolfreeks_book	{航海日志}
 itmdescr_wolfreeks_book
 {
-伍尔夫里克.约根森的航海日志。 
+Wulfric Iogansen 的航海日志。 
 }
 itmdescr_ignasio_book
 {
-伊格纳西奥.马尔科的航海日志。 
+Ignacio Marco 的航海日志。 
 }
 
 itmname_Bunch	{冷兵器包}
@@ -4087,7 +4087,7 @@ itmdescr_Dove
 itmname_key_scotland	{生锈的钥匙}
 itmdescr_key_scotland
 {
-在一个长期死去的苏格兰人的风化 骨架上找到的旧钥匙。 
+在一个死去已久的苏格兰人的风化 骨架上找到的旧钥匙。 
 }
 
 itmname_key_ruins	{银钥匙}
@@ -4099,11 +4099,11 @@ itmdescr_key_ruins
 itmname_indian_poison	{泰诺人毒药}
 itmdescr_indian_poison
 {
-由秘密植物和有毒青蛙的黏液制成 的致命毒药。 即使是最轻微的划伤也可能致命, 且无法用解毒剂治愈。 这种毒药可用作刀刃和子弹的油。 
+由秘密植物和有毒青蛙的黏液制成 的致命毒药。 即使是最轻微的划伤也可能致命, 且无法用解毒剂治愈。 这种毒药可用作刀剑和子弹的润滑 油。
 效果持续两天。 
 }
 
-itmname_mapEnrico	{卡米拉的地图}
+itmname_mapEnrico	{Camilla 的地图}
 itmdescr_mapEnrico
 {
 它通向20年前失落并被遗弃的西班牙采矿村 庄的宝藏。 
@@ -4114,23 +4114,23 @@ itmdescr_mapEnrico
 itmname_Reserve_item_01	{密封信}
 itmdescr_Reserve_item_01
 {
-这是一封写给'埃克拉坦'号船长的信。 
+这是一封写给'Eclatant (辉煌号)' 船长的信。 
 }
 itmdescr_Reserve_item_01_1
 {
-骑士菲利普.德.潘西给荷兰西印度公司董事彼得.施托伊弗桑特的信
+骑士 Philippe de Poincy 给荷兰西印度公司董事 Peter Stuyvesant 的信
 }
 itmdescr_Reserve_item_01_2
 {
-荷兰西印度公司董事彼得.施托伊弗桑特给骑士菲利普.德.潘西的信。 
+荷兰西印度公司董事 Peter Stuyvesant 给骑士 Philippe de Poincy 的信。 
 }
 itmdescr_Reserve_item_01_2
 {
-骑士菲利普.德.潘西给荷兰西印度公司董事彼得.施托伊弗桑特的信
+骑士 Philippe de Poincy 给荷兰西印度公司董事 Peter Stuyvesant 的信
 }
 itmdescr_Reserve_item_01_3
 {
-骑士菲利普.德.潘西给牙买加总督爱德华.多伊利上校的信
+骑士 Philippe de Poincy 给牙买加总督 Edward Doily 上校的信
 }
 itmname_Reserve_item_01_1	{厚账簿}
 itmdescr_Reserve_item_01_4
@@ -4156,14 +4156,14 @@ itmdescr_islamona_toolbox
 
 ;=============================== SP3 =======================================================
 
-itmname_Memento_Book	{格林的日记}
+itmname_Memento_Book	{Grim 的日记}
 itmdescr_Memento_Book
 {
 三幕悲剧
 }
 
-itmname_Memento_letter	{梅门托的信}
+itmname_Memento_letter	{Memento 的信}
 itmdescr_Memento_letter
 {
-梅门托的信
+Memento 的信
 }

@@ -12,7 +12,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		// 裁缝铺制作氙气外套任务 -->
 		case "Tailor":
-			dialog.text = "是的, 我完全明白你的意思, 请别那样大喊大叫。 但我已经解释过了 --这次的信件和包裹比平时多得多。 别担心, 你的材料不会丢失, 会由下一艘信使船送达。 ";
+			dialog.text = "是的, 我完全明白你的意思, 请别那样大喊大叫。 但我已经解释过了 —这次的信件和包裹比平时多得多。 别担心, 你的材料不会丢失, 会由下一艘信使船送达。 ";
 			link.l1 = "... ";
 			link.l1.go = "Tailor_01";
 		break;

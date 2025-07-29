@@ -28,7 +28,7 @@ Patria_6
 
 Patria_7
 {
-已交给西班牙人一封便函, 让其派和谈代表前往特立尼达灯塔 启动谈判! 
+西班牙人已收到通知, 要派谈判人员前往特立尼达的灯塔 开启谈判！
 }
 
 Patria_8
@@ -43,7 +43,7 @@ Patria_9
 
 Patria_10
 {
-诺埃尔.福热男爵已离开你的船只! 
+Noel Forget 男爵已离开你的船只! 
 }
 
 Patria_11
@@ -62,7 +62,7 @@ Peter
 }
 Patria_14
 {
-施托伊弗桑特
+Stuyvesant
 }
 
 Patria_15
@@ -129,7 +129,7 @@ Patria_27
 
 Patria_28
 {
-多伊利上校已发出信号, 要求在布兰卡泻湖登陆! 
+Doily 上校已发出信号, 要求在布兰卡泻湖登陆! 
 }
 
 Patria_29
@@ -181,7 +181,7 @@ Patria_38
 
 Patria_39
 {
-诺埃尔.福热男爵死于热病! 
+Noel Forget 男爵死于热病! 
 }
 
 Patria_40
@@ -209,7 +209,7 @@ Patria_44
 
 Patria_45
 {
-二十三小时后... @<NewStr()> 彼得.施托伊弗桑特出现在城门口
+二十三小时后... @<NewStr()> Peter Stuyvesant 出现在城门口
 }
 
 Patria_46

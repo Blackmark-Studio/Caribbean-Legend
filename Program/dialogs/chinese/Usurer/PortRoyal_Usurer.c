@@ -16,7 +16,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "告诉我, 上校来找过你吗? 他说你有份奖赏给我。 ";
 				link.l1.go = "DTSG_depozit_1";
 			}
-			// <—— 旧日罪孽的漫长阴影
+			// < —旧日罪孽的漫长阴影
 		break;
 		
 		// --> Sinistra 旧日罪孽的漫长阴影	
@@ -33,7 +33,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "DTSG_depozit_3":
-			dialog.text = "整整一万金币。 一个比索都没有 --全是金币。 ";
+			dialog.text = "整整一万金币。 一个比索都没有 —全是金币。 ";
 			link.l1 = "至少不是三十块银币... ";
 			link.l1.go = "DTSG_depozit_4";
 			AddItems(pchar, "chest", 70);

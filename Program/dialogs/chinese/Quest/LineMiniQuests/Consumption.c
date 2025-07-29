@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 				dialog.text = "船长! 听说你出海了! 发生了什么? 有什么发现吗? 请告诉我, 快说! ";
 				if (CheckAttribute(pchar, "questTemp.Consumption.TakeMoney"))
 				{//拿了钱
-					link.l1 = "不, 我的美人, 这次突袭是应总督大人的要求进行的。 非常抱歉, 安杰洛死在堡垒的地牢里 --现在这一点毫无疑问。 坚强点! ";
+					link.l1 = "不, 我的美人, 这次突袭是应总督大人的要求进行的。 非常抱歉, 安杰洛死在堡垒的地牢里 —现在这一点毫无疑问。 坚强点! ";
 					link.l1.go = "Waitress";
 				}
 				else
@@ -548,7 +548,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.SergioOilBlock = true;
 			pchar.questTemp.SergioOilPotom = true;
 		break;
-	// <—— 树脂生成器
+	// < —树脂生成器
 	
 		case "Juan_abordage":
 			dialog.text = "你到底是谁! ? ";

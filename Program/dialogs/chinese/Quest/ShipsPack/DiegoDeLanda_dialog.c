@@ -93,11 +93,11 @@ void ProcessDialogEvent()
 			link.l1 = "... ";
 			link.l1.go = "DiegoDeLanda_Meeting_2";
 		break;
-		//<—— 相遇
+		//< —相遇
 		
 		//--> 神圣慈悲
 		case "DiegoDeLanda_SantaMisericordia_2":
-			dialog.text = "啊... 那本日记。 非凡的东西 --文字。 它就像... 黑暗中的一条路。 引领你到启示等待的地方。 费尔南多先生经常访问我们的教区。 尤其是在最后一年。 ";
+			dialog.text = "啊... 那本日记。 非凡的东西 —文字。 它就像... 黑暗中的一条路。 引领你到启示等待的地方。 费尔南多先生经常访问我们的教区。 尤其是在最后一年。 ";
 			link.l1 = "你在当地教区服务? 你认识费尔南多先生? ";
 			link.l1.go = "DiegoDeLanda_SantaMisericordia_3";
 		break;
@@ -119,11 +119,11 @@ void ProcessDialogEvent()
 			link.l1 = "... ";
 			link.l1.go = "DiegoDeLanda_leaving";
 		break;
-		//<—— 神圣慈悲
+		//< —神圣慈悲
 		
 		//--> 贝丝夫人
 		case "DiegoDeLanda_LadyBeth_2":
-			dialog.text = "哦, 是的。 可怜的女人。 她的丈夫…不是最善良的人。 据说他的种植园是巴巴多斯产量最高的。 也是最残酷的。 你知道每个月有多少奴隶死在那里吗? 最近, 他打死了一位来自英格兰的真正医生 --一个极具智慧和才华的人。 但相信我, 她的命运也好不到哪里去。 ";
+			dialog.text = "哦, 是的。 可怜的女人。 她的丈夫…不是最善良的人。 据说他的种植园是巴巴多斯产量最高的。 也是最残酷的。 你知道每个月有多少奴隶死在那里吗? 最近, 他打死了一位来自英格兰的真正医生 —一个极具智慧和才华的人。 但相信我, 她的命运也好不到哪里去。 ";
 			link.l1 = "你似乎消息很灵通。 ";
 			link.l1.go = "DiegoDeLanda_LadyBeth_3";
 		break;
@@ -141,7 +141,7 @@ void ProcessDialogEvent()
 			link.l1.go = "DiegoDeLanda_leaving";
 		break;
 		
-		//<—— 贝丝夫人
+		//< —贝丝夫人
 		
 		//--> 纪念号
 		case "DiegoDeLanda_Memento_2":
@@ -170,7 +170,7 @@ void ProcessDialogEvent()
 			SetAlchemyRecipeKnown("blade_SP_3");
 		break;
 		
-		//<—— 纪念号
+		//< —纪念号
 		
 		//--> 告别
 		case "DiegoDeLanda_Leaving":
@@ -208,7 +208,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DiegoDeLanda_Leaving_First_2": // 第一次告别
-			dialog.text = "我不明白。 其他人 --是的。 但不是你。 还不是。 ";
+			dialog.text = "我不明白。 其他人 —是的。 但不是你。 还不是。 ";
 			link.l1 = "其他人? ";
 			link.l1.go = "DiegoDeLanda_Leaving_First_3";
 		break;

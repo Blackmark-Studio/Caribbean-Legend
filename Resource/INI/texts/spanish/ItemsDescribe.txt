@@ -544,14 +544,14 @@ Es un raro ejemplar de pistola realizada por un gran maestro. Deja pocas posibil
 itmname_pistol6 {Pistola de dos cañones}
 itmdescr_pistol6
 {
-Es una pistola de dos cañones, el sueño de aquellos que prefieren estar seguros ante cualquier situación con un segundo disparo siempre a mano y listo. Necesita balas de plomo como munición y requiere de la habilidad 'Pistolero'.
+Es una pistola de dos cañones, el sueño de aquellos que prefieren estar seguros ante cualquier situación con un segundo disparo siempre a mano y listo. Necesita balas de plomo como munición.
 }
 
 itmname_pistol7 {Revólver Colt}
 itmdescr_pistol7
 {
 Una extraña pistola con seis cilindros giratorios que pueden cargarse y dispararse en secuencia. El cañón lleva la inscripción "Patent Colt Arms Co. Paterson, N.J., 1841'.
-Imagina la cara de tu enemigo cuando saques a *este* chico malo. Requiere la ventaja Escaramuzador.
+Imagina la cara de tu enemigo cuando saques a *este* chico malo. Requiere la habilidad Pistolero.
 }
 
 itmname_pistol8 {Trabuco}
@@ -588,7 +588,7 @@ Una pistola de cuatro cañones recortada. Puede que no dispare con tanta precisi
 itmname_pistol13 {Revólver de chispa}
 itmdescr_pistol13
 {
-Una obra maestra fabricada hace más de 30 años para un importante comandante militar, con excepcionales capacidades multidisparo. Requiere la habilidad Escaramuzador.
+Una obra maestra fabricada hace más de 30 años para un importante comandante militar, con excepcionales capacidades multidisparo. Requiere la habilidad Pistolero.
 (+1 Autoridad)
 }
 
@@ -596,7 +596,7 @@ itmname_pistol14 {Pistola de duelo de dos cañones}
 itmdescr_pistol14
 {
 Una obra maestra del diseño letal: cara, mortal y totalmente impracticable. Se recomienda el uso de un probador de pólvora. 9% de probabilidad básica de Tiro Crítico.
-Requiere la pericia Escaramuza.
+Requiere la habilidad Pistolero.
 }
 
 itmname_mortairgun {Mortero portátil}
@@ -644,7 +644,7 @@ Un mosquete de infantería. Un artículo caro y de alta calidad, claramente hech
 itmname_mushket8 {Rifle de cuatro cañones}
 itmdescr_mushket8
 {
-Fabricada a mano con un innovador sistema de desmontaje que permite convertirla rápidamente en pistola. Requiere la cualificación Escaramuzador para usar su mecanismo de recarga rápida.
+Fabricada a mano con un innovador sistema de desmontaje que permite convertirla rápidamente en pistola. Requiere la habilidad Pistolero para usar su mecanismo de recarga rápida.
 }
 
 itmname_m8_barrel {Culata y cañón}
@@ -712,7 +712,7 @@ Esta hermosa versión de la carabina de carga lateral es el arma que se usa trad
 itmname_howdah {Howdah}
 itmdescr_howdah
 {
-Es una pistola de doble cañón y gran calibre, la mejor compañera del cazador en la selva y la jungla. Está cargado con postas y clavos triturados. Utiliza pólvora y bolas de plomo para disparar y requiere de la habilidad 'Pistolero'.
+Es una pistola de doble cañón y gran calibre, la mejor compañera del cazador en la selva y la jungla. Dispara con fiabilidad a jabalíes, tigres y nativos agresivos. Utiliza pólvora y bolas de plomo para disparar y requiere de la habilidad 'Pistolero'.
 } 
 
 ; ==================================================================================================================== ДОСПЕХИ
@@ -1004,7 +1004,7 @@ itmname_spyglassSP3 {Catalejo "Ojo del Muerto"}
 itmdescr_spyglassSP3
 {
 Este catalejo adornado con huesos tiene lentes sorprendentemente buenas, permitiendo ver: tipo de barco, nombre, velocidad, número y calibre de cañones, daño del barco, mosqueteros en cubierta y el terror en los ojos del capitán enemigo.
-Bonificación de alcance de navegación: +850 yardas.
+Aumenta el alcance del comando 'Navegar a' en +850 yardas.
 Aumenta el radio de visión en el mapa global: +15%.
 }
 
@@ -1223,7 +1223,7 @@ talisman17_questsNoBonus{Church Quests: 0 / 5}
 itmname_talisman18	{Amuleto 'Carta de Blackwood'}
 itmdescr_talisman18
 {
-El estatuto personal de Albert Blackwood. Describe en detalle el funcionamiento de la Lady Bet, la disposición de los tiradores y la táctica de las Zorras Marinas. Una sección aparte está dedicada a la caza de tesoros y a recompensar a los tiradores hábiles con las riquezas recuperadas. 
+El estatuto personal de Albert Blackwood. Describe en detalle el funcionamiento de la Lady Beth, la disposición de los tiradores y la táctica de las Zorras Marinas. Una sección aparte está dedicada a la caza de tesoros y a recompensar a los tiradores hábiles con las riquezas recuperadas. 
 Cada tesoro encontrado aumenta el poder de la descarga de mosquetes en 1% de la tripulación y el daño de las escopetas en 2%.
 ~
 Sin penalizaciones, sin límites de activación.
@@ -1517,7 +1517,7 @@ Desaparece en 70 días o al desequipar.
 itmname_amulet_3 {Amuleto 'Crucifijo'}
 itmdescr_amulet_3
 {
-Una cruz católica consagrada reduce en un 15 % el daño crítico infligido por los enemigos con armas blancas.
+Una cruz católica consagrada reduce el daño crítico infligido por los enemigos en un 15%.
 El poder del ataque fuerte del personaje se reduce en un 10%.
 Se activa una vez, por cualquier personaje.
 Desaparece después de 70 días o al ser eliminado.

@@ -30,7 +30,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 					link.l1.go = "SharkGoldFleet_13";
 				}
 			}
-			//<—— 与阿库拉联动任务
+			//< —与阿库拉联动任务
 		break;
 		
 		// belamour 与阿库拉联动任务 -->
@@ -92,7 +92,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 							}
 							else
 							{
-								dialog.text = "我有事要做。 当然, 我不认识你... 但说实话, 我只记得有名有姓的商船队商人。 其余的 --不记得了。 而且你有长期许可证, 一看就是经验丰富的商人。 不过, 你的船很有趣。 你为什么要用护卫舰做贸易? ";
+								dialog.text = "我有事要做。 当然, 我不认识你... 但说实话, 我只记得有名有姓的商船队商人。 其余的 —不记得了。 而且你有长期许可证, 一看就是经验丰富的商人。 不过, 你的船很有趣。 你为什么要用护卫舰做贸易? ";
 								link.l1 = "哈, 这不是普通的护卫舰。 即使满载货物, 它也能达到很高的速度。 逃离海盗总是比与他们战斗更容易, 不是吗? 虽然我的船容量比普通商船小, 但风险要低得多。 ";
 								link.l1.go = "SharkGoldFleet_01";
 							}

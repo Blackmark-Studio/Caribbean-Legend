@@ -51,7 +51,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meeting_3":
-			dialog.text = "不多, 但足够证明杰克曼在撒谎。 那混蛋说矿场的守卫 --我丈夫面对的那些 --从不抓俘虏。 虽然没人在海湾看到我丈夫的尸体, 但他们怎么会看到呢, 因为他实际上是被抓去矿场当俘虏了。 米斯基托人的萨满‘蛇眼’在那里找到了他。 \n他还安排了他的逃跑。 但我丈夫现在在哪里, 还不知道。 萨满嘟囔着什么库库尔坎吃掉了他, 但我没听懂。 此外, 那个红皮肤明确表示, 白人女人对他来说只是个笑话。 你应该和他谈谈, 也许他会更健谈。 ";
+			dialog.text = "不多, 但足够证明杰克曼在撒谎。 那混蛋说矿场的守卫 —我丈夫面对的那些 —从不抓俘虏。 虽然没人在海湾看到我丈夫的尸体, 但他们怎么会看到呢, 因为他实际上是被抓去矿场当俘虏了。 米斯基托人的萨满‘蛇眼’在那里找到了他。 \n他还安排了他的逃跑。 但我丈夫现在在哪里, 还不知道。 萨满嘟囔着什么库库尔坎吃掉了他, 但我没听懂。 此外, 那个红皮肤明确表示, 白人女人对他来说只是个笑话。 你应该和他谈谈, 也许他会更健谈。 ";
 			link.l1 = "至少有点线索了! 这消息让我高兴。 我在哪里能找到这个印第安人? ";
 			link.l1.go = "meeting_4";
 		break;
@@ -148,7 +148,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SnakeEye_1":
-			dialog.text = "嗯... 有一点。 你知道, 我们女人就是这样。 但你必须理解 --我只是担心我丈夫。 我其实爱他。 我偷听又怎样? 不管怎样, 你得到什么有用的信息了吗? ";
+			dialog.text = "嗯... 有一点。 你知道, 我们女人就是这样。 但你必须理解 —我只是担心我丈夫。 我其实爱他。 我偷听又怎样? 不管怎样, 你得到什么有用的信息了吗? ";
 			link.l1 = "我在努力想... 理解‘蛇眼’不容易。 不过, 我们进村时看到的那个石像好像是某种魔法传送门, 可以传送人。 ";
 			link.l1.go = "SnakeEye_2";
 		break;
@@ -306,11 +306,11 @@ void ProcessDialogEvent()
 		
 		// 传送后返回
 		case "arrive":
-			dialog.text = "啊 --啊 --啊? ! 该死! 你是什么怪物, 天杀的? ! 去你的! 我这辈子见过更可怕的东西, 包括范.德.戴肯本人! 现在我要给你点颜色看看! ";
+			dialog.text = "啊 —啊 —啊? ! 该死! 你是什么怪物, 天杀的? ! 去你的! 我这辈子见过更可怕的东西, 包括范.德.戴肯本人! 现在我要给你点颜色看看! ";
 			link.l1 = "(微弱地) 丹妮, 等等! 住手! 现在! ";
 			link.l1.go = "arrive_1";
 		// belamour legendary edition -->
-			link.l2 = "(微弱地) 范.德.戴肯? 呃 --哈 --哈 --哈! 那条虫已经为我服务了! 现在轮到你了! 向我鞠躬, 忠诚的仆人! 你将领导我的亡灵大军! ";
+			link.l2 = "(微弱地) 范.德.戴肯? 呃 —哈 —哈 —哈! 那条虫已经为我服务了! 现在轮到你了! 向我鞠躬, 忠诚的仆人! 你将领导我的亡灵大军! ";
 			link.l2.go = "arrive_1a";
 			SetMusic("music_jungle");
 			if (CheckCharacterItem(pchar, "Ultimate_potion"))
@@ -333,11 +333,11 @@ void ProcessDialogEvent()
 		case "arrive_1a":
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 			AddCharacterExpToSkill(pchar, "Sneak", 100);
-			dialog.text = "啊 --啊 --啊 --啊 --啊 --啊 --啊 --啊 --啊 --啊 --啊! 走开! 现在不能发生这种事! ";
+			dialog.text = "啊 —啊 —啊 —啊 —啊 —啊 —啊 —啊 —啊 —啊 —啊! 走开! 现在不能发生这种事! ";
 			link.l1 = "(微弱地) 丹妮, 等等! 住手! 现在! ";
 			link.l1.go = "arrive_1";
 		break;
-		// <—— legendary edition
+		// < —legendary edition
 		case "arrive_1":
 			dialog.text = "啊? ! 你说什么? ! 丹妮? ";
 			link.l1 = "(微弱地) 立刻住手! 拿着你的军刀! 让我把这东西摘下来! ";
@@ -346,7 +346,7 @@ void ProcessDialogEvent()
 		
 		case "arrive_2":
 			dialog.text = "该死, 你这怪物听起来像... "+pchar.name+"?!";
-			link.l1 = "(微弱地) 哦 --哦... 你不说我也知道! ";
+			link.l1 = "(微弱地) 哦 —哦... 你不说我也知道! ";
 			link.l1.go = "arrive_3";
 		break;
 		
@@ -382,7 +382,7 @@ void ProcessDialogEvent()
 		
 		case "arrive_8":
 			dialog.text = "你找到纳森了? 他在哪里? 他怎么样? ! ";
-			link.l1 = "我不骗你 --他还活着, 但状态很差。 他没有科曼奇的药水, 雕像耗尽了他所有的健康。 他躺在某个废弃船只岛上的一艘破旧船只的船舱里。 我也被传送到了那里, 所以‘蛇眼’是对的! ";
+			link.l1 = "我不骗你 —他还活着, 但状态很差。 他没有科曼奇的药水, 雕像耗尽了他所有的健康。 他躺在某个废弃船只岛上的一艘破旧船只的船舱里。 我也被传送到了那里, 所以‘蛇眼’是对的! ";
 			link.l1.go = "arrive_9";
 		break;
 		
@@ -612,7 +612,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "treatment_1":
-			dialog.text = "你知道, "+pchar.name+", 现在我终于可以松口气了。 我坚信萨满会让我丈夫恢复正常。 我会毫不犹豫地把纳森留在这里, 因为如果‘蛇眼’治不好他 --没人能治好。 ";
+			dialog.text = "你知道, "+pchar.name+", 现在我终于可以松口气了。 我坚信萨满会让我丈夫恢复正常。 我会毫不犹豫地把纳森留在这里, 因为如果‘蛇眼’治不好他 —没人能治好。 ";
 			link.l1 = "一切都会好的, 丹妮。 ‘蛇眼’从没对我撒过谎。 我信任他。 ";
 			link.l1.go = "treatment_2";
 		break;
@@ -686,7 +686,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "after_boarding":
-			dialog.text = "那个混蛋终于死了... 我不敢相信 --我又站在‘百夫长’号的甲板上了! 我熟悉这里的每一颗钉子, 好像船也认出了我。 ";
+			dialog.text = "那个混蛋终于死了... 我不敢相信 —我又站在‘百夫长’号的甲板上了! 我熟悉这里的每一颗钉子, 好像船也认出了我。 ";
 			link.l1 = "它又属于你了, 丹妮。 你和纳撒尼尔的。 ";
 			link.l1.go = "after_boarding_1";
 		break;
@@ -730,7 +730,7 @@ void ProcessDialogEvent()
 		
 		case "after_boarding_7":
 			dialog.text = "他说过? 哦, 别提醒我... ";
-			link.l1 = "好吧, 丹妮。 你前面有很多工作要做, 我得去拜访我们的盟友 --马库斯和巴尔巴宗。 我希望你允许我翻遍这个船舱, 我肯定杰克曼的箱子里有很多有趣的东西。 ";
+			link.l1 = "好吧, 丹妮。 你前面有很多工作要做, 我得去拜访我们的盟友 —马库斯和巴尔巴宗。 我希望你允许我翻遍这个船舱, 我肯定杰克曼的箱子里有很多有趣的东西。 ";
 			link.l1.go = "after_boarding_8";
 		break;
 		
@@ -806,7 +806,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l2 = "姑娘? 听起来很有趣, 丹妮。 我一直渴望... 女人的心跳... 我想我该看看 --你不会随便推荐人的, 对吧? ";
+				link.l2 = "姑娘? 听起来很有趣, 丹妮。 我一直渴望... 女人的心跳... 我想我该看看 —你不会随便推荐人的, 对吧? ";
 				link.l2.go = "marun_town_fuckgirl_1";
 			}
 			NextDiag.TempNode = "marun_town_3";
@@ -882,7 +882,7 @@ void ProcessDialogEvent()
 			LAi_CharacterDisableDialog(npchar);
 		break;
 		
-	// -----------------------------------------—— 传奇失败 ------------------------------------------------
+	// ----------------------------------------- —传奇失败 ------------------------------------------------
 		case "failcenturion":
 			dialog.text = "我和纳森终于能松口气了! 这个该死的混蛋杰克曼死了! 我为‘百夫长’号感到难过, 但当那混蛋偷走它时, 我就已经接受了失去它的事实。 所以我不太担心。 ";
 			link.l1 = "但我担心。 我是个白痴! 所有证据都和船一起沉入海底了。 这些证据本可以帮助我们在选举海盗联盟新首领时投票。 现在... 全没了。 ";
@@ -919,12 +919,12 @@ void ProcessDialogEvent()
 		
 		case "after_kiss":
 			dialog.text = "哦, 谢谢你的表演, 查尔斯。 整个马龙镇都会谈论这件事, 哈 - 哈! ";
-			link.l1 = "我毫不怀疑这成了你新的首要任务 --确保它发生。 ";
+			link.l1 = "我毫不怀疑这成了你新的首要任务 —确保它发生。 ";
 			link.l1.go = "after_kiss_1";
 		break;
 		
 		case "after_kiss_1":
-			dialog.text = "实际上, 这在我的清单底部。 别生那女孩的气 --这是她第一次。 我和纳森冒险时, 整个群岛也在嘲笑我们。 ";
+			dialog.text = "实际上, 这在我的清单底部。 别生那女孩的气 —这是她第一次。 我和纳森冒险时, 整个群岛也在嘲笑我们。 ";
 			link.l1 = "我们换个话题和心情吧。 我受够这个雕像了, 我们走。 ";
 			link.l1.go = "after_kiss_2";
 		break;
@@ -937,7 +937,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("HelenDrinking_AfterKiss3");
 		break;
 		
-		//--> ---------------------------------—— 军官模块 ------------------------------------------
+		//--> --------------------------------- —军官模块 ------------------------------------------
 		case "Danielle_officer":
 			dialog.text = "你想要什么, 船长? ";
 			if (CheckAttribute(pchar, "questTemp.Saga.BarbTemptation") && pchar.questTemp.Saga.BarbTemptation == "danielle")
@@ -1018,7 +1018,7 @@ void ProcessDialogEvent()
             Link.l1 = "解散。 ";
             Link.l1.go = "Exit";
         break;
-		//<—— ---------------------------------—— 军官模块 ----------------------------------------
+		//< —--------------------------------- —军官模块 ----------------------------------------
 		
 		case "":
 			dialog.text = "";

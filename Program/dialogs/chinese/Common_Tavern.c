@@ -150,7 +150,7 @@ void ProcessDialogEvent()
 				DelLandQuestMark(npchar);
 				break;
 			}
-			//<—— 依法贸易
+			//< —依法贸易
 
 			if(NPChar.quest.meeting == "0")
 			{
@@ -196,7 +196,7 @@ void ProcessDialogEvent()
 					}
 					break;
 				}
-				// <—— 神父的任务生成器。 任务#1.
+				// < —神父的任务生成器。 任务#1.
 				dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("哦, 尊贵的客人! 嘿, 你 - 挪过去, 给英勇的船长腾地方! 快点, 不然我把你扔出去, 哈哈! ","仁慈的上帝啊! 这不是" +GetFullName(pchar)+ "吗! 我刚进了一批最好的葡萄酒, 请进! ","哦, " + GetAddress_Form(NPChar) + ", 你有麻烦吗? 请允许我请你? 这瓶酒我请客。 相信我, 这是周围最好的酒... "),LinkRandPhrase("哦, 是" +GetFullName(pchar)+ "船长! 嘿, 你! 对好船长放尊重点! 这不是谷仓! 抱歉, 船长, 他们的母亲显然没教过他们礼貌。 ","好吧好吧, " + GetAddress_Form(NPChar) + " " +GetFullName(pchar)+ "! 我们要熬夜了, 哈哈! 姑娘们最好穿上你们最好的裙子! ","下午好, " +GetFullName(pchar)+ ", 很高兴见到你! 先生, 请允许我提个请求。 我刚买了新桌子, 所以今晚请不要打架。 "),LinkRandPhrase("你好, 船长。 请自便, 但记住即使Sharp船长本人在我的店里也会注意举止。 ","哦吼吼! 看看谁来了? 是" +GetFullName(pchar)+ "本人! 你不在的时候我们正开始觉得无聊呢! 你给伙计们讲个冒险故事, 我开一桶新朗姆酒怎么样, 船长? ","哦吼吼! 是" +GetFullName(pchar)+ "本人! 我希望你不会再用你伟大冒险的故事把我的顾客骗到公海上去吧? ")),LinkRandPhrase(LinkRandPhrase("" +GetFullName(pchar)+ "! 这个老水手总是很高兴在他的店里见到你! 先生, 请坐, 姑娘们会照顾你的! ","请船长自便! 总是很高兴见到我最喜欢的客人。 你想喝什么? ","很高兴再次见到你, " +GetFullName(pchar)+ "! 你想要一张单独的桌子吗? 还是想坐在吧台? "),LinkRandPhrase("下午好, 船长。 天气有点凉, 允许我给你提供一些我刚做的极好的热葡萄酒, 我请客! ","你好, " +GetFullName(pchar)+ "船长! 很高兴你又来拜访了。 你想要什么? ","很高兴有你, " + GetAddress_Form(NPChar) + " " +GetFullName(pchar)+ "! 很高兴你光顾我简陋的店! 我们尽一切努力让你满意。 "),LinkRandPhrase("船长! 欢迎, 欢迎! 我有一些适合路易国王的优质安茹葡萄酒, 专门为你保存! ","" +GetFullName(pchar)+ "! 我很高兴你来了。 要我把这些海鼠都赶走, 还是你希望他们留下? 相信我, 我很乐意为你清空整个酒馆! ","我的上帝, 这是" +GetFullName(pchar)+ "船长! 嘿, 美女们 - 把最好的桌布拿到船长的桌子上! ")));
 				Link.l1 = pcharrepphrase(RandPhraseSimple(RandPhraseSimple("哦, 我知道我在这里被记住了... 停, 伙计, 给我倒杯酒, 我四处看看... ","冷静点, 伙计, 今天我心情好。 我们先来点朗姆酒, 好吗? ... "),RandPhraseSimple("哦... 你不太高兴我来这里? 我希望我听错了, 哈! ","啊哈。 我希望你的酒比你的问候好? 否则我会生气的, 你知道... ")),RandPhraseSimple(RandPhraseSimple("总是很高兴拜访你, 伙计。 你有什么能让老水手暖和起来的? ","啊哈, 伙计, 你的店一天比一天好! 来这里总是一种享受... "),RandPhraseSimple("你没忘记一个老流浪汉吧? 我很荣幸, 伙计。 ","很高兴再次见到老朋友... 你还有一些朗姆酒吗? ")));
 				Link.l1.go = "step_node";
@@ -221,7 +221,7 @@ void ProcessDialogEvent()
 					link.l10 = LinkRandPhrase("你能告诉我最近教堂抢劫案的事吗? ", "你对最近教堂的抢劫案知道些什么? ", "你听说过最近教堂的抢劫案吗? ");
 					link.l10.go = "Tavern_GenQuest_Church_2_1";
 				}
-				// <—— 神父的任务生成器。 任务#2.
+				// < —神父的任务生成器。 任务#2.
 				
 				//Jason --> 生成器 不幸的小偷
 				if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_tavern" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
@@ -229,7 +229,7 @@ void ProcessDialogEvent()
 					link.l16 = "人们说你几乎知道这个殖民地的一切。 我想买" + pchar.GenQuest.Device.Shipyarder.Type + ", 有人告诉我它在你的镇上被出售。 嗯, 有人在街头市场卖它。 你能告诉我什么吗? ";
 					link.l16.go = "Device_Tavern";
 				}
-				// <—— 生成器 不幸的小偷
+				// < —生成器 不幸的小偷
 			
 				//Jason --> 生成器 阳光下的地方
 				if (CheckAttribute(pchar, "GenQuest.Sunplace.Trader") && pchar.GenQuest.Sunplace.Trader == "continue" && NPChar.location == pchar.GenQuest.Sunplace.Trader.CityT + "_tavern")
@@ -237,7 +237,7 @@ void ProcessDialogEvent()
 					link.l17 = "在找一个叫" + pchar.GenQuest.Sunplace.Trader.Enemyname + "的敲诈者。 我在哪里可以找到他? ";
 					link.l17.go = "Sunplace_Tavern";
 				}
-				// <—— 生成器 阳光下的地方
+				// < —生成器 阳光下的地方
 			
 				// --> 荷兰赌局
 				if (CheckAttribute(pchar, "questTemp.HWIC.Holl") && pchar.questTemp.HWIC.Holl == "JacobOnMain" && NPChar.location == pchar.questTemp.HWIC.Holl.JacobCity + "_tavern")
@@ -250,7 +250,7 @@ void ProcessDialogEvent()
 					link.l18 = "你好, " + npchar.name+ "。 我在找一个叫费尔南多.罗德里格斯的绅士。 他出现在你的镇上了吗? ";
 					link.l18.go = "HWICSelfFernando_Tavern";
 				}
-				// <—— 荷兰赌局
+				// < —荷兰赌局
 			
 				//Jason --> 水上飞机比赛
 				if (CheckAttribute(pchar, "GenQuest.Racing.Go.Advantage") && NPChar.location == pchar.GenQuest.Racing.Go.StartCity + "_tavern")
@@ -258,7 +258,7 @@ void ProcessDialogEvent()
 					link.l19 = "我来领取我的奖金, 奖金由你保管。 " + npchar.name+ "。 ";
 					link.l19.go = "Race_Advantage";
 				}
-				// <—— 水上飞机比赛
+				// < —水上飞机比赛
 			
 				//Jason --> 劫持乘客
 				if (CheckAttribute(pchar, "GenQuest.Marginpassenger") && pchar.GenQuest.Marginpassenger == "take" && NPChar.location == pchar.GenQuest.Marginpassenger.Targetcity+"_tavern")
@@ -266,7 +266,7 @@ void ProcessDialogEvent()
 					link.l20 = "我想知道在哪里可以找到一个叫" + pchar.GenQuest.Marginpassenger.q2Name + "的人? 他住在你的镇上。 ";
 					link.l20.go = "Marginpassenger";
 				}
-				// <—— 劫持乘客
+				// < —劫持乘客
 				if(!CheckAttribute(pchar,"questTemp.TimeLock"))
 				{
 					link.l3 = pcharrepphrase("你有空闲的房间吗, 伙计? ", "你有空闲的房间吗, 我想在这里待一段时间。 ");
@@ -299,7 +299,7 @@ void ProcessDialogEvent()
 				link.l1.go = "Tavern_ChurchGenQuest1_Node_1";
 				break;
 			}
-			// <—— 神父的任务生成器。 任务#1.
+			// < —神父的任务生成器。 任务#1.
 			dialog.Text = LinkRandPhrase("我在听, 船长。 ","我能为你提供什么, 船长? ","那么船长, 要什么? ");
 			Link.l1 = "我需要船员, " + NPChar.name+ "。 ";
 			Link.l1.go = "crew hire";
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 				link.l10 = LinkRandPhrase("你能告诉我最近教堂抢劫案的事吗? ", "你对最近教堂的抢劫案知道些什么? ", "你听说过最近教堂的抢劫案吗? ");
 				link.l10.go = "Tavern_GenQuest_Church_2_1";
 			}
-			// <—— 神父的任务生成器。 任务#2.
+			// < —神父的任务生成器。 任务#2.
 			
 			//Jason --> 生成器 不幸的小偷
 			if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_tavern" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
@@ -324,7 +324,7 @@ void ProcessDialogEvent()
    				link.l16 = "人们说你几乎知道这个殖民地的一切。 我想买" + pchar.GenQuest.Device.Shipyarder.Type + ", 有人告诉我它在你的镇上被出售。 嗯, 有人在街头市场卖它。 你能告诉我什么吗? ";
 				link.l16.go = "Device_Tavern";
 			}
-			// <—— 生成器 不幸的小偷
+			// < —生成器 不幸的小偷
 			
 			//Jason --> 生成器 阳光下的地方
 			if (CheckAttribute(pchar, "GenQuest.Sunplace.Trader") && pchar.GenQuest.Sunplace.Trader == "continue" && NPChar.location == pchar.GenQuest.Sunplace.Trader.CityT + "_tavern")
@@ -332,7 +332,7 @@ void ProcessDialogEvent()
    				link.l17 = "告诉我一个叫" + pchar.GenQuest.Sunplace.Trader.Enemyname + "的敲诈者。 我在哪里可以找到他? ";
 				link.l17.go = "Sunplace_Tavern";
 			}
-			// <—— 生成器 阳光下的地方
+			// < —生成器 阳光下的地方
 			
 			//--> 荷兰赌局
 			if (CheckAttribute(pchar, "questTemp.HWIC.Holl") && pchar.questTemp.HWIC.Holl == "JacobOnMain" && NPChar.location == pchar.questTemp.HWIC.Holl.JacobCity + "_tavern")
@@ -345,7 +345,7 @@ void ProcessDialogEvent()
 					link.l18 = "你好, " + npchar.name+ "。 我在找一个叫费尔南多.罗德里格斯的绅士。 他出现在你的镇上了吗? ";
 					link.l18.go = "HWICSelfFernando_Tavern";
 				}
-				//<—— 荷兰赌局
+				//< —荷兰赌局
 				
 				//Jason --> 水上飞机比赛
 				if (CheckAttribute(pchar, "GenQuest.Racing.Go.Advantage") && NPChar.location == pchar.GenQuest.Racing.Go.StartCity + "_tavern")
@@ -353,14 +353,14 @@ void ProcessDialogEvent()
 					link.l19 = "我来领取我的奖金, 奖金由你保管。 " + npchar.name+ "。 ";
 					link.l19.go = "Race_Advantage";
 				}
-				// <—— 水上飞机比赛
+				// < —水上飞机比赛
 				//Jason --> 劫持乘客
 				if (CheckAttribute(pchar, "GenQuest.Marginpassenger") && pchar.GenQuest.Marginpassenger == "take" && NPChar.location == pchar.GenQuest.Marginpassenger.Targetcity+"_tavern")
 				{
 					link.l20 = "我想知道在哪里可以找到一个叫" + pchar.GenQuest.Marginpassenger.q2Name + "的人? 他住在你的镇上。 ";
 					link.l20.go = "Marginpassenger";
 				}
-				// <—— 劫持乘客
+				// < —劫持乘客
 			if(!CheckAttribute(pchar,"questTemp.TimeLock"))
 			{
 				link.l3 = pcharrepphrase("你有空闲的房间吗, 伙计? ", "你有空闲的房间吗, 我想在这里待一段时间。 ");
@@ -547,7 +547,7 @@ void ProcessDialogEvent()
 				link.l12 = "听着, 我在找我的一个老朋友, " + pchar.GenQuest.FindFugitive.Name + "是他的名字。 一个船长朋友告诉我他正前往你的定居点。 你碰巧见过他吗? ";
 				link.l12.go = "FindFugitiveTav";
 			}
-			//<—— 寻找逃兵
+			//< —寻找逃兵
 
 			link.l15 = "没什么, 谢谢你, 。 ";
 			link.l15.go = "exit";
@@ -1048,7 +1048,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			//<<—— 任务女服务员
+			//<< —任务女服务员
 			// --> 任务"丛林中的少女"
 			if(CheckAttribute(pchar,"GenQuest.EncGirl") && npchar.city == pchar.GenQuest.EncGirl.city)
 			{
@@ -1078,7 +1078,7 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
-			// <—— 任务"丛林中的少女"
+			// < —任务"丛林中的少女"
 
 			// belamour 常住客 -->
 			if (CheckAttribute(pchar, "GenQuest.Unwantedpostor") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && abs(50-sti(pchar.reputation.nobility)) > 20)
@@ -1100,7 +1100,7 @@ void ProcessDialogEvent()
 				}
 				break;
 			}
-			//<—— 常住客
+			//< —常住客
 
 			dialog.text = "你打算在这里待多久? ";
 			if(!isDay())
@@ -1212,7 +1212,7 @@ void ProcessDialogEvent()
 				}
 				SetFunctionTimerCondition("NightAdventure_KillPhant", 0, 0, 0, false);
 			}
-			// <—— 中断夜间冒险 
+			// < —中断夜间冒险 
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			AddMoneyToCharacter(pchar, -5);
@@ -1250,7 +1250,7 @@ void ProcessDialogEvent()
 				}
 				SetFunctionTimerCondition("NightAdventure_KillPhant", 0, 0, 0, false);
 			}
-			// <—— 中断夜间冒险 
+			// < —中断夜间冒险 
 			if (CheckAttribute(pchar, "GenQuest.LigaAttack") && hrand(1) == 1)
 			{
 				TavernWaitDate("wait_night");
@@ -1274,7 +1274,7 @@ void ProcessDialogEvent()
 				}
 				SetFunctionTimerCondition("NightAdventure_KillPhant", 0, 0, 0, false);
 			}
-			// <—— 中断夜间冒险 
+			// < —中断夜间冒险 
 			if (CheckAttribute(pchar, "GenQuest.LigaAttack") && hrand(1) == 1)
 			{
 				TavernWaitDate("wait_night");
@@ -1299,7 +1299,7 @@ void ProcessDialogEvent()
 					ChangeCharacterAddressGroup(sld, "none", "", "");
 					SetFunctionTimerCondition("NightAdventure_KillPhant", 0, 0, 0, false);
 				}
-				// <—— 中断夜间冒险
+				// < —中断夜间冒险
 				DialogExit();
 				NextDiag.CurrentNode = NextDiag.TempNode;
 				TavernWaitDate("wait_day");
@@ -1444,7 +1444,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 			}
 		break;
-		// <—— 生成器 不幸的小偷
+		// < —生成器 不幸的小偷
 		
 		//Jason --> 生成器 阳光下的地方
 		case "Sunplace_Tavern":
@@ -1485,7 +1485,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.GenQuest.Sunplace.Trader = "hunt";
 		break;
-		// <—— 生成器 阳光下的地方	
+		// < —生成器 阳光下的地方	
 		
 		// Jason --> 荷兰赌局
 		case "HWICHollJacob_Tavern":
@@ -1544,7 +1544,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Holl_Gambit", "3-3");
 			DialogExit();
 		break;
-		//<—— 荷兰赌局
+		//< —荷兰赌局
 		
 		//Jason --> 水上飞机比赛
 		case "Race_Advantage":
@@ -1561,7 +1561,7 @@ void ProcessDialogEvent()
 			CloseQuestHeader("Racing");
 			DeleteAttribute(pchar, "GenQuest.Racing.Go");
 		break;
-		//<—— 水上飞机比赛
+		//< —水上飞机比赛
 		
 		//Jason --> 劫持乘客
 		case "Marginpassenger":
@@ -1593,7 +1593,7 @@ void ProcessDialogEvent()
 			{
 				AddQuestUserData("Marginpassenger", "sBaron", "到勒弗朗索瓦, 去找善良的雅克");
 			}
-			// <—— belamour gen
+			// < —belamour gen
 			pchar.GenQuest.Marginpassenger = "cabin";
 		break;
 		
@@ -1603,7 +1603,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("Marginpassenger", "sName2", pchar.GenQuest.Marginpassenger.q2Name);
 			pchar.GenQuest.Marginpassenger = "street";
 		break;
-		//<—— 劫持乘客
+		//< —劫持乘客
 		
 		//Jason --> 寻找逃兵
 		case "FindFugitiveTav":
@@ -1631,7 +1631,7 @@ void ProcessDialogEvent()
 			LAi_SetLoginTime(sld, 11.0, 18.0);
 			ChangeCharacterAddressGroup(sld, pchar.GenQuest.FindFugitive.City+"_town", "goto", "goto"+(rand(9)+1));
 		break;
-		//<—— 寻找逃兵
+		//< —寻找逃兵
 		
 		//--> 加斯科涅的枷锁
 		case "Sharlie_crew":
@@ -1673,7 +1673,7 @@ void ProcessDialogEvent()
 			LAi_SetLoginTime(sld, 6.0, 21.99);
 			AddLandQuestMark(sld, "questmarkmain");
 		break;
-		//<—— 加斯科涅的枷锁
+		//< —加斯科涅的枷锁
 		
 		// Addon 2016-1 Jason 海盗线
 		case "mtraxx_tortuga":
@@ -1749,7 +1749,7 @@ void ProcessDialogEvent()
 				LAi_SetActorType(sld);
 				LAi_ActorDialogDelay(sld, pchar, "", 1.5);
 		break;
-		// <—— belamour 常住客
+		// < —belamour 常住客
 		
 		case "Helen_room_night":
 			dialog.text = "我知道了。 那要5银币。 ";

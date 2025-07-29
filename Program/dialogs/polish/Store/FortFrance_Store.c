@@ -48,10 +48,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			DelLandQuestMark(npchar);
 			QuestPointerDelLoc("Fortfrance_town", "reload", "reload6_back");
-			dialog.text = "Praca? Hm. Przypuszczam, że mam dla ciebie pracę, która cię zainteresuje. Mój asystent zaginął, pracował w moim magazynie. Nie ma go już od tygodnia i to cholernie irytujące, bo muszę wykonywać jego obowiązki i nie mam na to czasu.\nProszę, znajdź tego idiotę i dowiedz się, dlaczego do diabła porzucił swoją pracę. A jeszcze lepiej - sprowadź go do mnie. Zapłacę ci tysiąc sztuk ośmiu.";
+			dialog.text = "Praca? Hm. Przypuszczam, że mam dla ciebie pracę, która cię zainteresuje. Mój asystent zaginął, pracował w moim magazynie. Nie ma go już od tygodnia i to cholernie irytujące, bo muszę wykonywać jego obowiązki i nie mam na to czasu.\nProszę, znajdź tego idiotę i dowiedz się, dlaczego do diabła porzucił swoją pracę. A jeszcze lepiej - sprowadź go do mnie. Zapłacę ci tysiąc pesos.";
 			link.l1 = "Dobrze, wchodzę w to. Powiedz mi jego imię i opisz, jak wygląda. Masz jakieś pomysły, gdzie go szukać?";
 			link.l1.go = "Sharlie_storehelper_1";
-			link.l2 = "Szukaj człowieka Bóg wie gdzie za marny tysiąc? Musisz żartować!";
+			link.l2 = "Szukać człowieka Bóg wie gdzie za marny tysiąc? Musisz żartować!";
 			link.l2.go = "Sharlie_storehelper_exit";
 			npchar.quest.storehelper = "true";
 		break;
@@ -60,12 +60,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddTimeToCurrent(2,0);
 			LocatorReloadEnterDisable("Fortfrance_town", "reload10_back", false);// пу откр
 			dialog.text = "Hej, monsieur. Kto szuka pracy, ty czy ja? Jeśli nie chcesz, nie zmuszam cię. Miłego dnia.";
-			link.l1 = "Hm... Think I'll go check the port authority; perhaps they'll offer something more substantial there.";
+			link.l1 = "Hm... Chyba sprawdzę w zarządzie portu, może zaoferują coś bardziej konkretnego.";
 			link.l1.go = "exit";
 		break;
 		
 		case "Sharlie_storehelper_1":
-			dialog.text = "Imię to Gralam Lavois. Jego wygląd? Trzydzieści pięć lat, broda i wąsy, długi brązowy płaszcz, biała koszula. A, i zawsze nosi ten głupi kapelusz z daszkiem, udaje admirała z kotwicą w dupie.\nNie ma go w St. Pierre, sprawdziłem całe miasto. Musi być w dżungli lub w Les Francois, ukrywając się z piratami, którzy tam czają się.\nZ drugiej strony, prawdopodobnie jest w osadzie piratów Le Francois, która znajduje się we wschodniej części naszej wyspy. Może rozmawia z piratami, albo spędza czas w tawernie, albo kłóci się z miejscowym kupcem w sklepie.\nJak dotrzeć do Le Francois? Wyjdź przez bramy miasta do dżungli, na rozwidleniu dróg skręć w lewo, potem podążaj drogą, aż skręcisz w prawo, a następnie wejdź w lewy przesmyk między skałami, a znajdziesz Le Francois. Nie sądzę, żebyś się zgubił.";
+			dialog.text = "Imię to Gralam Lavois. Jego wygląd? Trzydzieści pięć lat, broda i wąsy, długi brązowy płaszcz, biała koszula. A, i zawsze nosi ten głupi kapelusz, udaje admirała z kotwicą w dupie.\nNie ma go w St. Pierre, sprawdziłem całe miasto. Musi być w dżungli lub w Le Francois, ukrywając się z piratami, którzy się tam czają.\nZ drugiej strony, prawdopodobnie jest w osadzie piratów Le Francois, która znajduje się we wschodniej części naszej wyspy. Może rozmawia z piratami, albo spędza czas w karczmie, albo kłóci się z miejscowym kupcem w sklepie.\nJak dotrzeć do Le Francois? Wyjdź przez bramy miasta do dżungli, na rozwidleniu dróg skręć w lewo, potem podążaj drogą, aż skręcisz w prawo, a następnie wejdź w lewy przesmyk między skałami, a znajdziesz Le Francois. Nie sądzę, żebyś się zgubił.";
 			link.l1 = "Dobrze. Zajmę się poszukiwaniami. Jak tylko coś się pojawi, natychmiast cię poinformuję.";
 			link.l1.go = "exit";
 			AddQuestRecord("SharlieA", "1");
@@ -108,8 +108,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_storehelper_5":
 			AddMoneyToCharacter(pchar, 1000);
-			dialog.text = "Proszę, weź swoje pieniądze. Ha! Nie płacą wystarczająco! Oczywiście, nikt nie chce dla mnie pracować. Drań zrobił wszystko, żeby rozpuścić brudne plotki. Co mogę zrobić? Nie mogę zrobić wszystkiego sam!\nNie mogę iść spać, dopóki nie policzę każdego kawałka ładunku, bo ci cholerni robotnicy zawsze coś kradną. Po ostatnim załadunku brakuje mi pięciu beczek rumu. Jestem pewien, że robotnicy 'przypadkowo' je zabrali...";
-			link.l1 = "Cóż, nie wiem, co doradzić. Dobrze, wszystkiego najlepszego. Czas na mnie.";
+			dialog.text = "Proszę, weź swoje pieniądze. Ha! Nie płacą wystarczająco! Oczywiście, nikt nie chce dla mnie pracować. Drań zrobił wszystko, żeby rozpuścić brudne plotki. Co mogę zrobić? Nie mogę zrobić wszystkiego sam!\nNie mogę iść spać, dopóki nie policzę każdego kawałka ładunku, bo ci cholerni robotnicy zawsze coś kradną. Po ostatnim załadunku brakuje mi pięciu beczek rumu. Jestem pewien, że robotnicy 'przypadkowo' je zgubili...";
+			link.l1 = "Cóż, nie wiem, jak doradzić. Dobrze, wszystkiego najlepszego. Czas na mnie.";
 			link.l1.go = "Sharlie_storehelper_6";
 		break;
 		
@@ -120,7 +120,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Sharlie_storehelper_7":
-			dialog.text = "Pozwól mi dokończyć, sir. Byłeś w Le Francois. Chciałbym, abyś ponownie tam pojechał i spróbował znaleźć dla mnie pracownika. Być może Gralam nie całkowicie zrujnował moją reputację w tym pirackim siedlisku. Praca jest łatwa - liczenie ładunków i pilnowanie robotników portowych, aby zapobiec kradzieżom. Czasami trzeba wykonać moją robotę tutaj zamiast mnie, gdy mnie nie ma, oczywiście za dodatkową opłatą. Powiedz im, że oferuję pokój w sklepie do zamieszkania i pięćset sztuk osiem na tydzień. Monsieur, zamierzałem rozszerzyć mój biznes i w końcu wszystko idzie dobrze, potrzebuję asystenta! A propos, najlepiej szukać pomocy w znalezieniu pracownika u lokalnego karczmarza, Cesare Craiga. Ten drab z pewnością ci pomoże, choć nie za darmo, znaleźć osoby, które byłyby zainteresowane pracą dla mnie.";
+			dialog.text = "Pozwól mi dokończyć, sir. Byłeś w Le Francois. Chciałbym, abyś ponownie tam poszedł i spróbował znaleźć dla mnie pracownika. Być może Gralam nie całkowicie zrujnował moją reputację w tym pirackim siedlisku. Praca jest łatwa - liczenie ładunków i pilnowanie robotników portowych, aby zapobiec kradzieżom. Czasami trzeba wykonać moją robotę tutaj zamiast mnie, gdy mnie nie ma, oczywiście za dodatkową opłatą. Powiedz im, że oferuję pokój w sklepie do zamieszkania i pięćset pesos na tydzień. Monsieur, zamierzałem rozszerzyć mój biznes i w końcu wszystko idzie dobrze, potrzebuję asystenta! A propos, najlepiej szukać pomocy w znalezieniu pracownika u lokalnego karczmarza, Cesare Craiga. Ten drab z pewnością ci pomoże, choć nie za darmo, znaleźć osoby, które byłyby zainteresowane pracą dla mnie.";
 			link.l1 = "Hm. Mogę spróbować, chociaż nie jestem pewien... Ile mi zapłacisz za tę robotę?";
 			link.l1.go = "Sharlie_storehelper_8";
 		break;
@@ -133,7 +133,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_storehelper_9":
 			dialog.text = "Monsieur! Może i można mnie nazwać trochę skąpym, ale nikt nie mógłby mnie nazwać nieuczciwym! Jeśli mówię ci, że zapłacę za twoje wysiłki w zależności od wyniku, to mam to na myśli. Spójrz na to także z mojej perspektywy. Możesz mi tu przyprowadzić jakiegoś leniwego cygana, który nie tylko będzie się obijał i nic nie robił, ale nawet może mnie okraść w nocy!";
-			link.l1 = "Dobrze. Zgadzam się. Wezmę cię za słowo, "+npchar.name+"Na pewno nie przyprowadzę żadnych Cyganów.";
+			link.l1 = "Dobrze. Zgadzam się. Wezmę cię za słowo, "+npchar.name+". Na pewno nie przyprowadzę żadnych Cyganów.";
 			link.l1.go = "Sharlie_storehelper_10";
 		break;
 		
@@ -155,7 +155,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			chrDisableReloadToLocation = false;//открыть локацию
 			pchar.questTemp.Sharlie.Storehelper = "final";
 			DialogExit();
-			SetLaunchFrameFormParam("One hour passed...", "", 0, 5);
+			SetLaunchFrameFormParam("Mineła godzina...", "", 0, 5);
 			LaunchFrameForm();
 			WaitDate("", 0, 0, 0, 1, 0); //крутим время
 			RecalculateJumpTable();
@@ -168,21 +168,21 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				case 0:
 					AddMoneyToCharacter(pchar, 3000);
-					dialog.text = "Jestem całkiem zadowolony z pracownika, którego dla mnie znalazłeś, choć więcej gada niż robi, ale nie martw się, wybiję mu to gadanie z głowy z czasem. Twoja nagroda to trzy tysiące sztuk osiem. Proszę, oto one.";
+					dialog.text = "Jestem całkiem zadowolony z pracownika, którego dla mnie znalazłeś, choć więcej gada niż robi, ale nie martw się, wybiję mu to gadanie z głowy z czasem. Twoja nagroda to trzy tysiące pesos. Proszę, oto one.";
 					link.l1 = "Dziękuję! Powiedz mi, monsieur, czy wiesz, czy ktoś jeszcze w mieście potrzebuje pomocy w jakiejś ważnej sprawie?";
 					link.l1.go = "Sharlie_storehelper_14a";
 				break;
 				
 				case 1:
 					AddMoneyToCharacter(pchar, 5000);
-					dialog.text = "Udało ci się znaleźć naprawdę wartościowego pracownika! Jest nawet lepszy niż ten łotr Gralam. Jestem bardzo, bardzo zadowolony, sir. Proszę, oto twoja nagroda - pięć tysięcy sztuk ośmiu.";
+					dialog.text = "Udało ci się znaleźć naprawdę wartościowego pracownika! Jest nawet lepszy niż ten łotr Gralam. Jestem bardzo, bardzo zadowolony, sir. Proszę, oto twoja nagroda - pięć tysięcy pesos.";
 					link.l1 = "Dziękuję! Powiedz mi, Monsieur, czy wiesz, czy ktoś jeszcze w mieście może potrzebować pomocy w jakiejś ważnej sprawie?";
 					link.l1.go = "Sharlie_storehelper_14a";
 				break;
 				
 				case 2:
 					AddMoneyToCharacter(pchar, 4000);
-					dialog.text = "Znalazłeś dobrego pracownika. I choć nie zna wszystkich sztuczek handlu, jestem pewien, że bez trudu sobie z nimi poradzi. Jestem z ciebie zadowolony, sir. Oto twoja nagroda - cztery tysiące sztuk srebra.";
+					dialog.text = "Znalazłeś dobrego pracownika. I choć nie zna wszystkich sztuczek handlu, jestem pewien, że bez trudu sobie z nimi poradzi. Jestem z ciebie zadowolony, sir. Oto twoja nagroda - cztery tysiące pesos.";
 					link.l1 = "Dziękuję! Powiedz mi, monsieur, czy wiesz, czy ktoś jeszcze w mieście potrzebuje pomocy w jakiejś ważnej sprawie?";
 					link.l1.go = "Sharlie_storehelper_14a";
 				break;
@@ -191,7 +191,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_storehelper_14a":
 			LocatorReloadEnterDisable("Fortfrance_town", "reload10_back", false);// пу откр
-			dialog.text = "Hmm... Niedawno widziałem zarządcę portu, wyraźnie zmartwionego, zmierzającego do władz portowych. Sprawdź z nim, kto wie, co mogło się wydarzyć.";
+			dialog.text = "Hmm... Niedawno widziałem zarządcę portu, wyraźnie zmartwionego, zmierzającego do władz. Sprawdź u niego, kto wie, co mogło się wydarzyć.";
 			link.l1 = "Zrobię właśnie to. Dziękuję, Monsieur.";
 			link.l1.go = "Sharlie_storehelper_14";
 			DelLandQuestMark(npchar);
@@ -213,7 +213,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Sharlie_junglejew":
-			dialog.text = "Cóż, cóż mam powiedzieć, wspaniałe kolczyki. Mogę ci dać... zobaczmy... cztery tysiące sztuk srebra za nie. Wątpię, by ktokolwiek zaoferował ci więcej. Czy mamy umowę?";
+			dialog.text = "Cóż, cóż mam powiedzieć, wspaniałe kolczyki. Mogę ci dać... zobaczmy... cztery tysiące pesos za nie. Wątpię, by ktokolwiek zaoferował ci więcej. Czy mamy umowę?";
 			link.l1 = "Umowa stoi! Są twoje.";
 			link.l1.go = "Sharlie_junglejew_1";
 			link.l2 = "Nie. Myślę, że te klejnoty zatrzymam dla siebie.";

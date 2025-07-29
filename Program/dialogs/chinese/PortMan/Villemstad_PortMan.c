@@ -31,7 +31,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "EscapeSlave_Villemstad_P2":
-				dialog.text = "明白了。 好吧, 我帮不了你。 三桅帆船'" + pchar.questTemp.Slavetrader.ShipName + "'到早上就不见了, 没人看到什么。 我当时在家睡觉。 码头守望员也不见了, 没留下任何线索。 \n总督派了一艘单桅帆船去追踪, 趁线索还没断, 但他们空手而归。 既没有黑人的踪迹, 也没有'" + pchar.questTemp.Slavetrader.ShipName + "'的影子。 说实话, 那艘单桅帆船没怎么仔细找, 每个人都还处于恐慌中, 以为卡菲尔人会拿着干草叉和大砍刀从丛林里冲出来 --渴望白人的鲜血。 ";
+				dialog.text = "明白了。 好吧, 我帮不了你。 三桅帆船'" + pchar.questTemp.Slavetrader.ShipName + "'到早上就不见了, 没人看到什么。 我当时在家睡觉。 码头守望员也不见了, 没留下任何线索。 \n总督派了一艘单桅帆船去追踪, 趁线索还没断, 但他们空手而归。 既没有黑人的踪迹, 也没有'" + pchar.questTemp.Slavetrader.ShipName + "'的影子。 说实话, 那艘单桅帆船没怎么仔细找, 每个人都还处于恐慌中, 以为卡菲尔人会拿着干草叉和大砍刀从丛林里冲出来 —渴望白人的鲜血。 ";
 				link.l1 = "这没什么帮助, 但还是谢谢你。 再见。 ";
 				link.l1.go = "exit";
 				AddQuestRecord("Slavetrader", "22_3");

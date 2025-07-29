@@ -3565,13 +3565,13 @@ void ProcessDialogEvent()
 							{
 								attrL = "l"+i;
 								sProf = "";
-								if (IsOfficer(sld)) sProf += " (vanguard)";
-								if (sti(pchar.Fellows.Passengers.navigator) == sti(sld.index)) sProf += " (navigator)";
-								if (sti(pchar.Fellows.Passengers.boatswain) == sti(sld.index)) sProf += " (boatswain)";
-								if (sti(pchar.Fellows.Passengers.cannoner) == sti(sld.index)) sProf += " (cannoneer)";
-								if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index)) sProf += " (surgeon)";
-								if (sti(pchar.Fellows.Passengers.carpenter) == sti(sld.index)) sProf += " (carpenter)";
-							    if (sti(pchar.Fellows.Passengers.treasurer) == sti(sld.index)) sProf += " (purser)";
+								if (IsOfficer(sld)) sProf += " (vanguardia)";
+								if (sti(pchar.Fellows.Passengers.navigator) == sti(sld.index)) sProf += " (navegante)";
+								if (sti(pchar.Fellows.Passengers.boatswain) == sti(sld.index)) sProf += " (contramaestre)";
+								if (sti(pchar.Fellows.Passengers.cannoner) == sti(sld.index)) sProf += " (cañonero)";
+								if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index)) sProf += " (doctor)";
+								if (sti(pchar.Fellows.Passengers.carpenter) == sti(sld.index)) sProf += " (carpintero)";
+							    if (sti(pchar.Fellows.Passengers.treasurer) == sti(sld.index)) sProf += " (sobrecargo)";
 								Link.(attrL)	= GetFullName(&characters[_curCharIdx]) + sProf;
 								Link.(attrL).go = "ShipStockManBack2_" + i;
 								q++;
@@ -3733,7 +3733,7 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, -25000);
 			AddQuestRecordInfo("LegendaryShips", "2");
 			pchar.questTemp.LadyBeth_InfoPU = true;
-			dialog.text = "'Lady Beth' es una verdadera belleza. Un milagro del genio marítimo inglés, comandado por Albert Blackwood, antiguo oficial de la marina real. ¡De hecho, no todos consiguen desertar de forma tan espectacular! ¡Abandonó el servicio, acabó con una carrera brillante y robó un buque de guerra, todo por buscar tesoros!\nY no en vano, encontró lo suficiente para comprar la mitad de Barbados, pero aún quiere más. Si se encuentra con él en el mar, ni se te ocurra intentar interceptarla. Es un  excelente barco y cuenta con un capitán experimentado y cauteloso. Últimamente, Blackwood ha estado frecuentando Caimán, cavando día y noche, abusando de la gente hasta la muerte. Si decides comprobarlo, no lleves menos de sesenta hombres y buenas armas de fuego... En realidad, incluso eso podría no ser suficiente\nEspero que sepan disparar, ya que una compañía de la antigua infantería del coronel Fox desertó con él. Profesionales, nada de vulgares degolladores. Y nunca los ataques en puertos franceses, cuenta con protección y buenos amigos que reciben una parte de sus hallazgos.";
+			dialog.text = "'Lady Beth' es una verdadera belleza. Un milagro del genio marítimo inglés, comandado por Albert Blackwood, antiguo oficial de la marina real. ¡De hecho, no todos consiguen desertar de forma tan espectacular! ¡Abandonó el servicio, acabó con una carrera brillante y robó un buque de guerra, todo por buscar tesoros!\nY no en vano, encontró lo suficiente para comprar la mitad de Barbados, pero aún quiere más. Si se encuentra con él en el mar, ni se te ocurra intentar interceptarla. Es un excelente barco y cuenta con un capitán experimentado y cauteloso. Últimamente, Blackwood ha estado frecuentando Caimán, cavando día y noche, abusando de la gente hasta la muerte. Si decides comprobarlo, no lleves menos de sesenta hombres y buenas armas de fuego... En realidad, incluso eso podría no ser suficiente\nEspero que sepan disparar, ya que una compañía de la antigua infantería del coronel Fox desertó con él. Profesionales, nada de vulgares degolladores. Y nunca los ataques en puertos franceses, cuenta con protección y buenos amigos que reciben una parte de sus hallazgos.";
 			link.l1 = "Muchas gracias.";
 			link.l1.go = "node_2";
 		break;

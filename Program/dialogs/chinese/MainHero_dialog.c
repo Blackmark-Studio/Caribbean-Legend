@@ -73,7 +73,7 @@ void ProcessDialogEvent()
 				//AddDialogExitQuestFunction("SharlieTutorial_StartShip");
 				AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_3");
 			}
-			//<—— 为查理在船甲板上的入门教程
+			//< —为查理在船甲板上的入门教程
 
 			//--> 荷兰策略
 			if (CheckAttribute(pchar, "questTemp.HWIC_FindIsland"))
@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 				pchar.quest.Fleetwood_repeatShore.win_condition.l1.location = pchar.location;
 				pchar.quest.Fleetwood_repeatShore.function = "Fleetwood_repeatShore";
     		}
-			//<—— 荷兰策略
+			//< —荷兰策略
 			
 			//--> 假线索
 			if(CheckAttribute(pchar, "questTemp.FalseTrace") && pchar.questTemp.FalseTrace == "TalkCabinWoman" && PChar.location == Get_My_Cabin()) 
@@ -105,7 +105,7 @@ void ProcessDialogEvent()
 				pchar.questTemp.FalseTrace.CharID = "FalseTraceWife";
 				AddDialogExitQuest("SetFalseTraceCharToCabin");
 	    	}
-			//<—— 假线索
+			//< —假线索
 			
 			//--> 葡萄牙人
 			if (CheckAttribute(pchar, "questTemp.Portugal") && pchar.questTemp.Portugal == "DigGems")
@@ -115,7 +115,7 @@ void ProcessDialogEvent()
     			link.l1.go = "exit";
 				AddDialogExitQuest("FindPortugalGems");
     		}
-			//<—— 葡萄牙人
+			//< —葡萄牙人
 			// 传奇故事
 			if (CheckAttribute(pchar, "questTemp.Saga.JessSoul"))
     		{
@@ -139,7 +139,7 @@ void ProcessDialogEvent()
 				link.l5 = "敲三次, 停顿, 敲一次。 ";
     			link.l5.go = "knock_3_1";
     		}
-			//<—— 迪芬杜拉门上的敲击技巧, LSC
+			//< —迪芬杜拉门上的敲击技巧, LSC
 			
 			//--> 穿上潜水服, 切换到步行模式
 			if (pchar.model == "protocusto")
@@ -148,7 +148,7 @@ void ProcessDialogEvent()
     			link.l1 = "";
     			link.l1.go = "exit";
     		}
-			//<—— 潜水服
+			//< —潜水服
 			// 拒绝传送
 			if (IsCharacterInLocator(pchar, "item", "dolly1") || IsCharacterInLocator(pchar, "item", "dolly2") || IsCharacterInLocator(pchar, "item", "dolly3"))
     		{
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 				link.l2 = "耶! 耶! 啊哈哈!! 我做到了, 我活下来了! 吃吧, 佐罗! 去死吧, 马库斯! 现在我靠自己了! 查理王子可能已经死了, 但查尔斯.德.莫尔谁也杀不了! ";
     			link.l2.go = "Bad_Choice";
 			}
-			// <—— 传奇版
+			// < —传奇版
 			
 			if (CheckAttribute(pchar, "questTemp.TonzagQuest.JailDialog")) {
 				dialog.text = "我们该怎么办? ";
@@ -500,7 +500,7 @@ void ProcessDialogEvent()
 	        	Link.l11 = "尝试通过地图上的坐标找到岛屿。 ";
 	    		Link.l11.go = "Seek_AbyIsland";
 	    	}
-			//<—— 荷兰策略
+			//< —荷兰策略
 			
 			//--> 假线索
 			if(CheckAttribute(pchar, "questTemp.FalseTrace") && pchar.questTemp.FalseTrace == "TalkCabin" && PChar.location == Get_My_Cabin()) 
@@ -513,7 +513,7 @@ void ProcessDialogEvent()
 	        	Link.l13 = "逮捕亚当.雷纳。 ";
 	    		Link.l13.go = "FalseTrace_Cabin";
 	    	}
-			//<—— 假线索
+			//< —假线索
 			// Addon 2016-1 Jason 海盗线
 			if(CheckAttribute(pchar, "questTemp.Mtraxx.Ammo") && PChar.location == "Shore37") // 行程3
 	        {
@@ -564,7 +564,7 @@ void ProcessDialogEvent()
 	        	Link.l15 = "完成加勒比海的事务, 航行到欧洲。 ";
 	    		Link.l15.go = "final_1";
 	    	}
-			//<—— 游戏结束
+			//< —游戏结束
 			Link.l20 = RandPhraseSimple("现在不行。 没有时间。 ", "没有时间, 要做的事情太多了。 ");
 			Link.l20.go = "exit";
 		break;
@@ -898,7 +898,7 @@ void ProcessDialogEvent()
 			                                        stf(pchar.Ship.Crew.Exp.Cannoners)*0.3*sti(pchar.GenQuest.SlavesToCrew)) / fTemp;
 			pchar.Ship.Crew.Exp.Soldiers   = (stf(pchar.Ship.Crew.Exp.Soldiers)*GetCrewQuantity(pchar) + 
 			                                        stf(pchar.Ship.Crew.Exp.Soldiers)*0.3*sti(pchar.GenQuest.SlavesToCrew)) / fTemp;
-			// 经验值下降 <—— 
+			// 经验值下降 < —
 			pchar.Ship.Crew.Quantity = sti(pchar.Ship.Crew.Quantity) + sti(pchar.GenQuest.SlavesToCrew); 
 	        RemoveCharacterGoodsSelf(pchar, GOOD_SLAVES, sti(pchar.GenQuest.SlavesToCrew));       
 			                            
@@ -979,7 +979,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 			}
 		break;
-		//<—— 荷兰策略
+		//< —荷兰策略
 		
 		//--> 假线索
 		case "FalseTrace_Cabin":
@@ -1000,7 +1000,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.FalseTrace.CharID = "FalseTraceWife";
 			AddDialogExitQuest("SetFalseTraceCharToCabin");
 		break;
-		//<—— 假线索
+		//< —假线索
 		
 		//--> LSC, 门上的敲击技巧
 		case "knock_2":
@@ -1053,7 +1053,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.LSC.DiffIndoor");
 			LocatorReloadEnterDisable("LostShipsCity_town", "reload74", false);
 		break;
-		//<—— LSC, 门上的敲击技巧
+		//< —LSC, 门上的敲击技巧
 		
 		// 海龟汤
 		case "terrapin":
@@ -1240,7 +1240,7 @@ void ProcessDialogEvent()
 			pchar.quest.mtraxx_line_complete.function = "Mtraxx_RetributionComplete";
 			DialogExit_Self();
 		break;
-		// <—— 传奇版
+		// < —传奇版
 		
 		// Jason 长久幸福
 		case "LH_marry":

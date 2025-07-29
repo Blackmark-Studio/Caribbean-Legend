@@ -15,7 +15,7 @@ characterUtilite_3
 
 characterUtilite_4
 {
-赚取 @<n> 杜布隆金币
+赚取 @<n> 达布隆金币
 }
 
 characterUtilite_5
@@ -40,7 +40,7 @@ characterUtilite_8
 
 characterUtilite_9
 {
-花费 @<_Dublons> 杜布隆金币
+花费 @<_Dublons> 达布隆金币
 }
 
 characterUtilite_10

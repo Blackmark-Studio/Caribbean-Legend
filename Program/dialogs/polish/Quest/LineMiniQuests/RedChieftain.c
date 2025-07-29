@@ -19,10 +19,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "RedChieftain":
-			dialog.text = "Jak, blady twarzu. Widzę, że jesteś kapitanem dużej łodzi. Ja Kanauri. Jestem wodzem Kajmanów - potężnego plemienia Arawaków. Chcę z tobą rozmawiać.";
-			link.l1 = "Słucham, szefie. Jakie kłopoty cię do mnie sprowadziły?";
+			dialog.text = "Jak, blada twarzy. Widzę, że jesteś kapitanem dużej łodzi. Ja Kanauri. Jestem wodzem Kajmanów - potężnego plemienia Arawaków. Chcę z tobą rozmawiać.";
+			link.l1 = "Słucham, wodzu. Jakie kłopoty cię do mnie sprowadziły?";
 			link.l1.go = "RedChieftain_0";
-			link.l2 = "Czego chcesz ode mnie, ty plugawy, czerwonoskóry małpo? Wracaj do swoich dżungli i nie zawracaj mi głowy swoimi prośbami.";
+			link.l2 = "Czego chcesz ode mnie, ty plugawa, czerwonoskóra małpo? Wracaj do swoich dżungli i nie zawracaj mi głowy swoimi prośbami.";
 			link.l2.go = "RedChieftain_exit";
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity(pchar.questTemp.RedChieftain.StartCity);
@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 		
 		case "RedChieftain_exit":
 			dialog.text = "Gu-u! Czyżby biały kapitan nie był uczony grzeczności? Otrzymałem ofertę. Zarabiasz kupę wampum, ale teraz idę. Żegnaj, bladolicy.";
-			link.l1 = "Idź, zgub się...";
+			link.l1 = "Idź, zjeżdżaj...";
 			link.l1.go = "RedChieftain_exit_1";
 		break;
 		
@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 				pchar.questTemp.RedChieftain.Shore = "Shore19";
 				pchar.questTemp.RedChieftain.Add1 = "Spanish";
 				pchar.questTemp.RedChieftain.Add2 = "Carupano Cove, not far from Cumana";
-				dialog.text = "Są w obozie w Carupano Cove, niedaleko hiszpańskiego obozu zwanego Cumana. Każdego dnia wypływają łodziami na morze, nurkują w wodę, głęboko-głęboko...";
+				dialog.text = "Są w obozie w Zatoczce Carupano, niedaleko hiszpańskiego obozu zwanego Kumana. Każdego dnia wypływają łodziami na morze, nurkują w wodę, głęboko-głęboko...";
 				link.l1 = "Rozumiem. A Hiszpanie czuwają nad nimi, gdy nurkują?";
 				link.l1.go = "RedChieftain_6";
 			}
@@ -164,19 +164,19 @@ void ProcessDialogEvent()
 		
 		case "RedChieftain_8":
 			dialog.text = "Canauri nie znać tego słowa. Blada twarz bardzo ostrożna, jeśli zobaczy inną kanoę - wylądować Indian i czekać, aż inna kanoa odpłynąć.";
-			link.l1 = "Ostrożne sukinsyny...jak mogę się do nich zbliżyć?";
+			link.l1 = "Ostrożne sukinsyny... jak mogę się do nich zbliżyć?";
 			link.l1.go = "RedChieftain_9";
 		break;
 		
 		case "RedChieftain_9":
 			dialog.text = "Jeśli blade lice brat weźmie małą łódź, to może podkraść się blisko brzegu. Pokażę drogę. Ale przyprowadź tylko jedną małą łódź, bo blade lice pies zobaczy i wypędzi Indianina z łodzi do dżungli...";
-			link.l1 = "Zrozumiano. Będę potrzebował lugger lub slup do tej operacji. Świetnie. Slup przeciwko dwóm szkunerom... Boże... a myślałem, że to będzie łatwe!";
+			link.l1 = "Zrozumiano. Będę potrzebował lugiera lub slupa do tej operacji. Świetnie. Slup przeciwko dwóm szkunerom... Boże... a myślałem, że to będzie łatwe!";
 			link.l1.go = "RedChieftain_10";
 		break;
 		
 		case "RedChieftain_10":
 			dialog.text = "Czy idziemy, biały bracie? Mamy mniej niż miesiąc.";
-			link.l1 = "Tak. Wchodź na mój statek, szefie. Nie traćmy czasu!";
+			link.l1 = "Tak. Wchodź na mój statek, wodzu. Nie traćmy czasu!";
 			link.l1.go = "RedChieftain_11";
 		break;
 		
@@ -216,9 +216,9 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "jewelry52", iBigPearl);
 			TakeNItems(pchar, "jewelry53", iSmallPearl);
 			PlaySound("interface\important_item.wav");
-			Log_SetStringToLog("The Chief has given you "+iSmallPearl+" small and "+iBigPearl+" big pearls.");
+			Log_SetStringToLog("Wódz przekazał ci "+iSmallPearl+" małych i "+iBigPearl+" dużych pereł.");
 			dialog.text = LinkRandPhrase("Cieszę się, że łzy bogów są twoje, bracie Arawaka!","Dziękuję ci, odważna blada twarzy!","Weź nasz połów, biały bracie!");
-			link.l1 = LinkRandPhrase("Z przyjemnością pomogę ci!","Dzięki, czerwonoskóry bracie!","Świetnie!");
+			link.l1 = LinkRandPhrase("Ciesze się, że mogłem pomóc!","Dzięki, czerwonoskóry bracie!","Świetnie!");
 			link.l1.go = "exit";
 			pchar.questTemp.RedChieftain.Ind = sti(pchar.questTemp.RedChieftain.Ind)+1;
 			AddDialogExitQuest("RedChieftain_Pearl");
@@ -229,7 +229,7 @@ void ProcessDialogEvent()
 		// belamour legendary edition -->
 			if(sti(pchar.questTemp.RedChieftain.Tartane) > 5)
 			{
-				dialog.text = "Canauri dziękuje ci ponownie, blady bracie! Ratujesz wszystkie kanoe z Indianinem! Dla Canauri jest bardzo ważne, aby uratować wszystkie kanoe, ponieważ także ratujesz wnuka Canauri, którego zły blady twarz wziął do niewoli. Jako dziecko, mój wnuk bardzo lubił pływać, a Kanauri dał mu ten zaczarowany amulet, aby wnuk się nie utopił. Teraz wnuk już nie chce pływać i daje mi amulet, abym mógł go tobie dać, blady bracie. Mam nadzieję, że łzy bogów i ten dar będą wystarczającą nagrodą za życie Arawaka. A teraz żegnamy się - czas wracać do naszej rodzimej wioski.";
+				dialog.text = "Canauri dziękuje ci ponownie, blady bracie! Ratujesz wszystkie kanoe z Indianami! Dla Canauri jest bardzo ważne, aby uratować wszystkie kanoe, ponieważ także ratujesz wnuka Canauri, którego zły blady twarz wziął do niewoli. Jako dziecko, mój wnuk bardzo lubił pływać, a Kanauri dał mu ten zaczarowany amulet, aby wnuk się nie utopił. Teraz wnuk już nie chce pływać i daje mi amulet, abym mógł go tobie dać, blady bracie. Mam nadzieję, że łzy bogów i ten dar będą wystarczającą nagrodą za życie Arawaka. A teraz żegnamy się - czas wracać do naszej rodzimej wioski.";
 				link.l1 = "Powodzenia, Cunauri! Cieszę się, że twój wnuk przeżył! Modlę się, aby to zło nigdy więcej cię nie spotkało!";
 				link.l1.go = "RedChieftain_final_1Obereg";
 			}

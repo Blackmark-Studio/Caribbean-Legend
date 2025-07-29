@@ -1,6 +1,6 @@
 QuestsUtilite_1
 {
-命运之轮
+Wheel of Fortune
 }
 
 QuestsUtilite_2
@@ -889,322 +889,322 @@ QuestsUtilite_197
 
 QuestsUtilite_198
 {
-奥罗拉.巴多, 1612-1637, 仆人
+Aurora Bardot, 1612-1637, 仆人
 }
 QuestsUtilite_199
 {
-你把整张桌子都吐了, 你这个该死的海盗! 
+你把一桌子都吐脏了, 你这个该死的海盗!
 }
 
 QuestsUtilite_200
 {
-朱尔.库维耶, 1591-1640, 屋顶工
+Jules Couvier, 1591-1640, 屋顶工
 }
 QuestsUtilite_201
 {
-似乎要起大风了... 
+似乎有一阵大风要来了...
 }
 
 QuestsUtilite_202
 {
-热拉尔.莱斯布罗, 1555-1596, 炼金术士
+Gerard Lesbro, 1555-1596, 炼金术士
 }
 QuestsUtilite_203
 {
-现在让我们稍微加热这种液体... 
+现在让我们把这种液体稍微加热一下...
 }
 
 QuestsUtilite_204
 {
-朱迪思.博森, 1589-1618, 家庭教师
+Judith Boson, 1589-1618, 家庭教师
 }
 QuestsUtilite_205
 {
-勋爵的妻子真是个傻瓜! 
+爵爷的妻子真是个傻瓜！
 }
 
 QuestsUtilite_206
 {
-奥古斯特.普瓦捷, 1567-1624, 枪匠
+Auguste Poitier, 1567-1624, 枪匠
 }
 QuestsUtilite_207
 {
-嗯, 这把枪有缺陷。 让我们仔细看看... 
+好吧, 好吧, 这把枪有问题。 让我们仔细看看...
 }
 
 QuestsUtilite_208
 {
-马克.罗马里, 1544-1599, 放债人
+Marc Romari, 1544-1599, 高利贷者
 }
 QuestsUtilite_209
 {
-先生, 我发誓我真的被抢劫了! 
+先生, 我发誓我真的被抢劫了!
 }
 
 QuestsUtilite_210
 {
-马塞尔.多贝, 1611-1650, 搬运工
+Marcel d'Aubet, 1611-1650, 搬运工
 }
 QuestsUtilite_211
 {
-看起来这些绳子真的腐烂了... 
+看起来这些绳子真的腐烂了...
 }
 
 QuestsUtilite_212
 {
-罗斯.杜普兰, 1621-1649, 女仆
+Rose Duplan, 1621-1649, 女仆
 }
 QuestsUtilite_213
 {
-主人在这个盒子里放了什么? 现在趁他不在, 让我们看看... 
+主人在这个盒子里放了什么? 趁他不在, 我们来看看...
 }
 
 QuestsUtilite_214
 {
-维克多.马里昂, 1577-1608, 看守人
+Victor Marion, 1577-1608, 看守人
 }
 QuestsUtilite_215
 {
-嘿, 谁在那里? 
+嘿, 谁在那儿?
 }
 
 QuestsUtilite_216
 {
-阿尔瓦罗.洛佩斯, 1587-1633, 采珠人
+Alvaro Lopez, 1587-1633, 采珠人
 }
 QuestsUtilite_217
 {
-这片泻湖里从未有鲨鱼出没! 
+鲨鱼从来没有在这个泻湖里游过!
 }
 
 QuestsUtilite_218
 {
-加斯帕尔.伊瓦涅斯, 1599-1640, 木匠
+Gaspar Ibanez, 1599-1640, 木匠
 }
 QuestsUtilite_219
 {
-胡安, 把那把大斧头扔给我! 
+Juan, 把那把大斧头扔给我!
 }
 
 QuestsUtilite_220
 {
-洛伦佐.佩尔多索, 1581-1630, 炮兵
+Lorenzo Perdoso, 1581-1630, 炮兵
 }
 QuestsUtilite_221
 {
-往炮口多填些火药! 再多些! 像这样... 
+再往嘴里多放些火药! 再多一点！就像这样...
 }
 
 QuestsUtilite_222
 {
-西蒙.索里塔, 1602-1645, 侦探
+Simon Zorrita, 1602-1645, 侦探
 }
 QuestsUtilite_223
 {
-指挥官, 我破案了。 你就是凶手! 
+指挥官, 我破解了这起案件。 你就是凶手!
 }
 
 QuestsUtilite_224
 {
-洛丽塔.切卡, 1610-1639, 裁缝
+Lolita Cheka, 1610-1639, 裁缝
 }
 QuestsUtilite_225
 {
-别担心, 亲爱的, 我丈夫游泳一时半会儿回不来... 
+别担心, 亲爱的, 我丈夫游泳一时半会儿回不来...
 }
 
 QuestsUtilite_226
 {
-里卡多.卡扎雷斯, 1590-1633, 猎人
+Ricardo Cazares, 1590-1633, 猎人
 }
 QuestsUtilite_227
 {
-我认识这条蛇。 它完全无害! 
+我认识这条蛇。 它完全无害!
 }
 
 QuestsUtilite_228
 {
-伊西德罗.达维拉, 1588-1624, 磨坊主
+Isidro Davilla, 1588-1624, 磨坊主
 }
 QuestsUtilite_229
 {
-明天早上我要换掉楼梯上这些破裂 的台阶... 
+明天早上我要换掉这个楼梯上裂开的台阶...
 }
 
 QuestsUtilite_230
 {
-特奥多罗.贝洛, 1599-1646, 副官
+Teodoro Bello, 1599-1646, 副官
 }
 QuestsUtilite_231
 {
-你这个无赖, 先生! 请亮出你那愚蠢的生锈破铁! 
+你这个无赖, 先生! 拜托, 把你那愚蠢的生锈铁块亮出来!
 }
 
 QuestsUtilite_232
 {
-赫尔维拉.切卡, 1605-1648, 商人
+Gelvira Cheka, 1605-1648, 商人
 }
 QuestsUtilite_233
 {
-我的商品不退货也不退款! 
+我的商品概不退换!
 }
 
 QuestsUtilite_234
 {
-雅各布.布莱克, 1608-1631, 渔夫
+Jacob Black, 1608-1631, 渔夫
 }
 QuestsUtilite_235
 {
-父亲的长艇经历过很多风暴。 这次也会挺过去的... 
+父亲的长艇经历过很多风暴。 这次也会挺过去的...
 }
 
 QuestsUtilite_236
 {
-拉尔夫.查普林, 1602-1649, 伐木工
+Ralph Chaplin, 1602-1649, 伐木工
 }
 QuestsUtilite_237
 {
-约翰, 你把斧头和斧柄固定牢了吗? 
+John, 你把斧头牢固地装在斧柄上了吗?
 }
 
 QuestsUtilite_238
 {
-克米特.菲勒, 1615-1653, 酒保
+Kermit Filler, 1615-1653, 酒保
 }
 QuestsUtilite_239
 {
-摩根, 这朗姆酒没兑水, 我以母亲的名义发誓! 
+摩根, 那朗姆酒是没掺水的, 我以我母亲的名义发誓!
 }
 
 QuestsUtilite_240
 {
-劳拉.哈特, 1605-1627, 妓女
+Laura Hart, 1605-1627, 妓女
 }
 QuestsUtilite_241
 {
-你怎么敢! 我每周都去看医生检查! 
+你好大的胆子! 我每周都请医生检查!
 }
 
 QuestsUtilite_242
 {
-西蒙.路德, 1598-1639, 医生
+Simon Luther, 1598-1639, 医生
 }
 QuestsUtilite_243
 {
-白色粉末, 无气味... 尝起来很苦... 
+白色粉末, 无气味...尝起来是苦的...
 }
 
 QuestsUtilite_244
 {
-奥斯卡.马克尔, 1611-1642, 小偷
+Oscar Marker, 1611-1642, 小偷
 }
 QuestsUtilite_245
 {
-那么, 狗的链子够不到这里... 
+可是, 这只狗的链子够不到这儿啊...
 }
 
 QuestsUtilite_246
 {
-马尔科姆.卡姆利, 1545-1587, 演员
+Macolm Camley, 1545-1587, 演员
 }
 QuestsUtilite_247
 {
-戴着这副红鼻子面具, 我简直和堡垒指挥官一模一样! 
+戴上这个红鼻子面具, 我简直和堡垒指挥官一模一样!
 }
 
 QuestsUtilite_248
 {
-托拜厄斯.菲勒, 1567-1599, 捕猎者
+Tobias Filler, 1567-1599, 捕兽者
 }
 QuestsUtilite_249
 {
-约翰, 这只美洲豹在我看来很温顺, 打开笼子... 
+John, 这只美洲豹在我看来相当温顺, 把笼子打开...
 }
 
 QuestsUtilite_250
 {
-卡米尔.鲁特, 1571-1596, 农妇
+Camille Rutter, 1571-1596, 农妇
 }
 QuestsUtilite_251
 {
-今天我们的虾虎鱼有点焦躁... 
+不知怎么的, 我们家的虾虎鱼今天坐立不安...
 }
 
 QuestsUtilite_252
 {
-弗里茨.卢茨, 1587-1631, 厨师
+Fritz Loots, 1587-1631, 厨师
 }
 QuestsUtilite_253
 {
-泡菜是给军官吃的, 水手姑娘只能有什么吃什么! 
+腌菜是给军官们吃的, 这个水手姑娘就吃给她的东西!
 }
 
 QuestsUtilite_254
 {
-鲁珀特.霍夫迈尔, 1601-1649, 职员
+Rupert Hofmeyr, 1601-1649, 文书
 }
 QuestsUtilite_255
 {
-第十次了, 你这个蠢货! 赫里茨先生今天不会见你! 
+跟你说第十遍了, 你这个笨蛋！Gerritz先生今天不会见你的！
 }
 
 QuestsUtilite_256
 {
-保罗.韦莱克, 1577-1622, 领航员
+Paul Wlecke, 1577-1622, 领航员
 }
 QuestsUtilite_257
 {
-别担心, 船长: 我对这些礁石的熟悉程度就像对自 己的手背一样! 
+别担心, 船长: 我对穿过这些暗礁了如指掌！
 }
 
 QuestsUtilite_258
 {
-耶达姆.乌斯特根, 1589-1635, 铁匠
+Yedam Uustgen, 1589-1635, 铁匠
 }
 QuestsUtilite_259
 {
-你不需要更好的军刀, 但你应该在铁砧上练练手! 
+你不需要更好的军刀, 但你应该在铁砧上锻炼锻炼你的手！
 }
 
 QuestsUtilite_260
 {
-卡特里娜.厄布, 1610-1644, 洗衣妇
+Katrina Erb, 1610-1644, 洗衣妇
 }
 QuestsUtilite_261
 {
-莉斯贝丝, 你跑哪儿去了? 这些是和平的印第安人, 他们不碰白人... 
+Lisbeth, 你跑哪儿去了？这些是和平的印第安人, 他们不会伤害白人的...
 }
 
 QuestsUtilite_262
 {
-彼得.康宁克, 1561-1615, 火枪手
+Peter Konnink, 1561-1615, 火枪手
 }
 QuestsUtilite_263
 {
-我会把火药紧紧塞进炮口... 
+我会把火药紧紧地塞进枪口...
 }
 
 QuestsUtilite_264
 {
-坦纳.格拉夫, 1588-1607, 女仆
+Tanna Graaff, 1588-1607, 女仆
 }
 QuestsUtilite_265
 {
-好像有人在楼下走动。 深更半夜你带谁进来了? 我去看看... 
+好像有人在楼下走动。 你半夜带谁进来了? 我去看看...
 }
 
 QuestsUtilite_266
 {
-克雷利斯.范埃克, 1572-1611, 水手长
+Krelis van Eck, 1572-1611, 水手长
 }
 QuestsUtilite_267
 {
-鞭打二十下! 不—— 三十下! 每一下都要狠! 
+给我抽二十鞭！不 —三十鞭！每个人都一样！
 }
 
 QuestsUtilite_268
 {
-雅各布.德海兹, 1611-1651, 旅行者
+Jacob de Haez, 1611-1651, 旅行者
 }
 QuestsUtilite_269
 {

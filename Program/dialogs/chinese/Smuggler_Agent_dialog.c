@@ -14,7 +14,7 @@ void ProcessDialogEvent()
 		iChurchQuest2_Summ = sti(PChar.rank)*100 + (rand(3)+1)*100;
 		PChar.GenQuest.ChurchQuest_2.Summ_To_Contra = sti(iChurchQuest2_Summ);
 	}
-	// <—— 教堂任务 #2
+	// < —教堂任务 #2
 	
 	string sColony;
 	
@@ -91,7 +91,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			//<—— 正在进行查理任务的第一部分
+			//< —正在进行查理任务的第一部分
 			//--> Addon-2016 Jason 封锁走私以避免与任务冲突
 			if (CheckAttribute(pchar, "GenQuest.SmugglersBlock") && pchar.GenQuest.SmugglersBlock == npchar.location)
             {
@@ -108,7 +108,7 @@ void ProcessDialogEvent()
 				link.l1.go = "SantaMisericordia_1";
 				break;
 			}
-			//<—— 圣慈悲修道院检查团到来
+			//< —圣慈悲修道院检查团到来
 			//--> Jason 消耗品的价格
 			if (CheckAttribute(pchar, "questTemp.Consumption.Contra"))
             {
@@ -117,7 +117,7 @@ void ProcessDialogEvent()
 				link.l1.go = "Consumption";
 				break;
 			}
-			//<—— 消耗品的价格
+			//< —消耗品的价格
 			
 			if(NPChar.quest.meeting == "0")
 			{
@@ -196,21 +196,21 @@ void ProcessDialogEvent()
 					Link.l8 = "我有个不寻常的生意给你。 ";
 					Link.l8.go = "Shadowtrader_smugglers";
 				}
-				// <—— 不公平竞争迷你任务
+				// < —不公平竞争迷你任务
 				//--> 合法贸易
 				if(CheckAttribute(PChar, "questTemp.TPZ_ContraInfo") && NPChar.location == "BasTer_tavern")
 				{
 					Link.l8 = "听着, 朋友, 我需要一批葡萄酒和朗姆酒。 越多越快。 ";
 					Link.l8.go = "TPZ_smugglers_1";
 				}
-				// <—— 合法贸易
+				// < —合法贸易
 				//Jason --> 巴考特销售生成器
 				if(NPChar.location == "Marigo_tavern" && CheckAttribute(PChar, "GenQuest.Bakaut") && !CheckAttribute(PChar, "GenQuest.Bakaut.Info"))
 				{
 					Link.l9 = "我需要见迈克尔.罗森克拉夫特。 我有他感兴趣的货物。 ";
 					Link.l9.go = "bakaut";
 				}
-				// <—— 巴考特销售生成器
+				// < —巴考特销售生成器
 				
 				// 教堂生成器 #2 -->
 				if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_1") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_tavern")
@@ -224,7 +224,7 @@ void ProcessDialogEvent()
 					Link.l5 = "你的一个同事和我来自" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_2.QuestTown + "Gen") + "的好朋友说你知道些生意。 ";
 					Link.l5.go = "Contra_GenQuest_Church_2_Contra2_1";
 				}
-				// <—— 教堂生成器 #2
+				// < —教堂生成器 #2
 				
 				Link.l7 = "没什么。 再见。 ";
 				Link.l7.go = "Exit";				
@@ -411,21 +411,21 @@ void ProcessDialogEvent()
 				Link.l8 = "我有个很不寻常的生意给你。 ";
 				Link.l8.go = "Shadowtrader_smugglers";
 			}
-			// <—— 不公平竞争迷你任务
+			// < —不公平竞争迷你任务
 			//--> 合法贸易
 				if(CheckAttribute(PChar, "questTemp.TPZ_ContraInfo") && NPChar.location == "BasTer_tavern")
 				{
 					Link.l8 = "听着, 朋友, 我需要一批葡萄酒和朗姆酒。 越多越快。 ";
 					Link.l8.go = "TPZ_smugglers_1";
 				}
-			// <—— 合法贸易
+			// < —合法贸易
 			//Jason --> 巴考特销售生成器
 			if(NPChar.location == "Marigo_tavern" && CheckAttribute(PChar, "GenQuest.Bakaut") && !CheckAttribute(PChar, "GenQuest.Bakaut.Info"))
 			{
 				Link.l9 = "我需要见迈克尔.罗森克拉夫特。 我有他感兴趣的货物。 ";
 				Link.l9.go = "bakaut";
 			}
-			// <—— 巴考特销售生成器
+			// < —巴考特销售生成器
 			
 			// 教堂生成器 #2 -->
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_1") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_tavern")
@@ -439,7 +439,7 @@ void ProcessDialogEvent()
 				Link.l3 = "你的一个同事和我来自" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_2.QuestTown + "Gen") + "的好朋友说你知道些生意。 ";
 				Link.l3.go = "Contra_GenQuest_Church_2_Contra2_1";
 			}
-			// <—— 教堂生成器 #2
+			// < —教堂生成器 #2
 
 			Link.l5 = "没什么。 再见。 ";
 			Link.l5.go = "Exit";				
@@ -513,7 +513,7 @@ void ProcessDialogEvent()
 			SetFunctionTimerCondition("Church_GenQuest2_TimeIsLeft", 0, 0, 1, false);
 			DeleteAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_2");
 		break;
-		// <—— 教堂生成器 #2
+		// < —教堂生成器 #2
 
 		case "Meeting_1":
 			Dialog.Text = "嗯... 这和我有什么关系? 你可能迷路了, 船长。 去商店吧, 在那里买或卖你想要的东西。 ";
@@ -875,7 +875,7 @@ void ProcessDialogEvent()
 			pchar.quest.Shadowtrader_SMG.function = "ShadowAgent";
 			DialogExit();
 		break;
-		// <—— 不公平竞争
+		// < —不公平竞争
 		//--> 合法贸易
 		case "TPZ_smugglers_1":
 			dialog.text = "哈, 柜台后面的那个无赖派你来的, 不是吗? ";
@@ -885,7 +885,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TPZ_smugglers_2":
-			dialog.text = "你想要什么我都能弄到, 明白吗? 只要报酬合适。 但那个该死的总督打击得很严。 我们不再碰酒了 --太吵了, 一英里外都能听到, 利润微薄, 被绞死的风险极高。 所以, 无意冒犯。 ";
+			dialog.text = "你想要什么我都能弄到, 明白吗? 只要报酬合适。 但那个该死的总督打击得很严。 我们不再碰酒了 —太吵了, 一英里外都能听到, 利润微薄, 被绞死的风险极高。 所以, 无意冒犯。 ";
 			link.l1 = "嗯... 你说你什么都能弄到。 ";
 			link.l1.go = "TPZ_smugglers_3";		
 		break;
@@ -913,7 +913,7 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
 			AddLandQuestMark(sld, "questmarkmain");
 		break;
-		//<—— 合法贸易
+		//< —合法贸易
 
 		//--> 消耗品的价格
 		case "Consumption":
@@ -939,7 +939,7 @@ void ProcessDialogEvent()
 		
 		case "Consumption_2":
 			AddMoneyToCharacter(pchar, -3002);
-			dialog.text = "我记得, 虽然我不明白你为什么对这个感兴趣。 那孩子在那些铁栅栏后面真的发疯了。 他成了酒鬼, 总是说些胡话, 说什么消耗品把人带走了, 没人能幸免。 他说那消耗品有个名字, 甚至不敢大声说出来。 如果你说出来 --它就会来把你也带走。 ";
+			dialog.text = "我记得, 虽然我不明白你为什么对这个感兴趣。 那孩子在那些铁栅栏后面真的发疯了。 他成了酒鬼, 总是说些胡话, 说什么消耗品把人带走了, 没人能幸免。 他说那消耗品有个名字, 甚至不敢大声说出来。 如果你说出来 —它就会来把你也带走。 ";
 			link.l1 = "然后他发生了什么? ";
 			link.l1.go = "Consumption_3";
 		break;
@@ -957,7 +957,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Consumption_5":
-			dialog.text = "哦, 不会有好结果的, 先生, 相信我... (压低声音) 他说 --胡安... ";
+			dialog.text = "哦, 不会有好结果的, 先生, 相信我... (压低声音) 他说 —胡安... ";
 			link.l1 = "去你的! 胡安? 这只是个普通名字, 在这里很流行。 为什么这么特别? ";
 			link.l1.go = "Consumption_6";
 		break;
@@ -975,7 +975,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Consumption = "current";
 			AddQuestRecord("Consumption", "6");
 		break;
-		//<—— 消耗品的价格
+		//< —消耗品的价格
 		
 		//Jason --> 巴考特销售生成器
 		case "bakaut":
@@ -999,7 +999,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "bakaut_1":
-			dialog.text = "他的大帆船将在" + XI_ConvertString(pchar.GenQuest.Bakaut.Island+"Gen") + "海岸附近巡航几天。 所以不要迟到 --他可能会航行到群岛的另一个地方。 ";
+			dialog.text = "他的大帆船将在" + XI_ConvertString(pchar.GenQuest.Bakaut.Island+"Gen") + "海岸附近巡航几天。 所以不要迟到 —他可能会航行到群岛的另一个地方。 ";
 			link.l1 = "好的, 我会加速。 谢谢! ";
 			link.l1.go = "bakaut_2";
 		break;
@@ -1023,7 +1023,7 @@ void ProcessDialogEvent()
 			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.year  = GetAddingDataYear(0, 0, sti(pchar.GenQuest.Bakaut.DaysQty));
 			pchar.quest.Bakaut_Rozencraft_Find.function = "Bakaut_RozencraftRemove";
 		break;
-		// <—— 巴考特销售生成器
+		// < —巴考特销售生成器
 		
 		//--> 圣慈悲修道院检查团到来
 		case "SantaMisericordia_1":

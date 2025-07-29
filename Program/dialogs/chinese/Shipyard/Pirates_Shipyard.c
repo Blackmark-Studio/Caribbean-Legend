@@ -48,7 +48,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Master_Ship":
-		//Jason ---------------------------------—— 亚历克斯的航海钟 ------------------------------------------
+		//Jason --------------------------------- —亚历克斯的航海钟 ------------------------------------------
 			if (CheckAttribute(npchar, "quest.sextant") && CheckAttribute(pchar, "questTemp.AlexClock") && pchar.location == "Pirates_shipyard" && !CheckAttribute(npchar, "quest.clock"))
 			{
 				dialog.text = "啊哈, " +GetFullName(pchar)+ "船长! 真高兴你能过来! ";
@@ -63,7 +63,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				Link.l1.go = "clock_complete";
 				break;
 			}
-		//<—— 亚历克斯的航海钟
+		//< —亚历克斯的航海钟
 			dialog.text = "哦, 又是你, 总在说你的麻烦事... (咳嗽) ";
 			link.l1 = pcharrepphrase("没错, 又是我。 但趁你还没把灵魂交给上帝, 我们谈谈生意吧。 ",
 	            "你记性不错, 现在如果可以, 我们来问些具体问题。 ");
@@ -150,7 +150,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 					link.l50 = "我来处理船只改造的事。 ";
 					link.l50.go = "FDM_hull_checkmaterials";
 			}
-			// <—— Xenon
+			// < —Xenon
 			link.l9 = pcharrepphrase("该死, 我有几件急事要处理, 再见。 ", "我该走了。 抱歉。 ");
 			Link.l9.go = "ship_tunning_not_now";
 		break;
@@ -517,7 +517,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1.go = "exit";
 		break;
 		
-	// -----------------------------------------—— 亚历克斯的航海钟 ----------------------------------------------// Addon-2016 Jason 到处将杜布隆替换为比索
+	// ----------------------------------------- —亚历克斯的航海钟 ----------------------------------------------// Addon-2016 Jason 到处将杜布隆替换为比索
 		case "clock_begin":
 			dialog.text = "别对一个老人这么严厉... 我真的需要你的帮助, 船长。 ";
 			link.l1 = "告诉我, 大师。 你怎么了? ";
@@ -857,7 +857,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.questTemp.SharkGoldFleet.KGBB = true;
 			if(CheckAttribute(pchar,"questTemp.SharkFrigate")) SetTimerCondition("SharkGoldFleet", 0, 0, 30, false);
 		break;
-	// <—— 亚历克斯的航海钟任务结束
+	// < —亚历克斯的航海钟任务结束
 		
 		// 玛雅城任务
 		case "tieyasal":
@@ -902,7 +902,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			
 			if (!CheckAttribute(npchar, "quest.FDM_hull")) // 检查船体改造状态
 			{
-				link.l3 = "嗯, 我觉得是时候让它变像样了。 船本身不错, 船员也习惯了, 但让一位体面的船长驾驶一艘能把成年人吓破胆的船 --更别说孩子了 --实在有失尊严。 我想彻底重建, 让其他船长看到我的船时只有羡慕的份, 而不是吓得画十字。 除了群岛上最棒的造船师, 我还能找谁呢? ";
+				link.l3 = "嗯, 我觉得是时候让它变像样了。 船本身不错, 船员也习惯了, 但让一位体面的船长驾驶一艘能把成年人吓破胆的船 —更别说孩子了 —实在有失尊严。 我想彻底重建, 让其他船长看到我的船时只有羡慕的份, 而不是吓得画十字。 除了群岛上最棒的造船师, 我还能找谁呢? ";
 				link.l3.go = "FDM_hull";
 			}
 		break;
@@ -1287,7 +1287,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			DeleteAttribute(pchar, "ship.blots");	
 			CloseQuestHeader("renovate_fdm");
 		break;
-		//<—— Xenon
+		//< —Xenon
 	}
 	UnloadSegment(NPChar.FileDialog2);  // 如果在switch内部有通过return退出的情况, 不要忘记卸载
 }

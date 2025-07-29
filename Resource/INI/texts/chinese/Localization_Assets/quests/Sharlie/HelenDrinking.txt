@@ -28,7 +28,7 @@ HelenDrinking_6
 
 HelenDrinking_7
 {
-我应该去见扬并道歉。 
+我应该去见 Jan 并道歉。 
 }
 
 HelenDrinking_8
@@ -60,7 +60,7 @@ HelenDrinking_13
 
 HelenDrinking_14
 {
-拥有两个家是多么令人厌烦。 哦, 玛丽... 在发生这一切之后, 我们三个现在该怎么办? 
+拥有两个家是多么令人厌烦。 哦, Mary... 在发生这一切之后, 我们三个现在该怎么办? 
 }
 
 HelenDrinking_15
@@ -83,11 +83,11 @@ Small
 
 HelenDrinking_19
 {
-海伦表示赞同
+Helen 表示赞同
 }
 HelenDrinking_20
 {
-海伦表示不赞同
+Helen 表示不赞同
 }
 
 HelenDrinking_21

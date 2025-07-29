@@ -45,7 +45,7 @@ GenQuests_20
 
 GenQuests_21
 {
-在 @<chref.Ship.Name> 号船上, @<crew> 人已经死亡
+ @<chref.Ship.Name> 号上已经死亡 @<crew> 人
 }
 
 GenQuests_22
@@ -115,7 +115,7 @@ Lincoln
 
 GenQuests_35
 {
-在造船业
+在造船领域
 }
 
 GenQuests_36
@@ -145,12 +145,12 @@ GenQuests_40
 
 GenQuests_41
 {
-你听说了吗, @<GetAddress_Form(pchar)> , 巡逻队长 @<sShipType> @<pchar.GenQuest.CaptainComission.Name> 最近被捕了。 原来他兼职做走私者。 想想看, 前任总督给殖民地带来了什么! 那些本应抓捕海盗的人却自己在抢 劫我们! ... 据传一周后他将被处决。 他罪有应得。 
+你听说了吗, @<GetAddress_Form(pchar)> , @<sShipType> 巡逻队长 @<pchar.GenQuest.CaptainComission.Name> 最近被捕了。 原来他兼职做走私者。 想想看, 前任总督给殖民地带来了什么! 那些本应抓捕海盗的人却自己在抢 劫我们! ... 据传一周后他将被处决。 他罪有应得。 
 }
 
 GenQuests_42
 {
-据传巡逻队长 @<sShipType> @<pchar.GenQuest.CaptainComission.Name> 原来是一个走私团伙的组织者。 他被抓住了, 很快就要被绞死。 看来 @<GetAddress_Form(pchar)> , 我们的总督已经认真对待殖民地的 秩序了。 
+据传 @<sShipType> 巡逻队长 @<pchar.GenQuest.CaptainComission.Name> 原来是一个走私团伙的组织者。 他被抓住了, 很快就要被绞死。 看来 @<GetAddress_Form(pchar)> , 我们的总督已经认真对待殖民地的 秩序了。 
 }
 
 GenQuests_43
@@ -160,7 +160,7 @@ GenQuests_43
 
 GenQuests_44
 {
-你已经知道巡逻队长 @<sShipType> @<pchar.GenQuest.CaptainComission.Name> 被捕了吗? 当局发现他藏匿了一大批从过往船 只上没收的货物。 看来他难逃一死。 但是, 我告诉你, 他是巡逻中队里最优秀的成员之一。 谁会想到... 
+你已经知道 @<sShipType> 巡逻队长 @<pchar.GenQuest.CaptainComission.Name> 被捕了吗? 当局发现他藏匿了一大批从过往船 只上没收的货物。 看来他难逃一死。 但是, 我告诉你, 他是巡逻中队里最优秀的成员之一。 谁会想到... 
 }
 
 GenQuests_45
@@ -170,12 +170,12 @@ GenQuests_45
 
 GenQuests_46
 {
-你听说了吗, @<GetAddress_Form(pchar)> , 最近一名巡逻队长 @<sShipType> @<pchar.GenQuest.CaptainComission.Name> 被绞死了。 据说他抢劫了某个商人。 毕竟在这里, 你不能相信任何人... 整个团队都和他一起被处决了。 勾结意味着... 
+你听说了吗, @<GetAddress_Form(pchar)> , 最近一名 @<sShipType> 巡逻队长 @<pchar.GenQuest.CaptainComission.Name> 被绞死了。 据说他抢劫了某个商人。 毕竟在这里, 你不能相信任何人... 整个团队都和他一起被处决了。 串通意味着... 
 }
 
 GenQuests_47
 {
-你已经知道了吗, @<GetAddress_Form(pchar)> , 前巡逻队长 @<sShipType> @<pchar.GenQuest.CaptainComission.Name> 被处决了? 据传他击沉了某艘重要船只, 并藏匿了货物。 而且团队中没有人承认藏匿地点在 哪里。 所以他们都被绞死了... 
+你已经知道了吗, @<GetAddress_Form(pchar)> , @<sShipType> 前巡逻队长 @<pchar.GenQuest.CaptainComission.Name> 被处决了? 据传他击沉了某艘重要船只, 并藏匿了货物。 而且团队中没有人承认藏匿地点在 哪里。 所以他们都被绞死了... 
 }
 
 GenQuests_48
@@ -185,7 +185,7 @@ GenQuests_48
 
 GenQuests_49
 {
-他们最近处决了一名前船长, 名叫 @<pchar.GenQuest.CaptainComission.Name> , 以及他的巡逻队 @<sShipType> 的全体成员.. 据传他们藏匿了一大批从过往船只 上没收的货物。 但这是最好的巡逻队之一。 我认为, @<GetAddress_Form(pchar)> , 他们是被故意诽谤的。 毕竟, 货物从未被找到..
+他们最近处决了一名前船长, 名叫 @<pchar.GenQuest.CaptainComission.Name> , 以及他的 @<sShipType> 巡逻队的全体成员.. 据传他们藏匿了一大批从过往船只 上没收的货物。 但这是最好的巡逻队之一。 我认为, @<GetAddress_Form(pchar)> , 他们是被故意诽谤的。 毕竟, 货物从未被找到..
 }
 
 GenQuests_50
@@ -228,7 +228,7 @@ GenQuests_58
 
 GenQuests_59
 {
-沉船掠夺者已被送往定居点
+那些沉船劫掠者被押送到了定居点。
 }
 
 GenQuests_60
@@ -362,12 +362,12 @@ GenQuests_86
 
 GenQuests_87
 {
-军官 @<GetFullName(sld)> 带着 @<sld.ship.name> 逃跑了
+副官 @<GetFullName(sld)> 带着 @<sld.ship.name> 逃跑了
 }
 
 GenQuests_88
 {
-军官 @<GetFullName(sld)> 从 @<pchar.ship.name> 逃跑了
+副官 @<GetFullName(sld)> 从 @<pchar.ship.name> 逃跑了
 }
 
 GenQuests_89
@@ -401,7 +401,7 @@ GenQuests_94
 
 GenQuests_95
 {
-不久前丛林里发生了一场战斗—— 强盗袭击了 @<GetFullName(pchar)> 船长, 想抢他的金子... 啊哈, 是你除掉了 @<pchar.GenQuest.(Gun).name>! 我觉得干得好... 
+不久前丛林里发生了一场战斗 —强盗袭击了 @<GetFullName(pchar)> 船长, 想抢他的金子... 啊哈, 是你除掉了 @<pchar.GenQuest.(Gun).name>! 我觉得干得好... 
 }
 
 GenQuests_96
@@ -426,7 +426,7 @@ GenQuests_99
 
 GenQuests_100
 {
-你听说了吗? 某个船长从强盗手中救出了一个名 叫 @<pchar.GenQuest.EncGirl.name> 的女孩—— 简直是从他们手中把她抢了过来! 多么好的人, 真正的男人! 
+你听说了吗? 某个船长从强盗手中救出了一个名 叫 @<pchar.GenQuest.EncGirl.name> 的女孩 —简直是从他们手中把她抢了过来! 多么好的人, 是个真正的男人! 
 }
 
 GenQuests_101
@@ -435,7 +435,7 @@ GenQuests_101
 
 GenQuests_102
 {
-那个女孩, @<pchar.GenQuest.EncGirl.name> , 确实很幸运—— 她在丛林里被强盗袭击, 看起来他们想强奸她。 但他们失败了, 呵呵, 她得感谢 @<GetMainCharacterNameGen()> 船长! 
+那个女孩, @<pchar.GenQuest.EncGirl.name> , 确实很幸运 —她在丛林里被强盗袭击, 看起来他们想强奸她。 但他们失败了, 呵呵, 她得感谢 @<GetMainCharacterNameGen()> 船长! 
 }
 
 GenQuests_103
@@ -480,7 +480,7 @@ GenQuests_110
 
 GenQuests_111
 {
-据说 @<GetFullName(pchar)> 船长在丛林里与 @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> 的士兵相遇, 并将他们全部消灭。 哈, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> 是一文不值的士兵... 
+据说 @<GetFullName(pchar)> 船长在丛林里与 @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> 的士兵相遇, 并将他们全部消灭。 哈, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> 都是些没用的士兵... 
 }
 
 GenQuests_112
@@ -500,7 +500,7 @@ GenQuests_114
 
 GenQuests_115
 {
-你知道吗, @<sTemp> 总督命令某个 @<GetMainCharacterNameDat()> 船长去消灭一个臭名昭著的强盗, 名叫 @<GetFullName(arAll)>。 看来船长完成了任务... 
+你知道吗, @<sTemp> 总督命令某个 @<GetMainCharacterNameDat()> 船长去消灭一个名叫 @<GetFullName(arAll)> 的臭名昭著的强盗。 看来船长完成了任务... 
 }
 
 GenQuests_116
@@ -510,7 +510,7 @@ GenQuests_116
 
 GenQuests_117
 {
-哈! 我们的总督终于决定恢复丛林的秩 序—— 他派 @<GetMainCharacterNameDat()> 船长去追踪并杀死最臭名昭著的强 盗。 你知道吗? 那个强盗, @<GetFullName(arAll)> , 死了! 
+哈! 我们的总督终于决定恢复丛林的秩 序 —他派 @<GetMainCharacterNameDat()> 船长去追踪并杀死最臭名昭著的强 盗。 你知道吗? 那个强盗, @<GetFullName(arAll)> , 死了! 
 }
 
 GenQuests_118

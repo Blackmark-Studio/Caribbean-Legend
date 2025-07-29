@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 	break;
 	
 		case "Wine_fort_2":
-			dialog.text = "每瓶8里亚尔1000比索, 我们最多能买60瓶, 不能再多了。 但也别少于10瓶 --那可不够我们喝的! ";
+			dialog.text = "每瓶8里亚尔1000比索, 我们最多能买60瓶, 不能再多了。 但也别少于10瓶 —那可不够我们喝的! ";
 			link.l1 = "明白了, 最多60瓶, 最少10瓶。 我会把酒给你带来的。 ";
 			link.l1.go = "Wine_fort_3";
 		break;

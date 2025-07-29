@@ -70,7 +70,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_2":
-			dialog.text = "船长, 我看起来像个可怜的骗子吗? 没门。 我会和你一起参加这次突袭, 我们一起干。 战斗时我不会躲在货舱里, 恰恰相反 --我请你让我作为你的临时军官加入登船队\n我懂行, 知道怎么刺人和开枪。 所以我会像你一样冒生命危险... 咳... 哈! 拿下快速帆船后你再付我分成。 ";
+			dialog.text = "船长, 我看起来像个可怜的骗子吗? 没门。 我会和你一起参加这次突袭, 我们一起干。 战斗时我不会躲在货舱里, 恰恰相反 —我请你让我作为你的临时军官加入登船队\n我懂行, 知道怎么刺人和开枪。 所以我会像你一样冒生命危险... 咳... 哈! 拿下快速帆船后你再付我分成。 ";
 			link.l1 = "你要求分得多少战利品? ";
 			link.l1.go = "FalseTrace_3";
 		break;
@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_13":
-			dialog.text = "因为我现在还没有这个情报。 让我详细解释一下。 有个叫'斜眼索利'的幸运儿 --你听说过他吗? --他打算掠夺布鲁维尔德附近的一些金矿\n由于某些事件, 他将不得不把所有金子藏在某个隐蔽的地方, 并派几个卫兵保护。 他自己会步行去贝利兹或布鲁维尔德找船\n我在索利的船员中有个特工, 他会在'"+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.QuestCity)+"'等我。 一旦我们在那里抛锚, 他就会告诉我索利把宝贝藏在哪里\n你去那里, 消灭卫兵, 把所有金子拿走。 我本来打算自己去做, 但考虑到目前的情况, 我把一切都留给你。 不收费。 ";
+			dialog.text = "因为我现在还没有这个情报。 让我详细解释一下。 有个叫'斜眼索利'的幸运儿 —你听说过他吗? —他打算掠夺布鲁维尔德附近的一些金矿\n由于某些事件, 他将不得不把所有金子藏在某个隐蔽的地方, 并派几个卫兵保护。 他自己会步行去伯利兹或布鲁维尔德找船\n我在索利的船员中有个特工, 他会在'"+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.QuestCity)+"'等我。 一旦我们在那里抛锚, 他就会告诉我索利把宝贝藏在哪里\n你去那里, 消灭卫兵, 把所有金子拿走。 我本来打算自己去做, 但考虑到目前的情况, 我把一切都留给你。 不收费。 ";
 			link.l1 = "你的故事听起来很像你之前那个装满白银的快速帆船的寓言。 你已经骗了我一次。 你怎么保证这次没撒谎? ";
 			link.l1.go = "FalseTrace_14";
 		break;
@@ -212,7 +212,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_19":
-			dialog.text = "哈, 没那么快, 船长... 你的水手长和其他人暂时进不来。 你没注意到我锁门了吗? 现在只有我们俩 --就你和我。 所以让我看看, 船长, 你有什么本事! ";
+			dialog.text = "哈, 没那么快, 船长... 你的水手长和其他人暂时进不来。 你没注意到我锁门了吗? 现在只有我们俩 —就你和我。 所以让我看看, 船长, 你有什么本事! ";
 			link.l1 = "真的吗? 你真以为你有机会? ! 你会后悔的, 混蛋! ";
 			link.l1.go = "FalseTrace_20";
 		break;
@@ -332,7 +332,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_abordage_2":
-			dialog.text = "我重复一遍 --我船上没有任何货物。 这艘快速帆船是一艘补给船, 正前往'"+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+"'为部队运送炮弹和补给。 ";
+			dialog.text = "我重复一遍 —我船上没有任何货物。 这艘快速帆船是一艘补给船, 正前往'"+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.TargetCity)+"'为部队运送炮弹和补给。 ";
 			link.l1 = "你在蒙我。 你的货舱一定装满了白银。 我们谈完后我会去检查... ";
 			link.l1.go = "FalseTrace_abordage_3";
 		break;
@@ -341,7 +341,7 @@ void ProcessDialogEvent()
 			dialog.text = "我不知道谁告诉你有白银的。 但这完全是胡说八道... 我输给你了, 所以我投降。 这是我的剑。 现在你可以去检查货舱了。 它们是空的。 ";
 			link.l1 = "投降? 不! 我不需要任何证人。 拿起你的剑战斗, 否则我就把你像羊一样开膛破肚。 ";
 			link.l1.go = "FalseTrace_abordage_4";
-			link.l2 = "你表现出理智是明智的。 我想我可以拿你换赎金... 嘿, 伙计们 --把船长扔进货舱! ";
+			link.l2 = "你表现出理智是明智的。 我想我可以拿你换赎金... 嘿, 伙计们 —把船长扔进货舱! ";
 			link.l2.go = "FalseTrace_abordage_5";
 		break;
 		
@@ -379,13 +379,13 @@ void ProcessDialogEvent()
 		
 		case "FalseTrace_wife_1":
 			dialog.text = "你会为你所做的一切在地狱里燃烧。 去你的! ";
-			link.l1 = "冷静点, 小姐! 别自找麻烦咒骂我 --否则我会让你跟着你的船长一起去! ";
+			link.l1 = "冷静点, 小姐! 别自找麻烦咒骂我 —否则我会让你跟着你的船长一起去! ";
 			link.l1.go = "FalseTrace_wife_2";
 		break;
 		
 		case "FalseTrace_wife_2":
 			dialog.text = "你... 你不敢对女人动手! ";
-			link.l1 = "我甚至不需要动手。 我可以开枪打死你。 或者我直接把你扔到海里, 剩下的交给鲨鱼... 现在, 你还在等什么? 去我的船上。 别害怕 --如果你安静的话, 我不会让任何人伤害你, 我自己也不会碰你... ";
+			link.l1 = "我甚至不需要动手。 我可以开枪打死你。 或者我直接把你扔到海里, 剩下的交给鲨鱼... 现在, 你还在等什么? 去我的船上。 别害怕 —如果你安静的话, 我不会让任何人伤害你, 我自己也不会碰你... ";
 			link.l1.go = "FalseTrace_wife_3";
 		break;
 		
@@ -416,8 +416,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_wife_5":
-			dialog.text = "可怜的"+pchar.questTemp.FalseTrace.CapName+"! 告诉我 --你要杀了他吗? 不要... ";
-			link.l1 = "听着, 女士 --如果我想杀他, 我早就这么做了。 他会待在货舱里, 然后我会放了他或者可能拿他换赎金... 后者更有可能。 现在请做个好姑娘, 登上我的船。 别害怕 --如果你安静的话, 我不会让任何人伤害你, 我自己也不会碰你... ";
+			dialog.text = "可怜的"+pchar.questTemp.FalseTrace.CapName+"! 告诉我 —你要杀了他吗? 不要... ";
+			link.l1 = "听着, 女士 —如果我想杀他, 我早就这么做了。 他会待在货舱里, 然后我会放了他或者可能拿他换赎金... 后者更有可能。 现在请做个好姑娘, 登上我的船。 别害怕 —如果你安静的话, 我不会让任何人伤害你, 我自己也不会碰你... ";
 			link.l1.go = "FalseTrace_wife_3";
 		break;
 		
@@ -493,7 +493,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = ""+pchar.questTemp.FalseTrace.CapName+"... 快速帆船的船长。 你把他关起来了。 和他谈谈, 我求你了! 他会为我们的生命和自由给你一些东西! 他会想出办法的! 我... 我不想回到亚当身边, 从现在起"+pchar.questTemp.FalseTrace.CapName+"就是我丈夫! 我求你 --别把我带回亚当身边, 带回那个怪物身边! ";
+				dialog.text = ""+pchar.questTemp.FalseTrace.CapName+"... 快速帆船的船长。 你把他关起来了。 和他谈谈, 我求你了! 他会为我们的生命和自由给你一些东西! 他会想出办法的! 我... 我不想回到亚当身边, 从现在起"+pchar.questTemp.FalseTrace.CapName+"就是我丈夫! 我求你 —别把我带回亚当身边, 带回那个怪物身边! ";
 				link.l1 = "嗯。 有趣。 我的囚犯能给我什么? 我可以从当局那里拿到他的赎金, 我也可以拿到斜眼索利的黄金... ";
 				link.l1.go = "FalseTrace_wife_21";
 			}
@@ -575,7 +575,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_wife_26":
-			dialog.text = "当然, 船长。 我的丈夫 --感谢上帝, 现在是前夫 --是个土匪, 你已经知道了。 由于担心可能的搜查, 他不在家里存放掠夺来的赃物。 他组织了一个藏匿处 --但他有一次说漏了嘴。 不过, 他藏得很巧妙 --从岸上无法进入那个地方。 ";
+			dialog.text = "当然, 船长。 我的丈夫 —感谢上帝, 现在是前夫 —是个土匪, 你已经知道了。 由于担心可能的搜查, 他不在家里存放掠夺来的赃物。 他组织了一个藏匿处 —但他有一次说漏了嘴。 不过, 他藏得很巧妙 —从岸上无法进入那个地方。 ";
 			link.l1 = "非常有趣... 它在哪里? ";
 			link.l1.go = "FalseTrace_wife_27";
 		break;
@@ -593,7 +593,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_wife_29":
-			dialog.text = "我不需要你的后悔, 船长。 你做了我要求你做的事 --我告诉了你想知道的一切。 现在再见, 让我独自悲伤... ";
+			dialog.text = "我不需要你的后悔, 船长。 你做了我要求你做的事 —我告诉了你想知道的一切。 现在再见, 让我独自悲伤... ";
 			link.l1 = "再见, 凯瑟琳。 ";
 			link.l1.go = "FalseTrace_wife_30";
 		break;
@@ -622,7 +622,7 @@ void ProcessDialogEvent()
 			dialog.text = "你杀了我的人。 你真以为我会让你活着? 你以为亚当的死让我满意了? 不! 你不会离开这个地方。 离这个岛不远有艘船, 她会把你的破船和你一起击沉! \n现在, 你想对我做什么就做吧。 ";
 			link.l1 = "亲爱的, 我没告诉过你吗? 如果你骗我, 你会掉脑袋的? 狡猾的魔鬼! 你死了会更安全。 这颗漂亮的脑袋现在就要吃枪子了... ";
 			link.l1.go = "FalseTrace_wife_33";
-			link.l2 = "我同情你, 凯瑟琳。 你对复仇的渴望最终没给你带来任何好处。 我打算把你留在这个岛上, 听天由命 --你会在这里等当地渔民发现你, 把你带到伊斯帕尼奥拉岛。 愿上帝评判我们所有的行为... ";
+			link.l2 = "我同情你, 凯瑟琳。 你对复仇的渴望最终没给你带来任何好处。 我打算把你留在这个岛上, 听天由命 —你会在这里等当地渔民发现你, 把你带到伊斯帕尼奥拉岛。 愿上帝评判我们所有的行为... ";
 			link.l2.go = "FalseTrace_wife_35";
 		break;
 		
@@ -642,7 +642,7 @@ void ProcessDialogEvent()
 				GiveItem2Character(pchar, "pistol1");
 				EquipCharacterbyItem(pchar, "pistol1");
 			}
-			// <—— legendary edition
+			// < —legendary edition
 			LAi_ActorAnimation(pchar, "shot", "FalseTrace_CaterinaKilled", 1.0);
 		break;
 		

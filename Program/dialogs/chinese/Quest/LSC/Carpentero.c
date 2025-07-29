@@ -508,7 +508,7 @@ void ProcessDialogEvent()
 			npchar.quest.answer_4 = "true";
 			npchar.quest.rat = "true";
 		break;
-		//<—— 信息块
+		//< —信息块
 		
 		//--> 饮酒
 		case "drink":
@@ -581,7 +581,7 @@ void ProcessDialogEvent()
 			sld.startLocator = "bottle";
 			DoQuestReloadToLocation("FleuronTavern", "quest", "sit2", "LSC_DrinkSit");
 		break;
-		//<—— 饮酒
+		//< —饮酒
 		
 		//--> 在酒馆睡觉
 		case "room":
@@ -640,7 +640,7 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			TavernWaitDate_LSC("wait_day");
 		break;
-		//<—— 在酒馆睡觉
+		//< —在酒馆睡觉
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

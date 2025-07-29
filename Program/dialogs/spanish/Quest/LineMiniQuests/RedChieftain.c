@@ -232,7 +232,7 @@ void ProcessDialogEvent()
 		// belamour legendary edition -->
 		if (sti(pchar.questTemp.RedChieftain.Tartane) > 5)
 		{
-			dialog.text = "Canauri te agradece de nuevo, ¡hermano cara pálida! ¡Rescatas todas las canoas con el indio! Para Canauri es muy importante salvar todas las canoas porque también salvaste al nieto de Canauri, a quien el malvado cara pálida llevó a la esclavitud. De niño, a mi nieto le encantaba nadar mucho, y Canauri le dio este amuleto encantado para que el nieto no se ahogue. Ahora el nieto ya no quiere nadar y me da el amuleto para que yo pueda dártelo a ti, hermano de cara pálida. Espero que las lágrimas de los dioses y este regalo sean una recompensa suficiente por la vida de Arawak. Y ahora nos despedimos, es hora de que regresemos a nuestra aldea natal.";
+			dialog.text = "¡Canauri te agradece de nuevo, hermano cara pálida! ¡Rescatas todas las canoas con indios! Para Canauri es muy importante salvar todas las canoas porque también salvaste al nieto de Canauri, a quien el malvado cara pálida llevó a la esclavitud. De niño, a mi nieto le encantaba nadar mucho, y Canauri le dio este amuleto encantado para que nieto no ahogar. Ahora el nieto ya no quiere nadar y me da el amuleto para que yo pueda dártelo a ti, hermano de cara pálida. Espero que las lágrimas de los dioses y este regalo sean una recompensa suficiente por la vida de Arawak. Y ahora nos despedimos, es hora de que regresemos a nuestra aldea natal.";
 			link.l1 = "¡Buena suerte, Cunauri! ¡Me alegra que tu nieto haya sobrevivido! ¡Rezo para que este mal nunca vuelva a caer sobre ti!";
 			link.l1.go = "RedChieftain_final_1Obereg";
 		}

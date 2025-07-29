@@ -35,13 +35,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "Przynajmniej to nie jest trzydzieści srebrników...";
 			link.l1.go = "DTSG_depozit_4";
 			AddItems(pchar, "chest", 70);
-			Log_Info("You have received 70 chests");
+			Log_Info("Otrzymałeś 70 skrzyń");
 			PlaySound("interface\important_item.wav");
 		break;
 		
 		case "DTSG_depozit_4":
-			dialog.text = "Co to było?";
-			link.l1 = "O, nic... Dziękuję. Do widzenia.";
+			dialog.text = "Słucham?";
+			link.l1 = "A, nic... Dziękuję. Do widzenia.";
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.DTSG_depozit");
 		break;

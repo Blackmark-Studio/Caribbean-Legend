@@ -141,7 +141,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "FMQN_11":
-            dialog.text = "别担心。 我会派我们最有经验的士兵, 由军官汉斯.舒尔特指挥 --他是菲利普斯堡的剑术大师。 ";
+            dialog.text = "别担心。 我会派我们最有经验的士兵, 由军官汉斯.舒尔特指挥 —他是菲利普斯堡的剑术大师。 ";
             link.l1 = "太好了! 那我们别浪费时间了。 ";
             link.l1.go = "exit";
             WaitDate("",0,0,0,1,5);

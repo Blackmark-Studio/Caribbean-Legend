@@ -16,7 +16,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "听着, 有没有一个炼金术士, 或者说医生, 到这个镇上来? 他是意大利人, 三十岁左右, 名叫吉诺.格维内利? ";
                 link.l1.go = "guardoftruth";
             }
-            // 卡勒幽船
+            // 卡莱乌切
             if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "hunting" && !CheckAttribute(npchar, "quest.Caleuche"))
             {
                 link.l1 = "听着, 我需要一个叫弗格斯.胡珀的猎人。 有人告诉我他住在这里。 我在哪里可以找到他? ";
@@ -31,7 +31,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             npchar.quest.jino = "true";
         break;
         
-        // 卡勒幽船
+        // 卡莱乌切
         case "caleuche":
             dialog.text = "弗格斯? 他经常来我这儿。 但他从昨天起就进丛林了。 别担心, 他一周后就会回来, 喝着朗姆酒, 吹嘘他的海上冒险。 不过, 我承认他是个该死的好猎人。 我不知道还有谁能像他那样擅长抓蛇。 ";
             link.l1 = "蛇? 嗯。 我该什么时候再来这里才能找到他? ";

@@ -78,7 +78,7 @@ void ProcessDialogEvent()
             if (CheckAttribute(pchar, "questTemp.Rum") && sti(pchar.questTemp.Rum) > 3)
             {
                 dialog.text = "船长, 我认为你最好停下来。 上帝保佑你在酒精的影响下别惹事。 我们这里对此非常严格。 即使是你的权威也帮不了你。 ";
-                link.l1 = "嗯... 我想你是对的 --我已经喝够了。 谢谢你的关心! ";            
+                link.l1 = "嗯... 我想你是对的 —我已经喝够了。 谢谢你的关心! ";            
                 link.l1.go = "exit";
             }
             else

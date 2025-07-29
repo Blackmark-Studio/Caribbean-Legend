@@ -102,7 +102,7 @@ void ProcessDialogEvent()
 					LinkRandPhrase("你需要什么, "+ GetSexPhrase("恶棍","臭家伙") +"? ! 城卫军已经嗅到你的气味了, 你跑不远的, 肮脏的海盗! ", "凶手, 马上离开我的房子! 卫兵! ", "我不怕你, "+ GetSexPhrase("恶棍","老鼠") +"! 很快你就会在我们的堡垒被吊死, 你跑不远的... "));
 				link.l1 = NPCharRepPhrase(pchar,
 					RandPhraseSimple("呵, 警报对我来说不是问题... ", "他们永远抓不到我。 "), 
-					RandPhraseSimple("闭嘴, " + GetWorkTypeOfMan(npchar, "") + ", 不然我就把你的舌头扯出来! ", "呵, " + GetWorkTypeOfMan(npchar, "") + ", 那边也是 --抓海盗! 我告诉你, 伙计: 安静点, 就不会死! "));
+					RandPhraseSimple("闭嘴, " + GetWorkTypeOfMan(npchar, "") + ", 不然我就把你的舌头扯出来! ", "呵, " + GetWorkTypeOfMan(npchar, "") + ", 那边也是 —抓海盗! 我告诉你, 伙计: 安静点, 就不会死! "));
 				link.l1.go = "fight";
 				break;
 			}
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 				NPChar.quest.meeting = "1";
 				break;
 			}
-	//<—— 加斯科涅人的负担
+	//< —加斯科涅人的负担
 			// Addon-2016 Jason, 法国迷你任务 (FMK) FMK-马提尼克
 			if (CheckAttribute(pchar, "questTemp.FMQM.Oil") && pchar.location == "Fortfrance_shipyard")
 			{
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 					{
 						link.l16 = "我按你要求送来了"+pchar.GenQuest.Findship.Shipyarder.ShipBaseName+"。 ";
 						link.l16.go = "Findship_check";
-					}// <—— 生成器 囚犯
+					}// < —生成器 囚犯
 				}
 				//Jason --> 生成器 不幸的小偷
 				if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && CheckCharacterItem(pchar, "Tool") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_shipyard")
@@ -251,7 +251,7 @@ void ProcessDialogEvent()
 					link.l17 = "我设法找到了小偷并拿到了"+pchar.GenQuest.Device.Shipyarder.Type+"。 ";
 					link.l17.go = "Device_complete";
 				}
-				// <—— 生成器 不幸的小偷
+				// < —生成器 不幸的小偷
 				if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && RealShips[sti(Pchar.Ship.Type)].BaseType != SHIP_CURSED_FDM) // mitrokosta фикс ломаных диалогов
 				{
 					link.l12 = "我想改变帆的外观。 ";
@@ -472,7 +472,7 @@ void ProcessDialogEvent()
 					Link.l1.go = "ship_tunning_not_now_1";
 					break;
 				}
-				// <—— 传奇版							
+				// < —传奇版							
 				if(GetHullPercent(pchar) < 100 || GetSailPercent(pchar) < 100)
 				{
 					dialog.Text = "在改进船只之前, 必须先完全修复。 这也可以在我的造船厂完成。 ";
@@ -540,7 +540,7 @@ void ProcessDialogEvent()
 												 "呵! 我想我的船之前被前主人改装过 - 一定是在这个造船厂, 好吧, 我想我必须感谢他的远见, 以及你和你的人出色的工作! ");
 						Link.l1.go = "ship_tunning_not_now_1";					
 					}
-						// <—— 传奇版
+						// < —传奇版
 				}
 				if(NPChar.city == "Havana" || NPChar.city == "PortoBello")
 				{
@@ -584,7 +584,7 @@ void ProcessDialogEvent()
 												 "谢谢你, 大师, 但我已经有了改进, 正是你提到的。 祝其他船只和它们的船长好运! ",
 												 "呵! 我想我的船之前被前主人改装过 - 一定是在这个造船厂, 好吧, 我想我必须感谢他的远见, 以及你和你的人出色的工作! ");
 						Link.l1.go = "ship_tunning_not_now_1";	
-					// <—— 传奇版
+					// < —传奇版
 					}						
 				}
 				if(NPChar.city == "Villemstad")
@@ -624,7 +624,7 @@ void ProcessDialogEvent()
 												 "谢谢你, 大师, 但我已经有了改进, 正是你提到的。 祝其他船只和它们的船长好运! ",
 												 "呵! 我想我的船之前被前主人改装过 - 一定是在这个造船厂, 好吧, 我想我必须感谢他的远见, 以及你和你的人出色的工作! ");
 						Link.l1.go = "ship_tunning_not_now_1";	
-						// <—— 传奇版
+						// < —传奇版
 					}
 				}
 				if(NPChar.city == "Charles")
@@ -666,7 +666,7 @@ void ProcessDialogEvent()
 								break;
 							}	
 						}
-						// <—— 传奇版				
+						// < —传奇版				
 					}
 					Link.l1 = LinkRandPhrase("哦! 我的船已经这样改进过了。 好吧, 谢谢你的时间! ",
 												 "谢谢你, 大师, 但我已经有了改进, 正是你提到的。 祝其他船只和它们的船长好运! ",
@@ -712,7 +712,7 @@ void ProcessDialogEvent()
 					GetItemMyCabin("chest", iSumm);
 					Log_Info("从船舱取出达布隆箱: " + iSumm+ " 个。 ");
 				}
-				// <—— legendary edtion
+				// < —legendary edtion
 			    NPChar.Tuning.Money  		= amount;
 			    NPChar.Tuning.Matherial 	= GetMaterialQtyUpgrade(pchar, NPChar, 1 );			    
 			    NPChar.Tuning.ShipType      = Pchar.Ship.Type;
@@ -859,7 +859,7 @@ void ProcessDialogEvent()
 					GetItemMyCabin("chest", iSumm);
 					Log_Info("从船舱取出达布隆箱: " + iSumm+ " 个。 ");
 				}
-				// <—— 传奇版	
+				// < —传奇版	
 			    NPChar.Tuning.Money  		= amount;
 			    NPChar.Tuning.Matherial 	= GetMaterialQtyUpgrade(pchar, NPChar, 1 ); 			    
 			    NPChar.Tuning.ShipType   	= Pchar.Ship.Type;
@@ -1002,7 +1002,7 @@ void ProcessDialogEvent()
 					GetItemMyCabin("chest", iSumm);
 					Log_Info("从船舱取出达布隆箱: " + iSumm+ " 个。 ");
 				}
-				// <—— 传奇版	
+				// < —传奇版	
 			    NPChar.Tuning.Money  		= amount;
 				NPChar.Tuning.Matherial 	= GetMaterialQtyUpgrade(pchar, NPChar, 1 ); 			    
 			    NPChar.Tuning.ShipType      = Pchar.Ship.Type;
@@ -1130,7 +1130,7 @@ void ProcessDialogEvent()
 					GetItemMyCabin("chest", iSumm);
 					Log_Info("从船舱取出达布隆箱: " + iSumm+ " 个。 ");
 				}
-				// <—— 传奇版		
+				// < —传奇版		
 			    NPChar.Tuning.Money  		= amount;
 			    NPChar.Tuning.Matherial 	= GetMaterialQtyUpgrade(pchar, NPChar, 1 ); 			    
 			    NPChar.Tuning.ShipType      = Pchar.Ship.Type;
@@ -1262,7 +1262,7 @@ void ProcessDialogEvent()
 					GetItemMyCabin("chest", iSumm);
 					Log_Info("从船舱取出达布隆箱: " + iSumm+ " 个。 ");
 				}
-				// <—— 传奇版		
+				// < —传奇版		
 			    NPChar.Tuning.Money  		= amount;
 			    NPChar.Tuning.Matherial 	= GetMaterialQtyUpgrade(pchar, NPChar, 1 ); 			    
 			    NPChar.Tuning.ShipType      = Pchar.Ship.Type;
@@ -1394,7 +1394,7 @@ void ProcessDialogEvent()
 					GetItemMyCabin("chest", iSumm);
 					Log_Info("从船舱取出达布隆箱: " + iSumm+ " 个。 ");
 				}
-				// <—— 传奇版		
+				// < —传奇版		
 			    NPChar.Tuning.Money  		= amount;
 			    NPChar.Tuning.Matherial 	= GetMaterialQtyUpgrade(pchar, NPChar, 1 ); 			    
 			    NPChar.Tuning.ShipType      = Pchar.Ship.Type;
@@ -1554,7 +1554,7 @@ void ProcessDialogEvent()
 					GetItemMyCabin("chest", iSumm);
 					Log_Info("从船舱取出达布隆箱: " + iSumm+ " 个。 ");
 				}
-				// <—— 传奇版		
+				// < —传奇版		
 			    NPChar.Tuning.Money  		= amount;
 			    NPChar.Tuning.Matherial    	= GetMaterialQtyUpgrade(pchar, NPChar, 1 );			    
 			    NPChar.Tuning.ShipType      = Pchar.Ship.Type;
@@ -1687,7 +1687,7 @@ void ProcessDialogEvent()
 					GetItemMyCabin("chest", iSumm);
 					Log_Info("从船舱取出达布隆箱: " + iSumm+ " 个。 ");
 				}
-				// <—— 传奇版		
+				// < —传奇版		
 			    NPChar.Tuning.Money  		= amount;
 				NPChar.Tuning.Cannon 		= true;				
 				NPChar.Tuning.Matherial 	= GetMaterialQtyUpgrade(pchar, NPChar, 1 ); 				
@@ -1835,7 +1835,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				
-			}//<—— 生成器 寻找船只
+			}//< —生成器 寻找船只
 			//Jason --> 生成器 不幸的小偷
 			if (hrand(6) == 1 && !CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && sti(pchar.rank) < 10 && npchar.city != "Charles")
 			{
@@ -1871,7 +1871,7 @@ void ProcessDialogEvent()
 					link.l2.go = "Device_exit";
 					SaveCurrentNpcQuestDateParam(npchar, "Device");
 					break;
-				}//<—— 生成器 不幸的小偷
+				}//< —生成器 不幸的小偷
 			}
 			dialog.text = "我没有那样的事情。 ";
 			link.l1 = "如你所说。 ";
@@ -1922,7 +1922,7 @@ void ProcessDialogEvent()
 			CloseQuestHeader("Findship");
 			DeleteAttribute(pchar, "GenQuest.Findship.Shipyarder");
 		break;
-		//<—— 生成器 寻找船只
+		//< —生成器 寻找船只
 		
 		//Jason --> 生成器 不幸的小偷
 		case "Device":
@@ -2016,7 +2016,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "GenQuest.Device.Shipyarder");
 		break;
-		// <—— генератор Неудачливый вор
+		// < —генератор Неудачливый вор
 		
 		case "ShipLetters_6":
 			pchar.questTemp.different.GiveShipLetters.speakShipyard = true;
@@ -2514,7 +2514,7 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "Sharlie_shipwait";
 			}
 		break;
-//<—— -----------------------------------------Бремя гасконца-----------------------------------------------------
+//< —-----------------------------------------Бремя гасконца-----------------------------------------------------
 		// Addon-2016 Jason, французские миниквесты (ФМК) ФМК-Мартиника
 		case "FMQM_oil_1":
 			DialogExit();

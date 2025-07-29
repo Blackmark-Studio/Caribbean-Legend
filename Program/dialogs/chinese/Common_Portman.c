@@ -158,7 +158,7 @@ void ProcessDialogEvent()
 					LinkRandPhrase("你需要什么, " + GetSexPhrase("恶棍", "臭家伙") + "? ! 城市卫兵已经嗅到了你的气味, 你跑不远的, 肮脏的海盗! ", "凶手, 马上离开我的房子! 卫兵! ", "我不怕你, " + GetSexPhrase("恶棍", "老鼠") + "! 很快他们就会在我们的堡垒里绞死你, 你跑不远的... "));
 				link.l1 = NPCharRepPhrase(pchar,
 					RandPhraseSimple("呵, 警报对我来说从来不是问题... ", "他们永远抓不到我。 "), 
-					RandPhraseSimple("闭上你的嘴, " + GetWorkTypeOfMan(npchar, "") + ", 也许我就不会把你肮脏的舌头扯出来! ", "呵, " + GetWorkTypeOfMan(npchar, "") + ", 还有那里的所有人—— 抓海盗! 我告诉你, 伙计: 安静点, 你就能活下去... "));
+					RandPhraseSimple("闭上你的嘴, " + GetWorkTypeOfMan(npchar, "") + ", 也许我就不会把你肮脏的舌头扯出来! ", "呵, " + GetWorkTypeOfMan(npchar, "") + ", 还有那里的所有人 —抓海盗! 我告诉你, 伙计: 安静点, 你就能活下去... "));
 				link.l1.go = "fight";
 				break;
 			}
@@ -186,15 +186,15 @@ void ProcessDialogEvent()
 				NPChar.quest.meeting = "1"; // patch-6
 				break;
 			}			
-			//<—— Бремя гасконца
+			//< —Бремя гасконца
 			if(NPChar.quest.meeting == "0")
 			{
 				
-				dialog.text = "问候, " + GetAddress_Form(NPChar) + "。 我想我们之前没见过面。 我是"  + GetFullName(npchar) + "—— 港口主管。 ";
+				dialog.text = "问候, " + GetAddress_Form(NPChar) + "。 我想我们之前没见过面。 我是"  + GetFullName(npchar) + " —港口主管。 ";
 				Link.l1 = "你好, " + GetFullName(NPChar) + "。 我是" + GetFullName(PChar) + ", ‘" + PChar.ship.name + "’的船长。 ";
 				if(startHeroType == 4 && NPChar.location == "SantaCatalina_portoffice")
 				{
-					dialog.text = "麦克阿瑟船长, 我总是提醒你—— 没必要每次都来登记。 别担心。 ";
+					dialog.text = "麦克阿瑟船长, 我总是提醒你 —没必要每次都来登记。 别担心。 ";
 					link.l1 = "别说了, " + npchar.lastname + "先生, 我和其他人一样。 ";
 					Link.l1.go = "node_2";
 					break;
@@ -280,7 +280,7 @@ void ProcessDialogEvent()
 						LAi_group_Attack(NPChar, Pchar);
 					}
 				}
-// <—— фрахт
+// < —фрахт
 //-------------------------------------------//Jason, 邮件---------------------------------------------------	
 		
 				if (CheckAttribute(PChar, "questTemp.WPU.Postcureer.TargetPortmanID") && pchar.questTemp.WPU.Postcureer != "lost" && pchar.questTemp.WPU.Postcureer.TargetPortmanID == npchar.id)
@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 					Link.l1.go = "Postcureer_complete_fail";
 					break;
 				}
-// <—— почта
+// < —почта
 //-------------------------------------------//Jason, 护航---------------------------------------------------	
 				if(CheckAttribute(PChar, "questTemp.WPU.Escort.TargetPortmanID") && CheckAttribute(pchar, "questTemp.WPU.Escort.LevelUp_0") && pchar.questTemp.WPU.Escort.TargetPortmanID == npchar.id)
 				{
@@ -346,7 +346,7 @@ void ProcessDialogEvent()
 				if(CheckAttribute(PChar, "questTemp.WPU.Escort.TargetPortmanID") && CheckAttribute(pchar, "questTemp.WPU.Escort.LevelUp_1S") && pchar.questTemp.WPU.Escort == "win" && npchar.location == pchar.questTemp.WPU.Escort.StartCity +"_portoffice")
 				{
 					dialog.text = "太好了。 我为你服务, " + GetFullName(PChar) + "。 ";
-					Link.l1 = "我在" + XI_ConvertString(pchar.questTemp.WPU.Current.TargetIslandID) + "岛的海岸找到了失踪的船只。 嗯, 实际上不是船, 而是大约五十名船员和船长。 他们现在安全了—— 船员已经登上了我的船, 船长现在在你的镇上—— 我想他已经拜访过你了。 ";
+					Link.l1 = "我在" + XI_ConvertString(pchar.questTemp.WPU.Current.TargetIslandID) + "岛的海岸找到了失踪的船只。 嗯, 实际上不是船, 而是大约五十名船员和船长。 他们现在安全了 —船员已经登上了我的船, 船长现在在你的镇上 —我想他已经拜访过你了。 ";
 					Link.l1.go = "Escort_LU1S_complete";
 					break;
 				}
@@ -378,7 +378,7 @@ void ProcessDialogEvent()
 					Link.l1.go = "Escort_complete";
 					break;
 				}
-// <—— эскорт
+// < —эскорт
 			if(startHeroType == 4 && NPChar.location == "SantaCatalina_portoffice" && NPChar.quest.meeting == "0")
 			{
 				NPChar.quest.meeting = "1";
@@ -551,7 +551,7 @@ void ProcessDialogEvent()
 			
 		case "Church_GenQuest1_Node_FillInfoOfCapColony_3":
 			dialog.text = "他来过。 但感谢所有圣人, 就在今天早上, 他离开了我们, 前往" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.CapGoToColony + "Acc") + "。 我真诚地为任何需要与他打交道的人感到遗憾。 ";
-			link.l1 = "既然如此, 祝我好运—— 谢谢你的帮助。 ";
+			link.l1 = "既然如此, 祝我好运 —谢谢你的帮助。 ";
 			link.l1.go = "Church_GenQuest1_Node_FillInfoOfCapColony_4";
 		break;
 			
@@ -704,7 +704,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_6":
-			dialog.text = "感谢? 什么感谢? ! 那个笨蛋已经闲逛了半年没有工作—— 看看他, 他有足够的时间去谈恋爱! 我在他这个年纪时已经在经营自己的生意了! 呸! 总督有一个适婚的女儿—— 而那个傻瓜却带了一个没有亲戚的荡妇到我家, 还敢要求我的祝福! ";
+			dialog.text = "感谢? 什么感谢? ! 那个笨蛋已经闲逛了半年没有工作 —看看他, 他有足够的时间去谈恋爱! 我在他这个年纪时已经在经营自己的生意了! 呸! 总督有一个适婚的女儿 —而那个傻瓜却带了一个没有亲戚的荡妇到我家, 还敢要求我的祝福! ";
 			link.l1 = "嗯... 显然, 你不相信真挚的感情? ";
 			link.l1.go = "EncGirl_6_1";		
 		break;
@@ -759,7 +759,7 @@ void ProcessDialogEvent()
 				link.l2.go = "BurntShip2";
 				break;
 			}
-			//<—— 港口主管的迷你任务生成
+			//< —港口主管的迷你任务生成
 
 			dialog.text = "总督关心他的公民的福祉, 因此他总是有一些工作要提供。 酒馆里可能有商人需要帮助, 商店也需要货运船长。 ";
 			Link.l1 = "我还有一个问题。 ";
@@ -831,7 +831,7 @@ void ProcessDialogEvent()
 				link.l2.go = "SeekShip_break";
 				break;
 			}
-			//<—— проверка миниквестов начальника порта。 
+			//< —проверка миниквестов начальника порта。 
 			ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
 			if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 			{
@@ -2141,7 +2141,7 @@ void ProcessDialogEvent()
 				pchar.questTemp.WPU.Fraht.Money = makeint((sti(Goods[iGoods].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty)*2)/10);//двойная стоимость товара
 				pchar.questTemp.WPU.Current.Add = "double";
 				// 08Mar17 "month" was "moths"
-				dialog.text = "由于收成不好, 我们的殖民地一直需要进口粮食。 目前我们的库存几乎耗尽, 商店货架上的东西也早就被抢购一空。 我想请你给我送来" + GetGoodsNameAlt(iGoods)+ ", 数量为" + FindRussianQtyString(iGoodsQty) + ", 我愿意支付双倍的价钱——每包" + FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigePrice)) + "。 这样算下来总共是" + FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money)) + "。 哦, 尽量在一个月内交货——我不能再等了。 ";
+				dialog.text = "由于收成不好, 我们的殖民地一直需要进口粮食。 目前我们的库存几乎耗尽, 商店货架上的东西也早就被抢购一空。 我想请你给我送来" + GetGoodsNameAlt(iGoods)+ ", 数量为" + FindRussianQtyString(iGoodsQty) + ", 我愿意支付双倍的价钱—每包" + FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigePrice)) + "。 这样算下来总共是" + FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money)) + "。 哦, 尽量在一个月内交货—我不能再等了。 ";
 				link.l1 = "好的, 我接受这个任务。 ";
 				link.l1.go = "Fraht_LevelUp_Go";
 				link.l2 = "很抱歉让你失望, 但我现在无法做到。 ";
@@ -3002,7 +3002,7 @@ void ProcessDialogEvent()
 				link.l2.go = "node_2";
 			}
 		break;
-//------------------------------—— 交付航海日志到分散的船长的任务 ---------------------
+//------------------------------ —交付航海日志到分散的船长的任务 ---------------------
 		case "PortmanQuest_1":
 			dialog.text = "太好了, 这是他的航海日志...你真的帮我卸下了一个重担! 丢失船舶日志是一件非常糟糕的事情。 我总是为那些船长感到难过...";
 			link.l1 = "嗯, 这确实是一件值得担心的事情! 现在, 告诉我更多关于那个心不在焉的船长的事情。 ";
@@ -3038,7 +3038,7 @@ void ProcessDialogEvent()
 				AddQuestUserData(sTitle, "sAreal", ", 它在 " + XI_ConvertString(GetIslandByCityName(npchar.quest.PortmansJornal.city) + "Dat"));
 			}			
 		break;
-		// ------------------------------—— 寻找被盗船只的任务 ----------------------------------
+		// ------------------------------ —寻找被盗船只的任务 ----------------------------------
 		case "SeekShip_1":
 			dialog.text = "太好了! 你知道, 被盗的船属于一个有影响力的人, 所以这对我来说非常重要。 我会为这项工作慷慨地付钱给你...";
 			link.l1 = "我明白了。 告诉我更多关于这艘船和它被盗时的情况。 ";
@@ -3285,7 +3285,7 @@ void ProcessDialogEvent()
 			//从列表中移除
 			DeleteAttribute(arCapBase, sCapitainId); 
 		break;
-		//<-------------------------—— 任务船长数据库信息
+		//<------------------------- —任务船长数据库信息
 
 		case "ShipStock_1":
 			if (CheckAttribute(pchar, "questTemp.HWIC.Holl") && pchar.questTemp.HWIC.Holl == "JacobTakeShip" && !CheckAttribute(npchar, "quest.HWICHoll"))
@@ -3672,7 +3672,7 @@ void ProcessDialogEvent()
 			DelLandQuestMark(npchar);
 			AddLandQuestMark(characterFromId("Fleetwood"), "questmarkmain");
 		break;
-		//<—— 荷兰策略
+		//< —荷兰策略
 		case "Escort_companion":
 			dialog.text = "你想要什么吗, 船长? ";
 			link.l1 = "不, 没什么。 ";
@@ -4270,7 +4270,7 @@ int Escort_ShipType()
 	}
 	return iShipType;
 }
-//<—— новые мини-квесты
+//< —новые мини-квесты
 
 void DelBakSkill(ref _compref) // hasert
 {

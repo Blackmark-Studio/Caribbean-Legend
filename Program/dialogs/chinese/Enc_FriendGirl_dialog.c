@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 				"哦, 上帝啊, 见到你真高兴! ");
 			Link.l1 = LinkRandPhrase("怎么了, 姑娘? ",
 				"有什么麻烦吗, 亲爱的? ",
-				"别这么激动 --这对年轻女士的健康不好。 现在, 告诉我 --发生了什么? ");
+				"别这么激动 —这对年轻女士的健康不好。 现在, 告诉我 —发生了什么? ");
 			Link.l1.go = "Step_1";
 		break;
 		case "Step_1":
@@ -159,7 +159,7 @@ void ProcessDialogEvent()
 		break;
 		case "Underground1_3": 
 			dialog.text = "真是个傻瓜! 她会吓得屁滚尿流, 还以为我和她一样。 ";
-			Link.l1 = "哇, 你肯定不喜欢她。 你就是个穿着裙子的魔鬼 --说的就是你。 ";
+			Link.l1 = "哇, 你肯定不喜欢她。 你就是个穿着裙子的魔鬼 —说的就是你。 ";
 			Link.l1.go = "Underground1_4";
 		break;
 		case "Underground1_4": 

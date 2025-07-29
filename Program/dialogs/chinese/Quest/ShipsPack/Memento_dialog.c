@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_3":
-			dialog.text = "我们为什么攻击他们? 那艘双桅船没有威胁, 也没运输货物。 当然, 关于格林的传言很多, 但只有奴隶贩子怕他。 今天死了很多人 --为了什么? ";
+			dialog.text = "我们为什么攻击他们? 那艘双桅船没有威胁, 也没运输货物。 当然, 关于格林的传言很多, 但只有奴隶贩子怕他。 今天死了很多人 —为了什么? ";
 			if (sti(pchar.questTemp.ISawDiegoDeLanda) >= 2)
 			{
 				link.l1 = "... ";
@@ -64,7 +64,7 @@ void ProcessDialogEvent()
 		case "Memento_MortimerGrimDead_Alonso_5":
 			dialog.text = "不。 相信我, 如果船员有那样的疑问, 说明我不称职, 而你已经是个死人了\n"+
 			"你很幸运, 伙计们从这次血腥行动中赚了不少。 船上每个水手的口袋里都塞满了达布隆金币! \n"+
-			"不过没有贵重货物 --只有本地小饰品和诡异的护身符。 尽管如此, 船员们还是像强盗一样赚了一笔。 看来格林给他们的报酬不错\n"+
+			"不过没有贵重货物 —只有本地小饰品和诡异的护身符。 尽管如此, 船员们还是像强盗一样赚了一笔。 看来格林给他们的报酬不错\n"+
 			"我希望你不打算索要那份金子, 船长? ";
 			link.l1 = "我不打算, 阿隆索。 谢谢你告知。 ";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_6";
@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 
 		case "Memento_MortimerGrimDead_Alonso_6":
 			dialog.text = "永远支持你, 船长。 顺便问一下, 你打算怎么处理‘纪念号’? ";
-			link.l1 = "把它当作战利品 --还能怎样? ";
+			link.l1 = "把它当作战利品 —还能怎样? ";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_8";
 			link.l2 = "还没决定"+GetSexPhrase(""," 呢")+"。 ";
 			link.l2.go = "Memento_MortimerGrimDead_Alonso_8";
@@ -82,7 +82,7 @@ void ProcessDialogEvent()
 
 		case "Memento_MortimerGrimDead_Alonso_7":
 			dialog.text = "永远支持你, 船长。 顺便问一下, 你打算怎么处理‘纪念号’? ";
-			link.l1 = "把它当作战利品 --还能怎样? ";
+			link.l1 = "把它当作战利品 —还能怎样? ";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_8";
 			link.l2 = "还没决定"+GetSexPhrase(""," 呢")+"。 ";
 			link.l2.go = "Memento_MortimerGrimDead_Alonso_8";
@@ -91,7 +91,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_8":
-			dialog.text = "最好别这样。 它覆盖着某种本地符号。 而且有不好的传言 --据说它曾在一场可怕的瘟疫中幸存下来, 甲板上几乎堆满了尸体\n"+
+			dialog.text = "最好别这样。 它覆盖着某种本地符号。 而且有不好的传言 —据说它曾在一场可怕的瘟疫中幸存下来, 甲板上几乎堆满了尸体\n"+
 			"至于船尾的骷髅, 我都不想提: 除非有蠢货敢为了好玩去抢头骨, 否则除了我没人敢在那里站岗。 ";
 			link.l1 = "知道了, 阿隆索。 回去工作吧。 ";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_9";
@@ -152,13 +152,13 @@ void ProcessDialogEvent()
 		
 		// 第二晚与阿隆索的对话
 		case "Memento_Dich_EtapTwo_Alonso_2":
-			dialog.text = "我明白。 现在很多船员都成群睡觉 --害怕独处。 好像在这艘船上真的能独处一样... ";
+			dialog.text = "我明白。 现在很多船员都成群睡觉 —害怕独处。 好像在这艘船上真的能独处一样... ";
 			link.l1 = "看来我没做到。 发生了什么? ";
 			link.l1.go = "Memento_Dich_EtapTwo_Alonso_3";
 		break;
 
 		case "Memento_Dich_EtapTwo_Alonso_3":
-			dialog.text = "一场斗殴 --何塞刺伤了马塞尔。 他大喊着‘自己携带了瘟疫’。 ";
+			dialog.text = "一场斗殴 —何塞刺伤了马塞尔。 他大喊着‘自己携带了瘟疫’。 ";
 			link.l1 = "情况在恶化吗? ";
 			link.l1.go = "Memento_Dich_EtapTwo_Alonso_4";
 		break;
@@ -180,7 +180,7 @@ void ProcessDialogEvent()
 			dialog.text = "希望如此, 船长。 何塞怎么办? 杀人不是玩笑。 ";
 			link.l1 = "钟响后绞死他。 表明我们在掌控局面。 ";
 			link.l1.go = "Memento_Dich_EtapTwo_Alonso_6";
-			link.l2 = "三十鞭。 如果他活下来 --那就是上帝的旨意。 ";
+			link.l2 = "三十鞭。 如果他活下来 —那就是上帝的旨意。 ";
 			link.l2.go = "Memento_Dich_EtapTwo_Alonso_7";
 		break;
 
@@ -222,19 +222,19 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Dich_EtapThree_Alonso_2":
-			dialog.text = "呃, 你看起来糟透了。 昨晚没睡好? 好吧, 我有好消息。 瘟疫结束了。 事实证明 --根本没有瘟疫。 ";
+			dialog.text = "呃, 你看起来糟透了。 昨晚没睡好? 好吧, 我有好消息。 瘟疫结束了。 事实证明 —根本没有瘟疫。 ";
 			link.l1 = "你是什么意思? ";
 			link.l1.go = "Memento_Dich_EtapThree_Alonso_3";
 		break;
 
 		case "Memento_Dich_EtapThree_Alonso_3":
-			dialog.text = "船员被吓坏了, 开始相信那些愚蠢的幽灵船故事。 心理暗示的力量 --很可怕, 我告诉你。 它沉掉的船不止一艘。 ";
+			dialog.text = "船员被吓坏了, 开始相信那些愚蠢的幽灵船故事。 心理暗示的力量 —很可怕, 我告诉你。 它沉掉的船不止一艘。 ";
 			link.l1 = "但有人死了! ";
 			link.l1.go = "Memento_Dich_EtapThree_Alonso_4";
 		break;
 
 		case "Memento_Dich_EtapThree_Alonso_4":
-			dialog.text = "斗殴。 肮脏的伤口。 变质的咸肉 --只是普通的水手死亡率。 如果我们没有用被诅咒的船的故事吓唬自己, 也许损失会更少\n"+
+			dialog.text = "斗殴。 肮脏的伤口。 变质的咸肉 —只是普通的水手死亡率。 如果我们没有用被诅咒的船的故事吓唬自己, 也许损失会更少\n"+
 			"船尾的那个骷髅也帮了倒忙。 幸好有个... 恶作剧的人在夜里偷了它的帽子\n"+
 			"既然闪电没有因为这种亵渎而劈中我们, 船员们就振作起来, 开始搞恶作剧。 比如... ";
 			link.l1 = "不准碰那个骷髅! ";
@@ -268,13 +268,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Sailor_1_1":
-			dialog.text = "我明白你的意思, 船长。 我曾为一位自由船长服务 --和你很像。 他搜寻宝藏, 做贸易, 接货运。 然后他决定抢劫一些商人 --结果失败了。 幸存者因海盗罪被判处绞刑。 ";
+			dialog.text = "我明白你的意思, 船长。 我曾为一位自由船长服务 —和你很像。 他搜寻宝藏, 做贸易, 接货运。 然后他决定抢劫一些商人 —结果失败了。 幸存者因海盗罪被判处绞刑。 ";
 			link.l1 = "格林船长买下了你? ";
 			link.l1.go = "Memento_Sailor_1_2";
 		break;
 
 		case "Memento_Sailor_1_2":
-			dialog.text = "他把我们当货物一样批量买下。 每艘船都需要经验丰富的水手, 而格林不在酒馆招募... 但他给我们吃的, 工资也不错。 我们服务 --然后抽签。 ";
+			dialog.text = "他把我们当货物一样批量买下。 每艘船都需要经验丰富的水手, 而格林不在酒馆招募... 但他给我们吃的, 工资也不错。 我们服务 —然后抽签。 ";
 			link.l1 = "抽签? ";
 			link.l1.go = "Memento_Sailor_1_3";
 		break;
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Sailor_2_1":
-			dialog.text = "哈! 船长直接从牢房里买下了我。 我本应在皇家港被绞死 --因为刺伤了某个不停背诵诗歌的花花公子。 那混蛋活该。 ";
+			dialog.text = "哈! 船长直接从牢房里买下了我。 我本应在皇家港被绞死 —因为刺伤了某个不停背诵诗歌的花花公子。 那混蛋活该。 ";
 			link.l1 = "所以你很幸运, 对吗? ";
 			link.l1.go = "Memento_Sailor_2_2";
 		break;
@@ -371,13 +371,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Sailor_3_3":
-			dialog.text = "自由? 这里没人是自由的。 船长给金子。 食物。 衣服, 但作为回报, 他要求绝对忠诚 --并让我们抽那些该死的签。 ";
+			dialog.text = "自由? 这里没人是自由的。 船长给金子。 食物。 衣服, 但作为回报, 他要求绝对忠诚 —并让我们抽那些该死的签。 ";
 			link.l1 = "抽签? ";
 			link.l1.go = "Memento_Sailor_3_4";
 		break;
 
 		case "Memento_Sailor_3_4":
-			dialog.text = "每周, 有人抽到短签, 得到危险的工作 --不是所有人都能回来。 船长说这是区分生者和死者的方式。 ";
+			dialog.text = "每周, 有人抽到短签, 得到危险的工作 —不是所有人都能回来。 船长说这是区分生者和死者的方式。 ";
 			link.l1 = "你能忍受吗? ";
 			link.l1.go = "Memento_Sailor_3_5";
 		break;
@@ -389,7 +389,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Sailor_3_6":
-			dialog.text = "他们能把我怎么样? 这是一艘死亡之船, 船长, 而我属于这里。 但你 --你不属于。 ";
+			dialog.text = "他们能把我怎么样? 这是一艘死亡之船, 船长, 而我属于这里。 但你 —你不属于。 ";
 			link.l1 = "如果你这么说。 再见。 ";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Memento_Sailor_3";
@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Sailor_4_3":
-			dialog.text = "绳子可能会缠绕很久... 船长对忠于他的人很慷慨。 尽管有时他会让我们进行奇怪的考验 --抽签。 不是每个人都幸运。 ";
+			dialog.text = "绳子可能会缠绕很久... 船长对忠于他的人很慷慨。 尽管有时他会让我们进行奇怪的考验 —抽签。 不是每个人都幸运。 ";
 			link.l1 = "抽签? ";
 			link.l1.go = "Memento_Sailor_4_4";
 		break;
@@ -535,31 +535,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Memento_MortimerGrim_8_leadership":
-			dialog.text = "哦! 死亡是所有恐惧之母。 孤独。 黑暗。 惩罚 --它们都只是她的面具。 ";
+			dialog.text = "哦! 死亡是所有恐惧之母。 孤独。 黑暗。 惩罚 —它们都只是她的面具。 ";
 			link.l1 = "... ";
 			link.l1.go = "Memento_MortimerGrim_9";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 		break;
 
 		case "Memento_MortimerGrim_8_weapon":
-			dialog.text = "哦! 死亡是所有恐惧之母。 孤独。 黑暗。 惩罚 --它们都只是她的面具。 ";
+			dialog.text = "哦! 死亡是所有恐惧之母。 孤独。 黑暗。 惩罚 —它们都只是她的面具。 ";
 			link.l1 = "... ";
 			link.l1.go = "Memento_MortimerGrim_9";
 			AddComplexSelfExpToScill(100, 100, 100, 100);
 		break;
 
 		case "Memento_MortimerGrim_8_sneak":
-			dialog.text = "哦! 死亡是所有恐惧之母。 孤独。 黑暗。 惩罚 --它们都只是她的面具。 ";
+			dialog.text = "哦! 死亡是所有恐惧之母。 孤独。 黑暗。 惩罚 —它们都只是她的面具。 ";
 			link.l1 = "... ";
 			link.l1.go = "Memento_MortimerGrim_9";
 			AddCharacterExpToSkill(pchar, "Sneak", 100);
 		break;
 
 		case "Memento_MortimerGrim_9":
-			dialog.text = "不用看太远。 以老约里克为例: 一堆骨头, 肋骨里插着灯笼 --然而即使是像你这样可怕的船长也会惊慌! ";
+			dialog.text = "不用看太远。 以老约里克为例: 一堆骨头, 肋骨里插着灯笼 —然而即使是像你这样可怕的船长也会惊慌! ";
 			if (startHeroType == 4)
 			{
-				dialog.text = "不用看太远。 以老约里克为例: 一堆骨头, 肋骨里插着灯笼 --就连无畏的埃伦, 伟大的肖恩.麦克阿瑟的女儿, 也被吓到了! ";
+				dialog.text = "不用看太远。 以老约里克为例: 一堆骨头, 肋骨里插着灯笼 —就连无畏的埃伦, 伟大的肖恩.麦克阿瑟的女儿, 也被吓到了! ";
 			}
 			link.l1 = "你说得很好, 但你还没说该怎么处理那一切。 ";
 			link.l1.go = "Memento_MortimerGrim_10";
@@ -620,7 +620,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_MortimerGrim_question_2_1":
-			dialog.text = "某人送的礼物。 一个出色的交谈者, 他对死亡的理解无人能及 --而且想象力丰富, 如你所见。 ";
+			dialog.text = "某人送的礼物。 一个出色的交谈者, 他对死亡的理解无人能及 —而且想象力丰富, 如你所见。 ";
 			link.l1 = "看起来很阴森。 ";
 			link.l1.go = "Memento_MortimerGrim_question_2_2";
 		break;
@@ -639,14 +639,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_MortimerGrim_question_3_2":
-			dialog.text = "你会惊讶于前奴隶和死刑犯报名的意愿: 把奴隶船的货舱或绞刑架换成‘纪念号’的甲板? 我现在有178名船员 --每个人都欠我的。 ";
+			dialog.text = "你会惊讶于前奴隶和死刑犯报名的意愿: 把奴隶船的货舱或绞刑架换成‘纪念号’的甲板? 我现在有178名船员 —每个人都欠我的。 ";
 			link.l1 = "但你仍然必须支付他们工资并维护船只。 仅凭感激是不够的。 ";
 			link.l1.go = "Memento_MortimerGrim_question_3_3";
 		break;
 
 		case "Memento_MortimerGrim_question_3_3":
-			dialog.text = "我是一个成功的海盗, 同行。 一个真正的人类公敌。 这是人类真正的敌人 --奴隶贩子和君主 --会称呼我的方式。 他们之间的唯一区别是头衔。 \n"+
-			"幸运的是, 他们有很多金子。 我用奴隶贩子箱子里的硬币来拯救那些被王室定罪的人。 剩下的给我的船员 --我什么都不需要。 一个死人要金子有什么用? 他们很快就会明白... ";
+			dialog.text = "我是一个成功的海盗, 同行。 一个真正的人类公敌。 这是人类真正的敌人 —奴隶贩子和君主 —会称呼我的方式。 他们之间的唯一区别是头衔。 \n"+
+			"幸运的是, 他们有很多金子。 我用奴隶贩子箱子里的硬币来拯救那些被王室定罪的人。 剩下的给我的船员 —我什么都不需要。 一个死人要金子有什么用? 他们很快就会明白... ";
 			link.l1 = "... ";
 			link.l1.go = "Memento_MortimerGrim_1";
 			npchar.SharlieTutorial_question_3 = true;
@@ -718,7 +718,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_MortimerGrim_phantom_23":
-			dialog.text = "我是个懦夫, 同行。 只是一个可怜的懦夫, 害怕死亡 --就像之前的成千上万的人一样。 当船员死于瘟疫时... 那是我的错, 我因恐惧而发疯。 我独自一人在一艘死亡之船上漂流了一个月。 ";
+			dialog.text = "我是个懦夫, 同行。 只是一个可怜的懦夫, 害怕死亡 —就像之前的成千上万的人一样。 当船员死于瘟疫时... 那是我的错, 我因恐惧而发疯。 我独自一人在一艘死亡之船上漂流了一个月。 ";
 			link.l1 = "到底发生了什么? ";
 			link.l1.go = "Memento_MortimerGrim_phantom_24";
 		break;

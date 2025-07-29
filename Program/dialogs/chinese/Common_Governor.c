@@ -94,7 +94,7 @@ void ProcessDialogEvent()
 					link.l3 = "我是应邀请来参加帆船赛的。 这是我的邀请函。 ";
 					link.l3.go = "Regata";
 				}
-				//<—— 帆船赛
+				//< —帆船赛
 				link.l10 = "抱歉, 我还有些事要做。 ";
 				link.l10.go = "exit";
 			}
@@ -112,7 +112,7 @@ void ProcessDialogEvent()
 				link.l3 = "我是来参加帆船赛的。 这是我的邀请函。 ";
 				link.l3.go = "Regata";
 			}
-			//<—— 帆船赛
+			//< —帆船赛
 			link.l10 = "只是礼节性拜访, 没别的事, " + GetAddress_FormToNPC(NPChar);
 			link.l10.go = "node_2";
 		break;
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 		
 		//--> Jason 帆船赛
 		case "Regata":
-			dialog.text = "哦, 太好了, 很高兴见到你, 船长! 你来得正是时候 --帆船赛几天后就要开始了。 你读过信使交给你的那封信里的帆船赛规则了吗? ";
+			dialog.text = "哦, 太好了, 很高兴见到你, 船长! 你来得正是时候 —帆船赛几天后就要开始了。 你读过信使交给你的那封信里的帆船赛规则了吗? ";
 			link.l1 = "是的, 先生, 我读过了。 ";
 			link.l1.go = "Regata_1";
 			RemoveItems(PChar, "letter_open", 1);//移除信件
@@ -178,7 +178,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_complete":
-			dialog.text = "现在让我们直接进入你最期待的部分 --颁奖仪式。 一等奖奖金是250000比索。 给你! ";
+			dialog.text = "现在让我们直接进入你最期待的部分 —颁奖仪式。 一等奖奖金是250000比索。 给你! ";
 			link.l1 = "谢谢! ";
 			link.l1.go = "Regata_complete_1";
 		break;

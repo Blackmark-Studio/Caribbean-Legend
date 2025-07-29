@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 			npchar.lifeday = 0;
 			AddQuestRecord("Saga", "4_1");
 		break;
-// <—— 吉米 
+// < —吉米 
 		
 //-------------------------------------------多诺万的双桅横帆船, 登船-----------------------------------------
 		//多诺万
@@ -165,7 +165,7 @@ void ProcessDialogEvent()
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "reload1", "none", "", "", "OpenTheDoors", 10.0);
 		break;
-		//<—— 登多诺万的双桅横帆船
+		//< —登多诺万的双桅横帆船
 		
 //----------------------------------------寻找恩里克.贡萨莱斯, 卡塔赫纳----------------------------------
 		//假贡萨莱斯#1, 房子
@@ -273,7 +273,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("MainHeroFightModeOn");
 			pchar.questTemp.Saga.Trap = "true";
 		break;
-		// <—— 参与了卡塔赫纳事件
+		// < —参与了卡塔赫纳事件
 		
 		// 假贡萨莱斯#2, 街道
 		case "GonsalesB":
@@ -462,7 +462,7 @@ void ProcessDialogEvent()
 			Saga_SetOrtega(); 
 			AddDialogExitQuestFunction("LandEnc_OfficerHired");
 		break;
-		// <—— 参与了卡塔赫纳事件
+		// < —参与了卡塔赫纳事件
 		
 		//真正的贡萨莱斯 - 奥尔特加, 灯塔
 		case "Ortega":
@@ -560,7 +560,7 @@ void ProcessDialogEvent()
 			LAi_group_SetCheck("EnemyFight", "OpenTheDoors");
 			AddDialogExitQuest("MainHeroFightModeOn");	
 		break;
-		//<—— 寻找贡萨莱斯, 卡塔赫纳
+		//< —寻找贡萨莱斯, 卡塔赫纳
 		
 //--------------------------------------------男爵回归任务的NPC---------------------------------
 		
@@ -1195,6 +1195,7 @@ void ProcessDialogEvent()
 		
 		case "mine_attack_2":
 			DialogExit();
+			locCameraFollowEx(true);
 			NextDiag.CurrentNode = "mine_attack_3";
 			LAi_SetActorType(pchar);
 			LAi_ActorFollow(pchar, npchar, "ActorDialog_Any2Pchar", -1);
@@ -1216,40 +1217,10 @@ void ProcessDialogEvent()
 		
 		case "mine_attack_5":
 			DialogExit();
-			LAi_SetPlayerType(pchar);
-			for (i=1; i<=6; i++)
-			{
-				sld = characterFromId("Mine_bandit_"+i);
-				LAi_RemoveCheckMinHP(sld);
-			}
-			if (pchar.questTemp.Saga.MineAttack == "soldiers")
-			{
-				sld = characterFromId("Svensons_sold_12");
-				LAi_SetActorType(sld);
-				LAi_ActorTurnToLocator(sld, "soldiers", "soldier1");
-				LAi_ActorAnimation(sld, "shot", "Saga_MineBanditDie", 1.0);
-			}
-			else
-			{
-				for (i=1; i<=6; i++)
-				{
-					sld = characterFromId("Mine_bandit_"+i);
-					LAi_SetWarriorType(sld);
-					LAi_group_MoveCharacter(sld, "EnemyFight");
-				}
-				LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-				LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-				LAi_group_SetCheck("EnemyFight", "Saga_BanditsDestroyed");
-				AddDialogExitQuest("MainHeroFightModeOn");	
-			}
-			pchar.quest.Saga_MineAttack_07.win_condition.l1 = "NPC_Death";
-			pchar.quest.Saga_MineAttack_07.win_condition.l1.character = "Mine_bandit_1";
-			pchar.quest.Saga_MineAttack_07.win_condition.l2 = "NPC_Death";
-			pchar.quest.Saga_MineAttack_07.win_condition.l2.character = "Mine_bandit_2";
-			pchar.quest.Saga_MineAttack_07.function = "Saga_SvensonMineexitAttack";
+			AddDialogExitQuestFunction("Saga_MineAttack");
 		break;
 		
-	// ---------------------------—— 袭击强盗矿场时的NPC对话 -------------------------------
+	// --------------------------- —袭击强盗矿场时的NPC对话 -------------------------------
 		case "Svensons_off":
 			dialog.text = LinkRandPhrase("我们会把那些混蛋撕碎! ", "我期待着打败那些混蛋! ", "杰克曼的奴才无权在西海域存在! 我们会把他们从这里赶走! ");
 			link.l1 = "... ";
@@ -1352,7 +1323,7 @@ void ProcessDialogEvent()
 			PlaySound("types\warrior04.wav");
 			PlaySound("Voice\English\evilpirates06.wav");
 			dialog.text = "哈哈哈, 混蛋们向我们展示了他们的背影! 狗娘养的! 葡萄弹在这么近的距离把他们打得粉碎! 看来他们没有勇气再攻击我们了! ";
-			link.l1 = "现在轮到我们了。 伦道夫, 你待在加农炮附近。 朝小路开几炮, 然后瞄准烟雾 --烧毁他们的巢穴! 只是别打到我们。 ";
+			link.l1 = "现在轮到我们了。 伦道夫, 你待在加农炮附近。 朝小路开几炮, 然后瞄准烟雾 —烧毁他们的巢穴! 只是别打到我们。 ";
 			link.l1.go = "gunner_5_1";
 		break;
 		
@@ -1462,7 +1433,7 @@ void ProcessDialogEvent()
 				
 				if (CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "blueveld")
 				{
-					dialog.text = TimeGreeting()+", " +GetFullName(pchar)+ "船长。 如果你是来找简的, 那我不得不让你失望了 --他不在这里。 他出去处理一些重要事务了。 ";
+					dialog.text = TimeGreeting()+", " +GetFullName(pchar)+ "船长。 如果你是来找简的, 那我不得不让你失望了 —他不在这里。 他出去处理一些重要事务了。 ";
 					link.l1 = "该死! 我需要他! 告诉我, 斯文森夫人, 他告诉你什么时候回来了吗? ";
 					link.l1.go = "js_girl_3";
 					break;
@@ -1483,7 +1454,7 @@ void ProcessDialogEvent()
 		case "js_girl_2":
 			if (CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "blueveld")
 			{
-				dialog.text = "船长? 好吧, 很高兴欢迎你到我家来。 但如果你是来找简的, 那我不得不让你失望了 --他不在这里。 他出去处理一些重要事务了。 ";
+				dialog.text = "船长? 好吧, 很高兴欢迎你到我家来。 但如果你是来找简的, 那我不得不让你失望了 —他不在这里。 他出去处理一些重要事务了。 ";
 				link.l1 = "该死! 我需要他! 告诉我, 斯文森夫人, 他告诉你什么时候回来了吗? ";
 				link.l1.go = "js_girl_3";
 				break;
@@ -1541,7 +1512,7 @@ void ProcessDialogEvent()
 		
 		case "js_helen_ft":
 			dialog.text = "我得说, 你总是很热情。 你应该去教堂; 我几乎没见过你在那里。 ";
-			link.l1 = "我的良心是清白的 --我没有什么需要忏悔的。 还在为他帮我供应船只而不是给你买另一件衣服而耿耿于怀吗, 乔安娜? ";
+			link.l1 = "我的良心是清白的 —我没有什么需要忏悔的。 还在为他帮我供应船只而不是给你买另一件衣服而耿耿于怀吗, 乔安娜? ";
 			link.l1.go = "js_helen_ft_1";
 		break;
 		
@@ -1552,7 +1523,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "js_helen_ft_2":
-			dialog.text = "你再这样说话, 总有一天会得到应有的报应。 简和格拉迪斯应该教过你一些礼貌。 好吧, 继续, 说你想说的 --然后滚出我的视线, 海伦。 他在里面。 ";
+			dialog.text = "你再这样说话, 总有一天会得到应有的报应。 简和格拉迪斯应该教过你一些礼貌。 好吧, 继续, 说你想说的 —然后滚出我的视线, 海伦。 他在里面。 ";
 			link.l1 = "愚蠢的母鸡。 当然, 会的。 ";
 			link.l1.go = "exit";
 		break;
@@ -1560,7 +1531,7 @@ void ProcessDialogEvent()
 		// 亚历克斯的强盗
 		case "Alexs_bandos":
 			dialog.text = "嘿! 你在这里做什么? ";
-			link.l1 = "我也想问你同样的问题 --你和你的伙伴在这里, 在我的地牢里做什么? ";
+			link.l1 = "我也想问你同样的问题 —你和你的伙伴在这里, 在我的地牢里做什么? ";
 			link.l1.go = "Alexs_bandos_1";
 		break;
 		
@@ -1617,7 +1588,7 @@ void ProcessDialogEvent()
 		
 		case "helendrinking_gypsy_2":
 			dialog.text = "我想在你具有挑战性的事业中为你提供支持。 看这里! 一个魔法杯子和一种禁忌药膏。 杯子会帮助你在饮酒方面, 药膏会帮助你在爱情方面。 你会选哪个? 只要两千! ";
-			link.l1 = "我什么都不需要 --我已经给了你们这类人一大笔银子了。 ";
+			link.l1 = "我什么都不需要 —我已经给了你们这类人一大笔银子了。 ";
 			link.l1.go = "helendrinking_gypsy_refuse";
 			if (sti(pchar.money) >= 2000) {
 				link.l2 = "你说禁忌药膏? 好吧, 我承认我不是圣人。 给我。 ";
@@ -1704,7 +1675,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "helendrinking_fort_officer_2":
-			dialog.text = "一切都会好的, 小姐。 德莫尔先生, 我说实话 --尽管多诺万表现得像个真正的恶棍和强盗, 但舰队永远不会公开谴责他。 更有可能的是, 他们甚至会保护他。 你的小探险被写入了报告, 严重复杂化了我们两国之间的关系。 然而, 考虑到斯文森先生的影响力, 以及卡普斯特维尔对你做出的显著让步, 你没有什么可担心的。 ";
+			dialog.text = "一切都会好的, 小姐。 德莫尔先生, 我说实话 —尽管多诺万表现得像个真正的恶棍和强盗, 但舰队永远不会公开谴责他。 更有可能的是, 他们甚至会保护他。 你的小探险被写入了报告, 严重复杂化了我们两国之间的关系。 然而, 考虑到斯文森先生的影响力, 以及卡普斯特维尔对你做出的显著让步, 你没有什么可担心的。 ";
 			link.l1 = "那太好了。 我说我们为此干杯! ";
 			link.l1.go = "exit";
 			
@@ -1758,7 +1729,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "helensleep_amelia_mary_know":
-			dialog.text = "不, 我的小猎鹰。 原谅简 --这个可怜的人情绪激动。 但是的, 我确实想骂你。 你为什么来教堂? 是为了忏悔你的罪孽? 还是为了那个红头发的? ";
+			dialog.text = "不, 我的小猎鹰。 原谅简 —这个可怜的人情绪激动。 但是的, 我确实想骂你。 你为什么来教堂? 是为了忏悔你的罪孽? 还是为了那个红头发的? ";
 			link.l1 = "我自己也不知道... ";
 			link.l1.go = "helensleep_amelia";
 			link.l2 = "你也看到她了吗? 她吸引了我的目光。 ";
@@ -1785,7 +1756,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "helensleep_amelia_helen_know":
-			dialog.text = "不, 我的猎鹰。 原谅简, 这个可怜的人情绪激动。 不需要骂你; 你做得很对 --没有跟着那个红头发的去教堂。 好孩子! ";
+			dialog.text = "不, 我的猎鹰。 原谅简, 这个可怜的人情绪激动。 不需要骂你; 你做得很对 —没有跟着那个红头发的去教堂。 好孩子! ";
 			link.l1 = "被表扬很好。 尤其是清楚为什么被表扬。 ";
 			link.l1.go = "helensleep_amelia";
 			link.l2 = "你也看到她了吗? 她吸引了我的目光。 ";
@@ -1793,7 +1764,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "helensleep_amelia_helen_notknow":
-			dialog.text = "你自己消失吧。 我们本应该已经见过面了, 但你一直在拖延。 过来, 我要表扬你 --没有跟着那个红头发的去教堂。 好孩子! ";
+			dialog.text = "你自己消失吧。 我们本应该已经见过面了, 但你一直在拖延。 过来, 我要表扬你 —没有跟着那个红头发的去教堂。 好孩子! ";
 			link.l1 = "被表扬很好。 尤其是清楚为什么被表扬。 ";
 			link.l1.go = "helensleep_amelia";
 			link.l2 = "你也看到她了吗? 她吸引了我的目光。 ";
@@ -1972,7 +1943,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "francois_4":
-			dialog.text = "这还不够吗? 我已经调查过了 --现在站在我这个位置的可能是十几个贵族丈夫, 先生。 但如果你想要细节, 那么我羞愧地承认, 你的激情之一是露露.德塔万, 最美丽和诚实的女人! ";
+			dialog.text = "这还不够吗? 我已经调查过了 —现在站在我这个位置的可能是十几个贵族丈夫, 先生。 但如果你想要细节, 那么我羞愧地承认, 你的激情之一是露露.德塔万, 最美丽和诚实的女人! ";
 			link.l1 = "你说露露... 她怎么样了? ";
 			link.l1.go = "francois_5";
 		break;

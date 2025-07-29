@@ -21,8 +21,8 @@ void ProcessDialogEvent()
 		case "First time":
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "你好, 你好... 你是新来的? 我不记得你的脸。 允许我自我介绍 --我是朱塞佩.法奇奥, 这个小岛上的问题解决专家。 ";
-				link.l1 = TimeGreeting()+"。 我叫"+GetFullName(pchar)+"。 你说得对, 我是新来的。 请原谅我的好奇心 --但你解决什么样的问题? ";
+				dialog.text = "你好, 你好... 你是新来的? 我不记得你的脸。 允许我自我介绍 —我是朱塞佩.法奇奥, 这个小岛上的问题解决专家。 ";
+				link.l1 = TimeGreeting()+"。 我叫"+GetFullName(pchar)+"。 你说得对, 我是新来的。 请原谅我的好奇心 —但你解决什么样的问题? ";
 				link.l1.go = "meeting";
 				npchar.quest.meeting = "1";
 			}
@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 					link.l5 = "我准备好参加你的游戏了。 这是我的赌注。 ";
 					link.l5.go = "drink_4";
 				}
-				// <—— 任务分支
+				// < —任务分支
 				if (CheckAttribute(npchar, "quest.parol"))
 				{
 					link.l1 = "我想知道帮派当前进入他们领地的密码。 ";
@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meeting":
-			dialog.text = "各种各样的, 亲爱的, 各种各样的。 例如, 我在舰队司令和帮派之间调解事务。 你可能已经知道, 里瓦多斯。 独角鲸帮和舰队司令是相互的敌人。 当事情变得棘手时, 我充当调解人。 \n此外, 当舰队司令向帮派出售物资时, 我经常扮演中立角色。 但这只是我业务的一小部分。 所以如果你与里瓦多斯或独角鲸帮有麻烦 --不要犹豫向我求助, 我们会看看能做些什么。 ";
+			dialog.text = "各种各样的, 亲爱的, 各种各样的。 例如, 我在舰队司令和帮派之间调解事务。 你可能已经知道, 里瓦多斯。 独角鲸帮和舰队司令是相互的敌人。 当事情变得棘手时, 我充当调解人。 \n此外, 当舰队司令向帮派出售物资时, 我经常扮演中立角色。 但这只是我业务的一小部分。 所以如果你与里瓦多斯或独角鲸帮有麻烦 —不要犹豫向我求助, 我们会看看能做些什么。 ";
 			link.l1 = "好的。 我会考虑的。 ";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
@@ -207,7 +207,7 @@ void ProcessDialogEvent()
 		
 		case "whiskey_4":
 			dialog.text = "他... 他收到卡珀的一些命令, 已经走了。 我不知道他在哪里! ";
-			link.l1 = "又撒谎。 你什么都知道。 别当懦夫, 你这个肮脏的东西 --卡珀死了, 他不会再伤害你了。 但如果你不告诉我马塞洛在哪里 --我现在就像杀猪一样宰了你! 查德给独眼龙下了什么命令? ";
+			link.l1 = "又撒谎。 你什么都知道。 别当懦夫, 你这个肮脏的东西 —卡珀死了, 他不会再伤害你了。 但如果你不告诉我马塞洛在哪里 —我现在就像杀猪一样宰了你! 查德给独眼龙下了什么命令? ";
 			link.l1.go = "whiskey_5";
 		break;
 		
@@ -490,7 +490,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "drunk";
 		break;
-		// <—— 喝到见底
+		// < —喝到见底
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

@@ -25,7 +25,7 @@ Przekazano Przedmiot: ~
 
 characterUtilite_6
 {
- zauważył, że @<LanguageConvertString(idLngFile, arItem.name)> stracił swą moc
+  zauważył, że @<LanguageConvertString(idLngFile, arItem.name)> stracił swą moc
 }
 
 characterUtilite_7
@@ -60,10 +60,10 @@ Zaktualizowano atlas: @<LanguageConvertString(idLngFile, arItem.name)>
 
 characterUtilite_13
 {
-Wkurzyles Tubylcow (
+Wkurzyłeś Tubylców (
 }
 
 characterUtilite_14
 {
-Doceniles Tubylcow (
+Doceniłeś Tubylców (
 }

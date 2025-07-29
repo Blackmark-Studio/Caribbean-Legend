@@ -18,7 +18,7 @@ void ProcessDialogEvent()
         ProcessCommonDialog(NPChar, Link, NextDiag);
 		UnloadSegment(NPChar.FileDialog2);
 	}
-	// 按城市调用对话 <—— */
+	// 按城市调用对话 < —*/
     int iTest, iTemp;
 	string sTemp;
 	iTest = FindColony(NPChar.City); // 城市
@@ -103,7 +103,7 @@ void ProcessDialogEvent()
 						}
 					}
 				}
-				// <—— eddy。 检查是否为敌人。 
+				// < —eddy。 检查是否为敌人。 
 				else
 				{
 					if (sti(NPChar.nation) == PIRATE)
@@ -222,7 +222,7 @@ void ProcessDialogEvent()
 							}
 						}
 					}
-					// <—— 迷你任务 短缺商品
+					// < —迷你任务 短缺商品
 					
 					//belamour传奇版 对话, 如果英雄有军衔和国家荣誉 -->
 					
@@ -276,7 +276,7 @@ void ProcessDialogEvent()
 						}
 						break;
 					}
-					// 有专利的军官
+					// 有许可证的军官
 					if(IsOfficerFullEquip() && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
 					{
 						switch(rand(2))
@@ -301,7 +301,7 @@ void ProcessDialogEvent()
 						}
 						break;
 					}
-					// <—— legendary edition
+					// < —legendary edition
 
 					switch (rand(10))
 					{
@@ -409,7 +409,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Wine", "0");
 			SetFunctionLocationCondition("WineTraderQM", pchar.questTemp.Wine.City+"_town", 0);
 		break;
-		// <—— 迷你任务 短缺商品
+		// < —迷你任务 短缺商品
 		
 		//============================== 识别时的解析节点 =========================
 		case "PegYou":
@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "First Time";
 				break;
 			}
-			// <—— legendary edition
+			// < —legendary edition
 			dialog.text = LinkRandPhrase("你到底为什么带着出鞘的刀到处跑? 立即收起你的武器! ", "我命令你立即收起武器! ", "嘿, " + GetSexPhrase("伙计","姑娘") + ", 别吓唬人! 收起武器。 ");
 			link.l1 = LinkRandPhrase("好的。 ", "好的。 ", "如你所说... ");
 			link.l1.go = "exit";

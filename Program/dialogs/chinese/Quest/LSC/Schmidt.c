@@ -147,7 +147,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "blade_1":
-			dialog.text = "你只能向我订购一把剑, 且只能订一次。 我不做特定武器, 你只需说明类型 --细剑。 军刀或阔剑。 做选择前仔细考虑, 最终剑的特性和质量取决于我目前拥有的材料\n现在, 制作需要二十天。 我只收达布隆。 一千枚金币。 先付款。 ";
+			dialog.text = "你只能向我订购一把剑, 且只能订一次。 我不做特定武器, 你只需说明类型 —细剑。 军刀或阔剑。 做选择前仔细考虑, 最终剑的特性和质量取决于我目前拥有的材料\n现在, 制作需要二十天。 我只收达布隆。 一千枚金币。 先付款。 ";
 			link.l1 = "真贵... ";
 			link.l1.go = "blade_2";
 		break;
@@ -294,7 +294,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "narval_5":
-			dialog.text = "我们在海底找到的那些铁块都差不多 --每块一磅。 我需要三块这样的。 ";
+			dialog.text = "我们在海底找到的那些铁块都差不多 —每块一磅。 我需要三块这样的。 ";
 			link.l1 = "好的。 我会试着找到它们。 我们回头再谈。 ";
 			link.l1.go = "narval_6";
 		break;
@@ -353,7 +353,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "narval_10";
 		break;
 		
-//---------------------------------------—— 特殊反应 -----------------------------------------------
+//--------------------------------------- —特殊反应 -----------------------------------------------
 		// 发现玩家在箱子里
 		case "Man_FackYou":
 			dialog.text = LinkRandPhrase("你在那里做什么, 啊? 小偷! ", "看看那个! 我一沉思, 你就决定检查我的箱子! ", "决定检查我的箱子? 你不会得逞的! ");
@@ -391,7 +391,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;
-// <—— 特殊反应
+// < —特殊反应
 		
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;

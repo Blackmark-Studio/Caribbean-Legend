@@ -1,4 +1,4 @@
-newline  {
+﻿newline  {
 
 
 }
@@ -77,7 +77,7 @@ GuideFight_controlsimg2{ChrAttackBase}
 OneToOneCave {Wykorzystanie otoczenia}
 OneToOneCave_descr
 {
-Jeśli jesteś w mniejszości, staraj się wykorzystać teren, by zyskać przewagę w walce.
+Jeśli wróg walczy z tobą trzech do jednego, staraj się wykorzystać teren, by zyskać przewagę w walce.
 ~
 Prawie zawsze można znaleźć miejsce, gdzie przeciwnicy będą musieli walczyć z tobą pojedynczo lub po dwóch.
 }
@@ -86,7 +86,7 @@ Prawie zawsze można znaleźć miejsce, gdzie przeciwnicy będą musieli walczy�
 OneToOneBoarding {Wykorzystanie otoczenia}
 OneToOneBoarding_descr
 {
-Jeśli jesteś w mniejszości, staraj się wykorzystać teren, by zyskać przewagę w walce.
+Jeśli wróg walczy z tobą trzech do jednego, staraj się wykorzystać teren, by zyskać przewagę w walce.
 ~
 Prawie zawsze można znaleźć miejsce, gdzie przeciwnicy będą musieli walczyć z tobą pojedynczo lub po dwóch.
 }
@@ -222,7 +222,7 @@ Twoje „Zdrowie” spadło! Ten parametr opisuje ogólny stan postaci i wpływa
 ~
 „Zdrowie” spada po użyciu prostych środków leczniczych, w sytuacjach fabularnych, po piciu alkoholu i przeciążeniu.
 ~
-Odzyskuje się je za pomocą specjalnych mikstur, rozrywek, odpoczynku w tawernie lub po prostu z czasem. W trudnych przypadkach mogą pomóc kapłani.
+Odzyskuje się je za pomocą specjalnych mikstur, rozrywek, odpoczynku w karczmie lub po prostu z czasem. W trudnych przypadkach mogą pomóc kapłani.
 ~
 Unikalni oficerowie również tracą „Zdrowie”, jeśli zostaną ciężko ranni w walce. Na szczęście sami je regenerują.
 }
@@ -233,9 +233,9 @@ Amulet_descr
 {
 Amulety to potężne wzmacniacze postaci i dzielą się na ofensywne, defensywne i wspierające. Nie możesz jednocześnie założyć amuletu ofensywnego i defensywnego, więc dobieraj zestawy rozsądnie.
 ~
-Poza amuletami są jeszcze dwa typy wzmacniaczy: talizmany i ochronki.
+Poza amuletami są jeszcze dwa typy wzmacniaczy: talizmany i rzadkie artefakty.
 ~
-Talizmany działają dłużej niż amulety i mają szersze efekty, a ochronki są bardzo silne, działają bez ograniczeń i mają osobne miejsce w ekwipunku.
+Talizmany działają dłużej niż amulety i mają szersze efekty, a artefakty są bardzo silne, działają bez ograniczeń i mają osobne miejsce w ekwipunku.
 ~
 Zawsze miej w ekwipunku kilka zestawów – na trudne testy umiejętności i ciężkie walki na morzu i lądzie.
 }
@@ -244,18 +244,18 @@ Zawsze miej w ekwipunku kilka zestawów – na trudne testy umiejętności i ci�
 Amulet_controlsimg1 {Inventory}
 
 
-Perk {Punkty Perka}
+Perk {Punkty Zdolności}
 Perk_descr
 {
-Właśnie zdobyłeś swój pierwszy Punkt Perka (PP)! To najważniejszy element rozwoju postaci i dzieli się na morskie i osobiste.
+Właśnie zdobyłeś swój pierwszy Punkt Zdolności! To najważniejszy element rozwoju postaci i dzieli się na morskie i osobiste.
 ~
-Morskie Perki czynią cię groźniejszym na morzu, osobiste – na lądzie i w kontaktach z ludźmi.
+Morskie zdolności czynią cię groźniejszym na morzu, osobiste – na lądzie i w kontaktach z ludźmi.
 ~
-Oba typy PP rozwijają się niezależnie wraz ze wzrostem twoich umiejętności osobistych i okrętowych. Średnio każde 30 punktów jednej grupy daje jeden PP.
+Oba typy rozwijają się niezależnie wraz ze wzrostem twoich umiejętności osobistych i okrętowych. Średnio każde 30 punktów jednej grupy daje jeden PP.
 ~
-Aby szybko zdobywać morskie PP, wykonuj kontrakty i frachty. Osobiste PP rosną szybciej, jeśli walczysz różnymi typami broni i spędzasz czas w tawernach.
+Aby szybko zdobywać morskie zdolności, wykonuj kontrakty i frachty. Osobiste rosną szybciej, jeśli walczysz różnymi typami broni i spędzasz czas w karczmach.
 ~
-Pamiętaj, że osobiste PP są znacznie cenniejsze, bo większość morskich Perków można zastąpić oficerami.
+Pamiętaj, że osobiste zdolności są znacznie cenniejsze, bo większość morskich Perków można zastąpić oficerami.
 }
 
 
@@ -288,9 +288,9 @@ Rest_descr
 {
 Możesz zmieniać porę dnia!
 ~
-Wszystko w grze zależy od czasu: w nocy nie ma strażników na molo ani przy bramach miasta, załogę w tawernach można wynająć tylko w dzień, a niektórzy bohaterowie bardzo zwracają uwagę na porę, zwłaszcza jeśli dla nich pracujesz.
+Wszystko w grze zależy od czasu: w nocy nie ma strażników na molo ani przy bramach miasta, załogę w karczmach można wynająć tylko w dzień, a niektórzy bohaterowie bardzo zwracają uwagę na porę, zwłaszcza jeśli dla nich pracujesz.
 ~
-Korzystaj z tej funkcji swobodnie na morzu i w dziczy, ale w miastach najlepiej nocować w tawernie.
+Korzystaj z tej funkcji swobodnie na morzu i w dziczy, ale w miastach najlepiej nocować w karczmie.
 }
 
 
@@ -304,11 +304,11 @@ Musisz się przyzwyczaić, że w większości osad na Karaibach nie jesteś mile
 ~
 Do wrogiego miasta można się dostać na dwa sposoby: przez port lub bramę.
 ~
-Bezpieczne przybicie do wrogiego portu wymaga poważnych przygotowań. Potrzebujesz bandery kraju, który nie jest wrogi, i odpowiednio wysokiej umiejętności „Skradanie”.
+Bezpieczne przybicie do wrogiego portu wymaga poważnych przygotowań. Potrzebujesz bandery kraju, do którego się zakradasz, lub do tego, który nie jest wrogi, i odpowiednio wysokiej umiejętności „Skradanie”.
 ~
-Przez bramę najlepiej wchodzić nocą, gdy nie ma strażników. Unikaj żołnierzy i przenocuj w tawernie. W razie alarmu znajdź dom i przeczekaj tam kilka godzin. Plusem tej metody jest brak konieczności wydawania cennego punktu Perka na odblokowanie bander.
+Przez bramę najlepiej wchodzić nocą, gdy nie ma strażników. Unikaj żołnierzy i przenocuj w karczmie. W razie alarmu znajdź dom i przeczekaj tam kilka godzin. Plusem tej metody jest brak konieczności wydawania cennego punktu zdolności na odblokowanie bander.
 ~
-Wszystkich tych problemów można uniknąć, kupując na Curaçao licencję kompanii handlowej i wydając morski Punkt Perka na jedną z neutralnych bander.
+Wszystkich tych problemów można uniknąć, kupując na Kurakao licencję kompanii handlowej i wydając morski Punkt zdolności na jedną z neutralnych bander.
 }
 
 
@@ -343,7 +343,7 @@ BoardingTactics_descr
 {
 Przed abordażem warto oddać przynajmniej kilka salw kartaczem, by osłabić załogę przeciwnika, nie narażając się na odpowiedź. Gdy masz przewagę liczebną, podpłyń jak najbliżej, wyrównaj prędkość i ruszaj do ataku!
 ~
-Im wyższa twoja morska umiejętność „Gwardzista”, tym łatwiej będzie ci skutecznie abordować wrogi statek.
+Im wyższa twoja morska umiejętność „Abordaż”, tym łatwiej będzie ci skutecznie abordować wrogi statek.
 ~
 Skuteczność abordażu zależy od liczby, umiejętności i morale twojej załogi. Doświadczony bosman, gwardziści, amulety i rozwinięte umiejętności walki kapitana mogą zniwelować przewagę liczebną wroga.
 }
@@ -352,7 +352,7 @@ Skuteczność abordażu zależy od liczby, umiejętności i morale twojej załog
 Mushket{Muszkiety}
 Mushket_descr
 {
-Długolufowa broń palna jest niezwykle groźna w walce. Może jej używać tylko główny bohater z Perkiem „Muszkieter” oraz niektórzy unikalni oficerowie. Najlepszym przykładem jest Teachingitu – jemu warto oddać pierwszy muszkiet.
+Długolufowa broń palna jest niezwykle groźna w walce. Może jej używać tylko główny bohater z zdolnością „Muszkieter” oraz niektórzy unikalni oficerowie. Najlepszym przykładem jest Tichingitu – jemu warto oddać pierwszy muszkiet.
 ~
 W przeciwieństwie do broni białej, każda broń palna jest bardzo wszechstronna – rozwijając postać jako strzelca, zakładając odpowiednie amulety i ekwipunek oraz używając różnych typów amunicji, możesz odwrócić losy każdej walki.
 }
@@ -517,9 +517,9 @@ Prologue_Amulet_descr
 {
 Amulety to potężne wzmacniacze postaci i dzielą się na ofensywne, defensywne i wspierające. Nie możesz jednocześnie założyć amuletu ofensywnego i defensywnego, więc dobieraj zestawy rozsądnie.
 ~
-Poza amuletami są jeszcze dwa typy wzmacniaczy: talizmany i ochronki.
+Poza amuletami są jeszcze dwa typy wzmacniaczy: talizmany i rzadkie artefakty.
 ~
-Talizmany działają dłużej niż amulety i mają szersze efekty, a ochronki są bardzo silne, działają bez ograniczeń i mają osobne miejsce w ekwipunku.
+Talizmany działają dłużej niż amulety i mają szersze efekty, a artefakty są bardzo silne, działają bez ograniczeń i mają osobne miejsce w ekwipunku.
 ~
 Zawsze miej w ekwipunku kilka zestawów – na trudne testy umiejętności i ciężkie walki na morzu i lądzie.
 ~

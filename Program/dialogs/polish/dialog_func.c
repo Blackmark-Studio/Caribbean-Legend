@@ -104,27 +104,27 @@ string RandSwear()
 	switch (rand(14))
 	{
 		case 0:
-			return "Caramba! ";
+			return "Aj karamba! ";
 		break;
 
 		case 1:
-			return "Damn it! ";
+			return "Szlag by to trafił! ";
 		break;
 
 		case 2:
-			return "Dammit! ";
+			return "O kurwa! ";
 		break;
 
 		case 3:
-			return "Crap! ";
+			return "Jasny gwint! ";
 		break;
 
 		case 4:
-			return "Fuck... ";
+			return "Niech mnie jasny dunder świśnie! ";
 		break;
 
 		case 5:
-			return "By the bloody shark! ";
+			return "Na stado rekinów! ";
 		break;
 
 		case 6:
@@ -132,35 +132,35 @@ string RandSwear()
 		break;
 
 		case 7:
-			return "What the hell!! ";
+			return "O ty diable rogaty!! ";
 		break;	 
 		
 		case 8:
-			return "Alle hagel! ";	// стандартное пиратское "твою мать"
+			return "Na wszystkie świętości! ";	// стандартное пиратское "твою мать"
 		break;
 		
 		case 9:
-			return "Damn me! ";
+			return "Niech to szlag! ";
 		break;
 
 		case 10:
-			return "Dammit! ";
+			return "Cholera jasna! ";
 		break;
 		
 		case 11:
-			return "Damn... ";
+			return "Kuźwa... ";
 		break;
 		
 		case 12:
-			return "Go screw yourself! ";
+			return "Ja pierdole! ";
 		break;
 		
 		case 13:
-			return "Damn me! ";
+			return "Chort ze mną! ";
 		break;
 		
 		case 14:
-			return "Flames! ";
+			return "A żeby to! ";
 		break;
 	}
 }
@@ -172,15 +172,15 @@ string RandExclamation()
 	switch(rand(2))
 	{
 		case 0:
-			return "Oh, Lord! ";
+			return "O Panie! ";
 		break;
 
 		case 1:
-			return "Oh, Heavens! ";
+			return "O niebiosa! ";
 		break;
 
 		case 2:
-			return "Holy Madonna! ";
+			return "Najświętsza Panienko! ";
 		break;
 	}
 }
@@ -238,19 +238,19 @@ string NationKingsCrown(ref Character)
     switch(sti(Character.nation))
 	{
 		case ENGLAND:
-            return "English throne";
+            return "Angielski tron";
 		break;
 		case FRANCE:
-            return "French crown";
+            return "Francuska korona";
 		break;
 		case SPAIN:
-            return "Spanish crown";
+            return "Hiszpańska korona";
 		break;
 		case HOLLAND:
-			return "Kingdom of the Netherlands";
+			return "Królestwo niderlandów";
 		break;
 		case PIRATE:
-			return "Brethren of the Coast";
+			return "Bractwo wybrzeża";
 		break;
 	}
 }
@@ -259,19 +259,19 @@ string NationKingsName(ref NPChar)
     switch(sti(NPChar.nation))
 	{
 		case ENGLAND:
-            return "Lord Protector";
+            return "Lorda Protektora";
 		break;
 		case FRANCE:
-            return "His Majesty Louis XIV of France";
+            return "Jego Wysokości Ludwika XIV";
 		break;
 		case SPAIN:
-            return "His Catholic Majesty Philip IV von Habsburg";
+            return "Jego Katolickiej Wysokości Filipa IV von Habsburga";
 		break;
 		case HOLLAND:
-			return "His Majesty William III of the Netherlands";
+			return "Jego Królewskiej Mości Williama III z Niderlandów";
 		break;
 		case PIRATE:
-			return "Brethren of the Coast";
+			return "Bractwa wybrzeża";
 		break;
 	}
 }
@@ -281,19 +281,19 @@ string NationNameMan(int pNation)
     switch(pNation)
 	{
 		case ENGLAND:
-            return "English";
+            return "Anglik";
 		break;
 		case FRANCE:
-            return "French";
+            return "Francuz";
 		break;
 		case SPAIN:
-            return "Spanish";
+            return "Hiszpan";
 		break;
 		case HOLLAND:
-			return "Dutch";
+			return "Holender";
 		break;
 		case PIRATE:
-			return "a pirate";
+			return "pirat";
 		break;
 	}
 }
@@ -303,19 +303,19 @@ string NationNamePeople(int pNation)
     switch(pNation)
 	{
 		case ENGLAND:
-            return "English";
+            return "Anglicy";
 		break;
 		case FRANCE:
-            return "French";
+            return "Francuzi";
 		break;
 		case SPAIN:
-            return "Spanish";
+            return "Hiszpanie";
 		break;
 		case HOLLAND:
-			return "Dutch";
+			return "Holendrzy";
 		break;
 		case PIRATE:
-			return "pirates";
+			return "piraci";
 		break;
 	}
 }
@@ -325,19 +325,19 @@ string NationNamePeopleAcc(int pNation)
     switch(pNation)
 	{
 		case ENGLAND:
-            return "English";
+            return "Anglików";
 		break;
 		case FRANCE:
-            return "French";
+            return "Francuzów";
 		break;
 		case SPAIN:
-            return "Spanish";
+            return "Hiszpan";
 		break;
 		case HOLLAND:
-			return "Dutch";
+			return "Holendrów";
 		break;
 		case PIRATE:
-			return "pirates";
+			return "piratów";
 		break;
 	}
 }
@@ -347,19 +347,19 @@ string NationNameAblative(int iNation) //творительный падеж
     switch(iNation)
 	{
 		case ENGLAND:
-            return "England";
+            return "Anglią";
 		break;
 		case FRANCE:
-            return "France";
+            return "Francją";
 		break;
 		case SPAIN:
-            return "Spain";
+            return "Hiszpanią";
 		break;
 		case HOLLAND:
-			return "Holland";
+			return "Holandią";
 		break;
 		case PIRATE:
-			return "by pirates";
+			return "piratami";
 		break;
 	}
 }
@@ -369,19 +369,19 @@ string NationNameNominative(int iNation) //именительный падеж
     switch(iNation)
 	{
 		case ENGLAND:
-            return "England";
+            return "Anglia";
 		break;
 		case FRANCE:
-            return "France";
+            return "Francja";
 		break;
 		case SPAIN:
-            return "Spain";
+            return "Hiszpania";
 		break;
 		case HOLLAND:
-			return "Holland";
+			return "Holandia";
 		break;
 		case PIRATE:
-			return "Brethren of the Coast";
+			return "Bractwo wybrzeża";
 		break;
 	}
 }
@@ -391,19 +391,19 @@ string NationNameGenitive(int iNation) // родительный падеж
     switch(iNation)
 	{
 		case ENGLAND:
-            return "England";
+            return "Anglii";
 		break;
 		case FRANCE:
-            return "France";
+            return "Francji";
 		break;
 		case SPAIN:
-            return "Spain";
+            return "Hiszpanii";
 		break;
 		case HOLLAND:
-			return "Holland";
+			return "Holandii";
 		break;
 		case PIRATE:
-			return "pirates";
+			return "piratów";
 		break;
 	}
 }
@@ -994,7 +994,7 @@ string Goodbye()
     {
        return "Dobranoc";
     }
-    return RandPhraseSimple("Żegnaj", "Pożegnanie");
+    return RandPhraseSimple("Żegnaj", "Do widzenia");
 }
 
 // выбор фразы от репутации

@@ -74,18 +74,18 @@ go_portman {港务长}
 go_duel {决斗}
 go_exittown {城镇大门}
 
-go_Caroline {护卫舰"卡罗莱纳号"}
-go_CeresSmithy_Mary {玛丽.卡斯帕}
-go_CeresSmithy_Jurgen {于尔根.施密特}
-go_EsmeraldaStoreBig {大帆船"埃斯梅拉达号"}
-go_EsmeraldaStoreBig_Donald {唐纳德.格林斯彭}
-go_FenixPlatform {平台"凤凰号"}
-go_FleuronTavern {卡拉维尔帆船"弗莱龙号"}
-go_GloriaChurch {大帆船"荣耀号"}
-go_ProtectorFisher {爱德华.布莱克}
-go_SanAugustineResidence {史蒂文.多德森}
-go_SanGabrielMechanic {亨里克.维德克}
-go_TartarusPrison {战列舰"塔耳塔罗斯号"}
+go_Caroline {护卫舰"Carolina(卡罗莱纳号)"}
+go_CeresSmithy_Mary {Mary Casper}
+go_CeresSmithy_Jurgen {Jurgen Schmidt}
+go_EsmeraldaStoreBig {大帆船"Esmeralda(埃斯梅拉达号)"}
+go_EsmeraldaStoreBig_Donald {Donald Greenspen}
+go_FenixPlatform {平台"Fenix(凤凰号)"}
+go_FleuronTavern {卡拉维尔帆船"Fleron(弗莱龙号)"}
+go_GloriaChurch {大帆船"Gloria(荣耀号)"}
+go_ProtectorFisher {Eduard Black}
+go_SanAugustineResidence {Steven Dodson}
+go_SanGabrielMechanic {Henrick Vedecker}
+go_TartarusPrison {战列舰"Tartarus(塔耳塔罗斯号)"}
 
 worldmap_toisland {到海岛}
 worldmap_tosea {到海上}

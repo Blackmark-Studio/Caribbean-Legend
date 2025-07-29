@@ -169,15 +169,15 @@ void ProcessDialogEvent()
 				// --> 市长任务生成器, 在街上寻找间谍。 eddy
 				if (CheckAttribute(pchar, "GenQuest.SeekSpy.City") && pchar.location == (npchar.city + "_town"))
 	            {
-					link.l4 = NPCharSexPhrase(npchar, LinkRandPhrase("等等! 告诉我你是谁 --马上! 我受" + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen") + "总督的委托寻找敌方间谍! ", 
+					link.l4 = NPCharSexPhrase(npchar, LinkRandPhrase("等等! 告诉我你是谁 —马上! 我受" + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen") + "总督的委托寻找敌方间谍! ", 
 						"站住! 我受" + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen") + "总督的命令行事。 我在城里搜寻敌对特工。 ", 
 						"停下, 朋友! 当地总督" + characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].lastname + "想在镇上找到一名间谍。 "), 
-						LinkRandPhrase("等等, 女士! 告诉我你是谁 --马上! 我受" + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen") + "总督的委托寻找敌方间谍! ", 
+						LinkRandPhrase("等等, 女士! 告诉我你是谁 —马上! 我受" + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen") + "总督的委托寻找敌方间谍! ", 
 						"女士, 我必须拘留你! 我受" + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen") + "总督的命令行事。 我在城里搜寻敌对特工", 
 						"站住, 美女! 当地总督" + characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].lastname + "想在镇上找到一名间谍... "));
 					link.l4.go = "SitySpy";
 				}
-				// <—— 市长任务生成器, 在街上寻找间谍
+				// < —市长任务生成器, 在街上寻找间谍
 				
 				//Jason --> 失败的小偷生成器
 				if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_town" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
@@ -185,7 +185,7 @@ void ProcessDialogEvent()
 					link.l16 = "也许你能给我一些建议。 我想购买" + pchar.GenQuest.Device.Shipyarder.Type + ", 有人告诉我在你们镇上有卖。 嗯, 有人在街上卖这个。 你知道什么吗? ";
 					link.l16.go = "Device_Citizen";
 				}
-				// <—— 失败的小偷生成器
+				// < —失败的小偷生成器
 				
 				// 神父任务生成器。 任务#2。 Warship -->
 				if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
@@ -193,7 +193,7 @@ void ProcessDialogEvent()
 					link.l5 = LinkRandPhrase("你知道", "你听说", "你听说") + "最近当地教堂被袭击了吗? ");
 					link.l5.go = "Citiz_GenQuest_Church_2_1";
 				}
-				// <—— 神父任务生成器。 任务#2.
+				// < —神父任务生成器。 任务#2.
 				
                 dialog.Text = NPCharRepPhrase(npchar,
 		                PCharRepPhrase(LinkRandPhrase("哦, 是你啊, " + GetFullName(Pchar)
@@ -201,7 +201,7 @@ void ProcessDialogEvent()
                         +Pchar.name, "哦, 是老" + GetSexPhrase("船长", "女士") + " "
                          +GetFullName(Pchar))
                                         +LinkRandPhrase("。 我以为你死了! ", "。 当然, " + GetSexPhrase("还是老样子喝得烂醉。 ", "已经醉了。 ") + "", "。 我看你还自由着! ")
-                                        +LinkRandPhrase(" 那么, 说吧 --你需要什么? ", " 这次你需要什么? ", " 你又来烦我了? "),
+                                        +LinkRandPhrase(" 那么, 说吧 —你需要什么? ", " 这次你需要什么? ", " 你又来烦我了? "),
                                         LinkRandPhrase(TimeGreeting() + ", 船长 ", "你好, " + GetAddress_Form(NPChar) + " ", "向你致敬, 船长 ") + GetFullName(Pchar)
                                         +LinkRandPhrase("。 像" + GetSexPhrase("这样勇敢的绅士", "这样时髦的女士") + "会需要什么? 你可能需要我做什么吗? ", "。 你为了什么而来? ", "。 这次你想知道什么? ")
 
@@ -216,7 +216,7 @@ void ProcessDialogEvent()
                                         "哦, 这不是" + GetSexPhrase("","") + "船长" +GetFullName(Pchar)+ "! 你这次想知道什么? ",
                                         "你好, " + GetAddress_Form(NPChar) + " " + Pchar.lastname + "。 你想要什么? "))
                                         );                         
-	   			link.l6 = PCharRepPhrase(RandPhraseSimple("不, 你听错了。 我现在就走。 ", "不, 没什么 --我正要去酒馆。 "),
+	   			link.l6 = PCharRepPhrase(RandPhraseSimple("不, 你听错了。 我现在就走。 ", "不, 没什么 —我正要去酒馆。 "),
                                         RandPhraseSimple("不, 没什么。 祝你好运! ", "只是四处看看。 再见。 "));
 				link.l6.go = "exit";
 			}
@@ -232,7 +232,7 @@ void ProcessDialogEvent()
 		case "ShipLetters_8":
 			dialog.text = LinkRandPhrase("我不关心不熟悉的文件。 而且, 我不识字。 去找放高利贷的吧, 那个魔鬼肯定知道怎么读写。 ",
 										"我完全不知道你在说什么。 问问镇上的人吧, " +GetFullName(Pchar)+ "船长。 ", 
-										"我真的不知道怎么帮你, " +GetFullName(Pchar)+ "船长。 试试问问放高利贷的 --也许他知道。 ");
+										"我真的不知道怎么帮你, " +GetFullName(Pchar)+ "船长。 试试问问放高利贷的 —也许他知道。 ");
 			link.l1 = "我会很高兴听从你的建议! ";
 			link.l1.go = "exit";
 		break;
@@ -279,29 +279,29 @@ void ProcessDialogEvent()
    				link.l16 = "也许你能给我一些建议。 我想购买" + pchar.GenQuest.Device.Shipyarder.Type + ", 有人告诉我在你们镇上有卖。 嗯, 有人在街上卖这个。 你知道什么吗? ";
 				link.l16.go = "Device_Citizen";
 			}
-			// <—— 失败的小偷生成器
+			// < —失败的小偷生成器
 			
 			// --> 市长任务生成器, 在街上寻找间谍。 eddy
 			if (CheckAttribute(pchar, "GenQuest.SeekSpy.City") && pchar.location == (npchar.city + "_town"))
 	        {
-				link.l4 = NPCharSexPhrase(npchar, LinkRandPhrase("等等! 告诉我你是谁 --马上! 我受" + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen") + "总督的委托寻找敌方间谍! ", 
+				link.l4 = NPCharSexPhrase(npchar, LinkRandPhrase("等等! 告诉我你是谁 —马上! 我受" + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen") + "总督的委托寻找敌方间谍! ", 
 					"站住! 我受" + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen") + "总督的命令行事。 我在城里搜寻敌对特工。 ", 
 					"停下, 朋友! 当地总督" + characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].lastname + "想在镇上找到一名间谍。 "), 
-					LinkRandPhrase("等等, 女士! 告诉我你是谁 --马上! 我受" + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen") + "总督的委托寻找敌方间谍! ", 
+					LinkRandPhrase("等等, 女士! 告诉我你是谁 —马上! 我受" + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen") + "总督的委托寻找敌方间谍! ", 
 					"女士, 我必须拘留你! 我受" + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].city+"Gen") + "总督的命令行事。 我在城里搜寻敌对特工。 ", 
 					"站住, 美女! 当地总督" + characters[GetCharacterIndex(pchar.GenQuest.SeekSpy.MayorId)].lastname + "想在镇上找到一名间谍... "));
 				link.l4.go = "SitySpy";
 			}
-			// <—— 市长任务生成器, 在街上寻找间谍
+			// < —市长任务生成器, 在街上寻找间谍
 			// 神父任务生成器。 任务#2。 Warship -->
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
 	        {
 				link.l5 = LinkRandPhrase("你知道", "你听说", "你听说") + "最近当地教堂被袭击了吗? ");
 				link.l5.go = "Citiz_GenQuest_Church_2_1";
 			}
-			// <—— 神父任务生成器。 任务#2.
+			// < —神父任务生成器。 任务#2.
 			
-			Link.l6 = PCharRepPhrase(RandPhraseSimple("不, 你听错了。 我现在就走。 ", "不, 没什么 --我正要去酒馆。 "),
+			Link.l6 = PCharRepPhrase(RandPhraseSimple("不, 你听错了。 我现在就走。 ", "不, 没什么 —我正要去酒馆。 "),
                                         RandPhraseSimple("不, 没什么。 祝你好运! ", "只是四处看看。 再见。 "));
 			Link.l6.go = "exit";
 		break;
@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 			}
             link.l4 = RandPhraseSimple("我有重要的事! ", "我和你有生意。 ");
 			link.l4.go = "quests";  //(转发到城市文件)
-			link.l5 = PCharRepPhrase(RandPhraseSimple("不, 你听错了。 我现在就走。 ", "不, 没什么 --我正要去酒馆。 "),
+			link.l5 = PCharRepPhrase(RandPhraseSimple("不, 你听错了。 我现在就走。 ", "不, 没什么 —我正要去酒馆。 "),
                                         RandPhraseSimple("不, 没什么。 祝你好运! ", "只是四处看看。 再见。 "));
 			link.l5.go = "exit";
 		break;
@@ -432,7 +432,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "不, 我没见过那样的东西。 ";
-				link.l1 = "我知道了。 好吧 --该四处问问了! ";
+				link.l1 = "我知道了。 好吧 —该四处问问了! ";
 				link.l1.go = "exit";
 			}
 		break;
@@ -441,9 +441,9 @@ void ProcessDialogEvent()
 		case "SitySpy":
 			dialog.text = NPCStringReactionRepeat(NPCharSexPhrase(npchar, "这和我有什么关系? 我是本地人! ", "你为什么拿这个来烦我? 我住在这个城市, 对此一无所知! "), 
 				NPCharSexPhrase(npchar, "你又想从我这里得到什么? 我不是间谍, 不是已经告诉过你了吗? ! ", "我不是已经告诉过你了吗? 我是本地人! "), 
-				NPCharSexPhrase(npchar, "亲爱的, 又是你! 别烦我 --我是本地人! ", "你为什么又用你那些愚蠢的问题来烦我? "), 
+				NPCharSexPhrase(npchar, "亲爱的, 又是你! 别烦我 —我是本地人! ", "你为什么又用你那些愚蠢的问题来烦我? "), 
 				NPCharSexPhrase(npchar, "又是你! 这太过分了! ", "听着, 别烦我了, 好吗? 求你了! "), "block", 0, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("谁能证实你的说法? ", "哦, 对不起 --我已经问过你了... ",
+			link.l1 = HeroStringReactionRepeat("谁能证实你的说法? ", "哦, 对不起 —我已经问过你了... ",
                       "抱歉, 人太多了... ", "好了, 好了... ", npchar, Dialog.CurrentNode);
 		    link.l1.go = DialogGoNodeRepeat("SitySpy_1", "exit", "exit", "exit", npchar, Dialog.CurrentNode);
 			// ==> 选择确认者
@@ -532,7 +532,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "CitizenFindItem_4":
-			dialog.text = "好的, 拜托了。 快点 --记住你只有" + sti(NPChar.LifeDay) + "天时间。 ";
+			dialog.text = "好的, 拜托了。 快点 —记住你只有" + sti(NPChar.LifeDay) + "天时间。 ";
 			link.l1 = "我记住了。 ";
 			link.l1.go = "exit";
 			PChar.GenQuest.CitizenFindItem.StartQuest = true;
@@ -561,7 +561,7 @@ void ProcessDialogEvent()
 			
 		case "CitizenFindItem_Complete_1":
 			dialog.text = "" + GetSexPhrase("船长", "小姐") + "! 我太高兴了! 我该怎么感谢你? ";
-			link.l1 = "哦, 不用感谢 --我这么做完全是无私的。 ";
+			link.l1 = "哦, 不用感谢 —我这么做完全是无私的。 ";
 			link.l1.go = "CitizenFindItem_Complete_2";
 			link.l2 = "几百比索肯定不会有什么损失... ";
 			link.l2.go = "CitizenFindItem_Complete_3";
@@ -590,7 +590,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			AddMoneyToCharacter(PChar, iTemp);
 		break;
-		// <—— 寻找结婚戒指的迷你任务
+		// < —寻找结婚戒指的迷你任务
 		
 		//=================== 神父任务节点。 寻找抢劫者 (任务#2)==================
 		case "Citiz_GenQuest_Church_2_1":
@@ -602,7 +602,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = LinkRandPhrase("我对此一无所知, 但你可以问问酒馆的顾客 --他们肯定会告诉你一些事情。 ", "我不能告诉你什么。 去酒馆问问。 ", "我不知道具体的事情, 但我听说酒馆里有传言。 ");
+				dialog.text = LinkRandPhrase("我对此一无所知, 但你可以问问酒馆的顾客 —他们肯定会告诉你一些事情。 ", "我不能告诉你什么。 去酒馆问问。 ", "我不知道具体的事情, 但我听说酒馆里有传言。 ");
 				link.l1 = "好吧, 至少这是个线索。 ";
 				link.l1.go = "exit";
 			}
@@ -614,7 +614,7 @@ void ProcessDialogEvent()
 		case "CitizenNotBlade":
 			if (loadedLocation.type == "town")
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "听着 --作为这个城镇的市民, 我必须请你不要带着出鞘的刀刃走动。 ", "听着 --作为这个城镇的市民, 我必须请你不要带着出鞘的刀刃走动。 ");
+				dialog.text = NPCharSexPhrase(NPChar, "听着 —作为这个城镇的市民, 我必须请你不要带着出鞘的刀刃走动。 ", "听着 —作为这个城镇的市民, 我必须请你不要带着出鞘的刀刃走动。 ");
 				link.l1 = LinkRandPhrase("好的。 ", "好的。 ", "如你所说... ");
 			}
 			else

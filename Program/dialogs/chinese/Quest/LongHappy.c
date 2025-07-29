@@ -1850,7 +1850,7 @@ void ProcessDialogEvent()
 			PlaySound("interface\important_item.wav");
 			TakeNItems(pchar, "jewelry4", 20);
 			dialog.text = "啊! 还有, 船长, 请接受这个。 给您和您的女士。 我留着这些宝石以备不时之需... 我知道您不缺黄金, 但它们也不会多余, 对吧? ";
-			link.l1 = "查理, 你真是个慷慨的人, 这些祖母绿在德.蒙佩尔夫人的家族耳环里会看起来很棒! ";
+			link.l1 = "查理, 你真是个慷慨的人, 这些翡翠在德.蒙佩尔夫人的家族耳环里会看起来很棒! ";
 			link.l1.go = "Knippel_3";
 		break;
 		

@@ -22,14 +22,14 @@ void ProcessDialogEvent()
 		
 		case "ShadowGuarder":
 			dialog.text = "Czego potrzebujesz?";
-			link.l1 = "Czy jesteś "+pchar.questTemp.Shadowtrader.Guardername+"? Wysłał mnie miejscowy kupiec. Niecierpliwie oczekuje na twoją obecność w tej chwili.";
+			link.l1 = "Ty jesteś "+pchar.questTemp.Shadowtrader.Guardername+"? Wysłał mnie miejscowy kupiec. Niecierpliwie oczekuje na twoją obecność w tej chwili.";
 			link.l1.go = "ShadowGuarder_1";
 			DelLandQuestMark(npchar);
 		break;
 	
 		case "ShadowGuarder_1":
-			dialog.text = "A-ah, ale czekałem na niego tutaj! Powiedziano mi, że przyjdzie do tawerny! Przepraszam, już idę.";
-			link.l1 = "Bardzo dobrze!";
+			dialog.text = "A-ah, ale czekałem na niego tutaj! Powiedziano mi, że przyjdzie do karczmy! Przepraszam, już idę.";
+			link.l1 = "Dobrze!";
 			link.l1.go = "ShadowGuarder_2";
 		break;
 	
@@ -60,13 +60,13 @@ void ProcessDialogEvent()
 		break;
 	
 		case "ShadowTrader":
-			dialog.text = "Dobry wieczór, panie. Miło spotkać nowego klienta, ha! Pozwól, że się przedstawię: jestem "+GetFullName(npchar)+"Najtańsze towary w tym mieście mam, zapewniam cię.";
-			link.l1 = "Nareszcie się spotkaliśmy..."+npchar.name+" Cóż, obawiam się, że cię rozczaruję: szukałem cię nie dla handlu, lecz by zakończyć twój plugawy proceder. Stałeś się wielką zmorą dla ważnego człowieka. Ból stał się tak dotkliwy, że chce cię uciszyć... za wszelką cenę.";
+			dialog.text = "Dobry wieczór, panie. Miło spotkać nowego klienta, ha! Pozwól, że się przedstawię: jestem "+GetFullName(npchar)+". Mam najtańsze towary w tym mieście, zapewniam cię.";
+			link.l1 = "Nareszcie się spotkaliśmy..."+npchar.name+". Cóż, obawiam się, że cię rozczaruję: szukałem cię nie dla handlu, lecz by zakończyć twój plugawy proceder. Stałeś się wielką zmorą dla ważnego człowieka. Ból stał się tak dotkliwy, że chce cię uciszyć... za wszelką cenę.";
 			link.l1.go = "ShadowTrader_1";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
-				link.l2 = "Stój, łotrze! Nie wiedziałeś, że musisz płacić podatki za prowadzenie działalności handlowej? Nikt nie łamie prawa na moich wodach!"+GetFullName(npchar)+", złamałeś prawo i twoje skradzione dobra są teraz skonfiskowane! Za drzwiami stoi uzbrojona straż, więc nawet nie próbuj udawać głupiego!";
+				notification("Jesteś godny zaufania", "Trustworthy");
+				link.l2 = "Stój, łotrze! Nie wiedziałeś, że musisz płacić podatki za prowadzenie działalności handlowej? Nikt nie łamie prawa na moich wodach! "+GetFullName(npchar)+", złamałeś prawo i twoje skradzione dobra są teraz skonfiskowane! Za drzwiami stoi uzbrojona straż, więc nawet nie próbuj udawać głupiego!";
 				link.l2.go = "ShadowTrader_2";
 			}
 			AddLandQuestMark(characterFromId("BasTer_trader"), "questmarkmain");
@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 	
 		case "ShadowTrader_1":
 			dialog.text = "Naprawdę? Nie spodziewałem się... Kim, do diabła, jesteś?! To pułapka! Chyba wiem, kto za tym stoi! Za wszelką cenę... chłopcy, zabijcie go!";
-			link.l1 = "Zatańczmy, łajdaku!";
+			link.l1 = "Zatańczmy, łajdaki!";
 			link.l1.go = "ShadowTrader_fight";
 			NextDiag.currentnode = "ShadowTrader_6";
 		break;
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "jewelry2", rand(20));
 			TakeNItems(pchar, "jewelry5", rand(20));
 			PlaySound("interface\important_item.wav");
-			Log_Info("You have received items");
+			Log_Info("Otrzymano przedmioty");
 			LAi_SetPlayerType(pchar);
 			sld = characterFromID("ShadowTrader"); 
 			LAi_SetActorType(sld);

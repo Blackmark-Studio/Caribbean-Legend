@@ -15,7 +15,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "先生, 我在找工作。 但不是搬运工的工作, 而是更符合我身份的任务。 使命。 服务, 需要谨慎处理的事务... 我会接受你提供的任何任务。 ";
 			link.l1.go = "Sharlie";
 		}
-		//<—— 加斯科涅人的负担
+		//< —加斯科涅人的负担
 		
 		// 杰森'长久而幸福'
 		if (CheckAttribute(pchar, "questTemp.LongHappy") && pchar.questTemp.LongHappy == "portman")
@@ -32,7 +32,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Sharlie_1":
-			dialog.text = "啊, 请原谅, 我只是太焦虑了。 他叫普罗斯珀... 普罗斯珀.特鲁巴勒。 他肯定会死的! 我帮不了他 --我不是士兵。 他的女儿失踪了, 他认为是当地印第安人干的\n你能想象吗, 他打算独自去追捕那些野蛮的野人! 他们会把他切成碎片... 此刻他正在买火枪, 准备进入丛林! ";
+			dialog.text = "啊, 请原谅, 我只是太焦虑了。 他叫普罗斯珀... 普罗斯珀.特鲁巴勒。 他肯定会死的! 我帮不了他 —我不是士兵。 他的女儿失踪了, 他认为是当地印第安人干的\n你能想象吗, 他打算独自去追捕那些野蛮的野人! 他们会把他切成碎片... 此刻他正在买火枪, 准备进入丛林! ";
 			link.l1 = "你讲故事的能力真差, 先生。 我在哪里可以找到你的朋友... 他叫什么来着... 普罗斯珀? ";
 			link.l1.go = "Sharlie_2";			
 		break;
@@ -53,7 +53,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		// 杰森'长久而幸福'
 		case "LH_letter":
-			dialog.text = "是的, 你说得对 --有一个信封。 给你, 但首先你需要支付投递费 --一万两千银比索。 ";
+			dialog.text = "是的, 你说得对 —有一个信封。 给你, 但首先你需要支付投递费 —一万两千银比索。 ";
 			if (sti(pchar.money) >= 12000)
 			{
 				link.l1 = "我一直怀疑你的生意本质上是小偷行当, 但不知怎么的我错过了邮件, 嗯。 给你钱。 ";

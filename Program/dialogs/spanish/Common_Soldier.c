@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 					link.l1.go = "LicenceOk";
 					if (findsubstr(pchar.location.from_sea, "_town", 0) != -1) // если причалил в городе
 					{
-						link.l2 = "¿No ves la bandera de " + NationNameGenitive(sti(pchar.nation)) + "¿en el mástil de mi barco?! (Probabilidad de engaño " + DeceptionChance + "%%)";
+						link.l2 = "¿No ves la bandera de " + NationNameGenitive(sti(pchar.nation)) + " en el mástil de mi barco?! (Probabilidad de engaño " + DeceptionChance + "%%)";
 					}
 					else // если причалил не в городе
 					{
@@ -159,7 +159,7 @@ void ProcessDialogEvent()
 					}
 					if (findsubstr(pchar.location.from_sea, "_town", 0) != -1) // если причалил в городе
 					{
-						link.l1 = "¿No ves la bandera de " + NationNameGenitive(sti(pchar.nation)) + " ¿en mi barco?! (Probabilidad de engaño " + DeceptionChance + "%%)";
+						link.l1 = "¡¿No ves la bandera de " + NationNameGenitive(sti(pchar.nation)) + " en mi barco?! (Probabilidad de engaño " + DeceptionChance + "%%)";
 					}
 					else // если причалил не в городе
 					{
@@ -555,7 +555,7 @@ void ProcessDialogEvent()
 		NextDiag.TempNode = "PortRoyal_Mayak";
 		break;
 	case "PortRoyal_Gans":
-		dialog.text = LinkRandPhrase("¡No camines cerca de los cañones, es una instalación militar!", "¡A los extraños no se les permite cerca de los cañones!", "¡Si te veo rondando cerca de los cañones, estás acabado!");
+		dialog.text = LinkRandPhrase("¡No camines cerca de los cañones, es una instalación militar!", "¡A los extraños no se les permite permanecer cerca de los cañones!", "¡Si te veo rondando cerca de los cañones, estás acabado!");
 		link.l1 = RandPhraseSimple("Lo conseguí.", "Está bien, lo tengo.");
 		link.l1.go = "exit";
 		NextDiag.TempNode = "PortRoyal_Gans";

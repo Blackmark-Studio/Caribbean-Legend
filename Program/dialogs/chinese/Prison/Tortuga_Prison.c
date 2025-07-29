@@ -68,7 +68,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "tonzag_bail_truth_4":
-            dialog.text = "相信我, 举报信写得很巧妙。 我很擅长这类事情 --最好的诽谤是那些至少包含一点真相的诽谤。 ";
+            dialog.text = "相信我, 举报信写得很巧妙。 我很擅长这类事情 —最好的诽谤是那些至少包含一点真相的诽谤。 ";
             link.l1 = "谁写的举报信? ";
             link.l1.go = "tonzag_bail_truth_a";
             link.l2 = "谁把杀手放进监狱的? ";

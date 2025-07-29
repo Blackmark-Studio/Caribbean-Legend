@@ -27,12 +27,12 @@ void ProcessDialogEvent()
 		// Квест "Длинные тени старых грехов"
 		case "DTSG_Knippel_1":
 			dialog.text = "O, co za upał dzisiaj. Możesz równie dobrze przywiązać kulę łańcuchową do nogi i skoczyć do morza, żeby pozbyć się tej duchoty!";
-			link.l1 = "Ha-ha, Charlie!.. To dość ekstremalne środki, jeśli mnie pytasz. Ale nie miałbym nic przeciwko zwilżeniu gardła - naprawdę dziś zbyt gorąco. Jesteś z nami?";
+			link.l1 = "Ha-ha, Charlie!.. To dość ekstremalne środki, jeśli mam być szczery. Ale nie miałbym nic przeciwko zwilżeniu gardła - dziś jest naprawdę gorąco. Idziesz?";
 			link.l1.go = "DTSG_Knippel_2";
 		break;
 		
 		case "DTSG_Knippel_2":
-			dialog.text = "Napijmy się lub dwa z tobą, Kapitanie? Zawsze!";
+			dialog.text = "Napić się z tobą, Kapitanie? Zawsze!";
 			link.l1 = "To lubię słyszeć. Ruszajmy!";
 			link.l1.go = "DTSG_Knippel_3";
 		break;
@@ -127,7 +127,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Knippel_l0":
-			dialog.text = "Dziękuję za czekanie, Kapitanie. Mam nadzieję, że nie zajęło mi to zbyt długo.";
+			dialog.text = "Dziękuję że poczekałeś, Kapitanie. Mam nadzieję, że nie zajęło mi to zbyt długo.";
 			link.l1 = "Nie martw się o to. Nic ci nie jest? Ten łotr był całkiem dobry.";
 			link.l1.go = "DTSG_Knippel_l1";
 		break;
@@ -139,11 +139,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Knippel_l2":
-			dialog.text = "Zabrałem jakiś klucz z jego ciała... Zastanawiam się, do czego może służyć?";
-			link.l1 = "Podstawy, Charlie... Dla drzwi lub skrzyni, ha-ha. Powinniśmy porozmawiać z karczmarzem o tym łajdaku, to może się przydać.";
+			dialog.text = "... Zastanawiam się, do czego może służyć?";
+			link.l1 = "Do podstaw, Charlie... Do drzwi lub skrzyni, ha-ha. Powinniśmy porozmawiać z karczmarzem o tym łajdaku, to może się przydać.";
 			link.l1.go = "DTSG_Knippel_l3";
 			AddItems(pchar, "Key1", 1);
-			Log_info("Charlie gave you the key.");
+			Log_info("Charlie dał ci klucz.");
 			PlaySound("interface\important_item.wav");
 		break;
 		
@@ -189,13 +189,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Ohotnik_10":
-			dialog.text = "Tak wiele o twojej chełpionej Królewskiej Marynarce, pfft!";
+			dialog.text = "To by było na tyle z tego Królewskiego Marines, pfft!";
 			link.l1 = "Charlie był dobrym, porządnym człowiekiem. I był kanonierem, a nie marines.";
 			link.l1.go = "DTSG_Ohotnik_11";
 		break;
 		
 		case "DTSG_Ohotnik_11":
-			dialog.text = "Kanoniery?! A więc, dokładnie tak jak mówiłem, ha-ha-ha! I nie patrz tak groźnie - powinieneś był wiedzieć, kogo bierzesz do swojej załogi.";
+			dialog.text = "Kanonierem?! A więc, dokładnie tak jak mówiłem, ha-ha-ha! I nie patrz tak groźnie - powinieneś był wiedzieć, kogo bierzesz do swojej załogi.";
 			link.l1 = "Powinieneś był wiedzieć, z kim zadzierasz.";
 			link.l1.go = "DTSG_Ohotnik_Agressia_1";
 			link.l2 = "Żyjesz tylko dlatego, że zwyciężyłeś uczciwie, więc trzymaj swój zgniły język za zębami i wynoś się stąd.";
@@ -203,7 +203,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Ohotnik_Otpustil_1":
-			dialog.text = "Cóż, myślałem, że będę musiał walczyć z tobą następnym razem. Miło słyszeć, że honor coś dla ciebie znaczy.";
+			dialog.text = "Cóż, myślałem, że będę musiał walczyć nawet i z tobą. Miło słyszeć, że honor coś dla ciebie znaczy.";
 			link.l1 = "To nie były tylko puste słowa dla Charliego. Ale co do ciebie, mam wątpliwości. W każdym razie, to teraz już nie ma znaczenia.";
 			link.l1.go = "DTSG_Ohotnik_Otpustil_2";
 		break;
@@ -226,7 +226,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Ohotnik_Agressia_1":
 			dialog.text = "Z kim to niby zadarłem, z rozpieszczonym słabeuszem?! Widziałeś w ogóle swoje własne cienkie wąsy?..";
-			link.l1 = "Na pewno wiesz, jak naciskać na guziki... Tym bardziej satysfakcjonujące będzie wyładować na tobie swoją złość.";
+			link.l1 = "Widze, że umiesz podnosić ludziom ciśnienie... Tym bardziej satysfakcjonujące będzie wyładować na tobie swoją złość.";
 			link.l1.go = "DTSG_Ohotnik_Agressia_2";
 		break;
 		
@@ -259,12 +259,12 @@ void ProcessDialogEvent()
 		
 		case "DTSG_PiterAdams_3":
 			dialog.text = "Czy mógłbyś... pojedynkować się w moim imieniu, panie? Lokalny awanturnik, Ralph Faggle, obraził moją żonę. I nękał ją, publicznie. Prosto przed moimi oczami. Czy możesz to sobie wyobrazić?";
-			link.l1 = "Nie ma zbyt wiele honoru w wyzwaniu na pojedynek, a potem chowaniu się za kimś innym. Zwłaszcza gdy stawką jest nie tylko twój osobisty honor, ale także honor kobiety, twojej żony. Czyż nie tak, Adams? Dlaczego nie możesz walczyć o swoją kobietę sam?";
+			link.l1 = "Nie ma zbyt wiele honoru w wyzwaniu na pojedynek, a potem chowaniu się za kimś innym. Zwłaszcza gdy stawką jest nie tylko twój osobisty honor, ale także honor kobiety, twojej żony. Czyż nie tak, Adams? Dlaczego sam nie zawalczysz o honor swojej żony?";
 			link.l1.go = "DTSG_PiterAdams_4";
 		break;
 		
 		case "DTSG_PiterAdams_4":
-			dialog.text = "I masz rację, absolutną rację. Ale ostatnio cierpiałem na ciężką gorączkę i ledwo stoję na nogach\nPrzyznaję, nie jest mi łatwo prosić cię o coś takiego. Gdyby mnie obraził, zniósłbym to. Ale nie, gdy na szali jest honor mojej żony! Nie jestem tchórzem, sir. Kiedyś służyłem w Królewskiej Marynarce i żeglowałem na tym samym statku co sam Robert Blake!";
+			dialog.text = "Ostatnio cierpiałem na ciężką gorączkę i ledwo stoję na nogach\nPrzyznaję, nie jest mi łatwo prosić cię o coś takiego. Gdyby mnie obraził, zniósłbym to. Ale nie, gdy na szali jest honor mojej żony! Nie jestem tchórzem, sir. Kiedyś służyłem w Królewskiej Marynarce i żeglowałem na tym samym statku co sam Robert Blake!";
 			link.l1 = "Ja...";
 			link.l1.go = "DTSG_PiterAdams_5";
 		break;
@@ -282,7 +282,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_PiterAdams_7":
 			dialog.text = "Jest to godny człowiek, Kapitanie. I niech mnie diabli wezmą na wieczność od kul armatnich, jeśli to nieprawda! Wielcy ludzie służyli z Admirałem Blake'iem. Walczyli razem, aby nikt nie uciskał zwykłych ludzi\nI dzięki niemu, Jamajka została uwolniona spod tyranii Hiszpanów!";
-			link.l1 = "Nawet jeśli tak jest, nie pozwolę moim ludziom przerywać mi ani podejmować decyzji za mnie. Czy to jasne?";
+			link.l1 = "Nawet jeśli tak jest, nie pozwolę aby moi ludzie mi przerywali czy podejmowali decyzje za mnie. Czy to jasne?";
 			link.l1.go = "DTSG_PiterAdams_8";
 			link.l2 = "Rozumiem, naprawdę. Jednakże, nawet nie miałem okazji odpowiedzieć. Postaraj się nie być tak pochopny i nie przerywaj mi w przyszłości, dobrze?";
 			link.l2.go = "DTSG_PiterAdams_8";
@@ -293,7 +293,7 @@ void ProcessDialogEvent()
 			dialog.text = "Powiem ci to, Kapitanie - jeśli nie pomożesz temu człowiekowi, stary Charlie porzuci wszystko i sam się za niego pojedynkować będzie, niech mnie zaraza weźmie!";
 			if (CheckAttribute(pchar, "questTemp.DTSG_Nastoroje1"))
 			{
-				link.l1 = "Spokojnie teraz, nie powiedziałem, że odmawiam pomocy. Prawda, panie Adams?";
+				link.l1 = "Spokojnie, nie powiedziałem, że odmawiam pomocy. Prawda, panie Adams?";
 				link.l1.go = "DTSG_PiterAdams_Nastoroje_1";
 			}
 			else
@@ -333,7 +333,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_PiterAdams_NN_5":
 			dialog.text = "Nalegam!";
-			link.l1 = "Cóż, tylko jeśli nalegasz. Dziękuję, Piotrze. Prowadź.";
+			link.l1 = "Cóż, tylko jeśli nalegasz. Dziękuję, Peter. Prowadź.";
 			link.l1.go = "DTSG_PiterAdams_IdemKDomu";
 		break;
 		
@@ -349,7 +349,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_PiterAdams_Nastoroje_3":
 			dialog.text = "O, wręcz przeciwnie, Kapitanie, bylibyśmy urażeni, gdybyś nie przyszedł.";
-			link.l1 = "Jakże mógłbym wtedy odmówić? Po tobie, Peter!";
+			link.l1 = "Jakże mógłbym wtedy odmówić? Prowadź, Peter!";
 			link.l1.go = "DTSG_PiterAdams_IdemKDomu";
 		break;
 		
@@ -366,10 +366,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_PiterAdamsRyadomSDomom_1":
-			dialog.text = "To my! Proszę, wejdź.";
+			dialog.text = "Proszę, wejdź.";
 			if (CheckAttribute(pchar, "questTemp.DTSG_Nastoroje1"))
 			{
-				link.l1 = "Dziękuję. Czy mogę porozmawiać z Jane? Zapytaj ją, jak to się stało - potrzebuję wszystkich szczegółów.";
+				link.l1 = "Dziękuję. Czy mogę porozmawiać z Jane? Zapytać ją, jak to się stało - potrzebuję wszystkich szczegółów.";
 				link.l1.go = "DTSG_PiterAdamsRyadomSDomom_2";
 			}
 			link.l2 = "Bardzo przepraszam, ale po namyśle muszę odmówić. Mam pojedynek, do którego muszę się przygotować. A tak przy okazji, gdzie i kiedy jest zaplanowany?";
@@ -378,7 +378,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_PiterAdamsRyadomSDomom_2":
 			dialog.text = "Oczywiście, sir. Chętnie porozmawiamy z tobą i odpowiemy na wszystkie twoje pytania. Proszę, za mną.";
-			link.l1 = "Dziękuję, Piotrze.";
+			link.l1 = "Dziękuję, Peter.";
 			link.l1.go = "DTSG_PiterAdamsRyadomSDomom_3";
 		break;
 		
@@ -424,7 +424,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_JeinAdams_1":
-			dialog.text = "Witaj! Droga, nie powiedziałaś mi, że przyprowadzasz gości - przygotowałbym się odpowiednio.";
+			dialog.text = "Witaj! Skarbie, nie powiedziałeś mi, że przyprowadzasz gości - przygotowałabym się odpowiednio.";
 			link.l1 = "Dziękuję, pani, nie zajmie nam to dużo czasu. Charles de Maure, do usług. Zgodziłem się wysłuchać twojej historii z mężem. Opowiedz mi, jak to się stało.";
 			link.l1.go = "DTSG_JeinAdams_2";
 		break;
@@ -437,7 +437,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_JeinAdams_3":
 			dialog.text = "Zbyt się wstydzę, by o tym mówić. Potem wytrzeźwiał, i...";
-			link.l1 = "Przeprosiłeś i poprosiłeś o odwołanie pojedynku, być może?";
+			link.l1 = "Przeprosił i poprosił o odwołanie pojedynku, być może?";
 			link.l1.go = "DTSG_JeinAdams_4";
 		break;
 		
@@ -448,7 +448,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_JeinAdams_5":
-			dialog.text = "A co to takiego, sir?";
+			dialog.text = "Co takiego, sir?";
 			link.l1 = "Jakie okoliczności życiowe i próby zmusiły ciebie i twojego męża do życia tutaj? W każdym angielskim mieście, biorąc pod uwagę zasługi twojego męża, już dawno postawiłabyś Ralpha na swoim miejscu.";
 			link.l1.go = "DTSG_JeinAdams_6";
 		break;
@@ -459,7 +459,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_JeinAdams_7":
 			dialog.text = "Proszę o wybaczenie, panie, ale jak śmiesz?! Gdybyś nie był moim kapitanem, złapałbym kulę łańcuchową i porządnie cię poturbował!\nNie tylko nie ufasz tak godnemu człowiekowi jak pan Adams, ale także drwisz z damy w potrzebie...";
-			link.l1 = "Słyszałeś, żebym szydził z damy? Nie? Więc nie oczerniaj mnie. Nasi ludzie mogli im pomóc, dlatego zapytałem.";
+			link.l1 = "Słyszałeś, żebym szydził z damy? Nie? Więc nie oczerniaj mnie. Nasi ludzie mogliby im pomóc, dlatego zapytałem.";
 			link.l1.go = "DTSG_JeinAdams_8a";
 			link.l1 = "Spokojnie, Charlie! Jak mogłeś... Chciałem tylko dowiedzieć się więcej o trudnościach Jane i Petera oraz współczuć im. W angielskich koloniach z pewnością już by im pomogli.";
 			link.l1.go = "DTSG_JeinAdams_8b";
@@ -543,7 +543,7 @@ void ProcessDialogEvent()
 			LAi_LocationDisableOfficersGen("PortPax_ExitTown", false);
 			PChar.quest.DTSG_PoP_DuelTime.over = "yes";
 			PChar.quest.DTSG_PoP_Duel.over = "yes";
-			dialog.text = "Więc, de Maure. Jesteś wcześnie. I wciąż jesteśmy w mieście. Choć to nie ma znaczenia. Szkoda, że ​​nie przyprowadziłeś ze sobą tego starego głupca. Ale nie martw się, w końcu do niego dotrzemy.";
+			dialog.text = "de Maure. Jesteś wcześnie. I wciąż jesteśmy w mieście. Choć to nie ma znaczenia. Szkoda, że ​​nie przyprowadziłeś ze sobą tego starego głupca. Ale nie martw się, w końcu do niego dotrzemy.";
 			link.l1 = "Do waszych usług w każdej chwili. Najemnicy, co? Kogo ja skrzywdziłem?";
 			link.l1.go = "DTSG_RalfFaggl_2";
 		break;
@@ -561,14 +561,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_RalfFaggl_4":
-			dialog.text = "Ciekawość to pierwszy stopień do piekła, nie słyszałeś? Kazano ci stawić się na pojedynek, a nie węszyć wszędzie dookoła. Mogłeś mieć szansę przetrwać tę kabałę\nOczywiście. Sprowokuj starego służbistę i zmusisz jego dowódcę do pojedynku - doskonały plan, który wymyśliliśmy razem z Peterem, jak sądzę. A Jane też dobrze się spisała.";
+			dialog.text = "Ciekawość to pierwszy stopień do piekła, nie słyszałeś? Kazano ci stawić się na pojedynek, a nie węszyć wszędzie dookoła. Mogłeś mieć szansę przetrwać tę kabałę\nOczywiście. Sprowokować starego służbistę i zmusić jego dowódcę do pojedynku - doskonały plan, który wymyśliliśmy razem z Peterem, jak sądzę. A Jane też dobrze się spisała.";
 			link.l1 = "Powiedz mi, kto chciał pozbyć się Charliego?";
 			link.l1.go = "DTSG_RalfFaggl_5";
 		break;
 		
 		case "DTSG_RalfFaggl_5":
 			dialog.text = "Ha, jakbym ci to powiedział? Broń się.";
-			link.l1 = "Szkoda. W takim razie zapytam Piotra później.";
+			link.l1 = "Szkoda. W takim razie zapytam Petera później.";
 			link.l1.go = "DTSG_RalfFaggl_6";
 		break;
 		
@@ -647,7 +647,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Knippel_40":
-			dialog.text = "Nie mogę uwierzyć, że ci... ci łajdacy nie tylko nas oszukali, ale też skłamali o Królewskiej Marynarce! Jak oni śmią! Gdyby nie byli martwi, zmusiłbym ich do połknięcia kilku kul łańcuchowych za taką zdradę!..";
+			dialog.text = "Nie mogę uwierzyć, że ci... ci łajdacy nie tylko nas oszukali, ale też skłamali o Królewskiej Marynarce! Jak mogli! Gdyby nie byli martwi, zmusiłbym ich do połknięcia kilku kul łańcuchowych za taką zdradę!..";
 			link.l1 = "Ludzie kłamią na różne tematy, Charlie. Myślałem, że dobrze o tym wiesz. Ale to, co z pewnością wiesz, to kto ich wysłał. To nie jest pierwsza pułapka zastawiona na ciebie ostatnio. Mieli list ze szczegółowym opisem ciebie. Kogo tak bardzo rozwścieczyłeś?";
 			link.l1.go = "DTSG_Knippel_41";
 		break;
@@ -696,13 +696,13 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Knippel_53":
 			dialog.text = "Cóż... jakiś czas temu pożyczyłem od niego pieniądze, by spłacić wszystkie moje inne długi. Richard obiecał to spłacić, ale...";
-			link.l1 = "Czy myślisz, że tego nie zrobił?";
+			link.l1 = "Myślisz, że tego nie zrobił?";
 			link.l1.go = "DTSG_Knippel_54";
 		break;
 		
 		case "DTSG_Knippel_54":
 			dialog.text = "Nie uwierzyłbym w to wcześniej, ale po tym, co ci zrobił i szybko opuścił Karaiby z Abi... Może zapomniał o długu. Albo nie zapomniał, ale i tak odszedł... Richard zachował się jak prawdziwy skurwiel, sir. Nie zdziwiłbym się, ale wciąż byłbym rozczarowany, gdyby okazało się to ponownie prawdą.";
-			link.l1 = "Nie bądź tak kategoryczny przedwcześnie, Charlie. Zatem, St. John's to jest.";
+			link.l1 = "Nie bądź tak kategoryczny przedwcześnie, Charlie. Zatem, do St. John's.";
 			link.l1.go = "DTSG_Knippel_55";
 		break;
 		
@@ -741,7 +741,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.DTSG_ZovemMatrosov"))
 			{
 				dialog.text = "Ach, oto jesteś, sir - wygląda na to, że wszyscy postanowili przyjść wcześniej. Sądząc po twoim wyglądzie, wydajesz się dość radosny, czy jesteś tak pewny swoich umiejętności?";
-				link.l1 = "Oczywiście, to z daleka nie mój pierwszy pojedynek.";
+				link.l1 = "Oczywiście, to nie jest mój pierwszy pojedynek.";
 				link.l1.go = "DTSG_PiterAdams_Nastoroje_21";
 				ChangeCharacterComplexReputation(pchar, "authority", 1);
 			}
@@ -761,7 +761,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_PiterAdams_NN_22":
-			dialog.text = "Spotkaj się...";
+			dialog.text = "Zapoznaj się...";
 			link.l1 = "";
 			link.l1.go = "DTSG_PiterAdams_NN_23";
 			LAi_SetActorType(npchar);
@@ -806,7 +806,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_PiterAdams_NN_27":
 			dialog.text = "Jedyną rzeczą, którą mogę teraz odrzucić, jest śmiech z twojej naiwności.";
-			link.l1 = "Cóż, cóż. Żałuję tylko, że Charlie się w to wplątał - łatwiej i ciszej byłoby rozprawić się z tobą sam na sam...";
+			link.l1 = "Prosze, prosze. Żałuję tylko, że Charlie się w to wplątał - łatwiej i ciszej byłoby rozprawić się z tobą sam na sam...";
 			link.l1.go = "DTSG_PiterAdams_BitvaDuel";
 		break;
 		
@@ -853,12 +853,12 @@ void ProcessDialogEvent()
 		
 		case "DTSG_PiterAdams_Nastoroje_26":
 			dialog.text = "Zazwyczaj ludzie są zaskoczeni lub przestraszeni w takich sytuacjach, ale ty wydajesz się być innego typu. Tym przyjemniej będzie zetrzeć ten zadowolony uśmieszek z twojej twarzy, panie de Maure.";
-			link.l1 = "Ależ groźby! Czyż nie jesteśmy po tej samej stronie, Piotrze?";
+			link.l1 = "Ależ groźby! Czyż nie jesteśmy po tej samej stronie, Peter?";
 			link.l1.go = "DTSG_PiterAdams_Nastoroje_27";
 		break;
 		
 		case "DTSG_PiterAdams_Nastoroje_27":
-			dialog.text = "Nie mów mi, że masz nadzieję pokonać nas wszystkich z tym starcem. Jesteś w mniejszości, drogi panie.";
+			dialog.text = "Nie mów mi, że masz nadzieję pokonać nas wszystkich z tym starcem. Jesteś osaczony, drogi panie.";
 			link.l1 = "Jak mówiłem, to TY nie rozumiesz. Charlie trochę pomruczał, ale i tak kazałem mu przyprowadzić tu chłopaków na wszelki wypadek. Jak się okazuje, nie na próżno. CHŁOPAKI, TUTAJ!!!";
 			link.l1.go = "DTSG_PiterAdams_Nastoroje_28";
 		break;
@@ -936,7 +936,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Knippel_60":
-			dialog.text = "Tak właśnie powinno się postępować z takimi kłamliwymi łajdakami. Nadal nie mogę uwierzyć, że mieli czelność kłamać o Królewskiej Marynarce! Zadusiłbym ich łańcuchowym strzałem!..";
+			dialog.text = "Tak właśnie powinno się postępować z takimi kłamliwymi łajdakami. Nadal nie mogę uwierzyć, że mieli czelność kłamać o Królewskiej Marynarce! Udusiłbym ich kulą łańcuchową!..";
 			link.l1 = "Teraz już powinieneś wiedzieć, że niektórzy ludzie nie mają skrupułów, Charlie. Powiedziałem, że się tym zajmę, mogłeś zostać na statku. Czy chciałeś się upewnić, że pomogę tym 'godnym ludziom'? I kto znowu miał rację, że to nie było takie proste, jak myślałeś?";
 			link.l1.go = "DTSG_Knippel_61";
 		break;
@@ -987,7 +987,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Knippel_74":
-			dialog.text = " Myślisz poprawnie, panie. W końcu spłaciłem prawie wszystkie swoje długi, pożyczając od lichwiarza. Oczywiście, on może sobie na to pozwolić. Ale...";
+			dialog.text = "Dobrze myślisz, panie. W końcu spłaciłem prawie wszystkie swoje długi, pożyczając od lichwiarza. Oczywiście, on może sobie na to pozwolić. Ale...";
 			link.l1 = "Ale co? Spłacimy twój dług i to wszystko. Co cię martwi?";
 			link.l1.go = "DTSG_Knippel_75";
 		break;
@@ -1120,7 +1120,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_AntiguaStrazhBank_2":
-			dialog.text = "Nie wygląda na to dla mnie. Będziesz musiał odpowiedzieć przed prawem.";
+			dialog.text = "Dla mnie to tak nie wygląda. Będziesz musiał odpowiedzieć przed prawem.";
 			link.l1 = "Co, jeśli przeproszę i odejdę?";
 			link.l1.go = "DTSG_AntiguaStrazhBank_3";
 		break;
@@ -1169,7 +1169,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_AntiguaUsurer_PosleDraki_3":
-			dialog.text = "Charlie?! I would never do that to him; he's a good, honest man. Besides, his debt has long been paid off. Mr. Fleetwood, the captain of the Valkyrie, settled it to the last peso.";
+			dialog.text = "Charlie?! Nigdy bym mu tego nie zrobił; to dobry, uczciwy człowiek. Poza tym jego dług został już dawno spłacony. Pan Fleetwood, kapitan Valkyrie, uregulował go co do ostatniego peso.";
 			link.l1 = "Naprawdę? Wiem, kim on jest. Powinieneś był powiedzieć to od razu. Przepraszam za kłopot, do widzenia.";
 			link.l1.go = "DTSG_AntiguaUsurer_PosleDraki_4";
 		break;
@@ -1202,7 +1202,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Killer":
-			dialog.text = "Jeszcze tu jesteś i nie wiszysz? No cóż, pozdrowienia z Sussex, Charlie.";
+			dialog.text = "Jeszcze tu jesteś i nie wisisz? No cóż, pozdrowienia z Sussex, Charlie.";
 			link.l1 = "Pozdrawiam cię, kimkolwiek jesteś.";
 			link.l1.go = "DTSG_Killer_2";
 			CharacterTurnToLoc(npchar, "goto", "goto9");
@@ -1210,34 +1210,34 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Killer_2":
 			dialog.text = "Ach, Charles de Maure. Dobrze, że odwiedziłeś biednego Charliego. Liczyliśmy na to.";
-			link.l1 = "Kim jesteśmy?";
+			link.l1 = "Kim jesteś?";
 			link.l1.go = "DTSG_Killer_3";
 			CharacterTurnByChr(npchar, pchar);
 		break;
 		
 		case "DTSG_Killer_3":
-			dialog.text = "Nie ma znaczenia. Kosztowałeś nas znacząco czasu i pieniędzy, panie de Maure. Myślę, że nie będą mieli nic przeciwko, jeśli zajmę się zarówno Charliem, jak i tobą, tutaj.";
+			dialog.text = "To nie ma znaczenia. Kosztowałeś nas wiele czasu i pieniędzy, panie de Maure. Myślę, że nie będą mieli nic przeciwko, jeśli zajmę się zarówno Charliem, jak i tobą, tutaj.";
 			link.l1 = "Cóż, skoro i tak obaj jesteśmy martwi, czy mógłbyś nam z dobroci serca powiedzieć, kogo tak bardzo rozzłościliśmy? Obiecujemy, że nie zrobimy tego ponownie. A kim jest Sussex?";
 			link.l1.go = "DTSG_Killer_4";
 		break;
 		
 		case "DTSG_Killer_4":
 			dialog.text = "Nie da się. Obowiązek wzywa i, w przeciwieństwie do ciebie, jestem człowiekiem czynu, nie słów.";
-			link.l1 = "Na litość boską, czy ktoś mi w końcu wyjaśni, co się dzieje?!";
+			link.l1 = "Na miłość boską, czy ktoś mi w końcu wyjaśni, co tu się dzieje?!";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("DTSG_Killer_5");
 		break;
 		
 		case "DTSG_KnippelDaySpasen":
 			dialog.text = "Cóż, do diabła, Kapitanie, cóż za masakrę tu urządziłeś!";
-			link.l1 = "Czy masz coś przeciwko? Wolisz szubienicę? A może wolisz gnić tu w nieskończoność?";
+			link.l1 = "Masz coś przeciwko? Wolisz szubienicę? A może wolisz gnić tu w nieskończoność?";
 			link.l1.go = "DTSG_KnippelDaySpasen_2";
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "DTSG_KnippelDaySpasen_2":
 			dialog.text = "Nie, panie. Dziękuję za uratowanie mnie. Szczerze mówiąc, jestem zaskoczony, że przyszedłeś, biorąc pod uwagę, jak łatwo pozwoliłeś im mnie zabrać. I zaskoczony, jak łatwo poradziłeś sobie ze strażnikiem - był to Morski Lis. Żołnierz piechoty morskiej.";
-			link.l1 = "Powiedziałem ci, że cię wyciągnę, nie powinieneś był wątpić. Teraz wyłaź z tej celi, zanim cała garnizon tu przybędzie.";
+			link.l1 = "Powiedziałem ci, że cię wyciągnę, nie powinieneś był wątpić. Teraz wyłaź z tej celi, zanim cały garnizon tu przybędzie.";
 			link.l1.go = "DTSG_KnippelDaySpasen_3";
 		break;
 		
@@ -1353,7 +1353,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Knippel_SluhSmertFleetWood_2":
 			dialog.text = "Okropne... Choć powiedziałem o nim wiele gorzkich słów, nigdy nie życzyłem mu czegoś takiego! A biedna Abi!.. Oczekiwała dziecka. Mam nadzieję, że żyje...";
-			link.l1 = "Rzeczywiście, nikomu bym tego nie życzył. Miejmy nadzieję, że z Abi wszystko w porządku. Masz jakiś pomysł, kto mógłby to zrobić Dickowi? Czy kiedykolwiek wspominał o potężnych wrogach?";
+			link.l1 = "Rzeczywiście, nikomu bym tego nie życzył. Miejmy nadzieję, że z Abi wszystko w porządku. Masz jakiś pomysł, kto mógłby to zrobić? Czy kiedykolwiek wspominał o potężnych wrogach?";
 			link.l1.go = "DTSG_Knippel_SluhSmertFleetWood_3";
 		break;
 		
@@ -1443,7 +1443,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_NightKiller":
 			dialog.text = "Co, Charlie, miałeś nadzieję ukryć się u swojego dawnego patrona tej nocy? Nie ma go tam. Ale wkrótce się z nim spotkasz. Pozdrowienia od Sussex.";
-			link.l1 = "Już to wiedzieliśmy. A kim jest Sussex? A kim jesteś ty?";
+			link.l1 = "Już to wiedzieliśmy. A kim jest Sussex? A kim ty jesteś?";
 			link.l1.go = "DTSG_NightKiller_2";
 		break;
 		
@@ -1538,7 +1538,7 @@ void ProcessDialogEvent()
 			dialog.text = "Naprawdę nie wiem, panie...";
 			if (CheckAttribute(pchar, "questTemp.DTSG_Nastoroje2"))
 			{
-				link.l1 = "To nie żart, Charlie. Ktokolwiek cię ściga, może wydawać rozkazy morskim lisom. Pewnie jest też za morderstwem Richarda. Więc jeśli masz jakieś myśli, podziel się nimi. Jakie to pozdrowienia z Sussex, kto to jest?";
+				link.l1 = "To nie żart, Charlie. Ktokolwiek cię ściga, może wydawać rozkazy morskim lisom. Pewnie ten ktoś stoi też za morderstwem Richarda. Więc jeśli masz jakieś myśli, podziel się nimi. Jakie to pozdrowienia z Sussex, kto to jest?";
 			}
 			else
 			{
@@ -1575,7 +1575,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kurier":
-			dialog.text = "Ej, Charlie, jestem od kapitana Fleetwooda. Chce cię zobaczyć.";
+			dialog.text = "Ej, Charlie, przychodze od kapitana Fleetwooda. Chce cię zobaczyć.";
 			link.l1 = "Dzięki, kamracie. Coś się stało? Zwykle wszystko przesyła przez ciebie od razu.";
 			link.l1.go = "DTSG_Kurier_2";
 		break;
@@ -1589,12 +1589,12 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Cortny":
 			dialog.text = "...";
-			link.l1 = "Dobranoc, panie!";
+			link.l1 = "Dobry wieczór, panie!";
 			link.l1.go = "DTSG_Cortny_2";
 		break;
 		
 		case "DTSG_Cortny_2":
-			dialog.text = "Dobranoc. Pozwól mi przejść.";
+			dialog.text = "Dobry wieczór. Pozwól mi przejść.";
 			link.l1 = "Oczywiście, śmiało, przepraszam, sir.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("DTSG_Cortny_3");
@@ -1602,7 +1602,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Fleetwood":
 			dialog.text = "Ach, to ty, Charlie. Wejdź, wejdź. Zamknij za sobą drzwi.";
-			link.l1 = "Dobranoc, Kapitanie. Co się dzieje? A kim był tamten człowiek? Nadęty paw...";
+			link.l1 = "Dobry wieczór, Kapitanie. Co się dzieje? A kim był tamten człowiek? Nadęty paw...";
 			link.l1.go = "DTSG_Fleetwood_2";
 			DelLandQuestMark(npchar);
 		break;
@@ -1626,8 +1626,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Fleetwood_5":
-			dialog.text = "Jeszcze gorzej. Całkowicie przejść na ich stronę. I chociaż będą wyczerpani po przekroczeniu Atlantyku, w końcu to dobra fregata, która na pewno spróbuje uciec, jeśli zaatakujemy ciężkim statkiem.\nMusimy więc działać szybko i zdecydowanie. Możemy polegać tylko na 'Valkyrii' - tylko ona jest zdolna do takiej misji.";
-			link.l1 = "Czy stara 'Walkiria' poradzi sobie z fregatą?..";
+			dialog.text = "Jeszcze gorzej. Całkowicie przejść na ich stronę. I chociaż będą wyczerpani po przekroczeniu Atlantyku, w końcu to dobra fregata, która na pewno spróbuje uciec, jeśli zaatakujemy ciężkim statkiem.\nMusimy więc działać szybko i zdecydowanie. Możemy polegać tylko na 'Valkyrie' - tylko ona jest zdolna do takiej misji.";
+			link.l1 = "Czy stara 'Valkyrie' poradzi sobie z fregatą?..";
 			link.l1.go = "DTSG_Fleetwood_6";
 		break;
 		
@@ -1665,7 +1665,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Fleetwood_11":
-			dialog.text = "Bardzo dobrze. Liczę na ciebie i twoje kartacze. Spróbuj rozerwać im żagle jak najszybciej, a jeszcze lepiej, obalić maszt. Wdawanie się w ryzykowną walkę, by ich zatopić, nie ma sensu, więc spróbuję ich abordażować.\nPoza tym musimy się upewnić, że zdrajca nie żyje - jeśli ich zatopimy, i tak będziemy musieli podejść bliżej i upewnić się, że nikt nie przeżył.";
+			dialog.text = "Bardzo dobrze. Liczę na ciebie i twoje kule łańcuchowe. Spróbuj rozerwać im żagle jak najszybciej, a jeszcze lepiej, obalić maszt. Wdawanie się w ryzykowną walkę, by ich zatopić, nie ma sensu, więc spróbuję ich abordażować.\nPoza tym musimy się upewnić, że zdrajca nie żyje - jeśli ich zatopimy, i tak będziemy musieli podejść bliżej i upewnić się, że nikt nie przeżył.";
 			link.l1 = "I zabić tylu rodaków dla jednego zdrajcy...";
 			link.l1.go = "DTSG_Fleetwood_12";
 		break;
@@ -1678,7 +1678,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Graf_Sheffild_1":
-			dialog.text = "Dostatecznie! Jestem gotów złożyć mój miecz i omówić twoje żądania. Ale najpierw, przedstaw się! Kim jesteś i jak śmiesz nas atakować?! To jest zdrada!";
+			dialog.text = "Wystarczy! Jestem gotów złożyć mój miecz i omówić twoje żądania. Ale najpierw, przedstaw się! Kim jesteś i jak śmiesz nas atakować?! To jest zdrada!";
 			link.l1 = "";
 			link.l1.go = "DTSG_Graf_Sheffild_2";
 			CharacterTurnByChr(npchar, CharacterFromID("Fleetwood"));
@@ -1784,7 +1784,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Graf_Sheffild_18":
-			dialog.text = "Obawiam się, że to nie zależy ode mnie. I na pewno nie od was. Wybraliście złą stronę, panowie. Żegnajcie.";
+			dialog.text = "Obawiam się, że to nie zależy ode mnie. I na pewno nie od ciebie. Wybrałeś złą stronę, panie. Żegnaj.";
 			link.l1 = "";
 			link.l1.go = "DTSG_Graf_Sheffild_19";
 			CharacterTurnByChr(npchar, CharacterFromID("DTSG_Graf_Sheffild"));
@@ -1806,7 +1806,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Graf_Sheffild_23":
-			dialog.text = "Słuchaj mnie, przyjacielu. I słuchaj uważnie. Nasza służba jest bardzo niebezpieczna i trudna, w każdym aspekcie. Może zdarzyć się wszystko - smutna pomyłka, śmieszny zbieg okoliczności, czy zdradziecka zdrada\nSłużba krajowi to nie tylko ładowanie dział kulami armatnimi, Charlie. Dla władzy to podejmowanie trudnych decyzji. A dla żołnierzy takich jak my - wykonywanie tych decyzji.";
+			dialog.text = "Słuchaj mnie, przyjacielu. I słuchaj uważnie. Nasza służba jest bardzo niebezpieczna i trudna, w każdym aspekcie. Może zdarzyć się wszystko - smutna pomyłka, śmieszny zbieg okoliczności, czy perfidna zdrada\nSłużba krajowi to nie tylko ładowanie dział kulami łańcuchowymi, Charlie. Dla władzy to podejmowanie trudnych decyzji. A dla żołnierzy takich jak my - wykonywanie tych decyzji.";
 			link.l1 = "Ale co, jeśli pewnego dnia przelejemy niewinną krew, kapitanie? To będzie na naszych rękach, na naszym sumieniu.";
 			link.l1.go = "DTSG_Graf_Sheffild_24";
 		break;
@@ -1822,10 +1822,10 @@ void ProcessDialogEvent()
 			dialog.text = "Zostawiliśmy fałszywe dowody, aby wyglądało na to, że zrobili to Holendrzy. Richard i ja nigdy więcej nie rozmawialiśmy o tym dniu.";
 			if (CheckAttribute(pchar, "questTemp.DTSG_Nastoroje2"))
 			{
-				link.l1 = "Cóż, teraz wiele nabiera sensu. Myślę, że za śmiercią Richarda stoi krewny lub zwolennik hrabiego. Ale dlaczego celują w ciebie? Jesteś tylko kanonierem i nie podejmowałeś żadnych decyzji tamtego smutnego dnia.";
+				link.l1 = "Cóż, teraz wszystko nabiera sensu. Myślę, że za śmiercią Richarda stoi krewny lub zwolennik hrabiego. Ale dlaczego celują w ciebie? Jesteś tylko kanonierem i nie podejmowałeś żadnych decyzji tamtego smutnego dnia.";
 				link.l1.go = "DTSG_Knippel_ZS_102";
 				AddComplexLandExpToScill(50, 50, 50);
-				Log_info("Experience bonus received");
+				Log_info("Otrzymano bonus do doświadczenia");
 			}
 			else
 			{
@@ -1894,7 +1894,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Charles, pamiętam, że prosiłeś mnie, by nikogo nie wpuszczać i nie przeszkadzać wam z Charliem, ale...";
-				link.l1 = "... zdecydowałeś się przyjść osobiście. Dobrze, dobrze, Helen.";
+				link.l1 = "... zdecydowałaś się przyjść osobiście. Dobrze, dobrze, Helen.";
 				link.l1.go = "DTSG_Helena_2";
 			}
 		break;
@@ -1902,13 +1902,13 @@ void ProcessDialogEvent()
 		case "DTSG_Helena_2":
 			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6)
 			{
-				dialog.text = "Angielski okręt wojenny! Został dostrzeżony jakiś czas temu. Na początku nie zwróciłem uwagi, ale zaraz do nas dotrze! Nigdy nie widziałem tak szybkiego statku.";
+				dialog.text = "Angielski okręt wojenny! Został dostrzeżony jakiś czas temu. Na początku nie zwróciłam uwagi, ale zaraz do nas dotrze! Nigdy nie widziałam tak szybkiego statku.";
 				link.l1 = "Dzięki za informacje. Mam nadzieję, że mamy czas się przygotować, zanim się zbliży. Helen, Charlie, na stanowiska bojowe!";
 				link.l1.go = "DTSG_GotovimsyKBitve";
 			}
 			else
 			{
-				dialog.text = "... możecie kontynuować swoje tajne spotkanie później. Angielski okręt wojenny zbliża się w naszym kierunku. Myślałem, że to ważne.";
+				dialog.text = "... możecie kontynuować swoje tajne spotkanie później. Angielski okręt wojenny zbliża się w naszym kierunku. Myślałam, że to ważne.";
 				link.l1 = "Cóż, pójdę się rozejrzeć. Dzięki, Helen.";
 				link.l1.go = "DTSG_GotovimsyKBitve";
 			}
@@ -1921,8 +1921,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Alonso_1":
-			dialog.text = "Przepraszam za przerwanie, Kapitanie, ale to pilne.";
-			link.l1 = "Och, mam nadzieję, że to naprawdę ważne, Alonso. Zgłaszaj się.";
+			dialog.text = "Przepraszam że przerywam, Kapitanie, ale to pilne.";
+			link.l1 = "Och, mam nadzieję, że to naprawdę ważne, Alonso. Raportuj.";
 			link.l1.go = "DTSG_Alonso_2";
 		break;
 		
@@ -2026,7 +2026,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_2":
-			dialog.text = "Zgadza się, w obu przypadkach. Przypuszczam, że szlachcic potrafi rozpoznać innego z daleka. Pułkownik Thomas Lynch. Wygląda na to, że nadszedł czas, by porozmawiać jak dżentelmeni, zamiast próbować się zniszczyć. Być może uda nam się osiągnąć wzajemnie korzystne porozumienie.";
+			dialog.text = "Zgadza się, w obu przypadkach. Przypuszczam, że szlachcic potrafi rozpoznać innego z daleka. Pułkownik Thomas Lynch. Wygląda na to, że nadszedł czas, by porozmawiać jak dżentelmeni, zamiast próbować się pozabijać. Być może uda nam się osiągnąć wzajemnie korzystne porozumienie.";
 			link.l1 = "Nie mogę niczego obiecać, ale daję ci moje słowo jako szlachcic, że przynajmniej porozmawiamy jak cywilizowani ludzie, pułkowniku.";
 			link.l1.go = "DTSG_Kortni_3";
 		break;
@@ -2037,7 +2037,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "Całe Karaiby mówią o śmierci Richarda. Więc, to byłeś ty! A tak przy okazji, tą kartą przetargową, o której wspomniałeś, była Abigail? Co się z nią stało, tak na marginesie?";
 				AddComplexLandExpToScill(50, 50, 50);
-				Log_info("Experience bonus received");
+				Log_info("Otrzymano bonus do doświadczenia");
 			}
 			else
 			{
@@ -2101,7 +2101,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_9":
-			dialog.text = "Masz ochotę na śmiech? Nie powinieneś. Przyznaję, że przewyższyłeś mnie zarówno jako kapitan, jak i wojownik. Ale wciąż mam tutaj przewagę.";
+			dialog.text = "Masz ochotę na śmiech? Nie powinieneś. Przyznaję, że przewyższyłeś mnie zarówno jako kapitana, jak i wojownika. Ale wciąż mam tutaj przewagę.";
 			link.l1 = "Czy to umierający blef? Czy po prostu zwykła pewność siebie ludzi takich jak ty? Co kryje się za tymi słowami?";
 			link.l1.go = "DTSG_Kortni_10";
 		break;
@@ -2187,7 +2187,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_PkCh_9":
-			dialog.text = "What are you saying, sir? We're not enemies; I was just following orders!.. Can I at least ask for a boat? You'll never see me again!";
+			dialog.text = "Co pan mówi, panie? Nie jesteśmy wrogami; ja tylko wykonywałem rozkazy!.. Czy mogę chociaż poprosić o łódź? Nigdy mnie pan już nie zobaczy!";
 			link.l1 = "Nie oszczędziłbyś mnie, gdybyś był na moim miejscu i właśnie przegrał ze mną bitwę. Więc ciesz się, że cię nie zabiłem. Przez okno. Teraz. Może dogonisz swojego patrona.";
 			link.l1.go = "DTSG_Kortni_PkCh_10";
 		break;
@@ -2242,7 +2242,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_PkCh_16":
-			dialog.text = "Wiesz, Kapitanie, od tego dnia szanuję cię jeszcze bardziej. Nigdy nie będę żałować, że nie odpłynąłem z Dickiem na Valkyrie i zdecydowałem się dołączyć do ciebie.";
+			dialog.text = "Wiesz, Kapitanie, od tego dnia szanuję cię jeszcze bardziej. Nigdy nie będę żałować, że nie odpłynąłem z Richardem na Valkyrie i zdecydowałem się dołączyć do ciebie.";
 			link.l1 = "Dziękuję, mój przyjacielu! Bądź gotów - burza nadciąga na nas. Ale wiesz co? Coś mi mówi, że znów wyjdziemy zwycięsko. Chodźmy, czas wracać na pokład.";
 			link.l1.go = "DTSG_Kortni_PkCh_17";
 		break;
@@ -2269,14 +2269,14 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_LT_2":
 			if (sti(pchar.reputation.nobility) > 70)
 			{
-				notification("Reputation Check Passed", "None");
+				notification("Twoja reputacja wygrała!", "None");
 				dialog.text = "To... duże ryzyko. I tu nie chodzi tylko o to, czy mogę ufać twemu słowu. Ale czy moi koledzy mi uwierzą, gdy zobaczą ciało przypominające Charliego. I nie podejmę tego ryzyka... tak po prostu.";
 				link.l1 = "Ile?";
 				link.l1.go = "DTSG_Kortni_LT_4";
 			}
 			else
 			{
-				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+				notification("Zbyt niska reputacja! ("+XI_ConvertString(GetReputationName(71))+")", "None");
 				dialog.text = "Słowo człowieka z twoją reputacją? Żartujesz sobie. Szlachetne pochodzenie to za mało, by zaufać.";
 				link.l1 = "Słysząc to od innego człowieka o podobnym pochodzeniu i czynach, wybacz mi, pułkowniku.";
 				link.l1.go = "DTSG_Kortni_LT_3";
@@ -2284,7 +2284,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_LT_3":
-			dialog.text = "Oczywiście, masz rację. Ale w tym przypadku chodzi o moje zaufanie, a nie kogoś innego. A ty jako gwarant mi nie odpowiadasz\nMówię ci ostatni raz. Oddaj mi Charlie. Jeśli, oczywiście, nie chcesz podzielić losu Fleetwooda.";
+			dialog.text = "Oczywiście, masz rację. Ale w tym przypadku chodzi o moje zaufanie, a nie kogoś innego. A ty jako gwarant mi nie odpowiadasz\nMówię ci ostatni raz. Oddaj mi Charliego. Jeśli, oczywiście, nie chcesz podzielić losu Fleetwooda.";
 			link.l1 = "Możesz łatwo wykorzystać swój tytuł i wpływy, by zastraszyć jakiegoś głupca. Ale ja nie jestem głupcem. I wyczuwam desperację z daleka. Wynoś się. I ciesz się, że cię nie zabiłem - zasługujesz na to w pełni.";
 			link.l1.go = "DTSG_Kortni_PkCh_1";
 		break;
@@ -2310,7 +2310,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_LT_6":
-			dialog.text = "W takim razie myślisz, że jestem jeszcze bardziej naiwna, niż sądziłam.\nNie jestem wiejską dziewczyną gotową czekać wiecznie na kogoś, kto raz miał z nią swoją drogę.\nBez pieniędzy? I tak o nie nie prosiłam. Chcę tylko Charlie'ego. Nie jesteś mi do niczego potrzebny mimo całego kłopotu, który sprawiłeś.";
+			dialog.text = "W takim razie myślisz, że jestem jeszcze bardziej naiwny, niż sądziłem.\nNie jestem wiejską dziewczyną gotową czekać wiecznie na kogoś, kto raz miał z nią swoją drogę.\nBez pieniędzy? I tak o nie nie prosiłem. Chcę tylko Charlie'ego. Nie jesteś mi do niczego potrzebny mimo całego kłopotu, który sprawiłeś.";
 			link.l1 = "Możesz łatwo użyć swego tytułu i wpływów, by zastraszyć głupca czy dwóch. Ale ja nie jestem głupcem. I wyczuwam desperację na milę. Wynoś się. I ciesz się, że cię nie zabiłem - zasługujesz na to z nawiązką.";
 			link.l1.go = "DTSG_Kortni_PkCh_1";
 		break;
@@ -2538,17 +2538,17 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_Kech_2":
 			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
 			{
-				notification("Reputation Check Passed", "None");
-				notification("Trustworthy", "Trustworthy");
+				notification("Twoja reputacja jest wysoka!", "None");
+				notification("Jesteś godny zaufania", "Trustworthy");
 				dialog.text = "Jesteś twardym negocjatorem. Czy masz pojęcie, ile kosztowało nas zbudowanie choćby jednego z nich?";
-				link.l1 = "(Godny zaufania) (Honor) Doskonale o tym wiem, dlatego pytam. Twoja ręka jest w mojej paszczy aż po łokieć. Możesz próbować zastrzelić tego wilka. Ale stracisz rękę. I nie tylko ją.";
+				link.l1 = "(Godny zaufania) (Wysoki honor) Doskonale o tym wiem, dlatego pytam. Twoja ręka jest w mojej paszczy aż po łokieć. Możesz próbować zastrzelić tego wilka. Ale stracisz rękę. I nie tylko ją.";
 			}
 			else
 			{
 				dialog.text = "Obawiam się, że zbudowanie jednej z nich kosztuje znacznie więcej niż złoto, które dla ciebie przygotowaliśmy. Ale mnie rozbawiłeś, Charles. W dobry sposób.";
 				link.l1 = "Było warto spróbować.";
-				if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Perk Check Failed", "Trustworthy");
-				if (sti(pchar.reputation.nobility) < 71) notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Nie jesteś godny zaufania", "Trustworthy");
+				if (sti(pchar.reputation.nobility) < 71) notification("Zbyt niska reputacja! ("+XI_ConvertString(GetReputationName(71))+")", "None");
 			}
 			link.l1.go = "DTSG_Kortni_Kech_3";
 		break;
@@ -2627,8 +2627,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_VizyvaemKnippel_6":
-			dialog.text = "Nie mogę uwierzyć, że to robisz staremu Charliemu, Kapitanie. Jesteś taki sam jak Dick. Oboje kiedyś mówiliście mi, że jesteście moimi przyjaciółmi. I obaj porzuciliście mnie i wszystkich bliskich.";
-			link.l1 = "To brzemię kapitana, jego odpowiedzialność. Widzę, że nie możesz tego pojąć, bo wszystko, co musiałeś robić, to ładować armaty kulami armatnimi.";
+			dialog.text = "Nie mogę uwierzyć, że to robisz staremu Charliemu, Kapitanie. Jesteś taki sam jak Richard. Oboje kiedyś mówiliście mi, że jesteście moimi przyjaciółmi. I obaj porzuciliście mnie i wszystkich bliskich.";
+			link.l1 = "To brzemię kapitana, jego odpowiedzialność. Widzę, że nie możesz tego pojąć, bo wszystko, co musiałeś robić, to ładować armaty kulami łańcuchowymi.";
 			link.l1.go = "DTSG_Kortni_VizyvaemKnippel_7";
 		break;
 		
@@ -2669,7 +2669,7 @@ void ProcessDialogEvent()
 			dialog.text = "Jestem człowiekiem słowa. Los Abigail jest tego dowodem. Spójrz na Briana. Francuski pirat, ale podjął właściwą decyzję, gdy nadszedł czas, by dołączyć do właściwej strony. I nikt go nie tknie, dopóki wiernie nam służy. Jak on, idziesz w dobrym kierunku, Kapitanie de Maure.";
 			if (CheckAttribute(pchar, "questTemp.DTSG_Kech"))
 			{
-				link.l1 = "Mówiąc o wyruszeniu. Chcę stąd wyjechać jak najszybciej. Na tym niewątpliwie szybkim statku, który mi obiecałeś, pułkowniku.";
+				link.l1 = "Mówiąc o wyruszeniu. Chcę stąd wypłynąć jak najszybciej. Na tym niewątpliwie szybkim statku, który mi obiecałeś, pułkowniku.";
 			}
 			else
 			{
@@ -2681,7 +2681,7 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_VizyvaemKnippel_12":
 			if (CheckAttribute(pchar, "questTemp.DTSG_Kech"))
 			{
-				dialog.text = "I won't hide it - it feels like tearing her from my heart. I'll have to spend on a new one, but perhaps it's worth it - too long have I been troubled by the thought that Charlie might spill the beans\nIf you don't talk or commit serious crimes against England, consider that we're no longer enemies. Enjoy the new ship; she's indeed beautiful. Goodbye, Charles. Brian - prepare a boat for us. Charlie - follow me as you have no say in the matter.";
+				dialog.text = "Nie będę tego ukrywać - czuję się, jakbym wyrywał ją sobie z serca. Będę musiał wydać pieniądze na nową, ale może warto - zbyt długo dręczyła mnie myśl, że Charlie mógłby się wygadać\nJeśli nie będziesz mówił ani popełniał poważnych przestępstw przeciwko Anglii, pomyśl, że nie jesteśmy już wrogami. Ciesz się nowym statkiem; jest naprawdę piękny. Żegnaj, Charles. Brian - przygotuj dla nas łódź. Charlie - idź za mną, bo nie masz nic do powiedzenia w tej sprawie.";
 				link.l1 = "Żegnajcie. Wszyscy.";
 				link.l1.go = "DTSG_Kortni_VizyvaemKnippel_13";
 			}

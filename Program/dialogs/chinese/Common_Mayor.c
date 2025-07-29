@@ -162,7 +162,7 @@ void ProcessDialogEvent()
 				npchar.quest.meeting = "1"; // 翻译: // patch-6
 				break;
 			}			
-			//<—— 翻译: // 加斯科涅的负担
+			//< —翻译: // 加斯科涅的负担
 			//--> 翻译: // Sinistra, 老鼠的折磨
 			if (CheckAttribute(pchar, "questTemp.TK_TravlyaKrys") && npchar.city == "FortFrance")
 			{
@@ -217,7 +217,7 @@ void ProcessDialogEvent()
 				link.l1.go = "Portugal"; 
 				break;
 			}			
-			//<—— 翻译: // 葡萄牙人
+			//< —翻译: // 葡萄牙人
             
             if (npchar.quest.meeting == "0")
 			{
@@ -273,7 +273,7 @@ void ProcessDialogEvent()
                         AddCharacterExpToSkill(GetMainCharacter(), "Cannons", 200);
                         //--> 翻译: // 谣言
                         SiegeRumour("他们说你帮助我们击退了" + NationNameSK(sti(aData.nation)) + "中队, 保卫了我们的殖民地! 我们感谢你, " + GetAddress_Form(NPChar) + "。 ", aData.Colony, sti(aData.conation), -1, 15, 3);
-			            //<—— 翻译: // 谣言
+			            //< —翻译: // 谣言
                         DeleteAttribute(aData, "PlayerHelpMayor");
                         DeleteAttribute(aData, "HelpColony");
                         dialog.text = "哦, 是你, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + ", 很高兴见到你。 给我们殖民地的好消息 - 我们成功击退了" + NationNameSK(sti(aData.nation)) + "入侵者。 你也有功劳, 所以这是你的奖励 - " + (sti(aData.iSquadronPower)*1500) + "八里亚尔。 给你。 ";
@@ -294,7 +294,7 @@ void ProcessDialogEvent()
 								break;
 							}
 						}
-						//<—— 翻译: // 发放任务在妓院找戒指    				
+						//< —翻译: // 发放任务在妓院找戒指    				
 						dialog.text = RandPhraseSimple("哦, 又是你? 这次你想从我这里得到什么? ",
                                       "你在干扰我处理城市事务。 你想要什么, " + GetAddress_Form(NPChar) + "? ");
 						if (npchar.city != "Panama") // 翻译: // Addon-2016 Jason
@@ -382,7 +382,7 @@ void ProcessDialogEvent()
         						link.l5.go = "TakeRing_S3";
 							}
 						}
-						//<<—— 翻译: // 上交在妓院找到的戒指 
+						//<< —翻译: // 上交在妓院找到的戒指 
 						
 						//--> 翻译: // Jason, 生成2级邮政快递员
 						if (CheckAttribute(PChar, "questTemp.WPU.Postcureer.LevelUp"))
@@ -393,7 +393,7 @@ void ProcessDialogEvent()
 							link.l14.go = "Postcureer_LevelUp_ForAll";
 							}
 						}
-						//<—— 翻译: // 生成2级邮政快递员
+						//< —翻译: // 生成2级邮政快递员
 						
 						// 翻译: // Warship, 16.05.11。 任务"正义待售" -->
 						if(CheckAttribute(PChar, "GenQuest.JusticeOnSale.MayorWait") && CheckAttribute(PChar, "GenQuest.JusticeOnSale.CityId") && NPChar.location == PChar.GenQuest.JusticeOnSale.CityId + "_townhall")
@@ -468,7 +468,7 @@ void ProcessDialogEvent()
 			DialogExit();
 		break;
 		
-		// -----------------------—— 紧急原因 -----------------------------
+		// ----------------------- —紧急原因 -----------------------------
 		case "ReasonToFast_Mayor1":
 			dialog.text = "我洗耳恭听, 船长。 ";
 			link.l1 = "我想告诉你关于你的驻军一名军官和海盗之间的犯罪勾结... (解释情况) 。 ";
@@ -588,7 +588,7 @@ void ProcessDialogEvent()
 			Flag_PIRATE();
 		break;
 		
-		// -----------------------—— 紧急原因 -----------------------------
+		// ----------------------- —紧急原因 -----------------------------
 		
 		// --------------------------'大帆船'行动-----------------------------
 		case "CapComission_Mayor1":
@@ -728,7 +728,7 @@ void ProcessDialogEvent()
 		break;
 		// --------------------------'大帆船'行动-----------------------------
 		
-		// ------------------------—— 生成器 "遇难船员" ------------
+		// ------------------------ —生成器 "遇难船员" ------------
 		case "ShipWreck1":
 			if(iDay > 15)
 			{
@@ -777,9 +777,9 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddDialogExitQuest("ShipWreck_RemoveSailorsFromShore");
 		break;
-		// ------------------------—— 生成器 "遇难船员" ------------
+		// ------------------------ —生成器 "遇难船员" ------------
 		
-		// --------------------—— 在妓院找戒指 ----------------------------
+		// -------------------- —在妓院找戒指 ----------------------------
 		case "TakeRing_1":
 			dialog.text = "我知道你, 怎么说呢... " + GetSexPhrase("是妓院的常客","喜欢时不时去妓院") + "。 因此决定向你求助\n" +
 				"你知道, 不好意思承认, 但我最近在那里... ";
@@ -885,7 +885,7 @@ void ProcessDialogEvent()
 			CloseQuestHeader("SeekMayorsRing");
 			DeleteAttribute(pchar, "questTemp.different.TakeMayorsRing");
 		break;
-		// --------------------—— 在妓院找到戒指 ----------------------------
+		// -------------------- —在妓院找到戒指 ----------------------------
 
 		case "node_1":
             //殖民地被围攻 homo
@@ -926,7 +926,7 @@ void ProcessDialogEvent()
                     AddCharacterExpToSkill(GetMainCharacter(), "Cannons", 200);
                     //--> 谣言
                     SiegeRumour("据说您帮助我们击退了" + NationNameSK(sti(aData.nation)) + "的中队, 保卫了我们的殖民地! 我们感谢您, " + GetAddress_Form(NPChar) + "。 ", aData.Colony, sti(aData.conation), -1, 15, 3);
-		            //<—— 谣言
+		            //< —谣言
                     DeleteAttribute(aData, "PlayerHelpMayor");
                     DeleteAttribute(aData, "HelpColony");
                     dialog.text = "哦, 是您, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + ", 很高兴见到您。 好消息 - 我们成功击退了" + NationNameSK(sti(aData.nation)) + "的入侵者。 您也为此出了一份力, 这是您的奖励 - " + (sti(aData.iSquadronPower)*1500) + "八里亚尔。 给您。 ";
@@ -1004,7 +1004,7 @@ void ProcessDialogEvent()
 							link.l14.go = "Postcureer_LevelUp_ForAll";
 							}
 						}
-					//<—— 生成2级邮政信使
+					//< —生成2级邮政信使
 					
 					// --> Warship, 16.05.11。 任务"正义待售"
 					if(CheckAttribute(PChar, "GenQuest.JusticeOnSale.MayorWait") && CheckAttribute(PChar, "GenQuest.JusticeOnSale.CityId") && NPChar.location == PChar.GenQuest.JusticeOnSale.CityId + "_townhall")
@@ -1012,7 +1012,7 @@ void ProcessDialogEvent()
 						link.l15 = "大人, 我找到了一群走私者, 他们的头目最近被卫兵抓获。 现在他们正策划营救他。 他们的船'" + PChar.GenQuest.JusticeOnSale.ShipName + "'停泊在" + XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId + "Gen") + "。 ";
 						link.l15.go = "JusticeOnSale_1";
 					}
-					//<—— 正义待售
+					//< —正义待售
 					
         			if (GetPrisonerQty() > 0)
         			{
@@ -1072,7 +1072,7 @@ void ProcessDialogEvent()
                     AddCharacterExpToSkill(GetMainCharacter(), "Cannons", 200);
                     //--> 谣言
                     SiegeRumour("据说您帮助我们击退了" + NationNameSK(sti(aData.nation)) + "的中队, 保卫了我们的殖民地! 我们感谢您, " + GetAddress_Form(NPChar) + "。 ", aData.Colony, sti(aData.conation), -1, 15, 3);
-		            //<—— 谣言
+		            //< —谣言
                     DeleteAttribute(aData, "PlayerHelpMayor");
                     DeleteAttribute(aData, "HelpColony");
                     dialog.text = "哦, 是您, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + ", 很高兴见到您。 好消息 - 我们成功击退了" + NationNameSK(sti(aData.nation)) + "的入侵者。 您也为此出了一份力, 这是您的奖励 - " + (sti(aData.iSquadronPower)*1500) + "八里亚尔。 给您。 ";
@@ -1150,7 +1150,7 @@ void ProcessDialogEvent()
 							link.l14.go = "Postcureer_LevelUp_ForAll";
 							}
 						}
-					//<—— 生成2级邮政信使
+					//< —生成2级邮政信使
 					
 					// --> Warship, 16.05.11。 任务"正义待售"
 					if(CheckAttribute(PChar, "GenQuest.JusticeOnSale.MayorWait") && CheckAttribute(PChar, "GenQuest.JusticeOnSale.CityId") && NPChar.location == PChar.GenQuest.JusticeOnSale.CityId + "_townhall")
@@ -1158,7 +1158,7 @@ void ProcessDialogEvent()
 						link.l15 = "大人, 我找到了一群走私者, 他们的头目最近被卫兵抓获。 现在他们正策划营救他。 他们的船'" + PChar.GenQuest.JusticeOnSale.ShipName + "'停泊在" + XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId + "Gen") + "。 ";
 						link.l15.go = "JusticeOnSale_1";
 					}
-					//<—— 正义待售
+					//< —正义待售
 					
         			if (GetPrisonerQty() > 0)
         			{
@@ -1473,7 +1473,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 		break;
 
-		//--------------------------—— 市长任务生成器 -------------------------------
+		//-------------------------- —市长任务生成器 -------------------------------
 		case "work": 
             dialog.text = "这是一个错误。 请通知开发人员。 ";
         	link.l1 = "谢谢, 这是一个很棒的游戏! ";
@@ -1502,7 +1502,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				//<--费多特, 不是那个
-				//------—— 接受消灭帮派任务 ---------->>
+				//------ —接受消灭帮派任务 ---------->>
 				if (QuestName == "DestroyGang")
 				{
 					switch (pchar.GenQuest.DestroyGang)
@@ -1535,7 +1535,7 @@ void ProcessDialogEvent()
 						break;
 					}
 				}
-				//------—— 反信使 ---------->>
+				//------ —反信使 ---------->>
 				if (QuestName == "TakePostcureer")
 				{
 					switch (pchar.GenQuest.TakePostcureer)
@@ -1570,7 +1570,7 @@ void ProcessDialogEvent()
 						break;
 					}
 				}
-				//------—— 反走私 - 军火运输 ---------->>
+				//------ —反走私 - 军火运输 ---------->>
 				if (QuestName == "TakeArsenalship")
 				{
 					switch (pchar.GenQuest.TakeArsenalship)
@@ -1604,7 +1604,7 @@ void ProcessDialogEvent()
 						break;
 					}
 				}
-				//------—— 海岸警卫队 - 海盗 ---------->>
+				//------ —海岸警卫队 - 海盗 ---------->>
 				if (QuestName == "TakePirateship")
 				{
 					switch (pchar.GenQuest.TakePirateship)
@@ -1638,7 +1638,7 @@ void ProcessDialogEvent()
 						break;
 					}
 				}
-					//------—— 海岸警卫队 - 乘客 ---------->>
+					//------ —海岸警卫队 - 乘客 ---------->>
 				if (QuestName == "TakePassenger")
 				{
 					switch (pchar.GenQuest.TakePassenger)
@@ -1675,7 +1675,7 @@ void ProcessDialogEvent()
 						break;
 					}
 				}
-				//------—— 海关巡逻 ---------->>
+				//------ —海关巡逻 ---------->>
 				if (QuestName == "CustomPatrol")
 				{
 					switch (pchar.GenQuest.CustomPatrol)
@@ -1709,7 +1709,7 @@ void ProcessDialogEvent()
 						break;
 					}
 				}
-				//------—— 逃兵 ---------->>
+				//------ —逃兵 ---------->>
 				if (QuestName == "FindFugitive")
 				{
 					switch (pchar.GenQuest.FindFugitive)
@@ -1749,7 +1749,7 @@ void ProcessDialogEvent()
 						break;
 					}
 				}
-				//----—— 潜入敌对城市 ------------>>
+				//---- —潜入敌对城市 ------------>>
 				if (QuestName == "Intelligence")
 				{
 					switch (pchar.GenQuest.Intelligence)
@@ -1902,7 +1902,7 @@ void ProcessDialogEvent()
 				link.l1 = RandPhraseSimple("可惜...", "啊, 真可惜, " + GetAddress_FormToNPC(NPChar) + "。 ");
 				link.l1.go = "exit";
 			}
-		//--------------------------—— 市长任务生成器 -------------------------------
+		//-------------------------- —市长任务生成器 -------------------------------
 		break;
 
 		case "sell_prisoner":
@@ -2004,7 +2004,7 @@ void ProcessDialogEvent()
                 Link.l1.go = "levasser";
 				break;
 			}
-			// <—— 勒瓦瑟
+			// < —勒瓦瑟
 			// fix 从每天5次掠夺 -->
             if (!CheckNPCQuestDate(npchar, "GrabbingTownDate"))
 			{
@@ -2061,7 +2061,7 @@ void ProcessDialogEvent()
                 bOk = !bWorldAlivePause || bBettaTestMode;
 				if (isMainCharacterPatented() && bOk && !CheckAttribute(&colonies[iColony], "notCaptured")) //不让占领殖民地
 				{
-					// 恢复专利国家
+					// 恢复许可证国家
 					PChar.nation = GetBaseHeroNation();
 					
 					dialog.Text = "前所未有的无礼! 你怎么敢攻击属于" + NationNameGenitive(sti(NPChar.nation)) + "的殖民地? ! 你将为你洒下的鲜血和对我们国家造成的损害付出高昂的代价。 ";
@@ -2094,7 +2094,7 @@ void ProcessDialogEvent()
 			LAi_group_SetCheck("EnemyFight", "LevasserDiedResidence");
 			AddDialogExitQuest("MainHeroFightModeOn");	
         break;
-		// <—— 勒瓦瑟
+		// < —勒瓦瑟
         
         case "City":
             ChangeCharacterHunterScore(GetMainCharacter(), NationShortName(sti(NPChar.nation)) + "hunter", 40);
@@ -2118,7 +2118,7 @@ void ProcessDialogEvent()
         break;
 
         case "City_patent":
-			ChangeCharacterComplexReputation(GetMainCharacter(),"nobility", -20); // 我们是海盗, 但我们有专利
+			ChangeCharacterComplexReputation(GetMainCharacter(),"nobility", -20); // 我们是海盗, 但我们有许可证
 			dialog.Text = "你这次赢了, 但要知道我们的中队很快就会到达, 它会把你夷为平地! ";
 			Link.l1 = "闭嘴。 从现在起这个城镇属于我;至于你的中队 - 我会把它直接送到地狱。 孩子们, 护送前总督到他的新'住所', 呵呵。 ";
 			Link.l1.go = "City";
@@ -2321,7 +2321,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			pchar.GenQuest.TakePostcureer.City = FindQuestCity(npchar, "enemy",sti(pchar.GenQuest.TakePostcureer.Nation), false, false);
-			// <—— legendary edition
+			// < —legendary edition
 			pchar.GenQuest.TakePostcureer.Island = GetArealByCityName(pchar.GenQuest.TakePostcureer.City);
 			pchar.GenQuest.TakePostcureer.Terms = GetMaxDaysFromIsland2Island(Islands[GetCharacterCurrentIsland(PChar)].id, pchar.GenQuest.TakePostcureer.Island)+5;
 			pchar.GenQuest.TakePostcureer.LoginDay = sti(pchar.GenQuest.TakePostcureer.Terms)-1;
@@ -2389,7 +2389,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			pchar.GenQuest.TakeArsenalship.City = FindQuestCity(npchar, "enemy",sti(pchar.GenQuest.TakeArsenalship.Nation), false, false);
-			// <—— legendary edition
+			// < —legendary edition
 			pchar.GenQuest.TakeArsenalship.Island = GetArealByCityName(pchar.GenQuest.TakeArsenalship.City);
 			pchar.GenQuest.TakeArsenalship.Terms = GetMaxDaysFromIsland2Island(Islands[GetCharacterCurrentIsland(PChar)].id, pchar.GenQuest.TakeArsenalship.Island)+5;
 			pchar.GenQuest.TakeArsenalship.LoginDay = sti(pchar.GenQuest.TakeArsenalship.Terms)-1;
@@ -2684,10 +2684,10 @@ void ProcessDialogEvent()
 			//--> 谣言
 			AddSimpleRumour(RandPhraseSimple("你知道吗, 总督" + GetFullName(npchar) + "对船长" + GetMainCharacterNameGen() + "的速度不太满意。 ", 
 				"总督" + GetFullName(npchar) + "对船长" + GetMainCharacterNameDat() + "不太满意, " + GetSexPhrase("他","她") + "遵守了他的命令, 但没有及时..."), sti(npchar.nation), 5, 1);
-			//<—— 谣言
+			//< —谣言
 		break;
 		
-		// ------------—— 市长所有任务的通用集合 ------------------
+		// ------------ —市长所有任务的通用集合 ------------------
 		case "All_disagree":
 			dialog.text = "你让我失望! ";
 			link.l1 = "对不起, " + GetAddress_FormToNPC(NPChar) + ", 但我不能接受这个工作。 ";
@@ -2711,7 +2711,7 @@ void ProcessDialogEvent()
 			AddSimpleRumour(LinkRandPhrase("你知道吗, 总督" + GetFullName(npchar) + "对船长" + GetMainCharacterNameDat() + "非常不满。 想象一下 - 他没有及时完成任务! ", 
 				"总督" + GetFullName(npchar) + "有点生气, 因为船长" + GetFullName(pchar) + "努力了, 但未能及时完成任务。 太糟糕了...", 
 				"我听说总督" + GetFullName(npchar) + "对你非常不满, 船长" + GetFullName(pchar) + ", 因为你在试图完成他的任务时没有赶上最后期限。 "), sti(npchar.nation), 5, 1);
-			//<—— 谣言
+			//< —谣言
 			ChangeCharacterComplexReputation(pchar,"nobility", -4);
 			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), -1);
 			DeleteAttribute(pchar, "GenQuest." + QuestName);
@@ -2730,7 +2730,7 @@ void ProcessDialogEvent()
 			AddSimpleRumour(LinkRandPhrase("你知道吗, 总督" + GetFullName(npchar) + "对船长" + GetMainCharacterNameDat() + "非常不满。 想象一下, " + GetSexPhrase("他原来是个彻头彻尾的懦夫","她原来是个彻头彻尾的懦夫") + "! ", 
 				"总督" + GetFullName(npchar) + "有点生气, 因为船长" + GetFullName(pchar) + "接受了这份工作, 但由于自己的犹豫不决而未能完成。 嘿嘿, 船长们会怎么做! ", 
 				"我听说总督" + GetFullName(npchar) + "对你非常不满, 船长" + GetFullName(pchar) + "。 他们说你只不过是个懦夫" + GetSexPhrase("","") + "..."), sti(npchar.nation), 5, 1);
-			//<—— 谣言
+			//< —谣言
 			ChangeCharacterComplexReputation(pchar,"nobility", -6);
 			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), -1);
 			DeleteAttribute(pchar, "GenQuest." + QuestName);
@@ -2752,7 +2752,7 @@ void ProcessDialogEvent()
 			AddSimpleRumour(LinkRandPhrase("你知道吗, 总督" + GetFullName(npchar) + "一直在称赞" + GetSexPhrase("一位船长","一位年轻女士") + " " + GetMainCharacterNameGen() + "的勤奋。 ", 
 				"总督" + GetFullName(npchar) + "在称赞船长" + GetMainCharacterNameGen() + ", " + GetSexPhrase("他","她") + "在处理总督的任务时总是表现完美。 我要说, 这是总督不可替代的人...", 
 				"我听说总督" + GetFullName(npchar) + "对你非常满意, 船长" + GetFullName(pchar) + "。 他将你定义为一个非常细心和彻底的军官。 听到这个很高兴, 船长..."), sti(npchar.nation), 5, 1);
-			//<—— 谣言
+			//< —谣言
 		break;
 		case "All_Execute_1":
 			QuestName = pchar.GenQuest.questName;
@@ -2775,7 +2775,7 @@ void ProcessDialogEvent()
 			if (!CheckAttribute(pchar, "GenQuest.MayorQuestsList." + sTemp)) pchar.GenQuest.MayorQuestsList.(sTemp) = 0;
 			pchar.GenQuest.MayorQuestsList.(sTemp) = sti(pchar.GenQuest.MayorQuestsList.(sTemp)) + 1;
 		break;
-//<—— homo围攻
+//< —homo围攻
 		case "siege_task":
             makearef(aData, NullCharacter.Siege);
             aData.HelpColony = true;
@@ -2851,7 +2851,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sharlie_5":
-			// <—— legendary edition
+			// < —legendary edition
 			DialogExit();
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 			AddCharacterExpToSkill(pchar, "Leadership", 10);
@@ -2871,7 +2871,7 @@ void ProcessDialogEvent()
 				DelLandQuestMark(npchar);
 			}
 		break;
-		//<—— 加斯科涅人的负担
+		//< —加斯科涅人的负担
 		
 		//Sinistra --> 折磨老鼠		
 		case "TK_TravlyaKrys":
@@ -2953,7 +2953,7 @@ void ProcessDialogEvent()
 			PChar.quest.TK_Potopil.win_condition.l1.character = "TK_Heiter";
 			PChar.quest.TK_Potopil.win_condition = "TK_Potopil";
 		break;
-		//<—— 折磨老鼠
+		//< —折磨老鼠
 		
 		//Jason --> 葡萄牙人
 		case "Portugal":
@@ -3034,7 +3034,7 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = "First time";
 			pchar.quest.MartiniqueGovernorOver.over = "yes"; //移除计时器
 		break;
-		//<—— 葡萄牙人
+		//< —葡萄牙人
 		
 		// Warship, 16.05.11。 生成 "正义待售".
 		case "JusticeOnSale_1":
@@ -3137,7 +3137,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(PChar, "GenQuest.JusticeOnSale");
 			DialogExit();
 		break;
-		//<—— 正义待售
+		//< —正义待售
 		
 			//--> Jason 帆船赛
 		case "Regata":
@@ -3211,7 +3211,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "bussol");
 			
 			dialog.text = "此外, 你还将获得一套有价值的奖品: 传奇的托莱多钢制细剑'阿索莱达', 一套米兰盔甲, 和一个精美的指南针。 都是你的了。 ";
-			// <—— legendary edition
+			// < —legendary edition
 			link.l1 = "我很高兴, 先生。 真的, 我没想到会有这样的慷慨。 ";
 			link.l1.go = "Regata_complete_2";
 		break;
@@ -3226,7 +3226,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "First time";
 		break;
-		//<—— 帆船赛
+		//< —帆船赛
 	}
 }
 

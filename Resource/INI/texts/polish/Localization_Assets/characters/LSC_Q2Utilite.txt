@@ -90,7 +90,7 @@ Mary Celeste
 
 LSC_Q2Utilite_19
 {
-The ship is empty
+Statek jest pusty
 }
 
 LSC_Q2Utilite_20

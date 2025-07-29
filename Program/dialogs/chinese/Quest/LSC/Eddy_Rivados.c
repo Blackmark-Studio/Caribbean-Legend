@@ -20,7 +20,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Friend":
-			dialog.text = "我很高兴迎接里瓦多斯的朋友, 也是个好人! 奇米塞特告诉我你为他做的事。 所有里瓦多人, 包括我, 现在都欠你人情。 请允许我自我介绍 --爱德华.布莱克, 也被称为黑埃迪, 里瓦多斯帮的首领。 ";
+			dialog.text = "我很高兴迎接里瓦多斯的朋友, 也是个好人! 奇米塞特告诉我你为他做的事。 所有里瓦多人, 包括我, 现在都欠你人情。 请允许我自我介绍 —爱德华.布莱克, 也被称为黑埃迪, 里瓦多斯帮的首领。 ";
 			link.l1 = ""+GetFullName(pchar)+"。 不过我想奇米塞特已经告诉过你关于我的事了。 他答应过会告诉你... ";
 			link.l1.go = "Friend_1";
 		break;
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 			npchar.quest.rivados = "true";
 			NextDiag.TempNode = "Total_info";
 		break;
-		// <—— 信息块
+		// < —信息块
 		
 		case "capper":
 			dialog.text = "白人, 你在里瓦多斯的地盘上需要什么? ";
@@ -206,7 +206,7 @@ void ProcessDialogEvent()
 				LAi_warrior_SetStay(sld, true);
 			}
 			AddSimpleRumourCityTip("你听到最新消息了吗? 里瓦多斯的傲慢已经失控, 他们袭击了舰队司令的监狱, 释放了他们的巫师! ", "LostShipsCity", 3, 2, "LSC", "");
-			AddSimpleRumourCityTip("想想看 --那些傲慢的里瓦多斯竟敢袭击塔塔罗斯! 他们说狱卒查德.卡珀已经逃到独角鲸帮那里去了... ", "LostShipsCity", 3, 2, "LSC", "");
+			AddSimpleRumourCityTip("想想看 —那些傲慢的里瓦多斯竟敢袭击塔塔罗斯! 他们说狱卒查德.卡珀已经逃到独角鲸帮那里去了... ", "LostShipsCity", 3, 2, "LSC", "");
 			AddSimpleRumourCityTip("这是最大的无礼, 不是吗? 袭击舰队司令的军事设施! 是的, 看起来黑埃迪越来越强大了... ", "LostShipsCity", 3, 2, "LSC", "");
 		break;
 		

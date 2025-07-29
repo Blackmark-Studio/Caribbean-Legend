@@ -119,8 +119,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "FMQN_7":
             DelLandQuestMark(npchar);
-            dialog.text = "我们一直在等你, " +GetFullName(pchar)+ "先生。 请允许我对您消灭危险的英国袭击队的行为表示感谢。 接受这一万比索。 此外: 200船丝绸将装载到您的船舱, 还有一份非常特别的奖励 --荷兰西印度贸易公司三年许可证。 我希望您知道这是一份极其宝贵的文件? ";
-            link.l1 = "当然! 三年许可证 --这肯定很重要。 ";
+            dialog.text = "我们一直在等你, " +GetFullName(pchar)+ "先生。 请允许我对您消灭危险的英国袭击队的行为表示感谢。 接受这一万比索。 此外: 200船丝绸将装载到您的船舱, 还有一份非常特别的奖励 —荷兰西印度贸易公司三年许可证。 我希望您知道这是一份极其宝贵的文件? ";
+            link.l1 = "当然! 三年许可证 —这肯定很重要。 ";
             link.l1.go = "FMQN_8";
         break;
         
@@ -158,7 +158,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "tomas_3":
             dialog.text = "(结结巴巴地) 什... 什么... 关... 关于什... 什么 kind of 帮... 帮忙? ";
-            link.l1 = "在岛的深处有一个争端焦点 --一个盐矿。 我知道那里不仅有矿工和奴隶, 还有荷兰士兵, 全副武装。 他们一定是公司卫队的, 对吧, 先生? 我会让他们投降, 否则我会在他们拒绝时使用武力。 我需要一个向导, 带我去矿场。 给我找这样一个向导。 ";
+            link.l1 = "在岛的深处有一个争端焦点 —一个盐矿。 我知道那里不仅有矿工和奴隶, 还有荷兰士兵, 全副武装。 他们一定是公司卫队的, 对吧, 先生? 我会让他们投降, 否则我会在他们拒绝时使用武力。 我需要一个向导, 带我去矿场。 给我找这样一个向导。 ";
             link.l1.go = "tomas_4";
         break;
         

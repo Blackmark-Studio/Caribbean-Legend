@@ -1,6 +1,6 @@
 quests_reaction_1
 {
-军官 @<GetFullName(npchar)> 在船上。 
+副官 @<GetFullName(npchar)> 在船上。 
 }
 
 quests_reaction_2
@@ -10,7 +10,7 @@ quests_reaction_2
 
 quests_reaction_3
 {
-叛军的尸体被抛入海中, 进行他们最后的航行
+叛乱者的尸体被抛入海中 开始他们最后的航程。
 }
 
 quests_reaction_4
@@ -49,7 +49,7 @@ quests_reaction_10
 
 quests_reaction_11
 {
-, 其中在~
+, 在~
 }
 
 quests_reaction_12

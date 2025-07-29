@@ -49,7 +49,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         // 任务"导航星"==>
         case "Sotta1":
-            dialog.text = "我没和他说上话, 但我看到了他的船 --一艘重型大帆船。 在这片水域独自航行很危险, 但索塔没有护航就出海了。 ";
+            dialog.text = "我没和他说上话, 但我看到了他的船 —一艘重型大帆船。 在这片水域独自航行很危险, 但索塔没有护航就出海了。 ";
             link.l1 = "可能是在追逐每一枚金币, 能省则省吧。 好了, 不打扰你了。 日安。 ";
             link.l1.go = "Exit";
             
@@ -59,7 +59,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "Sotta1_1":
-            dialog.text = "是啊, 真难以置信! 但先生, 别轻信传言。 我见过他, 就像现在见你一样清楚。 他抓住卢特是好事, 但为什么要装成商人呢? 他的举止像个军人。 我总能看出来 --我有个亲戚当了好几年兵。 ";
+            dialog.text = "是啊, 真难以置信! 但先生, 别轻信传言。 我见过他, 就像现在见你一样清楚。 他抓住卢特是好事, 但为什么要装成商人呢? 他的举止像个军人。 我总能看出来 —我有个亲戚当了好几年兵。 ";
             link.l1 = "有意思。 好吧, 每个人都有自己的秘密。 我该走了。 谢谢你的见解。 ";
             link.l1.go = "Exit";
             
@@ -69,7 +69,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "Lutter1":
-            dialog.text = "我已经见过那个人了。 很难相信这就是多年来恐吓我们商人的那个海盗。 他最初是怎么当上首领的? 我看到押送他的士兵 --又喊又哭又笑。 一个疯子。 ";
+            dialog.text = "我已经见过那个人了。 很难相信这就是多年来恐吓我们商人的那个海盗。 他最初是怎么当上首领的? 我看到押送他的士兵 —又喊又哭又笑。 一个疯子。 ";
             link.l1 = "也许失败和即将到来的死亡对他来说太沉重了。 但没关系。 再见! ";
             link.l1.go = "Exit";
             
@@ -79,7 +79,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "Lutter1_1":
-            dialog.text = "是的, 我也在庆祝 --很多同胞死在他手里。 不幸的人失去了父亲。 兄弟或儿子 --你明白的。 那种野蛮行径持续太久了! 要我说, 马特可能是近年来最幸运的海盗之一。 ";
+            dialog.text = "是的, 我也在庆祝 —很多同胞死在他手里。 不幸的人失去了父亲。 兄弟或儿子 —你明白的。 那种野蛮行径持续太久了! 要我说, 马特可能是近年来最幸运的海盗之一。 ";
             link.l1 = "运气迟早会用完的。 回头见。 ";
             link.l1.go = "Exit";
             

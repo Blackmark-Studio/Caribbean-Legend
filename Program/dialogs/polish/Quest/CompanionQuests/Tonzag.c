@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "startoff":
-			dialog.text = "Kapitánie de Mor! Witaj na Tortudze!";
+			dialog.text = "Kapitanie de Maure! Witaj na Tortudze!";
 			link.l1 = "Dzień dobry, poruczniku. Cieszysz się widokiem morza ze swoimi przyjaciółmi?";
 			link.l1.go = "startoff_joke";
 			link.l2 = "Odpuść, poruczniku.";
@@ -35,7 +35,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "startoff_joke":
-			dialog.text = "Kapitanie, twoja reputacja cię wyprzedza, a wyżsi rangą postanowili zorganizować małą wycieczkę po urokach naszej pięknej wyspy Tortuga. Zaczynamy od razu - od więziennych cel miasta. Twoi oficerowie są również zaproszeni.";
+			dialog.text = "Kapitanie, twoja reputacja cię wyprzedza, a wyżsi rangą postanowili zorganizować dla ciebie małą wycieczkę po urokach naszej pięknej wyspy. Zaczynamy od razu - od więziennych cel miasta. Twoi oficerowie są również zaproszeni.";
 			link.l1 = "Poruczniku, nie jestem jakimś parszywym przemytnikiem, którego złapałeś na plaży. Żadnych żartów, proszę. Wyjaśnij sprawy porządnie.";
 			link.l1.go = "startoff_joke_1";
 			link.l2 = "W takim razie nie traćmy czasu! Prowadź, poruczniku!";
@@ -101,7 +101,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_after_victory":
-			dialog.text = "Zwycięstwo, Kapitanie! Grupa desantowa została zniszczona, wróg postanowił się wycofać i skierował się na południe. Stan statku jest zadowalający. Żywa załoga: "+GetCrewQuantity(pchar)+"ludzie. Raport zakończony!";
+			dialog.text = "Zwycięstwo, Kapitanie! Grupa desantowa została zniszczona, wróg postanowił się wycofać i skierował się na południe. Stan statku jest zadowalający. Żywa załoga: "+GetCrewQuantity(pchar)+" ludzie. Koniec raportu!";
 			link.l1 = "Dziękuję! Rum dla wszystkich i wzmocnijcie straż, dopóki nie dotrzemy do portu!";
 			link.l1.go = "tonzag_after_victory_1";
 		break;
@@ -115,7 +115,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "killer":
-			dialog.text = "A oto i sam człowiek! Czy widziałeś tę krwawą masakrę na zewnątrz? To wszystko twoja robota, zdrajco! Ale odpowiesz za wszystko: za Porto Bello, za Gruoh i za tę kopalnię!";
+			dialog.text = "A oto i sam człowiek! Czy widziałeś tę krwawą masakrę na zewnątrz? To wszystko twoja robota, zdrajco! Ale odpowiesz za wszystko: za Portobelo, za Gruoh i za tę kopalnię!";
 			link.l1 = "Zaczekaj, co to ma niby...";
 			link.l1.go = "exit";
 			
@@ -124,13 +124,13 @@ void ProcessDialogEvent()
 		
 		case "mine_head":
 			dialog.text = "";
-			link.l1 = "Agh!  To nie wróży dobrze...";
+			link.l1 = "Agh! To nie wróży dobrze...";
 			link.l1.go = "mine_head_1";
 		break;
 		
 		case "mine_head_1":
 			dialog.text = "San Santiago, miej mnie w opiece! Łotrostwo! Jakaż bestia mogła popełnić taki czyn? Odpowiedz, señor!";
-			link.l1 = "Spokojnie, señor! Najpierw się przedstaw! Tak, tutaj miała miejsce potworna rzeź, ale ludzie, którzy jej dokonali, już nie żyją. Osobiście 'ozdobiłem' kopalnie ich szczątkami...";
+			link.l1 = "Spokojnie, señor! Najpierw się przedstaw! Tak, miała tu miejsce potworna rzeź, ale ludzie, którzy jej dokonali, już nie żyją. Osobiście 'ozdobiłem' kopalnie ich szczątkami...";
 			link.l1.go = "mine_head_2";
 		break;
 		
@@ -174,13 +174,13 @@ void ProcessDialogEvent()
 		
 		case "alonso_2":
 			dialog.text = "Ha-ha, nie, Kapitanie. Uwielbiam tę robotę, ale wygląda na to, że masz nowego mistrza rzemiosła na pokładzie!";
-			link.l1 = "Herkules? Skąd wziąłeś ten pomysł?";
+			link.l1 = "Herkule? Skąd wziąłeś ten pomysł?";
 			link.l1.go = "alonso_3";
 		break;
 		
 		case "alonso_3":
 			dialog.text = "Cóż, kapitanie, starzec przyniósł swoje narzędzia właśnie na tę okazję i już je wykorzystał. Nawet nie będę musiał wyciągać swoich. Ha!";
-			link.l1 = "Rozumiem... Jak byliście!";
+			link.l1 = "Rozumiem...";
 			link.l1.go = "exit";
 			
 			AddDialogExitQuestFunction("Tonzag_DrinkAgain");
@@ -199,25 +199,25 @@ void ProcessDialogEvent()
 		break;
 		
 		case "captive_2":
-			dialog.text = "Nie mogę wiedzieć, Kapitanie, a nawet gdybym wiedział, takich rzeczy nie ujawniamy.";
+			dialog.text = "Nie wiem, Kapitanie, a nawet gdybym wiedział, takich rzeczy się nie ujawnia.";
 			link.l1 = "W takim razie powiedz mi coś jeszcze, a potem możesz iść, gdzie tylko chcesz. Masz moje słowo.";
 			link.l1.go = "captive_3";
 		break;
 		
 		case "captive_3":
-			dialog.text = "Ot tak po prostu? Dobrze, kapitanie, zadawaj swoje pytania i pozwól mi odejść. Obiecuję, że nie wrócę do Ligi, nawet gdybym mógł.";
+			dialog.text = "Tak po prostu? Dobrze, kapitanie, zadawaj swoje pytania i pozwól mi odejść. Obiecuję, że nie wrócę do Ligi, nawet gdybym mógł.";
 			link.l1 = "Dlaczego tak się uwziąłeś na Hercule'a? Zbyt wiele kłopotów jak na jednego dezertera.";
 			link.l1.go = "captive_4";
 		break;
 		
 		case "captive_4":
-			dialog.text = "Co mu powiedziałeś, psie? Wszystko nie jest takie, jak się wydaje, Kapitanie! Liga jest w ciągłym ruchu, kody się zmieniają, pracodawcy się różnią. Chcesz odejść? Jasna sprawa! Wyjście jest zamknięte tylko dla najwyższych oficerów, a ten łotr nigdy nim nie był. Jego żona, owszem, ale szanowaliśmy Madame Tonzag zbyt mocno, by nie zrobić dla niej wyjątku.";
+			dialog.text = "Co mu powiedziałeś, psie? Wszystko nie jest takie, jak się wydaje, Kapitanie! Liga jest w ciągłym ruchu, zasady się zmieniają, pracodawcy się różnią. Chcesz odejść? Jasna sprawa! Wyjście jest zamknięte tylko dla najwyższych oficerów, a ten łotr nigdy nim nie był. Jego żona, owszem, ale szanowaliśmy Madame Tonzag zbyt mocno, by nie zrobić dla niej wyjątku.";
 			link.l1 = "W takim razie dlaczego?";
 			link.l1.go = "captive_5";
 		break;
 		
 		case "captive_5":
-			dialog.text = "Była sprawa w Porto Bello... To było coś dużego. Widzisz, twój przyjaciel nie tylko odszedł, nie tylko zerwał kontrakt, nie tylko zabił grupę, która przyszła dokończyć jego robotę. On wywołał prawdziwą masakrę na ulicach, znacznie komplikując nasze relacje z Kastylijczykami. Rzadki piracki rajd sieje tyle terroru, co ten, którego doświadczyli dobrzy katolicy tamtego dnia. Do diabła, może nawet byłem pod wrażeniem, gdyby ktoś inny to zrobił.";
+			dialog.text = "Była sprawa w Portobelo... To było coś dużego. Widzisz, twój przyjaciel nie tylko odszedł, nie tylko zerwał kontrakt, nie tylko zabił grupę, która przyszła dokończyć jego robotę. On wywołał prawdziwą masakrę na ulicach, znacznie komplikując nasze relacje z Kastylijczykami. Rzadki piracki rajd sieje tyle terroru, co ten, którego doświadczyli dobrzy katolicy tamtego dnia. Do diabła, może nawet byłbym pod wrażeniem, gdyby ktoś inny to zrobił.";
 			link.l1 = "Kolejna masakra? Jakże interesujące. Kontynuuj.";
 			link.l1.go = "captive_6";
 		break;
@@ -229,7 +229,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "captive_7":
-			dialog.text = "We were forced to do it. Getting rid of that scum required too much expense; we needed gold. All because of him... But the attempted assassination failed, and I returned to Los Teques to tidy up a bit... How did you figure out where to look?";
+			dialog.text = "Byliśmy zmuszeni to zrobić. Pozbycie się tej szumowiny wymagało zbyt dużych wydatków; potrzebowaliśmy złota. Wszystko przez niego... Ale próba zamachu się nie powiodła i wróciłem do Los Teques, żeby trochę posprzątać... Jak zorientowałeś się, gdzie szukać?";
 			link.l1 = "To nie ma znaczenia. Muszę spotkać się z waszym przywódcą. Chcę osobiście wyjaśnić to nieporozumienie, ponieważ gwarancje od waszego tajemniczego protektora mogą wygasnąć w każdej chwili.";
 			link.l1.go = "captive_8";
 		break;
@@ -254,7 +254,7 @@ void ProcessDialogEvent()
 			dialog.text = "Odpowiedziałem na wszystkie twoje pytania, kapitanie. Dotrzymaj słowa.";
 			link.l1 = "Pozwalam ci odejść. Zejdź z mojego statku i módl się, żeby nie czekała na mnie zasadzka w Caracas.";
 			link.l1.go = "captive_spare";
-			link.l2 = "Dzięki za interesującą rozmowę. Oskarżanie Hercule'a o spowodowanie masakry po tym, co widziałem w kopalni, to jednak przesada. Do piekła, gdzie twoje miejsce.";
+			link.l2 = "Dzięki za interesującą rozmowę. Oskarżanie Hercule'a o spowodowanie masakry po tym, co widziałem w kopalni, to jednak przesada. Marsz do piekła, gdzie twoje miejsce.";
 			link.l2.go = "captive_execute";
 		break;
 		
@@ -281,20 +281,20 @@ void ProcessDialogEvent()
 		case "ostin":
 			StartQuestMovie(true, false, true);
 			PlaySound("VOICE\" + LanguageGetLanguage() + "\OliverTrast02.wav");
-			dialog.text = "Charles de Maure. Hercule. Nie wyjdziesz stąd żywy.";
-			link.l1 = "Zawsze miły sposób na rozpoczęcie rozmowy. Naprawdę potrzebujesz tego wszystkiego?";
+			dialog.text = "Charles de Maure. Hercule. Nie wyjdziecie stąd żywi.";
+			link.l1 = "Bardzo miły sposób na rozpoczęcie rozmowy. Naprawdę potrzebujesz tego wszystkiego?";
 			link.l1.go = "ostin_1";
 		break;
 		
 		case "ostin_1":
-			dialog.text = "Z tobą, Kapitanie, sprawy nie są tak proste. Widzisz, nasz nowy patron nalegał, aby cię zostawić w spokoju...i niech sobie te prośby wsadzi tam, gdzie słońce nie dochodzi! Nienawidzę takich jak ty! Żeglujecie pod swoimi pięknymi, białymi żaglami, myśląc, że lód nie stopi się wam w ustach. Ale kiedy stal mojej klingi wchodzi w was, wszyscy wrzeszczycie jak dziewczynki. Uwielbiam to, Charles, powiem ci! Dawno tego nie robiłem...a teraz mam cię tuż przed sobą, przystojniaku.";
-			link.l1 = "Jesteś chory, kamracie.";
+			dialog.text = "Z tobą, Kapitanie, sprawy nie są tak proste. Widzisz, nasz nowy patron nalegał, aby cię zostawić w spokoju... i niech sobie te prośby wsadzi tam, gdzie słońce nie dochodzi! Nienawidzę takich jak ty! Żeglujecie pod swoimi pięknymi, białymi żaglami, myśląc, że lód nie stopi się wam w ustach. Ale kiedy stal mojej klingi wchodzi w was, wszyscy wrzeszczycie jak dziewczynki. Uwielbiam to, Charles, powiem ci! Dawno tego nie robiłem... a teraz mam cię tuż przed sobą, przystojniaku.";
+			link.l1 = "Jesteś chory, kamracie. Ciebie to nawet szkoda przeszywać ostrzem... Powiem więc krótko: Ja i Hercule wychodzimy stąd w tej chwili, a ty i twoi przełożeni zapominacie o całej sprawie. Wyślesz choćby jednego zabójce na mnie, bądź Hercule'a, a będe wiedzieć gdzie cię szukać.";
 			link.l1.go = "ostin_2";
 		break;
 		
 		case "ostin_2":
 			dialog.text = "Nie, nie mogę cię puścić. Z twoim przyjacielem, z drugiej strony, to jest o wiele prostsze - moi chłopcy nie potrzebują go, ale wciąż są niektórzy z jego starych mierzalnych kolegów z Ligi, którzy nie są do końca przekonani o skuteczności moich metod... Zbyt przyzwyczajeni do pracy czysto, za czyste dublony, od czystej Kompanii. Ale znam właśnie coś, co zmieni ich zdanie - głowa jednego śmiałego grzesznika na tacy, ha-ha!";
-			link.l1 = "Nie wybrałeś odpowiedniego miejsca na to, wariacie. Naprawdę zamierzasz rozpocząć bitwę w kościele?";
+			link.l1 = "Nie wybrałeś odpowiedniego miejsca, ty wariacie. Naprawdę zamierzasz rozpocząć bitwę w kościele?";
 			link.l1.go = "ostin_3";
 		break;
 		
@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 		
 		case "ostin_4":
 			dialog.text = "Żryj ziemię, ty mały gnojku!";
-			link.l1 = "";
+			link.l1 = "Wzajemnie!";
 			link.l1.go = "exit";
 			
 			AddDialogExitQuestFunction("Tonzag_ChurchVystrel");

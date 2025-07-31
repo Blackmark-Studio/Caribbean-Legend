@@ -404,14 +404,14 @@ LSC Town		{洛科-里费特街道}
 
 Ava Cabin		{盖伦帆船'夏娃号'}
 Caroline cabin	{护卫舰'卡罗莱纳号'}
-CeresSmithy cabin	{快速帆船'刻瑞斯铁匠号'}
+CeresSmithy cabin	{福禄特帆船'刻瑞斯铁匠号'}
 EsmeraldaStoreBig cabin	{盖伦帆船'埃斯梅拉达号'}
 FenixPlatform cabin	{'凤凰号'平台}
-FernandaDiffIndoor cabin	{快速帆船'费尔南达号'}
+FernandaDiffIndoor cabin	{福禄特帆船'费尔南达号'}
 FleuronTavern cabin	{卡拉维尔帆船'弗莱龙号'}
 FurieShipInside2 cabin	{小艇'狂怒号'}
 GloriaChurch cabin		{盖伦帆船'荣耀号'}
-PlutoStoreSmall cabin	{快速帆船'冥王星号'}
+PlutoStoreSmall cabin	{福禄特帆船'冥王星号'}
 ProtectorFisher cabin	{轻巡洋舰'守护者号'}
 SanAugustineResidence cabin	{战船'圣奥古斯丁号'}
 SanGabrielMechanic cabin	{三桅帆船'圣盖博号'}

@@ -347,7 +347,7 @@ itmdescr_knife_03
 德·蒙佩尔的家族武器: 一件有价值的物品, 适合在需要时超过成本出售或作为 家族徽章。 (+1 成功)
 }
 
-itmname_khopesh1 {霍佩什剑}
+itmname_khopesh1 {克赫帕什剑}
 itmdescr_khopesh1
 {
 一件充满古老力量的神圣武器, 渴求着献祭。 
@@ -483,7 +483,7 @@ itmdescr_shamshir
 波斯舍施尔弯刀, 专为骑兵战斗设计, 是沙漠中残酷战争的真实体现。 结合了切割效率和劈砍简单。 是喜欢圆周砍击者的最佳选择。 
 }
 
-itmname_lacrima_patris {祖国之泪}
+itmname_lacrima_patris {圣父之泪}
 itmdescr_lacrima_patris
 {
 一把装饰华丽的剑, 尽管外观礼仪性, 却拥有出色的战斗品质。 在虔诚的船长手中, 用正义对抗恶徒和异教徒时, 它会变得更加锋利, 迫使 "Holy Mercy(圣慈悲号)" 的加农炮射程更远。 
@@ -1186,10 +1186,10 @@ itmdescr_talisman14
 无惩罚, 无激活限制。 
 }
 
-itmname_talisman15	{守护符"黑色印记"}
+itmname_talisman15	{守护符"黑色标记"}
 itmdescr_talisman15
 {
-黑色印记的携带者立即被迷信、 传说和谣言包围, 这使舰队力量增加15%. 由"铁骑军" Cromwell 的骑兵的领巾制成。 
+黑色标记的携带者立即被迷信、 传说和谣言包围, 这使舰队力量增加15%. 由"铁骑军" Cromwell 的骑兵的领巾制成。 
 ~
 无惩罚, 可多次激活。 
 }

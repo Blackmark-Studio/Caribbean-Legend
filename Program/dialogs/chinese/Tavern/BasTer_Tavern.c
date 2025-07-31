@@ -24,18 +24,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             //--> 合法贸易
             if (CheckAttribute(pchar, "questTemp.TPZ_Tavern_2"))
             {
-                link.l1 = "好消息, " + npchar.name+ "。 我正好有能帮你摆脱困境的东西。 一百瓶上等葡萄酒和一百瓶朗姆酒。 有了这批货, 你的顾客又能沉浸在酒的海洋里了。 你准备好付款了吗? ";
-                link.l1.go = "TPZ_Tavern2_1";
+                link.l2 = "好消息, " + npchar.name+ "。 我正好有能帮你摆脱困境的东西。 一百瓶上等葡萄酒和一百瓶朗姆酒。 有了这批货, 你的顾客又能沉浸在酒的海洋里了。 你准备好付款了吗? ";
+                link.l2.go = "TPZ_Tavern2_1";
             }
             if (CheckAttribute(pchar, "questTemp.TPZ_Tavern_3"))
             {
-                link.l1 = "那么, " + npchar.name+ ", 你准备好讨论交易条款了吗? ";
-                link.l1.go = "TPZ_Tavern2_11";
+                link.l2 = "那么, " + npchar.name+ ", 你准备好讨论交易条款了吗? ";
+                link.l2.go = "TPZ_Tavern2_11";
             }
             if (CheckAttribute(pchar, "questTemp.TPZ_Tavern_4"))
             {
-                link.l1 = "那么, " + npchar.name+ "。 我这边一切都已安排好, 货物已经在运往酒馆的路上了。 我们可以进行付款了吗? ";
-                link.l1.go = "TPZ_Tavern3_1";
+                link.l2 = "那么, " + npchar.name+ "。 我这边一切都已安排好, 货物已经在运往酒馆的路上了。 我们可以进行付款了吗? ";
+                link.l2.go = "TPZ_Tavern3_1";
             }
             //< —合法贸易
         break;

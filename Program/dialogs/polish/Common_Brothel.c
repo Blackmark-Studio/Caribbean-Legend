@@ -33,15 +33,6 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			//--> прибыла инспекция на Святом Милосердии
-			if (CheckAttribute(npchar, "quest.SantaMisericordia"))
-			{
-				dialog.text = "Oh, "+GetSexPhrase("młody człowieku","drogie dziecko")+", dziś jesteśmy zamknięci.";
-				link.l1 = "Zamknięci?";
-				link.l1.go = "SantaMisericordia_1";
-				break;
-			}
-			//<-- прибыла инспекция на Святом Милосердии
 			//--> Мерзкий Божок
 			if (CheckAttribute(pchar, "questTemp.ChickenGod.HostessDialog")) {
 				dialog.text = "O mój Boże! Jak się tu dostałeś? Drogi kapitanie, proszę wyjdź - błagam cię! Nasz lokal jest obecnie zamknięty!";
@@ -1319,22 +1310,6 @@ void ProcessDialogEvent()
 			Achievment_Set("ach_CL_105");
 		break;
 		//<<-- Sinistra Ром на троих
-		
-		//--> прибыла инспекция на Святом Милосердии
-		case "SantaMisericordia_1":
-			dialog.text = "Dopóki ten przeklęty de Alamida nie odejdzie. Przeklęty święty człowiek...";
-			link.l1 = "Ale...";
-			link.l1.go = "SantaMisericordia_2";
-		break;
-		
-		case "SantaMisericordia_2":
-			dialog.text = "Żadnych 'ale'. Co jeśli za chwile tu wejdzie? Na zewnątrz, już!";
-			link.l1 = "...";
-			link.l1.go = "exit";
-			LAi_CharacterDisableDialog(npchar);
-		break;
-		//<-- прибыла инспекция на Святом Милосердии
-		
 	}
 }
 

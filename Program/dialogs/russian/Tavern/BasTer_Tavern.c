@@ -24,18 +24,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			//--> Торговля по закону
 			if (CheckAttribute(pchar, "questTemp.TPZ_Tavern_2"))
 			{
-				link.l1 = "Хорошие новости, "+npchar.name+". У меня есть то, что спасёт ваше положение: сто бутылок отличного вина и сто бутылок рома. С такой партией ваши посетители снова будут купаться в реках выпивки. Вы готовы раскошелиться?";
-				link.l1.go = "TPZ_Tavern2_1";
+				link.l2 = "Хорошие новости, "+npchar.name+". У меня есть то, что спасёт ваше положение: сто бутылок отличного вина и сто бутылок рома. С такой партией ваши посетители снова будут купаться в реках выпивки. Вы готовы раскошелиться?";
+				link.l2.go = "TPZ_Tavern2_1";
 			}
 			if (CheckAttribute(pchar, "questTemp.TPZ_Tavern_3"))
 			{
-				link.l1 = "Ну что, "+npchar.name+", вы готовы обсудить условия сделки?";
-				link.l1.go = "TPZ_Tavern2_11";
+				link.l2 = "Ну что, "+npchar.name+", вы готовы обсудить условия сделки?";
+				link.l2.go = "TPZ_Tavern2_11";
 			}
 			if (CheckAttribute(pchar, "questTemp.TPZ_Tavern_4"))
 			{
-				link.l1 = "Итак, "+npchar.name+". С моей стороны все дела улажены, и товар уже на пути в таверну. Перейдём к расчёту?";
-				link.l1.go = "TPZ_Tavern3_1";
+				link.l2 = "Итак, "+npchar.name+". С моей стороны все дела улажены, и товар уже на пути в таверну. Перейдём к расчёту?";
+				link.l2.go = "TPZ_Tavern3_1";
 			}
 			//<-- Торговля по закону
 		break;

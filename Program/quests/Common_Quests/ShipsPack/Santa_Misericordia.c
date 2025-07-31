@@ -208,12 +208,6 @@ void SantaMisericordia_ToCity(string sChar)
 	//контрабандист
 	sld = CharacterFromID(pchar.questTemp.SantaMisericordia.colony + "_Smuggler");
 	sld.quest.SantaMisericordia;
-	//бордель
-	if (CharacterIsAlive(pchar.questTemp.SantaMisericordia.colony + "_Hostess"))
-	{
-		sld = CharacterFromID(pchar.questTemp.SantaMisericordia.colony + "_Hostess");
-		sld.quest.SantaMisericordia;
-	}
 	//молится в церкви c 6-9
 	sld = GetCharacter(NPC_GenerateCharacter("SantaMisericordia_clone_church", "off_spa_2", "man", "man", 30, SPAIN, -1, false, "governor"));
 	sld.name = GetConvertStr("Cap_Name", LangFile);

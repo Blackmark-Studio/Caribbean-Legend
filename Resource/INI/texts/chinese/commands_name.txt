@@ -77,11 +77,11 @@ go_exittown {城镇大门}
 go_Caroline {护卫舰"Carolina(卡罗莱纳号)"}
 go_CeresSmithy_Mary {Mary Casper}
 go_CeresSmithy_Jurgen {Jurgen Schmidt}
-go_EsmeraldaStoreBig {大帆船"Esmeralda(埃斯梅拉达号)"}
+go_EsmeraldaStoreBig {盖伦帆船"Esmeralda(埃斯梅拉达号)"}
 go_EsmeraldaStoreBig_Donald {Donald Greenspen}
 go_FenixPlatform {平台"Fenix(凤凰号)"}
 go_FleuronTavern {卡拉维尔帆船"Fleron(弗莱龙号)"}
-go_GloriaChurch {大帆船"Gloria(荣耀号)"}
+go_GloriaChurch {盖伦帆船"Gloria(荣耀号)"}
 go_ProtectorFisher {Eduard Black}
 go_SanAugustineResidence {Steven Dodson}
 go_SanGabrielMechanic {Henrick Vedecker}

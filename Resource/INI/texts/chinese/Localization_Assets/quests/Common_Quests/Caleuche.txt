@@ -51,7 +51,7 @@ Harpy
 
 Caleuche_12
 {
-"Harpy (哈耳庇厄号)" 号三桅小帆船
+"Harpy (哈耳庇厄号)" 号谢贝克三桅船
 }
 
 Caleuche_13

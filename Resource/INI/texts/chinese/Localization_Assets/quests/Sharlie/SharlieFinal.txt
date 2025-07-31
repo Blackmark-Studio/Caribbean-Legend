@@ -153,7 +153,7 @@ Marshe
 
 SharlieFinal_35
 {
-一天过去了... @<NewStr()> 香草已装载到卡拉克大帆船上... 
+一天过去了... @<NewStr()> 香草已装载到卡拉克盖伦帆船上... 
 }
 
 SharlieFinal_36

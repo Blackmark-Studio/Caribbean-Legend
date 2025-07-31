@@ -37,15 +37,6 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			//--> 圣慈悲修道院视察团来了
-			if (CheckAttribute(npchar, "quest.SantaMisericordia"))
-			{
-				dialog.text = "哦, "+GetSexPhrase("年轻人","宝贝儿")+", 我们今天歇业。 ";
-				link.l1 = "歇业? ";
-				link.l1.go = "SantaMisericordia_1";
-				break;
-			}
-			//< —圣慈悲修道院视察团来了
 			//--> 肮脏的鸡神
 			if (CheckAttribute(pchar, "questTemp.ChickenGod.HostessDialog")) {
 				dialog.text = "哦, 我的上帝! 你怎么进来的? 亲爱的船长, 请离开 —我求你了! 我们的场所现在关闭了! ";
@@ -1355,22 +1346,6 @@ void ProcessDialogEvent()
 			Achievment_Set("ach_CL_105");
 		break;
 		//<< —Sinistra 三人浪漫
-		
-		//--> 圣慈悲修道院视察团来了
-		case "SantaMisericordia_1":
-			dialog.text = "直到那个该死的德阿拉米达离开。 该死的圣人... ";
-			link.l1 = "但也许... ";
-			link.l1.go = "SantaMisericordia_2";
-		break;
-		
-		case "SantaMisericordia_2":
-			dialog.text = "没有也许。 如果他现在走进来怎么办? 所有人都出去。 ";
-			link.l1 = "... ";
-			link.l1.go = "exit";
-			LAi_CharacterDisableDialog(npchar);
-		break;
-		//< —圣慈悲修道院视察团来了
-		
 	}
 }
 

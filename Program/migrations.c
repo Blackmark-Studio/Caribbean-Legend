@@ -9,7 +9,7 @@ extern void ApplyMigration(ref migrationState); // функция которую
 void ApplyMigrations() {
 	ApplyMigrationsForFolder(COMMON_MIGRATION_FOLDER, "");
 	CheckForUninstalledMods();
-	ApplyModMigrations();
+	ApplyModResources();
 }
 
 // проверяем, что не удалены моды, миграции из которых есть в сейве
@@ -53,12 +53,106 @@ void CheckForUninstalledMods() {
   if(modsNumber > 0) LaunchMessage(messageText);
 }
 
-void ApplyModMigrations() {
-	trace("Applying mod migrations...");
-	
-	string searchPath = "Program\"+MOD_MIGRATION_FOLDER;
+
+void ApplyModInits() 
+{
+	trace("Applying mod inits...");
+	string modInitPath = "Program\"+MOD_INITS_FOLDER+"\";
+
 	object fileFinder;
-	fileFinder.dir = searchPath;
+	fileFinder.dir = modInitPath;
+	fileFinder.mask = "*.c";
+	CreateEntity(&fileFinder, "FINDFILESINTODIRECTORY");
+	DeleteClass(&fileFinder);
+	
+	aref fileList;
+	makearef(fileList, fileFinder.filelist);
+	int filesNum = GetAttributesNum(fileList);
+	trace("Applying mod inits... found:"+filesNum);
+	object mods;
+	
+	for (int i = 0; i < filesNum; i++) {
+		aref file = GetAttributeN(fileList, i);
+		string fileName = GetAttributeValue(file);
+		trace("Applying mod init: "+fileName);
+		string initPath = MOD_INITS_FOLDER+"\"+fileName;
+		if (!LoadSegment(initPath)) {
+			trace("Error! Can't load migration file " + initPath);
+			continue;
+		}
+	}
+}
+
+void ApplyModAliases(string modFolder, string processingFolder) 
+{
+	object fileFinderRes;
+	aref fileResList;
+
+	fileFinderRes.dir = processingFolder + modFolder;
+	fileFinderRes.mask = "Greetings_alias.ini";
+	CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
+	DeleteClass(&fileFinderRes);
+	makearef(fileResList, fileFinderRes.filelist);
+	if (GetAttributesNum(fileResList) > 0)
+	{
+		string loc = LanguageGetLanguage();
+		string path = loc + "\mods\" + modFolder + "\Greetings_alias.ini";
+		SendMessage( &Sound, "ls", MSG_SOUND_ALIAS_ADD,  path);
+		trace("Applied alias file: "+path);
+	}
+	DeleteAttribute(&fileFinderRes, ""); 
+}
+
+void ApplyModStrings(string modFolder, string processingFolder) 
+{
+	object fileFinderRes;
+	aref fileResList;
+
+	fileFinderRes.dir = processingFolder + modFolder;
+	fileFinderRes.mask = "common.ini";
+	CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
+	DeleteClass(&fileFinderRes);
+	makearef(fileResList, fileFinderRes.filelist);
+	if (GetAttributesNum(fileResList) > 0)
+	{
+		string path = "mods\" + modFolder + "\common.ini";
+		SendMessage(&GameInterface, "ls", MSG_INTERFACE_LOAD_STRINGS_INI_FILE, path);
+		trace("Applied mod common.ini: "+path);
+	}
+	DeleteAttribute(&fileFinderRes, ""); 
+}
+
+void ApplyModPictures(string modFolder, string processingFolder) 
+{
+	object fileFinderRes;
+	aref fileResList;
+
+	fileFinderRes.dir = processingFolder + modFolder;
+	fileFinderRes.mask = "pictures.ini";
+	CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
+	DeleteClass(&fileFinderRes);
+	makearef(fileResList, fileFinderRes.filelist);
+	if (GetAttributesNum(fileResList) > 0)
+	{
+		string path = "mods\" + modFolder + "\pictures.ini";
+		SendMessage(&GameInterface, "ls", MSG_INTERFACE_LOAD_PICTURES_INI_FILE, path);
+		trace("Applied mod pictures.ini: "+path);
+	}
+	DeleteAttribute(&fileFinderRes, ""); 
+}
+
+
+void ApplyModMigrations(string modFolder, string processingFolder) 
+{
+	ApplyMigrationsForFolder(MOD_MIGRATION_FOLDER, modFolder);
+}
+
+void ApplyModResourcesForFolder(string folder, string processFunction) 
+{
+	trace("Applying mod resources for: "+processFunction);
+	
+	object fileFinder;
+	fileFinder.dir = folder;
 	fileFinder.mask = "*";
 	fileFinder.onlydirs = "1";
 	fileFinder.onlyfiles = "0";
@@ -68,68 +162,35 @@ void ApplyModMigrations() {
 	aref fileList;
 	makearef(fileList, fileFinder.filelist);
 	int filesNum = GetAttributesNum(fileList);
-	trace("Applying mod migrations... found:"+filesNum);
+	trace("Applying mod resources ("+folder+")... found:"+filesNum);
 	object mods;
 	
 	for (int i = 0; i < filesNum; i++) {
 		aref file = GetAttributeN(fileList, i);
 		string fileName = GetAttributeValue(file);
-		trace("Scanning mod migrations: "+fileName);
-		string initPath = MOD_INITS_FOLDER+"\"+fileName+".c";
-		if (!LoadSegment(initPath)) {
-			trace("Error! Can't load migration file " + initPath);
-			continue;
-		}
-		ApplyMigrationsForFolder(MOD_MIGRATION_FOLDER, fileName);
-		
-		string loc = LanguageGetLanguage();
-		string modGrAliasPath = "Resource\INI\aliases\" + loc + "\mods\" + fileName;
-		string modStringCommonPath = "Resource\INI\texts\" + loc + "\mods\" + fileName;
-		string modPicturesPath = "Resource\INI\interfaces\mods\" + fileName;
-
-
-
-
-		object fileFinderRes;
-		aref fileResList;
-
-		fileFinderRes.dir = modGrAliasPath;
-		fileFinderRes.mask = "Greetings_alias.ini";
-		CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
-		DeleteClass(&fileFinderRes);
-		makearef(fileResList, fileFinderRes.filelist);
-		if (GetAttributesNum(fileResList) > 0)
-		{
-			SendMessage( &Sound, "ls", MSG_SOUND_ALIAS_ADD,  loc + "\mods\" + fileName + "\Greetings_alias.ini");
-		}
-		DeleteAttribute(&fileFinderRes, ""); 
-
-		fileFinderRes.dir = modStringCommonPath;
-		fileFinderRes.mask = "common.ini";
-		CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
-		DeleteClass(&fileFinderRes);
-		makearef(fileResList, fileFinderRes.filelist);
-		if (GetAttributesNum(fileResList) > 0)
-		{
-			SendMessage(&GameInterface, "ls", MSG_INTERFACE_LOAD_STRINGS_INI_FILE, "mods\" + fileName + "\common.ini");
-		}
-		DeleteAttribute(&fileFinderRes, ""); 
-
-		fileFinderRes.dir = modPicturesPath;
-		fileFinderRes.mask = "pictures.ini";
-		CreateEntity(&fileFinderRes, "FINDFILESINTODIRECTORY");
-		DeleteClass(&fileFinderRes);
-		makearef(fileResList, fileFinderRes.filelist);
-		if (GetAttributesNum(fileResList) > 0)
-		{
-			SendMessage(&GameInterface, "ls", MSG_INTERFACE_LOAD_PICTURES_INI_FILE, "mods\" + fileName + "\pictures.ini");
-		}
-		DeleteAttribute(&fileFinderRes, ""); 
+		call processFunction(fileName, folder);
 	}
 }
 
+void ApplyModResources()
+{
+	string loc = LanguageGetLanguage();
+	
+	string modGrAliasPath = "Resource\INI\aliases\" + loc + "\mods\";
+	string modStringCommonPath = "Resource\INI\texts\" + loc + "\mods\";
+	string modPicturesPath = "Resource\INI\interfaces\mods\";
+	string modMigrationsPath = "Program\"+MOD_MIGRATION_FOLDER+"\";
+
+	ApplyModResourcesForFolder(modGrAliasPath, "ApplyModAliases");
+	ApplyModResourcesForFolder(modStringCommonPath, "ApplyModStrings");
+	ApplyModResourcesForFolder(modPicturesPath, "ApplyModPictures");
+	ApplyModInits();
+	ApplyModResourcesForFolder(modMigrationsPath, "ApplyModMigrations");
+}
+
+
 void ApplyMigrationsForFolder(string migrationDir, string modName) {
-	trace("Applying migrations...");
+	trace("Applying migrations ("+migrationDir + "/" + modName+")...");
 	// построение списка миграций
 	int migrationsNum = 0;
 	string migrationsList[2];
@@ -215,7 +276,7 @@ void ApplyMigrationsForFolder(string migrationDir, string modName) {
 void InitMigrations() {
 	InitMigrationsForFolder(COMMON_MIGRATION_FOLDER);
 	// Моды - всегда в миграциях, моды не меняют иниты
-	ApplyModMigrations();
+	ApplyModResources();
 }
 
 void InitMigrationsForFolder(string migrationDir) {

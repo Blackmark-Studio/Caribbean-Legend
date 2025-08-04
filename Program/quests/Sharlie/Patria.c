@@ -1354,7 +1354,7 @@ void Patria_HunterConvoyGenerate(string qName) // генерируем конв�
 	if (iGoodsType > 0) iGoodFlags = FLAG_GOODS_EXPORT_PLANTS;
 	else iGoodFlags = FLAG_GOODS_VALUABLE_EXPORT;
 	
-	iGoods =  = GetRandomGood(FLAG_GOODS_TYPE_EXPORT, iGoodFlags);
+	iGoods = GetRandomGood(FLAG_GOODS_TYPE_EXPORT, iGoodFlags);
 	
 	if (!and(sti(Goods[iGoods].Flag), FLAG_GOODS_VALUABLE_WOOD)) 
 	{

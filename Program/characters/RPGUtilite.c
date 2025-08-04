@@ -2852,6 +2852,7 @@ void ChangeAttributesFromCharacter(ref CopyChref, ref PastChref, bool _dialogCop
 		}
 	}
 	SetEnergyToCharacter(CopyChref);
+	RecalculateCharacterModifiers(CopyChref);
 	//SetNewModelToChar(CopyChref);  // чтоб сабли были правильные
 }
 

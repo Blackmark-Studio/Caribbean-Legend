@@ -914,6 +914,7 @@ void SetPriorityMode(ref chr, int iPMode)
     //Для диалогов можно и через CharacterRef, но пусть будет общий метод
     chr.PriorityMode = iPMode;
     SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "SetMusketer", iPMode == 2);
+	RecalculateCharacterModifiers(chr);
 }
 
 // Проверка на наличие локатора шляпы в модели

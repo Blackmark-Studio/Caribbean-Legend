@@ -897,6 +897,7 @@ bool LAi_SetCharacterUseBullet(ref rChar, string sType, string sBullet)
 				return true;	
 			}
 		}
+		RecalculateCharacterModifiers(rChar);
 	}			
 	return false;
 }

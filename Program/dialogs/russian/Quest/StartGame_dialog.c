@@ -242,7 +242,7 @@ void ProcessDialogEvent()
 			sld.lastname = StringFromKey("BlackMark_6");
 			sld.rank = 12;
 			sld.CanTakeMushket = true;
-			sld.PriorityMode = 2;
+			SetPriorityMode(sld, 2);
 			sld.MusketerDistance = 10;
 			SetSPECIAL(sld, 6, 9, 6, 3, 7, 6, 9);
 			SetSelfSkill(sld, 15, 15, 50, 60, 20);
@@ -456,7 +456,7 @@ void ProcessDialogEvent()
 			sld.lastname = StringFromKey("BlackMark_6");
 			sld.rank = 12;
 			sld.CanTakeMushket = true;
-			sld.PriorityMode = 2;
+			SetPriorityMode(sld, 2);
 			sld.MusketerDistance = 10;
 			SetSPECIAL(sld, 6, 9, 6, 3, 7, 6, 9);
 			SetSelfSkill(sld, 15, 15, 50, 60, 20);
@@ -670,7 +670,7 @@ void ProcessDialogEvent()
 			sld.lastname = StringFromKey("BlackMark_6");
 			sld.rank = 12;
 			sld.CanTakeMushket = true;
-			sld.PriorityMode = 2;
+			SetPriorityMode(sld, 2);
 			sld.MusketerDistance = 10;
 			SetSPECIAL(sld, 6, 9, 6, 3, 7, 6, 9);
 			SetSelfSkill(sld, 15, 15, 50, 60, 20);

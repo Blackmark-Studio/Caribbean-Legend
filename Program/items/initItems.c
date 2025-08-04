@@ -3977,6 +3977,9 @@ int InitItems()
 	InitGrapeGuns();
 	InitMultiObjectAmulets();
 	InitItemsRarity();
+
+	SetupItemModifiers();
+	
 	
 	return n;
 }

@@ -661,12 +661,12 @@ void ProcessDialogEvent()
 		break;
 
 	case "BladePriorityMode":
-		pchar.PriorityMode = 1;
+		SetPriorityMode(pchar, 1);
 		DialogExit_Self();
 		break;
 
 	case "MusketPriorityMode":
-		pchar.PriorityMode = 2;
+		SetPriorityMode(pchar, 2);
 		DialogExit_Self();
 		break;
 

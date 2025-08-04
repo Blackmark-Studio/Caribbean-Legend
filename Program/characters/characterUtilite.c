@@ -2463,6 +2463,7 @@ void RemoveOfficerEquip(ref chref, string groupID)
 
 void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 {
+	trace("SetEquipedItemToCharacter("+chref.name+", "+groupID+", "+itemID+")");
 	object emptyItm;
 	aref arItm;
 	string modelName = "";
@@ -2608,6 +2609,7 @@ void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 		break;	
 	// <-- ugeen
 	}
+	RecalculateCharacterModifiers(chref);
 }
 
 void SetGunParameters(ref chref, string sType, string itemID, bool bEquip)
@@ -3136,6 +3138,7 @@ void UpdateCharacterEquipItem(ref chref)
 			}	
 		}
 	}
+	RecalculateCharacterModifiers(chref);
 }
 
 void CheckCharactersUpdateItems()

@@ -4,41 +4,114 @@
 void SetupItemModifiers()
 {
 	
-	item = ItemsFromID("indian_1");
-	AddFloatModifierToItem(item, MODIFIER_RANGE_HIT_PROBABILITY, 1.10);
+	ref item = ItemsFromID("indian_1");
+	AddFloatModifierToItem(item, MODIFIER_RANGE_HIT_ENEMY_PROBABILITY, 1.10);
 	AddFloatModifierToItem(item, MODIFIER_RANGE_DAMAGE_MODIFIER, 1.15);
 	AddFloatModifierToItem(item, MODIFIER_RANGE_CRIT_CHANCE, 3);
 	
 	item = ItemsFromID("indian_2");
-	AddBoolModifierToItem(item, MODIFIER_PROTECT_RANGE_EXLOSION_PC, true);
-	AddFloatModifierToItem(item, MODIFIER_PROTECT_RANGE_EXLOSION_MODIFIER, 2.0);
+	AddBoolModifierToItem(item, MODIFIER_PROTECT_RANGE_EXPLOSION_DOUBLE_BULLET, true);
+	AddFloatModifierToItem(item, MODIFIER_PROTECT_RANGE_EXPLOSION_MODIFIER, 2.0);
 	AddFloatModifierToItem(item, MODIFIER_RANGE_HIT_PROBABILITY, 1.15);
-	AddFloatModifierToItem(item, MODIFIER_RANGE_DAMAGE_MODIFIER, 1.10);
+	AddFloatModifierToItem(item, MODIFIER_RANGE_ENEMY_DAMAGE_MODIFIER, 1.10);
 	AddFloatModifierToItem(item, MODIFIER_RANGE_CRIT_CHANCE, 3);
 
-	ref item = ItemsFromID("indian_3");
-	AddFloatModifierToItem(item, MODIFIER_MELEE_CRIT_CHANCE, 10);
+	item = ItemsFromID("indian_3");
+	AddFloatModifierToItem(item, MODIFIER_MELEE_CRIT_CHANCE, 15);
 	
 	item = ItemsFromID("indian_4");
 	AddFloatModifierToItem(item, MODIFIER_MELEE_CRIT_DAMAGE, 0.5);
-	
+	AddFloatModifierToItem(item, MODIFIER_CRIT_INCOMING_CHANCE, 10);
+
+	item = ItemsFromID("indian_9");
+	AddFloatModifierToItem(item, MODIFIER_SKILL_ACCURACY_SCALE, 1.1);
 	
 	item = ItemsFromID("amulet_1");
 	AddFloatModifierToItem(item, MODIFIER_RANGE_HIT_PROBABILITY, 0.9);
-	AddFloatModifierToItem(item, MODIFIER_RANGE_DAMAGE_MODIFIER, 0.85);
+	AddFloatModifierToItem(item, MODIFIER_RANGE_ENEMY_DAMAGE_MODIFIER, 0.85);
 	
 	item = ItemsFromID("amulet_4");
-	AddFloatModifierToItem(item, MODIFIER_MELEE_CRIT_CHANCE, -10);
+	AddFloatModifierToItem(item, MODIFIER_CRIT_INCOMING_CHANCE, 10);
 	
+	
+	item = ItemsFromID("totem_05");
+	AddFloatModifierToItem(item, MODIFIER_OWN_STUN_CHANCE, 0.0);
+
+	item = ItemsFromID("totem_06");
+	AddBoolModifierToItem(item, MODIFIER_DISABLE_OVERLOAD_CHECK, true);
 	
 	item = ItemsFromID("totem_12");
 	AddFloatModifierToItem(item, MODIFIER_RANGE_CRIT_CHANCE, 3);
 
+	item = ItemsFromID("totem_13");
+	AddSkillModifierToItem(item, SPECIAL_L, 1);
+
+	item = ItemsFromID("KhaelRoa_item");
+	AddFloatModifierToItem(item, MODIFIER_RANGE_DAMAGE_MODIFIER, 10);
+
+	item = ItemsFromID("kaleuche_amulet3");
+	AddFloatModifierToItem(item, MODIFIER_INCOMING_DAMAGE, 0.75);
+
+
+	item = ItemsFromID("talisman8");
+	AddBoolModifierToItem(item, MODIFIER_POISON_PROTECT, true);
+
+
+	item = ItemsFromID("talisman9");
+	AddSkillModifierToItem(item, SPECIAL_C, 1);
+
+
+	item = ItemsFromID("talisman11");
+	AddSkillModifierToItem(item, SKILL_F_LIGHT, 2);
+	AddSkillModifierToItem(item, SKILL_FENCING, 2);
+	AddSkillModifierToItem(item, SKILL_F_HEAVY, 2);
+	AddSkillModifierToItem(item, SKILL_PISTOL, 2);
+	AddSkillModifierToItem(item, SKILL_FORTUNE, 2);
+	AddSkillModifierToItem(item, SKILL_LEADERSHIP, 2);
+	AddSkillModifierToItem(item, SKILL_COMMERCE, 2);
+	AddSkillModifierToItem(item, SKILL_ACCURACY, 2);
+	AddSkillModifierToItem(item, SKILL_CANNONS, 2);
+	AddSkillModifierToItem(item, SKILL_SAILING, 2);
+	AddSkillModifierToItem(item, SKILL_REPAIR, 2);
+	AddSkillModifierToItem(item, SKILL_GRAPPLING, 2);
+	AddSkillModifierToItem(item, SKILL_DEFENCE, 2);
+	AddSkillModifierToItem(item, SKILL_SNEAK, 2);
+
+	item = ItemsFromID("talisman14");
+	AddSkillModifierToItem(item, SKILL_SAILING, 15);
+	
 	item = ItemsFromID("talisman16");
 	AddFloatModifierToItem(item, MODIFIER_MELEE_DAMAGE_MODIFIER, 1.1);
 
+	item = ItemsFromID("talisman17");
+	AddSkillModifierToItem(item, SKILL_SAILING, 15);
+	
+	item = ItemsFromID("kaleuche_amulet2");
+	AddSkillModifierToItem(item, SKILL_F_LIGHT, 25);
+	AddSkillModifierToItem(item, SKILL_FENCING, 25);
+	AddSkillModifierToItem(item, SKILL_F_HEAVY, 25);
+	AddSkillModifierToItem(item, SKILL_PISTOL, 25);
+
+	item = ItemsFromID("obereg_1");
+	AddSkillModifierToItem(item, SKILL_REPAIR, 10);
+
+	item = ItemsFromID("obereg_2");
+	AddSkillModifierToItem(item, SKILL_REPAIR, 10);
+	
+	item = ItemsFromID("obereg_4");
+	AddSkillModifierToItem(item, SKILL_SNEAK, 10);
+	
+	item = ItemsFromID("obereg_5");
+	AddSkillModifierToItem(item, SKILL_FORTUNE, 15);
+	
+	item = ItemsFromID("obereg_6");
+	AddSkillModifierToItem(item, SKILL_LEADERSHIP, 10);
+	
+	item = ItemsFromID("obereg_8");
+	AddSkillModifierToItem(item, SKILL_COMMERCE, 15);
 	
 	
+
 	item = ItemsFromID("saber");
 	AddSkillModifierToItem(item, SKILL_FENCING, 5);
 	
@@ -67,12 +140,15 @@ void SetupItemModifiers()
 	AddSkillModifierToItem(item, SKILL_FENCING, 10);
 	
 	item = ItemsFromID("knife_01");
-	AddFloatModifierToItem(item, MODIFIER_MELEE_DAMAGE_UNDEAD, 16);
+	//AddFloatModifierToItem(item, MODIFIER_MELEE_DAMAGE_UNDEAD, 16);
 	AddBoolModifierToItem(item, MODIFIER_MELEE_EXTRA_DAMAGE_TO_UNDEAD, true);
 	AddSkillModifierToItem(item, SKILL_F_LIGHT, 5);
 	
 	item = ItemsFromID("knife_02");
 	AddSkillModifierToItem(item, SKILL_F_LIGHT, 15);
+
+	item = ItemsFromID("knife_03");
+	AddSkillModifierToItem(item, SPECIAL_L, 1);
 	
 	item = ItemsFromID("blade_38");
 	AddSkillModifierToItem(item, SKILL_F_LIGHT, 5);
@@ -129,6 +205,9 @@ void SetupItemModifiers()
 	AddFloatModifierToItem(item, MODIFIER_RANGE_CRIT_CHANCE, 6);
 	AddSkillModifierToItem(item, SKILL_F_HEAVY, 20);
 	
+	item = ItemsFromID("pistol13");
+	AddSkillModifierToItem(item, SPECIAL_C, 1);
+	
 	item = ItemsFromID("pistol14");
 	AddFloatModifierToItem(item, MODIFIER_RANGE_CRIT_CHANCE, 9);	
 
@@ -137,10 +216,10 @@ void SetupItemModifiers()
 	
 
 	item = ItemsFromID("bullet_double");
-	AddFloatModifierToItem(item, MODIFIER_RANGE_EXLOSION_MODIFIER, 1.0);
+	AddBoolModifierToItem(item, MODIFIER_RANGE_EXPLODE_ON_SHOT, true);
 
 	item = ItemsFromID("grapeshot_double");
-	AddFloatModifierToItem(item, MODIFIER_RANGE_EXLOSION_MODIFIER, 1.0);
+	AddBoolModifierToItem(item, MODIFIER_RANGE_EXPLODE_ON_SHOT, true);
 
 	
 	item = ItemsFromID("hat2");
@@ -194,6 +273,7 @@ void SetupItemModifiers()
 		
 	item = ItemsFromID("cirass9");
 	AddFloatModifierToItem(item, MODIFIER_MELEE_CRIT_CHANCE, 5);
+	AddFloatModifierToItem(item, MODIFIER_OWN_STUN_CHANCE, 0.0);
 	AddSkillModifierToItem(item, SKILL_F_LIGHT, 5);
 	AddSkillModifierToItem(item, SKILL_FENCING, 5);
 	AddSkillModifierToItem(item, SKILL_F_HEAVY, 5);
@@ -203,8 +283,8 @@ void SetupItemModifiers()
 	item = ItemsFromID("cirass10");
 	AddFloatModifierToItem(item, MODIFIER_RANGE_CRIT_CHANCE, 5);
 	AddFloatModifierToItem(item, MODIFIER_RANGE_RELOAD_SPEED_BONUS, 1.15);
-	AddBoolModifierToItem(item, MODIFIER_PROTECT_RANGE_EXLOSION_PC, true);
-	AddBoolModifierToItem(item, MODIFIER_PROTECT_RANGE_EXLOSION_NPC, true);
+	AddBoolModifierToItem(item, MODIFIER_PROTECT_RANGE_EXPLOSION, true);
+	AddBoolModifierToItem(item, MODIFIER_PROTECT_RANGE_EXPLOSION_DOUBLE_BULLET, true);
 	AddSkillModifierToItem(item, SPECIAL_A, -1);
 	AddBoolModifierToItem(item, MODIFIER_HEAVY_ARMOR, true);
 
@@ -256,7 +336,7 @@ void SetupItemModifiers()
 	
 	
 	item = ItemsFromID("indian_poison");
-	AddBoolModifierToItem(item, MODIFIER_MELEE_POISON, true);
+	AddBoolModifierToItem(item, MODIFIER_POISON_ATTACK, true);
 
 	
 }

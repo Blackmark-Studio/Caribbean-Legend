@@ -9,6 +9,7 @@ void RecalculateCharacterModifiers(ref rChar)
 	aref arItm;
 	int  i = 0;
 	string itemType;
+	string itemID;
 	if (!CheckAttribute(rChar, "equip"))
 	{
 		return;
@@ -21,7 +22,7 @@ void RecalculateCharacterModifiers(ref rChar)
 	for (i = 0; i < equipmentNum; i++)
 	{
 		aref itemAttr = GetAttributeN(charEquip, i);
-		string itemID = GetAttributeValue(itemAttr);
+		itemID = GetAttributeValue(itemAttr);
 		if (itemID == "")
 			continue;
 		itemType = GetAttributeName(itemAttr);
@@ -48,6 +49,31 @@ void RecalculateCharacterModifiers(ref rChar)
 		ApplyItemModifiers(rChar, arItm);
 	}
 	
+	if (CheckAttribute(rChar, "equip_item"))
+	{
+		int num, idx;
+        aref arEquip, curItem;
+        string sItem;
+        makearef(arEquip, rChar.equip_item);
+        int amuletNum = GetAttributesNum(arEquip);
+
+        for (i=0; i < amuletNum; i++)
+        {
+            itemID = GetAttributeValue(GetAttributeN(arEquip, i));
+            if(itemID == "")
+			{
+				continue;
+			}
+            if(Items_FindItem(itemID, &arItm) < 0)
+			{
+				trace("TakeNItems warning - can't find " + itemID + " item");
+				continue;
+			}
+
+            ApplyItemModifiers(rChar, arItm);
+        }
+	}
+
 	if (CheckAttribute(rChar, "bullets"))
 	{
 		aref charBullets;
@@ -56,7 +82,7 @@ void RecalculateCharacterModifiers(ref rChar)
 		for (i = 0; i < bulletsNum; i++)
 		{
 			aref bulletAttr = GetAttributeN(charBullets, i);
-			string bulletID = GetAttributeValue(bulletAttr);
+			itemID = GetAttributeValue(bulletAttr);
 			itemType = GetAttributeName(bulletAttr);
 
 
@@ -70,9 +96,9 @@ void RecalculateCharacterModifiers(ref rChar)
 				continue;
 			}
 
-			if(Items_FindItem(bulletID, &arItm) < 0)
+			if(Items_FindItem(itemID, &arItm) < 0)
 			{
-				trace("TakeNItems warning - can't find " + bulletID + " item");
+				trace("TakeNItems warning - can't find " + itemID + " item");
 				continue;
 			}
 			

@@ -303,11 +303,18 @@ void LAi_CharacterFire()
 	}
 	// ugeen -> мультиурон и прочее(27.07.10)
 		
+	bool explodeOnShot = GetCharacterBoolModifier(attack, MODIFIER_RANGE_EXPLODE_ON_SHOT);
+	
+	bool protectOnExplodeDouble = GetCharacterBoolModifier(attack, MODIFIER_PROTECT_RANGE_EXPLOSION_DOUBLE_BULLET);
+	bool protectOnExplodeSimple = GetCharacterBoolModifier(attack, MODIFIER_PROTECT_RANGE_EXPLOSION);
+	float protectModifierOnExplode = GetCharacterFloatModifier(attack, MODIFIER_PROTECT_RANGE_EXPLOSION_MODIFIER);
+	
+	
 	//weaponID = GetCharacterEquipByGroup(attack, sType);
 	aref weapon;
 	Items_FindItem(weaponID, &weapon);
 	// belamour расширенное издание разрыв ствола от х2 боеприпаса
-	if(HasSubStr(sBullet, "double") && !IsEquipCharacterByArtefact(attack, "indian_2") && GetCharacterEquipByGroup(attack, CIRASS_ITEM_TYPE) != "cirass10")
+	if(explodeOnShot && !protectOnExplodeDouble)
 	{
 		LAi_Explosion(attack, rand(40));
   		if(GetCharacterItem(attack, weaponID) <= 1) RemoveCharacterEquip(attack, weapon.groupID);
@@ -317,7 +324,7 @@ void LAi_CharacterFire()
 		return;
 	}
 	// belamour legendary edition пороховой тестер уменьшает разрыв ствола -->
-	if(attack.id != "Blaze" && CheckAttribute(attack, "chr_ai."+sType+".misfire") && sti(attack.chr_ai.(sType).misfire) > 0 && rand(100)*isEquippedArtefactUse(attack, "indian_2", 1.0, 2.0) < sti(attack.chr_ai.(sType).misfire) && !HasSubStr(weapon.id, "mushket") && GetCharacterEquipByGroup(attack, CIRASS_ITEM_TYPE) != "cirass10")
+	if(attack.id != "Blaze" && CheckAttribute(attack, "chr_ai."+sType+".misfire") && sti(attack.chr_ai.(sType).misfire) > 0 && rand(100)*protectOnExplodeSimple < sti(attack.chr_ai.(sType).misfire) && !HasSubStr(weapon.id, "mushket") && !protectOnExplodeSimple)
 	{
 		LAi_Explosion(attack, rand(20));
   		if(GetCharacterItem(attack, weaponID) <= 1) RemoveCharacterEquip(attack, weapon.groupID);
@@ -868,7 +875,14 @@ void Location_CharacterFireShardEnd()
 	aref weapon;
 	Items_FindItem(weaponID, &weapon);
 	// belamour расширенное издание разрыв ствола от х2 боеприпаса
-	if(HasSubStr(sBullet, "double") && !IsEquipCharacterByArtefact(attack, "indian_2") && GetCharacterEquipByGroup(attack, CIRASS_ITEM_TYPE) != "cirass10")
+	bool explodeOnShot = GetCharacterBoolModifier(attack, MODIFIER_RANGE_EXPLODE_ON_SHOT);
+	
+	bool protectOnExplodeDouble = GetCharacterBoolModifier(attack, MODIFIER_PROTECT_RANGE_EXPLOSION_DOUBLE_BULLET);
+	bool protectOnExplodeSimple = GetCharacterBoolModifier(attack, MODIFIER_PROTECT_RANGE_EXPLOSION);
+	float protectModifierOnExplode = GetCharacterFloatModifier(attack, MODIFIER_PROTECT_RANGE_EXPLOSION_MODIFIER);
+	
+	
+	if(explodeOnShot && !protectOnExplodeDouble)
 	{
 		LAi_Explosion(attack, rand(40));
   		if(GetCharacterItem(attack, weaponID) <= 1) RemoveCharacterEquip(attack, weapon.groupID);
@@ -878,7 +892,7 @@ void Location_CharacterFireShardEnd()
 		return;
 	}
 	// belamour legendary edition пороховой тестер уменьшает разрыв ствола -->
-	if(attack.id != "Blaze" && CheckAttribute(attack, "chr_ai."+sType+".misfire") && sti(attack.chr_ai.(sType).misfire) > 0 && rand(100)*isEquippedArtefactUse(attack, "indian_2", 1.0, 2.0) < sti(attack.chr_ai.misfire) && !HasSubStr(weapon.id, "mushket") && GetCharacterEquipByGroup(attack, CIRASS_ITEM_TYPE) != "cirass10")
+	if(attack.id != "Blaze" && CheckAttribute(attack, "chr_ai."+sType+".misfire") && sti(attack.chr_ai.(sType).misfire) > 0 && rand(100)*protectModifierOnExplode < sti(attack.chr_ai.misfire) && !HasSubStr(weapon.id, "mushket") && !protectOnExplodeSimple)
 	{
 		LAi_Explosion(attack, rand(20));
   		if(GetCharacterItem(attack, weaponID) <= 1) RemoveCharacterEquip(attack, weapon.groupID);

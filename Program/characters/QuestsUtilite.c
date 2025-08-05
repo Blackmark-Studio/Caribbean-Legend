@@ -6520,7 +6520,7 @@ bool FindCompanionShips(int Type)
 
 bool LineShips_CheckAndIdentify(int Nation)
 {
-	if(GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) == "hat5") return false;
+	if(GetCharacterBoolModifier(pchar, MODIFIER_ALLOW_ENEMY_FLAGSHIP)) return false;
 	
 	switch (Nation)
 	{

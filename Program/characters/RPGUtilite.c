@@ -342,53 +342,7 @@ int GetCharacterSPECIALSimple(ref _refCharacter, string skillName)
         skillN = skillN + GetHealthNum(_refCharacter) - 6; // max -5
     }
 
-    if(bHero)
-    {
-        int i, num, idx;
-        aref arEquip, curItem;
-        string sItem;
-
-        // ITEM_SLOT_TYPE
-        makearef(arEquip, _refCharacter.equip_item);
-        num = GetAttributesNum(arEquip);
-        for (i=0; i<num; i++)
-        {
-            sItem = GetAttributeValue(GetAttributeN(arEquip,i));
-            if(sItem == "") continue;
-            idx = FindItem(sItem);
-            if (idx < 0) continue;
-
-            switch(Items[idx].id)
-            {
-                case "totem_13": // Джокер
-                    if(skillName == SPECIAL_L) skillN += 1;
-                break;
-            }
-        }
-
-        // TALISMAN_ITEM_TYPE
-        sItem = GetCharacterEquipByGroup(_refCharacter, TALISMAN_ITEM_TYPE);
-        switch(sItem)
-        {
-            case "talisman9": // Орден Святого Людовика
-                if(skillName == SPECIAL_C) skillN += 1;
-            break;
-        }
-    }
-
-	// Родовой кинжал
-	if(GetCharacterEquipByGroup(_refCharacter, BLADE_ITEM_TYPE) == "knife_03") 
-    {
-		if(skillName == SPECIAL_L) skillN += 1;
-    }
-
-	// Кремневый револьвер
-	if(GetCharacterEquipByGroup(_refCharacter, GUN_ITEM_TYPE) == "pistol13") 
-    {
-		if(skillName == SPECIAL_C) skillN += 1;
-    }
-    
-	skillN += ApplySPECIALCirassPenalty(_refCharacter, skillName);
+	skillN += GetCharacterSkillModifier(_refCharacter, skillName);
 	skillN += ApplySPECIALMangarosaPotion(_refCharacter, skillName); // Jason
 	
 	if(CheckAttribute(_refCharacter, "GenQuest.EnergyPenalty")) 
@@ -771,11 +725,7 @@ void InitStartParam(ref _chref)
 int GetHPIncrease(ref chr) {
 	// --> убрать влияние кирас
 	int Ers = GetCharacterSPECIALSimple(chr, SPECIAL_E);
-	if (GetCharacterEquipByGroup(chr, CIRASS_ITEM_TYPE) == "underwater") Ers = Ers+2;
-	if (GetCharacterEquipByGroup(chr, CIRASS_ITEM_TYPE) == "cirass1") Ers = Ers+1;
-	if (GetCharacterEquipByGroup(chr, CIRASS_ITEM_TYPE) == "cirass2") Ers = Ers+1;
-	if (GetCharacterEquipByGroup(chr, CIRASS_ITEM_TYPE) == "cirass4") Ers = Ers+1;
-	// <-- убрать влияние кирас
+	Ers -= GetCharacterSkillModifier(chr, SPECIAL_E);
 
 	int ret = makeint(2 + Ers * 0.55 + 0.5);
 	
@@ -1024,236 +974,20 @@ float AddMultiplySkillByEquippedItem(ref _refCharacter, string _skillName, strin
 	return fRetValue;
 }
 
-int ApplySPECIALCirassPenalty(ref rChar, String sSkillName)
-{
-	int iValue = 0;
-	String sSuit = GetCharacterEquipSuitID(rChar);
-	
-	if(sSuit == INVALID_SUIT) return 0;
-	// belamour legendary edition ребаланс доспехов 20.09.2021
-	switch(sSuit)
-	{	
-		case "cirass1"	:
-			if(sSkillName == SPECIAL_E)			iValue = -1;			
-			if(sSkillName == SPECIAL_A)			iValue = -2;			
-		break;
-				
-		case "cirass2"	:
-			if(sSkillName == SPECIAL_E)			iValue = -1;
-			if(sSkillName == SPECIAL_A)			iValue = -1;
-		break;
-				
-		/*case "cirass3"	:
-			if(sSkillName == SPECIAL_A)			iValue = -1;
-		break;*/
-		
-		case "cirass4"	:
-			if(sSkillName == SPECIAL_E)			iValue = -1;
-		break;
-		
-		case "cirass6"	:
-			if(sSkillName == SPECIAL_P)			iValue = -1;
-		break;
-		
-		case "cirass7"	:
-			if(sSkillName == SPECIAL_P)			iValue = -1;
-		break;
-		
-		case "cirass10"	:
-			if(sSkillName == SPECIAL_A)			iValue = -1;
-		break;
-		
-		/*case "cirass8"	:
-			if(sSkillName == SPECIAL_P)			iValue = -1;
-		break;
-		*/
-		case "suit1"	:
-			if(sSkillName == SPECIAL_C)			iValue = 1;
-		break;
-		
-		case "suit2"	:
-			if(sSkillName == SPECIAL_C)			iValue = 1;
-		break;
-		
-		case "suit3"	:
-			if(sSkillName == SPECIAL_C)			iValue = 1;
-		break;
-		
-		case "suit4"	:
-			if(sSkillName == SPECIAL_P)			iValue = -1; // калеуче
-			if(sSkillName == SPECIAL_A)			iValue = 1;
-		break;
-		
-		case "suit5"	:
-			if(sSkillName == SPECIAL_C)			iValue = 2;
-		break;
-		
-		case "underwater"	: //Jason: водолаз
-			if(sSkillName == SPECIAL_P)			iValue = -2;
-			if(sSkillName == SPECIAL_E)			iValue = -2;
-			if(sSkillName == SPECIAL_A)			iValue = -1;
-		break;
-	}
-		
-	return iValue;
-}
-
 int GetCharacterSuitType(ref rChar)
 {
-	int iValue = 0;
-	String sSuit = GetCharacterEquipSuitID(rChar);
-	
-	if(sSuit == INVALID_SUIT) return -1;
-
-	switch(sSuit)
-	{	
-		// тяжелые доспехи
-		case "cirass1"	:
-			iValue = 2;
-		break;		
-		case "cirass2"	:
-			iValue = 2;
-		break;				
-		case "cirass3"	:
-			iValue = 2;
-		break;				
-		case "cirass4"	:
-			iValue = 2;
-		break;
-		case "cirass10"	:
-			iValue = 2;
-		break;
-		
-		// легкие доспехи
-		case "cirass5"	:
-			iValue = 1;
-		break;				
-		case "cirass6"	:
-			iValue = 1;
-		break;				
-		case "cirass7"	:
-			iValue = 1;
-		break;				
-		case "cirass8"	:
-			iValue = 1;
-		break;
-		case "cirass9"	:
-			iValue = 1;
-		break;
-		
-		// прочее
-		case "underwater":
-			iValue = 2;
-		break;						
-		case "suit1":
-			iValue = 1;
-		break;						
-		case "suit2":
-			iValue = 1;
-		break;						
-		case "suit3":
-			iValue = 1;
-		break;
-
-		case "suit4":
-			iValue = 1;
-		break;
-		
-		case "suit5":
-			iValue = 1;
-		break;			
+	if (GetCharacterBoolModifier(rChar, MODIFIER_HEAVY_ARMOR))
+	{
+		return 2;
 	}
-		
-	return iValue;
-}
-
-// Warship 25.10.08 Учет одежды
-// belamour legendary edition ребаланс одежды 20.09.2021
-int SetCharacterSkillBySuit(ref rChar, String sSkillName)
-{
-	int iValue = 0;
-	String sSuit = GetCharacterEquipSuitID(rChar);
-	
-	if(sSuit == INVALID_SUIT) return 0;
-	
-	switch(sSuit)
-	{	
-		case "cirass1"	:
-			if(sSkillName == SKILL_SNEAK)		iValue = -5;
-		break;
-
-		case "cirass2"	:
-			if(sSkillName == SKILL_SNEAK)		iValue = -5;
-		break;
-
-		case "cirass3"	:
-			if(sSkillName == SKILL_LEADERSHIP)	iValue = 15;
-			if(sSkillName == SKILL_SNEAK)		iValue = -15;
-		break;
-		
-		case "cirass4"	:
-			if(sSkillName == SKILL_LEADERSHIP)	iValue = 10;
-			if(sSkillName == SKILL_SNEAK)		iValue = -20;
-		break;
-		
-		case "cirass6"	:
-			if(sSkillName == SKILL_LEADERSHIP)	iValue = -5;
-			if(sSkillName == SKILL_SNEAK)		iValue = -5;
-		break;
-		
-		case "cirass7"	:
-			if(sSkillName == SKILL_LEADERSHIP)	iValue = -10;
-		break;
-		
-		case "cirass8"	:
-			if(sSkillName == SKILL_LEADERSHIP)	iValue = -15;
-			if(sSkillName == SKILL_SNEAK)		iValue = 15;
-		break;
-		
-		case "cirass9"	:
-			if(sSkillName == SKILL_F_LIGHT)	    iValue = 5;
-			if(sSkillName == SKILL_FENCING)	    iValue = 5;
-			if(sSkillName == SKILL_F_HEAVY)	    iValue = 5;
-			if(sSkillName == SKILL_PISTOL)	    iValue = 5;
-		break;
-		
-		case "suit1"	: // Французский офицерский мундир
-			if(sSkillName == SKILL_LEADERSHIP)	iValue = 25;
-			if(sSkillName == SKILL_SNEAK)		iValue = -25;
-		break;
-		
-		case "suit2"	: // Английский офицерский мундир
-			if(sSkillName == SKILL_LEADERSHIP)	iValue = 25;
-			if(sSkillName == SKILL_SNEAK)		iValue = -25;
-		break;
-		
-		case "suit3"	: // Испанский офицерский мундир
-			if(sSkillName == SKILL_LEADERSHIP)	iValue = 25;
-			if(sSkillName == SKILL_SNEAK)		iValue = -25;
-		break;
-		
-		case "suit4"	: // костюм Лампорта (Калеуче)
-			if(sSkillName == SKILL_LEADERSHIP)	iValue = -25;
-			if(sSkillName == SKILL_SNEAK)		iValue = 30;
-		break;
-		
-		case "suit5"	: // Французский адмиральский мундир
-			if(sSkillName == SKILL_LEADERSHIP)	iValue = 40;
-			if(sSkillName == SKILL_SNEAK)		iValue = -50;
-			if(sSkillName == SKILL_SAILING)		iValue = 5;
-		break;
-		
-		case "underwater"	: // Jason: водолаз
-			if(sSkillName == SKILL_LEADERSHIP)	iValue = -20;
-			if(sSkillName == SKILL_SNEAK)		iValue = -100;
-			if(sSkillName == SKILL_F_LIGHT)		iValue = -15;
-			if(sSkillName == SKILL_FENCING)		iValue = -15;
-			if(sSkillName == SKILL_F_HEAVY)		iValue = -15;
-			if(sSkillName == SKILL_PISTOL)		iValue = -50;
-		break;
+	else if (GetCharacterBoolModifier(rChar, MODIFIER_LIGHT_ARMOR))
+	{
+		return 1;
 	}
-	
-	return iValue;
+	else
+	{
+		return -1;
+	}
 }
 
 // Jason: учёт негенерируемых клинков
@@ -1366,25 +1100,6 @@ int SetCharacterSkillByQuestBlade(ref rChar, String sSkillName)
 	return iValue;
 }
 
-int SetCharacterSkillByGun(ref rChar, String sSkillName)
-{
-	int iValue = 0;
-	String sGun = GetCharacterEquipByGroup(rChar, GUN_ITEM_TYPE);
-	
-	switch(sGun)
-	{	
-		case "pistol11"	: // Чудовище cle
-			if(sSkillName == SKILL_F_HEAVY) iValue = 20;
-		break;
-		
-		case "pistol5"	: // Дуэльный пистолет
-			if(sSkillName == SKILL_PISTOL)  iValue = 5;
-		break;
-	}
-	
-	return iValue;
-}
-
 // Jason: спец.атрибут
 int SetCharacterSkillByPenalty(ref rChar, String sSkillName)
 {
@@ -1462,19 +1177,6 @@ int SetCharacterSkillByMangarosa(ref rChar, String sSkillName) // 280313
 			else if(sSkillName == SKILL_FORTUNE)    iValue = 5;
 		}
 	}
-	
-	return iValue;
-}
-
-// Jason: Калеуче - амулеты Туттуатхапака
-int SetCharacterSkillByTuttuat(ref rChar, String sSkillName)
-{
-	int iValue = 0;
-	
-	if(sSkillName == SKILL_F_LIGHT)      iValue = 25;
-	else if(sSkillName == SKILL_FENCING) iValue = 25;
-	else if(sSkillName == SKILL_F_HEAVY) iValue = 25;
-	else if(sSkillName == SKILL_PISTOL)  iValue = 25;
 	
 	return iValue;
 }
@@ -1576,30 +1278,9 @@ int GetCharacterSkillSimple(ref _refCharacter, string skillName)
 
             switch(Items[idx].id)
             {
-                case "indian_9": // Бальд
-                    if(skillName == SKILL_ACCURACY) fScale *= 1.1;
-                    break;
-                case "totem_06": // Гонтер
-                    bOverloadCheck = false;
-                    break;
                 case "totem_12": // Сын ягуара
                     if(skillName == SKILL_ACCURACY && !IsDay())
                         fScale *= 2.0; // Получи фашист гранату по ночам!!!!
-                    break;
-                case "obereg_1": // Тередо
-                    if(skillName == SKILL_REPAIR) skillN += 10;
-                    break;
-                case "obereg_2": // Шочипили
-                    if(skillName == SKILL_REPAIR) skillN += 10;
-                    break;
-                case "obereg_4": // Веер цыганки
-                    if(skillName == SKILL_SNEAK) skillN += 10;
-                    break;
-                case "obereg_5": // Нефритовая черепашка
-                    if(skillName == SKILL_FORTUNE) skillN += 15;
-                    break;
-                case "obereg_6": // Обезьяний кулак
-                    if(skillName == SKILL_LEADERSHIP) skillN += 10;
                     break;
                 case "obereg_7": // Рыбак
                     if(skillName == SKILL_SAILING)
@@ -1607,9 +1288,6 @@ int GetCharacterSkillSimple(ref _refCharacter, string skillName)
                         if(ShipBonus2Artefact(_refCharacter, SHIP_GALEON_SM)) skillN += 15;
                         else skillN += 10;
                     }
-                    break;
-                case "obereg_8": // Чётки торговца
-                    if(skillName == SKILL_COMMERCE) skillN += 15;
                     break;
                 case "amulet_6": // Мадонна
                     if(skillName == SKILL_SNEAK)
@@ -1628,33 +1306,28 @@ int GetCharacterSkillSimple(ref _refCharacter, string skillName)
             }
         }
 
+		if (GetCharacterBoolModifier(_refCharacter, MODIFIER_DISABLE_OVERLOAD_CHECK))
+		{
+			bOverloadCheck = false;
+		}
+		if (skillName == SKILL_ACCURACY)
+		{
+			fScale *= GetCharacterFloatModifier(_refCharacter, MODIFIER_SKILL_ACCURACY_SCALE);
+		}
+		
+
         // TALISMAN_ITEM_TYPE
         sItem = GetCharacterEquipByGroup(_refCharacter, TALISMAN_ITEM_TYPE);
         switch(sItem)
         {
-            case "talisman11": // Куриный бог
-                skillN += 2;
-                break;
-            case "talisman14": // Жаньи
-                if(skillName == SKILL_SAILING) skillN += 15;
-                break;
             case "talisman17": // Liber Misericordiae
                 if(bHero && skillName == SKILL_DEFENCE && ShipBonus2Artefact(_refCharacter, SHIP_GALEON_SM))
                     skillN += 10;
                 break;
-            case "kaleuche_amulet2": // Индейский амулет
-                skillN += SetCharacterSkillByTuttuat(_refCharacter, skillName);
-                break;
         }
 
-        // BLADE_ITEM_TYPE
-		skillN += SetCharacterSkillByQuestBlade(_refCharacter, skillName);
-
-		// CIRASS_ITEM_TYPE
-		skillN += SetCharacterSkillBySuit(_refCharacter, skillName);
-
-		// GUN_ITEM_TYPE
-		skillN += SetCharacterSkillByGun(_refCharacter, skillName);
+		// Скиллы, собранные с предметов
+		skillN += GetCharacterSkillModifier(_refCharacter, skillName);
 
         // Мангароса
         skillN += SetCharacterSkillByMangarosa(_refCharacter, skillName);
@@ -3615,16 +3288,12 @@ int GetAttackCritical(ref chr)
 {
 	int chance 	= 0;
 	
-	if(IsEquipCharacterByArtefact(chr, "indian_3")) chance += 15;
-	if(IsEquipCharacterByArtefact(chr, "amulet_4")) chance -= 10;
+	float modifierChance = GetCharacterFloatModifier(chr, MODIFIER_MELEE_CRIT_CHANCE);
+	chance += modifierChance;
+
 	if(CheckCharacterPerk(chr, "HT1")) chance += 10;
 	if(IsCharacterPerkOn(chr, "CriticalHit")) chance += 5;
 	if(IsCharacterPerkOn(chr, "SwordplayProfessional")) chance += 10;
-	if(GetCharacterEquipByGroup(chr, CIRASS_ITEM_TYPE) == "cirass9") chance += 5;
-	// dlc для Патронов
-	if(GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "khopesh1") chance += 1;
-	if(GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "khopesh2") chance += 3;
-	if(GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "khopesh3") chance += 2;
 	
 	if(chance > 0) chance += GetCharacterSPECIAL(chr, SPECIAL_L);
 	
@@ -3636,17 +3305,9 @@ int GetShotCritical(ref chr)
 {
 	int chance = 0;
 	
-	if(GetCharacterEquipByGroup(chr, GUN_ITEM_TYPE) == "pistol5") chance += 15;
-	if(GetCharacterEquipByGroup(chr, MUSKET_ITEM_TYPE) == "mushket5") chance += 10;
-	if(GetCharacterEquipByGroup(chr, GUN_ITEM_TYPE) == "pistol9") chance += 3;
-	if(GetCharacterEquipByGroup(chr, MUSKET_ITEM_TYPE) == "mushket3") chance += 3;
-	if(GetCharacterEquipByGroup(chr, MUSKET_ITEM_TYPE) == "mushket7") chance += 6;
-	if(GetCharacterEquipByGroup(chr, GUN_ITEM_TYPE) == "pistol11") chance += 6;
-	if(GetCharacterEquipByGroup(chr, GUN_ITEM_TYPE) == "pistol14") chance += 9;
-	if(GetCharacterEquipByGroup(chr, CIRASS_ITEM_TYPE) == "cirass10")) chance += 5;
-	if(IsEquipCharacterByArtefact(chr, "indian_1")) chance += 3;
-	if(IsEquipCharacterByArtefact(chr, "indian_2")) chance += 3;
-	if(IsEquipCharacterByArtefact(chr, "totem_12")) chance += 3;
+	float modifierChance = GetCharacterFloatModifier(chr, MODIFIER_RANGE_CRIT_CHANCE);
+	chance += modifierChance;
+
 	if(chance > 0)
 	{
 		int si = sti(GetCharacterSPECIAL(chr, SPECIAL_L)+GetCharacterSPECIAL(chr, SPECIAL_P))/2;
@@ -3717,7 +3378,8 @@ int GetDefenceGun(ref chr)
 int GetDefenceCritical(ref chr)
 {
 	int chance 	= 100;
-	if(IsEquipCharacterByArtefact(chr, "indian_4")) chance += 10;
+	chance += GetCharacterFloatModifier(chr, MODIFIER_CRIT_INCOMING_CHANCE);
+
 	if(IsEquipCharacterByArtefact(chr,  "amulet_3"))
 	{
 		if(ShipBonus2Artefact(chr, SHIP_GALEON_SM)) chance  -= 20;

@@ -95,10 +95,10 @@ float LAi_GetDamageAttackType(aref attack, aref enemy, string attackType, ref aW
 	
 	float kBonus = 1.0;
 	
-	// талисман "Упырь"
-	if(IsEquipCharacterByArtefact(attack, "totem_11") && !CheckCharacterPerk(enemy, "HT1"))
+	float energyDrain = GetCharacterFloatModifier(attack, MODIFIER_ENERGY_DRAIN);
+	if(energyDrain > 0 && !CheckCharacterPerk(enemy, "HT1"))
 	{
-		float fEnergyDrain = stf(enemy.chr_ai.energy) * 0.1;
+		float fEnergyDrain = stf(enemy.chr_ai.energy) * energyDrain;
 		Lai_CharacterChangeEnergy(enemy, -fEnergyDrain);
 		Lai_CharacterChangeEnergy(attack, fEnergyDrain);
 		if(attack.id == "Blaze")
@@ -196,21 +196,10 @@ float LAi_GetDamageAttackType(aref attack, aref enemy, string attackType, ref aW
 			kBalance = 1.0;
 		break;
 		case "break":
+			kBonus *= GetCharacterFloatModifier(attack, MODIFIER_MELEE_BREAK_ATTACK_BONUS);
+			kBonus *= GetCharacterFloatModifier(enemy, MODIFIER_MELEE_BREAK_ATTACK_BONUS_ENEMY);
 			if(CheckCharacterPerk(attack, "HardHitter"))
 				kBonus *= 1.3;
-			if(IsEquipCharacterByArtefact(attack, "indian_4"))
-				kBonus *= 1.25;
-			if(IsEquipCharacterByArtefact(enemy, "amulet_4"))
-				kBonus *= 0.85;
-			if(IsEquipCharacterByArtefact(attack, "amulet_3"))
-			{
-				if(ShipBonus2Artefact(attack, SHIP_GALEON_SM))
-					kBonus *= 0.95;
-				else
-					kBonus *= 0.9;
-			}
-			if(IsEquipCharacterByArtefact(enemy, "indian_3"))
-				kBonus *= 1.1;
 			if(bMusket)
 			{
 				kAttack = 1.2;
@@ -419,18 +408,10 @@ float LAi_GunCalcProbability(aref attack, aref enemy, float kDist, string sType)
 			p = p + 0.1;
 		}
 	}
-	if(!IsDay() && IsEquipCharacterByArtefact(attack, "totem_12")) p = p * 2;
-	
-	
+
 	p *= GetCharacterFloatModifier(attack, MODIFIER_RANGE_HIT_PROBABILITY);
 	p *= GetCharacterFloatModifier(enemy, MODIFIER_RANGE_HIT_ENEMY_PROBABILITY);
 
-	if(IsEquipCharacterByArtefact(enemy,  "amulet_2"))
-	{
-		if(ShipBonus2Artefact(enemy, SHIP_GALEON_SM)) p = p * 0.75;
-		else p = p * 0.85;
-	}
-	
 	// путь будет больше 1 - тогда 100% попал
 	return p;
 }
@@ -498,10 +479,7 @@ float LAi_GunCalcDamage(aref attack, aref enemy, string sType, int nShots)
 	{
 		dmg = stf(attack.chr_ai.(sType).basedmg) * nShots;
 		dmg *= Bring2Range(0.75, 1.5, 0.0, 1.0, aSkill);
-		if(IsEquipCharacterByArtefact(attack, "talisman18"))
-		{
-			dmg *= 1.0 + 2.0 * ArticlesBonus(attack); 
-		}
+		dmg *= GetCharacterFloatModifier(attack, MODIFIER_RANGE_EXTRA_DAMAGE_GRAPE);
 	}
 	else
 		dmg = min + (max - min)*frandSmall(aSkill);
@@ -512,13 +490,7 @@ float LAi_GunCalcDamage(aref attack, aref enemy, string sType, int nShots)
 	}
 	
 	dmg *= GetCharacterFloatModifier(attack, MODIFIER_RANGE_DAMAGE_MODIFIER);
-	dmg *= GetCharacterFloatModifier(enemy, MODIFIER_RANGE_ENEMY_DAMAGE_MODIFIER);
-	
-	if(IsEquipCharacterByArtefact(attack, "amulet_2")) 
-	{
-		if(ShipBonus2Artefact(attack, SHIP_GALEON_SM)) dmg *= 0.94;
-		else dmg *= 0.9;
-	}
+	dmg *= GetCharacterFloatModifier(enemy, MODIFIER_RANGE_ENEMY_DAMAGE);
 
 	if(CheckAttribute(attack, "cheats.gundamage")) dmg *= 10.0;
 	
@@ -735,7 +707,7 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 		dmg = dmg*stf(attack.MultiFighter);
 	}
 	
-	dmg *= GetCharacterFloatModifier(attack, MODIFIER_MELEE_DAMAGE_MODIFIER);
+	dmg *= GetCharacterFloatModifier(attack, MODIFIER_MELEE_DAMAGE);
 
 	if (CheckAttribute(attack, "cheats.bladedamage")) dmg = dmg*10;
 	if (CheckAttribute(enemy, "GuardMask") && bBonusAganistMonster)
@@ -758,10 +730,7 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	{
 		dmg *= GetCharacterFloatModifier(attack, MODIFIER_MELEE_DAMAGE_MISHELLE);
 	}
-	if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "blade_SP_3")
-	{
-		dmg *= 1.0 + Bring2Range(0.0, 0.75, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(attack)) / 2.0);
-	}
+
 	//Аттака своей группы
 	bool noExp = false;
 	if(CheckAttribute(attack, "chr_ai.group") && CheckAttribute(enemy, "chr_ai.group"))
@@ -815,15 +784,6 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	
 	if(critical > 0.0)
 	{
-		// эффекты на крит. урон
-		if(IsEquipCharacterByArtefact(enemy,  "amulet_3"))
-		{
-			if(ShipBonus2Artefact(enemy, SHIP_GALEON_SM))
-				critical -= 0.4;
-			else
-				critical -= 0.3;
-		}
-		
 		float modifier = GetCharacterFloatModifier(enemy, MODIFIER_MELEE_CRIT_DAMAGE);
 		critical += modifierChance;
 		
@@ -1052,8 +1012,11 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 			return;
 		}
 	}
+	
+	float modifier = GetCharacterFloatModifier(enemy, MODIFIER_SHOT_AVOID_CHANCE);
+	
 	// belamour шляпа Грима
-	if(rand(9) == 5 && GetCharacterEquipByGroup(enemy, HAT_ITEM_TYPE) == "hat9")
+	if(frand(1.0) < modifier)
 	{
 		notification(StringFromKey("LAi_fightparams_1"), "Hat9");
 		return;
@@ -1075,7 +1038,7 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 
 	// belamour legendary edition бонусы огнестрелу -->
 	int InstaShot = 0;
-	float modifier = GetCharacterFloatModifier(attack, MODIFIER_RANGE_INSTA_SHOT);
+	modifier = GetCharacterFloatModifier(attack, MODIFIER_RANGE_INSTA_SHOT);
 	InstaShot = modifier;
 	// <-- legendary edition
 	

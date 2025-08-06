@@ -1933,14 +1933,18 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 		_refCharacter.Money = q;
 		
 		//AddItemToCRC(_refCharacter, itemName, n);
-		
+		RecalculateCharacterModifiers(_refCharacter);
 		return true;
 	}	
 
 	if(n > 0)
 	{
         //if (findsubstr(itemName, "map_part" , 0) != -1 && GetCharacterItem(_refCharacter,itemName) > 0) return true;
-        if (itemName == "treasure_note" && !TreasureNotesHandler(_refCharacter, arItm)) return false;
+        if (itemName == "treasure_note" && !TreasureNotesHandler(_refCharacter, arItm))
+		{
+			RecalculateCharacterModifiers(_refCharacter);
+			return false;
+		}
 	}
 	
 	if (itemName == "talisman11" && IsMainCharacter(_refCharacter) && !CheckAttribute(pchar, "TookChickenGod")) {
@@ -1987,6 +1991,7 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 	{
 		if(q <= 0 && GetChrItemQuantity(_refCharacter) >= MAX_ITEM_TAKE)
 		{
+			RecalculateCharacterModifiers(_refCharacter);
 			return false;
 		}
 		
@@ -2051,6 +2056,7 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 		}
 	}
 	
+	RecalculateCharacterModifiers(_refCharacter);
 	return true;
 }
 

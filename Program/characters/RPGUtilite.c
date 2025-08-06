@@ -990,116 +990,6 @@ int GetCharacterSuitType(ref rChar)
 	}
 }
 
-// Jason: учёт негенерируемых клинков
-int SetCharacterSkillByQuestBlade(ref rChar, String sSkillName)
-{
-	int iValue = 0;
-	String sBlade = GetCharacterEquipByGroup(rChar, BLADE_ITEM_TYPE);
-    if(sBlade == "") return 0;
-
-	// belamour генерабельные клинки
-    int idx = FindItem(sBlade);
-    if (idx < 0) return 0;
-    ref rBlade = &Items[idx];
-    if(CheckAttribute(rBlade, "DefItemID"))
-    {
-        if(sSkillName == SKILL_F_LIGHT)
-        {
-            if(rBlade.DefItemID == "blade_38")      return 5;  // Дуэльная шпага cle
-            else if(rBlade.DefItemID == "blade_39") return 10; // Рапира бретера cle
-        }
-	}
-
-	switch(sBlade)
-	{
-		case "blade_38"	:
-			if(sSkillName == SKILL_F_LIGHT) iValue = 5;
-		break;
-
-		case "blade_39"	:
-			if(sSkillName == SKILL_F_LIGHT) iValue = 10;
-		break;
-
-		case "knife_01"	:
-			if(sSkillName == SKILL_F_LIGHT) iValue = 5;
-		break;
-		
-		case "knife_02"	:
-			if(sSkillName == SKILL_F_LIGHT) iValue = 15;
-		break;
-		
-		case "q_blade_10"	:
-			if(sSkillName == SKILL_FENCING) iValue = 10;
-		break;
-		
-		case "q_blade_13"	:
-			if(sSkillName == SKILL_F_HEAVY) iValue = 10;
-		break;
-		
-		case "q_blade_16"	:
-			if(sSkillName == SKILL_F_LIGHT) iValue = 10;
-		break;
-		
-		case "q_blade_18"	:
-			if(sSkillName == SKILL_F_LIGHT) iValue = 12;
-		break;
-		
-		case "q_blade_19"	:
-			if(sSkillName == SKILL_FENCING) iValue = 12;
-		break;
-		
-		case "q_blade_21"	:
-			if(sSkillName == SKILL_F_HEAVY) iValue = 12;
-		break;
-		
-		case "topor_06"	: // Addon 2016-1 Jason Пиратская линейка
-			if(sSkillName == SKILL_F_HEAVY) iValue = 5;
-		break;
-		
-		// Мачете конкистадора
-		case "machete2"	:
-			if(sSkillName == SKILL_FENCING) iValue = 5;
-		break;
-		
-		// Хопеш обычный cle
-		case "khopesh1"	:
-			if(sSkillName == SKILL_FENCING) iValue = 5;
-		break;
-		
-		// Хопеш золотой cle
-		case "khopesh2"	:
-			if(sSkillName == SKILL_FENCING) iValue = 15;
-		break;
-		
-		// Хопеш обычный с кровью cle
-		case "khopesh3"	:
-			if(sSkillName == SKILL_FENCING) iValue = 10;
-		break;
-		
-		// Кавалерийская сабля cle
-		case "saber"	:
-			if(sSkillName == SKILL_FENCING) iValue = 5;
-		break;
-		
-		// сабля Блейза cle
-		case "pirate_cutlass"	:
-			if(sSkillName == SKILL_FENCING) iValue = 5;
-		break;
-		
-		// Итальянская рапира cle
-		case "blade_40"	:
-			if(sSkillName == SKILL_LEADERSHIP) iValue = 10;
-		break;
-		
-		// Армейский палаш cle
-		case "blade_42"	:
-			if(sSkillName == SKILL_F_HEAVY) iValue = 5;
-		break;
-	}
-	
-	return iValue;
-}
-
 // Jason: спец.атрибут
 int SetCharacterSkillByPenalty(ref rChar, String sSkillName)
 {
@@ -1245,20 +1135,6 @@ int GetCharacterSkillSimple(ref _refCharacter, string skillName)
             }
         }
 
-        // Переносимые вещи
-		skillN += SetCharacterSkillByItem(_refCharacter, skillName, SKILL_FORTUNE, 		"SkullAztec", 	-20);
-		skillN += SetCharacterSkillByItem(_refCharacter, skillName, SKILL_LEADERSHIP, 	"SkullAztec", 	 10);
-		skillN += SetCharacterSkillByItem(_refCharacter, skillName, SKILL_PISTOL, 		"KnifeAztec", 	-30);
-		skillN += SetCharacterSkillByItem(_refCharacter, skillName, SKILL_F_LIGHT, 		"KnifeAztec", 	-20);
-		skillN += SetCharacterSkillByItem(_refCharacter, skillName, SKILL_FENCING, 		"KnifeAztec", 	-20);
-		skillN += SetCharacterSkillByItem(_refCharacter, skillName, SKILL_F_HEAVY, 		"KnifeAztec", 	-20);
-		skillN += SetCharacterSkillByItem(_refCharacter, skillName, SKILL_FORTUNE, 		  "mineral8",   -10);
-		skillN += SetCharacterSkillByItem(_refCharacter, skillName, SKILL_FORTUNE, 		 "mineral14",   -10);
-		skillN += SetCharacterSkillByItem(_refCharacter, skillName, SKILL_FORTUNE, 			 "Coins",   -50);
-		skillN += SetCharacterSkillByItem(_refCharacter, skillName, SKILL_LEADERSHIP, 	 "mineral30",   -10);
-		skillN += SetCharacterSkillByItem(_refCharacter, skillName, SKILL_LEADERSHIP, 	 "mineral31", 	-10);
-    	skillN += SetCharacterSkillByItem(_refCharacter, skillName, SKILL_FORTUNE,       "mineral31", 	-10);
-
         // Экипировка (Rosarak. Переписал, чтобы работало быстрее)
         int i, num, idx;
         aref arEquip, curItem;
@@ -1266,65 +1142,23 @@ int GetCharacterSkillSimple(ref _refCharacter, string skillName)
         bool bOverloadCheck = true;
         float fScale = 1.0;
 
-        // ITEM_SLOT_TYPE
-        makearef(arEquip, _refCharacter.equip_item);
-        num = GetAttributesNum(arEquip);
-        for (i=0; i<num; i++)
-        {
-            sItem = GetAttributeValue(GetAttributeN(arEquip,i));
-            //if(sItem == "") continue;
-            idx = FindItem(sItem);
-            if (idx < 0) continue;
-
-            switch(Items[idx].id)
-            {
-                case "totem_12": // Сын ягуара
-                    if(skillName == SKILL_ACCURACY && !IsDay())
-                        fScale *= 2.0; // Получи фашист гранату по ночам!!!!
-                    break;
-                case "obereg_7": // Рыбак
-                    if(skillName == SKILL_SAILING)
-                    {
-                        if(ShipBonus2Artefact(_refCharacter, SHIP_GALEON_SM)) skillN += 15;
-                        else skillN += 10;
-                    }
-                    break;
-                case "amulet_6": // Мадонна
-                    if(skillName == SKILL_SNEAK)
-                    {
-                        if(ShipBonus2Artefact(_refCharacter, SHIP_GALEON_SM)) fScale *= 0.75;
-                        else fScale *= 0.5;
-                    }
-                    break;
-                case "amulet_7": // Святая вода
-                    if(skillName == SKILL_FORTUNE)
-                    {
-                        if(ShipBonus2Artefact(_refCharacter, SHIP_GALEON_SM)) fScale *= 0.75;
-                        else fScale *= 0.5;
-                    }
-                    break;
-            }
-        }
-
 		if (GetCharacterBoolModifier(_refCharacter, MODIFIER_DISABLE_OVERLOAD_CHECK))
 		{
 			bOverloadCheck = false;
 		}
-		if (skillName == SKILL_ACCURACY)
-		{
-			fScale *= GetCharacterFloatModifier(_refCharacter, MODIFIER_SKILL_ACCURACY_SCALE);
-		}
-		
-
-        // TALISMAN_ITEM_TYPE
-        sItem = GetCharacterEquipByGroup(_refCharacter, TALISMAN_ITEM_TYPE);
-        switch(sItem)
+		switch(skillName)
         {
-            case "talisman17": // Liber Misericordiae
-                if(bHero && skillName == SKILL_DEFENCE && ShipBonus2Artefact(_refCharacter, SHIP_GALEON_SM))
-                    skillN += 10;
-                break;
-        }
+			case SKILL_ACCURACY:
+				fScale *= GetCharacterFloatModifier(_refCharacter, MODIFIER_SKILL_ACCURACY_SCALE);
+				break;
+			case SKILL_SNEAK:
+				fScale *= GetCharacterFloatModifier(_refCharacter, MODIFIER_SKILL_SNEAK_SCALE);
+				break;
+			case SKILL_FORTUNE:
+				fScale *= GetCharacterFloatModifier(_refCharacter, MODIFIER_SKILL_FORTUNE_SCALE);
+				break;
+		}
+
 
 		// Скиллы, собранные с предметов
 		skillN += GetCharacterSkillModifier(_refCharacter, skillName);

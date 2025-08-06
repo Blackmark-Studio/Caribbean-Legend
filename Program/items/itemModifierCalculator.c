@@ -8,6 +8,7 @@ void RecalculateCharacterModifiers(ref rChar)
 	DeleteAttribute(rChar, "modifiers");
 	aref arItm;
 	int  i = 0;
+	int num = 0;
 	string itemType;
 	string itemID;
 	if (!CheckAttribute(rChar, "equip"))
@@ -18,8 +19,8 @@ void RecalculateCharacterModifiers(ref rChar)
 	aref charEquip;
 	makearef(charEquip, rChar.equip);
 
-	int equipmentNum = GetAttributesNum(charEquip);
-	for (i = 0; i < equipmentNum; i++)
+	num = GetAttributesNum(charEquip);
+	for (i = 0; i < num; i++)
 	{
 		aref itemAttr = GetAttributeN(charEquip, i);
 		itemID = GetAttributeValue(itemAttr);
@@ -42,35 +43,33 @@ void RecalculateCharacterModifiers(ref rChar)
 
 		if(Items_FindItem(itemID, &arItm) < 0)
 		{
-			trace("TakeNItems warning - can't find " + itemID + " item");
+			trace("RecalculateCharacterModifiers warning - can't find " + itemID + " item");
 			continue;
 		}
 		
-		ApplyItemModifiers(rChar, arItm);
+		ApplyItemModifiers(rChar, arItm, itemID, false);
 	}
 	
 	if (CheckAttribute(rChar, "equip_item"))
 	{
-		int num, idx;
-        aref arEquip, curItem;
-        string sItem;
-        makearef(arEquip, rChar.equip_item);
-        int amuletNum = GetAttributesNum(arEquip);
 
-        for (i=0; i < amuletNum; i++)
+        makearef(charEquip, rChar.equip_item);
+        num = GetAttributesNum(charEquip);
+
+        for (i=0; i < num; i++)
         {
-            itemID = GetAttributeValue(GetAttributeN(arEquip, i));
+            itemID = GetAttributeValue(GetAttributeN(charEquip, i));
             if(itemID == "")
 			{
 				continue;
 			}
             if(Items_FindItem(itemID, &arItm) < 0)
 			{
-				trace("TakeNItems warning - can't find " + itemID + " item");
+				trace("RecalculateCharacterModifiers warning - can't find " + itemID + " item");
 				continue;
 			}
 
-            ApplyItemModifiers(rChar, arItm);
+            ApplyItemModifiers(rChar, arItm, itemID, false);
         }
 	}
 
@@ -78,8 +77,8 @@ void RecalculateCharacterModifiers(ref rChar)
 	{
 		aref charBullets;
 		makearef(charBullets, rChar.bullets);
-		int bulletsNum = GetAttributesNum(charBullets);
-		for (i = 0; i < bulletsNum; i++)
+		num = GetAttributesNum(charBullets);
+		for (i = 0; i < num; i++)
 		{
 			aref bulletAttr = GetAttributeN(charBullets, i);
 			itemID = GetAttributeValue(bulletAttr);
@@ -98,11 +97,11 @@ void RecalculateCharacterModifiers(ref rChar)
 
 			if(Items_FindItem(itemID, &arItm) < 0)
 			{
-				trace("TakeNItems warning - can't find " + itemID + " item");
+				trace("RecalculateCharacterModifiers warning - can't find " + itemID + " item");
 				continue;
 			}
 			
-			ApplyItemModifiers(rChar, arItm);
+			ApplyItemModifiers(rChar, arItm, itemID, false);
 		}
 	}
 	
@@ -111,9 +110,32 @@ void RecalculateCharacterModifiers(ref rChar)
 	{
 		aref personalModifiers;
 		makearef(personalModifiers, rChar.personalModifiers);
-		ApplyItemModifiers(rChar, personalModifiers);
+		ApplyItemModifiers(rChar, personalModifiers, "Character_"+rChar.id, false);
 	}
 	
+	
+	// Пассивные скиллы для предметов просто в инвентаре
+	if (CheckAttribute(rChar, "items"))
+	{
+        makearef(charEquip, rChar.items);
+        num = GetAttributesNum(charEquip);
+
+        for (i=0; i < num; i++)
+        {
+            itemID = GetAttributeName(GetAttributeN(charEquip, i));
+            if(itemID == "")
+			{
+				continue;
+			}
+            if(Items_FindItem(itemID, &arItm) < 0)
+			{
+				trace("RecalculateCharacterModifiers warning - can't find " + itemID + " item");
+				continue;
+			}
+
+            ApplyItemModifiers(rChar, arItm, itemID, true);
+        }
+	}
 	
 	trace("done recalculate modifiers for "+rChar.name);
 	if (CheckAttribute(rChar, "modifiers"))
@@ -131,7 +153,7 @@ void RecalculateCharacterModifiers(ref rChar)
 	
 }
 
-void ApplyItemModifiers(ref rChar, aref rItem)
+void ApplyItemModifiers(ref rChar, aref rItem, string itemID, bool bPassive)
 {
 	int i = 0;
 	int skillIntCharValue = 0;
@@ -143,16 +165,29 @@ void ApplyItemModifiers(ref rChar, aref rItem)
 	string skillName;
 	string modifierType;
 	
-	if (CheckAttribute(rItem, "skills"))
+	string prefix = "";
+	if (bPassive)
+	{
+		prefix = "passive_";
+	}
+	
+	string skillsAttr = prefix+"skills";
+	string modifiersAttr = prefix+"modifiers";
+	if (CheckAttribute(rItem, skillsAttr))
 	{
 		aref itemSkills;
-		makearef(itemSkills, rItem.skills);
+		makearef(itemSkills, rItem.(skillsAttr));
 		skillNum = GetAttributesNum(itemSkills);
 		for (i = 0; i < skillNum; i++)
 		{
 			skillAttr = GetAttributeN(itemSkills, i);
 			skillValue = GetAttributeValue(skillAttr);
 			skillName = GetAttributeName(skillAttr);
+			if (CheckAttribute(skillAttr, "callback"))
+			{
+				rChar.modifiers.skills.(skillName).(itemID) = skillAttr.callback;
+				continue;
+			}
 
 			skillIntCharValue = 0;
 			
@@ -166,17 +201,22 @@ void ApplyItemModifiers(ref rChar, aref rItem)
 		}
 	}
 	
-	if (CheckAttribute(rItem, "modifiers"))
+	if (CheckAttribute(rItem, modifiersAttr))
 	{
 		aref itemModifiers;
-		makearef(itemModifiers, rItem.modifiers);
+		makearef(itemModifiers, rItem.(modifiersAttr));
 		skillNum = GetAttributesNum(itemModifiers);
 		for (i = 0; i < skillNum; i++)
 		{
 			skillAttr = GetAttributeN(itemModifiers, i);
 			skillValue = GetAttributeValue(skillAttr);
 			skillName = GetAttributeName(skillAttr);
-
+			if (CheckAttribute(skillAttr, "callback"))
+			{
+				rChar.modifiers.modifiers.(skillName).(itemID) = skillAttr.callback;
+				continue;
+			}
+			
 			modifierType = FindStringBeforeChar(skillName, "_");
 			
 			switch (modifierType)
@@ -188,7 +228,7 @@ void ApplyItemModifiers(ref rChar, aref rItem)
 						skillBoolCharValue = sti(rChar.modifiers.modifiers.(skillName));
 					}
 					skillBoolCharValue = skillBoolCharValue || sti(skillValue);
-					rChar.modifiers.skills.(skillName) = skillBoolCharValue;
+					rChar.modifiers.modifiers.(skillName) = skillBoolCharValue;
 					break;
 					
 				case "mul":
@@ -198,7 +238,7 @@ void ApplyItemModifiers(ref rChar, aref rItem)
 						skillFloatCharValue = stf(rChar.modifiers.modifiers.(skillName));
 					}
 					skillFloatCharValue *= stf(skillValue);
-					rChar.modifiers.skills.(skillName) = skillFloatCharValue;
+					rChar.modifiers.modifiers.(skillName) = skillFloatCharValue;
 					break;
 					
 				case "add":
@@ -208,7 +248,7 @@ void ApplyItemModifiers(ref rChar, aref rItem)
 						skillFloatCharValue = stf(rChar.modifiers.modifiers.(skillName));
 					}
 					skillFloatCharValue += stf(skillValue);
-					rChar.modifiers.skills.(skillName) = skillFloatCharValue;
+					rChar.modifiers.modifiers.(skillName) = skillFloatCharValue;
 					break;
 				
 			}

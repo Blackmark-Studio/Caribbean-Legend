@@ -113,11 +113,11 @@ int GetCharacterSkillModifier(ref rChar, string sSkillName)
 
 int GetCharacterSkillModifierWithObject(ref rChar, string sSkillName, ref rObject)
 {
-	if (!CheckAttribute(rChar, "modifiers.skills."+sSkillName))
+	int result = 0;
+	if (CheckAttribute(rChar, "modifiers.skills."+sSkillName))
 	{
-		return 0;
+		result = sti(rChar.modifiers.skills.(sSkillName));
 	}
-	int result = sti(rChar.modifiers.skills.(sSkillName));
 	
 	aref modifierAttr;
 	makearef(modifierAttr, rChar.modifiers.skills.(sSkillName));
@@ -137,11 +137,11 @@ bool GetCharacterBoolModifier(ref rChar, string sSkillName)
 
 bool GetCharacterBoolModifierWithObject(ref rChar, string sSkillName, ref rObject)
 {
-	if (!CheckAttribute(rChar, "modifiers.modifiers."+sSkillName))
+	bool result = false;
+	if (CheckAttribute(rChar, "modifiers.modifiers."+sSkillName))
 	{
-		return false;
+		result = sti(rChar.modifiers.modifiers.(sSkillName));
 	}
-	bool result = sti(rChar.modifiers.modifiers.(sSkillName));
 
 	aref modifierAttr;
 	makearef(modifierAttr, rChar.modifiers.modifiers.(sSkillName));
@@ -164,17 +164,21 @@ float GetCharacterFloatModifier(ref rChar, string sSkillName)
 float GetCharacterFloatModifierWithObject(ref rChar, string sSkillName, ref rObject)
 {
 	string modifierType;
-	if (!CheckAttribute(rChar, "modifiers.modifiers."+sSkillName))
+	
+	float result = 0.0;
+	if (CheckAttribute(rChar, "modifiers.modifiers."+sSkillName))
+	{
+		result = stf(rChar.modifiers.modifiers.(sSkillName));
+	}
+	else
 	{
 		modifierType = FindStringBeforeChar(sSkillName, "_");
 		if (modifierType == "mul")
 		{
-			return 1.0;
+			result = 1.0;
 		}
-		return 0.0;
 	}
-	
-	float result = stf(rChar.modifiers.modifiers.(sSkillName));
+
 	aref modifierAttr;
 	makearef(modifierAttr, rChar.modifiers.modifiers.(sSkillName));
 	int callbackNum = GetAttributesNum(modifierAttr);
@@ -186,6 +190,7 @@ float GetCharacterFloatModifierWithObject(ref rChar, string sSkillName, ref rObj
 		if (modifierType == "mul")
 		{
 			needMul = true;
+			result = 1.0;
 		}
 
 		for (int i = 0; i < callbackNum; i++)
@@ -202,6 +207,7 @@ float GetCharacterFloatModifierWithObject(ref rChar, string sSkillName, ref rObj
 			}
 		}
 	}
+
 	return result;
 }
 

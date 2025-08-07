@@ -497,7 +497,7 @@ float LAi_GunCalcDamage(aref attack, aref enemy, string sType, int nShots)
 	// belamour legendary edition критический выстрел (х2) -->
 	int GunCritical = 0;
 	
-	float modifierChance = GetCharacterFloatModifier(attack, MODIFIER_RANGE_CRIT_CHANCE);
+	int modifierChance = GetCharacterFloatModifier(attack, MODIFIER_RANGE_CRIT_CHANCE);
 	GunCritical += modifierChance;
 
 	if(GunCritical > 0)
@@ -653,7 +653,7 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	float critical 	= 0.0;
 	// belamour legendary edition
 	int chance 	= 0;
-	float modifierChance = GetCharacterFloatModifier(attack, MODIFIER_MELEE_CRIT_CHANCE);
+	int modifierChance = GetCharacterFloatModifier(attack, MODIFIER_MELEE_CRIT_CHANCE);
 	chance += modifierChance;
 	
 	if(CheckCharacterPerk(attack, "HT1")) chance += 10;
@@ -785,7 +785,7 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	if(critical > 0.0)
 	{
 		float modifier = GetCharacterFloatModifier(enemy, MODIFIER_MELEE_CRIT_DAMAGE);
-		critical += modifierChance;
+		critical += modifier;
 		
         AddCharacterExpToSkill(attack, SKILL_FORTUNE, 5);
 		if(ShowCharString())
@@ -1038,8 +1038,8 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 
 	// belamour legendary edition бонусы огнестрелу -->
 	int InstaShot = 0;
-	modifier = GetCharacterFloatModifier(attack, MODIFIER_RANGE_INSTA_SHOT);
-	InstaShot = modifier;
+	int iModifier = GetCharacterFloatModifier(attack, MODIFIER_RANGE_INSTA_SHOT);
+	InstaShot = iModifier;
 	// <-- legendary edition
 	
 	//Аттака своей группы
@@ -1402,8 +1402,8 @@ int LAi_NPC_StunChance()
 			}
 		}	
 	}
-
-	npc_return_tmpi *= GetCharacterFloatModifier(chr, MODIFIER_OWN_STUN_CHANCE);
+	int v = GetCharacterFloatModifier(chr, MODIFIER_OWN_STUN_CHANCE);
+	npc_return_tmpi *= v;
 
 	return npc_return_tmpi;
 }

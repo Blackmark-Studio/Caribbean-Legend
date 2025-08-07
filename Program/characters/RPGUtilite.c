@@ -3122,7 +3122,7 @@ int GetAttackCritical(ref chr)
 {
 	int chance 	= 0;
 	
-	float modifierChance = GetCharacterFloatModifier(chr, MODIFIER_MELEE_CRIT_CHANCE);
+	int modifierChance = GetCharacterFloatModifier(chr, MODIFIER_MELEE_CRIT_CHANCE);
 	chance += modifierChance;
 
 	if(CheckCharacterPerk(chr, "HT1")) chance += 10;
@@ -3139,7 +3139,7 @@ int GetShotCritical(ref chr)
 {
 	int chance = 0;
 	
-	float modifierChance = GetCharacterFloatModifier(chr, MODIFIER_RANGE_CRIT_CHANCE);
+	int modifierChance = GetCharacterFloatModifier(chr, MODIFIER_RANGE_CRIT_CHANCE);
 	chance += modifierChance;
 
 	if(chance > 0)
@@ -3212,7 +3212,9 @@ int GetDefenceGun(ref chr)
 int GetDefenceCritical(ref chr)
 {
 	int chance 	= 100;
-	chance += GetCharacterFloatModifier(chr, MODIFIER_CRIT_INCOMING_CHANCE);
+	int modifierChance = GetCharacterFloatModifier(chr, MODIFIER_CRIT_INCOMING_CHANCE);
+	chance += modifierChance;
+
 
 	if(IsEquipCharacterByArtefact(chr,  "amulet_3"))
 	{

@@ -2,8 +2,19 @@
 
 void RecalculateCharacterModifiers(ref rChar)
 {
-	
-	trace("Recalculate modifiers for "+rChar.name);
+	if (CharacterIsDead(rChar))
+	{
+		return;
+	}
+			
+	if (CheckAttribute(rChar, "name"))
+	{
+		trace("Recalculate modifiers for "+rChar.name+" id = "+rChar.id);
+	}
+	else
+	{
+		trace("Recalculate modifiers for unkknown char "+rChar.id);
+	}
 	
 	DeleteAttribute(rChar, "modifiers");
 	aref arItm;
@@ -15,7 +26,7 @@ void RecalculateCharacterModifiers(ref rChar)
 	{
 		return;
 	}
-	
+
 	aref charEquip;
 	makearef(charEquip, rChar.equip);
 
@@ -28,14 +39,14 @@ void RecalculateCharacterModifiers(ref rChar)
 			continue;
 		itemType = GetAttributeName(itemAttr);
 
-		if (itemType == MUSKET_ITEM_TYPE && !CharUseMusket(rChar))
+		if (itemType == MUSKET_ITEM_TYPE && !IsMusketActiveOrPriority(rChar))
 		{
 			continue;
 		}
 		
 		if (itemType == GUN_ITEM_TYPE || itemType == BLADE_ITEM_TYPE)
 		{
-			if (CharUseMusket(rChar)) // вложенные скобки почему-то не воспринимает движок
+			if (IsMusketActiveOrPriority(rChar)) // вложенные скобки почему-то не воспринимает движок
 			{
 				continue;
 			}
@@ -52,10 +63,10 @@ void RecalculateCharacterModifiers(ref rChar)
 	
 	if (CheckAttribute(rChar, "equip_item"))
 	{
-
+		
         makearef(charEquip, rChar.equip_item);
         num = GetAttributesNum(charEquip);
-
+		
         for (i=0; i < num; i++)
         {
             itemID = GetAttributeValue(GetAttributeN(charEquip, i));
@@ -84,13 +95,12 @@ void RecalculateCharacterModifiers(ref rChar)
 			itemID = GetAttributeValue(bulletAttr);
 			itemType = GetAttributeName(bulletAttr);
 
-
-			if (itemType == MUSKET_ITEM_TYPE && !CharUseMusket(rChar))
+			if (itemType == MUSKET_ITEM_TYPE && !IsMusketActiveOrPriority(rChar))
 			{
 				continue;
 			}
 			 
-			if (itemType == GUN_ITEM_TYPE && CharUseMusket(rChar))
+			if (itemType == GUN_ITEM_TYPE && IsMusketActiveOrPriority(rChar))
 			{
 				continue;
 			}
@@ -196,6 +206,7 @@ void ApplyItemModifiers(ref rChar, aref rItem, string itemID, bool bPassive)
 				skillIntCharValue = sti(rChar.modifiers.skills.(skillName));
 			}
 			
+			
 			skillIntCharValue += sti(skillValue);
 			rChar.modifiers.skills.(skillName) = skillIntCharValue;
 		}
@@ -267,5 +278,18 @@ void RecalculateModifiersForAllCharacters()
 			continue;
 		}
 		RecalculateCharacterModifiers(rChar);
+	}
+}
+
+
+bool IsMusketActiveOrPriority(ref rChar)
+{
+	if (LAi_CheckFightMode(rChar) == 0)
+	{
+		return MusketPriority(rChar);
+	}
+	else
+	{
+		return CharUseMusket(rChar);
 	}
 }

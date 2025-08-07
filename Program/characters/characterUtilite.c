@@ -3058,6 +3058,7 @@ void RemoveCharacterArtefactEquip(ref chref, string slotID)
 	}	
 	chref.equip_item.(slotID) = "";
 	chref.equip_item.(slotID).time = -1;
+	RecalculateCharacterModifiers(chref);
 }
 
 void EquipCharacterByArtefact(ref chref, string itemID)
@@ -3084,7 +3085,8 @@ void EquipCharacterByArtefact(ref chref, string itemID)
 				}
 				chref.equip_item.(slotID).time 	= sti(arItm.time)+addTime;
 			}
-			else chref.equip_item.(slotID).time = -1;	
+			else chref.equip_item.(slotID).time = -1;
+			RecalculateCharacterModifiers(chref);
 		}
 		else return;
 	}
@@ -3144,7 +3146,6 @@ void UpdateCharacterEquipItem(ref chref)
 			}	
 		}
 	}
-	RecalculateCharacterModifiers(chref);
 }
 
 void CheckCharactersUpdateItems()

@@ -65,7 +65,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// суп из черепахи
 		case "terrapin":
 			DelMapQuestMarkCity("SentJons");
-			dialog.text = "Monsieur Thibaut to sławny człowiek na Tortudze. Jego rezydencja znajduje się niedaleko urzędu portowego. Wychodząc z tawerny, idź prosto w kierunku portu. Zbliż się do łuku prowadzącego do portu, skręć w lewo na skrzyżowaniu i idź aż do końca ulicy, gdzie natkniesz się na dwupiętrowy kamienny budynek z czerwonym dachem. To jest rezydencja Monsieur Thibaut.";
+			dialog.text = "Monsieur Thibaut to sławny człowiek na Tortudze. Jego rezydencja znajduje się niedaleko urzędu portowego. Wychodząc z karczmy, idź prosto w kierunku portu. Zbliż się do łuku prowadzącego do portu, skręć w lewo na skrzyżowaniu i idź aż do końca ulicy, gdzie natkniesz się na dwupiętrowy kamienny budynek z czerwonym dachem. To jest rezydencja Monsieur Thibaut.";
 			link.l1 = "Dziękuję! Pójdę go odwiedzić...";
 			link.l1.go = "terrapin_1";
 		break;
@@ -87,7 +87,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "terrapin_3":
 			if (stf(environment.time) < 20.0 && stf(environment.time) > 8.0)
 			{
-				dialog.text = "Nie. Powiedział, że nie wróci do ósmej wieczorem dzisiaj. Możesz spróbować poszukać go w domu w jego rezydencji, ale nie sądzę, że go tam znajdziesz. Widziałem go żeglującego na patrolowej lugrze na morzu.";
+				dialog.text = "Nie. Powiedział, że nie wróci do ósmej wieczorem dzisiaj. Możesz spróbować poszukać go w domu w jego rezydencji, ale nie sądzę, że go tam znajdziesz. Widziałem go żeglującego na patrolowym lugrze na morzu.";
 				link.l1 = "Dziękuję! Wpadnę do niego później.";
 				link.l1.go = "terrapin_4";
 			}
@@ -129,19 +129,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth":
-			dialog.text = "Nie mam pojęcia, jak nazywał się ten statek, czy to była 'Santa Margarita' czy 'Castylijska Dziwka', ale przywieźli tutaj zdobyty hiszpański galeon. Zdobyty przez slup, nie mniej! To dopiero prawdziwe, cholernie dobre żeglowanie! Gaius Marchais, jego kapitan, chwali się w tawernie od dwóch dni - jego pierwszy rejs i taka zdobycz!\nAye, bardzo heroiczny czyn, abordaż galeonu wypełnionego kościelnymi szczurami bez żołnierzy do ich ochrony. Wydaje się, że ci papistyczni dranie zapomnieli, co się mówi o tych, którzy pomagają sobie sami...";
+			dialog.text = "Nie mam pojęcia, jak nazywał się ten statek, czy to była 'Santa Margarita' czy 'Kastylijska Dziwka', ale przywieźli tutaj zdobyty hiszpański galeon. Zdobyty przez slup, nie mniej! To dopiero prawdziwe, cholernie dobre żeglowanie! Gaius Marchais, jego kapitan, chwali się tym w karczmie już od dwóch dni - jego pierwszy rejs i taka zdobycz!\nAye, bardzo heroiczny czyn, abordaż galeonu wypełnionego kościelnymi szczurami bez żołnierzy do ich ochrony. Wydaje się, że ci papistyczni dranie zapomnieli, co się mówi o tych, którzy pomagają sobie sami...";
 			link.l1 = "Tak, Bóg pomaga tym, którzy sami sobie pomagają, to na pewno powiedzenie hugenotów. Jak mogę zobaczyć tego szczęśliwego kapitana? Jest tutaj, na Tortudze?";
 			link.l1.go = "guardoftruth_1";
 		break;
 		
 		case "guardoftruth_1":
-			dialog.text = "Ach, kto do diabła wie. Nie widziałem go w mojej tawernie od dłuższego czasu. Jak tylko wytrzeźwiał, kupił sobie nowy, lśniący statek za pieniądze z nagrody i biegał po jego pokładzie jak szaleniec. Nie mam pojęcia, gdzie teraz jest Marchais. Może jest na Tortudze, a może na morzu.";
+			dialog.text = "Ach, kto do diabła wie. Nie widziałem go w mojej karczmie od dłuższego czasu. Jak tylko wytrzeźwiał, kupił sobie nowy, lśniący statek za pieniądze z nagrody i biegał po jego pokładzie jak szaleniec. Nie mam pojęcia, gdzie teraz jest Marchais. Może jest na Tortudze, a może na morzu.";
 			link.l1 = "Dobrze. Cóż, dzięki za opowieść, kumplu!";
 			link.l1.go = "guardoftruth_2";			
 		break;
 		
 		case "guardoftruth_2":
-			dialog.text = "Zawsze do usług, Monsieur. Zawsze chętnie pomogę naszemu ukochanemu Kapitanowi "+pchar.name+" , zbawco St. Pierre! Wpadnij później!";
+			dialog.text = "Zawsze do usług, Monsieur. Zawsze chętnie pomogę naszemu ukochanemu Kapitanowi "+pchar.name+", zbawco St. Pierre! Wpadnij później!";
 			link.l1 = "...";
 			link.l1.go = "exit";	
 			AddQuestRecord("Guardoftruth", "8");
@@ -150,7 +150,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		// Addon 2016-1 Jason Пиратская линейка
 		case "mtraxx_jew":
-            dialog.text = "Wydaje się, że Gaspard staje się coraz bardziej popularny wśród waszego rodzaju. Jego dom jest przy murze. Skręć w lewo od tawerny i idź w stronę portu, ale tam nie idź, znów skręć w lewo, idź prosto, a potem skręć w prawo. Dwupiętrowy dom.";
+            dialog.text = "Wydaje się, że Gaspard staje się coraz bardziej popularny wśród waszego rodzaju. Jego dom jest przy murze. Skręć w lewo od karczmy i idź w stronę portu, ale tam nie idź, znów skręć w lewo, idź prosto, a potem skręć w prawo. Dwupiętrowy dom.";
 			link.l1 = "Dzięki!";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_WolfreekJewellerHouse");
@@ -163,7 +163,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ2":
-			dialog.text = "Też nigdy nie słyszałem o tamtej brygantynie.";
+			dialog.text = "Też nigdy nie słyszałem.";
 			link.l1 = "Słyszałem, że był tu niedawno. Może trochę srebra odświeży twoją pamięć?";
 			link.l1.go = "PZ3";
 		break;

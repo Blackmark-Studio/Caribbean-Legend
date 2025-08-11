@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 		case "First time":
 			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
 			{
-				dialog.text = "I don't want to talk with you. You attack peaceful civilians with no reasons and provoke them to fight. Get lost!";
+				dialog.text = "I don't want to talk to you. You attack peaceful civilians for no reason and provoke them to fight. Get lost!";
 				link.l1 = "Hm...";
 				link.l1.go = "exit";
 				break;
@@ -32,8 +32,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+"! Want something?";
-				link.l1 = LinkRandPhrase("Got anything interesting to say?", "Has anything new happened on the island?", "Will you tell me the last gossips?");
+				dialog.text = "Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+"! What can I do for you?";
+				link.l1 = LinkRandPhrase("Hello, Cecille. Heard any juicy gossip lately?", "Has anything new happened on the island?", "Will you tell me the latest gossip?");
 				link.l1.go = "rumours_LSC";
 				link.l2 = "I want to ask you a few questions about the island.";
 				link.l2.go = "int_quests"; //информационный блок
@@ -44,26 +44,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meeting": // первая встреча
-			dialog.text = "A-ah, so are you getting to know our Island and its inhabitants, am I right?";
-			link.l1 = "Exactly, missus?..";
+			dialog.text = "A-ah, so you're getting to know our island and its inhabitants?";
+			link.l1 = "Exactly, Madame?..";
 			link.l1.go = "meeting_1";
 		break;
 		
 		case "meeting_1":
 			dialog.text = "Halard. Cecille Halard.";
-			link.l1 = "Nice to meet you, missus Halard! It is my pleasure.";
+			link.l1 = "Nice to meet you, Madame Halard! It's my pleasure.";
 			link.l1.go = "meeting_2";
 		break;
 		
 		case "meeting_2":
-			dialog.text = "So is mine... And how did you get here, young man? I don't remember any recent shipwreck...";
-			link.l1 = "I was driven here from the Main on a barque... but it has sunk right near the shores of Island. That is how I was left without ship.";
+			dialog.text = "Mine as well... And how did you get here, young man? I don't remember any recent shipwreck...";
+			link.l1 = "I sailed from the Spanish Main on a barque and a storm drove me here... my ship sank not far from the island.";
 			link.l1.go = "meeting_3";
 		break;
 		
 		case "meeting_3":
-			dialog.text = "A barque? I find it hard to believe... In this case, you are really lucky that you have sailed all the way to the Island on such a tub and didn't fall into a storm. Storms are rare events inside the island, but outside they are a threat, a very sudden threat\nSo consider yourself lucky and get used to the local way of living! I don't want to make you upset, but getting here is easy, but leaving the Island is almost impossible. Don't think that I am grumbling, no one has managed to leave the Island alive for the last ten years.";
-			link.l1 = "And still I will try to be a bit more optimistic. Glad to meet you and see you around!";
+			dialog.text = "In that case, you are really very lucky to have made it to the island in one piece. Storms rarely touch the island itself, but in the waters surrounding it, they can appear without warning and thrash even the most well-founded ships!\nSo consider yourself lucky and get used to the place. I don't want upset you, but while getting here is easy, leaving the island is almost impossible. No one has managed to do so - and survive - for the last ten years.";
+			link.l1 = "Forgive me, but I won't give in to despair so easily. Glad to have met you, Madame Halard, 'til next time!";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 		break;
@@ -73,22 +73,22 @@ void ProcessDialogEvent()
 			dialog.text = "Yes, young man?";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
 			{
-				link.l1 = "And how did you get here, missus?";
+				link.l1 = "And how did you get here, madame?";
 				link.l1.go = "ansewer_1";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_2"))
 			{
-				link.l2 = "You have been living here for a long time, haven't you?";
+				link.l2 = "You've been living here a long time, haven't you?";
 				link.l2.go = "ansewer_2";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_3"))
 			{
-				link.l3 = "What can you tell me about locals?";
+				link.l3 = "What can you tell me about the locals?";
 				link.l3.go = "ansewer_3";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_4"))
 			{
-				link.l4 = "Can you tell me about interesting people who live here?";
+				link.l4 = "Who are the most interesting people who live here?";
 				link.l4.go = "ansewer_4";
 			}
 			link.l10 = "No questions. Pardon...";
@@ -96,28 +96,28 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_1":
-			dialog.text = "It was so long ago, therefore I don't remember really how did it happen. Shipwreck and that's it...";
-			link.l1 = "I see...";
+			dialog.text = "It was so long ago, I barely remember how it happened. I know I was shipwrecked, but as for the details... (shrug)";
+			link.l1 = "Huh.";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_1 = "true";
 		break;
 		
 		case "ansewer_2":
-			dialog.text = "Sometimes I think that I was born here... But it is not true of course. I have been living here for all second half of my life. And it was long. And I will die here because I am not going to leave this place.";
+			dialog.text = "Since I was a little girl. Sometimes I almost believe that I was born here... but that's not true, of course. However, I will certainly die here.";
 			link.l1 = "I see...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_2 = "true";
 		break;
 		
 		case "ansewer_3":
-			dialog.text = "And there is not much I can say, young man... there are all different. We have got everybody here - white, black, Indians, ex slaves and nobles, state convicts and soldiers. And there were more of them before. Everybody has their own story and their own habits. Someone doesn't care but someone else is still eager to return back. That is how we live...";
-			link.l1 = "Interesting...";
+			dialog.text = "There's not much I can say, young man... Justice Island takes all kinds: white folk, Negroes, Indians, escaped slaves, nobles, state convicts, sailors... and there were even more of them before. Everybody has their story and their habits. One person is happy to be here, another dreams constantly of leaving.\nThen you have the clans - Narwhals and Rivados - and they are balanced out by the pirates. You see a mix of people here that exist nowhere else in the world, and in relative peace and harmony, too...";
+			link.l1 = "Fascinating...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_3 = "true";
 		break;
 		
 		case "ansewer_4":
-			dialog.text = "The most interesting people here are: the Narwhal mechanic-inventor, Herr Schmidt - Narwhal gunsmith, Sancho Carpentero - the native bartender. And now we also have the admiral with his second in command.";
+			dialog.text = "Herr Schmidt, the Narwhal mechanic-inventor... Sancho Carpentero, the local bartender... And now we also have Admiral Shark Dodson with his friend, Layton Dexter.\nBut really, you should go and meet some of these people for yourself. You have no idea how many interesting stories we Justice Islanders have.";
 			link.l1 = "I will consider that...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
@@ -127,13 +127,13 @@ void ProcessDialogEvent()
 //----------------------------------------- специальные реакции -----------------------------------------------
 		//обнаружение ГГ в сундуках
 		case "Man_FackYou":
-			dialog.text = LinkRandPhrase("What are you doing there, ah? Thief!", "Just look at that! As soon as I was lost in contemplation, you decided to check my chest!", "Decided to check my chests? You won't get away with it!");
+			dialog.text = LinkRandPhrase("Ah, thief! Stop right there!", "Robbing an old women when her back is turned? How dare you!", "Decided to ransack my chests? You won't get away with it!");
 			link.l1 = "Damn it!";
 			link.l1.go = "fight";
 		break;
 		
 		case "Woman_FackYou":
-			dialog.text = "What?! Decided to check my chests? You won't get away with it!";
+			dialog.text = "Robbing an old women when her back is turned? How dare you!!";
 			link.l1 = "Foolish girl!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
@@ -155,7 +155,7 @@ void ProcessDialogEvent()
 		
 		//замечание по обнажённому оружию
 		case "LSCNotBlade":
-			dialog.text = LinkRandPhrase("Listen, you'd better take your weapon away. It makes me nervous.", "You know, running with blade is not tolerated here. Take it away.", "Listen, don't play a medieval knight running with a sword around. Take it away, it doesn't suit you...");
+			dialog.text = LinkRandPhrase("Put your weapon away, young man. It makes me nervous.", "You know, bad things happen to people who wave their weapons around on this island. Put it away.", "Young man, sheathe your sword. You'll frighten an old woman to death!");
 			link.l1 = LinkRandPhrase("Fine.", "Sure.", "As you say...");
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
@@ -164,13 +164,13 @@ void ProcessDialogEvent()
 		case "CitizenNotBlade":
 			if (loadedLocation.type == "town")
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Listen, I am the citizen of the city and I'd ask you to hold down your blade.", "Listen, I am the citizen of the city and I'd ask you to hold down your blade.");
+				dialog.text = NPCharSexPhrase(NPChar, "Put your weapon away, young man. It makes me nervous.", "You know, bad things happen to people who wave their weapons around on this island. Put it away.");
 				link.l1 = LinkRandPhrase("Fine.", "Sure.", "As you say...");
 			}
 			else
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Be careful, pal, while running with a weapon. I can get nervous...", "I don't like when men are walking in front of me with their weapon ready. It scares me...");
-				link.l1 = RandPhraseSimple("Got it.", "I am taking it away.");
+				dialog.text = NPCharSexPhrase(NPChar, "Put your weapon away, young man. It makes me nervous.", "Young man, sheathe your sword. You'll frighten an old woman to death!");
+				link.l1 = RandPhraseSimple("Sorry.", "I am putting it away.");
 			}
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";

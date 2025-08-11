@@ -210,6 +210,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Guardoftruth", "1");
 			pchar.questTemp.Guardoftruth = "begin";
 			DeleteAttribute(pchar, "questTemp.GoldenGirl_Block");	// Разрешаем квест Дороже Золота
+			SetFunctionTimerCondition("GoldenGirl_Start", 0, 0, 1, false); // Запуск квеста Дороже золота
 			// ставим пленного испанца
 			sld = GetCharacter(NPC_GenerateCharacter("spa_baseprisoner", "q_spa_off_1", "man", "man", 30, SPAIN, -1, true, "quest"));
 			FantomMakeCoolFighter(sld, 30, 80, 80, "blade_13", "pistol1", "bullet", 150);

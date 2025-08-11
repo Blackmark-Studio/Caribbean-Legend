@@ -28,7 +28,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = NPCharSexPhrase(NPChar,"Uważaj, "+GetSexPhrase("kamracie","dziewczyno")+", biegając z bronią. Mogę się zdenerwować...","Nie lubię, gdy "+GetSexPhrase("facet","kobieta")+" idzie przede mną z gotową bronią. To mnie przeraża...");
+				dialog.text = NPCharSexPhrase(NPChar,"Uważaj, "+GetSexPhrase("kamracie","dziewczyno")+", biegając z bronią. Mogę się zdenerwować...","Nie lubię, gdy "+GetSexPhrase("facet","kobieta")+" idzie przede mną z wyjętą bronią. To mnie przeraża...");
 				link.l1 = RandPhraseSimple("Rozumiem.","Łapie.");
 			}
 			
@@ -2068,7 +2068,7 @@ void ProcessDialogEvent()
 					if(!CheckAttribute(PChar, "QuestTemp.AffairOfHonor.BeautifulPirate"))
 					{
 						dialog.text = "Witaj, kapitanie. Pozwól, że zapytam, czy przypadkiem nie jesteś piratem? Och, oczywiście nie! Nie jesteś. Piraci wyglądają źle, zachowują się jak zwierzęta i ten smród...";
-						link.l1 = "Czy masz urazy do piratów?";
+						link.l1 = "Masz uraz do piratów?";
 						link.l1.go = "AffairOfHonor_BeautifulPirate_1";
 						PChar.QuestTemp.AffairOfHonor.BeautifulPirate = true;
 						break;
@@ -2093,7 +2093,7 @@ void ProcessDialogEvent()
 					// "Волки и овцы".
 					if(!CheckAttribute(PChar, "QuestTemp.AffairOfHonor.WolvesAndSheeps"))
 					{
-						dialog.text = "Witaj, kapitanie. Mam coś, o co chcę cię zapytać. Nie pozostaniesz obojętny, jeśli jesteś człowiekiem honoru.\nPrzejdźmy do sedna: pewien szlachcic zatrzymał się w naszej tawernie miesiąc temu. Okazał się rozpustnikiem i łajdakiem! Co więcej, jest mordercą!";
+						dialog.text = "Witaj, kapitanie. Mam coś, o co chcę cię zapytać. Nie pozostaniesz obojętny, jeśli jesteś człowiekiem honoru.\nPrzejdźmy do sedna: pewien szlachcic zatrzymał się w naszej karczmie miesiąc temu. Okazał się rozpustnikiem i łajdakiem! Co więcej, jest mordercą!";
 						link.l1 = "Z tego co pamiętam, karą za zamordowanie niewinnego jest szubienica. Bycie rozpustnikiem i bękartem również niewiele pomoże w sądzie. Czy mam rację?";
 						link.l1.go = "AffairOfHonor_WolvesAndSheeps_1";
 						PChar.QuestTemp.AffairOfHonor.WolvesAndSheeps = true;

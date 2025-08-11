@@ -974,7 +974,7 @@ void ProcessDialogEvent()
 				Link.l1.go = "exit";
                 break;
 			}
-			link.l10 = LinkRandPhrase("Powiedz mi, jakie są popularne plotki w lokalnej karczmie?","Czy wolałbyś mi powiedzieć, co się tu dzieje?","Hej, kumple, powiesz mi, jakie jest życie na suchym lądzie?");
+			link.l10 = LinkRandPhrase("Powiedz mi, jakie są popularne plotki w lokalnej karczmie?","Czy wolałbyś mi powiedzieć, co się tu dzieje?","Hej, kolego, powiesz mi, jakie jest życie na suchym lądzie?");
 			link.l10.go = "rumours_citizen"; //повесил на горожанина, если нужны отедельные слухи, то пишем соответствующую реализацию
 			dialog.text = DLG_TEXT[210];
 			Link.l1 = DLG_TEXT[211];
@@ -1119,7 +1119,7 @@ void ProcessDialogEvent()
 
 		//у горожанина должна быть эта ветка.
 		case "new question":
-            dialog.text = NPCharRepPhrase(npchar,PCharRepPhrase(LinkRandPhrase("O tak, jestem zadowolony"+NPCharSexPhrase(NPChar,"","")+" widzieć cię prawie jak kieliszek trunku. Pytaj o co chcesz.","Lubisz rozmawiać, kapitanie? No cóż, ja też... Zwłaszcza przy kubku rumu.","Tak, "+PChar.name+"?"),LinkRandPhrase("Czego potrzebujesz?","Rozumiem, kapitanie "+PChar.name+", jesteś całkiem gadatliwy?","Męczące pytania Kapitanie, lepiej by było, gdybyś poczęstował mnie rumem.")),PCharRepPhrase(LinkRandPhrase("Co chciałeś wiedzieć "+GetAddress_Form(NPChar)+"?","Słucham cię, kapitanie.","Muszę iść, więc proszę o szybkość, kapitanie."),LinkRandPhrase("Zawsze miło mieć miłe towarzystwo, "+GetAddress_Form(NPChar)+" "+PChar.lastname+". Mów, co myślisz.","Tak, "+GetAddress_Form(NPChar)+"?","Lubisz rozmawiać, kapitanie? No cóż, ja też...")));
+            dialog.text = NPCharRepPhrase(npchar,PCharRepPhrase(LinkRandPhrase("O tak, jestem zadowolony"+NPCharSexPhrase(NPChar,"","")+" widzieć cię prawie jak kieliszek trunku. Pytaj o co chcesz.","Lubisz rozmawiać, kapitanie? No cóż, ja też... Zwłaszcza przy kubku rumu.","Tak, "+PChar.name+"?"),LinkRandPhrase("Czego potrzebujesz?","Rozumiem, kapitanie "+PChar.name+", jesteś całkiem gadatliwy?","Męczące pytania Kapitanie, lepiej by było, gdybyś poczęstował mnie rumem.")),PCharRepPhrase(LinkRandPhrase("Co chciałeś wiedzieć "+GetAddress_Form(NPChar)+"?","Słucham cię, kapitanie.","Muszę iść, więc proszę się pospieszyć, kapitanie."),LinkRandPhrase("Zawsze miło mieć miłe towarzystwo, "+GetAddress_Form(NPChar)+" "+PChar.lastname+". Mów, o co chodzi.","Tak, "+GetAddress_Form(NPChar)+"?","Lubisz rozmawiać, kapitanie? No cóż, ja też...")));
 
             // homo 25/06/06
 			link.l1 = LinkRandPhrase("Jakie plotki są popularne w lokalnej karczmie?","Co się dzieje w tych stronach?","Co nowego na lądzie tutaj?");
@@ -1136,8 +1136,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = NPCharSexPhrase(NPChar,"Powstrzymaj swoje konie, "+GetSexPhrase("kumpel","dziewczyno")+", kiedy biegasz z bronią w ręku. To może mnie denerwować...","Nie podoba mi się, kiedy "+GetSexPhrase("mężczyźni","ludzie")+" chodź z gotowymi do walki. To mnie przeraża...");
-				link.l1 = RandPhraseSimple("Mam to.","Usunę to.");
+				dialog.text = NPCharSexPhrase(NPChar,"Powstrzymaj swoje konie, "+GetSexPhrase("kolego","dziewczyno")+", kiedy biegasz z bronią w ręku. To może mnie denerwować...","Nie podoba mi się, kiedy "+GetSexPhrase("mężczyźni","laski")+" chodzą z wyjętym ostrzem. To mnie przeraża...");
+				link.l1 = RandPhraseSimple("Rozumiem.","Łapie.");
 			}
 			link.l1.go = "exit";
 			Diag.TempNode = "First Time";

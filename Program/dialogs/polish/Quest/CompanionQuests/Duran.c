@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SKD_DomAnri_2":
-			dialog.text = "Więc tak to wygląda... Alicjo! Zostaw nas, proszę. Ci panowie mają ze mną interesy.";
+			dialog.text = "Więc tak to wygląda... Alicjo! Zostaw nas, proszę. Ci panowie mają do mnie interes.";
 			link.l1 = "";
 			link.l1.go = "SKD_DomAnri_2_1";
 			CharacterTurnToLoc(npchar, "goto", "goto1");
@@ -52,7 +52,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SKD_DomAnri_4":
-			dialog.text = "Kocham cię, kochanie. No dalej!";
+			dialog.text = "Kocham cię, kochanie. A teraz prosze, idź na góre!";
 			link.l1 = "";
 			link.l1.go = "SKD_DomAnri_5";
 			CharacterTurnToLoc(npchar, "goto", "goto1");
@@ -96,13 +96,13 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_8":
 			dialog.text = "Nie przystoi Rycerzowi Zakonu prosić o łaskę.";
-			link.l1 = "Choć byłym rycerzem.";
+			link.l1 = "Chyba byłemu Rycerzowi.";
 			link.l1.go = "SKD_DomAnri_9";
 		break;
 		
 		case "SKD_DomAnri_9":
 			dialog.text = "Biurokraci nie mieliby tyle atramentu na świecie, by odebrać mi ten tytuł.";
-			link.l1 = "Skoro tak, to udowodnij. Ale najpierw zaspokój moją ciekawość: Czy jesteś zdrajcą Korony? Inaczej nie rozumiem, czemu Levasseur tak bardzo pragnął twojej śmierci.";
+			link.l1 = "Skoro tak, to udowodnij. Ale najpierw zaspokój moją ciekawość: Czy jesteś zdrajcą Korony? Inaczej nie zrozumiem, czemu Levasseur tak bardzo pragnął twojej śmierci.";
 			link.l1.go = "SKD_DomAnri_10";
 		break;
 		
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SKD_DomAnri_12":
-			dialog.text = "Ah-ah! Och, dziękuję, Kapitanie. Twardy z niego diabeł był. Nie ma mowy, żebym go pokonał sam.";
+			dialog.text = "Ah-ah! Dzięki, Kapitanie. Twardy z niego był diabeł. Nie ma mowy, żebym go sam pokonał.";
 			link.l1 = "Jakoś nie czuję się zbyt szczęśliwy z tego zwycięstwa. Czy to już koniec?";
 			link.l1.go = "SKD_DomAnri_13";
 		break;
@@ -143,7 +143,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SKD_DomAnri_14":
-			dialog.text = "Nie musisz nic robić, Kapitanie. Poza tym, to wszystko twoja wina: nie powinieneś był wspominać jej o Levasseura.";
+			dialog.text = "Nic nie musisz robić, Kapitanie. Poza tym, to wszystko twoja wina: nie powinieneś był wspominać przy niej o Levasseurze.";
 			link.l1 = "To bzdura i dobrze o tym wiesz. A jeśli odważysz się dać mi kolejną niewyraźną naganę, nie wywiniesz się z tego.";
 			link.l1.go = "SKD_DomAnri_15";
 		break;
@@ -152,15 +152,15 @@ void ProcessDialogEvent()
 			dialog.text = "Heh! Mój błąd, Kapitanie. Faktycznie, rozkazy Levasseura wyraźnie mówiły, by wyeliminować nie tylko rycerza, ale i wszystkich jego towarzyszy. Wszystkich, rozumiesz? Z tymi ludźmi nie ma żartów i ich żądania trzeba traktować poważnie. Nie powstrzymuj mnie przed wykonaniem mojej pracy, Kapitanie. Jeszcze jedno brudne zadanie i potem jestem z tobą do końca, przysięgam!";
 			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
 			{
-				notification("Reputation Check Passed", "None");
-				notification("Trustworthy", "Trustworthy");
-				link.l1 = " (Godny zaufania) (Honor) Powiedziałeś kiedyś, że jestem przeznaczony do wielkich rzeczy, i cieszyło Cię, że mogłeś w tym pomóc.";
+				notification("Posiadasz wymaganą reputacje!", "None");
+				notification("Jesteś godny zaufania!", "Trustworthy");
+				link.l1 = " (Godny zaufania) (Wysoki honor) Powiedziałeś kiedyś, że jestem przeznaczony do wielkich rzeczy, i cieszyło Cię, że mogłeś w tym pomóc.";
 				link.l1.go = "SKD_DomAnri_VD";
 			}
 			else
 			{
-				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(71))+")", "None");
-				notification("Perk Check Failed", "Trustworthy");
+				notification("Zbyt niska reputacja! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+				notification("Nie jesteś godny zaufania.", "Trustworthy");
 			}
 			link.l2 = "Do diabła z tobą! Wykonaj swoją brudną robotę. Przyjmuję twoją przysięgę, i lepiej, żebyś traktował ją śmiertelnie poważnie. Czy się rozumiemy?";
 			link.l2.go = "SKD_DomAnri_DuranDruzhba";
@@ -219,7 +219,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_DuranDruzhba_4":
 			dialog.text = "Złoto to jedno, ale narażanie własnej skóry dla zwykłego najemnika jest warte o wiele więcej. Jestem z tobą do końca, Kapitanie.";
-			link.l1 = "W takim razie, skończyliśmy tutaj.";
+			link.l1 = "W takim razie idziemy.";
 			link.l1.go = "SKD_DomAnri_DuranDruzhba_5";
 		break;
 		
@@ -259,8 +259,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SKD_DomAnri_VD":
-			dialog.text = "Zrobiłem to. O co ci chodzi, kapitanie?";
-			link.l1 = "Udowodnij mi, że te słowa to nie były puste frazesy. Chcesz zdobyć miejsce w mojej drużynie? Udział w przyszłych łupach? Słuchaj moich rozkazów. Nie dotykaj dziewczyny. Dlaczego? Bo jeśli tego nie zrobisz, na zawsze pozostaniesz rzeźnikiem, a dla takich nie ma miejsca w mojej załodze.";
+			dialog.text = "Tak powiedziałem. Ale nie rozumiem o co ci teraz dokładnie chodzi, kapitanie?";
+			link.l1 = "Udowodnij mi, że te słowa to nie były puste frazesy. Chcesz zdobyć miejsce w mojej drużynie? Udział w przyszłych łupach? W takim razie masz wykonywać moje rozkazy. Nawet nie próbuj dotykać tej dziewczyny. Dlaczego? Bo jeśli tego nie zrobisz, na zawsze pozostaniesz rzeźnikiem, a dla takich nie ma miejsca w mojej załodze.";
 			link.l1.go = "SKD_DomAnri_VD_2";
 		break;
 		
@@ -302,7 +302,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_KlodDuran":
 			dialog.text = "Coś się wydarzyło, Kapitanie.";
-			Link.l1 = "Pozwól, że zgadnę: zamierzasz znów grozić rezygnacją i żądać podwyżki?";
+			Link.l1 = "Pozwól, że cię wyprzedzę: zamierzasz znów zagrozić rezygnacją i żądać podwyżki?";
 			Link.l1.go = "SKD_KlodDuran_1";
 		break;
 		
@@ -325,7 +325,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SKD_KlodDuran_4":
-			dialog.text = "Co? Heh! Levasseur to diabeł! Jest o wiele gorszy niż nawet piraci, którzy się nim żywią!";
+			dialog.text = "Co? Heh! Levasseur to diabeł! Jest o wiele gorszy od tych piratów, którzy żywią się z jego kieszeni!";
 			link.l1 = "Sam powiedziałeś, że robiłeś z nim interesy. Czy to nie jest trochę hipokryzja z twojej strony?";
 			link.l1.go = "SKD_KlodDuran_5";
 		break;
@@ -337,19 +337,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SKD_KlodDuran_6":
-			dialog.text = "Więc obrabowałeś sługę tego króla i przespałeś się z jego żoną? Heh! Rób, co chcesz, Kapitanie. Przejdźmy do rzeczy. Jego Ekscelencja zlecił mi znalezienie i zabicie człowieka. Dość rutynowe zadanie, nawet jeśli rzadko pochodzi od tak wysoko postawionej osoby, i to osobiście.";
-			link.l1 = "A czego chcesz? Żebym cię uwolnił, abyś mógł dotrzymać słowa i zabić tego człowieka?";
+			dialog.text = "Więc obrabowałeś wspomnianego sługę króla i przespałeś się z jego żoną? Heh! Rób, co chcesz, Kapitanie. Przejdźmy do rzeczy. Jego Ekscelencja zlecił mi znalezienie i zabicie człowieka. Dość rutynowe zadanie, nawet jeśli rzadko pochodzi od tak wysoko postawionej osoby, i to osobiście.";
+			link.l1 = "I czego niby chcesz? Żebym cię puścił, abyś mógł dotrzymać słowa i zabić tego człowieka?";
 			link.l1.go = "SKD_KlodDuran_7";
 		break;
 		
 		case "SKD_KlodDuran_7":
-			dialog.text = "Chcę, żebyś mi pomógł, kapitanie. Kiedy sytuacja na Tortudze się pogorszyła, zgodziłem się dołączyć do twojej służby, ale nie spocznę, dopóki nie wykonam zadania. Levasseur by mnie zabił, gdyby się dowiedział. Poza tym, to nieprofesjonalne zostawić robotę niedokończoną.";
+			dialog.text = "Chcę, żebyś mi pomógł, kapitanie. Kiedy sytuacja na Tortudze się pogorszyła, zgodziłem się dołączyć do twojej służby, ale nie spocznę, dopóki nie wykonam zadania. Levasseur by mnie zabił, gdyby się dowiedział, że cel nadal żyje. Poza tym, to nieprofesjonalne zostawić robotę niedokończoną.";
 			link.l1 = "Czy to profesjonalne mieć romans z żoną klienta? Bardzo dziwnie słyszeć takie żądanie od ciebie, zwłaszcza jeśli pamiętamy początek naszej rozmowy, gdzie dość trafnie opisałeś istotę naszych relacji. Krew za złoto, co?";
 			link.l1.go = "SKD_KlodDuran_8";
 		break;
 		
 		case "SKD_KlodDuran_8":
-			dialog.text = "Jeśli mi pomożesz, nie tylko zdobędziesz mój miecz, ale i moją lojalność. Od razu widzę, że jesteś przeznaczony do wielkich rzeczy, Kapitanie. Z przyjemnością pomogę w tym.";
+			dialog.text = "Jeśli mi pomożesz, nie tylko zdobędziesz mój miecz, ale i moją lojalność. Od razu widzę, że jesteś przeznaczony do wielkich rzeczy, Kapitanie. Z przyjemnością ci w tym pomoge. Będe u twego boku, nawet w najtrudniejszych sytuacjach.";
 			link.l1 = "Przyznaję, wolałbym mieć u boku człowieka o twoich zdolnościach. Gdzie możemy znaleźć twój cel?";
 			link.l1.go = "SKD_KlodDuran_10";
 			link.l2 = "Twoja szabla na razie wystarczy. Nie jestem zabójcą. Spocznij, oficerze!";
@@ -357,7 +357,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SKD_KlodDuran_9":
-			dialog.text = "Aye, aye, Kapitanie. Warto było zapytać.";
+			dialog.text = "Tak jest, Kapitanie. Warto było zapytać.";
 			link.l1 = "...";
 			link.l1.go = "SKD_KlodDuran_9_1";
 		break;
@@ -389,7 +389,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_KlodDuran_13":
 			dialog.text = "Dzięki, Kapitanie.";
-			link.l1 = "...";
+			link.l1 = "Czuje, że jeszcze nieraz mi podziękujesz...";
 			link.l1.go = "SKD_KlodDuran_14";
 		break;
 		

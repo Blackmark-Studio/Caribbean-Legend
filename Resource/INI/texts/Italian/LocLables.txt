@@ -1,4 +1,4 @@
-﻿
+
 Antigua			{Antigua}
 Barbados		{Barbados}
 Bermudes		{Isola del Tesoro}

@@ -25,7 +25,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			if (!CheckAttribute(npchar, "quest.Guardoftruth") && CheckAttribute(pchar, "questTemp.Guardoftruth.Trinidad") && pchar.questTemp.Guardoftruth.Trinidad == "begin")
 			{
-				link.l1 = "Słuchaj, w kwietniu 1654 roku do waszego portu zawinął fregat pod dowództwem kapitana Miguela Dichoso i zniknął potem. Czy jest coś, co możesz mi o tym powiedzieć?";
+				link.l1 = "Słuchaj, w kwietniu 1654 roku do waszego portu zawineła fregata pod dowództwem kapitana Miguela Dichoso, który następnie zniknął. Czy jest coś, co możesz mi o tym powiedzieć?";
 				link.l1.go = "guardoftruth";
 			}
 		break;
@@ -39,13 +39,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Consumption_1":
 			dialog.text = "Srebro jest kuszące, rzecz jasna, ale moja własna skóra jest cenniejsza. Może mógłbym ci opowiedzieć o czymś innym, señor? Zawsze chętnie porozmawiam, po prostu zacznij rozmowę!";
-			link.l1 = "Więc tak to się rozwija... Dobrze, w tej sakiewce jest trzy tysiące sztuk ośmiu, a my sobie miło pogawędzimy o pogodzie, zgoda?";
+			link.l1 = "Więc tak to się rozwija... Dobrze, w tej sakiewce są trzy tysiące pesos, a my sobie miło pogawędzimy o pogodzie, zgoda?";
 			link.l1.go = "Consumption_2";
 		break;
 		
 		case "Consumption_2":
 			AddMoneyToCharacter(pchar, -3000);
-			dialog.text = "Ach, jesteś uparty, señor. Pamiętaj tylko, że tej rozmowy nigdy nie było. (szepcząc) Już od roku słyszałem kilka razy, że ludzie płonęli w naszych więzieniach, umierając na suchoty. Możesz winić władze, możesz winić Boga albo Diabła, ale większość przypisuje to złemu losowi. Ta przeklęta choroba tak szybko kradnie życie. Czasami wsadzą tam zupełnie zdrowego człowieka, a po tygodniu czy dwóch już go nie ma. Tak po prostu...";
+			dialog.text = "Ach, jesteś uparty, señor. Pamiętaj tylko, że tej rozmowy nigdy nie było. (szepcząc) Już od roku słyszałem kilka razy, że ludzie płonęli w naszych więzieniach, umierając na gruźlice. Możesz winić władze, możesz winić Boga albo Diabła, ale większość przypisuje to złemu losowi. Ta przeklęta choroba tak szybko kradnie życie. Czasami wsadzą tam zupełnie zdrowego człowieka, a po tygodniu czy dwóch już go nie ma. Tak po prostu...";
 			link.l1 = "Oj... Cały rok, mówisz? I co, nikt się nie pofatygował, żeby coś z tym zrobić?";
 			link.l1.go = "Consumption_3";
 		break;
@@ -58,7 +58,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Consumption_4":
 			dialog.text = "Trudno mi to powiedzieć, ale był tu jeden gość. Zabrano go za przemyt i siedział zamknięty przez około pół roku, dopóki jego kumple go nie wykupili. No wiesz - odważyli złoto, komu trzeba, poczekali tyle, ile im kazano, i gość wyszedł. Ale od tamtej pory jest zupełnie szalony.";
-			link.l1 = "Bardziej szalony niż szczur z zęz?";
+			link.l1 = "Bardziej szalony niż zezowaty szczur?";
 			link.l1.go = "Consumption_5";
 		break;
 		
@@ -97,7 +97,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Consumption_9":
-			dialog.text = "Cóż, co mogę powiedzieć... Pułkownik wygląda na człowieka, który bardzo dba o własne bezpieczeństwo. Oczywiście te miejsca nie są bezpieczne z powodu piratów, bandytów, Indian i innego łajdactwa, ale Senor Komendant nigdy nie opuszcza domu bez kilku ochroniarzy\nJego rezydencja znajduje się w tym mieście i zamienił ją w małą fortecę - jego służący są dobrze uzbrojeni i trzymają okna zakratowane.";
+			dialog.text = "Cóż, co mogę powiedzieć... Pułkownik wygląda na człowieka, który bardzo dba o własne bezpieczeństwo. Oczywiście te miejsca nie są bezpieczne z powodu piratów, bandytów, Indian i innego łajdactwa, ale Señor Komendant nigdy nie opuszcza domu bez kilku ochroniarzy\nJego rezydencja znajduje się w tym mieście i zamienił ją w małą fortecę - jego służący są dobrze uzbrojeni i trzymają okna zakratowane.";
 			link.l1 = "Ale w dzień służy w więzieniu, prawda?";
 			link.l1.go = "Consumption_10";
 		break;
@@ -118,13 +118,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Consumption_12":
 			dialog.text = "Juan? Który? Jest ich tutaj wielu, ludzie zazwyczaj mają też nazwiska... albo przynajmniej przezwisko...";
-			link.l1 = "Tak sobie myślałem... Może jego przezwisko to 'Suchotnik', słyszałeś o tym?";
+			link.l1 = "Tak sobie myślałem... Może jego przezwisko to 'Gruźlica', słyszałeś o tym?";
 			link.l1.go = "Consumption_13";
 		break;
 		
 		case "Consumption_13":
 			dialog.text = "O mój Boże, znowu o tym mówisz! Nie, dzięki Bogu, nie słyszałem. Przysięgam! A teraz zmieńmy temat. Proszę!";
-			link.l1 = "Dobrze, dobrze, nie dostawaj zawału serca...";
+			link.l1 = "Dobrze, dobrze, uspokój się bo zawału serca dostaniesz...";
 			link.l1.go = "exit";
 			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
 			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
@@ -138,7 +138,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		//<-- Цена чахотки
 		
 		case "guardoftruth":
-			dialog.text = "Pamiętam go. Często wpadał do mojej tawerny, ale niewiele mówił. Wypił kilka kieliszków rumu, szepnął coś do niektórych klientów i wyszedł. Bardzo ponury i poważny, jak wszyscy na tym fregacie. Niebezpiecznie wyglądający najemnicy, którzy trzymali swoje miecze w pogotowiu\nKrążyła plotka, że fregata była pełna skarbów, ale nie wierzę w takie bajki. Cenne ładunki nigdy nie są transportowane na jednym statku bez konwoju. Spędzili tu dzień, a potem odpłynęli. Słyszałem, że do Europy. To wszystko, co wiem.";
+			dialog.text = "Pamiętam go. Często wpadał do mojej karczmy, ale niewiele mówił. Wypił kilka kieliszków rumu, szepnął coś do niektórych klientów i wyszedł. Bardzo ponury i poważny, jak wszyscy na tej fregacie. Niebezpiecznie wyglądający najemnicy, którzy trzymali swoje miecze w pogotowiu\nKrążyła plotka, że fregata była pełna skarbów, ale nie wierzę w takie bajki. Cenne ładunki nigdy nie są transportowane na jednym statku bez konwoju. Spędzili tu dzień, a potem odpłynęli. Słyszałem, że do Europy. To wszystko, co wiem.";
 			link.l1 = "Widzę. Cóż, to przynajmniej coś...";
 			link.l1.go = "exit";
 			npchar.quest.guardoftruth = "true";

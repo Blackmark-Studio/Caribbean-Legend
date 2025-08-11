@@ -3140,6 +3140,54 @@ void Saga_MineAttackTail(string qName) //
 	chrDisableReloadToLocation = true;//закрыть локацию
 }
 
+void Saga_MineAttack()
+{
+	LAi_ActorAnimation(pchar, "Shot", "1", 1.8);
+	DoQuestFunctionDelay("Saga_MineAttack_2", 0.9);
+}
+
+void Saga_MineAttack_2(string qName)
+{
+	sld = characterFromId("Mine_bandit_3");
+	LAi_KillCharacter(sld);
+	DoQuestFunctionDelay("Saga_MineAttack_3", 1.0);
+}
+
+void Saga_MineAttack_3(string qName)
+{
+	LAi_SetPlayerType(pchar);
+	for (i=1; i<=6; i++)
+	{
+		sld = characterFromId("Mine_bandit_"+i);
+		LAi_RemoveCheckMinHP(sld);
+	}
+	if (pchar.questTemp.Saga.MineAttack == "soldiers")
+	{
+		sld = characterFromId("Svensons_sold_12");
+		LAi_SetActorType(sld);
+		LAi_ActorTurnToLocator(sld, "soldiers", "soldier1");
+		LAi_ActorAnimation(sld, "shot", "Saga_MineBanditDie", 1.0);
+	}
+	else
+	{
+		for (i=1; i<=6; i++)
+		{
+			sld = characterFromId("Mine_bandit_"+i);
+			LAi_SetWarriorType(sld);
+			LAi_group_MoveCharacter(sld, "EnemyFight");
+		}
+		LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+		LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
+		LAi_group_SetCheck("EnemyFight", "Saga_BanditsDestroyed");
+		AddDialogExitQuest("MainHeroFightModeOn");	
+	}
+	pchar.quest.Saga_MineAttack_07.win_condition.l1 = "NPC_Death";
+	pchar.quest.Saga_MineAttack_07.win_condition.l1.character = "Mine_bandit_1";
+	pchar.quest.Saga_MineAttack_07.win_condition.l2 = "NPC_Death";
+	pchar.quest.Saga_MineAttack_07.win_condition.l2.character = "Mine_bandit_2";
+	pchar.quest.Saga_MineAttack_07.function = "Saga_SvensonMineexitAttack";
+}
+
 void Saga_SvensonMineexitAttack(string qName) // 
 {
 	sld = characterFromId("Svenson");
@@ -4884,10 +4932,9 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Saga_MineBanditsFire") // стреляют из пушки
 	{
-		CreateLocationParticles("blast_inv", "quest", "gun1", 1.15, 0, 0, "cannon_fire_1");
-		CreateLocationParticles("blast_inv", "quest", "gun2", 1.15, 0, 0, "cannon_fire_1");
-		LAi_KillCharacter(pchar);
-		LAi_KillCharacter(pchar);
+		CreateLocationParticles("blast_inv", "quest", "gun1", 1.15, 0, 0, "cannon_fire_2");
+		CreateLocationParticles("blast_inv", "quest", "gun2", 1.15, 0, 0, "");
+		LAi_KillImmortalCharacter(pchar);
 		ClearAllLogStrings();
 	}
 	else if (sQuestName == "Saga_MineBanditsxFire") // стреляют из мушкетов // 250812
@@ -6462,8 +6509,8 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 			PChar.quest.PZ_Etap5_Start.win_condition = "PZ_Etap5_Start";
 			AddMapQuestMarkCity("Pirates", false);
 		}
-		// Запуск квеста Дороже золота
-		SetFunctionTimerCondition("GoldenGirl_Start", 0, 0, 1, false);
+		// Выполнено требование для Дороже золота
+		pchar.questTemp.GoldenGirl_Ready = true;
 	}
 	else if (sQuestName == "LSC_SetDodsonPassenger") // Акулу - в пассажиры
 	{

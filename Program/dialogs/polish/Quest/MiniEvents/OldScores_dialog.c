@@ -234,7 +234,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Odważny robaczek. Włamać się do domu Jacka Veilsa – na to trzeba mieć tupet. No i co tu robisz?";
-				link.l1 = "Powiedzmy, że oddaję to, co zostało skradzione. Wy naprawdę myśleliście, że ta żałosna inscenizacja nie zostanie odkryta?";
+				link.l1 = "Powiedzmy, że oddaję to, co zostało skradzione. Wy naprawdę myśleliście, że ta żałosna szopka nie zostanie odkryta?";
 			}
 			link.l1.go = "OS_Dialog_4";
 		break;
@@ -251,7 +251,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Żałosna inscenizacja? Niech mnie piekło pochłonie, zaraz zdejmę z ciebie skórę i zrobię z niej żagiel! Dosyć gadania – to twój koniec, ścierwo!";
+				dialog.text = "Żałosna szopka!? Niech mnie piekło pochłonie, zaraz zdejmę z ciebie skórę i zrobię z niej żagiel! Dosyć gadania – to twój koniec, śmieciu!";
 				link.l1 = "Skoro tak nalegacie – no to do walki, dranie!";
 			}
 			link.l1.go = "OS_Dialog_bitva";
@@ -325,7 +325,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Tavern_2":
-			dialog.text = "Mam dla was coś lepszego! Od teraz w mojej tawernie zawsze będzie na was czekać darmowy nocleg i napitek na koszt domu! Człowiek taki jak wy bez wątpienia na to zasługuje!";
+			dialog.text = "Mam dla ciebie coś lepszego! Od teraz w mojej karczmie zawsze będzie na ciebie czekać darmowy nocleg i napitek na koszt domu! Człowiek taki jak ty bez wątpienia na to zasługuje!";
 			link.l1 = "O, to już co innego! Takie przywileje bardzo mi się podobają! Do zobaczenia, "+npchar.name+".";
 			link.l1.go = "Tavern_3";
 		break;

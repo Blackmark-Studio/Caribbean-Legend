@@ -805,7 +805,7 @@ void ProcessDialogEvent()
 
 	case "attack_fort":
 		dialog.text = "¿Y qué quieres decir?";
-		link.l1 = "Puedo ayudarte a aplastar el fuerte de la colonia de " + GetConvertStr(aData.Colony + " Pueblo", "LocLables.txt") + " y captura la ciudad, y un botín, resultando en el caso de nuestro éxito, nos dividimos entre nosotros.";
+		link.l1 = "Puedo ayudarte a aplastar el fuerte de la colonia de " + GetConvertStr(aData.Colony + " Town", "LocLables.txt") + " y captura la ciudad, y un botín, resultando en el caso de nuestro éxito, nos dividimos entre nosotros.";
 		link.l1.go = "Siegehelp_1";
 		link.l2 = "En realidad, mis asuntos apenas valen tu tiempo. Adiós, " + GetAddress_FormToNPC(NPChar) + ".";
 		link.l2.go = "exit";

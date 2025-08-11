@@ -1,4 +1,4 @@
-﻿info
+info
 {
 	File di descrizione dell'articolo in KKS
 	Versione 0.0.1 del 21 novembre 2010 (ed. Metazot), belamour ed. corazza e amuleti 29.09.2020

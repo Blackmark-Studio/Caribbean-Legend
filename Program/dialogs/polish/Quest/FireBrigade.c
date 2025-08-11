@@ -21,14 +21,14 @@ void ProcessDialogEvent()
 		break;
 
         case "FraOff_1":
-			dialog.text = "Rozkazy się nie dyskutuje, tylko wykonuje. Gdyby każdy kapitan wybierał, które rozkazy są warte—nie mielibyśmy floty.";
+			dialog.text = "Rozkazów się nie dyskutuje, tylko wykonuje. Gdyby każdy kapitan wybierał, które rozkazy są warte świeczki — nie mielibyśmy floty.";
 			link.l1 = "Powiedz to swoim ludziom.";
 			link.l1.go = "FraOff_2";
         break;
 
         case "FraOff_2":
 			dialog.text = "Zapędziłeś mnie w kozi róg i próbujesz złamać moją lojalność i przysięgę. To niskie, biorąc pod uwagę okoliczności. Zakończmy to starciem szabel, nie słowami!";
-			link.l1 = "(Dowodzenie) Jest jeszcze trzecia droga. Przestań robić brudną robotę, niegodną oficera. Dołącz do mnie—pokażę ci inny świat.";
+			link.l1 = "(Dowodzenie) Jest jeszcze trzecia droga. Przestań robić brudną robotę, niegodną oficera. Dołącz do mnie — pokażę ci inny świat.";
 			link.l1.go = "FraOff_HireCheck";
             link.l2 = "No to do broni!";
 			link.l2.go = "FraOff_ExitFight";
@@ -44,8 +44,8 @@ void ProcessDialogEvent()
                 break;
             }
             notification("Test zaliczony", SKILL_LEADERSHIP);
-            dialog.text = "Przysięgałem wierność koronie, a nie nadętym biurokratom, którzy wysyłają nas na śmierć, by ukryć własne błędy. Ale ty—jesteś wrogiem mojego króla i nie mogę tego zignorować.";
-			link.l1 = "Mógłbym odkupić swoje winy wobec twojego kraju choćby jutro—wystarczy zapłacić odpowiedniemu pośrednikowi. To więcej mówi o twoich przełożonych niż o mnie.";
+            dialog.text = "Przysięgałem wierność koronie, a nie nadętym biurokratom, którzy wysyłają nas na śmierć, by ukryć własne błędy. Ale ty — jesteś wrogiem mojego króla i nie mogę tego zignorować.";
+			link.l1 = "Mógłbym odkupić swoje winy wobec twojego kraju choćby jutro — wystarczy zapłacić odpowiedniemu pośrednikowi. To więcej mówi o twoich przełożonych niż o mnie.";
 			link.l1.go = "FraOff_Sucess";
         break;
 
@@ -84,7 +84,7 @@ void ProcessDialogEvent()
 			dialog.text = "Szkoda, że to nie de Alba dostał to zadanie. Poradziłby sobie lepiej. Ale spróbuję dokończyć robotę.";
 			link.l1 = "Jesteś prawdziwym synem swojej ojczyzny. Przygotuj się na spotkanie z jej bohaterami, señor.";
 			link.l1.go = "Alonso_2";
-			link.l2 = "Myśliwy stał się zwierzyną. Wszystkie twoje przemowy na nic—stare jak świat.";
+			link.l2 = "Myśliwy stał się zwierzyną. Wszystkie twoje przemowy na nic — stare jak świat.";
 			link.l2.go = "Alonso_3";
 		break;
 
@@ -134,7 +134,7 @@ void ProcessDialogEvent()
 
         case "Kneepel":
             dialog.text = "Kula łańcuchowa na rufie, prawie to przegapiłem! Gdyby moje stare kości były trochę szybsze, sam posłałbym tego drania do diabła. Dzięki, kapitanie. I od mojego zmarłego patrona też dziękuję!";
-			link.l1 = "Kim jesteś? Więzień? To moja załoga cię uwolniła?";
+			link.l1 = "Kim jesteś? Więźniem? To moja załoga cię uwolniła?";
 			link.l1.go = "Kneepel_1";	
 		break;
 
@@ -224,19 +224,19 @@ void ProcessDialogEvent()
 // МЕЙФЕНГ -->
         case "FireBrigade_hol":
 			dialog.text = "Nie jesteś tym, kto miał tu dotrzeć. Meifeng to kieł Kompanii. Mój szwadron to karzące ostrze. Pokonałeś ich. Sam. To... rzadko się zdarza.";
-			link.l1 = "Wysłali cię za mną jak za zwierzem. Walczyłem—jak osaczony zwierz. Gdy trzeba walczyć albo zginąć, myśli się prościej. Na końcu zostaje tylko jedno pytanie: Czy dotrę do kajuty legendarnej szebeki—czy nie..";
+			link.l1 = "Wysłali cię za mną jak za zwierzem. Walczyłem — jak osaczony zwierz. Gdy trzeba walczyć albo zginąć, myśli się prościej. Na końcu zostaje tylko jedno pytanie: Czy dotrę do kajuty legendarnej szebeki — czy nie..";
 			link.l1.go = "Longway_1";
 		break;
 
 		case "Longway_1":
-			dialog.text = GetSexPhrase("", "Dziwnie—widzieć kobietę w takiej walce. W Państwie Środka kobiety nie dowodzą flotą. Ale ty nie jesteś gorsza. Może nawet bardziej budzisz respekt\n") + "Wiedziałaś, kto dowodzi? Czekałaś na mnie?";
+			dialog.text = GetSexPhrase("", "Dziwnie — widzieć kobietę w takiej walce. W Państwie Środka kobiety nie dowodzą flotą. Ale ty nie jesteś gorsza. Może nawet bardziej budzisz respekt\n") + "Wiedziałeś, kto dowodzi? Czekałeś na mnie?";
 			link.l1 = "Tak. Meifeng to statek z historią. Gdy podpadłem Holendrom, wiedziałem, że prędzej czy później wyślą cię po moją głowę. To byłby zaszczytny koniec... ale zobacz, jak się wszystko potoczyło.";
 			link.l1.go = "Longway_2";
 		break;
 
 		case "Longway_2":
-			dialog.text = "Poznanie wroga i siebie to klucz do zwycięstwa. Podjęłaś decyzję. Stanęłaś naprzeciw mojego szwadronu na własnych warunkach. Byłaś gotowa umrzeć. Ale wygrałaś. Teraz moje życie jest w twoich rękach. Dlaczego nie kończysz?";
-			link.l1 = "(Dowodzenie) Bo nie widzę sensu w zatapianiu legendarnego kapitana tylko dla ambicji Kompanii. Byłem na twoim miejscu—pionkiem. Służyłem cudzym interesom, wykonywałem cudze rozkazy. Proponuję ci to, co sam kiedyś wybrałem: wolność.";
+			dialog.text = "Poznanie wroga i siebie to klucz do zwycięstwa. Podjąłeś decyzję. Stanąłeś naprzeciw mojego szwadronu na własnych warunkach. Byłeś gotowy umrzeć. Ale wygrałeś. Teraz moje życie jest w twoich rękach. Dlaczego nie kończysz?";
+			link.l1 = "(Dowodzenie) Bo nie widzę sensu w zatapianiu legendarnego kapitana tylko dla ambicji Kompanii. Byłem na twoim miejscu — pionkiem. Służyłem cudzym interesom, wykonywałem cudze rozkazy. Proponuję ci to, co sam kiedyś wybrałem: wolność.";
             if (GetSummonSkillFromName(PChar, SKILL_LEADERSHIP) >= 50)
                 link.l1.go = "Longway_Success";
             else
@@ -255,7 +255,7 @@ void ProcessDialogEvent()
 
 		case "Longway_Failed":
             notification("Za mało rozwinięta umiejętność (50)", SKILL_LEADERSHIP);
-			dialog.text = "Wolność to nie coś, co się dostaje. To coś, co się bierze. I nie każdy, kto mówi o wyborze, potrafi go dać. Są drogi, których nie da się ominąć. Są rozkazy, których nie można zostawić niewykonanych. Moja droga jest tutaj. Mój rozkaz—to wytrwać do końca.";
+			dialog.text = "Wolność to nie coś, co się dostaje. To coś, co się bierze. I nie każdy, kto mówi o wyborze, potrafi go dać. Są drogi, których nie da się ominąć. Są rozkazy, których nie można zostawić niewykonanych. Moja droga jest tutaj. Mój rozkaz — to wytrwać do końca.";
 			link.l1 = "Więc wybierasz śmierć?";
 			link.l1.go = "Longway_Failed_over";
 		break;
@@ -268,14 +268,14 @@ void ProcessDialogEvent()
 
 		case "Longway_Success":
             notification("Test zaliczony", SKILL_LEADERSHIP);
-			dialog.text = "Nie jesteś jak Rodenburg. On widział we mnie narzędzie. Ty—równego sobie. Poświęcenie nie jest cnotą. Jestem gotów wysłuchać twoich warunków.";
-			link.l1 = "To proste. Bądź moim nawigatorem na moim okręcie flagowym. Albo, jeśli wolisz, dostaniesz własny statek i popłyniesz pod moją banderą. Nie będziesz już musiał sprzątać po Kompanii ani ukrywać ich szkieletów w szafie. Jestem wolny—a tobie proponuję tę wolność razem ze mną.";
+			dialog.text = "Nie jesteś jak Rodenburg. On widział we mnie narzędzie. Ty — równego sobie. Poświęcenie nie jest cnotą. Jestem gotów wysłuchać twoich warunków.";
+			link.l1 = "To proste. Bądź nawigatorem na moim okręcie flagowym. Albo, jeśli wolisz, dostaniesz własny statek i popłyniesz pod moją banderą. Nie będziesz już musiał sprzątać po Kompanii ani ukrywać ich szkieletów w szafie. Jestem wolny — a tobie proponuję tę wolność razem ze mną.";
 			link.l1.go = "Longway_Success_over";
 		break;
 
 		case "Longway_Success_over":
-			dialog.text = "Wiele widziałem: krew, złoto, zdradę. Kompania płaci—ale nie szanuje. Daje statek—ale trzyma na łańcuchu. Ty... dajesz wybór. Jeśli dotrzymasz słowa—Longwei nie będzie już łowcą na cudze zlecenie. Będzie człowiekiem. Kapitanem. Albo—obok kapitana, który wie, dokąd płynąć.";
-			link.l1 = "Witaj w załodze, nawigatorze Longwei.";
+			dialog.text = "Wiele widziałem: krew, złoto, zdradę. Kompania płaci — ale nie szanuje. Daje statek — ale trzyma na łańcuchu. Ty... dajesz wybór. Jeśli dotrzymasz słowa — Longway nie będzie już łowcą na cudze zlecenie. Będzie człowiekiem. Kapitanem. Albo — obok kapitana, który wie, dokąd płynąć.";
+			link.l1 = "Witaj w załodze, nawigatorze Longway.";
 			link.l1.go = "Longway_Hired";
 		break;
 

@@ -10,6 +10,7 @@ int iCharQty, iGoodIndex;
 bool bQuestItem;
 bool isMusketLoadPress = false;
 bool bShowTabOfficers = true;
+bool isRemoveItemMsgActive = false;
 
 void InitInterface(string iniName)
 {
@@ -479,6 +480,7 @@ void RemoveItemMsgShow()
 	XI_WindowDisable("REMOVE_ITEM_WINDOW", false);
 	XI_WindowDisable("MAIN_WINDOW", true);
 	SetCurrentNode("REMOVE_ACCEPT_ITEM");
+	isRemoveItemMsgActive = true;
 }
 
 void RemoveItemMsgExit()
@@ -486,6 +488,7 @@ void RemoveItemMsgExit()
 	XI_WindowShow("REMOVE_ITEM_WINDOW", false);
 	XI_WindowDisable("REMOVE_ITEM_WINDOW", true);
 	XI_WindowDisable("MAIN_WINDOW", false);
+	isRemoveItemMsgActive = false;
 }
 
 void RemoveSlotItemOk()
@@ -1033,7 +1036,8 @@ void ShowInfoWindow()
 void HideInfoWindow()
 {
 	CloseTooltip();
-	RemoveItemMsgExit();
+	if(isRemoveItemMsgActive)
+		RemoveItemMsgExit();
 }
 
 void FillTableOther()
@@ -2995,10 +2999,13 @@ void EquipPress()
 				if (itmRef.id == "mark_map") // // Jason 130712 карта с пометками
 				{
 					mark = sti(itmRef.mark);
-					if(LanguageGetLanguage() != "Russian")
-						SetNewPicture("MAP_PICTURE", "interfaces\maps\english\" + "map_TM_"+mark+".tga");
-					else 
+					if(LanguageGetLanguage() != "Russian"){
+						if(LanguageGetLanguage() == "Chinese")
+							SetNewPicture("MAP_PICTURE", "interfaces\maps\chinese\" + "map_TM_"+mark+".tga");
+						else SetNewPicture("MAP_PICTURE", "interfaces\maps\english\" + "map_TM_"+mark+".tga");
+					} else {
 						SetNewPicture("MAP_PICTURE", "interfaces\maps\russian\" + "map_TM_"+mark+".tga");
+					}
 					ShowMapWindow();
 					return;
 				}

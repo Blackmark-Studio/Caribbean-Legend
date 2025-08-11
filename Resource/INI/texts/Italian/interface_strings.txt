@@ -1,4 +1,4 @@
-﻿Delete profile confirm{Sei sicuro di voler eliminare questo profilo e tutti i suoi salvataggi?}
+Delete profile confirm{Sei sicuro di voler eliminare questo profilo e tutti i suoi salvataggi?}
 Delete savefile confirm{Sei sicuro di voler eliminare questo salvataggio?}
 Overwrite savefile confirm{Sei sicuro di voler sovrascrivere questo salvataggio?}
 

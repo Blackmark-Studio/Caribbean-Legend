@@ -234,7 +234,7 @@ de Monper
 
 QuestsUtilite_50
 {
-abbot
+Opat
 }
 QuestsUtilite_51
 {
@@ -459,7 +459,7 @@ Carpentero
 
 QuestsUtilite_100
 {
-brother
+Brat
 }
 QuestsUtilite_101
 {

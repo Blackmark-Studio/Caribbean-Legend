@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Alamida_guber_3":
-			dialog.text = "Wiesz, co jest najtrudniejsze w walce z korupcją? Winni niekoniecznie są złymi ludźmi. Mają dzieci, rodziny. I za każdym razem musisz sobie przypominać: trucizna pozostaje trucizną, nawet podana w złotym kielichu.";
+			dialog.text = "Wiesz, co jest najtrudniejsze w walce z korupcją? Winni niekoniecznie są złymi ludźmi. Mają dzieci, rodziny. I za każdym razem musisz sobie przypominać: trucizna pozostaje trucizną, nawet jak jest podana w złotym kielichu.";
 			link.l1 = "Ale czy można sądzić tak surowo? Wszyscy jesteśmy ludźmi...";
 			link.l1.go = "Alamida_guber_4";
 			link.l2 = "Jesteś zbyt miękki. Tylko więzienie ich zreformuje.";
@@ -104,12 +104,12 @@ void ProcessDialogEvent()
 		
 		case "Alamida_city":
 			dialog.text = "Słucham uważnie, "+GetAddress_Form(NPChar)+"? Co sprawiło, że podszedłeś do mnie tak po prostu, na ulicy?";
-			link.l1 = "Wyróżniasz się spośród reszty.";
+			link.l1 = "Wyróżniasz się spośród reszty. Kim pan jest?";
 			link.l1.go = "Alamida_city_2";
 		break;
 		
 		case "Alamida_city_2":
-			dialog.text = "Don Fernando de Alamida, królewski inspektor. Jesteś dziś pierwszym takim ciekawskim. Wszyscy się ukrywają, wszyscy się mnie boją. A jednak uczciwy człowiek nie ma się czego obawiać. Co nam to mówi?";
+			dialog.text = "Jestem don Fernando de Alamida, królewski inspektor. Jesteś dziś pierwszym takim ciekawskim. Wszyscy się ukrywają, wszyscy się mnie boją. A jednak uczciwy człowiek nie ma się czego obawiać. Co nam to mówi?";
 			link.l1 = "Że twoja reputacja ich przeraża?";
 			link.l1.go = "Alamida_city_3";
 			link.l2 = "Że uczciwych ludzi jest niewielu?";
@@ -214,25 +214,25 @@ void ProcessDialogEvent()
 		
 		case "Alamida_abordage_Hater":
 			dialog.text = "A więc to tak... Kolejny zazdrośnik o wielkość Imperium.";
-			link.l1 = "Jakie wielkości? Twoje sztywne sposoby powstrzymują ten świat.";
+			link.l1 = "Jakiej wielkości? Twoje sztywne sposoby powstrzymują ten świat.";
 			link.l1.go = "Alamida_abordage_Hater_2";
 		break;
 		
 		case "Alamida_abordage_Hater_2":
 			dialog.text = "Nie okłamuj się. Strach przed Hiszpanią czyni cię bardziej szczerym. Bliższym twej prawdziwej naturze. Sam zobaczysz.";
-			link.l1 = "...";
+			link.l1 = "Nie boje się ciebie, señor. Hiszpanii też się nie boje.";
 			link.l1.go = "Alamida_abordage_SecondRound";
 		break;
 		
 		case "Alamida_abordage_Prikol":
-			dialog.text = "Wariat. Prawdziwy wariat. A może zostałeś tu przysłany na próbe?";
+			dialog.text = "Wariat. Prawdziwy wariat. Co tobą kierowało? A może zostałeś tu przysłany na próbe?";
 			link.l1 = "Nie zawsze potrzebny jest powód do podjęcia decyzji, señor. Nigdy nie słyszałeś o czymś takim jak spontaniczność?";
 			link.l1.go = "Alamida_abordage_Prikol_2";
 		break;
 		
 		case "Alamida_abordage_Prikol_2":
 			dialog.text = "Spontaniczność? A więc jesteś jednym z nich... On powiedział, że ludzie tacy jak ty są najbardziej niebezpieczni. Ale to tylko wzmocni moją rękę w bitwie.";
-			link.l1 = "...";
+			link.l1 = "To ci nie pomoże, nie oszukuj się.";
 			link.l1.go = "Alamida_abordage_SecondRound";
 		break;
 		
@@ -282,13 +282,13 @@ void ProcessDialogEvent()
 		case "Alamida_abordage_TrirdRound_3":
 			if (startHeroType == 4)
 			{
-				dialog.text = "Wątpić? Nie... Słuszność?... To musi mieć głębsze znaczenie. To jest próba. Nie mogę się mylić.";
+				dialog.text = "Panienka mnie nie zna... To musi mieć głębsze znaczenie. To jest próba. Nie mogę się mylić.";
 			}
 			else
 			{
 				dialog.text = "Nie. Nigdy! To On mnie Nauczył, żeby nie zwątpić nawet na chwile! Nigdy nie zwątpie!";
 			}
-			link.l1 = "Widze, że twa szlachetność już dawno zaślepiła twoje racjonalne myślenie. Z moją pomocą otworzysz swe oczy, zobaczysz!";
+			link.l1 = "Widze, że twa szlachetność już dawno zaślepiła twoje racjonalne myślenie.";
 			link.l1.go = "Alamida_abordage_TrirdRound_4";
 		break;
 		
@@ -416,7 +416,7 @@ void ProcessDialogEvent()
 			if (startHeroType == 2)
 			{
 				dialog.text = "Señor de Montoya, statek jest nasz.";
-				link.l1 = "Bardzo dobrze, Tichingitu. Ja też tu właśnie skończyłem.";
+				link.l1 = "Bardzo dobrze, Tichingitu. Ja też właśnie skończyłem.";
 			}
 			if (startHeroType == 3)
 			{

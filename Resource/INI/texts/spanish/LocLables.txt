@@ -116,7 +116,7 @@ Shore35	{Cabo Negril}
 Shore36	{Bahía Portland}
 Shore37	{Bahía Guajira}
 Shore38	{Bahía Lamentin}
-Shore39	{Cabo Le Marín}
+Shore39	{Costa Le Marín}
 Shore40	{Playa Grand Case}
 Shore41	{Bahía Simpson}
 Shore42	{Bahía Sandy}
@@ -162,7 +162,7 @@ Shore78 {Bahía de bucaneros}
 Shore79 {Cabo Rojo}
 
 Shore_ship1	{Costa de Sabo-Matila}
-Shore_ship2	{Bahía de Peril}
+Shore_ship2	{Bahía peligrosa}
 Shore_ship3	{Cabo de las Esperanzas Ilusorias}
 Shore_ship4	{Costa maldita}
 
@@ -374,7 +374,7 @@ UnderWater		{Bajo el agua}
 Grotto			{Gruta}
 Dunes house		{Casa de la Duna}
 Torture room	{Sala de tortura}
-Wine Cellar 	{Bodega de Vinos}
+Wine Cellar 	{Bodega}
 cabine			{Cabina del capitán}
 My_Campus		{Sala de estar}
 My_Deck_Medium	{Cubierta de cañones}

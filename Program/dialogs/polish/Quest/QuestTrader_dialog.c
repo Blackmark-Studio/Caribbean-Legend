@@ -71,7 +71,7 @@ void ProcessDialogEvent()
 					pchar.GenQuest.Escort.Trader.Type1 = "true";//тип задания
 					pchar.GenQuest.Escort.Trader.Chance = rand(1);
 					pchar.GenQuest.Escort.Trader.Add = "to "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+"";
-					dialog.text = "Chciałbym prosić cię o eskortowanie mnie do "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+" w środku "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+"Zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
+					dialog.text = "Chciałbym prosić cię o eskortowanie mnie do "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+" w przeciągu "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+". Zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
 					link.l1 = "A dlaczego nie? Zawsze bezpieczniej jest żeglować razem, rozumiem to. Zgadzam się.";
 					link.l1.go = "EscortType";
 					link.l2 = "Z przyjemnością bym pomógł, ale zmierzam w innym kierunku.";
@@ -89,8 +89,8 @@ void ProcessDialogEvent()
 					pchar.GenQuest.Escort.Trader.Type2 = "true";//тип задания
 					pchar.GenQuest.Escort.Trader.Chance = rand(2);
 					pchar.GenQuest.Escort.Trader.Add = "to "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+", not far from "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+"";
-					dialog.text = "Chciałbym prosić cię o eskortowanie mnie do "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+", niedaleko od "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+" wewnątrz "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+" Zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
-					link.l1 = "I dlaczego nie? Zawsze bezpieczniej jest żeglować razem, rozumiem to. Zgadzam się.";
+					dialog.text = "Chciałbym prosić cię o eskortowanie mnie do "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+", niedaleko od "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+" w przeciągu "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+" Zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
+					link.l1 = "Czemu nie? Zawsze bezpieczniej jest żeglować razem, rozumiem to. Zgadzam się.";
 					link.l1.go = "EscortType";
 					link.l2 = "Chętnie pomogę, ale zmierzam w innym kierunku.";
 					link.l2.go = "Escort_exit";
@@ -102,9 +102,9 @@ void ProcessDialogEvent()
 					pchar.GenQuest.Escort.Trader.Money = makeint(sti(pchar.GenQuest.Escort.Trader.DaysQty) * 400 * ShipFactorMC() + iTemp * 700);//оплата
 					pchar.GenQuest.Escort.Trader.Type3 = "true";//тип задания
 					pchar.GenQuest.Escort.Trader.Chance = rand(2);
-					pchar.GenQuest.Escort.Trader.Add = "to "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+" of inhabitant island "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Island)+"";
-					dialog.text = "Chciałbym prosić cię o eskortę do "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+" który jest w "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Island)+", w "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+" Zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
-					link.l1 = "A dlaczego nie? Zawsze bezpieczniej jest żeglować razem, rozumiem to. Zgadzam się. Ale nigdy nie słyszałem o sklepach i punktach handlowych tam.";
+					pchar.GenQuest.Escort.Trader.Add = "do "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+" na niezamieszkanej wyspie "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Island)+"";
+					dialog.text = "Chciałbym prosić cię o eskortę do "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+" niedaleko "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Island)+", w "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+" Zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
+					link.l1 = "A dlaczego nie? Zawsze bezpieczniej jest żeglować razem, rozumiem to. Zgadzam się, choć nigdy nie słyszałem o tamtejszych sklepach i punktach handlowych.";
 					link.l1.go = "EscortType";
 					link.l2 = "Z przyjemnością pomógłbym, ale zmierzam w innym kierunku.";
 					link.l2.go = "Escort_exit";
@@ -216,7 +216,7 @@ void ProcessDialogEvent()
 				link.l1.go = "EscortTrader_complete_4";
 				break;
 			}
-			dialog.text = "Dziękuję bardzo, kapitanie. To było bezpieczne żeglowanie z tobą mimo wszystkich niebezpieczeństw. Proszę, weź swoją nagrodę.";
+			dialog.text = "Dziękuję bardzo, kapitanie. Żegluga z tobą była niezwykle bezpieczna, mimo wszystkich niebezpieczeństw. Proszę, weź swoją nagrodę.";
 			link.l1 = "Proszę bardzo... Po prostu wykonałem swoją robotę.";
 			link.l1.go = "EscortTrader_complete_3";
 		break;
@@ -258,7 +258,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.Escort.Trader.Enemyname = GenerateRandomName_Generator(sti(npchar.nation), "man");
 			GetEnemyTraderGoods();
 			pchar.GenQuest.Escort.Trader.EnIsland = DesIsland();
-			dialog.text = "Jest jeden kupiec - "+pchar.GenQuest.Escort.Trader.Enemyname+". Posiada i dowodzi fluitą. Zostałem poinformowany, że za dwa tygodnie przybędzie na zamieszkaną wyspę "+XI_ConvertString(pchar.GenQuest.Escort.Trader.EnIsland)+", aby uzupełnić zapasy wody i handlować z miejscowymi Indianami. Będzie miał dużo "+pchar.GenQuest.Escort.Trader.add+" na pokładzie. Żałosny wojownik, nie napotkasz żadnych trudności w przejęciu jego statku\nWięc i tak na tym skorzystasz, kapitanie.";
+			dialog.text = "Jest taki kupiec - "+pchar.GenQuest.Escort.Trader.Enemyname+". Posiada i dowodzi fluitą. Zostałem poinformowany, że za dwa tygodnie przybędzie na zamieszkaną wyspę "+XI_ConvertString(pchar.GenQuest.Escort.Trader.EnIsland)+", aby uzupełnić zapasy wody i pohandlować z miejscowymi Indianami. Będzie miał dużo "+pchar.GenQuest.Escort.Trader.add+" na pokładzie. Żałosny wojownik, nie napotkasz żadnych trudności w przejęciu jego statku\nWięc i tak na tym skorzystasz, kapitanie.";
 			link.l1 = "Człowiek człowiekowi wilkiem jest?";
 			link.l1.go = "EscortTrader_complete_5";
 		break;
@@ -768,35 +768,35 @@ switch (rand(7))
 	{
 		case 0:
 			pchar.GenQuest.Escort.Trader.Goods = GOOD_EBONY;
-			pchar.GenQuest.Escort.Trader.add = "ebony";
+			pchar.GenQuest.Escort.Trader.add = "hebanu";
 			break;
 		case 1:
 			pchar.GenQuest.Escort.Trader.Goods = GOOD_MAHOGANY;
-			pchar.GenQuest.Escort.Trader.add = "redwood";
+			pchar.GenQuest.Escort.Trader.add = "mahoniu";
 			break;
 		case 2:
 			pchar.GenQuest.Escort.Trader.Goods = GOOD_TOBACCO;
-			pchar.GenQuest.Escort.Trader.add = "tobacco";
+			pchar.GenQuest.Escort.Trader.add = "tytoniu";
 			break;
 		case 3:
 			pchar.GenQuest.Escort.Trader.Goods = GOOD_COFFEE;
-			pchar.GenQuest.Escort.Trader.add = "coffee";
+			pchar.GenQuest.Escort.Trader.add = "kawy";
 			break;
 		case 4:
 			pchar.GenQuest.Escort.Trader.Goods = GOOD_CINNAMON;
-			pchar.GenQuest.Escort.Trader.add = "cinnamon";
+			pchar.GenQuest.Escort.Trader.add = "cynamonu";
 			break;
 		case 5:
 			pchar.GenQuest.Escort.Trader.Goods = GOOD_FOOD;
-			pchar.GenQuest.Escort.Trader.add = "provision";
+			pchar.GenQuest.Escort.Trader.add = "jedzenia";
 			break;
 		case 6:
 			pchar.GenQuest.Escort.Trader.Goods = GOOD_WEAPON;
-			pchar.GenQuest.Escort.Trader.add = "weapon";
+			pchar.GenQuest.Escort.Trader.add = "bronii";
 			break;
 		case 7:
 			pchar.GenQuest.Escort.Trader.Goods = GOOD_CHOCOLATE;
-			pchar.GenQuest.Escort.Trader.add = "cacao";
+			pchar.GenQuest.Escort.Trader.add = "kakao";
 			break;
 	}
 }

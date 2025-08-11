@@ -15,22 +15,22 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             }
 			if (CheckAttribute(pchar, "questTemp.FMQG") && pchar.questTemp.FMQG == "sucsess")
             {
-                link.l1 = "Znowu ja, monsieur "+GetFullName(pchar)+"Przyprowadziłem ci Bertranda Pinette. Jest w mojej ładowni.";
+                link.l1 = "Znowu ja, monsieur "+GetFullName(pchar)+". Przyprowadziłem ci Bertranda Pinette. Jest w mojej ładowni.";
                 link.l1.go = "FMQG_14";
             }
 			if (CheckAttribute(pchar, "questTemp.FMQG") && pchar.questTemp.FMQG == "letter")
             {
-                link.l1 = "To znowu ja, monseniour "+GetFullName(pchar)+"Porozmawiajmy.";
+                link.l1 = "To znowu ja, monseniour "+GetFullName(pchar)+". Porozmawiajmy.";
                 link.l1.go = "FMQG_17";
             }
 			if (CheckAttribute(pchar, "questTemp.FMQG") && pchar.questTemp.FMQG == "killers")
             {
-                link.l1 = "Znowu ja, monsieur "+GetFullName(pchar)+" Porozmawiajmy.";
+                link.l1 = "Znowu ja, monsieur "+GetFullName(pchar)+". Porozmawiajmy.";
                 link.l1.go = "FMQG_17";
             }
 			if (CheckAttribute(pchar, "questTemp.FMQG.Letter"))
             {
-                link.l1 = "Znowu ja, monsieur "+GetFullName(pchar)+"Zakładam, że nie spodziewałeś się mnie znowu zobaczyć.";
+                link.l1 = "Znowu ja, monsieur "+GetFullName(pchar)+". Zakładam, że nie spodziewałeś się mnie znowu zobaczyć.";
                 link.l1.go = "FMQG_23";
             }
 		break;
@@ -44,11 +44,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "FMQG_1":
 			DelLandQuestMark(npchar);
-			Log_Info("You have received a heavy purse");
+			Log_Info("Otrzymałeś ciężką sakiewkę");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "purse3");
 			dialog.text = "Czy chciał wynająć ciebie i twój statek? Kapitanie, wyświadczyłbyś mi wielką przysługę, opowiadając mi wszystkie szczegóły tej sprawy. Odpłacę ci za to. Oto sakiewka pełna monet. Jest twoja, teraz proszę, powiedz mi o Bertrandzie Pinette.";
-			link.l1 = "Bardzo dobrze. Monsieur Pinette wynajął mój statek, aby przewieźć jego i dwóch jego przyjaciół z Gwadelupy do hiszpańskiego Maine. Dokładniej mówiąc, do Zatoki Komarów w Portobello. Wykonałem zadanie, zeszli z mojego statku i poszli prosto w dżunglę.";
+			link.l1 = "Niech będzie. Monsieur Pinette wynajął mój statek, aby przewieźć jego i dwóch jego przyjaciół z Gwadelupy do hiszpańskiego kontynentu. Dokładniej mówiąc, do Zatoki Komarów przy Portobelo. Wykonałem zadanie, zeszli z mojego statku i poszli prosto w dżunglę.";
 			link.l1.go = "FMQG_2";
 		break;
 		
@@ -71,7 +71,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FMQG_5":
-			dialog.text = "Monsieur Bertrand Pinette pojawił się w naszej kolonii dwa lata temu i natychmiast zaczął robić interesy z kapitanami. Interesy, cóż, także mroczne... Dostarczali mu towary, których bardzo brakowało w tym miejscu, kosztowności, kontrabandę, czasami nawet niewolników... Systematycznie brał pożyczki na swoje nielegalne operacje w moim biurze, ale zawsze spłacał z wszystkimi odsetkami\nPrzed opuszczeniem wyspy z twoją dobrą pomocą, wziął ogromną pożyczkę, znacznie większą niż zwykle. Był... był zaufanym klientem z nieskazitelną historią kredytową, dlatego udzieliłem mu pożyczki. Wielki błąd. Monsieur Pinette uciekł i oczywiście nie zamierza zwrócić moich monet.";
+			dialog.text = "Monsieur Bertrand Pinette pojawił się w naszej kolonii dwa lata temu i natychmiast zaczął robić interesy z kapitanami. Interesy, cóż, także mroczne... Dostarczali mu towary, których bardzo w tym miejscu brakowało, kosztowności, kontrabandę, czasami nawet niewolników... Systematycznie brał pożyczki na swoje nielegalne operacje w moim biurze, ale zawsze je spłacał ze wszystkimi odsetkami\nPrzed opuszczeniem wyspy z twoją dobrą pomocą, wziął ogromną pożyczkę, znacznie większą niż zwykle. Był... był zaufanym klientem z nieskazitelną historią kredytową, dlatego udzieliłem mu pożyczki. Wielki błąd. Monsieur Pinette uciekł i oczywiście nie zamierza zwrócić moich monet.";
 			link.l1 = "Jak duża jest suma, jeśli mogę zapytać?";
 			link.l1.go = "FMQG_6";
 		break;
@@ -107,13 +107,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FMQG_11":
-			dialog.text = "Na pewno, że byłeś! Osobiście nie mam wątpliwości, że nie masz nic wspólnego z organizacją ucieczki don de Milyara. Ale to nie tak, jak mogą myśleć nasz gubernator i nasz komendant. Zarzut współudziału, jeśli masz szczęście, a jeśli nie... naprawdę nie chcę kontynuować. Przekonaj się sam, wziąłeś na pokład zbiegłego hiszpańskiego oficera, najpewniej w jakiejś ukrytej zatoce... mam rację, kapitanie?";
+			dialog.text = "Bez wątpienia! Osobiście nie mam wątpliwości, że nie masz nic wspólnego z organizacją ucieczki don de Milyara. Ale to nie tak, jak mogą myśleć nasz gubernator i nasz komendant. Zarzut współudziału, jeśli masz szczęście, a jeśli nie... naprawdę nie chcę kontynuować. Przekonaj się sam, wziąłeś na pokład zbiegłego hiszpańskiego oficera, najpewniej w jakiejś ukrytej zatoce... mam rację, kapitanie?";
 			link.l1 = "Rozumiem. Szantażujesz mnie. Popełniłem błąd, przychodząc tutaj...";
 			link.l1.go = "FMQG_12";
 		break;
 		
 		case "FMQG_12":
-			dialog.text = "Co powiesz, kapitanie?! Nie szantażuję cię! Wszystko, o co proszę, to pomóc mi za dobrą nagrodę. Czy byłbyś tak uprzejmy znaleźć monsieur Pinette i dostarczyć go do Basse-Terre? Będę czekał na twój powrót. Wierzę, że dwa miesiące wystarczą, aby popłynąć do Panamy i z powrotem.";
+			dialog.text = "Co ty wygadujesz, kapitanie?! Nie szantażuję cię! Wszystko, o co proszę, to pomóc mi za dobrą nagrodę. Czy byłbyś tak uprzejmy znaleźć monsieur Pinette i dostarczyć go do Basse-Terre? Będę czekał na twój powrót. Wierzę, że dwa miesiące wystarczą, aby popłynąć do Panamy i z powrotem.";
 			link.l1 = "Nie zostawiasz mi wyboru. Choć wątpię, by takie podejście do interesów przyczyniło się do naszej przyjaźni. Żegnaj, monsieur.";
 			link.l1.go = "FMQG_13";
 		break;
@@ -144,19 +144,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "FMQG_14":
 			DelMapQuestMarkCity("baster");
 			DelLandQuestMark(npchar);
-			dialog.text = "Znakomite wieści, kapitanie! Wyślę moich ludzi, by natychmiast zabrali tego drania z twojego statku. Tym razem ten ptaszek nie ucieknie mi... Zasłużyłeś na swoją nagrodę, weź tę skrzynię. Proszę, nie gniewaj się na mnie, oto amulet dla ciebie. To prezent.";
-			link.l1 = "Wdzięczność. Zakładam, że twoje milczenie to także część mojego wynagrodzenia?";
+			dialog.text = "Znakomite wieści, kapitanie! Wyślę moich ludzi, by natychmiast zabrali tego drania z twojego statku. Tym razem ten ptaszek mi nie ucieknie... Zasłużyłeś na swoją nagrodę, weź tę skrzynię. Proszę, nie gniewaj się na mnie, oto amulet dla ciebie. To prezent.";
+			link.l1 = "Jestem wdzięczny. Zakładam, że twoje milczenie to także część mojego wynagrodzenia?";
 			link.l1.go = "FMQG_15";
 		break;
 		
 		case "FMQG_15":
-			Log_Info("You have received a chest full of doubloons");
-			Log_Info("You have received a 'Fisherman' amulet");
+			Log_Info("Otrzymałeś skrzynię z dublonami");
+			Log_Info("Otrzymałeś amulet 'Rybak'");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "chest");
 			GiveItem2Character(pchar, "obereg_7");
-			dialog.text = "Cisza? O czym? Będę rad widzieć cię wśród moich klientów. Wiesz, co mówią o ciszy i złocie?";
-			link.l1 = "Warto czasami więcej niż złoto, monsieur. Lekcja nauczona. Żegnaj!";
+			dialog.text = "Milczenie? O czym? Będę rad widzieć cię wśród moich klientów. Wiesz, co mówią o ciszy i złocie?";
+			link.l1 = "Cisza jest warta czasem więcej niż złoto, monsieur. Lekcja nauczona. Żegnaj!";
 			link.l1.go = "FMQG_16";
 		break;
 		
@@ -195,7 +195,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "FMQG_19":
 			LAi_Fade("", "");
 			dialog.text = "(czytając) Ahem ... Co to za bzdury chorego z gorączką?";
-			link.l1 = "Jesteś poważny? Dobrze, zaniosę te 'bzdury' do gubernatora. Wierzę, że okaże on wielkie zainteresowanie poznaniem prawdy o zniknięciu 'Courage' i jej transportu diamentów... Dlaczego zrobiłeś się taki blady?";
+			link.l1 = "Jesteś poważny? Dobrze, zaniosę te 'bzdury' do gubernatora. Wierzę, że okaże on wielkie zainteresowanie poznaniem prawdy o zniknięciu 'Odwagi' i jej transportu diamentów... Dlaczego zrobiłeś się taki blady?";
 			if (CheckAttribute(pchar, "questTemp.FMQG.Letter")) link.l1.go = "FMQG_24";
 			else link.l1.go = "FMQG_20";
 		break;

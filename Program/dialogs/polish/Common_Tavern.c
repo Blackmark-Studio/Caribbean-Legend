@@ -66,7 +66,7 @@ void ProcessDialogEvent()
 			{
 				if (!CheckAttribute(npchar, "quest.Rum") && CheckAttribute(pchar, "questTemp.Sharlie.Lock") && pchar.questTemp.Sharlie == "ship" && makeint(environment.time) > 5.0 && makeint(environment.time) < 19.0)
 				{
-					link.l1 = "Drogi Panie, szukam pracy. Macie jakieś zajęcie?";
+					link.l1 = "Drogi Panie, szukam pracy. Masz jakieś zajęcie?";
 					link.l1.go = "Sharlie_rum";
 					break;
 				}

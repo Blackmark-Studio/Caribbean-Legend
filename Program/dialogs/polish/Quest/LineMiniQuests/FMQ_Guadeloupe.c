@@ -32,10 +32,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "citizen_1":
-			dialog.text = "Chcę wynająć twój statek do przewozu z Gwadelupy na Hiszpańskie Wybrzeże.";
+			dialog.text = "Chcę wynająć twój statek do przewozu z Gwadelupy na Hiszpański Kontynent.";
 			link.l1 = "Chcesz tam płynąć jako pasażer?";
 			link.l1.go = "citizen_2";
-			link.l2 = "Hiszpańska Główna? Podziękuję. Nie jesteśmy naprawdę przyjaciółmi z Hiszpanami. Sugeruję, żebyś znalazł innego głupca.";
+			link.l2 = "Hiszpańska Kontynent? Podziękuję. Nie jesteśmy naprawdę przyjaciółmi z Hiszpanami. Sugeruję, żebyś znalazł innego głupca.";
 			link.l2.go = "citizen_no";
 		break;
 		
@@ -61,13 +61,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "citizen_2":
-			dialog.text = "Nie całkiem tak, monsieur. Pasażer to człowiek zależny od woli kapitana. Chcę wynająć ciebie, twoją załogę i twój statek, aby dostać się razem z dwoma przyjaciółmi do Panamy.";
+			dialog.text = "Nie całkiem, monsieur. Pasażer to człowiek zależny od woli kapitana. Chcę wynająć ciebie, twoją załogę i twój statek, aby dostać się razem z dwoma przyjaciółmi do Panamy.";
 			link.l1 = "Do Panamy? Jak? Chcesz opłynąć cały kontynent?";
 			link.l1.go = "citizen_3";
 		break;
 		
 		case "citizen_3":
-			dialog.text = "Ha-ha-ha! Dobry żart, kapitanie. Oczywiście, że nie. Wszystko, co musisz zrobić, to dostarczyć nas do Zatoki Komarów, która nie jest daleko od Portobello. Sami dotrzemy do Panamy, to nie będzie nasza pierwsza wyprawa przez dżunglę.";
+			dialog.text = "Ha-ha-ha! Dobry żart, kapitanie. Oczywiście, że nie. Wszystko, co musisz zrobić, to dostarczyć nas do Zatoki Komarów, która nie jest daleko od Portobelo. Sami dotrzemy do Panamy, to nie będzie nasza pierwsza wyprawa przez dżunglę.";
 			link.l1 = "A co z zapłatą?";
 			link.l1.go = "citizen_4";
 		break;
@@ -79,7 +79,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "citizen_5":
-			dialog.text = "Kapitanie, czas to pieniądz, moi przyjaciele i ja nie mamy go. Musimy wypłynąć stąd tej nocy i musimy być tam za dziesięć dni. To będzie nasz drugi rejs. Więc, jesteś z nami?";
+			dialog.text = "Kapitanie, czas to pieniądz, a moi przyjaciele i ja, go nie mamy. Musimy wypłynąć stąd tej nocy i musimy być tam za dziesięć dni. To będzie nasz drugi rejs. Więc, jesteś z nami?";
 			link.l1 = "Umowa stoi!";
 			link.l1.go = "citizen_6";
 			link.l2 = "Przykro mi, monsieur, ale twoja propozycja brzmi dla mnie zbyt podejrzanie. Znajdź sobie innego głupca.";
@@ -94,7 +94,7 @@ void ProcessDialogEvent()
 		
 		case "citizen_7":
 			dialog.text = "Chwila, kapitanie, nawet się nie przedstawiliśmy. Mam na imię Bertrand Pinette. A ty jesteś...";
-			link.l1 = ""+GetFullName(pchar)+". Kapitanie "+GetFullName(pchar)+"Do widzenia, monsieur Pinette.";
+			link.l1 = ""+GetFullName(pchar)+". Kapitan "+GetFullName(pchar)+". Do widzenia, monsieur Pinette.";
 			link.l1.go = "citizen_8";
 		break;
 		
@@ -119,21 +119,21 @@ void ProcessDialogEvent()
 		
 		case "citizen_9":
 			DelLandQuestMark(npchar);
-			dialog.text = "Kapitan "+GetFullName(pchar)+" , oto jesteś. Czy jesteśmy gotowi do drogi?";
+			dialog.text = "Kapitanie "+GetFullName(pchar)+", oto jesteś. Czy jesteśmy gotowi do drogi?";
 			link.l1 = "Tak. Witaj na pokładzie.";
 			link.l1.go = "citizen_10";
 		break;
 		
 		case "citizen_10":
 			dialog.text = "Zgoda. Przyjmij zaliczkę - skrzynię pełną dublonów. I pamiętaj - masz tylko dziesięć dni, aby nas dostarczyć do celu. Ani dnia dłużej!";
-			link.l1 = "Pamiętam warunki. Nie martw się, zdążymy na czas. Siadajcie.";
+			link.l1 = "Pamiętam warunki. Nie martw się, zdążymy na czas. Wsiadajcie.";
 			link.l1.go = "citizen_11";
 		break;
 		
 		case "citizen_11":
 			DialogExit();
 			GiveItem2Character(pchar, "chest");
-			log_info("You have received a chest full of doubloons");
+			log_info("Otrzymałeś skrzynię pełną dublonów");
 			PlaySound("interface\important_item.wav");
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "officers", "sea_1", "none", "", "", "FMQG_OnBoard", 20.0);
@@ -168,7 +168,7 @@ void ProcessDialogEvent()
 		
 		case "citizen_13":
 			GiveItem2Character(pchar, "chest");
-			log_info("You have received a chest full of doubloons");
+			log_info("Otrzymałeś skrzynię pełną dublonów");
 			PlaySound("interface\important_item.wav");
 			AddCharacterExpToSkill(pchar, "Sailing", 200);//навигация
 			AddCharacterExpToSkill(pchar, "Leadership", 200);//авторитет
@@ -215,7 +215,7 @@ void ProcessDialogEvent()
 			AddCharacterExpToSkill(pchar, "Sailing", 50);//навигация
 			AddCharacterExpToSkill(pchar, "Leadership", 50);//авторитет
 			AddCharacterExpToSkill(pchar, "Sneak", 50);//скрытность
-			dialog.text = "W każdym razie, dziękuję za usługę, kapitanie "+GetFullName(pchar)+"Żegnaj!";
+			dialog.text = "W każdym razie, dziękuję za usługę, kapitanie "+GetFullName(pchar)+". Żegnaj!";
 			link.l1 = "Żegnaj.";
 			link.l1.go = "citizen_14";
 		break;
@@ -223,31 +223,31 @@ void ProcessDialogEvent()
 		case "citizen_15":
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity("bridgetown");
-			dialog.text = "O! Co za spotkanie! "+TimeGreeting()+", "+GetFullName(pchar)+"Ale jak?";
-			link.l1 = TimeGreeting()+", monsieur Pinette. Nie było łatwo was znaleźć.";
+			dialog.text = "O! Co za spotkanie! "+TimeGreeting()+", "+GetFullName(pchar)+". Ale jak?";
+			link.l1 = TimeGreeting()+", monsieur Pinette. Nie było łatwo cię znaleźć.";
 			link.l1.go = "citizen_16";
 		break;
 		
 		case "citizen_16":
 			sld = characterFromId("Baster_usurer");
-			dialog.text = "I jaki jest powód, kapitanie?";
-			link.l1 = "Mój dobry panie, jest człowiek o imieniu "+GetFullName(sld)+" i jest bardzo chętny, by cię zobaczyć. Zakładam, że wiesz dlaczego.";
+			dialog.text = "Ale z jakiego powodu mnie pan szuka, kapitanie?";
+			link.l1 = "Mój dobry panie, pewien człowiek o imieniu "+GetFullName(sld)+" jest bardzo chętny, by cię zobaczyć. Zakładam, że wiesz dlaczego.";
 			link.l1.go = "citizen_17";
 		break;
 		
 		case "citizen_17":
 			sld = characterFromId("Baster_usurer");
-			dialog.text = "Oczywiście, że tak, ale ty, mój drogi Kapitanie, musisz także wiedzieć, że nie jestem chętny, by widzieć monsieur "+GetFullName(sld)+" w ogóle. Jesteś jego łowcą nagród? Po prostu tego nie rozumiem.";
-			link.l1 = "Ach, ale właśnie taką osobą jestem w tej chwili i nie jestem z tego zadowolony. Popełniłem błąd i teraz monsieur "+GetFullName(sld)+", niech go diabli, postawił mnie przed wyborem. Albo twój wspaniały powrót do Gwadelupy, albo mój tyłek jako wspólnik w twoim małym przedsięwzięciu uwolnienia don Carlosa de Milyar. To mnie zaboli, wiesz o tym.";
+			dialog.text = "Oczywiście, że tak, ale ty, mój drogi Kapitanie, musisz także wiedzieć, że nie jestem chętny, by widzieć się z monsieur "+GetFullName(sld)+". Jesteś jego łowcą nagród? Po prostu tego nie rozumiem.";
+			link.l1 = "Ach, właśnie taką osobą na chwile obecną jestem i nie jestem z tego zadowolony. Popełniłem błąd i teraz monsieur "+GetFullName(sld)+", niech go diabli, postawił mnie przed wyborem. Albo twój wspaniały powrót do Gwadelupy, albo mój tyłek trafia na czarną liste francji, jako wspólnik w twoim małym przedsięwzięciu uwolnienia don Carlosa de Milyar. To mnie zaboli, wiesz o tym.";
 			link.l1.go = "citizen_18";
 		break;
 		
 		case "citizen_18":
 			sld = characterFromId("Baster_usurer");
 			dialog.text = "Ach, ten drań! To bardzo grzeszny sposób na szantażowanie ludzi!.. Więc, kapitanie, co zamierzasz zrobić, dokonasz wyboru czy pozwolisz, by ktoś taki cię szantażował?";
-			link.l1 = "A co ty o tym myślisz? Wierzę, że idziesz ze mną do Basse-Terre.";
+			link.l1 = "A co ty o tym myślisz? Wierzę, że udasz się ze mną do Basse-Terre.";
 			link.l1.go = "citizen_19";
-			link.l2 = "Czy mam tutaj wybór?";
+			link.l2 = "A mam wogóle wybór?";
 			link.l2.go = "citizen_25";
 		break;
 		
@@ -255,19 +255,19 @@ void ProcessDialogEvent()
 			dialog.text = "Och, muszę cię rozczarować, Kapitanie. Nie mam ochoty wchodzić na pokład twego pięknego statku. Nic tu nie osiągniesz siłą, miejsce jest otoczone strażnikami, a ja będę krzyczeć o pomoc, jeśli tylko okażesz jakiekolwiek gwałtowne zamiary. Oczywiście, możesz spróbować mnie dźgnąć, ale nasz dobry przyjaciel nic nie zyska z zimnego trupa. Tak więc, najrozsądniejszym dla ciebie w tej chwili sposobem jest zostawić mnie w spokoju. Pozwolę ci odejść bez szwanku.";
 			link.l1 = "Czy naprawdę wierzysz, że po wszystkim co się stało, po prostu odejdę? Wciągnąłeś mnie w to bagno, łotrze, czas zapłacić!";
 			link.l1.go = "citizen_20";
-			link.l2 = "Masz rację, przypuszczam. Podoba mi się pomysł przebicia cię sztyletem, ale to bezcelowe. Nawet nie próbuj mieć nadziei, że to koniec. Teraz udaję się do Basse-Terre, gdzie poinformuję naszego dobrego przyjaciela o twoim miejscu pobytu. A potem wyśle zamaskowanych ludzi za tobą.";
+			link.l2 = "Masz rację, przypuszczam. Podoba mi się pomysł przebicia cię sztyletem, ale to bezcelowe. Nie łudź się, że to koniec. Teraz udam się do Basse-Terre, gdzie poinformuję naszego dobrego przyjaciela o twoim miejscu pobytu. A potem wyśle on zamaskowanych ludzi za tobą.";
 			link.l2.go = "citizen_21";
 		break;
 		
 		case "citizen_20":
 			dialog.text = "A-ach! Żołnierze! Pomocy!!!";
-			link.l1 = "...";
+			link.l1 = "Do diabła...";
 			link.l1.go = "citizen_fight";
 		break;
 		
 		case "citizen_21":
 			dialog.text = "Oczywiście. Powiedz swojemu szefowi, żeby trzymał swoich zamaskowanych ludzi w ryzach - ostatnio staję się bardzo popularny. Żegnaj, kapitanie.";
-			link.l1 = "... ";
+			link.l1 = "Jeszcze się przekonamy.";
 			link.l1.go = "citizen_22";
 		break;
 		
@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 		case "citizen_23":
 			DelLandQuestMark(npchar);
 			dialog.text = "Czekaj! Poddaję się! Poddaję się!";
-			link.l1 = "Dokładnie tak! Teraz rzuć broń i marsz na statek!";
+			link.l1 = "Już nie taki mocny, co? Mówiłem, że tego tak nie zostawie, gdyż wizja bycia wrogiem mojego własnego narodu niezbyt mnie przekonuje. Teraz rzuć broń i marsz na statek, bo jak nie, to ci zaraz sprzedam kopa w dupsko!";
 			link.l1.go = "citizen_24";
 		break;
 		
@@ -301,13 +301,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "citizen_26":
-			dialog.text = "Dobrze. W takim razie zorganizuję ci solidny sposób na zamknięcie mu ust. Napiszmy list, który zaniesiesz swojemu pracodawcy. Powiedz mu, że jeśli kiedykolwiek zacznie mówić, gubernator Gwadelupy dowie się o człowieku, który zaplanował i zainwestował w zniknięcie 'Courage' - kuriera lugra na misji transportu dużej partii diamentów.";
+			dialog.text = "Dobrze. W takim razie zorganizuję ci solidny sposób na zamknięcie mu ust. Napiszmy list, który zaniesiesz swojemu pracodawcy. Powiedz mu, że jeśli kiedykolwiek zacznie mówić, gubernator Gwadelupy dowie się o człowieku, który zaplanował i zainwestował w zniknięcie 'Odwagi' - lugra kurierskiego, na misji transportu dużej partii diamentów.";
 			link.l1 = "Hm. Myślę, że zaczynam rozumieć, monsieur Pinette.";
 			link.l1.go = "citizen_27";
 		break;
 		
 		case "citizen_27":
-			dialog.text = "Cieszę się, że jesteś taki bystry, Kapitanie. De Lion osobiście przybije głowę przebiegłego sknery do bram miasta, jeśli dowie się prawdy o zniknięciu Courage. W tym liście, który zaraz napiszę, znajdziesz dowody, które uspokoją szantażystę. Daj mi chwilę, abym mógł wziąć pióro.";
+			dialog.text = "Cieszę się, że jesteś taki bystry, Kapitanie. De Lion osobiście przybije głowę przebiegłego sknery do bram miasta, jeśli dowie się prawdy o zniknięciu 'Odwagi'. W tym liście, który zaraz napiszę, znajdziesz dowody, które uspokoją szantażystę. Daj mi chwilę, abym mógł wziąć pióro.";
 			link.l1 = "Dobrze...";
 			link.l1.go = "citizen_28";
 		break;
@@ -379,7 +379,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "cureer_2":
-			dialog.text = "Monsieur "+GetFullName(sld)+"  osobiście powie ci, dlaczego. Mam nadzieję, że nie odrzucisz jego zaproszenia.";
+			dialog.text = "Monsieur "+GetFullName(sld)+"  osobiście ci powie, dlaczego. Mam nadzieję, że nie odrzucisz jego zaproszenia.";
 			link.l1 = "Hm.. Dobrze. Ci bankowcy to potężny lud i nigdy nie marnują czasu na płotki. Odwiedzę tego człowieka tak szybko, jak to możliwe.";
 			link.l1.go = "cureer_3";
 		break;
@@ -407,7 +407,7 @@ void ProcessDialogEvent()
 		// Жан Дено
 		case "Juan":
 			dialog.text = "Argh! Ty szumowino! Nie ma mowy, że to przypadkowe spotkanie...";
-			link.l1 = "Prawda to, Jean... wybacz, miałem na myśli Juan. Wytropiłem cię. Teraz bądź łaskaw ruszyć się do mojego ładowni? Odpocznij i porozmawiamy.";
+			link.l1 = "Prawda to, Jean... wybacz, miałem na myśli Juan. Wytropiłem cię. Teraz bądź łaskaw ruszyć się do mojej ładowni? Odpocznij i porozmawiamy.";
 			link.l1.go = "Juan_1";			
 		break;
 		
@@ -426,12 +426,12 @@ void ProcessDialogEvent()
 		
 		case "Juan_2":
 			dialog.text = "";
-			link.l1 = "Spełniłem swoją część umowy. Teraz twoja kolej. Zastrzel to i pamiętaj o konsekwencjach kłamstwa.";
+			link.l1 = "Spełniłem swoją część umowy. Teraz twoja kolej. Wyrzuć to z siebie i pamiętaj o konsekwencjach kłamstwa.";
 			link.l1.go = "Juan_3";
 		break;
 		
 		case "Juan_3":
-			dialog.text = "Znajdziesz Bertranda Pinette na Barbadosie, a dokładniej na głównej plantacji. Zamierzał tam kontynuować swoje operacje. Nadzorca plantacji jest jego przyjacielem.";
+			dialog.text = "Bertranda Pinette znajdziesz na Barbadosie, a dokładniej na głównej plantacji. Zamierzał tam kontynuować swoje operacje. Nadzorca plantacji jest jego przyjacielem.";
 			link.l1 = "Jakiego rodzaju operacje?";
 			link.l1.go = "Juan_4";
 		break;
@@ -449,7 +449,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Juan_6":
-			dialog.text = "Jakie? Przebiegły i sprytny, zawsze zna się na rzeczy, zawsze ma asa w rękawie. Nie miałem zbyt wiele czasu, by dowiedzieć się o nim więcej.";
+			dialog.text = "Jeszcze? Przebiegły i sprytny, zawsze zna się na rzeczy, zawsze ma asa w rękawie. Nie miałem zbyt wiele czasu, by dowiedzieć się o nim więcej.";
 			link.l1 = "Rozumiem. Dobrze, muszę popłynąć do Bridgetown. Jesteś wolny, don Juan. Nawet nie myśl o ostrzeganiu Pinette'a. Jeśli go tam nie znajdę, znowu będziesz miał kłopoty.";
 			link.l1.go = "Juan_7";
 		break;

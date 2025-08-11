@@ -28,21 +28,21 @@ void ProcessDialogEvent()
 			DelMapQuestMarkCity("Fortfrance");
 			if (CheckAttribute(pchar, "questTemp.HWIC") || pchar.Ship.Type == SHIP_NOTUSED)
 			{
-				dialog.text = "Och, "+GetFullName(pchar)+"! Wyglądasz inaczej, mój przyjacielu, i jesteś skuteczny! Zaczynają o tobie mówić, wiesz? Szybko się uczysz, monsieur, jestem z ciebie naprawdę dumny. Życzę ci więcej fortun i szczęścia w przyszłości! Przyjemność spotkać cię ponownie!";
-				link.l1 = "Monsieur Gregoire Valinnie, cóż za spotkanie! Jestem Ci wiele winien za moje skromne osiągnięcia. Miło Cię również poznać! Powodzenia!";
+				dialog.text = "Och, "+GetFullName(pchar)+"! Wyglądasz inaczej, mój przyjacielu, i jesteś naprawde skuteczny! Zaczynają o tobie mówić, wiesz? Szybko się uczysz, monsieur, jestem z ciebie naprawdę dumny. Życzę ci więcej fortun i szczęścia w przyszłości! To przyjemność spotkać cię ponownie!";
+				link.l1 = "Monsieur Gregoire Valinnie, cóż za spotkanie! Jestem Ci wiele winien za moje skromne osiągnięcia. Miło Cię również widzieć! Powodzenia!";
 				link.l1.go = "greguar_exit_1";
 			}
 			else
 			{
-				dialog.text = "O, "+GetFullName(pchar)+"! Wyglądasz inaczej, mój przyjacielu, i odnosisz sukcesy! Zaczynają o tobie mówić, wiesz? Szybko się uczysz, monseniurze, muszę przyznać, że jestem z ciebie dumny.";
+				dialog.text = "O, "+GetFullName(pchar)+"! Wyglądasz inaczej, mój przyjacielu, i odnosisz sukcesy! Zaczynają o tobie mówić, wiesz? Szybko się uczysz, monsieur, muszę przyznać, że jestem z ciebie dumny.";
 				link.l1 = "Monsieur Gregoire Valinnie, cóż za spotkanie! Jestem ci wiele winien za moje skromne osiągnięcia. Miło cię poznać! Pozwól zgadnąć, masz dla mnie propozycję biznesową?";
 				link.l1.go = "greguar_1";
 			}
 		break;
 		
 		case "greguar_1":
-			dialog.text = "Aye! Tak jest. Będę zwięzły, czas to pieniądz. Otóż, holenderska eskadra koronowa płynąca z Brazylii do Curaçao z ładunkiem towarów o strategicznej wartości została zaatakowana przez Anglików pomiędzy Trynidadem a lądem stałym. Jeden flet Kompanii zdołał uciec i zacumować na wybrzeżu Boca de la Serpienta. Uratowali część ładunku, ale nie na długo - zostali zaatakowani przez miejscowe plemię Indian.\nZ moich informacji wynika, że wybili wszystkich Holendrów na tym wybrzeżu i zabrali ładunek do swojej wioski. Indianie również przejęli holenderską broń palną, ale ponieśli ciężkie straty. To nasza szansa! Brytyjczycy i Holendrzy nadal walczą w tym regionie i są zbyt zajęci, by martwić się o zaginiony flet. Na razie... Masz statek i załogę. Możemy tam popłynąć, wysiąść i dobić Indian. Ładunek jest niezwykle cenny i jest go tam mnóstwo.\nWysłałem już małą ekspedycję na zwiady - to wszystko, na co było mnie stać, pamiętasz problemy finansowe? Mam zaufanego kupca, możesz liczyć na mój miecz i moich najemników. Podział pięćdziesiąt na pięćdziesiąt, mamy tydzień, aby się tam dostać. Więc, mój przyjacielu, wchodzisz w to?";
-			link.l1 = "Przebacz mi, monseniorze, ale odmówię. Właśnie wróciłem z ciężkiej podróży, nie mamy wystarczająco czasu na naprawy i rekrutację. Nawet w tym zapomnianym przez Boga miejscu człowiek nie może mieć wszystkiego.";
+			dialog.text = "Aye! Tak jest. Będę zwięzły, czas to pieniądz. Otóż, holenderska eskadra koronna płynąca z Brazylii do Kurakao z ładunkiem towarów o strategicznej wartości została zaatakowana przez Anglików pomiędzy Trynidadem a kontynentem. Jedna fluita Kompanii zdołała uciec i zacumować na wybrzeżu Boca de la Serpienta. Uratowali część ładunku, ale nie na długo - zostali zaatakowani przez miejscowe plemię Indian.\nZ moich informacji wynika, że wybili wszystkich Holendrów na tym wybrzeżu i zabrali ładunek do swojej wioski. Indianie również przejęli holenderską broń palną, ale ponieśli ciężkie straty. To nasza szansa! Brytyjczycy i Holendrzy nadal walczą w tym regionie i są zbyt zajęci, by martwić się o zaginioną fluite. Na razie... Masz statek i załogę. Możemy tam popłynąć, wysiąść i dobić Indian. Ładunek jest niezwykle cenny i jest go tam mnóstwo.\nWysłałem już małą ekspedycję na zwiady - to wszystko, na co było mnie stać, pamiętasz problemy finansowe? Mam zaufanego kupca, możesz liczyć na mój miecz i moich najemników. Podział pięćdziesiąt na pięćdziesiąt, mamy tydzień, aby się tam dostać. Więc, mój przyjacielu, wchodzisz w to?";
+			link.l1 = "Przebacz mi, monsieur, ale odmówię. Właśnie wróciłem z ciężkiej podróży, nie mamy wystarczająco czasu na naprawy i rekrutację. Nawet w tym zapomnianym przez Boga miejscu człowiek nie może mieć wszystkiego.";
 			link.l1.go = "greguar_exit";
 			link.l2 = "Brzmi to jak niebezpieczny interes z zapachem godziwego zysku i przygód. Oczywiście, że wchodzę! Nie marnujmy czasu!";
 			link.l2.go = "greguar_2";
@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 		
 		case "greguar_5":
 			PlaySound("Voice\English\LE\Greguar\Greguar_06.wav");
-			dialog.text = "Znaczenie? Holendrzy i my musieliśmy ich wszystkich zabić!";
+			dialog.text = "To znaczy? Holendrzy i my musieliśmy ich wszystkich zabić!";
 			link.l1 = "";
 			link.l1.go = "greguar_6";
 		break;
@@ -133,13 +133,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "greguar_12":
-			dialog.text = "Do diabła! To smutne, ale masz rację, "+pchar.name+" : nawet jeśli dzikusy są martwe, nie zdołamy zabrać ładunku, zanim Holendrzy lub Anglicy tu wylądują. Musimy odpłynąć teraz! Do diabła z tym przeklętym wybrzeżem!";
+			dialog.text = "Do diabła! To smutne, ale masz rację, "+pchar.name+": nawet jeśli dzikusy są martwe, nie zdołamy zabrać ładunku, zanim Holendrzy lub Anglicy tu wylądują. Musimy odpłynąć teraz! Do diabła z tym przeklętym wybrzeżem!";
 			link.l1 = "...";
 			link.l1.go = "greguar_10";
 		break;
 		
 		case "greguar_13":
-			dialog.text = "Fuh! Udało się! Dobra robota, "+pchar.name+"Teraz ruszajmy do legowiska dzikusów po naszą nagrodę! Nic nas teraz nie powstrzyma!";
+			dialog.text = "Fuh! Udało się! Dobra robota, "+pchar.name+". Teraz ruszajmy do legowiska dzikusów po naszą nagrodę! Nic nas teraz nie powstrzyma!";
 			link.l1 = "Powinniśmy się pośpieszyć, póki Brytyjczycy i Holendrzy są jeszcze zajęci sobą nawzajem. Ruszajmy!";
 			link.l1.go = "greguar_14";
 		break;
@@ -150,8 +150,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "greguar_15":
-			dialog.text = "Dobrze się spisaliśmy, "+pchar.name+"Teraz musimy tylko sprzedać ładunek bez wzbudzania podejrzeń. Mam solidnego kupca, będzie na nas czekał w zatoce Lamentin o północy. Nie zabieraj żadnych oficerów i unikaj tego miejsca przed spotkaniem, klient jest bardzo nerwowym jegomościem.";
-			link.l1 = "Biznes to biznes. Ładunek musi zostać sprzedany i to bezpiecznie, inaczej mój dług wobec Poincy jeszcze bardziej wzrośnie. Dobrze, będę tam do północy.";
+			dialog.text = "Dobrze się spisaliśmy, "+pchar.name+". Teraz musimy tylko sprzedać ładunek bez wzbudzania podejrzeń. Mam solidnego kupca, będzie na nas czekał w zatoce Lamentin o północy. Nie zabieraj żadnych oficerów i unikaj tego miejsca przed spotkaniem, klient jest bardzo nerwowym jegomościem.";
+			link.l1 = "Biznes to biznes. Ładunek musi zostać sprzedany i to bezpiecznie, inaczej mój dług wobec de Poincy jeszcze bardziej wzrośnie. Dobrze, będę tam do północy.";
 			link.l1.go = "greguar_16";
 		break;
 		
@@ -175,7 +175,7 @@ void ProcessDialogEvent()
 		case "greguar_17":
 			PlaySound("Voice\English\Master_01.wav");
 			pchar.quest.FMQL_goods_over.over = "yes";// лесник снято прерывание на встречу.
-			dialog.text = "To zrobione. Ładunek jest rozładowany, klient jest tutaj. Porozmawiajmy.";
+			dialog.text = "Zrobione. Ładunek jest rozładowany, klient jest tutaj. Porozmawiajmy.";
 			link.l1 = "...";
 			link.l1.go = "greguar_18";
 		break;
@@ -251,13 +251,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "prosper":
-			dialog.text = ""+GetFullName(pchar)+"! Jesteś tutaj! I czemu mnie to nie dziwi! Idealne wyczucie czasu, przyjacielu. Ledwo uciekliśmy przed hordą Karibów, zmierzali w twoim kierunku i, jak widzę, już ich spotkałeś.";
+			dialog.text = ""+GetFullName(pchar)+"! Też tu jesteś! I czemu mnie to nie dziwi? Idealne wyczucie czasu, przyjacielu. Ledwo uciekliśmy przed hordą Karibów, zmierzali w twoim kierunku i, jak widzę, już ich spotkałeś.";
 			link.l1 = "Prosper! A ja jestem zaskoczony! Znowu robisz dziury w Indianach? Mam nadzieję, że z Seliną wszystko w porządku?";
 			link.l1.go = "prosper_1";
 		break;
 		
 		case "prosper_1":
-			dialog.text = "Było głupotą z mojej strony dołączyć do tej ekspedycji, zastanawiam się, czy moja córka jeszcze mnie kiedyś zobaczy. Selina? Cóż, siedzi w domu i marzy o tobie! Młodzież z Martyniki straciła już wszelką nadzieję... Wiesz, nie żałuję już zakupu tej muszkiety. Solidna broń palna. Niezawodna. To również dodatkowy powód, by wziąć udział w kolejnej samobójczej wyprawie, choć teraz jest ona trochę mniej samobójcza, odkąd się pojawiłeś. Ich wioska jest niedaleko, ale nasze problemy dopiero się zaczną.";
+			dialog.text = "Było głupotą z mojej strony dołączyć do tej ekspedycji, zastanawiam się, czy moja córka jeszcze mnie kiedyś zobaczy. Selina? Cóż, siedzi w domu i marzy o tobie! Młodzież z Martyniki straciła już wszelką nadzieję... Wiesz, nie żałuję już zakupu tego muszkietu. Solidna broń palna. Niezawodna. To również dodatkowy powód, by wziąć udział w kolejnej samobójczej wyprawie, choć teraz jest ona trochę mniej samobójcza, odkąd się pojawiłeś. Ich wioska jest niedaleko, ale nasze problemy dopiero się zaczną.";
 			link.l1 = "";
 			link.l1.go = "prosper_2";
 		break;
@@ -271,7 +271,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "prosper_3":
-			dialog.text = "Nie wszyscy. Nasz zwiadowca został postrzelony, ale udało mu się dotrzeć do ich kryjówki. Sam wódz przychodzi tutaj ze swoimi strażnikami. I mają holenderskie muszkiety. Mają przewagę liczebną i są wściekli jak diabli. Wódz jest najlepszym wojownikiem ich plemienia, jego ludzie to diabły w ciele. Musimy szybko podjąć decyzję, tutaj i teraz. Albo stawimy im czoła, albo uciekniemy. Szczerze mówiąc, wolę to drugie...";
+			dialog.text = "Nie wszyscy. Nasz zwiadowca został postrzelony, ale udało mu się dotrzeć do ich kryjówki. Sam wódz przychodzi tutaj ze swoimi strażnikami. I mają holenderskie muszkiety. Mają przewagę liczebną i są wściekli jak diabli. Wódz jest najlepszym wojownikiem ich plemienia, jego ludzie to diabły wcielone. Musimy szybko podjąć decyzję, tu i teraz. Albo stawimy im czoła, albo uciekniemy. Szczerze mówiąc, wolę to drugie...";
 			link.l1 = "";
 			link.l1.go = "prosper_4";
 		break;
@@ -299,14 +299,14 @@ void ProcessDialogEvent()
 			dialog.text = "Słucham, "+pchar.name+".";
 			if (n > 2 && GetSummonSkillFromName(pchar, SKILL_SNEAK) > 30)
 			{
-				link.l1 = "Stawimy im czoła, chłopcy! Za tym wzgórzem są towary i pieniądze! Jesteśmy tu dla nich i nigdzie się nie ruszamy. Żaden banda czerwonoskórych, nawet z muszkietami, nas nie powstrzyma! Zakopmy skurczybyków i dokończmy robotę! Mamy wystarczająco ludzi, jest szansa ich zaskoczyć. Czterech ludzi przywita ich ogniem z flanek, a reszta zajmie tu pozycje. Zmniejszmy ich liczebność i dobijmy ich!";
+				link.l1 = "Stawimy im czoła, chłopcy! Za tym wzgórzem są towary i pieniądze! Jesteśmy tu dla nich i nigdzie się nie ruszamy. Żadna banda czerwonoskórych, nawet z muszkietami, nas nie powstrzyma! Zakopmy skurczybyków i dokończmy robotę! Mamy wystarczająco ludzi, jest szansa ich zaskoczyć. Czterech ludzi przywita ich ogniem z flanek, a reszta zajmie tu pozycje. Zmniejszmy ich liczebność i dobijmy ich!";
 				link.l1.go = "prosper_8";
 			}
 			else
 			{
 				if (n > 0)
 				{
-					link.l1 = "Damy im walkę, chłopcy! Za tym wzgórzem są towary i pieniądze! Jesteśmy tu po nie i nie zamierzamy odchodzić. Żaden zgraja czerwonoskórych, nawet z muszkietami, nie zatrzyma nas! Zakopmy skurczybyków i skończmy robotę!";
+					link.l1 = "Damy im walkę, chłopcy! Za tym wzgórzem są towary i pieniądze! Jesteśmy tu po nie i nie zamierzamy odchodzić. Żadna zgraja czerwonoskórych, nawet z muszkietami, nie zatrzyma nas! Zakopmy skurczybyków i skończmy robotę!";
 					link.l1.go = "prosper_7";
 				}
 				else
@@ -338,7 +338,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "prosper_9x":
-			dialog.text = "Żyjemy i jesteśmy w domu! Przysięgam, mam dość przygód... na kilka następnych miesięcy, ha-ha! Powinienem iść do mojej córki, proszę odwiedź nas, "+pchar.name+" I proszę, bądź ostrożny.";
+			dialog.text = "Żyjemy i jesteśmy w domu! Przysięgam, mam dość przygód... na kilka następnych miesięcy, ha-ha! Powinienem iść do mojej córki, proszę odwiedź nas, "+pchar.name+". I proszę, bądź ostrożny.";
 			link.l1 = "Nie obiecuję niczego, Prosper. Pomyślnych wiatrów!";
 			link.l1.go = "prosper_10";
 		break;
@@ -354,20 +354,20 @@ void ProcessDialogEvent()
 			LAi_RemoveCheckMinHP(npchar);
 			PlaySound("Voice\English\pirat_guard_4.wav");
 			dialog.text = "Ostrzegałem cię, kapitanie, żebyś był ostrożny! Miałem podejrzenia co do tego drania.";
-			link.l1 = "Prosperuj! Dziękuję! Ale jak?";
+			link.l1 = "Prosper! Dziękuję! Ale jak się o tym dowiedziałeś?";
 			link.l1.go = "prosper_12";
 		break;
 		
 		case "prosper_12":
 			sTemp = "";
 			if (CheckAttribute(pchar, "questTemp.FMQL.PirateDead")) sTemp = "Poor lad, even though he was a pirate.";
-			dialog.text = "Johnny zrobił się zbyt gadatliwy. Czerwonoskóry facet na piasku. Przyszedł do burdelu i próbował poderwać dziewczynę. Odmówili mu obsługi, Johnny wpadł w furię, zaczął krzyczeć, że wkrótce się wzbogaci, kiedy on i jego kumple zabiją jakiegoś kapitana w dżungli. Wiedziałem, co się święci i pobiegłem do twojego oficera, który także zdążył zdobyć złą sławę w mieście."+sTemp+"Jestem ci wiele winien, "+pchar.name+", więc nie musisz mi zbyt mocno dziękować.";
+			dialog.text = "Johnny zrobił się zbyt gadatliwy. To ten czerwonoskóry facet, który leży teraz na piasku. Przyszedł do burdelu i próbował poderwać dziewczynę. Odmówili mu obsługi, Johnny wpadł w furię, zaczął krzyczeć, że wkrótce się wzbogaci, kiedy on i jego kumple zabiją jakiegoś kapitana w dżungli. Wiedziałem, co się święci i pobiegłem do twojego oficera, który także zdążył zdobyć złą sławę w mieście."+sTemp+"Jestem ci wiele winien, "+pchar.name+", więc nie musisz mi zbyt mocno dziękować.";
 			link.l1 = "I tak, bardzo Ci dziękuję, Prosper! Było tu ciężko... za ciężko. Chcesz dołączyć do mojej załogi? Potrzebuję oficera takiego jak Ty. Trudno znaleźć lojalnych ludzi w dzisiejszych czasach, zwłaszcza strzelców wyborowych.";
 			link.l1.go = "prosper_13";
 		break;
 		
 		case "prosper_13":
-			dialog.text = "Nie, mój przyjacielu. Mam zobowiązania wobec mojej córki. Kazała mi przysiąc, że porzucę moje przygody. To była moja ostatnia. Cholera, co za szkoda, ale kocham moją córkę bardziej niż cokolwiek na świecie. Żegnaj, "+pchar.name+" I... Selina mówi o tobie cały czas. Może kiedyś mógłbyś nas odwiedzić?";
+			dialog.text = "Nie, mój przyjacielu. Mam zobowiązania wobec mojej córki. Kazała mi przysiąc, że porzucę moje przygody. To była moja ostatnia. Cholera, co za szkoda, ale kocham moją córkę bardziej niż cokolwiek na świecie. Żegnaj, "+pchar.name+". I... Selina mówi o tobie cały czas. Może kiedyś mógłbyś nas odwiedzić?";
 			link.l1 = "Kto wie, może tak zrobię... Żegnaj, Prosper! Życzę twojej córce, by znalazła dobrego męża... (do siebie) Lekcja nauczona, monsieur Gregoire, lekcja nauczona... każdemu swoje, jak powiedział... Zapamiętam to.";
 			link.l1.go = "prosper_14";
 		break;
@@ -387,19 +387,19 @@ void ProcessDialogEvent()
 		case "contra":
 			DelLandQuestMark(npchar);
 			dialog.text = "Kim, do cholery, jesteś?";
-			link.l1 = "Towar mamy. Zainteresowany?";
+			link.l1 = "Mamy towar. Zainteresowany?";
 			link.l1.go = "contra_1";
 		break;
 		
 		case "contra_1":
 			dialog.text = "Ha. Bardzo zainteresowany. Zwłaszcza mój klient. Jaki jest łup?";
-			link.l1 = ""+FindRussianQtyString(sti(pchar.questTemp.FMQL.Sanl))+"z żelaznego drzewa, "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Silk))+"   jedwab statku,   "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Rope))+" liny i "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Oil))+" z żywicy.";
+			link.l1 = ""+FindRussianQtyString(sti(pchar.questTemp.FMQL.Sanl))+" twardego drewna, "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Silk))+" sztuk jedwabiu,   "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Rope))+" liny i "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Oil))+" z żywicy.";
 			link.l1.go = "contra_2";
 		break;
 		
 		case "contra_2":// Addon 2016-1 Jason пиратская линейка
 			iTotalTemp = 2200*sti(pchar.questTemp.FMQL.Sanl)+1600*sti(pchar.questTemp.FMQL.Silk)+1000*sti(pchar.questTemp.FMQL.Rope)+900*sti(pchar.questTemp.FMQL.Oil);
-			dialog.text = "Bardzo dobrze. 2200 pesos za każdą sztukę żelaznego drewna, 900 pesos za żywicę, 1600 pesos za jedwab okrętowy i 1000 pesos za liny. Co my tu mamy... No proszę."+iTotalTemp+"peso. Umowa?";
+			dialog.text = "Bardzo dobrze. 2200 pesos za każdą sztukę twardego drewna, 900 pesos za żywicę, 1600 pesos za jedwab okrętowy i 1000 pesos za liny. Co my tu mamy... No proszę."+iTotalTemp+" peso. Zgoda?";
 			link.l1 = "Umowa stoi!";
 			link.l1.go = "contra_3";
 		break;
@@ -431,13 +431,13 @@ void ProcessDialogEvent()
 		
 		case "FMQL_beach_1":
 			dialog.text = "Przepraszam, kapitanie. Musiałem wychylić kubek lub dwa po tej aferze z Indianami. Była tam dziewczyna, wynająłem pokój za sto pesos i ona... ona...";
-			link.l1 = "Co?  Okradli cię?";
+			link.l1 = "Co? Okradła cię?";
 			link.l1.go = "FMQL_beach_2";
 		break;
 		
 		case "FMQL_beach_2":
 			sld = CharacterFromID("FMQL_Prosper");
-			dialog.text = "Nie! Zakochała się! Do diabła, powinienem był stamtąd uciec! Ale wtedy pojawia się twój przyjaciel, wrzeszcząc na mnie o tym łajdaku, twoim byłym towarzyszu, który chce cię oszukać i zabić.";
+			dialog.text = "Nie! Zakochała się! Do diabła, powinienem był stamtąd uciec! Byłem już gotów nawet wyskoczyć przez okno, gdyby nie to, że wtedy pojawił się twój przyjaciel, wrzeszcząc na mnie o tym łajdaku, twoim byłym towarzyszu, który chce cię oszukać i zabić.";
 			if (LAi_GetCharacterHP(sld) > 0)
 			{
 				link.l1 = "Dobra robota, Prosper...";
@@ -445,7 +445,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Prosper... tak mi przykro. Zajmę się twoją córką. Lekcja nauczona, monseniour Gregoire... Co powiedziałeś? Każdemu swoje? Powinienem to zapamiętać.";
+				link.l1 = "Prosper... tak mi przykro. Zajmę się twoją córką. Lekcja nauczona, monsieur Gregoire... Co tam wtedy powiedziałeś? Każdemu swoje? Powinienem to zapamiętać.";
 				link.l1.go = "FMQL_beach_3";
 			}
 		break;

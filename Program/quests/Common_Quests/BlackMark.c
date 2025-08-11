@@ -36,7 +36,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("BM_Contra_"+i, "citiz_" + (rand(9) + 21), "man", "man", sti(pchar.rank), PIRATE, -1, true, "pirate"));
 			LAi_SetActorType(sld);
-			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+			LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 			ChangeCharacterAddressGroup(sld, pchar.location, "smugglers",  "smuggler0"+i);
 			if (i==1)
 			{
@@ -56,7 +56,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 				GiveItem2Character(sld, "slave_02");
 				EquipCharacterByItem(sld, "slave_02");
 				LAi_SetStayType(sld);
-				LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+				LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 			}
 		}
 		//SetTimerCondition("BM_BarbadosKontrabandisty_TimeOver", 0, 0, 3, false);
@@ -254,7 +254,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		sld.lastname = StringFromKey("BlackMark_6");
 		sld.rank = 12;
 		sld.CanTakeMushket = true;
-		sld.PriorityMode = 2;
+		SetPriorityMode(sld, 2);
 		sld.MusketerDistance = 0;
 		SetSPECIAL(sld, 6, 9, 6, 3, 7, 6, 9);
 		SetSelfSkill(sld, 15, 15, 50, 60, 20);

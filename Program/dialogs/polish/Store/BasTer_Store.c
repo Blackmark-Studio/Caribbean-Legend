@@ -37,7 +37,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				if(CheckAttribute(pchar, "questTemp.Shadowtrader.End.Escape") && NPChar.location == pchar.questTemp.Shadowtrader.City + "_store")
 				{
 					dialog.text = "Jakieś dobre wieści, "+pchar.name+"?";
-					link.l1 = "Odnalazłemę twego rywala. Nie będzie ci już solą w oku - udało mi się go przekonać... by opuścił tę wyspę. Jego 'sklep' znajdował się w domu niedaleko bram miasta. To twoja decyzja, co zrobić z porzuconym ładunkiem. Możesz go oddać władzom lub spróbować zabrać go dla siebie."; 
+					link.l1 = "Odnalazłem twego rywala. Nie będzie ci już solą w oku - udało mi się go przekonać... by opuścił tę wyspę. Jego 'sklep' znajdował się w domu niedaleko bram miasta. To twoja decyzja, co zrobić z porzuconym ładunkiem. Możesz go oddać władzom lub spróbować zabrać go dla siebie."; 
 					link.l1.go = "Shadowtrader_Escape_complete";
 					break;
 				}
@@ -64,10 +64,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.questTemp.Shadowtrader = "true";
 			pchar.questTemp.Shadowtrader_Block = true;
 			pchar.questTemp.Shadowtrader.Guardername = GenerateRandomName_Generator(sti(npchar.nation), "man");
-			dialog.text = "Czy mógłbyś pójść do tawerny i znaleźć człowieka o imieniu "+pchar.questTemp.Shadowtrader.Guardername+" i powiedz mu, żeby przyszedł tutaj jak najszybciej? Nie mogę opuścić sklepu, a ten gamoń siedzi w tawernie, opijając się rumem, i z pewnością nawet nie pomyśli, żeby tu przyjść, mimo że jest na służbie.";
+			dialog.text = "Czy mógłbyś pójść do karczmy i znaleźć człowieka o imieniu "+pchar.questTemp.Shadowtrader.Guardername+" i powiedz mu, żeby przyszedł tutaj jak najszybciej? Nie mogę opuścić sklepu, a ten gamoń siedzi w karczmie, opijając się rumem, i z pewnością nawet nie pomyśli, żeby tu przyjść, mimo że jest na służbie.";
 			link.l1 = "Zawsze chętnie pomogę, kumplu - tym bardziej, że i tak zamierzałem odwiedzić tawernę.";
 			link.l1.go = "Shadowtrader_begin_1";
-			link.l2 = "Czy sobie ze mnie kpisz? Czy wyglądam na twojego chłopca na posyłki? Tawerna jest zaledwie kilka kroków stąd - możesz tam pójść sam.";
+			link.l2 = "Czy sobie ze mnie kpisz? Czy wyglądam na twojego chłopca na posyłki? Karczma jest zaledwie kilka kroków stąd - możesz tam pójść sam.";
 			link.l2.go = "exit";
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity("BasTer");

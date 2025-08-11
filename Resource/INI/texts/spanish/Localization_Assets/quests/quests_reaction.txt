@@ -20,7 +20,7 @@ El motín fue sofocado
 
 quests_reaction_5
 {
-¡@<GetCityName(sld.City)> es nuestra!
+@<GetCityName(sld.City)> ¡Es nuestra!
 }
 
 quests_reaction_6
@@ -49,7 +49,7 @@ quests_reaction_10
 
 quests_reaction_11
 {
- en 
+, en ¬
 }
 
 quests_reaction_12

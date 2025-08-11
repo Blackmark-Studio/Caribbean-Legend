@@ -20,14 +20,14 @@ void ProcessDialogEvent()
 		
 		case "First time":
 			dialog.text = "Czego pan chce?";
-			link.l1 = "Nic.";
+			link.l1 = "Niczego.";
 			link.l1.go = "exit";
 		break;
 
 		// Диалог с Алонсо после успешного абордажа
 		case "Memento_MortimerGrimDead_Alonso_1":
 			dialog.text = "Kapitanie, dzień należy do nas. Awangarda kończy czyszczenie dolnego pokładu. Nie ma jeńców... Ba! Widzę, że pan też się nie cackał.";
-			link.l1 = "Jakoś oczekiwałem"+GetSexPhrase("","a")+" od niego pompatycznej przemowy. A on od razu rzucił się do walki.";
+			link.l1 = "Jakoś oczekiwał"+GetSexPhrase("em","am")+" od niego pompatycznej przemowy. A on od razu rzucił się do walki.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
 			if (sti(pchar.rank) <= 13) Achievment_Set("ach_CL_156");
@@ -118,7 +118,7 @@ void ProcessDialogEvent()
 				dialog.text = "Kapitanie? Co pan tutaj robi? Spał pan tutaj?";
 				link.l1 = "Nieważne.";
 				link.l1.go = "Memento_Dich_EtapTwo_Alonso_2";
-				link.l2 = "W mojej kajucie jakoś... nieswojo.";
+				link.l2 = "W mojej kajucie jest tak jakoś... nieswojo.";
 				link.l2.go = "Memento_Dich_EtapTwo_Alonso_2";
 			}
 		break;
@@ -152,7 +152,7 @@ void ProcessDialogEvent()
 		
 		// Диалог с Алонсо во вторую ночь
 		case "Memento_Dich_EtapTwo_Alonso_2":
-			dialog.text = "Rozumiem. Wielu z załogi śpi teraz razem – boją się zostać sami. Można pomyśleć, że na tym statku w ogóle można być samemu...";
+			dialog.text = "Rozumiem. Wielu członków załogi śpi teraz razem – boją się zostać sami. Można pomyśleć, że na tym statku w ogóle można być samemu...";
 			link.l1 = "Jak widzisz, mnie się nie udało. Co się stało?";
 			link.l1.go = "Memento_Dich_EtapTwo_Alonso_3";
 		break;
@@ -178,7 +178,7 @@ void ProcessDialogEvent()
 
 		case "Memento_Dich_EtapTwo_Alonso_5":
 			dialog.text = "Mam taką nadzieję, kapitanie. Co zrobimy z José? Zabójstwo to nie przelewki.";
-			link.l1 = "Powiesić po szkłach. Pokażemy, że sytuacja jest pod kontrolą.";
+			link.l1 = "Powiesić go. Pokażemy, że sytuacja jest pod kontrolą.";
 			link.l1.go = "Memento_Dich_EtapTwo_Alonso_6";
 			link.l2 = "Trzydzieści batów. Przeżyje – znaczy Bóg tak chciał.";
 			link.l2.go = "Memento_Dich_EtapTwo_Alonso_7";
@@ -236,7 +236,7 @@ void ProcessDialogEvent()
 		case "Memento_Dich_EtapThree_Alonso_4":
 			dialog.text = "Walka, brudne rany, zepsuta solona wołowina — zwykła morska arytmetyka. Gdybyśmy się tak nie nakręcali opowieściami o przeklętych statkach, może byśmy stracili o dwóch ludzi mniej\n"+
 			"Szkielet na rufie też nie pomagał. Dobrze, że jakiś... dowcipniś ukradł mu w nocy kapelusz\n"+
-			"Ponieważ po takim bluźnierstwie statek nie został trafiony piorunem, załoga trochę się ożywiła i zaczęła knuć, jakby tu jeszcze bardziej drażnić szkielet. Na przykład...";
+			"Ponieważ po takim bluźnierstwie statek nie został trafiony piorunem, załoga trochę się ożywiła i zaczęła knuć, jakby tu jeszcze bardziej podrażnić szkieleta. Na przykład...";
 			link.l1 = "Nie ruszać szkieletu!";
 			link.l1.go = "Memento_Dich_EtapThree_Alonso_5";
 		break;
@@ -261,7 +261,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Coś jeszcze, kapitanie?";
-				link.l1 = "Nic.";
+				link.l1 = "Nie.";
 				link.l1.go = "exit";
 			}
 			NextDiag.TempNode = "Memento_Sailor_1";
@@ -269,19 +269,19 @@ void ProcessDialogEvent()
 
 		case "Memento_Sailor_1_1":
 			dialog.text = "Rozumiem, kapitanie. Służyłem u wolnego kapitana — takiego jak pan. Szukał skarbów, handlował, brał frachty. Potem postanowił obrabować kupców — nie wyszło. Ocalałych skazano na szubienicę za piractwo.";
-			link.l1 = "I kapitan Grim was wykupił?";
+			link.l1 = "I kapitan Grim cie wykupił?";
 			link.l1.go = "Memento_Sailor_1_2";
 		break;
 
 		case "Memento_Sailor_1_2":
-			dialog.text = "Kupił nas wszystkich naraz, jak towar. Każdy potrzebuje doświadczonych marynarzy, a kapitan Grim nie werbuje po tawernach... Ale karmi nas i dobrze płaci. A my służymy — i losujemy.";
+			dialog.text = "Kupił nas wszystkich naraz, jak towar. Każdy potrzebuje doświadczonych marynarzy, a kapitan Grim nie werbuje po karczmach... Ale karmi nas i dobrze płaci. A my służymy — i losujemy.";
 			link.l1 = "Losujecie?";
 			link.l1.go = "Memento_Sailor_1_3";
 		break;
 
 		case "Memento_Sailor_1_3":
 			dialog.text = "Przepraszam, nie powinniśmy o tym rozmawiać.";
-			link.l1 = "Dlaczego więc nie odejdziecie?";
+			link.l1 = "Dlaczego więc nie odejdziesz?";
 			link.l1.go = "Memento_Sailor_1_4";
 		break;
 
@@ -309,7 +309,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Coś jeszcze, kapitanie?";
-				link.l1 = "Nic.";
+				link.l1 = "Nie.";
 				link.l1.go = "exit";
 			}
 			NextDiag.TempNode = "Memento_Sailor_2";
@@ -352,7 +352,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Coś jeszcze, kapitanie?";
-				link.l1 = "Nic.";
+				link.l1 = "Nie.";
 				link.l1.go = "exit";
 			}
 			NextDiag.TempNode = "Memento_Sailor_3";
@@ -371,8 +371,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Sailor_3_3":
-			dialog.text = "Wolny? Tutaj nikt nie jest wolny. Kapitan daje złoto, jedzenie, ubrania, ale w zamian żąda pełnej lojalności — i organizuje ten straszny los.";
-			link.l1 = "Los?";
+			dialog.text = "Wolny? Tutaj nikt nie jest wolny. Kapitan daje złoto, jedzenie, ubrania, ale w zamian żąda pełnej lojalności — i organizuje tą straszną loterie.";
+			link.l1 = "Loterie?";
 			link.l1.go = "Memento_Sailor_3_4";
 		break;
 
@@ -389,7 +389,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Sailor_3_6":
-			dialog.text = "A co mi zrobią? To statek umarłych, kapitanie, i tu jest moje miejsce. A pan — nie.";
+			dialog.text = "A co mi zrobią? To statek umarłych, kapitanie, i tu jest moje miejsce. A pana — nie.";
 			link.l1 = "Jak uważasz. Żegnaj.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Memento_Sailor_3";
@@ -406,21 +406,21 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Coś jeszcze, kapitanie?";
-				link.l1 = "Nic.";
+				link.l1 = "Nie.";
 				link.l1.go = "exit";
 			}
 			NextDiag.TempNode = "Memento_Sailor_4";
 		break;
 		
 		case "Memento_Sailor_4_1":
-			dialog.text = "Jestem dezerterem. Kapitan Grim wykupił mnie prosto spod szubienicy na placu w San José. Zapłacił dużo – cały worek dublońców za moją zakurzoną skórę.";
-			link.l1 = "Za co was skazano?";
+			dialog.text = "Jestem dezerterem. Kapitan Grim wykupił mnie prosto spod szubienicy na placu w San José. Zapłacił dużo – cały worek dublonów za moją zakurzoną skórę.";
+			link.l1 = "Za co cie skazano?";
 			link.l1.go = "Memento_Sailor_4_2";
 		break;
 
 		case "Memento_Sailor_4_2":
 			dialog.text = "Oficer Saldo wysłał nas do pilnowania robotników w selwie, gdzie połowa umiera z gorączki w tydzień. Uznałem, że moje życie jest więcej warte. Teraz... służę temu, kto je wycenił na twardą monetę.";
-			link.l1 = "Nie żałujecie?";
+			link.l1 = "Nie żałujesz?";
 			link.l1.go = "Memento_Sailor_4_3";
 		break;
 
@@ -502,7 +502,7 @@ void ProcessDialogEvent()
 			dialog.text = "Tak? Chciał pan o coś zapytać?";
 			link.l1 = "Za panem wisi szkielet.";
 			link.l1.go = "Memento_MortimerGrim_4";
-			link.l2 = "Dziś piękny wiatr, prawda? I pogoda świetna.";
+			link.l2 = "Mamy dziś piękny wiatr, prawda? I pogoda świetna.";
 			link.l2.go = "Memento_MortimerGrim_5";
 		break;
 
@@ -559,7 +559,7 @@ void ProcessDialogEvent()
 			dialog.text = "Po co szukać daleko? Weźmy starego Yoricka: kupa kości z latarnią w żebrach — a nawet tak groźnego kapitana jak ty potrafił wystraszyć!";
 			if (startHeroType == 4)
 			{
-				dialog.text = "Po co szukać daleko? Weźmy starego Yoricka: kupa kości z latarnią w żebrach — a nawet nieustraszoną Elen, córkę wielkiego Shawna MacArthura, potrafił wystraszyć!";
+				dialog.text = "Po co szukać daleko? Weźmy starego Yoricka: kupa kości z latarnią w żebrach — a nawet nieustraszoną Helen, córkę wielkiego Shawna MacArthura, potrafił wystraszyć!";
 			}
 			link.l1 = "Ładnie pan mówi, ale nie powiedział, co z tym wszystkim zrobić.";
 			link.l1.go = "Memento_MortimerGrim_10";
@@ -612,7 +612,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_MortimerGrim_question_1_2":
-			dialog.text = "A jakże! Jedyny raz, kiedy mocno naruszyłem okrętowy budżet dla osobistych celów, to właśnie ten miecz. Dwa tysiące złotych dublońców, kolego! Diabli, gdybym mógł powstać z grobu drugi raz, to ożyłbym samą jego ceną!\n"+
+			dialog.text = "A jakże! Jedyny raz, kiedy mocno naruszyłem okrętowy budżet dla osobistych celów, to właśnie ten miecz. Dwa tysiące złotych dublonów, kolego! Diabli, gdybym mógł powstać z grobu drugi raz, to ożyłbym samą jego ceną!\n"+
 		"Broń, nawiasem mówiąc, doskonała. Ale jakby czegoś jej brakowało...";
 			link.l1 = "...";
 			link.l1.go = "Memento_MortimerGrim_1";
@@ -634,7 +634,7 @@ void ProcessDialogEvent()
 
 		case "Memento_MortimerGrim_question_3_1":
 			dialog.text = "Moja załoga ma ze sobą znacznie więcej wspólnego niż, powiedzmy, twoja... Wszyscy zostali przeze mnie wybawieni ze stryczka i kajdan, każdy z nich poczuł tchnienie śmierci. To doświadczenie łączy ludzi bardziej niż krew czy flaga.";
-			link.l1 = "Więc nie rekrutujesz w tawernach, co?";
+			link.l1 = "Więc nie rekrutujesz w karczmach, co?";
 			link.l1.go = "Memento_MortimerGrim_question_3_2";
 		break;
 		
@@ -706,7 +706,7 @@ void ProcessDialogEvent()
 
 		case "Memento_MortimerGrim_phantom_21":
 			dialog.text = "Teraz to już wszystko. Gratuluję zwycięstwa.";
-			link.l1 = "Grim?";
+			link.l1 = "Grim? O co tu do cholery chodzi?";
 			link.l1.go = "Memento_MortimerGrim_phantom_22";
 			LAi_UseAtidoteBottle(pchar);
 		break;
@@ -731,7 +731,7 @@ void ProcessDialogEvent()
 
 		case "Memento_MortimerGrim_phantom_25":
 			dialog.text = "Dziękuję ci, kolego. Za to, że uwolniłeś mnie od tego... istnienia. Teraz wiem na pewno, że śmierci nie ma. I już się nie boję. Nie ma kogo obwiniać ani zniewalać.";
-			link.l1 = "...";
+			link.l1 = "Nie dziękuj mi... A skoro wciąż tu ze mną jesteś, to musze ci to powiedzieć, inaczej będzie mnie to trapić. Ten statek jest przeklęty, Grim. 'Memento' musi trafić na dno oceanu.";
 			link.l1.go = "Memento_MortimerGrim_phantom_26";
 		break;
 
@@ -743,7 +743,7 @@ void ProcessDialogEvent()
 
 		case "Memento_MortimerGrim_phantom_27":
 			dialog.text = "Mortui vivos docent, kolego. Umarli uczą żywych. Żegnaj.";
-			link.l1 = "...";
+			link.l1 = "Z Bogiem, Mortimerze.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Memento_Dich_EtapThree_Paluba_13");
 		break;

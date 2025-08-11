@@ -1,4 +1,4 @@
-﻿MerchantOnMap_1
+MerchantOnMap_1
 {
 commerciante
 }

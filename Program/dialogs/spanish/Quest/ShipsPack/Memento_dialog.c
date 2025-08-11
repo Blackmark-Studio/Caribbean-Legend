@@ -718,7 +718,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_MortimerGrim_phantom_23":
-			dialog.text = "Soy un cobarde, colega. Un cobarde miserable que temía a la muerte, como tantos otros. Cuando mi tripulación murió de peste... y por mi culpa, enloquecí de miedo. Estuve un mes a la deriva en un barco de muertos.";
+			dialog.text = "Soy un cobarde, colega. Un cobarde miserable que temía a la muerte, como tantos otros. Cuando mi tripulación murió de peste por mi culpa, enloquecí de miedo. Estuve un mes a la deriva en un barco de muertos.";
 			link.l1 = "¿Qué pasó en realidad?";
 			link.l1.go = "Memento_MortimerGrim_phantom_24";
 		break;

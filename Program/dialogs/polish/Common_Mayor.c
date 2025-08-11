@@ -686,7 +686,7 @@ void ProcessDialogEvent()
 		case "CapComission_Mayor13":
 			pchar.quest.CaptainComission_SpeakMayorGoods.over = "yes";
 			dialog.text = "Znakomicie! A gdzie będziemy szukać jego skarbu?";
-			link.l1 = "W "+RandPhraseSimple(RandPhraseSimple("północny","zachodni"),RandPhraseSimple("wschodni","południowy"))+" koniec "+XI_ConvertString(pchar.GenQuest.CaptainComission.ConvoyShore+"General")+" u podnóża klifu znajduje się duża nisza, której wejście jest zasypane kamieniami. To jest kryjówka.";
+			link.l1 = "W "+RandPhraseSimple(RandPhraseSimple("północny","zachodni"),RandPhraseSimple("wschodni","południowy"))+" koniec "+XI_ConvertString(pchar.GenQuest.CaptainComission.ConvoyShore+"Gen")+" u podnóża klifu znajduje się duża nisza, której wejście jest zasypane kamieniami. To jest kryjówka.";
 			link.l1.go = "CapComission_Mayor14";
 		break;
 		
@@ -697,7 +697,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CapComission_Mayor15":
-			dialog.text = "To źle... To bardzo źle, "+GetSexPhrase("panie","przegapić")+" "+GetFullName(pchar)+". Miałem zamiar wykonać na nim egzekucję publicznie, 'ku przestrodze dla innych.'"+"W każdym razie, nie uniknąłby szubienicy\nTak więc, skoro technicznie naruszyłeś prawo, nielegalnie uwalniając więźnia, ale mimo to go nie uratowałeś, nie mogę tego naprawić w raporcie. Dlatego nie dostaniesz nagrody... Ale chciałbym sam osobiście ci podziękować. Przyjmij mój dar - bardzo przydatną rzecz dla walczącego kapitana.";
+			dialog.text = "To źle... To bardzo źle, "+GetSexPhrase("panie","panienko")+" "+GetFullName(pchar)+". Miałem zamiar wykonać na nim egzekucję publicznie, 'ku przestrodze dla innych.'"+"W każdym razie, nie uniknąłby szubienicy\nTak więc, skoro technicznie naruszyłeś prawo, nielegalnie uwalniając więźnia, ale mimo to go nie uratowałeś, nie mogę tego naprawić w raporcie. Dlatego nie dostaniesz nagrody... Ale chciałbym sam osobiście ci podziękować. Przyjmij mój dar - bardzo przydatną rzecz dla walczącego kapitana.";
 			link.l1 = "Dziękuję. Zawsze chętnie służę.";	
 			link.l1.go = "CapComission_Mayor16";
 		break;
@@ -912,7 +912,7 @@ void ProcessDialogEvent()
                     AddCharacterExpToSkill(GetMainCharacter(), "Accuracy", 200);
                     AddCharacterExpToSkill(GetMainCharacter(), "Cannons", 200);
                     //--> слухи
-                    SiegeRumour("They say that you had helped us to repel the "+NationNameSK(sti(aData.nation))+" squadron and defend our colony! We are grateful to you, "+ GetAddress_Form(NPChar)+".", aData.Colony, sti(aData.conation), -1, 15, 3);
+                    SiegeRumour("Mówią, że pomogłeś nam odeprzeć "+NationNameSK(sti(aData.nation))+" eskadre i obronić naszą kolonie! Jesteśmy ci wdzięczni, "+ GetAddress_Form(NPChar)+".", aData.Colony, sti(aData.conation), -1, 15, 3);
 		            //<-- слухи
                     DeleteAttribute(aData, "PlayerHelpMayor");
                     DeleteAttribute(aData, "HelpColony");
@@ -932,7 +932,7 @@ void ProcessDialogEvent()
 					// Warship Генер "Пираты на необитайке" - сдаём пиратов властям
 					if(CheckAttribute(PChar, "Quest.PiratesOnUninhabited_OnShore") || CheckAttribute(PChar, "Quest.PiratesOnUninhabited_ShipSink"))
 					{
-						link.l11 = XI_ConvertString(PChar.GenQuest.PiratesOnUninhabited.StartShore+"Dane")+" Spotkałem kilku piratów. Wszystko "+PChar.GenQuest.PiratesOnUninhabited.PiratesCount+" są obecnie na pokładzie. Chcę ich przekazać władzom.";
+						link.l11 = XI_ConvertString(PChar.GenQuest.PiratesOnUninhabited.StartShore+"Dat")+" Spotkałem kilku piratów. Wszystko "+PChar.GenQuest.PiratesOnUninhabited.PiratesCount+" są obecnie na pokładzie. Chcę ich przekazać władzom.";
 						link.l11.go = "PiratesOnUninhabited_1";
 					}
 					
@@ -949,7 +949,7 @@ void ProcessDialogEvent()
 					{
 						if(pchar.GenQuest.CaptainComission == "Begin_1" && !CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakMayor")) 
 						{
-							link.l12 = "Jest kapitan dowodzący patrolem "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Imię")+"Acc"))+" nazwany "+pchar.GenQuest.CaptainComission.Name+", jak mogę się z nim spotkać?";
+							link.l12 = "Jest kapitan dowodzący patrolem "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name")+"Acc"))+" nazwany "+pchar.GenQuest.CaptainComission.Name+", jak mogę się z nim spotkać?";
 							link.l12.go = "CapComission_Mayor1";
 						}	
 						if(CheckAttribute(pchar,"GenQuest.CaptainComission.PrisonFree"))
@@ -994,7 +994,7 @@ void ProcessDialogEvent()
 					// --> Warship, 16.05.11. Квест "Правосудие на продажу".
 					if(CheckAttribute(PChar, "GenQuest.JusticeOnSale.MayorWait") && CheckAttribute(PChar, "GenQuest.JusticeOnSale.CityId") && NPChar.location == PChar.GenQuest.JusticeOnSale.CityId + "_townhall")
 					{
-						link.l15 = "Milordzie, odnalazłem bandę przemytników, których herszt został niedawno schwytany przez straże. Teraz planują jego ucieczkę. Ich statek '"+PChar.GenQuest.JusticeOnSale.ShipName+"'  zacumowany przy "+XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId+"General")+".";
+						link.l15 = "Milordzie, odnalazłem bandę przemytników, których herszt został niedawno schwytany przez straże. Teraz planują jego ucieczkę. Ich statek '"+PChar.GenQuest.JusticeOnSale.ShipName+"'  zacumowany przy "+XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId+"Gen")+".";
 						link.l15.go = "JusticeOnSale_1";
 					}
 					//<-- Правосудие на продажу
@@ -1056,7 +1056,7 @@ void ProcessDialogEvent()
                     AddCharacterExpToSkill(GetMainCharacter(), "Accuracy", 200);
                     AddCharacterExpToSkill(GetMainCharacter(), "Cannons", 200);
                     //--> слухи
-                    SiegeRumour("They say that you had helped us to repel the "+NationNameSK(sti(aData.nation))+" squadron and defend our colony! We are grateful to you, "+ GetAddress_Form(NPChar)+".", aData.Colony, sti(aData.conation), -1, 15, 3);
+                    SiegeRumour("Mówią, że pomogłeś nam odeprzeć "+NationNameSK(sti(aData.nation))+" eskadre i obronić naszą kolonie! Jesteśmy ci wdzięczni, "+ GetAddress_Form(NPChar)+".", aData.Colony, sti(aData.conation), -1, 15, 3);
 		            //<-- слухи
                     DeleteAttribute(aData, "PlayerHelpMayor");
                     DeleteAttribute(aData, "HelpColony");
@@ -1129,7 +1129,7 @@ void ProcessDialogEvent()
 						{
 							if (pchar.questTemp.WPU.Postcureer.TargetPortmanID == npchar.id)
 							{
-							link.l14 = "Mam wiadomość z miasta "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.StartCity+"Generale")+".";
+							link.l14 = "Mam wiadomość z miasta "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.StartCity+" Generale")+".";
 							link.l14.go = "Postcureer_LevelUp_ForAll";
 							}
 						}
@@ -1506,7 +1506,7 @@ void ProcessDialogEvent()
 							link.l1.go = "All_Found";		
 						break;
 						case "Execute":
-							dialog.text = RandPhraseSimple("I jak? Udało ci się wyeliminować wspomnianego bandytę? "+GetFullName(arName)+"w końcu nie żyje?","Powiedz mi tylko jedną rzecz - czy "+GetFullName(arName)+" jest żywy czy martwy?");
+							dialog.text = RandPhraseSimple("I jak? Udało ci się wyeliminować wspomnianego bandytę? "+GetFullName(arName)+" w końcu nie żyje?","Powiedz mi tylko jedną rzecz - czy "+GetFullName(arName)+" jest żywy czy martwy?");
 							link.l1 = "Jest martwy, "+GetAddress_FormToNPC(NPChar)+".";
 							link.l1.go = "All_Execute";		
 							AddCharacterExpToSkill(PChar, "Leadership", 180);

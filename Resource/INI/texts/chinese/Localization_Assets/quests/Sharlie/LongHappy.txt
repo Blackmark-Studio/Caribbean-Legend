@@ -1,0 +1,209 @@
+LongHappy_1
+{
+要做出婚礼决策, 不妨采用 “大声思考” 的方式
+}
+
+LongHappy_2
+{
+Benoit 神父已经上岸了! 
+}
+
+LongHappy_3
+{
+ @<sti(pchar.questTemp.LongHappy.MarryRum)> 桶朗姆酒和 @<sti(pchar.questTemp.LongHappy.MarryMoney)> 比索。 
+}
+
+LongHappy_4
+{
+50桶朗姆酒。 20桶朗姆酒和30万比索。 
+}
+
+LongHappy_5
+{
+100桶朗姆酒。 50桶朗姆酒和50万比索。 
+}
+
+LongHappy_6
+{
+但在此之前, 我得在圣皮埃尔的酒馆组织一场庆 祝活动。 快点! 
+}
+
+LongHappy_7
+{
+但在此之前, 我得在特索岛组织一场庆祝活动。 快点! 
+}
+
+LongHappy_8
+{
+首先, 你得在圣皮埃尔的酒馆安排一场庆 祝活动! 
+}
+
+LongHappy_9
+{
+首先, 你得在特索岛安排一场庆祝活动! 
+}
+
+LongHappy_10
+{
+Sea Devil
+}
+
+LongHappy_11
+{
+Jan
+}
+LongHappy_12
+{
+Svensson
+}
+
+LongHappy_13
+{
+Sperm Whale
+}
+
+LongHappy_14
+{
+Marcus
+}
+LongHappy_15
+{
+Tyrex
+}
+
+LongHappy_16
+{
+Fortune
+}
+
+LongHappy_17
+{
+Steven
+}
+LongHappy_18
+{
+Dodson
+}
+
+LongHappy_19
+{
+一段时间过去了... @<NewStr()> 派对正进行得如火如荼... 
+}
+
+LongHappy_20
+{
+Tichingitu
+}
+
+LongHappy_21
+{
+Nathaniel
+}
+
+LongHappy_22
+{
+Mauritz
+}
+LongHappy_23
+{
+Dussak
+}
+
+LongHappy_24
+{
+Jacques
+}
+LongHappy_25
+{
+Barbazon
+}
+
+LongHappy_26
+{
+Black Dragon
+}
+
+LongHappy_27
+{
+Jan Svensson 乘船逃跑了! 
+}
+LongHappy_28
+{
+Steven Dodson 乘船逃跑了! 
+}
+LongHappy_29
+{
+Marcus Tyrex 斯乘船逃跑了! 
+}
+
+LongHappy_30
+{
+Bernard Vensan, Marcus Tyrex 的老战友和伙伴 —死了, 他在清除镇上通过地下墓穴涌入的 雇佣军残余时倒下了。 他离胜利只有几个小时却没能活到 那一刻... ~
+}
+
+LongHappy_31
+{
+而且这还不是全部 — Marcus Tyrex 本人在他的船被登船时失 踪了。 Jan Swenson 组织了搜索, 我希望老男爵对炮弹和海浪来说足 够顽强 —这对整个海岸兄弟会将是不可挽回 的损失。 ~
+}
+
+LongHappy_32
+{
+我也未能幸免损失。 战争夺走和平生活总是令人难过。 Gino Gvineili —一个好朋友和杰出的科学家, 意外成为了这次背信弃义袭击的受 害者。 我将返回安提瓜, 以应有的方式安葬他。 
+}
+
+LongHappy_33
+{
+我也遭受了惨重损失。 Tichingitu, 我忠诚的战友和副官, 为我的妻子和 Dannielle Hawk 挡住了一颗子弹。 凶手得到了应有的惩罚, 但代价是什么? 这似乎还不够。以及 Gino Gvineili —一个好朋友和杰出的科学家, 意外成为了这次背信弃义袭击的受 害者。 我将返回安提瓜, 以应有的方式安葬他们。 
+}
+
+LongHappy_34
+{
+但也有一线希望 —Tichingitu, 我的战友, 在战斗一开始就失踪了。 我甚至没指望能看到他活着, 但扬说在袭击前, 有人看到他和当地酒吧老板的侄女 一起, 前往萨博-马蒂拉峡的一侧。 我什么都准备好了 —但和一位年轻女士醉酒逃跑? 那是Tichingitu吗?! 无论如何, 必须尽快找到他们, 免得暴怒的叔叔拿起沉重的棍棒。 
+}
+
+LongHappy_35
+{
+Tichingitu 已经康复, 准备开始履行他的副官职责
+}
+
+LongHappy_36
+{
+Jean
+}
+LongHappy_37
+{
+David
+}
+
+LongHappy_38
+{
+Prosper
+}
+LongHappy_39
+{
+Trubal
+}
+
+LongHappy_40
+{
+Bernard
+}
+LongHappy_41
+{
+Vensan
+}
+
+LongHappy_42
+{
+ @<GetFullName(sld)> 已作为副官加入你的队伍
+}
+
+LongHappy_43
+{
+你可以将 @<GetFullName(sld)> 任命为登船副官
+}
+
+LongHappy_44
+{
+第二天早上... 
+}

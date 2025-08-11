@@ -1,4 +1,4 @@
-﻿Slavetrader_1
+Slavetrader_1
 {
 Modalità di esplorazione: timer esteso. Completa la missione!
 }

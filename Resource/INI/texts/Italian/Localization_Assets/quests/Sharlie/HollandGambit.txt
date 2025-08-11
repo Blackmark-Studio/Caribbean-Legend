@@ -1,4 +1,4 @@
-﻿HollandGambit_1
+HollandGambit_1
 {
 Baltazar
 }

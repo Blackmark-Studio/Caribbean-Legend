@@ -1,11 +1,11 @@
 time_events_1
 {
-You've received share of the profits from Poinsey
+Otrzymałeś część zysków od Poinsey
 }
 
 time_events_2
 {
-Jean David prepared your share of the booty at Le Francois
+Jean David przygotował dla Ciebie część łupów w Le Francois
 }
 
 time_events_3

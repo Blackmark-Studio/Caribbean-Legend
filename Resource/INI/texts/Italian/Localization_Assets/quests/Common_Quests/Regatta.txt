@@ -1,4 +1,4 @@
-﻿Regatta_1
+Regatta_1
 {
 Henry
 }

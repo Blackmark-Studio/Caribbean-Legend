@@ -1,4 +1,4 @@
-﻿time_events_1
+time_events_1
 {
 Hai ricevuto parte dei profitti di Poinsey
 }

@@ -508,6 +508,7 @@ void Process_Controls(string ControlName)
 			{
 				if(MusketPriority(pchar)) notification(XI_ConvertString("Swordsman_mode_Note"), "None");
 				else notification(XI_ConvertString("Musketeer_mode_Note"), "None");
+				RecalculateCharacterModifiers(pchar);
 			}
 		break;
 		// boal -->

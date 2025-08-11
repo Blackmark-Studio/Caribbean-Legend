@@ -327,7 +327,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	break;
 		
 	case "VPVL_Magor_4":
-		dialog.text = "¡Ah, Capitán! Un placer recibirle una vez más. Su información resultó, en efecto, muy valiosa. Mis hombres interceptaron la embarcación exactamente donde usted indicó. Aquí tiene—ciento cincuenta doblones españoles, recién acuñados y de gran peso en la bolsa. Acéptelos con mi gratitud.";
+		dialog.text = "¡Ah, Capitán! Es un placer recibirle una vez más. Su información resultó, en efecto, muy valiosa. Mis hombres interceptaron la embarcación exactamente donde usted indicó. Aquí tiene ciento cincuenta doblones españoles, recién acuñados y de gran peso en la bolsa. Acéptelos con mi gratitud.";
 		link.l1 = "Estoy muy agradecid"+GetSexPhrase("o","a")+" por su consideración, Excelencia. Me alegra que mi fragmento de información haya servido a los intereses de la Corona. Si surge nuevamente la oportunidad, sepa que mi brazo armado y mi ojo perspicaz quedan a su disposición.";
 		link.l1.go = "VPVL_Delete_Flag";
 		AddItems(PChar, "gold_dublon", 150);

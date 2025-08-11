@@ -1,4 +1,4 @@
-﻿Ship_got_good 		{I %1 centenari di %2 sono stati presi a bordo}
+Ship_got_good 		{I %1 centenari di %2 sono stati presi a bordo}
 Ship_cant_got_good 	{Nessun posto per %1}
 
 seg_Balls 		{palle di cannone}

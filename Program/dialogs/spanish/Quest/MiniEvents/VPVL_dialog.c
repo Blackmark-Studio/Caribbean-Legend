@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 
 		case "First Time":
 			dialog.text = ""+GetSexPhrase("Monsieur","Mademoiselle")+"! Disculpe... ¿es usted mariner"+GetSexPhrase("o","a")+"?";
-			link.l1 = "Soy el/la capitán "+GetFullName(pchar)+", a su servicio.";
+			link.l1 = "Soy el capitán "+GetFullName(pchar)+", a su servicio.";
 			link.l1.go = "Lea First Talk";
 			DelLandQuestMark(npchar);
 		break;
@@ -360,10 +360,10 @@ void ProcessDialogEvent()
 		break;
 
 		case "PierTalkTavern2":
-			dialog.text = "¡Capitán, mi lengua flaquea al buscar palabras lo suficientemente poderosas para expresar mi gratitud sin límites! Cuando otros habrían pasado de largo sin una mirada, usted alteró su rumbo por un extraño—un simple pescador sin importancia. Tal nobleza de espíritu merece su justa recompensa, y quisiera darle todo lo que queda en mi posesión.\nContemplad estos tesoros. Veinte piezas de ámbar dorado como el sol y cinco raros especímenes azules, apreciados por mercaderes a lo largo del Mar Español. Los rescaté de un galeón reclamado por las profundidades. Ahora os servirán a vos.\nAdemás, deseo otorgaros mis instrumentos de navegación y aparejos. Hasta que la Fortuna sonría y me conceda otra embarcación, estas herramientas no sirven más que para acumular polvo.";
+			dialog.text = "¡Capitán, mi lengua flaquea al buscar palabras lo suficientemente poderosas para expresar mi gratitud sin límites! Cuando otros habrían pasado de largo sin una mirada, usted alteró su rumbo por un extraño y simple pescador sin importancia. Tal nobleza de espíritu merece su justa recompensa, y quisiera darle todo lo que queda en mi posesión.\nContemplad estos tesoros. Veinte piezas de ámbar dorado como el sol y cinco raros especímenes azules, apreciados por mercaderes a lo largo del Mar Español. Los rescaté de un galeón reclamado por las profundidades. Ahora os servirán a vos.\nAdemás, deseo otorgaros mis instrumentos de navegación y aparejos. Hasta que la Fortuna me sonría y me conceda otra embarcación, estas herramientas no sirven más que para acumular polvo.";
 			link.l1 = "Acepto vuestra generosa ofrenda con corazón humilde, Pierre. Estos tesoros me servirán bien en las mareas. Sin embargo, el mayor tesoro es que estáis una vez más en vuestro propio umbral, con la vigilia de vuestra fiel esposa finalmente terminada. Las peores tormentas han pasado, y aguas más tranquilas se extienden ante vuestra familia.";
 			link.l1.go = "PierTakeGift";
-			link.l2 = "Pierre, gracias por vuestra generosidad, pero guardaos todo eso. Ahora os es más útil a vos—para reparar la barca, comprar aparejos, redes, barriles. Me basta con vuestra gratitud y saber que estáis de nuevo con vuestra esposa. ¡Cuidaos el uno al otro!";
+			link.l2 = "Pierre, gracias por vuestra generosidad, pero guardaos todo eso. Ahora te será más útil para reparar la barca, comprar aparejos, redes, barriles. Me basta con vuestra gratitud y saber que estáis de nuevo con vuestra esposa. ¡Cuidaos el uno al otro!";
 			link.l2.go = "PierWontGift1";
 		break;
 
@@ -379,8 +379,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PierWontGift1":
-			dialog.text = "Capitán, no puedo dejar esta deuda sin pagar... Me arrancaste de las mismas fauces de la muerte, y estoy a tu sombra como un hombre que debe cada uno de sus futuros alientos a otro. Ya que rechazas mis humildes ofrendas, al menos permitidme compartir los secretos de las aguas poco profundas con vuestra tripulación—cómo leer las aguas, dónde se reúnen los peces con las mareas cambiantes. Tal conocimiento mantendrá carne fresca en vuestra cocina y ahorrará a vuestra bolsa el coste de provisiones cuando toquéis tierra. ¿Qué decís a tal arreglo?";
-			link.l1 = "¡Ahora esa es una proposición digna de consideración! Como dicen los viejos lobos de mar, dale a un hombre un pescado y cenará por un día, pero enséñale dónde lanzar su red, ¡y festejará hasta su viaje final bajo las olas!";
+			dialog.text = "Capitán, no puedo dejar esta deuda sin pagar... Me arrancaste de las mismas fauces de la muerte, y le debo a tu sombra como un hombre le debe a otro sus futuros alientos. Ya que rechazas mis humildes ofrendas, al menos permitidme compartir los secretos de las aguas poco profundas con vuestra tripulación. Así podrán conocer dónde se reúnen los peces con las mareas cambiantes. Tal conocimiento mantendrá pescado fresco en vuestra cocina y ahorrará a vuestra bolsa el coste de provisiones cuando toquéis tierra. ¿Qué me dices a tal arreglo?";
+			link.l1 = "¡Esa es una proposición digna de consideración! Como dicen los viejos lobos de mar, dale a un hombre un pescado y cenará por un día, pero enséñale dónde lanzar su red y lo festejará hasta su viaje final bajo las olas.";
 			link.l1.go = "PierWontGift2";
 			pchar.questTemp.VPVL_Food = true;
 		break;

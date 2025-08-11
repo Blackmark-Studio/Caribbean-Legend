@@ -1332,7 +1332,7 @@ int GetRemovableCompanionsNumber(ref _refCharacter)
 	for(int i=0; i<COMPANION_MAX; i++)
 	{
 		cn = GetCompanionIndex(_refCharacter,i);
-		if(cn > 0 && GetShipRemovable(&characters[cn]) == true)
+		if(cn > 0 && GetRemovable(&characters[cn]))
 		{
 			qn++;
 		}
@@ -1933,14 +1933,18 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 		_refCharacter.Money = q;
 		
 		//AddItemToCRC(_refCharacter, itemName, n);
-		
+		RecalculateCharacterModifiers(_refCharacter);
 		return true;
 	}	
 
 	if(n > 0)
 	{
         //if (findsubstr(itemName, "map_part" , 0) != -1 && GetCharacterItem(_refCharacter,itemName) > 0) return true;
-        if (itemName == "treasure_note" && !TreasureNotesHandler(_refCharacter, arItm)) return false;
+        if (itemName == "treasure_note" && !TreasureNotesHandler(_refCharacter, arItm))
+		{
+			RecalculateCharacterModifiers(_refCharacter);
+			return false;
+		}
 	}
 	
 	if (itemName == "talisman11" && IsMainCharacter(_refCharacter) && !CheckAttribute(pchar, "TookChickenGod")) {
@@ -1987,6 +1991,7 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 	{
 		if(q <= 0 && GetChrItemQuantity(_refCharacter) >= MAX_ITEM_TAKE)
 		{
+			RecalculateCharacterModifiers(_refCharacter);
 			return false;
 		}
 		
@@ -2051,6 +2056,7 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 		}
 	}
 	
+	RecalculateCharacterModifiers(_refCharacter);
 	return true;
 }
 
@@ -2463,6 +2469,7 @@ void RemoveOfficerEquip(ref chref, string groupID)
 
 void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 {
+	trace("SetEquipedItemToCharacter("+chref.name+", "+groupID+", "+itemID+")");
 	object emptyItm;
 	aref arItm;
 	string modelName = "";
@@ -2608,6 +2615,7 @@ void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 		break;	
 	// <-- ugeen
 	}
+	RecalculateCharacterModifiers(chref);
 }
 
 void SetGunParameters(ref chref, string sType, string itemID, bool bEquip)
@@ -3050,6 +3058,7 @@ void RemoveCharacterArtefactEquip(ref chref, string slotID)
 	}	
 	chref.equip_item.(slotID) = "";
 	chref.equip_item.(slotID).time = -1;
+	RecalculateCharacterModifiers(chref);
 }
 
 void EquipCharacterByArtefact(ref chref, string itemID)
@@ -3076,7 +3085,8 @@ void EquipCharacterByArtefact(ref chref, string itemID)
 				}
 				chref.equip_item.(slotID).time 	= sti(arItm.time)+addTime;
 			}
-			else chref.equip_item.(slotID).time = -1;	
+			else chref.equip_item.(slotID).time = -1;
+			RecalculateCharacterModifiers(chref);
 		}
 		else return;
 	}

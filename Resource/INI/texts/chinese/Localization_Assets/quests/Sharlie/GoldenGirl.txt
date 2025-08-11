@@ -1,0 +1,84 @@
+GoldenGirl_1
+{
+你听说过那个来自北方殖民地的高 价交际花吗? 她现在在圣皮埃尔经营着一家妓院。 他们说她时不时会举办私人派对 —只允许上流社会的精英参加。 最好的葡萄酒、 美丽的女人和无限制的赌博, 一切真正的贵族所珍视的东西这里 都有。 为得到那里的邀请值得你去拼命。 
+}
+
+GoldenGirl_2
+{
+据说 Botot 侯爵夫人本人现在是圣皮埃尔的座 上宾。 她可是新法兰西身价最高的女人。 有时她会为精英中的精英举办派对。 这是各种高雅恶习的绝佳巢穴。 他们说有个银行家在那里把自己的 银行都赌输了, 想象一下。 唉, 没有邀请, 即使是最富有的人也不受欢迎。 
+}
+
+GoldenGirl_3
+{
+圣皮埃尔的妓院现在由一位精英交 际花经营。 这个地方本身变化不大, 但她举办的私人派对... 人们都在传。 说就像在古老美好的巴黎一样 —最好的葡萄酒、 最好的妓女、 最好的伴侣, 还有最奇特的客人 —比如西班牙舰队司令和海盗男爵! 难以置信, 是吗? 
+}
+
+GoldenGirl_4
+{
+Julianne
+}
+GoldenGirl_5
+{
+Botot
+}
+
+GoldenGirl_6
+{
+Angerran
+}
+GoldenGirl_7
+{
+de Chievous
+}
+
+GoldenGirl_8
+{
+William
+}
+GoldenGirl_9
+{
+Cortney
+}
+
+GoldenGirl_10
+{
+Bart
+}
+GoldenGirl_11
+{
+葡萄牙人
+}
+
+GoldenGirl_12
+{
+Hernando
+}
+GoldenGirl_13
+{
+Vasces
+}
+
+GoldenGirl_14
+{
+探索模式: 计时器未禁用。 迎接最后期限! 
+}
+
+GoldenGirl_15
+{
+Nayade
+}
+
+GoldenGirl_16
+{
+他们说 Botot 夫人消失了, 把她的豪华房子留给了她信任的经 理。 试想一下, 所有的悲伤都降临到了贵族子弟身 上！
+}
+
+GoldenGirl_17
+{
+第二天早上... 
+}
+
+GoldenGirl_18
+{
+几天过去了... @<NewStr()> 你和 Courtney 男爵到达了瓜德罗普
+}

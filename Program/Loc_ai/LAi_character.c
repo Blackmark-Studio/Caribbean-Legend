@@ -893,10 +893,11 @@ bool LAi_SetCharacterUseBullet(ref rChar, string sType, string sBullet)
 				else																	LAi_GunSetDamageMax(rChar, sType, 0.0);				
 				if(CheckAttribute(rItm,"accuracy"))										LAi_GunSetAccuracy(rChar, sType, stf(rItm.accuracy)*0.01);
 				else																	LAi_GunSetAccuracy(rChar, sType, 0.0);
-			
+				RecalculateCharacterModifiers(rChar);
 				return true;	
 			}
 		}
+		RecalculateCharacterModifiers(rChar);
 	}			
 	return false;
 }

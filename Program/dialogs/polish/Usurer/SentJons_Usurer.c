@@ -19,15 +19,15 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// --> Sinistra Длинные тени старых грехов	
 		case "DTSG_KnippelDolg":
 			DeleteAttribute(pchar, "questTemp.DTSG_KnippelDolg");
-			dialog.text = "Który?";
+			dialog.text = "Którego?";
 			if (sti(pchar.reputation.nobility) > 50)
 			{
-				link.l1 = "(Honor) To na pewno Charlie Knippel.";
+				link.l1 = "(Wysoki honor) Mowa tu o Charlie Knippel.";
 				link.l1.go = "DTSG_KnippelDolg_VD_2";
 			}
 			else
 			{
-				link.l2 = "(Honor) Masz czelność rozmawiać ze mną tak spokojnie. Wysłałeś łowców nagród za moim człowiekiem.";
+				link.l2 = "Masz czelność rozmawiać ze mną tak spokojnie. Wysłałeś łowców nagród za moim człowiekiem.";
 				link.l2.go = "DTSG_KnippelDolg_2";
 			}
 		break;
@@ -39,14 +39,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "DTSG_KnippelDolg_VD_3":
-			dialog.text = "To nieprawda. Przez jego kapitana, Richarda Fleetwooda. Prawdziwy dżentelmen, każdy powinien mieć takich przyjaciół jak on.";
-			link.l1 = "Widzisz, teraz jestem kapitanem Charliego. Pan Fleetwood... przetransferował go do mojej służby. Dobrze wiedzieć, że dotrzymał obietnicy i ci zapłacił.";
+			dialog.text = "Przez jego kapitana, Richarda Fleetwooda. Prawdziwy dżentelmen, każdy powinien mieć takich przyjaciół jak on.";
+			link.l1 = "Widzisz, teraz to ja jestem kapitanem Charliego. Pan Fleetwood... przetransferował go do mojej służby. Dobrze wiedzieć, że dotrzymał obietnicy i ci zapłacił.";
 			link.l1.go = "DTSG_KnippelDolg_VD_4";
 		break;
 		
 		case "DTSG_KnippelDolg_VD_4":
-			dialog.text = "Więc dlatego pytasz.";
-			link.l1 = "Nie tylko to. Znasz dobrze Charliego, prawda? Został aresztowany, a wcześniej wysłano za nim najemników. Masz pojęcie dlaczego? W końcu masz do czynienia z bardzo... różnorodnym kręgiem ludzi.";
+			dialog.text = "Więc dlatego pytasz?";
+			link.l1 = "Znasz dobrze Charliego, prawda? Został aresztowany, a wcześniej wysłano za nim najemników. Masz pojęcie dlaczego? W końcu masz do czynienia z bardzo... różnorodnym kręgiem ludzi.";
 			link.l1.go = "DTSG_KnippelDolg_VD_5";
 		break;
 		
@@ -58,7 +58,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "DTSG_KnippelDolg_VD_6":
 			dialog.text = "Nie wahaj się podejść do mnie ponownie, jeśli potrzebujesz funduszy na zabezpieczenie kaucji - dam ci dobre warunki.";
-			link.l1 = "Ha-ha, czy ty poważnie? Lichwiarz zawsze będzie lichwiarzem. Mogę sobie pozwolić na kaucję sam. Do widzenia.";
+			link.l1 = "Ha-ha, czy ty poważnie? Lichwiarz zawsze będzie lichwiarzem. Mogę sobie ogarnę te kaucję. Do widzenia.";
 			link.l1.go = "DTSG_KnippelDolg_VD_7";
 		break;
 		

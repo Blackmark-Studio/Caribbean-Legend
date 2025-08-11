@@ -21,7 +21,7 @@ void ProcessDialogEvent()
 				DelLandQuestMark(npchar);
 				break;
 			}
-			dialog.text = "Robak. Powiedzcie deweloperom.";
+			dialog.text = "Błąd. Powiedzcie deweloperom.";
 			link.l1 = "Jeśli tak mówisz...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HWIC.Eng"))
 			{
 				dialog.text = "Argh! Cholera! Co za bałagan! Nie jesteś kupcem, prawda?";
-				link.l1 = "Tak mądry chłopak. Moja załoga składa się z wybranych angielskich marines, więc od początku byłeś na straconej pozycji. Richard Fleetwood i ja wymyśliliśmy historię handlarza, a oto jesteś. Twoje przygody się skończyły, bękarcie!";
+				link.l1 = "Taki mądry chłopak. Moja załoga składa się z wybranych angielskich marines, więc od początku byłeś na straconej pozycji. Richard Fleetwood i ja wymyśliliśmy historię handlarza, i oto jesteś. Twoje przygody się skończyły, bękarcie!";
 				link.l1.go = "JacobBerg_abordage_1";
 			}
 			else
@@ -93,7 +93,7 @@ void ProcessDialogEvent()
 		
 		case "JacobBerg_abordage_4":
 			dialog.text = "Nie, jeśli najpierw cię zabiję, wyskoczę przez okno, popłynę do brzegu i sam będę oglądać fajerwerki!";
-			link.l1 = "Stawka?";
+			link.l1 = "Zakład?";
 			link.l1.go = "JacobBerg_abordage_5";			
 		break;
 		

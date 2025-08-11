@@ -27,7 +27,7 @@ float LAi_CalcMeleeDamage(aref attack, aref enemy, string attackType, bool isBlo
 	float aSkill = LAi_GetCharacterFightLevel(attack);
 	float eSkill = LAi_GetCharacterFightLevel(enemy);
 	
-	bool bDaga = (rItm.id == "knife_01");
+	bool bDaga = GetCharacterBoolModifier(attack, MODIFIER_MELEE_EXTRA_DAMAGE_TO_UNDEAD);
 	bool bMonster = (CheckAttribute(enemy, "monster")) || (enemy.chr_ai.group == LAI_GROUP_MONSTERS) || (enemy.chr_ai.group == "KSOCHITAM_MONSTERS");
 	if(bDaga && bMonster)
 		aSkill = 1.0;
@@ -95,10 +95,10 @@ float LAi_GetDamageAttackType(aref attack, aref enemy, string attackType, ref aW
 	
 	float kBonus = 1.0;
 	
-	// талисман "Упырь"
-	if(IsEquipCharacterByArtefact(attack, "totem_11") && !CheckCharacterPerk(enemy, "HT1"))
+	float energyDrain = GetCharacterFloatModifier(attack, MODIFIER_ENERGY_DRAIN);
+	if(energyDrain > 0 && !CheckCharacterPerk(enemy, "HT1"))
 	{
-		float fEnergyDrain = stf(enemy.chr_ai.energy) * 0.1;
+		float fEnergyDrain = stf(enemy.chr_ai.energy) * energyDrain;
 		Lai_CharacterChangeEnergy(enemy, -fEnergyDrain);
 		Lai_CharacterChangeEnergy(attack, fEnergyDrain);
 		if(attack.id == "Blaze")
@@ -196,21 +196,10 @@ float LAi_GetDamageAttackType(aref attack, aref enemy, string attackType, ref aW
 			kBalance = 1.0;
 		break;
 		case "break":
+			kBonus *= GetCharacterFloatModifier(attack, MODIFIER_MELEE_BREAK_ATTACK_BONUS);
+			kBonus *= GetCharacterFloatModifier(enemy, MODIFIER_MELEE_BREAK_ATTACK_BONUS_ENEMY);
 			if(CheckCharacterPerk(attack, "HardHitter"))
 				kBonus *= 1.3;
-			if(IsEquipCharacterByArtefact(attack, "indian_4"))
-				kBonus *= 1.25;
-			if(IsEquipCharacterByArtefact(enemy, "amulet_4"))
-				kBonus *= 0.85;
-			if(IsEquipCharacterByArtefact(attack, "amulet_3"))
-			{
-				if(ShipBonus2Artefact(attack, SHIP_GALEON_SM))
-					kBonus *= 0.95;
-				else
-					kBonus *= 0.9;
-			}
-			if(IsEquipCharacterByArtefact(enemy, "indian_3"))
-				kBonus *= 1.1;
 			if(bMusket)
 			{
 				kAttack = 1.2;
@@ -419,17 +408,10 @@ float LAi_GunCalcProbability(aref attack, aref enemy, float kDist, string sType)
 			p = p + 0.1;
 		}
 	}
-	if(!IsDay() && IsEquipCharacterByArtefact(attack, "totem_12")) p = p * 2;
-	
-	if(IsEquipCharacterByArtefact(attack, "indian_2")) p = p * 1.15;
-	if(IsEquipCharacterByArtefact(enemy,  "indian_1")) p = p * 1.10;
-	if(IsEquipCharacterByArtefact(attack, "amulet_1")) p = p * 0.90;
-	if(IsEquipCharacterByArtefact(enemy,  "amulet_2"))
-	{
-		if(ShipBonus2Artefact(enemy, SHIP_GALEON_SM)) p = p * 0.75;
-		else p = p * 0.85;
-	}
-	
+
+	p *= GetCharacterFloatModifier(attack, MODIFIER_RANGE_HIT_PROBABILITY);
+	p *= GetCharacterFloatModifier(enemy, MODIFIER_RANGE_HIT_ENEMY_PROBABILITY);
+
 	// путь будет больше 1 - тогда 100% попал
 	return p;
 }
@@ -497,10 +479,7 @@ float LAi_GunCalcDamage(aref attack, aref enemy, string sType, int nShots)
 	{
 		dmg = stf(attack.chr_ai.(sType).basedmg) * nShots;
 		dmg *= Bring2Range(0.75, 1.5, 0.0, 1.0, aSkill);
-		if(IsEquipCharacterByArtefact(attack, "talisman18"))
-		{
-			dmg *= 1.0 + 2.0 * ArticlesBonus(attack); 
-		}
+		dmg *= GetCharacterFloatModifier(attack, MODIFIER_RANGE_EXTRA_DAMAGE_GRAPE);
 	}
 	else
 		dmg = min + (max - min)*frandSmall(aSkill);
@@ -510,31 +489,17 @@ float LAi_GunCalcDamage(aref attack, aref enemy, string sType, int nShots)
 		dmg = dmg * (4.0 + MOD_SKILL_ENEMY_RATE) / 10.0;
 	}
 	
-	if(IsEquipCharacterByArtefact(attack, "indian_1")) dmg *= 1.15;
-	if(IsEquipCharacterByArtefact(enemy,  "indian_2")) dmg *= 1.1;
-	if(IsEquipCharacterByArtefact(enemy,  "amulet_1")) dmg *= 0.85;
-	if(IsEquipCharacterByArtefact(attack, "amulet_2")) 
-	{
-		if(ShipBonus2Artefact(attack, SHIP_GALEON_SM)) dmg *= 0.94;
-		else dmg *= 0.9;
-	}
-	if(IsEquipCharacterByArtefact(attack, "KhaelRoa_item")) dmg = dmg*10; // калеуче
+	dmg *= GetCharacterFloatModifier(attack, MODIFIER_RANGE_DAMAGE_MODIFIER);
+	dmg *= GetCharacterFloatModifier(enemy, MODIFIER_RANGE_ENEMY_DAMAGE);
+
 	if(CheckAttribute(attack, "cheats.gundamage")) dmg *= 10.0;
-		
+	
 	// belamour legendary edition критический выстрел (х2) -->
 	int GunCritical = 0;
 	
-	if(GetCharacterEquipByGroup(attack, GUN_ITEM_TYPE) == "pistol5") GunCritical += 15;
-	if(GetCharacterEquipByGroup(attack, MUSKET_ITEM_TYPE) == "mushket5") GunCritical += 10;
-	if(GetCharacterEquipByGroup(attack, GUN_ITEM_TYPE) == "pistol9") GunCritical += 3;
-	if(GetCharacterEquipByGroup(attack, MUSKET_ITEM_TYPE) == "mushket3") GunCritical += 3;
-	if(GetCharacterEquipByGroup(attack, MUSKET_ITEM_TYPE) == "mushket7") GunCritical += 6;
-	if(GetCharacterEquipByGroup(attack, GUN_ITEM_TYPE) == "pistol11") GunCritical += 6;
-	if(GetCharacterEquipByGroup(attack, GUN_ITEM_TYPE) == "pistol14") GunCritical += 9;
-	if(GetCharacterEquipByGroup(attack, CIRASS_ITEM_TYPE) == "cirass10")) GunCritical += 5;
-	if(IsEquipCharacterByArtefact(attack, "indian_1")) GunCritical += 3;
-	if(IsEquipCharacterByArtefact(attack, "indian_2")) GunCritical += 3;
-	if(IsEquipCharacterByArtefact(attack, "totem_12")) GunCritical += 3;
+	int modifierChance = GetCharacterFloatModifier(attack, MODIFIER_RANGE_CRIT_CHANCE);
+	GunCritical += modifierChance;
+
 	if(GunCritical > 0)
 	{
 		int si = sti(GetCharacterSPECIAL(attack, SPECIAL_L)+GetCharacterSPECIAL(attack, SPECIAL_P))/2;
@@ -562,12 +527,20 @@ float LAi_GunCalcDamage(aref attack, aref enemy, string sType, int nShots)
 		dmg = dmg*stf(attack.MultiShooter);
 	}
 		
+	bool bBonusAganistMonster = GetCharacterBoolModifier(attack, MODIFIER_RANGE_EXTRA_DAMAGE_TO_UNDEAD);
+
+	bool bMonster = (CheckAttribute(enemy, "monster")) || (enemy.chr_ai.group == LAI_GROUP_MONSTERS);
+	if (bBonusAganistMonster && bMonster)
+	{
+		dmg = dmg*3;
+	}
 	// группа монстров Ксочитэма - плохо бьются из пистолей и мушкетов 210712
 	if (enemy.chr_ai.group == "KSOCHITAM_MONSTERS")
 	{
-		dmg = dmg/6;
+		if (bBonusAganistMonster) dmg = dmg*4;
+		else dmg = dmg/6;
 	}
-	if (CheckAttribute(enemy, "GuardMask"))
+	if (CheckAttribute(enemy, "GuardMask") && !bBonusAganistMonster)
 	{
 		dmg = 0;
 		if (attack.id == "Blaze") log_info(XI_ConvertString("Bullets1"));
@@ -642,7 +615,9 @@ float LAi_GunReloadSpeed(aref chr, string sType)
 	if (CheckAttribute(chr, "MultiShooter")) charge_dlt = charge_dlt*2.00; // may-16
 	//if(IsCharacterPerkOn(chr, "HT4")) charge_dlt = charge_dlt*1.40;	// суперперк!!
 	if(IsCharacterPerkOn(chr, "Jager")) charge_dlt = charge_dlt*1.40;	// суперперк!!
-	if(GetCharacterEquipByGroup(chr, CIRASS_ITEM_TYPE) == "cirass10")) charge_dlt = charge_dlt*1.15;
+
+	charge_dlt *= GetCharacterFloatModifier(chr, MODIFIER_RANGE_RELOAD_SPEED_BONUS);
+
 	if(CheckAttribute(chr, "cheats.guncharge")) charge_dlt = charge_dlt*10.0;
 	if(IsCharacterPerkOn(chr, "GunProfessional"))
 	{
@@ -678,17 +653,12 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	float critical 	= 0.0;
 	// belamour legendary edition
 	int chance 	= 0;
-	if(IsEquipCharacterByArtefact(attack, "indian_3")) chance += 10;
-	if(IsEquipCharacterByArtefact(attack, "amulet_4")) chance -= 10;
+	int modifierChance = GetCharacterFloatModifier(attack, MODIFIER_MELEE_CRIT_CHANCE);
+	chance += modifierChance;
+	
 	if(CheckCharacterPerk(attack, "HT1")) chance += 10;
 	if(IsCharacterPerkOn(attack, "CriticalHit")) chance += 5;
 	if(IsCharacterPerkOn(attack, "SwordplayProfessional")) chance += 10;
-	if(GetCharacterEquipByGroup(attack, CIRASS_ITEM_TYPE) == "cirass9") chance += 5;
-	// dlc для Патронов
-	if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh1") chance += 1;
-	if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh2") chance += 3;
-	if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh3") chance += 2;
-	// belamour тут суммируем атакующие, защитные перенес в кирасы 
 	
 	// псевдорандом
 	if(!CheckAttribute(attack, "chr_ai.crit_counter"))
@@ -718,25 +688,29 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 		kDmgRush = 0.5;
 	}
 	dmg = dmg*kDmg*kDmgRush;
+	
+	bool bBonusAganistMonster = GetCharacterBoolModifier(attack, MODIFIER_MELEE_EXTRA_DAMAGE_TO_UNDEAD);
 	// Jason: трехкратный урон дагой Коготь Вождя для нежити. Ставить атрибут .monster нужным НПС, если группа не monsters
 	bool bMonster = (CheckAttribute(enemy, "monster")) || (enemy.chr_ai.group == LAI_GROUP_MONSTERS)
-	if (GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "knife_01" && bMonster)
+	if (bBonusAganistMonster && bMonster)
 	{
 		dmg = dmg*3;
 	}
 	// группа монстров Ксочитэма - плохо бьются простым оружием, хорошо - Когтем вождя 210712
 	if (enemy.chr_ai.group == "KSOCHITAM_MONSTERS")
 	{
-		if (GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "knife_01") dmg = dmg*4;
+		if (bBonusAganistMonster) dmg = dmg*4;
 		else dmg = dmg/4;
 	}
 	if (CheckAttribute(attack, "MultiFighter")) // мультифайтер
 	{
 		dmg = dmg*stf(attack.MultiFighter);
 	}
-	if(IsCharacterEquippedArtefact(attack, "talisman16")) dmg *= 1.1;
+	
+	dmg *= GetCharacterFloatModifier(attack, MODIFIER_MELEE_DAMAGE);
+
 	if (CheckAttribute(attack, "cheats.bladedamage")) dmg = dmg*10;
-	if (CheckAttribute(enemy, "GuardMask") && GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) != "knife_01")
+	if (CheckAttribute(enemy, "GuardMask") && bBonusAganistMonster)
 	{
 		dmg = 0.0;
 		if (attack.id == "Blaze") log_info(XI_ConvertString("Gun1"));
@@ -754,14 +728,9 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	}
 	if(enemy.id == "Mishelle")
 	{
-		if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh1") dmg *= 1.2;
-		if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh2") dmg *= 2.0;
-		if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh3") dmg *= 1.4;
+		dmg *= GetCharacterFloatModifier(attack, MODIFIER_MELEE_DAMAGE_MISHELLE);
 	}
-	if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "blade_SP_3")
-	{
-		dmg *= 1.0 + Bring2Range(0.0, 0.75, 0.0, 0.5, (1.0 - LAi_GetCharacterRelHP(attack)) / 2.0);
-	}
+
 	//Аттака своей группы
 	bool noExp = false;
 	if(CheckAttribute(attack, "chr_ai.group") && CheckAttribute(enemy, "chr_ai.group"))
@@ -815,16 +784,8 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	
 	if(critical > 0.0)
 	{
-		// эффекты на крит. урон
-		if(IsEquipCharacterByArtefact(enemy,  "amulet_3"))
-		{
-			if(ShipBonus2Artefact(enemy, SHIP_GALEON_SM))
-				critical -= 0.4;
-			else
-				critical -= 0.3;
-		}
-		if(IsEquipCharacterByArtefact(enemy,  "indian_4"))
-			critical += 0.5;
+		float modifier = GetCharacterFloatModifier(enemy, MODIFIER_MELEE_CRIT_DAMAGE);
+		critical += modifier;
 		
         AddCharacterExpToSkill(attack, SKILL_FORTUNE, 5);
 		if(ShowCharString())
@@ -861,11 +822,9 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 			dmg = dmg * 0.80;	
 		}
 	}	
-	// калеуче
-	if(IsCharacterEquippedArtefact(enemy, "kaleuche_amulet3"))
-	{
-		dmg = dmg * 0.75;
-	}
+	
+	dmg *= GetCharacterFloatModifier(enemy, MODIFIER_INCOMING_DAMAGE);
+
 	// belamour legendary edtion атрибут уменьшенного урона
 	if(CheckAttribute(enemy,"ReducedDamage")) dmg = dmg * makefloat(enemy.ReducedDamage);
 	dmg *= fLiberMisBonus(enemy);
@@ -890,9 +849,9 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 		//Проверим на смерть
 		LAi_CheckKillCharacter(enemy);
 		//проверим на отравление
-		if(!IsCharacterEquippedArtefact(enemy, "talisman8")) MakePoisonAttackCheckSex(enemy, attack);
+		if(!GetCharacterBoolModifier(enemy, MODIFIER_POISON_PROTECT)) MakePoisonAttackCheckSex(enemy, attack);
 		// яд таино // Addon 2016-1 Jason Пиратская линейка
-		if(IsCharacterEquippedArtefact(attack, "indian_poison")) MakeIndianPoisonAttack(enemy, attack);
+		if(GetCharacterBoolModifier(attack, MODIFIER_POISON_ATTACK)) MakeIndianPoisonAttack(enemy, attack);
 		if(CheckAttribute(attack, "cheats.indian_poison")) MakeIndianPoisonAttack(enemy, attack);
 	}
 	//Есть ли оружие у цели
@@ -901,9 +860,10 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	float exp = LAi_CalcExperienceForBlade(attack, enemy, attackType, isBlocked, dmg);
 	if(LAi_IsDead(enemy))
 	{
-		if(GetCharacterEquipByGroup(attack, HAT_ITEM_TYPE) == "hat2")
+		float energyBonus = GetCharacterBoolModifier(attack, MODIFIER_KILL_ENERGY_UP);
+		if(energyBonus != 0.0)
 		{
-			attack.chr_ai.energy = stf(attack.chr_ai.energy) + stf(attack.chr_ai.energy)*0.25;
+			attack.chr_ai.energy = stf(attack.chr_ai.energy) + stf(attack.chr_ai.energy) * 0.25;
 			//Log_Chr(enemy, XI_ConvertString("Hat2 Hit"));
 			notification(XI_ConvertString("Hat2 Hit"), "EnergyPlus");
 		}
@@ -1052,8 +1012,11 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 			return;
 		}
 	}
+	
+	float modifier = GetCharacterFloatModifier(enemy, MODIFIER_SHOT_AVOID_CHANCE);
+	
 	// belamour шляпа Грима
-	if(rand(9) == 5 && GetCharacterEquipByGroup(enemy, HAT_ITEM_TYPE) == "hat9")
+	if(frand(1.0) < modifier)
 	{
 		notification(StringFromKey("LAi_fightparams_1"), "Hat9");
 		return;
@@ -1075,11 +1038,8 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 
 	// belamour legendary edition бонусы огнестрелу -->
 	int InstaShot = 0;
-	if(GetCharacterEquipByGroup(attack, MUSKET_ITEM_TYPE) == "mushket5") InstaShot = 5;
-	if(GetCharacterEquipByGroup(attack, GUN_ITEM_TYPE) == "pistol9")  InstaShot = 1;
-	if(GetCharacterEquipByGroup(attack, GUN_ITEM_TYPE) == "pistol5")  InstaShot = 2;
-	if(GetCharacterEquipByGroup(attack, GUN_ITEM_TYPE) == "pistol11")  InstaShot = 2;
-	if(GetCharacterEquipByGroup(attack, GUN_ITEM_TYPE) == "howdah")   InstaShot = 1;
+	int iModifier = GetCharacterFloatModifier(attack, MODIFIER_RANGE_INSTA_SHOT);
+	InstaShot = iModifier;
 	// <-- legendary edition
 	
 	//Аттака своей группы
@@ -1131,10 +1091,8 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 		}		
 	}
 	// калеуче
-	if(IsCharacterEquippedArtefact(enemy, "kaleuche_amulet3"))
-	{
-		damage = damage * 0.75;
-	}
+	damage *= GetCharacterFloatModifier(enemy, MODIFIER_INCOMING_DAMAGE);
+
 	if(CheckAttribute(enemy,"ReducedDamage")) damage = damage * makefloat(enemy.ReducedDamage);
 	damage *= fLiberMisBonus(enemy);
 	
@@ -1199,7 +1157,7 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 		//Проверим на смерть
 		LAi_CheckKillCharacter(enemy);
 		// яд таино // Addon 2016-1 Jason Пиратская линейка
-		if(IsCharacterEquippedArtefact(attack, "indian_poison")) MakeIndianPoisonAttack(enemy, attack);
+		if(GetCharacterBoolModifier(attack, MODIFIER_POISON_ATTACK)) MakeIndianPoisonAttack(enemy, attack);
 		if(CheckAttribute(attack, "cheats.indian_poison")) MakeIndianPoisonAttack(enemy, attack);
 	}
 	
@@ -1421,39 +1379,32 @@ int LAi_NPC_StunChance()
 {
 	aref chr = GetEventData();
 	int npc_return_tmpi = 100;
-	if(CheckCharacterItem(chr, "totem_05") && IsEquipCharacterByArtefact(chr, "totem_05")) // лесник добавил пупа
+
+	if(CheckCharacterPerk(chr, "SwordplayProfessional"))
 	{
-		npc_return_tmpi = 0;
-    }
-    else
-    {	
-		if(CheckCharacterPerk(chr, "SwordplayProfessional"))
+		npc_return_tmpi = 40;
+	}
+	else 
+	{
+		if(CheckCharacterPerk(chr, "AdvancedDefense"))
 		{
-			npc_return_tmpi = 40;
+			npc_return_tmpi = 70;
 		}
-		else 
-		{
-			if(CheckCharacterPerk(chr, "AdvancedDefense"))
+		else
+		{	
+			if(CheckCharacterPerk(chr, "BasicDefense"))
 			{
-				npc_return_tmpi = 70;
+				npc_return_tmpi = 80;
 			}
 			else
-			{	
-				if(CheckCharacterPerk(chr, "BasicDefense"))
-				{
-					npc_return_tmpi = 80;
-				}
-				else
-				{
-					npc_return_tmpi = 90;
-				}
-			}	
-		}
+			{
+				npc_return_tmpi = 90;
+			}
+		}	
 	}
-	if(GetCharacterEquipByGroup(chr, CIRASS_ITEM_TYPE) == "cirass9")
-	{
-		npc_return_tmpi = 0;
-	}
+	int v = GetCharacterFloatModifier(chr, MODIFIER_OWN_STUN_CHANCE);
+	npc_return_tmpi *= v;
+
 	return npc_return_tmpi;
 }
 

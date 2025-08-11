@@ -1,4 +1,4 @@
-﻿HelenDrinking_1
+HelenDrinking_1
 {
 Francois
 }

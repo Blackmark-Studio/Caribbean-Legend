@@ -41,7 +41,9 @@
 #include "migrations.c"
 #include "achievements.c"
 #include "ships\ships_generator.c"
-
+#include "items\itemModifierCalculator.c"
+#include "items\itemModifiers.c"
+#include "items\itemModifierSetup.c"
 
 extern void InitBaseCannons();
 extern void InitCharacters();
@@ -853,6 +855,8 @@ void OnLoad()
 			Log_TestInfo("Обновлен партикл огня");
 		}
 	}
+	
+	RecalculateModifiersForAllCharacters();
 }
 
 void NewGame()

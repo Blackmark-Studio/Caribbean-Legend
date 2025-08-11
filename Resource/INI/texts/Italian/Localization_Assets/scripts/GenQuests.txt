@@ -1,4 +1,4 @@
-﻿GenQuests_1
+GenQuests_1
 {
 Contrabbandiere
 }

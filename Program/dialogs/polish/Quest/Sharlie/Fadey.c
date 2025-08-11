@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 			{
 				if (pchar.questTemp.Sharlie == "fadey")
 				{
-					dialog.text = "Czym mogę służyć, Monsieur? Nie rozmawiam z osobami, których nie znam. Jeśli przybyłeś, by pogawędzić lub zapytać, kiedy w 1640 roku Hiszpański Srebrny Pociąg dotrze do Maricaibo, to muszę cię rozczarować. Nie marnuję czasu na puste rozmowy.";
+					dialog.text = "Czym mogę służyć, Monsieur? Nie rozmawiam z osobami, których nie znam. Jeśli przybyłeś, by pogawędzić lub zapytać, kiedy w 1640 roku Hiszpański Srebrny Pociąg dotrze do Marikaibo, to muszę cię rozczarować. Nie marnuję czasu na puste rozmowy.";
 					link.l1 = "Dzień dobry, Monsieur Fadey. Być może mnie jeszcze nie znasz, ale znasz mojego brata. Pozwól, że się przedstawię - Charles de Maure, brat Michela de Monper.";
 					link.l1.go = "Sharlie";
 					break;
@@ -34,7 +34,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu") && pchar.questTemp.Sharlie.Tichingitu == "fadey")
 				{
 					dialog.text = "Więc Charles, czy rozmawiałeś już z tym dzikusem?";
-					link.l1 = "Mam... Dlatego wróciłem do ciebie.";
+					link.l1 = "Tak... Dlatego wróciłem do ciebie.";
 					link.l1.go = "Tichingitu";
 					break;
 				}
@@ -71,8 +71,8 @@ void ProcessDialogEvent()
 				}
 				if (CheckAttribute(pchar, "questTemp.Trial") && pchar.questTemp.Trial == "begin")
 				{
-					dialog.text = "Ha, cóż to sam Monsieur de Maure! Mówiłem, wchodź, nie stój tam! Co cię sprowadza do mego domu?";
-					link.l1 = TimeGreeting()+"Fadey, mój brat kazał mi się do ciebie zwrócić. Powiedział, że pomożesz mi znaleźć pracę.";
+					dialog.text = "Ha, toż to sam Monsieur de Maure! Wchodź śmiało, nie stój tam! Co cię sprowadza do mego domu?";
+					link.l1 = TimeGreeting()+", Fadey, mój brat kazał mi się do ciebie zwrócić. Powiedział, że pomożesz mi znaleźć pracę.";
 					link.l1.go = "trial";
 					// опоздал
 					if (CheckAttribute(pchar, "questTemp.Trial.late")) {
@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 					dialog.text = "Ach, to znowu ty, mój drogi przyjacielu! No cóż, znalazłeś pieniądze?";
 					if(PCharDublonsTotal() >= 300)
 					{
-						link.l1 = "Mam, monsieur Fadey! Oto twoje 300 doblonów.";
+						link.l1 = "Mam, monsieur Fadey! Oto twoje 300 dublonów.";
 						link.l1.go = "pistols_4D";
 					}
 					if(sti(Pchar.money) >= 40000)
@@ -154,8 +154,8 @@ void ProcessDialogEvent()
 				}
 				if(CheckAttribute(pchar,"questTemp.Mtraxx.MagicBox") && pchar.questTemp.Mtraxx.MagicBox == "Today")
 				{
-					dialog.text = "Wejdź, wejdź, "+pchar.name+"Widzę w twych oczach, że chcesz usłyszeć o moich sukcesach.";
-					link.l1 = "Dokładnie, Fadey. Ufaję, że masz to, czego pragnę.";
+					dialog.text = "Wejdź, wejdź, "+pchar.name+". Widzę w twych oczach, że chcesz usłyszeć o moich sukcesach.";
+					link.l1 = "Dokładnie, Fadey. Ufam, że masz to, czego pragnę.";
 					link.l1.go = "pistols_5";
 					break;
 				}
@@ -164,12 +164,12 @@ void ProcessDialogEvent()
 					dialog.text = "Ach, to znowu ty, mój drogi przyjacielu! Więc, czy znalazłeś pieniądze?";
 					if(PCharDublonsTotal() >= 300)
 					{
-						link.l1 = "Weź 300 doblonów. Poproszę marynarzy, żeby zanieśli tę skrzynię na mój statek. Och, co ja bym bez ciebie zrobił, Fadey?! Nie masz pojęcia, jak bardzo mi pomogłeś!";
+						link.l1 = "Weź 300 dublonów. Poproszę marynarzy, żeby zanieśli tę skrzynię na mój statek. Och, co ja bym bez ciebie zrobił, Fadey?! Nie masz pojęcia, jak bardzo mi pomogłeś!";
 						link.l1.go = "pistols_5D";
 					}
 					if(sti(Pchar.money) >= 40000)
 					{
-						link.l2 = "Weź 40 000 pesos. Poproszę marynarzy, aby zanieśli tę skrzynię na mój statek. Och, co bym bez ciebie zrobił, Fadey?! Nie masz pojęcia, jak bardzo mi pomogłeś!";
+						link.l2 = "Weź 40 000 pesos. Poproszę marynarzy, aby zanieśli tę skrzynię na mój statek. Och, co ja bym bez ciebie zrobił, Fadey?! Nie masz pojęcia, jak bardzo mi pomogłeś!";
 						link.l2.go = "pistols_5P";
 					}
 					if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) // возможность найти без отказа
@@ -184,14 +184,14 @@ void ProcessDialogEvent()
 				// <-- legendary edition
 				if (CheckAttribute(pchar, "questTemp.Guardoftruth.Baster_church") && pchar.questTemp.Guardoftruth.Baster_church == "seek")
 				{
-					dialog.text = "Ach, Znaczony-Ja znaczy "+pchar.name+" ! No dalej, powiedz mi, co dla mnie masz!";
+					dialog.text = "Ach, "+pchar.name+"! No dalej, powiedz mi, co dla mnie masz!";
 					link.l1 = TimeGreeting()+", Fadey. Miło cię widzieć. Przyszedłem porozmawiać z tobą o interesach.";
 					link.l1.go = "guardoftruth";
 					break;
 				}
 				if (CheckAttribute(pchar, "questTemp.Guardoftruth.Baster_church") && pchar.questTemp.Guardoftruth.Baster_church == "find" && !CheckAttribute(npchar, "quest.utensil"))
 				{
-					dialog.text = TimeGreeting()+", "+pchar.name+"Założę się, że jesteś niecierpliwy, by odkryć wyniki mojej rozmowy o poszukiwaniu duszy z księdzem.";
+					dialog.text = TimeGreeting()+", "+pchar.name+". Założę się, że jesteś niecierpliwy, by odkryć wyniki mojej rozmowy o poszukiwaniu duszy z księdzem.";
 					link.l1 = "Oczywiście, że tak! Jak poszło?";
 					link.l1.go = "guardoftruth_9";
 					break;
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(npchar, "quest.utensil") && PCharDublonsTotal() >= 250)
 				{
 					dialog.text = "Ach, wybacz mi, jestem tak rozproszony przez brzęk w twoich kieszeniach!";
-					link.l1 = "Taka chciwość, Fadey! Oto twój złoty.";
+					link.l1 = "Co za chciwość, Fadey! Oto twoje złoto.";
 					link.l1.go = "guardoftruth_11";
 					break;
 				}
@@ -213,7 +213,7 @@ void ProcessDialogEvent()
 				dialog.text = "Czymże jesteś? Posągiem? Jeśli coś masz, gadaj, jeśli nie, to spadaj, "+pchar.name+"!";
 				if (CheckAttribute(pchar, "questTemp.Persian") && pchar.questTemp.Persian == "start" && CheckNCountPersian() > 0)
 				{// персидские клинки
-					link.l2 = "Spójrz, Fadey. Przypuszczam, że to perski szamszir, być może jeden z tych skradzionych z twojej kolekcji?";
+					link.l2 = "Słuchaj, Fadey. Przypuszczam, że to perski szamszir, być może jeden z tych skradzionych z twojej kolekcji?";
 					link.l2.go = "persian";
 				}
 				if (CheckAttribute(pchar, "questTemp.Persian") && pchar.questTemp.Persian == "one" && CheckNCountPersian() > 0)
@@ -259,26 +259,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sharlie_1":
-			dialog.text = "Co wy mówicie! Ten lokalny rum to słaba lurka w porównaniu z rosyjską wódką! Nie wiecie, co tracicie, niech mnie Morze pochłonie, jeśli kłamię! Dobrze, do rzeczy. Słucham, Charles.";
+			dialog.text = "Co wy gadasz! Ten lokalny rum to słaba lurka w porównaniu z rosyjską wódką! Nie wiesz, co tracisz, niech mnie Morze pochłonie, jeśli kłamię! Dobrze, do rzeczy. Słucham, Charles.";
 			link.l1 = "Panie, obawiam się, że to, co mam zamiar powiedzieć, będzie dość nieprzyjemne, ale niestety, obowiązek nakazuje mi to uczynić! Michel powiedział mi, że jesteś mu winien całkiem sporo pieniędzy z hazardu. Nakazał również, abyś przekazał mi te pieniądze, ponieważ mój brat jest... niezdolny, by osobiście się z tobą spotkać w tej chwili.";
 			link.l1.go = "Sharlie_2";
 		break;
 		
 		case "Sharlie_2":
 			dialog.text = "O, młody człowieku! Oczywiście, że wszystko pamiętam i przyznaję, że jestem winien twojemu bratu. Hazardowy dług jest święty, honorowanie tego obowiązku to jedyna rzecz, która ratuje nas przed śmiertelnym chaosem i niebezpiecznymi bandytami! Ale błagam, zrozum moją sytuację! Niedawno przydarzyła mi się nieprzyjemna historia - zostałem okradziony w najbardziej bezczelny sposób!\nPrzeklęci złodzieje zabrali wszystko, co mogli, wszystko, co zarobiłem przez lata pracy, moje pieniądze i moją bezcenną kolekcję! Po prostu nie mogę teraz spłacić długu, nie\nAle, Monsieur de Maure, nie rezygnuję ze swoich zobowiązań! Proszę tylko, abyś spotkał mnie w połowie drogi. Ponieważ teraz nie mam żadnej monety w moim posiadaniu, oferuję ten doskonały rzadki sztylet. Spójrz na to!\nTo prawdziwe arcydzieło ze stali, duma mojej skradzionej kolekcji. Poza tym został zaczarowany przez indiańskich szamanów i ma silne ukryte moce! Indianie nazwali go Pazurem Wodza\nNigdy nie zgodziłbym się go oddać, ponieważ zapłaciłem za ten sztylet wielką sumę, znacznie większą niż mój dług, ale biorąc pod uwagę okoliczności i moją relację z twoim starszym bratem, jestem gotów ci go przekazać. Bierz, to bardzo dobra umowa!";
-			link.l1 = "Wolałbym naprawdę pieniądze zamiast noża...";
+			link.l1 = "Wolałbym naprawdę pieniądze zamiast sztyletu...";
 			link.l1.go = "Sharlie_3";
 		break;
 		
 		case "Sharlie_3":
-			dialog.text = "Ale nie mam pieniędzy, a mam ten rzadki zaczarowany artefakt! Czy naprawdę myślisz, drogi przyjacielu, że zaoferowałbym ci ten wspaniały magiczny sztylet zamiast jakichś śmieciowych srebrnych monet w innych okolicznościach? Pesos można znaleźć wszędzie, nawet leżące na ulicy! Musisz przyznać, że jestem w tarapatach. Moje serce krwawi, gdy nawet myślę o rozstaniu się z tym niesamowitym dziełem sztuki, ale dług hazardowy to dług honorowy, więc jestem gotów dać go tylko tobie, chociaż jest mi bardzo drogi, ponieważ jesteś prawdziwym człowiekiem honoru i prawdziwym przyjacielem.";
+			dialog.text = "Ale nie mam pieniędzy, a mam ten rzadki zaczarowany artefakt! Czy naprawdę myślisz, drogi przyjacielu, że zaoferowałbym ci ten wspaniały magiczny sztylet zamiast jakichś śmieciowych srebrnych monet w innych okolicznościach? Pesos można znaleźć wszędzie, nawet na ulicy! Musisz przyznać, że jestem w tarapatach. Moje serce krwawi, gdy nawet myślę o rozstaniu się z tym niesamowitym dziełem sztuki, ale dług hazardowy to dług honorowy, więc jestem gotów dać go tylko tobie, chociaż jest mi bardzo drogi, ponieważ jesteś prawdziwym człowiekiem honoru i prawdziwym przyjacielem.";
 			link.l1 = "Dobrze, skoro przysięgasz, że nie masz żadnych pieniędzy, wezmę ten twój magiczny sztylet. Mam nadzieję, że uda mi się go sprzedać za dobrą cenę...";
 			link.l1.go = "Sharlie_4";
 		break;
 		
 		case "Sharlie_4":
 			dialog.text = "'Sprzedać to'!? Wynoś się stąd, stal-a znaczy się, Charles! Niech to szlag, ledwie mogę uwierzyć własnym uszom! Oddaję moje najdroższe posiadanie, za które dostałbym co najmniej dziesięć razy więcej w Europie, a ty bezczelnie stoisz i mówisz, że po prostu to zastawisz!? Dlaczego ten sztylet, młody człowieku, uratował życie człowieka! Pozwól, że ci opowiem-";
-			link.l1 = "„A jaka jest ta ukryta moc, o której wspomniałeś?”";
+			link.l1 = "A jaka jest ta ukryta moc, o której wspomniałeś?";
 			link.l1.go = "Sharlie_5";
 		break;
 		
@@ -297,7 +297,7 @@ void ProcessDialogEvent()
 		case "Sharlie_7":
 			GiveItem2Character(pchar, "knife_01");
 			PlaySound("interface\important_item.wav");
-			//Log_Info("You've received the Chief's Claw'");
+			//Log_Info("Otrzymałeś Szpon Wodza");
 			sld = ItemsFromID("knife_01");
 			sld.Weight = 1.5;
 			sld.price = 0;
@@ -338,7 +338,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_9":
 			dialog.text = "Cóż, lubię zbierać rzadkie rzeczy... Słuchaj, Charles, może mógłbyś mi pomóc w tej sprawie...";
-			link.l1 = "Pomoc? Ale jak? Masz na myśli złapanie złodziei?";
+			link.l1 = "Pomóc? Ale jak? Masz na myśli złapanie złodziei?";
 			link.l1.go = "Sharlie_10";
 		break;
 		
@@ -358,7 +358,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_12":
 			dialog.text = "Horosho! Mam nadzieję, że będziesz miał szczęście i znajdziesz te artefakty, a ja ci to wynagrodzę. Powodzenia w łowach, stalker- to znaczy kapitanie! Da, Charles, możesz sobie wyobrazić, że ostatnio miałem kolejną próbę rabunku!\nZłodziej próbował dostać się do mojego domu zaledwie kilka dni temu\nTo było dla mnie za dużo! Tym razem jednak nie uciekł mi, udało mi się go złapać, dobrze obiłem i przekazałem strażnikom w więzieniu w mieście. Mam nadzieję, że wkrótce go powieszą!";
-			link.l1 = "Czy myślisz, że to jeden z tych złodziei, którzy zwędzili twoje szamszиры?";
+			link.l1 = "Czy myślisz, że to jeden z tych złodziei, którzy zwędzili twoje szamsziry?";
 			link.l1.go = "Sharlie_14";
 			pchar.questTemp.Persian = "start";
 			// --> скимитар 021012
@@ -376,7 +376,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sharlie_14":
-			dialog.text = "Nie, nie sądzę. On był za pieniądzem. Złapałem go w moim pokoju, przeszukującego moje skrzynie\nIndianin z jakiejś głębokiej dżungli na hiszpańskim wybrzeżu. Wygląda śmiesznie, inaczej niż ci lokalni tutaj. Cały pokryty wojennym malowaniem i ubrany w kolorowy kostium... Powinieneś odwiedzić loch i zobaczyć tego błazna na własne oczy, jeśli chcesz, póki jeszcze żyje.";
+			dialog.text = "Nie, nie sądzę. On był za pieniądzem. Złapałem go w moim pokoju, przeszukującego moje skrzynie\nIndianin z jakiejś głębokiej dżungli na hiszpańskim kontynencie. Wygląda śmiesznie, inaczej niż ci lokalni tutaj. Cały pokryty wojennym malowaniem i ubrany w kolorowy kostium... Powinieneś odwiedzić loch i zobaczyć tego błazna na własne oczy, jeśli chcesz, póki jeszcze żyje.";
 			link.l1 = "Hm... Może wpadnę do niego z wizytą.";
 			link.l1.go = "Sharlie_15";
 		break;
@@ -402,12 +402,12 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_1":
 			dialog.text = "Hahaha, a ty uwierzyłeś w tę bajkę? Młodzieńcy dzisiaj są tacy łatwowierni...";
-			link.l1 = "Fadey, mogę być młodszy od ciebie, ale nawet ja potrafię odróżnić prawdę od kłamstwa. Poza tym, naprawdę uważasz, że powieszenie to odpowiednia kara za takie przestępstwo? Wydaje się to przesadzone. W domu dostałbyś tylko kilka batów albo piętno za recydywę.";
+			link.l1 = "Fadey, mogę być młodszy od ciebie, ale nawet ja potrafię odróżnić prawdę od kłamstwa. Poza tym, naprawdę uważasz, że powieszenie to odpowiednia kara za takie przestępstwo? Wydaje się to przesadzone. W domu dostałbyś tylko kilka batów albo napiętnowanie za recydywę.";
 			link.l1.go = "Tichingitu_2";
 		break;
 		
 		case "Tichingitu_2":
-			dialog.text = "Nadmierne!? Włamał się do mojego domu! Ten dzikus nigdy nie powinien tu przychodzić! Co byś zrobił na moim miejscu? Jestem pewien, że wywróciłbyś jego wnętrzności na zewnątrz i zrobił z niego pokarm dla robaków, co?!";
+			dialog.text = "Przesadzone!? Bóbr, kurwa! Włamał się do mojego domu! Ten dzikus nigdy nie powinien tu przychodzić! Co byś zrobił na moim miejscu? Jestem pewien, że wywróciłbyś jego wnętrzności na zewnątrz i zrobił z niego pokarm dla robaków, co?!";
 			link.l1 = "Nie, nie zrobiłbym tego, Fadey, Wciąż jesteś zły z powodu kradzieży twojej kolekcji szamszirów. Gdyby to się nie stało, byłbyś bardziej skłonny dać temu głupiemu czerwonoskóremu porządny łomot i kopniaka w zad, czyż nie mam racji?";
 			link.l1.go = "Tichingitu_3";
 		break;
@@ -420,7 +420,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_4":
 			dialog.text = "Ha, już zaczynasz poznawać zwyczaje Karaibów, Charles. Sto pięćdziesiąt złotych dublonów, ani kopiejki mniej.";
-			link.l1 = "O Fadeju, niech Bóg ma litość...";
+			link.l1 = "Fadej, na miłość Boską...";
 			link.l1.go = "Tichingitu_5";
 		break;
 		
@@ -433,17 +433,17 @@ void ProcessDialogEvent()
 			}
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				notification("Jesteś godny zaufania!", "Trustworthy");
 				link.l2 = " (Godny zaufania) Fadey, posłuchaj... Rozumiem twoje frustracje, ale jestem jedynym, kto jest gotów zrekompensować ci tę niedogodność prawdziwymi pieniędzmi.";
 				link.l2.go = "Tichingitu_7_TW";
 			}
-			else notification("Perk Check Failed", "Trustworthy");
+			else notification("Nie jesteś godny zaufania", "Trustworthy");
 			link.l3 = "Dobrze, pójdę po to, czego potrzebujesz.";
 			link.l3.go = "Tichingitu_6";
 		break;
 		
 		case "Tichingitu_7_TW":
-			dialog.text = "Masz tu przyszłość, przyjacielu, mogę ci to powiedzieć. Dobrze! Osiemdziesiąt złotych - i ani monety mniej!";
+			dialog.text = "Masz przed sobą świetlaną przyszłość, przyjacielu, mogę ci to powiedzieć. Dobrze! Osiemdziesiąt dublonów - i ani monety mniej!";
 			link.l1 = "";
 			link.l1.go = "Tichingitu_6";
 			pchar.questTemp.Sharlie.Tichingitu80 = true;
@@ -473,7 +473,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "letter_1");
 			ChangeItemDescribe("letter_1", "itmdescr_letter_1_Fadey");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Zgadzam się z twoim pierwszym stwierdzeniem, ale drugie jest dyskusyjne, Charles. Co jeśli uratujesz mordercę lub gwałciciela przed sprawiedliwością, która czeka go na końcu sznura? Bah, nieważne, to już nie mój problem. Niech Bóg będzie z tobą. Udaj się do komendanta, zanim twój czerwonoskóry przyjaciel zbladnie z powodu pętli wokół szyi...";
+			dialog.text = "Zgadzam się z twoim pierwszym stwierdzeniem, ale drugie jest dyskusyjne, Charles. Co jeśli uratujesz mordercę lub gwałciciela przed sprawiedliwością, która czeka go na końcu sznura? Bah, nieważne, to już nie mój problem. Niech Bóg będzie z tobą. Udaj się do komendanta, zanim twój czerwonoskóry przyjaciel zrobi się siny z powodu pętli wokół szyi...";
 			link.l1 = "Już idę. Do zobaczenia później, Fadey.";
 			link.l1.go = "exit";
 			pchar.questTemp.Sharlie.Tichingitu = "pay";
@@ -484,25 +484,25 @@ void ProcessDialogEvent()
 		
 		case "vodka":
 			dialog.text = "Wyglądasz posępnie, przyjacielu! Domyślam się, że masz dla mnie złe wieści?";
-			link.l1 = "Tak to się przedstawia, a jakże. Powiem ci wprost, Fadey: Michel powiedział, że nabrałeś mnie z tym 'szponem wodza', gównem jakimś. Powiedział, że to nie żaden artefakt, i że mógłbym to kupić od każdego ulicznego handlarza za parę setek pesos. Popytałem wśród ulicznych sprzedawców zajmujących się metalowymi wyrobami. Podali mi dokładnie taką cenę.";
+			link.l1 = "Tak to się przedstawia, a jakże. Powiem ci wprost, Fadey: Michel powiedział, że nabrałeś mnie z tym 'pazurem wodza', czy jak się to gówno nazywało. Powiedział, że to nie żaden artefakt, i że mógłbym to kupić od każdego ulicznego handlarza za parę setek pesos. Popytałem wśród ulicznych sprzedawców zajmujących się metalowymi wyrobami. Podali mi dokładnie taką cenę.";
 			link.l1.go = "vodka_1";
 			npchar.quest.vodka = "true";
 		break;
 		
 		case "vodka_1":
-			dialog.text = "Och, Monsieur de Maure... Jestem zraniony! Jestem zaskoczony przez twojego brata. Ci półgłówki na ulicy mogą gadać, co im się podoba, ale on! Powiedz mi, Charles, jeśli ktoś przyniósłby ci starą dwuręczną rycerską szablę z czasów Karola Wielkiego i zaoferował, że ci ją sprzeda, ile byś za nią dał?";
+			dialog.text = "Och, Monsieur de Maure... Czuje się skrzywdzony! Jestem zaskoczony przez twojego brata. Ci półgłówki na ulicy mogą gadać, co im się podoba, ale on!? Powiedz mi, Charles, jeśli ktoś przyniósłby ci starą dwuręczną rycerską szablę z czasów Karola Wielkiego i zaoferował, że ci ją sprzeda, ile byś za nią dał?";
 			link.l1 = "Czekaj, dwuręczny? Czy ty sobie ze mnie żartujesz, Fadey? Co ja miałbym zrobić z jakimś zardzewiałym toporem kata? To jest siedemnasty wiek Pana Jezusa Chrystusa! Nie dałbym za to ani jednego peso!";
 			link.l1.go = "vodka_2";
 		break;
 		
 		case "vodka_2":
-			dialog.text = "Ach, teraz widzisz swoją krótkowzroczność, mój przyjacielu! Nigdy nie dojdziesz do celu z takim nastawieniem. A gdybyś przyniósł mi taki artefakt, zapłaciłbym za niego trzysta dublonów. Pytasz dlaczego? Ponieważ to antyk, historyczny skarb trudny do znalezienia w dzisiejszych czasach! Nie rozumiesz, a jednak osądzasz! \nZ Bogiem i Jego Błogosławioną Matką jako moimi świadkami, Pazur Wodza to mistrzowsko wykonany sztylet, moje źródła mówią, że należał do samego Corteza. TEGO Hernana Corteza! Legendarnego konkwistadora, który złupił Tenochtitlan i pojmał cesarza Azteków! A ty drwisz i mówisz, że to pospolite śmieci!\nPoza tym, już ci mówiłem, że to nie jest zwykły sztylet, to zaczarowany sztylet! Czy jesteś jeszcze tak zielony, że nie widziałeś wszystkich cudów Karaibów? Zaklęcia i magia, rytuały i klątwy? Charles, to jest Nowy Świat, ojczyzna Majów i Azteków, których wiedza na temat takich diabelskich sztuk osiągnęła wysokości niepojęte dla nas chrześcijan!\nTen sztylet ma ukryte moce. Niestety, nikt jeszcze nie wie, jakie to moce. Masz unikalną, niesamowitą szansę dowiedzieć się samemu, do czego jest zdolny, a ty wciąż twierdzisz, że to 'gówno' i twój biedny, stary przyjaciel Fadey próbował cię oszukać!\nGdybym tylko miał wystarczająco pieniędzy, by spłacić dług twojemu bratu, od razu wymieniłbym go z powrotem za twoje nikczemne monety... To jest bardzo cenny przedmiot i jego wartość jest mierzona w czymś więcej niż tylko w pieniądzach, da!";
+			dialog.text = "Ach, teraz widzisz swoją krótkowzroczność, mój przyjacielu! Nigdy nie dojdziesz do celu z takim nastawieniem. A gdybyś przyniósł mi taki artefakt, zapłaciłbym za niego trzysta dublonów. Pytasz dlaczego? Ponieważ to antyk, historyczny skarb trudny do znalezienia w dzisiejszych czasach! Nie rozumiesz, a jednak osądzasz! \nZ Bogiem i Jego Błogosławioną Matką jako moimi świadkami, Szpon Wodza to mistrzowsko wykonany sztylet, moje źródła mówią, że należał do samego Corteza. TEGO Hernana Corteza! Legendarnego konkwistadora, który złupił Tenochtitlan i pojmał cesarza Azteków! A ty drwisz i mówisz, że to pospolite śmieci!\nPoza tym, już ci mówiłem, że to nie jest zwykły sztylet, to zaczarowany sztylet! Czy jesteś jeszcze tak zielony, że nie widziałeś wszystkich cudów Karaibów? Zaklęcia i magia, rytuały i klątwy? Charles, to jest Nowy Świat, ojczyzna Majów i Azteków, których wiedza na temat takich diabelskich sztuk osiągnęła wysokości niepojęte dla nas chrześcijan!\nTen sztylet ma ukryte moce. Niestety, nikt jeszcze nie wie, jakie to moce. Masz unikalną, niesamowitą szansę dowiedzieć się samemu, do czego jest zdolny, a ty wciąż twierdzisz, że to 'gówno' i twój biedny, stary przyjaciel Fadey próbował cię oszukać!\nGdybym tylko miał wystarczająco pieniędzy, by spłacić dług twojemu bratu, od razu wymieniłbym go z powrotem za twoje nikczemne monety... To jest bardzo cenny przedmiot i jego wartość jest mierzona w czymś więcej niż tylko w pieniądzach, da!";
 			link.l1 = "Dobrze, dobrze, uspokój się Fadey. Wierzę ci. Twoje argumenty są całkiem przekonujące, a płomienny zapał, który pokazujesz, to albo świadectwo twojej szczerości, albo twojej niezrównanej przebiegłości.";
 			link.l1.go = "vodka_3";
 		break;
 		
 		case "vodka_3":
-			dialog.text = "Dziękuję! Dobrze się spisałeś, Charles, że nie obraziłeś się i przyszedłeś bezpośrednio do mnie po wyjaśnienie. Ufajmy, że teraz sprawa jest załatwiona?";
+			dialog.text = "Dziękuję! Dobrze się spisałeś, Charles, że nie obraziłeś się i przyszedłeś bezpośrednio do mnie po wyjaśnienie. Ufam, że teraz sprawa jest załatwiona?";
 			link.l1 = "Tak, Monsieur Fadey. Całkowicie. Teraz proszę, pozwól mi się oddalić...";
 			link.l1.go = "vodka_4";
 		break;
@@ -512,7 +512,7 @@ void ProcessDialogEvent()
 			dialog.text = "Stój, Charles! Szczerze mówiąc, podoba mi się twój styl. Może pewnego dnia moglibyśmy zostać najlepszymi przyjaciółmi. A czemu by nie zrobić pierwszego kroku ku tej przyjaźni już teraz? Schłodziłem dwie butelki doskonałej rosyjskiej wódki w lodowatej wodzie źródlanej na dole w piwnicy. Co ty na to, otworzymy butelkę za zdrowie twojego brata?";
 			link.l1 = "Hm. Przykro mi, Monsieur Fadey, ale już czas, bym wypłynął na morze. Trochę się śpieszę.";
 			link.l1.go = "vodka_no";
-			link.l2 = "Ostatnim razem zaproponowałeś, a ja odmówiłem... Byłoby niegrzecznie odmówić dwa razy. Dobrze, Fadey. Wchodzę!";
+			link.l2 = "Ostatnim razem zaproponowałeś, a ja odmówiłem... Byłoby niegrzecznie odmówić dwa razy. Dobrze, Fadey. Polej!";
 			link.l2.go = "vodka_5";
 		break;
 		
@@ -549,25 +549,25 @@ void ProcessDialogEvent()
 		break;
 		
 		case "vodka_8":
-			dialog.text = "Charles, mój druh, zrelaksuj się. Co ma do tego skunks? Dopiero co opróżniliśmy butelkę wyśmienitej wódki. Połóż się spać, a obudzisz się jak nowo narodzony. Nawet głowa ci się rozjaśni bez kaca. Zobaczysz.";
+			dialog.text = "Charles, mój druhu, zrelaksuj się. Co ma do tego bela? Dopiero co opróżniliśmy butelkę wyśmienitej wódki. Połóż się spać, a obudzisz się jak nowo narodzony. Nawet głowa ci się rozjaśni bez kaca. Zobaczysz.";
 			link.l1 = " T-tak, wódka...to... to absolutnie wspaniałe, ta wódka. Nigdy nie piłem czegoś podobnego.";
 			link.l1.go = "vodka_9";
 		break;
 		
 		case "vodka_9":
 			dialog.text = "Ha! Masz absolutną rację! Taka wódka była robiona według tajnych receptur i sprowadzana z mojej ojczyzny, Rosji, a i tam nie każdy wie, jak ją odpowiednio zrobić. Kupuję tylko najlepsze! Jak ten trunek tutaj, którego ty i ja mieliśmy okazję skosztować.";
-			link.l1 = "B-ale powiedz mi, Fadey: j-jak możesz p-pić t-tak dużo i nie upić się? J-jak to robisz, co? P-podziel się ze mną sekretem. M-może to się p-przyda później... Cz-k!";
+			link.l1 = "A-Ale powiedz mi, Fadey: j-jak możesz p-pić t-tak dużo i nie upić się? J-jak to robisz, co? P-podziel się ze mną sekretem. M-może to się p-przyda później... Cz-k!";
 			link.l1.go = "vodka_10";
 		break;
 		
 		case "vodka_10":
-			dialog.text = "Ha! Cóż, nie możesz porównywać nas, młody Charlsie! Spójrz tylko na siebie, chudy jak bat. Na dodatek, nie jesteś przyzwyczajony do poważnego picia, tak! Ale ponieważ jesteśmy prawdziwymi przyjaciółmi, podzielę się z tobą kilkoma sekretami, jak pić i nie zsikać się w portki.";
+			dialog.text = "Ha! Cóż, nie możesz porównywać nas, młody Charlesie! Spójrz tylko na siebie, chudy jak bat. Na dodatek, nie jesteś przyzwyczajony do poważnego picia, tak! Ale ponieważ jesteśmy prawdziwymi przyjaciółmi, podzielę się z tobą kilkoma sekretami, jak pić i nie zsikać się w portki.";
 			link.l1 = "Pro-szę z-rób...hik!";
 			link.l1.go = "vodka_11";
 		break;
 		
 		case "vodka_11":
-			dialog.text = "„Cóż, jeśli chcesz pić i nie zostać natychmiast powalonym, musisz przestrzegać kilku kluczowych zasad. Najważniejsze, nigdy nie pij, jeśli twój żołądek jest pusty. Zjedz coś treściwego, zanim zacznie się sesja picia\nPo drugie, nie zapomnij zjeść czegoś po każdym kieliszku. Mięso lub ryba będą najlepsze, coś miłego i słonego. Po trzecie, nie płucz wnętrza ust wódką, połykaj ją od razu\nRównież, mały – nie więcej niż pół pinty – strzał przed daniem głównym przygotuje twoje ciało na przyjęcie poważnych dawek alkoholu. Nie przesadzaj z tym przystawką, w przeciwnym razie efekt będzie zupełnie odwrotny i rozbijesz się przed wyruszeniem w rejs\nWreszcie, kluczowe jest zdyscyplinowane trening, regularne picie umiarkowanych ilości rumu lub innych rodzajów alkoholu zwiększy twoją odporność na nie.”";
+			dialog.text = "Cóż, jeśli chcesz pić i nie zostać natychmiast powalonym, musisz przestrzegać kilku kluczowych zasad. Najważniejsze, nigdy nie pij, jeśli twój żołądek jest pusty. Zjedz coś treściwego, zanim zacznie się sesja picia\nPo drugie, nie zapomnij zjeść czegoś po każdym kieliszku. Mięso lub ryba będą najlepsze, coś miłego i słonego. Po trzecie, nie płucz wnętrza ust wódką, połykaj ją od razu\nRównież, mały – nie więcej niż pół pinty – strzał przed daniem głównym przygotuje twoje ciało na przyjęcie poważnych dawek alkoholu. Nie przesadzaj z tą przystawką, w przeciwnym razie efekt będzie zupełnie odwrotny i rozbijesz się przed wyruszeniem w rejs\nWreszcie, kluczowe jest zdyscyplinowane trening, regularne picie umiarkowanych ilości rumu lub innych rodzajów alkoholu zwiększy twoją odporność na nie.";
 			link.l1 = "Hm-mm... T-tak to się robi! Na pewno...hik!.. zapamiętam wszystkie twoje wsk-zówki, Fadey. D-dziękuję. A t-teraz myślę, że dobrze by było, gdybym się trochę zdrzemnął, bo teraz nie czuję się najlepiej.";
 			link.l1.go = "vodka_12";
 		break;
@@ -595,7 +595,7 @@ void ProcessDialogEvent()
 			DelMapQuestMarkCity("BasTer");
 			pchar.quest.Sharlie_TrialOver.over = "yes"; //снять таймер
 			dialog.text = "Co, naprawdę powiedział, że ci pomogę?";
-			link.l1 = "„Cóż, mniej więcej. Czy dasz pomocną dłoń bratu twojego dawnego przyjaciela? To nie tak, że proszę o jałmużnę jak żebrak. Proszę cię, byś dał mi szansę zarobić trochę pieniędzy.”";
+			link.l1 = "Cóż, mniej więcej. Czy dasz pomocną dłoń bratu twojego dawnego przyjaciela? To nie tak, że proszę o jałmużnę jak żebrak. Proszę cię, byś dał mi szansę zarobić trochę pieniędzy.";
 			link.l1.go = "trial_1";
 		break;
 		
@@ -676,7 +676,7 @@ void ProcessDialogEvent()
 			pchar.quest.Mtraxx_GiveMeSlavesKapster_Late.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
 			pchar.quest.Mtraxx_GiveMeSlavesKapster_Late.function = "MtraxxGiveMeSlavesKapsterInShoreLate"; // опоздание
 			AddQuestRecord("Roger_3", "23");
-			dialog.text = "Doskonałe, przyjacielu. Ale jeśli chcesz mnie oszukać z potrzebą twojego zakupu i jest ona dla bezwartościowych celów, bardzo mnie rozgniewasz. Nie chcesz tego. Jutro o dziesiątej przy zachodzie słońca na plaży Capster zorganizuję ci spotkanie, nie wystawiaj mnie.";
+			dialog.text = "Doskonałe, przyjacielu. Ale jeśli chcesz mnie oszukać z potrzebą twojego zakupu i jest ona dla bezwartościowych celów, bardzo mnie rozgniewasz. Nie chcesz tego. Jutro o dziesiątej przy zachodzie słońca na plaży Capster zorganizuję ci spotkanie, nie wystaw mnie.";
 			link.l1 = "Nie masz się czym martwić, wrócę po towar.";
 			link.l1.go = "exit";
 		break;
@@ -707,7 +707,7 @@ void ProcessDialogEvent()
 				if(pchar.questTemp.Mtraxx.GiveMeSlaves == "Deal" || pchar.questTemp.Mtraxx.GiveMeSlaves == "WithoutSlaves")
 				{
 					dialog.text = pchar.name+", przerażasz mnie. Najpierw pięćdziesięciu Murzynów, teraz broń. Czy próbujesz wzniecić bunt niewolników, przyjacielu?";
-					link.l1 = "Bardzo spostrzegawczy, Fadey. Jak już wcześniej mówiłem, to wszystko jest konieczne dla ocalenia jednej ważnej osoby. Nie martw się, zostanie wyrwana z objęć Hiszpanów, więc twoja reputacja tutaj nie ucierpi.";
+					link.l1 = "Bardzo spostrzegawczy jesteś, Fadey. Jak już wcześniej mówiłem, to wszystko jest konieczne dla ocalenia jednej ważnej osoby. Nie martw się, zostanie wyrwana z objęć Hiszpanów, więc twoja reputacja tutaj nie ucierpi.";
 					link.l1.go = "pistols_3";
 					break;
 				}
@@ -773,7 +773,7 @@ void ProcessDialogEvent()
 			dialog.text = "Cóż, mój chłopcze, miałem szczęście znaleźć wszystko, o co prosiłeś, w tak krótkim czasie. Powinieneś być wdzięczny! Teraz, ostateczna zapłata. Daj mi dokładnie tyle samo, ile było dane jako zaliczka, i zabierz swoje bronie.";
 			if(PCharDublonsTotal() >= 300)
 			{
-				link.l1 = "Weź 300 dubloonów. Moi ludzie zabiorą broń na mój statek. Co bym bez ciebie zrobił, Fadey? Nie masz pojęcia, jak bardzo mi pomogłeś!";
+				link.l1 = "Weź 300 dublonów. Moi ludzie zabiorą broń na mój statek. Co bym bez ciebie zrobił, Fadey? Nie masz pojęcia, jak bardzo mi pomogłeś!";
 				link.l1.go = "pistols_5D";
 			}
 			if(sti(Pchar.money) >= 40000)
@@ -792,7 +792,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pistols_5D":
-			Log_Info("Fadey's weapons are loaded on the ship");
+			Log_Info("Broń Fadey'a została załadowana na statek");
 			RemoveDublonsFromPCharTotal(300);
 			pchar.questTemp.Mtraxx.MagicBox = "Full";
 			if(CheckAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves")) DeleteAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves");
@@ -802,7 +802,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pistols_5P":
-			Log_Info("Fadey's weapons are loaded on the ship");
+			Log_Info("Broń Fadey'a została załadowana na statek");
 			AddMoneyToCharacter(pchar, -40000);
 			pchar.questTemp.Mtraxx.MagicBox = "Full";
 			if(CheckAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves")) DeleteAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves");
@@ -820,19 +820,19 @@ void ProcessDialogEvent()
 		
 		case "guardoftruth_1":
 			dialog.text = "O niepokalana Bogurodzico! Nie mówże!";
-			link.l1 = "Aj. Reprezentuję okradzionych parafian i próbuję zwrócić krzyż jego pierwotnym właścicielom.";
+			link.l1 = "Aye. Reprezentuję okradzionych parafian i próbuję zwrócić krzyż jego pierwotnym właścicielom.";
 			link.l1.go = "guardoftruth_2";
 		break;
 		
 		case "guardoftruth_2":
-			dialog.text = "Szlachetny czyn, i bardzo pobożny. Próbujesz zdobyć punkty u Wszechmogącego?";
+			dialog.text = "Szlachetny czyn, i bardzo pobożny. Próbujesz zaplusować sobie u Wszechmogącego?";
 			link.l1 = "Ale lokalny ksiądz odmawia mi jego zwrotu, mimo wszystko, co mu powiedziałem. Nie pojmuję tego. Jak można spokojnie umieścić skradziony krzyż z krwią niewinnego człowieka na nim w Domu Bożym? To bluźnierstwo!";
 			link.l1.go = "guardoftruth_3";
 		break;
 		
 		case "guardoftruth_3":
-			dialog.text = "No cóż, technicznie rzecz biorąc, każdy poświęcony kielich nosi krew niewinnego Chrystusa...ale odbiegam od tematu. Rozumiem, że chcesz, bym ci pomógł?";
-			link.l1 = "Tak! Masz niemały wpływ w Basse-Terre. Cieszycie się szacunkiem, więc być może kapłan wysłucha waszych napomnień.";
+			dialog.text = "No cóż, technicznie rzecz biorąc, każdy poświęcony kielich nosi krew niewinnego Chrześcijanina... ale odbiegam od tematu. Rozumiem, że chcesz, bym ci pomógł?";
+			link.l1 = "Tak! Masz niemały wpływ w Basse-Terre. Cieszysz się szacunkiem, więc być może kapłan wysłucha twoich napomnień.";
 			link.l1.go = "guardoftruth_4";
 		break;
 		
@@ -849,7 +849,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_6":
-			dialog.text = "Mój drogi naiwny przyjacielu, jeśli uszy księdza rzeczywiście są zamknięte na głos sumienia, to z pewnością jego ręce będą otwarte na złoto... Albo odwrotnie. Pomogę ci, myślę, że trzymanie takiego splugawionego skarbu tutaj z pewnością spowoduje większe kłopoty w przyszłości. Jednakże, to będzie wymagało pewnych wydatków."link.l1 ="Dlaczego mnie to nie dziwi? Ile tym razem?";
+			dialog.text = "Mój drogi naiwny przyjacielu, jeśli uszy księdza rzeczywiście są zamknięte na głos sumienia, to z pewnością jego ręce będą otwarte na złoto... Albo odwrotnie. Pomogę ci, myślę, że trzymanie takiego splugawionego skarbu tutaj z pewnością spowoduje większe kłopoty w przyszłości. Jednakże, to będzie wymagało pewnych wydatków." link.l1 = "Dlaczego mnie to nie dziwi? Ile tym razem?";
 			link.l1.go = "guardoftruth_7";
 		break;
 		
@@ -897,7 +897,7 @@ void ProcessDialogEvent()
 		case "guardoftruth_12":
 			RemoveDublonsFromPCharTotal(250); // belamour legendary edition
 			GiveItem2Character(pchar, "jewelry34");
-			//Log_Info("You've received a golden cross with lazurite");
+			//Log_Info("Otrzymałeś złoty krzyż z lazurytem");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Zawsze cieszę się, mogąc pomóc życzliwemu - a co ważniejsze - hojnemu przyjacielowi. Zaglądaj częściej. Może napijemy się wódki, gdy zostanie mi dostarczona z ojczyzny.";
 			link.l1 = "Z przyjemnością!";
@@ -930,18 +930,18 @@ void ProcessDialogEvent()
 		
 		case "guardoftruth_17":
 			dialog.text = "Oczywiście, że nie, on już nie żyje. Banda nikczemnych piratów wysłała jego fluit do Skrzyni Daviego Jonesa, a całą załogę do Mictlantecuhtli. Prawdę mówiąc, plotki głosiły, że zostali zaatakowani przez profesjonalistów przebranych za piratów... agentów Inkwizycji. Mówią, że ojciec Vincento zawsze dopada swojego człowieka.";
-			link.l1 = "Archibald Calhoun żyje. Widziałem go niedawno wraz z pewnym Williamem Patersonem. Służy jako jego pierwszy oficer.";
+			link.l1 = "Archibald Calhoun żyje. Widziałem go niedawno wraz z pewnym Williamem Pattersonem. Służy jako jego pierwszy oficer.";
 			link.l1.go = "guardoftruth_18";
 		break;
 		
 		case "guardoftruth_18":
 			dialog.text = "O ho, cóż za niespodzianka! Archibald przynajmniej może złapać oddech pod skrzydłami kapitana Patersona. Jest w dobrym towarzystwie. Hiszpanie boją się Pattersona jak zarazy. Nie odważą się spiskować przeciwko Archibaldowi, gdy jest pod opieką Pattersona.";
-			link.l1 = "Czy znasz Patersona?";
+			link.l1 = "Znasz Pattersona?";
 			link.l1.go = "guardoftruth_19";
 		break;
 		
 		case "guardoftruth_19":
-			dialog.text = "Kto nie zna Williama Patersona!? On to nowicjusz na Karaibach, tak jak ty. I tak jak ty już zdobył ogromną reputację. Pan Patterson jest najbliższym przyjacielem pułkownika Foxa i ma dobre stosunki z samym lordem Windsor, generalnym gubernatorem wszystkich angielskich kolonii na Karaibach. Często odwiedza pałac gubernatora w Port Royal na Jamajce.";
+			dialog.text = "Kto nie zna Williama Pattersona!? On to nowicjusz na Karaibach, tak jak ty. I tak jak ty już zdobył ogromną reputację. Pan Patterson jest najbliższym przyjacielem pułkownika Foxa i ma dobre stosunki z samym lordem Windsorem, generalnym gubernatorem wszystkich angielskich kolonii na Karaibach. Często odwiedza pałac gubernatora w Port Royal na Jamajce.";
 			link.l1 = "Zrozumiałem. Dzięki za informacje, Fadey!";
 			link.l1.go = "guardoftruth_20";
 		break;
@@ -988,7 +988,7 @@ void ProcessDialogEvent()
 		
 		case "persian_3":
 			TakeNItems(pchar, "gold_dublon", 300);
-			//Log_Info("You've received 300 doubloons");
+			//Log_Info("Otrzymałeś 300 dublonów");
 			PlaySound("interface\important_item.wav");
 			AddCharacterExpToSkill(pchar, "Leadership", 400);
 			AddCharacterExpToSkill(pchar, "Fortune", 200);
@@ -1001,14 +1001,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "persian_4":
-			dialog.text = "Ha! Wódka jest dobra, ale to nie jedyna rzecz, z której znana jest moja ojczyzna. Istnieje specjalny materiał, który produkuje tylko Rosja. Otrzymuję ten materiał od moich kontaktów w domu, aby handlować tutaj. Każdy kapitan go pragnie, ponieważ poprawia każdą łódź. Mówię o konopnych linach\nLiny odporne na wilgoć i sól morską. Mówią, że to najlepszy materiał do takielunku\nCo miesiąc otrzymuję pewną ilość z Rewalu. Zwykle mój magazyn ma kilkaset zwojów w połowie każdego miesiąca. Więc, "+pchar.name+", I am offering to sell you a batch of fifty coils. Ten doubloons a coil\nI have only two terms: first, I will keep your ropes until the 20th of every month; second, you can buy only the whole batch. Fifty coils for five hundred doubloons. Confidentially speaking, "+pchar.name+", they say that there are certain places where you can resell those ropes for a much greater price, but what do I know!\I am completely satisfied with the current state of my operation and don't need to find resellers myself. If you find a good merchant, you can turn a fine profit.";
+			dialog.text = "Ha! Wódka jest dobra, ale to nie jedyna rzecz, z której znana jest moja ojczyzna. Istnieje specjalny materiał, który produkuje tylko Rosja. Otrzymuję ten materiał od moich kontaktów w domu, aby handlować tutaj. Każdy kapitan go pragnie, ponieważ poprawia każdą łódź. Mówię o konopnych linach\nLiny odporne na wilgoć i sól morską. Mówią, że to najlepszy materiał do takielunku\nCo miesiąc otrzymuję pewną ilość z Rewalu. Zwykle mój magazyn ma kilkaset zwojów w połowie każdego miesiąca. Więc, "+pchar.name+", Oferuję sprzedaż partii pięćdziesięciu zwojów. Dziesięć dublonów za zwój.\nMam tylko dwa warunki: po pierwsze, będę przechowywał twoje liny do 20. dnia każdego miesiąca; po drugie, możesz kupić tylko całą partię. Pięćdziesiąt zwojów za pięćset dublonów. Mówiąc poufnie, "+pchar.name+" podaje, że istnieją pewne miejsca, w których można odsprzedać te liny po znacznie wyższej cenie, ale co ja tam wiem!\nJestem w pełni zadowolony z obecnego stanu mojej działalności i nie muszę sam szukać sprzedawców. Jeśli znajdziesz dobrego sprzedawcę, możesz osiągnąć niezły zysk.";
 			link.l1 = "Zrozumiano. To świetna oferta, Fadey! Myślę, że skorzystam z okazji, którą mi przedstawiłeś. Czyli, co dwudziestego dnia miesiąca, pięćset dublonów za pięćdziesiąt sztuk?";
 			link.l1.go = "persian_5";
 		break;
 		
 		case "persian_5":
 			AddQuestRecordInfo("Unique_Goods", "2");
-			dialog.text = "Tak. Idź odebrać swój zakup. Ale czekaj, czekaj, drogi przyjacielu! Oprócz tej szamszyry, którą zwróciłeś mi z prawdziwej dobroci, były jeszcze dwie inne. Błagam cię, jeśli je znajdziesz, przynieś je z powrotem do mnie, a zapłacę ci więcej niż uczciwą cenę za ich zwrot.";
+			dialog.text = "Tak. Idź odebrać swój zakup. Ale czekaj, czekaj, drogi przyjacielu! Oprócz tego szamszyra, którego zwróciłeś mi z prawdziwej dobroci, były jeszcze dwie inne. Błagam cię, jeśli je znajdziesz, przynieś je z powrotem do mnie, a zapłacę ci więcej niż uczciwą cenę za ich zwrot.";
 			link.l1 = "Zdecydowanie, Fadey. Jeśli ich znajdę, przyprowadzę z powrotem.";
 			link.l1.go = "exit";
 			if (CheckNCountPersian() > 0)
@@ -1020,14 +1020,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "persian_6":
-			dialog.text = "O, mój drogi przyjacielu! Właśnie otarłeś moje łzy! Pozwól, że rzucę okiem... Da! To jest to, mój cenny szamszir! Oto, jak obiecałem, trzysta dubloonów nagrody za niego.";
+			dialog.text = "O, mój drogi przyjacielu! Właśnie otarłeś moje łzy! Pozwól, że rzucę okiem... Da! To jest to, mój cenny szamszir! Oto, jak obiecałem, trzysta dublonów nagrody za niego.";
 			link.l1 = "Dziękuję!";
 			link.l1.go = "persian_7";
 		break;
 		
 		case "persian_7":
 			TakeNItems(pchar, "gold_dublon", 300);
-			//Log_Info("You've received 300 doubloons");
+			//Log_Info("Otrzymałeś 300 dublonów");
 			sTemp = CheckNIdentifyPersian();
 			RemoveItems(pchar, sTemp, 1);
 			PlaySound("interface\important_item.wav");
@@ -1044,9 +1044,9 @@ void ProcessDialogEvent()
 		
 		case "persian_8":
 			GiveItem2Character(pchar, "talisman7");
-			//Log_Info("You've received the Scarab amulet");
+			//Log_Info("Otrzymałeś amulet 'Skarabeusz'");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Została tylko jedna szamszira z mojej zaginionej kolekcji do odnalezienia. Liczę na ciebie, "+pchar.name+", a także na twoim szczęściu. Jeśli go znajdziesz, nie wahaj się wrócić do mnie pośpiesznie.";
+			dialog.text = "Został tylko jeden szamszir z mojej zaginionej kolekcji do odnalezienia. Liczę na ciebie, "+pchar.name+", a także na twoim szczęściu. Jeśli go znajdziesz, nie wahaj się wrócić do mnie pośpiesznie.";
 			link.l1 = "Zdecydowanie! Do zobaczenia wkrótce...";
 			link.l1.go = "exit";
 			if (CheckNCountPersian() > 0)
@@ -1057,14 +1057,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "persian_9":
-			dialog.text = "O, dzięki Bogu, że poprosiłem o pomoc właśnie ciebie, "+pchar.name+"Jesteś cudotwórcą, mój przyjacielu! Pokaż mi to... Ohooo! To, to ona. Moja ukochana! Krasavitsa! Gramercy, dobry człowieku, składam ci pokłon! Oto twoje pieniądze. Czterysta dublonów i ani kopiejki mniej! Nie będę skąpy.";
+			dialog.text = "O, dzięki Bogu, że poprosiłem o pomoc właśnie ciebie, "+pchar.name+". Jesteś cudotwórcą, mój przyjacielu! Pokaż mi to... Ohooo! To, to ona. Moja ukochana! Krasavitsa! Gramercy, dobry człowieku, składam ci pokłon! Oto twoje pieniądze. Czterysta dublonów i ani kopiejki mniej! Nie będę skąpy.";
 			link.l1 = "Dziękuję, Fadey. Z przyjemnością pomogłem.";
 			link.l1.go = "persian_10";
 		break;
 		
 		case "persian_10":
 			TakeNItems(pchar, "gold_dublon", 400);
-			//Log_Info("You've received 400 doubloons");
+			//Log_Info("Otrzymałeś 400 dublonów");
 			sTemp = CheckNIdentifyPersian();
 			RemoveItems(pchar, sTemp, 1);
 			PlaySound("interface\important_item.wav");
@@ -1095,7 +1095,7 @@ void ProcessDialogEvent()
 			dialog.text = "Tak, już zostało dostarczone i czeka na ciebie. Czy przyniosłeś pieniądze?";
 			if(PCharDublonsTotal() >= 700) // belamour legendary edition
 			{
-				link.l1 = "Tak. Oto siedemset doblonów.";
+				link.l1 = "Tak. Oto siedemset dublonów.";
 				link.l1.go = "persian_14";
 			}
 			else
@@ -1109,7 +1109,7 @@ void ProcessDialogEvent()
 			RemoveDublonsFromPCharTotal(700); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "cirass8"); 
-			//Log_Info("You've received wicker armour");
+			//Log_Info("Otrzymałeś pancerz oportunisty");
 			AddCharacterExpToSkill(pchar, "Sneak", 300);
 			dialog.text = "Tak, mój dobry człowieku! Proszę, weź to. Ta wiklinowa zbroja dobrze ci posłuży, zapewniam cię. Nie ma nic podobnego, nie w całych Karaibach!";
 			link.l1 = "Tak, widzę to. Dziękuję! Nie mogę się doczekać, by to przymierzyć...";
@@ -1132,7 +1132,7 @@ void ProcessDialogEvent()
 		case "ropes":
 			if (CheckAttribute(pchar, "questTemp.UpgradeRopes"))
 			{
-				dialog.text = "Wejdź, mój drogi przyjacielu. Towar jest gotowy do zakupu. 2125 dubloonów za dwieście pięćdziesiąt sztuk.";
+				dialog.text = "Wejdź, mój drogi przyjacielu. Towar jest gotowy do zakupu. 2125 dublonów za dwieście pięćdziesiąt sztuk.";
 				if (PCharDublonsTotal() >= 2125)
 				{
 					link.l1 = "Wszystko jest tak, jak się umówiliśmy. Weź pieniądze.";
@@ -1174,7 +1174,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.UpgradeRopes")) RemoveDublonsFromPCharTotal(2125);
 			else RemoveDublonsFromPCharTotal(500); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Miło było z tobą robić interesy, "+pchar.name+"Rozkażę moim ludziom przenieść liny na twój statek.";
+			dialog.text = "Miło było z tobą robić interesy, "+pchar.name+". Rozkażę moim ludziom przenieść liny na twój statek.";
 			link.l1 = "Dziękuję!";
 			link.l1.go = "ropes_2";
 		break;
@@ -1348,7 +1348,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "UpgradeRopes_Agreed":
-			dialog.text = "A to rozsądnie! Nie jesteś z tych, co tylko gadają, ale i działać potrafią. Dla ludzi interesu znajdzie się i rabacik! Piętnaście procent na wszystkie przyszłe partie! Taka będzie nasza umowa: 250 zwojów konopnych lin będę dla ciebie trzymał w gotowości każdego miesiąca. Odebrać je będziesz mógł/mogła (пол игрока), jak dawniej, 20-go dnia, płacąc 2125 dublonów za wszystko, bez reszty.";
+			dialog.text = "A to rozsądnie! Nie jesteś z tych, co tylko gadają, ale i działać potrafią. Dla ludzi interesu znajdzie się i rabacik! Piętnaście procent na wszystkie przyszłe partie! Taka będzie nasza umowa: 250 zwojów konopnych lin będę dla ciebie trzymał w gotowości każdego miesiąca. Odebrać je będziesz mógł odbierać, jak dawniej, 20-go dnia, płacąc 2125 dublonów za wszystko, bez reszty.";
 			link.l1 = "Doskonale, Fadieju! Z tobą niesamowicie łatwo prowadzi się interesy. Jestem "+GetSexPhrase("pewien","pewna")+", że czeka nas powodzenie. Do rychłego zobaczenia!";
 			link.l1.go = "exit";
 			RemoveDublonsFromPCharTotal(3000);

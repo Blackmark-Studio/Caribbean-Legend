@@ -741,7 +741,7 @@ He hecho todo lo que estaba en mi poder. Lo único que queda es confiar en las h
 #TEXT	7
 La gitana está dispuesta a ayudar a la niña en secreto - para que Thomas no atraiga la ira de la Iglesia. Ahora, lo principal es convencerlo de que confíe en nosotros.
 #TEXT	8
-Thomas me entregó una pertenencia personal de Esther - un collar de jade. Ahora solo me queda encontrar dos tallos de hierba espinosa, uno de ipecacuana y uno de verbena - y podré volver con la gitana.
+Thomas me entregó una pertenencia personal de Esther - un collar de jade. Ahora solo me queda encontrar dos tallos de 'Trompetas de Ángel o Datura', uno de ipecacuana y uno de verbena - y podré volver con la gitana.
 #TEXT	9
 ¡Gracias a los esfuerzos míos y de la gitana, la enfermedad de Esther ha sido vencida! Es reconfortante saber que todos los esfuerzos no fueron en vano y que la niña ahora está sana.
 #TEXT	10
@@ -752,7 +752,7 @@ Ahora la gitana tiene todo lo necesario para preparar el brebaje curativo. Maña
 #QUEST TPZ
 Comercio según la ley
 #TEXT 1
-Los habitantes de Bass-Terre se quejan por la falta de alcohol en la taberna. El tabernero sigue prometiendo solucionarlo, pero hasta ahora sin resultados. Parece que tiene serios problemas. Y donde hay problemas, hay oportunidades para ganar dinero.​
+Los habitantes de Base-Terre se quejan por la falta de alcohol en la taberna. El tabernero sigue prometiendo solucionarlo, pero hasta ahora sin resultados. Parece que tiene serios problemas. Y donde hay problemas, hay oportunidades para ganar dinero.​
 #TEXT 2
 El dueño del establecimiento informó que su proveedor de Antigua perdió su destilería debido a un ataque pirata y no podrá reanudar los suministros antes de dos meses. El tabernero está dispuesto a aceptar cualquier lote de vino y ron si el comerciante tiene buena reputación, sin verificar documentos, pero solo esta vez. En adelante, trabajará exclusivamente con negociantes honestos y confiables. Tal vez debería buscar mercancía por vías no oficiales... Si juego bien mis cartas, esto podría generar una buena ganancia.​
 #TEXT 3
@@ -768,7 +768,7 @@ El tabernero está satisfecho: el alcohol vuelve a fluir en la taberna. Christia
 #TEXT 8
 Actué como intermediario. Una sensación inusual. Todos quedaron satisfechos: la taberna vuelve a estar animada, Christian probablemente ya está contando los doblones que le llueven, y ahora tengo un proveedor confiable de alcohol en el Caribe. Y en todo esto, ni una sola vez tuve que desenvainar mi espada. Increíble.​
 #TEXT 9
-Apenas me alegré de que, por una vez, todo se resolviera pacíficamente, cuando en el puerto me atacó un barco pirata. Resultó que las interrupciones en los suministros no fueron casuales. Todo esto era parte del plan del capitán de ese barco, que decidió apoderarse de un jugoso trozo: los suministros a la taberna de Bass-Terre. Esta vez no tuvo suerte. Le di una lección mortal.​
+Apenas me alegré de que, por una vez, todo se resolviera pacíficamente, cuando en el puerto me atacó un barco pirata. Resultó que las interrupciones en los suministros no fueron casuales. Todo esto era parte del plan del capitán de ese barco, que decidió apoderarse de un jugoso trozo: los suministros a la taberna de Base-Terre. Esta vez no tuvo suerte. Le di una lección mortal.​
 #TEXT 10
 En el mar, fui atacado por un barco pirata. Quiénes eran y qué querían sigue siendo un misterio. Su barco se hundió, llevándose todas las respuestas con él.​
 #TEXT 11

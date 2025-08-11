@@ -1427,7 +1427,7 @@ Moja podróż na Kontynent trwała zbyt długo, a pasażerowie zbuntowali się. 
 #TEXT 6
 Pasażerowie zostali dostarczeni. Powinienem jak najszybciej oddalić się od hiszpańskich brzegów.
 #TEXT 7
-Moje przeczucia się sprawdziły; dostarczenie Bertranda Pinette i jego dziewczyn okazało się bardziej kłopotliwe niż opłacalne. Uciekinier wojenny, dezerter i oszust - jakie to towarzystwo. Jestem pewien, że Pinette zarobił fortunę na tej podróży. A ja muszę odnaleźć Pinette'a i przywrócić go do Guadeloupe. Nic nie mogę zrobić, jestem szantażowany przez tego sukinsyna bankiera. Powinienem popłynąć do Panamy, ponieważ to tam docelowo zmierzali moi pasażerowie. Muszę też pamiętać, by w przyszłości trzymać język za zębami!
+Moje przeczucia się sprawdziły; dostarczenie Bertranda Pinette i jego towarzyszy okazało się bardziej kłopotliwe niż opłacalne. Uciekinier wojenny, dezerter i oszust - jakie to towarzystwo. Jestem pewien, że Pinette zarobił fortunę na tej podróży. A ja muszę odnaleźć Pinette'a i przywrócić go do Guadeloupe. Nic nie mogę zrobić, jestem szantażowany przez tego sukinsyna bankiera. Powinienem popłynąć do Panamy, ponieważ to tam docelowo zmierzali moi pasażerowie. Muszę też pamiętać, by w przyszłości trzymać język za zębami!
 #TEXT 8
 Nie znalazłem ani Pinette'a, ani jego dziewczyn w Panamie. Zgadza się, musiał mnie oszukać z ostrożności. Teraz muszę udać się do Portobello.
 #TEXT 9
@@ -1938,7 +1938,7 @@ Wyjaśniłem wodzowi tubylców, co go i całą wioskę czeka, jeśli w ciągu 24
 #TEXT 9
 Indianka o imieniu Hayami obiecała porozmawiać ze swoim mężem, Tagofą. Powinienem zobaczyć ich oboje po zachodzie słońca.
 #TEXT 10
-Tagofa zgodził się poprowadzić nas do Meridy. Jednak jego chytra żona zażądała zapłaty z góry: dwóch pistoletów - jednego do pojedynku i trąbki, wraz z trzydziestoma nabojami do każdego. Dodatkowo, lunetę, szmaragdowy naszyjnik i złoty pierścień z rubinem.
+Tagofa zgodził się poprowadzić nas do Meridy. Jednak jego chytra żona zażądała zapłaty z góry: dwóch pistoletów - jednego do pojedynku i puzonu, wraz z trzydziestoma nabojami do każdego. Dodatkowo, lunetę, szmaragdowy naszyjnik i złoty pierścień z rubinem.
 #TEXT 11
 Tagofa dołączył do mojej jednostki. Aby dotrzeć do Meridy, potrzebujemy sześciu długich łodzi. Ponieważ Lokonos nie posiadają porządnych długich łodzi, musimy je zbudować. Do tego potrzeba dwudziestu pakietów desek, dziesięciu balów skóry i oficera do prowadzenia budowy - mianowanego stolarza.
 #TEXT 12
@@ -1965,11 +1965,11 @@ Byłem za wolny, więc Leprechaun, wraz z Jeanem, postanowili, że lepiej sobie 
 #QUEST Roger_6
 Wywieszając Wesołego Rogera: Mistrz Sztuczek
 #TEXT 1
-Niestety, Marcus nie ma dla mnie żadnego opłacalnego zadania. Jednakże Mistrz Kodeksu ma osobiste zlecenie - mam eskortować Kitty do Bridgetown na Barbadosie. Jestem zobowiązany zadowolić mojego patrona... Statek jest w tej chwili na wodach La Vegi.
+Niestety, Marcus nie ma dla mnie żadnego opłacalnego zadania. Jednakże Mistrz Kodeksu ma osobiste zlecenie - mam eskortować 'Kitty' do Bridgetown na Barbadosie. Jestem zobowiązany zadowolić mojego patrona... Statek jest w tej chwili na wodach La Vegi.
 #TEXT 2
-Wygląda na to, że wypiłem za dużo rumu, ponieważ Kitty sama wypłynęła do Bridgetown. Co za wstyd...
+Wygląda na to, że wypiłem za dużo rumu, ponieważ 'Kitty' sama wypłynęła do Bridgetown. Co za wstyd...
 #TEXT 3
-Kitty została zatopiona w walce morskiej. Co za wstyd... Nie mam zamiaru pojawić się teraz u Marcusa.
+'Kitty' została zatopiona w walce morskiej. Co za wstyd... Nie mam zamiaru pojawić się teraz u Marcusa.
 #TEXT 4
 No-no! Podszedł do mnie Ignacio Marco w Bridgetown! Zaproponował mi współpracę przy ataku na holenderski konwój ze srebrem. Marco, który wystawił Jean'a Picarda. Zgodziłem się na jego propozycję; nagroda jest zbyt obiecująca, ale muszę uważać na tego człowieka. Ciekawe, że konwój zatrzymał się na już znanej mi wyspie...
 #TEXT 5
@@ -2055,7 +2055,7 @@ Zacząłem walkę z Torero zbyt blisko Sint-Maarten i zostaliśmy dostrzegeni pr
 #TEXT 10
 Udało mi się przejąć Torero. Ignacio Marco się nie poddał, ale mam jego dziennik. Powinienem udać się do swojej kajuty i go zbadać.
 #TEXT 11
-Teraz mam wszystkie potrzebne informacje. Pigeon Spyke zmierza do Tyrexa. Czas wysłać sygnał do eskadry Barbasona w pobliżu Sint-Maarten, żeby popłynęli na Puerto Rico. Powinienem jednak zachować odpowiedni dystans. 1500 jardów od fortu Philipsburg wystarczy.
+Teraz mam wszystkie potrzebne informacje. Gołąb Spyke zmierza do Tyrexa. Czas wysłać sygnał do eskadry Barbasona w pobliżu Sint-Maarten, żeby popłynęli na Puerto Rico. Powinienem jednak zachować odpowiedni dystans. 1500 jardów od fortu Philipsburg wystarczy.
 #TEXT 12
 Co za wstyd. Wysłałem błędny sygnał do piratów Barbasona. Muszę wrócić do Marcusa.
 #TEXT 13
@@ -2107,7 +2107,7 @@ Złoto z Kartageny załadowano na nasze statki. Moja część to @<sGold> sztuk 
 #QUEST Roger_10
 Wywieszając Wesołego Rogera: Nemesis
 #TEXT 1
-Życie jest piękne! Burdel Janette będzie mnie pamiętał przez długi czas, ha-ha! Kosztowało mnie to sporo, ale już mam nowy trop: moja nowa dziewczyna, Camilla, oferuje mi mapę skarbów do zaginionego miasta górników złota. Jestem pewny, że to nie jest oszustwo, ponieważ dziewczyna miała ją sprzedać Marcusowi. Będzie czekała na mnie w kościele od 10 rano do 1 po południu. Powinienem przygotować 200 doubloonów dla niej.
+Życie jest piękne! Burdel Janette będzie mnie pamiętał przez długi czas, ha-ha! Kosztowało mnie to sporo, ale już mam nowy trop: moja nowa dziewczyna, Camilla, oferuje mi mapę skarbów do zaginionego miasta górników złota. Jestem pewny, że to nie jest oszustwo, ponieważ dziewczyna miała ją sprzedać Marcusowi. Będzie czekała na mnie w kościele od 10 rano do 1 po południu. Powinienem przygotować 200 dublonów dla niej.
 #TEXT 2
 Mam mapę Camilli. Powinienem ją dokładnie zbadać i przygotować się na wszystko. Muszę zaopatrzyć się w amunicję, mikstury lecznicze i antidotum na wypadek, gdyby sprawy potoczyły się źle.
 #TEXT 3
@@ -2126,7 +2126,7 @@ Znalazłem skarb, ale jest on chroniony metalowymi prętami. Powinienem zabrać 
 #TEXT 8
 Kur... to boli! Jeffrey mnie wystawił! Chciwy drań! Drugi "przyjaciel" z Bractwa, który próbował mnie dzisiaj zabić przez złoto. Powinienem stąd natychmiast uciekać. To wszystko jest nie tak. Kto jeszcze się tu ze mną spotka? Picard? Mieliśmy umowę, ale teraz nic nie jest pewne. Ludzie Jeffreya są wciąż w pobliżu, słyszałem, jak te ścierwo wspominało o jednostce muszkieterów, którą tu przywiózł.
 #TEXT 9
-Niestety, zamiast Jeana, spotkałem tutaj Luke'a Leprechauna. On i jego bucani zastawili pułapkę na górze. Okazało się, że stary leśniczy zawsze miał do mnie żal. I to koniec z podpisywaniem bandytów i piratów jako przyjaciół!
+Niestety, zamiast Jeana, spotkałem tutaj Luke'a Leprechauna. On i jego buce zastawili pułapkę na górze. Okazało się, że stary leśniczy zawsze miał do mnie żal. I to koniec z podpisywaniem bandytów i piratów jako przyjaciół!
 Nie traktuję tego wszystkiego jako grę losową. Coś jest w powietrzu, powinienem stąd natychmiast uciekać!
 #TEXT 10
 Wszystko to było zaplanowane... Pieprzony mściciel ludu zastawił na mnie pułapkę. Nazywa się don Enrico, a najgorsze jest to, że jego oskarżenia są całkowicie słuszne i prawdziwe.
@@ -2157,6 +2157,6 @@ Mam dużo do zrobienia, by odzyskać moje dobre imię. Ale na pewno to zrobię. 
 #TEXT 18
 Udało mi się uciec z ciemności lochów i wrzącego piekła. To naprawdę chrzest ognia. Po tym wszystkim jakoś nie pasuje mi być żołnierzem Marcusa. Kończę współpracę z nim i wracam do mojego brata. Życie toczy się dalej, nowe wyzwania i szczyty czekają! Niech tylko zapach siarki się rozproszy...
 #TEXT	19
-Gdy wyszedłem i wróciłem na brzeg, wciąż balansując między szaleństwem, strachem, niepewnością i nadzieją, mój wierny przyjaciel i towarzysz, @<pcharname>, spotkał mnie na brzegu. Dzięki Bogu, przeżył również ten dzień. W długiej rozmowie pomógł mi zrozumieć wiele rzeczy. I podjąć właściwą decyzję. Charlie Prince, pirat na smyczy Terraxa, zginął dziś dla świata pośród tych gejzerów. A Charles de Maure, francuski szlachcic, nie jakiś nieszczęsny pirat, żył dalej. I nikt, nigdy więcej, nie będzie mu mówił, co ma robić. Nikt nie stanie mu na drodze między nim a jego celem. Ja zdecyduję, jakie są moje cele i jak je osiągnąć. Odwiedzę mojego brata i powiem mu, że nic dobrego nie wyszło z jego drogiego Terraxa. Niech mówi, co chce - znajdę inny sposób.
+Gdy wyszedłem i wróciłem na brzeg, wciąż balansując między szaleństwem, strachem, niepewnością i nadzieją, mój wierny przyjaciel i towarzysz, @<pcharname>, spotkał mnie na brzegu. Dzięki Bogu, przeżył również ten dzień. W długiej rozmowie pomógł mi zrozumieć wiele rzeczy. I podjąć właściwą decyzję. Charlie Prince, pirat na smyczy Tyrexa, zginął dziś dla świata pośród tych gejzerów. A Charles de Maure, francuski szlachcic, nie jakiś nieszczęsny pirat, żył dalej. I nikt, nigdy więcej, nie będzie mu mówił, co ma robić. Nikt nie stanie mu na drodze między nim a jego celem. Ja zdecyduję, jakie są moje cele i jak je osiągnąć. Odwiedzę mojego brata i powiem mu, że nic dobrego nie wyszło z jego drogiego Terraxa. Niech mówi, co chce - znajdę inny sposób.
 #TEXT	20
-W katakumbach stanąłem twarzą w twarz z teatrem szaleństwa i wirem emocji. Zostałem wytropiony przez słynnego hiszpańskiego łowcę piratów, Don Enrico de la Vegę, znanego jako Zorro. Był nienagannie ubrany i nosił lekki, ale solidny napierśnik pod ubraniem. Mój oficer i przyjaciel, Herkules Tonzag, pokrzyżował plany szlachcica. Widząc go, ten doświadczony łowca nagród niemal zadrżał ze strachu, co było zaskakujące, ale też przywróciło mnie do zmysłów. W końcu zorganizowaliśmy polowanie na łowcę. Don Enrico, przyparty do muru, okazał się doświadczonym i niebezpiecznym, ale niehonorowym przeciwnikiem, choć miał pewną godność. Ale razem pokonaliśmy tego lisa - choć wolałbym nazwać go wężem. Nawet z pomocą Herkulesa nie było łatwo. Poprowadził mnie przez tajne przejście, które odkrył, ponieważ to, przez które wszedłem, było zablokowane skałami. Czas, abym zobaczył brata - postanowiłem zerwać wszelkie więzi z Terraxem, ponieważ nie przybliżyło mnie to do uratowania Michela, wbrew jego oczekiwaniom. Jeśli kiedykolwiek to wznowię, to tylko na moich warunkach. I tylko jako Charles de Maure - dumny, szlachetny i godny człowiek, nie jakiś pionek księcia. Żegnaj, Charlie, pójdę dalej bez ciebie.
+W katakumbach stanąłem twarzą w twarz z teatrem szaleństwa i wirem emocji. Zostałem wytropiony przez słynnego hiszpańskiego łowcę piratów, Don Enrico de la Vegę, znanego jako Zorro. Był nienagannie ubrany i nosił lekki, ale solidny napierśnik pod ubraniem. Mój oficer i przyjaciel, Hercule Tonzag, pokrzyżował plany szlachcica. Widząc go, ten doświadczony łowca nagród niemal zadrżał ze strachu, co było zaskakujące, ale też przywróciło mnie do zmysłów. W końcu zorganizowaliśmy polowanie na łowcę. Don Enrico, przyparty do muru, okazał się doświadczonym i niebezpiecznym, ale niehonorowym przeciwnikiem, choć miał pewną godność. Ale razem pokonaliśmy tego lisa - choć wolałbym nazwać go wężem. Nawet z pomocą Herkulesa nie było łatwo. Poprowadził mnie przez tajne przejście, które odkrył, ponieważ to, przez które wszedłem, było zablokowane skałami. Czas, abym zobaczył brata - postanowiłem zerwać wszelkie więzi z Tyrexem, ponieważ nie przybliżyło mnie to do uratowania Michela, wbrew jego oczekiwaniom. Jeśli kiedykolwiek to wznowię, to tylko na moich warunkach. I tylko jako Charles de Maure - dumny, szlachetny i godny człowiek, nie jakiś pionek księcia. Żegnaj, Charlie, pójdę dalej bez ciebie.

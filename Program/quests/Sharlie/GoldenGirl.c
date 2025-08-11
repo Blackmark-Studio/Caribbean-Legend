@@ -211,13 +211,11 @@ void GoldenGirl_FortFrance(string qName) // на Сен-Пьер
 void GoldenGirl_Message(string qName) // вестовой в Сен-Пьере
 {
 	// проверка на наличие Элен или Мэри
-	if (CheckAttribute(pchar, "questTemp.GoldenGirl_Block"))
-	{
-		SetFunctionTimerCondition("GoldenGirl_FortFrance", 0, 0, 7, false); // таймер
-	}
-	else
+	if (CheckAttribute(pchar, "questTemp.GoldenGirl_Ready") && !CheckAttribute(pchar, "questTemp.GoldenGirl_Block"))
 	{
 		chrDisableReloadToLocation = true;//закрыть локацию
+		DeleteQuestCondition("GoldenGirl_FortFrance");
+		DeleteQuestCondition("GoldenGirl_go");
 		sld = GetCharacter(NPC_GenerateCharacter("GoldenGirl_FraOfficer", "off_fra_1", "man", "man", 25, FRANCE, -1, true, "quest"));
 		FantomMakeCoolFighter(sld, 25, 60, 60, "blade_10", "pistol5", "bullet", 100);
 		DeleteAttribute(sld, "SaveItemsForDead");
@@ -227,6 +225,10 @@ void GoldenGirl_Message(string qName) // вестовой в Сен-Пьере
 		ChangeCharacterAddressGroup(sld, "FortFrance_town", "quest", "quest1");
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
+	}
+	else
+	{
+		SetFunctionTimerCondition("GoldenGirl_FortFrance", 0, 0, 7, true); // таймер
 	}
 }
 

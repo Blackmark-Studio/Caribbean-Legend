@@ -80,7 +80,7 @@ Tutorial_16
 
 Tutorial_17
 {
-Zwycięż!
+Wygraj bitwę!
 }
 
 Tutorial_18

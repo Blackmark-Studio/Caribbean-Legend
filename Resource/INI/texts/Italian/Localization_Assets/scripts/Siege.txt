@@ -1,4 +1,4 @@
-﻿
+
 Siege_1
 {
 Dicono che i pescatori locali hanno visto un potente squadrone @<NationNameSK(sti(aData.nation))> in questa zona.

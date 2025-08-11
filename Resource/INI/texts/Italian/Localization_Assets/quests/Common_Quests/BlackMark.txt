@@ -1,4 +1,4 @@
-﻿BlackMark_1
+BlackMark_1
 {
 Smuggler
 }

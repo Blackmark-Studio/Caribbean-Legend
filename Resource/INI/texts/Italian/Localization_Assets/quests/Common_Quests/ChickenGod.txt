@@ -1,4 +1,4 @@
-﻿ChickenGod_1
+ChickenGod_1
 {
 Aruba
 }

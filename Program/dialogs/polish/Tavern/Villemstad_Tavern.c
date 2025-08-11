@@ -40,7 +40,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		//работорговец
 		case "EscapeSlaveVillemstad_T1":
-			dialog.text = "Aye, nigdy nie było takiego bałaganu... Ponad tysiąc murzynów się zbuntowało. Dwie plantacje zostały spalone do cna, a każdy z ich panów został zamordowany. Komendant obawia się, że niewolnicy przyjdą zaatakować miasto, więc wprowadził stan wojenny. A wszystko zaczęło się z powodu dwóch murzynów, kozła imieniem Tamango i kozy imieniem Isauri...";
+			dialog.text = "Aye, nigdy nie było takiego bałaganu... Ponad tysiąc murzynów się zbuntowało. Dwie plantacje zostały spalone do cna, a każdy z ich panów został zamordowany. Komendant obawia się, że niewolnicy przyjdą zaatakować miasto, więc wprowadził stan wojenny. A wszystko zaczęło się z powodu dwóch murzynów, jednego imieniem Tamango i druga imieniem Isauri...";
 			link.l1 = "Brzmi to dość dramatycznie. Opowiedz mi całą historię, kim są ci murzyni?";
 			link.l1.go = "EscapeSlaveVillemstad_T2";
 		break;
@@ -76,7 +76,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "EscapeSlaveVillemstad_T7":
-			dialog.text = "Ja też w to nie wierzyłem, mynheer, ale dowodem jest brakujący statek. Może któryś z tych murzynów kiedyś służył jako steward na statku i nauczył się jakiejś techniki żeglarskiej. Może użyli czarnej magii, kto wie! Wpadnij i odwiedź mnie ponownie, "+pchar.name+"Przy następnym razem przyniosę ci więcej opowieści.";
+			dialog.text = "Ja też w to nie wierzyłem, mynheer, ale dowodem jest brakujący statek. Może któryś z tych murzynów kiedyś służył jako steward na statku i nauczył się jakiejś techniki żeglarskiej. Może użyli czarnej magii, kto wie! Wpadnij i odwiedź mnie ponownie, "+pchar.name+". Przy następnym razem przyniosę ci więcej opowieści.";
 			link.l1 = "Dzięki! Cóż, czas, żebym ruszał w drogę.";
 			link.l1.go = "exit";
 			AddQuestRecord("Slavetrader", "22_2");
@@ -109,7 +109,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		//--> Тайна Бетси Прайс
 		case "TBP_Tavern_1":
-			dialog.text = "Och, gdybyś ją tylko widział, kapitanie! Betsy... taka gracja, taki uśmiech! Mężczyźni walili tu drzwiami i oknami, żeby tylko na nią spojrzeć. A ile srebra zostawiali w mojej tawernie... Ale trzy dni temu nie przyszła do pracy. Oczywiście, wysłałem ludzi do jej domu, ale jej tam nie było. W domu bałagan, rzeczy osobiste zniknęły\nJuż nie wiem, co myśleć. Straż, jak zwykle, tylko wzruszyła ramionami. Mówią, że mają ważniejsze sprawy niż szukać zaginionych dziewczyn – że się zabawiła, to wróci. Kapitanie, może ty ją znajdziesz? Jeśli mi ją tu przyprowadzisz, zapłacę ci sto dublonów. Nie mogę jej stracić, rozumiesz? To prawdziwy skarb! Muszę ją odzyskać za wszelką cenę!";
+			dialog.text = "Och, gdybyś ją tylko widział, kapitanie! Betsy... taka gracja, taki uśmiech! Mężczyźni walili tu drzwiami i oknami, żeby tylko na nią spojrzeć. A ile srebra zostawiali w mojej karczmie... Ale trzy dni temu nie przyszła do pracy. Oczywiście, wysłałem ludzi do jej domu, ale jej tam nie było. W domu bałagan, rzeczy osobiste zniknęły\nJuż nie wiem, co myśleć. Straż, jak zwykle, tylko wzruszyła ramionami. Mówią, że mają ważniejsze sprawy niż szukać zaginionych dziewczyn – że się zabawiła, to wróci. Kapitanie, może ty ją znajdziesz? Jeśli mi ją tu przyprowadzisz, zapłacę ci sto dublonów. Nie mogę jej stracić, rozumiesz? To prawdziwy skarb! Muszę ją odzyskać za wszelką cenę!";
 			link.l1 = "Zobaczmy, co da się zrobić. Może przed zniknięciem zachowywała się jakoś dziwnie albo dostała złe wieści?";
 			link.l1.go = "TBP_Tavern_2";
 			link.l2 = "Szukać dziewczyny, która po prostu postanowiła zniknąć? Mam ważniejsze sprawy. Radź sobie sam.";

@@ -67,7 +67,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SJ_talk_3":
-			dialog.text = "Tak. Gdy leżałeś nieprzytomny w domu Johna, zraniłem Fleetwooda, ale ten drań zdołał przeżyć. Oślepiłem go - sypnąłem mu pieprzem w oczy, a potem zaatakowałem, zanim zdążył dobyć miecza. Ale łajdak miał na sobie kolczugę pod mundurem - to uratowało mu życie. Sprytnie. Teraz leży w domu w łóżku pod zwiększoną ochroną. To bardzo niefortunne, że przeżył.";
+			dialog.text = "Tak. Gdy leżałeś nieprzytomny w domu Johna, zraniłem Fleetwooda, ale ten drań zdołał przeżyć. Oślepiłem go - sypnąłem mu pieprzem w oczy, a potem zaatakowałem, zanim zdążył dobyć miecza. Ale łajdak miał na sobie kirys pod mundurem - to uratowało mu życie. Sprytnie. Teraz leży w domu w łóżku pod zwiększoną ochroną. To bardzo niefortunne, że przeżył.";
 			link.l1 = "Więc twoim głównym zadaniem na Antigui było wyeliminowanie Fleetwooda?";
 			link.l1.go = "SJ_talk_4";
 		break;
@@ -83,7 +83,7 @@ void ProcessDialogEvent()
 			link.l1 = "Czemu nie? Nie potrzebujesz pomocy? Uratowałeś mnie, a ja chcę pomóc. Poza tym nadal potrzebuję monety.";
 			link.l1.go = "SJ_talk_6";
 			// belamour legendary edition -->
-			link.l2 = "Dlaczego nie? Jesteście poważnymi ludźmi. A poważni ludzie płacą hojnie. Szukam tylko pracy.";
+			link.l2 = "Dlaczego nie? Jesteś poważnym człowiekiem. A poważni ludzie płacą hojnie. Szukam tylko pracy.";
 			link.l2.go = "SJ_talk_6a";
 		break;
 		
@@ -159,7 +159,7 @@ void ProcessDialogEvent()
 		
 		case "SJ_talk_9":
 			dialog.text = "Dobrze, "+pchar.name+", muszę iść. Jeszcze nie wracam do Bridgetown. Jeśli kiedykolwiek będziesz mnie potrzebować - zapytaj Johna. Powodzenia!";
-			link.l1 = "Powodzenia, Hercul!";
+			link.l1 = "Powodzenia, Hercule!";
 			link.l1.go = "SJ_talk_10";
 		break;
 		
@@ -221,7 +221,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tonzag_exit":
-			dialog.text = "Jak sobie życzysz, "+pchar.name+"Do zobaczenia. Być może spotkamy się ponownie. Praca z tobą była przyjemnością.";
+			dialog.text = "Jak sobie życzysz, "+pchar.name+". Do zobaczenia. Być może spotkamy się ponownie. Praca z tobą była przyjemnością.";
 			link.l1 = "Powodzenia, przyjacielu!";
 			link.l1.go = "Tonzag_exit_1";
 		break;
@@ -256,8 +256,8 @@ void ProcessDialogEvent()
 
 			if (CheckAttribute(NPChar, "IsCompanionClone"))//////////////////компаньон//////////////////////////////////////////////
 			{
-				//dialog.text = "Przybyłem na wasze rozkazy, kapitanie.";
-				Link.l2 = "Muszę wydać ci kilka rozkazów.";
+				//dialog.text = "Przybyłem na twe rozkazy, kapitanie.";
+				Link.l2 = "Muszę ci wydać kilka rozkazów.";
 				Link.l2.go = "Companion_Tasks";
 				NextDiag.TempNode = "tonzag_officer";// не забыть менять в зависисомости от оффа
 				break;
@@ -277,8 +277,8 @@ void ProcessDialogEvent()
 		break;	
 
 		case "QMASTER_2":
-			dialog.text = "Kapitánie, kiedy byłem karczmarzem na Barbados, kupowałem tylko rum i zapasy. A przez zapasy rozumiem prawdziwe jedzenie, a nie jakieś krakersy i peklowaną wołowinę. Przepraszam, ale to nie moja działka.";
-			link.l1 = "Może powinniśmy przekształcić mój statek w tawernę... Żartuję tylko, Hercule. Nieważne, sam się tym zajmę.";
+			dialog.text = "Kapitanie, kiedy byłem karczmarzem na Barbados, kupowałem tylko rum i zapasy. A przez zapasy rozumiem prawdziwe jedzenie, a nie jakieś krakersy i peklowaną wołowinę. Przepraszam, ale to nie moja działka.";
+			link.l1 = "Może powinniśmy przekształcić mój statek w karczmę... Żartuję tylko, Hercule. Nieważne, sam się tym zajmę.";
 			link.l1.go = "exit";
 		break;
 		
@@ -317,7 +317,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Companion_TaskBoardingYes":
-			dialog.Text = "Zostanie to zrobione.";
+			dialog.Text = "Oczywiście.";
 			Link.l1 = "Spocznij.";
 			Link.l1.go = "exit";
 			NPChar.Tasks.CanBoarding = true;
@@ -331,7 +331,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Companion_TaskChangeYes":
-			dialog.Text = "To będzie zrobione.";
+			dialog.Text = "Tak jest.";
 			Link.l1 = "Spocznij.";
 			Link.l1.go = "exit";
 			NPChar.Tasks.CanChangeShipAfterBoarding = true;
@@ -339,8 +339,8 @@ void ProcessDialogEvent()
 	//	<========////////////////////////////////////////
 		
 		case "stay_follow":
-            dialog.Text = "Jakie są twoje rozkazy? ?";
-            Link.l1 = "Zostań tutaj!";
+            dialog.Text = "Jakie są twoje rozkazy?";
+            Link.l1 = "Zostań tutaj i kryj mi plecy!";
             Link.l1.go = "Boal_Stay";
             Link.l2 = "Chodź za mną i nie zostawaj w tyle!";
             Link.l2.go = "Boal_Follow";
@@ -390,7 +390,7 @@ void ProcessDialogEvent()
         case "Boal_Stay":
             Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(Npchar.id);
             AddDialogExitQuestFunction("LandEnc_OfficerStay");
-            dialog.Text = "Aj!";
+            dialog.Text = "Aye!";
             Link.l1 = "Spocznij.";
             Link.l1.go = "Exit";
             Npchar.chr_ai.tmpl = LAI_TMPL_STAY;
@@ -398,7 +398,7 @@ void ProcessDialogEvent()
         
         case "Boal_Follow":
             SetCharacterTask_FollowCharacter(Npchar, PChar);
-            dialog.Text = "Aj!";
+            dialog.Text = "Aye!";
             Link.l1 = "Spocznij.";
             Link.l1.go = "Exit";
         break;
@@ -445,7 +445,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_jailed_2":
-			dialog.text = "„Możemy spróbować. Poczekajmy na czas karmienia, a ja zamienię kilka słów ze strażnikiem. Widzisz, oni wciąż nie nauczyli się dobrze przeszukiwać. Eh...”";
+			dialog.text = "„Możemy spróbować. Poczekajmy na pore karmienia, a ja zamienię kilka słów ze strażnikiem. Widzisz, oni wciąż nie nauczyli się dobrze przeszukiwać. Eh...”";
 			link.l1 = "Co się dzieje?";
 			link.l1.go = "tonzag_jailed_2_1";
 		break;
@@ -479,7 +479,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_after_victory_mary":
-			dialog.text = "Hej, Rudy. Kapitanie, nie będę przeszkadzał, porozmawiamy później.";
+			dialog.text = "Hej, Ruda. Kapitanie, nie będę przeszkadzał, porozmawiamy później.";
 			link.l1 = "";
 			link.l1.go = "exit";
 			
@@ -495,7 +495,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_drink":
-			dialog.text = "Gotów mnie wysłuchać, Kapitanie?";
+			dialog.text = "Jesteś gotów mnie wysłuchać, Kapitanie?";
 			link.l1 = "Najwyższy czas, byśmy porozmawiali, Hercule. Właśnie zdałem sobie sprawę, że prawie nic o tobie nie wiem.";
 			link.l1.go = "tonzag_drink_1";
 		break;
@@ -537,20 +537,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_drink_7":
-			dialog.text = "Ponieważ nikt nie opuszcza Ligi żywy, i nie można uciec bezkarnie za to, co tam zrobiliśmy, Kapitanie. Chciałem przejść na emeryturę, więc i tak spróbowałem. Jak widzisz, niezbyt skutecznie.";
+			dialog.text = "Ponieważ nikt nie opuszcza Ligi żywy, i nie można uciec bezkarnie za to, co tam zrobiliśmy, Kapitanie. Chciałem przejść na emeryturę, więc spróbowałem. Jak widzisz, niezbyt skutecznie.";
 			link.l1 = "Chcesz powiedzieć, że twoi dawni koledzy ponieśli ogromne wydatki finansowe, stracili prawie setkę ludzi, spalili brander i zaryzykowali swój okręt wojenny tylko po to, by... zabić cię za dezercję?";
 			link.l1.go = "tonzag_drink_8";
 		break;
 		
 		case "tonzag_drink_8":
-			dialog.text = "Byłem kimś więcej niż tylko popychadłem w Lidze, Kapitanie. Wiem o niej za dużo. Nie mogą mnie po prostu puścić wolno, muszą to jasno pokazać, aby nikt inny nie pomyślał o opuszczeniu interesu... Próbowali mnie dorwać wcześniej... całkiem dawno temu... Zabili moją żonę i oszpecili mnie, choć kosztowało ich to wiele. Nie ma szczęśliwego zakończenia tej historii, Kapitanie. Wystarczy, że wydasz rozkaz, a opuszczę statek i zajmę się nimi sam, po raz ostatni.";
+			dialog.text = "Byłem kimś więcej niż tylko popychadłem w Lidze, Kapitanie. Wiem o niej za dużo. Nie mogą mnie po prostu puścić wolno, muszą to jasno pokazać, aby nikt inny nie pomyślał o opuszczeniu interesu... Próbowali mnie dorwać wcześniej... całkiem dawno temu... Zabili moją żonę i mnie oszpecili, choć kosztowało ich to wiele. Nie ma szczęśliwego zakończenia tej historii, Kapitanie. Wystarczy, że wydasz rozkaz, a opuszczę statek i zajmę się nimi sam, po raz ostatni.";
 			link.l1 = "Nie gadaj bzdur, Hercule... A jaką rolę odegrał Lucas Rodenburg we wszystkim? Musiał być zamieszany w te sprawy! Twoja, a raczej jego, 'organizacja', Liga...";
 			link.l1.go = "tonzag_drink_9";
 		break;
 		
 		case "tonzag_drink_9":
-			dialog.text = "Różne agencje, Kapitanie. Co prawda, często podporządkowywały się tej samej osobie i ściśle współpracowały. Ale specjaliści Rodenburga przeprowadzali precyzyjne, skuteczne ataki, podczas gdy Liga przeprowadzała masowe operacje. A teraz co się stało z Ligą? Organizacja już nie istnieje, jak widzisz: jestem tutaj z tobą, John Murdock odszedł, Longway uciekł, Van Berg leży na dnie morza, Rodenburg został stracony... Jednak byłem dłużny temu zmarłemu łajdakowi. Zauważył mnie w Lidze, a kiedy próbowałem ją opuścić, wyciągnął mnie z poważnych kłopotów i uczynił swoim zastępcą. Oczywiście, inni tego nie lubili, ale nikt nie odważył się mu sprzeciwić... A potem, w znanych okolicznościach, postanowił pozbyć się Murdocka i mnie, ale ty interweniowałeś i wziąłeś mnie do swojej służby\nI wtedy pomyślałem: 'Oto moja druga szansa na zerwanie z przeszłością...' Pograłeś Rodenburga, Liga straciła swojego patrona, nie było już niebezpieczeństwa... Ale, oczywiście, myliłem się... Stary głupiec... Ale dosyć tego, Kapitanie. Pomyślmy, co robić dalej, jeśli oczywiście naprawdę nie planujesz mnie wypuścić w pierwszym porcie.";
-			link.l1 = "Nie mam. Przypuszczam, że masz jakiś plan?";
+			dialog.text = "Różne agencje, Kapitanie. Co prawda, często podporządkowywały się tej samej osobie i ściśle współpracowały. Ale specjaliści Rodenburga przeprowadzali precyzyjne, skuteczne ataki, podczas gdy Liga przeprowadzała masowe operacje. A teraz co się stało z Ligą? Organizacja już nie istnieje, jak widzisz: jestem tutaj z tobą, John Murdock odszedł, Longway uciekł, Van Berg leży na dnie morza, Rodenburg został stracony... Jednak byłem dłużny temu zmarłemu łajdakowi. Zauważył mnie w Lidze, a kiedy próbowałem ją opuścić, wyciągnął mnie z poważnych kłopotów i uczynił swoim zastępcą. Oczywiście, inni tego nie lubili, ale nikt nie odważył się mu sprzeciwić... A potem, w znanych okolicznościach, postanowił pozbyć się Murdocka i mnie, ale ty interweniowałeś i wziąłeś mnie do swojej służby\nI wtedy pomyślałem: 'Oto moja druga szansa na zerwanie z przeszłością...' Ograłeś Rodenburga, Liga straciła swojego patrona, nie było już niebezpieczeństwa... Ale, oczywiście, myliłem się... Stary głupiec... Ale dosyć tego, Kapitanie. Pomyślmy, co robić dalej, jeśli oczywiście naprawdę nie planujesz mnie wypuścić w pierwszym porcie.";
+			link.l1 = "Nie planuje. Przypuszczam, że masz jakiś plan?";
 			link.l1.go = "tonzag_drink_10";
 		break;
 		
@@ -568,18 +568,18 @@ void ProcessDialogEvent()
 		
 		case "tonzag_drink_12":
 			dialog.text = "Nie wiem, kapitanie.";
-			link.l1 = "Herkulesie, ale przecież właśnie powiedziałeś, że ścigają cię właśnie dlatego, że wiesz zbyt dużo!";
+			link.l1 = "Hercule, ale przecież właśnie powiedziałeś, że ścigają cię właśnie dlatego, że wiesz zbyt dużo!";
 			link.l1.go = "tonzag_drink_13";
 		break;
 		
 		case "tonzag_drink_13":
 			dialog.text = "Niech pomyślę... Być może Liga obecnie działa przeciwko Hiszpanom. Są oni głównymi kandydatami do porządnego wstrząsu. A propos, Rodenburg zawsze miał dobre relacje z kastylijskimi grubasami. Czasami kierował chłopaków z Ligi do nich na różne zlecenia i zawsze zabraniał wyrządzania im jakiejkolwiek krzywdy, co, nawiasem mówiąc, chłopakom niezbyt się podobało...";
-			link.l1 = "Dobre warunki, powiadasz? A co z tym jednym Hidalgo i jego palcem, które kazałeś mi zaciągnąć do swojej tawerny?";
+			link.l1 = "Dobre warunki, powiadasz? A co z tym jednym Hidalgo i jego palcem, które kazałeś mi zaciągnąć do swojej karczmy?";
 			link.l1.go = "tonzag_drink_14";
 		break;
 		
 		case "tonzag_drink_14":
-			dialog.text = "To była wyjątkowa sytuacja, dodatkowe zlecenie. Jeśli czujesz się winny, Kapitanie, możesz być spokojny - ten Don dostał, na co zasłużył... Ale mówię o czymś innym: po zniknięciu ich pracodawcy, agenci Ligi mogli po prostu ulec swoim pragnieniom i spróbować uszczknąć solidny kawałek hiszpańskiego ciasta. Dzięki współpracy z Hiszpanami pod kierunkiem Rodenburga, wiedzą, gdzie i co zabrać.";
+			dialog.text = "To była wyjątkowa sytuacja, dodatkowe zlecenie. Jeśli czujesz się winny, Kapitanie, możesz być spokojny - ten Don dostał to, na co zasłużył... Ale mówię o czymś innym: po zniknięciu ich pracodawcy, agenci Ligi mogli po prostu ulec swoim pragnieniom i spróbować uszczknąć solidny kawałek hiszpańskiego ciasta. Dzięki współpracy z Hiszpanami pod kierunkiem Rodenburga, wiedzą, gdzie i co zabrać.";
 			link.l1 = "Hm... możesz mieć rację. Ale z tego, co wiem, nikt naprawdę nie włamuje się do hiszpańskich banków, działając przeciwko Hiszpanom na morzu - to zależy od fortuny... Może powinniśmy poszukać jakiegoś hiszpańskiego przedsięwzięcia? Fabryki?";
 			link.l1.go = "tonzag_drink_15";
 		break;
@@ -639,13 +639,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_afterminefight_1":
-			dialog.text = "Let's discuss this later, Captain. Their commander survived; we need to interrogate him.";
+			dialog.text = "Porozmawiajmy o tym później, kapitanie. Ich dowódca przeżył; musimy go przesłuchać.";
 			link.l1 = "A jeśli on nic nie wie?";
 			link.l1.go = "tonzag_afterminefight_2";
 		break;
 		
 		case "tonzag_afterminefight_2":
-			dialog.text = "He knows something. Think about it - they were waiting for us, carried out all the gold, and eliminated witnesses. That means they had a plan. I want to take a look around here, and later I'll bring the scoundrel to the ship myself. You should also keep an eye out; perhaps they were too hasty and missed something.";
+			dialog.text = "On coś wie. Pomyśl o tym - czekali na nas, wynieśli całe złoto i wyeliminowali świadków. To znaczy, że mieli plan. Chcę się tu rozejrzeć, a później sam przyprowadzę łobuza na statek. Powinieneś też mieć oko; może byli zbyt pochopni i coś przegapili.";
 			link.l1 = "Dobrze, ale kiedy wrócimy na statek, czeka nas poważna rozmowa!";
 			link.l1.go = "exit";
 			
@@ -672,7 +672,7 @@ void ProcessDialogEvent()
 		
 		case "tonzag_drink_again":
 			dialog.text = "Widzę, że czeka nas poważna rozmowa, kapitanie.";
-			link.l1 = "Tak, a ja będę tym, który będzie gadał. Po pierwsze, nie sądzisz, że wyłania się tu pewna tendencja? Stosy trupów podążają za nami, gdziekolwiek pójdziemy! Najpierw dostajesz porcję kartaczy w brzuch, a następnego dnia ginie ponad sto osób, dobrych i mniej dobrych, w... nawet nie mogę tego nazwać bitwą morską! Osada została zrównana z ziemią zaledwie kilka dni temu, a dziś dołożyliśmy swoją cegiełkę do rosnącego stosu, zarzynając grupę ludzi w kopalniach.";
+			link.l1 = "Tak, a ja będę tym, który będzie gadał. Po pierwsze, nie sądzisz, że wyłania się tu pewna tendencja? Stosy trupów podążają za nami, gdziekolwiek pójdziemy! Najpierw dostajesz porcję śrutu w brzuch, a następnego dnia ginie ponad sto osób, dobrych i mniej dobrych, w... nawet nie mogę tego nazwać bitwą morską! Osada została zrównana z ziemią zaledwie kilka dni temu, a dziś dołożyliśmy swoją cegiełkę do rosnącego stosu, zarzynając grupę ludzi w kopalniach.";
 			link.l1.go = "tonzag_drink_again_1_1";
 		break;
 		
@@ -684,24 +684,24 @@ void ProcessDialogEvent()
 		
 		case "tonzag_drink_again_1":
 			dialog.text = " ";
-			link.l1 = "Po drugie, okłamałeś mnie, Hercule. Żaden dezerter nie jest wart wysiłku, jaki twoi byli koledzy wkładają w to, by cię wyeliminować. Co krzyczał nasz więzień w kopalniach? Zdrajca? Porto Bello? Gruoh? Coś zrobiłeś, Hercule, i tym razem chcę prawdy.";
+			link.l1 = "Po drugie, okłamałeś mnie, Hercule. Żaden dezerter nie jest wart wysiłku, jaki twoi byli koledzy wkładają w to, by cię wyeliminować. Co krzyczał nasz więzień w kopalniach? Zdrajca? Portobelo? Gruoh? Coś zrobiłeś, Hercule, i tym razem chcę prawdy.";
 			link.l1.go = "tonzag_drink_again_2";
 		break;
 		
 		case "tonzag_drink_again_2":
-			dialog.text = "Truth? The truth is, Captain, that I did desert, along with my wife Gruoh. Madame Tonzag didn't want to leave the League; she loved that life, but she loved me even more. We were supposed to take care of a Spanish hidalgo, but he made a better offer. It was our chance, and we both agreed to go into his service. Of course, the League thought we perished on a mission and sent a second group to Porto Bello to finish the job and seek revenge.";
+			dialog.text = "Prawda? Prawda jest taka, kapitanie, że zdezerterowałem wraz z moją żoną Gruoh. Madame Tonzag nie chciała opuszczać Ligi; kochała takie życie, ale kochała mnie jeszcze bardziej. Mieliśmy zająć się hiszpańskim hidalgo, ale złożył lepszą ofertę. To była nasza szansa i oboje zgodziliśmy się pójść do jego służby. Oczywiście, Liga myślała, że ​​zginęliśmy podczas misji i wysłała drugą grupę do Portobelo, aby dokończyć zadanie i dokonać zemsty.";
 			link.l1 = "I zabiłeś ich wszystkich?";
 			link.l1.go = "tonzag_drink_again_3";
 		break;
 		
 		case "tonzag_drink_again_3":
-			dialog.text = "Najpierw zabili Gruoha i oszpecili mnie. Hidalgo nie chciał mieć już ze mną nic wspólnego i wyrzucił mnie. Wtedy właśnie znalazł mnie Rodenburg...";
+			dialog.text = "Najpierw zabili Gruoh i mnie oszpecili. Hidalgo nie chciał mieć już ze mną nic wspólnego więc mnie wyrzucił. Wtedy właśnie znalazł mnie Rodenburg...";
 			link.l1 = "A jak mam ci teraz ufać? Zdezerterowałeś z armii, porzuciłeś Ligę i zabiłeś własnych partnerów! Gdy przyjdzie odpowiednia chwila, czy zdradzisz i mnie?";
 			link.l1.go = "tonzag_drink_again_4";
 		break;
 		
 		case "tonzag_drink_again_4":
-			dialog.text = "Tak, zdezerterowałem, złamałem kontrakt, zabiłem parę tuzinów członków Ligi. Ale nauczyłem się tej lekcji, Kapitanie. A poza tym, martwy człowiek nikogo nie zdradzi, a ja jestem martwy od dawna, od Porto Bello. I może dlatego tak trudno mnie teraz zabić.";
+			dialog.text = "Tak, zdezerterowałem, złamałem kontrakt, zabiłem parę tuzinów członków Ligi. Ale nauczyłem się tej lekcji, Kapitanie. A poza tym, martwy człowiek nikogo nie zdradzi, a ja jestem martwy od dawna, od Portobelo. I może dlatego tak trudno mnie teraz zabić.";
 			link.l1 = "To wystarczy na dziś. Czuję, że wciąż nie mówisz mi wszystkiego.";
 			link.l1.go = "tonzag_drink_again_5";
 		break;
@@ -758,19 +758,19 @@ void ProcessDialogEvent()
 		
 		case "tonzag_after_hold":
 			dialog.text = "Mieliśmy interesującą rozmowę.";
-			link.l1 = "Chciałbym wiedzieć, ile z tego jest prawdą... A co z masakrą w Porto Bello? Jeśli nie kłamał, to oznacza, że ostatnim razem, gdy rozmawialiśmy, znów pominąłeś kilka ważnych faktów ze swojej świetlanej biografii.";
+			link.l1 = "Chciałbym wiedzieć, ile z tego jest prawdą... A co z masakrą w Portobelo? Jeśli nie kłamał, to oznacza, że ostatnim razem, gdy rozmawialiśmy, znów pominąłeś kilka ważnych faktów ze swojej świetlanej biografii.";
 			link.l1.go = "tonzag_after_hold_1";
 		break;
 		
 		case "tonzag_after_hold_1":
-			dialog.text = "Było gorąco w Porto Bello, kapitanie. Walczyłem o swoje życie, o życie mojego pracodawcy, o życie mojej żony. Nie miałem czasu liczyć zabitych i opłakiwać każdego kmiecia, który pojawił się na ulicy w nieodpowiednim czasie.";
+			dialog.text = "W Portobelo było gorąco, kapitanie. Walczyłem o swoje życie, o życie mojego pracodawcy, o życie mojej żony. Nie miałem czasu liczyć zabitych i opłakiwać każdego kmiecia, który pojawił się na ulicy w nieodpowiednim czasie.";
 			link.l1 = "W tej kolejności priorytetów?";
 			link.l1.go = "tonzag_after_hold_2";
 		break;
 		
 		case "tonzag_after_hold_2":
 			dialog.text = "Nie, oczywiście, że nie. Najpierw jej. Zawsze.";
-			link.l1 = "Co sądzisz? Powinniśmy ruszyć do Caracas?";
+			link.l1 = "Co sądzisz? Powinniśmy ruszyć do Karakas?";
 			link.l1.go = "tonzag_after_hold_3";
 		break;
 		
@@ -799,8 +799,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_after_hold_6":
-			dialog.text = "Znasz tę wyspę, Kapitanie. W jej wodach zakończyłeś Van Berda.";
-			link.l1 = "Dobrze, to niedaleko, więc sprawdźmy to. Co do Caracas, jeszcze nie zdecydowałem, ale myślę, że mamy miesiąc.";
+			dialog.text = "Znasz tę wyspę, Kapitanie. W jej wodach zakończyłeś Van Berga.";
+			link.l1 = "Dobrze, to niedaleko, więc sprawdźmy to. Co do Karakas, jeszcze nie zdecydowałem, ale myślę, że mamy miesiąc.";
 			link.l1.go = "tonzag_after_hold_7";
 		break;
 		
@@ -813,25 +813,25 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_after_drink":
-			dialog.text = "It's done, Captain. Austin is currently in Caracas; I think we have a month.";
-			link.l1 = "Najpierw najważniejsze. Co powiedział więzień? Kim jest ten Austin? I dlaczego powinniśmy jechać do Caracas?";
+			dialog.text = "Zrobione, kapitanie. Austin jest obecnie w Karakas; myślę, że mamy miesiąc.";
+			link.l1 = "Najpierw najważniejsze. Co powiedział więzień? Kim jest ten Austin? I dlaczego powinniśmy popłynąć do Karakas?";
 			link.l1.go = "tonzag_after_drink_1";
 		break;
 		
 		case "tonzag_after_drink_1":
-			dialog.text = "Banda Austina była sławna z wabiących wolnych Kapitanów w dzicz, ćwiartowania ich i całkowitego ograbienia ich zwłok z pieniędzy czy błyskotek. Dobry interes, a poszukiwaczy przygód nigdy nie brakowało, więc nikomu to nie przeszkadzało. Ale natknęli się na przeszkodę z jednym Kapitanem, więc musiał wziąć swoją załogę pod skrzydła Kompanii. Trzymaliśmy go na smyczy i wypuszczaliśmy tylko wtedy, gdy potrzebowaliśmy rozwiązać problemy w szybki i prosty sposób.";
+			dialog.text = "Banda Austina była sławna z wabienia wolnych Kapitanów w dzicz, ćwiartowania ich i całkowitego ograbienia ich zwłok z pieniędzy czy błyskotek. Dobry interes, a poszukiwaczy przygód nigdy nie brakowało, więc nikomu to nie przeszkadzało. Ale natknęli się na przeszkodę z jednym Kapitanem, więc musiał wziąć swoją załogę pod skrzydła Kompanii. Trzymaliśmy go na smyczy i wypuszczaliśmy tylko wtedy, gdy potrzebowaliśmy rozwiązać problemy w szybki i prosty sposób.";
 			link.l1 = "Wątpię, że mogę wynegocjować umowę z taką osobą.";
 			link.l1.go = "tonzag_after_drink_2";
 		break;
 		
 		case "tonzag_after_drink_2":
-			dialog.text = "To pewne. Jeśli on i jego ludzie teraz rządzą, wkrótce Liga stanie się po prostu kolejną bandą. Ale ja bym nie szedł do Caracas, Kapitanie.";
+			dialog.text = "To pewne. Jeśli on i jego ludzie teraz rządzą, wkrótce Liga stanie się po prostu kolejną bandą. Ale ja bym nie szedł do Karakas, Kapitanie.";
 			link.l1 = "Serio? Boisz się?";
 			link.l1.go = "tonzag_after_drink_3";
 		break;
 		
 		case "tonzag_after_drink_3":
-			dialog.text = "To nie tak, kapitanie. Przed śmiercią z powodu ran, więzień wyjawił, że nie jesteś już wrogiem Ligi, a ja nie interesuję ich, przynajmniej na razie, dopóki jestem w twojej służbie. Wygląda na to, że Liga ma nowego wpływowego protektora, który nakazał zostawić nas w spokoju.\nA Caracas... Mam to paskudne przeczucie w głębi... Będzie źle, jeśli tam pójdziemy. Bardzo źle. Ta historia nie ma szczęśliwego zakończenia. Ale będę z tobą do końca, kapitanie.";
+			dialog.text = "To nie tak, kapitanie. Przed śmiercią z powodu ran, więzień wyjawił, że nie jesteś już wrogiem Ligi, a ja nie interesuję ich, przynajmniej na razie, dopóki jestem w twojej służbie. Wygląda na to, że Liga ma nowego wpływowego protektora, który nakazał zostawić nas w spokoju.\nA Karakas... Mam to paskudne przeczucie w głębi... Będzie źle, jeśli tam pójdziemy. Bardzo źle. Ta historia nie ma szczęśliwego zakończenia. Ale będę z tobą do końca, kapitanie.";
 			link.l1 = "Pomyślę o tym. Oczywiście, chciałbym rozwiązać tę sprawę raz na zawsze, ale może masz rację. Wątpię, by po wydarzeniach z zeszłego tygodnia odważą się znowu się do nas zbliżyć.";
 			link.l1.go = "exit";
 			
@@ -855,8 +855,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_after_drink_6":
-			dialog.text = "Wiesz, ta wyspa, Kapitanie. W jej wodach zakończyłeś Van Berda.";
-			link.l1 = "Dobrze, to niedaleko, więc sprawdźmy to. Jeśli chodzi o Caracas, jeszcze nie zdecydowałem, ale myślę, że mamy miesiąc.";
+			dialog.text = "Wiesz, ta wyspa, Kapitanie. W jej wodach zakończyłeś Van Berga.";
+			link.l1 = "Dobrze, to niedaleko, więc sprawdźmy to. Jeśli chodzi o Karakas, jeszcze nie zdecydowałem, ale myślę, że mamy miesiąc.";
 			link.l1.go = "tonzag_after_drink_7";
 		break;
 		
@@ -870,18 +870,18 @@ void ProcessDialogEvent()
 		
 		case "tonzag_church":
 			dialog.text = "Trzymaj się, kapitanie. Idę tam sam.";
-			link.l1 = "And why is that? Feeling heroic now? It's too late; you've made this mess, but we have to clean it together.";
+			link.l1 = "A dlaczego tak? Czujesz się teraz bohatersko? Jest za późno; narobiłeś bałaganu, ale musimy posprzątać go razem.";
 			link.l1.go = "tonzag_church_1";
 		break;
 		
 		case "tonzag_church_1":
-			dialog.text = "Nie musisz płacić za moje błędy, Kapitanie. Miałeś rację - gdziekolwiek pójdę, ludzie umierają, a niewinna krew płynie. Jeśli wejdziemy razem do tego kościoła, to będzie jak kolejne Porto Bello, a ja tego nie chcę.";
+			dialog.text = "Nie musisz płacić za moje błędy, Kapitanie. Miałeś rację - gdziekolwiek pójdę, ludzie umierają, a niewinna krew płynie. Jeśli wejdziemy razem do tego kościoła, to będzie jak kolejne Portobelo, a ja tego nie chcę.";
 			link.l1 = "Co tam się naprawdę wydarzyło?";
 			link.l1.go = "tonzag_church_2";
 		break;
 		
 		case "tonzag_church_2":
-			dialog.text = "Masakra. Chciałem przejść na emeryturę, Kapitanie. Chciałem zabrać złoto, moją żonę i wrócić do domu w Carcassonne. Wiedziałem, że Liga wyśle więcej ludzi, by dokończyć moją robotę, i wziąłem hojną zaliczkę od nowego mecenasa. Potem pozostało tylko napuścić straż miejską na moich dawnych wspólników i nowego pracodawcę. W tym całym zamieszaniu miałem zniknąć z pieniędzmi, a jeśli czas pozwoli, obrabować kilka tłustych kotów z Porto Bello.";
+			dialog.text = "Masakra. Chciałem przejść na emeryturę, Kapitanie. Chciałem zabrać złoto, moją żonę i wrócić do domu w Carcassonne. Wiedziałem, że Liga wyśle więcej ludzi, by dokończyć moją robotę, i wziąłem hojną zaliczkę od nowego mecenasa. Potem pozostało tylko napuścić straż miejską na moich dawnych wspólników i nowego pracodawcę. W tym całym zamieszaniu miałem zniknąć z pieniędzmi, a jeśli czas pozwoli, obrabować kilka tłustych kotów z Portobelo.";
 			link.l1 = "Dobry plan, choć zrobiłbym to inaczej. Zbyt wiele rzeczy może pójść nie tak.";
 			link.l1.go = "tonzag_church_2a";
 			link.l2 = "Sam nie jestem aniołem, ale twoje podejście sprawia, że nawet ja drżę. Jestem zaskoczony, że jeszcze mnie nie zdradziłeś, jak to zrobiłeś z Ligą, Hidalgiem, a nawet własną żoną.";
@@ -889,7 +889,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_church_2a":
-			dialog.text = "Everything that could go wrong, did go wrong. Shooting a three-pounder towards the governor's palace was a mistake. It barely scratched the governor himself, but his beautiful daughter, as I hear, had to have both her legs amputated below the knees to save her life. The response was horrific - a blood bath; great many people perished, Captain. Now you're looking at the last living witness to those events, and not long ago, you cut down another one yourself.";
+			dialog.text = "Wszystko, co mogło pójść nie tak, poszło nie tak. Wystrzelenie trzyfuntówki w kierunku pałacu gubernatora było błędem. Ledwo zadrasnęło samego gubernatora, ale jego pięknej córce, jak słyszałem, trzeba było amputować obie nogi poniżej kolan, żeby uratować jej życie. Odpowiedź była przerażająca - krwawa łaźnia; zginęło wielu ludzi, kapitanie. Teraz patrzysz na ostatniego żyjącego świadka tych wydarzeń, a niedawno sam zabiłeś kolejnego.";
 			link.l1 = "Wyjaśnij.";
 			link.l1.go = "tonzag_church_3";
 		break;
@@ -901,13 +901,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_church_3":
-			dialog.text = "Przebacz mi, Kapitanie, że nie powiedziałem ci wszystkiego po drodze. Kiedy się spotkaliśmy, myślałem, że jesteś tylko kolejnym łajdakiem jak ja. I wiesz, co zrobiłem najpierw? Wysłałem cię, żebyś po mnie posprzątał - zabić tego hiszpańskiego Don, którego początkowo nie chciałem zabić, a potem zdecydowałem się zdradzić. Tego Hidalgo, Rodrigueza...";
+			dialog.text = "Przebacz mi, Kapitanie, że nie powiedziałem ci wszystkiego po drodze. Kiedy się spotkaliśmy, myślałem, że jesteś tylko kolejnym łajdakiem jak ja. I wiesz, co zrobiłem najpierw? Wysłałem cię, żebyś po mnie posprzątał - zabić tego hiszpańskiego Dona, którego początkowo nie chciałem zabić, a potem zdecydowałem się zdradzić. Tego Hidalgo, Rodrigueza...";
 			link.l1 = "A po cóż ci był jego palec?";
 			link.l1.go = "tonzag_church_4";
 		break;
 		
 		case "tonzag_church_4":
-			dialog.text = "Bez sztuczek. To tylko próba, Kapitanie. Zatrudniamy tuziny młodych rzezimieszków jak ty każdego roku. Tylko nieliczni przechodzą podstawowy test uczciwości, a nawet oni giną w pierwszych operacjach. Nie miałeś przetrwać operacji z dziennikiem Fleetwooda. Planowałem po prostu wejść do domu, wykończyć ocalałych i zabrać dziennik.";
+			dialog.text = "Bez sztuczek. To była tylko próba, Kapitanie. Zatrudnialiśmy  tuziny młodych rzezimieszków jak ty każdego roku. Tylko nieliczni przechodzili podstawowy test uczciwości, a nawet oni gineli w pierwszych operacjach. Nie miałeś przetrwać operacji z dziennikiem Fleetwooda. Planowałem po prostu wejść do domu, wykończyć ocalałych i zabrać dziennik.";
 			link.l1 = "Jeśli mnie pamięć nie myli, historia potoczyła się nieco inaczej.";
 			link.l1.go = "tonzag_church_5";
 		break;
@@ -916,7 +916,7 @@ void ProcessDialogEvent()
 			dialog.text = "Tak było, Kapitanie. Nie wiem, co skłoniło mnie do pomocy, ale walczyłeś z Lisami z taką żądzą życia, że nawet mnie tym zaraziłeś, choćby na chwilę. W końcu, nieświadomie, uratowałeś mnie. Nic mi nie jesteś winien, Kapitanie. I nie wpuszczę cię tam. To moje sprawy, moje odkupienie.";
 			link.l1 = "Jak sobie życzysz, Hercule. Boli tracić takiego wojownika, ale ty zgubiłeś się dawno temu i nie jesteś wart więcej przelanej krwi. Nie jesteś mi też nic dłużny, i mam nadzieję, że znajdziesz odkupienie w tym małym kościele.";
 			link.l1.go = "tonzag_church_bad";
-			link.l2 = "Ładna przemowa, Hercul. Idź do diabła! Jeśli nie zauważyłeś, twoje problemy ostatnio stały się moimi. Jesteś moim oficerem i tylko ja zdecyduję, czy zasługujesz na przebaczenie czy nie. Więc będziesz musiał zostać z nami trochę dłużej i zasłużyć na swoje odkupienie odwagą jako część mojej załogi!";
+			link.l2 = "Ładna przemowa, Hercule. Idź do diabła! Jeśli nie zauważyłeś, twoje problemy ostatnio stały się moimi. Jesteś moim oficerem i tylko ja zdecyduję, czy zasługujesz na przebaczenie czy nie. Więc będziesz musiał zostać z nami trochę dłużej i zasłużyć na swoje odkupienie odwagą jako część mojej załogi!";
 			link.l2.go = "tonzag_church_good";
 		break;
 		

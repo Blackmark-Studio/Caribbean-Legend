@@ -67,14 +67,6 @@ void ProcessDialogEvent()
             else
             {
 	            AddQuestRecord("Gen_Contraband", "t1");
-				if (Pchar.quest.contraband.CurrentPlace == "shore30" || Pchar.quest.contraband.CurrentPlace == "shore31")
-				{
-					AddQuestUserData("Gen_Contraband", "sIsland", "Marie Galante");
-				}
-				if (Pchar.quest.contraband.CurrentPlace == "shore59")
-				{
-					AddQuestUserData("Gen_Contraband", "sIsland", "Tobago");
-				}
 				AddQuestUserData("Gen_Contraband", "sIsland", XI_ConvertString(GetIslandByCityName(npchar.city)));
 			}
 			AddQuestUserData("Gen_Contraband", "sLoc", GetConvertStr(Pchar.quest.contraband.CurrentPlace, "LocLables.txt"));

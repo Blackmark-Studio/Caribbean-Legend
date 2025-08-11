@@ -1,0 +1,84 @@
+food_1
+{
+老鼠
+}
+
+food_2
+{
+~ 变质 ~
+}
+
+food_3
+{
+~ 损坏 ~
+}
+
+food_4
+{
+~ 毁坏 ~
+}
+
+food_5
+{
+~ 件 ~
+}
+
+food_6
+{
+ @<FindRussianSailorString(cn, "No")> 因病死在 @<rChar.Ship.Name> 号上
+}
+
+food_7
+{
+ @<rChar.Ship.Name> 号船上药品短缺
+}
+
+food_8
+{
+ @<FindRussianSlavesString(cn, "No")> 因病死在 @<rChar.Ship.Name> 号上
+}
+
+food_9
+{
+在 @<rChar.Ship.Name> 号上, 人们渴望得到朗姆酒。 
+}
+
+food_10
+{
+ @<rChar.Ship.Name> 号上的食物还能维持 @<FindRussianDaysString(cn)> 
+}
+
+food_11
+{
+我们急需补充物资! 
+}
+
+food_12
+{
+奴隶叛乱! 
+}
+
+food_13
+{
+ @<rChar.Ship.Name> 号上的水手们正在挨饿。 船员的士气正在下降! 
+}
+
+food_14
+{
+水手们正在挨饿
+}
+
+food_15
+{
+奴隶们正在挨饿
+}
+
+food_16
+{
+ @<rChar.Ship.Name> 号上发生暴动!!! ~
+}
+
+food_17
+{
+船只离开编队
+}

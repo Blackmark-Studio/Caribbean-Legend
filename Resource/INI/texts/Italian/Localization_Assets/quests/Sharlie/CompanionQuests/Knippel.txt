@@ -1,4 +1,4 @@
-﻿Knippel_1
+Knippel_1
 {
 Hai usato la chiave
 }

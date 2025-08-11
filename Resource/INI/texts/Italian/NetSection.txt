@@ -1,4 +1,4 @@
-﻿Net_ShipDieFromPlayer 			{%1 <%2> affondò %3 <%4>.}
+Net_ShipDieFromPlayer 			{%1 <%2> affondò %3 <%4>.}
 Net_ShipDieFromCollisionLiveShip 	{%1 <%2> speronato %3 <%4>.}
 Net_ShipDieFromCollisionDeadShip 	{%1 <%2> sono andato a dare da mangiare agli squali! Guai a un tale navigatore!}
 Net_ShipDieFromCollisionIsland 		{%1 <%2> si è schiantato contro le rocce! Peccato per un navigatore del genere!}

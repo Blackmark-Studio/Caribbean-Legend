@@ -308,7 +308,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "¿Amor? Sí... Tal vez tengas razón. I... Estuve comprometida. En Barbados. Nos amábamos, pero... su padre me consideró un partido indigno. ¡Ja! No lo suficientemente rico. Es por eso que estoy aquí, en busca de tesoros para demostrar que están equivocados. ¿Tal vez sea en vano?";
+				dialog.text = "¿Amor? Sí... Tal vez tengas razón. Yo... Estuve comprometido en Barbados. Nos amábamos, pero... su padre me consideró un partido indigno. ¡Ja! No era lo suficientemente rico. Es por eso que estoy aquí, en busca de tesoros para demostrar que están equivocados. ¿Tal vez sea en vano?";
 				link.l1 = "¿Quizás deberías hablar con ella? Al diablo con el dueño de la plantación.";
 				link.l1.go = "LadyBeth_DialogInCity_Second_3_love_2";
 			}
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_DialogInCity_Second_3_love_2":
-			dialog.text = "Hablar... Sí, tal vez. ¿Pero qué diría? ¿'Lo siento, no pude darte una vida decente'? No, debo devolver un ganador, o no volver en absoluto.";
+			dialog.text = "Hablar... Sí, tal vez. ¿Pero qué diría? ¿'Lo siento, no pude darte una vida decente'? No, tengo que volver como un ganador, o no volver en absoluto.";
 			link.l1 = "...";
 			link.l1.go = "LadyBeth_DialogInCity_Second_4";
 		break;
@@ -628,7 +628,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "LadyBeth_Irons_4":
-			dialog.text = "No, hay algo más. Este tipo tenía poder sobre ellos. Verdadero poder. Y también escuché que estaba comprometido con una chica rica de Barbados. Es extraño que no se casara con ella después de conseguir todos estos tesoros. El típico soldado que no sabe cuándo terminar una la guerra.";
+			dialog.text = "No, hay algo más. Este tipo tenía poder sobre ellos. Verdadero poder. Y también escuché que estaba comprometido con una chica rica de Barbados. Es extraño que no se casara con ella después de conseguir todos estos tesoros. El típico soldado que no sabe cuándo terminar una guerra.";
 			link.l1 = "Gracias, Tommy. Eres un verdadero hombre que reflexiona.";
 			link.l1.go = "LadyBeth_Irons_5";
 		break;

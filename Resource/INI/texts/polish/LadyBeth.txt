@@ -1,4 +1,4 @@
-LadyBeth_Ship_Name {Lady Beth}
+LadyBeth_Ship_Name {Panienka Beth}
 
 LadyBeth_Cap_Name {Albert}
 
@@ -12,27 +12,27 @@ LadyBeth_Elizabeth_Name {Elizabeth}
 
 LadyBeth_Elizabeth_lastname {Bishop}
 
-LadyBeth_WorldMap {Kapitanie, widzę 'Lady Beth'. Co za piękność! Ale nie możemy jej przechwycić - jej kapitan jest zbyt dobry!}
+LadyBeth_WorldMap {Kapitanie, widzę 'Panienke Beth'. Co za piękność! Ale nie możemy jej przechwycić - jej kapitan jest zbyt dobry!}
 
-LadyBeth_Rum1 {Słyszałeś o kapitanie Albercie Blackwoodzie? Były oficer Królewskiej Marynarki, a teraz najbardziej udany poszukiwacz skarbów w całym archipelagu! Jego szkuner 'Lady Beth' to prawdziwe dzieło sztuki. Jego załoga żyje jak lordowie, a on sam chodzi w jedwabiach. Francuskie władze zdejmują przed nim kapelusze, mimo że jest Anglikiem. Mówią, że w ostatnim roku znalazł tyle złota, że mógłby kupić tytuł i kilka plantacji na Barbadosie.}
+LadyBeth_Rum1 {Słyszałeś o kapitanie Albercie Blackwoodzie? Były oficer Królewskiej Marynarki, a teraz najbardziej udany poszukiwacz skarbów w całym archipelagu! Jego snow 'Panienka Beth' to prawdziwe dzieło sztuki. Jego załoga żyje jak lordowie, a on sam chodzi w jedwabiach. Francuskie władze zdejmują przed nim kapelusze, mimo że jest Anglikiem. Mówią, że w ostatnim roku znalazł tyle złota, że mógłby kupić tytuł i kilka plantacji na Barbadosie.}
 
-LadyBeth_Rum2 {Już słyszałeś? Blackwooda już nie ma! Mówią, że była prawdziwa rzeź - jego obóz został całkowicie zniszczony. Nikt nie wie, kto to zrobił, ale jeden rybak przysięga, że widział bitwę na brzegu. Profesjonalistę takiego jak Blackwood nie jest łatwo pokonać... Co teraz stanie się z jego skarbami? Morze zabrało kolejną legendę...}
+LadyBeth_Rum2 {Słyszałeś? Blackwooda już nie ma! Mówią, że to była prawdziwa rzeź - jego obóz został całkowicie zniszczony. Nikt nie wie, kto to zrobił, ale jeden rybak przysięga, że widział bitwę na brzegu. Profesjonalistę takiego jak Blackwood nie jest łatwo pokonać... Co teraz stanie się z jego skarbami? Morze zabrało kolejną legendę...}
 
 LadyBeth_Rum3 {Widziałeś? Sam Blackwood jest w mieście! Jest jednak dziwny. Tym razem zgromadził tyle zapasów, jakby szedł na wojnę. Ciągle jeździ na Kajmany, coś tam kopie. Myślałbyś, że z takimi pieniędzmi mógłby żyć i cieszyć się życiem, ale on wciąż kopie i kopie. Marynarze mówią, że ostatnio wrócili stamtąd ze stratami. To pierwszy raz.}
 
-LadyBeth_Rum4 {Popatrz, sam kapitan Blackwood przybył! Wiesz, dlaczego tak kocha Francuzów? Mówią, że miał narzeczoną na Barbadosie, z bogatej rodziny. Jej ojciec nie dał błogosławieństwa - powiedział, że biedny oficer nie jest partią dla jego córki. A teraz! Teraz mógłby kupić najbogatszą plantację na wyspie! Ale jest już za późno... podobno wyszła za Bishopa.}
+LadyBeth_Rum4 {Popatrz, przybył sam kapitan Blackwood! Wiesz, dlaczego tak kocha Francuzów? Mówią, że miał narzeczoną na Barbadosie, z bogatej rodziny. Jej ojciec nie dał błogosławieństwa - powiedział, że biedny oficer nie jest partią dla jego córki. A teraz! Teraz mógłby kupić najbogatszą plantację na wyspie! Ale jest już za późno... podobno wyszła za Bishopa.}
 
 LadyBeth_Rum5 {Kapitan Blackwood przybył do portu! Wiesz, kiedyś służył w Królewskiej Marynarce. I nie jako zwykły marynarz - jako oficer! Tak zdolny, że przepowiadano mu admiralską przyszłość. A potem nagle - zdezerterował. Zabrał statek i połowę załogi. Teraz Anglicy oferują fortunę za jego głowę. Ale co go to obchodzi? Wyprzedza ich i jeszcze się z tego śmieje!}
 
-LadyBeth_Rum6 {Słyszałeś? Blackwood ze swoją 'Lady Beth' zacumował w naszym porcie! Wcześniej, żeby do niego dołączyć, potrzebowałeś rekomendacji, doświadczenia i referencji. A teraz? Bierze prawie każdego bez sortowania. Ostatnie ekspedycje nie poszły dobrze, stracił ludzi. Widziałem jego marynarzy w tawernie - nie piją jak kiedyś, stracili ducha. Coś się zmieniło.}
+LadyBeth_Rum6 {Słyszałeś? Blackwood ze swoją 'Panienką Beth' zacumował w naszym porcie! Wcześniej, żeby do niego dołączyć, potrzebowałeś rekomendacji, doświadczenia i referencji. A teraz? Bierze prawie każdego bez sortowania. Ostatnie ekspedycje nie poszły dobrze, stracił ludzi. Widziałem jego marynarzy w tawernie - nie piją jak kiedyś, stracili ducha. Coś się zmieniło.}
 
 LadyBeth_Rum7 {Popatrz, sam Blackwood przybył do miasta! Wiesz, dlaczego go tu nie ruszają? Dobrze płaci naszym urzędnikom! Każdy dostaje udział w jego znaleziskach. Dlatego przymykają oko na to, że jest angielskim dezerterem. Pieniądze nie śmierdzą! Nawet gubernator osobiście przychodzi uścisnąć mu dłoń, gdy wpływa do portu.}
 
-LadyBeth_Rum8 {Widziałeś? Blackwood i jego 'Lady Beth' są w porcie! Nie rozumiem tego kapitana. Bogaty jak Krezus, ale zawsze chce więcej. Czego szuka? O czym myśli, gdy patrzy na morze? Ma wszystko, o czym marynarz mógłby marzyć. Ale myślę, że w jego głowie siedzi jakiś demon, który coś mu szepce...}
+LadyBeth_Rum8 {Widziałeś? Blackwood i jego 'Panienka Beth' są w porcie! Nie rozumiem tego kapitana. Bogaty jak Krezus, ale zawsze chce więcej. Czego szuka? O czym myśli, gdy patrzy na morze? Ma wszystko, o czym marynarz mógłby marzyć. Ale myślę, że w jego głowie siedzi jakiś demon, który coś mu szepce...}
 
 LadyBeth_Rum9 {Cicho! Blackwood jest w mieście, a ten ksiądz jest z nim. Widziałeś go? Dziwny typ. Nie miejscowy, to pewne. Kiedy jest blisko kapitana, ten staje się jak inna osoba - napięty jak struna.}
 
-LadyBeth_Rum10 {Sam Blackwood zaszczycił nasz port! Niesamowity człowiek. Ma wszystko: pieniądze, sukces, szacunek. Jego załoga poszłaby za nim w ogień i wodę. Ale jego oczy są wciąż głodne, szukające. Jakby brakowało mu czegoś ważnego w tym życiu. Gdybym był na jego miejscu, dawno bym się uspokoił, kupił posiadłość i żył szczęśliwie.}
+LadyBeth_Rum10 {Sam Blackwood zaszczycił nasz port swoją obecnością! Niesamowity człowiek. Ma wszystko: pieniądze, sukces, szacunek. Jego załoga poszłaby za nim w ogień i wodę. Ale jego oczy są wciąż głodne, szukające. Jakby brakowało mu czegoś ważnego w tym życiu. Gdybym był na jego miejscu, dawno bym się uspokoił, kupił posiadłość i żył szczęśliwie.}
 
 LadyBeth_Rum11 {Popatrz! Blackwood ze swoją załogą jest w mieście! Jego pojawienie się to prawdziwe święto dla naszego portu. Jego marynarze kupują wszystko bez targowania się. A on sam! Taki elegancki dżentelmen, choć z odciskami na dłoniach. Za każdym razem zamawia u nas najlepsze tkaniny i wina. I płaci złotem, czystym złotem!}
 

@@ -231,8 +231,8 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("Fleetwood_RemoveShip");	
 			if (CheckCharacterItem(pchar, "JacobJournal"))//проверяем журнал
 			{
-				dialog.text = "Tak, jestem świadomy, że odniosłeś sukces w naszym planie. Wyeliminowałeś nikczemnego pirata i przejąłeś jego statek. Jakie jest jej prawdziwe imię?";
-				link.l1 = "Fata Morgana";
+				dialog.text = "Tak, jestem świadomy, że odniosłeś sukces w naszym planie. Wyeliminowałeś nikczemnego pirata i przejąłeś jego statek. Jakie jest jego prawdziwe imię?";
+				link.l1 = "Morgan Fate";
 				link.l1.go = "Abigile";
 			}
 			else//нет журнала - нет продолжения квеста
@@ -249,7 +249,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "bussol");
 			DeleteAttribute(pchar, "questTemp.HWIC.TakeQuestShip");//ПУ откроем
 			DeleteAttribute(pchar, "questTemp.HWIC.EngEquip");
-			AddSimpleRumourCity("They say that you and Richard Fleetwood has planned some military operation and you have personally destroyed that elusive pirate who has been robbing our trade ships. You are a real hero, captain!", "SentJons", 20, 3, "");
+			AddSimpleRumourCity("Mówią, że ty i Richard Fleetwood zaplanowaliście jakąś operację militarną i osobiście zniszczyliście tego nieuchwytnego pirata, który rabował nasze statki handlowe. Jesteś prawdziwym bohaterem, kapitanie!", "SentJons", 20, 3, "");
 		break;
 		
 		case "Abigile":
@@ -341,7 +341,7 @@ void ProcessDialogEvent()
 		case "Fleetwood_LastTask_5":
 			RemoveItems(PChar, "GastonHead", 1);
 			dialog.text = "B-r-r... okropne..."+pchar.name+", czekaj... to na pewno on! To głowa łajdaka, który próbował mnie zabić, oślepiając pieprzem!";
-			link.l1 = "Znasz go? Nazywa się Gaston, barman z Bridgetown i zwolennik van Berga, kapitana statku-widma. Rozpoznałem go od razu, ale nie wiem, kto go zabił i jak jego odcięta głowa znalazła się w skrzyni Salomona na nieznanej wyspie!";
+			link.l1 = "Znasz go? Nazywa się Gaston, barman z Bridgetown i zwolennik van Berga, kapitana statku-widmo. Rozpoznałem go od razu, ale nie wiem, kto go zabił i jak jego odcięta głowa znalazła się w skrzyni Salomona na nieznanej wyspie!";
 			link.l1.go = "Fleetwood_LastTask_6";
 		break;
 		
@@ -362,7 +362,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.HWIC.Eng = "toBarbados";
 			AddQuestRecord("Holl_Gambit", "2-21");
 			SetFunctionTimerCondition("HWICEng_toBarbadosOver", 0, 0, 20, false);//чтобы не тянули
-			AddSimpleRumourCity("Oh, captain, I have heard that Richard Fleetwood really admires you. Trust me, his praise costs a lot. You must be a very important person...", "SentJons", 20, 3, "");
+			AddSimpleRumourCity("Och, kapitanie, słyszałem, że Richard Fleetwood naprawdę cię podziwia. Uwierz mi, jego pochwały kosztują dużo. Musisz być bardzo ważną osobą...", "SentJons", 20, 3, "");
 			AddMapQuestMarkCity("Bridgetown", false);
 			AddLandQuestMark(characterFromId("Bridgetown_tavernkeeper"), "questmarkmain");
 		break;
@@ -432,7 +432,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "InTerksShore_3":
-			dialog.text = "Ja? To staje się coraz bardziej interesujące... Myślę, że zaczynam rozumieć, co się tu naprawdę dzieje. Powiedz mi, czy Abigail żyje? Ona żyje, czy ją zamordowałeś, drań?";
+			dialog.text = "Ja? To staje się coraz bardziej interesujące... Myślę, że zaczynam rozumieć, co się tu naprawdę dzieje. Powiedz mi, czy Abigail żyje? Ona żyje, czy ją zamordowałeś, draniu?";
 			link.l1 = "Przypuszczam, że zostawię cię w niewiedzy co do jej losu. Jedno tylko musisz wiedzieć - jej tu nie ma. Odegrała swoją rolę znakomicie, jesteś teraz w moich rękach. Miłość to takie cudowne uczucie... Jakżebym inaczej wywabił lisa z jego nory na otwartą przestrzeń? Ha-ha-ha!";
 			link.l1.go = "InTerksShore_4";
 		break;

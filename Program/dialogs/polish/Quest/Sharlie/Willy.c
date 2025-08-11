@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "catoche_1":
-			dialog.text = "Szkot, monsieur. Kapitan angielskiej marynarki William Paterson, a to mój pierwszy oficer i prawa ręka, Archibald Calhoun. Rzecz w tym, że w dżungli znajduje się hiszpański fort. Moje zadanie to wypędzenie przeklętych łajdaków z fortu, który zbudowali niebezpiecznie blisko angielskiego terytorium.\nNiedawno próbowaliśmy go szturmować, ale łajdaki zdołały się utrzymać pomimo ich strat. Wyruszyłem po posiłki i...";
+			dialog.text = "Szkotem, monsieur. Kapitan angielskiej marynarki William Paterson, a to mój pierwszy oficer i prawa ręka, Archibald Calhoun. Rzecz w tym, że w dżungli znajduje się hiszpański fort. Moje zadanie to wypędzenie przeklętych łajdaków z fortu, który zbudowali niebezpiecznie blisko angielskiego terytorium.\nNiedawno próbowaliśmy go szturmować, ale łajdaki zdołały się utrzymać pomimo ich strat. Wyruszyłem po posiłki i...";
 			link.l1 = "Nie ma potrzeby teraz tego robić. Wykonałem twoje niedokończone zadanie, fort w dżungli jest pusty. Hiszpański dowódca Diego de Montoya nie żyje, a jego eskadra została również zniszczona.";
 			link.l1.go = "catoche_2";
 		break;
@@ -40,7 +40,7 @@ void ProcessDialogEvent()
 		
 		case "catoche_3":
 			dialog.text = "Khmm... a cóż to za powód miał Don Diego, by cię zaatakować, co kapitanie?";
-			link.l1 = "Między nami jest od dawna zatarg... Od dnia, kiedy to eskadra, którą dowodził, zaatakowała St. Pierre i nieco później została wyeliminowana przy moim bezpośrednim udziale.";
+			link.l1 = "Między nami był od dawna zatarg... Od dnia, kiedy to eskadra, którą dowodził, zaatakowała St. Pierre i nieco później została wyeliminowana przy moim bezpośrednim udziale.";
 			link.l1.go = "catoche_4";
 		break;
 		
@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth.GirlKill"))
 			{
 				dialog.text = "Zmartwiony o swoją damę, kapitanie? Twoja kobieta leży tam w krzakach z dziurą w czole. Wytyczyła ci drogę i wkrótce do niej dołączysz. Powiem, była taką ładną dziewczyną! Mam nadzieję, że przeleciałeś ją więcej niż raz?";
-				link.l1 = "Ty... TY SKURWYSYNIE! Zabiłeś moją ukochaną?! Zapłacisz za to, ty chuju!";
+				link.l1 = "Ty... TY SKURWYSYNIE! Zabiłeś moją ukochaną?! Zapłacisz za to, ty chuju! Rozpieldole ciebię i całę to anglikańskie zgromadzenie!";
 				link.l1.go = "isladevieques_6";
 			}
 			else
@@ -141,7 +141,7 @@ void ProcessDialogEvent()
 		
 		case "isladevieques_6":
 			dialog.text = "Rozśmieszasz mnie. Jeden przeciwko całemu oddziałowi! Tak czy inaczej, dość gadania... Celujcie muszkiety! Ognia!";
-			link.l1 = "...";
+			link.l1 = "Pa tera!";
 			link.l1.go = "isladevieques_7";
 		break;
 		

@@ -1,0 +1,12 @@
+locations_loader_1
+{
+首次访问~
+}
+locations_loader_2
+{
+所有殖民地已访问! 
+}
+locations_loader_3
+{
+已访问神秘地点! 
+}

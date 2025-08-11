@@ -1,4 +1,4 @@
-﻿Caleuche_1
+Caleuche_1
 {
 Tutti i giorni
 }

@@ -19,7 +19,7 @@ seg_Slaves 			{Esclavos}
 seg_Wheat 			{Trigo}
 seg_Ebony 			{Ébano}
 seg_Chocolate 		{Cacao}
-seg_Suga 			{Azúcar}
+seg_Sugar 			{Azúcar}
 seg_Wine 			{Vino}
 seg_ShipSilk 		{Seda}
 seg_Rum 			{Ron}

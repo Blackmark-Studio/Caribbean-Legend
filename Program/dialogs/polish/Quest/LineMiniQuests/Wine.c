@@ -22,7 +22,7 @@ void ProcessDialogEvent()
 			dialog.text = "Przyniosłeś butelkę?";
 			if (CheckCharacterItem(pchar, "potionwine"))
 			{
-				link.l1 = "Tak, zrobiłem to. Zapłaciłem 700 pesos, więc oczekuję od ciebie 1000 pesos.";
+				link.l1 = "Tak. Zapłaciłem 700 pesos, więc oczekuję od ciebie 1000 pesos.";
 				link.l1.go = "Wine_fort_1";
 			}
 			link.l2 = "Nie, pracuję nad tym.";
@@ -34,7 +34,7 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, 1000);
 			RemoveItems(PChar, "potionwine", 1);
 			dialog.text = "Chwała Bogu, już zaschło mi w gardle. Dziękuję uprzejmie, panie! Tu masz swoje tysiąc, a ja wezmę twoją butelkę, haha! Hej, skoro już robimy tu taki dobry interes, mam dla ciebie kolejną prośbę\nCzy mógłbyś zdobyć dla mnie i moich przyjaciół więcej wina na nasz... przyszły użytek? Właśnie obrobiliśmy bandę przemytników, więc mamy trochę grosza do wydania, hehe...";
-			link.l1 = "Przykro mi, kumplu, nie mam czasu na kolejną wyprawę po gorzałę dla ciebie.";
+			link.l1 = "Przykro mi, żołnierzu, nie mam czasu na kolejną wyprawę po gorzałę dla ciebie.";
 			link.l1.go = "Wine_fort_exit";
 			link.l2 = "Pieniądze zawsze się przydadzą. Ile butelek potrzebujesz?";
 			link.l2.go = "Wine_fort_2";
@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 	break;
 	
 		case "Wine_fort_2":
-			dialog.text = "Przy cenie 1000 sztuk ośmiu za butelkę, możemy sobie pozwolić na zakup sześćdziesięciu butelek, ale nie więcej. Ale też nie przynoś nam mniej niż dziesięć - to tylko sprawi, że będziemy spragnieni!";
+			dialog.text = "Przy cenie 1000 pesos za butelkę, możemy sobie pozwolić na zakup sześćdziesięciu butelek, ale nie więcej. Ale też nie przynoś nam mniej niż dziesięć - to tylko sprawi, że będziemy spragnieni!";
 			link.l1 = "Zrozumiano, nie więcej niż 60 butelek i nie mniej niż dziesięć. Przywiozę twoje wino.";
 			link.l1.go = "Wine_fort_3";
 		break;
@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Witaj z powrotem. Zobaczmy... Przyniosłeś "+sti(pchar.questTemp.Wine.Qty)+" butelek. Ładnie! Wezmę je. Zapłata wynosi "+FindRussianMoneyString(sti(pchar.questTemp.Wine.Money))".";
-				link.l1 = "Dziękuję. Upewnij się, że ty i twoi żołnierze wznieście toast za moje zdrowie!";
+				link.l1 = "Dziękuję. Upewnij się, że ty i twoi żołnierze wzniesiecie toast za moje zdrowie!";
 				link.l1.go = "Wine_take_1";
 				RemoveItems(PChar, "potionwine", sti(pchar.questTemp.Wine.Qty));
 			}
@@ -117,7 +117,7 @@ void ProcessDialogEvent()
 			DelLandQuestMark(npchar);
 			DialogExit();
 			PlaySound("interface\important_item.wav");
-			Log_Info ("You handed over the wine");
+			Log_Info ("Przekazałeś wino");
 			pchar.quest.Soldier_wait.over = "yes";//снять прерывание
 			DeleteAttribute(pchar, "questTemp.Wine.City");
 			sld = characterFromId(pchar.questTemp.Wine.id);

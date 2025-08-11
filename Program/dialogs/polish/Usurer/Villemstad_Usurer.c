@@ -50,7 +50,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth_2_1":
-			dialog.text = "Ach, na pewno jesteś "+GetFullName(pchar)+", przyjaciel samego gubernatora, który ujawnił przestępczy spisek Lucasa Rodenburga... Jakże mógłbym o tym zapomnieć? Oczywiście, powiem ci.";
+			dialog.text = "Ach, czyli to ty jesteś "+GetFullName(pchar)+", przyjaciel samego gubernatora, który ujawnił przestępczy spisek Lucasa Rodenburga... Jakże mógłbym o tym zapomnieć? Oczywiście, powiem ci.";
 			link.l1 = "Zatem, zamieniam się w słuch.";
 			link.l1.go = "guardoftruth_4";
 		break;
@@ -65,7 +65,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "W porządku. Za skrzynię wypełnioną po brzegi złotymi dublonami, przypuszczam, że opowiem ci o tych, którzy cię wyprzedzili, by dokonać zakupu.";
 			if (CheckCharacterItem(pchar, "chest"))
 			{
-				link.l1 = "Oto one. Są dla mnie bardzo cenne...";
+				link.l1 = "Oto ona. Są dla mnie bardzo cenne...";
 				link.l1.go = "guardoftruth_3";
 			}
 			else
@@ -77,7 +77,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "guardoftruth_3":
 			RemoveItems(pchar, "chest", 1);
-			Log_Info("You've given a chest of doubloons");
+			Log_Info("Przekazałeś skrzynię z dublonami");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Cudownie. W takim razie jestem skłonny podzielić się z tobą pewnymi informacjami.";
 			link.l1 = "Zamieniam się w słuch.";
@@ -92,7 +92,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth_5":
-			dialog.text = "Bo ten chciwy łupieżca samotnych angielskich kupców niedawno wpadł ze swoją szkunerą prosto w łapy pułkownika Foxa. Wiesz, kto to taki?";
+			dialog.text = "Bo ten chciwy łupieżca samotnych angielskich kupców niedawno wpadł ze swoim szkunerem prosto w łapy pułkownika Foxa. Wiesz, kto to taki?";
 			link.l1 = "Zgadza się! Dowódca 'morskich lisów' w St. Jones na Antigui...";
 			link.l1.go = "guardoftruth_6";
 		break;
@@ -104,14 +104,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth_7":
-			dialog.text = "Ostensory został niedawno nabyty przez Senorę Belindę de Ribero z Cumany. Bardzo znakomita senora, krewna samego Fernanda de Villegas, gubernatora Cumany. Domyślam się, że chciała go przynieść jako dar dla kościoła.";
-			link.l1 = "Senora Belinda de Ribero? Znajdę ją w Cumana, prawda?";
+			dialog.text = "Ostensory został niedawno nabyty przez Senorę Belindę de Ribero z Cumany. Bardzo znakomita senora, krewna samego Fernanda de Villegas, gubernatora Kumany. Domyślam się, że chciała go przynieść jako dar dla kościoła.";
+			link.l1 = "Senora Belinda de Ribero? Znajdę ją w Kumanie, prawda?";
 			link.l1.go = "guardoftruth_8";
 		break;
 		
 		case "guardoftruth_8":
 			dialog.text = "Z pewnością. Sama powiedziała, że wraca prosto do domu z Willemstad.";
-			link.l1 = "Dobrze. Dziękuję, "+npchar.name+" , byłeś wielką pomocą!";
+			link.l1 = "Dobrze. Dziękuję, "+npchar.name+", byłeś wielką pomocą!";
 			link.l1.go = "guardoftruth_9";
 		break;
 		

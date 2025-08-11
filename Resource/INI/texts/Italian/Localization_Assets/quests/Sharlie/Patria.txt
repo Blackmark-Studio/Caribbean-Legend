@@ -1,4 +1,4 @@
-﻿Patria_1
+Patria_1
 {
 Noel
 }

@@ -1011,7 +1011,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			dialog.text = "Está bien. Puedo ofrecerte... digamos..."+Pchar.QuestTemp.Deposits.(sDepositType1).Interest+" %. Por mes, por supuesto.";
+			dialog.text = "Está bien. Puedo ofrecerte... digamos... un "+Pchar.QuestTemp.Deposits.(sDepositType1).Interest+" por ciento al mes.";
 			Link.l1 = "Bien, funciona para mí.";
 			Link.l1.go = "Deposit_placed";
 			Link.l2 = "Sería mejor cambiar la suma.";
@@ -1182,7 +1182,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			dialog.text = "Está bien. Puedo ofrecerte... digamos..."+Pchar.QuestTemp.Deposits.(sDepositType2).Interest+" %. Por mes, por supuesto.";
+			dialog.text = "Está bien. Puedo ofrecerte... digamos... un "+Pchar.QuestTemp.Deposits.(sDepositType2).Interest+" por ciento al mes.";
 			Link.l1 = "Me funciona.";
 			Link.l1.go = "Deposit_placed_dub";
 			Link.l2 = "Mejor cambiaré la suma.";

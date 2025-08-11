@@ -51,7 +51,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AlonsoNaPalube_2":
-			dialog.text = "Załoga chce wiedzieć, jakie macie plany wobec Kajmanu. Ludzie się niepokoją.";
+			dialog.text = "Załoga chce wiedzieć, jakie masz plany wobec Kajmanu. Ludzie się niepokoją.";
 			link.l1 = "Jeszcze nie zdecydował"+GetSexPhrase("em","am")+". A dlaczego ludzie się niepokoją, Alonso?";
 			link.l1.go = "AlonsoNaPalube_3";
 		break;
@@ -201,13 +201,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_DialogInCity_First_4":
-			dialog.text = "Śladach Hiszpanów? Starej broń? Monet z czasów konkwistadorów?";
+			dialog.text = "Śladach Hiszpanów? Starej broni? Monet z czasów konkwistadorów?";
 			link.l1 = "Niczego takiego nie znalazłem.";
 			link.l1.go = "LadyBeth_DialogInCity_First_5";
 		break;
 		
 		case "LadyBeth_DialogInCity_First_5":
-			dialog.text = "Lokalnych legend? Opowieści o Cortesie? Coś o grobach?";
+			dialog.text = "Lokalnych legend? Opowieści o Cortezie? Coś o grobach?";
 			link.l1 = "Przepraszam, kapitanie, ale nie posiadam takich informacji. A to wszystko zaczyna przypominać przesłuchanie.";
 			link.l1.go = "LadyBeth_DialogInCity_First_6";
 		break;
@@ -258,7 +258,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_DialogInCity_First_Helena_4":
-			dialog.text = "Dokładnie! Na morzu, jak i w życiu, nie liczą się tytuły, lecz rezultaty. Miło mi panią poznać, kapitanie McArthur. Mam nadzieję, że jeszcze się spotkamy. Może wpadnie pani na kieliszek wina, gdy wrócę z wyprawy?";
+			dialog.text = "Dokładnie! Na morzu, jak i w życiu, nie liczą się tytuły, lecz rezultaty. Miło mi było panią poznać, kapitanie McArthur. Mam nadzieję, że jeszcze się spotkamy. Może wpadnie pani na kubek wina, gdy wrócę z wyprawy?";
 			link.l1 = "Może. Powodzenia w poszukiwaniach, kapitanie.";
 			link.l1.go = "LadyBeth_DialogInCity_First_Helena_5_harizma";
 			link.l2 = "Nie interesuje mnie to. Ale powodzenia w poszukiwaniach, kapitanie.";
@@ -282,7 +282,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_DialogInCity_Second_1": // drugi dialog
-			dialog.text = "Ach, kapitanie "+pchar.lastname+"! Miło panią widzieć. Usiądzie pani?";
+			dialog.text = "Ach, kapitanie "+pchar.lastname+"! Miło pana widzieć. Usiądzie pan?";
 			link.l1 = "Z przyjemnością.";
 			link.l1.go = "LadyBeth_DialogInCity_Second_2";
 		break;
@@ -295,7 +295,7 @@ void ProcessDialogEvent()
 			link.l2.go = "LadyBeth_DialogInCity_Second_3_sokrovisha";
 			link.l3 = "Cenne i unikalne wyposażenie. Dobra szpada lub pistolet są warte więcej niż złoto.";
 			link.l3.go = "LadyBeth_DialogInCity_Second_3_oruzhie";
-			link.l4 = "Wiedza. Najcenniejszym skarbem jest to, co masz w głowie.";
+			link.l4 = "Wiedza. Najcenniejszym skarbem jest to, co ma się w głowie.";
 			link.l4.go = "LadyBeth_DialogInCity_Second_3_znania";
 		break;
 		
@@ -308,7 +308,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Miłość? Tak... Może masz rację. Byłem... byłem zaręczony. Na Barbadosie. Kochaliśmy się, ale... jej ojciec uznał mnie za nieodpowiednią partię. Ha! Zbyt biedną. Dlatego tu jestem - szukam skarbów, by im wszystkim udowodnić. Może na próżno?";
+				dialog.text = "Miłość? Tak... Może masz rację. Byłem... byłem zaręczony. Na Barbadosie. Kochaliśmy się, ale... jej ojciec uznał mnie za nieodpowiednią partię. Ha! Zbyt biednego. Dlatego tu jestem - szukam skarbów, by im wszystkim udowodnić. Może na próżno?";
 				link.l1 = "Może po prostu powinieneś z nią porozmawiać? Do diabła z tym plantatorem.";
 				link.l1.go = "LadyBeth_DialogInCity_Second_3_love_2";
 			}
@@ -347,7 +347,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_DialogInCity_Second_3_oruzhie":
-			dialog.text = "Interesujące. Praktyczne. Mam arkebuzę... prawdziwą, z czasów konkwistadorów. Prezent od pewnego księdza. Czasami myślę, że jest więcej warta niż całe złoto, które znalazłem. Ale... to nie rozwiąże moich problemów.";
+			dialog.text = "Interesujące. Praktyczne. Mam arkebuz... prawdziwy, z czasów konkwistadorów. Prezent od pewnego księdza. Czasami myślę, że jest wart więcej niż całe złoto, które znalazłem. Ale... to nie rozwiąże moich problemów.";
 			link.l1 = "Dobra broń może rozwiązać wiele problemów. I nigdy cię nie zdradzi.";
 			link.l1.go = "LadyBeth_DialogInCity_Second_3_oruzhie_2";
 			AddComplexSelfExpToScill(50, 50, 50, 50);
@@ -383,7 +383,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_DialogInCity_Third_2": // третий диалог
-			dialog.text = "Ach, "+pchar.name+"! Miło pana widzieć. Mam świetne wieści - w końcu znalazłem rozwiązanie swoich problemów. Wkrótce ruszam na wyprawę i tym razem wrócę z prawdziwym skarbem! Przyjacielska rada - trzymaj się z dala od Kajmana. To teraz mój teren.";
+			dialog.text = "Ach, "+pchar.name+"! Miło pana widzieć. Mam świetne wieści - w końcu znalazłem rozwiązanie swoich problemów. Wkrótce ruszam na wyprawę i tym razem wrócę z prawdziwym skarbem! Przyjacielska rada - trzymaj się z dala od wyspy Kajman. To teraz mój teren.";
 			link.l1 = "Kajman nie należy do ciebie, Albercie. Nie masz do niego królewskich praw. To piractwo.";
 			link.l1.go = "LadyBeth_DialogInCity_Third_3_harizma";
 			link.l2 = "Grozi mi pan, Blackwood?";
@@ -411,7 +411,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_DialogInCity_Third_3_oruzhie_2":
-			dialog.text = "I panu powodzenia, kapitanie. Mam nadzieję, że nie będzie panu potrzebne. Żegnaj.";
+			dialog.text = "I panu życzę szczęścia, kapitanie. Mam nadzieję, że nie będzie panu potrzebne. Żegnam.";
 			link.l1 = ""+Goodbye()+".";
 			link.l1.go = "LadyBeth_DialogInCity_Third_4";
 		break;
@@ -427,14 +427,14 @@ void ProcessDialogEvent()
 		case "LadyBeth_abordage":
 			if (CheckAttribute(pchar, "questTemp.LadyBeth_DialogInCity_Second"))
 			{
-				dialog.text = "Wy?!! Myślicie, że się poddam? Myślicie, że wrócę do nędzy? Wolę zginąć, niż znów głodować w slumsach! Żadnej litości, żadnej nagrody, żadnego zwycięstwa! Pod koją jest beczka z prochem... Wszyscy pójdziemy na dno!";
+				dialog.text = "Ty?!! Myślisz, że się poddam? Myślisz, że wrócę do nędzy? Wolę zginąć, niż znów głodować w slumsach! Żadnej litości, żadnej nagrody, żadnego zwycięstwa! Pod koją jest beczka z prochem... Wszyscy pójdziemy na dno!";
 				link.l1 = "...";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("LadyBeth_Lovushka");
 			}
 			else
 			{
-				dialog.text = "Kim jesteście, by mnie atakować?! Myślicie, że się poddam? Nie! Wolę zginąć, niż znów głodować w slumsach! Żadnej litości, żadnej nagrody, żadnego zwycięstwa! Pod koją jest beczka z prochem... Wszyscy pójdziemy na dno!";
+				dialog.text = "Kim jesteś, by mnie atakować?! Myślisz, że się poddam? Nie! Wolę zginąć, niż znów głodować w slumsach! Żadnej litości, żadnej nagrody, żadnego zwycięstwa! Pod koją jest beczka z prochem... Wszyscy pójdziemy na dno!";
 				link.l1 = "...";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("LadyBeth_Lovushka");
@@ -445,15 +445,15 @@ void ProcessDialogEvent()
 		case "LadyBeth_BlackWood_Boss":
 			if (CheckAttribute(pchar, "questTemp.LadyBeth_DialogInCity_Second"))
 			{
-				dialog.text = "Kapitanie! Przecież ostrzegałem. Teraz zapłacisz za swoją ciekawość.";
+				dialog.text = "Kapitanie, co ty tu robisz?! Przyprowadziłeś tu swoich ludzi? Przecież ostrzegałem. Teraz zapłacisz za swoją ciekawość!";
 			}
 			else
 			{
-				dialog.text = "Kim jesteś i jak śmiesz wkraczać na mój teren?! Ta wyspa należy do mnie!";
+				dialog.text = "Kim jesteś i jak śmiesz wkraczać na mój teren z tą hołotą?! Ta wyspa należy do mnie!";
 			}
-			link.l1 = "Zobaczymy, Blackwood. Dziś na świecie będzie o jednego opętanego mniej.";
+			link.l1 = "Zobaczymy, Blackwood. Po naszej ostatniej rozmowie uznałem, że lepiej będzie położyć kres twojej szalonej misji. Dziś na świecie będzie o jednego opętanego mniej!";
 			link.l1.go = "LadyBeth_BlackWood_Boss_oruzhie_1";
-			link.l2 = "Rozwiążmy to pokojowo, Blackwood. Mogę odejść.";
+			link.l2 = "Rozwiążmy to pokojowo, Blackwood. Mogę odejść!";
 			link.l2.go = "LadyBeth_BlackWood_Boss_torgovlya_1";
 			link.l3 = "Blackwood, przecież jest pan rozsądnym człowiekiem! Jest pan oficerem! Nad pańskim obozem powiewa królewska flaga, do diabła! Czy naprawdę nie możemy się dogadać?";
 			link.l3.go = "LadyBeth_BlackWood_Boss_harizma_1";
@@ -461,7 +461,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_BlackWood_Boss_oruzhie_1":
 			dialog.text = "Opętany? Ha! Jestem po prostu człowiekiem, który wie, czego chce!";
-			link.l1 = "...";
+			link.l1 = "Śmiem wątpić!";
 			link.l1.go = "LadyBeth_BlackWood_Boss_2";
 			AddComplexSelfExpToScill(50, 50, 50, 50);
 		break;
@@ -475,20 +475,20 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_BlackWood_Boss_torgovlya_2":
 			dialog.text = "W tym świecie nie ma honoru, kapitanie. Jest tylko brud, nędza i pogarda. Przykro mi, ale musi pan tu umrzeć.";
-			link.l1 = "...";
+			link.l1 = "Jeszcze zobaczymy!";
 			link.l1.go = "LadyBeth_BlackWood_Boss_2";
 		break;
 		
 		case "LadyBeth_BlackWood_Boss_harizma_1":
-			dialog.text = "Myślałem. Dużo myślałem. I zrozumiałem - to moja jedyna szansa. Albo znajdę złoto Cortésa, albo... nic. Rozumie pan? Nic! Nie wrócę do dawnego życia! Nie wrócę do brudu i nędzy! Lepiej umrzeć tutaj!";
-			link.l1 = "...";
+			dialog.text = "Myślałem. Dużo myślałem. I zrozumiałem - to moja jedyna szansa. Albo znajdę złoto Corteza, albo... nic. Rozumie pan? Nic! Nie wrócę do dawnego życia! Nie wrócę do brudu i nędzy! Lepiej umrzeć tutaj!";
+			link.l1 = "Co za uparty głupiec...";
 			link.l1.go = "LadyBeth_BlackWood_Boss_2";
 			AddCharacterExpToSkill(pchar, "Leadership", 200);
 		break;
 		
 		case "LadyBeth_BlackWood_Boss_2":
 			dialog.text = "Do walki! Bullock, Fraser - ładujcie kartacze, jeśli się zbliżą! Hopkins, do ataku!";
-			link.l1 = "...";
+			link.l1 = "Panowie, przygotować się do walki!";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_CaimanKino_11");
 		break;
@@ -496,7 +496,7 @@ void ProcessDialogEvent()
 		// Диалоги с офицерами
 		case "LadyBeth_Helena_1": // Элен
 			dialog.text = "Wszystko w porządku?";
-			link.l1 = "Tak, wszystko dobrze. A ty?";
+			link.l1 = "Tak, wszystko dobrze. A z tobą?";
 			link.l1.go = "LadyBeth_Helena_2";
 			DelLandQuestMark(npchar);
 		break;
@@ -515,18 +515,18 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Helena_4":
 			dialog.text = "Myślę, że przykład Blackwooda dobrze pokazuje ciężar odpowiedzialności, jaką my... to znaczy ty, ponosisz wobec swoich ludzi. Proszę cię, nie zostań takim kapitanem, jakim on się stał.";
-			link.l1 = "Postaram się, Eleno.";
+			link.l1 = "Postaram się, Helen.";
 			link.l1.go = "LadyBeth_Helena_5";
 		break;
 		
 		case "LadyBeth_Helena_5":
 			dialog.text = "Dziękuję, mój kapitanie. Wiem, że ci się uda.";
-			link.l1 = "My.";
+			link.l1 = "Nam, się uda. Nam.";
 			link.l1.go = "LadyBeth_Helena_6";
 		break;
 		
 		case "LadyBeth_Helena_6":
-			dialog.text = "My.";
+			dialog.text = "Nam.";
 			link.l1 = "...";
 			link.l1.go = "LadyBeth_Helena_7";
 		break;
@@ -545,7 +545,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Mary_2":
 			dialog.text = "Nie, nie w porządku, tak, co nie. Spójrz na tych ludzi! Pracowali do wyczerpania, żyli w głodzie, umierali na choroby... I po co? Dla złota, które być może nawet nie istnieje.";
-			link.l1 = "Blackwood wierzył, że ono tu jest.";
+			link.l1 = "Blackwood wierzył, że tu jest.";
 			link.l1.go = "LadyBeth_Mary_3";
 		break;
 		
@@ -563,7 +563,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Mary_5":
 			dialog.text = "Najpierw go pochowajmy, dobrze? Nawet jeśli na to nie zasłużył. Dla człowieka, którym kiedyś był.";
-			link.l1 = "...";
+			link.l1 = "Powiem chłopakom, żeby wzieli łopate i go gdzieś zakopali...";
 			link.l1.go = "LadyBeth_Mary_6";
 		break;
 		
@@ -628,14 +628,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_Irons_4":
-			dialog.text = "Nie, tu było coś więcej. Ten facet miał nad nimi władzę. Prawdziwą władzę. I słyszałem, że był zaręczony z jakąś bogatą panną z Barbadosu. Dziwne, że jej nie poślubił, mając już te wszystkie skarby. Typowy żołnierz  nie wiedział, kiedy skończyć wojnę.";
+			dialog.text = "Nie, tu było coś więcej. Ten facet miał nad nimi władzę. Prawdziwą władzę. I słyszałem, że był zaręczony z jakąś bogatą panną z Barbadosu. Dziwne, że jej nie poślubił, mając już te wszystkie skarby. Typowy żołnierz... nie wiedział, kiedy skończyć wojnę.";
 			link.l1 = "Dzięki, Tommy. Z ciebie prawdziwy myśliciel.";
 			link.l1.go = "LadyBeth_Irons_5";
 		break;
 		
 		case "LadyBeth_Irons_5":
 			dialog.text = "Co?";
-			link.l1 = "Nic.";
+			link.l1 = "Nieważne.";
 			link.l1.go = "LadyBeth_Irons_6";
 		break;
 		
@@ -710,7 +710,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_Alonso_4":
-			dialog.text = "Gdyby tu naprawdę był skarb, już dawno by go znaleźli. Ale mimo to powinniśmy przeszukać wyspę i znaleźć ocalałych, a potem zdecydować, co z nimi zrobić. No i nie zapominajmy o statku Blackwooda - słyszałem same dobre rzeczy o tej pięknej szniawie. Szkoda byłoby przegapić taki łup, kapitanie. Oczywiście tylko przekazuję stanowisko załogi w tej sprawie.";
+			dialog.text = "Gdyby tu naprawdę był skarb, już dawno by go znaleźli. Ale mimo to powinniśmy przeszukać wyspę i znaleźć ocalałych, a potem zdecydować, co z nimi zrobić. No i nie zapominajmy o statku Blackwooda - słyszałem same dobre rzeczy o tym pięknym Snowie. Szkoda byłoby przegapić taki łup, kapitanie. Oczywiście tylko przekazuję stanowisko załogi w tej sprawie.";
 			link.l1 = "Ależ oczywiście. Chodźmy. Łupy czekają!";
 			link.l1.go = "LadyBeth_Alonso_5";
 		break;
@@ -730,7 +730,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_MatrosyInGrot_2":
-			dialog.text = "My... my jesteśmy z 'Lady Beth'. Załoga kapitana Blackwooda. Czy on... czy on żyje?";
+			dialog.text = "My... my jesteśmy z 'Panienki Beth'. Załoga kapitana Blackwooda. Czy on... czy on żyje?";
 			link.l1 = "Nie. Wasz kapitan nie żyje.";
 			link.l1.go = "LadyBeth_MatrosyInGrot_3";
 		break;
@@ -786,8 +786,8 @@ void ProcessDialogEvent()
 		
 		// Диалог с матросом на Леди Бет
 		case "LadyBeth_EnemyMatros_1":
-			dialog.text = "Co do diabła?! Jak śmieliście zaatakować 'Lady' i zabić Jeremy’ego? Nie wyjdziecie stąd żywi, dranie, kapitan wróci i...";
-			link.l1 = "Wasz kapitan nie żyje. Jeremy strzelił pierwszy, a waszą 'Lady' biorę jako prawowity, krwią opłacony łup.";
+			dialog.text = "Co do diabła?! Jak śmieliście zaatakować 'Panienkę' i zabić Jeremy’ego? Nie wyjdziecie stąd żywi, dranie, kapitan wróci i...";
+			link.l1 = "Wasz kapitan nie żyje. Jeremy strzelił pierwszy, a waszą 'Panienkę' biorę jako prawowity, krwią opłacony łup.";
 			link.l1.go = "LadyBeth_EnemyMatros_2";
 		break;
 		
@@ -833,7 +833,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "LadyBeth_EnemyMatros_Irons_1":
-			dialog.text = "No, chłopcy! Sprawa prosta: możecie zostać w ładowni jako jeńcy, możecie dołączyć do naszej załogi z racją i żołdem... albo... (przesuwa palcem po gardle) Sam wiecie. Ja na waszym miejscu wiedziałbym, co wybrać.";
+			dialog.text = "No, chłopcy! Sprawa prosta: możecie zostać w ładowni jako jeńcy, możecie dołączyć do naszej załogi z racją i żołdem... albo... (przesuwa palcem po gardle) Sami wiecie. Ja na waszym miejscu wiedziałbym, co wybrać.";
 			link.l1 = "...";
 			link.l1.go = "LadyBeth_EnemyMatros_10";
 			CharacterTurnByChr(npchar, CharacterFromID("LadyBeth_CrewOfShip_7"));
@@ -889,7 +889,7 @@ void ProcessDialogEvent()
 		// Диалог с Элизабет Бишоп
 		case "LadyBeth_Elizabeth_1":
 			dialog.text = "...";
-			link.l1 = "Przepraszam. Czy jesteś Elizabeth?";
+			link.l1 = "Przepraszam. Ty jesteś Elizabeth?";
 			if (pchar.sex == "man") link.l1.go = "LadyBeth_Elizabeth_2";
 			if (pchar.sex == "woman") link.l1.go = "LadyBeth_Elizabeth_Woman_2";
 			DelLandQuestMark(npchar);
@@ -914,7 +914,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "LadyBeth_Elizabeth_5":
-			dialog.text = "Jakże to było głupie. Nie potrzebowałam jego skarbów. Kochałam jego, nie jego pieniądze. Byłam gotowa uciec z nim... ale on był taki dumny. Czekałam na list, wiadomość... A potem przyszedł tylko ten dziwny statut. Taki zimny, wyrachowany dokument... zupełnie niepodobny do Alberta, którego znałam. Wtedy zrozumiałam, że go straciłam.";
+			dialog.text = "Jakże to było głupie. Nie potrzebowałam jego skarbów. Kochałam go, nie jego pieniądze. Byłam gotowa uciec z nim... ale on był taki dumny. Czekałam na list, wiadomość... A potem przyszedł tylko ten dziwny statut. Taki zimny, wyrachowany dokument... zupełnie niepodobny do Alberta, którego znałam. Wtedy zrozumiałam, że go straciłam.";
 			link.l1 = "Znalazłem to wśród jego rzeczy.";
 			link.l1.go = "LadyBeth_Elizabeth_6";
 		break;
@@ -933,7 +933,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_Elizabeth_8":
-			dialog.text = "Żegnajcie, kapitanie. I... proszę na siebie uważać. Nie gonić za duchami.";
+			dialog.text = "Żegnaj, kapitanie. I... proszę na siebie uważać. Nie gonić za duchami.";
 			link.l1 = ""+Goodbye()+".";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_Barbados_Elizabeth_2");
@@ -976,8 +976,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_Elizabeth_Woman_8":
-			dialog.text = "Być może mam coś, co pomoże pani w tej sprawie. Proszę, oto ono. To jego statut poszukiwacza skarbów. Albert przysłał mi go mniej więcej rok temu. Powiedział, że to najlepsze, co kiedykolwiek stworzył. Że dzięki temu się wzbogaci i wróci do mnie. Ale z każdą stroną coraz mniej przypominał Alberta, którego znałam.";
-			link.l1 = "Dziękuję. Zachowam go.";
+			dialog.text = "Być może mam coś, co pomoże pani w tej sprawie. Proszę. To jego statut poszukiwacza skarbów. Albert przysłał mi go mniej więcej rok temu. Powiedział, że to najlepsze, co kiedykolwiek stworzył. Że dzięki temu się wzbogaci i wróci do mnie. Ale z każdą stroną coraz mniej przypominał Alberta, którego znałam.";
+			link.l1 = "Dziękuję. Zachowam to.";
 			link.l1.go = "LadyBeth_Elizabeth_Woman_9";
 			GiveItem2Character(PChar, "talisman18");
 		break;
@@ -989,7 +989,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_Elizabeth_Woman_10":
-			dialog.text = "Żegnajcie, kapitanie. I niech wiatr wam sprzyja.";
+			dialog.text = "Żegnaj, kapitanie. I niech wiatr ci sprzyja.";
 			link.l1 = ""+Goodbye()+".";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_Barbados_Elizabeth_2");

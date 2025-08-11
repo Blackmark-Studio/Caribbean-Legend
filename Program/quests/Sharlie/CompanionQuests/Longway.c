@@ -1015,7 +1015,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		// для ношения мушкета в будущем (доступно только в этом варианте)
 		if (!CheckCharacterPerk(pchar, "Gunman")) SetCharacterPerk(pchar, "Gunman");
 		pchar.CanTakeMushket = true;
-		pchar.PriorityMode = 2;
+		SetPriorityMode(pchar, 2);
 		
 		//Димен
 		sld = GetCharacter(NPC_GenerateCharacter("PZ_AntoniOneDimen", "banker_1_2", "man", "man", sti(pchar.rank), HOLLAND, -1, false, "quest"));

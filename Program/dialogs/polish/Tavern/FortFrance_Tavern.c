@@ -10,7 +10,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			/* //--> Jason, Бремя гасконца
 			if (!CheckAttribute(npchar, "quest.Rum") && CheckAttribute(pchar, "questTemp.Sharlie.Lock") && pchar.questTemp.Sharlie == "ship" && makeint(environment.time) > 5.0 && makeint(environment.time) < 19.0)
 			{
-				link.l1 = "Panie, szukam pracy. Czy macie jakieś zlecenia?";
+				link.l1 = "Panie, szukam pracy. Czy masz jakieś zlecenia?";
                 link.l1.go = "Sharlie_rum";
 			}
 			if (CheckAttribute(pchar, "questTemp.Sharlie.Rum") && pchar.questTemp.Sharlie.Rum == "regard")
@@ -224,7 +224,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Portugal_4":
 			AddMoneyToCharacter(pchar, -1000);
-			dialog.text = "Dziękuję, monsieur. Mogę dać słowo, że twój przyjaciel prawie wyzdrowiał. Przynajmniej chodził samodzielnie. A ten jeden człowiek, ten cichy Holender, wszedł z zewnątrz w tym momencie, zobaczył całe to zamieszanie i wyskoczył na zewnątrz, po prostu zniknął potem.";
+			dialog.text = "Dziękuję, monsieur. Mogę dać słowo, że twój przyjaciel prawie wyzdrowiał. Przynajmniej chodził samodzielnie. A ten jeden człowiek, ten cichy Holender, wyszedł z pokoju w tamtym momencie, zobaczył całe to zamieszanie i wyskoczył na zewnątrz, po prostu zniknął.";
 			link.l1 = "Rzekłbym, że już odpłynął na pierwszym statku, jaki mógł złapać. Dzięki za informację, czas, abym ruszył w drogę.";
 			link.l1.go = "Portugal_6";
 		break;

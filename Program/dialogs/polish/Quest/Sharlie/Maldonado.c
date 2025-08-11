@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ksochitam_2":
-			dialog.text = "Nie szukam tylko zemsty. Z tego co rozumiem, masz maskę K'uk'ulkan?";
+			dialog.text = "Nie szukam tylko zemsty. Z tego co rozumiem, masz maskę Kukulkana?";
 			link.l1 = "Cholera jasna! Kolejny poszukiwacz skarbów! Przybywasz, by dokończyć sprawy rozpoczęte przez Don Diega?";
 			link.l1.go = "ksochitam_3";
 		break;
@@ -46,7 +46,7 @@ void ProcessDialogEvent()
 		
 		case "ksochitam_4":
 			dialog.text = "Udałem się do Tayasal dwadzieścia lat przed tym, jak Dichoso tam dotarł. W tym samym czasie szalony czarownik Kanek użył tego nikczemnego rytuału ofiary z ludzi, by ukryć maskę na tej wyspie.";
-			link.l1 = "Nie mogę uwierzyć w to, co słyszę! Jesteś z tej samej bandy konkwistadorów, która została tam przywieziona, by zostać złożona w ofierze, gdy Stworzyciel Prawdy był tworzony? Wszyscy jesteście martwi!";
+			link.l1 = "Nie mogę uwierzyć w to, co słyszę! Jesteś z tej samej bandy konkwistadorów, która została tam przywieziona, by zostać złożona w ofierze, gdy Strażnik Prawdy był tworzony? Wszyscy jesteście martwi!";
 			link.l1.go = "ksochitam_5";
 		break;
 		
@@ -75,7 +75,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ksochitam_9":
-			dialog.text = "To zajmie więcej niż to. Niezależnie, kto z nas ma rację, jedno jest pewne: bramy muszą być zamknięte na zawsze. I jest tylko jeden sposób, by to zrobić: zniszczyć maskę na ołtarzu Tayasal. Dzięki temu demon zostanie pozbawiony całej swojej mocy.";
+			dialog.text = "To będzie wymagało czegoś więcej, niż trzymania maski z daleka od tego demona. Niezależnie, kto z nas ma rację, jedno jest pewne: bramy muszą być zamknięte na zawsze. I jest tylko jeden sposób, by to zrobić: zniszczyć maskę na ołtarzu Tayasal. Dzięki temu demon zostanie pozbawiony całej swojej mocy.";
 			link.l1 = "Hm. Zgadzam się, że to nasza najlepsza szansa... Jak planujesz dostać się do Tayasal? Znasz drogę?";
 			link.l1.go = "ksochitam_10";
 		break;

@@ -1,4 +1,4 @@
-﻿reaction_functions_1
+reaction_functions_1
 {
 Overdose di pozione Mangarosa!
 }

@@ -1,0 +1,109 @@
+colony_1
+{
+由于缺乏治伤药物, @<iTemp> 名水手死亡
+}
+
+colony_2
+{
+在 @<Pchar.Ship.Name> 号船上, 剩余医疗物资已不多
+}
+
+colony_3
+{
+准备城镇战斗
+}
+
+colony_4
+{
+错误: 未设置攻占城市时的绕行方案!!!
+}
+
+colony_5
+{
+敌军已被压制! 道路畅通无阻
+}
+
+colony_6
+{
+你获得了~
+}
+
+colony_7
+{
+你获得了~
+}
+
+colony_8
+{
+你获得了 - 斧头
+}
+
+colony_9
+{
+你获得了 - 撒克逊羽毛
+}
+
+colony_10
+{
+你获得了 - 圣母像
+}
+
+colony_11
+{
+Philippe骑士
+}
+
+colony_12
+{
+de Poincy
+}
+
+colony_13
+{
+Thomas领主
+}
+
+colony_14
+{
+Vindzor
+}
+
+colony_15
+{
+don Juan
+}
+
+colony_16
+{
+de Cordova
+}
+
+colony_17
+{
+上校
+}
+
+colony_18
+{
+Jonathan Fox
+}
+
+colony_19
+{
+我们的 @<GetCityName(city)> 城正在被围攻! 
+}
+
+colony_20
+{
+围攻已解除! 
+}
+
+colony_21
+{
+我们的 @<GetCityName(city)> 城正在被围攻! 
+}
+
+colony_22
+{
+我们的 @<GetCityName(city)> 城已被攻占! 
+}

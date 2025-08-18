@@ -862,9 +862,9 @@ void CalculateInfoDataF9()
 	for (i = 0; i <iCitizensQuantity; i++)
 	{
 		string sType = "pirate";
-		int iChar = NPC_GeneratePhantomCharacter(sType, iNation, MAN, 1);
+		int iChar = NPC_GeneratePhantomCharacterForLoc(sType, iNation, MAN, 1, loc);
 		ref chr = &characters[iChar];
-		SetNPCModelUniq(chr, sType, MAN);
+		SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 		chr.City = Colonies[iColony].id;
 		chr.CityType = "citizen";
 		sTemp = PlaceCharacter(chr, "sit", "random_free"); // может не быть вовсе, если все места заняты

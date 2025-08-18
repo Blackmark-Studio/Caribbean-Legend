@@ -573,3 +573,15 @@ float GetRealDeltaTime()
         return GetDeltaTime() * 0.001 / timeScale;
     return 0.0;
 }
+
+ref nullRef()
+{
+    ref rNull;
+    return rNull;
+}
+
+aref nullARef()
+{
+    aref arNull;
+    return arNull;
+}

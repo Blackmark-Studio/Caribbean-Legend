@@ -37,7 +37,7 @@ void InitPsHeros()
 		{
 			PsHeroQty++;
 			ch = GetCharacter(NPC_GenerateCharacter("PsHero_" + PsHeroQty, "mercen_" + (rand(14)+14), "man", "man", 5, PIRATE, -1, true, "pofficer"));
-			SetNPCModelUniq(ch, "pofficer", "man");
+			SetNPCModelUniqForLoc(ch, "pofficer", "man", nullRef());
 			SetRandomNameToCharacter_Generator(ch);
 			ch.Nation = rand(4); // случайная нация
 			FaceMaker(ch);

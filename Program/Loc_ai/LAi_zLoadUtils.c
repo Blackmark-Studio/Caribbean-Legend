@@ -513,18 +513,18 @@ void CreatePlantation(aref loc)
 			if (loc.id == "IslaMona_factoria") iCitizensQuantity = 10;
 			for (i=0; i<iCitizensQuantity; i++)
 			{
-	            if(iNation != PIRATE && LAi_IsCapturedLocation == 0)
+	            if(LAi_IsCapturedLocation == 0)
 				{
 	                sType = "soldier";
-					iChar = NPC_GeneratePhantomCharacter("soldier", iNation, MAN, 2);
+					iChar = NPC_GeneratePhantomCharacterForLoc("soldier", iNation, MAN, 2, loc);
 				}
 				else
 				{
 	                sType = "pirate";
-					iChar = NPC_GeneratePhantomCharacter("pirate", iNation, MAN, 2);
+					iChar = NPC_GeneratePhantomCharacterForLoc("pirate", iNation, MAN, 2, loc);
 				}
 				chr = &characters[iChar];
-				SetNPCModelUniq(chr, sType, MAN);
+				SetNPCModelUniqForLoc(chr, sType, MAN, loc);
 				chr.City = Colonies[iColony].id;
 	            chr.CityType = "soldier";
 				chr.plantation = "patrol";

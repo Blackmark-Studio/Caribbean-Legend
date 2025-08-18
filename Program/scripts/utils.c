@@ -1331,14 +1331,55 @@ void RemoveGeometryFromLocation(string LocationID, string ModelName)
 }	
 
 
-void CreateModel(int iChar, string sType, int iSex)
+bool CreateModel(int iChar, string sType, int iSex, aref arLoc)
 {
 	int iNation = sti(characters[iChar].nation);
 	
+	if (testRef(arLoc))
+	{
+		string sCallback = "";
+		if (CheckAttribute(arLoc, "CreateModelCallback"))
+		{
+			sCallback = arLoc.CreateModelCallback;
+		}
+		else
+		{
+			int iLinkedColonyNum = GiveColonyIndexByLocation(arLoc);
+			if (iLinkedColonyNum != -1)
+			{
+				ref rLinkedColony = &colonies[iLinkedColonyNum];
+				if (CheckAttribute(rLinkedColony, "CreateModelCallback"))
+				{
+					sCallback = rLinkedColony.CreateModelCallback;
+				}
+			}
+		}
+
+		if (sCallback != "")
+		{
+			bool bResult = call sCallback(iChar, sType, iSex, arLoc);
+			if (!bResult)
+			{
+				return bResult;
+			}
+			FaceMaker(&characters[iChar]);
+			CirassMaker(&characters[iChar]);
+			return bResult;
+		}
+	}
 	string sBody = "";
 	string sPrefix = "";
 	int iNumber = -1;
-		
+	string sAnim = "";
+	string sResultType = sType;
+	if(iSex == MAN)
+	{
+		sAnim = "man";
+	}
+	else
+	{
+		sAnim = "towngirl";
+	}
 	switch (sType)
 	{
 		case "pofficer":
@@ -1356,13 +1397,54 @@ void CreateModel(int iChar, string sType, int iSex)
 		break;
 
 		case "officer":
-			sBody = "off";
-			iNumber = rand(1)+1;
+			if(iNation == PIRATE)
+			{
+				if(rand(1) == 0) iNumber = rand(4) + 6;
+				else			 iNumber = rand(4) + 16;
+			}
+			else
+			{
+				sBody = "off";
+				iNumber = rand(1)+1;
+			}
+			
 		break;
 		
 		case "soldier":
-			sBody = "sold";
-			iNumber = rand(7)+1;
+			
+			if(iNation == PIRATE)
+			{
+				sBody = "citiz";
+				iNumber = rand(9)+41;
+				sResultType = "pirate";
+			}
+			else
+			{
+				sBody = "sold";
+				iNumber = rand(7)+1;
+			}
+			
+		break;
+
+		case "mushketer":
+			if(iNation == PIRATE)
+			{
+				sBody = "mush_ctz";
+				iNumber = rand(2)+7;
+			}
+			else
+			{
+				sBody = "mush";
+				iNumber = rand(5)+1;
+			}
+
+			sResultType = "soldier";
+			
+			sAnim = "mushketer";
+			if (iSex != MAN)
+			{
+				trace("Unable to counstruct woman mushketer");
+			}
 		break;
 		
 		case "pirate":
@@ -1377,6 +1459,7 @@ void CreateModel(int iChar, string sType, int iSex)
 		
 		case "monk":
 			sBody = "monk";
+			sAnim = "man_B";
 			iNumber = rand(5)+1;
 		break;	
 		
@@ -1386,18 +1469,55 @@ void CreateModel(int iChar, string sType, int iSex)
 		break;
 				
 		case "citizen": //мещане-бюргеры
-			if(iSex == MAN)
+
+			if(iNation == PIRATE)
 			{
-				sBody = "citiz";
-				iNumber = rand(9)+11;
+				if(iSex == MAN)
+				{
+					sBody = "citiz";
+					iNumber = rand(9)+41;
+					sResultType = "pirate";
+				}
+				else
+				{
+					sBody = "citiz";
+					iNumber = rand(9)+41;
+					sResultType = "pirate";
+
+					// меняем пол, пока не появилось пираток
+					sAnim = "man";
+					characters[iChar].sex = "man";
+					characters[iChar].model.height = 1.80;
+				}
 			}
 			else
 			{
-					sBody = "women";
-					iNumber = rand(11)+7;
+				if(iSex == MAN)
+				{
+					sBody = "citiz";
+					iNumber = rand(9)+11;
+				}
+				else
+				{
+					if(rand(1) == 0)
+					{
+						sBody = "girl";
+						iNumber = rand(7)+1;
+					}
+					else
+					{
+						sBody = "women";
+						iNumber = rand(11)+7;
+					}
+					sAnim = "woman";
 				}	
+			}
 		break;
-
+		case "horse":
+			sBody = "women";
+			iNumber = rand(7) + 19;
+			sAnim = "woman";
+		break;
 		case "whore":
 			sBody = "whore";
 			iNumber = rand(3) + 1;
@@ -1405,21 +1525,39 @@ void CreateModel(int iChar, string sType, int iSex)
 		
 		//Jason --> новые типы горожан
 		case "marginal": //маргиналы
-			sBody = "citiz";
-			iNumber = rand(9)+21;
+			if(iNation == PIRATE)
+			{
+				sBody = "citiz";
+				iNumber = rand(9)+41;
+				sResultType = "pirate";
+			}
+			else
+			{
+				sBody = "citiz";
+				iNumber = rand(9)+21;
+			}
 		break;
 		
 		case "captain": //капитаны
-			if (rand(1) == 0)
-			{
-				sBody = "citiz";
-				iNumber = rand(9)+51;
-			}
-			else
+			if(iNation == PIRATE)
 			{
 				sBody = "mercen";
 				iNumber = rand(14)+16;
 			}
+			else
+			{
+				if (rand(1) == 0)
+				{
+					sBody = "citiz";
+					iNumber = rand(9)+51;
+				}
+				else
+				{
+					sBody = "mercen";
+					iNumber = rand(14)+16;
+				}
+			}
+			
 		break;
 		
 		case "noble": //дворяне
@@ -1448,19 +1586,56 @@ void CreateModel(int iChar, string sType, int iSex)
 		case "indian": //индейцы
 			if(iSex == MAN)
 			{
-			sBody = "Miskito";
-			iNumber = rand(5)+1;
+				sBody = "Miskito";
+				iNumber = rand(5)+1;
 			}
 			else
 			{
 				sBody = "squaw"; 
 				iNumber = rand(2)+1;
+				sAnim = "woman_B";
 			}
 		break;
 		
 		case "convict": //каторжники
 			sBody = "prizon";
+			sAnim = "man_B";
 			iNumber = rand(3)+5;
+		break;
+
+		case "drinker": //пьяницы
+			sBody = "drinker";
+			iNumber = sti(rand(15)+1);
+		break;
+
+		case "flutist":
+			if(iSex == WOMAN) 
+			{
+				sBody = "woman_flutist";
+				iNumber = sti(rand(7)+1);
+				sAnim =  "woman_musician";
+			}
+			else
+			{
+				sBody = "flutist";
+				iNumber = sti(rand(11)+1);
+				sAnim =  "musician";
+			}
+		break;
+
+		case "violinist":
+			if(iSex == WOMAN) 
+			{
+				sBody = "woman_violinist";
+				iNumber = sti(rand(3)+1);
+				sAnim =  "woman_musician";
+			}
+			else
+			{
+				sBody = "violinist";
+				iNumber = sti(rand(16)+1);
+				sAnim =  "musician";
+			}
 		break;
 		//<-- новые типы горожан
 		
@@ -1484,13 +1659,24 @@ void CreateModel(int iChar, string sType, int iSex)
 		
 		case "fisher":
 			sBody = "fisherman";
+			sAnim = "fisher";
+			sResultType = "sailor";
 			iNumber = rand(10)+1;
 		break;
+
+		case "blacksmith":
+			sBody = "blacksmith";
+			sAnim = "blacksmith";
+			sResultType = "sailor";
+			iNumber = sti(rand(17)+1);
+		break;
+
+		
 	}
 
 	sPrefix = "_";
 	
-	if(sType == "officer" || sType == "soldier")
+	if(sType == "officer" || sType == "soldier" || sType == "mushketer")
 	{
 		switch (iNation)
 		{
@@ -1511,7 +1697,7 @@ void CreateModel(int iChar, string sType, int iSex)
 			break;
 			
 			case PIRATE:
-				sPrefix = "";
+				sPrefix = "_";
 			break;
 		}
 	}
@@ -1521,9 +1707,11 @@ void CreateModel(int iChar, string sType, int iSex)
 	sResult = sBody+sPrefix+iNumber;
 	
 	characters[iChar].model = sResult;
-
+	characters[iChar].model.animation = sAnim;
+	characters[iChar].PhantomType = sResultType;
 	FaceMaker(&characters[iChar]);
 	CirassMaker(&characters[iChar]);
+	return true;
 }
 
 // метод вернет случайный дружественный iNation город, неравный  sBeginColony _checkPort - Проверка порта
@@ -2198,6 +2386,11 @@ ref GetOurSailor(string _id) // моежт быть нужно нескольк�
 
 int NPC_GeneratePhantomCharacter(string sType, int iNation, int iSex, int _LifeDay)//, int CharacterType)
 {
+	return NPC_GeneratePhantomCharacterForLoc(sType, iNation, iSex, _LifeDay, nullARef());
+}
+
+int NPC_GeneratePhantomCharacterForLoc(string sType, int iNation, int iSex, int _LifeDay, aref arLoc)//, int CharacterType)
+{
     int iChar = FindFirstEmptyCharacter();
     ref ch;
 
@@ -2220,15 +2413,11 @@ int NPC_GeneratePhantomCharacter(string sType, int iNation, int iSex, int _LifeD
 	if(iSex == MAN)
 	{
 		ch.sex = "man";
-		if(sType == "monk" || sType == "convict") ch.model.animation = "man_B";
-		else 				ch.model.animation = "man";
 		ch.model.height = 1.80;
 	}
 	else
 	{
 		ch.sex = "woman";
-		if(sType == "indian") ch.model.animation = "woman_B";
-		else ch.model.animation = "towngirl";
 		ch.model.height = 1.70;
 	}
 
@@ -2238,7 +2427,15 @@ int NPC_GeneratePhantomCharacter(string sType, int iNation, int iSex, int _LifeD
     ch.reputation = (1 + rand(44) + rand(44));// репа всем горожанам
 	ch.id = "GenChar_" + iChar;
 	
-    CreateModel(iChar, sType, iSex);
+
+	bool bSuccess = CreateModel(iChar, sType, iSex, arLoc);
+	if (!bSuccess)
+	{
+		ch.LifeDay = 0;
+		return -1;
+	}
+
+    
     SetFantomParam(ch);
 	    
     if (sType == "citizen" || sType == "blade_trader" || sType == "monk")
@@ -2562,3 +2759,49 @@ aref ErrorAttr()
     makearef(aError, TEV.Error);
     return aError;
 }
+
+int GiveColonyIndexByLocation(ref location)
+{
+	string sColonyName = "";
+
+	// Если есть fastreload, который проставляется в том числе при переходе в common-локацию - просто используем его, игнорируя остров и проч
+	// Если есть parent_colony - также игнорируем остров
+	if (CheckAttribute(location, "fastreload")) 
+	{
+		sColonyName = location.fastreload; 
+	}
+	else if (CheckAttribute(location, "parent_colony")) 
+	{
+		sColonyName = location.parent_colony; 
+	}
+	
+	// Нашли имя колонии - находим номер и уходим
+	if (sColonyName != "")
+	{
+		return FindColony(sColonyName);
+	}
+
+	// Не нашли явное указание и id острова - сдаемся. Колонию мы не найдем.
+	if (!CheckAttribute(location, "islandId"))
+	{
+		trace("unable to determine colony for location "+location.id);
+		return -1;
+	}
+	
+
+	// Если все-таки id острова есть:
+	// По-умолчанию считаем ареал - названием острова.
+	string sAreal = location.islandId;
+
+	// Если ареал указан - используем его.
+	if (CheckAttribute(location, "islandIdAreal"))
+	{
+		sAreal = location.islandIdAreal;
+	}
+
+	// Пытаемся найти главную колонию острова (ареала).
+	// В одном ареале может быть две колонии, например Cuba1 имеет Santiago и PuertoPrincipe
+	// Используем GetCityNameByIsland, однако это очень плохая функция, ее надо заменить на атрибут main_colony у острова
+	return FindColony(GetCityNameByIsland(sAreal));
+}
+

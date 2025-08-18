@@ -1773,7 +1773,7 @@ void Trial_CreatHabitue(string qName)// создадим пьяницу со с�
 {
 	FreeSitLocator("PortoBello_tavern", "sit_base3");
 	FreeSitLocator("PortoBello_tavern", "sit_front3");
-	iTemp = NPC_GeneratePhantomCharacter("citizen", SPAIN, MAN, 10);
+	iTemp = NPC_GeneratePhantomCharacterForLoc("citizen", SPAIN, MAN, 10, loadedLocation);
 	sld = &characters[iTemp];
 	sld.City = Colonies[FindColony(loadedLocation.fastreload)].id;
 	//sld.CityType = "citizen";

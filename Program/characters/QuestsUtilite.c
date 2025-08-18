@@ -2608,14 +2608,12 @@ int GetDaysContinueNationLicence(int _nation)
 string GetRusNameNationLicence(int _nation)
 {
 	string sTemp, itmTitle;
-	int lngFileID;
 	if (_nation != PIRATE) 
 	{
 		if (CheckNationLicence(_nation))
 		{
 			sTemp = NationShortName(_nation)+"TradeLicence";
-			lngFileID = LanguageOpenFile("ItemsDescribe.txt");
-			itmTitle = LanguageConvertString(lngFileID, Items[GetItemIndex(sTemp)].name);
+			itmTitle = GetItemName(&Items[GetItemIndex(sTemp)]);
 		}
 	}
 	return itmTitle;

@@ -1720,7 +1720,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			pchar.GenQuest.FishingBoatSTemp = sTemp;
-			dialog.text = "Es " + GetConvertStr("itmname_" + sTemp, "Descripción de los ítems.txt") + ". Logré conseguir ... bueno, no importa de dónde. Pensé en venderlo a algún conocedor. ¡Te lo daré por solo 10 000 pesos! ¿Lo tomarás?";
+			dialog.text = "Es " + GetConvertStr("itmname_" + sTemp, "ItemsDescribe.txt") + ". Logré conseguir ... bueno, no importa de dónde. Pensé en venderlo a algún conocedor. ¡Te lo daré por solo 10 000 pesos! ¿Lo tomarás?";
 			if (sti(pchar.money) > 9999)
 			{
 				link.l1 = "¡Lo tomaré, por supuesto! La cosa está de pie. ";

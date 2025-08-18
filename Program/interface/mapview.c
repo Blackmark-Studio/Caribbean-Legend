@@ -298,13 +298,11 @@ void FillMapsTable()
 	int n, i;
 	string row;
 	string sGood, selectedId = "";
-	int  idLngFile;
 	bool ok = true;
 	aref rootItems, arItem;
 	aref  curItem;
 		
 	n = 1;
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");	
 	if(CheckAttribute(pchar, "showlastmap")) { selectedId = pchar.showlastmap; }
 	// belamour cle выбираем карту  в зависимости от местоположения
 	if(IsEntity(&worldMap))
@@ -328,6 +326,7 @@ void FillMapsTable()
 
 	// Заполним картами
 	makearef(rootItems, xi_refCharacter.Items);
+	object langFiles;
     for (i=0; i<GetAttributesNum(rootItems); i++)
     {
 		curItem = GetAttributeN(rootItems, i);
@@ -348,17 +347,17 @@ void FillMapsTable()
 			{					
 				GameInterface.TABLE_MAPS.(row).index = GetItemIndex(arItem.id);				
 				GameInterface.TABLE_MAPS.(row).td1.textoffset = "0,0";
-				GameInterface.TABLE_MAPS.(row).td1.str = LanguageConvertString(idLngFile, arItem.name);
+				GameInterface.TABLE_MAPS.(row).td1.str = GetItemNameBatch(arItem, &langFiles);
 				n++;							
 			}
 		}
-    }		
+    }	
+	CloseLanguageFilesBatch(&langFiles);
 	GameInterface.TABLE_MAPS.select = iSelected;
 	CurRow   =  "tr" + (iSelected);    
 	SetNewMapPicture();
 		
 	Table_UpdateWindow("TABLE_MAPS");
-	LanguageCloseFile(idLngFile);
 }
 
 void TableSelectChange()
@@ -416,7 +415,6 @@ void ShowInfoWindow()
 		iGoodIndex = sti(GameInterface.TABLE_MAPS.(CurRow).index);
 	}
 	ref  itmRef = &Items[iGoodIndex];
-	int  idLngFile;
 
 	string sCurrentNode = GetCurrentNode();
 	string sHeader, sText1, sText2, sText3, sPicture;
@@ -425,7 +423,6 @@ void ShowInfoWindow()
 	string sAttributeName;
 	sPicture = "-1";
 
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");	
 	switch (sCurrentNode)
 	{
 		// sith --->
@@ -444,7 +441,7 @@ void ShowInfoWindow()
 		case "TABLE_MAPS":
 			sGroup = itmRef.picTexture; 
 			sGroupPicture = "itm" + itmRef.picIndex
-			sHeader = LanguageConvertString(idLngFile, itmRef.name);
+			sHeader = GetItemName(itmRef);
 			sText1  = GetItemDescribe(iGoodIndex); 
 		break;
 		case "MAP_INFO":
@@ -461,7 +458,6 @@ void ShowInfoWindow()
 		break;
 		// <--- sith
 	}
-	LanguageCloseFile(idLngFile);
 	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 128, 128);
 }
 

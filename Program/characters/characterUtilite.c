@@ -2018,20 +2018,15 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 			{
 				if(n > 0)
 				{
-					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-					if(pchar.chr_ai.type == "player" && !LAi_IsDead(pchar)) notification(StringFromKey("characterUtilite_3")+LanguageConvertString(idLngFile, arItm.name), "BoxPlus");
+					if(pchar.chr_ai.type == "player" && !LAi_IsDead(pchar)) notification(StringFromKey("characterUtilite_3")+GetItemName(arItm), "BoxPlus");
 					//Log_Info(XI_ConvertString("You take item"));
 					AddMsgToCharacter(_refCharacter, MSGICON_GETITEM);
-					LanguageCloseFile(idLngFile);
 				}
 				
 				if(n < 0)
 				{
-					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-					//log_info("Отдано: "+LanguageConvertString(idLngFile, arItm.name))
-					if(dialogrun) notification(StringFromKey("characterUtilite_5")+LanguageConvertString(idLngFile, arItm.name), "BoxMinus");
+					if(dialogrun) notification(StringFromKey("characterUtilite_5")+GetItemName(arItm), "BoxMinus");
 					//Log_Info(XI_ConvertString("You give item"));
-					LanguageCloseFile(idLngFile);
 				}
 			}
 		}
@@ -3134,7 +3129,7 @@ void UpdateCharacterEquipItem(ref chref)
 					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 					sItem = GetCharacterEquipBySlot(chref, sAttr)
 					ref arItem = ItemsFromID(sItem);
-					pchar.systemInfo.messages.Artefact = GetFullName(chref) + StringFromKey("characterUtilite_6", LanguageConvertString(idLngFile, arItem.name))+ LanguageConvertString(idLngFile, "new_string");
+					pchar.systemInfo.messages.Artefact = GetFullName(chref) + StringFromKey("characterUtilite_6", GetItemName(arItem))+ LanguageConvertString(idLngFile, "new_string");
 					//Log_SetStringToLog(GetFullName(chref) + " заметил, что артефакт " + LanguageConvertString(idLngFile, arItem.name) + " утратил силу");
 					RemoveCharacterArtefactEquip(chref, sAttr);
 					LanguageCloseFile(idLngFile);
@@ -4453,12 +4448,10 @@ void EquipCharacterByAtlas(ref chref)
 // проверим наличие атласа и карты в нём
 bool CheckMapForEquipped(ref refCh, string itemID)
 {
-	int   idLngFile;
 	ref   arItem; 	 		 
 
 	arItem = ItemsFromID(itemID);
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");	
-	
+
 	if(sti(refCh.index) == GetMainCharacterIndex() && CheckCharacterItem(refCh, arItem.id))	
 	{	
 		if(!CheckCharacterItem(refCh, "MapsAtlas")) { // тривиальная проверка на наличие атласа - если его нет,  то получите и распишитесь
@@ -4467,16 +4460,13 @@ bool CheckMapForEquipped(ref refCh, string itemID)
 		}	
 		if(!IsEquipCharacterByMap(refCh, itemID)) { // проверяем, экипирован ли ГГ  этой картой
 			EquipCharacterByItem(refCh, itemID); 			
-			//Log_SetStringToLog(LanguageConvertString(idLngFile, arItem.name) +" добавлена в атлас");
-			//notification(LanguageConvertString(idLngFile, arItem.name) +" в атласе!", "MapsAtlas");
-			notification(StringFromKey("characterUtilite_12", LanguageConvertString(idLngFile, arItem.name)), "MapsAtlas");
+			notification(StringFromKey("characterUtilite_12", GetItemName(arItem)), "MapsAtlas");
 			arItem = ItemsFromID("MapsAtlas");
 			arItem.Weight = GetEquippedItemsWeight(refCh, MAPS_ITEM_TYPE);						
 		}
 		else return false;
 	}
 	
-	LanguageCloseFile(idLngFile);		
 	return true;
 }
 

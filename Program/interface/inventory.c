@@ -901,8 +901,8 @@ void ShowInfoWindow()
 		case "TABLE_ITEMS":
 			if(CheckAttribute(&GameInterface, CurTable + "." + CurRow + ".index"))
 			{
-				sHeader = LanguageConvertString(lngFileID, rItem.name);
-				sText1  = GetAssembledString(LanguageConvertString(lngFileID, arItm.describe), rItem);
+				sHeader = GetItemName(rItem);
+				sText1  = GetAssembledString(GetItemDescr(arItm), rItem);
 				sGroup = rItem.picTexture;
 				sGroupPicture = "itm" + rItem.picIndex;
 				if(rItem.id == "talisman19") sText1 = GetItemDescribe(iGoodIndex);
@@ -1847,7 +1847,6 @@ void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эли
 	string sGood;
 	string groupID;
 	string itemType;
-	int  idLngFile;
 	bool ok, ok0, ok1, ok2, ok3, ok4, ok5;
 	bool slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8;
 	aref rootItems, arItem;
@@ -1860,12 +1859,12 @@ void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эли
 	GameInterface.TABLE_ITEMS.hr.td3.str = XI_ConvertString("ItemsQty");
 	GameInterface.TABLE_ITEMS.hr.td4.str = XI_ConvertString("ItemsWeightAll");
 	n = 1;
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	Table_Clear("TABLE_ITEMS", false, true, false);
 	
 	// Заполним вещами от нас
 	makearef(rootItems, xi_refCharacter.Items);
     int num = GetAttributesNum(rootItems);
+	object langFiles;
     for (i=0; i<num; i++)
     {
 		curItem = GetAttributeN(rootItems, i);
@@ -1968,7 +1967,7 @@ void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эли
 				GameInterface.TABLE_ITEMS.(row).td1.icon.height = 50;
 				GameInterface.TABLE_ITEMS.(row).td1.textoffset = "40,0";
 				GameInterface.TABLE_ITEMS.(row).td1.line_space_modifier = 0.7;
-				GameInterface.TABLE_ITEMS.(row).td1.str = LanguageConvertString(idLngFile, arItem.name);
+				GameInterface.TABLE_ITEMS.(row).td1.str = GetItemNameBatch(arItem, &langFiles);
 				
 				GameInterface.TABLE_ITEMS.(row).td2.str   = FloatToString(stf(arItem.Weight), 1);
 				if(groupID == MAPS_ITEM_TYPE)
@@ -1980,9 +1979,8 @@ void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эли
 			}
 		}
     }
-    
+    CloseLanguageFilesBatch(&langFiles);
 	Table_UpdateWindow("TABLE_ITEMS");
-	LanguageCloseFile(idLngFile);
 	if (_mode == 1)
 	{
 		FillItemsSelected();
@@ -2298,7 +2296,7 @@ void TransactionOK()
 	GoodsExitCancel();
 	FillItemsTable(currentTab+1);
 	UpdateItemInfo();
-	Log_Info(XI_ConvertString("DropItemLog") + GetConvertStr(arItm.name, "ItemsDescribe.txt") + " " + iDropQuantity + " " +  XI_ConvertString("units"));
+	Log_Info(XI_ConvertString("DropItemLog") + GetItemName(arItm) + " " + iDropQuantity + " " +  XI_ConvertString("units"));
 }
 
 void confirmChangeQTY_EDIT()
@@ -2407,7 +2405,7 @@ void SetItemInfo(int iGoodIndex)
 		else
 			describeStr = GetAssembledString(LanguageConvertString(lngFileID,"weapon gun parameters equipped"), arItm) + newStr();
 		
-		describeStr = describeStr + GetAssembledString(LanguageConvertString(lngFileID, Items[iGoodIndex].describe), arItm);
+		describeStr = describeStr + GetAssembledString(GetItemDescr(&Items[iGoodIndex]), arItm);
 		SetFormatedText("INFO_TEXT", describeStr);
 
 		LanguageCloseFile(lngFileID);
@@ -2432,7 +2430,7 @@ void SetItemInfo(int iGoodIndex)
 			else
 				describeStr = GetAssembledString(LanguageConvertString(lngFileID,"mushket parameters equipped"), arItm) + newStr();		
 			
-			describeStr = describeStr + GetAssembledString(LanguageConvertString(lngFileID, Items[iGoodIndex].describe), arItm);
+			describeStr = describeStr + GetAssembledString(GetItemDescr(&Items[iGoodIndex]), arItm);
 			if(CheckAttribute(arItm, "UpgradeStage"))
 			{
 				describeStr += newStr() + LanguageConvertString(lngFileID,"UpgradeStageInfo_" + arItm.id + "_" + sti(arItm.UpgradeStage));
@@ -3156,8 +3154,7 @@ void EquipPress()
 									SetNodeUsing("ITEM_2B", false);
 								}
 							}
-							//Log_info(XI_ConvertString("AmmoSelect")+GetConvertStr(itmRef.name, "ItemsDescribe.txt")+"");
-							notification(GetFullName(xi_refCharacter)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(itmRef.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+							notification(GetFullName(xi_refCharacter)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(itmRef)+"", "AmmoSelect");
 							PlaySound("People Fight\reload1.wav");
 							SetVariable();
 							SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("LoadAnyGun"));

@@ -786,8 +786,18 @@ void ShowInfoWindow()
 		    	sText1 = sText1 + NewStr() + XI_ConvertString("CannonsTime") + ": " + sti(GetCannonReloadTime(Cannon)) + " " + XI_ConvertString("sec.");
 		    	sText1 = sText1 + NewStr() + XI_ConvertString("Weight") + ": " + sti(Cannon.Weight) + " " + XI_ConvertString("cwt") + NewStr() + "***";
 		    	
-		    	sGroup = "GOODS";
-				sGroupPicture = GetCannonType(sti(xi_refCharacter.Ship.Cannons.Type)) + "_" + GetCannonCaliber(sti(xi_refCharacter.Ship.Cannons.Type));
+				int idx = GetCannonGoodsIdxByType(sti(xi_refCharacter.Ship.Cannons.Type));
+				
+				if (idx != -1)
+				{
+					sGroup = GetGoodImageGroup(&Goods[idx]);
+					sGroupPicture = Goods[idx].Name;
+				}
+				else
+				{
+					sGroup = "GOODS";
+					sGroupPicture = "";
+				}
 		    }
 		    if (GameInterface.(CurTable).(CurRow).UserData.ID == "Crew" && sti(xi_refCharacter.ship.type) != SHIP_NOTUSED)
 			{
@@ -931,7 +941,7 @@ void FillGoodsTable()
 		GameInterface.TABLE_LIST.(row).td4.str = Goods[i].Units;
 		GameInterface.TABLE_LIST.(row).td5.str = Goods[i].Weight;
 
-        GameInterface.TABLE_LIST.(row).td1.icon.group = "GOODS";
+        GameInterface.TABLE_LIST.(row).td1.icon.group = GetGoodImageGroup(&Goods[i]);
 		GameInterface.TABLE_LIST.(row).td1.icon.image = sGood;
 		GameInterface.TABLE_LIST.(row).td1.icon.offset = "-5, -5";
 		GameInterface.TABLE_LIST.(row).td1.icon.width = 50;
@@ -1007,12 +1017,10 @@ void GoodsExitCancel()
 void ShowGoodsInfo(int iGoodIndex)
 {
 	string GoodName = goods[iGoodIndex].name;
-
-	int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 	string sHeader = XI_ConvertString(GoodName);
 
     iCurGoodsIdx = iGoodIndex;
-	string goodsDescr = GetAssembledString( LanguageConvertString(lngFileID,goodName+"_descr"), &Goods[iGoodIndex]);
+	string goodsDescr = GetAssembledString(GetGoodDescr(&Goods[iGoodIndex]), &Goods[iGoodIndex]);
     goodsDescr += newStr() + XI_ConvertString("weight") + " " + Goods[iGoodIndex].weight + " " + XI_ConvertString("cwt") +
 	              ", " + XI_ConvertString("PackHolds") + " " + Goods[iGoodIndex].Units + " " + XI_ConvertString("units");
 
@@ -1025,10 +1033,9 @@ void ShowGoodsInfo(int iGoodIndex)
 	}
     GameInterface.qty_edit.str = "0";
 
-	SetNewGroupPicture("QTY_GOODS_PICTURE", "GOODS", GoodName);
+	SetNewGroupPicture("QTY_GOODS_PICTURE", GetGoodImageGroup(&Goods[iGoodIndex]), GoodName);
     SetFormatedText("QTY_CAPTION", sHeader);
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
-	LanguageCloseFile(lngFileID);
 	
 	iShipQty = GetCargoGoods(xi_refCharacter, iGoodIndex);
     SetFormatedText("QTY_INFO_SHIP_QTY", its(iShipQty))
@@ -1306,7 +1313,7 @@ void CannonsMenuRefresh()
 	int idx = GetCannonGoodsIdxByType(sti(xi_refCharacter.Ship.Cannons.Type));
 	if (idx != -1)
 	{
-	    SetNewGroupPicture("CANNONS_PIC", "GOODS", Goods[idx].Name);
+	    SetNewGroupPicture("CANNONS_PIC", GetGoodImageGroup(&Goods[idx]), Goods[idx].Name);
 		SetFormatedText("CANNONS_TEXT", XI_ConvertString(Goods[idx].Name));
 		SetFormatedText("CANNONS_QTY_F", its(GetBortCannonsQty(xi_refCharacter, "cannonf")));
 		SetFormatedText("CANNONS_QTY_B", its(GetBortCannonsQty(xi_refCharacter, "cannonb")));
@@ -1574,7 +1581,7 @@ void FillCannonsTable()
 			GameInterface.CANNONS_TABLE.(row).td4.str = "x"+FloatToString(stf(Goods[i].DamageMultiply), 1);
 			GameInterface.CANNONS_TABLE.(row).td5.str = sti(Goods[i].ReloadTime);
 
-	        GameInterface.CANNONS_TABLE.(row).td1.icon.group = "GOODS";
+	        GameInterface.CANNONS_TABLE.(row).td1.icon.group = GetGoodImageGroup(&goods[i]);
 			GameInterface.CANNONS_TABLE.(row).td1.icon.image = sGood;
 			GameInterface.CANNONS_TABLE.(row).td1.icon.offset = "0, 0";
 			GameInterface.CANNONS_TABLE.(row).td1.icon.width = 40;

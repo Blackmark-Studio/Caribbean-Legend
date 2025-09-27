@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patrol_4":
-			dialog.text = "Neppure cinquecento dobloni d’oro ти fanno felice? È una fortuna, con quella somma ci compri una nave intera!";
+			dialog.text = "Neppure cinquecento dobloni d’oro ti fanno felice? È una fortuna, con quella somma ci compri una nave intera!";
 			link.l1 = "No. Ho già una nave e quel pugnale è unico. Non lo vendo.";
 			link.l1.go = "patrol_5";
 		break;

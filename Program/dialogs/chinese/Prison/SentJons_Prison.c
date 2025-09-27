@@ -84,14 +84,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "DTSG_AntiguaTrevoga_2":
-            dialog.text = "没必要, 船长。 正如我所说, 你会和那个傻瓜查理被扔进同一个牢房。 但是, 首先, 总督欣赏你没有抗拒逮捕, 其次, 他对放债人最近的来访很不高兴, 那人的尖叫几乎震碎了宫殿的窗户... ";
+            dialog.text = "没必要, 船长。 正如我所说, 你会和那个傻瓜查理被扔进同一个牢房。 但是, 首先, 总督欣赏你没有抗拒逮捕, 其次, 他对放贷人最近的来访很不高兴, 那人的尖叫几乎震碎了宫殿的窗户... ";
             link.l1 = "他要求逮捕我? "; 
             link.l1.go = "DTSG_AntiguaTrevoga_3";
             DelLandQuestMark(npchar);
         break;
         
         case "DTSG_AntiguaTrevoga_3":
-            dialog.text = "他不是要求 —而是命令。 总督阁下不喜欢被人命令任何事情。 因此, 那个高利贷者被赶了出去。 ";
+            dialog.text = "他不是要求 —而是命令。 总督阁下不喜欢被人命令任何事情。 因此, 那个放贷人被赶了出去。 ";
             link.l1 = "真有趣。 现在... "; 
             link.l1.go = "DTSG_AntiguaTrevoga_4";
         break;

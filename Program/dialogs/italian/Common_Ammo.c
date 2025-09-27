@@ -254,7 +254,7 @@ void ProcessDialogEvent()
 			Link.l1 = "Grazie! È stato un piacere fare affari con te!";
             Link.l1.go = "TakeGun_2";
 			TakeNItems(pchar, "gold_dublon", iTemp);
-			Log_Info("You have received "+FindRussianDublonString(sti(pchar.questTemp.WPU.Escort.Money))+"");
+			Log_Info("Avete ricevuto "+FindRussianDublonString(sti(pchar.questTemp.WPU.Escort.Money))+"");
 			PlaySound("interface\important_item.wav");
 			RemoveCharacterGoods(Pchar, iGunGoods, amount);
 		break;

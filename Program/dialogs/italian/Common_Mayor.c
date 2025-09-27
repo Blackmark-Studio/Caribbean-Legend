@@ -2777,8 +2777,8 @@ void ProcessDialogEvent()
 			DialogExit();
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
 			AddCharacterExpToSkill(pchar, "Commerce", 10);
-			Log_Info("You'have received equipment");
-			Log_Info("You have received the 'Holy Water' amulet");
+			Log_Info("Avete ricevuto l'attrezzatura");
+			Log_Info("Avete ricevuto l'amuleto 'Acqua Santa'.");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "amulet_7");
 			TakeNItems(pchar, "blade_08", 1);

@@ -294,7 +294,7 @@ float wdmGetRum()
 	return makefloat(CalculateShipRum(pchar));
 }
 
-//  квестовый отлов входа в море по начилию НПС в случайке
+//  квестовый отлов входа в море по наличию НПС в случайке
 void wdmEnterSeaQuest(string _chrId)
 {
 	ref NPChar = characterFromID(_chrId);

@@ -912,7 +912,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_16":
-			dialog.text = "Ben fatto, "+pchar.name+"Questi selvaggi pagani non uccideranno più nessого. Ora passiamo alla vera faccenda: la grotta. Credo che dentro ce ne siano tre o quattro, ma non posso esserne certo. Ascolta bene.\nCi sono stato dieci anni fa. Dentro c’è un cunicolo stretto che porta a una specie di grotticella, separata da un muro con un buco nel mezzo. Facciamo come abbiamo deciso prima: io rimango vicino all’ingresso e tu ti getti dentro.\nAttirali su di te, non tentare di affrontarli tutti assieme, basta che non mi lascino a portata. Mettiti al tunnel di cui ti ho detto: è stretto, così solo uno o due alla volta potranno starti addosso.\nIo gli sparerò da sopra la tua spalla. Pronto?";
+			dialog.text = "Ben fatto, "+pchar.name+"Questi selvaggi pagani non uccideranno più nessuno. Ora passiamo alla vera faccenda: la grotta. Credo che dentro ce ne siano tre o quattro, ma non posso esserne certo. Ascolta bene.\nCi sono stato dieci anni fa. Dentro c’è un cunicolo stretto che porta a una specie di grotticella, separata da un muro con un buco nel mezzo. Facciamo come abbiamo deciso prima: io rimango vicino all’ingresso e tu ti getti dentro.\nAttirali su di te, non tentare di affrontarli tutti assieme, basta che non mi lascino a portata. Mettiti al tunnel di cui ti ho detto: è stretto, così solo uno o due alla volta potranno starti addosso.\nIo gli sparerò da sopra la tua spalla. Pronto?";
 			link.l1 = "Avanti! Sbarazziamoci di questa tana di selvaggi!";
 			link.l1.go = "Prosper_17";
 		break;

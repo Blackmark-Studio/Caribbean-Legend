@@ -383,13 +383,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "About_Fleetwood_3":
-			dialog.text = "Knippel? Sì, c’è proprio un tale. Charlie Knippel era capocannoniere della Marina inglese, ora è in pensione. Vive tranquillo sulla costa. È occhi e orecchie di Fleetwood a St. John's, quindi vedi di non лезть к нему и не пытаться расспрашивать о Ричарде — finirai ai ferri o, peggio, col collo in una corda.";
+			dialog.text = "Knippel? Sì, c’è proprio un tale. Charlie Knippel era capocannoniere della Marina inglese, ora è in pensione. Vive tranquillo sulla costa. È occhi e orecchie di Fleetwood a St. John's, quindi vedi di non provare a chiedergli di Richard. Finirai ai ferri o, peggio, col collo in una corda.";
 			link.l1 = "Capisco. Puoi dirmi altro di rilevante su Fleetwood?";
 			link.l1.go = "About_Fleetwood_4";
 		break;
 		
 		case "About_Fleetwood_4":
-			dialog.text = "Un idolo per tutte le donne di Antigua, dalle fanciulle alle vecchie megeras. Pare che tutto, di fatto, в этом. Beh, credo che tu sappia cosa gli è successo adesso. Sta a letto a leccarsi le ferite.";
+			dialog.text = "Un idolo per tutte le donne di Antigua, dalle fanciulle alle vecchie megeras. Pare che tutto, di fatto, in loco. Beh, credo che tu sappia cosa gli è successo adesso. Sta a letto a leccarsi le ferite.";
 			link.l1 = "Deve pur avere qualche vizio o punto debole...";
 			link.l1.go = "About_Fleetwood_5";
 		break;

@@ -1,0 +1,8 @@
+Notification_ReputationCheckPassed {Проверка чести пройдена}
+Notification_ReputationCheckFailed {Слишком низкий уровень чести}
+Notification_PerkCheckPassed {Проверка пройдена}
+Notification_PerkCheckFailed {Не открыта способность}
+Notification_SkillCheckPassed {Проверка пройдена}
+Notification_SkillCheckFailed {Недостаточно развит навык}
+Notification_LevelCheckPassed {Проверка уровня пройдена}
+Notification_LevelCheckFailed {Требуется уровень}

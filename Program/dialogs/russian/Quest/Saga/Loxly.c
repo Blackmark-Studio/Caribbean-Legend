@@ -28,7 +28,7 @@ void ProcessDialogEvent()
 		else
 		{
 			Dialog.CurrentNode = "RelationAny_Done";
-			npchar.quest.relation.summ = CalculateRelationLoyerSum(sti(npchar.quest.relation));
+			npchar.quest.relation.summ = CalculateRelationLoyerSum(sti(npchar.quest.relation)); // TO_DO
 		}
 	}
 	

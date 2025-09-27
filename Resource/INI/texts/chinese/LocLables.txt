@@ -105,7 +105,7 @@ Shore24	{布兰卡泻湖}
 Shore25	{科维尼亚斯峡}
 Shore26	{布鲁斯城堡海滩}
 Shore27	{斯科特角}
-Shore28	{莫尔内阿洛湾}
+Shore28	{莫尔纳洛峡}
 Shore29	{卡普斯特海滩}
 Shore30	{格朗堡峡}
 Shore31	{不可接近角}
@@ -133,8 +133,8 @@ Shore52	{杜尔塞湾}
 Shore53	{蚊子海岸}
 Shore54	{佩拉斯角}
 Shore55	{圣胡安德诺特湾}
-Shore56	{北部湾}
-Shore57	{南部湾}
+Shore56	{北湾}
+Shore57	{南湾}
 Shore58	{鱼眼海滩}
 Shore59	{斯卡伯勒峡}
 Shore60	{加莱拉角}
@@ -336,7 +336,7 @@ Shipyard		{造船厂}
 PackHouse		{仓库}
 Townhall		{总督官邸}
 TownhallRoom	{官邸房间}
-Residence		{住宅}
+Residence		{官邸}
 PortOffice		{港口办公室}
 Church			{教堂}
 Incquisitio		{宗教裁判所}
@@ -411,11 +411,11 @@ FernandaDiffIndoor cabin	{福禄特帆船'费尔南达号'}
 FleuronTavern cabin	{卡拉维尔帆船'弗莱龙号'}
 FurieShipInside2 cabin	{小艇'狂怒号'}
 GloriaChurch cabin		{盖伦帆船'荣耀号'}
-PlutoStoreSmall cabin	{福禄特帆船'冥王星号'}
-ProtectorFisher cabin	{轻巡洋舰'守护者号'}
+PlutoStoreSmall cabin	{福禄特帆船'普路托号'}
+ProtectorFisher cabin	{轻型护卫舰'守护者号'}
 SanAugustineResidence cabin	{战船'圣奥古斯丁号'}
 SanGabrielMechanic cabin	{三桅帆船'圣盖博号'}
-SantaFlorentinaShipInside4 cabin	{双桅船'圣弗洛伦蒂娜号'}
+SantaFlorentinaShipInside4 cabin	{双桅横帆船'圣弗洛伦蒂娜号'}
 TartarusPrison cabin	{战列舰'塔耳塔罗斯号'}
 VelascoShipInside1 cabin	{盖伦帆船'贝拉斯科号'}
 

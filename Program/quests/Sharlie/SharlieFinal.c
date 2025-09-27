@@ -1772,6 +1772,7 @@ void GuardOT_SetDiegoOnMayak(string qName) // ставим Диего
 	chrDisableReloadToLocation = true;//закрыть локацию
 	// Диего, косит под офицера патруля
 	sld = characterFromId("Diego");
+	LAi_CharacterEnableDialog(sld);
 	sld.name = StringFromKey("SharlieFinal_40");
 	sld.lastname = StringFromKey("SharlieFinal_41");
 	sld.dialog.FileName = "Quest\Sharlie\Diego.c";

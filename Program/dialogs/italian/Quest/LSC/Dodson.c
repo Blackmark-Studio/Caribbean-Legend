@@ -1635,7 +1635,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "terrapin_5":
-			dialog.text = "Non so molto di quell’uomo. So solo che lo zio si fida abbastanza di quel cucciolo da farne il suo erede. Ha ancora una ragazza, altrimenti a che бы gli servirebbero tutte queste trame?\nNon si capisce dove tengano la ragazza né perché Thibaut lasci che Marten prenda il comando. C’è un mistero qui, che potrebbe aiutarci a vincere questa partita senza dover assaltare Tortuga. Sei francese, quindi immagino che sia di tuo gusto.\nMa devi sbrigarti, le chiacchiere da ubriaco di Lucas potrebbero già essere arrivate alle orecchie degli agenti di Marten e Levasseur, e puoi immaginare le conseguenze!";
+			dialog.text = "Non so molto di quell’uomo. So solo che lo zio si fida abbastanza di quel cucciolo da farne il suo erede. Ha ancora una ragazza, altrimenti a che gli servirebbero tutte queste trame?\nNon si capisce dove tengano la ragazza né perché Thibaut lasci che Marten prenda il comando. C’è un mistero qui, che potrebbe aiutarci a vincere questa partita senza dover assaltare Tortuga. Sei francese, quindi immagino che sia di tuo gusto.\nMa devi sbrigarti, le chiacchiere da ubriaco di Lucas potrebbero già essere arrivate alle orecchie degli agenti di Marten e Levasseur, e puoi immaginare le conseguenze!";
 			link.l1 = "Capisco. Quindi, Thibaut è l’erede di Levasseur? E nasconde una schiava allo zio? Maledizione, immagino che il ragazzo non veda l’ora che lo zio crepi!";
 			link.l1.go = "terrapin_6";
 		break;

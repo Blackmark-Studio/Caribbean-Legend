@@ -204,6 +204,9 @@ string GetRandEnabledItem(aref aTier, string sType)
         DeleteAttribute(&TreasureTiers[0], sItem);
     }
 
+    // Берём оригинал, если дубль
+    if(CheckAttribute(aType, sItem + ".orig")) sItem = aType.(sItem).orig;
+
     return sItem;
 }
 
@@ -241,6 +244,17 @@ void FillBoxForEquip(ref item, aref aTier, int iBonus, bool bOtherSlots)
     string itmName = GetRandEnabledItem(aTier, "Equip");
     if(IsGenerableItem(itmName)) itmName = GetGeneratedItem(itmName);
     item.BoxTreasure.(itmName) = 1; // Весь эквип выдаётся штучно
+	
+	if(GetDLCenabled(DLC_APPID_1) && itmName == "pistol10")
+	{
+		item.BoxTreasure.talisman12 = 1;
+		if(startHeroType != 1)
+		{
+			item.BoxTreasure.knife_03 = 1;
+		}
+		return;
+	}
+	
     if(bOtherSlots)
     {
         if(50 + iBonus > rand(99)) FillBoxForEquip(item, aTier, iBonus, false);
@@ -469,6 +483,7 @@ void TraderHunterOnMap(bool bCool)
             else sld.GenShip.Spec = SHIP_SPEC_WAR;
         }
         SetShipHunter(sld);
+        Fantom_SetPrize(sld);
         SetFantomParamHunter(sld); //крутые парни
         SetCaptanModelByEncType(sld, "war");
         sld.AlwaysEnemy = true;
@@ -494,18 +509,16 @@ void TreasureHunterOnMap(bool bCool, int iTier)
     int iShips[4];
     int i, num, max, add = 5;
     iShips[0] = 0; // Рейдер
-    iShips[1] = 0; // Рейдер
-    iShips[2] = 0; // Универсал
-    iShips[3] = 0; // Военник
+    iShips[1] = 0; // Рейдер/Универсал
+    iShips[2] = 0; // Военник
     if(bCool) add = 8;
 
     if(iTier < 4)      {iShips[0] = 6; num = 1;}
-    else if(iTier < 6) {iShips[0] = 5+rand(1); num = 1;}
-    else if(iTier < 8) {iShips[0] = 5+rand(1); iShips[1] = 5; num = 2;}
-    else if(iTier < 10){iShips[0] = 4+rand(1); iShips[1] = 4+rand(1); num = 2;}
-    else if(iTier < 12){iShips[0] = 3+rand(1); iShips[1] = 3+rand(1); iShips[2] = 3; num = 3;}
-    else if(iTier < 14){iShips[0] = 2+rand(1); iShips[1] = 2+rand(1); iShips[2] = 2+rand(1); num = 3;}
-    else               {iShips[0] = 2+rand(1); iShips[1] = 2+rand(1); iShips[2] = 2+rand(1); iShips[3] = 2+rand(1); num = 4;}
+    else if(iTier < 7) {iShips[0] = 5+rand(1); num = 1;}
+    else if(iTier < 10){iShips[0] = 5+rand(1); iShips[1] = 5+rand(1); num = 2;}
+    else if(iTier < 13){iShips[0] = 4+rand(1); iShips[1] = 4+rand(1); num = 2;}
+    else if(iTier < 14){iShips[0] = 3+rand(1); iShips[1] = 3+rand(1); num = 2;}
+    else               {iShips[0] = 3+rand(1); iShips[1] = 3+rand(1); iShips[2] = 3+rand(1); num = 3;}
 
     max = num;
     i = GetCompanionQuantity(PChar);
@@ -525,17 +538,18 @@ void TreasureHunterOnMap(bool bCool, int iTier)
         sld.GenShip.Class = iTier;
         if(i > num)
         {   // Вероятности на спеки специально равные (рейдеру не больше остальных), если у игрока большая эскадра
-            if(num < 3) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
-            else if(num == 3) sld.GenShip.Spec = RandFromTwo(SHIP_SPEC_RAIDER, SHIP_SPEC_UNIVERSAL);
+            if(num == 1) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
+            else if(num == 2) sld.GenShip.Spec = RandFromTwo(SHIP_SPEC_RAIDER, SHIP_SPEC_UNIVERSAL);
             else sld.GenShip.Spec = RandFromThree(SHIP_SPEC_RAIDER, SHIP_SPEC_UNIVERSAL, SHIP_SPEC_WAR);
         }
         else
         {
-            if(i < 3) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
-            else if(i == 3) sld.GenShip.Spec = SHIP_SPEC_UNIVERSAL;
+            if(i == 1) sld.GenShip.Spec = SHIP_SPEC_RAIDER;
+            else if(i == 2) sld.GenShip.Spec = RandFromTwo(SHIP_SPEC_RAIDER, SHIP_SPEC_UNIVERSAL);
             else sld.GenShip.Spec = SHIP_SPEC_WAR;
         }
         SetShipHunter(sld);
+        Fantom_SetPrize(sld);
         SetFantomParamHunter(sld); //крутые парни
         SetCaptanModelByEncType(sld, "war");
         sld.AlwaysEnemy = true;
@@ -544,7 +558,7 @@ void TreasureHunterOnMap(bool bCool, int iTier)
         sld.mapEnc.Name = XI_ConvertString("GentlemenOfFortune");
 		sld.hunter = "pirate";
         Group_AddCharacter(sGroup, sCapId + i);
-        if(iTier < 3 && rand(1)) SetRandGeraldSail(sld, PIRATE);
+        if(i == 1 && rand(1)) SetRandGeraldSail(sld, PIRATE);
     }
 
     Group_SetGroupCommander(sGroup, sCapId+ "1");
@@ -763,7 +777,7 @@ void Treasure_SetCaribWarrior()
 {
 	chrDisableReloadToLocation = true;//закрыть локацию
 	int iRank = 10+sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE)/2;
-	for(int i=1; i<=4; i++)
+	for(int i=1; i<=3; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Treasure_carib_"+i, "canib_"+(rand(5)+1), "man", "man", iRank, PIRATE, 1, true, "native"));
 		SetFantomParamFromRank(sld, iRank, true);
@@ -784,7 +798,7 @@ void Treasure_SetBandosWarrior()
 {
 	chrDisableReloadToLocation = true;//закрыть локацию
 	int iRank = 8+sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE)/2;
-	for(int i=1; i<=4; i++)
+	for(int i=1; i<=3; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Treasure_bandos_"+i, "citiz_"+(rand(9)+41), "man", "man", iRank, PIRATE, 1, true, "marginal"));
 		SetFantomParamFromRank(sld, iRank, true);
@@ -852,5 +866,19 @@ void Treasure_SetOfficerWarrior(string qName)
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto", LAi_FindFarLocator("goto", locx, locy, locz));
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
+	}
+}
+
+void LoyaltyPack_Treasure(int iTier, int iBonus, ref item)
+{
+	if(GetDLCenabled(DLC_APPID_1) && hrand(iTier + 10) > 10)
+	{
+		item.BoxTreasure.talisman12 = 1;
+		item.BoxTreasure.pistol10 = 1;
+		if(startHeroType != 1)
+		{
+			item.BoxTreasure.knife_03 = 1;
+		}
+		DeleteAttribute(&TreasureTiers[0], "QuestSlot.LoyaltyPack");
 	}
 }

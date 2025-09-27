@@ -4,9 +4,11 @@ void InitTreasureTiers()
 // === TIER 1 ===
     // = Equip =
     TreasureTiers[1].Equip.cirass5  = "On"; // Кожаный корсет
-    TreasureTiers[1].Equip.slave_02 = "On"; // Мачете
-    TreasureTiers[1].Equip.topor_05 = "On"; // Томагавк
     TreasureTiers[1].Equip.slave_01 = "On"; // Гарпун
+    TreasureTiers[1].Equip.slave_02 = "On"; // Мачете
+    TreasureTiers[1].Equip.blade_05 = "On"; // Катлас
+    TreasureTiers[1].Equip.blade_11 = "On"; // Абордажный тесак
+    TreasureTiers[1].Equip.topor_05 = "On"; // Томагавк
     TreasureTiers[1].Equip.pistol1  = "On"; // Строевой пистоль
     TreasureTiers[1].Equip.spyglass2 = "On"; // Обычная подзорная труба
 
@@ -54,6 +56,10 @@ void InitTreasureTiers()
     TreasureTiers[1].Jewelry.potionrum = "On";
     TreasureTiers[1].Jewelry.potionrum.min = 5;
     TreasureTiers[1].Jewelry.potionrum.dif = 4;
+    // Золотой дублон
+    TreasureTiers[1].Jewelry.gold_dublon = "On";
+    TreasureTiers[1].Jewelry.gold_dublon.min = 5;
+    TreasureTiers[1].Jewelry.gold_dublon.dif = 20;
     // Ипекакуана (рвотный корень)
     TreasureTiers[1].Jewelry.cannabis4 = "On";
     TreasureTiers[1].Jewelry.cannabis4.min = 2;
@@ -95,23 +101,23 @@ void InitTreasureTiers()
     // Обычные карты
     TreasureTiers[1].Special.map = "On";
     TreasureTiers[1].Special.map.min = 1;
-    TreasureTiers[1].Special.map.dif = 0;
+    TreasureTiers[1].Special.map.dif = 1;
 
 // === TIER 2 ===
     // = Equip =
     TreasureTiers[2].Equip.cirass5  = "On"; // Кожаный корсет
-    TreasureTiers[2].Equip.slave_02 = "On"; // Мачете
-    TreasureTiers[2].Equip.blade_01 = "On"; // Нааб-Те
-    TreasureTiers[2].Equip.blade_05 = "On"; // Катлас
-    TreasureTiers[2].Equip.blade_03 = "On"; // Стокката
-    TreasureTiers[2].Equip.topor_05 = "On"; // Томагавк
-    TreasureTiers[2].Equip.blade_02 = "On"; // Тлакомакан
-    TreasureTiers[2].Equip.blade_08 = "On"; // Бильбо
     TreasureTiers[2].Equip.slave_01 = "On"; // Гарпун
+    TreasureTiers[2].Equip.slave_02 = "On"; // Мачете
+    TreasureTiers[2].Equip.blade_05 = "On"; // Катлас
     TreasureTiers[2].Equip.blade_11 = "On"; // Абордажный тесак
+    TreasureTiers[2].Equip.topor_05 = "On"; // Томагавк
+    TreasureTiers[2].Equip.blade_01 = "On"; // Нааб-Те
+    TreasureTiers[2].Equip.blade_02 = "On"; // Тлакомакан
+    TreasureTiers[2].Equip.blade_03 = "On"; // Стокката
+    TreasureTiers[2].Equip.blade_08 = "On"; // Бильбо
     TreasureTiers[2].Equip.pistol1  = "On"; // Строевой пистоль
     TreasureTiers[2].Equip.pistol3  = "On"; // Тромбон
-    TreasureTiers[2].Equip.hat1 = "On"; // Шляпа кондотьера
+    TreasureTiers[2].Equip.hat1     = "On"; // Шляпа кондотьера
     TreasureTiers[2].Equip.spyglass2 = "On"; // Обычная подзорная труба
 
     // = Jewelry =
@@ -166,6 +172,10 @@ void InitTreasureTiers()
     TreasureTiers[2].Jewelry.potionrum = "On";
     TreasureTiers[2].Jewelry.potionrum.min = 7;
     TreasureTiers[2].Jewelry.potionrum.dif = 6;
+    // Золотой дублон
+    TreasureTiers[2].Jewelry.gold_dublon = "On";
+    TreasureTiers[2].Jewelry.gold_dublon.min = 20;
+    TreasureTiers[2].Jewelry.gold_dublon.dif = 30;
     // Ипекакуана (рвотный корень)
     TreasureTiers[2].Jewelry.cannabis4 = "On";
     TreasureTiers[2].Jewelry.cannabis4.min = 4;
@@ -215,27 +225,30 @@ void InitTreasureTiers()
     // Обычные карты
     TreasureTiers[2].Special.map = "On";
     TreasureTiers[2].Special.map.min = 1;
-    TreasureTiers[2].Special.map.dif = 0;
+    TreasureTiers[2].Special.map.dif = 1;
 
 // === TIER 3 ===
     // = Equip =
+    TreasureTiers[3].Equip.cirass5  = "On"; // Кожаный корсет
     TreasureTiers[3].Equip.cirass6  = "On"; // Жилет бретера
-    TreasureTiers[3].Equip.blade_12 = "On"; // Полусабля
-    TreasureTiers[3].Equip.blade_01 = "On"; // Нааб-Те
-    TreasureTiers[3].Equip.blade_07 = "On"; // Риттершверт
+    TreasureTiers[3].Equip.slave_01 = "On"; // Гарпун
+    TreasureTiers[3].Equip.slave_02 = "On"; // Мачете
     TreasureTiers[3].Equip.blade_05 = "On"; // Катлас
-    TreasureTiers[3].Equip.blade_03 = "On"; // Стокката
-    TreasureTiers[3].Equip.blade_14 = "On"; // Валлонская шпага
-    TreasureTiers[3].Equip.blade_02 = "On"; // Тлакомакан
-    TreasureTiers[3].Equip.blade_08 = "On"; // Бильбо
-    TreasureTiers[3].Equip.topor_02 = "On"; // Бартакс
     TreasureTiers[3].Equip.blade_11 = "On"; // Абордажный тесак
+    TreasureTiers[3].Equip.topor_05 = "On"; // Томагавк
+    TreasureTiers[3].Equip.blade_01 = "On"; // Нааб-Те
+    TreasureTiers[3].Equip.blade_02 = "On"; // Тлакомакан
+    TreasureTiers[3].Equip.blade_03 = "On"; // Стокката
+    TreasureTiers[3].Equip.blade_08 = "On"; // Бильбо
+    TreasureTiers[3].Equip.blade_07 = "On"; // Риттершверт
+    TreasureTiers[3].Equip.blade_12 = "On"; // Полусабля
+    TreasureTiers[3].Equip.blade_14 = "On"; // Валлонская шпага
+    TreasureTiers[3].Equip.topor_02 = "On"; // Бартакс
     TreasureTiers[3].Equip.blade_09 = "On"; // Карцолета
-    TreasureTiers[3].Equip.pistol2  = "On"; // Трёхствольный дробовик
     TreasureTiers[3].Equip.pistol1  = "On"; // Строевой пистоль
     TreasureTiers[3].Equip.pistol3  = "On"; // Тромбон
-    TreasureTiers[3].Equip.hat1 = "On"; // Шляпа кондотьера
-    TreasureTiers[3].Equip.hat3 = "On"; // Треуголка моряка
+    TreasureTiers[3].Equip.hat1     = "On"; // Шляпа кондотьера
+    TreasureTiers[3].Equip.hat3     = "On"; // Треуголка моряка
     TreasureTiers[3].Equip.spyglass2 = "On"; // Обычная подзорная труба
     TreasureTiers[3].Equip.spyglass3 = "On"; // Хорошая подзорная труба
 
@@ -291,6 +304,9 @@ void InitTreasureTiers()
     TreasureTiers[3].Jewelry.gold_dublon = "On";
     TreasureTiers[3].Jewelry.gold_dublon.min = 35;
     TreasureTiers[3].Jewelry.gold_dublon.dif = 40;
+    // Золотой дублон (дубль)
+    TreasureTiers[3].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[3].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Ипекакуана (рвотный корень)
     TreasureTiers[3].Jewelry.cannabis4 = "On";
     TreasureTiers[3].Jewelry.cannabis4.min = 6;
@@ -348,29 +364,33 @@ void InitTreasureTiers()
     // Обычные карты
     TreasureTiers[3].Special.map = "On";
     TreasureTiers[3].Special.map.min = 1;
-    TreasureTiers[3].Special.map.dif = 0;
+    TreasureTiers[3].Special.map.dif = 1;
 
 // === TIER 4 ===
     // = Equip =
-    // Кожаный корсет
+    TreasureTiers[4].Equip.cirass5  = "On"; // Кожаный корсет
     TreasureTiers[4].Equip.cirass6  = "On"; // Жилет бретера
     TreasureTiers[4].Equip.cirass7  = "On"; // Бригант
-    TreasureTiers[4].Equip.blade_12 = "On"; // Полусабля
-    TreasureTiers[4].Equip.topor_03 = "On"; // Годендаг
-    TreasureTiers[4].Equip.blade_07 = "On"; // Риттершверт
+    TreasureTiers[4].Equip.slave_02 = "On"; // Мачете
     TreasureTiers[4].Equip.blade_05 = "On"; // Катлас
-    TreasureTiers[4].Equip.blade_14 = "On"; // Валлонская шпага
-    TreasureTiers[4].Equip.blade_02 = "On"; // Тлакомакан
-    TreasureTiers[4].Equip.blade_39 = "On"; // Рапира бретера
-    TreasureTiers[4].Equip.topor_02 = "On"; // Бартакс
     TreasureTiers[4].Equip.blade_11 = "On"; // Абордажный тесак
+    TreasureTiers[4].Equip.topor_05 = "On"; // Томагавк
+    TreasureTiers[4].Equip.blade_01 = "On"; // Нааб-Те
+    TreasureTiers[4].Equip.blade_02 = "On"; // Тлакомакан
+    TreasureTiers[4].Equip.blade_03 = "On"; // Стокката
+    TreasureTiers[4].Equip.blade_08 = "On"; // Бильбо
+    TreasureTiers[4].Equip.blade_07 = "On"; // Риттершверт
+    TreasureTiers[4].Equip.blade_12 = "On"; // Полусабля
+    TreasureTiers[4].Equip.blade_14 = "On"; // Валлонская шпага
+    TreasureTiers[4].Equip.topor_02 = "On"; // Бартакс
     TreasureTiers[4].Equip.blade_09 = "On"; // Карцолета
-    TreasureTiers[4].Equip.pistol2  = "On"; // Трёхствольный дробовик
+    TreasureTiers[4].Equip.blade_15 = "On"; // Маринера
     TreasureTiers[4].Equip.pistol1  = "On"; // Строевой пистоль
     TreasureTiers[4].Equip.pistol3  = "On"; // Тромбон
     TreasureTiers[4].Equip.pistol6  = "On"; // Бок-пистолет
-    TreasureTiers[4].Equip.hat1 = "On"; // Шляпа кондотьера
-    TreasureTiers[4].Equip.hat3 = "On"; // Треуголка моряка
+    TreasureTiers[4].Equip.hat1     = "On"; // Шляпа кондотьера
+    TreasureTiers[4].Equip.hat3     = "On"; // Треуголка моряка
+    TreasureTiers[4].Equip.spyglass2 = "On"; // Обычная подзорная труба
     TreasureTiers[4].Equip.spyglass3 = "On"; // Хорошая подзорная труба
 
     // = Jewelry =
@@ -425,6 +445,9 @@ void InitTreasureTiers()
     TreasureTiers[4].Jewelry.gold_dublon = "On";
     TreasureTiers[4].Jewelry.gold_dublon.min = 50;
     TreasureTiers[4].Jewelry.gold_dublon.dif = 50;
+    // Золотой дублон (дубль)
+    TreasureTiers[4].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[4].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Бирюза
     TreasureTiers[4].Jewelry.jewelry20 = "On";
     TreasureTiers[4].Jewelry.jewelry20.min = 13;
@@ -494,28 +517,35 @@ void InitTreasureTiers()
 
 // === TIER 5 ===
     // = Equip =
-    TreasureTiers[5].Equip.cirass3  = "On"; // Парадная кираса
+    TreasureTiers[5].Equip.cirass5  = "On"; // Кожаный корсет
     TreasureTiers[5].Equip.cirass6  = "On"; // Жилет бретера
     TreasureTiers[5].Equip.cirass7  = "On"; // Бригант
-    TreasureTiers[5].Equip.blade_12 = "On"; // Полусабля
-    TreasureTiers[5].Equip.topor_03 = "On"; // Годендаг
-    TreasureTiers[5].Equip.blade_15 = "On"; // Маринера
-    TreasureTiers[5].Equip.blade_07 = "On"; // Риттершверт
-    TreasureTiers[5].Equip.blade_16 = "On"; // Смоллсворд
-    TreasureTiers[5].Equip.blade_14 = "On"; // Валлонская шпага
-    TreasureTiers[5].Equip.blade_27 = "On"; // Саксенфедер
-    TreasureTiers[5].Equip.blade_39 = "On"; // Рапира бретера
-    TreasureTiers[5].Equip.topor_02 = "On"; // Бартакс
+    TreasureTiers[5].Equip.cirass3  = "On"; // Парадная кираса
     TreasureTiers[5].Equip.blade_04 = "On"; // Гроссмессер
+    TreasureTiers[5].Equip.blade_05 = "On"; // Катлас
+    TreasureTiers[5].Equip.blade_11 = "On"; // Абордажный тесак
+    TreasureTiers[5].Equip.topor_05 = "On"; // Томагавк
+    TreasureTiers[5].Equip.blade_01 = "On"; // Нааб-Те
+    TreasureTiers[5].Equip.blade_02 = "On"; // Тлакомакан
+    TreasureTiers[5].Equip.blade_03 = "On"; // Стокката
+    TreasureTiers[5].Equip.blade_08 = "On"; // Бильбо
+    TreasureTiers[5].Equip.blade_07 = "On"; // Риттершверт
+    TreasureTiers[5].Equip.blade_12 = "On"; // Полусабля
+    TreasureTiers[5].Equip.blade_14 = "On"; // Валлонская шпага
+    TreasureTiers[5].Equip.topor_02 = "On"; // Бартакс
     TreasureTiers[5].Equip.blade_09 = "On"; // Карцолета
-    TreasureTiers[5].Equip.pistol2  = "On"; // Трёхствольный дробовик
-    TreasureTiers[5].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[5].Equip.blade_15 = "On"; // Маринера
+    TreasureTiers[5].Equip.blade_16 = "On"; // Смоллсворд
+    TreasureTiers[5].Equip.pistol1  = "On"; // Строевой пистоль
     TreasureTiers[5].Equip.pistol3  = "On"; // Тромбон
+    TreasureTiers[5].Equip.pistol2  = "On"; // Трёхствольный дробовик
     TreasureTiers[5].Equip.pistol6  = "On"; // Бок-пистолет
     TreasureTiers[5].Equip.mushket3 = "On"; // Аркебуза
-    TreasureTiers[5].Equip.hat1 = "On"; // Шляпа кондотьера
-    TreasureTiers[5].Equip.hat3 = "On"; // Треуголка моряка
-    TreasureTiers[5].Equip.hat7 = "On"; // Счастливая шляпа
+    TreasureTiers[5].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[5].Equip.hat1     = "On"; // Шляпа кондотьера
+    TreasureTiers[5].Equip.hat3     = "On"; // Треуголка моряка
+    TreasureTiers[5].Equip.hat7     = "On"; // Счастливая шляпа
+    TreasureTiers[5].Equip.spyglass2 = "On"; // Обычная подзорная труба
     TreasureTiers[5].Equip.spyglass3 = "On"; // Хорошая подзорная труба
 
     // = Jewelry =
@@ -570,6 +600,9 @@ void InitTreasureTiers()
     TreasureTiers[5].Jewelry.gold_dublon = "On";
     TreasureTiers[5].Jewelry.gold_dublon.min = 65;
     TreasureTiers[5].Jewelry.gold_dublon.dif = 60;
+    // Золотой дублон (дубль)
+    TreasureTiers[5].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[5].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Бирюза
     TreasureTiers[5].Jewelry.jewelry20 = "On";
     TreasureTiers[5].Jewelry.jewelry20.min = 18;
@@ -602,8 +635,8 @@ void InitTreasureTiers()
     TreasureTiers[5].Special.indian_10.dif = 1;
     // Амулет "Кукла Вуду"
     TreasureTiers[5].Special.indian_1 = "On";
-    TreasureTiers[5].Special.indian_1.min = 2;
-    TreasureTiers[5].Special.indian_1.dif = 1;
+    TreasureTiers[5].Special.indian_1.min = 1;
+    TreasureTiers[5].Special.indian_1.dif = 2;
     // Амулет "Коралловая голова"
     TreasureTiers[5].Special.indian_6 = "On";
     TreasureTiers[5].Special.indian_6.min = 1;
@@ -643,24 +676,37 @@ void InitTreasureTiers()
 
 // === TIER 6 ===
     // = Equip =
-    TreasureTiers[6].Equip.cirass3  = "On"; // Парадная кираса
+    TreasureTiers[6].Equip.cirass5  = "On"; // Кожаный корсет
+    TreasureTiers[6].Equip.cirass6  = "On"; // Жилет бретера
     TreasureTiers[6].Equip.cirass7  = "On"; // Бригант
-    TreasureTiers[6].Equip.topor_03 = "On"; // Годендаг
-    TreasureTiers[6].Equip.blade_15 = "On"; // Маринера
+    TreasureTiers[6].Equip.cirass3  = "On"; // Парадная кираса
+    TreasureTiers[6].Equip.blade_04 = "On"; // Гроссмессер
+    TreasureTiers[6].Equip.blade_05 = "On"; // Катлас
+    TreasureTiers[6].Equip.blade_11 = "On"; // Абордажный тесак
     TreasureTiers[6].Equip.blade_30 = "On"; // Офицерский клеванг
+    TreasureTiers[6].Equip.blade_01 = "On"; // Нааб-Те
+    TreasureTiers[6].Equip.blade_02 = "On"; // Тлакомакан
+    TreasureTiers[6].Equip.blade_03 = "On"; // Стокката
+    TreasureTiers[6].Equip.blade_08 = "On"; // Бильбо
+    TreasureTiers[6].Equip.blade_07 = "On"; // Риттершверт
+    TreasureTiers[6].Equip.blade_12 = "On"; // Полусабля
+    TreasureTiers[6].Equip.blade_14 = "On"; // Валлонская шпага
+    TreasureTiers[6].Equip.topor_02 = "On"; // Бартакс
+    TreasureTiers[6].Equip.blade_09 = "On"; // Карцолета
+    TreasureTiers[6].Equip.blade_15 = "On"; // Маринера
     TreasureTiers[6].Equip.blade_16 = "On"; // Смоллсворд
-    TreasureTiers[6].Equip.blade_06 = "On"; // Скьявона
     TreasureTiers[6].Equip.blade_27 = "On"; // Саксенфедер
     TreasureTiers[6].Equip.blade_39 = "On"; // Рапира бретера
-    TreasureTiers[6].Equip.blade_13 = "On"; // Офицерский палаш
-    TreasureTiers[6].Equip.blade_04 = "On"; // Гроссмессер
+    TreasureTiers[6].Equip.pistol1  = "On"; // Строевой пистоль
+    TreasureTiers[6].Equip.pistol3  = "On"; // Тромбон
     TreasureTiers[6].Equip.pistol2  = "On"; // Трёхствольный дробовик
-    TreasureTiers[6].Equip.mushket1 = "On"; // Фитильный мушкет
     TreasureTiers[6].Equip.pistol6  = "On"; // Бок-пистолет
     TreasureTiers[6].Equip.mushket3 = "On"; // Аркебуза
-    TreasureTiers[6].Equip.hat1 = "On"; // Шляпа кондотьера
-    TreasureTiers[6].Equip.hat3 = "On"; // Треуголка моряка
-    TreasureTiers[6].Equip.hat7 = "On"; // Счастливая шляпа
+    TreasureTiers[6].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[6].Equip.hat1     = "On"; // Шляпа кондотьера
+    TreasureTiers[6].Equip.hat3     = "On"; // Треуголка моряка
+    TreasureTiers[6].Equip.hat7     = "On"; // Счастливая шляпа
+    TreasureTiers[6].Equip.spyglass2 = "On"; // Обычная подзорная труба
     TreasureTiers[6].Equip.spyglass3 = "On"; // Хорошая подзорная труба
 
     // = Jewelry =
@@ -715,6 +761,9 @@ void InitTreasureTiers()
     TreasureTiers[6].Jewelry.gold_dublon = "On";
     TreasureTiers[6].Jewelry.gold_dublon.min = 80;
     TreasureTiers[6].Jewelry.gold_dublon.dif = 70;
+    // Золотой дублон (дубль)
+    TreasureTiers[6].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[6].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Бирюза
     TreasureTiers[6].Jewelry.jewelry20 = "On";
     TreasureTiers[6].Jewelry.jewelry20.min = 22;
@@ -743,12 +792,12 @@ void InitTreasureTiers()
     TreasureTiers[6].Special.indian_2.dif = 1;
     // Амулет "Каскавела"
     TreasureTiers[6].Special.indian_10 = "On";
-    TreasureTiers[6].Special.indian_10.min = 2;
-    TreasureTiers[6].Special.indian_10.dif = 1;
+    TreasureTiers[6].Special.indian_10.min = 1;
+    TreasureTiers[6].Special.indian_10.dif = 2;
     // Амулет "Кукла Вуду"
     TreasureTiers[6].Special.indian_1 = "On";
-    TreasureTiers[6].Special.indian_1.min = 2;
-    TreasureTiers[6].Special.indian_1.dif = 1;
+    TreasureTiers[6].Special.indian_1.min = 1;
+    TreasureTiers[6].Special.indian_1.dif = 2;
     // Амулет "Коралловая голова"
     TreasureTiers[6].Special.indian_6 = "On";
     TreasureTiers[6].Special.indian_6.min = 1;
@@ -791,30 +840,42 @@ void InitTreasureTiers()
     TreasureTiers[6].Special.clock1.dif = 0;
     // Обычные карты
     TreasureTiers[6].Special.map = "On";
-    TreasureTiers[6].Special.map.min = 2;
+    TreasureTiers[6].Special.map.min = 1;
     TreasureTiers[6].Special.map.dif = 2;
 
 // === TIER 7 ===
     // = Equip =
+    TreasureTiers[7].Equip.cirass5  = "On"; // Кожаный корсет
+    TreasureTiers[7].Equip.cirass6  = "On"; // Жилет бретера
+    TreasureTiers[7].Equip.cirass7  = "On"; // Бригант
     TreasureTiers[7].Equip.cirass3  = "On"; // Парадная кираса
     TreasureTiers[7].Equip.cirass1  = "On"; // Траншейный доспех
-    TreasureTiers[7].Equip.topor_01 = "On"; // Макуауитль
-    TreasureTiers[7].Equip.blade_15 = "On"; // Маринера
+    TreasureTiers[7].Equip.blade_04 = "On"; // Гроссмессер
+    TreasureTiers[7].Equip.blade_05 = "On"; // Катлас
+    TreasureTiers[7].Equip.blade_13 = "On"; // Офицерский палаш
     TreasureTiers[7].Equip.blade_30 = "On"; // Офицерский клеванг
+    TreasureTiers[7].Equip.topor_01 = "On"; // Макуауитль
+    TreasureTiers[7].Equip.blade_02 = "On"; // Тлакомакан
+    TreasureTiers[7].Equip.blade_03 = "On"; // Стокката
+    TreasureTiers[7].Equip.blade_08 = "On"; // Бильбо
+    TreasureTiers[7].Equip.blade_07 = "On"; // Риттершверт
+    TreasureTiers[7].Equip.blade_12 = "On"; // Полусабля
+    TreasureTiers[7].Equip.blade_14 = "On"; // Валлонская шпага
+    TreasureTiers[7].Equip.topor_02 = "On"; // Бартакс
+    TreasureTiers[7].Equip.blade_09 = "On"; // Карцолета
+    TreasureTiers[7].Equip.blade_15 = "On"; // Маринера
     TreasureTiers[7].Equip.blade_16 = "On"; // Смоллсворд
-    TreasureTiers[7].Equip.topor_04 = "On"; // Секира
-    TreasureTiers[7].Equip.blade_06 = "On"; // Скьявона
     TreasureTiers[7].Equip.blade_27 = "On"; // Саксенфедер
     TreasureTiers[7].Equip.blade_39 = "On"; // Рапира бретера
-    TreasureTiers[7].Equip.blade_13 = "On"; // Офицерский палаш
-    TreasureTiers[7].Equip.blade_04 = "On"; // Гроссмессер
     TreasureTiers[7].Equip.mushket2 = "On"; // Флотский карабин
-    TreasureTiers[7].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[7].Equip.pistol3  = "On"; // Тромбон
+    TreasureTiers[7].Equip.pistol2  = "On"; // Трёхствольный дробовик
     TreasureTiers[7].Equip.pistol6  = "On"; // Бок-пистолет
     TreasureTiers[7].Equip.mushket3 = "On"; // Аркебуза
-    TreasureTiers[7].Equip.hat1 = "On"; // Шляпа кондотьера
-    TreasureTiers[7].Equip.hat3 = "On"; // Треуголка моряка
-    TreasureTiers[7].Equip.hat7 = "On"; // Счастливая шляпа
+    TreasureTiers[7].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[7].Equip.hat1     = "On"; // Шляпа кондотьера
+    TreasureTiers[7].Equip.hat3     = "On"; // Треуголка моряка
+    TreasureTiers[7].Equip.hat7     = "On"; // Счастливая шляпа
     TreasureTiers[7].Equip.spyglass3 = "On"; // Хорошая подзорная труба
     TreasureTiers[7].Equip.spyglass4 = "On"; // Отличная подзорная труба
 
@@ -870,6 +931,9 @@ void InitTreasureTiers()
     TreasureTiers[7].Jewelry.gold_dublon = "On";
     TreasureTiers[7].Jewelry.gold_dublon.min = 95;
     TreasureTiers[7].Jewelry.gold_dublon.dif = 80;
+    // Золотой дублон (дубль)
+    TreasureTiers[7].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[7].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Бирюза
     TreasureTiers[7].Jewelry.jewelry20 = "On";
     TreasureTiers[7].Jewelry.jewelry20.min = 27;
@@ -898,12 +962,12 @@ void InitTreasureTiers()
     TreasureTiers[7].Special.indian_2.dif = 1;
     // Амулет "Каскавела"
     TreasureTiers[7].Special.indian_10 = "On";
-    TreasureTiers[7].Special.indian_10.min = 2;
-    TreasureTiers[7].Special.indian_10.dif = 1;
+    TreasureTiers[7].Special.indian_10.min = 1;
+    TreasureTiers[7].Special.indian_10.dif = 2;
     // Амулет "Кукла Вуду"
     TreasureTiers[7].Special.indian_1 = "On";
-    TreasureTiers[7].Special.indian_1.min = 2;
-    TreasureTiers[7].Special.indian_1.dif = 1;
+    TreasureTiers[7].Special.indian_1.min = 1;
+    TreasureTiers[7].Special.indian_1.dif = 2;
     // Амулет "Коралловая голова"
     TreasureTiers[7].Special.indian_6 = "On";
     TreasureTiers[7].Special.indian_6.min = 1;
@@ -954,27 +1018,42 @@ void InitTreasureTiers()
     TreasureTiers[7].Special.clock1.dif = 0;
     // Обычные карты
     TreasureTiers[7].Special.map = "On";
-    TreasureTiers[7].Special.map.min = 2;
+    TreasureTiers[7].Special.map.min = 1;
     TreasureTiers[7].Special.map.dif = 2;
 
 // === TIER 8 ===
     // = Equip =
+    TreasureTiers[8].Equip.cirass5  = "On"; // Кожаный корсет
+    TreasureTiers[8].Equip.cirass6  = "On"; // Жилет бретера
+    TreasureTiers[8].Equip.cirass7  = "On"; // Бригант
+    TreasureTiers[8].Equip.cirass3  = "On"; // Парадная кираса
     TreasureTiers[8].Equip.cirass1  = "On"; // Траншейный доспех
-    TreasureTiers[8].Equip.blade_10 = "On"; // Корд
-    TreasureTiers[8].Equip.topor_01 = "On"; // Макуауитль
-    TreasureTiers[8].Equip.blade_30 = "On"; // Офицерский клеванг
-    TreasureTiers[8].Equip.topor_06 = "On"; // Стервятник
-    TreasureTiers[8].Equip.topor_04 = "On"; // Секира
+    TreasureTiers[8].Equip.blade_04 = "On"; // Гроссмессер
     TreasureTiers[8].Equip.blade_06 = "On"; // Скьявона
     TreasureTiers[8].Equip.blade_13 = "On"; // Офицерский палаш
+    TreasureTiers[8].Equip.blade_30 = "On"; // Офицерский клеванг
+    TreasureTiers[8].Equip.topor_01 = "On"; // Макуауитль
+    TreasureTiers[8].Equip.blade_10 = "On"; // Корд
+    TreasureTiers[8].Equip.blade_03 = "On"; // Стокката
+    TreasureTiers[8].Equip.blade_08 = "On"; // Бильбо
+    TreasureTiers[8].Equip.blade_07 = "On"; // Риттершверт
+    TreasureTiers[8].Equip.blade_12 = "On"; // Полусабля
+    TreasureTiers[8].Equip.blade_14 = "On"; // Валлонская шпага
+    TreasureTiers[8].Equip.topor_02 = "On"; // Бартакс
+    TreasureTiers[8].Equip.blade_09 = "On"; // Карцолета
+    TreasureTiers[8].Equip.blade_15 = "On"; // Маринера
+    TreasureTiers[8].Equip.blade_16 = "On"; // Смоллсворд
+    TreasureTiers[8].Equip.blade_27 = "On"; // Саксенфедер
+    TreasureTiers[8].Equip.blade_39 = "On"; // Рапира бретера
     TreasureTiers[8].Equip.mushket2 = "On"; // Флотский карабин
-    TreasureTiers[8].Equip.mushket1 = "On"; // Фитильный мушкет
-    TreasureTiers[8].Equip.pistol4  = "On"; // Четырёхствольный пистолет
+    TreasureTiers[8].Equip.pistol3  = "On"; // Тромбон
+    TreasureTiers[8].Equip.pistol2  = "On"; // Трёхствольный дробовик
     TreasureTiers[8].Equip.pistol6  = "On"; // Бок-пистолет
     TreasureTiers[8].Equip.mushket3 = "On"; // Аркебуза
-    TreasureTiers[8].Equip.hat1 = "On"; // Шляпа кондотьера
-    TreasureTiers[8].Equip.hat3 = "On"; // Треуголка моряка
-    TreasureTiers[8].Equip.hat7 = "On"; // Счастливая шляпа
+    TreasureTiers[8].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[8].Equip.hat1     = "On"; // Шляпа кондотьера
+    TreasureTiers[8].Equip.hat3     = "On"; // Треуголка моряка
+    TreasureTiers[8].Equip.hat7     = "On"; // Счастливая шляпа
     TreasureTiers[8].Equip.spyglass3 = "On"; // Хорошая подзорная труба
     TreasureTiers[8].Equip.spyglass4 = "On"; // Отличная подзорная труба
 
@@ -1030,6 +1109,9 @@ void InitTreasureTiers()
     TreasureTiers[8].Jewelry.gold_dublon = "On";
     TreasureTiers[8].Jewelry.gold_dublon.min = 110;
     TreasureTiers[8].Jewelry.gold_dublon.dif = 90;
+    // Золотой дублон (дубль)
+    TreasureTiers[8].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[8].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Сундук (150 дублонов)
     TreasureTiers[8].Jewelry.chest = "On";
     TreasureTiers[8].Jewelry.chest.min = 1;
@@ -1058,12 +1140,12 @@ void InitTreasureTiers()
     TreasureTiers[8].Special.indian_2.dif = 1;
     // Амулет "Каскавела"
     TreasureTiers[8].Special.indian_10 = "On";
-    TreasureTiers[8].Special.indian_10.min = 2;
-    TreasureTiers[8].Special.indian_10.dif = 1;
+    TreasureTiers[8].Special.indian_10.min = 1;
+    TreasureTiers[8].Special.indian_10.dif = 2;
     // Амулет "Кукла Вуду"
     TreasureTiers[8].Special.indian_1 = "On";
-    TreasureTiers[8].Special.indian_1.min = 2;
-    TreasureTiers[8].Special.indian_1.dif = 1;
+    TreasureTiers[8].Special.indian_1.min = 1;
+    TreasureTiers[8].Special.indian_1.dif = 2;
     // Амулет "Коралловая голова"
     TreasureTiers[8].Special.indian_6 = "On";
     TreasureTiers[8].Special.indian_6.min = 1;
@@ -1110,7 +1192,7 @@ void InitTreasureTiers()
     TreasureTiers[8].Special.clock1.dif = 0;
     // Обычные карты
     TreasureTiers[8].Special.map = "On";
-    TreasureTiers[8].Special.map.min = 2;
+    TreasureTiers[8].Special.map.min = 1;
     TreasureTiers[8].Special.map.dif = 2;
     // Адмиральские карты
     TreasureTiers[8].Special.map_a = "On";
@@ -1119,21 +1201,42 @@ void InitTreasureTiers()
 
 // === TIER 9 ===
     // = Equip =
-    TreasureTiers[9].Equip.cirass2  = "On"; // Рейтарская кираса
+    TreasureTiers[9].Equip.cirass5  = "On"; // Кожаный корсет
+    TreasureTiers[9].Equip.cirass6  = "On"; // Жилет бретера
+    TreasureTiers[9].Equip.cirass7  = "On"; // Бригант
+    TreasureTiers[9].Equip.cirass3  = "On"; // Парадная кираса
     TreasureTiers[9].Equip.cirass1  = "On"; // Траншейный доспех
+    TreasureTiers[9].Equip.cirass2  = "On"; // Рейтарская кираса
+    TreasureTiers[9].Equip.blade_04 = "On"; // Гроссмессер
+    TreasureTiers[9].Equip.blade_06 = "On"; // Скьявона
+    TreasureTiers[9].Equip.blade_13 = "On"; // Офицерский палаш
+    TreasureTiers[9].Equip.blade_30 = "On"; // Офицерский клеванг
     TreasureTiers[9].Equip.topor_01 = "On"; // Макуауитль
     TreasureTiers[9].Equip.blade_10 = "On"; // Корд
-    TreasureTiers[9].Equip.topor_06 = "On"; // Стервятник
-    TreasureTiers[9].Equip.topor_04 = "On"; // Секира
+    TreasureTiers[9].Equip.blade_03 = "On"; // Стокката
+    TreasureTiers[9].Equip.blade_08 = "On"; // Бильбо
+    TreasureTiers[9].Equip.blade_07 = "On"; // Риттершверт
+    TreasureTiers[9].Equip.blade_12 = "On"; // Полусабля
+    TreasureTiers[9].Equip.blade_14 = "On"; // Валлонская шпага
+    TreasureTiers[9].Equip.topor_02 = "On"; // Бартакс
+    TreasureTiers[9].Equip.blade_09 = "On"; // Карцолета
+    TreasureTiers[9].Equip.blade_15 = "On"; // Маринера
+    TreasureTiers[9].Equip.blade_16 = "On"; // Смоллсворд
+    TreasureTiers[9].Equip.blade_27 = "On"; // Саксенфедер
+    TreasureTiers[9].Equip.blade_39 = "On"; // Рапира бретера
     TreasureTiers[9].Equip.mushket2 = "On"; // Флотский карабин
+    TreasureTiers[9].Equip.pistol3  = "On"; // Тромбон
+    TreasureTiers[9].Equip.pistol2  = "On"; // Трёхствольный дробовик
+    TreasureTiers[9].Equip.pistol6  = "On"; // Бок-пистолет
     TreasureTiers[9].Equip.pistol5  = "On"; // Дуэльный пистоль
-    TreasureTiers[9].Equip.pistol4  = "On"; // Четырёхствольный пистолет
-    TreasureTiers[9].Equip.pistol11 = "On"; // Чудовище
     TreasureTiers[9].Equip.mushket3 = "On"; // Аркебуза
-    TreasureTiers[9].Equip.hat6 = "On"; // Голландская шляпа
-    TreasureTiers[9].Equip.hat2 = "On"; // Шляпа кавалера
-    TreasureTiers[9].Equip.hat4 = "On"; // Треуголка морского офицера
-    TreasureTiers[9].Equip.hat7 = "On"; // Счастливая шляпа
+    TreasureTiers[9].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[9].Equip.hat1     = "On"; // Шляпа кондотьера
+    TreasureTiers[9].Equip.hat3     = "On"; // Треуголка моряка
+    TreasureTiers[9].Equip.hat6     = "On"; // Голландская шляпа
+    TreasureTiers[9].Equip.hat2     = "On"; // Шляпа кавалера
+    TreasureTiers[9].Equip.hat4     = "On"; // Треуголка морского офицера
+    TreasureTiers[9].Equip.hat7     = "On"; // Счастливая шляпа
     TreasureTiers[9].Equip.spyglass3 = "On"; // Хорошая подзорная труба
     TreasureTiers[9].Equip.spyglass4 = "On"; // Отличная подзорная труба
 
@@ -1189,6 +1292,9 @@ void InitTreasureTiers()
     TreasureTiers[9].Jewelry.gold_dublon = "On";
     TreasureTiers[9].Jewelry.gold_dublon.min = 125;
     TreasureTiers[9].Jewelry.gold_dublon.dif = 100;
+    // Золотой дублон (дубль)
+    TreasureTiers[9].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[9].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Сундук (150 дублонов)
     TreasureTiers[9].Jewelry.chest = "On";
     TreasureTiers[9].Jewelry.chest.min = 2;
@@ -1209,24 +1315,24 @@ void InitTreasureTiers()
     TreasureTiers[9].Special.amulet_7.dif = 1;
     // Амулет "Горбун"
     TreasureTiers[9].Special.indian_7 = "On";
-    TreasureTiers[9].Special.indian_7.min = 2;
-    TreasureTiers[9].Special.indian_7.dif = 1;
+    TreasureTiers[9].Special.indian_7.min = 1;
+    TreasureTiers[9].Special.indian_7.dif = 2;
     // Амулет "Пороховой тестер"
     TreasureTiers[9].Special.indian_2 = "On";
     TreasureTiers[9].Special.indian_2.min = 1;
     TreasureTiers[9].Special.indian_2.dif = 1;
     // Амулет "Каскавела"
     TreasureTiers[9].Special.indian_10 = "On";
-    TreasureTiers[9].Special.indian_10.min = 2;
-    TreasureTiers[9].Special.indian_10.dif = 1;
+    TreasureTiers[9].Special.indian_10.min = 1;
+    TreasureTiers[9].Special.indian_10.dif = 2;
     // Амулет "Кукла Вуду"
     TreasureTiers[9].Special.indian_1 = "On";
-    TreasureTiers[9].Special.indian_1.min = 2;
-    TreasureTiers[9].Special.indian_1.dif = 1;
+    TreasureTiers[9].Special.indian_1.min = 1;
+    TreasureTiers[9].Special.indian_1.dif = 2;
     // Амулет "Коралловая голова"
     TreasureTiers[9].Special.indian_6 = "On";
-    TreasureTiers[9].Special.indian_6.min = 2;
-    TreasureTiers[9].Special.indian_6.dif = 1;
+    TreasureTiers[9].Special.indian_6.min = 1;
+    TreasureTiers[9].Special.indian_6.dif = 2;
     // Амулет "Секира"
     TreasureTiers[9].Special.indian_4 = "On";
     TreasureTiers[9].Special.indian_4.min = 1;
@@ -1249,8 +1355,8 @@ void InitTreasureTiers()
     TreasureTiers[9].Special.indian_11.dif = 1;
     // Амулет "Молитвослов"
     TreasureTiers[9].Special.amulet_2 = "On";
-    TreasureTiers[9].Special.amulet_2.min = 2;
-    TreasureTiers[9].Special.amulet_2.dif = 1;
+    TreasureTiers[9].Special.amulet_2.min = 1;
+    TreasureTiers[9].Special.amulet_2.dif = 2;
     // Амулет "Тсантса"
     TreasureTiers[9].Special.indian_5 = "On";
     TreasureTiers[9].Special.indian_5.min = 1;
@@ -1281,7 +1387,7 @@ void InitTreasureTiers()
     TreasureTiers[9].Special.clock1.dif = 0;
     // Обычные карты
     TreasureTiers[9].Special.map = "On";
-    TreasureTiers[9].Special.map.min = 2;
+    TreasureTiers[9].Special.map.min = 1;
     TreasureTiers[9].Special.map.dif = 3;
     // Адмиральские карты
     TreasureTiers[9].Special.map_a = "On";
@@ -1290,24 +1396,45 @@ void InitTreasureTiers()
 
 // === TIER 10 ===
     // = Equip =
+    TreasureTiers[10].Equip.cirass5  = "On"; // Кожаный корсет
+    TreasureTiers[10].Equip.cirass6  = "On"; // Жилет бретера
+    TreasureTiers[10].Equip.cirass7  = "On"; // Бригант
+    TreasureTiers[10].Equip.cirass3  = "On"; // Парадная кираса
+    TreasureTiers[10].Equip.cirass1  = "On"; // Траншейный доспех
     TreasureTiers[10].Equip.cirass2  = "On"; // Рейтарская кираса
     TreasureTiers[10].Equip.cirass8  = "On"; // Плетёный доспех
-    TreasureTiers[10].Equip.blade_25 = "On"; // Моргана
+    TreasureTiers[10].Equip.blade_04 = "On"; // Гроссмессер
+    TreasureTiers[10].Equip.blade_06 = "On"; // Скьявона
+    TreasureTiers[10].Equip.blade_13 = "On"; // Офицерский палаш
+    TreasureTiers[10].Equip.blade_30 = "On"; // Офицерский клеванг
     TreasureTiers[10].Equip.topor_01 = "On"; // Макуауитль
     TreasureTiers[10].Equip.blade_10 = "On"; // Корд
-    TreasureTiers[10].Equip.blade_26 = "On"; // Асоледа
-    TreasureTiers[10].Equip.topor_06 = "On"; // Стервятник
-    TreasureTiers[10].Equip.topor_04 = "On"; // Секира
     TreasureTiers[10].Equip.blade_17 = "On"; // Бретта
+    TreasureTiers[10].Equip.blade_25 = "On"; // Моргана
+    TreasureTiers[10].Equip.blade_26 = "On"; // Асоледа
+    TreasureTiers[10].Equip.blade_12 = "On"; // Полусабля
+    TreasureTiers[10].Equip.blade_14 = "On"; // Валлонская шпага
+    TreasureTiers[10].Equip.topor_02 = "On"; // Бартакс
+    TreasureTiers[10].Equip.blade_09 = "On"; // Карцолета
+    TreasureTiers[10].Equip.blade_15 = "On"; // Маринера
+    TreasureTiers[10].Equip.blade_16 = "On"; // Смоллсворд
+    TreasureTiers[10].Equip.blade_27 = "On"; // Саксенфедер
+    TreasureTiers[10].Equip.blade_39 = "On"; // Рапира бретера
     TreasureTiers[10].Equip.mushket2 = "On"; // Флотский карабин
-    TreasureTiers[10].Equip.pistol5  = "On"; // Дуэльный пистоль
     TreasureTiers[10].Equip.pistol4  = "On"; // Четырёхствольный пистолет
+    TreasureTiers[10].Equip.pistol2  = "On"; // Трёхствольный дробовик
+    TreasureTiers[10].Equip.pistol6  = "On"; // Бок-пистолет
+    TreasureTiers[10].Equip.pistol5  = "On"; // Дуэльный пистоль
     TreasureTiers[10].Equip.pistol11 = "On"; // Чудовище
-    TreasureTiers[10].Equip.grape_mushket = "On"; // Склопетта
-    TreasureTiers[10].Equip.hat6 = "On"; // Голландская шляпа
-    TreasureTiers[10].Equip.hat2 = "On"; // Шляпа кавалера
-    TreasureTiers[10].Equip.hat4 = "On"; // Треуголка морского офицера
-    TreasureTiers[10].Equip.hat7 = "On"; // Счастливая шляпа
+    TreasureTiers[10].Equip.mushket3 = "On"; // Аркебуза
+    TreasureTiers[10].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[10].Equip.hat1     = "On"; // Шляпа кондотьера
+    TreasureTiers[10].Equip.hat3     = "On"; // Треуголка моряка
+    TreasureTiers[10].Equip.hat6     = "On"; // Голландская шляпа
+    TreasureTiers[10].Equip.hat2     = "On"; // Шляпа кавалера
+    TreasureTiers[10].Equip.hat4     = "On"; // Треуголка морского офицера
+    TreasureTiers[10].Equip.hat7     = "On"; // Счастливая шляпа
+    TreasureTiers[10].Equip.spyglass3 = "On"; // Хорошая подзорная труба
     TreasureTiers[10].Equip.spyglass4 = "On"; // Отличная подзорная труба
 
     // = Jewelry =
@@ -1362,6 +1489,9 @@ void InitTreasureTiers()
     TreasureTiers[10].Jewelry.gold_dublon = "On";
     TreasureTiers[10].Jewelry.gold_dublon.min = 140;
     TreasureTiers[10].Jewelry.gold_dublon.dif = 110;
+    // Золотой дублон (дубль)
+    TreasureTiers[10].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[10].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Сундук (150 дублонов)
     TreasureTiers[10].Jewelry.chest = "On";
     TreasureTiers[10].Jewelry.chest.min = 3;
@@ -1378,28 +1508,28 @@ void InitTreasureTiers()
     // = Special =
     // Амулет "Святая вода"
     TreasureTiers[10].Special.amulet_7 = "On";
-    TreasureTiers[10].Special.amulet_7.min = 2;
-    TreasureTiers[10].Special.amulet_7.dif = 1;
+    TreasureTiers[10].Special.amulet_7.min = 1;
+    TreasureTiers[10].Special.amulet_7.dif = 2;
     // Амулет "Горбун"
     TreasureTiers[10].Special.indian_7 = "On";
-    TreasureTiers[10].Special.indian_7.min = 2;
-    TreasureTiers[10].Special.indian_7.dif = 1;
+    TreasureTiers[10].Special.indian_7.min = 1;
+    TreasureTiers[10].Special.indian_7.dif = 2;
     // Амулет "Пороховой тестер"
     TreasureTiers[10].Special.indian_2 = "On";
     TreasureTiers[10].Special.indian_2.min = 1;
     TreasureTiers[10].Special.indian_2.dif = 1;
     // Амулет "Каскавела"
     TreasureTiers[10].Special.indian_10 = "On";
-    TreasureTiers[10].Special.indian_10.min = 2;
-    TreasureTiers[10].Special.indian_10.dif = 1;
+    TreasureTiers[10].Special.indian_10.min = 1;
+    TreasureTiers[10].Special.indian_10.dif = 2;
     // Амулет "Кукла Вуду"
     TreasureTiers[10].Special.indian_1 = "On";
-    TreasureTiers[10].Special.indian_1.min = 2;
-    TreasureTiers[10].Special.indian_1.dif = 1;
+    TreasureTiers[10].Special.indian_1.min = 1;
+    TreasureTiers[10].Special.indian_1.dif = 2;
     // Амулет "Коралловая голова"
     TreasureTiers[10].Special.indian_6 = "On";
-    TreasureTiers[10].Special.indian_6.min = 2;
-    TreasureTiers[10].Special.indian_6.dif = 1;
+    TreasureTiers[10].Special.indian_6.min = 1;
+    TreasureTiers[10].Special.indian_6.dif = 2;
     // Амулет "Секира"
     TreasureTiers[10].Special.indian_4 = "On";
     TreasureTiers[10].Special.indian_4.min = 1;
@@ -1422,8 +1552,8 @@ void InitTreasureTiers()
     TreasureTiers[10].Special.indian_11.dif = 1;
     // Амулет "Молитвослов"
     TreasureTiers[10].Special.amulet_2 = "On";
-    TreasureTiers[10].Special.amulet_2.min = 2;
-    TreasureTiers[10].Special.amulet_2.dif = 1;
+    TreasureTiers[10].Special.amulet_2.min = 1;
+    TreasureTiers[10].Special.amulet_2.dif = 2;
     // Амулет "Тсантса"
     TreasureTiers[10].Special.indian_5 = "On";
     TreasureTiers[10].Special.indian_5.min = 1;
@@ -1452,6 +1582,10 @@ void InitTreasureTiers()
     TreasureTiers[10].Special.amulet_6 = "On";
     TreasureTiers[10].Special.amulet_6.min = 1;
     TreasureTiers[10].Special.amulet_6.dif = 0;
+    // Обычные карты
+    TreasureTiers[10].Special.map = "On";
+    TreasureTiers[10].Special.map.min = 1;
+    TreasureTiers[10].Special.map.dif = 3;
     // Адмиральские карты
     TreasureTiers[10].Special.map_a = "On";
     TreasureTiers[10].Special.map_a.min = 1;
@@ -1459,24 +1593,43 @@ void InitTreasureTiers()
 
 // === TIER 11 ===
     // = Equip =
+    TreasureTiers[11].Equip.cirass6  = "On"; // Жилет бретера
+    TreasureTiers[11].Equip.cirass7  = "On"; // Бригант
+    TreasureTiers[11].Equip.cirass3  = "On"; // Парадная кираса
+    TreasureTiers[11].Equip.cirass1  = "On"; // Траншейный доспех
     TreasureTiers[11].Equip.cirass2  = "On"; // Рейтарская кираса
     TreasureTiers[11].Equip.cirass8  = "On"; // Плетёный доспех
-    TreasureTiers[11].Equip.blade_25 = "On"; // Моргана
-    TreasureTiers[11].Equip.blade_18 = "On"; // Паппенхаймер
-    TreasureTiers[11].Equip.blade_10 = "On"; // Корд
-    TreasureTiers[11].Equip.blade_26 = "On"; // Асоледа
-    TreasureTiers[11].Equip.topor_06 = "On"; // Стервятник
     TreasureTiers[11].Equip.blade_19 = "On"; // Морская сабля
+    TreasureTiers[11].Equip.blade_06 = "On"; // Скьявона
+    TreasureTiers[11].Equip.blade_13 = "On"; // Офицерский палаш
+    TreasureTiers[11].Equip.blade_30 = "On"; // Офицерский клеванг
+    TreasureTiers[11].Equip.topor_01 = "On"; // Макуауитль
+    TreasureTiers[11].Equip.blade_10 = "On"; // Корд
     TreasureTiers[11].Equip.blade_17 = "On"; // Бретта
-    TreasureTiers[11].Equip.howdah   = "On"; // Гауда
-    TreasureTiers[11].Equip.pistol5  = "On"; // Дуэльный пистоль
+    TreasureTiers[11].Equip.blade_25 = "On"; // Моргана
+    TreasureTiers[11].Equip.blade_26 = "On"; // Асоледа
+    TreasureTiers[11].Equip.blade_18 = "On"; // Паппенхаймер
+    TreasureTiers[11].Equip.blade_14 = "On"; // Валлонская шпага
+    TreasureTiers[11].Equip.blade_09 = "On"; // Карцолета
+    TreasureTiers[11].Equip.blade_15 = "On"; // Маринера
+    TreasureTiers[11].Equip.blade_16 = "On"; // Смоллсворд
+    TreasureTiers[11].Equip.blade_27 = "On"; // Саксенфедер
+    TreasureTiers[11].Equip.blade_39 = "On"; // Рапира бретера
+    TreasureTiers[11].Equip.mushket2 = "On"; // Флотский карабин
     TreasureTiers[11].Equip.pistol4  = "On"; // Четырёхствольный пистолет
+    TreasureTiers[11].Equip.pistol2  = "On"; // Трёхствольный дробовик
+    TreasureTiers[11].Equip.pistol6  = "On"; // Бок-пистолет
+    TreasureTiers[11].Equip.pistol5  = "On"; // Дуэльный пистоль
     TreasureTiers[11].Equip.pistol11 = "On"; // Чудовище
-    TreasureTiers[11].Equip.grape_mushket = "On"; // Склопетта
-    TreasureTiers[11].Equip.hat6 = "On"; // Голландская шляпа
-    TreasureTiers[11].Equip.hat2 = "On"; // Шляпа кавалера
-    TreasureTiers[11].Equip.hat4 = "On"; // Треуголка морского офицера
-    TreasureTiers[11].Equip.hat7 = "On"; // Счастливая шляпа
+    TreasureTiers[11].Equip.mushket3 = "On"; // Аркебуза
+    TreasureTiers[11].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[11].Equip.hat1     = "On"; // Шляпа кондотьера
+    TreasureTiers[11].Equip.hat3     = "On"; // Треуголка моряка
+    TreasureTiers[11].Equip.hat6     = "On"; // Голландская шляпа
+    TreasureTiers[11].Equip.hat2     = "On"; // Шляпа кавалера
+    TreasureTiers[11].Equip.hat4     = "On"; // Треуголка морского офицера
+    TreasureTiers[11].Equip.hat7     = "On"; // Счастливая шляпа
+    TreasureTiers[11].Equip.spyglass3 = "On"; // Хорошая подзорная труба
     TreasureTiers[11].Equip.spyglass4 = "On"; // Отличная подзорная труба
 
     // = Jewelry =
@@ -1531,6 +1684,9 @@ void InitTreasureTiers()
     TreasureTiers[11].Jewelry.gold_dublon = "On";
     TreasureTiers[11].Jewelry.gold_dublon.min = 155;
     TreasureTiers[11].Jewelry.gold_dublon.dif = 120;
+    // Золотой дублон (дубль)
+    TreasureTiers[11].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[11].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Сундук (150 дублонов)
     TreasureTiers[11].Jewelry.chest = "On";
     TreasureTiers[11].Jewelry.chest.min = 4;
@@ -1547,36 +1703,36 @@ void InitTreasureTiers()
     // = Special =
     // Амулет "Святая вода"
     TreasureTiers[11].Special.amulet_7 = "On";
-    TreasureTiers[11].Special.amulet_7.min = 2;
-    TreasureTiers[11].Special.amulet_7.dif = 1;
+    TreasureTiers[11].Special.amulet_7.min = 1;
+    TreasureTiers[11].Special.amulet_7.dif = 2;
     // Амулет "Горбун"
     TreasureTiers[11].Special.indian_7 = "On";
-    TreasureTiers[11].Special.indian_7.min = 2;
-    TreasureTiers[11].Special.indian_7.dif = 1;
+    TreasureTiers[11].Special.indian_7.min = 1;
+    TreasureTiers[11].Special.indian_7.dif = 2;
     // Амулет "Пороховой тестер"
     TreasureTiers[11].Special.indian_2 = "On";
     TreasureTiers[11].Special.indian_2.min = 1;
     TreasureTiers[11].Special.indian_2.dif = 1;
     // Амулет "Каскавела"
     TreasureTiers[11].Special.indian_10 = "On";
-    TreasureTiers[11].Special.indian_10.min = 2;
-    TreasureTiers[11].Special.indian_10.dif = 1;
+    TreasureTiers[11].Special.indian_10.min = 1;
+    TreasureTiers[11].Special.indian_10.dif = 2;
     // Амулет "Кукла Вуду"
     TreasureTiers[11].Special.indian_1 = "On";
-    TreasureTiers[11].Special.indian_1.min = 2;
-    TreasureTiers[11].Special.indian_1.dif = 1;
+    TreasureTiers[11].Special.indian_1.min = 1;
+    TreasureTiers[11].Special.indian_1.dif = 2;
     // Амулет "Коралловая голова"
     TreasureTiers[11].Special.indian_6 = "On";
-    TreasureTiers[11].Special.indian_6.min = 2;
-    TreasureTiers[11].Special.indian_6.dif = 1;
+    TreasureTiers[11].Special.indian_6.min = 1;
+    TreasureTiers[11].Special.indian_6.dif = 2;
     // Амулет "Секира"
     TreasureTiers[11].Special.indian_4 = "On";
-    TreasureTiers[11].Special.indian_4.min = 2;
-    TreasureTiers[11].Special.indian_4.dif = 1;
+    TreasureTiers[11].Special.indian_4.min = 1;
+    TreasureTiers[11].Special.indian_4.dif = 2;
     // Амулет "Щит нгомбо"
     TreasureTiers[11].Special.amulet_1 = "On";
-    TreasureTiers[11].Special.amulet_1.min = 2;
-    TreasureTiers[11].Special.amulet_1.dif = 1;
+    TreasureTiers[11].Special.amulet_1.min = 1;
+    TreasureTiers[11].Special.amulet_1.dif = 2;
     // Амулет "Шиутекутли"
     TreasureTiers[11].Special.indian_8 = "On";
     TreasureTiers[11].Special.indian_8.min = 1;
@@ -1591,8 +1747,8 @@ void InitTreasureTiers()
     TreasureTiers[11].Special.indian_11.dif = 1;
     // Амулет "Молитвослов"
     TreasureTiers[11].Special.amulet_2 = "On";
-    TreasureTiers[11].Special.amulet_2.min = 2;
-    TreasureTiers[11].Special.amulet_2.dif = 1;
+    TreasureTiers[11].Special.amulet_2.min = 1;
+    TreasureTiers[11].Special.amulet_2.dif = 2;
     // Амулет "Тсантса"
     TreasureTiers[11].Special.indian_5 = "On";
     TreasureTiers[11].Special.indian_5.min = 1;
@@ -1621,6 +1777,10 @@ void InitTreasureTiers()
     TreasureTiers[11].Special.amulet_6 = "On";
     TreasureTiers[11].Special.amulet_6.min = 1;
     TreasureTiers[11].Special.amulet_6.dif = 1;
+    // Обычные карты
+    TreasureTiers[11].Special.map = "On";
+    TreasureTiers[11].Special.map.min = 2;
+    TreasureTiers[11].Special.map.dif = 2;
     // Адмиральские карты
     TreasureTiers[11].Special.map_a = "On";
     TreasureTiers[11].Special.map_a.min = 1;
@@ -1628,23 +1788,42 @@ void InitTreasureTiers()
 
 // === TIER 12 ===
     // = Equip =
+    TreasureTiers[12].Equip.cirass6  = "On"; // Жилет бретера
+    TreasureTiers[12].Equip.cirass7  = "On"; // Бригант
+    TreasureTiers[12].Equip.cirass3  = "On"; // Парадная кираса
+    TreasureTiers[12].Equip.cirass1  = "On"; // Траншейный доспех
+    TreasureTiers[12].Equip.cirass2  = "On"; // Рейтарская кираса
     TreasureTiers[12].Equip.cirass8  = "On"; // Плетёный доспех
+    TreasureTiers[12].Equip.blade_19 = "On"; // Морская сабля
+    TreasureTiers[12].Equip.blade_06 = "On"; // Скьявона
+    TreasureTiers[12].Equip.blade_13 = "On"; // Офицерский палаш
+    TreasureTiers[12].Equip.blade_30 = "On"; // Офицерский клеванг
+    TreasureTiers[12].Equip.topor_01 = "On"; // Макуауитль
+    TreasureTiers[12].Equip.blade_10 = "On"; // Корд
+    TreasureTiers[12].Equip.blade_17 = "On"; // Бретта
     TreasureTiers[12].Equip.blade_25 = "On"; // Моргана
+    TreasureTiers[12].Equip.blade_26 = "On"; // Асоледа
     TreasureTiers[12].Equip.blade_18 = "On"; // Паппенхаймер
     TreasureTiers[12].Equip.blade_38 = "On"; // Дуэльная шпага
-    TreasureTiers[12].Equip.blade_26 = "On"; // Асоледа
-    TreasureTiers[12].Equip.blade_29 = "On"; // Сторта
-    TreasureTiers[12].Equip.blade_19 = "On"; // Морская сабля
-    TreasureTiers[12].Equip.blade_17 = "On"; // Бретта
-    TreasureTiers[12].Equip.howdah   = "On"; // Гауда
-    TreasureTiers[12].Equip.pistol5  = "On"; // Дуэльный пистоль
+    TreasureTiers[12].Equip.blade_21 = "On"; // Клейбэг
+    TreasureTiers[12].Equip.blade_15 = "On"; // Маринера
+    TreasureTiers[12].Equip.blade_16 = "On"; // Смоллсворд
+    TreasureTiers[12].Equip.blade_27 = "On"; // Саксенфедер
+    TreasureTiers[12].Equip.blade_39 = "On"; // Рапира бретера
+    TreasureTiers[12].Equip.mushket2 = "On"; // Флотский карабин
     TreasureTiers[12].Equip.pistol4  = "On"; // Четырёхствольный пистолет
+    TreasureTiers[12].Equip.pistol2  = "On"; // Трёхствольный дробовик
+    TreasureTiers[12].Equip.pistol6  = "On"; // Бок-пистолет
+    TreasureTiers[12].Equip.pistol5  = "On"; // Дуэльный пистоль
     TreasureTiers[12].Equip.pistol11 = "On"; // Чудовище
-    TreasureTiers[12].Equip.grape_mushket = "On"; // Склопетта
-    TreasureTiers[12].Equip.hat6 = "On"; // Голландская шляпа
-    TreasureTiers[12].Equip.hat2 = "On"; // Шляпа кавалера
-    TreasureTiers[12].Equip.hat4 = "On"; // Треуголка морского офицера
-    TreasureTiers[12].Equip.hat7 = "On"; // Счастливая шляпа
+    TreasureTiers[12].Equip.mushket3 = "On"; // Аркебуза
+    TreasureTiers[12].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[12].Equip.hat3     = "On"; // Треуголка моряка
+    TreasureTiers[12].Equip.hat6     = "On"; // Голландская шляпа
+    TreasureTiers[12].Equip.hat2     = "On"; // Шляпа кавалера
+    TreasureTiers[12].Equip.hat4     = "On"; // Треуголка морского офицера
+    TreasureTiers[12].Equip.hat7     = "On"; // Счастливая шляпа
+    TreasureTiers[12].Equip.spyglass3 = "On"; // Хорошая подзорная труба
     TreasureTiers[12].Equip.spyglass4 = "On"; // Отличная подзорная труба
 
     // = Jewelry =
@@ -1695,6 +1874,9 @@ void InitTreasureTiers()
     TreasureTiers[12].Jewelry.gold_dublon = "On";
     TreasureTiers[12].Jewelry.gold_dublon.min = 170;
     TreasureTiers[12].Jewelry.gold_dublon.dif = 130;
+    // Золотой дублон (дубль)
+    TreasureTiers[12].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[12].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Сундук (150 дублонов)
     TreasureTiers[12].Jewelry.chest = "On";
     TreasureTiers[12].Jewelry.chest.min = 5;
@@ -1711,40 +1893,40 @@ void InitTreasureTiers()
     // = Special =
     // Амулет "Святая вода"
     TreasureTiers[12].Special.amulet_7 = "On";
-    TreasureTiers[12].Special.amulet_7.min = 2;
-    TreasureTiers[12].Special.amulet_7.dif = 1;
+    TreasureTiers[12].Special.amulet_7.min = 1;
+    TreasureTiers[12].Special.amulet_7.dif = 2;
     // Амулет "Горбун"
     TreasureTiers[12].Special.indian_7 = "On";
-    TreasureTiers[12].Special.indian_7.min = 2;
-    TreasureTiers[12].Special.indian_7.dif = 1;
+    TreasureTiers[12].Special.indian_7.min = 1;
+    TreasureTiers[12].Special.indian_7.dif = 2;
     // Амулет "Пороховой тестер"
     TreasureTiers[12].Special.indian_2 = "On";
     TreasureTiers[12].Special.indian_2.min = 2;
     TreasureTiers[12].Special.indian_2.dif = 1;
     // Амулет "Каскавела"
     TreasureTiers[12].Special.indian_10 = "On";
-    TreasureTiers[12].Special.indian_10.min = 2;
-    TreasureTiers[12].Special.indian_10.dif = 1;
+    TreasureTiers[12].Special.indian_10.min = 1;
+    TreasureTiers[12].Special.indian_10.dif = 2;
     // Амулет "Кукла Вуду"
     TreasureTiers[12].Special.indian_1 = "On";
-    TreasureTiers[12].Special.indian_1.min = 2;
-    TreasureTiers[12].Special.indian_1.dif = 1;
+    TreasureTiers[12].Special.indian_1.min = 1;
+    TreasureTiers[12].Special.indian_1.dif = 2;
     // Амулет "Коралловая голова"
     TreasureTiers[12].Special.indian_6 = "On";
-    TreasureTiers[12].Special.indian_6.min = 2;
-    TreasureTiers[12].Special.indian_6.dif = 1;
+    TreasureTiers[12].Special.indian_6.min = 1;
+    TreasureTiers[12].Special.indian_6.dif = 2;
     // Амулет "Секира"
     TreasureTiers[12].Special.indian_4 = "On";
-    TreasureTiers[12].Special.indian_4.min = 2;
-    TreasureTiers[12].Special.indian_4.dif = 1;
+    TreasureTiers[12].Special.indian_4.min = 1;
+    TreasureTiers[12].Special.indian_4.dif = 2;
     // Амулет "Щит нгомбо"
     TreasureTiers[12].Special.amulet_1 = "On";
-    TreasureTiers[12].Special.amulet_1.min = 2;
-    TreasureTiers[12].Special.amulet_1.dif = 1;
+    TreasureTiers[12].Special.amulet_1.min = 1;
+    TreasureTiers[12].Special.amulet_1.dif = 2;
     // Амулет "Шиутекутли"
     TreasureTiers[12].Special.indian_8 = "On";
-    TreasureTiers[12].Special.indian_8.min = 2;
-    TreasureTiers[12].Special.indian_8.dif = 1;
+    TreasureTiers[12].Special.indian_8.min = 1;
+    TreasureTiers[12].Special.indian_8.dif = 2;
     // Амулет "Ритуальный нож"
     TreasureTiers[12].Special.indian_3 = "On";
     TreasureTiers[12].Special.indian_3.min = 1;
@@ -1755,16 +1937,16 @@ void InitTreasureTiers()
     TreasureTiers[12].Special.indian_11.dif = 1;
     // Амулет "Молитвослов"
     TreasureTiers[12].Special.amulet_2 = "On";
-    TreasureTiers[12].Special.amulet_2.min = 2;
-    TreasureTiers[12].Special.amulet_2.dif = 1;
+    TreasureTiers[12].Special.amulet_2.min = 1;
+    TreasureTiers[12].Special.amulet_2.dif = 2;
     // Амулет "Тсантса"
     TreasureTiers[12].Special.indian_5 = "On";
     TreasureTiers[12].Special.indian_5.min = 1;
     TreasureTiers[12].Special.indian_5.dif = 1;
     // Амулет "Бальд"
     TreasureTiers[12].Special.indian_9 = "On";
-    TreasureTiers[12].Special.indian_9.min = 2;
-    TreasureTiers[12].Special.indian_9.dif = 1;
+    TreasureTiers[12].Special.indian_9.min = 1;
+    TreasureTiers[12].Special.indian_9.dif = 2;
     // Амулет "Якорь"
     TreasureTiers[12].Special.amulet_8 = "On";
     TreasureTiers[12].Special.amulet_8.min = 1;
@@ -1779,12 +1961,16 @@ void InitTreasureTiers()
     TreasureTiers[12].Special.amulet_4.dif = 1;
     // Амулет "Согбо"
     TreasureTiers[12].Special.amulet_5 = "On";
-    TreasureTiers[12].Special.amulet_5.min = 2;
-    TreasureTiers[12].Special.amulet_5.dif = 1;
+    TreasureTiers[12].Special.amulet_5.min = 1;
+    TreasureTiers[12].Special.amulet_5.dif = 2;
     // Амулет "Мадонна"
     TreasureTiers[12].Special.amulet_6 = "On";
     TreasureTiers[12].Special.amulet_6.min = 1;
     TreasureTiers[12].Special.amulet_6.dif = 1;
+    // Обычные карты
+    TreasureTiers[12].Special.map = "On";
+    TreasureTiers[12].Special.map.min = 2;
+    TreasureTiers[12].Special.map.dif = 2;
     // Адмиральские карты
     TreasureTiers[12].Special.map_a = "On";
     TreasureTiers[12].Special.map_a.min = 1;
@@ -1792,23 +1978,42 @@ void InitTreasureTiers()
 
 // === TIER 13 ===
     // = Equip =
-    TreasureTiers[13].Equip.cirass4  = "On"; // Миланский панцирь
-    TreasureTiers[13].Equip.cirass9  = "On"; // Бригант с горжетом
+    TreasureTiers[13].Equip.cirass6  = "On"; // Жилет бретера
+    TreasureTiers[13].Equip.cirass7  = "On"; // Бригант
+    TreasureTiers[13].Equip.cirass3  = "On"; // Парадная кираса
+    TreasureTiers[13].Equip.cirass1  = "On"; // Траншейный доспех
+    TreasureTiers[13].Equip.cirass2  = "On"; // Рейтарская кираса
+    TreasureTiers[13].Equip.cirass8  = "On"; // Плетёный доспех
+    TreasureTiers[13].Equip.blade_19 = "On"; // Морская сабля
+    TreasureTiers[13].Equip.blade_06 = "On"; // Скьявона
+    TreasureTiers[13].Equip.blade_13 = "On"; // Офицерский палаш
+    TreasureTiers[13].Equip.blade_30 = "On"; // Офицерский клеванг
+    TreasureTiers[13].Equip.topor_01 = "On"; // Макуауитль
+    TreasureTiers[13].Equip.blade_10 = "On"; // Корд
+    TreasureTiers[13].Equip.blade_17 = "On"; // Бретта
     TreasureTiers[13].Equip.blade_25 = "On"; // Моргана
+    TreasureTiers[13].Equip.blade_26 = "On"; // Асоледа
     TreasureTiers[13].Equip.blade_18 = "On"; // Паппенхаймер
     TreasureTiers[13].Equip.blade_38 = "On"; // Дуэльная шпага
-    TreasureTiers[13].Equip.blade_26 = "On"; // Асоледа
-    TreasureTiers[13].Equip.blade_29 = "On"; // Сторта
-    TreasureTiers[13].Equip.blade_19 = "On"; // Морская сабля
-    TreasureTiers[13].Equip.blade_17 = "On"; // Бретта
-    TreasureTiers[13].Equip.howdah   = "On"; // Гауда
+    TreasureTiers[13].Equip.blade_21 = "On"; // Клейбэг
+    TreasureTiers[13].Equip.topor_04 = "On"; // Секира
+    TreasureTiers[13].Equip.blade_16 = "On"; // Смоллсворд
+    TreasureTiers[13].Equip.blade_27 = "On"; // Саксенфедер
+    TreasureTiers[13].Equip.blade_39 = "On"; // Рапира бретера
+    TreasureTiers[13].Equip.mushket2 = "On"; // Флотский карабин
+    TreasureTiers[13].Equip.pistol4  = "On"; // Четырёхствольный пистолет
+    TreasureTiers[13].Equip.pistol2  = "On"; // Трёхствольный дробовик
+    TreasureTiers[13].Equip.pistol6  = "On"; // Бок-пистолет
     TreasureTiers[13].Equip.mushket8 = "On"; // Четырёхзарядный штуцер
+    TreasureTiers[13].Equip.pistol11 = "On"; // Чудовище
     TreasureTiers[13].Equip.pistol8  = "On"; // Бландербуз
     TreasureTiers[13].Equip.grape_mushket = "On"; // Склопетта
-    TreasureTiers[13].Equip.hat6 = "On"; // Голландская шляпа
-    TreasureTiers[13].Equip.hat2 = "On"; // Шляпа кавалера
-    TreasureTiers[13].Equip.hat4 = "On"; // Треуголка морского офицера
-    TreasureTiers[13].Equip.hat7 = "On"; // Счастливая шляпа
+    TreasureTiers[13].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[13].Equip.hat6     = "On"; // Голландская шляпа
+    TreasureTiers[13].Equip.hat2     = "On"; // Шляпа кавалера
+    TreasureTiers[13].Equip.hat4     = "On"; // Треуголка морского офицера
+    TreasureTiers[13].Equip.hat7     = "On"; // Счастливая шляпа
+    TreasureTiers[13].Equip.spyglass3 = "On"; // Хорошая подзорная труба
     TreasureTiers[13].Equip.spyglass4 = "On"; // Отличная подзорная труба
 
     // = Jewelry =
@@ -1855,6 +2060,9 @@ void InitTreasureTiers()
     TreasureTiers[13].Jewelry.gold_dublon = "On";
     TreasureTiers[13].Jewelry.gold_dublon.min = 185;
     TreasureTiers[13].Jewelry.gold_dublon.dif = 140;
+    // Золотой дублон (дубль)
+    TreasureTiers[13].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[13].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Сундук (150 дублонов)
     TreasureTiers[13].Jewelry.chest = "On";
     TreasureTiers[13].Jewelry.chest.min = 6;
@@ -1871,60 +2079,60 @@ void InitTreasureTiers()
     // = Special =
     // Амулет "Святая вода"
     TreasureTiers[13].Special.amulet_7 = "On";
-    TreasureTiers[13].Special.amulet_7.min = 2;
-    TreasureTiers[13].Special.amulet_7.dif = 1;
+    TreasureTiers[13].Special.amulet_7.min = 1;
+    TreasureTiers[13].Special.amulet_7.dif = 2;
     // Амулет "Горбун"
     TreasureTiers[13].Special.indian_7 = "On";
-    TreasureTiers[13].Special.indian_7.min = 2;
-    TreasureTiers[13].Special.indian_7.dif = 1;
+    TreasureTiers[13].Special.indian_7.min = 1;
+    TreasureTiers[13].Special.indian_7.dif = 2;
     // Амулет "Пороховой тестер"
     TreasureTiers[13].Special.indian_2 = "On";
     TreasureTiers[13].Special.indian_2.min = 2;
     TreasureTiers[13].Special.indian_2.dif = 1;
     // Амулет "Каскавела"
     TreasureTiers[13].Special.indian_10 = "On";
-    TreasureTiers[13].Special.indian_10.min = 2;
-    TreasureTiers[13].Special.indian_10.dif = 1;
+    TreasureTiers[13].Special.indian_10.min = 1;
+    TreasureTiers[13].Special.indian_10.dif = 2;
     // Амулет "Кукла Вуду"
     TreasureTiers[13].Special.indian_1 = "On";
-    TreasureTiers[13].Special.indian_1.min = 2;
-    TreasureTiers[13].Special.indian_1.dif = 1;
+    TreasureTiers[13].Special.indian_1.min = 1;
+    TreasureTiers[13].Special.indian_1.dif = 2;
     // Амулет "Коралловая голова"
     TreasureTiers[13].Special.indian_6 = "On";
-    TreasureTiers[13].Special.indian_6.min = 2;
-    TreasureTiers[13].Special.indian_6.dif = 1;
+    TreasureTiers[13].Special.indian_6.min = 1;
+    TreasureTiers[13].Special.indian_6.dif = 2;
     // Амулет "Секира"
     TreasureTiers[13].Special.indian_4 = "On";
-    TreasureTiers[13].Special.indian_4.min = 2;
-    TreasureTiers[13].Special.indian_4.dif = 1;
+    TreasureTiers[13].Special.indian_4.min = 1;
+    TreasureTiers[13].Special.indian_4.dif = 2;
     // Амулет "Щит нгомбо"
     TreasureTiers[13].Special.amulet_1 = "On";
-    TreasureTiers[13].Special.amulet_1.min = 2;
-    TreasureTiers[13].Special.amulet_1.dif = 1;
+    TreasureTiers[13].Special.amulet_1.min = 1;
+    TreasureTiers[13].Special.amulet_1.dif = 2;
     // Амулет "Шиутекутли"
     TreasureTiers[13].Special.indian_8 = "On";
-    TreasureTiers[13].Special.indian_8.min = 2;
-    TreasureTiers[13].Special.indian_8.dif = 1;
+    TreasureTiers[13].Special.indian_8.min = 1;
+    TreasureTiers[13].Special.indian_8.dif = 2;
     // Амулет "Ритуальный нож"
     TreasureTiers[13].Special.indian_3 = "On";
-    TreasureTiers[13].Special.indian_3.min = 2;
-    TreasureTiers[13].Special.indian_3.dif = 1;
+    TreasureTiers[13].Special.indian_3.min = 1;
+    TreasureTiers[13].Special.indian_3.dif = 2;
     // Амулет "Маска нгомбо"
     TreasureTiers[13].Special.indian_11 = "On";
-    TreasureTiers[13].Special.indian_11.min = 2;
-    TreasureTiers[13].Special.indian_11.dif = 1;
+    TreasureTiers[13].Special.indian_11.min = 1;
+    TreasureTiers[13].Special.indian_11.dif = 2;
     // Амулет "Молитвослов"
     TreasureTiers[13].Special.amulet_2 = "On";
-    TreasureTiers[13].Special.amulet_2.min = 2;
-    TreasureTiers[13].Special.amulet_2.dif = 1;
+    TreasureTiers[13].Special.amulet_2.min = 1;
+    TreasureTiers[13].Special.amulet_2.dif = 2;
     // Амулет "Тсантса"
     TreasureTiers[13].Special.indian_5 = "On";
     TreasureTiers[13].Special.indian_5.min = 1;
     TreasureTiers[13].Special.indian_5.dif = 1;
     // Амулет "Бальд"
     TreasureTiers[13].Special.indian_9 = "On";
-    TreasureTiers[13].Special.indian_9.min = 2;
-    TreasureTiers[13].Special.indian_9.dif = 1;
+    TreasureTiers[13].Special.indian_9.min = 1;
+    TreasureTiers[13].Special.indian_9.dif = 2;
     // Амулет "Якорь"
     TreasureTiers[13].Special.amulet_8 = "On";
     TreasureTiers[13].Special.amulet_8.min = 1;
@@ -1935,16 +2143,20 @@ void InitTreasureTiers()
     TreasureTiers[13].Special.amulet_3.dif = 1;
     // Амулет "Эль Трозо"
     TreasureTiers[13].Special.amulet_4 = "On";
-    TreasureTiers[13].Special.amulet_4.min = 2;
-    TreasureTiers[13].Special.amulet_4.dif = 1;
+    TreasureTiers[13].Special.amulet_4.min = 1;
+    TreasureTiers[13].Special.amulet_4.dif = 2;
     // Амулет "Согбо"
     TreasureTiers[13].Special.amulet_5 = "On";
-    TreasureTiers[13].Special.amulet_5.min = 2;
-    TreasureTiers[13].Special.amulet_5.dif = 1;
+    TreasureTiers[13].Special.amulet_5.min = 1;
+    TreasureTiers[13].Special.amulet_5.dif = 2;
     // Амулет "Мадонна"
     TreasureTiers[13].Special.amulet_6 = "On";
-    TreasureTiers[13].Special.amulet_6.min = 2;
-    TreasureTiers[13].Special.amulet_6.dif = 1;
+    TreasureTiers[13].Special.amulet_6.min = 1;
+    TreasureTiers[13].Special.amulet_6.dif = 2;
+    // Обычные карты
+    TreasureTiers[13].Special.map = "On";
+    TreasureTiers[13].Special.map.min = 2;
+    TreasureTiers[13].Special.map.dif = 2;
     // Адмиральские карты
     TreasureTiers[13].Special.map_a = "On";
     TreasureTiers[13].Special.map_a.min = 1;
@@ -1952,24 +2164,40 @@ void InitTreasureTiers()
 
 // === TIER 14 ===
     // = Equip =
-    TreasureTiers[14].Equip.cirass4  = "On"; // Миланский панцирь
-    TreasureTiers[14].Equip.cirass9  = "On"; // Бригант с горжетом
-    TreasureTiers[14].Equip.blade_20 = "On"; // Мадонна
+    TreasureTiers[14].Equip.cirass7  = "On"; // Бригант
+    TreasureTiers[14].Equip.cirass3  = "On"; // Парадная кираса
+    TreasureTiers[14].Equip.cirass1  = "On"; // Траншейный доспех
+    TreasureTiers[14].Equip.cirass2  = "On"; // Рейтарская кираса
+    TreasureTiers[14].Equip.cirass8  = "On"; // Плетёный доспех
+    TreasureTiers[14].Equip.blade_19 = "On"; // Морская сабля
+    TreasureTiers[14].Equip.blade_06 = "On"; // Скьявона
+    TreasureTiers[14].Equip.blade_13 = "On"; // Офицерский палаш
+    TreasureTiers[14].Equip.blade_30 = "On"; // Офицерский клеванг
+    TreasureTiers[14].Equip.saber    = "On"; // Кавалерийская сабля
+    TreasureTiers[14].Equip.blade_10 = "On"; // Корд
+    TreasureTiers[14].Equip.blade_17 = "On"; // Бретта
+    TreasureTiers[14].Equip.blade_25 = "On"; // Моргана
+    TreasureTiers[14].Equip.blade_26 = "On"; // Асоледа
     TreasureTiers[14].Equip.blade_18 = "On"; // Паппенхаймер
     TreasureTiers[14].Equip.blade_38 = "On"; // Дуэльная шпага
-    TreasureTiers[14].Equip.saber    = "On"; // Кавалерийская сабля
-    TreasureTiers[14].Equip.blade_29 = "On"; // Сторта
-    TreasureTiers[14].Equip.blade_19 = "On"; // Морская сабля
     TreasureTiers[14].Equip.blade_21 = "On"; // Клейбэг
+    TreasureTiers[14].Equip.topor_04 = "On"; // Секира
+    TreasureTiers[14].Equip.blade_16 = "On"; // Смоллсворд
+    TreasureTiers[14].Equip.blade_27 = "On"; // Саксенфедер
+    TreasureTiers[14].Equip.blade_39 = "On"; // Рапира бретера
+    TreasureTiers[14].Equip.mushket2 = "On"; // Флотский карабин
+    TreasureTiers[14].Equip.pistol4  = "On"; // Четырёхствольный пистолет
     TreasureTiers[14].Equip.howdah   = "On"; // Гауда
+    TreasureTiers[14].Equip.pistol6  = "On"; // Бок-пистолет
     TreasureTiers[14].Equip.mushket8 = "On"; // Четырёхзарядный штуцер
     TreasureTiers[14].Equip.mushket5 = "On"; // Винтовальный штуцер
     TreasureTiers[14].Equip.pistol8  = "On"; // Бландербуз
     TreasureTiers[14].Equip.grape_mushket = "On"; // Склопетта
-    TreasureTiers[14].Equip.hat6 = "On"; // Голландская шляпа
-    TreasureTiers[14].Equip.hat2 = "On"; // Шляпа кавалера
-    TreasureTiers[14].Equip.hat4 = "On"; // Треуголка морского офицера
-    TreasureTiers[14].Equip.hat7 = "On"; // Счастливая шляпа
+    TreasureTiers[14].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[14].Equip.hat6     = "On"; // Голландская шляпа
+    TreasureTiers[14].Equip.hat2     = "On"; // Шляпа кавалера
+    TreasureTiers[14].Equip.hat4     = "On"; // Треуголка морского офицера
+    TreasureTiers[14].Equip.hat7     = "On"; // Счастливая шляпа
     TreasureTiers[14].Equip.spyglass4 = "On"; // Отличная подзорная труба
 
     // = Jewelry =
@@ -2016,6 +2244,9 @@ void InitTreasureTiers()
     TreasureTiers[14].Jewelry.gold_dublon = "On";
     TreasureTiers[14].Jewelry.gold_dublon.min = 200;
     TreasureTiers[14].Jewelry.gold_dublon.dif = 150;
+    // Золотой дублон (дубль)
+    TreasureTiers[14].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[14].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Сундук (150 дублонов)
     TreasureTiers[14].Jewelry.chest = "On";
     TreasureTiers[14].Jewelry.chest.min = 7;
@@ -2032,80 +2263,80 @@ void InitTreasureTiers()
     // = Special =
     // Амулет "Святая вода"
     TreasureTiers[14].Special.amulet_7 = "On";
-    TreasureTiers[14].Special.amulet_7.min = 2;
-    TreasureTiers[14].Special.amulet_7.dif = 1;
+    TreasureTiers[14].Special.amulet_7.min = 1;
+    TreasureTiers[14].Special.amulet_7.dif = 2;
     // Амулет "Горбун"
     TreasureTiers[14].Special.indian_7 = "On";
-    TreasureTiers[14].Special.indian_7.min = 2;
-    TreasureTiers[14].Special.indian_7.dif = 1;
+    TreasureTiers[14].Special.indian_7.min = 1;
+    TreasureTiers[14].Special.indian_7.dif = 2;
     // Амулет "Пороховой тестер"
     TreasureTiers[14].Special.indian_2 = "On";
     TreasureTiers[14].Special.indian_2.min = 2;
     TreasureTiers[14].Special.indian_2.dif = 1;
     // Амулет "Каскавела"
     TreasureTiers[14].Special.indian_10 = "On";
-    TreasureTiers[14].Special.indian_10.min = 2;
-    TreasureTiers[14].Special.indian_10.dif = 1;
+    TreasureTiers[14].Special.indian_10.min = 1;
+    TreasureTiers[14].Special.indian_10.dif = 2;
     // Амулет "Кукла Вуду"
     TreasureTiers[14].Special.indian_1 = "On";
-    TreasureTiers[14].Special.indian_1.min = 2;
-    TreasureTiers[14].Special.indian_1.dif = 1;
+    TreasureTiers[14].Special.indian_1.min = 1;
+    TreasureTiers[14].Special.indian_1.dif = 2;
     // Амулет "Коралловая голова"
     TreasureTiers[14].Special.indian_6 = "On";
-    TreasureTiers[14].Special.indian_6.min = 2;
-    TreasureTiers[14].Special.indian_6.dif = 1;
+    TreasureTiers[14].Special.indian_6.min = 1;
+    TreasureTiers[14].Special.indian_6.dif = 2;
     // Амулет "Секира"
     TreasureTiers[14].Special.indian_4 = "On";
-    TreasureTiers[14].Special.indian_4.min = 2;
-    TreasureTiers[14].Special.indian_4.dif = 1;
+    TreasureTiers[14].Special.indian_4.min = 1;
+    TreasureTiers[14].Special.indian_4.dif = 2;
     // Амулет "Щит нгомбо"
     TreasureTiers[14].Special.amulet_1 = "On";
-    TreasureTiers[14].Special.amulet_1.min = 2;
-    TreasureTiers[14].Special.amulet_1.dif = 1;
+    TreasureTiers[14].Special.amulet_1.min = 1;
+    TreasureTiers[14].Special.amulet_1.dif = 2;
     // Амулет "Шиутекутли"
     TreasureTiers[14].Special.indian_8 = "On";
-    TreasureTiers[14].Special.indian_8.min = 2;
-    TreasureTiers[14].Special.indian_8.dif = 1;
+    TreasureTiers[14].Special.indian_8.min = 1;
+    TreasureTiers[14].Special.indian_8.dif = 2;
     // Амулет "Ритуальный нож"
     TreasureTiers[14].Special.indian_3 = "On";
-    TreasureTiers[14].Special.indian_3.min = 2;
-    TreasureTiers[14].Special.indian_3.dif = 1;
+    TreasureTiers[14].Special.indian_3.min = 1;
+    TreasureTiers[14].Special.indian_3.dif = 2;
     // Амулет "Маска нгомбо"
     TreasureTiers[14].Special.indian_11 = "On";
-    TreasureTiers[14].Special.indian_11.min = 2;
-    TreasureTiers[14].Special.indian_11.dif = 1;
+    TreasureTiers[14].Special.indian_11.min = 1;
+    TreasureTiers[14].Special.indian_11.dif = 2;
     // Амулет "Молитвослов"
     TreasureTiers[14].Special.amulet_2 = "On";
-    TreasureTiers[14].Special.amulet_2.min = 2;
-    TreasureTiers[14].Special.amulet_2.dif = 1;
+    TreasureTiers[14].Special.amulet_2.min = 1;
+    TreasureTiers[14].Special.amulet_2.dif = 2;
     // Амулет "Тсантса"
     TreasureTiers[14].Special.indian_5 = "On";
-    TreasureTiers[14].Special.indian_5.min = 2;
-    TreasureTiers[14].Special.indian_5.dif = 1;
+    TreasureTiers[14].Special.indian_5.min = 1;
+    TreasureTiers[14].Special.indian_5.dif = 2;
     // Амулет "Бальд"
     TreasureTiers[14].Special.indian_9 = "On";
-    TreasureTiers[14].Special.indian_9.min = 2;
-    TreasureTiers[14].Special.indian_9.dif = 1;
+    TreasureTiers[14].Special.indian_9.min = 1;
+    TreasureTiers[14].Special.indian_9.dif = 2;
     // Амулет "Якорь"
     TreasureTiers[14].Special.amulet_8 = "On";
-    TreasureTiers[14].Special.amulet_8.min = 2;
-    TreasureTiers[14].Special.amulet_8.dif = 1;
+    TreasureTiers[14].Special.amulet_8.min = 1;
+    TreasureTiers[14].Special.amulet_8.dif = 2;
     // Амулет "Нательный крест"
     TreasureTiers[14].Special.amulet_3 = "On";
-    TreasureTiers[14].Special.amulet_3.min = 2;
-    TreasureTiers[14].Special.amulet_3.dif = 1;
+    TreasureTiers[14].Special.amulet_3.min = 1;
+    TreasureTiers[14].Special.amulet_3.dif = 2;
     // Амулет "Эль Трозо"
     TreasureTiers[14].Special.amulet_4 = "On";
-    TreasureTiers[14].Special.amulet_4.min = 2;
-    TreasureTiers[14].Special.amulet_4.dif = 1;
+    TreasureTiers[14].Special.amulet_4.min = 1;
+    TreasureTiers[14].Special.amulet_4.dif = 2;
     // Амулет "Согбо"
     TreasureTiers[14].Special.amulet_5 = "On";
-    TreasureTiers[14].Special.amulet_5.min = 2;
-    TreasureTiers[14].Special.amulet_5.dif = 1;
+    TreasureTiers[14].Special.amulet_5.min = 1;
+    TreasureTiers[14].Special.amulet_5.dif = 2;
     // Амулет "Мадонна"
     TreasureTiers[14].Special.amulet_6 = "On";
-    TreasureTiers[14].Special.amulet_6.min = 2;
-    TreasureTiers[14].Special.amulet_6.dif = 1;
+    TreasureTiers[14].Special.amulet_6.min = 1;
+    TreasureTiers[14].Special.amulet_6.dif = 2;
     // Адмиральские карты
     TreasureTiers[14].Special.map_a = "On";
     TreasureTiers[14].Special.map_a.min = 1;
@@ -2113,23 +2344,43 @@ void InitTreasureTiers()
 
 // === TIER 15 ===
     // = Equip =
+    TreasureTiers[15].Equip.cirass3  = "On"; // Парадная кираса
+    TreasureTiers[15].Equip.cirass1  = "On"; // Траншейный доспех
+    TreasureTiers[15].Equip.cirass2  = "On"; // Рейтарская кираса
+    TreasureTiers[15].Equip.cirass8  = "On"; // Плетёный доспех
     TreasureTiers[15].Equip.cirass4  = "On"; // Миланский панцирь
-    TreasureTiers[15].Equip.cirass9  = "On"; // Бригант с горжетом
-    TreasureTiers[15].Equip.blade_20 = "On"; // Мадонна
-    TreasureTiers[15].Equip.blade_38 = "On"; // Дуэльная шпага
+    TreasureTiers[15].Equip.blade_19 = "On"; // Морская сабля
+    TreasureTiers[15].Equip.blade_06 = "On"; // Скьявона
+    TreasureTiers[15].Equip.blade_13 = "On"; // Офицерский палаш
+    TreasureTiers[15].Equip.blade_30 = "On"; // Офицерский клеванг
     TreasureTiers[15].Equip.saber    = "On"; // Кавалерийская сабля
-    TreasureTiers[15].Equip.blade_29 = "On"; // Сторта
+    TreasureTiers[15].Equip.blade_10 = "On"; // Корд
+    TreasureTiers[15].Equip.blade_17 = "On"; // Бретта
+    TreasureTiers[15].Equip.blade_25 = "On"; // Моргана
+    TreasureTiers[15].Equip.blade_26 = "On"; // Асоледа
+    TreasureTiers[15].Equip.blade_18 = "On"; // Паппенхаймер
+    TreasureTiers[15].Equip.blade_38 = "On"; // Дуэльная шпага
     TreasureTiers[15].Equip.blade_21 = "On"; // Клейбэг
+    TreasureTiers[15].Equip.topor_04 = "On"; // Секира
+    TreasureTiers[15].Equip.blade_16 = "On"; // Смоллсворд
+    TreasureTiers[15].Equip.blade_27 = "On"; // Саксенфедер
+    TreasureTiers[15].Equip.blade_39 = "On"; // Рапира бретера
+    TreasureTiers[15].Equip.blade_20 = "On"; // Мадонна
+    TreasureTiers[15].Equip.mushket2 = "On"; // Флотский карабин
+    TreasureTiers[15].Equip.pistol4  = "On"; // Четырёхствольный пистолет
+    TreasureTiers[15].Equip.howdah   = "On"; // Гауда
     TreasureTiers[15].Equip.pistol13 = "On"; // Кремневый револьвер
     TreasureTiers[15].Equip.mushket8 = "On"; // Четырёхзарядный штуцер
     TreasureTiers[15].Equip.mushket5 = "On"; // Винтовальный штуцер
     TreasureTiers[15].Equip.pistol8  = "On"; // Бландербуз
     TreasureTiers[15].Equip.mushket6 = "On"; // Башенный мушкетон
     TreasureTiers[15].Equip.grape_mushket = "On"; // Склопетта
-    TreasureTiers[15].Equip.hat6 = "On"; // Голландская шляпа
-    TreasureTiers[15].Equip.hat2 = "On"; // Шляпа кавалера
-    TreasureTiers[15].Equip.hat4 = "On"; // Треуголка морского офицера
-    TreasureTiers[15].Equip.hat7 = "On"; // Счастливая шляпа
+    TreasureTiers[15].Equip.mushket1 = "On"; // Фитильный мушкет
+    TreasureTiers[15].Equip.hat6     = "On"; // Голландская шляпа
+    TreasureTiers[15].Equip.hat2     = "On"; // Шляпа кавалера
+    TreasureTiers[15].Equip.hat4     = "On"; // Треуголка морского офицера
+    TreasureTiers[15].Equip.hat7     = "On"; // Счастливая шляпа
+    TreasureTiers[15].Equip.spyglass4 = "On"; // Отличная подзорная труба
 
     // = Jewelry =
     // Песо
@@ -2175,6 +2426,9 @@ void InitTreasureTiers()
     TreasureTiers[15].Jewelry.gold_dublon = "On";
     TreasureTiers[15].Jewelry.gold_dublon.min = 215;
     TreasureTiers[15].Jewelry.gold_dublon.dif = 160;
+    // Золотой дублон (дубль)
+    TreasureTiers[15].Jewelry.gold_dublon_2 = "On";
+    TreasureTiers[15].Jewelry.gold_dublon_2.orig = "gold_dublon";
     // Сундук (150 дублонов)
     TreasureTiers[15].Jewelry.chest = "On";
     TreasureTiers[15].Jewelry.chest.min = 8;
@@ -2191,80 +2445,80 @@ void InitTreasureTiers()
     // = Special =
     // Амулет "Святая вода"
     TreasureTiers[15].Special.amulet_7 = "On";
-    TreasureTiers[15].Special.amulet_7.min = 2;
-    TreasureTiers[15].Special.amulet_7.dif = 1;
+    TreasureTiers[15].Special.amulet_7.min = 1;
+    TreasureTiers[15].Special.amulet_7.dif = 2;
     // Амулет "Горбун"
     TreasureTiers[15].Special.indian_7 = "On";
-    TreasureTiers[15].Special.indian_7.min = 2;
-    TreasureTiers[15].Special.indian_7.dif = 1;
+    TreasureTiers[15].Special.indian_7.min = 1;
+    TreasureTiers[15].Special.indian_7.dif = 2;
     // Амулет "Пороховой тестер"
     TreasureTiers[15].Special.indian_2 = "On";
     TreasureTiers[15].Special.indian_2.min = 2;
     TreasureTiers[15].Special.indian_2.dif = 1;
     // Амулет "Каскавела"
     TreasureTiers[15].Special.indian_10 = "On";
-    TreasureTiers[15].Special.indian_10.min = 2;
-    TreasureTiers[15].Special.indian_10.dif = 1;
+    TreasureTiers[15].Special.indian_10.min = 1;
+    TreasureTiers[15].Special.indian_10.dif = 2;
     // Амулет "Кукла Вуду"
     TreasureTiers[15].Special.indian_1 = "On";
-    TreasureTiers[15].Special.indian_1.min = 2;
-    TreasureTiers[15].Special.indian_1.dif = 1;
+    TreasureTiers[15].Special.indian_1.min = 1;
+    TreasureTiers[15].Special.indian_1.dif = 2;
     // Амулет "Коралловая голова"
     TreasureTiers[15].Special.indian_6 = "On";
-    TreasureTiers[15].Special.indian_6.min = 2;
-    TreasureTiers[15].Special.indian_6.dif = 1;
+    TreasureTiers[15].Special.indian_6.min = 1;
+    TreasureTiers[15].Special.indian_6.dif = 2;
     // Амулет "Секира"
     TreasureTiers[15].Special.indian_4 = "On";
-    TreasureTiers[15].Special.indian_4.min = 2;
-    TreasureTiers[15].Special.indian_4.dif = 1;
+    TreasureTiers[15].Special.indian_4.min = 1;
+    TreasureTiers[15].Special.indian_4.dif = 2;
     // Амулет "Щит нгомбо"
     TreasureTiers[15].Special.amulet_1 = "On";
-    TreasureTiers[15].Special.amulet_1.min = 2;
-    TreasureTiers[15].Special.amulet_1.dif = 1;
+    TreasureTiers[15].Special.amulet_1.min = 1;
+    TreasureTiers[15].Special.amulet_1.dif = 2;
     // Амулет "Шиутекутли"
     TreasureTiers[15].Special.indian_8 = "On";
-    TreasureTiers[15].Special.indian_8.min = 2;
-    TreasureTiers[15].Special.indian_8.dif = 1;
+    TreasureTiers[15].Special.indian_8.min = 1;
+    TreasureTiers[15].Special.indian_8.dif = 2;
     // Амулет "Ритуальный нож"
     TreasureTiers[15].Special.indian_3 = "On";
-    TreasureTiers[15].Special.indian_3.min = 2;
-    TreasureTiers[15].Special.indian_3.dif = 1;
+    TreasureTiers[15].Special.indian_3.min = 1;
+    TreasureTiers[15].Special.indian_3.dif = 2;
     // Амулет "Маска нгомбо"
     TreasureTiers[15].Special.indian_11 = "On";
-    TreasureTiers[15].Special.indian_11.min = 2;
-    TreasureTiers[15].Special.indian_11.dif = 1;
+    TreasureTiers[15].Special.indian_11.min = 1;
+    TreasureTiers[15].Special.indian_11.dif = 2;
     // Амулет "Молитвослов"
     TreasureTiers[15].Special.amulet_2 = "On";
-    TreasureTiers[15].Special.amulet_2.min = 2;
-    TreasureTiers[15].Special.amulet_2.dif = 1;
+    TreasureTiers[15].Special.amulet_2.min = 1;
+    TreasureTiers[15].Special.amulet_2.dif = 2;
     // Амулет "Тсантса"
     TreasureTiers[15].Special.indian_5 = "On";
-    TreasureTiers[15].Special.indian_5.min = 2;
-    TreasureTiers[15].Special.indian_5.dif = 1;
+    TreasureTiers[15].Special.indian_5.min = 1;
+    TreasureTiers[15].Special.indian_5.dif = 2;
     // Амулет "Бальд"
     TreasureTiers[15].Special.indian_9 = "On";
-    TreasureTiers[15].Special.indian_9.min = 2;
-    TreasureTiers[15].Special.indian_9.dif = 1;
+    TreasureTiers[15].Special.indian_9.min = 1;
+    TreasureTiers[15].Special.indian_9.dif = 2;
     // Амулет "Якорь"
     TreasureTiers[15].Special.amulet_8 = "On";
-    TreasureTiers[15].Special.amulet_8.min = 2;
-    TreasureTiers[15].Special.amulet_8.dif = 1;
+    TreasureTiers[15].Special.amulet_8.min = 1;
+    TreasureTiers[15].Special.amulet_8.dif = 2;
     // Амулет "Нательный крест"
     TreasureTiers[15].Special.amulet_3 = "On";
-    TreasureTiers[15].Special.amulet_3.min = 2;
-    TreasureTiers[15].Special.amulet_3.dif = 1;
+    TreasureTiers[15].Special.amulet_3.min = 1;
+    TreasureTiers[15].Special.amulet_3.dif = 2;
     // Амулет "Эль Трозо"
     TreasureTiers[15].Special.amulet_4 = "On";
-    TreasureTiers[15].Special.amulet_4.min = 2;
-    TreasureTiers[15].Special.amulet_4.dif = 1;
+    TreasureTiers[15].Special.amulet_4.min = 1;
+    TreasureTiers[15].Special.amulet_4.dif = 2;
     // Амулет "Согбо"
     TreasureTiers[15].Special.amulet_5 = "On";
-    TreasureTiers[15].Special.amulet_5.min = 2;
-    TreasureTiers[15].Special.amulet_5.dif = 1;
+    TreasureTiers[15].Special.amulet_5.min = 1;
+    TreasureTiers[15].Special.amulet_5.dif = 2;
     // Амулет "Мадонна"
     TreasureTiers[15].Special.amulet_6 = "On";
-    TreasureTiers[15].Special.amulet_6.min = 2;
-    TreasureTiers[15].Special.amulet_6.dif = 1;
+    TreasureTiers[15].Special.amulet_6.min = 1;
+    TreasureTiers[15].Special.amulet_6.dif = 2;
     // Адмиральские карты
     TreasureTiers[15].Special.map_a = "On";
     TreasureTiers[15].Special.map_a.min = 2;
@@ -2273,32 +2527,40 @@ void InitTreasureTiers()
 
 void InitTreasureTiers_Additions(bool SandBoxMode)
 {
-    // Общие уникальные сокровища
-    SetSingleItemToTiers(14, 15, "Special", "indian_poison"); // Яд индейцев таино
+// Общие уникальные сокровища
+    // Яд индейцев таино
+    SetSingleItemToTiers(14, 15, "Special", "indian_poison");
+    // Сторта
+    SetSingleItemToTiers(14, 15, "Equip", "blade_29");
 
-    // Фриплейные уникальные сокровища
+// Фриплейные уникальные сокровища
     if(SandBoxMode)
     {
         // Костюм Лампорта
-        SetSingleItemToTiers(8, 10, "Equip", "suit4");
+        SetSingleItemToTiers(9, 15, "Equip", "suit4");
         // Водолазный скафандр
         SetSingleItemToTiers(15, 15, "Equip", "underwater");
-        // Мальтийский меч
-        TreasureTiers[15].Equip.blade_36 = "On";
-        // Танат
-        TreasureTiers[15].Equip.blade_32 = "On";
+        // Бригант с горжетом
+        SetSingleItemToTiers(15, 15, "Equip", "cirass9");
+        // Стервятник
+        SetSingleItemToTiers(15, 15, "Equip", "topor_06");
         // Катана
-        SetSingleItemToTiers(11, 14, "Equip", "blade_28");
+        SetSingleItemToTiers(15, 15, "Equip", "blade_28");
         // Цзянь
-        SetSingleItemToTiers(14, 15, "Equip", "blade_41");
+        SetSingleItemToTiers(15, 15, "Equip", "blade_41");
         // Мария
-        SetSingleItemToTiers(14, 15, "Equip", "knife_02");
+        SetSingleItemToTiers(15, 15, "Equip", "knife_02");
+        // Мальтийский меч
+        SetSingleItemToTiers(15, 15, "Equip", "blade_36");
+        // Танат
+        SetSingleItemToTiers(15, 15, "Equip", "blade_32");
         // Охотничий штуцер
-        SetSingleItemToTiers(13, 14, "Equip", "Mushket2x2");
+        SetSingleItemToTiers(14, 15, "Equip", "Mushket2x2");
         // Револьвер Кольта
         SetSingleItemToTiers(15, 15, "Equip", "pistol7");
         // Корабельный телескоп
         SetSingleItemToTiers(14, 15, "Equip", "spyglass5");
+
         // Инструкция по изготовлению ежового заряда
         SetSingleItemToTiers(10, 15, "Jewelry", "recipe_GunEchin");
         // Пулелейка
@@ -2313,15 +2575,7 @@ void InitTreasureTiers_Additions(bool SandBoxMode)
         SetSingleItemToTiers(15, 15, "Special", "sextant2");
     }
 
-    // Сокровища из DLC
-    if(GetDLCenabled(DLC_APPID_1))
-    {
-        // Золотой орёл
-        TreasureTiers[11].Equip.pistol10 = "On";
-        TreasureTiers[12].Equip.pistol10 = "On";
-        TreasureTiers[13].Equip.pistol10 = "On";
-        TreasureTiers[14].Equip.pistol10 = "On";
-    }
+	TreasureTiers[0].QuestSlot.LoyaltyPack = "LoyaltyPack_Treasure";
 }
 
 void SetSingleItemToTiers(int min, int max, string sType, string sItem)

@@ -2,3 +2,8 @@ LAi_fightparams_1
 {
 The dodge from the shot
 }
+
+LAi_fightparams_2
+{
+The Mercenary's Hat is destroyed.
+}

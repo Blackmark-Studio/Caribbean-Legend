@@ -690,7 +690,13 @@ void RefreshSetupBigPicture()
 		case "Longway":
 		SetNewPicture("SETUP_BIG_PICTURE", "interfaces\le\equipment\CharacterEquipment_Longway.tga");
 		break;
+		case "Longway_FP":
+		SetNewPicture("SETUP_BIG_PICTURE", "interfaces\le\equipment\CharacterEquipment_Longway.tga");
+		break;
 		case "Knippel":
+		SetNewPicture("SETUP_BIG_PICTURE", "interfaces\le\equipment\CharacterEquipment_Knippel.tga");
+		break;
+		case "Kneepel_FP":
 		SetNewPicture("SETUP_BIG_PICTURE", "interfaces\le\equipment\CharacterEquipment_Knippel.tga");
 		break;
 		case "Folke":
@@ -708,10 +714,12 @@ void RefreshSetupBigPicture()
 		case "Helena":
 		SetNewPicture("SETUP_BIG_PICTURE", "interfaces\le\equipment\CharacterEquipment_Helena.tga");
 		break;
+        //default:
         if (xi_refCharacter.sex == "man")
         SetNewPicture("SETUP_BIG_PICTURE", "interfaces\le\equipment\CharacterEquipment_Man.tga");
         else
-        SetNewPicture("SETUP_BIG_PICTURE", "interfaces\le\equipment\CharacterEquipment_Helena.tga");		
+        SetNewPicture("SETUP_BIG_PICTURE", "interfaces\le\equipment\CharacterEquipment_Helena.tga");
+        //break;
 	}
 }
 	
@@ -2033,11 +2041,13 @@ void FillItemsSelected()
 	SetNodeUsing("SLOT2_TEXT", false);
 	SetNodeUsing("SLOT3_TEXT", false);
 	SetNodeUsing("SLOT6_TEXT", false);
+	SetNodeUsing("SLOT11_TEXT", false);
 	
 	SetNodeUsing("SLOT_PIC_1", false);
 	SetNodeUsing("SLOT_PIC_2", false);
 	SetNodeUsing("SLOT_PIC_3", false);
 	SetNodeUsing("SLOT_PIC_6", false);
+	SetNodeUsing("SLOT_PIC_11", false);
 
     makearef(arEquip, xi_refCharacter.equip);
     num = GetAttributesNum(arEquip);
@@ -2132,6 +2142,20 @@ void FillItemsSelected()
                     SetFormatedText("SLOT6_TEXT", QBonus +"/10");
                     SetNodeUsing("SLOT6_TEXT", true);
                 }
+				if (IsEquipCharacterByArtefact(xi_refCharacter, "talisman20"))
+                {
+                    ref Bandolier = ItemsFromID("talisman20");
+                    int Durability = 60;
+                    if(CheckAttribute(Bandolier, "durability"))
+                    {
+                        durability = sti(Bandolier.durability);
+                    }
+                    picIndex = Durability / 6;
+                    SetNewGroupPicture("SLOT_PIC_6", "ITEMS_USE10", "items_use" + picIndex);
+                    SetNodeUsing("SLOT_PIC_6", true);
+                    SetFormatedText("SLOT6_TEXT", Durability +"/60");
+                    SetNodeUsing("SLOT6_TEXT", true);
+                }
             break;
             case TOOL_ITEM_TYPE:
                 SetNewGroupPicture("ITEM_7", curItem.picTexture, "itm" + curItem.picIndex);
@@ -2147,6 +2171,21 @@ void FillItemsSelected()
                 SetNewGroupPicture("ITEM_11", curItem.picTexture, "itm" + curItem.picIndex);
                 SetNodeUsing("ITEM_11", true);
                 SetNodeUsing("TABBTNSLOT_11", true);
+				
+				if (GetCharacterEquipByGroup(xi_refCharacter, HAT_ITEM_TYPE) == "hat10")
+                {
+                    ref hat10 = ItemsFromID("hat10");
+                    int DurabilityHat10 = 45;
+                    if(CheckAttribute(hat10, "durability"))
+                    {
+                        DurabilityHat10 = sti(hat10.durability);
+                    }
+                    picIndex = makeint(DurabilityHat10 / 4.5);
+                    SetNewGroupPicture("SLOT_PIC_11", "ITEMS_USE10", "items_use" + picIndex);
+                    SetNodeUsing("SLOT_PIC_11", true);
+                    SetFormatedText("SLOT11_TEXT", DurabilityHat10 +"/45");
+                    SetNodeUsing("SLOT11_TEXT", true);
+                }
             break;
         }
 	}
@@ -2930,6 +2969,7 @@ void EquipPress()
 				if (itmRef.id == "mangarosapower") 	MangarosaEffect("power"); 	// зелье силы
 				if (itmRef.id == "mangarosafast") 	MangarosaEffect("fast"); 	// зелье реакции
 				if (itmRef.id == "mangarosatotal") 	MangarosaEffect("total"); 	// комплексное зелье
+				if (itmRef.id == "vodka") VodkaEffect();
 				// калеуче
 				if (findsubstr(itmRef.id, "kaleuche_amulet", 0) != -1)
 				{
@@ -3218,6 +3258,14 @@ void EquipPress()
 										SetBlade_FgtLvl(xi_refCharacter, itmRef);
 									}
 									// <-- Цзань
+									if(itmRef.id == "talisman20" && !CheckAttribute(itmRef, "durability"))
+									{
+										itmRef.durability = 60;
+									}
+									if(itmRef.id == "hat10" && !CheckAttribute(itmRef, "durability"))
+									{
+										itmRef.durability = 45;
+									}
 									EquipCharacterByItem(xi_refCharacter, itmRef.id);
 								}
 							}

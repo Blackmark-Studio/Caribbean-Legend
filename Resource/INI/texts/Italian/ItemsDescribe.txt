@@ -699,6 +699,12 @@ itmdescr_Mushket2x2
 Questa bellissima carabina side-by-side è più comunemente vista dai nobili di alta classe a caccia di cervi. Le palle sparate dalle sue canne rigate colpiscono con sicurezza qualsiasi bersaglio, a quattro o due zampe. Per sparare richiede palle di piombo. Richiede l'abilità Schermagliatore.
 } 
 
+itmname_mushket10 {Moschetto imperiale}
+itmdescr_mushket10
+{
+Moschetto a colpo singolo d’epoca Guerra dei Trent’Anni. Dotato di baionetta e decorato con motivi tipici del Sacro Romano Impero. ~ Leadership +10. Infligge il 25% di danni in più con gli attacchi corpo a corpo.
+}
+
 itmname_howdah {Howdah}
 itmdescr_howdah
 {
@@ -959,6 +965,18 @@ Questo cappello è conosciuto in ogni angolo dei Caraibi e ovunque viene ricorda
 ~
 Riduce la penalità ai danni della nave del 30%.
 10% di probabilità di evitare danni da sparo.
+}
+
+itmname_hat10 {Cappello da Mercenario}
+itmdescr_hat10
+{
+Questo cappello corazzato, fabbricato sul campo, sembra poco elegante, ma può fermare un proiettile e salvare la vita. ~ Riduce qualsiasi danno del 18%, consumando 1 carica per ogni caso.
+}
+
+itmname_hat10_part {Cuoio conciato}
+itmdescr_hat10_part
+{
+Un buon pezzo di cuoio bovino conciato. Ideale per fabbricare cappelli.
 }
 
 ; ==================================================================================================================== ОПТИКА
@@ -1240,6 +1258,18 @@ La nave esiste su entrambi i lati del velo allo stesso tempo. Il legno era vivo 
 Ogni 2% di scafo perso aumenta la velocità e il danno dei cannoni dello 0,75% e 0,5%.
 ~
 Nessuna penalità, attivabile più volte.
+}
+
+itmname_talisman20	{Fascia degli Streltsy}
+itmdescr_talisman20
+{
+Una bandoliera composta da più cinghie, una fiaschetta da polvere e numerose cartucce di carta. Diffusa in molte forme e usi sui campi di battaglia europei, questa in particolare arriva da terre lontane, decorata con figure di bestie fantastiche delle selvagge foreste siberiane. ~ Ogni colpo con un'arma da fuoco consuma 1 carica. La velocità di mira aumenta del 20%, il danno massimo mirato aumenta del 40%, la velocità di ricarica aumenta del 10%.
+}
+
+itmname_talisman20_part {Fiaschetta da polvere del moschettiere}
+itmdescr_talisman20_part
+{
+Un'elegante fiaschetta da polvere di forma insolita, decorata con immagini di animali esotici di terre lontane. I bordi sono ricamati con un motivo dell’Europa orientale.
 }
 
 ; ==================================================================================================================== ТАЛИСМАНЫ
@@ -3003,6 +3033,12 @@ itmdescr_mangarosatotal
 {
 Pozione Manga Rosa preparata secondo la ricetta segreta di Amelie.
 Aumenta temporaneamente la forza, la resistenza, la reazione, la percezione, la leadership e la fortuna, nonché l'abilità con le armi da mischia e da tiro.
+}
+
+itmname_vodka	{Vodka dello Zar}
+itmdescr_vodka
+{
+Infuso di spirito di grano con ginepro e iperico, distillato e affinato con una goccia d’acqua di rose e radice di galanga. Usato dagli streltsy dello Zar russo in battaglia come bevanda riscaldante e rinvigorente. ~ Aumenta i danni corpo a corpo con le armi da fuoco del 30%. I colpi con le armi da fuoco drenano l’energia del nemico. Riduce i danni ricevuti dai colpi del 10%.
 }
 
 itmname_cannabis1	{Datura}

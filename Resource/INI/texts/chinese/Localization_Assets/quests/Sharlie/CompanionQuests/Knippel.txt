@@ -60,7 +60,7 @@ Lynch
 
 Knippel_14
 {
-"Sussex (苏塞克斯)" 出现在地平线上! 
+"Sussex (萨塞克斯号)" 出现在地平线上! 
 }
 
 Knippel_15

@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 		
 		case "Santiago_Trip_5":
 			dialog.text = "Astuto. So che non era certo un mazzo di margherite. Che c’era scritto in quella lettera, ragazzo?";
-			link.l1 = "Come dovrei saperlo? Non mi capita di ficcare il naso nelle lettere, anche se мне их доверяют. Magari era una missiva d’amore. Sai cosa si dice di chi comanda, eh...";
+			link.l1 = "Come dovrei saperlo? Non mi capita di ficcare il naso nelle lettere, anche se mi sono fidato di loro. Magari era una missiva d’amore. Sai cosa si dice di chi comanda, eh...";
 			link.l1.go = "Santiago_Trip_6";
 		break;
 		

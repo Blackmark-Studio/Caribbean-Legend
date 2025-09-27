@@ -19,8 +19,6 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	DeleteAttribute(pchar, "TutorialToDeck_1");
 	Achievment_Set("Test_Ach");
 	
-	// убираем корабль
-	pchar.Ship.Type = SHIP_NOTUSED;
 	// прописываем локации
 	sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
 	LocatorReloadEnterDisable("Quest_Ship_deck_Medium_trade", "reload_cabin", true);
@@ -266,6 +264,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 
 void SharlieTutorial_StartKino()
 {
+	pchar.Ship.Type = SHIP_NOTUSED;
 	DontRefreshBLI = false;
 	StartQuestMovie(true, false, true);
 	pchar.questTemp.NoFast = true;
@@ -2075,7 +2074,9 @@ void SharlieTutorial_ShowLogo_Start()
 	makearef(arLogo, ILogAndActions.TutorialLogo);
 	makearef(arImage, arLogo.images.logo);
 	
-	arImage.texture = "interfaces\le\cle_logo2.tga";
+	string sAdd = "";
+	if(LanguageGetLanguage() == "Chinese") sAdd = "_cn";
+	arImage.texture = "interfaces\le\cle_logo2"+sAdd+".tga";
 	arImage.uv = "0.0,0.0,1.0,1.0";
 	
 	arImage.pos = "560,140,1360,940";

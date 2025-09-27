@@ -2095,6 +2095,7 @@ void ProcessDialogEvent()
 			link.l1 = "Schiavi, giusto?";
 			link.l1.go = "PZ_Longway_PosleRasskaza_Shifr_3";
 			AddQuestRecordInfo("PZ_ArchiveOneMerden", "1");
+			RemoveItems(PChar, "MerdokArchive", 1);
 		break;
 		
 		case "PZ_Longway_PosleRasskaza_Shifr_3":
@@ -5287,8 +5288,8 @@ void ProcessDialogEvent()
 			
 			sld = GetCharacter(NPC_GenerateCharacter("PZ_PoP_ChangShin", "Mei_Shin", "woman", "towngirl2", 30, FRANCE, 0, false, "quest"));
 			FantomMakeCoolFighter(sld, 30, 80, 80, "blade_41", "", "", 0);
-			sld.name = "Чанг";
-			sld.lastname = "Шин";
+			sld.name = "Chang";
+			sld.lastname = "Shin";
 			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto16");
 			EquipCharacterByItem(sld, "blade_41");
 			GiveItem2Character(sld, "cirass8");

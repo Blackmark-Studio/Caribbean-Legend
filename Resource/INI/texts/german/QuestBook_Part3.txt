@@ -2553,3 +2553,24 @@ The regatta is over. I placed fifth. Though there's no prize for me, I'm satisfi
 Damn it! I came in last. What a blunder. I should've stayed out of this regatta.
 #TEXT   45
 My regatta journey is over. I broke the rules and was disqualified from the competition.
+
+#QUEST LoyaltyPack
+Stimme der Mannschaft
+#TEXT 1
+Alonso Pimentel, Obermaat und Stimme meiner Mannschaft, will mit mir sprechen. Ich kann ihn im Laderaum finden.
+#TEXT 2
+Obwohl Alonso meine bescheidenen Erfolge als Kapitän anerkannte, macht er sich offensichtlich Sorgen um mich. Er gab mir Ratschläge, schenkte mir nützliche Ausrüstung und erzählte eine Geschichte. Vielleicht höre ich die Fortsetzung, wenn ich so weitermache.
+#TEXT 3
+Alonso hat um ein Treffen gebeten. Wie üblich finde ich ihn im Laderaum.
+#TEXT 4
+Fast ein Jahr ist vergangen, und die Mannschaft hat endlich Vertrauen in mich gefunden. Alonso wich meinen Fragen über seine Vergangenheit meisterhaft aus, teilte aber eine weitere seiner Kriegsgeschichten. Er nimmt offensichtlich den Teil seiner Pflichten ernst, der die Moral der Mannschaft betrifft. Fast wie ein Beichtvater, obwohl ich bezweifle, dass Priester ihrer Herde Rezepte für Moskauer Gebräu und hochwertige Feuerwaffen schenken. Fortsetzung folgt?
+#TEXT 5
+Alonso hat um ein Treffen gebeten. Wie üblich finde ich ihn im Laderaum.
+#TEXT 6
+Jetzt bin ich nicht nur Besitzer eines gewissen Rufes in der Karibik, sondern auch eines idiotisch aussehenden Hutes. Obwohl er den Kopf eines aufstrebenden Kapitäns schützen kann, wird er definitiv nach ein paar kräftigen Schlägen auseinanderfallen. Trotzdem wurde mein Triumph etwas getrübt durch die tragische Geschichte, die mir Alonso heute erzählte. Ich weiß nicht, was sie mich lehren soll, aber ich würde gerne seinen "Moskauer Freund" kennenlernen.
+#TEXT 7
+Alonso hat um ein Treffen gebeten. Wie üblich finde ich ihn im Laderaum.
+#TEXT 8
+Fadey? Derselbe Fadey aus Basse-Terre? Wie klein die Welt ist! Ich sollte ihn besuchen.
+#TEXT 9
+Das Treffen mit Fadey brachte mich zum Nachdenken über vieles. Wie viele weitere "Alonsos" sind in meiner Mannschaft? Wie viele Geschichten und eigentümliche menschliche Schicksale? Ich habe nur eine Stimme gehört, doch jetzt habe ich Hunderte. Ich weiß nicht, wie meine karibische Odyssee enden wird, aber dank Alonsos Fürsorge und seinen einfachen Geschenken bin ich vollständig ausgerüstet, vorbereitet und bereit, meinem Schicksal zu begegnen.

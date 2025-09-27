@@ -38,7 +38,7 @@ void ProcessDialogEvent()
 		case "Tichingitu":
 			DelLandQuestMark(npchar);
 			dialog.text = "Cosa vuoi, muso pallido? Tichingitu non ha nulla da dirti.";
-			link.l1 = "Il tuo nome è Tichingitu? Mh. Ascolta, guerriero, non sono venuto fin qui per rimirarti. Ho una domanda per тебя: perché mai ti sei introdotto nella casa di quel grassone?";
+			link.l1 = "Il tuo nome è Tichingitu? Mh. Ascolta, guerriero, non sono venuto fin qui per rimirarti. Ho una domanda per te: perché mai ti sei introdotto nella casa di quel grassone?";
 			link.l1.go = "Tichingitu_1";
 		break;
 		
@@ -454,7 +454,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_jailed_3":
-			dialog.text = "Là, vogliono impiccare solo Tichingitu. Qui invece vogliono far penzolare più di одного. Non è poi così male.";
+			dialog.text = "Là, vogliono impiccare solo Tichingitu. Qui invece vogliono far penzolare più di uno. Non è poi così male.";
 			link.l1 = "Questa sì che è proprio una bella dose di cinismo!";
 			link.l1.go = "exit";
 		break;

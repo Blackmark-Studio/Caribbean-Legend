@@ -117,6 +117,9 @@ void InitInterface_B(string iniName, bool isMainMenu)
 		SetSelectable("SOUND_SLIDE",false);
 		SetSelectable("DIALOG_SLIDE",false);
 	}
+
+	// логотип
+	SetMenuLogo();
 	
 	// Warship 07.07.09 Эффект свечения
 	if(!CheckAttribute(&InterfaceStates, "GlowEffect"))

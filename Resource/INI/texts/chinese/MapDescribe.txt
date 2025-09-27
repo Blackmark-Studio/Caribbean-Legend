@@ -221,7 +221,7 @@ Tenotchitlan_Cave_box1   {石桥附近的箱子}
 Tenotchitlan_Cave_box2   {一块大石头上的箱子}
 Tenotchitlan_Cave_box3   {靠近从天花板垂下绳索的箱子}
 
-Terks_Grot               {在北部湾右侧的洞穴中}
+Terks_Grot               {在北湾右侧的洞穴中}
 Terks_Grot_box1          {一块大石头上的箱子}
 
 Tortuga_Grot             {在鱼眼海滩对面的洞穴中}

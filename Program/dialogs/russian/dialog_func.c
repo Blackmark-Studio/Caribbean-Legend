@@ -25,7 +25,7 @@ void Set_inDialog_Attributes()
     else
     {
 		Address_Form.Spa = "сеньорита";
-		Address_Form.Fra = "мадмуазэль";
+		Address_Form.Fra = "мадемуазель";
 		Address_Form.Eng = "мисс";
 		Address_Form.Hol = "мефрау";
 		Address_Form.Pir = "мисс";

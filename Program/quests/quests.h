@@ -47,3 +47,4 @@
 #include "quests\Common_Quests\MiniEvents\VPVL.c"
 #include "quests\Common_Quests\MiniEvents\MysteryOfBetsyPrice.c"
 #include "quests\Common_Quests\MiniEvents\OkoviAzarta.c"
+#include "quests\Common_Quests\LoyaltyPack.c"

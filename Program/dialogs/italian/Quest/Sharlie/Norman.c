@@ -29,7 +29,7 @@ void ProcessDialogEvent()
 				link.l1.go = "tieyasal";
 				break;
 			}
-			dialog.text = NPCStringReactionRepeat(LinkRandPhrase("Che ti serve, compare? Fatti gli affari tuoi, bada alla tua rotta. Lasciami in pace.","Ehi, ehi, compare. Vai a farti una passeggiata? Allora cammina pure e lascia in pace il signor Abraham. Anche lui si sta sgranchendo le gambe, vuole respirare un po' d'aria salmastra.","Ciao, compare. Vuoi scambiare due chiacchiere? Peccato che oggi non ho proprio voglia di parlare. Vai a scocciare qualcun altro. Buttati in taverna, fatti un sorso di rum..."),LinkRandPhrase("Ehi, marinaio. Che sei, duro d’orecchi o cosa? Credevo d’esser stato chiaro come il sole.","Compare, va’ a riposarti. Pare che tu abbia la cera nelle orecchie.","Ehi compare, che hai, sei scemo o cosa? Te l'ho già detto chiaro e tondo, no?"),"Amico, non farmi arrabbiare. Ho fatto fuori così tanti zucconi di terra in vita mia che uno in più o in meno nemmeno si заметит.","D'accordo, mi hai fatto girar le palle. Ora o tiri fuori quella tua spada arrugginita o scappi a gambe levate. Ti consiglio la seconda...","block",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(LinkRandPhrase("Che ti serve, compare? Fatti gli affari tuoi, bada alla tua rotta. Lasciami in pace.","Ehi, ehi, compare. Vai a farti una passeggiata? Allora cammina pure e lascia in pace il signor Abraham. Anche lui si sta sgranchendo le gambe, vuole respirare un po' d'aria salmastra.","Ciao, compare. Vuoi scambiare due chiacchiere? Peccato che oggi non ho proprio voglia di parlare. Vai a scocciare qualcun altro. Buttati in taverna, fatti un sorso di rum..."),LinkRandPhrase("Ehi, marinaio. Che sei, duro d’orecchi o cosa? Credevo d’esser stato chiaro come il sole.","Compare, va’ a riposarti. Pare che tu abbia la cera nelle orecchie.","Ehi compare, che hai, sei scemo o cosa? Te l'ho già detto chiaro e tondo, no?"),"Amico, non farmi arrabbiare. Ho fatto fuori così tanti zucconi di terra in vita mia che uno in più o in meno nemmeno si accorgerà.","D'accordo, mi hai fatto girar le palle. Ora o tiri fuori quella tua spada arrugginita o scappi a gambe levate. Ti consiglio la seconda...","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("D'accordo, amico. Non ti disturbo più.","Va bene, va bene. Ho capito...","Urca, sembri proprio il terrore dei sette mari! Va bene, io me la svigno.","Cosa?!",npchar,Dialog.CurrentNode); 
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "fight", npchar, Dialog.CurrentNode);
 			NextDiag.TempNode = "norman_us";
@@ -395,7 +395,7 @@ void ProcessDialogEvent()
 				link.l1.go = "tieyasal_4_1";
 				break;
 			}
-			dialog.text = "Ah... Beh. L’ha fatto fuori, e punto e basta. Sai quanti assassini scorrazzano da queste parti? Uno через uno! No, marinaio. Non vedo Dichoso da un bel pezzo. Non posso aiutarti in nulla.";
+			dialog.text = "Ah... Beh. L’ha fatto fuori, e punto e basta. Sai quanti assassini scorrazzano da queste parti? Uno ad uno! No, marinaio. Non vedo Dichoso da un bel pezzo. Non posso aiutarti in nulla.";
 			link.l1 = "Che peccato...";
 			link.l1.go = "exit";
 		break;

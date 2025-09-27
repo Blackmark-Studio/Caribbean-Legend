@@ -525,6 +525,8 @@ void initStartState2Character(ref ch)
         sTemp = i; //Safe moment
         ch.questTemp.Treasure_Stories.(sTemp) = sTemp;
 	}
+	// Бонус к появлению кладмена
+	TEV.TavernMapBonus = 0;
     // ==> Номер пиратского флага (берется из текстуры персональных флагов ГГ)
 	ch.Flags.Pirate = 3;
 	// ==> работорговец

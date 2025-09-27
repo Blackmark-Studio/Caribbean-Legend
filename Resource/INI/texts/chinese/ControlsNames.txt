@@ -727,7 +727,7 @@ Fast_townhall
 
 Fast_bank
 {
-快速旅行: 放债人
+快速旅行: 放贷人
 }
 
 Fast_church

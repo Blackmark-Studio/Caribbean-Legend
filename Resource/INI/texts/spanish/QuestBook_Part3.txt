@@ -2551,3 +2551,24 @@ La regata ha terminado. He quedado quinto. Aunque no hay premio para mí, estoy 
 ¡Maldita sea! He quedado el último. Qué metedura de pata. Debería haberme quedado fuera de esta regata.
 #TEXT 45
 Mi viaje de regata ha terminado. He infringido las normas y he sido descalificado de la competición.
+
+#QUEST LoyaltyPack
+Voz de la Tripulación
+#TEXT 1
+Alonso Pimentel, contramaestre y voz de mi tripulación, quiere hablar conmigo. Puedo encontrarlo en la bodega.
+#TEXT 2
+Aunque Alonso reconoció mis modestos éxitos como capitán, claramente está preocupado por mí. Me ofreció consejos, me regaló equipo útil y compartió una historia. Quizás si continúo por este camino, escuche el resto.
+#TEXT 3
+Alonso ha solicitado una reunión. Como siempre, lo encontraré en la bodega.
+#TEXT 4
+Ha pasado casi un año, y la tripulación finalmente ha encontrado confianza en mí. Alonso esquivó magistralmente mis preguntas sobre su pasado, pero compartió otra de sus historias de guerra. Claramente se toma en serio esa parte de sus deberes concerniente a la moral de la tripulación. Casi como un confesor, aunque dudo que los sacerdotes regalen a su rebaño recetas de brebaje moscovita y armas de fuego de calidad. ¿Continuará?
+#TEXT 5
+Alonso ha solicitado una reunión. Como siempre, lo encontraré en la bodega.
+#TEXT 6
+Ahora soy dueño no solo de cierta fama en el Caribe, sino también de un sombrero de aspecto ridículo. Aunque puede proteger la cabeza de un capitán aspirante, definitivamente se desmoronará después de un par de golpes fuertes. Sin embargo, mi triunfo se vio algo empañado por la trágica historia que Alonso me contó hoy. No sé qué se supone que me enseñe, pero me gustaría conocer a su "amigo moscovita".
+#TEXT 7
+Alonso ha solicitado una reunión. Como siempre, lo encontraré en la bodega.
+#TEXT 8
+¿Fadey? ¿El mismo Fadey de Basse-Terre? ¡Qué pequeño es el mundo! Debería visitarlo.
+#TEXT 9
+El encuentro con Fadey me hizo pensar en muchas cosas. ¿Cuántos más "Alonsos" hay en mi tripulación? ¿Cuántas historias y destinos humanos peculiares? He escuchado solo una voz, pero ahora tengo cientos. No sé cómo terminará mi odisea caribeña, pero gracias a los cuidados de Alonso y sus sencillos regalos, estoy completamente equipado, preparado y listo para enfrentar mi destino.

@@ -132,7 +132,7 @@ void ProcessDialogEvent()
                     DeleteAttribute(link, "l2");
                 }
                 //<== 圣慈悲号上的检查官来了
-                //==> 贝丝夫人在港口城市
+                //==> 贝丝女士在港口城市
                 if (CheckAttribute(pchar, "questTemp.LadyBeth.CaptainInColony") && pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
                 {
                     dialog.Text = findLedyBethRumour(npchar);
@@ -140,7 +140,7 @@ void ProcessDialogEvent()
                     link.l1.go = "exit";
                     DeleteAttribute(link, "l2");
                 }
-                //<== 贝丝夫人在港口城市
+                //<== 贝丝女士在港口城市
             }
             else //--> 再次对话
             {
@@ -404,8 +404,8 @@ void ProcessDialogEvent()
         
         case "lombard_fail":
             pchar.quest.Noblelombard_Over.over = "yes"; //移除计时器
-            dialog.text = "唉, "+GetAddress_Form(NPChar)+"... 现在你也是这些该死的贪婪放债人的见证者了。 以上帝的名义, 先生, 他们比犹太人还可耻! 当你像我一样试图向他们借钱时, 记住这一点。 至少感谢你的尝试... ";
-            link.l1 = "我从来就不喜欢他们。 嗯, 谁会喜欢放债人呢? 对不起, "+GetAddress_FormToNPC(NPChar)+"。 再见。 ";
+            dialog.text = "唉, "+GetAddress_Form(NPChar)+"... 现在你也是这些该死的贪婪放贷人的见证者了。 以上帝的名义, 先生, 他们比犹太人还可耻! 当你像我一样试图向他们借钱时, 记住这一点。 至少感谢你的尝试... ";
+            link.l1 = "我从来就不喜欢他们。 嗯, 谁会喜欢放贷人呢? 对不起, "+GetAddress_FormToNPC(NPChar)+"。 再见。 ";
             link.l1.go = "lombard_fail_1";
         break;
         

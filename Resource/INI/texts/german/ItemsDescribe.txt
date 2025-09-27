@@ -699,7 +699,13 @@ itmname_Mushket2x2 {Doppelläufiger Karabiner}
 itmdescr_Mushket2x2
 {
 Dieser schöne Doppelläufige Karabiner ist eher bei hochrangigen Adligen auf der Jagd nach Hirschen zu finden. Die aus seinen gezogenen Läufen abgefeuerten Kugeln treffen sicher jedes Ziel, ob vier- oder zweibeinig. Benötigt Bleikugeln zum Abfeuern. Erfordert die Fertigkeit 'Revolverheld'.
-} 
+}
+
+itmname_mushket10 {Imperialer Musket}
+itmdescr_mushket10
+{
+Einzellader-Ehrenmusket aus der Zeit des Dreißigjährigen Krieges. Mit Bajonett und verziert mit typischen Motiven des Heiligen Römischen Reiches. ~ Führungsqualität +10. Verursacht 25% mehr Schaden mit Nahkampfangriffen.
+}
 
 itmname_howdah {Howdahpistole}
 itmdescr_howdah
@@ -957,6 +963,18 @@ Dieser Hut ist in jeder Ecke der Karibik bekannt und wird überall mit Schauder 
 ~
 Verringert den Schadensmalus des Schiffs um 30%.
 10% Chance, Schussverletzungen zu vermeiden.
+}
+
+itmname_hat10 {Söldnerhut}
+itmdescr_hat10
+{
+Dieser im Feld hergestellte gepanzerte Hut sieht unscheinbar aus, kann aber eine Kugel aufhalten und das Leben retten. ~ Reduziert jeglichen Schaden um 18% und verbraucht dabei 1 Ladung pro Fall.
+}
+
+itmname_hat10_part {Gegerbtes Leder}
+itmdescr_hat10_part
+{
+Ein gutes Stück gegerbtes Stierleder. Ideal zur Herstellung von Hüten.
 }
 
 ; ==================================================================================================================== ОПТИКА
@@ -1253,6 +1271,17 @@ Alle 2% verlorene Hülle erhöhen Kanonengeschwindigkeit und -schaden um 0,75% b
 Keine Nachteile, mehrfach aktivierbar.
 }
 
+itmname_talisman20	{Strelitzen-Schärpe}
+itmdescr_talisman20
+{
+Ein Bandelier aus mehreren Riemen, einer Pulverflasche und zahlreichen Papierpatronen. Es gibt sie in vielen Formen und Verwendungen auf europäischen Schlachtfeldern, doch dieses Exemplar stammt aus fernen Landen und ist mit Bildern fantastischer Bestien aus den rauen sibirischen Wäldern verziert. ~ Jeder Schuss mit einer Feuerwaffe verbraucht 1 Ladung. Zielgeschwindigkeit erhöht sich um 20%, maximaler Zielschaden erhöht sich um 40%, Nachladegeschwindigkeit erhöht sich um 10%.
+}
+
+itmname_talisman20_part {Musketiers Pulverflasche}
+itmdescr_talisman20_part
+{
+Eine fantasievolle Pulverflasche in ungewöhnlicher Form, geprägt mit exotischen Tieren aus fernen Ländern. Die Ränder sind mit einem osteuropäischen Muster bestickt.
+}
 
 ; ==================================================================================================================== ТАЛИСМАНЫ
 
@@ -3015,6 +3044,12 @@ itmdescr_mangarosatotal
 {
 Ein Manga-Rosa-Trank, zubereitet nach Amelies geheimem Zigeunerrezept.
 Erhöht vorübergehend Stärke, Ausdauer, Reaktion, Wahrnehmung, Führungsqualitäten und Glück sowie die Fertigkeit mit Nahkampfwaffen und Schießen.
+}
+
+itmname_vodka	{Zarenwodka}
+itmdescr_vodka
+{
+Ein Aufguss aus Getreidebrand mit Wacholder und Johanniskraut, destilliert und gereift mit einem Tropfen Rosenwasser und Galgantwurzel. Von den Strelizen des russischen Zarenreichs als wärmendes und belebendes Getränk auf dem Schlachtfeld genutzt. ~ Erhöht Nahkampfschaden mit Schusswaffen um 30%. Treffer mit Schusswaffen entziehen dem Gegner Energie. Verringert erlittenen Schaden durch Schüsse um 10%.
 }
 
 itmname_cannabis1	{Stechapfel}

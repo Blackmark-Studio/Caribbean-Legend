@@ -266,7 +266,7 @@ void ProcessDialogEvent()
 		
 		case "Fleetwood_house":
 			dialog.text = "Me lo sono chiesto anch’io... Quel dannato ha lanciato del pepe negli occhi del capitano Fleetwood e gli ha piantato una lama nel petto prima ancora che Richard potesse sguainare la sua. L’assassino sperava di finirlo con un solo colpo, ché tempo per un secondo non aveva, ma ha fallito. Il capitano Fleetwood indossa sempre un corsaletto sotto la giubba.\nQuella carogna, con un colpo a catena al fegato, è riuscita a svignarsela e a sparire. Pare che abbia dei compari in città. L’unica cosa che il capitano ricorda è che il sicario ha un solo occhio. Non ci servirà poi molto, di Cyclopi come lui il porto ne pullula al giorno d’oggi.\nRichard ha perso un mare di sangue, e il pepe gli ha rovinato la vista: ora è quasi cieco...";
-			link.l1 = "Pepe nero? Una maniera costosa per accecare un uomo. Qualcuno doveva essere davvero furioso con Fleetwood. Mi dispiace per il vostro capitano. Avete trovato qualche traccia di того, chi ha colpito?";
+			link.l1 = "Pepe nero? Una maniera costosa per accecare un uomo. Qualcuno doveva essere davvero furioso con Fleetwood. Mi dispiace per il vostro capitano. Avete trovato qualche traccia di focolai, chi ha colpito?";
 			link.l1.go = "Fleetwood_house_1";
 		break;
 		

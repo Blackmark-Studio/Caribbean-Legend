@@ -2408,6 +2408,7 @@ void BI_CrosshairSet()
 void BI_CrosshairRefresh(float fAimingTime, bool isFindedTarget, aref target)
 {
 	float fMaxTime = MAX_AIMING_TIME;
+	if(IsCharacterEquippedArtefact(pchar, "talisman20")) fMaxTime *= 0.8;
 	float fSteady = Bring2Range(0.0, 1.0, 0.0, fMaxTime, fAimingTime);
 
 	aref arElement;

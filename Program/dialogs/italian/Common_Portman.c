@@ -1934,7 +1934,7 @@ void ProcessDialogEvent()
 				break;
 			
 				case 3:
-					dialog.text = "Dovresti consegnare questo pacco al capo del molo nella città di "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gen")+" non più tardi di "+FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty))+". Contiene i progetti per il nuovo "+RandPhraseSimple(LinkRandPhrase("brigantino","corvetta","фрегат"),LinkRandPhrase("flauto","pinnace","galeone"))+", utilizzando disegni tecnologici unici. Spero che tu capisca che ci sono altre... parti interessate, quindi dovrai agire con discrezione. Il pagamento per la consegna - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+".";
+					dialog.text = "Dovresti consegnare questo pacco al capo del molo nella città di "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gen")+" non più tardi di "+FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty))+". Contiene i progetti per il nuovo "+RandPhraseSimple(LinkRandPhrase("brigantino","corvetta","fregata"),LinkRandPhrase("flauto","pinnace","galeone"))+", utilizzando disegni tecnologici unici. Spero che tu capisca che ci sono altre... parti interessate, quindi dovrai agire con discrezione. Il pagamento per la consegna - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+".";
 					link.l1 = "Sono d'accordo!";
 					link.l1.go = "Postcureer_LevelUp_Go";
 					link.l2 = "No, credo che passerò.";
@@ -2928,7 +2928,7 @@ void ProcessDialogEvent()
 		
 		case "BurntShip20_exit":
 			TakeNItems(pchar, "chest", makeint(sti(NPChar.Quest.BurntShip.Money)/12000));
-			Log_Info("You have received credit chests");
+			Log_Info("Avete ricevuto dei forzieri di credito");
 			PlaySound("interface\important_item.wav");
 			sTitle = "BurntShipQuest" + NPChar.location;
 			AddQuestRecordEx(sTitle, "BurntShipQuest", "4");

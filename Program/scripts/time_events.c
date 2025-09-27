@@ -112,7 +112,8 @@ void WorldSituationsUpdate()
 					if (!CheckAttribute(&Islands[i], "hidden")) Island_SetReloadEnableGlobal(Islands[i].id, true);
 				}
 			}
-
+			
+			if (GetDLCenabled(DLC_APPID_1) && !CheckAttribute(pchar, "questTemp.LoyaltyPack") && pchar.rank >= 4) DoQuestFunctionDelay("LoyaltyPack_Start", 1.0);
 			// Мерзкий Божок - без НИ
 			if (GetDLCenabled(DLC_APPID_2) && !CheckAttribute(pchar, "questTemp.CG_SpawnAguebana") && pchar.rank >= 9) DoQuestFunctionDelay("ChickenGod_BrothelCheck", 1.0);
 			// Чёрная Метка - без НИ

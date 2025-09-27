@@ -210,6 +210,7 @@ int InitItems()
 	n = InitStdMusket(n, "mushket7",    "classic_musket", "ITEMS_37", 16, 0.0001,  1,    77000,   130.0,   220.0, 16.0, 1,  B_EXCELLENT); // Качественный мушкет cle
 	n = InitStdMusket(n, "mushket8",    "modular_musket", "ITEMS_37", 15, 0.0001,  1,   230000,    80.0,   200.0, 17.0, 4,     B_UNIQUE); // Четырехзарядный штуцер cle
 	n = InitStdMusket(n, "mushket9",    "Mushket1_SP2", "ITEMS_39",   10, 0.0001,  1,   39000,    150.0,   375.0, 22.0, 1,     B_UNIQUE); // Аркебуза конкистадора SP2
+	n = InitStdMusket(n, "mushket10",       "mushket10",  "ITEMS_41",  9, 0.0001,  1,   52000,    130.0,   253.0, 14.8,  1,     B_UNIQUE); // Имперский мушкет
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//										КИРАСЫ И КОСТЮМЫ
@@ -224,6 +225,7 @@ int InitItems()
 	n = InitStdSuit(n, "cirass4",     	"4", "ITEMS_32",  4, 230000, 18,   0.01, 20, false, 0.30, 0.30, 0.0 ); // миланский панцирь
 	n = InitStdSuit(n, "underwater",  	"5", "ITEMS_33",  9, 300000, 70, 0.0001, 20,  true, 0.60, 0.35, 0.0 ); // водолазное снаряжение
 	n = InitStdSuit(n, "cirass10",  	"14","ITEMS_39",  5,  38500, 15,   0.01, 20, false, 0.15, 0.15, 0.5 ); // Броня железнобоких
+	n = InitStdSuit(n, "cirass11",  	"15","ITEMS_41",  13, 45000, 23,   0.01, 20, false, 0.22, 0.22, 0.5 ); // Зерцальный нагрудник
 	// костюмы
 	n = InitStdSuit(n,   "suit1", 		"6", "ITEMS_32",  9, 150000,  5, 0.0001, 20,  true, 0.10, 0.00, 0.7 ); // французский офицерский мундир
 	n = InitStdSuit(n,   "suit5", 		"8", "ITEMS_33",  5, 150000,  5, 0.0001, 20,  true, 0.10, 0.00, 0.7 ); // французский адмиральский мундир
@@ -3172,6 +3174,23 @@ int InitItems()
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
 	n++;
 	
+	makeref(itm,Items[n]); // Солдатская шляпа
+	itm.id = "hat10";
+	itm.groupID	= HAT_ITEM_TYPE;
+	itm.name = "itmname_hat10";
+	itm.describe = "itmdescr_hat10";
+	itm.model = "hat10";
+	itm.picIndex = 10;
+	itm.picTexture = "ITEMS_40";
+	itm.price = 7500;
+	itm.Weight = 1.4;
+	itm.ItemType = "SUPPORT";
+	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	itm.multiobject = true;		
+	itm.multiobject.qty = 1;
+	itm.multiobject.alchemy = false;
+	n++;
+	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//							ЛЕЧИЛКИ И ТРАВЫ
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3457,6 +3476,25 @@ int InitItems()
 	itm.ItemType = "SUPPORT";
 	n++;
 	
+	makeref(itm,Items[n]);
+	itm.id = "vodka";
+	itm.groupID		= SPECIAL_ITEM_TYPE;
+	itm.name = "itmname_vodka";
+	itm.describe = "itmdescr_vodka";
+    itm.model = "balsam";
+	itm.picIndex = 11;
+	itm.picTexture = "ITEMS_41";
+	itm.price = 3500;
+	itm.Weight = 0.7;
+	itm.minlevel = 1;
+	itm.rare = 0.001;
+	itm.SortIndex = 2;
+	itm.multiobject = true;		
+	itm.multiobject.qty = 1;
+	itm.multiobject.alchemy = false;
+	itm.ItemType = "SUPPORT";
+	n++;
+	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Jason: РЕЦЕПТЫ
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3509,7 +3547,8 @@ int InitItems()
 	n = InitStdTalisman(n, "talisman16", "", "ITEMS_24",  7, rand(5000), 0.5,             ""); // Золотой нож cle 1.5
 	n = InitStdTalisman(n, "talisman17", "", "ITEMS_39",  8, rand(5000), 0.5,             ""); // Оберег Liber Misericordiae cle 1.5 DLC SP1
 	n = InitStdTalisman(n, "talisman18", "", "ITEMS_39", 16, rand(5000), 0.5,             ""); // Оберег Устав Блеквуда SP2
-	n = InitStdTalisman(n, "talisman19", "", "ITEMS_41", 7, rand(5000), 2.2,             ""); // Оберег Череп
+	n = InitStdTalisman(n, "talisman19", "", "ITEMS_41", 7, rand(5000), 2.2,              ""); // Оберег Череп
+	n = InitStdTalisman(n, "talisman20", "", "ITEMS_41", 10,       4200, 1.2,             ""); // Берендейка стрельца
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//					ЮВЕЛИРНЫЕ ИЗДЕЛИЯ И ДРАГОЦЕННОСТИ
@@ -3918,6 +3957,32 @@ int InitItems()
 	itm.picTexture = "ITEMS_31";
 	itm.price = 2000;
 	itm.Weight = 2.0;
+	itm.ItemType = "SUPPORT";
+	itm.TradeType = ITEM_TRADE_NORMAL;
+	n++;
+	
+	makeref(itm,Items[n]); // пороховница (Сломанная Берендейка)
+	itm.id = "talisman20_part";
+	itm.name = "itmname_talisman20_part";
+	itm.describe = "itmdescr_talisman20_part";
+	itm.model = "";
+	itm.picIndex = 9;
+	itm.picTexture = "ITEMS_18";
+	itm.price = 1;
+	itm.Weight = 1.0;
+	itm.ItemType = "SUPPORT";
+	itm.TradeType = ITEM_TRADE_NORMAL;
+	n++;
+	
+	makeref(itm,Items[n]); // клепаный ремень (Сломанная Шляпа Стрельца)
+	itm.id = "hat10_part";
+	itm.name = "itmname_hat10_part";
+	itm.describe = "itmdescr_hat10_part";
+	itm.model = "";
+	itm.picIndex = 12;
+	itm.picTexture = "ITEMS_41";
+	itm.price = 1;
+	itm.Weight = 1.0;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_NORMAL;
 	n++;
@@ -4508,6 +4573,12 @@ int InitStdTalisman(	int		ItemIndex,
 	talisman.TradeType 		= ITEM_TRADE_JEWELRY;
 	
 	if(talisman.id == "talisman11") talisman.price = 100;
+	if(talisman.id == "talisman20") 
+	{
+		talisman.multiobject		= true;
+		talisman.multiobject.qty 	= 1;
+		talisman.multiobject.alchemy = false;
+	}
 	
 	talismanIndex++;
 	return talismanIndex;
@@ -4817,6 +4888,17 @@ void InitMultiObjectAmulets()
 	InitMultiObject(  		"mangarosatotal",     "t9",     "mineral27",  "AlchemyTool", 	1); // ступка-пестик
 	InitMultiObject(  		"mangarosatotal",     "t10",     "mineral9",  "AlchemyTool", 	1); // кружка
 	InitMultiObject(  		"mangarosatotal",     "t11",     "mineral20",  "AlchemyTool", 	1); // деревянная ложка
+	
+	// Царская Водка
+	InitMultiObject(		"vodka",	    "t1",     "potionrum", 	  "Component", 	  1); // ром
+	InitMultiObject(		"vodka",	    "t2",     "potionwine",   "Component", 	  1); // вино
+	InitMultiObject(		"vodka",	    "t3",     "potion4", 	  "Component", 	  1); // микстура
+	InitMultiObject(		"vodka",	    "t4",     "mineral17", 	  "Component", 	  1); // флакончик
+	InitMultiObject(		"vodka",	    "t5",     "jewelry8", 	  "Component", 	  3); // янтарь
+	InitMultiObject(  		"vodka",	    "t6",  	  "jewelry1",    "Component", 	  3); // аметист
+	InitMultiObject(  		"vodka",        "t7",     "cannabis7", 	  "Component", 	  1); // Мангароса
+	InitMultiObject(  		"vodka",        "t8",     "mineral10",  "AlchemyTool", 	  1); // огниво
+	InitMultiObject(  		"vodka",        "t9",     "mineral1",   "AlchemyTool", 	  1); // Медный кувшин
 		
 	// Бумажный патрон
 	InitMultiObject(  	  	"cartridge",	"t1",  	     "bullet",    "Component", 	  1); // пуля
@@ -5016,6 +5098,26 @@ void InitMultiObjectAmulets()
 	// катлас Висельник без черепа
 	InitMultiObject(  		 "blade_SP_3low",	"t1",      "blade_SP_3",    "Component", 	  1); // катлас с черепом
 	InitMultiObject(  		 "blade_SP_3low",	"t2",      "talisman19",   "Additional",  0); // череп
+	
+	// Берендейка стрельца LP
+	InitMultiObject(  		 "talisman20",	"t1",     "Mineral24",    "Component", 	   3); // Ремень
+	InitMultiObject(  		 "talisman20",	"t2",     "Mineral22",    "Component", 	   3); //  Шпагат
+	InitMultiObject(  		 "talisman20",	"t3",     "jewelry13",    "Component", 	   2); // железный слиток
+	InitMultiObject(  		 "talisman20",	"t4",     "cartridge",    "Component", 	  20); // бумажный патрон
+	InitMultiObject(  		 "talisman20",	"t5",     "mineral10",   "AlchemyTool",    1); // огниво
+	InitMultiObject(  		 "talisman20",	"t6",     "mineral15",   "AlchemyTool",    1); // складной нож
+	InitMultiObject(  		 "talisman20",	"t7",    "tailor_tool",  "AlchemyTool",    1); // портняжный набор
+	InitMultiObject(  		 "talisman20",	"t8",  "talisman20_part",  "Component",    1); // пороховница (Сломанная Берендейка)
+	
+	// Солдатская шляпа LP
+	InitMultiObject(  		 "hat10",	"t1",     "jewelry13",    "Component", 	   10); // железный слиток
+	InitMultiObject(  		 "hat10",	"t2",     "jewelry12",    "Component", 	    4); // медный слиток
+	InitMultiObject(  		 "hat10",	"t3",     "mineral23",    "Component",      6); // гвоздь
+	InitMultiObject(  		 "hat10",	"t4",     "Mineral22",    "Component", 	    6); //  Шпагат
+	InitMultiObject(  		 "hat10",	"t5",     "Mineral24",    "Component", 	    1); // Ремень
+	InitMultiObject(  		 "hat10",	"t6",     "mineral15",   "AlchemyTool",     1); // складной нож
+	InitMultiObject(  		 "hat10",	"t7",    "tailor_tool",  "AlchemyTool",     1); // портняжный набор
+	InitMultiObject(  		 "hat10",	"t8",    "hat10_part",    "Component",      1); // клепаный ремень (Сломанная Шляпа Стрельца)
 }
 	 	
 void InitGunExt(string id,			
@@ -5101,6 +5203,7 @@ void InitMushkets()
 	InitMushketExt(		"mushket8", 60.0); // Четырехзарядный штуцер cle
 	InitMushketExt(	  "mushket2x2", 35.0);
 	InitMushketExt(		"mushket9", 25.0); // Аркебуза конкистадора SP2
+	InitMushketExt(	   "mushket10", 55.0);
 }
 					
 void InitGuns()
@@ -5168,6 +5271,8 @@ void InitGuns()
 	InitGunExt(	  "mushket2x2", "t2", 		    "bullet",      "gunpowder", 180.0, 280.0, 160.0, 260.0, 15.0, 15.0, 1, 1, 0, 0, 0, 0, 90, 30, 1);
 	InitGunExt(		"mushket9", "t1", 	     "grapeshot",      "gunpowder",  70.0, 120.0,  40.0,  90.0,  0.0,  0.0, 0, 1, 1, 0, 1, 1, 60, 45, 1); // Аркебуза конкистадора SP2
 	InitGunExt(		"mushket9", "t2", 	      "GunEchin",               "",  70.0, 120.0,  40.0,  90.0,  0.0,  0.0, 0, 1, 1, 0, 1, 1, 45, 35, 0); // Аркебуза конкистадора SP2
+	InitGunExt(	   "mushket10", "t1", 	     "cartridge",               "", 140.0, 270.0, 140.0, 270.0,  0.0,  0.0, 1, 1, 0, 0, 0, 0, 95, 14, 0);	
+	InitGunExt(	   "mushket10", "t2", 		    "bullet",      "gunpowder", 140.0, 270.0, 140.0, 270.0,  0.0,  0.0, 1, 1, 0, 0, 0, 0, 90, 28, 1);
 }
 
 void InitGrapeGuns()

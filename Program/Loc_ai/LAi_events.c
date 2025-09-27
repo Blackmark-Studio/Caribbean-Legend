@@ -261,6 +261,30 @@ void LAi_CharacterFire()
 	int isFindedEnemy = GetEventData();
 	float fAimingTime = GetEventData();	// evganat - прицеливание
 	
+	// belamour Берендейка стрельца
+	if(IsMainCharacter(attack) && IsCharacterEquippedArtefact(attack, "talisman20"))
+	{
+		ref talisman = ItemsFromID("talisman20");
+		if(CheckAttribute(talisman, "durability"))
+		{
+			
+			int durability = sti(talisman.durability);
+			if(durability < 2)
+			{
+				DeleteAttribute(talisman, "durability");
+				RemoveCharacterEquip(attack, TALISMAN_ITEM_TYPE);
+				RemoveItems(attack, "talisman20", 1)
+				GiveItem2Character(attack, "talisman20_part");
+				notification(StringFromKey("LAi_events_1"), "none");
+			}
+			else
+			{
+				durability --;
+				talisman.durability = durability;
+			}
+		}
+	}
+	
 	//Rosarak. Чем стреляли?
 	if(!CharUseMusket(attack))
 	{

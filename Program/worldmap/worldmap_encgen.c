@@ -159,7 +159,7 @@ void Map_WarriorEnd_quest(string sChar)
     ref rChar = CharacterFromID(sChar);
 
     if(FindSubStr(sChar, "Brigadier0", 0) != -1)
-        FireBrigadeRefresh(rChar, sti(rChar.Nation), 1);
+        FireBrigadeRefresh(rChar, sti(rChar.Nation), 3 + rand(3));
 }
 
 void Map_TraderSucces()

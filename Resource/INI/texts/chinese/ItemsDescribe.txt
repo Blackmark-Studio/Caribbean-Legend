@@ -703,7 +703,13 @@ itmname_Mushket2x2 {双管卡宾枪}
 itmdescr_Mushket2x2
 {
 这种漂亮的并排卡宾枪更常见于高 级贵族狩猎鹿时。 从其膛线枪管发射的弹丸将安全击 中四足或两足的任何目标。 需要铅弹射击。 需要散兵特质。 
-} 
+}
+
+itmname_mushket10 {帝国火枪}
+itmdescr_mushket10
+{
+三十年战争时期的单发贵族火枪，配有刺刀，并饰以神圣罗马帝国常见的图案。 ~ 领导力 +10。近战攻击造成 25% 更多伤害
+}
 
 itmname_howdah {豪达手枪}
 itmdescr_howdah
@@ -963,6 +969,18 @@ itmdescr_hat9
 10%几率避免枪击伤害。 
 }
 
+itmname_hat10 {雇佣兵帽}
+itmdescr_hat10
+{
+这顶在野外制作的装甲帽看起来不起眼，但能够挡住子弹并救命。 ~ 使任何伤害减少 18%，每次触发消耗 1 次充能。
+}
+
+itmname_hat10_part {鞣制皮革}
+itmdescr_hat10_part
+{
+一块优质的牛皮，非常适合制作帽子。
+}
+
 ; ==================================================================================================================== 光学仪器
 
 itmname_spyglass1	{廉价望远镜}
@@ -1010,8 +1028,7 @@ itmdescr_spyglassSP3
 ; ==================================================================================================================== НАВИГАЦИЯ
 
 
-itmname_sand_clock {沙漏}
-itmdescr_sand_clock
+itmdescr_sand_clock {沙漏}
 {
 沙漏允许船长"携带"福罗和格林尼治的精确时间, 以便校准船上的精密计时器 (如果有的话)。 
 }
@@ -1055,7 +1072,7 @@ itmdescr_sextant2
 装备时增加航海技能成长。 
 }
 
-itmname_bussol {复合导航仪}
+itmname_bussol {罗盘}
 itmdescr_bussol
 {
 结合星盘和船用指南针的船舶仪器。 除其他外, 它允许你持续确定地理纬度。 
@@ -1065,7 +1082,7 @@ itmdescr_bussol
 itmname_clock3 {亚历克苏斯的精密计时器}
 itmdescr_clock3
 {
-20世纪中叶的精密航海计时器, 带有自动上链机制, 来自亚历克苏斯大师的收藏。 
+20世纪中叶的精密航海计时器, 带有自动上链机制, 来自Alexus大师的收藏。 
 }
 
 ; ==================================================================================================================== 护身符
@@ -1221,7 +1238,7 @@ talisman17_questsNoBonus{教堂任务: 0 / 5}
 itmname_talisman18	{守护符"布莱克伍德的章程"}
 itmdescr_talisman18
 {
-Albert Blackwood的个人章程, 详细说明了"Lady Beth (贝丝夫人号)"的结、 射手位置和"海狐"的作战战术。 
+Albert Blackwood的个人章程, 详细说明了"Lady Beth (贝丝女士号)"的结、 射手位置和"海狐"的作战战术。 
 另有一个章节专门讲述寻宝相关以 及用找到的财富奖励熟练射手。 
 每找到一个宝藏, 船员的滑膛枪齐射威力增强1%, 霰弹枪伤害增加2%. 
 ~
@@ -1249,6 +1266,18 @@ talisman19_InSlot
 每损失2%船体, 船只速度和加农炮伤害分别增加0.75%和0.5%. 
 ~
 无惩罚, 可多次激活。 
+}
+
+itmname_talisman20	{射手腰带}
+itmdescr_talisman20
+{
+由多条皮带、火药瓶和大量纸质弹药组成的弹药带。它在欧洲战场上有各种形制和用途，而这件则来自遥远的异乡，上面饰有来自严酷西伯利亚森林的奇异兽纹。 ~ 任何火器的每次射击都会消耗 1 次充能。瞄准速度提高 20%，最大瞄准伤害提高 40%，装填速度提高 10%。
+}
+
+itmname_talisman20_part {火枪手火药瓶}
+itmdescr_talisman20_part
+{
+一只造型奇特的火药瓶，刻有来自异国的奇异动物图案，边缘绣有东欧风格的花纹。
 }
 
 ; ==================================================================================================================== 护身符
@@ -2690,7 +2719,7 @@ Jackman。
 itmname_letter_parol	{便条}
 itmdescr_letter_parol
 {
-请注意, 矿场主人更改了进入矿场的密码。 新密码是'Neptune'(海王星). 
+请注意, 矿场主人更改了进入矿场的密码。 新密码是'Neptune'(海神尼普顿). 
 }
 itmdescr_letter_ouster
 {
@@ -2991,25 +3020,31 @@ itmdescr_berserker_potion
 此效果每分钟持续不超过12秒。 会损害您的健康。 
 }
 
-itmname_mangarosapower	{潮汐波药水}
+itmname_mangarosapower	{巨浪药水}
 itmdescr_mangarosapower
 {
 根据 Amelie 的吉普赛秘方制备的曼加罗萨药水。 
 暂时增加力量和耐力, 以及使用中型和重型武器的技能。 
 }
 
-itmname_mangarosafast	{暴风药水}
+itmname_mangarosafast	{疾风药水}
 itmdescr_mangarosafast
 {
 根据 Amelie 的吉普赛秘方制备的曼加罗萨药水。 
 暂时增加反应和感知, 以及使用轻型武器和射击的技能。 
 }
 
-itmname_mangarosatotal	{海之拥抱药水}
+itmname_mangarosatotal	{海之拥药水}
 itmdescr_mangarosatotal
 {
 根据 Amelie 的吉普赛秘方制备的曼加罗萨药水。 
 暂时增加力量、 耐力、 反应、 感知、 领导力和运气, 以及使用近战武器和射击的技能。 
+}
+
+itmname_vodka	{沙皇伏特加}
+itmdescr_vodka
+{
+以谷物酒精为基，加入杜松和贯叶连翘，蒸馏后与一滴玫瑰露和高良姜根一同陈酿。曾为沙皇俄国射手在战场上御寒提神之用。 ~ 近战攻击使用火器时伤害提高 30%。火器打击会吸取敌人能量。受到的射击伤害减少 10%。
 }
 
 itmname_cannabis1	{曼陀罗}
@@ -3018,7 +3053,7 @@ itmdescr_cannabis1
 用于治疗药水。 
 }
 
-itmname_cannabis2	{沙巴达伊拉}
+itmname_cannabis2	{墨西哥藜芦}
 itmdescr_cannabis2
 {
 用于治疗药水。 
@@ -3082,10 +3117,10 @@ itmdescr_cartridge
 将火药装药、 铅弹和弹塞结合在一起的纸质弹药 筒。 17世纪的先进技术。 使用这些能显著加快装填速度。 
 }
 
-itmname_powder_pellet	{火药弹}
+itmname_powder_pellet	{爆破筒}
 itmdescr_powder_pellet
 {
-可从手持迫击炮发射的火药弹。 爆炸时产生强光, 可同时眩晕多个目标。 可能造成友军伤害。 
+可从手持迫击炮发射的爆破筒。 爆炸时产生强光, 可同时眩晕多个目标。 可能造成友军伤害。 
 }
 
 itmname_grenade	{手榴弹}
@@ -3106,10 +3141,10 @@ itmdescr_GunPowder_colt
 改进的火药, 燃烧更快更干净。 制作柯尔特左轮手枪弹药筒所需。 
 }
 
-itmname_shotgun_bullet	{铅弹}
+itmname_shotgun_bullet	{铅弹壳}
 itmdescr_shotgun_bullet
 {
-用于装填左轮手枪弹药筒的子弹。 用子弹模具制作。 
+用于装填左轮手枪弹药的弹头。 用子弹模具制作。 
 }
 
 itmname_shotgun_cartridge	{左轮手枪子弹}
@@ -3183,10 +3218,10 @@ itmdescr_Mineral4
 已知最大甲虫物种的干燥标本 (长度可达20英寸)。 赫拉克勒斯甲虫也是地球上相对于 其体重最强壮的生物, 能够承载超过自身体重100倍的重量。 
 }
 
-itmname_Mineral5	{圣像灯}
+itmname_Mineral5	{圣像油灯}
 itmdescr_Mineral5
 {
-这盏青铜圣像灯可以让你在夜晚借 着它阅读喜爱的书籍或煮早晨的咖 啡。 
+这盏青铜圣像油灯可以让你在夜晚借 着它阅读喜爱的书籍或煮早晨的咖 啡。 
 }
 
 itmname_Mineral6	{镜子}
@@ -3323,10 +3358,10 @@ itmdescr_Mineral27
 可将草药和其他成分研磨成粉末, 用于制备各种药水。 不适用于研磨比核桃壳更硬的东西。 
 }
 
-itmname_Mineral28	{乙醇}
+itmname_Mineral28	{酒精}
 itmdescr_Mineral28
 {
-一些疯狂的炼金术士用这种纯乙醇 来制备雷酸银, 而不是像普通人那样饮用它。 
+一些疯狂的炼金术士用这种纯酒精 来制备雷酸银, 而不是像普通人那样饮用它。 
 }
 
 itmname_Mineral29	{硝酸}
@@ -3407,7 +3442,7 @@ itmdescr_MayorsRing
 itmname_UsurersJew	{宝石}
 itmdescr_UsurersJew
 {
-#sCityName# 高利贷者的奇妙 #sJevelType#。 
+#sCityName# 放贷人的奇妙 #sJevelType#。 
 }
 
 itmname_Key1	{简单钥匙}
@@ -3531,7 +3566,7 @@ itmdescr_Cipher
 itmname_JacobJournal	{Jacob van Berg 的航海日志}
 itmdescr_JacobJournal
 {
-'Mirage (幻影号) '船长 Jacob van Berg 的航海日志。 
+'Mirage (蜃楼号) '船长 Jacob van Berg 的航海日志。 
 }
 
 itmname_FleetwoodJournal{Richard Fleetwood 的航海日志}

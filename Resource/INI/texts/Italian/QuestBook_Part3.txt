@@ -2556,3 +2556,24 @@ La regata è finita. Sono arrivato quinto. Anche se non ho vinto nessun premio, 
 Maledizione! Sono arrivato ultimo. Che figuraccia. Avrei fatto meglio a non partecipare a questa regata.
 #TEXT   45
 Il mio viaggio nella regata è finito. Ho infranto le regole e sono stato squalificato dalla gara.
+
+#QUEST LoyaltyPack
+Voce dell'Equipaggio
+#TEXT 1
+Alonso Pimentel, nostromo e voce del mio equipaggio, vuole parlarmi. Posso trovarlo nella stiva.
+#TEXT 2
+Anche se Alonso ha riconosciuto i miei modesti successi come capitano, è chiaramente preoccupato per me. Mi ha offerto consigli, regalato equipaggiamento utile e condiviso una storia. Forse se continuo su questa strada, sentirò il resto.
+#TEXT 3
+Alonso ha richiesto un incontro. Come al solito, lo troverò nella stiva.
+#TEXT 4
+È passato quasi un anno, e l'equipaggio ha finalmente trovato fiducia in me. Alonso ha magistralmente eluso le mie domande sul suo passato ma ha condiviso un'altra delle sue storie di guerra. Chiaramente prende sul serio quella parte dei suoi doveri che riguarda il morale dell'equipaggio. Quasi come un confessore, anche se dubito che i preti regalino al loro gregge ricette per intruglio moscovita e armi da fuoco di qualità. Continua?
+#TEXT 5
+Alonso ha richiesto un incontro. Come al solito, lo troverò nella stiva.
+#TEXT 6
+Ora sono proprietario non solo di una certa fama nei Caraibi, ma anche di un cappello dall'aspetto ridicolo. Anche se può proteggere la testa di un capitano in erba, sicuramente si sfalderà dopo un paio di colpi solidi. Tuttavia, il mio trionfo è stato in parte rovinato dalla tragica storia che Alonso mi ha raccontato oggi. Non so cosa dovrebbe insegnarmi, ma mi piacerebbe incontrare il suo "amico moscovita".
+#TEXT 7
+Alonso ha richiesto un incontro. Come al solito, lo troverò nella stiva.
+#TEXT 8
+Fadey? Lo stesso Fadey di Basse-Terre? Com'è piccolo il mondo! Dovrei fargli visita.
+#TEXT 9
+L'incontro con Fadey mi ha fatto riflettere su molte cose. Quanti altri "Alonso" ci sono nel mio equipaggio? Quante storie e peculiari destini umani? Ho sentito solo una voce, eppure ora ne ho centinaia. Non so come finirà la mia odissea caraibica, ma grazie alle cure di Alonso e ai suoi semplici doni, sono completamente equipaggiato, preparato e pronto a incontrare il mio destino.

@@ -39,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddMoneyToCharacter(pchar, 1000);
 			GiveItem2Character(pchar, "pistol6");
 			GiveItem2Character(pchar, "purse1");
-			Log_Info("You have received a double barreled pistol and a purse of doubloons");
+			Log_Info("Avete ricevuto una pistola a doppia canna e un borsellino di dobloni.");
 			dialog.text = "Sempre lo stesso! Prendi questo! È tutto quello che ho sul tavolo!.. Anche se, va bene, non sembri come il resto degli idioti e perdenti che riempiono la mia isola. Prendi un po' di più... Ora vai via!";
 			link.l1 = "Grazie, vostra Eccellenza. Mi accompagnerò fuori.";
 			link.l1.go = "FMQT_3";

@@ -61,6 +61,9 @@ void InitInterface(string iniName)
 	
 	SelectNation();
 
+	// логотип
+	SetMenuLogo();
+
 	if (!CheckAttribute(&GameInterface, "SavePath"))
 		GameInterface.SavePath = "SAVE";
 		

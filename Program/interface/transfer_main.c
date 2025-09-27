@@ -1296,14 +1296,14 @@ void ShipChangeCaptan()
 	{ // наш товарищ
 		if (!CheckAttribute(xi_refCharacter, "Tasks.Clone")) //zagolski. баг с двойниками в каюте
 		{
-		SetFormatedText("REMOVE_WINDOW_CAPTION", XI_ConvertString("Captain"));
-		SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("ShipChangeCaptan1")); // Сместить капитана?
-		SetSelectable("REMOVE_ACCEPT_OFFICER", true);
-		sMessageMode = "ShipChangeCaptanRemove";
-		ShowShipChangeMenu();
-	}
-	else
-	{
+            SetFormatedText("REMOVE_WINDOW_CAPTION", XI_ConvertString("Captain"));
+            SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("ShipChangeCaptan1")); // Сместить капитана?
+            SetSelectable("REMOVE_ACCEPT_OFFICER", true);
+            sMessageMode = "ShipChangeCaptanRemove";
+            ShowShipChangeMenu();
+        }
+        else
+        {
 			SetFormatedText("REMOVE_WINDOW_CAPTION", XI_ConvertString("Captain"));
 			SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("ShipChangeCaptan2")); // В данный момент этот капитан не может быть смещен
 			sMessageMode = "ShipChangeCaptanMessage";
@@ -1342,29 +1342,29 @@ void ShipChangeCaptan()
 					sMessageMode = "ShipChangeCaptanMessage";
 					ShowOkMessage();
 				}
-			}
-			else
-			{
-				// проверка на 5 кораблей
-				if (GetCompanionQuantity(PChar) < COMPANION_MAX)
-				{
-					FillPassengerScroll();
-				    SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"PASSENGERSLIST",-1);
-				    SetCurrentNode("PASSENGERSLIST");
-					ProcessFrame();
-					SetOfficersSkills();
+                else
+                {
+                    // проверка на 5 кораблей
+                    if (GetCompanionQuantity(PChar) < COMPANION_MAX)
+                    {
+                        FillPassengerScroll();
+                        SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"PASSENGERSLIST",-1);
+                        SetCurrentNode("PASSENGERSLIST");
+                        ProcessFrame();
+                        SetOfficersSkills();
 
-					XI_WindowShow("OFFICERS_WINDOW", true);
-					XI_WindowDisable("OFFICERS_WINDOW", false);
-					XI_WindowDisable("MAIN_WINDOW", true);
-				}
-				else
-				{
-				    SetFormatedText("REMOVE_WINDOW_CAPTION", XI_ConvertString("Capture Ship"));
-					SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("ShipChangeCaptan6")); // В эскадре героя может быть только пять кораблей
-					sMessageMode = "ShipChangeCaptanMessage";
-					ShowOkMessage();
-				}
+                        XI_WindowShow("OFFICERS_WINDOW", true);
+                        XI_WindowDisable("OFFICERS_WINDOW", false);
+                        XI_WindowDisable("MAIN_WINDOW", true);
+                    }
+                    else
+                    {
+                        SetFormatedText("REMOVE_WINDOW_CAPTION", XI_ConvertString("Capture Ship"));
+                        SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("ShipChangeCaptan6")); // В эскадре героя может быть только пять кораблей
+                        sMessageMode = "ShipChangeCaptanMessage";
+                        ShowOkMessage();
+                    }
+                }
 			}
 		}
 	}

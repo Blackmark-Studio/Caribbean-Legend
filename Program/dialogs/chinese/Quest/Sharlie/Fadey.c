@@ -5,6 +5,7 @@ void ProcessDialogEvent()
 	aref Link, NextDiag;
 	int rate;
 	string sTemp;
+    bool bOk;
 
 	DeleteAttribute(&Dialog,"Links");
 
@@ -15,6 +16,21 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
+			//--> LoyaltyPack
+			if (GetDLCenabled(DLC_APPID_1))
+			{
+				if (CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.Fadey", "ready"))
+				{
+					link.l32 = "法杰伊，您认识一个叫阿隆索的人吗？";
+					link.l32.go = "LoyaltyPack_Fadey_1";
+				}
+				if (CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.Fadey", "money") && PCharDublonsTotal() >= 1000)
+				{
+					link.l32 = "法杰伊，我准备买下您的镜甲胸甲。";
+					link.l32.go = "LoyaltyPack_Fadey_1000";
+				}
+			}
+			//<-- LoyaltyPack
 			if (CheckAttribute(pchar, "questTemp.Sharlie"))
 			{
 				if (pchar.questTemp.Sharlie == "fadey")
@@ -811,6 +827,83 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 		break;
 		// <-- legendary edition
+		
+		//--> LoyaltyPack
+		case "LoyaltyPack_Fadey_1":
+			dialog.text = "我亲爱的朋友阿隆索·皮门特尔，在您船上服役的那位？哈！当然认识。每次您的船进港，这位好汉总要来找我喝一杯。我的朋友所剩无几了，#имя_гг。每一个我都珍惜。";
+			link.l1 = "阿隆索跟我讲了你们战争冒险的精彩故事。他甚至把您的弹药带送给了我。";
+			link.l1.go = "LoyaltyPack_Fadey_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "LoyaltyPack_Fadey_2":
+			dialog.text = "我希望并相信最精彩的他都留着没说。但既然阿隆索与您分享了我们的友谊，我也有个稀奇物给您。看看吧！";
+			link.l1 = "这是……盔甲？";
+			link.l1.go = "LoyaltyPack_Fadey_3";
+		break;
+
+		case "LoyaltyPack_Fadey_3":
+			dialog.text = "唉，朋友。这是我在那场该死的战争中穿过的镜甲仅存的部分。后来在斯摩棱斯克附近，我还得\n"+
+			"无论如何，即使这样它看起来也很华丽，保护性更好。而且我完全穿不下了！";
+			link.l1 = "看起来很异国情调……即使对这里来说也是。华丽的礼物，法杰伊。谢谢您。";
+			link.l1.go = "LoyaltyPack_Fadey_4";
+		break;
+		
+		case "LoyaltyPack_Fadey_4":
+			dialog.text = "对您，我的朋友，只要一千金币。";
+			if (PCharDublonsTotal() >= 600)
+			{
+				if (GetSummonSkillFromName(pchar, SKILL_Commerce) >= 60)
+				{
+					link.l1 = "让我纠正你，亲爱的法杰伊。一千金币是全套盔甲的价格。只要胸甲呢？";
+					link.l1.go = "LoyaltyPack_Fadey_5";
+					Notification_Skill(true, 60, SKILL_COMMERCE);
+				}
+				else if (PCharDublonsTotal() >= 1000)
+				{
+					link.l1 = "难怪您和阿隆索合得来。拿着您的金子。";
+					link.l1.go = "LoyaltyPack_Fadey_1000";
+					Notification_Skill(false, 60, SKILL_COMMERCE);
+				}
+			}
+			link.l2 = "哈！您差点骗到我了，法杰伊！也许下次吧。";
+			link.l2.go = "LoyaltyPack_Fadey_MoneyLater";
+		break;
+		
+		case "LoyaltyPack_Fadey_MoneyLater":
+			dialog.text = "当然，不着急。我的镜甲会一直等着您。";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			pchar.questTemp.LoyaltyPack.Fadey = "money";
+		break;
+		
+		case "LoyaltyPack_Fadey_5":
+			dialog.text = "哦，真精明，真机灵！那好吧，六百金币我就割爱了。";
+			link.l1 = "难怪您和阿隆索合得来。拿着您的金子。";
+			link.l1.go = "LoyaltyPack_Fadey_600";
+		break;
+		
+		case "LoyaltyPack_Fadey_1000":
+			dialog.text = "好买卖。谢谢您，我把镜甲交给值得信赖的人。照顾好阿隆索，船长。";
+			link.l1 = "这到底是谁在照顾谁…";
+			link.l1.go = "LoyaltyPack_Fadey_end";
+			RemoveDublonsFromPCharTotal(1000);
+			GiveItem2Character(PChar, "cirass11");
+		break;
+		
+		case "LoyaltyPack_Fadey_600":
+			dialog.text = "好买卖。谢谢您，我把镜甲交给值得信赖的人。照顾好阿隆索，船长。";
+			link.l1 = "这到底是谁在照顾谁…";
+			link.l1.go = "LoyaltyPack_Fadey_end";
+			RemoveDublonsFromPCharTotal(600);
+			GiveItem2Character(PChar, "cirass11");
+		break;
+		
+		case "LoyaltyPack_Fadey_end":
+			DialogExit();
+			AddDialogExitQuestFunction("LoyaltyPack_Fadey_DlgExit");
+		break;
+		//<-- LoyaltyPack
 
 		case "guardoftruth":
 			dialog.text = "哎呀, 谁还会怀疑你是来办正事的呢, 伙计! 可惜现在没法请你喝伏特加, 都被我喝光了。说说吧, 这次你又惹上什么麻烦了? ";
@@ -1230,8 +1323,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "relation":
-			rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.FadeyNation), 0));
-			if (rate <= 10)
+			rate = wdmGetNationThreat(sti(pchar.GenQuest.FadeyNation));
+			if (rate < 2)
 			{
 				dialog.text = "当然。我可是听说过你的那些冒险—或者说倒霉事。你的小麻烦, 交给我吧, 只要金子够多, 什么事都能摆平。三百个金路易, 老子就能把你从锅里捞出来。";
 				if (PCharDublonsTotal() >= 300) // belamour legendary edition
@@ -1245,7 +1338,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (rate <= 20)
+				if (rate < 4)
 				{
 					dialog.text = "当然。你的那些冒险—或者说倒霉事, 俺可是听说过的。你那点小麻烦, 俺能搞定。只要金子给得够, 啥事都能摆平。六百枚金达布隆, 俺就能把你从锅里捞出来。";
 					if (PCharDublonsTotal() >= 600) // belamour legendary edition
@@ -1282,10 +1375,11 @@ void ProcessDialogEvent()
 		
 		case "agree_1":
 			DialogExit();
+            bOk = HasShipTrait(pchar, "trait23");
             rate = 10 + rand(5);
-            rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+            rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromFadeyComplete", 0, 0, rate, false);
-			pchar.GenQuest.FadeyNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.FadeyNation), 0));
+			pchar.GenQuest.FadeyNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.FadeyNation));
 			npchar.quest.relation = "true";
 		break;
 		

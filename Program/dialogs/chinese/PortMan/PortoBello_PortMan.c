@@ -191,7 +191,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "SharkGoldFleet_16":
-			dialog.text = "啊, 你不该为加拉加斯的新西班牙官员的贪婪负责。 但我现在身上没那么多钱。 预算明天才会到... 请在这里等一下, 我现在去找放债人, 很快就回来。 ";
+			dialog.text = "啊, 你不该为加拉加斯的新西班牙官员的贪婪负责。 但我现在身上没那么多钱。 预算明天才会到... 请在这里等一下, 我现在去找放贷人, 很快就回来。 ";
 			link.l1 = "... ";
 			link.l1.go = "SharkGoldFleet_17";
 		break;

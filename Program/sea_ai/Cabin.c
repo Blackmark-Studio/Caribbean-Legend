@@ -852,6 +852,24 @@ void SetPrisonerInHold()
             }
         }
     }
+	if(GetDLCenabled(DLC_APPID_1) && !RemoveAlonsoFromHold())
+	{
+		offref = GetCharacter(NPC_GenerateCharacter("Alonso_LP", "Alonso", "man", "man", 1, FRANCE, 0, true, "pirate"));
+		offref.name = StringFromKey("HollandGambit_23");
+		offref.lastname = "";
+		offref.Dialog.Filename = "Quest\LoyaltyPack.c";
+		offref.Dialog.currentnode = "Alonso";
+		PlaceCharacter(offref, "goto", "random_must_be");
+		LAi_SetStayType(offref);
+		CharacterTurnToLoc(offref, "reload", "reload1");
+		if(CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.FirstStage", "ready") ||
+		   CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.SecondStage", "ready") ||
+		   CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.ThirdStage", "ready") ||
+		   CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.FourthStage", "ready"))
+		{
+			AddLandQuestMark(offref, "questmarkmain");
+		}
+	}
 }
 //////////////////  кампус /////////////////
 void SetOfficersInCampusToNone()

@@ -10,77 +10,77 @@ LSC_Q2Utilite_2
 
 LSC_Q2Utilite_3
 {
-The captain of the @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' @<GetFullName(sld)> is in the city. He must be in a harbor office.
+Kapitan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' - @<GetFullName(sld)> jest w mieście. Musi być gdzieś w biurze portowym.
 }
 
 LSC_Q2Utilite_4
 {
-Captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' is in the city. He must be in a harbor office.
+Kapitan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' jest w mieście. Musi być gdzieś w biurze portowym.
 }
 
 LSC_Q2Utilite_5
 {
-The captain of the @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' @<GetFullName(sld)> is in the city. He must be in a harbor office.
+Kapitan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' - @<GetFullName(sld)> jest w mieście. Musi być gdzieś w biurze portowym.
 }
 
 LSC_Q2Utilite_6
 {
-, on the ~
+, na ~
 }
 
 LSC_Q2Utilite_7
 {
-The captain of the @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' @<GetFullName(sld)> is on his vessel at the port. Odd fellow, I say, never put his steps ashore.
+Kapitan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' - @<GetFullName(sld)> jest w porcie, na swoim statku. Dziwny facet - już myślałem, że nigdy nie schodzi na ląd.
 }
 
 LSC_Q2Utilite_8
 {
-Captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' is on his vessel at the port. Odd fellow, I say, never put his steps ashore.
+Kapitan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' jest w porcie, na swoim statku. Dziwny facet, chyba jeszcze nigdy nie postawił swojej nogi na lądzie.
 }
 
 LSC_Q2Utilite_9
 {
-The captain of the @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' @<GetFullName(sld)> is on his vessel at the port. Odd fellow, I say, never put his steps ashore.
+Kapitan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' - @<GetFullName(sld)> jest w porcie, na statku. Dziwny facet, chyba jeszcze nigdy nie postawił swojej nogi na lądzie.
 }
 
 LSC_Q2Utilite_10
 {
-, on the ~
+, na ~
 }
 
 LSC_Q2Utilite_11
 {
-Captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' is the city. His name is @<GetFullName(sld)>, I believe.
+Kapitan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' jest gdzieś w mieście. Wydaje mi się, że ma na imię @<GetFullName(sld)>.
 }
 
 LSC_Q2Utilite_12
 {
-Captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' is the city.
+Kapitan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' jest gdzieś w mieście.
 }
 
 LSC_Q2Utilite_13
 {
-Captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' is the city. His name is @<GetFullName(sld)>, I believe.
+Kapitan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' jest gdzieś w mieście. Wydaje mi się, że ma na imię @<GetFullName(sld)>.
 }
 
 LSC_Q2Utilite_14
 {
-Captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' is on his vessel at the port. His name is @<GetFullName(sld)>, I believe.
+Kapitan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' jest w porcie, na swoim statku. Wydaje mi się, że ma na imię @<GetFullName(sld)>.
 }
 
 LSC_Q2Utilite_15
 {
-Captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' is on his vessel at the port.
+Kapitan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>'jest w porcie, na swoim statku.
 }
 
 LSC_Q2Utilite_16
 {
-Captain @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>', is on his vessel at the port. His name is @<GetFullName(sld)>, I believe.
+Kapitan @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>', jest w porcie, na swoim statku. Wydaje mi się, że ma na imię @<GetFullName(sld)>.
 }
 
 LSC_Q2Utilite_17
 {
-, on the ~
+, na ~
 }
 
 LSC_Q2Utilite_18
@@ -95,5 +95,5 @@ Statek jest pusty
 
 LSC_Q2Utilite_20
 {
-brigantine 'Mary Celeste'
+brygantyna 'Mary Celeste'
 }

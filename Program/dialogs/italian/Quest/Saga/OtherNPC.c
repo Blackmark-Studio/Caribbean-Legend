@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 		
 		case "Donovan_abordage_1":
 			dialog.text = "Quale Rumba? Non voglio canaglie con nomignoli sulla mia nave. Questa è una nave della marina inglese!";
-			link.l1 = "Non fare il fesso con me, Donovan. Sai benissimo di кого sto parlando. Dov’è la ragazza? Dov’è Helen? Rispondimi, lurido bastardo...";
+			link.l1 = "Non fare il fesso con me, Donovan. Sai benissimo di chi sto parlando. Dov’è la ragazza? Dov’è Helen? Rispondimi, lurido bastardo...";
 			link.l1.go = "Donovan_abordage_2";
 		break;
 		
@@ -883,7 +883,7 @@ void ProcessDialogEvent()
 		
 		case "vensan_12":
 			dialog.text = "Ti manda Marcus?";
-			link.l1 = "Non l’ha fatto lui. Sono riuscito a smascherare l’intrigo di un farabutto: voleva far fuori Marcus con tutta questa faccenda. Digli che per ora se ne stia buono e non ficchi носа... Gli spiegherò tutto di persona più tardi. E, per carità, dìgli di smetterla di prendersela con me.";
+			link.l1 = "Non l’ha fatto lui. Sono riuscito a smascherare l’intrigo di un farabutto: voleva far fuori Marcus con tutta questa faccenda. Digli che per ora se ne stia buono e non ficchi il naso... Gli spiegherò tutto di persona più tardi. E, per carità, dìgli di smetterla di prendersela con me.";
 			link.l1.go = "vensan_7";
 		break;
 		
@@ -909,7 +909,7 @@ void ProcessDialogEvent()
 		
 		case "molligan_2":
 			dialog.text = "Mogano? Jan ha detto così? Mh. E perché non lo porti tu stesso a Barbados? Perché proprio io?";
-			link.l1 = "Perché sei tu che navighi laggiù e non io. Ho ricevuto un incarico urgente da Svenson, quindi non posso perdere tempo a veleggiare fino a Bridgetown anch’io. Inoltre, Jan non si fida di меня per trattare con lord Willoughby e vuole che sia tu a farlo. Mi spiace. Ora carichiamo la roba, devo andare.";
+			link.l1 = "Perché sei tu che navighi laggiù e non io. Ho ricevuto un incarico urgente da Svenson, quindi non posso perdere tempo a veleggiare fino a Bridgetown anch’io. Inoltre, Jan non si fida di me per trattare con lord Willoughby e vuole che sia tu a farlo. Mi spiace. Ora carichiamo la roba, devo andare.";
 			link.l1.go = "molligan_3";
 		break;
 		
@@ -1052,7 +1052,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mine_bandit_1":
-			dialog.text = "Perché la miniera alle mie spalle è proprietà privata e io sto qui proprio per fermare forestieri come te dal проходить oltre. Faresti meglio a voltarti e sparire, straniero. I nostri cannoni sono carichi a pallettoni: fai solo un altro passo e ti ridurremo a una pozza fradicia.";
+			dialog.text = "Perché la miniera alle mie spalle è proprietà privata e io sto qui proprio per fermare forestieri come te dal passaggio. Faresti meglio a voltarti e sparire, straniero. I nostri cannoni sono carichi a pallettoni: fai solo un altro passo e ti ridurremo a una pozza fradicia.";
 			link.l1 = "Heh, capisco. La tua miniera è ben sorvegliata. Va bene, me ne vado.";
 			link.l1.go = "mine_bandit_exit";
 			link.l2 = "Tu, bastardo! Ah, vedremo chi finirà steso come una pozzanghera!";
@@ -2032,7 +2032,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "alonso":
-			dialog.text = "Capitano, magari non capisco tutte le belle parole che questi damerini si бросают, ma vedi, se uno viene chiamato codardo, di solito non lo lasci andare così. Dagli una sberla, Capitano, o l’equipaggio comincerà a farsi delle idee.";
+			dialog.text = "Capitano, magari non capisco tutte le belle parole che questi damerini si riempono, ma vedi, se uno viene chiamato codardo, di solito non lo lasci andare così. Dagli una sberla, Capitano, o l’equipaggio comincerà a farsi delle idee.";
 			link.l1 = "Volete sangue? La vita è troppo noiosa, vi manca il brivido? Ebbene, avrete il vostro sangue, bestiacce!";
 			link.l1.go = "francois_duel";
 			link.l2 = "Uhu, che paura mi fate. Avete finito qui, signori? Ho ben altro da fare.";

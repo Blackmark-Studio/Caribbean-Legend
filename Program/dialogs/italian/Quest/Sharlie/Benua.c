@@ -4,6 +4,7 @@ void ProcessDialogEvent()
 	ref NPChar, sld;
 	aref Link, NextDiag;
 	int rate;
+    bool bOk;
 
 	DeleteAttribute(&Dialog,"Links");
 
@@ -184,7 +185,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "escape_7":
-			dialog.text = "Figlio mio, un prete non vede con gli occhi, ma con il cuore. Non riesco a spiegartelo a parole, ma... tuo fratello si è messo su una strada impura, sporca. Mai avrei pensato che la mia bocca скажет такое. Eppure...";
+			dialog.text = "Figlio mio, un prete non vede con gli occhi, ma con il cuore. Non riesco a spiegartelo a parole, ma... tuo fratello si è messo su una strada impura, sporca. Mai avrei pensato che la mia bocca dirà questo. Eppure...";
 			link.l1 = "Eh, non dubito che mio fratello abbia in mente qualche porcheria. Posso persino intuire cosa stia tramando, più o meno. Questo 'qualcosa' è giallo e fa un bel tintinnio.";
 			link.l1.go = "escape_8";
 		break;
@@ -280,8 +281,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "relation":
-			rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.BenuaNation), 0));
-			if (rate <= 10)
+			rate = wdmGetNationThreat(sti(pchar.GenQuest.BenuaNation));
+			if (rate < 2)
 			{
 				dialog.text = "Sì, anche nella nostra chiesa sono giunte quelle voci. Posso darti una mano con il tuo impiccio, sai. È una faccenda risolvibile. Ma mi serviranno duecentocinquanta dobloni d'oro per appianare la tua situazione.";
 				if (PCharDublonsTotal() >= 250) // Sinistra legendary edition
@@ -295,7 +296,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (rate <= 20)
+				if (rate < 4)
 				{
 					dialog.text = "Sì, le voci delle tue 'prodezze' sono giunte anche alla nostra chiesa. Hai macchiato la tua reputazione, figliolo. Dovresti esser più accorto. Ma posso aiutarti. Mi servono cinquecento dobloni d’oro per sistemare la tua brutta faccenda.";
 					if (PCharDublonsTotal() >= 500) // Sinistra legendary edition
@@ -333,10 +334,11 @@ void ProcessDialogEvent()
 		
 		case "agree_1":
 			DialogExit();
+            bOk = HasShipTrait(pchar, "trait23");
             rate = 10 + rand(5);
-            rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+            rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, rate, false);
-			pchar.GenQuest.BenuaNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.BenuaNation), 0));
+			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.BenuaNation));
 			npchar.quest.relation = "true";
 		break;
 		
@@ -362,7 +364,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FastStart_3":
-			dialog.text = "Capisco, figliolo. Sento che dici la verità. Ebbene, ради Мишеля и твоего отца я дам тебе помощь. Ho messo via qualche risparmio, prendili pure. Suppongo che 50.000 pesos e 100 dobloni ti basteranno.";
+			dialog.text = "Capisco, figliolo. Sento che dici la verità. Ebbene, per il bene di Michel e di tuo padre, ti aiuterò. Ho messo via qualche risparmio, prendili pure. Suppongo che 50.000 pesos e 100 dobloni ti basteranno.";
 			link.l1 = "Grazie, padre. Quali sono le condizioni?";
 			link.l1.go = "FastStart_4";
 		break;

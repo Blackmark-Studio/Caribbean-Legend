@@ -18,6 +18,9 @@ void InitInterface(string iniName)
 
 	SetFormatedText("INFO_TEXT", "");
 
+	// логотип
+	SetMenuLogo();
+
 	aboutFileId = LanguageOpenFile("about.txt");
 	int headers = 0;
 	string sValue, sAttr;

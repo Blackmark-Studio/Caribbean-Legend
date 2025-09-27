@@ -502,7 +502,7 @@ void ProcessDialogEvent()
 		
 		case "Trade_artefact_5":
 			DialogExit();
-			Log_Info("You have received "+XI_ConvertString(npchar.quest.art)+"");
+			Log_Info("Avete ricevuto "+XI_ConvertString(npchar.quest.art)+"");
 			PlaySound("interface\important_item.wav");
 			TakeNItems(pchar, npchar.quest.art, 1);
 			DeleteAttribute(npchar, "quest.art");
@@ -657,7 +657,7 @@ void ProcessDialogEvent()
 		case "Trial_1":
 			DialogExit();
 			TakeNItems(pchar, "gold_dublon", 400);
-			Log_Info("You have received 400 doubloons");
+			Log_Info("Avete ricevuto 400 doubloons");
 			PlaySound("interface\important_item.wav");
             NextDiag.CurrentNode = NextDiag.TempNode;
 			DeleteAttribute(pchar, "questTemp.Trial");

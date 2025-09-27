@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_3":
-			dialog.text = "还行, 不比给那个傲慢的放债人家庭当仆人差。 你只需要习惯这里, 之后可能会喜欢上。 顺便说, 不止我一个人这么想。 帮派... 他们不打扰我。 ";
+			dialog.text = "还行, 不比给那个傲慢的放贷人家庭当仆人差。 你只需要习惯这里, 之后可能会喜欢上。 顺便说, 不止我一个人这么想。 帮派... 他们不打扰我。 ";
 			link.l1 = "有意思... ";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_3 = "true";

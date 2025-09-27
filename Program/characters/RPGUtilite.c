@@ -1123,6 +1123,9 @@ int GetCharacterSuitType(ref rChar)
 		case "cirass10"	:
 			iValue = 2;
 		break;
+		case "cirass11"	:
+			iValue = 2;
+		break;
 		
 		// легкие доспехи
 		case "cirass5"	:
@@ -1215,6 +1218,10 @@ int SetCharacterSkillBySuit(ref rChar, String sSkillName)
 			if(sSkillName == SKILL_FENCING)	    iValue = 5;
 			if(sSkillName == SKILL_F_HEAVY)	    iValue = 5;
 			if(sSkillName == SKILL_PISTOL)	    iValue = 5;
+		break;
+		
+		case "cirass11"	:
+			if(sSkillName == SKILL_LEADERSHIP)	iValue = 10;
 		break;
 		
 		case "suit1"	: // Французский офицерский мундир
@@ -1379,6 +1386,21 @@ int SetCharacterSkillByGun(ref rChar, String sSkillName)
 		
 		case "pistol5"	: // Дуэльный пистолет
 			if(sSkillName == SKILL_PISTOL)  iValue = 5;
+		break;
+	}
+	
+	return iValue;
+}
+
+int SetCharacterSkillByMusket(ref rChar, String sSkillName)
+{
+	int iValue = 0;
+	string sGun = GetCharacterEquipByGroup(rChar, MUSKET_ITEM_TYPE);
+	
+	switch(sGun)
+	{	
+		case "mushket10"	: // Имперский мушкет LP
+			if(sSkillName == SKILL_LEADERSHIP) iValue = 10;
 		break;
 	}
 	
@@ -1655,6 +1677,9 @@ int GetCharacterSkillSimple(ref _refCharacter, string skillName)
 
 		// GUN_ITEM_TYPE
 		skillN += SetCharacterSkillByGun(_refCharacter, skillName);
+		
+		// MUSKET_ITEM_TYPE
+		skillN += SetCharacterSkillByMusket(_refCharacter, skillName);
 
         // Мангароса
         skillN += SetCharacterSkillByMangarosa(_refCharacter, skillName);
@@ -2151,10 +2176,10 @@ string GetCharType(aref _enemy)  //TO_DO переделать на тип в Н�
 	{
 		case LAI_TYPE_PATROL :
 		    name = "Solder";
-		break
+		break;
 		case LAI_TYPE_GUARDIAN :
 		    name = "Solder";
-		break
+		break;
 		case LAI_TYPE_OFFICER :
 		    name = "Solder";
 		break;
@@ -2882,7 +2907,7 @@ void CCS_SetNewMainCharacter(ref ch, int num)
 	{
 		case 1: //Шарль де Мор
 			ch.FaceId 				= 201;
-			ch.HeroModel 			= "Sharle_1,Sharle_2,Sharle_3,Sharle_4,Sharle_5,protocusto,Sharle_6,Sharle_8,Sharle_7,Sharle_9,Sharle_1,Sharle_11,Sharle_12,Sharle_13,Sharle_14"
+			ch.HeroModel 			= "Sharle_1,Sharle_2,Sharle_3,Sharle_4,Sharle_5,protocusto,Sharle_6,Sharle_8,Sharle_7,Sharle_9,Sharle_1,Sharle_11,Sharle_12,Sharle_13,Sharle_14";
 			ch.name 				= GetNewMainCharacterParam("heroName_1");
 			ch.lastname				= GetNewMainCharacterParam("heroLastname_1");
 			ch.nameGen				= GetNewMainCharacterParam("heroNameGen_1");
@@ -3410,7 +3435,7 @@ void initMainCharacterItem()
          	ch.money = 500;
 		break;
 	}
-	if(GetDLCenabled(DLC_APPID_1))
+	if(GetDLCenabled(DLC_APPID_1) && startHeroType == 1)
 	{
 		AddItems(ch, "knife_03", 1);
 	}
@@ -3484,7 +3509,7 @@ void initMainFreePlayCharacterItem()
 	SetAlchemyRecipeKnown_Silent("cartridge");
     AddQuestRecordInfo_Silent("Recipe", "clock2");
 	SetAlchemyRecipeKnown_Silent("clock2");
-	if(GetDLCenabled(DLC_APPID_1))
+	if(GetDLCenabled(DLC_APPID_1) && startHeroType == 1)
 	{
 		AddItems(ch, "knife_03", 1);
 	}
@@ -3642,7 +3667,7 @@ int GetShotCritical(ref chr)
 	if(GetCharacterEquipByGroup(chr, MUSKET_ITEM_TYPE) == "mushket7") chance += 6;
 	if(GetCharacterEquipByGroup(chr, GUN_ITEM_TYPE) == "pistol11") chance += 6;
 	if(GetCharacterEquipByGroup(chr, GUN_ITEM_TYPE) == "pistol14") chance += 9;
-	if(GetCharacterEquipByGroup(chr, CIRASS_ITEM_TYPE) == "cirass10")) chance += 5;
+	if(GetCharacterEquipByGroup(chr, CIRASS_ITEM_TYPE) == "cirass10") chance += 5;
 	if(IsEquipCharacterByArtefact(chr, "indian_1")) chance += 3;
 	if(IsEquipCharacterByArtefact(chr, "indian_2")) chance += 3;
 	if(IsEquipCharacterByArtefact(chr, "totem_12")) chance += 3;

@@ -114,11 +114,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "terrapin_3":
-			Log_Info("You have received a blunderbuss");
-			Log_Info("You have received 10 arrows");
-			Log_Info("You have received 10 charges of nails");
-			Log_Info("You have received instructions for creating the harpoon arrows");
-			Log_Info("You have received instructions for creating the charge of nails");
+			Log_Info("Hai ricevuto un archibugio");
+			Log_Info("Hai ricevuto 10 frecce");
+			Log_Info("Hai ricevuto 10 cariche di chiodi");
+			Log_Info("Hai ricevuto istruzioni per la creazione delle frecce arpione");
+			Log_Info("Hai ricevuto istruzioni per la creazione della carica di chiodi");
 			GiveItem2Character(pchar, "pistol8");
 			TakeNItems(pchar, "harpoon", 10);
 			TakeNItems(pchar, "GunEchin", 10);

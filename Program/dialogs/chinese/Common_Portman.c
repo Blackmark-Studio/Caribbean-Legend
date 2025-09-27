@@ -1933,13 +1933,13 @@ void ProcessDialogEvent()
 				break;
 			
 				case 2:
-					dialog.text = "你需要将这捆文件送到" + XI_ConvertString("Colony" + pchar.questTemp.WPU.Postcureer.City + "Gen") + "镇的放债人手中, 不得迟于" + FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty)) + "天。 这是关于汇率和股票价格的非常重要的信息。 要非常小心 - 一些可疑人物已经对获得这个包裹感兴趣。 送货报酬 - " + FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money)) + "。 ";
+					dialog.text = "你需要将这捆文件送到" + XI_ConvertString("Colony" + pchar.questTemp.WPU.Postcureer.City + "Gen") + "镇的放贷人手中, 不得迟于" + FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty)) + "天。 这是关于汇率和股票价格的非常重要的信息。 要非常小心 - 一些可疑人物已经对获得这个包裹感兴趣。 送货报酬 - " + FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money)) + "。 ";
 					link.l1 = "我同意! ";
 					link.l1.go = "Postcureer_LevelUp_Go";
 					link.l2 = "不, 我想我会放弃。 ";
 					link.l2.go = "Postcureer_LevelDown";
-					pchar.questTemp.WPU.Postcureer.TargetPortmanID = pchar.questTemp.WPU.Postcureer.City + "_usurer";//放债人ID
-					pchar.questTemp.WPU.Current.Add = "给放债人的一包信息";   // LDH 23Jan17 翻译
+					pchar.questTemp.WPU.Postcureer.TargetPortmanID = pchar.questTemp.WPU.Postcureer.City + "_usurer";//放贷人ID
+					pchar.questTemp.WPU.Current.Add = "给放贷人的一包信息";   // LDH 23Jan17 翻译
 					pchar.questTemp.WPU.Current.Item = "letter_2";//物品
 					pchar.questTemp.WPU.Current.Itemdescr = "itmdescr_letter_2_PortmanLevelUp3";//描述
 				break;

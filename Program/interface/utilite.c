@@ -1131,3 +1131,18 @@ void SetNodePosition(string sNode, int x1, int y1, int x2, int y2)
 {
 	SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, sNode, -1, 4, x1, y1, x2, y2);
 }
+
+void SetMenuLogo()
+{
+	string sAdd = "";
+	int x1, y1, x2, y2;
+	if(LanguageGetLanguage() == "Chinese")
+	{
+		sAdd = "_cn";
+		GetNodePosition("EYES", &x1, &y1, &x2, &y2);
+		SetNodePosition("EYES", x1+37, y1+3, x2+37, y2+3);
+	}
+	string sPictureName = "interfaces\le\cle_logo"+sAdd+".tga";
+	if(sAdd != "") 
+		SendMessage(&GameInterface,"lslls", MSG_INTERFACE_MSG_TO_NODE,"LOGO",2, false, sPictureName);
+}

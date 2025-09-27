@@ -707,7 +707,13 @@ itmname_Mushket2x2 {Rifle de carga lateral}
 itmdescr_Mushket2x2
 {
 Esta hermosa versión de la carabina de carga lateral es el arma que se usa tradicionalmente para la caza mayor. Las balas disparadas por sus cañones estriados darán con seguridad a cualquier blanco. Usa balas de plomo como munición y requiere de la habilidad 'Pistolero'.
-} 
+}
+
+itmname_mushket10 {Mosquete imperial}
+itmdescr_mushket10
+{
+Mosquete noble de tiro único de la época de la Guerra de los Treinta Años. Equipado con bayoneta y decorado con motivos típicos del Sacro Imperio Romano. ~ Liderazgo +10. Inflige un 25% más de daño con ataques cuerpo a cuerpo.
+}
 
 itmname_howdah {Howdah}
 itmdescr_howdah
@@ -962,6 +968,18 @@ Este sombrero es conocido en todos los rincones del Caribe y en todas partes se 
 ~
 Reduce la penalización por daño al barco en un 30%.
 10% de probabilidad de evitar daño por disparo.
+}
+
+itmname_hat10 {Sombrero de mercenario}
+itmdescr_hat10
+{
+Este sombrero blindado fabricado en el campo parece poco presentable, pero puede detener una bala y salvar la vida. ~ Reduce cualquier daño en un 18%, consumiendo 1 carga por cada caso.
+}
+
+itmname_hat10_part {Cuero curtido}
+itmdescr_hat10_part
+{
+Un buen trozo de cuero de toro curtido. Ideal para fabricar sombreros.
 }
 
 ; ==================================================================================================================== ОПТИКА
@@ -1252,6 +1270,17 @@ Por cada 2% de casco perdido, la velocidad y el daño de los cañones aumentan u
 Sin penalizaciones, se puede activar varias veces.
 }
 
+itmname_talisman20	{Fajín de streltsy}
+itmdescr_talisman20
+{
+Un bandolero hecho de varias correas, un frasco de pólvora y numerosos cartuchos de papel. Adopta muchas formas y usos en los campos de batalla europeos, pero este en particular es un visitante de tierras lejanas, decorado con imágenes de bestias fantásticas de los duros bosques siberianos. ~ Cada disparo con cualquier arma de fuego consume 1 carga. La velocidad de apuntado aumenta un 20%, el daño máximo apuntado aumenta un 40%, la velocidad de recarga aumenta un 10%.
+}
+
+itmname_talisman20_part {Frasco de pólvora de mosquetero}
+itmdescr_talisman20_part
+{
+Una polvorera de forma inusual, decorada con imágenes de animales exóticos de tierras lejanas. Los bordes llevan un bordado de motivos de Europa del Este.
+}
 
 ; ==================================================================================================================== ТАЛИСМАНЫ
 
@@ -3023,6 +3052,12 @@ itmdescr_mangarosatotal
 {
 Una poción de Manga Rosa preparada de acuerdo a la receta de Amelie. 
 Aumenta temporalmente el poder, aguante, reacción, intuición, autoridad y suerte, así como la destreza con todas las armas blancas y de fuego.
+}
+
+itmname_vodka	{Vodka del Zar}
+itmdescr_vodka
+{
+Infusión de aguardiente de grano con enebro y hipérico, destilada y añejada con una gota de agua de rosas y raíz de galanga. Usada por los streltsy del Zarato ruso en el campo de batalla como bebida reconfortante y vigorizante. ~ Aumenta el daño cuerpo a cuerpo con armas de fuego en un 30%. Los golpes con armas de fuego drenan la energía del enemigo. Reduce el daño recibido de los disparos en un 10%.
 }
 
 itmname_cannabis1	{Trompetas de Ángel o Datura}

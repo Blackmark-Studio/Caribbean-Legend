@@ -69,7 +69,7 @@ go_loanshark {银行家}
 go_church {教堂}
 go_prison {监狱}
 go_brothel {妓院}
-go_usurer {高利贷者}
+go_usurer {放贷人}
 go_portman {港务长}
 go_duel {决斗}
 go_exittown {城镇大门}

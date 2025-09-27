@@ -5,6 +5,7 @@ void ProcessDialogEvent()
 	aref Link, NextDiag;
 	int rate;
 	string sTemp;
+    bool bOk;
 
 	DeleteAttribute(&Dialog,"Links");
 
@@ -15,6 +16,21 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
+			//--> LoyaltyPack
+			if (GetDLCenabled(DLC_APPID_1))
+			{
+				if (CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.Fadey", "ready"))
+				{
+					link.l32 = "Fadey, connaissez-vous un homme nommé Alonso ?";
+					link.l32.go = "LoyaltyPack_Fadey_1";
+				}
+				if (CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.Fadey", "money") && PCharDublonsTotal() >= 1000)
+				{
+					link.l32 = "Fadey, je suis prêt à acheter votre plastron miroir.";
+					link.l32.go = "LoyaltyPack_Fadey_1000";
+				}
+			}
+			//<-- LoyaltyPack
 			if (CheckAttribute(pchar, "questTemp.Sharlie"))
 			{
 				if (pchar.questTemp.Sharlie == "fadey")
@@ -811,6 +827,83 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 		break;
 		// <-- legendary edition
+		
+		//--> LoyaltyPack
+		case "LoyaltyPack_Fadey_1":
+			dialog.text = "Mon cher ami Alonso Pimentel qui sert sur votre navire ? Ha ! Mais bien sûr. Chaque fois que votre navire fait escale, ce brave homme passe toujours boire un coup. Il me reste peu d'amis, #имя_гг. Je chéris chacun d'eux.";
+			link.l1 = "Alonso m'a raconté des histoires incroyables sur vos aventures de guerre. Il m'a même donné votre bandoulière.";
+			link.l1.go = "LoyaltyPack_Fadey_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "LoyaltyPack_Fadey_2":
+			dialog.text = "J'espère et j'ai confiance qu'il a gardé les plus remarquables pour lui. Mais puisqu'Alonso a partagé notre amitié avec vous, j'ai aussi une curiosité pour vous. Regardez !";
+			link.l1 = "C'est... une armure ?";
+			link.l1.go = "LoyaltyPack_Fadey_3";
+		break;
+
+		case "LoyaltyPack_Fadey_3":
+			dialog.text = "Ah, mon ami. C'est tout ce qui reste de mon armure miroir que j'ai portée pendant cette maudite guerre. Et plus tard, près de Smolensk, j'ai encore eu l'occasion de\n"+
+			"Quoi qu'il en soit, même dans cet état elle est magnifique et protège encore mieux. Et elle ne me va plus du tout !";
+			link.l1 = "Ça a l'air exotique... même pour ces contrées. Un cadeau magnifique, Fadey. Merci.";
+			link.l1.go = "LoyaltyPack_Fadey_4";
+		break;
+		
+		case "LoyaltyPack_Fadey_4":
+			dialog.text = "Pour vous, mon ami, seulement mille doublons.";
+			if (PCharDublonsTotal() >= 600)
+			{
+				if (GetSummonSkillFromName(pchar, SKILL_Commerce) >= 60)
+				{
+					link.l1 = "Permettez-moi de vous corriger, cher Fadey. Mille doublons, ce serait pour une armure complète. Mais pour juste le plastron ?";
+					link.l1.go = "LoyaltyPack_Fadey_5";
+					Notification_Skill(true, 60, SKILL_COMMERCE);
+				}
+				else if (PCharDublonsTotal() >= 1000)
+				{
+					link.l1 = "Pas étonnant que vous vous entendiez avec Alonso. Voici votre or.";
+					link.l1.go = "LoyaltyPack_Fadey_1000";
+					Notification_Skill(false, 60, SKILL_COMMERCE);
+				}
+			}
+			link.l2 = "Ha ! Vous avez failli m'avoir, Fadey ! Peut-être une autre fois.";
+			link.l2.go = "LoyaltyPack_Fadey_MoneyLater";
+		break;
+		
+		case "LoyaltyPack_Fadey_MoneyLater":
+			dialog.text = "Bien sûr, ne vous pressez pas. Mon armure miroir vous attendra toujours.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			pchar.questTemp.LoyaltyPack.Fadey = "money";
+		break;
+		
+		case "LoyaltyPack_Fadey_5":
+			dialog.text = "Oh, vous êtes malin, oh, vous êtes rusé ! Bon, d'accord, je m'en séparerai pour six cents pièces d'or.";
+			link.l1 = "Pas étonnant que vous vous entendiez avec Alonso. Voici votre or.";
+			link.l1.go = "LoyaltyPack_Fadey_600";
+		break;
+		
+		case "LoyaltyPack_Fadey_1000":
+			dialog.text = "Une bonne affaire. Je vous remercie et confie mon armure miroir à de bonnes mains. Et prenez soin d'Alonso, capitaine.";
+			link.l1 = "Qui prend soin de qui ici...";
+			link.l1.go = "LoyaltyPack_Fadey_end";
+			RemoveDublonsFromPCharTotal(1000);
+			GiveItem2Character(PChar, "cirass11");
+		break;
+		
+		case "LoyaltyPack_Fadey_600":
+			dialog.text = "Une bonne affaire. Je vous remercie et confie mon armure miroir à de bonnes mains. Et prenez soin d'Alonso, capitaine.";
+			link.l1 = "Qui prend soin de qui ici...";
+			link.l1.go = "LoyaltyPack_Fadey_end";
+			RemoveDublonsFromPCharTotal(600);
+			GiveItem2Character(PChar, "cirass11");
+		break;
+		
+		case "LoyaltyPack_Fadey_end":
+			DialogExit();
+			AddDialogExitQuestFunction("LoyaltyPack_Fadey_DlgExit");
+		break;
+		//<-- LoyaltyPack
 
 		case "guardoftruth":
 			dialog.text = "Eh bien, qui douterait que tu viennes pour affaires, mon ami ! Hélas, pas de vodka à t'offrir pour le moment, j'ai tout bu. Dis-moi dans quel pétrin tu t'es encore fourré.";
@@ -1230,8 +1323,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "relation":
-			rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.FadeyNation), 0));
-			if (rate <= 10)
+			rate = wdmGetNationThreat(sti(pchar.GenQuest.FadeyNation));
+			if (rate < 2)
 			{
 				dialog.text = "Bien sûr. J'ai bien entendu parler de vos aventures - ou mésaventures. Je peux m'occuper de votre petit problème, rien qu'une bonne quantité d'or graissant les bonnes mains ne puisse résoudre. Trois cents doublons d'or et je vous sortirai du pétrin.";
 				if (PCharDublonsTotal() >= 300) // belamour legendary edition
@@ -1245,7 +1338,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (rate <= 20)
+				if (rate < 4)
 				{
 					dialog.text = "Bien sûr. J'ai bien entendu parler de tes aventures - ou mésaventures. Je peux m'occuper de ton petit problème, rien qu'une bonne somme d'or glissée aux bonnes mains ne puisse résoudre. Six cents doublons d'or et je te sortirai de la marmite.";
 					if (PCharDublonsTotal() >= 600) // belamour legendary edition
@@ -1282,10 +1375,11 @@ void ProcessDialogEvent()
 		
 		case "agree_1":
 			DialogExit();
+            bOk = HasShipTrait(pchar, "trait23");
             rate = 10 + rand(5);
-            rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+            rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromFadeyComplete", 0, 0, rate, false);
-			pchar.GenQuest.FadeyNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.FadeyNation), 0));
+			pchar.GenQuest.FadeyNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.FadeyNation));
 			npchar.quest.relation = "true";
 		break;
 		

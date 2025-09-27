@@ -4,7 +4,9 @@ bool isSkipable = false;
 bool bEncType   = false;
 bool bShowVideo; // для показа квестовых роликов, если будут
 bool bEscDisable = false; // belamour для выхода из меню на ESC BigPatch
-string  sQuestSeaCharId = "";
+
+string sQuestSeaCharId[5] = {"", "", "", "", ""};
+int iQuestSeaCharQty = 0;
 
 void InitInterface(string iniName)
 {
@@ -79,6 +81,7 @@ void IDoExit(int exitCode)
 
 void ProcCommand()
 {
+    int i;
 	string comName = GetEventData();
 	string nodName = GetEventData();
 	
@@ -87,15 +90,26 @@ void ProcCommand()
 		case "B_OK":
 			if(comName=="activate" || comName=="click")
 			{
-				if (sQuestSeaCharId != "")
+				if (iQuestSeaCharQty != 0)
 				{
-					if(sQuestSeaCharId == "LadyBeth_cap")
+                    bool bExit = false;
+                    for(i = 0; i < iQuestSeaCharQty; i++)
+                    {
+                        if(sQuestSeaCharId[i] == "LadyBeth_cap") {
+                            bExit = true;
+                            break;
+                        }
+                    }
+                    if(bExit)
 					{
 						pchar.SkipEshipIndex = pchar.eshipIndex;
 						IDoExit(RC_INTERFACE_MAP_EXIT);
 						break;
 					}
-					wdmEnterSeaQuest(sQuestSeaCharId);
+                    for(i = 0; i < iQuestSeaCharQty; i++)
+                    {
+                        wdmEnterSeaQuest(sQuestSeaCharId[i]);
+                    }
 				}
 				if(CharacterIsAlive("LadyBeth_cap"))
 				{
@@ -177,19 +191,20 @@ void wdmRecalcReloadToSea()
 
 			if (CheckAttribute(rEncounter, "CharacterID"))
 			{
-                iNumWarShips = GetCharacterIndex(rEncounter.CharacterID);
-                if (iNumWarShips != -1)
+                int iChar = GetCharacterIndex(rEncounter.CharacterID);
+                if (iChar != -1)
                 {
-                    rChar = &characters[iNumWarShips];
-					sQuestSeaCharId = rChar.id; // квестовый 
+                    rChar = &characters[iChar];
+                    iQuestSeaCharQty++;
+					sQuestSeaCharId[iQuestSeaCharQty - 1] = rChar.id; // квестовый 
 					if (CheckAttribute(rChar, "mapEnc.Name"))
 					{
-						totalInfo = totalInfo + characters[iNumWarShips].mapEnc.Name;
+						totalInfo = totalInfo + rChar.mapEnc.Name;
 						//sOkBtn = XI_ConvertString("map_defend");
 					}
 					else
 					{
-						totalInfo = totalInfo + "'" + characters[iNumWarShips].ship.name + "'.";
+						totalInfo = totalInfo + "'" + rChar.ship.name + "'.";
 					}
 				}
 				bEncType = true;
@@ -341,9 +356,9 @@ void wdmRecalcReloadToSea()
 					loadScr = "interfaces\le\sea_3.tga";
 				break;
 			}
-			if(sQuestSeaCharId != "")
+			if(sQuestSeaCharId[0] != "")
 			{
-				switch (sQuestSeaCharId)
+				switch (sQuestSeaCharId[0])
 				{
 					case "SantaMisericordia_cap":
 						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_sm.tga");
@@ -382,7 +397,6 @@ void wdmRecalcReloadToSea()
                             totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
                     //break;
 				}
-				//sQuestSeaCharId = ""; ~!~ WTF
 			}
 			else
 			{

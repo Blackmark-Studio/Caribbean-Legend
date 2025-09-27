@@ -1,4 +1,4 @@
-﻿//  boal 14.02.06 меню дебугера
+//  boal 14.02.06 меню дебугера
 string totalInfo;
 int idLngFile = -1;
 int remInt = 0;

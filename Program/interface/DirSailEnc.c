@@ -5,7 +5,8 @@
 string totalInfo = "";
 bool isSkipable = false;
 bool bEncType   = false;
-string  sQuestSeaCharId = "";
+string sQuestSeaCharId[5] = {"", "", "", "", ""};
+int iQuestSeaCharQty = 0;
 int nTimeout = 0;
 int DSENC_TIMEOUT = 90;
 int DSENC_TIMEOUT2 = 45;
@@ -209,14 +210,15 @@ int doDescribe(int gNum)
         if (nEncChar != -1)
         {
             rChar = &characters[nEncChar];
-            sQuestSeaCharId = rChar.id;
+            iQuestSeaCharQty++;
+            sQuestSeaCharId[iQuestSeaCharQty - 1] = rChar.id;
             if (CheckAttribute(rChar, "mapEnc.Name"))
             {
-                totalInfo = totalInfo + characters[nEncChar].mapEnc.Name;
+                totalInfo = totalInfo + rChar.mapEnc.Name;
             }
             else
             {
-                totalInfo = totalInfo + "'" + characters[nEncChar].ship.name + "'."
+                totalInfo = totalInfo + "'" + rChar.ship.name + "'."
             }
         }
     }
@@ -364,9 +366,9 @@ int doDescribe(int gNum)
 					loadScr = "interfaces\le\loading\sea_3.tga";
 				break;
 			}
-			if(sQuestSeaCharId != "")
+			if(sQuestSeaCharId[0] != "")
 			{
-				switch (sQuestSeaCharId)
+				switch (sQuestSeaCharId[0])
 				{
 					case "SantaMisericordia_cap":
 						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_sm.tga");
@@ -405,7 +407,6 @@ int doDescribe(int gNum)
                             totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
                     //break;
 				}
-				//sQuestSeaCharId = ""; ~!~ WTF
 			}
 			else
 			{
@@ -527,7 +528,8 @@ void locDirSail(int evtID)
         
         if (CheckAttribute(rGroup, "AlreadyLoaded") || nCheckShipCnt > MAX_SHIPS_IN_LOCATION)
         {
-            sQuestSeaCharId = "";
+            iQuestSeaCharQty = 0;
+            sQuestSeaCharId[0] = "";
             ProcessCancelExit();
             return;
         }
@@ -558,7 +560,8 @@ void locDirSail(int evtID)
         nCheckShipCnt += iNumMerchantShips;
         if (nCheckShipCnt > MAX_SHIPS_IN_LOCATION)
         {
-            sQuestSeaCharId = "";
+            iQuestSeaCharQty = 0;
+            sQuestSeaCharId[0] = "";
             ProcessCancelExit();
             return;
         }
@@ -764,9 +767,13 @@ void IDoExit(int exitCode)
 	DelEventHandler("evntDoPostExit","DoPostExit");
 	DelEventHandler("frame","IProcessFrame");
 
-	if (sQuestSeaCharId != "")
+	if (iQuestSeaCharQty != 0)
     {
-        wdmEnterSeaQuest(sQuestSeaCharId);
+        // TO_DO: Скип для Леди Бет?
+        for(int i = 0; i < iQuestSeaCharQty; i++)
+        {
+            wdmEnterSeaQuest(sQuestSeaCharId[i]);
+        }
     }
     SetTimeScale(1.0);
 	TimeScaleCounter = 0;

@@ -158,7 +158,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "tonzag_bail_lies_a":
             pchar.questTemp.TonzagQuest.Bail = 500;
-            dialog.text = "请向当地放债人缴纳五百杜布隆, 存入 托尔图加 驻军养老金基金。 ";
+            dialog.text = "请向当地放贷人缴纳五百杜布隆, 存入 托尔图加 驻军养老金基金。 ";
             if (CheckAttribute(pchar, "questTemp.FMQT") && pchar.questTemp.FMQT == "end") {
                 pchar.questTemp.TonzagQuest.Bail = 600;
                 dialog.text = dialog.text + " 再加上一百杜布隆, 算是你之前在岛上和一位高级女士纠缠不清惹出的麻烦的补偿。 ";
@@ -171,7 +171,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "tonzag_bail_lies_b":
             pchar.questTemp.TonzagQuest.Bail = 500;
-            dialog.text = "你已经占用了我太多时间。 去找放债人, 往 托尔图加 驻军养老金基金里存五百杜布隆。 ";
+            dialog.text = "你已经占用了我太多时间。 去找放贷人, 往 托尔图加 驻军养老金基金里存五百杜布隆。 ";
             if (CheckAttribute(pchar, "questTemp.FMQT") && pchar.questTemp.FMQT == "end") {
                 pchar.questTemp.TonzagQuest.Bail = 600;
                 dialog.text = dialog.text + " 再加上一百杜布隆, 算是你之前在岛上和一位高级女士纠缠不清惹出的麻烦的补偿。 ";

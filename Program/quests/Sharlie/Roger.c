@@ -9112,6 +9112,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Mtraxx_CartahenaResidenceWait1") // ждём выкупа от губернатора
 	{
+		pchar.systeminfo.DialogExitDelay = true;
 		SetLaunchFrameFormParam(StringFromKey("Roger_121", NewStr()), "Mtraxx_CartahenaResidenceMayor", 0, 5); // табличка
 		WaitDate("", 0, 0, 1, 1, 10); // крутим время
 		LaunchFrameForm();
@@ -9121,6 +9122,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Mtraxx_CartahenaResidenceMayor") // 
 	{
+		DeleteAttribute(pchar,"systeminfo.DialogExitDelay");
 		sld = CharacterFromID("Mtr_CartahenaMayorClone");
 		sld.lifeday = 1;
 		ChangeCharacterAddressGroup(sld, "Cartahena_Townhall", "reload", "reload1");

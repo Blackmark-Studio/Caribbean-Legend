@@ -559,7 +559,7 @@ void ProcessDialogEvent()
 		case "Juan_abordage_1":
 			if (CheckAttribute(pchar, "questTemp.Consumption.House"))
 			{
-				dialog.text = "Questa nave sta per saltare in aria – la miccia arde già nella santabarbara – che senso ha crepare a tutti двоим? Abbassiamo le spade. Avrai tempo di sgattaiolare fuori, e io mi butterò a mare, Punta Galera è a due passi da qui. Se ti serve oro, prendilo! Cinquecento dobloni, sonanti sul tavolo – tu ti scordi di me, io mi scordo di te! Affare fatto?";
+				dialog.text = "Questa nave sta per saltare in aria – la miccia arde già nella santabarbara – che senso ha crepare a tutti e due? Abbassiamo le spade. Avrai tempo di sgattaiolare fuori, e io mi butterò a mare, Punta Galera è a due passi da qui. Se ti serve oro, prendilo! Cinquecento dobloni, sonanti sul tavolo – tu ti scordi di me, io mi scordo di te! Affare fatto?";
 				link.l1 = "Oro? Non mi sono messo in tutto questo per il denaro, Juan, ma per far fuori la feccia, e tu sei già un bottino degno di un re.";
 				link.l1.go = "Juan_abordage_2";
 				link.l2 = "Cinquecento dobloni? Mi prendi per il culo, Consumo. Qua ce n’è almeno il doppio... Dammi subito mille e poi puoi andare al diavolo, altrimenti...";

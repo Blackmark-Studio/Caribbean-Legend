@@ -535,7 +535,7 @@ Lionell
 }
 QuestsUtilite_117
 {
-蒙面者
+蒙面人
 }
 
 QuestsUtilite_118
@@ -934,7 +934,7 @@ QuestsUtilite_207
 
 QuestsUtilite_208
 {
-Marc Romari, 1544-1599, 高利贷者
+Marc Romari, 1544-1599, 放贷人
 }
 QuestsUtilite_209
 {

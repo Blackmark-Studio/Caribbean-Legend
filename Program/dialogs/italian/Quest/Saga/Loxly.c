@@ -112,7 +112,7 @@ void ProcessDialogEvent()
 						if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 						{
 							RemoveItems(pchar, "map_sharp_full", 1);
-							dialog.text = "Signore, perché avete lavorato con tanta lentezza?! Ormai è finita per вашего protettоре. Il termine di validità del testamento è scaduto e Isla Tesoro appartiene ora all’Inghilterra. Presto diventerà una base militare."link.l1 ="Accidenti! Pare che tutti i miei sforzi siano andati in malora...";
+							dialog.text = "Signore, perché avete lavorato con tanta lentezza?! Ormai è finita per i tuoi protetti. Il termine di validità del testamento è scaduto e Isla Tesoro appartiene ora all’Inghilterra. Presto diventerà una base militare."link.l1 ="Accidenti! Pare che tutti i miei sforzi siano andati in malora...";
 							link.l1.go = "saga_l3";
 						}
 						else

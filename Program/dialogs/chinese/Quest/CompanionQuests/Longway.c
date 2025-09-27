@@ -2096,6 +2096,7 @@ void ProcessDialogEvent()
 			link.l1 = "奴隶, 对吗? ";
 			link.l1.go = "PZ_Longway_PosleRasskaza_Shifr_3";
 			AddQuestRecordInfo("PZ_ArchiveOneMerden", "1");
+			RemoveItems(PChar, "MerdokArchive", 1);
 		break;
 		
 		case "PZ_Longway_PosleRasskaza_Shifr_3":

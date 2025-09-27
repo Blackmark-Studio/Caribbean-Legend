@@ -1,49 +1,49 @@
-Ship_critical		{Trafienie Krytycznę!}
-Ship_critical_notif		{' - Trafienie Krytycznę!}
-Ship_sunk			{%1 "%2" is sunk. +%3 experience obtained.}
-Ship_sunk_other		{%1 "%2" is sunk.}
-Ship_got_good		{%1 centners of %2 are taken on board}
+Ship_critical		{Trafienie Krytyczne!}
+Ship_critical_notif		{' - Trafienie Krytyczne!}
+Ship_sunk			{%1 "%2" zatonął. Zdobyto +%3 doświadczenia.}
+Ship_sunk_other		{%1 "%2" zatonął.}
+Ship_got_good		{%1 centnerów z %2 zostały zabrane na pokład}
 Ship_cant_got_good	{Brak miejsca dla %1}
 
-Fort_destroy		{Fort %1 is destroyed. +%2 experience obtained.}
+Fort_destroy		{Fort %1 został zniszczony. Zdobyto +%2 doświadczenia.}
 Fort_destroy_notif	{Fort został pokonany!}
 Fort_cannon			{Działo fortowe zniszczone!}
 
-seg_Balls 			{round shot}
-seg_Grapes 			{grapeshot}
-seg_Knippels 		{chain shot}
-seg_Bombs 			{bombs}
-seg_Sailcloth 		{sailcloth}
-seg_Planks 			{planks}
-seg_Slaves 			{slaves}
-seg_Wheat 			{wheat}
-seg_Ebony 			{ebony}
-seg_Chocolate 		{cocoa}
-seg_Suga 			{sugar}
-seg_Wine 			{wine}
-seg_ShipSilk 		{shipsilk}
+seg_Balls 			{kule armatnie}
+seg_Grapes 			{kartacze}
+seg_Knippels 		{kule łańcuchowe}
+seg_Bombs 			{bomby}
+seg_Sailcloth 		{płótno żaglowe}
+seg_Planks 			{deski}
+seg_Slaves 			{niewolnicy}
+seg_Wheat 			{pszenica}
+seg_Ebony 			{heban}
+seg_Chocolate 		{kakao}
+seg_Suga 			{cukier}
+seg_Wine 			{wino}
+seg_ShipSilk 		{płótno żaglowe}
 seg_Rum 			{rum}
-seg_Tobacco 		{tobacco}
-seg_Coffee 			{coffee}
-seg_Mahogany 		{mahogany}
-seg_Cinnamon 		{vanilla}
-seg_Copra 			{copra}
-seg_Paprika 		{paprika}
-seg_Fruits 			{fruits}
-seg_Ale 			{ale}
-seg_Ropes 			{ropes}
-seg_Clothes 		{clothes}
-seg_Cotton 			{cotton}
-seg_Sandal 			{ironwood}
-seg_Leather 		{leather}
-seg_Oil 			{resin}
-seg_Food 			{food}
-seg_Weapon 			{weapons}
-seg_Gold 			{gold}
-seg_Silver 			{silver}
-seg_Powder 			{gunpowder}
-seg_Brick 			{bricks}
-seg_Medicament 		{medicine}
+seg_Tobacco 		{tytoń}
+seg_Coffee 			{kawa}
+seg_Mahogany 		{mahoń}
+seg_Cinnamon 		{wanilia}
+seg_Copra 			{kopra}
+seg_Paprika 		{papryka}
+seg_Fruits 			{owoce}
+seg_Ale 			{piwo}
+seg_Ropes 			{liny}
+seg_Clothes 		{ubrania}
+seg_Cotton 			{jedwab}
+seg_Sandal 			{drewno twarde}
+seg_Leather 		{skóra}
+seg_Oil 			{żywica}
+seg_Food 			{żywność}
+seg_Weapon 			{bronie}
+seg_Gold 			{złoto}
+seg_Silver 			{srebro}
+seg_Powder 			{proch strzelniczy}
+seg_Brick 			{cegły}
+seg_Medicament 		{medykamenty}
 
 seg_Cannon_3		{3-funtowe}
 seg_Cannon_6		{6-funtowe}
@@ -56,10 +56,10 @@ seg_Cannon_24		{24-funtowe}
 seg_Cannon_32		{32-funtowe}
 seg_Cannon_36		{36-funtowe}
 seg_Cannon_42		{42-funtowe}
-seg_Culverine_8		{Semi-couleuvrines}
-seg_Culverine_18	{Couleuvrines}
-seg_Culverine_36	{Full couleuvrines}
+seg_Culverine_8		{Półkolubryny}
+seg_Culverine_18	{Kolubryny}
+seg_Culverine_36	{Pełne kolubryny}
 
-sea_exp_add			{+%1 experience obtained}
+sea_exp_add			{Zdobyto +%1 doświadczenia}
 
 

@@ -1,4 +1,4 @@
-// 放债人通用对话
+// 放贷人通用对话
 #include "DIALOGS\%language%\Rumours\Common_rumours.c"  //homo 25/06/06
 void ProcessDialogEvent()
 {
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 			//--> 奴隶贩子
 			if (pchar.questTemp.Slavetrader == "canTakeQuest" && pchar.questTemp.Slavetrader.UsurerId == npchar.id)
 			{
-				dialog.Text = "好吧, 终于有一位值得信赖的船长光顾我的地方了, 那些认为我只是把他们的杜布隆和几内亚金币种在地里, 每个月收获一次来支付他们利息的白痴真让我厌烦\n他们盯着每一分钱, 却不知道这个可怜的放债人为了避免自己饿死, 同时又要给他们提供在圣诞节买只鹅的机会, 不得不耍各种花招。 ";
+				dialog.Text = "好吧, 终于有一位值得信赖的船长光顾我的地方了, 那些认为我只是把他们的杜布隆和几内亚金币种在地里, 每个月收获一次来支付他们利息的白痴真让我厌烦\n他们盯着每一分钱, 却不知道这个可怜的放贷人为了避免自己饿死, 同时又要给他们提供在圣诞节买只鹅的机会, 不得不耍各种花招。 ";
 				Link.l1 = "我想你的客户听到他们的钱的保管人说出这样的话不会高兴的。 ";
 				Link.l1.go = "GiveTaskSlave";
 				npchar.quest.slave = "current";//以免被石头砸
@@ -181,7 +181,7 @@ void ProcessDialogEvent()
 				link.l1.go = "FMQG_x";
 				break;
 			}
-			// 贝丝夫人 -->
+			// 贝丝女士 -->
 			if (pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_Bank" && !CheckAttribute(pchar, "questTemp.LadyBeth_Usurer")) // 布莱克伍德在城里
 			{
 				dialog.Text = "哦, 船长! 请看我今天得到了什么。 有些物品是我从布莱克伍德的手下那里得到的。 他们需要钱进行新的探险, 而对我们来说 —是利润, 对吧? ";
@@ -189,7 +189,7 @@ void ProcessDialogEvent()
 				link.l1.go = "LadyBeth_Usurer_1";
 				break;
 			}
-			// 贝丝夫人 <--
+			// 贝丝女士 <--
 			if(NPChar.quest.meeting == "0")
 			{
 				dialog.Text = LinkRandPhrase(LinkRandPhrase("日安, " + GetAddress_Form(NPChar) + "。 我能为您做些什么? 我认识您吗? ", "请进, 船长。 我叫" + GetFullName(npchar) + ", 是当地的银行家。 ", "很高兴见到您, " + GetAddress_Form(NPChar) + "! 我是当地的银行家, 如果您有资金问题, 我可以帮助您。 "), LinkRandPhrase("我们以前见过面吗, 船长? 我是" + GetFullName(npchar) + ", 是当地的银行家。 ", "请进, 船长。 我叫" + GetFullName(npchar) + ", 是当地的银行家。 ", "问候您, " + GetAddress_Form(NPChar) + "。 我是" + GetFullName(npchar) + ", 当地的银行家。 "), LinkRandPhrase("很高兴见到您, " + GetAddress_Form(NPChar) + ", 我是" + GetFullName(npchar) + ", 只是这个美妙城镇里一个谦逊的银行家。 ", "这由您决定, 船长! 想从我这里借些钱还是把钱存起来赚利息? ", "尊敬的船长! 我很高兴您光临我的简陋办公室! "));
@@ -206,7 +206,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("是你! 你想要什么, " + GetAddress_Form(NPChar) + "? ", "你在这里有什么事, 船长? 对不起, 但您的名声让您不是一个非常受欢迎的客户。 ", "啊哈, 又一个客户! 起初我还以为你是个强盗...哈哈, 我只是在开玩笑。 "),LinkRandPhrase("哦! 你想要什么? 这是银行, 不是酒馆。 ", "日安, 船长。 我必须通知您, 我在选择客户时相当挑剔。 ", "你想要什么, " + GetFullName(pchar) + "? 我希望您记得, 您的声望不会让您获得大额贷款? "),LinkRandPhrase("我希望您是想投资, " + GetAddress_Form(NPChar) + "? 对您来说获得贷款并不容易。 ", "船长" + GetFullName(pchar) + ", 您想从这个谦逊的银行家这里得到什么? 对不起, 但我无法为您安排贷款。 您只能把钱借给我赚取利息。 ", "请进, " + GetAddress_Form(NPChar) + "。 很抱歉通知您, 您不是最受欢迎的客户, 但我通常不会立即拒绝别人。 ")),LinkRandPhrase(LinkRandPhrase("您好, " + GetFullName(pchar) + "先生! 我随时准备帮助您解决业务问题。 ", "您好, " + GetAddress_Form(NPChar) + "先生。 我随时准备提供贷款或接受任何投资。 ", "亲爱的" + GetFullName(pchar) + "! 很高兴见到您! 您有什么愿望? "),LinkRandPhrase("船长" + GetFullName(pchar) + "! 我随时为您服务。 想贷款还是投资赚取利息? ", "向您问好, 船长! 您在这里始终是受欢迎的客户。 您有极好的商业声誉! ", "日安, " + GetFullName(pchar) + "。 很高兴您再次来访。 希望您是来达成一项有利可图的商业协议的? "),LinkRandPhrase("日安, 船长! 您想要什么? 想贷款还是投资? ", "船长" + GetFullName(pchar) + "! 您想以有利的条件借钱吗? 我总是很高兴见到如此受人尊敬的客户。 ", "很高兴再次见到您, 船长! 我随时准备帮助您, 无论是贷款还是投资。 ")));
-				link.l1 = pcharrepphrase(RandPhraseSimple(LinkRandPhrase("别开玩笑了, 银行家, 我在这里有生意。 ", "废话太多, 伙计。 让我们直接谈正事。 ", "您听说过钱是没有臭味的吗? 所以闭上您的鼻子, 让我们开始谈生意吧。 "), LinkRandPhrase("您就是这样接待客户的吗? 幸运的是我今天心情不错。 ", "哈! 您见到我不高兴吗, 嗯? 难道我不是一枚金色的杜布隆, 不能给您留下好印象吗? 不管怎样, 让我们谈生意吧, 放债人。 ", "呃, 我真想教教您一些礼貌, 但我没时间。 还是谈谈钱吧。 ")),
+				link.l1 = pcharrepphrase(RandPhraseSimple(LinkRandPhrase("别开玩笑了, 银行家, 我在这里有生意。 ", "废话太多, 伙计。 让我们直接谈正事。 ", "您听说过钱是没有臭味的吗? 所以闭上您的鼻子, 让我们开始谈生意吧。 "), LinkRandPhrase("您就是这样接待客户的吗? 幸运的是我今天心情不错。 ", "哈! 您见到我不高兴吗, 嗯? 难道我不是一枚金色的杜布隆, 不能给您留下好印象吗? 不管怎样, 让我们谈生意吧, 放贷人。 ", "呃, 我真想教教您一些礼貌, 但我没时间。 还是谈谈钱吧。 ")),
 				RandPhraseSimple(LinkRandPhrase("很高兴见到我的老朋友! ", "来这里总是一种乐趣, 朋友。 让我们直接谈生意吧。 ", "我也很高兴。 让我们谈生意吧, 朋友。 "),LinkRandPhrase("真的很高兴见到您。 金融界有什么新消息? ", "很高兴您还记得我。 我赶时间, 所以让我们直接谈生意吧。 ", "你好, 老朋友! 很高兴再次见到您! ")));
 				link.l1.go = "next";
 			}
@@ -2719,7 +2719,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 		break;
 		
-		// 贝丝夫人 -->
+		// 贝丝女士 -->
 		case "LadyBeth_Usurer_1":
 			dialog.text = "当然! 很多人只是想拿到钱就离开。 尤其是考虑到最近的传言... ";
 			link.l1 = "什么传言? ";
@@ -2733,7 +2733,7 @@ void ProcessDialogEvent()
 			npchar.quest.item_date = "LadyBeth";
 			pchar.questTemp.LadyBeth_Usurer = true;
 		break;
-		// 贝丝夫人 <--
+		// 贝丝女士 <--
 	}	
 }
 

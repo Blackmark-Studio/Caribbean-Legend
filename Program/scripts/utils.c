@@ -96,6 +96,24 @@ void SetNationRelations()
 }
 
 // метод установки отношений по дипломату
+int GetDiplomatRate(bool bTrait, int iNation)
+{
+    int iCurThreat = wdmGetNationThreat(iNation);
+    int iCurProblem = abs(ChangeCharacterNationReputation(pchar, iNation, 0));
+    int iTargetThreat = GetIntByCondition(bTrait, iCurThreat - 1, iCurThreat - 2);
+    if (iTargetThreat < 0) iTargetThreat = 0;
+    int iRel;
+    switch (iTargetThreat)
+    {
+        case 0: iRel = 0;  break;
+        case 1: iRel = 10; break;
+        case 2: iRel = 15; break;
+        case 3: iRel = 20; break;
+        case 4: iRel = 30; break;
+    }
+    return iCurProblem - iRel;
+}
+
 void ChangeNationRelationFromRelationAgent(aref chr)
 {
 	int iNation = sti(chr.quest.relation);
@@ -115,9 +133,12 @@ void ChangeNationRelationFromRelationAgentComplete(string sQuest)
 	int iNation = sti(pchar.quest.(sQuest).nation);
     string sNation = "RelationAgentRate" + GetNationNameByType(iNation);
     
-	SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
-	ChangeCharacterNationReputation(pchar, iNation, sti(Pchar.GenQuest.(sNation)));
-	sti(Pchar.GenQuest.(sNation)) = 0; // чтоб второй раз не было
+	SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL); // Для Локсли всегда нейтралим
+    // --> С трейтом гарантированно обнуляем, даже если покуролесили после оплаты
+    int iRate = ChangeCharacterNationReputation(pchar, iNation, 0);
+    if(HasShipTrait(pchar, "trait23") && iRate < 0) Pchar.GenQuest.(sNation) = abs(iRate);
+    // <--
+    ChangeCharacterNationReputation(pchar, iNation, sti(Pchar.GenQuest.(sNation)));
 	sNation = "RelationAgent" + GetNationNameByType(iNation);
     Pchar.GenQuest.(sNation) = false;
     
@@ -133,26 +154,20 @@ void ChangeNationRelationFromRelationAgentComplete(string sQuest)
 void ChangeNationRelationFromFadeyComplete(string sQuest) 
 {
 	int iNation = sti(pchar.GenQuest.FadeyNation);
-	int rate = sti(pchar.GenQuest.FadeyNation.Rate);
-	int nowrate = abs(ChangeCharacterNationReputation(pchar, iNation, 0));
-	int iChange = GetIntByCondition(HasShipTrait(pchar, "trait23"), 20, 30);
-	
 	if (ChangeCharacterNationReputation(pchar, iNation, 0) < 0)
 	{
-		if (nowrate <= iChange)
-		{
-			SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
-			if (rate <= nowrate) ChangeCharacterNationReputation(pchar, iNation, rate);
-			else ChangeCharacterNationReputation(pchar, iNation, nowrate);
-		}
-		else ChangeCharacterNationReputation(pchar, iNation, iChange);
-	}
-	else SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
-	
+        int rate = sti(pchar.GenQuest.FadeyNation.Rate);
+        int nowrate = abs(ChangeCharacterNationReputation(pchar, iNation, 0));
+        if (nowrate < rate) rate = nowrate;
+        ChangeCharacterNationReputation(pchar, iNation, rate);
+    }
+    // Если без НЗГ, то вдобавок нейтралим
+    if (wdmGetNationThreat(iNation) == 0) SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
+
 	ref sld = characterFromId("Fadey");
 	if (CheckAttribute(sld, "quest.relation")) DeleteAttribute(sld, "quest.relation");
 	if (CheckAttribute(pchar, "GenQuest.FadeyNation")) DeleteAttribute(pchar, "GenQuest.FadeyNation");
-	
+
 	//Log_Info(XI_ConvertString("FadeyDone")); // patch-10
 	LaunchMessage(XI_ConvertString("FadeyDone"));
 }
@@ -160,21 +175,15 @@ void ChangeNationRelationFromFadeyComplete(string sQuest)
 void ChangeNationRelationFromBenuaComplete(string sQuest) // 141012
 {
 	int iNation = sti(pchar.GenQuest.BenuaNation);
-	int rate = sti(pchar.GenQuest.BenuaNation.Rate);
-	int nowrate = abs(ChangeCharacterNationReputation(pchar, iNation, 0));
-	int iChange = GetIntByCondition(HasShipTrait(pchar, "trait23"), 20, 30);
-	
 	if (ChangeCharacterNationReputation(pchar, iNation, 0) < 0)
 	{
-		if (nowrate <= iChange)
-		{
-			SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
-			if (rate <= nowrate) ChangeCharacterNationReputation(pchar, iNation, rate);
-			else ChangeCharacterNationReputation(pchar, iNation, nowrate);
-		}
-		else ChangeCharacterNationReputation(pchar, iNation, iChange);
-	}
-	else SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
+        int rate = sti(pchar.GenQuest.BenuaNation.Rate);
+        int nowrate = abs(ChangeCharacterNationReputation(pchar, iNation, 0));
+        if (nowrate < rate) rate = nowrate;
+        ChangeCharacterNationReputation(pchar, iNation, rate);
+    }
+    // Если без НЗГ, то вдобавок нейтралим
+    if (wdmGetNationThreat(iNation) == 0) SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
 	
 	ref sld = characterFromId("Benua");
 	if (CheckAttribute(sld, "quest.relation")) DeleteAttribute(sld, "quest.relation");
@@ -187,7 +196,7 @@ void ChangeNationRelationFromBenuaComplete(string sQuest) // 141012
 int CalculateRelationSum(int iNation)
 {
 	string sNation = "RelationAgentRate" + GetNationNameByType(iNation);
-	Pchar.GenQuest.(sNation) = abs(ChangeCharacterNationReputation(pchar, iNation, 0))
+	Pchar.GenQuest.(sNation) = abs(ChangeCharacterNationReputation(pchar, iNation, 0));
 	int iSumm = sti(Pchar.GenQuest.(sNation)) * 1500 +  makeint(stf(Pchar.rank)/stf(Pchar.reputation.nobility)*100000);
 
 	//iSumm = iSumm * (1.0 + (0.1 * MOD_SKILL_ENEMY_RATE));
@@ -1058,16 +1067,6 @@ void GiveItemToTrader(aref ch)
 		
 		case "company": //Jason: главный клерк ГВИК: приборы, часы, карты, подзорные трубы
 			AddItems(ch, "sand_clock", 	1);	// песочные часы
-			if(GetDLCenabled(DLC_APPID_1))
-			{
-				irand = hrand(1, tag);
-				if(irand == 1) AddItems(ch, "pistol10", 1);
-			}
-			/* if(CheckAttribute(pchar,"questTemp.HWIC.Detector") && pchar.questTemp.HWIC.Detector == "holl_win")
-			{
-				irand = hrand(10, tag);
-				if(irand == 9) AddItems(ch, "mushket8", 1);
-			} */
 			if(rank > 24)
 			{
 				irand = hrand(1, tag);

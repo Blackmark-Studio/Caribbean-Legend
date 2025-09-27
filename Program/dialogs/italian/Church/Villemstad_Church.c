@@ -59,7 +59,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "caleuche_7":
-			Log_Info("You have received church amulets");
+			Log_Info("Avete ricevuto gli amuleti della chiesa");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "amulet_2"); 
 			GiveItem2Character(pchar, "amulet_6"); 

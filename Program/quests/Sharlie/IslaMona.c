@@ -1565,13 +1565,13 @@ void IslaMona_ChurchPrepareCelebrar(string qName) // готовим праздн
 
 void IslaMona_ChurchCelebrarGo(string qName) // запускаем праздник в церкви
 {
-	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && CheckPassengerInCharacter(pchar, "Mary"))
 	{
 		sld = characterFromId("Mary"); // Мэри
 		ChangeCharacterAddressGroup(sld, "IslaMona_church", "goto", "girl"); 
 		LAi_SetActorType(sld);
 	}
-	if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+	if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1 && CheckPassengerInCharacter(pchar, "Helena"))
 	{
 		sld = characterFromId("Helena"); // Элен
 		ChangeCharacterAddressGroup(sld, "IslaMona_church", "goto", "girl"); 
@@ -1587,7 +1587,7 @@ void IslaMona_ChurchTavernStandUp() // ГГ встает из-за стола, �
 	LAi_Fade("", "");
 	ChangeCharacterAddressGroup(pchar, "IslaMona_town", "goto", "goto10"); 
 	LAi_SetPlayerType(pchar);
-	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) // есть Мэри
+	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && CheckPassengerInCharacter(pchar, "Mary"))
 	{
 		sld = characterFromId("Mary"); 
 		sld.dialog.currentnode = "IslaMona_4";
@@ -1600,7 +1600,7 @@ void IslaMona_ChurchTavernStandUp() // ГГ встает из-за стола, �
 		}
 		return;
 	}
-	if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) // есть Элен
+	if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1 && CheckPassengerInCharacter(pchar, "Helena"))
 	{
 		sld = characterFromId("Helena"); 
 		sld.dialog.currentnode = "IslaMona_4";
@@ -2032,13 +2032,13 @@ bool IslaMona_QuestComplete(string sQuestName, string qname)
 			LAi_SetLoginTime(sld, 6.0, 22.0);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		}
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && CheckPassengerInCharacter(pchar, "Mary"))
 		{
 			sld = characterFromId("Mary"); // Мэри
 			ChangeCharacterAddressGroup(sld, "IslaMona_Town", "goto", "goto2"); /// ОПРЕДЕЛИТЬ ЛОКАТОР
 			LAi_SetOfficerType(sld);
 		}
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1 && CheckPassengerInCharacter(pchar, "Helena"))
 		{
 			sld = characterFromId("Helena"); // Элен
 			ChangeCharacterAddressGroup(sld, "IslaMona_Town", "goto", "goto2"); /// ОПРЕДЕЛИТЬ ЛОКАТОР

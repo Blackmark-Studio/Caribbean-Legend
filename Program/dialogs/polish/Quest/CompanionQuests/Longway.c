@@ -2096,6 +2096,7 @@ void ProcessDialogEvent()
 			link.l1 = "Niewolników, prawda?";
 			link.l1.go = "PZ_Longway_PosleRasskaza_Shifr_3";
 			AddQuestRecordInfo("PZ_ArchiveOneMerden", "1");
+			RemoveItems(PChar, "MerdokArchive", 1);
 		break;
 		
 		case "PZ_Longway_PosleRasskaza_Shifr_3":
@@ -5162,12 +5163,12 @@ void ProcessDialogEvent()
 			if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie")) 
 			{
 				AddLandQuestMark(characterFromId("Terrax"), "questmarkmain");
-				QuestSetCurrentNode("Terrax", "PZ1");
+				QuestSetCurrentNode("Terrax", "PZ_1");
 			}
 			else 
 			{
 				AddLandQuestMark(characterFromId("Vensan"), "questmarkmain");
-				QuestSetCurrentNode("Vensan", "PZ1");
+				QuestSetCurrentNode("Vensan", "PZ_1");
 			}
 			DeleteAttribute(pchar, "GenQuest.DontSetCabinOfficer");
 			chrDisableReloadToLocation = false;
@@ -7387,7 +7388,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_TortureRoom_Levasser_16":
 			dialog.text = "Dla ciebie to Signor de René de Buaduflé de Lettre.";
-			link.l1 = "Nie obchodzi mnie to. Wyciągnij swoją szablę i pokaż mi, ile jesteś wart w walce – z mężczyzną, a nie bezbronną dziewczyną.";
+			link.l1 = "Signor de René- srelelele! Nie obchodzi mnie to. Wyciągnij swoją szablę i pokaż mi, ile jesteś wart w walce – z mężczyzną, a nie bezbronną dziewczyną.";
 			link.l1.go = "PZ_TortureRoom_Levasser_17";
 		break;
 		

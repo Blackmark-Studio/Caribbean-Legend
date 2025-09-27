@@ -2842,7 +2842,7 @@ void CaptainComission_GenerateSituation(ref chref)
 	{
 		aref chrShip;
 		makearef(chrShip, chref.Back.Ship);
-    ref origCap = CharacterFromID(chref.CaptanId); // mitrokosta фикс пасхалки с сундуками
+        ref origCap = CharacterFromID(chref.CaptanId); // mitrokosta фикс пасхалки с сундуками
 		if (CheckAttribute(chrShip, "Mode") && chrShip.Mode == "trade")
 		{
 			if(rand(4) == 1 || bBettaTestMode) // временно, для бетатеста 

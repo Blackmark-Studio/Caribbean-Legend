@@ -4365,7 +4365,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+				if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && CheckPassengerInCharacter(pchar, "Mary"))
 				{
 					sld = characterFromId("Mary");
 					sld.dialog.currentnode = "IslaMona_2";
@@ -4374,7 +4374,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+					if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1 && CheckPassengerInCharacter(pchar, "Helena"))
 					{
 						sld = characterFromId("Helena");
 						sld.dialog.currentnode = "IslaMona_2";
@@ -5263,7 +5263,7 @@ void ProcessDialogEvent()
 		case "mirabelle_47":
             DialogExit();
 		    npchar.dialog.currentnode = "mirabelle_42";
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && CheckPassengerInCharacter(pchar, "Mary"))
 			{
 				sld = characterFromId("Mary");
 				sld.dialog.currentnode = "IslaMona_2";
@@ -5272,7 +5272,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+				if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1 && CheckPassengerInCharacter(pchar, "Helena"))
 				{
 					sld = characterFromId("Helena");
 					sld.dialog.currentnode = "IslaMona_2";

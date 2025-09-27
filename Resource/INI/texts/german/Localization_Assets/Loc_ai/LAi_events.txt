@@ -1,0 +1,4 @@
+LAi_events_1
+{
+Die Strelitzen-Schärpe ist zerstört.
+}

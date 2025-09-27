@@ -70,6 +70,7 @@ void SeaHunterCheck(int iNation)
             else sld.GenShip.Spec = SHIP_SPEC_WAR;
             sld.GenShip.Class = iShips[i-1];
             SetShipHunter(sld);
+            Fantom_SetPrize(sld);
             sld.WatchFort = true; //видеть форты
             SetFantomParamHunter(sld); //крутые парни
             SetCaptanModelByEncType(sld, "war");
@@ -320,14 +321,11 @@ void FireBrigadeCheck(int iNation)
             iShips[4] = 4;
         }
 
-        int iDays;
-        if(bSkip) iDays = 8;
-        else iDays = 29;
-
+        int iDays = 6 + rand(6);
         for (i = 1; i <= 6; i++)
         {
             if(iShips[i - 1] == 0) break;
-            sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", 5, iNation, iDays, true, "hunter"));
+            sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", 5, iNation, iDays + 1, true, "hunter"));
             if(i == 1)
             {
                 //"quest"?
@@ -410,6 +408,7 @@ void FireBrigadeCheck(int iNation)
                 SetShipHunter(sld);
                 SetCaptanModelByEncType(sld, "war");
             }
+            //Fantom_SetPrize(sld);
             SetFantomParamHunter(sld);
             if(i == 1) SetBrigadierLoot(sld, iNation);
             sld.WatchFort = true;
@@ -429,8 +428,8 @@ void FireBrigadeCheck(int iNation)
         Group_LockTask(sGroup);
 
         // Механика мощи
-        if(bSkip) Map_CreateTrader("", "", sCapId + "1", 7);
-        else Map_CreateWarrior("", sCapId + "1", 28);
+        if(bSkip) Map_CreateTrader("", "", sCapId + "1", iDays);
+        else Map_CreateWarrior("", sCapId + "1", iDays);
     }
 
     SetFunctionTimerCondition("FireBrigade_" + sNation, 0, 0, 5 + rand(4), true);
@@ -510,6 +509,12 @@ void FireBrigadeSink(string qName)
     sTemp = "FireBrigade_" + sNation;
     PChar.quest.(sTemp).over = "yes"; // Ваша песенка спета, сэр
 	CheckFireBrigadeAchievements(iNation, "Sink");
+
+    // Нулим отношения по выходу
+    sTemp = "NationIntimidated" + sNation;
+    PChar.quest.(sTemp).win_condition.l1 = "ExitFromSea";
+	PChar.quest.(sTemp).function = "NationIntimidated";
+    PChar.quest.(sTemp).Nation = iNation;
 }
 
 void FireBrigadeCapture(string qName)
@@ -529,6 +534,54 @@ void FireBrigadeCapture(string qName)
     sTemp = "FireBrigade_" + sNation;
     PChar.quest.(sTemp).over = "yes";
 	CheckFireBrigadeAchievements(iNation, "Capture");
+
+    // Нулим отношения по выходу
+    sTemp = "NationIntimidated" + sNation;
+    PChar.quest.(sTemp).win_condition.l1 = "ExitFromSea";
+	PChar.quest.(sTemp).function = "NationIntimidated";
+    PChar.quest.(sTemp).Nation = iNation;
+}
+
+void NationIntimidated(string qName)
+{
+    int iNation = sti(PChar.quest.(qName).Nation);
+    string attrNation = iNation;
+    TEV.ThreatResetMsg.(attrNation) = abs(ChangeCharacterNationReputation(PChar, iNation, 0));
+    // Без отложенного вызова не отобразит
+    SetEventHandler("ShowThreatResetMsg" + iNation, "ThreatResetMsg", 0);
+    PostEvent("ShowThreatResetMsg" + iNation, 100);
+}
+
+void ThreatResetMsg()
+{
+    aref aNations, aNation;
+    makearef(aNations, TEV.ThreatResetMsg);
+    int qty = GetAttributesNum(aNations);
+    if (qty == 0)
+    {
+        DeleteAttribute(&TEV, "ThreatResetMsg");
+        DelEventHandler("ShowThreatResetMsg" + iNation, "ThreatResetMsg");
+        return;
+    }
+    string sText = XI_ConvertString("ThreatReset1");
+    string sTemp;
+    int iNation, iChange;
+    for(int i=0; i < qty; i++)
+    {
+        aNation = GetAttributeN(aNations, i);
+        iNation = sti(GetAttributeName(aNation));
+        iChange = sti(GetAttributeValue(aNation)) - 5;
+        SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
+        ChangeCharacterNationReputation(PChar, iNation, iChange);
+        sTemp = XI_ConvertString(GetNationNameByType(iNation) + "Gen");
+        if(i == 0) sText += sTemp;
+        else if(i != qty-1) sText += ", " + sTemp;
+        else sText += " " + XI_ConvertString("And") + " " + sTemp;
+    }
+    sText += "." + NewStr() + XI_ConvertString("ThreatReset2");
+    LaunchMessage(sText);
+    DeleteAttribute(&TEV, "ThreatResetMsg");
+    DelEventHandler("ShowThreatResetMsg" + iNation, "ThreatResetMsg");
 }
 
 void SetBrigadierLoot(ref sld, int iNation)

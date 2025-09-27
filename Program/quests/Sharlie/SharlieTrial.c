@@ -1245,6 +1245,14 @@ void VsD_DiegoInTaverna_2(string qName)
 	FreeSitLocator("PortPax_tavern", "sit5");
 }
 
+void VsD_DiegoInTaverna_3()
+{
+	sld = CharacterFromID("Diego_Clone");
+	LAi_CharacterDisableDialog(sld);
+	sld = CharacterFromID("GiumDyubua");
+	LAi_CharacterDisableDialog(sld);
+}
+
 void VsD_GoToCity(string qName)
 {
 	sld = CharacterFromID("GiumDyubua");
@@ -1607,6 +1615,167 @@ void VsD_Vzriv_10(string qName)
 		LAi_SetActorType(sld);
 		LAi_ActorRunToLocator(sld, "rld", "loc0", "", -1);
 	}
+}
+
+void VsD_AfterVzriv_1()
+{
+	sld = GetCharacter(CreateCharacterClone(CharacterFromID("PortPaxAmmoOff"), 0));
+	sld.id = "PortPaxAmmoOff_clone";
+	LAi_LoginInCaptureTown(sld, true);
+	ChangeCharacterAddressGroup(sld, "PortPax_town", "quest", "quest1");
+	LAi_SetActorType(sld);
+	LAi_ActorFollow(sld, pchar, "", -1);
+}
+
+void VsD_AfterVzriv_2()
+{
+	LAi_SetStayType(pchar);
+	sld = CharacterFromID("PortPaxAmmoOff_clone");
+	sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
+	sld.dialog.currentnode = "VsD_Komendant";
+	LAi_SetActorType(sld);
+	LAi_ActorDialog(sld, pchar, "", 3, 0);
+}
+
+void VsD_AfterVzriv_3()
+{
+	sld = CharacterFromID("Tichingitu");
+	if (sld.location == pchar.location && !LAi_IsDead(sld))
+	{
+		LAi_SetActorType(sld);
+		LAi_ActorGoToLocator(sld, "reload", "reload1", "", -1);
+	}
+}
+
+void VsD_AfterVzriv_4()
+{
+	sld = CharacterFromID("Tichingitu");
+	if (sld.location == pchar.location && !LAi_IsDead(sld))
+	{
+		LAi_SetOfficerType(sld);
+		sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
+		sld.Dialog.CurrentNode = "Tichingitu_officer";
+	}
+	if (GetCharacterIndex("Folke") != -1 && CheckPassengerInCharacter(pchar, "Folke"))
+	{
+		sld = CharacterFromID("Folke");
+		ChangeCharacterAddressGroup(sld, "none", "", "");
+		sld.Dialog.Filename = "Enc_Officer_dialog.c";
+		sld.Dialog.CurrentNode = "hired";
+	}
+	else
+	{
+		sld = CharacterFromID("Alonso");
+		ChangeCharacterAddressGroup(sld, "none", "", "");
+	}
+}
+
+void VsD_AfterVzriv_5()
+{
+	sld = CharacterFromID("VsD_Tsyganka");
+	ChangeCharacterAddressGroup(sld, "PortPax_town", "reload", "reload5_back");
+	LAi_CharacterEnableDialog(sld);
+	LAi_SetActorType(sld);
+	LAi_ActorFollow(sld, pchar, "", -1);
+}
+
+void VsD_AfterVzriv_6()
+{
+	pchar.ship.HP = sti(pchar.ship.HP) / 2;
+	pchar.Ship.Crew.Quantity = sti(pchar.ship.Crew.Quantity) - sti(pchar.ship.Crew.Quantity) / 7;
+	AddCharacterGoodsSimple(pchar, GOOD_PLANKS, 100);
+}
+
+void VsD_AfterVzriv_7()
+{
+	sld = CharacterFromID("PortRoyal_shipyarder");
+	sld.TrialDelQuestMark = true;
+	AddLandQuestMark(sld, "questmarkmain");
+	AddMapQuestMarkCity("PortRoyal", false);
+}
+
+void VsD_AfterVzriv_8()
+{
+	LAi_SetStayType(pchar);
+			
+	sld = CharacterFromID("VsD_Tsyganka");
+	sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
+	sld.dialog.currentnode = "VsD_Tsyganka";
+	LAi_SetActorType(sld);
+	LAi_ActorDialog(sld, pchar, "", 3, 0);
+	
+	sld = CharacterFromID("PortPaxAmmoOff_clone");
+	sld.lifeday = 0;
+	LAi_SetActorType(sld);
+	LAi_ActorGoToLocation(sld, "reload", "gate_back", "none", "", "", "", -1);
+}
+
+void VsD_Final_1()
+{
+	for (i=3; i<=8; i++)
+	{				
+		sld = CharacterFromID("VsD_MirnyeMan_"+i);
+		LAi_SetCitizenType(sld);
+	}
+	for (i=3; i<=6; i++)
+	{				
+		sld = CharacterFromID("VsD_MirnyeWoman_"+i);
+		LAi_SetCitizenType(sld);
+	}
+	for (i=1; i<=6; i++)
+	{				
+		sld = CharacterFromID("VsD_Sold_"+i);
+		LAi_SetCitizenType(sld);
+	}
+	//Возвращаем всё обратно
+	chrDisableReloadToLocation = false;
+	bDisableFastReload = false;
+	bDisableCharacterMenu = false;
+	SetLocationCapturedState("PortPax_town", false);
+	Locations[FindLocation("PortPax_town")].locators_radius.quest.quest1 = 1.0;
+	Locations[FindLocation("PortPax_town")].locators_radius.patrol.patrol14 = 0.5;
+	LocatorReloadEnterDisable("PortPax_ExitTown", "reload2_back", false);
+	LocatorReloadEnterDisable("PortPax_ExitTown", "reload1_back", false);
+	LAi_LocationFightDisable(&Locations[FindLocation("PortPax_town")], false);
+	LAi_LocationFightDisable(&Locations[FindLocation("PortPax_Fort")], false);
+	
+	for (i=1; i<=5; i++)
+	{
+		sld = CharacterFromID("VsD_Guard_"+i);
+		sld.lifeday = 0;
+	}
+	//Диего исчезает
+	sld = CharacterFromID("Diego_Clone");
+	sld.lifeday = 0;
+	//Верфь закрывается
+	LocatorReloadEnterDisable("PortPax_Town", "reload5_back", true);
+	SetTimerCondition("VsD_VerfOtkryt", 0, 0, 7, false);
+	//Труп предателя в джунглях
+	PChar.quest.VsD_TrupPredatelya.win_condition.l1 = "location";
+	PChar.quest.VsD_TrupPredatelya.win_condition.l1.location = "PortPax_ExitTown";
+	PChar.quest.VsD_TrupPredatelya.win_condition = "VsD_TrupPredatelya";
+	SetTimerCondition("VsD_TrupPredatelya_3", 0, 0, 60, false);
+}
+
+void VsD_Tsyganka_Net()
+{
+	LAi_SetPlayerType(pchar);
+	AddQuestRecord("Trial", "7_1");
+	sld = CharacterFromID("VsD_Tsyganka");
+	LAi_SetCitizenType(sld);
+	LAi_CharacterDisableDialog(sld);
+}
+
+void VsD_Tsyganka_Da()
+{
+	LAi_SetPlayerType(pchar);
+	AddQuestRecord("Trial", "7_1");
+	AddCharacterExpToSkill(pchar, "Repair", 20);
+	AddMoneyToCharacter(pchar, -1000);
+	GiveItem2Character(PChar, "obereg_1");
+	sld = CharacterFromID("VsD_Tsyganka");
+	LAi_SetCitizenType(sld);
+	LAi_CharacterDisableDialog(sld);
 }
 // <== "Встреча с Диего"
 
@@ -2953,7 +3122,8 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	// Sinistra - квест "Встреча с Диего" ==>
 	else if (sQuestName == "VsD_DiegoNachalo")
 	{
-			sld = CharacterFromID("Diego");
+			sld = GetCharacter(CreateCharacterClone(CharacterFromID("Diego"), -1));
+			sld.id = "Diego_Clone";
 			LAi_SetImmortal(sld, true);
 			LAi_SetActorType(sld);
 			ChangeCharacterAddressGroup(sld, PChar.location, "reload", "houseF1");
@@ -2975,7 +3145,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			FreeSitLocator("PortPax_tavern", "sit_base2");
 			FreeSitLocator("PortPax_tavern", "sit_front2");
 			
-			sld = CharacterFromID("Diego");
+			sld = CharacterFromID("Diego_Clone");
 			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
 			sld.dialog.currentnode = "VsD_DiegoAndErnat";
 			ChangeCharacterAddressGroup(sld, "PortPax_tavern", "sit", "sit_front2");

@@ -73,7 +73,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SJ_talk_4":
-			dialog.text = "In genere sì. Ma adesso pare impossibile: la casa è sempre sprangata, una mezza dozzina di alabardieri scelti piantonano giorno и notte, e fanno entrare к нему только одного доверенного — старого канонира Charlie, detto il Knippel.";
+			dialog.text = "In genere sì. Ma adesso pare impossibile: la casa è sempre sprangata, una mezza dozzina di alabardieri scelti piantonano giorno и notte, e fanno entrare con un solo confidente, un vecchio artigliere. Charlie, detto il Knippel.";
 			link.l1 = "Già è qualcosa...";
 			link.l1.go = "SJ_talk_5";
 		break;
@@ -819,7 +819,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_after_drink_1":
-			dialog.text = "La banda di Austin era rinomata per attirare i capitani liberi nei boschi, farli a pezzi e ripulire i loro cadaveri da ogni moneta o gingillo. Un affare redditizio, e di avventurieri qui non manca mai, quindi nessuno si lamentava. Ma una volta hanno sbagliato с капитаном, così dovette rifugiarsi sotto l’ala della Compagnia. Lo tenevamo al guinzaglio e lo lasciavamo libero solo quando serviva risolvere qualche faccenda in fretta e senza troppi complimenti.";
+			dialog.text = "La banda di Austin era rinomata per attirare i capitani liberi nei boschi, farli a pezzi e ripulire i loro cadaveri da ogni moneta o gingillo. Un affare redditizio, e di avventurieri qui non manca mai, quindi nessuno si lamentava. Ma una volta hanno sbagliato con il capitano, così dovette rifugiarsi sotto l’ala della Compagnia. Lo tenevamo al guinzaglio e lo lasciavamo libero solo quando serviva risolvere qualche faccenda in fretta e senza troppi complimenti.";
 			link.l1 = "Dubito di poter concludere un accordo con un tipo del genere.";
 			link.l1.go = "tonzag_after_drink_2";
 		break;

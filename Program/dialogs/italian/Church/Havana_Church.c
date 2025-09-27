@@ -43,7 +43,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			DialogExit();
 			AddQuestRecord("Caleuche", "27");
 			pchar.questTemp.Caleuche = "cave";
-			Log_Info("You have received a church amulet");
+			Log_Info("Avete ricevuto un amuleto della chiesa");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "amulet_7"); 
 			if (GetCharacterIndex("cavehunter") != -1)
@@ -73,7 +73,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "caleuche_6":
-			Log_Info("You have received church amulets");
+			Log_Info("Avete ricevuto gli amuleti della chiesa");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "amulet_3"); 
 			GiveItem2Character(pchar, "amulet_9"); 

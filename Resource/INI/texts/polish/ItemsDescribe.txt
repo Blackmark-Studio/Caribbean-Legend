@@ -125,7 +125,7 @@ Legendarny rapier używany przez Dalmatyńską Gwardię Dożów Weneckich. Jego 
 itmname_blade_07 {Miecz Rycerski}
 itmdescr_blade_07
 {
-Palasz, którego używała ciężka kawaleria z zeszłego stulecia. Jego ciężkie ostrze może przebić się przez prawie każdy pancerz. Jednak jego waga i wyważenie sprawiają, że jest bardzo niepraktyczny w walce pieszej.
+Pałasz, którego używała ciężka kawaleria z zeszłego stulecia. Jego ciężkie ostrze może przebić się przez prawie każdy pancerz. Jednak jego waga i wyważenie sprawiają, że jest bardzo niepraktyczny w walce pieszej.
 }
 
 itmname_blade_08 {Bilbo}
@@ -158,13 +158,13 @@ itmdescr_blade_12
 Nieco dłuższa od kordelasa, lecz krótsza od szabli. Ten miecz jest wygodną i kompaktową bronią muszkieterów i artylerzystów. Dobry do walki w działaniach na morzu i na lądzie.
 }
 
-itmname_blade_13 {Palasz}
+itmname_blade_13 {Pałasz}
 itmdescr_blade_13
 {
-Ten typ miecza stał się ostatnio dość popularny wśród oficerów francuskiej marynarki wojennej nie tylko jako oznaka rangi, ale także jako niezawodne ostrze bojowe. Palasz może być niszczycielski w rękach silnego i utalentowanego człowieka. Mimo wszystko jest trochę za ciężki do pojedynków.
+Ten typ miecza stał się ostatnio dość popularny wśród oficerów francuskiej marynarki wojennej nie tylko jako oznaka rangi, ale także jako niezawodne ostrze bojowe. Pałasz może być niszczycielski w rękach silnego i utalentowanego człowieka. Mimo wszystko jest trochę za ciężki do pojedynków.
 }
 
-itmname_blade_14 {Miecz Walonski}
+itmname_blade_14 {Miecz Waloński}
 itmdescr_blade_14
 {
 Rapier dość popularny wśród żołnierzy w hiszpańskiej Holandii. Wymaga nie tyle umiejętności, co mobilności, zwinności i siły. Dzięki niemu z łatwością można podciąć przedramię każdemu miłośnikowi eleganckiej szermierki, który odważy się rzucić komukolwiek wyzwanie.
@@ -216,6 +216,7 @@ itmname_blade_22 {Gniew Proroka}
 itmdescr_blade_22
 {
 Stara, prawie prosta szabla z zakrzywioną rękojeścią, równie dobra.
+}
 
 itmname_blade_23 {Bulat}
 itmdescr_blade_23
@@ -414,7 +415,7 @@ itmdescr_blade_41
 Relikt odległej cywilizacji, tragicznie zagubiony na nieznanych wodach. Jego unikalna konstrukcja pozwala na opanowanie wszystkich stylów szermierki, zyskując dodatkowe obrażenia dzięki najbardziej zaawansowanej umiejętności broni białej.
 }
 
-itmname_blade_42 {Wojskowy Palasz}
+itmname_blade_42 {Wojskowy Pałasz}
 itmdescr_blade_42
 {
 Standardowa broń żołnierza. Do sprawnego posługiwania się wymaga jedynie minimalnego przeszkolenia. 
@@ -436,10 +437,10 @@ Ostrze zostało wykute z doskonałej stali i doskonale wyważone.
 (+10 do Broni Wyrównanej)
 }
 
-itmname_q_blade_13 {Palasz Jurgena Schmidt'a}
+itmname_q_blade_13 {Pałasz Jurgena Schmidt'a}
 itmdescr_q_blade_13
 {
-Palasz oficerski wykonany przez mistrza kowalstwa - Jurgena Schmidt'a.
+Pałasz oficerski wykonany przez mistrza kowalstwa - Jurgena Schmidt'a.
 Ostrze zostało wykute z doskonałej stali i doskonale wyważone.
 (+10 do Broni Ciężkiej)
 }
@@ -704,12 +705,18 @@ itmname_Mushket2x2 {Dwulufowy karabinek}
 itmdescr_Mushket2x2
 {
 Ten piękny karabinek typu side-by-side jest częściej spotykany wśród wysokiej klasy szlachciców polujących na jelenie. Kule wystrzeliwane z gwintowanych luf bezpiecznie trafiają w każdy cel, cztero i dwunożny. Wymaga ołowianych kul do oddawania strzałów. Wymaga dużego doświadczenia w zakresie broni palnej.
-} 
+}
+
+itmname_mushket10 {Muszkiet cesarski}
+itmdescr_mushket10
+{
+Jednostrzałowy muszkiet szlachecki z czasów wojny trzydziestoletniej. Wyposażony w bagnet i zdobiony motywami typowymi dla Świętego Cesarstwa Rzymskiego. ~ Przywództwo +10. Zadaje o 25% więcej obrażeń atakami wręcz.
+}
 
 itmname_howdah {Howdah}
 itmdescr_howdah
 {
-Dwulufowy pistolet dużego kalibru, najlepszy przyjaciel myśliwego w afrykańskim buszu i indyjskiej dżungli. Niezawodnie usypia dziki, tygrysy, lwy oraz agresywnych tubylców jednym strzałem! Używa śrutu, bądź ołowianych kul do strzelania. Wymaga dużego doświadczenia w zakresie broni palnej.
+Dwulufowy pistolet dużego kalibru, najlepszy przyjaciel myśliwego w afrykańskim buszu i indyjskiej dżungli. Niezawodnie usypia dziki, tygrysy, lwy oraz agresywnych tubylców jednym strzałem! Załadowana śrutem i pokruszonymi gwoździami. Wymaga dużego doświadczenia w zakresie broni palnej.
 }
 
 ; ==================================================================================================================== ZBROJA
@@ -963,6 +970,18 @@ Ten kapelusz jest znany w każdym zakątku Karaibów i wszędzie wspominany z dr
 ~
 Zmniejsza karę za uszkodzenia statku o 30%.
 10% szans na uniknięcie obrażeń od strzału.
+}
+
+itmname_hat10 {Kapelusz najemnika}
+itmdescr_hat10
+{
+Ten polowy opancerzony kapelusz wygląda niepozornie, ale potrafi zatrzymać kulę i uratować życie. ~ Zmniejsza wszelkie obrażenia o 18%, zużywając 1 ładunek za każdym razem.
+}
+
+itmname_hat10_part {Garbiona skóra}
+itmdescr_hat10_part
+{
+Dobry kawałek garbowanej byczej skóry. Idealny do wyrobu kapeluszy.
 }
 
 ; ==================================================================================================================== OPTYKA
@@ -1251,6 +1270,18 @@ Statek istnieje po obu stronach zasłony jednocześnie. Drewno było żywe, sta�
 Każde 2% utraconego kadłuba zwiększa szybkość i obrażenia dział o 0,75% i 0,5%.
 ~
 Brak kar, można używać wielokrotnie.
+}
+
+itmname_talisman20	{Przepaska strzelca}
+itmdescr_talisman20
+{
+Bandolier z kilku pasów, prochownica i liczne papierowe ładunki. Spotykany w różnych formach na europejskich polach bitew, lecz ten egzemplarz przybył z dalekich stron, ozdobiony wizerunkami fantastycznych bestii z surowych syberyjskich lasów. ~ Każdy strzał z dowolnej broni palnej zużywa 1 ładunek. Szybkość celowania wzrasta o 20%, maksymalne obrażenia z celowania wzrastają o 40%, szybkość przeładowania wzrasta o 10%.
+}
+
+itmname_talisman20_part {Prochownica muszkietera}
+itmdescr_talisman20_part
+{
+Fantazyjna prochownica o nietypowym kształcie, ozdobiona wizerunkami egzotycznych zwierząt z odległych krain. Krawędzie haftowane wschodnioeuropejskim wzorem.
 }
 
 ; ==================================================================================================================== TALIZMANY
@@ -2663,7 +2694,7 @@ M.'
 
 itmdescr_letter_adolf_1
 {
-'Marchello, uzgodniliśmy sumę dwa razy wyższą niż ta, którą mi podałeś. Karabin jest wart znacznie więcej, a ty o tym wiesz. Jeśli nie zapłacisz mi reszty, admirał natychmiast dowie się o twoich powiązaniach z Kaperem na "Eva".
+'Marcello, uzgodniliśmy sumę dwa razy wyższą niż ta, którą mi podałeś. Karabin jest wart znacznie więcej, a ty o tym wiesz. Jeśli nie zapłacisz mi reszty, admirał natychmiast dowie się o twoich powiązaniach z Kaperem na "Eva".
 Adolf.'
 }
 
@@ -2985,50 +3016,56 @@ itmdescr_potion5
 Ten gorzki, ale wzmacniający składnik, pozbawiony jest negatywnych skutków ubocznych.
 }
 
-itmname_potion6 {Inca potion}
+itmname_potion6 {Mikstura Inków}
 itmdescr_potion6
 {
 Ten eliksir został wynaleziony przez wojowników inkaskich świątyń, aby skupić ich agresję w walce. Zapobiega oszołomieniu w boju. Zmniejsza twoje zdrowie.
 }
 
-itmname_potion7 {Tears of Ixchel}
+itmname_potion7 {Łzy Ixchel}
 itmdescr_potion7
 {
 Wątpliwie gęsta, mleczna substancja bez zapachu i smaku, przygotowana przez kapłanów Majów na rytuał czczenia ich Bogini Księżyca. Według plotek (lokalni Indianie nadal utrzymują swoje sekrety), może przywrócić utracone zdrowie.
 }
 
-itmname_Ultimate_potion {Comanche potion}
+itmname_Ultimate_potion {Mikstura Comanche}
 itmdescr_Ultimate_potion
 {
 Cudowny eliksir zdolny wyleczyć nawet najgorsze choroby lub wyleczyć najgroźniejsze trucizny.
 }
 
-itmname_berserker_potion {Ometochli Tincture}
+itmname_berserker_potion {Nalewka Ometochli}
 itmdescr_berserker_potion
 {
 Legendarna mikstura, która uwalnia nadludzką siłę i wytrzymałość, zwiększa zwinność i czas reakcji, a także sprawia, że jej konsument jest niewrażliwy na ból.
 Efekt ten trwa nie dłużej niż 12 sekund raz na minutę. Uszkadza zdrowie.
 }
 
-itmname_mangarosapower {Tidal Wave potion}
+itmname_mangarosapower {Mikstura Fali Pływowej}
 itmdescr_mangarosapower
 {
 Mikstura Manga Rosa przygotowana według sekretnego cygańskiego przepisu Amelii.
 Tymczasowo zwiększa siłę, wytrzymałość oraz umiejętności w walce średnimi i ciężkimi broniami.
 }
 
-itmname_mangarosafast {Squall potion}
+itmname_mangarosafast {Mikstura Squalla}
 itmdescr_mangarosafast
 {
 Mikstura Manga Rosa przygotowana według sekretnego cygańskiego przepisu Amelii.
 Tymczasowo zwiększa reakcję, percepcję oraz umiejętności w walce lekkimi broniami i strzelaniu.
 }
 
-itmname_mangarosatotal {Sea Hug potion}
+itmname_mangarosatotal {Mikstura Mrskiego Uścisku}
 itmdescr_mangarosatotal
 {
 Mikstura Manga Rosa przygotowana według sekretnego cygańskiego przepisu Amelii.
 Tymczasowo zwiększa siłę, wytrzymałość, reakcję, percepcję, przywództwo i szczęście, a także umiejętności w walce wręcz i strzelaniu.
+}
+
+itmname_vodka	{Carska wódka}
+itmdescr_vodka
+{
+Nastój na spirytusie zbożowym z jałowcem i dziurawcem, destylowany i leżakowany z kroplą wody różanej i korzeniem galangalu. Używany przez strzelców Carstwa Rosyjskiego na polu bitwy jako rozgrzewający i wzmacniający napitek. ~ Zwiększa obrażenia w walce wręcz bronią palną o 30%. Ciosy bronią palną wysysają energię wroga. Zmniejsza obrażenia otrzymywane od strzałów o 10%.
 }
 
 itmname_cannabis1 {Bieluń}

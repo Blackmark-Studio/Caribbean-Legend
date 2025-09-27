@@ -6869,11 +6869,11 @@ bool CheckFunctionalTreasurer() {
 		return false;
 	}
 	
-	if (sld.id == "Knippel") {
+	if (sld.id == "Knippel" || sld.id == "Kneepel_FP") {
 		return false;
 	}
 	
-	if (sld.id == "Longway") {
+	if (sld.id == "Longway" || sld.id == "Longway_FP") {
 		return false;
 	}
 	

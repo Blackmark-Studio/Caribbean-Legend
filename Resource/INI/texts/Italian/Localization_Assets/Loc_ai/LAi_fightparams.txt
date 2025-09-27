@@ -2,3 +2,8 @@ LAi_fightparams_1
 {
 La schivata dallo sparo
 }
+
+LAi_fightparams_2
+{
+Il Cappello da Mercenario è distrutto.
+}

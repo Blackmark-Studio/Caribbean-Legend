@@ -211,6 +211,23 @@ void Mangarosa_DeleteEffect(string qName) //
 	DeleteAttribute(pchar, "questTemp.Mangarosa.Potion");
 }
 
+void VodkaEffect()
+{
+	pchar.VodkaEffect = true;
+	pchar.quest.VodkaEffect_del.win_condition.l1 = "Timer";
+	pchar.quest.VodkaEffect_del.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 50);
+	pchar.quest.VodkaEffect_del.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 50);
+	pchar.quest.VodkaEffect_del.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 50);
+	pchar.quest.VodkaEffect_del.function = "VodkaEffect_DeleteEffect";
+	RemoveItems(pchar, "vodka", 1);
+	PlaySound("Ambient\Horror\Fear_breath_01.wav");
+}
+
+void VodkaEffect_DeleteEffect(string qName) //
+{
+	DeleteAttribute(pchar, "VodkaEffect");
+}
+
 void Colt_Timer(string qName) //
 {
 	sld = characterFromId("Jino");	
@@ -808,4 +825,52 @@ void Find_PR_Letter(string qName)
 void AutoSaveDelay(string qName)
 {
 	AutoSave();
+}
+
+void Notification_Reputation(bool check, int number)
+{
+	if (check == true)
+	{
+		notification(GetConvertStr("Notification_ReputationCheckPassed", "Notification.txt"), "None");
+	}
+	else
+	{
+		notification(GetConvertStr("Notification_ReputationCheckFailed", "Notification.txt") + " ("+XI_ConvertString(GetReputationName(number))+")", "None");
+	}
+}
+
+void Notification_Perk(bool check, string icon)
+{
+	if (check == true)
+	{
+		notification(GetConvertStr("Notification_PerkCheckPassed", "Notification.txt"), icon);
+	}
+	else
+	{
+		notification(GetConvertStr("Notification_PerkCheckFailed", "Notification.txt"), icon);
+	}
+}
+
+void Notification_Skill(bool check, int number, string icon)
+{
+	if (check == true)
+	{
+		notification(GetConvertStr("Notification_SkillCheckPassed", "Notification.txt"), icon);
+	}
+	else
+	{
+		notification(GetConvertStr("Notification_SkillCheckFailed", "Notification.txt") + " ("+number+") ", icon);
+	}
+}
+
+void Notification_Level(bool check, int number)
+{
+	if (check == true)
+	{
+		notification(GetConvertStr("Notification_LevelCheckPassed", "Notification.txt"), "None");
+	}
+	else
+	{
+		notification(GetConvertStr("Notification_LevelCheckFailed", "Notification.txt") + " ("+number+") ", "None");
+	}
 }

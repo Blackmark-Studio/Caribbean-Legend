@@ -2062,7 +2062,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drinking_my_background_5":
-			dialog.text = "Well, perhaps I'm exaggerating a bit for the sake of a good story? My father's crew accepted me; he gathered fine people. But since then, I've been afraid... of holds and any small dark spaces in general. Ha! Svensson almost killed my father when he found out!";
+			dialog.text = "Beh, forse sto esagerando un po' per il bene di una buona storia? L'equipaggio di mio padre mi ha accettato; ha riunito gente in gamba. Ma da allora ho sempre avuto paura... delle stive e di tutti i piccoli spazi bui in generale. Ah! Svensson ha quasi ucciso mio padre quando l'ha scoperto!";
 			link.l1 = "È importante per te. Ha avuto un ruolo nel tuo destino, né meno di Sean.";
 			link.l1.go = "drinking_my_background_6";
 		break;
@@ -2072,11 +2072,11 @@ void ProcessDialogEvent()
 			link.l1 = "La mia gloria finì quando caddi dagli alberi il primo giorno, mentre si andava verso Guadalupa.";
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.TakeFolke")) {
 				link.l1 = link.l1+" Anche il mio timoniere, Deluc, aveva uno sguardo molto eloquente."}
-			link.l1.go ="Bere mi aiuta a dimenticare per un po’ chi sono e da где vengo, mon capitaine.";
+			link.l1.go ="Bere mi aiuta a dimenticare per un po’ chi sono e da dove vengo, mio capitano.";
 		break;
 		
 		case "drinking_my_background_7":
-			dialog.text = "Ah-ha-ha! I can imagine! Don't worry, that was a long time ago; now you're a real sea wolf!";
+			dialog.text = "Ah-ha-ha! Posso immaginarlo! Non preoccuparti, è stato tanto tempo fa; ora sei un vero lupo di mare!";
 			link.l1 = "";
 			link.l1.go = "drinking_my_background_8";
 		break;
@@ -2088,7 +2088,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drinking_my_background_12":
-			dialog.text = "... And then I gradually rose through the ranks, served at the captain's table in councils with my father and officers. Learned a lot. From the age of fifteen, they started taking me on military campaigns, and I killed a man in my very first battle. It was a disgusting campaign; we shouldn't have set sail on a Monday... Really shouldn't have!";
+			dialog.text = "... Poi ho scalato gradualmente i ranghi, ho servito al tavolo del capitano nei consigli con mio padre e gli ufficiali. Imparai molto. Dall'età di quindici anni, iniziarono a portarmi in campagna militare e uccisi un uomo nella mia prima battaglia. Fu una campagna disgustosa; non avremmo dovuto salpare di lunedì... Non dovevamo proprio!";
 			link.l1 = "A quindici anni? Mi fai paura, Helen.";
 			link.l1.go = "drinking_my_background_13";
 		break;
@@ -2389,7 +2389,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drinking_give_key":
-			dialog.text = "Cap, take the key and go upstairs. There should be a chest; you probably saw it when Svensson had it. Grab the barrel and head back immediately.";
+			dialog.text = "Cap, prendi la chiave e vai di sopra. Dovrebbe esserci un forziere; probabilmente l'avete visto quando l'aveva Svensson. Prendete il barile e tornate subito indietro.";
 			link.l1 = "Aspetta un attimo, tesoro, perché dovrei derubare il tuo capo?";
 			link.l1.go = "drinking_give_key_1";
 			
@@ -2398,7 +2398,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drinking_give_key_1":
-			dialog.text = "Don't be silly. I've been here since childhood; if the owners return, I can handle it and cover for you. Come on, don't lower your sail now!";
+			dialog.text = "Non sia sciocco. Sono qui fin dall'infanzia; se i proprietari tornano, posso occuparmene e coprirvi. Forza, non abbassate le vele adesso!";
 			link.l1 = "Tagliente come una lama, una vera contrabbandiera! Aspetta un attimo, sarò rapida.";
 			link.l1.go = "exit";
 			
@@ -2659,7 +2659,7 @@ void ProcessDialogEvent()
 						pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
 						notification("Helen disapproves", "Helena");
 					} else {
-						dialog.text = "Kudos, my Captain, for trying to resolve the issue wisely before getting into a fight. Come on, let's take a look at the residence; there's nothing else worth seeing here anyway.";
+						dialog.text = "Complimenti, mio capitano, per aver cercato di risolvere la questione con saggezza prima di arrivare alla rissa. Andiamo a dare un'occhiata alla residenza, tanto qui non c'è nient'altro che valga la pena di vedere.";
 					}
 					
 					link.l1 = "E quella nave enorme tirata in secco?";
@@ -2667,7 +2667,7 @@ void ProcessDialogEvent()
 				break;
 				
 				case "B":
-					dialog.text = "You skillfully fooled those fools, my Captain! I almost burst out laughing, honest! Come on, let's take a look at the residence; there's nothing else worth seeing here anyway.";
+					dialog.text = "Ha ingannato abilmente quegli sciocchi, mio Capitano! Sono quasi scoppiato a ridere, davvero! Andiamo a dare un'occhiata alla residenza, tanto qui non c'è nient'altro che valga la pena di vedere.";
 					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
 					notification("Helen approves", "Helena");
 					
@@ -2701,7 +2701,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "after_ambush_c_1":
-			dialog.text = "I'll be waiting eagerly! Come on, let's take a look at the residence; there's nothing else worth seeing here anyway.";
+			dialog.text = "Vi aspetto con impazienza! Andiamo a dare un'occhiata alla residenza, tanto qui non c'è nient'altro che valga la pena di vedere.";
 			link.l1 = "E che mi dici di quella nave gigantesca tirata in secco?";
 			link.l1.go = "after_ambush_1";
 		break;
@@ -2776,7 +2776,7 @@ void ProcessDialogEvent()
 				dialog.text = "Niente è cambiato, mio capitano, ma tante fatiche son cadute sulle spalle d’una povera fanciulla, ahah! Non volevo offenderti. Ho solo bisogno di riflettere su molte cose, adesso. Sai, svolte così brusche nella vita non capitano ogni giorno. E poi, abbiamo ancora tanto tempo insieme!";
 				link.l1 = "Felice di sentirlo! Andiamocene da qui.";
 			} else {
-				dialog.text = "Much has changed, Captain. I'm afraid I have to be more mature now and look at life differently. It's not a fairy tale about a princess and inheritance; it's big politics, and I still have to realize my place in it. And my family's place too.";
+				dialog.text = "Molte cose sono cambiate, Capitano. Temo di dover essere più maturo e di dover guardare alla vita in modo diverso. Non è una favola con una principessa e un'eredità; è una grande politica, e io devo ancora capire qual è il mio posto in questa storia. E anche quello della mia famiglia.";
 				link.l1 = "Sono lieta che ci siamo capiti. Andiamocene da qui.";
 			}
 			link.l1.go = "exit";
@@ -2799,7 +2799,7 @@ void ProcessDialogEvent()
 		
 		case "ambush_inresidence_give_cutlass":
 			dialog.text = "Accidenti, questa è... la leggendaria sciabola di Blaise in persona! Anche i pirati lo rispettavano troppo per portar via la lama dalla sua casa, persino dopo la sua morte. Hanno preso soldi e ricchezze, ovvio, ma persino quei futuri impiccati conservavano un briciolo d’onore...";
-			link.l1 = "It looks like someone is clearly tidying up here. As if the owner will come back... This is not a home; it's a memorial!";
+			link.l1 = "Sembra che qualcuno stia chiaramente facendo ordine qui. Come se il proprietario tornasse... Questa non è una casa, è un monumento commemorativo!";
 			link.l1.go = "ambush_inresidence_give_cutlass_1";
 		break;
 		

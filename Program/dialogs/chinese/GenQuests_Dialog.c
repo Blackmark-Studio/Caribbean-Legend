@@ -2139,7 +2139,7 @@ void ProcessDialogEvent()
 		
 		case "EncGirl_Lover2":
 			dialog.text = "哦, 我的...我就知道会这样结束...她为什么跑掉? 她告诉你了吗? ";
-			link.l1 = "她父亲想把她嫁给高利贷者的儿子。 ";
+			link.l1 = "她父亲想把她嫁给放贷人的儿子。 ";
 			link.l1.go = "EncGirl_Lover3";
 		break;
 		

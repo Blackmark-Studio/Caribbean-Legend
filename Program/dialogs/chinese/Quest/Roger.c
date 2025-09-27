@@ -1155,7 +1155,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Pelly_28z":
-            dialog.text = "都搞定了! 现在戈尔登蒂斯知道查理王子可能会去找他卖小饰品了。 记住, 虽然他的价格不错, 但还是比那些吝啬的高利贷者低。 但他按吨收购! 而且如我所说, 没有不必要的问题。 ";
+            dialog.text = "都搞定了! 现在戈尔登蒂斯知道查理王子可能会去找他卖小饰品了。 记住, 虽然他的价格不错, 但还是比那些吝啬的放贷人低。 但他按吨收购! 而且如我所说, 没有不必要的问题。 ";
 			link.l1 = "这才是我的好兄弟! 干得好, 保罗! 现在我有地方处理所有战利品了! ";
 			link.l1.go = "Pelly_29z";
 		break;
@@ -4366,7 +4366,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+				if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && CheckPassengerInCharacter(pchar, "Mary"))
 				{
 					sld = characterFromId("Mary");
 					sld.dialog.currentnode = "IslaMona_2";
@@ -4375,7 +4375,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+					if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1 && CheckPassengerInCharacter(pchar, "Helena"))
 					{
 						sld = characterFromId("Helena");
 						sld.dialog.currentnode = "IslaMona_2";
@@ -5264,7 +5264,7 @@ void ProcessDialogEvent()
 		case "mirabelle_47":
             DialogExit();
 		    npchar.dialog.currentnode = "mirabelle_42";
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && CheckPassengerInCharacter(pchar, "Mary"))
 			{
 				sld = characterFromId("Mary");
 				sld.dialog.currentnode = "IslaMona_2";
@@ -5273,7 +5273,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+				if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1 && CheckPassengerInCharacter(pchar, "Helena"))
 				{
 					sld = characterFromId("Helena");
 					sld.dialog.currentnode = "IslaMona_2";

@@ -74,6 +74,9 @@ void InitInterface_BB(string iniName, bool isSave, bool isMainMenu)
 
 	PostEvent( "evLoadOneSaveInfo",1 );
 
+	// логотип
+	SetMenuLogo();
+
 	if(isSave == false && isMainMenu == true)
 	{
 		BLI_DisableShow();

@@ -702,6 +702,12 @@ itmdescr_Mushket2x2
 Cette magnifique carabine à canons juxtaposés est, le plus souvent, utilisée par les nobles de haut rang qui chassent le cerf. Les balles tirées de ses canons rayés atteindront sans peine n'importe quelle cible, qu'elle soit à quatre ou à deux pattes. Nécessite des balles de plomb pour tirer. Nécessite l'avantage Tirailleur.
 }
 
+itmname_mushket10 {Mousquet impérial}
+itmdescr_mushket10
+{
+Mousquet d’honneur à un coup de l’époque de la guerre de Trente Ans. Équipé d’une baïonnette et orné de motifs typiques du Saint-Empire romain. ~ Leadership +10. Inflige 25% de dégâts supplémentaires avec les attaques de mêlée.
+}
+
 itmname_howdah {Howdah}
 itmdescr_howdah
 {
@@ -958,6 +964,18 @@ Ce chapeau est connu dans tous les coins des Caraïbes et partout on s’en souv
 ~
 Réduit la pénalité de dégâts du navire de 30%.
 10% de chance d’éviter les dégâts de tir.
+}
+
+itmname_hat10 {Chapeau de mercenaire}
+itmdescr_hat10
+{
+Ce chapeau blindé fabriqué sur le terrain paraît peu présentable, mais il peut arrêter une balle et sauver une vie. ~ Réduit tout dommage de 18%, en consommant 1 charge à chaque fois.
+}
+
+itmname_hat10_part {Cuir tanné}
+itmdescr_hat10_part
+{
+Un bon morceau de cuir de taureau tanné. Idéal pour la fabrication de chapeaux.
 }
 
 ; ==================================================================================================================== ОПТИКА
@@ -1247,6 +1265,18 @@ Le navire existe des deux côtés du voile à la fois. Le bois était vivant et 
 Chaque 2% de coque perdue augmente la vitesse et les dégâts des canons de 0,75% et 0,5% respectivement.
 ~
 Aucun malus, activation multiple possible.
+}
+
+itmname_talisman20	{Ceinture de streltsy}
+itmdescr_talisman20
+{
+Une bandoulière composée de plusieurs lanières, d’une poire à poudre et de nombreuses cartouches en papier. On la trouve sous bien des formes sur les champs de bataille européens, mais celle-ci vient d’un pays lointain, ornée de créatures fantastiques issues des forêts rudes de Sibérie. ~ Chaque tir de n’importe quelle arme à feu consomme 1 charge. La vitesse de visée augmente de 20%, les dégâts maximum en visée augmentent de 40%, la vitesse de rechargement augmente de 10%.
+}
+
+itmname_talisman20_part {Flasque à poudre de mousquetaire}
+itmdescr_talisman20_part
+{
+Une poire à poudre originale, de forme singulière, ornée d’images d’animaux exotiques venus de contrées lointaines. Les bords sont brodés d’un motif d’Europe de l’Est.
 }
 
 ; ==================================================================================================================== ТАЛИСМАНЫ
@@ -3011,6 +3041,12 @@ itmdescr_mangarosatotal
 {
 Une potion Manga Rosa préparée selon la recette secrète d'Amélie.
 Augmente temporairement la Puissance, l'Endurance, la Réaction, l'Idée, l'Autorité et le Succès, ainsi que l'habileté avec les armes de mêlée et le tir.
+}
+
+itmname_vodka	{Vodka du Tsar}
+itmdescr_vodka
+{
+Une infusion d’alcool de grain avec genièvre et millepertuis, distillée et vieillie avec une goutte d’eau de rose et de galanga. Utilisée par les streltsy du Tsarat russe sur le champ de bataille comme boisson réchauffante et revigorante. ~ Augmente les dégâts de mêlée avec les armes à feu de 30%. Les coups portés avec les armes à feu drainent l’énergie ennemie. Réduit les dégâts reçus des tirs de 10%.
 }
 
 itmname_cannabis1	{Datura}

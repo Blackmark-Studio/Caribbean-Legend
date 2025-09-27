@@ -1,0 +1,4 @@
+LAi_events_1
+{
+The Streltsy Sash is destroyed.
+}

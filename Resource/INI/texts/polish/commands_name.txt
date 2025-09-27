@@ -36,7 +36,7 @@ sea_Brander {Brander}
 sea_ImmediateReload {Przeładowanie}
 sea_LightRepair {Pilna naprawa}
 sea_InstantRepair {Naprawa bojowa}
-sea_SandbankManeuver {Manewry w płytkiej wodzie}
+sea_SandbankManeuver {Manewry na płytkiej wodzie}
 sea_Turn180 {Zakręć o 180 stopni}
 
 land_TalkSelf {Zastanów się}
@@ -61,14 +61,14 @@ land_Rest {Odpocznij}
 
 go_store {Sklep}
 go_shipyard {Stocznia}
-go_tavern {Karczma}
+go_tavern {Tawerna}
 go_residence {Rezydencja}
 go_port {Port}
 go_loanshark {Bank}
 go_church {Kościół}
 go_prison {Więzienie}
 go_brothel {Zamtuz}
-go_usurer {Lichwiarz}
+go_usurer {Bank}
 go_portman {Administracja}
 go_duel {Pojedynek}
 go_exittown {Brama}

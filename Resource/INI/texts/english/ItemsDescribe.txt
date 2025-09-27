@@ -703,7 +703,13 @@ itmname_Mushket2x2 {Doublebarred Carbine}
 itmdescr_Mushket2x2
 {
 This beautiful side-by-side carbine is more commonly seen with high-class noblemen hunting deers. The balls fired from its rifled barrels will safely hit any target, four or two-legged. Requires lead balls to fire. Requires the Skirmisher perk.
-} 
+}
+
+itmname_mushket10 {Imperial Musket}
+itmdescr_mushket10
+{
+Single-Shot noble musket from the Thirty Years’ War era. Equipped with a Bayonet and decorated with motifs common in the Holy Roman Empire. ~ Leadership +10. Deals 25% more damage with melee attacks.
+}
 
 itmname_howdah {Howdah}
 itmdescr_howdah
@@ -961,6 +967,18 @@ This hat is known in every corner of the Caribbean, and everywhere it is remembe
 ~
 Reduces ship damage penalty by 30%.
 Gives a 10% chance to avoid gunshot damage.
+}
+
+itmname_hat10 {Mercenary’s Hat}
+itmdescr_hat10
+{
+This field-made armored hat looks unpresentable, but it can stop a bullet and save a life. ~ Reduces any damage by 18%, consuming 1 charge for each such case.
+}
+
+itmname_hat10_part {Tanned Leather}
+itmdescr_hat10_part
+{
+A good piece of tanned bullhide. Perfect for making hats.
 }
 
 ; ==================================================================================================================== ОПТИКА
@@ -1249,6 +1267,18 @@ A ship exists on both sides of the veil at once. The wood was alive and became d
 For every 2% of hull lost, ship speed and cannon damage increase by 0.75% and 0.5% respectively.
 ~
 No penalties, can be activated multiple times.
+}
+
+itmname_talisman20	{Streltsy Sash}
+itmdescr_talisman20
+{
+A bandolier made of several straps, a powder flask, and numerous paper cartridges. It comes in many shapes and uses across European battlefields, but this particular one is a guest from a distant land, adorned with images of fantastical beasts from the harsh Siberian forests. ~ Every shot from any firearm consumes 1 charge. Aiming speed increases by 20%, maximum aimed damage increases by 40%, reload speed increases by 10%.
+}
+
+itmname_talisman20_part {Musketeer's Powder Flask}
+itmdescr_talisman20_part
+{
+A fanciful powder flask of unusual shape, stamped with images of exotic animals from a distant land. The edges are embroidered with an Eastern European pattern.
 }
 
 ; ==================================================================================================================== ТАЛИСМАНЫ
@@ -3009,6 +3039,12 @@ itmdescr_mangarosatotal
 {
 A Manga Rosa potion prepared according to Amelie's secret gypsy recipe.
 Temporarily increases strength, endurance, reaction, perception, leadership and luck as well as skill with melee weapons and shooting.
+}
+
+itmname_vodka	{Tsar Vodka}
+itmdescr_vodka
+{
+An infusion of grain spirit with juniper and St. John’s wort, distilled and aged with a drop of rose water and galangal root. Used by the streltsy of the Russian Tsardom on the battlefield as a warming and invigorating drink. ~ Increases melee damage with firearms by 30%. Strikes with firearms drain enemy energy. Reduces incoming damage from shots by 10%.
 }
 
 itmname_cannabis1	{Datura}

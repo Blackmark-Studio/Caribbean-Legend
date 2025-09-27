@@ -1502,6 +1502,7 @@ void UpdatePlayerSquadronPower() // Кэш
     PChar.Squadron.RawPower = fPower;
     if(CheckCharacterPerk(PChar, "SeaDogProfessional")) fPower *= 1.3;
     if(IsEquipCharacterByArtefact(PChar, "talisman15")) fPower *= 1.15;
+    if(GetCharacterEquipByGroup(PChar, CIRASS_ITEM_TYPE) == "cirass11") fPower *= 1.05;
     PChar.Squadron.ModPower = fPower;
 }
 // Механика мощи <--

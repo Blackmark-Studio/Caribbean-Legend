@@ -996,7 +996,7 @@ void ProcessDialogEvent()
 		//--> Sinistra 旧罪的漫长阴影
 		case "DTSG_NightIskat":
 			dialog.text = "当... 当然, 我们都互相认识! 你为什么这么问? ";
-            link.l1 = "我想去拜访那个放债人, 却发现他卖掉了老房子。 你知道他现在住在哪里吗? ";
+            link.l1 = "我想去拜访那个放贷人, 却发现他卖掉了老房子。 你知道他现在住在哪里吗? ";
             link.l1.go = "DTSG_NightIskat_2";
 		break;
 		

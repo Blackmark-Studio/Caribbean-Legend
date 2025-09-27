@@ -5,7 +5,7 @@ ref refCharacter;
 ref refTown;
 ref refShipChar;
 int iShipCapacity;
-float fShipWeight;
+int iShipWeight;
 int  BuyOrSell = 0; // 1-buy -1 sell
 int  iPriceSailor;
 int	 QtyMax = 0; 	 
@@ -372,7 +372,7 @@ void SetVariable()
 	
 	iShipCapacity = sti(refBaseShip.Capacity);
 	sText  = iShipCapacity;
-	sText  = makeint(fShipWeight) + " / " + sText;	
+	sText  = iShipWeight + " / " + sText;	
 	SetFormatedText("CAPACITY", sText);	
 	
 	sText = MakeMoneyShow(sti(pchar.Money), MONEY_SIGN,MONEY_DELIVER);
@@ -484,7 +484,7 @@ void SetShipWeight()
 		RecalculateCargoLoad(refCharacter);
 		refCharacter.Ship.Cargo.RecalculateCargoLoad = 0;
 	}
-	fShipWeight  = makeint(GetCargoLoad(refCharacter)+ 0.4);
+	iShipWeight  = GetCargoLoad(refCharacter);
 }
 
 void ShowInfoWindow()
@@ -589,6 +589,7 @@ void GetBackupQty()
 	makearef(arFrom,   NullCharacter.TavernBak.Tavern);
 	makearef(arTo, refTown.Ship.Crew);
 	CopyAttributes(arTo, arFrom);
+	RecalculateCargoLoad(refCharacter);	// evganat - поправил баг, но нужен полный рефактор
 }
 
 void TransactionCancel()

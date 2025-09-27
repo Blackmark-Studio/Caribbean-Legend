@@ -3122,7 +3122,7 @@ void UpdateCharacterEquipItem(ref chref)
 				if(sti(arEquip.(sAttr).time) == 0) 
 				{
 					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-					sItem = GetCharacterEquipBySlot(chref, sAttr)
+					sItem = GetCharacterEquipBySlot(chref, sAttr);
 					ref arItem = ItemsFromID(sItem);
 					pchar.systemInfo.messages.Artefact = GetFullName(chref) + StringFromKey("characterUtilite_6", LanguageConvertString(idLngFile, arItem.name))+ LanguageConvertString(idLngFile, "new_string");
 					//Log_SetStringToLog(GetFullName(chref) + " заметил, что артефакт " + LanguageConvertString(idLngFile, arItem.name) + " утратил силу");
@@ -4547,7 +4547,7 @@ void OfficersHold()
 	{
 		idx = GetOfficersIndex(PChar,i);
 		if (idx != -1) {
-			ref offchar = GetCharacter(idx)
+			ref offchar = GetCharacter(idx);
 			SetCharacterTask_Stay(offchar);
 		}
 	}
@@ -4560,7 +4560,7 @@ void OfficersFollow()
 	{
 		idx = GetOfficersIndex(PChar,i);
 		if (idx != -1) {
-			ref offchar = GetCharacter(idx)
+			ref offchar = GetCharacter(idx);
 			LAi_tmpl_SetFollow(offchar, GetMainCharacter(), -1.0);
 		}
 	}
@@ -4574,7 +4574,7 @@ void OfficersCharge()
 		idx = GetOfficersIndex(PChar,i);
 		if (idx != -1) 
 		{
-			ref offchar = GetCharacter(idx)
+			ref offchar = GetCharacter(idx);
 			if(!LAi_CheckFightMode(offchar))
 			{
 				LAi_tmpl_SetFollow(offchar, GetMainCharacter(), -1.0);

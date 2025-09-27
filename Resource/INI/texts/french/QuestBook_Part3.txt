@@ -2550,3 +2550,24 @@ La régate est terminée. Je me suis classé cinquième. Bien qu'il n'y ait pas 
 Et merde ! Je suis arrivé dernier. Quel échec. J'aurais dû rester en dehors de cette régate.
 #TEXT   45
 Mon aventure en régate est terminée. J'ai enfreint les règles et j'ai été disqualifié de la compétition.
+
+#QUEST LoyaltyPack
+Voix de l'Équipage
+#TEXT 1
+Alonso Pimentel, maître d'équipage et voix de mon équipage, veut me parler. Je peux le trouver dans la cale.
+#TEXT 2
+Bien qu'Alonso ait reconnu mes modestes succès en tant que capitaine, il s'inquiète clairement pour moi. Il m'a donné des conseils, offert de l'équipement utile et partagé une histoire. Peut-être que si je continue sur cette voie, j'entendrai la suite.
+#TEXT 3
+Alonso a demandé une rencontre. Comme d'habitude, je le trouverai dans la cale.
+#TEXT 4
+Près d'un an s'est écoulé, et l'équipage a enfin trouvé confiance en moi. Alonso a magistralement esquivé mes questions sur son passé mais a partagé une autre de ses histoires de guerre. Il prend clairement au sérieux cette partie de ses devoirs concernant le moral de l'équipage. Presque comme un confesseur, bien que je doute que les prêtres offrent à leur troupeau des recettes de breuvage moscovite et des armes à feu de qualité. À suivre ?
+#TEXT 5
+Alonso a demandé une rencontre. Comme d'habitude, je le trouverai dans la cale.
+#TEXT 6
+Maintenant je suis propriétaire non seulement d'une certaine notoriété dans les Caraïbes, mais aussi d'un chapeau ridicule. Bien qu'il puisse protéger la tête d'un capitaine en devenir, il s'effondrera définitivement après quelques coups solides. Néanmoins, mon triomphe a été quelque peu gâché par l'histoire tragique qu'Alonso m'a racontée aujourd'hui. Je ne sais pas ce qu'elle est censée m'enseigner, mais j'aimerais rencontrer son "ami moscovite".
+#TEXT 7
+Alonso a demandé une rencontre. Comme d'habitude, je le trouverai dans la cale.
+#TEXT 8
+Fadey ? Le même Fadey de Basse-Terre ? Comme le monde est petit ! Je devrais lui rendre visite.
+#TEXT 9
+La rencontre avec Fadey m'a fait réfléchir à beaucoup de choses. Combien d'autres "Alonso" dans mon équipage ? Combien d'histoires et de destins humains particuliers ? Je n'ai entendu qu'une seule voix, mais j'en ai maintenant des centaines. Je ne sais pas comment mon odyssée caribéenne se terminera, mais grâce aux soins d'Alonso et à ses simples cadeaux, je suis entièrement équipé, préparé et prêt à rencontrer mon destin.

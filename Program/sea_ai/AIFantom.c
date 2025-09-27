@@ -339,6 +339,17 @@ void Fantom_SetSails(ref rFantom, string sFantomType)
 	if (sFantomType == "war") rFantom.Ship.Sails.Gerald = true;
 }
 
+// Следовые количества приятностей
+void Fantom_SetPrize(ref rFantom)
+{
+    if (rand(99) < 40)
+    {
+        int iGoodName = GOOD_SHIPSILK + rand(3);
+        int iGoodQuantity = rand(4) + 2 * (7 - GetCharacterShipClass(rFantom));
+        Fantom_SetCharacterGoods(rFantom, iGoodName, iGoodQuantity, true);
+    }
+}
+
 void Fantom_SetBalls(ref rFantom, string sFantomType)
 {
 	float fKBalls = 7 - GetCharacterShipClass(rFantom);
@@ -541,6 +552,13 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
                                 iFinish = GOOD_SHIPSILK - iStart - 1;
                             break;
                         }
+                        // Следовые количества приятностей
+                        if (rand(99) < 40)
+                        {
+                            iGoodName = GOOD_SHIPSILK + rand(3);
+                            iGoodQuantity = rand(4) + 2 * iShipClass;
+                            Fantom_SetCharacterGoods(rFantom, iGoodName, iGoodQuantity, true);
+                        }
 					break;
 
 					case ENCOUNTER_TYPE_SMUGGLERS:
@@ -568,7 +586,7 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 				{
 					Fantom_SetCharacterGoods(rFantom, iMultiply, iRandMultiply, 0);	
 				}
-			}			
+			}         
 		break;
 	}
 

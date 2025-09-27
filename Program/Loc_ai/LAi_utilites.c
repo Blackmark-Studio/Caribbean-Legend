@@ -1829,7 +1829,8 @@ void CreateHabitues(aref loc)
 				}
 				// вне группы
 			}
-			// офицеры -->
+
+			// --> Офицеры
 			if (!CheckAttribute(pchar, "questTemp.Sharlie.Lock"))//не идёт старт квеста Шарля
 			{
 				iCitizensQuantity = rand(8)-6;
@@ -1860,20 +1861,23 @@ void CreateHabitues(aref loc)
 					}
 				}
 			}
-			// офицеры <--
-			// belamour legendary edition увеличить вероятность появления странной личности У Счетовода
+			// <-- Офицеры
+
+			// --> Кладмен
 			if(ShipBonus2Artefact(pchar, SHIP_LADYBETH))
 			{
-				if(CheckCharacterPerk(pchar, "HT2")) i = 3;
-				else i = 7;
+				if(CheckCharacterPerk(pchar, "HT2")) i = 25;
+				else i = 12;
 			}
 			else
 			{
-				if(CheckCharacterPerk(pchar, "HT2")) i = 4;
-				else i = 15;
+				if(CheckCharacterPerk(pchar, "HT2")) i = 20;
+				else i = 7;
 			}
-			if (rand(i) == 3 || TestRansackCaptain) // ugeen --> уменьшил вероятность встретить странную личность с картой до 1/20
-			{ // карты кладов
+            i += sti(TEV.TavernMapBonus);
+			if (hrand(99, Colonies[iColony].id) < i || TestRansackCaptain)
+			{
+                TEV.TavernMapBonus = 0;
                 iChar = NPC_GeneratePhantomCharacter("pirate", iNation, MAN, 1);
 				chr = &characters[iChar];
 				SetNPCModelUniq(chr, "pirate", MAN);
@@ -1887,13 +1891,12 @@ void CreateHabitues(aref loc)
 				chr.dialog.filename = "Enc_Treasure_dialog.c";
 				chr.dialog.currentnode = "first time";
 				chr.greeting = "map_trader";
-				
+
 		        if (GetCharacterItem(pchar, "map_full") == 0) // нет карты - генерим, если купит
 		        {
 		            aref item;
 		            Items_FindItem("map_full", &item);
 					FillMapForTreasure(item);
-					//pchar.GenQuest.TreasureMoney = 5000 + rand(30)*500 + rand(30)*500;
 					pchar.GenQuest.TreasureMoney = 100 + rand(50)*5; // Addon-2016 Jason
 		        }
           		if (sti(Colonies[iColony].HeroOwn) == true)
@@ -1905,36 +1908,38 @@ void CreateHabitues(aref loc)
 					LAi_group_MoveCharacter(chr, slai_group);
 				}
 			}
-			else
-			{
-				iCitizensQuantity = rand(3) - 1 ; // простая пьянь для антуражу
-				for (i = 0; i <iCitizensQuantity; i++)
-				{
-				    iChar = NPC_GeneratePhantomCharacter(sType, iNation, MAN, 1);
-					chr = &characters[iChar];
-					SetNPCModelUniq(chr, sType, MAN);
-					chr.City = Colonies[iColony].id;
-					chr.CityType = "citizen";
-					sTemp = PlaceCharacter(chr, "sit", "random_free"); // может не быть вовсе, если все места заняты
-                    ReSitCharacterOnFree(chr, loc.id, sTemp);
+            else TEV.TavernMapBonus = sti(TEV.TavernMapBonus) + 2;
+            // <-- Кладмен
 
-					LAi_SetLoginTime(chr, 0.0 + rand(6), 24.0 - rand(10));
-					LAi_SetSitType(chr);
-					if (sti(Colonies[iColony].HeroOwn) == true)
-					{
-						LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
-					}
-					else
-					{
-						LAi_group_MoveCharacter(chr, slai_group);
-					}
-					chr.quest.last_theme = 0;
-					chr.dialog.filename = "Habitue_dialog.c";
-					chr.dialog.currentnode = "first time";
-					chr.greeting = "habitue";
-				}
-			}
-			// музыканты
+            // Простая пьянь для антуражу
+            iCitizensQuantity = rand(3) - 1;
+            for (i = 0; i <iCitizensQuantity; i++)
+            {
+                iChar = NPC_GeneratePhantomCharacter(sType, iNation, MAN, 1);
+                chr = &characters[iChar];
+                SetNPCModelUniq(chr, sType, MAN);
+                chr.City = Colonies[iColony].id;
+                chr.CityType = "citizen";
+                sTemp = PlaceCharacter(chr, "sit", "random_free"); // может не быть вовсе, если все места заняты
+                ReSitCharacterOnFree(chr, loc.id, sTemp);
+
+                LAi_SetLoginTime(chr, 0.0 + rand(6), 24.0 - rand(10));
+                LAi_SetSitType(chr);
+                if (sti(Colonies[iColony].HeroOwn) == true)
+                {
+                    LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
+                }
+                else
+                {
+                    LAi_group_MoveCharacter(chr, slai_group);
+                }
+                chr.quest.last_theme = 0;
+                chr.dialog.filename = "Habitue_dialog.c";
+                chr.dialog.currentnode = "first time";
+                chr.greeting = "habitue";
+            }
+
+			// Музыканты
 			if(CheckAttribute(loc,"locators.band"))
 			{
 				log_testinfo("Локаторы музыкантов доступны");

@@ -58,6 +58,9 @@ void InitInterface(string iniName)
 
 	GameInterface.SavePath = "SAVE";
 
+	// логотип
+	SetMenuLogo();
+
 	// кнопка "продолжить игру" --->
 	string saveName = GetLastSavePathFromCurrentProfile();
 	string saveData;

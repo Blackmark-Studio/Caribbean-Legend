@@ -455,7 +455,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "florian_guide_02":
-			dialog.text = "Dunque, la prima cosa da ricordare è che metà della battaglia si vince o si perde ancora до того, как она начнётся. Molto dipende da quanto tu e la tua nave siete pronti.";
+			dialog.text = "Dunque, la prima cosa da ricordare è che metà della battaglia si vince o si perde ancora prima di iniziare. Molto dipende da quanto tu e la tua nave siete pronti.";
 			link.l1 = "...";
 			link.l1.go = "florian_guide_03";
 		break;

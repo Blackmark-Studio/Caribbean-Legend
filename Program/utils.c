@@ -573,3 +573,10 @@ float GetRealDeltaTime()
         return GetDeltaTime() * 0.001 / timeScale;
     return 0.0;
 }
+
+// Атрибут есть и равен строке
+bool CheckAttributeEqualTo(ref rObject, string atrName, string value)
+{
+	if (!CheckAttribute(rObject, &atrName)) return false;
+	return rObject.(atrName) == value;
+}

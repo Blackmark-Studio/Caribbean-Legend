@@ -2549,4 +2549,25 @@ The regatta is over. I placed fifth. Though there's no prize for me, I'm satisfi
 #TEXT   44
 Damn it! I came in last. What a blunder. I should've stayed out of this regatta.
 #TEXT   45
-My regatta journey is over. I broke the rules and was disqualified from the competition.
+My regatta journey has come to an end. I broke the rules and was disqualified from the competition.
+
+#QUEST LoyaltyPack
+Voice of the Crew
+#TEXT 1
+Alonso Pimentel, chief mate and voice of my crew, wants to speak with me. I can find him in the hold.
+#TEXT 2
+While Alonso acknowledged my modest successes as captain, he's clearly concerned about me. He offered advice, gifted me useful equipment, and shared a story. Perhaps if I continue on this path, I'll hear the rest.
+#TEXT 3
+Alonso has requested a meeting. As usual, I'll find him in the hold.
+#TEXT 4
+Nearly a year has passed, and the crew has finally found confidence in me. Alonso masterfully dodged my questions about his past but shared another of his war tales. He clearly takes seriously that part of his duties concerning crew morale. Almost like a confessor, though I doubt priests gift their flock recipes for Muscovite brew and quality firearms. To be continued?
+#TEXT 5
+Alonso has requested a meeting. As usual, I'll find him in the hold.
+#TEXT 6
+Now I'm the owner of not only a modicum of fame in the Caribbean, but also a ridiculous-looking hat. While it can protect the head of an aspiring captain, it will definitely fall apart after a couple of solid blows. Nevertheless, my triumph was somewhat spoiled by the tragic story Alonso told me today. I don't know what it's supposed to teach me, but I'd like to meet his "Muscovite friend."
+#TEXT 7
+Alonso has requested a meeting. As usual, I'll find him in the hold.
+#TEXT 8
+Fadey? The very same Fadey from Basse-Terre? What a small world! I should pay him a visit.
+#TEXT 9
+Meeting Fadey made me think about many things. How many more "Alonsos" are in my crew? How many stories and peculiar human fates? I've heard only one voice, yet I now have hundreds. I don't know how my Caribbean odyssey will end, but thanks to Alonso's care and his simple gifts, I'm fully equipped, prepared, and ready to meet my fate.

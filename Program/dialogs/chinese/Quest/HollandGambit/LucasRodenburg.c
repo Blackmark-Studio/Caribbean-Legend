@@ -124,7 +124,7 @@ void ProcessDialogEvent()
 					DelLandQuestMark(npchar);
 					break;
 				}
-				if (iMir == 0 && iMef == 1)// 失去幻影号
+				if (iMir == 0 && iMef == 1)// 失去蜃楼号
 				{
 					dialog.text = "船长... 我已经知道你的航行情况了。 ";
 					link.l1 = "是吗? 那你一定知道... ";
@@ -165,19 +165,19 @@ void ProcessDialogEvent()
 						pchar.questTemp.HWIC.Holl.CompanionIndex = sld.Index;
 						if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MIRAGE) iMir = 1;
 					}
-				}// 设置舰队中存在幻影号的标志。 
+				}// 设置舰队中存在蜃楼号的标志。 
 				pchar.quest.ToAntiguaOver.over = "yes"; // 移除计时器
-				if (iMir == 0)// 失去幻影号
+				if (iMir == 0)// 失去蜃楼号
 				{
-					dialog.text = "我已得知你的到来, 船长。 我也知道你在战斗中失去了我的幻影号。 ";
+					dialog.text = "我已得知你的到来, 船长。 我也知道你在战斗中失去了我的蜃楼号。 ";
 					link.l1 = "你消息很灵通, 罗登堡先生。 尽管我尽了全力, 还是没能救下她。 ";
 					link.l1.go = "Fleetwood_fail";
 					DelLandQuestMark(npchar);
 				}
 				else
 				{
-					dialog.text = "我已得知你的到来, 船长。 我看到幻影号已安全靠岸。 这很好。 ";
-					link.l1 = "一切都是按照你的指示, 先生。 你命令我杀了弗利特伍德, 他死了。 你命令我把幻影号带回当地港口, 她就在这里。 ";
+					dialog.text = "我已得知你的到来, 船长。 我看到蜃楼号已安全靠岸。 这很好。 ";
+					link.l1 = "一切都是按照你的指示, 先生。 你命令我杀了弗利特伍德, 他死了。 你命令我把蜃楼号带回当地港口, 她就在这里。 ";
 					link.l1.go = "Fleetwood_complete";
 					DelLandQuestMark(npchar);
 				}
@@ -484,7 +484,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jacob_failFull":
-			dialog.text = "我的上帝, 你真是个罕见的标本。 一个无能的笨蛋和白痴。 你没能捕获幻影号, 还把美凤号也弄丢了。 滚出我的办公室! ";
+			dialog.text = "我的上帝, 你真是个罕见的标本。 一个无能的笨蛋和白痴。 你没能捕获蜃楼号, 还把美凤号也弄丢了。 滚出我的办公室! ";
 			link.l1 = "我这就走。 ";
 			link.l1.go = "exit";
 			Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex("Longway");
@@ -522,7 +522,7 @@ void ProcessDialogEvent()
 		
 		case "Fleetwood":
 			AddMoneyToCharacter(pchar, 50000);
-			dialog.text = "现在我们对付弗利特伍德。 你要用他一直热衷追捕的‘幽灵船’幻影号来引诱他出来。 在多米尼加附近设下陷阱, 幻影号将作为诱饵。 \n首先, 你要让弗利特伍德知道幻影号在多米尼加附近被发现。 我们勇敢的英国佬会放下手头的一切, 立即冲向多米尼加寻找他的猎物。 不要直接和弗利特伍德说话, 否则你活不下来。 在圣约翰找一家药店。 药剂师约翰.默多克是我的老朋友。 \n告诉他你在我的指挥下行动, 他会帮助你找到当地人, 向他们灌输关于‘幽灵船’在多米尼加附近攻击英国商人的有趣谎言。 ";
+			dialog.text = "现在我们对付弗利特伍德。 你要用他一直热衷追捕的‘幽灵船’蜃楼号来引诱他出来。 在多米尼加附近设下陷阱, 蜃楼号将作为诱饵。 \n首先, 你要让弗利特伍德知道蜃楼号在多米尼加附近被发现。 我们勇敢的英国佬会放下手头的一切, 立即冲向多米尼加寻找他的猎物。 不要直接和弗利特伍德说话, 否则你活不下来。 在圣约翰找一家药店。 药剂师约翰.默多克是我的老朋友。 \n告诉他你在我的指挥下行动, 他会帮助你找到当地人, 向他们灌输关于‘幽灵船’在多米尼加附近攻击英国商人的有趣谎言。 ";
 			link.l1 = "我能做到。 目标是在多米尼加伏击弗利特伍德, 对吗? ";
 			link.l1.go = "Fleetwood_1";
 		break;
@@ -586,7 +586,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Fleetwood_complete_3":
-			dialog.text = "我的孩子, 你是个优秀的士兵, 但相信我和我在政治事务上的经验。 还记得我对弗利特伍德的评价吗? 我要把他的名字和声誉钉在磨石上, 扔进深渊。 而这些来自皇家港的傲慢贵族将不得不吞咽下去, 窒息而死。 \n我们要让理查德.弗利特伍德成为‘幽灵船’幻影号的船长, 一个让英格兰和荷兰两国互相争斗的狼人, 掠夺。 抢劫和谋杀两国的和平公民, 只是为了让自己发财! 多么讽刺! 我已经准备了证据和证人, 但‘幻影’号将成为我完美计划的主要事件。 ";
+			dialog.text = "我的孩子, 你是个优秀的士兵, 但相信我和我在政治事务上的经验。 还记得我对弗利特伍德的评价吗? 我要把他的名字和声誉钉在磨石上, 扔进深渊。 而这些来自皇家港的傲慢贵族将不得不吞咽下去, 窒息而死。 \n我们要让理查德.弗利特伍德成为‘幽灵船’蜃楼号的船长, 一个让英格兰和荷兰两国互相争斗的狼人, 掠夺。 抢劫和谋杀两国的和平公民, 只是为了让自己发财! 多么讽刺! 我已经准备了证据和证人, 但‘幻影’号将成为我完美计划的主要事件。 ";
 			link.l1 = "好吧, 去他妈的。 你要为了你的计划牺牲我出色的船! ? ";
 			link.l1.go = "Fleetwood_complete_4";
 			AddDialogExitQuestFunction("Lucas_ExangeShip");

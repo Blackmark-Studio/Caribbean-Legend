@@ -643,6 +643,7 @@ float LAi_GunReloadSpeed(aref chr, string sType)
 	//if(IsCharacterPerkOn(chr, "HT4")) charge_dlt = charge_dlt*1.40;	// суперперк!!
 	if(IsCharacterPerkOn(chr, "Jager")) charge_dlt = charge_dlt*1.40;	// суперперк!!
 	if(GetCharacterEquipByGroup(chr, CIRASS_ITEM_TYPE) == "cirass10")) charge_dlt = charge_dlt*1.15;
+	if(IsMainCharacter(chr) && IsCharacterEquippedArtefact(chr, "talisman20")) charge_dlt = charge_dlt*1.10;
 	if(CheckAttribute(chr, "cheats.guncharge")) charge_dlt = charge_dlt*10.0;
 	if(IsCharacterPerkOn(chr, "GunProfessional"))
 	{
@@ -674,6 +675,31 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	}
 	//Вычисляем повреждение
 	float dmg = LAi_CalcMeleeDamage(attack, enemy, attackType, isBlocked);
+	
+	if(GetCharacterEquipByGroup(enemy, HAT_ITEM_TYPE) == "hat10")
+	{
+		ref hat10 = ItemsFromID("hat10");
+		if(CheckAttribute(hat10, "durability"))
+		{
+			
+			int durability = sti(hat10.durability);
+			if(durability < 2)
+			{
+				DeleteAttribute(hat10, "durability");
+				RemoveCharacterEquip(enemy, HAT_ITEM_TYPE);
+				SendMessage(enemy, "lsl", MSG_CHARACTER_EX_MSG, "UntieItem", 10);
+				RemoveItems(enemy, "hat10", 1)
+				GiveItem2Character(enemy, "hat10_part");
+				notification(StringFromKey("LAi_fightparams_2"), "none");
+			}
+			else
+			{
+				durability --;
+				hat10.durability = durability;
+			}
+		}
+		dmg *= 0.82;
+	}
 	
 	float critical 	= 0.0;
 	// belamour legendary edition
@@ -869,6 +895,11 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	// belamour legendary edtion атрибут уменьшенного урона
 	if(CheckAttribute(enemy,"ReducedDamage")) dmg = dmg * makefloat(enemy.ReducedDamage);
 	dmg *= fLiberMisBonus(enemy);
+	if(CheckAttribute(attack, "VodkaEffect") && CharUseMusket(attack))
+	{
+		dmg *= 1.3;
+		Lai_CharacterChangeEnergy(enemy, -0.1 * stf(enemy.chr_ai.energy));
+	}
 	if(IsDummy(attack) || IsDummy(enemy))
 	{
 		if(bDrawBars)
@@ -1066,11 +1097,40 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 	//Начисляем повреждение
 	float damage = LAi_GunCalcDamage(attack, enemy, sType, nShots);
 	
+	if(GetCharacterEquipByGroup(enemy, HAT_ITEM_TYPE) == "hat10")
+	{
+		ref hat10 = ItemsFromID("hat10");
+		if(CheckAttribute(hat10, "durability"))
+		{
+			
+			int durability = sti(hat10.durability);
+			if(durability < 2)
+			{
+				DeleteAttribute(hat10, "durability");
+				RemoveCharacterEquip(enemy, HAT_ITEM_TYPE);
+				RemoveItems(enemy, "hat10", 1)
+				GiveItem2Character(enemy, "hat10_part");
+				notification(StringFromKey("LAi_fightparams_2"), "none");
+			}
+			else
+			{
+				durability --;
+				hat10.durability = durability;
+			}
+		}
+		damage *= 0.82;
+	}
 	// evganat - прицеливание
 	if(fAimingTime >= 0.0)
 	{
 		float fMaxTime = MAX_AIMING_TIME;
-		damage *= Bring2Range(0.75, 1.5, 0.0, fMaxTime, fAimingTime);
+		float fBonus = 1.0;
+		if(IsCharacterEquippedArtefact(attack, "talisman20"))
+		{
+			fMaxTime *= 0.8;
+			fBonus = 1.4;
+		}
+		damage *= Bring2Range(0.75, 1.5 * fBonus, 0.0, fMaxTime, fAimingTime);
 	}
 
 	// belamour legendary edition бонусы огнестрелу -->
@@ -1156,7 +1216,10 @@ void LAi_ApplyCharacterFireDamage(aref attack, aref enemy, float kDist, float fA
 			}
 		}
 	}
-	
+	if(CheckAttribute(enemy, "VodkaEffect"))
+	{
+		damage *= 0.9;
+	}
 	// belamour legendary edtion меткий выстрел (headshot) -->
 	if(InstaShot && damage > 0.0)
 	{

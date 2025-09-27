@@ -1280,7 +1280,8 @@ void LAi_SetBoardingActors(string locID)
 			}
 			else
 			{
-				CaptainComission_GenerateSituation(chr);
+                // TO_DO: ВРЕМЕННО ОТКЛЮЧЕНО
+				//CaptainComission_GenerateSituation(chr);
 				SetQuestAboardCabinDialog(chr); /// проверка на минНр
 			}	
 			// если это место отработало, то кэп либо убит, либо по квестам сдаётся в плен

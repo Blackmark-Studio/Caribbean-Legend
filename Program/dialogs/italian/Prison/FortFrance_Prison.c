@@ -58,7 +58,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Sharlie_3":
-			Log_Info("You have given debt papers");
+			Log_Info("Avete consegnato i documenti di debito");
 			PlaySound("interface\important_item.wav");
 			RemoveItems(pchar, "letter_open", 1);
 			DelLandQuestMark(npchar);
@@ -141,7 +141,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Capito, Capitano. Procederemo di conseguenza.";
 			link.l1 = "...";
 			link.l1.go = "Del_DeluckSvoboda_2";
-			Log_Info("You have given debt papers");
+			Log_Info("Avete consegnato i documenti di debito");
 			PlaySound("interface\important_item.wav");
 			RemoveItems(pchar, "letter_open", 1);
 			DelLandQuestMark(npchar);

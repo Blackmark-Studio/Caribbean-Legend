@@ -121,7 +121,7 @@ void ProcessDialogEvent()
 		break;
 		//< —神圣慈悲
 		
-		//--> 贝丝夫人
+		//--> 贝丝女士
 		case "DiegoDeLanda_LadyBeth_2":
 			dialog.text = "哦, 是的。 可怜的女人。 她的丈夫…不是最善良的人。 据说他的种植园是巴巴多斯产量最高的。 也是最残酷的。 你知道每个月有多少奴隶死在那里吗? 最近, 他打死了一位来自英格兰的真正医生 —一个极具智慧和才华的人。 但相信我, 她的命运也好不到哪里去。 ";
 			link.l1 = "你似乎消息很灵通。 ";
@@ -141,7 +141,7 @@ void ProcessDialogEvent()
 			link.l1.go = "DiegoDeLanda_leaving";
 		break;
 		
-		//< —贝丝夫人
+		//< —贝丝女士
 		
 		//--> 纪念号
 		case "DiegoDeLanda_Memento_2":

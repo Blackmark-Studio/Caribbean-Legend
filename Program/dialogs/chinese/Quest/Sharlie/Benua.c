@@ -4,6 +4,7 @@ void ProcessDialogEvent()
 	ref NPChar, sld;
 	aref Link, NextDiag;
 	int rate;
+    bool bOk;
 
 	DeleteAttribute(&Dialog,"Links");
 
@@ -280,8 +281,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "relation":
-			rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.BenuaNation), 0));
-			if (rate <= 10)
+			rate = wdmGetNationThreat(sti(pchar.GenQuest.BenuaNation));
+			if (rate < 2)
 			{
 				dialog.text = "是的, 这些传闻我们教会也听说了。我可以帮你解决这个难题, 这事并非无解。你需要给我二百五十枚金币杜布隆, 才能摆平你的困境。";
 				if (PCharDublonsTotal() >= 250) // Sinistra legendary edition
@@ -295,7 +296,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (rate <= 20)
+				if (rate < 4)
 				{
 					dialog.text = "是的, 你那些“丰功伟绩”的传闻连我们教会都听说了。孩子, 你已经玷污了自己的名声, 应该更加谨慎才是。不过, 我可以帮你。你需要拿出五百金币, 老夫才能帮你摆平这场麻烦。";
 					if (PCharDublonsTotal() >= 500) // Sinistra legendary edition
@@ -333,10 +334,11 @@ void ProcessDialogEvent()
 		
 		case "agree_1":
 			DialogExit();
+            bOk = HasShipTrait(pchar, "trait23");
             rate = 10 + rand(5);
-            rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+            rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, rate, false);
-			pchar.GenQuest.BenuaNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.BenuaNation), 0));
+			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.BenuaNation));
 			npchar.quest.relation = "true";
 		break;
 		

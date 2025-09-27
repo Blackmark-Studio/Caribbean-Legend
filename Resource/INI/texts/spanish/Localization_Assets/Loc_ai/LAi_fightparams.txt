@@ -2,3 +2,8 @@ LAi_fightparams_1
 {
 Esquivar el disparo
 }
+
+LAi_fightparams_2
+{
+El Sombrero de mercenario está destruido.
+}

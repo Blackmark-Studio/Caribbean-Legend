@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsFirstJungle_3":
-			dialog.text = "Perché prendi così male la mia richiesta? Non ti sto mica chiedendo perle maledette, solo una cartuccia. Ho perfino aspettato il momento giusto per non distrarti dai tuoi affari e non intralciarti come uno squilibrato qualsiasi, eheh. Allora... ce l’hai una pallottola?";
+			dialog.text = "Perché prendi così male la mia richiesta? Non ti sto mica chiedendo perle maledette, solo una cartuccia. Ho pure aspettato finché eravamo nella giungla, così da non intralciarti con le tue faccende in città. Allora, ce l’hai una pallottola?";
 			if (CheckCharacterItem(PChar, "cartridge"))
 			{
 				link.l1 = "Sì, ho preso un giro. Eccoti qua. Ma non provare a farmi uno scherzo da scemo con quella pallottola. Intesi, Tommy?";
